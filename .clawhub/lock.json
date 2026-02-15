@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "skills": {
+    "summarize": {
+      "version": "1.0.0",
+      "installedAt": 1771133015708
+    },
+    "github": {
+      "version": "1.0.0",
+      "installedAt": 1771133612041
+    },
+    "notion": {
+      "version": "1.0.0",
+      "installedAt": 1771133620256
+    },
+    "himalaya": {
+      "version": "1.0.0",
+      "installedAt": 1771133638028
+    }
+  }
+}
