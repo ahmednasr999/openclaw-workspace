@@ -16,6 +16,90 @@
     "himalaya": {
       "version": "1.0.0",
       "installedAt": 1771133638028
+    },
+    "linkedin-writer": {
+      "version": "1.0.0",
+      "installedAt": 1771235075852
+    },
+    "linkedin": {
+      "version": "1.0.0",
+      "installedAt": 1771235222603
+    },
+    "ai-pdf-builder": {
+      "version": "1.2.3",
+      "installedAt": 1771235226458
+    },
+    "ai-research-scraper": {
+      "version": "1.8.14",
+      "installedAt": 1771235234194
+    },
+    "gog-calendar": {
+      "version": "1.0.0",
+      "installedAt": 1771235253046
+    },
+    "tavily-search": {
+      "version": "1.0.0",
+      "installedAt": 1771235540453
+    },
+    "brave-search": {
+      "version": "1.0.1",
+      "installedAt": 1771235792808
+    },
+    "news-summary": {
+      "version": "1.0.1",
+      "installedAt": 1771235803092
+    },
+    "reminder": {
+      "version": "0.1.1",
+      "installedAt": 1771235804698
+    },
+    "hubspot": {
+      "version": "1.0.0",
+      "installedAt": 1771235806189
+    },
+    "agent-content-pipeline": {
+      "version": "0.2.3",
+      "installedAt": 1771235807738
+    },
+    "job-search-mcp": {
+      "version": "1.0.0",
+      "installedAt": 1771236323051
+    },
+    "interview-designer": {
+      "version": "1.0.0",
+      "installedAt": 1771236326532
+    },
+    "ai-meeting-notes": {
+      "version": "1.0.3",
+      "installedAt": 1771236328159
+    },
+    "resume-optimizer": {
+      "version": "1.0.1",
+      "installedAt": 1771236334274
+    },
+    "todoist": {
+      "version": "0.2.1",
+      "installedAt": 1771236335555
+    },
+    "note-processor": {
+      "version": "1.0.0",
+      "installedAt": 1771236349531
+    },
+    "google-analytics": {
+      "version": "1.0.10",
+      "installedAt": 1771236513315
+    },
+    "image": {
+      "version": "1.0.3",
+      "installedAt": 1771236553606
+    },
+    "openclaw-backup": {
+      "version": "1.0.0",
+      "installedAt": 1771236559098
+    },
+    "video-agent": {
+      "version": "1.2.1",
+      "installedAt": 1771236561396
     }
   }
 }

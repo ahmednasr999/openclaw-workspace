@@ -1,0 +1,6 @@
+{
+  "contentDir": "/root/.openclaw/workspace",
+  "plugins": [],
+  "dryRun": true,
+  "requireApproval": true
+}
