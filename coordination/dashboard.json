@@ -1,11 +1,11 @@
 {
-  "last_updated": "2026-02-17T03:00:00Z",
+  "last_updated": "2026-02-17T06:02:00Z",
   "generated_by": "Chief of Staff (Max)",
   "pipeline": {
-    "active_applications": 5,
-    "interview_scheduled": 2,
+    "active_applications": 2,
+    "interview_scheduled": 1,
     "offer_pending": 0,
-    "rejected": 3,
+    "rejected": 1,
     "this_week": {
       "applied": 3,
       "responses_received": 2,
@@ -16,10 +16,11 @@
     "connections_sent_today": 5,
     "connections_sent_this_week": 15,
     "discovery_calls_booked": 1,
-    "pending_followups": 3
+    "pending_followups": 3,
+    "pending_leads": 2
   },
   "content": {
-    "posts_published_this_week": 2,
+    "posts_published_this_week": 1,
     "posts_scheduled": 1,
     "drafts_ready": 2,
     "engagement_rate": 4.2
@@ -41,13 +42,20 @@
     "Publish Post 2 (EMR ROI)",
     "Send 5+ connection requests",
     "Follow up with warm leads",
-    "Prepare for interview (if scheduled)"
+    "Prepare for Delphi interview (Feb 18)"
   ],
   "attention_needed": [
     {
-      "item": "Hospital CEO (Dubai) connection",
-      "status": "pending",
-      "urgency": "normal"
+      "item": "Delphi interview - TOMORROW",
+      "status": "preparation_needed",
+      "urgency": "high",
+      "notes": "Senior PM - UAE role, prepare case study examples"
+    },
+    {
+      "item": "Dr. Ahmed Al-Mansour follow-up",
+      "status": "due_today",
+      "urgency": "normal",
+      "notes": "3 days since connection sent"
     }
   ]
 }
