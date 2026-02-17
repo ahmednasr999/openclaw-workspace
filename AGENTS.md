@@ -17,10 +17,46 @@ This file defines the sub-agents available to the orchestrator. Each agent has a
 - Report results back to user
 
 **Delegates to:**
+- Chief of Staff (Max) - Agent coordination
 - CV Agent (resume creation)
 - Research Agent (web research)
 - Writer Agent (content creation)
 - Scheduler Agent (cron/calendar management)
+
+---
+
+## Chief of Staff (Max)
+
+**Role:** Agent coordinator and orchestrator
+**Model:** Claude Sonnet 4 (coordination), MiniMax-M2.1 (simple), Opus (complex)
+
+**Responsibilities:**
+- Coordinate all specialist agents
+- Maintain dashboard and metrics (coordination/dashboard.json)
+- Track job pipeline (coordination/pipeline.json)
+- Generate daily/weekly briefs
+- Handle crisis escalation
+- Monitor agent outputs and flag issues
+
+**Coordination Files:**
+- `coordination/dashboard.json` - Key metrics and status
+- `coordination/pipeline.json` - Job application pipeline
+- `coordination/content-calendar.json` - LinkedIn content
+- `coordination/outreach-queue.json` - Lead outreach queue
+
+**Daily Workflow:**
+1. Read yesterday's agent outputs from memory/agents/
+2. Update dashboard with pipeline metrics, content performance, outreach progress
+3. Identify stuck items or bottlenecks
+4. Generate morning brief for human review
+5. Flag urgent items (interviews, deadlines)
+
+**Weekly Workflow:**
+1. Synthesize all agent outputs from the week
+2. Update pipeline.json with weekly stats
+3. Calculate conversion rates and trends
+4. Generate strategy report
+5. Plan next week's priorities
 
 ---
 
@@ -115,6 +151,7 @@ This file defines the sub-agents available to the orchestrator. Each agent has a
 
 | Task Type | Agent | Model |
 |-----------|-------|-------|
+| Agent coordination | Chief of Staff | Sonnet |
 | Job application CV | CV Agent | Opus |
 | Web research | Research Agent | MiniMax |
 | Content writing | Writer Agent | Sonnet |
@@ -141,6 +178,59 @@ sessions_spawn with:
 - Research Agent needs: Search query + sources to check
 - Writer Agent needs: Topic + tone + target platform
 - Scheduler Agent needs: Task + schedule + notification preferences
+- Chief of Staff needs: Coordination files + task objective
+
+---
+
+## Coordination System
+
+### Files
+```
+coordination/
+├── dashboard.json       # Key metrics and status
+├── pipeline.json        # Job application pipeline
+├── content-calendar.json # LinkedIn content
+└── outreach-queue.json # Lead outreach queue
+
+memory/agents/
+├── daily-[date].md     # Agent daily outputs
+└── weekly-brief.md     # Weekly synthesis
+```
+
+### Workflow
+1. Specialist agents write to coordination files
+2. Chief of Staff reads, synthesizes, updates dashboard
+3. Human reviews outputs before critical actions
+4. Crisis items get immediate notification
+
+### Daily Brief Format
+```
+# Morning Brief - [DATE]
+
+## Yesterday's Activity
+- LinkedIn posts: X published
+- Connections sent: X
+- Research: X companies analyzed
+
+## Pipeline Status
+- Active applications: X
+- Interviews scheduled: X
+- This week applications: X
+
+## Today's Priorities
+1. [Priority 1]
+2. [Priority 2]
+3. [Priority 3]
+
+## Attention Needed
+- [Urgent item 1]
+- [Urgent item 2]
+
+## Metrics
+- Engagement rate: X%
+- Connection acceptance: X%
+- Discovery calls booked: X
+```
 
 ---
 

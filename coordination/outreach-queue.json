@@ -1,0 +1,77 @@
+{
+  "last_updated": "2026-02-17T03:00:00Z",
+  "generated_by": "Chief of Staff (Max)",
+  "this_week": {
+    "target": 25,
+    "sent": 15,
+    "accepted": 6,
+    "pending": 10
+  },
+  "today": {
+    "target": 5,
+    "sent": 5,
+    "accepted": 2,
+    "pending": 0
+  },
+  "pending_queue": [
+    {
+      "id": "lead-001",
+      "name": "Dr. Ahmed Al-Mansour",
+      "title": "CEO",
+      "company": "MedCare Hospital Dubai",
+      "type": "hospital_ceo",
+      "status": "researched",
+      "source": "LinkedIn",
+      "research_notes": "Expanding to AI, recent investment news",
+      "personal_angle": "SGH connection",
+      "next_action": "send_connection",
+      "priority": "high"
+    },
+    {
+      "id": "lead-002",
+      "name": "Sarah Johnson",
+      "title": "Founder & CEO",
+      "company": "HealthTech UAE",
+      "type": "healthtech_founder",
+      "status": "researched",
+      "source": "LinkedIn",
+      "research_notes": "Seed stage, Series A prep",
+      "personal_angle": "Talabat scaling story",
+      "next_action": "send_connection",
+      "priority": "high"
+    }
+  ],
+  "warm_leads": [
+    {
+      "id": "warm-001",
+      "name": "Omar Hassan",
+      "title": "CTO",
+      "company": "Digital Health KSA",
+      "status": "connected",
+      "date_connected": "2026-02-15",
+      "last_interaction": "viewed_profile",
+      "next_action": "follow_up",
+      "priority": "high"
+    }
+  ],
+  "follow_ups_due": [
+    {
+      "id": "follow-001",
+      "name": "Dr. Ahmed Al-Mansour",
+      "company": "MedCare Hospital Dubai",
+      "days_since_connection": 3,
+      "follow_up_date": "2026-02-17",
+      "priority": "normal"
+    }
+  ],
+  "targets": {
+    "hospitals_uae": 10,
+    "hospitals_ksa": 10,
+    "healthtech_uae": 10,
+    "healthtech_ksa": 10,
+    "total": 40,
+    "researched": 8,
+    "contacted": 5,
+    "connected": 2
+  }
+}
