@@ -261,6 +261,12 @@ Before responding, ask:
 2. Generate weekly strategy report
 3. Update pipeline metrics
 4. Plan next week's priorities
+5. **WEEKLY SYSTEM AUDIT:**
+   - Audit all cron jobs (working/failing)
+   - Check coordination file usage
+   - Identify manual tasks to automate
+   - Find wasted effort to remove
+   - Propose 3 new automations
 
 ## Success Metrics
 
