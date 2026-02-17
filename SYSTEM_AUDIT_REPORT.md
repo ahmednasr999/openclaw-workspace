@@ -54,7 +54,7 @@
 | /second-brain | ✅ HTTP 200 | Searchable |
 | /documents | ✅ HTTP 200 | CVs listed |
 | /job-tracker | ✅ HTTP 200 | Kanban ready |
-| /cv-optimizer | ✅ HTTP 200 | Generator ready |
+|  | ✅ HTTP 200 | Generator ready |
 | /network | ✅ HTTP 200 | Contacts ready |
 | /analytics | ✅ HTTP 200 | Metrics loaded |
 | /calendar | ✅ HTTP 200 | Events ready |
@@ -82,7 +82,7 @@
 
 #### Issue 2: Missing PDF Generation UI
 **Severity:** Medium  
-**Location:** /cv-optimizer, /documents  
+**Location:** , /documents  
 **Problem:** CVs are text-only in web UI. Users must manually copy to Word to create PDFs.  
 **Impact:** Extra steps for job application submission  
 **Fix:** Add "Export as PDF" button using wkhtmltopdf or similar
