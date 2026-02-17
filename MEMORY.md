@@ -15,19 +15,23 @@
 8. Ask if switch back to MiniMax
 
 **Filename Rules:**
+- Format: `Ahmed Nasr - {Title} - {Company Name}` (spaces and dashes, NO underscores)
+- Apply to BOTH HTML and PDF files
 - Always use actual company name, not recruiter name
-- If company is confidential/unnamed, ask Ahmed for company name before generating PDF
+- If company is confidential/unnamed, use format: `Ahmed Nasr - {Title}` (no company suffix)
 - Title should match the job title exactly
 
 **Example filenames:**
+- `Ahmed Nasr - Senior Program Manager - Nabat.html`
 - `Ahmed Nasr - Senior Program Manager - Nabat.pdf`
+- `Ahmed Nasr - Director of Business Excellence - Equinix.html`
 - `Ahmed Nasr - Director of Business Excellence - Equinix.pdf`
 
 ---
 
 ## CV Design Rules (Permanent — Lessons Learned)
 
-**ALWAYS follow these rules for every CV:**
+**Full ATS guide:** `memory/ats-best-practices.md`
 
 ### ATS-Friendly (Non-Negotiable)
 - ❌ NO tables — ATS scrambles them
@@ -35,19 +39,23 @@
 - ❌ NO text boxes or floating elements
 - ❌ NO headers/footers (often ignored by ATS)
 - ❌ NO images, icons, or graphics
+- ❌ NO special bullet characters (● ► ★)
 - ✅ Single column layout ONLY
-- ✅ Simple bullet lists
-- ✅ Standard section headers (Experience, Education, Skills)
+- ✅ Simple bullet lists (use - or •)
+- ✅ Standard section headers (Professional Summary, Experience, Education, Skills, Certifications)
 - ✅ Reverse chronological order
+- ✅ Consistent date format (MMM YYYY – Present)
 
-### Professional Styling
-- ❌ NO gradient backgrounds — won't render in PDF
-- ❌ NO colored backgrounds with white text — print issues
-- ✅ Clean black & white
-- ✅ Serif font (Times New Roman) or clean sans-serif (Arial, Calibri)
-- ✅ Borders are OK (solid, simple)
-- ✅ Bold for emphasis
-- ✅ Print-safe always
+### Bullet Writing (AVR Pattern)
+Every bullet: **Action Verb + Value/What + Result/Metric**
+- ✅ "Led digital transformation across 15-hospital network, managing $50M budget"
+- ❌ "Responsible for digital transformation projects"
+
+### Keyword Strategy
+- Mirror exact JD phrases (not synonyms)
+- Top 5 JD keywords must appear in Summary + most recent role
+- Include both acronyms AND full terms: "Project Management Professional (PMP)"
+- Critical keywords: 2-3x across CV (naturally distributed)
 
 ---
 
@@ -100,5 +108,11 @@ Format:
 
 ## Key Files
 
-- **Base CV:** `/root/.openclaw/workspace/Ahmed_Nasr_-_Senior_Project_Manager.pdf`
+- **Master CV Data (Source of Truth):** `/root/.openclaw/workspace/memory/master-cv-data.md`
+- **Master CV PDF:** `/root/.openclaw/media/inbound/file_99---61a97145-01ba-402f-b33b-5915c31c8daf.pdf`
+- **Master CV DOCX:** `/root/.openclaw/media/inbound/file_100---a1dce511-4dda-481f-aff5-c9093298c040.docx`
 - **LinkedIn tracker:** `/root/.openclaw/workspace/linkedin_analytics_tracker.md`
+
+## CV Creation Rule (Critical)
+**ALWAYS read `memory/master-cv-data.md` before creating any CV.**
+Never fabricate roles, titles, or achievements. Use exact titles and dates from master CV.
