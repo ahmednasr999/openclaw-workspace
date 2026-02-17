@@ -10,11 +10,18 @@
 3. Recommend model switch to Opus (wait for approval)
 4. Create tailored CV matching keywords & requirements
 5. Export as PDF
-6. **Filename:** `Ahmed Nasr - [Title] - [Company].pdf`
+6. **Filename:** `Ahmed Nasr - {Title} - {Company Name}.pdf`
 7. Send PDF via Telegram
 8. Ask if switch back to MiniMax
 
-**Example filename:** `Ahmed Nasr - Senior Program Manager - Nabat.pdf`
+**Filename Rules:**
+- Always use actual company name, not recruiter name
+- If company is confidential/unnamed, ask Ahmed for company name before generating PDF
+- Title should match the job title exactly
+
+**Example filenames:**
+- `Ahmed Nasr - Senior Program Manager - Nabat.pdf`
+- `Ahmed Nasr - Director of Business Excellence - Equinix.pdf`
 
 ---
 
