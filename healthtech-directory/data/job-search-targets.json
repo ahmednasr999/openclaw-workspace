@@ -1,0 +1,306 @@
+{
+  "exported_at": "2026-02-17T04:09:22.269633",
+  "total": 10,
+  "companies": [
+    {
+      "company_name": "Advanced Medical Partners",
+      "website": "https://advancedmedical.com",
+      "linkedin": "https://linkedin.com/company/advancedmedicalpartners",
+      "location": {
+        "country": "Kuwait",
+        "city": "Kuwait City",
+        "address": "Kuwait City, Kuwait"
+      },
+      "category": "Telemedicine",
+      "size": "SME",
+      "funding": "Series B",
+      "data_quality": "High",
+      "quality_score": 10,
+      "verification": {
+        "status": "verified",
+        "checked_at": "2026-02-17T04:09:22.263473"
+      },
+      "logo_url": null,
+      "pmo_maturity": {
+        "score": 80,
+        "level": "High",
+        "signals": [
+          "sample_signal"
+        ]
+      },
+      "enrichment": {
+        "enriched_at": "2026-02-17T04:09:22.266052"
+      }
+    },
+    {
+      "company_name": "Royal Smart Partners",
+      "website": "https://royalsmart.com",
+      "linkedin": "https://linkedin.com/company/royalsmartpartners",
+      "location": {
+        "country": "KSA",
+        "city": "Jeddah",
+        "address": "Jeddah, KSA"
+      },
+      "category": "Telemedicine",
+      "size": "Enterprise",
+      "funding": "Series B",
+      "data_quality": "High",
+      "quality_score": 10,
+      "verification": {
+        "status": "verified",
+        "checked_at": "2026-02-17T04:09:22.263476"
+      },
+      "logo_url": null,
+      "pmo_maturity": {
+        "score": 80,
+        "level": "High",
+        "signals": [
+          "sample_signal"
+        ]
+      },
+      "enrichment": {
+        "enriched_at": "2026-02-17T04:09:22.266068"
+      }
+    },
+    {
+      "company_name": "Arabian Digital Partners",
+      "website": "https://arabiandigital.com",
+      "linkedin": "https://linkedin.com/company/arabiandigitalpartners",
+      "location": {
+        "country": "Kuwait",
+        "city": "Kuwait City",
+        "address": "Kuwait City, Kuwait"
+      },
+      "category": "MedTech",
+      "size": "Enterprise",
+      "funding": "Series B",
+      "data_quality": "High",
+      "quality_score": 10,
+      "verification": {
+        "status": "verified",
+        "checked_at": "2026-02-17T04:09:22.263478"
+      },
+      "logo_url": null,
+      "pmo_maturity": {
+        "score": 80,
+        "level": "High",
+        "signals": [
+          "sample_signal"
+        ]
+      },
+      "enrichment": {
+        "enriched_at": "2026-02-17T04:09:22.266072"
+      }
+    },
+    {
+      "company_name": "Advanced Care Systems",
+      "website": "https://advancedcare.com",
+      "linkedin": "https://linkedin.com/company/advancedcaresystems",
+      "location": {
+        "country": "UAE",
+        "city": "Abu Dhabi",
+        "address": "Abu Dhabi, UAE"
+      },
+      "category": "Digital Health",
+      "size": "Enterprise",
+      "funding": "Seed",
+      "data_quality": "High",
+      "quality_score": 10,
+      "verification": {
+        "status": "verified",
+        "checked_at": "2026-02-17T04:09:22.263486"
+      },
+      "logo_url": null,
+      "pmo_maturity": {
+        "score": 80,
+        "level": "High",
+        "signals": [
+          "sample_signal"
+        ]
+      },
+      "enrichment": {
+        "enriched_at": "2026-02-17T04:09:22.266089"
+      }
+    },
+    {
+      "company_name": "Delta Care Partners",
+      "website": "https://deltacare.com",
+      "linkedin": "https://linkedin.com/company/deltacarepartners",
+      "location": {
+        "country": "Kuwait",
+        "city": "Kuwait City",
+        "address": "Kuwait City, Kuwait"
+      },
+      "category": "HealthTech",
+      "size": "SME",
+      "funding": "Series A",
+      "data_quality": "High",
+      "quality_score": 10,
+      "verification": {
+        "status": "verified",
+        "checked_at": "2026-02-17T04:09:22.263543"
+      },
+      "logo_url": null,
+      "pmo_maturity": {
+        "score": 80,
+        "level": "High",
+        "signals": [
+          "sample_signal"
+        ]
+      },
+      "enrichment": {
+        "enriched_at": "2026-02-17T04:09:22.266194"
+      }
+    },
+    {
+      "company_name": "Gulf Care Solutions",
+      "website": "https://gulfcare.com",
+      "linkedin": "https://linkedin.com/company/gulfcaresolutions",
+      "location": {
+        "country": "Qatar",
+        "city": "Doha",
+        "address": "Doha, Qatar"
+      },
+      "category": "HealthTech",
+      "size": "Enterprise",
+      "funding": "Bootstrapped",
+      "data_quality": "High",
+      "quality_score": 10,
+      "verification": {
+        "status": "verified",
+        "checked_at": "2026-02-17T04:09:22.263552"
+      },
+      "logo_url": null,
+      "pmo_maturity": {
+        "score": 80,
+        "level": "High",
+        "signals": [
+          "sample_signal"
+        ]
+      },
+      "enrichment": {
+        "enriched_at": "2026-02-17T04:09:22.266224"
+      }
+    },
+    {
+      "company_name": "Advanced Care Partners",
+      "website": "https://advancedcare.com",
+      "linkedin": "https://linkedin.com/company/advancedcarepartners",
+      "location": {
+        "country": "Egypt",
+        "city": "Cairo",
+        "address": "Cairo, Egypt"
+      },
+      "category": "Clinic",
+      "size": "Enterprise",
+      "funding": "Series B",
+      "data_quality": "High",
+      "quality_score": 10,
+      "verification": {
+        "status": "verified",
+        "checked_at": "2026-02-17T04:09:22.263559"
+      },
+      "logo_url": null,
+      "pmo_maturity": {
+        "score": 80,
+        "level": "High",
+        "signals": [
+          "sample_signal"
+        ]
+      },
+      "enrichment": {
+        "enriched_at": "2026-02-17T04:09:22.266245"
+      }
+    },
+    {
+      "company_name": "Delta Medical Group",
+      "website": "https://deltamedical.com",
+      "linkedin": "https://linkedin.com/company/deltamedicalgroup",
+      "location": {
+        "country": "KSA",
+        "city": "Riyadh",
+        "address": "Riyadh, KSA"
+      },
+      "category": "Telemedicine",
+      "size": "Enterprise",
+      "funding": "Bootstrapped",
+      "data_quality": "High",
+      "quality_score": 10,
+      "verification": {
+        "status": "verified",
+        "checked_at": "2026-02-17T04:09:22.263567"
+      },
+      "logo_url": null,
+      "pmo_maturity": {
+        "score": 80,
+        "level": "High",
+        "signals": [
+          "sample_signal"
+        ]
+      },
+      "enrichment": {
+        "enriched_at": "2026-02-17T04:09:22.266261"
+      }
+    },
+    {
+      "company_name": "Royal Pharma Systems",
+      "website": "https://royalpharma.com",
+      "linkedin": "https://linkedin.com/company/royalpharmasystems",
+      "location": {
+        "country": "Kuwait",
+        "city": "Kuwait City",
+        "address": "Kuwait City, Kuwait"
+      },
+      "category": "HealthTech",
+      "size": "SME",
+      "funding": "Seed",
+      "data_quality": "High",
+      "quality_score": 10,
+      "verification": {
+        "status": "verified",
+        "checked_at": "2026-02-17T04:09:22.263568"
+      },
+      "logo_url": null,
+      "pmo_maturity": {
+        "score": 80,
+        "level": "High",
+        "signals": [
+          "sample_signal"
+        ]
+      },
+      "enrichment": {
+        "enriched_at": "2026-02-17T04:09:22.266264"
+      }
+    },
+    {
+      "company_name": "National Pharma Partners",
+      "website": "https://nationalpharma.com",
+      "linkedin": "https://linkedin.com/company/nationalpharmapartners",
+      "location": {
+        "country": "Egypt",
+        "city": "Giza",
+        "address": "Giza, Egypt"
+      },
+      "category": "Hospital",
+      "size": "Enterprise",
+      "funding": "Series B",
+      "data_quality": "High",
+      "quality_score": 10,
+      "verification": {
+        "status": "verified",
+        "checked_at": "2026-02-17T04:09:22.263630"
+      },
+      "logo_url": null,
+      "pmo_maturity": {
+        "score": 80,
+        "level": "High",
+        "signals": [
+          "sample_signal"
+        ]
+      },
+      "enrichment": {
+        "enriched_at": "2026-02-17T04:09:22.266332"
+      }
+    }
+  ]
+}
