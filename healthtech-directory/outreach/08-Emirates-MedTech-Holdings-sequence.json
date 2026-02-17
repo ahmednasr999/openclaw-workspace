@@ -1,0 +1,30 @@
+{
+  "company": "Emirates MedTech Holdings",
+  "website": "https://emiratesmedtechholdings.com",
+  "location": "Jeddah, KSA",
+  "category": "Wellness",
+  "pmo_score": 80,
+  "priority": 8,
+  "sequence": [
+    {
+      "day": 0,
+      "action": "Research",
+      "template": "Subject: Executive PMO Leadership - Emirates MedTech Holdings\n\nHi [Name],\n\nI noticed Emirates MedTech Holdings is leading digital transformation in KSA's healthcare sector.\n\nI'm a Senior Technology Executive with 20+ years experience:\n\u2022 SGH (Egypt): Led $50M transformation, reduced reporting by 97%\n\u2022 Talabat (GCC): Scaled operations 233x in 18 months\n\u2022 Network (8 countries): PMO for 300+ projects\n\nI'm exploring senior leadership opportunities in HealthTech, particularly PMO, Digital Transformation, or CDO roles.\n\nWould you have 15 minutes for a brief call this week?\n\nBest regards,\nAhmed Nasr\nSenior Technology Executive | PMO & AI Transformation\n",
+      "status": "pending"
+    },
+    {
+      "day": 3,
+      "action": "Follow-up",
+      "template": "Subject: Re: Executive PMO Leadership - Emirates MedTech Holdings\n\nHi [Name],\n\nJust following up on my previous message about Emirates MedTech Holdings's digital transformation initiatives.\n\nI'm confident my experience could add value, particularly given:\n\u2022 Proven track record with $50M+ transformations\n\u2022 GCC market expertise (SGH, Talabat, Network)\n\u2022 AI/Automation leadership at scale\n\nHappy to share my portfolio or schedule a brief call at your convenience.\n\nBest,\nAhmed\n",
+      "status": "pending"
+    },
+    {
+      "day": 7,
+      "action": "Final",
+      "template": "Subject: One last thought - Emirates MedTech Holdings\n\nHi [Name],\n\nI'll keep this brief. My background:\n\n\u2022 20+ years in technology leadership\n\u2022 $50M transformation delivery\n\u2022 GCC HealthTech expertise\n\nIf Emirates MedTech Holdings is exploring senior technology leadership, I'd welcome the opportunity to discuss.\n\nMy calendar: https://calendly.com/ahmednasr\n\nBest,\nAhmed\n",
+      "status": "pending"
+    }
+  ],
+  "created_at": "2026-02-17T04:31:44.228877",
+  "status": "pending"
+}
