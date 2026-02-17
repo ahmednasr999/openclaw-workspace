@@ -1,40 +1,90 @@
-# TOOLS.md - Local Notes
+# TOOLS.md - Technical Configs & How-To
 
-Skills define _how_ tools work. This file is for _your_ specifics — the stuff that's unique to your setup.
+*Technical configurations, troubleshooting, and environment-specific setup*
 
-## What Goes Here
+## CV Creation Workflow
 
-Things like:
+### Models by Task
+- **Default/Daily:** MiniMax-M2.1 (free tier)
+- **CV Creation:** Claude Opus 4.5 (requires approval)
+- **Analysis/Research:** Claude Sonnet 4
 
-- Camera names and locations
-- SSH hosts and aliases
-- Preferred voices for TTS
-- Speaker/room names
-- Device nicknames
-- Anything environment-specific
+### File Naming Convention
+- Format: `Ahmed Nasr - {Title} - {Company}.pdf/html`
+- No underscores, use spaces and dashes
+- If company confidential: `Ahmed Nasr - {Title}.pdf`
 
-## Examples
+### ATS Compliance Checklist
+- Single column layout only
+- No tables, multi-column, images, special bullets
+- Standard headers: Professional Summary, Experience, Education, Skills, Certifications
+- AVR bullet pattern: Action + Value + Result
 
-```markdown
-### Cameras
+## Authentication & APIs
 
-- living-room → Main area, 180° wide angle
-- front-door → Entrance, motion-triggered
+### GOG (Gmail/Calendar)
+- **Status:** Setup attempted, OAuth crashing
+- **Workaround:** Manual Gmail cleanup instructions
+- **Issue:** Keyring password conflicts
+- **Alt approach:** Use web interface + guided instructions
 
-### SSH
+### Web Search
+- **Status:** Missing Brave API key
+- **Setup:** `openclaw configure --section web`
+- **Fallback:** Use web_fetch for direct URL content
 
-- home-server → 192.168.1.100, user: admin
+## File Locations
 
-### TTS
+### Master Data
+- **CV Data:** `/memory/master-cv-data.md` (source of truth)
+- **Master PDFs:** `/media/inbound/file_99*.pdf` and `file_100*.docx`
+- **ATS Guide:** `/memory/ats-best-practices.md`
 
-- Preferred voice: "Nova" (warm, slightly British)
-- Default speaker: Kitchen HomePod
-```
+### Marketing Skills
+- **Location:** `/marketing-skills/`
+- **Framework files:** linkedin-transformation-executive.md, transformation-consulting-positioning.md, etc.
 
-## Why Separate?
+### Content Analysis
+- **Reviews:** `/docs/content-claw/caught/` (permanent)
+- **Skips:** `/docs/content-claw/released/skip/` (14-day retention)
 
-Skills are shared. Your setup is yours. Keeping them apart means you can update skills without losing your notes, and share skills without leaking your infrastructure.
+## Troubleshooting
 
----
+### OAuth Issues
+- GOG auth tends to fail on first setup
+- Clear auth: `gog auth remove [email]`
+- Use manual workarounds for Gmail/Calendar
 
-Add whatever helps you do your job. This is your cheat sheet.
+### Model Switching
+- Always ask before switching to paid models
+- Notify when switching back to default
+- Opus for CV creation only
+
+### File Naming Issues
+- Check MEMORY.md for filename rules
+- Master CV data has exact titles and dates
+- Never fabricate roles or achievements
+
+## Environment Setup
+
+### Cron Jobs
+- GitHub backup: Daily
+- Gmail monitoring: 8 AM Cairo (when working)
+- Usage alerts: 9 AM Cairo
+
+### Timezone
+- User: Cairo (Africa/Cairo, UTC+2)
+- System: UTC
+- Always specify timezone for meetings/deadlines
+
+## Quick References
+
+### Skill Activation
+- Built-in: Just reference by name
+- Custom: "Use the [skill-name] skill to help me with..."
+- Always read the skill file when invoked
+
+### Memory Search
+- Use `memory_search` before answering questions about past work
+- Check both MEMORY.md and memory/*.md files
+- Include source citations when helpful
