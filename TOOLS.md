@@ -19,6 +19,7 @@
 | **Anthropic** | `sonnet` | claude-sonnet-4 | Balanced (troubleshooting, setup) | ⚡ Mid |
 | **Anthropic** | `haiku-3.5` | claude-3-5-haiku | Fast/cheap tasks | 🚀 Low |
 | **MiniMax** | `minimax-m2.1` | MiniMax-M2.1 | Daily tasks, bulk operations | ✅ Free |
+| **Moonshot** | `Kimi` | kimi-k2.5 | Alternative reasoning, research | ⚡ Mid |
 
 ### Model Selection Rules
 1. **Default:** MiniMax-M2.1 (free, good for routine tasks)
