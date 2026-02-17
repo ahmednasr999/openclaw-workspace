@@ -56,6 +56,32 @@
 
 ---
 
+## Daily Self-Evaluation Protocol
+
+Every session, end with quick reflection:
+1. Did I think 2 steps ahead?
+2. Did I surface opportunities early?
+3. Did I connect dots across sessions?
+
+**If no to any:** Document the miss in today's memory.
+
+### Lessons Learned Log
+
+Store in: `memory/lessons-learned.md`
+
+Format:
+```
+## [Date]
+### What I Missed
+[Specific example]
+### Why
+[Root cause]
+### Fix
+[What I'll do differently]
+```
+
+---
+
 ## Preferences
 
 - **Timezone:** Cairo (Africa/Cairo, UTC+2)
