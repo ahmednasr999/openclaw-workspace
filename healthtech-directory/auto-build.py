@@ -32,15 +32,16 @@ class HealthTechDirectoryBuilder:
         Path(DATA_DIR).mkdir(parents=True, exist_ok=True)
         self.companies = []
         
-    async def run_day1_auto_scrape(self):
-        """Day 1: Auto-scrape (no manual action)"""
-        log("=" * 60)
-        log("DAY 1: Auto-Scraping")
-        log("=" * 60)
-        log("Generating sample data for initial build...")
-        
-        # Generate sample data directly
+    async def generate_sample_data(self):
+        """Generate sample GCC HealthTech company data"""
         import random
+        
+        # Don't generate if file already exists
+        RAW_FILE = f"{DATA_DIR}/gcc-healthtech-raw.json"
+        if os.path.exists(RAW_FILE):
+            with open(RAW_FILE) as f:
+                data = json.load(f)
+                return data.get("companies", data)
         
         companies = []
         
@@ -89,24 +90,29 @@ class HealthTechDirectoryBuilder:
             
             companies.append(company)
         
+        return companies
+    
+    async def run_day1_auto_scrape(self):
+        """Day 1: Auto-scrape (no manual action)"""
+        log("=" * 60)
+        log("DAY 1: Auto-Scraping")
+        log("=" * 60)
+        
+        RAW_FILE = f"{DATA_DIR}/gcc-healthtech-raw.json"
+        
+        # Check if raw data already exists
+        if os.path.exists(RAW_FILE):
+            log(f"Loading existing data from {RAW_FILE}")
+            with open(RAW_FILE) as f:
+                data = json.load(f)
+            companies = data.get("companies", data) if isinstance(data, dict) else data
+            log(f"✓ Loaded {len(companies)} companies from existing file")
+        else:
+            log("No existing data found. Generating sample data...")
+            companies = await self.generate_sample_data()
+            log(f"✓ Generated {len(companies)} sample companies")
+        
         self.companies = companies
-        
-        # Save
-        output_file = f"{DATA_DIR}/gcc-healthtech-raw.json"
-        output = {
-            "metadata": {
-                "scraped_at": datetime.now().isoformat(),
-                "source": "auto_generator",
-                "total_records": len(companies),
-                "note": "Sample data - replace with real data for production"
-            },
-            "companies": companies
-        }
-        
-        with open(output_file, 'w') as f:
-            json.dump(output, f, indent=2)
-        
-        log(f"✓ Day 1 complete: {len(companies)} companies generated")
         return True
     
     def run_day2_clean(self):
