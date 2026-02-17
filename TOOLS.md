@@ -9,6 +9,28 @@
 - **CV Creation:** Claude Opus 4.5 (requires approval)
 - **Analysis/Research:** Claude Sonnet 4
 
+## Model Strategy (Simplified)
+
+### Available Models (Latest Versions Only)
+
+| Provider | Alias | Model | Use Case | Cost |
+|----------|-------|-------|----------|------|
+| **Anthropic** | `opus` | claude-opus-4-5 | Complex tasks, CV creation | 💎 Premium |
+| **Anthropic** | `sonnet` | claude-sonnet-4 | Balanced (troubleshooting, setup) | ⚡ Mid |
+| **Anthropic** | `haiku-3.5` | claude-3-5-haiku | Fast/cheap tasks | 🚀 Low |
+| **MiniMax** | `minimax-m2.1` | MiniMax-M2.1 | Daily tasks, bulk operations | ✅ Free |
+
+### Model Selection Rules
+1. **Default:** MiniMax-M2.1 (free, good for routine tasks)
+2. **CV Creation:** Claude Opus 4.5 (always ask first)
+3. **Complex Setup:** Claude Sonnet 4
+4. **Quick Tasks:** Haiku 3.5 or MiniMax
+
+### Switching Models
+- Use alias: `switch to opus`, `switch to sonnet`
+- Always notify user when switching to paid models
+- Switch back to MiniMax after completing expensive tasks
+
 ### File Naming Convention
 - Format: `Ahmed Nasr - {Title} - {Company}.pdf/html`
 - No underscores, use spaces and dashes
@@ -22,11 +44,13 @@
 
 ## Authentication & APIs
 
-### GOG (Gmail/Calendar)
-- **Status:** Setup attempted, OAuth crashing
-- **Workaround:** Manual Gmail cleanup instructions
-- **Issue:** Keyring password conflicts
-- **Alt approach:** Use web interface + guided instructions
+### Gmail (Himalaya)
+- **Status:** ✅ WORKING - Full IMAP/SMTP access
+- **Tool:** Himalaya email client
+- **Auth:** Gmail App Password (`wvdklorwnunbyjir` in `/root/.config/gmail-smtp.json`)
+- **Capabilities:** List, read, delete, move emails, folder management
+- **Limitation:** Cannot access Gmail category tabs (Promotions, Social) directly via IMAP
+- **Note:** GOG OAuth was abandoned due to persistent keyring issues
 
 ### Web Search
 - **Status:** Missing Brave API key
