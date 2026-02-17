@@ -4,6 +4,40 @@ This file defines the sub-agents available to the orchestrator. Each agent has a
 
 ---
 
+## Proactive Memory Rules
+
+**Always check these BEFORE asking the user:**
+
+1. **Credentials/Config:**
+   - Check `~/.env` or `~/.credentials/` before asking for passwords
+   - Check `~/.openclaw/` for tokens and API keys
+   - Run `openclaw config.get` before asking for settings
+
+2. **Coordination Files:**
+   - Check `coordination/dashboard.json` for metrics and priorities
+   - Check `coordination/pipeline.json` for job application status
+   - Check `coordination/content-calendar.json` for content schedule
+   - Check `coordination/outreach-queue.json` for lead status
+
+3. **Memory:**
+   - Check `MEMORY.md` for long-term context
+   - Check `memory/agents/daily-*.md` for recent session outputs
+   - Check `memory/lessons-learned.md` for recurring issues
+
+4. **Context Files:**
+   - Check `TOOLS.md` before saying you can't do something
+   - Check `IDENTITY.md`, `USER.md`, `SOUL.md` for user preferences
+   - Check `SKILL.md` files for capability definitions
+
+5. **Before Asking for Info:**
+   - Verify if you've already created a file before creating it again
+   - Check Git history (`git log`) before asking what changed
+   - Check cron jobs (`openclaw cron list`) before asking about schedules
+
+**Rule:** If the answer exists in a file, FIND IT. Don't ask.
+
+---
+
 ## Orchestrator (Main Agent)
 
 **Role:** Task router and coordinator
