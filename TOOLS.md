@@ -15,8 +15,10 @@
 
 | Provider | Alias | Model | Use Case | Cost | Status |
 |----------|-------|-------|----------|------|--------|
-| **Anthropic** | `opus` | claude-opus-4-5 | Complex tasks, CV creation | 💎 Premium | ✅ Works |
-| **Anthropic** | `sonnet` | claude-sonnet-4 | Balanced (troubleshooting, setup) | ⚡ Mid | ✅ Works |
+| **Anthropic** | `opus` | claude-opus-4-6 | Complex tasks, CV creation | 💎 Premium | ✅ Works |
+| **Anthropic** | `sonnet` | claude-sonnet-4-6 | Balanced (troubleshooting, setup) | ⚡ Mid | ✅ Works |
+| **Anthropic** | `opus-4.5` | claude-opus-4-5 | Legacy fallback | 💎 Premium | ✅ Works |
+| **Anthropic** | `sonnet-4` | claude-sonnet-4 | Legacy fallback | ⚡ Mid | ✅ Works |
 | **MiniMax** | `minimax-m2.1` | MiniMax-M2.1 | Daily tasks, bulk operations | ✅ Free | ✅ Works |
 | **Moonshot** | `Kimi` | kimi-k2.5 | Alternative reasoning, research | ⚡ Mid | ✅ Works |
 
