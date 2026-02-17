@@ -1,0 +1,62 @@
+{
+  "last_updated": "2026-02-17T03:00:00Z",
+  "generated_by": "Chief of Staff (Max)",
+  "this_week": {
+    "posts_published": 1,
+    "posts_scheduled": 2,
+    "drafts_ready": 2,
+    "target_posts": 3
+  },
+  "published": [
+    {
+      "date": "2026-02-17",
+      "topic": "AI PMO Transformation",
+      "engagement": {
+        "likes": 45,
+        "comments": 8,
+        "shares": 3
+      }
+    }
+  ],
+  "scheduled": [
+    {
+      "date": "2026-02-19",
+      "topic": "EMR ROI",
+      "status": "ready",
+      "time": "9:00 AM"
+    },
+    {
+      "date": "2026-02-21",
+      "topic": "HealthTech Scaling Playbook",
+      "status": "draft",
+      "time": "9:00 AM"
+    }
+  ],
+  "drafts": [
+    {
+      "topic": "Hospital CFO Investment Case",
+      "status": "ready_for_review",
+      "created": "2026-02-17",
+      "notes": "Needs human approval"
+    },
+    {
+      "topic": "Saying No to 6-Figure Salary",
+      "status": "draft",
+      "created": "2026-02-17",
+      "notes": "Personal story angle"
+    }
+  ],
+  "content_ideas": [
+    {
+      "topic": "HealthTech Leaders Moment",
+      "source": "Research",
+      "status": "idea",
+      "notes": "Industry timing piece"
+    }
+  ],
+  "performance": {
+    "avg_engagement_rate": 4.2,
+    "best_performing_topic": "AI PMO Transformation",
+    "worst_performing_topic": "Test Post"
+  }
+}

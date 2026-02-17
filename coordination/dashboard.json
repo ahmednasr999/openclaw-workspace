@@ -1,0 +1,53 @@
+{
+  "last_updated": "2026-02-17T03:00:00Z",
+  "generated_by": "Chief of Staff (Max)",
+  "pipeline": {
+    "active_applications": 5,
+    "interview_scheduled": 2,
+    "offer_pending": 0,
+    "rejected": 3,
+    "this_week": {
+      "applied": 3,
+      "responses_received": 2,
+      "interviews_scheduled": 1
+    }
+  },
+  "outreach": {
+    "connections_sent_today": 5,
+    "connections_sent_this_week": 15,
+    "discovery_calls_booked": 1,
+    "pending_followups": 3
+  },
+  "content": {
+    "posts_published_this_week": 2,
+    "posts_scheduled": 1,
+    "drafts_ready": 2,
+    "engagement_rate": 4.2
+  },
+  "revenue": {
+    "month": 1,
+    "current": 0,
+    "target": 25000,
+    "projects_pipeline": 0
+  },
+  "agents_status": {
+    "chief_of_staff": "active",
+    "content_agent": "pending",
+    "outreach_agent": "pending",
+    "research_agent": "pending",
+    "scheduler_agent": "active"
+  },
+  "priorities_today": [
+    "Publish Post 2 (EMR ROI)",
+    "Send 5+ connection requests",
+    "Follow up with warm leads",
+    "Prepare for interview (if scheduled)"
+  ],
+  "attention_needed": [
+    {
+      "item": "Hospital CEO (Dubai) connection",
+      "status": "pending",
+      "urgency": "normal"
+    }
+  ]
+}
