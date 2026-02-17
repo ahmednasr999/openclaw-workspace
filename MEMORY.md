@@ -71,14 +71,31 @@ Every bullet: **Action Verb + Value/What + Result/Metric**
 
 ---
 
-## Daily Self-Evaluation Protocol
+## Memory System Protocol
 
-Every session, end with quick reflection:
-1. Did I think 2 steps ahead?
-2. Did I surface opportunities early?
-3. Did I connect dots across sessions?
+### Session Startup (Every Session)
+1. **Read MEMORY.md** (this file) — Long-term context
+2. **Check active-tasks.md** — Resume any interrupted work  
+3. **Read today's daily notes** if they exist (memory/YYYY-MM-DD.md)
 
-**If no to any:** Document the miss in today's memory.
+### During Session (Immediate Capture)
+Write to daily notes immediately when:
+- ✅ Complete something important
+- 🎯 Learn a user preference  
+- 📋 A decision gets made
+- 💡 Something worth remembering happens
+
+### Finding Things
+- **Search:** Use `memory_search "terms"` across all memory files
+- **Specific sections:** Use `memory_get` to pull exact content
+
+### Maintenance
+- **Weekly:** Move important daily notes to MEMORY.md
+- **Monthly:** Move technical learnings to TOOLS.md  
+- **Quarterly:** Remove outdated content
+
+### Principle
+**Text beats brain.** If you want to remember it, write it down.
 
 ### Lessons Learned Log
 
@@ -108,10 +125,21 @@ Format:
 
 ## Key Files
 
-- **Master CV Data (Source of Truth):** `/root/.openclaw/workspace/memory/master-cv-data.md`
+### Core Memory
+- **MEMORY.md** — This file, long-term context (read every session)
+- **TOOLS.md** — Technical configs and how-tos
+- **memory/active-tasks.md** — In-progress work (check on startup)
+- **memory/YYYY-MM-DD.md** — Daily notes (immediate capture)
+- **memory/master-cv-data.md** — CV source of truth
+
+### Master CV Files
 - **Master CV PDF:** `/root/.openclaw/media/inbound/file_99---61a97145-01ba-402f-b33b-5915c31c8daf.pdf`
 - **Master CV DOCX:** `/root/.openclaw/media/inbound/file_100---a1dce511-4dda-481f-aff5-c9093298c040.docx`
-- **LinkedIn tracker:** `/root/.openclaw/workspace/linkedin_analytics_tracker.md`
+
+### Skills & Frameworks
+- **ATS Best Practices:** `memory/ats-best-practices.md`
+- **Marketing Skills:** `marketing-skills/` directory
+- **Content Analysis:** `docs/content-claw/caught/` directory
 
 ## CV Creation Rule (Critical)
 **ALWAYS read `memory/master-cv-data.md` before creating any CV.**
