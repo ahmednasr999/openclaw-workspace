@@ -9,26 +9,32 @@
 - **CV Creation:** Claude Opus 4.5 (requires approval)
 - **Analysis/Research:** Claude Sonnet 4
 
-## Model Strategy (Simplified)
+## Model Strategy (Verified Working - 2026-02-17)
 
-### Available Models (Latest Versions Only)
+### Available Models (Tested & Confirmed)
 
-| Provider | Alias | Model | Use Case | Cost |
-|----------|-------|-------|----------|------|
-| **Anthropic** | `opus` | claude-opus-4-5 | Complex tasks, CV creation | 💎 Premium |
-| **Anthropic** | `sonnet` | claude-sonnet-4 | Balanced (troubleshooting, setup) | ⚡ Mid |
-| **Anthropic** | `haiku-3.5` | claude-3-5-haiku | Fast/cheap tasks | 🚀 Low |
-| **MiniMax** | `minimax-m2.1` | MiniMax-M2.1 | Daily tasks, bulk operations | ✅ Free |
-| **Moonshot** | `Kimi` | kimi-k2.5 | Alternative reasoning, research | ⚡ Mid |
+| Provider | Alias | Model | Use Case | Cost | Status |
+|----------|-------|-------|----------|------|--------|
+| **Anthropic** | `opus` | claude-opus-4-5 | Complex tasks, CV creation | 💎 Premium | ✅ Works |
+| **Anthropic** | `sonnet` | claude-sonnet-4 | Balanced (troubleshooting, setup) | ⚡ Mid | ✅ Works |
+| **MiniMax** | `minimax-m2.1` | MiniMax-M2.1 | Daily tasks, bulk operations | ✅ Free | ✅ Works |
+| **Moonshot** | `Kimi` | kimi-k2.5 | Alternative reasoning, research | ⚡ Mid | ✅ Works |
+
+### Not Working (Do Not Use)
+
+| Provider | Alias | Model | Issue |
+|----------|-------|-------|-------|
+| **Anthropic** | `haiku-3.5` | claude-3-5-haiku-20250520 | ❌ 404 Error |
+| **Anthropic** | `haiku-3` | claude-3-haiku-20240307 | ❓ Untested |
 
 ### Model Selection Rules
 1. **Default:** MiniMax-M2.1 (free, good for routine tasks)
 2. **CV Creation:** Claude Opus 4.5 (always ask first)
 3. **Complex Setup:** Claude Sonnet 4
-4. **Quick Tasks:** Haiku 3.5 or MiniMax
+4. **Alternative Reasoning:** Kimi K2.5
 
 ### Switching Models
-- Use alias: `switch to opus`, `switch to sonnet`
+- Use alias: `switch to opus`, `switch to sonnet`, `switch to Kimi`
 - Always notify user when switching to paid models
 - Switch back to MiniMax after completing expensive tasks
 
