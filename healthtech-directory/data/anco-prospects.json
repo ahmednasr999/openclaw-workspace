@@ -1,220 +1,24 @@
 {
-  "exported_at": "2026-02-17T04:09:22.270415",
-  "total": 55,
+  "exported_at": "2026-02-17T04:16:01.601681",
+  "total": 45,
   "companies": [
     {
-      "company_name": "Advanced Health Group",
-      "website": "https://advancedhealth.com",
-      "linkedin": "https://linkedin.com/company/advancedhealthgroup",
-      "location": {
-        "country": "UAE",
-        "city": "Abu Dhabi",
-        "address": "Abu Dhabi, UAE"
-      },
-      "category": "Telemedicine",
-      "size": "SME",
-      "funding": "Seed",
-      "data_quality": "High",
-      "quality_score": 10,
-      "verification": {
-        "status": "verified",
-        "checked_at": "2026-02-17T04:09:22.263461"
-      },
-      "logo_url": null,
-      "pmo_maturity": {
-        "score": 25,
-        "level": "Low",
-        "signals": []
-      },
-      "enrichment": {
-        "enriched_at": "2026-02-17T04:09:22.266018"
-      }
-    },
-    {
-      "company_name": "Arabian Clinic Solutions",
-      "website": "https://arabianclinic.com",
-      "linkedin": "https://linkedin.com/company/arabianclinicsolutions",
-      "location": {
-        "country": "KSA",
-        "city": "Jeddah",
-        "address": "Jeddah, KSA"
-      },
-      "category": "MedTech",
-      "size": "Startup",
-      "funding": "Bootstrapped",
-      "data_quality": "High",
-      "quality_score": 8,
-      "verification": {
-        "status": "verified",
-        "checked_at": "2026-02-17T04:09:22.263467"
-      },
-      "logo_url": null,
-      "pmo_maturity": {
-        "score": 25,
-        "level": "Low",
-        "signals": []
-      },
-      "enrichment": {
-        "enriched_at": "2026-02-17T04:09:22.266034"
-      }
-    },
-    {
-      "company_name": "Arabian Health Group",
-      "website": "https://arabianhealth.com",
-      "linkedin": "https://linkedin.com/company/arabianhealthgroup",
-      "location": {
-        "country": "KSA",
-        "city": "Jeddah",
-        "address": "Jeddah, KSA"
-      },
-      "category": "Digital Health",
-      "size": "Startup",
-      "funding": "Bootstrapped",
-      "data_quality": "High",
-      "quality_score": 8,
-      "verification": {
-        "status": "verified",
-        "checked_at": "2026-02-17T04:09:22.263470"
-      },
-      "logo_url": null,
-      "pmo_maturity": {
-        "score": 25,
-        "level": "Low",
-        "signals": []
-      },
-      "enrichment": {
-        "enriched_at": "2026-02-17T04:09:22.266038"
-      }
-    },
-    {
-      "company_name": "Delta Pharma Holdings",
-      "website": "https://deltapharma.com",
-      "linkedin": "https://linkedin.com/company/deltapharmaholdings",
-      "location": {
-        "country": "Egypt",
-        "city": "Giza",
-        "address": "Giza, Egypt"
-      },
-      "category": "Digital Health",
-      "size": "Startup",
-      "funding": "Series B",
-      "data_quality": "High",
-      "quality_score": 8,
-      "verification": {
-        "status": "verified",
-        "checked_at": "2026-02-17T04:09:22.263472"
-      },
-      "logo_url": null,
-      "pmo_maturity": {
-        "score": 25,
-        "level": "Low",
-        "signals": []
-      },
-      "enrichment": {
-        "enriched_at": "2026-02-17T04:09:22.266041"
-      }
-    },
-    {
-      "company_name": "Emirates Care Systems",
-      "website": "https://emiratescare.com",
-      "linkedin": "https://linkedin.com/company/emiratescaresystems",
-      "location": {
-        "country": "Kuwait",
-        "city": "Kuwait City",
-        "address": "Kuwait City, Kuwait"
-      },
-      "category": "Clinic",
-      "size": "Startup",
-      "funding": "Bootstrapped",
-      "data_quality": "High",
-      "quality_score": 8,
-      "verification": {
-        "status": "verified",
-        "checked_at": "2026-02-17T04:09:22.263479"
-      },
-      "logo_url": null,
-      "pmo_maturity": {
-        "score": 25,
-        "level": "Low",
-        "signals": []
-      },
-      "enrichment": {
-        "enriched_at": "2026-02-17T04:09:22.266074"
-      }
-    },
-    {
-      "company_name": "National Clinic Solutions",
-      "website": "https://nationalclinic.com",
-      "linkedin": "https://linkedin.com/company/nationalclinicsolutions",
-      "location": {
-        "country": "KSA",
-        "city": "Jeddah",
-        "address": "Jeddah, KSA"
-      },
-      "category": "Telemedicine",
-      "size": "Startup",
-      "funding": "Seed",
-      "data_quality": "High",
-      "quality_score": 8,
-      "verification": {
-        "status": "verified",
-        "checked_at": "2026-02-17T04:09:22.263481"
-      },
-      "logo_url": null,
-      "pmo_maturity": {
-        "score": 25,
-        "level": "Low",
-        "signals": []
-      },
-      "enrichment": {
-        "enriched_at": "2026-02-17T04:09:22.266077"
-      }
-    },
-    {
-      "company_name": "Nile Medical Holdings",
-      "website": "https://nilemedical.com",
-      "linkedin": "https://linkedin.com/company/nilemedicalholdings",
-      "location": {
-        "country": "KSA",
-        "city": "Riyadh",
-        "address": "Riyadh, KSA"
-      },
-      "category": "Clinic",
-      "size": "Startup",
-      "funding": "Seed",
-      "data_quality": "High",
-      "quality_score": 8,
-      "verification": {
-        "status": "verified",
-        "checked_at": "2026-02-17T04:09:22.263482"
-      },
-      "logo_url": null,
-      "pmo_maturity": {
-        "score": 25,
-        "level": "Low",
-        "signals": []
-      },
-      "enrichment": {
-        "enriched_at": "2026-02-17T04:09:22.266079"
-      }
-    },
-    {
-      "company_name": "Royal Health Systems",
-      "website": "https://royalhealth.com",
-      "linkedin": "https://linkedin.com/company/royalhealthsystems",
+      "company_name": "Advanced Medical Systems",
+      "website": "https://advancedmedical.com",
+      "linkedin": "https://linkedin.com/company/advancedmedicalsystems",
       "location": {
         "country": "Egypt",
         "city": "Alexandria",
         "address": "Alexandria, Egypt"
       },
-      "category": "Clinic",
-      "size": "Enterprise",
+      "category": "HealthTech",
+      "size": "Startup",
       "funding": "Series A",
       "data_quality": "High",
-      "quality_score": 10,
+      "quality_score": 8,
       "verification": {
         "status": "verified",
-        "checked_at": "2026-02-17T04:09:22.263488"
+        "checked_at": "2026-02-17T04:16:01.596003"
       },
       "logo_url": null,
       "pmo_maturity": {
@@ -223,26 +27,82 @@
         "signals": []
       },
       "enrichment": {
-        "enriched_at": "2026-02-17T04:09:22.266092"
+        "enriched_at": "2026-02-17T04:16:01.598120"
       }
     },
     {
-      "company_name": "Royal Medical Technologies",
-      "website": "https://royalmedical.com",
-      "linkedin": "https://linkedin.com/company/royalmedicaltechnologies",
+      "company_name": "Delta Pharma Technologies",
+      "website": "https://deltapharma.com",
+      "linkedin": "https://linkedin.com/company/deltapharmatechnologies",
+      "location": {
+        "country": "KSA",
+        "city": "Dammam",
+        "address": "Dammam, KSA"
+      },
+      "category": "Clinic",
+      "size": "Startup",
+      "funding": "Series A",
+      "data_quality": "High",
+      "quality_score": 8,
+      "verification": {
+        "status": "verified",
+        "checked_at": "2026-02-17T04:16:01.596006"
+      },
+      "logo_url": null,
+      "pmo_maturity": {
+        "score": 25,
+        "level": "Low",
+        "signals": []
+      },
+      "enrichment": {
+        "enriched_at": "2026-02-17T04:16:01.598129"
+      }
+    },
+    {
+      "company_name": "Royal Health Holdings",
+      "website": "https://royalhealth.com",
+      "linkedin": "https://linkedin.com/company/royalhealthholdings",
+      "location": {
+        "country": "KSA",
+        "city": "Dammam",
+        "address": "Dammam, KSA"
+      },
+      "category": "MedTech",
+      "size": "SME",
+      "funding": "Series B",
+      "data_quality": "High",
+      "quality_score": 10,
+      "verification": {
+        "status": "verified",
+        "checked_at": "2026-02-17T04:16:01.596011"
+      },
+      "logo_url": null,
+      "pmo_maturity": {
+        "score": 25,
+        "level": "Low",
+        "signals": []
+      },
+      "enrichment": {
+        "enriched_at": "2026-02-17T04:16:01.598172"
+      }
+    },
+    {
+      "company_name": "Advanced Hospital Group",
+      "website": "https://advancedhospital.com",
+      "linkedin": "https://linkedin.com/company/advancedhospitalgroup",
       "location": {
         "country": "Kuwait",
         "city": "Kuwait City",
         "address": "Kuwait City, Kuwait"
       },
       "category": "Hospital",
-      "size": "Enterprise",
-      "funding": "Series A",
+      "size": "Startup",
+      "funding": "Bootstrapped",
       "data_quality": "High",
-      "quality_score": 10,
+      "quality_score": 8,
       "verification": {
         "status": "verified",
-        "checked_at": "2026-02-17T04:09:22.263494"
+        "checked_at": "2026-02-17T04:16:01.596012"
       },
       "logo_url": null,
       "pmo_maturity": {
@@ -251,13 +111,41 @@
         "signals": []
       },
       "enrichment": {
-        "enriched_at": "2026-02-17T04:09:22.266109"
+        "enriched_at": "2026-02-17T04:16:01.598174"
       }
     },
     {
-      "company_name": "National Medical Systems",
-      "website": "https://nationalmedical.com",
-      "linkedin": "https://linkedin.com/company/nationalmedicalsystems",
+      "company_name": "National Digital Group",
+      "website": "https://nationaldigital.com",
+      "linkedin": "https://linkedin.com/company/nationaldigitalgroup",
+      "location": {
+        "country": "Bahrain",
+        "city": "Manama",
+        "address": "Manama, Bahrain"
+      },
+      "category": "Hospital",
+      "size": "Startup",
+      "funding": "Series A",
+      "data_quality": "High",
+      "quality_score": 8,
+      "verification": {
+        "status": "verified",
+        "checked_at": "2026-02-17T04:16:01.596013"
+      },
+      "logo_url": null,
+      "pmo_maturity": {
+        "score": 25,
+        "level": "Low",
+        "signals": []
+      },
+      "enrichment": {
+        "enriched_at": "2026-02-17T04:16:01.598176"
+      }
+    },
+    {
+      "company_name": "Arabian Health Partners",
+      "website": "https://arabianhealth.com",
+      "linkedin": "https://linkedin.com/company/arabianhealthpartners",
       "location": {
         "country": "Bahrain",
         "city": "Manama",
@@ -265,12 +153,12 @@
       },
       "category": "Digital Health",
       "size": "Startup",
-      "funding": "Bootstrapped",
+      "funding": "Series B",
       "data_quality": "High",
       "quality_score": 8,
       "verification": {
         "status": "verified",
-        "checked_at": "2026-02-17T04:09:22.263496"
+        "checked_at": "2026-02-17T04:16:01.596015"
       },
       "logo_url": null,
       "pmo_maturity": {
@@ -279,138 +167,26 @@
         "signals": []
       },
       "enrichment": {
-        "enriched_at": "2026-02-17T04:09:22.266111"
+        "enriched_at": "2026-02-17T04:16:01.598182"
       }
     },
     {
-      "company_name": "Gulf Clinic Partners",
-      "website": "https://gulfclinic.com",
-      "linkedin": "https://linkedin.com/company/gulfclinicpartners",
+      "company_name": "Arabian Medical Solutions",
+      "website": "https://arabianmedical.com",
+      "linkedin": "https://linkedin.com/company/arabianmedicalsolutions",
       "location": {
-        "country": "UAE",
-        "city": "Abu Dhabi",
-        "address": "Abu Dhabi, UAE"
-      },
-      "category": "Digital Health",
-      "size": "Enterprise",
-      "funding": "Seed",
-      "data_quality": "High",
-      "quality_score": 10,
-      "verification": {
-        "status": "verified",
-        "checked_at": "2026-02-17T04:09:22.263497"
-      },
-      "logo_url": null,
-      "pmo_maturity": {
-        "score": 25,
-        "level": "Low",
-        "signals": []
-      },
-      "enrichment": {
-        "enriched_at": "2026-02-17T04:09:22.266115"
-      }
-    },
-    {
-      "company_name": "Emirates Pharma Technologies",
-      "website": "https://emiratespharma.com",
-      "linkedin": "https://linkedin.com/company/emiratespharmatechnologies",
-      "location": {
-        "country": "UAE",
-        "city": "Sharjah",
-        "address": "Sharjah, UAE"
+        "country": "Bahrain",
+        "city": "Manama",
+        "address": "Manama, Bahrain"
       },
       "category": "HealthTech",
-      "size": "Startup",
-      "funding": "Seed",
-      "data_quality": "High",
-      "quality_score": 8,
-      "verification": {
-        "status": "verified",
-        "checked_at": "2026-02-17T04:09:22.263498"
-      },
-      "logo_url": null,
-      "pmo_maturity": {
-        "score": 25,
-        "level": "Low",
-        "signals": []
-      },
-      "enrichment": {
-        "enriched_at": "2026-02-17T04:09:22.266118"
-      }
-    },
-    {
-      "company_name": "Gulf Digital Group",
-      "website": "https://gulfdigital.com",
-      "linkedin": "https://linkedin.com/company/gulfdigitalgroup",
-      "location": {
-        "country": "Kuwait",
-        "city": "Kuwait City",
-        "address": "Kuwait City, Kuwait"
-      },
-      "category": "Hospital",
-      "size": "Enterprise",
-      "funding": "Bootstrapped",
-      "data_quality": "High",
-      "quality_score": 10,
-      "verification": {
-        "status": "verified",
-        "checked_at": "2026-02-17T04:09:22.263500"
-      },
-      "logo_url": null,
-      "pmo_maturity": {
-        "score": 25,
-        "level": "Low",
-        "signals": []
-      },
-      "enrichment": {
-        "enriched_at": "2026-02-17T04:09:22.266121"
-      }
-    },
-    {
-      "company_name": "Delta Medical Technologies",
-      "website": "https://deltamedical.com",
-      "linkedin": "https://linkedin.com/company/deltamedicaltechnologies",
-      "location": {
-        "country": "KSA",
-        "city": "Dammam",
-        "address": "Dammam, KSA"
-      },
-      "category": "HealthTech",
-      "size": "Startup",
-      "funding": "Series A",
-      "data_quality": "High",
-      "quality_score": 8,
-      "verification": {
-        "status": "verified",
-        "checked_at": "2026-02-17T04:09:22.263501"
-      },
-      "logo_url": null,
-      "pmo_maturity": {
-        "score": 25,
-        "level": "Low",
-        "signals": []
-      },
-      "enrichment": {
-        "enriched_at": "2026-02-17T04:09:22.266123"
-      }
-    },
-    {
-      "company_name": "National Digital Holdings",
-      "website": "https://nationaldigital.com",
-      "linkedin": "https://linkedin.com/company/nationaldigitalholdings",
-      "location": {
-        "country": "UAE",
-        "city": "Abu Dhabi",
-        "address": "Abu Dhabi, UAE"
-      },
-      "category": "Hospital",
       "size": "Enterprise",
       "funding": "Series B",
       "data_quality": "High",
       "quality_score": 10,
       "verification": {
         "status": "verified",
-        "checked_at": "2026-02-17T04:09:22.263503"
+        "checked_at": "2026-02-17T04:16:01.596016"
       },
       "logo_url": null,
       "pmo_maturity": {
@@ -419,26 +195,110 @@
         "signals": []
       },
       "enrichment": {
-        "enriched_at": "2026-02-17T04:09:22.266127"
+        "enriched_at": "2026-02-17T04:16:01.598186"
       }
     },
     {
-      "company_name": "Arabian Clinic Systems",
-      "website": "https://arabianclinic.com",
-      "linkedin": "https://linkedin.com/company/arabianclinicsystems",
+      "company_name": "Arabian Care Systems",
+      "website": "https://arabiancare.com",
+      "linkedin": "https://linkedin.com/company/arabiancaresystems",
+      "location": {
+        "country": "KSA",
+        "city": "Jeddah",
+        "address": "Jeddah, KSA"
+      },
+      "category": "HealthTech",
+      "size": "Startup",
+      "funding": "Series B",
+      "data_quality": "High",
+      "quality_score": 8,
+      "verification": {
+        "status": "verified",
+        "checked_at": "2026-02-17T04:16:01.596017"
+      },
+      "logo_url": null,
+      "pmo_maturity": {
+        "score": 25,
+        "level": "Low",
+        "signals": []
+      },
+      "enrichment": {
+        "enriched_at": "2026-02-17T04:16:01.598192"
+      }
+    },
+    {
+      "company_name": "Gulf Care Holdings",
+      "website": "https://gulfcare.com",
+      "linkedin": "https://linkedin.com/company/gulfcareholdings",
+      "location": {
+        "country": "Qatar",
+        "city": "Doha",
+        "address": "Doha, Qatar"
+      },
+      "category": "Telemedicine",
+      "size": "SME",
+      "funding": "Series B",
+      "data_quality": "High",
+      "quality_score": 10,
+      "verification": {
+        "status": "verified",
+        "checked_at": "2026-02-17T04:16:01.596018"
+      },
+      "logo_url": null,
+      "pmo_maturity": {
+        "score": 25,
+        "level": "Low",
+        "signals": []
+      },
+      "enrichment": {
+        "enriched_at": "2026-02-17T04:16:01.598199"
+      }
+    },
+    {
+      "company_name": "National Health Partners",
+      "website": "https://nationalhealth.com",
+      "linkedin": "https://linkedin.com/company/nationalhealthpartners",
+      "location": {
+        "country": "Egypt",
+        "city": "Cairo",
+        "address": "Cairo, Egypt"
+      },
+      "category": "Digital Health",
+      "size": "Startup",
+      "funding": "Series A",
+      "data_quality": "High",
+      "quality_score": 8,
+      "verification": {
+        "status": "verified",
+        "checked_at": "2026-02-17T04:16:01.596020"
+      },
+      "logo_url": null,
+      "pmo_maturity": {
+        "score": 25,
+        "level": "Low",
+        "signals": []
+      },
+      "enrichment": {
+        "enriched_at": "2026-02-17T04:16:01.598204"
+      }
+    },
+    {
+      "company_name": "National Clinic Group",
+      "website": "https://nationalclinic.com",
+      "linkedin": "https://linkedin.com/company/nationalclinicgroup",
       "location": {
         "country": "Egypt",
         "city": "Alexandria",
         "address": "Alexandria, Egypt"
       },
       "category": "Hospital",
-      "size": "SME",
-      "funding": "Bootstrapped",
+      "size": "Startup",
+      "funding": "Series A",
       "data_quality": "High",
-      "quality_score": 10,
+      "quality_score": 8,
       "verification": {
         "status": "verified",
-        "checked_at": "2026-02-17T04:09:22.263506"
+        "checked_at": "2026-02-17T04:16:01.596021"
       },
       "logo_url": null,
       "pmo_maturity": {
@@ -447,13 +307,377 @@
         "signals": []
       },
       "enrichment": {
-        "enriched_at": "2026-02-17T04:09:22.266138"
+        "enriched_at": "2026-02-17T04:16:01.598206"
       }
     },
     {
-      "company_name": "Emirates Medical Systems",
-      "website": "https://emiratesmedical.com",
-      "linkedin": "https://linkedin.com/company/emiratesmedicalsystems",
+      "company_name": "Advanced Hospital Solutions",
+      "website": "https://advancedhospital.com",
+      "linkedin": "https://linkedin.com/company/advancedhospitalsolutions",
+      "location": {
+        "country": "Kuwait",
+        "city": "Kuwait City",
+        "address": "Kuwait City, Kuwait"
+      },
+      "category": "HealthTech",
+      "size": "SME",
+      "funding": "Series A",
+      "data_quality": "High",
+      "quality_score": 10,
+      "verification": {
+        "status": "verified",
+        "checked_at": "2026-02-17T04:16:01.596024"
+      },
+      "logo_url": null,
+      "pmo_maturity": {
+        "score": 25,
+        "level": "Low",
+        "signals": []
+      },
+      "enrichment": {
+        "enriched_at": "2026-02-17T04:16:01.598363"
+      }
+    },
+    {
+      "company_name": "Emirates Clinic Solutions",
+      "website": "https://emiratesclinic.com",
+      "linkedin": "https://linkedin.com/company/emiratesclinicsolutions",
+      "location": {
+        "country": "Kuwait",
+        "city": "Kuwait City",
+        "address": "Kuwait City, Kuwait"
+      },
+      "category": "Hospital",
+      "size": "Startup",
+      "funding": "Seed",
+      "data_quality": "High",
+      "quality_score": 8,
+      "verification": {
+        "status": "verified",
+        "checked_at": "2026-02-17T04:16:01.596026"
+      },
+      "logo_url": null,
+      "pmo_maturity": {
+        "score": 25,
+        "level": "Low",
+        "signals": []
+      },
+      "enrichment": {
+        "enriched_at": "2026-02-17T04:16:01.598381"
+      }
+    },
+    {
+      "company_name": "Gulf Medical Solutions",
+      "website": "https://gulfmedical.com",
+      "linkedin": "https://linkedin.com/company/gulfmedicalsolutions",
+      "location": {
+        "country": "Bahrain",
+        "city": "Manama",
+        "address": "Manama, Bahrain"
+      },
+      "category": "Digital Health",
+      "size": "SME",
+      "funding": "Series A",
+      "data_quality": "High",
+      "quality_score": 10,
+      "verification": {
+        "status": "verified",
+        "checked_at": "2026-02-17T04:16:01.596029"
+      },
+      "logo_url": null,
+      "pmo_maturity": {
+        "score": 25,
+        "level": "Low",
+        "signals": []
+      },
+      "enrichment": {
+        "enriched_at": "2026-02-17T04:16:01.598393"
+      }
+    },
+    {
+      "company_name": "Gulf Digital Holdings",
+      "website": "https://gulfdigital.com",
+      "linkedin": "https://linkedin.com/company/gulfdigitalholdings",
+      "location": {
+        "country": "Kuwait",
+        "city": "Kuwait City",
+        "address": "Kuwait City, Kuwait"
+      },
+      "category": "Clinic",
+      "size": "SME",
+      "funding": "Seed",
+      "data_quality": "High",
+      "quality_score": 10,
+      "verification": {
+        "status": "verified",
+        "checked_at": "2026-02-17T04:16:01.596029"
+      },
+      "logo_url": null,
+      "pmo_maturity": {
+        "score": 25,
+        "level": "Low",
+        "signals": []
+      },
+      "enrichment": {
+        "enriched_at": "2026-02-17T04:16:01.598397"
+      }
+    },
+    {
+      "company_name": "National Hospital Holdings",
+      "website": "https://nationalhospital.com",
+      "linkedin": "https://linkedin.com/company/nationalhospitalholdings",
+      "location": {
+        "country": "Egypt",
+        "city": "Giza",
+        "address": "Giza, Egypt"
+      },
+      "category": "Telemedicine",
+      "size": "Enterprise",
+      "funding": "Seed",
+      "data_quality": "High",
+      "quality_score": 10,
+      "verification": {
+        "status": "verified",
+        "checked_at": "2026-02-17T04:16:01.596030"
+      },
+      "logo_url": null,
+      "pmo_maturity": {
+        "score": 25,
+        "level": "Low",
+        "signals": []
+      },
+      "enrichment": {
+        "enriched_at": "2026-02-17T04:16:01.598400"
+      }
+    },
+    {
+      "company_name": "Gulf Care Systems",
+      "website": "https://gulfcare.com",
+      "linkedin": "https://linkedin.com/company/gulfcaresystems",
+      "location": {
+        "country": "Bahrain",
+        "city": "Manama",
+        "address": "Manama, Bahrain"
+      },
+      "category": "Clinic",
+      "size": "Startup",
+      "funding": "Series A",
+      "data_quality": "High",
+      "quality_score": 8,
+      "verification": {
+        "status": "verified",
+        "checked_at": "2026-02-17T04:16:01.596032"
+      },
+      "logo_url": null,
+      "pmo_maturity": {
+        "score": 25,
+        "level": "Low",
+        "signals": []
+      },
+      "enrichment": {
+        "enriched_at": "2026-02-17T04:16:01.598406"
+      }
+    },
+    {
+      "company_name": "Gulf Pharma Partners",
+      "website": "https://gulfpharma.com",
+      "linkedin": "https://linkedin.com/company/gulfpharmapartners",
+      "location": {
+        "country": "Qatar",
+        "city": "Doha",
+        "address": "Doha, Qatar"
+      },
+      "category": "Hospital",
+      "size": "Startup",
+      "funding": "Seed",
+      "data_quality": "High",
+      "quality_score": 8,
+      "verification": {
+        "status": "verified",
+        "checked_at": "2026-02-17T04:16:01.596033"
+      },
+      "logo_url": null,
+      "pmo_maturity": {
+        "score": 25,
+        "level": "Low",
+        "signals": []
+      },
+      "enrichment": {
+        "enriched_at": "2026-02-17T04:16:01.598408"
+      }
+    },
+    {
+      "company_name": "Emirates Digital Group",
+      "website": "https://emiratesdigital.com",
+      "linkedin": "https://linkedin.com/company/emiratesdigitalgroup",
+      "location": {
+        "country": "Egypt",
+        "city": "Cairo",
+        "address": "Cairo, Egypt"
+      },
+      "category": "HealthTech",
+      "size": "SME",
+      "funding": "Series A",
+      "data_quality": "High",
+      "quality_score": 10,
+      "verification": {
+        "status": "verified",
+        "checked_at": "2026-02-17T04:16:01.596035"
+      },
+      "logo_url": null,
+      "pmo_maturity": {
+        "score": 25,
+        "level": "Low",
+        "signals": []
+      },
+      "enrichment": {
+        "enriched_at": "2026-02-17T04:16:01.598415"
+      }
+    },
+    {
+      "company_name": "Advanced Care Solutions",
+      "website": "https://advancedcare.com",
+      "linkedin": "https://linkedin.com/company/advancedcaresolutions",
+      "location": {
+        "country": "Qatar",
+        "city": "Doha",
+        "address": "Doha, Qatar"
+      },
+      "category": "Hospital",
+      "size": "Startup",
+      "funding": "Series A",
+      "data_quality": "High",
+      "quality_score": 8,
+      "verification": {
+        "status": "verified",
+        "checked_at": "2026-02-17T04:16:01.596045"
+      },
+      "logo_url": null,
+      "pmo_maturity": {
+        "score": 25,
+        "level": "Low",
+        "signals": []
+      },
+      "enrichment": {
+        "enriched_at": "2026-02-17T04:16:01.598444"
+      }
+    },
+    {
+      "company_name": "Royal Pharma Holdings",
+      "website": "https://royalpharma.com",
+      "linkedin": "https://linkedin.com/company/royalpharmaholdings",
+      "location": {
+        "country": "Qatar",
+        "city": "Doha",
+        "address": "Doha, Qatar"
+      },
+      "category": "Telemedicine",
+      "size": "Startup",
+      "funding": "Series A",
+      "data_quality": "High",
+      "quality_score": 8,
+      "verification": {
+        "status": "verified",
+        "checked_at": "2026-02-17T04:16:01.596046"
+      },
+      "logo_url": null,
+      "pmo_maturity": {
+        "score": 25,
+        "level": "Low",
+        "signals": []
+      },
+      "enrichment": {
+        "enriched_at": "2026-02-17T04:16:01.598446"
+      }
+    },
+    {
+      "company_name": "Advanced Hospital Systems",
+      "website": "https://advancedhospital.com",
+      "linkedin": "https://linkedin.com/company/advancedhospitalsystems",
+      "location": {
+        "country": "Egypt",
+        "city": "Cairo",
+        "address": "Cairo, Egypt"
+      },
+      "category": "Telemedicine",
+      "size": "Startup",
+      "funding": "Bootstrapped",
+      "data_quality": "High",
+      "quality_score": 8,
+      "verification": {
+        "status": "verified",
+        "checked_at": "2026-02-17T04:16:01.596047"
+      },
+      "logo_url": null,
+      "pmo_maturity": {
+        "score": 25,
+        "level": "Low",
+        "signals": []
+      },
+      "enrichment": {
+        "enriched_at": "2026-02-17T04:16:01.598448"
+      }
+    },
+    {
+      "company_name": "Gulf Hospital Holdings",
+      "website": "https://gulfhospital.com",
+      "linkedin": "https://linkedin.com/company/gulfhospitalholdings",
+      "location": {
+        "country": "UAE",
+        "city": "Dubai",
+        "address": "Dubai, UAE"
+      },
+      "category": "Hospital",
+      "size": "Startup",
+      "funding": "Seed",
+      "data_quality": "High",
+      "quality_score": 8,
+      "verification": {
+        "status": "verified",
+        "checked_at": "2026-02-17T04:16:01.596048"
+      },
+      "logo_url": null,
+      "pmo_maturity": {
+        "score": 25,
+        "level": "Low",
+        "signals": []
+      },
+      "enrichment": {
+        "enriched_at": "2026-02-17T04:16:01.598450"
+      }
+    },
+    {
+      "company_name": "National Hospital Systems",
+      "website": "https://nationalhospital.com",
+      "linkedin": "https://linkedin.com/company/nationalhospitalsystems",
+      "location": {
+        "country": "Qatar",
+        "city": "Doha",
+        "address": "Doha, Qatar"
+      },
+      "category": "Digital Health",
+      "size": "SME",
+      "funding": "Seed",
+      "data_quality": "High",
+      "quality_score": 10,
+      "verification": {
+        "status": "verified",
+        "checked_at": "2026-02-17T04:16:01.596051"
+      },
+      "logo_url": null,
+      "pmo_maturity": {
+        "score": 25,
+        "level": "Low",
+        "signals": []
+      },
+      "enrichment": {
+        "enriched_at": "2026-02-17T04:16:01.598463"
+      }
+    },
+    {
+      "company_name": "Delta Care Systems",
+      "website": "https://deltacare.com",
+      "linkedin": "https://linkedin.com/company/deltacaresystems",
       "location": {
         "country": "UAE",
         "city": "Dubai",
@@ -466,7 +690,7 @@
       "quality_score": 8,
       "verification": {
         "status": "verified",
-        "checked_at": "2026-02-17T04:09:22.263508"
+        "checked_at": "2026-02-17T04:16:01.596055"
       },
       "logo_url": null,
       "pmo_maturity": {
@@ -475,17 +699,73 @@
         "signals": []
       },
       "enrichment": {
-        "enriched_at": "2026-02-17T04:09:22.266140"
+        "enriched_at": "2026-02-17T04:16:01.598465"
       }
     },
     {
-      "company_name": "Advanced Hospital Holdings",
-      "website": "https://advancedhospital.com",
-      "linkedin": "https://linkedin.com/company/advancedhospitalholdings",
+      "company_name": "Emirates Smart Group",
+      "website": "https://emiratessmart.com",
+      "linkedin": "https://linkedin.com/company/emiratessmartgroup",
+      "location": {
+        "country": "Kuwait",
+        "city": "Kuwait City",
+        "address": "Kuwait City, Kuwait"
+      },
+      "category": "HealthTech",
+      "size": "Enterprise",
+      "funding": "Bootstrapped",
+      "data_quality": "High",
+      "quality_score": 10,
+      "verification": {
+        "status": "verified",
+        "checked_at": "2026-02-17T04:16:01.596056"
+      },
+      "logo_url": null,
+      "pmo_maturity": {
+        "score": 25,
+        "level": "Low",
+        "signals": []
+      },
+      "enrichment": {
+        "enriched_at": "2026-02-17T04:16:01.598468"
+      }
+    },
+    {
+      "company_name": "Royal Hospital Partners",
+      "website": "https://royalhospital.com",
+      "linkedin": "https://linkedin.com/company/royalhospitalpartners",
       "location": {
         "country": "Egypt",
-        "city": "Cairo",
-        "address": "Cairo, Egypt"
+        "city": "Giza",
+        "address": "Giza, Egypt"
+      },
+      "category": "Telemedicine",
+      "size": "Startup",
+      "funding": "Seed",
+      "data_quality": "High",
+      "quality_score": 8,
+      "verification": {
+        "status": "verified",
+        "checked_at": "2026-02-17T04:16:01.596057"
+      },
+      "logo_url": null,
+      "pmo_maturity": {
+        "score": 25,
+        "level": "Low",
+        "signals": []
+      },
+      "enrichment": {
+        "enriched_at": "2026-02-17T04:16:01.598471"
+      }
+    },
+    {
+      "company_name": "Emirates Smart Solutions",
+      "website": "https://emiratessmart.com",
+      "linkedin": "https://linkedin.com/company/emiratessmartsolutions",
+      "location": {
+        "country": "Qatar",
+        "city": "Doha",
+        "address": "Doha, Qatar"
       },
       "category": "Clinic",
       "size": "Startup",
@@ -494,7 +774,7 @@
       "quality_score": 8,
       "verification": {
         "status": "verified",
-        "checked_at": "2026-02-17T04:09:22.263509"
+        "checked_at": "2026-02-17T04:16:01.596059"
       },
       "logo_url": null,
       "pmo_maturity": {
@@ -503,7 +783,259 @@
         "signals": []
       },
       "enrichment": {
-        "enriched_at": "2026-02-17T04:09:22.266142"
+        "enriched_at": "2026-02-17T04:16:01.598477"
+      }
+    },
+    {
+      "company_name": "National Medical Solutions",
+      "website": "https://nationalmedical.com",
+      "linkedin": "https://linkedin.com/company/nationalmedicalsolutions",
+      "location": {
+        "country": "Bahrain",
+        "city": "Manama",
+        "address": "Manama, Bahrain"
+      },
+      "category": "Hospital",
+      "size": "SME",
+      "funding": "Series A",
+      "data_quality": "High",
+      "quality_score": 10,
+      "verification": {
+        "status": "verified",
+        "checked_at": "2026-02-17T04:16:01.596061"
+      },
+      "logo_url": null,
+      "pmo_maturity": {
+        "score": 25,
+        "level": "Low",
+        "signals": []
+      },
+      "enrichment": {
+        "enriched_at": "2026-02-17T04:16:01.598484"
+      }
+    },
+    {
+      "company_name": "Gulf Clinic Group",
+      "website": "https://gulfclinic.com",
+      "linkedin": "https://linkedin.com/company/gulfclinicgroup",
+      "location": {
+        "country": "Egypt",
+        "city": "Giza",
+        "address": "Giza, Egypt"
+      },
+      "category": "HealthTech",
+      "size": "Startup",
+      "funding": "Bootstrapped",
+      "data_quality": "High",
+      "quality_score": 8,
+      "verification": {
+        "status": "verified",
+        "checked_at": "2026-02-17T04:16:01.596062"
+      },
+      "logo_url": null,
+      "pmo_maturity": {
+        "score": 25,
+        "level": "Low",
+        "signals": []
+      },
+      "enrichment": {
+        "enriched_at": "2026-02-17T04:16:01.598491"
+      }
+    },
+    {
+      "company_name": "Nile Hospital Solutions",
+      "website": "https://nilehospital.com",
+      "linkedin": "https://linkedin.com/company/nilehospitalsolutions",
+      "location": {
+        "country": "Qatar",
+        "city": "Doha",
+        "address": "Doha, Qatar"
+      },
+      "category": "Digital Health",
+      "size": "Startup",
+      "funding": "Series B",
+      "data_quality": "High",
+      "quality_score": 8,
+      "verification": {
+        "status": "verified",
+        "checked_at": "2026-02-17T04:16:01.596064"
+      },
+      "logo_url": null,
+      "pmo_maturity": {
+        "score": 25,
+        "level": "Low",
+        "signals": []
+      },
+      "enrichment": {
+        "enriched_at": "2026-02-17T04:16:01.598504"
+      }
+    },
+    {
+      "company_name": "Emirates Smart Technologies",
+      "website": "https://emiratessmart.com",
+      "linkedin": "https://linkedin.com/company/emiratessmarttechnologies",
+      "location": {
+        "country": "Bahrain",
+        "city": "Manama",
+        "address": "Manama, Bahrain"
+      },
+      "category": "Digital Health",
+      "size": "Startup",
+      "funding": "Series B",
+      "data_quality": "High",
+      "quality_score": 8,
+      "verification": {
+        "status": "verified",
+        "checked_at": "2026-02-17T04:16:01.596066"
+      },
+      "logo_url": null,
+      "pmo_maturity": {
+        "score": 25,
+        "level": "Low",
+        "signals": []
+      },
+      "enrichment": {
+        "enriched_at": "2026-02-17T04:16:01.598510"
+      }
+    },
+    {
+      "company_name": "Royal Smart Technologies",
+      "website": "https://royalsmart.com",
+      "linkedin": "https://linkedin.com/company/royalsmarttechnologies",
+      "location": {
+        "country": "Kuwait",
+        "city": "Kuwait City",
+        "address": "Kuwait City, Kuwait"
+      },
+      "category": "Digital Health",
+      "size": "Enterprise",
+      "funding": "Series B",
+      "data_quality": "High",
+      "quality_score": 10,
+      "verification": {
+        "status": "verified",
+        "checked_at": "2026-02-17T04:16:01.596067"
+      },
+      "logo_url": null,
+      "pmo_maturity": {
+        "score": 25,
+        "level": "Low",
+        "signals": []
+      },
+      "enrichment": {
+        "enriched_at": "2026-02-17T04:16:01.598513"
+      }
+    },
+    {
+      "company_name": "Royal Care Group",
+      "website": "https://royalcare.com",
+      "linkedin": "https://linkedin.com/company/royalcaregroup",
+      "location": {
+        "country": "Kuwait",
+        "city": "Kuwait City",
+        "address": "Kuwait City, Kuwait"
+      },
+      "category": "MedTech",
+      "size": "Startup",
+      "funding": "Bootstrapped",
+      "data_quality": "High",
+      "quality_score": 8,
+      "verification": {
+        "status": "verified",
+        "checked_at": "2026-02-17T04:16:01.596068"
+      },
+      "logo_url": null,
+      "pmo_maturity": {
+        "score": 25,
+        "level": "Low",
+        "signals": []
+      },
+      "enrichment": {
+        "enriched_at": "2026-02-17T04:16:01.598516"
+      }
+    },
+    {
+      "company_name": "Royal Clinic Partners",
+      "website": "https://royalclinic.com",
+      "linkedin": "https://linkedin.com/company/royalclinicpartners",
+      "location": {
+        "country": "Egypt",
+        "city": "Giza",
+        "address": "Giza, Egypt"
+      },
+      "category": "Hospital",
+      "size": "Startup",
+      "funding": "Series B",
+      "data_quality": "High",
+      "quality_score": 8,
+      "verification": {
+        "status": "verified",
+        "checked_at": "2026-02-17T04:16:01.596069"
+      },
+      "logo_url": null,
+      "pmo_maturity": {
+        "score": 25,
+        "level": "Low",
+        "signals": []
+      },
+      "enrichment": {
+        "enriched_at": "2026-02-17T04:16:01.598518"
+      }
+    },
+    {
+      "company_name": "Gulf Clinic Technologies",
+      "website": "https://gulfclinic.com",
+      "linkedin": "https://linkedin.com/company/gulfclinictechnologies",
+      "location": {
+        "country": "Egypt",
+        "city": "Giza",
+        "address": "Giza, Egypt"
+      },
+      "category": "MedTech",
+      "size": "Enterprise",
+      "funding": "Seed",
+      "data_quality": "High",
+      "quality_score": 10,
+      "verification": {
+        "status": "verified",
+        "checked_at": "2026-02-17T04:16:01.596070"
+      },
+      "logo_url": null,
+      "pmo_maturity": {
+        "score": 25,
+        "level": "Low",
+        "signals": []
+      },
+      "enrichment": {
+        "enriched_at": "2026-02-17T04:16:01.598525"
+      }
+    },
+    {
+      "company_name": "Delta Medical Group",
+      "website": "https://deltamedical.com",
+      "linkedin": "https://linkedin.com/company/deltamedicalgroup",
+      "location": {
+        "country": "Kuwait",
+        "city": "Kuwait City",
+        "address": "Kuwait City, Kuwait"
+      },
+      "category": "Telemedicine",
+      "size": "Startup",
+      "funding": "Series A",
+      "data_quality": "High",
+      "quality_score": 8,
+      "verification": {
+        "status": "verified",
+        "checked_at": "2026-02-17T04:16:01.596071"
+      },
+      "logo_url": null,
+      "pmo_maturity": {
+        "score": 25,
+        "level": "Low",
+        "signals": []
+      },
+      "enrichment": {
+        "enriched_at": "2026-02-17T04:16:01.598528"
       }
     },
     {
@@ -511,18 +1043,18 @@
       "website": "https://emiratesmedical.com",
       "linkedin": "https://linkedin.com/company/emiratesmedicalholdings",
       "location": {
-        "country": "UAE",
-        "city": "Sharjah",
-        "address": "Sharjah, UAE"
+        "country": "Egypt",
+        "city": "Alexandria",
+        "address": "Alexandria, Egypt"
       },
-      "category": "Clinic",
+      "category": "Telemedicine",
       "size": "Startup",
       "funding": "Seed",
       "data_quality": "High",
       "quality_score": 8,
       "verification": {
         "status": "verified",
-        "checked_at": "2026-02-17T04:09:22.263511"
+        "checked_at": "2026-02-17T04:16:01.596081"
       },
       "logo_url": null,
       "pmo_maturity": {
@@ -531,222 +1063,26 @@
         "signals": []
       },
       "enrichment": {
-        "enriched_at": "2026-02-17T04:09:22.266144"
+        "enriched_at": "2026-02-17T04:16:01.598561"
       }
     },
     {
-      "company_name": "Delta Digital Solutions",
-      "website": "https://deltadigital.com",
-      "linkedin": "https://linkedin.com/company/deltadigitalsolutions",
+      "company_name": "Royal Digital Systems",
+      "website": "https://royaldigital.com",
+      "linkedin": "https://linkedin.com/company/royaldigitalsystems",
       "location": {
         "country": "UAE",
         "city": "Abu Dhabi",
         "address": "Abu Dhabi, UAE"
       },
       "category": "Hospital",
-      "size": "SME",
-      "funding": "Bootstrapped",
-      "data_quality": "High",
-      "quality_score": 10,
-      "verification": {
-        "status": "verified",
-        "checked_at": "2026-02-17T04:09:22.263519"
-      },
-      "logo_url": null,
-      "pmo_maturity": {
-        "score": 25,
-        "level": "Low",
-        "signals": []
-      },
-      "enrichment": {
-        "enriched_at": "2026-02-17T04:09:22.266160"
-      }
-    },
-    {
-      "company_name": "Advanced Care Technologies",
-      "website": "https://advancedcare.com",
-      "linkedin": "https://linkedin.com/company/advancedcaretechnologies",
-      "location": {
-        "country": "Kuwait",
-        "city": "Kuwait City",
-        "address": "Kuwait City, Kuwait"
-      },
-      "category": "Hospital",
-      "size": "SME",
-      "funding": "Bootstrapped",
-      "data_quality": "High",
-      "quality_score": 10,
-      "verification": {
-        "status": "verified",
-        "checked_at": "2026-02-17T04:09:22.263522"
-      },
-      "logo_url": null,
-      "pmo_maturity": {
-        "score": 25,
-        "level": "Low",
-        "signals": []
-      },
-      "enrichment": {
-        "enriched_at": "2026-02-17T04:09:22.266170"
-      }
-    },
-    {
-      "company_name": "Gulf Smart Technologies",
-      "website": "https://gulfsmart.com",
-      "linkedin": "https://linkedin.com/company/gulfsmarttechnologies",
-      "location": {
-        "country": "UAE",
-        "city": "Dubai",
-        "address": "Dubai, UAE"
-      },
-      "category": "HealthTech",
-      "size": "Startup",
-      "funding": "Series A",
-      "data_quality": "High",
-      "quality_score": 8,
-      "verification": {
-        "status": "verified",
-        "checked_at": "2026-02-17T04:09:22.263523"
-      },
-      "logo_url": null,
-      "pmo_maturity": {
-        "score": 25,
-        "level": "Low",
-        "signals": []
-      },
-      "enrichment": {
-        "enriched_at": "2026-02-17T04:09:22.266172"
-      }
-    },
-    {
-      "company_name": "Nile Medical Partners",
-      "website": "https://nilemedical.com",
-      "linkedin": "https://linkedin.com/company/nilemedicalpartners",
-      "location": {
-        "country": "Qatar",
-        "city": "Doha",
-        "address": "Doha, Qatar"
-      },
-      "category": "Hospital",
-      "size": "Startup",
-      "funding": "Series A",
-      "data_quality": "High",
-      "quality_score": 8,
-      "verification": {
-        "status": "verified",
-        "checked_at": "2026-02-17T04:09:22.263525"
-      },
-      "logo_url": null,
-      "pmo_maturity": {
-        "score": 25,
-        "level": "Low",
-        "signals": []
-      },
-      "enrichment": {
-        "enriched_at": "2026-02-17T04:09:22.266174"
-      }
-    },
-    {
-      "company_name": "Advanced Health Partners",
-      "website": "https://advancedhealth.com",
-      "linkedin": "https://linkedin.com/company/advancedhealthpartners",
-      "location": {
-        "country": "Qatar",
-        "city": "Doha",
-        "address": "Doha, Qatar"
-      },
-      "category": "Digital Health",
-      "size": "Startup",
-      "funding": "Bootstrapped",
-      "data_quality": "High",
-      "quality_score": 8,
-      "verification": {
-        "status": "verified",
-        "checked_at": "2026-02-17T04:09:22.263526"
-      },
-      "logo_url": null,
-      "pmo_maturity": {
-        "score": 25,
-        "level": "Low",
-        "signals": []
-      },
-      "enrichment": {
-        "enriched_at": "2026-02-17T04:09:22.266176"
-      }
-    },
-    {
-      "company_name": "National Smart Group",
-      "website": "https://nationalsmart.com",
-      "linkedin": "https://linkedin.com/company/nationalsmartgroup",
-      "location": {
-        "country": "Egypt",
-        "city": "Cairo",
-        "address": "Cairo, Egypt"
-      },
-      "category": "Clinic",
-      "size": "Enterprise",
-      "funding": "Seed",
-      "data_quality": "High",
-      "quality_score": 10,
-      "verification": {
-        "status": "verified",
-        "checked_at": "2026-02-17T04:09:22.263527"
-      },
-      "logo_url": null,
-      "pmo_maturity": {
-        "score": 25,
-        "level": "Low",
-        "signals": []
-      },
-      "enrichment": {
-        "enriched_at": "2026-02-17T04:09:22.266179"
-      }
-    },
-    {
-      "company_name": "National Health Technologies",
-      "website": "https://nationalhealth.com",
-      "linkedin": "https://linkedin.com/company/nationalhealthtechnologies",
-      "location": {
-        "country": "KSA",
-        "city": "Jeddah",
-        "address": "Jeddah, KSA"
-      },
-      "category": "HealthTech",
-      "size": "SME",
-      "funding": "Series A",
-      "data_quality": "High",
-      "quality_score": 10,
-      "verification": {
-        "status": "verified",
-        "checked_at": "2026-02-17T04:09:22.263529"
-      },
-      "logo_url": null,
-      "pmo_maturity": {
-        "score": 25,
-        "level": "Low",
-        "signals": []
-      },
-      "enrichment": {
-        "enriched_at": "2026-02-17T04:09:22.266183"
-      }
-    },
-    {
-      "company_name": "Royal Pharma Group",
-      "website": "https://royalpharma.com",
-      "linkedin": "https://linkedin.com/company/royalpharmagroup",
-      "location": {
-        "country": "KSA",
-        "city": "Riyadh",
-        "address": "Riyadh, KSA"
-      },
-      "category": "HealthTech",
       "size": "Startup",
       "funding": "Seed",
       "data_quality": "High",
       "quality_score": 8,
       "verification": {
         "status": "verified",
-        "checked_at": "2026-02-17T04:09:22.263532"
+        "checked_at": "2026-02-17T04:16:01.596082"
       },
       "logo_url": null,
       "pmo_maturity": {
@@ -755,91 +1091,7 @@
         "signals": []
       },
       "enrichment": {
-        "enriched_at": "2026-02-17T04:09:22.266188"
-      }
-    },
-    {
-      "company_name": "National Clinic Technologies",
-      "website": "https://nationalclinic.com",
-      "linkedin": "https://linkedin.com/company/nationalclinictechnologies",
-      "location": {
-        "country": "UAE",
-        "city": "Sharjah",
-        "address": "Sharjah, UAE"
-      },
-      "category": "HealthTech",
-      "size": "Startup",
-      "funding": "Bootstrapped",
-      "data_quality": "High",
-      "quality_score": 8,
-      "verification": {
-        "status": "verified",
-        "checked_at": "2026-02-17T04:09:22.263534"
-      },
-      "logo_url": null,
-      "pmo_maturity": {
-        "score": 25,
-        "level": "Low",
-        "signals": []
-      },
-      "enrichment": {
-        "enriched_at": "2026-02-17T04:09:22.266190"
-      }
-    },
-    {
-      "company_name": "National Digital Technologies",
-      "website": "https://nationaldigital.com",
-      "linkedin": "https://linkedin.com/company/nationaldigitaltechnologies",
-      "location": {
-        "country": "KSA",
-        "city": "Dammam",
-        "address": "Dammam, KSA"
-      },
-      "category": "Digital Health",
-      "size": "Enterprise",
-      "funding": "Series A",
-      "data_quality": "High",
-      "quality_score": 10,
-      "verification": {
-        "status": "verified",
-        "checked_at": "2026-02-17T04:09:22.263544"
-      },
-      "logo_url": null,
-      "pmo_maturity": {
-        "score": 25,
-        "level": "Low",
-        "signals": []
-      },
-      "enrichment": {
-        "enriched_at": "2026-02-17T04:09:22.266209"
-      }
-    },
-    {
-      "company_name": "Advanced Clinic Partners",
-      "website": "https://advancedclinic.com",
-      "linkedin": "https://linkedin.com/company/advancedclinicpartners",
-      "location": {
-        "country": "Qatar",
-        "city": "Doha",
-        "address": "Doha, Qatar"
-      },
-      "category": "MedTech",
-      "size": "Startup",
-      "funding": "Bootstrapped",
-      "data_quality": "High",
-      "quality_score": 8,
-      "verification": {
-        "status": "verified",
-        "checked_at": "2026-02-17T04:09:22.263546"
-      },
-      "logo_url": null,
-      "pmo_maturity": {
-        "score": 25,
-        "level": "Low",
-        "signals": []
-      },
-      "enrichment": {
-        "enriched_at": "2026-02-17T04:09:22.266212"
+        "enriched_at": "2026-02-17T04:16:01.598566"
       }
     },
     {
@@ -851,266 +1103,14 @@
         "city": "Dammam",
         "address": "Dammam, KSA"
       },
-      "category": "Clinic",
-      "size": "SME",
-      "funding": "Bootstrapped",
-      "data_quality": "High",
-      "quality_score": 10,
-      "verification": {
-        "status": "verified",
-        "checked_at": "2026-02-17T04:09:22.263549"
-      },
-      "logo_url": null,
-      "pmo_maturity": {
-        "score": 25,
-        "level": "Low",
-        "signals": []
-      },
-      "enrichment": {
-        "enriched_at": "2026-02-17T04:09:22.266218"
-      }
-    },
-    {
-      "company_name": "Royal Hospital Group",
-      "website": "https://royalhospital.com",
-      "linkedin": "https://linkedin.com/company/royalhospitalgroup",
-      "location": {
-        "country": "UAE",
-        "city": "Dubai",
-        "address": "Dubai, UAE"
-      },
-      "category": "HealthTech",
-      "size": "SME",
-      "funding": "Series A",
-      "data_quality": "High",
-      "quality_score": 10,
-      "verification": {
-        "status": "verified",
-        "checked_at": "2026-02-17T04:09:22.263550"
-      },
-      "logo_url": null,
-      "pmo_maturity": {
-        "score": 25,
-        "level": "Low",
-        "signals": []
-      },
-      "enrichment": {
-        "enriched_at": "2026-02-17T04:09:22.266221"
-      }
-    },
-    {
-      "company_name": "Royal Pharma Solutions",
-      "website": "https://royalpharma.com",
-      "linkedin": "https://linkedin.com/company/royalpharmasolutions",
-      "location": {
-        "country": "UAE",
-        "city": "Abu Dhabi",
-        "address": "Abu Dhabi, UAE"
-      },
-      "category": "MedTech",
-      "size": "Startup",
-      "funding": "Bootstrapped",
-      "data_quality": "High",
-      "quality_score": 8,
-      "verification": {
-        "status": "verified",
-        "checked_at": "2026-02-17T04:09:22.263555"
-      },
-      "logo_url": null,
-      "pmo_maturity": {
-        "score": 25,
-        "level": "Low",
-        "signals": []
-      },
-      "enrichment": {
-        "enriched_at": "2026-02-17T04:09:22.266229"
-      }
-    },
-    {
-      "company_name": "Advanced Health Systems",
-      "website": "https://advancedhealth.com",
-      "linkedin": "https://linkedin.com/company/advancedhealthsystems",
-      "location": {
-        "country": "Bahrain",
-        "city": "Manama",
-        "address": "Manama, Bahrain"
-      },
-      "category": "HealthTech",
-      "size": "Enterprise",
-      "funding": "Bootstrapped",
-      "data_quality": "High",
-      "quality_score": 10,
-      "verification": {
-        "status": "verified",
-        "checked_at": "2026-02-17T04:09:22.263556"
-      },
-      "logo_url": null,
-      "pmo_maturity": {
-        "score": 25,
-        "level": "Low",
-        "signals": []
-      },
-      "enrichment": {
-        "enriched_at": "2026-02-17T04:09:22.266236"
-      }
-    },
-    {
-      "company_name": "Nile Hospital Technologies",
-      "website": "https://nilehospital.com",
-      "linkedin": "https://linkedin.com/company/nilehospitaltechnologies",
-      "location": {
-        "country": "Kuwait",
-        "city": "Kuwait City",
-        "address": "Kuwait City, Kuwait"
-      },
       "category": "Telemedicine",
-      "size": "SME",
-      "funding": "Seed",
-      "data_quality": "High",
-      "quality_score": 10,
-      "verification": {
-        "status": "verified",
-        "checked_at": "2026-02-17T04:09:22.263557"
-      },
-      "logo_url": null,
-      "pmo_maturity": {
-        "score": 25,
-        "level": "Low",
-        "signals": []
-      },
-      "enrichment": {
-        "enriched_at": "2026-02-17T04:09:22.266239"
-      }
-    },
-    {
-      "company_name": "Gulf Pharma Systems",
-      "website": "https://gulfpharma.com",
-      "linkedin": "https://linkedin.com/company/gulfpharmasystems",
-      "location": {
-        "country": "Qatar",
-        "city": "Doha",
-        "address": "Doha, Qatar"
-      },
-      "category": "HealthTech",
-      "size": "SME",
-      "funding": "Series A",
-      "data_quality": "High",
-      "quality_score": 10,
-      "verification": {
-        "status": "verified",
-        "checked_at": "2026-02-17T04:09:22.263560"
-      },
-      "logo_url": null,
-      "pmo_maturity": {
-        "score": 25,
-        "level": "Low",
-        "signals": []
-      },
-      "enrichment": {
-        "enriched_at": "2026-02-17T04:09:22.266256"
-      }
-    },
-    {
-      "company_name": "Nile Health Solutions",
-      "website": "https://nilehealth.com",
-      "linkedin": "https://linkedin.com/company/nilehealthsolutions",
-      "location": {
-        "country": "Kuwait",
-        "city": "Kuwait City",
-        "address": "Kuwait City, Kuwait"
-      },
-      "category": "Clinic",
-      "size": "Startup",
-      "funding": "Series A",
-      "data_quality": "High",
-      "quality_score": 8,
-      "verification": {
-        "status": "verified",
-        "checked_at": "2026-02-17T04:09:22.263565"
-      },
-      "logo_url": null,
-      "pmo_maturity": {
-        "score": 25,
-        "level": "Low",
-        "signals": []
-      },
-      "enrichment": {
-        "enriched_at": "2026-02-17T04:09:22.266258"
-      }
-    },
-    {
-      "company_name": "Emirates Hospital Solutions",
-      "website": "https://emirateshospital.com",
-      "linkedin": "https://linkedin.com/company/emirateshospitalsolutions",
-      "location": {
-        "country": "Kuwait",
-        "city": "Kuwait City",
-        "address": "Kuwait City, Kuwait"
-      },
-      "category": "MedTech",
-      "size": "SME",
-      "funding": "Series A",
-      "data_quality": "High",
-      "quality_score": 10,
-      "verification": {
-        "status": "verified",
-        "checked_at": "2026-02-17T04:09:22.263570"
-      },
-      "logo_url": null,
-      "pmo_maturity": {
-        "score": 25,
-        "level": "Low",
-        "signals": []
-      },
-      "enrichment": {
-        "enriched_at": "2026-02-17T04:09:22.266267"
-      }
-    },
-    {
-      "company_name": "Delta Smart Partners",
-      "website": "https://deltasmart.com",
-      "linkedin": "https://linkedin.com/company/deltasmartpartners",
-      "location": {
-        "country": "Kuwait",
-        "city": "Kuwait City",
-        "address": "Kuwait City, Kuwait"
-      },
-      "category": "Digital Health",
-      "size": "SME",
-      "funding": "Bootstrapped",
-      "data_quality": "High",
-      "quality_score": 10,
-      "verification": {
-        "status": "verified",
-        "checked_at": "2026-02-17T04:09:22.263599"
-      },
-      "logo_url": null,
-      "pmo_maturity": {
-        "score": 25,
-        "level": "Low",
-        "signals": []
-      },
-      "enrichment": {
-        "enriched_at": "2026-02-17T04:09:22.266270"
-      }
-    },
-    {
-      "company_name": "Royal Hospital Systems",
-      "website": "https://royalhospital.com",
-      "linkedin": "https://linkedin.com/company/royalhospitalsystems",
-      "location": {
-        "country": "UAE",
-        "city": "Abu Dhabi",
-        "address": "Abu Dhabi, UAE"
-      },
-      "category": "Digital Health",
       "size": "Startup",
       "funding": "Seed",
       "data_quality": "High",
       "quality_score": 8,
       "verification": {
         "status": "verified",
-        "checked_at": "2026-02-17T04:09:22.263602"
+        "checked_at": "2026-02-17T04:16:01.596083"
       },
       "logo_url": null,
       "pmo_maturity": {
@@ -1119,82 +1119,26 @@
         "signals": []
       },
       "enrichment": {
-        "enriched_at": "2026-02-17T04:09:22.266276"
+        "enriched_at": "2026-02-17T04:16:01.598569"
       }
     },
     {
-      "company_name": "Advanced Digital Holdings",
-      "website": "https://advanceddigital.com",
-      "linkedin": "https://linkedin.com/company/advanceddigitalholdings",
-      "location": {
-        "country": "UAE",
-        "city": "Dubai",
-        "address": "Dubai, UAE"
-      },
-      "category": "HealthTech",
-      "size": "Startup",
-      "funding": "Seed",
-      "data_quality": "High",
-      "quality_score": 8,
-      "verification": {
-        "status": "verified",
-        "checked_at": "2026-02-17T04:09:22.263606"
-      },
-      "logo_url": null,
-      "pmo_maturity": {
-        "score": 25,
-        "level": "Low",
-        "signals": []
-      },
-      "enrichment": {
-        "enriched_at": "2026-02-17T04:09:22.266289"
-      }
-    },
-    {
-      "company_name": "Gulf Medical Solutions",
-      "website": "https://gulfmedical.com",
-      "linkedin": "https://linkedin.com/company/gulfmedicalsolutions",
-      "location": {
-        "country": "UAE",
-        "city": "Abu Dhabi",
-        "address": "Abu Dhabi, UAE"
-      },
-      "category": "Telemedicine",
-      "size": "SME",
-      "funding": "Bootstrapped",
-      "data_quality": "High",
-      "quality_score": 10,
-      "verification": {
-        "status": "verified",
-        "checked_at": "2026-02-17T04:09:22.263607"
-      },
-      "logo_url": null,
-      "pmo_maturity": {
-        "score": 25,
-        "level": "Low",
-        "signals": []
-      },
-      "enrichment": {
-        "enriched_at": "2026-02-17T04:09:22.266293"
-      }
-    },
-    {
-      "company_name": "Gulf Pharma Holdings",
-      "website": "https://gulfpharma.com",
-      "linkedin": "https://linkedin.com/company/gulfpharmaholdings",
+      "company_name": "Delta Hospital Partners",
+      "website": "https://deltahospital.com",
+      "linkedin": "https://linkedin.com/company/deltahospitalpartners",
       "location": {
         "country": "KSA",
         "city": "Dammam",
         "address": "Dammam, KSA"
       },
-      "category": "MedTech",
-      "size": "Enterprise",
+      "category": "Digital Health",
+      "size": "Startup",
       "funding": "Bootstrapped",
       "data_quality": "High",
-      "quality_score": 10,
+      "quality_score": 8,
       "verification": {
         "status": "verified",
-        "checked_at": "2026-02-17T04:09:22.263609"
+        "checked_at": "2026-02-17T04:16:01.596087"
       },
       "logo_url": null,
       "pmo_maturity": {
@@ -1203,26 +1147,26 @@
         "signals": []
       },
       "enrichment": {
-        "enriched_at": "2026-02-17T04:09:22.266300"
+        "enriched_at": "2026-02-17T04:16:01.598613"
       }
     },
     {
-      "company_name": "Nile Hospital Group",
-      "website": "https://nilehospital.com",
-      "linkedin": "https://linkedin.com/company/nilehospitalgroup",
+      "company_name": "Emirates Clinic Group",
+      "website": "https://emiratesclinic.com",
+      "linkedin": "https://linkedin.com/company/emiratesclinicgroup",
       "location": {
-        "country": "KSA",
-        "city": "Jeddah",
-        "address": "Jeddah, KSA"
+        "country": "Bahrain",
+        "city": "Manama",
+        "address": "Manama, Bahrain"
       },
-      "category": "Hospital",
-      "size": "Enterprise",
+      "category": "MedTech",
+      "size": "Startup",
       "funding": "Bootstrapped",
       "data_quality": "High",
-      "quality_score": 10,
+      "quality_score": 8,
       "verification": {
         "status": "verified",
-        "checked_at": "2026-02-17T04:09:22.263611"
+        "checked_at": "2026-02-17T04:16:01.596089"
       },
       "logo_url": null,
       "pmo_maturity": {
@@ -1231,186 +1175,46 @@
         "signals": []
       },
       "enrichment": {
-        "enriched_at": "2026-02-17T04:09:22.266303"
+        "enriched_at": "2026-02-17T04:16:01.598619"
       }
     },
     {
-      "company_name": "Gulf Health Systems",
-      "website": "https://gulfhealth.com",
-      "linkedin": "https://linkedin.com/company/gulfhealthsystems",
+      "company_name": "National Pharma Holdings",
+      "website": "https://nationalpharma.com",
+      "linkedin": "https://linkedin.com/company/nationalpharmaholdings",
+      "location": {
+        "country": "Bahrain",
+        "city": "Manama",
+        "address": "Manama, Bahrain"
+      },
+      "category": "Telemedicine",
+      "size": "Startup",
+      "funding": "Series A",
+      "data_quality": "High",
+      "quality_score": 8,
+      "verification": {
+        "status": "verified",
+        "checked_at": "2026-02-17T04:16:01.596090"
+      },
+      "logo_url": null,
+      "pmo_maturity": {
+        "score": 25,
+        "level": "Low",
+        "signals": []
+      },
+      "enrichment": {
+        "enriched_at": "2026-02-17T04:16:01.598621"
+      }
+    },
+    {
+      "company_name": "Nile Smart Technologies",
+      "website": "https://nilesmart.com",
+      "linkedin": "https://linkedin.com/company/nilesmarttechnologies",
       "location": {
         "country": "Qatar",
         "city": "Doha",
         "address": "Doha, Qatar"
       },
-      "category": "Telemedicine",
-      "size": "Startup",
-      "funding": "Series B",
-      "data_quality": "High",
-      "quality_score": 8,
-      "verification": {
-        "status": "verified",
-        "checked_at": "2026-02-17T04:09:22.263612"
-      },
-      "logo_url": null,
-      "pmo_maturity": {
-        "score": 25,
-        "level": "Low",
-        "signals": []
-      },
-      "enrichment": {
-        "enriched_at": "2026-02-17T04:09:22.266305"
-      }
-    },
-    {
-      "company_name": "Arabian Digital Technologies",
-      "website": "https://arabiandigital.com",
-      "linkedin": "https://linkedin.com/company/arabiandigitaltechnologies",
-      "location": {
-        "country": "Kuwait",
-        "city": "Kuwait City",
-        "address": "Kuwait City, Kuwait"
-      },
-      "category": "Hospital",
-      "size": "Startup",
-      "funding": "Seed",
-      "data_quality": "High",
-      "quality_score": 8,
-      "verification": {
-        "status": "verified",
-        "checked_at": "2026-02-17T04:09:22.263614"
-      },
-      "logo_url": null,
-      "pmo_maturity": {
-        "score": 25,
-        "level": "Low",
-        "signals": []
-      },
-      "enrichment": {
-        "enriched_at": "2026-02-17T04:09:22.266307"
-      }
-    },
-    {
-      "company_name": "Royal Smart Solutions",
-      "website": "https://royalsmart.com",
-      "linkedin": "https://linkedin.com/company/royalsmartsolutions",
-      "location": {
-        "country": "Bahrain",
-        "city": "Manama",
-        "address": "Manama, Bahrain"
-      },
-      "category": "HealthTech",
-      "size": "Enterprise",
-      "funding": "Series A",
-      "data_quality": "High",
-      "quality_score": 10,
-      "verification": {
-        "status": "verified",
-        "checked_at": "2026-02-17T04:09:22.263615"
-      },
-      "logo_url": null,
-      "pmo_maturity": {
-        "score": 25,
-        "level": "Low",
-        "signals": []
-      },
-      "enrichment": {
-        "enriched_at": "2026-02-17T04:09:22.266310"
-      }
-    },
-    {
-      "company_name": "Advanced Hospital Partners",
-      "website": "https://advancedhospital.com",
-      "linkedin": "https://linkedin.com/company/advancedhospitalpartners",
-      "location": {
-        "country": "UAE",
-        "city": "Abu Dhabi",
-        "address": "Abu Dhabi, UAE"
-      },
-      "category": "Hospital",
-      "size": "SME",
-      "funding": "Series A",
-      "data_quality": "High",
-      "quality_score": 10,
-      "verification": {
-        "status": "verified",
-        "checked_at": "2026-02-17T04:09:22.263617"
-      },
-      "logo_url": null,
-      "pmo_maturity": {
-        "score": 25,
-        "level": "Low",
-        "signals": []
-      },
-      "enrichment": {
-        "enriched_at": "2026-02-17T04:09:22.266313"
-      }
-    },
-    {
-      "company_name": "Delta Care Group",
-      "website": "https://deltacare.com",
-      "linkedin": "https://linkedin.com/company/deltacaregroup",
-      "location": {
-        "country": "UAE",
-        "city": "Dubai",
-        "address": "Dubai, UAE"
-      },
-      "category": "Hospital",
-      "size": "SME",
-      "funding": "Bootstrapped",
-      "data_quality": "High",
-      "quality_score": 10,
-      "verification": {
-        "status": "verified",
-        "checked_at": "2026-02-17T04:09:22.263619"
-      },
-      "logo_url": null,
-      "pmo_maturity": {
-        "score": 25,
-        "level": "Low",
-        "signals": []
-      },
-      "enrichment": {
-        "enriched_at": "2026-02-17T04:09:22.266316"
-      }
-    },
-    {
-      "company_name": "Royal Pharma Partners",
-      "website": "https://royalpharma.com",
-      "linkedin": "https://linkedin.com/company/royalpharmapartners",
-      "location": {
-        "country": "UAE",
-        "city": "Dubai",
-        "address": "Dubai, UAE"
-      },
-      "category": "Hospital",
-      "size": "Enterprise",
-      "funding": "Seed",
-      "data_quality": "High",
-      "quality_score": 10,
-      "verification": {
-        "status": "verified",
-        "checked_at": "2026-02-17T04:09:22.263622"
-      },
-      "logo_url": null,
-      "pmo_maturity": {
-        "score": 25,
-        "level": "Low",
-        "signals": []
-      },
-      "enrichment": {
-        "enriched_at": "2026-02-17T04:09:22.266326"
-      }
-    },
-    {
-      "company_name": "Advanced Care Group",
-      "website": "https://advancedcare.com",
-      "linkedin": "https://linkedin.com/company/advancedcaregroup",
-      "location": {
-        "country": "Kuwait",
-        "city": "Kuwait City",
-        "address": "Kuwait City, Kuwait"
-      },
       "category": "MedTech",
       "size": "Startup",
       "funding": "Seed",
@@ -1418,7 +1222,7 @@
       "quality_score": 8,
       "verification": {
         "status": "verified",
-        "checked_at": "2026-02-17T04:09:22.263629"
+        "checked_at": "2026-02-17T04:16:01.596091"
       },
       "logo_url": null,
       "pmo_maturity": {
@@ -1427,110 +1231,26 @@
         "signals": []
       },
       "enrichment": {
-        "enriched_at": "2026-02-17T04:09:22.266329"
+        "enriched_at": "2026-02-17T04:16:01.598628"
       }
     },
     {
-      "company_name": "Advanced Clinic Systems",
-      "website": "https://advancedclinic.com",
-      "linkedin": "https://linkedin.com/company/advancedclinicsystems",
+      "company_name": "Nile Digital Partners",
+      "website": "https://niledigital.com",
+      "linkedin": "https://linkedin.com/company/niledigitalpartners",
       "location": {
-        "country": "Egypt",
-        "city": "Alexandria",
-        "address": "Alexandria, Egypt"
+        "country": "UAE",
+        "city": "Sharjah",
+        "address": "Sharjah, UAE"
       },
-      "category": "Digital Health",
-      "size": "SME",
-      "funding": "Series B",
-      "data_quality": "High",
-      "quality_score": 10,
-      "verification": {
-        "status": "verified",
-        "checked_at": "2026-02-17T04:09:22.263632"
-      },
-      "logo_url": null,
-      "pmo_maturity": {
-        "score": 25,
-        "level": "Low",
-        "signals": []
-      },
-      "enrichment": {
-        "enriched_at": "2026-02-17T04:09:22.266335"
-      }
-    },
-    {
-      "company_name": "Advanced Care Solutions",
-      "website": "https://advancedcare.com",
-      "linkedin": "https://linkedin.com/company/advancedcaresolutions",
-      "location": {
-        "country": "KSA",
-        "city": "Dammam",
-        "address": "Dammam, KSA"
-      },
-      "category": "MedTech",
-      "size": "SME",
-      "funding": "Bootstrapped",
-      "data_quality": "High",
-      "quality_score": 10,
-      "verification": {
-        "status": "verified",
-        "checked_at": "2026-02-17T04:09:22.263634"
-      },
-      "logo_url": null,
-      "pmo_maturity": {
-        "score": 25,
-        "level": "Low",
-        "signals": []
-      },
-      "enrichment": {
-        "enriched_at": "2026-02-17T04:09:22.266338"
-      }
-    },
-    {
-      "company_name": "Emirates Hospital Partners",
-      "website": "https://emirateshospital.com",
-      "linkedin": "https://linkedin.com/company/emirateshospitalpartners",
-      "location": {
-        "country": "KSA",
-        "city": "Riyadh",
-        "address": "Riyadh, KSA"
-      },
-      "category": "HealthTech",
-      "size": "Startup",
-      "funding": "Series B",
-      "data_quality": "High",
-      "quality_score": 8,
-      "verification": {
-        "status": "verified",
-        "checked_at": "2026-02-17T04:09:22.263636"
-      },
-      "logo_url": null,
-      "pmo_maturity": {
-        "score": 25,
-        "level": "Low",
-        "signals": []
-      },
-      "enrichment": {
-        "enriched_at": "2026-02-17T04:09:22.266347"
-      }
-    },
-    {
-      "company_name": "Royal Clinic Holdings",
-      "website": "https://royalclinic.com",
-      "linkedin": "https://linkedin.com/company/royalclinicholdings",
-      "location": {
-        "country": "Bahrain",
-        "city": "Manama",
-        "address": "Manama, Bahrain"
-      },
-      "category": "Telemedicine",
-      "size": "Startup",
+      "category": "Clinic",
+      "size": "Enterprise",
       "funding": "Series A",
       "data_quality": "High",
-      "quality_score": 8,
+      "quality_score": 10,
       "verification": {
         "status": "verified",
-        "checked_at": "2026-02-17T04:09:22.263638"
+        "checked_at": "2026-02-17T04:16:01.596092"
       },
       "logo_url": null,
       "pmo_maturity": {
@@ -1539,7 +1259,7 @@
         "signals": []
       },
       "enrichment": {
-        "enriched_at": "2026-02-17T04:09:22.266349"
+        "enriched_at": "2026-02-17T04:16:01.598631"
       }
     }
   ]
