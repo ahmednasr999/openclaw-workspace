@@ -1,0 +1,116 @@
+[
+  {
+    "company": "Bayzat",
+    "url": "https://bayzat.com/careers",
+    "status": "success",
+    "job_links": [],
+    "pmo_roles": [],
+    "linkedin_searches": [
+      "https://www.linkedin.com/search/results/people/?keywords=Bayzat%20PMO",
+      "https://www.linkedin.com/search/results/people/?keywords=Bayzat%20Operations",
+      "https://www.linkedin.com/search/results/people/?keywords=Bayzat%20Project%20Manager"
+    ]
+  },
+  {
+    "company": "Sihaty",
+    "url": "https://sihaty.com/careers",
+    "status": "error",
+    "error": "HTTPSConnectionPool(host='sihaty.com', port=443): Max retries exceeded with url: /careers (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x78d2bb7179d0>: Failed to resolve 'sihaty.com' ([Errno -3] Temporary failure in name resolution)\"))",
+    "linkedin_searches": [
+      "https://www.linkedin.com/search/results/people/?keywords=Sihaty%20PMO",
+      "https://www.linkedin.com/search/results/people/?keywords=Sihaty%20Operations",
+      "https://www.linkedin.com/search/results/people/?keywords=Sihaty%20Project%20Manager"
+    ]
+  },
+  {
+    "company": "Vezeeta",
+    "url": "https://vezeeta.com/careers",
+    "status": "failed",
+    "error": "HTTP 404",
+    "linkedin_searches": [
+      "https://www.linkedin.com/search/results/people/?keywords=Vezeeta%20PMO",
+      "https://www.linkedin.com/search/results/people/?keywords=Vezeeta%20Operations",
+      "https://www.linkedin.com/search/results/people/?keywords=Vezeeta%20Project%20Manager"
+    ]
+  },
+  {
+    "company": "Cerner Gulf",
+    "url": "https://cerner.com/careers",
+    "status": "error",
+    "error": "('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))",
+    "linkedin_searches": [
+      "https://www.linkedin.com/search/results/people/?keywords=Cerner%20PMO",
+      "https://www.linkedin.com/search/results/people/?keywords=Cerner%20Operations",
+      "https://www.linkedin.com/search/results/people/?keywords=Cerner%20Project%20Manager"
+    ]
+  },
+  {
+    "company": "Philips Healthcare",
+    "url": "https://www.philips.com/a-w/careers.html",
+    "status": "success",
+    "job_links": [],
+    "pmo_roles": [],
+    "linkedin_searches": [
+      "https://www.linkedin.com/search/results/people/?keywords=Philips%20PMO",
+      "https://www.linkedin.com/search/results/people/?keywords=Philips%20Operations",
+      "https://www.linkedin.com/search/results/people/?keywords=Philips%20Project%20Manager"
+    ]
+  },
+  {
+    "company": "GE Healthcare",
+    "url": "https://www.gehealthcare.com/careers",
+    "status": "success",
+    "job_links": [],
+    "pmo_roles": [],
+    "linkedin_searches": [
+      "https://www.linkedin.com/search/results/people/?keywords=Gehealthcare%20PMO",
+      "https://www.linkedin.com/search/results/people/?keywords=Gehealthcare%20Operations",
+      "https://www.linkedin.com/search/results/people/?keywords=Gehealthcare%20Project%20Manager"
+    ]
+  },
+  {
+    "company": "Medtronic",
+    "url": "https://www.medtronic.com/us-en/company/careers.html",
+    "status": "success",
+    "job_links": [],
+    "pmo_roles": [],
+    "linkedin_searches": [
+      "https://www.linkedin.com/search/results/people/?keywords=Medtronic%20PMO",
+      "https://www.linkedin.com/search/results/people/?keywords=Medtronic%20Operations",
+      "https://www.linkedin.com/search/results/people/?keywords=Medtronic%20Project%20Manager"
+    ]
+  },
+  {
+    "company": "OKADOC",
+    "url": "https://okadoc.com/careers",
+    "status": "failed",
+    "error": "HTTP 404",
+    "linkedin_searches": [
+      "https://www.linkedin.com/search/results/people/?keywords=Okadoc%20PMO",
+      "https://www.linkedin.com/search/results/people/?keywords=Okadoc%20Operations",
+      "https://www.linkedin.com/search/results/people/?keywords=Okadoc%20Project%20Manager"
+    ]
+  },
+  {
+    "company": "Health at Hand",
+    "url": "https://healthatfand.com/careers",
+    "status": "error",
+    "error": "HTTPSConnectionPool(host='healthatfand.com', port=443): Max retries exceeded with url: /careers (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x78d2bb99e850>: Failed to resolve 'healthatfand.com' ([Errno -2] Name or service not known)\"))",
+    "linkedin_searches": [
+      "https://www.linkedin.com/search/results/people/?keywords=Healthatfand%20PMO",
+      "https://www.linkedin.com/search/results/people/?keywords=Healthatfand%20Operations",
+      "https://www.linkedin.com/search/results/people/?keywords=Healthatfand%20Project%20Manager"
+    ]
+  },
+  {
+    "company": "Yodawy",
+    "url": "https://yodawy.com/careers",
+    "status": "failed",
+    "error": "HTTP 404",
+    "linkedin_searches": [
+      "https://www.linkedin.com/search/results/people/?keywords=Yodawy%20PMO",
+      "https://www.linkedin.com/search/results/people/?keywords=Yodawy%20Operations",
+      "https://www.linkedin.com/search/results/people/?keywords=Yodawy%20Project%20Manager"
+    ]
+  }
+]
