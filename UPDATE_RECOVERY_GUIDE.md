@@ -17,12 +17,12 @@ You should see:
 
 If NOT, create backup NOW:
     cd /root/.openclaw/workspace
-    tar -czf openclaw-backup-$(date +%Y%m%d-%H%M%S).tar.gz tools/cv-optimizer/ memory/ *.md
+    tar -czf openclaw-backup-$(date +%Y%m%d-%H%M%S).tar.gz tools/ memory/ *.md
 
 STEP 1.2: Document Current Working State
 ----------------------------------------
 Check these work BEFORE updating:
-    - CV Optimizer: http://localhost:5000/cv-optimizer
+    - CV Optimizer: http://localhost:5000
     - Job Tracker: http://localhost:5000/job-tracker
     - Dashboard: http://localhost:5000/
     
@@ -88,7 +88,7 @@ Test each skill:
 
 STEP 3.3: Restart Opportunity Engine
 ------------------------------------
-    cd /root/.openclaw/workspace/tools/cv-optimizer
+    cd /root/.openclaw/workspace/tools
     python3 mission_control.py
 
 STEP 3.4: Test Web Interface
@@ -147,7 +147,7 @@ SYMPTOM: python3 mission_control.py fails
 
 FIX:
     1. Check Python error:
-        cd /root/.openclaw/workspace/tools/cv-optimizer
+        cd /root/.openclaw/workspace/tools
         python3 mission_control.py 2>&1 | head -20
     
     2. If module errors, reinstall dependencies:
@@ -155,7 +155,7 @@ FIX:
     
     3. If data corruption, restore from backup:
         cd /root/.openclaw/workspace
-        rm -rf tools/cv-optimizer/data/*
+        rm -rf tools/data/*
         tar -xzf openclaw-backup-20260215-051107.tar.gz
     
     4. Restart:
@@ -178,10 +178,10 @@ NUCLEAR OPTION - Full Restore:
         tar -xzf openclaw-backup-20260215-051107.tar.gz
     
     4. Verify restored:
-        ls tools/cv-optimizer/
+        ls tools/
     
     5. Restart Opportunity Engine:
-        cd tools/cv-optimizer
+        cd tools
         python3 mission_control.py
     
     6. Test:
@@ -247,7 +247,7 @@ Quick Health Check Commands:
     ls /root/.openclaw/workspace/skills/
     
     # Check data
-    ls /root/.openclaw/workspace/tools/cv-optimizer/data/
+    ls /root/.openclaw/workspace/tools/data/
     
     # Check logs
     tail -20 /root/.openclaw/logs/gateway.log
@@ -259,7 +259,7 @@ If All Else Fails:
     
     2. After reboot:
         openclaw gateway start
-        cd /root/.openclaw/workspace/tools/cv-optimizer
+        cd /root/.openclaw/workspace/tools
         python3 mission_control.py
     
     3. Test:
