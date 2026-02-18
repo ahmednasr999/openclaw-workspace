@@ -2,6 +2,9 @@
   "mcpServers": {
     "excalidraw": {
       "command": "excalidraw-mcp"
+    },
+    "diagram": {
+      "command": "mcp-diagram-generator"
     }
   },
   "imports": []
