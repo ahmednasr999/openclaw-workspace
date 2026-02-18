@@ -1,1 +1,76 @@
 [2026-02-18 12:21:21] [INFO] === ENHANCED ANALYTICS ===
+[2026-02-18 13:00:02] [INFO] === INCREMENTAL SYNC ===
+[2026-02-18 13:00:02] [INFO] === INCREMENTAL SYNC ===
+Traceback (most recent call last):
+  File "/root/.openclaw/workspace/sync_engine_enhanced.py", line 408, in <module>
+    sync.incremental_sync()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/root/.openclaw/workspace/sync_engine_enhanced.py", line 100, in incremental_sync
+    changes = self.detect_changes()
+  File "/root/.openclaw/workspace/sync_engine_enhanced.py", line 135, in detect_changes
+    current_hash = self.get_file_hash(pdf)
+  File "/root/.openclaw/workspace/sync_engine_enhanced.py", line 93, in get_file_hash
+    return self.calculate_checksum(filepath.read_text())
+                                   ~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/pathlib/_local.py", line 548, in read_text
+    return PathBase.read_text(self, encoding, errors, newline)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/pathlib/_abc.py", line 633, in read_text
+    return f.read()
+           ~~~~~~^^
+  File "<frozen codecs>", line 325, in decode
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xda in position 68: invalid continuation byte
+[2026-02-18 13:00:02] [INFO] === FULL SYNC STARTED ===
+[2026-02-18 13:00:02] [INFO] === HANDLING TRIGGERS ===
+[2026-02-18 13:00:12] [INFO] Triggers processed
+[2026-02-18 13:00:12] [INFO] === PULL FROM NOTION ===
+[2026-02-18 13:00:14] [INFO] Pull complete: 0 changes detected
+[2026-02-18 13:00:14] [INFO] === PUSH TO NOTION ===
+[2026-02-18 13:00:14] [INFO] CV found: Ahmed Nasr - Senior PMO Director IT Delivery.pdf
+[2026-02-18 13:00:14] [INFO] CV found: Ahmed Nasr - Data Engineering Project Lead - Riyadh Bank.pdf
+[2026-02-18 13:00:14] [INFO] CV found: Ahmed Nasr - Technical Delivery Leader - Staq.pdf
+[2026-02-18 13:00:14] [INFO] CV found: Ahmed Nasr - Co-Founder Venture Lead - GIL Venture Studio.pdf
+[2026-02-18 13:00:14] [INFO] CV found: Ahmed Nasr - PMO Director Salesforce Transformation.pdf
+[2026-02-18 13:00:14] [INFO] CV found: Ahmed Nasr - CAIDO Business Manager - Apex Group.pdf
+[2026-02-18 13:00:14] [INFO] CV found: Ahmed Nasr - Business Process & Internal Control Director.pdf
+[2026-02-18 13:00:14] [INFO] CV found: Ahmed Nasr - Director Government Programs - Abu Dhabi.pdf
+[2026-02-18 13:00:14] [INFO] Daily note: 2026-02-17.md
+[2026-02-18 13:00:14] [INFO] Daily note: 2026-02-17-1008.md
+[2026-02-18 13:00:14] [INFO] Daily note: 2026-02-18.md
+[2026-02-18 13:00:14] [INFO] Daily note: 2026-02-15.md
+[2026-02-18 13:00:14] [INFO] Daily note: 2026-02-17-1019.md
+[2026-02-18 13:00:14] [INFO] Daily note: 2026-02-16.md
+[2026-02-18 13:00:14] [INFO] Coordination: dashboard.json
+[2026-02-18 13:00:14] [INFO] Coordination: outreach-queue.json
+[2026-02-18 13:00:14] [INFO] Coordination: content-calendar.json
+[2026-02-18 13:00:14] [INFO] Coordination: pipeline.json
+[2026-02-18 13:00:14] [INFO] Push complete
+[2026-02-18 13:00:14] [INFO] === AI AUTO-TAGGING ===
+
+Found 0 new JDs to tag
+
+
+=== AUTO-TAGGING COMPLETE ===
+[2026-02-18 13:00:15] [INFO] === FULL SYNC COMPLETE ===
+[2026-02-18 13:00:15] [INFO] === PIPELINE ANALYTICS ===
+
+==================================================
+PIPELINE ANALYTICS
+==================================================
+
+Total Opportunities: 24
+
+By Status:
+  Active: 23 (96%)
+  Sent: 1 (4%)
+
+By ATS Score:
+  80+: 2
+  70-79: 8
+  60-69: 8
+  50-59: 4
+  <50: 2
+
+Response Rate: N/A
+Time to First Response: N/A
+==================================================
