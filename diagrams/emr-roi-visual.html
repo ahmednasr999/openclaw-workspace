@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EMR ROI - Healthcare Transformation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Patrick Hand', cursive;
+      background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+      min-height: 100vh;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .title {
+      font-size: 42px;
+      color: #2c3e50;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .subtitle {
+      font-size: 20px;
+      color: #7f8c8d;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    .diagram {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      max-width: 900px;
+    }
+    .row {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+    }
+    .box {
+      background: #fff;
+      border: 3px solid #2c3e50;
+      border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 5px 5px 0 rgba(44, 62, 80, 0.2);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .box:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 7px 7px 0 rgba(44, 62, 80, 0.3);
+    }
+    .box-red {
+      background: #ffeaea;
+      border-color: #c0392b;
+    }
+    .box-green {
+      background: #e8f8f5;
+      border-color: #27ae60;
+    }
+    .box-blue {
+      background: #ebf5fb;
+      border-color: #2980b9;
+    }
+    .box-yellow {
+      background: #fef9e7;
+      border-color: #f39c12;
+    }
+    .box-purple {
+      background: #f4ecf7;
+      border-color: #8e44ad;
+    }
+    .box-icon {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+    .box-title {
+      font-size: 22px;
+      color: #2c3e50;
+      margin-bottom: 8px;
+    }
+    .box-text {
+      font-size: 16px;
+      color: #5d6d7e;
+      line-height: 1.4;
+    }
+    .arrow-down {
+      font-size: 40px;
+      color: #2c3e50;
+      text-align: center;
+    }
+    .metrics-row {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .metric {
+      background: #e8f8f5;
+      border: 2px solid #27ae60;
+      border-radius: 15px 255px 15px 255px / 255px 15px 225px 15px;
+      padding: 15px 25px;
+      text-align: center;
+    }
+    .metric-value {
+      font-size: 32px;
+      color: #27ae60;
+      font-weight: bold;
+    }
+    .metric-label {
+      font-size: 14px;
+      color: #5d6d7e;
+    }
+    .arrow-right {
+      font-size: 30px;
+      color: #2c3e50;
+      align-self: center;
+    }
+    .problem-solution {
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .ps-box {
+      flex: 1;
+      max-width: 350px;
+      text-align: center;
+    }
+    .vs {
+      font-size: 50px;
+      color: #2c3e50;
+      align-self: center;
+    }
+    .footer {
+      margin-top: 50px;
+      text-align: center;
+      font-size: 18px;
+      color: #7f8c8d;
+      max-width: 600px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="title">🏥 EMR ROI Transformation</h1>
+  <p class="subtitle">The Implementation Makes or Breaks the Investment</p>
+
+  <div class="diagram">
+    <!-- Problem vs Solution -->
+    <div class="problem-solution">
+      <div class="ps-box">
+        <div class="box box-red">
+          <div class="box-icon">❌</div>
+          <div class="box-title">The Problem</div>
+          <div class="box-text">
+            $15M spent<br>
+            ROI never arrives<br>
+            Physicians find workarounds
+          </div>
+        </div>
+      </div>
+      <div class="vs">→</div>
+      <div class="ps-box">
+        <div class="box box-green">
+          <div class="box-icon">✅</div>
+          <div class="box-title">The Solution</div>
+          <div class="box-text">
+            Treat as clinical transformation<br>
+            Design workflows first<br>
+            Measure outcomes, not go-lives
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Arrow down -->
+    <div class="arrow-down">⬇️</div>
+
+    <!-- The Numbers -->
+    <div class="box box-blue">
+      <div class="box-title">💰 What Winning Hospitals Achieve</div>
+      <div class="metrics-row">
+        <div class="metric">
+          <div class="metric-value">$2M</div>
+          <div class="metric-label">Redundant tests eliminated</div>
+        </div>
+        <div class="metric">
+          <div class="metric-value">40 min</div>
+          <div class="metric-label">Faster discharge</div>
+        </div>
+        <div class="metric">
+          <div class="metric-value">60%</div>
+          <div class="metric-label">Medication errors reduced</div>
+        </div>
+        <div class="metric">
+          <div class="metric-value">20%</div>
+          <div class="metric-label">Nursing time freed</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Arrow down -->
+    <div class="arrow-down">⬇️</div>
+
+    <!-- Key Insight -->
+    <div class="box box-yellow">
+      <div class="box-icon">💡</div>
+      <div class="box-title">The Key Insight</div>
+      <div class="box-text">
+        The technology is mature. The ROI exists.<br>
+        <strong>The question is: Implementation or Transformation?</strong>
+      </div>
+    </div>
+  </div>
+
+  <p class="footer">
+    The software isn't the problem.<br>
+    It's the approach.
+  </p>
+</body>
+</html>
