@@ -117,6 +117,7 @@ Format:
 ## Preferences
 
 - **Timezone:** Cairo (Africa/Cairo, UTC+2)
+- **Relocation:** Open to relocating to Jeddah, Saudi Arabia (confirmed Feb 18, 2026)
 - **LinkedIn posts:** Always end with question/CTA for engagement
 - **Backups:** Keep last 7, daily at 3 AM Cairo
 - **Gmail check:** Daily at 8 AM Cairo
