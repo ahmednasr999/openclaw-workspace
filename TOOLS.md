@@ -31,9 +31,15 @@
 
 ### Model Selection Rules
 1. **Default:** MiniMax-M2.1 (free, good for routine tasks)
-2. **CV Creation:** Claude Opus 4.5 (always ask first)
+2. **CV Creation:** Claude Opus 4.5 (requires approval)
 3. **Complex Setup:** Claude Sonnet 4
 4. **Alternative Reasoning:** Kimi K2.5
+
+### Model Change Protocol
+- **Default:** MiniMax M2.1 (always)
+- **Ask before changing:** Any model switch
+- **Notify:** When switching to/from paid models
+- **Switch back:** After completing expensive tasks
 
 ### Switching Models
 - Use alias: `switch to opus`, `switch to sonnet`, `switch to Kimi`
