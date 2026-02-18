@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-02-17T06:02:00Z",
-  "generated_by": "Chief of Staff (Max)",
+  "last_updated": "2026-02-18T06:02:00Z",
+  "generated_by": "Chief of Staff (Max) - Morning Brief",
   "pipeline": {
     "active_applications": 2,
     "interview_scheduled": 1,
@@ -13,17 +13,21 @@
     }
   },
   "outreach": {
-    "connections_sent_today": 5,
+    "connections_sent_today": 0,
     "connections_sent_this_week": 15,
     "discovery_calls_booked": 1,
     "pending_followups": 3,
-    "pending_leads": 2
+    "pending_leads": 2,
+    "week_target": 25,
+    "week_progress": "60%"
   },
   "content": {
     "posts_published_this_week": 1,
     "posts_scheduled": 1,
     "drafts_ready": 2,
-    "engagement_rate": 4.2
+    "drafts_pending": 2,
+    "engagement_rate": 4.2,
+    "best_performer": "AI PMO Transformation"
   },
   "revenue": {
     "month": 1,
@@ -38,24 +42,55 @@
     "research_agent": "pending",
     "scheduler_agent": "active"
   },
+  "yesterday_highlights": [
+    "Gmail automation fully operational (1,125+ emails cleaned)",
+    "Knowledge base & CRM system built",
+    "Diagram generator skill installed",
+    "CV creation pipeline: 6 new CVs created, 1 active application"
+  ],
   "priorities_today": [
-    "Publish Post 2 (EMR ROI)",
+    "Delphi interview preparation (TOMORROW Feb 18)",
+    "Publish EMR ROI post (Feb 19)",
     "Send 5+ connection requests",
-    "Follow up with warm leads",
-    "Prepare for Delphi interview (Feb 18)"
+    "Follow up with warm leads (Dr. Ahmed Al-Mansour)",
+    "Review 2 content drafts for approval"
   ],
   "attention_needed": [
     {
-      "item": "Delphi interview - TOMORROW",
+      "item": "Delphi interview - TODAY",
       "status": "preparation_needed",
       "urgency": "high",
       "notes": "Senior PM - UAE role, prepare case study examples"
     },
     {
       "item": "Dr. Ahmed Al-Mansour follow-up",
-      "status": "due_today",
+      "status": "overdue",
       "urgency": "normal",
-      "notes": "3 days since connection sent"
+      "notes": "Was due Feb 17, 3 days since connection sent"
+    },
+    {
+      "item": "2 content drafts awaiting review",
+      "status": "pending_approval",
+      "urgency": "normal",
+      "notes": "Hospital CFO Investment Case, Saying No to 6-Figure Salary"
     }
+  ],
+  "bottlenecks": [
+    {
+      "item": "Content drafts pending approval",
+      "impact": "Delays publishing schedule",
+      "status": "waiting_on_human"
+    },
+    {
+      "item": "LinkedIn content calendar",
+      "impact": "Only 1 post published vs 3 target",
+      "status": "behind_schedule"
+    }
+  ],
+  "stuck_items": [],
+  "opportunities": [
+    "Delphi interview today - high conversion potential (50% response-to-interview rate)",
+    "Content engagement trending up (4.2% avg engagement)",
+    "6 warm leads in pipeline, 1 discovery call booked"
   ]
 }
