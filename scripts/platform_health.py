@@ -47,6 +47,39 @@ def check_storage():
     """Check storage usage"""
     usage = {}
     
+    # Check disk space (MAIN DISK)
+    try:
+        result = subprocess.run(
+            ["df", "-h", "/"],
+            capture_output=True, text=True, timeout=10
+        )
+        if result.returncode == 0:
+            lines = result.stdout.strip().split('\n')
+            # Parse the line with /dev/sda1 or similar
+            for line in lines[1:]:  # Skip header
+                if line.startswith('/dev/'):
+                    parts = line.split()
+                    if len(parts) >= 5:
+                        total = parts[1]
+                        used = parts[2]
+                        avail = parts[3]
+                        use_pct = parts[4].replace('%', '')
+                        usage["disk_total"] = total
+                        usage["disk_used"] = used
+                        usage["disk_avail"] = avail
+                        usage["disk_usage_pct"] = int(use_pct)
+                        
+                        # Alert thresholds
+                        if int(use_pct) >= 90:
+                            usage["disk_status"] = "🔴 CRITICAL"
+                        elif int(use_pct) >= 80:
+                            usage["disk_status"] = "🟡 WARNING"
+                        else:
+                            usage["disk_status"] = "✅ HEALTHY"
+                        break
+    except Exception as e:
+        usage["disk_error"] = str(e)
+    
     # Check workspace size
     try:
         result = subprocess.run(
@@ -75,6 +108,17 @@ def check_storage():
         usage["database"] = f"{size / 1024:.1f} KB"
     else:
         usage["database"] = "not found"
+    
+    # Check backup size
+    try:
+        result = subprocess.run(
+            ["du", "-sh", "/root/openclaw-backups"],
+            capture_output=True, text=True, timeout=30
+        )
+        if result.returncode == 0:
+            usage["backups"] = result.stdout.split()[0]
+    except:
+        usage["backups"] = "unknown"
     
     return usage
 
@@ -192,8 +236,22 @@ def generate_report():
     print("💾 STORAGE")
     print("-" * 40)
     storage = check_storage()
-    for key, value in storage.items():
-        print(f"   {key:<15} {value}")
+    
+    # Disk space with alert
+    if "disk_status" in storage:
+        status = storage["disk_status"]
+        disk = storage.get("disk_usage_pct", 0)
+        print(f"   Main Disk: {storage.get('disk_total', '?')} | Used: {storage.get('disk_used', '?')} ({disk}%) | {status}")
+        
+        if disk >= 80:
+            print(f"   ⚠️  WARNING: Disk usage at {disk}%!")
+        elif disk >= 90:
+            print(f"   🚨 CRITICAL: Disk usage at {disk}%! Free space immediately!")
+    
+    print(f"   Workspace:  {storage.get('workspace', '?')}")
+    print(f"   Knowledge: {storage.get('knowledge_base', '?')}")
+    print(f"   Database:   {storage.get('database', '?')}")
+    print(f"   Backups:   {storage.get('backups', '?')}")
     
     print()
     
@@ -245,6 +303,16 @@ def generate_report():
     print("=" * 55)
     
     issues = []
+    alerts = []
+    
+    # Check disk space
+    disk_pct = storage.get("disk_usage_pct", 0)
+    if disk_pct >= 90:
+        issues.append(f"CRITICAL: Disk at {disk_pct}% - free space immediately!")
+        alerts.append(f"🚨 CRITICAL: Disk {disk_pct}% full!")
+    elif disk_pct >= 80:
+        issues.append(f"Disk space warning: {disk_pct}% used")
+        alerts.append(f"⚠️ WARNING: Disk {disk_pct}% full")
     
     if git.get("changes", 0) > 10:
         issues.append("Many uncommitted changes")
@@ -256,6 +324,13 @@ def generate_report():
     if errors > 0:
         issues.append(f"{errors} cron job(s) with errors")
     
+    # Print alerts first
+    if alerts:
+        print("⚠️  ALERTS:")
+        for a in alerts:
+            print(f"   {a}")
+        print()
+    
     if issues:
         print("⚠️  Issues to address:")
         for i in issues:
@@ -263,13 +338,17 @@ def generate_report():
     else:
         print("✅ All systems healthy!")
     
-    return {
+    result = {
         "cron": jobs,
         "storage": storage,
         "git": git,
         "database": db,
-        "issues": issues
+        "issues": issues,
+        "disk_alerts": alerts,
+        "disk_issues": issues
     }
+    
+    return result
 
 def send_telegram_report():
     """Send summary to Telegram"""
@@ -286,7 +365,10 @@ def send_telegram_report():
     if errors > 0:
         text += f" | ❌ {errors} errors"
     text += "\n"
-    text += f"💾 Workspace: {storage.get('workspace', '?')}\n"
+    text += f"💾 Disk: {storage.get('disk_usage_pct', '?')}% ({storage.get('disk_status', '')})"
+    if storage.get("disk_usage_pct", 0) >= 80:
+        text += f"\n⚠️ Disk space low! Available: {storage.get('disk_avail', '?')}"
+    text += "\n"
     text += f"🗄️ DB: {db.get('contacts_count', 0)} contacts\n"
     
     if git.get("changes", 0) > 0:
