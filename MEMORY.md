@@ -71,6 +71,28 @@ Every bullet: **Action Verb + Value/What + Result/Metric**
 
 ---
 
+## Strategic Intelligence Framework (Optional)
+
+**Activation:** Only when Ahmed explicitly requests it
+
+**Triggers:**
+- "use the framework"
+- "think strategically about..."
+- "apply the 10-step system"
+- Any explicit request for multi-agent debate
+
+**Implementation: Hybrid A + B**
+
+| Request Type | Approach |
+|--------------|----------|
+| Quick strategic request | Internal simulation (fast) |
+| High-stakes, complex | Spawn sub-agents for true debate |
+| Routine tasks | Skip framework (direct output) |
+
+**Default:** Efficient direct response for everything else
+
+---
+
 ## Memory System Protocol
 
 ### Session Startup (Every Session)
