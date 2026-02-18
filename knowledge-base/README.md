@@ -1,49 +1,50 @@
 # Knowledge Base System
 
 ## Overview
-Personal knowledge base with SQLite storage. Drop any URL → it gets ingested, summarized, and stored for future queries.
+Personal knowledge base with SQLite storage. Ingest URLs, YouTube videos, PDFs — search with natural language.
 
 ## Database
 `/root/.openclaw/workspace/knowledge-base/kb.db`
 
-## How to Use
+## Commands
 
 ### Ingest a URL
-User drops a URL in chat → Agent:
-1. Fetches content with `web_fetch`
-2. Extracts title, summary, key entities
-3. Stores in SQLite via `ingest.sh`
+```bash
+python3 ingest.py <url>           # Auto-detect type
+python3 ingest.py <url> article   # Force type: article, video, pdf, tweet
+```
 
 ### Search
 ```bash
-./search.sh "OpenAI"           # Search all
-./search.sh "OpenAI" article   # Filter by type
+python3 ingest.py search <query>   # Keyword search
 ```
 
-### Source Types
+### List
+```bash
+python3 ingest.py list            # Recent sources
+```
+
+## Current Sources
+| Title | Type | Domain |
+|-------|------|--------|
+| OpenClaw Gist (26 prompts) | article | gist.github.com |
+| Claude Sonnet 4.6 | article | anthropic.com |
+| OpenClaw Use Cases | video | youtube.com |
+| OpenClaw PDF | pdf | beehiiv.com |
+
+## Source Types
 - `article` — Web articles, blog posts
-- `tweet` — X/Twitter posts
 - `video` — YouTube videos
 - `pdf` — PDF documents
-- `job_posting` — Job descriptions
-- `company_research` — Company info
-- `interview_prep` — Interview materials
+- `tweet` — X/Twitter posts
 
-### Direct SQL
-```bash
-sqlite3 kb.db "SELECT title, source_type FROM sources ORDER BY ingested_at DESC LIMIT 10;"
-```
+## Integration
 
-## Agent Workflow
-When user says "save this" or drops a URL:
-1. `web_fetch` the URL
-2. Summarize content
-3. Extract key entities (people, companies, technologies)
-4. Tag appropriately
-5. Store via ingest.sh
-6. Confirm to user
+### When user drops a URL:
+1. Run `python3 ingest.py <url>`
+2. Confirm saved
+3. User can later search
 
-When user asks about saved content:
-1. Search via search.sh or direct SQL
+### When user asks about saved content:
+1. Run `python3 ingest.py search <query>`
 2. Return matching results with links
-3. Offer to show full content
