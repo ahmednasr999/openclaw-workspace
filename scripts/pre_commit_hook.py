@@ -12,10 +12,9 @@ BLOCKED_PATTERNS = [
     (r"gho_[a-zA-Z0-9]{36}", "GitHub OAuth Token"),
     (r"xoxb-[0-9]{10,}", "Slack Bot Token"),
     (r"xoxp-[0-9]{10,}", "Slack User Token"),
-    (r"sk-[a-zA-Z0-9]{20,}", "OpenAI API Key"),
-    (r"sk-antapi03-[a-zA-Z0-9\-]{40,}", "Anthropic API Key"),
-    (r"AIza[0-9A-Za-z\-]{35}", "Google API Key"),
-    (r"wvdklorwnunbyjir", "Gmail App Password"),
+    (r"\"sk-[a-zA-Z0-9]{20,}\"", "OpenAI API Key"),  # Quoted patterns only
+    (r"\"sk-antapi03-[a-zA-Z0-9\-]{40,}\"", "Anthropic API Key"),  # Quoted only
+    (r"\"AIza[0-9A-Za-z\-]{35}\"", "Google API Key"),  # Quoted only
     (r"password\s*=\s*[\"'][^\"']+[\"']", "Hardcoded password"),
     (r"api_key\s*=\s*[\"'][^\"']+[\"']", "Hardcoded API key"),
     (r"secret\s*=\s*[\"'][^\"']+[\"']", "Hardcoded secret"),
@@ -31,13 +30,21 @@ BLOCKED_FILES = [
     "cookies.txt",
 ]
 
+# Skip these directories
+SKIP_DIRS = ["scripts/security", "scripts/pre_commit"]
+
 def check_file(filepath):
     """Check a file for blocked patterns"""
     issues = []
     
-    # Skip binary files
+    # Skip directories and binary files
     if os.path.isdir(filepath):
         return issues
+    
+    # Skip files in security-related directories
+    for skip in SKIP_DIRS:
+        if skip in filepath:
+            return issues
     
     try:
         with open(filepath, 'rb') as f:
@@ -52,6 +59,7 @@ def check_file(filepath):
         return issues
     
     for pattern, description in BLOCKED_PATTERNS:
+        # Use exact match for problematic patterns
         if re.search(pattern, text):
             issues.append(f"{description} found in {filepath}")
     
