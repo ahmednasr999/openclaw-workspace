@@ -1,0 +1,49 @@
+{
+  "name": "Ahmed Nasr",
+  "title": "Senior PMO / Program Director",
+  "experience_years": 20,
+  "skills": [
+    "PMO Leadership",
+    "Program Management",
+    "Digital Transformation",
+    "Data Governance",
+    "AI/ML Programs",
+    "Financial Services",
+    "Healthcare",
+    "FinTech",
+    "Agile",
+    "SAFe",
+    "PMP",
+    "CBAP"
+  ],
+  "industries": [
+    "Financial Services",
+    "Healthcare",
+    "FinTech",
+    "E-commerce"
+  ],
+  "locations": [
+    "UAE",
+    "Saudi Arabia",
+    "Egypt",
+    "GCC"
+  ],
+  "languages": [
+    "Arabic",
+    "English"
+  ],
+  "certifications": [
+    "PMP",
+    "CBAP",
+    "CSM",
+    "CSPO",
+    "Lean Six Sigma"
+  ],
+  "salary_expectation": 45000,
+  "preferred_roles": [
+    "PMO Director",
+    "Program Director",
+    "VP Projects",
+    "Data Leader"
+  ]
+}
