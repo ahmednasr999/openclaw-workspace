@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=500, height=500">
+  <title>Style 3 - Monogram AN</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0d1117;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      font-family: 'Inter', sans-serif;
+    }
+    .card {
+      width: 500px;
+      height: 500px;
+      background: linear-gradient(145deg, #161b22 0%, #0d1117 50%, #21262d 100%);
+      border-radius: 24px;
+      border: 3px solid #30363d;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: 
+        radial-gradient(circle at 30% 30%, rgba(88, 166, 255, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 70% 70%, rgba(35, 134, 54, 0.08) 0%, transparent 40%);
+      animation: float 20s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(2%, 2%); }
+    }
+    .monogram {
+      font-size: 180px;
+      font-weight: 700;
+      background: linear-gradient(135deg, #58a6ff 0%, #238636 50%, #a371f7 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      position: relative;
+      z-index: 2;
+      text-shadow: 0 0 60px rgba(88, 166, 255, 0.3);
+      letter-spacing: -8px;
+    }
+    .username {
+      font-size: 24px;
+      color: #8b949e;
+      margin-top: 20px;
+      position: relative;
+      z-index: 2;
+      font-weight: 500;
+    }
+    .tech-elements {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+    .tech-elements::before,
+    .tech-elements::after {
+      content: '{ }';
+      position: absolute;
+      font-family: monospace;
+      font-size: 14px;
+      color: #30363d;
+    }
+    .tech-elements::before {
+      top: 20px;
+      left: 20px;
+    }
+    .tech-elements::after {
+      bottom: 20px;
+      right: 20px;
+      transform: rotate(180deg);
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="tech-elements"></div>
+    <div class="monogram">AN</div>
+    <div class="username">@ahmednasr999</div>
+  </div>
+</body>
+</html>

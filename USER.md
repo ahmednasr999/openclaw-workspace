@@ -3,7 +3,11 @@
 - **Name:** Ahmed Nasr
 - **What to call them:** Ahmed
 - **Pronouns:** he/him
-- **Timezone:** (to be confirmed)
+- **Timezone:** Cairo (Africa/Cairo, UTC+2)
+
+## Profile Photo
+- **Path:** `/root/.openclaw/workspace/profile-photo.jpg`
+- **Description:** Man in black suit, white dress shirt, dark tie, white pocket square. Smiling confidently in modern office setting with glass-walled offices and elegant lighting in background.
 
 ## Profile
 Senior technology executive with 20+ years in operational leadership. Currently serving as PMO while building AI automation systems. Actively pursuing next executive role.
