@@ -2,255 +2,282 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ahmed Nasr - Business Process &amp; Internal Control Director</title>
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Calibri:wght@400;700&display=swap');
+
   * { margin: 0; padding: 0; box-sizing: border-box; }
+
   body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 10.5pt;
     line-height: 1.45;
-    color: #1a1a1a;
+    color: #111;
     background: #fff;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 36px 48px;
+    padding: 20mm 18mm 18mm 18mm;
   }
-  h1 {
+
+  /* HEADER */
+  .header-name {
     font-size: 20pt;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    color: #1a1a1a;
-    margin-bottom: 4px;
+    font-weight: bold;
+    color: #111;
+    margin-bottom: 4pt;
   }
-  .contact-line {
+  .header-contact {
     font-size: 9.5pt;
     color: #444;
-    margin-bottom: 14px;
+    margin-bottom: 10pt;
   }
-  .contact-line a { color: #444; text-decoration: none; }
-  hr.divider {
+  .header-divider {
     border: none;
-    border-top: 1.5px solid #1a1a1a;
-    margin: 10px 0 12px 0;
+    border-top: 2px solid #111;
+    margin-bottom: 10pt;
   }
+
+  /* SECTIONS */
   h2 {
-    font-size: 11pt;
-    font-weight: 700;
+    font-size: 10.5pt;
+    font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 0.8px;
-    color: #1a1a1a;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 3px;
-    margin-top: 16px;
-    margin-bottom: 8px;
+    letter-spacing: 0.6pt;
+    color: #111;
+    border-bottom: 1pt solid #aaa;
+    padding-bottom: 2pt;
+    margin-top: 12pt;
+    margin-bottom: 6pt;
   }
-  p { margin-bottom: 8px; }
-  .job-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 2px;
-  }
-  .job-title { font-weight: 700; font-size: 10.5pt; }
-  .job-dates { font-size: 9.5pt; color: #555; white-space: nowrap; }
-  .job-company { font-size: 9.5pt; color: #444; margin-bottom: 5px; }
-  ul {
-    margin-left: 16px;
-    margin-bottom: 8px;
-  }
-  ul li { margin-bottom: 3px; font-size: 10.5pt; }
-  .skills-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px 10px;
-  }
-  .skills-grid span {
+
+  /* Summary */
+  .summary { margin-bottom: 4pt; font-size: 10.5pt; }
+
+  /* Skills */
+  .skills-list {
     font-size: 10pt;
+    margin-bottom: 4pt;
   }
-  .skills-grid span::after { content: " •"; color: #999; }
-  .skills-grid span:last-child::after { content: ""; }
-  .certs-line { font-size: 10pt; margin-bottom: 3px; }
-  .section-block { margin-bottom: 4px; }
+
+  /* Job block */
+  .job { margin-bottom: 9pt; }
+
+  .job-row {
+    width: 100%;
+    margin-bottom: 1pt;
+  }
+  .job-row-inner {
+    display: table;
+    width: 100%;
+  }
+  .job-title-cell {
+    display: table-cell;
+    font-weight: bold;
+    font-size: 10.5pt;
+    vertical-align: top;
+    width: 75%;
+  }
+  .job-date-cell {
+    display: table-cell;
+    font-size: 9.5pt;
+    color: #555;
+    text-align: right;
+    vertical-align: top;
+    width: 25%;
+    white-space: nowrap;
+  }
+  .job-company {
+    font-size: 9.5pt;
+    color: #444;
+    margin-bottom: 4pt;
+    font-style: italic;
+  }
+
+  ul {
+    margin-left: 15pt;
+    margin-bottom: 0;
+  }
+  ul li {
+    margin-bottom: 2.5pt;
+    font-size: 10.5pt;
+  }
+
+  /* Certifications */
+  .cert-row {
+    font-size: 10pt;
+    margin-bottom: 3pt;
+  }
+
+  /* Education block */
+  .edu-block { margin-bottom: 6pt; }
+
+  @page {
+    size: A4;
+    margin: 18mm 18mm 16mm 18mm;
+  }
   @media print {
-    body { padding: 24px 36px; }
+    body { padding: 0; }
     h2 { page-break-after: avoid; }
-    .job-header { page-break-inside: avoid; }
+    .job { page-break-inside: avoid; }
   }
 </style>
 </head>
 <body>
 
-<h1>Ahmed Nasr</h1>
-<div class="contact-line">
-  Dubai, UAE &nbsp;|&nbsp; +971 50 281 4490 &nbsp;|&nbsp; ahmednasr999@gmail.com &nbsp;|&nbsp; linkedin.com/in/ahmednasr
+<!-- NAME & CONTACT -->
+<div class="header-name">Ahmed Nasr</div>
+<div class="header-contact">
+  Dubai, UAE &nbsp;&nbsp;|&nbsp;&nbsp; +971 50 281 4490 &nbsp;&nbsp;|&nbsp;&nbsp; ahmednasr999@gmail.com &nbsp;&nbsp;|&nbsp;&nbsp; linkedin.com/in/ahmednasr
 </div>
-<hr class="divider">
+<hr class="header-divider">
 
 <!-- PROFESSIONAL SUMMARY -->
 <h2>Professional Summary</h2>
-<p>
-  Business Process Management and Internal Controls executive with 20+ years designing, standardizing, and continuously improving enterprise processes across multinational environments. Built and led PMO frameworks governing 300+ concurrent projects across 8 countries (Egypt, UAE, Jordan, Kenya, Nigeria, Ghana, Mauritius, South Africa) within regulated financial services, delivering process standardization and internal control frameworks at scale. Led $50M digital transformation across a 15-hospital network under JCI, HIMSS, and MOH regulatory compliance. Certified in Lean Six Sigma, PMP, and CBAP — consistently translating risk treatment strategies and process maturity objectives into measurable operational results. Track record of driving cultural change, cross-functional alignment, and control maturity uplift in low-maturity markets.
+<p class="summary">
+  Business Process Management and Internal Controls executive with 20+ years designing, standardizing, and continuously improving enterprise processes across multinational environments. Built and led PMO frameworks governing 300+ concurrent projects across 8 countries in regulated financial services — delivering process standardization, internal control frameworks, and risk mitigation protocols at scale. Led a $50M digital transformation across a 15-hospital network under JCI, HIMSS, and MOH regulatory compliance requirements. Lean Six Sigma, PMP, and CBAP certified. Consistent track record driving operational maturity uplift in low-maturity markets, achieving cross-functional alignment, and embedding cultural change through structured training and governance programs.
 </p>
 
 <!-- CORE COMPETENCIES -->
 <h2>Core Competencies</h2>
-<div class="skills-grid">
-  <span>Business Process Standardization</span>
-  <span>Internal Controls Design &amp; Implementation</span>
-  <span>Risk Treatment &amp; Mitigation</span>
-  <span>Fraud Prevention Frameworks</span>
-  <span>Process Excellence &amp; Continuous Improvement</span>
-  <span>Lean Six Sigma</span>
-  <span>Enterprise PMO Governance</span>
-  <span>Cross-Functional Program Management</span>
-  <span>Regulatory Compliance (JCI, HIMSS, MOH)</span>
-  <span>Multi-Country Operations (8 Countries)</span>
-  <span>Operational Maturity Uplift</span>
-  <span>Stakeholder Engagement &amp; Change Management</span>
-  <span>Process Documentation &amp; Control Frameworks</span>
-  <span>Training Design &amp; Rollout Coordination</span>
-  <span>Risk Monitoring &amp; Reporting</span>
-  <span>GRC Integration</span>
+<div class="skills-list">
+Business Process Standardization &nbsp;•&nbsp; Internal Controls Design &amp; Implementation &nbsp;•&nbsp; Risk Treatment &amp; Mitigation &nbsp;•&nbsp; Fraud Prevention Frameworks &nbsp;•&nbsp; Process Excellence &amp; Continuous Improvement &nbsp;•&nbsp; Lean Six Sigma &nbsp;•&nbsp; Enterprise PMO Governance &nbsp;•&nbsp; Cross-Functional Program Management &nbsp;•&nbsp; Regulatory Compliance (JCI, HIMSS, MOH) &nbsp;•&nbsp; Multi-Country Operations (8 Countries) &nbsp;•&nbsp; Operational Maturity Uplift &nbsp;•&nbsp; Stakeholder Engagement &amp; Change Management &nbsp;•&nbsp; Process Documentation &amp; Control Frameworks &nbsp;•&nbsp; Training Design &amp; Rollout Coordination &nbsp;•&nbsp; GRC Integration &nbsp;•&nbsp; Risk Monitoring &amp; Reporting
 </div>
 
 <!-- PROFESSIONAL EXPERIENCE -->
 <h2>Professional Experience</h2>
 
 <!-- SGH -->
-<div class="section-block">
-  <div class="job-header">
-    <span class="job-title">PMO &amp; Regional Engagement Lead</span>
-    <span class="job-dates">Jun 2024 – Present</span>
+<div class="job">
+  <div class="job-row-inner">
+    <div class="job-title-cell">PMO &amp; Regional Engagement Lead</div>
+    <div class="job-date-cell">Jun 2024 – Present</div>
   </div>
-  <div class="job-company">Saudi German Hospital Group | Dubai, UAE (KSA, UAE &amp; Egypt Operations)</div>
+  <div class="job-company">Saudi German Hospital Group &nbsp;|&nbsp; Dubai, UAE &nbsp;(KSA, UAE &amp; Egypt Operations)</div>
   <ul>
-    <li>Lead process standardization and continuous improvement across a 15-hospital network, managing $50M technology transformation program with JCI, HIMSS, and MOH regulatory compliance requirements</li>
+    <li>Lead process standardization and continuous improvement across a 15-hospital network, managing $50M technology transformation program with JCI, HIMSS, and MOH regulatory compliance</li>
     <li>Designed and implemented enterprise PMO framework with embedded internal control checkpoints, overseeing cross-functional teams of 30+ professionals across multiple operating countries</li>
-    <li>Established risk treatment and mitigation protocols for clinical and operational processes, monitoring implementation effectiveness and providing regular updates to senior leadership</li>
-    <li>Developed process documentation standards and control frameworks aligned with international healthcare accreditation bodies, driving operational maturity uplift across low-maturity facilities</li>
-    <li>Coordinated training programs and workshops to embed standardized processes and quality controls across hospital departments, addressing regional capability gaps</li>
-    <li>Partnered with U.S. technology leaders (Health Catalyst, KLAS Research) to integrate process performance metrics into centralized analytics platform</li>
+    <li>Established risk treatment and mitigation protocols for clinical and operational processes; monitor implementation effectiveness and provide regular updates to Group leadership</li>
+    <li>Developed standardized process documentation and control frameworks aligned with international healthcare accreditation bodies, driving operational maturity uplift in low-maturity facilities</li>
+    <li>Coordinated training programs and workshops to embed standardized processes and quality controls across hospital departments, addressing regional capability and compliance gaps</li>
+    <li>Partnered with U.S. technology leaders (Health Catalyst, KLAS Research) to integrate process performance metrics into a centralized analytics and reporting platform</li>
   </ul>
 </div>
 
 <!-- Network International -->
-<div class="section-block">
-  <div class="job-header">
-    <span class="job-title">PMO Section Head (Project Management Department Manager)</span>
-    <span class="job-dates">Sep 2014 – Jun 2017</span>
+<div class="job">
+  <div class="job-row-inner">
+    <div class="job-title-cell">PMO Section Head &nbsp;(Project Management Department Manager)</div>
+    <div class="job-date-cell">Sep 2014 – Jun 2017</div>
   </div>
-  <div class="job-company">Network International | Egypt (8-Country Regional Coverage)</div>
+  <div class="job-company">Network International &nbsp;|&nbsp; Egypt &nbsp;(8-Country Regional Coverage: Egypt, UAE, Jordan, Kenya, Nigeria, Ghana, Mauritius, South Africa)</div>
   <ul>
-    <li>Built enterprise PMO from ground up managing 300+ concurrent banking and payments projects across 8 countries — Egypt, UAE, Jordan, Kenya, Nigeria, Ghana, Mauritius, South Africa</li>
-    <li>Designed and implemented directive PMO governance model with standardized process documentation, internal control frameworks, and risk mitigation protocols across emerging market payments operations</li>
-    <li>Established financial crime risk controls and fraud prevention protocols embedded in mobile commerce and digital payments delivery, including mobile wallets, cardless transactions, and cross-border money transfer solutions</li>
-    <li>Implemented process performance monitoring and reporting cadences, providing regular updates to senior leadership on risk treatment status, control effectiveness, and mitigation plan progress</li>
-    <li>Recruited, trained, and led team of 16 Project Managers, developing process standardization capabilities in low-maturity regional markets and driving cultural adoption of governance frameworks</li>
-    <li>Managed delivery methodology for 300+ banking clients (Visa, Mastercard), ensuring process adherence, control compliance, and continuous improvement across diverse market contexts</li>
+    <li>Built enterprise PMO from the ground up managing 300+ concurrent banking and payments projects across 8 countries in a regulated financial services environment</li>
+    <li>Designed and implemented PMO governance model with standardized process documentation, internal control frameworks, and risk mitigation protocols across emerging-market payments operations</li>
+    <li>Established financial crime risk controls and fraud prevention protocols embedded in mobile wallet, cardless transaction, and cross-border money transfer delivery pipelines serving Visa and Mastercard networks</li>
+    <li>Implemented process performance monitoring and reporting cadences, providing senior leadership with regular updates on risk treatment status, control effectiveness, and mitigation plan progress</li>
+    <li>Recruited, trained, and led a team of 16 Project Managers, building process standardization capabilities in low-maturity regional markets and driving governance culture adoption</li>
+    <li>Managed delivery methodology adherence across 300+ banking clients, ensuring process compliance, control effectiveness, and continuous improvement across diverse market contexts</li>
   </ul>
 </div>
 
 <!-- Revamp Consulting -->
-<div class="section-block">
-  <div class="job-header">
-    <span class="job-title">Engagement Manager</span>
-    <span class="job-dates">Mar 2013 – Sep 2014</span>
+<div class="job">
+  <div class="job-row-inner">
+    <div class="job-title-cell">Engagement Manager</div>
+    <div class="job-date-cell">Mar 2013 – Sep 2014</div>
   </div>
-  <div class="job-company">Revamp Consulting | USA, UAE &amp; Egypt</div>
+  <div class="job-company">Revamp Consulting &nbsp;|&nbsp; USA, UAE &amp; Egypt</div>
   <ul>
-    <li>Led business process optimization engagements for Mayo Clinic (healthcare) and AT&T (service operations), delivering standardized process frameworks and internal control improvements across complex enterprise environments</li>
-    <li>Conducted process reviews, identified control deficiencies, and developed remediation plans aligned with client risk management objectives</li>
-    <li>Designed cross-functional workshops and training programs to drive process adoption and change management in multi-stakeholder environments</li>
+    <li>Led business process optimization engagements for Mayo Clinic (healthcare) and AT&amp;T (service operations), delivering standardized process frameworks and internal control improvements across complex enterprise environments</li>
+    <li>Conducted process reviews to identify control deficiencies; developed remediation plans aligned with client risk management objectives and compliance requirements</li>
+    <li>Designed cross-functional workshops and training programs to drive process adoption and change management across multi-stakeholder environments</li>
   </ul>
 </div>
 
 <!-- PaySky -->
-<div class="section-block">
-  <div class="job-header">
-    <span class="job-title">Country Manager</span>
-    <span class="job-dates">Apr 2021 – Jan 2022</span>
+<div class="job">
+  <div class="job-row-inner">
+    <div class="job-title-cell">Country Manager</div>
+    <div class="job-date-cell">Apr 2021 – Jan 2022</div>
   </div>
-  <div class="job-company">PaySky, Inc. | Egypt</div>
+  <div class="job-company">PaySky, Inc. &nbsp;|&nbsp; Egypt</div>
   <ul>
-    <li>Led market entry and product architecture for Egypt's first comprehensive FinTech SuperApp integrating payments, banking, and e-commerce with embedded fraud prevention and financial control frameworks</li>
-    <li>Established strategic partnerships with financial institutions, ensuring regulatory compliance and risk control alignment across platform ecosystem</li>
-    <li>Built operational framework for phased market launch incorporating financial crime risk controls and compliance monitoring protocols</li>
+    <li>Led market entry and product architecture for Egypt's first comprehensive FinTech SuperApp, integrating payments, banking, and e-commerce with embedded fraud prevention and financial control frameworks</li>
+    <li>Established strategic partnerships with financial institutions ensuring regulatory compliance and risk control alignment across the platform ecosystem</li>
+    <li>Built operational framework for phased market launch incorporating financial crime risk controls, compliance monitoring, and process governance protocols</li>
   </ul>
 </div>
 
 <!-- Al Araby -->
-<div class="section-block">
-  <div class="job-header">
-    <span class="job-title">Head of E-Commerce Product &amp; IT Strategy</span>
-    <span class="job-dates">Jan 2020 – Jan 2021</span>
+<div class="job">
+  <div class="job-row-inner">
+    <div class="job-title-cell">Head of E-Commerce Product &amp; IT Strategy</div>
+    <div class="job-date-cell">Jan 2020 – Jan 2021</div>
   </div>
-  <div class="job-company">Al Araby Group | Egypt</div>
+  <div class="job-company">Al Araby Group &nbsp;|&nbsp; Egypt</div>
   <ul>
-    <li>Led e-commerce digital transformation and IT strategy for one of Egypt's largest consumer electronics retailers, standardizing operational processes and implementing performance monitoring frameworks</li>
+    <li>Led e-commerce digital transformation and IT strategy for one of Egypt's largest consumer electronics retailers, standardizing operational processes and implementing performance monitoring and internal control frameworks</li>
   </ul>
 </div>
 
 <!-- Talabat -->
-<div class="section-block">
-  <div class="job-header">
-    <span class="job-title">Product Development Manager</span>
-    <span class="job-dates">Jun 2017 – May 2018</span>
+<div class="job">
+  <div class="job-row-inner">
+    <div class="job-title-cell">Product Development Manager</div>
+    <div class="job-date-cell">Jun 2017 – May 2018</div>
   </div>
-  <div class="job-company">Delivery Hero SE (Talabat) | GCC Markets</div>
+  <div class="job-company">Delivery Hero SE (Talabat) &nbsp;|&nbsp; GCC Markets</div>
   <ul>
     <li>Led Operations Excellence Committee coordinating process standardization initiatives between Berlin HQ and GCC/Egypt markets during hypergrowth phase (platform scaled 30,000 → 7 million daily orders; 233x growth)</li>
     <li>Implemented lean methodologies and process improvement frameworks, driving operational efficiency and quality control across multi-country operations</li>
   </ul>
 </div>
 
-<!-- Earlier Experience -->
-<div class="section-block">
-  <div class="job-header">
-    <span class="job-title">Senior Project Manager, PMO</span>
-    <span class="job-dates">2012 – 2013</span>
+<!-- BlueCloud -->
+<div class="job">
+  <div class="job-row-inner">
+    <div class="job-title-cell">Senior Project Manager, PMO</div>
+    <div class="job-date-cell">2012 – 2013</div>
   </div>
-  <div class="job-company">BlueCloud | Egypt</div>
+  <div class="job-company">BlueCloud &nbsp;|&nbsp; Egypt</div>
   <ul>
-    <li>Managed IT infrastructure projects for Microsoft Egypt, Vodafone Egypt, and Qatar Diar — delivering process-compliant project execution within enterprise governance frameworks</li>
+    <li>Managed IT infrastructure projects for Microsoft Egypt, Vodafone Egypt, and Qatar Diar, delivering process-compliant project execution within enterprise governance and control frameworks</li>
   </ul>
 </div>
 
-<div class="section-block">
-  <div class="job-header">
-    <span class="job-title">Project Manager</span>
-    <span class="job-dates">2011 – 2012</span>
+<!-- Intel -->
+<div class="job">
+  <div class="job-row-inner">
+    <div class="job-title-cell">Project Manager</div>
+    <div class="job-date-cell">2011 – 2012</div>
   </div>
-  <div class="job-company">Intel Corporation | Egypt</div>
+  <div class="job-company">Intel Corporation &nbsp;|&nbsp; Egypt</div>
   <ul>
-    <li>Led LTE (4G) mobile technology deployment projects with rigorous process compliance and risk monitoring requirements</li>
+    <li>Led LTE (4G) mobile technology deployment projects with rigorous process compliance, risk monitoring, and quality gate requirements</li>
   </ul>
 </div>
 
 <!-- EDUCATION -->
 <h2>Education</h2>
-<div class="section-block">
-  <div class="job-header">
-    <span class="job-title">MBA, Master in International Business Administration (MIBA)</span>
-    <span class="job-dates">2025 – 2027 (Expected)</span>
+<div class="edu-block">
+  <div class="job-row-inner">
+    <div class="job-title-cell">MBA — Master in International Business Administration (MIBA)</div>
+    <div class="job-date-cell">2025 – 2027 (Expected)</div>
   </div>
-  <div class="job-company">Paris ESLSCA Business School | Global Management</div>
+  <div class="job-company">Paris ESLSCA Business School &nbsp;|&nbsp; Global Management</div>
 </div>
-
-<div class="section-block">
-  <div class="job-header">
-    <span class="job-title">Project Management Professional (PMP) Training</span>
-    <span class="job-dates">2007 – 2008</span>
+<div class="edu-block">
+  <div class="job-row-inner">
+    <div class="job-title-cell">Project Management Professional (PMP) Training</div>
+    <div class="job-date-cell">2007 – 2008</div>
   </div>
   <div class="job-company">Université française d'Egypte</div>
 </div>
 
 <!-- CERTIFICATIONS -->
 <h2>Certifications</h2>
-<div class="certs-line"><strong>PMP</strong> — Project Management Professional, PMI, 2008</div>
-<div class="certs-line"><strong>Lean Six Sigma</strong> — SUNY, 2010 &nbsp;|&nbsp; <strong>CBAP</strong> — Certified Business Analysis Professional, IIBA, 2014</div>
-<div class="certs-line"><strong>CSM</strong> — Certified Scrum Master, Scrum Alliance, 2014 &nbsp;|&nbsp; <strong>CSPO</strong> — Certified Scrum Product Owner, Scrum Alliance, 2014</div>
-<div class="certs-line"><strong>ITIL Foundations</strong> — LinkedIn, 2016</div>
+<div class="cert-row"><strong>PMP</strong> — Project Management Professional, Project Management Institute, 2008</div>
+<div class="cert-row"><strong>Lean Six Sigma</strong> — SUNY, 2010 &nbsp;&nbsp;|&nbsp;&nbsp; <strong>CBAP</strong> — Certified Business Analysis Professional, IIBA, 2014</div>
+<div class="cert-row"><strong>CSM</strong> — Certified Scrum Master, Scrum Alliance, 2014 &nbsp;&nbsp;|&nbsp;&nbsp; <strong>CSPO</strong> — Certified Scrum Product Owner, Scrum Alliance, 2014</div>
+<div class="cert-row"><strong>ITIL Foundations</strong> — LinkedIn, 2016</div>
 
 </body>
 </html>
