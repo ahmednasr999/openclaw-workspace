@@ -74,6 +74,7 @@ Digital Transformation Executive with 20+ years driving measurable business impa
 - Recruited and trained team of 16 Project Managers managing portfolio serving 300+ banking clients worldwide
 - Implemented directive PMO framework and governance model, standardizing project delivery methodology across emerging markets payments division
 - Delivered comprehensive mobile commerce and digital payments portfolio including mobile wallets, cardless transactions, and cross-border money transfer solutions for major card networks (Visa, Mastercard)
+- Governed 14-month Salesforce enterprise implementation across 8 countries (170 users), delivering full platform rollout covering CRM, service management, and client engagement across 300+ banking clients
 
 ### Engagement Manager
 **Revamp Consulting | USA, UAE, Egypt | Mar 2013 – Sep 2014**
