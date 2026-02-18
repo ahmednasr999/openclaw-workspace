@@ -120,6 +120,7 @@ Format:
 - **LinkedIn posts:** Always end with question/CTA for engagement
 - **Backups:** Keep last 7, daily at 3 AM Cairo
 - **Gmail check:** Daily at 8 AM Cairo
+- **Formatting:** Never use em dashes (—) anywhere. Use hyphens (-) or commas instead.
 
 ---
 
