@@ -393,3 +393,28 @@ if __name__ == "__main__":
             generate_report()
     else:
         generate_report()
+
+# Journalctl disk usage (added for monitoring)
+def check_logs():
+    """Check system logs disk usage"""
+    try:
+        result = subprocess.run(
+            ["journalctl", "--disk-usage"],
+            capture_output=True, text=True, timeout=10
+        )
+        logs = {}
+        if result.returncode == 0:
+            # Parse "Archived and active journals take up 218.9M in the file system."
+            match = re.search(r'(\d+\.?\d*)([KMG])', result.stdout)
+            if match:
+                size = float(match.group(1))
+                unit = match.group(2)
+                logs["journal_size"] = f"{size}{unit}"
+                # Alert if > 500MB
+                if (unit == 'M' and size > 500) or (unit == 'G' and size >= 1):
+                    logs["journal_status"] = "⚠️ Large"
+                else:
+                    logs["journal_status"] = "✅ Normal"
+        return logs
+    except Exception as e:
+        return {"error": str(e)}
