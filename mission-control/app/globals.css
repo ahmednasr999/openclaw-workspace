@@ -744,3 +744,15 @@ select.toolbar-btn option {
   background: #1a1a26;
   color: #f0f0f5;
 }
+
+/* Content Pipeline columns */
+.column-dot-ideas { background: #3b82f6; }
+.column-dot-outline { background: #22d3ee; }
+.column-dot-draft { background: #8b5cf6; }
+.column-dot-design { background: #ec4899; }
+.column-dot-review-content { background: #f59e0b; }
+.column-dot-published { background: #34d399; }
+
+/* Platform tags */
+.tag-linkedin { background: rgba(10, 102, 194, 0.15); color: #0a66c2; }
+.tag-x { background: rgba(148, 163, 184, 0.15); color: #94a3b8; }

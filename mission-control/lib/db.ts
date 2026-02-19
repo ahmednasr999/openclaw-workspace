@@ -44,6 +44,36 @@ db.exec(`
   );
 `);
 
+// Create content_posts table
+db.exec(`
+  CREATE TABLE IF NOT EXISTS content_posts (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT NOT NULL,
+    hook TEXT,
+    body TEXT,
+    platform TEXT NOT NULL DEFAULT 'LinkedIn',
+    contentType TEXT NOT NULL DEFAULT 'Post',
+    status TEXT NOT NULL DEFAULT 'Ideas',
+    hashtags TEXT,
+    imageUrl TEXT,
+    publishDate TEXT,
+    assignee TEXT NOT NULL DEFAULT 'Both',
+    priority TEXT NOT NULL DEFAULT 'Medium',
+    createdAt TEXT NOT NULL,
+    updatedAt TEXT
+  );
+
+  CREATE TABLE IF NOT EXISTS content_activity (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    postId INTEGER NOT NULL,
+    type TEXT NOT NULL,
+    content TEXT,
+    author TEXT NOT NULL DEFAULT 'System',
+    createdAt TEXT NOT NULL,
+    FOREIGN KEY (postId) REFERENCES content_posts(id) ON DELETE CASCADE
+  );
+`);
+
 export const sqliteDb = {
   // ---- TASKS ----
   getAllTasks: () => {
@@ -188,6 +218,81 @@ export const sqliteDb = {
 
   deleteSubtask: (id: number) => {
     return db.prepare("DELETE FROM subtasks WHERE id = ?").run(id);
+  },
+
+  // ---- CONTENT POSTS ----
+  getAllPosts: () => {
+    return db.prepare("SELECT * FROM content_posts ORDER BY createdAt DESC").all() as any[];
+  },
+
+  getPostById: (id: number) => {
+    return db.prepare("SELECT * FROM content_posts WHERE id = ?").get(id);
+  },
+
+  addPost: (post: {
+    title: string;
+    hook?: string;
+    body?: string;
+    platform: string;
+    contentType: string;
+    status: string;
+    hashtags?: string;
+    imageUrl?: string;
+    publishDate?: string;
+    assignee: string;
+    priority: string;
+    createdAt: string;
+  }) => {
+    const stmt = db.prepare(`
+      INSERT INTO content_posts (title, hook, body, platform, contentType, status, hashtags, imageUrl, publishDate, assignee, priority, createdAt)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    `);
+    const result = stmt.run(
+      post.title, post.hook || null, post.body || null, post.platform, post.contentType,
+      post.status, post.hashtags || null, post.imageUrl || null, post.publishDate || null,
+      post.assignee, post.priority, post.createdAt
+    );
+    const postId = result.lastInsertRowid as number;
+    sqliteDb.addContentActivity(postId, "created", "Post created", post.assignee);
+    return postId;
+  },
+
+  updatePost: (id: number, fields: Record<string, any>) => {
+    const old = db.prepare("SELECT * FROM content_posts WHERE id = ?").get(id) as any;
+    const updates: string[] = [];
+    const values: any[] = [];
+    const changes: string[] = [];
+    const allowed = ["title", "hook", "body", "platform", "contentType", "status", "hashtags", "imageUrl", "publishDate", "assignee", "priority"];
+
+    for (const key of allowed) {
+      if (fields[key] !== undefined) {
+        updates.push(`${key} = ?`);
+        values.push(fields[key] || null);
+        if (old && old[key] !== fields[key]) changes.push(`${key}: ${old[key]} → ${fields[key]}`);
+      }
+    }
+    if (updates.length === 0) return;
+    updates.push("updatedAt = ?");
+    values.push(new Date().toISOString());
+    values.push(id);
+    db.prepare(`UPDATE content_posts SET ${updates.join(", ")} WHERE id = ?`).run(...values);
+    if (changes.length > 0) {
+      sqliteDb.addContentActivity(id, "updated", changes.join("; "), "User");
+    }
+  },
+
+  deletePost: (id: number) => {
+    return db.prepare("DELETE FROM content_posts WHERE id = ?").run(id);
+  },
+
+  // ---- CONTENT ACTIVITY ----
+  addContentActivity: (postId: number, type: string, content: string, author: string) => {
+    const stmt = db.prepare("INSERT INTO content_activity (postId, type, content, author, createdAt) VALUES (?, ?, ?, ?, ?)");
+    return stmt.run(postId, type, content, author, new Date().toISOString());
+  },
+
+  getContentActivity: (postId: number, limit = 20) => {
+    return db.prepare("SELECT * FROM content_activity WHERE postId = ? ORDER BY createdAt DESC LIMIT ?").all(postId, limit);
   },
 };
 

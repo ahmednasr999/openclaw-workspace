@@ -2,9 +2,12 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { TaskBoard } from "@/components/TaskBoard";
+import { ContentBoard } from "@/components/ContentBoard";
 import { Dashboard } from "@/components/Dashboard";
 import { TaskForm } from "@/components/TaskForm";
 import { EditTaskForm } from "@/components/EditTaskForm";
+import { NewContentForm } from "@/components/NewContentForm";
+import { ContentEditor } from "@/components/ContentEditor";
 import { Logo } from "@/components/Logo";
 
 interface Task {
@@ -22,16 +25,37 @@ interface Task {
   subtaskDone?: number;
 }
 
+interface ContentPost {
+  id: number;
+  title: string;
+  hook?: string;
+  body?: string;
+  platform: string;
+  contentType: string;
+  status: string;
+  hashtags?: string;
+  imageUrl?: string;
+  publishDate?: string;
+  assignee: string;
+  priority: string;
+  createdAt: string;
+  updatedAt?: string;
+}
+
+type ActiveBoard = "tasks" | "content" | "dashboard";
+
 export default function Home() {
   const [tasks, setTasks] = useState<Task[]>([]);
-  const [view, setView] = useState<"board" | "dashboard">("board");
+  const [posts, setPosts] = useState<ContentPost[]>([]);
+  const [activeBoard, setActiveBoard] = useState<ActiveBoard>("tasks");
   const [showForm, setShowForm] = useState(false);
+  const [showContentForm, setShowContentForm] = useState(false);
   const [editingTask, setEditingTask] = useState<Task | null>(null);
+  const [editingPost, setEditingPost] = useState<ContentPost | null>(null);
   const [search, setSearch] = useState("");
   const [filterCategory, setFilterCategory] = useState("");
   const [filterPriority, setFilterPriority] = useState("");
   const [isRefreshing, setIsRefreshing] = useState(false);
-  const [sidebarPage, setSidebarPage] = useState("tasks");
 
   const fetchTasks = useCallback(async () => {
     try {
@@ -43,15 +67,26 @@ export default function Home() {
     }
   }, []);
 
+  const fetchPosts = useCallback(async () => {
+    try {
+      const res = await fetch("/api/content");
+      const data = await res.json();
+      setPosts(data);
+    } catch (error) {
+      console.error("Failed to fetch posts:", error);
+    }
+  }, []);
+
   useEffect(() => {
     fetchTasks();
-    const interval = setInterval(fetchTasks, 10000);
+    fetchPosts();
+    const interval = setInterval(() => { fetchTasks(); fetchPosts(); }, 10000);
     return () => clearInterval(interval);
-  }, [fetchTasks]);
+  }, [fetchTasks, fetchPosts]);
 
   const handleRefresh = async () => {
     setIsRefreshing(true);
-    await fetchTasks();
+    await Promise.all([fetchTasks(), fetchPosts()]);
     setTimeout(() => setIsRefreshing(false), 500);
   };
 
@@ -63,11 +98,34 @@ export default function Home() {
     return true;
   });
 
+  const filteredPosts = posts.filter((post) => {
+    if (search && !post.title.toLowerCase().includes(search.toLowerCase()) &&
+        !post.hook?.toLowerCase().includes(search.toLowerCase())) return false;
+    if (filterPriority && post.priority !== filterPriority) return false;
+    return true;
+  });
+
   const totalTasks = tasks.length;
   const inProgress = tasks.filter(t => t.status === "In Progress").length;
   const inReview = tasks.filter(t => t.status === "Review").length;
   const completed = tasks.filter(t => t.status === "Completed").length;
   const highPriority = tasks.filter(t => t.priority === "High" && t.status !== "Completed").length;
+
+  const totalPosts = posts.length;
+  const publishedPosts = posts.filter(p => p.status === "Published").length;
+  const activePosts = totalPosts - publishedPosts;
+
+  const boardTitles: Record<ActiveBoard, string> = {
+    tasks: "Task Board",
+    content: "Content Pipeline",
+    dashboard: "Dashboard",
+  };
+
+  const boardSubtitles: Record<ActiveBoard, string> = {
+    tasks: `${totalTasks} tasks · ${highPriority} high priority · ${inReview} awaiting review`,
+    content: `${totalPosts} posts · ${activePosts} active · ${publishedPosts} published`,
+    dashboard: `${totalTasks} tasks · ${highPriority} high priority · ${inReview} awaiting review`,
+  };
 
   return (
     <div className="app-layout">
@@ -86,15 +144,24 @@ export default function Home() {
         <div className="sidebar-section">
           <div className="sidebar-label">Workspace</div>
           <div
-            className={`sidebar-item ${sidebarPage === "tasks" ? "active" : ""}`}
-            onClick={() => { setSidebarPage("tasks"); setView("board"); }}
+            className={`sidebar-item ${activeBoard === "tasks" ? "active" : ""}`}
+            onClick={() => setActiveBoard("tasks")}
           >
             <span className="icon">📋</span>
             <span>Task Board</span>
+            <span className="ml-auto text-[10px] text-[var(--text-muted)]">{totalTasks - completed}</span>
           </div>
           <div
-            className={`sidebar-item ${sidebarPage === "dashboard" ? "active" : ""}`}
-            onClick={() => { setSidebarPage("dashboard"); setView("dashboard"); }}
+            className={`sidebar-item ${activeBoard === "content" ? "active" : ""}`}
+            onClick={() => setActiveBoard("content")}
+          >
+            <span className="icon">📝</span>
+            <span>Content Pipeline</span>
+            <span className="ml-auto text-[10px] text-[var(--text-muted)]">{activePosts}</span>
+          </div>
+          <div
+            className={`sidebar-item ${activeBoard === "dashboard" ? "active" : ""}`}
+            onClick={() => setActiveBoard("dashboard")}
           >
             <span className="icon">📊</span>
             <span>Dashboard</span>
@@ -110,12 +177,10 @@ export default function Home() {
               {tasks.filter(t => t.category === "Job Search" && t.status !== "Completed").length}
             </span>
           </div>
-          <div className="sidebar-item">
-            <span className="icon">📝</span>
+          <div className="sidebar-item" onClick={() => setActiveBoard("content")}>
+            <span className="icon">✍️</span>
             <span>Content</span>
-            <span className="ml-auto text-[10px] text-[var(--text-muted)]">
-              {tasks.filter(t => t.category === "Content" && t.status !== "Completed").length}
-            </span>
+            <span className="ml-auto text-[10px] text-[var(--text-muted)]">{activePosts}</span>
           </div>
           <div className="sidebar-item">
             <span className="icon">🤝</span>
@@ -130,16 +195,16 @@ export default function Home() {
           <div className="sidebar-label">Quick Stats</div>
           <div className="px-3 space-y-2">
             <div className="flex justify-between text-xs">
-              <span className="text-[var(--text-muted)]">Active</span>
+              <span className="text-[var(--text-muted)]">Active Tasks</span>
               <span className="text-white font-medium">{totalTasks - completed}</span>
             </div>
             <div className="flex justify-between text-xs">
-              <span className="text-[var(--text-muted)]">In Review</span>
-              <span className="text-[var(--pink)] font-medium">{inReview}</span>
+              <span className="text-[var(--text-muted)]">Content Posts</span>
+              <span className="text-[var(--pink)] font-medium">{activePosts}</span>
             </div>
             <div className="flex justify-between text-xs">
-              <span className="text-[var(--text-muted)]">Completed</span>
-              <span className="text-[var(--success)] font-medium">{completed}</span>
+              <span className="text-[var(--text-muted)]">Published</span>
+              <span className="text-[var(--success)] font-medium">{publishedPosts}</span>
             </div>
           </div>
         </div>
@@ -151,12 +216,8 @@ export default function Home() {
         <div className="page-header">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="page-title">
-                {view === "board" ? "Task Board" : "Dashboard"}
-              </h1>
-              <p className="page-subtitle">
-                {totalTasks} tasks - {highPriority} high priority - {inReview} awaiting review
-              </p>
+              <h1 className="page-title">{boardTitles[activeBoard]}</h1>
+              <p className="page-subtitle">{boardSubtitles[activeBoard]}</p>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-[var(--success)] pulse-slow"></div>
@@ -169,31 +230,25 @@ export default function Home() {
         <div className="toolbar">
           <input
             type="text"
-            placeholder="Search tasks..."
+            placeholder={activeBoard === "content" ? "Search posts..." : "Search tasks..."}
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             className="toolbar-search"
           />
-          
-          <select
-            value={filterCategory}
-            onChange={(e) => setFilterCategory(e.target.value)}
-            className="toolbar-btn bg-transparent"
-          >
-            <option value="">All Categories</option>
-            <option value="Job Search">Job Search</option>
-            <option value="Content">Content</option>
-            <option value="Networking">Networking</option>
-            <option value="Applications">Applications</option>
-            <option value="Interviews">Interviews</option>
-            <option value="Task">Task</option>
-          </select>
 
-          <select
-            value={filterPriority}
-            onChange={(e) => setFilterPriority(e.target.value)}
-            className="toolbar-btn bg-transparent"
-          >
+          {activeBoard === "tasks" && (
+            <select value={filterCategory} onChange={(e) => setFilterCategory(e.target.value)} className="toolbar-btn bg-transparent">
+              <option value="">All Categories</option>
+              <option value="Job Search">Job Search</option>
+              <option value="Content">Content</option>
+              <option value="Networking">Networking</option>
+              <option value="Applications">Applications</option>
+              <option value="Interviews">Interviews</option>
+              <option value="Task">Task</option>
+            </select>
+          )}
+
+          <select value={filterPriority} onChange={(e) => setFilterPriority(e.target.value)} className="toolbar-btn bg-transparent">
             <option value="">All Priorities</option>
             <option value="High">High</option>
             <option value="Medium">Medium</option>
@@ -202,74 +257,52 @@ export default function Home() {
 
           <div className="flex-1" />
 
-          <div className="view-toggle">
-            <button
-              onClick={() => { setView("board"); setSidebarPage("tasks"); }}
-              className={view === "board" ? "active" : ""}
-            >
-              Board
-            </button>
-            <button
-              onClick={() => { setView("dashboard"); setSidebarPage("dashboard"); }}
-              className={view === "dashboard" ? "active" : ""}
-            >
-              Dashboard
-            </button>
-          </div>
+          <button onClick={handleRefresh} className={`toolbar-btn ${isRefreshing ? "animate-spin" : ""}`}>🔄</button>
 
-          <button onClick={handleRefresh} className={`toolbar-btn ${isRefreshing ? "animate-spin" : ""}`}>
-            🔄
-          </button>
-
-          <button onClick={() => setShowForm(true)} className="toolbar-btn toolbar-btn-primary">
-            + New Task
-          </button>
+          {activeBoard === "tasks" && (
+            <button onClick={() => setShowForm(true)} className="toolbar-btn toolbar-btn-primary">+ New Task</button>
+          )}
+          {activeBoard === "content" && (
+            <button onClick={() => setShowContentForm(true)} className="toolbar-btn toolbar-btn-primary">+ New Post</button>
+          )}
         </div>
 
         {/* Stats */}
-        <div className="stats-bar grid-cols-2 md:grid-cols-4">
-          <div className="stat-card stat-card-purple">
-            <div className="stat-number">{totalTasks}</div>
-            <div className="stat-label">Total Tasks</div>
+        {activeBoard === "tasks" && (
+          <div className="stats-bar grid-cols-2 md:grid-cols-4">
+            <div className="stat-card stat-card-purple"><div className="stat-number">{totalTasks}</div><div className="stat-label">Total Tasks</div></div>
+            <div className="stat-card stat-card-yellow"><div className="stat-number">{inProgress}</div><div className="stat-label">In Progress</div></div>
+            <div className="stat-card stat-card-red"><div className="stat-number">{highPriority}</div><div className="stat-label">High Priority</div></div>
+            <div className="stat-card stat-card-green"><div className="stat-number">{completed}</div><div className="stat-label">Completed</div></div>
           </div>
-          <div className="stat-card stat-card-yellow">
-            <div className="stat-number">{inProgress}</div>
-            <div className="stat-label">In Progress</div>
+        )}
+        {activeBoard === "content" && (
+          <div className="stats-bar grid-cols-2 md:grid-cols-4">
+            <div className="stat-card stat-card-purple"><div className="stat-number">{totalPosts}</div><div className="stat-label">Total Posts</div></div>
+            <div className="stat-card stat-card-yellow"><div className="stat-number">{posts.filter(p => p.status === "Draft").length}</div><div className="stat-label">Drafts</div></div>
+            <div className="stat-card stat-card-red"><div className="stat-number">{posts.filter(p => p.status === "Review").length}</div><div className="stat-label">In Review</div></div>
+            <div className="stat-card stat-card-green"><div className="stat-number">{publishedPosts}</div><div className="stat-label">Published</div></div>
           </div>
-          <div className="stat-card stat-card-red">
-            <div className="stat-number">{highPriority}</div>
-            <div className="stat-label">High Priority</div>
-          </div>
-          <div className="stat-card stat-card-green">
-            <div className="stat-number">{completed}</div>
-            <div className="stat-label">Completed</div>
-          </div>
-        </div>
+        )}
 
         {/* Content */}
         <div className="board-container">
-          {view === "board" ? (
-            <TaskBoard
-              tasks={filteredTasks}
-              onRefresh={fetchTasks}
-              onEditTask={setEditingTask}
-            />
-          ) : (
+          {activeBoard === "tasks" && (
+            <TaskBoard tasks={filteredTasks} onRefresh={fetchTasks} onEditTask={setEditingTask} />
+          )}
+          {activeBoard === "content" && (
+            <ContentBoard posts={filteredPosts} onRefresh={fetchPosts} onEditPost={setEditingPost} />
+          )}
+          {activeBoard === "dashboard" && (
             <Dashboard tasks={tasks} />
           )}
         </div>
 
         {/* Modals */}
-        {showForm && (
-          <TaskForm onClose={() => setShowForm(false)} onTaskAdded={fetchTasks} />
-        )}
-        {editingTask && (
-          <EditTaskForm
-            task={editingTask}
-            onClose={() => setEditingTask(null)}
-            onTaskUpdated={fetchTasks}
-          />
-        )}
+        {showForm && <TaskForm onClose={() => setShowForm(false)} onTaskAdded={fetchTasks} />}
+        {editingTask && <EditTaskForm task={editingTask} onClose={() => setEditingTask(null)} onTaskUpdated={fetchTasks} />}
+        {showContentForm && <NewContentForm onClose={() => setShowContentForm(false)} onPostAdded={fetchPosts} />}
+        {editingPost && <ContentEditor post={editingPost} onClose={() => setEditingPost(null)} onPostUpdated={fetchPosts} />}
       </main>
     </div>
   );
