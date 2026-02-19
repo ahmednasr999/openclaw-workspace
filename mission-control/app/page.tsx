@@ -15,6 +15,7 @@ import dynamic from "next/dynamic";
 const CalendarPage = dynamic(() => import("@/app/calendar/page"), { ssr: false });
 const MemoryPage = dynamic(() => import("@/app/memory/page"), { ssr: false });
 const TeamBoard = dynamic(() => import("@/components/TeamBoard").then(m => ({ default: m.TeamBoard })), { ssr: false });
+const CVHistoryPage = dynamic(() => import("@/components/CVHistory").then(m => ({ default: m.CVHistoryPage })), { ssr: false });
 
 interface Task {
   id: number;
@@ -48,7 +49,7 @@ interface ContentPost {
   updatedAt?: string;
 }
 
-type ActiveBoard = "tasks" | "content" | "calendar" | "memory" | "team" | "dashboard";
+type ActiveBoard = "tasks" | "content" | "calendar" | "memory" | "team" | "cv" | "dashboard";
 
 export default function Home() {
   const [tasks, setTasks] = useState<Task[]>([]);
@@ -127,6 +128,7 @@ export default function Home() {
     calendar: "Calendar",
     memory: "Memory",
     team: "Agent Team",
+    cv: "CV Maker",
     dashboard: "Dashboard",
   };
 
@@ -136,6 +138,7 @@ export default function Home() {
     calendar: "Scheduled tasks and proactive work",
     memory: "Your entire digital life",
     team: "Contacts, recruiters, and networking",
+    cv: "Tailored CVs with ATS scoring",
     dashboard: `${totalTasks} tasks · ${highPriority} high priority · ${inReview} awaiting review`,
   };
 
@@ -199,6 +202,13 @@ export default function Home() {
             <Icon name="dashboard" className="text-gray-400" />
             <span>Dashboard</span>
           </div>
+          <div
+            className={`sidebar-item ${activeBoard === "cv" ? "active" : ""}`}
+            onClick={() => setActiveBoard("cv")}
+          >
+            <Icon name="fileText" className="text-gray-400" />
+            <span>CV Maker</span>
+          </div>
         </div>
 
         <div className="sidebar-section">
@@ -261,9 +271,9 @@ export default function Home() {
           </div>
         )}
 
-        {/* Toolbar - hidden for team and memory views (they have their own) */}
-        {activeBoard !== "team" && activeBoard !== "memory" && (
-          <div className="toolbar">
+        {/* Header - hidden for team and memory views (they have their own) */}
+        {activeBoard !== "team" && activeBoard !== "memory" && activeBoard !== "cv" && (
+          <div className="page-header">
             {activeBoard !== "calendar" && (
               <input
                 type="text"
@@ -344,6 +354,9 @@ export default function Home() {
           )}
           {activeBoard === "team" && (
             <TeamBoard />
+          )}
+          {activeBoard === "cv" && (
+            <CVHistoryPage />
           )}
           {activeBoard === "dashboard" && (
             <Dashboard tasks={tasks} />
