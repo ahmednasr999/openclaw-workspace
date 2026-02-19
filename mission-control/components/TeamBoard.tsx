@@ -3,785 +3,513 @@
 import { useState, useEffect, useCallback, useMemo } from "react";
 import { Icon } from "./Icon";
 
-interface Contact {
-  id: number;
+interface AgentDef {
+  id: string;
   name: string;
-  role?: string;
-  company?: string;
-  email?: string;
-  phone?: string;
-  linkedin?: string;
-  category: string;
+  role: string;
+  description: string;
+  icon: string;
+  type: "core" | "specialist";
+  model: string;
+  persistent: boolean;
+  capabilities: string[];
+  qaChecks?: string[];
+}
+
+interface AgentRun {
+  sessionKey: string;
+  label?: string;
   status: string;
-  warmth: string;
-  notes?: string;
-  lastContactDate?: string;
-  nextFollowUp?: string;
-  source?: string;
-  tags: string[];
-  createdAt: string;
-  updatedAt?: string;
+  updatedAt: string;
+  task?: string;
 }
 
-interface Activity {
-  id: number;
-  contactId: number;
-  type: string;
-  content: string;
-  author: string;
-  createdAt: string;
+interface TeamStats {
+  totalRuns: number;
+  activeNow: number;
+  todayRuns: number;
 }
 
-const CATEGORIES = ["All", "Recruiter", "Hiring Manager", "Networking", "Mentor", "Colleague", "Other"];
-const WARMTH_LEVELS = ["Hot", "Warm", "Cool", "Cold"];
-const STATUSES = ["Active", "Follow Up", "On Hold", "Closed"];
+const AGENT_DEFINITIONS: AgentDef[] = [
+  {
+    id: "nasr",
+    name: "NASR",
+    role: "Orchestrator & Chief of Staff",
+    description: "Routes all tasks, coordinates agents, daily briefs, strategic synthesis. The brain of the operation.",
+    icon: "🎯",
+    type: "core",
+    model: "MiniMax-M2.1 (default) / Opus (complex)",
+    persistent: true,
+    capabilities: ["Task routing", "Agent coordination", "Daily briefings", "Strategic analysis", "Memory management"],
+  },
+  {
+    id: "qa",
+    name: "QA Agent",
+    role: "Quality Assurance",
+    description: "Verifies all agent outputs before delivery. Checks ATS compliance for CVs, tone for content, accuracy for research. Max 2 retries.",
+    icon: "🛡️",
+    type: "core",
+    model: "Sonnet 4",
+    persistent: true,
+    capabilities: ["Output validation", "ATS compliance check", "Tone analysis", "Fact checking", "Retry management"],
+    qaChecks: ["CV: ATS rules, no fabricated data, keyword match", "Content: tone, CTA, length, formatting", "Research: sources cited, relevance, completeness", "Code: builds without errors, matches requirements"],
+  },
+  {
+    id: "scheduler",
+    name: "Scheduler",
+    role: "Automation & Scheduling",
+    description: "Manages cron jobs, reminders, follow-ups, and proactive monitoring. Runs 24/7.",
+    icon: "⏰",
+    type: "core",
+    model: "MiniMax-M2.1",
+    persistent: true,
+    capabilities: ["Cron management", "Reminders", "Email monitoring", "Git backups", "Usage alerts"],
+  },
+  {
+    id: "researcher",
+    name: "Research Agent",
+    role: "Intelligence & Analysis",
+    description: "Web research, company analysis, market intel, competitive research. Spawns per task, terminates when done.",
+    icon: "🔍",
+    type: "specialist",
+    model: "MiniMax-M2.1",
+    persistent: false,
+    capabilities: ["Web search", "Company research", "News analysis", "Market intelligence", "Competitive analysis"],
+  },
+  {
+    id: "writer",
+    name: "Writer Agent",
+    role: "Content & Copy",
+    description: "LinkedIn posts, emails, thought leadership, marketing copy. Follows brand voice guidelines.",
+    icon: "✍️",
+    type: "specialist",
+    model: "Sonnet 4",
+    persistent: false,
+    capabilities: ["LinkedIn posts", "Email drafting", "Thought leadership", "Marketing copy", "Brand voice"],
+  },
+  {
+    id: "cv-specialist",
+    name: "CV Specialist",
+    role: "CV & Applications",
+    description: "Tailored CVs, cover letters, ATS optimization. Uses master CV data. Follows strict ATS rules.",
+    icon: "📄",
+    type: "specialist",
+    model: "Opus 4.5",
+    persistent: false,
+    capabilities: ["Tailored CVs", "ATS optimization", "Cover letters", "Keyword matching", "Format compliance"],
+  },
+  {
+    id: "coder",
+    name: "Coder Agent",
+    role: "Development & Automation",
+    description: "Mission Control features, automation scripts, integrations, bug fixes.",
+    icon: "💻",
+    type: "specialist",
+    model: "Sonnet 4",
+    persistent: false,
+    capabilities: ["Feature development", "Bug fixes", "API integrations", "Automation scripts", "Code review"],
+  },
+];
 
-const WARMTH_STYLES: Record<string, { bg: string; text: string; border: string; dot: string }> = {
-  Hot: { bg: "bg-red-500/10", text: "text-red-400", border: "border-red-500/30", dot: "bg-red-500" },
-  Warm: { bg: "bg-amber-500/10", text: "text-amber-400", border: "border-amber-500/30", dot: "bg-amber-500" },
-  Cool: { bg: "bg-blue-500/10", text: "text-blue-400", border: "border-blue-500/30", dot: "bg-blue-500" },
-  Cold: { bg: "bg-gray-500/10", text: "text-gray-400", border: "border-gray-500/30", dot: "bg-gray-500" },
-};
-
-const STATUS_STYLES: Record<string, string> = {
-  Active: "bg-green-500/10 text-green-400 border-green-500/30",
-  "Follow Up": "bg-amber-500/10 text-amber-400 border-amber-500/30",
-  "On Hold": "bg-gray-500/10 text-gray-400 border-gray-500/30",
-  Closed: "bg-red-500/10 text-red-400 border-red-500/30",
-};
-
-const CATEGORY_ICONS: Record<string, string> = {
-  Recruiter: "🎯",
-  "Hiring Manager": "👔",
-  Networking: "🤝",
-  Mentor: "🧭",
-  Colleague: "💼",
-  Other: "📌",
-};
+const TASK_FLOW = [
+  { step: 1, label: "Task Created", column: "Inbox", description: "You or NASR creates a task" },
+  { step: 2, label: "Assigned", column: "In Progress", description: "NASR routes to the right agent" },
+  { step: 3, label: "QA Check", column: "QA", description: "QA Agent verifies output quality" },
+  { step: 4, label: "Your Review", column: "Review", description: "Content/CVs need your approval" },
+  { step: 5, label: "Done", column: "Completed", description: "Routine tasks auto-complete after QA" },
+];
 
 export function TeamBoard() {
-  const [contacts, setContacts] = useState<Contact[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [search, setSearch] = useState("");
-  const [filterCategory, setFilterCategory] = useState("All");
-  const [filterWarmth, setFilterWarmth] = useState("");
-  const [viewMode, setViewMode] = useState<"cards" | "table">("cards");
-  const [selectedContact, setSelectedContact] = useState<Contact | null>(null);
-  const [showForm, setShowForm] = useState(false);
-  const [editingContact, setEditingContact] = useState<Contact | null>(null);
-  const [activity, setActivity] = useState<Activity[]>([]);
-  const [newNote, setNewNote] = useState("");
+  const [agents] = useState<AgentDef[]>(AGENT_DEFINITIONS);
+  const [selectedAgent, setSelectedAgent] = useState<AgentDef | null>(null);
+  const [activeRuns, setActiveRuns] = useState<AgentRun[]>([]);
+  const [viewMode, setViewMode] = useState<"org" | "flow">("org");
+  const [loading, setLoading] = useState(false);
 
-  const fetchContacts = useCallback(async () => {
+  const fetchActiveRuns = useCallback(async () => {
     setLoading(true);
     try {
-      const res = await fetch("/api/contacts");
-      const data = await res.json();
-      setContacts(data);
-    } catch (error) {
-      console.error("Failed to fetch contacts:", error);
+      const res = await fetch("/api/agents/status");
+      if (res.ok) {
+        const data = await res.json();
+        setActiveRuns(data.runs || []);
+      }
+    } catch {
+      // API may not exist yet
     } finally {
       setLoading(false);
     }
   }, []);
 
   useEffect(() => {
-    fetchContacts();
-    const interval = setInterval(fetchContacts, 30000);
+    fetchActiveRuns();
+    const interval = setInterval(fetchActiveRuns, 15000);
     return () => clearInterval(interval);
-  }, [fetchContacts]);
+  }, [fetchActiveRuns]);
 
-  const fetchActivity = async (contactId: number) => {
-    try {
-      const res = await fetch(`/api/contacts/${contactId}/activity`);
-      const data = await res.json();
-      setActivity(data);
-    } catch (error) {
-      console.error("Failed to fetch activity:", error);
-    }
-  };
+  const coreAgents = agents.filter((a) => a.type === "core");
+  const specialists = agents.filter((a) => a.type === "specialist");
 
-  const handleCreateContact = async (data: Partial<Contact>) => {
-    try {
-      await fetch("/api/contacts", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-      setShowForm(false);
-      fetchContacts();
-    } catch (error) {
-      console.error("Failed to create contact:", error);
-    }
-  };
-
-  const handleUpdateContact = async (id: number, fields: Record<string, any>) => {
-    try {
-      await fetch(`/api/contacts?id=${id}`, {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(fields),
-      });
-      setEditingContact(null);
-      setSelectedContact(null);
-      fetchContacts();
-    } catch (error) {
-      console.error("Failed to update contact:", error);
-    }
-  };
-
-  const handleDeleteContact = async (id: number) => {
-    if (!confirm("Delete this contact?")) return;
-    try {
-      await fetch(`/api/contacts?id=${id}`, { method: "DELETE" });
-      setSelectedContact(null);
-      fetchContacts();
-    } catch (error) {
-      console.error("Failed to delete contact:", error);
-    }
-  };
-
-  const handleAddNote = async (contactId: number) => {
-    if (!newNote.trim()) return;
-    try {
-      await fetch(`/api/contacts/${contactId}/activity`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ type: "note", content: newNote.trim(), author: "Ahmed" }),
-      });
-      setNewNote("");
-      fetchActivity(contactId);
-    } catch (error) {
-      console.error("Failed to add note:", error);
-    }
-  };
-
-  const handleLogTouch = async (contact: Contact) => {
-    const today = new Date().toISOString().split("T")[0];
-    await handleUpdateContact(contact.id, { lastContactDate: today });
-    await fetch(`/api/contacts/${contact.id}/activity`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ type: "touch", content: "Logged contact", author: "Ahmed" }),
-    });
-    fetchContacts();
-  };
-
-  const openDetail = (contact: Contact) => {
-    setSelectedContact(contact);
-    fetchActivity(contact.id);
-  };
-
-  // Filtered contacts
-  const filtered = useMemo(() => {
-    return contacts.filter((c) => {
-      if (filterCategory !== "All" && c.category !== filterCategory) return false;
-      if (filterWarmth && c.warmth !== filterWarmth) return false;
-      if (search) {
-        const q = search.toLowerCase();
-        return (
-          c.name.toLowerCase().includes(q) ||
-          c.company?.toLowerCase().includes(q) ||
-          c.role?.toLowerCase().includes(q) ||
-          c.notes?.toLowerCase().includes(q) ||
-          c.tags.some((t) => t.toLowerCase().includes(q))
-        );
-      }
-      return true;
-    });
-  }, [contacts, filterCategory, filterWarmth, search]);
-
-  // Stats
-  const stats = useMemo(() => {
-    const now = new Date();
-    const followUpsDue = contacts.filter((c) => c.nextFollowUp && new Date(c.nextFollowUp) <= now && c.status !== "Closed").length;
-    const stale = contacts.filter((c) => {
-      if (!c.lastContactDate || c.status === "Closed") return false;
-      const days = (now.getTime() - new Date(c.lastContactDate).getTime()) / (1000 * 60 * 60 * 24);
-      return days > 14;
-    }).length;
-    return {
-      total: contacts.length,
-      active: contacts.filter((c) => c.status === "Active").length,
-      followUpsDue,
-      stale,
-      hot: contacts.filter((c) => c.warmth === "Hot").length,
-    };
-  }, [contacts]);
-
-  const formatDate = (d?: string) => {
-    if (!d) return "-";
-    const date = new Date(d);
-    const now = new Date();
-    const diff = Math.floor((now.getTime() - date.getTime()) / (1000 * 60 * 60 * 24));
-    if (diff === 0) return "Today";
-    if (diff === 1) return "Yesterday";
-    if (diff < 7) return `${diff}d ago`;
-    return date.toLocaleDateString("en-US", { month: "short", day: "numeric", timeZone: "Africa/Cairo" });
-  };
-
-  const formatFuture = (d?: string) => {
-    if (!d) return "-";
-    const date = new Date(d);
-    const now = new Date();
-    const diff = Math.floor((date.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
-    if (diff < 0) return <span className="text-red-400">Overdue ({Math.abs(diff)}d)</span>;
-    if (diff === 0) return <span className="text-amber-400">Today</span>;
-    if (diff === 1) return "Tomorrow";
-    if (diff < 7) return `In ${diff}d`;
-    return date.toLocaleDateString("en-US", { month: "short", day: "numeric", timeZone: "Africa/Cairo" });
-  };
+  const stats: TeamStats = useMemo(() => ({
+    totalRuns: activeRuns.length,
+    activeNow: activeRuns.filter((r) => r.status === "running").length,
+    todayRuns: activeRuns.length,
+  }), [activeRuns]);
 
   return (
     <div className="h-full flex flex-col">
       {/* Header */}
       <div className="flex items-center justify-between px-6 py-4 border-b border-[rgba(255,255,255,0.06)]">
         <div>
-          <h1 className="text-xl font-bold text-white">Team & Network</h1>
+          <h1 className="text-xl font-bold text-white">Agent Team</h1>
           <p className="text-xs text-gray-500 mt-1">
-            {stats.total} contacts - {stats.followUpsDue > 0 ? <span className="text-amber-400">{stats.followUpsDue} follow-ups due</span> : "All caught up"}
-            {stats.stale > 0 && <span className="text-red-400 ml-2">- {stats.stale} going cold</span>}
+            {coreAgents.length} core agents - {specialists.length} specialists - {stats.activeNow > 0 ? <span className="text-green-400">{stats.activeNow} active now</span> : "All idle"}
           </p>
         </div>
         <div className="flex items-center gap-3">
-          <button
-            onClick={() => setShowForm(true)}
-            className="px-4 py-2 rounded-lg text-xs font-medium bg-[rgba(124,92,252,0.15)] border border-indigo-500/30 text-indigo-400 hover:bg-[rgba(124,92,252,0.25)] transition-all"
-          >
-            <Icon name="plus" size={14} className="inline mr-1" />
-            Add Contact
-          </button>
           <div className="flex gap-1 bg-[rgba(255,255,255,0.03)] rounded-lg p-1 border border-[rgba(255,255,255,0.08)]">
             <button
-              onClick={() => setViewMode("cards")}
-              className={`px-3 py-1.5 rounded text-xs font-medium transition-all ${viewMode === "cards" ? "bg-[rgba(124,92,252,0.15)] text-[#a78bfa]" : "text-gray-500 hover:text-white"}`}
+              onClick={() => setViewMode("org")}
+              className={`px-3 py-1.5 rounded text-xs font-medium transition-all ${viewMode === "org" ? "bg-[rgba(124,92,252,0.15)] text-[#a78bfa]" : "text-gray-500 hover:text-white"}`}
             >
-              Cards
+              Org Chart
             </button>
             <button
-              onClick={() => setViewMode("table")}
-              className={`px-3 py-1.5 rounded text-xs font-medium transition-all ${viewMode === "table" ? "bg-[rgba(124,92,252,0.15)] text-[#a78bfa]" : "text-gray-500 hover:text-white"}`}
+              onClick={() => setViewMode("flow")}
+              className={`px-3 py-1.5 rounded text-xs font-medium transition-all ${viewMode === "flow" ? "bg-[rgba(124,92,252,0.15)] text-[#a78bfa]" : "text-gray-500 hover:text-white"}`}
             >
-              Table
+              Task Flow
             </button>
           </div>
         </div>
-      </div>
-
-      {/* Stats Bar */}
-      <div className="flex items-center gap-4 px-6 py-3 border-b border-[rgba(255,255,255,0.04)] bg-[rgba(255,255,255,0.02)]">
-        {WARMTH_LEVELS.map((w) => {
-          const count = contacts.filter((c) => c.warmth === w).length;
-          const s = WARMTH_STYLES[w];
-          return (
-            <button
-              key={w}
-              onClick={() => setFilterWarmth(filterWarmth === w ? "" : w)}
-              className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs transition-all border ${
-                filterWarmth === w ? `${s.bg} ${s.text} ${s.border}` : "border-transparent text-gray-500 hover:text-gray-300"
-              }`}
-            >
-              <div className={`w-2 h-2 rounded-full ${s.dot}`} />
-              <span>{w}</span>
-              <span className="opacity-60">{count}</span>
-            </button>
-          );
-        })}
-        <div className="flex-1" />
-        <div className="flex items-center gap-2">
-          <Icon name="search" size={14} className="text-gray-500" />
-          <input
-            type="text"
-            placeholder="Search contacts..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            className="bg-transparent border-none text-sm text-white placeholder-gray-600 outline-none w-48"
-          />
-        </div>
-      </div>
-
-      {/* Category Tabs */}
-      <div className="flex items-center gap-1 px-6 py-2 border-b border-[rgba(255,255,255,0.04)]">
-        {CATEGORIES.map((cat) => {
-          const count = cat === "All" ? contacts.length : contacts.filter((c) => c.category === cat).length;
-          return (
-            <button
-              key={cat}
-              onClick={() => setFilterCategory(cat)}
-              className={`px-3 py-1.5 rounded text-xs font-medium transition-all ${
-                filterCategory === cat
-                  ? "bg-[rgba(124,92,252,0.15)] text-[#a78bfa]"
-                  : "text-gray-500 hover:text-white"
-              }`}
-            >
-              {cat !== "All" && <span className="mr-1">{CATEGORY_ICONS[cat] || ""}</span>}
-              {cat}
-              {count > 0 && <span className="ml-1 opacity-50">{count}</span>}
-            </button>
-          );
-        })}
       </div>
 
       {/* Content */}
       <div className="flex-1 overflow-auto p-6">
-        {loading && contacts.length === 0 ? (
-          <div className="text-center text-gray-500 py-12">Loading...</div>
-        ) : filtered.length === 0 ? (
-          <div className="text-center text-gray-500 py-12">
-            <div className="text-4xl mb-4">👥</div>
-            {contacts.length === 0 ? (
-              <>
-                <p>No contacts yet</p>
-                <p className="text-xs mt-2">Add recruiters, hiring managers, and networking contacts</p>
-                <button onClick={() => setShowForm(true)} className="mt-4 px-4 py-2 rounded-lg text-xs bg-[rgba(124,92,252,0.15)] border border-indigo-500/30 text-indigo-400 hover:bg-[rgba(124,92,252,0.25)] transition-all">
-                  Add First Contact
-                </button>
-              </>
-            ) : (
-              <p>No contacts match filters</p>
-            )}
-          </div>
-        ) : viewMode === "cards" ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {filtered.map((contact) => (
-              <ContactCard key={contact.id} contact={contact} onOpen={openDetail} onLogTouch={handleLogTouch} formatDate={formatDate} formatFuture={formatFuture} />
-            ))}
-          </div>
+        {viewMode === "org" ? (
+          <OrgChartView
+            coreAgents={coreAgents}
+            specialists={specialists}
+            activeRuns={activeRuns}
+            onSelectAgent={setSelectedAgent}
+          />
         ) : (
-          <ContactTable contacts={filtered} onOpen={openDetail} formatDate={formatDate} formatFuture={formatFuture} />
+          <TaskFlowView />
         )}
       </div>
 
-      {/* Detail Modal */}
-      {selectedContact && (
-        <ContactDetailModal
-          contact={selectedContact}
-          activity={activity}
-          newNote={newNote}
-          onNoteChange={setNewNote}
-          onAddNote={() => handleAddNote(selectedContact.id)}
-          onEdit={() => { setEditingContact(selectedContact); setSelectedContact(null); }}
-          onDelete={() => handleDeleteContact(selectedContact.id)}
-          onLogTouch={() => handleLogTouch(selectedContact)}
-          onClose={() => setSelectedContact(null)}
-          formatDate={formatDate}
-          formatFuture={formatFuture}
-        />
-      )}
-
-      {/* Create/Edit Form */}
-      {(showForm || editingContact) && (
-        <ContactFormModal
-          contact={editingContact || undefined}
-          onSubmit={(data) => {
-            if (editingContact) {
-              handleUpdateContact(editingContact.id, data);
-            } else {
-              handleCreateContact(data);
-            }
-          }}
-          onClose={() => { setShowForm(false); setEditingContact(null); }}
+      {/* Agent Detail Modal */}
+      {selectedAgent && (
+        <AgentDetailModal
+          agent={selectedAgent}
+          runs={activeRuns.filter((r) => r.label?.toLowerCase().includes(selectedAgent.id))}
+          onClose={() => setSelectedAgent(null)}
         />
       )}
     </div>
   );
 }
 
-// Contact Card
-function ContactCard({ contact, onOpen, onLogTouch, formatDate, formatFuture }: {
-  contact: Contact;
-  onOpen: (c: Contact) => void;
-  onLogTouch: (c: Contact) => void;
-  formatDate: (d?: string) => any;
-  formatFuture: (d?: string) => any;
+// Org Chart View
+function OrgChartView({ coreAgents, specialists, activeRuns, onSelectAgent }: {
+  coreAgents: AgentDef[];
+  specialists: AgentDef[];
+  activeRuns: AgentRun[];
+  onSelectAgent: (a: AgentDef) => void;
 }) {
-  const warmth = WARMTH_STYLES[contact.warmth] || WARMTH_STYLES.Warm;
-  const statusStyle = STATUS_STYLES[contact.status] || STATUS_STYLES.Active;
-  const icon = CATEGORY_ICONS[contact.category] || "📌";
-
   return (
-    <div
-      onClick={() => onOpen(contact)}
-      className="p-4 rounded-xl bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.06)] hover:bg-[rgba(255,255,255,0.04)] hover:border-[rgba(255,255,255,0.1)] transition-all cursor-pointer group"
-    >
-      <div className="flex items-start justify-between mb-3">
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-[rgba(124,92,252,0.1)] border border-indigo-500/20 flex items-center justify-center text-lg">
-            {icon}
-          </div>
-          <div>
-            <div className="text-sm font-medium text-white">{contact.name}</div>
-            {contact.role && <div className="text-[11px] text-gray-500">{contact.role}</div>}
-          </div>
+    <div className="max-w-5xl mx-auto">
+      {/* Ahmed at the top */}
+      <div className="flex justify-center mb-2">
+        <div className="px-6 py-4 rounded-xl bg-[rgba(124,92,252,0.08)] border border-indigo-500/20 text-center">
+          <div className="text-2xl mb-1">👤</div>
+          <div className="text-sm font-semibold text-white">Ahmed Nasr</div>
+          <div className="text-[10px] text-indigo-400">Executive Director</div>
+          <div className="text-[10px] text-gray-500 mt-1">Decisions - Approvals - Strategy</div>
         </div>
-        <div className={`w-2.5 h-2.5 rounded-full ${warmth.dot}`} title={contact.warmth} />
       </div>
 
-      {contact.company && (
-        <div className="text-xs text-gray-400 mb-2">{contact.company}</div>
-      )}
-
-      <div className="flex items-center gap-2 mb-3">
-        <span className={`text-[10px] px-2 py-0.5 rounded border ${statusStyle}`}>{contact.status}</span>
-        <span className={`text-[10px] px-2 py-0.5 rounded border ${warmth.bg} ${warmth.text} ${warmth.border}`}>{contact.warmth}</span>
+      {/* Connector line */}
+      <div className="flex justify-center mb-2">
+        <div className="w-px h-8 bg-[rgba(255,255,255,0.1)]" />
       </div>
 
-      <div className="flex items-center justify-between text-[10px] text-gray-600">
-        <span>Last: {formatDate(contact.lastContactDate)}</span>
-        <span>Follow up: {formatFuture(contact.nextFollowUp)}</span>
-      </div>
-
-      {contact.tags.length > 0 && (
-        <div className="flex gap-1 mt-2 flex-wrap">
-          {contact.tags.slice(0, 3).map((tag) => (
-            <span key={tag} className="text-[9px] px-1.5 py-0.5 rounded bg-[rgba(255,255,255,0.05)] text-gray-500">#{tag}</span>
+      {/* Core Agents */}
+      <div className="mb-2">
+        <div className="text-[10px] text-gray-500 uppercase tracking-wider mb-3 text-center">Core Team - Always Running</div>
+        <div className="flex justify-center gap-4 flex-wrap">
+          {coreAgents.map((agent) => (
+            <AgentCard key={agent.id} agent={agent} isActive={false} onSelect={onSelectAgent} />
           ))}
         </div>
-      )}
+      </div>
 
-      {/* Quick action */}
-      <button
-        onClick={(e) => { e.stopPropagation(); onLogTouch(contact); }}
-        className="opacity-0 group-hover:opacity-100 mt-3 w-full px-3 py-1.5 rounded-lg text-[10px] font-medium bg-white/5 border border-[rgba(255,255,255,0.08)] text-gray-400 hover:text-white hover:bg-white/10 transition-all"
-      >
-        ✓ Log Contact
-      </button>
+      {/* Connector line */}
+      <div className="flex justify-center mb-2">
+        <div className="w-px h-8 bg-[rgba(255,255,255,0.06)]" />
+      </div>
+
+      {/* Specialists */}
+      <div>
+        <div className="text-[10px] text-gray-500 uppercase tracking-wider mb-3 text-center">Specialists - Spawn Per Task</div>
+        <div className="flex justify-center gap-4 flex-wrap">
+          {specialists.map((agent) => (
+            <AgentCard key={agent.id} agent={agent} isActive={false} onSelect={onSelectAgent} />
+          ))}
+        </div>
+      </div>
+
+      {/* Rules summary */}
+      <div className="mt-10 grid grid-cols-3 gap-4 max-w-3xl mx-auto">
+        <RuleCard
+          title="Routing"
+          icon="🔀"
+          rules={["NASR routes all tasks", "One responsibility per agent", "Max 2 retries on failure"]}
+        />
+        <RuleCard
+          title="Quality"
+          icon="🛡️"
+          rules={["QA checks every output", "Content/CVs need Ahmed's review", "Routine auto-completes after QA"]}
+        />
+        <RuleCard
+          title="Efficiency"
+          icon="⚡"
+          rules={["Specialists terminate when done", "Promote if 10+ tasks/day", "Cheapest model that works"]}
+        />
+      </div>
     </div>
   );
 }
 
-// Table view
-function ContactTable({ contacts, onOpen, formatDate, formatFuture }: {
-  contacts: Contact[];
-  onOpen: (c: Contact) => void;
-  formatDate: (d?: string) => any;
-  formatFuture: (d?: string) => any;
+// Task Flow View
+function TaskFlowView() {
+  return (
+    <div className="max-w-4xl mx-auto">
+      <div className="text-center mb-8">
+        <h2 className="text-base font-semibold text-white mb-2">How Tasks Flow Through the Team</h2>
+        <p className="text-xs text-gray-500">Every task follows this pipeline. QA catches issues before they reach you.</p>
+      </div>
+
+      <div className="space-y-0">
+        {TASK_FLOW.map((step, i) => (
+          <div key={step.step} className="flex items-start gap-4">
+            {/* Step number */}
+            <div className="flex flex-col items-center">
+              <div className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold ${
+                step.step === 3 ? "bg-amber-500/15 text-amber-400 border border-amber-500/30" :
+                step.step === 5 ? "bg-green-500/15 text-green-400 border border-green-500/30" :
+                "bg-[rgba(124,92,252,0.15)] text-indigo-400 border border-indigo-500/30"
+              }`}>
+                {step.step}
+              </div>
+              {i < TASK_FLOW.length - 1 && <div className="w-px h-12 bg-[rgba(255,255,255,0.06)]" />}
+            </div>
+
+            {/* Content */}
+            <div className="flex-1 pb-8">
+              <div className="flex items-center gap-3 mb-1">
+                <span className="text-sm font-medium text-white">{step.label}</span>
+                <span className="text-[10px] px-2 py-0.5 rounded bg-[rgba(255,255,255,0.05)] text-gray-500">
+                  → {step.column}
+                </span>
+              </div>
+              <p className="text-xs text-gray-500">{step.description}</p>
+
+              {/* Special detail for QA step */}
+              {step.step === 3 && (
+                <div className="mt-3 p-3 rounded-lg bg-[rgba(245,158,11,0.05)] border border-amber-500/15">
+                  <div className="text-[10px] text-amber-400 font-medium mb-2">QA Checks by Task Type:</div>
+                  <div className="grid grid-cols-2 gap-2">
+                    <div className="text-[10px] text-gray-400"><span className="text-amber-400">CV:</span> ATS rules, no fabricated data, keywords</div>
+                    <div className="text-[10px] text-gray-400"><span className="text-amber-400">Content:</span> Tone, CTA, length, formatting</div>
+                    <div className="text-[10px] text-gray-400"><span className="text-amber-400">Research:</span> Sources, relevance, completeness</div>
+                    <div className="text-[10px] text-gray-400"><span className="text-amber-400">Code:</span> Builds, matches requirements</div>
+                  </div>
+                </div>
+              )}
+
+              {/* Auto-complete note */}
+              {step.step === 4 && (
+                <div className="mt-2 text-[10px] text-gray-600">
+                  ⚡ Routine tasks (backups, syncs, research) skip this step and auto-complete after QA pass
+                </div>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Failure handling */}
+      <div className="mt-6 p-4 rounded-xl bg-[rgba(248,113,113,0.05)] border border-red-500/15">
+        <div className="text-sm font-medium text-white mb-2">⚠️ When Things Fail</div>
+        <div className="grid grid-cols-3 gap-4 text-[11px] text-gray-400">
+          <div>
+            <span className="text-red-400 font-medium">QA Fail →</span> Back to specialist with feedback (max 2 retries)
+          </div>
+          <div>
+            <span className="text-red-400 font-medium">Agent Timeout →</span> Task flagged, NASR notifies Ahmed
+          </div>
+          <div>
+            <span className="text-red-400 font-medium">2 Retries Exhausted →</span> Escalate to Ahmed for manual handling
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// Agent Card
+function AgentCard({ agent, isActive, onSelect }: {
+  agent: AgentDef;
+  isActive: boolean;
+  onSelect: (a: AgentDef) => void;
 }) {
   return (
-    <div className="overflow-x-auto">
-      <table className="w-full">
-        <thead>
-          <tr className="border-b border-[rgba(255,255,255,0.06)]">
-            <th className="text-left text-[10px] font-medium text-gray-500 uppercase tracking-wider py-3 px-3">Name</th>
-            <th className="text-left text-[10px] font-medium text-gray-500 uppercase tracking-wider py-3 px-3">Company</th>
-            <th className="text-left text-[10px] font-medium text-gray-500 uppercase tracking-wider py-3 px-3">Category</th>
-            <th className="text-left text-[10px] font-medium text-gray-500 uppercase tracking-wider py-3 px-3">Warmth</th>
-            <th className="text-left text-[10px] font-medium text-gray-500 uppercase tracking-wider py-3 px-3">Status</th>
-            <th className="text-left text-[10px] font-medium text-gray-500 uppercase tracking-wider py-3 px-3">Last Contact</th>
-            <th className="text-left text-[10px] font-medium text-gray-500 uppercase tracking-wider py-3 px-3">Follow Up</th>
-          </tr>
-        </thead>
-        <tbody>
-          {contacts.map((c) => {
-            const warmth = WARMTH_STYLES[c.warmth] || WARMTH_STYLES.Warm;
-            const statusStyle = STATUS_STYLES[c.status] || STATUS_STYLES.Active;
-            return (
-              <tr
-                key={c.id}
-                onClick={() => onOpen(c)}
-                className="border-b border-[rgba(255,255,255,0.04)] hover:bg-[rgba(255,255,255,0.03)] cursor-pointer transition-all"
-              >
-                <td className="py-3 px-3">
-                  <div className="text-xs font-medium text-white">{c.name}</div>
-                  {c.role && <div className="text-[10px] text-gray-500">{c.role}</div>}
-                </td>
-                <td className="py-3 px-3 text-xs text-gray-400">{c.company || "-"}</td>
-                <td className="py-3 px-3">
-                  <span className="text-xs">{CATEGORY_ICONS[c.category] || ""} {c.category}</span>
-                </td>
-                <td className="py-3 px-3">
-                  <span className={`text-[10px] px-2 py-0.5 rounded border ${warmth.bg} ${warmth.text} ${warmth.border}`}>{c.warmth}</span>
-                </td>
-                <td className="py-3 px-3">
-                  <span className={`text-[10px] px-2 py-0.5 rounded border ${statusStyle}`}>{c.status}</span>
-                </td>
-                <td className="py-3 px-3 text-[11px] text-gray-400">{formatDate(c.lastContactDate)}</td>
-                <td className="py-3 px-3 text-[11px]">{formatFuture(c.nextFollowUp)}</td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
+    <button
+      onClick={() => onSelect(agent)}
+      className={`w-52 p-4 rounded-xl border text-left transition-all hover:border-[rgba(255,255,255,0.15)] hover:bg-[rgba(255,255,255,0.04)] ${
+        agent.type === "core"
+          ? "bg-[rgba(255,255,255,0.02)] border-[rgba(255,255,255,0.08)]"
+          : "bg-[rgba(255,255,255,0.01)] border-[rgba(255,255,255,0.05)]"
+      }`}
+    >
+      <div className="flex items-center justify-between mb-2">
+        <span className="text-2xl">{agent.icon}</span>
+        <div className="flex items-center gap-1.5">
+          {agent.persistent && (
+            <span className="text-[8px] px-1.5 py-0.5 rounded bg-green-500/10 text-green-400 border border-green-500/20">ALWAYS ON</span>
+          )}
+          {isActive && (
+            <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+          )}
+        </div>
+      </div>
+      <div className="text-sm font-medium text-white mb-0.5">{agent.name}</div>
+      <div className="text-[10px] text-indigo-400 mb-2">{agent.role}</div>
+      <div className="text-[10px] text-gray-500 line-clamp-2 mb-3">{agent.description}</div>
+      <div className="text-[9px] text-gray-600">
+        Model: {agent.model}
+      </div>
+    </button>
+  );
+}
+
+// Rule Card
+function RuleCard({ title, icon, rules }: { title: string; icon: string; rules: string[] }) {
+  return (
+    <div className="p-4 rounded-xl bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.06)]">
+      <div className="flex items-center gap-2 mb-3">
+        <span className="text-lg">{icon}</span>
+        <span className="text-xs font-semibold text-white">{title}</span>
+      </div>
+      <div className="space-y-2">
+        {rules.map((rule, i) => (
+          <div key={i} className="flex items-start gap-2">
+            <div className="w-1 h-1 rounded-full bg-gray-600 mt-1.5 flex-shrink-0" />
+            <span className="text-[10px] text-gray-400">{rule}</span>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
 
-// Detail modal with activity log
-function ContactDetailModal({ contact, activity, newNote, onNoteChange, onAddNote, onEdit, onDelete, onLogTouch, onClose, formatDate, formatFuture }: {
-  contact: Contact;
-  activity: Activity[];
-  newNote: string;
-  onNoteChange: (v: string) => void;
-  onAddNote: () => void;
-  onEdit: () => void;
-  onDelete: () => void;
-  onLogTouch: () => void;
+// Agent Detail Modal
+function AgentDetailModal({ agent, runs, onClose }: {
+  agent: AgentDef;
+  runs: AgentRun[];
   onClose: () => void;
-  formatDate: (d?: string) => any;
-  formatFuture: (d?: string) => any;
 }) {
-  const warmth = WARMTH_STYLES[contact.warmth] || WARMTH_STYLES.Warm;
-  const statusStyle = STATUS_STYLES[contact.status] || STATUS_STYLES.Active;
-
   return (
     <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4" onClick={onClose}>
-      <div className="bg-[#12121a] border border-[rgba(255,255,255,0.1)] rounded-xl w-full max-w-2xl max-h-[85vh] overflow-hidden flex flex-col" onClick={(e) => e.stopPropagation()}>
+      <div className="bg-[#12121a] border border-[rgba(255,255,255,0.1)] rounded-xl w-full max-w-lg max-h-[80vh] overflow-hidden flex flex-col" onClick={(e) => e.stopPropagation()}>
         {/* Header */}
-        <div className="p-6 border-b border-[rgba(255,255,255,0.06)] flex-shrink-0">
+        <div className="p-6 border-b border-[rgba(255,255,255,0.06)]">
           <div className="flex items-start justify-between">
             <div className="flex items-center gap-4">
-              <div className="w-14 h-14 rounded-full bg-[rgba(124,92,252,0.1)] border border-indigo-500/20 flex items-center justify-center text-2xl">
-                {CATEGORY_ICONS[contact.category] || "📌"}
+              <div className="w-14 h-14 rounded-xl bg-[rgba(124,92,252,0.1)] border border-indigo-500/20 flex items-center justify-center text-2xl">
+                {agent.icon}
               </div>
               <div>
-                <h2 className="text-lg font-semibold text-white">{contact.name}</h2>
-                <div className="text-sm text-gray-400">
-                  {[contact.role, contact.company].filter(Boolean).join(" at ")}
-                </div>
-                <div className="flex items-center gap-2 mt-2">
-                  <span className={`text-[10px] px-2 py-0.5 rounded border ${statusStyle}`}>{contact.status}</span>
-                  <span className={`text-[10px] px-2 py-0.5 rounded border ${warmth.bg} ${warmth.text} ${warmth.border}`}>{contact.warmth}</span>
-                  <span className="text-[10px] text-gray-600">{contact.category}</span>
+                <h2 className="text-lg font-semibold text-white">{agent.name}</h2>
+                <div className="text-xs text-indigo-400">{agent.role}</div>
+                <div className="flex items-center gap-2 mt-1">
+                  <span className={`text-[9px] px-1.5 py-0.5 rounded ${
+                    agent.persistent ? "bg-green-500/10 text-green-400 border border-green-500/20" : "bg-gray-500/10 text-gray-400 border border-gray-500/20"
+                  }`}>
+                    {agent.persistent ? "Persistent" : "Spawns per task"}
+                  </span>
+                  <span className="text-[9px] px-1.5 py-0.5 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
+                    {agent.type}
+                  </span>
                 </div>
               </div>
             </div>
-            <button onClick={onClose} className="text-gray-500 hover:text-white"><Icon name="close" size={20} /></button>
-          </div>
-
-          {/* Contact info */}
-          <div className="flex items-center gap-4 mt-4 flex-wrap">
-            {contact.email && (
-              <a href={`mailto:${contact.email}`} className="text-xs text-indigo-400 hover:underline">✉ {contact.email}</a>
-            )}
-            {contact.phone && (
-              <a href={`tel:${contact.phone}`} className="text-xs text-indigo-400 hover:underline">📞 {contact.phone}</a>
-            )}
-            {contact.linkedin && (
-              <a href={contact.linkedin} target="_blank" rel="noopener noreferrer" className="text-xs text-indigo-400 hover:underline">🔗 LinkedIn</a>
-            )}
-          </div>
-
-          {/* Key dates */}
-          <div className="flex items-center gap-6 mt-3 text-[11px] text-gray-500">
-            <span>Last contact: {formatDate(contact.lastContactDate)}</span>
-            <span>Follow up: {formatFuture(contact.nextFollowUp)}</span>
-            {contact.source && <span>Source: {contact.source}</span>}
+            <button onClick={onClose} className="text-gray-500 hover:text-white">
+              <Icon name="close" size={20} />
+            </button>
           </div>
         </div>
 
-        {/* Notes & Activity */}
-        <div className="flex-1 overflow-y-auto p-6">
-          {contact.notes && (
-            <div className="mb-6 p-4 rounded-lg bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.06)]">
-              <div className="text-[10px] text-gray-500 uppercase tracking-wider mb-2">Notes</div>
-              <p className="text-sm text-gray-300 whitespace-pre-wrap">{contact.notes}</p>
+        {/* Content */}
+        <div className="flex-1 overflow-y-auto p-6 space-y-6">
+          {/* Description */}
+          <div>
+            <div className="text-[10px] text-gray-500 uppercase tracking-wider mb-2">About</div>
+            <p className="text-sm text-gray-300">{agent.description}</p>
+          </div>
+
+          {/* Model */}
+          <div>
+            <div className="text-[10px] text-gray-500 uppercase tracking-wider mb-2">Model</div>
+            <p className="text-sm text-gray-300">{agent.model}</p>
+          </div>
+
+          {/* Capabilities */}
+          <div>
+            <div className="text-[10px] text-gray-500 uppercase tracking-wider mb-2">Capabilities</div>
+            <div className="flex flex-wrap gap-2">
+              {agent.capabilities.map((cap) => (
+                <span key={cap} className="text-[10px] px-2.5 py-1 rounded-lg bg-[rgba(124,92,252,0.08)] text-indigo-400 border border-indigo-500/15">
+                  {cap}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* QA Checks (for QA agent) */}
+          {agent.qaChecks && (
+            <div>
+              <div className="text-[10px] text-gray-500 uppercase tracking-wider mb-2">Quality Checks</div>
+              <div className="space-y-2">
+                {agent.qaChecks.map((check, i) => (
+                  <div key={i} className="flex items-start gap-2 text-xs text-gray-400">
+                    <span className="text-amber-400 mt-0.5">✓</span>
+                    <span>{check}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           )}
 
-          {/* Add note */}
-          <div className="mb-6">
-            <div className="flex gap-2">
-              <input
-                type="text"
-                value={newNote}
-                onChange={(e) => onNoteChange(e.target.value)}
-                onKeyDown={(e) => e.key === "Enter" && onAddNote()}
-                placeholder="Add a note or log an interaction..."
-                className="flex-1 px-3 py-2 rounded-lg bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)] text-sm text-white placeholder-gray-600 outline-none focus:border-indigo-500/50"
-              />
-              <button
-                onClick={onAddNote}
-                disabled={!newNote.trim()}
-                className="px-4 py-2 rounded-lg text-xs font-medium bg-[rgba(124,92,252,0.15)] border border-indigo-500/30 text-indigo-400 hover:bg-[rgba(124,92,252,0.25)] transition-all disabled:opacity-30"
-              >
-                Add
-              </button>
-            </div>
-          </div>
-
-          {/* Activity log */}
+          {/* Recent runs */}
           <div>
-            <div className="text-[10px] text-gray-500 uppercase tracking-wider mb-3">Activity</div>
-            {activity.length === 0 ? (
-              <p className="text-xs text-gray-600">No activity recorded yet</p>
+            <div className="text-[10px] text-gray-500 uppercase tracking-wider mb-2">Recent Activity</div>
+            {runs.length === 0 ? (
+              <p className="text-xs text-gray-600">No recent runs</p>
             ) : (
-              <div className="space-y-3">
-                {activity.map((a) => (
-                  <div key={a.id} className="flex items-start gap-3">
-                    <div className={`w-6 h-6 rounded-full flex items-center justify-center text-[10px] flex-shrink-0 ${
-                      a.type === "note" ? "bg-indigo-500/10 text-indigo-400" :
-                      a.type === "touch" ? "bg-green-500/10 text-green-400" :
-                      a.type === "created" ? "bg-purple-500/10 text-purple-400" :
-                      "bg-gray-500/10 text-gray-400"
-                    }`}>
-                      {a.type === "note" ? "📝" : a.type === "touch" ? "✓" : a.type === "created" ? "+" : "•"}
-                    </div>
-                    <div className="flex-1">
-                      <p className="text-xs text-gray-300">{a.content}</p>
-                      <div className="flex items-center gap-2 mt-1">
-                        <span className="text-[10px] text-gray-600">{a.author}</span>
-                        <span className="text-[10px] text-gray-700">-</span>
-                        <span className="text-[10px] text-gray-600">
-                          {new Date(a.createdAt).toLocaleDateString("en-US", { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit", timeZone: "Africa/Cairo" })}
-                        </span>
-                      </div>
-                    </div>
+              <div className="space-y-2">
+                {runs.map((run) => (
+                  <div key={run.sessionKey} className="flex items-center gap-3 p-2 rounded-lg bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.04)]">
+                    <div className={`w-2 h-2 rounded-full ${run.status === "running" ? "bg-green-500 animate-pulse" : "bg-gray-500"}`} />
+                    <span className="text-xs text-gray-300 flex-1 truncate">{run.task || run.label || run.sessionKey}</span>
+                    <span className="text-[10px] text-gray-600">{new Date(run.updatedAt).toLocaleTimeString("en-US", { timeZone: "Africa/Cairo" })}</span>
                   </div>
                 ))}
               </div>
             )}
           </div>
-
-          {/* Tags */}
-          {contact.tags.length > 0 && (
-            <div className="mt-6 flex items-center gap-2 flex-wrap">
-              {contact.tags.map((tag) => (
-                <span key={tag} className="text-xs px-2 py-1 rounded bg-[rgba(124,92,252,0.1)] text-[#a78bfa]">#{tag}</span>
-              ))}
-            </div>
-          )}
         </div>
-
-        {/* Actions */}
-        <div className="px-6 py-4 border-t border-[rgba(255,255,255,0.06)] flex items-center gap-2 flex-shrink-0">
-          <button onClick={onLogTouch} className="px-3 py-2 rounded-lg text-xs font-medium bg-green-500/10 border border-green-500/30 text-green-400 hover:bg-green-500/20 transition-all">
-            ✓ Log Contact
-          </button>
-          <button onClick={onEdit} className="px-3 py-2 rounded-lg text-xs font-medium bg-white/5 border border-[rgba(255,255,255,0.08)] text-gray-400 hover:text-white hover:bg-white/10 transition-all">
-            <Icon name="edit" size={12} className="inline mr-1" />Edit
-          </button>
-          <div className="flex-1" />
-          <button onClick={onDelete} className="px-3 py-2 rounded-lg text-xs font-medium bg-red-500/10 border border-red-500/30 text-red-400 hover:bg-red-500/20 transition-all">
-            <Icon name="delete" size={12} />
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-// Create/Edit form
-function ContactFormModal({ contact, onSubmit, onClose }: {
-  contact?: Contact;
-  onSubmit: (data: any) => void;
-  onClose: () => void;
-}) {
-  const [form, setForm] = useState({
-    name: contact?.name || "",
-    role: contact?.role || "",
-    company: contact?.company || "",
-    email: contact?.email || "",
-    phone: contact?.phone || "",
-    linkedin: contact?.linkedin || "",
-    category: contact?.category || "Networking",
-    status: contact?.status || "Active",
-    warmth: contact?.warmth || "Warm",
-    notes: contact?.notes || "",
-    lastContactDate: contact?.lastContactDate || "",
-    nextFollowUp: contact?.nextFollowUp || "",
-    source: contact?.source || "",
-    tagsStr: contact?.tags?.join(", ") || "",
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!form.name.trim()) return;
-    const tags = form.tagsStr.split(",").map((t) => t.trim()).filter(Boolean);
-    onSubmit({
-      name: form.name.trim(),
-      role: form.role || undefined,
-      company: form.company || undefined,
-      email: form.email || undefined,
-      phone: form.phone || undefined,
-      linkedin: form.linkedin || undefined,
-      category: form.category,
-      status: form.status,
-      warmth: form.warmth,
-      notes: form.notes || undefined,
-      lastContactDate: form.lastContactDate || undefined,
-      nextFollowUp: form.nextFollowUp || undefined,
-      source: form.source || undefined,
-      tags: tags.length > 0 ? tags : undefined,
-    });
-  };
-
-  const Field = ({ label, name, type = "text", placeholder = "", required = false }: { label: string; name: keyof typeof form; type?: string; placeholder?: string; required?: boolean }) => (
-    <div>
-      <label className="text-xs text-gray-500 block mb-1">{label}</label>
-      <input
-        type={type}
-        value={form[name]}
-        onChange={(e) => setForm({ ...form, [name]: e.target.value })}
-        placeholder={placeholder}
-        required={required}
-        className="w-full px-3 py-2 rounded-lg bg-white/5 border border-[rgba(255,255,255,0.08)] text-white text-sm focus:outline-none focus:border-indigo-500/50 [color-scheme:dark]"
-      />
-    </div>
-  );
-
-  const Select = ({ label, name, options }: { label: string; name: keyof typeof form; options: string[] }) => (
-    <div>
-      <label className="text-xs text-gray-500 block mb-1">{label}</label>
-      <select
-        value={form[name]}
-        onChange={(e) => setForm({ ...form, [name]: e.target.value })}
-        className="w-full px-3 py-2 rounded-lg bg-white/5 border border-[rgba(255,255,255,0.08)] text-white text-sm focus:outline-none focus:border-indigo-500/50 [color-scheme:dark]"
-      >
-        {options.map((o) => <option key={o} value={o}>{o}</option>)}
-      </select>
-    </div>
-  );
-
-  return (
-    <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4" onClick={onClose}>
-      <div className="bg-[#12121a] border border-[rgba(255,255,255,0.1)] rounded-xl w-full max-w-lg max-h-[85vh] overflow-auto p-6" onClick={(e) => e.stopPropagation()}>
-        <div className="flex items-center justify-between mb-6">
-          <h3 className="text-base font-semibold text-white">{contact ? "Edit Contact" : "New Contact"}</h3>
-          <button onClick={onClose} className="text-gray-500 hover:text-white"><Icon name="close" size={18} /></button>
-        </div>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="grid grid-cols-2 gap-3">
-            <Field label="Name *" name="name" placeholder="Full name" required />
-            <Field label="Role" name="role" placeholder="e.g. Senior Recruiter" />
-          </div>
-          <div className="grid grid-cols-2 gap-3">
-            <Field label="Company" name="company" placeholder="Company name" />
-            <Field label="Source" name="source" placeholder="e.g. LinkedIn, Referral" />
-          </div>
-          <div className="grid grid-cols-2 gap-3">
-            <Field label="Email" name="email" type="email" placeholder="email@example.com" />
-            <Field label="Phone" name="phone" type="tel" placeholder="+1..." />
-          </div>
-          <Field label="LinkedIn URL" name="linkedin" type="url" placeholder="https://linkedin.com/in/..." />
-          <div className="grid grid-cols-3 gap-3">
-            <Select label="Category" name="category" options={CATEGORIES.filter((c) => c !== "All")} />
-            <Select label="Status" name="status" options={STATUSES} />
-            <Select label="Warmth" name="warmth" options={WARMTH_LEVELS} />
-          </div>
-          <div className="grid grid-cols-2 gap-3">
-            <Field label="Last Contact" name="lastContactDate" type="date" />
-            <Field label="Next Follow Up" name="nextFollowUp" type="date" />
-          </div>
-          <div>
-            <label className="text-xs text-gray-500 block mb-1">Notes</label>
-            <textarea
-              value={form.notes}
-              onChange={(e) => setForm({ ...form, notes: e.target.value })}
-              className="w-full px-3 py-2 rounded-lg bg-white/5 border border-[rgba(255,255,255,0.08)] text-white text-sm focus:outline-none focus:border-indigo-500/50 resize-none"
-              rows={3}
-              placeholder="Additional context..."
-            />
-          </div>
-          <Field label="Tags (comma separated)" name="tagsStr" placeholder="recruiter, saudi, tech" />
-          <div className="flex gap-2 pt-2">
-            <button type="button" onClick={onClose} className="flex-1 px-3 py-2 rounded-lg text-xs font-medium border border-[rgba(255,255,255,0.08)] text-gray-400 hover:text-white hover:bg-white/5 transition-all">
-              Cancel
-            </button>
-            <button type="submit" className="flex-1 px-3 py-2 rounded-lg text-xs font-medium bg-[rgba(124,92,252,0.15)] border border-indigo-500/30 text-indigo-400 hover:bg-[rgba(124,92,252,0.25)] transition-all">
-              {contact ? "Save Changes" : "Add Contact"}
-            </button>
-          </div>
-        </form>
       </div>
     </div>
   );
