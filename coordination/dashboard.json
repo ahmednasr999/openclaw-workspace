@@ -1,11 +1,15 @@
 {
-  "last_updated": "2026-02-18T06:02:00Z",
+  "last_updated": "2026-02-19T06:01:00Z",
   "generated_by": "Chief of Staff (Max) - Morning Brief",
+  "date": "Thursday, February 19th, 2026",
+  "time": "6:01 AM UTC",
   "pipeline": {
     "active_applications": 2,
-    "interview_scheduled": 1,
-    "offer_pending": 0,
-    "rejected": 1,
+    "interviews_today": 0,
+    "interviews_this_week": 1,
+    "interview_date": "2026-02-18",
+    "offers_pending": 0,
+    "rejected_this_week": 1,
     "this_week": {
       "applied": 3,
       "responses_received": 2,
@@ -15,17 +19,17 @@
   "outreach": {
     "connections_sent_today": 0,
     "connections_sent_this_week": 15,
-    "discovery_calls_booked": 1,
-    "pending_followups": 3,
-    "pending_leads": 2,
     "week_target": 25,
-    "week_progress": "60%"
+    "week_progress": "60%",
+    "pending_followups": 2,
+    "warm_leads": 1,
+    "discovery_calls_booked": 0
   },
   "content": {
     "posts_published_this_week": 1,
-    "posts_scheduled": 1,
+    "posts_scheduled_today": 1,
     "drafts_ready": 2,
-    "drafts_pending": 2,
+    "drafts_pending_review": 2,
     "engagement_rate": 4.2,
     "best_performer": "AI PMO Transformation"
   },
@@ -43,36 +47,42 @@
     "scheduler_agent": "active"
   },
   "yesterday_highlights": [
-    "Gmail automation fully operational (1,125+ emails cleaned)",
-    "Knowledge base & CRM system built",
-    "Diagram generator skill installed",
-    "CV creation pipeline: 6 new CVs created, 1 active application"
+    "EMR ROI post published (engagement: 45 likes, 8 comments, 3 shares)",
+    "Intelligence suite built with 10 features",
+    "12 CVs created total",
+    "Riyadh Bank opportunity pending via Lewis Mintrim",
+    "3 Notion databases created manually (Skills, Company Research, Lessons Learned)"
   ],
   "priorities_today": [
-    "Delphi interview preparation (TOMORROW Feb 18)",
-    "Publish EMR ROI post (Feb 19)",
-    "Send 5+ connection requests",
-    "Follow up with warm leads (Dr. Ahmed Al-Mansour)",
-    "Review 2 content drafts for approval"
+    "Review 2 content drafts for approval (Hospital CFO Investment Case, Saying No to 6-Figure Salary)",
+    "Send 5+ LinkedIn connection requests",
+    "Follow up with warm lead (Dr. Ahmed Al-Mansour - overdue from Feb 17)",
+    "Continue job applications (target: 10/week)"
   ],
   "attention_needed": [
     {
-      "item": "Delphi interview - TODAY",
-      "status": "preparation_needed",
+      "item": "Delphi interview follow-up",
+      "status": "check_status",
       "urgency": "high",
-      "notes": "Senior PM - UAE role, prepare case study examples"
+      "notes": "Interview was scheduled for Feb 18. Need to confirm outcome and next steps."
     },
     {
       "item": "Dr. Ahmed Al-Mansour follow-up",
       "status": "overdue",
       "urgency": "normal",
-      "notes": "Was due Feb 17, 3 days since connection sent"
+      "notes": "Was due Feb 17, 3 days since connection sent. Priority: high"
+    },
+    {
+      "item": "Sarah Johnson (HealthTech UAE) follow-up",
+      "status": "pending",
+      "urgency": "normal",
+      "notes": "Connected, needs follow-up. Priority: high"
     },
     {
       "item": "2 content drafts awaiting review",
       "status": "pending_approval",
       "urgency": "normal",
-      "notes": "Hospital CFO Investment Case, Saying No to 6-Figure Salary"
+      "notes": "Hospital CFO Investment Case (ready), Saying No to 6-Figure Salary (draft)"
     }
   ],
   "bottlenecks": [
@@ -85,12 +95,35 @@
       "item": "LinkedIn content calendar",
       "impact": "Only 1 post published vs 3 target",
       "status": "behind_schedule"
+    },
+    {
+      "item": "Delphi interview outcome",
+      "impact": "Decision pending - can't plan next steps",
+      "status": "awaiting_response"
     }
   ],
   "stuck_items": [],
   "opportunities": [
-    "Delphi interview today - high conversion potential (50% response-to-interview rate)",
-    "Content engagement trending up (4.2% avg engagement)",
-    "6 warm leads in pipeline, 1 discovery call booked"
-  ]
+    "Riyadh Bank opportunity via Lewis Mintrim (45K SAR)",
+    "Content engagement trending up (4.2% avg engagement rate)",
+    "Strong application to AI Enablement Manager role (ATS: 78/100)",
+    "2 high-priority warm leads in pipeline"
+  ],
+  "metrics_summary": {
+    "applications": {
+      "active": 2,
+      "applied_this_week": 3,
+      "target": 10
+    },
+    "outreach": {
+      "sent_this_week": 15,
+      "target": 25,
+      "completion": "60%"
+    },
+    "content": {
+      "published_this_week": 1,
+      "target": 3,
+      "completion": "33%"
+    }
+  }
 }
