@@ -32,22 +32,22 @@ const PLATFORM_CLASS: Record<string, string> = {
 };
 
 const TYPE_LABELS: Record<string, { icon: string; label: string }> = {
-  Post: { icon: "📄", label: "Post" },
+  Post: { icon: "documentAgent", label: "Post" },
   Article: { icon: "📰", label: "Article" },
   Carousel: { icon: "🎠", label: "Carousel" },
-  Video: { icon: "🎬", label: "Video" },
+  Video: { icon: "video", label: "Video" },
 };
 
 // Same AGENT_MAP pattern as TaskCard
 const AGENT_MAP: Record<string, { initial: string; class: string }> = {
   "Ahmed": { initial: "A", class: "assignee-ahmed" },
-  "OpenClaw": { initial: "🎯", class: "assignee-openclaw" },
-  "NASR": { initial: "🎯", class: "assignee-openclaw" },
-  "NASR (Coder)": { initial: "💻", class: "assignee-openclaw" },
-  "NASR (Writer)": { initial: "✍️", class: "assignee-openclaw" },
-  "NASR (Research)": { initial: "🔍", class: "assignee-openclaw" },
-  "NASR (CV)": { initial: "📄", class: "assignee-openclaw" },
-  "QA Agent": { initial: "🛡️", class: "assignee-openclaw" },
+  "OpenClaw": { initial: "targetAgent", class: "assignee-openclaw" },
+  "NASR": { initial: "targetAgent", class: "assignee-openclaw" },
+  "NASR (Coder)": { initial: "codeAgent", class: "assignee-openclaw" },
+  "NASR (Writer)": { initial: "penAgent", class: "assignee-openclaw" },
+  "NASR (Research)": { initial: "searchAgent", class: "assignee-openclaw" },
+  "NASR (CV)": { initial: "documentAgent", class: "assignee-openclaw" },
+  "QA Agent": { initial: "shieldAgent", class: "assignee-openclaw" },
   "Both": { initial: "B", class: "assignee-both" },
 };
 
@@ -87,7 +87,7 @@ export function ContentCard({ post, onDelete, onEdit }: ContentCardProps) {
       {/* Tags */}
       <div className="flex items-center gap-2 mb-2">
         <span className={`tag ${PLATFORM_CLASS[post.platform] || "tag-x"}`}>{post.platform}</span>
-        <span className="tag tag-task">{TYPE_LABELS[post.contentType]?.icon || "📄"} {post.contentType}</span>
+        <span className="tag tag-task">{TYPE_LABELS[post.contentType]?.icon || "documentAgent"} {post.contentType}</span>
         <div className={`priority-dot priority-dot-${post.priority.toLowerCase()}`} title={post.priority} />
       </div>
 

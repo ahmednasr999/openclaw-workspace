@@ -79,9 +79,9 @@ export function NewContentForm({ onClose, onPostAdded }: NewContentFormProps) {
             <div>
               <label className="block text-xs font-medium text-gray-400 mb-1.5 uppercase tracking-wider">Assignee</label>
               <select value={form.assignee} onChange={(e) => setForm({ ...form, assignee: e.target.value })} className="w-full search-input rounded-lg px-3 py-2.5 text-white text-sm bg-transparent">
-                <option value="Ahmed" className="bg-gray-900">👤 Ahmed</option>
-                <option value="OpenClaw" className="bg-gray-900">🤖 OpenClaw</option>
-                <option value="Both" className="bg-gray-900">👥 Both</option>
+                <option value="Ahmed" className="bg-gray-900">Ahmed</option>
+                <option value="OpenClaw" className="bg-gray-900">OpenClaw</option>
+                <option value="Both" className="bg-gray-900">Both</option>
               </select>
             </div>
             <div>

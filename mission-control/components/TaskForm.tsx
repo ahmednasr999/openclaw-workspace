@@ -93,14 +93,14 @@ export function TaskForm({ onClose, onTaskAdded }: TaskFormProps) {
                 onChange={(e) => setForm({ ...form, assignee: e.target.value })}
                 className="w-full search-input rounded-lg px-3 py-2.5 text-white text-sm bg-transparent"
               >
-                <option value="Ahmed" className="bg-gray-900">👤 Ahmed</option>
-                <option value="OpenClaw" className="bg-gray-900">🤖 OpenClaw</option>
-                <option value="NASR (Coder)" className="bg-gray-900">💻 NASR (Coder)</option>
-                <option value="NASR (Writer)" className="bg-gray-900">✍️ NASR (Writer)</option>
-                <option value="NASR (Research)" className="bg-gray-900">🔍 NASR (Research)</option>
-                <option value="NASR (CV)" className="bg-gray-900">📄 NASR (CV)</option>
-                <option value="QA Agent" className="bg-gray-900">🛡️ QA Agent</option>
-                <option value="Both" className="bg-gray-900">👥 Both</option>
+                <option value="Ahmed" className="bg-gray-900">Ahmed</option>
+                <option value="OpenClaw" className="bg-gray-900">OpenClaw</option>
+                <option value="NASR (Coder)" className="bg-gray-900">NASR (Coder)</option>
+                <option value="NASR (Writer)" className="bg-gray-900">NASR (Writer)</option>
+                <option value="NASR (Research)" className="bg-gray-900">NASR (Research)</option>
+                <option value="NASR (CV)" className="bg-gray-900">NASR (CV)</option>
+                <option value="QA Agent" className="bg-gray-900">QA Agent</option>
+                <option value="Both" className="bg-gray-900">Both</option>
               </select>
             </div>
             <div>
@@ -135,12 +135,12 @@ export function TaskForm({ onClose, onTaskAdded }: TaskFormProps) {
                 onChange={(e) => setForm({ ...form, category: e.target.value })}
                 className="w-full search-input rounded-lg px-3 py-2.5 text-white text-sm bg-transparent"
               >
-                <option value="Job Search" className="bg-gray-900">🎯 Job Search</option>
-                <option value="Content" className="bg-gray-900">📝 Content</option>
-                <option value="Networking" className="bg-gray-900">🤝 Networking</option>
+                <option value="Job Search" className="bg-gray-900">Job Search</option>
+                <option value="Content" className="bg-gray-900">Content</option>
+                <option value="Networking" className="bg-gray-900">Networking</option>
                 <option value="Applications" className="bg-gray-900">📋 Applications</option>
-                <option value="Interviews" className="bg-gray-900">🎤 Interviews</option>
-                <option value="Task" className="bg-gray-900">📌 Task</option>
+                <option value="Interviews" className="bg-gray-900">Interviews</option>
+                <option value="Task" className="bg-gray-900">Task</option>
               </select>
             </div>
             <div>
