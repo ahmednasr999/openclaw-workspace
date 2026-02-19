@@ -73,6 +73,36 @@ db.exec(`
     FOREIGN KEY (postId) REFERENCES content_posts(id) ON DELETE CASCADE
   );
 
+  CREATE TABLE IF NOT EXISTS contacts (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    role TEXT,
+    company TEXT,
+    email TEXT,
+    phone TEXT,
+    linkedin TEXT,
+    category TEXT NOT NULL DEFAULT 'Networking',
+    status TEXT NOT NULL DEFAULT 'Active',
+    warmth TEXT NOT NULL DEFAULT 'Warm',
+    notes TEXT,
+    lastContactDate TEXT,
+    nextFollowUp TEXT,
+    source TEXT,
+    tags TEXT,
+    createdAt TEXT NOT NULL,
+    updatedAt TEXT
+  );
+
+  CREATE TABLE IF NOT EXISTS contact_activity (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    contactId INTEGER NOT NULL,
+    type TEXT NOT NULL,
+    content TEXT,
+    author TEXT NOT NULL DEFAULT 'System',
+    createdAt TEXT NOT NULL,
+    FOREIGN KEY (contactId) REFERENCES contacts(id) ON DELETE CASCADE
+  );
+
   CREATE TABLE IF NOT EXISTS scheduled_tasks (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     taskId INTEGER,
@@ -375,6 +405,86 @@ export const sqliteDb = {
 
   deleteScheduledTask: (id: number) => {
     return db.prepare("DELETE FROM scheduled_tasks WHERE id = ?").run(id);
+  },
+
+  // ---- CONTACTS ----
+  getAllContacts: () => {
+    return db.prepare("SELECT * FROM contacts ORDER BY updatedAt DESC, createdAt DESC").all() as any[];
+  },
+
+  getContactById: (id: number) => {
+    return db.prepare("SELECT * FROM contacts WHERE id = ?").get(id);
+  },
+
+  addContact: (contact: {
+    name: string;
+    role?: string;
+    company?: string;
+    email?: string;
+    phone?: string;
+    linkedin?: string;
+    category: string;
+    status: string;
+    warmth: string;
+    notes?: string;
+    lastContactDate?: string;
+    nextFollowUp?: string;
+    source?: string;
+    tags?: string;
+    createdAt: string;
+  }) => {
+    const stmt = db.prepare(`
+      INSERT INTO contacts (name, role, company, email, phone, linkedin, category, status, warmth, notes, lastContactDate, nextFollowUp, source, tags, createdAt, updatedAt)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    `);
+    const result = stmt.run(
+      contact.name, contact.role || null, contact.company || null,
+      contact.email || null, contact.phone || null, contact.linkedin || null,
+      contact.category, contact.status, contact.warmth,
+      contact.notes || null, contact.lastContactDate || null, contact.nextFollowUp || null,
+      contact.source || null, contact.tags || null, contact.createdAt, contact.createdAt
+    );
+    const id = result.lastInsertRowid as number;
+    sqliteDb.addContactActivity(id, "created", "Contact added", "User");
+    return id;
+  },
+
+  updateContact: (id: number, fields: Record<string, any>) => {
+    const old = db.prepare("SELECT * FROM contacts WHERE id = ?").get(id) as any;
+    const allowed = ["name", "role", "company", "email", "phone", "linkedin", "category", "status", "warmth", "notes", "lastContactDate", "nextFollowUp", "source", "tags"];
+    const updates: string[] = [];
+    const values: any[] = [];
+    const changes: string[] = [];
+
+    for (const key of allowed) {
+      if (fields[key] !== undefined) {
+        updates.push(`${key} = ?`);
+        values.push(fields[key] || null);
+        if (old && old[key] !== fields[key]) changes.push(`${key}: ${old[key] || "empty"} → ${fields[key] || "empty"}`);
+      }
+    }
+    if (updates.length === 0) return;
+    updates.push("updatedAt = ?");
+    values.push(new Date().toISOString());
+    values.push(id);
+    db.prepare(`UPDATE contacts SET ${updates.join(", ")} WHERE id = ?`).run(...values);
+    if (changes.length > 0) {
+      sqliteDb.addContactActivity(id, "updated", changes.join("; "), "User");
+    }
+  },
+
+  deleteContact: (id: number) => {
+    return db.prepare("DELETE FROM contacts WHERE id = ?").run(id);
+  },
+
+  // ---- CONTACT ACTIVITY ----
+  addContactActivity: (contactId: number, type: string, content: string, author: string) => {
+    const stmt = db.prepare("INSERT INTO contact_activity (contactId, type, content, author, createdAt) VALUES (?, ?, ?, ?, ?)");
+    return stmt.run(contactId, type, content, author, new Date().toISOString());
+  },
+
+  getContactActivity: (contactId: number, limit = 20) => {
+    return db.prepare("SELECT * FROM contact_activity WHERE contactId = ? ORDER BY createdAt DESC LIMIT ?").all(contactId, limit);
   },
 };
 
