@@ -72,6 +72,18 @@ db.exec(`
     createdAt TEXT NOT NULL,
     FOREIGN KEY (postId) REFERENCES content_posts(id) ON DELETE CASCADE
   );
+
+  CREATE TABLE IF NOT EXISTS scheduled_tasks (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    taskId INTEGER,
+    title TEXT NOT NULL,
+    scheduledDate TEXT NOT NULL,
+    scheduledTime TEXT,
+    type TEXT NOT NULL DEFAULT 'task',
+    status TEXT NOT NULL DEFAULT 'scheduled',
+    notes TEXT,
+    createdAt TEXT NOT NULL
+  );
 `);
 
 export const sqliteDb = {
@@ -293,6 +305,76 @@ export const sqliteDb = {
 
   getContentActivity: (postId: number, limit = 20) => {
     return db.prepare("SELECT * FROM content_activity WHERE postId = ? ORDER BY createdAt DESC LIMIT ?").all(postId, limit);
+  },
+
+  // ---- SCHEDULED TASKS ----
+  getScheduledTasks: (startDate?: string, endDate?: string) => {
+    let query = "SELECT * FROM scheduled_tasks";
+    const params: any[] = [];
+    if (startDate && endDate) {
+      query += " WHERE scheduledDate >= ? AND scheduledDate <= ?";
+      params.push(startDate, endDate);
+    } else if (startDate) {
+      query += " WHERE scheduledDate >= ?";
+      params.push(startDate);
+    } else if (endDate) {
+      query += " WHERE scheduledDate <= ?";
+      params.push(endDate);
+    }
+    query += " ORDER BY scheduledDate ASC, scheduledTime ASC";
+    return db.prepare(query).all(...params) as any[];
+  },
+
+  getScheduledTaskById: (id: number) => {
+    return db.prepare("SELECT * FROM scheduled_tasks WHERE id = ?").get(id);
+  },
+
+  addScheduledTask: (task: {
+    taskId?: number;
+    title: string;
+    scheduledDate: string;
+    scheduledTime?: string;
+    type: string;
+    status: string;
+    notes?: string;
+    createdAt: string;
+  }) => {
+    const stmt = db.prepare(`
+      INSERT INTO scheduled_tasks (taskId, title, scheduledDate, scheduledTime, type, status, notes, createdAt)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+    `);
+    const result = stmt.run(
+      task.taskId || null,
+      task.title,
+      task.scheduledDate,
+      task.scheduledTime || null,
+      task.type,
+      task.status,
+      task.notes || null,
+      task.createdAt
+    );
+    return result.lastInsertRowid;
+  },
+
+  updateScheduledTask: (id: number, fields: {
+    scheduledDate?: string;
+    scheduledTime?: string;
+    status?: string;
+    notes?: string;
+  }) => {
+    const updates: string[] = [];
+    const values: any[] = [];
+    if (fields.scheduledDate !== undefined) { updates.push("scheduledDate = ?"); values.push(fields.scheduledDate); }
+    if (fields.scheduledTime !== undefined) { updates.push("scheduledTime = ?"); values.push(fields.scheduledTime); }
+    if (fields.status !== undefined) { updates.push("status = ?"); values.push(fields.status); }
+    if (fields.notes !== undefined) { updates.push("notes = ?"); values.push(fields.notes || null); }
+    if (updates.length === 0) return;
+    values.push(id);
+    return db.prepare(`UPDATE scheduled_tasks SET ${updates.join(", ")} WHERE id = ?`).run(...values);
+  },
+
+  deleteScheduledTask: (id: number) => {
+    return db.prepare("DELETE FROM scheduled_tasks WHERE id = ?").run(id);
   },
 };
 
