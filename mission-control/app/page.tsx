@@ -215,7 +215,7 @@ export default function Home() {
             <span>Content</span>
             <span className="ml-auto text-[10px] text-[var(--text-muted)]">{activePosts}</span>
           </div>
-          <div className="sidebar-item" onClick={() => setActiveBoard("team")}>
+          <div className="sidebar-item">
             <Icon name="users" className="text-gray-400" />
             <span>Networking</span>
             <span className="ml-auto text-[10px] text-[var(--text-muted)]">
