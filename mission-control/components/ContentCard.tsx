@@ -38,6 +38,27 @@ const TYPE_LABELS: Record<string, { icon: string; label: string }> = {
   Video: { icon: "🎬", label: "Video" },
 };
 
+// Same AGENT_MAP pattern as TaskCard
+const AGENT_MAP: Record<string, { initial: string; class: string }> = {
+  "Ahmed": { initial: "A", class: "assignee-ahmed" },
+  "OpenClaw": { initial: "🎯", class: "assignee-openclaw" },
+  "NASR": { initial: "🎯", class: "assignee-openclaw" },
+  "NASR (Coder)": { initial: "💻", class: "assignee-openclaw" },
+  "NASR (Writer)": { initial: "✍️", class: "assignee-openclaw" },
+  "NASR (Research)": { initial: "🔍", class: "assignee-openclaw" },
+  "NASR (CV)": { initial: "📄", class: "assignee-openclaw" },
+  "QA Agent": { initial: "🛡️", class: "assignee-openclaw" },
+  "Both": { initial: "B", class: "assignee-both" },
+};
+
+function getAssigneeInitial(assignee: string): string {
+  return AGENT_MAP[assignee]?.initial || assignee.charAt(0).toUpperCase();
+}
+
+function getAssigneeBadgeClass(assignee: string): string {
+  return AGENT_MAP[assignee]?.class || "assignee-openclaw";
+}
+
 export function ContentCard({ post, onDelete, onEdit }: ContentCardProps) {
   const [confirmDelete, setConfirmDelete] = useState(false);
 
@@ -90,8 +111,8 @@ export function ContentCard({ post, onDelete, onEdit }: ContentCardProps) {
       {/* Footer */}
       <div className="card-footer">
         <div className="flex items-center gap-2">
-          <div className={`assignee-badge assignee-${post.assignee.toLowerCase()}`}>
-            {post.assignee === "Ahmed" ? "A" : post.assignee === "OpenClaw" ? "O" : "B"}
+          <div className={`assignee-badge ${getAssigneeBadgeClass(post.assignee)}`}>
+            {getAssigneeInitial(post.assignee)}
           </div>
           <span className="text-[11px] text-[var(--text-muted)]">{post.assignee}</span>
         </div>

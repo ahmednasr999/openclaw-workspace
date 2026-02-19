@@ -42,6 +42,14 @@ export function ContentBoard({ posts, onRefresh, onEditPost }: ContentBoardProps
   const [dragOverColumn, setDragOverColumn] = useState<string | null>(null);
   const [draggingId, setDraggingId] = useState<number | null>(null);
 
+  const touchState = useRef<{
+    postId: number | null;
+    startX: number;
+    startY: number;
+    isDragging: boolean;
+    ghost: HTMLDivElement | null;
+  }>({ postId: null, startX: 0, startY: 0, isDragging: false, ghost: null });
+
   const sortPosts = (list: ContentPost[]) =>
     [...list].sort((a, b) => (PRIORITY_ORDER[a.priority] ?? 99) - (PRIORITY_ORDER[b.priority] ?? 99));
 
@@ -55,13 +63,56 @@ export function ContentBoard({ posts, onRefresh, onEditPost }: ContentBoardProps
     setDragOverColumn(null);
     setDraggingId(null);
     const postId = parseInt(e.dataTransfer.getData("postId"));
-    if (postId) {
+    if (postId) await movePost(postId, status);
+  };
+
+  const handleTouchStart = useCallback((e: React.TouchEvent, postId: number) => {
+    const touch = e.touches[0];
+    touchState.current = { postId, startX: touch.clientX, startY: touch.clientY, isDragging: false, ghost: null };
+  }, []);
+
+  const handleTouchMove = useCallback((e: React.TouchEvent) => {
+    const ts = touchState.current;
+    if (!ts.postId) return;
+    const touch = e.touches[0];
+    if (!ts.isDragging && Math.abs(touch.clientX - ts.startX) > 10) {
+      ts.isDragging = true;
+      const ghost = document.createElement("div");
+      ghost.className = "fixed z-[100] px-3 py-2 rounded-lg text-white text-xs font-medium pointer-events-none";
+      ghost.style.background = "var(--bg-card)";
+      ghost.style.border = "1px solid var(--accent)";
+      ghost.textContent = posts.find((p) => p.id === ts.postId)?.title || "";
+      document.body.appendChild(ghost);
+      ts.ghost = ghost;
+    }
+    if (ts.isDragging && ts.ghost) {
+      e.preventDefault();
+      ts.ghost.style.left = `${touch.clientX - 50}px`;
+      ts.ghost.style.top = `${touch.clientY - 20}px`;
+      const elements = document.elementsFromPoint(touch.clientX, touch.clientY);
+      const col = elements.find((el) => el.getAttribute("data-column"));
+      setDragOverColumn(col?.getAttribute("data-column") || null);
+    }
+  }, [posts]);
+
+  const handleTouchEnd = useCallback(async () => {
+    const ts = touchState.current;
+    if (ts.ghost) document.body.removeChild(ts.ghost);
+    if (ts.isDragging && ts.postId && dragOverColumn) await movePost(ts.postId, dragOverColumn);
+    touchState.current = { postId: null, startX: 0, startY: 0, isDragging: false, ghost: null };
+    setDragOverColumn(null);
+  }, [dragOverColumn]);
+
+  const movePost = async (postId: number, status: string) => {
+    try {
       await fetch("/api/content", {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ id: postId, status }),
       });
       onRefresh();
+    } catch (error) {
+      console.error("Error updating post:", error);
     }
   };
 
@@ -100,6 +151,9 @@ export function ContentBoard({ posts, onRefresh, onEditPost }: ContentBoardProps
                   draggable
                   onDragStart={(e) => handleDragStart(e, post.id)}
                   onDragEnd={() => { setDraggingId(null); setDragOverColumn(null); }}
+                  onTouchStart={(e) => handleTouchStart(e, post.id)}
+                  onTouchMove={(e) => handleTouchMove(e)}
+                  onTouchEnd={() => handleTouchEnd()}
                   className={draggingId === post.id ? "opacity-30" : ""}
                 >
                   <ContentCard

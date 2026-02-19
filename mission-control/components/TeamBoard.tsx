@@ -120,11 +120,23 @@ const TASK_FLOW = [
 ];
 
 export function TeamBoard() {
-  const [agents] = useState<AgentDef[]>(AGENT_DEFINITIONS);
+  const [agents, setAgents] = useState<AgentDef[]>(AGENT_DEFINITIONS);
   const [selectedAgent, setSelectedAgent] = useState<AgentDef | null>(null);
   const [activeRuns, setActiveRuns] = useState<AgentRun[]>([]);
   const [viewMode, setViewMode] = useState<"org" | "flow">("org");
   const [loading, setLoading] = useState(false);
+
+  const fetchAgentConfig = useCallback(async () => {
+    try {
+      const res = await fetch("/api/agents/config");
+      if (res.ok) {
+        const data = await res.json();
+        if (Array.isArray(data) && data.length > 0) setAgents(data);
+      }
+    } catch {
+      // Fall back to hardcoded definitions
+    }
+  }, []);
 
   const fetchActiveRuns = useCallback(async () => {
     setLoading(true);
@@ -142,10 +154,11 @@ export function TeamBoard() {
   }, []);
 
   useEffect(() => {
+    fetchAgentConfig();
     fetchActiveRuns();
     const interval = setInterval(fetchActiveRuns, 15000);
     return () => clearInterval(interval);
-  }, [fetchActiveRuns]);
+  }, [fetchAgentConfig, fetchActiveRuns]);
 
   const coreAgents = agents.filter((a) => a.type === "core");
   const specialists = agents.filter((a) => a.type === "specialist");
