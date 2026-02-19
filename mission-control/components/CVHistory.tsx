@@ -52,6 +52,25 @@ export function CVHistoryPage() {
     fetchEntries();
   }, [fetchEntries]);
 
+  // Check CV generation queue periodically
+  useEffect(() => {
+    const checkQueue = async () => {
+      try {
+        const res = await fetch("/api/cv/queue");
+        if (res.ok) {
+          const data = await res.json();
+          const pending = data.queue?.filter((i: any) => i.status === "pending") || [];
+          if (pending.length > 0) {
+            console.log(`${pending.length} CVs in queue waiting for generation`);
+          }
+        }
+      } catch {}
+    };
+    checkQueue();
+    const interval = setInterval(checkQueue, 30000); // Check every 30 seconds
+    return () => clearInterval(interval);
+  }, []);
+
   const handleDelete = async (id: number) => {
     if (!confirm("Delete this CV entry?")) return;
     try {
@@ -212,33 +231,19 @@ export function CVHistoryPage() {
                   if (!jobInput.trim()) return;
                   setGeneratingPdf(true);
                   try {
-                    const res = await fetch("/api/cv/generate-full", {
+                    const res = await fetch("/api/cv/queue", {
                       method: "POST",
                       headers: { "Content-Type": "application/json" },
                       body: JSON.stringify({ jobDescription: jobInput }),
                     });
                     if (res.ok) {
                       const data = await res.json();
-                      if (data.status === "generating") {
-                        alert("CV generation started! Check back in a moment.");
-                      } else if (data.html) {
-                        setCvHtml(data.html);
-                        setShowPreview(true);
-                        setAnalysisResult({
-                          ...analysisResult,
-                          job: { title: data.jobTitle, company: data.company },
-                          analysis: {
-                            atsScore: data.atsScore,
-                            matchedKeywords: data.matchedKeywords,
-                            missingKeywords: data.missingKeywords,
-                          }
-                        });
-                      }
+                      alert(`Job added to queue! I'll generate your CV shortly.\nQueue position: ${data.queueLength}`);
                     } else {
-                      alert("Failed to generate CV");
+                      alert("Failed to queue job");
                     }
                   } catch {
-                    alert("Error generating CV");
+                    alert("Error queueing job");
                   } finally {
                     setGeneratingPdf(false);
                   }
@@ -246,7 +251,7 @@ export function CVHistoryPage() {
                 disabled={generatingPdf}
                 className="flex-1 px-4 py-2.5 rounded-lg text-xs font-medium bg-[rgba(124,92,252,0.15)] border border-indigo-500/30 text-indigo-400 hover:bg-[rgba(124,92,252,0.25)] transition-all disabled:opacity-50"
               >
-                {generatingPdf ? "Generating..." : "Generate Full CV"}
+                {generatingPdf ? "Queueing..." : "Generate Full CV"}
               </button>
             </div>
           </div>
