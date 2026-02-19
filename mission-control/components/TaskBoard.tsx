@@ -16,6 +16,7 @@ const COLUMNS = [
 export function TaskBoard() {
   const tasks = useQuery(api.tasks.getTasks);
   const updateStatus = useMutation(api.tasks.updateTaskStatus);
+  const deleteTask = useMutation(api.tasks.deleteTask);
 
   const handleDragStart = (e: React.DragEvent, taskId: string) => {
     e.dataTransfer.setData("taskId", taskId);
@@ -35,6 +36,10 @@ export function TaskBoard() {
 
   const handleDragOver = (e: React.DragEvent) => {
     e.preventDefault();
+  };
+
+  const handleDelete = (taskId: string) => {
+    deleteTask({ id: taskId as any });
   };
 
   if (tasks === undefined) {
@@ -65,7 +70,7 @@ export function TaskBoard() {
                   draggable
                   onDragStart={(e) => handleDragStart(e, task._id)}
                 >
-                  <TaskCard task={task} />
+                  <TaskCard task={task} onDelete={() => handleDelete(task._id)} />
                 </div>
               ))}
           </div>
