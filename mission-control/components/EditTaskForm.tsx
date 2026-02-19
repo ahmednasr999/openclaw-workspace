@@ -133,7 +133,7 @@ export function EditTaskForm({ task, onClose, onTaskUpdated }: EditTaskFormProps
     setSubtasks(data);
   };
 
-  const statuses = ["Inbox", "My Tasks", "OpenClaw Tasks", "In Progress", "Review", "Completed"];
+  const statuses = ["Inbox", "My Tasks", "OpenClaw Tasks", "In Progress", "QA", "Review", "Completed"];
 
   const activityIcon = (type: string) => {
     switch (type) {
@@ -237,6 +237,11 @@ export function EditTaskForm({ task, onClose, onTaskUpdated }: EditTaskFormProps
                   >
                     <option value="Ahmed" className="bg-gray-900">👤 Ahmed</option>
                     <option value="OpenClaw" className="bg-gray-900">🤖 OpenClaw</option>
+                    <option value="NASR (Coder)" className="bg-gray-900">💻 NASR (Coder)</option>
+                    <option value="NASR (Writer)" className="bg-gray-900">✍️ NASR (Writer)</option>
+                    <option value="NASR (Research)" className="bg-gray-900">🔍 NASR (Research)</option>
+                    <option value="NASR (CV)" className="bg-gray-900">📄 NASR (CV)</option>
+                    <option value="QA Agent" className="bg-gray-900">🛡️ QA Agent</option>
                     <option value="Both" className="bg-gray-900">👥 Both</option>
                   </select>
                 </div>
