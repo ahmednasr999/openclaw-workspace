@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback, useMemo } from "react";
-import ReactMarkdown from "react-markdown";
+import ReactMarkdown, { Components } from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { Icon } from "@/components/Icon";
 
@@ -66,6 +66,62 @@ function highlightText(text: string, query: string): React.ReactNode {
   );
 }
 
+// Build custom ReactMarkdown components that highlight search terms in text nodes
+function useHighlightedMarkdown(query: string): Components | undefined {
+  return useMemo(() => {
+    if (!query) return undefined;
+    const terms = query.toLowerCase().split(/\s+/).filter(Boolean);
+    if (terms.length === 0) return undefined;
+
+    const regex = new RegExp(
+      `(${terms.map((t) => t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|")})`,
+      "gi"
+    );
+
+    // Wrap text content with highlights
+    const wrapText = (text: string): React.ReactNode => {
+      const parts = text.split(regex);
+      if (parts.length <= 1) return text;
+      return parts.map((part, i) =>
+        terms.some((t) => part.toLowerCase() === t) ? (
+          <mark key={i} className="bg-yellow-500/30 text-yellow-200 rounded px-0.5">{part}</mark>
+        ) : (
+          part
+        )
+      );
+    };
+
+    // Override common block/inline elements to highlight their text children
+    const makeComponent = (Tag: string) => {
+      const Comp = ({ children, ...props }: any) => {
+        const mapped = Array.isArray(children)
+          ? children.map((child: any, i: number) =>
+              typeof child === "string" ? <span key={i}>{wrapText(child)}</span> : child
+            )
+          : typeof children === "string"
+          ? wrapText(children)
+          : children;
+        return <Tag {...props}>{mapped}</Tag>;
+      };
+      Comp.displayName = `Highlight_${Tag}`;
+      return Comp;
+    };
+
+    return {
+      p: makeComponent("p"),
+      li: makeComponent("li"),
+      td: makeComponent("td"),
+      th: makeComponent("th"),
+      h1: makeComponent("h1"),
+      h2: makeComponent("h2"),
+      h3: makeComponent("h3"),
+      h4: makeComponent("h4"),
+      strong: makeComponent("strong"),
+      em: makeComponent("em"),
+    } as Components;
+  }, [query]);
+}
+
 export default function MemoryPage() {
   const [data, setData] = useState<APIResponse | null>(null);
   const [loading, setLoading] = useState(true);
@@ -84,6 +140,7 @@ export default function MemoryPage() {
   const [saveMsg, setSaveMsg] = useState("");
   const debounceRef = useRef<ReturnType<typeof setTimeout>>();
   const searchRef = useRef<HTMLInputElement>(null);
+  const mdComponents = useHighlightedMarkdown(search);
 
   const fetchMemories = useCallback(async (p = page) => {
     setLoading(true);
@@ -445,7 +502,7 @@ export default function MemoryPage() {
                   prose-blockquote:border-indigo-500/30 prose-blockquote:text-gray-400
                   prose-hr:border-[rgba(255,255,255,0.06)]
                 ">
-                  <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                  <ReactMarkdown remarkPlugins={[remarkGfm]} components={mdComponents}>
                     {selectedItem.fullContent || selectedItem.content}
                   </ReactMarkdown>
                 </div>
