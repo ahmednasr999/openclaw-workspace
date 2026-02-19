@@ -15,6 +15,18 @@
 | **Writer Agent** | LinkedIn posts, emails, copy | Sonnet 4.5 | Content requests |
 | **Scheduler Agent** | Cron jobs, reminders | MiniMax-M2.1 | Scheduling tasks |
 
+## Task Board Rule (Non-Negotiable - ALL Models, ALL Agents)
+
+**Every task MUST be logged to Mission Control Task Board BEFORE work starts.**
+```
+POST http://localhost:3001/api/tasks/agent
+{"title":"...","agent":"NASR (Coder)","status":"In Progress","priority":"...","category":"Task","description":"..."}
+```
+- Update to "Completed" when done via PATCH
+- No exceptions across any model or session
+
+---
+
 ## Proactive Memory Checklist
 
 Before asking user, check:
