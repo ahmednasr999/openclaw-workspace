@@ -118,6 +118,21 @@ db.exec(`
     updatedAt TEXT
   );
 
+  -- CV Maker History
+  CREATE TABLE IF NOT EXISTS cv_history (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    jobTitle TEXT NOT NULL,
+    company TEXT NOT NULL,
+    jobUrl TEXT,
+    atsScore INTEGER,
+    matchedKeywords TEXT,
+    missingKeywords TEXT,
+    pdfPath TEXT,
+    status TEXT NOT NULL DEFAULT 'Generated',
+    notes TEXT,
+    createdAt TEXT NOT NULL
+  );
+
   CREATE TABLE IF NOT EXISTS scheduled_tasks (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     taskId INTEGER,
@@ -588,6 +603,63 @@ export const sqliteDb = {
       ORDER BY createdAt DESC
       LIMIT ?
     `).all(term, term, term, limit);
+  },
+
+  // ---- CV HISTORY ----
+  getAllCVHistory: (limit = 50) => {
+    return db.prepare(`SELECT * FROM cv_history ORDER BY createdAt DESC LIMIT ?`).all(limit);
+  },
+
+  getCVHistoryById: (id: number) => {
+    return db.prepare("SELECT * FROM cv_history WHERE id = ?").get(id);
+  },
+
+  addCVHistory: (entry: {
+    jobTitle: string;
+    company: string;
+    jobUrl?: string;
+    atsScore?: number;
+    matchedKeywords?: string[];
+    missingKeywords?: string[];
+    pdfPath?: string;
+    status?: string;
+    notes?: string;
+  }) => {
+    const stmt = db.prepare(`
+      INSERT INTO cv_history (jobTitle, company, jobUrl, atsScore, matchedKeywords, missingKeywords, pdfPath, status, notes, createdAt)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    `);
+    const result = stmt.run(
+      entry.jobTitle,
+      entry.company,
+      entry.jobUrl || null,
+      entry.atsScore || null,
+      entry.matchedKeywords ? JSON.stringify(entry.matchedKeywords) : null,
+      entry.missingKeywords ? JSON.stringify(entry.missingKeywords) : null,
+      entry.pdfPath || null,
+      entry.status || "Generated",
+      entry.notes || null,
+      new Date().toISOString()
+    );
+    return result.lastInsertRowid as number;
+  },
+
+  updateCVHistory: (id: number, fields: { pdfPath?: string; atsScore?: number; status?: string; notes?: string }) => {
+    const updates: string[] = [];
+    const values: any[] = [];
+
+    if (fields.pdfPath !== undefined) { updates.push("pdfPath = ?"); values.push(fields.pdfPath); }
+    if (fields.atsScore !== undefined) { updates.push("atsScore = ?"); values.push(fields.atsScore); }
+    if (fields.status !== undefined) { updates.push("status = ?"); values.push(fields.status); }
+    if (fields.notes !== undefined) { updates.push("notes = ?"); values.push(fields.notes); }
+
+    if (updates.length === 0) return;
+    values.push(id);
+    return db.prepare(`UPDATE cv_history SET ${updates.join(", ")} WHERE id = ?`).run(...values);
+  },
+
+  deleteCVHistory: (id: number) => {
+    return db.prepare("DELETE FROM cv_history WHERE id = ?").run(id);
   },
 };
 
