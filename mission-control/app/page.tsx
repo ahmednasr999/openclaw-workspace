@@ -126,7 +126,7 @@ export default function Home() {
     content: "Content Pipeline",
     calendar: "Calendar",
     memory: "Memory",
-    team: "Team & Network",
+    team: "Agent Team",
     dashboard: "Dashboard",
   };
 
@@ -190,7 +190,7 @@ export default function Home() {
             onClick={() => setActiveBoard("team")}
           >
             <Icon name="users" className="text-gray-400" />
-            <span>Team & Network</span>
+            <span>Agent Team</span>
           </div>
           <div
             className={`sidebar-item ${activeBoard === "dashboard" ? "active" : ""}`}
