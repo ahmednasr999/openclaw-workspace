@@ -58,6 +58,10 @@ body {
   background: linear-gradient(180deg, rgba(245, 158, 11, 0.08) 0%, transparent 100%);
   border: 1px solid rgba(245, 158, 11, 0.12);
 }
+.column-review { 
+  background: linear-gradient(180deg, rgba(236, 72, 153, 0.08) 0%, transparent 100%);
+  border: 1px solid rgba(236, 72, 153, 0.12);
+}
 .column-completed { 
   background: linear-gradient(180deg, rgba(16, 185, 129, 0.08) 0%, transparent 100%);
   border: 1px solid rgba(16, 185, 129, 0.12);
@@ -175,14 +179,34 @@ body {
   background: rgba(255, 255, 255, 0.1);
 }
 
-/* Responsive grid */
+/* Responsive grid - horizontal scroll on mobile for kanban feel */
 @media (max-width: 1024px) {
   .board-grid {
-    grid-template-columns: repeat(3, 1fr) !important;
+    display: flex !important;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  .board-grid > div {
+    min-width: 280px;
+    flex-shrink: 0;
+    scroll-snap-align: start;
   }
 }
-@media (max-width: 768px) {
-  .board-grid {
-    grid-template-columns: 1fr !important;
+
+/* Touch-friendly adjustments */
+@media (hover: none) {
+  .task-card {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  .task-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  .task-card:active {
+    transform: scale(0.98);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   }
 }

@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Convex configuration is handled separately
+  turbopack: {
+    root: __dirname,
+  },
 }
 
 module.exports = nextConfig

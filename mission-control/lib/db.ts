@@ -1,13 +1,14 @@
 import Database from "better-sqlite3";
 import path from "path";
 
-// Database file location
 const DB_PATH = path.join(process.cwd(), "mission-control.db");
-
-// Initialize database
 const db = new Database(DB_PATH);
 
-// Create tasks table
+// Enable WAL mode for better concurrent reads
+db.pragma("journal_mode = WAL");
+db.pragma("foreign_keys = ON");
+
+// Create tables
 db.exec(`
   CREATE TABLE IF NOT EXISTS tasks (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -21,18 +22,49 @@ db.exec(`
     completedDate TEXT,
     relatedTo TEXT,
     createdAt TEXT NOT NULL
-  )
+  );
+
+  CREATE TABLE IF NOT EXISTS task_activity (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    taskId INTEGER NOT NULL,
+    type TEXT NOT NULL,
+    content TEXT,
+    author TEXT NOT NULL DEFAULT 'System',
+    createdAt TEXT NOT NULL,
+    FOREIGN KEY (taskId) REFERENCES tasks(id) ON DELETE CASCADE
+  );
+
+  CREATE TABLE IF NOT EXISTS subtasks (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    taskId INTEGER NOT NULL,
+    title TEXT NOT NULL,
+    completed INTEGER NOT NULL DEFAULT 0,
+    createdAt TEXT NOT NULL,
+    FOREIGN KEY (taskId) REFERENCES tasks(id) ON DELETE CASCADE
+  );
 `);
 
-// Helper functions
 export const sqliteDb = {
-  // Get all tasks
+  // ---- TASKS ----
   getAllTasks: () => {
-    const stmt = db.prepare("SELECT * FROM tasks ORDER BY createdAt DESC");
-    return stmt.all();
+    const tasks = db.prepare("SELECT * FROM tasks ORDER BY createdAt DESC").all() as any[];
+    // Attach subtask counts
+    const subtaskStmt = db.prepare("SELECT taskId, COUNT(*) as total, SUM(completed) as done FROM subtasks GROUP BY taskId");
+    const subtaskMap: Record<number, { total: number; done: number }> = {};
+    for (const row of subtaskStmt.all() as any[]) {
+      subtaskMap[row.taskId] = { total: row.total, done: row.done };
+    }
+    return tasks.map(t => ({
+      ...t,
+      subtaskCount: subtaskMap[t.id]?.total || 0,
+      subtaskDone: subtaskMap[t.id]?.done || 0,
+    }));
   },
 
-  // Add a task
+  getTaskById: (id: number) => {
+    return db.prepare("SELECT * FROM tasks WHERE id = ?").get(id);
+  },
+
   addTask: (task: {
     title: string;
     description?: string;
@@ -61,18 +93,22 @@ export const sqliteDb = {
       task.relatedTo ? JSON.stringify(task.relatedTo) : null,
       task.createdAt
     );
-    return result.lastInsertRowid;
+    // Log activity
+    const taskId = result.lastInsertRowid as number;
+    sqliteDb.addActivity(taskId, "created", "Task created", task.assignee);
+    return taskId;
   },
 
-  // Update task status only
   updateStatus: (id: number, status: string, completedDate?: string) => {
-    const stmt = db.prepare(`
-      UPDATE tasks SET status = ?, completedDate = ? WHERE id = ?
-    `);
-    return stmt.run(status, completedDate || null, id);
+    const old = db.prepare("SELECT status FROM tasks WHERE id = ?").get(id) as any;
+    const stmt = db.prepare("UPDATE tasks SET status = ?, completedDate = ? WHERE id = ?");
+    const result = stmt.run(status, completedDate || null, id);
+    if (old && old.status !== status) {
+      sqliteDb.addActivity(id, "status_change", `${old.status} → ${status}`, "System");
+    }
+    return result;
   },
 
-  // Update all task fields
   updateTask: (id: number, fields: {
     title?: string;
     description?: string;
@@ -83,14 +119,22 @@ export const sqliteDb = {
     dueDate?: string;
     completedDate?: string;
   }) => {
+    const old = db.prepare("SELECT * FROM tasks WHERE id = ?").get(id) as any;
     const updates: string[] = [];
     const values: any[] = [];
+    const changes: string[] = [];
 
     if (fields.title !== undefined) { updates.push("title = ?"); values.push(fields.title); }
     if (fields.description !== undefined) { updates.push("description = ?"); values.push(fields.description || null); }
     if (fields.assignee !== undefined) { updates.push("assignee = ?"); values.push(fields.assignee); }
-    if (fields.status !== undefined) { updates.push("status = ?"); values.push(fields.status); }
-    if (fields.priority !== undefined) { updates.push("priority = ?"); values.push(fields.priority); }
+    if (fields.status !== undefined) { 
+      updates.push("status = ?"); values.push(fields.status);
+      if (old && old.status !== fields.status) changes.push(`Status: ${old.status} → ${fields.status}`);
+    }
+    if (fields.priority !== undefined) { 
+      updates.push("priority = ?"); values.push(fields.priority);
+      if (old && old.priority !== fields.priority) changes.push(`Priority: ${old.priority} → ${fields.priority}`);
+    }
     if (fields.category !== undefined) { updates.push("category = ?"); values.push(fields.category); }
     if (fields.dueDate !== undefined) { updates.push("dueDate = ?"); values.push(fields.dueDate || null); }
     if (fields.completedDate !== undefined) { updates.push("completedDate = ?"); values.push(fields.completedDate); }
@@ -99,19 +143,51 @@ export const sqliteDb = {
 
     values.push(id);
     const stmt = db.prepare(`UPDATE tasks SET ${updates.join(", ")} WHERE id = ?`);
-    return stmt.run(...values);
+    const result = stmt.run(...values);
+
+    if (changes.length > 0) {
+      sqliteDb.addActivity(id, "updated", changes.join("; "), "User");
+    }
+
+    return result;
   },
 
-  // Delete task
   deleteTask: (id: number) => {
-    const stmt = db.prepare("DELETE FROM tasks WHERE id = ?");
-    return stmt.run(id);
+    return db.prepare("DELETE FROM tasks WHERE id = ?").run(id);
   },
 
-  // Get task by ID
-  getTaskById: (id: number) => {
-    const stmt = db.prepare("SELECT * FROM tasks WHERE id = ?");
-    return stmt.get(id);
+  // ---- ACTIVITY LOG ----
+  addActivity: (taskId: number, type: string, content: string, author: string) => {
+    const stmt = db.prepare("INSERT INTO task_activity (taskId, type, content, author, createdAt) VALUES (?, ?, ?, ?, ?)");
+    return stmt.run(taskId, type, content, author, new Date().toISOString());
+  },
+
+  getActivity: (taskId: number, limit = 20) => {
+    return db.prepare("SELECT * FROM task_activity WHERE taskId = ? ORDER BY createdAt DESC LIMIT ?").all(taskId, limit);
+  },
+
+  // ---- SUBTASKS ----
+  getSubtasks: (taskId: number) => {
+    return db.prepare("SELECT * FROM subtasks WHERE taskId = ? ORDER BY id ASC").all(taskId);
+  },
+
+  addSubtask: (taskId: number, title: string) => {
+    const stmt = db.prepare("INSERT INTO subtasks (taskId, title, createdAt) VALUES (?, ?, ?)");
+    const result = stmt.run(taskId, title, new Date().toISOString());
+    sqliteDb.addActivity(taskId, "subtask_added", `Added: ${title}`, "User");
+    return result.lastInsertRowid;
+  },
+
+  toggleSubtask: (id: number) => {
+    const sub = db.prepare("SELECT * FROM subtasks WHERE id = ?").get(id) as any;
+    if (!sub) return;
+    const newVal = sub.completed ? 0 : 1;
+    db.prepare("UPDATE subtasks SET completed = ? WHERE id = ?").run(newVal, id);
+    return newVal;
+  },
+
+  deleteSubtask: (id: number) => {
+    return db.prepare("DELETE FROM subtasks WHERE id = ?").run(id);
   },
 };
 
