@@ -1,8 +1,5 @@
 "use client";
 
-import { useMutation } from "convex/react";
-import { api } from "@/convex/_generated/api";
-
 interface Task {
   _id: string;
   title: string;
@@ -13,9 +10,12 @@ interface Task {
   dueDate?: string;
 }
 
-export function TaskCard({ task }: { task: Task }) {
-  const deleteTask = useMutation(api.tasks.deleteTask);
+interface TaskCardProps {
+  task: Task;
+  onDelete: () => void;
+}
 
+export function TaskCard({ task, onDelete }: TaskCardProps) {
   const priorityColors = {
     High: "priority-high",
     Medium: "priority-medium",
@@ -31,7 +31,7 @@ export function TaskCard({ task }: { task: Task }) {
   };
 
   return (
-    <div className="bg-gray-800 rounded-lg p-4 hover:bg-gray-750 cursor-grab active:cursor-grabbing group">
+    <div className="bg-gray-800 rounded-lg p-4 hover:bg-gray-750 cursor-grab active:cursor-grabbing group relative">
       <div className="flex justify-between items-start mb-2">
         <span className="text-lg">{categoryIcons[task.category] || "📌"}</span>
         <div className="flex gap-2">
@@ -53,7 +53,10 @@ export function TaskCard({ task }: { task: Task }) {
       </div>
       
       <button
-        onClick={() => deleteTask({ id: task._id as any })}
+        onClick={(e) => {
+          e.stopPropagation();
+          onDelete();
+        }}
         className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 text-red-400 hover:text-red-300"
       >
         ✕
