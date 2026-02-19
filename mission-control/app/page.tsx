@@ -13,6 +13,7 @@ import { Logo } from "@/components/Logo";
 import dynamic from "next/dynamic";
 
 const CalendarPage = dynamic(() => import("@/app/calendar/page"), { ssr: false });
+const MemoryPage = dynamic(() => import("@/app/memory/page"), { ssr: false });
 
 interface Task {
   id: number;
@@ -46,7 +47,7 @@ interface ContentPost {
   updatedAt?: string;
 }
 
-type ActiveBoard = "tasks" | "content" | "calendar" | "dashboard";
+type ActiveBoard = "tasks" | "content" | "calendar" | "memory" | "dashboard";
 
 export default function Home() {
   const [tasks, setTasks] = useState<Task[]>([]);
@@ -123,6 +124,7 @@ export default function Home() {
     tasks: "Task Board",
     content: "Content Pipeline",
     calendar: "Calendar",
+    memory: "Memory",
     dashboard: "Dashboard",
   };
 
@@ -130,6 +132,7 @@ export default function Home() {
     tasks: `${totalTasks} tasks · ${highPriority} high priority · ${inReview} awaiting review`,
     content: `${totalPosts} posts · ${activePosts} active · ${publishedPosts} published`,
     calendar: "Scheduled tasks and proactive work",
+    memory: "Your entire digital life",
     dashboard: `${totalTasks} tasks · ${highPriority} high priority · ${inReview} awaiting review`,
   };
 
@@ -171,6 +174,13 @@ export default function Home() {
           >
             <Icon name="calendar" className="text-gray-400" />
             <span>Calendar</span>
+          </div>
+          <div
+            className={`sidebar-item ${activeBoard === "memory" ? "active" : ""}`}
+            onClick={() => setActiveBoard("memory")}
+          >
+            <Icon name="memory" className="text-gray-400" />
+            <span>Memory</span>
           </div>
           <div
             className={`sidebar-item ${activeBoard === "dashboard" ? "active" : ""}`}
@@ -314,6 +324,9 @@ export default function Home() {
           )}
           {activeBoard === "calendar" && (
             <CalendarPage />
+          )}
+          {activeBoard === "memory" && (
+            <MemoryPage />
           )}
           {activeBoard === "dashboard" && (
             <Dashboard tasks={tasks} />
