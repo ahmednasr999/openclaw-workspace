@@ -2,8 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { TaskCard } from "./TaskCard";
-import { useQuery, useMutation } from "convex/react";
-import { api } from "@/convex/_generated/api";
 
 const COLUMNS = [
   { id: "Inbox", title: "📥 Inbox", color: "column-inbox" },
@@ -13,24 +11,76 @@ const COLUMNS = [
   { id: "Completed", title: "✅ Completed", color: "column-completed" },
 ];
 
-export function TaskBoard() {
-  const tasks = useQuery(api.tasks.getTasks);
-  const updateStatus = useMutation(api.tasks.updateTaskStatus);
-  const deleteTask = useMutation(api.tasks.deleteTask);
+interface Task {
+  id: number;
+  title: string;
+  description?: string;
+  assignee: string;
+  priority: string;
+  category: string;
+  status: string;
+  dueDate?: string;
+  completedDate?: string;
+  createdAt: string;
+}
 
-  const handleDragStart = (e: React.DragEvent, taskId: string) => {
-    e.dataTransfer.setData("taskId", taskId);
+export function TaskBoard() {
+  const [tasks, setTasks] = useState<Task[]>([]);
+  const [loaded, setLoaded] = useState(false);
+  const [lastUpdated, setLastUpdated] = useState<Date>(new Date());
+
+  // Load tasks from API
+  const loadTasks = async () => {
+    try {
+      const res = await fetch("/api/tasks");
+      const data = await res.json();
+      setTasks(data);
+      setLastUpdated(new Date());
+    } catch (error) {
+      console.error("Error loading tasks:", error);
+    }
   };
 
-  const handleDrop = (e: React.DragEvent, status: string) => {
+  useEffect(() => {
+    loadTasks();
+    setLoaded(true);
+    
+    // Poll for changes every 10 seconds (less frequent, as backup)
+    const interval = setInterval(loadTasks, 10000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const handleDragStart = (e: React.DragEvent, taskId: number) => {
+    e.dataTransfer.setData("taskId", taskId.toString());
+  };
+
+  const handleDrop = async (e: React.DragEvent, status: string) => {
     e.preventDefault();
-    const taskId = e.dataTransfer.getData("taskId");
+    const taskId = parseInt(e.dataTransfer.getData("taskId"));
+    
     if (taskId) {
-      updateStatus({
-        id: taskId as any,
-        status,
-        completedDate: status === "Completed" ? new Date().toISOString() : undefined,
-      });
+      const completedDate = status === "Completed" ? new Date().toISOString() : undefined;
+      
+      // Update local state immediately
+      setTasks((prev) =>
+        prev.map((task) =>
+          task.id === taskId
+            ? { ...task, status, completedDate }
+            : task
+        )
+      );
+
+      // Update API
+      try {
+        await fetch("/api/tasks", {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ id: taskId, status, completedDate }),
+        });
+      } catch (error) {
+        console.error("Error updating task:", error);
+        loadTasks();
+      }
     }
   };
 
@@ -38,11 +88,20 @@ export function TaskBoard() {
     e.preventDefault();
   };
 
-  const handleDelete = (taskId: string) => {
-    deleteTask({ id: taskId as any });
+  const handleDelete = async (taskId: number) => {
+    // Update local state immediately
+    setTasks((prev) => prev.filter((task) => task.id !== taskId));
+
+    // Update API
+    try {
+      await fetch(`/api/tasks?id=${taskId}`, { method: "DELETE" });
+    } catch (error) {
+      console.error("Error deleting task:", error);
+      loadTasks();
+    }
   };
 
-  if (tasks === undefined) {
+  if (!loaded) {
     return (
       <div className="flex items-center justify-center h-64">
         <div className="text-gray-400">Loading tasks...</div>
@@ -66,11 +125,11 @@ export function TaskBoard() {
               .filter((task) => task.status === column.id)
               .map((task) => (
                 <div
-                  key={task._id}
+                  key={task.id}
                   draggable
-                  onDragStart={(e) => handleDragStart(e, task._id)}
+                  onDragStart={(e) => handleDragStart(e, task.id)}
                 >
-                  <TaskCard task={task} onDelete={() => handleDelete(task._id)} />
+                  <TaskCard task={task} onDelete={() => handleDelete(task.id)} />
                 </div>
               ))}
           </div>

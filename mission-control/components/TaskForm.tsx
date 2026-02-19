@@ -1,16 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { useMutation } from "convex/react";
-import { api } from "@/convex/_generated/api";
 
 interface TaskFormProps {
   onClose: () => void;
+  onTaskAdded: () => void;
 }
 
-export function TaskForm({ onClose }: TaskFormProps) {
-  const addTask = useMutation(api.tasks.addTask);
-  
+export function TaskForm({ onClose, onTaskAdded }: TaskFormProps) {
   const [form, setForm] = useState({
     title: "",
     description: "",
@@ -20,10 +17,10 @@ export function TaskForm({ onClose }: TaskFormProps) {
     dueDate: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    addTask({
+    const task = {
       title: form.title,
       description: form.description || undefined,
       assignee: form.assignee,
@@ -32,9 +29,19 @@ export function TaskForm({ onClose }: TaskFormProps) {
       category: form.category,
       dueDate: form.dueDate || undefined,
       createdAt: new Date().toISOString(),
-    });
-    
-    onClose();
+    };
+
+    try {
+      await fetch("/api/tasks", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(task),
+      });
+      onTaskAdded();
+      onClose();
+    } catch (error) {
+      console.error("Error adding task:", error);
+    }
   };
 
   return (
@@ -109,6 +116,7 @@ export function TaskForm({ onClose }: TaskFormProps) {
               <option value="Networking">🤝 Networking</option>
               <option value="Applications">📋 Applications</option>
               <option value="Interviews">🎤 Interviews</option>
+              <option value="Task">📌 Task</option>
             </select>
           </div>
           
