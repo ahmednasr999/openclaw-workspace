@@ -22,6 +22,9 @@ export function CVHistoryPage() {
   const [loading, setLoading] = useState(true);
   const [selectedEntry, setSelectedEntry] = useState<CVEntry | null>(null);
   const [showDetails, setShowDetails] = useState(false);
+  const [jobInput, setJobInput] = useState("");
+  const [analyzing, setAnalyzing] = useState(false);
+  const [analysisResult, setAnalysisResult] = useState<any>(null);
 
   const fetchEntries = useCallback(async () => {
     setLoading(true);
@@ -85,6 +88,85 @@ export function CVHistoryPage() {
             {entries.length} CVs created - Tailor your CV for jobs and track history
           </p>
         </div>
+      </div>
+
+      {/* Job Input Form */}
+      <div className="px-6 py-4 border-b border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.02)]">
+        <form
+          onSubmit={async (e) => {
+            e.preventDefault();
+            if (!jobInput.trim()) return;
+            setAnalyzing(true);
+            setAnalysisResult(null);
+            
+            // In a real implementation, this would call NASR to analyze
+            // For now, show a placeholder
+            setTimeout(() => {
+              setAnalysisResult({
+                jobTitle: "Sample Job",
+                company: "Sample Company",
+                atsScore: 75,
+                matchedKeywords: ["project management", "leadership", "strategy"],
+                missingKeywords: ["agile", "stakeholder management"]
+              });
+              setAnalyzing(false);
+            }, 2000);
+          }}
+          className="flex items-center gap-4"
+        >
+          <div className="flex-1">
+            <input
+              type="text"
+              value={jobInput}
+              onChange={(e) => setJobInput(e.target.value)}
+              placeholder="Paste job URL or description here..."
+              className="w-full bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)] rounded-lg px-4 py-2.5 text-sm text-white placeholder-gray-500 outline-none focus:border-indigo-500/50"
+            />
+          </div>
+          <button
+            type="submit"
+            disabled={analyzing || !jobInput.trim()}
+            className="px-6 py-2.5 rounded-lg text-xs font-medium bg-[rgba(124,92,252,0.15)] border border-indigo-500/30 text-indigo-400 hover:bg-[rgba(124,92,252,0.25)] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            {analyzing ? "Analyzing..." : "Analyze & Generate"}
+          </button>
+        </form>
+
+        {/* Analysis Result Preview */}
+        {analysisResult && (
+          <div className="mt-4 p-4 rounded-lg bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.06)]">
+            <div className="flex items-center justify-between mb-3">
+              <div>
+                <h4 className="text-sm font-medium text-white">{analysisResult.jobTitle}</h4>
+                <p className="text-xs text-gray-500">{analysisResult.company}</p>
+              </div>
+              <div className={`px-3 py-1.5 rounded-lg border ${analysisResult.atsScore >= 80 ? "bg-green-500/10 border-green-500/30" : analysisResult.atsScore >= 60 ? "bg-amber-500/10 border-amber-500/30" : "bg-red-500/10 border-red-500/30"}`}>
+                <span className={`text-lg font-bold ${analysisResult.atsScore >= 80 ? "text-green-400" : analysisResult.atsScore >= 60 ? "text-amber-400" : "text-red-400"}`}>{analysisResult.atsScore}</span>
+                <span className="text-xs text-gray-500 ml-1">/100</span>
+              </div>
+            </div>
+            <div className="flex items-center gap-2 mb-2">
+              <span className="text-[10px] text-gray-500">Matched:</span>
+              {analysisResult.matchedKeywords.map((k: string) => (
+                <span key={k} className="text-[10px] px-2 py-0.5 rounded bg-green-500/10 text-green-400">{k}</span>
+              ))}
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-[10px] text-gray-500">Missing:</span>
+              {analysisResult.missingKeywords.map((k: string) => (
+                <span key={k} className="text-[10px] px-2 py-0.5 rounded bg-red-500/10 text-red-400">{k}</span>
+              ))}
+            </div>
+            <div className="flex gap-2 mt-4">
+              <button className="flex-1 px-3 py-2 rounded-lg text-xs font-medium bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 hover:bg-indigo-500/20 transition-all">
+                Generate PDF
+              </button>
+              <button className="flex-1 px-3 py-2 rounded-lg text-xs font-medium bg-white/5 border border-[rgba(255,255,255,0.08)] text-gray-400 hover:text-white hover:bg-white/10 transition-all">
+                Save to History
+              </button>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Content */}
