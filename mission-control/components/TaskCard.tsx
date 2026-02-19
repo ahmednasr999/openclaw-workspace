@@ -8,18 +8,20 @@ interface Task {
   priority: string;
   category: string;
   dueDate?: string;
+  createdAt: string;
 }
 
 interface TaskCardProps {
   task: Task;
   onDelete: () => void;
+  onEdit: () => void;
 }
 
-export function TaskCard({ task, onDelete }: TaskCardProps) {
-  const priorityColors = {
-    High: "priority-high",
-    Medium: "priority-medium",
-    Low: "priority-low",
+export function TaskCard({ task, onDelete, onEdit }: TaskCardProps) {
+  const priorityConfig: Record<string, { class: string; dot: string }> = {
+    High: { class: "priority-high", dot: "bg-red-400" },
+    Medium: { class: "priority-medium", dot: "bg-yellow-400" },
+    Low: { class: "priority-low", dot: "bg-green-400" },
   };
 
   const categoryIcons: Record<string, string> = {
@@ -31,37 +33,74 @@ export function TaskCard({ task, onDelete }: TaskCardProps) {
     Task: "📌",
   };
 
+  const priority = priorityConfig[task.priority] || { class: "text-gray-400", dot: "bg-gray-400" };
+
+  // Format date
+  const formatDate = (dateStr: string) => {
+    const date = new Date(dateStr);
+    const now = new Date();
+    const diffDays = Math.ceil((date.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
+    
+    if (diffDays < 0) return { text: `${Math.abs(diffDays)}d overdue`, color: "text-red-400" };
+    if (diffDays === 0) return { text: "Today", color: "text-yellow-400" };
+    if (diffDays === 1) return { text: "Tomorrow", color: "text-yellow-400" };
+    if (diffDays <= 7) return { text: `${diffDays}d left`, color: "text-blue-400" };
+    return { text: date.toLocaleDateString("en-US", { month: "short", day: "numeric" }), color: "text-gray-500" };
+  };
+
+  const assigneeColor = task.assignee === "Ahmed" ? "text-blue-400" : 
+                        task.assignee === "OpenClaw" ? "text-purple-400" : "text-indigo-400";
+
   return (
-    <div className="bg-gray-800 rounded-lg p-4 hover:bg-gray-750 cursor-grab active:cursor-grabbing group relative">
-      <div className="flex justify-between items-start mb-2">
-        <span className="text-lg">{categoryIcons[task.category] || "📌"}</span>
-        <div className="flex gap-2">
-          <span className={`text-xs px-2 py-1 rounded ${priorityColors[task.priority as keyof typeof priorityColors] || "text-gray-400"}`}>
-            {task.priority}
-          </span>
-        </div>
+    <div 
+      className="task-card glass-strong rounded-lg p-3 cursor-grab active:cursor-grabbing group relative"
+      onClick={onEdit}
+    >
+      {/* Top row: category + priority */}
+      <div className="flex justify-between items-center mb-2">
+        <span className="text-sm">{categoryIcons[task.category] || "📌"}</span>
+        <span className={`text-[10px] px-2 py-0.5 rounded-full font-medium ${priority.class}`}>
+          {task.priority}
+        </span>
       </div>
       
-      <h3 className="font-medium text-white mb-1">{task.title}</h3>
+      {/* Title */}
+      <h3 className="text-sm font-medium text-white mb-1 leading-snug">{task.title}</h3>
       
+      {/* Description */}
       {task.description && (
-        <p className="text-sm text-gray-400 mb-3 line-clamp-2">{task.description}</p>
+        <p className="text-xs text-gray-500 mb-2 line-clamp-2 leading-relaxed">{task.description}</p>
       )}
       
-      <div className="flex justify-between items-center text-xs text-gray-500">
-        <span>{task.assignee}</span>
-        {task.dueDate && <span>📅 {task.dueDate}</span>}
+      {/* Footer: assignee + due date */}
+      <div className="flex justify-between items-center mt-2 pt-2 border-t border-white/5">
+        <span className={`text-[10px] font-medium ${assigneeColor}`}>
+          {task.assignee === "Ahmed" ? "👤 Ahmed" : 
+           task.assignee === "OpenClaw" ? "🤖 OpenClaw" : "👥 Both"}
+        </span>
+        {task.dueDate && (() => {
+          const { text, color } = formatDate(task.dueDate);
+          return <span className={`text-[10px] ${color}`}>📅 {text}</span>;
+        })()}
       </div>
       
-      <button
-        onClick={(e) => {
-          e.stopPropagation();
-          onDelete();
-        }}
-        className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 text-red-400 hover:text-red-300"
-      >
-        ✕
-      </button>
+      {/* Actions overlay */}
+      <div className="absolute top-1 right-1 opacity-0 group-hover:opacity-100 transition-opacity flex gap-1">
+        <button
+          onClick={(e) => { e.stopPropagation(); onEdit(); }}
+          className="w-6 h-6 rounded flex items-center justify-center text-xs hover:bg-white/10 text-gray-400 hover:text-white"
+          title="Edit"
+        >
+          ✏️
+        </button>
+        <button
+          onClick={(e) => { e.stopPropagation(); onDelete(); }}
+          className="w-6 h-6 rounded flex items-center justify-center text-xs hover:bg-red-500/20 text-gray-400 hover:text-red-400"
+          title="Delete"
+        >
+          🗑️
+        </button>
+      </div>
     </div>
   );
 }
