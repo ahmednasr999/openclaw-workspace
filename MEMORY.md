@@ -77,6 +77,17 @@ Every bullet: **Action Verb + Value/What + Result/Metric**
 
 ---
 
+## Task Board Rule (Non-Negotiable)
+
+**Every task MUST be logged to the Mission Control Task Board BEFORE work starts.**
+- No exceptions. No model exceptions. Applies to ALL models, ALL agents, ALL sessions.
+- Use `POST http://localhost:3001/api/tasks/agent` with agent name, title, description
+- Status starts as "In Progress", update to "QA" or "Completed" when done
+- This includes: sub-agent spawns, cron jobs, manual work, code changes, research, content
+- If it's work, it's on the board. Period.
+
+---
+
 ## Model Strategy
 
 | Task | Model | Notes |
