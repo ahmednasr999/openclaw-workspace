@@ -215,7 +215,7 @@ export default function Home() {
             <span>Content</span>
             <span className="ml-auto text-[10px] text-[var(--text-muted)]">{activePosts}</span>
           </div>
-          <div className="sidebar-item">
+          <div className="sidebar-item" onClick={() => setActiveBoard("team")}>
             <Icon name="users" className="text-gray-400" />
             <span>Networking</span>
             <span className="ml-auto text-[10px] text-[var(--text-muted)]">
@@ -259,52 +259,54 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Toolbar */}
-        <div className="toolbar">
-          {activeBoard !== "calendar" && activeBoard !== "team" && (
-            <input
-              type="text"
-              placeholder={activeBoard === "content" ? "Search posts..." : "Search tasks..."}
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              className="toolbar-search"
-            />
-          )}
+        {/* Toolbar - hidden for team and memory views (they have their own) */}
+        {activeBoard !== "team" && activeBoard !== "memory" && (
+          <div className="toolbar">
+            {activeBoard !== "calendar" && (
+              <input
+                type="text"
+                placeholder={activeBoard === "content" ? "Search posts..." : "Search tasks..."}
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                className="toolbar-search"
+              />
+            )}
 
-          {activeBoard === "tasks" && (
-            <select value={filterCategory} onChange={(e) => setFilterCategory(e.target.value)} className="toolbar-btn bg-transparent">
-              <option value="">All Categories</option>
-              <option value="Job Search">Job Search</option>
-              <option value="Content">Content</option>
-              <option value="Networking">Networking</option>
-              <option value="Applications">Applications</option>
-              <option value="Interviews">Interviews</option>
-              <option value="Task">Task</option>
-            </select>
-          )}
+            {activeBoard === "tasks" && (
+              <select value={filterCategory} onChange={(e) => setFilterCategory(e.target.value)} className="toolbar-btn bg-transparent">
+                <option value="">All Categories</option>
+                <option value="Job Search">Job Search</option>
+                <option value="Content">Content</option>
+                <option value="Networking">Networking</option>
+                <option value="Applications">Applications</option>
+                <option value="Interviews">Interviews</option>
+                <option value="Task">Task</option>
+              </select>
+            )}
 
-          {activeBoard !== "calendar" && activeBoard !== "team" && (
-            <select value={filterPriority} onChange={(e) => setFilterPriority(e.target.value)} className="toolbar-btn bg-transparent">
-              <option value="">All Priorities</option>
-              <option value="High">High</option>
-              <option value="Medium">Medium</option>
-              <option value="Low">Low</option>
-            </select>
-          )}
+            {activeBoard !== "calendar" && (
+              <select value={filterPriority} onChange={(e) => setFilterPriority(e.target.value)} className="toolbar-btn bg-transparent">
+                <option value="">All Priorities</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+              </select>
+            )}
 
-          <div className="flex-1" />
+            <div className="flex-1" />
 
-          {activeBoard !== "calendar" && activeBoard !== "team" && (
-            <button onClick={handleRefresh} className={`toolbar-btn ${isRefreshing ? "animate-spin" : ""}`}><Icon name="refresh" /></button>
-          )}
+            {activeBoard !== "calendar" && (
+              <button onClick={handleRefresh} className={`toolbar-btn ${isRefreshing ? "animate-spin" : ""}`}><Icon name="refresh" /></button>
+            )}
 
-          {activeBoard === "tasks" && (
-            <button onClick={() => setShowForm(true)} className="toolbar-btn toolbar-btn-primary">+ New Task</button>
-          )}
-          {activeBoard === "content" && (
-            <button onClick={() => setShowContentForm(true)} className="toolbar-btn toolbar-btn-primary">+ New Post</button>
-          )}
-        </div>
+            {activeBoard === "tasks" && (
+              <button onClick={() => setShowForm(true)} className="toolbar-btn toolbar-btn-primary">+ New Task</button>
+            )}
+            {activeBoard === "content" && (
+              <button onClick={() => setShowContentForm(true)} className="toolbar-btn toolbar-btn-primary">+ New Post</button>
+            )}
+          </div>
+        )}
 
         {/* Stats */}
         {activeBoard === "tasks" && (
