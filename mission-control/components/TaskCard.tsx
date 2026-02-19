@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Icon } from "./Icon";
 
 interface Task {
   id: number;
@@ -59,9 +60,11 @@ export function TaskCard({ task, onDelete, onEdit }: TaskCardProps) {
     >
       {/* Actions */}
       <div className="card-actions">
-        <button onClick={(e) => { e.stopPropagation(); onEdit(); }} className="card-action-btn" title="Edit">✏️</button>
+        <button onClick={(e) => { e.stopPropagation(); onEdit(); }} className="card-action-btn" title="Edit">
+          <Icon name="edit" size={14} />
+        </button>
         <button onClick={handleDelete} className={`card-action-btn ${confirmDelete ? "" : "danger"}`} title={confirmDelete ? "Confirm?" : "Delete"}>
-          {confirmDelete ? "❌" : "🗑"}
+          {confirmDelete ? "✕" : <Icon name="delete" size={14} />}
         </button>
       </div>
 

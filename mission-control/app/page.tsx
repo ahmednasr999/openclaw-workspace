@@ -8,6 +8,7 @@ import { TaskForm } from "@/components/TaskForm";
 import { EditTaskForm } from "@/components/EditTaskForm";
 import { NewContentForm } from "@/components/NewContentForm";
 import { ContentEditor } from "@/components/ContentEditor";
+import { Icon } from "@/components/Icon";
 import { Logo } from "@/components/Logo";
 
 interface Task {
@@ -147,7 +148,7 @@ export default function Home() {
             className={`sidebar-item ${activeBoard === "tasks" ? "active" : ""}`}
             onClick={() => setActiveBoard("tasks")}
           >
-            <span className="icon">📋</span>
+            <Icon name="board" className="text-gray-400" />
             <span>Task Board</span>
             <span className="ml-auto text-[10px] text-[var(--text-muted)]">{totalTasks - completed}</span>
           </div>
@@ -155,7 +156,7 @@ export default function Home() {
             className={`sidebar-item ${activeBoard === "content" ? "active" : ""}`}
             onClick={() => setActiveBoard("content")}
           >
-            <span className="icon">📝</span>
+            <Icon name="draft" className="text-gray-400" />
             <span>Content Pipeline</span>
             <span className="ml-auto text-[10px] text-[var(--text-muted)]">{activePosts}</span>
           </div>
@@ -163,7 +164,7 @@ export default function Home() {
             className={`sidebar-item ${activeBoard === "dashboard" ? "active" : ""}`}
             onClick={() => setActiveBoard("dashboard")}
           >
-            <span className="icon">📊</span>
+            <Icon name="dashboard" className="text-gray-400" />
             <span>Dashboard</span>
           </div>
         </div>
@@ -171,19 +172,19 @@ export default function Home() {
         <div className="sidebar-section">
           <div className="sidebar-label">Pipelines</div>
           <div className="sidebar-item">
-            <span className="icon">🎯</span>
+            <Icon name="target" className="text-gray-400" />
             <span>Job Search</span>
             <span className="ml-auto text-[10px] text-[var(--text-muted)]">
               {tasks.filter(t => t.category === "Job Search" && t.status !== "Completed").length}
             </span>
           </div>
           <div className="sidebar-item" onClick={() => setActiveBoard("content")}>
-            <span className="icon">✍️</span>
+            <Icon name="pen" className="text-gray-400" />
             <span>Content</span>
             <span className="ml-auto text-[10px] text-[var(--text-muted)]">{activePosts}</span>
           </div>
           <div className="sidebar-item">
-            <span className="icon">🤝</span>
+            <Icon name="users" className="text-gray-400" />
             <span>Networking</span>
             <span className="ml-auto text-[10px] text-[var(--text-muted)]">
               {tasks.filter(t => t.category === "Networking" && t.status !== "Completed").length}
@@ -257,7 +258,7 @@ export default function Home() {
 
           <div className="flex-1" />
 
-          <button onClick={handleRefresh} className={`toolbar-btn ${isRefreshing ? "animate-spin" : ""}`}>🔄</button>
+          <button onClick={handleRefresh} className={`toolbar-btn ${isRefreshing ? "animate-spin" : ""}`}><Icon name="refresh" /></button>
 
           {activeBoard === "tasks" && (
             <button onClick={() => setShowForm(true)} className="toolbar-btn toolbar-btn-primary">+ New Task</button>

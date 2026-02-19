@@ -1,6 +1,24 @@
 # MEMORY.md - Long-Term Memory
 
-## CV Creation Workflow (Permanent)
+## Content Pipeline Workflow (Confirmed Feb 19, 2026)
+
+**Mission Control has two boards:**
+1. **Task Board** - High-level tracking (jobs, networking, applications, PMO tasks)
+2. **Content Pipeline** - LinkedIn/X content creation (drafts, review, published)
+
+**Workflow Option A (Confirmed):**
+- Content Pipeline IS the work. Task Board is for tracking.
+- Task = "Create LinkedIn post about X" → Create content post in Pipeline → Mark task complete
+- Content Pipeline stores actual posts, drafts, and published content
+- Task Board reminds us what needs to happen
+
+**Content Pipeline Columns:**
+- 💡 Ideas → 📝 Outline → ✍️ Draft → 🎨 Design → 👀 Review → ✅ Published
+
+**Approval Flow:**
+1. OpenClaw creates draft → moves to Review
+2. Ahmed reviews in Content Pipeline → approves or requests edits
+3. Ahmed moves to Published when ready to post
 
 **Trigger:** Ahmed shares job link + description
 
