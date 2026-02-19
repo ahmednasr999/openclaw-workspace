@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Icon } from "./Icon";
 
 interface ContentPost {
   id: number;
@@ -30,11 +31,11 @@ const PLATFORM_CLASS: Record<string, string> = {
   X: "tag-x",
 };
 
-const TYPE_LABELS: Record<string, string> = {
-  Post: "📄",
-  Article: "📰",
-  Carousel: "🎠",
-  Video: "🎬",
+const TYPE_LABELS: Record<string, { icon: string; label: string }> = {
+  Post: { icon: "📄", label: "Post" },
+  Article: { icon: "📰", label: "Article" },
+  Carousel: { icon: "🎠", label: "Carousel" },
+  Video: { icon: "🎬", label: "Video" },
 };
 
 export function ContentCard({ post, onDelete, onEdit }: ContentCardProps) {
@@ -54,16 +55,18 @@ export function ContentCard({ post, onDelete, onEdit }: ContentCardProps) {
   return (
     <div className="task-card" onClick={onEdit}>
       <div className="card-actions">
-        <button onClick={(e) => { e.stopPropagation(); onEdit(); }} className="card-action-btn" title="Edit">✏️</button>
+        <button onClick={(e) => { e.stopPropagation(); onEdit(); }} className="card-action-btn" title="Edit">
+          <Icon name="edit" size={14} />
+        </button>
         <button onClick={handleDelete} className={`card-action-btn ${confirmDelete ? "" : "danger"}`} title={confirmDelete ? "Confirm?" : "Delete"}>
-          {confirmDelete ? "❌" : "🗑"}
+          {confirmDelete ? "✕" : <Icon name="delete" size={14} />}
         </button>
       </div>
 
       {/* Tags */}
       <div className="flex items-center gap-2 mb-2">
         <span className={`tag ${PLATFORM_CLASS[post.platform] || "tag-x"}`}>{post.platform}</span>
-        <span className="tag tag-task">{TYPE_LABELS[post.contentType] || "📄"} {post.contentType}</span>
+        <span className="tag tag-task">{TYPE_LABELS[post.contentType]?.icon || "📄"} {post.contentType}</span>
         <div className={`priority-dot priority-dot-${post.priority.toLowerCase()}`} title={post.priority} />
       </div>
 
@@ -79,7 +82,9 @@ export function ContentCard({ post, onDelete, onEdit }: ContentCardProps) {
 
       {/* Image indicator */}
       {post.imageUrl && (
-        <div className="text-[10px] text-[var(--text-muted)] mb-1">🖼️ Has image</div>
+        <div className="text-[10px] text-[var(--text-muted)] mb-1 flex items-center gap-1">
+          <Icon name="image" size={12} /> Has image
+        </div>
       )}
 
       {/* Footer */}
@@ -91,7 +96,9 @@ export function ContentCard({ post, onDelete, onEdit }: ContentCardProps) {
           <span className="text-[11px] text-[var(--text-muted)]">{post.assignee}</span>
         </div>
         {post.publishDate && (
-          <span className="text-[10px] text-[var(--text-muted)]">📅 {formatDate(post.publishDate)}</span>
+          <span className="text-[10px] text-[var(--text-muted)] flex items-center gap-1">
+            <Icon name="calendar" size={12} />{formatDate(post.publishDate)}
+          </span>
         )}
       </div>
     </div>
