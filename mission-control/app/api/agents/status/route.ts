@@ -1,34 +1,64 @@
 import { NextResponse } from "next/server";
-import { execSync } from "child_process";
+import Database from "better-sqlite3";
+import path from "path";
+
+const DB_PATH = path.join(process.cwd(), "mission-control.db");
+const db = new Database(DB_PATH);
 
 export const dynamic = "force-dynamic";
 
+// Map agent IDs to task assignee names
+const AGENT_LABEL_MAP: Record<string, string[]> = {
+  "nasr": ["NASR (Coder)", "NASR"],
+  "qa": ["QA Agent", "QA"],
+  "scheduler": ["Scheduler", "scheduler"],
+  "researcher": ["Research Agent", "researcher"],
+  "writer": ["Writer Agent", "writer"],
+  "cv": ["CV Agent", "cv"],
+  "openclaw": ["OpenClaw", "OpenClaw Tasks"],
+  "ahmed": ["Ahmed", "My Tasks"],
+};
+
 export async function GET() {
   try {
-    let runs: any[] = [];
+    // Read tasks directly from SQLite
+    const tasks = db.prepare("SELECT * FROM tasks ORDER BY createdAt DESC").all();
 
-    // Try to get active sessions/sub-agents from OpenClaw
-    try {
-      const output = execSync(
-        'curl -s http://localhost:3778/api/sessions?activeMinutes=60 2>/dev/null || echo "[]"',
-        { timeout: 5000, encoding: "utf-8" }
-      );
-      const parsed = JSON.parse(output);
-      runs = Array.isArray(parsed) ? parsed : parsed.sessions || [];
-    } catch {
-      // Fallback: empty
+    // Group tasks by assignee
+    const agentRuns: any[] = [];
+
+    for (const task of tasks as any[]) {
+      const assignee = task.assignee || "Unassigned";
+      
+      // Map task status to run status
+      let runStatus = "unknown";
+      if (task.status === "In Progress") {
+        runStatus = "running";
+      } else if (task.status === "Completed") {
+        runStatus = "completed";
+      } else {
+        runStatus = "pending";
+      }
+
+      // Add to runs list
+      agentRuns.push({
+        sessionKey: `task-${task.id}`,
+        label: assignee,
+        status: runStatus,
+        updatedAt: task.createdAt,
+        task: task.title,
+        // Include agent ID for matching
+        agentId: Object.entries(AGENT_LABEL_MAP)
+          .find(([_, labels]) => labels.includes(assignee))?.[0] || null,
+      });
     }
 
     return NextResponse.json({
-      runs: runs.map((r: any) => ({
-        sessionKey: r.sessionKey || r.key || "",
-        label: r.label || "",
-        status: r.status || "unknown",
-        updatedAt: r.updatedAt || new Date().toISOString(),
-        task: r.task || r.label || "",
-      })),
+      runs: agentRuns,
+      timestamp: new Date().toISOString(),
     });
   } catch (error) {
-    return NextResponse.json({ runs: [] });
+    console.error("Error fetching agent status:", error);
+    return NextResponse.json({ runs: [], error: "Failed to fetch agent status" });
   }
 }

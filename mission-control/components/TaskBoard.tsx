@@ -8,6 +8,7 @@ const COLUMNS = [
   { id: "Inbox", title: "Inbox", icon: "inbox" },
   { id: "My Tasks", title: "My Tasks", icon: "myTasks" },
   { id: "OpenClaw Tasks", title: "OpenClaw", icon: "openClaw" },
+  { id: "Pending", title: "Pending", icon: "clock" },
   { id: "In Progress", title: "In Progress", icon: "inProgress" },
   { id: "QA", title: "QA", icon: "check" },
   { id: "Review", title: "Review", icon: "review" },
