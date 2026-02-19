@@ -99,18 +99,25 @@ export function CVHistoryPage() {
             setAnalyzing(true);
             setAnalysisResult(null);
             
-            // In a real implementation, this would call NASR to analyze
-            // For now, show a placeholder
-            setTimeout(() => {
-              setAnalysisResult({
-                jobTitle: "Sample Job",
-                company: "Sample Company",
-                atsScore: 75,
-                matchedKeywords: ["project management", "leadership", "strategy"],
-                missingKeywords: ["agile", "stakeholder management"]
+            try {
+              const res = await fetch("/api/cv/generate", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ url: jobInput }),
               });
+              
+              if (res.ok) {
+                const data = await res.json();
+                setAnalysisResult(data);
+              } else {
+                alert("Failed to analyze job. Please try again.");
+              }
+            } catch (error) {
+              console.error("Error analyzing job:", error);
+              alert("Error analyzing job. Please try again.");
+            } finally {
               setAnalyzing(false);
-            }, 2000);
+            }
           }}
           className="flex items-center gap-4"
         >
@@ -132,28 +139,28 @@ export function CVHistoryPage() {
           </button>
         </form>
 
-        {/* Analysis Result Preview */}
+        {/* Analysis Result */}
         {analysisResult && (
           <div className="mt-4 p-4 rounded-lg bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.06)]">
             <div className="flex items-center justify-between mb-3">
               <div>
-                <h4 className="text-sm font-medium text-white">{analysisResult.jobTitle}</h4>
-                <p className="text-xs text-gray-500">{analysisResult.company}</p>
+                <h4 className="text-sm font-medium text-white">{analysisResult.job?.title}</h4>
+                <p className="text-xs text-gray-500">{analysisResult.job?.company}</p>
               </div>
-              <div className={`px-3 py-1.5 rounded-lg border ${analysisResult.atsScore >= 80 ? "bg-green-500/10 border-green-500/30" : analysisResult.atsScore >= 60 ? "bg-amber-500/10 border-amber-500/30" : "bg-red-500/10 border-red-500/30"}`}>
-                <span className={`text-lg font-bold ${analysisResult.atsScore >= 80 ? "text-green-400" : analysisResult.atsScore >= 60 ? "text-amber-400" : "text-red-400"}`}>{analysisResult.atsScore}</span>
+              <div className={`px-3 py-1.5 rounded-lg border ${analysisResult.analysis?.atsScore >= 80 ? "bg-green-500/10 border-green-500/30" : analysisResult.analysis?.atsScore >= 60 ? "bg-amber-500/10 border-amber-500/30" : "bg-red-500/10 border-red-500/30"}`}>
+                <span className={`text-lg font-bold ${analysisResult.analysis?.atsScore >= 80 ? "text-green-400" : analysisResult.analysis?.atsScore >= 60 ? "text-amber-400" : "text-red-400"}`}>{analysisResult.analysis?.atsScore}</span>
                 <span className="text-xs text-gray-500 ml-1">/100</span>
               </div>
             </div>
             <div className="flex items-center gap-2 mb-2">
               <span className="text-[10px] text-gray-500">Matched:</span>
-              {analysisResult.matchedKeywords.map((k: string) => (
+              {analysisResult.analysis?.matchedKeywords?.slice(0, 5).map((k: string) => (
                 <span key={k} className="text-[10px] px-2 py-0.5 rounded bg-green-500/10 text-green-400">{k}</span>
               ))}
             </div>
             <div className="flex items-center gap-2">
               <span className="text-[10px] text-gray-500">Missing:</span>
-              {analysisResult.missingKeywords.map((k: string) => (
+              {analysisResult.analysis?.missingKeywords?.slice(0, 5).map((k: string) => (
                 <span key={k} className="text-[10px] px-2 py-0.5 rounded bg-red-500/10 text-red-400">{k}</span>
               ))}
             </div>
