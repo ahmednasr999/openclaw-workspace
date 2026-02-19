@@ -25,6 +25,10 @@ export function CVHistoryPage() {
   const [jobInput, setJobInput] = useState("");
   const [analyzing, setAnalyzing] = useState(false);
   const [analysisResult, setAnalysisResult] = useState<any>(null);
+  const [generatingPdf, setGeneratingPdf] = useState(false);
+  const [pdfResult, setPdfResult] = useState<any>(null);
+  const [showPreview, setShowPreview] = useState(false);
+  const [cvHtml, setCvHtml] = useState("");
 
   const fetchEntries = useCallback(async () => {
     setLoading(true);
@@ -165,13 +169,80 @@ export function CVHistoryPage() {
               ))}
             </div>
             <div className="flex gap-2 mt-4">
-              <button className="flex-1 px-3 py-2 rounded-lg text-xs font-medium bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 hover:bg-indigo-500/20 transition-all">
-                Generate PDF
+              <button
+                onClick={async () => {
+                  if (!analysisResult?.job) return;
+                  setGeneratingPdf(true);
+                  setPdfResult(null);
+                  try {
+                    const res = await fetch("/api/cv/pdf", {
+                      method: "POST",
+                      headers: { "Content-Type": "application/json" },
+                      body: JSON.stringify({
+                        job: analysisResult.job,
+                        content: ""
+                      }),
+                    });
+                    if (res.ok) {
+                      const data = await res.json();
+                      setPdfResult(data);
+                      setCvHtml(data.html || "");
+                      setShowPreview(true);
+                    } else {
+                      alert("Failed to generate PDF");
+                    }
+                  } catch (error) {
+                    console.error("Error generating PDF:", error);
+                    alert("Error generating PDF");
+                  } finally {
+                    setGeneratingPdf(false);
+                  }
+                }}
+                disabled={generatingPdf || !analysisResult?.job}
+                className="flex-1 px-3 py-2 rounded-lg text-xs font-medium bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 hover:bg-indigo-500/20 transition-all disabled:opacity-50"
+              >
+                {generatingPdf ? "Generating..." : "Preview & Download"}
               </button>
               <button className="flex-1 px-3 py-2 rounded-lg text-xs font-medium bg-white/5 border border-[rgba(255,255,255,0.08)] text-gray-400 hover:text-white hover:bg-white/10 transition-all">
                 Save to History
               </button>
             </div>
+            {pdfResult && (
+              <div className="mt-3 p-2 rounded-lg bg-green-500/10 border border-green-500/30 text-green-400 text-xs text-center">
+                ✓ PDF generated
+              </div>
+            )}
+            
+            {/* Apply Recommendation */}
+            {analysisResult?.analysis?.atsScore && (
+              <div className="mt-3 p-3 rounded-lg bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.06)]">
+                {analysisResult.analysis.atsScore >= 80 ? (
+                  <div className="flex items-center gap-2">
+                    <span className="text-green-400 text-lg">✓</span>
+                    <div>
+                      <p className="text-xs text-green-400 font-medium">Strong Match - Recommend Apply</p>
+                      <p className="text-[10px] text-gray-500">ATS Score: {analysisResult.analysis.atsScore}/100</p>
+                    </div>
+                  </div>
+                ) : analysisResult.analysis.atsScore >= 60 ? (
+                  <div className="flex items-center gap-2">
+                    <span className="text-amber-400 text-lg">!</span>
+                    <div>
+                      <p className="text-xs text-amber-400 font-medium">Moderate Match - Consider Applying</p>
+                      <p className="text-[10px] text-gray-500">ATS Score: {analysisResult.analysis.atsScore}/100 - {analysisResult.analysis?.missingKeywords?.length || 0} keywords missing</p>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="flex items-center gap-2">
+                    <span className="text-red-400 text-lg">✗</span>
+                    <div>
+                      <p className="text-xs text-red-400 font-medium">Weak Match - May Need Adjustments</p>
+                      <p className="text-[10px] text-gray-500">ATS Score: {analysisResult.analysis.atsScore}/100 - Consider another role</p>
+                    </div>
+                  </div>
+                )}
+              </div>
+            )}
           </div>
         )}
       </div>
@@ -329,6 +400,49 @@ export function CVHistoryPage() {
               <button className="flex-1 px-3 py-2 rounded-lg text-xs font-medium bg-white/5 border border-[rgba(255,255,255,0.08)] text-gray-400 hover:text-white hover:bg-white/10 transition-all">
                 <Icon name="edit" size={12} className="inline mr-1" />
                 Edit Notes
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* CV Preview Modal */}
+      {showPreview && (
+        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4">
+          <div className="bg-[#1a1a1a] rounded-xl max-w-4xl w-full max-h-[90vh] flex flex-col">
+            <div className="flex items-center justify-between p-4 border-b border-[rgba(255,255,255,0.06)]">
+              <h3 className="text-sm font-medium text-white">CV Preview</h3>
+              <button
+                onClick={() => setShowPreview(false)}
+                className="text-gray-400 hover:text-white"
+              >
+                ✕
+              </button>
+            </div>
+            <div className="flex-1 overflow-auto p-6">
+              <div className="bg-white rounded-lg p-8 max-w-2xl mx-auto">
+                <div 
+                  dangerouslySetInnerHTML={{ __html: cvHtml }} 
+                  className="cv-preview"
+                />
+              </div>
+            </div>
+            <div className="flex items-center justify-between p-4 border-t border-[rgba(255,255,255,0.06)]">
+              <button
+                onClick={() => setShowPreview(false)}
+                className="px-4 py-2 rounded-lg text-xs font-medium bg-white/5 border border-[rgba(255,255,255,0.08)] text-gray-400 hover:text-white hover:bg-white/10 transition-all"
+              >
+                Close
+              </button>
+              <button
+                onClick={() => {
+                  if (pdfResult?.downloadUrl) {
+                    window.open(pdfResult.downloadUrl, "_blank");
+                  }
+                }}
+                className="px-4 py-2 rounded-lg text-xs font-medium bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 hover:bg-indigo-500/20 transition-all"
+              >
+                Download PDF
               </button>
             </div>
           </div>
