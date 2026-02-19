@@ -8,6 +8,15 @@ import { TaskForm } from "@/components/TaskForm";
 export default function Home() {
   const [view, setView] = useState<"board" | "dashboard">("board");
   const [showForm, setShowForm] = useState(false);
+  const [refreshKey, setRefreshKey] = useState(0);
+
+  const handleTaskAdded = () => {
+    setRefreshKey((prev) => prev + 1);
+  };
+
+  const handleRefresh = () => {
+    setRefreshKey((prev) => prev + 1);
+  };
 
   return (
     <main className="min-h-screen bg-black text-white p-6">
@@ -18,11 +27,18 @@ export default function Home() {
             Mission Control
           </h1>
           <p className="text-gray-400 mt-1">
-            Task board for Ahmed & OpenClaw (Convex)
+            Task board for Ahmed & OpenClaw (SQLite)
           </p>
         </div>
         
         <div className="flex gap-3">
+          <button
+            onClick={handleRefresh}
+            className="px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg transition-colors"
+            title="Refresh"
+          >
+            🔄
+          </button>
           <button
             onClick={() => setView("dashboard")}
             className={`px-4 py-2 rounded-lg transition-colors ${
@@ -50,14 +66,14 @@ export default function Home() {
 
       {/* Main Content */}
       {view === "board" ? (
-        <TaskBoard />
+        <TaskBoard key={refreshKey} />
       ) : (
-        <Dashboard />
+        <Dashboard key={refreshKey} />
       )}
 
       {/* Task Form Modal */}
       {showForm && (
-        <TaskForm onClose={() => setShowForm(false)} />
+        <TaskForm onClose={() => setShowForm(false)} onTaskAdded={handleTaskAdded} />
       )}
     </main>
   );
