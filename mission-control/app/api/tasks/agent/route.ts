@@ -50,7 +50,7 @@ export async function POST(request: Request) {
 export async function PATCH(request: Request) {
   try {
     const body = await request.json();
-    const { taskId, status, result, agent } = body;
+    const { taskId, status, result, agent, knowledge } = body;
 
     if (!taskId || !status) {
       return NextResponse.json({ error: "taskId and status required" }, { status: 400 });
@@ -61,6 +61,20 @@ export async function PATCH(request: Request) {
 
     if (result) {
       sqliteDb.addActivity(taskId, "agent_result", `${agent || "Agent"}: ${result}`, agent || "System");
+    }
+
+    // Auto-capture knowledge if provided
+    if (knowledge && knowledge.category && knowledge.title && knowledge.content) {
+      sqliteDb.addKnowledge({
+        category: knowledge.category,
+        title: knowledge.title,
+        content: knowledge.content,
+        tags: knowledge.tags ? JSON.stringify(knowledge.tags) : undefined,
+        agentId: agent || undefined,
+        taskId: parseInt(String(taskId), 10),
+        sourceType: "agent",
+        author: agent || "System",
+      });
     }
 
     return NextResponse.json({ success: true });
