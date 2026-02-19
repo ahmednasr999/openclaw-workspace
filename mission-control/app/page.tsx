@@ -14,6 +14,7 @@ import dynamic from "next/dynamic";
 
 const CalendarPage = dynamic(() => import("@/app/calendar/page"), { ssr: false });
 const MemoryPage = dynamic(() => import("@/app/memory/page"), { ssr: false });
+const TeamBoard = dynamic(() => import("@/components/TeamBoard").then(m => ({ default: m.TeamBoard })), { ssr: false });
 
 interface Task {
   id: number;
@@ -47,7 +48,7 @@ interface ContentPost {
   updatedAt?: string;
 }
 
-type ActiveBoard = "tasks" | "content" | "calendar" | "memory" | "dashboard";
+type ActiveBoard = "tasks" | "content" | "calendar" | "memory" | "team" | "dashboard";
 
 export default function Home() {
   const [tasks, setTasks] = useState<Task[]>([]);
@@ -125,6 +126,7 @@ export default function Home() {
     content: "Content Pipeline",
     calendar: "Calendar",
     memory: "Memory",
+    team: "Team & Network",
     dashboard: "Dashboard",
   };
 
@@ -133,6 +135,7 @@ export default function Home() {
     content: `${totalPosts} posts · ${activePosts} active · ${publishedPosts} published`,
     calendar: "Scheduled tasks and proactive work",
     memory: "Your entire digital life",
+    team: "Contacts, recruiters, and networking",
     dashboard: `${totalTasks} tasks · ${highPriority} high priority · ${inReview} awaiting review`,
   };
 
@@ -181,6 +184,13 @@ export default function Home() {
           >
             <Icon name="memory" className="text-gray-400" />
             <span>Memory</span>
+          </div>
+          <div
+            className={`sidebar-item ${activeBoard === "team" ? "active" : ""}`}
+            onClick={() => setActiveBoard("team")}
+          >
+            <Icon name="users" className="text-gray-400" />
+            <span>Team & Network</span>
           </div>
           <div
             className={`sidebar-item ${activeBoard === "dashboard" ? "active" : ""}`}
@@ -251,7 +261,7 @@ export default function Home() {
 
         {/* Toolbar */}
         <div className="toolbar">
-          {activeBoard !== "calendar" && (
+          {activeBoard !== "calendar" && activeBoard !== "team" && (
             <input
               type="text"
               placeholder={activeBoard === "content" ? "Search posts..." : "Search tasks..."}
@@ -273,7 +283,7 @@ export default function Home() {
             </select>
           )}
 
-          {activeBoard !== "calendar" && (
+          {activeBoard !== "calendar" && activeBoard !== "team" && (
             <select value={filterPriority} onChange={(e) => setFilterPriority(e.target.value)} className="toolbar-btn bg-transparent">
               <option value="">All Priorities</option>
               <option value="High">High</option>
@@ -284,7 +294,7 @@ export default function Home() {
 
           <div className="flex-1" />
 
-          {activeBoard !== "calendar" && (
+          {activeBoard !== "calendar" && activeBoard !== "team" && (
             <button onClick={handleRefresh} className={`toolbar-btn ${isRefreshing ? "animate-spin" : ""}`}><Icon name="refresh" /></button>
           )}
 
@@ -327,6 +337,9 @@ export default function Home() {
           )}
           {activeBoard === "memory" && (
             <MemoryPage />
+          )}
+          {activeBoard === "team" && (
+            <TeamBoard />
           )}
           {activeBoard === "dashboard" && (
             <Dashboard tasks={tasks} />
