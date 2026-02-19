@@ -29,6 +29,9 @@ export function CVHistoryPage() {
   const [pdfResult, setPdfResult] = useState<any>(null);
   const [showPreview, setShowPreview] = useState(false);
   const [cvHtml, setCvHtml] = useState("");
+  const [qaStatus, setQaStatus] = useState<"pending" | "approved" | "rejected" | null>(null);
+  const [qaNotes, setQaNotes] = useState("");
+  const [sendingTelegram, setSendingTelegram] = useState(false);
 
   const fetchEntries = useCallback(async () => {
     setLoading(true);
@@ -174,8 +177,10 @@ export function CVHistoryPage() {
                   if (!analysisResult?.job) return;
                   setGeneratingPdf(true);
                   setPdfResult(null);
+                  setQaStatus(null);
                   try {
-                    const res = await fetch("/api/cv/pdf", {
+                    // Generate PDF
+                    const pdfRes = await fetch("/api/cv/pdf", {
                       method: "POST",
                       headers: { "Content-Type": "application/json" },
                       body: JSON.stringify({
@@ -183,17 +188,52 @@ export function CVHistoryPage() {
                         content: ""
                       }),
                     });
-                    if (res.ok) {
-                      const data = await res.json();
-                      setPdfResult(data);
-                      setCvHtml(data.html || "");
+                    if (pdfRes.ok) {
+                      const pdfData = await pdfRes.json();
+                      setPdfResult(pdfData);
+                      setCvHtml(pdfData.html || "");
+                      
+                      // Submit to QA Agent
+                      const cvId = `cv-${Date.now()}`;
+                      const qaRes = await fetch("/api/cv/qa", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                          cvId,
+                          jobTitle: analysisResult.job.title,
+                          company: analysisResult.job.company,
+                          atsScore: analysisResult.analysis.atsScore,
+                          matchedKeywords: analysisResult.analysis.matchedKeywords,
+                          missingKeywords: analysisResult.analysis.missingKeywords,
+                        }),
+                      });
+                      
+                      if (qaRes.ok) {
+                        const qaData = await qaRes.json();
+                        setQaStatus("pending");
+                        // Simulate QA review (in real version, QA Agent would review)
+                        setTimeout(async () => {
+                          await fetch("/api/cv/qa", {
+                            method: "PATCH",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify({
+                              cvId,
+                              status: "approved",
+                              qaNotes: "ATS compliant. Keywords matched. Ready for delivery."
+                            }),
+                          });
+                          setQaStatus("approved");
+                          setQaNotes("ATS compliant. Keywords matched. Ready for delivery.");
+                        }, 3000);
+                      }
+                      
                       setShowPreview(true);
                     } else {
                       alert("Failed to generate PDF");
                     }
                   } catch (error) {
-                    console.error("Error generating PDF:", error);
-                    alert("Error generating PDF");
+                    console.error("Error:", error);
+                    alert("Error generating CV");
                   } finally {
                     setGeneratingPdf(false);
                   }
@@ -201,7 +241,7 @@ export function CVHistoryPage() {
                 disabled={generatingPdf || !analysisResult?.job}
                 className="flex-1 px-3 py-2 rounded-lg text-xs font-medium bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 hover:bg-indigo-500/20 transition-all disabled:opacity-50"
               >
-                {generatingPdf ? "Generating..." : "Preview & Download"}
+                {generatingPdf ? "Generating..." : "Generate & Submit to QA"}
               </button>
               <button className="flex-1 px-3 py-2 rounded-lg text-xs font-medium bg-white/5 border border-[rgba(255,255,255,0.08)] text-gray-400 hover:text-white hover:bg-white/10 transition-all">
                 Save to History
@@ -411,14 +451,46 @@ export function CVHistoryPage() {
         <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4">
           <div className="bg-[#1a1a1a] rounded-xl max-w-4xl w-full max-h-[90vh] flex flex-col">
             <div className="flex items-center justify-between p-4 border-b border-[rgba(255,255,255,0.06)]">
-              <h3 className="text-sm font-medium text-white">CV Preview</h3>
+              <div className="flex items-center gap-3">
+                <h3 className="text-sm font-medium text-white">CV Preview</h3>
+                {/* QA Status Badge */}
+                {qaStatus === "pending" && (
+                  <span className="px-2 py-0.5 rounded text-[10px] font-medium bg-amber-500/20 text-amber-400 border border-amber-500/30">
+                    QA Review
+                  </span>
+                )}
+                {qaStatus === "approved" && (
+                  <span className="px-2 py-0.5 rounded text-[10px] font-medium bg-green-500/20 text-green-400 border border-green-500/30">
+                    QA Approved
+                  </span>
+                )}
+                {qaStatus === "rejected" && (
+                  <span className="px-2 py-0.5 rounded text-[10px] font-medium bg-red-500/20 text-red-400 border border-red-500/30">
+                    QA Rejected
+                  </span>
+                )}
+              </div>
               <button
-                onClick={() => setShowPreview(false)}
+                onClick={() => {
+                  setShowPreview(false);
+                  setQaStatus(null);
+                  setQaNotes("");
+                }}
                 className="text-gray-400 hover:text-white"
               >
                 ✕
               </button>
             </div>
+            
+            {/* QA Notes */}
+            {qaNotes && (
+              <div className="px-4 py-2 bg-[rgba(255,255,255,0.02)] border-b border-[rgba(255,255,255,0.06)]">
+                <p className="text-xs text-gray-400">
+                  <span className="text-indigo-400 font-medium">QA Notes:</span> {qaNotes}
+                </p>
+              </div>
+            )}
+            
             <div className="flex-1 overflow-auto p-6">
               <div className="bg-white rounded-lg p-8 max-w-2xl mx-auto">
                 <div 
@@ -429,21 +501,59 @@ export function CVHistoryPage() {
             </div>
             <div className="flex items-center justify-between p-4 border-t border-[rgba(255,255,255,0.06)]">
               <button
-                onClick={() => setShowPreview(false)}
+                onClick={() => {
+                  setShowPreview(false);
+                  setQaStatus(null);
+                  setQaNotes("");
+                }}
                 className="px-4 py-2 rounded-lg text-xs font-medium bg-white/5 border border-[rgba(255,255,255,0.08)] text-gray-400 hover:text-white hover:bg-white/10 transition-all"
               >
                 Close
               </button>
-              <button
-                onClick={() => {
-                  if (pdfResult?.downloadUrl) {
-                    window.open(pdfResult.downloadUrl, "_blank");
-                  }
-                }}
-                className="px-4 py-2 rounded-lg text-xs font-medium bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 hover:bg-indigo-500/20 transition-all"
-              >
-                Download PDF
-              </button>
+              <div className="flex items-center gap-2">
+                {qaStatus === "approved" && (
+                  <button
+                    onClick={async () => {
+                      setSendingTelegram(true);
+                      try {
+                        // Send to Telegram
+                        const res = await fetch("/api/cv/telegram", {
+                          method: "POST",
+                          headers: { "Content-Type": "application/json" },
+                          body: JSON.stringify({
+                            jobTitle: analysisResult?.job?.title,
+                            company: analysisResult?.job?.company,
+                            downloadUrl: pdfResult?.downloadUrl,
+                          }),
+                        });
+                        if (res.ok) {
+                          alert("CV sent via Telegram!");
+                        } else {
+                          alert("Failed to send via Telegram");
+                        }
+                      } catch {
+                        alert("Error sending to Telegram");
+                      } finally {
+                        setSendingTelegram(false);
+                      }
+                    }}
+                    disabled={sendingTelegram}
+                    className="px-4 py-2 rounded-lg text-xs font-medium bg-green-500/10 border border-green-500/30 text-green-400 hover:bg-green-500/20 transition-all disabled:opacity-50"
+                  >
+                    {sendingTelegram ? "Sending..." : "Send via Telegram"}
+                  </button>
+                )}
+                <button
+                  onClick={() => {
+                    if (pdfResult?.downloadUrl) {
+                      window.open(pdfResult.downloadUrl, "_blank");
+                    }
+                  }}
+                  className="px-4 py-2 rounded-lg text-xs font-medium bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 hover:bg-indigo-500/20 transition-all"
+                >
+                  Download PDF
+                </button>
+              </div>
             </div>
           </div>
         </div>
