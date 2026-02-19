@@ -5,6 +5,7 @@ import { TaskBoard } from "@/components/TaskBoard";
 import { Dashboard } from "@/components/Dashboard";
 import { TaskForm } from "@/components/TaskForm";
 import { EditTaskForm } from "@/components/EditTaskForm";
+import { Logo } from "@/components/Logo";
 
 interface Task {
   id: number;
@@ -17,227 +18,259 @@ interface Task {
   dueDate?: string;
   completedDate?: string;
   createdAt: string;
+  subtaskCount?: number;
+  subtaskDone?: number;
 }
 
 export default function Home() {
+  const [tasks, setTasks] = useState<Task[]>([]);
   const [view, setView] = useState<"board" | "dashboard">("board");
   const [showForm, setShowForm] = useState(false);
   const [editingTask, setEditingTask] = useState<Task | null>(null);
-  const [tasks, setTasks] = useState<Task[]>([]);
   const [search, setSearch] = useState("");
-  const [filterCategory, setFilterCategory] = useState("all");
-  const [filterPriority, setFilterPriority] = useState("all");
+  const [filterCategory, setFilterCategory] = useState("");
+  const [filterPriority, setFilterPriority] = useState("");
   const [isRefreshing, setIsRefreshing] = useState(false);
+  const [sidebarPage, setSidebarPage] = useState("tasks");
 
-  const loadTasks = useCallback(async () => {
+  const fetchTasks = useCallback(async () => {
     try {
       const res = await fetch("/api/tasks");
       const data = await res.json();
       setTasks(data);
     } catch (error) {
-      console.error("Error loading tasks:", error);
+      console.error("Failed to fetch tasks:", error);
     }
   }, []);
 
   useEffect(() => {
-    loadTasks();
-    const interval = setInterval(loadTasks, 10000);
+    fetchTasks();
+    const interval = setInterval(fetchTasks, 10000);
     return () => clearInterval(interval);
-  }, [loadTasks]);
+  }, [fetchTasks]);
 
   const handleRefresh = async () => {
     setIsRefreshing(true);
-    await loadTasks();
-    setTimeout(() => setIsRefreshing(false), 600);
+    await fetchTasks();
+    setTimeout(() => setIsRefreshing(false), 500);
   };
 
-  const handleTaskAdded = () => {
-    loadTasks();
-  };
-
-  const handleEditTask = (task: Task) => {
-    setEditingTask(task);
-  };
-
-  // Filter tasks
   const filteredTasks = tasks.filter((task) => {
-    const matchesSearch = search === "" || 
-      task.title.toLowerCase().includes(search.toLowerCase()) ||
-      (task.description || "").toLowerCase().includes(search.toLowerCase());
-    const matchesCategory = filterCategory === "all" || task.category === filterCategory;
-    const matchesPriority = filterPriority === "all" || task.priority === filterPriority;
-    return matchesSearch && matchesCategory && matchesPriority;
+    if (search && !task.title.toLowerCase().includes(search.toLowerCase()) &&
+        !task.description?.toLowerCase().includes(search.toLowerCase())) return false;
+    if (filterCategory && task.category !== filterCategory) return false;
+    if (filterPriority && task.priority !== filterPriority) return false;
+    return true;
   });
 
-  // Stats
   const totalTasks = tasks.length;
-  const completedTasks = tasks.filter(t => t.status === "Completed").length;
-  const inProgressTasks = tasks.filter(t => t.status === "In Progress").length;
-  const highPriorityTasks = tasks.filter(t => t.priority === "High" && t.status !== "Completed").length;
+  const inProgress = tasks.filter(t => t.status === "In Progress").length;
+  const inReview = tasks.filter(t => t.status === "Review").length;
+  const completed = tasks.filter(t => t.status === "Completed").length;
+  const highPriority = tasks.filter(t => t.priority === "High" && t.status !== "Completed").length;
 
   return (
-    <main className="min-h-screen text-white">
-      {/* Background gradient */}
-      <div className="fixed inset-0 bg-[#050510]">
-        <div className="absolute inset-0 bg-gradient-to-br from-indigo-950/20 via-transparent to-purple-950/20" />
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-indigo-600/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-600/5 rounded-full blur-3xl" />
-      </div>
+    <div className="app-layout">
+      {/* Sidebar */}
+      <aside className="sidebar">
+        <div className="sidebar-logo">
+          <div className="flex items-center gap-3 logo-container cursor-pointer">
+            <Logo size={34} />
+            <div>
+              <div className="text-[13px] font-semibold text-white tracking-tight">Mission Control</div>
+              <div className="text-[10px] text-[var(--text-muted)] tracking-wide">COMMAND CENTER</div>
+            </div>
+          </div>
+        </div>
 
-      <div className="relative z-10 p-4 md:p-6 max-w-[1600px] mx-auto">
+        <div className="sidebar-section">
+          <div className="sidebar-label">Workspace</div>
+          <div
+            className={`sidebar-item ${sidebarPage === "tasks" ? "active" : ""}`}
+            onClick={() => { setSidebarPage("tasks"); setView("board"); }}
+          >
+            <span className="icon">📋</span>
+            <span>Task Board</span>
+          </div>
+          <div
+            className={`sidebar-item ${sidebarPage === "dashboard" ? "active" : ""}`}
+            onClick={() => { setSidebarPage("dashboard"); setView("dashboard"); }}
+          >
+            <span className="icon">📊</span>
+            <span>Dashboard</span>
+          </div>
+        </div>
+
+        <div className="sidebar-section">
+          <div className="sidebar-label">Pipelines</div>
+          <div className="sidebar-item">
+            <span className="icon">🎯</span>
+            <span>Job Search</span>
+            <span className="ml-auto text-[10px] text-[var(--text-muted)]">
+              {tasks.filter(t => t.category === "Job Search" && t.status !== "Completed").length}
+            </span>
+          </div>
+          <div className="sidebar-item">
+            <span className="icon">📝</span>
+            <span>Content</span>
+            <span className="ml-auto text-[10px] text-[var(--text-muted)]">
+              {tasks.filter(t => t.category === "Content" && t.status !== "Completed").length}
+            </span>
+          </div>
+          <div className="sidebar-item">
+            <span className="icon">🤝</span>
+            <span>Networking</span>
+            <span className="ml-auto text-[10px] text-[var(--text-muted)]">
+              {tasks.filter(t => t.category === "Networking" && t.status !== "Completed").length}
+            </span>
+          </div>
+        </div>
+
+        <div className="sidebar-section mt-auto">
+          <div className="sidebar-label">Quick Stats</div>
+          <div className="px-3 space-y-2">
+            <div className="flex justify-between text-xs">
+              <span className="text-[var(--text-muted)]">Active</span>
+              <span className="text-white font-medium">{totalTasks - completed}</span>
+            </div>
+            <div className="flex justify-between text-xs">
+              <span className="text-[var(--text-muted)]">In Review</span>
+              <span className="text-[var(--pink)] font-medium">{inReview}</span>
+            </div>
+            <div className="flex justify-between text-xs">
+              <span className="text-[var(--text-muted)]">Completed</span>
+              <span className="text-[var(--success)] font-medium">{completed}</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      {/* Main Content */}
+      <main className="main-content">
         {/* Header */}
-        <header className="mb-6">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-xl">
-                🎯
-              </div>
-              <div>
-                <h1 className="text-2xl font-bold bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                  Mission Control
-                </h1>
-                <div className="flex items-center gap-2 text-xs text-gray-500">
-                  <span className="w-1.5 h-1.5 rounded-full bg-green-500 pulse-dot" />
-                  <span>Live</span>
-                  <span>-</span>
-                  <span>{totalTasks} tasks</span>
-                </div>
-              </div>
+        <div className="page-header">
+          <div className="flex items-center justify-between">
+            <div>
+              <h1 className="page-title">
+                {view === "board" ? "Task Board" : "Dashboard"}
+              </h1>
+              <p className="page-subtitle">
+                {totalTasks} tasks - {highPriority} high priority - {inReview} awaiting review
+              </p>
             </div>
-            
-            <div className="flex items-center gap-3">
-              <button
-                onClick={handleRefresh}
-                className={`w-10 h-10 glass rounded-xl hover:bg-white/10 transition-all flex items-center justify-center ${isRefreshing ? 'animate-spin' : ''}`}
-                title="Refresh"
-              >
-                🔄
-              </button>
-              <div className="glass rounded-xl p-1 flex items-center">
-                <button
-                  onClick={() => setView("board")}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-                    view === "board" 
-                      ? "bg-indigo-500/20 text-indigo-300 shadow-sm" 
-                      : "text-gray-400 hover:text-white"
-                  }`}
-                >
-                  📋 Board
-                </button>
-                <button
-                  onClick={() => setView("dashboard")}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-                    view === "dashboard" 
-                      ? "bg-indigo-500/20 text-indigo-300 shadow-sm" 
-                      : "text-gray-400 hover:text-white"
-                  }`}
-                >
-                  📊 Dashboard
-                </button>
-              </div>
-              <button
-                onClick={() => setShowForm(true)}
-                className="btn-success text-white px-5 py-2.5 rounded-xl font-medium text-sm"
-              >
-                + New Task
-              </button>
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 rounded-full bg-[var(--success)] pulse-slow"></div>
+              <span className="text-[11px] text-[var(--text-muted)]">Live</span>
             </div>
           </div>
+        </div>
 
-          {/* Quick Stats Bar */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
-            <div className="glass rounded-lg px-4 py-3 flex items-center gap-3">
-              <span className="text-2xl font-bold text-indigo-400">{totalTasks}</span>
-              <span className="text-xs text-gray-400">Total</span>
-            </div>
-            <div className="glass rounded-lg px-4 py-3 flex items-center gap-3">
-              <span className="text-2xl font-bold text-yellow-400">{inProgressTasks}</span>
-              <span className="text-xs text-gray-400">In Progress</span>
-            </div>
-            <div className="glass rounded-lg px-4 py-3 flex items-center gap-3">
-              <span className="text-2xl font-bold text-green-400">{completedTasks}</span>
-              <span className="text-xs text-gray-400">Completed</span>
-            </div>
-            <div className="glass rounded-lg px-4 py-3 flex items-center gap-3">
-              <span className="text-2xl font-bold text-red-400">{highPriorityTasks}</span>
-              <span className="text-xs text-gray-400">High Priority</span>
-            </div>
-          </div>
-
-          {/* Search & Filters */}
-          <div className="flex flex-col md:flex-row gap-3">
-            <div className="flex-1 relative">
-              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">🔍</span>
-              <input
-                type="text"
-                placeholder="Search tasks..."
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                className="w-full search-input rounded-lg pl-10 pr-4 py-2.5 text-sm text-white placeholder-gray-500"
-              />
-              {search && (
-                <button 
-                  onClick={() => setSearch("")}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-white"
-                >
-                  ✕
-                </button>
-              )}
-            </div>
-            <select
-              value={filterCategory}
-              onChange={(e) => setFilterCategory(e.target.value)}
-              className="glass rounded-lg px-3 py-2.5 text-sm text-white bg-transparent"
-            >
-              <option value="all" className="bg-gray-900">All Categories</option>
-              <option value="Job Search" className="bg-gray-900">🎯 Job Search</option>
-              <option value="Content" className="bg-gray-900">📝 Content</option>
-              <option value="Networking" className="bg-gray-900">🤝 Networking</option>
-              <option value="Applications" className="bg-gray-900">📋 Applications</option>
-              <option value="Interviews" className="bg-gray-900">🎤 Interviews</option>
-              <option value="Task" className="bg-gray-900">📌 Task</option>
-            </select>
-            <select
-              value={filterPriority}
-              onChange={(e) => setFilterPriority(e.target.value)}
-              className="glass rounded-lg px-3 py-2.5 text-sm text-white bg-transparent"
-            >
-              <option value="all" className="bg-gray-900">All Priorities</option>
-              <option value="High" className="bg-gray-900">🔴 High</option>
-              <option value="Medium" className="bg-gray-900">🟡 Medium</option>
-              <option value="Low" className="bg-gray-900">🟢 Low</option>
-            </select>
-          </div>
-        </header>
-
-        {/* Main Content */}
-        {view === "board" ? (
-          <TaskBoard 
-            tasks={filteredTasks} 
-            onRefresh={loadTasks} 
-            onEditTask={handleEditTask}
+        {/* Toolbar */}
+        <div className="toolbar">
+          <input
+            type="text"
+            placeholder="Search tasks..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="toolbar-search"
           />
-        ) : (
-          <Dashboard tasks={filteredTasks} />
-        )}
+          
+          <select
+            value={filterCategory}
+            onChange={(e) => setFilterCategory(e.target.value)}
+            className="toolbar-btn bg-transparent"
+          >
+            <option value="">All Categories</option>
+            <option value="Job Search">Job Search</option>
+            <option value="Content">Content</option>
+            <option value="Networking">Networking</option>
+            <option value="Applications">Applications</option>
+            <option value="Interviews">Interviews</option>
+            <option value="Task">Task</option>
+          </select>
 
-        {/* Task Form Modal */}
+          <select
+            value={filterPriority}
+            onChange={(e) => setFilterPriority(e.target.value)}
+            className="toolbar-btn bg-transparent"
+          >
+            <option value="">All Priorities</option>
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+          </select>
+
+          <div className="flex-1" />
+
+          <div className="view-toggle">
+            <button
+              onClick={() => { setView("board"); setSidebarPage("tasks"); }}
+              className={view === "board" ? "active" : ""}
+            >
+              Board
+            </button>
+            <button
+              onClick={() => { setView("dashboard"); setSidebarPage("dashboard"); }}
+              className={view === "dashboard" ? "active" : ""}
+            >
+              Dashboard
+            </button>
+          </div>
+
+          <button onClick={handleRefresh} className={`toolbar-btn ${isRefreshing ? "animate-spin" : ""}`}>
+            🔄
+          </button>
+
+          <button onClick={() => setShowForm(true)} className="toolbar-btn toolbar-btn-primary">
+            + New Task
+          </button>
+        </div>
+
+        {/* Stats */}
+        <div className="stats-bar grid-cols-2 md:grid-cols-4">
+          <div className="stat-card stat-card-purple">
+            <div className="stat-number">{totalTasks}</div>
+            <div className="stat-label">Total Tasks</div>
+          </div>
+          <div className="stat-card stat-card-yellow">
+            <div className="stat-number">{inProgress}</div>
+            <div className="stat-label">In Progress</div>
+          </div>
+          <div className="stat-card stat-card-red">
+            <div className="stat-number">{highPriority}</div>
+            <div className="stat-label">High Priority</div>
+          </div>
+          <div className="stat-card stat-card-green">
+            <div className="stat-number">{completed}</div>
+            <div className="stat-label">Completed</div>
+          </div>
+        </div>
+
+        {/* Content */}
+        <div className="board-container">
+          {view === "board" ? (
+            <TaskBoard
+              tasks={filteredTasks}
+              onRefresh={fetchTasks}
+              onEditTask={setEditingTask}
+            />
+          ) : (
+            <Dashboard tasks={tasks} />
+          )}
+        </div>
+
+        {/* Modals */}
         {showForm && (
-          <TaskForm 
-            onClose={() => setShowForm(false)} 
-            onTaskAdded={handleTaskAdded} 
-          />
+          <TaskForm onClose={() => setShowForm(false)} onTaskAdded={fetchTasks} />
         )}
-
-        {/* Edit Task Modal */}
         {editingTask && (
-          <EditTaskForm 
+          <EditTaskForm
             task={editingTask}
-            onClose={() => setEditingTask(null)} 
-            onTaskUpdated={loadTasks} 
+            onClose={() => setEditingTask(null)}
+            onTaskUpdated={fetchTasks}
           />
         )}
-      </div>
-    </main>
+      </main>
+    </div>
   );
 }
