@@ -1,5 +1,7 @@
 "use client";
 
+import { useState, useEffect } from "react";
+
 interface Task {
   id: number;
   title: string;
@@ -12,11 +14,45 @@ interface Task {
   createdAt: string;
 }
 
+interface ContentPost {
+  id: number;
+  title: string;
+  status: string;
+  platform: string;
+  contentType: string;
+  assignee: string;
+  priority: string;
+  createdAt: string;
+}
+
 interface DashboardProps {
   tasks: Task[];
 }
 
+function isAgentAssignee(assignee: string): boolean {
+  const upper = assignee.toUpperCase();
+  return (
+    upper.includes("NASR") ||
+    upper.includes("OPENCLAW") ||
+    upper === "QA AGENT" ||
+    upper.includes("QA")
+  );
+}
+
 export function Dashboard({ tasks }: DashboardProps) {
+  const [posts, setPosts] = useState<ContentPost[]>([]);
+  const [loadingPosts, setLoadingPosts] = useState(true);
+
+  useEffect(() => {
+    fetch("/api/content")
+      .then((r) => r.json())
+      .then((data) => {
+        setPosts(Array.isArray(data) ? data : []);
+        setLoadingPosts(false);
+      })
+      .catch(() => setLoadingPosts(false));
+  }, []);
+
   // Stats
   const completedThisWeek = tasks.filter((t) => {
     if (t.status !== "Completed") return false;
@@ -46,14 +82,53 @@ export function Dashboard({ tasks }: DashboardProps) {
     Low: { count: tasks.filter((t) => t.priority === "Low").length, color: "text-green-400", bg: "bg-green-500" },
   };
 
+  // Fixed assignee breakdown: detect NASR/OpenClaw/QA as agent
+  const activeTasks = tasks.filter((t) => t.status !== "Completed");
   const byAssignee = {
-    Ahmed: tasks.filter((t) => t.assignee === "Ahmed" && t.status !== "Completed").length,
-    OpenClaw: tasks.filter((t) => t.assignee === "OpenClaw" && t.status !== "Completed").length,
-    Both: tasks.filter((t) => t.assignee === "Both" && t.status !== "Completed").length,
+    Ahmed: activeTasks.filter((t) => t.assignee === "Ahmed").length,
+    Agents: activeTasks.filter((t) => isAgentAssignee(t.assignee) && t.assignee !== "Ahmed" && t.assignee !== "Both").length,
+    Both: activeTasks.filter((t) => t.assignee === "Both").length,
   };
 
   // Completion rate
   const completionRate = tasks.length > 0 ? Math.round((tasks.filter(t => t.status === "Completed").length / tasks.length) * 100) : 0;
+
+  // Content pipeline stats
+  const totalPosts = posts.length;
+  const publishedPosts = posts.filter((p) => p.status === "Published").length;
+  const draftPosts = posts.filter((p) => p.status === "Draft").length;
+  const reviewPosts = posts.filter((p) => p.status === "Review").length;
+
+  // This week mini timeline (last 7 days, tasks completed per day)
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const weekDays = Array.from({ length: 7 }, (_, i) => {
+    const d = new Date(today);
+    d.setDate(d.getDate() - (6 - i));
+    return d;
+  });
+  const dayLabels = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const weekData = weekDays.map((day) => {
+    const nextDay = new Date(day);
+    nextDay.setDate(nextDay.getDate() + 1);
+    const count = tasks.filter((t) => {
+      if (t.status !== "Completed" || !t.completedDate) return false;
+      const d = new Date(t.completedDate);
+      return d >= day && d < nextDay;
+    }).length;
+    return { label: dayLabels[day.getDay()], count, isToday: day.getTime() === today.getTime() };
+  });
+  const maxDayCount = Math.max(...weekData.map((d) => d.count), 1);
+
+  // Agent team summary: core vs specialist
+  const coreAgents = ["NASR", "QA Agent", "Scheduler"];
+  const specialistAgents = ["NASR (Coder)", "NASR (Writer)", "NASR (Research)", "NASR (CV)", "OpenClaw"];
+  const agentTaskCounts: Record<string, number> = {};
+  activeTasks.forEach((t) => {
+    if (isAgentAssignee(t.assignee) && t.assignee !== "Both") {
+      agentTaskCounts[t.assignee] = (agentTaskCounts[t.assignee] || 0) + 1;
+    }
+  });
 
   return (
     <div className="space-y-6">
@@ -67,22 +142,46 @@ export function Dashboard({ tasks }: DashboardProps) {
           </div>
           <div className="text-[10px] text-gray-600 mt-1">{completionRate}% completion rate</div>
         </div>
-        
+
         <div className="stat-card stat-card-yellow glass rounded-xl p-5">
           <div className="text-3xl font-bold text-yellow-400">{inProgress}</div>
           <div className="text-xs text-gray-400 mt-1">In Progress</div>
         </div>
-        
+
         <div className="stat-card stat-card-red glass rounded-xl p-5">
           <div className="text-3xl font-bold text-red-400">{overdue}</div>
           <div className="text-xs text-gray-400 mt-1">Overdue</div>
           {overdue > 0 && <div className="text-[10px] text-red-500 mt-2">⚠️ Needs attention</div>}
         </div>
-        
+
         <div className="stat-card stat-card-blue glass rounded-xl p-5">
           <div className="text-3xl font-bold text-indigo-400">{tasks.length}</div>
           <div className="text-xs text-gray-400 mt-1">Total Tasks</div>
         </div>
+      </div>
+
+      {/* Content Pipeline Stats */}
+      <div className="glass rounded-xl p-5">
+        <h3 className="text-sm font-semibold mb-4 text-gray-300 flex items-center gap-2">
+          <span>📝</span> Content Pipeline
+        </h3>
+        {loadingPosts ? (
+          <div className="text-xs text-gray-600 text-center py-2">Loading...</div>
+        ) : (
+          <div className="grid grid-cols-4 gap-4">
+            {[
+              { label: "Total", value: totalPosts, color: "text-indigo-400" },
+              { label: "Drafts", value: draftPosts, color: "text-yellow-400" },
+              { label: "In Review", value: reviewPosts, color: "text-pink-400" },
+              { label: "Published", value: publishedPosts, color: "text-green-400" },
+            ].map(({ label, value, color }) => (
+              <div key={label} className="text-center">
+                <div className={`text-2xl font-bold ${color}`}>{value}</div>
+                <div className="text-[10px] text-gray-500 mt-0.5">{label}</div>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
 
       {/* Charts Row */}
@@ -111,7 +210,7 @@ export function Dashboard({ tasks }: DashboardProps) {
           </div>
         </div>
 
-        {/* By Priority */}
+        {/* By Priority + Assignee */}
         <div className="glass rounded-xl p-5">
           <h3 className="text-sm font-semibold mb-4 text-gray-300">By Priority</h3>
           <div className="space-y-3">
@@ -134,27 +233,30 @@ export function Dashboard({ tasks }: DashboardProps) {
             ))}
           </div>
 
-          {/* Assignee breakdown */}
+          {/* Fixed Assignee breakdown */}
           <div className="mt-6 pt-4 border-t border-white/5">
             <h4 className="text-xs font-semibold text-gray-400 mb-3">Active by Assignee</h4>
             <div className="flex gap-4">
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2" title="Ahmed">
                 <span className="text-sm">👤</span>
                 <span className="text-xs text-blue-400">{byAssignee.Ahmed}</span>
+                <span className="text-[10px] text-gray-600">Ahmed</span>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2" title="AI Agents (NASR/OpenClaw/QA)">
                 <span className="text-sm">🤖</span>
-                <span className="text-xs text-purple-400">{byAssignee.OpenClaw}</span>
+                <span className="text-xs text-purple-400">{byAssignee.Agents}</span>
+                <span className="text-[10px] text-gray-600">Agents</span>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2" title="Both">
                 <span className="text-sm">👥</span>
                 <span className="text-xs text-indigo-400">{byAssignee.Both}</span>
+                <span className="text-[10px] text-gray-600">Both</span>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Recent Activity */}
+        {/* Recent Activity - clickable */}
         <div className="glass rounded-xl p-5">
           <h3 className="text-sm font-semibold mb-4 text-gray-300">Recent Activity</h3>
           <div className="space-y-2">
@@ -162,21 +264,117 @@ export function Dashboard({ tasks }: DashboardProps) {
               .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
               .slice(0, 8)
               .map((task) => (
-              <div key={task.id} className="flex items-center gap-2 py-1.5 border-b border-white/5 last:border-0">
-                <span className="text-xs">
-                  {task.status === "Completed" ? "✅" :
-                   task.status === "In Progress" ? "🔄" :
-                   task.status === "OpenClaw Tasks" ? "🤖" : "📋"}
-                </span>
-                <span className="flex-1 text-xs text-gray-400 truncate">{task.title}</span>
-                <span className={`text-[10px] ${
-                  task.assignee === "Ahmed" ? "text-blue-500" : "text-purple-500"
-                }`}>{task.assignee === "Ahmed" ? "👤" : "🤖"}</span>
-              </div>
-            ))}
+                <div
+                  key={task.id}
+                  className="flex items-center gap-2 py-1.5 border-b border-white/5 last:border-0 cursor-pointer hover:bg-white/5 rounded px-1 transition-colors"
+                  onClick={() => {}}
+                >
+                  <span className="text-xs">
+                    {task.status === "Completed" ? "✅" :
+                     task.status === "In Progress" ? "🔄" :
+                     task.status === "OpenClaw Tasks" ? "🤖" : "📋"}
+                  </span>
+                  <span className="flex-1 text-xs text-gray-400 truncate">{task.title}</span>
+                  <span className={`text-[10px] ${
+                    isAgentAssignee(task.assignee) ? "text-purple-500" : "text-blue-500"
+                  }`}>
+                    {isAgentAssignee(task.assignee) ? "🤖" : "👤"}
+                  </span>
+                </div>
+              ))}
             {tasks.length === 0 && (
               <div className="text-gray-600 text-center py-6 text-xs">No tasks yet</div>
             )}
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom Row: This Week Timeline + Agent Team Summary */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {/* This Week Mini Timeline */}
+        <div className="glass rounded-xl p-5">
+          <h3 className="text-sm font-semibold mb-4 text-gray-300">This Week – Tasks Completed</h3>
+          <div className="flex items-end gap-2 h-24">
+            {weekData.map((day, i) => (
+              <div key={i} className="flex-1 flex flex-col items-center gap-1">
+                <div className="flex-1 flex items-end w-full">
+                  <div
+                    className={`w-full rounded-t transition-all duration-500 ${
+                      day.isToday ? "bg-indigo-500" : "bg-indigo-500/30"
+                    }`}
+                    style={{
+                      height: `${day.count > 0 ? Math.max((day.count / maxDayCount) * 100, 8) : 4}%`,
+                      minHeight: day.count > 0 ? "8px" : "2px",
+                    }}
+                    title={`${day.count} completed`}
+                  />
+                </div>
+                <span className={`text-[9px] ${day.isToday ? "text-indigo-400 font-bold" : "text-gray-600"}`}>
+                  {day.label}
+                </span>
+                {day.count > 0 && (
+                  <span className="text-[9px] text-gray-500">{day.count}</span>
+                )}
+              </div>
+            ))}
+          </div>
+          <div className="mt-2 text-[10px] text-gray-600 text-center">
+            {weekData.reduce((a, d) => a + d.count, 0)} tasks completed this week
+          </div>
+        </div>
+
+        {/* Agent Team Summary */}
+        <div className="glass rounded-xl p-5">
+          <h3 className="text-sm font-semibold mb-4 text-gray-300 flex items-center justify-between">
+            <span>🤖 Agent Team</span>
+            <span className="text-[10px] text-gray-600 font-normal">Active tasks</span>
+          </h3>
+          <div className="space-y-3">
+            <div>
+              <div className="text-[10px] text-gray-500 uppercase tracking-wider mb-2">Core – Always Running</div>
+              <div className="space-y-1.5">
+                {coreAgents.map((name) => {
+                  const count = agentTaskCounts[name] || 0;
+                  return (
+                    <div key={name} className="flex items-center gap-2">
+                      <span className="text-sm">{name === "NASR" ? "🎯" : name === "QA Agent" ? "🛡️" : "⏰"}</span>
+                      <span className="text-xs text-gray-400 flex-1">{name}</span>
+                      {count > 0 ? (
+                        <span className="text-[10px] px-1.5 py-0.5 rounded bg-indigo-500/15 text-indigo-400">{count}</span>
+                      ) : (
+                        <span className="text-[10px] text-gray-700">idle</span>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+            <div className="pt-2 border-t border-white/5">
+              <div className="text-[10px] text-gray-500 uppercase tracking-wider mb-2">Specialists – Per Task</div>
+              <div className="space-y-1.5">
+                {specialistAgents.map((name) => {
+                  const count = agentTaskCounts[name] || 0;
+                  const icons: Record<string, string> = {
+                    "NASR (Coder)": "💻",
+                    "NASR (Writer)": "✍️",
+                    "NASR (Research)": "🔍",
+                    "NASR (CV)": "📄",
+                    "OpenClaw": "🤖",
+                  };
+                  return (
+                    <div key={name} className="flex items-center gap-2">
+                      <span className="text-sm">{icons[name] || "🤖"}</span>
+                      <span className="text-xs text-gray-400 flex-1">{name}</span>
+                      {count > 0 ? (
+                        <span className="text-[10px] px-1.5 py-0.5 rounded bg-purple-500/15 text-purple-400">{count}</span>
+                      ) : (
+                        <span className="text-[10px] text-gray-700">—</span>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
           </div>
         </div>
       </div>
