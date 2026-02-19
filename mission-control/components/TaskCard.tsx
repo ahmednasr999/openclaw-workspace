@@ -34,13 +34,13 @@ const TAG_CLASSES: Record<string, string> = {
 
 const AGENT_MAP: Record<string, { initial: string; class: string }> = {
   "Ahmed": { initial: "A", class: "assignee-ahmed" },
-  "OpenClaw": { initial: "🎯", class: "assignee-openclaw" },
-  "NASR": { initial: "🎯", class: "assignee-openclaw" },
-  "NASR (Coder)": { initial: "💻", class: "assignee-openclaw" },
-  "NASR (Writer)": { initial: "✍️", class: "assignee-openclaw" },
-  "NASR (Research)": { initial: "🔍", class: "assignee-openclaw" },
-  "NASR (CV)": { initial: "📄", class: "assignee-openclaw" },
-  "QA Agent": { initial: "🛡️", class: "assignee-openclaw" },
+  "OpenClaw": { initial: "targetAgent", class: "assignee-openclaw" },
+  "NASR": { initial: "targetAgent", class: "assignee-openclaw" },
+  "NASR (Coder)": { initial: "codeAgent", class: "assignee-openclaw" },
+  "NASR (Writer)": { initial: "penAgent", class: "assignee-openclaw" },
+  "NASR (Research)": { initial: "searchAgent", class: "assignee-openclaw" },
+  "NASR (CV)": { initial: "documentAgent", class: "assignee-openclaw" },
+  "QA Agent": { initial: "shieldAgent", class: "assignee-openclaw" },
   "Both": { initial: "B", class: "assignee-both" },
 };
 

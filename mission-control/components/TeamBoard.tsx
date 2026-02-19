@@ -251,7 +251,7 @@ function OrgChartView({ coreAgents, specialists, activeRuns, onSelectAgent }: {
       {/* Ahmed at the top */}
       <div className="flex justify-center mb-2">
         <div className="px-6 py-4 rounded-xl bg-[rgba(124,92,252,0.08)] border border-indigo-500/20 text-center">
-          <div className="text-2xl mb-1">👤</div>
+          <div className="text-2xl mb-1">user</div>
           <div className="text-sm font-semibold text-white">Ahmed Nasr</div>
           <div className="text-[10px] text-indigo-400">Executive Director</div>
           <div className="text-[10px] text-gray-500 mt-1">Decisions - Approvals - Strategy</div>
@@ -614,11 +614,11 @@ function KnowledgeExchangeView() {
 
   const categories = [
     { id: "", label: "All", icon: "🌐" },
-    { id: "company", label: "Company", icon: "🏢" },
-    { id: "content", label: "Content", icon: "📝" },
-    { id: "interview", label: "Interview", icon: "🎤" },
-    { id: "market", label: "Market", icon: "📊" },
-    { id: "outreach", label: "Outreach", icon: "🤝" },
+    { id: "company", label: "Company", icon: "building" },
+    { id: "content", label: "Content", icon: "pen" },
+    { id: "interview", label: "Interview", icon: "mic" },
+    { id: "market", label: "Market", icon: "chart" },
+    { id: "outreach", label: "Outreach", icon: "handshake" },
   ];
 
   const categoryStyles: Record<string, { bg: string; border: string; text: string }> = {
@@ -899,7 +899,7 @@ function OfficeView({ agents, activeRuns, onSelectAgent }: {
         <h3 className="text-sm font-semibold text-white mb-4">Recent Activity</h3>
         {activeRuns.length === 0 ? (
           <div className="text-center py-8 text-gray-600 text-xs">
-            <div className="text-2xl mb-2">🏢</div>
+            <div className="text-2xl mb-2">building</div>
             No recent activity. Agents are idle.
           </div>
         ) : (
