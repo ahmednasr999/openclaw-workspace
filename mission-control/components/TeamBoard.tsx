@@ -36,7 +36,7 @@ const AGENT_DEFINITIONS: AgentDef[] = [
     name: "NASR",
     role: "Orchestrator & Chief of Staff",
     description: "Routes all tasks, coordinates agents, daily briefs, strategic synthesis. The brain of the operation.",
-    icon: "🎯",
+    icon: "targetAgent",
     type: "core",
     model: "MiniMax-M2.1 (default) / Opus (complex)",
     persistent: true,
@@ -47,7 +47,7 @@ const AGENT_DEFINITIONS: AgentDef[] = [
     name: "QA Agent",
     role: "Quality Assurance",
     description: "Verifies all agent outputs before delivery. Checks ATS compliance for CVs, tone for content, accuracy for research. Max 2 retries.",
-    icon: "🛡️",
+    icon: "shieldAgent",
     type: "core",
     model: "Sonnet 4",
     persistent: true,
@@ -59,7 +59,7 @@ const AGENT_DEFINITIONS: AgentDef[] = [
     name: "Scheduler",
     role: "Automation & Scheduling",
     description: "Manages cron jobs, reminders, follow-ups, and proactive monitoring. Runs 24/7.",
-    icon: "⏰",
+    icon: "clockAgent",
     type: "core",
     model: "MiniMax-M2.1",
     persistent: true,
@@ -70,7 +70,7 @@ const AGENT_DEFINITIONS: AgentDef[] = [
     name: "Research Agent",
     role: "Intelligence & Analysis",
     description: "Web research, company analysis, market intel, competitive research. Spawns per task, terminates when done.",
-    icon: "🔍",
+    icon: "searchAgent",
     type: "specialist",
     model: "MiniMax-M2.1",
     persistent: false,
@@ -81,7 +81,7 @@ const AGENT_DEFINITIONS: AgentDef[] = [
     name: "Writer Agent",
     role: "Content & Copy",
     description: "LinkedIn posts, emails, thought leadership, marketing copy. Follows brand voice guidelines.",
-    icon: "✍️",
+    icon: "penAgent",
     type: "specialist",
     model: "Sonnet 4",
     persistent: false,
@@ -92,7 +92,7 @@ const AGENT_DEFINITIONS: AgentDef[] = [
     name: "CV Specialist",
     role: "CV & Applications",
     description: "Tailored CVs, cover letters, ATS optimization. Uses master CV data. Follows strict ATS rules.",
-    icon: "📄",
+    icon: "documentAgent",
     type: "specialist",
     model: "Opus 4.5",
     persistent: false,
@@ -103,7 +103,7 @@ const AGENT_DEFINITIONS: AgentDef[] = [
     name: "Coder Agent",
     role: "Development & Automation",
     description: "Mission Control features, automation scripts, integrations, bug fixes.",
-    icon: "💻",
+    icon: "codeAgent",
     type: "specialist",
     model: "Sonnet 4",
     persistent: false,
@@ -297,7 +297,7 @@ function OrgChartView({ coreAgents, specialists, activeRuns, onSelectAgent }: {
         />
         <RuleCard
           title="Quality"
-          icon="🛡️"
+          icon="shieldAgent"
           rules={["QA checks every output", "Content/CVs need Ahmed's review", "Routine auto-completes after QA"]}
         />
         <RuleCard
@@ -403,7 +403,7 @@ function AgentCard({ agent, isActive, onSelect }: {
       }`}
     >
       <div className="flex items-center justify-between mb-2">
-        <span className="text-2xl">{agent.icon}</span>
+        <Icon name={agent.icon} size={24} />
         <div className="flex items-center gap-1.5">
           {agent.persistent && (
             <span className="text-[8px] px-1.5 py-0.5 rounded bg-green-500/10 text-green-400 border border-green-500/20">ALWAYS ON</span>
@@ -870,7 +870,7 @@ function OfficeView({ agents, activeRuns, onSelectAgent }: {
               <div className="absolute top-3 right-3">
                 <div className={`w-2.5 h-2.5 rounded-full ${style.dot} ${status === "working" ? "animate-pulse" : ""}`} />
               </div>
-              <div className="text-3xl mb-3">{agent.icon}</div>
+              <Icon name={agent.icon} size={28} className="mb-3" />
               <div className="text-sm font-medium text-white mb-1">{agent.name}</div>
               <div className="text-[10px] text-gray-500 mb-2">{agent.role}</div>
               <div className={`text-[10px] ${style.text} flex items-center gap-1.5 mb-2`}>
