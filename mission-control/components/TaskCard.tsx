@@ -32,6 +32,26 @@ const TAG_CLASSES: Record<string, string> = {
   Task: "tag-task",
 };
 
+const AGENT_MAP: Record<string, { initial: string; class: string }> = {
+  "Ahmed": { initial: "A", class: "assignee-ahmed" },
+  "OpenClaw": { initial: "🎯", class: "assignee-openclaw" },
+  "NASR": { initial: "🎯", class: "assignee-openclaw" },
+  "NASR (Coder)": { initial: "💻", class: "assignee-openclaw" },
+  "NASR (Writer)": { initial: "✍️", class: "assignee-openclaw" },
+  "NASR (Research)": { initial: "🔍", class: "assignee-openclaw" },
+  "NASR (CV)": { initial: "📄", class: "assignee-openclaw" },
+  "QA Agent": { initial: "🛡️", class: "assignee-openclaw" },
+  "Both": { initial: "B", class: "assignee-both" },
+};
+
+function getAssigneeInitial(assignee: string): string {
+  return AGENT_MAP[assignee]?.initial || assignee.charAt(0).toUpperCase();
+}
+
+function getAssigneeBadgeClass(assignee: string): string {
+  return AGENT_MAP[assignee]?.class || "assignee-openclaw";
+}
+
 export function TaskCard({ task, onDelete, onEdit }: TaskCardProps) {
   const [confirmDelete, setConfirmDelete] = useState(false);
   const isCompleted = task.status === "Completed";
@@ -93,8 +113,8 @@ export function TaskCard({ task, onDelete, onEdit }: TaskCardProps) {
       {/* Footer */}
       <div className="card-footer">
         <div className="flex items-center gap-2">
-          <div className={`assignee-badge assignee-${task.assignee.toLowerCase()}`}>
-            {task.assignee === "Ahmed" ? "A" : task.assignee === "OpenClaw" ? "O" : "B"}
+          <div className={`assignee-badge ${getAssigneeBadgeClass(task.assignee)}`}>
+            {getAssigneeInitial(task.assignee)}
           </div>
           <span className="text-[11px] text-[var(--text-muted)]">{task.assignee}</span>
         </div>
