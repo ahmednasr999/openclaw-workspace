@@ -102,6 +102,7 @@ export function TaskCard({ task, onDelete, onEdit }: TaskCardProps) {
 
       {/* Category Tag + Priority */}
       <div className="flex items-center gap-2 mb-2">
+        <span className="text-[10px] text-gray-600 font-mono">#{task.id}</span>
         <span className={`tag ${CATEGORY_CLASS[task.category] || "tag-task"}`}>
           {task.category}
         </span>
