@@ -160,12 +160,27 @@ export function EditTaskForm({ task, onClose, onTaskUpdated }: EditTaskFormProps
   return (
     <div className="fixed inset-0 modal-overlay flex items-center justify-center z-50 p-4" onClick={onClose}>
       <div className="glass-strong rounded-2xl w-full max-w-lg max-h-[90vh] flex flex-col" onClick={(e) => e.stopPropagation()}>
-        {/* Header */}
-        <div className="flex items-center justify-between p-6 pb-0">
-          <h2 className="text-xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
-            Edit Task
-          </h2>
-          <button onClick={onClose} className="text-gray-500 hover:text-white transition-colors text-xl">✕</button>
+        
+        {/* Gradient Header */}
+        <div className="bg-gradient-to-br from-indigo-500/10 via-purple-500/5 to-pink-500/10 p-6 pb-8 border-b border-[rgba(255,255,255,0.06)]">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-[rgba(124,92,252,0.2)] border border-indigo-500/30 flex items-center justify-center text-lg">
+                📋
+              </div>
+              <div>
+                <div className="flex items-center gap-2 text-xs text-gray-500 mb-1">
+                  <span>Task</span>
+                  <span>•</span>
+                  <span>#{task.id}</span>
+                </div>
+                <h2 className="text-lg font-semibold text-white">{task.title}</h2>
+              </div>
+            </div>
+            <button onClick={onClose} className="w-8 h-8 rounded-lg bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.1)] flex items-center justify-center text-gray-400 hover:text-white hover:bg-[rgba(255,255,255,0.1)] transition-all">
+              ✕
+            </button>
+          </div>
         </div>
 
         {/* Tabs */}
