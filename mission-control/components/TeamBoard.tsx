@@ -123,7 +123,7 @@ export function TeamBoard() {
   const [agents, setAgents] = useState<AgentDef[]>(AGENT_DEFINITIONS);
   const [selectedAgent, setSelectedAgent] = useState<AgentDef | null>(null);
   const [activeRuns, setActiveRuns] = useState<AgentRun[]>([]);
-  const [viewMode, setViewMode] = useState<"org" | "flow" | "knowledge">("org");
+  const [viewMode, setViewMode] = useState<"org" | "flow" | "knowledge" | "office">("org");
   const [loading, setLoading] = useState(false);
 
   const fetchAgentConfig = useCallback(async () => {
@@ -199,6 +199,12 @@ export function TeamBoard() {
             >
               Knowledge
             </button>
+            <button
+              onClick={() => setViewMode("office")}
+              className={`px-3 py-1.5 rounded text-xs font-medium transition-all ${viewMode === "office" ? "bg-[rgba(124,92,252,0.15)] text-[#a78bfa]" : "text-gray-500 hover:text-white"}`}
+            >
+              Office
+            </button>
           </div>
         </div>
       </div>
@@ -214,6 +220,8 @@ export function TeamBoard() {
           />
         ) : viewMode === "flow" ? (
           <TaskFlowView />
+        ) : viewMode === "office" ? (
+          <OfficeView agents={agents} activeRuns={activeRuns} onSelectAgent={setSelectedAgent} />
         ) : (
           <KnowledgeExchangeView />
         )}
@@ -795,6 +803,133 @@ function KnowledgeExchangeView() {
           </div>
         </div>
       )}
+    </div>
+  );
+}
+
+// Office View - Visual workspace showing agent desks
+function OfficeView({ agents, activeRuns, onSelectAgent }: {
+  agents: AgentDef[];
+  activeRuns: AgentRun[];
+  onSelectAgent: (a: AgentDef) => void;
+}) {
+  const getAgentStatus = (agentId: string): "working" | "thinking" | "idle" => {
+    const running = activeRuns.find(r => 
+      r.label?.toLowerCase().includes(agentId.toLowerCase()) ||
+      r.task?.toLowerCase().includes(agentId.toLowerCase())
+    );
+    if (running?.status === "running") return "working";
+    return "idle";
+  };
+
+  const getCurrentTask = (agentId: string): string | null => {
+    const task = activeRuns.find(r => 
+      r.label?.toLowerCase().includes(agentId.toLowerCase()) ||
+      r.task?.toLowerCase().includes(agentId.toLowerCase())
+    );
+    return task?.task || task?.label || null;
+  };
+
+  const statusColors = {
+    working: { bg: "bg-green-500/20", border: "border-green-500/40", dot: "bg-green-500", text: "text-green-400", label: "Working" },
+    thinking: { bg: "bg-amber-500/20", border: "border-amber-500/40", dot: "bg-amber-500", text: "text-amber-400", label: "Thinking" },
+    idle: { bg: "bg-gray-500/10", border: "border-gray-500/20", dot: "bg-gray-500", text: "text-gray-500", label: "Idle" },
+  };
+
+  return (
+    <div className="max-w-5xl mx-auto">
+      <div className="flex items-center justify-between mb-6">
+        <div>
+          <h2 className="text-lg font-semibold text-white">Agent Office</h2>
+          <p className="text-xs text-gray-500 mt-1">Real-time view of your agent team at work</p>
+        </div>
+        <div className="flex items-center gap-4 text-xs">
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+            <span className="text-gray-400">{activeRuns.filter(r => r.status === "running").length} working</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 rounded-full bg-gray-500" />
+            <span className="text-gray-400">{agents.length - activeRuns.filter(r => r.status === "running").length} idle</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
+        {agents.map((agent) => {
+          const status = getAgentStatus(agent.id);
+          const currentTask = getCurrentTask(agent.id);
+          const style = statusColors[status];
+
+          return (
+            <button
+              key={agent.id}
+              onClick={() => onSelectAgent(agent)}
+              className={`relative p-4 rounded-xl border ${style.bg} ${style.border} hover:scale-[1.02] transition-all text-left group`}
+            >
+              <div className="absolute top-3 right-3">
+                <div className={`w-2.5 h-2.5 rounded-full ${style.dot} ${status === "working" ? "animate-pulse" : ""}`} />
+              </div>
+              <div className="text-3xl mb-3">{agent.icon}</div>
+              <div className="text-sm font-medium text-white mb-1">{agent.name}</div>
+              <div className="text-[10px] text-gray-500 mb-2">{agent.role}</div>
+              <div className={`text-[10px] ${style.text} flex items-center gap-1.5 mb-2`}>
+                <div className={`w-1.5 h-1.5 rounded-full ${style.dot}`} />
+                {style.label}
+              </div>
+              {currentTask && (
+                <div className="mt-3 pt-3 border-t border-[rgba(255,255,255,0.06)]">
+                  <div className="text-[9px] text-gray-600 mb-1">Working on:</div>
+                  <div className="text-[10px] text-gray-300 truncate">{currentTask}</div>
+                </div>
+              )}
+              <div className="absolute bottom-3 right-3">
+                <span className={`text-[8px] px-1.5 py-0.5 rounded ${
+                  agent.type === "core" ? "bg-indigo-500/20 text-indigo-400" : "bg-purple-500/20 text-purple-400"
+                }`}>
+                  {agent.type}
+                </span>
+              </div>
+            </button>
+          );
+        })}
+      </div>
+
+      <div className="border-t border-[rgba(255,255,255,0.06)] pt-6">
+        <h3 className="text-sm font-semibold text-white mb-4">Recent Activity</h3>
+        {activeRuns.length === 0 ? (
+          <div className="text-center py-8 text-gray-600 text-xs">
+            <div className="text-2xl mb-2">🏢</div>
+            No recent activity. Agents are idle.
+          </div>
+        ) : (
+          <div className="space-y-2">
+            {activeRuns.slice(0, 8).map((run, i) => (
+              <div key={i} className="flex items-center gap-3 p-3 rounded-lg bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.04)]">
+                <div className={`w-2 h-2 rounded-full ${run.status === "running" ? "bg-green-500 animate-pulse" : "bg-gray-500"}`} />
+                <div className="flex-1 min-w-0">
+                  <div className="text-xs text-white truncate">{run.task || run.label || "Task"}</div>
+                  <div className="text-[10px] text-gray-500">{run.status === "running" ? "In progress" : "Completed"}</div>
+                </div>
+                <div className="text-[10px] text-gray-600">
+                  {new Date(run.updatedAt).toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit", timeZone: "Africa/Cairo" })}
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+
+      <div className="flex items-center justify-center gap-6 mt-6 pt-6 border-t border-[rgba(255,255,255,0.06)]">
+        <div className="flex items-center gap-2">
+          <div className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse" />
+          <span className="text-[10px] text-gray-500">Working on a task</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <div className="w-2.5 h-2.5 rounded-full bg-gray-500" />
+          <span className="text-[10px] text-gray-500">Idle / Waiting</span>
+        </div>
+      </div>
     </div>
   );
 }
