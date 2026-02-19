@@ -29,16 +29,16 @@ export function CVHistoryPage() {
   const [pdfResult, setPdfResult] = useState<any>(null);
   const [showPreview, setShowPreview] = useState(false);
   const [cvHtml, setCvHtml] = useState("");
-  const [qaStatus, setQaStatus] = useState<"pending" | "approved" | "rejected" | null>(null);
-  const [qaNotes, setQaNotes] = useState("");
+  const [qaStatus, setQaStatus] = useState<"pending" | "approved" | "rejected" | "changes_requested" | "spawning" | null>(null);
+  const [qaData, setQaData] = useState<any>(null);
   const [sendingTelegram, setSendingTelegram] = useState(false);
+  const [currentCvId, setCurrentCvId] = useState<string>("");
 
   const fetchEntries = useCallback(async () => {
     setLoading(true);
     try {
       const res = await fetch("/api/cv");
       const rawData: any[] = await res.json();
-      // Parse JSON strings to arrays
       const parsedData = rawData.map((e) => ({
         ...e,
         matchedKeywords: e.matchedKeywords ? JSON.parse(e.matchedKeywords) : [],
@@ -66,34 +66,52 @@ export function CVHistoryPage() {
     }
   };
 
-  const getScoreColor = (score?: number) => {
-    if (!score) return "text-gray-500";
-    if (score >= 80) return "text-green-400";
-    if (score >= 60) return "text-amber-400";
-    return "text-red-400";
-  };
+  // Poll for QA status
+  useEffect(() => {
+    if (!currentCvId || qaStatus === "approved") return;
+    if (qaStatus && !["pending", "spawning"].includes(qaStatus)) return;
 
-  const getScoreBg = (score?: number) => {
-    if (!score) return "bg-gray-500/10 border-gray-500/20";
-    if (score >= 80) return "bg-green-500/10 border-green-500/20";
-    if (score >= 60) return "bg-amber-500/10 border-amber-500/20";
-    return "bg-red-500/10 border-red-500/20";
-  };
+    const pollInterval = setInterval(async () => {
+      try {
+        const res = await fetch(`/api/cv/qa?cvId=${currentCvId}`);
+        const data = await res.json();
+        if (data.review) {
+          setQaStatus(data.review.status);
+          if (data.review.qaVerdict) {
+            setQaData({
+              verdict: data.review.qaVerdict,
+              score: data.review.qaScore,
+              notes: data.review.qaNotes,
+              issues: data.review.qaIssues || [],
+              recommendations: data.review.qaRecommendations || [],
+            });
+          }
+        }
+      } catch (e) {
+        console.error("QA poll error:", e);
+      }
+    }, 3000);
 
-  const formatDate = (dateStr: string) => {
-    const date = new Date(dateStr);
-    return date.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "Africa/Cairo" });
-  };
+    return () => clearInterval(pollInterval);
+  }, [currentCvId, qaStatus]);
 
   return (
-    <div className="h-full flex flex-col">
+    <div className="h-full flex flex-col bg-[#0a0a0a]">
       {/* Header */}
-      <div className="flex items-center justify-between px-6 py-4 border-b border-[rgba(255,255,255,0.06)]">
-        <div>
-          <h1 className="text-xl font-bold text-white">CV Maker</h1>
-          <p className="text-xs text-gray-500 mt-1">
-            {entries.length} CVs created - Tailor your CV for jobs and track history
-          </p>
+      <div className="flex-none p-4 border-b border-[rgba(255,255,255,0.06)]">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <Icon name="fileText" size={20} className="text-indigo-400" />
+            <h1 className="text-base font-medium text-white">CV Maker</h1>
+          </div>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={fetchEntries}
+              className="p-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-all"
+            >
+              <Icon name="refresh" size={16} />
+            </button>
+          </div>
         </div>
       </div>
 
@@ -110,7 +128,10 @@ export function CVHistoryPage() {
               const res = await fetch("/api/cv/generate", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ url: jobInput }),
+                body: JSON.stringify({ 
+                  url: jobInput.startsWith("http") ? jobInput : "",
+                  description: !jobInput.startsWith("http") ? jobInput : ""
+                }),
               });
               
               if (res.ok) {
@@ -126,24 +147,25 @@ export function CVHistoryPage() {
               setAnalyzing(false);
             }
           }}
-          className="flex items-center gap-4"
+          className="space-y-4"
         >
-          <div className="flex-1">
-            <input
-              type="text"
+          <div className="">
+            <textarea
               value={jobInput}
               onChange={(e) => setJobInput(e.target.value)}
-              placeholder="Paste job URL or description here..."
-              className="w-full bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)] rounded-lg px-4 py-2.5 text-sm text-white placeholder-gray-500 outline-none focus:border-indigo-500/50"
+              placeholder="Paste job URL OR paste full job description here..."
+              className="w-full h-32 bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)] rounded-lg px-4 py-3 text-sm text-white placeholder-gray-500 outline-none focus:border-indigo-500/50 resize-none"
             />
           </div>
-          <button
-            type="submit"
-            disabled={analyzing || !jobInput.trim()}
-            className="px-6 py-2.5 rounded-lg text-xs font-medium bg-[rgba(124,92,252,0.15)] border border-indigo-500/30 text-indigo-400 hover:bg-[rgba(124,92,252,0.25)] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            {analyzing ? "Analyzing..." : "Analyze & Generate"}
-          </button>
+          <div className="flex justify-end">
+            <button
+              type="submit"
+              disabled={analyzing || !jobInput.trim()}
+              className="px-6 py-2.5 rounded-lg text-xs font-medium bg-[rgba(124,92,252,0.15)] border border-indigo-500/30 text-indigo-400 hover:bg-[rgba(124,92,252,0.25)] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {analyzing ? "Analyzing..." : "Analyze & Generate"}
+            </button>
+          </div>
         </form>
 
         {/* Analysis Result */}
@@ -171,6 +193,7 @@ export function CVHistoryPage() {
                 <span key={k} className="text-[10px] px-2 py-0.5 rounded bg-red-500/10 text-red-400">{k}</span>
               ))}
             </div>
+            
             <div className="flex gap-2 mt-4">
               <button
                 onClick={async () => {
@@ -178,6 +201,7 @@ export function CVHistoryPage() {
                   setGeneratingPdf(true);
                   setPdfResult(null);
                   setQaStatus(null);
+                  setQaData(null);
                   try {
                     // Generate PDF
                     const pdfRes = await fetch("/api/cv/pdf", {
@@ -195,6 +219,8 @@ export function CVHistoryPage() {
                       
                       // Submit to QA Agent
                       const cvId = `cv-${Date.now()}`;
+                      setCurrentCvId(cvId);
+                      
                       const qaRes = await fetch("/api/cv/qa", {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
@@ -205,29 +231,17 @@ export function CVHistoryPage() {
                           atsScore: analysisResult.analysis.atsScore,
                           matchedKeywords: analysisResult.analysis.matchedKeywords,
                           missingKeywords: analysisResult.analysis.missingKeywords,
+                          pdfUrl: pdfData.downloadUrl,
                         }),
                       });
                       
                       if (qaRes.ok) {
-                        const qaData = await qaRes.json();
-                        setQaStatus("pending");
-                        // Simulate QA review (in real version, QA Agent would review)
-                        setTimeout(async () => {
-                          await fetch("/api/cv/qa", {
-                            method: "PATCH",
-                            headers: { "Content-Type": "application/json" },
-                            body: JSON.stringify({
-                              cvId,
-                              status: "approved",
-                              qaNotes: "ATS compliant. Keywords matched. Ready for delivery."
-                            }),
-                          });
-                          setQaStatus("approved");
-                          setQaNotes("ATS compliant. Keywords matched. Ready for delivery.");
-                        }, 3000);
+                        const qaData_ = await qaRes.json();
+                        setQaStatus(qaData_.status);
+                        setShowPreview(true);
+                      } else {
+                        alert("Failed to submit to QA");
                       }
-                      
-                      setShowPreview(true);
                     } else {
                       alert("Failed to generate PDF");
                     }
@@ -247,9 +261,80 @@ export function CVHistoryPage() {
                 Save to History
               </button>
             </div>
+            
             {pdfResult && (
               <div className="mt-3 p-2 rounded-lg bg-green-500/10 border border-green-500/30 text-green-400 text-xs text-center">
                 ✓ PDF generated
+              </div>
+            )}
+            
+            {/* QA Status */}
+            {qaStatus && (
+              <div className="mt-3 p-3 rounded-lg bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.06)]">
+                {qaStatus === "pending" || qaStatus === "spawning" ? (
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+                    <div>
+                      <p className="text-xs text-amber-400 font-medium">QA Agent reviewing...</p>
+                      <p className="text-[10px] text-gray-500">Spawning autonomous agent</p>
+                    </div>
+                  </div>
+                ) : qaStatus === "approved" ? (
+                  <div className="flex items-center gap-2">
+                    <span className="text-green-400 text-lg">✓</span>
+                    <div className="flex-1">
+                      <p className="text-xs text-green-400 font-medium">QA Approved</p>
+                      {qaData && (
+                        <>
+                          <p className="text-[10px] text-gray-500">Score: {qaData.score}/100</p>
+                          <p className="text-[10px] text-gray-400 mt-1">{qaData.notes}</p>
+                        </>
+                      )}
+                    </div>
+                  </div>
+                ) : qaStatus === "rejected" ? (
+                  <div className="flex items-center gap-2">
+                    <span className="text-red-400 text-lg">✗</span>
+                    <div className="flex-1">
+                      <p className="text-xs text-red-400 font-medium">QA Rejected</p>
+                      {qaData && (
+                        <>
+                          <p className="text-[10px] text-gray-500">Score: {qaData.score}/100</p>
+                          <p className="text-[10px] text-gray-400 mt-1">{qaData.notes}</p>
+                          {qaData.issues?.length > 0 && (
+                            <div className="mt-2">
+                              <p className="text-[10px] text-red-400">Issues:</p>
+                              {qaData.issues.map((i: string, idx: number) => (
+                                <p key={idx} className="text-[10px] text-gray-500">• {i}</p>
+                              ))}
+                            </div>
+                          )}
+                        </>
+                      )}
+                    </div>
+                  </div>
+                ) : qaStatus === "changes_requested" ? (
+                  <div className="flex items-center gap-2">
+                    <span className="text-amber-400 text-lg">!</span>
+                    <div className="flex-1">
+                      <p className="text-xs text-amber-400 font-medium">Changes Requested</p>
+                      {qaData && (
+                        <>
+                          <p className="text-[10px] text-gray-500">Score: {qaData.score}/100</p>
+                          <p className="text-[10px] text-gray-400 mt-1">{qaData.notes}</p>
+                          {qaData.recommendations?.length > 0 && (
+                            <div className="mt-2">
+                              <p className="text-[10px] text-amber-400">Recommendations:</p>
+                              {qaData.recommendations.map((r: string, idx: number) => (
+                                <p key={idx} className="text-[10px] text-gray-500">• {r}</p>
+                              ))}
+                            </div>
+                          )}
+                        </>
+                      )}
+                    </div>
+                  </div>
+                ) : null}
               </div>
             )}
             
@@ -293,7 +378,7 @@ export function CVHistoryPage() {
           <div className="text-center text-gray-500 py-12">Loading...</div>
         ) : entries.length === 0 ? (
           <div className="text-center text-gray-500 py-12">
-            <div className="text-4xl mb-4">""</div>
+            <div className="text-4xl mb-4">📄</div>
             <p>No CVs yet</p>
             <p className="text-xs mt-2">Give me a job description and I'll create a tailored CV</p>
             <div className="mt-6 p-4 rounded-lg bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.06)] max-w-md mx-auto">
@@ -303,41 +388,45 @@ export function CVHistoryPage() {
             </div>
           </div>
         ) : (
-          <div className="space-y-4">
+          <div className="space-y-3">
             {entries.map((entry) => (
               <div
                 key={entry.id}
-                onClick={() => { setSelectedEntry(entry); setShowDetails(true); }}
-                className="p-4 rounded-xl bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.06)] hover:bg-[rgba(255,255,255,0.04)] hover:border-[rgba(255,255,255,0.1)] transition-all cursor-pointer"
+                className="p-4 rounded-lg bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.06)] hover:border-indigo-500/30 transition-all cursor-pointer"
+                onClick={() => {
+                  setSelectedEntry(entry);
+                  setShowDetails(true);
+                }}
               >
-                <div className="flex items-start justify-between">
-                  <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-2">
-                      <div className="text-xl">""</div>
-                      <div>
-                        <h3 className="text-sm font-medium text-white">{entry.jobTitle}</h3>
-                        <p className="text-xs text-gray-500">{entry.company}</p>
-                      </div>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-indigo-500/10 flex items-center justify-center">
+                      <span className="text-indigo-400 text-xs font-medium">{entry.atsScore || 0}</span>
                     </div>
-                    <div className="flex items-center gap-4">
-                      {entry.atsScore !== undefined && (
-                        <div className={`px-3 py-1.5 rounded-lg border ${getScoreBg(entry.atsScore)}`}>
-                          <span className={`text-lg font-bold ${getScoreColor(entry.atsScore)}`}>{entry.atsScore}</span>
-                          <span className="text-xs text-gray-500 ml-1">/100</span>
-                        </div>
-                      )}
-                      <span className="text-xs text-gray-600">{formatDate(entry.createdAt)}</span>
-                      {entry.status === "Sent" && (
-                        <span className="text-xs px-2 py-0.5 rounded bg-green-500/10 text-green-400">Sent</span>
-                      )}
+                    <div>
+                      <h3 className="text-sm font-medium text-white">{entry.jobTitle}</h3>
+                      <p className="text-xs text-gray-500">{entry.company}</p>
                     </div>
                   </div>
-                  <button
-                    onClick={(e) => { e.stopPropagation(); handleDelete(entry.id); }}
-                    className="p-2 rounded-lg text-gray-600 hover:text-red-400 hover:bg-red-500/10 transition-all"
-                  >
-                    <Icon name="delete" size={14} />
-                  </button>
+                  <div className="flex items-center gap-2">
+                    <span className={`text-[10px] px-2 py-0.5 rounded ${
+                      entry.status === "approved" ? "bg-green-500/10 text-green-400" :
+                      entry.status === "rejected" ? "bg-red-500/10 text-red-400" :
+                      entry.status === "pending" ? "bg-amber-500/10 text-amber-400" :
+                      "bg-gray-500/10 text-gray-400"
+                    }`}>
+                      {entry.status}
+                    </span>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleDelete(entry.id);
+                      }}
+                      className="p-1.5 rounded-lg text-gray-500 hover:text-red-400 hover:bg-red-500/10 transition-all"
+                    >
+                      <Icon name="trash" size={14} />
+                    </button>
+                  </div>
                 </div>
               </div>
             ))}
@@ -345,38 +434,54 @@ export function CVHistoryPage() {
         )}
       </div>
 
-      {/* Detail Modal */}
+      {/* Details Modal */}
       {showDetails && selectedEntry && (
-        <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4" onClick={() => setShowDetails(false)}>
-          <div className="bg-[#12121a] border border-[rgba(255,255,255,0.1)] rounded-xl w-full max-w-lg max-h-[80vh] overflow-hidden flex flex-col" onClick={(e) => e.stopPropagation()}>
-            <div className="p-6 border-b border-[rgba(255,255,255,0.06)]">
-              <div className="flex items-start justify-between">
-                <div>
-                  <h2 className="text-lg font-semibold text-white">{selectedEntry.jobTitle}</h2>
-                  <p className="text-sm text-gray-400">{selectedEntry.company}</p>
+        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4">
+          <div className="bg-[#1a1a1a] rounded-xl max-w-2xl w-full max-h-[80vh] flex flex-col">
+            <div className="flex items-center justify-between p-4 border-b border-[rgba(255,255,255,0.06)]">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center">
+                  <span className="text-indigo-400 font-medium">{selectedEntry.atsScore || 0}</span>
                 </div>
-                <button onClick={() => setShowDetails(false)} className="text-gray-500 hover:text-white">
-                  <Icon name="close" size={20} />
-                </button>
+                <div>
+                  <h3 className="text-sm font-medium text-white">{selectedEntry.jobTitle}</h3>
+                  <p className="text-xs text-gray-500">{selectedEntry.company}</p>
+                </div>
               </div>
+              <button
+                onClick={() => {
+                  setShowDetails(false);
+                  setSelectedEntry(null);
+                }}
+                className="p-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-all"
+              >
+                <Icon name="close" size={16} />
+              </button>
             </div>
 
-            <div className="flex-1 overflow-y-auto p-6 space-y-6">
+            <div className="flex-1 overflow-auto p-4 space-y-4">
               {/* ATS Score */}
-              {selectedEntry.atsScore !== undefined && (
-                <div className={`p-4 rounded-lg border ${selectedEntry.atsScore >= 80 ? "bg-green-500/10 border-green-500/20" : selectedEntry.atsScore >= 60 ? "bg-amber-500/10 border-amber-500/20" : "bg-red-500/10 border-red-500/20"}`}>
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="text-xs text-gray-500 uppercase tracking-wider">ATS Score</span>
-                    <span className={`text-2xl font-bold ${getScoreColor(selectedEntry.atsScore)}`}>{selectedEntry.atsScore}/100</span>
-                  </div>
-                  <div className="w-full h-2 bg-[rgba(255,255,255,0.1)] rounded-full overflow-hidden">
-                    <div
-                      className={`h-full rounded-full ${selectedEntry.atsScore >= 80 ? "bg-green-500" : selectedEntry.atsScore >= 60 ? "bg-amber-500" : "bg-red-500"}`}
-                      style={{ width: `${selectedEntry.atsScore}%` }}
-                    />
-                  </div>
+              <div className="flex items-center gap-4">
+                <div className={`px-4 py-2 rounded-lg border ${
+                  (selectedEntry.atsScore || 0) >= 80 ? "bg-green-500/10 border-green-500/30" :
+                  (selectedEntry.atsScore || 0) >= 60 ? "bg-amber-500/10 border-amber-500/30" :
+                  "bg-red-500/10 border-red-500/30"
+                }`}>
+                  <span className={`text-xl font-bold ${
+                    (selectedEntry.atsScore || 0) >= 80 ? "text-green-400" :
+                    (selectedEntry.atsScore || 0) >= 60 ? "text-amber-400" :
+                    "text-red-400"
+                  }`}>{selectedEntry.atsScore || 0}</span>
+                  <span className="text-xs text-gray-500 ml-1">/100</span>
                 </div>
-              )}
+                <div>
+                  <p className="text-xs text-gray-400">ATS Score</p>
+                  <p className="text-[10px] text-gray-600">
+                    {(selectedEntry.atsScore || 0) >= 80 ? "Strong Match" :
+                     (selectedEntry.atsScore || 0) >= 60 ? "Moderate Match" : "Weak Match"}
+                  </p>
+                </div>
+              </div>
 
               {/* Keywords */}
               <div className="grid grid-cols-2 gap-4">
@@ -406,16 +511,6 @@ export function CVHistoryPage() {
                 </div>
               </div>
 
-              {/* Job URL */}
-              {selectedEntry.jobUrl && (
-                <div>
-                  <div className="text-xs text-gray-500 uppercase tracking-wider mb-2">Job Posting</div>
-                  <a href={selectedEntry.jobUrl} target="_blank" rel="noopener noreferrer" className="text-xs text-indigo-400 hover:underline break-all">
-                    {selectedEntry.jobUrl}
-                  </a>
-                </div>
-              )}
-
               {/* Notes */}
               {selectedEntry.notes && (
                 <div>
@@ -426,7 +521,7 @@ export function CVHistoryPage() {
 
               {/* Created */}
               <div className="text-xs text-gray-600">
-                Created: {formatDate(selectedEntry.createdAt)}
+                Created: {new Date(selectedEntry.createdAt).toLocaleDateString()}
               </div>
             </div>
 
@@ -454,27 +549,29 @@ export function CVHistoryPage() {
               <div className="flex items-center gap-3">
                 <h3 className="text-sm font-medium text-white">CV Preview</h3>
                 {/* QA Status Badge */}
-                {qaStatus === "pending" && (
-                  <span className="px-2 py-0.5 rounded text-[10px] font-medium bg-amber-500/20 text-amber-400 border border-amber-500/30">
-                    QA Review
+                {qaStatus === "pending" || qaStatus === "spawning" ? (
+                  <span className="px-2 py-0.5 rounded text-[10px] font-medium bg-amber-500/20 text-amber-400 border border-amber-500/30 animate-pulse">
+                    QA Review...
                   </span>
-                )}
-                {qaStatus === "approved" && (
+                ) : qaStatus === "approved" ? (
                   <span className="px-2 py-0.5 rounded text-[10px] font-medium bg-green-500/20 text-green-400 border border-green-500/30">
                     QA Approved
                   </span>
-                )}
-                {qaStatus === "rejected" && (
+                ) : qaStatus === "rejected" ? (
                   <span className="px-2 py-0.5 rounded text-[10px] font-medium bg-red-500/20 text-red-400 border border-red-500/30">
                     QA Rejected
                   </span>
-                )}
+                ) : qaStatus === "changes_requested" ? (
+                  <span className="px-2 py-0.5 rounded text-[10px] font-medium bg-amber-500/20 text-amber-400 border border-amber-500/30">
+                    Changes Requested
+                  </span>
+                ) : null}
               </div>
               <button
                 onClick={() => {
                   setShowPreview(false);
                   setQaStatus(null);
-                  setQaNotes("");
+                  setQaData(null);
                 }}
                 className="text-gray-400 hover:text-white"
               >
@@ -482,12 +579,27 @@ export function CVHistoryPage() {
               </button>
             </div>
             
-            {/* QA Notes */}
-            {qaNotes && (
-              <div className="px-4 py-2 bg-[rgba(255,255,255,0.02)] border-b border-[rgba(255,255,255,0.06)]">
-                <p className="text-xs text-gray-400">
-                  <span className="text-indigo-400 font-medium">QA Notes:</span> {qaNotes}
-                </p>
+            {/* QA Results */}
+            {qaData && (
+              <div className="px-4 py-3 bg-[rgba(255,255,255,0.02)] border-b border-[rgba(255,255,255,0.06)]">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className={`text-xs font-medium ${
+                    qaData.verdict === "APPROVED" ? "text-green-400" :
+                    qaData.verdict === "REJECTED" ? "text-red-400" :
+                    "text-amber-400"
+                  }`}>
+                    {qaData.verdict} ({qaData.score}/100)
+                  </span>
+                </div>
+                <p className="text-xs text-gray-400">{qaData.notes}</p>
+                {qaData.recommendations?.length > 0 && (
+                  <div className="mt-2">
+                    <p className="text-[10px] text-gray-500">Recommendations:</p>
+                    {qaData.recommendations.map((r: string, idx: number) => (
+                      <p key={idx} className="text-[10px] text-gray-400">• {r}</p>
+                    ))}
+                  </div>
+                )}
               </div>
             )}
             
@@ -504,7 +616,7 @@ export function CVHistoryPage() {
                 onClick={() => {
                   setShowPreview(false);
                   setQaStatus(null);
-                  setQaNotes("");
+                  setQaData(null);
                 }}
                 className="px-4 py-2 rounded-lg text-xs font-medium bg-white/5 border border-[rgba(255,255,255,0.08)] text-gray-400 hover:text-white hover:bg-white/10 transition-all"
               >
@@ -516,7 +628,6 @@ export function CVHistoryPage() {
                     onClick={async () => {
                       setSendingTelegram(true);
                       try {
-                        // Send to Telegram
                         const res = await fetch("/api/cv/telegram", {
                           method: "POST",
                           headers: { "Content-Type": "application/json" },
