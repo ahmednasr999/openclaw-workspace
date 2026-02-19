@@ -54,7 +54,8 @@ type ActiveBoard = "tasks" | "content" | "calendar" | "memory" | "team" | "cv" |
 export default function Home() {
   const [tasks, setTasks] = useState<Task[]>([]);
   const [posts, setPosts] = useState<ContentPost[]>([]);
-  const [activeBoard, setActiveBoard] = useState<ActiveBoard>("tasks");
+  const [activeBoard, setActiveBoard] = useState<ActiveBoard>("dashboard");
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [showForm, setShowForm] = useState(false);
   const [showContentForm, setShowContentForm] = useState(false);
   const [editingTask, setEditingTask] = useState<Task | null>(null);
