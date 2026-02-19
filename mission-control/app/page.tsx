@@ -10,6 +10,9 @@ import { NewContentForm } from "@/components/NewContentForm";
 import { ContentEditor } from "@/components/ContentEditor";
 import { Icon } from "@/components/Icon";
 import { Logo } from "@/components/Logo";
+import dynamic from "next/dynamic";
+
+const CalendarPage = dynamic(() => import("@/app/calendar/page"), { ssr: false });
 
 interface Task {
   id: number;
@@ -43,7 +46,7 @@ interface ContentPost {
   updatedAt?: string;
 }
 
-type ActiveBoard = "tasks" | "content" | "dashboard";
+type ActiveBoard = "tasks" | "content" | "calendar" | "dashboard";
 
 export default function Home() {
   const [tasks, setTasks] = useState<Task[]>([]);
@@ -119,12 +122,14 @@ export default function Home() {
   const boardTitles: Record<ActiveBoard, string> = {
     tasks: "Task Board",
     content: "Content Pipeline",
+    calendar: "Calendar",
     dashboard: "Dashboard",
   };
 
   const boardSubtitles: Record<ActiveBoard, string> = {
     tasks: `${totalTasks} tasks · ${highPriority} high priority · ${inReview} awaiting review`,
     content: `${totalPosts} posts · ${activePosts} active · ${publishedPosts} published`,
+    calendar: "Scheduled tasks and proactive work",
     dashboard: `${totalTasks} tasks · ${highPriority} high priority · ${inReview} awaiting review`,
   };
 
@@ -159,6 +164,13 @@ export default function Home() {
             <Icon name="draft" className="text-gray-400" />
             <span>Content Pipeline</span>
             <span className="ml-auto text-[10px] text-[var(--text-muted)]">{activePosts}</span>
+          </div>
+          <div
+            className={`sidebar-item ${activeBoard === "calendar" ? "active" : ""}`}
+            onClick={() => setActiveBoard("calendar")}
+          >
+            <Icon name="calendar" className="text-gray-400" />
+            <span>Calendar</span>
           </div>
           <div
             className={`sidebar-item ${activeBoard === "dashboard" ? "active" : ""}`}
@@ -229,13 +241,15 @@ export default function Home() {
 
         {/* Toolbar */}
         <div className="toolbar">
-          <input
-            type="text"
-            placeholder={activeBoard === "content" ? "Search posts..." : "Search tasks..."}
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            className="toolbar-search"
-          />
+          {activeBoard !== "calendar" && (
+            <input
+              type="text"
+              placeholder={activeBoard === "content" ? "Search posts..." : "Search tasks..."}
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              className="toolbar-search"
+            />
+          )}
 
           {activeBoard === "tasks" && (
             <select value={filterCategory} onChange={(e) => setFilterCategory(e.target.value)} className="toolbar-btn bg-transparent">
@@ -249,16 +263,20 @@ export default function Home() {
             </select>
           )}
 
-          <select value={filterPriority} onChange={(e) => setFilterPriority(e.target.value)} className="toolbar-btn bg-transparent">
-            <option value="">All Priorities</option>
-            <option value="High">High</option>
-            <option value="Medium">Medium</option>
-            <option value="Low">Low</option>
-          </select>
+          {activeBoard !== "calendar" && (
+            <select value={filterPriority} onChange={(e) => setFilterPriority(e.target.value)} className="toolbar-btn bg-transparent">
+              <option value="">All Priorities</option>
+              <option value="High">High</option>
+              <option value="Medium">Medium</option>
+              <option value="Low">Low</option>
+            </select>
+          )}
 
           <div className="flex-1" />
 
-          <button onClick={handleRefresh} className={`toolbar-btn ${isRefreshing ? "animate-spin" : ""}`}><Icon name="refresh" /></button>
+          {activeBoard !== "calendar" && (
+            <button onClick={handleRefresh} className={`toolbar-btn ${isRefreshing ? "animate-spin" : ""}`}><Icon name="refresh" /></button>
+          )}
 
           {activeBoard === "tasks" && (
             <button onClick={() => setShowForm(true)} className="toolbar-btn toolbar-btn-primary">+ New Task</button>
@@ -293,6 +311,9 @@ export default function Home() {
           )}
           {activeBoard === "content" && (
             <ContentBoard posts={filteredPosts} onRefresh={fetchPosts} onEditPost={setEditingPost} />
+          )}
+          {activeBoard === "calendar" && (
+            <CalendarPage />
           )}
           {activeBoard === "dashboard" && (
             <Dashboard tasks={tasks} />
