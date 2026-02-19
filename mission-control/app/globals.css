@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --card: #1a1a1a;
+  --card-foreground: #ededed;
+  --popover: #1a1a1a;
+  --popover-foreground: #ededed;
+  --primary: #3b82f6;
+  --primary-foreground: #ffffff;
+  --secondary: #262626;
+  --secondary-foreground: #ededed;
+  --muted: #262626;
+  --muted-foreground: #a3a3a3;
+  --accent: #262626;
+  --accent-foreground: #ededed;
+  --destructive: #7f1d1d;
+  --destructive-foreground: #ededed;
+  --border: #262626;
+  --input: #262626;
+  --ring: #3b82f6;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* Column colors */
+.column-inbox { @apply bg-gray-900/50; }
+.column-my-tasks { @apply bg-blue-900/30; }
+.column-openclaw { @apply bg-purple-900/30; }
+.column-progress { @apply bg-yellow-900/30; }
+.column-completed { @apply bg-green-900/30; }
+
+/* Priority colors */
+.priority-high { @apply text-red-400; }
+.priority-medium { @apply text-yellow-400; }
+.priority-low { @apply text-green-400; }
