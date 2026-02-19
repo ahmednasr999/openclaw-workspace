@@ -68,12 +68,12 @@ export function Dashboard({ tasks }: DashboardProps) {
   }).length;
 
   const byCategory: Record<string, { count: number; icon: string }> = {
-    "Job Search": { count: tasks.filter((t) => t.category === "Job Search").length, icon: "🎯" },
-    Content: { count: tasks.filter((t) => t.category === "Content").length, icon: "📝" },
-    Networking: { count: tasks.filter((t) => t.category === "Networking").length, icon: "🤝" },
-    Applications: { count: tasks.filter((t) => t.category === "Applications").length, icon: "📋" },
-    Interviews: { count: tasks.filter((t) => t.category === "Interviews").length, icon: "🎤" },
-    Task: { count: tasks.filter((t) => t.category === "Task").length, icon: "📌" },
+    "Job Search": { count: tasks.filter((t) => t.category === "Job Search").length, icon: "targetAgent" },
+    Content: { count: tasks.filter((t) => t.category === "Content").length, icon: "pen" },
+    Networking: { count: tasks.filter((t) => t.category === "Networking").length, icon: "handshake" },
+    Applications: { count: tasks.filter((t) => t.category === "Applications").length, icon: "folder" },
+    Interviews: { count: tasks.filter((t) => t.category === "Interviews").length, icon: "mic" },
+    Task: { count: tasks.filter((t) => t.category === "Task").length, icon: "pin" },
   };
 
   const byPriority: Record<string, { count: number; color: string; bg: string }> = {
@@ -163,7 +163,7 @@ export function Dashboard({ tasks }: DashboardProps) {
       {/* Content Pipeline Stats */}
       <div className="glass rounded-xl p-5">
         <h3 className="text-sm font-semibold mb-4 text-gray-300 flex items-center gap-2">
-          <span>📝</span> Content Pipeline
+          <span><Icon name="pen" size={16}/></span> Content Pipeline
         </h3>
         {loadingPosts ? (
           <div className="text-xs text-gray-600 text-center py-2">Loading...</div>
@@ -238,17 +238,17 @@ export function Dashboard({ tasks }: DashboardProps) {
             <h4 className="text-xs font-semibold text-gray-400 mb-3">Active by Assignee</h4>
             <div className="flex gap-4">
               <div className="flex items-center gap-2" title="Ahmed">
-                <span className="text-sm">👤</span>
+                <span className="text-sm"><Icon name="user" size={16}/></span>
                 <span className="text-xs text-blue-400">{byAssignee.Ahmed}</span>
                 <span className="text-[10px] text-gray-600">Ahmed</span>
               </div>
               <div className="flex items-center gap-2" title="AI Agents (NASR/OpenClaw/QA)">
-                <span className="text-sm">🤖</span>
+                <span className="text-sm">robot</span>
                 <span className="text-xs text-purple-400">{byAssignee.Agents}</span>
                 <span className="text-[10px] text-gray-600">Agents</span>
               </div>
               <div className="flex items-center gap-2" title="Both">
-                <span className="text-sm">👥</span>
+                <span className="text-sm"><Icon name="users" size={16}/></span>
                 <span className="text-xs text-indigo-400">{byAssignee.Both}</span>
                 <span className="text-[10px] text-gray-600">Both</span>
               </div>
@@ -270,15 +270,15 @@ export function Dashboard({ tasks }: DashboardProps) {
                   onClick={() => {}}
                 >
                   <span className="text-xs">
-                    {task.status === "Completed" ? "✅" :
+                    {task.status === "Completed" ? "check" :
                      task.status === "In Progress" ? "🔄" :
-                     task.status === "OpenClaw Tasks" ? "🤖" : "📋"}
+                     task.status === "OpenClaw Tasks" ? "robot" : "folder"}
                   </span>
                   <span className="flex-1 text-xs text-gray-400 truncate">{task.title}</span>
                   <span className={`text-[10px] ${
                     isAgentAssignee(task.assignee) ? "text-purple-500" : "text-blue-500"
                   }`}>
-                    {isAgentAssignee(task.assignee) ? "🤖" : "👤"}
+                    {isAgentAssignee(task.assignee) ? "robot" : "user"}
                   </span>
                 </div>
               ))}
@@ -326,7 +326,7 @@ export function Dashboard({ tasks }: DashboardProps) {
         {/* Agent Team Summary */}
         <div className="glass rounded-xl p-5">
           <h3 className="text-sm font-semibold mb-4 text-gray-300 flex items-center justify-between">
-            <span>🤖 Agent Team</span>
+            <span>robot Agent Team</span>
             <span className="text-[10px] text-gray-600 font-normal">Active tasks</span>
           </h3>
           <div className="space-y-3">
@@ -337,7 +337,7 @@ export function Dashboard({ tasks }: DashboardProps) {
                   const count = agentTaskCounts[name] || 0;
                   return (
                     <div key={name} className="flex items-center gap-2">
-                      <span className="text-sm">{name === "NASR" ? "🎯" : name === "QA Agent" ? "🛡️" : "⏰"}</span>
+                      <span className="text-sm">{name === "NASR" ? "targetAgent" : name === "QA Agent" ? "shieldAgent" : "clockAgent"}</span>
                       <span className="text-xs text-gray-400 flex-1">{name}</span>
                       {count > 0 ? (
                         <span className="text-[10px] px-1.5 py-0.5 rounded bg-indigo-500/15 text-indigo-400">{count}</span>
@@ -355,15 +355,15 @@ export function Dashboard({ tasks }: DashboardProps) {
                 {specialistAgents.map((name) => {
                   const count = agentTaskCounts[name] || 0;
                   const icons: Record<string, string> = {
-                    "NASR (Coder)": "💻",
-                    "NASR (Writer)": "✍️",
-                    "NASR (Research)": "🔍",
-                    "NASR (CV)": "📄",
-                    "OpenClaw": "🤖",
+                    "NASR (Coder)": "codeAgent",
+                    "NASR (Writer)": "penAgent",
+                    "NASR (Research)": "searchAgent",
+                    "NASR (CV)": "documentAgent",
+                    "OpenClaw": "robot",
                   };
                   return (
                     <div key={name} className="flex items-center gap-2">
-                      <span className="text-sm">{icons[name] || "🤖"}</span>
+                      <span className="text-sm">{icons[name] || "robot"}</span>
                       <span className="text-xs text-gray-400 flex-1">{name}</span>
                       {count > 0 ? (
                         <span className="text-[10px] px-1.5 py-0.5 rounded bg-purple-500/15 text-purple-400">{count}</span>

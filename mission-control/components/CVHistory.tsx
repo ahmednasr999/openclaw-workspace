@@ -93,7 +93,7 @@ export function CVHistoryPage() {
           <div className="text-center text-gray-500 py-12">Loading...</div>
         ) : entries.length === 0 ? (
           <div className="text-center text-gray-500 py-12">
-            <div className="text-4xl mb-4">📄</div>
+            <div className="text-4xl mb-4">""</div>
             <p>No CVs yet</p>
             <p className="text-xs mt-2">Give me a job description and I'll create a tailored CV</p>
             <div className="mt-6 p-4 rounded-lg bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.06)] max-w-md mx-auto">
@@ -113,7 +113,7 @@ export function CVHistoryPage() {
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-2">
-                      <div className="text-xl">📄</div>
+                      <div className="text-xl">""</div>
                       <div>
                         <h3 className="text-sm font-medium text-white">{entry.jobTitle}</h3>
                         <p className="text-xs text-gray-500">{entry.company}</p>
