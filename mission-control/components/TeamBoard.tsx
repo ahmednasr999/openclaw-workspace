@@ -22,7 +22,6 @@ interface AgentRun {
   status: string;
   updatedAt: string;
   task?: string;
-  agentId?: string;
 }
 
 interface TeamStats {
@@ -817,8 +816,7 @@ function OfficeView({ agents, activeRuns, onSelectAgent }: {
   const getAgentStatus = (agentId: string): "working" | "thinking" | "idle" => {
     const running = activeRuns.find(r => 
       r.label?.toLowerCase().includes(agentId.toLowerCase()) ||
-      r.task?.toLowerCase().includes(agentId.toLowerCase()) ||
-      r.agentId?.toLowerCase() === agentId.toLowerCase()
+      r.task?.toLowerCase().includes(agentId.toLowerCase())
     );
     if (running?.status === "running") return "working";
     return "idle";
@@ -827,8 +825,7 @@ function OfficeView({ agents, activeRuns, onSelectAgent }: {
   const getCurrentTask = (agentId: string): string | null => {
     const task = activeRuns.find(r => 
       r.label?.toLowerCase().includes(agentId.toLowerCase()) ||
-      r.task?.toLowerCase().includes(agentId.toLowerCase()) ||
-      r.agentId?.toLowerCase() === agentId.toLowerCase()
+      r.task?.toLowerCase().includes(agentId.toLowerCase())
     );
     return task?.task || task?.label || null;
   };
