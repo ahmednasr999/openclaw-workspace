@@ -1,40 +1,86 @@
 import { NextResponse } from "next/server";
+import { execSync } from "child_process";
 
-const KNOWN_CRON_JOBS = [
-  { name: "GitHub Backup", schedule: "Every 30 min", intervalMs: 30 * 60 * 1000 },
-  { name: "Git Auto-Sync", schedule: "Hourly", intervalMs: 60 * 60 * 1000 },
-  { name: "Urgent Email Scan", schedule: "Every 3 hours", intervalMs: 3 * 60 * 60 * 1000 },
-  { name: "Daily Briefing", schedule: "7 AM Cairo", hour: 7, intervalMs: 24 * 60 * 60 * 1000 },
-];
+export const dynamic = "force-dynamic";
+
+interface OpenClawJob {
+  id: string;
+  name?: string;
+  enabled?: boolean;
+  schedule?: {
+    kind: string;
+    expr?: string;
+    tz?: string;
+    everyMs?: number;
+    at?: string;
+  };
+  lastRun?: {
+    finishedAt?: string;
+    status?: string;
+  };
+  nextRunAt?: string;
+}
+
+function formatSchedule(schedule?: OpenClawJob["schedule"]): string {
+  if (!schedule) return "unknown";
+  switch (schedule.kind) {
+    case "cron":
+      return `${schedule.expr}${schedule.tz ? ` (${schedule.tz})` : ""}`;
+    case "every": {
+      if (!schedule.everyMs) return "interval";
+      const mins = Math.round(schedule.everyMs / 60000);
+      if (mins < 60) return `Every ${mins} min`;
+      const hours = Math.round(mins / 60);
+      if (hours < 24) return `Every ${hours}h`;
+      return `Every ${Math.round(hours / 24)}d`;
+    }
+    case "at":
+      return `Once at ${schedule.at || "unknown"}`;
+    default:
+      return schedule.kind;
+  }
+}
 
 export async function GET() {
   try {
-    const now = new Date();
-    
-    const cronJobs = KNOWN_CRON_JOBS.map(job => {
-      // Calculate next run
-      let nextRun = new Date(now.getTime() + job.intervalMs);
-      
-      if (job.hour !== undefined) {
-        nextRun = new Date(now);
-        nextRun.setHours(job.hour, 0, 0, 0);
-        if (nextRun <= now) nextRun.setDate(nextRun.getDate() + 1);
+    // Try to read cron jobs from OpenClaw CLI
+    let jobs: any[] = [];
+
+    try {
+      const output = execSync("openclaw cron list --json 2>/dev/null", {
+        timeout: 5000,
+        encoding: "utf-8",
+      });
+      const parsed = JSON.parse(output);
+      jobs = Array.isArray(parsed) ? parsed : parsed.jobs || [];
+    } catch {
+      // Fallback: try the OpenClaw cron API file directly
+      try {
+        const output = execSync(
+          'curl -s http://localhost:3778/api/cron/jobs 2>/dev/null || echo "[]"',
+          { timeout: 5000, encoding: "utf-8" }
+        );
+        const parsed = JSON.parse(output);
+        jobs = Array.isArray(parsed) ? parsed : parsed.jobs || [];
+      } catch {
+        // Return empty if both fail
+        return NextResponse.json([]);
       }
-      
-      // Generate last run (simulated based on last successful run)
-      const lastRun = new Date(now.getTime() - job.intervalMs + Math.random() * 10 * 60 * 1000);
-      
-      return {
-        name: job.name,
-        schedule: job.schedule,
-        nextRun: nextRun.toISOString(),
-        lastRun: lastRun.toISOString(),
-        lastStatus: "success",
-      };
-    });
-    
+    }
+
+    const cronJobs = jobs.map((job: OpenClawJob) => ({
+      id: job.id,
+      name: job.name || job.id || "Unnamed",
+      schedule: formatSchedule(job.schedule),
+      nextRun: job.nextRunAt || undefined,
+      lastRun: job.lastRun?.finishedAt || undefined,
+      lastStatus: job.lastRun?.status || undefined,
+      enabled: job.enabled !== false,
+    }));
+
     return NextResponse.json(cronJobs);
   } catch (error) {
-    return NextResponse.json({ error: "Failed to fetch cron jobs" }, { status: 500 });
+    console.error("Failed to fetch cron jobs:", error);
+    return NextResponse.json([]);
   }
 }
