@@ -105,33 +105,39 @@ export default function Home() {
               </div>
             </div>
             
-            <div className="flex items-center gap-2 flex-wrap">
+            <div className="flex items-center gap-3">
               <button
                 onClick={handleRefresh}
-                className={`px-3 py-2 glass rounded-lg hover:bg-white/5 transition-all ${isRefreshing ? 'animate-spin' : ''}`}
+                className={`w-10 h-10 glass rounded-xl hover:bg-white/10 transition-all flex items-center justify-center ${isRefreshing ? 'animate-spin' : ''}`}
                 title="Refresh"
               >
                 🔄
               </button>
-              <button
-                onClick={() => setView("board")}
-                className={`px-4 py-2 rounded-lg transition-all ${
-                  view === "board" ? "btn-primary" : "glass hover:bg-white/5"
-                }`}
-              >
-                📋 Board
-              </button>
-              <button
-                onClick={() => setView("dashboard")}
-                className={`px-4 py-2 rounded-lg transition-all ${
-                  view === "dashboard" ? "btn-primary" : "glass hover:bg-white/5"
-                }`}
-              >
-                📊 Dashboard
-              </button>
+              <div className="glass rounded-xl p-1 flex items-center">
+                <button
+                  onClick={() => setView("board")}
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                    view === "board" 
+                      ? "bg-indigo-500/20 text-indigo-300 shadow-sm" 
+                      : "text-gray-400 hover:text-white"
+                  }`}
+                >
+                  📋 Board
+                </button>
+                <button
+                  onClick={() => setView("dashboard")}
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                    view === "dashboard" 
+                      ? "bg-indigo-500/20 text-indigo-300 shadow-sm" 
+                      : "text-gray-400 hover:text-white"
+                  }`}
+                >
+                  📊 Dashboard
+                </button>
+              </div>
               <button
                 onClick={() => setShowForm(true)}
-                className="btn-success text-white"
+                className="btn-success text-white px-5 py-2.5 rounded-xl font-medium text-sm"
               >
                 + New Task
               </button>
@@ -139,7 +145,7 @@ export default function Home() {
           </div>
 
           {/* Quick Stats Bar */}
-          <div className="grid grid-cols-4 gap-3 mb-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
             <div className="glass rounded-lg px-4 py-3 flex items-center gap-3">
               <span className="text-2xl font-bold text-indigo-400">{totalTasks}</span>
               <span className="text-xs text-gray-400">Total</span>
