@@ -123,7 +123,7 @@ export function TeamBoard() {
   const [agents, setAgents] = useState<AgentDef[]>(AGENT_DEFINITIONS);
   const [selectedAgent, setSelectedAgent] = useState<AgentDef | null>(null);
   const [activeRuns, setActiveRuns] = useState<AgentRun[]>([]);
-  const [viewMode, setViewMode] = useState<"org" | "flow">("org");
+  const [viewMode, setViewMode] = useState<"org" | "flow" | "knowledge">("org");
   const [loading, setLoading] = useState(false);
 
   const fetchAgentConfig = useCallback(async () => {
@@ -193,6 +193,12 @@ export function TeamBoard() {
             >
               Task Flow
             </button>
+            <button
+              onClick={() => setViewMode("knowledge")}
+              className={`px-3 py-1.5 rounded text-xs font-medium transition-all ${viewMode === "knowledge" ? "bg-[rgba(124,92,252,0.15)] text-[#a78bfa]" : "text-gray-500 hover:text-white"}`}
+            >
+              Knowledge
+            </button>
           </div>
         </div>
       </div>
@@ -206,8 +212,10 @@ export function TeamBoard() {
             activeRuns={activeRuns}
             onSelectAgent={setSelectedAgent}
           />
-        ) : (
+        ) : viewMode === "flow" ? (
           <TaskFlowView />
+        ) : (
+          <KnowledgeExchangeView />
         )}
       </div>
 
@@ -524,6 +532,269 @@ function AgentDetailModal({ agent, runs, onClose }: {
           </div>
         </div>
       </div>
+    </div>
+  );
+}
+
+// Knowledge Exchange View
+function KnowledgeExchangeView() {
+  const [items, setItems] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [search, setSearch] = useState("");
+  const [filterCategory, setFilterCategory] = useState("");
+  const [showForm, setShowForm] = useState(false);
+  const [form, setForm] = useState({ title: "", content: "", category: "company", tags: "" });
+  const [submitting, setSubmitting] = useState(false);
+
+  const fetchKnowledge = useCallback(async () => {
+    setLoading(true);
+    try {
+      const params = new URLSearchParams();
+      if (filterCategory) params.set("category", filterCategory);
+      if (search) params.set("q", search);
+      const res = await fetch(`/api/knowledge?${params}`);
+      const data = await res.json();
+      setItems(data);
+    } catch (error) {
+      console.error("Failed to fetch knowledge:", error);
+    } finally {
+      setLoading(false);
+    }
+  }, [filterCategory, search]);
+
+  useEffect(() => {
+    fetchKnowledge();
+    const interval = setInterval(fetchKnowledge, 30000);
+    return () => clearInterval(interval);
+  }, [fetchKnowledge]);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitting(true);
+    try {
+      const tags = form.tags.split(",").map((t) => t.trim()).filter(Boolean);
+      await fetch("/api/knowledge", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          title: form.title,
+          content: form.content,
+          category: form.category,
+          tags,
+          author: "Ahmed",
+        }),
+      });
+      setShowForm(false);
+      setForm({ title: "", content: "", category: "company", tags: "" });
+      fetchKnowledge();
+    } catch (error) {
+      console.error("Failed to create knowledge:", error);
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  const handleDelete = async (id: number) => {
+    if (!confirm("Delete this entry?")) return;
+    try {
+      await fetch(`/api/knowledge?id=${id}`, { method: "DELETE" });
+      fetchKnowledge();
+    } catch (error) {
+      console.error("Failed to delete:", error);
+    }
+  };
+
+  const categories = [
+    { id: "", label: "All", icon: "🌐" },
+    { id: "company", label: "Company", icon: "🏢" },
+    { id: "content", label: "Content", icon: "📝" },
+    { id: "interview", label: "Interview", icon: "🎤" },
+    { id: "market", label: "Market", icon: "📊" },
+    { id: "outreach", label: "Outreach", icon: "🤝" },
+  ];
+
+  const categoryStyles: Record<string, { bg: string; border: string; text: string }> = {
+    company: { bg: "bg-blue-500/10", border: "border-blue-500/30", text: "text-blue-400" },
+    content: { bg: "bg-purple-500/10", border: "border-purple-500/30", text: "text-purple-400" },
+    interview: { bg: "bg-pink-500/10", border: "border-pink-500/30", text: "text-pink-400" },
+    market: { bg: "bg-amber-500/10", border: "border-amber-500/30", text: "text-amber-400" },
+    outreach: { bg: "bg-green-500/10", border: "border-green-500/30", text: "text-green-400" },
+  };
+
+  const formatDate = (dateStr: string) => {
+    const date = new Date(dateStr);
+    const now = new Date();
+    const diff = Math.floor((now.getTime() - date.getTime()) / (1000 * 60 * 60 * 24));
+    if (diff === 0) return "Today";
+    if (diff === 1) return "Yesterday";
+    if (diff < 7) return `${diff}d ago`;
+    return date.toLocaleDateString("en-US", { month: "short", day: "numeric" });
+  };
+
+  return (
+    <div className="max-w-4xl mx-auto">
+      {/* Header */}
+      <div className="flex items-center justify-between mb-6">
+        <div>
+          <h2 className="text-lg font-semibold text-white">Agents Knowledge Exchange</h2>
+          <p className="text-xs text-gray-500 mt-1">Insights shared by agents and humans</p>
+        </div>
+        <button
+          onClick={() => setShowForm(true)}
+          className="px-4 py-2 rounded-lg text-xs font-medium bg-[rgba(124,92,252,0.15)] border border-indigo-500/30 text-indigo-400 hover:bg-[rgba(124,92,252,0.25)] transition-all"
+        >
+          <Icon name="plus" size={14} className="inline mr-1" />
+          Add Insight
+        </button>
+      </div>
+
+      {/* Search & Filter */}
+      <div className="flex items-center gap-4 mb-6">
+        <div className="flex-1 relative">
+          <Icon name="search" className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" size={16} />
+          <input
+            type="text"
+            placeholder="Search insights..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="w-full bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)] rounded-lg pl-10 pr-4 py-2.5 text-sm text-white placeholder-gray-500 outline-none focus:border-indigo-500/50"
+          />
+        </div>
+        <div className="flex gap-1 bg-[rgba(255,255,255,0.03)] rounded-lg p-1 border border-[rgba(255,255,255,0.08)]">
+          {categories.map((cat) => (
+            <button
+              key={cat.id}
+              onClick={() => setFilterCategory(cat.id)}
+              className={`px-3 py-1.5 rounded text-xs font-medium transition-all flex items-center gap-1 ${
+                filterCategory === cat.id
+                  ? "bg-[rgba(124,92,252,0.15)] text-[#a78bfa]"
+                  : "text-gray-500 hover:text-white"
+              }`}
+            >
+              <span>{cat.icon}</span>
+              <span>{cat.label}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Feed */}
+      {loading && items.length === 0 ? (
+        <div className="text-center text-gray-500 py-12">Loading...</div>
+      ) : items.length === 0 ? (
+        <div className="text-center text-gray-500 py-12">
+          <div className="text-4xl mb-4">🧠</div>
+          <p>No insights yet</p>
+          <p className="text-xs mt-2">Add your first insight to share knowledge with the team</p>
+        </div>
+      ) : (
+        <div className="space-y-4">
+          {items.map((item) => {
+            const style = categoryStyles[item.category] || categoryStyles.company;
+            return (
+              <div
+                key={item.id}
+                className="p-4 rounded-xl bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.06)] hover:border-[rgba(255,255,255,0.1)] transition-all"
+              >
+                <div className="flex items-start justify-between mb-2">
+                  <div className="flex items-center gap-2">
+                    <span className={`text-[10px] px-2 py-0.5 rounded border ${style.bg} ${style.text} ${style.border}`}>
+                      {categories.find((c) => c.id === item.category)?.icon} {item.category}
+                    </span>
+                    <span className="text-[10px] text-gray-600">{formatDate(item.createdAt)}</span>
+                    {item.agentId && (
+                      <span className="text-[10px] text-gray-500">by {item.agentId}</span>
+                    )}
+                  </div>
+                  <button
+                    onClick={() => handleDelete(item.id)}
+                    className="text-gray-600 hover:text-red-400"
+                  >
+                    <Icon name="delete" size={14} />
+                  </button>
+                </div>
+                <h3 className="text-sm font-medium text-white mb-1">{item.title}</h3>
+                <p className="text-xs text-gray-400 mb-3">{item.content}</p>
+                {item.tags && item.tags.length > 0 && (
+                  <div className="flex gap-2 flex-wrap">
+                    {(Array.isArray(item.tags) ? item.tags : JSON.parse(item.tags || "[]")).map((tag: string) => (
+                      <span key={tag} className="text-[9px] px-2 py-0.5 rounded bg-[rgba(255,255,255,0.05)] text-gray-500">#{tag}</span>
+                    ))}
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      )}
+
+      {/* Add Form Modal */}
+      {showForm && (
+        <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4" onClick={() => setShowForm(false)}>
+          <div className="bg-[#12121a] border border-[rgba(255,255,255,0.1)] rounded-xl w-full max-w-lg p-6" onClick={(e) => e.stopPropagation()}>
+            <div className="flex items-center justify-between mb-6">
+              <h3 className="text-base font-semibold text-white">Add Insight</h3>
+              <button onClick={() => setShowForm(false)} className="text-gray-500 hover:text-white">
+                <Icon name="close" size={18} />
+              </button>
+            </div>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div>
+                <label className="text-xs text-gray-500 block mb-1">Category</label>
+                <select
+                  value={form.category}
+                  onChange={(e) => setForm({ ...form, category: e.target.value })}
+                  className="w-full px-3 py-2 rounded-lg bg-white/5 border border-[rgba(255,255,255,0.08)] text-white text-sm outline-none focus:border-indigo-500/50"
+                >
+                  {categories.filter((c) => c.id).map((c) => (
+                    <option key={c.id} value={c.id}>{c.icon} {c.label}</option>
+                  ))}
+                </select>
+              </div>
+              <div>
+                <label className="text-xs text-gray-500 block mb-1">Title</label>
+                <input
+                  type="text"
+                  value={form.title}
+                  onChange={(e) => setForm({ ...form, title: e.target.value })}
+                  placeholder="Brief summary..."
+                  required
+                  className="w-full px-3 py-2 rounded-lg bg-white/5 border border-[rgba(255,255,255,0.08)] text-white text-sm outline-none focus:border-indigo-500/50"
+                />
+              </div>
+              <div>
+                <label className="text-xs text-gray-500 block mb-1">Content</label>
+                <textarea
+                  value={form.content}
+                  onChange={(e) => setForm({ ...form, content: e.target.value })}
+                  placeholder="Detailed insight..."
+                  required
+                  rows={4}
+                  className="w-full px-3 py-2 rounded-lg bg-white/5 border border-[rgba(255,255,255,0.08)] text-white text-sm outline-none focus:border-indigo-500/50 resize-none"
+                />
+              </div>
+              <div>
+                <label className="text-xs text-gray-500 block mb-1">Tags (comma separated)</label>
+                <input
+                  type="text"
+                  value={form.tags}
+                  onChange={(e) => setForm({ ...form, tags: e.target.value })}
+                  placeholder="company, topic, keyword"
+                  className="w-full px-3 py-2 rounded-lg bg-white/5 border border-[rgba(255,255,255,0.08)] text-white text-sm outline-none focus:border-indigo-500/50"
+                />
+              </div>
+              <div className="flex gap-2 pt-2">
+                <button type="button" onClick={() => setShowForm(false)} className="flex-1 px-3 py-2 rounded-lg text-xs font-medium border border-[rgba(255,255,255,0.08)] text-gray-400 hover:text-white hover:bg-white/5 transition-all">
+                  Cancel
+                </button>
+                <button type="submit" disabled={submitting} className="flex-1 px-3 py-2 rounded-lg text-xs font-medium bg-[rgba(124,92,252,0.15)] border border-indigo-500/30 text-indigo-400 hover:bg-[rgba(124,92,252,0.25)] transition-all disabled:opacity-50">
+                  {submitting ? "Saving..." : "Share Insight"}
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

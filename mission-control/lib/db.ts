@@ -103,6 +103,21 @@ db.exec(`
     FOREIGN KEY (contactId) REFERENCES contacts(id) ON DELETE CASCADE
   );
 
+  -- Agents Knowledge Exchange
+  CREATE TABLE IF NOT EXISTS knowledge_exchange (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    category TEXT NOT NULL,
+    title TEXT NOT NULL,
+    content TEXT NOT NULL,
+    tags TEXT,
+    agentId TEXT,
+    taskId INTEGER,
+    sourceType TEXT DEFAULT 'agent',
+    author TEXT NOT NULL DEFAULT 'System',
+    createdAt TEXT NOT NULL,
+    updatedAt TEXT
+  );
+
   CREATE TABLE IF NOT EXISTS scheduled_tasks (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     taskId INTEGER,
@@ -485,6 +500,94 @@ export const sqliteDb = {
 
   getContactActivity: (contactId: number, limit = 20) => {
     return db.prepare("SELECT * FROM contact_activity WHERE contactId = ? ORDER BY createdAt DESC LIMIT ?").all(contactId, limit);
+  },
+
+  // ---- KNOWLEDGE EXCHANGE ----
+  getAllKnowledge: (options?: { category?: string; q?: string; limit?: number }) => {
+    let sql = "SELECT * FROM knowledge_exchange";
+    const params: any[] = [];
+    const conditions: string[] = [];
+
+    if (options?.category) {
+      conditions.push("category = ?");
+      params.push(options.category);
+    }
+    if (options?.q) {
+      conditions.push("(title LIKE ? OR content LIKE ? OR tags LIKE ?)");
+      const term = `%${options.q}%`;
+      params.push(term, term, term);
+    }
+
+    if (conditions.length > 0) {
+      sql += " WHERE " + conditions.join(" AND ");
+    }
+    sql += " ORDER BY createdAt DESC";
+
+    if (options?.limit) {
+      sql += " LIMIT ?";
+      params.push(options.limit);
+    }
+
+    return db.prepare(sql).all(...params);
+  },
+
+  getKnowledgeById: (id: number) => {
+    return db.prepare("SELECT * FROM knowledge_exchange WHERE id = ?").get(id);
+  },
+
+  addKnowledge: (entry: {
+    category: string;
+    title: string;
+    content: string;
+    tags?: string;
+    agentId?: string;
+    taskId?: number;
+    sourceType?: string;
+    author?: string;
+  }) => {
+    const stmt = db.prepare(`
+      INSERT INTO knowledge_exchange (category, title, content, tags, agentId, taskId, sourceType, author, createdAt, updatedAt)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    `);
+    const now = new Date().toISOString();
+    const result = stmt.run(
+      entry.category, entry.title, entry.content,
+      entry.tags || null, entry.agentId || null, entry.taskId || null,
+      entry.sourceType || "agent", entry.author || "System", now, now
+    );
+    return result.lastInsertRowid as number;
+  },
+
+  updateKnowledge: (id: number, fields: { title?: string; content?: string; tags?: string; category?: string }) => {
+    const updates: string[] = [];
+    const values: any[] = [];
+    const now = new Date().toISOString();
+
+    if (fields.title !== undefined) { updates.push("title = ?"); values.push(fields.title); }
+    if (fields.content !== undefined) { updates.push("content = ?"); values.push(fields.content); }
+    if (fields.tags !== undefined) { updates.push("tags = ?"); values.push(fields.tags || null); }
+    if (fields.category !== undefined) { updates.push("category = ?"); values.push(fields.category); }
+
+    if (updates.length === 0) return;
+    updates.push("updatedAt = ?");
+    values.push(now);
+    values.push(id);
+
+    return db.prepare(`UPDATE knowledge_exchange SET ${updates.join(", ")} WHERE id = ?`).run(...values);
+  },
+
+  deleteKnowledge: (id: number) => {
+    return db.prepare("DELETE FROM knowledge_exchange WHERE id = ?").run(id);
+  },
+
+  searchKnowledge: (query: string, limit = 10) => {
+    const term = `%${query}%`;
+    return db.prepare(`
+      SELECT * FROM knowledge_exchange
+      WHERE title LIKE ? OR content LIKE ? OR tags LIKE ?
+      ORDER BY createdAt DESC
+      LIMIT ?
+    `).all(term, term, term, limit);
   },
 };
 
