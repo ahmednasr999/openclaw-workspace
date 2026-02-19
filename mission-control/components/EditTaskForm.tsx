@@ -2,58 +2,79 @@
 
 import { useState } from "react";
 
-interface TaskFormProps {
-  onClose: () => void;
-  onTaskAdded: () => void;
+interface Task {
+  id: number;
+  title: string;
+  description?: string;
+  assignee: string;
+  priority: string;
+  category: string;
+  status: string;
+  dueDate?: string;
+  completedDate?: string;
+  createdAt: string;
 }
 
-export function TaskForm({ onClose, onTaskAdded }: TaskFormProps) {
+interface EditTaskFormProps {
+  task: Task;
+  onClose: () => void;
+  onTaskUpdated: () => void;
+}
+
+export function EditTaskForm({ task, onClose, onTaskUpdated }: EditTaskFormProps) {
   const [form, setForm] = useState({
-    title: "",
-    description: "",
-    assignee: "Ahmed",
-    priority: "Medium",
-    category: "Job Search",
-    dueDate: "",
+    title: task.title,
+    description: task.description || "",
+    assignee: task.assignee,
+    priority: task.priority,
+    category: task.category,
+    status: task.status,
+    dueDate: task.dueDate || "",
   });
   const [submitting, setSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
-    
-    const task = {
-      title: form.title,
-      description: form.description || undefined,
-      assignee: form.assignee,
-      status: "Inbox",
-      priority: form.priority,
-      category: form.category,
-      dueDate: form.dueDate || undefined,
-      createdAt: new Date().toISOString(),
-    };
 
     try {
       await fetch("/api/tasks", {
-        method: "POST",
+        method: "PATCH",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(task),
+        body: JSON.stringify({
+          id: task.id,
+          ...form,
+          completedDate: form.status === "Completed" ? new Date().toISOString() : null,
+        }),
       });
-      onTaskAdded();
+      onTaskUpdated();
       onClose();
     } catch (error) {
-      console.error("Error adding task:", error);
+      console.error("Error updating task:", error);
     } finally {
       setSubmitting(false);
     }
   };
+
+  const handleDelete = async () => {
+    if (!confirm("Delete this task?")) return;
+    try {
+      await fetch(`/api/tasks?id=${task.id}`, { method: "DELETE" });
+      onTaskUpdated();
+      onClose();
+    } catch (error) {
+      console.error("Error deleting task:", error);
+    }
+  };
+
+  const statuses = ["Inbox", "My Tasks", "OpenClaw Tasks", "In Progress", "Completed"];
 
   return (
     <div className="fixed inset-0 modal-overlay flex items-center justify-center z-50 p-4" onClick={onClose}>
       <div className="glass-strong rounded-2xl p-6 w-full max-w-lg" onClick={(e) => e.stopPropagation()}>
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
-            New Task
+            Edit Task
           </h2>
           <button onClick={onClose} className="text-gray-500 hover:text-white transition-colors text-xl">✕</button>
         </div>
@@ -68,8 +89,6 @@ export function TaskForm({ onClose, onTaskAdded }: TaskFormProps) {
               value={form.title}
               onChange={(e) => setForm({ ...form, title: e.target.value })}
               className="w-full search-input rounded-lg px-4 py-2.5 text-white text-sm"
-              placeholder="What needs to be done?"
-              autoFocus
             />
           </div>
           
@@ -80,8 +99,28 @@ export function TaskForm({ onClose, onTaskAdded }: TaskFormProps) {
               value={form.description}
               onChange={(e) => setForm({ ...form, description: e.target.value })}
               className="w-full search-input rounded-lg px-4 py-2.5 text-white text-sm h-20 resize-none"
-              placeholder="Add details..."
             />
+          </div>
+
+          {/* Status */}
+          <div>
+            <label className="block text-xs font-medium text-gray-400 mb-1.5 uppercase tracking-wider">Status</label>
+            <div className="flex flex-wrap gap-2">
+              {statuses.map((s) => (
+                <button
+                  key={s}
+                  type="button"
+                  onClick={() => setForm({ ...form, status: s })}
+                  className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
+                    form.status === s
+                      ? "btn-primary text-white"
+                      : "glass hover:bg-white/5 text-gray-500"
+                  }`}
+                >
+                  {s}
+                </button>
+              ))}
+            </div>
           </div>
           
           {/* Two columns */}
@@ -114,7 +153,7 @@ export function TaskForm({ onClose, onTaskAdded }: TaskFormProps) {
                         : "glass hover:bg-white/5 text-gray-500"
                     }`}
                   >
-                    {p === "High" ? "🔴" : p === "Medium" ? "🟡" : "🟢"} {p}
+                    {p === "High" ? "🔴" : p === "Medium" ? "🟡" : "🟢"}
                   </button>
                 ))}
               </div>
@@ -148,22 +187,36 @@ export function TaskForm({ onClose, onTaskAdded }: TaskFormProps) {
               />
             </div>
           </div>
+
+          {/* Meta info */}
+          <div className="text-xs text-gray-600 flex justify-between pt-1">
+            <span>Created: {new Date(task.createdAt).toLocaleDateString()}</span>
+            <span>ID: #{task.id}</span>
+          </div>
           
           {/* Buttons */}
           <div className="flex gap-3 pt-2">
             <button
               type="button"
+              onClick={handleDelete}
+              className="px-4 py-2.5 glass rounded-lg hover:bg-red-500/10 transition-all text-sm text-red-400"
+            >
+              🗑️ Delete
+            </button>
+            <div className="flex-1" />
+            <button
+              type="button"
               onClick={onClose}
-              className="flex-1 py-2.5 glass rounded-lg hover:bg-white/5 transition-all text-sm text-gray-400"
+              className="px-4 py-2.5 glass rounded-lg hover:bg-white/5 transition-all text-sm text-gray-400"
             >
               Cancel
             </button>
             <button
               type="submit"
               disabled={submitting}
-              className="flex-1 py-2.5 btn-success text-white text-sm disabled:opacity-50"
+              className="px-6 py-2.5 btn-primary text-white text-sm disabled:opacity-50"
             >
-              {submitting ? "Adding..." : "Add Task"}
+              {submitting ? "Saving..." : "Save"}
             </button>
           </div>
         </form>
