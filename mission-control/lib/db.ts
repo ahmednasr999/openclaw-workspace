@@ -64,12 +64,42 @@ export const sqliteDb = {
     return result.lastInsertRowid;
   },
 
-  // Update task status
+  // Update task status only
   updateStatus: (id: number, status: string, completedDate?: string) => {
     const stmt = db.prepare(`
       UPDATE tasks SET status = ?, completedDate = ? WHERE id = ?
     `);
     return stmt.run(status, completedDate || null, id);
+  },
+
+  // Update all task fields
+  updateTask: (id: number, fields: {
+    title?: string;
+    description?: string;
+    assignee?: string;
+    status?: string;
+    priority?: string;
+    category?: string;
+    dueDate?: string;
+    completedDate?: string;
+  }) => {
+    const updates: string[] = [];
+    const values: any[] = [];
+
+    if (fields.title !== undefined) { updates.push("title = ?"); values.push(fields.title); }
+    if (fields.description !== undefined) { updates.push("description = ?"); values.push(fields.description || null); }
+    if (fields.assignee !== undefined) { updates.push("assignee = ?"); values.push(fields.assignee); }
+    if (fields.status !== undefined) { updates.push("status = ?"); values.push(fields.status); }
+    if (fields.priority !== undefined) { updates.push("priority = ?"); values.push(fields.priority); }
+    if (fields.category !== undefined) { updates.push("category = ?"); values.push(fields.category); }
+    if (fields.dueDate !== undefined) { updates.push("dueDate = ?"); values.push(fields.dueDate || null); }
+    if (fields.completedDate !== undefined) { updates.push("completedDate = ?"); values.push(fields.completedDate); }
+
+    if (updates.length === 0) return;
+
+    values.push(id);
+    const stmt = db.prepare(`UPDATE tasks SET ${updates.join(", ")} WHERE id = ?`);
+    return stmt.run(...values);
   },
 
   // Delete task
