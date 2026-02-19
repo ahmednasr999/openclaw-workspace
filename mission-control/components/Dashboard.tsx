@@ -1,7 +1,5 @@
 "use client";
 
-import { useState, useEffect } from "react";
-
 interface Task {
   id: number;
   title: string;
@@ -11,40 +9,15 @@ interface Task {
   dueDate?: string;
   completedDate?: string;
   assignee: string;
+  createdAt: string;
 }
 
-export function Dashboard() {
-  const [tasks, setTasks] = useState<Task[]>([]);
-  const [loaded, setLoaded] = useState(false);
+interface DashboardProps {
+  tasks: Task[];
+}
 
-  const loadTasks = async () => {
-    try {
-      const res = await fetch("/api/tasks");
-      const data = await res.json();
-      setTasks(data);
-    } catch (error) {
-      console.error("Error loading tasks:", error);
-    }
-  };
-
-  useEffect(() => {
-    loadTasks();
-    setLoaded(true);
-    
-    // Poll for changes every 3 seconds
-    const interval = setInterval(loadTasks, 3000);
-    return () => clearInterval(interval);
-  }, []);
-
-  if (!loaded) {
-    return (
-      <div className="flex items-center justify-center h-64">
-        <div className="text-gray-400">Loading dashboard...</div>
-      </div>
-    );
-  }
-
-  // Calculate stats
+export function Dashboard({ tasks }: DashboardProps) {
+  // Stats
   const completedThisWeek = tasks.filter((t) => {
     if (t.status !== "Completed") return false;
     const completed = new Date(t.completedDate || "");
@@ -58,65 +31,77 @@ export function Dashboard() {
     return new Date(t.dueDate) < new Date();
   }).length;
 
-  const byCategory = {
-    "Job Search": tasks.filter((t) => t.category === "Job Search").length,
-    Content: tasks.filter((t) => t.category === "Content").length,
-    Networking: tasks.filter((t) => t.category === "Networking").length,
-    Applications: tasks.filter((t) => t.category === "Applications").length,
-    Interviews: tasks.filter((t) => t.category === "Interviews").length,
-    Task: tasks.filter((t) => t.category === "Task").length,
+  const byCategory: Record<string, { count: number; icon: string }> = {
+    "Job Search": { count: tasks.filter((t) => t.category === "Job Search").length, icon: "🎯" },
+    Content: { count: tasks.filter((t) => t.category === "Content").length, icon: "📝" },
+    Networking: { count: tasks.filter((t) => t.category === "Networking").length, icon: "🤝" },
+    Applications: { count: tasks.filter((t) => t.category === "Applications").length, icon: "📋" },
+    Interviews: { count: tasks.filter((t) => t.category === "Interviews").length, icon: "🎤" },
+    Task: { count: tasks.filter((t) => t.category === "Task").length, icon: "📌" },
   };
 
-  const byPriority = {
-    High: tasks.filter((t) => t.priority === "High").length,
-    Medium: tasks.filter((t) => t.priority === "Medium").length,
-    Low: tasks.filter((t) => t.priority === "Low").length,
+  const byPriority: Record<string, { count: number; color: string; bg: string }> = {
+    High: { count: tasks.filter((t) => t.priority === "High").length, color: "text-red-400", bg: "bg-red-500" },
+    Medium: { count: tasks.filter((t) => t.priority === "Medium").length, color: "text-yellow-400", bg: "bg-yellow-500" },
+    Low: { count: tasks.filter((t) => t.priority === "Low").length, color: "text-green-400", bg: "bg-green-500" },
   };
+
+  const byAssignee = {
+    Ahmed: tasks.filter((t) => t.assignee === "Ahmed" && t.status !== "Completed").length,
+    OpenClaw: tasks.filter((t) => t.assignee === "OpenClaw" && t.status !== "Completed").length,
+    Both: tasks.filter((t) => t.assignee === "Both" && t.status !== "Completed").length,
+  };
+
+  // Completion rate
+  const completionRate = tasks.length > 0 ? Math.round((tasks.filter(t => t.status === "Completed").length / tasks.length) * 100) : 0;
 
   return (
-    <div className="space-y-8">
-      {/* Stats Cards */}
-      <div className="grid grid-cols-4 gap-4">
-        <div className="bg-gradient-to-br from-green-900/50 to-green-800/30 rounded-xl p-6">
-          <div className="text-4xl font-bold text-green-400">{completedThisWeek}</div>
-          <div className="text-sm text-gray-400 mt-1">Completed This Week</div>
+    <div className="space-y-6">
+      {/* Stat Cards */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="stat-card stat-card-green glass rounded-xl p-5">
+          <div className="text-3xl font-bold text-green-400">{completedThisWeek}</div>
+          <div className="text-xs text-gray-400 mt-1">Completed This Week</div>
+          <div className="mt-3 h-1 bg-gray-800 rounded-full overflow-hidden">
+            <div className="h-full bg-green-500 rounded-full" style={{ width: `${completionRate}%` }} />
+          </div>
+          <div className="text-[10px] text-gray-600 mt-1">{completionRate}% completion rate</div>
         </div>
         
-        <div className="bg-gradient-to-br from-yellow-900/50 to-yellow-800/30 rounded-xl p-6">
-          <div className="text-4xl font-bold text-yellow-400">{inProgress}</div>
-          <div className="text-sm text-gray-400 mt-1">In Progress</div>
+        <div className="stat-card stat-card-yellow glass rounded-xl p-5">
+          <div className="text-3xl font-bold text-yellow-400">{inProgress}</div>
+          <div className="text-xs text-gray-400 mt-1">In Progress</div>
         </div>
         
-        <div className="bg-gradient-to-br from-red-900/50 to-red-800/30 rounded-xl p-6">
-          <div className="text-4xl font-bold text-red-400">{overdue}</div>
-          <div className="text-sm text-gray-400 mt-1">Overdue</div>
+        <div className="stat-card stat-card-red glass rounded-xl p-5">
+          <div className="text-3xl font-bold text-red-400">{overdue}</div>
+          <div className="text-xs text-gray-400 mt-1">Overdue</div>
+          {overdue > 0 && <div className="text-[10px] text-red-500 mt-2">⚠️ Needs attention</div>}
         </div>
         
-        <div className="bg-gradient-to-br from-blue-900/50 to-blue-800/30 rounded-xl p-6">
-          <div className="text-4xl font-bold text-blue-400">{tasks.length}</div>
-          <div className="text-sm text-gray-400 mt-1">Total Tasks</div>
+        <div className="stat-card stat-card-blue glass rounded-xl p-5">
+          <div className="text-3xl font-bold text-indigo-400">{tasks.length}</div>
+          <div className="text-xs text-gray-400 mt-1">Total Tasks</div>
         </div>
       </div>
 
       {/* Charts Row */}
-      <div className="grid grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {/* By Category */}
-        <div className="bg-gray-900/50 rounded-xl p-6">
-          <h3 className="text-lg font-semibold mb-4">Tasks by Category</h3>
+        <div className="glass rounded-xl p-5">
+          <h3 className="text-sm font-semibold mb-4 text-gray-300">By Category</h3>
           <div className="space-y-3">
-            {Object.entries(byCategory).map(([category, count]) => (
+            {Object.entries(byCategory).map(([category, { count, icon }]) => (
               <div key={category} className="flex items-center gap-3">
-                <span className="text-xl">{["🎯", "📝", "🤝", "📋", "🎤", "📌"][
-                  ["Job Search", "Content", "Networking", "Applications", "Interviews", "Task"].indexOf(category)
-                ]}</span>
+                <span className="text-sm">{icon}</span>
                 <div className="flex-1">
-                  <div className="flex justify-between text-sm mb-1">
-                    <span>{category}</span>
-                    <span className="text-gray-400">{count}</span>
+                  <div className="flex justify-between text-xs mb-1">
+                    <span className="text-gray-400">{category}</span>
+                    <span className="text-gray-500">{count}</span>
                   </div>
-                  <div className="h-2 bg-gray-800 rounded-full overflow-hidden">
+                  <div className="h-1.5 bg-gray-800/50 rounded-full overflow-hidden">
                     <div
-                      className="h-full bg-blue-500 rounded-full"
+                      className="h-full bg-indigo-500 rounded-full transition-all duration-500"
                       style={{ width: `${tasks.length > 0 ? (count / tasks.length) * 100 : 0}%` }}
                     />
                   </div>
@@ -127,24 +112,20 @@ export function Dashboard() {
         </div>
 
         {/* By Priority */}
-        <div className="bg-gray-900/50 rounded-xl p-6">
-          <h3 className="text-lg font-semibold mb-4">Tasks by Priority</h3>
+        <div className="glass rounded-xl p-5">
+          <h3 className="text-sm font-semibold mb-4 text-gray-300">By Priority</h3>
           <div className="space-y-3">
-            {Object.entries(byPriority).map(([priority, count]) => (
+            {Object.entries(byPriority).map(([priority, { count, color, bg }]) => (
               <div key={priority} className="flex items-center gap-3">
-                <span className="text-xl">{["🔴", "🟡", "🟢"][
-                  ["High", "Medium", "Low"].indexOf(priority)
-                ]}</span>
+                <div className={`w-2 h-2 rounded-full ${bg}`} />
                 <div className="flex-1">
-                  <div className="flex justify-between text-sm mb-1">
-                    <span>{priority}</span>
-                    <span className="text-gray-400">{count}</span>
+                  <div className="flex justify-between text-xs mb-1">
+                    <span className={color}>{priority}</span>
+                    <span className="text-gray-500">{count}</span>
                   </div>
-                  <div className="h-2 bg-gray-800 rounded-full overflow-hidden">
+                  <div className="h-1.5 bg-gray-800/50 rounded-full overflow-hidden">
                     <div
-                      className={`h-full rounded-full ${
-                        priority === "High" ? "bg-red-500" : priority === "Medium" ? "bg-yellow-500" : "bg-green-500"
-                      }`}
+                      className={`h-full rounded-full transition-all duration-500 ${bg}`}
                       style={{ width: `${tasks.length > 0 ? (count / tasks.length) * 100 : 0}%` }}
                     />
                   </div>
@@ -152,30 +133,51 @@ export function Dashboard() {
               </div>
             ))}
           </div>
-        </div>
-      </div>
 
-      {/* Recent Activity */}
-      <div className="bg-gray-900/50 rounded-xl p-6">
-        <h3 className="text-lg font-semibold mb-4">Recent Activity</h3>
-        <div className="space-y-2">
-          {tasks.slice(0, 5).map((task) => (
-            <div key={task.id} className="flex items-center gap-3 py-2 border-b border-gray-800 last:border-0">
-              <span className={
-                task.status === "Completed" ? "text-green-400" :
-                task.status === "In Progress" ? "text-yellow-400" : "text-gray-400"
-              }>
-                {task.status === "Completed" ? "✅" :
-                 task.status === "In Progress" ? "🔄" :
-                 task.status === "OpenClaw Tasks" ? "🤖" : "📋"}
-              </span>
-              <span className="flex-1">{task.title}</span>
-              <span className="text-sm text-gray-500">{task.assignee}</span>
+          {/* Assignee breakdown */}
+          <div className="mt-6 pt-4 border-t border-white/5">
+            <h4 className="text-xs font-semibold text-gray-400 mb-3">Active by Assignee</h4>
+            <div className="flex gap-4">
+              <div className="flex items-center gap-2">
+                <span className="text-sm">👤</span>
+                <span className="text-xs text-blue-400">{byAssignee.Ahmed}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-sm">🤖</span>
+                <span className="text-xs text-purple-400">{byAssignee.OpenClaw}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-sm">👥</span>
+                <span className="text-xs text-indigo-400">{byAssignee.Both}</span>
+              </div>
             </div>
-          ))}
-          {tasks.length === 0 && (
-            <div className="text-gray-500 text-center py-4">No tasks yet. Add your first task!</div>
-          )}
+          </div>
+        </div>
+
+        {/* Recent Activity */}
+        <div className="glass rounded-xl p-5">
+          <h3 className="text-sm font-semibold mb-4 text-gray-300">Recent Activity</h3>
+          <div className="space-y-2">
+            {tasks
+              .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
+              .slice(0, 8)
+              .map((task) => (
+              <div key={task.id} className="flex items-center gap-2 py-1.5 border-b border-white/5 last:border-0">
+                <span className="text-xs">
+                  {task.status === "Completed" ? "✅" :
+                   task.status === "In Progress" ? "🔄" :
+                   task.status === "OpenClaw Tasks" ? "🤖" : "📋"}
+                </span>
+                <span className="flex-1 text-xs text-gray-400 truncate">{task.title}</span>
+                <span className={`text-[10px] ${
+                  task.assignee === "Ahmed" ? "text-blue-500" : "text-purple-500"
+                }`}>{task.assignee === "Ahmed" ? "👤" : "🤖"}</span>
+              </div>
+            ))}
+            {tasks.length === 0 && (
+              <div className="text-gray-600 text-center py-6 text-xs">No tasks yet</div>
+            )}
+          </div>
         </div>
       </div>
     </div>

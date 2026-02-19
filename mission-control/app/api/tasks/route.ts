@@ -17,10 +17,6 @@ export async function POST(request: Request) {
   try {
     const body = await request.json();
     const taskId = sqliteDb.addTask(body);
-    
-    // Notify all connected clients by triggering an API call
-    // The SSE endpoint will broadcast to all subscribers
-    
     return NextResponse.json({ id: taskId, success: true });
   } catch (error) {
     console.error("Error adding task:", error);
@@ -28,13 +24,25 @@ export async function POST(request: Request) {
   }
 }
 
-// PUT update task status
+// PUT update task status only
 export async function PUT(request: Request) {
   try {
     const body = await request.json();
     const { id, status, completedDate } = body;
     sqliteDb.updateStatus(Number(id), status, completedDate);
-    
+    return NextResponse.json({ success: true });
+  } catch (error) {
+    console.error("Error updating task:", error);
+    return NextResponse.json({ error: "Failed to update task" }, { status: 500 });
+  }
+}
+
+// PATCH update all task fields
+export async function PATCH(request: Request) {
+  try {
+    const body = await request.json();
+    const { id, ...fields } = body;
+    sqliteDb.updateTask(Number(id), fields);
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error("Error updating task:", error);
