@@ -2,14 +2,15 @@
 
 import { useState, useRef, useCallback } from "react";
 import { ContentCard } from "./ContentCard";
+import { Icon } from "./Icon";
 
 const COLUMNS = [
-  { id: "Ideas", title: "💡 Ideas", dot: "column-dot-ideas" },
-  { id: "Outline", title: "📝 Outline", dot: "column-dot-outline" },
-  { id: "Draft", title: "✍️ Draft", dot: "column-dot-draft" },
-  { id: "Design", title: "🎨 Design", dot: "column-dot-design" },
-  { id: "Review", title: "👀 Review", dot: "column-dot-review-content" },
-  { id: "Published", title: "✅ Published", dot: "column-dot-published" },
+  { id: "Ideas", title: "Ideas", icon: "ideas" },
+  { id: "Outline", title: "Outline", icon: "outline" },
+  { id: "Draft", title: "Draft", icon: "draft" },
+  { id: "Design", title: "Design", icon: "design" },
+  { id: "Review", title: "Review", icon: "review" },
+  { id: "Published", title: "Published", icon: "published" },
 ];
 
 const PRIORITY_ORDER: Record<string, number> = { High: 0, Medium: 1, Low: 2 };
@@ -86,7 +87,7 @@ export function ContentBoard({ posts, onRefresh, onEditPost }: ContentBoardProps
           >
             <div className="column-header">
               <div className="column-title">
-                <div className={`column-dot ${column.dot}`} />
+                <Icon name={column.icon} className="text-gray-400" size={16} />
                 <span className="column-name">{column.title}</span>
               </div>
               <span className="column-count">{columnPosts.length}</span>

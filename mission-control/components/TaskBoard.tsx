@@ -2,14 +2,15 @@
 
 import { useState, useRef, useCallback } from "react";
 import { TaskCard } from "./TaskCard";
+import { Icon } from "./Icon";
 
 const COLUMNS = [
-  { id: "Inbox", title: "Inbox", dot: "column-dot-inbox" },
-  { id: "My Tasks", title: "My Tasks", dot: "column-dot-my-tasks" },
-  { id: "OpenClaw Tasks", title: "OpenClaw", dot: "column-dot-openclaw" },
-  { id: "In Progress", title: "In Progress", dot: "column-dot-progress" },
-  { id: "Review", title: "Review", dot: "column-dot-review" },
-  { id: "Completed", title: "Completed", dot: "column-dot-completed" },
+  { id: "Inbox", title: "Inbox", icon: "inbox" },
+  { id: "My Tasks", title: "My Tasks", icon: "myTasks" },
+  { id: "OpenClaw Tasks", title: "OpenClaw", icon: "openClaw" },
+  { id: "In Progress", title: "In Progress", icon: "inProgress" },
+  { id: "Review", title: "Review", icon: "review" },
+  { id: "Completed", title: "Completed", icon: "published" },
 ];
 
 const PRIORITY_ORDER: Record<string, number> = { High: 0, Medium: 1, Low: 2 };
@@ -143,7 +144,7 @@ export function TaskBoard({ tasks, onRefresh, onEditTask }: TaskBoardProps) {
           >
             <div className="column-header">
               <div className="column-title">
-                <div className={`column-dot ${column.dot}`} />
+                <Icon name={column.icon} className="text-gray-400" size={16} />
                 <span className="column-name">{column.title}</span>
               </div>
               <span className="column-count">{columnTasks.length}</span>
