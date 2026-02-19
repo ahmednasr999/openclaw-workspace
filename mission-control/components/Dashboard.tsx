@@ -142,6 +142,9 @@ export function Dashboard() {
               <span className="text-sm text-gray-500">{task.assignee}</span>
             </div>
           ))}
+          {tasks.length === 0 && (
+            <div className="text-gray-500 text-center py-4">No tasks yet. Add your first task!</div>
+          )}
         </div>
       </div>
     </div>

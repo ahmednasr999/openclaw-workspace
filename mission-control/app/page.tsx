@@ -18,7 +18,7 @@ export default function Home() {
             Mission Control
           </h1>
           <p className="text-gray-400 mt-1">
-            Task board for Ahmed & OpenClaw
+            Task board for Ahmed & OpenClaw (Convex)
           </p>
         </div>
         
