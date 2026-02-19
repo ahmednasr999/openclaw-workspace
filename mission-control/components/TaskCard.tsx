@@ -1,7 +1,7 @@
 "use client";
 
 interface Task {
-  _id: string;
+  id: number;
   title: string;
   description?: string;
   assignee: string;
@@ -28,6 +28,7 @@ export function TaskCard({ task, onDelete }: TaskCardProps) {
     Networking: "🤝",
     Applications: "📋",
     Interviews: "🎤",
+    Task: "📌",
   };
 
   return (

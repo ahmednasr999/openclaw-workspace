@@ -1,12 +1,42 @@
 "use client";
 
-import { useQuery } from "convex/react";
-import { api } from "@/convex/_generated/api";
+import { useState, useEffect } from "react";
+
+interface Task {
+  id: number;
+  title: string;
+  status: string;
+  priority: string;
+  category: string;
+  dueDate?: string;
+  completedDate?: string;
+  assignee: string;
+}
 
 export function Dashboard() {
-  const tasks = useQuery(api.tasks.getTasks);
+  const [tasks, setTasks] = useState<Task[]>([]);
+  const [loaded, setLoaded] = useState(false);
 
-  if (tasks === undefined) {
+  const loadTasks = async () => {
+    try {
+      const res = await fetch("/api/tasks");
+      const data = await res.json();
+      setTasks(data);
+    } catch (error) {
+      console.error("Error loading tasks:", error);
+    }
+  };
+
+  useEffect(() => {
+    loadTasks();
+    setLoaded(true);
+    
+    // Poll for changes every 3 seconds
+    const interval = setInterval(loadTasks, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
+  if (!loaded) {
     return (
       <div className="flex items-center justify-center h-64">
         <div className="text-gray-400">Loading dashboard...</div>
@@ -34,6 +64,7 @@ export function Dashboard() {
     Networking: tasks.filter((t) => t.category === "Networking").length,
     Applications: tasks.filter((t) => t.category === "Applications").length,
     Interviews: tasks.filter((t) => t.category === "Interviews").length,
+    Task: tasks.filter((t) => t.category === "Task").length,
   };
 
   const byPriority = {
@@ -75,8 +106,8 @@ export function Dashboard() {
           <div className="space-y-3">
             {Object.entries(byCategory).map(([category, count]) => (
               <div key={category} className="flex items-center gap-3">
-                <span className="text-xl">{["🎯", "📝", "🤝", "📋", "🎤"][
-                  ["Job Search", "Content", "Networking", "Applications", "Interviews"].indexOf(category)
+                <span className="text-xl">{["🎯", "📝", "🤝", "📋", "🎤", "📌"][
+                  ["Job Search", "Content", "Networking", "Applications", "Interviews", "Task"].indexOf(category)
                 ]}</span>
                 <div className="flex-1">
                   <div className="flex justify-between text-sm mb-1">
@@ -129,7 +160,7 @@ export function Dashboard() {
         <h3 className="text-lg font-semibold mb-4">Recent Activity</h3>
         <div className="space-y-2">
           {tasks.slice(0, 5).map((task) => (
-            <div key={task._id} className="flex items-center gap-3 py-2 border-b border-gray-800 last:border-0">
+            <div key={task.id} className="flex items-center gap-3 py-2 border-b border-gray-800 last:border-0">
               <span className={
                 task.status === "Completed" ? "text-green-400" :
                 task.status === "In Progress" ? "text-yellow-400" : "text-gray-400"
