@@ -245,19 +245,21 @@ export default function Home() {
 
       {/* Main Content */}
       <main className="main-content">
-        {/* Header */}
-        <div className="page-header">
-          <div className="flex items-center justify-between">
-            <div>
-              <h1 className="page-title">{boardTitles[activeBoard]}</h1>
-              <p className="page-subtitle">{boardSubtitles[activeBoard]}</p>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-[var(--success)] pulse-slow"></div>
-              <span className="text-[11px] text-[var(--text-muted)]">Live</span>
+        {/* Header - hidden for team view (TeamBoard has its own) */}
+        {activeBoard !== "team" && (
+          <div className="page-header">
+            <div className="flex items-center justify-between">
+              <div>
+                <h1 className="page-title">{boardTitles[activeBoard]}</h1>
+                <p className="page-subtitle">{boardSubtitles[activeBoard]}</p>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-[var(--success)] pulse-slow"></div>
+                <span className="text-[11px] text-[var(--text-muted)]">Live</span>
+              </div>
             </div>
           </div>
-        </div>
+        )}
 
         {/* Toolbar - hidden for team and memory views (they have their own) */}
         {activeBoard !== "team" && activeBoard !== "memory" && (
