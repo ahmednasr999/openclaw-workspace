@@ -1,5 +1,4 @@
 import { NextResponse } from "next/server";
-import { sqliteDb } from "@/lib/db";
 import fs from "fs";
 import path from "path";
 
@@ -127,9 +126,12 @@ function calculateATSScore(jobKeywords: string[], cvKeywords: string[]): { score
   
   // Score calculation
   const relevanceScore = matched.length / Math.max(jobKeywords.length, 1) * 70;
-  const coverageBonus = Math.min(cvKeywords.filter(k => 
-    jobKeywords.some(jk => jk.toLowerCase() === k.toLowerCase())
-  ).length / 5 * 30;
+  const coverageBonus = Math.min(
+    cvKeywords.filter(k => 
+      jobKeywords.some(jk => jk.toLowerCase() === k.toLowerCase())
+    ).length / 5 * 30,
+    30
+  );
   
   const score = Math.min(Math.round(relevanceScore + coverageBonus), 100);
   
@@ -152,7 +154,10 @@ export async function POST(request: Request) {
     
     if (url) {
       try {
-        const fetchRes = await fetch(url, { timeout: 10000 });
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 10000);
+        const fetchRes = await fetch(url, { signal: controller.signal });
+        clearTimeout(timeoutId);
         if (fetchRes.ok) {
           const html = await fetchRes.text();
           
