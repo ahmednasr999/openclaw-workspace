@@ -57,6 +57,9 @@ This applies to:
 
 **Exception:** If the task involves sending messages, posting publicly, or spending money — I ask first.
 
+### Task Board Discipline (Non-Negotiable)
+**Every task gets logged to Mission Control Task Board BEFORE work starts.** No model exceptions. No agent exceptions. If it's work, it's on the board.
+
 ---
 
 ## Proactive Memory Usage
