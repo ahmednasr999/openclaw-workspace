@@ -1,13 +1,14 @@
 {
-  "last_updated": "2026-02-19T06:01:00Z",
+  "last_updated": "2026-02-20T06:01:00Z",
   "generated_by": "Chief of Staff (Max) - Morning Brief",
-  "date": "Thursday, February 19th, 2026",
+  "date": "Friday, February 20th, 2026",
   "time": "6:01 AM UTC",
   "pipeline": {
     "active_applications": 2,
     "interviews_today": 0,
     "interviews_this_week": 1,
     "interview_date": "2026-02-18",
+    "interview_status": "awaiting_feedback",
     "offers_pending": 0,
     "rejected_this_week": 1,
     "this_week": {
@@ -23,15 +24,17 @@
     "week_progress": "60%",
     "pending_followups": 2,
     "warm_leads": 1,
-    "discovery_calls_booked": 0
+    "discovery_calls_booked": 0,
+    "today_target": 5
   },
   "content": {
     "posts_published_this_week": 1,
-    "posts_scheduled_today": 1,
+    "posts_scheduled_today": 0,
     "drafts_ready": 2,
     "drafts_pending_review": 2,
     "engagement_rate": 4.2,
-    "best_performer": "AI PMO Transformation"
+    "best_performer": "AI PMO Transformation",
+    "yesterday_published": 0
   },
   "revenue": {
     "month": 1,
@@ -41,89 +44,113 @@
   },
   "agents_status": {
     "chief_of_staff": "active",
-    "content_agent": "pending",
-    "outreach_agent": "pending",
-    "research_agent": "pending",
+    "content_agent": "idle",
+    "outreach_agent": "idle",
+    "research_agent": "idle",
     "scheduler_agent": "active"
   },
   "yesterday_highlights": [
-    "EMR ROI post published (engagement: 45 likes, 8 comments, 3 shares)",
-    "Intelligence suite built with 10 features",
-    "12 CVs created total",
-    "Riyadh Bank opportunity pending via Lewis Mintrim",
-    "3 Notion databases created manually (Skills, Company Research, Lessons Learned)"
+    "No agent outputs recorded for Feb 19",
+    "EMR ROI post from Feb 17 performing well (45 likes, 8 comments, 3 shares)"
   ],
+  "yesterday_activity": {
+    "content": "No new content published",
+    "outreach": "No new connections sent",
+    "research": "No research outputs",
+    "applications": "No new applications"
+  },
   "priorities_today": [
-    "Review 2 content drafts for approval (Hospital CFO Investment Case, Saying No to 6-Figure Salary)",
-    "Send 5+ LinkedIn connection requests",
-    "Follow up with warm lead (Dr. Ahmed Al-Mansour - overdue from Feb 17)",
-    "Continue job applications (target: 10/week)"
+    "🔴 URGENT: Follow up on Delphi interview outcome (was Feb 18)",
+    "🔴 URGENT: Complete 5+ LinkedIn connections to hit 60% weekly target",
+    "Review 2 content drafts (Hospital CFO Investment Case, Saying No to 6-Figure Salary)",
+    "Follow up with Dr. Ahmed Al-Mansour (3 days overdue)",
+    "Continue job applications (3 applied, 7 remaining to hit 10/week target)"
   ],
   "attention_needed": [
     {
       "item": "Delphi interview follow-up",
       "status": "check_status",
       "urgency": "high",
-      "notes": "Interview was scheduled for Feb 18. Need to confirm outcome and next steps."
+      "notes": "Interview was Feb 18. Critical: need outcome to plan next steps."
     },
     {
       "item": "Dr. Ahmed Al-Mansour follow-up",
       "status": "overdue",
-      "urgency": "normal",
-      "notes": "Was due Feb 17, 3 days since connection sent. Priority: high"
+      "urgency": "high",
+      "notes": "Was due Feb 17, 3 days since connection sent."
     },
     {
       "item": "Sarah Johnson (HealthTech UAE) follow-up",
       "status": "pending",
-      "urgency": "normal",
-      "notes": "Connected, needs follow-up. Priority: high"
+      "urgency": "high",
+      "notes": "Connected, needs immediate follow-up."
     },
     {
-      "item": "2 content drafts awaiting review",
+      "item": "Content drafts awaiting review",
       "status": "pending_approval",
       "urgency": "normal",
-      "notes": "Hospital CFO Investment Case (ready), Saying No to 6-Figure Salary (draft)"
+      "notes": "2 drafts blocking publishing schedule (target: 3 posts/week)"
     }
   ],
   "bottlenecks": [
     {
-      "item": "Content drafts pending approval",
-      "impact": "Delays publishing schedule",
-      "status": "waiting_on_human"
-    },
-    {
-      "item": "LinkedIn content calendar",
-      "impact": "Only 1 post published vs 3 target",
-      "status": "behind_schedule"
+      "item": "Content production",
+      "impact": "Only 1 post published vs 3/week target (33% complete)",
+      "status": "behind_schedule",
+      "action_needed": "Review and approve 2 pending drafts"
     },
     {
       "item": "Delphi interview outcome",
       "impact": "Decision pending - can't plan next steps",
-      "status": "awaiting_response"
+      "status": "awaiting_response",
+      "action_needed": "Send follow-up email"
+    },
+    {
+      "item": "LinkedIn outreach",
+      "impact": "Need 10 more connections to hit weekly target",
+      "status": "10_behind",
+      "action_needed": "Send 5 connections today"
     }
   ],
-  "stuck_items": [],
+  "stuck_items": [
+    {
+      "item": "Riyadh Bank opportunity",
+      "status": "pending",
+      "urgency": "medium",
+      "notes": "Via Lewis Mintrim, 45K SAR - no movement since initial contact"
+    }
+  ],
   "opportunities": [
     "Riyadh Bank opportunity via Lewis Mintrim (45K SAR)",
-    "Content engagement trending up (4.2% avg engagement rate)",
-    "Strong application to AI Enablement Manager role (ATS: 78/100)",
-    "2 high-priority warm leads in pipeline"
+    "Strong AI PMO positioning gaining engagement",
+    "2 high-priority warm leads ready for conversion",
+    "ATS score 78/100 for AI Enablement Manager role"
   ],
   "metrics_summary": {
     "applications": {
       "active": 2,
       "applied_this_week": 3,
-      "target": 10
+      "target": 10,
+      "remaining": 7
     },
     "outreach": {
       "sent_this_week": 15,
       "target": 25,
-      "completion": "60%"
+      "completion": "60%",
+      "remaining": 10
     },
     "content": {
       "published_this_week": 1,
       "target": 3,
-      "completion": "33%"
+      "completion": "33%",
+      "remaining": 2
     }
-  }
+  },
+  "action_items": [
+    "1. Send Delphi interview follow-up email today",
+    "2. Send 5 LinkedIn connections",
+    "3. Review 2 content drafts",
+    "4. Follow up with Dr. Ahmed Al-Mansour",
+    "5. Apply to 2+ jobs"
+  ]
 }
