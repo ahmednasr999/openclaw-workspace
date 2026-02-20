@@ -1,104 +1,104 @@
 import { NextResponse } from "next/server";
-import { sqliteDb } from "@/lib/db";
+import Database from "better-sqlite3";
+import path from "path";
+
+const DB_PATH = path.join(process.cwd(), "mission-control.db");
+const db = new Database(DB_PATH);
+
+// Create knowledge table
+db.exec(`
+  CREATE TABLE IF NOT EXISTS knowledge (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    category TEXT NOT NULL,
+    title TEXT NOT NULL,
+    content TEXT NOT NULL,
+    tags TEXT,
+    source TEXT,
+    author TEXT DEFAULT "Agent",
+    createdAt TEXT NOT NULL,
+    updatedAt TEXT
+  );
+`);
 
 export const dynamic = "force-dynamic";
 
-const CATEGORIES = ["company", "content", "interview", "market", "outreach"];
-
+// Query knowledge base
 export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
-    const category = searchParams.get("category") || undefined;
-    const q = searchParams.get("q") || undefined;
-    const limit = parseInt(searchParams.get("limit") || "50", 10);
+    const query = searchParams.get("q") || "";
+    const category = searchParams.get("category");
 
-    const items = sqliteDb.getAllKnowledge({ category, q, limit });
+    let sql = "SELECT * FROM knowledge WHERE 1=1";
+    const params: string[] = [];
 
-    // Parse tags JSON string back to array
-    const parsed = items.map((i: any) => ({
-      ...i,
-      tags: i.tags ? JSON.parse(i.tags) : [],
-    }));
+    if (category) {
+      sql += " AND category = ?";
+      params.push(category);
+    }
 
-    return NextResponse.json(parsed);
+    if (query) {
+      sql += " AND (title LIKE ? OR content LIKE ? OR tags LIKE ?)";
+      const searchTerm = `%${query}%`;
+      params.push(searchTerm, searchTerm, searchTerm);
+    }
+
+    sql += " ORDER BY createdAt DESC LIMIT 50";
+
+    const results = db.prepare(sql).all(...params);
+
+    return NextResponse.json({
+      query,
+      category,
+      resultCount: results.length,
+      knowledge: results.map((r: any) => ({
+        ...r,
+        tags: r.tags ? JSON.parse(r.tags) : []
+      }))
+    });
   } catch (error) {
-    console.error("Knowledge GET error:", error);
-    return NextResponse.json({ error: "Failed to fetch knowledge" }, { status: 500 });
+    console.error("Knowledge query error:", error);
+    return NextResponse.json({ error: "Failed to query knowledge" }, { status: 500 });
   }
 }
 
+// Add to knowledge base
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-
-    const {
-      category,
-      title,
-      content,
-      tags,
-      agentId,
-      taskId,
-      sourceType = "agent",
-      author = "System",
-    } = body;
+    const { category, title, content, tags, source, author } = body;
 
     if (!category || !title || !content) {
-      return NextResponse.json({ error: "category, title, and content are required" }, { status: 400 });
+      return NextResponse.json({ error: "category, title, and content required" }, { status: 400 });
     }
 
-    if (!CATEGORIES.includes(category)) {
-      return NextResponse.json({ error: `Invalid category. Must be: ${CATEGORIES.join(", ")}` }, { status: 400 });
-    }
-
-    const id = sqliteDb.addKnowledge({
+    const now = new Date().toISOString();
+    const result = db.prepare(`
+      INSERT INTO knowledge (category, title, content, tags, source, author, createdAt, updatedAt)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+    `).run(
       category,
       title,
       content,
-      tags: tags ? JSON.stringify(tags) : undefined,
-      agentId,
-      taskId: taskId ? parseInt(String(taskId), 10) : undefined,
-      sourceType,
-      author,
+      JSON.stringify(tags || []),
+      source || "",
+      author || "Agent",
+      now,
+      now
+    );
+
+    const entry = db.prepare("SELECT * FROM knowledge WHERE id = ?").get(result.lastInsertRowid);
+
+    return NextResponse.json({
+      success: true,
+      entry: {
+        ...entry,
+        tags: entry.tags ? JSON.parse(entry.tags) : []
+      },
+      message: "Knowledge added"
     });
-
-    return NextResponse.json({ id, success: true });
   } catch (error) {
-    console.error("Knowledge POST error:", error);
-    return NextResponse.json({ error: "Failed to create knowledge entry" }, { status: 500 });
-  }
-}
-
-export async function PATCH(request: Request) {
-  try {
-    const { searchParams } = new URL(request.url);
-    const id = parseInt(searchParams.get("id") || "");
-    const body = await request.json();
-
-    if (!id) {
-      return NextResponse.json({ error: "id is required" }, { status: 400 });
-    }
-
-    sqliteDb.updateKnowledge(id, body);
-    return NextResponse.json({ success: true });
-  } catch (error) {
-    console.error("Knowledge PATCH error:", error);
-    return NextResponse.json({ error: "Failed to update knowledge" }, { status: 500 });
-  }
-}
-
-export async function DELETE(request: Request) {
-  try {
-    const { searchParams } = new URL(request.url);
-    const id = parseInt(searchParams.get("id") || "");
-
-    if (!id) {
-      return NextResponse.json({ error: "id is required" }, { status: 400 });
-    }
-
-    sqliteDb.deleteKnowledge(id);
-    return NextResponse.json({ success: true });
-  } catch (error) {
-    console.error("Knowledge DELETE error:", error);
-    return NextResponse.json({ error: "Failed to delete knowledge" }, { status: 500 });
+    console.error("Knowledge add error:", error);
+    return NextResponse.json({ error: "Failed to add knowledge" }, { status: 500 });
   }
 }
