@@ -59,6 +59,7 @@ export default function Home() {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [showForm, setShowForm] = useState(false);
   const [showContentForm, setShowContentForm] = useState(false);
   const [editingTask, setEditingTask] = useState<Task | null>(null);
