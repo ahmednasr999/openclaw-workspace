@@ -143,6 +143,9 @@ Rule: Match model to task complexity. Never use Opus for what Haiku can do.
   Fix: Mandatory flush protocol added to SOUL.md and AGENTS.md
 - 2026-02-21: active-tasks.md went 4 days stale — missed Delphi deadline
   Fix: Staleness alerts added to AGENTS.md (48hr threshold)
+- 2026-02-21: Full system overhaul — rebuilt all core files, cleaned models, created agent configs, set up GitHub backup, added sub-agent timeout (300s), configured auto-injection of active-tasks + pending-opus + GOALS
+- 2026-02-21: airllm.md polluted every memory_search query — dense keyword files poison the small embedding model
+  Fix: Deleted file, re-indexed, added Memory Hygiene Rules to AGENTS.md
 - 2026-02-17: pending-opus-topics.md items lost in session reset
   Fix: pending-opus-topics.md now mandatory in startup sequence
 
@@ -159,6 +162,8 @@ Rule: Match model to task complexity. Never use Opus for what Haiku can do.
 - Discord community research (Feb 21, 2026)
 - Multiple CVs created: IT Section Head, IT Director, Strategy Consultant
 - OpenClaw system architecture review (Feb 21, 2026)
+- Full system overhaul: all core files rebuilt, models cleaned, backup to GitHub, sub-agent architecture documented (Feb 21, 2026)
+- Delphi CV created: ATS 91% (Feb 21, 2026)
 
 ---
 

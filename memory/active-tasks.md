@@ -46,4 +46,5 @@
 - Create GOALS.md (strategic objectives tracker)
 - LinkedIn content calendar execution
 - Mission Control Task Board integration
-- Remove deprecated models from models.json (M2.1, M2.1-highspeed)
+- Remove deprecated models from models.json (M2.1, M2.1-highspeed) ✅ Done
+- Add sub-agent output validation: after every completion, verify output file exists and is non-empty before announcing done. Log to lessons-learned.md if empty.
