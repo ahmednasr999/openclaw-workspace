@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Search Dashboard</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      min-height: 100vh;
+      padding: 20px;
+      color: #fff;
+    }
+    .dashboard {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    h1 {
+      color: #00d9ff;
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+    .metric {
+      background: #0f3460;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+    }
+    .metric-value {
+      font-size: 36px;
+      font-weight: bold;
+    }
+    .metric-label {
+      color: #a0a0a0;
+      font-size: 12px;
+      margin-top: 5px;
+    }
+    .metric:nth-child(1) .metric-value { color: #e94560; }
+    .metric:nth-child(2) .metric-value { color: #ffc107; }
+    .metric:nth-child(3) .metric-value { color: #00ff88; }
+    .metric:nth-child(4) .metric-value { color: #ff6b6b; }
+    
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+    .card {
+      background: #0f3460;
+      padding: 20px;
+      border-radius: 12px;
+    }
+    .card h3 {
+      color: #00d9ff;
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+    .item {
+      margin: 8px 0;
+      padding: 10px;
+      background: #1a1a2e;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .status-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    .status-interview { background: #00ff88; }
+    .status-review { background: #00d9ff; }
+    .status-pending { background: #ffc107; }
+    
+    .crm-item {
+      display: flex;
+      justify-content: space-between;
+      margin: 8px 0;
+      padding: 10px;
+      background: #1a1a2e;
+      border-radius: 8px;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 20px;
+      color: #666;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard">
+    <h1>🎯 Job Search Dashboard</h1>
+    
+    <div class="metrics">
+      <div class="metric">
+        <div class="metric-value">8</div>
+        <div class="metric-label">Total Applications</div>
+      </div>
+      <div class="metric">
+        <div class="metric-value">2</div>
+        <div class="metric-label">Responses</div>
+      </div>
+      <div class="metric">
+        <div class="metric-value">1</div>
+        <div class="metric-label">Interviews</div>
+      </div>
+      <div class="metric">
+        <div class="metric-value">3</div>
+        <div class="metric-label">Pending</div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3>📋 Active Pipeline</h3>
+        <div class="item">
+          <span class="status-dot status-interview"></span>
+          <span>Delphi Corp — <strong>Interview Today!</strong></span>
+        </div>
+        <div class="item">
+          <span class="status-dot status-review"></span>
+          <span>Nabat — In Review</span>
+        </div>
+        <div class="item">
+          <span class="status-dot status-pending"></span>
+          <span>Equinix — Applied</span>
+        </div>
+      </div>
+      
+      <div class="card">
+        <h3>👥 CRM Health</h3>
+        <div class="crm-item">
+          <span>🟢 Active contacts</span>
+          <span>142</span>
+        </div>
+        <div class="crm-item">
+          <span>🟡 Need follow-up</span>
+          <span>45</span>
+        </div>
+        <div class="crm-item">
+          <span>🔴 Recruiters</span>
+          <span>24</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer">
+      Last updated: <span id="time"></span>
+    </div>
+  </div>
+  
+  <script>
+    document.getElementById('time').textContent = new Date().toLocaleString();
+  </script>
+</body>
+</html>

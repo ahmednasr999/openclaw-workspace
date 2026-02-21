@@ -1,0 +1,56 @@
+company,email,website,country,category
+Cerner Gulf,pmo.gulf@cerner.com,cerner.com/gulf,UAE,HealthTech
+Cerner Gulf,operations.gulf@cerner.com,cerner.com/gulf,UAE,HealthTech
+Cerner Gulf,info@cerner.com,cerner.com/gulf,UAE,HealthTech
+Philips Healthcare UAE,uae.healthcare@philips.com,philips.ae,UAE,MedTech
+Philips Healthcare UAE,pmo.me@philips.com,philips.ae,UAE,MedTech
+Philips Healthcare UAE,info.ae@philips.com,philips.ae,UAE,MedTech
+GE Healthcare UAE,gulf@gehealthcare.com,gehealthcare.ae,UAE,MedTech
+GE Healthcare UAE,pmo.mea@ge.com,gehealthcare.ae,UAE,MedTech
+GE Healthcare UAE,uae@ge.com,gehealthcare.ae,UAE,MedTech
+Siemens Healthineers UAE,healthcare.ae@siemens.com,siemens-healthineers.ae,UAE,MedTech
+Siemens Healthineers UAE,pmo.mea@siemens-healthineers.com,siemens-healthineers.ae,UAE,MedTech
+Medtronic UAE,gulf@medtronic.com,medtronic.com,UAE,MedTech
+Medtronic UAE,mea.pmo@medtronic.com,medtronic.com,UAE,MedTech
+Medtronic UAE,uae@medtronic.com,medtronic.com,UAE,MedTech
+Sihaty,hello@sihaty.com,sihaty.com,UAE,HealthTech
+Sihaty,pmo@sihaty.com,sihaty.com,UAE,HealthTech
+Sihaty,operations@sihaty.com,sihaty.com,UAE,HealthTech
+Sihaty,contact@sihaty.com,sihaty.com,UAE,HealthTech
+Bayzat,hello@bayzat.com,bayzat.com,UAE,HealthTech
+Bayzat,pmo@bayzat.com,bayzat.com,UAE,HealthTech
+Bayzat,operations@bayzat.com,bayzat.com,UAE,HealthTech
+Bayzat,info@bayzat.com,bayzat.com,UAE,HealthTech
+Vezeeta,hello@vezeeta.com,vezeeta.com,Egypt,HealthTech
+Vezeeta,pmo@vezeeta.com,vezeeta.com,Egypt,HealthTech
+Vezeeta,operations@vezeeta.com,vezeeta.com,Egypt,HealthTech
+OKADOC,hello@okadoc.com,okadoc.com,UAE,Telemedicine
+OKADOC,pmo@okadoc.com,okadoc.com,UAE,Telemedicine
+OKADOC,contact@okadoc.com,okadoc.com,UAE,Telemedicine
+Health at Hand,hello@healthatfand.com,healthatfand.com,UAE,Telemedicine
+Health at Hand,pmo@healthatfand.com,healthatfand.com,UAE,Telemedicine
+Health at Hand,info@healthatfand.com,healthatfand.com,UAE,Telemedicine
+Medicity,info@medicity.ae,medicity.ae,UAE,HealthTech
+Medicity,hello@medicity.ae,medicity.ae,UAE,HealthTech
+Medicity,pmo@medicity.ae,medicity.ae,UAE,HealthTech
+Yodawy,info@yodawy.com,yodawy.com,Egypt,PharmaTech
+Yodawy,pmo@yodawy.com,yodawy.com,Egypt,PharmaTech
+Yodawy,contact@yodawy.com,yodawy.com,Egypt,PharmaTech
+Dr. Sulaiman Al Habib,info@habibmedical.com,habibmedical.com,KSA,Hospital
+Dr. Sulaiman Al Habib,pmo@habibmedical.com,habibmedical.com,KSA,Hospital
+Dr. Sulaiman Al Habib,contact@habibmedical.com,habibmedical.com,KSA,Hospital
+King Faisal Specialist Hospital,info@kfsh.edu,kfsh.edu,KSA,Hospital
+King Faisal Specialist Hospital,pmo@kfsh.edu,kfsh.edu,KSA,Hospital
+King Faisal Specialist Hospital,contact@kfsh.edu,kfsh.edu,KSA,Hospital
+Saudi German Hospital,info@sgh.com,sgh.com,KSA,Hospital
+Saudi German Hospital,pmo@sgh.com,sgh.com,KSA,Hospital
+Saudi German Hospital,contact@sgh.com,sgh.com,KSA,Hospital
+Telemedica,info@telemedica.qa,telemedica.qa,Qatar,Telemedicine
+Telemedica,hello@telemedica.qa,telemedica.qa,Qatar,Telemedicine
+Telemedica,pmo@telemedica.qa,telemedica.qa,Qatar,Telemedicine
+Sidra Medicine,info@sidra.org,sidra.org,Qatar,Hospital
+Sidra Medicine,pmo@sidra.org,sidra.org,Qatar,Hospital
+Sidra Medicine,contact@sidra.org,sidra.org,Qatar,Hospital
+Sehat,hello@sehat.org,sehat.org,KSA,HealthTech
+Sehat,pmo@sehat.org,sehat.org,KSA,HealthTech
+Sehat,info@sehat.org,sehat.org,KSA,HealthTech
