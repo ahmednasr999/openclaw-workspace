@@ -1,0 +1,17 @@
+{
+  "token": {
+    "access_token": "ya29.a0ATkoCc5El5GNmhIAGZwKy3lX5uauBpW8y2VN1n-cHOEsWo2IwM_E1nVp9FdYGhFxtAkYy_qM8WEw0ZfmvvXxBcfs2loSZCu4rDo5jnCuID2JhVODZZY9iVavLfsomchYlxL2AwQK5V00WnCNv9Bcx9WmBU8nm1ap7A6MSifhERZkmgI_wnsnTmPGQef6BxMI1W-F7rkaCgYKAXISARYSFQHGX2Mi4QBtK88Yy0vryA6JQKIunw0206",
+    "expires_in": 3599,
+    "refresh_token": "1//037X-gh4f79wmCgYIARAAGAMSNwF-L9Ir1muYueCiwDTnGN0oysMrmqxawj4V_Fs8WUs0KaoWQiCoYFK-Vhl4AoC6Q4D-_mDPdiM",
+    "scope": "https://www.googleapis.com/auth/calendar",
+    "token_type": "Bearer"
+  },
+  "watch": {
+    "kind": "api#channel",
+    "id": "aa69b60f-dad7-415c-bd41-2b02c12a7c86",
+    "resourceId": "oAOTzeil8Z-3dqVNcbSKJFJsOwY",
+    "resourceUri": "https://www.googleapis.com/calendar/v3/calendars/primary/events?alt=json",
+    "expiration": "1772237481000"
+  },
+  "webhook_url": "https://srv1352768.tail945bbc.ts.net:8790/calendar-webhook"
+}

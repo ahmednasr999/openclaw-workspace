@@ -1,0 +1,13 @@
+.github/
+mission-control/node_modules/
+mission-control/.next/
+node_modules/
+skills/*/node_modules/
+*.pyc
+__pycache__/
+.intelligence_data/
+mission-control/
+skills/clawback/
+skills/content-claw/
+skills/visual-explainer/
+skills/ai-research-scraper/

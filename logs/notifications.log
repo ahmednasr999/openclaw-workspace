@@ -1,0 +1,4 @@
+  File "/root/.openclaw/workspace/notify.py", line 60
+    inline_keyboard.append([{"text": btn["text"], "callback_data": btn["data"]}]
+                          ^
+SyntaxError: '(' was never closed
