@@ -43,7 +43,13 @@
 
 ## 📋 Backlog
 
-- Create GOALS.md (strategic objectives tracker)
+- Create GOALS.md (strategic objectives tracker) ✅ Done
+
+### Future Projects
+- **Mission Control rebuild** — Rebuild as read-only visual dashboard fed by OpenClaw data
+  - Scope: when contacts and calendar tables have real data
+  - Current state: 33 stale tasks, empty contacts/calendar, has CV history and content drafts
+  - Exported: cv-history.md, linkedin-drafts/mission-control-drafts.md
 - LinkedIn content calendar execution
 - Mission Control Task Board integration
 - Remove deprecated models from models.json (M2.1, M2.1-highspeed) ✅ Done

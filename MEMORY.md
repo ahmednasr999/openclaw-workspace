@@ -146,6 +146,11 @@ Rule: Match model to task complexity. Never use Opus for what Haiku can do.
 - 2026-02-21: Full system overhaul — rebuilt all core files, cleaned models, created agent configs, set up GitHub backup, added sub-agent timeout (300s), configured auto-injection of active-tasks + pending-opus + GOALS
 - 2026-02-21: airllm.md polluted every memory_search query — dense keyword files poison the small embedding model
   Fix: Deleted file, re-indexed, added Memory Hygiene Rules to AGENTS.md
+- 2026-02-21: Sub-agents don't auto-send deliverables — had to be asked
+  Fix: Delegation protocol updated — send PDF immediately on completion with link + ATS score
+- 2026-02-21: PDF naming now standard: "Ahmed Nasr - [Role] - [Company].pdf"
+- 2026-02-21: Ahmed prefers tables over bullets for comparisons
+- 2026-02-21: Silence rule established — no-action items = no notification to Ahmed
 - 2026-02-17: pending-opus-topics.md items lost in session reset
   Fix: pending-opus-topics.md now mandatory in startup sequence
 
