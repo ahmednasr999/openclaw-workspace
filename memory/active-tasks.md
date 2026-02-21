@@ -5,14 +5,14 @@
 ## 🔴 Urgent
 
 ### Delphi Consulting Interview Prep
-- **Status:** Needs Opus consultation
-- **Interview:** Feb 23, 2026 at 5:00pm IST (tomorrow!)
+- **Status:** 🔴 TOMORROW — interview prep needed
+- **Interview:** Feb 23, 2026 at 5:00pm IST
 - **Position:** Senior AI Project Manager (UAE, On-Site)
 - **Interviewer:** Kritika Chhabra
-- **CV Match:** 95%
+- **CV Match:** 91% ATS
 - **Salary target:** 50,000-55,000 AED/month
-- **Pending:** Interview strategy, salary negotiation approach, talking points
-- **Source:** `memory/pending-opus-topics.md`
+- **Protocol:** memory/interview-prep-protocol.md
+- **Action:** Walk through protocol with Opus tomorrow morning
 
 ## 🟡 In Progress
 
@@ -45,11 +45,13 @@
 
 - Create GOALS.md (strategic objectives tracker) ✅ Done
 
-### Future Projects
-- **Mission Control rebuild** — Rebuild as read-only visual dashboard fed by OpenClaw data
-  - Scope: when contacts and calendar tables have real data
-  - Current state: 33 stale tasks, empty contacts/calendar, has CV history and content drafts
-  - Exported: cv-history.md, linkedin-drafts/mission-control-drafts.md
+### Mission Control Phase 2 — IN PROGRESS
+- **Status:** Sync engine built ✅ — UI phases queued
+- **Spec:** Full 8-page dashboard — dark executive theme
+- **Sync engine:** lib/sync/ — 6 files created (parser, writer, watcher, schema, orchestrator)
+- **Next:** Layout shell → Command Center → HR+OPS → Marketing+Intelligence+Team+Lab+Settings
+- **Model:** Sonnet 4.6 for each phase
+- **Constraint:** Read-only — never writes to OpenClaw files
 - LinkedIn content calendar execution
 - Mission Control Task Board integration
 - Remove deprecated models from models.json (M2.1, M2.1-highspeed) ✅ Done
