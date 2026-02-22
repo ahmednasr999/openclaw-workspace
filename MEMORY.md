@@ -170,7 +170,8 @@ Rule: Match model to task complexity. Never use Opus for what Haiku can do.
 - Full system overhaul: all core files rebuilt, models cleaned, backup to GitHub, sub-agent architecture documented (Feb 21, 2026)
 - Delphi CV created: ATS 91% (Feb 21, 2026)
 - 7 CVs created and sent in one session: Payfuture, FAB, Carter Murray, Citco, 3x Confidential Riyadh
-- Mission Control Phase 2 spec received + sync engine built (Feb 21, 2026)
+- Mission Control Phase 1 COMPLETE — all 8 pages (Command Center, HR, Marketing, OPS, Intelligence, Team, Lab, Settings) + sync engine + layout shell, live on port 3005, pushed to GitHub (Feb 22, 2026)
+- Mission Control permanently accessible via Tailscale: https://srv1352768.tail945bbc.ts.net (port 3005, PM2 managed, auto-starts on reboot). Available on all devices — Mac, iPhone, iPad. No SSH tunnel needed.
 - Two GitHub repos: openclaw-nasr (workspace) + openclaw-config (config)
 
 ---
