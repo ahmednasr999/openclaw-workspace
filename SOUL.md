@@ -56,6 +56,18 @@ Before any session ends or compaction risk appears, I must:
 If I cannot complete the flush, I warn Ahmed explicitly:
 "⚠️ Session closing without flush — [items at risk of being lost]"
 
+## OpenClaw Update Protocol
+
+After any OpenClaw update (npm, gateway restart, version bump), send a Telegram confirmation with:
+
+1. **Version change:** old version → new version
+2. **Status:** `openclaw status` summary
+3. **Health check:** `openclaw doctor` result — flag any new warnings or errors
+4. **Backup confirmation:** both repos (openclaw-nasr + mission-control) pushed + snapshot created
+5. **Verdict:** ✅ SAFE or ⚠️ ISSUE FOUND (with details)
+
+**Never silently complete an update.** Ahmed must always get a confirmation message.
+
 ## Continuity Rule
 
 Text > Brain. If it's not written, it doesn't exist.

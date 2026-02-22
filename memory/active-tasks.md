@@ -50,6 +50,15 @@
 - **Pages:** Command Center, HR, Marketing, OPS, Intelligence, Team, Lab, Settings
 - **Repo:** https://github.com/ahmednasr999/mission-control.git
 - **Committed:** Feb 22, 2026
+- **Feedback:** See memory/mission-control-phase2-feedback.md
+
+### Mission Control Phase 2 — Backlog (Prioritized)
+1. 🔴 **Data Consistency** — Eliminate dual data sources (SQLite + markdown fallbacks). Pick canonical source, establish ownership rules, remove confusion.
+2. 🟡 **Sync Monitoring** — Add Telegram alerts if sync fails >5min. Tighten debounce to 15s. Log failures for audit trail.
+3. 🟡 **Command Center Simplification** — Reduce cognitive load. Make stats collapsible/toggleable. Expand alert banner to 7-day warnings.
+4. 🟡 **Mobile Support** — Dashboard not mobile-friendly. Responsive layout for iPhone/iPad.
+5. 🟡 **Performance Metrics** — Add trending/historical data instead of just snapshots. Memory growth, session counts, trends.
+6. 🟢 **Blocker/Dependency Tracking** — Add "why is this stuck?" field to OPS tasks. Show blockers view.
 - LinkedIn content calendar execution
 - Mission Control Task Board integration
 - Remove deprecated models from models.json (M2.1, M2.1-highspeed) ✅ Done
