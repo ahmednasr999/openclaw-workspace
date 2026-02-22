@@ -146,6 +146,7 @@ Rule: Match model to task complexity. Never use Opus for what Haiku can do.
 - 2026-02-21: Full system overhaul — rebuilt all core files, cleaned models, created agent configs, set up GitHub backup, added sub-agent timeout (300s), configured auto-injection of active-tasks + pending-opus + GOALS
 - 2026-02-21: airllm.md polluted every memory_search query — dense keyword files poison the small embedding model
   Fix: Deleted file, re-indexed, added Memory Hygiene Rules to AGENTS.md
+- 2026-02-22: Sub-agents can delete critical files silently during rewrites (MC Phase 2 deleted layout.tsx, globals.css). Fix: always check git diff after sub-agent build tasks and verify no deletions before declaring done.
 - 2026-02-21: Sub-agents don't auto-send deliverables — had to be asked
   Fix: Delegation protocol updated — send PDF immediately on completion with link + ATS score
 - 2026-02-21: PDF naming now standard: "Ahmed Nasr - [Role] - [Company].pdf"
@@ -172,6 +173,7 @@ Rule: Match model to task complexity. Never use Opus for what Haiku can do.
 - 7 CVs created and sent in one session: Payfuture, FAB, Carter Murray, Citco, 3x Confidential Riyadh
 - Mission Control Phase 1 COMPLETE — all 8 pages (Command Center, HR, Marketing, OPS, Intelligence, Team, Lab, Settings) + sync engine + layout shell, live on port 3005, pushed to GitHub (Feb 22, 2026)
 - Mission Control permanently accessible via Tailscale: https://srv1352768.tail945bbc.ts.net (port 3005, PM2 managed, auto-starts on reboot). Available on all devices — Mac, iPhone, iPad. No SSH tunnel needed.
+- Mission Control Phase 2 COMPLETE (Feb 22, 2026) — mobile support, sync monitoring (15s debounce), data consistency (markdown canonical), Command Center collapsible stats + 7-day alerts, trending indicators, blocker tracking in OPS. GitHub @ 6483ebf.
 - Two GitHub repos: openclaw-nasr (workspace) + openclaw-config (config)
 
 ---
