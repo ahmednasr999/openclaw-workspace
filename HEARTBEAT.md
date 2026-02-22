@@ -82,6 +82,26 @@ Check session_status for daily spend.
 
 ---
 
+## Response Format
+
+**When nothing needs action:** Reply exactly `HEARTBEAT_OK` — nothing else. No checks listed, no reasoning, no narration.
+
+**When something needs action:** Use this format only:
+
+```
+⏰ HEARTBEAT — [HH:MM Cairo]
+
+🔴 [Item]: [one line]
+🟡 [Item]: [one line]
+💸 [Item]: [one line]
+
+Action needed: [what to do]
+```
+
+Never show the checking process. Never list what was checked and cleared. Output only what matters.
+
+---
+
 ## Silence Rules
 
 Never message for:
