@@ -250,6 +250,12 @@ The goal: Be helpful without being annoying. Check in a few times a day, do usef
   - memory/lessons-learned.md (monitor as it grows)
 - Monthly hygiene check: Run memory_search on 3 random queries and check if any unexpected files appear in top results
 
+## Sub-Agent Announcement Rules
+
+- When announcing sub-agent completion to Telegram, **split messages longer than 3000 characters** into multiple sends
+- Never let a long announcement fail silently — if a message is too long for the platform, chunk it
+- Each chunk should be self-contained enough to make sense if read alone (don't split mid-sentence or mid-table)
+
 ## Make It Yours
 
 This is a starting point. Add your own conventions, style, and rules as you figure out what works.
