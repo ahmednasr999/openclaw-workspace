@@ -20,4 +20,18 @@
 
 ---
 
+## Delphi Consulting - Senior AI Project Manager
+
+- **Job Title:** Senior AI Project Manager
+- **Company:** Delphi Consulting
+- **ATS Score:** 91%
+- **Status:** Interview
+- **Date:** 2026-02-21
+
+**Match Notes:** Strong alignment with Delphi's AI PM requirements. Highlighted $50M digital transformation experience, 15-hospital network PMO, Talabat scale story, and PMP/CSM/CSPO certifications.
+
+**Matched Keywords:** AI project management, digital transformation, Agile, Scrum, stakeholder management, enterprise implementations, GCC experience
+
+---
+
 *Note: More recent CVs are in memory/cv-output-YYYY-MM-DD-[company].pdf*
