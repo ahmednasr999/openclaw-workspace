@@ -90,21 +90,18 @@ Rule: Sub-agents write to output files only. NASR merges into shared memory. Nev
 
 ## Model Registry — Clean Lineup
 
-*Deprecated models removed: M2.1 (all 3 instances), M2.1-highspeed, Sonnet 4*
+*MiniMax pricing updated Feb 2026 based on Ahmed's account*
 
 | Priority | Model | Alias | Cost | Context | Best For |
 |----------|-------|-------|------|---------|----------|
-| 1st | MiniMax M2.5 | minimax-m2.5 | Free | 200K | Daily driver — zero cost tasks |
-| 2nd | Kimi K2.5 | kimi | Free | 256K | Long context, free alternative |
+| 1st | MiniMax M2.5-highspeed | minimax-m2.5 | $49/mo (300 prompts/5hrs) | 200K | Daily driver — flat rate, ~100 TPS |
+| 2nd | Kimi K2.5 | kimi | $0.10/$0.60/$3.00 per 1M | 256K | Long context, cheap caching |
 | 3rd | Claude Haiku 4.5 | haiku | $1/$5 per 1M | 200K | Fast, cheap, vision capable |
 | 4th | Claude Sonnet 4.6 | sonnet46 | $3/$15 per 1M | 200K | Mid-tier reasoning, drafting |
 | 5th | Claude Opus 4.6 | opus46 | $5/$25 per 1M | 200K | Heavy strategy, deep reasoning |
 
-Removed from registry:
-- MiniMax M2.1 — duplicated 3x, superseded by M2.5
-- MiniMax M2.1 Highspeed — redundant
-- Claude Sonnet 4 — superseded by Sonnet 4.6 at same price
-- Claude Opus 4.5 — superseded by Opus 4.6 at 3x lower cost
+*Kimi K2.5: $0.10 input (cache hit) / $0.60 input (cache miss) / $3.00 output per 1M tokens*
+*MiniMax account: Coding Plan Plus — M2.5-highspeed (~100 TPS, 3x faster than standard)*
 
 ---
 
@@ -115,18 +112,18 @@ Removed from registry:
 | Interview prep, deep strategy, system architecture | Opus 4.6 | opus46 | Best reasoning at lowest Opus cost |
 | CV tailoring, content drafting, analysis | Sonnet 4.6 | sonnet46 | Balanced cost and quality |
 | Quick formatting, lookups, simple transforms | Haiku 4.5 | haiku | Cheapest paid option, vision capable |
-| Bulk processing, repetitive tasks, first drafts | MiniMax M2.5 | minimax-m2.5 | Free — use aggressively |
+| Bulk processing, repetitive tasks, first drafts | MiniMax M2.5-highspeed | minimax-m2.5 | Flat rate $49/mo, ~100 TPS |
 | Long document analysis (256K+ context needed) | Kimi K2.5 | kimi | Largest context window, free |
 
 Cost discipline rules:
-- Default to MiniMax M2.5 for anything that doesn't need Claude quality
+- Default to MiniMax M2.5-highspeed for anything that doesn't need Claude quality
 - Use Kimi K2.5 when context exceeds 200K or as free Sonnet alternative
 - Never use Opus 4.6 for tasks Sonnet 4.6 can handle
 - Never use Sonnet 4.6 for tasks Haiku can handle
-- Never use paid models for tasks free models can handle
+- Never use paid models for tasks MiniMax can handle
 
 Daily spend alert threshold: $5.00
-If exceeded → NASR alerts Ahmed and switches lighter tasks to free models.
+If exceeded → NASR alerts Ahmed and switches lighter tasks to MiniMax.
 
 ---
 
