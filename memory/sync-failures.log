@@ -52,3 +52,21 @@
 [22/02/2026, 19:58:28 CAI] syncFile error — job-application-tracker.md: table job_pipeline has no column named applied_date
 [22/02/2026, 20:02:35 CAI] syncFile error — GOALS.md: table job_pipeline has no column named applied_date
 [22/02/2026, 20:02:35 CAI] syncFile error — job-application-tracker.md: table job_pipeline has no column named applied_date
+[23/02/2026, 01:17:19 CAI] syncFile error — GOALS.md: table job_pipeline has no column named applied_date
+[23/02/2026, 01:17:19 CAI] syncFile error — job-application-tracker.md: table job_pipeline has no column named applied_date
+[23/02/2026, 01:22:19 CAI] syncFile error — GOALS.md: table job_pipeline has no column named applied_date
+[23/02/2026, 01:22:19 CAI] syncFile error — job-application-tracker.md: table job_pipeline has no column named applied_date
+[23/02/2026, 01:27:19 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[23/02/2026, 01:27:24 CAI] syncFile error — GOALS.md: table job_pipeline has no column named applied_date
+[23/02/2026, 01:27:24 CAI] syncFile error — job-application-tracker.md: table job_pipeline has no column named applied_date
+[23/02/2026, 01:32:19 CAI] syncFile error — GOALS.md: table job_pipeline has no column named applied_date
+[23/02/2026, 01:32:19 CAI] syncFile error — job-application-tracker.md: table job_pipeline has no column named applied_date
+[23/02/2026, 01:35:04 CAI] syncFile error — GOALS.md: table job_pipeline has no column named applied_date
+[23/02/2026, 01:35:04 CAI] syncFile error — job-application-tracker.md: table job_pipeline has no column named applied_date
+[23/02/2026, 01:37:29 CAI] syncFile error — GOALS.md: table job_pipeline has no column named applied_date
+[23/02/2026, 01:37:29 CAI] syncFile error — job-application-tracker.md: table job_pipeline has no column named applied_date
+[23/02/2026, 01:37:52 CAI] syncFile error — GOALS.md: table job_pipeline has no column named applied_date
+[23/02/2026, 01:37:52 CAI] syncFile error — job-application-tracker.md: table job_pipeline has no column named applied_date
+[23/02/2026, 01:47:32 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[23/02/2026, 02:01:29 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[23/02/2026, 02:14:22 CAI] Sync stale — last successful sync was 5 minute(s) ago
