@@ -140,12 +140,12 @@ When spawning a sub-agent task, always:
 
 ### Recommended Model per Agent Role
 
-| Agent | Default Model | Escalate To |
-|-------|--------------|-------------|
-| CV Optimizer | sonnet46 | opus46 for senior roles |
-| Job Hunter | minimax-m2.5 | haiku for screening |
-| Researcher | kimi (long context) | sonnet46 for synthesis |
-| Content Creator | sonnet46 | minimax-m2.5 for drafts |
+| Agent | Folder | Default Model | Escalate To |
+|-------|--------|--------------|-------------|
+| CV Optimizer | cv-optimizer | sonnet46 | opus46 for senior roles |
+| Job Hunter | job-hunter | minimax-m2.5 | haiku for screening |
+| Researcher | researcher | kimi (long context) | sonnet46 for synthesis |
+| Content Creator | content-creator | sonnet46 | minimax-m2.5 for drafts |
 
 ---
 

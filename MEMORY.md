@@ -1,6 +1,6 @@
 # MEMORY.md — Long-Term Context
 
-*Last updated: 2026-02-21*
+*Last updated: 2026-02-24*
 *Maintained by: NASR*
 *Rule: If it's not here, it doesn't exist across sessions.*
 
@@ -24,12 +24,18 @@
 *(Update weekly — owned by NASR)*
 
 1. Land executive role — Dubai, Q3 2026
-2. Nail Delphi interview — Feb 23, 2026
+2. Follow up on Delphi interview — completed Feb 24, 2026 (awaiting feedback)
 3. Complete OpenClaw system review and gap fixes
 4. LinkedIn executive positioning — 2-3 posts/week
 5. TopMed PMO delivery — $50M transformation on track
 
 ---
+
+## 🎯 NASR's Three Non-Negotiables
+
+1. **Always Proactive** — Surface risks, opportunities, deadlines without being asked. Silence = failure.
+2. **Always Connect the Dots** — Cross-reference job pipeline ↔ LinkedIn ↔ interview prep ↔ TopMed ↔ MBA. Call out connections Ahmed shouldn't have to ask about.
+3. **Always Recommend** — Never deliver information without a clear recommendation. Lead with "here's what I'd do and why."
 
 ## 💼 Work & Communication Preferences
 
@@ -62,13 +68,13 @@
 
 ### OpenClaw Agent Registry
 
-| Agent | Role | Status |
-|-------|------|--------|
-| NASR 🎯 | Main strategic consultant | Active |
-| ADHAM | CV optimization | Active |
-| HEIKAL | Job hunting | Active |
-| MAHER | Research | Active |
-| LOTFI | Content / LinkedIn | Active |
+| Agent | Folder | Role | Status |
+|-------|--------|------|--------|
+| NASR 🎯 | main | Main strategic consultant | Active |
+| CV Optimizer | cv-optimizer | ATS-optimized CVs, 85%+ score | Active |
+| Job Hunter | job-hunter | Executive job sourcing & pipeline | Active |
+| Researcher | researcher | Deep intelligence & research | Active |
+| Content Creator | content-creator | LinkedIn content & positioning | Active |
 
 ### Infrastructure
 
@@ -116,7 +122,7 @@
 
 *(Sync with GOALS.md — source of truth lives there)*
 
-- Delphi Consulting — Senior AI PM — Interview Feb 23, 2026
+- Delphi Consulting — Senior AI PM — Interview completed Feb 24, 2026 — awaiting feedback (days)
 
 ---
 
@@ -138,6 +144,17 @@ Rule: Match model to task complexity. Never use Opus for what Haiku can do.
 ## 📚 Lessons Learned
 
 *(Running log — add don't delete)*
+
+- 2026-02-24: **NEVER run raw heavy installs (npm, apt, pip) during active sessions.** Starves VPS CPU/RAM → all LLM requests timeout. If install needed: (1) non-urgent → off-hours cron, (2) needed now → detached tmux `tmux new-session -d -s install '...'`, (3) urgent → throttle with `nice -n 19 ionice -c 3 npm install`. Always warn Ahmed first. Rule applies ALL models, ALL sessions.
+- 2026-02-24: LLM timeout bumped from 60s → 120s in openclaw.json for better resilience on large-context / Opus tasks.
+- 2026-02-24: **memory/ is KNOWLEDGE-ONLY.** Sub-agent installed playwright inside memory/ (14MB, 546 files). Fixed: .gitignore + README + AGENTS.md rule added. Never install packages or create code files in memory/.
+- 2026-02-24: Agent names changed — no more personal names. Now: CV Optimizer, Job Hunter, Researcher, Content Creator (NASR stays).
+- 2026-02-24: All crons + heartbeats → MiniMax-M2.5 only. Reasoning disabled globally.
+- 2026-02-24: Monthly maintenance cron created (1st of month, 9AM Cairo) — runs full 6-step cleanup + system checks automatically.
+- 2026-02-24: Mission Control gateway WebSocket integration complete — auth uses Ed25519 challenge-response with device keys from ~/.openclaw/identity/. Use `require("ws")` not `import WebSocket from "ws"` in Next.js (TypeScript type issue with ws package).
+- 2026-02-24: Mission Control full data audit — fixed 10 issues: model costs, deprecated models, active jobs count, priorities parsing, Lab tool names, My Tasks contradiction, Memory Highlights parsing, agent names, sync alert threshold, Tailscale port.
+- 2026-02-24: Tailscale Serve now points to Mission Control (port 3005) not gateway (port 18789). URL: https://srv1352768.tail945bbc.ts.net
+- 2026-02-24: Delphi interview completed (strong, no tricky questions) — awaiting feedback "in days".
 
 - 2026-02-21: Session compaction before flush = context loss.
   Fix: Mandatory flush protocol added to SOUL.md and AGENTS.md
@@ -175,6 +192,8 @@ Rule: Match model to task complexity. Never use Opus for what Haiku can do.
 - Mission Control permanently accessible via Tailscale: https://srv1352768.tail945bbc.ts.net (port 3005, PM2 managed, auto-starts on reboot). Available on all devices — Mac, iPhone, iPad. No SSH tunnel needed.
 - Mission Control Phase 2 COMPLETE (Feb 22, 2026) — mobile support, sync monitoring (15s debounce), data consistency (markdown canonical), Command Center collapsible stats + 7-day alerts, trending indicators, blocker tracking in OPS. GitHub @ 6483ebf.
 - Two GitHub repos: openclaw-nasr (workspace) + openclaw-config (config)
+- Delphi interview completed Feb 24, 2026 — strong performance, awaiting feedback
+- Mission Control Phase 3 COMPLETE (Feb 24, 2026) — gateway WebSocket integration, full data audit (10 fixes), Tailscale redirected to port 3005, model costs corrected, all fake data eliminated. GitHub pushed.
 
 ---
 
