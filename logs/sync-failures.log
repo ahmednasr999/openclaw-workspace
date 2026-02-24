@@ -1,0 +1,91 @@
+[22/02/2026, 05:22:50 CAI] syncFile error — active-tasks.md: no such table: tasks
+[22/02/2026, 05:27:44 CAI] syncFile error — active-tasks.md: no such table: tasks
+[22/02/2026, 05:30:33 CAI] syncFile error — active-tasks.md: no such table: tasks
+[22/02/2026, 05:30:45 CAI] syncFile error — active-tasks.md: no such table: tasks
+[22/02/2026, 05:33:47 CAI] syncFile error — active-tasks.md: no such table: tasks
+[22/02/2026, 05:34:36 CAI] syncFile error — active-tasks.md: no such table: tasks
+[22/02/2026, 05:37:08 CAI] syncFile error — active-tasks.md: no such table: tasks
+[22/02/2026, 05:37:34 CAI] syncFile error — active-tasks.md: no such table: tasks
+[22/02/2026, 05:42:34 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[22/02/2026, 05:50:27 CAI] syncFile error — active-tasks.md: no such table: tasks
+[22/02/2026, 05:50:27 CAI] syncFile error — cv-history.md: no such table: cv_history
+[22/02/2026, 05:51:06 CAI] syncFile error — active-tasks.md: no such table: tasks
+[22/02/2026, 05:51:06 CAI] syncFile error — cv-history.md: no such table: cv_history
+[22/02/2026, 05:53:06 CAI] syncFile error — active-tasks.md: no such table: tasks
+[22/02/2026, 05:53:06 CAI] syncFile error — cv-history.md: no such table: cv_history
+[22/02/2026, 05:53:36 CAI] syncFile error — active-tasks.md: no such table: tasks
+[22/02/2026, 05:58:36 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[22/02/2026, 05:58:36 CAI] syncFile error — active-tasks.md: no such table: tasks
+[22/02/2026, 06:10:42 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[22/02/2026, 06:30:07 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[22/02/2026, 06:40:16 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[22/02/2026, 06:52:11 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[22/02/2026, 06:59:22 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[22/02/2026, 07:10:52 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[22/02/2026, 07:29:19 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[22/02/2026, 07:42:19 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[22/02/2026, 07:54:28 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[22/02/2026, 08:04:28 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[22/02/2026, 08:28:59 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[22/02/2026, 08:41:19 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[22/02/2026, 08:57:50 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[22/02/2026, 09:11:05 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[22/02/2026, 09:16:13 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[22/02/2026, 09:28:10 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[22/02/2026, 09:41:43 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[22/02/2026, 10:00:29 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[22/02/2026, 10:14:12 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[22/02/2026, 10:24:22 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[22/02/2026, 10:31:19 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[22/02/2026, 11:03:07 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[22/02/2026, 11:36:57 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[22/02/2026, 12:01:41 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[22/02/2026, 12:11:13 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[22/02/2026, 12:21:13 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[22/02/2026, 14:26:14 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[22/02/2026, 15:21:14 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[22/02/2026, 16:11:14 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[22/02/2026, 16:26:14 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[22/02/2026, 18:01:14 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[22/02/2026, 18:26:15 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[22/02/2026, 19:58:28 CAI] syncFile error — GOALS.md: table job_pipeline has no column named applied_date
+[22/02/2026, 19:58:28 CAI] syncFile error — job-application-tracker.md: table job_pipeline has no column named applied_date
+[22/02/2026, 20:02:35 CAI] syncFile error — GOALS.md: table job_pipeline has no column named applied_date
+[22/02/2026, 20:02:35 CAI] syncFile error — job-application-tracker.md: table job_pipeline has no column named applied_date
+[23/02/2026, 01:17:19 CAI] syncFile error — GOALS.md: table job_pipeline has no column named applied_date
+[23/02/2026, 01:17:19 CAI] syncFile error — job-application-tracker.md: table job_pipeline has no column named applied_date
+[23/02/2026, 01:22:19 CAI] syncFile error — GOALS.md: table job_pipeline has no column named applied_date
+[23/02/2026, 01:22:19 CAI] syncFile error — job-application-tracker.md: table job_pipeline has no column named applied_date
+[23/02/2026, 01:27:19 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[23/02/2026, 01:27:24 CAI] syncFile error — GOALS.md: table job_pipeline has no column named applied_date
+[23/02/2026, 01:27:24 CAI] syncFile error — job-application-tracker.md: table job_pipeline has no column named applied_date
+[23/02/2026, 01:32:19 CAI] syncFile error — GOALS.md: table job_pipeline has no column named applied_date
+[23/02/2026, 01:32:19 CAI] syncFile error — job-application-tracker.md: table job_pipeline has no column named applied_date
+[23/02/2026, 01:35:04 CAI] syncFile error — GOALS.md: table job_pipeline has no column named applied_date
+[23/02/2026, 01:35:04 CAI] syncFile error — job-application-tracker.md: table job_pipeline has no column named applied_date
+[23/02/2026, 01:37:29 CAI] syncFile error — GOALS.md: table job_pipeline has no column named applied_date
+[23/02/2026, 01:37:29 CAI] syncFile error — job-application-tracker.md: table job_pipeline has no column named applied_date
+[23/02/2026, 01:37:52 CAI] syncFile error — GOALS.md: table job_pipeline has no column named applied_date
+[23/02/2026, 01:37:52 CAI] syncFile error — job-application-tracker.md: table job_pipeline has no column named applied_date
+[23/02/2026, 01:47:32 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[23/02/2026, 02:01:29 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[23/02/2026, 02:14:22 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[23/02/2026, 02:41:46 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[23/02/2026, 02:57:52 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[23/02/2026, 03:13:07 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[23/02/2026, 03:19:40 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[23/02/2026, 03:32:43 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[23/02/2026, 03:42:43 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[23/02/2026, 03:53:00 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[23/02/2026, 05:08:00 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[23/02/2026, 06:13:10 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[23/02/2026, 07:47:31 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[23/02/2026, 08:01:31 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[23/02/2026, 08:11:31 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[23/02/2026, 08:26:31 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[23/02/2026, 08:39:35 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[23/02/2026, 08:50:57 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[23/02/2026, 09:00:57 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[23/02/2026, 09:27:27 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[23/02/2026, 09:53:49 CAI] Sync stale — last successful sync was 5 minute(s) ago
+[23/02/2026, 15:18:50 CAI] Sync stale — last successful sync was 5 minute(s) ago

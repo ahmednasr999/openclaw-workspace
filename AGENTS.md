@@ -237,6 +237,19 @@ Think of it like a human reviewing their journal and updating their mental model
 
 The goal: Be helpful without being annoying. Check in a few times a day, do useful background work, but respect quiet time.
 
+## 🚫 memory/ Directory Protection Rule (ALL Models, ALL Sessions)
+
+**`memory/` is a KNOWLEDGE-ONLY directory. Never run any command that creates files there except `.md` files.**
+
+Forbidden in `memory/`:
+- `npm install`, `pip install`, `yarn`, `pnpm` — any package manager
+- Creating `.py`, `.js`, `.ts`, `.sh`, `.log`, `.json` files
+- Any code, scripts, or executables
+
+**If you need to install something for a script:** use `/root/.openclaw/workspace/tools/` or a dedicated project folder — NEVER `memory/`.
+
+Violation = corrupts memory search for every future session.
+
 ## Memory Hygiene Rules
 
 *(Prevents embedding model pollution)*
@@ -266,6 +279,27 @@ When spawning agents for multi-step work (refactoring, migrations, batch process
 4. **If timeout keeps happening, spawn fresh agent for remaining work** — each spawn is a clean slate with known progress
 
 This prevents losing 36-component work when one 10-min timeout kills a 44-component migration.
+
+## 🚫 Heavy Install Rule (ALL Models, ALL Sessions)
+
+**NEVER run raw `npm install`, `apt-get install`, or `pip install` during an active session.**
+
+- It starves the VPS of CPU/RAM
+- Causes all LLM requests to timeout simultaneously
+- Both primary and fallback models fail → error surfaced to Ahmed
+
+**If a heavy install is needed, pick the right option:**
+
+| Situation | Solution |
+|-----------|----------|
+| Can wait (non-urgent) | Schedule as off-hours cron (2AM Cairo) |
+| Needed now, not urgent | Run in detached tmux: `tmux new-session -d -s install 'npm install -g <pkg>'` |
+| Needed now, urgent | Throttle with nice/ionice: `nice -n 19 ionice -c 3 npm install -g <pkg>` |
+| Never do | Raw `npm install` directly in active session |
+
+**Always warn Ahmed before starting any install, regardless of method.**
+
+This is a hard rule — no exceptions.
 
 ## 🔄 Auto-Recovery Rule
 

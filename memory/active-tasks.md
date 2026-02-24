@@ -5,8 +5,8 @@
 ## 🔴 Urgent
 
 ### Delphi Consulting Interview Prep
-- **Status:** 🔴 TOMORROW — interview prep needed
-- **Interview:** Feb 23, 2026 at 5:00pm IST
+- **Status:** 🔴 TODAY — 1:30 PM Cairo (11:30 AM UTC) — ~90 minutes away
+- **Interview:** Feb 24, 2026 at 1:30pm Cairo (rescheduled from Feb 23)
 - **Position:** Senior AI Project Manager (UAE, On-Site)
 - **Interviewer:** Kritika Chhabra
 - **CV Match:** 91% ATS
