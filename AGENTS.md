@@ -256,6 +256,39 @@ The goal: Be helpful without being annoying. Check in a few times a day, do usef
 - Never let a long announcement fail silently — if a message is too long for the platform, chunk it
 - Each chunk should be self-contained enough to make sense if read alone (don't split mid-sentence or mid-table)
 
+## 🤖 Multi-Step Agent Work Rules
+
+When spawning agents for multi-step work (refactoring, migrations, batch processing):
+
+1. **Commit/save after each completed section** — never let one long run lose all progress
+2. **Use extended timeouts (15-20 min)** — default 10 min is too short for substantial work
+3. **Prefer isolated agent-per-module over monolithic long runs** — one agent per logical chunk (e.g., HR module, then Intelligence module, then Lab module)
+4. **If timeout keeps happening, spawn fresh agent for remaining work** — each spawn is a clean slate with known progress
+
+This prevents losing 36-component work when one 10-min timeout kills a 44-component migration.
+
+## 🔄 Auto-Recovery Rule
+
+When you detect failures, errors, or blockers of any kind:
+
+1. **Don't wait for input** — automatically apply appropriate recovery or workaround
+2. **Then notify me** — tell me what happened and what you did to fix it
+3. **Only pause if** recovery fails or requires a decision only I can make
+
+Examples:
+- Agent timeout → restart with fresh spawn (already doing this)
+- Command fails → try alternative approach
+- Missing dependency → install it
+- Build error → attempt fix, then report
+
+## � Autonomy Rule
+
+On any failure/error/timeout:
+1. Automatically recover without waiting for user input
+2. Commit progress, retry with adjusted params, or switch approach
+3. Notify user after acting
+4. Only pause if recovery fails or needs user decision
+
 ## Make It Yours
 
 This is a starting point. Add your own conventions, style, and rules as you figure out what works.
