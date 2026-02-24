@@ -11,3 +11,8 @@ skills/clawback/
 skills/content-claw/
 skills/visual-explainer/
 skills/ai-research-scraper/
+memory/sync-failures.log
+memory/sync-telegram-alerts.log
+memory/*-pricing*.md
+scripts/retention*.sh
+*.tar.gz

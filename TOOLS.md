@@ -94,14 +94,14 @@ Rule: Sub-agents write to output files only. NASR merges into shared memory. Nev
 
 | Priority | Model | Alias | Cost | Context | Best For |
 |----------|-------|-------|------|---------|----------|
-| 1st | MiniMax M2.5-highspeed | minimax-m2.5 | $49/mo (300 prompts/5hrs) | 200K | Daily driver — flat rate, ~100 TPS |
+| 1st | MiniMax M2.5-highspeed | minimax-m2.5 | $40/mo (300 prompts/5hrs) | 200K | Daily driver — flat rate, ~100 TPS |
 | 2nd | Kimi K2.5 | kimi | $0.10/$0.60/$3.00 per 1M | 256K | Long context, cheap caching |
 | 3rd | Claude Haiku 4.5 | haiku | $1/$5 per 1M | 200K | Fast, cheap, vision capable |
 | 4th | Claude Sonnet 4.6 | sonnet46 | $3/$15 per 1M | 200K | Mid-tier reasoning, drafting |
 | 5th | Claude Opus 4.6 | opus46 | $5/$25 per 1M | 200K | Heavy strategy, deep reasoning |
 
 *Kimi K2.5: $0.10 input (cache hit) / $0.60 input (cache miss) / $3.00 output per 1M tokens*
-*MiniMax account: Coding Plan Plus — M2.5-highspeed (~100 TPS, 3x faster than standard)*
+*MiniMax account: Coding Plan Plus — M2.5-highspeed (~100 TPS, 3x faster than standard) — $40/mo*
 
 ---
 
