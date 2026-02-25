@@ -178,4 +178,36 @@ When spawning a sub-agent task, always:
 
 ---
 
+## Mac Node Pairing (Tailscale Method)
+
+**Gateway Tailscale URL:** `srv1352768.tail945bbc.ts.net`
+**WebSocket:** `wss://srv1352768.tail945bbc.ts.net`
+
+### Setup (on Mac Terminal)
+
+```bash
+# 1. Install OpenClaw
+npm install -g openclaw
+
+# 2. Connect via Tailscale (HTTPS/WSS, port 443)
+openclaw node run --host srv1352768.tail945bbc.ts.net --port 443 --tls --display-name "Ahmed-Mac"
+
+# 3. Wait for "Waiting for approval" message
+
+# 4. On VPS (NASR will do this):
+openclaw nodes pending
+openclaw nodes approve <requestId>
+
+# 5. Install as permanent service (after approval)
+openclaw node install --host srv1352768.tail945bbc.ts.net --port 443 --tls --display-name "Ahmed-Mac"
+```
+
+### Rules
+- **NEVER** bind gateway to 0.0.0.0 (exposes to public internet)
+- **ALWAYS** use Tailscale URL (encrypted, authenticated, private)
+- **NEVER** change gateway config for node pairing
+- Gateway stays on 127.0.0.1:18789, Tailscale proxies it securely
+
+---
+
 **Links:** [[MEMORY.md]] | [[AGENTS.md]] | [[SOUL.md]]
