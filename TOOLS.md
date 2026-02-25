@@ -109,21 +109,32 @@ Rule: Sub-agents write to output files only. NASR merges into shared memory. Nev
 
 | Task Type | Model | Alias | Reason |
 |-----------|-------|-------|--------|
-| Interview prep, deep strategy, system architecture | Opus 4.6 | opus46 | Best reasoning at lowest Opus cost |
-| CV tailoring, content drafting, analysis | Sonnet 4.6 | sonnet46 | Balanced cost and quality |
+| Infrastructure decisions, post-mortems | Opus 4.6 | opus46 | Safety-critical reasoning |
+| Interview prep, deep strategy | Opus 4.6 | opus46 | Best reasoning |
+| CV tailoring, LinkedIn content, research | Sonnet 4.6 | sonnet46 | Balanced cost and quality |
 | Quick formatting, lookups, simple transforms | Haiku 4.5 | haiku | Cheapest paid option, vision capable |
-| Bulk processing, repetitive tasks, first drafts | MiniMax M2.5-highspeed | minimax-m2.5 | Flat rate $49/mo, ~100 TPS |
-| Long document analysis (256K+ context needed) | Kimi K2.5 | kimi | Largest context window, free |
+| Web search, email, calendar, cron, heartbeats | MiniMax M2.5 | minimax-m2.5 | Flat rate $40/mo |
+| Long document analysis (256K+ context needed) | Kimi K2.5 | kimi | Largest context window |
 
-Cost discipline rules:
-- Default to MiniMax M2.5-highspeed for anything that doesn't need Claude quality
-- Use Kimi K2.5 when context exceeds 200K or as free Sonnet alternative
-- Never use Opus 4.6 for tasks Sonnet 4.6 can handle
-- Never use Sonnet 4.6 for tasks Haiku can handle
-- Never use paid models for tasks MiniMax can handle
+### Cost Discipline (Non-Negotiable)
+- Default: MiniMax M2.5 (flat rate, no per-token cost)
+- Escalate to Sonnet: When task needs 150-500 tokens of reasoning
+- Escalate to Opus: When task needs 500+ tokens of reasoning OR is safety-critical
+- Use Kimi K2.5: When context exceeds 200K
+- Never use Opus for what Sonnet can handle
+- Never use Sonnet for what M2.5 can handle
+
+### Monthly Cost Budget
+| Model | Est. Usage | Est. Cost |
+|-------|-----------|-----------|
+| M2.5 | 65-75% of tasks | $40/mo (flat) |
+| Opus | 5-10% of tasks | $0.75-$1.50/mo |
+| Sonnet | 15-20% of tasks | $1.00-$2.00/mo |
+| Haiku | 5-10% of tasks | $0.05/mo |
+| **TOTAL** | **100%** | **~$42-$44/mo** |
 
 Daily spend alert threshold: $5.00
-If exceeded → NASR alerts Ahmed and switches lighter tasks to MiniMax.
+If exceeded → NASR alerts Ahmed and auto-downgrades Sonnet tasks to M2.5.
 
 ---
 
