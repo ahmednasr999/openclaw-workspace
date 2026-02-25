@@ -22,6 +22,13 @@ Salary target: 50,000+ AED/month. On-site. HealthTech / FinTech / Digital Transf
 - VP AI Transformation: Etisalat, e& UAE
 - Salary range: AED 9,500-15,000/month (negotiate to 50,000+)
 
+### 🔴 Active Applications (Feb 25, 2026)
+| Company | Role | Status | Action |
+|---------|------|--------|--------|
+| Hamad Medical Corporation | Director Digital Transformation | ✅ Already Applied | Await response |
+| SSA Group (via GulfTalent) | Project Manager (Roads/Civil) | 🔜 Pending apply | Apply via GulfTalent |
+| Michael Page | Project Director Infrastructure | 🔜 Pending apply | Apply via GulfTalent |
+
 ---
 
 ## 🟡 Strategic Objectives — Q1 2026

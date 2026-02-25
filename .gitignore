@@ -16,3 +16,8 @@ memory/sync-telegram-alerts.log
 memory/*-pricing*.md
 scripts/retention*.sh
 *.tar.gz
+
+# OAuth credentials - never push
+config/ahmed-gmail-tokens.json
+config/ahmed-google.json
+config/nasr-agent-oauth.json

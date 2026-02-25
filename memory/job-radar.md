@@ -47,3 +47,52 @@ In Dubai, UAE, there are multiple VP Director Digital Transformation PMO AI job 
   https://ae.indeed.com/q-VP-of-IT-jobs.html
   Discover 52 VP of IT job opportunities on Indeed.com. Apply today to advance your career with top employers.
 
+=== Job Search - 2026-02-25 ===
+## Answer
+
+VP Director Digital Transformation PMO AI jobs in Dubai for February 2026 are available. Key roles include AI Transformation Lead and VP Strategy Transformation. Explore opportunities on NaukriGulf and Indeed.
+
+---
+
+## Sources
+
+- **Ai Transformation Lead Jobs in Dubai - 42 Vacancies Feb 2026** (relevance: 69%)
+  https://www.naukrigulf.com/ai-transformation-lead-jobs-in-dubai
+  Ai Transformation Lead Jobs in Dubai - Explore Ai Transformation Lead Vacancies in Dubai in top companies in UAE, Qatar, Oman & Bahrain.
+
+- **VP Strategy Transformation Jobs in Dubai - 361 Vacancies Feb 2026** (relevance: 62%)
+  https://www.naukrigulf.com/vp-strategy-transformation-jobs-in-dubai
+  VP Strategy Transformation Jobs in Dubai - Explore VP Strategy Transformation Vacancies in Dubai in top companies in UAE, Qatar, Oman & Bahrain.
+
+- **25+ VP Innovation Jobs, Employment in Dubai 23 February 2026** (relevance: 62%)
+  https://ae.indeed.com/q-VP-Innovation-l-Dubai-jobs.html
+  Discover 27 VP Innovation job opportunities in Dubai on Indeed.com. Apply today to advance your career with top employers.
+
+- **50+ VP of IT Jobs, Employment 13 February 2026 - Indeed** (relevance: 56%)
+  https://ae.indeed.com/q-VP-of-IT-jobs.html
+  Discover 52 VP of IT job opportunities on Indeed.com. Apply today to advance your career with top employers.
+
+- **PMO Lead Jobs in the Middle East (Feb 2026) - Bayt.com** (relevance: 52%)
+  https://www.bayt.com/en/international/jobs/pmo-lead-jobs/
+  Apply now to over 410 PMO Lead jobs in Middle East and Gulf and make your job hunting simpler. Find the latest PMO Lead job vacancies and employment
+
+- **13 Pmo director jobs in United Arab Emirates - Glassdoor** (relevance: 45%)
+  https://www.glassdoor.com/Job/united-arab-emirates-pmo-director-jobs-SRCH_IL.0,20_IN6_KO21,33.htm
+  Search Pmo director jobs in United Arab Emirates with company ratings & salaries. 13 open jobs for Pmo director in United Arab Emirates.
+
+- **Apply to Senior Director / Vice President of Data & AI Job at ... - Jobaaj** (relevance: 43%)
+  https://www.jobaaj.com/job/alpha-recruitment-senior-director-vice-president-of-data-ai-dubai-4-to-10-years-41930
+  You can apply now for Senior Director / Vice President of Data & AI Job at Dubai and explore the world of opportunities with Jobaaj.
+
+- **9 Pmo director jobs in Dubai, United Arab Emirates - Glassdoor** (relevance: 42%)
+  https://www.glassdoor.ie/Job/dubai-united-arab-emirates-pmo-director-jobs-SRCH_IL.0,26_IM954_KO27,39.htm
+  Search Pmo director jobs in Dubai, UAE with company ratings & salaries. 9 open jobs for Pmo director in Dubai.
+
+- **Vice President jobs in Technology - Dubai - Michael Page** (relevance: 31%)
+  https://www.michaelpage.ae/jobs/vice-president/technology
+  Search for Vice President jobs in Technology at some of the world's top companies using UAE's leading recruitment consultancy - Michael Page.
+
+- **PMO Transformation Manager - AI & Technology | Involved** (relevance: 18%)
+  https://www.involvedsolutions.com/jobs/625851-PMO-Transformation-Manager---AI-Technology/
+  This is a senior, hands-on engineering role focused on modernising API gateways, automating deployments and enabling cloud-native integration across Google Cloud.The Senior GCP Apigee Engineer role is suited to an experienced Apigee specialist who combines deep API management expertise with strong D...
+

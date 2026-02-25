@@ -21,6 +21,32 @@
 
 ---
 
+## 2026-02-25
+
+### What I Missed
+1. Spent hours trying to authenticate ahmednasr999@gmail.com with OAuth without first asking "why does nasr.ai.assistant work?"
+2. Jumped into trying tools before analyzing root cause
+3. Kept suggesting "paste transcript" instead of solving the real problem
+
+### Why
+- Didn't connect the dots: same account = ownership conflict
+- Reactive instead of strategic thinking
+- Gave up too easily on fixing OAuth
+
+### Fix
+- When OAuth blocks project owner account → use DIFFERENT account to own the project
+- Always ask "what's fundamentally different?" before trying solutions
+- Save patterns to memory (created oauth-patterns.md)
+
+### What We Gained
+- Full Gmail access to ahmednasr999@gmail.com
+- nasr.ai.assistant@gmail.com working
+- Tavily search (autonomous web search)
+- Job radar running daily
+- Both Gmail accounts accessible
+
+---
+
 ## Template (Future)
 
 ```
