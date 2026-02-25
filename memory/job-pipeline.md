@@ -54,16 +54,26 @@
 - **Notes:** CEO role (top of target range). Remote (not preference). Consulting/startup play.
 - **Priority:** 🟢 MEDIUM — ambitious but valuable stretch
 
+### eMagine Solutions — VP of Digital Projects
+- **Status:** Applied Feb 25, 2026
+- **Location:** Abu Dhabi, UAE (On-site)
+- **Salary:** Target 50,000-60,000 AED/month
+- **ATS Score:** 87-90%
+- **CV:** Ahmed Nasr - VP Digital Projects - eMagine Solutions.pdf
+- **Follow-up:** 7 days (Mar 4, 2026)
+- **Notes:** VP level. Strong fit: Intel telecom closes industry gap, Talabat M&A experience matches perfectly. Abu Dhabi not Dubai, but worth it for VP title.
+- **Priority:** 🔥 HIGH
+
 ---
 
 ## 📊 Pipeline Metrics
 
 | Metric | Value |
 |--------|-------|
-| **Active Interviews** | 1 (Delphi) |
-| **Recent Applications (7 days)** | 3 (Talabat, AIQU, Nexus) |
+| **Active Interviews** | 1 (Delphi, awaiting feedback) |
+| **Recent Applications (7 days)** | 4 (Talabat, AIQU, Nexus, eMagine) |
 | **Previous Applications (Feb 12-16)** | 7 (no responses yet) |
-| **Total Pipeline** | 11 applications |
+| **Total Pipeline** | 12 applications |
 | **ATS Score Range** | 87-94% ✅ |
 
 ---
@@ -73,9 +83,11 @@
 | Date | Action |
 |------|--------|
 | 2026-02-24 | ✅ Applied to Talabat, AIQU, Nexus |
-| 2026-02-24 | 🔴 Delphi Interview @ 1:30pm Cairo |
+| 2026-02-24 | ✅ Delphi Interview completed, awaiting feedback |
+| 2026-02-25 | ✅ Applied to eMagine Solutions (VP Digital Projects) |
+| 2026-02-27 | ⏰ Follow-up on Delphi if no response |
 | 2026-03-02 | ⏰ Follow-up on Talabat, AIQU, Nexus (7-day check) |
-| 2026-03-02 | ⏰ Check on Feb 12-16 applications (10-day mark) |
+| 2026-03-04 | ⏰ Follow-up on eMagine (7-day check) |
 
 ---
 

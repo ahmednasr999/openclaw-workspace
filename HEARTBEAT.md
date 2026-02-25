@@ -76,9 +76,9 @@ Check session_status for daily spend.
 
 | Threshold | Action |
 |-----------|--------|
-| > $3.00 | Suggest switching non-critical tasks to MiniMax M2.5 or Kimi |
-| > $5.00 | Alert Ahmed: "💸 Cost alert: $[X] today. Consider model switch." |
-| > $10.00 | Hard alert: "🚨 High spend: $[X]. Recommend pausing Opus tasks." |
+| > $3.00 | Auto-switch non-critical tasks to MiniMax M2.5 or Kimi (no approval needed) |
+| > $5.00 | Auto-switch + notify Ahmed: "💸 Cost alert: $[X] today. Shifted lighter tasks to MiniMax." |
+| > $10.00 | Hard alert + auto-throttle: "🚨 High spend: $[X]. Opus tasks paused, running on Haiku/MiniMax." |
 
 ---
 

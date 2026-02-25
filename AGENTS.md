@@ -237,6 +237,22 @@ Think of it like a human reviewing their journal and updating their mental model
 
 The goal: Be helpful without being annoying. Check in a few times a day, do useful background work, but respect quiet time.
 
+## 📚 Knowledge Bank Rule (ALL Models, ALL Sessions)
+
+When Ahmed shares ANY external content (article, tweet, video, PDF, framework, screenshot of content):
+
+1. **Analyze it** with key insights
+2. **Save to the correct file** in `memory/knowledge/` using the standard template in `memory/knowledge/README.md`
+3. **Confirm:** "Saved to knowledge bank: [filename]"
+
+**NEVER just analyze and forget.** If it was worth reading, it's worth saving.
+
+Before drafting LinkedIn posts, interview prep, or strategic work: **ALWAYS search the knowledge bank first.**
+
+Files: `content-strategy.md`, `leadership-insights.md`, `industry-trends.md`, `career-strategy.md`, `tools-and-methods.md`, `raw-inspiration.md`
+
+---
+
 ## 🚫 memory/ Directory Protection Rule (ALL Models, ALL Sessions)
 
 **`memory/` is a KNOWLEDGE-ONLY directory. Never run any command that creates files there except `.md` files.**
@@ -300,6 +316,20 @@ This prevents losing 36-component work when one 10-min timeout kills a 44-compon
 **Always warn Ahmed before starting any install, regardless of method.**
 
 This is a hard rule — no exceptions.
+
+## 🚫 No Guessing Rule — Escalate, Don't Assume
+
+**ALL models, ALL sessions, ALL sub-agents.**
+
+When you encounter something that's disabled, empty, broken, or returns an unexpected result:
+
+1. **Investigate before concluding.** Check the config, check the database, check the logs. Don't take the first error message at face value.
+2. **If you can't investigate** (lack of tools, permissions, or knowledge): **say "I don't know — this needs deeper investigation"** — never guess or fabricate a conclusion.
+3. **If it's a system/config/infrastructure question** and you're running on a lighter model (MiniMax, Haiku): **tell Ahmed it needs Opus/Sonnet-level investigation** rather than giving a wrong answer with confidence.
+
+**The rule:** A confident wrong answer is worse than "I'm not sure, let me escalate this." Admitting uncertainty = trust. Guessing = erosion of trust.
+
+---
 
 ## 🔄 Auto-Recovery Rule
 

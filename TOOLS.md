@@ -166,19 +166,15 @@ When spawning a sub-agent task, always:
 - **Status:** ✅ Active
 - **API Key:** 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
 - **Credits:** 1,000/month (free tier)
-- **Usage:** ~1 credit/search = ~1,000 searches/month
 
-### Google Workspace (nasr.ai.assistant@gmail.com)
-- **Status:** ✅ Gmail connected
-- **Client ID:** 211696039800-i03vt7qjioffirmmgi4f7br2ao3iomc1.apps.googleusercontent.com
-- **Credentials:** config/google-tokens.json
-- **Capabilities:** Gmail (read), YouTube API (connected, depends on video permissions), Calendar (ready)
-- **Setup:** Feb 25, 2026
+### Google Workspace
+- **nasr.ai.assistant@gmail.com:** ✅ Gmail connected
+- **ahmednasr999@gmail.com:** ✅ Gmail + Calendar connected
+- **Credentials:** config/ahmed-google.json
 
 ### Job Radar
-- **Script:** /root/.openclaw/workspace/scripts/job-radar.sh
+- **Script:** /root/.open/job-radar.shclaw/workspace/scripts
 - **Output:** memory/job-radar.md
-- **Frequency:** Daily (8 AM Cairo / 6 AM UTC)
 
 ---
 
