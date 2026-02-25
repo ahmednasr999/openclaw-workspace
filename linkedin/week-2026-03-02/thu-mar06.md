@@ -1,4 +1,6 @@
-# Thu Mar 6 | Sales | SLAY | Sexy | CTA: B
+# Thursday March 6 | Sales | SLAY | Sexy | CTA: B
+
+![Post Image](thu-mar06-image.png)
 
 ---
 
