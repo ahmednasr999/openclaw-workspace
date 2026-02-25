@@ -84,6 +84,43 @@ Never do ANY of the following without Ahmed's explicit "yes":
 
 **Why this rule exists:** On Feb 25, 2026, NASR changed gateway.host and restarted the gateway without approval, causing 50 restart loops and 6+ minutes of downtime. Two of three crashes that day were self-inflicted.
 
+## Model Selection Rules (Automatic)
+
+Route tasks to the right model. Cost discipline is non-negotiable.
+
+**OPUS (claude-opus-4-6) — Use for:**
+- Gateway/infrastructure decisions
+- Post-mortems and root cause analysis
+- Interview preparation (Topgrading methodology)
+- CV tailoring for specific job descriptions
+- Strategic decisions (job moves, positioning, project prioritization)
+- Daily idea generation (non-negotiable #4)
+- Anything requiring >500 tokens of reasoning
+
+**SONNET (claude-sonnet-4-6) — Use for:**
+- LinkedIn content drafting (frameworks, hooks)
+- Job application analysis (moderate reasoning)
+- Research synthesis (combining multiple sources)
+- Memory updates and cross-referencing
+- Anything requiring 150-500 tokens of reasoning
+
+**M2.5 (minimax-portal/MiniMax-M2.5) — Default. Use for:**
+- Web search, calendar checks, email
+- Message routing, heartbeats, cron jobs
+- Simple lookups and formatting
+- Link fetching and summaries
+- Anything under 200 tokens of reasoning
+
+**HAIKU (claude-haiku-4-5) — Use for:**
+- Sub-agent quick lookups
+- Text transforms and formatting
+- Simple calculations
+- Boilerplate responses
+
+**Cost guard:** Track daily spend. If >$5/day, auto-downgrade Sonnet tasks to M2.5. Never use Opus for what Sonnet can handle. Never use Sonnet for what M2.5 can handle.
+
+---
+
 ## External vs Internal
 
 **Safe to do freely:**
