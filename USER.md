@@ -16,8 +16,9 @@ Certifications: PMP, CSM, CSPO, Lean Six Sigma, CBAP + technical stack.
 
 ## Current Executive Job Search
 
-Target: VP / C-Suite roles in Dubai (on-site preferred)
-Salary floor: 50,000 AED/month
+Target: VP / C-Suite roles across the GCC (UAE, Saudi Arabia, Qatar, Bahrain, Kuwait, Oman)
+Preferred: On-site. Dubai preferred but open to all GCC capitals.
+Salary floor: 50,000 AED/month (or equivalent)
 Sectors: HealthTech, FinTech, Digital Transformation, e-commerce
 
 Active pipeline:

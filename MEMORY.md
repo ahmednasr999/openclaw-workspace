@@ -11,8 +11,8 @@
 - Senior tech executive, 20+ years, GCC & Egypt
 - Currently: Acting PMO at TopMed (Saudi German Hospital Group)
 - Managing $50M digital transformation, 15-hospital network
-- Target: VP / C-Suite in Dubai — Q3 2026
-- Salary floor: 50,000 AED/month
+- Target: VP / C-Suite across the GCC (UAE, KSA, Qatar, Bahrain, Kuwait, Oman) — Q3 2026
+- Salary floor: 50,000 AED/month (or equivalent)
 - MBA in progress: Paris ESLSCA (2025-2027)
 - Location: Cairo, Egypt — Africa/Cairo (UTC+2)
 - Certifications: PMP, CSM, CSPO, Lean Six Sigma, CBAP + technical stack
@@ -145,6 +145,7 @@ Rule: Match model to task complexity. Never use Opus for what Haiku can do.
 
 *(Running log — add don't delete)*
 
+- 2026-02-25: **GATEWAY CRASH — Systemd `KillMode` misconfiguration.** Child processes (npm, node, next-server) survived SIGTERM because service used `KillMode=control-group` (default). Result: 37 restart loop, zombie process, 6.4GB orphaned memory. Fix: Add `KillMode=mixed + TimeoutStopSec=15` to systemd service. Also: 4 stale Telegram delivery entries (Feb 21-22) stuck in queue because recovery budget too short (~500ms); moved to failed/ and increased timeout to 5s. Full post-mortem in GATEWAY_POSTMORTEM_2026-02-25.md.
 - 2026-02-24: **NEVER run raw heavy installs (npm, apt, pip) during active sessions.** Starves VPS CPU/RAM → all LLM requests timeout. If install needed: (1) non-urgent → off-hours cron, (2) needed now → detached tmux `tmux new-session -d -s install '...'`, (3) urgent → throttle with `nice -n 19 ionice -c 3 npm install`. Always warn Ahmed first. Rule applies ALL models, ALL sessions.
 - 2026-02-24: LLM timeout bumped from 60s → 120s in openclaw.json for better resilience on large-context / Opus tasks.
 - 2026-02-24: **memory/ is KNOWLEDGE-ONLY.** Sub-agent installed playwright inside memory/ (14MB, 546 files). Fixed: .gitignore + README + AGENTS.md rule added. Never install packages or create code files in memory/.
