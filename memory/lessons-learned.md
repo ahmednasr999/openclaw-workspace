@@ -1,5 +1,7 @@
 # Lessons Learned
 
+- 2026-02-25: **Skip ai-pdf-builder for CVs.** Use pandoc directly: `pandoc input.md -o output.pdf --pdf-engine=pdflatex -V geometry:margin=0.7in -V fontsize=10pt -V linestretch=1.1`. The ai-pdf-builder chokes on markdown tables and adds unnecessary formatting. Pandoc is 5 seconds, ai-pdf-builder is 3 retries and wasted time.
+
 ## 2026-02-17
 
 ### What I Missed
