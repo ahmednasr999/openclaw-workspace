@@ -18,3 +18,7 @@ USE FOR:
 4. Executive bios
 
 NEVER FABRICATE - ONLY REPOSITION EXISTING EXPERIENCE
+
+---
+
+**Links:** [[MEMORY.md]] | [[GOALS.md]]

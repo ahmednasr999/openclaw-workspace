@@ -82,3 +82,7 @@ We started with: "What does success look like, and how do we measure it every si
 What's YOUR leadership philosophy?
 
 #Leadership #ProjectManagement #Execution #PMO
+
+---
+
+**Links:** [[MEMORY.md]] | [[GOALS.md]]

@@ -108,3 +108,7 @@
 ---
 
 *Note: Previous job-pipeline.md has been archived. This is now the single source of truth.*
+
+---
+
+**Links:** [[MEMORY.md]] | [[GOALS.md]]

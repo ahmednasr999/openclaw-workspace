@@ -21,3 +21,7 @@
 
 ### Micro-commit for today
 - Before any new builds or automations, complete one focused Delphi prep block: review the JD, prepare 5–7 STAR stories, and rehearse a tight 90-second narrative for why you are the right Senior AI PM for Delphi.
+
+---
+
+**Links:** [[../MEMORY.md]] | [[../GOALS.md]]

@@ -260,3 +260,7 @@ Founder, ANCO Consulting
 - Open rate (target: 30%+)
 - Reply rate (target: 5%+)
 - Meeting booked rate (target: 20%+ of replies)
+
+---
+
+**Links:** [[MEMORY.md]] | [[GOALS.md]]
