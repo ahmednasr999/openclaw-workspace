@@ -1,0 +1,13 @@
+[Unit]
+Description=Calendar Webhook Server
+After=network-online.target
+
+[Service]
+Type=simple
+Environment=GOG_KEYRING_PASSWORD=pass@123
+ExecStart=/usr/bin/python3 /root/.openclaw/workspace/calendar-webhook.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target
