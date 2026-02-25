@@ -38,20 +38,11 @@ Fire this alert maximum once per day, not every hour.
 
 ## Daily Checks (Once Per Day — 8:00 AM Cairo Time / EST+2)
 
-### Morning Briefing
+### Morning Briefing — REPLACED BY EXECUTIVE INTELLIGENCE BRIEFING CRON
 
-Model: MiniMax M2.5
-
-Read and summarize:
-- GOALS.md — any deadlines today or tomorrow
-- memory/active-tasks.md — what's urgent
-- memory/pending-opus-topics.md — anything queued
-
-Send to Ahmed:
-"☀️ Morning Brief — [date]
-🔴 Urgent: [items]
-📋 Today's focus: [top 3]
-⏳ Pending deep work: [queued items]"
+The old morning brief is replaced by "Executive Intelligence Briefing" cron job (runs daily 6 AM Cairo).
+It covers: job market pulse, company intel, LinkedIn status, calendar + deadlines, daily new idea, strategic recommendation.
+Do NOT duplicate this in heartbeat. The cron handles it.
 
 ### End of Day (9:00 PM Cairo Time / EST+2)
 
