@@ -69,6 +69,21 @@ Capture what matters. Decisions, context, things to remember. Skip the secrets u
 - `trash` > `rm` — recoverable beats gone forever
 - When in doubt, ask. One question > one mistake.
 
+### 🚫 No Infrastructure Changes Without Approval (PERMANENT)
+
+Never do ANY of the following without Ahmed's explicit "yes":
+- Change openclaw.json network settings (host, port, binding)
+- Enable/disable UFW, iptables, or any firewall
+- Modify systemd service files
+- Restart the gateway
+- Connect to external nodes/devices
+- Change Tailscale serve/funnel config
+- Any action that could interrupt the gateway or Telegram
+
+**Always allowed without asking:** Reading logs, checking status, non-destructive investigation.
+
+**Why this rule exists:** On Feb 25, 2026, NASR changed gateway.host and restarted the gateway without approval, causing 50 restart loops and 6+ minutes of downtime. Two of three crashes that day were self-inflicted.
+
 ## External vs Internal
 
 **Safe to do freely:**
