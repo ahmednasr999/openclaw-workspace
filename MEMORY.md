@@ -217,6 +217,23 @@ NASR Rule: Update this file at session close. Always. Text > Brain. If it's not 
 
 ---
 
+## 🤖 New Autonomous Capabilities (Feb 2026)
+
+### Web Search - Tavily
+- **Status:** ✅ Active
+- **API Key:** <redacted>
+- **Credits:** 1,000/month free
+- **Usage:** I can now search the web autonomously 24/7
+- **Setup:** Feb 25, 2026
+
+### Job Radar
+- **Script:** /root/.openclaw/workspace/scripts/job-radar.sh
+- **Runs:** Daily at 6 AM UTC (8 AM Cairo)
+- **Output:** memory/job-radar.md
+- **Purpose:** Autonomous job search for VP/Director/PMO/AI roles in UAE
+
+---
+
 ## 📚 Knowledge Index — All Connected Notes
 
 ### Core System Files

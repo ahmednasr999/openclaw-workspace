@@ -4,6 +4,13 @@
 
 ## 🔴 Urgent
 
+### Job Radar - Daily Search
+- **Status:** ✅ ACTIVE — Tavily search configured
+- **Capability:** Autonomous web search 24/7
+- **Target:** VP/Director Digital Transformation, PMO, AI roles in UAE/Dubai
+- **Frequency:** Daily searches
+- **Last search:** Feb 25, 2026 - Found 48+ VP roles
+
 ### Delphi Consulting Interview Prep
 - **Status:** ✅ COMPLETED — Feb 24, 2026 at 1:30 PM Cairo
 - **Position:** Senior AI Project Manager (UAE, On-Site)

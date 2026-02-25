@@ -160,4 +160,21 @@ When spawning a sub-agent task, always:
 
 ---
 
+## 🤖 New Autonomous Capabilities (Feb 2026)
+
+### Tavily Search
+- **Status:** ✅ Active
+- **API Key:** <redacted>
+- **Credits:** 1,000/month (free tier)
+- **Usage:** ~1 credit/search = ~1,000 searches/month
+- **Runs:** Daily at 6 AM UTC (cron job)
+
+### Job Radar
+- **Script:** /root/.openclaw/workspace/scripts/job-radar.sh
+- **Output:** memory/job-radar.md
+- **Frequency:** Daily (8 AM Cairo / 6 AM UTC)
+- **Searches:** VP/Director/PMO/AI roles in UAE/Dubai
+
+---
+
 **Links:** [[MEMORY.md]] | [[AGENTS.md]] | [[SOUL.md]]
