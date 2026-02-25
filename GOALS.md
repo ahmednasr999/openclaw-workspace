@@ -14,14 +14,14 @@ Salary target: 50,000+ AED/month. On-site. HealthTech / FinTech / Digital Transf
 
 | Company | Role | Stage | Next Action | Deadline |
 |---------|------|-------|-------------|----------|
-| Delphi Consulting | Senior AI PM | Interview | Prep with NASR | Feb 23, 2026 |
+| Delphi Consulting | Senior AI PM | Awaiting Feedback | Follow up if no response by Feb 28 | Feb 23, 2026 |
 
 ---
 
 ## 🟡 Strategic Objectives — Q1 2026
 
 ### Executive Job Search
-- [ ] Complete Delphi interview (Feb 23)
+- [x] Complete Delphi interview (Feb 23) ✅
 - [ ] Maintain ATS score 85%+ on all applications
 - [ ] Apply to 3+ VP-level roles per week
 - [ ] LinkedIn profile fully optimized for executive positioning
