@@ -5,8 +5,9 @@
 
 ## 🎯 Primary Mission
 
-Land a VP / C-Suite executive role in Dubai by Q3 2026.
-Salary target: 50,000+ AED/month. On-site. HealthTech / FinTech / Digital Transformation preferred.
+Land a VP / C-Suite executive role across the GCC by Q3 2026.
+Salary target: 50,000+ AED/month (or equivalent). On-site preferred. All GCC countries (UAE, KSA, Qatar, Bahrain, Kuwait, Oman).
+Sectors: HealthTech / FinTech / Digital Transformation preferred.
 
 ---
 
