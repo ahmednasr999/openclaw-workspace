@@ -16,6 +16,12 @@ Salary target: 50,000+ AED/month. On-site. HealthTech / FinTech / Digital Transf
 |---------|------|-------|-------------|----------|
 | Delphi Consulting | Senior AI PM | Awaiting Feedback | Follow up if no response by Feb 28 | Feb 23, 2026 |
 
+### Job Radar Results (Feb 25, 2026)
+- VP Digital Transformation: 48+ roles (Indeed), 43 (Glassdoor)
+- PMO Director: 48+ vacancies in Dubai
+- VP AI Transformation: Etisalat, e& UAE
+- Salary range: AED 9,500-15,000/month (negotiate to 50,000+)
+
 ---
 
 ## 🟡 Strategic Objectives — Q1 2026
