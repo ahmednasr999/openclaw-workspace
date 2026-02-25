@@ -1,6 +1,6 @@
 # Active Tasks
 
-*Last updated: 2026-02-24*
+*Last updated: 2026-02-25*
 
 ## 🔴 Urgent
 
@@ -21,16 +21,30 @@
 
 ## 🟡 In Progress
 
+### LinkedIn Content Engine
+- **Status:** ✅ LIVE — Automated daily delivery Sun-Thu at 11:30 AM Cairo
+- **Week 1 (Feb 25-26):** 2 posts drafted + images (partial week)
+- **Week 2 (Mar 2-6):** 5 posts + 5 images COMPLETE on GitHub
+- **Weeks 3-5:** Topics planned, need full drafts + images
+- **Cron:** "LinkedIn Daily Post + Image" (MiniMax M2.5, 300s timeout)
+- **GitHub:** `linkedin/week-YYYY-MM-DD/` — image above text per day
+- **Next:** Ahmed to review and post. Build Weeks 3-5 content. Friday pre-build cron.
+
+### Knowledge Bank
+- **Status:** Active — 3 frameworks banked
+- **Location:** `memory/knowledge/content-strategy.md`
+- **Frameworks:** Priestley (Everyday CTA), Lara Costa (SLAY/PAS), Ashpreet Bedi (AI visibility)
+- **Next:** Ahmed will share more content, keep banking
+
 ### OpenClaw System Review
 - **Status:** In progress with Ahmed (Round 2 of deep dive)
-- **Goal:** Full understanding of system architecture, memory, config
 - **Completed:** Round 1 (Core Identity), Round 2 (Memory & Intelligence)
 - **Next:** Round 3+, then fix identified gaps
 
 ### CV Creation Pipeline
 - **Status:** Ready for new JDs
 - **Master CV:** `memory/master-cv-data.md`
-- **Recent:** Multiple CVs created (IT Section Head, IT Director, Strategy Consultant, etc.)
+- **Recent:** eMagine VP Digital Projects (ATS 87-90%), plus multiple earlier CVs
 
 ## 🟢 Recurring
 
