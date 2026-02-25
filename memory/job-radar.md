@@ -96,3 +96,64 @@ VP Director Digital Transformation PMO AI jobs in Dubai for February 2026 are av
   https://www.involvedsolutions.com/jobs/625851-PMO-Transformation-Manager---AI-Technology/
   This is a senior, hands-on engineering role focused on modernising API gateways, automating deployments and enabling cloud-native integration across Google Cloud.The Senior GCP Apigee Engineer role is suited to an experienced Apigee specialist who combines deep API management expertise with strong D...
 
+=== Job Search - 2026-02-25 ===
+## Sources
+
+- **PMO Lead Jobs in the Middle East (Feb 2026) - Bayt.com** (relevance: 44%)
+  https://www.bayt.com/en/international/jobs/pmo-lead-jobs/
+  Apply now to over 410 PMO Lead jobs in Middle East and Gulf and make your job hunting simpler. Find the latest PMO Lead job vacancies and employment
+
+- **Digital Transformation Company in KSA, UAE, and Qatar** (relevance: 33%)
+  https://www.squareonemea.com/
+  Our extensive digital transformation services are tailored to meet the unique needs of various industries. Banking Education Healthcare Insurance Manufacturing
+
+- **Stantec names Anas Kassem as Head of Middle East team** (relevance: 10%)
+  https://www.consultancy-me.com/news/3227/stantec-names-anas-kassem-as-head-of-middle-east-team
+  *Engineering consulting firm Stantec has installed Anas Kassem at the helm of its Middle East division.*. During his 20-year period in the Middle East (he previously studied and worked in the US), Kassem has lived and worked in several countries in the region, including the UAE, Qatar, Kuwait, and S...
+
+- **Certified Professionals - Association for Strategic Planning** (relevance: 8%)
+  https://www.strategyassociation.org/page/certProfessionals
+  Al-Khairi | Hail Region Development Authority | SAU | | SPP0325 | Qtr-3 2024 | Active | Hadeel Alsaiarie | | SAU | | SPP0326 | Qtr-3 2024 | Active | Aseel Batheeb | Institute of Public Administration | SAU | | SPP0327 | Qtr-3 2024 | Active | Egidius Mbarara | Rwanda Utilities Regulatory Authority | ...
+
+- **Sangeetha Kanvar Joins Eli Lilly as Head, Quality Systems ...** (relevance: 6%)
+  https://hrtoday.in/sangeetha-kanvar-joins-eli-lilly-as-head-quality-systems-excellence-digital-transformation/
+  Sangeetha Kanvar has joined Eli Lilly and Company as Head, Quality Systems Excellence & Digital Transformation. With strong leadership experience in digital
+
+- **Campaign Middle East-February 2026 by Motivate Media Group** (relevance: 5%)
+  https://issuu.com/motivatepublishing/docs/campaign_middle_east-february_2026
+  Browse short-form content that's perfect for a quick read. Purchase your next favourite publication. illustration describing how to get more reads from your publications. Transform any piece of content into a page-turning experience. Deliver a distraction-free reading experience with a simple link. ...
+
+- **Abdullah Altwaim has been promoted to Director - Instagram** (relevance: 3%)
+  https://www.instagram.com/p/DU9r7yujFOL/
+  Abdullah Altwaim has been promoted to Director | Digital Solutions at TAM | تام, marking a significant milestone in his leadership journey
+
+- **Omer Mukhtar‏ - ‏Turning Supply Chain into a Competitive Advantage** (relevance: 3%)
+  https://sa.linkedin.com/in/omer-mukhtar-a7a03075
+  Omer Mukhtar
+Johnson & Johnson
+Saudi Arabia
+500 connections, 2536 followers
+
+
+About
+An innovative Supply Chain professional having 15+ years of experience in Demand and…
+
+
+Experience
+N/A
+
+
+Education
+APICS Northern Colorado
+N/A
+2019 - 2020
+None
+
+- **Our leadership - AtkinsRéalis** (relevance: 2%)
+  https://www.atkinsrealis.com/en/about/our-leadership
+  Prior to joining AtkinsRéalis, he spent six years in senior roles with the Leighton Group, where as Managing Director, Leighton Asia, India and Offshore, he led a diverse business of 20,000 employees spanning the construction, infrastructure, oil and gas and mining sectors in 14 countries. Andrée-Cl...
+
+- **Global Program Management | Jacobs** (relevance: 2%)
+  https://www.jacobs.com/what-we-do/global-program-management
+  We work in partnership, delivering some of the most challenging, diverse and innovative projects and programs globally across multiple sectors. ## We deliver the world’s most iconic infrastructure and buildings programs – partnering with clients to transform communities, places and lives for the bet...
+
