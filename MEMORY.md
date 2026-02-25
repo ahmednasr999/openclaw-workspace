@@ -223,14 +223,18 @@ NASR Rule: Update this file at session close. Always. Text > Brain. If it's not 
 - **Status:** ✅ Active
 - **API Key:** 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
 - **Credits:** 1,000/month free
-- **Usage:** I can now search the web autonomously 24/7
+- **Setup:** Feb 25, 2026
+
+### Google Workspace (nasr.ai.assistant@gmail.com)
+- **Status:** ✅ Gmail connected
+- **Client ID:** 211696039800-i03vt7qjioffirmmgi4f7br2ao3iomc1.apps.googleusercontent.com
+- **Tokens:** config/google-tokens.json
 - **Setup:** Feb 25, 2026
 
 ### Job Radar
 - **Script:** /root/.openclaw/workspace/scripts/job-radar.sh
 - **Runs:** Daily at 6 AM UTC (8 AM Cairo)
 - **Output:** memory/job-radar.md
-- **Purpose:** Autonomous job search for VP/Director/PMO/AI roles in UAE
 
 ---
 
