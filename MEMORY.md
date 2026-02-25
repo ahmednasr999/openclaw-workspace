@@ -210,3 +210,7 @@ Rule: Match model to task complexity. Never use Opus for what Haiku can do.
 | active-tasks.md > 48hrs old | Flag to Ahmed immediately |
 
 NASR Rule: Update this file at session close. Always. Text > Brain. If it's not written, it's already forgotten.
+
+---
+
+**Links:** [[USER.md]] | [[SOUL.md]] | [[AGENTS.md]] | [[TOOLS.md]] | [[GOALS.md]] | [[memory/active-tasks.md]] | [[memory/pending-opus-topics.md]] | [[memory/master-cv-data.md]] | [[memory/lessons-learned.md]]

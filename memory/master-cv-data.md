@@ -147,3 +147,7 @@ Digital Transformation Executive with 20+ years driving measurable business impa
 - Emphasize relevant experience
 - Adjust summary to mirror JD keywords
 - Add context that's truthful but unstated (e.g., "IT infrastructure" from BlueCloud/Intel roles)
+
+---
+
+**Links:** [[../MEMORY.md]] | [[../GOALS.md]] | [[active-tasks.md]]

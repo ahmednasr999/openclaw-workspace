@@ -84,3 +84,7 @@ After any OpenClaw update (npm, gateway restart, version bump), send a Telegram 
 ## Continuity Rule
 
 Text > Brain. If it's not written, it doesn't exist.
+
+---
+
+**Links:** [[MEMORY.md]] | [[USER.md]] | [[AGENTS.md]] | [[TOOLS.md]] | [[GOALS.md]]
