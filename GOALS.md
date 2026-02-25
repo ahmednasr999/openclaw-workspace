@@ -71,3 +71,7 @@ Salary target: 50,000+ AED/month. On-site. HealthTech / FinTech / Digital Transf
 | LinkedIn | Posts per week | Unknown | 2-3x |
 | Interview pipeline | Active interviews | 1 (Delphi) | 3+ |
 | OpenClaw uptime | System health | Stable | 99% |
+
+---
+
+**Links:** [[MEMORY.md]] | [[memory/active-tasks.md]] | [[memory/pending-opus-topics.md]] | [[USER.md]]

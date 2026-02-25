@@ -157,3 +157,7 @@ When spawning a sub-agent task, always:
 |---------|----|---------| 
 | Main chat | [YOUR_CHAT_ID] | Primary interaction |
 | Alerts | [ALERT_CHANNEL_ID] | Urgent flags |
+
+---
+
+**Links:** [[MEMORY.md]] | [[AGENTS.md]] | [[SOUL.md]]

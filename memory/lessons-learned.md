@@ -38,3 +38,7 @@
 - [What I'll do differently 1]
 - [What I'll do differently 2]
 ```
+
+---
+
+**Links:** [[../MEMORY.md]] | [[active-tasks.md]] | [[../AGENTS.md]]

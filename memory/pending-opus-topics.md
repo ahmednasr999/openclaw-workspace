@@ -21,3 +21,5 @@ When ready, walk through:
 4. Questions to ask
 
 ---
+
+**Links:** [[active-tasks.md]] | [[../MEMORY.md]] | [[../GOALS.md]]

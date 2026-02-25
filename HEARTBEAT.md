@@ -111,3 +111,7 @@ Never message for:
 - Heartbeat confirmation ("I'm alive" pings — useless noise)
 
 When in doubt → stay silent. A quiet heartbeat is better than a noisy one.
+
+---
+
+**Links:** [[MEMORY.md]] | [[memory/active-tasks.md]] | [[AGENTS.md]] | [[GOALS.md]]

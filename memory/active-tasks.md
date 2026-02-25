@@ -59,3 +59,7 @@
 - Mission Control Task Board integration
 - Remove deprecated models from models.json (M2.1, M2.1-highspeed) ✅ Done
 - Add sub-agent output validation: after every completion, verify output file exists and is non-empty before announcing done. Log to lessons-learned.md if empty.
+
+---
+
+**Links:** [[../GOALS.md]] | [[../MEMORY.md]] | [[pending-opus-topics.md]] | [[lessons-learned.md]]
