@@ -214,3 +214,73 @@ NASR Rule: Update this file at session close. Always. Text > Brain. If it's not 
 ---
 
 **Links:** [[USER.md]] | [[SOUL.md]] | [[AGENTS.md]] | [[TOOLS.md]] | [[GOALS.md]] | [[memory/active-tasks.md]] | [[memory/pending-opus-topics.md]] | [[memory/master-cv-data.md]] | [[memory/lessons-learned.md]]
+
+---
+
+## 📚 Knowledge Index — All Connected Notes
+
+### Core System Files
+- [[USER.md]] — Ahmed's profile and preferences
+- [[SOUL.md]] — My personality and rules
+- [[AGENTS.md]] — Operating manual
+- [[TOOLS.md]] — Tool reference
+- [[IDENTITY.md]] — My identity
+- [[HEARTBEAT.md]] — Periodic task rules
+
+### Goals & Tasks
+- [[GOALS.md]] — Strategic objectives
+- [[memory/active-tasks.md]] — Current tasks
+- [[memory/pending-opus-topics.md]] — Queued deep work
+
+### CV & Job Search
+- [[memory/master-cv-data.md]] — CV source of truth
+- [[memory/cv-history.md]] — CV applications history
+- [[memory/ats-best-practices.md]] — ATS optimization
+- [[memory/interview-prep-protocol.md]] — Interview prep
+- [[memory/job-pipeline.md]] — Active job pipeline
+
+### Daily Memory
+- [[memory/2026-02-24.md]] — Latest daily log
+- [[memory/2026-02-23.md]] — Feb 23 session
+- [[memory/2026-02-22.md]] — Feb 22 session
+- [[memory/2026-02-21.md]] — Feb 21 session
+- [[memory/2026-02-20.md]] — Feb 20 session
+- [[memory/2026-02-19.md]] — Feb 19 session
+- [[memory/2026-02-18.md]] — Feb 18 session
+- [[memory/2026-02-17.md]] — Feb 17 session
+- [[memory/2026-02-16.md]] — Feb 16 session
+- [[memory/2026-02-15.md]] — Feb 15 session
+
+### Case Studies
+- [[case-study-talabat.md]] — Talabat experience
+- [[case-study-sgh.md]] — Saudi German Hospital
+- [[case-study-network.md]] — Network International
+
+### Content & LinkedIn
+- [[linkedin_posts.md]] — LinkedIn posts
+- [[memory/linkedin_content_calendar.md]] — Content calendar
+- [[memory/content-ideas.md]] — Content ideas
+- [[drafts/2026-02-24-linkedin-ai-pmo.md]] — Latest draft
+
+### Skills & Tools
+- [[skills/linkedin-writer/SKILL.md]] — LinkedIn writing skill
+- [[skills/resume-optimizer/SKILL.md]] — CV optimization skill
+- [[skills/job-search-mcp/SKILL.md]] — Job search skill
+- [[skills/content-claw/SKILL.md]] — Content analysis skill
+
+### Mission Control
+- [[memory/mission-control-spec.md]] — Mission Control spec
+- [[memory/mission-control-concept.md]] — Concept document
+- [[memory/mission-control-phase2-design.md]] — Phase 2 design
+
+### Learning
+- [[memory/lessons-learned.md]] — Mistakes and lessons
+- [[memory/agentic-levels.md]] — Agent maturity levels
+- [[PRINCIPLES.md]] — Core principles
+
+### Other Key Docs
+- [[MASTER_CV.md]] — Master CV document
+- [[EXECUTIVE_TRANSFORMATION_PLAYBOOK.md]] — Transformation playbook
+- [[LINKEDIN_DEEP_ANALYSIS.md]] — LinkedIn strategy
+- [[email-templates.md]] — Email templates
+- [[job-application-tracker.md]] — Job tracker
