@@ -95,3 +95,7 @@ Building an enterprise PMO for your organization?
 
 **AN & Co. Consulting**
 *Strategy That Scales. Execution That Delivers.*
+
+---
+
+**Links:** [[MEMORY.md]] | [[MASTER_CV.md]] | [[case-study-talabat.md]] | [[case-study-sgh.md]]

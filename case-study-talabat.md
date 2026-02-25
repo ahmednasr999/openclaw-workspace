@@ -82,3 +82,7 @@ Building a scaling playbook for your startup?
 
 **AN & Co. Consulting**
 *Strategy That Scales. Execution That Delivers.*
+
+---
+
+**Links:** [[MEMORY.md]] | [[MASTER_CV.md]] | [[case-study-sgh.md]] | [[case-study-network.md]]

@@ -226,3 +226,5 @@ USE THIS CV FOR:
 5. Profile submissions to executive search firms
 
 ================================================================================
+
+**Links:** [[MEMORY.md]] | [[memory/master-cv-data.md]] | [[case-study-talabat.md]] | [[case-study-sgh.md]]

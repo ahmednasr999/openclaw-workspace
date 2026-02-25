@@ -81,3 +81,7 @@ Ready to transform your healthcare PMO?
 
 **AN & Co. Consulting**
 *Strategy That Scales. Execution That Delivers.*
+
+---
+
+**Links:** [[MEMORY.md]] | [[MASTER_CV.md]] | [[case-study-talabat.md]] | [[case-study-network.md]]
