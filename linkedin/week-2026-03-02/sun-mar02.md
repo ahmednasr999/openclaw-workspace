@@ -1,4 +1,6 @@
-# Sun Mar 2 | TAM | PAS | Scary | CTA: A
+# Sunday March 2 | TAM | PAS | Scary | CTA: A
+
+![Post Image](sun-mar02-image.png)
 
 ---
 
