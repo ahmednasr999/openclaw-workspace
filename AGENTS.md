@@ -239,17 +239,83 @@ The goal: Be helpful without being annoying. Check in a few times a day, do usef
 
 ## 📚 Knowledge Bank Rule (ALL Models, ALL Sessions)
 
-When Ahmed shares ANY external content (article, tweet, video, PDF, framework, screenshot of content):
+### When Ahmed Shares ANY Content — Follow These Steps EXACTLY
 
-1. **Analyze it** with key insights
-2. **Save to the correct file** in `memory/knowledge/` using the standard template in `memory/knowledge/README.md`
-3. **Confirm:** "Saved to knowledge bank: [filename]"
+**Trigger:** Ahmed shares a URL, article, video transcript, tweet, PDF, screenshot of content, framework, or any external material.
 
-**NEVER just analyze and forget.** If it was worth reading, it's worth saving.
+**Step 1: Identify the content type**
 
-Before drafting LinkedIn posts, interview prep, or strategic work: **ALWAYS search the knowledge bank first.**
+| Content Type | How to Process |
+|---|---|
+| URL (article, blog, news) | Use `web_fetch` to extract full text, then analyze |
+| URL (YouTube video) | Use `summarize` skill or `web_fetch` to get transcript/summary |
+| Copy-pasted text | Analyze directly |
+| Screenshot / Image | Use `image` tool to read text, then analyze |
+| PDF / Document | Read the file, then analyze |
+| Tweet / Social post | Analyze directly |
+| Framework / Method | Analyze and categorize |
 
-Files: `content-strategy.md`, `leadership-insights.md`, `industry-trends.md`, `career-strategy.md`, `tools-and-methods.md`, `raw-inspiration.md`
+**Step 2: Analyze and extract insights**
+
+Write a brief analysis (5-10 bullet points max) covering:
+- What is the core idea?
+- What are the 3-5 key takeaways?
+- What is actionable for Ahmed specifically?
+- How does this connect to his goals (job search, LinkedIn, leadership, AI)?
+
+**Step 3: Pick the RIGHT file**
+
+| File | Save here if content is about... |
+|---|---|
+| `memory/knowledge/content-strategy.md` | LinkedIn tips, content writing, posting strategies, engagement tactics, hooks, frameworks for writing |
+| `memory/knowledge/leadership-insights.md` | Management, executive thinking, transformation leadership, team building, decision-making |
+| `memory/knowledge/industry-trends.md` | HealthTech, FinTech, AI, GCC market, digital transformation, tech trends |
+| `memory/knowledge/career-strategy.md` | Job search, positioning, networking, personal branding, salary negotiation, interviewing |
+| `memory/knowledge/tools-and-methods.md` | Frameworks, methodologies, PMO, Agile, AI tools, productivity systems |
+| `memory/knowledge/raw-inspiration.md` | Quotes, one-liners, interesting takes that don't fit above |
+
+**If content spans multiple categories:** Save to the PRIMARY category. Add a one-line cross-reference note in secondary files.
+
+**Step 4: Save using this EXACT template**
+
+Use `edit` to APPEND to the correct file (never overwrite existing content):
+
+```markdown
+## [Descriptive Title] | [YYYY-MM-DD]
+**Source:** [URL or "Shared by Ahmed via Telegram"]
+**Type:** [Article / Video / Tweet / Framework / Book / Podcast / Other]
+
+**Key Insights:**
+- Insight 1
+- Insight 2
+- Insight 3
+- Insight 4
+- Insight 5
+
+**Actionable for Ahmed:**
+- How this applies to his job search / LinkedIn / TopMed / leadership
+
+**Tags:** #tag1 #tag2 #tag3
+```
+
+**Step 5: Confirm to Ahmed**
+
+Reply with:
+```
+📚 Saved to knowledge bank: [filename]
+Category: [category name]
+Key insight: [single most important takeaway in one line]
+```
+
+### Rules (NON-NEGOTIABLE)
+
+1. **NEVER just analyze and forget.** Every piece of shared content gets saved. No exceptions.
+2. **NEVER ask "should I save this?"** — just save it. Ahmed shared it because it matters.
+3. **ALWAYS append** to existing files. Never overwrite or delete previous entries.
+4. **ALWAYS search knowledge bank** before drafting LinkedIn posts, interview prep, or strategic work.
+5. **If unsure which file:** default to `raw-inspiration.md`. Wrong file > not saved.
+6. **Keep entries concise.** 5-10 bullet points per entry. Not a full article rewrite.
+7. **Cross-reference NASR's three non-negotiables:** Always connect the dots. If the content relates to something already in the knowledge bank, mention the connection.
 
 ---
 
