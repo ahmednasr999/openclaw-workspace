@@ -102,3 +102,7 @@ Read `/root/.openclaw/workspace/AHMED_COMPLETE_PROFILE.md` for complete details.
 5. Verify 85%+ before submitting
 
 **Failure Case:** Director of DT CV - missed 14/20 keywords, scored 55% vs Claude's 95%
+
+---
+
+**Links:** [[MEMORY.md]] | [[GOALS.md]]

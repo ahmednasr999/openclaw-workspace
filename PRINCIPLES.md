@@ -6,3 +6,7 @@ Operating principles for this agent. Add your own — these are just the startin
 
 Failures logged against the principle they tested. Format: what broke → why → what changed. Flag: 🔴 prompted (human caught it) | 🟢 autonomous (self-caught).
 
+
+---
+
+**Links:** [[MEMORY.md]] | [[GOALS.md]]

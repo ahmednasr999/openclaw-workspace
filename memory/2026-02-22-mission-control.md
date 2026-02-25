@@ -278,3 +278,7 @@ assistant: Session flushed. ✅
 Or just say "new session, use Sonnet 4.6" and I'll handle it on startup.
 
 **Context for new session:** `MC-P2-DESIGN-20260222` is the Phase 2 spec. Everything is backed up and ready. Delphi interview is Feb 23, 5PM IST. Phase 2 build starts Feb 24. 🎯
+
+---
+
+**Links:** [[../MEMORY.md]] | [[../GOALS.md]]
