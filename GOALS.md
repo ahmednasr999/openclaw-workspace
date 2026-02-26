@@ -23,10 +23,13 @@ Sectors: HealthTech / FinTech / Digital Transformation preferred.
 - VP AI Transformation: Etisalat, e& UAE
 - Salary range: AED 9,500-15,000/month (negotiate to 50,000+)
 
-### 🔴 Active Applications (Feb 25, 2026)
+### 🔴 Active Applications (Feb 26, 2026)
 | Company | Role | Status | Action |
 |---------|------|--------|--------|
+| Aiwozo Intelligent Automation | Head of Digital Transformation | ✅ Applied Feb 26 | Await response |
+| Oman Airports OAMC | VP Digital Transformation & Innovation | ✅ Applied Feb 26 | Await response |
 | Hamad Medical Corporation | Director Digital Transformation | ✅ Already Applied | Await response |
+| Delphi Consulting | Senior AI PM | Awaiting Feedback | Follow up if no response by Feb 28 |
 | SSA Group (via GulfTalent) | Project Manager (Roads/Civil) | 🔜 Pending apply | Apply via GulfTalent |
 | Michael Page | Project Director Infrastructure | 🔜 Pending apply | Apply via GulfTalent |
 

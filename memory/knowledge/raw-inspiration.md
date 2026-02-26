@@ -3,3 +3,5 @@
 *Quotes, one-liners, interesting takes. Auto-indexed by QMD.*
 
 ---
+
+<!-- end -->
