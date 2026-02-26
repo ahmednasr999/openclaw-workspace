@@ -53,6 +53,7 @@
 - Time-sensitive items go to the TOP, never buried
 - Label options clearly: Option A / B / C
 - No hand-holding, no over-explaining, no empty enthusiasm
+- **NEVER use em dashes in any response.** Use commas, periods, or colons instead. Hard rule, no exceptions.
 
 ### Red Lines — Never Do These
 
