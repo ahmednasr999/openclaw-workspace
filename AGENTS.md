@@ -69,20 +69,66 @@ Capture what matters. Decisions, context, things to remember. Skip the secrets u
 - `trash` > `rm` — recoverable beats gone forever
 - When in doubt, ask. One question > one mistake.
 
-### 🚫 No Infrastructure Changes Without Approval (PERMANENT)
+### 🔒 DRY RUN MODE: Pre-Approval for ALL System Commands (PERMANENT)
 
-Never do ANY of the following without Ahmed's explicit "yes":
-- Change openclaw.json network settings (host, port, binding)
-- Enable/disable UFW, iptables, or any firewall
-- Modify systemd service files
-- Restart the gateway
-- Connect to external nodes/devices
-- Change Tailscale serve/funnel config
-- Any action that could interrupt the gateway or Telegram
+**Any command that touches these categories MUST be shown to Ahmed FIRST and await explicit "go ahead" before execution.**
 
-**Always allowed without asking:** Reading logs, checking status, non-destructive investigation.
+**Locked directories (need approval to modify):**
+- `~/.openclaw/` — ANY file (config, cron, agents, credentials, identity)
+- `~/.config/systemd/user/` — service files
+- `/root/.config/` — any dotfiles
+- `/etc/ufw/` or `/etc/iptables/` — firewall rules
+- `/etc/apt/` — package sources
 
-**Why this rule exists:** On Feb 25, 2026, NASR changed gateway.host and restarted the gateway without approval, causing 50 restart loops and 6+ minutes of downtime. Two of three crashes that day were self-inflicted.
+**Locked commands (need approval):**
+- `systemctl` — start, stop, restart, enable, disable, reload
+- `ufw` — enable, disable, allow, deny, delete
+- `iptables` — any rule changes
+- `npm install`, `pip install`, `apt install` — any package install or upgrade
+- `npm uninstall`, `apt remove` — any package removal
+- `openclaw cron add/delete/modify` — any scheduled task changes
+- `git push --force` — destructive git operations
+- `tailscale serve/funnel` — any network exposure changes
+- SSH/SCP to external machines
+- Node pairing or external device connections
+- `chattr`, `chmod` on protected files
+- Gateway restart (`openclaw gateway restart`)
+
+**Approval format — use this EXACT template:**
+
+```
+🔒 DRY RUN: [Short Description]
+
+Command:
+  [exact command to execute]
+
+Why: [one-line reason]
+
+Expected outcome: [what should happen]
+
+Risk: LOW / MEDIUM / HIGH
+
+Waiting for: "go ahead"
+```
+
+**Rules:**
+- If Ahmed says "go ahead" → execute and report result
+- If Ahmed says nothing → do NOT execute
+- If Ahmed says "no" or "cancel" → do NOT execute, explain alternative
+- NEVER batch multiple locked commands — show each one separately
+- NEVER assume approval from a previous session
+
+**Always allowed WITHOUT asking:**
+- Reading any file (`cat`, `read`, `grep`, `head`, `tail`)
+- Checking status (`openclaw status`, `systemctl status`, `ps`, `df`, `free`)
+- Running `openclaw doctor` (read-only diagnosis)
+- Analyzing logs (`journalctl`, log file reads)
+- Web search, web fetch
+- Writing to workspace files (MEMORY.md, daily logs, knowledge bank)
+- Git add, commit (non-force push)
+- Git push to master (non-force)
+
+**Why this rule exists:** On Feb 25, 2026, NASR modified openclaw.json and restarted the gateway without approval, causing 50 restart loops and 6+ minutes of downtime. This rule prevents ALL similar incidents permanently.
 
 ## Model Selection Rules (Automatic)
 
