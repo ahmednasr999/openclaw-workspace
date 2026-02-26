@@ -157,3 +157,46 @@ None
   https://www.jacobs.com/what-we-do/global-program-management
   We work in partnership, delivering some of the most challenging, diverse and innovative projects and programs globally across multiple sectors. ## We deliver the world’s most iconic infrastructure and buildings programs – partnering with clients to transform communities, places and lives for the bet...
 
+=== Job Search - 2026-02-26 ===
+## Sources
+
+- **Middle East Healthcare Transformation Driven by Leadership** (relevance: 100%)
+  https://www.linkedin.com/posts/kamakshi-gupta-a9254013_the-middle-east-continues-to-advance-as-a-activity-7426529295029710848-IXJ1
+  As of February 8, 2026, Ali Bin Ali Medical (ABAM), in strategic collaboration with the Ministry of Public Health (MoPH), has officially
+
+- **PMO Lead Jobs in the Middle East (Feb 2026) - Bayt.com** (relevance: 100%)
+  https://www.bayt.com/en/international/jobs/pmo-lead-jobs/
+  Apply now to over 410 PMO Lead jobs in Middle East and Gulf and make your job hunting simpler. Find the latest PMO Lead job vacancies and employment
+
+- **Digital Transformation Company in KSA, UAE, and Qatar** (relevance: 100%)
+  https://www.squareonemea.com/
+  Our extensive digital transformation services are tailored to meet the unique needs of various industries. Banking Education Healthcare Insurance Manufacturing
+
+- **54 pmo lead Jobs in United Arab Emirates, February 2026 | Glassdoor** (relevance: 100%)
+  https://www.glassdoor.com/Job/united-arab-emirates-pmo-lead-jobs-SRCH_IL.0,20_IN6_KO21,29.htm
+  Search Pmo lead jobs in United Arab Emirates with company ratings & salaries. 54 open jobs for Pmo lead in United Arab Emirates.
+
+- **pmo jobs in Gulf - Dubai - gulfsalary.com** (relevance: 98%)
+  https://www.gulfsalary.com/jobs?l=gulf-gcc-mena&q=pmo&suggest-type=split&suggest-q=pmo+manager
+  16 pmo jobs. Find jobs, careers, employment, job listings, staff and candidates in Dubai, Abu-Dhabi, UAE, Qatar, Saudi Arabia, Kuwait,
+
+- **#Congratulations Omar Khan! Honored with the Top 20 ... - Instagram** (relevance: 94%)
+  https://www.instagram.com/reel/DThZ4W5DpqG/
+  ... Dubai, recognizing excellence in digital leadership, innovation, and transformation. ... Photo by Arabisk London | Saudi Arabia on February 11,
+
+- **Senior Manager or Director - Instagram** (relevance: 3%)
+  https://www.instagram.com/p/DU5nEMHjtpp/
+  This is a high-level opportunity for those who thrive on navigating the complexities of digital transformation and strategic infrastructure
+
+- **Abdullah Altwaim has been promoted to Director - Instagram** (relevance: 1%)
+  https://www.instagram.com/p/DU9r7yujFOL/
+  Abdullah Altwaim has been promoted to Director | Digital Solutions at TAM | تام, marking a significant milestone in his leadership journey
+
+- **Global Program Management** (relevance: 0%)
+  https://www.jacobs.com/what-we-do/global-program-management
+  We work in partnership, delivering some of the most challenging, diverse and innovative projects and programs globally across multiple sectors. ## We deliver the world’s most iconic infrastructure and buildings programs – partnering with clients to transform communities, places and lives for the bet...
+
+- **Sangeetha Kanvar Joins Eli Lilly as Head, Quality Systems ...** (relevance: 0%)
+  https://hrtoday.in/sangeetha-kanvar-joins-eli-lilly-as-head-quality-systems-excellence-digital-transformation/
+  Sangeetha Kanvar has joined Eli Lilly and Company as Head, Quality Systems Excellence & Digital Transformation. With strong leadership experience in digital
+
