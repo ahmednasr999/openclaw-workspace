@@ -169,6 +169,13 @@ Route tasks to the right model. Cost discipline is non-negotiable.
 
 **Cost guard:** Track daily spend. If >$5/day, auto-downgrade Sonnet tasks to M2.5. Never use Opus for what Sonnet can handle. Never use Sonnet for what M2.5 can handle.
 
+**Fallback chain (mandatory):**
+- Opus unavailable → fall back to Sonnet 4.6
+- Sonnet unavailable → fall back to M2.5
+- M2.5 unavailable → fall back to Haiku
+- **Never silently fail.** If downgraded, notify Ahmed: "⚠️ [Model] unavailable — fell back to [Model]. Task: [what I was doing]. Quality may differ."
+- If ALL models fail → send Telegram alert and retry in 60 seconds
+
 ---
 
 ## External vs Internal
