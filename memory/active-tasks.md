@@ -16,6 +16,7 @@
 - **Position:** Senior AI Project Manager (UAE, On-Site)
 - **Interviewer:** Kritika Chhabra
 - **Outcome:** ✅ Went well — awaiting feedback
+- **Thank-you email:** ✅ SENT — Feb 25, 2026
 - **CV Match:** 91% ATS
 - **Salary target:** 50,000-55,000 AED/month
 
@@ -23,7 +24,7 @@
 
 ### LinkedIn Content Engine
 - **Status:** ✅ LIVE — Automated daily delivery Sun-Thu at 11:30 AM Cairo
-- **Week 1 (Feb 25-26):** 2 posts drafted + images (partial week)
+- **Week 1 (Feb 25-26):** ✅ LIVE — posting started Feb 25, thank-you email to Delphi sent Feb 25
 - **Week 2 (Mar 2-6):** 5 posts + 5 images COMPLETE on GitHub
 - **Weeks 3-5:** Topics planned, need full drafts + images
 - **Cron:** "LinkedIn Daily Post + Image" (MiniMax M2.5, 300s timeout)
@@ -42,9 +43,19 @@
 - **Next:** Round 3+, then fix identified gaps
 
 ### CV Creation Pipeline
-- **Status:** Ready for new JDs
+- **Status:** Active
 - **Master CV:** `memory/master-cv-data.md`
-- **Recent:** eMagine VP Digital Projects (ATS 87-90%), plus multiple earlier CVs
+
+**Applied (Feb 26, 2026):**
+- Aiwozo Agentic Automation - Head of DT, Dubai - ATS 94% - APPLIED
+- First Abu Dhabi Bank - VP Technology & Data, Abu Dhabi - CV done previously - APPLIED
+- eMagine Solutions - VP Digital Projects, Abu Dhabi - ATS 87-90% - APPLIED (Feb 25)
+
+**CV Ready, Apply Next:**
+- Oman Airports OAMC - VP DT & Innovation, Muscat - ATS 100% - APPLIED (Feb 26, 2026)
+
+**Delphi Consulting - Senior AI PM:**
+- Interview Feb 24 - went well - thank-you sent Feb 25 - awaiting feedback
 
 ## 🟢 Recurring
 
