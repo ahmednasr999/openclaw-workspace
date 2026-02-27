@@ -15,7 +15,7 @@
 | 5 | eMagine Solutions | [VP of Digital Projects](applications/emagne-vp-digital/job.md) | Abu Dhabi, UAE | 87-90% | ✅ Applied | 2026-02-25 | 2026-03-04 | ⚠️ Missing | [CV ✅](applications/emagne-vp-digital/Ahmed%20Nasr%20-%20VP%20Digital%20Projects%20-%20eMagine%20Solutions.pdf) | ✅ |
 | 6 | Confidential | [Group IT Director](applications/group-it-director-bahrain/job.md) | Bahrain | 92-93% | ✅ Applied | 2026-02-26 | 2026-03-05 | LinkedIn (confidential) | ⚠️ CV needed | ✅ |
 | 7 | Buro Happold | [Director, Program Advisory](applications/buro-happold-director-program/job.md) | Riyadh, KSA | 88% | ✅ Applied | 2026-02-27 | 2026-03-06 | [Apply](https://vacancies.burohappold.com/jobs/job/Director-Program-Advisory/1945) | [CV ✅](applications/buro-happold-director-program/Ahmed_Nasr_Director_Program_Advisory_BuroHappold.pdf) | ✅ |
-| 8 | Inception (G42) | [Director, Delivery](applications/inception-director-delivery/job.md) | Abu Dhabi, UAE | 85-87% | 📄 CV Building | — | — | [LinkedIn](https://ae.linkedin.com/jobs/view/director-delivery-at-inception-4376090289) | ⏳ Agent running | ☐ |
+| 8 | Inception (G42) | [Director, Delivery](applications/inception-director-delivery/job.md) | Abu Dhabi, UAE | 91% | 📄 CV Ready | — | — | [LinkedIn](https://ae.linkedin.com/jobs/view/director-delivery-at-inception-4376090289) | [CV ✅](applications/inception-director-delivery/Ahmed_Nasr_Director_Delivery_Inception.pdf) | ☐ |
 | 9 | Dubai Holding | [Director, DT & IT](applications/du-director-it-strategy/job.md) | Dubai, UAE | 92% | ✅ Applied | 2026-02-27 | 2026-03-06 | [LinkedIn](https://www.linkedin.com/jobs/view/4375112810/) | [CV ✅](applications/du-director-it-strategy/Ahmed_Nasr_Director_DT_IT_DubaiHolding.pdf) | ✅ |
 | 10 | DP World | [Director, Optimization & Efficiency](applications/dp-world-director/job.md) | Dubai, UAE | — | 🔍 Radar | — | — | ⚠️ URL needed | ⚠️ JD needed | ☐ |
 | 11 | J10 Consulting | [Project Director](applications/j10-project-director/job.md) | GCC | — | 🔍 Radar | — | — | [GulfTalent](https://www.gulftalent.com/candidates/recommended-jobs) | ⚠️ Login needed | ☐ |
@@ -45,7 +45,7 @@
 | # | Company | Role | Priority | Next Step |
 |---|---------|------|----------|-----------|
 | 7 | Buro Happold | Director, Program Advisory | ✅ CV Ready 88% | Review CV + apply before Mar 26 |
-| 8 | Inception | Director, Delivery | 🟡 MEDIUM | LinkedIn blocked — needs login to get JD |
+| 8 | Inception (G42) | Director, Delivery | ✅ CV Ready 91% | Review CV + apply |
 | 9 | Dubai Holding | Director, DT & IT | ✅ CV Ready 88% | Review CV + apply |
 | 10 | DP World | Director, Optimization & Efficiency | 🟡 MEDIUM | Find LinkedIn URL, pull JD |
 | 11 | J10 Consulting | Project Director | 🟡 MEDIUM | Ahmed to check GulfTalent for JD |
