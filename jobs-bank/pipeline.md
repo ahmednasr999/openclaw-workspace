@@ -67,8 +67,7 @@ No proactive follow-ups on submitted applications. Ball is in their court.
 
 | Company | Role | Location | Priority | Job URL | Next Step |
 |---------|------|----------|----------|---------|-----------|
-| Oracle | Director Client Engagement / Digital Transformation | Riyadh, KSA | 🔥 HIGH | [LinkedIn](https://www.linkedin.com/jobs/search/?keywords=Director+Client+Engagement+Digital+Transformation+Oracle+Riyadh) | Pull JD + assess fit — 19 connections, 31 alumni |
-| EyeSpy | Head of PMO | UAE | 🟡 MEDIUM | N/A — need JD link | Get JD link + assess fit |
+
 | Cygnify | Principal, Digital Delivery & Transformation | Dubai, UAE | 🟡 MEDIUM | [LinkedIn](https://www.linkedin.com/jobs/search/?keywords=Principal+Digital+Delivery+Transformation+Cygnify+Dubai) | Verify salary range first |
 | Legend Holding Group | IT Director | Dubai, UAE | 🟡 MEDIUM | [LinkedIn](https://www.linkedin.com/jobs/search/?keywords=IT+Director+Legend+Holding+Group+Dubai) | Verify scope and salary |
 
