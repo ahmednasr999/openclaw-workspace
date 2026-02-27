@@ -1,0 +1,55 @@
+{
+  "date": "2026-02-27",
+  "resetAt": "2026-02-27T08:20:55.269Z",
+  "models": {
+    "anthropic/claude-opus-4-6": {
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "requests": 0,
+      "estimatedCostUSD": 0,
+      "lastUsed": null,
+      "rateLimitHits": 0
+    },
+    "anthropic/claude-sonnet-4-6": {
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "requests": 0,
+      "estimatedCostUSD": 0,
+      "lastUsed": null,
+      "rateLimitHits": 0
+    },
+    "anthropic/claude-haiku-4-5": {
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "requests": 0,
+      "estimatedCostUSD": 0,
+      "lastUsed": null,
+      "rateLimitHits": 0
+    },
+    "minimax-portal/MiniMax-M2.5": {
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "requests": 0,
+      "estimatedCostUSD": 0,
+      "lastUsed": null,
+      "rateLimitHits": 0
+    },
+    "moonshot/kimi-k2.5": {
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "requests": 0,
+      "estimatedCostUSD": 0,
+      "lastUsed": null,
+      "rateLimitHits": 0
+    },
+    "openai-codex/gpt-5.1": {
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "requests": 0,
+      "estimatedCostUSD": 0,
+      "lastUsed": null,
+      "rateLimitHits": 0
+    }
+  },
+  "events": []
+}
