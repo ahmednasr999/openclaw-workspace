@@ -6,22 +6,22 @@
 
 ## Active Pipeline
 
-| # | Company | Role | Location | ATS | Stage | Applied | Follow-up Due | Job URL | CV | Applied? |
-|---|---------|------|----------|-----|-------|---------|--------------|---------|-----|----------|
-| 1 | Delphi Consulting | [Senior AI Project Manager](applications/delphi-senior-ai-pm/job.md) | UAE | 91% | 📞 Interview | 2026-02-21 | 2026-02-27 | ⚠️ Missing | [CV ✅](applications/delphi-senior-ai-pm/Ahmed%20Nasr%20-%20Senior%20AI%20PM%20-%20Delphi%20Consulting.pdf) | ✅ |
-| 2 | Talabat | [CPTO](applications/talabat-cpto/job.md) | Dubai, UAE | 92-94% | ✅ Applied | 2026-02-24 | 2026-03-02 | [LinkedIn](https://www.linkedin.com/jobs/view/4375708512) | ⚠️ CV needed | ✅ |
-| 3 | AIQU | [Director of AI](applications/aiqu-director-ai/job.md) | Dubai, UAE | 87-89% | ✅ Applied | 2026-02-24 | 2026-03-02 | [LinkedIn](https://www.linkedin.com/jobs/view/4375324051) | ⚠️ CV needed | ✅ |
-| 4 | Nexus Consulting | [CEO](applications/nexus-ceo/job.md) | Saudi Arabia (Remote) | 88-90% | ✅ Applied | 2026-02-24 | 2026-03-02 | [LinkedIn](https://www.linkedin.com/jobs/view/4376367703) | ⚠️ CV needed | ✅ |
-| 5 | eMagine Solutions | [VP of Digital Projects](applications/emagne-vp-digital/job.md) | Abu Dhabi, UAE | 87-90% | ✅ Applied | 2026-02-25 | 2026-03-04 | ⚠️ Missing | [CV ✅](applications/emagne-vp-digital/Ahmed%20Nasr%20-%20VP%20Digital%20Projects%20-%20eMagine%20Solutions.pdf) | ✅ |
-| 6 | Confidential | [Group IT Director](applications/group-it-director-bahrain/job.md) | Bahrain | 92-93% | ✅ Applied | 2026-02-26 | 2026-03-05 | LinkedIn (confidential) | ⚠️ CV needed | ✅ |
-| 7 | Buro Happold | [Director, Program Advisory](applications/buro-happold-director-program/job.md) | Riyadh, KSA | 88% | ✅ Applied | 2026-02-27 | 2026-03-06 | [Apply](https://vacancies.burohappold.com/jobs/job/Director-Program-Advisory/1945) | [CV ✅](applications/buro-happold-director-program/Ahmed_Nasr_Director_Program_Advisory_BuroHappold.pdf) | ✅ |
-| 8 | Inception (G42) | [Director, Delivery](applications/inception-director-delivery/job.md) | Abu Dhabi, UAE | 91% | ✅ Applied | 2026-02-27 | 2026-03-06 | [LinkedIn](https://ae.linkedin.com/jobs/view/director-delivery-at-inception-4376090289) | [CV ✅](applications/inception-director-delivery/Ahmed_Nasr_Director_Delivery_Inception.pdf) | ✅ |
-| 9 | Dubai Holding | [Director, DT & IT](applications/du-director-it-strategy/job.md) | Dubai, UAE | 92% | ✅ Applied | 2026-02-27 | 2026-03-06 | [LinkedIn](https://www.linkedin.com/jobs/view/4375112810/) | [CV ✅](applications/du-director-it-strategy/Ahmed_Nasr_Director_DT_IT_DubaiHolding.pdf) | ✅ |
-| 10 | DP World | [Director, Optimization & Efficiency](applications/dp-world-director/job.md) | Dubai, UAE | — | 🔍 Radar | — | — | ⚠️ URL needed | ⚠️ JD needed | ☐ |
-| 11 | J10 Consulting | [Project Director](applications/j10-project-director/job.md) | GCC | — | 🔍 Radar | — | — | [GulfTalent](https://www.gulftalent.com/candidates/recommended-jobs) | ⚠️ Login needed | ☐ |
-| ~~12~~ | ~~Alpha Recruitment~~ | ~~Senior Director/VP Data & AI~~ | ~~Dubai~~ | ~~—~~ | ❌ Expired | — | — | Expired Dec 2022 | N/A | — |
-| 13 | FAB | [VP, Technology & Data](applications/fab-vp-technology-data/job.md) | Abu Dhabi, UAE | — | 🔍 Radar | — | — | LinkedIn (find URL) | ⚠️ JD needed | ☐ |
-| 14 | Cygnify | [Principal, Digital Delivery & Transformation](applications/cygnify-principal-digital/job.md) | Dubai, UAE | — | 🔍 Radar | — | — | LinkedIn (find URL) | ⚠️ JD needed | ☐ |
+| # | Company | Role | Location | ATS | Stage | Applied | Follow-up Due | Job URL | CV |
+|---|---------|------|----------|-----|-------|---------|--------------|---------|-----|
+| 1 | Delphi Consulting | [Senior AI PM](applications/delphi-senior-ai-pm/job.md) | UAE | 91% | 📞 Interview | 2026-02-21 | 2026-02-27 | ⚠️ Missing | [CV ✅](applications/delphi-senior-ai-pm/) |
+| 2 | Talabat | [CPTO](applications/talabat-cpto/job.md) | Dubai, UAE | 87% | ✅ Applied | 2026-02-24 | 2026-03-02 | [LinkedIn](https://www.linkedin.com/jobs/view/4375708512) | [CV ✅](applications/talabat-cpto/Ahmed_Nasr_CPTO_Talabat.pdf) |
+| 3 | AIQU | [Director AI](applications/aiqu-director-ai/job.md) | Dubai, UAE | 82% | ✅ Applied | 2026-02-24 | 2026-03-02 | [LinkedIn](https://www.linkedin.com/jobs/view/4375324051) | [CV ✅](applications/aiqu-director-ai/Ahmed_Nasr_Director_AI_AIQU.pdf) |
+| 4 | Nexus Consulting | [CEO](applications/nexus-ceo/job.md) | Saudi Arabia | 78% | ✅ Applied | 2026-02-24 | 2026-03-02 | [LinkedIn](https://www.linkedin.com/jobs/view/4376367703) | [CV ✅](applications/nexus-ceo/Ahmed_Nasr_CEO_NexusConsulting.pdf) |
+| 5 | eMagine Solutions | [VP Digital Projects](applications/emagne-vp-digital/job.md) | Abu Dhabi, UAE | 87-90% | ✅ Applied | 2026-02-25 | 2026-03-04 | ⚠️ Missing | [CV ✅](applications/emagne-vp-digital/) |
+| 6 | Confidential | [Group IT Director](applications/group-it-director-bahrain/job.md) | Bahrain | 92-93% | ✅ Applied | 2026-02-26 | 2026-03-05 | Confidential | ⚠️ CV in workspace |
+| 7 | Buro Happold | [Director Program Advisory](applications/buro-happold-director-program/job.md) | Riyadh, KSA | 88% | ✅ Applied | 2026-02-27 | 2026-03-06 | [Link](https://vacancies.burohappold.com/jobs/job/Director-Program-Advisory/1945) | [CV ✅](applications/buro-happold-director-program/Ahmed_Nasr_Director_Program_Advisory_BuroHappold.pdf) |
+| 8 | Inception (G42) | [Director Delivery](applications/inception-director-delivery/job.md) | Abu Dhabi, UAE | 91% | ✅ Applied | 2026-02-27 | 2026-03-06 | [LinkedIn](https://ae.linkedin.com/jobs/view/director-delivery-at-inception-4376090289) | [CV ✅](applications/inception-director-delivery/Ahmed_Nasr_Director_Delivery_Inception.pdf) |
+| 9 | Dubai Holding | [Director DT & IT](applications/du-director-it-strategy/job.md) | Dubai, UAE | 92% | ✅ Applied | 2026-02-27 | 2026-03-06 | [LinkedIn](https://www.linkedin.com/jobs/view/4375112810/) | [CV ✅](applications/du-director-it-strategy/Ahmed_Nasr_Director_DT_IT_DubaiHolding.pdf) |
+| 10 | FAB | [VP Technology & Data](applications/fab-vp-technology-data/job.md) | Abu Dhabi, UAE | 87% | 🔍 Radar | — | — | [LinkedIn](https://ae.linkedin.com/jobs/view/vp-technology-data-asset-management-at-first-abu-dhabi-bank-fab-4374898166) | [CV ✅](applications/fab-vp-technology-data/Ahmed_Nasr_VP_Technology_Data_FAB.pdf) |
+| 11 | DP World | [Director Optimization](applications/dp-world-director/job.md) | Dubai, UAE | — | 🔍 Radar | — | — | ⚠️ URL needed | ⚠️ JD needed |
+| 12 | J10 Consulting | [Project Director](applications/j10-project-director/job.md) | GCC | — | 🔍 Radar | — | — | GulfTalent (login needed) | ⚠️ JD needed |
+| 13 | Cygnify | [Principal Digital Delivery](applications/cygnify-principal-digital/job.md) | Dubai, UAE | — | 🔍 Radar | — | — | ⚠️ URL needed | ⚠️ JD needed |
+| ~~14~~ | ~~Alpha Recruitment~~ | ~~VP Data & AI~~ | ~~Dubai~~ | — | ❌ Expired | — | — | Dec 2022 posting | N/A |
 
 ---
 
@@ -29,27 +29,27 @@
 
 | Date | Company | Action | Status |
 |------|---------|--------|--------|
-| 2026-02-27 | Delphi Consulting | Check-in email (48h post thank-you) | ⏰ Due today |
-| 2026-03-02 | Talabat | 7-day follow-up email | ⏰ Pending |
-| 2026-03-02 | AIQU | 7-day follow-up email | ⏰ Pending |
-| 2026-03-02 | Nexus Consulting | 7-day follow-up email | ⏰ Pending |
-| 2026-03-04 | eMagine Solutions | 7-day follow-up email | ⏰ Pending |
-| 2026-03-05 | Group IT Director (Bahrain) | 7-day follow-up email | ⏰ Pending |
-| 2026-03-09 | Oman Development Bank | Application deadline (IT Governance) | ⏰ Decision needed |
-| 2026-03-26 | Buro Happold | Application deadline | ⏰ CV + Apply needed |
+| 2026-02-27 | Delphi Consulting | Check-in email | 🔴 Due today |
+| 2026-03-02 | Talabat | 7-day follow-up | ⏰ Pending |
+| 2026-03-02 | AIQU | 7-day follow-up | ⏰ Pending |
+| 2026-03-02 | Nexus Consulting | 7-day follow-up | ⏰ Pending |
+| 2026-03-04 | eMagine Solutions | 7-day follow-up | ⏰ Pending |
+| 2026-03-05 | Group IT Director (Bahrain) | 7-day follow-up | ⏰ Pending |
+| 2026-03-06 | Buro Happold | 7-day follow-up | ⏰ Pending |
+| 2026-03-06 | Inception (G42) | 7-day follow-up | ⏰ Pending |
+| 2026-03-06 | Dubai Holding | 7-day follow-up | ⏰ Pending |
+| 2026-03-26 | Buro Happold | Application deadline | ✅ Already applied |
 
 ---
 
 ## 🔍 Radar — Needs Action
 
-| # | Company | Role | Priority | Next Step |
-|---|---------|------|----------|-----------|
-| 7 | Buro Happold | Director, Program Advisory | ✅ CV Ready 88% | Review CV + apply before Mar 26 |
-| 8 | Inception (G42) | Director, Delivery | ✅ Applied 91% | Acknowledged — follow-up Mar 6 |
-| 9 | Dubai Holding | Director, DT & IT | ✅ CV Ready 88% | Review CV + apply |
-| 10 | DP World | Director, Optimization & Efficiency | 🟡 MEDIUM | Find LinkedIn URL, pull JD |
-| 11 | J10 Consulting | Project Director | 🟡 MEDIUM | Ahmed to check GulfTalent for JD |
-| ~~12~~ | ~~Alpha Recruitment~~ | ~~VP Data & AI~~ | ❌ Expired | Job posting from 2022 — removed |
+| Company | Role | Priority | Next Step |
+|---------|------|----------|-----------|
+| FAB | VP Technology & Data | 🔥 HIGH | Warm outreach to ESLSCA alumni BEFORE applying online |
+| DP World | Director Optimization | 🟡 MEDIUM | Find JD URL (Oracle Cloud portal — needs browser) |
+| J10 Consulting | Project Director | 🟡 MEDIUM | Ahmed to log into GulfTalent and share JD |
+| Cygnify | Principal Digital Delivery | 🟢 LOW | No public JD found — may be internal/referral only |
 
 ---
 
@@ -57,12 +57,14 @@
 
 | Metric | Value |
 |--------|-------|
-| Total in pipeline | 12 |
-| Applied | 6 |
-| Radar (not yet applied) | 6 |
-| Active interviews | 1 (Delphi) |
-| Avg ATS score (applied) | 89-93% |
-| Follow-ups due this week | 5 |
+| Total tracked | 13 (excl. expired) |
+| Applied | 9 |
+| CV Ready, not yet applied | 1 (FAB) |
+| Radar (no CV yet) | 3 (DP World, J10, Cygnify) |
+| Active interviews | 1 (Delphi — awaiting feedback) |
+| Avg ATS score (applied) | 88% |
+| Follow-ups due this week | 🔴 Delphi (today) |
+| Follow-ups due next week | Talabat, AIQU, Nexus (Mar 2) |
 | Target salary | 50,000+ AED/month |
 
 ---
@@ -71,4 +73,4 @@
 
 | Company | Role | Outcome | Date |
 |---------|------|---------|------|
-| — | — | — | — |
+| Alpha Recruitment | VP Data & AI | ❌ Expired (Dec 2022 posting) | Removed 2026-02-27 |
