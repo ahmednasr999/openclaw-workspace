@@ -37,6 +37,7 @@
 | 27 | ☑️ | UnlockLand | VP Global Operations | Saudi Arabia | 91% | ✅ Applied | 2026-02-27 | 2026-03-06 | [LinkedIn](https://www.linkedin.com/jobs/view/4377615733) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/applications/unlockland-vp-operations/Ahmed_Nasr_VP_Operations_UnlockLand.pdf) |
 | 28 | ☑️ | Cooper Fitch | Executive Director, Strategic Initiatives | Riyadh, KSA | 91% | ✅ Applied | 2026-02-27 | 2026-03-06 | [LinkedIn](https://www.linkedin.com/jobs/view/4375223553/) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20Executive%20Director%20Strategic%20Initiatives%20-%20Cooper%20Fitch.pdf) |
 | 29 | ⬜ | One Executive | Director, Organisational Development | Dubai, UAE | 88% | 🔥 CV Ready | — | — | [LinkedIn](https://www.linkedin.com/jobs/view/4375226171/) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20Director%20OD%20-%20One%20Executive.pdf) |
+| 30 | ⬜ | Sky News Arabia | Head of AI Transformation & Innovation | Abu Dhabi, UAE | 87% | 🔥 CV Ready | — | — | [LinkedIn](https://www.linkedin.com/jobs/view/4373109759) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20Head%20AI%20Transformation%20-%20Sky%20News%20Arabia.pdf) |
 
 
 ---
@@ -65,7 +66,7 @@ No proactive follow-ups on submitted applications. Ball is in their court.
 
 | Company | Role | Location | Priority | Job URL | Next Step |
 |---------|------|----------|----------|---------|-----------|
-| Sky News Arabia | Head of AI Transformation & Innovation | Abu Dhabi, UAE | 🔥 HIGH | [LinkedIn](https://www.linkedin.com/jobs/view/4373109759) | CV in progress |
+
 | Oracle | Director Client Engagement / Digital Transformation | Riyadh, KSA | 🔥 HIGH | [LinkedIn](https://www.linkedin.com/jobs/search/?keywords=Director+Client+Engagement+Digital+Transformation+Oracle+Riyadh) | Pull JD + assess fit — 19 connections, 31 alumni |
 | Cygnify | Principal, Digital Delivery & Transformation | Dubai, UAE | 🟡 MEDIUM | [LinkedIn](https://www.linkedin.com/jobs/search/?keywords=Principal+Digital+Delivery+Transformation+Cygnify+Dubai) | Verify salary range first |
 | Legend Holding Group | IT Director | Dubai, UAE | 🟡 MEDIUM | [LinkedIn](https://www.linkedin.com/jobs/search/?keywords=IT+Director+Legend+Holding+Group+Dubai) | Verify scope and salary |
