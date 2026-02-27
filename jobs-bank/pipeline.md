@@ -1,6 +1,6 @@
 # 📊 Jobs Pipeline — Master Tracker
 
-*Last updated: 2026-02-27 07:19 UTC | Maintained by NASR*
+*Last updated: 2026-02-27 09:09 UTC | Maintained by NASR*
 
 ---
 
@@ -49,11 +49,13 @@
 | 2026-03-02 | Nexus Consulting | 7-day follow-up | ⏰ Pending |
 | 2026-03-04 | eMagine Solutions | 7-day follow-up | ⏰ Pending |
 | 2026-03-05 | Group IT Director (Bahrain) | 7-day follow-up | ⏰ Pending |
-| 2026-03-06 | Buro Happold | 7-day follow-up | ⏰ Pending |
-| 2026-03-06 | Inception (G42) | 7-day follow-up | ⏰ Pending |
-| 2026-03-06 | Dubai Holding | 7-day follow-up | ⏰ Pending |
-| 2026-03-06 | FAB | 7-day follow-up | ⏰ Pending |
 | 2026-03-26 | Buro Happold | Application deadline | ✅ Already applied |
+
+**Follow-up Policy (Updated Feb 27, 2026):**
+No proactive follow-ups on submitted applications. Ball is in their court.
+- Day 7: Status check only — flag "No response yet" in pipeline
+- Day 30: Move to "Cold / No Response" and remove from active tracking
+- Exceptions: Recruiter goes silent mid-process, post-interview silence, direct recruiter contact (Hays, Renard, Carter Murray)
 
 ---
 
@@ -75,8 +77,9 @@
 | Radar (no CV yet) | 0 |
 | Active interviews | 1 (Delphi — awaiting feedback) |
 | Avg ATS score (all CVs) | 89% |
-| Follow-ups due this week | 🔴 Delphi (today) |
-| Follow-ups due next week | Talabat, AIQU, Nexus (Mar 2) |
+| Follow-up policy | No proactive follow-ups — wait for recruiter response |
+| Day 7 check | Mar 2 (Talabat, AIQU, Nexus) — status flag only |
+| Day 30 cold | Mar 29 (first batch moves to cold if no response) |
 | Target salary | 50,000+ AED/month |
 
 ---
