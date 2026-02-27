@@ -1,6 +1,6 @@
 # 📊 Jobs Pipeline — Master Tracker
 
-*Last updated: 2026-02-27 07:18 UTC | Maintained by NASR*
+*Last updated: 2026-02-27 07:19 UTC | Maintained by NASR*
 
 ---
 
@@ -28,7 +28,7 @@
 | 18 | ☑️ | Codesearch AI | [Head of Data Science & AI](applications/codesearch-head-data-ai/job.md) | Dubai, UAE | 87% | ✅ Applied | 2026-02-27 | 2026-03-06 | [LinkedIn](https://www.linkedin.com/jobs/view/4378364156) | [CV ✅](applications/codesearch-head-data-ai/Ahmed_Nasr_Head_Data_AI_Codesearch.pdf) |
 | 19 | ☑️ | Halian (Federal) | [Director PMO — Federal Tech](applications/halian-director-pmo-federal/job.md) | Abu Dhabi, UAE | 91% | ✅ Applied | 2026-02-27 | 2026-03-06 | [LinkedIn](https://www.linkedin.com/jobs/view/4377233880) | [CV ✅](applications/halian-director-pmo-federal/Ahmed_Nasr_Director_PMO_Halian.pdf) |
 | 20 | ☑️ | Confidential (AI Co.) | COO | Dammam, KSA | — | ✅ Applied | 2026-02-27 | 2026-03-06 | LinkedIn | — |
-| 21 | ☐ | Confidential Careers | [CEO — Giga-Projects KSA](applications/confidential-ceo-giga-projects/job.md) | Riyadh, KSA | 89% | 📋 CV Ready | — | 2026-03-07 | [LinkedIn](https://www.linkedin.com/jobs/view/4373471367) | [CV ✅](applications/confidential-ceo-giga-projects/Ahmed_Nasr_CEO_GigaProjects.pdf) |
+| 21 | ☑️ | Confidential Careers | [CEO — Giga-Projects KSA](applications/confidential-ceo-giga-projects/job.md) | Riyadh, KSA | 89% | ✅ Applied | 2026-02-27 | 2026-03-06 | [LinkedIn](https://www.linkedin.com/jobs/view/4373471367) | [CV ✅](applications/confidential-ceo-giga-projects/Ahmed_Nasr_CEO_GigaProjects.pdf) |
 | 22 | ☑️ | Proximie | [Transformation Lead UAE](applications/proximie-transformation-lead/job.md) | Dubai, UAE | 88% | ✅ Applied | 2026-02-27 | 2026-03-06 | [LinkedIn](https://www.linkedin.com/jobs/view/4376782445) | [CV ✅](applications/proximie-transformation-lead/Ahmed_Nasr_Transformation_Lead_Proximie.pdf) |
 | 23 | ☑️ | Renard International | [Director Tech & Innovation](applications/renard-director-tech-innovation/job.md) | Doha, Qatar | 88% | ✅ Applied | 2026-02-27 | 2026-03-06 | [LinkedIn](https://www.linkedin.com/jobs/view/4372899733) | [CV ✅](applications/renard-director-tech-innovation/Ahmed_Nasr_Director_Tech_Innovation_Renard.pdf) |
 | 24 | ☑️ | Confidential | [Director Enterprise PMO](applications/confidential-director-pmo-dubai/job.md) | Dubai, UAE | 88% | ✅ Applied | 2026-02-27 | 2026-03-06 | [LinkedIn](https://www.linkedin.com/jobs/view/4375140623) | [CV ✅](applications/confidential-director-pmo-dubai/Ahmed_Nasr_Director_PMO_Dubai.pdf) |
@@ -70,8 +70,8 @@
 | Metric | Value |
 |--------|-------|
 | Total tracked | 27 |
-| Applied | 26 |
-| CV Ready, not yet applied | 1 (CEO Giga-Projects KSA — Riyadh) |
+| Applied | 27 |
+| CV Ready, not yet applied | 0 |
 | Radar (no CV yet) | 0 |
 | Active interviews | 1 (Delphi — awaiting feedback) |
 | Avg ATS score (all CVs) | 89% |
