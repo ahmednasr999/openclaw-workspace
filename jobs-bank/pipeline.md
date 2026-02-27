@@ -69,7 +69,10 @@ No proactive follow-ups on submitted applications. Ball is in their court.
 | Company | Role | Location | Priority | Job URL | Next Step |
 |---------|------|----------|----------|---------|-----------|
 
-| Legend Holding Group | IT Director | Dubai, UAE | 🟡 MEDIUM | [LinkedIn](https://www.linkedin.com/jobs/search/?keywords=IT+Director+Legend+Holding+Group+Dubai) | Verify scope and salary |
+| Legend Holding Group | IT Director | Dubai, UAE | 🟡 MEDIUM | [LinkedIn](https://www.linkedin.com/jobs/search/?keywords=IT+Director+Legend+Holding+Group+Dubai) | Need valid job URL + JD |
+| Leru Partners | Head of Solutions & Delivery (AI) | Dubai, UAE | 🔥 HIGH | N/A — need job URL | AI-specific, strong fit — get URL + JD |
+| Oracle | Director Client Engagement / Digital Transformation | Riyadh, KSA | 🔥 HIGH | N/A — need job URL | 19 connections, 31 alumni — get URL + JD |
+| DP World | Director, Optimization & Efficiency | Dubai, UAE | 🟡 MEDIUM | N/A — need job URL | 2 connections, 1 company alum — get URL + JD |
 | TP | AI Delivery VP | Cairo, Egypt | 🟡 MONITOR | [LinkedIn](https://www.linkedin.com/jobs/view/4378349141/) | Monitor only — conflicts with GCC target |
 | Majid Al Futtaim | Director, Total Rewards | Cairo, Egypt | ❌ SKIP | [LinkedIn](https://www.linkedin.com/jobs/view/4377273639/) | HR role — not strategic fit |
 
