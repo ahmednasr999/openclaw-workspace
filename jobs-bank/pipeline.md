@@ -1,6 +1,6 @@
 # 📊 Jobs Pipeline — Master Tracker
 
-*Last updated: 2026-02-27 06:30 UTC | Maintained by NASR*
+*Last updated: 2026-02-27 06:38 UTC | Maintained by NASR*
 
 ---
 
@@ -22,6 +22,11 @@
 | 12 | ☐ | Confidential | [Head of Artificial Intelligence](applications/confidential-head-ai-dubai/job.md) | Dubai, UAE | 91% | 📋 CV Ready | — | 2026-03-07 | [LinkedIn](https://www.linkedin.com/jobs/view/4377598782/) | [CV ✅](applications/confidential-head-ai-dubai/Ahmed_Nasr_Head_AI_Confidential.pdf) |
 | 13 | ☐ | Apex Group Ltd | [Head of AI Innovation](applications/apex-ai-innovation-head/job.md) | Abu Dhabi, UAE | 88% | 📋 CV Ready | — | 2026-03-07 | [LinkedIn](https://www.linkedin.com/jobs/view/4357830223/) | [CV ✅](applications/apex-ai-innovation-head/Ahmed_Nasr_Head_AI_Innovation_Apex.pdf) |
 | 14 | ☐ | du | [Director IT Strategy](applications/du-director-it-strategy/job.md) | UAE | 88% | 📋 CV Ready | — | 2026-03-07 | [LinkedIn](https://www.linkedin.com/jobs/view/4374891542/) | [CV ✅](applications/du-director-it-strategy/Ahmed_Nasr_Director_IT_Strategy_du.pdf) |
+| 15 | ☐ | Windmills Group | [CTO](applications/windmills-cto/job.md) | Dubai, UAE | 91% | 📋 CV Ready | — | 2026-03-07 | [LinkedIn](https://www.linkedin.com/jobs/view/4375537686) | [CV ✅](applications/windmills-cto/Ahmed_Nasr_CTO_Windmills.pdf) |
+| 16 | ☐ | Hays (client) | [Head of AI](applications/hays-head-ai-dubai/job.md) | Dubai, UAE | 91% | 📋 CV Ready | — | 2026-03-07 | [LinkedIn](https://www.linkedin.com/jobs/view/4351778628) | [CV ✅](applications/hays-head-ai-dubai/Ahmed_Nasr_Head_AI_Hays.pdf) |
+| 17 | ☐ | SmartChoice GCC | [Head of Tech & Transformation](applications/smartchoice-head-tech-transformation/job.md) | Abu Dhabi, UAE | 91% | 📋 CV Ready | — | 2026-03-07 | [LinkedIn](https://www.linkedin.com/jobs/view/4374243946) | [CV ✅](applications/smartchoice-head-tech-transformation/Ahmed_Nasr_Head_Tech_Transformation_SmartChoice.pdf) |
+| 18 | ☐ | Codesearch AI | [Head of Data Science & AI](applications/codesearch-head-data-ai/job.md) | Dubai, UAE | 87% | 📋 CV Ready | — | 2026-03-07 | [LinkedIn](https://www.linkedin.com/jobs/view/4378364156) | [CV ✅](applications/codesearch-head-data-ai/Ahmed_Nasr_Head_Data_AI_Codesearch.pdf) |
+| 19 | ☐ | Halian (Federal) | [Director PMO — Federal Tech](applications/halian-director-pmo-federal/job.md) | Abu Dhabi, UAE | 91% | 📋 CV Ready | — | 2026-03-07 | [LinkedIn](https://www.linkedin.com/jobs/view/4377233880) | [CV ✅](applications/halian-director-pmo-federal/Ahmed_Nasr_Director_PMO_Halian.pdf) |
 
 
 ---
@@ -56,9 +61,9 @@
 
 | Metric | Value |
 |--------|-------|
-| Total tracked | 14 |
+| Total tracked | 19 |
 | Applied | 10 |
-| CV Ready, not yet applied | 4 (Al-Gihaz, Confidential AI, Apex, du) |
+| CV Ready, not yet applied | 9 (Al-Gihaz, Confidential AI, Apex, du, Windmills, Hays, SmartChoice, Codesearch, Halian) |
 | Radar (no CV yet) | 0 |
 | Active interviews | 1 (Delphi — awaiting feedback) |
 | Avg ATS score (all CVs) | 89% |
