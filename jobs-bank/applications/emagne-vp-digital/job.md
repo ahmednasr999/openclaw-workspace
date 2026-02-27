@@ -24,4 +24,4 @@
 - Applied Feb 25, 2026
 
 ## CV
-[Ahmed Nasr - VP Digital Projects - eMagine Solutions.pdf](Ahmed%20Nasr%20-%20VP%20Digital%20Projects%20-%20eMagine%20Solutions.pdf)
+[Ahmed Nasr - VP Digital Projects - eMagine Solutions.pdf](Ahmed%20Nasr%20-%20VP%20Digital%20Projects%20-%20eMagine%20Solutions.pdf) ✅
