@@ -61,16 +61,16 @@ No proactive follow-ups on submitted applications. Ball is in their court.
 
 ## 🔍 Radar — Needs Action
 
-| Company | Role | Location | Priority | Next Step |
-|---------|------|----------|----------|-----------|
-| FAB | VP Technology & Data | Abu Dhabi, UAE | ✅ Applied Feb 27 | Follow-up Mar 6 — activate ESLSCA alumni network for referral |
-| Cooper Fitch | Executive Director, Strategic Initiatives | Riyadh, KSA | 🔥 HIGH | Pull JD + tailor CV + submit within 48hrs |
-| One Executive | Director, Organizational Development | Dubai, UAE | 🔥 HIGH | Pull JD + assess fit |
-| Circle | Director, Partner Management MEA | Dubai, UAE | 🔥 HIGH | Pull JD + tailor CV |
-| Revolut | Head of Operations, Wealth & Trading | UAE | 🔥 HIGH | Pull JD + tailor CV |
-| Dubai Health | Head Tech Transfer & Commercialization | Dubai, UAE | 🟡 MEDIUM | Screen JD first |
-| TITAN Group | Head of Enterprise AI | Athens, Greece | 🟡 MEDIUM | Validate scope + salary (outside GCC) |
-| TP | AI Delivery VP | Cairo, Egypt | 🟡 MONITOR | Monitor only — conflicts with GCC target |
+| Company | Role | Location | Priority | Job URL | Next Step |
+|---------|------|----------|----------|---------|-----------|
+| FAB | VP Technology & Data | Abu Dhabi, UAE | ✅ Applied Feb 27 | [Oracle Portal](https://ehjd.fa.em2.oraclecloud.com/comm/hcmUI/CandidateExperience/en/job/1175) | Follow-up Mar 6 — activate ESLSCA alumni network for referral |
+| Cooper Fitch | Executive Director, Strategic Initiatives | Riyadh, KSA | 🔥 HIGH | [LinkedIn](https://www.linkedin.com/jobs/search/?keywords=Executive+Director+Strategic+Initiatives+Cooper+Fitch) | Pull JD + tailor CV + submit within 48hrs |
+| One Executive | Director, Organizational Development | Dubai, UAE | 🔥 HIGH | [LinkedIn](https://www.linkedin.com/jobs/search/?keywords=Director+Organizational+Development+One+Executive) | Pull JD + assess fit |
+| Circle | Director, Partner Management MEA | Dubai, UAE | 🔥 HIGH | [LinkedIn](https://www.linkedin.com/jobs/search/?keywords=Director+Partner+Management+MEA+Circle) | Pull JD + tailor CV |
+| Revolut | Head of Operations, Wealth & Trading | UAE | 🔥 HIGH | [LinkedIn](https://www.linkedin.com/jobs/search/?keywords=Head+Operations+Wealth+Trading+Revolut) | Pull JD + tailor CV |
+| Dubai Health | Head Tech Transfer & Commercialization | Dubai, UAE | 🟡 MEDIUM | [LinkedIn](https://www.linkedin.com/jobs/search/?keywords=Head+Tech+Transfer+Commercialization+Dubai+Health) | Screen JD first |
+| TITAN Group | Head of Enterprise AI | Athens, Greece | 🟡 MEDIUM | [LinkedIn](https://www.linkedin.com/jobs/search/?keywords=Head+Enterprise+AI+TITAN+Group) | Validate scope + salary (outside GCC) |
+| TP | AI Delivery VP | Cairo, Egypt | 🟡 MONITOR | [LinkedIn](https://www.linkedin.com/jobs/search/?keywords=AI+Delivery+VP+TP+Cairo) | Monitor only — conflicts with GCC target |
 
 ---
 
