@@ -347,3 +347,43 @@ Volume: ~30 minutes to plan + draft a week of content. 15 min/day engaging.
 **Tags:** #linkedin #personal-brand #lara-costa #liam-ottley #slay-framework #hooks #authority-jacking #storytelling #education #content-pillars #trend-jacking #pas-framework #dwell-time #post-checklist #swipe-file
 
 ---
+
+## Revenue Storytelling Framework — Maha Abouelenein | 2026-02-27
+**Source:** Maha Abouelenein Newsletter — Feb 27, 2026
+**Type:** Framework / Personal Brand / Storytelling
+
+**Key Insights:**
+- Storytelling is a revenue skill, not a soft skill — leaders who articulate value clearly grow fastest
+- Investors (and hiring committees) fund clarity, not complexity
+- Three-question framework: What problem? Why now? Why you?
+- Data supports decisions; story drives belief
+- Vague messaging = invisible leadership
+- Culture and talent attraction happen through story, not job descriptions
+- Positioning consistency across all channels builds reputation
+
+**Actionable for Ahmed:**
+- Apply the 3-question framework to every interview narrative: TopMed = $50M transformation (problem) at Vision 2030 moment (timing) by the executive who's done it at scale (you)
+- Anchor LinkedIn posts to this structure: lead with the problem, connect to the moment, position yourself as the answer
+- Personal brand statement: "Digital transformation executive who scales operations across GCC healthcare and fintech" — repeat consistently across all channels weekly
+- Use in Delphi debrief and future VP interviews as pitch structure
+
+**Tags:** #storytelling #personalbrand #executivepositioning #linkedin #interviews #narrative
+
+## LinkedIn Timing Myths Debunked — Islam Midov (2pr.io) | 2026-02-27
+**Source:** Email from Islam Midov (2pr.io) — Feb 27, 2026
+**Type:** LinkedIn Strategy / Content Timing
+
+**Key Insights:**
+- Timing is overrated: his OpenClaw post hit 138K reach on a Sunday evening
+- Quality + consistency beats perfect timing every time
+- Virality does not equal business results: 138K reach attracted developers, not target founders
+- Reach matters under 10K followers for network growth and credibility building
+- Mix targeted posts (core audience) with broader content (new eyes) for compound growth
+
+**Actionable for Ahmed:**
+- Sun-Thu calendar at 11:30 AM Cairo is solid; don't optimize timing further
+- Track which posts convert to actual VP/C-Suite prospect conversations, not just reach
+- Quality is the constraint, not timing
+- Keep both strategies: Priestley/Lara Costa/Ashpreet Bedi frameworks balance targeted + broad
+
+**Tags:** #linkedin #contentstrategy #timing #engagement #executivepositioning #growth
