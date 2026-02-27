@@ -1,6 +1,6 @@
 # Ahmed Nasr - Master CV Data (Source of Truth)
 
-**Last Updated:** 2026-02-17
+**Last Updated:** 2026-02-27
 **Source Files:**
 - PDF: `/root/.openclaw/media/inbound/file_99---61a97145-01ba-402f-b33b-5915c31c8daf.pdf`
 - DOCX: `/root/.openclaw/media/inbound/file_100---a1dce511-4dda-481f-aff5-c9093298c040.docx`
@@ -17,17 +17,22 @@
 ---
 
 ## Executive Summary
-Digital Transformation Executive with 20+ years driving measurable business impact across FinTech, HealthTech, and e-commerce in GCC and Egypt. Proven ability to scale operations dramatically—led platform growth from 30,000 to 7 million daily orders at Delivery Hero (Talabat). Currently leading $50M digital transformation across 15-hospital Saudi German Health network. Built enterprise PMO managing 300+ concurrent projects across 8 countries at Network International. Expert in combining strategic vision with operational excellence to deliver transformation programs that enhance efficiency, improve outcomes, and drive sustainable growth.
+Digital Transformation Executive with 20+ years driving measurable business impact across FinTech, HealthTech, and e-commerce in GCC and Egypt. Expertise spans cloud platform strategy (AWS, Azure), enterprise AI and LLM deployment, and Saudi Vision 2030 digital health transformation across KSA, UAE, and Egypt. Proven ability to scale operations dramatically, leading platform growth from 30,000 to 7 million daily orders at Delivery Hero (Talabat). Currently leading $50M digital transformation across 15-hospital Saudi German Health network, deploying 14 production AI agents in live clinical operations. Built enterprise PMO managing 300+ concurrent projects across 8 countries at Network International. Expert in combining strategic vision with operational excellence to deliver transformation programs that enhance efficiency, improve outcomes, and drive sustainable growth.
 
 ---
 
 ## Core Competencies
 - Digital Transformation Strategy & Execution
 - Enterprise PMO Leadership
+- Cloud Platform Strategy (AWS, Azure, GCP)
+- Enterprise AI & LLM Deployment
 - P&L Ownership
 - Operational Excellence
 - Change Management
 - Strategic Planning
+- Enterprise Architecture & Technology Roadmap
+- Cybersecurity Governance
+- Saudi Vision 2030 Digital Transformation
 - Program Management
 - Cross-functional Team Leadership
 - Agile Methodologies
