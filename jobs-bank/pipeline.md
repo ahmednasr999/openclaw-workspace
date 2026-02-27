@@ -1,6 +1,6 @@
 # 📊 Jobs Pipeline — Master Tracker
 
-*Last updated: 2026-02-27 07:08 UTC | Maintained by NASR*
+*Last updated: 2026-02-27 07:17 UTC | Maintained by NASR*
 
 ---
 
@@ -29,11 +29,11 @@
 | 19 | ☑️ | Halian (Federal) | [Director PMO — Federal Tech](applications/halian-director-pmo-federal/job.md) | Abu Dhabi, UAE | 91% | ✅ Applied | 2026-02-27 | 2026-03-06 | [LinkedIn](https://www.linkedin.com/jobs/view/4377233880) | [CV ✅](applications/halian-director-pmo-federal/Ahmed_Nasr_Director_PMO_Halian.pdf) |
 | 20 | ☑️ | Confidential (AI Co.) | COO | Dammam, KSA | — | ✅ Applied | 2026-02-27 | 2026-03-06 | LinkedIn | — |
 | 21 | ☐ | Confidential Careers | [CEO — Giga-Projects KSA](applications/confidential-ceo-giga-projects/job.md) | Riyadh, KSA | 89% | 📋 CV Ready | — | 2026-03-07 | [LinkedIn](https://www.linkedin.com/jobs/view/4373471367) | [CV ✅](applications/confidential-ceo-giga-projects/Ahmed_Nasr_CEO_GigaProjects.pdf) |
-| 22 | ☐ | Proximie | [Transformation Lead UAE](applications/proximie-transformation-lead/job.md) | Dubai, UAE | 88% | 📋 CV Ready | — | 2026-03-07 | [LinkedIn](https://www.linkedin.com/jobs/view/4376782445) | [CV ✅](applications/proximie-transformation-lead/Ahmed_Nasr_Transformation_Lead_Proximie.pdf) |
-| 23 | ☐ | Renard International | [Director Tech & Innovation](applications/renard-director-tech-innovation/job.md) | Doha, Qatar | 88% | 📋 CV Ready | — | 2026-03-07 | [LinkedIn](https://www.linkedin.com/jobs/view/4372899733) | [CV ✅](applications/renard-director-tech-innovation/Ahmed_Nasr_Director_Tech_Innovation_Renard.pdf) |
-| 24 | ☐ | Confidential | [Director Enterprise PMO](applications/confidential-director-pmo-dubai/job.md) | Dubai, UAE | 88% | 📋 CV Ready | — | 2026-03-07 | [LinkedIn](https://www.linkedin.com/jobs/view/4375140623) | [CV ✅](applications/confidential-director-pmo-dubai/Ahmed_Nasr_Director_PMO_Dubai.pdf) |
-| 25 | ☐ | NXS Tech | [Director of AI](applications/nxs-director-ai/job.md) | Dubai, UAE | 91% | 📋 CV Ready | — | 2026-03-07 | [LinkedIn](https://www.linkedin.com/jobs/view/4378323469) | [CV ✅](applications/nxs-director-ai/Ahmed_Nasr_Director_AI_NXS.pdf) |
-| 26 | ☐ | Auxo Talent | [VP of Artificial Intelligence](applications/auxo-vp-ai/job.md) | Dubai, UAE | 91% | 📋 CV Ready | — | 2026-03-07 | [LinkedIn](https://www.linkedin.com/jobs/view/4371727536) | [CV ✅](applications/auxo-vp-ai/Ahmed_Nasr_VP_AI_Auxo.pdf) |
+| 22 | ☑️ | Proximie | [Transformation Lead UAE](applications/proximie-transformation-lead/job.md) | Dubai, UAE | 88% | ✅ Applied | 2026-02-27 | 2026-03-06 | [LinkedIn](https://www.linkedin.com/jobs/view/4376782445) | [CV ✅](applications/proximie-transformation-lead/Ahmed_Nasr_Transformation_Lead_Proximie.pdf) |
+| 23 | ☑️ | Renard International | [Director Tech & Innovation](applications/renard-director-tech-innovation/job.md) | Doha, Qatar | 88% | ✅ Applied | 2026-02-27 | 2026-03-06 | [LinkedIn](https://www.linkedin.com/jobs/view/4372899733) | [CV ✅](applications/renard-director-tech-innovation/Ahmed_Nasr_Director_Tech_Innovation_Renard.pdf) |
+| 24 | ☑️ | Confidential | [Director Enterprise PMO](applications/confidential-director-pmo-dubai/job.md) | Dubai, UAE | 88% | ✅ Applied | 2026-02-27 | 2026-03-06 | [LinkedIn](https://www.linkedin.com/jobs/view/4375140623) | [CV ✅](applications/confidential-director-pmo-dubai/Ahmed_Nasr_Director_PMO_Dubai.pdf) |
+| 25 | ☑️ | NXS Tech | [Director of AI](applications/nxs-director-ai/job.md) | Dubai, UAE | 91% | ✅ Applied | 2026-02-27 | 2026-03-06 | [LinkedIn](https://www.linkedin.com/jobs/view/4378323469) | [CV ✅](applications/nxs-director-ai/Ahmed_Nasr_Director_AI_NXS.pdf) |
+| 26 | ☑️ | Auxo Talent | [VP of Artificial Intelligence](applications/auxo-vp-ai/job.md) | Dubai, UAE | 91% | ✅ Applied | 2026-02-27 | 2026-03-06 | [LinkedIn](https://www.linkedin.com/jobs/view/4371727536) | [CV ✅](applications/auxo-vp-ai/Ahmed_Nasr_VP_AI_Auxo.pdf) |
 | 27 | ☐ | UnlockLand | [VP Global Operations](applications/unlockland-vp-operations/job.md) | Saudi Arabia | 91% | 📋 CV Ready | — | 2026-03-07 | [LinkedIn](https://www.linkedin.com/jobs/view/4377615733) | [CV ✅](applications/unlockland-vp-operations/Ahmed_Nasr_VP_Operations_UnlockLand.pdf) |
 
 
@@ -70,8 +70,8 @@
 | Metric | Value |
 |--------|-------|
 | Total tracked | 27 |
-| Applied | 20 |
-| CV Ready, not yet applied | 7 (CEO Giga, Proximie, Renard, Director PMO Dubai, NXS AI, Auxo VP AI, UnlockLand) |
+| Applied | 25 |
+| CV Ready, not yet applied | 2 (CEO Giga-Projects KSA, UnlockLand VP Ops) |
 | Radar (no CV yet) | 0 |
 | Active interviews | 1 (Delphi — awaiting feedback) |
 | Avg ATS score (all CVs) | 89% |
