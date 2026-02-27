@@ -65,7 +65,6 @@ No proactive follow-ups on submitted applications. Ball is in their court.
 
 | Company | Role | Location | Priority | Job URL | Next Step |
 |---------|------|----------|----------|---------|-----------|
-
 | Sky News Arabia | Head of AI Transformation & Innovation | Abu Dhabi, UAE | 🔥 HIGH | [LinkedIn](https://www.linkedin.com/jobs/search/?keywords=Head+AI+Transformation+Sky+News+Arabia) | Pull JD + tailor CV + submit within 48hrs |
 | Oracle | Director Client Engagement / Digital Transformation | Riyadh, KSA | 🔥 HIGH | [LinkedIn](https://www.linkedin.com/jobs/search/?keywords=Director+Client+Engagement+Digital+Transformation+Oracle+Riyadh) | Pull JD + assess fit — 19 connections, 31 alumni |
 | Cygnify | Principal, Digital Delivery & Transformation | Dubai, UAE | 🟡 MEDIUM | [LinkedIn](https://www.linkedin.com/jobs/search/?keywords=Principal+Digital+Delivery+Transformation+Cygnify+Dubai) | Verify salary range first |
@@ -82,8 +81,8 @@ No proactive follow-ups on submitted applications. Ball is in their court.
 |--------|-------|
 | Total tracked | 28 |
 | Applied | 28 |
-| Radar — Needs Action | 8 |
-| CV Ready, not yet applied | 0 |
+| CV Ready, not yet applied | 1 (One Executive) |
+| Radar — Needs Action | 7 |
 | Radar (no CV yet) | 0 |
 | Active interviews | 1 (Delphi — awaiting feedback) |
 | Avg ATS score (all CVs) | 89% |
