@@ -25,4 +25,4 @@
 - Recruiter said feedback expected "in days"
 
 ## CV
-[Ahmed Nasr - Senior AI PM - Delphi Consulting.pdf](Ahmed%20Nasr%20-%20Senior%20AI%20PM%20-%20Delphi%20Consulting.pdf)
+[Ahmed Nasr - Senior AI PM - Delphi Consulting.pdf](Ahmed%20Nasr%20-%20Senior%20AI%20PM%20-%20Delphi%20Consulting.pdf) ✅
