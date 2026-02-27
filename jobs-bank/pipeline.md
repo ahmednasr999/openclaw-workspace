@@ -64,10 +64,12 @@ No proactive follow-ups on submitted applications. Ball is in their court.
 
 | Company | Role | Location | Priority | Job URL | Next Step |
 |---------|------|----------|----------|---------|-----------|
-| FAB | VP Technology & Data | Abu Dhabi, UAE | ✅ Applied Feb 27 | [Oracle Portal](https://ehjd.fa.em2.oraclecloud.com/comm/hcmUI/CandidateExperience/en/job/1175) | Follow-up Mar 6 — activate ESLSCA alumni network for referral |
-| One Executive | Director, Organizational Development | Dubai, UAE | 🔥 HIGH | [LinkedIn](https://www.linkedin.com/jobs/view/4375226171/) | Pull JD + assess fit |
-| Dubai Health | Head Tech Transfer & Commercialization | Dubai, UAE | 🟡 MEDIUM | [LinkedIn](https://www.linkedin.com/jobs/view/4378311331/) | Screen JD first |
-
+| One Executive | Director, Organizational Development | Dubai, UAE | 🔥 HIGH | [LinkedIn](https://www.linkedin.com/jobs/view/4375226171/) | CV in progress — awaiting completion |
+| Sky News Arabia | Head of AI Transformation & Innovation | Abu Dhabi, UAE | 🔥 HIGH | [LinkedIn](https://www.linkedin.com/jobs/search/?keywords=Head+AI+Transformation+Sky+News+Arabia) | Pull JD + tailor CV + submit within 48hrs |
+| Oracle | Director Client Engagement / Digital Transformation | Riyadh, KSA | 🔥 HIGH | [LinkedIn](https://www.linkedin.com/jobs/search/?keywords=Director+Client+Engagement+Digital+Transformation+Oracle+Riyadh) | Pull JD + assess fit — 19 connections, 31 alumni |
+| Cygnify | Principal, Digital Delivery & Transformation | Dubai, UAE | 🟡 MEDIUM | [LinkedIn](https://www.linkedin.com/jobs/search/?keywords=Principal+Digital+Delivery+Transformation+Cygnify+Dubai) | Verify salary range first |
+| Legend Holding Group | IT Director | Dubai, UAE | 🟡 MEDIUM | [LinkedIn](https://www.linkedin.com/jobs/search/?keywords=IT+Director+Legend+Holding+Group+Dubai) | Verify scope and salary |
+| Dubai Health | Head Tech Transfer & Commercialization | Dubai, UAE | 🟡 MEDIUM | [LinkedIn](https://www.linkedin.com/jobs/view/4378311331/) | Credential gap — IP/TTO background required. Screen JD first |
 | TP | AI Delivery VP | Cairo, Egypt | 🟡 MONITOR | [LinkedIn](https://www.linkedin.com/jobs/view/4378349141/) | Monitor only — conflicts with GCC target |
 | Majid Al Futtaim | Director, Total Rewards | Cairo, Egypt | ❌ SKIP | [LinkedIn](https://www.linkedin.com/jobs/view/4377273639/) | HR role — not strategic fit |
 
@@ -77,8 +79,9 @@ No proactive follow-ups on submitted applications. Ball is in their court.
 
 | Metric | Value |
 |--------|-------|
-| Total tracked | 27 |
-| Applied | 27 |
+| Total tracked | 28 |
+| Applied | 28 |
+| Radar — Needs Action | 8 |
 | CV Ready, not yet applied | 0 |
 | Radar (no CV yet) | 0 |
 | Active interviews | 1 (Delphi — awaiting feedback) |
