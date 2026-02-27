@@ -68,7 +68,6 @@ No proactive follow-ups on submitted applications. Ball is in their court.
 
 | Company | Role | Location | Priority | Job URL | Next Step |
 |---------|------|----------|----------|---------|-----------|
-
 | Legend Holding Group | IT Director | Dubai, UAE | 🟡 MEDIUM | [LinkedIn](https://www.linkedin.com/jobs/search/?keywords=IT+Director+Legend+Holding+Group+Dubai) | Need valid job URL + JD |
 | Leru Partners | Head of Solutions & Delivery (AI) | Dubai, UAE | 🔥 HIGH | [LinkedIn](https://www.linkedin.com/jobs/view/4377660433/) | AI-specific, strong fit — pull JD + build CV |
 | Oracle | Director Client Engagement / Digital Transformation | Riyadh, KSA | 🔥 HIGH | [LinkedIn](https://www.linkedin.com/jobs/view/4375932512/) | 19 connections, 31 alumni — pull JD + build CV |
