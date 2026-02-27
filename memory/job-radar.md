@@ -200,3 +200,52 @@ None
   https://hrtoday.in/sangeetha-kanvar-joins-eli-lilly-as-head-quality-systems-excellence-digital-transformation/
   Sangeetha Kanvar has joined Eli Lilly and Company as Head, Quality Systems Excellence & Digital Transformation. With strong leadership experience in digital
 
+=== Job Search - 2026-02-27 ===
+## Answer
+
+The VP Director PMO for digital transformation in healthcare in the UAE, Saudi, and Qatar is a sought-after role for 2026. Positions like PMO Lead and Head of PMO are available, with many opportunities in healthcare digital transformation. Apply to advance your career.
+
+---
+
+## Sources
+
+- **PMO Lead Jobs in the Middle East (Feb 2026)** (relevance: 41%)
+  https://www.bayt.com/en/international/jobs/pmo-lead-jobs/
+  Apply now to over 410 PMO Lead jobs in Middle East and Gulf and make your job hunting simpler. Find the latest PMO Lead job vacancies and employment
+
+- **54 pmo lead Jobs in United Arab Emirates, February 2026** (relevance: 41%)
+  https://www.glassdoor.com/Job/united-arab-emirates-pmo-lead-jobs-SRCH_IL.0,20_IN6_KO21,29.htm
+  Search Pmo lead jobs in United Arab Emirates with company ratings & salaries. 54 open jobs for Pmo lead in United Arab Emirates.
+
+- **Digital Transformation Company in KSA, UAE, and Qatar** (relevance: 33%)
+  https://www.squareonemea.com/
+  Our extensive digital transformation services are tailored to meet the unique needs of various industries. Banking Education Healthcare Insurance Manufacturing
+
+- **Head Of PMO Jobs - 3688 Vacancies (with Salaries) Feb ...** (relevance: 28%)
+  https://www.naukrigulf.com/head-of-pmo-jobs
+  Head Of PMO Jobs - Register now to explore 3688 Head Of PMO vacancies & careers in top companies.
+
+- **healthcare digital transformation jobs** (relevance: 27%)
+  https://ae.indeed.com/q-healthcare-digital-transformation-jobs.html
+  Discover 78 Healthcare Digital Transformation job opportunities on Indeed.com. Apply today to advance your career with top employers.
+
+- **Ahmed Adel , PMP®, PhD Candidate's Post** (relevance: 22%)
+  https://www.linkedin.com/posts/ahmed-adel-ibrahim-pmp_dubai-whxdubai2026-digitalhealth-activity-7425082938075222016-FkGv
+  I'm attending WHX Dubai 2026! representing IQVIA Elevated Experience. Expanded Opportunities. Endless Potential. Join me and be part of
+
+- **Nadeem Sheikh - IR Worldwide** (relevance: 16%)
+  https://uk.linkedin.com/in/nadsheikh
+  Value Proposition Globally experienced Digital Transformation Executive with over… · Experience: IR Worldwide · Education: University of Leicester
+
+- **jobs - Gulftalent Staffing | your source for a better job** (relevance: 9%)
+  https://gulftalent-staffing.com/jobs.php
+  + End-to-End Hiring Services. + How to make a resume. + Interviews Do's And Dont's. ##### **Gulftalent Staffing**. Al Moosa Tower 1 - Sheikh Zayed Road - 709 7th Floor - Dubai - United Arab Emirates. Company Profile Our Values Why choose us? Client Speaks Recruitment Process Industry Practices Conta...
+
+- **Abdullah Altwaim has been promoted to Director** (relevance: 4%)
+  https://www.instagram.com/p/DU9r7yujFOL/
+  Abdullah Altwaim has been promoted to Director | Digital Solutions at TAM | تام, marking a significant milestone in his leadership journey
+
+- **#Congratulations Omar Khan! Honored with the Top 20 ...** (relevance: 3%)
+  https://www.instagram.com/reel/DThZ4W5DpqG/
+  Abdullah Altwaim has been promoted to Director | Digital Solutions at TAM | تام, marking a significant milestone in his leadership journey in
+
