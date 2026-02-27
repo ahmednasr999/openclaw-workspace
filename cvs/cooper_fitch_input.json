@@ -1,0 +1,97 @@
+{
+  "format": "chronological",
+  "personal_info": {
+    "name": "AHMED NASR",
+    "title": "Executive Director, Strategic Initiatives and Digital Transformation",
+    "email": "ahmednasr999@gmail.com",
+    "phone": "+971 50 281 4490",
+    "location": "Dubai, UAE",
+    "linkedin": "linkedin.com/in/ahmednasr"
+  },
+  "summary": "Strategic Initiatives executive with 20+ years architecting and delivering high-impact programs across FinTech, HealthTech, and digital platforms in the GCC and Egypt. Recognized for hands-on, content-driven work: personally developing strategic frameworks, translating senior leadership mandates into structured, actionable programs, and driving alignment across complex stakeholder ecosystems spanning governments, regulators, technology partners, and cross-sector operators.\n\nDeep expertise in Saudi Vision 2030 digital transformation, currently leading a $50M cross-sector initiative across KSA, UAE, and Egypt. Experienced in structured growth environments: built enterprise PMO managing 300+ concurrent programs across 8 countries, and led platform expansion from 30,000 to 7 million daily transactions. Operates at the intersection of strategic decision forums and execution, serving as a principal architect of frameworks that move from mandate to measurable impact.\n\nCore Competencies: Strategic Initiative Architecture, Cross-Sector Integration, Stakeholder Ecosystem Alignment, Executive Framework Development, Vision 2030 Program Delivery, Structured Growth Design, Senior Leadership Partnership, Actionable Program Structuring, Decision Forum Support, Enterprise PMO Governance",
+  "experience": [
+    {
+      "title": "PMO and Regional Engagement Lead",
+      "company": "Saudi German Hospital Group (TopMed)",
+      "location": "Dubai, UAE",
+      "dates": "Jun 2024 - Present",
+      "bullets": [
+        "Architect and lead a $50M cross-sector digital transformation initiative spanning 15 hospitals across three countries, translating Board-level mandates into structured, actionable programs with measurable milestones",
+        "Developed and personally authored enterprise-level strategic frameworks for digital health transformation aligned with Saudi Vision 2030 and MOH national health objectives in KSA",
+        "Drive alignment across a complex stakeholder ecosystem including hospital C-suites, KSA Ministry of Health, international technology partners (Health Catalyst, KLAS Research), and JCI and HIMSS regulatory bodies",
+        "Serve as principal strategic content developer for senior leadership decision forums: preparing executive materials, framework documentation, and cross-sector integration roadmaps",
+        "Established enterprise PMO governance model managing 30 cross-functional professionals, structuring growth across clinical, operational, and digital domains simultaneously",
+        "Deployed 14 production AI agents in live clinical operations, representing one of the first-of-kind implementations across the GCC healthcare sector"
+      ]
+    },
+    {
+      "title": "Country Manager",
+      "company": "PaySky, Inc.",
+      "location": "Egypt",
+      "dates": "Apr 2021 - Jan 2022",
+      "bullets": [
+        "Led market entry strategy for Egypt's first comprehensive financial SuperApp, personally developing the strategic framework that integrated payments, banking, e-commerce, and lifestyle services into a single architecture",
+        "Structured and executed cross-sector partnership initiatives with major financial institutions, translating national financial inclusion mandates into actionable commercial programs",
+        "Built the initial organizational and operational framework to support phased, structured growth from concept to live market deployment",
+        "Developed all executive-level strategic content and stakeholder materials presented to Board and regulatory decision forums"
+      ]
+    },
+    {
+      "title": "Head of E-Commerce Product and IT Strategy",
+      "company": "Al Araby Group",
+      "location": "Egypt",
+      "dates": "Jan 2020 - Jan 2021",
+      "bullets": [
+        "Designed and led end-to-end digital transformation and IT strategy initiative, developing the strategic framework for omnichannel integration across retail, logistics, and digital platforms",
+        "Structured cross-sector programs aligning technology, commercial, and supply chain stakeholders under a unified strategic roadmap"
+      ]
+    },
+    {
+      "title": "Product Development Manager",
+      "company": "Delivery Hero SE (Talabat)",
+      "location": "GCC Markets",
+      "dates": "Jun 2017 - May 2018",
+      "bullets": [
+        "Led strategic product initiatives during hypergrowth phase: platform scaled from 30,000 to 7 million daily orders (233x growth), driven by structured cross-market programs and stakeholder alignment across Berlin HQ, GCC country teams, and Egypt operations",
+        "Chaired the Operations Excellence Committee, serving as the cross-sector coordination forum for senior leadership decisions spanning product, operations, and regional markets",
+        "Personally developed strategic frameworks and performance materials presented to senior leadership at regional and global decision forums",
+        "Implemented lean methodologies to translate high-level growth mandates into actionable product and operational programs across cross-functional teams"
+      ]
+    },
+    {
+      "title": "PMO Section Head",
+      "company": "Network International",
+      "location": "Egypt",
+      "dates": "Sep 2014 - Jun 2017",
+      "bullets": [
+        "Built enterprise PMO from the ground up, designing the governance framework that structured 300+ concurrent banking and payments programs across 8 countries",
+        "Developed the directive PMO framework and initiative architecture model adopted across the organization, enabling structured growth at scale for 300+ banking clients worldwide",
+        "Recruited, trained, and led a team of 16 Project Managers, personally developing all strategic templates, standards, and executive reporting content for senior leadership review"
+      ]
+    },
+    {
+      "title": "Senior Project Manager and IT Section Head",
+      "company": "Intel Telecommunications",
+      "location": "Egypt",
+      "dates": "2008 - 2014",
+      "bullets": [
+        "Led technology delivery and strategic initiative management across the telecoms sector, developing project frameworks and stakeholder alignment processes adopted organization-wide"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "MBA (In Progress)",
+      "school": "Paris ESLSCA Business School",
+      "dates": "2025 - 2027"
+    }
+  ],
+  "certifications": [
+    {"name": "PMP (Project Management Professional)"},
+    {"name": "CSM (Certified Scrum Master)"},
+    {"name": "CSPO (Certified Scrum Product Owner)"},
+    {"name": "Lean Six Sigma"},
+    {"name": "CBAP (Certified Business Analysis Professional)"},
+    {"name": "MCAD, MCP (Microsoft Certified)"}
+  ]
+}
