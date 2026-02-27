@@ -1,13 +1,5 @@
 {
   "format": "chronological",
-  "personal_info": {
-    "name": "AHMED NASR",
-    "title": "Executive Director, Strategic Initiatives and Digital Transformation",
-    "email": "ahmednasr999@gmail.com",
-    "phone": "+971 50 281 4490",
-    "location": "Dubai, UAE",
-    "linkedin": "linkedin.com/in/ahmednasr"
-  },
   "summary": "Strategic Initiatives executive with 20+ years architecting and delivering high-impact programs across FinTech, HealthTech, and digital platforms in the GCC and Egypt. Recognized for hands-on, content-driven work: personally developing strategic frameworks, translating senior leadership mandates into structured, actionable programs, and driving alignment across complex stakeholder ecosystems spanning governments, regulators, technology partners, and cross-sector operators.\n\nDeep expertise in Saudi Vision 2030 digital transformation, currently leading a $50M cross-sector initiative across KSA, UAE, and Egypt. Experienced in structured growth environments: built enterprise PMO managing 300+ concurrent programs across 8 countries, and led platform expansion from 30,000 to 7 million daily transactions. Operates at the intersection of strategic decision forums and execution, serving as a principal architect of frameworks that move from mandate to measurable impact.\n\nCore Competencies: Strategic Initiative Architecture, Cross-Sector Integration, Stakeholder Ecosystem Alignment, Executive Framework Development, Vision 2030 Program Delivery, Structured Growth Design, Senior Leadership Partnership, Actionable Program Structuring, Decision Forum Support, Enterprise PMO Governance",
   "experience": [
     {
@@ -87,11 +79,31 @@
     }
   ],
   "certifications": [
-    {"name": "PMP (Project Management Professional)"},
-    {"name": "CSM (Certified Scrum Master)"},
-    {"name": "CSPO (Certified Scrum Product Owner)"},
-    {"name": "Lean Six Sigma"},
-    {"name": "CBAP (Certified Business Analysis Professional)"},
-    {"name": "MCAD, MCP (Microsoft Certified)"}
-  ]
+    {
+      "name": "PMP (Project Management Professional)"
+    },
+    {
+      "name": "CSM (Certified Scrum Master)"
+    },
+    {
+      "name": "CSPO (Certified Scrum Product Owner)"
+    },
+    {
+      "name": "Lean Six Sigma"
+    },
+    {
+      "name": "CBAP (Certified Business Analysis Professional)"
+    },
+    {
+      "name": "MCAD, MCP (Microsoft Certified)"
+    }
+  ],
+  "contact": {
+    "name": "AHMED NASR",
+    "title": "Executive Director, Strategic Initiatives and Digital Transformation",
+    "email": "ahmednasr999@gmail.com",
+    "phone": "+971 50 281 4490",
+    "location": "Dubai, UAE",
+    "linkedin": "linkedin.com/in/ahmednasr"
+  }
 }
