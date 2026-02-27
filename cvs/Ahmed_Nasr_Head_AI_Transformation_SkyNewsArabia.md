@@ -11,7 +11,16 @@ AI Transformation executive with 20+ years driving large-scale digital and workf
 
 Core capabilities directly applicable to newsroom AI integration: AI workflow innovation, content automation, responsible AI governance, training and enablement, cross-functional collaboration, and scalable AI solution deployment. Brings the transformation leadership, execution discipline, and change management depth that media organizations need to integrate AI across editorial, creative, and production environments.
 
-**Core Competencies:** AI Transformation, Workflow Innovation, Content Automation, AI Governance and Responsible AI, Change Management, Training and Enablement, Cross-Functional Collaboration, Scalable AI Solutions, Digital Transformation, Enterprise PMO, Stakeholder Alignment
+---
+
+## CORE COMPETENCIES
+
+| | | |
+|---|---|---|
+| AI Transformation Strategy | Workflow Innovation and Automation | Content and Editorial AI Integration |
+| AI Governance and Responsible AI | Change Management at Scale | Training and Enablement |
+| Cross-Functional Collaboration | Scalable AI Solution Deployment | Digital Transformation |
+| Enterprise PMO Leadership | Stakeholder Alignment | AI Best-Practice Frameworks |
 
 ---
 
@@ -69,4 +78,9 @@ Core capabilities directly applicable to newsroom AI integration: AI workflow in
 
 ## CERTIFICATIONS
 
-PMP (Project Management Professional) | CSM (Certified Scrum Master) | CSPO (Certified Scrum Product Owner) | Lean Six Sigma | CBAP (Certified Business Analysis Professional) | MCAD, MCP (Microsoft Certified)
+- PMP (Project Management Professional)
+- CSM (Certified Scrum Master)
+- CSPO (Certified Scrum Product Owner)
+- Lean Six Sigma
+- CBAP (Certified Business Analysis Professional)
+- MCAD, MCP (Microsoft Certified)
