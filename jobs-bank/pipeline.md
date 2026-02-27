@@ -17,7 +17,7 @@
 | 7 | Buro Happold | [Director Program Advisory](applications/buro-happold-director-program/job.md) | Riyadh, KSA | 88% | ✅ Applied | 2026-02-27 | 2026-03-06 | [Link](https://vacancies.burohappold.com/jobs/job/Director-Program-Advisory/1945) | [CV ✅](applications/buro-happold-director-program/Ahmed_Nasr_Director_Program_Advisory_BuroHappold.pdf) |
 | 8 | Inception (G42) | [Director Delivery](applications/inception-director-delivery/job.md) | Abu Dhabi, UAE | 91% | ✅ Applied | 2026-02-27 | 2026-03-06 | [LinkedIn](https://ae.linkedin.com/jobs/view/director-delivery-at-inception-4376090289) | [CV ✅](applications/inception-director-delivery/Ahmed_Nasr_Director_Delivery_Inception.pdf) |
 | 9 | Dubai Holding | [Director DT & IT](applications/du-director-it-strategy/job.md) | Dubai, UAE | 92% | ✅ Applied | 2026-02-27 | 2026-03-06 | [LinkedIn](https://www.linkedin.com/jobs/view/4375112810/) | [CV ✅](applications/du-director-it-strategy/Ahmed_Nasr_Director_DT_IT_DubaiHolding.pdf) |
-| 10 | FAB | [VP Technology & Data](applications/fab-vp-technology-data/job.md) | Abu Dhabi, UAE | 87% | ✅ Applied | 2026-02-27 | 2026-03-06 | [LinkedIn](https://ae.linkedin.com/jobs/view/vp-technology-data-asset-management-at-first-abu-dhabi-bank-fab-4374898166) | [CV ✅](applications/fab-vp-technology-data/Ahmed_Nasr_VP_Technology_Data_FAB.pdf) |
+| 10 | FAB | [VP Technology & Data](applications/fab-vp-technology-data/job.md) | Abu Dhabi, UAE | 87% | 🎯 CV Ready | — | — | [Oracle Portal](https://ehjd.fa.em2.oraclecloud.com/comm/hcmUI/CandidateExperience/en/job/1175) | [CV ✅](applications/fab-vp-technology-data/Ahmed_Nasr_VP_Technology_Data_FAB.pdf) |
 | 11 | DP World | [Director Optimization](applications/dp-world-director/job.md) | Dubai, UAE | — | 🔍 Radar | — | — | ⚠️ URL needed | ⚠️ JD needed |
 | 12 | J10 Consulting | [Project Director](applications/j10-project-director/job.md) | GCC | — | 🔍 Radar | — | — | GulfTalent (login needed) | ⚠️ JD needed |
 | 13 | Cygnify | [Principal Digital Delivery](applications/cygnify-principal-digital/job.md) | Dubai, UAE | — | 🔍 Radar | — | — | ⚠️ URL needed | ⚠️ JD needed |
@@ -47,7 +47,7 @@
 
 | Company | Role | Priority | Next Step |
 |---------|------|----------|-----------|
-| FAB | VP Technology & Data | ✅ Applied Feb 27 | Follow-up Mar 6 — also activate ESLSCA alumni network for referral |
+| FAB | VP Technology & Data | 🚨 RESUBMIT NEEDED | LinkedIn Easy Apply failed — use Oracle portal: https://ehjd.fa.em2.oraclecloud.com/comm/hcmUI/CandidateExperience/en/job/1175 |
 | DP World | Director Optimization | 🟡 MEDIUM | Find JD URL (Oracle Cloud portal — needs browser) |
 | J10 Consulting | Project Director | 🟡 MEDIUM | Ahmed to log into GulfTalent and share JD |
 | Cygnify | Principal Digital Delivery | 🟢 LOW | No public JD found — may be internal/referral only |
@@ -59,8 +59,8 @@
 | Metric | Value |
 |--------|-------|
 | Total tracked | 13 (excl. expired) |
-| Applied | 10 |
-| CV Ready, not yet applied | 0 |
+| Applied | 9 |
+| CV Ready, not yet applied | 1 (FAB — resubmit via Oracle portal) |
 | Radar (no CV yet) | 3 (DP World, J10, Cygnify) |
 | Active interviews | 1 (Delphi — awaiting feedback) |
 | Avg ATS score (applied) | 88% |
