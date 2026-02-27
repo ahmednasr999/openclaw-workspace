@@ -1,0 +1,202 @@
+#!/usr/bin/env bash
+# ============================================================
+# competitive-analysis.sh
+# Competitive Positioning Analysis for Ahmed Nasr Job Search
+# ============================================================
+# Usage: bash /root/.openclaw/workspace/scripts/competitive-analysis.sh
+# Output: /root/.openclaw/workspace/jobs-bank/competitive-analysis-[YYYY-MM-DD].md
+# Trigger: Every 10 new CVs generated (run at 27, 37, 47, ...)
+# ============================================================
+
+set -euo pipefail
+
+WORKSPACE="/root/.openclaw/workspace"
+JOBS_BANK="$WORKSPACE/jobs-bank"
+APPLICATIONS_DIR="$JOBS_BANK/applications"
+CV_DATA="$WORKSPACE/memory/master-cv-data.md"
+DATE=$(date +%Y-%m-%d)
+OUTPUT_FILE="$JOBS_BANK/competitive-analysis-$DATE.md"
+
+echo ""
+echo "========================================"
+echo " Competitive Positioning Analysis"
+echo " Date: $DATE"
+echo "========================================"
+echo ""
+
+# --- Count JDs ---
+JD_COUNT=$(find "$APPLICATIONS_DIR" -name "job.md" 2>/dev/null | wc -l | tr -d ' ')
+PIPELINE_FILE="$JOBS_BANK/pipeline.md"
+PIPELINE_TOTAL=$(grep -c "^| [0-9]" "$PIPELINE_FILE" 2>/dev/null || echo "$JD_COUNT")
+
+echo "JD files found:      $JD_COUNT"
+echo "Pipeline total:      $PIPELINE_TOTAL"
+echo "CV source:           $CV_DATA"
+echo "Output target:       $OUTPUT_FILE"
+echo ""
+
+# --- Check dependencies ---
+if [ ! -f "$CV_DATA" ]; then
+    echo "ERROR: Master CV not found at $CV_DATA"
+    exit 1
+fi
+
+# --- Extract keyword frequencies from all JD files ---
+echo "Scanning JD files for keyword patterns..."
+
+TMPDIR_LOCAL=$(mktemp -d)
+KEYWORD_FILE="$TMPDIR_LOCAL/keywords.txt"
+
+# Concatenate all job.md files
+find "$APPLICATIONS_DIR" -name "job.md" -exec cat {} \; > "$TMPDIR_LOCAL/all_jds.txt"
+
+# Count keyword occurrences (case-insensitive, per-file)
+count_keyword() {
+    local kw="$1"
+    local count=0
+    while IFS= read -r -d '' file; do
+        if grep -qi "$kw" "$file" 2>/dev/null; then
+            count=$((count + 1))
+        fi
+    done < <(find "$APPLICATIONS_DIR" -name "job.md" -print0 2>/dev/null)
+    echo "$count"
+}
+
+# Key terms to track
+declare -A KEYWORDS=(
+    ["Digital Transformation"]="digital transformation"
+    ["AI / Artificial Intelligence"]="artificial intelligence\|AI\b"
+    ["Strategy"]="strateg"
+    ["Leadership"]="leadership\|leader"
+    ["Stakeholder Management"]="stakeholder"
+    ["Data Analytics"]="data analytics\|data platform\|data-driven"
+    ["PMO / Program Management"]="PMO\|program management"
+    ["Innovation"]="innovat"
+    ["Operational Excellence"]="operational excellence\|efficiency\|process improvement"
+    ["Cloud"]="cloud"
+    ["P&L / Budget"]="P&L\|budget\|financial accountability"
+    ["Agile / Scrum"]="agile\|scrum"
+    ["Change Management"]="change management"
+    ["Vendor Management"]="vendor"
+    ["Governance"]="governance\|compliance\|regulatory"
+    ["Machine Learning"]="machine learning\|ML\b"
+    ["Cybersecurity"]="cybersecur\|information security\|infosec"
+    ["Enterprise Architecture"]="enterprise architect\|solution architect\|tech roadmap"
+    ["Vision 2030"]="vision 2030"
+    ["GenAI / LLM"]="LLM\|generative AI\|GenAI\|large language"
+)
+
+echo ""
+echo "Keyword frequency analysis:"
+echo "--------------------------------------------------"
+printf "%-35s %s\n" "Keyword" "JD Count"
+echo "--------------------------------------------------"
+
+> "$KEYWORD_FILE"
+for label in "${!KEYWORDS[@]}"; do
+    pattern="${KEYWORDS[$label]}"
+    cnt=$(count_keyword "$pattern")
+    printf "%-35s %s/%s\n" "$label" "$cnt" "$JD_COUNT"
+    echo "$cnt|$label" >> "$KEYWORD_FILE"
+done
+
+# Sort by frequency
+echo ""
+echo "Top keywords (by frequency):"
+sort -rn "$KEYWORD_FILE" | head -15 | while IFS='|' read -r cnt label; do
+    printf "  %-35s %s/%s\n" "$label" "$cnt" "$JD_COUNT"
+done
+
+# --- Check CV gaps ---
+echo ""
+echo "Gap check (keywords missing from master CV):"
+echo "--------------------------------------------------"
+
+CV_CONTENT=$(cat "$CV_DATA")
+GAPS=()
+
+check_cv_gap() {
+    local label="$1"
+    local pattern="$2"
+    if ! echo "$CV_CONTENT" | grep -qi "$pattern" 2>/dev/null; then
+        echo "  MISSING: $label"
+        GAPS+=("$label")
+    fi
+}
+
+check_cv_gap "Cloud platforms (AWS/Azure/GCP)" "aws\|azure\|gcp\|cloud"
+check_cv_gap "GenAI / LLM" "LLM\|generative AI\|GenAI\|large language"
+check_cv_gap "Vision 2030" "vision 2030"
+check_cv_gap "Cybersecurity" "cybersecur"
+check_cv_gap "Enterprise Architecture" "enterprise architect"
+check_cv_gap "Power BI" "power bi"
+check_cv_gap "API Strategy" "API strategy\|integration architecture"
+
+echo ""
+echo "Total gaps found: ${#GAPS[@]}"
+
+# --- Write output report ---
+echo ""
+echo "Writing analysis report to: $OUTPUT_FILE"
+
+cat > "$OUTPUT_FILE" << REPORT_EOF
+# Competitive Positioning Analysis
+**Date:** $DATE
+**JD Files Analyzed:** $JD_COUNT (on-disk job.md files)
+**Pipeline Total:** $PIPELINE_TOTAL applications
+**CV Source:** master-cv-data.md
+**Generated by:** competitive-analysis.sh
+
+---
+
+## Keyword Frequency Summary
+
+$(sort -rn "$KEYWORD_FILE" | while IFS='|' read -r cnt label; do
+    echo "- **$label**: $cnt/$JD_COUNT JDs"
+done)
+
+---
+
+## Identified CV Gaps
+
+$(for gap in "${GAPS[@]}"; do
+    echo "- **MISSING:** $gap"
+done)
+
+---
+
+## Quick Reference Actions
+
+1. Add cloud platform language (AWS/Azure) to Executive Summary
+2. Add GenAI/LLM proof point to TopMed role bullets
+3. Add "Saudi Vision 2030" phrase to TopMed description
+4. Add cybersecurity governance to Core Competencies
+5. Add enterprise architecture ownership language
+
+---
+
+## Next Analysis Trigger
+
+Current applications: $PIPELINE_TOTAL
+Next trigger: at $((PIPELINE_TOTAL + 10)) applications
+Run: bash /root/.openclaw/workspace/scripts/competitive-analysis.sh
+
+---
+
+*For full analysis with gap severity and LinkedIn recommendations, see:*
+*/root/.openclaw/workspace/jobs-bank/competitive-analysis-2026-02-27.md (reference report)*
+
+*Generated: $DATE*
+REPORT_EOF
+
+echo ""
+echo "========================================"
+echo " Analysis complete."
+echo " Report saved: $OUTPUT_FILE"
+echo " Gaps found: ${#GAPS[@]}"
+echo " Next trigger: application $((PIPELINE_TOTAL + 10))"
+echo "========================================"
+echo ""
+
+# Cleanup
+rm -rf "$TMPDIR_LOCAL"
