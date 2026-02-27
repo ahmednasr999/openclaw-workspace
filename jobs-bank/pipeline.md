@@ -6,18 +6,18 @@
 
 ## Active Pipeline
 
-| # | Company | Role | Location | ATS | Stage | Applied | Follow-up Due | Job URL | CV |
-|---|---------|------|----------|-----|-------|---------|--------------|---------|-----|
-| 1 | Delphi Consulting | [Senior AI PM](applications/delphi-senior-ai-pm/job.md) | UAE | 91% | 📞 Interview | 2026-02-21 | 2026-02-27 | ⚠️ Missing | [CV ✅](applications/delphi-senior-ai-pm/) |
-| 2 | Talabat | [CPTO](applications/talabat-cpto/job.md) | Dubai, UAE | 87% | ✅ Applied | 2026-02-24 | 2026-03-02 | [LinkedIn](https://www.linkedin.com/jobs/view/4375708512) | [CV ✅](applications/talabat-cpto/Ahmed_Nasr_CPTO_Talabat.pdf) |
-| 3 | AIQU | [Director AI](applications/aiqu-director-ai/job.md) | Dubai, UAE | 82% | ✅ Applied | 2026-02-24 | 2026-03-02 | [LinkedIn](https://www.linkedin.com/jobs/view/4375324051) | [CV ✅](applications/aiqu-director-ai/Ahmed_Nasr_Director_AI_AIQU.pdf) |
-| 4 | Nexus Consulting | [CEO](applications/nexus-ceo/job.md) | Saudi Arabia | 78% | ✅ Applied | 2026-02-24 | 2026-03-02 | [LinkedIn](https://www.linkedin.com/jobs/view/4376367703) | [CV ✅](applications/nexus-ceo/Ahmed_Nasr_CEO_NexusConsulting.pdf) |
-| 5 | eMagine Solutions | [VP Digital Projects](applications/emagne-vp-digital/job.md) | Abu Dhabi, UAE | 87-90% | ✅ Applied | 2026-02-25 | 2026-03-04 | ⚠️ Missing | [CV ✅](applications/emagne-vp-digital/) |
-| 6 | Confidential | [Group IT Director](applications/group-it-director-bahrain/job.md) | Bahrain | 92-93% | ✅ Applied | 2026-02-26 | 2026-03-05 | Confidential | ⚠️ CV in workspace |
-| 7 | Buro Happold | [Director Program Advisory](applications/buro-happold-director-program/job.md) | Riyadh, KSA | 88% | ✅ Applied | 2026-02-27 | 2026-03-06 | [Link](https://vacancies.burohappold.com/jobs/job/Director-Program-Advisory/1945) | [CV ✅](applications/buro-happold-director-program/Ahmed_Nasr_Director_Program_Advisory_BuroHappold.pdf) |
-| 8 | Inception (G42) | [Director Delivery](applications/inception-director-delivery/job.md) | Abu Dhabi, UAE | 91% | ✅ Applied | 2026-02-27 | 2026-03-06 | [LinkedIn](https://ae.linkedin.com/jobs/view/director-delivery-at-inception-4376090289) | [CV ✅](applications/inception-director-delivery/Ahmed_Nasr_Director_Delivery_Inception.pdf) |
-| 9 | Dubai Holding | [Director DT & IT](applications/du-director-it-strategy/job.md) | Dubai, UAE | 92% | ✅ Applied | 2026-02-27 | 2026-03-06 | [LinkedIn](https://www.linkedin.com/jobs/view/4375112810/) | [CV ✅](applications/du-director-it-strategy/Ahmed_Nasr_Director_DT_IT_DubaiHolding.pdf) |
-| 10 | FAB | [VP Technology & Data](applications/fab-vp-technology-data/job.md) | Abu Dhabi, UAE | 87% | ✅ Applied | 2026-02-27 | 2026-03-06 | [Oracle Portal](https://ehjd.fa.em2.oraclecloud.com/comm/hcmUI/CandidateExperience/en/job/1175) | [CV ✅](applications/fab-vp-technology-data/Ahmed_Nasr_VP_Technology_Data_FAB.pdf) |
+| # | Applied? | Company | Role | Location | ATS | Stage | Applied | Follow-up Due | Job URL | CV |
+|---|----------|---------|------|----------|-----|-------|---------|--------------|---------|-----|
+| 1 | ☑️ | Delphi Consulting | [Senior AI PM](applications/delphi-senior-ai-pm/job.md) | UAE | 91% | 📞 Interview | 2026-02-21 | 2026-02-27 | ⚠️ Missing | [CV ✅](applications/delphi-senior-ai-pm/) |
+| 2 | ☑️ | Talabat | [CPTO](applications/talabat-cpto/job.md) | Dubai, UAE | 87% | ✅ Applied | 2026-02-24 | 2026-03-02 | [LinkedIn](https://www.linkedin.com/jobs/view/4375708512) | [CV ✅](applications/talabat-cpto/Ahmed_Nasr_CPTO_Talabat.pdf) |
+| 3 | ☑️ | AIQU | [Director AI](applications/aiqu-director-ai/job.md) | Dubai, UAE | 82% | ✅ Applied | 2026-02-24 | 2026-03-02 | [LinkedIn](https://www.linkedin.com/jobs/view/4375324051) | [CV ✅](applications/aiqu-director-ai/Ahmed_Nasr_Director_AI_AIQU.pdf) |
+| 4 | ☑️ | Nexus Consulting | [CEO](applications/nexus-ceo/job.md) | Saudi Arabia | 78% | ✅ Applied | 2026-02-24 | 2026-03-02 | [LinkedIn](https://www.linkedin.com/jobs/view/4376367703) | [CV ✅](applications/nexus-ceo/Ahmed_Nasr_CEO_NexusConsulting.pdf) |
+| 5 | ☑️ | eMagine Solutions | [VP Digital Projects](applications/emagne-vp-digital/job.md) | Abu Dhabi, UAE | 87-90% | ✅ Applied | 2026-02-25 | 2026-03-04 | ⚠️ Missing | [CV ✅](applications/emagne-vp-digital/) |
+| 6 | ☑️ | Confidential | [Group IT Director](applications/group-it-director-bahrain/job.md) | Bahrain | 92-93% | ✅ Applied | 2026-02-26 | 2026-03-05 | Confidential | ⚠️ CV in workspace |
+| 7 | ☑️ | Buro Happold | [Director Program Advisory](applications/buro-happold-director-program/job.md) | Riyadh, KSA | 88% | ✅ Applied | 2026-02-27 | 2026-03-06 | [Link](https://vacancies.burohappold.com/jobs/job/Director-Program-Advisory/1945) | [CV ✅](applications/buro-happold-director-program/Ahmed_Nasr_Director_Program_Advisory_BuroHappold.pdf) |
+| 8 | ☑️ | Inception (G42) | [Director Delivery](applications/inception-director-delivery/job.md) | Abu Dhabi, UAE | 91% | ✅ Applied | 2026-02-27 | 2026-03-06 | [LinkedIn](https://ae.linkedin.com/jobs/view/director-delivery-at-inception-4376090289) | [CV ✅](applications/inception-director-delivery/Ahmed_Nasr_Director_Delivery_Inception.pdf) |
+| 9 | ☑️ | Dubai Holding | [Director DT & IT](applications/du-director-it-strategy/job.md) | Dubai, UAE | 92% | ✅ Applied | 2026-02-27 | 2026-03-06 | [LinkedIn](https://www.linkedin.com/jobs/view/4375112810/) | [CV ✅](applications/du-director-it-strategy/Ahmed_Nasr_Director_DT_IT_DubaiHolding.pdf) |
+| 10 | ☑️ | FAB | [VP Technology & Data](applications/fab-vp-technology-data/job.md) | Abu Dhabi, UAE | 87% | ✅ Applied | 2026-02-27 | 2026-03-06 | [Oracle Portal](https://ehjd.fa.em2.oraclecloud.com/comm/hcmUI/CandidateExperience/en/job/1175) | [CV ✅](applications/fab-vp-technology-data/Ahmed_Nasr_VP_Technology_Data_FAB.pdf) |
 
 
 ---
