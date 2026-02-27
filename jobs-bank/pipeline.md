@@ -1,6 +1,6 @@
 # 📊 Jobs Pipeline — Master Tracker
 
-*Last updated: 2026-02-27 | Maintained by NASR*
+*Last updated: 2026-02-27 06:30 UTC | Maintained by NASR*
 
 ---
 
@@ -18,6 +18,10 @@
 | 8 | ☑️ | Inception (G42) | [Director Delivery](applications/inception-director-delivery/job.md) | Abu Dhabi, UAE | 91% | ✅ Applied | 2026-02-27 | 2026-03-06 | [LinkedIn](https://ae.linkedin.com/jobs/view/director-delivery-at-inception-4376090289) | [CV ✅](applications/inception-director-delivery/Ahmed_Nasr_Director_Delivery_Inception.pdf) |
 | 9 | ☑️ | Dubai Holding | [Director DT & IT](applications/du-director-it-strategy/job.md) | Dubai, UAE | 92% | ✅ Applied | 2026-02-27 | 2026-03-06 | [LinkedIn](https://www.linkedin.com/jobs/view/4375112810/) | [CV ✅](applications/du-director-it-strategy/Ahmed_Nasr_Director_DT_IT_DubaiHolding.pdf) |
 | 10 | ☑️ | FAB | [VP Technology & Data](applications/fab-vp-technology-data/job.md) | Abu Dhabi, UAE | 87% | ✅ Applied | 2026-02-27 | 2026-03-06 | [Oracle Portal](https://ehjd.fa.em2.oraclecloud.com/comm/hcmUI/CandidateExperience/en/job/1175) | [CV ✅](applications/fab-vp-technology-data/Ahmed_Nasr_VP_Technology_Data_FAB.pdf) |
+| 11 | ☐ | Al-Gihaz Holdings | [Chief Operating Officer](applications/algihaz-coo/job.md) | Dammam, KSA | 91% | 📋 CV Ready | — | 2026-03-07 | [LinkedIn](https://www.linkedin.com/jobs/view/4372693407/) | [CV ✅](applications/algihaz-coo/Ahmed_Nasr_COO_AlGihaz.pdf) |
+| 12 | ☐ | Confidential | [Head of Artificial Intelligence](applications/confidential-head-ai-dubai/job.md) | Dubai, UAE | 91% | 📋 CV Ready | — | 2026-03-07 | [LinkedIn](https://www.linkedin.com/jobs/view/4377598782/) | [CV ✅](applications/confidential-head-ai-dubai/Ahmed_Nasr_Head_AI_Confidential.pdf) |
+| 13 | ☐ | Apex Group Ltd | [Head of AI Innovation](applications/apex-ai-innovation-head/job.md) | Abu Dhabi, UAE | 88% | 📋 CV Ready | — | 2026-03-07 | [LinkedIn](https://www.linkedin.com/jobs/view/4357830223/) | [CV ✅](applications/apex-ai-innovation-head/Ahmed_Nasr_Head_AI_Innovation_Apex.pdf) |
+| 14 | ☐ | du | [Director IT Strategy](applications/du-director-it-strategy/job.md) | UAE | 88% | 📋 CV Ready | — | 2026-03-07 | [LinkedIn](https://www.linkedin.com/jobs/view/4374891542/) | [CV ✅](applications/du-director-it-strategy/Ahmed_Nasr_Director_IT_Strategy_du.pdf) |
 
 
 ---
@@ -52,12 +56,12 @@
 
 | Metric | Value |
 |--------|-------|
-| Total tracked | 10 |
+| Total tracked | 14 |
 | Applied | 10 |
-| CV Ready, not yet applied | 0 |
+| CV Ready, not yet applied | 4 (Al-Gihaz, Confidential AI, Apex, du) |
 | Radar (no CV yet) | 0 |
 | Active interviews | 1 (Delphi — awaiting feedback) |
-| Avg ATS score (applied) | 88% |
+| Avg ATS score (all CVs) | 89% |
 | Follow-ups due this week | 🔴 Delphi (today) |
 | Follow-ups due next week | Talabat, AIQU, Nexus (Mar 2) |
 | Target salary | 50,000+ AED/month |
