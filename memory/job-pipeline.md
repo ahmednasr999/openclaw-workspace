@@ -1,11 +1,39 @@
 # Job Pipeline — Active Applications & Interviews
 
-*Last Updated: 2026-02-24 08:00 UTC*
+*Last Updated: 2026-02-27 15:05 UTC*
 *Maintained by: NASR*
 
 ---
 
-## 🔴 ACTIVE INTERVIEWS (Next 48 Hours)
+## 🆕 NEW LEADS — Feb 27, 2026 (Needs JD + CV)
+
+### Circle — Director, Partner Management MEA (Dubai)
+- **Status:** New lead — JD not pulled yet
+- **Location:** Dubai, UAE
+- **Sector:** FinTech
+- **Source:** LinkedIn job alert
+- **Priority:** 🔥 HIGH — GCC network + MEA experience direct match
+- **Next Action:** Pull full JD, ATS score, tailor CV
+
+### Revolut — Head of Operations, Wealth & Trading (UAE)
+- **Status:** New lead — JD not pulled yet
+- **Location:** UAE
+- **Sector:** FinTech
+- **Source:** LinkedIn job alert
+- **Priority:** 🔥 HIGH — Operations at scale, FinTech DNA match
+- **Next Action:** Pull full JD, ATS score, tailor CV
+
+### TITAN Group — Head of Enterprise AI (Athens)
+- **Status:** New lead — JD not pulled yet
+- **Location:** Athens, Greece (not GCC)
+- **Sector:** Enterprise AI
+- **Source:** LinkedIn job alert
+- **Priority:** 🟡 MEDIUM — Strongest AI exec match but wrong geography
+- **Next Action:** Validate scope + salary before investing time
+
+---
+
+## 🔴 ACTIVE INTERVIEWS
 
 ### Delphi Consulting — Senior AI Project Manager
 - **Status:** Interview TODAY
@@ -71,9 +99,10 @@
 | Metric | Value |
 |--------|-------|
 | **Active Interviews** | 1 (Delphi, awaiting feedback) |
+| **New Leads (Feb 27)** | 3 (Circle, Revolut, TITAN) |
 | **Recent Applications (7 days)** | 4 (Talabat, AIQU, Nexus, eMagine) |
 | **Previous Applications (Feb 12-16)** | 7 (no responses yet) |
-| **Total Pipeline** | 12 applications |
+| **Total Pipeline** | 15 opportunities |
 | **ATS Score Range** | 87-94% ✅ |
 
 ---

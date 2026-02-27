@@ -57,7 +57,7 @@ class NotificationSystem:
         if buttons:
             inline_keyboard = []
             for btn in buttons:
-                inline_keyboard.append([{"text": btn["text"], "callback_data": btn["data"]}]
+                inline_keyboard.append([{"text": btn["text"], "callback_data": btn["data"]}])
             data["reply_markup"] = json.dumps({"inline_keyboard": inline_keyboard})
         
         try:

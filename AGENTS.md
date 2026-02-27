@@ -100,6 +100,28 @@ Waiting for: "go ahead"
 - NEVER batch multiple locked commands — show each one separately
 - NEVER assume approval from a previous session
 
+### 🧠 Session Context Monitor (75% Auto-Flush Rule — PERMANENT)
+
+Monitor main session context usage continuously. At **75% context (150k/200k tokens)**:
+
+**Agent-level action (PASSIVE):**
+1. Flush key decisions, tasks, and learnings to MEMORY.md
+2. Update memory/active-tasks.md
+3. Log session to memory/YYYY-MM-DD.md
+4. Start a fresh session
+
+**System-level watchdog (AUTOMATIC BACKUP):**
+- System cron watchdog runs every 5 minutes via `/root/.openclaw/scripts/context-watchdog.sh`
+- If main session context >= 75%, watchdog fires: stops gateway, clears session, restarts gateway
+- Sends Telegram alert to Ahmed with recovery time and log path
+- Full deployment doc: `memory/context-watchdog-deployment-2026-02-27.md`
+
+**Why:** On Feb 27, 2026, the main session hit 93% context during a cascade failure and was unable to respond even after rate limits cleared, prolonging the outage significantly. A markdown rule alone cannot enforce itself when context is too full. Watchdog provides external enforcement.
+
+**Rule:** Never let context exceed 75% in the main session. Watchdog is backup; proactive flush is better.
+
+---
+
 ### 📊 Session Message Warning (40-Message Soft Cap)
 
 At message 40 in any session, notify Ahmed:
@@ -133,6 +155,24 @@ Ahmed reviews this log to verify routing quality. After 7 days, evaluate whether
 - Git push to master (non-force)
 
 **Why this rule exists:** On Feb 25, 2026, NASR modified openclaw.json and restarted the gateway without approval, causing 50 restart loops and 6+ minutes of downtime. This rule prevents ALL similar incidents permanently.
+
+### 🚫 No Em Dashes — Ever (ALL Models, ALL Sessions, ALL Sub-Agents)
+
+**Never use em dashes ( — ) in any output. No exceptions.**
+
+Applies to:
+- NASR replies to Ahmed
+- CVs and cover letters
+- LinkedIn posts and content
+- Reports, summaries, analysis
+- All sub-agent output
+
+Use commas, periods, or colons instead.
+
+**Every sub-agent brief for CV generation or content creation must explicitly include:**
+> "No em dashes anywhere in the output. Use commas, periods, or colons instead. Hard rule, no exceptions."
+
+If a sub-agent returns output with em dashes, reject it and request a clean version before delivering to Ahmed.
 
 ## Model Selection Rules (Automatic)
 
