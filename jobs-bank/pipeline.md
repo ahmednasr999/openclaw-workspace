@@ -71,7 +71,7 @@ No proactive follow-ups on submitted applications. Ball is in their court.
 | EyeSpy | Head of PMO | UAE | 🟡 MEDIUM | N/A — need JD link | Get JD link + assess fit |
 | Cygnify | Principal, Digital Delivery & Transformation | Dubai, UAE | 🟡 MEDIUM | [LinkedIn](https://www.linkedin.com/jobs/search/?keywords=Principal+Digital+Delivery+Transformation+Cygnify+Dubai) | Verify salary range first |
 | Legend Holding Group | IT Director | Dubai, UAE | 🟡 MEDIUM | [LinkedIn](https://www.linkedin.com/jobs/search/?keywords=IT+Director+Legend+Holding+Group+Dubai) | Verify scope and salary |
-| Dubai Health | Head Tech Transfer & Commercialization | Dubai, UAE | 🟡 MEDIUM | [LinkedIn](https://www.linkedin.com/jobs/view/4378311331/) | Credential gap — IP/TTO background required. Screen JD first |
+
 | TP | AI Delivery VP | Cairo, Egypt | 🟡 MONITOR | [LinkedIn](https://www.linkedin.com/jobs/view/4378349141/) | Monitor only — conflicts with GCC target |
 | Majid Al Futtaim | Director, Total Rewards | Cairo, Egypt | ❌ SKIP | [LinkedIn](https://www.linkedin.com/jobs/view/4377273639/) | HR role — not strategic fit |
 
