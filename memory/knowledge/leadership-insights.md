@@ -23,3 +23,22 @@
 - This principle resonates with GCC boards looking for executives who deliver ROI, not spenders
 
 **Tags:** #leadership #frugality #founder-mindset #resource-efficiency #google #eric-schmidt
+
+## AI Transformation: Category One vs Two | 2026-02-27
+**Source:** Jess Tayel — transformationleadership.institute newsletter
+**Type:** Article / Framework
+
+**Key Insights:**
+- Most organisations stuck in Category One (Copilot, chatbots) — incremental savings only
+- Category Two (agents, autonomous systems) changes what's structurally possible — requires different leadership model
+- Real talent shortage is leadership, not technical — executives who hold strategy + execution + governance + adoption
+- Implementation is the bottleneck: traditional software delivery models fail for AI — needs iterative, use-case-first, business-owned programs
+- AI amplifies existing gaps: strong transformation orgs get stronger, weak ones get costlier
+- Foundations (data, governance, integration, monitoring, workforce) must be built in parallel with tools, not after
+
+**Actionable for Ahmed:**
+- TopMed $50M = Category Two proof point — not tool adoption, structural operational change across 15 hospitals
+- Use Category One/Two framework in interviews to show you understand AI transformation depth
+- Positions Ahmed as the rare executive who can bridge strategy → execution → adoption — the scarcest capability per Tayel
+
+**Tags:** #AI #transformation #leadership #CategoryTwo #agents #governance #adoption

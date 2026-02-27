@@ -1,0 +1,39 @@
+{
+  "timestamp": "2026-02-27T08:24:26.420213+00:00",
+  "mode": "quick",
+  "exitCode": 0,
+  "summary": {
+    "total": 6,
+    "healthy": 6,
+    "warnings": 0,
+    "errors": 0,
+    "viable": 6,
+    "primaryStatus": "ok"
+  },
+  "models": {
+    "minimax-portal/MiniMax-M2.5": {
+      "name": "MiniMax M2.5",
+      "status": "ok"
+    },
+    "anthropic/claude-haiku-4-5": {
+      "name": "Claude Haiku 4.5",
+      "status": "ok"
+    },
+    "anthropic/claude-sonnet-4-6": {
+      "name": "Claude Sonnet 4.6",
+      "status": "ok"
+    },
+    "anthropic/claude-opus-4-6": {
+      "name": "Claude Opus 4.6",
+      "status": "ok"
+    },
+    "moonshot/kimi-k2.5": {
+      "name": "Kimi K2.5",
+      "status": "ok"
+    },
+    "openai-codex/gpt-5.1": {
+      "name": "GPT-5.1",
+      "status": "ok"
+    }
+  }
+}

@@ -26,4 +26,23 @@
 
 **Tags:** #international-hiring #gcc #risk-assessment #job-search
 
+## PM GitHub as Career Differentiator | 2026-02-27
+**Source:** Aakash Gupta (Product Growth Newsletter)
+**Type:** Article
+
+**Key Insights:**
+- Only 24% of PM candidates have GitHub profiles (vs. 17% with portfolios)
+- GitHub signals: you build things, understand technical teams, navigate engineer tools
+- Case study: Shubham Saboo landed Senior AI PM at Google partly via GitHub
+- Acts as "inbound lead magnet" — recruiters reach out proactively
+- 6 elements make a PM GitHub effective (detailed in paid guide)
+
+**Actionable for Ahmed:**
+- NOT relevant for executive roles (VP/C-suite targets)
+- Executive recruiters prioritize: track record, team scaling, strategic impact
+- LinkedIn thought leadership > GitHub for senior exec job search
+- Ahmed's $50M transformation and Talabat scale story matter more than code repos
+
+**Tags:** #career #product-management #github #executive-search
+
 <!-- end -->

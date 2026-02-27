@@ -1,6 +1,9 @@
 # Active Tasks
 
-*Last updated: 2026-02-25*
+*Last updated: 2026-02-27*
+
+## 🔴 URGENT — Expires within 5 days
+- **OpenAI Codex JWT token expires March 4, 2026** — Must re-authenticate before it fails. Task: Check https://platform.openai.com/account/api-keys, generate new token, update openclaw.json. (Flagged Feb 27, 2026 by Opus security review)
 
 ## 🔴 Urgent
 
