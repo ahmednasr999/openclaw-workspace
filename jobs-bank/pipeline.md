@@ -66,7 +66,6 @@ No proactive follow-ups on submitted applications. Ball is in their court.
 
 | Company | Role | Location | Priority | Job URL | Next Step |
 |---------|------|----------|----------|---------|-----------|
-
 | Oracle | Director Client Engagement / Digital Transformation | Riyadh, KSA | 🔥 HIGH | [LinkedIn](https://www.linkedin.com/jobs/search/?keywords=Director+Client+Engagement+Digital+Transformation+Oracle+Riyadh) | Pull JD + assess fit — 19 connections, 31 alumni |
 | EyeSpy | Head of PMO | UAE | 🟡 MEDIUM | N/A — need JD link | Get JD link + assess fit |
 | Cygnify | Principal, Digital Delivery & Transformation | Dubai, UAE | 🟡 MEDIUM | [LinkedIn](https://www.linkedin.com/jobs/search/?keywords=Principal+Digital+Delivery+Transformation+Cygnify+Dubai) | Verify salary range first |
@@ -81,9 +80,9 @@ No proactive follow-ups on submitted applications. Ball is in their court.
 
 | Metric | Value |
 |--------|-------|
-| Total tracked | 28 |
-| Applied | 28 |
-| CV Ready, not yet applied | 1 (One Executive) |
+| Total tracked | 30 |
+| Applied | 30 |
+| CV Ready, not yet applied | 0 |
 | Radar — Needs Action | 7 |
 | Radar (no CV yet) | 0 |
 | Active interviews | 1 (Delphi — awaiting feedback) |
