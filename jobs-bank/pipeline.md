@@ -1,96 +1,40 @@
 # Job Pipeline — Active Applications & Interviews
 
-*Last Updated: 2026-02-27 15:05 UTC*
+*Last Updated: 2026-02-27 15:46 UTC*
 *Maintained by: NASR*
 
 ---
 
-## 🆕 NEW LEADS — Feb 27, 2026 (Needs JD + CV)
+## 🔴 Active Interviews
 
-### Circle — Director, Partner Management MEA (Dubai)
-- **Status:** New lead — JD not pulled yet
-- **Location:** Dubai, UAE
-- **Sector:** FinTech
-- **Source:** LinkedIn job alert
-- **Priority:** 🔥 HIGH — GCC network + MEA experience direct match
-- **Next Action:** Pull full JD, ATS score, tailor CV
-
-### Revolut — Head of Operations, Wealth & Trading (UAE)
-- **Status:** New lead — JD not pulled yet
-- **Location:** UAE
-- **Sector:** FinTech
-- **Source:** LinkedIn job alert
-- **Priority:** 🔥 HIGH — Operations at scale, FinTech DNA match
-- **Next Action:** Pull full JD, ATS score, tailor CV
-
-### TITAN Group — Head of Enterprise AI (Athens)
-- **Status:** New lead — JD not pulled yet
-- **Location:** Athens, Greece (not GCC)
-- **Sector:** Enterprise AI
-- **Source:** LinkedIn job alert
-- **Priority:** 🟡 MEDIUM — Strongest AI exec match but wrong geography
-- **Next Action:** Validate scope + salary before investing time
+| # | Company | Role | Location | Status | ATS | CV File | Job URL | Follow-up |
+|---|---------|------|----------|--------|-----|---------|---------|-----------|
+| 1 | Delphi Consulting | Senior AI Project Manager | UAE (On-site) | 🎤 Interviewed Feb 24 — awaiting feedback | 91% | [Ahmed_Nasr_Delphi_Consulting_Senior_AI_PM.pdf](../cvs/Ahmed_Nasr_Delphi_Consulting_Senior_AI_PM.pdf) | — | ⏰ Follow up if no response by Mar 2 |
 
 ---
 
-## 🔴 ACTIVE INTERVIEWS
+## 🟡 Applications — Waiting for Response
 
-### Delphi Consulting — Senior AI Project Manager
-- **Status:** Interview TODAY
-- **Date:** Feb 24, 2026 @ 1:30pm Cairo (10:30 UTC)
-- **Location:** UAE (On-site)
-- **Salary:** Target 50,000-55,000 AED/month
-- **ATS Score:** 91%
-- **CV:** Ahmed_Nasr_Delphi_Consulting_Senior_AI_PM.pdf
-- **Next Action:** Interview in progress
-- **Notes:** Strong match (91%). AI/PMO + FinTech/HealthTech positioning
+| # | Company | Role | Location | Status | ATS | CV File | Job URL | Follow-up |
+|---|---------|------|----------|--------|-----|---------|---------|-----------|
+| 2 | Talabat | CPTO | Dubai, UAE (On-site) | ✅ Applied Feb 24 | 92-94% | [Ahmed_Nasr_CPTO_Talabat.pdf](../cvs/Ahmed_Nasr_CPTO_Talabat.pdf) | [LinkedIn](https://www.linkedin.com/jobs/view/4375708512) | ⏰ Mar 2, 2026 |
+| 3 | AIQU | Director of Artificial Intelligence | Dubai, UAE (On-site) | ✅ Applied Feb 24 | 87-89% | [Ahmed_Nasr_Director_AI_AIQU.pdf](../cvs/Ahmed_Nasr_Director_AI_AIQU.pdf) | [LinkedIn](https://www.linkedin.com/jobs/view/4375324051) | ⏰ Mar 2, 2026 |
+| 4 | Nexus Consulting | CEO (Founder) | Saudi Arabia (Remote) | ✅ Applied Feb 24 | 88-90% | [Ahmed_Nasr_CEO_Nexus.pdf](../cvs/Ahmed_Nasr_CEO_Nexus.pdf) | [LinkedIn](https://www.linkedin.com/jobs/view/4376367703) | ⏰ Mar 2, 2026 |
+| 5 | eMagine Solutions | VP of Digital Projects | Abu Dhabi, UAE (On-site) | ✅ Applied Feb 25 | 87-90% | [Ahmed Nasr - VP Digital Projects - eMagine Solutions.pdf](../cvs/Ahmed%20Nasr%20-%20VP%20Digital%20Projects%20-%20eMagine%20Solutions.pdf) | — | ⏰ Mar 4, 2026 |
 
 ---
 
-## 🟡 APPLICATIONS (In Pipeline — Waiting)
+## 🆕 New Leads — Needs JD + CV (Feb 27, 2026)
 
-### Talabat — CPTO (Chief Product Technology Officer)
-- **Status:** Applied Feb 24, 2026
-- **Location:** Dubai, UAE (On-site)
-- **Salary:** Target 50,000-60,000 AED/month
-- **ATS Score:** 92-94%
-- **CV:** Ahmed_Nasr_CPTO_Talabat.pdf
-- **URL:** https://www.linkedin.com/jobs/view/4375708512
-- **Follow-up:** 7 days (Mar 2, 2026)
-- **Advantage:** Insider knowledge (worked at Delivery Hero parent). 233x growth story.
-- **Priority:** 🔥 HIGH — insider advantage + C-suite fit
-
-### AIQU — Director of Artificial Intelligence
-- **Status:** Applied Feb 24, 2026
-- **Location:** Dubai, UAE (On-site)
-- **Salary:** Target 45,000-55,000 AED/month
-- **ATS Score:** 87-89%
-- **CV:** Ahmed_Nasr_Director_AI_AIQU.pdf
-- **URL:** https://www.linkedin.com/jobs/view/4375324051
-- **Follow-up:** 7 days (Mar 2, 2026)
-- **Notes:** Director level (acceptable for range). Stretch role on explicit AI/ML execution.
-- **Priority:** 🟡 MEDIUM — growth opportunity in AI
-
-### Nexus Consulting — CEO (Founder)
-- **Status:** Applied Feb 24, 2026
-- **Location:** Saudi Arabia (Remote)
-- **Salary:** Target 50,000-60,000 AED/month
-- **ATS Score:** 88-90%
-- **CV:** Ahmed_Nasr_CEO_Nexus.pdf
-- **URL:** https://www.linkedin.com/jobs/view/4376367703
-- **Follow-up:** 7 days (Mar 2, 2026)
-- **Notes:** CEO role (top of target range). Remote (not preference). Consulting/startup play.
-- **Priority:** 🟢 MEDIUM — ambitious but valuable stretch
-
-### eMagine Solutions — VP of Digital Projects
-- **Status:** Applied Feb 25, 2026
-- **Location:** Abu Dhabi, UAE (On-site)
-- **Salary:** Target 50,000-60,000 AED/month
-- **ATS Score:** 87-90%
-- **CV:** Ahmed Nasr - VP Digital Projects - eMagine Solutions.pdf
-- **Follow-up:** 7 days (Mar 4, 2026)
-- **Notes:** VP level. Strong fit: Intel telecom closes industry gap, Talabat M&A experience matches perfectly. Abu Dhabi not Dubai, but worth it for VP title.
-- **Priority:** 🔥 HIGH
+| # | Company | Role | Location | Priority | Sector | Next Action |
+|---|---------|------|----------|----------|--------|-------------|
+| 6 | Cooper Fitch | Executive Director, Strategic Initiatives | Riyadh, KSA | 🔥 HIGH | Executive/Strategy | Pull JD + tailor CV + submit within 48hrs |
+| 7 | One Executive | Director, Organizational Development | Dubai, UAE | 🔥 HIGH | Org Dev/Transformation | Pull JD + assess fit |
+| 8 | Dubai Health | Head Tech Transfer & Commercialization | Dubai, UAE | 🟡 MEDIUM | HealthTech | Screen JD first |
+| 9 | Circle | Director, Partner Management MEA | Dubai, UAE | 🔥 HIGH | FinTech | Pull JD + tailor CV |
+| 10 | Revolut | Head of Operations, Wealth & Trading | UAE | 🔥 HIGH | FinTech | Pull JD + tailor CV |
+| 11 | TITAN Group | Head of Enterprise AI | Athens, Greece | 🟡 MEDIUM | Enterprise AI | Validate scope + salary (outside GCC) |
+| 12 | TP | AI Delivery VP | Cairo, Egypt | 🟡 MONITOR | AI/Tech | Monitor only — conflicts with GCC target |
 
 ---
 
@@ -98,12 +42,11 @@
 
 | Metric | Value |
 |--------|-------|
-| **Active Interviews** | 1 (Delphi, awaiting feedback) |
-| **New Leads (Feb 27)** | 3 (Circle, Revolut, TITAN) |
-| **Recent Applications (7 days)** | 4 (Talabat, AIQU, Nexus, eMagine) |
-| **Previous Applications (Feb 12-16)** | 7 (no responses yet) |
-| **Total Pipeline** | 15 opportunities |
-| **ATS Score Range** | 87-94% ✅ |
+| Active Interviews | 1 (Delphi, awaiting feedback) |
+| Applications Waiting | 4 (Talabat, AIQU, Nexus, eMagine) |
+| New Leads (Feb 27) | 7 |
+| Total Pipeline | 12 opportunities |
+| ATS Score Range | 87-94% |
 
 ---
 
@@ -113,18 +56,19 @@
 |------|--------|
 | 2026-02-24 | ✅ Applied to Talabat, AIQU, Nexus |
 | 2026-02-24 | ✅ Delphi Interview completed, awaiting feedback |
-| 2026-02-25 | ✅ Applied to eMagine Solutions (VP Digital Projects) |
-| 2026-02-27 | ⏰ Follow-up on Delphi if no response |
-| 2026-03-02 | ⏰ Follow-up on Talabat, AIQU, Nexus (7-day check) |
-| 2026-03-04 | ⏰ Follow-up on eMagine (7-day check) |
+| 2026-02-25 | ✅ Applied to eMagine Solutions |
+| 2026-02-27 | ⏰ Pull JDs + tailor CVs: Cooper Fitch, One Executive, Circle, Revolut |
+| 2026-03-02 | ⏰ Follow-up: Talabat, AIQU, Nexus (7-day check) |
+| 2026-03-04 | ⏰ Follow-up: eMagine (7-day check) |
 
 ---
 
-## 📋 Workflow — Established Feb 24
+## 📋 Workflow
 
-✅ **HEIKAL** → Finds jobs + provides URLs
-✅ **CV Tailoring** → Create tailored CVs (ATS 85%+)
+✅ **Job Alert** → NASR processes daily Gmail digest
+✅ **JD Fetch** → Pull full job description + ATS analysis
+✅ **CV Tailoring** → Tailor CV (ATS 85%+ required)
 ✅ **Ahmed Review** → Approve before submission
-✅ **Apply** → Submit with tailored CV (not LinkedIn easy-apply)
-✅ **Track** → Log to job-pipeline.md + set follow-up reminders
-✅ **Interview Prep** → When interview lands (STAR stories, company research)
+✅ **Apply** → Submit tailored CV (not LinkedIn easy-apply)
+✅ **Track** → Log here + set follow-up date
+✅ **Interview Prep** → STAR stories + company research when interview lands
