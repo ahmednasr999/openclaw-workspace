@@ -49,6 +49,9 @@
 - **Status:** Active
 - **Master CV:** `memory/master-cv-data.md`
 
+**Applied (Feb 27, 2026):**
+- Dubai Health - Head of Technology Transfer Office, Dubai - ATS 68-72% - APPLIED
+
 **Applied (Feb 26, 2026):**
 - Aiwozo Agentic Automation - Head of DT, Dubai - ATS 94% - APPLIED
 - First Abu Dhabi Bank - VP Technology & Data, Abu Dhabi - CV done previously - APPLIED
