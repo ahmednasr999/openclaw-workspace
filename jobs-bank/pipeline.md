@@ -64,7 +64,7 @@ No proactive follow-ups on submitted applications. Ball is in their court.
 | Company | Role | Location | Priority | Job URL | Next Step |
 |---------|------|----------|----------|---------|-----------|
 | FAB | VP Technology & Data | Abu Dhabi, UAE | ✅ Applied Feb 27 | [Oracle Portal](https://ehjd.fa.em2.oraclecloud.com/comm/hcmUI/CandidateExperience/en/job/1175) | Follow-up Mar 6 — activate ESLSCA alumni network for referral |
-| Cooper Fitch | Executive Director, Strategic Initiatives | Riyadh, KSA | 🔥 HIGH | [LinkedIn](https://www.linkedin.com/jobs/view/4375223553/) | Pull JD + tailor CV + submit within 48hrs |
+| Cooper Fitch | Executive Director, Strategic Initiatives | Riyadh, KSA | ✅ CV READY — ATS 91% | [LinkedIn](https://www.linkedin.com/jobs/view/4375223553/) | Submit now — awaiting Ahmed approval |
 | One Executive | Director, Organizational Development | Dubai, UAE | 🔥 HIGH | [LinkedIn](https://www.linkedin.com/jobs/view/4375226171/) | Pull JD + assess fit |
 | Dubai Health | Head Tech Transfer & Commercialization | Dubai, UAE | 🟡 MEDIUM | [LinkedIn](https://www.linkedin.com/jobs/view/4378311331/) | Screen JD first |
 | kedy.ai | CEO | Israel (Remote) | 🟡 LOW | [LinkedIn](https://www.linkedin.com/jobs/view/4375201108/) | Outside GCC — skip unless strategic pivot |
