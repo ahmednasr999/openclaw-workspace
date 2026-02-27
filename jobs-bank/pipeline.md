@@ -39,6 +39,7 @@
 | 29 | ☑️ | One Executive | Director, Organisational Development | Dubai, UAE | 88% | ✅ Applied | 2026-02-27 | 2026-03-06 | [LinkedIn](https://www.linkedin.com/jobs/view/4375226171/) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20Director%20OD%20-%20One%20Executive.pdf) |
 | 30 | ☑️ | Sky News Arabia | Head of AI Transformation & Innovation | Abu Dhabi, UAE | 87% | ✅ Applied | 2026-02-27 | 2026-03-06 | [LinkedIn](https://www.linkedin.com/jobs/view/4373109759) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20Head%20AI%20Transformation%20-%20Sky%20News%20Arabia.pdf) |
 | 31 | ☑️ | Dubai Health | Head of Technology Transfer Office | Dubai, UAE | 68-72% | ✅ Applied | 2026-02-27 | 2026-03-06 | N/A | [CV ✅](cv-outputs/Ahmed%20Nasr%20-%20Head%20of%20Technology%20Transfer%20Office%20-%20Dubai%20Health.pdf) |
+| 32 | ⬜ | Cygnify | Principal, Digital Delivery & Transformation | Dubai, UAE | 88-91% | 📋 CV Ready | 2026-02-27 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4378690376/) | [CV ✅](cv-outputs/Ahmed%20Nasr%20-%20Principal%20Digital%20Delivery%20-%20Cygnify.pdf) |
 
 
 ---
@@ -67,7 +68,7 @@ No proactive follow-ups on submitted applications. Ball is in their court.
 
 | Company | Role | Location | Priority | Job URL | Next Step |
 |---------|------|----------|----------|---------|-----------|
-| Cygnify | Principal, Digital Delivery & Transformation | Dubai, UAE | 🟡 MEDIUM | [LinkedIn](https://www.linkedin.com/jobs/search/?keywords=Principal+Digital+Delivery+Transformation+Cygnify+Dubai) | Verify salary range first |
+
 | Legend Holding Group | IT Director | Dubai, UAE | 🟡 MEDIUM | [LinkedIn](https://www.linkedin.com/jobs/search/?keywords=IT+Director+Legend+Holding+Group+Dubai) | Verify scope and salary |
 | TP | AI Delivery VP | Cairo, Egypt | 🟡 MONITOR | [LinkedIn](https://www.linkedin.com/jobs/view/4378349141/) | Monitor only — conflicts with GCC target |
 | Majid Al Futtaim | Director, Total Rewards | Cairo, Egypt | ❌ SKIP | [LinkedIn](https://www.linkedin.com/jobs/view/4377273639/) | HR role — not strategic fit |
