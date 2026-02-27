@@ -1,6 +1,6 @@
 # MEMORY.md — Long-Term Context
 
-*Last updated: 2026-02-24*
+*Last updated: 2026-02-27*
 *Maintained by: NASR*
 *Rule: If it's not here, it doesn't exist across sessions.*
 
@@ -85,6 +85,13 @@
 - Models: Hybrid strategy (cost-optimized)
 - Deprecated (remove): M2.1, M2.1-highspeed
 
+### Quota Monitoring & Fallback Validation (Live Feb 27, 2026)
+- **quota-monitor.js** — Tracks daily usage, forecasts depletion, enforces spawn guards (max 10 agents, 70% warn, 90% block)
+- **fallback-validator.sh** — Validates all 6 model credentials; runs daily at 06:00 UTC before morning briefing
+- **Crons:** Daily quota reset (00:00 UTC) + pre-briefing credential check (06:00 UTC)
+- **Location:** /system-config/quota-monitoring/
+- **Full doc:** memory/quota-monitoring-deployment-2026-02-27.md
+
 ### Key File Locations
 
 | File | Purpose |
@@ -146,6 +153,8 @@ Rule: Match model to task complexity. Never use Opus for what Haiku can do.
 
 *(Running log — add don't delete)*
 
+- 2026-02-27: **CASCADE FAILURE — All 6 models unavailable.** 26 parallel CV agents hit rate limits on Anthropic (Sonnet, Opus, Haiku) + Kimi + GPT-5.1 simultaneously; MiniMax M2.5 fallback had invalid OAuth token. Result: 30+ min outage, all crons/hooks failed, Gmail stalled. Fix: Deployed quota-monitor.js + fallback-validator.sh + two automated crons (daily quota reset at 00:00 UTC, credential validation at 06:00 UTC before morning briefing). Rules: Hard limit max 10 parallel agents, 70% daily usage triggers M2.5 downgrade, 90% blocks new spawns. Full deployment doc: memory/quota-monitoring-deployment-2026-02-27.md. OpenAI Codex JWT expires March 4, 2026 — must re-authenticate before expiry or GPT-5.1 will fail silently.
+- 2026-02-27: **Credential expiry tracking pattern:** When flagging expiring credentials, always: (1) add to active-tasks.md as 🔴 URGENT, (2) schedule a one-shot cron reminder 2 days before expiry, (3) note in MEMORY.md Lessons Learned. Never rely on a single tracking mechanism.
 - 2026-02-25: **GATEWAY CRASH — Systemd `KillMode` misconfiguration.** Child processes (npm, node, next-server) survived SIGTERM because service used `KillMode=control-group` (default). Result: 37 restart loop, zombie process, 6.4GB orphaned memory. Fix: Add `KillMode=mixed + TimeoutStopSec=15` to systemd service. Also: 4 stale Telegram delivery entries (Feb 21-22) stuck in queue because recovery budget too short (~500ms); moved to failed/ and increased timeout to 5s. Full post-mortem in GATEWAY_POSTMORTEM_2026-02-25.md.
 - 2026-02-24: **NEVER run raw heavy installs (npm, apt, pip) during active sessions.** Starves VPS CPU/RAM → all LLM requests timeout. If install needed: (1) non-urgent → off-hours cron, (2) needed now → detached tmux `tmux new-session -d -s install '...'`, (3) urgent → throttle with `nice -n 19 ionice -c 3 npm install`. Always warn Ahmed first. Rule applies ALL models, ALL sessions.
 - 2026-02-24: LLM timeout bumped from 60s → 120s in openclaw.json for better resilience on large-context / Opus tasks.
@@ -302,6 +311,7 @@ NASR Rule: Update this file at session close. Always. Text > Brain. If it's not 
 - [[memory/mission-control-phase2-design.md]] — Phase 2 design
 
 ### Learning
+- [[memory/quota-monitoring-deployment-2026-02-27.md]] — Quota monitoring system deployment (Feb 27 cascade failure fix)
 - [[memory/lessons-learned.md]] — Mistakes and lessons
 - [[memory/agentic-levels.md]] — Agent maturity levels
 - [[PRINCIPLES.md]] — Core principles
