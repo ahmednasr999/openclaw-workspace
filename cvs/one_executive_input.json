@@ -1,7 +1,7 @@
 {
   "format": "chronological",
   "contact": {
-    "name": "Ahmed Nasr",
+    "name": "AHMED NASR",
     "location": "Dubai, UAE",
     "phone": "+971 50 281 4490",
     "email": "ahmednasr999@gmail.com",
@@ -11,15 +11,35 @@
   "skills": [
     {
       "category": "Organisation Design and Transformation",
-      "items": ["Operating Model Evolution", "Organisational Design", "Job Architecture and Evaluation", "Organisational Health Frameworks", "Strategic Workforce Planning", "Cross-Functional Transformation"]
+      "items": [
+        "Operating Model Evolution",
+        "Organisational Design",
+        "Job Architecture and Evaluation",
+        "Organisational Health Frameworks",
+        "Strategic Workforce Planning",
+        "Cross-Functional Transformation"
+      ]
     },
     {
       "category": "Governance and Advisory",
-      "items": ["Enterprise Governance Frameworks", "C-Suite Facilitation and Advisory", "Matrixed Multi-Entity Environments", "PMO Design", "Regulatory Compliance (JCI, HIMSS, MOH)", "Commercial Agility"]
+      "items": [
+        "Enterprise Governance Frameworks",
+        "C-Suite Facilitation and Advisory",
+        "Matrixed Multi-Entity Environments",
+        "PMO Design",
+        "Regulatory Compliance (JCI, HIMSS, MOH)",
+        "Commercial Agility"
+      ]
     },
     {
       "category": "Leadership",
-      "items": ["Executive Stakeholder Alignment", "Cross-Functional Team Leadership", "Enterprise Program Management", "Change Management", "Workforce Structuring"]
+      "items": [
+        "Executive Stakeholder Alignment",
+        "Cross-Functional Team Leadership",
+        "Enterprise Program Management",
+        "Change Management",
+        "Workforce Structuring"
+      ]
     }
   ],
   "experience": [
@@ -27,7 +47,7 @@
       "title": "PMO and Regional Engagement Lead",
       "company": "Saudi German Hospital Group",
       "location": "Dubai, UAE",
-      "dates": "Jun 2024 – Present",
+      "dates": "Jun 2024 \u2013 Present",
       "bullets": [
         "Leading enterprise-wide organisational transformation across a 15-hospital network spanning KSA, UAE, and Egypt, directing a $50M program requiring parallel redesign of operating models across all entities.",
         "Established an enterprise PMO governance framework, structuring cross-functional delivery teams of 30 professionals across a complex, matrixed multi-entity environment.",
@@ -41,7 +61,7 @@
       "title": "Country Manager",
       "company": "PaySky, Inc.",
       "location": "Egypt",
-      "dates": "Apr 2021 – Jan 2022",
+      "dates": "Apr 2021 \u2013 Jan 2022",
       "bullets": [
         "Led full organisational design and market entry execution for Egypt's first comprehensive financial SuperApp, building the operating model from the ground up.",
         "Designed workforce structure, job architecture, and accountability frameworks for a multi-function organisation spanning product, technology, partnerships, and operations.",
@@ -53,7 +73,7 @@
       "title": "Head of E-Commerce Product and IT Strategy",
       "company": "Al Araby Group",
       "location": "Egypt",
-      "dates": "Jan 2020 – Jan 2021",
+      "dates": "Jan 2020 \u2013 Jan 2021",
       "bullets": [
         "Led organisational transformation of e-commerce and IT functions within one of Egypt's largest consumer electronics groups, with operations across multiple markets.",
         "Restructured team design, reporting lines, and operating model architecture to support a digital growth strategy, improving cross-functional collaboration and delivery velocity.",
@@ -64,7 +84,7 @@
       "title": "Product Development Manager",
       "company": "Delivery Hero SE (Talabat)",
       "location": "GCC Markets",
-      "dates": "Jun 2017 – May 2018",
+      "dates": "Jun 2017 \u2013 May 2018",
       "bullets": [
         "Led cross-functional product and operations teams during hypergrowth, scaling from 30K to 7M daily orders (233x growth), requiring continuous operating model evolution and workforce redesign.",
         "Chaired the Operations Excellence Committee, coordinating organisational alignment across Berlin HQ, GCC, and Egypt in a complex matrixed structure.",
@@ -75,7 +95,7 @@
       "title": "PMO Section Head",
       "company": "Network International",
       "location": "Egypt",
-      "dates": "Sep 2014 – Jun 2017",
+      "dates": "Sep 2014 \u2013 Jun 2017",
       "bullets": [
         "Built enterprise PMO from the ground up, designing the governance framework that structured 300+ concurrent banking and payments projects across 8 countries.",
         "Designed job architecture, team structures, and operating model for a 16-person PM organisation, including role definitions, career ladders, and accountability frameworks.",
@@ -87,7 +107,7 @@
       "title": "Senior Project Manager and IT Section Head",
       "company": "Intel Telecommunications",
       "location": "Egypt",
-      "dates": "2008 – 2014",
+      "dates": "2008 \u2013 2014",
       "bullets": [
         "Led technology transformation programs with responsibility for workforce planning, team design, and governance structures across multi-year, enterprise-scale telecoms projects."
       ]
@@ -98,16 +118,44 @@
       "degree": "MBA (In Progress)",
       "school": "Paris ESLSCA Business School",
       "location": "",
-      "date": "2025 – 2027"
+      "date": "2025 \u2013 2027"
     }
   ],
   "certifications": [
-    {"name": "PMP", "issuer": "", "date": ""},
-    {"name": "CSM", "issuer": "", "date": ""},
-    {"name": "CSPO", "issuer": "", "date": ""},
-    {"name": "Lean Six Sigma", "issuer": "", "date": ""},
-    {"name": "CBAP", "issuer": "", "date": ""},
-    {"name": "MCAD", "issuer": "", "date": ""},
-    {"name": "MCP", "issuer": "", "date": ""}
+    {
+      "name": "PMP",
+      "issuer": "",
+      "date": ""
+    },
+    {
+      "name": "CSM",
+      "issuer": "",
+      "date": ""
+    },
+    {
+      "name": "CSPO",
+      "issuer": "",
+      "date": ""
+    },
+    {
+      "name": "Lean Six Sigma",
+      "issuer": "",
+      "date": ""
+    },
+    {
+      "name": "CBAP",
+      "issuer": "",
+      "date": ""
+    },
+    {
+      "name": "MCAD",
+      "issuer": "",
+      "date": ""
+    },
+    {
+      "name": "MCP",
+      "issuer": "",
+      "date": ""
+    }
   ]
 }
