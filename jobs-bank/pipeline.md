@@ -35,7 +35,7 @@
 | 25 | ☑️ | NXS Tech | Director of AI | Dubai, UAE | 91% | ✅ Applied | 2026-02-27 | 2026-03-06 | [LinkedIn](https://www.linkedin.com/jobs/view/4378323469) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/applications/nxs-director-ai/Ahmed_Nasr_Director_AI_NXS.pdf) |
 | 26 | ☑️ | Auxo Talent | VP of Artificial Intelligence | Dubai, UAE | 91% | ✅ Applied | 2026-02-27 | 2026-03-06 | [LinkedIn](https://www.linkedin.com/jobs/view/4371727536) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/applications/auxo-vp-ai/Ahmed_Nasr_VP_AI_Auxo.pdf) |
 | 27 | ☑️ | UnlockLand | VP Global Operations | Saudi Arabia | 91% | ✅ Applied | 2026-02-27 | 2026-03-06 | [LinkedIn](https://www.linkedin.com/jobs/view/4377615733) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/applications/unlockland-vp-operations/Ahmed_Nasr_VP_Operations_UnlockLand.pdf) |
-| 28 | ⬜ | Cooper Fitch | Executive Director, Strategic Initiatives | Riyadh, KSA | 91% | 🔥 CV Ready | — | — | [LinkedIn](https://www.linkedin.com/jobs/view/4375223553/) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20Executive%20Director%20Strategic%20Initiatives%20-%20Cooper%20Fitch.pdf) |
+| 28 | ☑️ | Cooper Fitch | Executive Director, Strategic Initiatives | Riyadh, KSA | 91% | ✅ Applied | 2026-02-27 | 2026-03-06 | [LinkedIn](https://www.linkedin.com/jobs/view/4375223553/) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20Executive%20Director%20Strategic%20Initiatives%20-%20Cooper%20Fitch.pdf) |
 
 
 ---
