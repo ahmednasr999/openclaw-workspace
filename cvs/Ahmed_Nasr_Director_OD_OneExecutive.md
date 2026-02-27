@@ -1,82 +1,78 @@
-# AHMED NASR
+# Ahmed Nasr
+
 **Director, Organisational Development and Enterprise Transformation**
 
 Dubai, UAE | +971 50 281 4490 | ahmednasr999@gmail.com | linkedin.com/in/ahmednasr
 
 ---
 
-## EXECUTIVE SUMMARY
+## Professional Summary
 
-Senior Organisation Effectiveness and Enterprise Transformation leader with 20+ years of hands-on ownership across organisation design, operating model evolution, and strategic workforce planning in matrixed, multi-entity environments across GCC and Egypt. Proven track record leading group-wide governance frameworks, restructuring operating models at enterprise scale, and driving complex cross-functional transformation programs with direct accountability at C-suite level. Currently leading a $50M enterprise transformation across a 15-hospital, multi-country network, including operating model redesign across six entities. Background spans enterprise PMO design, job architecture, workforce structuring, and executive facilitation across FinTech, HealthTech, and consumer sectors. Brings the analytical depth of enterprise governance with the commercial agility to operate in fast-moving, multi-stakeholder environments. Based in Dubai, UAE.
-
-**Core competencies:** Organisation Design and Operating Model Evolution, Strategic Workforce Planning, Enterprise Governance Frameworks, Organisational Health and Effectiveness, Job Architecture and Evaluation, Cross-Functional Transformation Leadership, C-Suite Advisory and Executive Facilitation, Matrixed Multi-Entity Environments.
+Enterprise transformation leader with 17 years of hands-on experience designing and evolving operating models, governance frameworks, and workforce structures across matrixed, multi-entity environments in the GCC, Egypt, and emerging markets. Proven track record leading complex, cross-functional transformation programs at scale, spanning healthcare, FinTech, and digital commerce sectors. Brings executive-level facilitation and advisory capability, having partnered directly with C-suite and clinical leadership to drive organisational health, job architecture design, and strategic workforce planning aligned to commercial and operational objectives. Combines analytical rigour with a structured, storytelling-led approach to embed lasting organisational change across large, diverse enterprise groups.
 
 ---
 
-## PROFESSIONAL EXPERIENCE
+## Core Competencies
+
+**Organisation Design and Operating Model Evolution** | **Strategic Workforce Planning** | **Governance Frameworks and Compliance** | **Cross-Functional Transformation Leadership** | **Job Architecture and Team Structuring** | **C-Suite Facilitation and Advisory** | **Matrixed Multi-Entity Environments** | **Enterprise PMO Design** | **Organisational Health Frameworks** | **Commercial Agility**
+
+---
+
+## Professional Experience
 
 ### PMO and Regional Engagement Lead
-**Saudi German Hospital Group (TopMed)** | Dubai, UAE | Jun 2024 – Present
+**Saudi German Hospital Group | Dubai, UAE | Jun 2024 – Present**
 
-Multi-country hospital group operating across KSA, UAE, and Egypt. Reporting to Group leadership with direct C-suite engagement across 15 hospital entities.
-
-- Leading enterprise organisation transformation across a 15-hospital network, redesigning operating models for each entity to align with group-level digital and operational strategy.
-- Established enterprise governance framework including accountability structures, decision rights, and cross-entity reporting lines across a matrixed, multi-entity environment.
-- Designed and implemented job architecture and role structure for a 30-person cross-functional PMO organisation, including grading, reporting hierarchies, and operating model design.
-- Led strategic workforce planning for the $50M transformation program, aligning talent structure with phased delivery milestones across three countries.
-- Served as primary executive facilitator and advisor to C-suite, clinical leadership, and technology partners, driving alignment across complex stakeholder groups.
-- Drove organisational health governance ensuring compliance with JCI, HIMSS, and MOH regulatory frameworks across all entities.
+- Leading enterprise-wide organisational transformation across a 15-hospital network spanning KSA, UAE, and Egypt, directing a $50M technology program that required parallel redesign of operating models across all entities.
+- Established and embedded an enterprise PMO governance framework, structuring cross-functional delivery teams of 30 professionals operating across a complex, matrixed multi-entity environment.
+- Redesigned operating models across hospital business units to align divisional structures with group-level digital strategy, driving commercial agility and clinical operational efficiency.
+- Designed and enforced organisational health governance frameworks ensuring alignment with JCI, HIMSS, and MOH regulatory standards across all markets.
+- Facilitated executive-level alignment across C-suite leadership, clinical directors, and technology partners, serving as the primary advisory interface for organisational change decisions.
+- Drove strategic workforce planning to ensure each entity had the right talent structures and reporting lines to sustain transformation outcomes at scale.
 
 ### Country Manager
-**PaySky, Inc.** | Egypt | Apr 2021 – Jan 2022
+**PaySky, Inc. | Egypt | Apr 2021 – Jan 2022**
 
-Egypt's first comprehensive FinTech SuperApp, backed for national-scale market launch.
-
-- Designed the full organisational structure and operating model for a greenfield market entry, including team design, reporting architecture, job architecture, and workforce planning for phased scaling.
-- Established governance frameworks and accountability structures across product, technology, partnerships, and operations functions.
-- Led cross-functional transformation from zero to operational readiness, building and leading teams across four business functions in a matrixed, multi-stakeholder environment.
+- Led full organisational design and market entry execution for Egypt's first comprehensive financial SuperApp, building the operating model from the ground up.
+- Designed workforce structure, job architecture, and accountability frameworks for a multi-function organisation spanning product, technology, partnerships, and operations.
+- Established governance frameworks and reporting structures to support a phased market launch across a matrixed cross-functional environment.
+- Recruited, structured, and led cross-functional teams, embedding organisational design principles that enabled rapid commercial scaling.
 
 ### Head of E-Commerce Product and IT Strategy
-**Al Araby Group** | Egypt | Jan 2020 – Jan 2021
+**Al Araby Group | Egypt | Jan 2020 – Jan 2021**
 
-One of Egypt's largest consumer electronics groups with multi-market retail and e-commerce operations.
-
-- Led organisation design and restructuring of e-commerce and IT functions, redesigning team structures, reporting lines, and operating model to support digital growth strategy.
-- Drove workforce planning and organisational effectiveness review across two business units, realigning roles and capabilities to commercial priorities.
+- Led organisational transformation of e-commerce and IT functions within one of Egypt's largest consumer electronics groups, with operations across multiple markets.
+- Restructured team design, reporting lines, and operating model architecture to support a digital growth strategy, improving cross-functional collaboration and delivery velocity.
+- Designed role clarity frameworks and governance structures to resolve accountability gaps across a matrixed product and technology organisation.
 
 ### Product Development Manager
-**Delivery Hero SE (Talabat)** | GCC Markets | Jun 2017 – May 2018
+**Delivery Hero SE (Talabat) | GCC Markets | Jun 2017 – May 2018**
 
-Regional food delivery leader operating across GCC, Egypt, and global markets under Delivery Hero SE.
-
-- Led cross-functional organisation and workforce scaling during hypergrowth phase (30,000 to 7 million daily orders, 233x growth), including workforce planning, team design, and operating model adaptation across GCC markets.
-- Chaired the Operations Excellence Committee, a cross-entity governance body coordinating across Berlin HQ, GCC, and Egypt in a complex matrixed structure.
-- Drove operating model evolution to sustain commercial agility at scale while maintaining governance and quality standards.
+- Led cross-functional product and operations teams during hypergrowth, scaling from 30K to 7M daily orders (233x growth), requiring continuous operating model evolution and workforce redesign.
+- Chaired the Operations Excellence Committee, coordinating organisational alignment across Berlin HQ, GCC, and Egypt in a complex matrixed structure.
+- Drove strategic workforce planning and team scaling to match rapid operational expansion across multiple markets, designing role structures and reporting frameworks to sustain growth.
 
 ### PMO Section Head
-**Network International** | Egypt | Sep 2014 – Jun 2017
+**Network International | Egypt | Sep 2014 – Jun 2017**
 
-Leading payments and digital commerce enabler across emerging markets, operating across 8 countries.
-
-- Built the enterprise PMO organisation from the ground up, managing 300+ concurrent projects across 8 countries, including designing job architecture, team structures, grading models, and governance frameworks for a 16-person organisation.
-- Standardised project delivery operating model and methodology across the emerging markets division, establishing organisation design principles that scaled across multiple geographies.
-- Drove strategic workforce planning for the PMO function, including role design, capability mapping, and succession structure.
+- Built enterprise PMO from the ground up, designing the governance framework that structured 300+ concurrent banking and payments projects across 8 countries.
+- Designed job architecture, team structures, and operating model for a 16-person PM organisation, including role definitions, career ladders, and accountability frameworks.
+- Standardised project delivery methodology and operating model across the emerging markets payments division, improving cross-functional governance and execution quality.
+- Partnered with senior leadership to embed organisational health metrics and PMO maturity frameworks across a complex, multi-market financial services group.
 
 ### Senior Project Manager and IT Section Head
-**Intel Telecommunications** | Egypt | 2008 – 2014
+**Intel Telecommunications | Egypt | 2008 – 2014**
 
-- Led technology and workforce transformation programs across the telecoms sector, including operating model redesign and team restructuring across multiple delivery functions.
-
----
-
-## EDUCATION AND PROFESSIONAL DEVELOPMENT
-
-**MBA (In Progress)** | Paris ESLSCA Business School | 2025 – 2027
-
-**Professional Certifications:** PMP, CSM, CSPO, Lean Six Sigma Black Belt, CBAP, MCAD, MCP
+- Led technology transformation programs with responsibility for workforce planning, team design, and governance structures across multi-year, enterprise-scale telecoms projects.
 
 ---
 
-## KEY SKILLS
+## Education
 
-Organisation Design, Operating Model Evolution, Strategic Workforce Planning, Organisational Health Frameworks, Governance Design, Job Architecture and Evaluation, Cross-Functional Transformation, C-Suite Advisory and Facilitation, Matrixed Multi-Entity Leadership, Enterprise PMO Design, Stakeholder Alignment, Commercial Agility, Regulatory Compliance Governance (JCI, HIMSS, MOH)
+**MBA (In Progress):** Paris ESLSCA Business School | 2025 – 2027
+
+---
+
+## Certifications
+
+PMP | CSM | CSPO | Lean Six Sigma | CBAP | MCAD | MCP
