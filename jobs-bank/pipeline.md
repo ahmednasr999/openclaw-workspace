@@ -35,6 +35,7 @@
 | 25 | ☑️ | NXS Tech | [Director of AI](applications/nxs-director-ai/job.md) | Dubai, UAE | 91% | ✅ Applied | 2026-02-27 | 2026-03-06 | [LinkedIn](https://www.linkedin.com/jobs/view/4378323469) | [CV ✅](applications/nxs-director-ai/Ahmed_Nasr_Director_AI_NXS.pdf) |
 | 26 | ☑️ | Auxo Talent | [VP of Artificial Intelligence](applications/auxo-vp-ai/job.md) | Dubai, UAE | 91% | ✅ Applied | 2026-02-27 | 2026-03-06 | [LinkedIn](https://www.linkedin.com/jobs/view/4371727536) | [CV ✅](applications/auxo-vp-ai/Ahmed_Nasr_VP_AI_Auxo.pdf) |
 | 27 | ☑️ | UnlockLand | [VP Global Operations](applications/unlockland-vp-operations/job.md) | Saudi Arabia | 91% | ✅ Applied | 2026-02-27 | 2026-03-06 | [LinkedIn](https://www.linkedin.com/jobs/view/4377615733) | [CV ✅](applications/unlockland-vp-operations/Ahmed_Nasr_VP_Operations_UnlockLand.pdf) |
+| 28 | ⬜ | Cooper Fitch | Executive Director, Strategic Initiatives | Riyadh, KSA | 91% | 🔥 CV Ready | — | — | [LinkedIn](https://www.linkedin.com/jobs/view/4375223553/) | [CV ✅](cvs/Ahmed%20Nasr%20-%20Executive%20Director%20Strategic%20Initiatives%20-%20Cooper%20Fitch.pdf) |
 
 
 ---
@@ -64,7 +65,7 @@ No proactive follow-ups on submitted applications. Ball is in their court.
 | Company | Role | Location | Priority | Job URL | Next Step |
 |---------|------|----------|----------|---------|-----------|
 | FAB | VP Technology & Data | Abu Dhabi, UAE | ✅ Applied Feb 27 | [Oracle Portal](https://ehjd.fa.em2.oraclecloud.com/comm/hcmUI/CandidateExperience/en/job/1175) | Follow-up Mar 6 — activate ESLSCA alumni network for referral |
-| Cooper Fitch | Executive Director, Strategic Initiatives | Riyadh, KSA | ✅ CV READY — ATS 91% | [LinkedIn](https://www.linkedin.com/jobs/view/4375223553/) | Submit now — awaiting Ahmed approval |
+
 | One Executive | Director, Organizational Development | Dubai, UAE | 🔥 HIGH | [LinkedIn](https://www.linkedin.com/jobs/view/4375226171/) | Pull JD + assess fit |
 | Dubai Health | Head Tech Transfer & Commercialization | Dubai, UAE | 🟡 MEDIUM | [LinkedIn](https://www.linkedin.com/jobs/view/4378311331/) | Screen JD first |
 | kedy.ai | CEO | Israel (Remote) | 🟡 LOW | [LinkedIn](https://www.linkedin.com/jobs/view/4375201108/) | Outside GCC — skip unless strategic pivot |
