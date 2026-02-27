@@ -419,6 +419,19 @@ This prevents losing 36-component work when one 10-min timeout kills a 44-compon
 
 This is a hard rule — no exceptions.
 
+## 📧 Job URL Extraction Rule (ALL Models, ALL Sessions, ALL Crons)
+
+When ANY email contains job opportunities, recommendations, or listings:
+
+1. **Extract every job URL directly from the email body** — do not summarize titles without URLs
+2. **Add to jobs-bank/pipeline.md Radar immediately** with the real URL
+3. **Never use "N/A — need job URL"** if the URL is in the email
+4. **Never ask Ahmed to find URLs** that are already in an email he shared
+
+LinkedIn recommendation emails, job alert emails, recruiter emails — all contain direct job links. Extract them. Add them. Push to GitHub.
+
+---
+
 ## 🚫 No Guessing Rule — Escalate, Don't Assume
 
 **ALL models, ALL sessions, ALL sub-agents.**
