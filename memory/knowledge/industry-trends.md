@@ -220,3 +220,23 @@
 - "Set-and-forget agent" pattern becoming industry standard: validates AI-first PMO tooling direction at TopMed
 
 **Tags:** #ai #anthropic #nvidia #perplexity #agentic #responsibleai #digitaltransformation #governance
+
+## Notion 3.3: Custom Agents Launch | 2026-02-27
+**Source:** Notion email (ivan@mail.notion.so) — Feb 27, 2026
+**Type:** Product Launch / Enterprise AI Tooling
+
+**Key Insights:**
+- Notion launched Custom Agents: autonomous AI assistants running 24/7, no manual prompting
+- Capabilities: Q&A agents, task routing (95%+ accuracy, 25%+ auto-resolved), status update agents (standups, recaps, reports)
+- Integrations: Slack, Mail, Calendar, Linear, Figma, HubSpot via MCP
+- Results: 20 hrs/week saved at Remote; dozens of product questions answered daily at Ramp
+- Free trial through May 3, 2026. Paid starts May 4 on Business/Enterprise plans (Notion credits)
+- Live workshop: March 12, 2026
+
+**Actionable for Ahmed:**
+- Interview talking point: real-world autonomous agent ROI data (20 hrs/week, 95% accuracy)
+- Enterprise AI transformation in practice: exactly the model to pitch at TopMed and GCC VP roles
+- Validates agentic ecosystem direction and task routing patterns
+- Consider attending March 12 workshop for hands-on experience before interviews
+
+**Tags:** #ai #agents #notion #automation #enterpriseai #digitaltransformation #agentic
