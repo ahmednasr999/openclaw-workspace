@@ -132,4 +132,30 @@
 
 ---
 
-*Ahmed: Reply with proposal numbers to approve (e.g. 'approve 1,3,5') or reject (e.g. 'reject 2,4'). Approved proposals will be implemented immediately.*
+## Proposal 8: Email Afternoon Check Cron — Persistent Error Diagnosis
+
+**Type:** WORKFLOW
+
+**What:** Investigate and resolve the "Email Check - Afternoon" cron (ID: 2ee7f45f-8b3b-4454-bff4-fd6dfb360828) which has been in ERROR status for 13+ hours (last run at 13:00 Cairo on Feb 28). Pull execution logs, identify root cause (authentication, timeout, config issue), attempt restart, and log findings to memory/2026-02-28-email-afternoon-recovery.md.
+
+**Why:** Cron running 4x daily (every afternoon check at 13:00). In ERROR status with no investigation. This affects Ahmed's afternoon email briefing. Today is Feb 28, 10+ hours elapsed with no diagnosis. Prevents daily visibility into incoming messages.
+
+**Impact:** MEDIUM - blocks one daily email check, other checks (6 AM, 15-min calendar poll) still operational
+
+**Risk:** LOW - investigation and restart are non-destructive
+
+**Files to change:** None, but generates memory/2026-02-28-email-afternoon-recovery.md
+
+**Status:** PENDING
+
+---
+
+## Summary — Feb 28 Nightly Scan
+
+**Cron Health:** 1 error (Email Afternoon), 5 idle (correct for Saturday), 24 ok
+**Context Guardian:** 2 flushes today (normal operation, thresholds respected)
+**Major Work:** Web intelligence layer built successfully (NASR digital identity, LinkedIn API access, X/YouTube scraping capability)
+**New Blockers:** None critical
+**Prior Proposals:** 7 proposals from Feb 28 scan still awaiting Ahmed's approval (1-7)
+
+*Ahmed: Reply with proposal numbers to approve (e.g. 'approve 1,3,5,8') or reject (e.g. 'reject 2,4'). Approved proposals will be implemented immediately.*
