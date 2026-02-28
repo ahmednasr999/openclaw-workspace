@@ -361,3 +361,31 @@ Tree-of-Thought separates **generation from evaluation**. Most prompts collapse 
 - Cross-platform prompts could be adapted for NASR's cron jobs, sub-agents, or skill improvements
 
 **Tags:** #openclaw #use-cases #community #prompts #automation #tools
+
+---
+
+## Self-Refine — Two-Stage AI Output Quality Control | 2026-02-28
+**Source:** Prompt Guy newsletter (thinkaiprompt@mail.beehiiv.com) — The Prompt Report, Module 5
+**Type:** Framework / Prompting Technique
+
+**Key Insights:**
+- Two-stage process: Stage 1 generates output normally, Stage 2 runs structured critique then revises
+- Generation and critique activate different reasoning modes — combining both outperforms single-pass
+- Specific critique instructions produce structural changes; vague prompts ("make it better") produce only cosmetic ones
+- Works across writing, code, reasoning, and dialogue tasks (research-backed)
+- Related techniques: Self-Calibration (AI rates its own confidence), Reversing Chain-of-Thought (reconstruct original problem from answer)
+
+**The 5-Point Critique Checklist:**
+1. Vague claims: flag unsupported statements, add specifics
+2. Generic language: replace "great results" with concrete details
+3. Weak transitions: advance the argument, don't summarize
+4. Restatement: end with insight, not summary
+5. Passive constructions: convert to active voice
+
+**Actionable for Ahmed:**
+- Add Self-Refine as Stage 2 to LinkedIn post cron: generate draft, run critique checklist, revise, then deliver
+- Add to CV build workflow: generate CV, critique against JD keywords and ATS criteria, revise before saving
+- Complements the Verification Rule added Feb 28: verification checks format/integrity, Self-Refine checks content quality
+- Reduces editing time by shifting first-pass review to the agent
+
+**Tags:** #prompting #self-refine #content-quality #linkedin #cv #verification #ai-techniques
