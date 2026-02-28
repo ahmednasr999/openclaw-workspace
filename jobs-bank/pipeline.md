@@ -46,21 +46,12 @@
 
 ## Follow-up Schedule
 
+**Policy (Updated Feb 28, 2026):** No proactive follow-ups on LinkedIn applications. They reach out when interested. Follow-up only on: post-interview silence, or direct recruiter contact goes quiet mid-process.
+
 | Date | Company | Action | Status |
 |------|---------|--------|--------|
-| 2026-02-27 | Delphi Consulting | Check-in email | 🔴 Due today |
-| 2026-03-02 | Talabat | 7-day follow-up | ⏰ Pending |
-| 2026-03-02 | AIQU | 7-day follow-up | ⏰ Pending |
-| 2026-03-02 | Nexus Consulting | 7-day follow-up | ⏰ Pending |
-| 2026-03-04 | eMagine Solutions | 7-day follow-up | ⏰ Pending |
-| 2026-03-05 | Group IT Director (Bahrain) | 7-day follow-up | ⏰ Pending |
-| 2026-03-26 | Buro Happold | Application deadline | ✅ Already applied |
-
-**Follow-up Policy (Updated Feb 27, 2026):**
-No proactive follow-ups on submitted applications. Ball is in their court.
-- Day 7: Status check only — flag "No response yet" in pipeline
-- Day 30: Move to "Cold / No Response" and remove from active tracking
-- Exceptions: Recruiter goes silent mid-process, post-interview silence, direct recruiter contact (Hays, Renard, Carter Murray)
+| 2026-02-27 | Delphi Consulting | Awaiting feedback — post-interview | 🔴 Active (interview done Feb 24) |
+| 2026-03-29 | All Feb 27 batch | Day 30 sweep — move no-reply to Cold | ⏰ Pending |
 
 ---
 
@@ -86,8 +77,7 @@ No proactive follow-ups on submitted applications. Ball is in their court.
 | Active interviews | 1 (Delphi — awaiting feedback) |
 | Avg ATS score (all CVs) | 89% |
 | Follow-up policy | No proactive follow-ups — wait for recruiter response |
-| Day 7 check | Mar 2 (Talabat, AIQU, Nexus) — status flag only |
-| Day 30 cold | Mar 29 (first batch moves to cold if no response) |
+| Day 30 cold | Mar 29 (all Feb 27 batch moves to cold if no response) |
 | Target salary | 50,000+ AED/month |
 
 ---
