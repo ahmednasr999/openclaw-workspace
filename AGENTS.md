@@ -21,6 +21,8 @@ Before doing ANYTHING else — before responding, before helping, before asking 
 
 Do NOT ask permission. Do NOT skip steps 4–6. Skipping = operating blind = giving stale or wrong advice.
 
+9. Check `jobs-bank/handoff/*.trigger` for any files containing `NASR_REVIEW_NEEDED` — present each to Ahmed for approval before anything else.
+
 Confirm startup complete with: "✅ Session loaded — [date] — [1 line summary of what's urgent today]"
 
 ## Session Close — Flush Before Compaction
