@@ -1,6 +1,6 @@
 # 📊 Jobs Pipeline — Week 09: Feb 27 – Mar 05, 2026
 
-*Last updated: 2026-02-28 06:15 UTC | Maintained by NASR*
+*Last updated: 2026-02-28 06:19 UTC | Maintained by NASR*
 *Archive: [W09 Snapshot](weeks/2026-W09-Feb27-Mar05.md) | Previous weeks: [jobs-bank/weeks/](weeks/)*
 
 ---
@@ -44,6 +44,7 @@
 | 33 | ☑️ | Leru Partners | Head of Solutions & Delivery (AI) | Dubai, UAE | 88-91% | ✅ Applied | 2026-02-28 | 2026-03-07 | [LinkedIn](https://www.linkedin.com/jobs/view/4377660433/) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20Head%20of%20Solutions%20and%20Delivery%20AI%20-%20Leru%20Partners.pdf) |
 | 34 | ☑️ | Oracle | Director Client Engagement / Digital Transformation | Riyadh, KSA | 65-70% | ✅ Applied | 2026-02-28 | 2026-03-07 | [LinkedIn](https://www.linkedin.com/jobs/view/4375932512/) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20Client%20Engagement%20Director%20-%20Oracle.pdf) |
 | 35 | ☑️ | Teleperformance (TP) | VP AI Delivery | Cairo, Egypt | 72-78% | ✅ Applied | 2026-02-28 | 2026-03-07 | [LinkedIn](https://www.linkedin.com/jobs/view/4378349141/) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20VP%20AI%20Delivery%20-%20Teleperformance.pdf) |
+| 36 | ⬜ | King Salman International Airport | VP Strategy and Performance Management | Riyadh, KSA | 88% | 🟡 CV Ready | — | — | [LinkedIn](https://www.linkedin.com/comm/jobs/view/4378033717/) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20VP%20Strategy%20Performance%20Management%20-%20King%20Salman%20Airport.pdf) |
 
 
 ---
@@ -63,8 +64,7 @@
 
 | Company | Role | Location | Priority | Job URL | Next Step |
 |---------|------|----------|----------|---------|-----------|
-| Confidential Government | General Manager, Business Support & Development | Riyadh, Saudi Arabia | HIGH | [LinkedIn](https://www.linkedin.com/comm/jobs/view/4377243389/?trackingId=OuPPLhKqgEj7XhHPReZifw%3D%3D&refId=aDEVJ0LECjovdQlxl5kzJQ%3D%3D) | Review JD and tailor CV |
-| King Salman International Airport | Vice President Strategy and Performance Management | Riyadh, Saudi Arabia | HIGH | [LinkedIn](https://www.linkedin.com/comm/jobs/view/4378033717/?trackingId=XOCVHp32Z4SrQr%2FJqZRYvQ%3D%3D&refId=aDEVJ0LECjovdQlxl5kzJQ%3D%3D) | Review JD and tailor CV |
+| — | — | — | — | — | — |
 
 ---
 
@@ -72,10 +72,10 @@
 
 | Metric | Value |
 |--------|-------|
-| Total tracked | 35 |
+| Total tracked | 36 |
 | Applied | 35 |
-| CV Ready, not yet applied | 0 |
-| Radar — Needs Action | 2 |
+| CV Ready, not yet applied | 1 |
+| Radar — Needs Action | 0 |
 | Radar (no CV yet) | 0 |
 | Active interviews | 1 (Delphi — awaiting feedback) |
 | Avg ATS score (all CVs) | 89% |
@@ -95,6 +95,7 @@
 | Cygnify | Principal Digital Delivery | ❌ Removed — no public JD found | Removed 2026-02-27 |
 | Legend Holding Group | IT Director | ❌ Removed — no valid job URL found | Removed 2026-02-28 |
 | EyeSpy Recruitment | Head of Project Management | ❌ Removed from Radar — Ahmed decision | Removed 2026-02-28 |
+| Confidential Government | General Manager, Business Support | ❌ Skipped — ATS 72-75%, government sector gap | Removed 2026-02-28 |
 | TP | AI Delivery VP | ❌ Removed — Cairo only, conflicts with GCC target | Removed 2026-02-28 |
 | Majid Al Futtaim | Director Total Rewards | ❌ Removed — HR role, not strategic fit | Removed 2026-02-28 |
 | DP World | Director Optimization & Efficiency | ❌ Skipped — no port/terminal sector experience | Removed 2026-02-28 |
