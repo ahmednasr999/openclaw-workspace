@@ -166,3 +166,57 @@ Require stack:
 
 Node.js v20.19.4
 
+=== Morning Brief - 2026-02-28 06:00 AM ===
+
+## Job Radar (from Tavily)
+## Answer
+
+The VP Director PMO for digital transformation in healthcare in Dubai, UAE, is a key leadership role focusing on project management and IT initiatives for healthcare advancements by 2026. Opportunities exist for this role in various tech and innovation sectors. Essential experience in project management and digital transformation is required.
+
+---
+
+## Sources
+
+- **91 pmo jobs in United Arab Emirates, February 2026 | Glassdoor** (relevance: 73%)
+  https://www.glassdoor.co.uk/Job/united-arab-emirates-pmo-jobs-SRCH_IL.0,20_IN6_KO21,24.htm
+  + project manager jobs in DubaiDubai jobsdu jobs in Dubai. + project manager jobs in DubaiDubai jobsPeople Connect (Mexico) jobs in Dubai. + technical project manager jobs in DubaiDubai jobsLockton Companies jobs in Dubai. Lead, manage, and coordinate the project team, including engineers, consultan...
+
+- **50+ VP Technology Jobs, Employment 20 February 2026 - Indeed** (relevance: 72%)
+  https://ae.indeed.com/q-vp-technology-jobs.html
+  vp technology jobs ; Director, Information Technology - PMO. Atlantis Dubai ; Chief Technology Officer. Akarat.com ; Network Security Engineer. Ceenex Global LLC.
+
+- **Middle East Healthcare Transformation Driven by Leadership** (relevance: 58%)
+  https://www.linkedin.com/posts/kamakshi-gupta-a9254013_the-middle-east-continues-to-advance-as-a-activity-7426529295029710848-IXJ1
+  As of February 8, 2026, Ali Bin Ali Medical (ABAM), in strategic collaboration with the Ministry of Public Health (MoPH), has officially
+
+- **25+ VP Innovation Jobs, Employment in Dubai 23 February 2026** (relevance: 45%)
+  https://ae.indeed.com/q-VP-Innovation-l-Dubai-jobs.html
+  Discover 27 VP Innovation job opportunities in Dubai on Indeed.com. Apply today to advance your career with top employers.
+
+- **30 Healthcare leaders to watch in 2026** (relevance: 25%)
+  https://economymiddleeast.com/eme-lists/30-healthcare-leaders-to-watch-in-2026/
+  We present the leading figures who drive transformative growth of the healthcare sector in the Middle East.
+## Gmail - New Opportunities
+node:internal/modules/cjs/loader:1215
+  throw err;
+  ^
+
+Error: Cannot find module 'googleapis'
+Require stack:
+- /root/.openclaw/workspace/scripts/gmail-scan.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1212:15)
+    at Module._load (node:internal/modules/cjs/loader:1043:27)
+    at Module.require (node:internal/modules/cjs/loader:1298:19)
+    at require (node:internal/modules/helpers:182:18)
+    at Object.<anonymous> (/root/.openclaw/workspace/scripts/gmail-scan.js:1:20)
+    at Module._compile (node:internal/modules/cjs/loader:1529:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+    at Module.load (node:internal/modules/cjs/loader:1275:32)
+    at Module._load (node:internal/modules/cjs/loader:1096:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:164:12) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [ '/root/.openclaw/workspace/scripts/gmail-scan.js' ]
+}
+
+Node.js v20.19.4
+
