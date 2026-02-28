@@ -60,7 +60,7 @@
 
 | Company | Role | Location | Priority | Job URL | Next Step |
 |---------|------|----------|----------|---------|-----------|
-| Oracle | Director Client Engagement / Digital Transformation | Riyadh, KSA | 🔥 HIGH | [LinkedIn](https://www.linkedin.com/jobs/view/4375932512/) | 19 connections, 31 alumni — pull JD + build CV |
+| Oracle | Director Client Engagement / Digital Transformation | Riyadh, KSA | 🔥 HIGH | [LinkedIn](https://www.linkedin.com/jobs/view/4375932512/) | CV ready — apply when ready |
 | DP World | Director, Optimization & Efficiency | Dubai, UAE | 🟡 MEDIUM | [LinkedIn](https://www.linkedin.com/jobs/view/4378323129/) | 2 connections, 1 company alum — pull JD + build CV |
 
 ---
