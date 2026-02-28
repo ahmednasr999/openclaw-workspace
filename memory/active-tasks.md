@@ -3,6 +3,7 @@
 *Last updated: 2026-02-27*
 
 ## 🔴 URGENT — Expires within 5 days
+- **GitHub 2FA required by April 4, 2026** — Enable at github.com → Settings → Password and authentication. Use authenticator app. Save recovery codes. Without it, account gets restricted and all CV/pipeline pushes stop.
 - **OpenAI Codex JWT token expires March 4, 2026** — Must re-authenticate **BEFORE MARCH 3** (not March 4). Task: Check https://platform.openai.com/account/api-keys, generate new token, update openclaw.json. (Flagged Feb 27, 2026 — deadline tightened Feb 27)
 
 ## 🔴 Urgent
