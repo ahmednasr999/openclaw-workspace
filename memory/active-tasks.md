@@ -59,6 +59,7 @@
 ### CV Creation Pipeline
 - **Status:** Active
 - **Master CV:** `memory/master-cv-data.md`
+- **Pending Updates:** ⚠️ See `memory/cv-pending-updates.md` — Cloud/GenAI/Vision 2030 updates APPROVED (Feb 27) but NOT YET applied to master CV. Apply before next generation.
 
 **Applied (Feb 27, 2026):**
 - Dubai Health - Head of Technology Transfer Office, Dubai - ATS 68-72% - APPLIED
