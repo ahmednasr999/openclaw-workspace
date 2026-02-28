@@ -462,6 +462,21 @@ This applies to: CVs, pipeline updates, memory writes, LinkedIn posts, job scori
 
 ---
 
+## 🔔 Cron Error Recovery Protocol (ALL Models, ALL Sessions)
+
+Any cron in ERROR status for more than 1 day must be investigated at the next session or briefing. Do not let crons fail silently.
+
+**Recovery steps (in order):**
+1. Read cron execution logs to identify root cause
+2. Attempt restart: `openclaw cron run <id>`
+3. Log outcome to `memory/cron-recovery.md` (create if missing)
+4. If restart fails: escalate to Telegram with specific error + two recovery options
+5. Clear ERROR status only after Ahmed confirms the fix
+
+**Rule:** Never assume a cron is fine because it was working before. Check `openclaw cron list` at session start. Any status showing 'error' gets investigated before other work begins.
+
+---
+
 ## 🔧 Figure It Out Rule — Never Give Up Early (ALL Models, ALL Sessions, ALL Sub-Agents)
 
 Before saying "I can't do this", exhaust all options in this order:
