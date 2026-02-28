@@ -1,6 +1,6 @@
 # 📊 Jobs Pipeline — Week 09: Feb 27 – Mar 05, 2026
 
-*Last updated: 2026-02-28 05:58 UTC | Maintained by NASR*
+*Last updated: 2026-02-28 06:15 UTC | Maintained by NASR*
 *Archive: [W09 Snapshot](weeks/2026-W09-Feb27-Mar05.md) | Previous weeks: [jobs-bank/weeks/](weeks/)*
 
 ---
@@ -63,7 +63,8 @@
 
 | Company | Role | Location | Priority | Job URL | Next Step |
 |---------|------|----------|----------|---------|-----------|
-| — | — | — | — | — | — |
+| Confidential Government | General Manager, Business Support & Development | Riyadh, Saudi Arabia | HIGH | [LinkedIn](https://www.linkedin.com/comm/jobs/view/4377243389/?trackingId=OuPPLhKqgEj7XhHPReZifw%3D%3D&refId=aDEVJ0LECjovdQlxl5kzJQ%3D%3D) | Review JD and tailor CV |
+| King Salman International Airport | Vice President Strategy and Performance Management | Riyadh, Saudi Arabia | HIGH | [LinkedIn](https://www.linkedin.com/comm/jobs/view/4378033717/?trackingId=XOCVHp32Z4SrQr%2FJqZRYvQ%3D%3D&refId=aDEVJ0LECjovdQlxl5kzJQ%3D%3D) | Review JD and tailor CV |
 
 ---
 
@@ -74,7 +75,7 @@
 | Total tracked | 35 |
 | Applied | 35 |
 | CV Ready, not yet applied | 0 |
-| Radar — Needs Action | 0 |
+| Radar — Needs Action | 2 |
 | Radar (no CV yet) | 0 |
 | Active interviews | 1 (Delphi — awaiting feedback) |
 | Avg ATS score (all CVs) | 89% |
