@@ -15,8 +15,9 @@ Before doing ANYTHING else — before responding, before helping, before asking 
 3. Read `MEMORY.md` — long-term context (main session only)
 4. Read `memory/active-tasks.md` — what's urgent RIGHT NOW
 5. Read `memory/pending-opus-topics.md` — queued deep work items
-6. Read `memory/YYYY-MM-DD.md` (today + yesterday) — recent context
-7. Read `GOALS.md` — strategic objectives (if file exists)
+6. Read `memory/cv-pending-updates.md` — approved CV changes not yet applied (check BEFORE any CV generation)
+7. Read `memory/YYYY-MM-DD.md` (today + yesterday) — recent context
+8. Read `GOALS.md` — strategic objectives (if file exists)
 
 Do NOT ask permission. Do NOT skip steps 4–6. Skipping = operating blind = giving stale or wrong advice.
 
