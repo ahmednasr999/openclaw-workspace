@@ -17,9 +17,15 @@
 
 ## 🔴 PENDING — Apply Before Next CV Generation
 
+*Nothing pending.*
+
+---
+
+## ✅ COMPLETED — Applied & Archived (moved from PENDING)
+
 ### [Approved: 2026-02-27] Cloud, GenAI & Vision 2030 Positioning Updates
 
-**Status:** APPROVED — NOT YET APPLIED
+**Status:** ✅ APPLIED — 2026-02-28
 **Approved by:** Ahmed Nasr
 **Source session:** Feb 27, 2026 — cascade failure day
 
@@ -56,9 +62,11 @@ Current bullets are strong but can be more explicit about:
 
 ## ✅ COMPLETED — Applied & Archived
 
-*(Move entries here once applied to master-cv-data.md)*
-
-*None yet.*
+**Applied 2026-02-28:**
+- Added "Healthcare AI / Clinical AI" to Core Competencies
+- Added "Generative AI / GenAI Strategy" to Core Competencies
+- Added GenAI bullet to TopMed role: "Deployed 14 production AI agents in live clinical operations, integrating GenAI for clinical decision support, automated reporting, and patient flow optimization"
+- Executive summary and Vision 2030 keywords were already present from a prior partial update
 
 ---
 
