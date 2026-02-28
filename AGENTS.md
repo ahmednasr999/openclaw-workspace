@@ -388,6 +388,25 @@ Key insight: [single most important takeaway in one line]
 - Never let a long announcement fail silently — if a message is too long for the platform, chunk it
 - Each chunk should be self-contained enough to make sense if read alone (don't split mid-sentence or mid-table)
 
+## ✅ Sub-Agent Output Validation (MANDATORY — ALL Models, ALL Sessions)
+
+**Before announcing any sub-agent task as "done", NASR must verify the output exists and is non-empty.**
+
+**Validation checklist (run after every sub-agent completes):**
+1. Check the expected output file exists: `ls -la <output_file>`
+2. Check it is non-empty: `wc -c <output_file>` — must be > 0 bytes
+3. For PDFs: confirm file size is reasonable (>10KB = likely valid)
+4. For markdown: spot-check first 10 lines for expected content
+5. For code: confirm no obvious syntax errors or empty functions
+
+**If validation fails:**
+- Do NOT announce "done" to Ahmed
+- Instead: "⚠️ Sub-agent completed but output file [path] is [missing/empty]. Re-spawning..." 
+- Re-spawn the agent with the same task
+- If second attempt also fails: escalate to Ahmed with specific failure details
+
+**Rule:** A completed sub-agent with no valid output is a failed sub-agent. Silent failures destroy trust. Always validate before announcing.
+
 ## 🤖 Multi-Step Agent Work Rules
 
 When spawning agents for multi-step work (refactoring, migrations, batch processing):
