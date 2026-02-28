@@ -1,6 +1,6 @@
 # 📊 Jobs Pipeline — Week 09: Feb 27 – Mar 05, 2026
 
-*Last updated: 2026-02-28 00:39 UTC | Maintained by NASR*
+*Last updated: 2026-02-28 05:58 UTC | Maintained by NASR*
 *Archive: [W09 Snapshot](weeks/2026-W09-Feb27-Mar05.md) | Previous weeks: [jobs-bank/weeks/](weeks/)*
 
 ---
@@ -63,8 +63,7 @@
 
 | Company | Role | Location | Priority | Job URL | Next Step |
 |---------|------|----------|----------|---------|-----------|
-| Legend Holding Group | IT Director | Dubai, UAE | 🟡 MEDIUM | [LinkedIn](https://www.linkedin.com/jobs/view/4375947657/) | Real URL confirmed — pull JD + build CV |
-| EyeSpy Recruitment | Head of Project Management | Dubai, UAE | 🟡 MEDIUM | [LinkedIn](https://www.linkedin.com/jobs/view/4378753669/) | Real URL confirmed — pull JD + build CV |
+| — | — | — | — | — | — |
 
 ---
 
@@ -75,7 +74,7 @@
 | Total tracked | 35 |
 | Applied | 35 |
 | CV Ready, not yet applied | 0 |
-| Radar — Needs Action | 2 |
+| Radar — Needs Action | 0 |
 | Radar (no CV yet) | 0 |
 | Active interviews | 1 (Delphi — awaiting feedback) |
 | Avg ATS score (all CVs) | 89% |
@@ -94,6 +93,7 @@
 | J10 Consulting | Project Director | ❌ Removed — GulfTalent login required | Removed 2026-02-27 |
 | Cygnify | Principal Digital Delivery | ❌ Removed — no public JD found | Removed 2026-02-27 |
 | Legend Holding Group | IT Director | ❌ Removed — no valid job URL found | Removed 2026-02-28 |
+| EyeSpy Recruitment | Head of Project Management | ❌ Removed from Radar — Ahmed decision | Removed 2026-02-28 |
 | TP | AI Delivery VP | ❌ Removed — Cairo only, conflicts with GCC target | Removed 2026-02-28 |
 | Majid Al Futtaim | Director Total Rewards | ❌ Removed — HR role, not strategic fit | Removed 2026-02-28 |
 | DP World | Director Optimization & Efficiency | ❌ Skipped — no port/terminal sector experience | Removed 2026-02-28 |
