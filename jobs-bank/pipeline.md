@@ -1,6 +1,6 @@
 # 📊 Jobs Pipeline — Week 09: Feb 27 – Mar 05, 2026
 
-*Last updated: 2026-02-28 06:19 UTC | Maintained by NASR*
+*Last updated: 2026-02-28 06:22 UTC | Maintained by NASR*
 *Archive: [W09 Snapshot](weeks/2026-W09-Feb27-Mar05.md) | Previous weeks: [jobs-bank/weeks/](weeks/)*
 
 ---
@@ -44,7 +44,7 @@
 | 33 | ☑️ | Leru Partners | Head of Solutions & Delivery (AI) | Dubai, UAE | 88-91% | ✅ Applied | 2026-02-28 | 2026-03-07 | [LinkedIn](https://www.linkedin.com/jobs/view/4377660433/) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20Head%20of%20Solutions%20and%20Delivery%20AI%20-%20Leru%20Partners.pdf) |
 | 34 | ☑️ | Oracle | Director Client Engagement / Digital Transformation | Riyadh, KSA | 65-70% | ✅ Applied | 2026-02-28 | 2026-03-07 | [LinkedIn](https://www.linkedin.com/jobs/view/4375932512/) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20Client%20Engagement%20Director%20-%20Oracle.pdf) |
 | 35 | ☑️ | Teleperformance (TP) | VP AI Delivery | Cairo, Egypt | 72-78% | ✅ Applied | 2026-02-28 | 2026-03-07 | [LinkedIn](https://www.linkedin.com/jobs/view/4378349141/) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20VP%20AI%20Delivery%20-%20Teleperformance.pdf) |
-| 36 | ⬜ | King Salman International Airport | VP Strategy and Performance Management | Riyadh, KSA | 88% | 🟡 CV Ready | — | — | [LinkedIn](https://www.linkedin.com/comm/jobs/view/4378033717/) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20VP%20Strategy%20Performance%20Management%20-%20King%20Salman%20Airport.pdf) |
+| 36 | ☑️ | King Salman International Airport | VP Strategy and Performance Management | Riyadh, KSA | 88% | ✅ Applied | 2026-02-28 | 2026-03-14 | [LinkedIn](https://www.linkedin.com/comm/jobs/view/4378033717/) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20VP%20Strategy%20Performance%20Management%20-%20King%20Salman%20Airport.pdf) |
 
 
 ---
@@ -56,6 +56,7 @@
 | Date | Company | Action | Status |
 |------|---------|--------|--------|
 | 2026-02-27 | Delphi Consulting | Awaiting feedback — post-interview | 🔴 Active (interview done Feb 24) |
+| 2026-03-14 | King Salman International Airport | Follow-up if no recruiter contact | ⏰ Pending |
 | 2026-03-29 | All Feb 27 batch | Day 30 sweep — move no-reply to Cold | ⏰ Pending |
 
 ---
@@ -73,8 +74,8 @@
 | Metric | Value |
 |--------|-------|
 | Total tracked | 36 |
-| Applied | 35 |
-| CV Ready, not yet applied | 1 |
+| Applied | 36 |
+| CV Ready, not yet applied | 0 |
 | Radar — Needs Action | 0 |
 | Radar (no CV yet) | 0 |
 | Active interviews | 1 (Delphi — awaiting feedback) |
