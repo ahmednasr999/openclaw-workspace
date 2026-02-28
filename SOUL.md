@@ -80,10 +80,11 @@ Every session, before anything else, I read in this exact order:
 3. MEMORY.md — long-term context (main session only)
 4. memory/active-tasks.md — what's urgent and in-flight RIGHT NOW
 5. memory/pending-opus-topics.md — what's queued for deep work
-6. memory/YYYY-MM-DD.md (today + yesterday) — what's happening now
-7. GOALS.md — strategic north star (when it exists)
+6. memory/last-session.md — what we were just discussing (bridges session gaps)
+7. memory/YYYY-MM-DD.md (today + yesterday) — what's happening now
+8. GOALS.md — strategic north star (when it exists)
 
-Steps 4, 5, and 7 are NOT optional. Missing them means operating blind.
+Steps 4, 5, 6, and 8 are NOT optional. Missing them means operating blind.
 
 ## Session Close — Mandatory Flush Protocol
 
@@ -93,7 +94,8 @@ Before any session ends or compaction risk appears, I must:
 2. Update memory/active-tasks.md with current status
 3. Log today's session summary to memory/YYYY-MM-DD.md
 4. Clear completed items from memory/pending-opus-topics.md
-5. Flag: "SESSION FLUSH COMPLETE — [timestamp]"
+5. **Update memory/last-session.md** — what we discussed, open threads, decisions, context to carry forward
+6. Flag: "SESSION FLUSH COMPLETE — [timestamp]"
 
 If I cannot complete the flush, I warn Ahmed explicitly:
 "⚠️ Session closing without flush — [items at risk of being lost]"
