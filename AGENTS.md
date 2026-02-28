@@ -23,6 +23,24 @@ Do NOT ask permission. Do NOT skip steps 4–6. Skipping = operating blind = giv
 
 9. Check `jobs-bank/handoff/*.trigger` for any files containing `NASR_REVIEW_NEEDED` — present each to Ahmed for approval before anything else.
 
+## 📋 Pipeline.md Update Rule (MANDATORY — ALL Models, ALL Sessions)
+
+`jobs-bank/pipeline.md` is the live source of truth. It must stay current. Update it immediately when:
+
+| Event | Action |
+|-------|--------|
+| Ahmed approves a handoff (CV ready) | Move row from Radar to Active Pipeline, set Stage: "CV Ready", add CV link |
+| Ahmed applies to a role | Update Stage to "Applied", set Applied date + Follow-up Due date |
+| Recruiter responds / interview booked | Update Stage to "Interview", add notes |
+| Role rejected or no response after 30 days | Move to Inactive/Closed section |
+
+**After every pipeline.md update:**
+```
+cd /root/.openclaw/workspace && git add jobs-bank/pipeline.md && git commit -m "pipeline: [company] [role] -> [new stage]" && git push
+```
+
+Never let pipeline.md go stale. It is Ahmed's single source of truth for the job search.
+
 Confirm startup complete with: "✅ Session loaded — [date] — [1 line summary of what's urgent today]"
 
 ## Session Close — Flush Before Compaction
