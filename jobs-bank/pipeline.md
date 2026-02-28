@@ -64,7 +64,6 @@
 |---------|------|----------|----------|---------|-----------|
 | Legend Holding Group | IT Director | Dubai, UAE | 🟡 MEDIUM | [LinkedIn](https://www.linkedin.com/jobs/view/4375947657/) | Real URL confirmed — pull JD + build CV |
 | EyeSpy Recruitment | Head of Project Management | Dubai, UAE | 🟡 MEDIUM | [LinkedIn](https://www.linkedin.com/jobs/view/4378753669/) | Real URL confirmed — pull JD + build CV |
-| DP World | Director, Optimization & Efficiency | Dubai, UAE | 🟡 MEDIUM | [LinkedIn](https://www.linkedin.com/jobs/view/4378323129/) | 2 connections, 1 company alum — pull JD + build CV |
 
 ---
 
@@ -75,7 +74,7 @@
 | Total tracked | 35 |
 | Applied | 35 |
 | CV Ready, not yet applied | 0 |
-| Radar — Needs Action | 3 |
+| Radar — Needs Action | 2 |
 | Radar (no CV yet) | 0 |
 | Active interviews | 1 (Delphi — awaiting feedback) |
 | Avg ATS score (all CVs) | 89% |
@@ -96,3 +95,4 @@
 | Legend Holding Group | IT Director | ❌ Removed — no valid job URL found | Removed 2026-02-28 |
 | TP | AI Delivery VP | ❌ Removed — Cairo only, conflicts with GCC target | Removed 2026-02-28 |
 | Majid Al Futtaim | Director Total Rewards | ❌ Removed — HR role, not strategic fit | Removed 2026-02-28 |
+| DP World | Director Optimization & Efficiency | ❌ Skipped — no port/terminal sector experience | Removed 2026-02-28 |
