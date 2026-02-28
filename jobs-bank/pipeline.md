@@ -61,6 +61,7 @@
 | Company | Role | Location | Priority | Job URL | Next Step |
 |---------|------|----------|----------|---------|-----------|
 | Oracle | Director Client Engagement / Digital Transformation | Riyadh, KSA | 🔥 HIGH | [LinkedIn](https://www.linkedin.com/jobs/view/4375932512/) | CV ready — apply when ready |
+| Teleperformance | VP AI Delivery | Global (Dubai preferred) | 🔥 HIGH | [LinkedIn](https://www.linkedin.com/jobs/view/4378349141/) | CV ready — apply when ready |
 | DP World | Director, Optimization & Efficiency | Dubai, UAE | 🟡 MEDIUM | [LinkedIn](https://www.linkedin.com/jobs/view/4378323129/) | 2 connections, 1 company alum — pull JD + build CV |
 
 ---
@@ -72,7 +73,7 @@
 | Total tracked | 33 |
 | Applied | 33 |
 | CV Ready, not yet applied | 0 |
-| Radar — Needs Action | 2 |
+| Radar — Needs Action | 3 |
 | Radar (no CV yet) | 0 |
 | Active interviews | 1 (Delphi — awaiting feedback) |
 | Avg ATS score (all CVs) | 89% |
