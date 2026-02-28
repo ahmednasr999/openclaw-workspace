@@ -41,6 +41,7 @@
 | 31 | ☑️ | Dubai Health | Head of Technology Transfer Office | Dubai, UAE | 68-72% | ✅ Applied | 2026-02-27 | 2026-03-06 | N/A | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20Head%20of%20Technology%20Transfer%20Office%20-%20Dubai%20Health.pdf) |
 | 32 | ☑️ | Cygnify | Principal, Digital Delivery & Transformation | Dubai, UAE | 88-91% | ✅ Applied | 2026-02-27 | 2026-03-06 | [LinkedIn](https://www.linkedin.com/jobs/view/4378690376/) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20Principal%20Digital%20Delivery%20-%20Cygnify.pdf) |
 | 33 | ☑️ | Leru Partners | Head of Solutions & Delivery (AI) | Dubai, UAE | 88-91% | ✅ Applied | 2026-02-28 | 2026-03-07 | [LinkedIn](https://www.linkedin.com/jobs/view/4377660433/) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20Head%20of%20Solutions%20and%20Delivery%20AI%20-%20Leru%20Partners.pdf) |
+| 34 | ☑️ | Oracle | Director Client Engagement / Digital Transformation | Riyadh, KSA | 65-70% | ✅ Applied | 2026-02-28 | 2026-03-07 | [LinkedIn](https://www.linkedin.com/jobs/view/4375932512/) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20Client%20Engagement%20Director%20-%20Oracle.pdf) |
 
 
 ---
@@ -60,7 +61,6 @@
 
 | Company | Role | Location | Priority | Job URL | Next Step |
 |---------|------|----------|----------|---------|-----------|
-| Oracle | Director Client Engagement / Digital Transformation | Riyadh, KSA | 🔥 HIGH | [LinkedIn](https://www.linkedin.com/jobs/view/4375932512/) | CV ready — apply when ready |
 | Teleperformance | VP AI Delivery | Global (Dubai preferred) | 🔥 HIGH | [LinkedIn](https://www.linkedin.com/jobs/view/4378349141/) | CV ready — apply when ready |
 | DP World | Director, Optimization & Efficiency | Dubai, UAE | 🟡 MEDIUM | [LinkedIn](https://www.linkedin.com/jobs/view/4378323129/) | 2 connections, 1 company alum — pull JD + build CV |
 
@@ -70,10 +70,10 @@
 
 | Metric | Value |
 |--------|-------|
-| Total tracked | 33 |
-| Applied | 33 |
+| Total tracked | 34 |
+| Applied | 34 |
 | CV Ready, not yet applied | 0 |
-| Radar — Needs Action | 3 |
+| Radar — Needs Action | 2 |
 | Radar (no CV yet) | 0 |
 | Active interviews | 1 (Delphi — awaiting feedback) |
 | Avg ATS score (all CVs) | 89% |
