@@ -3,8 +3,18 @@
 *Last updated: 2026-02-27*
 
 ## 🔴 URGENT — Expires within 5 days
-- **GitHub 2FA required by April 4, 2026** — Enable at github.com → Settings → Password and authentication. Use authenticator app. Save recovery codes. Without it, account gets restricted and all CV/pipeline pushes stop.
-- **OpenAI Codex JWT token expires March 4, 2026** — Must re-authenticate **BEFORE MARCH 3** (not March 4). Task: Check https://platform.openai.com/account/api-keys, generate new token, update openclaw.json. (Flagged Feb 27, 2026 — deadline tightened Feb 27)
+- **OpenAI Codex JWT token expires March 4, 2026** — Must re-authenticate **BEFORE MARCH 3**. Go to platform.openai.com/account/api-keys, generate new token, share with NASR to update openclaw.json.
+- **Cooper Fitch CV — Apply NOW** — ATS 84-87%, JD pulled, ready to go. LinkedIn: https://sa.linkedin.com/jobs/view/4375223553
+
+## 🔴 URGENT — This Week
+- **GitHub 2FA required by April 4, 2026** — Enable at github.com → Settings → Password and authentication. Non-urgent but do this weekend.
+- **Delphi follow-up** — Day 4, no response. Consider a value-signal touchpoint to Kritika Chhabra.
+- **Threads bio update** — Stale bio "Zconomy Strategist for Millennials & Gen Z | Ex-Intel" still live. Update to current positioning (5 min).
+
+## 🟡 Follow-up Schedule
+- **March 2 (Sunday):** Follow up on Talabat, AIQU, Nexus (7-day mark)
+- **March 4:** Follow up on eMagine Solutions (7-day mark)
+- **March 6:** Follow up on One Executive if no response
 
 ## 🔴 Urgent
 
