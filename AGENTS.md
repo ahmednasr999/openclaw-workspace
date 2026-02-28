@@ -444,6 +444,24 @@ When you encounter something that's disabled, empty, broken, or returns an unexp
 
 **The rule:** A confident wrong answer is worse than "I'm not sure, let me escalate this." Admitting uncertainty = trust. Guessing = erosion of trust.
 
+## ✅ Verification Rule — Don't Trust, Verify (ALL Models, ALL Sessions, ALL Sub-Agents)
+
+Before declaring any task DONE, every agent must run this self-check:
+
+1. **Re-read your output** — does it fully match what was asked?
+2. **No em dashes** — scan entire output. If found, fix before delivering.
+3. **No fabricated data** — every metric, name, date, and fact must come from source material. Never invent.
+4. **No assumptions stated as facts** — if you estimated, say so explicitly.
+5. **Files saved correctly** — if a file was supposed to be written, confirm it exists at the correct path.
+6. **GitHub pushed** — if the task required a git push, confirm it completed successfully.
+7. **Output matches instructions** — re-read the original brief. Did you do exactly what was asked, no more, no less?
+
+If ANY check fails: fix it, then re-run the full verification. Only output DONE after all 7 pass.
+
+This applies to: CVs, pipeline updates, memory writes, LinkedIn posts, job scoring, cron outputs, research summaries — everything. No exceptions.
+
+---
+
 ## 🔧 Figure It Out Rule — Never Give Up Early (ALL Models, ALL Sessions, ALL Sub-Agents)
 
 Before saying "I can't do this", exhaust all options in this order:
