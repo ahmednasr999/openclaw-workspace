@@ -1,6 +1,6 @@
 # 📊 Jobs Pipeline — Master Tracker
 
-*Last updated: 2026-02-27 23:26 UTC | Maintained by NASR*
+*Last updated: 2026-02-28 00:03 UTC | Maintained by NASR*
 
 ---
 
@@ -71,9 +71,6 @@ No proactive follow-ups on submitted applications. Ball is in their court.
 | Leru Partners | Head of Solutions & Delivery (AI) | Dubai, UAE | 🔥 HIGH | [LinkedIn](https://www.linkedin.com/jobs/view/4377660433/) | AI-specific, strong fit — pull JD + build CV |
 | Oracle | Director Client Engagement / Digital Transformation | Riyadh, KSA | 🔥 HIGH | [LinkedIn](https://www.linkedin.com/jobs/view/4375932512/) | 19 connections, 31 alumni — pull JD + build CV |
 | DP World | Director, Optimization & Efficiency | Dubai, UAE | 🟡 MEDIUM | [LinkedIn](https://www.linkedin.com/jobs/view/4378323129/) | 2 connections, 1 company alum — pull JD + build CV |
-| Legend Holding Group | IT Director | Dubai, UAE | 🟡 MEDIUM | [LinkedIn](https://www.linkedin.com/jobs/search/?keywords=IT+Director+Legend+Holding+Group+Dubai) | Need valid job URL + JD |
-| TP | AI Delivery VP | Cairo, Egypt | 🟡 MONITOR | [LinkedIn](https://www.linkedin.com/jobs/view/4378349141/) | Monitor only — conflicts with GCC target |
-| Majid Al Futtaim | Director, Total Rewards | Cairo, Egypt | ❌ SKIP | [LinkedIn](https://www.linkedin.com/jobs/view/4377273639/) | HR role — not strategic fit |
 
 ---
 
@@ -81,10 +78,10 @@ No proactive follow-ups on submitted applications. Ball is in their court.
 
 | Metric | Value |
 |--------|-------|
-| Total tracked | 30 |
-| Applied | 30 |
+| Total tracked | 32 |
+| Applied | 32 |
 | CV Ready, not yet applied | 0 |
-| Radar — Needs Action | 7 |
+| Radar — Needs Action | 3 |
 | Radar (no CV yet) | 0 |
 | Active interviews | 1 (Delphi — awaiting feedback) |
 | Avg ATS score (all CVs) | 89% |
@@ -103,3 +100,6 @@ No proactive follow-ups on submitted applications. Ball is in their court.
 | DP World | Director Optimization | ❌ Removed — no URL/JD available | Removed 2026-02-27 |
 | J10 Consulting | Project Director | ❌ Removed — GulfTalent login required | Removed 2026-02-27 |
 | Cygnify | Principal Digital Delivery | ❌ Removed — no public JD found | Removed 2026-02-27 |
+| Legend Holding Group | IT Director | ❌ Removed — no valid job URL found | Removed 2026-02-28 |
+| TP | AI Delivery VP | ❌ Removed — Cairo only, conflicts with GCC target | Removed 2026-02-28 |
+| Majid Al Futtaim | Director Total Rewards | ❌ Removed — HR role, not strategic fit | Removed 2026-02-28 |
