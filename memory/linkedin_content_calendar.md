@@ -189,33 +189,61 @@ By the way, I've been documenting my journey managing a $50M hospital transforma
 
 ## Week 3: March 9-13, 2026
 
-| Day | Pillar | Framework | Hook Type | Topic |
-|---|---|---|---|---|
-| Sun Mar 9 | TAM | PAS | Scary | "GCC healthcare is about to hit a wall. Here's why." |
-| Mon Mar 10 | Growth | SLAY | Familiar | "What Mayo Clinic taught me about process optimization" (Revamp Consulting story) |
-| Tue Mar 11 | Growth | PAS | Free Value | "My PMO governance checklist for multi-country programs (free)" |
-| Wed Mar 12 | Growth | SLAY | Sexy | "How I integrated Visa and Mastercard systems across 8 African countries" |
-| Thu Mar 13 | Sales | SLAY | Familiar | "My dad never understood what I do. Last week he finally did." (humble brag + achievement) |
+| Day | Pillar | Framework | Hook Type | Topic | Source |
+|---|---|---|---|---|---|
+| Sun Mar 9 | TAM | PAS | Scary | "GCC healthcare is about to hit a wall. Here's why." | Original |
+| Mon Mar 10 | Growth | SLAY | Familiar | "What Health Catalyst's $1.5B in validated outcomes taught me about data-driven healthcare" | Health Catalyst case studies |
+| Tue Mar 11 | Growth | PAS | Free Value | "My PMO governance checklist for multi-country hospital programs (free)" | Original |
+| Wed Mar 12 | Growth | SLAY | Sexy | "How KLAS-rated tools changed how we evaluate healthcare IT vendors across 15 hospitals" | KLAS Research |
+| Thu Mar 13 | Sales | SLAY | Familiar | "My dad never understood what I do. Last week he finally did." (humble brag + achievement) | Original |
+
+**Week 3 Health Catalyst post angle (Mon Mar 10):**
+Hook: "Health Catalyst documented $1.5 billion in validated outcomes. Here's what that number means when you're the one implementing it."
+Story: Texas Children's reduced hospital-acquired conditions by 35%. Thibodaux added $1.2M revenue in one year. These aren't marketing slides, they're benchmarks we use to measure our own deployment.
+Lesson: The gap between buying a platform and realizing its outcomes is where most hospital transformations fail. It's not the software. It's the governance, change management, and data culture.
+CTA: Rotation B
+
+**Week 3 KLAS post angle (Wed Mar 12):**
+Hook: "Before we buy any healthcare IT tool, we check one thing. KLAS rating."
+Story: KLAS is the only independent research firm that surveys actual hospital staff, not just CIOs. 375+ documented case studies, 4.6M care gaps closed. When we evaluate EMR, analytics, or clinical tools, KLAS data cuts through vendor marketing.
+Lesson: In a $50M transformation, every vendor selection decision has downstream consequences for 15 hospitals and thousands of patients. You don't pick tools on demos. You pick on documented outcomes.
+CTA: Rotation A
+
+---
 
 ## Week 4: March 16-20, 2026
 
-| Day | Pillar | Framework | Hook Type | Topic |
-|---|---|---|---|---|
-| Sun Mar 16 | TAM | PAS | Strange | "LinkedIn just became the #1 source LLMs cite for business advice" (Ashpreet data) |
-| Mon Mar 17 | Growth | SLAY | Sexy | "20 years in tech taught me one thing. Your title doesn't define your impact." |
-| Tue Mar 18 | Growth | PAS | Scary | "Your digital transformation roadmap is missing one thing" |
-| Wed Mar 19 | Growth | SLAY | Familiar | "Intel taught me precision. Talabat taught me chaos. Both were right." |
-| Thu Mar 20 | Sales | SLAY | Familiar | "Pursuing an MBA at 40+ while leading a $50M program. Here's why." |
+| Day | Pillar | Framework | Hook Type | Topic | Source |
+|---|---|---|---|---|---|
+| Sun Mar 16 | TAM | PAS | Strange | "LinkedIn just became the #1 source LLMs cite for business advice" (Ashpreet data) | Original |
+| Mon Mar 17 | Growth | SLAY | Sexy | "20 years in tech taught me one thing. Your title doesn't define your impact." | Original |
+| Tue Mar 18 | Growth | PAS | Scary | "What unifying clinical + financial + operational data actually takes (nobody tells you this)" | Health Catalyst: data unification |
+| Wed Mar 19 | Growth | SLAY | Familiar | "Intel taught me precision. Talabat taught me chaos. Both were right." | Original |
+| Thu Mar 20 | Sales | SLAY | Familiar | "Pursuing an MBA at 40+ while leading a $50M program. Here's why." | Original |
+
+**Week 4 Health Catalyst post angle (Tue Mar 18):**
+Hook: "Every hospital says they want a single source of truth for their data. Almost none achieve it."
+Story: Health Catalyst's core premise: unify clinical, financial, and operational data into one platform. Sounds simple. In a 15-hospital network with 3 different EMR systems, legacy data formats, and country-specific compliance requirements, it's a 12-month program on its own.
+Lesson: The vendors who promise "unified data in 90 days" have never tried to merge a Saudi MOH-compliant dataset with a JCI-accredited clinical record and a finance system running on a 10-year-old ERP. Reality is messier and more valuable.
+CTA: Rotation B
+
+---
 
 ## Week 5: March 23-27, 2026
 
-| Day | Pillar | Framework | Hook Type | Topic |
-|---|---|---|---|---|
-| Sun Mar 23 | TAM | PAS | Scary | "The GCC just committed $100B+ to digital transformation. Most of it will be wasted." |
-| Mon Mar 24 | Growth | SLAY | Free Value | "The stakeholder mapping template that saved my $50M program" |
-| Tue Mar 25 | Growth | PAS | Strange | "Why I hired PMs from banking, not from PMO backgrounds" |
-| Wed Mar 26 | Growth | SLAY | Sexy | "How we went from zero framework to governing 300+ projects in 6 months" |
-| Thu Mar 27 | Sales | SLAY | Familiar | "A recruiter told me I was overqualified. Here's what I said." |
+| Day | Pillar | Framework | Hook Type | Topic | Source |
+|---|---|---|---|---|---|
+| Sun Mar 23 | TAM | PAS | Scary | "The GCC just committed $100B+ to digital transformation. Most of it will be wasted." | Original |
+| Mon Mar 24 | Growth | SLAY | Free Value | "The stakeholder mapping template that saved my $50M program" | Original |
+| Tue Mar 25 | Growth | PAS | Strange | "Why I hired PMs from banking, not from PMO backgrounds" | Original |
+| Wed Mar 26 | Growth | SLAY | Sexy | "Health Catalyst closed 4.6M care gaps globally. Here's what gap-closing looks like on the ground." | Health Catalyst outcomes data |
+| Thu Mar 27 | Sales | SLAY | Familiar | "A recruiter told me I was overqualified. Here's what I said." | Original |
+
+**Week 5 Health Catalyst post angle (Wed Mar 26):**
+Hook: "4.6 million care gaps closed. That's Health Catalyst's number. Here's what one care gap looks like in a real hospital."
+Story: A care gap isn't an abstract metric. It's a diabetic patient who missed their HbA1c check. A readmission that could have been prevented by a follow-up call. Analytics platforms like Health Catalyst make these gaps visible, but someone has to design the workflow that closes them.
+Lesson: The technology surfaces the problem. The transformation executive builds the system that fixes it. That's the gap most digital health programs miss.
+CTA: Rotation A
 
 ---
 
