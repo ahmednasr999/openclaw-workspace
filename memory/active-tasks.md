@@ -4,11 +4,11 @@
 
 ## 🔴 URGENT — Expires within 5 days
 - **OpenAI Codex JWT token expires March 4, 2026** — Must re-authenticate **BEFORE MARCH 3**. Go to platform.openai.com/account/api-keys, generate new token, share with NASR to update openclaw.json.
-- **Cooper Fitch CV — Apply NOW** — ATS 84-87%, JD pulled, ready to go. LinkedIn: https://sa.linkedin.com/jobs/view/4375223553
+- **Cooper Fitch — ALREADY APPLIED** ✅ Feb 27, ATS 91%. CV on GitHub. No action needed. (active-tasks was stale)
 
 ## 🔴 URGENT — This Week
 - **GitHub 2FA required by April 4, 2026** — Enable at github.com → Settings → Password and authentication. Non-urgent but do this weekend.
-- **Delphi follow-up** — Day 4, no response. Consider a value-signal touchpoint to Kritika Chhabra.
+- **Delphi follow-up** — Send value-signal message to Kritika Chhabra on **Monday March 2**. Draft ready: AI change management angle (14 agents in clinical ops). Channel TBD (LinkedIn DM or email).
 - **Threads bio update** — Stale bio "Zconomy Strategist for Millennials & Gen Z | Ex-Intel" still live. Update to: "Digital Transformation Executive | HealthTech, FinTech & e-commerce across GCC | PMO & AI Strategy | TopMed | ex-Talabat, Network International" — Copy approved Feb 28. Ahmed to action on Threads app (2 min).
 
 ## 🟡 Follow-up Schedule
