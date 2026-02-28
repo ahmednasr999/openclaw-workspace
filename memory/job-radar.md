@@ -249,3 +249,229 @@ The VP Director PMO for digital transformation in healthcare in the UAE, Saudi, 
   https://www.instagram.com/reel/DThZ4W5DpqG/
   Abdullah Altwaim has been promoted to Director | Digital Solutions at TAM | تام, marking a significant milestone in his leadership journey in
 
+=== Job Radar - 2026-02-28 ===
+
+### Search 1: VP/C-Suite Digital Transformation
+## Answer
+
+Key leaders in digital transformation and tech sectors in the GCC include Neil Bezuidenhout, Yazan Abbasi, and Sunil Nair, all prominent in UAE tech circles. They focus on AI, digital transformation, and tech strategy. The region is advancing rapidly in tech leadership and innovation.
+
+---
+
+## Sources
+
+- **Neil B. - Passionate about digital transformation | CIO/CTO | Data Science and AI enthusiast | LinkedIn** (relevance: 47%)
+  https://www.linkedin.com/in/neil-bezuidenhout/
+  Neil B.
+Passionate about digital transformation | CIO/CTO | Data Science and AI enthusiast
+Dubai, Dubai, United Arab Emirates
+193 connections, 250 followers
+
+
+About
+As a Chief Information Officer, I have over 15 years of experience in leading and…
+
+
+Experience
+N/A
+
+
+Education
+The University of Texas...
+
+- **Yazan A. - EngD | CTO | Strategic Advisor | Smart Automation Solution Advisor | Digital Transformation Principal | CCSP | CDO | GENBAND S3 Certified Engineer | AI Advisor | LinkedIn** (relevance: 41%)
+  https://www.linkedin.com/in/yazanabbasi/
+  EngD | CTO | Strategic Advisor | Smart Automation Solution Advisor | Digital Transformation Principal | CCSP | CDO | GENBAND S3 Certified Engineer | AI Advisor · From start-ups to high revenue enterprises we have spent the past several years helping customers solve some of their toughest IT problems...
+
+- **Akin Akingbade - Forty Impressions Management Consultancy L.L.C. | LinkedIn** (relevance: 38%)
+  https://www.linkedin.com/in/akin-akingbade/
+  Technology leader with a proven record of driving enterprise-wide digital transformation,… · Experience: Forty Impressions Management Consultancy L.L.C. · Education: Harvard Business School Executive Education · Location: Abu Dhabi · 500+ connections on LinkedIn.
+
+- **GCC CEO and digital transformation. is it an option?** (relevance: 35%)
+  https://www.linkedin.com/pulse/gcc-ceo-digital-transformation-option-abdullah-alserhani-mba-lssbb?articleId=6500263081678036992
+  February 10, 2019 - CEO’s in the GCC countries especially Saudi Arabia are facing heaps of challenges ranging in level from as macro as unstable geopolitics of the region to as micro as keeping teams motivated and focused. The new market order in the making as a result of the Saudi Vision 2030 lead ...
+
+- **Sunil Nair - Majid Al Futtaim Retail | LinkedIn** (relevance: 33%)
+  https://ae.linkedin.com/in/sunilnairr
+  Sunil Nair
+CIO | CTO | Board Advisor | Digital Transformation Specialist | Technology Strategist | Retail | E-commerce
+Dubai, United Arab Emirates
+500 connections, 13228 followers
+
+
+About
+Sunil is a globally recognized digital transformation leader and board-level technology…
+
+
+Experience
+N/A
+
+
+Educ...
+
+- **Dr. Semih Kumluk - Enterprise Transformation, Data & AI ...** (relevance: 28%)
+  https://ae.linkedin.com/in/drsemihkumluk
+  Dr. Semih Kumluk
+AI Transformation Executive | Digital Business Strategist | Innovation Leader | Startup Advisor & VC Connector | Global Keynote Speaker
+Dubai, United Arab Emirates
+500 connections, 25485 followers
+
+
+About
+I am an Enterprise Transformation, Data & AI Executive leading organizations…
+...
+
+- **Ebrahim M. - Doha Metropolitan Area | Professional Profile | LinkedIn** (relevance: 28%)
+  https://www.linkedin.com/in/ebrahimmattar/
+  As an experienced CTO with certifications including PMP, CGEIT, ITIL, ISO 9001, and PMR… · Location: Doha Metropolitan Area. 500+ connections on LinkedIn. View Ebrahim M.’s profile on LinkedIn, a professional community of 1 billion members.
+
+- **Artificial Intelligence, Digital Economy and Remote Work Applications Office (UAE) | LinkedIn** (relevance: 23%)
+  https://www.linkedin.com/company/the-uae-artificial-intelligence-office
+  Overview:
+Artificial Intelligence, Digital Economy and Remote Work Applications Office.
+
+Website: https://www.ai.gov.ae/
+Crunchbase Url: N/A
+Linkedin Url: https://www.linkedin.com/company/the-uae-artificial-intelligence-office
+
+Industry:
+IT Services and IT Consulting
+
+Company size:
+11-50 employees
+3...
+
+- **GCC Board Directors Institute (GCC BDI) | LinkedIn** (relevance: 23%)
+  https://www.linkedin.com/company/gcc-board-directors-institute
+  Overview:
+GCC BDI is supported by eight leading regional corporations and professional services firms who serve as our strategic partners: First Abu Dhabi Bank, National Bank of Bahrain, SABIC, Saudi Aramco; A&O Shearman; Heidrick & Struggles; McKinsey & Company; and PwC. We are also supported by th...
+
+- **Mueed Mohammed - Senior Director Enterprise Architecture & Software Engineering | Enterprise Transformation , Business, Cloud & Digital Transformation Expert | Change Enabler | IT AI & ML Strategy Builder | CTO | Crypto Enthusiast | LinkedIn** (relevance: 22%)
+  https://www.linkedin.com/in/mueed-mohammed/
+  Mueed Mohammed
+Senior Director Enterprise Architecture & Software Engineering | Enterprise Transformation , Business, Cloud & Digital Transformation Expert | Change Enabler | IT AI & ML Strategy Builder | CTO | Crypto Enthusiast
+Greater Chicago Area
+500 connections, 6961 followers
+
+
+About
+🚀 Archite...
+
+### Search 2: PMO / Technology Leadership
+## Answer
+
+The PMO Director role in the UAE offers leadership in large-scale projects, with average salaries around AED 52,500 in 2026. Positions include Director of PMO in Abu Dhabi and PMO Lead roles with 54 open jobs. Essential qualifications include experience in federal technology projects and government procurement.
+
+---
+
+## Sources
+
+- **PMO Director Jobs in the Middle East (Mar 2026) - Bayt.com** (relevance: 100%)
+  https://www.bayt.com/en/international/jobs/pmo-director-jobs/
+  Summary: An opportunity to lead PMO operations for a premier industrial development project in Saudi Arabia's Western Region, delivering large-scale
+
+- **PMO Leadership (Head/Manager) Salary Guide Uae 2026** (relevance: 100%)
+  https://jobxdubai.com/salaries-2026/pmo-leadership-headmanager-tech-uae-2026
+  Average PMO Leadership (Head/Manager) salary in Uae: AED 52500 (2026). Comprehensive salary data, benefits, and career insights for UAE professionals.
+
+- **Director of PMO (Federal Technology) (m/f/d) - Halian** (relevance: 100%)
+  https://www.halian.com/jobs/director-of-pmo-federal-technology-238613
+  ## Director of PMO (Federal Technology) (m/f/d). ##### Director of PMO (Federal Technology) in Abu Dhabi, United Arab Emirates. * **Experience:** Proven track record leading **Federal Government** technology projects in the Middle East. * **Project Scale:** Must have successfully managed/delivered p...
+
+- **PMO Lead Jobs in UAE - 29 Vacancies Feb 2026 - Naukrigulf** (relevance: 100%)
+  https://www.naukrigulf.com/pmo-lead-jobs-in-uae
+  PMO Lead Jobs in UAE ; Senior Manager - PMO. Confidential Company. 15 - 20 Years ; Head of PMO. Client of Mark Williams. 10 - 15 Years ; PMO Executive.
+
+- **54 pmo lead Jobs in United Arab Emirates, February 2026 | Glassdoor** (relevance: 100%)
+  https://www.glassdoor.com/Job/united-arab-emirates-pmo-lead-jobs-SRCH_IL.0,20_IN6_KO21,29.htm
+  Search Pmo lead jobs in United Arab Emirates with company ratings & salaries. 54 open jobs for Pmo lead in United Arab Emirates.
+
+- **Abdulrahman Almuhana: AI-Powered PMO Governance Expert** (relevance: 100%)
+  https://www.linkedin.com/posts/ai-mena-network_abdulrahmanalmuhana-executiveleadership-activity-7415048519423803403-Dr4s
+  Abdulrahman Almuhana is an accomplished executive leader in capital development, PMO governance, and enterprise transformation, driving large-scale, data-informed decision-making across Saudi Arabia’s most strategic institutions. As Executive Director – PMO at NWC, he leads the design and execution ...
+
+- **Head of Pmo Jobs (with Salaries) - Indeed** (relevance: 100%)
+  https://ae.indeed.com/q-head-of-pmo-jobs.html
+  Discover 10 Head of Pmo job opportunities on Indeed.com. Apply today to advance your career with top employers.
+
+- **Ahmed Raslan‏ - ‏   Top Change Management Voice | PMO Director** (relevance: 100%)
+  https://qa.linkedin.com/in/raslanahmed
+  Ahmed Raslan
+QIMAH قيمة
+Doha, Qatar
+500 connections, 35267 followers
+
+
+About
+I am a seasoned C-Level Executive, PMO Director, and General Management Leader with over…
+
+
+Experience
+N/A
+
+
+Education
+Helwan University Cairo
+N/A
+1997 - 2003
+None
+
+- **Dubai Jobs Careers & Vacancies. UAE Saudi Oman Bahrain Qatar ...** (relevance: 99%)
+  https://www.facebook.com/groups/dubai4ever/
+  Jobs in United Arab Emirates (Dubai, Abu Dhabi, Sharjah, Ajman, Fujairah, Ras Al Khaimah, Umm Al Quwain, Al Ain), Saudi Arabia (Riyadh, Jeddah, Makkah, Madinah
+
+- **Artificial Intelligence Jobs in Saudi Arabia (Mar 2026) - Bayt.com** (relevance: 99%)
+  https://www.bayt.com/en/saudi-arabia/jobs/artificial-intelligence-jobs/
+  Apply now to over 50 Artificial Intelligence jobs in Saudi Arabia and make your job hunting simpler. Find the latest Artificial Intelligence job
+
+### Search 3: HealthTech / FinTech Executives
+## Answer
+
+Job openings for VP, Director, or Head of HealthTech, FinTech, or Digital Health executives exist in Dubai, Abu Dhabi, Riyadh, and Doha. Positions are available in 2026 for these roles across the GCC region.
+
+---
+
+## Sources
+
+- **Jobs in Dubai, Jobs in UAE, Jobs in Saudi Arabia, Jobs in Middle East, Jobs in Bahrain, Jobs in Qatar, Jobs in Oman, Jobs in Kuwait, Jobs in Gulf, Jobs in Jeddah, Jobs in Riyadh** (relevance: 100%)
+  https://maseehainternational.yolasite.com/maseeha-international--blog/jobs-in-dubai-jobs-in-uae-jobs-in-saudi-arabia-jobs-in-middle-east-jobs-in-bahrain-jobs-in-qatar-jobs-in-oman-jobs-in-kuwait-jobs-in-gulf-jobs-in-jeddah-jobs-in-riyadh
+  Jobs in Dubai, Jobs in UAE, Jobs in Saudi Arabia, Jobs in Middle East, J obs in Bahrain, Jobs in Qatar, Jobs in Oman, Jobs in Kuwait, Jobs in Gulf, Jobs in Jeddah, Jobs in Riyadh, Jobs in Doha, Jobs in Dammam, Jobs in Khobar, Jobs in Manama, Jobs in Muscat, Jobs in Beirut, Jobs in Amman, Jobs
+
+- **Technology jobs - Dubai** (relevance: 100%)
+  https://www.michaelpage.ae/jobs/technology
+  The Sales Director will lead commercial development in the FinTech/Capital market space for the group (brokerage and fintech). ... The Head of IT Solutions and Quality will be responsible for leading solutions development and quality assurance. This role requires candidates to have experience within...
+
+- **Jobs in UAE and Middle East | GulfTalent.com** (relevance: 100%)
+  https://uat.vps.dvtalent.com/
+  GulfTalent is the leading job site for professionals in the Middle East and Gulf region. Search for jobs and send your resume straight to recruitment agencies and employers in Kuwait, Saudi Arabia, Bahrain, Oman, Qatar, Lebanon, Jordan and the UAE including Jeddah, Riyadh, Doha, Dammam, Manama, Musc...
+
+- **Jobs in Dubai and Middle East | GulfTalent.com** (relevance: 100%)
+  https://staging.gulftalent.com/
+  GulfTalent is the leading job site for professionals in the Middle East and Gulf region. Search for jobs and send your resume straight to recruitment agencies and employers in Kuwait, Saudi Arabia, Bahrain, Oman, Qatar, Lebanon, Jordan and the UAE including Jeddah, Riyadh, Doha, Dammam, Manama, Musc...
+
+- **Allocation Planning Jobs, Retail Human Resources Jobs, Assistant District Manager Jobs, Loss Prevention Jobs, Assistant Store Manager Jobs, Operations Manager Jobs** (relevance: 99%)
+  https://maseehainternational.yolasite.com/maseeha-international--blog/allocation-planning-jobs-retail-human-resources-jobs-assistant-district-manager-jobs-loss-prevention-jobs-assistant-store-manager-jobs-operations-manager-jobs
+  Jobs in Dubai, Jobs in UAE, Jobs in Saudi Arabia, Jobs in Middle East, Jobs in Bahrain, Jobs in Qatar, Jobs in Oman, Jobs in Kuwait, Jobs in Gulf, Jobs in Jeddah, Jobs in Riyadh, Jobs in Doha, Jobs in Dammam, Jobs in Khobar, Jobs in Manama, Jobs in Muscat, Jobs in Beirut, Jobs in Amman, Jobs in Abu ...
+
+- **GulfTalent | Recruitment & Jobs in Dubai and Middle East** (relevance: 99%)
+  https://gulftalent.com.atlaq.com/
+  GulfTalent is the leading job site for professionals in the Middle East and Gulf region. Search for jobs and send your resume straight to recruitment agencies and employers in Kuwait, Saudi Arabia, Bahrain, Oman, Qatar, Lebanon, Jordan and the UAE including Jeddah, Riyadh, Doha, Dammam, Manama, Musc...
+
+- **525+ Jobs in Dubai, UAE - Vacancies & Salaries (Mar 2026)** (relevance: 95%)
+  https://www.edarabia.com/jobs/
+  According to the Monster Employment Index, the upcoming year will be a better year for job applicants looking for new jobs in Dubai (وظائف في دبي) and in the United Arab Emirates (UAE), as businesses look more confident and market conditions have stabilised through the years. From entry level, execu...
+
+- **Jobs in UAE and Gulf Countries | Job Vacancies** (relevance: 92%)
+  https://www.talentmate.com/
+  | company logo  Senior Graphic Designer 26F26 Talentmate | Dubai | 27 Feb 2026 | View JobSave Job |. | company logo  Telesales Specialist 26F26 Talentmate | Dubai | 27 Feb 2026 | View JobSave Job |. | company logo  Real Estate Consultant 26F26 Talentmate | Abu Dhabi | 27 Feb 2026 | View JobSave Job ...
+
+- **Dubai Jobs for Expats in Government Organisations – List of Available Positions - Platinumlist Guide** (relevance: 83%)
+  https://platinumlist.net/guide/dubai-jobs-for-expats-in-government-organisations-list-of-available-positions/
+  August 25, 2025 - Discover the latest government job opportunities in Dubai for expats, with roles in various sectors offering competitive salaries. Apply now via dubaicareers.ae.
+
+- **Experienced Careers Job search** (relevance: 24%)
+  https://www.pwc.com/m1/en/careers/experienced-jobs.html
+  # Experienced Careers Job search. **Your career is just that; yours. That's why opportunities are at the heart of a career with us.**. At PwC Middle East, we leverage innovation and creativity that comes from experts, ready to build trust and deliver sustained outcomes. Apply to one of our experienc...
+
+---
+
