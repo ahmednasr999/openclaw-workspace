@@ -5,6 +5,56 @@
 
 ---
 
+## 🆕 NEW LEADS — Feb 28, 2026 (Radar Batch — Review Pending)
+
+### Sky News Arabia — Head of AI Transformation & Innovation (Dubai)
+- **Status:** New lead — JD pulled Feb 28
+- **ATS:** 89-91% (Job Radar) — NASR flags domain fit concern (newsroom background required)
+- **Salary:** 50-60K AED/month
+- **JD:** https://careers.skynewsarabia.com/vacancy/174820
+- **Priority:** 🟡 MEDIUM — Review before applying (broadcast media domain gap)
+- **Next Action:** Ahmed to decide if worth tailoring
+
+### Cooper Fitch — Executive Director, Strategic Initiatives MENA (Dubai)
+- **Status:** New lead — JD not pulled yet
+- **ATS:** 86-88% (Job Radar)
+- **Salary:** 55-65K AED/month
+- **Source:** LinkedIn alert Feb 27
+- **Priority:** 🔥 HIGH — Executive level, MENA scope, salary top of range
+- **Next Action:** Pull full JD, score, tailor CV
+
+### Oracle — Client Engagement Director IT Strategy (UAE)
+- **Status:** New lead — JD not pulled yet
+- **ATS:** 84% (borderline — monitoring)
+- **Source:** LinkedIn alert
+- **Priority:** 🟡 MEDIUM — Just below threshold, pull JD to confirm fit
+- **Next Action:** Pull JD, re-score
+
+---
+
+## 🆕 NEW LEADS — Feb 28, 2026 (Needs JD + CV)
+
+### One Executive — Director, Organizational Development (Dubai)
+- **Status:** Applied Feb 27, 2026 — confirmed Feb 28 — awaiting feedback
+- **Location:** Dubai, UAE
+- **Sector:** Organizational Development / Transformation
+- **Source:** LinkedIn application
+- **Priority:** 🔥 HIGH — Dubai, transformation background match
+- **Expected response:** 3-7 days
+- **Next Action:** Monitor. Follow up if no response by March 6.
+
+### Cygnify — Principal, Digital Delivery & Transformation (Dubai)
+- **Status:** New lead — not yet applied
+- **Location:** Dubai, UAE
+- **Sector:** Digital Transformation / Consulting
+- **Source:** LinkedIn recommendation (surfaced alongside One Executive application)
+- **Note:** Cygnify is a TAaaS recruiter placing this role on behalf of a client. Principal title may map to Director/VP level in corporate.
+- **JD link:** https://apply.workable.com/cygnify/j/A3F38A70A7
+- **Priority:** 🟡 MEDIUM — Slightly below VP target seniority, but worth applying
+- **Next Action:** Tailor CV when ready. Check actual employer behind Cygnify placement.
+
+---
+
 ## 🆕 NEW LEADS — Feb 27, 2026 (Needs JD + CV)
 
 ### Circle — Director, Partner Management MEA (Dubai)
