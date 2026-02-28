@@ -1,6 +1,6 @@
 # Ahmed Nasr - Master CV Data (Source of Truth)
 
-**Last Updated:** 2026-02-27
+**Last Updated:** 2026-02-28
 **Source Files:**
 - PDF: `/root/.openclaw/media/inbound/file_99---61a97145-01ba-402f-b33b-5915c31c8daf.pdf`
 - DOCX: `/root/.openclaw/media/inbound/file_100---a1dce511-4dda-481f-aff5-c9093298c040.docx`
@@ -37,6 +37,8 @@ Digital Transformation Executive with 20+ years driving measurable business impa
 - Cross-functional Team Leadership
 - Agile Methodologies
 - AI & Data Analytics
+- Healthcare AI / Clinical AI
+- Generative AI / GenAI Strategy
 - Healthcare IT
 - FinTech Architecture
 - E-commerce Operations
@@ -54,6 +56,7 @@ Digital Transformation Executive with 20+ years driving measurable business impa
 - Established enterprise PMO framework managing cross-functional teams of 30 professionals delivering telemedicine, AI-powered clinical decision support systems, and enterprise data warehouse implementations
 - Partnering with U.S. healthcare technology leaders to implement Health Catalyst enterprise data platform, unifying clinical, financial, and operational data across 15-hospital network and enabling AI-assisted benchmarking and real-time performance insights
 - Deploying KLAS-rated healthcare IT solutions at enterprise scale, ensuring vendor performance aligns with clinical outcomes, regulatory compliance, and operational efficiency targets
+- Deployed 14 production AI agents in live clinical operations, integrating GenAI for clinical decision support, automated reporting, and patient flow optimization across 15-hospital network
 - Ensuring JCI, HIMSS, and MOH regulatory compliance while driving continuous quality improvement and operational excellence initiatives
 
 ### Country Manager
