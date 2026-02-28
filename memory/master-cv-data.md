@@ -52,7 +52,8 @@ Digital Transformation Executive with 20+ years driving measurable business impa
 **Saudi German Hospital Group | Dubai, UAE | Jun 2024 – Present**
 - Leading digital transformation across 15-hospital network in KSA, UAE, and Egypt, managing $50M technology transformation program
 - Established enterprise PMO framework managing cross-functional teams of 30 professionals delivering telemedicine, AI-powered clinical decision support systems, and enterprise data warehouse implementations
-- Partnering with U.S. healthcare technology leaders (Health Catalyst, KLAS Research) to integrate cutting-edge AI, EMR, and analytics solutions across hospital network
+- Partnering with U.S. healthcare technology leaders to implement Health Catalyst enterprise data platform, unifying clinical, financial, and operational data across 15-hospital network and enabling AI-assisted benchmarking and real-time performance insights
+- Deploying KLAS-rated healthcare IT solutions at enterprise scale, ensuring vendor performance aligns with clinical outcomes, regulatory compliance, and operational efficiency targets
 - Ensuring JCI, HIMSS, and MOH regulatory compliance while driving continuous quality improvement and operational excellence initiatives
 
 ### Country Manager
@@ -131,6 +132,8 @@ Digital Transformation Executive with 20+ years driving measurable business impa
 - 16 Project Managers recruited/trained
 - 15-hospital network transformation
 - 30 professionals in cross-functional teams
+- Health Catalyst enterprise data platform implemented (clinical + financial + operational data unification)
+- KLAS-rated healthcare IT solutions deployed at enterprise scale
 
 ---
 

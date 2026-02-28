@@ -4,6 +4,26 @@
 
 ---
 
+## Claude Code Remote Control (Mobile) | 2026-02-28
+**Source:** https://www.youtube.com/watch?v=L36aPV6g2II (Alex Finn, 133K subs, 13K views, 1 day old)
+**Type:** YouTube Video / Tutorial
+
+**Key Insights:**
+- Anthropic released `/remote-control` for Claude Code: run code sessions from your phone while execution continues locally on your computer. No SSH, no terminal emulation needed.
+- Workflow: Start project on computer, type `/remote-control` in Claude Code, session is pushed to Claude mobile app. You keep prompting from phone, code builds on your local machine.
+- No cloud execution, no merge conflicts, no pulling down code. Everything stays in one local environment.
+- Two phone options: (1) browser link or (2) Claude iOS/Android app (auto-loads the active session)
+- Alex Finn's verdict: Claude Code Remote Control = deep technical builds. OpenClaw = autonomous agents running while you sleep. Different tools, different purposes.
+
+**Actionable for Ahmed:**
+- Directly relevant to your setup: Claude Code mobile lets you continue prompting your VPS agent from your iPhone without Telegram friction.
+- LinkedIn content angle: "The future of work isn't your laptop. It's your laptop doing the work while you're at the gym." Frame around mobile-first executive productivity.
+- Interview signal: Knowing this at release week shows you track AI developer tools at the frontier. Valuable for VP/CTO-adjacent roles.
+
+**Tags:** #claude-code #mobile #remote-control #openclaw #ai-tools #productivity
+
+---
+
 ## Least-to-Most + Plan-and-Solve Prompting | 2026-02-26
 **Source:** Prompt Guy newsletter (thinkaiprompt.beehiiv.com)
 **Type:** Newsletter / Technique Guide
