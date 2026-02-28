@@ -59,7 +59,7 @@
 
 | Company | Role | Location | Priority | Job URL | Next Step |
 |---------|------|----------|----------|---------|-----------|
-| Leru Partners | Head of Solutions & Delivery (AI) | Dubai, UAE | 🔥 HIGH | [LinkedIn](https://www.linkedin.com/jobs/view/4377660433/) | AI-specific, strong fit — pull JD + build CV |
+| Leru Partners | Head of Solutions & Delivery (AI) | Dubai, UAE | 🔥 HIGH | [LinkedIn](https://www.linkedin.com/jobs/view/4377660433/) | CV ready — verify salary before applying |
 | Oracle | Director Client Engagement / Digital Transformation | Riyadh, KSA | 🔥 HIGH | [LinkedIn](https://www.linkedin.com/jobs/view/4375932512/) | 19 connections, 31 alumni — pull JD + build CV |
 | DP World | Director, Optimization & Efficiency | Dubai, UAE | 🟡 MEDIUM | [LinkedIn](https://www.linkedin.com/jobs/view/4378323129/) | 2 connections, 1 company alum — pull JD + build CV |
 
