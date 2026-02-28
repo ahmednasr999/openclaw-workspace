@@ -317,3 +317,47 @@ Tree-of-Thought separates **generation from evaluation**. Most prompts collapse 
 5. Download model-specific prompting guides (Opus 4.6, Sonnet 4.6)
 
 **Tags:** #openclaw #use-cases #matthew-berman #crm #knowledge-base #security #backups #self-evolving #business-intelligence
+
+---
+
+## Claude Code Remote Control | 2026-02-28
+**Source:** https://code.claude.com/docs/en/remote-control
+**Type:** Product Feature / Tool
+
+**Key Insights:**
+- Allows continuing a local Claude Code session from phone, tablet, or any browser
+- Everything stays local: filesystem, MCP servers, tools, project config remain on your machine
+- Start with `claude remote-control` in terminal, get a URL or QR code to connect from any device
+- Conversation stays in sync across all connected surfaces simultaneously
+- Survives interruptions: auto-reconnects if laptop sleeps or network drops
+- Security: outbound HTTPS only, no inbound ports, all traffic through Anthropic API over TLS
+- Also activatable mid-session with `/remote-control` (or `/rc`) slash command
+- Can enable for all sessions automatically via `/config`
+
+**Actionable for Ahmed:**
+- If running Claude Code locally on Mac, this enables mobile continuation without losing local context
+- Not directly applicable to NASR (runs on VPS), but useful if Ahmed uses Claude Code for personal coding work
+- Requires Max plan (Pro support coming soon). API keys not supported.
+- Complements OpenClaw's mobile-first Telegram interface for a different use case (local dev work)
+
+**Tags:** #claude-code #remote-control #anthropic #mobile #local-dev #tools
+
+---
+
+## OpenClaw Use Cases Database (useclaw.vercel.app) | 2026-02-28
+**Source:** https://useclaw.vercel.app
+**Type:** Community Resource / Prompt Library
+
+**Key Insights:**
+- Community database of real prompts and use cases for OpenClaw, sourced from YouTube, GitHub, X, and more
+- Organized into 9 categories (content still being populated at time of save)
+- Cross-platform: prompts work with OpenClaw, Antigravity, Claude Code, Codex, or any agentic platform
+- Live database, updated continuously from community sources
+- Good resource for discovering new automation ideas and workflows
+
+**Actionable for Ahmed:**
+- Check periodically for new use case ideas that could extend NASR's capabilities
+- Good source for discovering automation workflows others have built with OpenClaw
+- Cross-platform prompts could be adapted for NASR's cron jobs, sub-agents, or skill improvements
+
+**Tags:** #openclaw #use-cases #community #prompts #automation #tools

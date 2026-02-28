@@ -15,13 +15,14 @@
 - **Priority:** 🟡 MEDIUM — Review before applying (broadcast media domain gap)
 - **Next Action:** Ahmed to decide if worth tailoring
 
-### Cooper Fitch — Executive Director, Strategic Initiatives MENA (Dubai)
-- **Status:** New lead — JD not pulled yet
-- **ATS:** 86-88% (Job Radar)
-- **Salary:** 55-65K AED/month
+### Cooper Fitch — Executive Director, Strategic Initiatives (Riyadh-based confidential client)
+- **Status:** JD pulled Feb 28 — ATS 84-87% — READY TO APPLY
+- **LinkedIn:** https://sa.linkedin.com/jobs/view/4375223553
+- **Location:** Riyadh, KSA (confidential platform client)
+- **Salary:** 55-65K AED equivalent
 - **Source:** LinkedIn alert Feb 27
-- **Priority:** 🔥 HIGH — Executive level, MENA scope, salary top of range
-- **Next Action:** Pull full JD, score, tailor CV
+- **Priority:** 🔥 HIGH — Vision 2030 angle, KSA market, strong fit
+- **Next Action:** Tailor CV when ready
 
 ### Oracle — Client Engagement Director IT Strategy (UAE)
 - **Status:** New lead — JD not pulled yet
@@ -58,20 +59,10 @@
 ## 🆕 NEW LEADS — Feb 27, 2026 (Needs JD + CV)
 
 ### Circle — Director, Partner Management MEA (Dubai)
-- **Status:** New lead — JD not pulled yet
-- **Location:** Dubai, UAE
-- **Sector:** FinTech
-- **Source:** LinkedIn job alert
-- **Priority:** 🔥 HIGH — GCC network + MEA experience direct match
-- **Next Action:** Pull full JD, ATS score, tailor CV
+- **Status:** ❌ REMOVED — JD pulled Feb 28, ATS 65-70%, blockchain/stablecoin domain mismatch
 
 ### Revolut — Head of Operations, Wealth & Trading (UAE)
-- **Status:** New lead — JD not pulled yet
-- **Location:** UAE
-- **Sector:** FinTech
-- **Source:** LinkedIn job alert
-- **Priority:** 🔥 HIGH — Operations at scale, FinTech DNA match
-- **Next Action:** Pull full JD, ATS score, tailor CV
+- **Status:** ❌ REMOVED — JD pulled Feb 28, ATS 68-72%, Wealth & Trading domain mismatch
 
 ### TITAN Group — Head of Enterprise AI (Athens)
 - **Status:** New lead — JD not pulled yet
