@@ -92,7 +92,7 @@ else
 fi
 
 # ── 6. Send Telegram alert to Ahmed ──────────────────────────────────────────
-TELEGRAM_BOT_TOKEN=$(grep -oP '(?<="botToken"\s*:\s*")[^"]+' ~/.openclaw/openclaw.json 2>/dev/null | head -1)
+TELEGRAM_BOT_TOKEN=$(jq -r '.channels.telegram.botToken // empty' ~/.openclaw/openclaw.json 2>/dev/null)
 TELEGRAM_CHAT_ID="866838380"
 
 if [ -n "$TELEGRAM_BOT_TOKEN" ]; then
