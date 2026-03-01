@@ -557,6 +557,23 @@ Any cron in ERROR status for more than 1 day must be investigated at the next se
 
 ---
 
+## 🧬 Evolution Proposal Backlog Gate (ALL Models, ALL Sessions)
+
+The Daily Evolution Proposals cron generates improvement proposals nightly. To prevent proposal pile-up and decision fatigue:
+
+**Pre-flight gate:** Before generating new proposals, check `memory/evolution-proposals.md` for PENDING items older than 12 hours. If 5+ proposals are PENDING:
+1. Do NOT generate new proposals
+2. Output: "EVOLUTION SCAN PAUSED: [X] pending proposals awaiting approval. Clear backlog before new proposals."
+3. The announce delivery will notify Ahmed automatically
+
+**Rules:**
+- Never let proposals accumulate past 14 items total
+- If Ahmed has not reviewed proposals in 48+ hours, surface a single reminder (not every scan)
+- Verified/closed proposals should be moved to a "## Completed" section, not deleted
+- Only critical operational issues (cron failures, security) bypass the gate
+
+---
+
 ## 🔍 Read More Before Asking — Self-Service Rule (ALL Models, ALL Sessions, ALL Sub-Agents)
 
 Before asking Ahmed a clarifying question, first try to answer it yourself:
