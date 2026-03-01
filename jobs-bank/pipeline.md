@@ -51,6 +51,7 @@
 | 40 | ☑️ | EATX | Head of IT | Dubai, UAE | 88% | ✅ Applied | Full JD | 2026-03-01 | 2026-03-08 | [LinkedIn](https://www.linkedin.com/jobs/view/4375907659) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20Head%20of%20IT%20-%20EATX.pdf) |
 | 41 | ☑️ | Starlink Qatar | Products Portfolio Lead | Doha, Qatar | 90% | ✅ Applied | Full JD | 2026-03-01 | 2026-03-08 | [LinkedIn](https://www.linkedin.com/jobs/view/4376649232) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20Products%20Portfolio%20Lead%20-%20Starlink%20Qatar.pdf) |
 | 42 | ☑️ | Agay Barho (Saudi Foundation) | Strategy Director | Riyadh, KSA | 87% | ✅ Applied | Full JD | 2026-03-01 | 2026-03-08 | N/A | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20Strategy%20Director%20-%20Agay%20Barho.pdf) |
+| 43 | ☑️ | RapidData Technologies | Strategy & KPI Expert | Dubai, UAE | 88% | ✅ Applied | Full JD | 2026-03-01 | 2026-03-08 | [LinkedIn](https://www.linkedin.com/jobs/view/4375202921) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20Strategy%20%26%20KPI%20Expert%20-%20RapidData.pdf) |
 
 
 ---
@@ -74,7 +75,7 @@
 
 
 
-| RapidData | Strategy & Organizational Performance / KPI Expert | Dubai, UAE | Medium | JD Needed | [LinkedIn](https://www.linkedin.com/jobs/view/4375202921) | Bank for later, use as fallback application |
+
 | Salt | Senior Program Manager | Abu Dhabi, UAE | Medium | JD Needed | [LinkedIn](https://www.linkedin.com/jobs/view/4375521803) | Bank for later, title below target level |
 
 ---
@@ -83,8 +84,8 @@
 
 | Metric | Value |
 |--------|-------|
-| Total tracked | 42 |
-| Applied | 42 |
+| Total tracked | 43 |
+| Applied | 43 |
 | CV Ready, not yet applied | 0 |
 | Radar — Needs Action | 3 |
 | Radar (no CV yet) | 3 |
