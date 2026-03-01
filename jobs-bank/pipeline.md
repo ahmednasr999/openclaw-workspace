@@ -69,7 +69,7 @@
 
 | Company | Role | Location | Priority | JD Status | Job URL | Next Step |
 |---------|------|----------|----------|-----------|---------|-----------|
-| Kayzin Recruitment | Head of AI-Enabled Customer Experience | Dubai, UAE | Medium | JD Needed | [LinkedIn](https://www.linkedin.com/jobs/view/4373415748) | Bank for later, review once high-priority applications are done |
+
 | Starlink Qatar | Products Portfolio Lead | Doha, Qatar | Low | JD Needed | [LinkedIn](https://www.linkedin.com/jobs/view/4376649232) | Bank for later, weaker direct alignment |
 | Agay Barho! | Strategy Director | Riyadh, KSA | Medium | JD Needed | [LinkedIn](https://www.linkedin.com/jobs/view/4378757511) | Bank for later, request full mandate details if revisited |
 | RapidData | Strategy & Organizational Performance / KPI Expert | Dubai, UAE | Medium | JD Needed | [LinkedIn](https://www.linkedin.com/jobs/view/4375202921) | Bank for later, use as fallback application |
@@ -84,8 +84,8 @@
 | Total tracked | 40 |
 | Applied | 40 |
 | CV Ready, not yet applied | 0 |
-| Radar — Needs Action | 5 |
-| Radar (no CV yet) | 5 |
+| Radar — Needs Action | 4 |
+| Radar (no CV yet) | 4 |
 | Active interviews | 1 (Delphi — awaiting feedback) |
 | Avg ATS score (all CVs) | 89% |
 | Follow-up policy | No proactive follow-ups — wait for recruiter response |
@@ -116,3 +116,4 @@
 | Tandem Search | Recruitment Principal/Senior Consultant | ❌ Skipped, recruitment role outside target function | Removed 2026-03-01 |
 | HLB HAMT | Chief Growth Officer | ❌ Skipped, growth and sales mandate mismatch | Removed 2026-03-01 |
 | Searchability | Head of Data | ❌ Skipped, pure data leadership role not transformation-led | Removed 2026-03-01 |
+| Kayzin Recruitment | Head of AI-Enabled Customer Experience | ❌ Skipped, CX ops role misaligned with executive transformation track, ATS 45-55% | Removed 2026-03-01 |
