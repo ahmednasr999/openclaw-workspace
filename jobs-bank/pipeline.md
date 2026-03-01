@@ -49,6 +49,7 @@
 | 38 | ☑️ | Dubai Holding | Senior Manager, Strategy & Execution (B2B) | Dubai, UAE | 88-90% | ✅ Applied | Full JD | 2026-03-01 | 2026-03-08 | [LinkedIn](https://www.linkedin.com/jobs/view/4372482810) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20Senior%20Manager%20Strategy%20and%20Execution%20B2B%20-%20Dubai%20Holding.pdf) |
 | 39 | ☑️ | Legend Holding Group | IT Director | Dubai, UAE | 84-87% | ✅ Applied | Full JD | 2026-03-01 | 2026-03-08 | [LinkedIn](https://www.linkedin.com/jobs/view/4375947657) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20IT%20Director%20-%20Legend%20Holding%20Group.pdf) |
 | 40 | ☑️ | EATX | Head of IT | Dubai, UAE | 88% | ✅ Applied | Full JD | 2026-03-01 | 2026-03-08 | [LinkedIn](https://www.linkedin.com/jobs/view/4375907659) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20Head%20of%20IT%20-%20EATX.pdf) |
+| 41 | ☑️ | Starlink Qatar | Products Portfolio Lead | Doha, Qatar | 90% | ✅ Applied | Full JD | 2026-03-01 | 2026-03-08 | [LinkedIn](https://www.linkedin.com/jobs/view/4376649232) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20Products%20Portfolio%20Lead%20-%20Starlink%20Qatar.pdf) |
 
 
 ---
@@ -70,7 +71,7 @@
 | Company | Role | Location | Priority | JD Status | Job URL | Next Step |
 |---------|------|----------|----------|-----------|---------|-----------|
 
-| Starlink Qatar | Products Portfolio Lead | Doha, Qatar | High | Full JD | [LinkedIn](https://www.linkedin.com/jobs/view/4376649232) | 📄 CV Ready, apply now. [CV](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20Products%20Portfolio%20Lead%20-%20Starlink%20Qatar.pdf) |
+
 | Agay Barho! | Strategy Director | Riyadh, KSA | Medium | JD Needed | [LinkedIn](https://www.linkedin.com/jobs/view/4378757511) | Bank for later, request full mandate details if revisited |
 | RapidData | Strategy & Organizational Performance / KPI Expert | Dubai, UAE | Medium | JD Needed | [LinkedIn](https://www.linkedin.com/jobs/view/4375202921) | Bank for later, use as fallback application |
 | Salt | Senior Program Manager | Abu Dhabi, UAE | Medium | JD Needed | [LinkedIn](https://www.linkedin.com/jobs/view/4375521803) | Bank for later, title below target level |
@@ -81,11 +82,11 @@
 
 | Metric | Value |
 |--------|-------|
-| Total tracked | 40 |
-| Applied | 40 |
+| Total tracked | 41 |
+| Applied | 41 |
 | CV Ready, not yet applied | 0 |
-| Radar — Needs Action | 4 |
-| Radar (no CV yet) | 4 |
+| Radar — Needs Action | 3 |
+| Radar (no CV yet) | 3 |
 | Active interviews | 1 (Delphi — awaiting feedback) |
 | Avg ATS score (all CVs) | 89% |
 | Follow-up policy | No proactive follow-ups — wait for recruiter response |
