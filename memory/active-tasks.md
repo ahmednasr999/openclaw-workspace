@@ -12,9 +12,9 @@
 - **Threads bio update** — Stale bio "Zconomy Strategist for Millennials & Gen Z | Ex-Intel" still live. Update to: "Digital Transformation Executive | HealthTech, FinTech & e-commerce across GCC | PMO & AI Strategy | TopMed | ex-Talabat, Network International" — Copy approved Feb 28. Ahmed to action on Threads app (2 min).
 
 ## 🟡 Follow-up Schedule
-- **March 2 (Sunday):** Follow up on Talabat, AIQU, Nexus (7-day mark)
-- **March 4:** Follow up on eMagine Solutions (7-day mark)
-- **March 6:** Follow up on One Executive if no response
+- **Policy override (active):** No proactive follow-ups for standard LinkedIn applications.
+- Follow-up only when: (1) post-interview silence, or (2) active recruiter thread goes quiet.
+- Current active follow-up: **Delphi only** (post-interview thread with Kritika).
 
 ## 🔴 Urgent
 
