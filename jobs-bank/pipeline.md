@@ -46,6 +46,7 @@
 | 35 | ☑️ | Teleperformance (TP) | VP AI Delivery | Cairo, Egypt | 72-78% | ✅ Applied | 2026-02-28 | 2026-03-07 | [LinkedIn](https://www.linkedin.com/jobs/view/4378349141/) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20VP%20AI%20Delivery%20-%20Teleperformance.pdf) |
 | 36 | ☑️ | King Salman International Airport | VP Strategy and Performance Management | Riyadh, KSA | 88% | ✅ Applied | 2026-02-28 | 2026-03-14 | [LinkedIn](https://www.linkedin.com/comm/jobs/view/4378033717/) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20VP%20Strategy%20Performance%20Management%20-%20King%20Salman%20Airport.pdf) |
 | 37 | ☑️ | Faithful Executive (Client) | AI Strategy & Readiness Expert | GCC (KSA/UAE) | 91% | ✅ Applied | 2026-03-01 | 2026-03-08 | [LinkedIn](https://www.linkedin.com/jobs/view/4375967216) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20AI%20Strategy%20%26%20Readiness%20Expert%20-%20Faithful%20Executive.pdf) |
+| 38 | ☑️ | Dubai Holding | Senior Manager, Strategy & Execution (B2B) | Dubai, UAE | 88-90% | ✅ Applied | 2026-03-01 | 2026-03-08 | [LinkedIn](https://www.linkedin.com/jobs/view/4372482810) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20Senior%20Manager%20Strategy%20and%20Execution%20B2B%20-%20Dubai%20Holding.pdf) |
 
 
 ---
@@ -74,8 +75,8 @@
 
 | Metric | Value |
 |--------|-------|
-| Total tracked | 37 |
-| Applied | 37 |
+| Total tracked | 38 |
+| Applied | 38 |
 | CV Ready, not yet applied | 0 |
 | Radar — Needs Action | 0 |
 | Radar (no CV yet) | 0 |
