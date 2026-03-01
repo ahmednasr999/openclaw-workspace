@@ -32,3 +32,5 @@
 2. Test first daily brief delivery
 3. Delphi follow-up message tomorrow
 4. Codex JWT re-auth before March 3
+
+- [19:02 UTC] Phase 2 advisory board engine built (new adapters, weekly report, calibration). Awaiting cron switch approval.
