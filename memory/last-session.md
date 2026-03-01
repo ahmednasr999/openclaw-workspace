@@ -1,45 +1,34 @@
 # Last Session Summary
 *Auto-updated at session close. Read by NASR at every session start.*
-*This file bridges the gap between sessions — covers what we were just discussing.*
+*This file bridges the gap between sessions, covers what we were just discussing.*
 
 ---
 
-## Last Updated
-2026-03-01 04:36 UTC — Active session
+## Sunday March 1, 2026, 18:45 UTC (Opus Session)
 
-## What We Were Discussing
-- Business Advisory Board concept from https://useclaw.vercel.app/ — 8 AI experts debating a business problem overnight. Ahmed wants to explore this further.
-- Session memory gap problem: new sessions didn't carry context from previous conversations.
-- Built two fixes: last-session.md (Option A) + real-time topic tagging in AGENTS.md (Option B). Both now live.
-- Browser tool timed out (gateway issue). web_fetch only gets shell of React/Next.js sites (client-side rendered).
+### Key Decisions
+- [18:38] MiniMax API key rotated: new key starts with sk-cp-dHEcEY. Old OAuth token was invalid.
+- [18:35] Anthropic key in openclaw.json updated to match auth-profiles.json OAuth token.
+- [16:24] Humanizer adopted as global cross-channel quality gate for all external content.
+- [15:22] ORP Gate D failure on Agay Barho CV. Logged. Full compliance from RapidData onward.
 
-## Open Threads (not yet resolved)
-- Business Advisory Board: need to see the actual prompt/use case. Site is React rendered so NASR can't fetch it. Ahmed to share prompt text directly.
-- Oracle recruiter response (Mar 1) — needs review
-- Codex JWT still needs valid credential (removed from fallback chain for now, expires March 4)
-- [13:00 UTC] Started normal CV workflow for Faithful Executive AI Strategy & Readiness Expert role, Ahmed approved step-by-step process and will send JDs one by one.
-- [13:51 UTC] Added blocking CV validation gates: Opus-only model check, clean header check, and pdftotext forbidden-string check before any CV send.
-- [14:11 UTC] Created global OPERATIONAL_RELIABILITY_PROTOCOL.md for all workflows, state machine + blocking gates + event-driven updates + exception monitoring.
+### Open Threads
+- Advisory Board Phase 1: blueprint done (memory/advisory-board-blueprint.md). Needs implementation: adapter files, scoring engine, morning cron. Ahmed wants to test in fresh Codex session.
+- Engagement Workflow (#5 from useclaw): parked for now.
+- Codex JWT expires March 4. Reminder cron fires March 2 at 9AM Cairo.
+- Delphi follow-up due Monday March 2.
 
-## Decisions Made This Session (Feb 28 - Mar 1)
-- ✅ Gmail watcher fixed — topic created in openclaw-ahmed-access project, permissions granted, config updated
-- ✅ Gemini set as default web_search provider (free, Google Search grounding)
-- ✅ Tavily API key restored (lost during config restore)
-- ✅ Codex removed from fallback chain (invalid OAuth, no valid API key yet)
-- ✅ Stale gog processes cleaned up
-- ✅ No proactive follow-ups on LinkedIn applications (policy confirmed)
-- ✅ Delphi follow-up confirmed for Monday March 2 (not Sunday)
-- ✅ Oracle recruiter response detected — needs review
+### Pipeline Status
+- 44 applications total, 3 added this session (Agay Barho, RapidData, Salt)
+- Radar: empty
 
-## Key Context to Carry Forward
-- Codex JWT deadline: March 3 (hard deadline) — removed from fallback chain, needs re-auth
-- Delphi follow-up: Monday March 2, message to Kritika Chhabra
-- LinkedIn engine live, posting Sun-Thu 11:30 AM Cairo
-- 36 applications in pipeline, awaiting responses
-- Oracle recruiter response detected Mar 1 — review ASAP
-- Gmail watcher now using openclaw-ahmed-access GCP project (nasr.ai.assistant account)
-- Gemini is default web search, Tavily is backup for job radar
-- Config was restored from Feb 27 backup — some keys were lost and re-added
+### System Status
+- MiniMax: fixed, new API key active
+- All crons: healthy after key fix
+- Gateway watchdog: no longer firing
 
----
-*NASR updates this file during conversation for important topics, and fully at session close.*
+### What to Do Next Session
+1. Implement Advisory Board Phase 1 (adapters, scoring, morning cron)
+2. Test first daily brief delivery
+3. Delphi follow-up message tomorrow
+4. Codex JWT re-auth before March 3
