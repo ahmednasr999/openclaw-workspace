@@ -1,56 +1,55 @@
-# Wednesday March 5 | Growth | SLAY | Strange | CTA: A
+# Thursday March 6 | Sales | SLAY | Sexy | CTA: B
 
 ![Post Image](wed-mar05-image.png)
 
 ---
 
-The Salesforce rollout taught me more than my PMP.
-Nobody told me it would take 14 months.
+From freelancer to $50M programs.
+The compound effect of saying yes to complexity.
 
-When Network International handed me the keys to a Salesforce implementation, I thought I was ready.
+In 2004, I was writing code for European clients from Cairo.
+Per-project. Per-feature. Whatever came through the door.
 
-PMP certified. CSM certified. CBAP certified. 300+ projects under my belt.
+By 2014, I was running a PMO across 8 countries managing 300+ concurrent banking projects.
 
-I was wrong.
+By 2024, I was leading a $50M digital transformation across 15 hospitals in 3 countries.
 
-This wasn't a project.
-It was a 14-month organizational change program hiding inside a technology deployment.
+The gap between 2004 and 2024 wasn't luck.
+It wasn't a single career-defining moment.
+It was a pattern of one specific decision, made over and over:
 
-**The scope:** Full Salesforce platform rollout. CRM, service management, client engagement.
-**The footprint:** 8 countries. Egypt, UAE, Jordan, Kenya, Nigeria, Ghana, Mauritius, South Africa.
-**The users:** 170 people across all of them.
-**The client data:** 300+ banking institutions.
+**Say yes to the complex problem nobody wants to own.**
 
-Week 3, I got my first real lesson.
+Here's how the compounding worked:
 
-A PM in Nairobi came to me privately. Her team had been filling in Salesforce records with dummy data to hit the go-live milestone.
+**2004-2009: Technical foundation.**
+I said yes to projects that were technically harder than my current skill level. Code Republic, PEARDEV, early SaaS development for European clients. Each one stretched the ceiling.
 
-Not fraud. Fear.
-Fear that non-adoption would reflect badly on them personally.
+**2010-2013: Enterprise exposure.**
+I said yes to Intel. Then BlueCloud managing Microsoft and Vodafone accounts. Then Revamp Consulting with Mayo Clinic and AT&T. Each "yes" opened a room I'd never been in before.
 
-That one conversation restructured everything I thought I knew about enterprise software rollouts.
+**2014-2017: Scale.**
+Network International. 8 countries. 16 PMs. 300+ projects. I said yes before I knew exactly how to do it. I figured it out because I had to.
 
-**Lesson 1: Adoption is a political problem before it's a technical one.**
-If the system is "live" but nobody believes in it, you've shipped a failure with good screenshots.
+**2017-2024: Hypergrowth to transformation.**
+Talabat: 233x growth. PaySky: Egypt's first SuperApp. Then a $50M hospital network transformation that's still running.
 
-**Lesson 2: 14 months is actually multiple projects.**
-Months 1-4: Infrastructure and configuration.
-Months 5-9: Change management (the real project).
-Months 10-14: Embedding and behavioral shift.
-Most rollouts fail because they fund Month 1-4 and ignore everything after.
+The compounding secret isn't "work harder."
 
-**Lesson 3: The PMP teaches you to deliver projects.**
-Nobody teaches you to deliver belief.
+It's: **Every complex problem you solve becomes the credential that earns you the next complex problem.**
 
-Getting 170 people across 8 countries to trust a new system requires something no certification gives you: the ability to make people feel safe changing.
+Most people wait until they feel ready.
+Ready doesn't come before the complex problem.
+It comes because of it.
 
-The best implementations I've seen don't celebrate go-live.
-They celebrate first real adoption 90 days after.
+The question I ask myself before saying yes to something hard: "Will solving this open a door I couldn't see from here?"
 
-What was the moment that changed how you think about enterprise software rollouts?
+If yes, I say yes.
+
+What was the complexity you said yes to that changed your trajectory?
 
 ..
 
-By the way, I'm currently exploring VP/C-suite digital transformation roles across the GCC. If your network is hiring leaders who've scaled platforms from 30K to 7M daily orders, I'd love to connect. DM me or check my profile.
+By the way, I've been documenting my journey managing a $50M hospital transformation across 3 countries. If you're navigating a similar challenge, happy to share what's working. Drop a comment or DM.
 
-#Salesforce #ChangeManagement #PMO #Leadership #EnterpriseIT
+#CareerGrowth #Leadership #DigitalTransformation #PMO #ExecutiveLife
