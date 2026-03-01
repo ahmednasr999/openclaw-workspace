@@ -3,7 +3,7 @@
 *Last updated: 2026-02-28*
 
 ## 🔴 URGENT — Expires within 5 days
-- **OpenAI Codex JWT token expires March 4, 2026** — Must re-authenticate **BEFORE MARCH 3**. Go to platform.openai.com/account/api-keys, generate new token, share with NASR to update openclaw.json.
+- ~~OpenAI Codex JWT token~~ ✅ RESOLVED Mar 1 — Switched to OAuth (auto-refreshes, expires ~June 2026)
 - **Cooper Fitch — ALREADY APPLIED** ✅ Feb 27, ATS 91%. CV on GitHub. No action needed. (active-tasks was stale)
 
 ## 🔴 URGENT — This Week
