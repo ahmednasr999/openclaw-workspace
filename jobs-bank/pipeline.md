@@ -47,6 +47,7 @@
 | 36 | ☑️ | King Salman International Airport | VP Strategy and Performance Management | Riyadh, KSA | 88% | ✅ Applied | Partial JD | 2026-02-28 | 2026-03-14 | [LinkedIn](https://www.linkedin.com/comm/jobs/view/4378033717/) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20VP%20Strategy%20Performance%20Management%20-%20King%20Salman%20Airport.pdf) |
 | 37 | ☑️ | Faithful Executive (Client) | AI Strategy & Readiness Expert | GCC (KSA/UAE) | 91% | ✅ Applied | Full JD | 2026-03-01 | 2026-03-08 | [LinkedIn](https://www.linkedin.com/jobs/view/4375967216) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20AI%20Strategy%20%26%20Readiness%20Expert%20-%20Faithful%20Executive.pdf) |
 | 38 | ☑️ | Dubai Holding | Senior Manager, Strategy & Execution (B2B) | Dubai, UAE | 88-90% | ✅ Applied | Full JD | 2026-03-01 | 2026-03-08 | [LinkedIn](https://www.linkedin.com/jobs/view/4372482810) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20Senior%20Manager%20Strategy%20and%20Execution%20B2B%20-%20Dubai%20Holding.pdf) |
+| 39 | ☑️ | Legend Holding Group | IT Director | Dubai, UAE | 84-87% | ✅ Applied | Full JD | 2026-03-01 | 2026-03-08 | [LinkedIn](https://www.linkedin.com/jobs/view/4375947657) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20IT%20Director%20-%20Legend%20Holding%20Group.pdf) |
 
 
 ---
@@ -67,7 +68,6 @@
 
 | Company | Role | Location | Priority | JD Status | Job URL | Next Step |
 |---------|------|----------|----------|-----------|---------|-----------|
-| Legend Holding Group | IT Director | Dubai, UAE | High | JD Needed | [LinkedIn](https://www.linkedin.com/jobs/view/4375947657) | Strong fit, keep warm and apply with tailored CV if role remains open |
 | EATX | Head of IT | Dubai, UAE | Medium | JD Needed | [LinkedIn](https://www.linkedin.com/jobs/view/4375907659) | Validate transformation scope vs operations scope before applying |
 | Kayzin Recruitment | Head of AI-Enabled Customer Experience | Dubai, UAE | Medium | JD Needed | [LinkedIn](https://www.linkedin.com/jobs/view/4373415748) | Bank for later, review once high-priority applications are done |
 | Starlink Qatar | Products Portfolio Lead | Doha, Qatar | Low | JD Needed | [LinkedIn](https://www.linkedin.com/jobs/view/4376649232) | Bank for later, weaker direct alignment |
@@ -81,11 +81,11 @@
 
 | Metric | Value |
 |--------|-------|
-| Total tracked | 38 |
-| Applied | 38 |
+| Total tracked | 39 |
+| Applied | 39 |
 | CV Ready, not yet applied | 0 |
-| Radar — Needs Action | 7 |
-| Radar (no CV yet) | 7 |
+| Radar — Needs Action | 6 |
+| Radar (no CV yet) | 6 |
 | Active interviews | 1 (Delphi — awaiting feedback) |
 | Avg ATS score (all CVs) | 89% |
 | Follow-up policy | No proactive follow-ups — wait for recruiter response |
@@ -102,7 +102,6 @@
 | DP World | Director Optimization | ❌ Removed — no URL/JD available | Removed 2026-02-27 |
 | J10 Consulting | Project Director | ❌ Removed — GulfTalent login required | Removed 2026-02-27 |
 | Cygnify | Principal Digital Delivery | ❌ Removed — no public JD found | Removed 2026-02-27 |
-| Legend Holding Group | IT Director | ❌ Removed — no valid job URL found | Removed 2026-02-28 |
 | EyeSpy Recruitment | Head of Project Management | ❌ Removed from Radar — Ahmed decision | Removed 2026-02-28 |
 | Confidential Government | General Manager, Business Support | ❌ Skipped — ATS 72-75%, government sector gap | Removed 2026-02-28 |
 | TP | AI Delivery VP | ❌ Removed — Cairo only, conflicts with GCC target | Removed 2026-02-28 |
