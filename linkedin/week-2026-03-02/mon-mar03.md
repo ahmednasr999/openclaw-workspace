@@ -1,62 +1,65 @@
-# Monday March 3 | Growth | SLAY | Strange | CTA: B
+# Tuesday March 4 | Growth | PAS | Free Value | CTA: C
 
 ![Post Image](mon-mar03-image.png)
 
 ---
 
-I built a PMO across 8 countries.
-The hardest part wasn't the projects.
+Managing hospitals across countries is breaking PMOs.
+Here's the exact framework I use.
 
-At Network International, I inherited a portfolio of 300+ banking and payments projects running across Egypt, UAE, Jordan, Kenya, Nigeria, Ghana, Mauritius, and South Africa.
+Most hospital transformation programs fail the same way.
 
-300+ concurrent projects.
-8 countries.
-16 project managers I recruited and trained myself.
-300+ banking clients worldwide.
+Not because of bad technology.
+Not because of budget overruns.
+Not because of poor planning.
 
-You'd think the hard part was the complexity.
+They fail because a framework designed for one entity gets force-applied to 15 different ones.
 
-It wasn't.
+In my current role, I'm leading a digital transformation program across a 15-hospital network spanning 3 countries: KSA, UAE, and Egypt.
 
-**The hard part was the first Monday morning call.**
+Each hospital has its own culture.
+Each country has its own regulatory framework: JCI, HIMSS, MOH requirements that don't align cleanly.
+Each clinical department has its own definition of "success."
 
-I had PMs in Lagos who worked differently from PMs in Nairobi.
-I had clients in Dubai who communicated differently from clients in Cairo.
-I had a governance model designed for one market trying to hold eight together.
+Here's the 4-layer governance model that's holding it together:
 
-Here's what I got wrong first:
+**Layer 1: The Unchangeables (Program Core)**
+These never flex, regardless of site or country.
+Scope boundaries. Budget governance. Executive steering cadence. Compliance baselines.
+If it touches patient safety or regulatory risk, it's locked.
 
-I tried to standardize everything.
+**Layer 2: The Adapters (Country-Level)**
+Regulatory alignment to local MOH requirements.
+Stakeholder mapping by country.
+Cultural protocols for change management.
+Local team capacity and capability assessments.
 
-Same templates. Same reporting cadence. Same escalation path. Same everything.
+**Layer 3: The Customizers (Site-Level)**
+Each hospital gets a tailored implementation sequence.
+Prioritization based on current maturity level, not a standardized roadmap.
+Site-specific clinical workflow mapping before any technology is deployed.
+Local champion identified and empowered before go-live.
 
-It made sense on paper. It nearly destroyed the team.
+**Layer 4: The Integrators (Program Intelligence)**
+Weekly signal aggregation from all 15 sites.
+Pattern recognition: which blockers are systemic vs. isolated?
+Executive-level dashboard that separates noise from signal.
+Proactive escalation before issues become crises.
 
-What I learned over 3 years of figuring this out:
+The instinct with multi-site programs is to centralize control.
+That's exactly wrong.
 
-**Standardize the outputs. Never the humans.**
+**Centralize the governance. Decentralize the execution.**
 
-The deliverable looks the same in every country.
-The path to get there is different in every country.
+The program office sets the rules.
+The sites own the game.
 
-Lagos needed weekly check-ins. Cairo needed daily ones. Dubai needed the data, not the conversation.
+If you're managing a multi-site or multi-country program and you're fighting your own governance model, the problem usually lives in Layer 2.
 
-Once I stopped treating 8 countries like one market with 8 offices, everything changed.
-
-**The PMO stopped being a reporting function.**
-It became a translation function.
-
-Translating business intent into local execution.
-Translating local friction into executive-level signal.
-Translating 300+ competing priorities into a coherent portfolio.
-
-The best PMO frameworks aren't built from certifications.
-They're built from the scar tissue of getting it wrong in 8 different time zones.
-
-What's the biggest misconception about PMO leadership you've seen?
+Which layer is breaking down in your program right now?
 
 ..
 
-By the way, I've been documenting my journey managing a $50M hospital transformation across 3 countries. If you're navigating a similar challenge, happy to share what's working. Drop a comment or DM.
+By the way, I'm writing a series on PMO frameworks that actually work at scale. Follow me for weekly breakdowns from managing 300+ concurrent projects across 8 countries.
 
-#PMO #ProjectManagement #Leadership #Operations #GCC
+#PMO #HealthcareIT #DigitalTransformation #ProgramManagement #Governance
