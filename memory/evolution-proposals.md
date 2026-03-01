@@ -226,13 +226,77 @@
 
 ---
 
+## Proposal 12: Nightly Evolution Scan Gate — Stop on Pending Backlog
+
+**Type:** RULE
+
+**What:** Modify nightly evolution scan to include a pre-flight gate: If 5+ proposals are PENDING for >12 hours, do NOT generate new proposals. Instead, log "EVOLUTION SCAN PAUSED: Pending backlog requires approval" and send Ahmed a single Telegram alert with link to evolution-proposals.md. Resume scanning only after Ahmed acts on oldest pending proposals.
+
+**Why:** Feb 28 generated 8 proposals (still pending). March 1 generated 3 more proposals before getting any feedback. Proposal fatigue + backlog stale. The nightly scan should enforce decision velocity, not pile up unreviewed changes.
+
+**Impact:** LOW - workflow control, prevents proposal pile-up
+
+**Risk:** LOW - just adds a gate check before proposal writing
+
+**Files to change:** AGENTS.md (formalize rule), nightly scan script
+
+**Status:** PENDING
+
+---
+
+## Proposal 13: "last-session.md" Real-Time Tagging Not Observed
+
+**Type:** RULE
+
+**What:** AGENTS.md mandates real-time topic tagging in memory/last-session.md during sessions (append one-liner immediately on substantive event). Spot-check Feb 28 and Mar 1 logs shows this is not happening. Recommendation: (1) Formalize enforcement in sub-agent briefs (require this practice), (2) Make it explicit in SOUL.md non-negotiables, (3) Log violations to memory/process-violations.md for audit.
+
+**Why:** Real-time tagging is designed to prevent loss of context during session crashes or compaction. If not practiced, the whole session continuity layer is weakened. Feb 28-Mar 1 context spikes (77-88%) show compaction risk is active. Need to verify this rule is actually followed.
+
+**Impact:** LOW - meta rule about rule enforcement
+
+**Risk:** LOW - just formalization and logging
+
+**Files to change:** AGENTS.md (escalate to SOUL.md), create memory/process-violations.md
+
+**Status:** PENDING
+
+---
+
+## Proposal 14: Sub-Agent Output Validation Not Logged (Confirm or Create)
+
+**Type:** WORKFLOW
+
+**What:** AGENTS.md (Feb 27 notes) requires "add sub-agent output validation: after every completion, verify output file exists and is non-empty before announcing done. Log to lessons-learned.md if empty." Check memory/lessons-learned.md for validation records. If none exist, (1) create file with header and template, (2) require all future sub-agent spawns to log outcome (success with file size, or failure with reason), (3) surface any empty outputs in morning briefing.
+
+**Why:** Sub-agent output failures can go silent. No tracking means no pattern visibility. This rule exists but has no audit trail. Either it's not being followed, or file was lost in context management.
+
+**Impact:** LOW - sub-agent quality visibility
+
+**Risk:** LOW - adds logging, no logic changes
+
+**Files to change:** Create or recover memory/lessons-learned.md, formalize in sub-agent briefs
+
+**Status:** PENDING
+
+---
+
 ## Summary — March 1 Nightly Scan
 
 **Cron Health:** 1 error (Email Afternoon — CRITICAL, 36+ hrs), 8 idle (correct for Sunday), 23 ok
 **Context Guardian:** 1 flush on Mar 1 at 4:40 AM (88% context) — normal operation
-**Major Blocker:** Feb 28 proposal backlog (8 items) awaiting approval — stalling new improvements
-**New Critical Issue:** Email Afternoon cron unresolved for 36+ hours with no recovery attempt
-**Recommendation:** Prioritize Feb 28 proposals 1-8 (especially Proposal 1: Cron Error Recovery Protocol), then immediately implement Proposal 9 (Email Afternoon recovery) as urgent action.
+**Major Blockers:**
+  - Feb 28 proposal backlog (8 items) awaiting approval
+  - Email Afternoon cron in ERROR for 36+ hours with no recovery
+  - Real-time session tagging rule not observed in logs
+  - Sub-agent output validation not tracked
 
-*Ahmed: Please review and approve/reject Feb 28 proposals (1-8) and March 1 proposals (9-11) at your earliest convenience. Backlog is blocking continuous improvement.*
+**Recommendation:** 
+1. IMMEDIATE: Approve Proposal 9 (Email Afternoon recovery) as operational emergency
+2. NEXT: Approve Proposal 1 from Feb 28 (Cron Error Recovery Protocol) to prevent future cascades
+3. THEN: Batch-review Feb 28 proposals 2-8 to clear backlog
+4. FINALLY: Implement meta-rules (Proposals 12-14) to strengthen process discipline
+
+**Critical Path:** Email error fix (Prop 9) + Cron recovery protocol (Prop 1) + Backlog gate (Prop 12)
+
+*Ahmed: Reply with proposal numbers to approve (e.g. 'approve 1,9,12') or reject (e.g. 'reject 5,11'). Approved proposals will be implemented immediately. Backlog blocking continuous improvement.*
 
