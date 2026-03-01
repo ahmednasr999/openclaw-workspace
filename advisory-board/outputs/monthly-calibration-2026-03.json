@@ -1,46 +1,51 @@
 {
   "month": "2026-03",
-  "generatedAt": "2026-03-01T19:02:27.058790+00:00",
+  "generatedAt": "2026-03-01T20:36:57.215498+00:00",
   "top5": [
     {
-      "title": "Risk watch: **GitHub 2FA required by April 4, 2026** - Enable at github.com \u2192 Settings \u2192 Password and authentication. Non-urgent but do this weekend.",
-      "score": 153.0,
-      "domain": "risk",
-      "lens": "CRO",
-      "confidence": 0.85,
-      "alignment": 0.9
-    },
-    {
       "title": "**Delphi follow-up** - Send value-signal message to Kritika Chhabra on **Monday March 2**. Draft ready: AI change management angle (14 agents in clinical ops). Channel TBD (LinkedIn DM or email).",
-      "score": 108.0,
+      "score": 81.0,
       "domain": "career",
       "lens": "CSO",
       "confidence": 0.8,
-      "alignment": 0.95
+      "alignment": 0.95,
+      "evidence_quality": 0.75
     },
     {
       "title": "Delphi Consulting: Senior AI PM (\ud83d\udcde Interview)",
-      "score": 90.0,
+      "score": 76.5,
       "domain": "career",
       "lens": "CSO",
       "confidence": 0.75,
-      "alignment": 0.95
+      "alignment": 0.95,
+      "evidence_quality": 0.85
     },
     {
-      "title": "Talabat: CPTO (\u2705 Applied)",
-      "score": 81.0,
+      "title": "**Policy override (active):** No proactive follow-ups for standard LinkedIn applications.",
+      "score": 45.0,
       "domain": "career",
       "lens": "CSO",
-      "confidence": 0.75,
-      "alignment": 0.95
+      "confidence": 0.8,
+      "alignment": 0.95,
+      "evidence_quality": 0.75
     },
     {
-      "title": "AIQU: Director of AI (\u2705 Applied)",
-      "score": 81.0,
+      "title": "Follow-up only when: (1) post-interview silence, or (2) active recruiter thread goes quiet.",
+      "score": 45.0,
       "domain": "career",
       "lens": "CSO",
-      "confidence": 0.75,
-      "alignment": 0.95
+      "confidence": 0.8,
+      "alignment": 0.95,
+      "evidence_quality": 0.75
+    },
+    {
+      "title": "Current active follow-up: **Delphi only** (post-interview thread with Kritika).",
+      "score": 45.0,
+      "domain": "career",
+      "lens": "CSO",
+      "confidence": 0.8,
+      "alignment": 0.95,
+      "evidence_quality": 0.75
     }
   ],
   "notes": [

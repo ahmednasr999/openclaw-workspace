@@ -32,11 +32,26 @@ class Item:
     effort: float
     alignment: float
     lens: str
+    evidence_quality: float = 0.8
 
     @property
     def score(self) -> float:
         denom = self.effort * (1.1 - self.alignment)
-        return round((self.impact * self.urgency * self.confidence) / max(denom, 0.1), 2)
+        effective_confidence = self.confidence * self.evidence_quality
+        return round((self.impact * self.urgency * effective_confidence) / max(denom, 0.1), 2)
+
+
+def file_age_quality(path: Path) -> float:
+    if not path.exists():
+        return 0.6
+    age_h = (dt.datetime.now() - dt.datetime.fromtimestamp(path.stat().st_mtime)).total_seconds() / 3600
+    if age_h <= 24:
+        return 1.0
+    if age_h <= 48:
+        return 0.9
+    if age_h <= 120:
+        return 0.75
+    return 0.6
 
 
 def parse_date_any(text: str) -> dt.date | None:
@@ -79,6 +94,7 @@ def urgency_from_due(due: dt.date | None) -> float:
 
 def parse_active_tasks(md: str) -> List[Item]:
     out: List[Item] = []
+    source_q = file_age_quality(ACTIVE_TASKS)
     for line in md.splitlines():
         s = line.strip()
         if not s.startswith("- "):
@@ -86,7 +102,14 @@ def parse_active_tasks(md: str) -> List[Item]:
         if "RESOLVED" in s or "COMPLETED" in s or "~~" in s:
             continue
         title = re.sub(r"^-\s*", "", s).replace("—", "-")
-        tl = title.lower()
+        tl = re.sub(r"[*_`]+", "", title).lower().strip()
+        if any(k in tl for k in ["policy override", "follow-up policy", "current active follow-up", "only suggest follow-up", "follow-up only when", "no proactive follow-ups"]):
+            continue
+        if re.match(r"^(interviewer|status|position|outcome|resources|links)\s*:", tl):
+            continue
+        action_verbs = ["send", "update", "apply", "follow up", "review", "complete", "confirm", "schedule", "draft"]
+        if not any(v in tl for v in action_verbs):
+            continue
         due = parse_date_any(title)
         domain = "career"
         lens = "COO"
@@ -103,12 +126,13 @@ def parse_active_tasks(md: str) -> List[Item]:
 
         out.append(Item(title=title, source="active-tasks", domain=domain, due=due, impact=impact,
                         urgency=urgency_from_due(due), confidence=0.8, effort=effort,
-                        alignment=align, lens=lens))
+                        alignment=align, lens=lens, evidence_quality=round(0.75 * source_q, 2)))
     return out
 
 
 def parse_pipeline(md: str) -> List[Item]:
     out: List[Item] = []
+    source_q = file_age_quality(PIPELINE)
     for line in md.splitlines():
         if not line.startswith("|") or "| # |" in line or "---" in line:
             continue
@@ -136,6 +160,7 @@ def parse_pipeline(md: str) -> List[Item]:
             effort=5,
             alignment=0.95,
             lens="CSO",
+            evidence_quality=round(0.85 * source_q, 2),
         ))
     return out
 
@@ -293,7 +318,7 @@ def build_daily(items: List[Item], flags: List[str], conflicts: List[str]) -> st
     lines = [f"# Advisory Board Daily Brief | {now}", "", "Top 3 priorities:"]
     for i, it in enumerate(top, 1):
         due = it.due.isoformat() if it.due else "n/a"
-        lines.append(f"{i}. [{it.score}] {it.title} | Lens: {it.lens} | Domain: {it.domain} | Due: {due}")
+        lines.append(f"{i}. [{it.score}] {it.title} | Lens: {it.lens} | Domain: {it.domain} | EQ: {it.evidence_quality:.2f} | Due: {due}")
 
     lines.extend(["", "Conflicts:"] + [f"- {c}" for c in conflicts[:3]])
     lines.extend(["", "Input health:"] + ([f"- {f}" for f in flags] if flags else ["- All core inputs are fresh."]))
@@ -342,7 +367,7 @@ def build_weekly(items: List[Item], flags: List[str], conflicts: List[str], targ
     lines = [f"# Advisory Board Weekly Strategy Report | {iso_week(target)}", ""]
     lines.append("Top strategic priorities:")
     for i, it in enumerate(top, 1):
-        lines.append(f"{i}. [{it.score}] {it.title} ({it.domain}, {it.lens})")
+        lines.append(f"{i}. [{it.score}] {it.title} ({it.domain}, {it.lens}, EQ {it.evidence_quality:.2f})")
 
     lines.extend(["", "Conflicts detected:"] + [f"- {c}" for c in conflicts])
     lines.extend(["", "Strategic bets for next week:"] + [f"- {b}" for b in strategic_bets(top)])
@@ -365,6 +390,7 @@ def build_calibration(items: List[Item], target: dt.date) -> str:
                 "lens": i.lens,
                 "confidence": i.confidence,
                 "alignment": i.alignment,
+                "evidence_quality": i.evidence_quality,
             }
             for i in top
         ],

@@ -1,4 +1,4 @@
-# Wednesday March 5 | Growth | SLAY | Strange | CTA: A
+# Wednesday March 4 | Growth | SLAY | Strange | CTA: A
 
 ![Post Image](tue-mar04-image.png)
 
