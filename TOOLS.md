@@ -159,10 +159,10 @@ When spawning a sub-agent task, always:
 
 | Agent | Folder | Default Model | Escalate To |
 |-------|--------|--------------|-------------|
-| CV Optimizer | cv-optimizer | sonnet46 | opus46 for senior roles |
-| Job Hunter | job-hunter | minimax-m2.5 | haiku for screening |
-| Researcher | researcher | kimi (long context) | sonnet46 for synthesis |
-| Content Creator | content-creator | sonnet46 | minimax-m2.5 for drafts |
+| CV Optimizer | cv-optimizer | **opus46** | Never downgrade CVs |
+| Job Hunter | job-hunter | gpt53codex | sonnet46 if quality insufficient |
+| Researcher | researcher | gpt53codex | sonnet46 for synthesis |
+| Content Creator | content-creator | sonnet46 | gpt53codex for drafts only |
 
 ---
 
