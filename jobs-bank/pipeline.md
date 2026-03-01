@@ -52,6 +52,7 @@
 | 41 | ☑️ | Starlink Qatar | Products Portfolio Lead | Doha, Qatar | 90% | ✅ Applied | Full JD | 2026-03-01 | 2026-03-08 | [LinkedIn](https://www.linkedin.com/jobs/view/4376649232) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20Products%20Portfolio%20Lead%20-%20Starlink%20Qatar.pdf) |
 | 42 | ☑️ | Agay Barho (Saudi Foundation) | Strategy Director | Riyadh, KSA | 87% | ✅ Applied | Full JD | 2026-03-01 | 2026-03-08 | N/A | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20Strategy%20Director%20-%20Agay%20Barho.pdf) |
 | 43 | ☑️ | RapidData Technologies | Strategy & KPI Expert | Dubai, UAE | 88% | ✅ Applied | Full JD | 2026-03-01 | 2026-03-08 | [LinkedIn](https://www.linkedin.com/jobs/view/4375202921) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20Strategy%20%26%20KPI%20Expert%20-%20RapidData.pdf) |
+| 44 | ☑️ | Salt | Senior Program Manager | Abu Dhabi, UAE | 91% | ✅ Applied | Full JD | 2026-03-01 | 2026-03-08 | [LinkedIn](https://www.linkedin.com/jobs/view/4375521803) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20Senior%20Program%20Manager%20-%20Salt.pdf) |
 
 
 ---
@@ -76,7 +77,7 @@
 
 
 
-| Salt | Senior Program Manager | Abu Dhabi, UAE | Medium | JD Needed | [LinkedIn](https://www.linkedin.com/jobs/view/4375521803) | Bank for later, title below target level |
+
 
 ---
 
@@ -84,8 +85,8 @@
 
 | Metric | Value |
 |--------|-------|
-| Total tracked | 43 |
-| Applied | 43 |
+| Total tracked | 44 |
+| Applied | 44 |
 | CV Ready, not yet applied | 0 |
 | Radar — Needs Action | 3 |
 | Radar (no CV yet) | 3 |
