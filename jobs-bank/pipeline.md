@@ -70,7 +70,7 @@
 | Company | Role | Location | Priority | JD Status | Job URL | Next Step |
 |---------|------|----------|----------|-----------|---------|-----------|
 
-| Starlink Qatar | Products Portfolio Lead | Doha, Qatar | High | Full JD | [LinkedIn](https://www.linkedin.com/jobs/view/4376649232) | CV generation in progress (Opus sub-agent) |
+| Starlink Qatar | Products Portfolio Lead | Doha, Qatar | High | Full JD | [LinkedIn](https://www.linkedin.com/jobs/view/4376649232) | 📄 CV Ready, apply now. [CV](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20Products%20Portfolio%20Lead%20-%20Starlink%20Qatar.pdf) |
 | Agay Barho! | Strategy Director | Riyadh, KSA | Medium | JD Needed | [LinkedIn](https://www.linkedin.com/jobs/view/4378757511) | Bank for later, request full mandate details if revisited |
 | RapidData | Strategy & Organizational Performance / KPI Expert | Dubai, UAE | Medium | JD Needed | [LinkedIn](https://www.linkedin.com/jobs/view/4375202921) | Bank for later, use as fallback application |
 | Salt | Senior Program Manager | Abu Dhabi, UAE | Medium | JD Needed | [LinkedIn](https://www.linkedin.com/jobs/view/4375521803) | Bank for later, title below target level |
