@@ -67,7 +67,13 @@
 
 | Company | Role | Location | Priority | Job URL | Next Step |
 |---------|------|----------|----------|---------|-----------|
-| — | — | — | — | — | — |
+| Legend Holding Group | IT Director | Dubai, UAE | High | [LinkedIn](https://www.linkedin.com/jobs/view/4375947657) | Strong fit, keep warm and apply with tailored CV if role remains open |
+| EATX | Head of IT | Dubai, UAE | Medium | [LinkedIn](https://www.linkedin.com/jobs/view/4375907659) | Validate transformation scope vs operations scope before applying |
+| Kayzin Recruitment | Head of AI-Enabled Customer Experience | Dubai, UAE | Medium | [LinkedIn](https://www.linkedin.com/jobs/view/4373415748) | Bank for later, review once high-priority applications are done |
+| Starlink Qatar | Products Portfolio Lead | Doha, Qatar | Low | [LinkedIn](https://www.linkedin.com/jobs/view/4376649232) | Bank for later, weaker direct alignment |
+| Agay Barho! | Strategy Director | Riyadh, KSA | Medium | [LinkedIn](https://www.linkedin.com/jobs/view/4378757511) | Bank for later, request full mandate details if revisited |
+| RapidData | Strategy & Organizational Performance / KPI Expert | Dubai, UAE | Medium | [LinkedIn](https://www.linkedin.com/jobs/view/4375202921) | Bank for later, use as fallback application |
+| Salt | Senior Program Manager | Abu Dhabi, UAE | Medium | [LinkedIn](https://www.linkedin.com/jobs/view/4375521803) | Bank for later, title below target level |
 
 ---
 
@@ -78,8 +84,8 @@
 | Total tracked | 38 |
 | Applied | 38 |
 | CV Ready, not yet applied | 0 |
-| Radar — Needs Action | 0 |
-| Radar (no CV yet) | 0 |
+| Radar — Needs Action | 7 |
+| Radar (no CV yet) | 7 |
 | Active interviews | 1 (Delphi — awaiting feedback) |
 | Avg ATS score (all CVs) | 89% |
 | Follow-up policy | No proactive follow-ups — wait for recruiter response |
@@ -102,3 +108,12 @@
 | TP | AI Delivery VP | ❌ Removed — Cairo only, conflicts with GCC target | Removed 2026-02-28 |
 | Majid Al Futtaim | Director Total Rewards | ❌ Removed — HR role, not strategic fit | Removed 2026-02-28 |
 | DP World | Director Optimization & Efficiency | ❌ Skipped — no port/terminal sector experience | Removed 2026-02-28 |
+| Keeta Drone | Retail Director/Lead | ❌ Skipped, commercial retail growth role misaligned | Removed 2026-03-01 |
+| AFM Holding Limited | Chief Executive Officer | ❌ Skipped, CEO role not target lane for this cycle | Removed 2026-03-01 |
+| DNA Growth | Chief of Staff | ❌ Skipped, role function misaligned with target track | Removed 2026-03-01 |
+| YSALC | Strategy Director | ❌ Skipped, legal-services BD-heavy scope mismatch | Removed 2026-03-01 |
+| Denara Group | Acquisition Growth Lead/Head of Growth | ❌ Skipped, growth marketing focus not strategic transformation | Removed 2026-03-01 |
+| Confidential | Director of Strategy & Innovation (Qatari) | ❌ Skipped, nationality constraint (Qatari) | Removed 2026-03-01 |
+| Tandem Search | Recruitment Principal/Senior Consultant | ❌ Skipped, recruitment role outside target function | Removed 2026-03-01 |
+| HLB HAMT | Chief Growth Officer | ❌ Skipped, growth and sales mandate mismatch | Removed 2026-03-01 |
+| Searchability | Head of Data | ❌ Skipped, pure data leadership role not transformation-led | Removed 2026-03-01 |
