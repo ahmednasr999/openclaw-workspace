@@ -237,45 +237,53 @@ Before delivering any content to Ahmed (LinkedIn posts, emails, CV bullets, cove
 
 ## Model Selection Rules (Automatic)
 
-Route tasks to the right model. Cost discipline is non-negotiable.
+All three providers are flat-fee subscriptions ($160/mo total). Optimization = spreading quota load, not saving money.
 
 **OPUS (claude-opus-4-6) — Use for:**
+- CV tailoring for specific job descriptions (ALWAYS Opus for CVs)
+- Interview preparation (Topgrading methodology)
 - Gateway/infrastructure decisions
 - Post-mortems and root cause analysis
-- Interview preparation (Topgrading methodology)
-- CV tailoring for specific job descriptions
 - Strategic decisions (job moves, positioning, project prioritization)
 - Daily idea generation (non-negotiable #4)
-- Anything requiring >500 tokens of reasoning
 
 **SONNET (claude-sonnet-4-6) — Use for:**
 - LinkedIn content drafting (frameworks, hooks)
 - Job application analysis (moderate reasoning)
+- Main session conversations when quality matters
+
+**GPT-5.3-CODEX (openai-codex/gpt-5.3-codex) — Sub-agent default. Use for:**
+- Sub-agent tasks (coding, research, job hunting)
 - Research synthesis (combining multiple sources)
 - Memory updates and cross-referencing
-- Anything requiring 150-500 tokens of reasoning
+- Any sub-agent work that doesn't need Opus quality
 
-**M2.5 (minimax-portal/MiniMax-M2.5) — Default. Use for:**
-- Web search, calendar checks, email
-- Message routing, heartbeats, cron jobs
+**M2.5 (minimax-portal/MiniMax-M2.5) — System default. Use for:**
+- Heartbeats, cron jobs, calendar checks, email
 - Simple lookups and formatting
 - Link fetching and summaries
-- Anything under 200 tokens of reasoning
+- Background noise that doesn't need reasoning
 
 **HAIKU (claude-haiku-4-5) — Use for:**
-- Sub-agent quick lookups
-- Text transforms and formatting
-- Simple calculations
-- Boilerplate responses
+- Quick lookups, text transforms, vision tasks
+- Lightweight fallback when other providers are quota-limited
 
-**Cost guard:** Track daily spend. If >$5/day, auto-downgrade Sonnet tasks to M2.5. Never use Opus for what Sonnet can handle. Never use Sonnet for what M2.5 can handle.
+**Per-agent model assignment (hardcoded):**
 
-**Fallback chain (mandatory):**
-- Opus unavailable → fall back to Sonnet 4.6
-- Sonnet unavailable → fall back to M2.5
-- M2.5 unavailable → fall back to Haiku
-- **Never silently fail.** If downgraded, notify Ahmed: "⚠️ [Model] unavailable — fell back to [Model]. Task: [what I was doing]. Quality may differ."
-- If ALL models fail → send Telegram alert and retry in 60 seconds
+| Agent | Model | Override To |
+|-------|-------|-------------|
+| Main (NASR) | Per session (Ahmed picks) | Opus for strategy |
+| CV Optimizer | **Opus 4.6** | Never downgrade CVs |
+| Job Hunter | Codex 5.3 | Sonnet if quality insufficient |
+| Researcher | Codex 5.3 | Sonnet for synthesis |
+| Content Creator | Sonnet 4.6 | Codex for drafts only |
+
+**Quota guard:** All limits reset every 5 hours. If any provider approaches 80% of its window limit, shift load to another provider. Never burn one provider when another can handle it.
+
+**Fallback chain (configured in OpenClaw):**
+- MiniMax M2.5 (default) -> Sonnet 4.6 -> Codex 5.3
+- **Never silently fail.** If downgraded, notify Ahmed: "⚠️ [Model] unavailable, fell back to [Model]. Task: [what I was doing]. Quality may differ."
+- If ALL models fail -> send Telegram alert and retry in 60 seconds
 
 ---
 
