@@ -17,6 +17,9 @@
 - Business Advisory Board: need to see the actual prompt/use case. Site is React rendered so NASR can't fetch it. Ahmed to share prompt text directly.
 - Oracle recruiter response (Mar 1) — needs review
 - Codex JWT still needs valid credential (removed from fallback chain for now, expires March 4)
+- [13:00 UTC] Started normal CV workflow for Faithful Executive AI Strategy & Readiness Expert role, Ahmed approved step-by-step process and will send JDs one by one.
+- [13:51 UTC] Added blocking CV validation gates: Opus-only model check, clean header check, and pdftotext forbidden-string check before any CV send.
+- [14:11 UTC] Created global OPERATIONAL_RELIABILITY_PROTOCOL.md for all workflows, state machine + blocking gates + event-driven updates + exception monitoring.
 
 ## Decisions Made This Session (Feb 28 - Mar 1)
 - ✅ Gmail watcher fixed — topic created in openclaw-ahmed-access project, permissions granted, config updated
