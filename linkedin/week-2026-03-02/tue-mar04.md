@@ -1,65 +1,56 @@
-# Tuesday March 4 | Growth | PAS | Free Value | CTA: C
+# Wednesday March 5 | Growth | SLAY | Strange | CTA: A
 
 ![Post Image](tue-mar04-image.png)
 
 ---
 
-Managing hospitals across countries is breaking PMOs.
-Here's the exact framework I use.
+The Salesforce rollout taught me more than my PMP.
+Nobody told me it would take 14 months.
 
-Most hospital transformation programs fail the same way.
+When Network International handed me the keys to a Salesforce implementation, I thought I was ready.
 
-Not because of bad technology.
-Not because of budget overruns.
-Not because of poor planning.
+PMP certified. CSM certified. CBAP certified. 300+ projects under my belt.
 
-They fail because a framework designed for one entity gets force-applied to 15 different ones.
+I was wrong.
 
-In my current role, I'm leading a digital transformation program across a 15-hospital network spanning 3 countries: KSA, UAE, and Egypt.
+This wasn't a project.
+It was a 14-month organizational change program hiding inside a technology deployment.
 
-Each hospital has its own culture.
-Each country has its own regulatory framework: JCI, HIMSS, MOH requirements that don't align cleanly.
-Each clinical department has its own definition of "success."
+**The scope:** Full Salesforce platform rollout. CRM, service management, client engagement.
+**The footprint:** 8 countries. Egypt, UAE, Jordan, Kenya, Nigeria, Ghana, Mauritius, South Africa.
+**The users:** 170 people across all of them.
+**The client data:** 300+ banking institutions.
 
-Here's the 4-layer governance model that's holding it together:
+Week 3, I got my first real lesson.
 
-**Layer 1: The Unchangeables (Program Core)**
-These never flex, regardless of site or country.
-Scope boundaries. Budget governance. Executive steering cadence. Compliance baselines.
-If it touches patient safety or regulatory risk, it's locked.
+A PM in Nairobi came to me privately. Her team had been filling in Salesforce records with dummy data to hit the go-live milestone.
 
-**Layer 2: The Adapters (Country-Level)**
-Regulatory alignment to local MOH requirements.
-Stakeholder mapping by country.
-Cultural protocols for change management.
-Local team capacity and capability assessments.
+Not fraud. Fear.
+Fear that non-adoption would reflect badly on them personally.
 
-**Layer 3: The Customizers (Site-Level)**
-Each hospital gets a tailored implementation sequence.
-Prioritization based on current maturity level, not a standardized roadmap.
-Site-specific clinical workflow mapping before any technology is deployed.
-Local champion identified and empowered before go-live.
+That one conversation restructured everything I thought I knew about enterprise software rollouts.
 
-**Layer 4: The Integrators (Program Intelligence)**
-Weekly signal aggregation from all 15 sites.
-Pattern recognition: which blockers are systemic vs. isolated?
-Executive-level dashboard that separates noise from signal.
-Proactive escalation before issues become crises.
+**Lesson 1: Adoption is a political problem before it's a technical one.**
+If the system is "live" but nobody believes in it, you've shipped a failure with good screenshots.
 
-The instinct with multi-site programs is to centralize control.
-That's exactly wrong.
+**Lesson 2: 14 months is actually multiple projects.**
+Months 1-4: Infrastructure and configuration.
+Months 5-9: Change management (the real project).
+Months 10-14: Embedding and behavioral shift.
+Most rollouts fail because they fund Month 1-4 and ignore everything after.
 
-**Centralize the governance. Decentralize the execution.**
+**Lesson 3: The PMP teaches you to deliver projects.**
+Nobody teaches you to deliver belief.
 
-The program office sets the rules.
-The sites own the game.
+Getting 170 people across 8 countries to trust a new system requires something no certification gives you: the ability to make people feel safe changing.
 
-If you're managing a multi-site or multi-country program and you're fighting your own governance model, the problem usually lives in Layer 2.
+The best implementations I've seen don't celebrate go-live.
+They celebrate first real adoption 90 days after.
 
-Which layer is breaking down in your program right now?
+What was the moment that changed how you think about enterprise software rollouts?
 
 ..
 
-By the way, I'm writing a series on PMO frameworks that actually work at scale. Follow me for weekly breakdowns from managing 300+ concurrent projects across 8 countries.
+By the way, I'm currently exploring VP/C-suite digital transformation roles across the GCC. If your network is hiring leaders who've scaled platforms from 30K to 7M daily orders, I'd love to connect. DM me or check my profile.
 
-#PMO #HealthcareIT #DigitalTransformation #ProgramManagement #Governance
+#Salesforce #ChangeManagement #PMO #Leadership #EnterpriseIT

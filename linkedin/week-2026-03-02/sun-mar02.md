@@ -1,52 +1,62 @@
-# Sunday March 2 | TAM | PAS | Scary | CTA: A
+# Monday March 3 | Growth | SLAY | Strange | CTA: B
 
 ![Post Image](sun-mar02-image.png)
 
 ---
 
-AI is replacing PMOs.
-Here's what survives.
+I built a PMO across 8 countries.
+The hardest part wasn't the projects.
 
-McKinsey projects that 70% of current project management tasks will be automated by 2028.
+At Network International, I inherited a portfolio of 300+ banking and payments projects running across Egypt, UAE, Jordan, Kenya, Nigeria, Ghana, Mauritius, and South Africa.
 
-Scheduling, reporting, status updates, resource allocation.
-Gone.
+300+ concurrent projects.
+8 countries.
+16 project managers I recruited and trained myself.
+300+ banking clients worldwide.
 
-But here's what the report buried in the footnotes:
+You'd think the hard part was the complexity.
 
-**The PMO role isn't disappearing. It's bifurcating.**
+It wasn't.
 
-The bottom 60%: task coordinators who built careers on spreadsheets and status emails.
-They're being replaced by tools that cost $200/month.
+**The hard part was the first Monday morning call.**
 
-The top 40%: transformation architects who use AI as leverage.
-Their value is multiplying.
+I had PMs in Lagos who worked differently from PMs in Nairobi.
+I had clients in Dubai who communicated differently from clients in Cairo.
+I had a governance model designed for one market trying to hold eight together.
 
-I've been in project management for 20+ years.
-I've led programs totaling $50M+.
-I've managed 300+ concurrent projects across 8 countries.
+Here's what I got wrong first:
 
-And I'll tell you what AI cannot replace:
+I tried to standardize everything.
 
-**1. Reading the room at the executive table.**
-No LLM can tell you that the CFO's silence means "I'll kill this in the next board meeting" and that you have 48 hours to rebuild alignment.
+Same templates. Same reporting cadence. Same escalation path. Same everything.
 
-**2. Cross-cultural stakeholder navigation.**
-Governing a program across 3 countries with 15 different hospital cultures isn't a workflow problem. It's a human problem.
+It made sense on paper. It nearly destroyed the team.
 
-**3. Knowing when to break your own framework.**
-The governance model that worked in fintech will strangle you in healthcare. Experience is knowing which rules to bend before the crisis, not after.
+What I learned over 3 years of figuring this out:
 
-The PMOs who survive AI aren't the ones with more certifications.
-They're the ones who stopped managing tasks and started managing decisions.
+**Standardize the outputs. Never the humans.**
 
-The question isn't "will AI replace you?"
-It's "are you replaceable by AI?"
+The deliverable looks the same in every country.
+The path to get there is different in every country.
 
-What's your honest answer?
+Lagos needed weekly check-ins. Cairo needed daily ones. Dubai needed the data, not the conversation.
+
+Once I stopped treating 8 countries like one market with 8 offices, everything changed.
+
+**The PMO stopped being a reporting function.**
+It became a translation function.
+
+Translating business intent into local execution.
+Translating local friction into executive-level signal.
+Translating 300+ competing priorities into a coherent portfolio.
+
+The best PMO frameworks aren't built from certifications.
+They're built from the scar tissue of getting it wrong in 8 different time zones.
+
+What's the biggest misconception about PMO leadership you've seen?
 
 ..
 
-By the way, I'm currently exploring VP/C-suite digital transformation roles across the GCC. If your network is hiring leaders who've scaled platforms from 30K to 7M daily orders, I'd love to connect. DM me or check my profile.
+By the way, I've been documenting my journey managing a $50M hospital transformation across 3 countries. If you're navigating a similar challenge, happy to share what's working. Drop a comment or DM.
 
-#PMO #ArtificialIntelligence #DigitalTransformation #FutureOfWork #Leadership
+#PMO #ProjectManagement #Leadership #Operations #GCC
