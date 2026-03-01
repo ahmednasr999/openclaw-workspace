@@ -4,6 +4,15 @@
 
 ---
 
+## 🔧 LinkedIn Posting Tools
+
+### Bold Text Formatter
+- **URL:** https://typegrow.com/tools/linkedin-text-formatter
+- Ahmed uses this to format bold sections before posting to LinkedIn
+- LinkedIn doesn't support markdown bold; this tool converts to Unicode bold characters
+
+---
+
 ## LinkedIn & AI Visibility Strategy | 2026-02-21
 **Source:** Ashpreet Bedi research (shared by Ahmed)
 **Category:** content-strategy

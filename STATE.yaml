@@ -46,9 +46,9 @@ linkedin:
 agents:
   job_hunter:
     status: active
-    last_weekly_review: null
-    next_review: 2026-03-01T08:00:00Z  # Sunday 8AM Cairo
-    last_task: "pipeline handoff protocol wired 2026-02-28"
+    last_weekly_review: 2026-03-01T06:01:00Z
+    next_review: 2026-03-08T08:00:00Z  # Sunday 8AM Cairo
+    last_task: "weekly domain review - pipeline health check + market scan - 36 roles active, 8 follow-ups due this week, no Cold moves yet"
     domain_file: jobs-bank/pipeline.md
     open_triggers: []
 
