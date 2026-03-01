@@ -475,3 +475,238 @@ Job openings for VP, Director, or Head of HealthTech, FinTech, or Digital Health
 
 ---
 
+=== Job Radar - 2026-03-01 ===
+
+### Search 1: VP/C-Suite Digital Transformation
+## Answer
+
+CEOs in the GCC, especially in UAE and Saudi Arabia, are leading digital transformation initiatives; notable figures include CTOs and AI advisors in Dubai and Riyadh. Key regions include Dubai, Riyadh, and Doha.
+
+---
+
+## Sources
+
+- **GCC CEO and digital transformation. is it an option?** (relevance: 100%)
+  https://www.linkedin.com/pulse/gcc-ceo-digital-transformation-option-abdullah-alserhani-mba-lssbb?articleId=6500263081678036992
+  February 10, 2019 - CEO’s in the GCC countries especially Saudi Arabia are facing heaps of challenges ranging in level from as macro as unstable geopolitics of the region to as micro as keeping teams motivated and focused. The new market order in the making as a result of the Saudi Vision 2030 lead ...
+
+- **Yazan A. - EngD | CTO | Strategic Advisor | Smart Automation Solution Advisor | Digital Transformation Principal | CCSP | CDO | GENBAND S3 Certified Engineer | AI Advisor | LinkedIn** (relevance: 99%)
+  https://www.linkedin.com/in/yazanabbasi/
+  EngD | CTO | Strategic Advisor | Smart Automation Solution Advisor | Digital Transformation Principal | CCSP | CDO | GENBAND S3 Certified Engineer | AI Advisor · From start-ups to high revenue enterprises we have spent the past several years helping customers solve some of their toughest IT problems...
+
+- **Dr. Semih Kumluk - Enterprise Transformation, Data & AI ...** (relevance: 99%)
+  https://ae.linkedin.com/in/drsemihkumluk
+  Dr. Semih Kumluk
+AI Transformation Executive | Digital Business Strategist | Innovation Leader | Startup Advisor & VC Connector | Global Keynote Speaker
+Dubai, United Arab Emirates
+500 connections, 25485 followers
+
+
+About
+I am an Enterprise Transformation, Data & AI Executive leading organizations…
+...
+
+- **Neil B. - Passionate about digital transformation | CIO/CTO | Data Science and AI enthusiast | LinkedIn** (relevance: 99%)
+  https://www.linkedin.com/in/neil-bezuidenhout/
+  Neil B.
+Passionate about digital transformation | CIO/CTO | Data Science and AI enthusiast
+Dubai, Dubai, United Arab Emirates
+193 connections, 250 followers
+
+
+About
+As a Chief Information Officer, I have over 15 years of experience in leading and…
+
+
+Experience
+N/A
+
+
+Education
+The University of Texas...
+
+- **Ahmad Alkukhun - Senior IT Projects Manager/Transformation lead | AI specialist @ Arab National Bank | PMP | LinkedIn** (relevance: 96%)
+  https://www.linkedin.com/in/ahmadalkukhun/
+  July 27, 2025 - Senior IT Projects Manager/Transformation lead | AI specialist @ Arab National Bank | PMP · Location: Riyadh · 500+ connections on LinkedIn. View Ahmad Alkukhun’s profile on LinkedIn, a professional community of 1 billion members.
+
+- **Ebrahim M. - Doha Metropolitan Area | Professional Profile | LinkedIn** (relevance: 93%)
+  https://www.linkedin.com/in/ebrahimmattar/
+  As an experienced CTO with certifications including PMP, CGEIT, ITIL, ISO 9001, and PMR… · Location: Doha Metropolitan Area. 500+ connections on LinkedIn. View Ebrahim M.’s profile on LinkedIn, a professional community of 1 billion members.
+
+- **GCC Board Directors Institute (GCC BDI) | LinkedIn** (relevance: 89%)
+  https://www.linkedin.com/company/gcc-board-directors-institute
+  Overview:
+GCC BDI is supported by eight leading regional corporations and professional services firms who serve as our strategic partners: First Abu Dhabi Bank, National Bank of Bahrain, SABIC, Saudi Aramco; A&O Shearman; Heidrick & Struggles; McKinsey & Company; and PwC. We are also supported by th...
+
+- **Artificial Intelligence, Digital Economy and Remote Work Applications Office (UAE) | LinkedIn** (relevance: 87%)
+  https://www.linkedin.com/company/the-uae-artificial-intelligence-office
+  Overview:
+Artificial Intelligence, Digital Economy and Remote Work Applications Office.
+
+Website: https://www.ai.gov.ae/
+Crunchbase Url: N/A
+Linkedin Url: https://www.linkedin.com/company/the-uae-artificial-intelligence-office
+
+Industry:
+IT Services and IT Consulting
+
+Company size:
+11-50 employees
+3...
+
+- **Akin Akingbade - Forty Impressions Management Consultancy L.L.C. | LinkedIn** (relevance: 85%)
+  https://www.linkedin.com/in/akin-akingbade/
+  Akin Akingbade
+Forty Impressions Management Consultancy L.L.C.
+Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates
+500 connections, 722 followers
+
+
+About
+Technology leader with a proven record of driving enterprise-wide digital transformation,…
+
+
+Experience
+N/A
+
+
+Education
+N/A
+
+- **Sohail Rashid - CEO @ Dubai Technologies | MBA** (relevance: 77%)
+  https://www.linkedin.com/in/sohail-rashid-60973b2/
+  Sohail Rashid
+CEO @ Dubai Technologies | MBA
+San Francisco Bay Area
+500 connections, 1046 followers
+
+
+About
+CEO @ Dubai Technologies Advisor @ Dubai Technologies | Strategy MaaS and…
+
+
+Experience
+N/A
+
+
+Education
+N/A
+
+### Search 2: PMO / Technology Leadership
+## Answer
+
+Abdulrahman Almuhana is a leading PMO executive in Saudi Arabia, recognized for AI-driven governance. He holds the position of Executive Director – PMO at NWC. His expertise spans large-scale enterprise transformation and strategic project management.
+
+---
+
+## Sources
+
+- **PMO Director Jobs in the Middle East (Feb 2026) - Bayt.com** (relevance: 66%)
+  https://www.bayt.com/en/international/jobs/pmo-director-jobs/
+  Summary: An opportunity to lead PMO operations for a premier industrial development project in Saudi Arabia's Western Region, delivering large-scale
+
+- **PMO Director Jobs in Dubai - 48 Vacancies Feb 2026 - Naukrigulf** (relevance: 60%)
+  https://www.naukrigulf.com/pmo-director-jobs-in-dubai
+  PMO Director Jobs in Dubai - Explore PMO Director Vacancies in Dubai in top companies in UAE, Qatar, Oman & Bahrain.
+
+- **Director of PMO (Federal Technology) (m/f/d) - Halian** (relevance: 59%)
+  https://www.halian.com/jobs/director-of-pmo-federal-technology-238613
+  ## Director of PMO (Federal Technology) (m/f/d). ##### Director of PMO (Federal Technology) in Abu Dhabi, United Arab Emirates. * **Experience:** Proven track record leading **Federal Government** technology projects in the Middle East. * **Project Scale:** Must have successfully managed/delivered p...
+
+- **Abdulrahman Almuhana: AI-Powered PMO Governance Expert** (relevance: 50%)
+  https://www.linkedin.com/posts/ai-mena-network_abdulrahmanalmuhana-executiveleadership-activity-7415048519423803403-Dr4s
+  Abdulrahman Almuhana is an accomplished executive leader in capital development, PMO governance, and enterprise transformation, driving large-scale, data-informed decision-making across Saudi Arabia’s most strategic institutions. As Executive Director – PMO at NWC, he leads the design and execution ...
+
+- **‏Amit Bhagat, PMP®, PMO-CP®‏ - ‏Digital Transformation & AI ...** (relevance: 41%)
+  https://ae.linkedin.com/in/amitbhagatpmp
+  Amit Bhagat, PMO-CP®, PMP®
+Relaam
+Dubai, United Arab Emirates
+500 connections, 4755 followers
+
+
+About
+Results-oriented PMO and Project Manager with over 19 years of success driving complex…
+
+
+Experience
+N/A
+
+
+Education
+UCAM Universidad Catlica San Antonio de Murcia
+N/A
+2024-10 - 2025-10
+None
+
+- **Artificial Intelligence Manager Jobs in the Middle East - Bayt.com** (relevance: 40%)
+  https://www.bayt.com/en/international/jobs/artificial-intelligence-manager-jobs/
+  Summary: Elevate your career as a Principal Consultant and Technical Lead in Artificial Intelligence, where your expertise will shape the future of technology.
+
+- **Head of Pmo Jobs (with Salaries) - Indeed** (relevance: 35%)
+  https://ae.indeed.com/q-head-of-pmo-jobs.html
+  Discover 10 Head of Pmo job opportunities on Indeed.com. Apply today to advance your career with top employers.
+
+- **Dubai Jobs Careers & Vacancies. UAE Saudi Oman Bahrain Qatar ...** (relevance: 23%)
+  https://www.facebook.com/groups/dubai4ever/
+  Jobs in United Arab Emirates (Dubai, Abu Dhabi, Sharjah, Ajman, Fujairah, Ras Al Khaimah, Umm Al Quwain, Al Ain), Saudi Arabia (Riyadh, Jeddah, Makkah,
+
+- **MEED Projects Awards 2026 in association with Mashreq** (relevance: 21%)
+  https://events.meed.com/event/meedprojectsawards/
+  Recognising the best engineering industries throughout the Middle East and North Africa (MENA) region, this prestigious awards ceremony honors the best and brightest projects and professionals in the sector, with a focus on innovation, sustainability, and overall impact on society. Abdallah is a qua...
+
+- **Minister of Foreign Affairs - Briefing book** (relevance: 2%)
+  https://international.canada.ca/en/global-affairs/corporate/transparency/briefing-documents/briefing-books/2021-01-foreign-affairs
+  [REDACTED] Canada – to take on different leadership roles in different domains through the creation of flexible and ad hoc coalitions to address pressing issues including the movement of stranded travellers, supply chains, and support to the humanitarian and health programming of international insti...
+
+### Search 3: HealthTech / FinTech Executives
+## Answer
+
+Several job openings exist for VP, Director, and executive roles in HealthTech, FinTech, and Digital Health in the UAE, Saudi Arabia, Qatar, and other GCC countries for 2026. Key positions include Technology Director, Head of Digital Health, and Head of Fintech. Apply now to secure these roles.
+
+---
+
+## Sources
+
+- **Technology Director Jobs in the Middle East (Mar 2026) - Bayt.com** (relevance: 100%)
+  https://www.bayt.com/en/international/jobs/technology-director-jobs/
+  Apply now to over 31190 Technology Director jobs in Middle East and Gulf and make your job hunting simpler. Find the latest Technology Director job
+
+- **25+ Head of Digital Health Jobs, Employment 25 February 2026** (relevance: 100%)
+  https://ae.indeed.com/q-head-of-digital-health-jobs.html
+  Discover 44 Head of Digital Health job opportunities on Indeed.com. Apply today to advance your career with top employers.
+
+- **Dubai Jobs Careers & Vacancies. UAE Saudi Oman Bahrain Qatar ...** (relevance: 100%)
+  https://www.facebook.com/groups/dubai4ever/
+  Jobs in United Arab Emirates (Dubai, Abu Dhabi, Sharjah, Ajman, Fujairah, Ras Al Khaimah, Umm Al Quwain, Al Ain), Saudi Arabia (Riyadh, Jeddah, Makkah, Madinah
+
+- **50+ Head of Fintech Jobs, Employment 14 February 2026 - Indeed** (relevance: 100%)
+  https://ae.indeed.com/q-head-of-fintech-jobs.html
+  Discover 58 Head of Fintech job opportunities on Indeed.com. Apply today to advance your career with top employers.
+
+- **GCC Jobs in the Middle East (Mar 2026) - Bayt.com** (relevance: 100%)
+  https://www.bayt.com/en/international/jobs/gcc-jobs/
+  Apply now to over 2130 GCC jobs in Middle East and Gulf and make your job hunting simpler. Find the latest GCC job vacancies and employment opportunities in
+
+- **Job Categories Digital Marketing Specialist - Jobb.ae** (relevance: 88%)
+  https://jobb.ae/job-category/digital-marketing-specialist/
+  Apply directly to employers across Dubai, Riyadh, Doha, Muscat, Kuwait City, Manama and more. Stay updated with the latest Gulf job opportunities.
+
+- **[XLS] Centers - All PMI Certification** (relevance: 26%)
+  https://www.pmi.org/update-center/-/media/pmi/documents/public/excel/microsites/update-center/pearson-vue-test-centers-as-of-april-2019.xlsx?la=en
+  Abu Dhabi, U.A.E, No State/Prov, United Arab Emirates, 42911, 00971 267 ... King Abd Allah Rd, Al-Wurud Area Riyadh, Kingdom of Saudi Arabia P.O. Box 93591
+
+- **Latest GCC Business News & Updates | GCC Business Watch** (relevance: 2%)
+  https://gccbusinesswatch.com/
+  Dubai Integrated Economic Zones Authority Reports Strong Growth in H1 2024, Strengthening Dubai’s Role as Global Investment Hub. GCC Secretary General Highlights Environmental Protection as Key Focus in Regional Cooperation. The Abu Dhabi Chamber of Commerce and Industry has signed a cooperation agr...
+
+- **Inside the Fashion Opportunity in Dubai | BoF** (relevance: 0%)
+  https://www.businessoffashion.com/reports/global-markets/inside-the-fashion-opportunity-in-dubai-luxury-apparel-consumer-research-paper-bof-insights-dubai-design-district-d3/
+  [Skip to main content](https://www.businessoffashion.com/reports/global-markets/inside-the-fashion-opportunity-in-dubai-luxury-apparel-consumer-research-paper-bof-insights-dubai-design-district-d3/#main). It’s a metropolitan city, so it makes sense given the fashion offering represented in Dubai, th...
+
+- **Worldwide Contacts | Ethiopian Airlines Republic of the Congo | CG** (relevance: 0%)
+  https://www.ethiopianairlines.com/cg/services/help-and-contact/worldwide-contacts
+  Ethiopian Worldwide Contacts is a global network that connects individuals, businesses, and organizations with Ethiopian roots or interests, facilitating
+
+---
+
