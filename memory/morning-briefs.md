@@ -220,3 +220,57 @@ Require stack:
 
 Node.js v20.19.4
 
+=== Morning Brief - 2026-03-01 06:00 AM ===
+
+## Job Radar (from Tavily)
+## Answer
+
+The VP Director PMO for digital transformation in healthcare in Dubai, UAE, is a sought-after role for 2026. Opportunities exist for senior leadership in digital healthcare initiatives. Key positions are available in technology and PMO sectors.
+
+---
+
+## Sources
+
+- **PMO Director Jobs in the Middle East (Feb 2026) - Bayt.com** (relevance: 100%)
+  https://www.bayt.com/en/international/jobs/pmo-director-jobs/
+  Apply now to over 460 PMO Director jobs in Middle East and Gulf and make your job hunting simpler. Find the latest PMO Director job vacancies and
+
+- **Digital healthcare transformation goes forward in the UAE** (relevance: 100%)
+  https://m.mobihealthnews.com/video/digital-healthcare-transformation-goes-forward-uae
+  The United Arab Emirates' health systems have progressed in digital transformation to create better patient outcomes. Mohammad Al Redha, MD, director of
+
+- **25+ Senior Director Digital Transformation Jobs, Employment in ...** (relevance: 100%)
+  https://ae.indeed.com/q-senior-director-digital-transformation-l-dubai-jobs.html
+  Discover 45 Senior Director Digital Transformation job opportunities in Dubai on Indeed.com. Apply today to advance your career with top
+
+- **Middle East Healthcare Transformation Driven by Leadership** (relevance: 100%)
+  https://www.linkedin.com/posts/kamakshi-gupta-a9254013_the-middle-east-continues-to-advance-as-a-activity-7426529295029710848-IXJ1
+  As of February 8, 2026, Ali Bin Ali Medical (ABAM), in strategic collaboration with the Ministry of Public Health (MoPH), has officially
+
+- **50+ VP Technology Jobs, Employment 20 February 2026 - Indeed** (relevance: 100%)
+  https://ae.indeed.com/q-vp-technology-jobs.html
+  vp technology jobs ; Director, Information Technology - PMO. Atlantis Dubai ; Chief Technology Officer. Akarat.com ; Network Security Engineer. Ceenex Global LLC.
+## Gmail - New Opportunities
+node:internal/modules/cjs/loader:1215
+  throw err;
+  ^
+
+Error: Cannot find module 'googleapis'
+Require stack:
+- /root/.openclaw/workspace/scripts/gmail-scan.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1212:15)
+    at Module._load (node:internal/modules/cjs/loader:1043:27)
+    at Module.require (node:internal/modules/cjs/loader:1298:19)
+    at require (node:internal/modules/helpers:182:18)
+    at Object.<anonymous> (/root/.openclaw/workspace/scripts/gmail-scan.js:1:20)
+    at Module._compile (node:internal/modules/cjs/loader:1529:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+    at Module.load (node:internal/modules/cjs/loader:1275:32)
+    at Module._load (node:internal/modules/cjs/loader:1096:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:164:12) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [ '/root/.openclaw/workspace/scripts/gmail-scan.js' ]
+}
+
+Node.js v20.19.4
+
