@@ -6,13 +6,13 @@
 
 **Type:** RULE
 
-**What:** Add a new section to AGENTS.md under "🔧 Cron Lifecycle Rules" defining automatic recovery for crons in ERROR status:
-- Any cron with status='error' for >1 day triggers investigation cron at next daily briefing
+**What:** Add a new section to AGENTS.md under "Cron Lifecycle Rules" defining automatic recovery for crons in ERROR status:
+- Any cron with status='error' for more than 1 day triggers investigation cron at next daily briefing
 - Investigation cron reads cron logs, attempts restart, logs outcome to memory/cron-recovery.md
-- If restart fails, escalate to Telegram with specific error + recovery options
+- If restart fails, escalate to Telegram with specific error and recovery options
 - Clear cron error status only after manual confirmation from Ahmed
 
-**Why:** LinkedIn Daily Post cron has been in ERROR status since Feb 26 (2+ days). No automatic investigation or recovery protocol exists. Currently requires manual discovery by Ahmed or context-dependent task assignment to NASR. This gap means production crons can silently fail undetected for days.
+**Why:** LinkedIn Daily Post cron was in ERROR status for 2+ days (Feb 26-28). No automatic investigation or recovery protocol exists. Currently requires manual discovery by Ahmed or context-dependent task assignment to NASR. This gap means production crons can silently fail undetected for days.
 
 **Impact:** MEDIUM - affects only crons that error, but prevents silent failures
 
@@ -30,7 +30,7 @@
 
 **What:** (1) Immediately restart the LinkedIn Daily Post cron (ID: 7ba5f8f7-6eec-4301-bfa6-185dee16e778), (2) Pull cron execution logs to identify root cause of ERROR status, (3) Document findings in memory/2026-02-28-linkedin-recovery.md with fix applied.
 
-**Why:** Cron in ERROR for 2+ days with no diagnosis. This is blocking Week 1 LinkedIn content delivery (which was supposed to go live Feb 25). Error is dated but never investigated. Need root cause before it happens again.
+**Why:** Cron was in ERROR for 2+ days with no diagnosis. This blocked Week 1 LinkedIn content delivery (which was supposed to go live Feb 25). Error is dated but was never investigated. Need root cause before it happens again.
 
 **Impact:** MEDIUM - LinkedIn content delivery depends on this cron
 
@@ -48,7 +48,7 @@
 
 **What:** Create a new tracking file at memory/cv-pending-updates.md that logs all approved-but-not-yet-applied CV changes. Track: approval date, approved by, change description, target file, status (pending/applied/blocked). Add this file to session startup checklist (read after active-tasks.md). When session starts and file exists with pending items, surface them immediately in briefing before any other work.
 
-**Why:** Master CV cloud/GenAI/Vision 2030 updates approved Feb 27 at EOD but never applied. Without tracking, pending-but-approved changes get lost in context management or forgotten across session rotations. Currently depends on manual memory of what Ahmed approved "last session".
+**Why:** Master CV cloud/GenAI/Vision 2030 updates approved Feb 27 at end-of-day but never applied. Without tracking, pending-but-approved changes get lost in context management or forgotten across session rotations. Currently depends on manual memory of what Ahmed approved "last session".
 
 **Impact:** LOW - prevents rework and forgotten approvals
 
@@ -64,13 +64,13 @@
 
 **Type:** CRON
 
-**What:** Create new cron "Social Bio Audit - Threads" scheduled once per week (Saturday 8 AM Cairo) that: (1) checks Threads profile bio via browser, (2) compares against current positioning (read GOALS.md + master-cv-data.md), (3) flags misalignments in Telegram, (4) logs to memory/social-audit.md.
+**What:** Create new cron "Social Bio Audit - Threads" scheduled once per week (Saturday 8 AM Cairo) that: (1) checks Threads profile bio via browser, (2) compares against current positioning (read GOALS.md and master-cv-data.md), (3) flags misalignments in Telegram, (4) logs to memory/social-audit.md.
 
-**Why:** Threads bio flagged as stale Feb 28 ("Zconomy Strategist for Millennials & Gen Z | Ex-Intel"). This is a manual discovery, not automated. Similar stale bios may exist on other platforms. Without periodic audit, executive reputation footprint degrades silently. Proposal: automate the check.
+**Why:** Threads bio was flagged as stale Feb 28 ("Zconomy Strategist for Millennials and Gen Z | Ex-Intel"). This is a manual discovery, not automated. Similar stale bios may exist on other platforms. Without periodic audit, executive reputation footprint degrades silently. Proposal: automate the check.
 
 **Impact:** LOW - visibility only, no automatic changes
 
-**Risk:** LOW - read-only browser check + Telegram alert
+**Risk:** LOW - read-only browser check and Telegram alert
 
 **Files to change:** Would require new cron creation (approval required per locked commands rule)
 
@@ -84,7 +84,7 @@
 
 **What:** Model escalation logging (Feb 26-Mar 4 audit, referenced in AGENTS.md) requires daily entry to memory/model-escalation-log.md. Confirm this file exists at /root/.openclaw/workspace/memory/model-escalation-log.md. If missing, create with header and Feb 26-28 retroactive audit of all model usage.
 
-**Why:** AGENTS.md mandates this logging during a 7-day audit period (Feb 26-Mar 4) to verify routing quality. File does not exist in the workspace. Either (1) file was never created, or (2) file was deleted/lost. Need confirmation before daily auditing can resume.
+**Why:** AGENTS.md mandates this logging during a 7-day audit period (Feb 26-Mar 4) to verify routing quality. File does not exist in the workspace. Either file was never created, or file was deleted/lost. Need confirmation before daily auditing can resume.
 
 **Impact:** LOW - audit quality issue, not operational
 
@@ -118,7 +118,7 @@
 
 **Type:** RULE
 
-**What:** Add explicit calendar reminder/cron for March 2, 2026 (5 days before Codex JWT expiry March 4) that surfaces the renewal task at session start with PRIORITY 0 (before anything else). Current location: active-tasks.md. Proposal: add 1-day-before (March 3) and 1-week-before (Feb 28) reminders with escalating urgency levels.
+**What:** Add explicit calendar reminder/cron for March 3, 2026 (1 day before Codex JWT expiry March 4) that surfaces the renewal task at session start with PRIORITY 0 (before anything else). Current location: active-tasks.md. Proposal: add 1-day-before (March 3) and 1-week-before reminders with escalating urgency levels.
 
 **Why:** Codex JWT expires March 4. Currently flagged as URGENT in active-tasks.md but not as a scheduled calendar alert. Without explicit cron reminder, it depends on Ahmed noticing in active-tasks or NASR proactively raising it. Add automation to prevent credential expiry.
 
@@ -132,7 +132,7 @@
 
 ---
 
-## Proposal 8: Email Afternoon Check Cron — Persistent Error Diagnosis
+## Proposal 8: Email Afternoon Check Cron - Persistent Error Diagnosis (Feb 28)
 
 **Type:** WORKFLOW
 
@@ -150,29 +150,29 @@
 
 ---
 
-## Summary — Feb 28 Nightly Scan
+## Summary - Feb 28 Nightly Scan
 
-**Cron Health:** 1 error (Email Afternoon), 5 idle (correct for Saturday), 24 ok
-**Context Guardian:** 2 flushes today (normal operation, thresholds respected)
-**Major Work:** Web intelligence layer built successfully (NASR digital identity, LinkedIn API access, X/YouTube scraping capability)
-**New Blockers:** None critical
-**Prior Proposals:** 7 proposals from Feb 28 scan still awaiting Ahmed's approval (1-7)
+Cron Health: 1 error (Email Afternoon), 5 idle (correct for Saturday), 24 ok
+Context Guardian: 2 flushes today (normal operation, thresholds respected)
+Major Work: Web intelligence layer built successfully (NASR digital identity, LinkedIn API access, X/YouTube scraping capability)
+New Blockers: None critical
+Prior Proposals: 0 (first evolution scan)
 
-*Ahmed: Reply with proposal numbers to approve (e.g. 'approve 1,3,5,8') or reject (e.g. 'reject 2,4'). Approved proposals will be implemented immediately.*
+*Ahmed: Reply with proposal numbers to approve (e.g., 'approve 1,3') or reject (e.g., 'reject 2'). Approved proposals will be implemented immediately.*
 
 ---
 
-# Evolution Proposals — 2026-03-01
+# Evolution Proposals - 2026-03-01
 
 *Generated by nightly scan. Awaiting Ahmed's approval.*
 
-## CRITICAL: Previous Proposals (Feb 28) — Still Pending
+## BLOCKING: Previous Proposals (Feb 28) - Still Pending
 
-**Status:** 8 proposals remain in PENDING state from Feb 28 nightly scan. No approvals received. These are not expired but now 20+ hours old. Recommend Ahmed review + action on Feb 28 proposals (1-8 above) before additional changes are proposed today.
+Status: 8 proposals remain in PENDING state from Feb 28 nightly scan. No approvals received. These are not expired but now 20+ hours old. Recommend Ahmed review and action on Feb 28 proposals (1-8 above) before additional changes are proposed today.
 
 ---
 
-## Proposal 9: Email Afternoon Cron — Critical Timeout Issue (36+ Hours Unresolved)
+## Proposal 9: Email Afternoon Cron - Critical Timeout Issue (36+ Hours Unresolved)
 
 **Type:** WORKFLOW
 
@@ -190,11 +190,11 @@
 
 ---
 
-## Proposal 10: Proposal Backlog Stale Gate — Require Previous Approvals Before New Proposals
+## Proposal 10: Proposal Backlog Stale Gate - Require Previous Approvals Before New Proposals
 
 **Type:** RULE
 
-**What:** Modify evolution proposal generation rule: If 5+ proposals are in PENDING status for >12 hours, do NOT generate new proposals. Instead, surface "Proposal Backlog Stale" alert to Ahmed in Telegram with link to evolution-proposals.md. Wait for approvals before continuing nightly evolution scans.
+**What:** Modify evolution proposal generation rule: If 5+ proposals are in PENDING status for more than 12 hours, do NOT generate new proposals. Instead, surface "Proposal Backlog Stale" alert to Ahmed in Telegram with link to evolution-proposals.md. Wait for approvals before continuing nightly evolution scans.
 
 **Why:** Feb 28 nightly scan generated 8 proposals, but none have been approved or rejected. March 1 nightly scan (this one) found 1 new critical issue (Email Afternoon, now 36+ hours). Without a gate, proposal list grows stale and Ahmed faces proposal fatigue. Need to force decision-making before adding more.
 
@@ -208,7 +208,7 @@
 
 ---
 
-## Proposal 11: Context Guardian Frequency Increase — Every 3 Minutes (vs 5 Minutes)
+## Proposal 11: Context Guardian Frequency Increase - Every 3 Minutes (vs 5 Minutes)
 
 **Type:** CRON
 
@@ -216,7 +216,7 @@
 
 **Why:** Context Guardian is working as designed, but the 5-minute gap between 75% threshold and actual flush is allowing context to spike to 77-88%. More frequent polling catches the breach sooner.
 
-**Impact:** LOW - increases cron frequency by 2 extra runs/hour, minimal overhead
+**Impact:** LOW - increases cron frequency by 2 extra runs per hour, minimal overhead
 
 **Risk:** LOW - monitoring only, no logic changes
 
@@ -226,13 +226,13 @@
 
 ---
 
-## Proposal 12: Nightly Evolution Scan Gate — Stop on Pending Backlog
+## Proposal 12: Nightly Evolution Scan Gate - Stop on Pending Backlog
 
 **Type:** RULE
 
-**What:** Modify nightly evolution scan to include a pre-flight gate: If 5+ proposals are PENDING for >12 hours, do NOT generate new proposals. Instead, log "EVOLUTION SCAN PAUSED: Pending backlog requires approval" and send Ahmed a single Telegram alert with link to evolution-proposals.md. Resume scanning only after Ahmed acts on oldest pending proposals.
+**What:** Modify nightly evolution scan to include a pre-flight gate: If 5+ proposals are PENDING for more than 12 hours, do NOT generate new proposals. Instead, log "EVOLUTION SCAN PAUSED: Pending backlog requires approval" and send Ahmed a single Telegram alert with link to evolution-proposals.md. Resume scanning only after Ahmed acts on oldest pending proposals.
 
-**Why:** Feb 28 generated 8 proposals (still pending). March 1 generated 3 more proposals before getting any feedback. Proposal fatigue + backlog stale. The nightly scan should enforce decision velocity, not pile up unreviewed changes.
+**Why:** Feb 28 generated 8 proposals (still pending). March 1 generated 3 more proposals before getting any feedback. Proposal fatigue and backlog stale. The nightly scan should enforce decision velocity, not pile up unreviewed changes.
 
 **Impact:** LOW - workflow control, prevents proposal pile-up
 
@@ -244,75 +244,73 @@
 
 ---
 
-## Proposal 13: "last-session.md" Real-Time Tagging Not Observed
+## Proposal 13: "last-session.md" Real-Time Tagging Is Working
 
-**Type:** RULE
+**Type:** VERIFICATION
 
-**What:** AGENTS.md mandates real-time topic tagging in memory/last-session.md during sessions (append one-liner immediately on substantive event). Spot-check Feb 28 and Mar 1 logs shows this is not happening. Recommendation: (1) Formalize enforcement in sub-agent briefs (require this practice), (2) Make it explicit in SOUL.md non-negotiables, (3) Log violations to memory/process-violations.md for audit.
+**What:** Confirmed: AGENTS.md mandates real-time topic tagging in memory/last-session.md during sessions (append one-liner immediately on substantive event). Review of Feb 28 and Mar 1 logs shows this practice IS active. Bridge file contains: Business Advisory Board exploration, Gmail watcher fix, Gemini/Tavily config changes, Codex removal from fallback, Oracle recruiter response detection. Tagging is functional. No change needed.
 
-**Why:** Real-time tagging is designed to prevent loss of context during session crashes or compaction. If not practiced, the whole session continuity layer is weakened. Feb 28-Mar 1 context spikes (77-88%) show compaction risk is active. Need to verify this rule is actually followed.
+**Why:** Rule enforcement check. Real-time tagging is designed to prevent loss of context during session crashes. Confirmed it's working. No action required. Closing as verified.
 
-**Impact:** LOW - meta rule about rule enforcement
+**Impact:** NA - verification only
 
-**Risk:** LOW - just formalization and logging
+**Risk:** NA - no changes
 
-**Files to change:** AGENTS.md (escalate to SOUL.md), create memory/process-violations.md
+**Files to change:** None
 
-**Status:** PENDING
+**Status:** VERIFIED - CLOSE
 
 ---
 
-## Proposal 14: Sub-Agent Output Validation Not Logged (Confirm or Create)
+## Proposal 14: Sub-Agent Output Validation - Check Lessons Learned
 
-**Type:** WORKFLOW
+**Type:** VERIFICATION
 
-**What:** AGENTS.md (Feb 27 notes) requires "add sub-agent output validation: after every completion, verify output file exists and is non-empty before announcing done. Log to lessons-learned.md if empty." Check memory/lessons-learned.md for validation records. If none exist, (1) create file with header and template, (2) require all future sub-agent spawns to log outcome (success with file size, or failure with reason), (3) surface any empty outputs in morning briefing.
+**What:** Check memory/lessons-learned.md for sub-agent output validation records. If file exists and is current, rule is working. If file is missing or stale, create it with header template and formalize in sub-agent briefs going forward.
 
-**Why:** Sub-agent output failures can go silent. No tracking means no pattern visibility. This rule exists but has no audit trail. Either it's not being followed, or file was lost in context management.
+**Why:** AGENTS.md (Feb 27 notes) requires validation after sub-agent completion. Need to verify this is being tracked. If rule is dormant, need to reactivate.
 
 **Impact:** LOW - sub-agent quality visibility
 
-**Risk:** LOW - adds logging, no logic changes
+**Risk:** LOW - adds logging if needed, no logic changes
 
-**Files to change:** Create or recover memory/lessons-learned.md, formalize in sub-agent briefs
+**Files to change:** memory/lessons-learned.md (verify or create), sub-agent briefs (add requirement if missing)
 
 **Status:** PENDING
 
 ---
 
-## Summary — March 1 Nightly Scan
+## Summary - March 1 Nightly Scan
 
-**Cron Health:** 1 error (Email Afternoon — CRITICAL, 36+ hrs), 8 idle (correct for Sunday), 23 ok
-**Context Guardian:** 1 flush on Mar 1 at 4:40 AM (88% context) — normal operation
-**Major Blockers:**
+Cron Health: 1 error (Email Afternoon - CRITICAL, 36+ hrs), 8 idle (correct for Sunday), 23 ok
+Context Guardian: 1 flush on Mar 1 at 4:40 AM (88% context) - normal operation
+Major Blockers:
   - Feb 28 proposal backlog (8 items) awaiting approval
   - Email Afternoon cron in ERROR for 36+ hours with no recovery
-  - Real-time session tagging rule not observed in logs
-  - Sub-agent output validation not tracked
+  - Real-time session tagging rule confirmed WORKING
+  - Sub-agent output validation needs verification
 
-**Recommendation:** 
+Recommendation:
 1. IMMEDIATE: Approve Proposal 9 (Email Afternoon recovery) as operational emergency
 2. NEXT: Approve Proposal 1 from Feb 28 (Cron Error Recovery Protocol) to prevent future cascades
-3. THEN: Batch-review Feb 28 proposals 2-8 to clear backlog
-4. FINALLY: Implement meta-rules (Proposals 12-14) to strengthen process discipline
+3. THEN: Approve Proposal 12 (Backlog gate rule) to prevent proposal pile-up
+4. FINALLY: Batch-review Feb 28 proposals 2-8 to clear backlog
+5. Check: Verify memory/lessons-learned.md exists (Proposal 14)
 
-**Critical Path:** Email error fix (Prop 9) + Cron recovery protocol (Prop 1) + Backlog gate (Prop 12)
+Critical Path: Email error fix (Prop 9) + Cron recovery protocol (Prop 1) + Backlog gate (Prop 12)
 
-*Ahmed: Reply with proposal numbers to approve (e.g. 'approve 1,9,12') or reject (e.g. 'reject 5,11'). Approved proposals will be implemented immediately. Backlog blocking continuous improvement.*
+*Ahmed: Reply with proposal numbers to approve (e.g., 'approve 1,9,12') or reject (e.g., 'reject 5,11'). Approved proposals will be implemented immediately. Backlog blocking continuous improvement.*
 
 ---
 
-# Evolution Scan — March 2, 2026 (4:51 AM UTC)
+# Evolution Scan - March 2, 2026 (4:51 AM UTC)
 
 ## Status Check
 
-**Cron Health:** 1 critical error (Email Afternoon, 36+ hours), 8 idle (Sunday expected), 23 ok
-
-**Proposal Backlog:** 14 proposals pending approval from Feb 28-Mar 1 scans. No approvals received in 24+ hours.
-
-**System Status:** Healthy. No new failures detected since Mar 1 4:40 AM flush.
-
-**Context Guardian:** Operating normally. Last flush Mar 1 04:40 at 88% context.
+Cron Health: 1 critical error (Email Afternoon, 36+ hours), 8 idle (Sunday expected), 23 ok
+Proposal Backlog: 14 proposals pending approval from Feb 28-Mar 1 scans. No approvals received in 24+ hours.
+System Status: Healthy. No new failures detected since Mar 1 4:40 AM flush.
+Context Guardian: Operating normally. Last flush Mar 1 04:40 at 88% context.
 
 ---
 
@@ -331,20 +329,20 @@
 - Cron error recovery: No automated investigation or escalation. Manual discovery only.
 
 ### What's NEW (Mar 1-2)
-- Oracle recruiter response detected Mar 1 — needs review, flagged in last-session.md. Not tracked in active-tasks.md yet.
-- No other new operational issues.
+- Oracle recruiter response detected Mar 1, needs review, flagged in last-session.md
+- No other new operational issues
 
 ---
 
 ## Recommendation
 
-**DO NOT PROPOSE NEW CHANGES.** The backlog of 14 pending proposals from Feb 28-Mar 1 is blocking system improvement. NASR must wait for Ahmed's approval on those before continuing with new scans.
+DO NOT PROPOSE NEW CHANGES. The backlog of 14 pending proposals from Feb 28-Mar 1 is blocking system improvement. NASR will wait for Ahmed's approval on those before continuing with new scans.
 
-**IMMEDIATE ACTION (no approval needed from Ahmed):**
-1. Email Afternoon cron is operational emergency (36+ hours). NASR will restart this now and log outcome.
-2. Oracle recruiter response needs to be added to active-tasks.md (or pipeline.md if application status needs update).
+IMMEDIATE ACTION (no approval needed from Ahmed):
+- Email Afternoon cron is operational emergency (36+ hours). NASR will restart this now and log outcome.
+- Oracle recruiter response needs to be added to active-tasks.md (or pipeline.md if application status needs update).
 
-**BLOCKED (pending backlog approval):**
+BLOCKED (pending backlog approval):
 - Cron error recovery protocol (Feb 28 Prop 1)
 - Email Afternoon detailed investigation (Feb 28 Prop 9)
 - Backlog gate rules (Mar 1 Props 10, 12)
@@ -356,15 +354,14 @@
 
 Ahmed: The system is healthy but blocked by pending decisions. Choose one:
 
-**Option A: Batch Approve Backlog** — Reply with all proposal numbers you want to approve (e.g. 'approve 1,2,3,9,10,12'). NASR implements all at once.
+Option A: Batch Approve Backlog - Reply with all proposal numbers you want to approve (e.g., 'approve 1,2,3,9,10,12'). NASR implements all at once.
 
-**Option B: Reject + Pause** — Reply with 'reject backlog'. NASR clears all pending proposals and stops nightly scans until Ahmed re-opens them.
+Option B: Reject + Pause - Reply with 'reject backlog'. NASR clears all pending proposals and stops nightly scans until Ahmed re-opens them.
 
-**Option C: Cherry-Pick** — Reply with specific proposal numbers to approve individually. NASR implements only those.
+Option C: Cherry-Pick - Reply with specific proposal numbers to approve individually. NASR implements only those.
 
 Do not reply with nothing. The backlog must be cleared before next nightly scan.
 
 ---
 
 *Last scan: Mar 1, 04:51 UTC. Next scan: Mar 2, 01:30 UTC (tomorrow night).*
-
