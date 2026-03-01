@@ -90,18 +90,27 @@ Rule: Sub-agents write to output files only. NASR merges into shared memory. Nev
 
 ## Model Registry — Clean Lineup
 
-*MiniMax pricing updated Feb 2026 based on Ahmed's account*
+*Updated Mar 1, 2026. All three primary providers are flat-fee subscriptions, not per-token.*
 
-| Priority | Model | Alias | Cost | Context | Best For |
-|----------|-------|-------|------|---------|----------|
-| 1st | MiniMax M2.5-highspeed | minimax-m2.5 | $40/mo (300 prompts/5hrs) | 200K | Daily driver — flat rate, ~100 TPS |
-| 2nd | Kimi K2.5 | kimi | $0.10/$0.60/$3.00 per 1M | 256K | Long context, cheap caching |
-| 3rd | Claude Haiku 4.5 | haiku | $1/$5 per 1M | 200K | Fast, cheap, vision capable |
-| 4th | Claude Sonnet 4.6 | sonnet46 | $3/$15 per 1M | 200K | Mid-tier reasoning, drafting |
-| 5th | Claude Opus 4.6 | opus46 | $5/$25 per 1M | 200K | Heavy strategy, deep reasoning |
+| Priority | Model | Alias | Plan | Cost/mo | Context | Limit | Best For |
+|----------|-------|-------|------|---------|---------|-------|----------|
+| 1st | MiniMax M2.5-highspeed | minimax-m2.5 | Coding Plus | $40 | 200K | 300 prompts/5hrs | Default: crons, heartbeats, quick tasks |
+| 2nd | GPT-5.3-Codex | gpt53codex | ChatGPT Plus | $20 | 266K | 45-225 msgs/5hrs | Sub-agents, coding, mid-tier reasoning |
+| 3rd | Claude Sonnet 4.6 | sonnet46 | Claude Max 5x | (incl) | 200K | 5x Pro/5hrs | Drafting, research, LinkedIn content |
+| 4th | Claude Opus 4.6 | opus46 | Claude Max 5x | (incl) | 200K | 5x Pro/5hrs | Deep strategy, CV tailoring, interviews |
+| 5th | Claude Haiku 4.5 | haiku | Claude Max 5x | (incl) | 200K | 5x Pro/5hrs | Fast, vision, lightweight fallback |
+| 6th | Kimi K2.5 | kimi | API key | ~free | 256K | n/a | Long context (256K+) |
 
-*Kimi K2.5: $0.10 input (cache hit) / $0.60 input (cache miss) / $3.00 output per 1M tokens*
-*MiniMax account: Coding Plan Plus — M2.5-highspeed (~100 TPS, 3x faster than standard) — $40/mo*
+**Monthly budget: $160/mo total**
+- Claude Max 5x: $100/mo (Opus + Sonnet + Haiku, shared 5x Pro limit per 5hrs)
+- MiniMax Coding Plus: $40/mo (300 prompts/5hrs, ~100 TPS)
+- ChatGPT Plus: $20/mo (GPT-5.3-Codex, 45-225 msgs/5hrs)
+
+**Key: All limits reset every 5 hours. Spread load across providers to avoid hitting any single limit.**
+
+**Fallback chain:** MiniMax M2.5 (default) -> Claude Sonnet 4.6 -> GPT-5.3-Codex
+
+**Auth:** Claude via API key, MiniMax via OAuth, Codex via OAuth (token expires ~June 2026)
 
 ---
 
@@ -109,32 +118,29 @@ Rule: Sub-agents write to output files only. NASR merges into shared memory. Nev
 
 | Task Type | Model | Alias | Reason |
 |-----------|-------|-------|--------|
-| Infrastructure decisions, post-mortems | Opus 4.6 | opus46 | Safety-critical reasoning |
+| Infrastructure decisions, post-mortems | Opus 4.6 | opus46 | Best reasoning, safety-critical |
 | Interview prep, deep strategy | Opus 4.6 | opus46 | Best reasoning |
-| CV tailoring, LinkedIn content, research | Sonnet 4.6 | sonnet46 | Balanced cost and quality |
-| Quick formatting, lookups, simple transforms | Haiku 4.5 | haiku | Cheapest paid option, vision capable |
-| Web search, email, calendar, cron, heartbeats | MiniMax M2.5 | minimax-m2.5 | Flat rate $40/mo |
-| Long document analysis (256K+ context needed) | Kimi K2.5 | kimi | Largest context window |
+| CV tailoring, LinkedIn content | Sonnet 4.6 | sonnet46 | Quality drafting |
+| Sub-agent work, coding tasks | GPT-5.3-Codex | gpt53codex | Separate quota pool, saves Claude |
+| Quick formatting, lookups, vision | Haiku 4.5 | haiku | Fast, lightweight |
+| Crons, heartbeats, email, calendar | MiniMax M2.5 | minimax-m2.5 | Flat rate default |
+| Long document analysis (256K+) | Kimi K2.5 | kimi | Largest context window |
 
-### Cost Discipline (Non-Negotiable)
-- Default: MiniMax M2.5 (flat rate, no per-token cost)
-- Escalate to Sonnet: When task needs 150-500 tokens of reasoning
-- Escalate to Opus: When task needs 500+ tokens of reasoning OR is safety-critical
-- Use Kimi K2.5: When context exceeds 200K
-- Never use Opus for what Sonnet can handle
-- Never use Sonnet for what M2.5 can handle
+### Quota Discipline (Non-Negotiable)
+- All three providers are flat-fee. Optimization = spreading load, not saving money.
+- Default: MiniMax M2.5 (background noise, highest prompt count)
+- Sub-agents: prefer Codex (separate quota pool from Claude)
+- Claude: reserve for main session conversations and quality-critical output
+- Principle: never burn one provider's quota when another can handle it
+- Monitor: if any provider approaches 80% of 5hr limit, shift load to others
 
-### Monthly Cost Budget
-| Model | Est. Usage | Est. Cost |
-|-------|-----------|-----------|
-| M2.5 | 65-75% of tasks | $40/mo (flat) |
-| Opus | 5-10% of tasks | $0.75-$1.50/mo |
-| Sonnet | 15-20% of tasks | $1.00-$2.00/mo |
-| Haiku | 5-10% of tasks | $0.05/mo |
-| **TOTAL** | **100%** | **~$42-$44/mo** |
-
-Daily spend alert threshold: $5.00
-If exceeded → NASR alerts Ahmed and auto-downgrades Sonnet tasks to M2.5.
+### Monthly Cost Budget (Fixed)
+| Provider | Plan | Cost |
+|----------|------|------|
+| Claude Max 5x | Opus + Sonnet + Haiku | $100/mo |
+| MiniMax Coding Plus | M2.5-highspeed | $40/mo |
+| ChatGPT Plus | GPT-5.3-Codex | $20/mo |
+| **TOTAL** | | **$160/mo** |
 
 ---
 
