@@ -102,6 +102,12 @@ alerts:
     status: pending
     assigned_to: Ahmed
 
+  - type: completed
+    item: GitHub 2FA enablement
+    action: GitHub 2FA enabled
+    completed_at: 2026-03-01
+    status: done
+
   - type: follow_up
     item: Delphi follow-up message
     action: Send value-signal message to Kritika Chhabra
