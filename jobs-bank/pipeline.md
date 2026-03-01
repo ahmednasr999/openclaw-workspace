@@ -48,6 +48,7 @@
 | 37 | ☑️ | Faithful Executive (Client) | AI Strategy & Readiness Expert | GCC (KSA/UAE) | 91% | ✅ Applied | Full JD | 2026-03-01 | 2026-03-08 | [LinkedIn](https://www.linkedin.com/jobs/view/4375967216) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20AI%20Strategy%20%26%20Readiness%20Expert%20-%20Faithful%20Executive.pdf) |
 | 38 | ☑️ | Dubai Holding | Senior Manager, Strategy & Execution (B2B) | Dubai, UAE | 88-90% | ✅ Applied | Full JD | 2026-03-01 | 2026-03-08 | [LinkedIn](https://www.linkedin.com/jobs/view/4372482810) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20Senior%20Manager%20Strategy%20and%20Execution%20B2B%20-%20Dubai%20Holding.pdf) |
 | 39 | ☑️ | Legend Holding Group | IT Director | Dubai, UAE | 84-87% | ✅ Applied | Full JD | 2026-03-01 | 2026-03-08 | [LinkedIn](https://www.linkedin.com/jobs/view/4375947657) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20IT%20Director%20-%20Legend%20Holding%20Group.pdf) |
+| 40 | ☑️ | EATX | Head of IT | Dubai, UAE | 88% | ✅ Applied | Full JD | 2026-03-01 | 2026-03-08 | [LinkedIn](https://www.linkedin.com/jobs/view/4375907659) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20Head%20of%20IT%20-%20EATX.pdf) |
 
 
 ---
@@ -68,7 +69,7 @@
 
 | Company | Role | Location | Priority | JD Status | Job URL | Next Step |
 |---------|------|----------|----------|-----------|---------|-----------|
-| EATX | Head of IT | Dubai, UAE | High | Full JD | [LinkedIn](https://www.linkedin.com/jobs/view/4375907659) | 📄 CV Ready, apply now. [CV](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20Head%20of%20IT%20-%20EATX.pdf) |
+
 | Kayzin Recruitment | Head of AI-Enabled Customer Experience | Dubai, UAE | Medium | JD Needed | [LinkedIn](https://www.linkedin.com/jobs/view/4373415748) | Bank for later, review once high-priority applications are done |
 | Starlink Qatar | Products Portfolio Lead | Doha, Qatar | Low | JD Needed | [LinkedIn](https://www.linkedin.com/jobs/view/4376649232) | Bank for later, weaker direct alignment |
 | Agay Barho! | Strategy Director | Riyadh, KSA | Medium | JD Needed | [LinkedIn](https://www.linkedin.com/jobs/view/4378757511) | Bank for later, request full mandate details if revisited |
@@ -81,11 +82,11 @@
 
 | Metric | Value |
 |--------|-------|
-| Total tracked | 39 |
-| Applied | 39 |
+| Total tracked | 40 |
+| Applied | 40 |
 | CV Ready, not yet applied | 0 |
-| Radar — Needs Action | 6 |
-| Radar (no CV yet) | 6 |
+| Radar — Needs Action | 5 |
+| Radar (no CV yet) | 5 |
 | Active interviews | 1 (Delphi — awaiting feedback) |
 | Avg ATS score (all CVs) | 89% |
 | Follow-up policy | No proactive follow-ups — wait for recruiter response |
