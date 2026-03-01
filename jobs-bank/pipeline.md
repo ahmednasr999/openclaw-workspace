@@ -69,7 +69,6 @@
 
 | Company | Role | Location | Priority | JD Status | Job URL | Next Step |
 |---------|------|----------|----------|-----------|---------|-----------|
-
 | Kayzin Recruitment | Head of AI-Enabled Customer Experience | Dubai, UAE | Medium | JD Needed | [LinkedIn](https://www.linkedin.com/jobs/view/4373415748) | Bank for later, review once high-priority applications are done |
 | Starlink Qatar | Products Portfolio Lead | Doha, Qatar | Low | JD Needed | [LinkedIn](https://www.linkedin.com/jobs/view/4376649232) | Bank for later, weaker direct alignment |
 | Agay Barho! | Strategy Director | Riyadh, KSA | Medium | JD Needed | [LinkedIn](https://www.linkedin.com/jobs/view/4378757511) | Bank for later, request full mandate details if revisited |
