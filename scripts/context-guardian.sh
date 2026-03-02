@@ -11,6 +11,7 @@
 # It must work even when all LLM models are down.
 
 THRESHOLD=75
+ALERT_THRESHOLD=80
 WORKSPACE="/root/.openclaw/workspace"
 MEMORY="$WORKSPACE/memory"
 ALERT_LOCK="/tmp/nasr-context-guardian.lock"
@@ -37,17 +38,17 @@ if [ "$PCT" -lt "$THRESHOLD" ]; then
   exit 0
 fi
 
-# ── 3. Check cooldown ────────────────────────────────────────────────────────
+# ── 3. Check cooldown (alerts only) ─────────────────────────────────────────
+CAN_ALERT=1
 if [ -f "$ALERT_LOCK" ]; then
   LOCK_AGE=$(( $(date +%s) - $(stat -c%Y "$ALERT_LOCK" 2>/dev/null || echo 0) ))
   if [ "$LOCK_AGE" -lt "$LOCK_TTL" ]; then
-    echo "[$TS] Context ${PCT}% — in cooldown (${LOCK_AGE}s < ${LOCK_TTL}s), skipping" >> "$LOG"
-    exit 0
+    CAN_ALERT=0
+    echo "[$TS] Context ${PCT}% — alert cooldown (${LOCK_AGE}s < ${LOCK_TTL}s)" >> "$LOG"
   fi
 fi
 
 echo "[$TS] THRESHOLD HIT: ${PCT}% >= ${THRESHOLD}% — executing external flush" >> "$LOG"
-touch "$ALERT_LOCK"
 
 # ── 4. Write flush marker to daily log ───────────────────────────────────────
 DAILY_LOG="$MEMORY/${DATE}.md"
@@ -91,14 +92,15 @@ else
   echo "[$TS] Git push failed (commit may still be local)" >> "$LOG"
 fi
 
-# ── 6. Send Telegram alert to Ahmed ──────────────────────────────────────────
+# ── 6. Send Telegram alert to Ahmed only at higher urgency ───────────────────
 TELEGRAM_BOT_TOKEN=$(jq -r '.channels.telegram.botToken // empty' ~/.openclaw/openclaw.json 2>/dev/null)
 TELEGRAM_CHAT_ID="866838380"
 
-if [ -n "$TELEGRAM_BOT_TOKEN" ]; then
+if [ "$PCT" -ge "$ALERT_THRESHOLD" ] && [ "$CAN_ALERT" -eq 1 ] && [ -n "$TELEGRAM_BOT_TOKEN" ]; then
+  touch "$ALERT_LOCK"
   MSG="🚨 Context Guardian — Auto-Flush
 
-Session context hit ${PCT}% (limit: 75%).
+Session context hit ${PCT}% (alert threshold: ${ALERT_THRESHOLD}%, flush threshold: ${THRESHOLD}%).
 
 I've saved memory state and committed to git. Your session needs a fresh start.
 
@@ -113,8 +115,10 @@ Time: $CAIRO Cairo"
     >> /dev/null 2>&1
 
   echo "[$TS] Telegram alert sent" >> "$LOG"
+elif [ "$PCT" -lt "$ALERT_THRESHOLD" ]; then
+  echo "[$TS] Flush executed at ${PCT}% without Telegram alert (<${ALERT_THRESHOLD}%)" >> "$LOG"
 else
-  echo "[$TS] WARNING: No Telegram bot token found — alert not sent" >> "$LOG"
+  echo "[$TS] Telegram alert skipped (cooldown or missing token)" >> "$LOG"
 fi
 
 echo "[$TS] Guardian flush complete" >> "$LOG"

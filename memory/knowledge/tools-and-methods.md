@@ -389,3 +389,48 @@ Tree-of-Thought separates **generation from evaluation**. Most prompts collapse 
 - Reduces editing time by shifting first-pass review to the agent
 
 **Tags:** #prompting #self-refine #content-quality #linkedin #cv #verification #ai-techniques
+
+---
+
+## Google Search Precision Stack: Operators, Query Params, and Structured Search | 2026-03-02
+**Sources:**
+- https://site-analyzer.pro/articles/google-query-params-674/
+- https://support.google.com/websearch/answer/2466433?hl=en
+- https://ahrefs.com/blog/google-advanced-search-operators/
+- https://developers.google.com/custom-search/docs/structured_search
+**Type:** Search Methodology / Research Workflow
+
+**Key Insights:**
+- Think in three layers:
+  1) User-level operators (`site:`, `intitle:`, `inurl:`, quotes, minus),
+  2) URL/query controls (`tbs`, `tbm`, `num`, `start`, `hl`, `gl`, `pws`, etc.),
+  3) Structured search in Programmable Search Engine (`more:pagemap:*`, `sort=*`, range and bias).
+- Official Google guidance is stable for core operators and filters, and should be treated as baseline truth for everyday query design.
+- Ahrefs practical workflows show high-value combinations for SEO and intelligence work, especially competitor mapping, content gap checks, internal linking opportunities, and recent-review discovery.
+- The parameter catalog is useful as a reverse-engineering reference, but many parameters are undocumented or unstable, so it should be treated as exploratory, not a production contract.
+- Programmable Search structured search is powerful when your corpus has structured data. You can filter, sort, bias, and range-limit by attributes, including date and numeric fields.
+
+**Reliability Rules (Important):**
+- Tier 1 (high confidence): official Google docs and CSE docs.
+- Tier 2 (good tactical value): Ahrefs operator tactics.
+- Tier 3 (low confidence unless validated): large community parameter lists with many unknown fields.
+- Never build automations that depend on undocumented query params without fallback behavior.
+
+**Applied Framework for NASR Research:**
+- Discovery pass: use broad operator queries (`site:`, quotes, `OR`, exclusions).
+- Precision pass: narrow by time/content intent (`tbs`, `tbm`, date constraints when available).
+- Verification pass: validate recency and source quality before using insights in decisions.
+- Productized pass (if needed): move repeated workflows into Programmable Search with structured filters and `sort` controls.
+
+**High-Value Operator Combinations:**
+- Competitor footprint: `site:company.com ("strategy" OR "roadmap" OR "AI")`
+- Fresh role signals: `site:linkedin.com/jobs ("VP" OR "Head") "Digital Transformation"`
+- Content gap scan: `site:target.com intitle:("what is" OR "guide") -site:target.com/blog/old/`
+- Review intelligence: `allintitle:review (competitor1 OR competitor2) after:2025-01-01`
+
+**Actionable for Ahmed:**
+- Use this stack to improve job intelligence quality: fewer noisy links, faster discovery of credible openings and decision signals.
+- For recurring searches, prioritize stable operators first, then add parameter tuning only where tested.
+- If we scale this later, build a role-specific Programmable Search profile with structured sorting by freshness and relevance.
+
+**Tags:** #google-search #advanced-operators #query-parameters #programmable-search #research-methods #seo-intelligence #knowledge-bank

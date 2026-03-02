@@ -34,3 +34,7 @@
 4. Codex JWT re-auth before March 3
 
 - [19:02 UTC] Phase 2 advisory board engine built (new adapters, weekly report, calibration). Awaiting cron switch approval.
+
+- [04:53 UTC] Approved evolution proposals: #1 context-guardian noise reduction, #2 LinkedIn cron self-heal, #3 ORP Gate D hard rule, #5 weekly cron error digest. Set #4 deadline Mar 3.
+- [11:46 UTC] Ahmed approved converting Google search intelligence into a reusable playbook for Job Hunter and Researcher.
+- [11:47 UTC] Playbook wiring completed: job radar prompt now enforces playbook method, researcher standard file created for future runs.
