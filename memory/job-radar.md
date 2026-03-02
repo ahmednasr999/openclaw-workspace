@@ -710,3 +710,223 @@ Several job openings exist for VP, Director, and executive roles in HealthTech, 
 
 ---
 
+=== Job Radar - 2026-03-02 ===
+
+### Search 1: VP/C-Suite Digital Transformation
+## Answer
+
+Key leaders in digital transformation in the GCC include Neil Bezuidenhout, CTO/CIO, and Yazan Abbasi, strategic advisor. Accenture Middle East is a major player in digital transformation and AI. GCC CEOs face challenges in digital transformation amid regional changes.
+
+---
+
+## Sources
+
+- **Neil B. - Passionate about digital transformation | CIO/CTO | Data Science and AI enthusiast | LinkedIn** (relevance: 47%)
+  https://www.linkedin.com/in/neil-bezuidenhout/
+  Neil B.
+Passionate about digital transformation | CIO/CTO | Data Science and AI enthusiast
+Dubai, Dubai, United Arab Emirates
+193 connections, 250 followers
+
+
+About
+As a Chief Information Officer, I have over 15 years of experience in leading and…
+
+
+Experience
+N/A
+
+
+Education
+The University of Texas...
+
+- **Akin Akingbade - Forty Impressions Management Consultancy L.L.C. | LinkedIn** (relevance: 41%)
+  https://www.linkedin.com/in/akin-akingbade/
+  Akin Akingbade
+Forty Impressions Management Consultancy L.L.C.
+Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates
+500 connections, 722 followers
+
+
+About
+Technology leader with a proven record of driving enterprise-wide digital transformation,…
+
+
+Experience
+N/A
+
+
+Education
+N/A
+
+- **Yazan A. - EngD | CTO | Strategic Advisor | Smart Automation Solution Advisor | Digital Transformation Principal | CCSP | CDO | GENBAND S3 Certified Engineer | AI Advisor | LinkedIn** (relevance: 41%)
+  https://www.linkedin.com/in/yazanabbasi/
+  EngD | CTO | Strategic Advisor | Smart Automation Solution Advisor | Digital Transformation Principal | CCSP | CDO | GENBAND S3 Certified Engineer | AI Advisor · From start-ups to high revenue enterprises we have spent the past several years helping customers solve some of their toughest IT problems...
+
+- **Accenture Middle East | LinkedIn** (relevance: 38%)
+  https://www.linkedin.com/company/accenture-middle-east
+  Overview:
+Accenture is a leading solutions and global professional services company that helps the world’s leading enterprises reinvent by building their digital core and unleashing the power of AI to create value at speed across the enterprise, bringing together the talent of our approximately 779,...
+
+- **GCC CEO and digital transformation. is it an option?** (relevance: 35%)
+  https://www.linkedin.com/pulse/gcc-ceo-digital-transformation-option-abdullah-alserhani-mba-lssbb?articleId=6500263081678036992
+  February 10, 2019 - CEO’s in the GCC countries especially Saudi Arabia are facing heaps of challenges ranging in level from as macro as unstable geopolitics of the region to as micro as keeping teams motivated and focused. The new market order in the making as a result of the Saudi Vision 2030 lead ...
+
+- **Dr. Semih Kumluk - Enterprise Transformation, Data & AI ...** (relevance: 28%)
+  https://ae.linkedin.com/in/drsemihkumluk
+  Dr. Semih Kumluk
+AI Transformation Executive | Digital Business Strategist | Innovation Leader | Startup Advisor & VC Connector | Global Keynote Speaker
+Dubai, United Arab Emirates
+500 connections, 25485 followers
+
+
+About
+I am an Enterprise Transformation, Data & AI Executive leading organizations…
+...
+
+- **Ebrahim M. - Doha Metropolitan Area | Professional Profile | LinkedIn** (relevance: 28%)
+  https://www.linkedin.com/in/ebrahimmattar/
+  As an experienced CTO with certifications including PMP, CGEIT, ITIL, ISO 9001, and PMR… · Location: Doha Metropolitan Area. 500+ connections on LinkedIn. View Ebrahim M.’s profile on LinkedIn, a professional community of 1 billion members.
+
+- **Artificial Intelligence, Digital Economy and Remote Work Applications Office (UAE) | LinkedIn** (relevance: 23%)
+  https://www.linkedin.com/company/the-uae-artificial-intelligence-office
+  Overview:
+Artificial Intelligence, Digital Economy and Remote Work Applications Office.
+
+Website: https://www.ai.gov.ae/
+Crunchbase Url: N/A
+Linkedin Url: https://www.linkedin.com/company/the-uae-artificial-intelligence-office
+
+Industry:
+IT Services and IT Consulting
+
+Company size:
+11-50 employees
+3...
+
+- **GCC Board Directors Institute (GCC BDI) | LinkedIn** (relevance: 23%)
+  https://www.linkedin.com/company/gcc-board-directors-institute
+  Overview:
+GCC BDI is supported by eight leading regional corporations and professional services firms who serve as our strategic partners: First Abu Dhabi Bank, National Bank of Bahrain, SABIC, Saudi Aramco; A&O Shearman; Heidrick & Struggles; McKinsey & Company; and PwC. We are also supported by th...
+
+- **Mueed Mohammed - Senior Director Enterprise Architecture & Software Engineering | Enterprise Transformation , Business, Cloud & Digital Transformation Expert | Change Enabler | IT AI & ML Strategy Builder | CTO | Crypto Enthusiast | LinkedIn** (relevance: 22%)
+  https://www.linkedin.com/in/mueed-mohammed/
+  Mueed Mohammed
+Senior Director Enterprise Architecture & Software Engineering | Enterprise Transformation , Business, Cloud & Digital Transformation Expert | Change Enabler | IT AI & ML Strategy Builder | CTO | Crypto Enthusiast
+Greater Chicago Area
+500 connections, 6961 followers
+
+
+About
+🚀 Archite...
+
+### Search 2: PMO / Technology Leadership
+## Answer
+
+The PMO Director role in the Middle East involves leading large-scale projects, with notable positions in Saudi Arabia and the UAE. Key responsibilities include strategic leadership and portfolio management. Abdulrahman Almuhana is a prominent figure in this field.
+
+---
+
+## Sources
+
+- **PMO Director Jobs in the Middle East (Feb 2026) - Bayt.com** (relevance: 100%)
+  https://www.bayt.com/en/international/jobs/pmo-director-jobs/
+  Summary: An opportunity to lead PMO operations for a premier industrial development project in Saudi Arabia's Western Region, delivering large-scale
+
+- **PMO Leadership (Head/Manager) Salary Guide Uae 2026** (relevance: 100%)
+  https://jobxdubai.com/salaries-2026/pmo-leadership-headmanager-tech-uae-2026
+  Average PMO Leadership (Head/Manager) salary in Uae: AED 52500 (2026). Comprehensive salary data, benefits, and career insights for UAE professionals.
+
+- **Director of PMO (Federal Technology) (m/f/d) - Halian** (relevance: 100%)
+  https://www.halian.com/jobs/director-of-pmo-federal-technology-238613
+  ## Director of PMO (Federal Technology) (m/f/d). ##### Director of PMO (Federal Technology) in Abu Dhabi, United Arab Emirates. * **Experience:** Proven track record leading **Federal Government** technology projects in the Middle East. * **Project Scale:** Must have successfully managed/delivered p...
+
+- **54 pmo lead Jobs in United Arab Emirates, February 2026 | Glassdoor** (relevance: 100%)
+  https://www.glassdoor.com/Job/united-arab-emirates-pmo-lead-jobs-SRCH_IL.0,20_IN6_KO21,29.htm
+  Search Pmo lead jobs in United Arab Emirates with company ratings & salaries. 54 open jobs for Pmo lead in United Arab Emirates.
+
+- **Abdulrahman Almuhana: AI-Powered PMO Governance Expert** (relevance: 100%)
+  https://www.linkedin.com/posts/ai-mena-network_abdulrahmanalmuhana-executiveleadership-activity-7415048519423803403-Dr4s
+  Abdulrahman Almuhana is an accomplished executive leader in capital development, PMO governance, and enterprise transformation, driving large-scale, data-informed decision-making across Saudi Arabia’s most strategic institutions. As Executive Director – PMO at NWC, he leads the design and execution ...
+
+- **Head Of PMO Jobs - 3715 Vacancies (with Salaries) Mar 2026** (relevance: 100%)
+  https://www.naukrigulf.com/head-of-pmo-jobs
+  Head Of PMO Jobs - Register now to explore 3715 Head Of PMO vacancies & careers in top companies.
+
+- **Ahmed Raslan‏ - ‏   Top Change Management Voice | PMO Director** (relevance: 100%)
+  https://qa.linkedin.com/in/raslanahmed
+  Ahmed Raslan
+QIMAH قيمة
+Doha, Qatar
+500 connections, 35267 followers
+
+
+About
+I am a seasoned C-Level Executive, PMO Director, and General Management Leader with over…
+
+
+Experience
+N/A
+
+
+Education
+Helwan University Cairo
+N/A
+1997 - 2003
+None
+
+- **Head of Pmo Jobs (with Salaries) | Indeed** (relevance: 99%)
+  https://ae.indeed.com/q-head-of-pmo-jobs.html
+  Discover 11 Head of Pmo job opportunities on Indeed.com. Apply today to advance your career with top employers.
+
+- **Artificial Intelligence Manager Jobs in the Middle East - Bayt.com** (relevance: 76%)
+  https://www.bayt.com/en/international/jobs/artificial-intelligence-manager-jobs/
+  Apply now to over 1450 Artificial Intelligence Manager jobs in Middle East and Gulf and make your job hunting simpler. Find the latest Artificial
+
+- **Saudi Arabia AI Tokens Strategy - GCC Business Watch** (relevance: 19%)
+  https://gccbusinesswatch.com/news/saudi-arabia-sets-sights-on-becoming-worlds-largest-exporter-of-ai-tokens/
+  Saudi Arabia Strengthens Global Energy Partnerships through Strategic Ministerial Meetings. UAE Aviation Sector Strengthens Global Leadership Through Innovation, Sustainability and Record Growth in 2025. UAE Launches ‘Invest in the Emirates’ Global Campaign, Inviting Innovators and Entrepreneurs to ...
+
+### Search 3: HealthTech / FinTech Executives
+## Answer
+
+There are multiple job openings for VP or Director roles in HealthTech, FinTech, and Digital Health in the UAE, Saudi Arabia, Qatar, and Bahrain as of 2026. Key positions include Head of Digital Health and Director Fintech. These opportunities are available in major cities like Dubai, Riyadh, and Doha.
+
+---
+
+## Sources
+
+- **25+ Head of Digital Health Jobs, Employment 1 March 2026 - Indeed** (relevance: 65%)
+  https://ae.indeed.com/q-head-of-digital-health-jobs.html
+  Discover 42 Head of Digital Health job opportunities on Indeed.com. Apply today to advance your career with top employers.
+
+- **Director Fintech Jobs in UAE (Feb 2026) - Bayt.com** (relevance: 62%)
+  https://www.bayt.com/en/uae/jobs/director-fintech-jobs/
+  Apply now to over 190 Director Fintech jobs in UAE and make your job hunting simpler. Find the latest Director Fintech job vacancies and employment
+
+- **[PDF] program-tabuk2025.pdf - IEOM** (relevance: 7%)
+  https://ieomsociety.org/documents/program-tabuk2025.pdf
+  of Petroleum & Minerals, Dhahran, Kingdom of Saudi Arabia 12:30 - 13:00 13:00 - 14:00 Lunch & Prayer 14:00 - 15:30 Digital Manufacturing, Industry 4.0 and IoT Business Management and Operations Management Sustainability, Green Systems and Energy 14:00 – 16:00 Supply Chain and Logistics 15:30 - 16:00...
+
+- **[PDF] Kuwait, China strengthen partnership with port deal - Arab Times** (relevance: 5%)
+  https://www.arabtimesonline.com/arabtimes/uploads/images/2025/12/22/104738.pdf
+  (AP) THE FIRST ENGLISH LANGUAGE DAILY IN FREE KUWAIT Published by: Arab Times Publishing House Editor-in-Chief AHMED AL JARALLAH Annual Subscriptions: Individuals KD 30, Companies & Official Departments KD 45 Airmail charges extra for overseas Tel: 51526559 - 51508991 Advertising: Tel: 99659717 - 50...
+
+- **THE ARAB LEADERS (@thearableaders) - Instagram** (relevance: 4%)
+  https://www.instagram.com/thearableaders/
+  Visionary F&B pioneer Nawaf AlShawwa leads as Managing Director KSA at Al Ghalia Trading driving gourmet expansion from Riyadh Saudi Arabia Bahrain.
+
+- **Naraway Blog - Latest Insights & Stories** (relevance: 3%)
+  https://naraway.com/blog.html
+  # Insights That Transform. Discover expert perspectives on business growth, technology innovation, and industry trends that drive success in today's competitive landscape. ## Latest Articles. Stay updated with our latest thoughts, insights, and stories from the Naraway community and industry experts...
+
+- **Private Aviation | Our Services - Dnata** (relevance: 2%)
+  https://www.dnata.com/en/our-services/private-aviation/
+  dn/our-services/private-aviation/dnata-private-aviation-staff-in-pushback-tractor-w600x600.jpg. Our private customers benefit from complimentary Meet & Greet services, ensuring a smooth arrival at airports across the world with first-class levels of hospitality. Our private customers benefit from co...
+
+- **[PDF] Global Cement Magazine - November 2025 - CFIC** (relevance: 2%)
+  https://www.cfic.dz/images/telechargements/eGCNovember2025ns.pdf
+  www.kettenwulf.com Reclaimer System Bucket Elevator System JULY  AUGUST 2025 gl bal cement MAGAZINE TM CCUS Data Low-CO2 Cement Compressors Queens Carbon Silos Alternative Fuels West Africa www.globalcement.com SEPTEMBER 2025 gl bal cement MAGAZINE TM CBAM Compressors Fives AF CCUS Gears alcemy Sla...
+
+---
+
