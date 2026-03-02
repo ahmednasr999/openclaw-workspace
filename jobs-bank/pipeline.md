@@ -9,7 +9,7 @@
 
 | # | Applied? | Company | Role | Location | ATS | Stage | JD Status | Applied | Follow-up Due | Job URL | CV |
 |---|----------|---------|------|----------|-----|-------|-----------|---------|--------------|---------|-----|
-| 1 | ☑️ | Delphi Consulting | Senior AI PM | UAE | 91% | 📞 Interview | Full JD | 2026-02-21 | 2026-02-27 | N/A | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed_Nasr_Delphi_Consulting_Senior_AI_PM.pdf) |
+| 1 | ☑️ | Delphi Consulting | Senior AI PM | UAE | 91% | 📞 Interview | Full JD | 2026-02-21 | 2026-03-09 | N/A | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed_Nasr_Delphi_Consulting_Senior_AI_PM.pdf) |
 | 2 | ☑️ | Talabat | CPTO | Dubai, UAE | 87% | ✅ Applied | Partial JD | 2026-02-24 | 2026-03-02 | [LinkedIn](https://www.linkedin.com/jobs/view/4375708512) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed_Nasr_CPTO_Talabat.pdf) |
 | 3 | ☑️ | AIQU | Director of AI | Dubai, UAE | 82% | ✅ Applied | Partial JD | 2026-02-24 | 2026-03-02 | [LinkedIn](https://www.linkedin.com/jobs/view/4375324051) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed_Nasr_Director_AI_AIQU.pdf) |
 | 4 | ☑️ | Nexus Consulting | CEO | Saudi Arabia | 78% | ✅ Applied | Partial JD | 2026-02-24 | 2026-03-02 | [LinkedIn](https://www.linkedin.com/jobs/view/4376367703) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed_Nasr_CEO_Nexus.pdf) |
@@ -64,7 +64,7 @@
 
 | Date | Company | Action | Status |
 |------|---------|--------|--------|
-| 2026-02-27 | Delphi Consulting | Awaiting feedback — post-interview | 🔴 Active (interview done Feb 24) |
+| 2026-03-02 | Delphi Consulting | Follow-up sent (value signal) — monitor recruiter response | 🔴 Active (interview done Feb 24) |
 | 2026-03-14 | King Salman International Airport | Follow-up if no recruiter contact | ⏰ Pending |
 | 2026-03-29 | All Feb 27 batch | Day 30 sweep — move no-reply to Cold | ⏰ Pending |
 
