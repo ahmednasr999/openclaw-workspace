@@ -1,5 +1,5 @@
 # Job Application Tracker
-**Last Updated:** February 22, 2026
+**Last Updated:** March 2, 2026
 **Canonical Source:** YES — This is the single source of truth for Mission Control HR
 
 ---
@@ -8,52 +8,59 @@
 | Metric | Count |
 |--------|-------|
 | **Total Applications** | 27 |
-| **Identified/Researching** | 3 |
-| **Applied** | 20 |
+| **Identified/Researching** | 2 |
+| **Applied (< 14 days)** | 8 |
 | **Interview** | 1 |
+| **Monitoring (14+ days, no response)** | 16 |
 | **Offer** | 0 |
 | **Closed** | 0 |
-| **Awaiting Response** | 17 |
 
 ---
 
 ## 🎤 Interview Stage
 
-| Date | Company | Role | Location | Source | Link | ATS Score | Next Action |
-|------|---------|------|----------|--------|------|-----------|-------------|
-| Feb 21 | Delphi Consulting | Senior AI PM | UAE | Direct | | 91% | Interview Feb 23, 5pm IST |
+| Date | Company | Role | Location | Source | ATS Score | Notes |
+|------|---------|------|----------|--------|-----------|-------|
+| Feb 21 | Delphi Consulting | Senior AI PM | UAE | Direct | 91% | Interview was Feb 23, 5pm IST — awaiting outcome |
 
 ---
 
-## ✅ Applied (Active Pipeline)
+## ✅ Applied (Active — Under 14 Days)
 
-| Date | Company | Role | Location | Source | Link | Status |
-|------|---------|------|----------|--------|------|--------|
-| Feb 21 | Payfuture | Director of Operations | Dubai | LinkedIn | | ⏳ Applied |
-| Feb 21 | FAB | Executive Director | Abu Dhabi | Direct | | ⏳ Applied |
-| Feb 21 | Carter Murray | VP Data Services | Sharjah | Direct | | ⏳ Applied |
-| Feb 21 | Citco Group | VP Client Integration | — | Direct | | ⏳ Applied |
-| Feb 21 | Confidential | Strategy & PMO Director - Healthcare | Riyadh | LinkedIn | | ⏳ Applied |
-| Feb 21 | Confidential | Executive Director - Strategic PMO | Riyadh | LinkedIn | | ⏳ Applied |
-| Feb 21 | Confidential | Senior Director of Shared Services | Riyadh | LinkedIn | | ⏳ Applied |
-| Feb 16 | Valkyrie People Consulting | — | — | LinkedIn | | ⏳ Applied |
-| Feb 16 | Mackenzie Jones Middle East | — | — | LinkedIn | | ⏳ Applied |
-| Feb 15 | Business Umbrella | — | — | LinkedIn | | ⏳ Applied |
-| Feb 12 | Khazna Data Centers | Director - Business Excellence | Dubai | Direct | | ⏳ Applied |
-| Feb 12 | Medspace Medical Centre | — | — | LinkedIn | | ⏳ Applied |
-| Feb 12 | Sky News Arabia | — | — | LinkedIn | | ⏳ Applied |
-| Feb 12 | Xebia | — | — | LinkedIn | | ⏳ Applied |
-| Feb 12 | OMNIYAT | — | — | LinkedIn | | ⏳ Applied |
-| Feb 12 | Dubai Holding | — | — | LinkedIn | | ⏳ Applied |
-| Feb 12 | Halian | — | — | LinkedIn | | ⏳ Applied |
-| Feb 12 | KN International | — | — | LinkedIn | | ⏳ Applied |
-| Feb 04 | Masdar | Program Manager, ADSW | Abu Dhabi | Direct | | ⏳ Applied |
-| Jan 21 | (via Zack Hamouda) | IT Programme Director | — | Recruiter | | ⏳ Applied |
-| Jan 20 | Tahaluf | Head of Project Management | — | Direct | | ⏳ Applied |
-| Jan 02 | Network Global | Senior Program Manager | — | Direct | | ⏳ Applied |
-| Dec 29 | (Renovation) | Renovation Project Manager | — | Direct | | ⏳ Applied |
-| Dec 29 | Money Fellows | — | — | Direct | | ⏳ Applied |
-| Dec 09 | Masdar | Program Manager, Zayed Sustainability Prize | — | Direct | | ⏳ Applied |
+| Date | Company | Role | Location | Source | Status |
+|------|---------|------|----------|--------|--------|
+| Feb 21 | Payfuture | Director of Operations | Dubai | LinkedIn | ⏳ Applied (9 days) |
+| Feb 21 | FAB | Executive Director | Abu Dhabi | Direct | ⏳ Applied (9 days) |
+| Feb 21 | Carter Murray | VP Data Services | Sharjah | Direct | ⏳ Applied (9 days) |
+| Feb 21 | Citco Group | VP Client Integration | — | Direct | ⏳ Applied (9 days) |
+| Feb 21 | Confidential | Strategy & PMO Director - Healthcare | Riyadh | LinkedIn | ⏳ Applied (9 days) |
+| Feb 21 | Confidential | Executive Director - Strategic PMO | Riyadh | LinkedIn | ⏳ Applied (9 days) |
+| Feb 21 | Confidential | Senior Director of Shared Services | Riyadh | LinkedIn | ⏳ Applied (9 days) |
+
+---
+
+## 👻 Monitoring (14+ Days, No Response)
+
+| Date | Company | Role | Days Ago | Source | Status |
+|------|---------|------|----------|--------|--------|
+| Feb 16 | Valkyrie People Consulting | — | 14 days | LinkedIn | 👻 Monitoring |
+| Feb 16 | Mackenzie Jones Middle East | — | 14 days | LinkedIn | 👻 Monitoring |
+| Feb 15 | Business Umbrella | — | 15 days | LinkedIn | 👻 Monitoring |
+| Feb 12 | Khazna Data Centers | Director - Business Excellence | 18 days | Direct | 👻 Monitoring |
+| Feb 12 | Medspace Medical Centre | — | 18 days | LinkedIn | 👻 Monitoring |
+| Feb 12 | Sky News Arabia | — | 18 days | LinkedIn | 👻 Monitoring |
+| Feb 12 | Xebia | — | 18 days | LinkedIn | 👻 Monitoring |
+| Feb 12 | OMNIYAT | — | 18 days | LinkedIn | 👻 Monitoring |
+| Feb 12 | Dubai Holding | — | 18 days | LinkedIn | 👻 Monitoring |
+| Feb 12 | Halian | — | 18 days | LinkedIn | 👻 Monitoring |
+| Feb 12 | KN International | — | 18 days | LinkedIn | 👻 Monitoring |
+| Feb 04 | Masdar | Program Manager, ADSW | 26 days | Direct | 👻 Monitoring |
+| Jan 21 | (via Zack Hamouda) | IT Programme Director | 40 days | Recruiter | 👻 Monitoring |
+| Jan 20 | Tahaluf | Head of Project Management | 41 days | Direct | 👻 Monitoring |
+| Jan 02 | Network Global | Senior Program Manager | 59 days | Direct | 👻 Monitoring |
+| Dec 29 | (Renovation) | Renovation Project Manager | 63 days | Direct | 👻 Monitoring |
+| Dec 29 | Money Fellows | — | 63 days | Direct | 👻 Monitoring |
+| Dec 09 | Masdar | Program Manager, Zayed Sustainability Prize | 83 days | Direct | 👻 Monitoring |
 
 ---
 
@@ -66,7 +73,7 @@
 
 ---
 
-## 📩 Update Received
+## 📩 Updates Received
 
 | Date | Company | Notes |
 |------|---------|-------|
@@ -77,26 +84,13 @@
 
 ## Status Legend
 - 🆕 **New/Identified** — Researching, need JD
-- 🔄 **Need Full JD** — Have snippet only
-- ✅ **Applied** — Application submitted
+- ✅ **Applied** — Application submitted, < 14 days
 - ⏳ **Pending Response** — Awaiting reply
 - 📩 **Update Received** — Company responded
-- 🎤 **Interview** — Interview scheduled
+- 🎤 **Interview** — Interview scheduled or completed
+- 👻 **Monitoring** — 14+ days with no response, no active recruiter thread
 - 💰 **Offer** — Offer received
 - ❌ **Rejected** — Declined
-- 👻 **No Response** — 14+ days silence
-
----
-
-## Follow-Up Needed (No response > 14 days)
-| Company | Applied | Days Ago | Action |
-|---------|---------|----------|--------|
-| Masdar (Zayed Prize) | Dec 9 | 75 | 🔴 Follow up |
-| Renovation Project Manager | Dec 29 | 55 | 🔴 Follow up |
-| Money Fellows | Dec 29 | 55 | 🔴 Follow up |
-| Network Global | Jan 2 | 51 | 🔴 Follow up |
-| Tahaluf | Jan 20 | 33 | 🟡 Follow up |
-| IT Programme Director (Zack) | Jan 21 | 32 | 🟡 Follow up |
 
 ---
 
@@ -104,6 +98,12 @@
 - **Auto-sync to Mission Control:** Every 5 minutes
 - **Mission Control URL:** https://srv1352768.tail945bbc.ts.net/hr
 - **Data source for HR Kanban:** This file
+
+---
+
+## Notes
+- Gmail scan (weekly cron) could not retrieve new confirmations this week: ahmednasr999@gmail.com OAuth token is missing the `gmail` scope (only calendar, docs, drive, sheets are authorized). Re-auth needed: `gog auth add ahmednasr999@gmail.com --services gmail`
+- All "Follow-Up Needed" rows from prior tracker have been reclassified as Monitoring per updated tracker rules.
 
 ---
 
