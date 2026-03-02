@@ -1,6 +1,6 @@
 # 📊 Jobs Pipeline — Week 09: Feb 27 – Mar 05, 2026
 
-*Last updated: 2026-02-28 06:22 UTC | Maintained by NASR*
+*Last updated: 2026-03-02 05:00 UTC | Maintained by NASR*
 *Archive: [W09 Snapshot](weeks/2026-W09-Feb27-Mar05.md) | Previous weeks: [jobs-bank/weeks/](weeks/)*
 
 ---
@@ -73,6 +73,9 @@
 
 | Company | Role | Location | Priority | JD Status | Job URL | Next Step |
 |---------|------|----------|----------|-----------|---------|-----------|
+| Al-Futtaim Group | Senior Manager, Group AI Office PMO | Dubai, UAE | 🔴 HIGH (apply by 2026-03-02) | Partial JD | [jobleads](https://ae.expertini.com/job/senior-manager-group-ai-office-pmo-dubai-al-futtaim-411-3246750/) | ATS 85% — Review salary gap (AED 36-46k/mo vs 50k floor). Decision needed today. |
+| Confidential (Michael Page) | VP, AI & Technology | International / UAE | 🟠 HIGH | Partial JD | [Michael Page](https://www.michaelpage.ae/job-detail/vp-ai-technology/ref/jn-022026-6953563) | ATS 88% — Strong fit. CV tailoring needed. Apply via Michael Page. |
+| Confidential (Michael Page) | AI Enterprise Manager - Architecture & Delivery | Dubai, UAE | 🟡 MEDIUM | Partial JD | [Michael Page](https://www.michaelpage.ae/job-detail/ai-enterprise-manager-architecture-delivery/ref/jn-022026-6946082) | ATS 82% — Strong AI match but Manager title may be below target. Ahmed to confirm. |
 
 
 
@@ -88,7 +91,7 @@
 | Total tracked | 44 |
 | Applied | 44 |
 | CV Ready, not yet applied | 0 |
-| Radar — Needs Action | 3 |
+| Radar — Needs Action | 3 (new) + previous |
 | Radar (no CV yet) | 3 |
 | Active interviews | 1 (Delphi — awaiting feedback) |
 | Avg ATS score (all CVs) | 89% |
