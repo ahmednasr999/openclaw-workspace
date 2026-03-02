@@ -53,6 +53,7 @@
 | 42 | ☑️ | Agay Barho (Saudi Foundation) | Strategy Director | Riyadh, KSA | 87% | ✅ Applied | Full JD | 2026-03-01 | 2026-03-08 | N/A | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20Strategy%20Director%20-%20Agay%20Barho.pdf) |
 | 43 | ☑️ | RapidData Technologies | Strategy & KPI Expert | Dubai, UAE | 88% | ✅ Applied | Full JD | 2026-03-01 | 2026-03-08 | [LinkedIn](https://www.linkedin.com/jobs/view/4375202921) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20Strategy%20%26%20KPI%20Expert%20-%20RapidData.pdf) |
 | 44 | ☑️ | Salt | Senior Program Manager | Abu Dhabi, UAE | 91% | ✅ Applied | Full JD | 2026-03-01 | 2026-03-08 | [LinkedIn](https://www.linkedin.com/jobs/view/4375521803) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20Senior%20Program%20Manager%20-%20Salt.pdf) |
+| 45 | ☑️ | Confidential (Michael Page) | VP, AI & Technology | International / UAE | 88% | ✅ Applied | Partial JD | 2026-03-02 | 2026-03-09 | [Michael Page](https://www.michaelpage.ae/job-detail/vp-ai-technology/ref/jn-022026-6953563) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20VP%20AI%20%26%20Technology%20-%20Michael%20Page.pdf) |
 
 
 ---
@@ -74,7 +75,6 @@
 | Company | Role | Location | Priority | JD Status | Job URL | Next Step |
 |---------|------|----------|----------|-----------|---------|-----------|
 | Al-Futtaim Group | Senior Manager, Group AI Office PMO | Dubai, UAE | ⚪ Closed | Verified Official | [Al-Futtaim Careers](https://www.afuturewithus.com/job/Dubai-UAE-National_Senior-Manager-Group-AI-Office-Value-Realization-and-Program-Management/1266155701/) | Official source indicates position no longer accepting applications. |
-| Confidential (Michael Page) | VP, AI & Technology | International / UAE | 🟠 HIGH | Partial JD | [Michael Page](https://www.michaelpage.ae/job-detail/vp-ai-technology/ref/jn-022026-6953563) | ✅ Applied 2026-03-02. ATS 88%. Follow-up window: only if recruiter thread opens then goes quiet. |
 | Confidential (Michael Page) | AI Enterprise Manager - Architecture & Delivery | Dubai, UAE | 🟡 MEDIUM | Partial JD | [Michael Page](https://www.michaelpage.ae/job-detail/ai-enterprise-manager-architecture-delivery/ref/jn-022026-6946082) | ATS 82% — Strong AI match but Manager title may be below target. Ahmed to confirm. |
 
 
@@ -91,7 +91,7 @@
 | Total tracked | 45 |
 | Applied | 45 |
 | CV Ready, not yet applied | 0 |
-| Radar — Needs Action | 2 |
+| Radar — Needs Action | 1 |
 | Radar (no CV yet) | 1 |
 | Active interviews | 1 (Delphi — awaiting feedback) |
 | Avg ATS score (all CVs) | 89% |
