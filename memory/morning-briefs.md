@@ -274,3 +274,57 @@ Require stack:
 
 Node.js v20.19.4
 
+=== Morning Brief - 2026-03-02 06:00 AM ===
+
+## Job Radar (from Tavily)
+## Answer
+
+VP Director PMO Digital Transformation roles in healthcare for Dubai, UAE, are available in 2026. Positions focus on leading digital transformation strategies and managing project management offices. Apply for these roles to advance in digital leadership.
+
+---
+
+## Sources
+
+- **PMO Director Jobs in the Middle East (Feb 2026) - Bayt.com** (relevance: 100%)
+  https://www.bayt.com/en/international/jobs/pmo-director-jobs/
+  Apply now to over 460 PMO Director jobs in Middle East and Gulf and make your job hunting simpler. Find the latest PMO Director job vacancies and
+
+- **25+ Senior Director Digital Transformation Jobs, Employment in ...** (relevance: 100%)
+  https://ae.indeed.com/q-senior-director-digital-transformation-l-dubai-jobs.html
+  Discover 45 Senior Director Digital Transformation job opportunities in Dubai on Indeed.com. Apply today to advance your career with top
+
+- **Digital Transformation Jobs in UAE - 240 Vacancies Mar 2026** (relevance: 99%)
+  https://www.naukrigulf.com/digital-transformation-jobs-in-uae
+  Lead digital transformation strategy, evaluate processes for automation, recommend technology solutions, and ensure compliance while engaging stakeholders and monitoring perform... Lead IT strategy and digital transformation, oversee infrastructure, drive innovation, ensure cybersecurity, and manage...
+
+- **173 director of technology Jobs in Dubai, February 2026 | Glassdoor** (relevance: 99%)
+  http://www.glassdoor.com/Job/dubai-director-of-technology-jobs-SRCH_IL.0,5_IC2204498_KO6,28.htm
+  Search Director of technology jobs in Dubai with company ratings & salaries. 173 open jobs for Director of technology in Dubai.
+
+- **32 dubai digital transformation Jobs in UAE - Best Talent Reach (BTR)** (relevance: 98%)
+  https://besttalentreach.com/jobs/dubai-digital-transformation-jobs
+  Explore 32 dubai digital transformation jobs in UAE. Apply for the Senior Manager - Digital Transformation role at Dubai Ports. Salary ~20833 TZS.
+## Gmail - New Opportunities
+node:internal/modules/cjs/loader:1215
+  throw err;
+  ^
+
+Error: Cannot find module 'googleapis'
+Require stack:
+- /root/.openclaw/workspace/scripts/gmail-scan.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1212:15)
+    at Module._load (node:internal/modules/cjs/loader:1043:27)
+    at Module.require (node:internal/modules/cjs/loader:1298:19)
+    at require (node:internal/modules/helpers:182:18)
+    at Object.<anonymous> (/root/.openclaw/workspace/scripts/gmail-scan.js:1:20)
+    at Module._compile (node:internal/modules/cjs/loader:1529:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+    at Module.load (node:internal/modules/cjs/loader:1275:32)
+    at Module._load (node:internal/modules/cjs/loader:1096:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:164:12) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [ '/root/.openclaw/workspace/scripts/gmail-scan.js' ]
+}
+
+Node.js v20.19.4
+
