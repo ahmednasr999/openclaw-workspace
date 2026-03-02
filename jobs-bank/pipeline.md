@@ -73,8 +73,8 @@
 
 | Company | Role | Location | Priority | JD Status | Job URL | Next Step |
 |---------|------|----------|----------|-----------|---------|-----------|
-| Al-Futtaim Group | Senior Manager, Group AI Office PMO | Dubai, UAE | 🔴 HIGH (apply by 2026-03-02) | Partial JD | [jobleads](https://ae.expertini.com/job/senior-manager-group-ai-office-pmo-dubai-al-futtaim-411-3246750/) | ATS 85% — Review salary gap (AED 36-46k/mo vs 50k floor). Decision needed today. |
-| Confidential (Michael Page) | VP, AI & Technology | International / UAE | 🟠 HIGH | Partial JD | [Michael Page](https://www.michaelpage.ae/job-detail/vp-ai-technology/ref/jn-022026-6953563) | ATS 88% — Strong fit. CV tailoring needed. Apply via Michael Page. |
+| Al-Futtaim Group | Senior Manager, Group AI Office PMO | Dubai, UAE | ⚪ Closed | Verified Official | [Al-Futtaim Careers](https://www.afuturewithus.com/job/Dubai-UAE-National_Senior-Manager-Group-AI-Office-Value-Realization-and-Program-Management/1266155701/) | Official source indicates position no longer accepting applications. |
+| Confidential (Michael Page) | VP, AI & Technology | International / UAE | 🟠 HIGH | Partial JD | [Michael Page](https://www.michaelpage.ae/job-detail/vp-ai-technology/ref/jn-022026-6953563) | ✅ Applied 2026-03-02. ATS 88%. Follow-up window: only if recruiter thread opens then goes quiet. |
 | Confidential (Michael Page) | AI Enterprise Manager - Architecture & Delivery | Dubai, UAE | 🟡 MEDIUM | Partial JD | [Michael Page](https://www.michaelpage.ae/job-detail/ai-enterprise-manager-architecture-delivery/ref/jn-022026-6946082) | ATS 82% — Strong AI match but Manager title may be below target. Ahmed to confirm. |
 
 
@@ -88,11 +88,11 @@
 
 | Metric | Value |
 |--------|-------|
-| Total tracked | 44 |
-| Applied | 44 |
+| Total tracked | 45 |
+| Applied | 45 |
 | CV Ready, not yet applied | 0 |
-| Radar — Needs Action | 3 (new) + previous |
-| Radar (no CV yet) | 3 |
+| Radar — Needs Action | 2 |
+| Radar (no CV yet) | 1 |
 | Active interviews | 1 (Delphi — awaiting feedback) |
 | Avg ATS score (all CVs) | 89% |
 | Follow-up policy | No proactive follow-ups — wait for recruiter response |
