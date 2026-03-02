@@ -1,0 +1,10 @@
+{
+  "date_utc": "2026-03-02T11:15:00Z",
+  "time_window_used_hours": 24,
+  "posts_scanned": 0,
+  "posts_eligible": 0,
+  "selected": [],
+  "rejected": [],
+  "status": "DISCOVERY_INSUFFICIENT",
+  "reason": "Browser Relay LinkedIn access degraded - Pass A (hashtag #digitaltransformation) hit server error 'This one's our fault. We're looking into it.' Subsequent snapshots unstable. Multiple tab references became inaccessible during discovery. Recommend retry when LinkedIn stability improves."
+}

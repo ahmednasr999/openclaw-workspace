@@ -330,6 +330,13 @@ You have access to your human's stuff. That doesn't mean you _share_ their stuff
 
 Use emoji reactions naturally (👍 ❤️ 😂 🤔 💡 ✅). One per message max. Acknowledge without cluttering.
 
+## Knowledge Bank Ownership (PERMANENT)
+
+- Primary owner: Researcher agent
+- Other agents (Job Hunter, CV Optimizer, Content Creator, NASR subflows): read-only by default
+- Any structural changes to knowledge bank files require NASR approval
+- Researcher is responsible for deduplication, tagging consistency, and freshness reviews
+
 ## Tools
 
 Skills provide your tools. When you need one, check its `SKILL.md`. Keep local notes in `TOOLS.md`.
@@ -599,6 +606,15 @@ Before asking Ahmed a clarifying question, first try to answer it yourself:
 **Rule:** Never ask a question that a file read could answer. Ahmed's time is the bottleneck, not information.
 
 **Sub-agent enforcement:** Sub-agents must self-answer before surfacing questions. Brief sub-agents with: "Before asking a question, read the relevant files. Most answers are already written down somewhere."
+
+## 🚦 ORP Gate D — Hard Pre-Delivery Block (PERMANENT)
+
+For any CV/application workflow, Gate D is mandatory:
+- `jobs-bank/pipeline.md` must be updated first
+- pipeline update must be committed before delivery
+- only then deliver CV/output to Ahmed
+
+Never deliver a CV or handoff output before Gate D is complete. This is a workflow violation.
 
 ## 🎯 Always Recommend — Never Deliver Information Alone (ALL Models, ALL Sessions)
 

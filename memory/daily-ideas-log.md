@@ -10,5 +10,7 @@
 | 2026-02-28 | LinkedIn Pulse article on "PMO Evolution in the AI Age" — position Ahmed as thought leader bridging traditional PMO frameworks with LLM-driven project intelligence. 2,500 words, cite 4 applications from his experience, publish by March 15 for Q1 visibility. | New today |
 | 2026-03-01 | Delphi "Value Signal" brief — 2-page one-pager (AI-driven clinical ops, 14 agents, 23 patient flow workflows automated, $50M+ transformation context) to send Kritika by Monday. Positions Ahmed as forward-thinking beyond just project management. Differentiator vs other candidates. | New today |
 
+| 2026-03-02 | LinkedIn "open to work" signal to recruiters only — enable the private "Open to Work" setting on LinkedIn visible only to recruiters (not your network). This surfaces Ahmed's profile in recruiter search results for VP/Director DT roles without broadcasting publicly. Zero effort, immediate passive inbound. | New today |
+
 ## Summary
-- Total ideas logged: 5
+- Total ideas logged: 6

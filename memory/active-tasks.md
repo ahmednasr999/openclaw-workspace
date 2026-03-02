@@ -1,6 +1,6 @@
 # Active Tasks
 
-*Last updated: 2026-02-28*
+*Last updated: 2026-03-02 10:22 UTC*
 
 ## 🔴 URGENT — Expires within 5 days
 - ~~OpenAI Codex JWT token~~ ✅ RESOLVED Mar 1 — Switched to OAuth (auto-refreshes, expires ~June 2026)
@@ -8,13 +8,14 @@
 
 ## 🔴 URGENT — This Week
 - ~~GitHub 2FA required by April 4, 2026~~ ✅ COMPLETED Mar 1, 2026
-- **Delphi follow-up** — Send value-signal message to Kritika Chhabra on **Monday March 2**. Draft ready: AI change management angle (14 agents in clinical ops). Channel TBD (LinkedIn DM or email).
-- **Threads bio update** — Stale bio "Zconomy Strategist for Millennials & Gen Z | Ex-Intel" still live. Update to: "Digital Transformation Executive | HealthTech, FinTech & e-commerce across GCC | PMO & AI Strategy | TopMed | ex-Talabat, Network International" — Copy approved Feb 28. Ahmed to action on Threads app (2 min).
+- ~~Delphi follow-up~~ ✅ COMPLETED Mar 2 — Value-signal message sent to Kritika Chhabra (LinkedIn DM).
+- **Advisory Board implementation** ✅ STARTED Mar 2 — Phase 2 daily and weekly engines executed successfully. Next: monitor next scheduled runs and tune stale inputs.
+- ~~Threads bio update~~ ✅ COMPLETED Mar 2 — Updated on Threads.
 
 ## 🟡 Follow-up Schedule
 - **Policy override (active):** No proactive follow-ups for standard LinkedIn applications.
 - Follow-up only when: (1) post-interview silence, or (2) active recruiter thread goes quiet.
-- Current active follow-up: **Delphi only** (post-interview thread with Kritika).
+- Current active follow-up: **Delphi only** (post-interview thread with Kritika), next follow-up checkpoint: **2026-03-09** if no recruiter response.
 
 ## 🔴 Urgent
 
