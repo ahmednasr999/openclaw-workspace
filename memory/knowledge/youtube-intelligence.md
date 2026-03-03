@@ -152,3 +152,121 @@ Simon Sinek's motivational speeches in 2026 focus on personal growth, self-impro
   Motivation2026 #SelfGrowth #PutYourselfFirst #MindsetShift #successhabits Putting yourself first is not selfish — it's essential for growth,
 
 *For full transcripts: ask NASR to pull any URL above via Browser Relay*
+
+## Manual Intake | 2026-03-03
+- Source: https://youtu.be/2JiMmye2ezg?si=tWgTRK2HuRJWuCN5
+- Status: Captured to knowledge bank
+- Note: Auto-summary is blocked in current environment due YouTube anti-bot and no transcript extraction path available. Next step is to ingest transcript or key points when provided.
+
+## Transcript Intake | 2026-03-03 | Open Brain Architecture (0:00-30:15)
+- Source link: https://youtu.be/2JiMmye2ezg?si=tWgTRK2HuRJWuCN5
+- Capture mode: user-provided transcript
+
+### Core thesis
+- Most AI workflows fail because memory is siloed and not agent-readable.
+- Prompt quality depends on context quality, and context quality depends on durable memory infrastructure.
+- Memory architecture has more long-term impact than model choice for multi-tool AI work.
+
+### Proposed architecture
+- Use a database-owned memory layer, Postgres + pgvector, not SaaS-locked app memory.
+- Store each thought as text + embedding + extracted metadata.
+- Expose retrieval and write through MCP so any compatible AI client can use the same memory.
+- Keep capture and retrieval separated:
+  - Capture: quick intake from Slack or other input points.
+  - Retrieval: semantic search, recent items, pattern/stats tools.
+
+### Strategic claims
+- Platform-native memory features are improving but remain siloed per tool.
+- Vendor memory lock-in is a strategic risk for people using multiple AI systems.
+- Agent utility scales with secure access to user context, decisions, constraints, and relationships.
+- Cross-tool persistent memory creates compounding advantage over users who restart from zero each session.
+
+### Practical operating guidance from transcript
+- Build for open portability first, then choose front-end tools.
+- Prioritize semantic retrieval over folder-only organization.
+- Keep metadata extraction, but rely on embeddings when metadata is imperfect.
+- Build habit loops: daily capture, weekly review, migration from existing tool memories.
+
+### Reusable prompt/workflow patterns mentioned
+- Memory migration prompt from existing AI memories into open brain.
+- Open-brain interview prompt to define what to capture regularly.
+- Quick capture templates for decisions, people, insights, and meeting debriefs.
+- Weekly synthesis prompt to cluster themes, unresolved actions, and missed connections.
+
+### Relevance to Ahmed stack
+- Strongly aligned with current OpenClaw direction: memory-first orchestration, cross-agent continuity, MCP-readability.
+- Immediate benefit areas:
+  1) reduce repeated context transfer across NASR + sub-agents,
+  2) improve proactive recall quality for job search and content strategy,
+  3) keep portability if model/tool mix changes.
+
+## Manual Intake | 2026-03-03
+- Source: https://www.youtube.com/watch?v=RhLpV6QDBFE
+- Status: Captured to knowledge bank
+- Note: Auto-summary blocked in current environment due YouTube anti-bot and no transcript extraction path available. Ready for enrichment when transcript or key timestamps are provided.
+
+## Transcript Intake | 2026-03-03 | Mission Control for OpenClaw (Chapter 1 Intro, 0:00-0:26)
+- Source link: https://www.youtube.com/watch?v=RhLpV6QDBFE
+- Capture mode: user-provided transcript
+
+### Core claim
+- Build a custom Mission Control dashboard inside OpenClaw to dramatically increase capability.
+
+### Promised outcome
+- Mission Control lets OpenClaw build tools on demand.
+- Setup is presented as low-friction, possible with a few prompts.
+- Positioning is no-code and beginner-friendly.
+
+### Relevance to Ahmed stack
+- High relevance to Mission Control roadmap and autonomous tooling direction.
+- Could accelerate operational control and reduce manual orchestration overhead.
+
+## Transcript Intake | 2026-03-03 | Mission Control for OpenClaw (Ch.2-Ch.9, 0:35-16:12)
+- Source link: https://www.youtube.com/watch?v=RhLpV6QDBFE
+- Capture mode: user-provided transcript
+
+### Tool architecture proposed in the transcript
+1) Task Board
+- Kanban with ownership tags (human vs agent), review lane, and live activity feed.
+- Heartbeat checks backlog and auto-executes tasks assigned to the agent.
+- Goal: remove ambiguity about agent progress and completion state.
+
+2) Calendar (Cron visibility)
+- Dedicated view of scheduled jobs and proactive tasks.
+- Used as verification layer so promised automations are actually scheduled and running.
+
+3) Projects screen
+- High-level project tracking to prevent scattered execution.
+- Links projects to tasks, memories, and docs.
+- Includes reverse-prompt pattern to generate next high-leverage action.
+
+4) Memories screen
+- Organize day-level and long-term memories in readable timeline/journal format.
+- Solves discoverability problems of raw memory files.
+
+5) Docs screen
+- Central archive for generated documents (plans, PRDs, drafts, newsletters, etc.).
+- Searchable and categorized retrieval layer.
+
+6) Team screen
+- Agent org chart showing roles, device/runtime, and delegation routing.
+- Includes mission statement used as decision filter for autonomous task selection.
+
+7) Office screen (2D visualization)
+- Visual activity layer for agent state and work status.
+- Functional plus motivational, improves engagement with the system.
+
+### Operating patterns emphasized
+- Reverse prompting is core, ask agent what tools to build based on current workflows.
+- Do not copy another dashboard blindly, generate hyper-personalized tools per user goals.
+- Start from a template, then iterative tool-building via simple prompts.
+
+### Strategic relevance to Ahmed
+- Directly aligned with existing Mission Control phases already completed.
+- Reinforces current priorities: visibility, proactive scheduling, memory/doc retrieval, agent governance.
+- Gap highlighted for current stack: strict quality gate for job links and handoff evidence can be surfaced as first-class Mission Control panel metric.
+
+### Recommended adaptation for Ahmed stack
+- Add a new Mission Control panel: Handoff Quality Gate.
+- Show per-run counts: direct URLs verified, search/listing links rejected, dropped_unverified_url, and roles promoted to CV stage.
+- This converts quality policy into live operational control and prevents silent regressions.

@@ -1,6 +1,6 @@
 {
-  "date": "2026-03-02",
-  "resetAt": "2026-03-02T00:00:17.574Z",
+  "date": "2026-03-03",
+  "resetAt": "2026-03-03T00:00:52.232Z",
   "models": {
     "anthropic/claude-opus-4-6": {
       "inputTokens": 0,
