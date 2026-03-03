@@ -54,7 +54,13 @@ For each NEW role from email alerts AND web search:
 - Sector: FinTech, HealthTech, Digital Transformation, AI, PMO, eCommerce, or Technology
 
 **ATS scoring:**
-- Fetch the full JD: if LinkedIn URL available, use web_fetch on the URL. Also verify against official employer source whenever available before final recommendation.
+- Fetch the full JD: if LinkedIn URL is available, run `node /root/.openclaw/workspace/scripts/fetch-guard.mjs "<URL>"` first.
+  - If outcome is `blocked_domain` (403 or bot shield), stop retries immediately, mark URL blocked, and log domain in `/root/.openclaw/workspace/memory/blocked-domains.log`.
+  - If outcome is `dead_url` (404), skip URL and do not retry.
+  - If outcome is `dns_error`, mark as external lookup failure and move on.
+  - If outcome is `transient_server_error`, retry at most 2 times total, then move on.
+- Only after guard passes, use web_fetch on the URL.
+- Also verify against official employer source whenever available before final recommendation.
 - Score against Ahmed's master CV at /root/.openclaw/workspace/memory/master-cv-data.md
 - Scoring criteria: keyword match, seniority alignment, sector fit, location match, required skills coverage
 - Keep only roles with ATS >= 80%
@@ -130,4 +136,7 @@ Next follow-ups: [list due in next 48hrs or "None due"]
 - Do NOT update MEMORY.md, GOALS.md, or active-tasks.md.
 - If no new roles found: say so clearly. Still send the email scan summary.
 - Profile match explanation is required for every qualifying role. Never skip it.
+- Never run infinite retries, maximum 2 retries for transient server errors.
+- Keep blocked-domain events in `/root/.openclaw/workspace/memory/blocked-domains.log` only.
+- Keep fatal fetch/runtime errors in `/root/.openclaw/workspace/memory/fetch-fatal.log`.
 - Timeout: 600 seconds. If approaching timeout, commit what you have and send partial summary.
