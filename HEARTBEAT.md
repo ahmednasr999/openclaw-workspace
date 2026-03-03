@@ -1,7 +1,7 @@
 # HEARTBEAT.md — Periodic Tasks
 
 *Fires every hour via OpenClaw heartbeat*
-*Last updated: 2026-02-24*
+*Last updated: 2026-03-03*
 
 ---
 
@@ -36,7 +36,7 @@ Fire this alert maximum once per day, not every hour.
 
 ---
 
-## Daily Checks (Once Per Day — 8:00 AM Cairo Time / EST+2)
+## Daily Checks (Once Per Day, 8:00 AM Cairo Time)
 
 ### Morning Briefing — REPLACED BY EXECUTIVE INTELLIGENCE BRIEFING CRON
 
@@ -61,15 +61,15 @@ GOALS.md was last updated [X] days ago. Worth 10 minutes to update pipeline and 
 
 ---
 
-## Cost Guard (Every Heartbeat)
+## Usage Guard (Every Heartbeat)
 
-Check session_status for daily spend.
+Check `session_status` for 5-hour and weekly usage pressure.
 
 | Threshold | Action |
 |-----------|--------|
-| > $3.00 | Auto-switch non-critical tasks to MiniMax M2.5 or Kimi (no approval needed) |
-| > $5.00 | Auto-switch + notify Ahmed: "💸 Cost alert: $[X] today. Shifted lighter tasks to MiniMax." |
-| > $10.00 | Hard alert + auto-throttle: "🚨 High spend: $[X]. Opus tasks paused, running on Haiku/MiniMax." |
+| 5h remaining <= 30% | Auto-shift non-critical work to MiniMax M2.5/Kimi |
+| 5h remaining <= 20% | Notify Ahmed and pause optional heavy jobs |
+| Weekly remaining <= 20% | Reserve premium models for critical tasks only |
 
 ---
 

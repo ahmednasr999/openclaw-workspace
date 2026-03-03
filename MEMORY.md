@@ -1,6 +1,6 @@
 # MEMORY.md — Long-Term Context
 
-*Last updated: 2026-02-27*
+*Last updated: 2026-03-02*
 *Maintained by: NASR*
 *Rule: If it's not here, it doesn't exist across sessions.*
 
@@ -24,7 +24,7 @@
 *(Update weekly — owned by NASR)*
 
 1. Land executive role — Dubai, Q3 2026
-2. Follow up on Delphi interview — completed Feb 24, 2026 (awaiting feedback)
+2. Delphi interview and follow-up completed, now awaiting recruiter response (next checkpoint: Mar 9, 2026)
 3. Complete OpenClaw system review and gap fixes
 4. LinkedIn executive positioning — 2-3 posts/week
 5. TopMed PMO delivery — $50M transformation on track
@@ -53,6 +53,8 @@
 - Time-sensitive items go to the TOP, never buried
 - Label options clearly: Option A / B / C
 - No hand-holding, no over-explaining, no empty enthusiasm
+- Default content capture rule: when Ahmed shares content links, articles, tweets, YouTube links, or transcripts, NASR auto-classifies and adds them to the knowledge bank unless Ahmed says "do not save."
+- Analysis preference (global): strategic depth over speed by default. For any source analysis, NASR must respond in this order: (1) full extraction first, (2) mapping to Ahmed stack, (3) recommendation and action plan. Use quick summary only when Ahmed explicitly asks for it.
 - **NEVER use em dashes in any response, CV, or content.** Use commas, periods, or colons instead. Hard rule, no exceptions. Applies to: replies, CVs, LinkedIn posts, reports, all sub-agent output. Every sub-agent brief for CV generation and content creation must explicitly include: "No em dashes anywhere in the output. Use commas, periods, or colons instead. Hard rule."
 
 ### Red Lines — Never Do These
@@ -128,9 +130,16 @@
 
 ### Active Job Pipeline
 
-*(Sync with GOALS.md — source of truth lives there)*
+*(Source of truth: jobs-bank/pipeline.md)*
 
-- Delphi Consulting — Senior AI PM — Interview completed Feb 24, 2026 — awaiting feedback (days)
+- Delphi Consulting — Senior AI PM — Interview completed, follow-up sent Mar 2, awaiting response (checkpoint Mar 9)
+- FAB — VP Technology & Data — Applied Feb 27
+- Aiwozo Intelligent Automation — Head of Digital Transformation — Applied Feb 26
+- Oman Airports OAMC — VP Digital Transformation & Innovation — Applied Feb 26
+- eMagine Solutions — VP Digital Projects — Applied Feb 25
+- Dubai Health — Head of Technology Transfer Office — Applied Feb 27
+- Cooper Fitch — Executive Director, Strategic Initiatives — Applied Feb 27
+- Michael Page (Confidential) — VP, AI & Technology — Applied Mar 2
 
 ---
 
@@ -154,7 +163,7 @@ Rule: Match model to task complexity. Never use Opus for what Haiku can do.
 *(Running log — add don't delete)*
 
 - 2026-02-27: **NEW PERMANENT RULE — Session context auto-flush at 75%.** At 150k/200k tokens: flush MEMORY.md + active-tasks + daily log, then start fresh session. Reason: during cascade failure, main session hit 93% context and couldn't respond even after rate limits cleared, prolonging outage significantly.
-- 2026-02-27: **Codex JWT deadline: re-authenticate BEFORE March 3** (expiry is March 4 — don't wait until expiry day). Update openclaw.json after re-auth.
+- 2026-02-27: **Codex JWT deadline pattern (resolved Mar 1 via OAuth):** original expiry was March 4, and preventive re-auth before expiry remains the rule for any future credential rotation.
 - 2026-02-27: **CASCADE FAILURE — All 6 models unavailable.** 26 parallel CV agents hit rate limits on Anthropic (Sonnet, Opus, Haiku) + Kimi + GPT-5.1 simultaneously; MiniMax M2.5 fallback had invalid OAuth token. Result: 30+ min outage, all crons/hooks failed, Gmail stalled. Fix: Deployed quota-monitor.js + fallback-validator.sh + two automated crons (daily quota reset at 00:00 UTC, credential validation at 06:00 UTC before morning briefing). Rules: Hard limit max 10 parallel agents, 70% daily usage triggers M2.5 downgrade, 90% blocks new spawns. Full deployment doc: memory/quota-monitoring-deployment-2026-02-27.md. OpenAI Codex JWT expires March 4, 2026 — must re-authenticate before expiry or GPT-5.1 will fail silently.
 - 2026-02-27: **Credential expiry tracking pattern:** When flagging expiring credentials, always: (1) add to active-tasks.md as 🔴 URGENT, (2) schedule a one-shot cron reminder 2 days before expiry, (3) note in MEMORY.md Lessons Learned. Never rely on a single tracking mechanism.
 - 2026-02-25: **GATEWAY CRASH — Systemd `KillMode` misconfiguration.** Child processes (npm, node, next-server) survived SIGTERM because service used `KillMode=control-group` (default). Result: 37 restart loop, zombie process, 6.4GB orphaned memory. Fix: Add `KillMode=mixed + TimeoutStopSec=15` to systemd service. Also: 4 stale Telegram delivery entries (Feb 21-22) stuck in queue because recovery budget too short (~500ms); moved to failed/ and increased timeout to 5s. Full post-mortem in GATEWAY_POSTMORTEM_2026-02-25.md.
@@ -190,6 +199,8 @@ Rule: Match model to task complexity. Never use Opus for what Haiku can do.
 ## ✅ Completed Milestones
 
 *(Archive of wins — context for future decisions)*
+
+- **Mission Control v2 COMPLETE (Mar 3, 2026)** - Scratch-rebuilt dashboard with 12 phases, 11 fully functional modules (Board, Calendar, Projects, Memory, Docs, Team, Office, Gate, Job Radar, LinkedIn Generator, Content Factory), Master Brief UX spec fully implemented (glassmorphism, drag-to-transition, traffic-light status, sparklines, heatmaps, command palette, heartbeat indicator, red-alert mode), 3 high-ROI enhancements (WIP limits, preflight URL validator, urgency timers), deployed live on Tailscale HTTPS, PM2 managed, all tests passing. Status: production-ready, shadow-validated, awaiting formal cutover approval.
 
 - System Evolution Round 1 COMPLETE (Feb 28, 2026) — 7 proposals reviewed and implemented: (1) Cron Error Recovery Protocol added to AGENTS.md, (2) LinkedIn cron root cause fixed (Telegram delivery failure, not generation), (3) CV Pending Updates tracking file created with startup hook, (4) Threads bio copy approved (Ahmed to update on app), (5) Model Escalation Log created (7-day audit Feb 28-Mar 6), (6) Sub-Agent Output Validation rule added to AGENTS.md with re-spawn protocol, (7) Codex JWT reminder cron set for Mar 2 9AM Cairo (auto-delete after fire). All pushed to GitHub.
 
@@ -278,19 +289,19 @@ NASR Rule: Update this file at session close. Always. Text > Brain. If it's not 
 - [[memory/cv-history.md]] — CV applications history
 - [[memory/ats-best-practices.md]] — ATS optimization
 - [[memory/interview-prep-protocol.md]] — Interview prep
-- [[memory/job-pipeline.md]] — Active job pipeline
+- [[jobs-bank/pipeline.md]] — Active job pipeline
 
 ### Daily Memory
-- [[memory/2026-02-24.md]] — Latest daily log
+- [[memory/2026-03-02.md]] — Latest daily log
+- [[memory/2026-03-01.md]] — Mar 1 session
+- [[memory/2026-02-28.md]] — Feb 28 session
+- [[memory/2026-02-27.md]] — Feb 27 session
+- [[memory/2026-02-26.md]] — Feb 26 session
+- [[memory/2026-02-25.md]] — Feb 25 session
+- [[memory/2026-02-24.md]] — Feb 24 session
 - [[memory/2026-02-23.md]] — Feb 23 session
 - [[memory/2026-02-22.md]] — Feb 22 session
 - [[memory/2026-02-21.md]] — Feb 21 session
-- [[memory/2026-02-20.md]] — Feb 20 session
-- [[memory/2026-02-19.md]] — Feb 19 session
-- [[memory/2026-02-18.md]] — Feb 18 session
-- [[memory/2026-02-17.md]] — Feb 17 session
-- [[memory/2026-02-16.md]] — Feb 16 session
-- [[memory/2026-02-15.md]] — Feb 15 session
 
 ### Case Studies
 - [[case-study-talabat.md]] — Talabat experience

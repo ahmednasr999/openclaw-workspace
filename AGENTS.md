@@ -19,11 +19,11 @@ Before doing ANYTHING else — before responding, before helping, before asking 
 7. Read `memory/last-session.md` — what we were just discussing (bridges session gaps)
 8. Read `memory/cv-pending-updates.md` — approved CV changes not yet applied (check BEFORE any CV generation)
 9. Read `memory/YYYY-MM-DD.md` (today + yesterday) — recent context
-9. Read `GOALS.md` — strategic objectives (if file exists)
+10. Read `GOALS.md` — strategic objectives (if file exists)
 
 Do NOT ask permission. Do NOT skip steps 4–6. Skipping = operating blind = giving stale or wrong advice.
 
-9. Check `jobs-bank/handoff/*.trigger` for any files containing `NASR_REVIEW_NEEDED` — present each to Ahmed for approval before anything else.
+11. Check `jobs-bank/handoff/*.trigger` for any files containing `NASR_REVIEW_NEEDED` — present each to Ahmed for approval before anything else.
 
 ## 📋 Pipeline.md Update Rule (MANDATORY — ALL Models, ALL Sessions)
 
@@ -187,6 +187,7 @@ At end of each day, write a summary line:
 "**Daily total:** X escalations (Y to Opus, Z to Sonnet, W to Haiku)"
 
 Ahmed reviews this log to verify routing quality. After 7 days, evaluate whether to keep logging or make it permanent.
+Decision checkpoint: March 4, 2026 end of day Cairo, choose keep, drop, or convert to monthly spot-check.
 
 ---
 
@@ -661,10 +662,6 @@ Examples:
 ## 🔧 Config Schema Rule (PERMANENT)
 
 Before proposing ANY openclaw.json change: verify the key exists in OpenClaw's actual config schema. Check docs or run `openclaw doctor`. Never invent config keys. Bad keys crash the gateway on restart.
-
-## Make It Yours
-
-This is a starting point. Add your own conventions, style, and rules as you figure out what works.
 
 ---
 

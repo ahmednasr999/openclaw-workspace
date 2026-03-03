@@ -1,115 +1,58 @@
 # Active Tasks
 
-*Last updated: 2026-03-02 10:22 UTC*
-
-## 🔴 URGENT — Expires within 5 days
-- ~~OpenAI Codex JWT token~~ ✅ RESOLVED Mar 1 — Switched to OAuth (auto-refreshes, expires ~June 2026)
-- **Cooper Fitch — ALREADY APPLIED** ✅ Feb 27, ATS 91%. CV on GitHub. No action needed. (active-tasks was stale)
+*Last updated: 2026-03-02 23:30 UTC*
 
 ## 🔴 URGENT — This Week
-- ~~GitHub 2FA required by April 4, 2026~~ ✅ COMPLETED Mar 1, 2026
-- ~~Delphi follow-up~~ ✅ COMPLETED Mar 2 — Value-signal message sent to Kritika Chhabra (LinkedIn DM).
-- **Advisory Board implementation** ✅ STARTED Mar 2 — Phase 2 daily and weekly engines executed successfully. Next: monitor next scheduled runs and tune stale inputs.
-- ~~Threads bio update~~ ✅ COMPLETED Mar 2 — Updated on Threads.
+- **Delphi thread monitoring:** Follow-up already sent on Mar 2, next checkpoint is **2026-03-09** if no recruiter response.
+- **LinkedIn Weeks 3-5 build:** Complete full drafts plus images by **2026-03-07** to keep posting continuity.
 
-## 🟡 Follow-up Schedule
-- **Policy override (active):** No proactive follow-ups for standard LinkedIn applications.
+## 🟡 Follow-up Policy
+- No proactive follow-ups for standard LinkedIn applications.
 - Follow-up only when: (1) post-interview silence, or (2) active recruiter thread goes quiet.
-- Current active follow-up: **Delphi only** (post-interview thread with Kritika), next follow-up checkpoint: **2026-03-09** if no recruiter response.
-
-## 🔴 Urgent
-
-### Job Radar - Daily Search
-- **Status:** ✅ ACTIVE — Tavily search configured
-- **Capability:** Autonomous web search 24/7
-- **Target:** VP/Director Digital Transformation, PMO, AI roles in UAE/Dubai
-- **Frequency:** Daily searches
-- **Last search:** Feb 25, 2026 - Found 48+ VP roles
-
-### Delphi Consulting Interview Prep
-- **Status:** ✅ COMPLETED — Feb 24, 2026 at 1:30 PM Cairo
-- **Position:** Senior AI Project Manager (UAE, On-Site)
-- **Interviewer:** Kritika Chhabra
-- **Outcome:** ✅ Went well — awaiting feedback
-- **Thank-you email:** ✅ SENT — Feb 25, 2026
-- **CV Match:** 91% ATS
-- **Salary target:** 50,000-55,000 AED/month
 
 ## 🟡 In Progress
 
+### Advisory Board Implementation
+- **Status:** ✅ STARTED Mar 2
+- **Progress:** Phase 2 daily and weekly engines executed successfully
+- **Next:** Monitor scheduled runs and tune stale inputs
+
 ### LinkedIn Content Engine
-- **Status:** ✅ LIVE — Automated daily delivery Sun-Thu at 11:30 AM Cairo
-- **Week 1 (Feb 25-26):** ✅ LIVE — posting started Feb 25, thank-you email to Delphi sent Feb 25
-- **Week 2 (Mar 2-6):** 5 posts + 5 images COMPLETE on GitHub
-- **Weeks 3-5:** Topics planned, need full drafts + images
-- **Cron:** "LinkedIn Daily Post + Image" (MiniMax M2.5, 300s timeout)
-- **GitHub:** `linkedin/week-YYYY-MM-DD/` — image above text per day
-- **Next:** Ahmed to review and post. Build Weeks 3-5 content. Friday pre-build cron.
+- **Status:** ✅ LIVE (Sun-Thu at 11:30 AM Cairo)
+- **Week 2 (Mar 2-6):** Complete on GitHub
+- **Weeks 3-5:** Drafting and image production in progress, due Mar 7
+- **Next:** Ahmed review and posting flow continues
 
 ### Knowledge Bank
-- **Status:** Active — 3 frameworks banked
+- **Status:** Active
 - **Location:** `memory/knowledge/content-strategy.md`
-- **Frameworks:** Priestley (Everyday CTA), Lara Costa (SLAY/PAS), Ashpreet Bedi (AI visibility)
-- **Next:** Ahmed will share more content, keep banking
+- **Next:** Continue banking frameworks from new content
 
 ### OpenClaw System Review
-- **Status:** In progress with Ahmed (Round 2 of deep dive)
-- **Completed:** Round 1 (Core Identity), Round 2 (Memory & Intelligence)
-- **Next:** Round 3+, then fix identified gaps
+- **Status:** In progress with Ahmed
+- **Completed:** Round 1 and Round 2
+- **Next:** Round 3 plus gap fixes
 
 ### CV Creation Pipeline
 - **Status:** Active
 - **Master CV:** `memory/master-cv-data.md`
-- **Pending Updates:** ✅ All clear — Cloud/GenAI/Vision 2030 updates applied Feb 28. Master CV is current.
-
-**Applied (Feb 27, 2026):**
-- Dubai Health - Head of Technology Transfer Office, Dubai - ATS 68-72% - APPLIED
-
-**Applied (Feb 26, 2026):**
-- Aiwozo Agentic Automation - Head of DT, Dubai - ATS 94% - APPLIED
-- First Abu Dhabi Bank - VP Technology & Data, Abu Dhabi - CV done previously - APPLIED
-- eMagine Solutions - VP Digital Projects, Abu Dhabi - ATS 87-90% - APPLIED (Feb 25)
-
-**CV Ready, Apply Next:**
-- Oman Airports OAMC - VP DT & Innovation, Muscat - ATS 100% - APPLIED (Feb 26, 2026)
-
-**Delphi Consulting - Senior AI PM:**
-- Interview Feb 24 - went well - thank-you sent Feb 25 - awaiting feedback
+- **Pending updates:** none
 
 ## 🟢 Recurring
-
-- Check for new JDs from Ahmed
+- Daily job radar checks
 - Update memory after each session
 - Daily notes in `memory/YYYY-MM-DD.md`
 
 ## ✅ Recently Completed
-
-- Gmail cleanup (fully automated via Himalaya)
-- AI Marketing Toolkit framework (4 skills created)
+- OpenAI Codex JWT risk resolved (OAuth active)
+- GitHub 2FA completed
+- Delphi follow-up sent to Kritika Chhabra
+- Threads bio updated
+- Cooper Fitch application already submitted and confirmed
+- Delphi interview prep and interview completed
+- Gmail cleanup automation
 - ATS best practices guide
 - Memory system implementation
-- Discord community research (Feb 21)
-
-## 📋 Backlog
-
-- Create GOALS.md (strategic objectives tracker) ✅ Done
-
-### Mission Control Phase 1 — ✅ COMPLETE
-- **Status:** All 8 pages built, live on port 3005, pushed to GitHub
-- **Pages:** Command Center, HR, Marketing, OPS, Intelligence, Team, Lab, Settings
-- **Repo:** https://github.com/ahmednasr999/mission-control.git
-- **Committed:** Feb 22, 2026
-- **Feedback:** See memory/mission-control-phase2-feedback.md
-
-### Mission Control Phase 2 — ✅ COMPLETE (Feb 22, 2026)
-- All 6 items shipped and confirmed working
-- GitHub: ahmednasr999/mission-control @ 6483ebf
-- Live: https://srv1352768.tail945bbc.ts.net:3005
-- Telegram sync alert: stubbed (log only) — wire later when needed
-- LinkedIn content calendar execution
-- Mission Control Task Board integration
-- Remove deprecated models from models.json (M2.1, M2.1-highspeed) ✅ Done
-- Add sub-agent output validation: after every completion, verify output file exists and is non-empty before announcing done. Log to lessons-learned.md if empty.
 
 ---
 
