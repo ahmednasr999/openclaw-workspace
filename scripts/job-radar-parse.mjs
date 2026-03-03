@@ -4,10 +4,14 @@
 
 import { readFileSync, writeFileSync, appendFileSync, existsSync } from 'fs';
 import { createHash } from 'crypto';
+import { execFile } from 'child_process';
+import { promisify } from 'util';
 
 const TAVILY_API_KEY = process.env.TAVILY_API_KEY;
 const date = process.argv[2] || new Date().toISOString().split('T')[0];
 const seenFile = process.argv[3] || '/root/.openclaw/workspace/memory/job-radar-seen.txt';
+const execFileAsync = promisify(execFile);
+const FETCH_GUARD_PATH = '/root/.openclaw/workspace/scripts/fetch-guard.mjs';
 
 // Ahmed's profile — used for matching
 const AHMED_PROFILE = {
@@ -66,6 +70,23 @@ function profileMatch(result) {
   if (matchedStrengths.length > 0) reasons.push(`matches: ${matchedStrengths.slice(0, 2).join(', ')}`);
 
   return { score: Math.min(score, 100), reasons };
+}
+
+async function runFetchGuard(url) {
+  try {
+    const { stdout } = await execFileAsync('node', [FETCH_GUARD_PATH, url], { timeout: 20000 });
+    const line = (stdout || '').trim().split('\n').filter(Boolean).pop() || '{}';
+    const parsed = JSON.parse(line);
+    return parsed.outcome || 'ok';
+  } catch (err) {
+    const stdout = String(err?.stdout || '').trim().split('\n').filter(Boolean).pop() || '{}';
+    try {
+      const parsed = JSON.parse(stdout);
+      return parsed.outcome || 'fetch_failed';
+    } catch {
+      return 'fetch_failed';
+    }
+  }
 }
 
 // Tavily search
@@ -136,6 +157,13 @@ async function main() {
 
         const match = profileMatch(r);
         if (match.score >= 30) { // Only include relevant results
+          const guardOutcome = await runFetchGuard(url);
+
+          if (guardOutcome !== 'ok') {
+            process.stdout.write(`> Skipped URL (${guardOutcome}): ${url}\n`);
+            continue;
+          }
+
           allResults.push({ ...r, match, searchLabel: search.label });
           seen.add(urlHash);
         }
