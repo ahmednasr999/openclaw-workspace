@@ -1,0 +1,6 @@
+{
+  "name": "telegram-ingress-audit",
+  "version": "0.1.0",
+  "private": true,
+  "openclaw": { "hooks": ["./telegram-ingress-audit"] }
+}

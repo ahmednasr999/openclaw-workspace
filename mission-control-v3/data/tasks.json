@@ -1,0 +1,90 @@
+[
+  {
+    "id": "t-1772566526550",
+    "title": "QA Smoke Create",
+    "assignee": "NASR",
+    "priority": "high",
+    "dueDate": "2026-03-11",
+    "status": "backlog"
+  },
+  {
+    "id": "t1",
+    "title": "Finalize Delphi prep pack",
+    "assignee": "NASR",
+    "priority": "high",
+    "dueDate": "2026-03-05",
+    "status": "in_progress"
+  },
+  {
+    "id": "t2",
+    "title": "Audit stale applications",
+    "assignee": "Job Hunter",
+    "priority": "medium",
+    "dueDate": "2026-03-08",
+    "status": "backlog"
+  },
+  {
+    "id": "t3",
+    "title": "Draft AI PMO post",
+    "assignee": "Content Creator",
+    "priority": "medium",
+    "dueDate": "2026-03-06",
+    "status": "review"
+  },
+  {
+    "id": "t4",
+    "title": "Calendar cron QA",
+    "assignee": "CV Optimizer",
+    "priority": "low",
+    "dueDate": "2026-03-04",
+    "status": "done"
+  },
+  {
+    "id": "t5",
+    "title": "Partner follow-up batch",
+    "assignee": "NASR",
+    "priority": "high",
+    "dueDate": "2026-03-04",
+    "status": "in_progress"
+  },
+  {
+    "id": "t6",
+    "title": "Pipeline reconciliation",
+    "assignee": "Job Hunter",
+    "priority": "high",
+    "dueDate": "2026-03-07",
+    "status": "review"
+  },
+  {
+    "id": "t7",
+    "title": "Daily heartbeat check",
+    "assignee": "NASR",
+    "priority": "medium",
+    "dueDate": "2026-03-03",
+    "status": "recurring"
+  },
+  {
+    "id": "t8",
+    "title": "Role market scan",
+    "assignee": "Job Hunter",
+    "priority": "medium",
+    "dueDate": "2026-03-09",
+    "status": "backlog"
+  },
+  {
+    "id": "t9",
+    "title": "Ops playbook cleanup",
+    "assignee": "NASR",
+    "priority": "medium",
+    "dueDate": "2026-03-10",
+    "status": "review"
+  },
+  {
+    "id": "t10",
+    "title": "Automation drift fix",
+    "assignee": "NASR",
+    "priority": "high",
+    "dueDate": "2026-03-06",
+    "status": "review"
+  }
+]

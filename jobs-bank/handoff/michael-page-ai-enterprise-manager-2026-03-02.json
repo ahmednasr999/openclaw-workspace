@@ -29,7 +29,7 @@
     "Title is Manager level - somewhat below Ahmed's VP/Director target",
     "Power Platform / RPA not explicitly stated in CV"
   ],
-  "status": "NASR_REVIEW_NEEDED",
-  "next_step": "Ahmed to review: strong AI match but seniority level may be below target. Confirm before CV build.",
+  "status": "REJECTED_BY_AHMED",
+  "next_step": "Closed by Ahmed as No-Go due to seniority mismatch. Do not build CV.",
   "apply_deadline": null
 }
