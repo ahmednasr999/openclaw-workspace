@@ -42,3 +42,20 @@ I am a senior technology leader with 20+ years of progressive, cr...
 
 ---
 
+=== Job Radar v2 — 2026-03-03 ===
+
+> Skipped URL (blocked_domain): https://ae.indeed.com/q-head-of-digital-transformation-jobs.html
+> Skipped URL (blocked_domain): https://www.glassdoor.com/Job/dubai-head-of-strategy-transformation-jobs-SRCH_IL.0,5_IC2204498_KO6,37.htm
+> Skipped URL (blocked_domain): https://www.bayt.com/en/international/jobs/pmo-lead-jobs/
+> Skipped URL (fetch_failed): https://www.naukrigulf.com/head-of-pmo-jobs-in-dubai
+> Skipped URL (blocked_domain): https://www.glassdoor.com/Job/dubai-pmo-director-jobs-SRCH_IL.0,5_IC2204498_KO6,18.htm
+> Skipped URL (blocked_domain): https://www.worldhealthexpo.com/events/healthcare/tech/en/home.html
+> Skipped URL (blocked_domain): https://www.instagram.com/p/DUntGYKkdSR/
+> Skipped URL (blocked_domain): https://ae.indeed.com/q-head-of-digital-transformation-jobs.html
+> Skipped URL (blocked_domain): https://www.kpifire.com/best-continuous-improvement-conferences-2026/
+
+> No new roles found today (all duplicates or below threshold).
+
+
+---
+
