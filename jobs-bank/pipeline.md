@@ -1,6 +1,6 @@
 # 📊 Jobs Pipeline — Week 09: Feb 27 – Mar 05, 2026
 
-*Last updated: 2026-03-03 00:30 UTC | Maintained by NASR*
+*Last updated: 2026-03-03 00:45 UTC | Maintained by NASR*
 *Archive: [W09 Snapshot](weeks/2026-W09-Feb27-Mar05.md) | Previous weeks: [jobs-bank/weeks/](weeks/)*
 
 ---
@@ -54,6 +54,7 @@
 | 43 | ☑️ | RapidData Technologies | Strategy & KPI Expert | Dubai, UAE | 88% | ✅ Applied | Full JD | 2026-03-01 | 2026-03-08 | [LinkedIn](https://www.linkedin.com/jobs/view/4375202921) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20Strategy%20%26%20KPI%20Expert%20-%20RapidData.pdf) |
 | 44 | ☑️ | Salt | Senior Program Manager | Abu Dhabi, UAE | 91% | ✅ Applied | Full JD | 2026-03-01 | 2026-03-08 | [LinkedIn](https://www.linkedin.com/jobs/view/4375521803) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20Senior%20Program%20Manager%20-%20Salt.pdf) |
 | 45 | ☑️ | Confidential (Michael Page) | VP, AI & Technology | International / UAE | 88% | ✅ Applied | Partial JD | 2026-03-02 | 2026-03-09 | [Michael Page](https://www.michaelpage.ae/job-detail/vp-ai-technology/ref/jn-022026-6953563) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20VP%20AI%20%26%20Technology%20-%20Michael%20Page.pdf) |
+| 46 | ☐ | RAKBANK | Vice President, AI Platform Owner | Dubai, UAE | 89% | 🟡 CV Ready | Full JD | — | — | [LinkedIn](https://www.linkedin.com/jobs/view/4373081849/) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20Vice%20President%20AI%20Platform%20Owner%20-%20RAKBANK.pdf) |
 
 
 ---
@@ -74,9 +75,7 @@
 
 | Company | Role | Location | Priority | JD Status | Job URL | Next Step |
 |---------|------|----------|----------|-----------|---------|-----------|
-| Al-Futtaim Group | Senior Manager, Group AI Office PMO | Dubai, UAE | ⚪ Closed | Verified Official | [Al-Futtaim Careers](https://www.afuturewithus.com/job/Dubai-UAE-National_Senior-Manager-Group-AI-Office-Value-Realization-and-Program-Management/1266155701/) | Official source indicates position no longer accepting applications. |
-| Confidential (Michael Page) | AI Enterprise Manager - Architecture & Delivery | Dubai, UAE | ⚪ Closed | Partial JD | [Michael Page](https://www.michaelpage.ae/job-detail/ai-enterprise-manager-architecture-delivery/ref/jn-022026-6946082) | Skipped by decision on 2026-03-03 due seniority mismatch versus VP track. |
-| RAKBANK | Vice President, AI Platform Owner | Dubai, UAE | 🟡 MEDIUM | Partial JD (LinkedIn only) | [LinkedIn](https://www.linkedin.com/jobs/vice-president-ai-platform-owner-jobs-dubai/) | Approved to proceed on 2026-03-03. Next: fast tailored CV and submit application. |
+| None | — | — | — | — | — | No open radar items. RAKBANK moved to Active Pipeline at CV Ready stage, 2026-03-03. |
 
 
 
@@ -89,11 +88,11 @@
 
 | Metric | Value |
 |--------|-------|
-| Total tracked | 45 |
+| Total tracked | 46 |
 | Applied | 45 |
-| CV Ready, not yet applied | 0 |
-| Radar — Needs Action | 1 |
-| Radar (no CV yet) | 1 |
+| CV Ready, not yet applied | 1 |
+| Radar — Needs Action | 0 |
+| Radar (no CV yet) | 0 |
 | Active interviews | 1 (Delphi — awaiting feedback) |
 | Avg ATS score (all CVs) | 89% |
 | Follow-up policy | No proactive follow-ups — wait for recruiter response |
