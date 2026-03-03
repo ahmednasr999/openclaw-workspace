@@ -328,3 +328,57 @@ Require stack:
 
 Node.js v20.19.4
 
+=== Morning Brief - 2026-03-03 06:00 AM ===
+
+## Job Radar (from Tavily)
+## Answer
+
+The VP Director PMO for digital transformation in healthcare in Dubai, UAE, is a senior role focused on leading digital initiatives and ensuring project success by 2026. Key responsibilities include strategic planning and technology integration. Opportunities are available for this position in 2026.
+
+---
+
+## Sources
+
+- **PMO Jobs in UAE (Jan 2026) - Dubai** (relevance: 100%)
+  https://www.bayt.com/en/uae/jobs/pmo-jobs/
+  Coordinate day-to-day project activities across teams and clients, supporting IT and digital transformation projects . Utilize tools like Jira and Confluence to track progress and manage documentation, ensuring effective communication and timely
+
+- **PMO Director Jobs in the Middle East (Dec 2025)** (relevance: 100%)
+  https://www.bayt.com/en/international/jobs/pmo-director-jobs/
+  Apply now to over 460 PMO Director jobs in Middle East and Gulf and make your job hunting simpler. Find the latest PMO Director job vacancies and ... Missing: February | Show results with: February
+
+- **25+ Senior Director Digital Transformation Jobs, Employment ...** (relevance: 100%)
+  https://ae.indeed.com/q-senior-director-digital-transformation-l-dubai-jobs.html
+  3 days ago · Discover 45 Senior Director Digital Transformation job opportunities in Dubai on Indeed.com. Apply today to advance your career with top
+
+- **173 director of technology Jobs in Dubai, February 2026 | Glassdoor** (relevance: 99%)
+  http://www.glassdoor.com/Job/dubai-director-of-technology-jobs-SRCH_IL.0,5_IC2204498_KO6,28.htm
+  Search Director of technology jobs in Dubai with company ratings & salaries. 173 open jobs for Director of technology in Dubai.
+
+- **Digital Transformation Jobs in UAE - 242 Vacancies Mar 2026 - Naukrigulf** (relevance: 99%)
+  https://www.naukrigulf.com/digital-transformation-jobs-in-uae
+  Lead digital transformation strategy, evaluate processes for automation, recommend technology solutions, and ensure compliance while engaging stakeholders and monitoring perform... Lead IT strategy and digital transformation, oversee infrastructure, drive innovation, ensure cybersecurity, and manage...
+## Gmail - New Opportunities
+node:internal/modules/cjs/loader:1215
+  throw err;
+  ^
+
+Error: Cannot find module 'googleapis'
+Require stack:
+- /root/.openclaw/workspace/scripts/gmail-scan.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1212:15)
+    at Module._load (node:internal/modules/cjs/loader:1043:27)
+    at Module.require (node:internal/modules/cjs/loader:1298:19)
+    at require (node:internal/modules/helpers:182:18)
+    at Object.<anonymous> (/root/.openclaw/workspace/scripts/gmail-scan.js:1:20)
+    at Module._compile (node:internal/modules/cjs/loader:1529:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+    at Module.load (node:internal/modules/cjs/loader:1275:32)
+    at Module._load (node:internal/modules/cjs/loader:1096:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:164:12) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [ '/root/.openclaw/workspace/scripts/gmail-scan.js' ]
+}
+
+Node.js v20.19.4
+
