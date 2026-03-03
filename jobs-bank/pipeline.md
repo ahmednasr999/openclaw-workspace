@@ -1,6 +1,6 @@
 # 📊 Jobs Pipeline — Week 09: Feb 27 – Mar 05, 2026
 
-*Last updated: 2026-03-03 00:45 UTC | Maintained by NASR*
+*Last updated: 2026-03-03 00:50 UTC | Maintained by NASR*
 *Archive: [W09 Snapshot](weeks/2026-W09-Feb27-Mar05.md) | Previous weeks: [jobs-bank/weeks/](weeks/)*
 
 ---
@@ -54,7 +54,7 @@
 | 43 | ☑️ | RapidData Technologies | Strategy & KPI Expert | Dubai, UAE | 88% | ✅ Applied | Full JD | 2026-03-01 | 2026-03-08 | [LinkedIn](https://www.linkedin.com/jobs/view/4375202921) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20Strategy%20%26%20KPI%20Expert%20-%20RapidData.pdf) |
 | 44 | ☑️ | Salt | Senior Program Manager | Abu Dhabi, UAE | 91% | ✅ Applied | Full JD | 2026-03-01 | 2026-03-08 | [LinkedIn](https://www.linkedin.com/jobs/view/4375521803) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20Senior%20Program%20Manager%20-%20Salt.pdf) |
 | 45 | ☑️ | Confidential (Michael Page) | VP, AI & Technology | International / UAE | 88% | ✅ Applied | Partial JD | 2026-03-02 | 2026-03-09 | [Michael Page](https://www.michaelpage.ae/job-detail/vp-ai-technology/ref/jn-022026-6953563) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20VP%20AI%20%26%20Technology%20-%20Michael%20Page.pdf) |
-| 46 | ☐ | RAKBANK | Vice President, AI Platform Owner | Dubai, UAE | 89% | 🟡 CV Ready | Full JD | — | — | [LinkedIn](https://www.linkedin.com/jobs/view/4373081849/) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20Vice%20President%20AI%20Platform%20Owner%20-%20RAKBANK.pdf) |
+| 46 | ☑️ | RAKBANK | Vice President, AI Platform Owner | Dubai, UAE | 89% | ✅ Applied | Full JD | 2026-03-03 | 2026-03-17 | [LinkedIn](https://www.linkedin.com/jobs/view/4373081849/) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20Vice%20President%20AI%20Platform%20Owner%20-%20RAKBANK.pdf) |
 
 
 ---
@@ -89,8 +89,8 @@
 | Metric | Value |
 |--------|-------|
 | Total tracked | 46 |
-| Applied | 45 |
-| CV Ready, not yet applied | 1 |
+| Applied | 46 |
+| CV Ready, not yet applied | 0 |
 | Radar — Needs Action | 0 |
 | Radar (no CV yet) | 0 |
 | Active interviews | 1 (Delphi — awaiting feedback) |
