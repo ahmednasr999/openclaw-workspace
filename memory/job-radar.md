@@ -930,3 +930,226 @@ There are multiple job openings for VP or Director roles in HealthTech, FinTech,
 
 ---
 
+=== Job Radar - 2026-03-03 ===
+
+### Search 1: VP/C-Suite Digital Transformation
+## Answer
+
+Dr. Semih Kumluk leads AI transformation in the UAE; Abdulmajeed Alalshaikh focuses on innovation sectors in Saudi Arabia; Amaar Khan is a prominent CIO in Dubai.
+
+---
+
+## Sources
+
+- **Dr. Semih Kumluk - Enterprise Transformation, Data & AI ...** (relevance: 99%)
+  https://ae.linkedin.com/in/drsemihkumluk
+  Dr. Semih Kumluk
+AI Transformation Executive | Digital Business Strategist | Innovation Leader | Startup Advisor & VC Connector | Global Keynote Speaker
+Dubai, United Arab Emirates
+500 connections, 25485 followers
+
+
+About
+I am an Enterprise Transformation, Data & AI Executive leading organizations…
+...
+
+- **Abdulmajeed Alalshaikh - Manager at KPMG | Advisory | LinkedIn** (relevance: 98%)
+  https://www.linkedin.com/in/abdulmajeed-alalshaikh/
+  - Target Groups: • Entrepreneurial companies • Individual entrepreneurs and innovators • Venture capital funds • Accelerators, incubators, and ecosystem enablers - Priority Sectors & Technologies: Health Tech | Fintech | Artificial Intelligence | Machine Learning | Institutional Regulations | Electr...
+
+- **Ebrahim M. - Doha Metropolitan Area | Professional Profile | LinkedIn** (relevance: 92%)
+  https://www.linkedin.com/in/ebrahimmattar/
+  As an experienced CTO with certifications including PMP, CGEIT, ITIL, ISO 9001, and PMR… · Location: Doha Metropolitan Area. 500+ connections on LinkedIn. View Ebrahim M.’s profile on LinkedIn, a professional community of 1 billion members.
+
+- **Ahmed Tamer Ali - Senior Manager IT & Cyber Governance - Global Business Bureau Certification | LinkedIn** (relevance: 84%)
+  https://www.linkedin.com/in/at-911b0210/
+  June 29, 2025 - He operates at the intersection of IT audit, cybersecurity governance, and ISO consultancy. His work spans the UAE, KSA, Kuwait, Bahrain, Oman, and Jordan—delivering high-impact advisory programs that enhance compliance, reduce risk, and strengthen organizational resilience.
+
+- **Amaar Khan - Barclays | LinkedIn** (relevance: 82%)
+  https://www.linkedin.com/in/amaarkhan/
+  Amaar Khan
+Managing Director - Chief Information Officer, Corporate Banking APAC & MENA
+Dubai, United Arab Emirates
+500 connections, 29719 followers
+
+
+About
+Amaar Khan is an executive CIO / CTO with a proven track record delivering high-value…
+
+
+Experience
+N/A
+
+
+Education
+N/A
+
+- **Sohail Rashid - CEO @ Dubai Technologies | MBA** (relevance: 80%)
+  https://www.linkedin.com/in/sohail-rashid-60973b2/
+  Sohail Rashid
+CEO @ Dubai Technologies | MBA
+San Francisco Bay Area
+500 connections, 1046 followers
+
+
+About
+CEO @ Dubai Technologies Advisor @ Dubai Technologies | Strategy MaaS and…
+
+
+Experience
+N/A
+
+
+Education
+N/A
+
+- **Mohamed Jamal-Eddine - AD Ports Group | LinkedIn** (relevance: 59%)
+  https://www.linkedin.com/in/mouhamad/
+  Mohamed Jamal-Eddine
+AD Ports Group
+United Arab Emirates
+500 connections, 6764 followers
+
+
+About
+Transformational digital leader with 20+ years of experience driving enterprise-wide…
+
+
+Experience
+N/A
+
+
+Education
+N/A
+
+- **Saeed Al Hasan .AI Master - NICGulf | LinkedIn** (relevance: 57%)
+  https://ae.linkedin.com/in/saeedalhasan
+  Saeed Al Hasan .AI Master
+NICGulf
+Dubai, United Arab Emirates
+500 connections, 29176 followers
+
+
+About
+A Serial Entrepreneur and Chief AI Strategist, recognized as one of the key figures…
+
+
+Experience
+N/A
+
+
+Education
+The University of British Columbia
+N/A
+2004-01 - 2009-04
+None
+
+- **Accenture Middle East | LinkedIn** (relevance: 44%)
+  https://www.linkedin.com/company/accenture-middle-east
+  Overview:
+Accenture is a leading solutions and global professional services company that helps the world’s leading enterprises reinvent by building their digital core and unleashing the power of AI to create value at speed across the enterprise, bringing together the talent of our approximately 779,...
+
+- **Manu Vallayil - Founder | CEO | Data Strategist** (relevance: 37%)
+  https://www.linkedin.com/in/manuvallayil/
+  Chief Executive Officer with a demonstrated history of working in the information… · Experience: Titan Tech Emirates · Location: Dubai · 500+ connections on LinkedIn. View Manu Vallayil ’s profile on LinkedIn, a professional community
+
+### Search 2: PMO / Technology Leadership
+## Answer
+
+Head of PMO, Director PMO, VP PMO roles are available in Dubai, Riyadh, and Doha. Key positions in technology and AI are also prominent in the UAE and Saudi Arabia. Opportunities in project management and AI engineering are actively sought.
+
+---
+
+## Sources
+
+- **Remote Project Manager Jobs in Dubai (Feb 2026) - Bayt.com** (relevance: 54%)
+  https://www.bayt.com/en/uae/jobs/remote-project-manager-jobs-in-dubai/
+  Summary: Elevate your career as the Head of Technology at AllUp, where you will lead the charge in SaaS and AI solutions. This hands-on role demands a
+
+- **[PDF] The New Saudi Arabian Bankruptcy Law - Al Tamimi & Company** (relevance: 49%)
+  https://www.tamimi.com/wp-content/uploads/2018/04/Law-Update-March-Edition.pdf
+  KEY CONTACTS UAE ABU DHABI Alex Ghazi alex.ghazi@tamimi.com DUBAI, DIC Samer Qudah s.qudah@tamimi.com DUBAI, DIFC Husam Hourani h.hourani@tamimi.com DUBAI, THE MAZE TOWER Bassem El Dine b.dine@tamimi.com RAS AL KHAIMAH Ammar Haykal a.haykal@tamimi.com SHARJAH Zafer Oghli z.oghli@tamimi.com BAHRAIN M...
+
+- **Finance Transformation Jobs in the Middle East (Mar 2026) - Bayt.com** (relevance: 47%)
+  https://www.bayt.com/en/international/jobs/finance-transformation-jobs/
+  Head of AI Engineering. Michael Page logo. Michael Page · Dubai · UAE. Summary: A pivotal
+
+- **Find Jobs in the Middle East - Bayt.com** (relevance: 39%)
+  https://www.bayt.com/en/international/jobs/search/
+  Riyadh · Saudi Arabia. 2 hours ago · Easy Apply. Michael Page logo. Head of AI Engineering. Michael Page. Dubai · United Arab Emirates. 3 hours ago. Find more
+
+- **Project Management Office PMO Manager Jobs in Saudi Arabia** (relevance: 37%)
+  https://www.bayt.com/en/saudi-arabia/jobs/project-management-office-pmo-manager-jobs/
+  Apply now to over 30 Project Management Office PMO Manager jobs in Saudi Arabia and make your job hunting simpler. Find the latest Project Management
+
+- **Gucci Jobs in the Middle East (Feb 2026) - Bayt.com** (relevance: 37%)
+  https://www.bayt.com/en/international/jobs/gucci-jobs/
+  Summary: A transformative opportunity awaits in Saudi Arabia, where impactful leadership is essential for driving innovation and growth. As the Managing
+
+- **Senior Project Director Jobs in Bahrain (Jan 2026) - Bayt.com** (relevance: 30%)
+  https://www.bayt.com/en/bahrain/jobs/senior-project-director-jobs/
+  Saudi Arabia · Jeddah, Saudi Arabia · Jubail, Saudi Arabia · Khobar, Saudi Arabia · Mecca, Saudi Arabia · Medina, Saudi Arabia · Riyadh ... Jobs
+
+- **沙特营商指南 - Scribd** (relevance: 14%)
+  https://www.scribd.com/document/585000551/%E6%B2%99%E7%89%B9%E8%90%A5%E5%95%86%E6%8C%87%E5%8D%97
+  ... Saudi Arabia Partner Jeddah, Saudi Arabia Al Khobar, Saudi Arabia Riyadh, Saudi Arabia b.alhamidani@tamimi.com Head of Technology, Media & 21333 31952 11372
+
+- **Job Seekers, Job Search - Alliance Recruitment Agency** (relevance: 8%)
+  https://www.alliancerecruitmentagency.com/job-seekers/
+  Key Account Manager (KAM) – Events & Expo, 1, Riyadh, Riyadh, Saudi Arabia, Details Apply ... Massage Therapist, 1, Jeddah, Makkah, Saudi Arabia, Details Apply.
+
+- **Saleh Abdulaziz Al Rashid And Sons Co. - abc-gcc.net** (relevance: 3%)
+  https://abc-gcc.net/companies/4/525672
+  ASMO a joint venture between Saudi oil giant Aramco and multinational logistics company DHL Supply Chain has sealed a partnership deal with Arcapita Group Holdings a global alternative investment firm to develop a 1.4 million sq m purpose-built logistics facility at King Salman Energy Park (Spark) i...
+
+### Search 3: HealthTech / FinTech Executives
+## Answer
+
+There are multiple executive-level job openings in digital health in the UAE, Saudi Arabia, and Qatar for 2026. Key positions include Head of Digital Health and Executive Director in healthcare. Apply directly through platforms like Indeed, Bayt, and LinkedIn.
+
+---
+
+## Sources
+
+- **25+ Head of Digital Health Jobs, Employment 1 March 2026 - Indeed** (relevance: 73%)
+  https://ae.indeed.com/q-head-of-digital-health-jobs.html
+  Discover 42 Head of Digital Health job opportunities on Indeed.com. Apply today to advance your career with top employers.
+
+- **Digital Health Jobs in the Middle East (Mar 2026) - Bayt.com** (relevance: 73%)
+  https://www.bayt.com/en/international/jobs/digital-health-jobs/
+  Apply now to over 3650 Digital Health jobs in Middle East and Gulf and make your job hunting simpler. Find the latest Digital Health job vacancies and
+
+- **21 executive director healthcare jobs in Dubai, February 2026** (relevance: 64%)
+  https://www.glassdoor.ie/Job/dubai-executive-director-healthcare-jobs-SRCH_IL.0,5_IC2204498_KO6,35.htm
+  Search Executive director healthcare jobs in Dubai with company ratings and salaries. 21 open jobs for Executive director healthcare in Dubai.
+
+- **Executive jobs - Dubai - Michael Page** (relevance: 36%)
+  https://www.michaelpage.ae/jobs/executive
+  Search for Executive jobs at some of the world's top companies using UAE's leading recruitment consultancy - Michael Page.
+
+- **718 Digital Health Solutions Jobs in Worldwide (49 new) - LinkedIn** (relevance: 14%)
+  https://www.linkedin.com/jobs/digital-health-solutions-jobs-worldwide
+  Today's top 718 Digital Health Solutions jobs. Leverage your professional network, and get hired. New Digital Health Solutions jobs added daily.
+
+- **Vanguard careers: Explore opportunities to join our mission** (relevance: 14%)
+  https://www.vanguardjobs.com/
+  ## About Vanguard. Our mission is to take a stand for all investors, to treat them fairly, and to give them the best chance for investment success. ## About Vanguard. ## People like you make a difference at Vanguard. ### People like you make a difference at Vanguard. ## “Coming to Vanguard, I notice...
+
+- **Goldman Sachs Careers** (relevance: 13%)
+  https://www.goldmansachs.com/careers
+  Our firm is for those who insist on excellence, strive for performance, and thrive on opportunities to learn from the best. We provide top-tier benefits, from comprehensive healthcare options and crisis support to wellness programs and more. Fortune has once again recognized Goldman Sachs on its lis...
+
+- **Job Openings - Ankura.com** (relevance: 7%)
+  https://ankura.com/job-openings
+  Search for Jobs page is loaded. 78 JOBS FOUND. Jump to selected job details. Fellow, McLarty Asia Practices. locations: USA Washington DC
+
+- **Consulting Career Opportunities - Simon-Kucher** (relevance: 5%)
+  https://www.simon-kucher.com/en/careers
+  Whether you are an intern, graduate, or an experienced career professional, we offer exciting career opportunities with purpose and impact at the heart of our work. Today, Simon-Kucher is one the fastest-growing consultancies in the world, with offices in 30+ countries and employing over 2,000 peopl...
+
+- **Work With Us - BNY** (relevance: 4%)
+  https://www.bny.com/corporate/global/en/about-us/careers/work-with-us.html
+  At BNY, we have the tools to support your wealth and health including a comprehensive. BNY understands that your mental health is just as important as your physical health. #### **Financial Wellbeing**. The culture, people, work flexibility and, most importantly, emphasis on mental health — it all a...
+
+---
+
