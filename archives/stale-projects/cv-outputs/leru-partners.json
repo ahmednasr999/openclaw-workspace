@@ -1,0 +1,130 @@
+{
+  "format": "chronological",
+  "contact": {
+    "name": "Ahmed Nasr",
+    "email": "ahmednasr999@gmail.com",
+    "phone": "+971 50 281 4490",
+    "location": "Dubai, UAE",
+    "linkedin": "linkedin.com/in/ahmednasr"
+  },
+  "summary": "AI Solutions and Delivery Executive with 20+ years driving client-facing programme delivery, business analysis, and presales across HealthTech, FinTech, and e-commerce in GCC and Egypt. Currently deploying 14 production AI agents in live clinical operations at Saudi German Health, translating complex client needs into actionable AI-enabled solutions. Certified PMP and CBAP with deep expertise in requirements elicitation, user story definition, stakeholder management, and cross-functional delivery coordination. Proven track record building and scaling delivery functions from the ground up, managing offshore and distributed teams across 8 countries. Comfortable in fast-moving startup environments — previously led country-level product and commercial strategy for Egypt's first FinTech SuperApp at PaySky. MBA candidate at Paris ESLSCA Business School.",
+  "skills": [
+    {
+      "category": "AI and Solutions Delivery",
+      "items": ["Agentic AI and LLM Platform Deployment (14 production agents)", "Solution Design and Presales", "Requirements Elicitation and User Story Definition", "Acceptance Criteria and Specs Writing", "POC and Demo Support", "Proposal and Scope Creation"]
+    },
+    {
+      "category": "Project and Programme Management",
+      "items": ["Jira Workflows and Sprint Management", "PMP Certified", "CBAP Certified", "Agile and Scrum (CSM, CSPO)", "Offshore Team Coordination (India, US, GCC)", "Delivery Expectation Management"]
+    },
+    {
+      "category": "Client and Stakeholder Management",
+      "items": ["C-suite Stakeholder Engagement", "Client Discovery and Requirements Capture", "Change Management", "Customer Success and CXM", "Cross-cultural Team Leadership", "Business Development Support"]
+    }
+  ],
+  "experience": [
+    {
+      "title": "PMO and Regional Engagement Lead",
+      "company": "Saudi German Hospital Group (TopMed)",
+      "location": "Dubai, UAE",
+      "dates": "Jun 2024 - Present",
+      "bullets": [
+        "Deployed 14 production AI agents in live clinical operations, translating complex client and clinical needs into actionable requirements, user stories, and acceptance criteria for offshore and vendor tech teams",
+        "Led discovery sessions with C-suite and clinical leadership to capture needs and translate into solution proposals, delivery roadmaps, and measurable outcomes",
+        "Coordinated and prioritised delivery across cross-functional teams of 30 professionals and external technology partners (Health Catalyst, KLAS Research), managing handovers and delivery expectations across distributed teams",
+        "Established and enforced project management governance frameworks, sprint processes, and reporting structures across digital health, AI, EMR, and analytics workstreams",
+        "Managed $50M technology transformation programme with direct accountability to executive leadership, combining presales support, scope creation, and delivery ownership",
+        "Championed customer experience and fed insights from clinical operations into product and service improvements across the 15-hospital network"
+      ]
+    },
+    {
+      "title": "Country Manager",
+      "company": "PaySky, Inc.",
+      "location": "Egypt",
+      "dates": "Apr 2021 - Jan 2022",
+      "bullets": [
+        "Led commercial strategy and client engagement for Egypt's first comprehensive FinTech SuperApp in an early-stage startup environment, attending client meetings and capturing requirements from financial institutions and regulators",
+        "Translated client needs into product requirements, user stories, and solution proposals, coordinating with engineering teams to deliver platform features aligned to client expectations",
+        "Drove presales activity: scoped solutions, created proposals, and supported demos with enterprise partners to accelerate market entry",
+        "Managed stakeholder communication and change management across financial institutions, regulators, and technology partners in a fast-moving startup environment"
+      ]
+    },
+    {
+      "title": "Head of E-Commerce Product and IT Strategy",
+      "company": "Al Araby Group",
+      "location": "Egypt",
+      "dates": "Jan 2020 - Jan 2021",
+      "bullets": [
+        "Led requirements capture and solution design for digital transformation of one of Egypt's largest consumer electronics retailers",
+        "Coordinated delivery across product, IT, and commercial teams, managing handovers and validating deliverables against business requirements",
+        "Established project management processes and reporting frameworks to ensure predictable, quality delivery outcomes"
+      ]
+    },
+    {
+      "title": "Product Development Manager",
+      "company": "Delivery Hero SE (Talabat)",
+      "location": "GCC Markets",
+      "dates": "Jun 2017 - May 2018",
+      "bullets": [
+        "Led client-facing product delivery during hypergrowth, contributing to platform scaling from 30,000 to 7 million daily orders across GCC markets (233x growth)",
+        "Captured and translated market and client needs into user stories, specs, and delivery priorities, coordinating with engineering teams in Berlin HQ, GCC, and Egypt",
+        "Led Operations Excellence Committee, driving sprint processes and delivery standards across distributed cross-functional teams"
+      ]
+    },
+    {
+      "title": "PMO Section Head",
+      "company": "Network International",
+      "location": "Egypt",
+      "dates": "Sep 2014 - Jun 2017",
+      "bullets": [
+        "Built and led enterprise PMO managing 300+ concurrent technology delivery projects across 8 countries, coordinating offshore and distributed teams across Egypt, UAE, Jordan, Kenya, Nigeria, Ghana, Mauritius, and South Africa",
+        "Led requirements elicitation and solution validation across 300+ banking clients, ensuring deliverables met acceptance criteria and client expectations",
+        "Established Jira workflows, sprint reporting, and governance frameworks standardising delivery methodology across the portfolio",
+        "Governed 14-month Salesforce enterprise implementation (170 users, 8 countries) — end-to-end from requirements through UAT and go-live"
+      ]
+    },
+    {
+      "title": "Engagement Manager",
+      "company": "Revamp Consulting",
+      "location": "USA, UAE, Egypt",
+      "dates": "Mar 2013 - Sep 2014",
+      "bullets": [
+        "Led client-facing consulting engagements for Mayo Clinic (healthcare business process optimisation) and AT&T (service operations transformation)",
+        "Attended client meetings with senior leadership, led discovery and requirements capture, and translated needs into solution proposals and delivery roadmaps"
+      ]
+    },
+    {
+      "title": "Earlier Experience (2004-2013)",
+      "company": "BlueCloud, Intel Corporation, SySDSoft/Intel Mobile Communication, Various",
+      "location": "",
+      "dates": "2004 - 2013",
+      "bullets": [
+        "Senior Project Manager, PMO at BlueCloud (2012-2013): IT delivery for Microsoft Egypt, Vodafone Egypt, Qatar Diar",
+        "Project Manager at Intel Corporation (2011-2012): LTE (4G) mobile technology deployment",
+        "Technical Leadership Roles (2004-2009): Software development and delivery for European and regional clients"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "MBA, Master in International Business Administration (MIBA)",
+      "school": "Paris ESLSCA Business School",
+      "location": "Global Management",
+      "date": "2027 (In Progress)"
+    },
+    {
+      "degree": "PMP Training",
+      "school": "Universite francaise d'Egypte",
+      "location": "Egypt",
+      "date": "2008"
+    }
+  ],
+  "certifications": [
+    {"name": "PMP: Project Management Professional", "issuer": "PMI", "date": "2008"},
+    {"name": "CBAP: Certified Business Analysis Professional", "issuer": "IIBA", "date": "2014"},
+    {"name": "CSM: Certified Scrum Master", "issuer": "Scrum Alliance", "date": "2014"},
+    {"name": "CSPO: Certified Scrum Product Owner", "issuer": "Scrum Alliance", "date": "2014"},
+    {"name": "Lean Six Sigma", "issuer": "SUNY", "date": "2010"},
+    {"name": "ITIL Foundations", "issuer": "", "date": "2016"}
+  ]
+}
