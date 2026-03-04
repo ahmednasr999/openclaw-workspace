@@ -1,6 +1,7 @@
 ---
 name: executive-cv-builder
 description: Ahmed Nasr's executive CV builder. Produces ATS-optimized, tailored CVs scoring 85%+ for VP/C-Suite roles in GCC. Use when building or tailoring a CV for any job application. Loads master CV, applies pending updates, scores ATS fit, generates PDF, and updates the pipeline tracker automatically.
+metadata: {"openclaw":{"emoji":"📄","requires":{"bins":["weasyprint"]}}}
 ---
 
 # Executive CV Builder — Ahmed Nasr
