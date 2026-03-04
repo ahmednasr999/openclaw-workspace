@@ -87,6 +87,10 @@
 | AECOM | Project Director - PMCM | Dubai, UAE | 🟡 Medium | Needs JD | [LinkedIn](https://www.linkedin.com/jobs/view/4377749112) | Pull JD, score ATS |
 | Confidential | Chief Executive Officer | Dubai, UAE | 🟡 Medium | Needs JD | [LinkedIn](https://www.linkedin.com/jobs/view/4379915961) | Pull JD, score ATS |
 | ITCAN | Director of Product Management | Dubai, UAE | 🟢 Low | Needs JD | [Indeed](https://ae.indeed.com/viewjob?jk=65b83f3906e882f5) | Pull JD, score ATS |
+| Bosperous Real Estate LLC | Chief Technology Officer | Dubai, UAE | 🔴 High | Needs JD | [Indeed](https://ae.indeed.com/viewjob?jk=c06735549c85c39d) | Pull JD, score ATS |
+| The IN Group | Director | Dubai, UAE | 🔴 High | Needs JD | [LinkedIn](https://www.linkedin.com/jobs/view/4380949605) | Pull JD, score ATS |
+| Mackenzie Jones Middle East | Head of Information Technology | Dubai, UAE | 🟡 Medium | Needs JD | [LinkedIn](https://www.linkedin.com/jobs/view/4378178161) | Pull JD, score ATS |
+| Discovered MENA | Head of Payment | Dubai, UAE | 🟡 Medium | Needs JD | [LinkedIn](https://www.linkedin.com/jobs/view/4378910539) | Pull JD, score ATS |
 
 
 
@@ -102,8 +106,8 @@
 | Total tracked | 46 |
 | Applied | 46 |
 | CV Ready, not yet applied | 0 |
-| Radar — Needs Action | 12 |
-| Radar (no CV yet) | 12 |
+| Radar — Needs Action | 16 |
+| Radar (no CV yet) | 16 |
 | Active interviews | 0 |
 | Avg ATS score (all CVs) | 89% |
 | Follow-up policy | No proactive follow-ups — wait for recruiter response |
