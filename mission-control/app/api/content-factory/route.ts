@@ -1,11 +1,21 @@
 import { NextRequest, NextResponse } from "next/server";
-import { advanceContentStage, loadContentItems } from "@/lib/ops-store";
+import { getContentItems } from "@/lib/sync";
+import { advanceContentStage } from "@/lib/ops-store";
 
 export const runtime = "nodejs";
 
 export async function GET() {
-  const items = await loadContentItems();
-  return NextResponse.json({ items, fetchedAt: new Date().toISOString() });
+  // Prefer live data from content calendar
+  const items = await getContentItems();
+
+  // Fall back to ops-store if calendar is empty
+  if (items.length === 0) {
+    const { loadContentItems } = await import("@/lib/ops-store");
+    const fallback = await loadContentItems();
+    return NextResponse.json({ items: fallback, source: "ops-store", fetchedAt: new Date().toISOString() });
+  }
+
+  return NextResponse.json({ items, source: "calendar", fetchedAt: new Date().toISOString() });
 }
 
 export async function PATCH(request: NextRequest) {
@@ -15,6 +25,7 @@ export async function PATCH(request: NextRequest) {
     return NextResponse.json({ error: "Invalid item id" }, { status: 400 });
   }
 
+  // advanceContentStage still writes to ops-store (for manual stage advancement)
   const item = await advanceContentStage(itemId);
   if (!item) {
     return NextResponse.json({ error: "Content item not found" }, { status: 404 });
