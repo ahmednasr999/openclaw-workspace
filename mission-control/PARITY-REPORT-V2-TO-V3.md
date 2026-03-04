@@ -2,7 +2,7 @@
 
 Date: 2026-03-03 UTC
 Source: `/root/.openclaw/workspace/mission-control-v2`
-Target: `/root/.openclaw/workspace/mission-control-v3`
+Target: `/root/.openclaw/workspace/mission-control`
 
 ## Summary
 

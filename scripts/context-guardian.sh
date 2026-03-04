@@ -22,7 +22,9 @@ TS=$(date -u +%Y-%m-%dT%H:%M:%SZ)
 CAIRO=$(TZ="Africa/Cairo" date +"%Y-%m-%d %H:%M")
 
 # ── 1. Get context % ─────────────────────────────────────────────────────────
-PCT=$(openclaw status 2>/dev/null | grep -oP '(?<=\()(\d+)(?=%\))' | head -1)
+# Extract % from the "agent:main:main" line only (first session, actual context)
+# Pattern: "agent:main:main" ... "XXk/200k (YY%)" where YY is the percentage
+PCT=$(openclaw status 2>/dev/null | grep "agent:main:main" | grep -oP '(?<=\()(\d+)(?=%\))' | head -1)
 
 if [ -z "$PCT" ]; then
   echo "[$TS] ERROR: could not read context %" >> "$LOG"
