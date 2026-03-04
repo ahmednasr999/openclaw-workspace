@@ -162,3 +162,4 @@
 
 - [07:53 UTC] Ahmed approved Mission Control v3 cutover cleanup and release-tagging.
 - [07:55 UTC] Ahmed requested full deletion of Mission Control v1/v2 artifacts, cleanup executed.
+- [07:58 UTC] Renamed mission-control-v3 folder to mission-control and updated package metadata.

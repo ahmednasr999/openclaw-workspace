@@ -1,5 +1,13 @@
 [
   {
+    "id": "t-1772566526550",
+    "title": "QA Smoke Create",
+    "assignee": "NASR",
+    "priority": "high",
+    "dueDate": "2026-03-11",
+    "status": "backlog"
+  },
+  {
     "id": "t1",
     "title": "Finalize Delphi prep pack",
     "assignee": "NASR",

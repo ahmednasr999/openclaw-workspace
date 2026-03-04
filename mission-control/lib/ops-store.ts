@@ -1,6 +1,10 @@
+import { execFile } from "node:child_process";
+import { promisify } from "node:util";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { ContentItem, ContentStage, CronJob, HandoffValidationResult, OpsSnapshot } from "@/lib/types";
+
+const execFileAsync = promisify(execFile);
 
 const dataDir = path.join(process.cwd(), "data");
 const filePath = path.join(dataDir, "ops-snapshot.json");
@@ -99,10 +103,10 @@ const defaultOps: OpsSnapshot = {
       id: "cj-2",
       name: "Pipeline Sweep",
       schedule: "0 */4 * * *",
-      status: "failing",
-      consecutiveFailures: 2,
+      status: "healthy",
+      consecutiveFailures: 0,
       lastRunAt: "2026-03-03T16:00:00.000Z",
-      lastSuccessAt: "2026-03-03T08:00:01.000Z",
+      lastSuccessAt: "2026-03-03T16:00:01.000Z",
       nextRunAt: "2026-03-03T20:00:00.000Z",
     },
   ],
@@ -233,9 +237,127 @@ export async function loadContentItems() {
   return snapshot.contentItems;
 }
 
+type OpenClawCronJob = {
+  id?: string;
+  name?: string;
+  enabled?: boolean;
+  schedule?: { expr?: string };
+  state?: {
+    nextRunAtMs?: number;
+    lastRunAtMs?: number;
+    lastStatus?: string;
+    lastRunStatus?: string;
+    consecutiveErrors?: number;
+  };
+};
+
+async function readGatewayToken() {
+  if (process.env.OPENCLAW_GATEWAY_TOKEN) {
+    return process.env.OPENCLAW_GATEWAY_TOKEN;
+  }
+
+  try {
+    const configPath = process.env.OPENCLAW_CONFIG_PATH || "/root/.openclaw/openclaw.json";
+    const raw = await readFile(configPath, "utf8");
+    const parsed = JSON.parse(raw) as { gateway?: { auth?: { token?: string } } };
+    return parsed?.gateway?.auth?.token || "";
+  } catch {
+    return "";
+  }
+}
+
+async function isDeliveryOnlyFailure(jobId: string, token: string) {
+  try {
+    const { stdout } = await execFileAsync(
+      "openclaw",
+      ["cron", "runs", "--id", jobId, "--limit", "1", "--token", token],
+      { timeout: 15000, maxBuffer: 512 * 1024 }
+    );
+
+    const parsed = JSON.parse(stdout) as { entries?: Array<{ status?: string; error?: string; summary?: string }> };
+    const latest = parsed.entries?.[0];
+    if (!latest) {
+      return false;
+    }
+
+    return latest.status === "error" && (latest.error || "").toLowerCase().includes("cron announce delivery failed");
+  } catch {
+    return false;
+  }
+}
+
+async function fetchOpenClawCronJobs(): Promise<CronJob[] | null> {
+  try {
+    const token = await readGatewayToken();
+    if (!token) {
+      return null;
+    }
+
+    const { stdout } = await execFileAsync(
+      "openclaw",
+      ["cron", "list", "--all", "--json", "--token", token],
+      { timeout: 8000, maxBuffer: 1024 * 1024 }
+    );
+
+    const parsed = JSON.parse(stdout) as { jobs?: OpenClawCronJob[] };
+    const jobs = parsed.jobs || [];
+
+    const mapped: CronJob[] = [];
+    for (const job of jobs) {
+      const state = job.state || {};
+      const id = job.id || `cron-${Math.random().toString(36).slice(2, 8)}`;
+      const consecutiveFailures = Number(state.consecutiveErrors || 0);
+      const paused = job.enabled === false;
+      let failing = !paused && (consecutiveFailures > 0 || (state.lastStatus && state.lastStatus !== "ok"));
+
+      if (failing && consecutiveFailures > 0 && job.id) {
+        const deliveryOnly = await isDeliveryOnlyFailure(job.id, token);
+        if (deliveryOnly) {
+          failing = false;
+        }
+      }
+
+      const lastRunAt = state.lastRunAtMs ? new Date(state.lastRunAtMs).toISOString() : "";
+      const lastSuccessAt = (state.lastRunStatus === "ok" && state.lastRunAtMs)
+        ? new Date(state.lastRunAtMs).toISOString()
+        : "";
+      const nextRunAt = state.nextRunAtMs ? new Date(state.nextRunAtMs).toISOString() : "";
+
+      mapped.push({
+        id,
+        name: job.name || "Unnamed cron",
+        schedule: job.schedule?.expr || "unknown",
+        status: paused ? "paused" : failing ? "failing" : "healthy",
+        consecutiveFailures,
+        lastRunAt,
+        lastSuccessAt,
+        nextRunAt,
+      });
+    }
+
+    return mapped;
+  } catch {
+    return null;
+  }
+}
+
 export async function monitorCronHealth() {
   const snapshot = await loadOpsSnapshot();
   const now = new Date();
+
+  const liveJobs = await fetchOpenClawCronJobs();
+  if (liveJobs && liveJobs.length > 0) {
+    snapshot.cronJobs = liveJobs;
+    snapshot.heartbeat = {
+      status: liveJobs.some((job) => job.status === "failing") ? "degraded" : "healthy",
+      updatedAt: now.toISOString(),
+      tick: snapshot.heartbeat.tick + 1,
+    };
+
+    await saveOpsSnapshot(snapshot);
+    return snapshot;
+  }
+
   const jobs = snapshot.cronJobs.map((job): CronJob => {
     if (job.consecutiveFailures >= 2) {
       return {
