@@ -28,7 +28,7 @@ These firms are closer to the market. They handle Director-VP roles and move fas
 | 7 | **Stanton Chase ME** | Wassim Karkabi (Managing Partner) | Industrial, energy, tech | [Profile](https://www.linkedin.com/in/wassimkarkabi/) | 🔴 Not contacted |
 | 8 | **Pedersen & Partners** | Dubai office | Cross-sector executive | [Company](https://www.linkedin.com/company/pedersen-and-partners/) | 🔴 Not contacted |
 | 9 | **Odgers Berndtson** | Melissa Horn (Partner, Healthcare/Gov ME) | Technology, healthcare | [Profile](https://www.linkedin.com/in/melissa-horn-b51545/) | 🔴 Not contacted |
-| 10 | **InterSearch ME** | TBD | Regional specialist | TBD | 🔴 Not contacted |
+| 10 | **InterSearch ME** | DIFC office | Regional specialist | [Company](https://ae.linkedin.com/company/intersearch-middle-east-fz-llc) | 🔴 Not contacted |
 
 ## Tier 3: Tech-Specialist Recruiters (Director / Head level)
 
@@ -41,10 +41,10 @@ These know the tech market inside out. They place Heads of Digital, Directors of
 | 13 | **Robert Half (Technology)** | Omar Naimyar (Recruiting Manager, Technology) | FinTech, Digital, IT leadership | [Profile](https://www.linkedin.com/in/omarnaimyar/) | 🔴 Not contacted |
 | 14 | **SVA Recruitment** | SVA Dubai office | CTO, VP Engineering (ME specialist) | [Company](https://www.linkedin.com/company/silicon-valley-associates-recruitment-dubai/) | 🔴 Not contacted |
 | 15 | **Charterhouse ME** | Abigail Firmage (Managing Consultant) | Technology, banking, FinTech | [Profile](https://www.linkedin.com/in/abigail-firmage-84bb1316a/) | 🔴 Not contacted |
-| 16 | **Mackenzie Jones** | TBD | IT, Digital (already in radar) | TBD | 🔴 Not contacted |
-| 17 | **Mark Williams Technology** | TBD | CTO, Digital transformation (Abu Dhabi) | TBD | 🔴 Not contacted |
-| 18 | **Guildhall** | TBD | Technology, executive (Dubai native) | TBD | 🔴 Not contacted |
-| 19 | **ManpowerGroup ME** | TBD | Cross-sector, large scale | TBD | 🔴 Not contacted |
+| 16 | **Mackenzie Jones** | Viktoria (mentioned in posts) | IT, Digital (already in radar) | [Company](https://www.linkedin.com/company/mackenzie-jones-middle-east/) | 🔴 Not contacted |
+| 17 | **Mark Williams Technology** | Company page | CTO, Digital transformation (Abu Dhabi) | [Company](https://www.linkedin.com/company/mark-williams-recruitment/) | 🔴 Not contacted |
+| 18 | **Guildhall** | Company page | Technology, executive (Dubai native) | [Company](https://www.linkedin.com/company/guildhallagency/) | 🔴 Not contacted |
+| 19 | **ManpowerGroup ME** | Company page | Cross-sector, large scale | [Company](https://www.linkedin.com/company/manpowergroup-me/) | 🔴 Not contacted |
 | 20 | **Delphi Consulting** | Already in pipeline | AI, PM (already interviewed) | Known | 🟡 Post-interview |
 
 ---
