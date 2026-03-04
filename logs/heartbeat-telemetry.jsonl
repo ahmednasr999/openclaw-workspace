@@ -1931,3 +1931,10 @@
 {"timestamp": "2026-03-04T17:43:41Z", "gateway_alive": false, "active_sessions_observed": 1156, "model_health": {"last_model_seen": "claude-opus-4-6"}, "queue_depth": 25}
 {"timestamp": "2026-03-04T17:44:41Z", "gateway_alive": false, "active_sessions_observed": 1157, "model_health": {"last_model_seen": "claude-opus-4-6"}, "queue_depth": 25}
 {"timestamp": "2026-03-04T17:45:42Z", "gateway_alive": false, "active_sessions_observed": 1158, "model_health": {"last_model_seen": "claude-opus-4-6"}, "queue_depth": 25}
+{"timestamp": "2026-03-04T17:46:43Z", "gateway_alive": false, "active_sessions_observed": 1158, "model_health": {"last_model_seen": "claude-opus-4-6"}, "queue_depth": 25}
+{"timestamp": "2026-03-04T17:47:44Z", "gateway_alive": false, "active_sessions_observed": 1158, "model_health": {"last_model_seen": "claude-opus-4-6"}, "queue_depth": 26}
+{"timestamp": "2026-03-04T17:48:45Z", "gateway_alive": false, "active_sessions_observed": 1159, "model_health": {"last_model_seen": "MiniMax-M2.5"}, "queue_depth": 25}
+{"timestamp": "2026-03-04T17:49:46Z", "gateway_alive": false, "active_sessions_observed": 1159, "model_health": {"last_model_seen": "claude-opus-4-6"}, "queue_depth": 25}
+{"timestamp": "2026-03-04T17:50:46Z", "gateway_alive": false, "active_sessions_observed": 1159, "model_health": {"last_model_seen": "claude-opus-4-6"}, "queue_depth": 25}
+{"timestamp": "2026-03-04T17:51:47Z", "gateway_alive": false, "active_sessions_observed": 1159, "model_health": {"last_model_seen": "claude-opus-4-6"}, "queue_depth": 25}
+{"timestamp": "2026-03-04T17:52:48Z", "gateway_alive": false, "active_sessions_observed": 1160, "model_health": {"last_model_seen": "claude-opus-4-6"}, "queue_depth": 25}
