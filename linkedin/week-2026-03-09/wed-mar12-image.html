@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1080px;
+    height: 1080px;
+    background: #0f172a;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 72px;
+  }
+  .tag {
+    display: inline-block;
+    background: #f59e0b;
+    color: #0f172a;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 8px 20px;
+    border-radius: 4px;
+    margin-bottom: 48px;
+  }
+  .icon { font-size: 80px; margin-bottom: 32px; line-height: 1; }
+  .headline {
+    font-size: 62px;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 40px;
+  }
+  .headline span { color: #f59e0b; }
+  .stat-row {
+    display: flex;
+    gap: 48px;
+    margin-top: 16px;
+  }
+  .stat {
+    display: flex;
+    flex-direction: column;
+  }
+  .stat-number {
+    font-size: 56px;
+    font-weight: 900;
+    color: #f59e0b;
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 22px;
+    color: #64748b;
+    margin-top: 6px;
+  }
+  .divider {
+    width: 2px;
+    background: #1e293b;
+    align-self: stretch;
+  }
+  .rule {
+    font-size: 30px;
+    color: #94a3b8;
+    font-style: italic;
+    margin-top: 40px;
+    padding-left: 24px;
+    border-left: 4px solid #f59e0b;
+  }
+  .footer {
+    border-top: 1px solid #1e293b;
+    padding-top: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-name { font-size: 24px; font-weight: 700; color: #fff; }
+  .footer-title { font-size: 20px; color: #64748b; margin-top: 4px; }
+  .footer-certs { font-size: 20px; color: #f59e0b; font-weight: 600; }
+</style>
+</head>
+<body>
+  <div>
+    <div class="tag">KLAS Research</div>
+    <div class="icon">🔍</div>
+    <div class="headline">How <span>KLAS-Rated Tools</span><br>Changed How We<br>Evaluate Vendors</div>
+    <div class="stat-row">
+      <div class="stat">
+        <div class="stat-number">15</div>
+        <div class="stat-label">Hospitals Evaluated</div>
+      </div>
+      <div class="divider"></div>
+      <div class="stat">
+        <div class="stat-number">375+</div>
+        <div class="stat-label">KLAS Case Studies</div>
+      </div>
+      <div class="divider"></div>
+      <div class="stat">
+        <div class="stat-number">4.6M</div>
+        <div class="stat-label">Care Gaps Closed</div>
+      </div>
+    </div>
+    <div class="rule">"You don't pick tools on demos.<br>You pick on documented outcomes."</div>
+  </div>
+
+  <div class="footer">
+    <div>
+      <div class="footer-name">Ahmed Nasr</div>
+      <div class="footer-title">Digital Transformation Executive</div>
+    </div>
+    <div class="footer-certs">PMP · CSM · CSPO</div>
+  </div>
+</body>
+</html>

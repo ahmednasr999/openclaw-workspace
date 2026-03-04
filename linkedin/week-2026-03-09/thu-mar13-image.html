@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1080px;
+    height: 1080px;
+    background: #0f172a;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 72px;
+  }
+  .tag {
+    display: inline-block;
+    background: #3b82f6;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 8px 20px;
+    border-radius: 4px;
+    margin-bottom: 48px;
+  }
+  .quote-mark {
+    font-size: 160px;
+    color: #1e3a5f;
+    line-height: 0.7;
+    margin-bottom: 16px;
+    font-family: Georgia, serif;
+  }
+  .headline {
+    font-size: 64px;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 32px;
+  }
+  .headline span { color: #3b82f6; }
+  .subline {
+    font-size: 28px;
+    color: #94a3b8;
+    line-height: 1.5;
+    font-style: italic;
+  }
+  .dad-quote {
+    margin-top: 48px;
+    padding: 32px;
+    background: #1e293b;
+    border-left: 5px solid #3b82f6;
+    border-radius: 0 12px 12px 0;
+    font-size: 32px;
+    color: #fff;
+    font-style: italic;
+    line-height: 1.4;
+  }
+  .dad-quote span {
+    display: block;
+    font-size: 20px;
+    color: #64748b;
+    font-style: normal;
+    margin-top: 12px;
+  }
+  .footer {
+    border-top: 1px solid #1e293b;
+    padding-top: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-name { font-size: 24px; font-weight: 700; color: #fff; }
+  .footer-title { font-size: 20px; color: #64748b; margin-top: 4px; }
+  .footer-certs { font-size: 20px; color: #3b82f6; font-weight: 600; }
+</style>
+</head>
+<body>
+  <div>
+    <div class="tag">Leadership</div>
+    <div class="quote-mark">"</div>
+    <div class="headline">My dad never understood<br>what I do.<br><span>Last week he finally did.</span></div>
+    <div class="dad-quote">
+      "So you built the nervous system."
+      <span>My dad, 72, after seeing a live dashboard of 15 hospitals across 3 countries</span>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div>
+      <div class="footer-name">Ahmed Nasr</div>
+      <div class="footer-title">Digital Transformation Executive</div>
+    </div>
+    <div class="footer-certs">PMP · CSM · CSPO</div>
+  </div>
+</body>
+</html>
