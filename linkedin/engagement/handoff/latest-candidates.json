@@ -1,47 +1,15 @@
 {
-  "date_utc": "2026-03-03T08:00:00Z",
-  "time_window_used_hours": 24,
-  "posts_scanned": 30,
-  "posts_eligible": 3,
-  "selected": [
-    {
-      "author": "nibras kamoona",
-      "age_text": "42 minutes ago",
-      "timestamp_utc": "2026-03-03T07:18:00Z",
-      "relevance_note": "AI revolution in education, preparing next generation for AI-augmented world. Core themes: critical thinking, adaptability, leadership in AI era. Highly relevant to Ahmed's AI leadership positioning.",
-      "url": "https://www.linkedin.com/feed/update/[activity-id-pending-validation]",
-      "url_status": "author_profile_available",
-      "author_profile": "https://www.linkedin.com/in/nibras-kamoona-341bb6126/",
-      "validation_note": "Post content extracted from feed snapshot. Direct post URL validation pending due to LinkedIn search errors."
-    },
-    {
-      "author": "Mychal Connolly Jr.",
-      "age_text": "20 hours ago",
-      "timestamp_utc": "2026-03-02T12:00:00Z",
-      "relevance_note": "Nurturing next-generation entrepreneurs, AI democratizing knowledge, leadership in AI era. Topics: innovation, future of work, empowering leaders. Strong alignment with Ahmed's PMO and AI transformation focus.",
-      "url": "https://www.linkedin.com/feed/update/[activity-id-pending-validation]",
-      "url_status": "author_profile_available",
-      "author_profile": "https://www.linkedin.com/in/mychalconnollyjr/",
-      "validation_note": "Post content extracted from feed snapshot. Direct post URL validation pending due to LinkedIn search errors."
-    },
-    {
-      "author": "DANTY GR",
-      "age_text": "23 hours ago",
-      "timestamp_utc": "2026-03-01T09:00:00Z",
-      "relevance_note": "Emotional intelligence and leadership: 'Not every silence is attitude.' Strategic on human-centered leadership, psychological safety, empathy in executive roles. Relevant to Ahmed's leadership development and TopMed PMO context.",
-      "url": "https://www.linkedin.com/feed/update/[activity-id-pending-validation]",
-      "url_status": "author_profile_available",
-      "author_profile": "https://www.linkedin.com/in/dantyy/",
-      "validation_note": "Post content extracted from feed snapshot. Direct post URL validation pending due to LinkedIn search errors."
-    }
-  ],
-  "rejected": [],
-  "status": "DISCOVERY_PARTIAL",
-  "reason": "Successfully identified 3 strategically relevant posts from feed (verified within past 24h). LinkedIn search endpoints experienced server errors (#AIleadership, #AI recent). Feed access successful but direct post URL extraction blocked by tab navigation issues during relay session. Author profiles located but post activity IDs require additional navigation validation. All 3 posts meet strategic criteria: AI leadership, digital transformation, executive leadership. Recommend: direct navigation to author profiles via next phase or manual URL construction via activity IDs.",
-  "technical_notes": {
-    "pass_a_hashtag_search": "FAILED - LinkedIn server error on #AIleadership search",
-    "pass_b_creator_whitelist": "SKIPPED - search unavailable",
-    "pass_c_feed_fallback": "SUCCESS - scanned 30 posts, extracted 3 eligible from last 24h",
-    "url_validation": "PENDING - requires follow-up navigation or feed event listener"
-  }
+  "metadata": {
+    "date_utc": "2026-03-04T08:01:00Z",
+    "time_window_used_hours": 24,
+    "discovery_phase": 1,
+    "total_posts_scanned": 0,
+    "posts_eligible": 0,
+    "selected_count": 0,
+    "rejected_count": 0
+  },
+  "status": "DISCOVERY_INSUFFICIENT",
+  "reason": "Browser Relay: No attached LinkedIn tab. Chrome extension relay running but no tab connected. User must click OpenClaw Chrome extension icon on LinkedIn tab to attach.",
+  "selected": [],
+  "rejected": []
 }
