@@ -12,7 +12,7 @@ These firms handle $150K+ roles exclusively. They don't post jobs publicly. Bein
 
 | # | Firm | Key Contact (Dubai) | Specialization | LinkedIn | Status |
 |---|------|-------------------|----------------|----------|--------|
-| 1 | **Korn Ferry** | Jonathan Holmes (MD, ME & Africa) | All sectors, salary benchmarking | [Profile](https://www.linkedin.com/in/jonathanholmeskf/) | 🟢 Connection sent |
+| 1 | **Korn Ferry** | Jonathan Holmes (MD, ME & Africa) | All sectors, salary benchmarking | [Profile](https://www.linkedin.com/in/jonathan-r-holmes/) | 🟢 Connection sent |
 | 2 | **Egon Zehnder** | Raed Kanaan (Managing Partner ME) | Board search, family business | [Profile](https://www.linkedin.com/in/raed-kanaan-a009915/) | 🟢 Connection sent |
 | 3 | **Russell Reynolds** | Sara Azimzadeh (Exec Director) | CEO succession, transformation | [Profile](https://www.linkedin.com/in/saraazimzadeh/) | 🟢 Connection sent |
 | 4 | **Heidrick & Struggles** | Tom Clarke (Heidrick & Struggles) | 🟢 Connection sent
