@@ -51,6 +51,22 @@ If no session flush detected today → message Ahmed:
 
 ---
 
+## Monthly Check (1st of Each Month — 9:00 AM Cairo Time)
+
+### Workspace Health Audit
+
+Scan the workspace structure and flag:
+- Root file count > 20 (should be ~12 core files + folders)
+- Any PDFs, HTMLs, PNGs, or temp files in root
+- Any new directories that don't fit the established structure
+- .gitignore gaps (venvs, build artifacts, temp files)
+- Stale folders with no recent changes (> 60 days)
+
+If issues found → message Ahmed with specific cleanup recommendations.
+If clean → silent.
+
+---
+
 ## Weekly Check (Every Sunday — 9:00 AM Cairo Time)
 
 ### GOALS.md Review Prompt
