@@ -3,7 +3,7 @@
 *Last updated: 2026-03-04 12:32 UTC*
 
 ## 🔴 URGENT — This Week
-- **Delphi thread monitoring:** Follow-up already sent on Mar 2, next checkpoint is **2026-03-09** if no recruiter response.
+- ~~Delphi: Closed Mar 4. No further action.~~
 - **LinkedIn Weeks 3-5 build:** Complete full drafts plus images by **2026-03-07** to keep posting continuity.
 
 ## 🟡 Follow-up Policy

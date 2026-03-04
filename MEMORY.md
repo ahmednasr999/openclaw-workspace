@@ -132,7 +132,7 @@
 
 *(Source of truth: jobs-bank/pipeline.md)*
 
-- Delphi Consulting — Senior AI PM — Interview completed, follow-up sent Mar 2, awaiting response (checkpoint Mar 9)
+- Delphi Consulting — Senior AI PM — ❌ Closed Mar 4 (interview Feb 24, follow-up Mar 2, no response)
 - FAB — VP Technology & Data — Applied Feb 27
 - Aiwozo Intelligent Automation — Head of Digital Transformation — Applied Feb 26
 - Oman Airports OAMC — VP Digital Transformation & Innovation — Applied Feb 26
