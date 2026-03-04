@@ -1,6 +1,6 @@
 # Active Tasks
 
-*Last updated: 2026-03-04 10:40 UTC*
+*Last updated: 2026-03-04 12:32 UTC*
 
 ## 🔴 URGENT — This Week
 - **Delphi thread monitoring:** Follow-up already sent on Mar 2, next checkpoint is **2026-03-09** if no recruiter response.
@@ -32,6 +32,12 @@
 - **Status:** In progress with Ahmed
 - **Completed:** Round 1 and Round 2
 - **Next:** Round 3 plus gap fixes
+
+### Mission Control v3
+- **Status:** Running on port 3100, accessible via Tailscale :4443
+- **Auth:** Removed (Tailscale network-level security)
+- **Next:** Ahmed reviewing live dashboard, identify gaps and improvements
+- **⚠️ Tailscale daemon keeps crashing:** needs investigation and fix
 
 ### CV Creation Pipeline
 - **Status:** Active
