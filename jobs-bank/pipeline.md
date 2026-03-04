@@ -75,7 +75,18 @@
 
 | Company | Role | Location | Priority | JD Status | Job URL | Next Step |
 |---------|------|----------|----------|-----------|---------|-----------|
-| None | — | — | — | — | — | No open radar items. RAKBANK moved to Active Pipeline at CV Ready stage, 2026-03-03. |
+| Michael Page | Head of AI Engineering | Dubai, UAE | 🔴 High | Needs JD | [LinkedIn](https://www.linkedin.com/jobs/view/4380163853) | Pull JD, score ATS |
+| Careem | Director of Data Science | Dubai, UAE | 🔴 High | Needs JD | [LinkedIn](https://www.linkedin.com/jobs/view/4318354186) | Pull JD, score ATS |
+| Fugro | Head of Project Excellence (PMO) - ME & India | Dubai, UAE | 🔴 High | Needs JD | [LinkedIn](https://www.linkedin.com/jobs/view/4377259350) | Pull JD, score ATS |
+| People Pathways | Chief Technology Officer | Dubai, UAE | 🟡 Medium | Needs JD | [LinkedIn](https://www.linkedin.com/jobs/view/4380340326) | Pull JD, score ATS |
+| Madison Pearl | Chief Strategy Officer | Dubai, UAE | 🟡 Medium | Needs JD | [LinkedIn](https://www.linkedin.com/jobs/view/4372368161) | Pull JD, score ATS |
+| Crossover | VP Product Engineering (Remote, $400K) | Dubai, UAE | 🟡 Medium | Needs JD | [LinkedIn](https://www.linkedin.com/jobs/view/4379445718) | Pull JD, score ATS |
+| WYLE | Principal AI Systems Engineer | Dubai, UAE | 🟡 Medium | Needs JD | [LinkedIn](https://www.linkedin.com/jobs/view/4375225528) | Pull JD, score ATS |
+| Globant | Tech Director | Riyadh, KSA | 🟡 Medium | Needs JD | [Indeed](https://sa.indeed.com/viewjob?jk=c08ee77df4b01e3e) | Pull JD, score ATS |
+| Qiddiya | Director Product Management | Riyadh, KSA | 🟡 Medium | Needs JD | [LinkedIn](https://www.linkedin.com/jobs/view/4379650786) | Pull JD, score ATS |
+| AECOM | Project Director - PMCM | Dubai, UAE | 🟡 Medium | Needs JD | [LinkedIn](https://www.linkedin.com/jobs/view/4377749112) | Pull JD, score ATS |
+| Confidential | Chief Executive Officer | Dubai, UAE | 🟡 Medium | Needs JD | [LinkedIn](https://www.linkedin.com/jobs/view/4379915961) | Pull JD, score ATS |
+| ITCAN | Director of Product Management | Dubai, UAE | 🟢 Low | Needs JD | [Indeed](https://ae.indeed.com/viewjob?jk=65b83f3906e882f5) | Pull JD, score ATS |
 
 
 
@@ -91,8 +102,8 @@
 | Total tracked | 46 |
 | Applied | 46 |
 | CV Ready, not yet applied | 0 |
-| Radar — Needs Action | 0 |
-| Radar (no CV yet) | 0 |
+| Radar — Needs Action | 12 |
+| Radar (no CV yet) | 12 |
 | Active interviews | 0 |
 | Avg ATS score (all CVs) | 89% |
 | Follow-up policy | No proactive follow-ups — wait for recruiter response |
