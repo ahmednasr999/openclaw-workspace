@@ -9,7 +9,7 @@
 
 | # | Applied? | Company | Role | Location | ATS | Stage | JD Status | Applied | Follow-up Due | Job URL | CV |
 |---|----------|---------|------|----------|-----|-------|-----------|---------|--------------|---------|-----|
-| 1 | ☑️ | Delphi Consulting | Senior AI PM | UAE | 91% | 📞 Interview | Full JD | 2026-02-21 | 2026-03-09 | N/A | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed_Nasr_Delphi_Consulting_Senior_AI_PM.pdf) |
+| 1 | ☑️ | ~~Delphi Consulting~~ | ~~Senior AI PM~~ | ~~UAE~~ | ~~91%~~ | ❌ Closed | ~~Full JD~~ | ~~2026-02-21~~ | — | N/A | — |
 | 2 | ☑️ | Talabat | CPTO | Dubai, UAE | 87% | ✅ Applied | Partial JD | 2026-02-24 | 2026-03-02 | [LinkedIn](https://www.linkedin.com/jobs/view/4375708512) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed_Nasr_CPTO_Talabat.pdf) |
 | 3 | ☑️ | AIQU | Director of AI | Dubai, UAE | 82% | ✅ Applied | Partial JD | 2026-02-24 | 2026-03-02 | [LinkedIn](https://www.linkedin.com/jobs/view/4375324051) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed_Nasr_Director_AI_AIQU.pdf) |
 | 4 | ☑️ | Nexus Consulting | CEO | Saudi Arabia | 78% | ✅ Applied | Partial JD | 2026-02-24 | 2026-03-02 | [LinkedIn](https://www.linkedin.com/jobs/view/4376367703) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed_Nasr_CEO_Nexus.pdf) |
@@ -65,7 +65,7 @@
 
 | Date | Company | Action | Status |
 |------|---------|--------|--------|
-| 2026-03-02 | Delphi Consulting | Follow-up sent (value signal) — monitor recruiter response | 🔴 Active (interview done Feb 24) |
+| ~~2026-03-02~~ | ~~Delphi Consulting~~ | ~~Follow-up sent~~ | ❌ Closed — no further action |
 | 2026-03-14 | King Salman International Airport | Follow-up if no recruiter contact | ⏰ Pending |
 | 2026-03-29 | All Feb 27 batch | Day 30 sweep — move no-reply to Cold | ⏰ Pending |
 
@@ -93,7 +93,7 @@
 | CV Ready, not yet applied | 0 |
 | Radar — Needs Action | 0 |
 | Radar (no CV yet) | 0 |
-| Active interviews | 1 (Delphi — awaiting feedback) |
+| Active interviews | 0 |
 | Avg ATS score (all CVs) | 89% |
 | Follow-up policy | No proactive follow-ups — wait for recruiter response |
 | Day 30 cold | Mar 29 (all Feb 27 batch moves to cold if no response) |
@@ -124,3 +124,4 @@
 | HLB HAMT | Chief Growth Officer | ❌ Skipped, growth and sales mandate mismatch | Removed 2026-03-01 |
 | Searchability | Head of Data | ❌ Skipped, pure data leadership role not transformation-led | Removed 2026-03-01 |
 | Kayzin Recruitment | Head of AI-Enabled Customer Experience | ❌ Skipped, CX ops role misaligned with executive transformation track, ATS 45-55% | Removed 2026-03-01 |
+| Delphi Consulting | Senior AI PM | ❌ Closed, interview completed Feb 24, follow-up sent Mar 2, no recruiter response | Closed 2026-03-04 |
