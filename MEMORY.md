@@ -1,6 +1,6 @@
 # MEMORY.md — Long-Term Context
 
-*Last updated: 2026-03-02*
+*Last updated: 2026-03-04*
 *Maintained by: NASR*
 *Rule: If it's not here, it doesn't exist across sessions.*
 
@@ -162,6 +162,7 @@ Rule: Match model to task complexity. Never use Opus for what Haiku can do.
 
 *(Running log — add don't delete)*
 
+- 2026-03-04: **Claude subscription upgraded from Max 5x (EGP 4,399/mo) to Max 20x (EGP 9,000/mo).** 4x Claude quota per 5-hour window. Quota guard thresholds relaxed: warn at 85%, block at 95%. MiniMax remains default for background tasks. Routing logic unchanged, just more headroom for Opus/Sonnet quality work.
 - 2026-02-27: **NEW PERMANENT RULE — Session context auto-flush at 75%.** At 150k/200k tokens: flush MEMORY.md + active-tasks + daily log, then start fresh session. Reason: during cascade failure, main session hit 93% context and couldn't respond even after rate limits cleared, prolonging outage significantly.
 - 2026-02-27: **Codex JWT deadline pattern (resolved Mar 1 via OAuth):** original expiry was March 4, and preventive re-auth before expiry remains the rule for any future credential rotation.
 - 2026-02-27: **CASCADE FAILURE — All 6 models unavailable.** 26 parallel CV agents hit rate limits on Anthropic (Sonnet, Opus, Haiku) + Kimi + GPT-5.1 simultaneously; MiniMax M2.5 fallback had invalid OAuth token. Result: 30+ min outage, all crons/hooks failed, Gmail stalled. Fix: Deployed quota-monitor.js + fallback-validator.sh + two automated crons (daily quota reset at 00:00 UTC, credential validation at 06:00 UTC before morning briefing). Rules: Hard limit max 10 parallel agents, 70% daily usage triggers M2.5 downgrade, 90% blocks new spawns. Full deployment doc: memory/quota-monitoring-deployment-2026-02-27.md. OpenAI Codex JWT expires March 4, 2026 — must re-authenticate before expiry or GPT-5.1 will fail silently.

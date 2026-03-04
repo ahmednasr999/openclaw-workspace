@@ -165,3 +165,4 @@
 - [07:58 UTC] Renamed mission-control-v3 folder to mission-control and updated package metadata.
 - [08:00 UTC] Removed residual mission-control-v3 data folder, single-folder state enforced.
 - [08:01 UTC] Tagged clean single-track Mission Control baseline: mission-control-single-track-2026-03-04.
+- [09:31 UTC] Ahmed upgraded Claude subscription from Max 5x (EGP 4,399/mo) to Max 20x (EGP 9,000/mo). TOOLS.md and MEMORY.md updated.
