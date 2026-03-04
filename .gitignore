@@ -16,6 +16,16 @@ memory/*-pricing*.md
 scripts/retention*.sh
 *.tar.gz
 
+# Build artifacts & venvs
+tools/jobspy-venv/
+tools/cv-optimizer/__pycache__/
+=*
+
+# Temp telegram files
+file_*---*.txt
+file_*---*.jpg
+media/telegram-files/
+
 # OAuth credentials - never push
 config/ahmed-gmail-tokens.json
 config/ahmed-google.json
