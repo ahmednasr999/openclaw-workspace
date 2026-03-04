@@ -382,3 +382,57 @@ Require stack:
 
 Node.js v20.19.4
 
+=== Morning Brief - 2026-03-04 06:00 AM ===
+
+## Job Radar (from Tavily)
+## Answer
+
+The VP Director PMO for Digital Transformation in healthcare in Dubai, UAE, is a key leadership role for 2026. This position focuses on driving digital initiatives in the healthcare sector. As of 2026, several candidates are being considered for this role.
+
+---
+
+## Sources
+
+- **25+ Senior Director Digital Transformation Jobs, Employment in ...** (relevance: 36%)
+  https://ae.indeed.com/q-senior-director-digital-transformation-l-dubai-jobs.html
+  Discover 45 Senior Director Digital Transformation job opportunities in Dubai on Indeed.com. Apply today to advance your career with top
+
+- **President and Prime Minister of the United Arab Emirates and Ruler ...** (relevance: 33%)
+  https://www.facebook.com/PMOBhutan/posts/%F0%9D%90%8F%F0%9D%90%AB%F0%9D%90%9E%F0%9D%90%AC%F0%9D%90%AC-%F0%9D%90%91%F0%9D%90%9E%F0%9D%90%A5%F0%9D%90%9E%F0%9D%90%9A%F0%9D%90%AC%F0%9D%90%9E-the-prime-minister-will-participate-in-the-world-governments-summi/1454940716001246/
+  ... Vice-President and Prime Minister of the United Arab Emirates and Ruler of Dubai from 03 to 05 February 2026. The World Governments Summit
+
+- **30 Healthcare leaders to watch in 2026** (relevance: 25%)
+  https://economymiddleeast.com/eme-lists/30-healthcare-leaders-to-watch-in-2026/
+  We present the leading figures who drive transformative growth of the healthcare sector in the Middle East.
+
+- **MUHAMMAD ZAHAIB NABEEL Executive Summary ... - Instagram** (relevance: 25%)
+  https://www.instagram.com/p/DVL8fDhCvNS/
+  MUHAMMAD ZAHAIB NABEEL Executive Summary Muhammad Zahaib Nabeel is a seasoned IT Executive and PMO Leader with over 16 years of experience
+
+- **23 Director vp jobs in Dubai, United Arab Emirates - Glassdoor** (relevance: 24%)
+  https://www.glassdoor.co.in/Job/dubai-united-arab-emirates-director-vp-jobs-SRCH_IL.0,26_IM954_KO27,38.htm
+  Search Director vp jobs in Dubai, United Arab Emirates with company ratings and salaries. 23 open jobs for Director vp in Dubai.
+## Gmail - New Opportunities
+node:internal/modules/cjs/loader:1215
+  throw err;
+  ^
+
+Error: Cannot find module 'googleapis'
+Require stack:
+- /root/.openclaw/workspace/scripts/gmail-scan.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1212:15)
+    at Module._load (node:internal/modules/cjs/loader:1043:27)
+    at Module.require (node:internal/modules/cjs/loader:1298:19)
+    at require (node:internal/modules/helpers:182:18)
+    at Object.<anonymous> (/root/.openclaw/workspace/scripts/gmail-scan.js:1:20)
+    at Module._compile (node:internal/modules/cjs/loader:1529:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+    at Module.load (node:internal/modules/cjs/loader:1275:32)
+    at Module._load (node:internal/modules/cjs/loader:1096:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:164:12) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [ '/root/.openclaw/workspace/scripts/gmail-scan.js' ]
+}
+
+Node.js v20.19.4
+
