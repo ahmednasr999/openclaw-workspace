@@ -157,3 +157,7 @@
 4. Once approved: formal blue/green cutover to production (old MC -> MC v2)
 5. Data integration: wire real cron data feeds to dashboard (currently demo data)
 6. Deploy live activity cross-page feature if time permits (parked from earlier)
+
+- [04:06 UTC] Ran linkedin-comment-radar v3 (GCC + all target hashtags), prepared Top 10 shortlist and drafts for top 3, waiting Ahmed approval before marking commented.
+
+- [07:53 UTC] Ahmed approved Mission Control v3 cutover cleanup and release-tagging.
