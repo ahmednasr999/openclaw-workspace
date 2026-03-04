@@ -161,3 +161,4 @@
 - [04:06 UTC] Ran linkedin-comment-radar v3 (GCC + all target hashtags), prepared Top 10 shortlist and drafts for top 3, waiting Ahmed approval before marking commented.
 
 - [07:53 UTC] Ahmed approved Mission Control v3 cutover cleanup and release-tagging.
+- [07:55 UTC] Ahmed requested full deletion of Mission Control v1/v2 artifacts, cleanup executed.
