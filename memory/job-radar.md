@@ -1153,3 +1153,218 @@ There are multiple executive-level job openings in digital health in the UAE, Sa
 
 ---
 
+=== Job Radar - 2026-03-04 ===
+
+### Search 1: VP/C-Suite Digital Transformation
+## Answer
+
+Key professionals in digital transformation, AI, and tech sectors in the GCC include CTOs and CIOs like Yazan A. and Amaar Khan, focusing on innovation and tech leadership in Dubai and Doha.
+
+---
+
+## Sources
+
+- **Yazan A. - EngD | CTO | Strategic Advisor | Smart Automation Solution Advisor | Digital Transformation Principal | CCSP | CDO | GENBAND S3 Certified Engineer | AI Advisor | LinkedIn** (relevance: 99%)
+  https://www.linkedin.com/in/yazanabbasi/
+  EngD | CTO | Strategic Advisor | Smart Automation Solution Advisor | Digital Transformation Principal | CCSP | CDO | GENBAND S3 Certified Engineer | AI Advisor · From start-ups to high revenue enterprises we have spent the past several years helping customers solve some of their toughest IT problems...
+
+- **Abdulmajeed Alalshaikh - Manager at KPMG | Advisory | LinkedIn** (relevance: 98%)
+  https://www.linkedin.com/in/abdulmajeed-alalshaikh/
+  - Target Groups: • Entrepreneurial companies • Individual entrepreneurs and innovators • Venture capital funds • Accelerators, incubators, and ecosystem enablers - Priority Sectors & Technologies: Health Tech | Fintech | Artificial Intelligence | Machine Learning | Institutional Regulations | Electr...
+
+- **Ebrahim M. - Doha Metropolitan Area | Professional Profile | LinkedIn** (relevance: 92%)
+  https://www.linkedin.com/in/ebrahimmattar/
+  As an experienced CTO with certifications including PMP, CGEIT, ITIL, ISO 9001, and PMR… · Location: Doha Metropolitan Area. 500+ connections on LinkedIn. View Ebrahim M.’s profile on LinkedIn, a professional community of 1 billion members.
+
+- **Ahmed Tamer Ali - Senior Manager IT & Cyber Governance - Global Business Bureau Certification | LinkedIn** (relevance: 84%)
+  https://www.linkedin.com/in/at-911b0210/
+  June 29, 2025 - He operates at the intersection of IT audit, cybersecurity governance, and ISO consultancy. His work spans the UAE, KSA, Kuwait, Bahrain, Oman, and Jordan—delivering high-impact advisory programs that enhance compliance, reduce risk, and strengthen organizational resilience.
+
+- **Amaar Khan - Barclays | LinkedIn** (relevance: 82%)
+  https://www.linkedin.com/in/amaarkhan/
+  Amaar Khan
+Managing Director - Chief Information Officer, Corporate Banking APAC & MENA
+Dubai, United Arab Emirates
+500 connections, 29719 followers
+
+
+About
+Amaar Khan is an executive CIO / CTO with a proven track record delivering high-value…
+
+
+Experience
+N/A
+
+
+Education
+N/A
+
+- **Sohail Rashid - CEO @ Dubai Technologies | MBA** (relevance: 80%)
+  https://www.linkedin.com/in/sohail-rashid-60973b2/
+  Sohail Rashid
+CEO @ Dubai Technologies | MBA
+San Francisco Bay Area
+500 connections, 1046 followers
+
+
+About
+CEO @ Dubai Technologies Advisor @ Dubai Technologies | Strategy MaaS and…
+
+
+Experience
+N/A
+
+
+Education
+N/A
+
+- **Mohamed Jamal-Eddine - AD Ports Group | LinkedIn** (relevance: 59%)
+  https://www.linkedin.com/in/mouhamad/
+  Mohamed Jamal-Eddine
+AD Ports Group
+United Arab Emirates
+500 connections, 6764 followers
+
+
+About
+Transformational digital leader with 20+ years of experience driving enterprise-wide…
+
+
+Experience
+N/A
+
+
+Education
+N/A
+
+- **Accenture Middle East | LinkedIn** (relevance: 44%)
+  https://www.linkedin.com/company/accenture-middle-east
+  Overview:
+Accenture is a leading solutions and global professional services company that helps the world’s leading enterprises reinvent by building their digital core and unleashing the power of AI to create value at speed across the enterprise, bringing together the talent of our approximately 779,...
+
+- **Abdullah Saleh Alrumaih - CITC | LinkedIn** (relevance: 34%)
+  https://www.linkedin.com/in/abdullah-saleh-alrumaih-b5516725/
+  I am passionate about… · Experience: CITC · Education: King Saud University · Location: Saudi Arabia · 500+ connections on LinkedIn. View Abdullah Saleh Alrumaih ’s profile on LinkedIn, a professional community of 1 billion members.
+
+- **Yuri Misnik - Group Chief Digital and Technology Officer - Magnit | LinkedIn** (relevance: 32%)
+  https://ae.linkedin.com/in/ymisnik
+  Yuri Misnik
+inDrive
+Abu Dhabi Emirate, United Arab Emirates
+500 connections, 21988 followers
+
+
+About
+A business-focused pragmatic senior technologist with a passion for cloud and big…
+
+
+Experience
+N/A
+
+
+Education
+The University of Texas at Austin
+N/A
+1998 - 1999
+None
+
+### Search 2: PMO / Technology Leadership
+## Answer
+
+A Director of Digital Transformation in Dubai and a PMO Manager in Saudi Arabia are available. Head of Technology roles are also present in Bahrain and Saudi Arabia.
+
+---
+
+## Sources
+
+- **Director Of Digital Transformation Jobs in Dubai (Mar 2026) - Bayt.com** (relevance: 100%)
+  https://www.bayt.com/en/uae/jobs/director-of-digital-transformation-jobs-in-dubai/
+  Head of AI Engineering. Michael Page logo. Michael Page · Dubai · UAE. Summary: A pivotal role exists for a leader in AI Engineering, responsible for
+
+- **Project Management Office PMO Manager Jobs in Saudi Arabia** (relevance: 100%)
+  https://www.bayt.com/en/saudi-arabia/jobs/project-management-office-pmo-manager-jobs/
+  This role reports to the Head of PMO and requires sharp analytical skills and a proactive approach to cost control. 30+ days ago. Site and
+
+- **Commerce Jobs in the Middle East (Mar 2026) - Bayt.com** (relevance: 99%)
+  https://www.bayt.com/en/international/jobs/commerce-jobs/
+  Head of AI Engineering. Michael Page logo. Michael Page · Dubai · UAE. Summary: A pivotal role exists for a leader in AI Engineering, responsible for shaping
+
+- **Technology Leadership Jobs in Bahrain (Jan 2026) - Bayt.com** (relevance: 99%)
+  https://www.bayt.com/en/bahrain/jobs/technology-leadership-jobs/
+  Head of Technology Operations and IT Governance. ila Bank logo. ila Bank. Bahrain. Job Purpose: We are looking for an experienced IT Professional with
+
+- **沙特营商指南 - Scribd** (relevance: 97%)
+  https://www.scribd.com/document/585000551/%E6%B2%99%E7%89%B9%E8%90%A5%E5%95%86%E6%8C%87%E5%8D%97
+  ... Saudi Arabia Partner Jeddah, Saudi Arabia Al Khobar, Saudi Arabia Riyadh, Saudi Arabia b.alhamidani@tamimi.com Head of Technology, Media & 21333 31952 11372
+
+- **Gucci Jobs in the Middle East (Feb 2026) - Bayt.com** (relevance: 96%)
+  https://www.bayt.com/en/international/jobs/gucci-jobs/
+  Head of AI Consulting services. Super Experience for Information Technology logo. Super Experience for Information Technology. Saudi Arabia. Summary: An
+
+- **Stc Jobs in Saudi Arabia (Mar 2026) - Bayt.com** (relevance: 87%)
+  https://www.bayt.com/en/saudi-arabia/jobs/stc-jobs/
+  UXBERT Labs is a leading digital design agency in the GCC working with brands like STC, Amazon, Gucci, and more. 30+ days ago. Head of AI Consulting
+
+- **[PDF] The New Saudi Arabian Bankruptcy Law - Al Tamimi & Company** (relevance: 26%)
+  https://www.tamimi.com/wp-content/uploads/2018/04/Law-Update-March-Edition.pdf
+  KEY CONTACTS UAE ABU DHABI Alex Ghazi alex.ghazi@tamimi.com DUBAI, DIC Samer Qudah s.qudah@tamimi.com DUBAI, DIFC Husam Hourani h.hourani@tamimi.com DUBAI, THE MAZE TOWER Bassem El Dine b.dine@tamimi.com RAS AL KHAIMAH Ammar Haykal a.haykal@tamimi.com SHARJAH Zafer Oghli z.oghli@tamimi.com BAHRAIN M...
+
+- **Job Seekers, Job Search - Alliance Recruitment Agency** (relevance: 7%)
+  https://www.alliancerecruitmentagency.com/job-seekers/
+  ... Head Of Technology & Innovation, 1, Addis Ababa, Addis Ababa, Ethiopia, Details ... Saudi Arabia, Details Apply. 1524, Non Technical Content Writer, 2, Ahmedabad,
+
+- **Saleh Abdulaziz Al Rashid And Sons Co. - abc-gcc.net** (relevance: 0%)
+  https://abc-gcc.net/companies/4/525672
+  ASMO a joint venture between Saudi oil giant Aramco and multinational logistics company DHL Supply Chain has sealed a partnership deal with Arcapita Group Holdings a global alternative investment firm to develop a 1.4 million sq m purpose-built logistics facility at King Salman Energy Park (Spark) i...
+
+### Search 3: HealthTech / FinTech Executives
+## Answer
+
+There are 25+ Head of Digital Health and 58 Head of Fintech job openings in the UAE and GCC for 2026. Positions are available in Dubai, Abu Dhabi, and other cities. Apply now to advance your career.
+
+---
+
+## Sources
+
+- **25+ Head of Digital Health Jobs, Employment 1 March 2026 - Indeed** (relevance: 100%)
+  https://ae.indeed.com/q-head-of-digital-health-jobs.html
+  Discover 42 Head of Digital Health job opportunities on Indeed.com. Apply today to advance your career with top employers. Missing: Saudi Riyadh Jeddah Qatar Doha Bahrain Manama Kuwait Muscat
+
+- **50+ Head of Fintech Jobs, Employment 14 February 2026 - Indeed** (relevance: 100%)
+  https://ae.indeed.com/q-head-of-fintech-jobs.html
+  Discover 58 Head of Fintech job opportunities on Indeed.com. Apply today to advance your career with top employers. Missing: Saudi Riyadh Jeddah Qatar Doha Bahrain Manama Kuwait Muscat GCC
+
+- **Dubai Jobs Careers & Vacancies. UAE Saudi Oman Bahrain Qatar Kuwait | Facebook** (relevance: 100%)
+  https://www.facebook.com/groups/dubai4ever/
+  Jobs in United Arab Emirates (Dubai, Abu Dhabi, Sharjah, Ajman, Fujairah, Ras Al Khaimah, Umm Al Quwain, Al Ain), Saudi Arabia (Riyadh, Jeddah, Makkah, Madinah
+
+- **Healthcare CEO Jobs in the Middle East (Mar 2026) - Bayt.com** (relevance: 99%)
+  https://www.bayt.com/en/international/jobs/healthcare-ceo-jobs/
+  Apply now to over 70 Healthcare CEO jobs in Middle East and Gulf and make your job hunting simpler. Find the latest Healthcare CEO job vacancies and
+
+- **GCC Jobs in the Middle East (Mar 2026) - Bayt.com** (relevance: 99%)
+  https://www.bayt.com/en/international/jobs/gcc-jobs/
+  Apply now to over 2030 GCC jobs in Middle East and Gulf and make your job hunting simpler. Find the latest GCC job vacancies and employment opportunities in
+
+- **Jobs in UAE and Middle East | GulfTalent.com** (relevance: 99%)
+  https://uat.vps.dvtalent.com/
+  - Top Entry Jobs After Graduation. {{ flashMessage.message }} {{ flashMessage.linkText }} {{ flashMessage.linkText }} {{ flashMessage.linkText }}. {{ flashMessage.message }} {{ flashMessage.linkText }} {{ flashMessage.linkText }} {{ flashMessage.linkText }}. # Find your next job. ## Join top employe...
+
+- **Technology jobs - Dubai** (relevance: 95%)
+  https://www.michaelpage.ae/jobs/technology
+  This role leads the strategy, development, and scaling of AI, Robotics, and emerging technologies across the organisation. As a Chief Technology Officer (CTO) in the financial services industry, you will lead the technology strategy and drive innovation to support business objectives. This role owns...
+
+- **Leading Medical Supplies Provider In The GCC | Zahrawi** (relevance: 85%)
+  https://www.zahrawigroup.com/
+  Established in 1989, Zahrawi Group is one of the leading and pioneer Healthcare Solutions and Analytical Lab provider in the GCC specialized in Surgical, Medical, Nuclear Medicine, Diagnostic and Analytical Lab. Started in Dubai, U.A.E, Zahrawi Group has an emphatic presence across the GCC with its ...
+
+- **Latest GCC Business News & Updates | GCC Business Watch** (relevance: 1%)
+  https://gccbusinesswatch.com/
+  Dubai Integrated Economic Zones Authority Reports Strong Growth in H1 2024, Strengthening Dubai’s Role as Global Investment Hub. GCC Secretary General Highlights Environmental Protection as Key Focus in Regional Cooperation. The Abu Dhabi Chamber of Commerce and Industry has signed a cooperation agr...
+
+- **Best UCAT Coaching in Kuwait City for UK Medical School Admissions - UniHawk** (relevance: 0%)
+  https://www.unihawk.com/kuwait/best-ucat-coaching-in-kuwait-city-for-uk-medical-school-admissions/
+  Feb 15, 2026 · Best UCAT Coaching in Kuwait City for UK Medical School Admissions. UCAT preparation courses in Kuwait, UCAT exam dates in Kuwait 2026-2027.
+
+---
+
