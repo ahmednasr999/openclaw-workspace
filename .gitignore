@@ -6,7 +6,6 @@ skills/*/node_modules/
 *.pyc
 __pycache__/
 .intelligence_data/
-mission-control/
 skills/clawback/
 skills/content-claw/
 skills/visual-explainer/
