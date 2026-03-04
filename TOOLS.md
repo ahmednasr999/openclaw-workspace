@@ -108,7 +108,7 @@ Rule: Sub-agents write to output files only. NASR merges into shared memory. Nev
 
 **Key: All limits reset every 5 hours. Spread load across providers to avoid hitting any single limit.**
 
-**Fallback chain:** MiniMax M2.5 (default) -> Claude Sonnet 4.6 -> GPT-5.3-Codex
+**Fallback chain:** MiniMax M2.5 (default) -> Claude Sonnet 4.6 -> Claude Haiku 4.5 -> GPT-5.3-Codex (until Apr 1) -> Kimi K2.5
 
 **Auth:** Claude via API key, MiniMax via OAuth, Codex via OAuth (token expires ~June 2026)
 
@@ -121,7 +121,7 @@ Rule: Sub-agents write to output files only. NASR merges into shared memory. Nev
 | Infrastructure decisions, post-mortems | Opus 4.6 | opus46 | Best reasoning, safety-critical |
 | Interview prep, deep strategy | Opus 4.6 | opus46 | Best reasoning |
 | CV tailoring, LinkedIn content | Sonnet 4.6 | sonnet46 | Quality drafting |
-| Sub-agent work, coding tasks | GPT-5.3-Codex | gpt53codex | Separate quota pool, saves Claude |
+| Sub-agent work, coding tasks | Haiku 4.5 | haiku | Fast, lightweight, default sub-agent |
 | Quick formatting, lookups, vision | Haiku 4.5 | haiku | Fast, lightweight |
 | Crons, heartbeats, email, calendar | MiniMax M2.5 | minimax-m2.5 | Flat rate default |
 | Long document analysis (256K+) | Kimi K2.5 | kimi | Largest context window |
@@ -160,9 +160,9 @@ When spawning a sub-agent task, always:
 | Agent | Folder | Default Model | Escalate To |
 |-------|--------|--------------|-------------|
 | CV Optimizer | cv-optimizer | **opus46** | Never downgrade CVs |
-| Job Hunter | job-hunter | gpt53codex | sonnet46 if quality insufficient |
-| Researcher | researcher | gpt53codex | sonnet46 for synthesis |
-| Content Creator | content-creator | sonnet46 | gpt53codex for drafts only |
+| Job Hunter | job-hunter | haiku | sonnet46 if quality insufficient |
+| Researcher | researcher | haiku | sonnet46 for synthesis |
+| Content Creator | content-creator | sonnet46 | opus46 for strategic pieces |
 
 ---
 

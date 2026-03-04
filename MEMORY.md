@@ -162,6 +162,7 @@ Rule: Match model to task complexity. Never use Opus for what Haiku can do.
 
 *(Running log — add don't delete)*
 
+- 2026-03-04: **OpenAI ChatGPT Plus cancelled.** Codex access remains until April 1. Sub-agent default switched from Codex to Haiku. Fallback chain reordered: Sonnet -> Haiku -> Codex (until Apr 1) -> Kimi. Monthly savings: $20/mo. Transition period: monitor quota through March to validate.
 - 2026-03-04: **Claude subscription upgraded from Max 5x (EGP 4,399/mo) to Max 20x (EGP 9,000/mo).** 4x Claude quota per 5-hour window. Quota guard thresholds relaxed: warn at 85%, block at 95%. MiniMax remains default for background tasks. Routing logic unchanged, just more headroom for Opus/Sonnet quality work.
 - 2026-02-27: **NEW PERMANENT RULE — Session context auto-flush at 75%.** At 150k/200k tokens: flush MEMORY.md + active-tasks + daily log, then start fresh session. Reason: during cascade failure, main session hit 93% context and couldn't respond even after rate limits cleared, prolonging outage significantly.
 - 2026-02-27: **Codex JWT deadline pattern (resolved Mar 1 via OAuth):** original expiry was March 4, and preventive re-auth before expiry remains the rule for any future credential rotation.
