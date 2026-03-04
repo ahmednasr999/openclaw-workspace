@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import { createTask, loadTasks, updateTaskStatus } from "@/lib/task-store";
+import { getTasks } from "@/lib/sync";
+import { createTask, updateTaskStatus } from "@/lib/task-store";
 import { TaskStatus } from "@/lib/parity";
 
 export const runtime = "nodejs";
@@ -12,7 +13,8 @@ function isTaskStatus(value: string): value is TaskStatus {
 }
 
 export async function GET() {
-  const tasks = await loadTasks();
+  // Live tasks from active-tasks.md
+  const tasks = await getTasks();
   return NextResponse.json({ tasks, fetchedAt: new Date().toISOString() });
 }
 
