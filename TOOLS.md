@@ -1,6 +1,6 @@
 # TOOLS.md — Environment & Tool Reference
 
-*Last updated: 2026-02-21*
+*Last updated: 2026-03-04*
 
 ---
 
@@ -96,13 +96,13 @@ Rule: Sub-agents write to output files only. NASR merges into shared memory. Nev
 |----------|-------|-------|------|---------|---------|-------|----------|
 | 1st | MiniMax M2.5-highspeed | minimax-m2.5 | Coding Plus | $40 | 200K | 300 prompts/5hrs | Default: crons, heartbeats, quick tasks |
 | 2nd | GPT-5.3-Codex | gpt53codex | ChatGPT Plus | $20 | 266K | 45-225 msgs/5hrs | Sub-agents, coding, mid-tier reasoning |
-| 3rd | Claude Sonnet 4.6 | sonnet46 | Claude Max 5x | (incl) | 200K | 5x Pro/5hrs | Drafting, research, LinkedIn content |
-| 4th | Claude Opus 4.6 | opus46 | Claude Max 5x | (incl) | 200K | 5x Pro/5hrs | Deep strategy, CV tailoring, interviews |
-| 5th | Claude Haiku 4.5 | haiku | Claude Max 5x | (incl) | 200K | 5x Pro/5hrs | Fast, vision, lightweight fallback |
+| 3rd | Claude Sonnet 4.6 | sonnet46 | Claude Max 20x | (incl) | 200K | 20x Pro/5hrs | Drafting, research, LinkedIn content |
+| 4th | Claude Opus 4.6 | opus46 | Claude Max 20x | (incl) | 200K | 20x Pro/5hrs | Deep strategy, CV tailoring, interviews |
+| 5th | Claude Haiku 4.5 | haiku | Claude Max 20x | (incl) | 200K | 20x Pro/5hrs | Fast, vision, lightweight fallback |
 | 6th | Kimi K2.5 | kimi | API key | ~free | 256K | n/a | Long context (256K+) |
 
-**Monthly budget: $160/mo total**
-- Claude Max 5x: $100/mo (Opus + Sonnet + Haiku, shared 5x Pro limit per 5hrs)
+**Monthly budget: ~EGP 9,000 + $60/mo total**
+- Claude Max 20x: EGP 9,000/mo (Opus + Sonnet + Haiku, shared 20x Pro limit per 5hrs)
 - MiniMax Coding Plus: $40/mo (300 prompts/5hrs, ~100 TPS)
 - ChatGPT Plus: $20/mo (GPT-5.3-Codex, 45-225 msgs/5hrs)
 
@@ -137,10 +137,10 @@ Rule: Sub-agents write to output files only. NASR merges into shared memory. Nev
 ### Monthly Cost Budget (Fixed)
 | Provider | Plan | Cost |
 |----------|------|------|
-| Claude Max 5x | Opus + Sonnet + Haiku | $100/mo |
+| Claude Max 20x | Opus + Sonnet + Haiku | EGP 9,000/mo |
 | MiniMax Coding Plus | M2.5-highspeed | $40/mo |
 | ChatGPT Plus | GPT-5.3-Codex | $20/mo |
-| **TOTAL** | | **$160/mo** |
+| **TOTAL** | | **EGP 9,000 + $60/mo** |
 
 ---
 
