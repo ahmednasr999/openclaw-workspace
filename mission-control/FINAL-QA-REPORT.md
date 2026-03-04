@@ -1,7 +1,7 @@
 # FINAL QA REPORT
 
 Date: 2026-03-03 UTC
-Project: mission-control-v3
+Project: mission-control
 Scope: blocker fix rerun and release readiness re-validation
 
 ## Executive Summary
