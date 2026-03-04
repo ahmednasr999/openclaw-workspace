@@ -96,7 +96,7 @@
       "consecutiveFailures": 5,
       "lastRunAt": "2026-03-04T14:05:21.460Z",
       "lastSuccessAt": "",
-      "nextRunAt": "2026-03-04T15:01:11.667Z"
+      "nextRunAt": "2026-03-04T16:10:41.654Z"
     },
     {
       "id": "97a8c0f4-a64c-4e11-afa7-669ad00f1e4c",
@@ -146,7 +146,7 @@
       "consecutiveFailures": 2,
       "lastRunAt": "2026-03-04T07:41:45.129Z",
       "lastSuccessAt": "",
-      "nextRunAt": "2026-03-04T15:01:11.667Z"
+      "nextRunAt": "2026-03-04T16:10:41.654Z"
     },
     {
       "id": "0f925f51-2097-43c0-b6c4-c42b319840fb",
@@ -166,7 +166,7 @@
       "consecutiveFailures": 2,
       "lastRunAt": "2026-03-04T07:41:09.427Z",
       "lastSuccessAt": "",
-      "nextRunAt": "2026-03-04T15:01:11.667Z"
+      "nextRunAt": "2026-03-04T16:10:41.654Z"
     },
     {
       "id": "f6d8eac7-5a5e-4629-8cbf-a07f40b14d85",
@@ -186,7 +186,7 @@
       "consecutiveFailures": 2,
       "lastRunAt": "2026-03-04T07:40:51.257Z",
       "lastSuccessAt": "",
-      "nextRunAt": "2026-03-04T15:01:11.667Z"
+      "nextRunAt": "2026-03-04T16:10:41.654Z"
     },
     {
       "id": "b0e3d975-ad01-4fb0-adbf-528cab08c607",
@@ -216,7 +216,7 @@
       "consecutiveFailures": 2,
       "lastRunAt": "2026-03-04T07:40:10.635Z",
       "lastSuccessAt": "",
-      "nextRunAt": "2026-03-04T15:01:11.667Z"
+      "nextRunAt": "2026-03-04T16:10:41.654Z"
     },
     {
       "id": "bf78b33e-fe23-4a04-99f5-52ac067534c4",
@@ -236,7 +236,7 @@
       "consecutiveFailures": 2,
       "lastRunAt": "2026-03-04T07:39:57.894Z",
       "lastSuccessAt": "",
-      "nextRunAt": "2026-03-04T15:01:11.667Z"
+      "nextRunAt": "2026-03-04T16:10:41.654Z"
     },
     {
       "id": "ca44d018-f31b-458c-870e-104aa5cd6a27",
@@ -266,7 +266,7 @@
       "consecutiveFailures": 2,
       "lastRunAt": "2026-03-04T07:39:38.817Z",
       "lastSuccessAt": "",
-      "nextRunAt": "2026-03-04T15:01:11.667Z"
+      "nextRunAt": "2026-03-04T16:10:41.654Z"
     },
     {
       "id": "521eae51-f48d-4b86-a3e6-aa9c0894918c",
@@ -511,7 +511,7 @@
   ],
   "heartbeat": {
     "status": "degraded",
-    "updatedAt": "2026-03-04T14:46:11.667Z",
-    "tick": 432
+    "updatedAt": "2026-03-04T15:55:41.654Z",
+    "tick": 508
   }
 }

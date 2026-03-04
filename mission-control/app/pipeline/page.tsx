@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Shell } from "@/components/shell";
 import { CardSkeleton } from "@/components/skeleton";
 
@@ -615,24 +615,8 @@ function KanbanColumn({
 }
 
 export default function PipelinePage() {
-  const [jobs, setJobs] = useState<Job[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const loadJobs = async () => {
-      setLoading(true);
-      try {
-        const parsedJobs = parseJobsFromMarkdown();
-        setJobs(parsedJobs);
-      } catch (error) {
-        console.error("Failed to load jobs:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    loadJobs();
-  }, []);
+  const jobs = parseJobsFromMarkdown();
+  const loading = false;
 
   const metrics = {
     total: jobs.length,
