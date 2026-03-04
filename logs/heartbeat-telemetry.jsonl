@@ -1858,3 +1858,11 @@
 {"timestamp": "2026-03-04T16:29:45Z", "gateway_alive": false, "active_sessions_observed": 1120, "model_health": {"last_model_seen": "claude-opus-4-6"}, "queue_depth": 24}
 {"timestamp": "2026-03-04T16:30:46Z", "gateway_alive": false, "active_sessions_observed": 1121, "model_health": {"last_model_seen": "MiniMax-M2.5"}, "queue_depth": 24}
 {"timestamp": "2026-03-04T16:31:47Z", "gateway_alive": false, "active_sessions_observed": 1121, "model_health": {"last_model_seen": "MiniMax-M2.5"}, "queue_depth": 24}
+{"timestamp": "2026-03-04T16:32:47Z", "gateway_alive": false, "active_sessions_observed": 1122, "model_health": {"last_model_seen": "MiniMax-M2.5"}, "queue_depth": 24}
+{"timestamp": "2026-03-04T16:33:48Z", "gateway_alive": false, "active_sessions_observed": 1122, "model_health": {"last_model_seen": "claude-opus-4-6"}, "queue_depth": 24}
+{"timestamp": "2026-03-04T16:34:49Z", "gateway_alive": false, "active_sessions_observed": 1122, "model_health": {"last_model_seen": "claude-opus-4-6"}, "queue_depth": 24}
+{"timestamp": "2026-03-04T16:35:50Z", "gateway_alive": false, "active_sessions_observed": 1124, "model_health": {"last_model_seen": "MiniMax-M2.5"}, "queue_depth": 24}
+{"timestamp": "2026-03-04T16:36:51Z", "gateway_alive": false, "active_sessions_observed": 1125, "model_health": {"last_model_seen": "MiniMax-M2.5"}, "queue_depth": 24}
+{"timestamp": "2026-03-04T16:37:51Z", "gateway_alive": false, "active_sessions_observed": 1125, "model_health": {"last_model_seen": "MiniMax-M2.5"}, "queue_depth": 24}
+{"timestamp": "2026-03-04T16:38:52Z", "gateway_alive": false, "active_sessions_observed": 1125, "model_health": {"last_model_seen": "claude-opus-4-6"}, "queue_depth": 24}
+{"timestamp": "2026-03-04T16:39:53Z", "gateway_alive": false, "active_sessions_observed": 1126, "model_health": {"last_model_seen": "claude-opus-4-6"}, "queue_depth": 24}
