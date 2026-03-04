@@ -70,3 +70,22 @@ Instead of hoping Google finds good posts, we target specific people whose conte
 |------|--------|--------|--------|
 | | | | |
 
+
+## Daily Connection Batch
+
+**Today's Batch (2026-03-04):**
+- Ahmad Yahya (SGH): https://ae.linkedin.com/in/ayahya
+- Mohannad AlKalash: https://www.linkedin.com/in/mohannadalkalash
+- Saleem Arshad: https://ae.linkedin.com/in/saleemarshad
+- Fady Sleiman: https://ae.linkedin.com/in/fadysleiman
+
+---
+
+## Tracking
+
+| Date | Person | Action | Result |
+|------|--------|--------|--------|
+| 2026-03-04 | Ahmad Yahya | Connection sent | ✅ |
+| 2026-03-04 | Mohannad AlKalash | Connection sent | ✅ |
+| 2026-03-04 | Saleem Arshad | Connection sent | ✅ |
+| 2026-03-04 | Fady Sleiman | Connection sent | ✅ |
