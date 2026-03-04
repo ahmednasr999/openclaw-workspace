@@ -31,18 +31,12 @@ SEARCHES = [
     ("VP Digital Transformation", "united arab emirates", "Dubai"),
     ("Director AI", "united arab emirates", "Dubai"),
     ("Head of Technology", "united arab emirates", "Dubai"),
-    ("VP AI", "united arab emirates", "Abu Dhabi"),
-    ("Head of PMO", "united arab emirates", "Dubai"),
     ("CTO", "united arab emirates", "Dubai"),
-    ("Chief Digital Officer", "united arab emirates", "Dubai"),
     # Saudi Arabia
     ("VP Digital Transformation", "saudi arabia", "Riyadh"),
     ("Director AI", "saudi arabia", "Riyadh"),
-    ("Head of Technology", "saudi arabia", "Riyadh"),
-    ("CTO", "saudi arabia", "Riyadh"),
     # Qatar
-    ("VP Digital Transformation", "qatar", "Doha"),
-    ("Director AI", "qatar", "Doha"),
+    ("Director Technology", "qatar", "Doha"),
     # Bahrain
     ("Head of Technology", "bahrain", "Manama"),
 ]
