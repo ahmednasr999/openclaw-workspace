@@ -1,9 +1,12 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
-import { seedTasks, TaskItem, TaskStatus } from "@/lib/parity";
+import { TaskItem, TaskStatus } from "@/lib/parity";
 
 const dataDir = path.join(process.cwd(), "data");
 const filePath = path.join(dataDir, "tasks.json");
+
+// Empty array: live tasks come from active-tasks.md via lib/sync
+const emptyTasks: TaskItem[] = [];
 
 async function ensureTasksFile() {
   await mkdir(dataDir, { recursive: true });
@@ -11,7 +14,8 @@ async function ensureTasksFile() {
   try {
     await readFile(filePath, "utf8");
   } catch {
-    await writeFile(filePath, JSON.stringify(seedTasks, null, 2), "utf8");
+    // Create empty file (not seeded with fake data)
+    await writeFile(filePath, JSON.stringify(emptyTasks, null, 2), "utf8");
   }
 }
 

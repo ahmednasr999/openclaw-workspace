@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
+import { CommandPalette } from "@/components/command-palette";
 
 export const metadata: Metadata = {
   title: "Mission Control v3",
@@ -16,7 +14,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} bg-[#0a0a0a] font-sans antialiased`}>{children}</body>
+      <body className="bg-[#080C16] text-[#e2e8f0] antialiased">
+        {children}
+        <CommandPalette />
+      </body>
     </html>
   );
 }

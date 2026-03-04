@@ -1,9 +1,7 @@
 "use client";
 
-import { ReactNode, useEffect, useMemo, useRef, useState } from "react";
-import { useRouter } from "next/navigation";
+import { ReactNode, useEffect, useState } from "react";
 import { Sidebar } from "@/components/sidebar";
-import { navItems } from "@/lib/data";
 import { BackendHealth } from "@/lib/types";
 
 const defaultHealth: BackendHealth = {
@@ -14,26 +12,47 @@ const defaultHealth: BackendHealth = {
   checkedAt: new Date().toISOString(),
 };
 
+interface SyncStatus {
+  status: "synced" | "syncing" | "error";
+  lastSyncAt?: string;
+}
+
+function SyncDot({ status, lastSyncAt }: { status: string; lastSyncAt?: string }) {
+  const [showTip, setShowTip] = useState(false);
+  const dotClass =
+    status === "synced"
+      ? "bg-emerald-400 animate-pulse"
+      : status === "syncing"
+      ? "bg-amber-400 animate-pulse"
+      : "bg-red-500 animate-glow-red";
+  const label = status === "synced" ? "Synced" : status === "syncing" ? "Syncing..." : "Sync error";
+  const timeStr = lastSyncAt
+    ? new Date(lastSyncAt).toLocaleTimeString("en-US", { timeZone: "Africa/Cairo", hour: "2-digit", minute: "2-digit" })
+    : "";
+
+  return (
+    <div className="relative flex items-center gap-1.5" onMouseEnter={() => setShowTip(true)} onMouseLeave={() => setShowTip(false)}>
+      <span className={`h-2 w-2 rounded-full ${dotClass}`} />
+      <span className="text-xs text-[#4B6A9B] hidden sm:inline">{label}</span>
+      {showTip && timeStr && (
+        <div className="absolute right-0 top-5 z-50 glass rounded px-2 py-1 text-xs text-[#a8c4e8] whitespace-nowrap animate-fade-in">
+          Last sync: {timeStr} (Cairo)
+        </div>
+      )}
+    </div>
+  );
+}
+
+
+
 export function MissionShell({ title, description, children }: { title: string; description: string; children: ReactNode }) {
   const [leftCollapsed, setLeftCollapsed] = useState(false);
-  const [commandOpen, setCommandOpen] = useState(false);
-  const [query, setQuery] = useState("");
-  const [selectedIndex, setSelectedIndex] = useState(0);
   const [backendHealth, setBackendHealth] = useState<BackendHealth>(defaultHealth);
-  const router = useRouter();
-  const searchInputRef = useRef<HTMLInputElement>(null);
+  const [syncStatus, setSyncStatus] = useState<SyncStatus>({ status: "synced" });
 
-  const filtered = useMemo(() => navItems.filter((n) => n.label.toLowerCase().includes(query.toLowerCase())), [query]);
   const isRedAlert = backendHealth.level === "critical" || !backendHealth.reachable;
 
-  useEffect(() => {
-    if (!commandOpen) {
-      return;
-    }
 
-    const timeout = setTimeout(() => searchInputRef.current?.focus(), 0);
-    return () => clearTimeout(timeout);
-  }, [commandOpen]);
 
   useEffect(() => {
     async function pollBackendHealth() {
@@ -46,6 +65,8 @@ export function MissionShell({ title, description, children }: { title: string; 
 
         if (!healthResponse.ok) {
           setBackendHealth({ ...payload, reachable: false, level: "critical" });
+          const hbDot = document.getElementById("sidebar-heartbeat");
+          if (hbDot) { hbDot.className = "h-2 w-2 rounded-full bg-red-500 animate-glow-red"; }
           return;
         }
 
@@ -53,11 +74,25 @@ export function MissionShell({ title, description, children }: { title: string; 
           const heartbeatPayload = await heartbeatResponse.json() as { status: "healthy" | "degraded"; tick: number };
           if (heartbeatPayload.status === "degraded" && payload.level === "healthy") {
             setBackendHealth({ ...payload, level: "degraded", reason: `Heartbeat degraded at tick ${heartbeatPayload.tick}` });
+            const hbDot = document.getElementById("sidebar-heartbeat");
+            if (hbDot) { hbDot.className = "h-2 w-2 rounded-full bg-amber-400 animate-pulse"; }
             return;
           }
         }
 
         setBackendHealth(payload);
+        const hbDot = document.getElementById("sidebar-heartbeat");
+        const hbLabel = document.getElementById("sidebar-heartbeat-label");
+        if (hbDot) {
+          hbDot.className = payload.level === "healthy"
+            ? "h-2 w-2 rounded-full bg-emerald-400 animate-pulse"
+            : payload.level === "degraded"
+            ? "h-2 w-2 rounded-full bg-amber-400 animate-pulse"
+            : "h-2 w-2 rounded-full bg-red-500 animate-glow-red";
+        }
+        if (hbLabel) {
+          hbLabel.textContent = payload.level === "healthy" ? "Gateway" : `Gateway: ${payload.level}`;
+        }
       } catch {
         setBackendHealth({
           reachable: false,
@@ -69,116 +104,98 @@ export function MissionShell({ title, description, children }: { title: string; 
       }
     }
 
+    async function pollSyncStatus() {
+      try {
+        const res = await fetch("/api/sync-status", { cache: "no-store" });
+        if (res.ok) {
+          const data = await res.json() as { status?: string; lastSyncAt?: string };
+          setSyncStatus({
+            status: (data.status as SyncStatus["status"]) || "synced",
+            lastSyncAt: data.lastSyncAt,
+          });
+        }
+      } catch {
+        setSyncStatus({ status: "error" });
+      }
+    }
+
     pollBackendHealth();
-    const interval = setInterval(pollBackendHealth, 10000);
-    return () => clearInterval(interval);
+    pollSyncStatus();
+    const healthInterval = setInterval(pollBackendHealth, 10000);
+    const syncInterval = setInterval(pollSyncStatus, 30000);
+    return () => {
+      clearInterval(healthInterval);
+      clearInterval(syncInterval);
+    };
   }, []);
 
-  useEffect(() => {
-    function isEditableTarget(target: EventTarget | null) {
-      if (!(target instanceof HTMLElement)) {
-        return false;
-      }
-      const tag = target.tagName.toLowerCase();
-      return target.isContentEditable || tag === "input" || tag === "textarea" || tag === "select";
-    }
 
-    function onKeyDown(event: KeyboardEvent) {
-      const triggerPalette = (event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "k";
 
-      if (triggerPalette && !isEditableTarget(event.target)) {
-        event.preventDefault();
-        setSelectedIndex(0);
-        setCommandOpen(true);
-        return;
-      }
-
-      if (event.key === "Escape" && commandOpen) {
-        event.preventDefault();
-        setCommandOpen(false);
-        return;
-      }
-
-      if (!commandOpen) {
-        return;
-      }
-
-      if (event.key === "ArrowDown") {
-        event.preventDefault();
-        setSelectedIndex((current) => (filtered.length === 0 ? 0 : (current + 1) % filtered.length));
-      } else if (event.key === "ArrowUp") {
-        event.preventDefault();
-        setSelectedIndex((current) => (filtered.length === 0 ? 0 : (current - 1 + filtered.length) % filtered.length));
-      } else if (event.key === "Enter") {
-        event.preventDefault();
-        const selected = filtered[selectedIndex];
-        if (selected) {
-          router.push(selected.href);
-          setCommandOpen(false);
-          setQuery("");
-        }
-      }
-    }
-
-    window.addEventListener("keydown", onKeyDown);
-    return () => window.removeEventListener("keydown", onKeyDown);
-  }, [commandOpen, filtered, router, selectedIndex]);
+  const healthDotClass =
+    backendHealth.level === "healthy"
+      ? "bg-emerald-400 animate-pulse"
+      : backendHealth.level === "degraded"
+      ? "bg-amber-400 animate-pulse"
+      : "bg-red-500 animate-glow-red";
 
   return (
-    <div className={`min-h-screen bg-[#0a0a0a] text-zinc-100 md:flex ${isRedAlert ? "red-alert" : ""}`}>
+    <div className={`min-h-screen bg-[#080C16] text-[#e2e8f0] md:flex ${isRedAlert ? "red-alert" : ""}`}>
       <Sidebar collapsed={leftCollapsed} />
-      <main className="flex-1 p-4 md:p-8">
-        <header className="mb-6 border-b border-zinc-800 pb-4 flex items-center justify-between gap-3">
-          <div>
-            <h2 className="text-2xl font-semibold tracking-tight">{title}</h2>
-            <p className="mt-1 text-sm text-zinc-400">{description}</p>
+
+      <main className="flex-1 flex flex-col min-w-0">
+        {/* Top bar */}
+        <header className="sticky top-0 z-30 glass border-b border-[#1E2D45] px-4 md:px-6 py-3 flex items-center justify-between gap-4">
+          <div className="flex items-center gap-3 min-w-0">
+            <button
+              onClick={() => setLeftCollapsed((v) => !v)}
+              className="shrink-0 rounded-[6px] border border-[#1E2D45] p-1.5 text-[#4B6A9B] hover:text-[#a8c4e8] hover:border-[#2D4163] transition-colors"
+              aria-label="Toggle sidebar"
+            >
+              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+            <div className="min-w-0">
+              <h2 className="text-base font-semibold tracking-tight text-[#e2e8f0] truncate">{title}</h2>
+              <p className="text-xs text-[#4B6A9B] truncate hidden sm:block">{description}</p>
+            </div>
           </div>
-          <div className="flex items-center gap-2">
-            <button onClick={() => setLeftCollapsed((v) => !v)} className="rounded border border-zinc-700 px-2 py-1 text-xs">☰</button>
-            <button onClick={() => { setSelectedIndex(0); setCommandOpen(true); }} className="rounded border border-zinc-700 px-2 py-1 text-xs">Command</button>
-            <span className="inline-flex items-center gap-1 text-xs text-zinc-400">
-              <span className={`h-2 w-2 rounded-full ${backendHealth.level === "healthy" ? "bg-emerald-400" : backendHealth.level === "degraded" ? "bg-amber-400" : "bg-red-500"} ${backendHealth.level === "healthy" ? "animate-pulse" : ""}`} />
-              {backendHealth.level} · {backendHealth.latencyMs} ms
-            </span>
+
+          <div className="flex items-center gap-3 shrink-0">
+            {/* Sync status */}
+            <SyncDot status={syncStatus.status} lastSyncAt={syncStatus.lastSyncAt} />
+
+            {/* Health indicator */}
+            <div className="flex items-center gap-1.5 text-xs text-[#4B6A9B]">
+              <span className={`h-2 w-2 rounded-full ${healthDotClass}`} />
+              <span className="hidden sm:inline">{backendHealth.latencyMs}ms</span>
+            </div>
+
+            {/* Command palette button */}
+            <button
+              onClick={() => {
+                const event = new CustomEvent("open-command-palette");
+                window.dispatchEvent(event);
+              }}
+              className="flex items-center gap-2 rounded-[6px] border border-[#1E2D45] px-2.5 py-1.5 text-xs text-[#4B6A9B] hover:text-[#a8c4e8] hover:border-[#2D4163] transition-colors"
+              aria-label="Open command palette"
+            >
+              <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z" />
+              </svg>
+              <span className="hidden sm:inline">Search</span>
+              <kbd className="hidden sm:inline border border-[#1E2D45] rounded px-1 text-[10px]">K</kbd>
+            </button>
           </div>
         </header>
-        {children}
+
+        {/* Page content */}
+        <div className="flex-1 p-4 md:p-6">
+          {children}
+        </div>
       </main>
 
-      {commandOpen && (
-        <div className="fixed inset-0 z-40 bg-black/60 p-4" onClick={() => setCommandOpen(false)}>
-          <div className="mx-auto mt-20 max-w-xl rounded border border-zinc-700 bg-[#111111] p-4" onClick={(e) => e.stopPropagation()}>
-            <div className="mb-2 flex items-center justify-between"><strong>Command Palette</strong><button className="text-xs" onClick={() => setCommandOpen(false)}>Close</button></div>
-            <input
-              ref={searchInputRef}
-              value={query}
-              onChange={(event) => {
-                setQuery(event.target.value);
-                setSelectedIndex(0);
-              }}
-              placeholder="Type route"
-              className="mb-3 w-full rounded border border-zinc-700 bg-zinc-950 px-3 py-2"
-            />
-            <div className="space-y-2">
-              {filtered.map((item, index) => (
-                <button
-                  key={item.href}
-                  className={`block w-full rounded border px-3 py-2 text-left ${index === selectedIndex ? "border-zinc-500 bg-zinc-900" : "border-zinc-800 hover:bg-zinc-900"}`}
-                  onMouseEnter={() => setSelectedIndex(index)}
-                  onClick={() => {
-                    router.push(item.href);
-                    setCommandOpen(false);
-                    setQuery("");
-                  }}
-                >
-                  {item.label}
-                </button>
-              ))}
-            </div>
-            <p className="mt-3 text-xs text-zinc-500">Global shortcut: Ctrl+K on Windows/Linux, Cmd+K on macOS. Esc closes palette.</p>
-          </div>
-        </div>
-      )}
+
     </div>
   );
 }

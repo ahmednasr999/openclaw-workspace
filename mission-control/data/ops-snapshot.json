@@ -79,24 +79,24 @@
   ],
   "cronJobs": [
     {
-      "id": "65afe9ed-d5ec-4880-a034-f7d5efda3bc6",
-      "name": "Context Guardian - External Watchdog",
-      "schedule": "*/4 * * * *",
-      "status": "healthy",
-      "consecutiveFailures": 0,
-      "lastRunAt": "2026-03-04T12:28:00.022Z",
-      "lastSuccessAt": "2026-03-04T12:28:00.022Z",
-      "nextRunAt": "2026-03-04T12:32:00.000Z"
-    },
-    {
       "id": "calendar-poll-15min",
       "name": "Calendar Check - Every 15 Minutes",
       "schedule": "*/15 * * * *",
       "status": "healthy",
       "consecutiveFailures": 0,
-      "lastRunAt": "2026-03-04T12:30:00.175Z",
-      "lastSuccessAt": "2026-03-04T12:30:00.175Z",
-      "nextRunAt": "2026-03-04T12:45:00.000Z"
+      "lastRunAt": "2026-03-04T14:15:02.632Z",
+      "lastSuccessAt": "2026-03-04T14:15:02.632Z",
+      "nextRunAt": "2026-03-04T14:30:00.000Z"
+    },
+    {
+      "id": "65afe9ed-d5ec-4880-a034-f7d5efda3bc6",
+      "name": "Context Guardian - External Watchdog",
+      "schedule": "*/4 * * * *",
+      "status": "failing",
+      "consecutiveFailures": 5,
+      "lastRunAt": "2026-03-04T14:05:21.460Z",
+      "lastSuccessAt": "",
+      "nextRunAt": "2026-03-04T14:40:25.669Z"
     },
     {
       "id": "97a8c0f4-a64c-4e11-afa7-669ad00f1e4c",
@@ -142,11 +142,11 @@
       "id": "6d8b6639-48c6-40fa-96ea-b54714aa06a5",
       "name": "Quota Monitor - Daily Reset",
       "schedule": "0 0 * * *",
-      "status": "healthy",
+      "status": "failing",
       "consecutiveFailures": 2,
       "lastRunAt": "2026-03-04T07:41:45.129Z",
       "lastSuccessAt": "",
-      "nextRunAt": "2026-03-05T00:00:00.000Z"
+      "nextRunAt": "2026-03-04T14:40:25.669Z"
     },
     {
       "id": "0f925f51-2097-43c0-b6c4-c42b319840fb",
@@ -162,11 +162,11 @@
       "id": "bd9ef291-1b12-4db5-aec0-e59f5da7dc9f",
       "name": "Email Check - Morning 8AM",
       "schedule": "0 6 * * *",
-      "status": "healthy",
+      "status": "failing",
       "consecutiveFailures": 2,
       "lastRunAt": "2026-03-04T07:41:09.427Z",
       "lastSuccessAt": "",
-      "nextRunAt": "2026-03-05T04:00:00.000Z"
+      "nextRunAt": "2026-03-04T14:40:25.669Z"
     },
     {
       "id": "f6d8eac7-5a5e-4629-8cbf-a07f40b14d85",
@@ -182,11 +182,11 @@
       "id": "269aa78a-057c-4d05-ae10-7cfa12930124",
       "name": "Advisory Board Daily Brief",
       "schedule": "0 7 * * *",
-      "status": "healthy",
+      "status": "failing",
       "consecutiveFailures": 2,
       "lastRunAt": "2026-03-04T07:40:51.257Z",
       "lastSuccessAt": "",
-      "nextRunAt": "2026-03-05T05:00:00.000Z"
+      "nextRunAt": "2026-03-04T14:40:25.669Z"
     },
     {
       "id": "b0e3d975-ad01-4fb0-adbf-528cab08c607",
@@ -212,11 +212,11 @@
       "id": "11dba958-f4ba-4a7f-9359-216ea7cf08c6",
       "name": "Fallback Validator - Pre-Briefing Check",
       "schedule": "0 6 * * *",
-      "status": "healthy",
+      "status": "failing",
       "consecutiveFailures": 2,
       "lastRunAt": "2026-03-04T07:40:10.635Z",
       "lastSuccessAt": "",
-      "nextRunAt": "2026-03-05T06:00:00.000Z"
+      "nextRunAt": "2026-03-04T14:40:25.669Z"
     },
     {
       "id": "bf78b33e-fe23-4a04-99f5-52ac067534c4",
@@ -232,11 +232,11 @@
       "id": "60975940-eafa-40fe-a283-7804bc2d0ccb",
       "name": "Disk Health Guard - Daily",
       "schedule": "0 9 * * *",
-      "status": "healthy",
+      "status": "failing",
       "consecutiveFailures": 2,
       "lastRunAt": "2026-03-04T07:39:57.894Z",
       "lastSuccessAt": "",
-      "nextRunAt": "2026-03-05T07:00:00.000Z"
+      "nextRunAt": "2026-03-04T14:40:25.669Z"
     },
     {
       "id": "ca44d018-f31b-458c-870e-104aa5cd6a27",
@@ -262,11 +262,11 @@
       "id": "bd8d241b-ab39-4d67-96a5-431e0739ca1d",
       "name": "Snapshot Retention Prune - Daily",
       "schedule": "30 9 * * *",
-      "status": "healthy",
+      "status": "failing",
       "consecutiveFailures": 2,
       "lastRunAt": "2026-03-04T07:39:38.817Z",
       "lastSuccessAt": "",
-      "nextRunAt": "2026-03-05T07:30:00.000Z"
+      "nextRunAt": "2026-03-04T14:40:25.669Z"
     },
     {
       "id": "521eae51-f48d-4b86-a3e6-aa9c0894918c",
@@ -492,7 +492,7 @@
       "id": "12d37955-ba73-4fb0-bd6d-d47415344262",
       "name": "[MERGED] Daily Job Email Summary — use Job Intelligence instead",
       "schedule": "0 8 * * *",
-      "status": "paused",
+      "status": "healthy",
       "consecutiveFailures": 0,
       "lastRunAt": "2026-02-28T06:00:00.026Z",
       "lastSuccessAt": "2026-02-28T06:00:00.026Z",
@@ -502,7 +502,7 @@
       "id": "daily-delta-better-than-yesterday-0001",
       "name": "Daily Delta - Better Than Yesterday",
       "schedule": "30 4 * * *",
-      "status": "paused",
+      "status": "healthy",
       "consecutiveFailures": 0,
       "lastRunAt": "2026-02-26T07:01:44.800Z",
       "lastSuccessAt": "2026-02-26T07:01:44.800Z",
@@ -510,8 +510,8 @@
     }
   ],
   "heartbeat": {
-    "status": "healthy",
-    "updatedAt": "2026-03-04T12:32:03.729Z",
-    "tick": 131
+    "status": "degraded",
+    "updatedAt": "2026-03-04T14:25:25.669Z",
+    "tick": 351
   }
 }
