@@ -164,3 +164,4 @@
 - [07:55 UTC] Ahmed requested full deletion of Mission Control v1/v2 artifacts, cleanup executed.
 - [07:58 UTC] Renamed mission-control-v3 folder to mission-control and updated package metadata.
 - [08:00 UTC] Removed residual mission-control-v3 data folder, single-folder state enforced.
+- [08:01 UTC] Tagged clean single-track Mission Control baseline: mission-control-single-track-2026-03-04.
