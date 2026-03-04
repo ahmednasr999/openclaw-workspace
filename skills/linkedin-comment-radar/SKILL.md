@@ -1,6 +1,7 @@
 ---
 name: linkedin-comment-radar
 description: Discover fresh LinkedIn posts by topic or hashtag, rank them for comment opportunities, and draft ready to post comments in Ahmed voice. Use when asked to find posts for engagement, build a top 10 table by freshness plus engagement, or generate URL plus comment pairs.
+metadata: {"openclaw":{"emoji":"📡"}}
 ---
 
 # LinkedIn Comment Radar

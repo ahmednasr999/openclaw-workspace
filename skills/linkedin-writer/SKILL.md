@@ -1,6 +1,7 @@
 ---
 name: LinkedIn Writer
 description: Writes LinkedIn posts that sound like a real person, not a content mill
+metadata: {"openclaw":{"emoji":"✍️"}}
 ---
 
 # LinkedIn Writer
