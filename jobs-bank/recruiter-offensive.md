@@ -15,8 +15,8 @@ These firms handle $150K+ roles exclusively. They don't post jobs publicly. Bein
 | 1 | **Korn Ferry** | Jonathan Holmes (MD, ME & Africa) | All sectors, salary benchmarking | [Profile](https://www.linkedin.com/in/jonathanholmeskf/) | 🟢 Connection sent |
 | 2 | **Egon Zehnder** | Raed Kanaan (Managing Partner ME) | Board search, family business | [Profile](https://www.linkedin.com/in/raed-kanaan-a009915/) | 🟢 Connection sent |
 | 3 | **Russell Reynolds** | Sara Azimzadeh (Exec Director) | CEO succession, transformation | [Profile](https://www.linkedin.com/in/saraazimzadeh/) | 🟢 Connection sent |
-| 4 | **Heidrick & Struggles** | Tom Clarke (Partner, Tech & Digital Officers) | Technology, digital officers | [Profile](https://www.linkedin.com/in/tomclarke10/) | 🟢 Connection sent |
-| 5 | **Spencer Stuart** | Michelle Eliasson (Dubai) | Board, CEO, C-suite | [Profile](https://www.linkedin.com/in/michelle-eliasson-194a8049/) | 🟢 Connection sent |
+| 4 | **Heidrick & Struggles** | Tom Clarke (Heidrick & Struggles) | 🟢 Connection sent
+| 5 | **Spencer Stuart** | Michelle Eliasson (Spencer Stuart) | 🟢 Connection sent
 
 ## Tier 2: Regional Retained/Contingency (VP / Director focus)
 
@@ -25,9 +25,9 @@ These firms are closer to the market. They handle Director-VP roles and move fas
 | # | Firm | Key Contact | Specialization | LinkedIn | Status |
 |---|------|------------|----------------|----------|--------|
 | 6 | **Cooper Fitch** | Jack Murphy (Technology Practice) | IT, Digital, Strategy (GCC native) | [Profile](https://www.linkedin.com/in/jackmurphydubai/) | 🟢 Connection sent |
-| 7 | **Stanton Chase ME** | Wassim Karkabi (Managing Partner) | Industrial, energy, tech | [Profile](https://www.linkedin.com/in/wassimkarkabi/) | 🟢 Connection sent |
+| 7 | **Stanton Chase ME** | Wassim Karkabi (Stanton Chase) | 🟢 Connection sent
 | 8 | **Pedersen & Partners** | Dubai office | Cross-sector executive | [Company](https://www.linkedin.com/company/pedersen-and-partners/) | 🟢 Connection sent |
-| 9 | **Odgers Berndtson** | Melissa Horn (Partner, Healthcare/Gov ME) | Technology, healthcare | [Profile](https://www.linkedin.com/in/melissa-horn-b51545/) | 🟢 Connection sent |
+| 9 | **Odgers Berndtson** | Melissa Horn (Odgers Berndtson) | 🟢 Connection sent
 | 10 | **InterSearch ME** | DIFC office | Regional specialist | [Company](https://ae.linkedin.com/company/intersearch-middle-east-fz-llc) | 🟢 Connection sent |
 
 ## Tier 3: Tech-Specialist Recruiters (Director / Head level)
