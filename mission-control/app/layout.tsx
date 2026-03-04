@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { CommandPalette } from "@/components/command-palette";
+import { StatusBar } from "@/components/status-bar";
+import { ThemeProvider } from "@/lib/theme-provider";
+import { KeyboardShortcutsModal } from "@/components/keyboard-shortcuts";
 
 export const metadata: Metadata = {
   title: "Mission Control v3",
@@ -13,10 +16,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="bg-[#080C16] text-[#e2e8f0] antialiased">
-        {children}
-        <CommandPalette />
+    <html lang="en" suppressHydrationWarning>
+      <body className="bg-[var(--background)] text-[var(--foreground)] antialiased pb-10">
+        <ThemeProvider>
+          {children}
+          <CommandPalette />
+          <KeyboardShortcutsModal />
+          <StatusBar />
+        </ThemeProvider>
       </body>
     </html>
   );
