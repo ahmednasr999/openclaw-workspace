@@ -77,7 +77,6 @@
 | Company | Role | Location | Priority | JD Status | Job URL | Next Step |
 |---------|------|----------|----------|-----------|---------|-----------|
 | Careem | Director of Data Science | Dubai, UAE | 🔴 High | Needs JD | [LinkedIn](https://www.linkedin.com/jobs/view/4318354186) | Pull JD, score ATS |
-
 | The IN Group | Director | Dubai, UAE | 🔴 High | Needs JD | [LinkedIn](https://www.linkedin.com/jobs/view/4380949605) | Pull JD, score ATS |
 | People Pathways | Chief Technology Officer | Dubai, UAE | 🟡 Medium | Needs JD | [LinkedIn](https://www.linkedin.com/jobs/view/4380340326) | Pull JD, score ATS |
 | Madison Pearl | Chief Strategy Officer | Dubai, UAE | 🟡 Medium | Needs JD | [LinkedIn](https://www.linkedin.com/jobs/view/4372368161) | Pull JD, score ATS |
