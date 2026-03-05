@@ -1,4 +1,17 @@
-# Last Session Context
+# Last Session
+Updated: 2026-03-05 10:27 UTC
+
+## What We Did
+- ATS scoring model benchmark (MiniMax vs Haiku vs Opus): MiniMax won, locked as primary scorer
+- Claude quota full audit: all crons moved to MiniMax, 0 Claude background tasks remaining
+- Google Sheet enhanced: CV GitHub Link (M), Ready to Apply (N), Duplicate Check (O)
+- Built 2 CVs end-to-end: Director DT (87%) and Head PMO (88%), both ready to apply
+- Borderline tie-breaker protocol automated (no manual approval)
+
+## Open Threads
+- Monthly model routing audit cron: needs to be created
+- "Process sheet" on-demand trigger: discussed, not yet built
+- Context hit 70%: session flushed Context
 
 *Updated: 2026-03-05 07:31 UTC*
 
