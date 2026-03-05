@@ -139,3 +139,6 @@
 | Bosperous Real Estate (Akarat.com) | CTO | ❌ Skipped, hands-on PHP/Laravel coding role, PropTech, immediate joiner only, ATS ~45% | Removed 2026-03-05 |
 | Michael Page | Head of AI Engineering | ❌ Skipped, likely duplicate of existing Michael Page application (#45) | Removed 2026-03-05 |
 | Delphi Consulting | Senior AI PM | ❌ Closed, interview completed Feb 24, follow-up sent Mar 2, no recruiter response | Closed 2026-03-04 |
+
+| Confidential (UAE Group) | Director, Digital Transformation | UAE | 87% | Applied | 2026-03-05 | Follow-up Mar 12 |
+| Confidential | Head of PMO | GCC | 88% | Applied | 2026-03-05 | Follow-up Mar 12 |
