@@ -436,3 +436,57 @@ Require stack:
 
 Node.js v20.19.4
 
+=== Morning Brief - 2026-03-05 06:00 AM ===
+
+## Job Radar (from Tavily)
+## Answer
+
+The VP Director PMO for digital transformation in healthcare in the UAE is a key role for advancing digital initiatives. As of 2026, this position is actively recruiting, with 23 open roles in Dubai. The focus is on enhancing healthcare through digital innovation.
+
+---
+
+## Sources
+
+- **Digital healthcare transformation goes forward in the UAE** (relevance: 100%)
+  https://m.mobihealthnews.com/video/digital-healthcare-transformation-goes-forward-uae
+  The United Arab Emirates' health systems have progressed in digital transformation to create better patient outcomes. Mohammad Al Redha, MD, director of
+
+- **President and Prime Minister of the United Arab Emirates and Ruler ...** (relevance: 99%)
+  https://www.facebook.com/PMOBhutan/posts/%F0%9D%90%8F%F0%9D%90%AB%F0%9D%90%9E%F0%9D%90%AC%F0%9D%90%AC-%F0%9D%90%91%F0%9D%90%9E%F0%9D%90%A5%F0%9D%90%9E%F0%9D%90%9A%F0%9D%90%AC%F0%9D%90%9E-the-prime-minister-will-participate-in-the-world-governments-summi/1454940716001246/
+  ... Vice-President and Prime Minister of the United Arab Emirates and Ruler of Dubai from 03 to 05 February 2026. The World Governments Summit
+
+- **director, pmo governance jobs - Indeed** (relevance: 93%)
+  https://ae.indeed.com/q-director,-pmo-governance-jobs.html
+  Discover 1719 Director, Pmo Governance job opportunities on Indeed.com. Apply today to advance your career with top employers.
+
+- **Dubai Health and Johnson & Johnson MedTech Sign Memorandum ...** (relevance: 87%)
+  https://dubaihealth.ae/w/dubai-health-and-johnson-johnson-medtech-sign-memorandum-of-understanding-to-advance-healthcare-innovation
+  Dubai Health and Johnson & Johnson MedTech have signed a Memorandum of Understanding (MoU) establishing a collaborative framework to advance professional education, drive sustainability initiatives, and support digital innovation in healthcare. His Highness Sheikh Hamdan bin Mohammed bin Rashid Al M...
+
+- **23 Director vp jobs in Dubai, United Arab Emirates - Glassdoor** (relevance: 87%)
+  https://www.glassdoor.co.in/Job/dubai-united-arab-emirates-director-vp-jobs-SRCH_IL.0,26_IM954_KO27,38.htm
+  Search Director vp jobs in Dubai, United Arab Emirates with company ratings and salaries. 23 open jobs for Director vp in Dubai.
+## Gmail - New Opportunities
+node:internal/modules/cjs/loader:1215
+  throw err;
+  ^
+
+Error: Cannot find module 'googleapis'
+Require stack:
+- /root/.openclaw/workspace/scripts/gmail-scan.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1212:15)
+    at Module._load (node:internal/modules/cjs/loader:1043:27)
+    at Module.require (node:internal/modules/cjs/loader:1298:19)
+    at require (node:internal/modules/helpers:182:18)
+    at Object.<anonymous> (/root/.openclaw/workspace/scripts/gmail-scan.js:1:20)
+    at Module._compile (node:internal/modules/cjs/loader:1529:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+    at Module.load (node:internal/modules/cjs/loader:1275:32)
+    at Module._load (node:internal/modules/cjs/loader:1096:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:164:12) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [ '/root/.openclaw/workspace/scripts/gmail-scan.js' ]
+}
+
+Node.js v20.19.4
+
