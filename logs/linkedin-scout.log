@@ -1,0 +1,82 @@
+2026-03-05 12:29:18,041 - INFO - Starting LinkedIn Job Scout...
+2026-03-05 12:29:18,043 - INFO - Searching: PMO Director in United Arab Emirates
+2026-03-05 12:29:18,939 - INFO - Found 0 jobs for 'PMO Director' in 'United Arab Emirates'
+2026-03-05 12:29:18,939 - INFO - Searching: Program Manager in United Arab Emirates
+2026-03-05 12:29:19,640 - INFO - Found 0 jobs for 'Program Manager' in 'United Arab Emirates'
+2026-03-05 12:29:19,640 - INFO - Searching: VP Digital Transformation in United Arab Emirates
+2026-03-05 12:29:20,178 - INFO - Found 0 jobs for 'VP Digital Transformation' in 'United Arab Emirates'
+2026-03-05 12:29:20,178 - INFO - Searching: CTO in Dubai
+2026-03-05 12:29:20,979 - INFO - Found 0 jobs for 'CTO' in 'Dubai'
+2026-03-05 12:29:20,980 - INFO - Searching: Head of AI in UAE
+2026-03-05 12:29:21,717 - INFO - Found 0 jobs for 'Head of AI' in 'UAE'
+2026-03-05 12:29:21,717 - INFO - Searching: Director IT in Saudi Arabia
+2026-03-05 12:29:22,514 - INFO - Found 0 jobs for 'Director IT' in 'Saudi Arabia'
+2026-03-05 12:29:22,514 - INFO - Searching: Digital Transformation Executive in GCC
+2026-03-05 12:29:22,995 - INFO - Found 0 jobs for 'Digital Transformation Executive' in 'GCC'
+2026-03-05 12:29:22,995 - INFO - Searching: Chief Digital Officer in UAE
+2026-03-05 12:29:23,449 - INFO - Found 0 jobs for 'Chief Digital Officer' in 'UAE'
+2026-03-05 12:29:23,450 - INFO - Report saved to /root/.openclaw/workspace/memory/linkedin-job-scout.md
+2026-03-05 12:29:23,450 - INFO - Total jobs found: 0
+=== LinkedIn Job Scout - Thu Mar  5 14:23:08 UTC 2026 ===
+Searching: PMO%20Director in United%20Arab%20Emirates
+Searching: VP%20Digital%20Transformation in United%20Arab%20Emirates
+Searching: VP%20Technology in United%20Arab%20Emirates
+Searching: CTO in United%20Arab%20Emirates
+Searching: Head%20of%20AI in United%20Arab%20Emirates
+Searching: Director%20Digital%20Transformation in United%20Arab%20Emirates
+Searching: Chief%20Digital%20Officer in United%20Arab%20Emirates
+Searching: Head%20of%20Product in United%20Arab%20Emirates
+Searching: Senior%20Director%20Technology in United%20Arab%20Emirates
+Searching: VP%20HealthTech in United%20Arab%20Emirates
+Searching: PMO%20Director in Saudi%20Arabia
+Searching: VP%20Digital%20Transformation in Saudi%20Arabia
+Searching: VP%20Technology in Saudi%20Arabia
+Searching: CTO in Saudi%20Arabia
+Searching: Head%20of%20AI in Saudi%20Arabia
+Searching: Director%20Digital%20Transformation in Saudi%20Arabia
+Searching: Chief%20Digital%20Officer in Saudi%20Arabia
+Searching: Head%20of%20Product in Saudi%20Arabia
+Searching: Senior%20Director%20Technology in Saudi%20Arabia
+Searching: VP%20HealthTech in Saudi%20Arabia
+Searching: PMO%20Director in Qatar
+Searching: VP%20Digital%20Transformation in Qatar
+Searching: VP%20Technology in Qatar
+Searching: CTO in Qatar
+Searching: Head%20of%20AI in Qatar
+Searching: Director%20Digital%20Transformation in Qatar
+Searching: Chief%20Digital%20Officer in Qatar
+Searching: Head%20of%20Product in Qatar
+Searching: Senior%20Director%20Technology in Qatar
+Searching: VP%20HealthTech in Qatar
+Searching: PMO%20Director in Bahrain
+Searching: VP%20Digital%20Transformation in Bahrain
+Searching: VP%20Technology in Bahrain
+Searching: CTO in Bahrain
+Searching: Head%20of%20AI in Bahrain
+Searching: Director%20Digital%20Transformation in Bahrain
+Searching: Chief%20Digital%20Officer in Bahrain
+Searching: Head%20of%20Product in Bahrain
+Searching: Senior%20Director%20Technology in Bahrain
+Searching: VP%20HealthTech in Bahrain
+Searching: PMO%20Director in Kuwait
+Searching: VP%20Digital%20Transformation in Kuwait
+Searching: VP%20Technology in Kuwait
+Searching: CTO in Kuwait
+Searching: Head%20of%20AI in Kuwait
+Searching: Director%20Digital%20Transformation in Kuwait
+Searching: Chief%20Digital%20Officer in Kuwait
+Searching: Head%20of%20Product in Kuwait
+Searching: Senior%20Director%20Technology in Kuwait
+Searching: VP%20HealthTech in Kuwait
+Searching: PMO%20Director in Oman
+Searching: VP%20Digital%20Transformation in Oman
+Searching: VP%20Technology in Oman
+Searching: CTO in Oman
+Searching: Head%20of%20AI in Oman
+Searching: Director%20Digital%20Transformation in Oman
+Searching: Chief%20Digital%20Officer in Oman
+Searching: Head%20of%20Product in Oman
+Searching: Senior%20Director%20Technology in Oman
+Searching: VP%20HealthTech in Oman
+Job scout complete. Results saved to /root/.openclaw/workspace/memory/linkedin-job-scout.md
+=== End ===
