@@ -1,26 +1,23 @@
 # Last Session Context
 
-*Updated: 2026-03-04 12:32 UTC*
+*Updated: 2026-03-05 07:31 UTC*
 
-## What We Discussed
-- MiniMax OAuth re-auth (fixed)
-- OpenClaw web chat portal: first successful access from Mac, iPad, iPhone
-- Mission Control v3: killed v2, cleaned up, removed auth, running on :4443
-- Tailscale crashing repeatedly (needs investigation)
+## What We Were Doing
+Morning maintenance + job pipeline triage session with Ahmed.
+
+## Key Decisions
+- Brave Search fully removed (no API key, never had one)
+- Job Radar rebuilt with JobSpy (replaces Tavily)
+- Pipeline sorting rules locked: Active by date, Radar by priority
+- Ahmed reviewing radar jobs one by one, skipping medium priority items
+- Ahmed about to send fresh LinkedIn jobs for review/CV tailoring
 
 ## Open Threads
-1. **Mission Control review:** Ahmed about to look at the live dashboard and identify what needs fixing/adding
-2. **Tailscale stability:** crashed twice in 20 min, needs watchdog or service hardening
-3. **Delphi checkpoint:** Mar 9 if no recruiter response
-4. **LinkedIn Weeks 3-5:** due Mar 7
+1. Ahmed sending fresh LinkedIn job links (in progress when session ended)
+2. 11 radar items remaining (medium/low priority, can triage later)
+3. Morning briefing cron had wrong post for today (showed yesterday's Salesforce post instead of today's compound growth post)
 
-## Decisions Made
-- v2 killed and deleted permanently
-- Auth removed from Mission Control (Tailscale = network security)
-- Three Apple devices paired to OpenClaw portal
-- Tailscale serve: root=gateway, :4443=Mission Control
-
-## Context for Next Session
-- Ahmed wants to review Mission Control live and decide on improvements
-- Tailscale fix should be prioritized (blocking all remote access when it crashes)
-- Session was on Opus, consider if MC work can shift to Sonnet/Haiku sub-agents
+## State
+- Pipeline: 47 applied, 11 radar remaining
+- Fugro applied (ATS 90%)
+- 4 radar items skipped (Michael Page duplicate, Bosperous PHP, The IN Group recruitment, Careem ML)
