@@ -112,6 +112,19 @@
 
 ---
 
+## 🔍 Fresh from LinkedIn Scout (Mar 5, 2026)
+
+| # | Company | Role | Location | Posted | Status | Notes |
+|---|---------|------|----------|--------|--------|-------|
+| 21 | Confidential | Senior Project Manager | Sharjah, UAE | 1 hour ago | 🔍 Discovered | LinkedIn Scout |
+| 22 | AECOM | Project Manager - Masterplanning | Dubai, UAE | 4 hours ago | 🔍 Discovered | LinkedIn Scout |
+| 23 | Anduril Industries | Sr. Manager, Program Management (UAE) | Abu Dhabi | 23 hours ago | 🔍 Discovered | LinkedIn Scout |
+| 24 | eMagine Solutions | Head of AI Advisory | Abu Dhabi | 2 hours ago | 🔍 Discovered | LinkedIn Scout |
+| 25 | Joud Coffee | PMO Manager (Workflow & Execution) | Abu Dhabi | 23 hours ago | 🔍 Discovered | LinkedIn Scout |
+| 26 | KBR, Inc. | Program Director | Abu Dhabi | 1 day ago | 🔍 Discovered | LinkedIn Scout |
+
+---
+
 ## Inactive / Closed
 
 | Company | Role | Outcome | Date |
