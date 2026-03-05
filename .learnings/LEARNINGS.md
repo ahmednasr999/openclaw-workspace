@@ -41,3 +41,11 @@ For any VPS without GPU: always use QMD in BM25-only mode (searchMode: "search")
 ### 2026-03-05: Never replace table row with empty string
 **What happened:** Used edit tool to replace a table row with empty string `""`. This left a blank line that broke the markdown table rendering. Happened twice in one session.
 **What to do:** When removing a row, include it together with the adjacent row in old_string, and put only the adjacent row in new_string. This eliminates the blank line cleanly.
+
+### 2026-03-05: Never conclude a file doesn't exist after checking one path
+**What happened:** Ahmed asked about LinkedIn cookies. Checked `/root/.openclaw/config/` (wrong), concluded "no cookies", asked Ahmed to provide them. They were at `/root/.openclaw/workspace/config/` all along. Wasted time and broke trust.
+**What to do:** (1) Always run `find /root -name "*filename*"` before saying "not found". (2) Read the script that uses the file to find the correct path. (3) Never guess paths, always verify.
+
+### 2026-03-05: Always use linkedin-jd-fetcher.py for full JDs before ATS scoring
+**What happened:** Scored Anduril at 85% based on job title alone. Full JD revealed Secret Clearance requirement and defense-only focus, dropping real score to 64%. Wasted time generating a CV for a role that's a poor fit.
+**What to do:** Always fetch full JD with `linkedin-jd-fetcher.py` BEFORE scoring or generating CVs. Never score based on title alone.

@@ -5,6 +5,7 @@
 ## 🔴 URGENT
 - [ ] Retry Sheet row 16 update: K16="Applied", L16="2026-03-05" (Google API timed out)
 - [ ] Apply to remaining CV-ready jobs: EDB Field CTO, eMagine Head of AI Advisory — This Week
+- [ ] **Nuxera.AI — Sr PM AI Healthcare (Cairo):** CEO Amin Elhemaily responded directly on LinkedIn. Ahmed messaged salary-oriented stance. Awaiting Amin's reply. If positive, push for in-person meeting during Ramadan (both in Cairo). Research Nuxera before any meeting.
 - ~~Delphi: Closed Mar 4. No further action.~~
 - ~~LinkedIn Weeks 3-5: ✅ COMPLETED Mar 4. 15 posts + 15 images pushed to GitHub.~~
 
