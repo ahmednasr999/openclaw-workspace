@@ -104,7 +104,7 @@ Before processing any new row from the Google Sheet:
 
 - **Scoring model:** MiniMax M2.5 (primary), Opus 4.6 (borderline tie-breaker)
 - **Threshold:** 82/100 (SUBMIT), 75-81 (REVIEW), <75 (SKIP)
-- **Borderline rule:** If MiniMax scores 82-87, auto-escalate to Opus for second opinion
+- **Borderline rule:** If MiniMax scores 82-87, auto-escalate to Opus for second opinion. Take the final score automatically, update the sheet, and proceed to CV build if confirmed 82+. Do NOT ask Ahmed for approval on tie-breakers.
 - **Never use Haiku for ATS scoring** (inflates scores, +4.0 avg drift from Opus)
 
 ## Pipeline Status Flow
