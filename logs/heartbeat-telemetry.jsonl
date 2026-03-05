@@ -2691,3 +2691,5 @@
 {"timestamp": "2026-03-05T06:33:41Z", "gateway_alive": false, "active_sessions_observed": 1223, "model_health": {"last_model_seen": "claude-opus-4-6"}, "queue_depth": 26}
 {"timestamp": "2026-03-05T06:34:42Z", "gateway_alive": false, "active_sessions_observed": 1223, "model_health": {"last_model_seen": "claude-opus-4-6"}, "queue_depth": 26}
 {"timestamp": "2026-03-05T06:35:43Z", "gateway_alive": false, "active_sessions_observed": 1223, "model_health": {"last_model_seen": "claude-opus-4-6"}, "queue_depth": 26}
+{"timestamp": "2026-03-05T06:36:44Z", "gateway_alive": false, "active_sessions_observed": 1223, "model_health": {"last_model_seen": "claude-opus-4-6"}, "queue_depth": 26}
+{"timestamp": "2026-03-05T06:37:45Z", "gateway_alive": false, "active_sessions_observed": 1223, "model_health": {"last_model_seen": "claude-opus-4-6"}, "queue_depth": 26}
