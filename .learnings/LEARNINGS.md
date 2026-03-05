@@ -29,3 +29,15 @@ For any VPS without GPU: always use QMD in BM25-only mode (searchMode: "search")
 
 ---
 
+
+### 2026-03-05: Never use sed to delete markdown table rows
+**What happened:** Used `sed -i` to remove a row from pipeline.md. It left a blank line that broke the table rendering on GitHub.
+**What to do:** Always use the `edit` tool with exact old/new text replacement when modifying markdown tables. Never use sed for table row operations.
+
+### 2026-03-05: Pipeline table sorting rules
+**Rule:** Active Pipeline table: always sorted by Applied date (newest first). Radar Needs Action table: always sorted by Priority (🔴 High first, then 🟡 Medium, then 🟢 Low).
+**Applies to:** Every pipeline.md update.
+
+### 2026-03-05: Never replace table row with empty string
+**What happened:** Used edit tool to replace a table row with empty string `""`. This left a blank line that broke the markdown table rendering. Happened twice in one session.
+**What to do:** When removing a row, include it together with the adjacent row in old_string, and put only the adjacent row in new_string. This eliminates the blank line cleanly.
