@@ -92,6 +92,13 @@ Example: `2026-02-28-cooper-fitch-exec-director`
 
 ---
 
+## ATS Scoring Protocol (Updated Mar 5, 2026)
+
+- **Scoring model:** MiniMax M2.5 (primary), Opus 4.6 (borderline tie-breaker)
+- **Threshold:** 82/100 (SUBMIT), 75-81 (REVIEW), <75 (SKIP)
+- **Borderline rule:** If MiniMax scores 82-87, auto-escalate to Opus for second opinion
+- **Never use Haiku for ATS scoring** (inflates scores, +4.0 avg drift from Opus)
+
 ## Pipeline Status Flow
 
 ```
