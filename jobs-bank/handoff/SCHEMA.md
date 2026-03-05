@@ -92,6 +92,14 @@ Example: `2026-02-28-cooper-fitch-exec-director`
 
 ---
 
+## Duplicate Detection (Added Mar 5, 2026)
+
+Before processing any new row from the Google Sheet:
+1. Read all URLs in Column A
+2. If the URL already exists in another row, skip processing and write "⚠️ DUPLICATE" in Column F (Notes)
+3. Do NOT score or build CV for duplicates
+4. Column O in the sheet also has a formula-based duplicate flag as visual backup
+
 ## ATS Scoring Protocol (Updated Mar 5, 2026)
 
 - **Scoring model:** MiniMax M2.5 (primary), Opus 4.6 (borderline tie-breaker)
