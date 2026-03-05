@@ -11,7 +11,13 @@ import subprocess
 import sys
 from pathlib import Path
 
-SKIP_IDS = {'4381416802'}  # Already in pipeline (eMagine)
+SKIP_IDS = {
+    '4381416802',  # eMagine Head of AI Advisory - Applied 2026-03-05
+    '4379857033',  # Nuxera Sr PM AI Healthcare - Applied 2026-03-05
+    '4325582215',  # Emdad Director Digital Innovation - Applied 2026-03-05
+    '4379328713',  # Confidential Gov Exec Director DT - Applied 2026-03-05
+    '4363211150',  # EDB Field CTO EMEA - Applied 2026-03-05
+}
 SCRIPT_DIR = Path(__file__).parent
 JD_FETCHER = SCRIPT_DIR / "linkedin-jd-fetcher.py"
 ATS_SCORER = SCRIPT_DIR / "scout-ats.py"
