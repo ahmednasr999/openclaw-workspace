@@ -90,3 +90,10 @@
 - [[weekly-content-brief.md|2026-W12]] — Week of March 16
 - [[weekly-content-brief.md|2026-W11]] — Week of March 9
 - [[weekly-content-brief.md|2026-W10]] — Week of March 2
+
+### Week of March 5, 2026 (This Week)
+1. Anas Hidaoui — "The most viral LinkedIn lie in 2026: I replaced my entire team with AI and 10x'd revenue" — debunking hook (continuing strong)
+2. Hussain Bandukwala — "PMOs Must Lead AI Adoption in 2026" — PMO positioning continues resonating
+3. Oliver Wyman — "5 Trends That Will Redefine the Region's Health Landscape in 2026" — HealthTech focus
+4. Mustafa Al Usaji — "Transformation in the GCC is no longer about vision, it's about execution"
+5. Emerging: Agentic AI posts gaining traction as Salesforce Agentforce $800M ARR signal spreads

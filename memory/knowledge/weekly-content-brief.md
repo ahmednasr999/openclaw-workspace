@@ -7,6 +7,20 @@
 ## This Week's Strategic Theme
 **"Execution Beats Ambition"** — The GCC market is saturated with vision statements. Real transformation leaders are differentiating through measurable outcomes and first-person execution stories.
 
+> **Intelligence Note:** Web search API unavailable this week. Content based on existing intelligence + trending patterns. LinkedIn login required for live post discovery.
+
+---
+
+## Emerging Trends This Week (March 5)
+
+| Trend | Signal | Opportunity |
+|-------|--------|-------------|
+| Agentic AI wave | Salesforce Agentforce $800M ARR | Position PMO as AI governance leader |
+| Healthcare data unification | Health Catalyst + KLAS enterprise implementations | First-person execution story |
+| GCC execution focus | "Transformation is no longer about vision" (Al Usaji) | Tie to TopMed $50M delivery |
+| PMO as AI leader | Bandukwala continues resonating | Own this positioning |
+| Dubai family office hiring | $50K+/month digital transformation leaders | Subtle talent positioning |
+
 ---
 
 ## Winning Hooks This Week
@@ -110,3 +124,10 @@ Tie the Health Catalyst + KLAS enterprise implementation story to the agentic AI
 - [[weekly-content-brief.md|2026-W10]] — Week of March 2
 - [[weekly-content-brief.md|2026-W09]] — Week of February 23
 - [[weekly-content-brief.md|2026-W08]] — Week of February 16
+
+---
+
+## Action Items for Better Intelligence
+- Configure Brave Search API for automated discovery
+- Use LinkedIn browser automation with authenticated session
+- Monitor: @AnasHidaoui @HussainBandukwala @KaneMacey @MustafaAlUsaji weekly
