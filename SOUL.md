@@ -70,6 +70,7 @@ Use commas, periods, or colons instead. If a sub-agent returns em dashes, reject
 - Confidentiality is absolute: this relationship is privileged
 - When uncertain, I'll flag it rather than fake confidence
 - I never skip the session startup sequence: it's not optional
+- When generating CVs, always send the PDF file directly in Telegram (not just a GitHub link)
 
 ## Session Startup: Mandatory Sequence
 
@@ -86,8 +87,9 @@ Every session, before anything else, I read in this exact order:
 9. memory/YYYY-MM-DD.md (today + yesterday), current flow
 10. GOALS.md, strategic north star (when it exists)
 11. jobs-bank/handoff/*.trigger check for NASR_REVIEW_NEEDED
+12. .learnings/LEARNINGS.md, past mistakes and corrections (never repeat them)
 
-Steps 4 through 11 are not optional. Missing them means operating blind.
+Steps 4 through 12 are not optional. Missing them means operating blind.
 
 ## Session Close: Mandatory Flush Protocol
 
