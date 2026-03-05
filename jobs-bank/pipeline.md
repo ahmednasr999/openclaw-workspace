@@ -78,7 +78,6 @@
 |---------|------|----------|----------|-----------|---------|-----------|
 | Michael Page | Head of AI Engineering | Dubai, UAE | 🔴 High | Needs JD | [LinkedIn](https://www.linkedin.com/jobs/view/4380163853) | Pull JD, score ATS |
 | Careem | Director of Data Science | Dubai, UAE | 🔴 High | Needs JD | [LinkedIn](https://www.linkedin.com/jobs/view/4318354186) | Pull JD, score ATS |
-
 | People Pathways | Chief Technology Officer | Dubai, UAE | 🟡 Medium | Needs JD | [LinkedIn](https://www.linkedin.com/jobs/view/4380340326) | Pull JD, score ATS |
 | Madison Pearl | Chief Strategy Officer | Dubai, UAE | 🟡 Medium | Needs JD | [LinkedIn](https://www.linkedin.com/jobs/view/4372368161) | Pull JD, score ATS |
 | Crossover | VP Product Engineering (Remote, $400K) | Dubai, UAE | 🟡 Medium | Needs JD | [LinkedIn](https://www.linkedin.com/jobs/view/4379445718) | Pull JD, score ATS |
@@ -94,10 +93,6 @@
 | Discovered MENA | Head of Payment | Dubai, UAE | 🟡 Medium | Needs JD | [LinkedIn](https://www.linkedin.com/jobs/view/4378910539) | Pull JD, score ATS |
 
 
-
-
-
-
 ---
 
 ## Pipeline Metrics
@@ -107,8 +102,8 @@
 | Total tracked | 46 |
 | Applied | 46 |
 | CV Ready, not yet applied | 0 |
-| Radar — Needs Action | 16 |
-| Radar (no CV yet) | 16 |
+| Radar — Needs Action | 15 |
+| Radar (no CV yet) | 15 |
 | Active interviews | 0 |
 | Avg ATS score (all CVs) | 89% |
 | Follow-up policy | No proactive follow-ups — wait for recruiter response |
