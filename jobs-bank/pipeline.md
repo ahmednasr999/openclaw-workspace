@@ -77,7 +77,7 @@
 | Company | Role | Location | Priority | JD Status | Job URL | Next Step |
 |---------|------|----------|----------|-----------|---------|-----------|
 | Careem | Director of Data Science | Dubai, UAE | 🔴 High | Needs JD | [LinkedIn](https://www.linkedin.com/jobs/view/4318354186) | Pull JD, score ATS |
-| Bosperous Real Estate LLC | Chief Technology Officer | Dubai, UAE | 🔴 High | Needs JD | [Indeed](https://ae.indeed.com/viewjob?jk=c06735549c85c39d) | Pull JD, score ATS |
+
 | The IN Group | Director | Dubai, UAE | 🔴 High | Needs JD | [LinkedIn](https://www.linkedin.com/jobs/view/4380949605) | Pull JD, score ATS |
 | People Pathways | Chief Technology Officer | Dubai, UAE | 🟡 Medium | Needs JD | [LinkedIn](https://www.linkedin.com/jobs/view/4380340326) | Pull JD, score ATS |
 | Madison Pearl | Chief Strategy Officer | Dubai, UAE | 🟡 Medium | Needs JD | [LinkedIn](https://www.linkedin.com/jobs/view/4372368161) | Pull JD, score ATS |
@@ -101,8 +101,8 @@
 | Total tracked | 46 |
 | Applied | 46 |
 | CV Ready, not yet applied | 0 |
-| Radar — Needs Action | 14 |
-| Radar (no CV yet) | 14 |
+| Radar — Needs Action | 13 |
+| Radar (no CV yet) | 13 |
 | Active interviews | 0 |
 | Avg ATS score (all CVs) | 89% |
 | Follow-up policy | No proactive follow-ups — wait for recruiter response |
@@ -134,5 +134,6 @@
 | HLB HAMT | Chief Growth Officer | ❌ Skipped, growth and sales mandate mismatch | Removed 2026-03-01 |
 | Searchability | Head of Data | ❌ Skipped, pure data leadership role not transformation-led | Removed 2026-03-01 |
 | Kayzin Recruitment | Head of AI-Enabled Customer Experience | ❌ Skipped, CX ops role misaligned with executive transformation track, ATS 45-55% | Removed 2026-03-01 |
+| Bosperous Real Estate (Akarat.com) | CTO | ❌ Skipped, hands-on PHP/Laravel coding role, PropTech, immediate joiner only, ATS ~45% | Removed 2026-03-05 |
 | Michael Page | Head of AI Engineering | ❌ Skipped, likely duplicate of existing Michael Page application (#45) | Removed 2026-03-05 |
 | Delphi Consulting | Senior AI PM | ❌ Closed, interview completed Feb 24, follow-up sent Mar 2, no recruiter response | Closed 2026-03-04 |
