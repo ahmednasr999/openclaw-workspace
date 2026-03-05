@@ -99,7 +99,8 @@ def parse_active_tasks(md: str) -> List[Item]:
         s = line.strip()
         if not s.startswith("- "):
             continue
-        if "RESOLVED" in s or "COMPLETED" in s or "~~" in s:
+        sl = s.lower()
+        if "resolved" in sl or "completed" in sl or "~~" in s or "✅" in s:
             continue
         title = re.sub(r"^-\s*", "", s).replace("—", "-")
         tl = re.sub(r"[*_`]+", "", title).lower().strip()
