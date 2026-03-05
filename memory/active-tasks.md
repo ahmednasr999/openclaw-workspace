@@ -1,6 +1,6 @@
 # Active Tasks
 
-*Last updated: 2026-03-04 12:32 UTC*
+*Last updated: 2026-03-05 07:31 UTC*
 
 ## 🔴 URGENT — This Week
 - ~~Delphi: Closed Mar 4. No further action.~~
@@ -45,6 +45,14 @@
 - **Status:** Active
 - **Master CV:** `memory/master-cv-data.md`
 - **Pending updates:** none
+- **Latest:** Fugro Head of Project Excellence (ATS 90%, Applied Mar 5)
+
+### Job Radar v3 (JobSpy)
+- **Status:** ✅ LIVE
+- **Engine:** python-jobspy (LinkedIn, Indeed, Google Jobs)
+- **Cron:** Daily 7 AM Cairo
+- **Auto-pipeline:** Executive matches auto-added as 🆕 Discovered
+- **Radar triage:** Down from 15 to 11 (4 skipped with Ahmed)
 
 ## 🟢 Recurring
 - Daily job radar checks
