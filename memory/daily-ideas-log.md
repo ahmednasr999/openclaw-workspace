@@ -14,5 +14,7 @@
 
 | 2026-03-03 | LinkedIn comment strategy targeting GCC health system CIOs — identify 5 CIOs/CTOs at Saudi German Hospital, NMC, PureHealth, Aster DM, and Mediclinic. Comment on their recent posts with a specific, insight-driven observation (not generic). Goal: warm connection before a job application arrives. Takes 10 minutes, builds warm inbound pipeline. | New today |
 
+| 2026-03-05 | LinkedIn Lead Gen Form optimization — when a recruiter or hiring manager visits your profile, LinkedIn shows them a "Connect +" or message prompt. Ensure your headline explicitly says "VP/C-Suite Digital Transformation | $50M+ Transformation Leader | GCC" to maximize click-through when you appear in their search results. Takes 30 seconds to edit, directly improves inbound quality. | New today |
+
 ## Summary
-- Total ideas logged: 7
+- Total ideas logged: 8
