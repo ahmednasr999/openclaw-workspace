@@ -1,12 +1,12 @@
 ---
 name: executive-cv-builder
-description: Ahmed Nasr's executive CV builder. Produces ATS-optimized, tailored CVs scoring 85%+ for VP/C-Suite roles in GCC. Use when building or tailoring a CV for any job application. Loads master CV, applies pending updates, scores ATS fit, generates PDF, and updates the pipeline tracker automatically.
+description: Ahmed Nasr's executive CV builder. Produces ATS-optimized, tailored CVs scoring 82%+ for VP/C-Suite roles in GCC. Use when building or tailoring a CV for any job application. Loads master CV, applies pending updates, scores ATS fit, generates PDF, and updates the pipeline tracker automatically.
 metadata: {"openclaw":{"emoji":"📄","requires":{"bins":["weasyprint"]}}}
 ---
 
 # Executive CV Builder — Ahmed Nasr
 
-Produces ATS-optimized executive CVs scoring 85%+ every time. Purpose-built for Ahmed's GCC executive job search.
+Produces ATS-optimized executive CVs scoring 82%+ every time. Purpose-built for Ahmed's GCC executive job search.
 
 ---
 
@@ -31,9 +31,9 @@ Score the role against Ahmed's profile before writing a single word:
 | Location match | 15% | GCC (UAE, KSA, Qatar, Bahrain, Kuwait, Oman)? |
 | Skills coverage | 10% | Technical + leadership skills covered? |
 
-**Floor: 85% ATS score required. Do not proceed below this threshold.**
+**Floor: 82% ATS score required. Do not proceed below this threshold.**
 
-If ATS < 85%: explain the gap, recommend Skip, do NOT build CV.
+If ATS < 82%: explain the gap, recommend Skip, do NOT build CV.
 
 ---
 
@@ -80,7 +80,7 @@ Reorder bullets within each role to lead with the most JD-relevant achievement. 
 | No em dashes | Use commas, periods, or colons instead |
 | No fabrication | Every metric and role must exist in master-cv-data.md |
 | Exact titles | PMO & Regional Engagement Lead (NOT Director). Product Development Manager (NOT COO) |
-| ATS floor | 85% minimum. No exceptions |
+| ATS floor | 82% minimum. No exceptions |
 | Positioning | Digital Transformation Executive — never consultant |
 | File naming | "Ahmed Nasr - [Role Title] - [Company Name].pdf" |
 | Save location | /root/.openclaw/workspace/cvs/ |
