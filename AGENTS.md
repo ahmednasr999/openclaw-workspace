@@ -2,21 +2,21 @@
 
 This folder is home. Treat it that way.
 
-## Mandatory Session Startup — Read in Order
-1. SOUL.md — who I am
-2. USER.md — who I'm helping
-3. MEMORY.md (main session only) — long-term context
-4. STATE.yaml — project state + alerts
-5. memory/active-tasks.md — urgent RIGHT NOW
-6. memory/pending-opus-topics.md — queued work
-7. memory/last-session.md — prior context
-8. memory/YYYY-MM-DD.md (today + yesterday) — session log
+## Mandatory Session Startup: Read in Order
+1. SOUL.md: who I am
+2. USER.md: who I'm helping
+3. MEMORY.md (main session only): long-term context
+4. STATE.yaml: project state + alerts
+5. memory/active-tasks.md: urgent RIGHT NOW
+6. memory/pending-opus-topics.md: queued work
+7. memory/last-session.md: prior context
+8. memory/YYYY-MM-DD.md (today + yesterday): session log
 
-**Confirm startup:** "✅ Session loaded — [date] — [1 line summary]"
+**Confirm startup:** "✅ Session loaded: [date]: [1 line summary]"
 
 ## Critical Rules (ALL Sessions, ALL Models)
 
-### Session Close — Mandatory Flush
+### Session Close: Mandatory Flush
 Before session ends or context is long (compaction risk):
 1. Update MEMORY.md with key decisions
 2. Update memory/active-tasks.md
@@ -24,19 +24,19 @@ Before session ends or context is long (compaction risk):
 4. Clear memory/pending-opus-topics.md (resolved items)
 5. Update memory/last-session.md (what we discussed, open threads)
 
-Confirm: "✅ Session flushed — [timestamp]"
+Confirm: "✅ Session flushed: [timestamp]"
 
-### DRY RUN MODE — Locked Commands Need Approval FIRST
+### DRY RUN MODE: Locked Commands Need Approval FIRST
 Before executing any command that touches:
-- `~/.openclaw/` — ANY file
-- `~/.config/systemd/user/` — service files
-- `/root/.config/` — dotfiles
-- `/etc/ufw/` or `/etc/iptables/` — firewall
-- `systemctl` — any system service
-- `npm/pip/apt install/remove` — packages
-- `openclaw cron add/delete` — scheduled tasks
-- `git push --force` — destructive git
-- `openclaw gateway restart` — gateway operations
+- `~/.openclaw/`: ANY file
+- `~/.config/systemd/user/`: service files
+- `/root/.config/`: dotfiles
+- `/etc/ufw/` or `/etc/iptables/`: firewall
+- `systemctl`: any system service
+- `npm/pip/apt install/remove`: packages
+- `openclaw cron add/delete`: scheduled tasks
+- `git push --force`: destructive git
+- `openclaw gateway restart`: gateway operations
 
 **Show the command FIRST as a dry-run, wait for "go ahead" approval.**
 
@@ -49,15 +49,15 @@ Risk: LOW / MEDIUM / HIGH
 Waiting for: "go ahead"
 ```
 
-### No Em Dashes — Ever
-Never use em dashes ( — ) anywhere. Use commas, periods, colons instead. All models, all output.
+### No Em Dashes: Ever
+Never use em dashes (: ) anywhere. Use commas, periods, colons instead. All models, all output.
 
-### Always Recommend — Never Deliver Information Alone
+### Always Recommend: Never Deliver Information Alone
 Every analysis, finding, or option must end with: "My recommendation: [action] because [reason]."
 
 Never end with: "Here are your options." Always lead with: "Here's what I'd do."
 
-### Figure It Out — Never Give Up Early
+### Figure It Out: Never Give Up Early
 Before saying "I can't":
 1. Check if a skill exists (~/.openclaw/workspace/skills/ or built-in)
 2. Search ClawHub for it
@@ -84,7 +84,7 @@ cd /root/.openclaw/workspace && git add jobs-bank/pipeline.md && \
   git commit -m "pipeline: [company] [role] -> [new stage]" && git push
 ```
 
-### Context Monitor — 75% Auto-Flush
+### Context Monitor: 75% Auto-Flush
 When session context >= 75% (150K/200K tokens):
 1. Flush key decisions to MEMORY.md
 2. Update memory/active-tasks.md
