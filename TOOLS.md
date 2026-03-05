@@ -121,10 +121,19 @@ Rule: Sub-agents write to output files only. NASR merges into shared memory. Nev
 | Infrastructure decisions, post-mortems | Opus 4.6 | opus46 | Best reasoning, safety-critical |
 | Interview prep, deep strategy | Opus 4.6 | opus46 | Best reasoning |
 | CV tailoring, LinkedIn content | Sonnet 4.6 | sonnet46 | Quality drafting |
+| **ATS scoring (primary)** | **MiniMax M2.5** | **minimax-m2.5** | **Closest to Opus accuracy (+1.7 avg drift), conservative, free quota** |
+| **ATS scoring (borderline 82-87)** | **Opus 4.6** | **opus46** | **Tie-breaker for grey-zone scores only** |
 | Sub-agent work, coding tasks | Haiku 4.5 | haiku | Fast, lightweight, default sub-agent |
 | Quick formatting, lookups, vision | Haiku 4.5 | haiku | Fast, lightweight |
 | Crons, heartbeats, email, calendar | MiniMax M2.5 | minimax-m2.5 | Flat rate default |
 | Long document analysis (256K+) | Kimi K2.5 | kimi | Largest context window |
+
+### ATS Scoring Rules (Validated Mar 5, 2026)
+- **Threshold: 82/100** (lowered from 85, calibrated against Opus baseline)
+- **Primary scorer: MiniMax M2.5** (avg +1.7 drift from Opus, most conservative)
+- **Borderline protocol:** If MiniMax scores 82-87, auto-escalate to Opus for second opinion
+- **Never use Haiku for scoring** (avg +4.0 drift, inflates borderline roles past threshold)
+- **Verdicts:** SUBMIT (82+), REVIEW (75-81), SKIP (<75)
 
 ### Quota Discipline (Non-Negotiable)
 - All three providers are flat-fee. Optimization = spreading load, not saving money.
