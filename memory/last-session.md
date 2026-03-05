@@ -1,7 +1,34 @@
 # Last Session
-Updated: 2026-03-05 11:52 UTC
+Updated: 2026-03-05 15:45 UTC
 
-## What We Did (Mar 5, morning-midday)
+## What We Did (Mar 5, session 2 - 15:00-15:45 UTC)
+- Scored all 27 unique jobs from scout v2 run (full JD + composite ATS)
+- Generated 2 more CVs: Confidential Gov Riyadh (70%) + EDB Field CTO (66%)
+- Ahmed applied to Confidential Gov Riyadh
+- Today total: 3 applications, 6 CVs generated
+
+## Open Threads
+- Sheet row 16 "Applied" update pending (API timeout)
+- EDB + eMagine CVs ready, pending apply
+- Nuxera CEO messaged, watching for response
+- LinkedIn Content Weeks 3-5 due Mar 7
+
+## Previous Session (Mar 5, session 1)
+- Generated 3 tailored CVs using HTML→WeasyPrint pipeline
+- eMagine (96% ATS): CV complete, pending apply
+- Anduril: Full JD revealed Secret Clearance required, real ATS 64%, SKIP
+- Dubai Holding: CV done but Ahmed reported job closed
+- Fixed learning: LinkedIn cookies exist at workspace/config/, not openclaw/config/
+- Fixed learning: Always fetch full JD before scoring (prevents wasted CV generation)
+- Logged both learnings to .learnings/LEARNINGS.md
+
+## Open Threads
+- Run fresh job scout to replace closed/skipped jobs
+- Ahmed to apply to eMagine (CV ready)
+- Cron job linkedin-job-scout set for Mon/Wed/Fri 6AM UTC, needs testing
+- ATS scorer script has path-length bug on long strings
+
+## Earlier (Mar 5, morning-midday)
 - Discussed JobSpy, Crawlee, LinkedIn scraping approaches
 - Built LinkedIn JD Fetcher: Playwright + li_at cookie, runs 100% on VPS, no Mac needed
 - Built linkedin-add-to-sheet.py: auto-adds GO jobs (>=82%) to Google Sheet via gog

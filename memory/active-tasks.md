@@ -1,8 +1,10 @@
 # Active Tasks
 
-*Last updated: 2026-03-05 11:52 UTC*
+*Last updated: 2026-03-05 13:37 UTC*
 
-## 🔴 URGENT — This Week
+## 🔴 URGENT
+- [ ] Retry Sheet row 16 update: K16="Applied", L16="2026-03-05" (Google API timed out)
+- [ ] Apply to remaining CV-ready jobs: EDB Field CTO, eMagine Head of AI Advisory — This Week
 - ~~Delphi: Closed Mar 4. No further action.~~
 - ~~LinkedIn Weeks 3-5: ✅ COMPLETED Mar 4. 15 posts + 15 images pushed to GitHub.~~
 
@@ -22,6 +24,13 @@
 - **Week 2 (Mar 2-6):** Complete on GitHub
 - **Weeks 3-5:** Drafting and image production in progress, due Mar 7
 - **Next:** Ahmed review and posting flow continues
+
+### LinkedIn Job Scout CVs
+- **Status:** 3 of 4 GO jobs processed
+- **eMagine Head of AI Advisory (96%):** CV ready, pending Ahmed apply
+- **Anduril Sr. Manager PM (64% real):** SKIP, Secret Clearance required
+- **Dubai Holding Director PM (75%):** ❌ Job closed
+- **Next:** Run fresh scout to find replacement GO jobs
 
 ### Knowledge Bank
 - **Status:** Active
