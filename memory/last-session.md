@@ -1,4 +1,33 @@
 # Last Session
+Updated: 2026-03-05 11:52 UTC
+
+## What We Did (Mar 5, morning-midday)
+- Discussed JobSpy, Crawlee, LinkedIn scraping approaches
+- Built LinkedIn JD Fetcher: Playwright + li_at cookie, runs 100% on VPS, no Mac needed
+- Built linkedin-add-to-sheet.py: auto-adds GO jobs (>=82%) to Google Sheet via gog
+- Tested pipeline on 5 jobs: 4 SKIP (Dalil IT 58%, Talan CTO 68%, Insurance CTO 35%, IT Director Riyadh 66%), 1 GO (Senior Director Tech UAE 87% - added to Sheet row 7)
+- CV build for Senior Director Tech (Confidential UAE) spawned as Opus sub-agent (in progress)
+- Context hit 86% - session flushed
+
+## Open Threads
+1. CV build for Senior Director Technology - Opus sub-agent running, will auto-announce
+2. Ahmed triaging more LinkedIn jobs - pipeline continues
+3. Monthly model routing audit cron: still not created
+4. "Process sheet" on-demand trigger: discussed, not yet built
+5. Bayt integration into Job Radar: recommended, not yet done
+
+## Key Decisions
+- Google Sheet = primary pipeline tracker (not pipeline.md)
+- LinkedIn URL workflow: send URL → VPS fetches JD → ATS score → auto-add if >=82%
+- Cookie: li_at stored in config/linkedin-cookies.json (gitignored)
+- ATS threshold: 82% (MiniMax calibrated)
+
+## State
+- Pipeline: 47 applied + 1 new GO (Senior Director Tech, row 7)
+- LinkedIn cookie: active, months before expiry
+- Scripts committed: linkedin-jd-fetcher.py, linkedin-cookie-setup.py, linkedin-add-to-sheet.py
+
+
 Updated: 2026-03-05 10:27 UTC
 
 ## What We Did
