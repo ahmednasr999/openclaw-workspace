@@ -1,33 +1,47 @@
 ---
 
 ## LinkedIn Intelligence — Week of March 9, 2026 | 2026-W11
-**Generated:** 2026-03-05T23:32:00 UTC
-**Source:** Top posts scraped from LinkedIn search via Tavily, 20+ posts analyzed
+**Generated:** 2026-03-05T23:40:00 UTC
+**Source:** Top posts scraped from LinkedIn search via Tavily, 25+ posts analyzed
 
 ### This Week's Winning Hooks
-1. "Is Your Enterprise Ready for the 2026 Race in the Gulf?" — Curiosity gap + regional urgency
-2. "Transformation in the GCC is no longer about vision — it's about execution" — Contrarian take, challenges status quo
-3. "PMOs Must Lead AI Adoption in 2026" — Authority position + year-specific urgency
-4. "The most viral LinkedIn lie in 2026" — Debunking hook, curiosity + controversy
-5. "We inherited [problem]. Here's how we turned it around." — Transformation story + results
+1. "The most viral LinkedIn lie in 2026" — Debunking hook, calls out exaggeration, creates curiosity + controversy
+2. "Is Your Enterprise Ready for the 2026 Race in the Gulf?" — Curiosity gap + regional urgency
+3. "We have [Number] AI agents in production" — First-person authority + specific numbers
+4. "I have just spent [time] in [Location]" — Observation hook with insider credibility
+5. "[Number] Non-Negotiables for [Role] in [Year]" — Authority list format
 
 ### Dominant Formats This Week
-- **Execution-focused stories**: "It's no longer about vision, it's about execution" — 40% of top content
-- **Data-backed lists with regional stats**: GCC-specific numbers (96% e-gov maturity, $38B investment, 64 AI data centers) — 30%
-- **Contrarian takes**: Debunking "AI 10x" hype, challenging transformation = technology beliefs — 20%
-- **Authority positioning**: "PMOs Must Lead" style posts — 10%
+- **Contrarian/debunking takes**: Calling out "AI 10x" hype, 40% of top content
+- **Execution-focused stories**: "It's no longer about vision, it's about execution" — 30%
+- **Data-backed lists with GCC stats**: Saudi 96% e-gov maturity, $38B investment, 64 AI data centers — 20%
+- **First-person observations**: "I spent time in Dubai" style posts — 10%
 
 ### Hot Topics in Niche (Ride These)
-- **AI agents in production**: Moving beyond pilots to real workflows, ROI depends on data governance
-- **Saudi HUMAIN & SAMAI 2**: National AI company building capability across models, compute, data platforms
-- **UAE CEO confidence**: 84% optimistic about national growth, 80% about company 3-year outlook
-- **Operational mastery**: Leadership in 2026 is about execution, not ambition
-- **Value-based care execution**: GCC healthcare shifting from transformation ambition to measurable outcomes
+- **AI agents in production**: Moving beyond pilots to real workflows, data governance determines ROI
+- **PMO as AI leader**: "PMOs Must Lead AI Adoption" positioning gaining traction
+- **Value-based care execution**: GCC healthcare shifting from ambition to measurable outcomes
+- **Leadership authenticity**: UAE shifting to authenticity-based leadership model
+- **Human-in-the-loop AI**: Essential for scale and compliance in regulated industries
 
 ### Oversaturated This Week (Avoid)
-- **"AI 10x'd revenue" posts**: The hype narrative is being called out as misleading
-- **Generic digital transformation**: Need specific execution stories, not vision statements
-- **Vision 2030 broad praise**: Too generic without actionable insights
+- **"AI 10x'd revenue" posts**: The hype is being called out as misleading (see Anas Hidaoui's viral post)
+- **Generic transformation vision statements**: Need specific execution stories
+- **Pure AI tool tutorials**: Without GCC/regional context, too generic
+
+### Top Post Examples
+1. Anas Hidaoui (Strategy) — "The most viral LinkedIn lie in 2026: I replaced my entire team with AI and 10x'd revenue" — engagement estimated very high (viral) — worked because it called out the hype cycle with humor and data
+2. Kane Macey (Regional Director) — "UAE Business Leaders in 2026: AI, Sustainability, and Transformation" — 84% CEO optimism — worked because it combined regional data with forward-looking agenda
+3. Rebecca Farooq (Digital Transformation) — "Digital Shift in UAE and GCC: 2026 Priorities" — 96% e-gov maturity, $38B investment, 64 AI data centers — worked because of specific regional data
+4. Hussain Bandukwala (PMO Leader) — "PMOs Must Lead AI Adoption in 2026" — worked because it positioned PMOs as essential for AI governance
+5. Michael Masset (C-Level) — "I have just spent a few days in Dubai" — first-person authority + GCC insight — worked because it offered insider perspective
+
+### Recommendations for Ahmed's Week [March 9-13] Content
+- **Use hook style**: Lead with contrarian take or first-person execution story. "Here's what actually works" beats "here's what we're planning"
+- **Lead topic**: $50M PMO execution across 15 hospitals. Real delivery, not consulting frameworks
+- **Format to try**: First-person "what I learned" from TopMed transformation, paired with GCC-specific data points
+- **Avoid**: Generic AI transformation, "10x" hype, vision-only statements
+- **Engagement**: End each post with question to network
 
 ### Top Post Examples
 1. Mustafa Al Usaji (GCC Transformation Lead) — "Transformation in the GCC is no longer about vision — it's about execution" — worked because it challenged the region's "all talk" perception
