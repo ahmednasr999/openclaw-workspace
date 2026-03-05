@@ -56,6 +56,7 @@
 | 44 | ☑️ | Salt | Senior Program Manager | Abu Dhabi, UAE | 91% | ✅ Applied | Full JD | 2026-03-01 | 2026-03-08 | [LinkedIn](https://www.linkedin.com/jobs/view/4375521803) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20Senior%20Program%20Manager%20-%20Salt.pdf) |
 | 45 | ☑️ | Confidential (Michael Page) | VP, AI & Technology | International / UAE | 88% | ✅ Applied | Partial JD | 2026-03-02 | 2026-03-09 | [Michael Page](https://www.michaelpage.ae/job-detail/vp-ai-technology/ref/jn-022026-6953563) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20VP%20AI%20%26%20Technology%20-%20Michael%20Page.pdf) |
 | 46 | ☑️ | RAKBANK | Vice President, AI Platform Owner | Dubai, UAE | 89% | ✅ Applied | Full JD | 2026-03-03 | 2026-03-17 | [LinkedIn](https://www.linkedin.com/jobs/view/4373081849/) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20Vice%20President%20AI%20Platform%20Owner%20-%20RAKBANK.pdf) |
+| 47 | ☑️ | Qashio | Delivery Manager | Dubai, UAE | 93% | ✅ Applied | Full JD | 2026-03-05 | 2026-04-02 | [LinkedIn](https://www.linkedin.com/jobs/view/4368979403) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20Delivery%20Manager%20-%20Qashio.pdf) |
 
 
 ---
@@ -95,8 +96,8 @@
 
 | Metric | Value |
 |--------|-------|
-| Total tracked | 46 |
-| Applied | 46 |
+| Total tracked | 47 |
+| Applied | 47 |
 | CV Ready, not yet applied | 0 |
 | Radar — Needs Action | 11 |
 | Radar (no CV yet) | 11 |
