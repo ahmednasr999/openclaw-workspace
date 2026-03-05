@@ -1,6 +1,6 @@
 # Active Tasks
 
-*Last updated: 2026-03-05 07:31 UTC*
+*Last updated: 2026-03-05 11:52 UTC*
 
 ## 🔴 URGENT — This Week
 - ~~Delphi: Closed Mar 4. No further action.~~
@@ -46,6 +46,13 @@
 - **Master CV:** `memory/master-cv-data.md`
 - **Pending updates:** none
 - **Latest:** Fugro Head of Project Excellence (ATS 90%, Applied Mar 5)
+
+### LinkedIn JD Fetcher (NEW — Mar 5)
+- **Status:** ✅ LIVE
+- **How:** Send any LinkedIn job URL in Telegram → VPS fetches full JD via Playwright + cookie → ATS score + Go/Skip verdict returned
+- **No Mac needed** — runs 100% on VPS
+- **Cookie:** `config/linkedin-cookies.json` (gitignored) — expires in months, refresh via `linkedin-cookie-setup.py`
+- **Scripts:** `scripts/linkedin-jd-fetcher.py`, `scripts/linkedin-cookie-setup.py`
 
 ### Job Radar v3 (JobSpy)
 - **Status:** ✅ LIVE
