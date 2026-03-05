@@ -57,6 +57,7 @@
 | 45 | ☑️ | Confidential (Michael Page) | VP, AI & Technology | International / UAE | 88% | ✅ Applied | Partial JD | 2026-03-02 | 2026-03-09 | [Michael Page](https://www.michaelpage.ae/job-detail/vp-ai-technology/ref/jn-022026-6953563) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20VP%20AI%20%26%20Technology%20-%20Michael%20Page.pdf) |
 | 46 | ☑️ | RAKBANK | Vice President, AI Platform Owner | Dubai, UAE | 89% | ✅ Applied | Full JD | 2026-03-03 | 2026-03-17 | [LinkedIn](https://www.linkedin.com/jobs/view/4373081849/) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20Vice%20President%20AI%20Platform%20Owner%20-%20RAKBANK.pdf) |
 | 47 | ☑️ | Qashio | Delivery Manager | Dubai, UAE | 93% | ✅ Applied | Full JD | 2026-03-05 | 2026-04-02 | [LinkedIn](https://www.linkedin.com/jobs/view/4368979403) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20Delivery%20Manager%20-%20Qashio.pdf) |
+| 48 | ☑️ | Cigna Healthcare | Head of Transformation | Dubai, UAE | 100% | ✅ Applied | Full JD | 2026-03-05 | 2026-04-02 | [LinkedIn](https://www.linkedin.com/jobs/view/4352999603) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20Head%20of%20Transformation%20-%20Cigna%20Healthcare.pdf) |
 
 
 ---
@@ -96,8 +97,8 @@
 
 | Metric | Value |
 |--------|-------|
-| Total tracked | 47 |
-| Applied | 47 |
+| Total tracked | 48 |
+| Applied | 48 |
 | CV Ready, not yet applied | 0 |
 | Radar — Needs Action | 11 |
 | Radar (no CV yet) | 11 |
