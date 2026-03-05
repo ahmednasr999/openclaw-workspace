@@ -114,14 +114,14 @@
 
 ## 🔍 Fresh from LinkedIn Scout (Mar 5, 2026)
 
-| # | Company | Role | Location | Posted | Status | Notes |
-|---|---------|------|----------|--------|--------|-------|
-| 21 | Confidential | Senior Project Manager | Sharjah, UAE | 1 hour ago | 🔍 Discovered | LinkedIn Scout |
-| 22 | AECOM | Project Manager - Masterplanning | Dubai, UAE | 4 hours ago | 🔍 Discovered | LinkedIn Scout |
-| 23 | Anduril Industries | Sr. Manager, Program Management (UAE) | Abu Dhabi | 23 hours ago | 🔍 Discovered | LinkedIn Scout |
-| 24 | eMagine Solutions | Head of AI Advisory | Abu Dhabi | 2 hours ago | 🔍 Discovered | LinkedIn Scout |
-| 25 | Joud Coffee | PMO Manager (Workflow & Execution) | Abu Dhabi | 23 hours ago | 🔍 Discovered | LinkedIn Scout |
-| 26 | KBR, Inc. | Program Director | Abu Dhabi | 1 day ago | 🔍 Discovered | LinkedIn Scout |
+| # | Company | Role | Location | Posted | ATS | Status | LinkedIn URL |
+|---|---|---|---|---|---|---|---|
+| 21 | Jobgether | Senior Banking Program Manager | UAE | 1 day ago | 78% | 🔍 Discovered | [Link](https://www.linkedin.com/jobs/view/senior-banking-program-manager-remote-at-jobgether-4380599375) |
+| 22 | AECOM | Project Manager - Masterplanning | Dubai | 4 hours ago | 72% | 🔍 Discovered | [Link](https://www.linkedin.com/jobs/view/project-manager-masterplanning-at-aecom-4379821355) |
+| 23 | Anduril Industries | Sr. Manager, Program Management (UAE) | Abu Dhabi | 23 hours ago | 85% | 🔍 Discovered | [Link](https://www.linkedin.com/jobs/view/sr-manager-program-management-uae-at-anduril-industries-4371278731) |
+| 24 | eMagine Solutions | Head of AI Advisory | Abu Dhabi | 2 hours ago | 96% | 🔍 Discovered | [Link](https://www.linkedin.com/jobs/view/head-of-ai-advisory-at-emagine-solutions-4381416802) |
+| 25 | Presight (G42) | Senior Project Manager | Abu Dhabi | 23 hours ago | 78% | 🔍 Discovered | [Link](https://www.linkedin.com/jobs/view/senior-project-manager-at-presight-4375706819) |
+| 26 | Dubai Holding | Director, Project Management | Dubai | 1 day ago | 82% | 🔍 Discovered | [Link](https://www.linkedin.com/jobs/view/director-project-management-at-dubai-holding-4368664030) |
 
 ---
 
