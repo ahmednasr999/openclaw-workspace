@@ -37,6 +37,7 @@ Before executing any command that touches:
 - `openclaw cron add/delete`: scheduled tasks
 - `git push --force`: destructive git
 - `openclaw gateway restart`: gateway operations
+- `tools.profile` in `openclaw.json`: tool access level (never downgrade silently)
 
 **Show the command FIRST as a dry-run, wait for "go ahead" approval.**
 

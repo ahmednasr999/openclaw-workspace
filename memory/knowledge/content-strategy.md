@@ -1,6 +1,14 @@
 # Content Strategy — LinkedIn Intelligence
 
-*Last updated: March 5, 2026*
+*Last updated: March 6, 2026*
+
+## Banked: Shape Up Skills for AI Agents (Mar 6, 2026)
+**Source:** https://x.com/nurijanian/status/2024804843689582711 + https://github.com/rjs/shaping-skills
+**Author:** Ryan Singer (@rjs, Shape Up creator), promoted by George Nurijanian (41K, prodmgmt.world)
+**Engagement:** 751 likes, 1,765 bookmarks (158K views)
+**What:** Claude skills for Shape Up: /shaping, /breadboarding, /framing-doc, /kickoff-doc
+**Use for Ahmed:** (1) OpenClaw skill for scoping transformation programs at next role, (2) LinkedIn angle: Shape Up + AI + $50M healthcare transformation, (3) Hook pattern for pipeline ripple-effect checks
+**Status:** Banked. Trigger: new role start or content gap
 
 ## Core Positioning
 - **Ahmed's angle**: Digital Transformation Executive with real execution credibility (not consultant)
@@ -91,9 +99,23 @@
 - [[weekly-content-brief.md|2026-W11]] — Week of March 9
 - [[weekly-content-brief.md|2026-W10]] — Week of March 2
 
-### Week of March 5, 2026 (This Week)
+### Week of March 5, 2026 (Current)
 1. Anas Hidaoui — "The most viral LinkedIn lie in 2026: I replaced my entire team with AI and 10x'd revenue" — debunking hook (continuing strong)
 2. Hussain Bandukwala — "PMOs Must Lead AI Adoption in 2026" — PMO positioning continues resonating
 3. Oliver Wyman — "5 Trends That Will Redefine the Region's Health Landscape in 2026" — HealthTech focus
 4. Mustafa Al Usaji — "Transformation in the GCC is no longer about vision, it's about execution"
 5. Emerging: Agentic AI posts gaining traction as Salesforce Agentforce $800M ARR signal spreads
+
+---
+
+## Intelligence Sources
+- **Primary**: LinkedIn feed monitoring (requires auth)
+- **Backup**: Web search for GCC/HealthTech/AI trends
+- **Key voices**: @AnasHidaoui @HussainBandukwala @KaneMacey @MustafaAlUsaji @OliverWyman @RebeccaFarooq
+
+## Configuration Needed
+- [ ] Brave Search API key for automated discovery
+- [ ] LinkedIn browser automation session
+
+## Captured Source Links
+- 2026-03-06: YouTube, "OpenAI just dropped GPT-5.4 and WOW...." by Matthew Berman, https://youtu.be/rvdUBieefR0?si=W4bxrMHLNe3-9Dea

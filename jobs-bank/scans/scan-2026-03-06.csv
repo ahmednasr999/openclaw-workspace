@@ -1,0 +1,240 @@
+id,site,job_url,job_url_direct,title,company,location,date_posted,job_type,salary_source,interval,min_amount,max_amount,currency,is_remote,job_level,job_function,listing_type,emails,description,company_industry,company_url,company_logo,company_url_direct,company_addresses,company_num_employees,company_revenue,company_description,skills,experience_range,company_rating,company_reviews_count,vacancy_count,work_from_home_type,search_term,search_country,relevance
+in-c06735549c85c39d,indeed,https://ae.indeed.com/viewjob?jk=c06735549c85c39d,http://ae.indeed.com/job/chief-technology-officer-c06735549c85c39d,Chief Technology Officer,Bosperous Real Estate LLC,"Dubai, DU, AE",2026-03-04,fulltime,,,,,,False,,,,info@akarat.com,"**Akarat.com** is seeking a **Chief Technology Officer (CTO)** to serve as the primary architect and visionary for our technical landscape. You will lead the end-to-end development and scaling of our web and mobile platforms, ensuring elite performance, robust security, and a seamless user experience. We are looking for a hands-on decision maker who thrives in a fast-paced environment and possesses the technical depth to move from complex prototypes to stable, high-scale production systems with precision.
+
+Responsibilities:
+
+· **Platform Vision & Roadmap:** Define the long-term technical strategy for Akarat.com, aligning product features with business growth.
+
+· **Architecture & Scalability:** Lead the design of a resilient, high-growth ecosystem capable of handling rapid increases in property search traffic and complex, real-time data updates.
+
+· **PropTech Integration:** Oversee mission-critical integrations, including XML property listing feeds, CRM systems, and Trakheesi API connections.
+
+· **Innovation & AI:** Implement advanced search algorithms, AI-driven valuation tools, and immersive features like VR tours to ensure a competitive market edge.
+
+· **Security & Compliance:** Ensure full compliance with UAE data privacy laws and build robust, idempotent transactional systems for secure user interactions.
+
+· **Team Leadership:** Recruit, mentor, and manage a high-performing engineering team, fostering an Agile culture of clean code and rapid delivery.
+
+Skills & Qualifications:
+
+· **Experience:** 10-15 years in software engineering, with at least 5 years in a senior leadership role (CTO/VP Engineering).
+
+· **Industry Knowledge:** Proven track record in building and scaling high-traffic property portals or marketplaces in the UAE.
+
+· **PHP & Laravel:** Advanced knowledge of PHP 8.x and the Laravel ecosystem. You should be an expert in Eloquent ORM, Service Containers, and Custom Middleware to ensure the portal's backend is clean, maintainable, and secure.
+
+· **Technical Mastery:** Expert proficiency in modern stacks such as React/Next.js, Node.js or Django.
+
+· **Data Expertise:** Deep understanding of database management (PostgreSQL/MongoDB) and cloud infrastructure (AWS or Azure).
+
+· **Certified CTO**
+
+If you are interested, please send your resume to info@akarat.com
+
+Onsite Job | **Immediate Joiners Only**
+
+Job Type: Full-time",,https://ae.indeed.com/cmp/Bosperous-Real-Estate-LLC,,,,,,,,,,,,,CTO,united arab emirates,1
+li-4380081720,linkedin,https://www.linkedin.com/jobs/view/4380081720,,Head of Information Technology- UAE National,Talents Tide,"Dubai, United Arab Emirates",,,,,,,,False,,,,,,,https://ae.linkedin.com/company/talents-tide,,,,,,,,,,,,,Head of Technology,united arab emirates,1
+li-4380233359,linkedin,https://www.linkedin.com/jobs/view/4380233359,,Head of Information Technology,Agile Consultants,"Dubai, Dubai, United Arab Emirates",,,,,,,,False,,,,,,,https://ae.linkedin.com/company/agileconsultants,,,,,,,,,,,,,Head of Technology,united arab emirates,1
+in-18ec036039fdba16,indeed,https://ae.indeed.com/viewjob?jk=18ec036039fdba16,https://cyberdrone.applytojob.com/apply/Hgp41dCvkJ/Head-Of-Global-Marketing-Brand-B2B-Demand-Generation?source=INDE&~,Head of Global Marketing (Brand & B2B Demand Generation),CyberDrone,"Dubai, DU, AE",2026-03-05,fulltime,,,,,,True,,,,,"### **Head of Global Marketing (Brand & B2B Demand Generation)**
+
+**Reports to:** CEO
+
+**Team Size:** ~6 Members (Mix of full-time/part-time: Content writers, copywriters, designers, videographers, performance marketer). Working in Dubai office and remote.
+
+#### **1. Role Overview**
+
+We are a global Immersive Aerial Experience Studio transitioning from a drone-light-show startup to a premium, multi-technology entertainment company. We operate across the Middle East, Europe, and the Americas, selling highly customized, six-figure ($50k - $100k+) shows to corporate entities, governments, and mega-event organizers.
+
+We are seeking a **""Brand & Growth Hybrid""** to lead our global marketing. You must possess the creative ""eye"" to maintain our premium, luxury aesthetic across visual channels (like Instagram), while possessing the analytical ""math"" to build a rigorous B2B demand-generation funnel. You will direct an existing 6-person creative and performance team, shifting their output from ""B2C awareness"" to targeted, revenue-generating B2B campaigns.
+
+#### **2. Core Responsibilities**
+
+**A. The ""Luxury Storefront"" (Brand Validation & Creative Direction)**
+
+* **Creative Quality Control:** Act as the ""Brand Guardian."" Direct our videographers and designers to ensure every Instagram Reel, YouTube video, and pitch deck feels like a luxury service that justifies a $50,000 - $100,000+ price tag.
+* **The Visual Portfolio:** Strategically own our Instagram and visual platforms. Ensure they serve as the ultimate, high-end portfolio that instantly validates our credibility when a VIP client looks us up after a sales pitch.
+* **Global Localization:** Adapt our visual and written brand for different cultural touchpoints, seamlessly managing localized campaigns for Dubai, Brazil, and Europe in multiple languages.
+
+**B. The ""VIP Sales Engine"" (B2B Demand Generation & ToFu Steering)**
+
+* **Sales Alignment:** Work directly with the CEO and (regional) Sales Director to define Ideal Customer Profiles (ICPs). Transform the marketing department into a Top-of-Funnel (ToFu) machine that feeds the sales team.
+* **Targeted Campaign Execution:** Oversee the performance marketer to run highly targeted Meta and Google ad campaigns aimed specifically at B2B decision-makers (Event Directors, PR Agencies, Government Tourism Boards).
+* **Metrics & ROI:** Shift to Marketing Qualified Leads (MQLs), Cost Per Acquisition (CPA), and overall pipeline revenue generated.
+* **Market Intelligence & Expansion:** Identify new markets, analyze customer segments, and monitor competitors to support strategic expansion and strengthen Cyberdrone’s global market position.
+
+**C. Executive Thought Leadership, PR, & Events**
+
+* **Personal Branding:** Manage the LinkedIn presence and personal branding of the CEO and key Sales Team members, positioning them as international thought leaders in immersive entertainment technology.
+* **High-Value B2B Channels:** Pivot focus toward channels that close enterprise deals: secure speaking slots at major industry panels, negotiate PR placements in event-industry trade magazines, and strategize direct-mail/face-to-face VIP events and exhibition presence.
+* **Strategic Partnerships & Sponsorships:** Develop and manage strategic partnerships, sponsorships, and collaborations that enhance brand exposure, credibility, and access to new markets and audiences.
+
+#### **3. Technical Requirements & Skills**
+
+* **The ""Dual-Brain"" Marketer:** Must demonstrate both high-end creative taste (video/design direction) and rigorous analytical skills (CRM data, ROI calculation, ad-spend optimization).
+* **B2B / Enterprise Experience:** Proven track record of marketing high-ticket services or products. You know how to market to a corporate Board or a major event agency.
+* **Team Leadership:** Experience managing and extracting the best work from creative specialists (videographers, designers, writers).
+* **Multichannel Fluency:** Deep understanding of how to take one core piece of content (e.g., a drone show recap video) and adapt it for Instagram (brand), LinkedIn (lead gen), and PR (authority).
+
+**Requirements:**
+
+* Bachelor’s or Master’s degree in Marketing, Business, or a related field.
+* 7–10 years of marketing experience, including a senior or leadership role.
+* Proven experience in B2B marketing and demand generation, preferably for high-value services or technology.
+* Strong track record in brand development combined with revenue-driven marketing.
+* Experience working closely with sales teams and managing enterprise sales funnels.
+* Demonstrated experience leading and developing a marketing team.
+* Analytical mindset with experience using data and KPIs to guide strategy.
+* Fluent in English; additional languages are a plus.
+
+**Employment conditions:**
+
+* Visa and health insurance (if employed in Dubai)
+* Competitive salary (includes housing- and commute allowance)
+* Annual flight ticket to home country
+* 24 days of vacation leave (excluding public holidays)
+* Fulltime (40 hours/week)
+
+Hgp41dCvkJ",,https://ae.indeed.com/cmp/Cyberdrone,,,,,,,,,,,,,Head of Technology,united arab emirates,0
+in-8e145562eeb2831b,indeed,https://ae.indeed.com/viewjob?jk=8e145562eeb2831b,https://careers.echobox.com/jobs/5pEE2SpPoxIZ/regional-director-apac-remote,Regional Director - APAC (Remote),Echobox,"Dubai, DU, AE",2026-03-05,fulltime,,,,,,True,,,,,"We are a fast-growing, research-driven company building an artificial intelligence that helps online publishers overcome the challenges they face every day. Using novel AI, we are revolutionising the publishing industry and have a track record of building things that others have ruled out as impossible. Leading names from around the world rely on our product every day, including The Times, Le Monde, The Guardian, Vogue and many more.
+
+Our team is our best asset. We work with extremely smart and talented individuals, who all enjoy a high degree of responsibility and independence in structuring their work.
+
+Do you think you have what it takes to be part of Echobox? We'd love to hear from you.
+
+**About the Role**:
+
+We are looking for a Sales Manager to lead our business development in the APAC region. This dual-focus role gives you full ownership of the customer lifecycle—balancing new business acquisition with customer retention and upsell initiatives.
+
+**Key Responsibilities:**
+
+* Revenue Growth: Growing revenue through upselling, cross-selling, and renewals.
+* Relationship Building: Establishing trust and building strong relationships with key stakeholders.
+* Customer Advocacy: Representing the customer's interests and ensuring their needs are communicated effectively within the company.
+* Strategic Planning: Collaborating with customers to understand their long-term goals and aligning our products to meet those goals.
+* Contract Management: Handling contract negotiations, renewals, and any changes to the customer's subscription or service agreement.
+* Customer Feedback: Gathering customer feedback and insights to drive product improvements.
+
+**Requirements:**
+
+* Fluent written and spoken English
+* 5+ years of experience in a Sales role
+* Experience managing and leading others in a professional environment
+* A customer-focused mindset, putting customer experience first in every action you take
+* Track record of using data and reporting to guide decision making
+* The ability to translate complicated concepts to non-technical people, while maintaining the ability to speak to highly technical people
+* Exceptional account management and customer service skills backed up with excellent written and verbal communication skills
+* A natural problem solver who is able to dissect an issue and develop a plan to address this
+
+**Preferred Requirements:**
+
+* Experience working in a fast paced B2B SaaS organisation.
+* Excellent organisational and analytical skills, with proven ability to take initiative and build strong, productive relationships.
+* An interest in artificial intelligence and the future of the publishing industry.",,https://ae.indeed.com/cmp/Echobox,https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/256x256/71a87f4485c3d610d635c4699530892f,https://www.echobox.com/,London,11 to 50,,,,,,,,,Director AI,united arab emirates,0
+in-f33ff5f815f518ff,indeed,https://ae.indeed.com/viewjob?jk=f33ff5f815f518ff,https://click.appcast.io/t/qSdDmhWZewWDBlTm638ByrW7t3eF79yPSRfPU1Faijs=,"Vice President - Identity & Security Specialist Sales, EEMEA Regional Lead",Mastercard,"Dubai, DU, AE",2026-03-05,fulltime,,,,,,False,,,,,"**Our Purpose**
+
+*Mastercard powers economies and empowers people in 200+ countries and territories worldwide. Together with our customers, we’re helping build a sustainable economy where everyone can prosper. We support a wide range of digital payments choices, making transactions secure, simple, smart and accessible. Our technology and innovation, partnerships and networks combine to deliver a unique set of products and services that help people, businesses and governments realize their greatest potential.*
+
+**Title and Summary**
+
+Vice President - Identity & Security Specialist Sales, EEMEA Regional LeadVice President, Identity and Security Specialist Sakes, EEMEA Regional Lead
+  
+  
+Overview
+  
+Mastercard’s Security Solutions organization (SSO) develops and delivers world-class risk and security products & services for Mastercard customers across the globe. The teams within this organization lead the creation and delivery of innovative solutions enabling consumers to experience simple yet secure digital experiences, however, and wherever they choose to interact. This regional VP role will lead the execution of the go-to-market (GTM) strategy for identity, fraud, and other select security products, driving scale, retention, and growth across a regional client base.
+  
+  
+Role Purpose
+  
+This Vice President will lead the EEMEA regional Specialist Sales team for Mastercard’s Identity and Security portfolio. The VP will be accountable for new business, adoption, revenue growth, and operational excellence across both new logo acquisition and existing client expansion.
+  
+  
+Key Responsibilities
+  
+  
+Strategic Leadership
+  
+
+* Execute GTM strategy for Mastercard’s Identity, Financial Crimes, Fraud Solutions and Cyber for Payments product lines.
+* Support the transformation of the sales model to unlock accelerated growth.
+* Partner across the regional SSO business with the Ethoca, Risk Recon, and Recorded Future Sales teams, as well as across the entire regional Services business, to cross-sell and drive leads for other parts of the business.
+* Collaborate with the B2B Marketing team and Lead Generation to ensure a robust funnel of opportunities and manage the development of those marketing-influenced deals from the top of the funnel all the way through close.
+* Navigate across the region, SSO commercialization and product teams to develop and prioritize sales enablement activities.
+* Deliver breakthrough employee experiences and create new opportunities for personal and collective growth
+
+  
+Business Development
+  
+
+* Serve as a player‑coach, leading a sales team to exceed collective quota while consistently delivering against individual targets.
+* Accountable for ensuring that established sales pipeline, bookings, and revenue targets are met for the business.
+* Align sales teams with customer priorities and goals and ensure measurable impact on revenue
+* Collaborate closely with the Partnership team on our partner relationships within the region as well as the Customer Success organization ensuring strong relationships with the existing customer base
+* Partner with sales leadership to build and maintain high-quality sales pipeline to enable accurate forecasting.
+* Establish scalable processes for onboarding, support, and lifecycle management across the region.
+* Build, coach, and certify a team of world-class sales leaders and account executives globally.
+
+  
+Qualifications
+  
+
+* Solid knowledge and understanding of financial services, eCommerce and/or digital security market landscape, solutions and use cases.
+* Proven track record of selling and growing software, SaaS, or technology solutions into enterprise organizations with experience in risk, fraud, security, or identity services preferred.
+* History of consistently exceeding sales targets as an individual contributor and manager, with a strong ability to motivate, coach and develop a team.
+* Ability to focus and execute in a changing environment; ability to make things happen.
+* Deep understanding of analytics, data, predictive modeling, and/or business intelligence preferred.
+* Strong executive presence with ability to influence cross-functional stakeholders and C-suite clients.
+* Strong executive selling and business development skills; proven ability to understand different partner GTM and organizational models.
+* Demonstrated ability to manage, grow, and nurture team members, cultivating their career paths and goals
+* Experience managing large-scale organizational transformation and talent redeployment.
+* Experience navigating complex matrix environments and regional reporting structures.
+
+**Corporate Security Responsibility**
+
+All activities involving access to Mastercard assets, information, and networks comes with an inherent risk to the organization and, therefore, it is expected that every person working for, or on behalf of, Mastercard is responsible for information security and must:
+
+* Abide by Mastercard’s security policies and practices;
+* Ensure the confidentiality and integrity of the information being accessed;
+* Report any suspected information security violation or breach, and
+* Complete all periodic mandatory security trainings in accordance with Mastercard’s guidelines.",,https://ae.indeed.com/cmp/Mastercard,https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/256x256/db2408710268f83ca7847c9b13e3b570,https://mstr.cd/407uWQT,"Purchase, NY","10,000+",Decline to state,We are a global technology company in the payments industry.,,,,,,,VP Digital Transformation,united arab emirates,0
+in-286f215b8c1e3c3e,indeed,https://ae.indeed.com/viewjob?jk=286f215b8c1e3c3e,https://careers.echobox.com/jobs/g6ELHqkwuthu/sales-director-apac-remote,Sales Director - APAC (Remote),Echobox,"Dubai, DU, AE",2026-03-05,fulltime,,,,,,True,,,,,"We are a fast-growing, research-driven company building an artificial intelligence that helps online publishers overcome the challenges they face every day. Using novel AI, we are revolutionising the publishing industry and have a track record of building things that others have ruled out as impossible. Leading names from around the world rely on our product every day, including The Times, Le Monde, The Guardian, Vogue and many more.
+
+Our team is our best asset. We work with extremely smart and talented individuals, who all enjoy a high degree of responsibility and independence in structuring their work.
+
+Do you think you have what it takes to be part of Echobox? We'd love to hear from you.
+
+**About the Role**:
+
+We are looking for a Sales Manager to lead our business development in the APAC region. This dual-focus role gives you full ownership of the customer lifecycle—balancing new business acquisition with customer retention and upsell initiatives.
+
+**Key Responsibilities:**
+
+* Revenue Growth: Growing revenue through upselling, cross-selling, and renewals.
+* Relationship Building: Establishing trust and building strong relationships with key stakeholders.
+* Customer Advocacy: Representing the customer's interests and ensuring their needs are communicated effectively within the company.
+* Strategic Planning: Collaborating with customers to understand their long-term goals and aligning our products to meet those goals.
+* Contract Management: Handling contract negotiations, renewals, and any changes to the customer's subscription or service agreement.
+* Customer Feedback: Gathering customer feedback and insights to drive product improvements.
+
+**Requirements:**
+
+* Fluent written and spoken English
+* 5+ years of experience in a Sales role
+* Experience managing and leading others in a professional environment
+* A customer-focused mindset, putting customer experience first in every action you take
+* Track record of using data and reporting to guide decision making
+* The ability to translate complicated concepts to non-technical people, while maintaining the ability to speak to highly technical people
+* Exceptional account management and customer service skills backed up with excellent written and verbal communication skills
+* A natural problem solver who is able to dissect an issue and develop a plan to address this
+
+**Preferred Requirements:**
+
+* Experience working in a fast paced B2B SaaS organisation.
+* Excellent organisational and analytical skills, with proven ability to take initiative and build strong, productive relationships.
+* An interest in artificial intelligence and the future of the publishing industry.",,https://ae.indeed.com/cmp/Echobox,https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/256x256/71a87f4485c3d610d635c4699530892f,https://www.echobox.com/,London,11 to 50,,,,,,,,,Director AI,united arab emirates,0
+li-4381438370,linkedin,https://www.linkedin.com/jobs/view/4381438370,,Head of Technical Department,LJRecruitment,"Dubai, Dubai, United Arab Emirates",,,,,,,,False,,,,,,,https://uk.linkedin.com/company/ljrecruitment,,,,,,,,,,,,,Head of Technology,united arab emirates,0
+li-4381492617,linkedin,https://www.linkedin.com/jobs/view/4381492617,,"Director, IT – Major Systems","KBR, Inc.","Dubai, Dubai, United Arab Emirates",,,,,,,,False,,,,,,,https://www.linkedin.com/company/kbr-inc,,,,,,,,,,,,,Head of Technology,united arab emirates,0
+li-4381428736,linkedin,https://www.linkedin.com/jobs/view/4381428736,,Senior Vice President Sales - Middle East & Africa,FutureLog AG,"Dubai, United Arab Emirates",,,,,,,,False,,,,,,,https://ch.linkedin.com/company/futurelog-ag,,,,,,,,,,,,,Head of Technology,united arab emirates,0
+li-4381476729,linkedin,https://www.linkedin.com/jobs/view/4381476729,,Head of IT Application Support - Arab Banking Corporation,Jobs via eFinancialCareers,"Manama, Capital Governorate, Bahrain",,,,,,,,False,,,,,,,https://uk.linkedin.com/company/jobs-on-efinancialcareers,,,,,,,,,,,,,Head of Technology,bahrain,0
+li-4381919573,linkedin,https://www.linkedin.com/jobs/view/4381919573,,Head of Marketing,AiOO Tech,,,,,,,,,False,,,,,,,https://www.linkedin.com/company/aioo-tech,,,,,,,,,,,,,Head of Technology,bahrain,0

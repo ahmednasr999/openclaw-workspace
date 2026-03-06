@@ -77,4 +77,6 @@
 
 **Links:** [[../MEMORY.md]] | [[active-tasks.md]] | [[../AGENTS.md]]
 
+- 2026-03-05: **TOOL ACCESS SILENTLY DOWNGRADED.** `tools.profile` in `openclaw.json` was set to `"messaging"`, stripping exec/read/write/edit/process from all sessions. Likely caused by OpenClaw 2026.3.2 update or onboarding wizard re-run (18:12 UTC today). Result: NASR lost shell access, calendar crons failed, could not self-diagnose. Fix: changed to `"full"`, added `tools.profile` to DRY RUN protected list in AGENTS.md. Rule: after any OpenClaw update, verify `tools.profile` is `"full"` before declaring update successful.
+
 - 2026-02-26: **CV DELIVERY DELAY — 12 min gap between CV ready and PDF sent.** Sub-agent finished at 09:55 UTC. PDF not generated until Ahmed asked at 10:07 UTC. Root cause: I read the sub-agent output but waited for user to trigger PDF generation instead of doing it automatically. Fix: When a CV sub-agent completes, IMMEDIATELY generate PDF and send to Telegram. No waiting. No confirmation needed. Auto-deliver = done.

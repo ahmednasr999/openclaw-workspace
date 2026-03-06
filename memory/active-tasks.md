@@ -44,6 +44,26 @@
 - **Location:** `memory/knowledge/content-strategy.md`
 - **Next:** Continue banking frameworks from new content
 
+### Gmail Optimization (Mar 6)
+- **Status:** ✅ LIVE
+- **Done:** OAuth fixed to writable scopes (gmail.modify + gmail.settings.basic + gmail.settings.sharing)
+- **Done:** Auto-labels created (`JOB-ACTIONS`, `JOB-RECEIPTS`, `MARKET-NEWS`)
+- **Done:** Filters created for LinkedIn alerts/newsletters/receipts + Workable/Teamtailor priority
+- **Backlog cleanup:** 2,652 LinkedIn alerts archived, 145 newsletters archived, 650 LinkedIn receipts archived, 84 recruiting-system threads labeled priority
+- **Next:** 24h impact check, then tighten rules only if needed
+
+### Cron Hardening (NEW — Mar 6)
+- **Status:** ✅ COMPLETE
+- **Done:** bestEffort on all 32 jobs, failure alerts on 8 critical jobs, models pinned, KillMode=mixed applied, weekly gateway restart cron added
+- **Triggered by:** Kevin Simback's OpenClaw cron troubleshooting article
+
+### Skill Framework Overhaul (NEW — Mar 6)
+- **Status:** ✅ COMPLETE (Phase 1-3)
+- **Phase 1:** Archived 15 dead skills, optimized descriptions on 4 key skills, installed Anthropic skill-creator
+- **Phase 2:** Eval-driven improvements to executive-cv-builder (Step 0 pre-flight, quality gates, failure modes table)
+- **Phase 3:** OpenClaw adapter for Anthropic framework, new skill template
+- **Next:** Use framework for any future skill creation/improvement
+
 ### OpenClaw System Review
 - **Status:** In progress with Ahmed
 - **Completed:** Round 1 and Round 2
@@ -79,6 +99,7 @@
 
 ## 🟢 Recurring
 - Daily job radar checks
+- Daily OpenAI entitlement check: test GPT-5.4 availability in runtime, alert Ahmed immediately when allowed
 - Update memory after each session
 - Daily notes in `memory/YYYY-MM-DD.md`
 

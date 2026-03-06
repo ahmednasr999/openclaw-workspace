@@ -1,13 +1,13 @@
 {
-  "timestamp": "2026-03-05T06:01:35.751757+00:00",
+  "timestamp": "2026-03-06T06:00:53.898109+00:00",
   "mode": "quick",
-  "exitCode": 1,
+  "exitCode": 0,
   "summary": {
     "total": 6,
-    "healthy": 5,
+    "healthy": 6,
     "warnings": 0,
-    "errors": 1,
-    "viable": 5,
+    "errors": 0,
+    "viable": 6,
     "primaryStatus": "ok"
   },
   "models": {
@@ -33,7 +33,7 @@
     },
     "openai-codex/gpt-5.1": {
       "name": "GPT-5.1",
-      "status": "oauth_expired"
+      "status": "ok"
     }
   }
 }
