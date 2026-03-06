@@ -166,6 +166,8 @@ When spawning a sub-agent task, always:
 
 ### Recommended Model per Agent Role
 
+**HARD RULE: All CV creation/tailoring MUST run on Opus 4.6 (opus46). No exceptions. If the current session is on a different model, switch to Opus 4.6 before generating any CV.**
+
 | Agent | Folder | Default Model | Escalate To |
 |-------|--------|--------------|-------------|
 | CV Optimizer | cv-optimizer | **opus46** | Never downgrade CVs |
