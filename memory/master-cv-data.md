@@ -40,6 +40,8 @@ Digital Transformation Executive with 20+ years driving measurable business impa
 - Healthcare AI / Clinical AI
 - Generative AI / GenAI Strategy
 - Healthcare IT
+- Health Insurance Ecosystem & Payer-Provider Integration
+- Claims Management & Revenue Cycle Optimization
 - FinTech Architecture
 - E-commerce Operations
 - Stakeholder Management
@@ -57,6 +59,9 @@ Digital Transformation Executive with 20+ years driving measurable business impa
 - Partnering with U.S. healthcare technology leaders to implement Health Catalyst enterprise data platform, unifying clinical, financial, and operational data across 15-hospital network and enabling AI-assisted benchmarking and real-time performance insights
 - Deploying KLAS-rated healthcare IT solutions at enterprise scale, ensuring vendor performance aligns with clinical outcomes, regulatory compliance, and operational efficiency targets
 - Deployed 14 production AI agents in live clinical operations, integrating GenAI for clinical decision support, automated reporting, and patient flow optimization across 15-hospital network
+- Led digital transformation initiatives connecting Saudi German Hospitals with regional insurers and TPAs, improving authorization workflows, claims submission accuracy, and reimbursement cycle time
+- Implemented analytics platforms analyzing claims, utilization patterns, and cost drivers for payer-provider optimization, reducing delays and revenue leakage
+- Collaborated with insurance partners on utilization management, reimbursement models, and population health analytics across the hospital network
 - Ensuring JCI, HIMSS, and MOH regulatory compliance while driving continuous quality improvement and operational excellence initiatives
 
 ### Country Manager
