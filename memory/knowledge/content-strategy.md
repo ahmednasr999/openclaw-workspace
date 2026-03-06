@@ -10,6 +10,22 @@
 **Use for Ahmed:** (1) OpenClaw skill for scoping transformation programs at next role, (2) LinkedIn angle: Shape Up + AI + $50M healthcare transformation, (3) Hook pattern for pipeline ripple-effect checks
 **Status:** Banked. Trigger: new role start or content gap
 
+## Implemented: Taskmaster Completion Guard (Mar 6, 2026)
+**Source:** https://x.com/blader/status/2021102830933643775 + https://github.com/blader/taskmaster
+**Author:** Siqi Chen (@blader, CEO of Runway)
+**Engagement:** 622 likes, 62 replies
+**What:** Stop hook for Claude Code/Codex that blocks agents from stopping until task is 100% complete. Uses deterministic DONE token, compliance prompts, same-session recovery.
+**Action taken:** Adapted pattern for OpenClaw. Added Completion Guard protocol: TASK_COMPLETE token required in all sub-agent output. Missing token = failed task. Added to TOOLS.md (full protocol), AGENTS.md (rule reference), SOUL.md (enforcement).
+**Status:** IMPLEMENTED. Active in all future sub-agent spawns.
+
+## Banked: Mission Control by crshdn (Mar 6, 2026)
+**Source:** https://x.com/tom_doerr/status/2025880482760507780 + https://github.com/crshdn/mission-control
+**Author:** Tom Dörr (@tom_doerr), now rebranded as Autensa
+**Engagement:** 401 likes, 18 replies
+**What:** Open-source AI agent orchestration dashboard for OpenClaw. Kanban board, multi-agent pipeline (Planning→Inbox→Assigned→In Progress→Testing→Review→Verification→Done), fail-loopback routing, Learner agent that captures lessons and injects into future dispatches, Docker-ready, WebSocket gateway integration.
+**Use for Ahmed:** (1) Reference architecture if rebuilding MC v4 post-job-search, (2) Steal: fail-loopback routing pattern for sub-agents, (3) Steal: Learner agent auto-injecting LEARNINGS.md into sub-agent briefs, (4) Fork candidate for proper task orchestration in new executive role.
+**Status:** Banked. Trigger: MC v4 rebuild or new role requiring team-scale agent orchestration.
+
 ## Deployed: Camofox Anti-Detection Browser (Mar 6, 2026)
 **Source:** https://x.com/pradeep24/status/2021319785947316490 + npm camofox-browser
 **What:** OpenClaw plugin wrapping Camoufox engine for stealth browsing. REST API + CLI.
