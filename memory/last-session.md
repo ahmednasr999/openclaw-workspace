@@ -1,5 +1,18 @@
 # Last Session
-Updated: 2026-03-06 10:52 UTC
+Updated: 2026-03-06 17:56 UTC
+
+## Mar 6 Evening Session (Opus, 77% context at close)
+**Focus:** Infrastructure hardening + skill framework overhaul (triggered by 4 X articles Ahmed shared)
+**Outcomes:**
+- 33 cron jobs hardened: bestEffort, failure alerts on 9 critical, models pinned, light-context on 11
+- Self-healing agent deployed: every 2h, auto-diagnoses cron failures, playbook-driven fixes
+- 15 dead skills archived (42→28), 4 skill descriptions optimized (cv-builder, linkedin-writer, spreadsheet, resume-optimizer)
+- CV builder: Step 0 pre-flight gates + post-gen quality gate from 56 CV analysis
+- KillMode=mixed + TimeoutStopSec=15 applied (Feb 25 post-mortem fix was missing)
+- Weekly gateway restart cron + Anthropic skill-creator framework installed
+- Claude Max/ToS risk noted (sk-ant-oat01 = OAuth token)
+- Shape Up skills banked for later
+**Open threads:** None
 
 ## What We Did (Mar 6)
 - Checked GPT-5.4 availability: announced publicly, still not allowed in current runtime entitlement
