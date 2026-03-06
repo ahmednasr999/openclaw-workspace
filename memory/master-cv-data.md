@@ -77,7 +77,7 @@ Digital Transformation Executive with 20+ years driving measurable business impa
 
 ### Product Development Manager
 **Delivery Hero SE (Talabat) | GCC Markets | Jun 2017 – May 2018**
-- Led product strategy and operational improvements during hypergrowth period, contributing to platform scaling from 30,000 to 7 million daily orders across GCC markets (233x growth)
+- Led product strategy and operational improvements during hypergrowth period, contributing to platform scaling from 30,000 to 7 million daily orders across GCC markets (233x growth), operating within Delivery Hero's M&A-driven expansion model
 - Drove product strategic direction and feature prioritization supporting rapid scaling across Egypt and GCC countries
 - Led Operations Excellence Committee coordinating initiatives between Berlin HQ, GCC countries, and Egypt markets
 - Implemented lean methodologies and managed cross-functional product and design teams delivering customer-centric features enabling massive scale while maintaining service quality
@@ -94,6 +94,11 @@ Digital Transformation Executive with 20+ years driving measurable business impa
 **Revamp Consulting | USA, UAE, Egypt | Mar 2013 – Sep 2014**
 - Managed multi-sector consulting engagements for enterprise clients including Mayo Clinic (healthcare business process optimization) and AT&T (service operations transformation)
 
+### Mentor (Volunteering)
+**Flat 6 Labs & Founder Institute | Sep 2019 - Present**
+- Guided startups through business development strategies, growth planning, and scaling challenges
+- Provided mentorship on market entry, fundraising, and strategic positioning
+
 ### Earlier Experience (2004-2013)
 
 **Senior Project Manager, PMO | BlueCloud (2012-2013)**
@@ -101,6 +106,7 @@ Digital Transformation Executive with 20+ years driving measurable business impa
 
 **Project Manager | Intel Corporation (2011-2012)**
 - LTE (4G) mobile technology deployment projects
+- Participated in M&A integration and technology due diligence activities
 
 **Project Manager | SySDSoft/Intel Mobile Communication (2010-2011)**
 - Mobile communication technology development
