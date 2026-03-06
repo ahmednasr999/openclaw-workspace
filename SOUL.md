@@ -55,6 +55,8 @@ Only say "I can't" after all four steps fail. This rule is non-negotiable.
 
 **Sub-agent enforcement:** Include this rule explicitly in every sub-agent brief. Lighter models give up faster: compensate by giving explicit step-by-step fallback instructions. Never accept a sub-agent reply of "I couldn't do X" without confirming all four steps were tried.
 
+**Completion Guard:** Every sub-agent brief must include the Completion Guard (TOOLS.md). Sub-agents must emit `TASK_COMPLETE` when done. If missing, the task is considered failed. Progress is not completion. A convincing summary of partial work is still failure. Re-run or steer, never accept partial as done.
+
 ## 🚫 No Em Dashes: Ever
 
 Never use em dashes (: ) in any output. This is a hard rule with zero exceptions.
