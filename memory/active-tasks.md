@@ -3,11 +3,9 @@
 *Last updated: 2026-03-05 13:37 UTC*
 
 ## 🔴 URGENT
-- [ ] Retry Sheet row 16 update: K16="Applied", L16="2026-03-05" (Google API timed out)
-- [ ] Apply to remaining CV-ready jobs: EDB Field CTO, eMagine Head of AI Advisory — This Week
+- [x] ~~Retry Sheet row 16 update: K16="Applied", L16="2026-03-05"~~ ✅ Done Mar 6
+- [x] ~~Apply to remaining CV-ready jobs: EDB Field CTO, eMagine Head of AI Advisory~~ ✅ Both applied Mar 6
 - [ ] **Nuxera.AI — Sr PM AI Healthcare (Cairo):** CEO Amin Elhemaily responded directly on LinkedIn. Ahmed messaged salary-oriented stance. Awaiting Amin's reply. If positive, push for in-person meeting during Ramadan (both in Cairo). Research Nuxera before any meeting.
-- ~~Delphi: Closed Mar 4. No further action.~~
-- ~~LinkedIn Weeks 3-5: ✅ COMPLETED Mar 4. 15 posts + 15 images pushed to GitHub.~~
 
 ## 🟡 Follow-up Policy
 - No proactive follow-ups for standard LinkedIn applications.
@@ -27,11 +25,19 @@
 - **Next:** Ahmed review and posting flow continues
 
 ### LinkedIn Job Scout CVs
-- **Status:** 3 of 4 GO jobs processed
-- **eMagine Head of AI Advisory (96%):** CV ready, pending Ahmed apply
+- **Status:** 3 of 4 GO jobs processed + Fresh scout run Friday 6 AM
+- **eMagine Head of AI Advisory (96%):** CV ready, pending Ahmed apply (HIGH PRIORITY)
 - **Anduril Sr. Manager PM (64% real):** SKIP, Secret Clearance required
 - **Dubai Holding Director PM (75%):** ❌ Job closed
-- **Next:** Run fresh scout to find replacement GO jobs
+- **Fresh Results (Fri Mar 6):** 56 unique jobs from 60 searches (10 keywords × 6 GCC countries)
+- **Top Candidates for Next Round:**
+  - Roblox General Manager MENA (Remote)
+  - EDB Field CTO EMEA (Remote)
+  - ALDAR Senior VP Master Planning Projects (Abu Dhabi)
+  - Mashreq Manager GTB Digital Transformation PMO (UAE)
+  - The Cigna Group Head of Transformation (Dubai)
+- **Alert:** Playwright script timed out at search 29/60; previous day completed successfully. Need reliability fix.
+- **Next:** Score top 5 new opportunities, prioritize eMagine application
 
 ### Knowledge Bank
 - **Status:** Active
@@ -77,6 +83,8 @@
 - Daily notes in `memory/YYYY-MM-DD.md`
 
 ## ✅ Recently Completed
+- Delphi: Closed Mar 4 (no response after follow-up)
+- LinkedIn Weeks 3-5: ✅ COMPLETED Mar 4. 15 posts + 15 images pushed to GitHub.
 - OpenAI Codex JWT risk resolved (OAuth active)
 - GitHub 2FA completed
 - Delphi follow-up sent to Kritika Chhabra

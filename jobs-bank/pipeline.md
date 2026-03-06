@@ -60,6 +60,8 @@
 | 47 | ☑️ | Qashio | Delivery Manager | Dubai, UAE | 93% | ✅ Applied | Full JD | 2026-03-05 | 2026-04-02 | [LinkedIn](https://www.linkedin.com/jobs/view/4368979403) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20Delivery%20Manager%20-%20Qashio.pdf) |
 | 48 | ☑️ | Cigna Healthcare | Head of Transformation | Dubai, UAE | 100% | ✅ Applied | Full JD | 2026-03-05 | 2026-04-02 | [LinkedIn](https://www.linkedin.com/jobs/view/4352999603) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20Head%20of%20Transformation%20-%20Cigna%20Healthcare.pdf) |
 | 49 | ☑️ | Inception (G42) | Director, Program Management | Abu Dhabi, UAE | 100% | ✅ Applied | Full JD | 2026-03-05 | 2026-04-02 | [LinkedIn](https://www.linkedin.com/jobs/view/4377912517) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20Director%20Program%20Management%20-%20Inception.pdf) |
+| 50 | ☑️ | eMagine Solutions | Head of AI Advisory | GCC | 96% | ✅ Applied | Full JD | 2026-03-06 | 2026-04-05 | — | CV ✅ |
+| 51 | ☑️ | EDB | Field CTO EMEA | Remote | 66% | ✅ Applied | Full JD | 2026-03-06 | 2026-04-05 | — | CV ✅ |
 
 
 ---
@@ -99,8 +101,8 @@
 
 | Metric | Value |
 |--------|-------|
-| Total tracked | 49 |
-| Applied | 49 |
+| Total tracked | 51 |
+| Applied | 51 |
 | CV Ready, not yet applied | 0 |
 | Radar — Needs Action | 11 |
 | Radar (no CV yet) | 11 |
