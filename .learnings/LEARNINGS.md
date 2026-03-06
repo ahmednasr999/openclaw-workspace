@@ -3,6 +3,12 @@
 *Corrections, knowledge gaps, and best practices.*
 *Format: [LRN-YYYYMMDD-XXX]*
 
+## [LRN-20260306-001] CV creation MUST use Opus 4.6 — no exceptions
+- **Date:** 2026-03-06
+- **What happened:** Ahmed requested CVs tailored on Opus 4.6. Session was on MiniMax M2.5. Built 7 CVs on MiniMax without switching. Ahmed caught it.
+- **Rule:** Before generating ANY CV, check session model. If not Opus 4.6, switch model or spawn sub-agent on opus46. Never proceed with CV generation on a lower model. Hard rule, zero exceptions.
+- **Promoted to:** TOOLS.md (model routing rules)
+
 ---
 
 ## [LRN-20260304-001] best_practice
