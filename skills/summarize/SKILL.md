@@ -1,49 +1,62 @@
----
-name: summarize
-description: Summarize URLs or files with the summarize CLI (web, PDFs, images, audio, YouTube).
-homepage: https://summarize.sh
-metadata: {"openclaw":{"emoji":"🧾","requires":{"bins":["summarize"]},"install":[{"id":"brew","kind":"brew","formula":"steipete/tap/summarize","bins":["summarize"],"label":"Install summarize (brew)"}]}}
----
+# summarize
 
-# Summarize
+Summarize web pages, YouTube videos, podcasts, and local files using AI.
 
-Fast CLI to summarize URLs, local files, and YouTube links.
+## Usage
 
-## Quick start
+```
+summarize <url|file|-> [options]
+```
 
+## Options
+
+| Flag | Description |
+|------|-------------|
+| `--youtube <mode>` | YouTube transcript source: auto, web, no-auto, yt-dlp, apify |
+| `--transcriber <name>` | Audio transcription: auto, whisper, parakeet, canary |
+| `--video-mode <mode>` | Video handling: auto, transcript, understand |
+| `--slides` | Extract slides from YouTube presentations |
+| `--lang <code>` | Language for summarization (e.g., en, ar) |
+| `--markdown` | Output in markdown format |
+
+## Examples
+
+### Summarize a YouTube video
 ```bash
-summarize "https://example.com" --model google/gemini-3-flash-preview
-summarize "/path/to/file.pdf" --model google/gemini-3-flash-preview
-summarize "https://youtu.be/dQw4w9WgXcQ" --youtube auto
+summarize https://www.youtube.com/watch?v=dQw4w9WgXcQ
 ```
 
-## Model + keys
-
-Set the API key for your chosen provider:
-- OpenAI: `OPENAI_API_KEY`
-- Anthropic: `ANTHROPIC_API_KEY`
-- xAI: `XAI_API_KEY`
-- Google: `GEMINI_API_KEY` (aliases: `GOOGLE_GENERATIVE_AI_API_KEY`, `GOOGLE_API_KEY`)
-
-Default model is `google/gemini-3-flash-preview` if none is set.
-
-## Useful flags
-
-- `--length short|medium|long|xl|xxl|<chars>`
-- `--max-output-tokens <count>`
-- `--extract-only` (URLs only)
-- `--json` (machine readable)
-- `--firecrawl auto|off|always` (fallback extraction)
-- `--youtube auto` (Apify fallback if `APIFY_API_TOKEN` set)
-
-## Config
-
-Optional config file: `~/.summarize/config.json`
-
-```json
-{ "model": "openai/gpt-5.2" }
+### Extract slides from presentation
+```bash
+summarize https://www.youtube.com/watch?v=example --slides
 ```
 
-Optional services:
-- `FIRECRAWL_API_KEY` for blocked sites
-- `APIFY_API_TOKEN` for YouTube fallback
+### Summarize a web article
+```bash
+summarize https://example.com/article
+```
+
+### Summarize a local PDF
+```bash
+summarize ./document.pdf
+```
+
+### Summarize from stdin
+```bash
+echo "text to summarize" | summarize -
+```
+
+## Requirements
+
+- API keys for at least one provider:
+  - `OPENAI_API_KEY` (OpenAI)
+  - `ANTHROPIC_API_KEY` (Anthropic)
+  - `GOOGLE_GENERATIVE_AI_API_KEY` (Google)
+  - Or use `--cli agent` for Cursor/Claude Code
+
+## Notes
+
+- Uses Groq for fast transcription when available
+- Automatically falls back between providers
+- Supports 100+ languages
+- YouTube summaries include timestamps for easy navigation
