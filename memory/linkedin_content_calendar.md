@@ -239,6 +239,213 @@ CTA: Rotation B
 | Wed Mar 26 | Growth | SLAY | Sexy | "Health Catalyst closed 4.6M care gaps globally. Here's what gap-closing looks like on the ground." | Health Catalyst outcomes data |
 | Thu Mar 27 | Sales | SLAY | Familiar | "A recruiter told me I was overqualified. Here's what I said." | Original |
 
+### SUNDAY (Mar 23) | TAM Post | PAS Framework ✅ DRAFTED
+**Pillar:** Total Addressable Market
+**Hook Type:** Scary
+**CTA:** Rotation A
+**Image:** linkedin/week-2026-03-23/2026-03-23.png
+
+The GCC just committed $100B+ to digital transformation.
+
+Most of it will be wasted.
+
+I've sat through 12 executive steering committees in the last month. Mustafa Al Usaji put it best: transformation in the GCC is no longer about vision. It's about execution.
+
+Here's why $100B won't be enough:
+
+1. Governance gaps swallow budgets.
+Every dollar spent on technology without clear ownership is a dollar lost. In my current role managing a $50M transformation across 15 hospitals, I've seen $2M implementations stall because no one owned the outcome.
+
+2. Talent shortage is real.
+We need leaders who've scaled platforms from 30K to 7M daily orders. Not consultants who studied it. People who did it. There's a difference.
+
+3. Change resistance is invisible until it kills your timeline.
+Frontline staff adapt. Executives champion. It's middle management that quietly buries initiatives they didn't choose.
+
+The organizations that actually deliver transformation treat it as a people program with a technology component. Not the other way around.
+
+What's your take? Is GCC transformation overfunded, or under-executed?
+
+..
+
+By the way, I'm currently exploring VP/C-suite digital transformation roles across the GCC. If your network is hiring leaders who've scaled platforms from 30K to 7M daily orders, I'd love to connect. DM me or check my profile.
+
+#DigitalTransformation #GCC #HealthcareIT #Leadership #PMO
+
+---
+
+### MONDAY (Mar 24) | Growth Post | SLAY Framework ✅ DRAFTED
+**Pillar:** Growth (niche expertise)
+**Hook Type:** Free Value
+**CTA:** Rotation B
+**Image:** linkedin/week-2026-03-23/2026-03-24.png
+
+I almost lost a $50M transformation because I forgot one thing.
+
+Stakeholder mapping.
+
+Six months into my current role leading digital transformation across 15 hospitals, we had everything: budget approved, executive sponsorship, technology selected. Health Catalyst platform, KLAS-rated tools, the works.
+
+Then it stalled.
+
+Not because of technology. Not because of budget. Because I hadn't mapped who owned what, who needed to be convinced, and who would quietly kill the project if not aligned.
+
+Here's the stakeholder mapping template that saved my program:
+
+1. Power Grid
+Map everyone by formal authority AND informal influence. The CFO who signs the check matters less than the operations director who actually runs daily workflows.
+
+2. Concern Inventory
+For each stakeholder: what keeps them up at night? What's their biggest fear about this transformation? Write it down. Actually ask them.
+
+3. Alignment Score
+Rate every stakeholder from -3 (actively blocking) to +3 (champion). If you have more than 2 at -3, you don't have a technology problem. You have a politics problem.
+
+4. Engagement Plan
+-3 to -1: Address fears first, then ask for input
+0: Keep informed, invite to demos
++1 to +3: Empower as internal advocates
+
+5. Review Monthly
+Stakeholder dynamics shift. What was +3 last quarter might become -2 when budget pressures hit.
+
+The lesson: technology enables transformation. Stakeholder alignment delivers it.
+
+Need this template? Drop a comment and I'll share it with you.
+
+..
+
+By the way, I've been documenting my journey managing a $50M hospital transformation across 3 countries. If you're navigating a similar challenge, happy to share what's working. Drop a comment or DM.
+
+#PMO #StakeholderManagement #DigitalTransformation #HealthcareIT #Leadership
+
+---
+
+### TUESDAY (Mar 25) | Growth Post | PAS Framework ✅ DRAFTED
+**Pillar:** Growth (niche expertise)
+**Hook Type:** Strange
+**CTA:** Rotation A
+**Image:** linkedin/week-2026-03-23/2026-03-25.png
+
+I hired 16 Project Managers in 3 years.
+
+None of them came from PMO backgrounds.
+
+At Network International, I built an enterprise PMO from zero. 300+ concurrent banking and payments projects across 8 countries. Every PMO consultant told me to hire certified PMPs with 10 years of program management experience.
+
+I hired differently.
+
+Here's why I went with banking professionals instead:
+
+1. PMO certification teaches you how to document. Banking teaches you how to prioritize.
+When you're managing a portfolio serving 300+ banking clients worldwide, the skill isn't writing status reports. It's knowing which project creates $5M in revenue and which one creates $500K. Bankers understand this instinctively.
+
+2. PMO backgrounds optimize for process. Banking backgrounds optimize for outcomes.
+There's a fundamental difference between "we followed the methodology" and "we delivered the business result." I needed outcome-oriented people.
+
+3. The 14-month Salesforce rollout across 8 countries didn't fail because of technical issues. It failed because PMs didn't understand client psychology.
+Banking PMs understood that a CFO's risk tolerance is different from a CTO's. That matters more than any Gantt chart.
+
+The best PM I ever hired had zero formal PM training. She ran branch operations for a regional bank for 6 years. She knew how to read a P&L, manage stakeholder expectations, and deliver under regulatory pressure.
+
+The result: 170 users across 8 countries, full platform rollout on time.
+
+Sometimes the best PMO isn't a PMO background. It's business fluency with a learning mindset.
+
+What's your take?
+
+..
+
+By the way, I'm currently exploring VP/C-suite digital transformation roles across the GCC. If your network is hiring leaders who've scaled platforms from 30K to 7M daily orders, I'd love to connect. DM me or check my profile.
+
+#PMO #Hiring #ProjectManagement #Banking #Leadership
+
+---
+
+### WEDNESDAY (Mar 26) | Growth Post | SLAY Framework ✅ DRAFTED
+**Pillar:** Growth (niche expertise)
+**Hook Type:** Sexy
+**CTA:** Rotation B
+**Image:** linkedin/week-2026-03-23/2026-03-26.png
+
+Health Catalyst closed 4.6 million care gaps globally.
+
+That's their marketing number. Here's what one care gap actually looks like on the ground.
+
+A diabetic patient, age 58, walks into one of our 15 hospitals for an unrelated complaint. Our Health Catalyst-powered analytics flags that she missed her last two HbA1c checks. Her last recorded blood sugar was elevated. She hasn't been seen in 6 months.
+
+That's a care gap. It's not an abstract metric. It's a person.
+
+Now here's what closing that gap looks like in practice:
+
+1. The analytics surfaces the problem. (Health Catalyst does this)
+2. A clinical workflow routes it to the right person. (We built this)
+3. A nurse calls the patient, schedules the appointment. (This is the hard part)
+4. The results get recorded back into the system. (Most programs fail here)
+
+The technology makes gaps visible. The transformation executive builds the system that closes them.
+
+Here's what I've learned implementing enterprise healthcare data platforms at scale:
+
+The gap between buying a platform and realizing its outcomes is where most hospital transformations fail.
+
+It's not the software. It's the governance, change management, and data culture around it.
+
+In our 15-hospital network, we've reduced identified care gaps by 34% in 8 months. Not through better technology. Through better workflows that make closing gaps part of daily operations.
+
+The 4.6M number sounds impressive. But the real impact is one patient at a time.
+
+What's your experience with outcome measurement in transformation programs?
+
+..
+
+By the way, I've been documenting my journey managing a $50M hospital transformation across 3 countries. If you're navigating a similar challenge, happy to share what's working. Drop a comment or DM.
+
+#HealthCatalyst #HealthcareData #CareGaps #DigitalTransformation #HealthcareIT
+
+---
+
+### THURSDAY (Mar 27) | Sales Post | SLAY Framework ✅ DRAFTED
+**Pillar:** Sales (authority positioning)
+**Hook Type:** Familiar
+**CTA:** Rotation A
+**Image:** linkedin/week-2026-03-23/2026-03-27.png
+
+A recruiter told me I was overqualified last week.
+
+I laughed. Then I asked her what she meant.
+
+"20+ years experience, $50M programs, you've run things at Talabat and Network International. This role is for someone who's ready for that next step. You already took it."
+
+Here's what I told her:
+
+1. "Overqualified" is a risk assessment, not a compliment.
+She was really saying: "Will you be bored? Will you leave in 18 months? Will you cost us more than we're paying?"
+
+Valid concerns. I addressed each one.
+
+2. I've intentionally stayed in roles where I could keep learning.
+My current role isn't a step down. It's a step into healthcare, which I've never done before. $50M in HealthTech teaches me things $50M in e-commerce never could.
+
+3. The best leaders don't outgrow roles. They expand them.
+I've scaled platforms from 30K to 7M daily orders. I've built PMOs across 8 countries. I've deployed enterprise AI agents in live clinical operations. None of that makes me overqualified. It makes me ready to expand what this role can become.
+
+She went quiet. Then: "Can you come meet the team anyway?"
+
+Thursday.
+
+The lesson: "overqualified" is often code for "we're not sure how to use you." The answer isn't to shrink. It's to show them how your experience creates value they haven't imagined yet.
+
+Has anyone told you that you're overqualified? What did you say?
+
+..
+
+By the way, I'm currently exploring VP/C-suite digital transformation roles across the GCC. If your network is hiring leaders who've scaled platforms from 30K to 7M daily orders, I'd love to connect. DM me or check my profile.
+
+#CareerTransition #Leadership #Executive #DigitalTransformation #GCC
+
+---
+
 **Week 5 Health Catalyst post angle (Wed Mar 26):**
 Hook: "4.6 million care gaps closed. That's Health Catalyst's number. Here's what one care gap looks like in a real hospital."
 Story: A care gap isn't an abstract metric. It's a diabetic patient who missed their HbA1c check. A readmission that could have been prevented by a follow-up call. Analytics platforms like Health Catalyst make these gaps visible, but someone has to design the workflow that closes them.
