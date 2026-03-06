@@ -490,3 +490,57 @@ Require stack:
 
 Node.js v20.19.4
 
+=== Morning Brief - 2026-03-06 06:00 AM ===
+
+## Job Radar (from Tavily)
+## Answer
+
+The VP Director PMO for Digital Transformation in healthcare in UAE Dubai is a key leadership role for overseeing digital initiatives, with notable industry events and leaders shaping the sector in 2026.
+
+---
+
+## Sources
+
+- **173 director of technology Jobs in Dubai, February 2026 | Glassdoor** (relevance: 38%)
+  http://www.glassdoor.com/Job/dubai-director-of-technology-jobs-SRCH_IL.0,5_IC2204498_KO6,28.htm
+  Search Director of technology jobs in Dubai with company ratings & salaries. 173 open jobs for Director of technology in Dubai.
+
+- **25+ Senior Director Digital Transformation Jobs, Employment in ...** (relevance: 36%)
+  https://ae.indeed.com/q-senior-director-digital-transformation-l-dubai-jobs.html
+  Discover 45 Senior Director Digital Transformation job opportunities in Dubai on Indeed.com. Apply today to advance your career with top
+
+- **President and Prime Minister of the United Arab Emirates and Ruler ...** (relevance: 33%)
+  https://www.facebook.com/PMOBhutan/posts/%F0%9D%90%8F%F0%9D%90%AB%F0%9D%90%9E%F0%9D%90%AC%F0%9D%90%AC-%F0%9D%90%91%F0%9D%90%9E%F0%9D%90%A5%F0%9D%90%9E%F0%9D%90%9A%F0%9D%90%AC%F0%9D%90%9E-the-prime-minister-will-participate-in-the-world-governments-summi/1454940716001246/
+  ... Vice-President and Prime Minister of the United Arab Emirates and Ruler of Dubai from 03 to 05 February 2026. The World Governments Summit
+
+- **Meet the Steering Committee Behind MedTech World Middle East** (relevance: 26%)
+  https://med-tech.world/news/medtech-world-middle-east-dubai-2026-steering-committee/
+  # Meet the steering committee behind MedTech World Middle East | Dubai 2026. Meet the steering committee behind MedTech World Middle East | Dubai 2026. It brings together diverse expertise, regional insight, and practical experience to ensure discussions are relevant, balanced, and grounded in real-...
+
+- **30 Healthcare leaders to watch in 2026 - Economy Middle East** (relevance: 23%)
+  https://economymiddleeast.com/eme-lists/30-healthcare-leaders-to-watch-in-2026/
+  We present the leading figures who drive transformative growth of the healthcare sector in the Middle East.
+## Gmail - New Opportunities
+node:internal/modules/cjs/loader:1215
+  throw err;
+  ^
+
+Error: Cannot find module 'googleapis'
+Require stack:
+- /root/.openclaw/workspace/scripts/gmail-scan.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1212:15)
+    at Module._load (node:internal/modules/cjs/loader:1043:27)
+    at Module.require (node:internal/modules/cjs/loader:1298:19)
+    at require (node:internal/modules/helpers:182:18)
+    at Object.<anonymous> (/root/.openclaw/workspace/scripts/gmail-scan.js:1:20)
+    at Module._compile (node:internal/modules/cjs/loader:1529:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+    at Module.load (node:internal/modules/cjs/loader:1275:32)
+    at Module._load (node:internal/modules/cjs/loader:1096:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:164:12) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [ '/root/.openclaw/workspace/scripts/gmail-scan.js' ]
+}
+
+Node.js v20.19.4
+
