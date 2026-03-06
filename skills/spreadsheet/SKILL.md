@@ -1,6 +1,6 @@
 ---
 name: "spreadsheet"
-description: "Use when tasks involve creating, editing, analyzing, or formatting spreadsheets (`.xlsx`, `.csv`, `.tsv`) with formula-aware workflows, cached recalculation, and visual review."
+description: "Use when tasks involve creating, editing, analyzing, or formatting spreadsheets (`.xlsx`, `.csv`, `.tsv`) with formula-aware workflows, cached recalculation, and visual review. ALWAYS use this skill when asked to build a spreadsheet, create an Excel file, analyze tabular data, add formulas, format cells, create pivot-style summaries, or export data to CSV/Excel. Also triggers on 'make a tracker', 'build a table in Excel', 'add columns to the sheet', 'calculate totals', or any request involving structured row/column data output. Do NOT use for Google Sheets API operations (use gog skill instead)."
 ---
 
 # Spreadsheet Skill

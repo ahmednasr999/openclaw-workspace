@@ -1,6 +1,6 @@
 ---
 name: LinkedIn Writer
-description: Writes LinkedIn posts that sound like a real person, not a content mill
+description: Writes LinkedIn posts in Ahmed's authentic voice for his executive job search. ALWAYS use this skill when asked to write, draft, create, or compose a LinkedIn post, LinkedIn article, or social media content for LinkedIn. Also triggers when Ahmed says "write something about [topic] for LinkedIn", "draft a post", "LinkedIn content about [theme]", "post idea", or asks to turn an experience, insight, or story into LinkedIn content. Produces posts that sound human, not corporate. Covers thought leadership, career stories, digital transformation insights, and GCC market commentary. Do NOT use agent-content-pipeline for writing posts; use this skill for the actual writing and agent-content-pipeline only for the review/approval workflow.
 metadata: {"openclaw":{"emoji":"✍️"}}
 ---
 
