@@ -80,7 +80,7 @@
 
 | Company | Role | Location | Priority | JD Status | Job URL | Next Step |
 |---------|------|----------|----------|-----------|---------|-----------|
-| People Pathways | Chief Technology Officer | Dubai, UAE | 🟡 Medium | Needs JD | [LinkedIn](https://www.linkedin.com/jobs/view/4380340326) | Pull JD, score ATS |
+| People Pathways | Chief Technology Officer | Dubai, UAE | 88% | ✅ Applied | [LinkedIn](https://www.linkedin.com/jobs/view/4380340326) | Applied 2026-03-06 |
 | Madison Pearl | Chief Strategy Officer | Dubai, UAE | 🟡 Medium | Needs JD | [LinkedIn](https://www.linkedin.com/jobs/view/4372368161) | Pull JD, score ATS |
 | Crossover | VP Product Engineering (Remote, $400K) | Dubai, UAE | 🟡 Medium | Needs JD | [LinkedIn](https://www.linkedin.com/jobs/view/4379445718) | Pull JD, score ATS |
 | WYLE | Principal AI Systems Engineer | Dubai, UAE | 🟡 Medium | Needs JD | [LinkedIn](https://www.linkedin.com/jobs/view/4375225528) | Pull JD, score ATS |
