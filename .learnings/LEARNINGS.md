@@ -9,6 +9,12 @@
 - **Rule:** Before generating ANY CV, check session model. If not Opus 4.6, switch model or spawn sub-agent on opus46. Never proceed with CV generation on a lower model. Hard rule, zero exceptions.
 - **Promoted to:** TOOLS.md (model routing rules)
 
+## [LRN-20260306-002] Always disclose model used in CV delivery
+- **Date:** 2026-03-06
+- **What happened:** Ahmed wants transparency on which model was used for each CV.
+- **Rule:** Every CV delivery message must include "Model Used: [alias]" so Ahmed always knows. Added to executive-cv-builder SKILL.md delivery template.
+- **Promoted to:** skills/executive-cv-builder/SKILL.md
+
 ---
 
 ## [LRN-20260304-001] best_practice

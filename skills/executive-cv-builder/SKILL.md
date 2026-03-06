@@ -161,6 +161,7 @@ CV COMPLETE
 Company: [Company]
 Role: [Role Title]
 ATS Score: [X]%
+Model Used: [model alias, e.g. opus46]
 File: cvs/Ahmed Nasr - [Role] - [Company].pdf
 GitHub: [link]
 
