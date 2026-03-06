@@ -1,13 +1,20 @@
 # Last Session
-Updated: 2026-03-06 08:52 UTC
+Updated: 2026-03-06 10:52 UTC
 
 ## What We Did (Mar 6)
-- Ahmed confirmed all pending items complete: EDB Field CTO + eMagine Head of AI Advisory applied, Sheet row 16 updated, LinkedIn Weeks 3-5 done
-- Pipeline updated to 51 applied total
+- Checked GPT-5.4 availability: announced publicly, still not allowed in current runtime entitlement
+- Diagnosed Gmail integration issue: token had read-only mailbox scope for automation operations
+- Guided Google Cloud OAuth consent fix step-by-step
+- Completed OAuth callback token exchange and enabled writable Gmail scopes
+- Deployed Gmail automation end-to-end:
+  - Labels: JOB-ACTIONS, JOB-RECEIPTS, MARKET-NEWS
+  - Filters for LinkedIn alerts/newsletters/receipts and Workable/Teamtailor priority
+  - Retro cleanup: 2,652 alerts + 145 newsletters + 650 receipts archived, 84 recruiting threads prioritized
 
 ## Open Threads
 - Nuxera CEO (Amin Elhemaily): awaiting response
-- LinkedIn Content Weeks 3-5 posting flow continues on schedule
+- 24h Gmail impact validation, then optional filter tightening
+- GPT-5.4 entitlement watch remains active
 
 ---
 
