@@ -85,7 +85,7 @@
 | ~~Crossover~~ | ~~VP Product Engineering (Remote, $400K)~~ | ~~Dubai, UAE~~ | — | ❌ Skipped | [LinkedIn](https://www.linkedin.com/jobs/view/4379445718) | Ahmed decision |
 | ~~WYLE~~ | ~~Principal AI Systems Engineer~~ | ~~Dubai, UAE~~ | — | ❌ Skipped | [LinkedIn](https://www.linkedin.com/jobs/view/4375225528) | Equity-only, hands-on ML role |
 | ~~Globant~~ | ~~Tech Director~~ | ~~Riyadh, KSA~~ | — | ❌ Skipped | [Indeed](https://sa.indeed.com/viewjob?jk=c08ee77df4b01e3e) | Ahmed decision |
-| Qiddiya | Director Product Management | Riyadh, KSA | 🟡 Medium | Needs JD | [LinkedIn](https://www.linkedin.com/jobs/view/4379650786) | Pull JD, score ATS |
+| Qiddiya | Director Product Management | Riyadh, KSA | 90% | ✅ Applied | [LinkedIn](https://www.linkedin.com/jobs/view/4379650786) | Applied 2026-03-06 |
 | AECOM | Project Director - PMCM | Dubai, UAE | 🟡 Medium | Needs JD | [LinkedIn](https://www.linkedin.com/jobs/view/4377749112) | Pull JD, score ATS |
 | Confidential | Chief Executive Officer | Dubai, UAE | 🟡 Medium | Needs JD | [LinkedIn](https://www.linkedin.com/jobs/view/4379915961) | Pull JD, score ATS |
 | Mackenzie Jones Middle East | Head of Information Technology | Dubai, UAE | 🟡 Medium | Needs JD | [LinkedIn](https://www.linkedin.com/jobs/view/4378178161) | Pull JD, score ATS |
