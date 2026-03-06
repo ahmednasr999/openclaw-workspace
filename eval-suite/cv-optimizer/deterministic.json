@@ -1,0 +1,66 @@
+{
+  "checks": [
+    {
+      "name": "has_contact_info",
+      "pattern": "(email|phone|linkedin\\.com|location)",
+      "required": true,
+      "description": "Contact information present"
+    },
+    {
+      "name": "has_summary",
+      "pattern": "(summary|profile|objective)",
+      "required": true,
+      "description": "Professional summary present"
+    },
+    {
+      "name": "has_experience",
+      "pattern": "(experience|employment|work history)",
+      "required": true,
+      "description": "Experience section present"
+    },
+    {
+      "name": "has_education",
+      "pattern": "(education|degree|mba|bachelor|master|phd)",
+      "required": true,
+      "description": "Education section present"
+    },
+    {
+      "name": "has_quantification",
+      "pattern": "(\\d+%|[$€£]\\d+[kKmM]?|million|billion|daily orders|users|team|person)",
+      "required": true,
+      "description": "Quantified achievements"
+    },
+    {
+      "name": "has_action_verbs",
+      "pattern": "(led|managed|built|scaled|delivered|achieved|directed|oversaw|implemented)",
+      "required": true,
+      "description": "Strong action verbs used"
+    },
+    {
+      "name": "has_certifications",
+      "pattern": "(PMP|CSM|CSPO|Six Sigma|CBAP|MBA)",
+      "required": true,
+      "description": "Certifications mentioned"
+    },
+    {
+      "name": "has_keywords",
+      "pattern": "(transformation|digital|AI|strategy|operations|management)",
+      "required": true,
+      "description": "Industry keywords present"
+    },
+    {
+      "name": "no_generic_phrases",
+      "pattern": "(hard worker|team player|good communication)",
+      "required": false,
+      "fail_if_found": true,
+      "description": "No generic buzzwords"
+    },
+    {
+      "name": "no_em_dashes",
+      "pattern": "—",
+      "required": false,
+      "fail_if_found": true,
+      "description": "No em dashes (hard rule)"
+    }
+  ]
+}

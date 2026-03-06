@@ -1,6 +1,6 @@
-# Job Radar: 2026-03-05
+# Job Radar: 2026-03-06
 
-*Generated: 2026-03-05 06:33 UTC*
+*Generated: 2026-03-06 06:00 UTC*
 
 *Engine: JobSpy (LinkedIn, Indeed, Google Jobs)*
 

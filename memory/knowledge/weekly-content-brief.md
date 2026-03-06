@@ -1,17 +1,17 @@
 # Weekly Content Brief — Week of March 9, 2026
 
-*Generated: March 5, 2026 | Week 2026-W11*
+*Generated: March 6, 2026 | Week 2026-W11*
 
 ---
 
 ## This Week's Strategic Theme
 **"Execution Beats Ambition"** — The GCC market is saturated with vision statements. Real transformation leaders are differentiating through measurable outcomes and first-person execution stories.
 
-> **Intelligence Note:** Web search API unavailable this week. Content based on existing intelligence + trending patterns. LinkedIn login required for live post discovery.
+> **Intelligence Note:** Web search API unavailable. LinkedIn login required for live post discovery. Content based on existing intelligence + trending patterns.
 
 ---
 
-## Emerging Trends This Week (March 5)
+## Emerging Trends This Week (March 6)
 
 | Trend | Signal | Opportunity |
 |-------|--------|-------------|
@@ -100,8 +100,7 @@
 | Sunday | GCC VP/C-Suite opportunities |
 | Monday | TopMed transformation — DM for sharing |
 | Tuesday | GCC VP/C-Suite opportunities |
-| Wednesday | TopMed transformation — DM for sharing |
-| Thursday | GCC VP/C-Suite opportunities |
+| Thursday | TopMed transformation — DM for sharing |
 
 ---
 
@@ -120,6 +119,14 @@ Tie the Health Catalyst + KLAS enterprise implementation story to the agentic AI
 
 ---
 
+## Intelligence Gap Note
+⚠️ **Live LinkedIn discovery unavailable this week.** Web search API key not configured. For richer intelligence:
+- Configure Brave Search API
+- Use LinkedIn browser automation with authenticated session
+- Monitor: @AnasHidaoui @HussainBandukwala @KaneMacey @MustafaAlUsaji
+
+---
+
 ## Previous Briefs
 - [[weekly-content-brief.md|2026-W10]] — Week of March 2
 - [[weekly-content-brief.md|2026-W09]] — Week of February 23
@@ -127,7 +134,7 @@ Tie the Health Catalyst + KLAS enterprise implementation story to the agentic AI
 
 ---
 
-## Action Items for Better Intelligence
-- Configure Brave Search API for automated discovery
-- Use LinkedIn browser automation with authenticated session
-- Monitor: @AnasHidaoui @HussainBandukwala @KaneMacey @MustafaAlUsaji weekly
+## Action Items
+- [ ] Configure Brave Search API for automated discovery
+- [ ] Set up LinkedIn browser automation with authenticated session
+- [ ] Weekly monitor: @AnasHidaoui @HussainBandukwala @KaneMacey @MustafaAlUsaji
