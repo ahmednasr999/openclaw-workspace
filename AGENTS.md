@@ -70,6 +70,9 @@ Only say "I can't" after all four steps fail.
 ### Memory Rule: Text > Brain
 If it's not written, it doesn't exist. Update memory files immediately.
 
+### Sub-Agent Completion Guard: Mandatory
+Every sub-agent brief must include the Completion Guard block from TOOLS.md. Progress is not completion. Sub-agents must emit `TASK_COMPLETE` when genuinely done. If missing, the task failed and needs re-run or steering. See TOOLS.md > Sub-Agent Conventions > Completion Guard for the full protocol.
+
 ### Pipeline.md is Sacred
 `jobs-bank/pipeline.md` is Ahmed's single source of truth for job search.
 
