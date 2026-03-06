@@ -82,7 +82,7 @@
 |---------|------|----------|----------|-----------|---------|-----------|
 | People Pathways | Chief Technology Officer | Dubai, UAE | 88% | ✅ Applied | [LinkedIn](https://www.linkedin.com/jobs/view/4380340326) | Applied 2026-03-06 |
 | Madison Pearl | Chief Strategy Officer | Dubai, UAE | 85% | ✅ Applied | [LinkedIn](https://www.linkedin.com/jobs/view/4372368161) | Applied 2026-03-06 |
-| Crossover | VP Product Engineering (Remote, $400K) | Dubai, UAE | 🟡 Medium | Needs JD | [LinkedIn](https://www.linkedin.com/jobs/view/4379445718) | Pull JD, score ATS |
+| ~~Crossover~~ | ~~VP Product Engineering (Remote, $400K)~~ | ~~Dubai, UAE~~ | — | ❌ Skipped | [LinkedIn](https://www.linkedin.com/jobs/view/4379445718) | Ahmed decision |
 | WYLE | Principal AI Systems Engineer | Dubai, UAE | 🟡 Medium | Needs JD | [LinkedIn](https://www.linkedin.com/jobs/view/4375225528) | Pull JD, score ATS |
 | Globant | Tech Director | Riyadh, KSA | 🟡 Medium | Needs JD | [Indeed](https://sa.indeed.com/viewjob?jk=c08ee77df4b01e3e) | Pull JD, score ATS |
 | Qiddiya | Director Product Management | Riyadh, KSA | 🟡 Medium | Needs JD | [LinkedIn](https://www.linkedin.com/jobs/view/4379650786) | Pull JD, score ATS |
