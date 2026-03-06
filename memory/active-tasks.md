@@ -36,8 +36,8 @@
   - ALDAR Senior VP Master Planning Projects (Abu Dhabi)
   - Mashreq Manager GTB Digital Transformation PMO (UAE)
   - The Cigna Group Head of Transformation (Dubai)
-- **Alert:** Playwright script timed out at search 29/60; previous day completed successfully. Need reliability fix.
-- **Next:** Score top 5 new opportunities, prioritize eMagine application
+- **Fix:** ✅ Camofox anti-detection browser deployed (Mar 6). Replaces raw Playwright for all LinkedIn ops.
+- **Next:** Monday's scout (Mar 9) is first real test with camofox engine
 
 ### Knowledge Bank
 - **Status:** Active

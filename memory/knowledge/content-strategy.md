@@ -10,6 +10,28 @@
 **Use for Ahmed:** (1) OpenClaw skill for scoping transformation programs at next role, (2) LinkedIn angle: Shape Up + AI + $50M healthcare transformation, (3) Hook pattern for pipeline ripple-effect checks
 **Status:** Banked. Trigger: new role start or content gap
 
+## Deployed: Camofox Anti-Detection Browser (Mar 6, 2026)
+**Source:** https://x.com/pradeep24/status/2021319785947316490 + npm camofox-browser
+**What:** OpenClaw plugin wrapping Camoufox engine for stealth browsing. REST API + CLI.
+**Action taken:** Installed v2.0.4, systemd service running on port 9377, rewrote JD fetcher + scout to use it, Playwright fallback retained. LinkedIn auth confirmed working.
+**Status:** DEPLOYED. First real scout test: Monday Mar 9.
+
+## Banked: Awesome CTO Resource Repo (Mar 6, 2026)
+**Source:** https://x.com/Franc0Fernand0/status/2021544169085313076 + https://github.com/kuchin/awesome-cto
+**Author:** Fernando (@Franc0Fernand0), repo by @kuchin
+**Engagement:** 2,424 likes, 25 replies
+**What:** Curated GitHub repo of CTO/VP-level resources: software dev processes, technical hiring, software architecture, product/project management, career growth.
+**Use for Ahmed:** Interview prep resource for tech-heavy roles (FAB VP Tech, Aiwozo, similar). Cherry-pick specific articles to prep talking points on architecture decisions, scaling engineering orgs, technical hiring frameworks.
+**Status:** Banked. Trigger: pre-interview prep for CTO/VP Technology roles.
+
+## Banked: Self-Optimizing AI Agents / Repo Optimizer (Mar 6, 2026)
+**Source:** https://x.com/koushik77/status/2021972025372553444 + https://github.com/ksenxx/kiss_ai
+**Author:** Koushik Sen (@koushik77), KISS AI framework creator
+**Engagement:** 258 likes, 14 replies
+**What:** 69-line Python script that points a coding agent at its own repo. Agent self-optimized overnight, cut its own cost by 98%. Key concepts: GEPA prompt optimizer (auto-tunes prompts for cost/quality), RelentlessAgent (self-evolved to reduce cost over time), "point the agent at itself" pattern.
+**Use for Ahmed:** (1) LinkedIn post angle: "I let my AI optimize itself overnight" mapped to real OpenClaw self-healing agent + model routing audit story, (2) Technique: automated prompt tuning loop for cron/sub-agent briefs (run 10 ways, pick cheapest that maintains quality), (3) Expands our self-healing pattern from error recovery to cost optimization
+**Status:** Banked. Trigger: LinkedIn content gap or when optimizing cron fleet prompts.
+
 ## Core Positioning
 - **Ahmed's angle**: Digital Transformation Executive with real execution credibility (not consultant)
 - **Differentiation**: $50M PMO across 15 hospitals, HealthTech implementation, GCC-scale delivery
