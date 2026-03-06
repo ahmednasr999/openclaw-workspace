@@ -87,7 +87,7 @@
 | ~~Globant~~ | ~~Tech Director~~ | ~~Riyadh, KSA~~ | — | ❌ Skipped | [Indeed](https://sa.indeed.com/viewjob?jk=c08ee77df4b01e3e) | Ahmed decision |
 | Qiddiya | Director Product Management | Riyadh, KSA | 90% | ✅ Applied | [LinkedIn](https://www.linkedin.com/jobs/view/4379650786) | Applied 2026-03-06 |
 | ~~AECOM~~ | ~~Project Director - PMCM~~ | ~~Dubai, UAE~~ | — | ❌ Closed | [LinkedIn](https://www.linkedin.com/jobs/view/4377749112) | No longer accepting candidates |
-| Confidential | Chief Executive Officer | Dubai, UAE | 🟡 Medium | Needs JD | [LinkedIn](https://www.linkedin.com/jobs/view/4379915961) | Pull JD, score ATS |
+| Confidential (Medical Dist.) | CEO / COO | Dubai, UAE | 72% | ✅ Applied | [LinkedIn](https://www.linkedin.com/jobs/view/4379915961) | Applied 2026-03-06 |
 | Mackenzie Jones Middle East | Head of Information Technology | Dubai, UAE | 🟡 Medium | Needs JD | [LinkedIn](https://www.linkedin.com/jobs/view/4378178161) | Pull JD, score ATS |
 | Discovered MENA | Head of Payment | Dubai, UAE | 🟡 Medium | Needs JD | [LinkedIn](https://www.linkedin.com/jobs/view/4378910539) | Pull JD, score ATS |
 | ITCAN | Director of Product Management | Dubai, UAE | 🟢 Low | Needs JD | [Indeed](https://ae.indeed.com/viewjob?jk=65b83f3906e882f5) | Pull JD, score ATS |
