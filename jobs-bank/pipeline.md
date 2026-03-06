@@ -90,7 +90,7 @@
 | Confidential (Medical Dist.) | CEO / COO | Dubai, UAE | 72% | ✅ Applied | [LinkedIn](https://www.linkedin.com/jobs/view/4379915961) | Applied 2026-03-06 |
 | Mackenzie Jones Middle East | IT Director | Dubai, UAE | 90% | ✅ Applied | [LinkedIn](https://www.linkedin.com/jobs/view/4378178161) | Applied 2026-03-06 |
 | Discovered MENA | Head of Payments Operations | Dubai, UAE | 82% | ✅ Applied | [LinkedIn](https://www.linkedin.com/jobs/view/4378910539) | Applied 2026-03-06 |
-| ITCAN | Director of Product Management | Dubai, UAE | 🟢 Low | Needs JD | [Indeed](https://ae.indeed.com/viewjob?jk=65b83f3906e882f5) | Pull JD, score ATS |
+| ITCAN | Director of Product Management | Dubai, UAE | 85% | ✅ Applied | [Indeed](https://ae.indeed.com/viewjob?jk=65b83f3906e882f5) | Applied 2026-03-06 |
 
 
 ---
