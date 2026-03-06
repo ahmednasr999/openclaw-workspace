@@ -159,10 +159,34 @@ Rule: Sub-agents write to output files only. NASR merges into shared memory. Nev
 
 When spawning a sub-agent task, always:
 1. Specify the model explicitly using alias
-2. Scope the task narrowly — one output, one file
+2. Scope the task narrowly, one output, one file
 3. Tell it exactly where to write output
 4. Explicitly include: "Do NOT update MEMORY.md, GOALS.md, or active-tasks.md"
 5. NASR reviews and merges output after task completes
+6. **Include the Completion Guard** (see below)
+
+### Completion Guard (Inspired by Taskmaster)
+
+**Core principle: Progress is not completion. A convincing summary of partial work is still failure.**
+
+Every sub-agent brief MUST include this block at the end:
+
+```
+COMPLETION RULES:
+- You are NOT done until every part of the task is finished. Partial progress is not completion.
+- Do not summarize what you "would do next." Do the work now.
+- Do not stop because the task is "mostly done." 100% or not done.
+- If you hit an error, fix it or try an alternative. Do not report the error and stop.
+- When genuinely complete, end your response with: TASK_COMPLETE
+- If TASK_COMPLETE is missing from your output, the task is considered failed.
+```
+
+**NASR enforcement:**
+- When reviewing sub-agent output, check for `TASK_COMPLETE` token
+- If missing: the agent stopped early. Re-run or steer with: "You stopped before completing. Continue from where you left off. Do not restart. Do not summarize what was done. Just finish the remaining work."
+- Lighter models (Haiku, MiniMax) quit early more often. Compensate by giving explicit step-by-step instructions and smaller scopes.
+
+**Exceptions:** Research/analysis tasks where the deliverable is a summary are exempt. The guard applies to tasks with concrete outputs (CVs, scripts, file edits, data processing).
 
 ### Recommended Model per Agent Role
 
