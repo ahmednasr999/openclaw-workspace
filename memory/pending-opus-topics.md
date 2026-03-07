@@ -47,6 +47,13 @@
 **Trigger to revisit:** After new role start and clear time-value threshold.
 
 ### P3
+## Local LLM on Mac Mini M5 (Ollama + Node Pairing)
+**Added:** 2026-03-07
+**What:** Run Qwen/Llama locally on Mac Mini M5 via Ollama, pair as OpenClaw node via Tailscale. Use for routine tasks (crons, heartbeats, lookups) at zero API cost.
+**Why parked:** Ahmed hasn't bought the Mac Mini M5 yet.
+**Trigger to revisit:** When Ahmed purchases the Mac Mini M5.
+
+### P3
 ## Voice-Activated Cockpit Dashboard
 **Added:** 2026-02-28
 **What:** Local speech-to-text command layer (offline first).

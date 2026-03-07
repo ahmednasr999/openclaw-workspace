@@ -14,6 +14,18 @@ This folder is home. Treat it that way.
 
 **Confirm startup:** "✅ Session loaded: [date]: [1 line summary]"
 
+## Memory Protocol (CRITICAL)
+
+**Before doing anything non-trivial, search memory first.** This shifts the agent from "I'll guess based on provided context" to "I will check my notes before I act."
+
+When to use memory_search:
+- Before answering questions about past work, decisions, dates, people, or preferences
+- When asked about previous conversations or tasks
+- When the user mentions something that happened in a past session
+- When uncertain about context or preferences
+
+This rule is non-negotiable. The memory files (MEMORY.md, memory/*.md) are useless if the agent doesn't check them.
+
 ## Critical Rules (ALL Sessions, ALL Models)
 
 ### Session Close: Mandatory Flush
@@ -52,6 +64,12 @@ Waiting for: "go ahead"
 
 ### No Em Dashes: Ever
 Never use em dashes (: ) anywhere. Use commas, periods, colons instead. All models, all output.
+
+### Telegram Formatting Rule
+Default to Telegram-safe formatting: bullets and short sections.
+Do not use Markdown tables unless Ahmed explicitly asks for a table.
+When alignment matters, use plain code blocks with compact rows.
+If a response was already sent in a broken format, resend in Telegram-safe format immediately without waiting to be asked.
 
 ### Always Recommend: Never Deliver Information Alone
 Every analysis, finding, or option must end with: "My recommendation: [action] because [reason]."

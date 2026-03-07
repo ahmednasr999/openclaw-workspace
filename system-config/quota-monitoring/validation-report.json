@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-06T06:00:53.898109+00:00",
+  "timestamp": "2026-03-07T08:02:49.515588+00:00",
   "mode": "quick",
   "exitCode": 0,
   "summary": {
@@ -31,8 +31,8 @@
       "name": "Kimi K2.5",
       "status": "ok"
     },
-    "openai-codex/gpt-5.1": {
-      "name": "GPT-5.1",
+    "openai-codex/gpt-5.3-codex": {
+      "name": "GPT-5.3-Codex",
       "status": "ok"
     }
   }

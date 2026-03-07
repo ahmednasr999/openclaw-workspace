@@ -1,6 +1,14 @@
 # Content Strategy — LinkedIn Intelligence
 
-*Last updated: March 6, 2026*
+*Last updated: March 7, 2026*
+
+## HIGH PRIORITY: Why your OpenClaw agent forgets everything (and how to fix it)
+**Source:** https://youtu.be/oN__gKJnPls
+**Author:** VelvetShark
+**What:** 15-second teaser on OpenClaw memory/context issues and the 3-layer memory system that fixes it. Covers: built-in settings most users never tune + advanced semantic search across knowledge base.
+**Relevance:** CRITICAL for our current issues: (1) Telegram messaging broken - can't resolve chat IDs, (2) Memory Index cron failing - timeout after 300s, (3) session context management
+**Comments:** "masterclass", "changes strategies in a major way", "I now know why my OpenClaw does what it does"
+**Status:** HIGH PRIORITY. Must watch and apply fixes to our system.
 
 ## Banked: Shape Up Skills for AI Agents (Mar 6, 2026)
 **Source:** https://x.com/nurijanian/status/2024804843689582711 + https://github.com/rjs/shaping-skills
