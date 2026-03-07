@@ -114,7 +114,7 @@ declare -A MODEL_PROVIDER=(
   ["anthropic/claude-sonnet-4-6"]="anthropic"
   ["anthropic/claude-opus-4-6"]="anthropic"
   ["moonshot/kimi-k2.5"]="moonshot"
-  ["openai-codex/gpt-5.1"]="openai-codex"
+  ["openai-codex/gpt-5.3-codex"]="openai-codex"
 )
 
 declare -A MODEL_NAME=(
@@ -123,7 +123,7 @@ declare -A MODEL_NAME=(
   ["anthropic/claude-sonnet-4-6"]="Claude Sonnet 4.6"
   ["anthropic/claude-opus-4-6"]="Claude Opus 4.6"
   ["moonshot/kimi-k2.5"]="Kimi K2.5"
-  ["openai-codex/gpt-5.1"]="GPT-5.1"
+  ["openai-codex/gpt-5.3-codex"]="GPT-5.3-Codex"
 )
 
 FALLBACK_ORDER=(
@@ -132,7 +132,7 @@ FALLBACK_ORDER=(
   "anthropic/claude-sonnet-4-6"
   "anthropic/claude-opus-4-6"
   "moonshot/kimi-k2.5"
-  "openai-codex/gpt-5.1"
+  "openai-codex/gpt-5.3-codex"
 )
 
 # ── Key Format Validators ────────────────────────────────────────────────────
@@ -476,7 +476,7 @@ models_info = {
     "anthropic/claude-sonnet-4-6":   {"name": "Claude Sonnet 4.6", "status": "${MODEL_STATUS[anthropic/claude-sonnet-4-6]:-unknown}"},
     "anthropic/claude-opus-4-6":     {"name": "Claude Opus 4.6", "status": "${MODEL_STATUS[anthropic/claude-opus-4-6]:-unknown}"},
     "moonshot/kimi-k2.5":            {"name": "Kimi K2.5", "status": "${MODEL_STATUS[moonshot/kimi-k2.5]:-unknown}"},
-    "openai-codex/gpt-5.1":          {"name": "GPT-5.1", "status": "${MODEL_STATUS[openai-codex/gpt-5.1]:-unknown}"},
+    "openai-codex/gpt-5.3-codex":    {"name": "GPT-5.3-Codex", "status": "${MODEL_STATUS[openai-codex/gpt-5.3-codex]:-unknown}"},
 }
 report["models"] = models_info
 
