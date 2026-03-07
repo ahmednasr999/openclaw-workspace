@@ -162,8 +162,9 @@ When spawning a sub-agent task, always:
 2. Scope the task narrowly, one output, one file
 3. Tell it exactly where to write output
 4. Explicitly include: "Do NOT update MEMORY.md, GOALS.md, or active-tasks.md"
-5. NASR reviews and merges output after task completes
-6. **Include the Completion Guard** (see below)
+5. Explicitly include: "Telegram-safe output only. No Markdown tables unless Ahmed explicitly asks for a table"
+6. NASR reviews and merges output after task completes
+7. **Include the Completion Guard** (see below)
 
 ### Completion Guard (Inspired by Taskmaster)
 

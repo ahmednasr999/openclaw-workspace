@@ -3,6 +3,8 @@
 *Last updated: 2026-03-05 13:37 UTC*
 
 ## 🔴 URGENT
+- [ ] **Telegram messaging broken:** Cannot resolve chat IDs (tried @heartbeat and @ahmednasr). Need to fix config or get numeric chat ID.
+- [ ] **Memory Index cron job failing:** Script timeout (300s), 2 consecutive failures. Root cause: Agent session lacks exec/process tools to run QMD commands. Fix: Add exec + process capabilities to the agent config for Memory Index job.
 - [x] ~~Retry Sheet row 16 update: K16="Applied", L16="2026-03-05"~~ ✅ Done Mar 6
 - [x] ~~Apply to remaining CV-ready jobs: EDB Field CTO, eMagine Head of AI Advisory~~ ✅ Both applied Mar 6
 - [ ] **Nuxera.AI — Sr PM AI Healthcare (Cairo):** CEO Amin Elhemaily responded directly on LinkedIn. Ahmed messaged salary-oriented stance. Awaiting Amin's reply. If positive, push for in-person meeting during Ramadan (both in Cairo). Research Nuxera before any meeting.
@@ -13,7 +15,12 @@
 
 ## 🟡 In Progress
 
-### Advisory Board Implementation
+### Memory Index — Daily (Mar 6)
+- **Status:** 🔴 ESCALATED
+- **Issue:** Persistent timeout (300s), qmd command needs exec access
+- **Options:** (a) add exec tool access to cron, (b) increase timeout limit, (c) run qmd manually
+- **Command:** `cd /root/.openclaw/agents/main/qmd && XDG_CONFIG_HOME=... npx qmd update && npx qmd embed`
+- **Next:** Awaiting Ahmed's decision
 - **Status:** ✅ STARTED Mar 2
 - **Progress:** Phase 2 daily and weekly engines executed successfully
 - **Next:** Monitor scheduled runs and tune stale inputs

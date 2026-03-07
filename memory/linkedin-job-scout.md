@@ -1,114 +1,104 @@
-# LinkedIn Job Scout — 2026-03-06 Latest Run
+# LinkedIn Job Scout (Camofox) - 2026-03-07 08:21 UTC
 
-**Status:** Last run attempt: Fri Mar 6, 06:00 UTC | Previous successful: Wed Mar 5, 14:45 UTC
+> Searched 60 combinations | Found 940 unique jobs | Completed 60/60 | Duration: 807s
 
-## Summary
-- Searches: 60 (10 keywords × 6 GCC countries)
-- Unique Jobs Found: 56
-- Top Categories: VP Digital Transformation (10), Director Digital Transformation (9), PMO Director/CTO (7 each)
+## Unique Jobs: 44
 
-## Alert: Script Timeout
-Playwright-based script (linkedin-scout-v2.py) terminated at search 29/60 on this run. Previous day run completed successfully with 56 jobs. Recommend:
-1. Increase timeout/add retry logic to v2 script
-2. OR: Use simpler curl-based script with more aggressive rate limiting
-3. Consider breaking search into smaller batches per location
+### United Arab Emirates (25 jobs)
 
-## Key Opportunities (Status Review)
+- **Graduate Project Manager - Emirati National
+Graduate Project Manager - Emirati National** at WSP in the Middle East (Dubai, Dubai, United Arab Emirates (Hybrid)) - [View](https://www.linkedin.com/jobs/view/4363289952/?eBP=CwEAAAGcx1eXky_0V6ZsS7od23sRRYa4RE--LjcP5OR8cmSdAz3o-tVfykacVQHV5ezeux8jCB3WB1C8lE8NZ9ltFDAmjNLm2ma1kHgHKSQnFZRpnU-oZHdD-zMOzE-yxEQ7xy-d_17qSiOV3jBqTiLwNFgThfsPqUv8xjjNtJQVk7F9IkLd2XzynGTMv8c3ae_2doSb11ohHbCPEn2vfX06jfxxV0StFTUAUv-KUQGHU1qXurISZo_Cr4bnmM_I4jMXxtGAmpAasYPGt9frLHbgmrwyu253DsxHrc2vAf2mcymlNx9QeGDL-1xXNuOyhmZSRZBpa9BAcRj54uFe86HHbtXH4HcD92iuyvxVTCFCBdw5T53xa9vno8mvr4aRtbFwUYKYKF7XKiuRDGNDX4yQuKAWTwWvUAr_SLVu-qI3m5w74vLcotvMAB9Vmo5g-X23a0kV9R65TKVslqGVfxR7wbri8LWTzs0Q4PC_QQls-PrxANnj2tNFNLyqF1GsyDUOPEwrRIv6oBzytvgT3J3h39ufkR_K5HgfrYt_1f4L&refId=qQInnE%2BMgWGFmyipgTtxyA%3D%3D&trackingId=hdtvHWkcHlpos01%2F%2BZaZtw%3D%3D&trk=flagship3_search_srp_jobs)
+- **Assistant Project Manager Internship
+Assistant Project Manager Internship** at YKONE (Abu Dhabi Emirate, United Arab Emirates (On-site)) - [View](https://www.linkedin.com/jobs/view/4380417133/?eBP=CwEAAAGcx1eXk-Onv3sJ9BZ3BYFzD91hmXOT-e44Y6GILYBdwdFuI8HcDXKp1g5wOCvzbH9yS1ucdwpEVYW0xBf0_8Cp0OguVoo0879nXFuhmtSm9PAyXWMCtwWUrFf-XaAe8dbzjpS-GYnGvHtidEgcaYECbfgsNZ_u5zHFhlacIoHqaxiZEi6YQr2SuYF7DGP3j3iftW3KgJp4kvZ15tFWCutTeOCMhIwVWe0Dx0lT8WSbg1fVWEbMP8DqwKSkGI4WcxhHGoZPGI3_JHI971G3zrXKt4Ckh4u3DINbBNq6Itm7isrtElxb7TLa8ZA1t77KF3gvA0D0w2g4YXJyx_wIMh18wPaIeVqkXU_gZKlDFtd0iujK4bVeVV-qFwtSU9z9GPRVKYIgRUvQ2wbT2PXAN8NKuWU2fu0jzhdCL2gxQLlDly4EFTV4iQdaV-rCTuoanX-yOgS8RZ4psTjAsg-87M1A2yN_bA4wmnVxbmolN62VgsxK_-ECeH-n_YVTe2iwxwhisgYsUqtqHu0yTOb-EttSkYT_gNNmfGdYJkEjdCo&refId=qQInnE%2BMgWGFmyipgTtxyA%3D%3D&trackingId=xqv3kpFGYt7o4urxzJX8HA%3D%3D&trk=flagship3_search_srp_jobs)
+- **Director /Associate Director Enterprise Project Management Office** at Confidential (Dubai, United Arab Emirates (On-site))
+- **مدير إدارة البرامج والفعاليات** at Dubai Careers - A Smart Dubai Initiative (Dubai, Dubai, United Arab Emirates (On-site))
+- **Senior Program Manager, Network Health / Trust & Safety** at Amazon (Dubai, Dubai, United Arab Emirates)
+- **Data Analysis Trainee
+Data Analysis Trainee** at Medlytics (United Arab Emirates (Remote)) - [View](https://www.linkedin.com/jobs/view/4381341713/?eBP=NOT_ELIGIBLE_FOR_CHARGING&refId=HGNwwN4U2sTHJyzjwy%2FboQ%3D%3D&trackingId=vaviTJTYYmJUn5%2FnH8FDZA%3D%3D&trk=flagship3_search_srp_jobs)
+- **Graduate Program
+Graduate Program** at Mercedes-Benz Middle East (Dubai, United Arab Emirates (On-site)) - [View](https://www.linkedin.com/jobs/view/3853462305/?eBP=CwEAAAGcx1jsz9ngnb5oWuDYwzyZ5r9HRt89ISaWq_aoN75qRPYahTDDeYSlT1M6bZ9Id-lL55JZp6WmozAZ_XvO-nYWvBtndzjrIIIrc4wtC7Oz7zU624_l50Q65oP_0SWq7oKc0aotoxbbbXZPZo_ZC3KAyCE719uRvQBzBNuFHK6Fwuoe1YOvS8VslNI2XxzzZcFJNhD8Pb7Qs0Xu2NiAajEH5JHF46w9l4122XlxZVlc970hJTnsifU78vijTYQpOQQg3vH4iAMlrcE5Lj3uNAhJ63fe0ICZ3wn-7HGIiY4OH9x0_7kKxSgM6wML4tCR6-t9U29pEQno5fLCecC4Lv37RDeZvEAkSiyUx8BWplddruNjBQGCrSSxh_dILR7cCyexAhmLVtNok9RvAG4S-oYBhRwtOlEkTSZkauCavBxF2j05a7qSbm72fV32txbNWaVc7GkYkPxz63TuftgijuVpBoUDMyh077nlBVvCUfmEX-nKy8Nn1r6AnmsJMHLn2PgiOIWBU-5_2LJouy6_waBiBASI&refId=HGNwwN4U2sTHJyzjwy%2FboQ%3D%3D&trackingId=EuHQUZphFtL6xnTX1XLt%2Fg%3D%3D&trk=flagship3_search_srp_jobs)
+- **e& NAFIS Programme
+e& NAFIS Programme with verification** at e& UAE (United Arab Emirates) - [View](https://www.linkedin.com/jobs/view/4379230360/?eBP=CwEAAAGcx1jsz_eC1pL-uaMCJlYieQkC_RZ4Q78EE-_r5vNcMl2Owfn673fO8HjaHLfWZgqbleNqGNjxVGWM3KxTqcdQVSYBk1rEKLgZll5M51_fO-3Ucu90_ESpN-0qmBUYvBgS1GYZzo-lku-WsdARIPFhRQT7ZX74oHuqw8CERiHTQPueShn_he1h-sOzzD4XBoguRmwtJj6FGckTdIrfY6Gu6cC__CG-MJfP4rpvZHDm-Km8S0nZS76LkjZ2jmyQy2NdmLDoovmeWFcNAUcxK8JpRaEX88VHPHXevwKn18l47bdQBboDTSjTlHo71vmxmBoruTq8Hdanbvlc9kCgB3RyzOduWqqy4zOFbR8a59altF7SubDJBVDmIj7I09L0zQA68Obn6lpUURc3_gzDBgWx4bm6AWFLw-78wtF_a_b9gG7jRg9-M0ue-HYMRdR76dzGOYXGiphFFHvzMtqOoS3Al6dRXyjdW0Cnfxe3sBE-3ahEnKGZiu2LSSNxaqnvCqq0-GDoPA452IQezWKGQ1vInH3lXiYaQzjv02bbzbhsaQ&refId=HGNwwN4U2sTHJyzjwy%2FboQ%3D%3D&trackingId=gMZEN3r%2B424jUm8%2BAuYvhg%3D%3D&trk=flagship3_search_srp_jobs)
+- **Digital Marketing - Emirati Intern
+Digital Marketing - Emirati Intern with verification** at Majid Al Futtaim (Dubai, United Arab Emirates (On-site)) - [View](https://www.linkedin.com/jobs/view/4376688477/?eBP=CwEAAAGcx1jsz9EtY26ISqAxAh_VSektIEM_E9Ud0_vqJtR3-rUgOL7lGJbGLrKAb4Gt1qDwIz_crfNHJWR23R9_ON5dnAVjkxu5p5TcOK8FWhsK2NhecMXS7SQUQtlKFKZ7hPSRX554VbTcD31aLwPlVQWm6MW1G4SebI0HtCUy-OHIZHHPet7QpV1aH6SZkSIzGDwxzInOc_i2dMZvF_5vUoehSsJWKMYi9pvn_vYsM3VpfrpP7hZGw_9Mbe2i-b45YUcFcJLVcuXnZo3awePGYCASfFKe89QBDxc9R1miLlx-qJpfTuN2V7iyBGpXMfypHCN6l_CAoHzWqEzdjmUWuHwgr578H_hSPrEXMzQcPLRtW60fnldOh13tiqm6ykNyYoW96dVp0BuEB_Wv_lgDvBMdIGsJZcXqH4alY0a2Vbyx5g8cb9KKcT9fHWEDJH-81TW92gSab7Y-YDyyYFruBM5kNxWxjALvjwGKJkM8o3k6cuDoQAHPqGF0Nvv5Jdtp3Ywajc2Okm2iHglyKdL-B1FZwZY-ldUg2GApXA&refId=HGNwwN4U2sTHJyzjwy%2FboQ%3D%3D&trackingId=9kc%2B9G64UpJu38LfrHb5Cw%3D%3D&trk=flagship3_search_srp_jobs)
+- **Marketing Intern
+Marketing Intern with verification** at Keeta (Dubai, United Arab Emirates (On-site)) - [View](https://www.linkedin.com/jobs/view/4379623993/?eBP=CwEAAAGcx1jsz6vvh2K2k74rG5mAsLTsE00H3K7mRdIedBpKhR93jtKeUXyiOiHkcwTHffbAGT0K4t1R4gx6X6zg0MoXaTGdZ3YEGm94Y3mCkGqtRywF4DHSe_V5LHT4U3g-8NOO1-3tGZ0MYDvNJ1ko5Xz2nWdurilotGdX9n4AqYYkzc4SUavHfKEuZJYgcJT5MJlTLO_GB0pw3oOGG1XORuhxXXpH7tZg_dh1fp-QHR1pTxgsHVjXikASO7TRJT5p9NiMZjxmcqJkMNrB6ZUuezZoEMidrzknBB0J7vEOkPs3z6iNavWH7TqVtl-x9zsozQ8yGqnQrTmhyopUxylL9Uzre1WFVbMvfGDu0qGZXPcuz0Kwyo1qoFkYSMX92HMjeFcwx6UyOI_zBfblKNYM-PP7HxL4uWyuje6vrAKSFw_KIJysgpWLWBEYYvN8y3KmJ_Nns2GC6yhXhWuQbq4S-h18xXZfz5vIHYPhDwOUcquW4V1E_nlnn5W--64cF_b_PP2zVtqTbo9mK-cGKQ&refId=HGNwwN4U2sTHJyzjwy%2FboQ%3D%3D&trackingId=nXQWIliRXvksHuYIYijNzQ%3D%3D&trk=flagship3_search_srp_jobs)
+- **Human Resources Intern
+Human Resources Intern** at Volkswagen Group Middle East (Dubai, United Arab Emirates (Hybrid)) - [View](https://www.linkedin.com/jobs/view/4379342457/?eBP=CwEAAAGcx1jsz3ZVjEUs3y_wjZrX9-epmcUVe4E7P-2r05Rza5ZpWHS8ibmZHI2el0yi08EY_AMCPgRbWS9B5Gd5EVfF0wZyYVZ4v1Om7e5HtHEsIVX0dlBaIyZsyFlJ94-IEO-sXbNml-I7i3EIrAdynj4ntneYmAZdZcc6WROurWWka9Hp4CZzBn_lvxdIrCEY0RguMnUdp0NzC6EcgjfXuM9rhd7-HMqHXW_4xT5v8oE6E4lAjCCHPWRGyB-FEYpnZ_Y5A0uLfgUylFScpUtFNl0rx_m9KkyDMlEDZd-Nk-g5rZdphloVVoTC5GbwuO7R4xlOlv97bfqYXcaHr3zBypTyRAGyQ1yXr0_vUvvdOcEW89SxtlVX_hme7iOAoEMLj0m85eDAzwQkHkpMZJNB3_tHB-crzhqUcVxAKOWZ-wdx52e7UCVGYe18HoWR6WXbJXknYAXr4C1NvhI_qGZy9Hkr9Dcb1AonzBRtk9CPSR8Kw0rgHbAL7wifA4wvoDMLiY6fM9RuU5EMAOnXYA&refId=HGNwwN4U2sTHJyzjwy%2FboQ%3D%3D&trackingId=VP8Zfcaleo3g4WNUgrDMew%3D%3D&trk=flagship3_search_srp_jobs)
+- **Head of Generative Performance (Residency / Fellow)
+Head of Generative Performance (Residency / Fellow)** at sandan AI (United Arab Emirates (Remote)) - [View](https://www.linkedin.com/jobs/view/4381129030/?eBP=NOT_ELIGIBLE_FOR_CHARGING&refId=HGNwwN4U2sTHJyzjwy%2FboQ%3D%3D&trackingId=xGKFkSrdRtPKkfPjdYm3uQ%3D%3D&trk=flagship3_search_srp_jobs)
+- **Head Of Generative Performance Residency Fellow
+Head Of Generative Performance Residency Fellow** at TALENTMATE (Dubai, Dubai, United Arab Emirates (On-site)) - [View](https://www.linkedin.com/jobs/view/4381155152/?eBP=NOT_ELIGIBLE_FOR_CHARGING&refId=HGNwwN4U2sTHJyzjwy%2FboQ%3D%3D&trackingId=WxiuZm2o3Mfd2OOKd2NsUQ%3D%3D&trk=flagship3_search_srp_jobs)
+- **Internship, New Business Development
+Internship, New Business Development with verification** at Vision Invest (Dubai, United Arab Emirates (On-site)) - [View](https://www.linkedin.com/jobs/view/4376648256/?eBP=CwEAAAGcx1jsz_kB2PPW9RitLd0toSyoBlHpfN3_BlhsJ8gQR9R6B3f0fI29sYB3P9ZJXkg90vaDoSCvoAFZufO7NP1UPrgEUs0-Sov7f5Zn9Y1Jf2-9ZG5hQaXowQ3I5xnLRzFppbBbyVI2raTSKOQzD8Ek7hUG_0EEA29SrdNVG496qVQEDQu1HpAFjcfFDshlw9LG7UHQPV4aZGw0gAnZgFbzKB5HbrvKk0eSUJea1IMc1W5MTBpOMGtfmC0vEPpu6B788InQtwbyZz6qmnGIVHaeLt5T2VHnriz2c_NPhXD-WjiBtlge9WBi5aphkxaqPXi5urkgTlKFsZoyt2bL_a1wlVi6asP6bVcesx-5cyMd_ejO4WFESZnyJnIknSFDWJPVOUYWslZZ914ydKuDRTNKvd61HaE0xExRqxJJFgCUbt2X6-ClfUWO_eRZqNzq9uVaAclizOSwpMHWZlzjMbsnmSsoqxIhKaDSRoskO2vhNEQaYzDFgOkIYAlXqtRRCrLOIh_kJ4T6DJzDqY2eKArPayjM53UbF-Gewt3W8Ws&refId=HGNwwN4U2sTHJyzjwy%2FboQ%3D%3D&trackingId=HfuowciIFee0c1GJKv779A%3D%3D&trk=flagship3_search_srp_jobs)
+- **UAE Cadet
+UAE Cadet with verification** at flydubai (Dubai, Dubai, United Arab Emirates (On-site)) - [View](https://www.linkedin.com/jobs/view/4311349829/?eBP=CwEAAAGcx1jsz3UY5DrL9dvHUXCZx7i0nBg4MwBT4pUZlYzjGLTyXJFGv3allZ_MkOjZ1PgrWMQ2ZCv-Eu3C0t5v9OOfAAY4KhCNpA5v1neZ1O53fi6NSHfplUkenN5w6DsinI9YyAXPZGl0696U5VTrdPT_cT3t04H2cpIghzQfKP3BYo73bWD9bCx879KuyQS55_KLCrthS1yOabvEg7khQeq915Oqr4Ou6c7mc6wdwOqTfZRBUTa689tWJf5KPeBI0I81eXuzOEkTNITWqCWSzPuWagLS8t80mQECfz4YnqQD6VU0FCcvEGyJJ-q8MXxU_VkjdMThJo5JWxuvzVaekSqy-WB_Uf1KGpYF_xlnYIfvdqGXCno3rZzrmPxpP0KHoDaCj8aMnI2AN7Gmp8rbALENcqtXv7jDpCqpoYnsBtoB4Z0L6pUlhaVxl7JSABoN3Ey_cc4_4-O5YlmLENTjniQ8l18B3eCRE0dGKOOblx_Y_Ewc6C2PG3NI5EU3xAcnxn0ggDCDcx8KNUZiBcn4qjjFeugpCkycklUhS0KQrno&refId=HGNwwN4U2sTHJyzjwy%2FboQ%3D%3D&trackingId=EgX2uuDNpnzFIXAX%2BbiGSw%3D%3D&trk=flagship3_search_srp_jobs)
+- **Arabic Language Expert
+Arabic Language Expert** at Alignerr (United Arab Emirates (Remote)) - [View](https://www.linkedin.com/jobs/view/4382346857/?eBP=NOT_ELIGIBLE_FOR_CHARGING&refId=Dv6ZXduXg4oAcCJhl5fxaw%3D%3D&trackingId=GStzCy0NnS4UXwUd0C2SOA%3D%3D&trk=flagship3_search_srp_jobs)
+- **Intern, Communication
+Intern, Communication with verification** at APCO (Dubai, Dubai, United Arab Emirates (On-site)) - [View](https://www.linkedin.com/jobs/view/4360439834/?eBP=CwEAAAGcx1xesP4VTN6LZmmUPa3p2G0huH_TKvflXYHwBB_FjcUL1YTWqFlD84bAH04Wrl1G41uZ-S0G22Yk96Es39yH1y3rvEewDPLn_U_2auZrMbdbKWOP7qzz5era55mA_0B0mv0vr7LvHNbcgxnjvy7XGOweuHcBpAvq1PkF1cDw4tAmgDls8Xl1r2nW_sPhWwZFTudXFBV6SxLMCb0Asui0Cv7uIFcCMWNeKLfcZAmBiETdf5ecVnuht8bghe1SypSkVWcxRwJqh6lmFc6e-GyFzRRnq_ARUSPdBzerowU3X10DAn8-eQGn-952saE7blYtN_zaYmYO9on3dJJXTd3VOzRmZS34QPiSXPT8lLqpguf_cQIKuU0xnpWFxZqc6TCpCqNUBrUqZNd4kSxFuz4pVAxvRGO2IZry0j0sgzt9VesxgPFBRlI6gaG4tbliJkPjsbr64aZ-zMEBB5mf9pHSLDXytJKzUTkulkZfOn7uNOqjpFyXi5E8oS0kidxWVb74EtbUIrERhQg&refId=Dv6ZXduXg4oAcCJhl5fxaw%3D%3D&trackingId=sEHGB9nz1vcTLdbQk87azQ%3D%3D&trk=flagship3_search_srp_jobs)
+- **Binance Accelerator Program - Affiliate BD
+Binance Accelerator Program - Affiliate BD with verification** at Binance (Dubai, Dubai, United Arab Emirates (Remote)) - [View](https://www.linkedin.com/jobs/view/4371509636/?eBP=CwEAAAGcx1xesFRDUnAk4uQaB6MhHjKl0UJaVc8Bm-4t2Rc_cTiQXlXgGRVbw65YuvIy6ZmhHODtPTIVwRhNJT1tLa3QUb6lYe94-ej6UJEbZfWFeMwB8HxpxMFLAXIdcUQFNLs0say6qUBwMAGi1F_HYcW6wkpeuBlkzUZd8ia1babA4OyZuGKCwAMyFlrCRtVFu7eJMZEzjGLVwTpRroW_h9BmFNGjNwRsGSgs8mHqVyFVAGRNz9eBqN3DadtRadfVwBG-cUprHjun6rT682W0JRMxP9LmDeR3d39iaVZunNHBjUkn8zjcZGC3_n15gBXgrEadyutzZVw8nid_iQPTHT2XIGOpuZ2WJ858TV3t9kAsF-99mREhU1GNsqmxwKyJzydxQNQXXT8PJbWpbQzu9u0M3nIdnrrP5NQTfomEoeQ6QqC_jpbqaeeVJhDQmYOHdJrne3hhfZf-Z6faoSySvHWCbWnV2k_vvHTDsBbLln3sFoshkgTWNnA_pd_IWZUJfJJNi3S3deUQP_6rAG1kmcoFRHgcaWoxdgYbRrPLfj4&refId=Dv6ZXduXg4oAcCJhl5fxaw%3D%3D&trackingId=eipVdpiikVUh2XB8o1d%2Fzw%3D%3D&trk=flagship3_search_srp_jobs)
+- **Intern
+Intern with verification** at Tabby | تابي (Dubai, Dubai, United Arab Emirates (Hybrid)) - [View](https://www.linkedin.com/jobs/view/4378497899/?eBP=CwEAAAGcx1xesOmhCp_aqV0TDe73MSncVbxpztv403uGV_2RzjG9qa-NOc3PBS9VjP301e29F0H8ibZzIJEC1oVD1-wXqK_dnVFqfYFm7mLiCega5MmLr4BLm0I-qT260d6Ixa8VewnlV4Ae45LwgtG6ODACNNvnooMR67hwJNkQ6uGnw0qKuYFfhQS6nLJMGcfO08KJKXZtWCmV7qOm9VLMrXFqvcHDtWKj7SaVxZqhuAZ_fuCQ1A6E_b5ikMaThXkxcGVo2dVk7Np-BPfJSCbiZupRQyW7xFHXaTkuVr6Sjnt3qyubII9VV9ainnZvtnejWXEID9qvzQuWazK0LcwtR0EVDh-4CcVtNs92ytDeIX68RT9eFy94QL06vmKqt5yWd8RUnHnJqMpV7UYb86sE1iUhTWf619qJTqsZ5ezQZ3cNAiUG8dbkZtaFMFXB3qL1EBOpeZzFaHupst1y8AcoumIyncFfch4pa2N7kxZ9adNXyR0fpGjJmWT_khnpKp0zj4I5SRQCt19N&refId=Dv6ZXduXg4oAcCJhl5fxaw%3D%3D&trackingId=Q06ya1L1OKSbVT95dKyCPQ%3D%3D&trk=flagship3_search_srp_jobs)
+- **Regulatory Affairs Intern
+Regulatory Affairs Intern with verification** at Ecolab (Dubai, Dubai, United Arab Emirates (On-site)) - [View](https://www.linkedin.com/jobs/view/4365347128/?eBP=CwEAAAGcx2JCklMlMi1R71jT3A12cWynW6mvafdxgx_d7SY45QyuHps2FrvKzH9wDA4odbWBsuiPmrRgUryZW8j-rAU3c6SWmdWCB-X9LepTWVEJgdv7PiEnfYSSobvi0PJgH4W9wwB6DCweRFw8We5o-r8QOtwJV-qOvtAdDX-hZUz7ph8sfWGGH8Wr5LuqZs8Xj1x_jKF_Q-NxcPcyFdSQmAZEo4Dl8a87_m3c6OEeESAPIldwCsZ-3OEbJYBoaZIiJaBdBd229yPL6vDvn9_tRDobr82hJ-uMGBLGFsAjpml47BdaPKhrSHLFGehgwd5YwjwjFbJSbhSmLUIG6CkFb-vfV7676EgZxb9sl-tKy0dGQTxlWimXcElxSfkpL8THiYVo1PgBMc3TqrGip6t6cvTJ6PLIoj5MNImdIhMohPq5BKYZy2bi-iDcyWm_sNwnNXu5IBqOp_5qJr6_s_TWrtlxLzKzyXdG8TPNWi9j_NEw6DJ1k50NiHyIEl8vBRqNt-B5eC2t0ryhwNAupYsTd-DWxw&refId=cAm2lkVuGt6faI%2F%2Bc9FR5w%3D%3D&trackingId=o08KGIfIA1vXsb%2BzAj4Utg%3D%3D&trk=flagship3_search_srp_jobs)
+- **Operations Internship in Delhi, Dubai, Mumbai
+Operations Internship in Delhi, Dubai, Mumbai** at Creatorshala (Dubai, Dubai, United Arab Emirates (On-site)) - [View](https://www.linkedin.com/jobs/view/4380706047/?eBP=NOT_ELIGIBLE_FOR_CHARGING&refId=cAm2lkVuGt6faI%2F%2Bc9FR5w%3D%3D&trackingId=iYBuOzvQvJTrpSGYv5rJYw%3D%3D&trk=flagship3_search_srp_jobs)
+- **University Graduate – Private Banking Middle East & Africa 100%
+University Graduate – Private Banking Middle East & Africa 100% with verification** at Julius Baer (Dubai, Dubai, United Arab Emirates (On-site)) - [View](https://www.linkedin.com/jobs/view/4371610164/?eBP=CwEAAAGcx2JCkrAgr3DNsw54HT7feoVjz5Tqu21zKdQAgkOKL4e7d7vnpsJAb_9d3BGQM69n_UZW_qrFyb_9CJyptLbELbIwZ7v8VVcT5YgK1pSc5JkG1CWv-7p_yG1y3jenkAkRpCFvqt5ZMsQwy5pkZlgDJtXjrzDsf28dNi_kyTC2tngCJukb-ZEG8wWB6ebqa2S-TNLYPdBRuG8kw0MGzlwK8UQF-uig8o3nXqP6snp_0vTDpTT9KDOL5SxCPhaoD-RbjHlSl20niGxQgfL7Q7PtZoW87DdjmW3PDtFFhXnUNYOduQkdOU_UltZHvIFhUT03I0yjsQLTcPN99skM_CITa3_HBVLKpvVVYpM19RBxRFauYbTSBYHSdkols-VNBW8baa0YwetsfNtb5kAcXC4M4RQYViuZdIwfw5-S6x70jqQlAd38igR1mgvsKM4UKFuHGznNLkKOeKhIWEZn2rTDHLHjUVqDITzaqjBdnnQ24R7BYc-8LO0LjhA518xeDEDAsVyo3GIhJipXB8nDWlZVXQn3cLw6nH-XO6zjZAs&refId=cAm2lkVuGt6faI%2F%2Bc9FR5w%3D%3D&trackingId=IxfOXnicRu94MUZeISFUjw%3D%3D&trk=flagship3_search_srp_jobs)
+- **Frontend Software Engineer Graduate (Corporate Information System) - 2026 Start(BS/MS)
+Frontend Software Engineer Graduate (Corporate Information System) - 2026 Start(BS/MS) with verification** at ByteDance (Dubai, Dubai, United Arab Emirates) - [View](https://www.linkedin.com/jobs/view/4342895815/?eBP=CwEAAAGcx2JCk_HODmgZd_cUVF1MarhNkDGgVGoKIPz-gFDjjr8uGYjqIFjJ4LXEwLeIoOIAX6DPMdQDXGNMWxG5PUn_xo5SPHQBZqysWVvICkaHj4E0MfzRon9T8hmlGVueECmSKf6AHRTtyheMVsPY39zt3KvzKiZd6NTlTFBgMk41336hhbrKr8Dpl_bU2gAmTdfv2GF9G-FjJ8NTzr9plh-9nvqpC9_mF1VNWZtS9mSk-lNFvKrI5nbhN4I7bkEJLNjAR2e0bhwyCIDu5J-IGTreldylViNaRo2K6j6atfwfqvc1Pu5_FjEmjLylg7Y8a_FAeBfSX-cMOTbaYk4CY2bYd20Z0qfjjofCEMif5-FAifEWqJlEzMpY1bQZJY5ngkJZxO18SfRwp3sLJwlBwKuWEfqEBfQa4iZ7sQrTQNhdq5WI0ddSdL7oIjQ0WbYc_4kXQFB0wgMD1brnWq-MkvbXC99P_pet4KI4Ya8A-xXxVv3zySHgDzmWG9iZb_7Sh2BEt4lQeXhR0bU-GLhFOtUShWAtRNXvXsnlz642&refId=cAm2lkVuGt6faI%2F%2Bc9FR5w%3D%3D&trackingId=zU8F1yfr1ICab1e68HOguA%3D%3D&trk=flagship3_search_srp_jobs)
+- **Summer Intern- KSA National Programme – GCIB & Transaction Banking
+Summer Intern- KSA National Programme – GCIB & Transaction Banking with verification** at MUFG (Dubai, Dubai, United Arab Emirates) - [View](https://www.linkedin.com/jobs/view/4314508332/?eBP=NOT_ELIGIBLE_FOR_CHARGING&refId=cAm2lkVuGt6faI%2F%2Bc9FR5w%3D%3D&trackingId=1Y8uITa983J5%2BWQOVY1lMg%3D%3D&trk=flagship3_search_srp_jobs)
+- **TareeGE Growth Trainee - Advanced Applications
+TareeGE Growth Trainee - Advanced Applications with verification** at GE Vernova (Dubai, Dubai, United Arab Emirates) - [View](https://www.linkedin.com/jobs/view/4380925603/?eBP=CwEAAAGcx2JCk0qqmiffK9VU30s5a-Aad5tkZT3yRfUN3I9Ppc1zCv2kI39WXjFTpfyM2uypd0RaaUdgOANfz9qPs24Ve0xt-E5myN1WHAcIzrGLSB5q8YA-O3Kg_CoZ8wjSIzx5FnX4UVexazuwhIPn6akepzbgdNFjrpfjUDakcaGGt_U1LxKNprxugQEmIzfwARsyoMekeU8rqoXPxLCNm4W0hG-qvHsHPUMIgAqyshR69B9f7nX3GCzUiBnipjx0sxXgYIPl2VjBeP8HTEZyDX982LVk1HJZyQOCCiOQlBVN3aDtJEF-zbUWsOjjQxC75l-HjTfDwcLhNSRgSfWd0LAS1WxeW93g6_QhMWvaGYO5YiNn96oMvn30n6IYDwu23wO4HUCSFJHSck-ntNM-w_7U1Y7n-Gem2f-IgL0X-v6oEax-YKztpehCoDnVUuLme9F_1qzYin0I1Dk4G80_AJxCgjopgBeNnr1NxtN5o2i0fGbD5XWYRE8N6LhKEq2t_-VhbwQ-Fto7K5Uha-54-9Y5n409qRaz52jKcmXi&refId=cAm2lkVuGt6faI%2F%2Bc9FR5w%3D%3D&trackingId=kYiTnmjgrKHIKiTB7676Og%3D%3D&trk=flagship3_search_srp_jobs)
 
-### 🟢 Active in Pipeline
-1. **eMagine Head of AI Advisory** (Abu Dhabi, Hybrid) — 96% ATS match, CV ready, awaiting Ahmed apply
-2. **Confidential Government Executive Director Digital Transformation** (Riyadh, On-site) — Government role, premium opportunity
-3. **Mashreq Manager GTB Digital Transformation PMO** (UAE, On-site) — Big bank, strong PMO fit
+### Saudi Arabia (17 jobs)
 
-### 🟡 Recommended Next Screening
-- EDB Field CTO EMEA (Remote, EMEA-based) — Strong AI/infrastructure angle
-- Roblox General Manager MENA (Remote) — Fortune 500, can work remote
-- SoftwareOne Global Product Owner Microsoft Data & AI (Remote)
-- ALDAR Senior VP Master Planning Projects (Abu Dhabi, On-site) — Real estate tech
+- **Director /Associate Director Enterprise Project Management Office
+Director /Associate Director Enterprise Project Management Office** at Confidential (Dubai, United Arab Emirates (On-site)) - [View](https://www.linkedin.com/jobs/view/4375140623/?eBP=CwEAAAGcx1fRsWKe3FF16bO0ii2bcXD_4gfHVZy8EKU4RSzUU9M38q_9WCqzlvsvQPsOjahZfXCsA5lSk7a6xMBk1DPHkXsatDExlqMvUExOI9h1shlNNx6_QXj0KE2_DVNW_f1z43ygtG1QxVA6UqY_iQW8RZOtQyYn9qJ0m5t5CuusOWghPCYOCBS0_CLDQUlsnfn9T2HwA-835ENkevCTvlnduGbU2k6G2tI5UZssX9mCDrARj7dRx_c6d1EEYXNOIHIiqHgaqoKXM_CqNaT_lFtA5j2x9RXkXqI31z7QBa_h7vJHxXnbkKoebmNBhHB2AI1DhdUc7Bs1dyDW9opfbgz0Bd_eGCn6Ror2VCcsADFqhv9Mc0zMWDpgaPGnxkxnDpuI_ubjX0SZpMagz3yKaakY97ySNPSotw9Tsa0mwlXpi7SnTsyZEtxw-KBkFXVTh5_DBX5cWvpuE11ij4YJHlOaVoSOGmskrP8ZuT_vV45byYxOUe4-QfSq&refId=yx3Bzt4vjW2cdCcUnKEU6A%3D%3D&trackingId=7SXT8Xtj5025vbfgDD5Lag%3D%3D&trk=flagship3_search_srp_jobs)
+- **مدير إدارة البرامج والفعاليات
+مدير إدارة البرامج والفعاليات** at Dubai Careers - A Smart Dubai Initiative (Dubai, Dubai, United Arab Emirates (On-site)) - [View](https://www.linkedin.com/jobs/view/4334133548/?eBP=NOT_ELIGIBLE_FOR_CHARGING&refId=yx3Bzt4vjW2cdCcUnKEU6A%3D%3D&trackingId=hf2mYeelI07aelcxxAR8aQ%3D%3D&trk=flagship3_search_srp_jobs)
+- **Senior Program Manager, Network Health / Trust & Safety
+Senior Program Manager, Network Health / Trust & Safety with verification** at Amazon (Dubai, Dubai, United Arab Emirates) - [View](https://www.linkedin.com/jobs/view/4370931028/?eBP=CwEAAAGcx1fRsTlYnRdWCfFaYOB9hvVucxcPmdHqmYnU0U0UwPpXLP25cH6Plgk_7oCCKjeTxRJ6ajGcBDVB3PAVzVOxLSMs1UREoBzmtDDW9hBOL82p2XlHwPmEp5soUO_2AGkyhtjV4_MopNJQRGopiuh6kLblqsN2fMcU2hCMYqo222y5n07iQdAKNaFqQDKMrXMb8TpCK271XPBc3QNDDNKvEanD46-y-PJs4IV5zaEZ7uvwUIUyjbgkivOAlkOZY-yrs0I5I-0Rko4s2oBu0ezwOVlCh4isOc-xcQYG_e6Ap32u3a3mgIWCH9fKvV3Ol1tAkn4XyeE-Pe1REcv_vuoTHwGTg8vKgG9svbolIHM00irzmT557cm8YTHhWmH_KHHCtf1CWkkpvuMMM43_ueu3OrIXq-2Dv8yRVMHaq_DLHGhb8UvPsP0obcXXHgmD32GHMbmy4Vl4522rNDRCpYJ0iVvTDsslH83IPYUBiR5vsWcnnoV8CBwGTLIZqe0sDyeUBZY&refId=yx3Bzt4vjW2cdCcUnKEU6A%3D%3D&trackingId=Ik2q3Zsoq4iG7fW2kxThhw%3D%3D&trk=flagship3_search_srp_jobs)
+- **Head of Project Excellence (PMO) - Middle East & India
+Head of Project Excellence (PMO) - Middle East & India with verification** at Fugro (Dubai, Dubai, United Arab Emirates (Hybrid)) - [View](https://www.linkedin.com/jobs/view/4377259350/?eBP=CwEAAAGcx1fRsUFIKoJrn_iSzQpR2FhXWwSSXVwfridH_N1cK-3uOb-Xgd_kGweU8DgdKWts5hPt-LBNhndquX8xILsBODx9MW4w9-Af6jiTIBareBP-4blNz3SbaYmUccxxf83jHFPEzkee1us5Cxri2hAFsNdduZQxFcRSLzePVyX_NyskStoOtrjgGZbafw7ajoxCP-jE3PRxf0YFmBG8d5cSSVkl44yeo3lYBgF9gOXCPb8RaOHQRbTrIx8_JKpgE89o-FQizwzuhnannJEYoethbdLwbZETHWxsvLbHPwK136HFMW8YM0Op3iZ9u6JtzCf4o5N-kY4AEbuKU69x3ec2sp8JsLzQOTNOY1yK2o5lukZ345OQ2F-6RCv1fF2MfFEwTFqKX7sr3sLaW8qljdW4cA1C4Xklo6dSWvffBYI-VAr24IltcUyCwZmMk-badD5rtm_7N77AiFPWKElFLEH6MBb_lyLPFjJfF0qiir9x2Q&refId=yx3Bzt4vjW2cdCcUnKEU6A%3D%3D&trackingId=S5tjH83CRah4%2Bqc%2F8aWj%2BA%3D%3D&trk=flagship3_search_srp_jobs)
+- **Programme Director – Cloud ERP (36months Fixed Term Contract)
+Programme Director – Cloud ERP (36months Fixed Term Contract) with verification** at Emirates (Dubai, Dubai, United Arab Emirates (On-site)) - [View](https://www.linkedin.com/jobs/view/4375518332/?eBP=CwEAAAGcx1fRseMrvr_ctzLCpIUXp4GT8DLL1RMJTSPs9a0peSrmBMgV46LwPwdwRyFy4p8fFo-18RFRoVd3XRztkGNii1kQyS5kR8e48gzvGuWPY9iHlumX34Glfj7GVlpGnQjh16vmRPwBmPDwxOK37jziMvFSSbvrZZA7bMhgOyO_lk37hzCGgqVXnjorKYuzveCNKNPNeW8Rh2LVx4AKTrZuxxbjx9nRWy7iIUbXiE3p0OvmGRkCaoRyPaa0epChEhj7UJUYKyQzsjKMjmEfGcAPE1YSdVO2sh9EoGv4RybuR8vhajdMTeJ4Bgd2geesPr1wcMrLt40bCz3gzrSG0s26uhAq4IAwndal-Hh191BjL_Kew-OtAXTbXEYfZG7TMQC7sqp4ipn0nsEl1FR3W7fMOdviUA6L0WmbxQr0inleuY3E_AvH99R2vqvHIo744Gj_oh065zKyoUxK4bx5LDTmSlq36btqlr3QgXNh76HFAWtEF9HK-JAACAjSh3a5dyvYx_OtOw&refId=yx3Bzt4vjW2cdCcUnKEU6A%3D%3D&trackingId=ofjanQPrtGSp7810kZ0UTQ%3D%3D&trk=flagship3_search_srp_jobs)
+- **Head of PMO
+Head of PMO** at Mark Williams Recruitment (Dubai, United Arab Emirates (On-site)) - [View](https://www.linkedin.com/jobs/view/4372468004/?eBP=CwEAAAGcx1fRsRR7wC9Zfaxsz6eQgBgr-ywRnWtuvyDjBYi-AB2S6PjPVaY3tCHPWz3lv44f9htu6xoMH5txl1fDBNjw7eoUQ2rRoEY-jbRoFMIonDc7XuBPL46OFdDsHR58XWE4YAywEyW_0zzgiLSi6DalqMZ_XFRRwbtO6MAMVt4vXtgL1NWYHHIfmZD1qqdgNk4fYjGLY9SFxDSEjqVqFv091FnXFheDkI7aiba7wcfcJOFy1vLRpSYgdHPSEHktNVU1Vv91Pv6kJhMPB1nfqdNOq4pw_ZlBpNqbNiAhqX5vMLXyjpbE-2Q7WSc3zIVAke-Fbbh80VP4cYaEcipKmhE-4VIDw0PIpDpac324Oq2mi2CJrYvqqwdaporOSe0RTsbj74W48ZIeqDfVxxII1Z3lhIGwMGWBrllHTfjSDVRS9ByWBaVtJcHpFDyB9aD5hOnxHSmmeJNcnWxveYhmyyVF7EfUv-NL67gi-l-8VJFXcW9WZas91XUR&refId=yx3Bzt4vjW2cdCcUnKEU6A%3D%3D&trackingId=1H7ZxNji%2BmadbFyYm5SExw%3D%3D&trk=flagship3_search_srp_jobs)
+- **Senior Manager - Transformation (PMO)
+Senior Manager - Transformation (PMO) with verification** at GMG (Dubai, United Arab Emirates (On-site)) - [View](https://www.linkedin.com/jobs/view/4372492462/?eBP=CwEAAAGcx1fRsYjs701cnaJtrVuTMjDuzQtE0qn0xZz1OtG_x4xppi3YNxVezaci6YZ0lp6QUTj_yxvpGG1fyudul57qcLRUzBtBE6PXH4kAzFU_X7oIsF15J2mo47syEH5CJy1qnPelXt65PBYXbuFlYS5zzHCyAyLH-c1Hn4dMBN9UKEvLPjz6Pmm0CYwpC9mqXTIzGxaLyXxhL5TnesbnneKFzlQHtDjx25pGwYmZHBcUP7yU_XTIkcvWxDrmNmUK_Kdy2DiyW-csUPlEwkwbYj1G3L4L8gLaPifyuMUeGLCcPyXsNHG2JwUcGkepzBtK7diu2vCRdsvr0Krywzma4TQHjzU-m4q6X0xg-0YGum9t7pZXQujoD_0fuADDKH3kQRyUg39CAxBTGPodtjKNRnr1_8u23JC4RC1MUyRMI8-ojkSalzhA2IQU1itrFX0l5BkKJdWXDG_iMFMBOp_cTZDBOUpuFutNlkQ5asM095NQ3MvNN9T--j7lb-phmw&refId=yx3Bzt4vjW2cdCcUnKEU6A%3D%3D&trackingId=FRT%2Br2SBzhtQUVTLEgm21g%3D%3D&trk=flagship3_search_srp_jobs)
+- **Programme Head- C4IR (UAE National)
+Programme Head- C4IR (UAE National) with verification** at DUBAI FUTURE FOUNDATION (Dubai, United Arab Emirates (On-site)) - [View](https://www.linkedin.com/jobs/view/4377114945/?eBP=CwEAAAGcx1fRsTBomvRds-S0hoVEZFHrN2vZo4jOx8vkMmkn9p3TzYyGBPLfYLV_82NIbY11WgbQWu1oEbIOWQI_WKi0hH7kzkkwIkw5GkKuxiXK9F07j65JqnyP1Gx8Hp-f1IaI8GJHwkptFrErBXjtK9tfWE8Yu3hcPEhqPW-5WjRWX8bwdWjy2h9rPFPj6C01GM3viiPvzVWlxBfjw-yoG3xE68vj7HOpwROXjp5WEVtx-rTfGVSHahDus7ZleLhzFxKX_nfmN8dRtjZ9zEC3XQP9vROQ3UlQR81H7XBWgPpEMsH8YsgTx62mHa7m8Jw3CkExl20C8fH-7fFcwGq_Gl7elUuuReChesq7agWPIQqXfBtZcLzLaUCHAEHciksnJwv_Wrj183iJuXx0sUv6pwqKGqAbLpBksCgLMn4o4OBgqyrNtU0f6Xgk_ZyroxjdohFDh1RzWN6hjpAoQInjH8nSy0NNZ7z2A4VeY5jinqrMnjLROVha21Yt7BsTsQxoMM9Isn0&refId=yx3Bzt4vjW2cdCcUnKEU6A%3D%3D&trackingId=8Ht2a6h%2B7ddilkLenxVXbg%3D%3D&trk=flagship3_search_srp_jobs)
+- **Project Management Intern (6 Months)
+Project Management Intern (6 Months)** at Arena Europe, Middle East & Asia (Riyadh, Saudi Arabia (On-site)) - [View](https://www.linkedin.com/jobs/view/4381413159/?eBP=NOT_ELIGIBLE_FOR_CHARGING&refId=Ue33UfZiMUu4Gs8GoLzaKg%3D%3D&trackingId=umJCeD%2BiAup0K1R3H%2FPsng%3D%3D&trk=flagship3_search_srp_jobs)
+- **Associate AI Engineer - Builders Program
+Associate AI Engineer - Builders Program with verification** at Tamara (Riyadh, Riyadh, Saudi Arabia (On-site)) - [View](https://www.linkedin.com/jobs/view/4382360756/?eBP=NOT_ELIGIBLE_FOR_CHARGING&refId=Ue33UfZiMUu4Gs8GoLzaKg%3D%3D&trackingId=6JkmpIoHibNpCG55C8j4GA%3D%3D&trk=flagship3_search_srp_jobs)
+- **Bitget Builder (Part Time) - Saudi Arabia
+Bitget Builder (Part Time) - Saudi Arabia** at Bitget (Saudi Arabia (Remote)) - [View](https://www.linkedin.com/jobs/view/4381951414/?eBP=NOT_ELIGIBLE_FOR_CHARGING&refId=Ue33UfZiMUu4Gs8GoLzaKg%3D%3D&trackingId=cRTWiveBM395aGPZqia%2FcQ%3D%3D&trk=flagship3_search_srp_jobs)
+- **Associate Data Analyst - Builders Program
+Associate Data Analyst - Builders Program with verification** at Tamara (Riyadh, Riyadh, Saudi Arabia (On-site)) - [View](https://www.linkedin.com/jobs/view/4382366415/?eBP=NOT_ELIGIBLE_FOR_CHARGING&refId=v8p5Tt8y0O0EF0oD1%2FnOYw%3D%3D&trackingId=THiEI2wiKHb1R7taW3ekgA%3D%3D&trk=flagship3_search_srp_jobs)
+- **Intern | Jusoor Al Sharqiyah Internship Program | Al Khobar
+Intern | Jusoor Al Sharqiyah Internship Program | Al Khobar with verification** at Deloitte (Al Khobar, Eastern, Saudi Arabia (On-site)) - [View](https://www.linkedin.com/jobs/view/4289263334/?eBP=NOT_ELIGIBLE_FOR_CHARGING&refId=v8p5Tt8y0O0EF0oD1%2FnOYw%3D%3D&trackingId=N2BYpzaw%2Br8vOIH2qRtj1w%3D%3D&trk=flagship3_search_srp_jobs)
+- **Tamheer - HR Operations Specialist
+Tamheer - HR Operations Specialist with verification** at King Faisal Specialist Hospital and Research Center (Jeddah, Makkah, Saudi Arabia (On-site)) - [View](https://www.linkedin.com/jobs/view/4371417437/?eBP=NOT_ELIGIBLE_FOR_CHARGING&refId=v8p5Tt8y0O0EF0oD1%2FnOYw%3D%3D&trackingId=vU%2FBls0363L7Aj2846t0yg%3D%3D&trk=flagship3_search_srp_jobs)
+- **Emerging Talent – Summer Intern (Saudi Arabia) 2026 Opportunities
+Emerging Talent – Summer Intern (Saudi Arabia) 2026 Opportunities with verification** at Baker Hughes (Dammam, Eastern, Saudi Arabia (Hybrid)) - [View](https://www.linkedin.com/jobs/view/4380607110/?eBP=NOT_ELIGIBLE_FOR_CHARGING&refId=v8p5Tt8y0O0EF0oD1%2FnOYw%3D%3D&trackingId=W0g3FJEgzPFO8odkih3LLg%3D%3D&trk=flagship3_search_srp_jobs)
+- **Associate ML Engineer - Builders Program
+Associate ML Engineer - Builders Program with verification** at Tamara (Riyadh, Riyadh, Saudi Arabia (On-site)) - [View](https://www.linkedin.com/jobs/view/4382354884/?eBP=NOT_ELIGIBLE_FOR_CHARGING&refId=v8p5Tt8y0O0EF0oD1%2FnOYw%3D%3D&trackingId=imSgtrJRuGumLbX0nk6PkQ%3D%3D&trk=flagship3_search_srp_jobs)
+- **Head of Project Excellence (PMO) - Middle East & India** at Fugro (Dubai, Dubai, United Arab Emirates (Hybrid))
 
-### 🔵 Worth Monitoring
-- Hyphen Connect Founding CTOs Web2/Web3 (Abu Dhabi, Remote) — Early stage startup, potentially high equity
-- The Cigna Group Head of Transformation (Dubai, On-site) — Large healthcare company
-- Canonical Remote Director Roles (EMEA) — Established tech company
+### Qatar (1 jobs)
 
-## Full Job List by Category
+- **Transformation Program Manager
+Transformation Program Manager** at WebBeds (Dubai, Dubai, United Arab Emirates (Hybrid)) - [View](https://www.linkedin.com/jobs/view/4305869308/?eBP=NOT_ELIGIBLE_FOR_CHARGING&refId=XTRVsnztCQaUt%2BrJN6IXNA%3D%3D&trackingId=I6nEoS5ZgO1boPmybsmuMg%3D%3D&trk=flagship3_search_srp_jobs)
 
-### Head of AI (5 jobs)
-- eMagine Solutions - Head of AI Advisory (Abu Dhabi, Hybrid) **96% ATS**
-- Michael Page - Head of AI Engineering (Dubai, On-site)
-- Confidential - Head of Operations & AI Optimisation (Abu Dhabi, On-site)
-- Canonical - Software Alliance Ecosystem Manager (EMEA, Remote)
-- Canonical - Software Engineering Director (EMEA, Remote)
+### Oman (1 jobs)
 
-### VP Digital Transformation (10 jobs)
-- CGL Consulting - Chief Marketing Officer/Head of Global Marketing (EMEA, Remote)
-- Remote - Revenue Strategy & Biz Ops Lead (EMEA, Remote)
-- Miro - Machine Learning Research Manager (EMEA, Remote)
-- Hostaway - Senior Product Manager AI (EMEA, Remote)
-- TIS - Vice President of Customer Success (EMEA, Remote)
-- SoftwareOne - Global Product Owner Microsoft Data & AI (EMEA, Remote)
-- Resume AI - Co-Founder Capital + Growth (Dubai, Hybrid)
-- Roblox - General Manager MENA (Middle East, Remote)
-- The Global Search Company - Chief Financial Officer KSA (EMEA, Remote)
-- orient path - Chief Product Officer (EMEA, Remote)
-
-### Director Digital Transformation (9 jobs)
-- Confidential Government - Executive Director Digital Transformation & Cloud Strategy (Riyadh, On-site)
-- ALDAR - Senior VP Master Planning Projects (Abu Dhabi, On-site)
-- Al Ramz PJSC - Vice President Project Management Office (Abu Dhabi, On-site)
-- The Cigna Group - Head of Transformation (Dubai, On-site)
-- FP - Associate Director Digital Transformation (Riyadh, On-site)
-- Dubai Careers - Corporate Support Dept Director (Dubai, On-site)
-- Masdar - Head Talent Development (Abu Dhabi, On-site)
-- Dubai Department Economy Tourism - Senior Project Manager (Dubai, On-site)
-- Emirates - Procurement Manager Healthcare Category (Dubai, On-site)
-
-### CTO (7 jobs)
-- People Pathways - Chief Technology Officer (Dubai, On-site)
-- Goodman Masson Oman - Chief Technology Officer (Muscat, On-site)
-- Datamatics Technologies - Chief Technology Officer (Riyadh, On-site)
-- Back for Brand - Co-Founder & Investor CTO/COO/CMO/CFO (Manama, On-site)
-- Hyphen Connect - Founding CTO Web2 (Abu Dhabi, Remote)
-- Hyphen Connect - Founding CTO Web3 (Abu Dhabi, Remote)
-- Kuwait Jobs Here - Chief Technical Officer Cloud & Streaming (Kuwait City, On-site)
-
-### VP Technology (5 jobs)
-- EDB - Field CTO EMEA (EMEA, Remote)
-- Hyphen Connect - Founding CTO Web2 (EMEA, Remote)
-- Hyphen Connect - Founding CTO Web3 (EMEA, Remote)
-- Jobgether - Sr. VP Manufacturing Science & Technology (UAE, Remote)
-- AJYAL HR - VP Technology Shared Operations (Muscat, On-site)
-
-### Senior Director Technology (7 jobs)
-- e& UAE - Director/AI Core Network Development (UAE)
-- e& UAE - Director/AI Network Development & Content Delivery (UAE)
-- Miral Experiences - Director Analytics Business Engagement (Abu Dhabi, On-site)
-- Legend Holding Group - IT Director (Dubai, On-site)
-- Mackenzie Jones - Head of Information Technology (Dubai, On-site)
-- Confidential Jobs - Senior HR Technology & Transformation Manager (Dubai, On-site)
-- Pear Talent Finance - Vice President Data Operations (Abu Dhabi, Hybrid)
-
-### PMO Director (7 jobs)
-- Mashreq - Manager GTB Digital Transformation PMO (UAE, On-site)
-- First Abu Dhabi Bank - Senior Officer CCS MIS & Projects (Abu Dhabi, On-site)
-- Tamara - PMO Senior Specialist (Riyadh, On-site)
-- TRX - Project Manager (Middle East, Remote)
-- Electrify Video - Commercial Projects Manager (EMEA, Remote)
-- Confidential - Lead Project Manager (EMEA, Remote)
-- Confidential Careers - Senior Scrum Master (EMEA, Remote)
-
-### Head of Product (4 jobs)
-- Circles - Head of Product (UAE)
-- Soar - Head of SAP Finance Product (Dubai, Remote)
-- Infinite Fulfillment - Head of Product Development (Dubai, On-site)
-- SoftwareOne - Global Product Owner Microsoft Data & AI (EMEA, Remote)
-
-### VP HealthTech (2 jobs)
-- Elevate Recruitment - Biomedical Engineer (EMEA, Remote)
-- Taskify AI - Healthcare Expert (EMEA, Remote)
+- **Intern
+Intern** at Halliburton (Muscat, Masqaţ, Oman (On-site)) - [View](https://www.linkedin.com/jobs/view/4380613949/?eBP=NOT_ELIGIBLE_FOR_CHARGING&refId=%2Be8Co9%2F0JEG%2BAtF8W8q5ew%3D%3D&trackingId=ZWQgkB6zzWKrLTlqdFGwQw%3D%3D&trk=flagship3_search_srp_jobs)
 
 ---
-
-**Report Generated:** Fri Mar 6, 2026 — 06:00 UTC
-**Data Source:** LinkedIn job search API (Playwright crawler, last successful: Wed Mar 5, 14:45 UTC)
-**Last Updated:** Memory/linkedin-job-scout.md
+*Engine: camofox-browser v2.0.4 | Scanned: 2026-03-07 08:21 UTC*
