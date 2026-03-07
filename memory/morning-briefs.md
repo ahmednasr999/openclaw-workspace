@@ -544,3 +544,57 @@ Require stack:
 
 Node.js v20.19.4
 
+=== Morning Brief - 2026-03-07 06:00 AM ===
+
+## Job Radar (from Tavily)
+## Answer
+
+Kamakshi Gupta is a VP Director PMO for digital transformation in healthcare in the UAE, Dubai, focusing on AI-driven solutions. She is recognized among top healthcare leaders for 2026. Her role involves leading initiatives to advance digital health transformation.
+
+---
+
+## Sources
+
+- **Middle East Healthcare Transformation Driven by Leadership** (relevance: 100%)
+  https://www.linkedin.com/posts/kamakshi-gupta-a9254013_the-middle-east-continues-to-advance-as-a-activity-7426529295029710848-IXJ1
+  Emirates Health Services (EHS) showcased cutting-edge AI-powered healthcare solutions at the World Health Exhibition in Dubai 2026. These
+
+- **25+ Senior Director Digital Transformation Jobs, Employment in ...** (relevance: 100%)
+  https://ae.indeed.com/q-senior-director-digital-transformation-l-dubai-jobs.html
+  Discover 45 Senior Director Digital Transformation job opportunities in Dubai on Indeed.com. Apply today to advance your career with top
+
+- **President and Prime Minister of the United Arab Emirates and Ruler ...** (relevance: 99%)
+  https://www.facebook.com/PMOBhutan/posts/%F0%9D%90%8F%F0%9D%90%AB%F0%9D%90%9E%F0%9D%90%AC%F0%9D%90%AC-%F0%9D%90%91%F0%9D%90%9E%F0%9D%90%A5%F0%9D%90%9E%F0%9D%90%9A%F0%9D%90%AC%F0%9D%90%9E-the-prime-minister-will-participate-in-the-world-governments-summi/1454940716001246/
+  ... Vice-President and Prime Minister of the United Arab Emirates and Ruler of Dubai from 03 to 05 February 2026. The World Governments Summit
+
+- **Meet the Steering Committee Behind MedTech World Middle East** (relevance: 97%)
+  https://med-tech.world/news/medtech-world-middle-east-dubai-2026-steering-committee/
+  # Meet the steering committee behind MedTech World Middle East | Dubai 2026. Meet the steering committee behind MedTech World Middle East | Dubai 2026. It brings together diverse expertise, regional insight, and practical experience to ensure discussions are relevant, balanced, and grounded in real-...
+
+- **30 Healthcare leaders to watch in 2026 - Economy Middle East** (relevance: 69%)
+  https://economymiddleeast.com/eme-lists/30-healthcare-leaders-to-watch-in-2026/
+  We present the leading figures who drive transformative growth of the healthcare sector in the Middle East.
+## Gmail - New Opportunities
+node:internal/modules/cjs/loader:1215
+  throw err;
+  ^
+
+Error: Cannot find module 'googleapis'
+Require stack:
+- /root/.openclaw/workspace/scripts/gmail-scan.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1212:15)
+    at Module._load (node:internal/modules/cjs/loader:1043:27)
+    at Module.require (node:internal/modules/cjs/loader:1298:19)
+    at require (node:internal/modules/helpers:182:18)
+    at Object.<anonymous> (/root/.openclaw/workspace/scripts/gmail-scan.js:1:20)
+    at Module._compile (node:internal/modules/cjs/loader:1529:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+    at Module.load (node:internal/modules/cjs/loader:1275:32)
+    at Module._load (node:internal/modules/cjs/loader:1096:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:164:12) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [ '/root/.openclaw/workspace/scripts/gmail-scan.js' ]
+}
+
+Node.js v20.19.4
+
