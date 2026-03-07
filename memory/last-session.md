@@ -1,5 +1,22 @@
 # Last Session
-Updated: 2026-03-06 19:23 UTC
+Updated: 2026-03-07 19:10 UTC
+
+## Mar 7 Evening — Job Applications + Calibration (Opus 4.6)
+**Focus:** Search Policy calibration run, 2 email-based CV applications
+
+**What happened:**
+- Calibration run_cal_001 completed: 64 raw results, 12 executive kept, 81% noise reduction. Policy validated.
+- #57 HybridGlobal Sr PM DT Banking (Dubai, ATS 89%) — emailed sajna.jaleel@hybridglobal.ae
+- #58 Confidential SDM (RAK/Sharjah, ATS 65%) — emailed enk77@hotmail.com
+- Total today: 7 applications (#52-58). Pipeline at 58.
+
+**Open threads:**
+- Tomorrow: first production morning scan under new search policy
+- Nuxera.AI: waiting on Amin's salary reply
+- Model Council Room MVP: approved, not built
+- CDO role (Valkyrie): confirmed closed, dropped
+
+---
 
 ## Mar 6 X-Analysis Session (MiniMax, 71% context)
 **Focus:** Deep dive into 25+ high-signal X posts on OpenClaw and AI agent systems
