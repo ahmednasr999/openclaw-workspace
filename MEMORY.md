@@ -32,6 +32,11 @@
 - Disclose model used in every CV delivery message.
 - Master CV: memory/master-cv-data.md. Each app gets tailored version.
 - Pipeline source of truth: Google Sheet (not pipeline.md)
+- Full JD check BEFORE ATS scoring (never score by title alone)
+
+## ORP State Machine (Hard Rule)
+- NEW > TRIAGED > READY > IN_PROGRESS > VALIDATED > DELIVERED > LOGGED > CLOSED
+- Pipeline update BEFORE CV delivery (Gate D)
 
 ## Model Strategy
 | Task | Model | Why |
@@ -42,7 +47,7 @@
 | Quick lookups, sub-agents | Haiku 4.5 | Fast, cheap |
 | Long context (256K+) | Kimi K2.5 | Largest window |
 
-Budget: EGP 9,000/mo (Claude Max 20x) + $40 (MiniMax) + $20 (Codex, until Apr 1)
+Budget: EGP 9,000/mo (Claude Max 20x) + $40 (MiniMax)
 
 ## Critical Operational Rules
 - Max 10 parallel agents. 70% usage = downgrade to MiniMax. 90% = block spawns.
@@ -53,28 +58,21 @@ Budget: EGP 9,000/mo (Claude Max 20x) + $40 (MiniMax) + $20 (Codex, until Apr 1)
 - After sub-agent builds: check git diff for accidental deletions.
 - PDF naming: "Ahmed Nasr - [Role] - [Company].pdf"
 - Silence rule: no-action items = no notification.
-
-## Key Lessons (Rules Only)
-- Chat instructions don't survive compaction. Put rules in files.
-- Compaction at overflow = no memory flush = max context loss. Stay on good path via headroom.
-- Dense keyword files poison embedding search. Keep memory files focused.
-- Session compaction before flush = context loss. Always flush first.
-- Credential expiry: track in active-tasks + cron reminder + MEMORY.md. Never single mechanism.
 - KillMode=mixed + TimeoutStopSec=15 for systemd services.
 
-## Infrastructure Quick Ref
+## Key Infrastructure
 - VPS: Hostinger. Interface: Telegram + Slack.
 - Git repos: openclaw-nasr (workspace), openclaw-config (config)
 - Tailscale: srv1352768.tail945bbc.ts.net
 - Google OAuth: ahmednasr999@gmail.com (Gmail + Calendar)
-- Quota monitoring: /system-config/quota-monitoring/ (daily reset 00:00 UTC, validation 06:00 UTC)
+- Job Radar: official employer sources first, aggregators discovery-only
+- LinkedIn discovery: hashtag + whitelist priority, own-feed fallback only
 
 ## Where Things Live
 - Active tasks: memory/active-tasks.md
 - Queued deep work: memory/pending-opus-topics.md
 - CV data: memory/master-cv-data.md
-- Lessons detail: memory/lessons-learned.md + .learnings/LEARNINGS.md
-- Content calendar: memory/linkedin_content_calendar.md
+- Lessons: .learnings/LEARNINGS.md
 - Completed milestones: memory/completed-milestones.md
 - Knowledge index: memory/knowledge-index.md
 - Daily logs: memory/YYYY-MM-DD.md
