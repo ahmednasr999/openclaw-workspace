@@ -63,6 +63,7 @@
 | 50 | ☑️ | eMagine Solutions | Head of AI Advisory | GCC | 96% | ✅ Applied | Full JD | 2026-03-06 | 2026-04-05 | — | CV ✅ |
 | 51 | ☑️ | EDB | Field CTO EMEA | Remote | 66% | ✅ Applied | Full JD | 2026-03-06 | 2026-04-05 | — | CV ✅ |
 | 52 | ☑️ | Mark Williams Recruitment | Head of PMO | Dubai, UAE | 92% | ✅ Applied | Full JD | 2026-03-07 | 2026-04-06 | [LinkedIn](https://www.linkedin.com/jobs/view/4372468004) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20Head%20of%20PMO%20-%20Mark%20Williams%20Recruitment.pdf) |
+| 53 | ☑️ | Emirates | Programme Director, Cloud ERP | Dubai, UAE | 78% | ✅ Applied | Full JD | 2026-03-07 | 2026-04-06 | [LinkedIn](https://www.linkedin.com/jobs/view/4375518332) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed%20Nasr%20-%20Programme%20Director%20Cloud%20ERP%20-%20Emirates.pdf) |
 
 
 ---
