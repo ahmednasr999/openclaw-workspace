@@ -5,6 +5,7 @@
 ## 🔴 URGENT
 - [ ] **Telegram messaging broken:** Cannot resolve chat IDs (tried @heartbeat and @ahmednasr). Need to fix config or get numeric chat ID.
 - [ ] **Memory Index cron job failing:** Script timeout (300s), 2 consecutive failures. Root cause: Agent session lacks exec/process tools to run QMD commands. Fix: Add exec + process capabilities to the agent config for Memory Index job.
+- [ ] **calendar-poll-15min timeout:** Timed out 2x (90s limit). Tested manually — command works fine (<1s). Likely cold start issue with MiniMax in isolated session. Recommendation: increase timeout to 120s or disable timeout for this lightweight job.
 - [x] ~~Retry Sheet row 16 update: K16="Applied", L16="2026-03-05"~~ ✅ Done Mar 6
 - [x] ~~Apply to remaining CV-ready jobs: EDB Field CTO, eMagine Head of AI Advisory~~ ✅ Both applied Mar 6
 - [ ] **Nuxera.AI — Sr PM AI Healthcare (Cairo):** CEO Amin Elhemaily responded directly on LinkedIn. Ahmed messaged salary-oriented stance. Awaiting Amin's reply. If positive, push for in-person meeting during Ramadan (both in Cairo). Research Nuxera before any meeting.
