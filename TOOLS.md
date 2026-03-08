@@ -95,7 +95,8 @@ Rule: Sub-agents write to output files only. NASR merges into shared memory. Nev
 | Priority | Model | Alias | Plan | Cost/mo | Context | Limit | Best For |
 |----------|-------|-------|------|---------|---------|-------|----------|
 | 1st | MiniMax M2.5-highspeed | minimax-m2.5 | Coding Plus | $40 | 200K | 300 prompts/5hrs | Default: crons, heartbeats, quick tasks |
-| 2nd | GPT-5.3-Codex | gpt53codex | ChatGPT Plus | $20 | 266K | 45-225 msgs/5hrs | Sub-agents, coding, mid-tier reasoning |
+| 2nd | GPT-5.4 | gpt54 | ChatGPT Plus | $20 | 1M | 45-225 msgs/5hrs | Coding, agentic workflows, long-context, computer-use |
+| 2nd | GPT-5.3-Codex | gpt53codex | ChatGPT Plus | $20 | 266K | 45-225 msgs/5hrs | Legacy fallback (superseded by GPT-5.4) |
 | 3rd | Claude Sonnet 4.6 | sonnet46 | Claude Max 20x | (incl) | 200K | 20x Pro/5hrs | Drafting, research, LinkedIn content |
 | 4th | Claude Opus 4.6 | opus46 | Claude Max 20x | (incl) | 200K | 20x Pro/5hrs | Deep strategy, CV tailoring, interviews |
 | 5th | Claude Haiku 4.5 | haiku | Claude Max 20x | (incl) | 200K | 20x Pro/5hrs | Fast, vision, lightweight fallback |
@@ -108,7 +109,7 @@ Rule: Sub-agents write to output files only. NASR merges into shared memory. Nev
 
 **Key: All limits reset every 5 hours. Spread load across providers to avoid hitting any single limit.**
 
-**Fallback chain:** MiniMax M2.5 (default) -> Claude Sonnet 4.6 -> Claude Haiku 4.5 -> GPT-5.3-Codex (until Apr 1) -> Kimi K2.5
+**Fallback chain:** MiniMax M2.5 (default) -> Claude Sonnet 4.6 -> Claude Haiku 4.5 -> GPT-5.4 -> Kimi K2.5
 
 **Auth:** Claude via API key, MiniMax via OAuth, Codex via OAuth (token expires ~June 2026)
 
@@ -123,10 +124,12 @@ Rule: Sub-agents write to output files only. NASR merges into shared memory. Nev
 | CV tailoring, LinkedIn content | Sonnet 4.6 | sonnet46 | Quality drafting |
 | **ATS scoring (primary)** | **MiniMax M2.5** | **minimax-m2.5** | **Closest to Opus accuracy (+1.7 avg drift), conservative, free quota** |
 | **ATS scoring (borderline 82-87)** | **Opus 4.6** | **opus46** | **Tie-breaker for grey-zone scores only** |
-| Sub-agent work, coding tasks | Haiku 4.5 | haiku | Fast, lightweight, default sub-agent |
+| Sub-agent work, coding tasks | GPT-5.4 | gpt54 | Best coding model, 1M context, separate quota pool |
+| Quick sub-agents, lightweight tasks | Haiku 4.5 | haiku | Fast, cheap fallback |
 | Quick formatting, lookups, vision | Haiku 4.5 | haiku | Fast, lightweight |
 | Crons, heartbeats, email, calendar | MiniMax M2.5 | minimax-m2.5 | Flat rate default |
-| Long document analysis (256K+) | Kimi K2.5 | kimi | Largest context window |
+| Long document analysis (256K-1M) | GPT-5.4 | gpt54 | 1M context, better reasoning than Kimi |
+| Long document analysis (budget/overflow) | Kimi K2.5 | kimi | Free, 256K context |
 
 ### ATS Scoring Rules (Validated Mar 5, 2026)
 - **Threshold: 82/100** (lowered from 85, calibrated against Opus baseline)

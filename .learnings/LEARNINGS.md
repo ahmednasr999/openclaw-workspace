@@ -61,3 +61,9 @@ For any VPS without GPU: always use QMD in BM25-only mode (searchMode: "search")
 ### 2026-03-05: Always use linkedin-jd-fetcher.py for full JDs before ATS scoring
 **What happened:** Scored Anduril at 85% based on job title alone. Full JD revealed Secret Clearance requirement and defense-only focus, dropping real score to 64%. Wasted time generating a CV for a role that's a poor fit.
 **What to do:** Always fetch full JD with `linkedin-jd-fetcher.py` BEFORE scoring or generating CVs. Never score based on title alone.
+
+## 2026-03-08: Dead Channel Token Crashes Entire Gateway
+**What happened:** Slack bot token became account_inactive. Gateway tried to authenticate on startup, got unhandled promise rejection, crashed. Watchdog restarted twice but same config = same crash.
+**Root cause:** OpenClaw does not isolate bad channel failures at startup. One dead channel crashes everything.
+**Fix applied:** (1) Enhanced watchdog v2 with 30-line log capture in escalation alerts, (2) Weekly token health check cron (Sundays 6AM UTC), (3) New Slack app created with fresh tokens.
+**Rule:** Always validate channel tokens before gateway restart. Proactive token validation is the only defense until OpenClaw patches startup isolation.

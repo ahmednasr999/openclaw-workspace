@@ -1,5 +1,25 @@
 # Last Session
-Updated: 2026-03-07 19:10 UTC
+Updated: 2026-03-08 15:52 UTC
+
+## Mar 8 — Slack Setup Overhaul + Self-Healing Agent (Opus 4.6)
+**Focus:** Slack app rebuild after accidental deletion, GPT-5.4-Pro registration, self-healing deployment
+
+**What happened:**
+- Full Slack evaluation: 10 channels mapped, cron delivery audited
+- Ahmed accidentally deleted Slack app mid-session
+- Rebuilt app, configured event subscriptions + socket mode
+- Registered GPT-5.4-Pro as custom model in OpenClaw (was missing from registry)
+- Set #x-analysis and #ai-codex to GPT-5.4-Pro
+- Deployed self-healing repair agent (system cron, Claude Code CLI, repair playbook)
+- Weekly token health check cron added
+- Cleared all stale Slack sessions to force correct model pickup
+
+**Open threads:**
+- Verify all Slack channels using correct models after session clear
+- #openclaw and #random need manual archive from Slack
+- Self-healing agent may trigger false restarts (needs tuning)
+
+---
 
 ## Mar 7 Evening — Job Applications + Calibration (Opus 4.6)
 **Focus:** Search Policy calibration run, 2 email-based CV applications
