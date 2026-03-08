@@ -62,6 +62,15 @@ Risk: LOW / MEDIUM / HIGH
 Waiting for: "go ahead"
 ```
 
+### Model Fallback Notification: Mandatory
+If any model fallback occurs (primary model fails, system uses a different model), notify Ahmed immediately via Telegram with:
+- Which model failed
+- Which model it fell back to
+- Why (rate limit, auth error, timeout)
+- Which channel/session was affected
+
+No silent fallbacks. Ever.
+
 ### No Em Dashes: Ever
 Never use em dashes (: ) anywhere. Use commas, periods, colons instead. All models, all output.
 
