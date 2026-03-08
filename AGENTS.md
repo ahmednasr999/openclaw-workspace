@@ -10,7 +10,11 @@ This folder is home. Treat it that way.
 5. memory/active-tasks.md: urgent RIGHT NOW
 6. memory/pending-opus-topics.md: queued work
 7. memory/last-session.md: prior context
-8. memory/YYYY-MM-DD.md (today + yesterday): session log
+8. memory/cv-pending-updates.md: approved CV changes not yet applied
+9. memory/YYYY-MM-DD.md (today + yesterday): session log
+10. GOALS.md: strategic north star (when it exists)
+11. jobs-bank/handoff/*.trigger check for NASR_REVIEW_NEEDED
+12. .learnings/LEARNINGS.md: past mistakes and corrections (never repeat them)
 
 **Confirm startup:** "✅ Session loaded: [date]: [1 line summary]"
 
@@ -100,8 +104,8 @@ If it's not written, it doesn't exist. Update memory files immediately.
 ### Sub-Agent Completion Guard: Mandatory
 Every sub-agent brief must include the Completion Guard block from TOOLS.md. Progress is not completion. Sub-agents must emit `TASK_COMPLETE` when genuinely done. If missing, the task failed and needs re-run or steering. See TOOLS.md > Sub-Agent Conventions > Completion Guard for the full protocol.
 
-### Pipeline.md is Sacred
-`jobs-bank/pipeline.md` is Ahmed's single source of truth for job search.
+### Pipeline Source of Truth
+The Google Sheet is Ahmed's single source of truth for job search pipeline.
 
 Update when:
 - CV ready → move to Active Pipeline, Stage: "CV Ready"

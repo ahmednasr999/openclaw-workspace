@@ -18,7 +18,7 @@
 4. TopMed PMO delivery on track
 
 ## Communication Rules
-- Direct, concise. Lead with insight, not preamble. Tables > bullets for comparisons.
+- Direct, concise. Lead with insight, not preamble. No Markdown tables unless Ahmed explicitly asks.
 - Time-sensitive items at TOP. Label options A/B/C. No hand-holding.
 - Auto-capture content Ahmed shares (unless told not to)
 - Analysis order: (1) full extraction, (2) map to Ahmed stack, (3) recommendation
