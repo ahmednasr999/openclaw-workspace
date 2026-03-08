@@ -73,6 +73,8 @@
 
 ---
 
+| 59 | ⏳ | Nuxera.AI | Sr PM AI Healthcare | Cairo, Egypt | — | 🤝 Interview | CEO Amin Elhemaily reached out directly. Interview Mar 8 — went well, they will follow up | — | — | LinkedIn | — |
+
 ## Follow-up Schedule
 
 **Policy (Updated Feb 28, 2026):** No proactive follow-ups on LinkedIn applications. They reach out when interested. Follow-up only on: post-interview silence, or direct recruiter contact goes quiet mid-process.
