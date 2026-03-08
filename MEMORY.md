@@ -33,6 +33,7 @@
 - Master CV: memory/master-cv-data.md. Each app gets tailored version.
 - Pipeline source of truth: Google Sheet (not pipeline.md)
 - Full JD check BEFORE ATS scoring (never score by title alone)
+- All 33 background crons run on MiniMax (0 Claude crons) for cost efficiency
 
 ## ORP State Machine (Hard Rule)
 - NEW > TRIAGED > READY > IN_PROGRESS > VALIDATED > DELIVERED > LOGGED > CLOSED
@@ -44,10 +45,11 @@
 | Deep strategy, interviews, CVs | Opus 4.6 | Best reasoning, CV quality |
 | Drafting, LinkedIn content | Sonnet 4.6 | Balanced quality |
 | ATS scoring, crons, heartbeats | MiniMax M2.5 | Free, conservative |
-| Quick lookups, sub-agents | Haiku 4.5 | Fast, cheap |
-| Long context (256K+) | Kimi K2.5 | Largest window |
+| Coding, agentic sub-agents | GPT-5.4 | 1M context, best coding, separate quota |
+| Quick lookups, lightweight | Haiku 4.5 | Fast, cheap |
+| Long context (budget) | Kimi K2.5 | Free, 256K window |
 
-Budget: EGP 9,000/mo (Claude Max 20x) + $40 (MiniMax)
+Budget: EGP 9,000/mo (Claude Max 20x) + $40 (MiniMax) + $20 (ChatGPT Plus, GPT-5.4)
 
 ## Critical Operational Rules
 - Max 10 parallel agents. 70% usage = downgrade to MiniMax. 90% = block spawns.
@@ -61,7 +63,10 @@ Budget: EGP 9,000/mo (Claude Max 20x) + $40 (MiniMax)
 - KillMode=mixed + TimeoutStopSec=15 for systemd services.
 
 ## Key Infrastructure
-- VPS: Hostinger. Interface: Telegram + Slack.
+- VPS: Hostinger. Interface: Telegram + Slack (app rebuilt Mar 8, bot: openclaw2)
+- GPT-5.4-Pro: manually registered in openclaw.json (custom provider entry)
+- Self-healing agent: system cron every 2 min, Claude Code CLI repair
+- modelByChannel doesn't override cached sessions: use /model command or delete session
 - Git repos: openclaw-nasr (workspace), openclaw-config (config)
 - Tailscale: srv1352768.tail945bbc.ts.net
 - Google OAuth: ahmednasr999@gmail.com (Gmail + Calendar)

@@ -1,3 +1,5 @@
+| 2026-03-08 | Nuxera.AI meeting prep: research 3 HealthTech AI case studies (ROI metrics, implementation timelines) to bring to meeting. Positions Ahmed as strategic thinker, not just PM. | New today |
+
 | Date | Idea | Status |
 |------|------|--------|
 | 2026-02-25 | Executive Intelligence Briefing — daily consolidated morning briefing combining job market, company intel, LinkedIn, calendar, and strategic recommendation | ✅ Approved, building now |
@@ -8,3 +10,4 @@
 | 2026-03-02 | LinkedIn "open to work" signal to recruiters only — enable the private "Open to Work" setting on LinkedIn visible only to recruiters (not your network). This surfaces Ahmed's profile in recruiter search results for VP/Director DT roles without broadcasting publicly. Zero effort, immediate passive inbound. | New today |
 | 2026-03-03 | LinkedIn comment strategy targeting GCC health system CIOs — identify 5 CIOs/CTOs at Saudi German Hospital, NMC, PureHealth, Aster DM, and Mediclinic. Comment on their recent posts with a specific, insight-driven observation (not generic). Goal: warm connection before a job application arrives. Takes 10 minutes, builds warm inbound pipeline. | New today |
 | 2026-03-05 | LinkedIn Lead Gen Form optimization — when a recruiter or hiring manager visits your profile, LinkedIn shows them a "Connect +" or message prompt. Ensure your headline explicitly says "VP/C-Suite Digital Transformation | $50M+ Transformation Leader | GCC" to maximize click-through when you appear in their search results. Takes 30 seconds to edit, directly improves inbound quality. | New today |
+| 2026-03-08 | Nuxera.AI meeting prep: research 3 HealthTech AI case studies (ROI metrics, implementation timelines) to bring to meeting. Positions Ahmed as strategic thinker, not just PM. | New today |
