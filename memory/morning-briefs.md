@@ -598,3 +598,57 @@ Require stack:
 
 Node.js v20.19.4
 
+=== Morning Brief - 2026-03-08 06:00 AM ===
+
+## Job Radar (from Tavily)
+## Answer
+
+The VP Director PMO for digital transformation in healthcare in UAE Dubai is actively involved in major initiatives for 2026, with key events and roles shaping the sector's future. The region's digital healthcare transformation continues to progress, with leadership roles evolving.
+
+---
+
+## Sources
+
+- **Stéphane LAURENT's Post - LinkedIn** (relevance: 59%)
+  https://www.linkedin.com/posts/st%C3%A9phane-laurent-5857424_healthcare-uae-digital-activity-7425850867188154368-SPSX
+  Future: The 2026 edition, scheduled for February 9–12, will co-locate with WHX Labs Dubai, creating the world's largest healthcare event. This
+
+- **Digital healthcare transformation goes forward in the UAE** (relevance: 52%)
+  https://m.mobihealthnews.com/video/digital-healthcare-transformation-goes-forward-uae
+  The United Arab Emirates' health systems have progressed in digital transformation to create better patient outcomes. Mohammad Al Redha, MD, director of
+
+- **173 director of technology Jobs in Dubai, February 2026 | Glassdoor** (relevance: 38%)
+  http://www.glassdoor.com/Job/dubai-director-of-technology-jobs-SRCH_IL.0,5_IC2204498_KO6,28.htm
+  Search Director of technology jobs in Dubai with company ratings & salaries. 173 open jobs for Director of technology in Dubai.
+
+- **25+ Senior Director Digital Transformation Jobs, Employment in ...** (relevance: 36%)
+  https://ae.indeed.com/q-senior-director-digital-transformation-l-dubai-jobs.html
+  Discover 45 Senior Director Digital Transformation job opportunities in Dubai on Indeed.com. Apply today to advance your career with top
+
+- **Meet the Steering Committee Behind MedTech World Middle East** (relevance: 26%)
+  https://med-tech.world/news/medtech-world-middle-east-dubai-2026-steering-committee/
+  # Meet the steering committee behind MedTech World Middle East | Dubai 2026. Meet the steering committee behind MedTech World Middle East | Dubai 2026. It brings together diverse expertise, regional insight, and practical experience to ensure discussions are relevant, balanced, and grounded in real-...
+## Gmail - New Opportunities
+node:internal/modules/cjs/loader:1215
+  throw err;
+  ^
+
+Error: Cannot find module 'googleapis'
+Require stack:
+- /root/.openclaw/workspace/scripts/gmail-scan.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1212:15)
+    at Module._load (node:internal/modules/cjs/loader:1043:27)
+    at Module.require (node:internal/modules/cjs/loader:1298:19)
+    at require (node:internal/modules/helpers:182:18)
+    at Object.<anonymous> (/root/.openclaw/workspace/scripts/gmail-scan.js:1:20)
+    at Module._compile (node:internal/modules/cjs/loader:1529:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+    at Module.load (node:internal/modules/cjs/loader:1275:32)
+    at Module._load (node:internal/modules/cjs/loader:1096:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:164:12) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [ '/root/.openclaw/workspace/scripts/gmail-scan.js' ]
+}
+
+Node.js v20.19.4
+
