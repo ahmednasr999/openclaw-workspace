@@ -52,6 +52,7 @@
 Budget: EGP 9,000/mo (Claude Max 20x) + $40 (MiniMax) + $20 (ChatGPT Plus, GPT-5.4)
 
 ## Critical Operational Rules
+- Model fallback notification: ALWAYS notify Ahmed when any fallback happens (which model failed, what replaced it, why)
 - Max 10 parallel agents. 70% usage = downgrade to MiniMax. 90% = block spawns.
 - Session auto-flush at 75% context. Start fresh session after flush.
 - Never run heavy installs during active sessions (starves VPS).
