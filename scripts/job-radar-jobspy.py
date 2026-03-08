@@ -29,16 +29,19 @@ SCAN_ARCHIVE = f"{WORKSPACE}/jobs-bank/scans"
 SEARCHES = [
     # UAE
     ("VP Digital Transformation", "united arab emirates", "Dubai"),
-    ("Director AI", "united arab emirates", "Dubai"),
-    ("Head of Technology", "united arab emirates", "Dubai"),
+    ("IT Director", "united arab emirates", "Dubai"),
     ("CTO", "united arab emirates", "Dubai"),
+    ("PMO Director", "united arab emirates", "Dubai"),
+    ("VP Technology", "united arab emirates", "Dubai"),
+    ("Program Director", "united arab emirates", "Dubai"),
     # Saudi Arabia
     ("VP Digital Transformation", "saudi arabia", "Riyadh"),
-    ("Director AI", "saudi arabia", "Riyadh"),
+    ("IT Director", "saudi arabia", "Riyadh"),
+    ("PMO Director", "saudi arabia", "Riyadh"),
     # Qatar
-    ("Director Technology", "qatar", "Doha"),
+    ("Digital Transformation Director", "qatar", "Doha"),
     # Bahrain
-    ("Head of Technology", "bahrain", "Manama"),
+    ("IT Director", "bahrain", "Manama"),
 ]
 
 # Executive title keywords
@@ -57,9 +60,21 @@ RELEVANCE_KEYWORDS = [
 
 # Roles to exclude (clearly not matching Ahmed's profile)
 EXCLUDE_PATTERNS = [
-    r"sales rep", r"insurance", r"sustainability", r"compliance",
+    # Sales and BD roles (not Ahmed's function)
+    r"sales rep", r"sales director", r"sales manager", r"sales lead",
+    r"business development director", r"business development manager",
+    r"commercial director", r"regional director.*sales", r"vp.*sales",
+    r"vice president.*sales", r"svp.*sales", r"head of sales",
+    r"solution specialist", r"pre.?sales", r"account executive",
+    r"sales engineer", r"revenue director",
+    # Marketing roles
+    r"marketing manager", r"marketing director", r"head of marketing",
+    r"growth director", r"growth systems", r"brand director",
+    r"demand generation", r"content director",
+    # Non-tech functions
+    r"insurance", r"sustainability", r"compliance",
     r"legal", r"travel", r"logistics coordinator", r"office manager",
-    r"copywriter", r"editor", r"marketing manager", r"account manager",
+    r"copywriter", r"editor", r"account manager",
     r"recruitment", r"hr ", r"human resources", r"finance consultant",
     r"security officer", r"ciso", r"investor club", r"real estate",
     r"brokerage", r"web3", r"crypto", r"blockchain", r"receptionist",
@@ -69,6 +84,7 @@ EXCLUDE_PATTERNS = [
     r"nursing", r"medical director", r"clinical", r"dental",
     r"chef", r"food", r"beverage", r"hospitality director",
     r"product design", r"ux director", r"store manager",
+    r"head of technical department", r"instructor",
 ]
 
 
