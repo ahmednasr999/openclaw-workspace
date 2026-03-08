@@ -1,6 +1,6 @@
 # Active Tasks
 
-*Last updated: 2026-03-07 19:10 UTC*
+*Last updated: 2026-03-08 22:10 UTC*
 
 ## 🔴 URGENT
 - [ ] **Telegram messaging broken:** Cannot resolve chat IDs (tried @heartbeat and @ahmednasr). Need to fix config or get numeric chat ID.
@@ -17,14 +17,11 @@
 ## 🟡 In Progress
 
 ### Memory Index — Daily (Mar 6)
-- **Status:** 🔴 ESCALATED
+- **Status:** 🔴 ESCALATED (waiting on Ahmed decision)
 - **Issue:** Persistent timeout (300s), qmd command needs exec access
 - **Options:** (a) add exec tool access to cron, (b) increase timeout limit, (c) run qmd manually
 - **Command:** `cd /root/.openclaw/agents/main/qmd && XDG_CONFIG_HOME=... npx qmd update && npx qmd embed`
 - **Next:** Awaiting Ahmed's decision
-- **Status:** ✅ STARTED Mar 2
-- **Progress:** Phase 2 daily and weekly engines executed successfully
-- **Next:** Monitor scheduled runs and tune stale inputs
 
 ### LinkedIn Content Engine
 - **Status:** ✅ LIVE (Sun-Thu at 11:30 AM Cairo)
