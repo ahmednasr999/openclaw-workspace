@@ -223,3 +223,20 @@ Job scout complete. Results saved to /root/.openclaw/workspace/memory/linkedin-j
 2026-03-07 08:21:41,885 - INFO - Found 16 jobs for 'VP HealthTech' in 'Oman'
 2026-03-07 08:21:44,035 - INFO - Report saved to /root/.openclaw/workspace/memory/linkedin-job-scout.md
 2026-03-07 08:21:44,035 - INFO - Stats: 60/60 searches, 940 jobs, 807s
+2026-03-09 06:02:18,926 - INFO - Starting LinkedIn Job Scout (Camofox Edition)...
+2026-03-09 06:02:19,181 - INFO - Camofox server healthy
+2026-03-09 06:02:43,874 - INFO - Search 1/60: 'PMO Director' in 'United Arab Emirates'
+2026-03-09 06:02:55,885 - INFO - Found 7 jobs for 'PMO Director' in 'United Arab Emirates'
+2026-03-09 06:02:57,885 - INFO - Search 2/60: 'PMO Director' in 'Saudi Arabia'
+2026-03-09 06:03:08,263 - INFO - Found 16 jobs for 'PMO Director' in 'Saudi Arabia'
+2026-03-09 06:03:10,263 - INFO - Search 3/60: 'PMO Director' in 'Qatar'
+2026-03-09 06:03:21,418 - INFO - Found 16 jobs for 'PMO Director' in 'Qatar'
+2026-03-09 06:03:23,419 - INFO - Search 4/60: 'PMO Director' in 'Bahrain'
+2026-03-09 06:03:33,649 - INFO - Found 16 jobs for 'PMO Director' in 'Bahrain'
+2026-03-09 06:03:35,650 - INFO - Search 5/60: 'PMO Director' in 'Kuwait'
+2026-03-09 06:03:46,623 - INFO - Found 16 jobs for 'PMO Director' in 'Kuwait'
+2026-03-09 06:03:48,623 - INFO - Search 6/60: 'PMO Director' in 'Oman'
+2026-03-09 06:03:59,797 - INFO - Found 16 jobs for 'PMO Director' in 'Oman'
+2026-03-09 06:04:01,797 - INFO - Search 7/60: 'VP Digital Transformation' in 'United Arab Emirates'
+2026-03-09 06:04:12,984 - INFO - Found 22 jobs for 'VP Digital Transformation' in 'United Arab Emirates'
+2026-03-09 06:04:14,984 - INFO - Search 8/60: 'VP Digital Transformation' in 'Saudi Arabia'

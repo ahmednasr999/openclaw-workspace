@@ -1,10 +1,10 @@
-# Job Radar: 2026-03-08
+# Job Radar: 2026-03-09
 
-*Generated: 2026-03-08 06:00 UTC*
+*Generated: 2026-03-09 06:00 UTC*
 
 *Engine: JobSpy (LinkedIn, Indeed, Google Jobs)*
 
-*🎯 = Executive match | ⛔ = Auto-skipped*
+*🎯 = Executive match | ⛔ = Auto-skipped | 👻 = Likely ghost job (stale/vague)*
 
 ---
 
@@ -48,3 +48,5 @@ No results found.
 - Executive-level matches: 0
 - Already in pipeline: 0
 - **New jobs added to pipeline: 0**
+
+*Ghost job filter: Jobs >14 days old or with vague indicators (fast-paced, rockstar, ninja, wear many hats) are flagged.*

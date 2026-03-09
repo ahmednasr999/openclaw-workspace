@@ -33,6 +33,15 @@ SKIP_KEYWORDS = [
     "chef", "cook", "barista", "waiter",
 ]
 
+# Ghost job detection: keywords that indicate vague/risky postings
+GHOST_INDICATORS = [
+    "fast-paced", "rockstar", "ninja", "wear many hats",
+    "must love dogs", "work hard play hard",
+]
+
+# Days after which a job is considered stale (likely ghost)
+STALE_DAYS = 14
+
 # Ahmed's target searches: broad enough to catch opportunities
 SEARCHES = [
     {
@@ -117,6 +126,58 @@ def should_skip(title):
     return any(kw in title_lower for kw in SKIP_KEYWORDS)
 
 
+def is_ghost_job(row):
+    """Check if job is likely a ghost job or stale posting."""
+    from datetime import timedelta
+    
+    title = str(row.get("title", "")).lower()
+    company = str(row.get("company", "")).lower()
+    description = str(row.get("description", "")).lower() if "description" in row else ""
+    date_posted = str(row.get("date_posted", ""))
+    
+    # Check for stale posting (older than STALE_DAYS)
+    # Try to parse common date formats
+    try:
+        if date_posted and date_posted != "nan" and date_posted != "":
+            # Handle "X days ago" format
+            if "day" in date_posted.lower():
+                import re
+                match = re.search(r'(\d+)', date_posted)
+                if match:
+                    days_old = int(match.group(1))
+                    if days_old > STALE_DAYS:
+                        return "stale"
+            # Handle "X hours ago" - always fresh
+            elif "hour" in date_posted.lower():
+                pass  # Fresh
+            # Handle relative dates like "yesterday" 
+            elif "yesterday" in date_posted.lower():
+                pass  # 1 day old, fresh enough
+            else:
+                # Try parsing as date
+                try:
+                    from datetime import datetime
+                    parsed = datetime.strptime(date_posted[:10], "%Y-%m-%d")
+                    age = datetime.now() - parsed
+                    if age > timedelta(days=STALE_DAYS):
+                        return "stale"
+                except:
+                    pass
+    except:
+        pass
+    
+    # Check for vague/ghost indicators in title or description
+    ghost_score = 0
+    for indicator in GHOST_INDICATORS:
+        if indicator in title or indicator in description:
+            ghost_score += 1
+    
+    if ghost_score >= 2:
+        return "vague"
+    
+    return None  # Not a ghost job
+
+
 def extract_job_id(url):
     """Extract LinkedIn job ID from URL."""
     match = re.search(r'linkedin\.com/jobs/view/(\d+)', str(url))
@@ -155,6 +216,7 @@ def format_jobs(df, label):
 
     qualified = []
     count = 0
+    ghost_count = 0
     for _, row in df.iterrows():
         title = str(row.get("title", "N/A"))
         company = str(row.get("company", "N/A"))
@@ -169,11 +231,17 @@ def format_jobs(df, label):
         elif salary_min:
             salary_str = f" | 💰 {salary_min}+"
 
+        # Check for ghost jobs
+        ghost_status = is_ghost_job(row)
+        
         # Tag executive vs skip
         exec_match = is_executive_level(title)
         skip_match = should_skip(title)
-        tag = ""
-        if skip_match:
+        
+        if ghost_status:
+            tag = f" 👻 ({ghost_status})"
+            ghost_count += 1
+        elif skip_match:
             tag = " ⛔"
         elif exec_match:
             tag = " 🎯"
@@ -184,6 +252,8 @@ def format_jobs(df, label):
                 "url": url,
                 "date_posted": date_posted,
             })
+        else:
+            tag = ""
 
         lines.append(f"- **{title}** at {company}{tag}")
         lines.append(f"  📍 {location_val} | 📅 {date_posted}{salary_str}")
@@ -192,7 +262,7 @@ def format_jobs(df, label):
         lines.append("")
         count += 1
 
-    lines.append(f"*{count} results ({len(qualified)} executive-level)*\n")
+    lines.append(f"*{count} results ({len(qualified)} executive-level, {ghost_count} likely ghost jobs)*\n")
     return "\n".join(lines), qualified
 
 
@@ -257,7 +327,7 @@ def main():
     all_results.append(f"# Job Radar: {DATE}\n")
     all_results.append(f"*Generated: {datetime.now().strftime('%Y-%m-%d %H:%M UTC')}*\n")
     all_results.append(f"*Engine: JobSpy (LinkedIn, Indeed, Google Jobs)*\n")
-    all_results.append(f"*🎯 = Executive match | ⛔ = Auto-skipped*\n")
+    all_results.append(f"*🎯 = Executive match | ⛔ = Auto-skipped | 👻 = Likely ghost job (stale/vague)*\n")
     all_results.append("---\n")
 
     seen_urls = set()
@@ -296,6 +366,7 @@ def main():
     all_results.append(f"- Executive-level matches: {len(unique_qualified)}")
     all_results.append(f"- Already in pipeline: {len(unique_qualified) - added}")
     all_results.append(f"- **New jobs added to pipeline: {added}**\n")
+    all_results.append(f"*Ghost job filter: Jobs >14 days old or with vague indicators (fast-paced, rockstar, ninja, wear many hats) are flagged.*\n")
 
     # Write radar output
     with open(OUTPUT, "w") as f:
