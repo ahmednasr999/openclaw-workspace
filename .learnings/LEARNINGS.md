@@ -3,6 +3,13 @@
 *Corrections, knowledge gaps, and best practices.*
 *Format: [LRN-YYYYMMDD-XXX]*
 
+## [LRN-20260309-001] Always cross-check pipeline before presenting radar results
+- **Date:** 2026-03-09
+- **What happened:** Presented 7 radar roles to Ahmed one by one. All 5 viable ones were already applied to (in pipeline.md). Wasted 15+ minutes of his time.
+- **Rule:** BEFORE presenting any role from Job Radar or LinkedIn Scout, cross-reference against jobs-bank/pipeline.md (check LinkedIn job IDs and company+role combos). Never present already-applied roles. The radar crons and briefing must dedup against the pipeline.
+- **Fix needed:** (1) Build a dedup list from pipeline.md LinkedIn URLs, (2) Update scout/radar scripts to filter out applied jobs, (3) Update briefing cron to cross-reference before presenting.
+- **Promoted to:** AGENTS.md (job radar rules)
+
 ## [LRN-20260306-001] CV creation MUST use Opus 4.6 — no exceptions
 - **Date:** 2026-03-06
 - **What happened:** Ahmed requested CVs tailored on Opus 4.6. Session was on MiniMax M2.5. Built 7 CVs on MiniMax without switching. Ahmed caught it.
