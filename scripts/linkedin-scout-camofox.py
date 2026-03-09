@@ -19,6 +19,7 @@ OUTPUT_DIR = Path("/root/.openclaw/workspace/memory")
 DEFAULT_OUTPUT = OUTPUT_DIR / "linkedin-job-scout.md"
 LOG_FILE = Path("/root/.openclaw/workspace/logs/linkedin-scout.log")
 COOKIES_FILE = Path("/root/.openclaw/workspace/config/linkedin-cookies.json")
+APPLIED_IDS_FILE = Path("/root/.openclaw/workspace/jobs-bank/applied-job-ids.txt")
 
 LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
 logging.basicConfig(
@@ -170,15 +171,27 @@ def generate_report(all_jobs: dict, stats: dict) -> str:
         "",
     ]
 
-    # Deduplicate by jobId
+    # Load already-applied job IDs from pipeline
+    applied_ids = set()
+    if APPLIED_IDS_FILE.exists():
+        applied_ids = set(APPLIED_IDS_FILE.read_text().strip().splitlines())
+        logging.info(f"Loaded {len(applied_ids)} applied job IDs for dedup")
+
+    # Deduplicate by jobId and filter out already-applied jobs
     seen = set()
     unique_jobs = []
+    skipped_applied = 0
     for (kw, loc), jobs in all_jobs.items():
         for j in jobs:
             jid = j.get("jobId") or f"{j['title']}_{j.get('company','')}"
+            if jid in applied_ids:
+                skipped_applied += 1
+                continue
             if jid not in seen:
                 seen.add(jid)
                 unique_jobs.append({**j, "keyword": kw, "search_location": loc})
+    if skipped_applied:
+        logging.info(f"Filtered out {skipped_applied} already-applied jobs")
 
     lines.append(f"## Unique Jobs: {len(unique_jobs)}")
     lines.append("")

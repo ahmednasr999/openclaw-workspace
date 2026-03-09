@@ -12,6 +12,6 @@
 | 2026-03-03 | Confidential Careers | "Your application to Head of Digital Products" — REJECTION via LinkedIn automated email (jobs-noreply). Applied Jan 29. Not in active pipeline. No trigger created. | LinkedIn jobs-noreply | Logged rejection. No action required. |
 | 2026-03-03 | LinkedIn DM | Mahediali Momin (Enterprise IT Strategy Partner) messaged Ahmed on LinkedIn. Not a pipeline recruiter response. Unsolicited outreach. | messaging-digest-noreply@linkedin.com | No action — not pipeline-related. Ahmed may want to review the message manually. |
 
-| 2026-03-04 | — | — | — | No genuine recruiter responses detected. 30 emails scanned. OIA/OMRAN "Job Vacancy" email confirmed as mass blast (HSE Manager secondment, "Dear all" salutation, not pipeline-related). LinkedIn job alert (Create Group, Riyadh) is automated system alert. LinkedIn invite from Nafissa Naim is unsolicited connection, not pipeline recruiter. All other emails: newsletters, digests, notifications, marketing. No direct outreach from any of the 46 active pipeline companies. Delphi Consulting (interview Feb 24): still awaiting feedback, follow-up sent Mar 2. |
+| 2026-03-09 | — | — | — | No genuine recruiter responses detected. 50+ emails scanned (Mar 7-9). Bayt job status: mass automated. Michael Page "thank you": auto-reply. Nuxera.AI interview invitation (Mar 7-8) - interview completed, awaiting post-interview follow-up per pipeline note. All other emails: newsletters, marketing, notifications. No direct outreach from any of 51 active pipeline companies. |
 
-Last checked: 2026-03-04 11:00 UTC
+Last checked: 2026-03-09 11:00 UTC
