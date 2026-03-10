@@ -52,3 +52,6 @@
 4379915961
 4380340326
 4381981225
+hungerstation-director-it-operations-riyadh|HungerStation|Director of IT Operations|Riyadh|Applied|2026-03|linkedin:4319881126
+mcg-talent-cto-abu-dhabi|MCG Talent (Confidential)|Chief Technology Officer|Abu Dhabi|Applied|2026-03-10|mcgtalent:20261615
+consulting-point-country-head-it-strategy-qatar|Consulting Point|Country Head IT Strategy & Digital Consulting|Dubai/Qatar|Applied|2026-03|linkedin:4381472127
