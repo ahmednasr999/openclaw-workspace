@@ -17,10 +17,9 @@
 ## 🟡 In Progress
 
 ### Job Radar v3 Filter Upgrade (Mar 10)
-- **Status:** ⏳ TODO
-- **Ahmed directive:** Only surface roles scoring 85+ ATS against master CV
-- **Filters:** Function gate (tech/DT/PMO only), seniority (Director+), freshness (7 days), ATS 85+
-- **Borderline (80-84):** Hold in buffer, mention count only
+- **Status:** ✅ COMPLETE
+- **Upgraded:** ATS proxy scoring (82+ threshold), expanded kill list, borderline buffer (80-81)
+- **Filter:** Function gate (tech/DT/PMO), seniority (Director+), freshness (7 days), ATS 82+
 - **Kill list:** Sales, HR, supply chain, admin, beauty, construction, facilities
 
 ### LinkedIn Comment Poster Test (Mar 11)
