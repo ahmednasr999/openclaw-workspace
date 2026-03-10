@@ -25,6 +25,13 @@
 - NEVER use em dashes. Use commas, periods, colons. Hard rule, all output, all sub-agents.
 - Credentials shared in DM: accept and use. Flag only expired/invalid ones.
 
+## Job Radar Rules (Mar 10, 2026)
+- Pre-filter: tech/DT/PMO leadership only. Kill sales, HR, supply chain, admin, beauty, construction.
+- Seniority: Director+ only. No coordinators, no managers.
+- ATS pre-score against master CV: only surface 82+ to Ahmed.
+- Borderline 80-84: hold in buffer, mention count. Below 80: auto-skip silently.
+- Freshness: 7 days max.
+
 ## CV & ATS Rules
 - ATS floor: 82% (MiniMax M2.5 primary scorer, Opus tie-breaker for 82-87 range)
 - Never use Haiku for ATS scoring (+4.0 drift, inflates scores)
