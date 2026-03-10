@@ -1,6 +1,6 @@
 # Ahmed Nasr - Master CV Data (Source of Truth)
 
-**Last Updated:** 2026-02-28
+**Last Updated:** 2026-03-10
 **Source Files:**
 - PDF: `/root/.openclaw/media/inbound/file_99---61a97145-01ba-402f-b33b-5915c31c8daf.pdf`
 - DOCX: `/root/.openclaw/media/inbound/file_100---a1dce511-4dda-481f-aff5-c9093298c040.docx`
@@ -47,6 +47,30 @@ Digital Transformation Executive with 20+ years driving measurable business impa
 - Stakeholder Management
 - Process Improvement
 - Business Strategy
+- Vendor Management & Strategic Partnerships
+- AI Governance & Compliance Frameworks
+- Team Leadership & Capability Building
+- GCC & MENA Market Expertise
+- Regulatory Compliance (JCI, HIMSS, MOH)
+- Innovation & Emerging Technology Adoption
+
+---
+
+## Summary Templates (For Tailoring Efficiency)
+
+Pick the closest archetype. Customize 20%, not 100%.
+
+### Archetype A: AI / Technology Leadership
+AI and Digital Transformation Executive with 20+ years building enterprise AI capabilities across FinTech, HealthTech, and e-commerce in the GCC. Currently directing a $50M AI-integrated digital transformation across 15 hospitals, deploying 14 production AI agents in live clinical operations. Deep expertise in AI strategy, GenAI/LLM enterprise deployment, AI governance frameworks, and C-suite stakeholder management. Previously scaled technology platforms supporting 7 million daily orders across 8 countries at Delivery Hero (Talabat). Built enterprise PMO managing 300+ concurrent projects at Network International.
+
+### Archetype B: PMO / Program Governance
+Enterprise PMO Executive with 20+ years building governance frameworks that deliver large-scale capital programs across GCC and global markets. Currently leading a $50M digital transformation PMO across a 15-hospital network, managing cross-functional teams and enterprise-scale delivery. Built enterprise PMO from the ground up at Network International, governing 300+ concurrent projects across 8 countries. Expert in portfolio management, KPI frameworks, risk management, and stakeholder management at board and C-suite level. PMP, CSM, CSPO, and CBAP certified.
+
+### Archetype C: Digital Transformation / Strategy
+Digital Transformation Executive with 20+ years driving measurable business impact across FinTech, HealthTech, and e-commerce in GCC and Egypt. Expertise spans cloud platform strategy (AWS, Azure), enterprise AI deployment, and Saudi Vision 2030 digital health transformation. Currently leading $50M digital transformation across 15 hospitals. Previously scaled operations from 30,000 to 7 million daily orders at Delivery Hero (Talabat). Built enterprise PMO managing 300+ concurrent projects across 8 countries at Network International.
+
+### Archetype D: COO / Operations Executive
+Digital-First Operations Executive with 20+ years of multi-sector operational leadership across HealthTech, FinTech, and e-commerce in GCC and MENA. Currently steering a $50M digital transformation program across 15 hospitals in KSA, UAE, and Egypt. Previously drove 233x operational growth at Delivery Hero (Talabat), scaling daily order volumes from 30,000 to 7 million across GCC markets. Built and governed a 300+ concurrent project portfolio spanning 8 countries at Network International. Expert in combining strategic vision with operational excellence.
 
 ---
 
@@ -159,6 +183,15 @@ Digital Transformation Executive with 20+ years driving measurable business impa
 - PMO Section Head (NOT Senior Program Manager)
 - Revamp Consulting (NOT McKinsey)
 
+**TopMed Title Variants (pick closest match to target role):**
+- Default: PMO & Regional Engagement Lead
+- AI/Tech roles: PMO & Regional Engagement Lead, AI-Driven Transformation
+- PMO/Governance roles: PMO & Regional Engagement Lead (no suffix needed)
+- DT/Strategy roles: PMO & Regional Engagement Lead, Digital Transformation
+- COO/Ops roles: PMO & Regional Engagement Lead, Technology & Operations
+
+Note: The formal title stays "PMO & Regional Engagement Lead" on all CVs. The variant suffix appears in the section heading only to signal scope alignment. Never use "Acting Director", "CTO-Equivalent", or invented titles.
+
 **DO NOT fabricate:**
 - Roles not listed here
 - Metrics not supported by actual experience
@@ -169,6 +202,7 @@ Digital Transformation Executive with 20+ years driving measurable business impa
 - Emphasize relevant experience
 - Adjust summary to mirror JD keywords
 - Add context that's truthful but unstated (e.g., "IT infrastructure" from BlueCloud/Intel roles)
+- Pick the closest Summary Template archetype (A/B/C/D) and customize 20%, not rewrite 100%
 
 ---
 
