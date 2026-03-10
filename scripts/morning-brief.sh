@@ -11,19 +11,29 @@ echo "" >> /tmp/morning-brief.md
 
 # 1. Job Radar Results
 echo "## Job Radar (from Tavily)" >> /tmp/morning-brief.md
-SEARCH_RESULT=$(node /root/.openclaw/workspace/skills/tavily-search/scripts/search.mjs "VP Director PMO Digital Transformation healthcare UAE Dubai February 2026" -n 5 2>&1)
+SEARCH_RESULT=$(node /root/.openclaw/workspace/skills/tavily-search/scripts/search.mjs "VP Director PMO Digital Transformation healthcare UAE Dubai Saudi 2026" -n 5 2>&1)
 echo "$SEARCH_RESULT" >> /tmp/morning-brief.md
-echo "" >> /tmp/morning-b 2. Gmailrief.md
+echo "" >> /tmp/morning-brief.md
 
-# - New job-related emails
+# 2. Gmail - New job-related emails
 echo "## Gmail - New Opportunities" >> /tmp/morning-brief.md
 node /root/.openclaw/workspace/scripts/gmail-scan.js >> /tmp/morning-brief.md 2>&1
 echo "" >> /tmp/morning-brief.md
 
-# 3. Save to memory
+# 3. Calendar - Today's events (graceful failure for gog v0.12.0 bug)
+echo "## Calendar - Today's Events" >> /tmp/morning-brief.md
+CAL_RESULT=$(GOG_KEYRING_PASSWORD="" /usr/local/bin/gog calendar events ls --today 2>&1)
+if echo "$CAL_RESULT" | grep -q "404\|notFound\|error"; then
+    echo "*Calendar API unavailable (gog v0.12.0 bug - tracking fix)*" >> /tmp/morning-brief.md
+else
+    echo "$CAL_RESULT" | head -15 >> /tmp/morning-brief.md
+fi
+echo "" >> /tmp/morning-brief.md
+
+# 4. Save to memory
 cat /tmp/morning-brief.md >> /root/.openclaw/workspace/memory/morning-briefs.md
 
-# 4. Push to GitHub
+# 5. Push to GitHub
 cd /root/.openclaw/workspace
 git add memory/morning-briefs.md
 git commit -m "Morning brief - $DATE" >/dev/null 2>&1
