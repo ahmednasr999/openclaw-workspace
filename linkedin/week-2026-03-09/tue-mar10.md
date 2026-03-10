@@ -1,4 +1,4 @@
-# Monday March 10 | Growth | SLAY | Familiar | CTA: B
+# Tuesday March 10 | Growth | SLAY | Familiar | CTA: B
 
 ![Post Image](mon-mar10-image.png)
 
@@ -48,3 +48,6 @@ What's the biggest barrier you've seen between a healthcare IT investment and ac
 By the way, I've been documenting my journey managing a $50M hospital transformation across 3 countries. If you're navigating a similar challenge, happy to share what's working. Drop a comment or DM.
 
 #HealthcareIT #HealthCatalyst #DigitalHealth #PMO #HospitalTransformation
+
+---
+**Status: POSTED ✅ — 2026-03-10**
