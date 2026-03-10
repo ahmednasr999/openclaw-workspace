@@ -428,6 +428,31 @@ def drive_info(file_id, output_json=False):
     print(f"Size: {result.get('size', 'N/A')} bytes")
 
 
+def drive_move(file_id, new_folder_id, output_json=False):
+    """
+    Move a file to a different folder.
+    Google Drive API: add new parent, then remove old parent.
+    """
+    access_token = get_access_token()
+    
+    # Get current parents first
+    url = f"{DRIVE_API}/files/{file_id}?fields=parents"
+    req = urllib.request.Request(url, method="GET")
+    req.add_header("Authorization", f"Bearer {access_token}")
+    with urllib.request.urlopen(req) as response:
+        current_parents = json.loads(response.read().decode("utf-8")).get("parents", [])
+    
+    # Move: add new parent, remove all old parents
+    url = f"{DRIVE_API}/files/{file_id}?addParents={new_folder_id}&removeParents={','.join(current_parents)}"
+    body = {}
+    result = api_call("PATCH", url, body)
+    
+    if output_json:
+        print(fmt_json(result))
+    else:
+        print(f"Moved file to folder {new_folder_id}")
+
+
 # ===== SHEETS =====
 
 def sheets_get(sheet_id, range_spec, output_json=False):
@@ -644,6 +669,10 @@ def main():
     drip = drs.add_parser("info")
     drip.add_argument("fileId")
 
+    drmvp = drs.add_parser("move")
+    drmvp.add_argument("fileId")
+    drmvp.add_argument("folderId")
+
     # Sheets
     shp = subparsers.add_parser("sheets")
     shs = shp.add_subparsers(dest="action")
@@ -752,6 +781,8 @@ def main():
                 drive_mkdir(args.name, args.parent, output_json)
             elif args.action == "info":
                 drive_info(args.fileId, output_json)
+            elif args.action == "move":
+                drive_move(args.fileId, args.folderId, output_json)
             else:
                 drp.print_help()
 
