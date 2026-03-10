@@ -1,10 +1,12 @@
 # Job Radar: 2026-03-10
 
-*Generated: 2026-03-10 06:00 UTC*
+*Generated: 2026-03-10 18:31 UTC*
 
 *Engine: JobSpy (LinkedIn, Indeed, Google Jobs)*
 
-*🎯 = Executive match | ⛔ = Auto-skipped | 👻 = Likely ghost job (stale/vague)*
+*Filter: ATS 82+ required | Borderline 80-81 in buffer*
+
+*🎯 = Qualified (ATS 82+) | ⚠️ = Borderline (buffer) | ⛔ = Skipped | 👻 = Ghost job*
 
 ---
 
@@ -45,8 +47,13 @@ No results found.
 ## Summary
 
 - Total unique jobs found: 0
-- Executive-level matches: 0
+- **Qualified (ATS 82+): 0**
+- Borderline (ATS 80-81): 0
 - Already in pipeline: 0
 - **New jobs added to pipeline: 0**
 
-*Ghost job filter: Jobs >14 days old or with vague indicators (fast-paced, rockstar, ninja, wear many hats) are flagged.*
+*Borderline jobs held in buffer (not added to pipeline).*
+
+*Ghost job filter: Jobs >14 days old or with vague indicators flagged.*
+
+*Kill list: Sales, HR, supply chain, admin, beauty, construction, facilities excluded.*

@@ -12,11 +12,10 @@ Updated: 2026-03-10 11:27 UTC
 - Disk monitor timeout 60s -> 120s
 
 ### Open Threads
-- Monitor rate limits tomorrow after stagger fix
+- Monitor rate limits after stagger fix
 - Review v3 Advisory Board first output (tomorrow 7 AM Cairo)
-- Job Radar v3 filter upgrade (TODO)
+- Job Radar v3 filter upgrade (DONE)
 - LinkedIn Comment Poster test (Mar 11)
-- Fallback chain: keep OpenAI for now, reassess if rate limits persist
 
 ---
 
