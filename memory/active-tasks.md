@@ -16,6 +16,19 @@
 
 ## 🟡 In Progress
 
+### Job Radar v3 Filter Upgrade (Mar 10)
+- **Status:** ⏳ TODO
+- **Ahmed directive:** Only surface roles scoring 85+ ATS against master CV
+- **Filters:** Function gate (tech/DT/PMO only), seniority (Director+), freshness (7 days), ATS 85+
+- **Borderline (80-84):** Hold in buffer, mention count only
+- **Kill list:** Sales, HR, supply chain, admin, beauty, construction, facilities
+
+### LinkedIn Comment Poster Test (Mar 11)
+- **Status:** ⏳ PENDING
+- **Task:** Export LinkedIn cookies for Camoufox posting test
+- **Deadline:** End of day Mar 11, 2026
+- **Skill:** newly created linkedin-comment-poster
+
 ### Memory Index — Daily (Mar 6)
 - **Status:** ✅ COMPLETE (running successfully)
 - **Last run:** Mar 9 20:30 UTC - OK
