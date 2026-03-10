@@ -706,3 +706,61 @@ Require stack:
 
 Node.js v20.19.4
 
+=== Morning Brief - 2026-03-10 06:00 AM ===
+
+## Job Radar (from Tavily)
+## Answer
+
+The Middle East, especially UAE and Saudi Arabia, is advancing digital transformation in healthcare, with key roles like PMO Director in demand for 2026. Leadership in digital transformation is crucial, with many opportunities for digital directors. Key healthcare leaders are emerging to drive sector growth.
+
+---
+
+## Sources
+
+- **PMO Director Jobs in the Middle East (Mar 2026) - Bayt.com** (relevance: 61%)
+  https://www.bayt.com/en/international/jobs/pmo-director-jobs/
+  Apply now to over 430 PMO Director jobs in Middle East and Gulf and make your job hunting simpler. Find the latest PMO Director job vacancies and
+
+- **Middle East Healthcare Transformation Driven by Leadership** (relevance: 46%)
+  https://www.linkedin.com/posts/kamakshi-gupta-a9254013_the-middle-east-continues-to-advance-as-a-activity-7426529295029710848-IXJ1
+  Emirates Health Services (EHS) showcased cutting-edge AI-powered healthcare solutions at the World Health Exhibition in Dubai 2026. These
+
+- **179 digital director Jobs in Saudi Arabia, March 2026 | Glassdoor** (relevance: 37%)
+  https://www.glassdoor.com/Job/saudi-arabia-digital-director-jobs-SRCH_IL.0,12_IN207_KO13,29.htm
+  Search Digital director jobs in Saudi Arabia with company ratings & salaries. 179 open jobs for Digital director in Saudi Arabia.
+
+- **Saudi Digital Transformation Leader: Spotlight on Muhammad J ...** (relevance: 24%)
+  https://www.instagram.com/p/DUiFTtfDak9/
+  Never miss a post from thespotlightmagazine\_. Saudi Digital Transformation Leader: Spotlight on Muhammad J Alnemer (MJ). 20-year ascent spans Senior Manager Digital Strategy & Performance Riyadh, Portfolio Manager Digital & Analytics AlUla, Google Cloud Platform Digital Transformation Executive Dub...
+
+- **30 Healthcare leaders to watch in 2026 - Economy Middle East** (relevance: 21%)
+  https://economymiddleeast.com/eme-lists/30-healthcare-leaders-to-watch-in-2026/
+  We present the leading figures who drive transformative growth of the healthcare sector in the Middle East.
+
+## Gmail - New Opportunities
+node:internal/modules/cjs/loader:1215
+  throw err;
+  ^
+
+Error: Cannot find module 'googleapis'
+Require stack:
+- /root/.openclaw/workspace/scripts/gmail-scan.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1212:15)
+    at Module._load (node:internal/modules/cjs/loader:1043:27)
+    at Module.require (node:internal/modules/cjs/loader:1298:19)
+    at require (node:internal/modules/helpers:182:18)
+    at Object.<anonymous> (/root/.openclaw/workspace/scripts/gmail-scan.js:1:20)
+    at Module._compile (node:internal/modules/cjs/loader:1529:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+    at Module.load (node:internal/modules/cjs/loader:1275:32)
+    at Module._load (node:internal/modules/cjs/loader:1096:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:164:12) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [ '/root/.openclaw/workspace/scripts/gmail-scan.js' ]
+}
+
+Node.js v20.19.4
+
+## Calendar - Today's Events
+*Calendar API unavailable (gog v0.12.0 bug - tracking fix)*
+
