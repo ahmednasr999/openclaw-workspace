@@ -1,5 +1,24 @@
 # Last Session
-Updated: 2026-03-08 15:52 UTC
+Updated: 2026-03-10 11:27 UTC
+
+## Mar 10 — MiniMax Rate Limit Fix + Advisory Board v3 (Opus 4.6)
+**Focus:** Cron concurrency burning MiniMax quota, Advisory Board rebuild
+
+### What We Did
+- MiniMax rate limit root cause: gmail monitor every 30min + overlapping morning crons
+- Fixed: gmail monitor -> every 4hr, staggered morning crons (6:00/6:15/6:30/7:00/7:30)
+- Built Advisory Board v3 engine (897 lines, change detection, 14 input sources, dynamic recs)
+- Re-enabled Advisory Board crons on v3
+- Disk monitor timeout 60s -> 120s
+
+### Open Threads
+- Monitor rate limits tomorrow after stagger fix
+- Review v3 Advisory Board first output (tomorrow 7 AM Cairo)
+- Job Radar v3 filter upgrade (TODO)
+- LinkedIn Comment Poster test (Mar 11)
+- Fallback chain: keep OpenAI for now, reassess if rate limits persist
+
+---
 
 ## Mar 8 — Slack Setup Overhaul + Self-Healing Agent (Opus 4.6)
 **Focus:** Slack app rebuild after accidental deletion, GPT-5.4-Pro registration, self-healing deployment
