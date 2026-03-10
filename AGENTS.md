@@ -145,6 +145,68 @@ System watchdog: If context >= 75%, external script stops gateway and alerts Ahm
 
 ---
 
+---
+
+## Slack Job Search Channel (C0AJX895U3E) — Structured Output Rules
+
+When processing a JD analysis, ATS scoring, or CV delivery in this channel, ALWAYS produce structured artifacts alongside the human-readable response.
+
+### After Every JD Analysis:
+
+1. **Save dossier** to `jobs-bank/dossiers/[company-slug]-[role-slug].md`:
+```
+# [Company] — [Role Title]
+Date: YYYY-MM-DD
+Source: [URL]
+ATS Score: [X]/100
+Verdict: SUBMIT / REVIEW / SKIP
+Location: [City, Country]
+Salary: [if known]
+
+## Fit Analysis
+- Match: [top 3 matching strengths]
+- Gap: [top 3 gaps]
+
+## Key Requirements
+- [requirement 1]
+- [requirement 2]
+
+## Tailoring Notes
+- Summary archetype: [A/B/C/D]
+- Title variant: [which TopMed suffix]
+- Priority keywords: [top 5 from JD]
+
+## Skip Reasoning (if SKIP)
+- [why this role was rejected]
+```
+
+2. **Update pipeline** — add/update entry in `jobs-bank/pipeline.md`
+
+3. **Git commit** the dossier: `git add jobs-bank/ && git commit -m "dossier: [company] [role] [verdict]"`
+
+### After Every CV Delivery:
+
+Append to the dossier:
+```
+## CV Delivered
+- Date: YYYY-MM-DD
+- Model: [opus46]
+- ATS Score: [X]/100
+- Key modifications: [bullet list]
+- PDF: [filename]
+```
+
+### After Every Skip Decision:
+
+Save skip reasoning to `jobs-bank/skip-patterns.md` (append):
+```
+- [Date] [Company] [Role]: [one-line reason]
+```
+
+This file trains Job Radar to pre-filter similar roles automatically.
+
+---
+
 See also: **AGENTS-SAFETY.md** (locked commands), **AGENTS-STARTUP.md** (detailed startup), **AGENTS-CONTENT.md** (CV/content pipeline)
 
 **Links:** [[SOUL.md]] | [[USER.md]] | [[MEMORY.md]] | [[TOOLS.md]]
