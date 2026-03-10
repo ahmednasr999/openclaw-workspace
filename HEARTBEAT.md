@@ -39,6 +39,15 @@ If > 48 hours since last update → message Ahmed:
 
 Fire this alert maximum once per day, not every hour.
 
+### 3. Session Size Monitor
+
+Check /root/.openclaw/agents/main/sessions/ for bloated sessions.
+
+If any .jsonl file > 5MB → message Ahmed:
+"🔴 Bloated session detected: [session_id] is [X]MB. Consider resetting."
+
+Fire this alert maximum once per day.
+
 ---
 
 ## Daily Checks (Once Per Day, 8:00 AM Cairo Time)
