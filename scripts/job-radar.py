@@ -23,15 +23,29 @@ EXEC_KEYWORDS = [
     "transformation lead", "program director", "senior director",
 ]
 
-# Keywords that signal wrong domain or too junior
-SKIP_KEYWORDS = [
-    "intern", "junior", "associate", "coordinator", "analyst",
-    "web3", "crypto", "blockchain", "gaming", "game",
+# Kill list: domains/roles to skip entirely
+KILL_LIST = [
+    # Sales & Revenue
+    "sales", "account executive", "business development", "revenue",
+    # HR
+    "human resources", "hr manager", "recruiter", "talent acquisition",
+    # Supply Chain & Operations (non-tech)
+    "supply chain", "logistics", "procurement", "warehouse",
+    # Admin & Support
+    "admin", "office manager", "executive assistant", "receptionist",
+    # Beauty & Fashion
+    "beauty", "cosmetics", "fashion", "retail",
+    # Construction & Facilities
+    "construction", "facilities", "property", "real estate",
+    # Other non-tech
+    "marketing coordinator", "social media manager", "content writer",
     "teacher", "instructor", "professor", "lecturer",
-    "nurse", "physician", "dentist", "pharmacist",
-    "graphic design", "interior design", "fashion",
-    "chef", "cook", "barista", "waiter",
 ]
+
+# ATS score thresholds (simplified keyword-based proxy scoring)
+# Real ATS scoring requires JD + CV, done manually per application
+ATS_THRESHOLD = 82  # Floor from MEMORY.md
+BORDERLINE_MIN = 80  # Buffer zone: 80-81
 
 # Ghost job detection: keywords that indicate vague/risky postings
 GHOST_INDICATORS = [
@@ -114,16 +128,70 @@ def get_existing_urls():
         return set()
 
 
-def is_executive_level(title):
-    """Check if job title matches executive seniority."""
-    title_lower = title.lower()
-    return any(kw in title_lower for kw in EXEC_KEYWORDS)
-
-
 def should_skip(title):
-    """Check if job should be skipped based on domain/level."""
+    """Check if job should be skipped based on kill list."""
     title_lower = title.lower()
-    return any(kw in title_lower for kw in SKIP_KEYWORDS)
+    return any(kw in title_lower for kw in KILL_LIST)
+
+
+def proxy_ats_score(title, description=""):
+    """
+    Proxy ATS scoring based on keyword matching with Ahmed's profile.
+    This is a simplified heuristic - real scoring requires JD + CV.
+    Returns: (score, factors)
+    """
+    title_lower = title.lower()
+    desc_lower = description.lower() if description else ""
+    combined = title_lower + " " + desc_lower
+    
+    score = 50  # Base score
+    factors = []
+    
+    # Strong positive indicators (executive level + tech/DT/PMO)
+    exec_strong = ["vp", "vice president", "svp", "evp", "chief", "cto", "cio", "cdo", "cpo", "cfo", "coo"]
+    if any(kw in title_lower for kw in exec_strong):
+        score += 15
+        factors.append("executive")
+    
+    # Director level
+    if "director" in title_lower:
+        score += 12
+        factors.append("director")
+    
+    # Head of / GM
+    if "head of" in title_lower or "general manager" in title_lower:
+        score += 10
+        factors.append("senior")
+    
+    # Managing / Program / Transformation
+    if any(kw in combined for kw in ["transformation", "program", "managing"]):
+        score += 8
+        factors.append("transformation")
+    
+    # Tech/DT/PMO domain keywords
+    tech_keywords = [
+        "digital", "technology", "it ", "ict", "software", "ai", "artificial intelligence",
+        "machine learning", "data", "analytics", "cloud", "cybersecurity", "erp",
+        "pmo", "project management", "program management", "change management",
+        "healthtech", "fintech", "e-commerce", "ecommerce",
+    ]
+    tech_count = sum(1 for kw in tech_keywords if kw in combined)
+    score += min(tech_count * 4, 16)
+    if tech_count > 0:
+        factors.append("tech")
+    
+    # Negative indicators
+    if any(kw in title_lower for kw in ["intern", "junior", "associate", "coordinator"]):
+        score -= 20
+        factors.append("junior")
+    
+    if any(kw in combined for kw in ["web3", "crypto", "blockchain"]):
+        score -= 15
+    
+    # Clamp score
+    score = max(0, min(100, score))
+    
+    return score, factors
 
 
 def is_ghost_job(row):
@@ -205,17 +273,18 @@ def run_search(search_config):
 
 
 def format_jobs(df, label):
-    """Format job results as markdown."""
+    """Format job results with ATS proxy scoring."""
     lines = [f"### {label}\n"]
     if isinstance(df, str):
         lines.append(f"⚠️ {df}\n")
-        return "\n".join(lines), []
+        return "\n".join(lines), [], {}
     if df is None or len(df) == 0:
         lines.append("No results found.\n")
-        return "\n".join(lines), []
+        return "\n".join(lines), [], {}
 
     qualified = []
-    count = 0
+    borderline = []
+    skipped = 0
     ghost_count = 0
     for _, row in df.iterrows():
         title = str(row.get("title", "N/A"))
@@ -223,6 +292,7 @@ def format_jobs(df, label):
         location_val = str(row.get("location", "N/A"))
         url = str(row.get("job_url", ""))
         date_posted = str(row.get("date_posted", ""))
+        description = str(row.get("description", "")) if "description" in row else ""
         salary_min = row.get("min_amount", "")
         salary_max = row.get("max_amount", "")
         salary_str = ""
@@ -234,36 +304,49 @@ def format_jobs(df, label):
         # Check for ghost jobs
         ghost_status = is_ghost_job(row)
         
-        # Tag executive vs skip
-        exec_match = is_executive_level(title)
-        skip_match = should_skip(title)
-        
-        if ghost_status:
+        # Kill list check
+        if should_skip(title):
+            tag = " ⛔ (kill list)"
+            skipped += 1
+        # Ghost job
+        elif ghost_status:
             tag = f" 👻 ({ghost_status})"
             ghost_count += 1
-        elif skip_match:
-            tag = " ⛔"
-        elif exec_match:
-            tag = " 🎯"
-            qualified.append({
-                "title": title,
-                "company": company,
-                "location": location_val,
-                "url": url,
-                "date_posted": date_posted,
-            })
         else:
-            tag = ""
+            # ATS proxy scoring
+            ats_score, factors = proxy_ats_score(title, description)
+            
+            if ats_score >= ATS_THRESHOLD:
+                tag = f" 🎯 ATS:{ats_score}"
+                qualified.append({
+                    "title": title,
+                    "company": company,
+                    "location": location_val,
+                    "url": url,
+                    "date_posted": date_posted,
+                    "ats_score": ats_score,
+                })
+            elif ats_score >= BORDERLINE_MIN:
+                tag = f" ⚠️ ATS:{ats_score} (borderline)"
+                borderline.append({
+                    "title": title,
+                    "company": company,
+                    "location": location_val,
+                    "url": url,
+                    "ats_score": ats_score,
+                })
+            else:
+                tag = f" ⛔ ATS:{ats_score} (low)"
+                skipped += 1
 
         lines.append(f"- **{title}** at {company}{tag}")
         lines.append(f"  📍 {location_val} | 📅 {date_posted}{salary_str}")
         if url and url != "nan":
             lines.append(f"  🔗 {url}")
         lines.append("")
-        count += 1
 
-    lines.append(f"*{count} results ({len(qualified)} executive-level, {ghost_count} likely ghost jobs)*\n")
-    return "\n".join(lines), qualified
+    lines.append(f"*{len(qualified)} qualified (ATS {ATS_THRESHOLD}+), {len(borderline)} borderline ({BORDERLINE_MIN}-{ATS_THRESHOLD-1}), {skipped} skipped, {ghost_count} ghost jobs*\n")
+    return "\n".join(lines), qualified, borderline
 
 
 def add_to_pipeline(new_jobs, existing_ids):
@@ -319,6 +402,7 @@ def add_to_pipeline(new_jobs, existing_ids):
 
 def main():
     print(f"🔍 Job Radar v3 running: {DATE}")
+    print(f"   ATS Threshold: {ATS_THRESHOLD}+ | Borderline: {BORDERLINE_MIN}-{ATS_THRESHOLD-1}")
     
     existing_ids = get_existing_urls()
     print(f"   Pipeline has {len(existing_ids)} existing job IDs")
@@ -327,11 +411,13 @@ def main():
     all_results.append(f"# Job Radar: {DATE}\n")
     all_results.append(f"*Generated: {datetime.now().strftime('%Y-%m-%d %H:%M UTC')}*\n")
     all_results.append(f"*Engine: JobSpy (LinkedIn, Indeed, Google Jobs)*\n")
-    all_results.append(f"*🎯 = Executive match | ⛔ = Auto-skipped | 👻 = Likely ghost job (stale/vague)*\n")
+    all_results.append(f"*Filter: ATS {ATS_THRESHOLD}+ required | Borderline {BORDERLINE_MIN}-{ATS_THRESHOLD-1} in buffer*\n")
+    all_results.append(f"*🎯 = Qualified (ATS {ATS_THRESHOLD}+) | ⚠️ = Borderline (buffer) | ⛔ = Skipped | 👻 = Ghost job*\n")
     all_results.append("---\n")
 
     seen_urls = set()
     all_qualified = []
+    all_borderline = []
 
     for search in SEARCHES:
         print(f"  Searching: {search['label']}...")
@@ -344,9 +430,10 @@ def main():
             seen_urls.update(new_urls)
             df = df[mask]
         
-        formatted, qualified = format_jobs(df, search["label"])
+        formatted, qualified, borderline = format_jobs(df, search["label"])
         all_results.append(formatted)
         all_qualified.extend(qualified)
+        all_borderline.extend(borderline)
 
     # Deduplicate qualified jobs
     seen_qualified = set()
@@ -357,16 +444,28 @@ def main():
             seen_qualified.add(job_id)
             unique_qualified.append(job)
 
+    # Deduplicate borderline
+    seen_borderline = set()
+    unique_borderline = []
+    for job in all_borderline:
+        job_id = extract_job_id(job["url"])
+        if job_id and job_id not in seen_borderline and job_id not in seen_qualified:
+            seen_borderline.add(job_id)
+            unique_borderline.append(job)
+
     # Add to pipeline
     added = add_to_pipeline(unique_qualified, existing_ids)
     
     all_results.append("---\n")
     all_results.append(f"## Summary\n")
     all_results.append(f"- Total unique jobs found: {len(seen_urls)}")
-    all_results.append(f"- Executive-level matches: {len(unique_qualified)}")
+    all_results.append(f"- **Qualified (ATS {ATS_THRESHOLD}+): {len(unique_qualified)}**")
+    all_results.append(f"- Borderline (ATS {BORDERLINE_MIN}-{ATS_THRESHOLD-1}): {len(unique_borderline)}")
     all_results.append(f"- Already in pipeline: {len(unique_qualified) - added}")
     all_results.append(f"- **New jobs added to pipeline: {added}**\n")
-    all_results.append(f"*Ghost job filter: Jobs >14 days old or with vague indicators (fast-paced, rockstar, ninja, wear many hats) are flagged.*\n")
+    all_results.append(f"*Borderline jobs held in buffer (not added to pipeline).*\n")
+    all_results.append(f"*Ghost job filter: Jobs >14 days old or with vague indicators flagged.*\n")
+    all_results.append(f"*Kill list: Sales, HR, supply chain, admin, beauty, construction, facilities excluded.*\n")
 
     # Write radar output
     with open(OUTPUT, "w") as f:
@@ -374,7 +473,8 @@ def main():
 
     print(f"✅ Results written to {OUTPUT}")
     print(f"   Total unique jobs: {len(seen_urls)}")
-    print(f"   Executive matches: {len(unique_qualified)}")
+    print(f"   Qualified (ATS {ATS_THRESHOLD}+): {len(unique_qualified)}")
+    print(f"   Borderline (buffer): {len(unique_borderline)}")
     print(f"   New added to pipeline: {added}")
 
 
