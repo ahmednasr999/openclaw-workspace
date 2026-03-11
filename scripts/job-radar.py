@@ -221,6 +221,85 @@ def make_slug(company, title):
     return text
 
 
+APPLICATIONS_DIR = "/root/.openclaw/workspace/jobs-bank/applications/"
+
+
+def get_applied_company_tokens():
+    """Build a set of (company_tokens, title_tokens) from applications/ folder names.
+    Folder names follow: company-role-slug format (e.g. 'talabat-cpto', 'fab-vp-technology-data').
+    Returns list of (company_word, frozenset_of_all_tokens) for fuzzy matching.
+    """
+    applied_pairs = []
+    try:
+        for d in Path(APPLICATIONS_DIR).iterdir():
+            if d.is_dir():
+                # Folder name is the slug: split into tokens
+                tokens = set(d.name.lower().replace("-", " ").split())
+                # First token is typically the company
+                parts = d.name.lower().split("-")
+                company_token = parts[0] if parts else ""
+                if company_token and len(tokens) >= 2:
+                    applied_pairs.append((company_token, tokens))
+    except FileNotFoundError:
+        pass
+    return applied_pairs
+
+
+def is_fuzzy_applied(company, title, applied_pairs):
+    """Check if a job fuzzy-matches an already-applied role.
+    Match criteria: same company root word AND >= 60% token overlap on role words.
+    Returns True if it looks like a repost of an applied role.
+    """
+    if not applied_pairs:
+        return False
+
+    company_lower = company.lower().strip()
+    title_lower = title.lower().strip()
+
+    # Normalize: extract meaningful tokens
+    job_tokens = set(re.sub(r'[^a-z0-9\s]', '', f"{company_lower} {title_lower}").split())
+    company_words = set(re.sub(r'[^a-z0-9\s]', '', company_lower).split())
+
+    # Remove noise words
+    noise = {"the", "a", "an", "of", "and", "in", "at", "for", "to", "is", "on", "with", "by"}
+    job_tokens -= noise
+    company_words -= noise
+
+    for app_company, app_tokens in applied_pairs:
+        # Company must match: any company word contains/matches the applied company token
+        # Allow 2-char matches only for exact equality (e.g. "dp" == "dp")
+        company_match = any(
+            (w == app_company) or
+            (len(w) >= 3 and len(app_company) >= 3 and (app_company in w or w in app_company))
+            for w in company_words
+        )
+        if not company_match:
+            continue
+
+        # Token overlap: how much do the ROLE tokens overlap with applied tokens?
+        # Exclude company name tokens from overlap (company match already confirmed above)
+        # Also count abbreviation matches (e.g. "cpto" matches initials of "chief product technology officer")
+        role_app_tokens = app_tokens - {app_company}  # Remove company token from comparison
+        overlap = job_tokens & role_app_tokens
+        # Check for abbreviation matches: applied token is initials of consecutive job title words
+        title_words = re.sub(r'[^a-z0-9\s]', '', title_lower).split()
+        for app_tok in role_app_tokens:
+            if app_tok in overlap:
+                continue
+            # Check if app_tok could be an acronym of title words
+            if len(app_tok) >= 2 and all(c.isalpha() for c in app_tok):
+                initials = ''.join(w[0] for w in title_words if w and w not in noise)
+                if app_tok in initials:
+                    overlap.add(app_tok)
+
+        if len(role_app_tokens) > 0:
+            overlap_ratio = len(overlap) / len(role_app_tokens)
+            if overlap_ratio >= 0.6:
+                return True
+
+    return False
+
+
 # ============================================================
 # ENHANCED KILL LIST + SENIORITY FILTER
 # ============================================================
@@ -475,8 +554,8 @@ def run_search(search_config):
 # ============================================================
 # RESULT FORMATTING WITH FULL DEDUP
 # ============================================================
-def format_jobs(df, label, all_known_ids, dossier_slugs):
-    """Format job results with ATS proxy scoring and triple dedup."""
+def format_jobs(df, label, all_known_ids, dossier_slugs, applied_pairs=None):
+    """Format job results with ATS proxy scoring and quad dedup."""
     lines = [f"### {label}\n"]
     if isinstance(df, str):
         lines.append(f"  {df}\n")
@@ -487,7 +566,7 @@ def format_jobs(df, label, all_known_ids, dossier_slugs):
 
     qualified = []
     borderline = []
-    stats = {"skipped_kill": 0, "skipped_dedup": 0, "skipped_ats": 0, "ghost": 0}
+    stats = {"skipped_kill": 0, "skipped_dedup": 0, "skipped_ats": 0, "ghost": 0, "skipped_fuzzy": 0}
 
     for _, row in df.iterrows():
         title = str(row.get("title", "N/A"))
@@ -521,6 +600,11 @@ def format_jobs(df, label, all_known_ids, dossier_slugs):
         if is_already_known or is_in_dossiers:
             stats["skipped_dedup"] += 1
             continue  # Skip silently, don't even show
+
+        # === FUZZY APPLIED CHECK (catches reposts with new IDs) ===
+        if applied_pairs and is_fuzzy_applied(company, title, applied_pairs):
+            stats["skipped_fuzzy"] += 1
+            continue  # Skip: fuzzy match to already-applied role
 
         # === GHOST CHECK ===
         ghost_status = is_ghost_job(row)
@@ -575,8 +659,8 @@ def format_jobs(df, label, all_known_ids, dossier_slugs):
             lines.append(f"  Link: {job['url']}")
         lines.append("")
 
-    total_filtered = stats["skipped_kill"] + stats["skipped_dedup"] + stats["skipped_ats"] + stats["ghost"]
-    lines.append(f"*{len(qualified)} qualified, {len(borderline)} borderline, {total_filtered} filtered (dedup:{stats['skipped_dedup']}, kill:{stats['skipped_kill']}, ats:{stats['skipped_ats']}, ghost:{stats['ghost']})*\n")
+    total_filtered = stats["skipped_kill"] + stats["skipped_dedup"] + stats["skipped_ats"] + stats["ghost"] + stats["skipped_fuzzy"]
+    lines.append(f"*{len(qualified)} qualified, {len(borderline)} borderline, {total_filtered} filtered (dedup:{stats['skipped_dedup']}, fuzzy:{stats['skipped_fuzzy']}, kill:{stats['skipped_kill']}, ats:{stats['skipped_ats']}, ghost:{stats['ghost']})*\n")
 
     return "\n".join(lines), qualified, borderline
 
@@ -660,22 +744,24 @@ def main():
     print(f"Job Radar v4 running: {DATE}")
     print(f"   ATS Threshold: {ATS_THRESHOLD}+ | Borderline: {BORDERLINE_MIN}-{ATS_THRESHOLD-1}")
 
-    # Triple dedup sources
+    # Quad dedup sources
     existing_ids = get_existing_urls()
     applied_ids = get_applied_job_ids()
     dossier_slugs = get_dossier_slugs()
+    applied_pairs = get_applied_company_tokens()
     all_known_ids = existing_ids | applied_ids
 
     print(f"   Pipeline IDs: {len(existing_ids)}")
     print(f"   Applied IDs: {len(applied_ids)}")
     print(f"   Dossier slugs: {len(dossier_slugs)}")
-    print(f"   Total dedup pool: {len(all_known_ids)} IDs + {len(dossier_slugs)} slugs")
+    print(f"   Fuzzy applied pairs: {len(applied_pairs)}")
+    print(f"   Total dedup pool: {len(all_known_ids)} IDs + {len(dossier_slugs)} slugs + {len(applied_pairs)} fuzzy")
 
     report = []
     report.append(f"# Job Radar v4: {DATE}\n")
     report.append(f"*Generated: {datetime.now().strftime('%Y-%m-%d %H:%M UTC')}*")
     report.append(f"*Engine: JobSpy (LinkedIn, Indeed, Google Jobs)*")
-    report.append(f"*Dedup: {len(all_known_ids)} known IDs + {len(dossier_slugs)} dossier slugs*")
+    report.append(f"*Dedup: {len(all_known_ids)} known IDs + {len(dossier_slugs)} dossier slugs + {len(applied_pairs)} fuzzy pairs*")
     report.append(f"*Filter: ATS {ATS_THRESHOLD}+ required | Borderline {BORDERLINE_MIN}-{ATS_THRESHOLD-1} in buffer*\n")
     report.append("---\n")
 
@@ -694,7 +780,7 @@ def main():
             seen_urls.update(new_urls)
             df = df[mask]
 
-        formatted, qualified, borderline = format_jobs(df, search["label"], all_known_ids, dossier_slugs)
+        formatted, qualified, borderline = format_jobs(df, search["label"], all_known_ids, dossier_slugs, applied_pairs)
         report.append(formatted)
         all_qualified.extend(qualified)
         all_borderline.extend(borderline)
