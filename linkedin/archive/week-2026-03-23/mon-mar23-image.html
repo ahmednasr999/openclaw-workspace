@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1080px;
+    height: 1080px;
+    background: #0f172a;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 72px;
+  }
+  .tag {
+    display: inline-block;
+    background: #ef4444;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 8px 20px;
+    border-radius: 4px;
+    margin-bottom: 48px;
+  }
+  .big-number {
+    font-size: 110px;
+    font-weight: 900;
+    color: #1e3a5f;
+    line-height: 1;
+    margin-bottom: 0;
+  }
+  .big-number span { color: #ef4444; }
+  .number-label {
+    font-size: 26px;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    margin-top: 8px;
+  }
+  .headline {
+    font-size: 58px;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 32px;
+  }
+  .headline span { color: #ef4444; }
+  .waste-bar {
+    height: 48px;
+    background: #1e293b;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    position: relative;
+  }
+  .waste-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #ef4444 0%, #dc2626 100%);
+    width: 70%;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 16px;
+  }
+  .waste-label {
+    color: #fff;
+    font-size: 22px;
+    font-weight: 700;
+  }
+  .bar-text {
+    font-size: 20px;
+    color: #64748b;
+  }
+  .footer {
+    border-top: 1px solid #1e293b;
+    padding-top: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-name { font-size: 24px; font-weight: 700; color: #fff; }
+  .footer-title { font-size: 20px; color: #64748b; margin-top: 4px; }
+  .footer-certs { font-size: 20px; color: #ef4444; font-weight: 600; }
+</style>
+</head>
+<body>
+  <div>
+    <div class="tag">GCC Digital Transformation</div>
+    <div class="big-number">$<span>100B</span>+</div>
+    <div class="number-label">Committed to Digital Transformation</div>
+    <div class="headline">Most of it will<br><span>be wasted.</span></div>
+    <div class="waste-bar">
+      <div class="waste-fill">
+        <span class="waste-label">Technology first, strategy last</span>
+      </div>
+    </div>
+    <div class="bar-text">Technology without execution discipline = expensive failure</div>
+  </div>
+
+  <div class="footer">
+    <div>
+      <div class="footer-name">Ahmed Nasr</div>
+      <div class="footer-title">Digital Transformation Executive</div>
+    </div>
+    <div class="footer-certs">PMP · CSM · CSPO</div>
+  </div>
+</body>
+</html>

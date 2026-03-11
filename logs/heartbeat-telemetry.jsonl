@@ -10891,3 +10891,10 @@
 {"timestamp": "2026-03-11T00:38:42Z", "gateway_alive": false, "active_sessions_observed": 1929, "model_health": {"last_model_seen": "MiniMax-M2.5"}, "queue_depth": 54}
 {"timestamp": "2026-03-11T00:39:42Z", "gateway_alive": false, "active_sessions_observed": 1929, "model_health": {"last_model_seen": "gpt-5.4"}, "queue_depth": 54}
 {"timestamp": "2026-03-11T00:40:43Z", "gateway_alive": false, "active_sessions_observed": 1929, "model_health": {"last_model_seen": "MiniMax-M2.5"}, "queue_depth": 54}
+{"timestamp": "2026-03-11T00:41:43Z", "gateway_alive": false, "active_sessions_observed": 1929, "model_health": {"last_model_seen": "MiniMax-M2.5"}, "queue_depth": 54}
+{"timestamp": "2026-03-11T00:42:43Z", "gateway_alive": false, "active_sessions_observed": 1929, "model_health": {"last_model_seen": "gpt-5.4"}, "queue_depth": 54}
+{"timestamp": "2026-03-11T00:43:44Z", "gateway_alive": false, "active_sessions_observed": 1929, "model_health": {"last_model_seen": "MiniMax-M2.5"}, "queue_depth": 54}
+{"timestamp": "2026-03-11T00:44:44Z", "gateway_alive": false, "active_sessions_observed": 1929, "model_health": {"last_model_seen": "gpt-5.4"}, "queue_depth": 55}
+{"timestamp": "2026-03-11T00:45:44Z", "gateway_alive": false, "active_sessions_observed": 1929, "model_health": {"last_model_seen": "MiniMax-M2.5"}, "queue_depth": 54}
+{"timestamp": "2026-03-11T00:46:45Z", "gateway_alive": false, "active_sessions_observed": 1929, "model_health": {"last_model_seen": "MiniMax-M2.5"}, "queue_depth": 54}
+{"timestamp": "2026-03-11T00:47:45Z", "gateway_alive": false, "active_sessions_observed": 1929, "model_health": {"last_model_seen": "MiniMax-M2.5"}, "queue_depth": 54}
