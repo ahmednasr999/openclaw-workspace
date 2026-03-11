@@ -37,9 +37,12 @@ Max 8 results per search.
 
 ## STEP 3 — DEDUP CHECK
 
-Before processing any role, cross-check against /root/.openclaw/workspace/jobs-bank/pipeline.md.
-Skip any role where the same company + role title already appears in the pipeline.
-Also skip roles from /root/.openclaw/workspace/memory/job-radar-seen.txt (URL hash log).
+Before processing any role, cross-check against ALL THREE dedup sources:
+1. /root/.openclaw/workspace/jobs-bank/pipeline.md (existing pipeline entries)
+2. /root/.openclaw/workspace/jobs-bank/applied-job-ids.txt (already applied roles)
+3. /root/.openclaw/workspace/memory/job-radar-seen.txt (URL hash log)
+Skip any role where the same company + role title already appears in ANY of these files.
+Skip any role where the LinkedIn job ID or Indeed JK matches an entry in applied-job-ids.txt.
 Apply the reliability ladder: Tier 1 official source confirmed, Tier 2 reputable secondary, Tier 3 aggregator discovery only. No final recommendation without Tier 1 verification.
 
 ---
@@ -50,8 +53,20 @@ For each NEW role from email alerts AND web search:
 
 **Hard filters (must pass ALL):**
 - Geography: GCC only (UAE, Saudi Arabia, Qatar, Kuwait, Bahrain, Oman)
-- Seniority: VP, Head of, Director, C-Suite, GM, SVP, or equivalent
+- Seniority: VP, Head of, Director, C-Suite, GM, SVP, or equivalent. SKIP: Associate, Coordinator, Specialist, Analyst, Officer, Founders Associate.
 - Sector: FinTech, HealthTech, Digital Transformation, AI, PMO, eCommerce, or Technology
+- SECTOR KILL LIST (skip immediately, do not score):
+  Sales, Account Executive, Business Development, Revenue, HR, Recruiter, Talent Acquisition,
+  Beauty, Cosmetics, Fashion, Retail Operations, CRM & Loyalty (marketing), Merchandising,
+  Construction, Facilities, Real Estate, Leasing, Quantity Surveying,
+  Risk Management, ERM, Internal Audit, Compliance, Anti-Bribery,
+  BPO, Mailroom, Scanning, Document Management, Data Capture,
+  Rail, Transport Infrastructure, Railway,
+  Banking Sales, Wealth Management, Investment Banking, Treasury,
+  Public Policy, Government Affairs, Legal Counsel,
+  Culinary, Chef, Food & Beverage Director, Spa, Hotel Director, Store Director,
+  Supply Chain, Logistics, Procurement, Warehouse.
+  If a role title or JD description matches ANY of these, skip it regardless of seniority level.
 
 **ATS scoring:**
 - Fetch the full JD: if LinkedIn URL is available, run `node /root/.openclaw/workspace/scripts/fetch-guard.mjs "<URL>"` first.
