@@ -74,6 +74,36 @@
 ---
 
 | 59 | ⏳ | Nuxera.AI | Sr PM AI Healthcare | Cairo, Egypt | — | 🤝 Interview | CEO Amin Elhemaily reached out directly. Interview Mar 8 — went well, they will follow up | — | — | LinkedIn | — |
+| 60 | New | Experts Group International | Digital Transformation Director | Dubai | -- | Discovered | Radar | 2026-03-11 | -- | [Link](https://www.linkedin.com/jobs/view/4381727915) | ATS:80 |
+| 61 | New | Stellar Hunters | Head of Digital Transformation | Dammam | -- | Discovered | Radar | 2026-03-11 | -- | [Link](https://www.linkedin.com/jobs/view/4381538665) | ATS:80 |
+| 62 | New | MCG Talent | Chief Technology Officer (Abu Dhabi) | Dubai | -- | Discovered | Radar | 2026-03-11 | -- | [Link](https://www.linkedin.com/jobs/view/4381298688) | ATS:77 |
+| 63 | New | Talent Connect Group (TCG) | Head of PMO & Strategic Operations | Dubai | -- | Discovered | Radar | 2026-03-11 | -- | [Link](https://www.linkedin.com/jobs/view/4383733458) | ATS:72 |
+| 64 | New | Iron Mountain | Director, Digital Operations | Kuwait City | -- | Discovered | Radar | 2026-03-11 | -- | [Link](https://www.linkedin.com/jobs/view/4382048178) | ATS:72 |
+| 65 | New | Confidential | Chief Digital Officer | Dubai | -- | Discovered | Radar | 2026-03-11 | -- | [Link](https://www.linkedin.com/jobs/view/4383703348) | ATS:72 |
+| 66 | New | Publicis Sapient | Director of Technology - Government Sector | Riyadh | -- | Discovered | Radar | 2026-03-11 | -- | [Link](https://www.linkedin.com/jobs/view/4380812358) | ATS:72 |
+| 67 | New | GEMS Education | Head of Design Technology - August 2026 | Dubai | -- | Discovered | Radar | 2026-03-11 | -- | [Link](https://www.linkedin.com/jobs/view/4381000410) | ATS:72 |
+| 68 | New | GEMS Education | Head of Design Technology- August 2026 | Dubai | -- | Discovered | Radar | 2026-03-11 | -- | [Link](https://www.linkedin.com/jobs/view/4379640778) | ATS:72 |
+| 69 | New | Jex Recruitment | Connecting top talent with leading companies | Head of AI Strategy | Dubai | -- | Discovered | Radar | 2026-03-11 | -- | [Link](https://www.linkedin.com/jobs/view/4383479638) | ATS:72 |
+| 70 | New | DataRobot | Director, AI Engineering - International | Dubai | -- | Discovered | Radar | 2026-03-11 | -- | [Link](https://www.linkedin.com/jobs/view/4382508829) | ATS:72 |
+| 71 | New | KUWAIT JOBS HERE | hief Technical Officer (CTO) – Cloud & Streaming Expert | Kuwait City | -- | Discovered | Radar | 2026-03-11 | -- | [Link](https://www.linkedin.com/jobs/view/4381075803) | ATS:72 |
+| 72 | New | Innovation Consulting Group (ICG) | Enterprise Solutions Owner – Cloud & AI Transformation | Riyadh | -- | Discovered | Radar | 2026-03-11 | -- | [Link](https://www.linkedin.com/jobs/view/4381705937) | ATS:69 |
+| 73 | New | Innovation Consulting Group (ICG) | Enterprise Solutions Owner – Cybersecurity & Digital Platforms | Riyadh | -- | Discovered | Radar | 2026-03-11 | -- | [Link](https://www.linkedin.com/jobs/view/4381706891) | ATS:66 |
+| 74 | New | Experts Group International | Digital Transformation Director | Dubai | -- | Discovered | Radar | 2026-03-11 | -- | [Link](https://www.linkedin.com/jobs/view/4381727915) | ATS:80 |
+| 75 | New | Stellar Hunters | Head of Digital Transformation | Dammam | -- | Discovered | Radar | 2026-03-11 | -- | [Link](https://www.linkedin.com/jobs/view/4381538665) | ATS:80 |
+| 76 | New | MCG Talent | Chief Technology Officer (Abu Dhabi) | Dubai | -- | Discovered | Radar | 2026-03-11 | -- | [Link](https://www.linkedin.com/jobs/view/4381298688) | ATS:77 |
+| 77 | New | Talent Connect Group (TCG) | Head of PMO & Strategic Operations | Dubai | -- | Discovered | Radar | 2026-03-11 | -- | [Link](https://www.linkedin.com/jobs/view/4383733458) | ATS:72 |
+| 78 | New | Iron Mountain | Director, Digital Operations | Kuwait City | -- | Discovered | Radar | 2026-03-11 | -- | [Link](https://www.linkedin.com/jobs/view/4382048178) | ATS:72 |
+| 79 | New | Confidential | Chief Digital Officer | Dubai | -- | Discovered | Radar | 2026-03-11 | -- | [Link](https://www.linkedin.com/jobs/view/4383703348) | ATS:72 |
+| 80 | New | Publicis Sapient | Director of Technology - Government Sector | Riyadh | -- | Discovered | Radar | 2026-03-11 | -- | [Link](https://www.linkedin.com/jobs/view/4380812358) | ATS:72 |
+| 81 | New | GEMS Education | Head of Design Technology - August 2026 | Dubai | -- | Discovered | Radar | 2026-03-11 | -- | [Link](https://www.linkedin.com/jobs/view/4381000410) | ATS:72 |
+| 82 | New | GEMS Education | Head of Design Technology- August 2026 | Dubai | -- | Discovered | Radar | 2026-03-11 | -- | [Link](https://www.linkedin.com/jobs/view/4379640778) | ATS:72 |
+| 83 | New | Jex Recruitment | Connecting top talent with leading companies | Head of AI Strategy | Dubai | -- | Discovered | Radar | 2026-03-11 | -- | [Link](https://www.linkedin.com/jobs/view/4383479638) | ATS:72 |
+| 84 | New | DataRobot | Director, AI Engineering - International | Dubai | -- | Discovered | Radar | 2026-03-11 | -- | [Link](https://www.linkedin.com/jobs/view/4382508829) | ATS:72 |
+| 85 | New | KUWAIT JOBS HERE | hief Technical Officer (CTO) – Cloud & Streaming Expert | Kuwait City | -- | Discovered | Radar | 2026-03-11 | -- | [Link](https://www.linkedin.com/jobs/view/4381075803) | ATS:72 |
+| 86 | New | Innovation Consulting Group (ICG) | Enterprise Solutions Owner – Cloud & AI Transformation | Riyadh | -- | Discovered | Radar | 2026-03-11 | -- | [Link](https://www.linkedin.com/jobs/view/4381705937) | ATS:69 |
+| 87 | New | Innovation Consulting Group (ICG) | Enterprise Solutions Owner – Cybersecurity & Digital Platforms | Riyadh | -- | Discovered | Radar | 2026-03-11 | -- | [Link](https://www.linkedin.com/jobs/view/4381706891) | ATS:66 |
+
+
 
 ## Follow-up Schedule
 
