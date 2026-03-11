@@ -3,6 +3,14 @@
 *Corrections, knowledge gaps, and best practices.*
 *Format: [LRN-YYYYMMDD-XXX]*
 
+## [LRN-20260311-001] Job Radar surfacing junk as "High Priority"
+**Date:** 2026-03-11
+**Category:** User Correction
+**What happened:** Job Radar v2 surfaced 8 "High Priority" roles. 1 was already applied (HungerStation, in applied-job-ids.txt for weeks). 7 were completely irrelevant (BPO, beauty CRM, risk management, junior associate, manufacturing, rail CTO). Ahmed rightfully called it out.
+**Root cause:** Radar flags anything Director+ in GCC without checking: (a) already-applied dedup, (b) sector fit against kill list, (c) JD keyword overlap against master CV.
+**Fix:** Update radar script to: (1) dedup against applied-job-ids.txt before surfacing, (2) enforce sector kill filter at scan level, (3) require minimum JD keyword overlap before "High Priority" label, (4) never surface roles without full JD available for scoring.
+**Rule:** Never label a role "High Priority" without confirming it passes sector fit AND isn't already applied.
+
 ## [LRN-20260309-001] Always cross-check pipeline before presenting radar results
 - **Date:** 2026-03-09
 - **What happened:** Presented 7 radar roles to Ahmed one by one. All 5 viable ones were already applied to (in pipeline.md). Wasted 15+ minutes of his time.
