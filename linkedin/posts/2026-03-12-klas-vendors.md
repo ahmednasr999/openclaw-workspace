@@ -1,4 +1,4 @@
-# Wednesday March 12 | Growth | SLAY | Sexy | CTA: A
+# Thursday March 12 | Growth | SLAY | Sexy | CTA: A
 
 ![Post Image](wed-mar12-image.png)
 

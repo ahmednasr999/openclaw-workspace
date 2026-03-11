@@ -1,4 +1,4 @@
-# Tuesday March 11 | Growth | PAS | Free Value | CTA: C
+# Wednesday March 11 | Growth | PAS | Free Value | CTA: C
 
 ![Post Image](tue-mar11-image.png)
 
