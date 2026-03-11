@@ -18,6 +18,57 @@ This folder is home. Treat it that way.
 
 **Confirm startup:** "✅ Session loaded: [date]: [1 line summary]"
 
+---
+
+## Workspace Structure (Mar 2026)
+
+### Core Folders
+
+| Folder | Purpose |
+|--------|---------|
+| **memory/** | Session logs, strategies, master data |
+| **jobs-bank/** | Job applications, radar, pipeline |
+| **linkedin/** | Posts, calendar, engagement logs |
+| **scripts/** | Automation scripts |
+| **skills/** | OpenClaw skills |
+| **tools/** | Agent tools |
+| **config/** | Configuration files |
+| **media/** | Images, screenshots |
+| **advisory-board/** | AI briefings |
+
+### Archives
+
+```
+archives/
+├── projects/      ← old project files
+├── scripts/      ← deprecated automation
+├── plans/        ← old planning docs
+└── incidents/    ← postmortems
+```
+
+### LinkedIn Content
+
+```
+linkedin/
+├── posts/        ← all posts (YYYY-MM-DD-topic.md)
+├── calendar.md   ← content calendar
+├── engagement/   ← logs + drafts
+├── drafts/       ← work in progress
+└── archive/      ← old week folders
+```
+
+### Search Priority
+
+| Query | Check |
+|-------|-------|
+| LinkedIn posts | linkedin/posts/ |
+| LinkedIn calendar | linkedin/calendar.md |
+| Job applications | jobs-bank/applications/ |
+| Master CV data | memory/master-cv-data.md |
+| Content strategy | memory/linkedin_content_calendar.md |
+
+---
+
 ## Memory Protocol (CRITICAL)
 
 **Before doing anything non-trivial, search memory first.** This shifts the agent from "I'll guess based on provided context" to "I will check my notes before I act."
