@@ -27,19 +27,38 @@ EXEC_KEYWORDS = [
 KILL_LIST = [
     # Sales & Revenue
     "sales", "account executive", "business development", "revenue",
-    # HR
+    "account director", "account manager", "commercial officer",
+    # HR & People
     "human resources", "hr manager", "recruiter", "talent acquisition",
+    "employee relations", "people operations", "head of people",
     # Supply Chain & Operations (non-tech)
     "supply chain", "logistics", "procurement", "warehouse",
     # Admin & Support
     "admin", "office manager", "executive assistant", "receptionist",
-    # Beauty & Fashion
-    "beauty", "cosmetics", "fashion", "retail",
-    # Construction & Facilities
+    "coordinator", "founders associate", "associate director of pricing",
+    # Beauty, Fashion & Retail (non-tech)
+    "beauty", "cosmetics", "fashion", "retail operations",
+    "crm and loyalty", "loyalty director", "merchandising",
+    # Construction, Facilities & Real Estate
     "construction", "facilities", "property", "real estate",
+    "quantity survey", "leasing director", "commercial manager",
+    # Risk, Audit & Compliance (non-tech)
+    "risk management", "enterprise risk", "erm", "internal audit",
+    "compliance officer", "anti-bribery", "crisis management",
+    # BPO & Document Management
+    "bpo", "mailroom", "scanning", "data capture", "document management",
+    # Transport, Rail & Non-tech Infrastructure
+    "rail", "transport infrastructure", "railway",
+    # Finance & Banking (non-tech)
+    "priority banking", "wealth management", "investment banking",
+    "fund", "portfolio manager", "treasury",
+    # Public Policy & Legal
+    "public policy", "government affairs", "legal counsel",
     # Other non-tech
     "marketing coordinator", "social media manager", "content writer",
     "teacher", "instructor", "professor", "lecturer",
+    "culinary", "chef", "food and beverage director", "spa",
+    "store director", "hotel director",
 ]
 
 # ATS score thresholds (simplified keyword-based proxy scoring)
@@ -117,6 +136,9 @@ SEARCHES = [
 ]
 
 
+APPLIED_IDS_FILE = "/root/.openclaw/workspace/jobs-bank/applied-job-ids.txt"
+
+
 def get_existing_urls():
     """Read pipeline.md and extract all existing job URLs."""
     try:
@@ -128,69 +150,159 @@ def get_existing_urls():
         return set()
 
 
-def should_skip(title):
-    """Check if job should be skipped based on kill list."""
+def get_applied_job_ids():
+    """Read applied-job-ids.txt and extract LinkedIn job IDs and Indeed JKs."""
+    applied = set()
+    try:
+        with open(APPLIED_IDS_FILE, "r") as f:
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                # Extract LinkedIn job IDs from the pipe-delimited format
+                # Format: slug|Company|Role|Location|Status|Date|linkedin:ID or indeed:JK
+                parts = line.split("|")
+                for part in parts:
+                    part = part.strip()
+                    if part.startswith("linkedin:"):
+                        applied.add(part.replace("linkedin:", ""))
+                    elif part.startswith("indeed:"):
+                        applied.add(part.replace("indeed:", ""))
+                # Also extract IDs from URLs in the line
+                li_ids = re.findall(r'linkedin\.com/jobs/view/(\d+)', line)
+                applied.update(li_ids)
+                indeed_ids = re.findall(r'indeed\.com/viewjob\?jk=([a-f0-9]+)', line)
+                applied.update(indeed_ids)
+    except FileNotFoundError:
+        pass
+    return applied
+
+
+def should_skip(title, description="", company=""):
+    """Check if job should be skipped based on kill list. Checks title AND description."""
     title_lower = title.lower()
-    return any(kw in title_lower for kw in KILL_LIST)
+    desc_lower = description.lower() if description else ""
+    company_lower = company.lower() if company else ""
+    combined = title_lower + " " + company_lower
+
+    # Title-based kill (strict: any kill keyword in title = skip)
+    if any(kw in title_lower for kw in KILL_LIST):
+        return True
+
+    # Description-based sector kill (if description available, check for non-tech sectors)
+    if desc_lower:
+        sector_kills = [
+            "quantity surveyor", "chartered surveyor", "mailroom", "scanning operations",
+            "beauty retail", "cosmetics retail", "luxury beauty", "fashion retail",
+            "risk appetite", "risk tolerance", "anti-bribery", "whistleblower",
+            "rail operations", "railway", "transport infrastructure",
+        ]
+        if any(kw in desc_lower for kw in sector_kills):
+            return True
+
+    # Seniority floor: skip obviously junior roles
+    junior_signals = ["intern", "junior", "associate", "coordinator", "analyst", "specialist", "officer"]
+    if any(title_lower.startswith(j) or f" {j}" in title_lower for j in junior_signals):
+        # Exception: "associate director" is senior
+        if "associate director" not in title_lower and "chief" not in title_lower:
+            return True
+
+    return False
 
 
 def proxy_ats_score(title, description=""):
     """
     Proxy ATS scoring based on keyword matching with Ahmed's profile.
-    This is a simplified heuristic - real scoring requires JD + CV.
+    Stricter scoring: requires BOTH seniority AND sector alignment.
+    No description = capped at 70 (can't properly score without JD).
     Returns: (score, factors)
     """
     title_lower = title.lower()
     desc_lower = description.lower() if description else ""
     combined = title_lower + " " + desc_lower
-    
-    score = 50  # Base score
+    has_description = bool(desc_lower.strip())
+
+    score = 40  # Base score (lowered from 50)
     factors = []
-    
-    # Strong positive indicators (executive level + tech/DT/PMO)
+
+    # === SENIORITY (max 15 pts) ===
     exec_strong = ["vp", "vice president", "svp", "evp", "chief", "cto", "cio", "cdo", "cpo", "cfo", "coo"]
     if any(kw in title_lower for kw in exec_strong):
         score += 15
         factors.append("executive")
-    
-    # Director level
-    if "director" in title_lower:
+    elif "director" in title_lower:
         score += 12
         factors.append("director")
-    
-    # Head of / GM
-    if "head of" in title_lower or "general manager" in title_lower:
+    elif "head of" in title_lower or "general manager" in title_lower:
         score += 10
         factors.append("senior")
-    
-    # Managing / Program / Transformation
-    if any(kw in combined for kw in ["transformation", "program", "managing"]):
-        score += 8
-        factors.append("transformation")
-    
-    # Tech/DT/PMO domain keywords
-    tech_keywords = [
-        "digital", "technology", "it ", "ict", "software", "ai", "artificial intelligence",
-        "machine learning", "data", "analytics", "cloud", "cybersecurity", "erp",
-        "pmo", "project management", "program management", "change management",
-        "healthtech", "fintech", "e-commerce", "ecommerce",
+    else:
+        score -= 5  # Not exec-level title
+        factors.append("non-exec-title")
+
+    # === SECTOR FIT (max 20 pts) - CRITICAL ===
+    # Ahmed's sectors: HealthTech, FinTech, Digital Transformation, e-commerce, AI, PMO, IT
+    sector_strong = [
+        "digital transformation", "healthtech", "health tech", "digital health",
+        "fintech", "fin tech", "payments", "e-commerce", "ecommerce",
+        "hospital", "clinical", "healthcare it",
     ]
-    tech_count = sum(1 for kw in tech_keywords if kw in combined)
-    score += min(tech_count * 4, 16)
-    if tech_count > 0:
-        factors.append("tech")
-    
-    # Negative indicators
-    if any(kw in title_lower for kw in ["intern", "junior", "associate", "coordinator"]):
-        score -= 20
-        factors.append("junior")
-    
-    if any(kw in combined for kw in ["web3", "crypto", "blockchain"]):
+    sector_medium = [
+        "digital", "technology", "it operations", "it infrastructure",
+        "information technology", "software", "ai ", "artificial intelligence",
+        "pmo", "project management", "program management",
+        "cloud", "cybersecurity", "data analytics", "machine learning",
+    ]
+
+    sector_strong_count = sum(1 for kw in sector_strong if kw in combined)
+    sector_medium_count = sum(1 for kw in sector_medium if kw in combined)
+
+    if sector_strong_count > 0:
+        score += min(sector_strong_count * 10, 20)
+        factors.append("sector-strong")
+    elif sector_medium_count > 0:
+        score += min(sector_medium_count * 5, 15)
+        factors.append("sector-medium")
+    else:
+        # No sector alignment at all: hard penalty
+        score -= 10
+        factors.append("no-sector-fit")
+
+    # === AHMED-SPECIFIC KEYWORDS (max 10 pts) ===
+    ahmed_keywords = [
+        "transformation", "agile", "scrum", "enterprise", "governance",
+        "stakeholder", "vendor management", "change management",
+        "delivery hero", "talabat", "vision 2030",
+        "erp", "crm implementation", "salesforce",
+    ]
+    ahmed_count = sum(1 for kw in ahmed_keywords if kw in combined)
+    score += min(ahmed_count * 3, 10)
+    if ahmed_count > 0:
+        factors.append("profile-match")
+
+    # === NEGATIVE INDICATORS ===
+    # Hands-on technical roles (not exec leadership)
+    if any(kw in combined for kw in [
+        "hands-on coding", "docker", "kubernetes", "terraform",
+        "full-stack developer", "senior engineer", "staff engineer",
+        "ph.d. required", "phd required", "cs degree required",
+    ]):
         score -= 15
-    
+        factors.append("too-technical")
+
+    if any(kw in combined for kw in ["web3", "crypto", "blockchain", "defi"]):
+        score -= 15
+        factors.append("crypto")
+
+    # === NO DESCRIPTION PENALTY ===
+    # Can't properly score without JD content
+    if not has_description:
+        score = min(score, 70)  # Cap at 70 without JD
+        factors.append("no-jd-cap")
+
     # Clamp score
     score = max(0, min(100, score))
-    
+
     return score, factors
 
 
@@ -272,8 +384,10 @@ def run_search(search_config):
         return f"ERROR: {e}"
 
 
-def format_jobs(df, label):
-    """Format job results with ATS proxy scoring."""
+def format_jobs(df, label, all_known_ids=None):
+    """Format job results with ATS proxy scoring and dedup against applied jobs."""
+    if all_known_ids is None:
+        all_known_ids = set()
     lines = [f"### {label}\n"]
     if isinstance(df, str):
         lines.append(f"⚠️ {df}\n")
@@ -301,11 +415,21 @@ def format_jobs(df, label):
         elif salary_min:
             salary_str = f" | 💰 {salary_min}+"
 
+        # Check for already-applied
+        job_id = extract_job_id(url)
+        indeed_match = re.search(r'indeed\.com/viewjob\?jk=([a-f0-9]+)', url)
+        indeed_id = indeed_match.group(1) if indeed_match else None
+        is_already_applied = (job_id and job_id in all_known_ids) or (indeed_id and indeed_id in all_known_ids)
+
         # Check for ghost jobs
         ghost_status = is_ghost_job(row)
         
-        # Kill list check
-        if should_skip(title):
+        # Already applied check (FIRST, before anything else)
+        if is_already_applied:
+            tag = " 🔁 (already applied/in pipeline)"
+            skipped += 1
+        # Kill list check (now includes description)
+        elif should_skip(title, description, company):
             tag = " ⛔ (kill list)"
             skipped += 1
         # Ghost job
@@ -405,7 +529,11 @@ def main():
     print(f"   ATS Threshold: {ATS_THRESHOLD}+ | Borderline: {BORDERLINE_MIN}-{ATS_THRESHOLD-1}")
     
     existing_ids = get_existing_urls()
+    applied_ids = get_applied_job_ids()
+    all_known_ids = existing_ids | applied_ids
     print(f"   Pipeline has {len(existing_ids)} existing job IDs")
+    print(f"   Applied-jobs has {len(applied_ids)} already-applied IDs")
+    print(f"   Total known IDs (dedup): {len(all_known_ids)}")
     
     all_results = []
     all_results.append(f"# Job Radar: {DATE}\n")
@@ -430,7 +558,7 @@ def main():
             seen_urls.update(new_urls)
             df = df[mask]
         
-        formatted, qualified, borderline = format_jobs(df, search["label"])
+        formatted, qualified, borderline = format_jobs(df, search["label"], all_known_ids)
         all_results.append(formatted)
         all_qualified.extend(qualified)
         all_borderline.extend(borderline)
@@ -453,8 +581,8 @@ def main():
             seen_borderline.add(job_id)
             unique_borderline.append(job)
 
-    # Add to pipeline
-    added = add_to_pipeline(unique_qualified, existing_ids)
+    # Add to pipeline (dedup against both pipeline AND applied-jobs)
+    added = add_to_pipeline(unique_qualified, all_known_ids)
     
     all_results.append("---\n")
     all_results.append(f"## Summary\n")
