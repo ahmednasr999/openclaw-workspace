@@ -100,6 +100,14 @@
     "self-improving-agent": {
       "version": "1.0.11",
       "installedAt": 1772619751635
+    },
+    "elite-longterm-memory": {
+      "version": "1.2.3",
+      "installedAt": 1773185896080
+    },
+    "web-deploy": {
+      "version": "1.0.0",
+      "installedAt": 1773187350676
     }
   }
 }
