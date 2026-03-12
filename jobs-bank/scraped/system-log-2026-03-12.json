@@ -7,17 +7,17 @@
   },
   "operations_summary": {
     "jobs_scanned": "qualified-jobs-2026-03-12.md: 4 qualified, 11 borderline.",
-    "linkedin_found": "4 posts across 3 layers",
+    "linkedin_found": "2 posts across 3 layers",
     "calendar_events": "0 today, 0 upcoming",
-    "comments_drafted": "4 by Sonnet 4.6",
+    "comments_drafted": "2 by Sonnet 4.6",
     "docs_generated": "Daily Briefing + System Log"
   },
   "went_right": [
     "Job scanner: 4 qualified, 11 borderline.",
     "Calendar check completed.",
     "Pipeline read: 66 active.",
-    "LinkedIn: 4 posts across 3 layers.",
-    "Comments drafted: 4/4 by Sonnet 4.6.",
+    "LinkedIn: 2 posts across 3 layers.",
+    "Comments drafted: 2/2 by Sonnet 4.6.",
     "Briefing JSON built.",
     "Daily Briefing Google Doc generated."
   ],
@@ -32,7 +32,7 @@
     }
   ],
   "model_usage": {
-    "Sonnet 4.6": "Comment drafting: 4 comments",
+    "Sonnet 4.6": "Comment drafting: 2 comments",
     "Orchestrator": "Python only for all other steps"
   },
   "tomorrow_improvements": [

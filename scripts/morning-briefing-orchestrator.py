@@ -283,11 +283,32 @@ def find_posts(commented_urls, targets):
     def is_fresh(url):
         return "linkedin.com/posts/" in url and url not in commented_urls and not is_company_page(url)
 
-    # Layer 1: Pipeline companies
+    # Layer 1: Pipeline companies - search for INDIVIDUALS at those companies
     tier1 = targets.get("layer_1_pipeline_companies", {}).get("tier_1", [])
-    q1 = " OR ".join(f'"{c}"' for c in tier1[:6])
-    raw1 = tavily_search(f'site:linkedin.com/posts ({q1}) digital transformation technology', n=8, days=7)
+    # Split into 3 smaller searches to maximize coverage of individuals
+    raw1 = []
+    batch1 = tier1[:5]
+    batch2 = tier1[5:10]
+    batch3 = tier1[10:15]
+    for batch in [batch1, batch2, batch3]:
+        if not batch:
+            break
+        names = " OR ".join(f'"{c}"' for c in batch)
+        # Key: add personal terms to push individual posts over company pages
+        r = tavily_search(f'site:linkedin.com/in OR site:linkedin.com/posts ({names}) "proud" OR "excited" OR "joined" OR "led" OR "my team" OR "we launched" digital transformation', n=5, days=10)
+        raw1.extend(r)
+    # Also search for executive titles at target companies
+    r2 = tavily_search('site:linkedin.com/posts ("CTO" OR "VP" OR "Director" OR "Head of") ("G42" OR "Dubai Holding" OR "Talabat" OR "RAKBANK" OR "FAB") 2026', n=5, days=10)
+    raw1.extend(r2)
     L1 = [make_post(r, "Layer 1: Pipeline Company") for r in raw1 if is_fresh(r.get("url",""))]
+    # Deduplicate by URL
+    seen = set()
+    L1_dedup = []
+    for p in L1:
+        if p["link"] not in seen:
+            seen.add(p["link"])
+            L1_dedup.append(p)
+    L1 = L1_dedup
     log(f"  Layer 1: {len(raw1)} raw, {len(L1)} passed filter")
 
     # Layer 2: Recruiters
