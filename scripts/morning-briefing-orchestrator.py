@@ -409,7 +409,7 @@ def update_log(posts, today_str):
 # STEP 7: BUILD BRIEFING JSON
 # ============================================================
 def build_briefing_json(today_str, date_display, qualified, borderline, scanner_note,
-                        events, upcoming, pipeline, posts):
+                        events, upcoming, pipeline, posts, todays_post=None):
     log("Step 7: Building briefing JSON...")
 
     L1 = [p for p in posts if "Layer 1" in p.get("target_layer", "")]
@@ -430,6 +430,7 @@ def build_briefing_json(today_str, date_display, qualified, borderline, scanner_
             "calendar_status": f"{len(events)} events today" if events else "No events today",
             "pipeline_status": pipeline.get("total_applications", "No data"),
         },
+        "todays_post": todays_post,
         "jobs": {
             "scanner_note": scanner_note,
             "qualified":    qualified,
@@ -567,6 +568,45 @@ def main():
         pipeline = {}
     log("")
 
+    # Step 3b: Today's LinkedIn post
+    todays_post = None
+    try:
+        post_dir = f"{WORKSPACE}/linkedin/posts"
+        post_md  = f"{post_dir}/{today_str}-*.md"
+        post_files = glob.glob(post_md)
+        if post_files:
+            pf = post_files[0]
+            with open(pf) as f:
+                post_content = f.read()
+            # Check for matching image
+            img_pattern = pf.replace(".md", ".png")
+            img_exists = os.path.exists(img_pattern)
+            # Extract title line (first # heading or first non-empty line)
+            title_line = ""
+            for line in post_content.split("\n"):
+                l = line.strip()
+                if l.startswith("# "):
+                    title_line = l.lstrip("# ").strip()
+                    break
+                elif l and not l.startswith("!") and not l.startswith("---"):
+                    title_line = l[:80]
+                    break
+            todays_post = {
+                "title": title_line,
+                "content": post_content,
+                "image_path": img_pattern if img_exists else None,
+                "image_filename": os.path.basename(img_pattern) if img_exists else None,
+                "github_link": f"https://github.com/ahmednasr999/openclaw-workspace/blob/master/linkedin/posts/{os.path.basename(pf)}",
+                "file": os.path.basename(pf),
+            }
+            log(f"  Today's post: {os.path.basename(pf)} (image: {'yes' if img_exists else 'no'})")
+            went_right.append(f"LinkedIn post found: {os.path.basename(pf)}")
+        else:
+            log(f"  No post found for {today_str}")
+    except Exception as e:
+        log(f"  Post lookup failed: {e}")
+    log("")
+
     # Step 4
     try:
         selected_posts, all_posts = find_posts(commented_urls, targets)
@@ -596,7 +636,7 @@ def main():
     try:
         briefing_path = build_briefing_json(
             today_str, date_display, qualified, borderline, scanner_note,
-            events, upcoming, pipeline, selected_posts
+            events, upcoming, pipeline, selected_posts, todays_post
         )
         went_right.append("Briefing JSON built.")
     except Exception as e:

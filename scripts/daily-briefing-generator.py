@@ -28,6 +28,7 @@ ACCOUNT = "ahmednasr999@gmail.com"
 BOLD_LABELS = [
     "Priority Focus:", "Scanner Status:", "LinkedIn:", "Calendar:",
     "Pipeline:", "Company:", "Location:", "ATS Score:", "Link:",
+    "File:", "Image:", "GitHub:", "Action:",
     "Fit:", "JD Length:", "Status:", "Author:", "Topic:",
     "Comment Angle:", "Today:", "Upcoming:", "Total Applications:",
     "Responses This Week:", "Follow-ups Overdue:", "Closed:",
@@ -109,13 +110,48 @@ def build_document_lines(data):
     lines.append((f"Pipeline: {summary.get('pipeline_status', 'No pipeline data')}", "NORMAL_TEXT"))
     lines.append(("", "NORMAL_TEXT"))
 
-    # ===== 2. JOBS RADAR =====
+    # ===== 2. TODAY'S LINKEDIN POST =====
+    todays_post = data.get("todays_post")
+    if todays_post:
+        lines.append(("2. Today's LinkedIn Post", "HEADING_2"))
+        lines.append(("", "NORMAL_TEXT"))
+        lines.append((f"File: {todays_post.get('file', 'N/A')}", "NORMAL_TEXT"))
+        if todays_post.get("image_filename"):
+            lines.append((f"Image: {todays_post['image_filename']} (pre-built, ready to attach)", "NORMAL_TEXT"))
+        else:
+            lines.append(("Image: No image found for today.", "NORMAL_TEXT"))
+        if todays_post.get("github_link"):
+            lines.append((f"GitHub: {todays_post['github_link']}", "NORMAL_TEXT"))
+        lines.append(("", "NORMAL_TEXT"))
+
+        # Show post content (skip front matter lines starting with # or ---)
+        content = todays_post.get("content", "")
+        in_content = False
+        for cline in content.split("\n"):
+            cl = cline.strip()
+            if cl.startswith("---"):
+                in_content = True
+                continue
+            if not in_content:
+                continue
+            if cl.startswith("!["):  # Skip image markdown
+                continue
+            if cl:
+                lines.append((cl, "NORMAL_TEXT"))
+            else:
+                lines.append(("", "NORMAL_TEXT"))
+
+        lines.append(("", "NORMAL_TEXT"))
+        lines.append(("Action: Copy post text above, attach the pre-built image, and publish to LinkedIn.", "NORMAL_TEXT"))
+        lines.append(("", "NORMAL_TEXT"))
+
+    # ===== 3. JOBS RADAR =====
     jobs = data.get("jobs", {})
     qualified = jobs.get("qualified", [])
     borderline = jobs.get("borderline", [])
     scanner_note = jobs.get("scanner_note", "")
 
-    lines.append(("2. Jobs Radar", "HEADING_2"))
+    lines.append(("3. Jobs Radar", "HEADING_2"))
     lines.append(("", "NORMAL_TEXT"))
     if scanner_note:
         lines.append((scanner_note, "NORMAL_TEXT"))
@@ -160,7 +196,7 @@ def build_document_lines(data):
     posts = linkedin.get("posts", [])
     categories = linkedin.get("categories", [])
 
-    lines.append(("3. LinkedIn Engagement Opportunities", "HEADING_2"))
+    lines.append(("4. LinkedIn Engagement Opportunities", "HEADING_2"))
     lines.append(("", "NORMAL_TEXT"))
     if linkedin.get("intro"):
         lines.append((linkedin["intro"], "NORMAL_TEXT"))
@@ -216,7 +252,7 @@ def build_document_lines(data):
     events = calendar.get("events", [])
     upcoming = calendar.get("upcoming", [])
 
-    lines.append(("4. Calendar & Deadlines", "HEADING_2"))
+    lines.append(("5. Calendar & Deadlines", "HEADING_2"))
     lines.append(("", "NORMAL_TEXT"))
 
     if events:
@@ -235,7 +271,7 @@ def build_document_lines(data):
     # ===== 5. PIPELINE STATUS =====
     pipeline = data.get("pipeline", {})
 
-    lines.append(("5. Pipeline Status", "HEADING_2"))
+    lines.append(("6. Pipeline Status", "HEADING_2"))
     lines.append(("", "NORMAL_TEXT"))
 
     if pipeline.get("total_applications"):
@@ -266,7 +302,7 @@ def build_document_lines(data):
     # ===== 6. STRATEGIC NOTES =====
     notes = data.get("strategic_notes", [])
 
-    lines.append(("6. Strategic Notes", "HEADING_2"))
+    lines.append(("7. Strategic Notes", "HEADING_2"))
     lines.append(("", "NORMAL_TEXT"))
     for note in notes:
         lines.append((f"{bullet} {note}", "NORMAL_TEXT"))
@@ -275,7 +311,7 @@ def build_document_lines(data):
     # ===== 7. ACTION ITEMS =====
     actions = data.get("action_items", [])
 
-    lines.append(("7. Action Items", "HEADING_2"))
+    lines.append(("8. Action Items", "HEADING_2"))
     lines.append(("", "NORMAL_TEXT"))
     for action in actions:
         lines.append((f"{checkbox} {action}", "NORMAL_TEXT"))
