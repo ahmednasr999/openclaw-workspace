@@ -94,6 +94,7 @@ Budget: EGP 9,000/mo (Claude Max 20x) + $40 (MiniMax) + $20 (ChatGPT Plus, GPT-5
 - Google OAuth: ahmednasr999@gmail.com (Gmail + Calendar)
 - Job Radar: official employer sources first, aggregators discovery-only
 - LinkedIn discovery: hashtag + whitelist priority, own-feed fallback only
+- **X/Twitter Full Access (Mar 12, 2026):** @ahmednasr999 account fully accessible via Camoufox on VPS. Cookies imported to profile. Full access: posts, timeline, DMs, search, posting. Profile: x.com/ahmednasr999
 
 ## Google Docs Briefing Standard (Mar 12, locked)
 - NEVER raw markdown in Google Docs. Always native API formatting.
