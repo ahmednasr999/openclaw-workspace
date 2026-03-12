@@ -1,6 +1,6 @@
 # Wednesday March 11 | Growth | PAS | Free Value | CTA: C
 
-![Post Image](tue-mar11-image.png)
+![Post Image](wed-mar11-image.png)
 
 ---
 

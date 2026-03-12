@@ -1,6 +1,6 @@
 # Tuesday March 10 | Growth | SLAY | Familiar | CTA: B
 
-![Post Image](mon-mar10-image.png)
+![Post Image](tue-mar10-image.png)
 
 ---
 

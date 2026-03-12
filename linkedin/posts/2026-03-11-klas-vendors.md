@@ -1,6 +1,6 @@
 # Thursday March 12 | Growth | SLAY | Sexy | CTA: A
 
-![Post Image](2026-03-12-klas-vendors.png)
+![Post Image](2026-03-11-klas-vendors.png)
 
 ---
 
