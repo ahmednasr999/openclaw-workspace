@@ -127,3 +127,22 @@
 - Chief Digital Officer in Oman: 0 jobs
 - Chief Technology Officer in Oman: 0 jobs
 - Chief Information Officer in Oman: 0 jobs
+- VP Digital Transformation in Oman: 0 jobs
+- Director Digital Transformation in Oman: 0 jobs
+- Head of Digital Transformation in Oman: 0 jobs
+- Head of IT in Oman: 0 jobs
+- Head of Technology in Oman: 0 jobs
+- Director of Technology in Oman: 0 jobs
+- VP Technology in Oman: 0 jobs
+- VP IT in Oman: 0 jobs
+- Director of IT in Oman: 0 jobs
+- Senior Director Digital Transformation in Oman: 0 jobs
+- Head of Digital in Oman: 0 jobs
+- Director of Digital Innovation in Oman: 0 jobs
+- Head of Digital Innovation in Oman: 0 jobs
+- Program Director in Oman: 0 jobs
+- PMO Director in Oman: 0 jobs
+- Chief Strategy Officer in Oman: 0 jobs
+- Chief Operating Officer in Oman: 0 jobs
+
+**Oman:** 0 jobs
