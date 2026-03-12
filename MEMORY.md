@@ -43,6 +43,14 @@
 1. Tavily API → primary (news, LinkedIn posts)
 2. Jina Reader → fallback (shallow content, articles)
 3. Camoufox → last resort (complex JS, interactive)
+
+### here.now (Mar 12, 2026)
+- **URL:** https://nasr.here.now/
+- **API Key:** f9020182961ef02b3621dda6f77aa72949c35549dc8cf7fd5afe06a979e3a27e
+- **Skill:** /root/.openclaw/skills/here-now
+- **Use:** Publish static content instantly (HTML, PDFs, dashboards)
+
+### Google Workspace
 - Account: ahmednasr999@gmail.com
 - OAuth client: 583018818639 (backup client, working)
 
