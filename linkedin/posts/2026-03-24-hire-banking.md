@@ -1,4 +1,4 @@
-# LinkedIn Post — Tuesday, March 25, 2026
+# LinkedIn Post — Tuesday, March 24, 2026
 
 **Pillar:** Growth (niche expertise)
 **Framework:** PAS (Problem, Agitate, Solution)
