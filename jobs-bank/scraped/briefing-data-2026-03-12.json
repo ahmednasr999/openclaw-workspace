@@ -1,143 +1,130 @@
 {
   "date": "Thursday, March 12, 2026",
   "summary": {
-    "priority_focus": "Job pipeline review + LinkedIn engagement strategy",
-    "scanner_status": "4 qualified roles found | 6 borderline roles",
-    "linkedin_status": "6 strategic posts: 2 pipeline companies, 2 recruiters, 2 industry leaders. Ready-to-post comments included.",
-    "calendar_status": "No events scheduled today",
-    "pipeline_status": "19 active applications | 0 responses this week"
+    "priority_focus": "Job pipeline review + LinkedIn strategic engagement",
+    "scanner_status": "qualified-jobs-2026-03-12.md: 4 qualified, 11 borderline.",
+    "linkedin_status": "4 strategic posts ready to comment.",
+    "calendar_status": "No events today",
+    "pipeline_status": "66 active"
   },
   "jobs": {
-    "scanner_note": "Scanner ran at 6:00 AM Cairo. Engine: JobSpy. 120 searches across 6 GCC countries.",
+    "scanner_note": "qualified-jobs-2026-03-12.md: 4 qualified, 11 borderline.",
     "qualified": [
       {
-        "title": "Chief Strategy Officer, National Transformation Delivery",
+        "title": "Borderline (75-81):** 6"
+      },
+      {
+        "title": "Chief Strategy Officer \u2013 National Transformation Delivery",
         "company": "Confidential Government",
         "location": "Riyadh, Saudi Arabia",
         "score": "68/100",
-        "status": "New",
-        "priority": "Saudi",
-        "link": "https://www.linkedin.com/jobs/view/4382046908",
-        "jd_length": "4,895 chars (full text available)",
-        "fit": "Strong. National transformation aligns directly with $50M DT program at TopMed."
+        "link": "https://www.linkedin.com/jobs/view/4382046908"
+      },
+      {
+        "title": "Executive Director of Smart City Connectivity & IoT",
+        "company": "Confidential Government",
+        "location": "Riyadh, Saudi Arabia",
+        "score": "65/100",
+        "link": "https://www.linkedin.com/jobs/view/4382050714"
       },
       {
         "title": "Group Chief Executive Officer",
         "company": "Confidential Government",
-        "location": "Jeddah, Saudi Arabia",
+        "location": "Jeddah, Makkah, Saudi Arabia",
         "score": "66/100",
-        "status": "New",
-        "priority": "Saudi",
-        "link": "https://www.linkedin.com/jobs/view/4382549204",
-        "jd_length": "6,749 chars (full text available)",
-        "fit": "C-suite. Broad operational scope. May over-index on industry-specific experience."
-      },
-      {
-        "title": "Executive Director, Smart City Connectivity & IoT",
-        "company": "Confidential Government",
-        "location": "Riyadh, Saudi Arabia",
-        "score": "65/100",
-        "status": "New",
-        "priority": "Saudi",
-        "link": "https://www.linkedin.com/jobs/view/4382050714",
-        "jd_length": "5,506 chars (full text available)",
-        "fit": "Adjacent to DT. IoT/Smart City is niche but your systems integration experience applies."
-      },
-      {
-        "title": "Chief Operations Officer (COO)",
-        "company": "APM Terminals",
-        "location": "Al-Hidd, Bahrain",
-        "score": "65/100",
-        "status": "New",
-        "link": "https://www.linkedin.com/jobs/view/4373942359",
-        "jd_length": "6,854 chars (full text available)",
-        "fit": "Operations-heavy role. Port/logistics sector. Less aligned with DT positioning."
+        "link": "https://www.linkedin.com/jobs/view/4382549204"
       }
     ],
     "borderline": [
       {
-        "title": "Group CIAO, Enterprise Architecture",
-        "company": "Confidential Government",
-        "location": "Riyadh",
-        "score": "63/100"
+        "title": "Date:** 2026-03-12"
       },
       {
-        "title": "Director, Investments",
-        "company": "Islamic Development Bank",
-        "location": "Jeddah",
-        "score": "64/100"
+        "title": "Engine:** JobSpy (full JD text)"
+      },
+      {
+        "title": "Threshold:** ATS 65+"
+      },
+      {
+        "title": "Qualified:** 4"
+      },
+      {
+        "title": "Chief Operations Officer (COO) - Bahrain",
+        "company": "APM Terminals",
+        "location": "Al-Hidd, Muharraq Governorate, Bahrain",
+        "score": "65/100",
+        "link": "https://www.linkedin.com/jobs/view/4373942359"
       },
       {
         "title": "Chief Strategy Officer",
         "company": "Confidential Government",
-        "location": "Jeddah",
-        "score": "57/100"
+        "location": "Jeddah, Makkah, Saudi Arabia",
+        "score": "57/100",
+        "link": "https://www.linkedin.com/jobs/view/4382547338"
       },
       {
-        "title": "Operations Director",
-        "company": "Eaton",
-        "location": "Dubai",
-        "score": "61/100"
+        "title": "Group Chief Information Officer \u2013 Enterprise Architecture",
+        "company": "Confidential Government",
+        "location": "Riyadh, Saudi Arabia",
+        "score": "63/100",
+        "link": "https://www.linkedin.com/jobs/view/4382068053"
+      },
+      {
+        "title": "Director, Investments Department",
+        "company": "Islamic Development Bank (IsDB)",
+        "location": "Jiddah, Makkah, Saudi Arabia",
+        "score": "64/100",
+        "link": "https://www.linkedin.com/jobs/view/4373932314"
       },
       {
         "title": "Head of Digital Acquisition",
         "company": "Finance House",
-        "location": "Abu Dhabi",
-        "score": "55/100"
+        "location": "Abu Dhabi Emirate, United Arab Emirates",
+        "score": "55/100",
+        "link": "https://www.linkedin.com/jobs/view/4384147434"
+      },
+      {
+        "title": "Operations Director - Campus Manager",
+        "company": "Eaton",
+        "location": "Dubai, Dubai, United Arab Emirates",
+        "score": "61/100",
+        "link": "https://www.linkedin.com/jobs/view/4372601167"
+      },
+      {
+        "title": "Operations Director - Campus Manager",
+        "company": "Eaton",
+        "location": "Dubai, Dubai, United Arab Emirates",
+        "score": "61/100",
+        "link": "https://www.linkedin.com/jobs/view/4372486689"
       }
     ],
-    "recommendation": "Top pick: Chief Strategy Officer, National Transformation (68/100, Riyadh). Strongest alignment with your digital transformation executive positioning. Review full JD and consider tailoring CV.\nSecondary: Group CIAO, Enterprise Architecture (63/100) is borderline but worth reviewing if you want to broaden scope."
+    "recommendation": "4 qualified roles to review. Check fit and decide: apply or skip."
   },
   "linkedin": {
-    "intro": "Three-layer strategic targeting. Posts sorted by ROI potential. Individual authors only.",
+    "intro": "Three-layer strategic targeting. Ready-to-post comments below.",
     "categories": [
-      {
-        "name": "Layer 1: Pipeline Company Posts (Highest ROI)",
-        "posts": [
-          {
-            "index": 1,
-            "title": "Inception x DGE Strategic Partnership: Accelerating Government AI",
-            "author": "Inception (G42) via Ashish Ipe Koshy, CEO",
-            "topic": "Strategic partnership between Dept of Government Enablement and Inception to accelerate AI adoption across UAE government.",
-            "link": "https://www.linkedin.com/posts/inception-g42-company_inception-dge-g42-activity-7427000787139985408-z3yv",
-            "comment_angle": "You applied for Director Delivery at Inception. Commenting here puts you on their radar.",
-            "ready_comment": "This partnership signals exactly where government AI delivery is heading in the UAE. At TopMed, we faced a similar challenge: translating enterprise AI strategy into hospital-level execution across 15 facilities. The gap is never the technology. It is the delivery framework that bridges policy intent to operational reality. Excited to see Inception scaling this across government entities.",
-            "target_layer": "Layer 1: Pipeline (Inception/G42)"
-          },
-          {
-            "index": 2,
-            "title": "Giorgio Torre: UAE Digital Export is Booming (G42 Analysis)",
-            "author": "Giorgio Torre (Technology Executive)",
-            "topic": "G42 as the muscle turning data into future. AI, healthcare, smart cities, genomics.",
-            "link": "https://www.linkedin.com/posts/giorgiotorre1234_uae-digital-export-is-literally-booming-activity-7411360350102675456-QjHK",
-            "comment_angle": "G42 ecosystem post from individual. Your healthcare AI experience is directly relevant.",
-            "ready_comment": "The healthcare and genomics piece is where this gets real. Leading digital transformation across Saudi German Hospital Group, I have seen how AI platforms need to navigate regulatory complexity, clinician resistance, and legacy system integration simultaneously. The UAE is building the infrastructure, but the execution layer, translating AI capability into clinical workflow, is where the next wave of value lives.",
-            "target_layer": "Layer 1: Pipeline (G42 ecosystem)"
-          }
-        ]
-      },
       {
         "name": "Layer 2: GCC Executive Recruiter Posts",
         "posts": [
           {
-            "index": 3,
-            "title": "Cooper Fitch: 10 Year Anniversary in GCC Executive Search",
-            "author": "Cooper Fitch (GCC Recruiter)",
-            "topic": "Cooper Fitch celebrates 10 years in GCC executive placement. Leadership, AI, Saudization trends.",
-            "link": "https://www.linkedin.com/posts/cooper-fitch_cooperfitch-10yearanniversary-gcc-activity-7424071594089537536-ZL-7",
-            "comment_angle": "You applied via Cooper Fitch for Executive Director Strategic Initiatives. This builds recognition.",
-            "ready_comment": "Congratulations on 10 years shaping GCC leadership. The executive search landscape here has evolved dramatically. When I moved into the GCC market, the demand was for operators who could bridge global best practices with local execution realities. That is even more true now with AI and Vision 2030 programs accelerating across every sector. Curious how you are seeing the demand shift for transformation-focused leadership vs. traditional functional heads.",
-            "target_layer": "Layer 2: Recruiter (Cooper Fitch)"
+            "title": "#ebbo #leadersinloyalty #loyaltyevents #loyaltyhabits #loyaltybuilding",
+            "author": "Ebboloyalty",
+            "topic": "At #BCG, we\u2019re proud to have partnered with Heidrick & Struggles and INSEAD Corporate Governance Centre to host our latest Board Roundtable Series \u2014 bringing together board members, executives, and governance leaders for rich conversations on the future of leadership and corporate stewardship. Ranji",
+            "link": "https://www.linkedin.com/posts/ebboloyalty_ebbo-leadersinloyalty-loyaltyevents-activity-7287939241710379009-I0pw",
+            "activity_id": "",
+            "target_layer": "Layer 2: Recruiter",
+            "ready_comment": "Governance conversations at the board level are most valuable when they move beyond compliance frameworks and into how leadership structures actually enable or constrain transformation speed. Having led a $50M digital transformation across 15 hospitals at Saudi German Hospital Group, I've seen firsthand how board-level clarity on digital strategy can make or break execution timelines when the stakes are high and the complexity is real. The gap between boardroom intent and operational reality often comes down to whether governance models were built for the pace of change they're now being asked to support. What themes around technology governance or digital oversight came up most in these roundtable discussions?",
+            "comment_angle": "At #BCG, we\u2019re proud to have partnered with Heidrick & Struggles and INSEAD Corp"
           },
           {
-            "index": 4,
-            "title": "Jim Hick: Leadership Pipeline & Executive Search in the Gulf",
-            "author": "Jim Hick (Executive Search Professional)",
-            "topic": "Building leadership pipelines in the Gulf. Talent acquisition strategy for executive roles.",
-            "link": "https://www.linkedin.com/posts/jim-hick-816b9b3b_leadershippipeline-gulftalent-executivesearch-activity-7363158202693165058-LCWu",
-            "comment_angle": "Recruiter-level visibility. Your name appears in executive search conversations.",
-            "ready_comment": "The leadership pipeline challenge in the Gulf is unique. At Talabat, we scaled from 30K to 7M daily orders, and the hardest part was not the technology. It was finding leaders who could operate at that velocity while building the next generation of talent underneath them. The GCC needs executives who can deliver today and architect for tomorrow simultaneously.",
-            "target_layer": "Layer 2: Recruiter"
+            "title": "Silicon Valley Employee Tenure: Only 2 Years | SBR2TH posted on ...",
+            "author": "Sbr2Th",
+            "topic": "Heidrick & Struggles' first-ever Family Office ... 2026, the data matters. ... This dynamic is reshaping how companies need to think about executive hiring timing,",
+            "link": "https://www.linkedin.com/posts/sbr2th_siliconvalley-employeeretention-leadership-activity-7407887809870454787-prN3",
+            "activity_id": "",
+            "target_layer": "Layer 2: Recruiter",
+            "ready_comment": "Family offices are quietly becoming one of the most influential forces in executive talent demand, and most hiring frameworks haven't caught up yet. Running a $50M digital transformation across 15 hospitals taught me how much timing matters when you're building leadership capacity inside rapidly scaling organizations. The lag between strategic growth decisions and executive hiring cycles creates real operational risk, especially in markets like GCC where transformation timelines are compressed by Vision 2030 mandates. Are family offices in this report skewing toward operators with regional emerging market experience, or still defaulting to Western enterprise profiles?",
+            "comment_angle": "Heidrick & Struggles' first-ever Family Office ... 2026, the data matters. ... T"
           }
         ]
       },
@@ -145,67 +132,52 @@
         "name": "Layer 3: Industry Thought Leadership",
         "posts": [
           {
-            "index": 5,
-            "title": "Saudi Vision 2030: Healthcare Needs Context-Specific Transformation",
-            "author": "Kremena Alora (Healthcare Strategy Consultant)",
-            "topic": "Healthcare transformation under Vision 2030 demands more than imported templates.",
-            "link": "https://www.linkedin.com/posts/kremena-alora_vision2030-healthclusters-activity-7436285829024718848-cluf",
-            "comment_angle": "Freshest post. Your TopMed experience is the proof point.",
-            "ready_comment": "This is the most underappreciated truth in Saudi healthcare transformation. Managing a $50M digital transformation program across 15 hospitals in the Saudi German Group, we learned this the hard way: a governance framework that works in a Dubai tertiary hospital breaks down in a Madinah regional facility. The health cluster model demands localized execution playbooks, not standardized rollouts. Context is not a constraint. It is the strategy.",
-            "target_layer": "Layer 3: Industry (Healthcare)"
+            "title": "Transforming Strategy into Measurable Results with PMO | Rami ...",
+            "author": "Rmatar Us",
+            "topic": "Transforming programs into measurable results \u2014 not presentations. From 2010 to 2025, every project carried one goal: turn strategy into results that",
+            "link": "https://www.linkedin.com/posts/rmatar-us_programmanagement-healthcareit-digitaltransformation-activity-7392621892471386112-E_AK",
+            "activity_id": "",
+            "target_layer": "Layer 3: Industry",
+            "ready_comment": "The hardest part of program leadership is resisting the pressure to make transformation look good on slides instead of actually delivering it. Leading a $50M digital transformation across 15 hospitals taught me that the gap between strategy and measurable outcomes usually lives in execution discipline, not in the vision itself. The organizations that close that gap fastest are the ones willing to make unpopular calls mid-program when the data says the original plan needs to change. What's been the biggest internal resistance you've faced when pushing teams to stay accountable to outcomes over activity?",
+            "comment_angle": "Transforming programs into measurable results \u2014 not presentations. From 2010 to "
           },
           {
-            "index": 6,
-            "title": "5 Common GCC Digital Transformation Governance Mistakes",
-            "author": "Shubhankar Modak (DT Governance Expert)",
-            "topic": "GCC DT programs fail because governance was never properly designed.",
-            "link": "https://www.linkedin.com/posts/shubhankar-modak_pmo-digitaltransformation-governance-activity-7431974925776797697-zDc9",
-            "comment_angle": "Governance is your strength. Share a real story.",
-            "ready_comment": "Point 3 on lightweight frameworks resonates most. Running the PMO for a 15-hospital digital transformation, we killed our original 47-page governance charter after Month 2. Replaced it with a one-page decision rights matrix and weekly 30-minute steering sessions. Adoption went from 40% to 95% in one quarter. The best governance is the one teams actually use, not the one that looks impressive in a PowerPoint.",
-            "target_layer": "Layer 3: Industry (PMO/Governance)"
+            "title": "Sami Elkady's Post",
+            "author": "Samielkady",
+            "topic": "... Project Manager | PMO Lead | ICT & Gov. Digital Transformation (20+ Yrs GCC). 1d. Report this post; Close menu. In today's fast\u2011moving business",
+            "link": "https://www.linkedin.com/posts/samielkady_futureofwork-techinnovation-productivity-activity-7436398792792281088-GSNe",
+            "activity_id": "",
+            "target_layer": "Layer 3: Industry",
+            "ready_comment": "Scaling digital transformation across large, distributed environments is one of the hardest problems in tech leadership, and most frameworks underestimate the human complexity behind it. Running PMO leadership across a multi-hospital digital transformation under Saudi Vision 2030, I saw firsthand how governance structures either accelerate execution or quietly kill it. The difference usually comes down to how well leadership bridges technical roadmaps with clinical and operational realities on the ground. What patterns have you seen work best when aligning ICT strategy with institutional change management at scale?",
+            "comment_angle": "... Project Manager | PMO Lead | ICT & Gov. Digital Transformation (20+ Yrs GCC)"
           }
         ]
       }
     ],
-    "recommendation": "Priority: Comment on posts 1 and 3 first (Layer 1 + Layer 2, direct pipeline and recruiter ROI). Then posts 5 and 6 (thought leadership). All 6 comments are ready to copy-paste."
+    "recommendation": "Priority: Layer 1 (pipeline targets) > Layer 2 (recruiter visibility) > Layer 3 (thought leadership)."
   },
   "calendar": {
     "events": [],
     "upcoming": [
-      "Sunday, March 15: Weekly goals review",
-      "Sunday, March 15: Weekly self-improvement cron (6 PM Cairo)",
-      "This week: Publish 2-3 LinkedIn posts (Sun-Thu schedule)",
-      "Overdue: 19 applications past follow-up date (see pipeline)"
+      "No upcoming events in next 3 days"
     ]
   },
   "pipeline": {
-    "total_applications": "19 active",
+    "total_applications": "66 active",
     "responses_this_week": 0,
-    "overdue": "19 (all past March 6 follow-up date)",
-    "recent": [
-      "Talabat | CPTO | Dubai | 87% | Applied Feb 24",
-      "AIQU | Director of AI | Dubai | 82% | Applied Feb 24",
-      "Dubai Holding | Director DT & IT | Dubai | 92% | Applied Feb 27",
-      "FAB | VP Technology & Data | Abu Dhabi | 87% | Applied Feb 27",
-      "Inception (G42) | Director Delivery | Abu Dhabi | 91% | Applied Feb 27",
-      "+ 14 more (see full pipeline)"
-    ],
-    "closed": "Delphi Consulting (Senior AI PM)",
-    "recommendation": "Zero responses after 2+ weeks is a signal. Consider: (1) Follow up on top 5 applications by email, (2) Check if LinkedIn Easy Apply actually submitted, (3) Network-based approach for Dubai Holding and FAB."
+    "overdue": "Review follow-up dates on all 66 applications",
+    "recent": [],
+    "recommendation": "66 applications sent. Zero responses. Action: direct email follow-up on top 5 targets."
   },
   "strategic_notes": [
-    "LinkedIn engagement remains low (2-3 likes per post). Today's engagement radar has 6 high-quality comment targets. Commenting strategy should precede posting.",
-    "Job scanner running daily at 6 AM Cairo. 120 searches, 6 GCC countries, 20 executive titles.",
-    "ATS threshold: 65+ qualified, 70+ auto-CV trigger.",
-    "Morning briefing cron: Sun-Thu 7 AM Cairo to Slack #ai-content.",
-    "Google Docs integration: Active. Daily briefing auto-populates this document.",
-    "Apify integration pending for real LinkedIn engagement metrics (likes, comments counts)."
+    "4 LinkedIn posts found with ready-to-post Sonnet-drafted comments.",
+    "Comment strategy: Layer 1 > Layer 2 > Layer 3 by ROI.",
+    "Job scanner running daily at 6 AM Cairo."
   ],
   "action_items": [
-    "Copy-paste comment on Inception/G42 post (Layer 1, puts you on hiring team radar)",
-    "Copy-paste comment on Cooper Fitch post (Layer 2, builds recruiter recognition)",
-    "Copy-paste comments on Kremena Alora + Shubhankar Modak posts (Layer 3, thought leadership)",
-    "Review Chief Strategy Officer JD (Riyadh, 68/100) and decide: apply or skip",
-    "Follow up on top 5 pipeline applications (Dubai Holding, FAB, G42, Talabat, Windmills)"
+    "Comment on 2 Layer 2 posts (recruiter recognition)",
+    "Comment on 2 Layer 3 posts (thought leadership)",
+    "Review 4 new qualified roles",
+    "Follow up on top pipeline applications with no response"
   ]
 }
