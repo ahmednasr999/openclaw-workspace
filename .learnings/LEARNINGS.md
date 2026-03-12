@@ -1,5 +1,16 @@
 # Learnings Log
 
+## [LRN-20260312-001] Never assume how a system works — verify first
+**Date:** 2026-03-12
+**Category:** User Correction
+**What happened:** Assumed Slack x-analysis had X API integration because it could fetch tweet content. Was wrong — it was using Camoufox browser. Wasted time arguing about API credits.
+**Rule:** When asked how something works, verify the actual implementation before explaining. Never state assumptions as facts. If unsure, say "I don't know" or "let me check" rather than guessing.
+**Fix:** Added Camoufox as default tool for X/Twitter, LinkedIn, Amazon. Test before claiming.
+
+---
+
+# Learnings Log
+
 *Corrections, knowledge gaps, and best practices.*
 *Format: [LRN-YYYYMMDD-XXX]*
 
