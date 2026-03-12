@@ -261,6 +261,20 @@ def is_company_page(url):
     return False
 
 
+def jina_fetch(url):
+    """Fetch page content via Jina Reader as fallback. Returns text or None."""
+    try:
+        jina_url = f"https://r.jina.ai/{url}"
+        req = urllib.request.Request(jina_url, headers={"Accept": "text/plain"})
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            content = resp.read().decode("utf-8")
+            if content and len(content) > 200:
+                return content
+    except Exception as e:
+        log(f"  Jina fetch error for {url}: {e}")
+    return None
+
+
 def make_post(r, layer_label):
     url   = r.get("url", "")
     slug_m = re.search(r'linkedin\.com/posts/([^_]+?)_', url)
