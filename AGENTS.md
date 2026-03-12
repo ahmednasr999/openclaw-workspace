@@ -127,22 +127,14 @@ If any model fallback occurs (primary model fails, system uses a different model
 No silent fallbacks. Ever.
 
 ### Force Plan Before Execution
-For any non-trivial task (anything beyond simple lookups or one-liner responses), ALWAYS show the plan first before executing. Use this format:
+**Planning/strategy tasks:** Show plan first, wait for "go"
+- New automations, skills, major workflows, strategic decisions
 
-```
-📋 PLAN: [Task name]
-Steps:
-1. [Step 1]
-2. [Step 2]
-3. [Step 3]
+**Execution tasks:** Just do it
+- Running scripts, scanning jobs, updating files, sending messages
+- If task is clear and non-destructive, execute without asking
 
-Waiting for: "go" to proceed / "skip" to cancel
-```
-
-Exceptions:
-- Simple questions that don't require multiple steps
-- Responses that are purely informational (no action needed)
-- Tasks Ahmed explicitly says "just do it"
+Exception: ALWAYS confirm for anything destructive (deleting files, git force push, sending public content)
 
 ### No Em Dashes: Ever
 Never use em dashes (: ) anywhere. Use commas, periods, colons instead. All models, all output.
