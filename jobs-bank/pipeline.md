@@ -197,3 +197,11 @@
 
 | Confidential (UAE Group) | Director, Digital Transformation | UAE | 87% | Applied | 2026-03-05 | Follow-up Mar 12 |
 | Confidential | Head of PMO | GCC | 88% | Applied | 2026-03-05 | Follow-up Mar 12 |
+
+## 2026-03-12 - Applied (Scanner v2.1)
+
+| Company | Role | Location | Stage | Applied | Score |
+|---------|------|----------|-------|---------|-------|
+| Confidential Government | Executive Director, Smart City & IoT | Riyadh | Applied | 2026-03-12 | 70/100 |
+| MadForPeople | IT Director, Digital Transformation | Dubai | Applied | 2026-03-12 | 68/100 |
+| Confidential Government | Group CIAO, Enterprise Architecture | Saudi Arabia | Applied | 2026-03-12 | 70/100 |
