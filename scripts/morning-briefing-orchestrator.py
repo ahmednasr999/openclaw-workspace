@@ -279,10 +279,19 @@ def make_post(r, layer_label):
     url   = r.get("url", "")
     slug_m = re.search(r'linkedin\.com/posts/([^_]+?)_', url)
     author = slug_m.group(1).replace("-", " ").title() if slug_m else "Unknown"
+    
+    # Get content - try Tavily first, fallback to Jina if too short
+    content = r.get("content", "") or ""
+    if len(content) < 200 and url:
+        # Tavily returned shallow content, try Jina fallback
+        jina_content = jina_fetch(url)
+        if jina_content:
+            content = jina_content[:500]  # Use first 500 chars of Jina content
+    
     return {
         "title":        r.get("title", "").split(" - ")[0][:80],
         "author":       author,
-        "topic":        (r.get("content") or "")[:300],
+        "topic":        content[:300],
         "link":         url,
         "activity_id":  "",
         "target_layer": layer_label,
