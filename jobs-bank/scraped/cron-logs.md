@@ -104,3 +104,135 @@
 - Qualified (82+): 0
 - Borderline (75-81): 1
 - Errors: 0
+
+## 2026-03-12 12:06:25
+- Version: v2.1
+- Searches: 120
+- Jobs found: 142
+- JD fetches: 0
+- Scored: 141
+- Qualified (82+): 0
+- Borderline (75-81): 0
+- Errors: 0
+- Runtime: 258s
+- JobSpy fallback: Yes
+
+## 2026-03-12 12:15:59
+- Version: v2.1 (JobSpy primary)
+- Searches: 120
+- Jobs found: 25
+- Unique jobs: 5
+- Scored: 0
+- Qualified (82+): 0
+- Borderline (75-81): 0
+- Errors: 0
+- Runtime: 65s
+- JobSpy failures: 120
+
+## 2026-03-12 12:17:31
+- Version: v2.1 (JobSpy primary)
+- Searches: 120
+- Jobs found: 260
+- Unique jobs: 19
+- Scored: 0
+- Qualified (82+): 0
+- Borderline (75-81): 0
+- Errors: 0
+- Runtime: 167s
+- JobSpy failures: 120
+
+## 2026-03-12 12:20:45
+- Version: v2.1 (JobSpy primary)
+- Searches: 120
+- Jobs found: 260
+- Unique jobs: 19
+- Scored: 19
+- Qualified (82+): 0
+- Borderline (75-81): 0
+- Errors: 0
+- Runtime: 172s
+- JobSpy failures: 120
+
+## 2026-03-12 12:24:27
+- Version: v2.1 (JobSpy primary)
+- Searches: 120
+- Jobs found: 260
+- Unique jobs: 20
+- Scored: 20
+- Qualified (82+): 0
+- Borderline (75-81): 0
+- Errors: 0
+- Runtime: 170s
+- JobSpy failures: 120
+
+## 2026-03-12 12:27:45
+- Version: v2.1 (JobSpy primary)
+- Searches: 120
+- Jobs found: 260
+- Unique jobs: 20
+- Scored: 20
+- Qualified (82+): 14
+- Borderline (75-81): 0
+- Errors: 0
+- Runtime: 171s
+- JobSpy failures: 120
+
+## 2026-03-12 12:32:14
+- Version: v2.1 (JobSpy primary)
+- Searches: 120
+- Jobs found: 231
+- Unique jobs: 107
+- Scored: 89
+- Qualified (82+): 0
+- Borderline (75-81): 0
+- Errors: 0
+- Runtime: 517s
+- JobSpy failures: 60
+
+## 2026-03-12 12:42:17
+- Version: v2.1 (JobSpy primary)
+- Searches: 120
+- Jobs found: 232
+- Unique jobs: 107
+- Scored: 89
+- Qualified (82+): 5
+- Borderline (75-81): 0
+- Errors: 0
+- Runtime: 526s
+- JobSpy failures: 60
+
+## 2026-03-12 12:56:51
+- Version: v2.1 (JobSpy primary)
+- Searches: 120
+- Jobs found: 229
+- Unique jobs: 107
+- Scored: 84
+- Qualified (82+): 0
+- Borderline (75-81): 0
+- Errors: 0
+- Runtime: 521s
+- JobSpy failures: 63
+
+## 2026-03-12 13:07:35
+- Version: v2.1 (JobSpy primary)
+- Searches: 120
+- Jobs found: 236
+- Unique jobs: 105
+- Scored: 100
+- Qualified (82+): 41
+- Borderline (75-81): 0
+- Errors: 0
+- Runtime: 458s
+- JobSpy failures: 65
+
+## 2026-03-12 13:17:52
+- Version: v2.1 (JobSpy primary)
+- Searches: 120
+- Jobs found: 236
+- Unique jobs: 105
+- Scored: 91
+- Qualified (82+): 8
+- Borderline (75-81): 0
+- Errors: 0
+- Runtime: 466s
+- JobSpy failures: 65

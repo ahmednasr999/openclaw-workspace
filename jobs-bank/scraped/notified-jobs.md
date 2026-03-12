@@ -1,26 +1,10 @@
 # Notified Jobs - Deduplication List
 
-**Purpose:** Track all jobs already notified to Ahmed to prevent duplicates.
-**Last Updated:** 2026-03-12
-**Current Count:** 1 qualified job
-
----
-
-## Qualified Jobs Notified
-
-https://sa.linkedin.com/jobs/view/executive-director-of-digital-transformation-cloud-strategy-at-confidential-government-4379328713
-
----
-
-## Scan History
-
-### 2026-03-12 - Scan 1 (120 combinations)
-- Date: 2026-03-12
-- Countries: Saudi Arabia, UAE, Qatar, Bahrain, Kuwait, Oman
-- Job Titles: 20 combinations per country
-- Total searches: 120
-- Jobs found: 8
-- Qualified notified: 1
-- New URLs added: 1
-
-All 8 jobs from this scan have been deduplicated for future runs.
+- 4382547338: Chief Strategy Officer at Confidential Government (Jeddah, Makkah, Saudi Arabia)
+- 4382046908: Chief Strategy Officer – National Transformation Delivery at Confidential Government (Riyadh, Saudi Arabia)
+- 4382068053: Group Chief Information Officer – Enterprise Architecture at Confidential Government (Riyadh, Saudi Arabia)
+- 4382050714: Executive Director of Smart City Connectivity & IoT at Confidential Government (Riyadh, Saudi Arabia)
+- 4373932314: Director, Investments Department at Islamic Development Bank (IsDB) (Jiddah, Makkah, Saudi Arabia)
+- 4382545395: Executive Director at Confidential Government (Jeddah, Makkah, Saudi Arabia)
+- 4382069074: Executive Director of Foreign Direct Investment (FDI) Attraction at Confidential Government (Riyadh, Saudi Arabia)
+- 4382757780: IT Director - Digital Transformation at MadForPeople (Dubai, Dubai, United Arab Emirates)
