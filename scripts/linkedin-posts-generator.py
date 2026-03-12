@@ -69,10 +69,18 @@ def parse_post_file(filepath):
     
     body = "\n".join(body_lines).strip()
     
-    # Extract image
+    # Extract image - check both formats
+    # Format 1: ![Post Image](filename.png)
     img_match = re.search(r'!\[.*?\]\(([^)]+)', body)
     image = img_match.group(1) if img_match else None
     body = re.sub(r'!\[.*?\]\([^)]+\)\s*', '', body).strip()
+    
+    # Format 2: File: linkedin-YYYY-MM-DD.html → linkedin/week-.../YYYY-MM-DD.png
+    if not image:
+        file_match = re.search(r'File:.*?(\d{4}-\d{2}-\d{2})\.png', body)
+        if file_match:
+            img_date = file_match.group(1)
+            image = f"{img_date}-image.png"
     
     # Extract date from filename if not in frontmatter
     if not date:
