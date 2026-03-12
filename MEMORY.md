@@ -28,6 +28,21 @@
   - Italic grey footer
   - Document Outline must be navigable
 - GOG_KEYRING_PASSWORD="" (empty string)
+
+## Web Fetching Tools
+
+### Jina Reader (Mar 12, 2026)
+- **URL:** https://r.jina.ai/{URL}
+- **What:** Returns clean Markdown from any URL
+- **Free tier:** 10M tokens/month
+- **Use when:** Tavily fails, need fallback for article/job page extraction
+- **Example:** `https://r.jina.ai/https://x.com/user/status/123`
+- **Function:** `scripts/morning-briefing-orchestrator.py` → `jina_fetch()`
+
+### Web Fetch Hierarchy (Mar 12, 2026)
+1. Tavily API → primary (news, LinkedIn posts)
+2. Jina Reader → fallback (shallow content, articles)
+3. Camoufox → last resort (complex JS, interactive)
 - Account: ahmednasr999@gmail.com
 - OAuth client: 583018818639 (backup client, working)
 
@@ -94,7 +109,7 @@ Budget: EGP 9,000/mo (Claude Max 20x) + $40 (MiniMax) + $20 (ChatGPT Plus, GPT-5
 - Google OAuth: ahmednasr999@gmail.com (Gmail + Calendar)
 - Job Radar: official employer sources first, aggregators discovery-only
 - LinkedIn discovery: hashtag + whitelist priority, own-feed fallback only
-- **X/Twitter Full Access (Mar 12, 2026):** @ahmednasr999 account fully accessible via Camoufox on VPS. Cookies imported to profile. Full access: posts, timeline, DMs, search, posting. Profile: x.com/ahmednasr999
+- **X/Twitter Full Access (Mar 12, 2026):** @Nasr2030vision account fully accessible via Camoufox on VPS. Cookies imported to profile. Full access: posts, timeline, DMs, search, posting.
 
 ## Google Docs Briefing Standard (Mar 12, locked)
 - NEVER raw markdown in Google Docs. Always native API formatting.
