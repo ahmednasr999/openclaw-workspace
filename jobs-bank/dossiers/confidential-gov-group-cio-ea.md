@@ -30,6 +30,13 @@ Salary: Not disclosed
 - Lean into Saudi German Health's regulatory compliance (MOH, JCI, HIMSS) for government credibility
 - Mention EA methodology experience without claiming TOGAF cert
 
+## CV Delivered
+- Date: 2026-03-12
+- Model: opus46
+- ATS Score: 91/100
+- Key modifications: EA overlay on summary, governance framework emphasis, TopMed reframed as EA governance, Vision 2030 alignment, cybersecurity governance added
+- PDF: Ahmed Nasr - Group CIO Enterprise Architecture - Confidential Government.pdf
+
 ## Notes
 - Posted: 1 day ago (2026-03-11)
 - 200+ applicants already: time-sensitive
