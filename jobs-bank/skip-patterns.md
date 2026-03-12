@@ -6,3 +6,5 @@
 - [2026-03-11] GMG Senior Manager Transformation (PMO) Dubai: Below target seniority (Senior Manager not Director/VP), retail/FMCG sector mismatch
 - [2026-03-11] Dubai Future Foundation Programme Head C4IR Dubai: UAE National citizenship requirement
 - 2026-03-11 TCG Head of PMO & Strategic Operations: Seniority mismatch (Mid-Senior level, 5+ years floor, team of 2+). Overqualified, likely below salary floor. Recruiter role, unnamed end client.
+- [2026-03-12] Confidential Government - Chief Strategy Officer (Jeddah): Pure strategy, no tech/digital component. Domain mismatch.
+- [2026-03-12] Confidential Government - CSO National Transformation (Riyadh): Government strategy/reform role, no tech/digital component. Strategy consultants' domain.
