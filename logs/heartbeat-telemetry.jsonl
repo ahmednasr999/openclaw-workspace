@@ -11952,3 +11952,6 @@
 {"timestamp": "2026-03-12T18:01:44Z", "gateway_alive": false, "active_sessions_observed": 1976, "model_health": {"last_model_seen": "claude-opus-4-6"}, "queue_depth": 57}
 {"timestamp": "2026-03-12T18:02:45Z", "gateway_alive": false, "active_sessions_observed": 1976, "model_health": {"last_model_seen": "claude-opus-4-6"}, "queue_depth": 57}
 {"timestamp": "2026-03-12T18:03:45Z", "gateway_alive": false, "active_sessions_observed": 1976, "model_health": {"last_model_seen": "claude-opus-4-6"}, "queue_depth": 57}
+{"timestamp": "2026-03-12T18:04:45Z", "gateway_alive": false, "active_sessions_observed": 1976, "model_health": {"last_model_seen": "MiniMax-M2.5"}, "queue_depth": 57}
+{"timestamp": "2026-03-12T18:05:46Z", "gateway_alive": false, "active_sessions_observed": 1976, "model_health": {"last_model_seen": "claude-opus-4-6"}, "queue_depth": 57}
+{"timestamp": "2026-03-12T18:06:47Z", "gateway_alive": false, "active_sessions_observed": 1976, "model_health": {"last_model_seen": "claude-opus-4-6"}, "queue_depth": 58}
