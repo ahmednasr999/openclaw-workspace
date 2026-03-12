@@ -51,4 +51,4 @@ By the way, I've been documenting my journey managing a $50M hospital transforma
 ---
 
 ## Image Generated
-File: linkedin-2026-03-24.html → linkedin/week-2026-03-23/2026-03-24.png
+File: linkedin-2026-03-23.html → linkedin/week-2026-03-23/2026-03-23.png
