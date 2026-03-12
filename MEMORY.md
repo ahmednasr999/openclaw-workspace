@@ -102,7 +102,8 @@ Budget: EGP 9,000/mo (Claude Max 20x) + $40 (MiniMax) + $20 (ChatGPT Plus, GPT-5
 - All links must be clickable (hyperlink pass built in).
 - LinkedIn posts: individual authors only, sorted by freshness (activity ID).
 - Comments: ready-to-post, drafted by Sonnet 4.6.
-- Google Doc ID: 1gtl5sXIsvXiXhODFs29FD9L09i9mGQlsBVIrZbVkTYs
+- Daily Briefing Doc ID: 1gtl5sXIsvXiXhODFs29FD9L09i9mGQlsBVIrZbVkTYs
+- System Log Doc ID: 1Ti5kle0bq4fXBgF54arYO2C723LtHkDUhO2o2rmDAqU
 - OAuth: backup client 583018818639 (active), GOG_KEYRING_PASSWORD=""
 
 ## Where Things Live

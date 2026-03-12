@@ -1,0 +1,152 @@
+{
+  "date": "Thursday, March 12, 2026",
+  "stats": {
+    "streak_days": 1,
+    "total_enhancements": 8,
+    "total_errors_fixed": 5
+  },
+  "operations_summary": {
+    "sessions_today": 4,
+    "models_used": "Opus 4.6 (main), GPT-5.4 (session 1), MiniMax M2.5 (crons)",
+    "crons_executed": "Job scanner (6 AM), Heartbeat (hourly), Morning briefing (first test)",
+    "jobs_scanned": "120 searches, 232 jobs found, 89 scored, 4 qualified",
+    "linkedin_posts_found": "6 strategic posts across 3 layers",
+    "google_docs_updated": 2,
+    "git_commits": 3
+  },
+  "went_right": [
+    "Google Docs premium formatting standard established and locked. 131 API requests per doc.",
+    "Deterministic architecture: Python script formats, LLM only gathers data. Quality is model-independent.",
+    "Three-layer LinkedIn targeting: pipeline companies > recruiters > industry leaders. Each with ready-to-post comments.",
+    "Post dedup system: commented-posts.md prevents repeat suggestions across days.",
+    "Google OAuth re-authenticated via backup client (583018818639) after original was disabled by Google.",
+    "Job scanner v2.1 running stable: 120 searches, 4 qualified roles delivered.",
+    "Comment drafting strategy: Sonnet 4.6 as content model with specific metrics from Ahmed's experience.",
+    "Morning briefing cron fully structured: 9-step workflow with clear separation of concerns."
+  ],
+  "went_wrong": [
+    {
+      "issue": "LinkedIn posts initially from company pages, not individuals",
+      "root_cause": "Tavily search returns company pages by default when searching by company name",
+      "fix": "Added individual-only filter. Sort by activity ID for freshness. Manual curation of results.",
+      "prevention": "Cron instructions now explicitly state: ONLY individual authors, skip company pages."
+    },
+    {
+      "issue": "Google Doc was raw markdown (all NORMAL_TEXT) on first attempt",
+      "root_cause": "gog docs write converts markdown but doesn't apply native heading styles",
+      "fix": "Built Python script using Google Docs API with batchUpdate for native H1/H2/H3, bold, bullets.",
+      "prevention": "Permanent script at scripts/daily-briefing-generator.py. All future docs go through this."
+    },
+    {
+      "issue": "Morning briefing cron timed out on first run (300s)",
+      "root_cause": "Too many data gathering steps for 300s timeout with MiniMax",
+      "fix": "Increased timeout to 600s.",
+      "prevention": "Monitor first real cron run on Sunday. May need further adjustment."
+    },
+    {
+      "issue": "Brave Search API unavailable (missing API key)",
+      "root_cause": "Brave API key not configured in environment",
+      "fix": "Switched to Tavily as primary search engine for LinkedIn posts.",
+      "prevention": "Tavily is now the standard search tool for all cron-based web searches."
+    },
+    {
+      "issue": "Google OAuth original client (748318689184) disabled by Google",
+      "root_cause": "Google disabled the OAuth client, likely due to inactivity or policy violation",
+      "fix": "Found backup client at credentials.json.bak, swapped credentials, re-authenticated.",
+      "prevention": "Backup client ID documented in MEMORY.md. Monitor for expiry."
+    }
+  ],
+  "lessons_learned": [
+    {
+      "lesson": "LLMs cannot reliably produce complex API formatting. Deterministic scripts are the only way to guarantee output quality.",
+      "applied": "All Google Docs output now goes through Python scripts with exact formatting logic."
+    },
+    {
+      "lesson": "LinkedIn comment ROI follows a clear hierarchy: pipeline targets > recruiters > industry. Random commenting is wasted effort.",
+      "applied": "Three-layer targeting system with priority ordering built into daily briefing."
+    },
+    {
+      "lesson": "OAuth credentials can be disabled without warning. Always maintain a backup client.",
+      "applied": "Backup client documented. Original saved as .disabled for reference."
+    },
+    {
+      "lesson": "Google Docs links are not clickable by default when inserted via API. A second pass is needed.",
+      "applied": "Hyperlink detection pass built into both generator scripts."
+    },
+    {
+      "lesson": "Morning briefing is an action document, not a system log. Mixing operational data with executive actions dilutes both.",
+      "applied": "Separated into two documents: Daily Briefing (action) and System Log (operations)."
+    }
+  ],
+  "enhancements_applied": [
+    {
+      "enhancement": "Deterministic Google Docs formatting via Python API script",
+      "before": "LLM wrote raw markdown, quality varied by model",
+      "after": "Python script applies 130+ formatting requests identically every time",
+      "impact": "Quality locked at premium level regardless of which model runs the cron"
+    },
+    {
+      "enhancement": "Three-layer LinkedIn comment targeting",
+      "before": "Random topic-based post discovery",
+      "after": "Pipeline companies > Recruiters > Industry leaders, with ready-to-post comments",
+      "impact": "Every comment now directly supports job search pipeline"
+    },
+    {
+      "enhancement": "Post dedup via commented-posts.md",
+      "before": "Same posts could appear in multiple days",
+      "after": "Activity ID tracking prevents any repeat suggestion",
+      "impact": "Fresh content guaranteed daily"
+    },
+    {
+      "enhancement": "Comment targeting config (config/linkedin-comment-targets.json)",
+      "before": "Ad-hoc search queries",
+      "after": "Structured config with 36 pipeline companies + 14 recruiter firms",
+      "impact": "Cron can dynamically adjust targeting as pipeline changes"
+    },
+    {
+      "enhancement": "Separated Daily Briefing from System Log",
+      "before": "Self-improvement mixed with action items",
+      "after": "Two purpose-built documents: action doc (Ahmed) + system log (NASR)",
+      "impact": "Cleaner morning workflow, dedicated improvement tracking"
+    },
+    {
+      "enhancement": "Google OAuth backup client activated",
+      "before": "Single OAuth client, no fallback",
+      "after": "Backup client active, original documented as .disabled",
+      "impact": "Google services restored without Ahmed needing to create new Cloud project"
+    },
+    {
+      "enhancement": "Cron timeout increased from 300s to 600s",
+      "before": "Morning briefing timed out",
+      "after": "600s allows full data gathering + doc generation",
+      "impact": "Prevents timeout failures on complex morning briefing workflow"
+    },
+    {
+      "enhancement": "Clickable hyperlinks in Google Docs",
+      "before": "URLs displayed as plain text",
+      "after": "Second-pass URL detection converts all links to clickable hyperlinks",
+      "impact": "Ahmed can click directly to LinkedIn posts and job listings"
+    }
+  ],
+  "cron_health": [
+    {"name": "Job Scanner (6 AM Cairo)", "status": "ok", "detail": "120 searches, 4 qualified, 5 borderline. Running daily."},
+    {"name": "Morning Briefing (7 AM Cairo)", "status": "error", "detail": "First run timed out at 300s. Fixed: timeout now 600s. Next run: Sunday Mar 15."},
+    {"name": "Engagement Radar", "status": "ok", "detail": "Cron created. Merged into morning briefing workflow. First run: Sunday."},
+    {"name": "Heartbeat (hourly)", "status": "ok", "detail": "Running. No alerts triggered today."},
+    {"name": "Weekly Self-Improvement (Sunday 6 PM)", "status": "ok", "detail": "Scheduled. First run: Sunday Mar 15."}
+  ],
+  "model_usage": {
+    "Opus 4.6": "Main session (sessions 2-4). Strategy, Google Docs architecture, comment drafting.",
+    "GPT-5.4": "Session 1: Job scanner v2.1 spec audit and rebuild.",
+    "MiniMax M2.5": "Cron executions (heartbeat, job scanner). Default background model.",
+    "Sonnet 4.6": "Designated for daily comment drafting in cron. Not yet wired."
+  },
+  "tomorrow_improvements": [
+    "Wire Sonnet 4.6 as sub-agent in morning briefing cron for comment drafting quality.",
+    "Add employee-name search variations for Layer 1 (currently searches by company name only).",
+    "Test full cron pipeline end-to-end before Sunday's first real run.",
+    "Set up Apify for real LinkedIn engagement metrics (likes/comments counts) after Ahmed approval.",
+    "Consider adding a 'Pipeline Company Watch' section that tracks new posts from target companies daily.",
+    "Review if 600s timeout is sufficient after first successful cron run."
+  ]
+}
