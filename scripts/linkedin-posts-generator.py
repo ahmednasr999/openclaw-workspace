@@ -2,7 +2,7 @@
 """
 LinkedIn Posts Generator - Premium Google Docs Output
 =====================================================
-Reads all posts from linkedin/posts/ and produces a master Google Doc with images.
+Reads all posts from linkedin/posts/ and produces a master Google Doc with image links.
 """
 
 import json, os, re, subprocess, base64
@@ -53,7 +53,6 @@ def parse_post_file(filepath):
     title = ""
     date = ""
     status = "drafted"
-    platform = "linkedin"
     
     lines = content.split("\n")
     in_frontmatter = False
@@ -70,14 +69,11 @@ def parse_post_file(filepath):
                 date = line.split(":", 1)[1].strip()
             elif line.startswith("status:"):
                 status = line.split(":", 1)[1].strip()
-            elif line.startswith("platform:"):
-                platform = line.split(":", 1)[1].strip()
         else:
             body_lines.append(line)
     
     body = "\n".join(body_lines).strip()
     
-    # Extract image reference
     img_match = re.search(r'!\[.*?\]\(([^)]+)', body)
     image = img_match.group(1) if img_match else None
     
@@ -86,20 +82,18 @@ def parse_post_file(filepath):
         "title": title,
         "date": date,
         "status": status,
-        "platform": platform,
         "body": body,
         "image": image
     }
 
 
 def build_document_content(posts):
-    """Build document content with image markers."""
+    """Build document content with image links."""
     content = []
-    images = []
     
     # Header
     content.append(("LinkedIn Posts Collection", "TITLE"))
-    content.append(("Master archive with visuals", "SUBTITLE"))
+    content.append(("Master archive with image links", "SUBTITLE"))
     content.append(("", "NORMAL_TEXT"))
     content.append((f"Last updated: {datetime.now().strftime('%B %d, %Y at %H:%M')}", "NORMAL_TEXT"))
     content.append(("", "NORMAL_TEXT"))
@@ -110,11 +104,13 @@ def build_document_content(posts):
     total = len(posts)
     drafted = sum(1 for p in posts if p["status"] == "drafted")
     posted = sum(1 for p in posts if p["status"] == "posted")
+    with_images = sum(1 for p in posts if p["image"])
     
     content.append(("📊 Collection Stats", "HEADING_1"))
     content.append((f"Total Posts: {total}", "NORMAL_TEXT"))
     content.append((f"Drafted: {drafted}", "NORMAL_TEXT"))
     content.append((f"Posted: {posted}", "NORMAL_TEXT"))
+    content.append((f"With Images: {with_images}", "NORMAL_TEXT"))
     content.append(("", "NORMAL_TEXT"))
     content.append(("=" * 60, "NORMAL_TEXT"))
     content.append(("", "NORMAL_TEXT"))
@@ -131,13 +127,11 @@ def build_document_content(posts):
         content.append((f"Date: {post['date']}", "NORMAL_TEXT"))
         content.append((f"Status: {post['status'].upper()}", "NORMAL_TEXT"))
         
-        # Image - store for later insertion
+        # Image link
         if post["image"]:
             img_url = f"{GITHUB_RAW_BASE}/{post['image']}"
-            # Add image marker
-            marker = f"__IMAGE_{i}__"
-            content.append((marker, "IMAGE"))
-            images.append((marker, img_url, post['image']))
+            content.append(("🖼️ Image", "NORMAL_TEXT"))
+            content.append((post['image'], "LINK", img_url))
         
         content.append(("", "NORMAL_TEXT"))
         
@@ -162,19 +156,13 @@ def build_document_content(posts):
         content.append(("-" * 60, "NORMAL_TEXT"))
         content.append(("", "NORMAL_TEXT"))
     
-    return {"content": content, "images": images}
+    return content
 
 
-def create_doc_with_images(service, title, data):
-    """Create Google Doc with text and images."""
-    content = data["content"]
-    images = data["images"]
-    
-    doc = service.documents().create(body={"title": title}).execute()
-    doc_id = doc["documentId"]
-    
-    # Build text only (skip IMAGE markers for now)
-    lines = [(t, s) for t, s in content if s != "IMAGE"]
+def create_doc(service, title, content):
+    """Create Google Doc with text and links."""
+    # Extract lines and handle LINK type
+    lines = [(t, s) for t, s, *extra in content]
     
     # Insert all text
     full_text = "\n".join(text for text, _ in lines)
@@ -183,9 +171,12 @@ def create_doc_with_images(service, title, data):
     
     # Apply heading styles
     current_pos = 1
-    for text, style in lines:
+    for item in content:
+        text = item[0]
+        style = item[1]
+        
         line_end = current_pos + len(text)
-        if style not in ("NORMAL_TEXT",) and text:
+        if style not in ("NORMAL_TEXT", "LINK") and text:
             requests.append({
                 'updateParagraphStyle': {
                     'range': {'startIndex': current_pos, 'endIndex': line_end + 1},
@@ -197,7 +188,8 @@ def create_doc_with_images(service, title, data):
     
     # Bold **text**
     current_pos = 1
-    for text, style in lines:
+    for item in content:
+        text, style = item[0], item[1]
         if style == "NORMAL_TEXT" and text:
             for match in re.finditer(r'\*\*([^*]+)\*\*', text):
                 start = current_pos + match.start()
@@ -213,60 +205,34 @@ def create_doc_with_images(service, title, data):
     
     service.documents().batchUpdate(documentId=doc_id, body={"requests": requests}).execute()
     
-    # Insert images using inlineObjects
-    # First get the document to find positions
-    doc = service.documents().get(documentId=doc_id).execute()
-    text_content = "\n".join(text for text, _ in lines)
+    # Second pass: make image links clickable
+    link_requests = []
+    current_pos = 1
     
-    img_obj_id = 100
-    img_requests = []
-    
-    for marker, img_url, img_name in images:
-        # Find line with marker
-        lines_list = text_content.split('\n')
-        target_line = None
-        for idx, line in enumerate(lines_list):
-            if marker in line:
-                target_line = idx
-                break
-        
-        if target_line is None:
-            continue
-        
-        # Calculate insert position
-        pos = sum(len(l) + 1 for l in lines_list[:target_line]) + 1
-        
-        try:
-            # Fetch image
-            img_resp = req.get(img_url, timeout=15)
-            if img_resp.status_code != 200:
-                continue
-            image_data = img_resp.content
-            
-            # Create inline image
-            obj_id = f"image_{img_obj_id}"
-            img_obj_id += 1
-            
-            img_requests.append({
-                'createInlineImage': {
-                    'uri': img_url,
-                    'objectSize': {
-                        'height': {'magnitude': 450, 'unit': 'PT'},
-                        'width': {'magnitude': 600, 'unit': 'PT'}
+    for item in content:
+        text, style = item[0], item[1]
+        if style == "LINK" and len(item) > 2:
+            url = item[2]
+            start = current_pos
+            end = current_pos + len(text)
+            link_requests.append({
+                'updateTextStyle': {
+                    'range': {'startIndex': start, 'endIndex': end},
+                    'textStyle': {
+                        'link': {'url': url},
+                        'foregroundColor': {'color': {'rgbColor': {'red': 0.0, 'green': 0.4, 'blue': 0.8}}}
                     },
-                    'location': {'index': pos}
+                    'fields': 'link,foregroundColor'
                 }
             })
-        except Exception as e:
-            print(f"  Warning: Could not insert {img_name}: {e}")
-            continue
+        current_pos += len(text) + 1
     
-    if img_requests:
+    if link_requests:
         try:
-            service.documents().batchUpdate(documentId=doc_id, body={"requests": img_requests}).execute()
-            print(f"  Inserted {len(img_requests)} images")
+            service.documents().batchUpdate(documentId=doc_id, body={"requests": link_requests}).execute()
+            print(f"  Added {len(link_requests)} image links")
         except Exception as e:
-            print(f"  Image batch warning: {e}")
+            print(f"  Link warning: {e}")
     
     return doc_id
 
@@ -277,7 +243,7 @@ def main():
     parser.add_argument("--doc-id", help="Existing doc ID to update")
     args = parser.parse_args()
     
-    print("📋 LinkedIn Posts Generator (with images)")
+    print("📋 LinkedIn Posts Generator (with image links)")
     print("=" * 45)
     
     # Load posts
@@ -291,16 +257,41 @@ def main():
     print(f"Loaded {len(posts)} posts")
     
     # Build content
-    data = build_document_content(posts)
-    images_with_content = sum(1 for _, s in data["content"] if s == "IMAGE")
-    print(f"Found {images_with_content} images")
+    content = build_document_content(posts)
+    images_with_content = sum(1 for t, s, *e in content if s == "LINK")
+    print(f"Found {images_with_content} image links")
     
     # Create doc
     service = get_gdocs_service()
     title = f"LinkedIn Posts - {datetime.now().strftime('%B %Y')}"
     
-    print("Creating doc with images...")
-    doc_id = create_doc_with_images(service, title, data)
+    print("Creating doc...")
+    global doc_id
+    doc_id = args.doc_id if args.doc_id else None
+    
+    if doc_id:
+        # Clear existing and rewrite
+        from googleapiclient.errors import HttpError
+        try:
+            doc = service.documents().get(documentId=doc_id).execute()
+            title = doc.get('title', title)
+            # Clear content
+            content_elem = doc.get('body', {}).get('content', [])
+            if content_elem:
+                end_idx = max(el.get('endIndex', 1) for el in content_elem)
+                if end_idx > 1:
+                    service.documents().batchUpdate(
+                        documentId=doc_id,
+                        body={'requests': [{'deleteContentRange': {'range': {'startIndex': 1, 'endIndex': end_idx - 1}}}]}
+                    ).execute()
+        except:
+            doc_id = None
+    
+    if not doc_id:
+        doc = service.documents().create(body={"title": title}).execute()
+        doc_id = doc["documentId"]
+    
+    doc_id = create_doc(service, title, content)
     
     print(f"✅ Done! Doc ID: {doc_id}")
     print(f"🔗 https://docs.google.com/document/d/{doc_id}/edit")
