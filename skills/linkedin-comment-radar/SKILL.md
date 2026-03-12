@@ -17,14 +17,29 @@ Use this skill to run a repeatable pipeline for LinkedIn comment opportunities: 
 5. Draft comments only after user confirms shortlist.
 
 ## Discovery Query Standard
-Use this base pattern:
+**For Ahmed's engagement, use these rules:**
 
-`site:linkedin.com/posts "#<hashtag>" "<geo>" after:<YYYY-MM-DD> ("PMO" OR "Digital Transformation" OR "Program Management") -jobs -hiring -apply`
+**Freshness:** Last 24 hours (today only), not 7 days
+
+**Geography:** GCC countries only:
+- Saudi Arabia / UAE / Qatar / Bahrain / Kuwait / Oman
+- Use: "Saudi Arabia" OR "UAE" OR "Dubai" OR "Riyadh" OR "Qatar" OR "Bahrain" OR "Kuwait" OR "Oman"
+
+**Topics:** 
+- Digital Transformation, PMO, Program Management, Healthcare IT, Leadership, AI in business
+
+**Sort by:** Top engagement (most reactions/comments first)
+
+**Query pattern:**
+```
+site:linkedin.com/posts after:2026-03-12 ("Digital Transformation" OR "PMO" OR "Healthcare" OR "AI" OR "Leadership") (Saudi OR UAE OR Dubai OR Riyadh OR Qatar OR Bahrain) -jobs -hiring -apply
+```
 
 Rules:
-- Keep rolling freshness window, default 7 days.
-- Keep geo and topic explicit.
-- Exclude job and apply noise unless user asks for hiring posts.
+- Freshness: 24 hours max
+- GCC geo required in post or author location
+- Sort by engagement (likes, comments)
+- Exclude job/hiring noise
 
 ## Ranking Rules
 Use Post Quality Score (PQS 0-100):
