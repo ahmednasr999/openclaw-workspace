@@ -1,6 +1,6 @@
 # MEMORY.md: Cross-Session Cheat Sheet
 
-*Last updated: 2026-03-07*
+*Last updated: 2026-03-12*
 *Rule: < 100 lines. Not a journal. Findable via search = doesn't belong here.*
 
 ---
@@ -16,6 +16,20 @@
 2. LinkedIn executive positioning: 2-3 posts/week (content engine live, Sun-Thu)
 3. OpenClaw system optimization (memory architecture, cron hardening)
 4. TopMed PMO delivery on track
+
+## Google Docs Quality Standard (LOCKED Mar 12, 2026)
+- Doc ID: 1gtl5sXIsvXiXhODFs29FD9L09i9mGQlsBVIrZbVkTYs
+- Template script: scripts/google-docs-briefing.py
+- NEVER use raw markdown dump. ALWAYS use Google Docs API with proper:
+  - TITLE + SUBTITLE header
+  - HEADING_1 for date, HEADING_2 for sections, HEADING_3 for sub-items
+  - Bold labels (Company:, Location:, ATS Score:, etc.)
+  - Unicode bullets, checkbox items for actions
+  - Italic grey footer
+  - Document Outline must be navigable
+- GOG_KEYRING_PASSWORD="" (empty string)
+- Account: ahmednasr999@gmail.com
+- OAuth client: 583018818639 (backup client, working)
 
 ## Communication Rules
 - Direct, concise. Lead with insight, not preamble. No Markdown tables unless Ahmed explicitly asks.
@@ -80,6 +94,16 @@ Budget: EGP 9,000/mo (Claude Max 20x) + $40 (MiniMax) + $20 (ChatGPT Plus, GPT-5
 - Google OAuth: ahmednasr999@gmail.com (Gmail + Calendar)
 - Job Radar: official employer sources first, aggregators discovery-only
 - LinkedIn discovery: hashtag + whitelist priority, own-feed fallback only
+
+## Google Docs Briefing Standard (Mar 12, locked)
+- NEVER raw markdown in Google Docs. Always native API formatting.
+- Python script `scripts/daily-briefing-generator.py` is single source of truth for quality.
+- Models cannot deviate from formatting. Script is deterministic.
+- All links must be clickable (hyperlink pass built in).
+- LinkedIn posts: individual authors only, sorted by freshness (activity ID).
+- Comments: ready-to-post, drafted by Sonnet 4.6.
+- Google Doc ID: 1gtl5sXIsvXiXhODFs29FD9L09i9mGQlsBVIrZbVkTYs
+- OAuth: backup client 583018818639 (active), GOG_KEYRING_PASSWORD=""
 
 ## Where Things Live
 - Active tasks: memory/active-tasks.md

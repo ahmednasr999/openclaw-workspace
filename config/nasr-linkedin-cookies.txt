@@ -1,0 +1,6 @@
+# Netscape HTTP Cookie File
+.linkedin.com	TRUE	/	TRUE	0	JSESSIONID	ajax:8223367698017576331
+.linkedin.com	TRUE	/	TRUE	0	bcookie	v=2&8f1b7385-e55d-4bf3-83c7-1827dd6c30a0
+.linkedin.com	TRUE	/	TRUE	0	liap	true
+.linkedin.com	TRUE	/	TRUE	0	lidc	b=VGST08:s=V:r=V:a=V:p=V:g=3381:u=1:x=1:i=1772256472:t=1772341109:v=2:sig=AQF5V0i5g6_hJMONUS7l_EWvlr1zhsS9
+.linkedin.com	TRUE	/	TRUE	0	li_sugr	5c16366b-a467-47de-8e45-294ee31ec25c

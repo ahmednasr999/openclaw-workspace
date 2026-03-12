@@ -1,6 +1,13 @@
 # Active Tasks
 
-*Last updated: 2026-03-09 23:03 UTC*
+*Last updated: 2026-03-12 16:28 UTC*
+
+## 🟡 NEW (Mar 12)
+
+- [x] **Google Docs OAuth Fix:** ✅ FIXED. Backup client (583018818639) active. All services authenticated.
+- [ ] **Morning Briefing Cron:** 80% complete. Deterministic Python formatter locked. Remaining: Sonnet comment drafting + end-to-end test.
+- [ ] **Apify Integration:** For LinkedIn engagement metrics. Pending Ahmed go-ahead.
+- [ ] **Comment Drafting:** Wire Sonnet 4.6 as sub-agent in cron to write ready-to-post LinkedIn comments.
 
 ## 🔴 URGENT
 
