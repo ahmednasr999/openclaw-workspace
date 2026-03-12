@@ -1,6 +1,6 @@
 # Sunday March 16 | TAM | PAS | Strange | CTA: C
 
-![Post Image](sun-mar16-image.png)
+![Post Image](2026-03-16-linkedin-llm-image.png)
 
 ---
 

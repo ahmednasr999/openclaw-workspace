@@ -1,6 +1,6 @@
 # Wednesday March 19 | Growth | SLAY | Familiar | CTA: C
 
-![Post Image](wed-mar19-image.png)
+![Post Image](thu-mar19-image.png)
 
 ---
 
