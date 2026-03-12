@@ -100,6 +100,11 @@ For any VPS without GPU: always use QMD in BM25-only mode (searchMode: "search")
 **Fix applied:** Updated cron prompt to (1) check engagement log for last posted file, (2) find next UNPOSTED post by date filename match, (3) refuse to surface already-posted content.
 **Rule:** Always cross-reference engagement log before surfacing any LinkedIn post. Never serve a post without verifying it's unposted.
 
+## 2026-03-12: Never create duplicate Google Docs when iterating
+**What happened:** Created 12 duplicate Google Docs during debugging instead of reusing one doc ID with `--doc-id`. Cluttered Ahmed's Google Drive.
+**Root cause:** Ran the script without `--doc-id` flag on each iteration. Lazy debugging.
+**Rule:** ALWAYS use `--doc-id` to overwrite the same doc when iterating. One doc per deliverable. Clean up immediately if duplicates are created. This is non-negotiable.
+
 ## 2026-03-12: Google Docs API — insertInlineImage (not createInlineImage)
 **What happened:** Tried `createInlineImage` to embed images in Google Docs. Got 400 error. Wrongly concluded the API doesn't support inline images. Wasted two sessions working around it with clickable links.
 **Root cause:** Wrong method name. The correct batch update request type is `insertInlineImage`.
