@@ -99,3 +99,9 @@ For any VPS without GPU: always use QMD in BM25-only mode (searchMode: "search")
 **Root cause:** Cron prompt was generic ("generate today's post") with no engagement log check or date anchoring. Agent picked next available post without verifying it hadn't been posted.
 **Fix applied:** Updated cron prompt to (1) check engagement log for last posted file, (2) find next UNPOSTED post by date filename match, (3) refuse to surface already-posted content.
 **Rule:** Always cross-reference engagement log before surfacing any LinkedIn post. Never serve a post without verifying it's unposted.
+
+## 2026-03-12: Google Docs API — insertInlineImage (not createInlineImage)
+**What happened:** Tried `createInlineImage` to embed images in Google Docs. Got 400 error. Wrongly concluded the API doesn't support inline images. Wasted two sessions working around it with clickable links.
+**Root cause:** Wrong method name. The correct batch update request type is `insertInlineImage`.
+**Fix applied:** Updated linkedin-posts-generator.py to use `insertInlineImage` with GitHub raw URLs. All 18 images now embed directly.
+**Rule:** Always verify exact API method names against official docs before concluding a feature doesn't exist. Never assume — verify.
