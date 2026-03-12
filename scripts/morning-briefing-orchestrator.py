@@ -555,6 +555,34 @@ def main():
     went_right = []
 
     load_config()
+
+    # Pre-flight: verify Anthropic API key works
+    if ANTHROPIC_API_KEY:
+        try:
+            test_req = urllib.request.Request(
+                f"{ANTHROPIC_BASE_URL}/v1/messages",
+                data=json.dumps({
+                    "model": "claude-haiku-4-5",
+                    "max_tokens": 5,
+                    "messages": [{"role": "user", "content": "ping"}]
+                }).encode(),
+                headers={
+                    "Content-Type": "application/json",
+                    "x-api-key": ANTHROPIC_API_KEY,
+                    "anthropic-version": "2023-06-01"
+                },
+                method="POST"
+            )
+            with urllib.request.urlopen(test_req, timeout=10) as resp:
+                log("Anthropic API: OK")
+        except Exception as e:
+            err_msg = str(e)
+            log(f"WARNING: Anthropic API check failed: {err_msg[:80]}")
+            log("  Comments (Sonnet) and CVs (Opus) will fail this run.")
+            errors.append({"issue": f"Anthropic API down: {err_msg[:80]}", "fix": "Check API key or rate limits"})
+    else:
+        log("WARNING: No Anthropic API key. Comments and CVs disabled.")
+
     commented_urls = load_commented_urls()
     targets        = load_targets()
     log(f"Dedup: {len(commented_urls)} URLs already suggested")
