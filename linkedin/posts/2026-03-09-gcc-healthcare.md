@@ -1,6 +1,6 @@
 # Sunday March 9 | TAM | PAS | Scary | CTA: A
 
-![Post Image](sun-mar09-image.png)
+![Post Image](mon-mar09-image.png)
 
 ---
 
