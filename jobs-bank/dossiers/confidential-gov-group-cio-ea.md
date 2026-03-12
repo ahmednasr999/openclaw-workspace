@@ -2,7 +2,7 @@
 Date: 2026-03-12
 Source: https://www.linkedin.com/jobs/view/4382068053
 ATS Score: 91/100
-Verdict: SUBMIT
+Verdict: APPLIED
 Location: Riyadh, Saudi Arabia
 Salary: Not disclosed
 
@@ -29,6 +29,10 @@ Salary: Not disclosed
 - Frame TopMed work as enterprise architecture: technology roadmap, governance structures, scalable infrastructure
 - Lean into Saudi German Health's regulatory compliance (MOH, JCI, HIMSS) for government credibility
 - Mention EA methodology experience without claiming TOGAF cert
+
+## Application
+- Applied: 2026-03-12
+- Follow-up Due: 2026-03-26
 
 ## CV Delivered
 - Date: 2026-03-12
