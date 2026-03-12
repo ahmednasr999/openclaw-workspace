@@ -1,0 +1,194 @@
+{
+  "date": "Thursday, March 12, 2026",
+  "summary": {
+    "priority_focus": "Job pipeline review + LinkedIn engagement strategy",
+    "scanner_status": "4 qualified roles found | 6 borderline roles",
+    "linkedin_status": "6 fresh individual posts identified (last 48h, GCC healthcare + PMO)",
+    "calendar_status": "No events scheduled today",
+    "pipeline_status": "19 active applications | 0 responses this week"
+  },
+  "jobs": {
+    "scanner_note": "Scanner ran at 6:00 AM Cairo. Engine: JobSpy. 120 searches across 6 GCC countries.",
+    "qualified": [
+      {
+        "title": "Chief Strategy Officer, National Transformation Delivery",
+        "company": "Confidential Government",
+        "location": "Riyadh, Saudi Arabia",
+        "score": "68/100",
+        "status": "New",
+        "priority": "Saudi",
+        "link": "https://www.linkedin.com/jobs/view/4382046908",
+        "jd_length": "4,895 chars (full text available)",
+        "fit": "Strong. National transformation aligns directly with $50M DT program at TopMed."
+      },
+      {
+        "title": "Group Chief Executive Officer",
+        "company": "Confidential Government",
+        "location": "Jeddah, Saudi Arabia",
+        "score": "66/100",
+        "status": "New",
+        "priority": "Saudi",
+        "link": "https://www.linkedin.com/jobs/view/4382549204",
+        "jd_length": "6,749 chars (full text available)",
+        "fit": "C-suite. Broad operational scope. May over-index on industry-specific experience."
+      },
+      {
+        "title": "Executive Director, Smart City Connectivity & IoT",
+        "company": "Confidential Government",
+        "location": "Riyadh, Saudi Arabia",
+        "score": "65/100",
+        "status": "New",
+        "priority": "Saudi",
+        "link": "https://www.linkedin.com/jobs/view/4382050714",
+        "jd_length": "5,506 chars (full text available)",
+        "fit": "Adjacent to DT. IoT/Smart City is niche but your systems integration experience applies."
+      },
+      {
+        "title": "Chief Operations Officer (COO)",
+        "company": "APM Terminals",
+        "location": "Al-Hidd, Bahrain",
+        "score": "65/100",
+        "status": "New",
+        "link": "https://www.linkedin.com/jobs/view/4373942359",
+        "jd_length": "6,854 chars (full text available)",
+        "fit": "Operations-heavy role. Port/logistics sector. Less aligned with DT positioning."
+      }
+    ],
+    "borderline": [
+      {
+        "title": "Group CIAO, Enterprise Architecture",
+        "company": "Confidential Government",
+        "location": "Riyadh",
+        "score": "63/100"
+      },
+      {
+        "title": "Director, Investments",
+        "company": "Islamic Development Bank",
+        "location": "Jeddah",
+        "score": "64/100"
+      },
+      {
+        "title": "Chief Strategy Officer",
+        "company": "Confidential Government",
+        "location": "Jeddah",
+        "score": "57/100"
+      },
+      {
+        "title": "Operations Director",
+        "company": "Eaton",
+        "location": "Dubai",
+        "score": "61/100"
+      },
+      {
+        "title": "Head of Digital Acquisition",
+        "company": "Finance House",
+        "location": "Abu Dhabi",
+        "score": "55/100"
+      }
+    ],
+    "recommendation": "Top pick: Chief Strategy Officer, National Transformation (68/100, Riyadh). Strongest alignment with your digital transformation executive positioning. Review full JD and consider tailoring CV.\nSecondary: Group CIAO, Enterprise Architecture (63/100) is borderline but worth reviewing if you want to broaden scope."
+  },
+  "linkedin": {
+    "intro": "Fresh posts from last 48 hours. Individual authors only, GCC-relevant.",
+    "categories": [
+      {
+        "name": "Healthcare + Digital Transformation",
+        "posts": [
+          {
+            "index": 1,
+            "title": "Saudi Vision 2030: Healthcare Needs Context-Specific Transformation",
+            "author": "Kremena Alora (Healthcare Strategy Consultant)",
+            "topic": "Healthcare transformation under Vision 2030 demands more than imported templates. Saudi Health Cluster ecosystem requires context-specific approaches.",
+            "link": "https://www.linkedin.com/posts/kremena-alora_vision2030-healthclusters-activity-7436285829024718848-cluf",
+            "comment_angle": "Your TopMed experience across 15 hospitals proves this exact point. Share a specific example of adapting global best practices to Saudi hospital realities."
+          },
+          {
+            "index": 2,
+            "title": "Saudi Healthcare Transformation: Major Progress Under Vision 2030",
+            "author": "Abdulaziz AlSheikh (Healthcare Executive)",
+            "topic": "Fahad AlJalajel highlights major improvements across Saudi healthcare system.",
+            "link": "https://www.linkedin.com/posts/abdulaziz-alsheikh-061bb514_encouraging-progress-from-saudi-arabias-activity-7433164745890775041-w-sf",
+            "comment_angle": "Add your on-the-ground perspective from managing digital transformation inside Saudi German Hospital Group. First-hand operator credibility."
+          },
+          {
+            "index": 3,
+            "title": "UAE and Saudi Arabia Accelerate AI Healthcare Investment",
+            "author": "Sahar El-Khamri (HealthTech Investor)",
+            "topic": "Strong demand for AI-powered diagnostics, digital health platforms in GCC.",
+            "link": "https://www.linkedin.com/posts/sahar-el-khamri-099ab587_investment-ai-healthtech-activity-7432358445271412736-BfQL",
+            "comment_angle": "Bridge the investor perspective with operator reality. Share what AI adoption actually looks like inside a hospital group vs. pitch deck promises."
+          }
+        ]
+      },
+      {
+        "name": "PMO + GCC Transformation",
+        "posts": [
+          {
+            "index": 4,
+            "title": "PMO Shift: From Cost-Center to Value Orchestration",
+            "author": "Raja Prabhu (PMO Leader)",
+            "topic": "Future PMO is AI-augmented. Less reporting, more sense-making. Less control theatre, more outcome ownership.",
+            "link": "https://www.linkedin.com/posts/rajaprabhu15_gcc-transformation-pmo-activity-7432072066494816256-vF_r",
+            "comment_angle": "You're literally building an AI-augmented PMO with OpenClaw. Share how AI tools changed your daily PMO workflow at TopMed."
+          },
+          {
+            "index": 5,
+            "title": "5 Common GCC Digital Transformation Governance Mistakes",
+            "author": "Shubhankar Modak (DT Governance Expert)",
+            "topic": "Most GCC DT programs don't fail because of technology. They fail because governance was never properly designed.",
+            "link": "https://www.linkedin.com/posts/shubhankar-modak_pmo-digitaltransformation-governance-activity-7431974925776797697-zDc9",
+            "comment_angle": "Share a governance lesson from your multi-hospital $50M program. What governance mistake you caught early and how you fixed it."
+          },
+          {
+            "index": 6,
+            "title": "Transforming PMOs into Value Engines in GCC/MENA",
+            "author": "Ahmed Jadelrab (PMO Strategist)",
+            "topic": "Helping PMOs lead transformation, not just ERP projects. Ensuring outcomes, not just outputs.",
+            "link": "https://www.linkedin.com/posts/ahmed-jadelrab-8a4aa07_businessdrivenpmo-pmostrategy-pmomvm-activity-7431774630836834304-Snxb",
+            "comment_angle": "Agree and add: your PMO at TopMed drives digital transformation across 15 hospitals, not just tracking Gantt charts. Real transformation PMO story."
+          }
+        ]
+      }
+    ],
+    "recommendation": "Priority engagement: Post 1 (Kremena Alora, freshest, healthcare strategy) and Post 5 (Shubhankar Modak, governance, thought leadership). Comment on both today."
+  },
+  "calendar": {
+    "events": [],
+    "upcoming": [
+      "Sunday, March 15: Weekly goals review",
+      "Sunday, March 15: Weekly self-improvement cron (6 PM Cairo)",
+      "This week: Publish 2-3 LinkedIn posts (Sun-Thu schedule)",
+      "Overdue: 19 applications past follow-up date (see pipeline)"
+    ]
+  },
+  "pipeline": {
+    "total_applications": "19 active",
+    "responses_this_week": 0,
+    "overdue": "19 (all past March 6 follow-up date)",
+    "recent": [
+      "Talabat | CPTO | Dubai | 87% | Applied Feb 24",
+      "AIQU | Director of AI | Dubai | 82% | Applied Feb 24",
+      "Dubai Holding | Director DT & IT | Dubai | 92% | Applied Feb 27",
+      "FAB | VP Technology & Data | Abu Dhabi | 87% | Applied Feb 27",
+      "Inception (G42) | Director Delivery | Abu Dhabi | 91% | Applied Feb 27",
+      "+ 14 more (see full pipeline)"
+    ],
+    "closed": "Delphi Consulting (Senior AI PM)",
+    "recommendation": "Zero responses after 2+ weeks is a signal. Consider: (1) Follow up on top 5 applications by email, (2) Check if LinkedIn Easy Apply actually submitted, (3) Network-based approach for Dubai Holding and FAB."
+  },
+  "strategic_notes": [
+    "LinkedIn engagement remains low (2-3 likes per post). Today's engagement radar has 6 high-quality comment targets. Commenting strategy should precede posting.",
+    "Job scanner running daily at 6 AM Cairo. 120 searches, 6 GCC countries, 20 executive titles.",
+    "ATS threshold: 65+ qualified, 70+ auto-CV trigger.",
+    "Morning briefing cron: Sun-Thu 7 AM Cairo to Slack #ai-content.",
+    "Google Docs integration: Active. Daily briefing auto-populates this document.",
+    "Apify integration pending for real LinkedIn engagement metrics (likes, comments counts)."
+  ],
+  "action_items": [
+    "Review Chief Strategy Officer JD (Riyadh, 68/100) and decide: apply or skip",
+    "Comment on post 3.1 (AI Healthcare in KSA) and post 3.4 (GCC DT Governance)",
+    "Follow up on top 5 pipeline applications (Dubai Holding, FAB, G42, Talabat, Windmills)",
+    "Plan next LinkedIn post for this week (consider governance or AI-in-healthcare angle)",
+    "Review borderline Group CIAO role (63/100) for potential fit"
+  ]
+}
