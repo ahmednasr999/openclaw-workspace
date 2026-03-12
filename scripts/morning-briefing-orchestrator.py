@@ -275,6 +275,61 @@ def jina_fetch(url):
     return None
 
 
+HUMANIZER_PROMPT = """You are a content humanizer. Remove AI-generated artifacts and make this text sound authentically human.
+
+REMOVE these AI tells:
+- Words: "delve", "landscape", "leverage", "important to note", "game-changing", "transformative"
+- Tone inflation and generic phrasing
+- Excessive hedging ("perhaps", "might", "could potentially")
+- Overly perfect structure and identical paragraph rhythms
+- "First", "Second", "Third" lists without variation
+
+ADD human qualities:
+- Vary sentence length (short punchy + longer conversational)
+- Use contractions ("you're" not "you are")
+- Include specific, concrete details
+- Add natural transitions, not formulaic ones
+- Sound like someone actually thinking, not performing
+
+For LinkedIn specifically: Professional but conversational, authoritative but approachable.
+
+Output ONLY the humanized text. Nothing else.
+
+Original text:
+{text}
+
+Humanized:"""
+
+
+def humanize_text(text, api_key, base_url="https://api.anthropic.com"):
+    """Remove AI tells from text to sound more human."""
+    if not api_key or len(text) < 50:
+        return text
+    
+    payload = json.dumps({
+        "model": "claude-sonnet-4-6",
+        "max_tokens": 400,
+        "messages": [{"role": "user", "content": HUMANIZER_PROMPT.format(text=text)}]
+    }).encode()
+    req = urllib.request.Request(
+        f"{base_url}/v1/messages",
+        data=payload,
+        headers={
+            "Content-Type": "application/json",
+            "x-api-key": api_key,
+            "anthropic-version": "2023-06-01"
+        },
+        method="POST"
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=20) as resp:
+            result = json.loads(resp.read())
+            return result.get("content", [{}])[0].get("text", text)
+    except Exception as e:
+        log(f"  Humanizer error: {e}")
+        return text
+
+
 def make_post(r, layer_label):
     url   = r.get("url", "")
     slug_m = re.search(r'linkedin\.com/posts/([^_]+?)_', url)
@@ -404,6 +459,8 @@ def draft_comments(posts):
                 text = result.get("content", [{}])[0].get("text", "").strip()
                 # Remove em dashes just in case
                 text = text.replace("\u2014", ",").replace("\u2013", ",")
+                # Humanize the comment to remove AI tells
+                text = humanize_text(text, ANTHROPIC_API_KEY, ANTHROPIC_BASE_URL)
                 post["ready_comment"] = text
                 post["comment_angle"] = post.get("topic", "")[:80]
                 log(f"    Done ({len(text)} chars)")
