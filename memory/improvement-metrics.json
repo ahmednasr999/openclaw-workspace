@@ -1,0 +1,16 @@
+{
+  "daily": [
+    {
+      "date": "2026-03-12",
+      "posts_found": 2,
+      "comments_drafted": 2,
+      "errors": 0,
+      "successes": 7,
+      "layer1_working": true,
+      "layer2_working": false,
+      "layer3_working": false
+    }
+  ],
+  "weekly_summaries": [],
+  "pattern_counts": {}
+}

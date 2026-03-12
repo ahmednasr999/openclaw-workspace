@@ -523,6 +523,7 @@ def build_syslog_json(today_str, date_display, errors, stats):
         "cron_health":          stats.get("cron_health", []),
         "model_usage":          stats.get("model_usage", {}),
         "tomorrow_improvements":stats.get("tomorrow", []),
+        "self_improvement": stats.get("self_improvement", {}),
     }
 
     out = f"{JOBS_DIR}/system-log-{today_str}.json"
@@ -557,6 +558,43 @@ def main():
     commented_urls = load_commented_urls()
     targets        = load_targets()
     log(f"Dedup: {len(commented_urls)} URLs already suggested")
+    log("")
+
+    # Step 0: Self-Improvement Engine
+    try:
+        log("Step 0: Running self-improvement engine...")
+        r = subprocess.run(
+            f"python3 {WORKSPACE}/scripts/self-improvement-engine.py --json",
+            shell=True, capture_output=True, text=True, timeout=30
+        )
+        stdout = r.stdout.strip()
+        if stdout:
+            # JSON output may span multiple lines; find the JSON block
+            try:
+                si_result = json.loads(stdout)
+            except:
+                # Try to find JSON object in output
+                si_result = None
+                brace_start = stdout.find("{")
+                if brace_start >= 0:
+                    try:
+                        si_result = json.loads(stdout[brace_start:])
+                    except:
+                        pass
+            if si_result:
+                patterns = si_result.get("patterns", [])
+                actions = si_result.get("actions", [])
+                if patterns:
+                    log(f"  Patterns: {len(patterns)} detected")
+                    for p in patterns:
+                        log(f"    {p.get('severity','').upper()}: {p.get('detail','')[:60]}")
+                if actions:
+                    log(f"  Actions: {len(actions)} applied")
+                    went_right.append(f"Self-improvement: {len(patterns)} patterns, {len(actions)} fixes.")
+                else:
+                    log("  System healthy. No fixes needed.")
+    except Exception as e:
+        log(f"  Self-improvement skipped: {e}")
     log("")
 
     # Step 1
