@@ -11920,3 +11920,12 @@
 {"timestamp": "2026-03-12T17:29:33Z", "gateway_alive": false, "active_sessions_observed": 1976, "model_health": {"last_model_seen": "delivery-mirror"}, "queue_depth": 58}
 {"timestamp": "2026-03-12T17:30:33Z", "gateway_alive": false, "active_sessions_observed": 1976, "model_health": {"last_model_seen": "claude-opus-4-6"}, "queue_depth": 57}
 {"timestamp": "2026-03-12T17:31:34Z", "gateway_alive": false, "active_sessions_observed": 1976, "model_health": {"last_model_seen": "claude-opus-4-6"}, "queue_depth": 58}
+{"timestamp": "2026-03-12T17:32:34Z", "gateway_alive": false, "active_sessions_observed": 1976, "model_health": {"last_model_seen": "claude-opus-4-6"}, "queue_depth": 57}
+{"timestamp": "2026-03-12T17:33:35Z", "gateway_alive": false, "active_sessions_observed": 1976, "model_health": {"last_model_seen": "claude-opus-4-6"}, "queue_depth": 57}
+{"timestamp": "2026-03-12T17:34:35Z", "gateway_alive": false, "active_sessions_observed": 1976, "model_health": {"last_model_seen": "claude-opus-4-6"}, "queue_depth": 57}
+{"timestamp": "2026-03-12T17:35:35Z", "gateway_alive": false, "active_sessions_observed": 1976, "model_health": {"last_model_seen": "claude-opus-4-6"}, "queue_depth": 57}
+{"timestamp": "2026-03-12T17:36:35Z", "gateway_alive": false, "active_sessions_observed": 1976, "model_health": {"last_model_seen": "claude-opus-4-6"}, "queue_depth": 57}
+{"timestamp": "2026-03-12T17:37:36Z", "gateway_alive": false, "active_sessions_observed": 1976, "model_health": {"last_model_seen": "claude-opus-4-6"}, "queue_depth": 57}
+{"timestamp": "2026-03-12T17:38:36Z", "gateway_alive": false, "active_sessions_observed": 1976, "model_health": {"last_model_seen": "claude-opus-4-6"}, "queue_depth": 57}
+{"timestamp": "2026-03-12T17:39:36Z", "gateway_alive": false, "active_sessions_observed": 1976, "model_health": {"last_model_seen": "claude-opus-4-6"}, "queue_depth": 57}
+{"timestamp": "2026-03-12T17:40:37Z", "gateway_alive": false, "active_sessions_observed": 1976, "model_health": {"last_model_seen": "claude-opus-4-6"}, "queue_depth": 57}
