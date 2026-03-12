@@ -409,8 +409,27 @@ def update_log(posts, today_str):
 # STEP 7: BUILD BRIEFING JSON
 # ============================================================
 def build_briefing_json(today_str, date_display, qualified, borderline, scanner_note,
-                        events, upcoming, pipeline, posts, todays_post=None):
+                        events, upcoming, pipeline, posts, todays_post=None, built_cvs=None):
     log("Step 7: Building briefing JSON...")
+
+    # Match CVs to qualified jobs
+    cv_map = {}
+    if built_cvs:
+        for cv in built_cvs:
+            key = (cv.get("company","").lower(), cv.get("role","").lower())
+            cv_map[key] = cv
+        # Also index by company only for fuzzy matching
+        for cv in built_cvs:
+            cv_map[cv.get("company","").lower()] = cv
+
+    for job in qualified:
+        company = job.get("company", "").lower()
+        title = job.get("title", "").lower()
+        # Try exact match first, then company-only
+        cv = cv_map.get((company, title)) or cv_map.get(company)
+        if cv and cv.get("github_link"):
+            job["cv_link"] = cv["github_link"]
+            job["cv_status"] = "ready" if cv.get("status") in ("built", "existing") else "pending"
 
     L1 = [p for p in posts if "Layer 1" in p.get("target_layer", "")]
     L2 = [p for p in posts if "Layer 2" in p.get("target_layer", "")]
@@ -550,6 +569,39 @@ def main():
         qualified, borderline, scanner_note = [], [], "Scanner data unavailable"
     log("")
 
+    # Step 1b: Auto-generate CVs for qualified roles
+    built_cvs = []
+    try:
+        log("Step 1b: Auto-generating CVs for 70+ roles...")
+        r = subprocess.run(
+            f"python3 {WORKSPACE}/scripts/auto-cv-builder.py --json",
+            shell=True, capture_output=True, text=True, timeout=300
+        )
+        # Parse JSON from stdout (last line or the JSON array)
+        stdout = r.stdout.strip()
+        if stdout:
+            # Find the JSON array in output
+            for line in stdout.split("\n"):
+                line = line.strip()
+                if line.startswith("["):
+                    built_cvs = json.loads(line)
+                    break
+        if built_cvs:
+            built_count = sum(1 for c in built_cvs if c.get("status") == "built")
+            existing_count = sum(1 for c in built_cvs if c.get("status") == "existing")
+            went_right.append(f"CVs: {built_count} new, {existing_count} existing.")
+            log(f"  {built_count} new CVs built, {existing_count} existing")
+        else:
+            log("  No trigger files to process.")
+        # Print stderr (the log lines from auto-cv-builder)
+        if r.stderr:
+            for line in r.stderr.strip().split("\n")[:10]:
+                log(f"  {line}")
+    except Exception as e:
+        errors.append({"issue": f"CV auto-generation failed: {e}"})
+        log(f"  ERROR: {e}")
+    log("")
+
     # Step 2
     try:
         events, upcoming = check_calendar()
@@ -636,7 +688,7 @@ def main():
     try:
         briefing_path = build_briefing_json(
             today_str, date_display, qualified, borderline, scanner_note,
-            events, upcoming, pipeline, selected_posts, todays_post
+            events, upcoming, pipeline, selected_posts, todays_post, built_cvs
         )
         went_right.append("Briefing JSON built.")
     except Exception as e:

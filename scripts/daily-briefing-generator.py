@@ -28,7 +28,7 @@ ACCOUNT = "ahmednasr999@gmail.com"
 BOLD_LABELS = [
     "Priority Focus:", "Scanner Status:", "LinkedIn:", "Calendar:",
     "Pipeline:", "Company:", "Location:", "ATS Score:", "Link:",
-    "File:", "Image:", "GitHub:", "Action:",
+    "File:", "Image:", "GitHub:", "Action:", "Tailored CV:",
     "Fit:", "JD Length:", "Status:", "Author:", "Topic:",
     "Comment Angle:", "Today:", "Upcoming:", "Total Applications:",
     "Responses This Week:", "Follow-ups Overdue:", "Closed:",
@@ -177,6 +177,9 @@ def build_document_lines(data):
                 lines.append((f"JD Length: {job['jd_length']}", "NORMAL_TEXT"))
             if job.get('fit'):
                 lines.append((f"Fit: {job['fit']}", "NORMAL_TEXT"))
+            if job.get('cv_link'):
+                status = "Ready to apply" if job.get('cv_status') == 'ready' else 'Pending'
+                lines.append((f"Tailored CV: {job['cv_link']} ({status})", "NORMAL_TEXT"))
             lines.append(("", "NORMAL_TEXT"))
 
     if borderline:
