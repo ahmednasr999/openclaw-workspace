@@ -35,6 +35,8 @@ BOLD_LABELS = [
     "Priority engagement:", "New Today:", "Overdue:", "Next Action:",
     "Score:", "Sector:", "Source:", "Posted:", "Freshness:",
     "Applications Sent:", "Interview Stage:", "Awaiting Response:",
+    "Ready-to-Post Comment:", "Target Layer:",
+    "Improvement Streak:",
 ]
 
 
@@ -178,6 +180,12 @@ def build_document_lines(data):
                     lines.append((f"Link: {post['link']}", "NORMAL_TEXT"))
                 if post.get('comment_angle'):
                     lines.append((f"Comment Angle: {post['comment_angle']}", "NORMAL_TEXT"))
+                if post.get('ready_comment'):
+                    lines.append(("", "NORMAL_TEXT"))
+                    lines.append(("Ready-to-Post Comment:", "NORMAL_TEXT"))
+                    lines.append((f"\u201c{post['ready_comment']}\u201d", "NORMAL_TEXT"))
+                if post.get('target_layer'):
+                    lines.append((f"Target Layer: {post['target_layer']}", "NORMAL_TEXT"))
                 lines.append(("", "NORMAL_TEXT"))
     elif posts:
         for i, post in enumerate(posts, 1):
@@ -190,6 +198,12 @@ def build_document_lines(data):
                 lines.append((f"Link: {post['link']}", "NORMAL_TEXT"))
             if post.get('comment_angle'):
                 lines.append((f"Comment Angle: {post['comment_angle']}", "NORMAL_TEXT"))
+            if post.get('ready_comment'):
+                lines.append(("", "NORMAL_TEXT"))
+                lines.append(("Ready-to-Post Comment:", "NORMAL_TEXT"))
+                lines.append((f"\u201c{post['ready_comment']}\u201d", "NORMAL_TEXT"))
+            if post.get('target_layer'):
+                lines.append((f"Target Layer: {post['target_layer']}", "NORMAL_TEXT"))
             lines.append(("", "NORMAL_TEXT"))
 
     if linkedin.get("recommendation"):
