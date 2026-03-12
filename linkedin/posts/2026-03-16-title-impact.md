@@ -1,6 +1,6 @@
 # Monday March 17 | Growth | SLAY | Sexy | CTA: A
 
-![Post Image](2026-03-17-title-impact-image.png)
+![Post Image](2026-03-16-title-impact-image.png)
 
 ---
 

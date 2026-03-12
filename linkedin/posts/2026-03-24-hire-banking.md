@@ -45,4 +45,4 @@ By the way, I'm currently exploring VP/C-suite digital transformation roles acro
 ---
 
 ## Image Generated
-File: linkedin-2026-03-25.html → linkedin/week-2026-03-23/2026-03-25.png
+File: linkedin-2026-03-24.html → linkedin/week-2026-03-23/2026-03-24.png
