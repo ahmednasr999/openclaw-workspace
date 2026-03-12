@@ -211,6 +211,46 @@ def apply_formatting(docs, doc_id, lines):
     
     if link_requests:
         docs.documents().batchUpdate(documentId=doc_id, body={'requests': link_requests}).execute()
+    
+    # Insert actual images
+    # Re-read doc to get current positions
+    doc = docs.documents().get(documentId=doc_id).execute()
+    image_inserts = []
+    
+    for el in doc.get('body', {}).get('content', []):
+        if 'paragraph' in el:
+            for elem in el['paragraph'].get('elements', []):
+                text = elem.get('textRun', {}).get('content', '')
+                if text.startswith('Image:'):
+                    # Extract filename from "Image: filename.png"
+                    img_name = text.replace('Image:', '').strip()
+                    if img_name:
+                        img_url = f"{GITHUB_RAW_BASE}/{img_name}"
+                        # Insert after the end of this line
+                        end_idx = elem.get('endIndex', 0)
+                        image_inserts.append((end_idx, img_url, img_name))
+    
+    # Insert from bottom to top to avoid index shifting
+    image_inserts.sort(key=lambda x: x[0], reverse=True)
+    
+    for insert_pos, img_url, img_name in image_inserts:
+        try:
+            docs.documents().batchUpdate(
+                documentId=doc_id,
+                body={'requests': [{
+                    'insertInlineImage': {
+                        'uri': img_url,
+                        'objectSize': {
+                            'height': {'magnitude': 300, 'unit': 'PT'},
+                            'width': {'magnitude': 468, 'unit': 'PT'}
+                        },
+                        'location': {'index': insert_pos}
+                    }
+                }]}
+            ).execute()
+            print(f"  Embedded: {img_name}")
+        except Exception as e:
+            print(f"  Failed: {img_name}: {e}")
 
 
 def main():
