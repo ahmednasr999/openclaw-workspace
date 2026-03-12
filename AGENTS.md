@@ -156,6 +156,8 @@ If a response was already sent in a broken format, resend in Telegram-safe forma
 ### Think Command: /think [topic]
 When Ahmed wants structured thinking on a topic, use: `/think [topic]`
 
+After receiving /think, I'll ask to switch to Opus 4.6 for deep reasoning. You confirm with "go" and I switch.
+
 Response format:
 - Problem definition
 - Options (A/B/C)
