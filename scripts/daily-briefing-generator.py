@@ -80,8 +80,30 @@ def clear_document(docs, doc_id):
         ).execute()
 
 
+def get_document_end(docs, doc_id):
+    """Get the end index of existing document content."""
+    doc = docs.documents().get(documentId=doc_id).execute()
+    content = doc.get('body', {}).get('content', [])
+    return max((el.get('endIndex', 1) for el in content), default=1)
+
+
+def document_has_content(docs, doc_id):
+    """Check if document already has substantial content (not just empty)."""
+    end = get_document_end(docs, doc_id)
+    return end > 5  # More than just a newline
+
+
+def build_header_lines():
+    """Build document header (only used on first run). Returns list of (text, style) tuples."""
+    lines = []
+    lines.append(("Ahmed Nasr", "TITLE"))
+    lines.append(("Executive Daily Briefing", "SUBTITLE"))
+    lines.append(("", "NORMAL_TEXT"))
+    return lines
+
+
 def build_document_lines(data):
-    """Build document structure from data JSON. Returns list of (text, style) tuples."""
+    """Build daily content from data JSON. Returns list of (text, style) tuples."""
     lines = []
     bullet = "\u2022"
     checkbox = "\u2610"
@@ -92,10 +114,8 @@ def build_document_lines(data):
     date_str = data.get("date", now_cairo.strftime("%A, %B %d, %Y"))
     update_time = now_cairo.strftime("%B %d, %Y %H:%M Cairo")
 
-    # ===== HEADER =====
-    lines.append(("Ahmed Nasr", "TITLE"))
-    lines.append(("Executive Daily Briefing", "SUBTITLE"))
-    lines.append(("", "NORMAL_TEXT"))
+    # ===== DATE HEADING (separator between days) =====
+    lines.append(("\n", "NORMAL_TEXT"))
     lines.append((date_str, "HEADING_1"))
     lines.append(("", "NORMAL_TEXT"))
 
@@ -326,18 +346,18 @@ def build_document_lines(data):
     return lines
 
 
-def apply_formatting(docs, doc_id, lines):
+def apply_formatting(docs, doc_id, lines, start_index=1):
     """Insert text and apply all formatting to Google Doc."""
     all_requests = []
 
     # Insert all text at once
     full_text = "\n".join(text for text, _ in lines)
     all_requests.append({
-        'insertText': {'location': {'index': 1}, 'text': full_text}
+        'insertText': {'location': {'index': start_index}, 'text': full_text}
     })
 
     # Apply heading styles
-    current_pos = 1
+    current_pos = start_index
     for text, style in lines:
         line_end = current_pos + len(text)
         if style not in ("NORMAL_TEXT",) and text:
@@ -351,7 +371,7 @@ def apply_formatting(docs, doc_id, lines):
         current_pos = line_end + 1
 
     # Bold key labels
-    current_pos = 1
+    current_pos = start_index
     for text, style in lines:
         if style == "NORMAL_TEXT" and text:
             for label in BOLD_LABELS:
@@ -447,17 +467,25 @@ def main():
     creds = Credentials(token=access_token)
     docs = build('docs', 'v1', credentials=creds)
 
-    # Clear document
-    print("Clearing document...")
-    clear_document(docs, args.doc_id)
+    # Check if document already has content (append mode)
+    has_content = document_has_content(docs, args.doc_id)
 
-    # Build lines
-    print("Building document structure...")
-    lines = build_document_lines(data)
-
-    # Apply formatting
-    print("Applying premium formatting...")
-    num_requests = apply_formatting(docs, args.doc_id, lines)
+    if has_content:
+        # APPEND: add today's content at the end (preserve previous days)
+        print("Document has existing content. Appending today's briefing...")
+        end_index = get_document_end(docs, args.doc_id) - 1
+        if end_index < 1:
+            end_index = 1
+        lines = build_document_lines(data)
+        print(f"Appending at index {end_index}...")
+        num_requests = apply_formatting(docs, args.doc_id, lines, start_index=end_index)
+    else:
+        # FIRST RUN: write header + today's content
+        print("Empty document. Writing header + first briefing...")
+        clear_document(docs, args.doc_id)
+        header_lines = build_header_lines()
+        lines = header_lines + build_document_lines(data)
+        num_requests = apply_formatting(docs, args.doc_id, lines)
 
     print(f"Applied {num_requests} formatting requests.")
     print(f"Document: https://docs.google.com/document/d/{args.doc_id}/edit")
