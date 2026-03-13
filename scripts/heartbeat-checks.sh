@@ -68,7 +68,31 @@ except:
 fi
 
 # ============================================================
-# 3. SESSION HEALTH — check for bloated session files
+# 3. SCRIPT HEALTH — verify critical scripts actually work
+# ============================================================
+script_health="[]"
+SCRIPTS_TO_TEST=(
+  "$WORKSPACE/scripts/gmail-check.sh"
+)
+script_failures=""
+for script in "${SCRIPTS_TO_TEST[@]}"; do
+  if [ -f "$script" ]; then
+    # Run script and capture output
+    output=$(bash "$script" 2>&1)
+    exit_code=$?
+    if [ $exit_code -ne 0 ]; then
+      script_failures="${script_failures}$(basename "$script"): exit $exit_code; "
+    elif echo "$output" | grep -qi "ERROR\|error\|fail"; then
+      script_failures="${script_failures}$(basename "$script"): output error; "
+    fi
+  fi
+done
+if [ -n "$script_failures" ]; then
+  script_health="[{\"type\":\"script_failure\",\"details\":\"$script_failures\"}]"
+fi
+
+# ============================================================
+# 4. SESSION HEALTH — check for bloated session files
 # ============================================================
 bloated_sessions="[]"
 if [ -d "$SESSIONS_DIR" ]; then
@@ -184,6 +208,7 @@ cat <<EOF
     "pid": "$gateway_pid"
   },
   "cron_failures": $cron_failures,
+  "script_health": $script_health,
   "bloated_sessions": $bloated_sessions,
   "disk_usage_pct": $disk_usage_pct,
   "active_tasks_age_hours": $active_tasks_age,
