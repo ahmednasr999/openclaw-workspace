@@ -54,6 +54,11 @@
 - Account: ahmednasr999@gmail.com
 - OAuth client: 583018818639 (backup client, working)
 
+## LinkedIn Account Separation (HARD RULE, Mar 13 2026)
+- **Ahmed's LinkedIn** (real profile): Composio ONLY. Official API posting. NEVER scrape, NEVER automate via browser, NEVER use Camoufox. Reputation is sacred.
+- **NASR's account** (agent): Camoufox/browser automation for job searches (120/day), JD fetching, scraping. Acceptable risk on bot account.
+- **NEVER MIX.** No scraping on Ahmed's account. No posting from NASR's account.
+
 ## Communication Rules
 - Direct, concise. Lead with insight, not preamble. No Markdown tables unless Ahmed explicitly asks.
 - Time-sensitive items at TOP. Label options A/B/C. No hand-holding.
