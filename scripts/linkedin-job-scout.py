@@ -45,11 +45,41 @@ def build_url(keyword: str, location: str) -> str:
     # f_TPR=r604800 = last 7 days
     return f"https://www.linkedin.com/jobs/search/?keywords={keyword_encoded}&location={location_encoded}&f_TPR=r604800&f_E=1"
 
+def defuddle_fetch(url: str) -> str:
+    """Fetch page via Defuddle, fallback to Jina."""
+    import urllib.request
+    try:
+        clean = url.replace("https://", "").replace("http://", "")
+        req = urllib.request.Request(f"https://defuddle.md/{clean}", headers={"Accept": "text/plain"})
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            content = resp.read().decode("utf-8")
+            if content and len(content) > 200:
+                return content
+    except Exception:
+        pass
+    try:
+        req = urllib.request.Request(f"https://r.jina.ai/{url}", headers={"Accept": "text/plain"})
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            return resp.read().decode("utf-8")
+    except Exception:
+        pass
+    return ""
+
+
 def get_jobs_webfetch(keyword: str, location: str) -> list:
-    """Fetch jobs using web_fetch tool via exec curl"""
+    """Fetch jobs using Defuddle/Jina, fallback to curl"""
     url = build_url(keyword, location)
     
-    # Use curl to fetch the page
+    # Try Defuddle/Jina first for cleaner extraction
+    content = defuddle_fetch(url)
+    if content and len(content) > 500:
+        import re
+        # Extract job titles from markdown content
+        jobs = re.findall(r'\[([^\]]*(?:Director|VP|Head|Chief|Manager|Lead|Senior)[^\]]*)\]', content, re.IGNORECASE)
+        if jobs:
+            return [{"title": j.strip(), "url": url} for j in jobs[:15]]
+    
+    # Fallback to curl for raw HTML
     import subprocess
     
     try:

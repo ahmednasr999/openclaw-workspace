@@ -192,19 +192,44 @@ def calculate_score(job_text: str) -> dict:
         "seniority_indicator": seniority_count >= 2
     }
 
+def fetch_page(url: str) -> str:
+    """Fetch page content: Defuddle first, Jina fallback."""
+    import urllib.request
+    # Try Defuddle
+    try:
+        clean = url.replace("https://", "").replace("http://", "")
+        req = urllib.request.Request(f"https://defuddle.md/{clean}", headers={"Accept": "text/plain"})
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            content = resp.read().decode("utf-8")
+            if content and len(content) > 200:
+                return content
+    except Exception:
+        pass
+    # Fallback to Jina
+    try:
+        req = urllib.request.Request(f"https://r.jina.ai/{url}", headers={"Accept": "text/plain"})
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            content = resp.read().decode("utf-8")
+            if content and len(content) > 200:
+                return content
+    except Exception:
+        pass
+    return ""
+
+
 def score_from_url(url: str) -> dict:
-    """Score a job from LinkedIn URL using web_fetch"""
-    import subprocess
-    
-    # For now, return placeholder - would need JD extraction
-    return {
-        "score": 0,
-        "verdict": "NEEDS_JD",
-        "matched": [],
-        "missing": [],
-        "gaps": ["JD not extracted yet"],
-        "seniority_indicator": False
-    }
+    """Score a job from URL using Defuddle/Jina extraction"""
+    jd = fetch_page(url)
+    if not jd or len(jd) < 200:
+        return {
+            "score": 0,
+            "verdict": "NEEDS_JD",
+            "matched": [],
+            "missing": [],
+            "gaps": ["JD not extracted"],
+            "seniority_indicator": False
+        }
+    return score_jd(jd)
 
 def main():
     import sys
