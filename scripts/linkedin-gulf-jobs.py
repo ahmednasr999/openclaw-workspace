@@ -680,10 +680,10 @@ def main():
         f.write(f"**Engine:** JobSpy (full JD text)\n")
         f.write(f"**Threshold:** ATS {ATS_THRESHOLD}+\n")
         f.write(f"**Qualified:** {len(qualified_jobs)}\n")
-        f.write(f"**Borderline (75-81):** {len(borderline_jobs)}\n\n")
+        f.write(f"**Borderline ({BORDERLINE_MIN}-{ATS_THRESHOLD-1}):** {len(borderline_jobs)}\n\n")
 
         if qualified_jobs:
-            f.write("## Qualified Jobs (82+)\n\n")
+            f.write(f"## Qualified Jobs ({ATS_THRESHOLD}+)\n\n")
             for job in qualified_jobs:
                 notes = []
                 if any(p.lower() in job["location"].lower() for p in PREFERRED_COUNTRIES):
@@ -702,7 +702,7 @@ def main():
                 f.write(f"- JD: {job.get('jd_length', 0)} chars ({'full' if job.get('has_full_jd') else 'partial'})\n\n")
 
         if borderline_jobs:
-            f.write("## Borderline Jobs (75-81) - Manual Review\n\n")
+            f.write(f"## Borderline Jobs ({BORDERLINE_MIN}-{ATS_THRESHOLD-1}) - Manual Review\n\n")
             for job in borderline_jobs:
                 f.write(f"### {job['title']}\n")
                 f.write(f"- Company: {job['company']}\n")
@@ -725,8 +725,8 @@ def main():
         f.write(f"- Jobs found: {total_jobs_found}\n")
         f.write(f"- Unique jobs: {len(all_jobs_seen)}\n")
         f.write(f"- Scored: {total_scored}\n")
-        f.write(f"- Qualified (82+): {len(qualified_jobs)}\n")
-        f.write(f"- Borderline (75-81): {len(borderline_jobs)}\n")
+        f.write(f"- Qualified ({ATS_THRESHOLD}+): {len(qualified_jobs)}\n")
+        f.write(f"- Borderline ({BORDERLINE_MIN}-{ATS_THRESHOLD-1}): {len(borderline_jobs)}\n")
         f.write(f"- Errors: {errors}\n")
         f.write(f"- Runtime: {elapsed}s\n")
         f.write(f"- JobSpy failures: {jobspy_failures}\n")
@@ -737,8 +737,8 @@ def main():
     print(f"Jobs found: {total_jobs_found}")
     print(f"Unique: {len(all_jobs_seen)}")
     print(f"Scored: {total_scored}")
-    print(f"Qualified (82+): {len(qualified_jobs)}")
-    print(f"Borderline (75-81): {len(borderline_jobs)}")
+    print(f"Qualified ({ATS_THRESHOLD}+): {len(qualified_jobs)}")
+    print(f"Borderline ({BORDERLINE_MIN}-{ATS_THRESHOLD-1}): {len(borderline_jobs)}")
     print(f"Output: {qualified_file}")
 
 
