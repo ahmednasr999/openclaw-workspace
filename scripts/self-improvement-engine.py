@@ -851,10 +851,165 @@ def _status_order(status):
     return order.get(status, 0)
 
 
+# === Phase 5: Improvement Suggestions ===
+
+IMPROVEMENT_LOG = f"{MEMORY_DIR}/improvement-log.md"
+PROMPT_FILE = "/tmp/sie-improvement-prompt.txt"
+
+
+def read_file(filepath, default=""):
+    """Read file safely."""
+    if not os.path.exists(filepath):
+        return default
+    try:
+        with open(filepath) as f:
+            return f.read()
+    except:
+        return default
+
+
+def parse_improvement_log(content):
+    """Parse improvement log to extract suggestions."""
+    suggestions = {"active": [], "implemented": [], "archived": []}
+    
+    current_section = None
+    for line in content.split("\n"):
+        line = line.strip()
+        if line.startswith("## Active Suggestions"):
+            current_section = "active"
+        elif line.startswith("## Implemented"):
+            current_section = "implemented"
+        elif line.startswith("## Archived"):
+            current_section = "archived"
+        elif line.startswith("- [") and current_section:
+            suggestions[current_section].append(line)
+    
+    return suggestions
+
+
+def generate_improvement_prompt(results, health_score, state, improvement_log_content, learnings_content):
+    """Generate structured analysis prompt for Phase 5."""
+    
+    # Extract trend data from history
+    trends = []
+    history = state.get("history", [])
+    if len(history) >= 2:
+        prev = history[-2]
+        curr = history[-1]
+        score_change = curr.get("health_score", 0) - prev.get("health_score", 0)
+        trends.append(f"Health score: {prev.get('health_score', 0)} -> {curr.get('health_score', 0)} ({'+' if score_change > 0 else ''}{score_change})")
+        
+        # Identify areas that changed
+        areas = state.get("areas", {})
+        for letter, area in areas.items():
+            if area.get("status") in ("ALERT", "CRITICAL"):
+                trends.append(f"ALERT area: {area.get('name')} - {area.get('details')}")
+    
+    # Parse improvement log for past suggestions
+    suggestions = parse_improvement_log(improvement_log_content)
+    active_suggestions = suggestions.get("active", [])
+    
+    # Build the prompt
+    prompt = f"""# SIE Phase 5: Improvement Analysis
+
+## Current Health
+- **Health Score:** {health_score}/100
+- **Total Areas:** {len(results)}
+- **Status Distribution:**
+"""
+    
+    status_counts = defaultdict(int)
+    for r in results.values():
+        status_counts[r["status"]] += 1
+    
+    for status, count in sorted(status_counts.items(), key=lambda x: _status_order(x[0])):
+        prompt += f"  - {status}: {count}\n"
+    
+    # Warning/Alerts details
+    warning_areas = [(k, v) for k, v in results.items() if v["status"] in ("WARN", "ALERT", "CRITICAL")]
+    if warning_areas:
+        prompt += "\n## Areas Needing Attention\n"
+        for letter, r in warning_areas:
+            prompt += f"- [{letter}] {r['name']}: {r['details']}\n"
+    
+    # Trend data
+    if trends:
+        prompt += "\n## Trends (vs previous run)\n"
+        for trend in trends:
+            prompt += f"- {trend}\n"
+    
+    # Past suggestions
+    if active_suggestions:
+        prompt += f"\n## Active Past Suggestions ({len(active_suggestions)})\n"
+        for s in active_suggestions[:10]:  # Limit to 10
+            prompt += f"{s}\n"
+    
+    # Recent learnings
+    if learnings_content:
+        prompt += "\n## Recent Learnings (from .learnings/LEARNINGS.md)\n"
+        # Extract last 3 learnings
+        lrns = learnings_content.split("## [LRN-")
+        for lrn in lrns[-3:]:
+            if lrn.strip():
+                # Get first 200 chars
+                snippet = lrn[:200].strip()
+                prompt += f"- {snippet}...\n"
+    
+    prompt += """
+## Task
+Generate 3-5 actionable improvement suggestions ranked HIGH/MED/LOW.
+Each must have:
+- Area tag (letter + name)
+- Description
+- Rationale grounded in data above
+- Concrete action step
+
+Max 5 suggestions. Never repeat pending suggestions.
+Format output as:
+- [HIGH/MED/LOW] [Area] Description. Action: concrete step.
+"""
+    
+    # Ensure prompt stays under 2000 tokens
+    if len(prompt) > 5000:
+        prompt = prompt[:5000] + "\n[...truncated...]"
+    
+    return prompt
+
+
+def run_phase5(results, health_score, state):
+    """Execute Phase 5: generate improvement prompt."""
+    log("Running Phase 5: Generating improvement prompt...")
+    
+    # Read supporting files
+    improvement_log_content = read_file(IMPROVEMENT_LOG)
+    learnings_content = read_file(LEARNINGS_FILE)
+    
+    # Generate prompt
+    prompt = generate_improvement_prompt(results, health_score, state, improvement_log_content, learnings_content)
+    
+    # Write to prompt file
+    with open(PROMPT_FILE, "w") as f:
+        f.write(prompt)
+    
+    log(f"Improvement prompt written to {PROMPT_FILE}")
+    
+    # Update state with suggestion counts
+    suggestions = parse_improvement_log(improvement_log_content)
+    state["suggestions"] = {
+        "total_generated": state.get("suggestions", {}).get("total_generated", 0),
+        "implemented": len(suggestions.get("implemented", [])),
+        "expired": len(suggestions.get("archived", [])),
+        "pending": len(suggestions.get("active", []))
+    }
+    
+    return prompt
+
+
 def main():
     parser = argparse.ArgumentParser(description="Self-Improvement Engine for OpenClaw")
     parser.add_argument("--dry-run", action="store_true", help="Report only, no file writes")
     parser.add_argument("--json", action="store_true", help="Output JSON summary to stdout")
+    parser.add_argument("--suggest", action="store_true", help="Generate improvement prompt for Phase 5")
     args = parser.parse_args()
     
     log("=== Self-Improvement Engine (SIE) ===")
@@ -921,6 +1076,17 @@ def main():
             "dry_run": args.dry_run
         }
         print(json.dumps(output, indent=2))
+    
+    # Phase 5: Generate improvement prompt
+    prompt = run_phase5(results, health_score, state)
+    
+    # Print prompt if --suggest flag
+    if args.suggest:
+        print("\n" + "="*60)
+        print("IMPROVEMENT PROMPT (Phase 5)")
+        print("="*60)
+        print(prompt)
+        print("="*60)
     
     log("=== SIE Complete ===")
     
