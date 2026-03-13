@@ -84,3 +84,20 @@ camofox_screenshot --tabId "$TAB_ID"
 - **Timeout on type**: Click the field first, then type
 - **Element not found**: Scroll to it, wait, try again
 - **Form not loaded**: Wait for "Loading..." to disappear
+
+## Direct Playwright (Fallback)
+
+When Camoufox fails, use Playwright directly:
+
+```python
+from playwright.sync_api import sync_playwright
+
+with sync_playwright() as p:
+    browser = p.chromium.launch(headless=False)
+    page = browser.new_page()
+    page.goto("https://careers.contango.ae/...")
+    page.fill('input[name="firstName"]', "Ahmed")
+    page.click('button[type="submit"]')
+```
+
+Install: `pip install playwright && playwright install chromium`
