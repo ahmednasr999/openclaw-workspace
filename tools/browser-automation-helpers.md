@@ -24,6 +24,16 @@ for attempt in 1 2 3; do
 done
 ```
 
+## Screenshot on Failure
+
+After any failed action, automatically capture screenshot:
+
+```bash
+# After failure
+camofox_screenshot --tabId "$TAB_ID"
+# Saves to default location, helps debug
+```
+
 ## Common Fixes
 
 - **Timeout on type**: Click the field first, then type
