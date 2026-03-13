@@ -126,7 +126,11 @@ Budget: EGP 9,000/mo (Claude Max 20x) + $40 (MiniMax) + $20 (ChatGPT Plus, GPT-5
 - Google OAuth: ahmednasr999@gmail.com (Gmail + Calendar)
 - Job Radar: official employer sources first, aggregators discovery-only
 - LinkedIn discovery: hashtag + whitelist priority, own-feed fallback only
-- **X/Twitter Full Access (Mar 12, 2026):** @Nasr2030vision account fully accessible via Camoufox on VPS. Cookies imported to profile. Full access: posts, timeline, DMs, search, posting.
+- **X/Twitter Full Access (Mar 12, 2026):** @Nasr2030vision account fully accessible via Camoufox CLI on VPS. Cookies at `/root/.openclaw/cookies/x.txt`. USE CLI, NOT browser tool:
+  - `camofox-browser open <url>` — open URL, returns tabId
+  - `camofox-browser snapshot <tabId>` — get page content
+  - `camofox-browser screenshot <tabId>` — screenshot
+  - DO NOT use browser tool (port conflicts). USE camofox-browser CLI directly.
 
 ## Google Docs Briefing Standard (Mar 12, locked)
 - NEVER raw markdown in Google Docs. Always native API formatting.
