@@ -24,6 +24,20 @@ for attempt in 1 2 3; do
 done
 ```
 
+## File Upload via CDP
+
+For uploading CVs/files that normal automation can't handle:
+
+```javascript
+// Upload file via CDP
+const input = document.querySelector('input[type="file"]');
+const file = new File(['CV content'], 'resume.pdf', {type: 'application/pdf'});
+const dataTransfer = new DataTransfer();
+dataTransfer.items.add(file);
+input.files = dataTransfer.files;
+input.dispatchEvent(new Event('change', {bubbles: true}));
+```
+
 ## JavaScript Injection
 
 For complex React forms that don't respond to normal clicks:
