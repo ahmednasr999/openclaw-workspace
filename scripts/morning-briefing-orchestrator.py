@@ -413,11 +413,41 @@ def make_post(r, layer_label):
     }
 
 
+MAX_POST_AGE_DAYS = 14  # Only comment on posts from the last 2 weeks
+
+def get_post_age_days(url):
+    """Extract post age in days from LinkedIn activity ID in URL. Returns None if can't determine."""
+    m = re.search(r'activity-(\d+)', url)
+    if not m:
+        return None
+    try:
+        aid = int(m.group(1))
+        # LinkedIn activity IDs are Snowflake-style: timestamp bits shifted left by 22
+        # Epoch offset calibrated: activity 7434103996341964801 ≈ March 10, 2026
+        EPOCH_OFFSET = 1097088299  # ms offset from Unix epoch
+        ts_ms = (aid >> 22) + EPOCH_OFFSET
+        import time
+        age_days = (time.time() * 1000 - ts_ms) / 86400000
+        return age_days
+    except:
+        return None
+
+
 def find_posts(commented_urls, targets):
     log("Step 4: Searching LinkedIn posts (3 layers)...")
 
     def is_fresh(url):
-        return "linkedin.com/posts/" in url and url not in commented_urls and not is_company_page(url)
+        if "linkedin.com/posts/" not in url:
+            return False
+        if url in commented_urls:
+            return False
+        if is_company_page(url):
+            return False
+        # Check post age from activity ID
+        age = get_post_age_days(url)
+        if age is not None and age > MAX_POST_AGE_DAYS:
+            return False
+        return True
 
     # Layer 1: Pipeline companies - search for INDIVIDUALS at those companies
     tier1 = targets.get("layer_1_pipeline_companies", {}).get("tier_1", [])
