@@ -453,6 +453,7 @@ def main():
     parser = argparse.ArgumentParser(description="Generate premium Google Doc briefing")
     parser.add_argument("--data", required=True, help="Path to briefing data JSON")
     parser.add_argument("--doc-id", default=DEFAULT_DOC_ID, help="Google Doc ID")
+    parser.add_argument("--fresh", action="store_true", help="Clear document first (fresh start)")
     args = parser.parse_args()
 
     # Load data
@@ -467,25 +468,25 @@ def main():
     creds = Credentials(token=access_token)
     docs = build('docs', 'v1', credentials=creds)
 
-    # Check if document already has content (append mode)
+    # --fresh flag or empty doc: clear and write header first
     has_content = document_has_content(docs, args.doc_id)
 
-    if has_content:
-        # APPEND: add today's content at the end (preserve previous days)
-        print("Document has existing content. Appending today's briefing...")
-        end_index = get_document_end(docs, args.doc_id) - 1
-        if end_index < 1:
-            end_index = 1
-        lines = build_document_lines(data)
-        print(f"Appending at index {end_index}...")
-        num_requests = apply_formatting(docs, args.doc_id, lines, start_index=end_index)
-    else:
-        # FIRST RUN: write header + today's content
-        print("Empty document. Writing header + first briefing...")
+    if args.fresh or not has_content:
+        print("Clearing document and writing header...")
         clear_document(docs, args.doc_id)
         header_lines = build_header_lines()
-        lines = header_lines + build_document_lines(data)
-        num_requests = apply_formatting(docs, args.doc_id, lines)
+        num_requests = apply_formatting(docs, args.doc_id, header_lines)
+        print(f"Header written ({num_requests} requests).")
+        has_content = True  # now it has content for the append below
+
+    # APPEND: add today's content at the end
+    print("Appending today's briefing...")
+    end_index = get_document_end(docs, args.doc_id) - 1
+    if end_index < 1:
+        end_index = 1
+    lines = build_document_lines(data)
+    print(f"Appending at index {end_index}...")
+    num_requests = apply_formatting(docs, args.doc_id, lines, start_index=end_index)
 
     print(f"Applied {num_requests} formatting requests.")
     print(f"Document: https://docs.google.com/document/d/{args.doc_id}/edit")
