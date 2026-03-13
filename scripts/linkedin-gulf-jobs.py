@@ -235,6 +235,25 @@ def ats_score(jd_text, job_title="", job_location=""):
         penalties += 20
     if any(c in text for c in ["security clearance", "top secret"]):
         penalties += 30
+    # Manufacturing/Industrial/Physical ops penalty (not Ahmed's domain)
+    mfg_signals = ["manufacturing plant", "production line", "factory", "assembly line",
+                    "warehouse manager", "plant manager", "plant operations",
+                    "ehs ", "environment health safety", "ohsas", "lean manufacturing",
+                    "mcb ", "pcba", "cnc ", "machining", "welding", "forklift",
+                    "shop floor", "production supervisor", "quality inspector"]
+    mfg_hits = sum(1 for s in mfg_signals if s in text)
+    if mfg_hits >= 3:
+        penalties += 20  # Strong manufacturing signal
+    elif mfg_hits >= 1:
+        penalties += 10  # Some manufacturing signal
+    # Construction/Real estate/Facilities penalty
+    if any(c in text for c in ["construction manager", "site engineer", "quantity surveyor",
+                                "real estate broker", "property management"]):
+        penalties += 15
+    # Pure admin/support penalty
+    if any(a in title_lower for a in ["admin manager", "office manager", "coordinator",
+                                       "receptionist", "secretary", "clerk"]):
+        penalties += 25
     
     total = role_score + loc_score + domain_score + exp_score - penalties
     return max(0, min(100, total))
