@@ -16,19 +16,27 @@ from pathlib import Path
 WORKSPACE = "/root/.openclaw/workspace"
 OUTPUT_DIR = f"{WORKSPACE}/linkedin/engagement/daily"
 
-# Top GCC LinkedIn voices to monitor
+# Top GCC LinkedIn voices to monitor (verified active Mar 13, 2026)
 # Format: (name, linkedin_slug, why_they_matter)
 TARGETS = [
-    ("Pascal Bornet", "pascalbornet", "AI/Automation thought leader, 500K+ followers"),
+    # Tier 1: Global Tech Voices (high followers, daily posters)
+    ("Pascal Bornet", "pascalbornet", "AI/Automation #1 Voice, 2M+ followers, Forbes Tech Council"),
+    ("Bernard Marr", "bernardmarr", "AI/Futurist, bestselling author, GCC-relevant content"),
+    # Tier 2: GCC C-Suite / DT Leaders
     ("Omar Turjman", "omarturjman", "GCC digital transformation leader"),
-    ("Mamoun Alhomssey", "mamoun-alhomssey", "GCC CIO/CTO, digital health"),
-    ("Raed Kanaan", "raed-kanaan-a009915", "GCC tech executive"),
+    ("Mamoun Alhomssey", "mamoun-alhomssey", "GCC CIO, digital health, Forbes ME"),
+    ("Elie Soukayem", "eliesoukayem", "ME digital transformation executive"),
+    ("Mohannad Alkalash", "mohannadalkalash", "Saudi tech leader, Hawsabah (24K followers)"),
+    ("Badr Alghamdi", "badralghamdi", "Saudi tech leadership, stc ecosystem"),
+    # Tier 3: FinTech / Banking
     ("Fady Sleiman", "fadysleiman", "GCC fintech/banking leader"),
-    ("Elie Soukayem", "eliesoukayem", "ME digital transformation"),
-    ("Badr Alghamdi", "badralghamdi", "Saudi tech leadership"),
-    ("Naveed Ahmed Ibrahim", "naveed-ahmed-ibrahim", "GCC enterprise tech"),
-    ("Mohammed Alhassan", "mohammed-alhassan-16984aa0", "Saudi digital strategy"),
-    ("Farrukh Qamar", "farrukh-qamar-52a23221", "GCC PMO/delivery"),
+    # Tier 4: Strategy / Consulting / Executive Search
+    ("Sara Azimzadeh", "saraazimzadeh", "Russell Reynolds Associates, exec search GCC"),
+    ("Abdoullah Tahri", "abdoullah-tahri-jouti", "GCC strategy/consulting"),
+    # Tier 5: Egypt/GCC Bridge (Ahmed's network)
+    ("Tamer Tharwat", "tamertharwat", "Egypt/GCC tech leader"),
+    ("Sami Elkady", "samielkady", "Egypt/GCC tech ecosystem"),
+    ("Saleem Arshad", "saleemarshad", "GCC enterprise technology"),
 ]
 
 
