@@ -24,3 +24,12 @@ Contact: recruitment@cherry.com.sa (subject: IT Director - Riyadh)
 - Lead with El Araby Oracle ERP + TopMed enterprise platform management
 - Emphasize integration architecture (APIs, middleware) from FinTech
 - Priority keywords: enterprise applications, ERP, system integration, digital transformation, IT governance, application lifecycle, vendor management
+
+## Application
+- Date Applied: 2026-03-13
+- Method: Email to recruitment@cherry.com.sa
+- Subject: IT Director - Riyadh
+- CV: Ahmed Nasr - IT Director - Cherry.pdf
+- ATS Score: 86/100
+- Model: opus46
+- Follow-up Due: 2026-03-27
