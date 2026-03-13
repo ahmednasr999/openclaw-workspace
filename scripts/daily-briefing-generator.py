@@ -270,6 +270,19 @@ def build_document_lines(data):
         lines.append((linkedin["recommendation"], "NORMAL_TEXT"))
         lines.append(("", "NORMAL_TEXT"))
 
+    # ===== 4b. ENGAGEMENT RADAR =====
+    radar = data.get("engagement_radar", {})
+    if radar.get("status") == "available":
+        lines.append(("GCC Influencer Engagement Radar", "HEADING_3"))
+        lines.append((f"Profiles scanned: 19 GCC influencers", "NORMAL_TEXT"))
+        lines.append((f"Profiles with activity: {radar.get('profiles_with_activity', 'N/A')}", "NORMAL_TEXT"))
+        lines.append((radar.get("note", ""), "NORMAL_TEXT"))
+        lines.append(("", "NORMAL_TEXT"))
+    elif radar.get("note"):
+        lines.append(("GCC Influencer Engagement Radar", "HEADING_3"))
+        lines.append((radar["note"], "NORMAL_TEXT"))
+        lines.append(("", "NORMAL_TEXT"))
+
     # ===== 4. CALENDAR & DEADLINES =====
     calendar = data.get("calendar", {})
     events = calendar.get("events", [])
