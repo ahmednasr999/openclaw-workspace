@@ -250,4 +250,53 @@ memory/
 
 ---
 
+## 15. Phase 5: Improvement Suggestions (Opus 4.6 Approved)
+
+### Concept
+After the 26-area health check, the SIE generates actionable improvement suggestions that compound over time. Each run reads past suggestions, checks which were implemented, and generates NEW suggestions that build on progress.
+
+### Architecture
+- Python script collects data (Phase 1-4, already built)
+- Phase 5: Bundle results into structured prompt
+- Call LLM via OpenClaw cron agent (not direct API)
+- LLM generates 3-5 ranked improvement suggestions
+- Append to `memory/improvement-log.md`
+
+### Data Fed to LLM
+- Current insights.md (health scores, alerts, warnings)
+- improvement-log.md (past suggestions + their outcomes)
+- Key metrics: workspace structure, session count, error patterns
+- Recent learnings from LEARNINGS.md
+- Trends from sie-state.json history
+
+### Output Format
+```markdown
+## Improvement Suggestions — YYYY-MM-DD HH:MM
+
+### Previous Suggestions Status
+- [DONE] description (outcome)
+- [SKIPPED] description (reason)
+- [PENDING] description (age: Xd)
+- [EXPIRED] description (auto-archived after 7d)
+
+### New Suggestions
+1. [HIGH] [Area] Description. Rationale. Concrete action.
+2. [MED] [Area] Description. Rationale. Concrete action.
+3. [LOW] [Area] Description. Rationale. Concrete action.
+```
+
+### Rules
+- Max 5 suggestions per run
+- Priority: HIGH (system reliability), MED (optimization), LOW (nice-to-have)
+- Suggestions expire after 7 days if not acted on → auto-archive
+- Never auto-implement. Log only. Ahmed approves.
+- Ground in real data only. No hallucinated improvements.
+- Track DONE/SKIPPED/PENDING/EXPIRED per suggestion
+
+### Implementation
+- Update SIE cron prompt to include suggestion analysis
+- Create `memory/improvement-log.md`
+- Cron agent reads insights.md + improvement-log.md → generates suggestions
+- Model: MiniMax M2.5 for daily, Opus for weekly deep analysis (optional)
+
 **Status: Spec approved by Opus 4.6. Ready to build.**
