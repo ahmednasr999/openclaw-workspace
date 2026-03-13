@@ -24,6 +24,21 @@ for attempt in 1 2 3; do
 done
 ```
 
+## Better Selectors
+
+When refs don't work, use specific selectors:
+
+```bash
+# Use CSS selector instead of ref
+camofox_click --selector "button[type=submit]" --tabId "xxx"
+camofox_type --selector "#expected-salary" --text "55000" --tabId "xxx"
+
+# Common selectors
+camofox_click --selector "[aria-label='Submit']" ...
+camofox_click --selector "button.submit-btn" ...
+camofox_click --selector "input[name='salary']" ...
+```
+
 ## File Upload via CDP
 
 For uploading CVs/files that normal automation can't handle:
