@@ -25,12 +25,39 @@ SEARCHES = [
     ("Digital Transformation", "GCC"),
 ]
 
+def defuddle_fetch(url: str) -> str:
+    """Fetch via Defuddle, fallback Jina."""
+    import urllib.request
+    try:
+        clean = url.replace("https://", "").replace("http://", "")
+        req = urllib.request.Request(f"https://defuddle.md/{clean}", headers={"Accept": "text/plain"})
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            content = resp.read().decode("utf-8")
+            if content and len(content) > 200:
+                return content
+    except Exception:
+        pass
+    try:
+        req = urllib.request.Request(f"https://r.jina.ai/{url}", headers={"Accept": "text/plain"})
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            return resp.read().decode("utf-8")
+    except Exception:
+        pass
+    return ""
+
+
 def run_webfetch(keyword: str, location: str) -> str:
-    """Run web_fetch via subprocess"""
+    """Fetch job listings: Defuddle first, curl fallback"""
     keyword_enc = keyword.replace(" ", "%20")
     location_enc = location.replace(" ", "%20")
     url = f"https://www.linkedin.com/jobs/search/?keywords={keyword_enc}&location={location_enc}&f_TPR=r604800"
     
+    # Try Defuddle/Jina first
+    content = defuddle_fetch(url)
+    if content and len(content) > 500:
+        return content
+    
+    # Fallback to curl
     cmd = [
         "curl", "-s", "-L", 
         "-H", "User-Agent: Mozilla/5.0",
