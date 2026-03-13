@@ -17,23 +17,33 @@ WORKSPACE = "/root/.openclaw/workspace"
 OUTPUT_DIR = f"{WORKSPACE}/linkedin/engagement/daily"
 
 # Top GCC LinkedIn voices to monitor (verified active Mar 13, 2026)
+# All profiles verified via Camoufox: active posters with 19-20 posts loaded
 # Format: (name, linkedin_slug, why_they_matter)
 TARGETS = [
     # Tier 1: Global Tech Voices (high followers, daily posters)
     ("Pascal Bornet", "pascalbornet", "AI/Automation #1 Voice, 2M+ followers, Forbes Tech Council"),
     ("Bernard Marr", "bernardmarr", "AI/Futurist, bestselling author, GCC-relevant content"),
-    # Tier 2: GCC C-Suite / DT Leaders
+    # Tier 2: UAE/Saudi C-Suite / DT Leaders
     ("Omar Turjman", "omarturjman", "GCC digital transformation leader"),
     ("Mamoun Alhomssey", "mamoun-alhomssey", "GCC CIO, digital health, Forbes ME"),
     ("Elie Soukayem", "eliesoukayem", "ME digital transformation executive"),
     ("Mohannad Alkalash", "mohannadalkalash", "Saudi tech leader, Hawsabah (24K followers)"),
     ("Badr Alghamdi", "badralghamdi", "Saudi tech leadership, stc ecosystem"),
-    # Tier 3: FinTech / Banking
+    # Tier 3: Qatar
+    ("Mohannad Abu Issa", "mohannadabuissa", "Qatar tech, Cisco ecosystem"),
+    ("Rakesh Sharan", "rakeshsharan", "Qatar CTO, Enterprise Architect, Data Strategy"),
+    # Tier 4: Bahrain
+    ("Hisham Fathy", "hishamfathy", "Bahrain/GCC CTO, PMP, SAFe, PMO Director"),
+    ("Abdullah Ambah", "ambah", "Bahrain CIO/CTO, Digital Banking"),
+    # Tier 5: FinTech / Banking / Payments
     ("Fady Sleiman", "fadysleiman", "GCC fintech/banking leader"),
-    # Tier 4: Strategy / Consulting / Executive Search
+    ("Roberto Giro", "roberto-giro", "GCC CTO/COO, Banking & Payments, 11K followers"),
+    # Tier 6: Executive Search / Recruiters (strategic engagement)
     ("Sara Azimzadeh", "saraazimzadeh", "Russell Reynolds Associates, exec search GCC"),
+    ("Munadel Ibrahim", "munadel", "C-Suite exec recruiter, Digital & Tech, Financial Services"),
+    # Tier 7: Strategy / Consulting
     ("Abdoullah Tahri", "abdoullah-tahri-jouti", "GCC strategy/consulting"),
-    # Tier 5: Egypt/GCC Bridge (Ahmed's network)
+    # Tier 8: Egypt/GCC Bridge (Ahmed's network)
     ("Tamer Tharwat", "tamertharwat", "Egypt/GCC tech leader"),
     ("Sami Elkady", "samielkady", "Egypt/GCC tech ecosystem"),
     ("Saleem Arshad", "saleemarshad", "GCC enterprise technology"),
