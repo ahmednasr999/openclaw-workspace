@@ -24,6 +24,22 @@ for attempt in 1 2 3; do
 done
 ```
 
+## JavaScript Injection
+
+For complex React forms that don't respond to normal clicks:
+
+```javascript
+// Execute in browser console via camofox
+// Click hidden/submit button
+document.querySelector('button[type="submit"]').click();
+
+// Fill field directly
+document.querySelector('#salary-input').value = '55000';
+
+// Trigger change event
+element.dispatchEvent(new Event('change', {bubbles: true}));
+```
+
 ## Screenshot on Failure
 
 After any failed action, automatically capture screenshot:
