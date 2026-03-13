@@ -880,3 +880,61 @@ Node.js v20.19.4
 ## Calendar - Today's Events
 Get "https://www.googleapis.com/calendar/v3/users/me/calendarList?alt=json&maxResults=250&prettyPrint=false": round trip: base token source: oauth2: "disabled_client" "The OAuth client was disabled."
 
+=== Morning Brief - 2026-03-13 06:00 AM ===
+
+## Job Radar (from Tavily)
+## Answer
+
+The UAE and Saudi Arabia are advancing digital transformation in healthcare, with key roles like VP Director PMO and digital directors in demand by 2026. Leadership in this field focuses on improving patient outcomes through technology.
+
+---
+
+## Sources
+
+- **PMO Director Jobs in the Middle East (Mar 2026) - Bayt.com** (relevance: 100%)
+  https://www.bayt.com/en/international/jobs/pmo-director-jobs/
+  Apply now to over 450 PMO Director jobs in Middle East and Gulf and make your job hunting simpler. Find the latest PMO Director job vacancies and
+
+- **Digital healthcare transformation goes forward in the UAE** (relevance: 100%)
+  https://m.mobihealthnews.com/video/digital-healthcare-transformation-goes-forward-uae
+  The United Arab Emirates' health systems have progressed in digital transformation to create better patient outcomes. Mohammad Al Redha, MD, director of
+
+- **179 digital director Jobs in Saudi Arabia, March 2026 | Glassdoor** (relevance: 100%)
+  https://www.glassdoor.com/Job/saudi-arabia-digital-director-jobs-SRCH_IL.0,12_IN207_KO13,29.htm
+  Search Digital director jobs in Saudi Arabia with company ratings & salaries. 179 open jobs for Digital director in Saudi Arabia.
+
+- **Ahmed Nasr MBA, PMP, CSM, CSPO, Lean Six Sigma ... - LinkedIn** (relevance: 100%)
+  https://ae.linkedin.com/in/ahmednasr
+  Leading digital transformation across 15-hospital network in KSA, UAE, and Egypt, partnering with U.S. healthcare technology leaders. - Established enterprise
+
+- **Saudi Digital Transformation Leader: Spotlight on Muhammad J ...** (relevance: 99%)
+  https://www.instagram.com/p/DUiFTtfDak9/
+  Muhammad J Alnemer (MJ), Serves as Acting Director Data Management and BI at Royal Commission for AlUla, driving Vision 2030 digital
+
+## Gmail - New Opportunities
+node:internal/modules/cjs/loader:1215
+  throw err;
+  ^
+
+Error: Cannot find module 'googleapis'
+Require stack:
+- /root/.openclaw/workspace/scripts/gmail-scan.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1212:15)
+    at Module._load (node:internal/modules/cjs/loader:1043:27)
+    at Module.require (node:internal/modules/cjs/loader:1298:19)
+    at require (node:internal/modules/helpers:182:18)
+    at Object.<anonymous> (/root/.openclaw/workspace/scripts/gmail-scan.js:1:20)
+    at Module._compile (node:internal/modules/cjs/loader:1529:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+    at Module.load (node:internal/modules/cjs/loader:1275:32)
+    at Module._load (node:internal/modules/cjs/loader:1096:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:164:12) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [ '/root/.openclaw/workspace/scripts/gmail-scan.js' ]
+}
+
+Node.js v20.19.4
+
+## Calendar - Today's Events
+*Calendar API unavailable (gog v0.12.0 bug - tracking fix)*
+
