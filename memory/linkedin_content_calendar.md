@@ -229,6 +229,168 @@ CTA: Rotation B
 
 ---
 
+### SUNDAY (Mar 16) | TAM Post | PAS Framework ✅ DRAFTED
+**Pillar:** Total Addressable Market
+**Hook Type:** Strange
+**CTA:** Rotation A
+**Image:** linkedin/week-2026-03-16/2026-03-16.png
+
+LinkedIn just became the number one source that LLMs cite for business advice.
+
+Not books. Not articles. Not academic papers.
+
+Live content.
+
+I've been documenting my journey for 18 months now. What I've noticed: the posts I write today show up in AI-generated answers within weeks. The compound effect is real.
+
+Here's what this means for you:
+
+1. Every post is training data.
+Your insights shape how AI answers questions about your industry, your role, your region.
+
+2. The window is now.
+Early content creators are establishing the canonical narratives. Once established, they're hard to displace.
+
+3. Document what you know.
+The biggest risk isn't oversharing. It's silence while others define your domain.
+
+What's your take? Is LinkedIn becoming the new business library?
+
+..
+
+By the way, I'm currently exploring VP/C-suite digital transformation roles across the GCC. If your network is hiring leaders who've scaled platforms from 30K to 7M daily orders, I'd love to connect. DM me or check my profile.
+
+#LinkedIn #AI #ContentStrategy #DigitalTransformation #ThoughtLeadership
+
+---
+
+### MONDAY (Mar 17) | Growth Post | SLAY Framework ✅ DRAFTED
+**Pillar:** Growth (niche expertise)
+**Hook Type:** Sexy
+**CTA:** Rotation B
+**Image:** linkedin/week-2026-03-16/2026-03-17.png
+
+20 years in tech taught me one thing. Your title does not define your impact.
+
+I have been called Project Manager, Section Head, Country Manager, and now PMO Lead.
+
+The label changed. The work did not.
+
+I have scaled a platform from 30,000 to 7 million daily orders. I have built a PMO across 8 countries. I have deployed 14 AI agents in live clinical operations.
+
+None of those appeared on my job title when I started. All of them defined my career.
+
+The lesson: stop optimizing for titles. Optimize for scope. The bigger the problem you solve, the more you grow. Titles follow. Sometimes years later.
+
+What has defined your career? Drop it in the comments.
+
+..
+
+By the way, I've been documenting my journey managing a $50M hospital transformation across 3 countries. If you're navigating a similar challenge, happy to share what's working. Drop a comment or DM.
+
+#Leadership #CareerGrowth #Impact #DigitalTransformation #PMO
+
+---
+
+### TUESDAY (Mar 18) | Growth Post | PAS Framework ✅ DRAFTED
+**Pillar:** Growth (niche expertise)
+**Hook Type:** Scary
+**CTA:** Rotation B
+**Image:** linkedin/week-2026-03-16/2026-03-18.png
+
+Every hospital says they want a single source of truth for their data.
+
+Almost none achieve it.
+
+In my current role, we have 15 hospitals across 3 countries. Different EMR systems. Legacy data formats. Country-specific compliance requirements.
+
+Merging Saudi MOH data with JCI-accredited clinical records and a finance system running on a 10-year-old ERP is not a 90-day project. It is a 12-month program.
+
+Here is what I have learned:
+
+1. The vendor promise is always shorter than reality.
+The vendors who promise unified data in 90 days have never tried to do it.
+
+2. Data governance is political.
+Who owns the data? Who decides what is clean? These are not technical questions. They are power questions.
+
+3. The mess is where the value is.
+Vendors who have never merged a Saudi MOH dataset with a JCI record do not understand this. Reality is messier. That is also where the real value is created.
+
+The gap between buying a platform and realizing its outcomes is where most hospital transformations fail. I live in that gap every day.
+
+What has been your experience with data unification? Drop a comment.
+
+..
+
+By the way, I've been documenting my journey managing a $50M hospital transformation across 3 countries. If you're navigating a similar challenge, happy to share what's working. Drop a comment or DM.
+
+#HealthcareData #HealthIT #DigitalTransformation #DataGovernance #HealthcareIT
+
+---
+
+### WEDNESDAY (Mar 19) | Growth Post | SLAY Framework ✅ DRAFTED
+**Pillar:** Growth (niche expertise)
+**Hook Type:** Familiar
+**CTA:** Rotation A
+**Image:** linkedin/week-2026-03-16/2026-03-19.png
+
+Intel taught me precision. Talabat taught me chaos. Both were right.
+
+Early in my career at Intel, I learned that precision matters. Specifications. Timelines. Milestones. The difference between working and not working is attention to detail. I was building LTE infrastructure. One character wrong in a specification could cascade into months of rework.
+
+Later, at Talabat during hypergrowth, I learned that precision is a luxury. When scaling from 30,000 to 7 million daily orders, you cannot plan everything. You ship, you learn, you adjust. Speed beats perfection.
+
+Now, leading a $50M transformation across 15 hospitals, I use both.
+
+Precision for compliance, governance, patient safety. These are non-negotiable. The FDA does not accept fast.
+
+Chaos tolerance for rollout speed, vendor management, stakeholder alignment. These require comfort with ambiguity.
+
+The best leaders hold both. They know when to be precise and when to move fast.
+
+What has your career taught you about balancing opposing forces?
+
+..
+
+By the way, I'm currently exploring VP/C-suite digital transformation roles across the GCC. If your network is hiring leaders who've scaled platforms from 30K to 7M daily orders, I'd love to connect. DM me or check my profile.
+
+#Leadership #TechCareers #DigitalTransformation #Precision #Agility
+
+---
+
+### THURSDAY (Mar 20) | Sales Post | SLAY Framework ✅ DRAFTED
+**Pillar:** Sales (authority positioning)
+**Hook Type:** Familiar
+**CTA:** Rotation A
+**Image:** linkedin/week-2026-03-16/2026-03-20.png
+
+Pursuing an MBA at 40+ while leading a $50M program. Here is why.
+
+Why would someone with 20+ years of experience, who has led transformations at Talabat and Network International, go back to school?
+
+Because the skills that got me here are not the skills that will take me further.
+
+Strategic finance. Board-level storytelling. Capital allocation. These are muscles I need as I target C-suite roles across the GCC.
+
+Here is the reality. It is not easy.
+
+Leading a $50M transformation across 15 hospitals while studying at Paris ESLSCA means weekends are for case studies. It means reading financial statements after steering committee meetings. It means applying what I learn in class to what I am building in real-time.
+
+But the compound effect is real. Every class makes me more dangerous in the boardroom. Every case study connects to a decision I made last week. Every conversation with younger classmates challenges assumptions I have held for years.
+
+The best investment you can make is in yourself. Even when you think you have already made it.
+
+Are you considering upskilling at a later career stage? Drop a comment. I would love to hear your story.
+
+..
+
+By the way, I'm currently exploring VP/C-suite digital transformation roles across the GCC. If your network is hiring leaders who've scaled platforms from 30K to 7M daily orders, I'd love to connect. DM me or check my profile.
+
+#MBA #ExecutiveEducation #LifelongLearning #Leadership #DigitalTransformation
+
+---
+
 ## Week 5: March 23-27, 2026
 
 | Day | Pillar | Framework | Hook Type | Topic | Source |
