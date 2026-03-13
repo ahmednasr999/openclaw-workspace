@@ -9,6 +9,16 @@
 
 ---
 
+## [LRN-20260313-001] Check our system before recommending external tips
+**Date:** 2026-03-13
+**Category:** Knowledge Gap
+**What happened:** Watched Craig Hewitt video about OpenClaw tips. Recommended QMD as "new" to implement. Ahmed correctly pointed out we already have QMD enabled.
+**Root cause:** Parsed external content for tips without checking our existing implementation first.
+**Rule:** When recommending improvements based on external content (videos, articles), ALWAYS check our system first. Search our config, memory, and workspace for the topic before suggesting adoption.
+**Fix:** Added quick check to workflow: 1) Search our system for the topic, 2) Compare to external recommendation, 3) Only recommend what's actually missing.
+
+---
+
 # Learnings Log
 
 *Corrections, knowledge gaps, and best practices.*
