@@ -1,13 +1,21 @@
 # Active Tasks
 
-*Last updated: 2026-03-12 16:28 UTC*
+*Last updated: 2026-03-13 11:00 UTC*
 
-## 🟡 NEW (Mar 12)
+## 🔴 FIX NOW (Mar 13)
+
+- [ ] **Replace Tavily with Brave in orchestrator** — Tavily 432 (quota burned). Switch to web_search. Zero cost.
+- [ ] **Graceful degradation in briefing script** — Partial success instead of crash when one search fails.
+- [ ] **Heartbeat hardening** — Add: cron failure check, API health ping, model fallback detection.
+- [ ] **Run briefing manually** — Verify all fixes end-to-end.
+
+## 🟡 NEW (Mar 12-13)
 
 - [x] **Google Docs OAuth Fix:** ✅ FIXED. Backup client (583018818639) active. All services authenticated.
-- [ ] **Morning Briefing Cron:** 80% complete. Deterministic Python formatter locked. Remaining: Sonnet comment drafting + end-to-end test.
+- [x] **Morning Briefing Cron:** Fixed: scanner labels, LLM via gateway, append mode. Tavily replacement pending.
 - [ ] **Apify Integration:** For LinkedIn engagement metrics. Pending Ahmed go-ahead.
 - [ ] **Comment Drafting:** Wire Sonnet 4.6 as sub-agent in cron to write ready-to-post LinkedIn comments.
+- [ ] **Wire Composio into LinkedIn content pipeline** — Sunday Mar 15 reminder set.
 
 ## 🔴 URGENT
 

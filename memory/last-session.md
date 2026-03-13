@@ -1,24 +1,27 @@
 # Last Session Context
 
-**Date:** 2026-03-13, Session 13 (11:00-11:33 Cairo)
-**Model:** Opus 4.6
+*Updated: 2026-03-13 13:00 Cairo*
 
-## What We Did
-- Fixed scanner report labels (65+/55-64 instead of hardcoded 82+/75-81)
-- Fixed Morning Briefing cron: daily schedule, 15 min timeout
-- Fixed expired Anthropic API key issue: routed LLM calls through gateway's OpenAI Chat Completions endpoint
-- Fixed Daily Briefing Google Doc: now appends (preserves previous days) instead of clearing
-- Verified full orchestrator run: completed in 20 seconds, both Google Docs updated
+## What We Discussed
+- Composio LinkedIn integration (overnight): posting works, comments on others' posts don't (API scope)
+- Morning briefing fixes: scanner labels, LLM routing through gateway, append mode for daily doc
+- Hardcoded "2026" in search queries: fixed to dynamic datetime
+- Ahmed flagged multiple undetected issues: Tavily dead, cron failed, session bloated, silent model fallback
 
-## Open Threads
-- Tavily returning 432 errors (LinkedIn post search broken, all 3 layers)
-- Bloated session 7c251f39... (16MB)
-- Sunday Mar 15: Wire Composio into daily content pipeline (cron reminder set)
-- X timeline integration into morning briefing (when time permits)
-- 3-week LinkedIn post analysis via Camoufox (awaiting go-ahead)
+## Open Threads (CARRY FORWARD)
+1. **Replace Tavily with Brave in orchestrator** — agreed plan, not started yet
+2. **Graceful degradation in briefing script** — partial success instead of crash
+3. **Heartbeat hardening** — add cron failure check, API health ping, model fallback detection
+4. **Run briefing manually** to verify fixes
+5. **Sunday cron reminder** (Mar 15): wire Composio into daily LinkedIn content pipeline
+6. **Post analytics** — Ahmed asked for 3-week analysis, Camoufox scraping alternative proposed, awaiting response
+7. **Test first real LinkedIn post via Composio** — not done yet
 
-## Key Context
-- Gateway Chat Completions endpoint now enabled (loopback only)
-- All orchestrator LLM calls route through gateway (auto-refreshes tokens)
-- Daily Briefing Doc and System Log both append now
-- Composio LinkedIn integration tested and working (posting, deleting, commenting on own posts, reactions)
+## Decisions Made
+- Tavily replacement: use Brave web_search (zero cost) instead of upgrading ($20/mo)
+- Session: kill bloated 17MB session, start fresh
+- LinkedIn account separation: HARD RULE locked in MEMORY.md
+- Composio is safe for LinkedIn posting (official OAuth2 UGC Posts API)
+
+## Ahmed's Mood
+- Frustrated that issues weren't surfaced proactively. Valid criticism. Fix the heartbeat.
