@@ -598,6 +598,29 @@ def update_log(posts, today_str):
 # ============================================================
 # STEP 7: BUILD BRIEFING JSON
 # ============================================================
+def load_engagement_radar(today_str):
+    """Load today's LinkedIn Engagement Radar report if available."""
+    radar_file = f"{WORKSPACE}/linkedin/engagement/daily/{today_str}.md"
+    try:
+        if os.path.exists(radar_file):
+            content = open(radar_file).read()
+            # Extract key stats
+            scanned = content.count("## ") - 1  # Sections minus header
+            log(f"  Engagement radar loaded: {radar_file}")
+            return {
+                "status": "available",
+                "file": radar_file,
+                "profiles_with_activity": scanned,
+                "note": "See engagement radar report for today's comment targets from 19 GCC influencers."
+            }
+    except Exception as e:
+        log(f"  Engagement radar error: {e}")
+    return {
+        "status": "not_available",
+        "note": "Engagement radar runs at 9 AM Cairo. Check later if briefing runs before 9 AM."
+    }
+
+
 def build_briefing_json(today_str, date_display, qualified, borderline, scanner_note,
                         events, upcoming, pipeline, posts, todays_post=None, built_cvs=None):
     log("Step 7: Building briefing JSON...")
@@ -656,6 +679,7 @@ def build_briefing_json(today_str, date_display, qualified, borderline, scanner_
             "upcoming": upcoming or ["No upcoming events in next 3 days"],
         },
         "pipeline": pipeline,
+        "engagement_radar": load_engagement_radar(today_str),
         "strategic_notes": [
             f"{len(posts)} LinkedIn posts found with ready-to-post Sonnet-drafted comments.",
             "Comment strategy: Layer 1 > Layer 2 > Layer 3 by ROI.",
