@@ -1,5 +1,0 @@
-{
-  "name": "model-picker",
-  "type": "module",
-  "main": "handler.ts"
-}

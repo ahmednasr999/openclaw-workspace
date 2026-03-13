@@ -1,7 +1,0 @@
-{
-  "accounts": {
-    "nasr.ai.assistant@gmail.com": {
-      "enabled_commands": ["gmail", "youtube", "calendar"]
-    }
-  }
-}

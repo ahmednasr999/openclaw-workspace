@@ -1,13 +1,12 @@
 # Active Tasks
 
-*Last updated: 2026-03-13 11:00 UTC*
+*Last updated: 2026-03-14 00:01 Cairo*
 
-## 🔴 FIX NOW (Mar 13)
+## 🔴 BUILD NOW
 
-- [ ] **Replace Tavily with Brave in orchestrator** — Tavily 432 (quota burned). Switch to web_search. Zero cost.
-- [ ] **Graceful degradation in briefing script** — Partial success instead of crash when one search fails.
-- [ ] **Heartbeat hardening** — Add: cron failure check, API health ping, model fallback detection.
-- [ ] **Run briefing manually** — Verify all fixes end-to-end.
+- [ ] **Self-Improvement Engine (SIE)** — 360° system-wide self-improvement. Spec: memory/self-improvement-engine-spec.md. Build with MiniMax/GPT-5.4. All 26 areas.
+
+## 🟡 PENDING
 
 ## 🟡 NEW (Mar 12-13)
 

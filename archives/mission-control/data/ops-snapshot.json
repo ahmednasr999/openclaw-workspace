@@ -1,0 +1,517 @@
+{
+  "handoffQueue": [],
+  "radarLeads": [
+    {
+      "id": "jr-1",
+      "role": "VP Digital Transformation",
+      "company": "HealthFirst GCC",
+      "ageHours": 3,
+      "salaryFit": 92,
+      "strategicFit": 90,
+      "sourceQuality": 88,
+      "totalScore": 90,
+      "threshold": 80,
+      "decision": "qualified"
+    },
+    {
+      "id": "jr-2",
+      "role": "Chief Operating Officer",
+      "company": "MedChain",
+      "ageHours": 19,
+      "salaryFit": 73,
+      "strategicFit": 82,
+      "sourceQuality": 80,
+      "totalScore": 79,
+      "threshold": 80,
+      "decision": "watch"
+    },
+    {
+      "id": "jr-3",
+      "role": "Regional PMO Director",
+      "company": "CareScale",
+      "ageHours": 51,
+      "salaryFit": 45,
+      "strategicFit": 76,
+      "sourceQuality": 70,
+      "totalScore": 62,
+      "threshold": 80,
+      "decision": "dropped",
+      "droppedReason": "Salary floor miss and stale posting"
+    }
+  ],
+  "contentItems": [
+    {
+      "id": "cf-1",
+      "title": "AI PMO operating model",
+      "stage": "draft",
+      "owner": "Content Creator",
+      "createdAt": "2026-03-03T08:00:00.000Z",
+      "stageUpdatedAt": "2026-03-03T08:00:00.000Z",
+      "slaMinutes": 180
+    },
+    {
+      "id": "cf-2",
+      "title": "Leadership hiring lesson",
+      "stage": "review",
+      "owner": "NASR",
+      "createdAt": "2026-03-03T06:30:00.000Z",
+      "stageUpdatedAt": "2026-03-03T07:00:00.000Z",
+      "slaMinutes": 240
+    },
+    {
+      "id": "cf-3",
+      "title": "Automation reliability win",
+      "stage": "approved",
+      "owner": "NASR",
+      "createdAt": "2026-03-02T21:30:00.000Z",
+      "stageUpdatedAt": "2026-03-03T05:00:00.000Z",
+      "slaMinutes": 360
+    },
+    {
+      "id": "cf-4",
+      "title": "Quarter roadmap recap",
+      "stage": "posted",
+      "owner": "Content Creator",
+      "createdAt": "2026-03-02T05:00:00.000Z",
+      "stageUpdatedAt": "2026-03-02T12:00:00.000Z",
+      "slaMinutes": 180
+    }
+  ],
+  "cronJobs": [
+    {
+      "id": "calendar-poll-15min",
+      "name": "Calendar Check - Every 15 Minutes",
+      "schedule": "*/15 * * * *",
+      "status": "healthy",
+      "consecutiveFailures": 0,
+      "lastRunAt": "2026-03-04T14:15:02.632Z",
+      "lastSuccessAt": "2026-03-04T14:15:02.632Z",
+      "nextRunAt": "2026-03-04T14:30:00.000Z"
+    },
+    {
+      "id": "65afe9ed-d5ec-4880-a034-f7d5efda3bc6",
+      "name": "Context Guardian - External Watchdog",
+      "schedule": "*/4 * * * *",
+      "status": "failing",
+      "consecutiveFailures": 5,
+      "lastRunAt": "2026-03-04T14:05:21.460Z",
+      "lastSuccessAt": "",
+      "nextRunAt": "2026-03-04T16:10:41.654Z"
+    },
+    {
+      "id": "97a8c0f4-a64c-4e11-afa7-669ad00f1e4c",
+      "name": "Meeting Prep - Calendar Triggered",
+      "schedule": "0 21 * * *",
+      "status": "healthy",
+      "consecutiveFailures": 0,
+      "lastRunAt": "2026-03-03T19:00:57.872Z",
+      "lastSuccessAt": "2026-03-03T19:00:57.872Z",
+      "nextRunAt": "2026-03-04T19:00:00.000Z"
+    },
+    {
+      "id": "d3345863-0fed-4a82-b88a-90f90c65ed13",
+      "name": "Memory Index — Daily Embed",
+      "schedule": "30 22 * * *",
+      "status": "healthy",
+      "consecutiveFailures": 0,
+      "lastRunAt": "",
+      "lastSuccessAt": "",
+      "nextRunAt": "2026-03-04T20:30:00.000Z"
+    },
+    {
+      "id": "084706ad-ffef-46fb-ab4a-dd5e5b2fd6d2",
+      "name": "Daily Self-Audit",
+      "schedule": "0 0 * * *",
+      "status": "healthy",
+      "consecutiveFailures": 0,
+      "lastRunAt": "2026-03-03T22:00:53.913Z",
+      "lastSuccessAt": "2026-03-03T22:00:53.913Z",
+      "nextRunAt": "2026-03-04T22:00:00.000Z"
+    },
+    {
+      "id": "14347fd9-a3ca-4ce7-894d-fe02875b1379",
+      "name": "Daily Evolution Proposals",
+      "schedule": "30 1 * * *",
+      "status": "healthy",
+      "consecutiveFailures": 0,
+      "lastRunAt": "2026-03-04T07:42:05.922Z",
+      "lastSuccessAt": "2026-03-04T07:42:05.922Z",
+      "nextRunAt": "2026-03-04T23:30:00.000Z"
+    },
+    {
+      "id": "6d8b6639-48c6-40fa-96ea-b54714aa06a5",
+      "name": "Quota Monitor - Daily Reset",
+      "schedule": "0 0 * * *",
+      "status": "failing",
+      "consecutiveFailures": 2,
+      "lastRunAt": "2026-03-04T07:41:45.129Z",
+      "lastSuccessAt": "",
+      "nextRunAt": "2026-03-04T16:10:41.654Z"
+    },
+    {
+      "id": "0f925f51-2097-43c0-b6c4-c42b319840fb",
+      "name": "Executive Intelligence Briefing",
+      "schedule": "0 3 * * *",
+      "status": "healthy",
+      "consecutiveFailures": 0,
+      "lastRunAt": "2026-03-04T01:00:28.369Z",
+      "lastSuccessAt": "2026-03-04T01:00:28.369Z",
+      "nextRunAt": "2026-03-05T01:00:00.000Z"
+    },
+    {
+      "id": "bd9ef291-1b12-4db5-aec0-e59f5da7dc9f",
+      "name": "Email Check - Morning 8AM",
+      "schedule": "0 6 * * *",
+      "status": "failing",
+      "consecutiveFailures": 2,
+      "lastRunAt": "2026-03-04T07:41:09.427Z",
+      "lastSuccessAt": "",
+      "nextRunAt": "2026-03-04T16:10:41.654Z"
+    },
+    {
+      "id": "f6d8eac7-5a5e-4629-8cbf-a07f40b14d85",
+      "name": "linkedin-comment-radar-daily",
+      "schedule": "0 6 * * *",
+      "status": "healthy",
+      "consecutiveFailures": 0,
+      "lastRunAt": "2026-03-04T04:01:27.170Z",
+      "lastSuccessAt": "2026-03-04T04:01:27.170Z",
+      "nextRunAt": "2026-03-05T04:00:00.000Z"
+    },
+    {
+      "id": "269aa78a-057c-4d05-ae10-7cfa12930124",
+      "name": "Advisory Board Daily Brief",
+      "schedule": "0 7 * * *",
+      "status": "failing",
+      "consecutiveFailures": 2,
+      "lastRunAt": "2026-03-04T07:40:51.257Z",
+      "lastSuccessAt": "",
+      "nextRunAt": "2026-03-04T16:10:41.654Z"
+    },
+    {
+      "id": "b0e3d975-ad01-4fb0-adbf-528cab08c607",
+      "name": "Competitive Analysis - Milestone Check",
+      "schedule": "0 5 * * *",
+      "status": "healthy",
+      "consecutiveFailures": 0,
+      "lastRunAt": "2026-03-04T05:00:58.936Z",
+      "lastSuccessAt": "2026-03-04T05:00:58.936Z",
+      "nextRunAt": "2026-03-05T05:00:00.000Z"
+    },
+    {
+      "id": "job-radar-gcc-daily-0001",
+      "name": "Job Intelligence — Daily Unified (Email + Web + Pipeline)",
+      "schedule": "0 7 * * *",
+      "status": "healthy",
+      "consecutiveFailures": 0,
+      "lastRunAt": "2026-03-04T05:00:00.051Z",
+      "lastSuccessAt": "2026-03-04T05:00:00.051Z",
+      "nextRunAt": "2026-03-05T05:00:00.000Z"
+    },
+    {
+      "id": "11dba958-f4ba-4a7f-9359-216ea7cf08c6",
+      "name": "Fallback Validator - Pre-Briefing Check",
+      "schedule": "0 6 * * *",
+      "status": "failing",
+      "consecutiveFailures": 2,
+      "lastRunAt": "2026-03-04T07:40:10.635Z",
+      "lastSuccessAt": "",
+      "nextRunAt": "2026-03-04T16:10:41.654Z"
+    },
+    {
+      "id": "bf78b33e-fe23-4a04-99f5-52ac067534c4",
+      "name": "Handoff Sync Check",
+      "schedule": "15 8 * * *",
+      "status": "healthy",
+      "consecutiveFailures": 0,
+      "lastRunAt": "2026-03-04T06:15:27.529Z",
+      "lastSuccessAt": "2026-03-04T06:15:27.529Z",
+      "nextRunAt": "2026-03-05T06:15:00.000Z"
+    },
+    {
+      "id": "60975940-eafa-40fe-a283-7804bc2d0ccb",
+      "name": "Disk Health Guard - Daily",
+      "schedule": "0 9 * * *",
+      "status": "failing",
+      "consecutiveFailures": 2,
+      "lastRunAt": "2026-03-04T07:39:57.894Z",
+      "lastSuccessAt": "",
+      "nextRunAt": "2026-03-04T16:10:41.654Z"
+    },
+    {
+      "id": "ca44d018-f31b-458c-870e-104aa5cd6a27",
+      "name": "Claude Usage Alert Monitor",
+      "schedule": "0 9 * * *",
+      "status": "healthy",
+      "consecutiveFailures": 0,
+      "lastRunAt": "2026-03-04T07:00:00.034Z",
+      "lastSuccessAt": "2026-03-04T07:00:00.034Z",
+      "nextRunAt": "2026-03-05T07:00:00.000Z"
+    },
+    {
+      "id": "7ba5f8f7-6eec-4301-bfa6-185dee16e778",
+      "name": "LinkedIn Daily Post + Image",
+      "schedule": "30 9 * * 0,1,2,3,4",
+      "status": "healthy",
+      "consecutiveFailures": 0,
+      "lastRunAt": "2026-03-04T07:30:27.195Z",
+      "lastSuccessAt": "2026-03-04T07:30:27.195Z",
+      "nextRunAt": "2026-03-05T07:30:00.000Z"
+    },
+    {
+      "id": "bd8d241b-ab39-4d67-96a5-431e0739ca1d",
+      "name": "Snapshot Retention Prune - Daily",
+      "schedule": "30 9 * * *",
+      "status": "failing",
+      "consecutiveFailures": 2,
+      "lastRunAt": "2026-03-04T07:39:38.817Z",
+      "lastSuccessAt": "",
+      "nextRunAt": "2026-03-04T16:10:41.654Z"
+    },
+    {
+      "id": "521eae51-f48d-4b86-a3e6-aa9c0894918c",
+      "name": "LinkedIn Cron Self-Heal",
+      "schedule": "0 10 * * 0,1,2,3,4",
+      "status": "healthy",
+      "consecutiveFailures": 1,
+      "lastRunAt": "2026-03-04T08:01:41.246Z",
+      "lastSuccessAt": "",
+      "nextRunAt": "2026-03-05T08:00:00.000Z"
+    },
+    {
+      "id": "9e3c6815-58f9-45e5-95d4-10575809ec58",
+      "name": "LinkedIn Engagement Radar - Discovery",
+      "schedule": "0 8 * * 0,1,2,3,4",
+      "status": "healthy",
+      "consecutiveFailures": 0,
+      "lastRunAt": "2026-03-04T08:01:17.642Z",
+      "lastSuccessAt": "2026-03-04T08:01:17.642Z",
+      "nextRunAt": "2026-03-05T08:00:00.000Z"
+    },
+    {
+      "id": "d167726f-81da-40ee-9f97-59cf78d22c64",
+      "name": "LinkedIn Engagement Radar - Draft Comments",
+      "schedule": "6 8 * * 0,1,2,3,4",
+      "status": "healthy",
+      "consecutiveFailures": 0,
+      "lastRunAt": "2026-03-04T08:06:00.064Z",
+      "lastSuccessAt": "2026-03-04T08:06:00.064Z",
+      "nextRunAt": "2026-03-05T08:06:00.000Z"
+    },
+    {
+      "id": "2ee7f45f-8b3b-4454-bff4-fd6dfb360828",
+      "name": "Email Check - Afternoon 3PM",
+      "schedule": "0 13 * * *",
+      "status": "healthy",
+      "consecutiveFailures": 0,
+      "lastRunAt": "2026-03-04T11:00:00.080Z",
+      "lastSuccessAt": "2026-03-04T11:00:00.080Z",
+      "nextRunAt": "2026-03-05T11:00:00.000Z"
+    },
+    {
+      "id": "linkedin-content-intelligence-weekly",
+      "name": "LinkedIn Content Intelligence — Thursday Pre-Build Feed",
+      "schedule": "0 19 * * 4",
+      "status": "healthy",
+      "consecutiveFailures": 0,
+      "lastRunAt": "2026-03-01T08:02:48.492Z",
+      "lastSuccessAt": "2026-03-01T08:02:48.492Z",
+      "nextRunAt": "2026-03-05T17:00:00.000Z"
+    },
+    {
+      "id": "226b20ec-17f7-45cb-a5ee-cfa08f04ab9d",
+      "name": "Weekly Pipeline Archive",
+      "schedule": "0 21 * * 4",
+      "status": "healthy",
+      "consecutiveFailures": 0,
+      "lastRunAt": "",
+      "lastSuccessAt": "",
+      "nextRunAt": "2026-03-05T19:00:00.000Z"
+    },
+    {
+      "id": "content-creator-weekly-domain-review",
+      "name": "Content Creator — Weekly Domain Review",
+      "schedule": "0 19 * * 5",
+      "status": "healthy",
+      "consecutiveFailures": 0,
+      "lastRunAt": "",
+      "lastSuccessAt": "",
+      "nextRunAt": "2026-03-06T17:00:00.000Z"
+    },
+    {
+      "id": "content-creator-friday-prebuild",
+      "name": "Content Creator — Friday Pre-Build (Next Week Posts + Images)",
+      "schedule": "0 20 * * 5",
+      "status": "healthy",
+      "consecutiveFailures": 0,
+      "lastRunAt": "",
+      "lastSuccessAt": "",
+      "nextRunAt": "2026-03-06T18:00:00.000Z"
+    },
+    {
+      "id": "job-hunter-weekly-domain-review",
+      "name": "Job Hunter — Weekly Domain Review",
+      "schedule": "0 8 * * 0",
+      "status": "healthy",
+      "consecutiveFailures": 0,
+      "lastRunAt": "2026-03-01T06:01:24.986Z",
+      "lastSuccessAt": "2026-03-01T06:01:24.986Z",
+      "nextRunAt": "2026-03-08T06:00:00.000Z"
+    },
+    {
+      "id": "c593df00-57c4-4153-ad40-35bb03f6e985",
+      "name": "Weekly Application Tracker Update",
+      "schedule": "0 9 * * 0",
+      "status": "healthy",
+      "consecutiveFailures": 0,
+      "lastRunAt": "2026-03-02T23:47:52.353Z",
+      "lastSuccessAt": "2026-03-02T23:47:52.353Z",
+      "nextRunAt": "2026-03-08T07:00:00.000Z"
+    },
+    {
+      "id": "552877e0-126e-4306-82f9-4fa668f441b3",
+      "name": "Data Flywheel Analysis - Weekly",
+      "schedule": "0 10 * * 0",
+      "status": "healthy",
+      "consecutiveFailures": 0,
+      "lastRunAt": "2026-03-02T23:59:01.850Z",
+      "lastSuccessAt": "2026-03-02T23:59:01.850Z",
+      "nextRunAt": "2026-03-08T08:00:00.000Z"
+    },
+    {
+      "id": "2b1a786b-016b-48ab-acf0-773076b9439d",
+      "name": "Weekly Job Search Report",
+      "schedule": "0 18 * * 0",
+      "status": "healthy",
+      "consecutiveFailures": 0,
+      "lastRunAt": "2026-03-01T20:09:36.193Z",
+      "lastSuccessAt": "2026-03-01T20:09:36.193Z",
+      "nextRunAt": "2026-03-08T16:00:00.000Z"
+    },
+    {
+      "id": "5e490c20-deff-41a4-837c-9cfa80942322",
+      "name": "Advisory Board Weekly Strategy Report",
+      "schedule": "0 20 * * 0",
+      "status": "healthy",
+      "consecutiveFailures": 0,
+      "lastRunAt": "2026-03-01T19:16:25.972Z",
+      "lastSuccessAt": "2026-03-01T19:16:25.972Z",
+      "nextRunAt": "2026-03-08T18:00:00.000Z"
+    },
+    {
+      "id": "9cc6ddc7-87cc-4de0-9eff-5dfdda0108e3",
+      "name": "Advisory Board 7-Day Calibration Reminder",
+      "schedule": "unknown",
+      "status": "healthy",
+      "consecutiveFailures": 0,
+      "lastRunAt": "",
+      "lastSuccessAt": "",
+      "nextRunAt": "2026-03-08T19:47:03.090Z"
+    },
+    {
+      "id": "5c937e89-c3c5-40a2-b238-37d7c431c731",
+      "name": "Weekly Cron Error Digest",
+      "schedule": "0 22 * * 0",
+      "status": "healthy",
+      "consecutiveFailures": 0,
+      "lastRunAt": "2026-03-02T04:59:17.035Z",
+      "lastSuccessAt": "2026-03-02T04:59:17.035Z",
+      "nextRunAt": "2026-03-08T20:00:00.000Z"
+    },
+    {
+      "id": "84b5c1e0-6ddc-4959-a72e-289b5d56b218",
+      "name": "sunday-job-search-review",
+      "schedule": "0 20 * * 0",
+      "status": "healthy",
+      "consecutiveFailures": 0,
+      "lastRunAt": "2026-03-02T23:44:47.118Z",
+      "lastSuccessAt": "2026-03-02T23:44:47.118Z",
+      "nextRunAt": "2026-03-08T20:00:00.000Z"
+    },
+    {
+      "id": "infrastructure-disk-monitor-weekly",
+      "name": "Infrastructure — Disk & Memory Monitor",
+      "schedule": "0 8 * * 1",
+      "status": "healthy",
+      "consecutiveFailures": 0,
+      "lastRunAt": "2026-03-02T06:00:38.895Z",
+      "lastSuccessAt": "2026-03-02T06:00:38.895Z",
+      "nextRunAt": "2026-03-09T06:00:00.000Z"
+    },
+    {
+      "id": "7aee7b3c-3852-49d2-b030-44016a9aea61",
+      "name": "codex-removal-reminder",
+      "schedule": "unknown",
+      "status": "healthy",
+      "consecutiveFailures": 0,
+      "lastRunAt": "",
+      "lastSuccessAt": "",
+      "nextRunAt": "2026-03-30T07:00:00.000Z"
+    },
+    {
+      "id": "monthly-maintenance-report",
+      "name": "Monthly System Maintenance Report",
+      "schedule": "0 9 1 * *",
+      "status": "healthy",
+      "consecutiveFailures": 0,
+      "lastRunAt": "2026-03-03T00:03:51.643Z",
+      "lastSuccessAt": "2026-03-03T00:03:51.643Z",
+      "nextRunAt": "2026-04-01T07:00:00.000Z"
+    },
+    {
+      "id": "1f98bdc5-01d9-47fa-ac54-078041dc80d9",
+      "name": "Monthly Cache Cleanup",
+      "schedule": "0 10 1 * *",
+      "status": "healthy",
+      "consecutiveFailures": 0,
+      "lastRunAt": "",
+      "lastSuccessAt": "",
+      "nextRunAt": "2026-04-01T08:00:00.000Z"
+    },
+    {
+      "id": "8e5709d9-bcf3-4884-85f3-b320608b3b47",
+      "name": "Stock Portfolio Review - May 2026",
+      "schedule": "0 9 1 5 *",
+      "status": "healthy",
+      "consecutiveFailures": 0,
+      "lastRunAt": "",
+      "lastSuccessAt": "",
+      "nextRunAt": "2026-05-01T09:00:00.000Z"
+    },
+    {
+      "id": "4eaeb721-06cc-49ac-a715-914bab3b67d3",
+      "name": "minimax-oauth-renewal-reminder",
+      "schedule": "unknown",
+      "status": "healthy",
+      "consecutiveFailures": 0,
+      "lastRunAt": "",
+      "lastSuccessAt": "",
+      "nextRunAt": "2027-01-14T00:00:00.000Z"
+    },
+    {
+      "id": "12d37955-ba73-4fb0-bd6d-d47415344262",
+      "name": "[MERGED] Daily Job Email Summary — use Job Intelligence instead",
+      "schedule": "0 8 * * *",
+      "status": "healthy",
+      "consecutiveFailures": 0,
+      "lastRunAt": "2026-02-28T06:00:00.026Z",
+      "lastSuccessAt": "2026-02-28T06:00:00.026Z",
+      "nextRunAt": ""
+    },
+    {
+      "id": "daily-delta-better-than-yesterday-0001",
+      "name": "Daily Delta - Better Than Yesterday",
+      "schedule": "30 4 * * *",
+      "status": "healthy",
+      "consecutiveFailures": 0,
+      "lastRunAt": "2026-02-26T07:01:44.800Z",
+      "lastSuccessAt": "2026-02-26T07:01:44.800Z",
+      "nextRunAt": ""
+    }
+  ],
+  "heartbeat": {
+    "status": "degraded",
+    "updatedAt": "2026-03-04T15:55:41.654Z",
+    "tick": 508
+  }
+}
