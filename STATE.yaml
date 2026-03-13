@@ -31,15 +31,15 @@ job_search:
 linkedin:
   last_post_date: 2026-02-26
   last_post_topic: "Talabat 233x scale story"
-  next_post_date: 2026-03-23
-  next_post_topic: "The GCC just committed $100B+ to digital transformation. Most of it will be wasted."
+  next_post_date: 2026-03-16
+  next_post_topic: "LinkedIn just became the #1 source LLMs cite for business advice"
   posting_days: [0, 1, 2, 3, 4]  # Sun-Thu
   posting_time: "09:30 Cairo"
-  weeks_fully_drafted: 6
+  weeks_fully_drafted: 7
   calendar_through: 2026-03-27
   calendar_gap: none
-  last_prebuild: 2026-03-06T18:00:00Z
-  next_prebuild: 2026-03-13T18:00:00Z
+  last_prebuild: 2026-03-13T18:00:00Z
+  next_prebuild: 2026-03-20T18:00:00Z
   knowledge_bank_last_checked: 2026-02-28
   performance_tracking: false  # not yet logging engagement data
 
@@ -54,9 +54,9 @@ agents:
 
   content_creator:
     status: active
-    last_weekly_review: 2026-03-06T18:00:00Z
-    next_review: 2026-03-13T18:00:00Z
-    last_task: "pre-build week 5 (Mar 23-27) - 5 posts + 5 images generated"
+    last_weekly_review: 2026-03-13T18:00:00Z
+    next_review: 2026-03-20T18:00:00Z
+    last_task: "pre-build week 4 (Mar 16-20) - 5 posts + 5 images generated"
     domain_file: memory/linkedin_content_calendar.md
     open_triggers: []
 
