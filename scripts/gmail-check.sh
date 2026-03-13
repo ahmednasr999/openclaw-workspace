@@ -5,6 +5,9 @@
 
 set -euo pipefail
 
+# Fix: bypass keyring prompt
+export GOG_KEYRING_PASSWORD=""
+
 WORKSPACE="/root/.openclaw/workspace"
 STATE_FILE="$WORKSPACE/.heartbeat/last_gmail_check.json"
 NOW_ISO=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
@@ -23,8 +26,8 @@ echo "Checking Gmail for important emails..."
 
 cd "$WORKSPACE"
 
-# Run gog to list recent emails
-EMAILS=$(gog gmail list --unread --max-results 15 2>&1 || echo "ERROR: $?")
+# Run gog to list recent emails (search for inbox)
+EMAILS=$(gog gmail search "in:inbox is:unread" --max 15 --account ahmednasr999@gmail.com 2>&1 || echo "ERROR: $?")
 
 if echo "$EMAILS" | grep -q "ERROR"; then
   echo "GOG error: $EMAILS"
