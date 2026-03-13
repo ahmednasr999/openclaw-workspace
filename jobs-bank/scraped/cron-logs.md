@@ -248,3 +248,15 @@
 - Errors: 0
 - Runtime: 489s
 - JobSpy failures: 66
+
+## 2026-03-13 06:00:02
+- Version: v2.1 (JobSpy primary)
+- Searches: 120
+- Jobs found: 222
+- Unique jobs: 87
+- Scored: 76
+- Qualified (82+): 1
+- Borderline (75-81): 2
+- Errors: 0
+- Runtime: 478s
+- JobSpy failures: 66
