@@ -45,8 +45,9 @@
 3. No Brave. Never had it, won't add it.
 
 ### Page Content Extraction
-1. Jina Reader → primary (clean markdown from any URL)
-2. Camoufox → last resort (complex JS, interactive)
+1. Defuddle → primary (`defuddle.md/[url]`, clean markdown, zero cost, no API key)
+2. Jina Reader → fallback (`r.jina.ai/[url]`, 10M tokens/month free)
+3. Camoufox → last resort (complex JS, interactive only)
 
 ### here.now (Mar 12, 2026)
 - **URL:** https://nasr.here.now/

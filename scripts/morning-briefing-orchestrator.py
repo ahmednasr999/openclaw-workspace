@@ -340,8 +340,25 @@ def is_company_page(url):
     return False
 
 
+def defuddle_fetch(url):
+    """Fetch page content via Defuddle (primary). Returns markdown or None."""
+    try:
+        # Strip protocol for defuddle URL format
+        clean_url = url.replace("https://", "").replace("http://", "")
+        defuddle_url = f"https://defuddle.md/{clean_url}"
+        req = urllib.request.Request(defuddle_url, headers={"Accept": "text/plain"})
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            content = resp.read().decode("utf-8")
+            if content and len(content) > 200:
+                log(f"  Defuddle fetched {len(content)} chars from {url}")
+                return content
+    except Exception as e:
+        log(f"  Defuddle fetch error for {url}: {e}")
+    return None
+
+
 def jina_fetch(url):
-    """Fetch page content via Jina Reader as fallback. Returns text or None."""
+    """Fetch page content via Jina Reader (fallback). Returns text or None."""
     try:
         jina_url = f"https://r.jina.ai/{url}"
         req = urllib.request.Request(jina_url, headers={"Accept": "text/plain"})
@@ -352,6 +369,15 @@ def jina_fetch(url):
     except Exception as e:
         log(f"  Jina fetch error for {url}: {e}")
     return None
+
+
+def fetch_page_content(url):
+    """Fetch page content: Defuddle first, Jina fallback."""
+    content = defuddle_fetch(url)
+    if content:
+        return content
+    log(f"  Defuddle failed, trying Jina for {url}")
+    return jina_fetch(url)
 
 
 HUMANIZER_PROMPT = """You are a content humanizer. Remove AI-generated artifacts and make this text sound authentically human.
@@ -393,13 +419,13 @@ def make_post(r, layer_label):
     slug_m = re.search(r'linkedin\.com/posts/([^_]+?)_', url)
     author = slug_m.group(1).replace("-", " ").title() if slug_m else "Unknown"
     
-    # Get content - try Tavily first, fallback to Jina if too short
+    # Get content - try Tavily first, fallback to Defuddle/Jina if too short
     content = r.get("content", "") or ""
     if len(content) < 200 and url:
-        # Tavily returned shallow content, try Jina fallback
-        jina_content = jina_fetch(url)
-        if jina_content:
-            content = jina_content[:500]  # Use first 500 chars of Jina content
+        # Tavily returned shallow content, try Defuddle then Jina
+        fetched = fetch_page_content(url)
+        if fetched:
+            content = fetched[:500]
     
     return {
         "title":        r.get("title", "").split(" - ")[0][:80],
