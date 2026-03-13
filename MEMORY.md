@@ -39,10 +39,14 @@
 - **Example:** `https://r.jina.ai/https://x.com/user/status/123`
 - **Function:** `scripts/morning-briefing-orchestrator.py` → `jina_fetch()`
 
-### Web Fetch Hierarchy (Mar 12, 2026)
-1. Tavily API → primary (news, LinkedIn posts)
-2. Jina Reader → fallback (shallow content, articles)
-3. Camoufox → last resort (complex JS, interactive)
+### Search Hierarchy (LOCKED Mar 13, 2026)
+1. **DuckDuckGo (ddgs)** → primary for ALL search (free, no API key, no quota)
+2. **Tavily API** → fallback only (free tier exhausted, 1K credits/month)
+3. No Brave. Never had it, won't add it.
+
+### Page Content Extraction
+1. Jina Reader → primary (clean markdown from any URL)
+2. Camoufox → last resort (complex JS, interactive)
 
 ### here.now (Mar 12, 2026)
 - **URL:** https://nasr.here.now/
