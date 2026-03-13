@@ -7,6 +7,7 @@ Runs job searches, adds to pipeline.md + Google Sheets
 import subprocess
 import json
 import os
+import time
 from datetime import datetime
 from pathlib import Path
 
@@ -184,15 +185,42 @@ def main():
             all_jobs.append(job)
         
         print(f"  Found {len(jobs)} jobs")
+        time.sleep(2)  # Rate limit between searches
     
     print(f"\nTotal jobs found: {len(all_jobs)}")
+    
+    # Extract JDs and ATS score via Defuddle
+    scored_jobs = []
+    for job in all_jobs[:10]:
+        url = job.get("url", "")
+        if url:
+            print(f"\nExtracting JD: {job['title']}...")
+            jd = defuddle_fetch(url)
+            if jd and len(jd) > 200:
+                job["jd"] = jd[:3000]
+                # Quick ATS pre-score: check for key terms
+                jd_lower = jd.lower()
+                score_terms = ["digital transformation", "pmo", "healthcare", "fintech",
+                              "director", "vp", "head", "chief", "executive",
+                              "strategy", "agile", "program", "portfolio"]
+                hits = sum(1 for t in score_terms if t in jd_lower)
+                job["ats_prescore"] = int((hits / len(score_terms)) * 100)
+                print(f"  JD extracted ({len(jd)} chars), pre-score: {job['ats_prescore']}")
+            else:
+                job["jd"] = ""
+                job["ats_prescore"] = 0
+                print(f"  JD extraction failed")
+            time.sleep(1)  # Rate limit
+    
+    # Sort by pre-score, highest first
+    all_jobs.sort(key=lambda x: x.get("ats_prescore", 0), reverse=True)
     
     # Add jobs to pipeline and sheet
     row_num = get_next_pipeline_row()
     added = 0
     
     for job in all_jobs[:10]:  # Limit to 10 per run
-        print(f"\nProcessing: {job['title']} at {job['company']}")
+        print(f"\nProcessing: {job['title']} at {job['company']} (pre-score: {job.get('ats_prescore', '?')})")
         
         # Add to pipeline
         add_to_pipeline(job, row_num)
