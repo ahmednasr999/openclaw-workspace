@@ -190,13 +190,19 @@ def gather_jobs():
         for line in f:
             l = line.strip()
             if "Qualified" in l and ("##" in l or "🟢" in l):
+                if job.get("title") and section:
+                    (qualified if section == "q" else borderline).append(job)
+                    job = {}
                 section = "q"
             elif "Borderline" in l and ("##" in l or "🟡" in l):
+                if job.get("title") and section:
+                    (qualified if section == "q" else borderline).append(job)
+                    job = {}
                 section = "b"
-            elif l.startswith("### ") or (l.startswith("**") and "**" in l[2:]):
+            elif l.startswith("### "):
                 if job.get("title"):
                     (qualified if section == "q" else borderline).append(job)
-                job = {"title": l.lstrip("#* ").strip()}
+                job = {"title": l.lstrip("# ").strip()}
             elif ":" in l and job:
                 k, _, v = l.partition(":")
                 k = k.strip().lstrip("-* ").lower()
