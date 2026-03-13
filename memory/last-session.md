@@ -1,17 +1,22 @@
 # Last Session Summary
 
-**Date:** March 12, 2026 (23:48 UTC)
+**Date:** March 13, 2026 (00:19 UTC)
 
 **What we did:**
-- LinkedIn Posts Google Doc: fixed body extraction, embedded 23 images, re-dated posts to working days (Sun-Thu), fixed overlapping text in 4 images, fixed spelled-out headers
-- Final doc: `1-NhLV_AoZMydOJiCvFPRiZfKY2LGds51mRt0zKrogOg`
-- Set monthly LinkedIn content prep cron (27th, 6 AM Cairo, GPT-5.4)
+- Installed and configured Composio OpenClaw plugin for LinkedIn posting
+- Connected Ahmed's LinkedIn via official OAuth2 (account: ca_yGwr2ocbcRZi)
+- Locked LinkedIn account separation rule: Ahmed = Composio only, NASR = Camoufox only
+- Discovered Composio capabilities: posting, image upload, reactions, delete, profile info
+- Cannot list past posts or get analytics (requires Marketing API/enterprise)
+- Ahmed asked for 3-week post analysis, offered Camoufox scraping as alternative
 
 **Open threads:**
-- Monitor morning briefing cron (Sunday Mar 15, 7 AM Cairo)
-- Monitor self-improvement cron (Sunday Mar 15, 6 PM Cairo)
-- Posts #12-#13 (Mar 13, Fri) still on off-day (Ahmed only asked from #10)
-- Wire X timeline into morning briefing
-- 1 post (Mar 8 reflection) has no image
+- Test first Composio LinkedIn post
+- Wire Composio into daily content pipeline
+- 3-week post analysis via Camoufox (awaiting Ahmed's go-ahead)
+- Gateway plugin id mismatch warning (cosmetic, not blocking)
 
-**Key learning logged:** Never create duplicate Google Docs. Always use --doc-id.
+**Key context:**
+- Person sub ID: mm8EyA56mj (for URN urn:li:person:mm8EyA56mj)
+- Consumer key configured in openclaw.json
+- Composio session_id: "flat"
