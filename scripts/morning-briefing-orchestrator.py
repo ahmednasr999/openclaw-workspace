@@ -451,8 +451,8 @@ def find_posts(commented_urls, targets):
 
     # Layer 1: Pipeline companies - search for INDIVIDUALS at those companies
     tier1 = targets.get("layer_1_pipeline_companies", {}).get("tier_1", [])
-    # Split into 3 smaller searches to maximize coverage of individuals
     raw1 = []
+    # Batch companies into groups for broader coverage
     batch1 = tier1[:5]
     batch2 = tier1[5:10]
     batch3 = tier1[10:15]
@@ -460,12 +460,15 @@ def find_posts(commented_urls, targets):
         if not batch:
             break
         names = " OR ".join(f'"{c}"' for c in batch)
-        # Key: add personal terms to push individual posts over company pages
-        r = tavily_search(f'site:linkedin.com/in OR site:linkedin.com/posts ({names}) "proud" OR "excited" OR "joined" OR "led" OR "my team" OR "we launched" digital transformation', n=5, days=10)
+        # Add year to bias DDG toward recent posts
+        r = tavily_search(f'site:linkedin.com/posts ({names}) digital transformation 2026', n=8, days=10)
         raw1.extend(r)
-    # Also search for executive titles at target companies
-    r2 = tavily_search('site:linkedin.com/posts ("CTO" OR "VP" OR "Director" OR "Head of") ("G42" OR "Dubai Holding" OR "Talabat" OR "RAKBANK" OR "FAB") 2026', n=5, days=10)
+    # Also search for executive titles at target companies (multiple queries for coverage)
+    r2 = tavily_search('site:linkedin.com/posts CTO VP Director G42 Dubai Holding Talabat 2026', n=8, days=10)
     raw1.extend(r2)
+    # Broader: GCC tech leaders posting about transformation
+    r3 = tavily_search('site:linkedin.com/posts CEO CTO CIO Dubai Abu Dhabi technology transformation 2026', n=8, days=10)
+    raw1.extend(r3)
     L1 = [make_post(r, "Layer 1: Pipeline Company") for r in raw1 if is_fresh(r.get("url",""))]
     # Deduplicate by URL
     seen = set()
@@ -477,18 +480,19 @@ def find_posts(commented_urls, targets):
     L1 = L1_dedup
     log(f"  Layer 1: {len(raw1)} raw, {len(L1)} passed filter")
 
-    # Layer 2: Recruiters
+    # Layer 2: Recruiters (don't add year - recruiter posts rarely mention it)
     firms = targets.get("layer_2_recruiters", {}).get("firms", [])
     q2a = " OR ".join(f'"{f}"' for f in firms[:5])
-    raw2a = tavily_search(f'site:linkedin.com/posts ({q2a}) executive hiring GCC', n=5, days=10)
-    raw2b = tavily_search('site:linkedin.com/posts executive search recruitment UAE Saudi leadership 2026', n=5, days=7)
+    raw2a = tavily_search(f'site:linkedin.com/posts ({q2a}) executive hiring GCC', n=8, days=10)
+    raw2b = tavily_search('site:linkedin.com/posts executive search recruitment UAE Saudi leadership', n=8, days=7)
     L2 = [make_post(r, "Layer 2: Recruiter") for r in (raw2a + raw2b) if is_fresh(r.get("url",""))]
     log(f"  Layer 2: {len(raw2a)+len(raw2b)} raw, {len(L2)} passed filter")
 
-    # Layer 3: Industry
-    raw3 = tavily_search('site:linkedin.com/posts digital transformation healthcare PMO GCC Saudi 2026', n=8, days=7)
-    L3 = [make_post(r, "Layer 3: Industry") for r in raw3 if is_fresh(r.get("url",""))]
-    log(f"  Layer 3: {len(raw3)} raw, {len(L3)} passed filter")
+    # Layer 3: Industry (add year for freshness bias)
+    raw3a = tavily_search('site:linkedin.com/posts digital transformation healthcare PMO GCC Saudi 2026', n=8, days=7)
+    raw3b = tavily_search('site:linkedin.com/posts CIO CTO technology strategy Dubai UAE 2026', n=8, days=7)
+    L3 = [make_post(r, "Layer 3: Industry") for r in (raw3a + raw3b) if is_fresh(r.get("url",""))]
+    log(f"  Layer 3: {len(raw3a)+len(raw3b)} raw, {len(L3)} passed filter")
 
     # Sort by content richness
     for lst in (L1, L2, L3):
