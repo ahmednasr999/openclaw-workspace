@@ -64,6 +64,8 @@ Write ONLY the comment text. Nothing else."""
 # ============================================================
 ANTHROPIC_API_KEY = ""
 ANTHROPIC_BASE_URL = "https://api.anthropic.com"
+GATEWAY_URL = "http://127.0.0.1:18789"
+GATEWAY_TOKEN = ""
 TAVILY_API_KEY = os.environ.get("TAVILY_API_KEY", "").strip()
 
 
@@ -77,16 +79,71 @@ def log(msg):
 # CONFIG
 # ============================================================
 def load_config():
-    global ANTHROPIC_API_KEY, ANTHROPIC_BASE_URL
+    global ANTHROPIC_API_KEY, ANTHROPIC_BASE_URL, GATEWAY_TOKEN
     try:
         with open(OPENCLAW_JSON) as f:
             cfg = json.load(f)
         p = cfg.get("models", {}).get("providers", {}).get("anthropic", {})
         ANTHROPIC_API_KEY = p.get("apiKey", "")
         ANTHROPIC_BASE_URL = p.get("baseUrl", "https://api.anthropic.com")
-        log(f"Anthropic key loaded: {ANTHROPIC_API_KEY[:15]}...")
+        GATEWAY_TOKEN = cfg.get("gateway", {}).get("auth", {}).get("token", "")
+        if GATEWAY_TOKEN:
+            log(f"Gateway token loaded (len={len(GATEWAY_TOKEN)}). Using gateway for LLM calls.")
+        else:
+            log(f"Anthropic key loaded: {ANTHROPIC_API_KEY[:15]}... (direct API, no gateway token)")
     except Exception as e:
-        log(f"WARNING: Could not load Anthropic config: {e}")
+        log(f"WARNING: Could not load config: {e}")
+
+
+def call_llm(prompt, model="anthropic/claude-sonnet-4-6", max_tokens=1024):
+    """Call LLM via OpenClaw gateway (preferred) or direct Anthropic API (fallback)."""
+    # Try gateway first
+    if GATEWAY_TOKEN:
+        try:
+            data = json.dumps({
+                "model": model,
+                "messages": [{"role": "user", "content": prompt}],
+                "max_tokens": max_tokens,
+            }).encode()
+            req = urllib.request.Request(
+                f"{GATEWAY_URL}/v1/chat/completions",
+                data=data,
+                method="POST",
+            )
+            req.add_header("Authorization", f"Bearer {GATEWAY_TOKEN}")
+            req.add_header("Content-Type", "application/json")
+            with urllib.request.urlopen(req, timeout=120) as resp:
+                result = json.loads(resp.read().decode())
+            text = result.get("choices", [{}])[0].get("message", {}).get("content", "")
+            if text:
+                return text
+        except Exception as e:
+            log(f"    Gateway LLM error: {e}")
+
+    # Fallback: direct Anthropic API
+    if ANTHROPIC_API_KEY:
+        try:
+            data = json.dumps({
+                "model": "claude-sonnet-4-20250514",
+                "max_tokens": max_tokens,
+                "messages": [{"role": "user", "content": prompt}],
+            }).encode()
+            req = urllib.request.Request(
+                f"{ANTHROPIC_BASE_URL}/v1/messages",
+                data=data,
+                method="POST",
+            )
+            req.add_header("x-api-key", ANTHROPIC_API_KEY)
+            req.add_header("anthropic-version", "2023-06-01")
+            req.add_header("content-type", "application/json")
+            with urllib.request.urlopen(req, timeout=60) as resp:
+                result = json.loads(resp.read().decode())
+            blocks = result.get("content", [])
+            return blocks[0].get("text", "") if blocks else ""
+        except Exception as e:
+            log(f"    Direct Anthropic error: {e}")
+
+    return ""
 
 
 def load_commented_urls():
@@ -301,33 +358,12 @@ Original text:
 Humanized:"""
 
 
-def humanize_text(text, api_key, base_url="https://api.anthropic.com"):
-    """Remove AI tells from text to sound more human."""
-    if not api_key or len(text) < 50:
+def humanize_text(text, api_key=None, base_url=None):
+    """Remove AI tells from text to sound more human. Uses gateway."""
+    if len(text) < 50:
         return text
-    
-    payload = json.dumps({
-        "model": "claude-sonnet-4-6",
-        "max_tokens": 400,
-        "messages": [{"role": "user", "content": HUMANIZER_PROMPT.format(text=text)}]
-    }).encode()
-    req = urllib.request.Request(
-        f"{base_url}/v1/messages",
-        data=payload,
-        headers={
-            "Content-Type": "application/json",
-            "x-api-key": api_key,
-            "anthropic-version": "2023-06-01"
-        },
-        method="POST"
-    )
-    try:
-        with urllib.request.urlopen(req, timeout=20) as resp:
-            result = json.loads(resp.read())
-            return result.get("content", [{}])[0].get("text", text)
-    except Exception as e:
-        log(f"  Humanizer error: {e}")
-        return text
+    result = call_llm(HUMANIZER_PROMPT.format(text=text), max_tokens=400)
+    return result if result else text
 
 
 def make_post(r, layer_label):
@@ -423,8 +459,8 @@ def draft_comments(posts):
     if not posts:
         log("  No posts to draft comments for.")
         return posts
-    if not ANTHROPIC_API_KEY:
-        log("  WARNING: No Anthropic API key.")
+    if not GATEWAY_TOKEN and not ANTHROPIC_API_KEY:
+        log("  WARNING: No gateway token or Anthropic API key.")
         for p in posts:
             p["ready_comment"] = "[Comment draft pending]"
         return posts
@@ -438,32 +474,19 @@ def draft_comments(posts):
             author=post.get("author", "Unknown"),
             snippet=post.get("topic", "No context available")[:300]
         )
-        payload = json.dumps({
-            "model": "claude-sonnet-4-6",
-            "max_tokens": 300,
-            "messages": [{"role": "user", "content": prompt}]
-        }).encode()
-        req = urllib.request.Request(
-            f"{ANTHROPIC_BASE_URL}/v1/messages",
-            data=payload,
-            headers={
-                "Content-Type":      "application/json",
-                "x-api-key":         ANTHROPIC_API_KEY,
-                "anthropic-version": "2023-06-01"
-            },
-            method="POST"
-        )
         try:
-            with urllib.request.urlopen(req, timeout=45) as resp:
-                result = json.loads(resp.read())
-                text = result.get("content", [{}])[0].get("text", "").strip()
+            text = call_llm(prompt, model="anthropic/claude-sonnet-4-6", max_tokens=300)
+            if text:
                 # Remove em dashes just in case
                 text = text.replace("\u2014", ",").replace("\u2013", ",")
                 # Humanize the comment to remove AI tells
-                text = humanize_text(text, ANTHROPIC_API_KEY, ANTHROPIC_BASE_URL)
+                text = humanize_text(text)
                 post["ready_comment"] = text
                 post["comment_angle"] = post.get("topic", "")[:80]
                 log(f"    Done ({len(text)} chars)")
+            else:
+                log(f"    FAILED: empty response")
+                post["ready_comment"] = "[Comment draft failed. Retry tomorrow.]"
         except Exception as e:
             log(f"    FAILED: {e}")
             post["ready_comment"] = "[Comment draft failed. Retry tomorrow.]"
@@ -636,32 +659,29 @@ def main():
 
     load_config()
 
-    # Pre-flight: verify Anthropic API key works
-    if ANTHROPIC_API_KEY:
+    # Pre-flight: verify LLM access works (gateway or direct API)
+    llm_ok = False
+    if GATEWAY_TOKEN:
         try:
-            test_req = urllib.request.Request(
-                f"{ANTHROPIC_BASE_URL}/v1/messages",
-                data=json.dumps({
-                    "model": "claude-haiku-4-5",
-                    "max_tokens": 5,
-                    "messages": [{"role": "user", "content": "ping"}]
-                }).encode(),
-                headers={
-                    "Content-Type": "application/json",
-                    "x-api-key": ANTHROPIC_API_KEY,
-                    "anthropic-version": "2023-06-01"
-                },
-                method="POST"
-            )
-            with urllib.request.urlopen(test_req, timeout=10) as resp:
-                log("Anthropic API: OK")
+            test_result = call_llm("ping", max_tokens=5)
+            if test_result:
+                log("LLM access via gateway: OK")
+                llm_ok = True
+            else:
+                log("WARNING: Gateway returned empty response")
         except Exception as e:
-            err_msg = str(e)
-            log(f"WARNING: Anthropic API check failed: {err_msg[:80]}")
-            log("  Comments (Sonnet) and CVs (Opus) will fail this run.")
-            errors.append({"issue": f"Anthropic API down: {err_msg[:80]}", "fix": "Check API key or rate limits"})
-    else:
-        log("WARNING: No Anthropic API key. Comments and CVs disabled.")
+            log(f"WARNING: Gateway LLM check failed: {str(e)[:80]}")
+    if not llm_ok and ANTHROPIC_API_KEY:
+        try:
+            test_result = call_llm("ping", max_tokens=5)
+            if test_result:
+                log("LLM access via direct API: OK")
+                llm_ok = True
+        except Exception as e:
+            log(f"WARNING: Direct API check also failed: {str(e)[:80]}")
+    if not llm_ok:
+        log("WARNING: No working LLM access. Comments will fail this run.")
+        errors.append({"issue": "No LLM access (gateway + API both failed)", "fix": "Check gateway status or API key"})
 
     commented_urls = load_commented_urls()
     targets        = load_targets()
