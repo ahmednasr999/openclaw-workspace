@@ -1,27 +1,24 @@
-# Last Session Context
+# Last Session Summary
 
-*Updated: 2026-03-13 13:00 Cairo*
+**Date:** 2026-03-13
+**Time:** 17:13 Cairo
 
 ## What We Discussed
-- Composio LinkedIn integration (overnight): posting works, comments on others' posts don't (API scope)
-- Morning briefing fixes: scanner labels, LLM routing through gateway, append mode for daily doc
-- Hardcoded "2026" in search queries: fixed to dynamic datetime
-- Ahmed flagged multiple undetected issues: Tavily dead, cron failed, session bloated, silent model fallback
+- YouTube transcript extraction: all methods blocked (Defuddle, Jina, yt-dlp, Invidious)
+- NoteGPT and Tactiq web apps: not automatable via browser
+- Ahmed will keep sending YouTube links to test individually
 
-## Open Threads (CARRY FORWARD)
-1. **Replace Tavily with Brave in orchestrator** — agreed plan, not started yet
-2. **Graceful degradation in briefing script** — partial success instead of crash
-3. **Heartbeat hardening** — add cron failure check, API health ping, model fallback detection
-4. **Run briefing manually** to verify fixes
-5. **Sunday cron reminder** (Mar 15): wire Composio into daily LinkedIn content pipeline
-6. **Post analytics** — Ahmed asked for 3-week analysis, Camoufox scraping alternative proposed, awaiting response
-7. **Test first real LinkedIn post via Composio** — not done yet
+## Open Items
+- Contango application: needs Ahmed's manual completion (CV already generated, ATS 88%)
+- LinkedIn post rewrite: awaiting Ahmed's approval
+- Engagement radar cron: runs tomorrow at 9 AM Cairo
 
-## Decisions Made
-- Tavily replacement: use Brave web_search (zero cost) instead of upgrading ($20/mo)
-- Session: kill bloated 17MB session, start fresh
-- LinkedIn account separation: HARD RULE locked in MEMORY.md
-- Composio is safe for LinkedIn posting (official OAuth2 UGC Posts API)
+## Key Context
+- YouTube cracking down on external transcript access
+- Best path: keep testing links, get what we can
+- Disk-free option: TubeArchivist with subtitles-only mode
 
-## Ahmed's Mood
-- Frustrated that issues weren't surfaced proactively. Valid criticism. Fix the heartbeat.
+## Ready For
+- Next YouTube link to test
+- Contango application completion
+- LinkedIn post approval
