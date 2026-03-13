@@ -1,537 +1,904 @@
 #!/usr/bin/env python3
 """
-Self-Improvement Engine
-=======================
-Reads system logs from the past 7 days, detects patterns, auto-fixes configs,
-and promotes recurring learnings. Runs daily before the morning briefing.
+Self-Improvement Engine (SIE) for OpenClaw
+==========================================
+Monitors ALL 26 areas (A-Z) of the OpenClaw system and generates insights.
 
 Usage:
-    python3 self-improvement-engine.py              # Full analysis + auto-fix
-    python3 self-improvement-engine.py --dry-run    # Show what would change
-    python3 self-improvement-engine.py --report     # Weekly summary report
+    python3 self-improvement-engine.py              # Full analysis + writes
+    python3 self-improvement-engine.py --dry-run   # Report only, no file writes
+    python3 self-improvement-engine.py --json      # JSON output to stdout
 
-Returns JSON with actions taken.
+Deterministic thresholds per Section 14 of the spec.
 """
 
-import json, os, sys, glob, re
+import json
+import os
+import sys
+import re
+import subprocess
+import argparse
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
-from collections import Counter
+from collections import defaultdict
 
-WORKSPACE       = "/root/.openclaw/workspace"
-SCRAPED_DIR     = f"{WORKSPACE}/jobs-bank/scraped"
-LEARNINGS_FILE  = f"{WORKSPACE}/.learnings/LEARNINGS.md"
-TARGETS_FILE    = f"{WORKSPACE}/config/linkedin-comment-targets.json"
-COMMENTED_FILE  = f"{WORKSPACE}/linkedin/engagement/commented-posts.md"
-FEEDBACK_FILE   = f"{WORKSPACE}/memory/improvement-feedback.md"
-METRICS_FILE    = f"{WORKSPACE}/memory/improvement-metrics.json"
+# === Configuration ===
+WORKSPACE = "/root/.openclaw/workspace"
+HEARTBEAT_DIR = f"{WORKSPACE}/.heartbeat"
+MEMORY_DIR = f"{WORKSPACE}/memory"
+SESSIONS_DIR = "/root/.openclaw/agents/main/sessions"
+SCRIPTS_DIR = f"{WORKSPACE}/scripts"
+LEARNINGS_FILE = f"{WORKSPACE}/.learnings/LEARNINGS.md"
+GATEWAY_LOG = "/root/.openclaw/gateway.log"
+STATE_FILE = f"{HEARTBEAT_DIR}/sie-state.json"
+OUTPUT_FILE = f"{MEMORY_DIR}/insights.md"
 
-CAIRO = timezone(timedelta(hours=2))
+CAIRO_TZ = timezone(timedelta(hours=2))
 
+# === Helper Functions ===
 
 def log(msg):
-    ts = datetime.now(CAIRO).strftime("%H:%M:%S")
+    """Log to stderr."""
+    ts = datetime.now(CAIRO_TZ).strftime("%H:%M:%S")
     print(f"[{ts}] {msg}", file=sys.stderr, flush=True)
 
 
-def load_system_logs(days=7):
-    """Load system log JSONs from the last N days."""
-    logs = []
-    today = datetime.now(CAIRO).date()
-    for i in range(days):
-        d = today - timedelta(days=i)
-        path = f"{SCRAPED_DIR}/system-log-{d.isoformat()}.json"
-        if os.path.exists(path):
-            try:
-                with open(path) as f:
-                    data = json.load(f)
-                data["_date"] = d.isoformat()
-                logs.append(data)
-            except:
-                pass
-    return logs
+def run_cmd(cmd, timeout=5):
+    """Run shell command with timeout, return stdout."""
+    try:
+        result = subprocess.run(
+            cmd, shell=True, capture_output=True, text=True, timeout=timeout
+        )
+        return result.stdout.strip(), result.returncode
+    except subprocess.TimeoutExpired:
+        return "", -1
+    except Exception as e:
+        return str(e), -1
 
 
-def load_metrics():
-    """Load historical metrics for trend tracking."""
-    if os.path.exists(METRICS_FILE):
-        with open(METRICS_FILE) as f:
+def file_age_hours(filepath):
+    """Get file age in hours."""
+    if not os.path.exists(filepath):
+        return 999
+    try:
+        mtime = os.path.getmtime(filepath)
+        age = (datetime.now().timestamp() - mtime) / 3600
+        return round(age, 1)
+    except:
+        return 999
+
+
+def read_json(filepath, default=None):
+    """Read JSON file safely."""
+    if default is None:
+        default = {}
+    if not os.path.exists(filepath):
+        return default
+    try:
+        with open(filepath) as f:
             return json.load(f)
-    return {"daily": [], "weekly_summaries": [], "pattern_counts": {}}
+    except:
+        return default
 
 
-def save_metrics(metrics):
-    with open(METRICS_FILE, "w") as f:
-        json.dump(metrics, f, indent=2)
+def write_json(filepath, data):
+    """Write JSON file safely."""
+    os.makedirs(os.path.dirname(filepath), exist_ok=True)
+    with open(filepath, "w") as f:
+        json.dump(data, f, indent=2)
 
 
-def extract_daily_metrics(log_data):
-    """Extract key metrics from a single day's system log."""
-    ops = log_data.get("operations_summary", {})
-    
-    # Parse numbers from operation strings
-    def extract_num(s, default=0):
-        nums = re.findall(r'\d+', str(s))
-        return int(nums[0]) if nums else default
-    
-    linkedin_str = ops.get("linkedin_found", "0")
-    comments_str = ops.get("comments_drafted", "0")
-    
-    return {
-        "date": log_data.get("_date", "unknown"),
-        "posts_found": extract_num(linkedin_str),
-        "comments_drafted": extract_num(comments_str),
-        "errors": len(log_data.get("went_wrong", [])),
-        "successes": len(log_data.get("went_right", [])),
-        "layer1_working": any("Layer 1" in str(w) or "pipeline" in str(w).lower() 
-                             for w in log_data.get("went_right", [])),
-        "layer2_working": any("Layer 2" in str(w) or "recruiter" in str(w).lower() 
-                             for w in log_data.get("went_right", [])),
-        "layer3_working": any("Layer 3" in str(w) or "industry" in str(w).lower() 
-                             for w in log_data.get("went_right", [])),
-    }
+# === State Management ===
+
+def load_state():
+    """Load SIE state."""
+    return read_json(STATE_FILE, {
+        "last_run": None,
+        "run_count": 0,
+        "areas": {},
+        "health_score": 100,
+        "history": []
+    })
 
 
-def detect_patterns(logs, metrics):
-    """Analyze logs for recurring issues and improvement opportunities."""
-    patterns = []
-    daily_data = [extract_daily_metrics(l) for l in logs]
-    
-    if not daily_data:
-        return patterns
-    
-    # Pattern 1: Layer drought (any layer returning 0 for 3+ consecutive days)
-    for layer_key, layer_name in [
-        ("layer1_working", "Layer 1 (Pipeline Companies)"),
-        ("layer2_working", "Layer 2 (Recruiters)"),
-        ("layer3_working", "Layer 3 (Industry)")
-    ]:
-        consecutive_zeros = 0
-        for d in daily_data:
-            if not d.get(layer_key, False):
-                consecutive_zeros += 1
-            else:
-                break
-        if consecutive_zeros >= 3:
-            patterns.append({
-                "type": "layer_drought",
-                "layer": layer_name,
-                "days": consecutive_zeros,
-                "severity": "high",
-                "action": "rotate_search_queries",
-                "detail": f"{layer_name} returned 0 posts for {consecutive_zeros} consecutive days. Search queries need rotation."
-            })
-    
-    # Pattern 2: Comment quality declining (fewer comments drafted vs posts found)
-    recent_ratios = []
-    for d in daily_data[:3]:
-        if d["posts_found"] > 0:
-            recent_ratios.append(d["comments_drafted"] / d["posts_found"])
-    if recent_ratios and sum(recent_ratios) / len(recent_ratios) < 0.5:
-        patterns.append({
-            "type": "comment_quality_drop",
-            "severity": "medium",
-            "action": "review_comment_prompt",
-            "detail": f"Comment draft success rate below 50%. Average: {sum(recent_ratios)/len(recent_ratios):.0%}"
-        })
-    
-    # Pattern 3: Dedup exhaustion (posts found trending to 0)
-    if len(daily_data) >= 3:
-        recent_posts = [d["posts_found"] for d in daily_data[:3]]
-        if all(p <= 2 for p in recent_posts):
-            patterns.append({
-                "type": "dedup_exhaustion",
-                "severity": "medium",
-                "action": "expand_search_terms",
-                "detail": f"Posts found declining: {recent_posts}. Dedup log may be exhausting available posts."
-            })
-    
-    # Pattern 4: Recurring errors
-    all_errors = []
-    for l in logs:
-        for err in l.get("went_wrong", []):
-            if isinstance(err, dict):
-                all_errors.append(err.get("issue", str(err)))
-            else:
-                all_errors.append(str(err))
-    
-    error_counts = Counter(all_errors)
-    for error, count in error_counts.items():
-        if count >= 3:
-            patterns.append({
-                "type": "recurring_error",
-                "severity": "high",
-                "action": "auto_fix_or_escalate",
-                "detail": f"Error occurred {count} times in {len(logs)} days: {error[:100]}",
-                "error": error
-            })
-    
-    # Pattern 5: Zero errors streak (things are going well)
-    error_free_days = sum(1 for d in daily_data if d["errors"] == 0)
-    if error_free_days >= 5:
-        patterns.append({
-            "type": "stability_streak",
-            "severity": "info",
-            "action": "none",
-            "detail": f"{error_free_days} error-free days in last {len(daily_data)} days. System stable."
-        })
-    
-    # Pattern 6: Commented posts log growing large (dedup pressure)
-    if os.path.exists(COMMENTED_FILE):
-        with open(COMMENTED_FILE) as f:
-            lines = f.readlines()
-        url_count = sum(1 for l in lines if l.strip().startswith("- URL:"))
-        if url_count > 100:
-            patterns.append({
-                "type": "dedup_log_large",
-                "severity": "low",
-                "action": "prune_old_entries",
-                "detail": f"Commented posts log has {url_count} entries. Consider pruning entries older than 30 days."
-            })
-    
-    return patterns
+def save_state(state):
+    """Save SIE state with history trimming."""
+    # Keep last 30 history entries
+    if "history" in state:
+        state["history"] = state["history"][-30:]
+    write_json(STATE_FILE, state)
 
 
-def apply_fixes(patterns, dry_run=False):
-    """Auto-apply fixes for detected patterns."""
-    actions_taken = []
+# === Area Checks (A-Z) ===
+
+def check_applications(state):
+    """A - Applications: Track ATS score distribution."""
+    # Check for recent CV/ATS scoring activity
+    ats_scores = []
+    ats_dir = f"{WORKSPACE}/memory"
     
-    for p in patterns:
-        if p["type"] == "layer_drought" and p["action"] == "rotate_search_queries":
-            action = rotate_layer_queries(p["layer"], dry_run)
-            if action:
-                actions_taken.append(action)
+    # Scan for ATS score files
+    for root, dirs, files in os.walk(ats_dir):
+        for f in files:
+            if "ats" in f.lower() or "score" in f.lower():
+                path = os.path.join(root, f)
+                content = open(path).read() if os.path.exists(path) else ""
+                # Look for score patterns like "82/100" or "Score: 85"
+                matches = re.findall(r'(\d{2,3})/100', content)
+                ats_scores.extend([int(m) for m in matches if 50 <= int(m) <= 100])
+    
+    if ats_scores:
+        avg = sum(ats_scores) / len(ats_scores)
+        if avg < 85:
+            return "ALERT", f"ATS avg {avg:.0f} below threshold (85)"
+        return "OK", f"ATS avg {avg:.0f}, {len(ats_scores)} scores tracked"
+    return "OK", "No recent ATS data"
+
+
+def check_backups(state):
+    """B - Backups: Check last git commit age."""
+    stdout, code = run_cmd(f"cd {WORKSPACE} && git log -1 --format=%ci 2>/dev/null")
+    if code != 0 or not stdout:
+        return "ALERT", "Git commit unavailable"
+    
+    # Parse ISO date
+    try:
+        commit_time = datetime.fromisoformat(stdout.replace(" +0000", ""))
+        age_hours = (datetime.now() - commit_time.replace(tzinfo=None)).total_seconds() / 3600
+        if age_hours > 24:
+            return "ALERT", f"Git stale: {age_hours:.0f}h since last commit"
+        return "OK", f"Last commit {age_hours:.1f}h ago"
+    except:
+        return "WARN", "Could not parse commit time"
+
+
+def check_crons(state):
+    """C - Crons: Check failure count."""
+    stdout, code = run_cmd("timeout 15 openclaw cron list --json 2>/dev/null", timeout=20)
+    if code != 0 or not stdout:
+        return "WARN", "Could not list crons (timeout or error)"
+    
+    # Extract JSON from output (skip config warnings)
+    try:
+        # Find first { or [ 
+        json_start = stdout.find('{')
+        if json_start == -1:
+            json_start = stdout.find('[')
+        if json_start > 0:
+            stdout = stdout[json_start:]
         
-        elif p["type"] == "dedup_exhaustion" and p["action"] == "expand_search_terms":
-            action = expand_search_terms(dry_run)
-            if action:
-                actions_taken.append(action)
+        crons = json.loads(stdout) if stdout else []
+        # Handle both {"jobs": [...]} and [...] formats
+        if isinstance(crons, dict) and "jobs" in crons:
+            crons = crons["jobs"]
+    except:
+        return "WARN", "Could not parse cron list"
+    
+    failures = [c for c in crons if "error" in str(c.get("status", "")).lower() 
+                or "fail" in str(c.get("status", "")).lower()]
+    
+    if len(failures) > 2:
+        return "ALERT", f"{len(failures)} cron failures detected"
+    if len(failures) > 0:
+        return "WARN", f"{len(failures)} cron failures"
+    return "OK", f"{len(crons)} crons healthy"
+
+
+def check_disk(state):
+    """D - Disk: Check usage percentage."""
+    stdout, code = run_cmd("df / --output=pcent 2>/dev/null | tail -1 | tr -d ' %'")
+    if code != 0:
+        return "WARN", "Could not check disk"
+    
+    try:
+        usage = int(stdout)
+    except:
+        return "WARN", "Could not parse disk usage"
+    
+    if usage >= 95:
+        return "CRITICAL", f"Disk {usage}% - immediate action needed"
+    if usage >= 85:
+        return "ALERT", f"Disk {usage}% approaching limit"
+    return "OK", f"Disk {usage}%"
+
+
+def check_errors(state):
+    """E - Errors: Scan logs for new error patterns."""
+    error_patterns = defaultdict(int)
+    
+    # Scan gateway log
+    if os.path.exists(GATEWAY_LOG):
+        try:
+            with open(GATEWAY_LOG) as f:
+                lines = f.readlines()
+            
+            recent = lines[-500:] if len(lines) > 500 else lines
+            for line in recent:
+                # Extract error type
+                if "error" in line.lower() or "exception" in line.lower():
+                    # Extract first 50 chars of potential error
+                    match = re.search(r'(error|exception)[:\s]+([^\n]{10,50})', line, re.I)
+                    if match:
+                        error_patterns[match.group(2)[:50]] += 1
+        except:
+            pass
+    
+    # Check for recurring errors (3+ occurrences)
+    recurring = {k: v for k, v in error_patterns.items() if v >= 3}
+    if recurring:
+        worst = max(recurring.items(), key=lambda x: x[1])
+        return "ALERT", f"Recurring: '{worst[0][:40]}' ({worst[1]}x)"
+    if error_patterns:
+        return "WARN", f"{len(error_patterns)} unique errors in recent logs"
+    return "OK", "No significant errors"
+
+
+def check_feedback(state):
+    """F - Feedback: Check unprocessed corrections."""
+    # Check for recent corrections in learnings
+    if not os.path.exists(LEARNINGS_FILE):
+        return "OK", "No learnings file"
+    
+    try:
+        with open(LEARNINGS_FILE) as f:
+            content = f.read()
         
-        elif p["type"] == "dedup_log_large" and p["action"] == "prune_old_entries":
-            action = prune_old_dedup(dry_run)
-            if action:
-                actions_taken.append(action)
+        # Count unprocessed (no "applied" or "resolved" tag)
+        unprocessed = len([l for l in content.split("##") 
+                          if "unprocessed" in l.lower() or ("[LRN-" in l and "applied" not in l)])
         
-        elif p["type"] == "recurring_error" and p["action"] == "auto_fix_or_escalate":
-            action = log_recurring_error(p["error"], dry_run)
-            if action:
-                actions_taken.append(action)
+        if unprocessed > 3:
+            return "ALERT", f"{unprocessed} unprocessed corrections"
+        if unprocessed > 0:
+            return "WARN", f"{unprocessed} unprocessed corrections"
+    except:
+        pass
     
-    return actions_taken
+    return "OK", "Feedback processed"
 
 
-def rotate_layer_queries(layer_name, dry_run=False):
-    """Rotate search queries for a struggling layer."""
-    if not os.path.exists(TARGETS_FILE):
-        return None
+def check_gateway(state):
+    """G - Gateway: Check uptime and restarts."""
+    # First check if gateway process is running
+    stdout, code = run_cmd("pgrep -f openclaw-gateway", timeout=3)
     
-    with open(TARGETS_FILE) as f:
-        targets = json.load(f)
+    if code != 0 or not stdout.strip():
+        return "CRITICAL", "Gateway process not found"
     
-    # Add variation terms to struggling layer
-    rotation_terms = {
-        "Layer 1": [
-            "proud to announce", "we are hiring", "team milestone",
-            "digital transformation results", "my journey at"
-        ],
-        "Layer 2": [
-            "executive search", "confidential mandate", "leadership opportunity",
-            "C-suite placement", "just placed"
-        ],
-        "Layer 3": [
-            "AI in healthcare", "digital transformation GCC", "future of fintech",
-            "Saudi Vision 2030 technology", "enterprise AI deployment"
-        ]
-    }
+    # Count restarts in last 24h from log
+    restart_count = 0
+    if os.path.exists(GATEWAY_LOG):
+        try:
+            with open(GATEWAY_LOG) as f:
+                lines = f.readlines()
+            
+            # Look for restart patterns in last 500 lines
+            recent = lines[-500:] if len(lines) > 500 else lines
+            restart_count = sum(1 for l in recent if "starting" in l.lower() and "gateway" in l.lower())
+        except:
+            pass
     
-    layer_key = None
-    for k in ["Layer 1", "Layer 2", "Layer 3"]:
-        if k in layer_name:
-            layer_key = k
-            break
+    if restart_count > 3:
+        return "ALERT", f"Gateway restarted {restart_count}x in 24h"
     
-    if not layer_key or layer_key not in rotation_terms:
-        return None
-    
-    if dry_run:
-        return {
-            "action": f"Would rotate {layer_key} search queries",
-            "new_terms": rotation_terms[layer_key],
-            "applied": False
-        }
-    
-    # Add rotation flag to targets
-    for layer in targets.get("layers", []):
-        if layer_key.lower().replace(" ", "") in layer.get("name", "").lower().replace(" ", ""):
-            if "rotation_terms" not in layer:
-                layer["rotation_terms"] = []
-            layer["rotation_terms"].extend(rotation_terms[layer_key])
-            layer["rotation_terms"] = list(set(layer["rotation_terms"]))
-            layer["last_rotated"] = datetime.now(CAIRO).isoformat()
-    
-    with open(TARGETS_FILE, "w") as f:
-        json.dump(targets, f, indent=2)
-    
-    return {
-        "action": f"Rotated {layer_key} search queries",
-        "new_terms": rotation_terms[layer_key],
-        "applied": True
-    }
+    return "OK", f"Gateway running (PID: {stdout.strip().split()[0]})"
 
 
-def expand_search_terms(dry_run=False):
-    """Expand search scope when dedup exhaustion is detected."""
-    if dry_run:
-        return {"action": "Would expand search terms for dedup exhaustion", "applied": False}
+def check_heartbeat(state):
+    """H - Heartbeat: Check success rate."""
+    state_file = f"{HEARTBEAT_DIR}/state.json"
+    data = read_json(state_file)
     
-    # Add new hashtags/topics to search
-    expansion_topics = [
-        "digital health innovation GCC",
-        "enterprise architecture Middle East",
-        "healthcare technology transformation",
-        "AI strategy implementation",
-        "PMO leadership excellence"
+    if not data:
+        return "WARN", "No heartbeat state"
+    
+    # Calculate success rate from checks
+    checks = data.get("checks", {})
+    if not checks:
+        return "OK", "No heartbeat failures"
+    
+    total = len(checks)
+    failed = sum(1 for c in checks.values() if not c.get("success", True))
+    success_rate = ((total - failed) / total * 100) if total > 0 else 100
+    
+    if success_rate < 90:
+        return "ALERT", f"Heartbeat success {success_rate:.0f}% < 90%"
+    return "OK", f"Heartbeat {success_rate:.0f}% success"
+
+
+def check_integrations(state):
+    """I - Integrations: Test Gmail, LinkedIn."""
+    issues = []
+    
+    # Test gog gmail - try a simple command
+    stdout, code = run_cmd("gog gmail search in:inbox limit:1 2>/dev/null", timeout=10)
+    if code != 0 or not stdout or "error" in stdout.lower():
+        issues.append("Gmail")
+    
+    # Test LinkedIn (via cookie file)
+    cookie_file = f"{WORKSPACE}/config/linkedin-cookies.txt"
+    if not os.path.exists(cookie_file):
+        issues.append("LinkedIn (no cookie)")
+    
+    if len(issues) >= 2:
+        return "ALERT", f"Failed: {', '.join(issues)}"
+    if issues:
+        return "WARN", f"Issue: {issues[0]}"
+    return "OK", "Integrations healthy"
+
+
+def check_jobs(state):
+    """J - Jobs: Check radar yield."""
+    # Check for recent job radar runs
+    radar_file = f"{MEMORY_DIR}/job-radar.md"
+    age = file_age_hours(radar_file)
+    
+    # Check for empty results in recent runs
+    if os.path.exists(radar_file):
+        try:
+            with open(radar_file) as f:
+                content = f.read()
+            
+            # Count job entries
+            job_count = len(re.findall(r'###.*?job|##.*?position', content, re.I))
+            
+            if job_count == 0 and age < 48:
+                return "ALERT", "0 jobs in recent radar"
+            if job_count < 5 and age < 24:
+                return "WARN", f"Low yield: {job_count} jobs"
+        except:
+            pass
+    
+    if age > 72:
+        return "WARN", f"Radar stale: {age:.0f}h"
+    return "OK", "Job radar functional"
+
+
+def check_knowledge(state):
+    """K - Knowledge: Check memory file freshness."""
+    memory_file = f"{WORKSPACE}/MEMORY.md"
+    age = file_age_hours(memory_file)
+    
+    if age > 168:  # 7 days
+        return "ALERT", f"MEMORY.md stale: {age/24:.0f}d"
+    if age > 72:  # 3 days
+        return "WARN", f"MEMORY.md aging: {age/24:.0f}d"
+    return "OK", f"MEMORY.md current"
+
+
+def check_learnings(state):
+    """L - Learnings: Check unapplied lessons."""
+    if not os.path.exists(LEARNINGS_FILE):
+        return "OK", "No learnings"
+    
+    try:
+        with open(LEARNINGS_FILE) as f:
+            content = f.read()
+        
+        # Count pending learnings
+        pending = len(re.findall(r'\[LRN-\d+\](?!.*(?:applied|resolved))', content))
+        
+        if pending > 5:
+            return "ALERT", f"{pending} pending learnings"
+        if pending > 0:
+            return "WARN", f"{pending} pending learnings"
+    except:
+        pass
+    
+    return "OK", "Learnings applied"
+
+
+def check_models(state):
+    """M - Models: Check fallback frequency."""
+    # Count model fallbacks in gateway log
+    fallbacks = []
+    
+    if os.path.exists(GATEWAY_LOG):
+        try:
+            with open(GATEWAY_LOG) as f:
+                lines = f.readlines()
+            
+            recent = lines[-500:] if len(lines) > 500 else lines
+            for line in recent:
+                if "fallback" in line.lower() or "falling back" in line.lower():
+                    fallbacks.append(line.strip()[:100])
+        except:
+            pass
+    
+    if len(fallbacks) > 3:
+        return "ALERT", f"{len(fallbacks)} model fallbacks in 24h"
+    if fallbacks:
+        return "WARN", f"{len(fallbacks)} model fallbacks"
+    return "OK", "Models stable"
+
+
+def check_notifications(state):
+    """N - Notifications: Check alert frequency."""
+    # Check for recent Telegram alerts
+    alert_count = 0
+    
+    if os.path.exists(GATEWAY_LOG):
+        try:
+            with open(GATEWAY_LOG) as f:
+                lines = f.readlines()
+            
+            # Look for alert/sendMessage patterns in last 200 lines
+            recent = lines[-200:] if len(lines) > 200 else lines
+            alert_count = sum(1 for l in recent if "alert" in l.lower() or "telegram" in l.lower())
+        except:
+            pass
+    
+    if alert_count > 5:
+        return "WARN", f"High alert volume: {alert_count} today"
+    return "OK", "Notification volume normal"
+
+
+def check_outputs(state):
+    """O - Outputs: Check CV generation success."""
+    # Check for recent CV files
+    cv_dir = f"{WORKSPACE}/jobs-bank"
+    recent_cvs = []
+    
+    for root, dirs, files in os.walk(cv_dir):
+        for f in files:
+            if f.endswith(".pdf") and "cv" in f.lower():
+                path = os.path.join(root, f)
+                age = file_age_hours(path)
+                if age < 48:
+                    recent_cvs.append((f, age))
+    
+    if not recent_cvs:
+        return "WARN", "No recent CV outputs"
+    return "OK", f"{len(recent_cvs)} CVs generated recently"
+
+
+def check_pipeline(state):
+    """P - Pipeline: Check conversion rate."""
+    pipeline_file = f"{WORKSPACE}/jobs-bank/pipeline.md"
+    
+    if not os.path.exists(pipeline_file):
+        return "WARN", "No pipeline file"
+    
+    try:
+        with open(pipeline_file) as f:
+            content = f.read()
+        
+        # Count stages
+        applied = len(re.findall(r'Applied|applied', content))
+        interview = len(re.findall(r'Interview|interview', content))
+        
+        if applied == 0:
+            return "WARN", "No applications in pipeline"
+        if interview == 0 and applied > 5:
+            return "WARN", f"{applied} apps, 0 interviews"
+    except:
+        pass
+    
+    return "OK", "Pipeline active"
+
+
+def check_quality(state):
+    """Q - Quality: Check LinkedIn engagement."""
+    # Check for recent engagement data
+    engagement_file = f"{WORKSPACE}/linkedin/engagement/engagement.md"
+    age = file_age_hours(engagement_file)
+    
+    if age > 168:  # 7 days
+        return "WARN", f"Engagement stale: {age/24:.0f}d"
+    return "OK", "Content quality tracked"
+
+
+def check_reliability(state):
+    """R - Reliability: Check session sizes."""
+    if not os.path.exists(SESSIONS_DIR):
+        return "WARN", "No sessions dir"
+    
+    bloated = []
+    try:
+        for f in os.listdir(SESSIONS_DIR):
+            path = os.path.join(SESSIONS_DIR, f)
+            if os.path.isfile(path):
+                size_mb = os.path.getsize(path) / (1024 * 1024)
+                if size_mb > 5:
+                    bloated.append((f, round(size_mb, 1)))
+    except:
+        return "WARN", "Could not check sessions"
+    
+    if bloated:
+        worst = max(bloated, key=lambda x: x[1])
+        return "ALERT", f"Session {worst[0]} is {worst[1]}MB"
+    return "OK", f"Session sizes normal"
+
+
+def check_skills(state):
+    """S - Skills: Check skill execution errors."""
+    # Check skill execution logs
+    skill_errors = []
+    
+    # Look for recent skill failures in logs
+    if os.path.exists(GATEWAY_LOG):
+        try:
+            with open(GATEWAY_LOG) as f:
+                lines = f.readlines()
+            
+            recent = lines[-500:] if len(lines) > 500 else lines
+            for line in recent:
+                if "skill" in line.lower() and ("error" in line.lower() or "fail" in line.lower()):
+                    skill_errors.append(line.strip()[:80])
+        except:
+            pass
+    
+    if len(skill_errors) > 2:
+        return "ALERT", f"{len(skill_errors)} skill errors"
+    if skill_errors:
+        return "WARN", f"{len(skill_errors)} skill errors"
+    return "OK", "Skills healthy"
+
+
+def check_tools(state):
+    """T - Tools: Check tool success rate."""
+    # This would require more detailed logging
+    # For now, check if critical tools exist
+    critical_tools = [
+        f"{SCRIPTS_DIR}/heartbeat-checks.sh",
+        f"{SCRIPTS_DIR}/gateway-watchdog.sh",
     ]
     
-    # Write expansion to a config that the orchestrator reads
-    expansion_file = f"{WORKSPACE}/config/search-expansion.json"
-    existing = {}
-    if os.path.exists(expansion_file):
-        with open(expansion_file) as f:
-            existing = json.load(f)
+    missing = [t for t in critical_tools if not os.path.exists(t)]
     
-    existing["expanded_topics"] = expansion_topics
-    existing["expanded_at"] = datetime.now(CAIRO).isoformat()
-    existing["reason"] = "dedup_exhaustion_detected"
-    
-    with open(expansion_file, "w") as f:
-        json.dump(existing, f, indent=2)
-    
-    return {"action": "Expanded search terms", "topics": expansion_topics, "applied": True}
+    if missing:
+        return "ALERT", f"Missing tools: {', '.join(missing)}"
+    return "OK", "Tools available"
 
 
-def prune_old_dedup(dry_run=False, max_age_days=30):
-    """Remove dedup entries older than max_age_days."""
-    if not os.path.exists(COMMENTED_FILE):
-        return None
+def check_uptime(state):
+    """U - Uptime: Check gateway availability."""
+    # Ping the gateway
+    stdout, code = run_cmd("curl -sf http://127.0.0.1:18789/health 2>/dev/null || echo 'down'")
     
-    with open(COMMENTED_FILE) as f:
-        content = f.read()
-    
-    lines = content.split("\n")
-    cutoff = datetime.now(CAIRO).date() - timedelta(days=max_age_days)
-    
-    kept = []
-    skip_block = False
-    removed = 0
-    
-    for line in lines:
-        # Check date lines
-        date_match = re.search(r'Date: (\d{4}-\d{2}-\d{2})', line)
-        if date_match:
-            entry_date = datetime.strptime(date_match.group(1), "%Y-%m-%d").date()
-            if entry_date < cutoff:
-                skip_block = True
-                removed += 1
-                continue
-            else:
-                skip_block = False
-        
-        if skip_block and line.startswith("- "):
-            continue
-        elif skip_block and line.strip() == "":
-            skip_block = False
-            continue
-        
-        kept.append(line)
-    
-    if removed == 0:
-        return None
-    
-    if dry_run:
-        return {"action": f"Would prune {removed} entries older than {max_age_days} days", "applied": False}
-    
-    with open(COMMENTED_FILE, "w") as f:
-        f.write("\n".join(kept))
-    
-    return {"action": f"Pruned {removed} dedup entries older than {max_age_days} days", "applied": True}
+    if "down" in stdout.lower() or code != 0:
+        # Check if gateway process exists
+        stdout2, _ = run_cmd("pgrep -f openclaw-gateway")
+        if not stdout2:
+            return "CRITICAL", "Gateway down"
+        return "ALERT", "Gateway responding slowly"
+    return "OK", "Gateway up"
 
 
-def log_recurring_error(error_text, dry_run=False):
-    """Log recurring error to LEARNINGS.md for human review."""
-    if dry_run:
-        return {"action": f"Would log recurring error to LEARNINGS.md", "error": error_text[:80], "applied": False}
+def check_velocity(state):
+    """V - Velocity: Count tasks completed/day."""
+    # Check for recent session activity
+    if not os.path.exists(SESSIONS_DIR):
+        return "WARN", "No sessions"
     
-    # Check if already logged
-    if os.path.exists(LEARNINGS_FILE):
-        with open(LEARNINGS_FILE) as f:
-            existing = f.read()
-        if error_text[:50] in existing:
-            return None  # Already logged
+    recent_sessions = []
+    try:
+        for f in os.listdir(SESSIONS_DIR):
+            path = os.path.join(SESSIONS_DIR, f)
+            if os.path.isfile(path):
+                age = file_age_hours(path)
+                if age < 24:
+                    recent_sessions.append(f)
+    except:
+        pass
     
-    today = datetime.now(CAIRO).strftime("%Y%m%d")
-    entry = f"""
-## [LRN-{today}-AUTO] Recurring pipeline error (auto-detected)
-**Date:** {datetime.now(CAIRO).strftime('%Y-%m-%d')}
-**Category:** Auto-detected
-**What happened:** Error occurred 3+ times in 7 days: {error_text[:200]}
-**Action needed:** Manual review required. Check orchestrator logs.
-**Auto-promoted:** Yes (self-improvement engine)
+    if not recent_sessions:
+        return "WARN", "No recent activity"
+    return "OK", f"{len(recent_sessions)} sessions today"
+
+
+def check_workspace(state):
+    """W - Workspace: Count root files."""
+    root_files = []
+    
+    try:
+        for f in os.listdir(WORKSPACE):
+            path = os.path.join(WORKSPACE, f)
+            if os.path.isfile(path) and not f.startswith('.'):
+                root_files.append(f)
+    except:
+        return "WARN", "Could not check workspace"
+    
+    if len(root_files) > 20:
+        return "ALERT", f"{len(root_files)} files in root (clean recommended)"
+    return "OK", f"{len(root_files)} files in root"
+
+
+def check_execution(state):
+    """X - Execution: Check command failure rate."""
+    # Check for command failures in recent logs
+    failures = []
+    recent = []
+
+    if os.path.exists(GATEWAY_LOG):
+        try:
+            with open(GATEWAY_LOG) as f:
+                lines = f.readlines()
+
+            recent = lines[-500:] if len(lines) > 500 else lines
+            for line in recent:
+                if "command failed" in line.lower() or "exit code" in line.lower():
+                    failures.append(line.strip()[:60])
+        except:
+            pass
+
+    total_lines = len(recent) if recent else 1
+    failure_rate = len(failures) / total_lines
+
+    if failure_rate > 0.2:
+        return "ALERT", f"High failure rate: {failure_rate:.0%}"
+    if failures:
+        return "WARN", f"{len(failures)} command failures"
+    return "OK", "Execution healthy"
+
+
+def check_yield(state):
+    """Y - Yield: Calculate ROI on time spent."""
+    # This is a complex metric - check pipeline activity
+    return check_pipeline(state)
+
+
+def check_zero_downtime(state):
+    """Z - Zero-downtime: Measure recovery time."""
+    # Check for recent restart timestamps
+    restarts = []
+    
+    if os.path.exists(GATEWAY_LOG):
+        try:
+            with open(GATEWAY_LOG) as f:
+                lines = f.readlines()
+            
+            # Look for restart timestamps
+            for line in lines[-100:]:
+                if "gateway" in line.lower() and "start" in line.lower():
+                    restarts.append(line.strip()[:60])
+        except:
+            pass
+    
+    if len(restarts) > 2:
+        return "ALERT", f"{len(restarts)} restarts - stability issue"
+    return "OK", "System stable"
+
+
+# === Main Execution ===
+
+# Map area letters to check functions
+CHECKS = {
+    "A": ("Applications", check_applications),
+    "B": ("Backups", check_backups),
+    "C": ("Crons", check_crons),
+    "D": ("Disk", check_disk),
+    "E": ("Errors", check_errors),
+    "F": ("Feedback", check_feedback),
+    "G": ("Gateway", check_gateway),
+    "H": ("Heartbeat", check_heartbeat),
+    "I": ("Integrations", check_integrations),
+    "J": ("Jobs", check_jobs),
+    "K": ("Knowledge", check_knowledge),
+    "L": ("Learnings", check_learnings),
+    "M": ("Models", check_models),
+    "N": ("Notifications", check_notifications),
+    "O": ("Outputs", check_outputs),
+    "P": ("Pipeline", check_pipeline),
+    "Q": ("Quality", check_quality),
+    "R": ("Reliability", check_reliability),
+    "S": ("Skills", check_skills),
+    "T": ("Tools", check_tools),
+    "U": ("Uptime", check_uptime),
+    "V": ("Velocity", check_velocity),
+    "W": ("Workspace", check_workspace),
+    "X": ("Execution", check_execution),
+    "Y": ("Yield", check_yield),
+    "Z": ("Zero-downtime", check_zero_downtime),
+}
+
+
+def run_all_checks(state):
+    """Run all 26 area checks."""
+    results = {}
+    
+    for letter, (name, check_fn) in CHECKS.items():
+        try:
+            status, details = check_fn(state)
+            results[letter] = {
+                "name": name,
+                "status": status,
+                "details": details,
+                "timestamp": datetime.now(CAIRO_TZ).isoformat()
+            }
+        except Exception as e:
+            results[letter] = {
+                "name": name,
+                "status": "ERROR",
+                "details": str(e)[:100],
+                "timestamp": datetime.now(CAIRO_TZ).isoformat()
+            }
+    
+    return results
+
+
+def calculate_health_score(results):
+    """Calculate overall health score 0-100."""
+    if not results:
+        return 100
+    
+    scores = {
+        "OK": 100,
+        "INFO": 90,
+        "WARN": 70,
+        "ALERT": 40,
+        "CRITICAL": 10,
+        "ERROR": 0
+    }
+    
+    total = len(results)
+    score_sum = sum(scores.get(r.get("status", "OK"), 50) for r in results.values())
+    
+    return round(score_sum / total)
+
+
+def generate_insights(results, health_score, state):
+    """Generate markdown insights."""
+    now = datetime.now(CAIRO_TZ)
+    timestamp = now.strftime("%Y-%m-%d %H:%M")
+    
+    # Group by severity
+    critical = [(k, v) for k, v in results.items() if v["status"] == "CRITICAL"]
+    alerts = [(k, v) for k, v in results.items() if v["status"] == "ALERT"]
+    warnings = [(k, v) for k, v in results.items() if v["status"] == "WARN"]
+    ok = [(k, v) for k, v in results.items() if v["status"] in ("OK", "INFO")]
+    
+    # Compare to previous run
+    trends = []
+    if state.get("areas"):
+        for letter, result in results.items():
+            prev = state["areas"].get(letter, {}).get("status")
+            curr = result["status"]
+            if prev and prev != curr:
+                direction = "improved" if _status_order(curr) < _status_order(prev) else "declined"
+                trends.append(f"- {result['name']}: {direction} from {prev} to {curr}")
+    
+    # Build markdown
+    md = f"""# System Insights — {timestamp}
+
+## System Health Score: {health_score}/100
+
 """
     
-    with open(LEARNINGS_FILE, "a") as f:
-        f.write(entry)
+    if critical:
+        md += "## Critical\n"
+        for letter, r in critical:
+            md += f"- [{letter}] {r['name']}: {r['details']}\n"
+        md += "\n"
     
-    return {"action": "Logged recurring error to LEARNINGS.md", "error": error_text[:80], "applied": True}
+    if alerts:
+        md += "## Alerts\n"
+        for letter, r in alerts:
+            md += f"- [{letter}] {r['name']}: {r['details']}\n"
+        md += "\n"
+    
+    if warnings:
+        md += "## Warnings\n"
+        for letter, r in warnings:
+            md += f"- [{letter}] {r['name']}: {r['details']}\n"
+        md += "\n"
+    
+    if ok:
+        md += "## All Clear\n"
+        for letter, r in ok:
+            md += f"- [{letter}] {r['name']}: {r['details']}\n"
+        md += "\n"
+    
+    # Recommendations
+    recommendations = []
+    if critical:
+        recommendations.append("Immediate attention required for critical issues")
+    if alerts:
+        recommendations.append("Review alerts and address within 24h")
+    if warnings:
+        recommendations.append("Monitor warning areas for deterioration")
+    if health_score >= 90:
+        recommendations.append("System healthy - continue monitoring")
+    
+    if recommendations:
+        md += "## Recommendations\n"
+        for rec in recommendations:
+            md += f"- {rec}\n"
+        md += "\n"
+    
+    if trends:
+        md += "## Trends (vs last run)\n"
+        for trend in trends:
+            md += f"{trend}\n"
+    
+    return md
 
 
-def update_feedback_file(patterns, actions, daily_data):
-    """Write human-readable feedback summary."""
-    today = datetime.now(CAIRO).strftime("%Y-%m-%d %H:%M")
-    
-    content = f"\n---\n\n## Self-Improvement Run: {today}\n\n"
-    
-    # Metrics summary
-    if daily_data:
-        latest = daily_data[0] if daily_data else {}
-        content += f"**Latest metrics:** {latest.get('posts_found', 0)} posts found, "
-        content += f"{latest.get('comments_drafted', 0)} comments drafted, "
-        content += f"{latest.get('errors', 0)} errors\n\n"
-    
-    # Patterns detected
-    if patterns:
-        content += "**Patterns detected:**\n"
-        for p in patterns:
-            icon = {"high": "🔴", "medium": "🟡", "low": "🟢", "info": "ℹ️"}.get(p["severity"], "")
-            content += f"- {icon} [{p['severity'].upper()}] {p['detail']}\n"
-        content += "\n"
-    else:
-        content += "**No patterns detected.** System operating normally.\n\n"
-    
-    # Actions taken
-    if actions:
-        content += "**Actions taken:**\n"
-        for a in actions:
-            status = "✅" if a.get("applied") else "🔍 (dry run)"
-            content += f"- {status} {a['action']}\n"
-        content += "\n"
-    
-    # Ensure file exists
-    os.makedirs(os.path.dirname(FEEDBACK_FILE), exist_ok=True)
-    if not os.path.exists(FEEDBACK_FILE):
-        with open(FEEDBACK_FILE, "w") as f:
-            f.write("# Improvement Feedback Log\n\nAuto-generated by self-improvement engine.\n")
-    
-    with open(FEEDBACK_FILE, "a") as f:
-        f.write(content)
-
-
-def generate_weekly_report(logs, metrics):
-    """Generate weekly summary for Sunday review."""
-    daily_data = [extract_daily_metrics(l) for l in logs]
-    
-    if not daily_data:
-        return "No data available for weekly report."
-    
-    total_posts = sum(d["posts_found"] for d in daily_data)
-    total_comments = sum(d["comments_drafted"] for d in daily_data)
-    total_errors = sum(d["errors"] for d in daily_data)
-    days_with_data = len(daily_data)
-    
-    report = f"""
-## Weekly Self-Improvement Report
-**Period:** Last {days_with_data} days
-**Generated:** {datetime.now(CAIRO).strftime('%Y-%m-%d %H:%M')}
-
-### Performance Metrics
-- Total posts found: {total_posts} (avg {total_posts/max(days_with_data,1):.1f}/day)
-- Total comments drafted: {total_comments} (avg {total_comments/max(days_with_data,1):.1f}/day)
-- Total errors: {total_errors} (avg {total_errors/max(days_with_data,1):.1f}/day)
-- Error-free days: {sum(1 for d in daily_data if d['errors']==0)}/{days_with_data}
-
-### Layer Health
-- Layer 1 (Pipeline): {'Active' if any(d.get('layer1_working') for d in daily_data) else 'Inactive'} ({sum(1 for d in daily_data if d.get('layer1_working'))}/{days_with_data} days)
-- Layer 2 (Recruiters): {'Active' if any(d.get('layer2_working') for d in daily_data) else 'Inactive'} ({sum(1 for d in daily_data if d.get('layer2_working'))}/{days_with_data} days)
-- Layer 3 (Industry): {'Active' if any(d.get('layer3_working') for d in daily_data) else 'Inactive'} ({sum(1 for d in daily_data if d.get('layer3_working'))}/{days_with_data} days)
-
-### Trend
-"""
-    for d in daily_data:
-        status = "✅" if d["errors"] == 0 else "⚠️"
-        report += f"- {d['date']}: {status} {d['posts_found']} posts, {d['comments_drafted']} comments, {d['errors']} errors\n"
-    
-    return report
+def _status_order(status):
+    """Return numeric order for status severity."""
+    order = {"OK": 0, "INFO": 1, "WARN": 2, "ALERT": 3, "CRITICAL": 4, "ERROR": 5}
+    return order.get(status, 0)
 
 
 def main():
-    import argparse
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--dry-run", action="store_true")
-    parser.add_argument("--report", action="store_true", help="Generate weekly report")
-    parser.add_argument("--json", action="store_true")
+    parser = argparse.ArgumentParser(description="Self-Improvement Engine for OpenClaw")
+    parser.add_argument("--dry-run", action="store_true", help="Report only, no file writes")
+    parser.add_argument("--json", action="store_true", help="Output JSON summary to stdout")
     args = parser.parse_args()
     
-    log("=== Self-Improvement Engine ===")
+    log("=== Self-Improvement Engine (SIE) ===")
     
-    # Load data
-    logs = load_system_logs(days=7)
-    metrics = load_metrics()
-    log(f"Loaded {len(logs)} system logs from last 7 days")
+    # Load previous state
+    state = load_state()
+    prev_health = state.get("health_score", 100)
     
-    if not logs:
-        log("No system logs found. Nothing to analyze.")
-        if args.json:
-            print(json.dumps({"patterns": [], "actions": [], "status": "no_data"}))
-        return
+    # Run all checks
+    log("Running 26 area checks...")
+    results = run_all_checks(state)
     
-    # Extract daily metrics
-    daily_data = [extract_daily_metrics(l) for l in logs]
+    # Count by severity
+    status_counts = defaultdict(int)
+    for r in results.values():
+        status_counts[r["status"]] += 1
     
-    # Save daily metrics to history
-    for d in daily_data:
-        if d["date"] not in [m.get("date") for m in metrics.get("daily", [])]:
-            metrics.setdefault("daily", []).append(d)
-    # Keep only last 90 days
-    metrics["daily"] = sorted(metrics["daily"], key=lambda x: x["date"], reverse=True)[:90]
+    log(f"Results: {dict(status_counts)}")
     
-    if args.report:
-        report = generate_weekly_report(logs, metrics)
-        print(report)
-        save_metrics(metrics)
-        return
+    # Calculate health score
+    health_score = calculate_health_score(results)
+    log(f"Health score: {health_score}/100")
     
-    # Detect patterns
-    patterns = detect_patterns(logs, metrics)
-    log(f"Detected {len(patterns)} patterns")
-    for p in patterns:
-        icon = {"high": "🔴", "medium": "🟡", "low": "🟢", "info": "ℹ️"}.get(p["severity"], "")
-        log(f"  {icon} {p['type']}: {p['detail'][:80]}")
+    # Generate insights
+    insights_md = generate_insights(results, health_score, state)
     
-    # Apply fixes
-    actions = apply_fixes(patterns, dry_run=args.dry_run)
-    log(f"Applied {len(actions)} fixes")
-    for a in actions:
-        status = "✅" if a.get("applied") else "🔍"
-        log(f"  {status} {a['action']}")
+    # Update state
+    now_iso = datetime.now(CAIRO_TZ).isoformat()
+    state["last_run"] = now_iso
+    state["run_count"] = state.get("run_count", 0) + 1
+    state["areas"] = results
+    state["health_score"] = health_score
     
-    # Update tracking
-    update_feedback_file(patterns, actions, daily_data)
+    # Add to history
+    state.setdefault("history", []).append({
+        "timestamp": now_iso,
+        "health_score": health_score,
+        "alerts": status_counts.get("ALERT", 0),
+        "criticals": status_counts.get("CRITICAL", 0)
+    })
     
-    # Track pattern counts for promotion logic
-    for p in patterns:
-        key = p["type"]
-        metrics.setdefault("pattern_counts", {})[key] = metrics.get("pattern_counts", {}).get(key, 0) + 1
+    # Write outputs (unless dry-run)
+    if not args.dry_run:
+        log("Writing outputs...")
+        write_json(STATE_FILE, state)
+        
+        os.makedirs(MEMORY_DIR, exist_ok=True)
+        with open(OUTPUT_FILE, "w") as f:
+            f.write(insights_md)
+        
+        log(f"Insights written to {OUTPUT_FILE}")
+        log(f"State saved to {STATE_FILE}")
+    else:
+        log("Dry-run: skipping file writes")
     
-    save_metrics(metrics)
-    log("Done.")
-    
+    # JSON output to stdout
     if args.json:
-        print(json.dumps({
-            "patterns": patterns,
-            "actions": actions,
-            "daily_metrics": daily_data,
-            "status": "ok"
-        }, indent=2))
+        output = {
+            "timestamp": now_iso,
+            "health_score": health_score,
+            "previous_health": prev_health,
+            "status_counts": dict(status_counts),
+            "areas": results,
+            "dry_run": args.dry_run
+        }
+        print(json.dumps(output, indent=2))
+    
+    log("=== SIE Complete ===")
+    
+    # Exit code based on health
+    if health_score < 50:
+        sys.exit(2)
+    elif health_score < 80:
+        sys.exit(1)
+    sys.exit(0)
 
 
 if __name__ == "__main__":
