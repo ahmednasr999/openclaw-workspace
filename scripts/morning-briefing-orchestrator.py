@@ -435,6 +435,11 @@ def get_post_age_days(url):
 
 def find_posts(commented_urls, targets):
     log("Step 4: Searching LinkedIn posts (3 layers)...")
+    # Dynamic date hints for DDG freshness bias
+    from datetime import datetime
+    _now = datetime.now()
+    _year = str(_now.year)
+    _month = _now.strftime("%B")  # e.g. "March"
 
     def is_fresh(url):
         if "linkedin.com/posts/" not in url:
@@ -461,13 +466,13 @@ def find_posts(commented_urls, targets):
             break
         names = " OR ".join(f'"{c}"' for c in batch)
         # Add year to bias DDG toward recent posts
-        r = tavily_search(f'site:linkedin.com/posts ({names}) digital transformation 2026', n=8, days=10)
+        r = tavily_search(f'site:linkedin.com/posts ({names}) digital transformation {_year}', n=8, days=10)
         raw1.extend(r)
     # Also search for executive titles at target companies (multiple queries for coverage)
-    r2 = tavily_search('site:linkedin.com/posts CTO VP Director G42 Dubai Holding Talabat 2026', n=8, days=10)
+    r2 = tavily_search(f'site:linkedin.com/posts CTO VP Director G42 Dubai Holding Talabat {_year}', n=8, days=10)
     raw1.extend(r2)
     # Broader: GCC tech leaders posting about transformation
-    r3 = tavily_search('site:linkedin.com/posts CEO CTO CIO Dubai Abu Dhabi technology transformation 2026', n=8, days=10)
+    r3 = tavily_search(f'site:linkedin.com/posts CEO CTO CIO Dubai Abu Dhabi technology transformation {_month} {_year}', n=8, days=10)
     raw1.extend(r3)
     L1 = [make_post(r, "Layer 1: Pipeline Company") for r in raw1 if is_fresh(r.get("url",""))]
     # Deduplicate by URL
@@ -489,8 +494,8 @@ def find_posts(commented_urls, targets):
     log(f"  Layer 2: {len(raw2a)+len(raw2b)} raw, {len(L2)} passed filter")
 
     # Layer 3: Industry (add year for freshness bias)
-    raw3a = tavily_search('site:linkedin.com/posts digital transformation healthcare PMO GCC Saudi 2026', n=8, days=7)
-    raw3b = tavily_search('site:linkedin.com/posts CIO CTO technology strategy Dubai UAE 2026', n=8, days=7)
+    raw3a = tavily_search(f'site:linkedin.com/posts digital transformation healthcare PMO GCC Saudi {_month} {_year}', n=8, days=7)
+    raw3b = tavily_search(f'site:linkedin.com/posts CIO CTO technology strategy Dubai UAE {_year}', n=8, days=7)
     L3 = [make_post(r, "Layer 3: Industry") for r in (raw3a + raw3b) if is_fresh(r.get("url",""))]
     log(f"  Layer 3: {len(raw3a)+len(raw3b)} raw, {len(L3)} passed filter")
 
