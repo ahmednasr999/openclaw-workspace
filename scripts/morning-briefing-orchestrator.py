@@ -282,30 +282,46 @@ def read_pipeline():
 # ============================================================
 # STEP 4: LINKEDIN POSTS (Tavily)
 # ============================================================
-def tavily_search(query, n=5, days=7):
-    if not TAVILY_API_KEY:
-        log("  WARNING: No TAVILY_API_KEY")
-        return []
-    payload = json.dumps({
-        "api_key": TAVILY_API_KEY,
-        "query": query,
-        "max_results": n,
-        "topic": "news",
-        "days": days,
-        "include_answer": False,
-    }).encode()
-    req = urllib.request.Request(
-        "https://api.tavily.com/search",
-        data=payload,
-        headers={"Content-Type": "application/json"},
-        method="POST"
-    )
+def ddg_search(query, n=5):
+    """Search via DuckDuckGo (free, no API key, no quota)."""
     try:
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            return json.loads(resp.read()).get("results", [])
+        from ddgs import DDGS
+        results = DDGS().text(query, max_results=n)
+        # Normalize to Tavily-compatible format
+        return [{"title": r.get("title",""), "url": r.get("href",""), "content": r.get("body","")} for r in results]
     except Exception as e:
-        log(f"  Tavily error: {e}")
+        log(f"  DDG error: {e}")
         return []
+
+
+def tavily_search(query, n=5, days=7):
+    """Search via Tavily (primary) with DDG fallback (free)."""
+    # Try Tavily first if key available
+    if TAVILY_API_KEY:
+        payload = json.dumps({
+            "api_key": TAVILY_API_KEY,
+            "query": query,
+            "max_results": n,
+            "topic": "news",
+            "days": days,
+            "include_answer": False,
+        }).encode()
+        req = urllib.request.Request(
+            "https://api.tavily.com/search",
+            data=payload,
+            headers={"Content-Type": "application/json"},
+            method="POST"
+        )
+        try:
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                results = json.loads(resp.read()).get("results", [])
+                if results:
+                    return results
+        except Exception as e:
+            log(f"  Tavily error: {e}")
+
+    # Fallback: DuckDuckGo (free, no quota)
+    return ddg_search(query, n)
 
 
 def is_company_page(url):
