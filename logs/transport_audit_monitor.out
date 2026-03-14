@@ -1,4 +1,0 @@
-/root/.openclaw/workspace/scripts/transport_audit_monitor.py:146: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
-  now = datetime.datetime.utcnow()
-/root/.openclaw/workspace/scripts/transport_audit_monitor.py:20: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
-  return datetime.datetime.utcnow().replace(microsecond=0).isoformat() + 'Z'

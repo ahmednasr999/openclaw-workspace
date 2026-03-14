@@ -1,0 +1,43 @@
+{
+  "date": "Saturday, March 14, 2026",
+  "stats": {
+    "streak_days": 3,
+    "total_enhancements": 0,
+    "total_errors_fixed": 0
+  },
+  "operations_summary": {
+    "jobs_scanned": "qualified-jobs-2026-03-14.md: 0 qualified, 2 borderline.",
+    "linkedin_found": "1 posts across 3 layers",
+    "calendar_events": "0 today, 0 upcoming",
+    "comments_drafted": "1 by Sonnet 4.6",
+    "docs_generated": "Daily Briefing + System Log"
+  },
+  "went_right": [
+    "Calendar check completed.",
+    "Pipeline read: 66 active.",
+    "LinkedIn post found: 2026-03-14-healthcare-dt.md",
+    "LinkedIn: 1 posts across 3 layers.",
+    "Comments drafted: 1/1 by Sonnet 4.6.",
+    "Briefing JSON built.",
+    "Daily Briefing Google Doc generated."
+  ],
+  "went_wrong": [],
+  "lessons_learned": [],
+  "enhancements_applied": [],
+  "cron_health": [
+    {
+      "name": "Morning Briefing Orchestrator",
+      "status": "ok",
+      "detail": "All steps completed."
+    }
+  ],
+  "model_usage": {
+    "Sonnet 4.6": "Comment drafting: 1 comments",
+    "Orchestrator": "Python only for all other steps"
+  },
+  "tomorrow_improvements": [
+    "Monitor comment quality and relevance",
+    "Check if Layer 1 finding individual employees vs company pages"
+  ],
+  "self_improvement": {}
+}
