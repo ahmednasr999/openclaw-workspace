@@ -1,3 +1,10 @@
+---
+description: "LinkedIn posting calendar: scheduled posts, topics, images, posting days Sun-Thu"
+type: data
+topics: [linkedin-content]
+updated: 2026-03-14
+---
+
 # LinkedIn Content Calendar 2026
 
 *Last updated: 2026-02-25*

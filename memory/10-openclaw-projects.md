@@ -1,3 +1,10 @@
+---
+description: "Overview of 10 OpenClaw project ideas and their status"
+type: reference
+topics: [system-ops]
+updated: 2026-03-14
+---
+
 # 10 OpenClaw Projects
 
 *Source: Ashpreet Bedi (X/Twitter)*

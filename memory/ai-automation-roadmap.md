@@ -1,3 +1,10 @@
+---
+description: "14-product AI automation ecosystem roadmap and build priorities"
+type: strategy
+topics: [system-ops, strategy]
+updated: 2026-03-14
+---
+
 # AI Automation Roadmap
 
 *Last updated: 2026-03-05 06:37 UTC*

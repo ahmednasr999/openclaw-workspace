@@ -83,6 +83,21 @@ This rule is non-negotiable. The memory files (MEMORY.md, memory/*.md) are usele
 
 ## Critical Rules (ALL Sessions, ALL Models)
 
+### Discovery-First Gate (Skill Graph Rule)
+Before creating any new file in `memory/`, `jobs-bank/`, or `skills/`:
+1. **YAML frontmatter required:** Every new .md file must have `---` block with: `description` (~150 chars), `type` (log/data/reference/strategy/index/moc), `topics` (which MOC(s) it belongs to), `updated` (date).
+2. **MOC membership:** The file must belong to at least one MOC in `memory/mocs/`. Update the relevant MOC to include the new file.
+3. **Discoverability check:** Before writing, ask: "How will a future session find this?" If the filename and description don't make it scannable, rename.
+
+Sub-agent briefs must include: "Every new file must have YAML frontmatter with description + topics fields."
+
+MOC Index: `memory/mocs/` contains 5 Maps of Content:
+- `job-search.md` — pipeline, CVs, applications, job discovery
+- `linkedin-content.md` — content engine, calendar, engagement
+- `system-ops.md` — SIE, crons, heartbeat, infrastructure
+- `strategy.md` — goals, milestones, planning, ideas
+- `knowledge.md` — research, reference material, learnings
+
 ### Session Close: Mandatory Flush
 Before session ends or context is long (compaction risk):
 1. Update MEMORY.md with key decisions

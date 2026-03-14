@@ -1,3 +1,10 @@
+---
+description: "Research on Larry TikTok automation approach: patterns and applicability"
+type: reference
+topics: [knowledge]
+updated: 2026-03-14
+---
+
 # Larry's TikTok Automation System
 
 *Source: @oliverhenry (Oliver Henry)*

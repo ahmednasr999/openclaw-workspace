@@ -1,3 +1,10 @@
+---
+description: "Chief of Staff pattern for Claude Code: delegation, orchestration, oversight"
+type: reference
+topics: [knowledge, system-ops]
+updated: 2026-03-14
+---
+
 # My Chief of Staff, Claude Code - Jim Prosser
 
 *Source: @jimprosser (Jim Prosser, Founder Tamalpais Strategies)*

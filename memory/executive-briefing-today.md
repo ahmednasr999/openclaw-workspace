@@ -1,3 +1,10 @@
+---
+description: "Today executive intelligence briefing content and delivery status"
+type: log
+topics: [strategy]
+updated: 2026-03-14
+---
+
 ☀️ EXECUTIVE BRIEFING — Thursday, Feb 26
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 

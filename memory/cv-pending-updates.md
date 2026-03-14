@@ -1,3 +1,10 @@
+---
+description: "Approved CV changes not yet applied to master-cv-data.md, checked before any CV generation"
+type: data
+topics: [job-search]
+updated: 2026-03-14
+---
+
 # CV Pending Updates — Approved But Not Yet Applied
 
 *Last updated: 2026-02-28*

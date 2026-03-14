@@ -1,3 +1,10 @@
+---
+description: "Deep analysis of Ahmed profile: strengths, gaps, positioning recommendations"
+type: reference
+topics: [job-search, strategy]
+updated: 2026-03-14
+---
+
 # Ahmed Nasr - Executive Profile Analysis
 
 **Date:** 2026-02-15  

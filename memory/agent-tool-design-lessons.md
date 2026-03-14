@@ -1,3 +1,10 @@
+---
+description: "Lessons learned from designing agent tools: patterns, anti-patterns, best practices"
+type: reference
+topics: [knowledge, system-ops]
+updated: 2026-03-14
+---
+
 # Agent Tool Design - Claude Code Lessons
 
 *Source: @trq212 (Thariq, Claude Code team @ Anthropic)*

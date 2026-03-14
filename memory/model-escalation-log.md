@@ -1,3 +1,10 @@
+---
+description: "Log of model escalations and fallbacks: which model, why, outcome"
+type: log
+topics: [system-ops]
+updated: 2026-03-14
+---
+
 # Model Escalation Log — 7-Day Audit
 
 *Started: 2026-02-28*
