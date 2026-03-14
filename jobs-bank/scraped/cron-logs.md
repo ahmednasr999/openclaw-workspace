@@ -260,3 +260,27 @@
 - Errors: 0
 - Runtime: 478s
 - JobSpy failures: 66
+
+## 2026-03-14 06:01:25
+- Version: v2.1 (JobSpy primary)
+- Searches: 120
+- Jobs found: 145
+- Unique jobs: 89
+- Scored: 74
+- Qualified (65+): 0
+- Borderline (55-64): 2
+- Errors: 0
+- Runtime: 497s
+- JobSpy failures: 69
+
+## 2026-03-14 06:00:02
+- Version: v2.1 (JobSpy primary)
+- Searches: 120
+- Jobs found: 145
+- Unique jobs: 89
+- Scored: 74
+- Qualified (65+): 0
+- Borderline (55-64): 2
+- Errors: 0
+- Runtime: 598s
+- JobSpy failures: 69

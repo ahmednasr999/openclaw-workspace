@@ -1,0 +1,86 @@
+{
+  "date": "Saturday, March 14, 2026",
+  "summary": {
+    "priority_focus": "Job pipeline review + LinkedIn strategic engagement",
+    "scanner_status": "qualified-jobs-2026-03-14.md: 0 qualified, 2 borderline.",
+    "linkedin_status": "1 strategic posts ready to comment.",
+    "calendar_status": "No events today",
+    "pipeline_status": "66 active"
+  },
+  "todays_post": {
+    "title": "LinkedIn Post Draft \u2014 2026-03-14",
+    "content": "# LinkedIn Post Draft \u2014 2026-03-14\n\n## Status\n- [ ] Draft\n- [ ] Approved\n- [ ] Published\n\n## Post\n\n**Something to think about:**\n\nIn 2025, I led a $50M digital transformation across 15 hospitals in Saudi Arabia.\n\nThe hardest part wasn't the technology.\n\nIt was changing how 5,000 people thought about their jobs.\n\nHealthcare isn't broken. It just needs to think differently about what \"done\" looks like.\n\nIf you're in the middle of a transformation, the question isn't \"are we moving fast enough?\"\n\nIt's \"are we moving in the right direction?\"\n\nWhat's your biggest DT challenge right now?\n\n---\n\n## Metadata\n- **Theme:** Healthcare DT leadership\n- **Archetype:** Thought leadership / insight\n- **Target:** GCC healthcare executives\n- **Voice:** Ahmed's executive voice\n- **Purpose:** Positioning as healthcare DT leader\n",
+    "image_path": null,
+    "image_filename": null,
+    "github_link": "https://github.com/ahmednasr999/openclaw-workspace/blob/master/linkedin/posts/2026-03-14-healthcare-dt.md",
+    "file": "2026-03-14-healthcare-dt.md"
+  },
+  "jobs": {
+    "scanner_note": "qualified-jobs-2026-03-14.md: 0 qualified, 2 borderline.",
+    "qualified": [],
+    "borderline": [
+      {
+        "title": "Construction Project Director",
+        "company": "ARK Projects",
+        "location": "Jeddah, Makkah, Saudi Arabia",
+        "score": "58/100",
+        "link": "https://www.linkedin.com/jobs/view/4370079411"
+      },
+      {
+        "title": "Core Operations, VP",
+        "company": "State Street",
+        "location": "Riyadh, Riyadh, Saudi Arabia",
+        "score": "56/100",
+        "link": "https://www.linkedin.com/jobs/view/4381461501"
+      }
+    ],
+    "recommendation": "No new qualified roles today."
+  },
+  "linkedin": {
+    "intro": "Three-layer strategic targeting. Ready-to-post comments below.",
+    "categories": [
+      {
+        "name": "Layer 3: Industry Thought Leadership",
+        "posts": [
+          {
+            "title": "Vegas, here we come! FortifyData is heading to HIMSS GlobalHealth...",
+            "author": "Fortifydata",
+            "topic": "Ashealthcare'sdigitaltransformationaccelerates, cyber resilience is non-negotiable. Stop by our booth to see how our AI-powered platform delivers continuous asset discovery, prioritized risk remediation, automated compliance, and streamlined third-party risk...",
+            "link": "https://www.linkedin.com/posts/fortifydata_vegas-here-we-come-fortifydata-is-activity-7433208132199399424-gxvo",
+            "activity_id": "",
+            "target_layer": "Layer 3: Industry",
+            "ready_comment": "Healthcare cyber resilience isn't just an IT priority, it's a patient safety issue. At TopMed, I saw firsthand how messy things get when you're running a $50M digital transformation across 15 hospitals. That's where continuous asset discovery and automated compliance become actual lifelines for CISOs who are otherwise drowning in manual work.\n\nWhat's worked for me: finding ways to bring security and clinical teams together without adding friction. Curious how others are tackling this.",
+            "comment_angle": "Ashealthcare'sdigitaltransformationaccelerates, cyber resilience is non-negotiab"
+          }
+        ]
+      }
+    ],
+    "recommendation": "Priority: Layer 1 (pipeline targets) > Layer 2 (recruiter visibility) > Layer 3 (thought leadership)."
+  },
+  "calendar": {
+    "events": [],
+    "upcoming": [
+      "No upcoming events in next 3 days"
+    ]
+  },
+  "pipeline": {
+    "total_applications": "66 active",
+    "responses_this_week": 0,
+    "overdue": "Review follow-up dates on all 66 applications",
+    "recent": [],
+    "recommendation": "66 applications sent. Zero responses. Action: direct email follow-up on top 5 targets."
+  },
+  "engagement_radar": {
+    "status": "not_available",
+    "note": "Engagement radar runs at 9 AM Cairo. Check later if briefing runs before 9 AM."
+  },
+  "strategic_notes": [
+    "1 LinkedIn posts found with ready-to-post Sonnet-drafted comments.",
+    "Comment strategy: Layer 1 > Layer 2 > Layer 3 by ROI.",
+    "Job scanner running daily at 6 AM Cairo."
+  ],
+  "action_items": [
+    "Comment on 1 Layer 3 posts (thought leadership)",
+    "Follow up on top pipeline applications with no response"
+  ]
+}
