@@ -14453,3 +14453,12 @@
 {"timestamp": "2026-03-14T12:00:08Z", "gateway_alive": false, "active_sessions_observed": 2087, "model_health": {"last_model_seen": "MiniMax-M2.5"}, "queue_depth": 69}
 {"timestamp": "2026-03-14T12:01:08Z", "gateway_alive": false, "active_sessions_observed": 2087, "model_health": {"last_model_seen": "MiniMax-M2.5"}, "queue_depth": 69}
 {"timestamp": "2026-03-14T12:02:09Z", "gateway_alive": false, "active_sessions_observed": 2087, "model_health": {"last_model_seen": "MiniMax-M2.5"}, "queue_depth": 69}
+{"timestamp": "2026-03-14T12:03:09Z", "gateway_alive": false, "active_sessions_observed": 2087, "model_health": {"last_model_seen": "claude-opus-4-6"}, "queue_depth": 69}
+{"timestamp": "2026-03-14T12:04:10Z", "gateway_alive": false, "active_sessions_observed": 2087, "model_health": {"last_model_seen": "claude-opus-4-6"}, "queue_depth": 69}
+{"timestamp": "2026-03-14T12:05:10Z", "gateway_alive": false, "active_sessions_observed": 2087, "model_health": {"last_model_seen": "MiniMax-M2.5"}, "queue_depth": 69}
+{"timestamp": "2026-03-14T12:06:11Z", "gateway_alive": false, "active_sessions_observed": 2087, "model_health": {"last_model_seen": "claude-opus-4-6"}, "queue_depth": 69}
+{"timestamp": "2026-03-14T12:07:12Z", "gateway_alive": false, "active_sessions_observed": 2087, "model_health": {"last_model_seen": "claude-opus-4-6"}, "queue_depth": 69}
+{"timestamp": "2026-03-14T12:08:12Z", "gateway_alive": false, "active_sessions_observed": 2087, "model_health": {"last_model_seen": "claude-opus-4-6"}, "queue_depth": 69}
+{"timestamp": "2026-03-14T12:09:13Z", "gateway_alive": false, "active_sessions_observed": 2087, "model_health": {"last_model_seen": "claude-opus-4-6"}, "queue_depth": 69}
+{"timestamp": "2026-03-14T12:10:13Z", "gateway_alive": false, "active_sessions_observed": 2087, "model_health": {"last_model_seen": "claude-opus-4-6"}, "queue_depth": 69}
+{"timestamp": "2026-03-14T12:11:14Z", "gateway_alive": false, "active_sessions_observed": 2087, "model_health": {"last_model_seen": "claude-opus-4-6"}, "queue_depth": 70}
