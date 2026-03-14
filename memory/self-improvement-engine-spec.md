@@ -31,7 +31,7 @@ A background engine that monitors all OpenClaw subsystems, detects patterns, lea
 | **H**eartbeat | Check success rate | Fix or alert |
 | **I**ntegrations | API health (Gmail, LinkedIn) | Reconnect if failed |
 | **J**obs | Radar yield, quality | Tune filters |
-| **K**nowledge | Memory gaps | Fill missing context |
+| **K**nowledge | Memory gaps, GitHub Radar, skill graph | Fill missing context, scan trending repos, evaluate new skills |
 | **L**earnings | Pending items | Apply unprocessed lessons |
 | **M**odels | Usage, fallbacks | Optimize routing |
 | **N**otifications | Alert frequency | Tune cooldowns |
