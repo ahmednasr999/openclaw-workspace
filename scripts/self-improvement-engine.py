@@ -374,15 +374,108 @@ def check_jobs(state):
 
 
 def check_knowledge(state):
-    """K - Knowledge: Check memory file freshness."""
+    """K - Knowledge: Check memory file freshness + GitHub Radar evaluation."""
     memory_file = f"{WORKSPACE}/MEMORY.md"
     age = file_age_hours(memory_file)
     
+    memory_msg = ""
     if age > 168:  # 7 days
-        return "ALERT", f"MEMORY.md stale: {age/24:.0f}d"
-    if age > 72:  # 3 days
-        return "WARN", f"MEMORY.md aging: {age/24:.0f}d"
-    return "OK", f"MEMORY.md current"
+        memory_msg = f"MEMORY.md stale: {age/24:.0f}d"
+    elif age > 72:  # 3 days
+        memory_msg = f"MEMORY.md aging: {age/24:.0f}d"
+    
+    # GitHub Radar evaluation
+    radar_file = f"{WORKSPACE}/memory/github-radar.md"
+    radar_age = file_age_hours(radar_file)
+    radar_msg = ""
+    
+    # Only evaluate if radar is fresh (within 26 hours)
+    if radar_age < 26:
+        radar_result = evaluate_github_radar(radar_file)
+        radar_msg = radar_result
+    
+    # Combine messages
+    if memory_msg and radar_msg:
+        combined = f"{memory_msg}. {radar_msg}"
+    elif memory_msg:
+        combined = memory_msg
+    elif radar_msg:
+        combined = radar_msg
+    else:
+        combined = "Knowledge systems current"
+    
+    # Determine status
+    if "ALERT" in combined:
+        return "ALERT", combined
+    elif "WARN" in combined:
+        return "WARN", combined
+    return "OK", combined
+
+
+def evaluate_github_radar(radar_file):
+    """Evaluate GitHub Radar repos and generate recommendations."""
+    import urllib.request
+    
+    if not os.path.exists(radar_file):
+        return "GitHub Radar not found"
+    
+    try:
+        with open(radar_file) as f:
+            content = f.read()
+        
+        # Extract relevant repos (lines with [owner/repo])
+        repos = re.findall(r'\*\*\[([^\]]+)\]\(https://github\.com/([^\)]+)\)', content)
+        
+        if not repos:
+            return "No relevant repos in radar"
+        
+        recommendations = []
+        
+        for display_name, repo_path in repos[:3]:  # Evaluate top 3
+            # Fetch README
+            readme_urls = [
+                f"https://raw.githubusercontent.com/{repo_path}/main/README.md",
+                f"https://raw.githubusercontent.com/{repo_path}/master/README.md",
+            ]
+            
+            readme_content = ""
+            for url in readme_urls:
+                try:
+                    req = urllib.request.Request(url, headers={'User-Agent': 'OpenClaw-SIE'})
+                    with urllib.request.urlopen(req, timeout=5) as response:
+                        readme_content = response.read().decode('utf-8', errors='ignore')
+                        break
+                except:
+                    continue
+            
+            if not readme_content:
+                continue
+            
+            # Simple relevance scoring based on keywords
+            score = 0
+            relevant_keywords = ["openclaw", "claude", "mcp", "skill", "agent", "automation", "workflow", "context", "memory"]
+            for kw in relevant_keywords:
+                if kw.lower() in readme_content.lower():
+                    score += 1
+            
+            # Generate recommendation if score >= 2
+            if score >= 2:
+                # Extract description (first line)
+                first_line = readme_content.split('\n')[0][:100]
+                recommendations.append(f"{repo_path}: {first_line}")
+        
+        if recommendations:
+            # Store recommendations in a file for later reference
+            rec_file = f"{MEMORY_DIR}/sie-github-recommendations.md"
+            with open(rec_file, 'w') as f:
+                f.write(f"# GitHub Radar Recommendations — {datetime.now().strftime('%Y-%m-%d')}\n\n")
+                for i, rec in enumerate(recommendations, 1):
+                    f.write(f"{i}. {rec}\n")
+            return f"GitHub Radar: {len(recommendations)} actionable repos (see sie-github-recommendations.md)"
+        return "GitHub Radar: No high-relevance repos"
+        
+    except Exception as e:
+        return f"GitHub Radar evaluation error: {str(e)[:50]}"
 
 
 def check_learnings(state):
