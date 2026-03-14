@@ -387,6 +387,11 @@ def check_knowledge(state):
     # GitHub Radar evaluation
     radar_file = f"{WORKSPACE}/memory/github-radar.md"
     radar_age = file_age_hours(radar_file)
+    
+    # X Radar evaluation
+    x_radar_file = f"{WORKSPACE}/memory/x-radar.md"
+    x_radar_age = file_age_hours(x_radar_file)
+    
     radar_msg = ""
     
     # Only evaluate if radar is fresh (within 26 hours)
@@ -394,15 +399,22 @@ def check_knowledge(state):
         radar_result = evaluate_github_radar(radar_file)
         radar_msg = radar_result
     
+    x_radar_msg = ""
+    if x_radar_age < 26:
+        x_radar_msg = "X Radar active"
+    
     # Combine messages
-    if memory_msg and radar_msg:
-        combined = f"{memory_msg}. {radar_msg}"
-    elif memory_msg:
-        combined = memory_msg
-    elif radar_msg:
-        combined = radar_msg
-    else:
-        combined = "Knowledge systems current"
+    
+    # Combine messages
+    messages = []
+    if memory_msg:
+        messages.append(memory_msg)
+    if radar_msg:
+        messages.append(radar_msg)
+    if x_radar_msg:
+        messages.append(x_radar_msg)
+    
+    combined = ", ".join(messages) if messages else "Knowledge systems current"
     
     # Determine status
     if "ALERT" in combined:
