@@ -37,7 +37,9 @@ Map of Content for research, external knowledge, reference material, and curated
 
 ## Knowledge Subdirectories
 
-- [[../knowledge/]] — deep knowledge files and content strategy
+- [[../knowledge/content-skill-graph.md]] — multi-platform content production via skill graph pattern
+- [[../knowledge/content-strategy.md]] — content strategy frameworks and insights
+- [[../knowledge/]] — deep knowledge files
 - [[../reference/]] — reference documents
 - [[../linkedin-drafts/]] — LinkedIn draft content
 
