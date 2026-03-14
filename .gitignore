@@ -12,6 +12,11 @@ skills/visual-explainer/
 skills/ai-research-scraper/
 memory/sync-failures.log
 memory/sync-telegram-alerts.log
+
+# Large runtime logs (keep local, never push)
+logs/*.jsonl
+logs/*.log
+logs/watchdog/
 memory/*-pricing*.md
 scripts/retention*.sh
 *.tar.gz
