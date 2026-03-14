@@ -1,3 +1,10 @@
+---
+description: "Master index of all memory files with brief descriptions and locations"
+type: index
+topics: [knowledge]
+updated: 2026-03-14
+---
+
 # Memory Index
 
 Last Updated: 2026-02-16

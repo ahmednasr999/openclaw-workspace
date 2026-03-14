@@ -1,3 +1,10 @@
+---
+description: "Mission Control technical specification: API endpoints, data sources, UI components"
+type: reference
+topics: [system-ops]
+updated: 2026-03-14
+---
+
 # Mission Control — Full Build Spec
 
 *Received: 2026-02-21*

@@ -1,3 +1,10 @@
+---
+description: "Deep work topics queued for Opus-level reasoning, parked with triggers to revisit"
+type: strategy
+topics: [strategy]
+updated: 2026-03-14
+---
+
 # Pending Opus Topics
 
 *Last updated: 2026-03-08 22:10 UTC*

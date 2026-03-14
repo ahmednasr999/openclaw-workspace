@@ -1,3 +1,10 @@
+---
+description: "Curated X/Twitter posts liked or bookmarked for reference and analysis"
+type: log
+topics: [knowledge]
+updated: 2026-03-14
+---
+
 # X Likes — Ahmed Nasr (@AhmedNasr999)
 
 *Last updated: 2026-02-28 04:22 UTC*

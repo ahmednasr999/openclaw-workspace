@@ -1,3 +1,10 @@
+---
+description: "Archive of completed major milestones and wins with dates"
+type: log
+topics: [strategy]
+updated: 2026-03-14
+---
+
 # Completed Milestones
 
 *Archived from MEMORY.md on 2026-03-07. Context for future decisions.*

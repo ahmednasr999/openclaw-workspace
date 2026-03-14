@@ -1,3 +1,10 @@
+---
+description: "Index of all knowledge files and their locations across the workspace"
+type: index
+topics: [knowledge]
+updated: 2026-03-14
+---
+
 # Knowledge Index: All Connected Notes
 
 *Archived from MEMORY.md on 2026-03-07. Searchable via memory_search.*

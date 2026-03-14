@@ -1,3 +1,10 @@
+---
+description: "Record of all CVs generated: company, role, ATS score, model used, date"
+type: log
+topics: [job-search]
+updated: 2026-03-14
+---
+
 # CV History
 
 *Exported from Mission Control - Feb 21, 2026*

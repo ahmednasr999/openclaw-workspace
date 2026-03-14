@@ -1,3 +1,10 @@
+---
+description: "Recommendations for Mission Control improvements and future phases"
+type: reference
+topics: [system-ops]
+updated: 2026-03-14
+---
+
 # Mission Control 2.0 — Strategic Recommendations
 
 *Generated: 2026-03-04 | For: Ahmed Nasr*

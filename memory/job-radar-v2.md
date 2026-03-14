@@ -1,3 +1,10 @@
+---
+description: "Job Radar v2 specification: search parameters, filters, scoring rules"
+type: reference
+topics: [job-search, system-ops]
+updated: 2026-03-14
+---
+
 === Job Radar v2 — 2026-03-03 ===
 
 > Skipped URL (blocked_domain): https://ae.indeed.com/q-head-of-digital-transformation-jobs.html

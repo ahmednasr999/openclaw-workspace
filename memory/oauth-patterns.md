@@ -1,3 +1,10 @@
+---
+description: "OAuth authentication patterns and token management for connected services"
+type: reference
+topics: [system-ops]
+updated: 2026-03-14
+---
+
 # OAuth Pattern: Account Ownership Conflict
 
 ## The Problem

@@ -1,3 +1,10 @@
+---
+description: "SIE-generated insights: system health findings, improvement suggestions, compound learnings"
+type: log
+topics: [system-ops]
+updated: 2026-03-14
+---
+
 # System Insights — 2026-03-14 07:01
 
 ## System Health Score: 98/100

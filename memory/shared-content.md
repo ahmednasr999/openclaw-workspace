@@ -1,3 +1,10 @@
+---
+description: "Content shared by Ahmed for analysis: articles, posts, links with notes"
+type: log
+topics: [knowledge]
+updated: 2026-03-14
+---
+
 # Content to Analyze
 
 ## 2026-02-21

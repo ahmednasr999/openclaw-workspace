@@ -1,3 +1,10 @@
+---
+description: "Current financial overview: subscription costs, model spend, budget tracking"
+type: data
+topics: [strategy]
+updated: 2026-03-14
+---
+
 # Financial Snapshot: AI Infrastructure
 
 *Last updated: 2026-03-05 06:37 UTC*

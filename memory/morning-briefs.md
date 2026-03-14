@@ -1,3 +1,10 @@
+---
+description: "Archive of daily executive intelligence briefings delivered to Ahmed"
+type: log
+topics: [strategy]
+updated: 2026-03-14
+---
+
 === Morning Brief - 2026-02-25 07:19 AM ===
 
 ## Job Radar (from Tavily)

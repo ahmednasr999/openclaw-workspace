@@ -1,3 +1,10 @@
+---
+description: "Job Radar results from March 3, 2026 morning run"
+type: log
+topics: [job-search]
+updated: 2026-03-14
+---
+
 # Job Radar — GCC Executive Roles — Mar 3, 2026 (7 AM Cairo / 5 AM UTC)
 
 **Cron ID:** job-radar-gcc-daily-0001

@@ -1,3 +1,10 @@
+---
+description: "Analysis of running a 24/7 AI company for $50/month: architecture and economics"
+type: reference
+topics: [knowledge, strategy]
+updated: 2026-03-14
+---
+
 # 24/7 AI Company for $50/Month
 
 ziwenxu_*Source: @ (Ziwen, building Hypercho)*
