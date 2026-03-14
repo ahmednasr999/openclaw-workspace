@@ -1,13 +1,10 @@
 {
-  "date": "2026-03-13",
-  "pipeline_count": 89,
-  "interview_count": 1,
-  "active_tasks": 77,
-  "content_scheduled": 31,
-  "recruiters_responded": 1,
+  "date": "2026-03-14",
+  "pipeline_count": 0,
+  "interview_count": 0,
+  "active_tasks": 0,
+  "content_scheduled": 0,
+  "recruiters_responded": 0,
   "jobs_scouted": 0,
-  "stale_sources": [
-    "linkedin_content_calendar.md (155h old)",
-    "GOALS.md (190h old)"
-  ]
+  "stale_sources": []
 }

@@ -56,3 +56,4 @@
 2026-03-13 | https://www.linkedin.com/posts/encorainc_how-agentic-ai-will-reshape-engineering-workflows-activity-7435348423752695808-ktDL | Encorainc | Agentic AI Reshapes Engineering Workflows | Encora Inc.... | | Layer 1: Pipeline Company
 2026-03-13 | https://www.linkedin.com/posts/ankushbitspilani_vectorising-the-enterprise-why-2026-is-year-activity-7435641495765905408-5JB0 | Ankushbitspilani | 2026: Tipping Point for Intelligent Data Platforms with ... | Layer 1: Pipeline Company
 2026-03-13 | https://www.linkedin.com/posts/michael-meegan-98139b98_executivesearch-leadershiphiring-ksa-activity-7436328660585906177-hySb | Michael Meegan 98139B98 | #executivesearch #leadershiphiring #ksa #uae #gcc #vision203 | Layer 2: Recruiter
+2026-03-14 | https://www.linkedin.com/posts/fortifydata_vegas-here-we-come-fortifydata-is-activity-7433208132199399424-gxvo | Fortifydata | Vegas, here we come! FortifyData is heading to HIMSS GlobalH | Layer 3: Industry

@@ -955,17 +955,47 @@ def generate_improvement_prompt(results, health_score, state, improvement_log_co
                 snippet = lrn[:200].strip()
                 prompt += f"- {snippet}...\n"
     
+    # System context for smarter suggestions
+    prompt += """
+## System Context
+Current setup:
+- 4 AM: SIE health check + improvements (YOU ARE HERE)
+- 6 AM: Daily briefing (news, search, insights)
+- 9 AM: LinkedIn engagement radar (19 GCC influencers)
+- MiniMax M2.5 for crons, Opus/Sonnet for main, GPT-5.4 for coding
+- Camoufox for browser automation
+- GOG for Gmail
+- Composio for LinkedIn posting
+
+Active capabilities:
+- Job radar with ATS scoring
+- LinkedIn auto-posting
+- Company dossier builder
+- YouTube intelligence
+- SIE (self-improvement engine)
+
+Gaps to consider:
+- No video content generation (just installed Medeo, untested)
+- Swipefile not built (conflict with daily briefing)
+- No automatic CV generation trigger
+- No interview prep automation
+"""
+    
     prompt += """
 ## Task
-Generate 3-5 actionable improvement suggestions ranked HIGH/MED/LOW.
+Generate 3-5 system improvement suggestions (not health warnings). Focus on:
+- NEW automations to build
+- Ways to make the system SMARTER
+- Performance optimizations
+- New capabilities to add
+
 Each must have:
-- Area tag (letter + name)
+- Area tag (letter + name)  
 - Description
-- Rationale grounded in data above
+- Rationale
 - Concrete action step
 
-Max 5 suggestions. Never repeat pending suggestions.
-Format output as:
+Format:
 - [HIGH/MED/LOW] [Area] Description. Action: concrete step.
 """
     
@@ -993,13 +1023,141 @@ def run_phase5(results, health_score, state):
     
     log(f"Improvement prompt written to {PROMPT_FILE}")
     
+    # Generate comprehensive suggestions based on system audit
+    suggestions = []
+    
+    # === AUDIT: What capabilities exist ===
+    # Medeo removed by Ahmed - do not suggest
+    medeo_exists = False
+    
+    files_and_dirs = {
+        "sie": "/root/.openclaw/workspace/scripts/self-improvement-engine.py",
+        "youtube": "/root/.openclaw/workspace/scripts/youtube-intel.py",
+        "radar": "/root/.openclaw/workspace/scripts/linkedin-engagement-radar.py",
+        "dossier": "/root/.openclaw/workspace/scripts/auto-dossier.py",
+        "ats": "/root/.openclaw/workspace/scripts/ats-scorer.py",
+        "job_scout": "/root/.openclaw/workspace/scripts/job-scout.py",
+        "briefing": "/root/.openclaw/workspace/scripts/daily-briefing.py",
+        "heartbeat": "/root/.openclaw/workspace/scripts/heartbeat-checks.sh",
+    }
+    
+    existing = {k: os.path.exists(v) for k, v in files_and_dirs.items()}
+    
+    # === SUGGESTION ENGINE ===
+    
+    # 1. Video Content (if Medeo exists but no video cron)
+    if medeo_exists:
+        suggestions.append("### 20260314-001 | [HIGH] [O] Auto-Video for LinkedIn\n"
+            "- **Area:** O (Outputs)\n"
+            "- **Description:** Medeo video skill installed but unused. Could generate 1 video/week for LinkedIn.\n"
+            "- **Rationale:** Video content = 3x engagement on LinkedIn. Would automate content creation.\n"
+            "- **Action:** Build `scripts/auto-linkedin-video.py` + weekly cron")
+    
+    # 2. Job Enrichment (if YouTube + dossier exist)
+    if existing["youtube"] and existing["dossier"]:
+        suggestions.append("### 20260314-002 | [HIGH] [J] Job Company Intelligence\n"
+            "- **Area:** J (Jobs)\n"
+            "- **Description:** YouTube intel + dossier builder exist but disconnected.\n"
+            "- **Rationale:** Could auto-enrich job applications with company earnings calls, news, insights.\n"
+            "- **Action:** Create `scripts/job-enrichment.py` to combine YouTube + dossier data")
+    
+    # 3. Interview Prep Automation
+    if existing["ats"] and not os.path.exists("/root/.openclaw/workspace/scripts/interview-prep.py"):
+        suggestions.append("### 20260314-003 | [MED] [P] Interview Prep Generator\n"
+            "- **Area:** P (Pipeline)\n"
+            "- **Description:** ATS scores jobs but no interview prep automation.\n"
+            "- **Rationale:** When interview scheduled, could auto-generate: company research, STAR stories, questions to ask.\n"
+            "- **Action:** Build `scripts/interview-prep.py` triggered by pipeline stage change")
+    
+    # 4. Smarter Engagement Radar
+    if existing["radar"] and not os.path.exists("/root/.openclaw/workspace/scripts/engagement-responder.py"):
+        suggestions.append("### 20260314-004 | [MED] [Q] Auto-Comment on Influencer Posts\n"
+            "- **Area:** Q (Quality)\n"
+            "- **Description:** Radar finds posts but doesn't engage. Could auto-comment on top posts.\n"
+            "- **Rationale:** GCC healthcare executives post daily. Auto-commenting builds visibility.\n"
+            "- **Action:** Build `scripts/engagement-responder.py` using LLM to generate comments")
+    
+    # 5. Morning Briefing Enhancement
+    if existing["briefing"] and not os.path.exists("/root/.openclaw/workspace/scripts/briefing-visual.py"):
+        suggestions.append("### 20260314-005 | [MED] [N] Visual Morning Brief\n"
+            "- **Area:** N (Notifications)\n"
+            "- **Description:** Briefing is text-only. Could generate summary card/image.\n"
+            "- **Rationale:** Visual brief = faster consumption, better engagement.\n"
+            "- **Action:** Add `scripts/briefing-visual.py` to generate PNG summary")
+    
+    # 6. Self-Healing Gateway
+    if existing["heartbeat"] and not os.path.exists("/root/.openclaw/workspace/scripts/gateway-healer.py"):
+        suggestions.append("### 20260314-006 | [LOW] [G] Auto-Restart Gateway\n"
+            "- **Area:** G (Gateway)\n"
+            "- **Description:** Heartbeat checks health but doesn't fix. Gateway could hang.\n"
+            "- **Rationale:** Auto-restart on failure = zero-downtime. Like Craig Hewitt's watchdog.\n"
+            "- **Action:** Build `scripts/gateway-healer.py` + 5-min cron to check and restart")
+    
+    # 7. CV Version History
+    if not os.path.exists("/root/.openclaw/workspace/.cv-history"):
+        suggestions.append("### 20260314-007 | [LOW] [A] CV Version Control\n"
+            "- **Area:** A (Applications)\n"
+            "- **Description:** No CV version history. Can't track what changed.\n"
+            "- **Rationale:** Would help when recruiter asks what's different from last version\n"
+            "- **Action:** Add `.cv-history/` folder + auto-commit on each CV generation")
+    
+    # 8. Skill Auto-Discovery
+    if not os.path.exists("/root/.openclaw/workspace/scripts/skill-discoverer.py"):
+        suggestions.append("### 20260314-008 | [LOW] [S] New Skill Radar\n"
+            "- **Area:** S (Skills)\n"
+            "- **Description:** No auto-discovery of new OpenClaw skills from ClawHub.\n"
+            "- **Rationale:** New skills drop weekly. Could auto-scan and suggest relevant ones.\n"
+            "- **Action:** Build `scripts/skill-discoverer.py` + weekly cron to check ClawHub")
+    
+    # 9. Transcript Fetcher (YouTube)
+    if existing["youtube"] and not os.path.exists("/root/.openclaw/workspace/scripts/transcript-fetcher.py"):
+        suggestions.append("### 20260314-009 | [LOW] [K] YouTube Transcript Auto-Save\n"
+            "- **Area:** K (Knowledge)\n"
+            "- **Description:** YouTube intel runs but transcripts not saved consistently.\n"
+            "- **Rationale:** Transcripts = searchable knowledge base for company research.\n"
+            "- **Action:** Enhance youtube-intel.py to save transcripts to `memory/youtube-transcripts/`")
+    
+    # 10. Predictive Health
+    if existing["sie"] and not os.path.exists("/root/.openclaw/workspace/scripts/predictive-health.py"):
+        suggestions.append("### 20260314-010 | [LOW] [M] Predictive Failure Detection\n"
+            "- **Area:** M (Models)\n"
+            "- **Description:** SIE sees current state but not trends. Could predict failures.\n"
+            "- **Rationale:** Track disk growth, session bloat, cron failures over time. ML = early warning.\n"
+            "- **Action:** Add trend analysis to SIE: linear regression on history data")
+    
+    # 11. Chart Generation (just demonstrated)
+    if not os.path.exists("/root/.openclaw/workspace/scripts/chart-generator.py"):
+        suggestions.append("### 20260314-011 | [MED] [N] Auto-Chart Generation\n"
+            "- **Area:** N (Notifications)\n"
+            "- **Description:** Matplotlib installed, can generate charts for briefings/insights.\n"
+            "- **Rationale:** Visual data beats text. Could auto-generate: job pipeline charts, health trends, model usage graphs.\n"
+            "- **Action:** Build `scripts/chart-generator.py` for PNG charts, save to `media/`")
+    
+    # Write suggestions
+    if suggestions:
+        with open(IMPROVEMENT_LOG, "w") as f:
+            f.write("# Improvement Log\n\n*Auto-generated by SIE Phase 5. Ahmed reviews and approves.*\n\n## Active Suggestions\n\n")
+            for s in suggestions:
+                f.write(s + "\n\n")
+            f.write("\n## Implemented\n(none yet)\n\n## Archived\n(none yet)\n")
+        log(f"Generated {len(suggestions)} system improvements")
+    
+    # Write suggestions to improvement log if new
+    if suggestions and "(waiting for next" in improvement_log_content:
+        with open(IMPROVEMENT_LOG, "w") as f:
+            f.write("# Improvement Log\n\n*Auto-generated by SIE Phase 5. Ahmed reviews and approves.*\n\n## Active Suggestions\n\n")
+            for s in suggestions:
+                f.write(s + "\n\n")
+            f.write("\n## Implemented\n(none yet)\n\n## Archived\n(none yet)\n")
+        log(f"Generated {len(suggestions)} system improvements")
+    
     # Update state with suggestion counts
-    suggestions = parse_improvement_log(improvement_log_content)
+    parsed = parse_improvement_log(improvement_log_content)
     state["suggestions"] = {
-        "total_generated": state.get("suggestions", {}).get("total_generated", 0),
-        "implemented": len(suggestions.get("implemented", [])),
-        "expired": len(suggestions.get("archived", [])),
-        "pending": len(suggestions.get("active", []))
+        "total_generated": state.get("suggestions", {}).get("total_generated", 0) + len(suggestions),
+        "implemented": len(parsed.get("implemented", [])),
+        "expired": len(parsed.get("archived", [])),
+        "pending": len(parsed.get("active", []))
     }
     
     return prompt
@@ -1090,6 +1248,32 @@ def main():
     
     log("=== SIE Complete ===")
     
+    # Send Telegram notification
+    try:
+        # Read from insights.md
+        insights_path = Path("memory/insights.md")
+        if insights_path.exists():
+            content = insights_path.read_text()
+            health_match = re.search(r'Health Score: (\d+)/100', content)
+            warnings_match = re.search(r'## Warnings\n((?:.*\n)*)', content)
+            
+            health = health_match.group(1) if health_match else "?"
+            warnings = warnings_match.group(1).count('-') if warnings_match else 0
+            
+            msg = f"🎯 SIE — Health: {health}/100"
+            if warnings > 0:
+                msg += f"\n⚠️ {warnings} warnings"
+            
+            import subprocess
+            subprocess.run([
+                "openclaw", "message", "send",
+                "--target", "866838380",
+                "--message", msg[:500]
+            ], capture_output=True, timeout=10)
+            log("Telegram notification sent")
+    except Exception as e:
+        log(f"Notification failed: {e}")
+    
     # Exit code based on health
     if health_score < 50:
         sys.exit(2)
@@ -1100,3 +1284,31 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+def send_telegram_alert(health_score, warnings, improvements):
+    """Send Telegram notification with SIE results."""
+    import os
+    import json
+    
+    # Build message
+    msg = f"🎯 SIE Daily — Health: {health_score}/100\n\n"
+    
+    if warnings:
+        msg += "⚠️ Warnings:\n"
+        for w in warnings[:3]:
+            msg += f"  • {w}\n"
+        msg += "\n"
+    
+    if improvements:
+        msg += "💡 Top Improvements:\n"
+        for imp in improvements[:2]:
+            msg += f"  • {imp[:80]}...\n" if len(imp) > 80 else f"  • {imp}\n"
+    
+    # Write to notification queue (cron will pick up)
+    queue_file = "/root/.openclaw/workspace/.notifications/sie-daily.md"
+    os.makedirs(os.path.dirname(queue_file), exist_ok=True)
+    with open(queue_file, 'w') as f:
+        f.write(msg)
+    
+    log(f"Notification queued: {queue_file}")
+    return msg
