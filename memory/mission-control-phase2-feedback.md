@@ -1,3 +1,10 @@
+---
+description: "Ahmed feedback on Mission Control Phase 2: what works, what to fix"
+type: log
+topics: [system-ops]
+updated: 2026-03-14
+---
+
 # Mission Control Phase 2 Feedback
 
 *Feedback from NASR — 2026-02-22*

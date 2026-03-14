@@ -1,3 +1,10 @@
+---
+description: "Log of recruiter interactions, response templates, and follow-up tracking"
+type: log
+topics: [job-search]
+updated: 2026-03-14
+---
+
 # Recruiter Responses Log
 
 | Date | Company | Subject | Sender | Action |

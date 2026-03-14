@@ -1,3 +1,10 @@
+---
+description: "Content production pipeline: draft status, review queue, publishing schedule"
+type: data
+topics: [linkedin-content]
+updated: 2026-03-14
+---
+
 # Content Pipeline
 
 *LinkedIn content creation and tracking*

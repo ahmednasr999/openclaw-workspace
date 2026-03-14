@@ -1,3 +1,10 @@
+---
+description: "Memory directory README: structure, conventions, and usage rules"
+type: reference
+topics: [system-ops]
+updated: 2026-03-14
+---
+
 # memory/ — Knowledge-Only Directory
 
 ⚠️ **THIS DIRECTORY IS FOR MARKDOWN FILES ONLY**

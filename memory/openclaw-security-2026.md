@@ -1,3 +1,10 @@
+---
+description: "OpenClaw security audit findings and hardening recommendations for 2026"
+type: reference
+topics: [system-ops]
+updated: 2026-03-14
+---
+
 # 10 Best OpenClaw Projects to Build in 2026
 
 *Source: Ihtesham Ali (X/Twitter)*

@@ -1,3 +1,10 @@
+---
+description: "Summary of most recent session: what was discussed, open threads, key decisions"
+type: log
+topics: [system-ops]
+updated: 2026-03-14
+---
+
 # Last Session Summary
 
 **Date:** 2026-03-14 (00:01 Cairo)

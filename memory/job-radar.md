@@ -1,3 +1,10 @@
+---
+description: "Latest Job Radar output: discovered roles, ATS pre-scores, verdicts"
+type: data
+topics: [job-search]
+updated: 2026-03-14
+---
+
 # Job Radar v4: 2026-03-12
 
 *Generated: 2026-03-12 06:00 UTC*

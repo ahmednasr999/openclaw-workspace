@@ -1,3 +1,10 @@
+---
+description: "LinkedIn job scout results: camofox-scraped roles with ATS scores and verdicts"
+type: data
+topics: [job-search]
+updated: 2026-03-14
+---
+
 # LinkedIn Job Scout (Camofox) - 2026-03-07 08:21 UTC
 
 > Searched 60 combinations | Found 940 unique jobs | Completed 60/60 | Duration: 807s

@@ -1,3 +1,10 @@
+---
+description: "Proposed updates to master CV data: new achievements, rewordings, additions"
+type: strategy
+topics: [job-search]
+updated: 2026-03-14
+---
+
 # Master CV Update Proposal — Mar 10, 2026
 # Based on pattern analysis across 31 tailored CVs
 

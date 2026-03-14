@@ -1,3 +1,10 @@
+---
+description: "SIE specification: 26 improvement areas (A-Z), scoring, cron triggers, output format"
+type: reference
+topics: [system-ops]
+updated: 2026-03-14
+---
+
 # Self-Improvement Engine (SIE) — Draft Spec
 
 **Date:** 2026-03-13

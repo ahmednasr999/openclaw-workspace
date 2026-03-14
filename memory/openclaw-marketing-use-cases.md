@@ -1,3 +1,10 @@
+---
+description: "Marketing use cases for OpenClaw: positioning, messaging, target audience"
+type: reference
+topics: [knowledge]
+updated: 2026-03-14
+---
+
 # OpenClaw Marketing & Sales Use Cases
 
 *Source: @irabukht (Ira Bodnar)*

@@ -1,3 +1,10 @@
+---
+description: "Job application pipeline tracker: all applications, stages, follow-up dates"
+type: data
+topics: [job-search]
+updated: 2026-03-14
+---
+
 # Job Pipeline — Active Applications & Interviews
 
 *Last Updated: 2026-02-27 15:05 UTC*

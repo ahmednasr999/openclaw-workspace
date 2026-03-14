@@ -1,3 +1,10 @@
+---
+description: "ATS optimization best practices: keyword density, formatting, scoring methodology"
+type: reference
+topics: [job-search]
+updated: 2026-03-14
+---
+
 # ATS Best Practices — Enhanced Edition 🎯
 
 ## 1. Format (Non-Negotiable)

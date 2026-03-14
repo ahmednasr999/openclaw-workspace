@@ -1,3 +1,10 @@
+---
+description: "Digital citadel concept: security architecture and data protection strategy"
+type: reference
+topics: [system-ops]
+updated: 2026-03-14
+---
+
 # My AI Agent Lost Its Identity
 
 *Source: Brad Mills (X/Twitter)*

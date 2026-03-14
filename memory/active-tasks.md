@@ -1,3 +1,10 @@
+---
+description: "Current urgent and in-progress tasks, build queue, and recurring work items"
+type: index
+topics: [strategy]
+updated: 2026-03-14
+---
+
 # Active Tasks
 
 *Last updated: 2026-03-14 00:01 Cairo*
@@ -12,9 +19,9 @@
 
 - [x] **Google Docs OAuth Fix:** ✅ FIXED. Backup client (583018818639) active. All services authenticated.
 - [x] **Morning Briefing Cron:** Fixed: scanner labels, LLM via gateway, append mode. Tavily replacement pending.
-- [ ] **Apify Integration:** For LinkedIn engagement metrics. Pending Ahmed go-ahead.
-- [ ] **Comment Drafting:** Wire Sonnet 4.6 as sub-agent in cron to write ready-to-post LinkedIn comments.
-- [ ] **Wire Composio into LinkedIn content pipeline** — Sunday Mar 15 reminder set.
+- [x] **Apify Integration:** ✅ DROPPED - Not needed for job search.
+- [x] **Comment Drafting:** ✅ DROPPED - X engagement not part of strategy.
+- [x] **Wire Composio into LinkedIn content pipeline:** ✅ DROPPED - Camoufox works fine.
 
 ## 🔴 URGENT
 

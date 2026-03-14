@@ -1,3 +1,10 @@
+---
+description: "Setup guide for OpenClaw Codex swarm: multi-agent parallel execution"
+type: reference
+topics: [system-ops]
+updated: 2026-03-14
+---
+
 # OpenClaw + Codex Agent Swarm - Elvis's Setup
 
 *Source: @elvissun (Elvis, building PR stack)*

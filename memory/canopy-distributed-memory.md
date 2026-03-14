@@ -1,3 +1,10 @@
+---
+description: "Research on Canopy distributed memory system for AI agents"
+type: reference
+topics: [knowledge, system-ops]
+updated: 2026-03-14
+---
+
 # Canopy - Distributed Memory for Agents
 
 *Source: @opencanopyai*

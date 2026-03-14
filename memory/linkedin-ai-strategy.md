@@ -1,3 +1,10 @@
+---
+description: "LinkedIn AI-powered engagement and growth strategy"
+type: strategy
+topics: [linkedin-content, strategy]
+updated: 2026-03-14
+---
+
 # LinkedIn & AI Visibility Strategy
 
 *Source: Ashpreet Bedi*

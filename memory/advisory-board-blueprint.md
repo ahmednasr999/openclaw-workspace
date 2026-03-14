@@ -1,3 +1,10 @@
+---
+description: "AI advisory board architecture: 8 expert personas, briefing engine, weekly synthesis"
+type: reference
+topics: [system-ops, strategy]
+updated: 2026-03-14
+---
+
 # Business Advisory Board: Implementation Blueprint
 
 *Created: 2026-03-01 | Status: Ready for Review*

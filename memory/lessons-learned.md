@@ -1,3 +1,10 @@
+---
+description: "Operational lessons learned from failures, corrections, and process improvements"
+type: reference
+topics: [system-ops, knowledge]
+updated: 2026-03-14
+---
+
 # Lessons Learned
 
 - 2026-02-26: **Never ask Ahmed for information he already shared — ever.** He has a powerful memory system. Search memory, knowledge bank, and session history BEFORE asking. If it was shared, find it. Only ask if genuinely not found after exhausting all sources.

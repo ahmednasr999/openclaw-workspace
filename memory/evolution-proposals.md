@@ -1,3 +1,10 @@
+---
+description: "System evolution proposals: suggested architectural changes and upgrades"
+type: strategy
+topics: [system-ops]
+updated: 2026-03-14
+---
+
 # Evolution Proposals
 
 *Nightly scan generates proposals. Ahmed approves/rejects. Approved items get implemented.*

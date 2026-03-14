@@ -1,3 +1,10 @@
+---
+description: "Notes on skill shaping methodology: how to design and improve OpenClaw skills"
+type: reference
+topics: [knowledge, system-ops]
+updated: 2026-03-14
+---
+
 # Shaping Skills
 
 *Source: rjs/shaping-skills (GitHub)*

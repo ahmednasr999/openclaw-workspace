@@ -1,3 +1,10 @@
+---
+description: "Research note on agentic AI: definitions, patterns, market landscape"
+type: reference
+topics: [knowledge]
+updated: 2026-03-14
+---
+
 # What is Agentic AI? - Comprehensive Guide
 
 *Source: @heygurisingh (Guri Singh, AI Educator)*

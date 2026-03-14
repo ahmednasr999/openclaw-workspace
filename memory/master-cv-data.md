@@ -1,3 +1,10 @@
+---
+description: "Master CV source data: all roles, achievements, metrics, certifications for tailoring"
+type: data
+topics: [job-search]
+updated: 2026-03-14
+---
+
 # Ahmed Nasr - Master CV Data (Source of Truth)
 
 **Last Updated:** 2026-03-10

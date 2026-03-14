@@ -1,3 +1,10 @@
+---
+description: "Log of daily new ideas proposed to Ahmed per Non-Negotiable #4"
+type: log
+topics: [strategy]
+updated: 2026-03-14
+---
+
 | 2026-03-08 | Nuxera.AI meeting prep: research 3 HealthTech AI case studies (ROI metrics, implementation timelines) to bring to meeting. Positions Ahmed as strategic thinker, not just PM. | New today |
 
 | Date | Idea | Status |

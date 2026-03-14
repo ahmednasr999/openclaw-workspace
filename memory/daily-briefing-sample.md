@@ -1,3 +1,10 @@
+---
+description: "Sample daily briefing format for reference and quality comparison"
+type: reference
+topics: [system-ops]
+updated: 2026-03-14
+---
+
 # Daily Briefing - Thursday March 12, 2026
 
 ---

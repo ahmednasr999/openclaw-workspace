@@ -1,3 +1,10 @@
+---
+description: "Mission Control dashboard concept: design goals, architecture, feature set"
+type: reference
+topics: [system-ops]
+updated: 2026-03-14
+---
+
 # If You Have AI Agents, You Need Mission Control
 
 *Source: (Shared by user)*

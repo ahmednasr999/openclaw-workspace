@@ -1,3 +1,10 @@
+---
+description: "Framework for agentic AI maturity levels and capability tiers"
+type: reference
+topics: [knowledge]
+updated: 2026-03-14
+---
+
 # 5 Levels of Agentic Software
 
 *Source: Ashpreet Bedi (X/Twitter)*

@@ -1,3 +1,10 @@
+---
+description: "Job Radar results from March 1, 2026: roles discovered and scored"
+type: log
+topics: [job-search]
+updated: 2026-03-14
+---
+
 # Job Radar — March 1, 2026, 5:08 AM Cairo
 
 ## Email Scan Summary (24 hours)

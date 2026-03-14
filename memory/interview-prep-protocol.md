@@ -1,3 +1,10 @@
+---
+description: "Interview preparation framework: research checklist, question bank, practice protocol"
+type: reference
+topics: [job-search]
+updated: 2026-03-14
+---
+
 # Interview Prep Protocol
 
 *Standardized approach for any executive interview*
