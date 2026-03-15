@@ -68,30 +68,24 @@ EXEC_WORDS = ["chief","cto","cio","cdo","coo","cso","vp ","vice president",
               "director","head of","svp","senior director","managing director",
               "executive director","program director","principal"]
 
-# Domain filter: must relate to DT/Tech/PMO (stricter)
-DOMAIN_WORDS = ["digital transformation","digital ","technology","it ","information technology",
-                "pmo","program management","project management","chief technology",
-                "chief information","innovation","ai ","artificial intelligence",
-                "data ","analytics","cyber security","cloud ","devops","software",
-                "engineering","tech ","ict ","it infrastructure","it management",
-                "systems ","infrastructure","data center","machine learning"]
+# Domain filter: must relate to DT/Tech/PMO (balanced)
+DOMAIN_WORDS = ["digital","technology","it ","information","pmo","program","project",
+                "transformation","innovation","ai","data","strategy","cyber",
+                "cloud","operations","infrastructure","engineering","tech",
+                "ict ","software","systems"]
 
-# Hard skip: clearly irrelevant
+# Hard skip: clearly irrelevant (non-tech executive roles)
 SKIP_WORDS = ["sales","marketing","hr ","human resources","recruit","account executive",
               "accountant","beauty","fashion","restaurant","hospitality","nurse",
               "doctor","physician","clinical","dental","chef","food","beverage",
               "real estate","broker","supply chain","logistics","secretary",
               "coordinator","specialist","intern","trainee","assistant","admin",
               "recruiter","talent acquisition","web3","crypto","blockchain",
-              # Non-tech executive roles
-              "fundraising","development","cfo","finance","financial","budget",
-              "residences","housing","residential","construction","civic",
-              "operations manager","operational","facility","procurement",
-              "legal","compliance","risk","audit","investment","revenue",
-              "revenue ","revenue,","business development","partnerships",
-              "education","academic","school","university","admission",
-              "medical","healthcare","clinical","patient","hospital",
-              "customer success","client services","content","creative",
+              # Non-tech executive roles to skip
+              "fundraising","cfo ","finance ","financial","budget","residences",
+              "housing","construction","facility","procurement","legal","compliance",
+              "risk ","audit","investment","partnerships","education","academic",
+              "medical","healthcare","patient","hospital","content ","creative",
               "communications","pr ","public relations","social media"]
 
 # ===================== FILTER =====================
