@@ -562,3 +562,34 @@ Source: @linuxopsys on X - github.com/gurgeous/tennis
 - Niche terminal tool
 - Not directly relevant to current workflows
 
+
+---
+
+## AI Agency - Multi-Agent Company Structure (Mar 15, 2026)
+
+Source: @gregisenberg on X - viral tweet about AI agency with 10K+ stars
+
+### The Concept
+Structure AI agents like a company with specialized roles instead of one big agent doing everything.
+
+### Agent Departments
+| Department | Agents |
+|------------|--------|
+| Engineering | 7 (frontend, backend, mobile, AI, devops, prototyping, senior) |
+| Design | 7 (UI/UX, research, architecture, branding, visual, image gen) |
+| Marketing | 8 (growth hacking, content, Twitter, TikTok, etc.) |
+| Product | 3 (sprint, trend research, feedback) |
+| PM | 5 (production, coordination, operations, experimentation) |
+| Testing | 7 (QA, performance, API, quality) |
+| Support | 6 (customer service, analytics, finance, legal) |
+| Spatial Computing | 6 (XR, VisionOS, WebXR, etc.) |
+| Specialized | 6 (multi-agent orchestration, data, sales) |
+
+### Key Insight
+"Instead of one big AI agent trying to do everything, structure it more like a company - specialized agents, clear responsibilities, workflows between them."
+
+### For Our Setup
+- Directly relevant to ExamGenius architecture
+- Matches our planned structure: Graph Builder → Persona → Simulation → Report
+- ATC pattern also aligns: conflict prediction, load-aware routing
+
