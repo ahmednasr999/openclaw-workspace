@@ -201,3 +201,28 @@ Source: github.com/obra/superpowers - Jesse's agentic software development metho
 - Two-stage review: spec compliance first, then quality
 - Mandatory verification before declaring success
 
+
+---
+
+## Boris Cherny's Claude Code Workflow (Mar 15, 2026)
+
+Source: @NainsiDwiv50980 on X - Boris Cherny (creator of Claude Code)
+
+### The Workflow
+- Runs 10-15 parallel Claude sessions daily (5 in terminal + 5-10 on web)
+- All shipping code simultaneously
+- Every mistake → team adds a rule so it NEVER happens again
+- Boris: "After every correction, end with: Update your CLAUDE.md so you don't make that mistake again"
+
+### The Key Insight
+Claude writes rules for itself. The longer you use it, the smarter it gets on YOUR codebase.
+
+### NASR Adaptation
+- After every correction, explicitly update LEARNINGS.md with the rule
+- Make corrections explicit and permanent
+- This is already what we do with LEARNINGS.md - make it mandatory after every error
+
+### Stats
+- Claude Code: 4% of ALL public GitHub commits
+- Boris hasn't written SQL in 6+ months (Claude pulls BigQuery via CLI)
+
