@@ -1,7 +1,71 @@
-# ExamGenius Implementation Plan
+# ExamGenius Implementation Plan (REVISED: Build Once Architecture)
 
 **Based on:** ExamGenius BRD v1.0 (March 2026)
 **Goal:** Build AI-powered examination platform for international schools in Egypt
+**Key Change:** Build the AI engine once, run locally forever (86% cost savings)
+
+---
+
+## Build Once Architecture (KEY STRATEGIC CHANGE)
+
+### Why This Matters
+- BRD originally estimated $30K Year 1 → $300K Year 3 in API costs
+- "Build Once" approach: ~$10K one-time training, then pennies per question
+- **Total Year 3 AI cost: ~$30-40K (vs $300K) = 85% reduction**
+
+### How It Works
+1. **Year 1:** Use OpenAI API to generate thousands of questions
+2. **Year 1-2:** Accumulate question bank with quality scores (human-validated)
+3. **Phase 3 (v1.5):** Fine-tune Llama 7B/13B on your question bank
+4. **Year 2+:** Run locally on your infrastructure
+5. **Never pay per question again**
+
+### Benefits
+- ✓ 85% lower AI costs by Year 3
+- ✓ Zero API latency (local = milliseconds)
+- ✓ No dependency on external APIs
+- ✓ Data stays in Egypt (FERPA compliance)
+- ✓ Your question bank becomes the competitive moat
+
+### Revised Financial Model
+
+| Year | Original (API) | Revised (Build Once) |
+|------|----------------|---------------------|
+| Year 1 | $30K | $35K ($25K API + $10K training) |
+| Year 2 | $120K | $20K ($15K fine-tune + $5K inference) |
+| Year 3 | $300K | $10K (inference only) |
+| **Total** | **$450K** | **$65K (86% savings)** |
+
+### Phase Changes
+
+**Phase 1 (MVP - Months 1-4):**
+- Add: Question bank quality validation workflow
+- Add: Collect 5,000+ questions for model training
+
+**Phase 2 (v1.0 - Months 5-8):**
+- Add: Begin aggregating training data (questions + quality scores)
+- Add: Test fine-tuning on small subset
+
+**Phase 3 (v1.5 - Months 9-12):**
+- REPLACE "API costs" with "Model fine-tuning"
+- Add: Fine-tune Llama 7B/13B on accumulated question bank
+- Add: Set up local inference infrastructure (GPU server in Egypt)
+- Add: A/B test local model vs API
+
+**Phase 4 (v2.0 - Year 2):**
+- Add: Full local inference deployment
+- Add: Deprecate OpenAI API (cost center eliminated)
+
+### Technical Requirements
+- **GPU server:** NVIDIA A100 or equivalent (~$15K one-time)
+- **Model:** Llama 3 8B or 13B (open source)
+- **Inference:** vLLM or Ollama for production serving
+- **Training:** LoRA fine-tuning (low compute)
+
+### Risk Mitigation
+- If fine-tuned model underperforms: Keep API as fallback
+- If GPU costs too high: Use cloud GPU (RunPod/VastAI) at $2/hr
+- If model drifts: Quarterly re-training from question bank
 
 ---
 
