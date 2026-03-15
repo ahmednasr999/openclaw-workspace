@@ -28,3 +28,10 @@ Salary: Not disclosed
 
 ## Skip Reasoning
 Strong sector and skills match (financial services digital delivery is exactly Ahmed's Network International and PaySky background). However, "Lead" level seniority is below the VP/Director target. LinkedIn shows seniority as "Not Applicable" which further suggests this may be a mid-level position. At 79%, it's close but below the 82% threshold, primarily due to seniority mismatch pulling the score down.
+
+## CV Delivered
+- Date: 2026-03-15
+- Model: opus46
+- ATS Score: 79/100
+- Key modifications: Archetype C (Digital Transformation) with financial services emphasis, led with Network International banking/payments delivery and PaySky FinTech SuperApp, TopMed title variant "Digital Transformation", emphasized mobile payments, digital banking, regulatory compliance keywords
+- PDF: Ahmed Nasr - Digital Delivery Lead - Al-Futtaim Finance.pdf

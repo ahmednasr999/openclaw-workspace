@@ -29,3 +29,10 @@ Salary: Not disclosed
 
 ## Skip Reasoning
 Two issues. First, COO is a significant seniority jump from Ahmed's current PMO & Regional Engagement Lead role. His strongest operational claim is the Delivery Hero scaling contribution, but he was Product Development Manager there, not in an operations leadership title. Second, the full JD is gated, making it impossible to confirm specific requirements. Conservative scoring at 74% reflects the title gap and uncertainty.
+
+## CV Delivered
+- Date: 2026-03-15
+- Model: opus46
+- ATS Score: 74/100
+- Key modifications: Archetype D (COO/Operations Executive), led with Talabat 233x scaling and SGH $50M multi-country transformation, TopMed title variant "Technology and Operations", emphasized operational scaling, P&L oversight, multi-market expansion, M&A integration, Lean Six Sigma
+- PDF: Ahmed Nasr - COO - Disrupt.pdf

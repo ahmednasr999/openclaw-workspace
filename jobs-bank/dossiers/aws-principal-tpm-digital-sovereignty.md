@@ -31,3 +31,10 @@ Salary: Not disclosed
 
 ## Skip Reasoning
 Role requires deep sovereign cloud and digital sovereignty domain expertise. Ahmed's program management credentials are strong, but the role is highly specialized in cloud infrastructure delivery for government data sovereignty programs. His cloud experience is at the consumer/enterprise level (AWS/Azure strategy at SGH), not at the infrastructure/sovereign-cloud level AWS requires for this Principal TPM position.
+
+## CV Delivered
+- Date: 2026-03-15
+- Model: opus46
+- ATS Score: 71/100
+- Key modifications: Archetype B (PMO/Program Governance) with cloud/regulatory emphasis, led with SGH cloud platform strategy (AWS, Health Catalyst) and NI 300+ project PMO with regulatory compliance, TopMed title variant "AI-Driven Transformation", emphasized regulatory compliance (JCI/HIMSS/MOH mapped to sovereign compliance), cloud platform strategy, government stakeholder management, data sovereignty
+- PDF: Ahmed Nasr - Principal Technical Program Manager - AWS.pdf
