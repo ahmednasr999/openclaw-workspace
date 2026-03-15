@@ -430,3 +430,34 @@ printf '\e]8;;http://example.com\e\\Link\e]8;;\e\\'
 - Could generate clickable links in terminal output
 - Not directly relevant to current workflows
 
+
+---
+
+## merjs - Zig Web Framework (Mar 15, 2026)
+
+Source: github.com/justrach/merjs - v0.1.0 release
+
+### What It Is
+- Zig-native web framework
+- File-based routing, SSR, type-safe APIs
+- WASM client interactivity
+- No Node, no npm - just `zig build serve`
+
+### The Pitch
+- Node.js frameworks drag 300MB of node_modules
+- Zig compiles to wasm32-freestanding
+- < 5ms cold start (vs 1-3s for Node)
+
+### Features
+- File-based routing
+- SSR with Zig HTTP server
+- Type-safe APIs
+- Hot reload
+- WASM client logic
+- Deploys to Cloudflare Workers
+
+### For Our Setup
+- Niche web framework
+- Not relevant to current job search work
+- Interesting for lightweight web apps
+
