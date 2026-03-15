@@ -170,3 +170,34 @@ Source: @nurijanian on X - catalogued 500+ autonomous agent sessions
 
 **Key insight:** "Confidence Mirage" is sneakiest - says verified but didn't run checks.
 
+
+---
+
+## Superpowers: Agentic Skills Framework (Mar 15, 2026)
+
+Source: github.com/obra/superpowers - Jesse's agentic software development methodology
+
+### Core Skills (Auto-Triggered)
+
+| Skill | Trigger | What It Does |
+|-------|---------|--------------|
+| brainstorming | Before writing code | Asks "what are you really trying to do?" |
+| writing-plans | After design approval | Breaks work into 2-5 min tasks with exact paths |
+| subagent-driven-development | With plan | Dispatches subagents per task, two-stage review |
+| test-driven-development | During implementation | RED-GREEN-REFACTOR cycle |
+| requesting-code-review | Between tasks | Spec compliance → code quality |
+| systematic-debugging | Debug issues | 4-phase root cause process |
+| finishing-a-development-branch | Tasks complete | Verifies tests, merge options |
+
+### Principles
+- Skills trigger automatically - no manual invocation needed
+- Mandatory workflows, not suggestions
+- Plans clear enough for "enthusiastic junior engineer"
+- Agent can work autonomously for hours
+
+### NASR Adoption Opportunities
+- Auto-trigger planning skill when Ahmed describes a feature
+- Enforce TDD in skill execution
+- Two-stage review: spec compliance first, then quality
+- Mandatory verification before declaring success
+
