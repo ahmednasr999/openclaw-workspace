@@ -27,3 +27,7 @@ Location: Dubai, UAE
 - ATS Score: 84/100
 - Key modifications: FinTech-focused summary, PaySky and Network International elevated, payments/banking keywords throughout
 - PDF: Ahmed Nasr - CTO Fintech - Flatgigs.pdf
+
+## Applied
+- Date: 2026-03-15
+- Channel: LinkedIn (direct apply)
