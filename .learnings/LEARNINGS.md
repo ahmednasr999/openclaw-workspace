@@ -397,3 +397,36 @@ Agent runs autonomously: edit → commit → run_experiment → log_experiment �
 - Could apply to optimizing job search workflows or CV generation
 - Not directly relevant but interesting for systematic improvement
 
+
+---
+
+## Terminal Hyperlinks (OSC 8) (Mar 15, 2026)
+
+Source: gist.github.com/egmontkob/eb114294efbcd5adb1944c9f3cb5feda
+
+### What It Does
+- Makes URLs clickable in terminal output
+- Uses OSC 8 escape sequence
+
+### Syntax
+```bash
+printf '\e]8;;http://example.com\e\\Link\e]8;;\e\\'
+```
+
+### Supported Terminals
+- GNOME Terminal, iTerm2, VTE-based terminals
+
+### Use Cases
+- git log → commit IDs link to GitHub
+- ls → files clickable to open in GUI
+- Bug trackers → bug IDs link to tracker
+
+### Technical Details
+- URI limit: 2083 bytes
+- Optional `id` parameter for connecting cells
+
+### For Our Setup
+- Niche terminal feature
+- Could generate clickable links in terminal output
+- Not directly relevant to current workflows
+
