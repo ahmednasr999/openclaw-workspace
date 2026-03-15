@@ -1,4 +1,4 @@
-# Sunday March 16 | TAM | PAS | Strange | CTA: C
+# Sunday March 15 | TAM | PAS | Strange | CTA: C
 
 ![Post Image](2026-03-15-linkedin-llm-image.png)
 
