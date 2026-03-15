@@ -100,8 +100,10 @@ def is_relevant(title, location=""):
         return False, "not-exec"
 
     # 2. Must relate to DT/Tech/PMO OR location is GCC (broad exec catch)
-    gcc = any(w in loc for w in ["saudi","uae","dubai","riyadh","qatar","doha",
-                                  "bahrain","kuwait","oman","abu dhabi"])
+    gcc = any(w in loc for w in ["saudi","uae","united arab emirates","dubai",
+                                  "riyadh","qatar","doha","bahrain","kuwait",
+                                  "oman","abu dhabi","jeddah","dammam","sharjah",
+                                  "ajman","muscat"])
     domain_match = any(w in t for w in DOMAIN_WORDS)
     if not domain_match and not gcc:
         return False, "no-domain"
@@ -143,13 +145,20 @@ def load_applied():
 
 def load_pipeline():
     companies = set()
+    # Non-company entries to skip from pipeline matching
+    skip_entries = {"company","none","date","applied","new","confidential",
+                    "target salary","total tracked","active interviews",
+                    "avg ats score (all cvs)","radar (no cv yet)",
+                    "day 30 cold","discovered mena","chief operating officer",
+                    "all feb 27 batch"}
     try:
         with open(PIPELINE_FILE) as f:
             for line in f:
                 m = re.search(r'\|\s*(?:☑️|~~)?\s*([A-Za-z][A-Za-z0-9\s&\(\)\.]+?)\s*(?:~~)?\s*\|', line)
                 if m:
                     c = m.group(1).strip().lower()
-                    if c and c not in ("company","none"): companies.add(c)
+                    if c and c not in skip_entries and len(c) > 3:
+                        companies.add(c)
     except FileNotFoundError:
         pass
     return companies
@@ -158,12 +167,25 @@ def is_duplicate(jid, company=""):
     if jid in _notified:
         return True
     slug = re.sub(r"[^a-z0-9]", "-", company.lower()).strip("-")
-    skip = {"confidential","undisclosed","company","unknown","nan"}
-    if slug and len(slug) > 3 and slug not in skip:
+    # Skip generic/ambiguous company names for dedup
+    skip = {"confidential","undisclosed","company","unknown","nan",
+            "confidential-careers","new","applied","date","active-interviews",
+            "target-salary","total-tracked","radar-no-cv-yet"}
+    if slug and len(slug) > 5 and slug not in skip:
+        # Exact match against applied dirs
         for app in _applied:
-            if slug in app: return True
+            if slug == app or (len(slug) > 8 and slug in app) or (len(app) > 8 and app in slug):
+                return True
+        # Stricter pipeline match: require longer strings to avoid false positives
         for pc in _pipeline:
-            if pc in slug or slug in pc: return True
+            if len(pc) < 5:
+                continue  # skip short pipeline entries like "new", "du", "fab"
+            if pc == slug:
+                return True
+            # Only do substring match if both are reasonably long
+            if len(pc) > 8 and len(slug) > 8:
+                if pc in slug or slug in pc:
+                    return True
     return False
 
 def save_notified(job):
@@ -177,7 +199,7 @@ def search(title, country):
     try:
         from jobspy import scrape_jobs
         results = scrape_jobs(
-            site_name=["linkedin", "indeed", "glassdoor", "google_jobs"],
+            site_name=["linkedin", "indeed", "glassdoor", "google"],
             search_term=title,
             location=country,
             hours_old=72,
