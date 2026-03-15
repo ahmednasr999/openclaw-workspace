@@ -364,3 +364,36 @@ Source: github.com/pasky/chrome-cdp-skill - gives AI access to live Chrome sessi
 - We use Camoufox which is similar but headless
 - If Ahmed runs OpenClaw locally with Chrome, this enables live session
 
+
+---
+
+## pi-autoresearch (Mar 15, 2026)
+
+Source: github.com/davebcn87/pi-autoresearch - autonomous experiment loop for pi
+
+### What It Does
+- Try idea → measure → keep what works → repeat forever
+- Inspired by Karpathy's autoresearch
+- Optimizes: test speed, bundle size, build times, Lighthouse scores
+
+### Components
+| Component | Purpose |
+|-----------|---------|
+| Extension | run_experiment, log_experiment tools |
+| Skill | Creates session files, starts loop |
+| Widget | Shows status above editor |
+| /autoresearch | Full dashboard |
+
+### Files Created
+- `autoresearch.md` - Session document with objective, metrics, what's tried
+- `autoresearch.sh` - Benchmark script
+- `autoresearch.jsonl` - Results log (survives restarts)
+
+### Workflow
+Agent runs autonomously: edit → commit → run_experiment → log_experiment → keep/revert → repeat
+
+### For Our Setup
+- Developer productivity concept
+- Could apply to optimizing job search workflows or CV generation
+- Not directly relevant but interesting for systematic improvement
+
