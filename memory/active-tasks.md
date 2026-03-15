@@ -15,6 +15,10 @@ updated: 2026-03-15
 
 ## 🟡 PENDING
 
+- [ ] **Fix LinkedIn Gulf Jobs Scanner** — Rate-limited (0 results from 120 searches). Reduce to ~30, add delays, fix ATS threshold 65->82, add degradation alerts.
+- [ ] **Export ExamGenius BRD to Google Docs** — Ahmed's explicit request, unfulfilled due to OAuth issues.
+- [ ] **Fix Morning Cron Sequence** — Done (6AM data, 6:30AM radar, 7:30AM briefing). Verify March 16 run.
+
 ## 🟢 Recently Completed
 
 - [x] Google Docs OAuth Fix
@@ -29,6 +33,10 @@ updated: 2026-03-15
 - [x] LinkedIn Content Engine (Live Sun-Thu)
 - [x] Telegram Messaging Resolution
 - [x] ExamGenius BRD (Partner startup project)
+- [x] Morning Cron Sequence Redesign (3AM/7AM/9AM -> 6AM/6:30AM/7:30AM)
+- [x] Google Doc Briefing Hardened (update-daily-briefing.py + learnings)
+- [x] SIE Cron Telegram Delivery Added
+- [x] Executive Intelligence Briefing Fixed + Disabled (redundant with morning briefing)
 
 ## 🟢 Recurring
 
