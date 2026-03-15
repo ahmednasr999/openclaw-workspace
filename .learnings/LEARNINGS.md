@@ -132,3 +132,22 @@ For any VPS without GPU: always use QMD in BM25-only mode (searchMode: "search")
 3. NEVER make up content and present it as real. This is a trust violation.
 **Applies to:** All content — documents, briefings, reports, emails, CVs, pipeline data, analytics. Everything.
 **Escalation:** This rule has zero exceptions. Not even "close enough" approximations.
+
+## [LRN-20260315-002] Google Docs Daily Briefing — Hard Rules
+**Date:** 2026-03-15
+**Category:** User Correction (CRITICAL)
+**What happened:** Multiple mistakes on the daily briefing Google Doc in one session:
+1. Deleted all old content and replaced with only today's briefing
+2. Fabricated old content from memory instead of recovering from revision history
+3. Dates were not in reverse chronological order
+4. Duplicate date entries existed
+5. Links were not clickable
+**Rules (HARD, NON-NEGOTIABLE):**
+1. NEVER delete old content. Only PREPEND new days at the top.
+2. NEVER fabricate content. Recover from revision history or say "can't recover."
+3. Always reverse chronological order (newest first).
+4. All URLs must be clickable hyperlinks.
+5. No duplicate dates. Check before inserting.
+6. Always backup current content before any modification.
+7. Use scripts/update-daily-briefing.py for all future updates.
+**Script:** scripts/update-daily-briefing.py (created Mar 15, 2026) handles all rules automatically.
