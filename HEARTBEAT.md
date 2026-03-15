@@ -98,7 +98,28 @@ From the script output, check `active_tasks_age_hours`.
 If > 48 → message Ahmed (max once/day):
 "⚠️ active-tasks.md is [X] hours stale. Worth a refresh?"
 
-### 8. Usage Guard (every heartbeat)
+### 8. 🔴 Scanner Output Validation (no cooldown after 7 AM)
+
+From the script output, check `scanner` object.
+
+| Status | Action |
+|--------|--------|
+| `missing` (after 7 AM) | "🔴 Scanner FAILED: No output file today. Jobs cron didn't run or crashed." |
+| `empty` | "🔴 Scanner produced 0 results. Possible rate limiting or cookie expiry." |
+| `exists` + total < 10 | "🟡 Scanner degraded: only [X] jobs found. Check LinkedIn cookie freshness." |
+
+This catches the exact failure mode from March 13-15 (scanner silently returning 0 for days).
+
+### 9. 🟡 Cron Output Validation (24h cooldown per cron)
+
+From the script output, check `cron_output_issues` array.
+
+If non-empty → message Ahmed for each high-severity issue:
+"🔴 Cron Output Missing: [cron name] — [issue]"
+
+Medium severity: batch into one warning.
+
+### 10. Usage Guard (every heartbeat)
 
 Check `session_status` for 5-hour and weekly usage pressure.
 
