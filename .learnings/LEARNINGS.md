@@ -329,3 +329,38 @@ skills/{skill-name}/
 - Could add YAML frontmatter for faster skill matching
 - Could add verification sections to confirm success
 
+
+---
+
+## Chrome CDP Skill (Mar 15, 2026)
+
+Source: github.com/pasky/chrome-cdp-skill - gives AI access to live Chrome session
+
+### What It Does
+- Connects to Chrome's remote debugging WebSocket
+- Uses tabs you already have open, logged-in accounts
+- No separate browser, no re-login needed
+
+### Setup
+1. Go to `chrome://inspect/#remote-debugging`
+2. Toggle the switch
+3. That's it
+
+### Commands
+- `list` - list open tabs
+- `shot` - screenshot
+- `snap` - accessibility tree
+- `html` - get HTML content
+- `eval` - run JS in page context
+- `nav` - navigate
+- `click` / `type` - interact with elements
+
+### Why It Matters
+- OpenClaw 2026.3.13 uses this approach
+- Agents see actual browser state, not clean reload
+- Works with 100+ tabs reliably
+
+### For Our Setup
+- We use Camoufox which is similar but headless
+- If Ahmed runs OpenClaw locally with Chrome, this enables live session
+
