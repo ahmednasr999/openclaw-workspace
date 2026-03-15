@@ -1,4 +1,4 @@
-# System Insights — 2026-03-15 06:07
+# System Insights — 2026-03-15 07:31
 
 ## System Health Score: 92/100
 
@@ -17,7 +17,7 @@
 - [C] Crons: Crons running (could not query gateway)
 - [D] Disk: Disk 54%
 - [E] Errors: No significant errors
-- [G] Gateway: Gateway running (PID: 1627630)
+- [G] Gateway: Gateway running (PID: 1674488)
 - [H] Heartbeat: No heartbeat failures
 - [K] Knowledge: GitHub Radar: 2 actionable repos (see sie-github-recommendations.md), X Radar active
 - [L] Learnings: Learnings applied
@@ -28,7 +28,7 @@
 - [S] Skills: Skills healthy
 - [T] Tools: Tools available
 - [U] Uptime: Gateway up
-- [V] Velocity: 52 sessions today
+- [V] Velocity: 63 sessions today
 - [W] Workspace: 11 files in root
 - [X] Execution: Execution healthy
 - [Y] Yield: Pipeline active
