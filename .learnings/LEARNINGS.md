@@ -284,3 +284,48 @@ Source: @NainsiDwiv50980 on X - Boris Cherny's CLAUDE.md from the image
 - **No Laziness**: Find root causes. No temporary fixes. Senior developer standards.
 - **Minimal Impact**: Changes should only touch what's necessary. Avoid introducing bugs.
 
+
+---
+
+## agentskills.io Skill Standard (Mar 15, 2026)
+
+Source: github.com/mukul975/Anthropic-Cybersecurity-Skills - 611+ cybersecurity skills
+
+### The Pattern
+
+Each skill follows progressive disclosure:
+1. AI reads YAML frontmatter (30-50 tokens) to decide relevance
+2. If match, loads full body with workflow + verification
+
+### YAML Frontmatter Template
+```yaml
+---
+name: skill-name
+description: What it does in one line
+domain: cybersecurity
+subdomain: digital-forensics
+tags: [forensics, memory-analysis, volatility3, incident-response]
+---
+```
+
+### Directory Structure
+```
+skills/{skill-name}/
+├── SKILL.md          # Main skill definition
+├── references/        # Standards, NIST, MITRE ATT&CK
+├── scripts/          # Helper scripts
+└── assets/          # Templates, checklists
+```
+
+### SKILL.md Sections
+- Frontmatter (name, description, domain, tags)
+- When to Use (trigger conditions)
+- Prerequisites (required tools)
+- Workflow (step-by-step)
+- Verification (how to confirm success)
+
+### NASR Application
+- Our skills already follow a similar pattern
+- Could add YAML frontmatter for faster skill matching
+- Could add verification sections to confirm success
+
