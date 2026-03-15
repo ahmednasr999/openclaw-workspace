@@ -205,6 +205,7 @@ scanner_status="unknown"
 scanner_picks=0
 scanner_leads=0
 scanner_total=0
+scanner_repair=""
 
 CAIRO_HOUR=$(TZ="Africa/Cairo" date +"%H")
 
@@ -215,10 +216,13 @@ if [ -f "$SCANNER_FILE" ]; then
   scanner_total=$((scanner_picks + scanner_leads))
   if [ "$scanner_total" -eq 0 ]; then
     scanner_status="empty"
+    scanner_repair="Re-run scanner: cd /root/.openclaw/workspace && python3 scripts/linkedin-gulf-jobs.py. If still 0, check LinkedIn cookie freshness (linkedin.txt age), check JobSpy import works, check network connectivity."
+  elif [ "$scanner_total" -lt 10 ]; then
+    scanner_repair="Scanner degraded. Check: 1) LinkedIn cookie age (>3 days = refresh needed), 2) JobSpy rate limiting, 3) Search delay too low."
   fi
 elif [ "$CAIRO_HOUR" -ge 7 ]; then
-  # After 7 AM and no file = scanner didn't run
   scanner_status="missing"
+  scanner_repair="Scanner cron didn't run. Check: 1) openclaw cron list for scanner job status, 2) Re-run manually: cd /root/.openclaw/workspace && python3 scripts/linkedin-gulf-jobs.py, 3) Check if script has syntax errors: python3 -c 'import py_compile; py_compile.compile(\"scripts/linkedin-gulf-jobs.py\")'"
 fi
 
 # ============================================================
@@ -235,19 +239,19 @@ issues = []
 # Scanner output
 scanner_f = '$WORKSPACE/jobs-bank/scraped/qualified-jobs-${TODAY}.md'
 if not os.path.exists(scanner_f) and int('${CAIRO_HOUR}') >= 7:
-    issues.append({'cron': 'Jobs Scanner', 'issue': 'No output file for today', 'severity': 'high'})
+    issues.append({'cron': 'Jobs Scanner', 'issue': 'No output file for today', 'severity': 'high', 'repair': 'cd /root/.openclaw/workspace && python3 scripts/linkedin-gulf-jobs.py'})
 elif os.path.exists(scanner_f) and os.path.getsize(scanner_f) < 200:
-    issues.append({'cron': 'Jobs Scanner', 'issue': 'Output file suspiciously small', 'severity': 'medium'})
+    issues.append({'cron': 'Jobs Scanner', 'issue': 'Output file suspiciously small', 'severity': 'medium', 'repair': 'Check script logs, re-run scanner'})
 
 # Engagement radar output
 radar_f = '$WORKSPACE/linkedin/engagement/daily/${TODAY}.md'
 if not os.path.exists(radar_f) and int('${CAIRO_HOUR}') >= 7:
-    issues.append({'cron': 'Engagement Radar', 'issue': 'No output file for today', 'severity': 'medium'})
+    issues.append({'cron': 'Engagement Radar', 'issue': 'No output file for today', 'severity': 'medium', 'repair': 'cd /root/.openclaw/workspace && python3 scripts/linkedin-engagement-radar.py'})
 
 # Briefing data JSON
 briefing_f = '$WORKSPACE/jobs-bank/scraped/briefing-data-${TODAY}.json'
 if not os.path.exists(briefing_f) and int('${CAIRO_HOUR}') >= 8:
-    issues.append({'cron': 'Morning Briefing', 'issue': 'No briefing JSON for today', 'severity': 'high'})
+    issues.append({'cron': 'Morning Briefing', 'issue': 'No briefing JSON for today', 'severity': 'high', 'repair': 'cd /root/.openclaw/workspace && python3 scripts/morning-briefing-orchestrator.py'})
 
 print(json.dumps(issues))
 " 2>/dev/null || echo "[]")
@@ -275,7 +279,8 @@ cat <<EOF
     "picks": $scanner_picks,
     "leads": $scanner_leads,
     "total": $scanner_total,
-    "file": "$SCANNER_FILE"
+    "file": "$SCANNER_FILE",
+    "repair_hint": "$scanner_repair"
   },
   "cron_output_issues": $cron_output_issues
 }
