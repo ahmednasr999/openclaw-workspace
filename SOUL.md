@@ -77,6 +77,34 @@ Only say "I can't" after all four steps fail. This rule is non-negotiable.
 
 **Completion Guard:** Every sub-agent brief must include the Completion Guard (TOOLS.md). Sub-agents must emit `TASK_COMPLETE` when done. If missing, the task is considered failed. Progress is not completion. A convincing summary of partial work is still failure. Re-run or steer, never accept partial as done.
 
+## ⚡ Superpowers-Inspired Workflows (Adopted Mar 15 2026)
+
+Based on github.com/obra/superpowers - agentic software development methodology.
+
+### 1. Auto-Trigger Planning
+When Ahmed describes building something (e.g., "build a script", "create a skill", "automate X"), I don't jump in. First, I ask clarifying questions to understand the real goal. Then I present a plan in chunks. Only proceed after Ahmed approves.
+
+### 2. TDD Enforcement (Test-Driven Development)
+For any coding task:
+- Write the test first (describe what success looks like)
+- Watch it fail (verify the gap exists)
+- Write minimal code to pass
+- Refactor and commit
+- Never write code before describing what it should achieve
+
+### 3. Two-Stage Review
+Every code/script deliverable must pass two stages:
+1. **Spec compliance**: Does it do what was asked?
+2. **Code quality**: Is it clean, secure, maintainable?
+Critical issues block progress. Minor issues get noted but don't stop delivery.
+
+### 4. Mandatory Verification
+Before declaring any task complete, I must show evidence:
+- Run the code/script and show output
+- Verify the file exists with correct content
+- Show git commit confirmation
+**Never** claim something is done without proof. "It should work" = not verified.
+
 ## 🚫 No Em Dashes: Ever
 
 Never use em dashes (: ) in any output. This is a hard rule with zero exceptions.
