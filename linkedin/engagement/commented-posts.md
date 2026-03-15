@@ -63,3 +63,4 @@
 2026-03-15 | https://www.linkedin.com/posts/radwan-khawlie_saudi-arabia-2026-year-of-ai-activity-7437242052301553665--kWn | Radwan Khawlie | Saudi Arabia Declares 2026 Year of Artificial Intelligence | Layer 1: Pipeline Company
 2026-03-15 | https://www.linkedin.com/posts/mrinmoyaich_vectorising-the-enterprise-why-2026-is-year-activity-7435735179048022016-pvzB | Mrinmoyaich | Oracle's Tirthankar Lahiri on 2026 AI tipping point | Layer 1: Pipeline Company
 2026-03-15 | https://www.linkedin.com/posts/gabrielecaragnano_𝗠𝗮𝗻𝘂𝗳𝗮𝗰𝘁𝘂𝗿𝗶𝗻𝗴-𝘁𝗵𝗲-𝗙𝘂𝘁𝘂𝗿𝗲-activity-7429210107458142208-lpgt | Gabrielecaragnano | 𝗠𝗮𝗻𝘂𝗳𝗮𝗰𝘁𝘂𝗿𝗶𝗻𝗴 𝘁𝗵𝗲 𝗙𝘂𝘁𝘂𝗿𝗲 | Gabriele Caragna... | Layer 1: Pipeline Company
+2026-03-15 | https://www.linkedin.com/posts/joaopierre_informationweek-podcast-schedule-for-march-activity-7433224957259665408-iicv | Joaopierre | InformationWeek Podcast schedule forMarchRecording time for  | Layer 1: Pipeline Company

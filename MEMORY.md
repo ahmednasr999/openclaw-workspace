@@ -24,7 +24,7 @@
 - Zero exceptions. Trust rule.
 
 ## Google Docs Standard (LOCKED Mar 12-15, 2026)
-- Doc IDs: Briefing 1gtl5sXIsvXiXhODFs29FD9L09i9mGQlsBVIrZbVkTYs, Log 1Ti5kle0bq4fXBgF54arYO2C723LtHkDUhO2o2rmDAqU
+- Doc IDs: Briefing 1gtl5sXIsvXiXhODFs29FD9L09i9mGQlsBVIrZbVkTYs, Log 1Ti5kle0bq4fXBgF54arYO2C723LtHkDUhO2o2rmDAqU, LinkedIn Posts 1hhROckb3AVGnka0rXB5vh25zywXJFDLuQYGTRa7zp4g
 - NEVER raw markdown. ALWAYS native API formatting via scripts/daily-briefing-generator.py
 - Script is single source of truth. Models cannot deviate.
 - Rules: never delete old content, prepend only, reverse chronological, no duplicates, backup first
