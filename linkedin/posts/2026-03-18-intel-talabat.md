@@ -1,4 +1,4 @@
-# Wednesday March 19 | Growth | SLAY | Familiar | CTA: C
+# Wednesday March 18 | Growth | SLAY | Familiar | CTA: C
 
 ![Post Image](thu-mar19-image.png)
 
