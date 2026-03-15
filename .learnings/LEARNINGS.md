@@ -461,3 +461,24 @@ Source: github.com/justrach/merjs - v0.1.0 release
 - Not relevant to current job search work
 - Interesting for lightweight web apps
 
+
+---
+
+## Claude March 2026 2x Usage Promotion (Mar 15, 2026)
+
+Source: support.claude.com - Claude Team plan via OAuth
+
+### The Promotion
+- March 13-27, 2026: 2x usage during off-peak hours
+- Off-peak: outside 8 AM-2 PM ET (5-11 AM PT)
+- Applies to Free, Pro, Max, Team plans
+
+### Cairo Time Conversion
+- Peak (8 AM-2 PM ET) = 2 PM-8 PM Cairo
+- **Off-peak (2x)**: 8 PM Cairo - 2 PM Cairo next day
+
+### Our Optimization
+- Schedule heavy Claude work (CVs, deep analysis) during Cairo evening/night
+- Lighter tasks (heartbeats, simple lookups) during Cairo afternoon
+- This maximizes our Claude Team plan usage
+
