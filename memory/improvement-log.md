@@ -4,24 +4,6 @@
 
 ## Active Suggestions
 
-### 20260315-001 | [HIGH] [J] Job Radar Boost
-- **Area:** J (Jobs)
-- **Description:** Job radar returned 0 jobs. Source may be stale or filtered too aggressively.
-- **Rationale:** Pipeline needs fresh leads. Current radar pre-filter may be too strict.
-- **Action:** Run job-radar.sh manually, check Indeed/LinkedIn directly, relax ATS pre-filter temporarily
-
-### 20260315-002 | [MED] [R] Session Auto-Cleanup
-- **Area:** R (Reliability)
-- **Description:** Bloated session file 71c1fa9c... at 6.2MB. Could auto-clean old sessions.
-- **Rationale:** Prevents disk bloat and memory pressure. Run weekly cleanup of sessions >5MB.
-- **Action:** Add session cleanup to weekly cron: `find ~/.openclaw/sessions -name "*.jsonl" -size +5M -delete`
-
-### 20260315-003 | [MED] [I] Gmail Integration Fix
-- **Area:** I (Integrations)
-- **Description:** Gmail integration showing issue in SIE. May be auth token expired.
-- **Rationale:** Daily briefing depends on Gmail for calendar/email context.
-- **Action:** Check GOG auth status, re-auth if needed: `gog auth status`
-
 ### 20260314-002 | [HIGH] [J] Job Company Intelligence
 - **Area:** J (Jobs)
 - **Description:** YouTube intel + dossier builder exist but disconnected.
