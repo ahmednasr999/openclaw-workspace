@@ -131,6 +131,82 @@ Check `session_status` for 5-hour and weekly usage pressure.
 
 ---
 
+## Self-Healing Protocol (CRITICAL — Auto-Repair Before Alerting)
+
+When the heartbeat script detects ANY issue (scanner failure, cron output missing, degradation, etc.), do NOT just alert Ahmed. Follow this sequence:
+
+### Step 1: Diagnose
+Read the error details from the heartbeat JSON output. Identify what failed and why.
+
+### Step 2: Auto-Repair (Opus 4.6)
+Spawn a sub-agent on Opus 4.6 to investigate and fix the issue:
+
+```
+sessions_spawn:
+  model: opus46
+  mode: run
+  task: |
+    SELF-HEALING TASK: [describe the issue]
+    
+    Context:
+    - Heartbeat detected: [issue details]
+    - Expected: [what should have happened]
+    - Actual: [what happened]
+    
+    Instructions:
+    1. Diagnose the root cause (check logs, scripts, configs)
+    2. Fix it (edit scripts, restart services, refresh cookies, etc.)
+    3. Re-run the failed component to verify the fix works
+    4. Write a one-paragraph summary of what broke and what you fixed
+    
+    COMPLETION RULES:
+    - You are NOT done until the fix is verified working
+    - Do not summarize what you "would do." Do the work now.
+    - If you hit an error, fix it or try an alternative
+    - When genuinely complete, end with: TASK_COMPLETE
+    
+    DO NOT update MEMORY.md, GOALS.md, or active-tasks.md.
+    Write fix summary to: /tmp/self-heal-[timestamp].md
+```
+
+### Step 3: Notify Ahmed (After Repair Attempt)
+After the sub-agent completes (or fails), send ONE message:
+
+**If fixed:**
+```
+🔧 SELF-HEALED — [HH:MM Cairo]
+Issue: [what broke]
+Fix: [what Opus did]
+Verified: ✅ [confirmation it works now]
+```
+
+**If could not fix:**
+```
+🔴 NEEDS ATTENTION — [HH:MM Cairo]
+Issue: [what broke]
+Attempted: [what Opus tried]
+Blocked: [why it couldn't fix it]
+Action needed: [specific ask for Ahmed]
+```
+
+### Auto-Repair Scope (What Opus Can Fix Without Asking)
+- Scanner returning 0 results → check cookie freshness, refresh if needed, re-run
+- Cron output missing → re-run the cron script manually
+- Gateway down → restart gateway service
+- Script syntax errors → read error log, fix the script, re-run
+- Rate limiting detected → increase delays, reduce search count, re-run
+- Google Doc update failed → retry with direct API
+- Engagement radar failed → retry with fresh Defuddle/Jina calls
+
+### Auto-Repair Boundaries (Always Alert, Never Auto-Fix)
+- Credential/token expiry (needs Ahmed to re-auth)
+- Disk > 95% (needs human decision on what to delete)
+- Model fallbacks (informational, no fix needed)
+- Pipeline data changes (never modify job pipeline without approval)
+- Anything that sends external messages (emails, LinkedIn posts, Slack)
+
+---
+
 ## Cooldown Enforcement Protocol
 
 After sending any alert, update `.heartbeat/state.json`:
