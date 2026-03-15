@@ -39,6 +39,7 @@ Map of Content for research, external knowledge, reference material, and curated
 
 - [[../knowledge/content-skill-graph.md]] — multi-platform content production via skill graph pattern
 - [[../knowledge/content-strategy.md]] — content strategy frameworks and insights
+- [[../knowledge/agent-persona-template.md]] — agent persona template (from agency-agents)
 - [[../github-radar.md]] — daily GitHub trending scan for relevant repos
 - [[../knowledge/]] — deep knowledge files
 - [[../reference/]] — reference documents
