@@ -11,26 +11,31 @@ import requests as req
 from googleapiclient.discovery import build
 from google.oauth2.credentials import Credentials
 
-GOG_TOKEN_PATH = "/tmp/gog-token.json"
-GOG_CREDS_PATH = "/root/.config/gogcli/credentials.json"
+# Authentication - use working credentials from ahmed-google.json
+import urllib.request, urllib.parse
+
+CREDS_PATH = "/root/.openclaw/workspace/config/ahmed-google.json"
+
 POSTS_DIR = "/root/.openclaw/workspace/linkedin/posts"
 GITHUB_RAW_BASE = "https://raw.githubusercontent.com/ahmednasr999/openclaw-workspace/master/linkedin/posts"
 
 BOLD_LABELS = ["Total Posts:", "Drafted:", "Posted:", "With Images:", "Date:", "Status:"]
 
-
 def get_access_token():
-    with open(GOG_TOKEN_PATH) as f:
-        token_data = json.load(f)
-    with open(GOG_CREDS_PATH) as f:
-        creds_data = json.load(f)
-    resp = req.post("https://oauth2.googleapis.com/token", data={
-        "client_id": creds_data["client_id"],
-        "client_secret": creds_data["client_secret"],
-        "refresh_token": token_data["refresh_token"],
+    import urllib.request, urllib.parse
+    with open(CREDS_PATH) as f:
+        creds = json.load(f)
+    data = urllib.parse.urlencode({
+        "client_id": creds["client_id"],
+        "client_secret": creds["client_secret"],
+        "refresh_token": creds["refresh_token"],
         "grant_type": "refresh_token"
-    })
-    return resp.json()["access_token"]
+    }).encode()
+    req = urllib.request.Request("https://oauth2.googleapis.com/token", data=data)
+    resp = urllib.request.urlopen(req)
+    import json as j
+    return j.loads(resp.read())["access_token"]
+
 
 
 def get_gdocs_service():
