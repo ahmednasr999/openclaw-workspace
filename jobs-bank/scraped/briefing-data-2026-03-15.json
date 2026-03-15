@@ -3,7 +3,7 @@
   "summary": {
     "priority_focus": "Job pipeline review + LinkedIn strategic engagement",
     "scanner_status": "qualified-jobs-2026-03-15.md: 2 priority picks, 36 exec leads.",
-    "linkedin_status": "2 strategic posts ready to comment.",
+    "linkedin_status": "1 strategic posts ready to comment.",
     "calendar_status": "No events today",
     "pipeline_status": "66 active"
   },
@@ -260,24 +260,14 @@
         "name": "Layer 1: Pipeline Company Posts (Highest ROI)",
         "posts": [
           {
-            "title": "Oracle's Tirthankar Lahiri on 2026 AI tipping point",
-            "author": "Mrinmoyaich",
-            "topic": "In conversation with ITNews Asia,Oracle's Tirthankar Lahiri shares why2026could be a tipping point for intelligent data platforms.",
-            "link": "https://www.linkedin.com/posts/mrinmoyaich_vectorising-the-enterprise-why-2026-is-year-activity-7435735179048022016-pvzB",
+            "title": "InformationWeek Podcast schedule forMarchRecording time for each...",
+            "author": "Joaopierre",
+            "topic": "Seeking oneCIO,CTO, CISO,chiefAIofficer, orchiefdataofficer, and one business-operationsexecutivefor each episode.March5 Governance, AI and BYOD: How have you updated your data management and governance to accommodate AI and...",
+            "link": "https://www.linkedin.com/posts/joaopierre_informationweek-podcast-schedule-for-march-activity-7433224957259665408-iicv",
             "activity_id": "",
             "target_layer": "Layer 1: Pipeline Company",
-            "ready_comment": "The best data platform means nothing if nobody actually uses it. At TopMed, we were managing a $50M digital transformation across 15 hospitals, and honestly? The tech was the easy part. Getting clinical and administrative teams to actually adopt it? That was the real challenge.\n\nAI can handle the data. The harder question is whether leaders are ready to handle the change AI demands from their teams. What's your experience been?",
-            "comment_angle": "In conversation with ITNews Asia,Oracle's Tirthankar Lahiri shares why2026could "
-          },
-          {
-            "title": "\ud835\udde0\ud835\uddee\ud835\uddfb\ud835\ude02\ud835\uddf3\ud835\uddee\ud835\uddf0\ud835\ude01\ud835\ude02\ud835\uddff\ud835\uddf6\ud835\uddfb\ud835\uddf4 \ud835\ude01\ud835\uddf5\ud835\uddf2 \ud835\uddd9\ud835\ude02\ud835\ude01\ud835\ude02\ud835\uddff\ud835\uddf2 | Gabriele Caragna...",
-            "author": "Gabrielecaragnano",
-            "topic": "At WAM Saudi2026, I had the privilege of presenting \u201c\ud835\udde0\ud835\uddee\ud835\uddfb\ud835\ude02\ud835\uddf3\ud835\uddee\ud835\uddf0\ud835\ude01\ud835\ude02\ud835\uddff\ud835\uddf6\ud835\uddfb\ud835\uddf4 \ud835\ude01\ud835\uddf5\ud835\uddf2 \ud835\uddd9\ud835\ude02\ud835\ude01\ud835\ude02\ud835\uddff\ud835\uddf2: \ud835\udde6\ud835\ude02\ud835\ude00\ud835\ude01\ud835\uddee\ud835\uddf6\ud835\uddfb\ud835\uddee\ud835\uddef\ud835\uddf9\ud835\uddf2 ...",
-            "link": "https://www.linkedin.com/posts/gabrielecaragnano_\ud835\udde0\ud835\uddee\ud835\uddfb\ud835\ude02\ud835\uddf3\ud835\uddee\ud835\uddf0\ud835\ude01\ud835\ude02\ud835\uddff\ud835\uddf6\ud835\uddfb\ud835\uddf4-\ud835\ude01\ud835\uddf5\ud835\uddf2-\ud835\uddd9\ud835\ude02\ud835\ude01\ud835\ude02\ud835\uddff\ud835\uddf2-activity-7429210107458142208-lpgt",
-            "activity_id": "",
-            "target_layer": "Layer 1: Pipeline Company",
-            "ready_comment": "Healthcare transformation in the GCC isn't really about adopting new tech. Honestly, it's about completely rethinking how we deliver care. At Saudi German Hospital Group, I led a $50M digital transformation across 15 hospitals, and here's what surprised me: the hardest part wasn't the technology. It was getting people to change how they think.\n\nThe big lesson? Sustainable change only happens when you give clinicians ownership of the vision. Not when you force it on them from above.\n\nSo I'm curious, how are you handling change management in your organization's transformation?",
-            "comment_angle": "At WAM Saudi2026, I had the privilege of presenting \u201c\ud835\udde0\ud835\uddee\ud835\uddfb\ud835\ude02\ud835\uddf3\ud835\uddee\ud835\uddf0\ud835\ude01\ud835\ude02\ud835\uddff\ud835\uddf6\ud835\uddfb\ud835\uddf4 \ud835\ude01\ud835\uddf5\ud835\uddf2 \ud835\uddd9\ud835\ude02\ud835\ude01\ud835\ude02\ud835\uddff\ud835\uddf2: \ud835\udde6"
+            "ready_comment": "AI governance in healthcare goes beyond compliance. In my PMO role leading a $50M digital transformation across 15 Saudi hospitals, we discovered something unexpected: the biggest obstacle wasn't the tech itself, it was getting people to actually use it. That's where trust comes in. How are you handling AI governance in your organization?",
+            "comment_angle": "Seeking oneCIO,CTO, CISO,chiefAIofficer, orchiefdataofficer, and one business-op"
           }
         ]
       }
@@ -304,12 +294,12 @@
     "note": "See engagement radar report for today's comment targets from 19 GCC influencers."
   },
   "strategic_notes": [
-    "2 LinkedIn posts found with ready-to-post Sonnet-drafted comments.",
+    "1 LinkedIn posts found with ready-to-post Sonnet-drafted comments.",
     "Comment strategy: Layer 1 > Layer 2 > Layer 3 by ROI.",
     "Job scanner running daily at 6 AM Cairo."
   ],
   "action_items": [
-    "Comment on 2 Layer 1 posts (pipeline company visibility)",
+    "Comment on 1 Layer 1 posts (pipeline company visibility)",
     "Review 2 new qualified roles",
     "Follow up on top pipeline applications with no response"
   ]
