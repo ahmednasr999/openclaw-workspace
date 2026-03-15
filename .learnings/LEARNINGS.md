@@ -151,3 +151,22 @@ For any VPS without GPU: always use QMD in BM25-only mode (searchMode: "search")
 6. Always backup current content before any modification.
 7. Use scripts/update-daily-briefing.py for all future updates.
 **Script:** scripts/update-daily-briefing.py (created Mar 15, 2026) handles all rules automatically.
+
+---
+
+## AI Agent Failure Patterns (Mar 15, 2026)
+
+Source: @nurijanian on X - catalogued 500+ autonomous agent sessions
+
+| Pattern | % | Description | NASR Mitigation |
+|---------|---|-------------|-----------------|
+| Shortcut Spiral | 23% | Skips review/evaluate steps | Always verify work before reporting |
+| Confidence Mirage | 19% | Claims confidence without verification | Show actual evidence, not just claims |
+| Good-Enough Plateau | 15% | Produces working but unpolished output | Polish to completion, don't settle |
+| Tunnel Vision | 14% | Perfects one component, breaks adjacent code | Check downstream impacts |
+| Phantom Verification | 12% | Claims tests pass without running them | Actually run the checks |
+| Deferred Debt | 9% | Leaves todo/fixme in committed code | No TODOs in final output |
+| Hollow Report | 8% | Reports done with zero evidence | Include actual data/sources |
+
+**Key insight:** "Confidence Mirage" is sneakiest - says verified but didn't run checks.
+
