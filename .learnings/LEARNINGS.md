@@ -507,3 +507,28 @@ Source: @doodlestein on X - tweet about iterative refinement
 - Keep iterating until I find nothing significant to improve
 - Don't settle for "good enough"
 
+
+---
+
+## ATC Agent - Multi-Agent Coordination (Mar 15, 2026)
+
+Source: @doodlestein on X - "Air Traffic Controller" for multi-agent systems
+
+### The Concept
+AI proposes an "Air Traffic Controller" agent for multi-agent coordination:
+- **Conflict prediction** - warns agents before file collisions
+- **Deadlock resolution** - breaks circular dependency waits
+- **Stale agent detection** - pings inactive agents
+- **Load-aware routing** - directs tasks to idle agents
+- **Session synthesis** - creates status summaries
+
+### Implementation
+- Uses the same protocol as other agents (no new infrastructure)
+- ~800 lines, no LLM calls
+- Pattern-matching heuristics only
+
+### For Our Setup
+- Relevant to ExamGenius multi-agent simulation
+- Could apply similar coordination patterns
+- AI suggesting architectural improvements based on emerging patterns
+
