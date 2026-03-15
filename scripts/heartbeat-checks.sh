@@ -197,6 +197,62 @@ print(json.dumps(fallbacks[-5:]))
 fi
 
 # ============================================================
+# 8. SCANNER OUTPUT VALIDATION — check today's scanner ran and produced results
+# ============================================================
+TODAY=$(TZ="Africa/Cairo" date +"%Y-%m-%d")
+SCANNER_FILE="$WORKSPACE/jobs-bank/scraped/qualified-jobs-${TODAY}.md"
+scanner_status="unknown"
+scanner_picks=0
+scanner_leads=0
+scanner_total=0
+
+CAIRO_HOUR=$(TZ="Africa/Cairo" date +"%H")
+
+if [ -f "$SCANNER_FILE" ]; then
+  scanner_status="exists"
+  scanner_picks=$(grep -c "^### " "$SCANNER_FILE" 2>/dev/null || echo "0")
+  scanner_leads=$(grep -c "^- \*\*" "$SCANNER_FILE" 2>/dev/null || echo "0")
+  scanner_total=$((scanner_picks + scanner_leads))
+  if [ "$scanner_total" -eq 0 ]; then
+    scanner_status="empty"
+  fi
+elif [ "$CAIRO_HOUR" -ge 7 ]; then
+  # After 7 AM and no file = scanner didn't run
+  scanner_status="missing"
+fi
+
+# ============================================================
+# 9. CRON OUTPUT VALIDATION — check key crons produced output today
+# ============================================================
+cron_output_issues="[]"
+cron_output_issues=$(python3 -c "
+import json, os
+from datetime import datetime
+
+today = '${TODAY}'
+issues = []
+
+# Scanner output
+scanner_f = '$WORKSPACE/jobs-bank/scraped/qualified-jobs-${TODAY}.md'
+if not os.path.exists(scanner_f) and int('${CAIRO_HOUR}') >= 7:
+    issues.append({'cron': 'Jobs Scanner', 'issue': 'No output file for today', 'severity': 'high'})
+elif os.path.exists(scanner_f) and os.path.getsize(scanner_f) < 200:
+    issues.append({'cron': 'Jobs Scanner', 'issue': 'Output file suspiciously small', 'severity': 'medium'})
+
+# Engagement radar output
+radar_f = '$WORKSPACE/linkedin/engagement/daily/${TODAY}.md'
+if not os.path.exists(radar_f) and int('${CAIRO_HOUR}') >= 7:
+    issues.append({'cron': 'Engagement Radar', 'issue': 'No output file for today', 'severity': 'medium'})
+
+# Briefing data JSON
+briefing_f = '$WORKSPACE/jobs-bank/scraped/briefing-data-${TODAY}.json'
+if not os.path.exists(briefing_f) and int('${CAIRO_HOUR}') >= 8:
+    issues.append({'cron': 'Morning Briefing', 'issue': 'No briefing JSON for today', 'severity': 'high'})
+
+print(json.dumps(issues))
+" 2>/dev/null || echo "[]")
+
+# ============================================================
 # OUTPUT: Structured JSON
 # ============================================================
 cat <<EOF
@@ -213,6 +269,14 @@ cat <<EOF
   "disk_usage_pct": $disk_usage_pct,
   "active_tasks_age_hours": $active_tasks_age,
   "upcoming_deadlines": $upcoming_deadlines,
-  "model_fallbacks": $model_fallbacks
+  "model_fallbacks": $model_fallbacks,
+  "scanner": {
+    "status": "$scanner_status",
+    "picks": $scanner_picks,
+    "leads": $scanner_leads,
+    "total": $scanner_total,
+    "file": "$SCANNER_FILE"
+  },
+  "cron_output_issues": $cron_output_issues
 }
 EOF
