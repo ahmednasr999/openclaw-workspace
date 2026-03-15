@@ -1350,3 +1350,69 @@ These features deferred to v2.0 based on customer feedback:
 - **F15.7.3** Validation and error reporting
 - **F15.7.4** Import history and rollback
 
+
+---
+
+## 16. Build Cost Estimate (v1.1 Addendum)
+
+*Added: March 2026*
+
+### 16.1 Development Cost by Phase
+
+| Phase | Timeline | Scope | Est. Cost |
+|-------|----------|-------|-----------|
+| MVP | Months 1-4 | Curriculum upload, AI question generation, basic exam builder, manual grading | $80,000 |
+| v1.0 | Months 5-8 | Full question bank, auto-grading, basic analytics, student portal | $80,000 |
+| v1.5 | Months 9-12 | Report cards, SIS, parent portal, proctoring | $80,000 |
+
+**Total to Build v1.0: $160,000**
+
+### 16.2 Build Cost Scenarios
+
+| Scenario | Description | Cost |
+|----------|-------------|------|
+| Agency Build | Outsource to dev agency | $150-200K |
+| Freelance Team | 2-3 senior freelancers | $100-150K |
+| Co-Founder Build | You + co-founder build it | $50-60K (infrastructure + API only) |
+| Hybrid | Co-founder + 1 freelancer | $70-90K |
+
+### 16.3 Annual Operating Cost (Year 1)
+
+| Category | Cost | Notes |
+|----------|------|-------|
+| AI/API Costs | $30,000 | LLM calls for question generation |
+| Infrastructure | $24,000 | AWS/GCP hosting, CDN, backups |
+| Salaries | $120,000 | 2-3 person team (if hired) |
+| Sales & Marketing | $40,000 | Ads, events, sales outreach |
+| Support | $12,000 | Customer success, hosting |
+| **Total Operating** | **$226,000/year** | |
+
+### 16.4 Cost Reduction Strategies
+
+- **Co-founder build:** Leverage your tech background to reduce dev costs by 60-70%
+- **Open-source components:** Use existing LMS/exam frameworks where possible
+- **AI-first architecture:** Reduce development time with AI-assisted coding
+- **Cloud-native:** Pay-as-you-grow infrastructure (start at $500/month)
+- **MVP-first:** Validate before investing in full team
+
+### 16.5 ROI Timeline
+
+| Year | Revenue | Operating Cost | Profit/Loss |
+|------|---------|----------------|--------------|
+| 1 | $150,000 | $226,000 | -$76,000 |
+| 2 | $800,000 | $556,000 | +$244,000 |
+| 3 | $2,500,000 | $1,100,000 | +$1,400,000 |
+
+**Break-even: Month 18-24**
+
+### 16.6 Recommendation
+
+Given your tech background and the AI coding tools available today (Claude, GPT-5), the most cost-effective path is:
+
+1. **Co-founder build MVP** (Months 1-4) - Cost: ~$15K infrastructure + your time
+2. **Validate with pilot schools** - Get 3-5 schools using it free
+3. **Raise or reinvest** - Use traction to raise funding or reinvest profits
+4. **Hire team for scale** - Year 2
+
+This approach minimizes financial risk while validating the product.
+
