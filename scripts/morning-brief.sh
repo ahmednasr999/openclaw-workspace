@@ -9,6 +9,17 @@ TIME=$(date +"%I:%M %p")
 echo "=== Morning Brief - $DATE $TIME ===" > /tmp/morning-brief.md
 echo "" >> /tmp/morning-brief.md
 
+# Claude 2x Off-Peak Reminder (until March 27, 2026)
+echo "## Claude 2x Usage Reminder" >> /tmp/morning-brief.md
+CURRENT_EPOCH=$(date +%s)
+END_EPOCH=$(date -d "2026-03-27" +%s 2>/dev/null || echo "1773772799")
+if [ "$CURRENT_EPOCH" -lt "$END_EPOCH" ]; then
+    echo "🎯 Claude 2x off-peak until March 27!" >> /tmp/morning-brief.md
+    echo "- Off-peak: 8 PM - 2 PM Cairo (outside US peak)" >> /tmp/morning-brief.md
+    echo "- Schedule heavy work (CVs, analysis) during off-peak" >> /tmp/morning-brief.md
+fi
+echo "" >> /tmp/morning-brief.md
+
 # 1. Job Radar Results
 echo "## Job Radar (from Tavily)" >> /tmp/morning-brief.md
 SEARCH_RESULT=$(node /root/.openclaw/workspace/skills/tavily-search/scripts/search.mjs "VP Director PMO Digital Transformation healthcare UAE Dubai Saudi 2026" -n 5 2>&1)
