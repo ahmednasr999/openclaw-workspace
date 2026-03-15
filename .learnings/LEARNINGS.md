@@ -482,3 +482,28 @@ Source: support.claude.com - Claude Team plan via OAuth
 - Lighter tasks (heartbeats, simple lookups) during Cairo afternoon
 - This maximizes our Claude Team plan usage
 
+
+---
+
+## Polish Your Beads (Mar 15, 2026)
+
+Source: @doodlestein on X - tweet about iterative refinement
+
+### The Lesson
+"Polishing isn't done until the AI finds nothing important to change. After 4 rounds, still finding improvements."
+
+### Key Insight
+- Run verification multiple times
+- Don't stop until the AI finds nothing important to improve
+- Even after 4 rounds, still finding flaws
+
+### Related Patterns
+- Superpowers: "Verification Before Done" - never mark complete without proving it works
+- Boris Cherny: update CLAUDE.md after corrections
+- The 7 AI failures: "Good-Enough Plateau" - settling for working but unpolished
+
+### For Our Workflow
+- Run verification checks multiple times before declaring done
+- Keep iterating until I find nothing significant to improve
+- Don't settle for "good enough"
+
