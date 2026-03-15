@@ -28,3 +28,7 @@ Location: Riyadh, Saudi Arabia
 - ATS Score: 89/100
 - Key modifications: Cloud/AI/Cyber competencies front and center, Vision 2030 angle for KSA, presales/advisory language added, technology roadmap emphasis
 - PDF: Ahmed Nasr - CTO - Atos.pdf
+
+## Applied
+- Date: 2026-03-15
+- Channel: LinkedIn (direct apply) + Atos career site
