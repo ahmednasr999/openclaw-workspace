@@ -30,6 +30,7 @@
 - Rules: never delete old content, prepend only, reverse chronological, no duplicates, backup first
 - GOG_KEYRING_PASSWORD="" (empty string)
 - For headless: use scripts/gdocs-create.py (direct API) not gog CLI
+- gog CLI auth broken: nasr.ai.assistant@gmail.com token expired. Re-auth needs browser (not possible headless). Use direct API scripts instead.
 
 ## Job Scanner v3.0 (Mar 15, 2026)
 - Three-criteria filter: executive title + GCC location + DT/Tech domain
