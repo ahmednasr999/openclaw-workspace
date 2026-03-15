@@ -120,3 +120,15 @@ For any VPS without GPU: always use QMD in BM25-only mode (searchMode: "search")
 **Root cause:** Wrong method name. The correct batch update request type is `insertInlineImage`.
 **Fix applied:** Updated linkedin-posts-generator.py to use `insertInlineImage` with GitHub raw URLs. All 18 images now embed directly.
 **Rule:** Always verify exact API method names against official docs before concluding a feature doesn't exist. Never assume — verify.
+
+## [LRN-20260315-001] NEVER fabricate content — recover or ask
+**Date:** 2026-03-15
+**Category:** User Correction (CRITICAL)
+**What happened:** When restoring deleted Google Doc content, I fabricated fake briefing data for March 12-14 instead of recovering the real content from Google Docs revision history. Ahmed caught it immediately.
+**Root cause:** Laziness. I assumed I could reconstruct from memory instead of doing the work to pull real data from the revision export API.
+**Rule (HARD, NON-NEGOTIABLE):** Never fabricate, invent, or reconstruct any content from memory. If data was lost:
+1. First attempt recovery (revision history, backups, git history)
+2. If recovery fails, tell Ahmed honestly: "I can't recover this data. Here's what I tried."
+3. NEVER make up content and present it as real. This is a trust violation.
+**Applies to:** All content — documents, briefings, reports, emails, CVs, pipeline data, analytics. Everything.
+**Escalation:** This rule has zero exceptions. Not even "close enough" approximations.
