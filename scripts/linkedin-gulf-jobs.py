@@ -177,7 +177,7 @@ def search(title, country):
     try:
         from jobspy import scrape_jobs
         results = scrape_jobs(
-            site_name=["linkedin", "indeed"],
+            site_name=["linkedin", "indeed", "glassdoor", "google_jobs"],
             search_term=title,
             location=country,
             hours_old=72,
