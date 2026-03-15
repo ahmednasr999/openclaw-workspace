@@ -7,9 +7,9 @@
   },
   "operations_summary": {
     "jobs_scanned": "qualified-jobs-2026-03-15.md: 2 priority picks, 36 exec leads.",
-    "linkedin_found": "1 posts across 3 layers",
+    "linkedin_found": "0 posts across 3 layers",
     "calendar_events": "0 today, 0 upcoming",
-    "comments_drafted": "1 by Sonnet 4.6",
+    "comments_drafted": "0 by Sonnet 4.6",
     "docs_generated": "Daily Briefing + System Log"
   },
   "went_right": [
@@ -17,8 +17,8 @@
     "Calendar check completed.",
     "Pipeline read: 66 active.",
     "LinkedIn post found: 2026-03-15-linkedin-llm.md",
-    "LinkedIn: 1 posts across 3 layers.",
-    "Comments drafted: 1/1 by Sonnet 4.6.",
+    "LinkedIn: 0 posts across 3 layers.",
+    "Comments drafted: 0/0 by Sonnet 4.6.",
     "Briefing JSON built."
   ],
   "went_wrong": [
@@ -36,7 +36,7 @@
     }
   ],
   "model_usage": {
-    "Sonnet 4.6": "Comment drafting: 1 comments",
+    "Sonnet 4.6": "Comment drafting: 0 comments",
     "Orchestrator": "Python only for all other steps"
   },
   "tomorrow_improvements": [

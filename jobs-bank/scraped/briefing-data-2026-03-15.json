@@ -3,7 +3,7 @@
   "summary": {
     "priority_focus": "Job pipeline review + LinkedIn strategic engagement",
     "scanner_status": "qualified-jobs-2026-03-15.md: 2 priority picks, 36 exec leads.",
-    "linkedin_status": "1 strategic posts ready to comment.",
+    "linkedin_status": "0 strategic posts ready to comment.",
     "calendar_status": "No events today",
     "pipeline_status": "66 active"
   },
@@ -255,23 +255,7 @@
   },
   "linkedin": {
     "intro": "Three-layer strategic targeting. Ready-to-post comments below.",
-    "categories": [
-      {
-        "name": "Layer 1: Pipeline Company Posts (Highest ROI)",
-        "posts": [
-          {
-            "title": "InformationWeek Podcast schedule forMarchRecording time for each...",
-            "author": "Joaopierre",
-            "topic": "Seeking oneCIO,CTO, CISO,chiefAIofficer, orchiefdataofficer, and one business-operationsexecutivefor each episode.March5 Governance, AI and BYOD: How have you updated your data management and governance to accommodate AI and...",
-            "link": "https://www.linkedin.com/posts/joaopierre_informationweek-podcast-schedule-for-march-activity-7433224957259665408-iicv",
-            "activity_id": "",
-            "target_layer": "Layer 1: Pipeline Company",
-            "ready_comment": "AI governance in healthcare goes beyond compliance. In my PMO role leading a $50M digital transformation across 15 Saudi hospitals, we discovered something unexpected: the biggest obstacle wasn't the tech itself, it was getting people to actually use it. That's where trust comes in. How are you handling AI governance in your organization?",
-            "comment_angle": "Seeking oneCIO,CTO, CISO,chiefAIofficer, orchiefdataofficer, and one business-op"
-          }
-        ]
-      }
-    ],
+    "categories": [],
     "recommendation": "Priority: Layer 1 (pipeline targets) > Layer 2 (recruiter visibility) > Layer 3 (thought leadership)."
   },
   "calendar": {
@@ -294,12 +278,11 @@
     "note": "See engagement radar report for today's comment targets from 19 GCC influencers."
   },
   "strategic_notes": [
-    "1 LinkedIn posts found with ready-to-post Sonnet-drafted comments.",
+    "0 LinkedIn posts found with ready-to-post Sonnet-drafted comments.",
     "Comment strategy: Layer 1 > Layer 2 > Layer 3 by ROI.",
     "Job scanner running daily at 6 AM Cairo."
   ],
   "action_items": [
-    "Comment on 1 Layer 1 posts (pipeline company visibility)",
     "Review 2 new qualified roles",
     "Follow up on top pipeline applications with no response"
   ]
