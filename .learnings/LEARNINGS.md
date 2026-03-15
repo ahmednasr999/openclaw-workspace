@@ -532,3 +532,33 @@ AI proposes an "Air Traffic Controller" agent for multi-agent coordination:
 - Could apply similar coordination patterns
 - AI suggesting architectural improvements based on emerging patterns
 
+
+---
+
+## tennis - Stylish CSV Tables (Mar 15, 2026)
+
+Source: @linuxopsys on X - github.com/gurgeous/tennis
+
+### What It Is
+- CLI tool for printing stylish CSV tables in terminal
+- Written in Zig
+
+### Features
+- Auto-layout to fit terminal window
+- Auto-themes (light/dark based on terminal)
+- Color-coded columns
+- Row numbers, titles
+
+### Install
+- `brew install gurgeous/tap/tennis`
+- Or build from source with Zig
+
+### Example
+```
+λ tennis diamonds.csv -n --title "Diamond Inventory"
+```
+
+### For Our Setup
+- Niche terminal tool
+- Not directly relevant to current workflows
+
