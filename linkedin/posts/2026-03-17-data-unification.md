@@ -1,4 +1,4 @@
-# Tuesday March 18 | Growth | PAS | Scary | CTA: B
+# Tuesday March 17 | Growth | PAS | Scary | CTA: B
 
 ![Post Image](wed-mar18-image.png)
 
