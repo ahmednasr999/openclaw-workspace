@@ -208,3 +208,4 @@
 | Confidential Government | Executive Director, Smart City & IoT | Riyadh | Applied | 2026-03-12 | 70/100 |
 | MadForPeople | IT Director, Digital Transformation | Dubai | Applied | 2026-03-12 | 68/100 |
 | Confidential Government | Group CIAO, Enterprise Architecture | Saudi Arabia | Applied | 2026-03-12 | 70/100 |
+| Confidential | Head of Tech | Dubai | 📄 CV Ready | — | 83/100 |
