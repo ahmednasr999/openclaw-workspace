@@ -11,3 +11,4 @@
 - 2026-03-13 TALENTMATE/Eaton Operations Director - Campus Manager: Manufacturing plant role, not DT/tech. Scanner keyword false positive (Industry 4.0 mentions inflated score).
 - [2026-03-15] Mastercard Director/Senior Managing Consultant Cybersecurity Advisory: Deep cybersecurity specialist role, requires CISM/CISSP/CISA certs and hands-on security tech stack
 - [2026-03-15] Wonderful Field CTO Riyadh: Unknown company, vague AI-generated JD, Field CTO is presales not exec, Mid/Senior level tag
+- [2026-03-15] Talent Connect Group - Head of PMO & Strategic Operations: Mid-Senior level, 5yr PM req, agency-posted confidential company (Ahmed override: applied anyway)
