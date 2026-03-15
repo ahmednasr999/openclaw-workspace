@@ -1182,3 +1182,171 @@ ReportCardTemplate
 - 95% parent satisfaction with report clarity
 - Zero data errors in generated reports
 
+
+---
+
+## 15. Student Information System (SIS) Module (v1.1 Addendum)
+
+*Added: March 2026*
+
+### 15.1 Overview
+
+Minimal SIS functionality required to support report cards and exam results. Built-in student management eliminates need for external SIS integration for most schools.
+
+### 15.2 Core Features
+
+#### 15.2.1 Student Management
+
+- **F15.1.1** Student registration (name, DOB, gender, nationality)
+- **F15.1.2** Student ID generation (auto, customizable format)
+- **F15.1.3** Student photo upload
+- **F15.1.4** Student status (active, transferred, graduated, suspended)
+- **F15.1.5** Student document storage (ID copies, medical records)
+
+#### 15.2.2 Academic Structure
+
+- **F15.2.1** Academic year management (active, archived)
+- **F15.2.2** Terms/semesters configuration
+- **F15.2.3** Grade levels (Grade 1-12, KG1-KG3)
+- **F15.2.4** Sections/divisions per grade
+- **F15.2.5** Class capacity management
+
+#### 15.2.3 Enrollment
+
+- **F15.3.1** Student enrollment by grade/section
+- **F15.3.2** Subject selection for elective courses
+- **F15.3.3** Section change management
+- **F15.3.4** Roll-over to new academic year
+
+#### 15.2.4 Parent/Guardian Management
+
+- **F15.4.1** Parent/guardian profiles (up to 3 per student)
+- **F15.4.2** Contact information (phone, email, address)
+- **F15.4.3** Emergency contact details
+- **F15.4.4** Parent portal access
+- **F15.4.5** Communication preferences
+
+#### 15.2.5 Staff Assignment
+
+- **F15.5.1** Teacher profiles
+- **F15.5.2** Class teacher assignments
+- **F15.5.3** Subject teacher assignments
+- **F15.5.4** Staff contact directory
+
+### 15.3 Data Model
+
+```
+School
+├── SchoolID (PK)
+├── SchoolName
+├── SchoolCode
+├── Address
+├── Phone, Email
+└── AcademicYearID (FK)
+
+AcademicYear
+├── AcademicYearID (PK)
+├── SchoolID (FK)
+├── YearStartDate
+├── YearEndDate
+├── IsActive
+└── TermConfig (JSON)
+
+GradeLevel
+├── GradeID (PK)
+├── SchoolID (FK)
+├── GradeName (e.g., "Grade 10", "KG1")
+├── GradeOrder
+└── CurriculumID (FK)
+
+Section
+├── SectionID (PK)
+├── GradeID (FK)
+├── SectionName (e.g., "A", "B")
+├── Capacity
+├── ClassTeacherID (FK)
+└── AcademicYearID (FK)
+
+Student
+├── StudentID (PK)
+├── SchoolID (FK)
+├── StudentCode (unique per school)
+├── FirstName, LastName
+├── ArabicName
+├── DateOfBirth
+├── Gender
+├── Nationality
+├── PhotoURL
+├── Status (Active/Transferred/Graduated)
+├── CreatedAt
+└── UpdatedAt
+
+StudentEnrollment
+├── EnrollmentID (PK)
+├── StudentID (FK)
+├── AcademicYearID (FK)
+├── SectionID (FK)
+├── EnrollmentDate
+├── Status
+└── WithdrawDate
+
+ParentGuardian
+├── ParentID (PK)
+├── StudentID (FK)
+├── Relation (Father, Mother, Guardian)
+├── FirstName, LastName
+├── Phone, Email
+├── Address
+├── IsEmergencyContact
+└── PortalAccess
+
+Teacher
+├── TeacherID (PK)
+├── SchoolID (FK)
+├── EmployeeID
+├── FirstName, LastName
+├── Email
+├── Phone
+├── Department
+└── PhotoURL
+```
+
+### 15.4 SIS-Report Card Integration
+
+| SIS Data | Report Card Output |
+|----------|-------------------|
+| Student name, ID | Header info |
+| Grade, Section | Header info |
+| Parent contact | Delivery (email) |
+| Teacher | Sign-off section |
+| Academic term | Report period |
+| Enrollment status | Report eligibility |
+
+### 15.5 What We Are NOT Building (v1.1)
+
+These features deferred to v2.0 based on customer feedback:
+
+- Financial/tuition management
+- Attendance tracking
+- Library management
+- Transport management
+- Cafeteria management
+- Health records
+- Behavioral/discipline tracking
+
+### 15.6 Non-Functional Requirements
+
+| Metric | Requirement |
+|--------|-------------|
+| Student import (1000 records) | < 30 seconds |
+| Search response | < 1 second |
+| Concurrent users | 500+ |
+| Data retention | 10 years |
+
+### 15.7 Import Options
+
+- **F15.7.1** Excel/CSV bulk import
+- **F15.7.2** Template-based import
+- **F15.7.3** Validation and error reporting
+- **F15.7.4** Import history and rollback
+
