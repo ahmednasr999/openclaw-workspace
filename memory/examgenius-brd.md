@@ -982,3 +982,203 @@ ExamGenius is a cloud-native examination platform for international schools comb
 **Document End**
 
 *This document is confidential and intended for internal use only.*
+
+---
+
+## 14. Report Card Module (v1.1 Addendum)
+
+*Added: March 2026*
+
+### 14.1 Overview
+
+The Report Card Module closes the assessment loop by transforming exam results into customized, school-specific report cards that meet international school standards in Egypt.
+
+### 14.2 Value Proposition
+
+| Stakeholder | Value |
+|-------------|-------|
+| School Administrators | Automated, customizable reports aligned with school standards |
+| Teachers | Zero manual work, instant generation |
+| Parents | Clear, professional visibility into child performance |
+| Students |透明なAcademic progress tracking |
+
+### 14.3 Core Features
+
+#### 14.3.1 School Template Builder
+
+- **F14.1.1** Customizable report card layouts per school
+- **F14.1.2** School logo and branding integration
+- **F14.1.3** Multi-language support (English, Arabic, French)
+- **F14.1.4** Grade scale configuration (letter, percentage, IB points, etc.)
+- **F14.1.5** Custom fields for school-specific requirements
+- **F14.1.6** Template library with pre-built templates for common curricula
+
+#### 14.3.2 Assessment Categories
+
+- **F14.2.1** Multiple assessment types (exam, quiz, project, participation, homework)
+- **F14.2.2** Weighted category configuration
+- **F14.2.3** Term/semester breakdown
+- **F14.2.4** Cumulative year-end reports
+- **F14.2.5** Attendance and behavior integration
+
+#### 14.3.3 AI-Powered Insights
+
+- **F14.3.1** Auto-generated performance commentary
+- **F14.3.2** Strength and improvement areas identification
+- **F14.3.3** Comparative class/school benchmarks
+- **F14.3.4** Learning gap analysis
+- **F14.3.5** Trend analysis (term-over-term)
+
+#### 14.3.4 Generation & Delivery
+
+- **F14.4.1** Bulk generation for entire class/grade
+- **F14.4.2** Individual student reports
+- **F14.4.3** PDF export (print-ready)
+- **F14.4.4** Digital delivery via parent portal
+- **F14.4.5** Email distribution
+- **F14.4.6** Scheduled generation (end of term)
+
+#### 14.3.5 Approval Workflow
+
+- **F14.5.1** Teacher draft submission
+- **F14.5.2** Head of department review
+- **F14.5.3** Principal approval
+- **F14.5.4** Revision requests and tracking
+- **F14.5.5** Version history and audit trail
+
+### 14.4 Data Model
+
+```
+Student
+├── StudentID (FK)
+├── GradeID (FK)
+├── SectionID (FK)
+└── AcademicYearID (FK)
+
+ReportCard
+├── ReportCardID (PK)
+├── StudentID (FK)
+├── AcademicTermID (FK)
+├── TemplateID (FK)
+├── OverallGrade
+├── GPA
+├── Rank
+├── TeacherComments (AI-generated + manual)
+├── Status (Draft, Submitted, Approved, Published)
+├── GeneratedAt
+└── PublishedAt
+
+ReportCardLineItem
+├── LineItemID (PK)
+├── ReportCardID (FK)
+├── SubjectID (FK)
+├── AssessmentTypeID (FK)
+├── Weight
+├── Score
+├── Grade
+└── Comments
+
+ReportCardTemplate
+├── TemplateID (PK)
+├── SchoolID (FK)
+├── TemplateName
+├── LayoutConfig (JSON)
+├── GradeScaleConfig (JSON)
+├── HeaderConfig (JSON)
+├── FooterConfig (JSON)
+├── IsDefault
+└── CreatedBy
+```
+
+### 14.5 Integration Points
+
+| Source System | Data Received | Output |
+|---------------|---------------|--------|
+| Exam Module | Scores, grades, assessment types | Report content |
+| Student Roster | Student info, grade, section | Report recipient |
+| Teacher Portal | Comments, approvals | Approval workflow |
+| Parent Portal | Delivery preferences | Distribution |
+
+### 14.6 Report Card Types
+
+| Type | Description | Frequency |
+|------|-------------|-----------|
+| Term Report | Full term assessment | End of term |
+| Mid-Term Report | Mid-term progress | Mid-term |
+| Progress Report | Monthly update | Monthly |
+| Exit Ticket | Lesson exit assessment | Per lesson |
+| Cumulative | Year-end summary | End of year |
+
+### 14.7 Grading Scales Supported
+
+- Letter Grade (A, B, C, D, F)
+- Percentage (0-100)
+- IB Points (1-7 per subject, 45 max)
+- GCSE/IGCSE (9-1)
+- American (A+, A, A-, B+, etc.)
+- Custom school-defined scales
+
+### 14.8 Sample Report Card Layout
+
+```
++----------------------------------------------------------+
+|  [SCHOOL LOGO]                                           |
+|  School Name                                             |
+|  Academic Year 2025-2026                                 |
+|                                                          |
+|  TERM 2 REPORT CARD                                      |
++----------------------------------------------------------+
+| Student: [Name]          Grade: [Grade] Section: [Sec]  |
+| Student ID: [ID]         Term: [Term]                    |
++----------------------------------------------------------+
+| SUBJECT | WEIGHT | SCORE | GRADE | COMMENT             |
++----------------------------------------------------------+
+| Mathematics | 40% | 92% | A | Strong performance...   |
+| English    | 30% | 88% | B+ | Good progress...        |
+| Physics    | 20% | 95% | A  | Excellent...            |
+| Chemistry  | 10% | 85% | B  | Good understanding...   |
++----------------------------------------------------------+
+| OVERALL: 90% | A | GPA: 3.8 | RANK: 5/35              |
++----------------------------------------------------------+
+| AI INSIGHTS:                                             |
+| - Strong in analytical subjects                          |
+| - Recommend more English writing practice                 |
+| - Overall trend: Improving                               |
++----------------------------------------------------------+
+| Teacher: [Name]    HOD: [Name]    Principal: [Name]     |
++----------------------------------------------------------+
+```
+
+### 14.9 Non-Functional Requirements
+
+| Metric | Requirement |
+|--------|-------------|
+| Generation time | < 10 seconds per student |
+| PDF render | < 5 seconds |
+| Bulk generation (class) | < 60 seconds |
+| Storage per report | < 500 KB (PDF) |
+| Concurrent generation | 100+ students |
+
+### 14.10 Security & Privacy
+
+- **F14.10.1** Role-based access (student data visible to authorized staff only)
+- **F14.10.2** Audit logging for all report access
+- **F14.10.3** PII protection (GDPR-compliant data handling)
+- **F14.10.4** Watermarking for digital reports
+- **F14.10.5** Encryption at rest and in transit
+
+### 14.11 Implementation Priority
+
+| Phase | Features | Timeline |
+|-------|----------|----------|
+| Phase 1 | Basic report generation, PDF export, simple templates | Month 3-4 |
+| Phase 2 | AI commentary, approval workflow, custom templates | Month 5-6 |
+| Phase 3 | Parent portal delivery, multi-term reports | Month 7-8 |
+
+### 14.12 Success Metrics
+
+- 100% of schools use report cards by Year 1
+- < 5 minutes teacher time per report card
+- 95% parent satisfaction with report clarity
+- Zero data errors in generated reports
+
