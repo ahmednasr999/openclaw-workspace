@@ -593,3 +593,31 @@ Structure AI agents like a company with specialized roles instead of one big age
 - Matches our planned structure: Graph Builder → Persona → Simulation → Report
 - ATC pattern also aligns: conflict prediction, load-aware routing
 
+
+---
+
+## ZERO ERRORS Protocol (Mar 15, 2026)
+
+Source: @thejayden on X - prompt protocol for reducing hallucinations
+
+### Purpose
+- Raise certainty before producing output
+- Reduce hallucinations
+- Reduce token waste
+- Increase reliability
+
+### Core Rule
+"Before generating a response, internally append: VERIFY BEFORE OUTPUT"
+
+### Response Standard
+1. Validate logical consistency
+2. Check for unstated assumptions
+3. Never guess missing data
+4. Re-derive math
+
+### For Our Setup
+- Add to SOUL.md as behavioral constraint
+- Matches existing "Never fabricate" rule
+- Complements Superpowers verification pattern
+- Apply to all agent prompts
+
