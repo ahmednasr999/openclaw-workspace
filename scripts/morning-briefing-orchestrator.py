@@ -189,12 +189,14 @@ def gather_jobs():
     with open(latest) as f:
         for line in f:
             l = line.strip()
-            if "Qualified" in l and ("##" in l or "🟢" in l):
+            # v3.0 format: "Priority Picks" = qualified, "Executive Leads" = borderline
+            # v2.1 format: "Qualified" / "Borderline"
+            if ("Qualified" in l or "Priority Picks" in l) and ("##" in l or "🟢" in l):
                 if job.get("title") and section:
                     (qualified if section == "q" else borderline).append(job)
                     job = {}
                 section = "q"
-            elif "Borderline" in l and ("##" in l or "🟡" in l):
+            elif ("Borderline" in l or "Executive Leads" in l) and ("##" in l or "🟡" in l or "##" in l):
                 if job.get("title") and section:
                     (qualified if section == "q" else borderline).append(job)
                     job = {}
@@ -203,6 +205,12 @@ def gather_jobs():
                 if job.get("title"):
                     (qualified if section == "q" else borderline).append(job)
                 job = {"title": l.lstrip("# ").strip()}
+            elif l.startswith("- **") and section == "b":
+                # v3.0 inline lead format: - **Title** | Company | Location | [site](url)
+                import re as _re
+                m = _re.match(r'-\s*\*\*(.+?)\*\*\s*\|\s*(.+?)\s*\|\s*(.+?)\s*\|\s*\[.*?\]\((.+?)\)', l)
+                if m:
+                    borderline.append({"title": m.group(1), "company": m.group(2), "location": m.group(3), "link": m.group(4)})
             elif ":" in l and job:
                 k, _, v = l.partition(":")
                 k = k.strip().lstrip("-* ").lower()
@@ -215,12 +223,14 @@ def gather_jobs():
                     job["score"] = v
                 elif "link" in k or "url" in k:
                     job["link"] = v
+                elif "source" in k:
+                    job["source"] = v
 
     if job.get("title"):
         (qualified if section == "q" else borderline).append(job)
 
-    note = f"{os.path.basename(latest)}: {len(qualified)} qualified, {len(borderline)} borderline."
-    log(f"  {len(qualified)} qualified, {len(borderline)} borderline")
+    note = f"{os.path.basename(latest)}: {len(qualified)} priority picks, {len(borderline)} exec leads."
+    log(f"  {len(qualified)} priority picks, {len(borderline)} exec leads")
     return qualified, borderline, note
 
 

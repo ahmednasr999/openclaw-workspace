@@ -284,3 +284,24 @@
 - Errors: 0
 - Runtime: 598s
 - JobSpy failures: 69
+
+## 2026-03-15 05:53:47 (v3.0)
+- Searches: 55
+- Found: 140
+- Priority picks: 2
+- Leads: 36
+- Runtime: 244s
+
+## 2026-03-15 06:00:02 (v3.0)
+- Searches: 55
+- Found: 140
+- Priority picks: 0
+- Leads: 0
+- Runtime: 254s
+
+## 2026-03-15 06:01:21 (v3.0)
+- Searches: 55
+- Found: 140
+- Priority picks: 0
+- Leads: 0
+- Runtime: 260s
