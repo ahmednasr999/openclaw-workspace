@@ -2,9 +2,10 @@
 description: "Log of daily new ideas proposed to Ahmed per Non-Negotiable #4"
 type: log
 topics: [strategy]
-updated: 2026-03-14
+updated: 2026-03-15
 ---
 
+| 2026-03-15 | ExamGenius Co-Founder Agreement: Draft 2-page partnership framework covering equity split, roles (tech vs business), decision-making, vesting, IP assignment. BRD is ready, formalize before code. | New today |
 | 2026-03-08 | Nuxera.AI meeting prep: research 3 HealthTech AI case studies (ROI metrics, implementation timelines) to bring to meeting. Positions Ahmed as strategic thinker, not just PM. | New today |
 
 | Date | Idea | Status |

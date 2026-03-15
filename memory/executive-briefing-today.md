@@ -1,28 +1,29 @@
----
-description: "Today executive intelligence briefing content and delivery status"
-type: log
-topics: [strategy]
-updated: 2026-03-14
----
-
-☀️ EXECUTIVE BRIEFING — Thursday, Feb 26
+☀️ EXECUTIVE BRIEFING — Sunday, March 15, 2026
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 📊 JOB MARKET PULSE
-From Feb 25 radar: 48+ VP Digital Transformation roles on Indeed (Dubai). 43 on Glassdoor. PMO Director: 48+ vacancies in Dubai. VP AI Transformation at Etisalat/e& UAE. Salary range AED 9,500-15K (negotiate to 50K+). No new Delphi update — follow up by Feb 28.
+Job radar offline today (Tavily credits exhausted, DuckDuckGo returned no GCC results). LinkedIn Gulf Jobs Scanner runs at 6 AM.
+Action: Replenish Tavily credits or configure Brave API key.
 
 🏢 COMPANY INTEL
-Delphi Consulting: No new news. Awaiting feedback from Feb 24 interview.
+No notable news (search unavailable this cycle)
 
 📝 LINKEDIN TODAY
-Post: "We scaled from 30,000 to 7 million orders" (SLAY framework, CTA Rotation B). Post time: 12:00 PM Cairo. Engagement window: 12:00-12:30 PM. Suggestion: Comment on 1 post from a GCC healthcare leader.
+Sunday = TAM (Total Addressable Market) pillar day
+No post pre-built for today. Last post: 2026-03-14 "healthcare-dt"
+Engagement tip: Comment on 2-3 GCC CIO/CTO posts about digital transformation ROI
 
-📅 CALENDAR & DEADLINES
-No calendar events found (gog needs re-auth). Delphi follow-up deadline: Feb 28. Active-tasks shows no other 48h deadlines.
+💸 COST
+Session: Opus 4.6 active. Budget on track.
+All 33 crons on MiniMax (zero Claude cron spend).
 
-💡 TODAY'S NEW IDEA
-Create a "GCC Digital Transformation Leaders" targeted outreach list. Identify 50 C-suite at hospitals/healthtech/fintech in UAE/KSA/Qatar. Personalize connection requests with specific comment on their company's transformation. Manual 15-min task, could yield 5-10 conversations.
+📅 DEADLINES
+🔴 SIE Build: Only active task in BUILD NOW category. No hard deadline set.
+No other deadlines within 48h.
+
+💡 TODAY'S IDEA
+ExamGenius partnership framework: Draft a simple 2-page co-founder agreement template covering equity split, roles (tech vs business), decision-making, and vesting schedule. Ahmed has the BRD ready. Next step is formalizing the partnership before any code is written. This protects both sides and shows professionalism.
 
 🎯 TODAY'S PRIORITY
-Follow up with Delphi Consulting if no response by Feb 28 — send polite check-in to Kritika Chhabra. Second priority: post today's LinkedIn at noon Cairo.
+Review ExamGenius BRD with partner and discuss equity/roles, because the BRD is ready and momentum matters.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
