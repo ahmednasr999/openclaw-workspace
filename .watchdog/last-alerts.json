@@ -1,0 +1,14 @@
+{
+  "93e08970-902a-4b93-aa00-213aa572e1fd": {
+    "lastAlerted": "2026-03-16T22:48:00Z",
+    "error": "cron: job execution timed out"
+  },
+  "4c59f5da-3d8a-4010-b975-52f60d6c7499": {
+    "lastAlerted": "2026-03-16T22:48:00Z",
+    "error": "Delivering to Telegram requires target <chatId>"
+  },
+  "d3345863-0fed-4a82-b88a-90f90c65ed13": {
+    "lastAlerted": "2026-03-16T22:48:00Z",
+    "error": "cron: job execution timed out"
+  }
+}
