@@ -2,10 +2,10 @@
 description: "Daily GitHub trending scan: auto-scraped repos with relevance filter for OpenClaw, AI agents, automation"
 type: log
 topics: [knowledge, system-ops]
-updated: 2026-03-14
+updated: 2026-03-16
 ---
 
-# GitHub Radar — 2026-03-14
+# GitHub Radar — 2026-03-16
 
 ## Relevant Repos (Auto-Filtered)
 
@@ -18,6 +18,7 @@ updated: 2026-03-14
 - 2000/svg
 - 666ghj/BettaFish
 - 666ghj/MiroFish
+- AstrBotDevs/AstrBot
 - GoogleCloudPlatform/generative-ai
 - NousResearch/hermes-agent
 - apps/dependabot
@@ -29,7 +30,6 @@ updated: 2026-03-14
 - explore/email
 - favicons/favicon
 - features/code-review
-- features/codespaces
 
 ## Filters
 
@@ -38,4 +38,4 @@ updated: 2026-03-14
 **Note:** SIE reads this file and generates integration recommendations.
 
 ---
-*Scanned: Sat Mar 14 18:55:59 EET 2026*
+*Scanned: Mon Mar 16 03:00:03 EET 2026*

@@ -39,3 +39,6 @@ config/linkedin-cookies.json
 sift-test/
 tools/google-workspace/.token_cache.json
 .heartbeat/
+
+# Archived credentials (secrets)
+archives/config-old/
