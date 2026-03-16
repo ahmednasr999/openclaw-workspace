@@ -9,7 +9,7 @@ updated: 2026-03-16
 Date: 2026-03-16
 Source: https://www.linkedin.com/jobs/view/4376180868/
 ATS Score: 65/100 (Ahmed override: SUBMIT despite below threshold)
-Verdict: SUBMIT (Ahmed override)
+Verdict: APPLIED
 Location: London, UK
 Salary: Not disclosed
 
@@ -39,3 +39,8 @@ Salary: Not disclosed
 - ATS Score: 65/100 (override)
 - Key modifications: TPM-language reframing, Health AI emphasis, consumer platform positioning, responsible AI governance angle
 - PDF: Ahmed Nasr - Technical Program Manager Health AI - Microsoft.pdf
+
+## Application
+- Applied: 2026-03-16
+- Channel: Microsoft Careers direct
+- Follow-up due: 2026-03-30
