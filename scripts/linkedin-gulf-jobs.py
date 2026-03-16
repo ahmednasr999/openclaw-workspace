@@ -54,6 +54,7 @@ OUTPUT_DIR     = BASE_DIR / "jobs-bank" / "scraped"
 LOG_FILE       = OUTPUT_DIR / "cron-logs.md"
 DETAILED_LOG   = OUTPUT_DIR / "detailed-search-log.md"
 NOTIFIED_FILE  = OUTPUT_DIR / "notified-jobs.md"
+FILTERED_LOG   = OUTPUT_DIR / "filtered-out-jobs.md"  # v3.1: audit trail for discarded jobs
 APPLIED_DIR    = BASE_DIR / "jobs-bank" / "applications"
 PIPELINE_FILE  = BASE_DIR / "jobs-bank" / "pipeline.md"
 CONFIG_FILE    = Path("/root/.openclaw/openclaw.json")
@@ -282,7 +283,7 @@ def main():
     ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     date_str = datetime.now().strftime("%Y-%m-%d")
 
-    print(f"=== LinkedIn Gulf Jobs Scanner v3.0 ===")
+    print(f"=== LinkedIn Gulf Jobs Scanner v3.1 ===")
     print(f"Started: {ts}")
 
     _notified = load_notified()
@@ -309,6 +310,7 @@ def main():
     seen           = set()
     picks          = []    # priority picks (C-suite + UAE/Saudi + DT)
     leads          = []    # other relevant leads
+    filtered_out   = []    # v3.1: jobs that didn't pass filters (audit trail)
 
     with open(DETAILED_LOG, "a") as f:
         f.write(f"\n## Run: {ts} (v3.0)\n")
@@ -336,10 +338,12 @@ def main():
             seen.add(job["id"])
 
             if is_duplicate(job["id"], job.get("company","")):
+                filtered_out.append({**job, "filter_reason": "duplicate"})
                 continue
 
             relevant, reason = is_relevant(job["title"], job["location"])
             if not relevant:
+                filtered_out.append({**job, "filter_reason": reason})
                 continue
 
             save_notified(job)
@@ -367,7 +371,7 @@ def main():
     out_file = OUTPUT_DIR / f"qualified-jobs-{date_str}.md"
 
     with open(out_file, "w") as f:
-        f.write(f"# LinkedIn Gulf Jobs Scanner v3.0 - Report\n\n")
+        f.write(f"# LinkedIn Gulf Jobs Scanner v3.1 - Report\n\n")
         f.write(f"**Date:** {date_str}\n")
         f.write(f"**Engine:** JobSpy (LinkedIn + Indeed, fast mode)\n")
         f.write(f"**Searches:** {total_searches}\n")
@@ -375,6 +379,7 @@ def main():
         f.write(f"**Unique/relevant:** {len(picks)+len(leads)}\n")
         f.write(f"**Priority Picks:** {len(picks)} (C-suite + UAE/Saudi + DT)\n")
         f.write(f"**Leads:** {len(leads)} (exec + GCC + domain)\n")
+        f.write(f"**Filtered out:** {len(filtered_out)} (see filtered-out-jobs.md for audit)\n")
         f.write(f"**Runtime:** {elapsed}s\n\n")
 
         if total_found < MIN_JOBS_ALERT:
@@ -395,6 +400,21 @@ def main():
             f.write(f"## Executive Leads — All GCC Relevant\n\n")
             for job in leads:
                 f.write(f"- **{job['title']}** | {job['company']} | {job['location']} | [{job['site']}]({job['url']})\n")
+
+    # ==================== FILTERED-OUT AUDIT LOG ====================
+    with open(FILTERED_LOG, "w") as f:
+        f.write(f"# Filtered-Out Jobs Audit — {date_str}\n\n")
+        f.write(f"**Total filtered:** {len(filtered_out)}\n\n")
+        # Group by reason
+        reasons = {}
+        for j in filtered_out:
+            r = j.get("filter_reason", "unknown")
+            reasons.setdefault(r, []).append(j)
+        for reason, jobs_list in sorted(reasons.items()):
+            f.write(f"## {reason} ({len(jobs_list)})\n\n")
+            for j in jobs_list:
+                f.write(f"- **{j['title']}** | {j['company']} | {j['location']} | {j['url']}\n")
+            f.write("\n")
 
     # ==================== SLACK ====================
     if picks:
@@ -430,9 +450,11 @@ def main():
     print(f"\n=== DONE ({elapsed}s) ===")
     print(f"Searches:       {total_searches}")
     print(f"Jobs found:     {total_found}")
+    print(f"Filtered out:   {len(filtered_out)}")
     print(f"Priority picks: {len(picks)}")
     print(f"Exec leads:     {len(leads)}")
     print(f"Output:         {out_file}")
+    print(f"Audit log:      {FILTERED_LOG}")
 
 if __name__ == "__main__":
     main()
