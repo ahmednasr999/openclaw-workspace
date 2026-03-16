@@ -9,7 +9,7 @@ updated: 2026-03-16
 Date: 2026-03-16
 Source: https://www.linkedin.com/jobs/view/4382554467/
 ATS Score: 93/100
-Verdict: SUBMIT
+Verdict: APPLIED
 Location: Muscat, Oman
 Salary: Not disclosed
 Type: Full-time, permanent, Director level
@@ -47,3 +47,8 @@ Type: Full-time, permanent, Director level
 ## Notes
 - Possibly same bank as Northridge Recruitment "Head of Transformation" role. Applying to both (direct + recruiter) maximizes visibility.
 - Recruiter contact: Omaima Al Zadjali, Deputy Manager Talent Acquisition at Bank Nizwa
+
+## Application
+- Applied: 2026-03-16
+- Channel: LinkedIn direct
+- Follow-up due: 2026-03-30
