@@ -247,3 +247,17 @@
 | 13 | Qashio | Senior Product Director | Dubai | - | Applied | 2026-03-16 | 2026-03-23 |
 | 14 | ADGM | Head of Digital Products & BI | Abu Dhabi | - | Applied | 2026-03-16 | 2026-03-23 |
 | 15 | Finance House | Head of Consumer Products | Abu Dhabi | - | Applied | 2026-03-16 | 2026-03-23 |
+
+### Applied March 16, 2026 (Batch 2)
+
+| # | Company | Role | Location | Verdict | Stage | Applied | Follow-up |
+|---|---------|------|----------|---------|-------|---------|-----------|
+| 1 | First Abu Dhabi Bank (FAB) | VP Transformation, CIB | Abu Dhabi | SUBMIT | Applied | 2026-03-16 | 2026-03-23 |
+| 2 | du | Director IT Strategy | UAE | SUBMIT | Applied | 2026-03-16 | 2026-03-23 |
+| 3 | Mashreq | Global Head of NEO Unit | UAE | SUBMIT | Applied | 2026-03-16 | 2026-03-23 |
+| 4 | Legend Holding Group | IT Director | Dubai | SUBMIT | Applied | 2026-03-16 | 2026-03-23 |
+| 5 | Aldar Education | Head Digital & Enterprise Service Delivery | Abu Dhabi | REVIEW | Applied | 2026-03-16 | 2026-03-23 |
+| 6 | Confidential | Director Customer Value & Loyalty | Abu Dhabi | REVIEW | Applied | 2026-03-16 | 2026-03-23 |
+| 7 | Commercial Bank of Dubai | Senior Manager Virtual & Digital Assets | Dubai | REVIEW | Applied | 2026-03-16 | 2026-03-23 |
+| 8 | Anduril Industries | Sr. Manager Program Management | Abu Dhabi | REVIEW | Applied | 2026-03-16 | 2026-03-23 |
+| 9 | accesso | Director of Operations | Dubai | REVIEW | Applied | 2026-03-16 | 2026-03-23 |
