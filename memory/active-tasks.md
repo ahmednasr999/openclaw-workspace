@@ -7,20 +7,21 @@ updated: 2026-03-15
 
 # Active Tasks
 
-*Last updated: 2026-03-15*
+*Last updated: 2026-03-16*
 
 ## 🔴 BUILD NOW
 
-- [ ] **Self-Improvement Engine (SIE)** — 360° system-wide self-improvement. Spec: memory/self-improvement-engine-spec.md.
+- [ ] **Self-Improvement Engine (SIE)** — 360° system-wide self-improvement. Spec: memory/self-improvement-engine-spec.md. Status: cron active (4 AM daily), Telegram delivery working. Core loop running but needs expansion.
 
 ## 🟡 PENDING
 
-- [ ] **Fix LinkedIn Gulf Jobs Scanner** — Rate-limited (0 results from 120 searches). Reduce to ~30, add delays, fix ATS threshold 65->82, add degradation alerts.
-- [ ] **Export ExamGenius BRD to Google Docs** — Ahmed's explicit request, unfulfilled due to OAuth issues.
-- [ ] **Fix Morning Cron Sequence** — Done (6AM data, 6:30AM radar, 7:30AM briefing). Verify March 16 run.
+- [ ] **Export ExamGenius BRD to Google Docs** — Ahmed's explicit request. OAuth issues resolved but task still unfulfilled. Needs execution.
 
 ## 🟢 Recently Completed
 
+- [x] **LinkedIn Gulf Jobs Scanner v3.0** — Deployed Mar 15. Fast mode (no JD fetch), 55 search combos, 3-criteria filter, dedup. Rate limiting fixed.
+- [x] **Morning Cron Sequence** — Fixed and verified. 6AM scanner, 6:30AM radar, 7:30AM briefing.
+- [x] **LinkedIn Recommended Jobs Sweep** — Mar 15-16. 48 jobs triaged, 7 CVs generated, 7 applied.
 - [x] Google Docs OAuth Fix
 - [x] Morning Briefing Cron Fix
 - [x] Job Radar v3 Filter Upgrade
