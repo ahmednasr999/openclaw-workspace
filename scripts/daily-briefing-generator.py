@@ -21,7 +21,7 @@ from google.oauth2.credentials import Credentials
 # Constants
 DEFAULT_DOC_ID = "1gtl5sXIsvXiXhODFs29FD9L09i9mGQlsBVIrZbVkTYs"
 GOG_TOKEN_PATH = "/tmp/gog-token.json"
-GOG_CREDS_PATH = "/root/.config/gogcli/credentials.json"
+GOG_CREDS_PATH = "/root/.openclaw/workspace/config/ahmed-google.json"
 ACCOUNT = "ahmednasr999@gmail.com"
 
 # Bold labels to auto-detect and bold

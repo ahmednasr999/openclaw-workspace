@@ -65,7 +65,8 @@ SEARCH_DELAY         = 2         # seconds between searches
 MIN_JOBS_ALERT       = 10        # alert if fewer total jobs found
 
 # Title filter: must match executive level
-EXEC_WORDS = ["chief","cto","cio","cdo","coo","cso","vp ","vice president",
+EXEC_WORDS = ["chief","ceo","cto","cio","cdo","coo","cso","cfo","cmo","cro",
+              "vp ","vice president",
               "director","head of","svp","senior director","managing director",
               "executive director","program director","principal"]
 
