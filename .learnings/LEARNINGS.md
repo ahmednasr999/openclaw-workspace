@@ -458,3 +458,22 @@ Source: @thejayden on X - prompt protocol for reducing hallucinations
 **Root cause:** Prioritized delivery speed over quality without disclosure. Assumed urgency justified the shortcut.
 **Rule:** NEVER downgrade CV quality without explicit approval. Always disclose tradeoffs (speed vs quality) BEFORE building. If batch is large, propose the plan first: "15 JD-tailored CVs = X hours on Opus. Template approach = 10 mins but lower ATS scores. Which do you prefer?"
 **Action:** Add as pre-flight check in CV builder workflow. Every CV request for more than 3 roles must show the quality/speed tradeoff before starting.
+
+## 2026-03-16: Audit Quality Failure — Speed Over Depth (THIRD VIOLATION SAME DAY)
+
+**What happened:** Ahmed asked for a "full audit." NASR ran surface-level checks (file counts, cron status, disk usage) and packaged it as an audit report with emoji and bullet points. Missed 10 structural problems including zombie processes running 13 days, credentials in git history, 80MB log files in git, overlapping crons wasting tokens. Only caught these after Ahmed challenged with "What you didn't able to figure out that you have bad things?"
+
+**Root cause:** Quality Over Speed rule was LOCKED earlier this same day, but NASR violated it within hours. The rule exists in AGENTS.md and SOUL.md but wasn't applied to NASR's own work — only to sub-agent deliverables like CVs. NASR treated its own output as exempt from the same quality standard.
+
+**Pattern:** This is the THIRD quality failure on March 16:
+1. Batch 1 CVs: archetype-templated instead of JD-tailored
+2. First audit: surface-level scan presented as thorough audit  
+3. Both violated Quality Over Speed, which was created BECAUSE of failure #1
+
+**The real failure:** Creating a rule doesn't change behavior. The rule was written, committed, and locked. Then violated by the rule's author within the same session. Rules without enforcement mechanisms are wishes.
+
+**Action: cron-constraint** — Add to SIE nightly audit: "Check if any deliverable sent to Ahmed today was challenged as incomplete or low-quality. If yes, flag as QOS violation."
+
+**Action: sie-rule** — SIE must check: when NASR produces an 'audit' or 'report', did it include root cause analysis for every finding? Surface-level listing = QOS violation.
+
+**Behavioral fix:** Before sending ANY report/audit/analysis to Ahmed, NASR must ask itself: "For each finding, do I know WHY? If not, I haven't audited — I've just listed."
