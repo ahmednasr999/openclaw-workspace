@@ -244,9 +244,10 @@ def gather_jobs():
                 jina_url = f"https://r.jina.ai/{link}"
                 req_obj = urllib.request.Request(jina_url, headers={
                     "Accept": "text/plain",
-                    "X-Return-Format": "text"
+                    "X-Return-Format": "text",
+                    "X-No-Cache": "true"
                 })
-                with urllib.request.urlopen(req_obj, timeout=15) as resp:
+                with urllib.request.urlopen(req_obj, timeout=20) as resp:
                     jd_text = resp.read().decode("utf-8", errors="replace")[:3000]
                     job["jd_snippet"] = jd_text[:1500]
                     job["jd_fetched"] = True
@@ -258,8 +259,44 @@ def gather_jobs():
                         job["jd_flag"] = job.get("jd_flag", "") + " early-stage/startup"
                     log(f"    JD fetched: {job.get('title', '?')[:40]}")
             except Exception as e:
-                job["jd_fetched"] = False
-                log(f"    JD fetch failed for {job.get('title', '?')[:40]}: {e}")
+                log(f"    Jina failed for {job.get('title', '?')[:40]}: {e}. Trying direct curl...")
+                # Fallback: direct curl to LinkedIn (public JD pages don't require login)
+                try:
+                    req_obj2 = urllib.request.Request(link, headers={
+                        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36",
+                        "Accept": "text/html"
+                    })
+                    with urllib.request.urlopen(req_obj2, timeout=15) as resp:
+                        html = resp.read().decode("utf-8", errors="replace")
+                    # Extract text between common JD markers
+                    import re as _re
+                    # Try to find the job description section
+                    match = _re.search(r'(?:About the Role|Key Responsibilities|Description)(.*?)(?:Show more|Similar jobs|Seniority level)', html, _re.DOTALL)
+                    if match:
+                        from html.parser import HTMLParser
+                        class TagStripper(HTMLParser):
+                            def __init__(self):
+                                super().__init__()
+                                self.text = []
+                            def handle_data(self, d):
+                                self.text.append(d)
+                        s = TagStripper()
+                        s.feed(match.group(0))
+                        jd_text = ' '.join(s.text)[:1500]
+                        job["jd_snippet"] = jd_text
+                        job["jd_fetched"] = True
+                        jd_lower = jd_text.lower()
+                        if "equity" in jd_lower and "salary" not in jd_lower:
+                            job["jd_flag"] = "equity-only compensation"
+                        if "co-found" in jd_lower or "startup" in jd_lower:
+                            job["jd_flag"] = job.get("jd_flag", "") + " early-stage/startup"
+                        log(f"    JD fetched via direct curl: {job.get('title', '?')[:40]}")
+                    else:
+                        job["jd_fetched"] = False
+                        log(f"    Direct curl: no JD section found for {job.get('title', '?')[:40]}")
+                except Exception as e2:
+                    job["jd_fetched"] = False
+                    log(f"    All JD fetch methods failed for {job.get('title', '?')[:40]}: {e2}")
             time.sleep(1)  # Respect rate limits
 
     return qualified, borderline, note
@@ -323,13 +360,18 @@ def read_pipeline():
 # ============================================================
 # STEP 4: LINKEDIN POSTS (Tavily)
 # ============================================================
-def ddg_search(query, n=5):
-    """Search via DuckDuckGo (free, no API key, no quota)."""
+def ddg_search(query, n=5, timelimit='w'):
+    """Search via DuckDuckGo (free, no API key, no quota). timelimit: d=day, w=week, m=month."""
     try:
         from ddgs import DDGS
-        results = DDGS().text(query, max_results=n)
+        results = DDGS().text(query, max_results=n, timelimit=timelimit)
         # Normalize to Tavily-compatible format
-        return [{"title": r.get("title",""), "url": r.get("href",""), "content": r.get("body","")} for r in results]
+        normalized = [{"title": r.get("title",""), "url": r.get("href",""), "content": r.get("body","")} for r in results]
+        if not normalized and timelimit == 'w':
+            # Retry with month if week returns nothing
+            results = DDGS().text(query, max_results=n, timelimit='m')
+            normalized = [{"title": r.get("title",""), "url": r.get("href",""), "content": r.get("body","")} for r in results]
+        return normalized
     except Exception as e:
         log(f"  DDG error: {e}")
         return []
@@ -337,8 +379,8 @@ def ddg_search(query, n=5):
 
 def tavily_search(query, n=5, days=7):
     """Search via Tavily (primary) with DDG fallback (free)."""
-    # Try Tavily first if key available
-    if TAVILY_API_KEY:
+    # Try Tavily first if key available and not exhausted
+    if TAVILY_API_KEY and not getattr(tavily_search, '_exhausted', False):
         payload = json.dumps({
             "api_key": TAVILY_API_KEY,
             "query": query,
@@ -359,7 +401,12 @@ def tavily_search(query, n=5, days=7):
                 if results:
                     return results
         except Exception as e:
-            log(f"  Tavily error: {e}")
+            error_str = str(e)
+            if "432" in error_str or "429" in error_str or "402" in error_str:
+                tavily_search._exhausted = True
+                log(f"  Tavily quota exhausted (432). Switching to DDG for all remaining searches.")
+            else:
+                log(f"  Tavily error: {e}")
 
     # Fallback: DuckDuckGo (free, no quota)
     return ddg_search(query, n)
