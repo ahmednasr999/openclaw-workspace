@@ -447,8 +447,32 @@ def main():
             f.write(f"- ⚠️ DEGRADATION\n")
 
     # ==================== SUMMARY ====================
+    # ==================== SELF-VALIDATION (Fix 1) ====================
+    expected_searches = len(searches)
+    validation_warnings = []
+    if total_searches != expected_searches:
+        validation_warnings.append(f"SEARCH COUNT MISMATCH: ran {total_searches}, expected {expected_searches}. Runtime limit or errors.")
+    if total_found == 0 and total_searches > 5:
+        validation_warnings.append(f"ZERO RESULTS: {total_searches} searches returned 0 jobs. Possible rate limiting or cookie expiry.")
+    if total_found > 0 and len(picks) + len(leads) == 0 and len(filtered_out) == 0:
+        validation_warnings.append(f"DATA LOSS: {total_found} jobs found but none classified. Filter logic error.")
+    if len(filtered_out) + len(picks) + len(leads) + len(seen) < total_found * 0.5:
+        validation_warnings.append(f"ACCOUNTING GAP: classified {len(filtered_out)+len(picks)+len(leads)} but found {total_found}. Dedup may be too aggressive.")
+
+    if validation_warnings:
+        print(f"\n⚠️ VALIDATION WARNINGS ({len(validation_warnings)}):")
+        for w in validation_warnings:
+            print(f"  - {w}")
+        # Append to report
+        with open(out_file, "a") as f:
+            f.write(f"\n## Validation Warnings\n\n")
+            for w in validation_warnings:
+                f.write(f"- ⚠️ {w}\n")
+    else:
+        print(f"\n✅ Validation passed: {total_searches}/{expected_searches} searches, {total_found} found, {len(picks)+len(leads)} relevant, {len(filtered_out)} filtered.")
+
     print(f"\n=== DONE ({elapsed}s) ===")
-    print(f"Searches:       {total_searches}")
+    print(f"Searches:       {total_searches}/{expected_searches}")
     print(f"Jobs found:     {total_found}")
     print(f"Filtered out:   {len(filtered_out)}")
     print(f"Priority picks: {len(picks)}")
