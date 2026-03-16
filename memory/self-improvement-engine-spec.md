@@ -2,7 +2,7 @@
 description: "SIE specification: 26 improvement areas (A-Z), scoring, cron triggers, output format"
 type: reference
 topics: [system-ops]
-updated: 2026-03-14
+updated: 2026-03-16
 ---
 
 # Self-Improvement Engine (SIE) — Draft Spec
@@ -307,3 +307,97 @@ After the 26-area health check, the SIE generates actionable improvement suggest
 - Model: MiniMax M2.5 for daily, Opus for weekly deep analysis (optional)
 
 **Status: Spec approved by Opus 4.6. Ready to build.**
+
+---
+
+## 16. Phase 6: Skill Audit (Adapted from Ricouard's project-skill-audit)
+
+### Concept
+Every week, SIE scans session logs, learnings, and existing skills to detect:
+1. **Skills that need updating** (stale triggers, outdated paths, missing guardrails)
+2. **Skills that should be created** (repeated workflows not yet captured as skills)
+3. **Skills that should be retired** (unused, superseded, or broken)
+
+### Data Sources (in scan order)
+1. `memory/202X-XX-XX.md` — session logs (last 7 days minimum)
+2. `.learnings/LEARNINGS.md` — error patterns, corrections, rules
+3. `skills/*/SKILL.md` — existing skill definitions
+4. `memory/active-tasks.md` — recurring task patterns
+5. `AGENTS.md` — behavioral rules that might belong in skills
+6. `SOUL.md` — locked rules that emerged from repeated failures
+
+### Detection Rules
+
+**UPDATE candidates (existing skill is close but stale):**
+- Skill references files/paths that no longer exist
+- Skill description doesn't match what it actually does (drift)
+- LEARNINGS.md has 2+ entries about a skill's domain that aren't reflected in the skill
+- Skill hasn't been triggered in 14+ days despite relevant tasks occurring
+- Skill's workflow steps don't match the actual workflow observed in session logs
+
+**CREATE candidates (repeated workflow not captured):**
+- Same workflow pattern appears in 3+ session logs within 14 days
+- Same error/fix cycle appears in LEARNINGS.md 2+ times
+- A behavioral rule in AGENTS.md or SOUL.md was added because of repeated failures (should be a skill with enforcement)
+- A cron prompt contains workflow logic that should be a reusable skill
+- Sub-agent briefs repeatedly include the same context/instructions (should be a skill template)
+
+**RETIRE candidates (no longer useful):**
+- Skill hasn't been triggered in 30+ days
+- Skill's domain is fully covered by a newer skill
+- Skill depends on deprecated tools/APIs
+- Skill was created for a one-off task and never reused
+
+### Output Format
+Appended weekly to `memory/skill-audit-log.md`:
+
+```markdown
+## Skill Audit — YYYY-MM-DD
+
+### Evidence Summary
+- Session logs scanned: [count] (date range)
+- Learnings entries reviewed: [count]
+- Existing skills audited: [count]
+
+### UPDATE Recommended
+1. **[skill-name]** — [why stale] — Highest-value change: [specific fix]
+   Evidence: [session dates or learning IDs]
+
+### CREATE Recommended
+1. **[proposed-skill-name]** — [workflow it captures]
+   Trigger: [when it should fire]
+   Evidence: appeared in [X] sessions ([dates])
+
+### RETIRE Recommended
+1. **[skill-name]** — [why obsolete]
+   Last triggered: [date or "never observed"]
+
+### Priority Ranking
+1. [action] [skill-name] — Impact: HIGH/MED/LOW
+```
+
+### Rules
+- Evidence required: never recommend based on themes alone. Cite specific session dates, learning IDs, or file paths.
+- Update before create: if an existing skill is 70%+ of what's needed, recommend update, not new skill.
+- Max 5 recommendations per weekly audit (focus on highest value).
+- Never auto-modify skills. Output recommendations only. Ahmed or NASR reviews and acts.
+- Cross-reference ClawHub before recommending CREATE (check if community skill exists first).
+- Skills created from audit recommendations must include YAML frontmatter with `audit-origin: SIE-YYYY-MM-DD`.
+
+### Integration with Existing SIE
+- **Area S (Skills)** in the 26-area check: currently just "check skill execution errors"
+- Phase 6 replaces Area S with this deeper audit
+- Runs weekly (Sunday 4 AM Cairo), not daily (too expensive for pattern detection)
+- Model: MiniMax M2.5 for data collection, Opus 4.6 for pattern analysis + recommendations
+- Creates `memory/skill-audit-log.md` on first run
+
+### Trigger
+- Weekly: Sunday 4 AM Cairo (after SIE daily run)
+- Manual: `/sie audit-skills` or "audit my skills"
+- Event: when 3+ new learnings are logged in a single day (signals rapid change)
+
+### Files
+```
+memory/
+  └── skill-audit-log.md    # Weekly audit output (append-only)
+```
