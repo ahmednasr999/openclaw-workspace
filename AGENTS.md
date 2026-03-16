@@ -200,6 +200,15 @@ Example violations:
 
 Rule: Verify first, state second. If you can't verify, say "MEMORY.md says X but I haven't verified."
 
+### Fix Before Deliver (LOCKED Mar 16, 2026)
+The morning briefing (and any scheduled output delivered to Ahmed) must NEVER arrive broken or incomplete. If any step fails or produces warnings:
+1. Stop delivery
+2. Diagnose and fix (retry, alternative method, auth refresh)
+3. If the running model can't fix it, escalate to Opus 4.6 via sessions_spawn
+4. Only deliver after the fix is verified and the output is clean
+
+This applies to: morning briefing, scanner reports, engagement radar, LinkedIn posts, any cron-generated output.
+
 ### Learnings-to-Action Pipeline (LOCKED Mar 16, 2026)
 Every entry in `.learnings/LEARNINGS.md` must be escalated to ONE of:
 1. **Code check** (automated validator in the relevant script)
