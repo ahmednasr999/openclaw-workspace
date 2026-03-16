@@ -1,24 +1,25 @@
-# System Insights — 2026-03-15 07:31
+# System Insights — 2026-03-16 11:39
 
-## System Health Score: 92/100
+## System Health Score: 93/100
 
 ## Alerts
-- [J] Jobs: 0 jobs in recent radar
-- [R] Reliability: Session 71c1fa9c-73aa-45b1-806a-8d428dd6827b.jsonl.reset.2026-03-14T15-53-02.270Z is 6.2MB
+- [R] Reliability: Session sessions.json.c0e73c58-63e3-4ca8-94f1-16c1a43154bb.tmp is 7.0MB
 
 ## Warnings
 - [F] Feedback: 2 unprocessed corrections
 - [I] Integrations: Issue: Gmail
 - [O] Outputs: No recent CV outputs
+- [NASR] NASR Behavior: NASR behavior: Verdict without JD: Chief Executive Officer
 
 ## All Clear
 - [A] Applications: No recent ATS data
-- [B] Backups: Last commit 0.1h ago
+- [B] Backups: Last commit 0.2h ago
 - [C] Crons: Crons running (could not query gateway)
-- [D] Disk: Disk 54%
+- [D] Disk: Disk 56%
 - [E] Errors: No significant errors
-- [G] Gateway: Gateway running (PID: 1674488)
+- [G] Gateway: Gateway running (PID: 2157420)
 - [H] Heartbeat: No heartbeat failures
+- [J] Jobs: Job radar functional
 - [K] Knowledge: GitHub Radar: 2 actionable repos (see sie-github-recommendations.md), X Radar active
 - [L] Learnings: Learnings applied
 - [M] Models: Models stable
@@ -28,7 +29,7 @@
 - [S] Skills: Skills healthy
 - [T] Tools: Tools available
 - [U] Uptime: Gateway up
-- [V] Velocity: 63 sessions today
+- [V] Velocity: 53 sessions today
 - [W] Workspace: 11 files in root
 - [X] Execution: Execution healthy
 - [Y] Yield: Pipeline active

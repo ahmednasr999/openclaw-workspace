@@ -15,6 +15,7 @@ updated: 2026-03-15
 
 ## 🟡 PENDING
 
+- [ ] **Karpathy Loop for LinkedIn Content** — Auto-review engagement metrics nightly, let the posting agent tune its own strategy (topics, format, timing) based on what performed. Inspired by Eric Siu's system. Ahmed approved Mar 16.
 - [ ] **Export ExamGenius BRD to Google Docs** — Ahmed's explicit request. OAuth issues resolved but task still unfulfilled. Needs execution.
 
 ## 🟢 Recently Completed
