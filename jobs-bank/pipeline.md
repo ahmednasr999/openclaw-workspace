@@ -213,3 +213,17 @@
 | MadForPeople | IT Director, Digital Transformation | Dubai | Applied | 2026-03-12 | 68/100 |
 | Confidential Government | Group CIAO, Enterprise Architecture | Saudi Arabia | Applied | 2026-03-12 | 70/100 |
 | Confidential | Head of Tech | Dubai | ✅ Applied | 2026-03-15 | 83/100 |
+
+## 2026-03-15/16 - Applied (LinkedIn Recommended + Scanner v3.0)
+
+| # | Company | Role | Location | ATS | Stage | Applied | Follow-up | Job URL |
+|---|---------|------|----------|-----|-------|---------|-----------|---------|
+| 33 | Cigna | Head of Transformation | UAE | 86% | ✅ Applied | 2026-03-15 | 2026-04-12 | [LinkedIn](https://www.linkedin.com/jobs/view/4352999603/) |
+| 34 | Al Ramz | VP Enterprise PMO | UAE | 88% | ✅ Applied | 2026-03-15 | 2026-04-12 | [LinkedIn](https://www.linkedin.com/jobs/view/4377881590/) |
+| 35 | Whiteshield | Principal DT | UAE | 86% | ✅ Applied | 2026-03-15 | 2026-04-12 | [LinkedIn](https://www.linkedin.com/jobs/view/4334077967/) |
+| 36 | Confidential | Head of Tech | Dubai | 83% | ✅ Applied | 2026-03-15 | 2026-04-12 | [LinkedIn](https://www.linkedin.com/jobs/view/4350835715/) |
+| 37 | Al-Futtaim Finance | Digital Delivery Lead | UAE | 79% | ✅ Applied | 2026-03-16 | 2026-04-13 | [LinkedIn](https://www.linkedin.com/jobs/view/4376554833/) |
+| 38 | Disrupt.com (Gaditek) | COO | UAE | 74% | ✅ Applied | 2026-03-16 | 2026-04-13 | [LinkedIn](https://www.linkedin.com/jobs/view/4374554747/) |
+| 39 | AWS | Principal TPM Digital Sovereignty | UAE | 71% | ✅ Applied | 2026-03-16 | 2026-04-13 | [LinkedIn](https://www.linkedin.com/jobs/view/4381667648/) |
+| 40 | Confidential Government | Executive Director, IT | Riyadh | ~84% | ✅ Applied | 2026-03-16 | 2026-04-13 | [LinkedIn](https://www.linkedin.com/jobs/view/4386059897/) |
+| 41 | Snoonu | VP Data & Performance | Lusail, Qatar | ~72% | ✅ Applied | 2026-03-16 | 2026-04-13 | [LinkedIn](https://www.linkedin.com/jobs/view/4374939454/) |
