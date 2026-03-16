@@ -50,3 +50,7 @@ config/*-cookies*.json
 config/*-oauth*.json
 config/gws-*.json
 config/nasr-agent-oauth.json
+
+# Large log files - NEVER commit
+logs/*.jsonl
+logs/*.log
