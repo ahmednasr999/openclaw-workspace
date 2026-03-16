@@ -190,6 +190,26 @@ Only say "I can't" after all four steps fail.
 ### Memory Rule: Text > Brain
 If it's not written, it doesn't exist. Update memory files immediately.
 
+### Memory Verification Rule: Never Parrot Numbers (LOCKED Mar 16, 2026)
+When citing a specific number from MEMORY.md or any memory file (search counts, scores, dates, stats), VERIFY it against the actual source (script code, log file, API output) before stating it. MEMORY.md is notes, not truth. Notes can be wrong, outdated, or aspirational specs that were never implemented.
+
+Example violations:
+- Saying "55 search combos" because MEMORY.md says so, without checking the script has 55
+- Saying "127 jobs found" from a previous report without checking today's report
+- Citing an ATS score from memory without checking the actual dossier
+
+Rule: Verify first, state second. If you can't verify, say "MEMORY.md says X but I haven't verified."
+
+### Learnings-to-Action Pipeline (LOCKED Mar 16, 2026)
+Every entry in `.learnings/LEARNINGS.md` must be escalated to ONE of:
+1. **Code check** (automated validator in the relevant script)
+2. **SIE audit rule** (nightly cron catches violations)
+3. **Cron prompt constraint** (explicit instruction in the cron's prompt)
+
+If a learning stays as "just a text note" for more than 48 hours without becoming one of the above, the SIE flags it as unacted. A learning that isn't enforced by code or audit will be violated again.
+
+When logging a new learning, add a line: `Action: [code-check|sie-rule|cron-constraint] in [script/file name]`
+
 ### Sub-Agent Completion Guard: Mandatory
 Every sub-agent brief must include the Completion Guard block from TOOLS.md. Progress is not completion. Sub-agents must emit `TASK_COMPLETE` when genuinely done. If missing, the task failed and needs re-run or steering. See TOOLS.md > Sub-Agent Conventions > Completion Guard for the full protocol.
 

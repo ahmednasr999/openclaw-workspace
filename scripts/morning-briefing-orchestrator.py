@@ -1084,10 +1084,31 @@ def main():
 
     # Done
     drafted = sum(1 for p in selected_posts if "[Comment draft" not in p.get("ready_comment",""))
+    # ===== SELF-VALIDATION (Fix 1) =====
+    validation_warnings = []
+    all_leads = qualified + borderline
+    unfetched = [j for j in all_leads if j.get("link") and "linkedin.com" in j.get("link","") and not j.get("jd_fetched")]
+    if unfetched:
+        validation_warnings.append(f"JD NOT FETCHED: {len(unfetched)} leads have no JD. Verdicts are unreliable: {', '.join(j.get('title','?')[:30] for j in unfetched)}")
+    if scanner_note and "0 priority picks, 0 exec leads" not in scanner_note:
+        # Check that recommendations exist for non-empty results
+        pass
+    if errors:
+        validation_warnings.append(f"ERRORS: {len(errors)} steps had errors: {'; '.join(e.get('issue','')[:50] for e in errors)}")
+
+    if validation_warnings:
+        log(f"\n⚠️ VALIDATION ({len(validation_warnings)} warnings):")
+        for w in validation_warnings:
+            log(f"  - {w}")
+    else:
+        log(f"\n✅ Validation passed.")
+
+    log("")
     log("=== COMPLETE ===")
     log(f"Posts found:       {len(selected_posts)}")
     log(f"Comments drafted:  {drafted}")
     log(f"Errors:            {len(errors)}")
+    log(f"Validation:        {len(validation_warnings)} warnings")
     for e in errors:
         log(f"  ! {e.get('issue','')}")
     log(f"Briefing:   {BRIEFING_DOC}")

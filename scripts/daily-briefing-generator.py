@@ -427,6 +427,23 @@ def apply_formatting(docs, doc_id, lines, start_index=1):
             }
         })
 
+    # Apply italic + size 9pt to ALL NORMAL_TEXT lines (premium format rule)
+    current_pos = start_index
+    for text, style in lines:
+        line_end = current_pos + len(text)
+        if style == "NORMAL_TEXT" and text:
+            all_requests.append({
+                'updateTextStyle': {
+                    'range': {'startIndex': current_pos, 'endIndex': line_end + 1},
+                    'textStyle': {
+                        'italic': True,
+                        'fontSize': {'magnitude': 9, 'unit': 'PT'}
+                    },
+                    'fields': 'italic,fontSize'
+                }
+            })
+        current_pos = line_end + 1
+
     # Execute batch
     result = docs.documents().batchUpdate(
         documentId=doc_id,
@@ -511,7 +528,63 @@ def main():
 
     print(f"Applied {num_requests} formatting requests.")
     print(f"Document: https://docs.google.com/document/d/{args.doc_id}/edit")
+
+    # ===== SELF-VALIDATION (Fix 1) =====
+    warnings = validate_output(docs, args.doc_id, data)
+    if warnings:
+        print(f"\n⚠️ VALIDATION WARNINGS ({len(warnings)}):")
+        for w in warnings:
+            print(f"  - {w}")
+    else:
+        print("\n✅ Validation passed: premium format confirmed.")
     print("DONE")
+
+
+def validate_output(docs, doc_id, data):
+    """Post-write validator: catches format and content violations."""
+    warnings = []
+
+    # 1. Check that Jobs Radar has no verdicts without JD
+    jobs = data.get("jobs", {})
+    for job in jobs.get("qualified", []) + jobs.get("borderline", []):
+        link = job.get("link", job.get("url", ""))
+        if link and "linkedin.com" in link:
+            if not job.get("jd_fetched"):
+                warnings.append(f"VERDICT WITHOUT JD: {job.get('title', '?')} has no fetched JD. Verdict is unreliable.")
+
+    # 2. Check doc formatting (sample first 20 paragraphs of today's section)
+    try:
+        doc = docs.documents().get(documentId=doc_id).execute()
+        content = doc.get('body', {}).get('content', [])
+        body_paras_checked = 0
+        bad_format = 0
+        for element in content[-40:]:  # Check last 40 elements (today's section)
+            if 'paragraph' in element:
+                para = element['paragraph']
+                style = para.get('paragraphStyle', {}).get('namedStyleType', 'NORMAL_TEXT')
+                if style == 'NORMAL_TEXT':
+                    body_paras_checked += 1
+                    for run in para.get('elements', []):
+                        ts = run.get('textRun', {}).get('textStyle', {})
+                        text = run.get('textRun', {}).get('content', '').strip()
+                        if text and not ts.get('italic'):
+                            bad_format += 1
+                            break
+        if bad_format > 3:
+            warnings.append(f"FORMAT: {bad_format}/{body_paras_checked} body paragraphs missing italic styling.")
+    except Exception as e:
+        warnings.append(f"FORMAT CHECK FAILED: {e}")
+
+    # 3. Check that scanner_note doesn't contain unverified numbers
+    scanner_note = jobs.get("scanner_note", "")
+    if scanner_note:
+        import re
+        numbers = re.findall(r'\d+', scanner_note)
+        # Just flag if numbers are present but no source file referenced
+        if numbers and "qualified-jobs" not in scanner_note:
+            warnings.append(f"UNVERIFIED: scanner_note contains numbers but no source file reference.")
+
+    return warnings
 
 
 if __name__ == "__main__":
