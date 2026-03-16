@@ -627,3 +627,15 @@ Source: @thejayden on X - prompt protocol for reducing hallucinations
 - **Example:** Recommended building an outbound security gate from scratch when `prompt-injection-guard` and similar skills exist on ClawHub.
 - **Rule:** Before recommending "we need to build X," ALWAYS run `clawhub search [keywords]` first. If a community skill exists, inspect it before reinventing.
 - **Applies to:** All sessions, all models, all sub-agents.
+
+## 2026-03-16: Google Doc Briefing Must Use Premium Formatting
+- **What happened:** Inserted raw text into the Executive Briefing Google Doc instead of using native API formatting (headings, bold labels, clickable links).
+- **Rule in MEMORY.md:** "NEVER raw markdown. ALWAYS native API formatting via premium generator scripts."
+- **Fix:** Always use Google Docs API batchUpdate with updateParagraphStyle (HEADING_1/2) and updateTextStyle (bold, italic, links). Never just insertText with plain strings.
+- **Applies to:** All Google Doc writes, especially the morning briefing cron.
+
+## 2026-03-16: ALWAYS Fetch Full JD Before Publishing Verdict in Briefing Doc
+- **What happened:** Recommended "Skip" on Sagest Capital CEO based on company name alone. Actual JD revealed it was a co-founding equity-only startup role (different skip reason entirely).
+- **Rule:** NEVER publish a recommendation or verdict in the Executive Briefing doc without first fetching and reading the full job description.
+- **Why:** Title-based verdicts are unreliable (Anduril lesson: title said 85%, full JD was 64%). The briefing doc is Ahmed's decision-making tool; it must have JD-backed analysis.
+- **Applies to:** Morning briefing cron, all scanner output triage, any job recommendation.

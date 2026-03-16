@@ -11,7 +11,7 @@ Usage:
     python3 morning-briefing-orchestrator.py --date 2026-03-15
 """
 
-import json, os, sys, re, subprocess, argparse, glob, traceback, urllib.request
+import json, os, sys, re, subprocess, argparse, glob, traceback, urllib.request, time
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
@@ -231,6 +231,37 @@ def gather_jobs():
 
     note = f"{os.path.basename(latest)}: {len(qualified)} priority picks, {len(borderline)} exec leads."
     log(f"  {len(qualified)} priority picks, {len(borderline)} exec leads")
+
+    # v3.1: Fetch full JDs for all leads before publishing verdicts
+    all_leads = qualified + borderline
+    if all_leads:
+        log(f"  Fetching JDs for {len(all_leads)} leads...")
+        for job in all_leads:
+            link = job.get("link", job.get("url", ""))
+            if not link or "linkedin.com" not in link:
+                continue
+            try:
+                jina_url = f"https://r.jina.ai/{link}"
+                req_obj = urllib.request.Request(jina_url, headers={
+                    "Accept": "text/plain",
+                    "X-Return-Format": "text"
+                })
+                with urllib.request.urlopen(req_obj, timeout=15) as resp:
+                    jd_text = resp.read().decode("utf-8", errors="replace")[:3000]
+                    job["jd_snippet"] = jd_text[:1500]
+                    job["jd_fetched"] = True
+                    # Extract key info for quick review
+                    jd_lower = jd_text.lower()
+                    if "equity" in jd_lower and "salary" not in jd_lower:
+                        job["jd_flag"] = "equity-only compensation"
+                    if "co-found" in jd_lower or "startup" in jd_lower:
+                        job["jd_flag"] = job.get("jd_flag", "") + " early-stage/startup"
+                    log(f"    JD fetched: {job.get('title', '?')[:40]}")
+            except Exception as e:
+                job["jd_fetched"] = False
+                log(f"    JD fetch failed for {job.get('title', '?')[:40]}: {e}")
+            time.sleep(1)  # Respect rate limits
+
     return qualified, borderline, note
 
 

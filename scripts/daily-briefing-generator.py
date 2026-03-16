@@ -203,10 +203,18 @@ def build_document_lines(data):
             lines.append(("", "NORMAL_TEXT"))
 
     if borderline:
-        lines.append(("Borderline Roles (Score 55-64)", "HEADING_3"))
+        lines.append(("Executive Leads", "HEADING_3"))
         lines.append(("", "NORMAL_TEXT"))
         for job in borderline:
-            lines.append((f"{bullet} {job['title']} | {job.get('company', '')} | {job.get('location', '')} | {job.get('score', '')}", "NORMAL_TEXT"))
+            lead_line = f"{bullet} {job['title']} | {job.get('company', '')} | {job.get('location', '')}"
+            if job.get('score'):
+                lead_line += f" | {job['score']}"
+            lines.append((lead_line, "NORMAL_TEXT"))
+            # v3.1: Show JD flags if available
+            if job.get('jd_flag'):
+                lines.append((f"  JD Flag: {job['jd_flag'].strip()}", "NORMAL_TEXT"))
+            if job.get('jd_fetched') is False:
+                lines.append(("  JD: Could not fetch (verdict pending manual review)", "NORMAL_TEXT"))
         lines.append(("", "NORMAL_TEXT"))
 
     if jobs.get("recommendation"):
