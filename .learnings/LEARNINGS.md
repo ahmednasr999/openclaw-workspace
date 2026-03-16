@@ -1,5 +1,13 @@
 # Learnings Log
 
+## 2026-03-17: Spec Existence != System Running (CRITICAL)
+**What happened:** HEARTBEAT.md described a detailed hourly monitoring system (10 checks, cooldowns, self-healing). heartbeat-checks.sh (10KB) existed to implement it. Both were read every session startup. But no cron was ever created to run it. `openclaw.json` heartbeat config was `{}`. The system was never live. For weeks, I believed the heartbeat was running because the documentation said so.
+**Root cause:** Confused "spec written + script exists" with "system deployed and running." Never ran `openclaw cron list | grep heartbeat` to verify. Never checked `openclaw.json` heartbeat config.
+**Deeper gap:** SIE and Cron Watchdog detect FAILING crons, not MISSING crons. A cron that was never created is invisible to all monitoring.
+**Fix applied:** (1) Merged health checks into Cron Watchdog prompt (runs every 2h, 6/7 checks live). (2) Adding spec-vs-reality audit to weekly SIE.
+**Rule:** When any operational spec (HEARTBEAT.md, AGENTS.md, etc.) claims something runs on a schedule, VERIFY with `openclaw cron list` that it actually exists. Documentation is not deployment. Scripts on disk are not running systems.
+**Action: sie-rule in SIE Skill Audit weekly cron** — compare documented operational specs against actual running crons/configs. Flag any spec that describes a system with no corresponding cron or service.
+
 ## 2026-03-08: Dead Channel Token Crashes Entire Gateway
 **What happened:** Slack bot token became account_inactive. Gateway tried to authenticate on startup, got unhandled promise rejection, crashed. Watchdog restarted twice but same config = same crash.
 **Root cause:** OpenClaw does not isolate bad channel failures at startup. One dead channel crashes everything.
