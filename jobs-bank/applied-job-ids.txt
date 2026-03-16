@@ -1,60 +1,35 @@
-4346704149
-4351778628
-4352999603
-4357830223
-4360053285
-4368979403
-4371727536
-4372368161
-4372468004
-4372482810
-4372693407
-4372899733
-4373081849
-4373109759
-4373471367
-4373946376
-4374243946
-4374891542
-4375112810
-4375140623
-4375202921
-4375223553
-4375225528
-4375226171
-4375324051
-4375518332
-4375521803
-4375537686
-4375708512
-4375907659
-4375932512
-4375947657
-4375967216
-4376367703
-4376649232
-4376782445
-4377233880
-4377259350
-4377598782
-4377615733
-4377660433
-4377749112
-4377912517
-4378178161
-4378323469
-4378349141
-4378364156
-4378690376
-4378910539
-4379445718
-4379650786
-4379915961
-4380340326
-4381981225
-hungerstation-director-it-operations-riyadh|HungerStation|Director of IT Operations|Riyadh|Applied|2026-03|linkedin:4319881126
-mcg-talent-cto-abu-dhabi|MCG Talent (Confidential)|Chief Technology Officer|Abu Dhabi|Applied|2026-03-10|mcgtalent:20261615
-consulting-point-country-head-it-strategy-qatar|Consulting Point|Country Head IT Strategy & Digital Consulting|Dubai/Qatar|Applied|2026-03|linkedin:4381472127
-edari-sr-mgr-digital-solutions-dubai|edari|Senior Manager Digital Solutions|Dubai|Applied|2026-03|linkedin:4376547571
-4383719497
-4383714570
+# Applied LinkedIn Job IDs - Source of Truth for Dedup
+# Format: job_id | company | role | date
+# Check this file BEFORE building any CV or scoring any job
+
+# Madison Pearl (Mar 16, 2026)
+# Applied via email, no LinkedIn job IDs
+
+# Batch 1 (Mar 16, 2026)
+4366706927 | byteSpark.ai | Director Investment Platforms & Digital Enablement | 2026-03-16
+4381700187 | AXIAN Group | Head of Data | 2026-03-16
+4373121600 | numi | Chief Technology Officer | 2026-03-16
+4381713106 | Mastercard | VP Product Commercialization Digital Assets | 2026-03-16
+4373851696 | noon | Head of Product Dubai Mall Online | 2026-03-16
+4371147001 | Circles | Head of Product | 2026-03-16
+4380081720 | Talents Tide | Head of IT | 2026-03-16
+4374034554 | Auxo Talent | Director Data Centre Transformation | 2026-03-16
+4376554833 | Al-Futtaim | Digital Delivery Lead Finance | 2026-03-16
+4373449512 | Dubai Dept Economy & Tourism | Senior Project Manager | 2026-03-16
+4371850270 | Whiteshield | Digital Delivery Manager PMO | 2026-03-16
+4367573063 | Foreground | Director Digital Transformation | 2026-03-16
+4370070767 | Qashio | Senior Product Director | 2026-03-16
+4365275806 | ADGM | Head Digital Products & BI | 2026-03-16
+4346077638 | Finance House | Head of Consumer Products | 2026-03-16
+
+# Batch 2 (Mar 16, 2026)
+4381434171 | First Abu Dhabi Bank (FAB) | VP Transformation CIB | 2026-03-16
+4382561967 | du | Director IT Strategy | 2026-03-16
+4361004969 | Mashreq | Global Head of NEO Unit | 2026-03-16
+4375974910 | Legend Holding Group | IT Director | 2026-03-16
+4363904436 | Aldar Education | Head Digital & Enterprise Service Delivery | 2026-03-16
+4375516082 | Confidential | Director Customer Value & Loyalty | 2026-03-16
+4367901428 | Commercial Bank of Dubai | Senior Manager Virtual & Digital Assets | 2026-03-16
+4371278731 | Anduril Industries | Sr Manager Program Management | 2026-03-16
+4328655463 | accesso | Director of Operations | 2026-03-16
+4374225542 | MCG Talent | IT Project Manager | 2026-03-16

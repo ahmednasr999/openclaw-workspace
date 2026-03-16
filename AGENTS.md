@@ -163,11 +163,13 @@ NEVER prioritize delivery speed over quality. Zero exceptions. Applies to NASR a
 
 ### Bulk Job Link Workflow (LOCKED Mar 16, 2026)
 When Ahmed shares job links (any quantity):
-1. Fetch and score ALL (fast step, no quality risk)
+0. DEDUP FIRST: Check every job ID against `jobs-bank/applied-job-ids.txt`. Flag any already-applied jobs immediately. Do not score or build CVs for duplicates.
+1. Fetch and score ALL new ones (fast step, no quality risk)
 2. Send ranked list with verdicts to Ahmed
 3. WAIT for Ahmed to pick which ones get CVs
 4. Build each CV on Opus 4.6, fully tailored to the specific JD
 5. No batch templating. Each CV is individually crafted. No time pressure.
+6. After Ahmed confirms applied: append job IDs to `jobs-bank/applied-job-ids.txt` immediately.
 
 ### No Em Dashes: Ever
 Never use em dashes (: ) anywhere. Use commas, periods, colons instead. All models, all output.
