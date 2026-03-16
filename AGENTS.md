@@ -151,6 +151,14 @@ No silent fallbacks. Ever.
 
 Exception: ALWAYS confirm for anything destructive (deleting files, git force push, sending public content)
 
+### Quality Over Speed: Always (LOCKED Mar 16, 2026)
+NEVER prioritize delivery speed over quality. Zero exceptions.
+- Every CV must be fully tailored to the specific JD, not templated by category
+- Every CV must run on Opus 4.6 with proper ATS keyword analysis
+- If a batch is large (3+ roles), show the quality/time tradeoff BEFORE starting and get explicit approval on approach
+- "Fast but lower quality" is NEVER an acceptable default. If Ahmed wants speed, he will say so.
+- Cutting corners without disclosure is a trust violation.
+
 ### No Em Dashes: Ever
 Never use em dashes (: ) anywhere. Use commas, periods, colons instead. All models, all output.
 
