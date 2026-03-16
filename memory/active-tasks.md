@@ -11,7 +11,7 @@ updated: 2026-03-15
 
 ## 🔴 BUILD NOW
 
-- [ ] **Self-Improvement Engine (SIE)** — 360° system-wide self-improvement. Spec: memory/self-improvement-engine-spec.md. Status: cron active (4 AM daily), Telegram delivery working. Core loop running but needs expansion.
+- [ ] **Self-Improvement Engine (SIE)** — 360° system-wide self-improvement. Spec: memory/self-improvement-engine-spec.md. Status: cron active (4 AM daily), Telegram delivery working. Core loop running. Phase 6 (Skill Audit) spec added Mar 16 — weekly evidence-based skill recommendations (update/create/retire). Needs cron setup for Sunday 4 AM.
 
 ## 🟡 PENDING
 
