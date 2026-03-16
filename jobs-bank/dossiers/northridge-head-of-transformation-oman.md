@@ -9,7 +9,7 @@ updated: 2026-03-16
 Date: 2026-03-16
 Source: https://www.linkedin.com/jobs/view/4386331883/
 ATS Score: 89/100
-Verdict: SUBMIT
+Verdict: APPLIED
 Location: Muscat, Oman
 Salary: Not disclosed
 Type: Full-time, permanent
@@ -40,3 +40,8 @@ Type: Full-time, permanent
 - Model: opus46
 - ATS Score: 89/100
 - PDF: Ahmed Nasr - Head of Transformation - Northridge Recruitment.pdf
+
+## Application
+- Applied: 2026-03-16
+- Channel: LinkedIn (responded to recruiter Tom North)
+- Follow-up due: 2026-03-30
