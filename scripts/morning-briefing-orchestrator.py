@@ -555,10 +555,18 @@ def find_posts(commented_urls, targets):
     _year = str(_now.year)
     _month = _now.strftime("%B")  # e.g. "March"
 
+    # Non-English domains to skip (engagement should be in English)
+    NON_EN_DOMAINS = ["de.linkedin.com", "fr.linkedin.com", "es.linkedin.com", 
+                       "pt.linkedin.com", "it.linkedin.com", "nl.linkedin.com",
+                       "jp.linkedin.com", "cn.linkedin.com", "kr.linkedin.com",
+                       "ar.linkedin.com", "tr.linkedin.com", "ru.linkedin.com"]
+
     def is_fresh(url):
         if "linkedin.com/posts/" not in url:
             return False
         if url in commented_urls:
+            return False
+        if any(url.startswith(f"https://{d}") for d in NON_EN_DOMAINS):
             return False
         if is_company_page(url):
             return False
@@ -599,19 +607,28 @@ def find_posts(commented_urls, targets):
     L1 = L1_dedup
     log(f"  Layer 1: {len(raw1)} raw, {len(L1)} passed filter")
 
-    # Layer 2: Recruiters (don't add year - recruiter posts rarely mention it)
+    # Layer 2: Recruiters - broader queries for DDG compatibility
     firms = targets.get("layer_2_recruiters", {}).get("firms", [])
     q2a = " OR ".join(f'"{f}"' for f in firms[:5])
     raw2a = tavily_search(f'site:linkedin.com/posts ({q2a}) executive hiring GCC', n=8, days=10)
-    raw2b = tavily_search('site:linkedin.com/posts executive search recruitment UAE Saudi leadership', n=8, days=7)
-    L2 = [make_post(r, "Layer 2: Recruiter") for r in (raw2a + raw2b) if is_fresh(r.get("url",""))]
-    log(f"  Layer 2: {len(raw2a)+len(raw2b)} raw, {len(L2)} passed filter")
+    # Broader recruiter queries (DDG needs simpler terms)
+    raw2b = tavily_search('site:linkedin.com/posts executive recruiter hiring Dubai UAE', n=8, days=7)
+    raw2c = tavily_search('site:linkedin.com/posts headhunter CTO VP hiring Saudi Arabia', n=8, days=7)
+    L2 = [make_post(r, "Layer 2: Recruiter") for r in (raw2a + raw2b + raw2c) if is_fresh(r.get("url",""))]
+    # Dedup L2
+    seen_l2 = set()
+    L2 = [p for p in L2 if p["link"] not in seen_l2 and not seen_l2.add(p["link"])]
+    log(f"  Layer 2: {len(raw2a)+len(raw2b)+len(raw2c)} raw, {len(L2)} passed filter")
 
-    # Layer 3: Industry (add year for freshness bias)
-    raw3a = tavily_search(f'site:linkedin.com/posts digital transformation healthcare PMO GCC Saudi {_month} {_year}', n=8, days=7)
-    raw3b = tavily_search(f'site:linkedin.com/posts CIO CTO technology strategy Dubai UAE {_year}', n=8, days=7)
-    L3 = [make_post(r, "Layer 3: Industry") for r in (raw3a + raw3b) if is_fresh(r.get("url",""))]
-    log(f"  Layer 3: {len(raw3a)+len(raw3b)} raw, {len(L3)} passed filter")
+    # Layer 3: Industry - broader and simpler queries
+    raw3a = tavily_search(f'site:linkedin.com/posts digital transformation healthcare GCC', n=8, days=7)
+    raw3b = tavily_search(f'site:linkedin.com/posts CIO CTO technology strategy Dubai', n=8, days=7)
+    raw3c = tavily_search(f'site:linkedin.com/posts AI automation enterprise Middle East', n=8, days=7)
+    L3 = [make_post(r, "Layer 3: Industry") for r in (raw3a + raw3b + raw3c) if is_fresh(r.get("url",""))]
+    # Dedup L3
+    seen_l3 = set()
+    L3 = [p for p in L3 if p["link"] not in seen_l3 and not seen_l3.add(p["link"])]
+    log(f"  Layer 3: {len(raw3a)+len(raw3b)+len(raw3c)} raw, {len(L3)} passed filter")
 
     # Sort by content richness
     for lst in (L1, L2, L3):
