@@ -621,3 +621,9 @@ Source: @thejayden on X - prompt protocol for reducing hallucinations
 - Complements Superpowers verification pattern
 - Apply to all agent prompts
 
+
+## 2026-03-16: ClawHub Search Before Building
+- **What happened:** Ahmed pointed out I don't follow the 4-step "Figure It Out" protocol. Specifically, I almost never search ClawHub (step 2) before recommending we build something custom.
+- **Example:** Recommended building an outbound security gate from scratch when `prompt-injection-guard` and similar skills exist on ClawHub.
+- **Rule:** Before recommending "we need to build X," ALWAYS run `clawhub search [keywords]` first. If a community skill exists, inspect it before reinventing.
+- **Applies to:** All sessions, all models, all sub-agents.
