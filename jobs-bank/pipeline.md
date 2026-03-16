@@ -227,3 +227,23 @@
 | 39 | AWS | Principal TPM Digital Sovereignty | UAE | 71% | ✅ Applied | 2026-03-16 | 2026-04-13 | [LinkedIn](https://www.linkedin.com/jobs/view/4381667648/) |
 | 40 | Confidential Government | Executive Director, IT | Riyadh | ~84% | ✅ Applied | 2026-03-16 | 2026-04-13 | [LinkedIn](https://www.linkedin.com/jobs/view/4386059897/) |
 | 41 | Snoonu | VP Data & Performance | Lusail, Qatar | ~72% | ✅ Applied | 2026-03-16 | 2026-04-13 | [LinkedIn](https://www.linkedin.com/jobs/view/4374939454/) |
+
+### Applied March 16, 2026 (Batch)
+
+| # | Company | Role | Location | Score | Stage | Applied | Follow-up |
+|---|---------|------|----------|-------|-------|---------|-----------|
+| 1 | byteSpark.ai | Director, Investment Platforms & Digital Enablement | GCC | 95 | Applied | 2026-03-16 | 2026-03-23 |
+| 2 | AXIAN Group | Head of Data | Dubai | 86 | Applied | 2026-03-16 | 2026-03-23 |
+| 3 | numi | Chief Technology Officer | Middle East | 85 | Applied | 2026-03-16 | 2026-03-23 |
+| 4 | Mastercard | VP Product Commercialization, Digital Assets | Dubai | 82 | Applied | 2026-03-16 | 2026-03-23 |
+| 5 | noon | Head of Product, Dubai Mall Online | Dubai | 80 | Applied | 2026-03-16 | 2026-03-23 |
+| 6 | Circles | Head of Product | Dubai | 79 | Applied | 2026-03-16 | 2026-03-23 |
+| 7 | Talents Tide | Head of IT | Dubai | 79 | Applied | 2026-03-16 | 2026-03-23 |
+| 8 | Auxo Talent | Director of Data Centre Transformation | Dubai | 78 | Applied | 2026-03-16 | 2026-03-23 |
+| 9 | Al-Futtaim | Digital Delivery Lead, Finance | Dubai | 75 | Applied | 2026-03-16 | 2026-03-23 |
+| 10 | Dubai Dept Economy & Tourism | Senior Project Manager | Dubai | 70 | Applied | 2026-03-16 | 2026-03-23 |
+| 11 | Whiteshield | Digital Delivery Manager (PMO) | Dubai | 70 | Applied | 2026-03-16 | 2026-03-23 |
+| 12 | Foreground | Director, Digital Transformation | Dubai | - | Applied | 2026-03-16 | 2026-03-23 |
+| 13 | Qashio | Senior Product Director | Dubai | - | Applied | 2026-03-16 | 2026-03-23 |
+| 14 | ADGM | Head of Digital Products & BI | Abu Dhabi | - | Applied | 2026-03-16 | 2026-03-23 |
+| 15 | Finance House | Head of Consumer Products | Abu Dhabi | - | Applied | 2026-03-16 | 2026-03-23 |
