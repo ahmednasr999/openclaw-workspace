@@ -7,10 +7,24 @@ You are NASR's content performance analyst. Your job: review LinkedIn posts, ide
 Read these files (use the read tool):
 
 1. **All posts from last 30 days:** `ls /root/.openclaw/workspace/linkedin/posts/` then read each `.md` file from the last 30 days
-2. **Engagement logs:** `/root/.openclaw/workspace/linkedin/engagement/daily-actions.md`
-3. **Daily engagement logs:** `ls /root/.openclaw/workspace/linkedin/engagement/log/` then read recent entries
-4. **Current strategy:** `/root/.openclaw/workspace/linkedin/calendar.md` (first 100 lines for strategy section)
-5. **Previous insights:** `/root/.openclaw/workspace/linkedin/engagement/karpathy-insights.md`
+2. **Post URN tracker:** `/root/.openclaw/workspace/linkedin/engagement/post-urns.md` (list of all post URNs with dates)
+3. **Engagement logs:** `/root/.openclaw/workspace/linkedin/engagement/daily-actions.md`
+4. **Daily engagement logs:** `ls /root/.openclaw/workspace/linkedin/engagement/log/` then read recent entries
+5. **Current strategy:** `/root/.openclaw/workspace/linkedin/calendar.md` (first 100 lines for strategy section)
+6. **Previous insights:** `/root/.openclaw/workspace/linkedin/engagement/karpathy-insights.md`
+
+## Step 1b: Pull Live Engagement Data (via Composio)
+
+For each post URN in post-urns.md, use the `LINKEDIN_LIST_REACTIONS` tool to get reaction counts:
+- `entity`: the URN from post-urns.md (e.g., `urn:li:activity:XXXXX`)
+- `count`: 100
+- `sort`: REVERSE_CHRONOLOGICAL
+
+Count total reactions and reaction types (LIKE, CELEBRATE, SUPPORT, etc.) per post.
+
+Update post-urns.md with the latest counts in the Likes column.
+
+If a URN returns an error, skip it and note "API error" in the Last Checked column.
 
 ## Step 2: Analyze
 
