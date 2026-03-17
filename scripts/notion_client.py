@@ -66,13 +66,16 @@ class NotionClient:
             error_body = e.read().decode()
             raise Exception(f"Notion API {e.code}: {error_body}")
 
-    def _create_page(self, database_key: str, properties: dict) -> dict:
-        """Create a page (row) in a database."""
+    def _create_page(self, database_key: str, properties: dict, children: list = None) -> dict:
+        """Create a page (row) in a database, optionally with child blocks."""
         db_id = self.databases[database_key]
-        return self._request("POST", "pages", {
+        body = {
             "parent": {"database_id": db_id},
             "properties": properties
-        })
+        }
+        if children:
+            body["children"] = children[:100]  # Notion limit
+        return self._request("POST", "pages", body)
 
     def _query_database(self, database_key: str, 
                          filter_obj: Optional[dict] = None,
