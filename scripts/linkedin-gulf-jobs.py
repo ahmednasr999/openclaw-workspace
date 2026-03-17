@@ -123,13 +123,46 @@ def is_relevant(title, location=""):
 
 
 def is_priority(title, location):
-    """Is this a priority role (VP+/C-suite + UAE/Saudi + DT)?"""
+    """Is this a priority role? ANY 2 of 3 criteria: C-suite title + GCC location + DT sector.
+    
+    Changed Mar 17, 2026: triple-AND was too strict. A COO in Dubai shouldn't need 
+    "digital transformation" in the title to be flagged as priority. Most GCC JDs 
+    don't include DT keywords in the title even when the role IS digital transformation.
+    """
     t = title.lower()
     loc = location.lower()
-    is_csuite = any(w in t for w in ["chief","cto","cio","cdo","coo","vp ","vice president"])
-    is_dt = any(w in t for w in ["digital","transformation","technology","pmo"])
-    is_top_gcc = any(w in loc for w in ["saudi","uae","dubai","riyadh","abu dhabi"])
-    return is_csuite and is_dt and is_top_gcc
+    # Exclusion: roles that contain executive-sounding words but aren't relevant
+    exclude_roles = ["accountant","accounting","fire & life","fire safety","fitout",
+                     "fit-out","interior","architect","civil","mechanical","electrical",
+                     "structural","nurse","nursing","medical director","clinical",
+                     "executive assistant","personal assistant","secretary",
+                     "chef","culinary","hospitality manager","hotel manager",
+                     "sales director","sales manager","talent director",
+                     "culture director","hr director","recruitment"]
+    if any(x in t for x in exclude_roles):
+        return False
+    
+    is_csuite = any(w in t for w in ["chief","cto","cio","cdo","coo","cmo","cfo",
+                                      "vp ","vice president","head of technology",
+                                      "head of digital","head of it","head of data",
+                                      "head of product","head of engineering",
+                                      "managing director","general manager","gm ",
+                                      "director of technology","director of digital",
+                                      "director of it","director of engineering",
+                                      "director of product","director of data",
+                                      "director of pmo","director of transformation",
+                                      "director of operations","project director"])
+    is_dt = any(w in t for w in ["digital","transformation","technology","pmo",
+                                  "data","ai ","artificial","automation","it ",
+                                  "information","software","engineering","product",
+                                  "platform","cloud","cyber","innovation"])
+    is_top_gcc = any(w in loc for w in ["saudi","uae","dubai","riyadh","abu dhabi",
+                                         "jeddah","doha","qatar","bahrain","kuwait",
+                                         "oman","muscat"])
+    
+    # ANY 2 of 3 = priority pick
+    score = sum([is_csuite, is_dt, is_top_gcc])
+    return score >= 2
 
 # ===================== DEDUP =====================
 
