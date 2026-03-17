@@ -1453,6 +1453,26 @@ def main():
             log(f"  ERROR: {e}")
     log("")
 
+    # Step 10.4: Check for Notion CV requests
+    log("Step 10.4: Checking Notion for CV build requests...")
+    cv_requests = []
+    try:
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        from importlib import import_module
+        cv_handler = import_module("cv-request-handler")
+        cv_requests = cv_handler.find_cv_requests()
+        if cv_requests:
+            log(f"  Found {len(cv_requests)} CV request(s)!")
+            for req in cv_requests:
+                cv_handler.process_cv_request(req)
+                log(f"    {req['role']} @ {req['company']}: trigger created")
+            went_right.append(f"CV requests: {len(cv_requests)} triggered from Notion")
+        else:
+            log("  No CV requests")
+    except Exception as e:
+        log(f"  CV request check error (non-fatal): {e}")
+    log("")
+
     # Step 10.5: Two-way pipeline sync from Notion
     log("Step 10.5: Checking Notion for pipeline changes...")
     notion_changes = []
@@ -1677,12 +1697,35 @@ def main():
             for e in errors[:2]:
                 lines.append(f"  ⚠️ {e.get('issue','')[:60]}")
 
+        # Add Notion link at bottom
+        if 'notion_url' in dir() or 'notion_url' in locals():
+            pass  # Already added above if notion sync ran
+        
         telegram_msg = "\n".join(lines)
         telegram_file = f"/tmp/briefing-telegram-{today_str}.txt"
         with open(telegram_file, "w") as f:
             f.write(telegram_msg)
         log(f"  Telegram format saved: {telegram_file}")
         print(f"\n{telegram_msg}\n")
+        
+        # Save button data for qualified picks (OpenClaw picks these up)
+        if qualified:
+            buttons_data = []
+            for j in qualified[:5]:
+                title = j.get("title", "?")[:30]
+                company = j.get("company", "?")[:20]
+                url = j.get("link", j.get("url", ""))
+                buttons_data.append({
+                    "text": f"📝 Build CV: {title} @ {company}",
+                    "callback_data": f"build_cv:{company}:{title}:{url}",
+                    "company": company,
+                    "role": title,
+                    "url": url,
+                })
+            buttons_file = f"/tmp/briefing-buttons-{today_str}.json"
+            with open(buttons_file, "w") as f:
+                json.dump(buttons_data, f, indent=2)
+            log(f"  CV buttons saved: {buttons_file} ({len(buttons_data)} picks)")
 
     except Exception as e:
         log(f"  Telegram format error: {e}")
