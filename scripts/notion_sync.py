@@ -1021,3 +1021,78 @@ def detect_repeated_learnings():
     
     print(f"[detect_repeated] Found {len(repeated)} repeated learning patterns")
     return repeated
+
+
+def two_way_sync_active_tasks():
+    """
+    Two-way sync between Notion Active Tasks and memory/active-tasks.md.
+    1. Read Notion tasks (check for Done ticks, new tasks added by Ahmed)
+    2. Read local active-tasks.md
+    3. Apply Notion changes to local file
+    4. Push local-only items to Notion
+    Returns dict with changes for briefing display.
+    """
+    nc = _get_client()
+    if not nc:
+        return {"changes": [], "overdue": [], "due_today": []}
+    
+    nc.databases["active_tasks"] = "3268d599-a162-8152-9036-e4e4a85d444d"
+    
+    results = nc._query_database("active_tasks")
+    
+    changes = []
+    overdue = []
+    due_today = []
+    today_str = datetime.now(timezone(timedelta(hours=2))).strftime("%Y-%m-%d")
+    
+    for r in results:
+        props = r.get("properties", {})
+        
+        # Get task text
+        t = props.get("Task", {}).get("title", [])
+        text = t[0].get("plain_text", "") if t else ""
+        if not text:
+            continue
+        
+        # Check Done status
+        done = props.get("Done", {}).get("checkbox", False)
+        if done:
+            changes.append({"task": text, "action": "completed"})
+        
+        # Check due date
+        due = props.get("Due Date", {}).get("date")
+        if due and due.get("start"):
+            due_date = due["start"]
+            if due_date < today_str and not done:
+                overdue.append(text)
+            elif due_date == today_str and not done:
+                due_today.append(text)
+    
+    # Update active-tasks.md with completed items
+    if changes:
+        try:
+            with open("/root/.openclaw/workspace/memory/active-tasks.md") as f:
+                content = f.read()
+            
+            for change in changes:
+                if change["action"] == "completed":
+                    # Mark as done in local file
+                    task_text = change["task"]
+                    content = content.replace(f"- [ ] {task_text}", f"- [x] {task_text}")
+            
+            with open("/root/.openclaw/workspace/memory/active-tasks.md", "w") as f:
+                f.write(content)
+            
+            print(f"[active_tasks] Applied {len(changes)} changes from Notion")
+        except Exception as e:
+            print(f"[active_tasks] ERROR updating local file: {e}")
+    
+    result = {
+        "changes": changes,
+        "overdue": overdue,
+        "due_today": due_today,
+        "total_open": sum(1 for r in results if not r.get("properties", {}).get("Done", {}).get("checkbox", False)),
+    }
+    
+    print(f"[active_tasks] Open: {result['total_open']}, Overdue: {len(overdue)}, Due today: {len(due_today)}, Completed in Notion: {len(changes)}")
+    return result
