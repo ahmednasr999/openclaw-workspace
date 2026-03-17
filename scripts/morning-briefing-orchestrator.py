@@ -1494,6 +1494,23 @@ def main():
         log(f"  Notion two-way sync error (non-fatal): {e}")
     log("")
 
+    # Step 10.6: Two-way active tasks sync
+    log("Step 10.6: Syncing active tasks with Notion...")
+    tasks_result = {"changes": [], "overdue": [], "due_today": [], "total_open": 0}
+    try:
+        from notion_sync import two_way_sync_active_tasks
+        tasks_result = two_way_sync_active_tasks()
+        if tasks_result["changes"]:
+            log(f"  {len(tasks_result['changes'])} tasks completed in Notion")
+        if tasks_result["overdue"]:
+            log(f"  ⚠️ {len(tasks_result['overdue'])} overdue tasks!")
+        if tasks_result["due_today"]:
+            log(f"  📌 {len(tasks_result['due_today'])} tasks due today")
+        log(f"  Total open: {tasks_result['total_open']}")
+    except Exception as e:
+        log(f"  Active tasks sync error (non-fatal): {e}")
+    log("")
+
     # Step 11: Sync to Notion
     log("Step 11: Syncing to Notion...")
     try:
@@ -1696,6 +1713,20 @@ def main():
         if errors:
             for e in errors[:2]:
                 lines.append(f"  ⚠️ {e.get('issue','')[:60]}")
+        
+        # Active Tasks section
+        if tasks_result.get("overdue") or tasks_result.get("due_today") or tasks_result.get("total_open"):
+            lines.append(f"\n✅ TASKS ({tasks_result.get('total_open', 0)} open)")
+            if tasks_result.get("overdue"):
+                lines.append(f"🔴 {len(tasks_result['overdue'])} OVERDUE:")
+                for t in tasks_result["overdue"][:3]:
+                    lines.append(f"  • {t[:60]}")
+            if tasks_result.get("due_today"):
+                lines.append(f"📌 Due today:")
+                for t in tasks_result["due_today"][:3]:
+                    lines.append(f"  • {t[:60]}")
+            if tasks_result.get("changes"):
+                lines.append(f"✅ {len(tasks_result['changes'])} completed in Notion")
 
         # Add Notion link at bottom
         if 'notion_url' in dir() or 'notion_url' in locals():
