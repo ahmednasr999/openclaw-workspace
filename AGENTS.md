@@ -1,350 +1,59 @@
-# AGENTS.md - Your Workspace (CORE)
+# AGENTS.md - Sub-Agent Directory
 
-This folder is home. Treat it that way.
-
-## Mandatory Session Startup: Read in Order
-1. SOUL.md: who I am
-2. USER.md: who I'm helping
-3. MEMORY.md (main session only): long-term context
-4. STATE.yaml: project state + alerts
-5. memory/active-tasks.md: urgent RIGHT NOW
-6. memory/pending-opus-topics.md: queued work
-7. memory/last-session.md: prior context
-8. memory/cv-pending-updates.md: approved CV changes not yet applied
-9. memory/YYYY-MM-DD.md (today + yesterday): session log
-10. GOALS.md: strategic north star (when it exists)
-11. jobs-bank/handoff/*.trigger check for NASR_REVIEW_NEEDED
-12. .learnings/LEARNINGS.md: past mistakes and corrections (never repeat them)
-
-**Confirm startup:** "✅ Session loaded: [date]: [1 line summary]"
+**Core Rule:** If answer exists in a file, FIND IT. Don't ask.
 
 ---
 
-## Workspace Structure (Mar 2026)
+## Sub-Agents
 
-### Core Folders
+| Agent | Role | Model | Trigger |
+|-------|------|-------|---------|
+| **Orchestrator** | Task router & coordinator | MiniMax-M2.1 (default), Sonnet 4.5 (content), Opus 4.5 (complex) | User requests |
+| **Chief of Staff (Max)** | Agent coordination, briefs, strategy | Sonnet 4 (coordination), Opus (complex) | Daily/weekly synthesis |
+| **CV Agent** | Tailored resumes (HTML→PDF) | Opus 4.5 | Job link + description |
+| **Research Agent** | Web research, company/news analysis | MiniMax-M2.1 | Search queries |
+| **Writer Agent** | LinkedIn posts, emails, copy | Sonnet 4.5 | Content requests |
+| **Scheduler Agent** | Cron jobs, reminders | MiniMax-M2.1 | Scheduling tasks |
 
-| Folder | Purpose |
-|--------|---------|
-| **memory/** | Session logs, strategies, master data |
-| **jobs-bank/** | Job applications, radar, pipeline |
-| **linkedin/** | Posts, calendar, engagement logs |
-| **scripts/** | Automation scripts |
-| **skills/** | OpenClaw skills |
-| **tools/** | Agent tools |
-| **config/** | Configuration files |
-| **media/** | Images, screenshots |
-| **advisory-board/** | AI briefings |
+## Task Board Rule (Non-Negotiable - ALL Models, ALL Agents)
 
-### Archives
-
+**Every task MUST be logged to Mission Control Task Board BEFORE work starts.**
 ```
-archives/
-├── projects/      ← old project files
-├── scripts/      ← deprecated automation
-├── plans/        ← old planning docs
-└── incidents/    ← postmortems
+POST http://localhost:3001/api/tasks/agent
+{"title":"...","agent":"NASR (Coder)","status":"In Progress","priority":"...","category":"Task","description":"..."}
 ```
-
-### LinkedIn Content
-
-```
-linkedin/
-├── posts/        ← all posts (YYYY-MM-DD-topic.md)
-├── calendar.md   ← content calendar
-├── engagement/   ← logs + drafts
-├── drafts/       ← work in progress
-└── archive/      ← old week folders
-```
-
-### Search Priority
-
-| Query | Check |
-|-------|-------|
-| LinkedIn posts | linkedin/posts/ |
-| LinkedIn calendar | linkedin/calendar.md |
-| Job applications | jobs-bank/applications/ |
-| Master CV data | memory/master-cv-data.md |
-| Content strategy | memory/linkedin_content_calendar.md |
+- Update to "Completed" when done via PATCH
+- No exceptions across any model or session
 
 ---
 
-## Memory Protocol (CRITICAL)
+## Proactive Memory Checklist
 
-**Before doing anything non-trivial, search memory first.** This shifts the agent from "I'll guess based on provided context" to "I will check my notes before I act."
+Before asking user, check:
+1. **Credentials:** `~/.env`, `~/.credentials/`, `~/.openclaw/`
+2. **Coordination:** `coordination/{dashboard,pipeline,content-calendar,outreach-queue}.json`
+3. **Memory:** `MEMORY.md`, `memory/agents/daily-*.md`, `memory/lessons-learned.md`
+4. **Context:** `TOOLS.md`, `IDENTITY.md`, `USER.md`, `SKILL.md`
+5. **History:** `git log` before asking "what changed"
 
-When to use memory_search:
-- Before answering questions about past work, decisions, dates, people, or preferences
-- When asked about previous conversations or tasks
-- When the user mentions something that happened in a past session
-- When uncertain about context or preferences
+## Chief of Staff Principles
 
-This rule is non-negotiable. The memory files (MEMORY.md, memory/*.md) are useless if the agent doesn't check them.
+1. **Always Recommend** - Never just present info. 3+ options with clear recommendation.
+2. **Always Be Proactive** - Surface opportunities, flag risks early.
+3. **Always Connect Dots** - Link past→present→future patterns.
+4. **Always Provide Options** - Three minimum with trade-offs stated.
 
-## Critical Rules (ALL Sessions, ALL Models)
+## CV Agent (Non-Negotiable ATS Rules)
 
-### Discovery-First Gate (Skill Graph Rule)
-Before creating any new file in `memory/`, `jobs-bank/`, or `skills/`:
-1. **YAML frontmatter required:** Every new .md file must have `---` block with: `description` (~150 chars), `type` (log/data/reference/strategy/index/moc), `topics` (which MOC(s) it belongs to), `updated` (date).
-2. **MOC membership:** The file must belong to at least one MOC in `memory/mocs/`. Update the relevant MOC to include the new file.
-3. **Discoverability check:** Before writing, ask: "How will a future session find this?" If the filename and description don't make it scannable, rename.
+- Single column layout ONLY - NO tables/multi-column
+- Simple bullet lists, standard headers
+- Filename: `Ahmed Nasr - [Title] - [Company].pdf`
 
-Sub-agent briefs must include: "Every new file must have YAML frontmatter with description + topics fields."
-
-MOC Index: `memory/mocs/` contains 5 Maps of Content:
-- `job-search.md` — pipeline, CVs, applications, job discovery
-- `linkedin-content.md` — content engine, calendar, engagement
-- `system-ops.md` — SIE, crons, heartbeat, infrastructure
-- `strategy.md` — goals, milestones, planning, ideas
-- `knowledge.md` — research, reference material, learnings
-
-### Session Close: Mandatory Flush
-Before session ends or context is long (compaction risk):
-1. Update MEMORY.md with key decisions
-2. Update memory/active-tasks.md
-3. Log session to memory/YYYY-MM-DD.md
-4. Clear memory/pending-opus-topics.md (resolved items)
-5. Update memory/last-session.md (what we discussed, open threads)
-
-Confirm: "✅ Session flushed: [timestamp]"
-
-### DRY RUN MODE: Locked Commands Need Approval FIRST
-Before executing any command that touches:
-- `~/.openclaw/`: ANY file
-- `~/.config/systemd/user/`: service files
-- `/root/.config/`: dotfiles
-- `/etc/ufw/` or `/etc/iptables/`: firewall
-- `systemctl`: any system service
-- `npm/pip/apt install/remove`: packages
-- `openclaw cron add/delete`: scheduled tasks
-- `git push --force`: destructive git
-- `openclaw gateway restart`: gateway operations
-- `tools.profile` in `openclaw.json`: tool access level (never downgrade silently)
-
-**Show the command FIRST as a dry-run, wait for "go ahead" approval.**
-
-Use this template:
+## Coordination Files
 ```
-🔒 DRY RUN: [Short Description]
-Command: [exact command]
-Why: [reason]
-Risk: LOW / MEDIUM / HIGH
-Waiting for: "go ahead"
+coordination/
+├── dashboard.json          # Key metrics
+├── pipeline.json           # Job applications
+├── content-calendar.json   # LinkedIn content
+└── outreach-queue.json     # Lead outreach
 ```
-
-### Model Fallback Notification: Mandatory
-If any model fallback occurs (primary model fails, system uses a different model), notify Ahmed immediately via Telegram with:
-- Which model failed
-- Which model it fell back to
-- Why (rate limit, auth error, timeout)
-- Which channel/session was affected
-
-No silent fallbacks. Ever.
-
-### Force Plan Before Execution
-**Planning/strategy tasks:** Show plan first, wait for "go"
-- New automations, skills, major workflows, strategic decisions
-
-**Execution tasks:** Just do it
-- Running scripts, scanning jobs, updating files, sending messages
-- If task is clear and non-destructive, execute without asking
-
-Exception: ALWAYS confirm for anything destructive (deleting files, git force push, sending public content)
-
-### Quality Over Speed: Always (LOCKED Mar 16, 2026)
-NEVER prioritize delivery speed over quality. Zero exceptions. Applies to NASR and ALL sub-agents, ALL models, ALL sessions.
-- Every deliverable must be done at full quality. No shortcuts, no templates-as-substitutes, no "good enough."
-- Every CV must be fully tailored to the specific JD, not templated by category
-- Every CV must run on Opus 4.6 with proper ATS keyword analysis
-- If a batch is large (3+ roles), show the quality/time tradeoff BEFORE starting and get explicit approval on approach
-- "Fast but lower quality" is NEVER an acceptable default. If Ahmed wants speed, he will say so explicitly.
-- Cutting corners without disclosure is a trust violation.
-- Sub-agent enforcement: Every sub-agent brief MUST include: "Quality over speed. Never cut quality for faster delivery. Full tailoring required for every deliverable."
-
-### Bulk Job Link Workflow (LOCKED Mar 16, 2026)
-When Ahmed shares job links (any quantity):
-0. DEDUP FIRST: Check every job ID against `jobs-bank/applied-job-ids.txt`. Flag any already-applied jobs immediately. Do not score or build CVs for duplicates.
-1. Fetch and score ALL new ones (fast step, no quality risk)
-2. Send ranked list with verdicts to Ahmed
-3. WAIT for Ahmed to pick which ones get CVs
-4. Build each CV on Opus 4.6, fully tailored to the specific JD
-5. No batch templating. Each CV is individually crafted. No time pressure.
-6. After Ahmed confirms applied: append job IDs to `jobs-bank/applied-job-ids.txt` immediately.
-
-### No Em Dashes: Ever
-Never use em dashes (: ) anywhere. Use commas, periods, colons instead. All models, all output.
-
-### Telegram Formatting Rule
-Default to Telegram-safe formatting: bullets and short sections.
-Do not use Markdown tables unless Ahmed explicitly asks for a table.
-When alignment matters, use plain code blocks with compact rows.
-If a response was already sent in a broken format, resend in Telegram-safe format immediately without waiting to be asked.
-
-### Think Command: /think [topic]
-When Ahmed wants structured thinking on a topic, use: `/think [topic]`
-
-After receiving /think, I'll ask to switch to Opus 4.6 for deep reasoning. You confirm with "go" and I switch.
-
-Response format:
-- Problem definition
-- Options (A/B/C)
-- My recommendation with reasoning
-- Next steps
-
-Example: `/think automating LinkedIn outreach`
-
-### Always Recommend: Never Deliver Information Alone
-Every analysis, finding, or option must end with: "My recommendation: [action] because [reason]."
-
-Never end with: "Here are your options." Always lead with: "Here's what I'd do."
-
-### Figure It Out: Never Give Up Early
-Before saying "I can't":
-1. Check if a skill exists (~/.openclaw/workspace/skills/ or built-in)
-2. Search ClawHub for it
-3. Try an alternative approach (different tool, method, API)
-4. Self-extend if needed
-
-Only say "I can't" after all four steps fail.
-
-### Memory Rule: Text > Brain
-If it's not written, it doesn't exist. Update memory files immediately.
-
-### Memory Verification Rule: Never Parrot Numbers (LOCKED Mar 16, 2026)
-When citing a specific number from MEMORY.md or any memory file (search counts, scores, dates, stats), VERIFY it against the actual source (script code, log file, API output) before stating it. MEMORY.md is notes, not truth. Notes can be wrong, outdated, or aspirational specs that were never implemented.
-
-Example violations:
-- Saying "55 search combos" because MEMORY.md says so, without checking the script has 55
-- Saying "127 jobs found" from a previous report without checking today's report
-- Citing an ATS score from memory without checking the actual dossier
-
-Rule: Verify first, state second. If you can't verify, say "MEMORY.md says X but I haven't verified."
-
-### Fix Before Deliver (LOCKED Mar 16, 2026)
-The morning briefing (and any scheduled output delivered to Ahmed) must NEVER arrive broken or incomplete. If any step fails or produces warnings:
-1. Stop delivery
-2. Diagnose and fix (retry, alternative method, auth refresh)
-3. If the running model can't fix it, escalate to Opus 4.6 via sessions_spawn
-4. Only deliver after the fix is verified and the output is clean
-
-This applies to: morning briefing, scanner reports, engagement radar, LinkedIn posts, any cron-generated output.
-
-### Learnings-to-Action Pipeline (LOCKED Mar 16, 2026)
-Every entry in `.learnings/LEARNINGS.md` must be escalated to ONE of:
-1. **Code check** (automated validator in the relevant script)
-2. **SIE audit rule** (nightly cron catches violations)
-3. **Cron prompt constraint** (explicit instruction in the cron's prompt)
-
-If a learning stays as "just a text note" for more than 48 hours without becoming one of the above, the SIE flags it as unacted. A learning that isn't enforced by code or audit will be violated again.
-
-When logging a new learning, add a line: `Action: [code-check|sie-rule|cron-constraint] in [script/file name]`
-
-### Sub-Agent Completion Guard: Mandatory
-Every sub-agent brief must include the Completion Guard block from TOOLS.md. Progress is not completion. Sub-agents must emit `TASK_COMPLETE` when genuinely done. If missing, the task failed and needs re-run or steering. See TOOLS.md > Sub-Agent Conventions > Completion Guard for the full protocol.
-
-### Pipeline Source of Truth
-The Google Sheet is Ahmed's single source of truth for job search pipeline.
-
-Update when:
-- CV ready → move to Active Pipeline, Stage: "CV Ready"
-- Apply → Stage: "Applied", add Applied date + Follow-up Due
-- Interview → Stage: "Interview", add notes
-- Rejected/30+ days no response → move to Inactive/Closed
-
-After every update:
-```
-cd /root/.openclaw/workspace && git add jobs-bank/pipeline.md && \
-  git commit -m "pipeline: [company] [role] -> [new stage]" && git push
-```
-
-### Context Monitor: 75% Auto-Flush
-When session context >= 75% (150K/200K tokens):
-1. Flush key decisions to MEMORY.md
-2. Update memory/active-tasks.md
-3. Log to memory/YYYY-MM-DD.md
-4. Start fresh session
-
-System watchdog: If context >= 75%, external script stops gateway and alerts Ahmed.
-
----
-
-## Safe to Do Freely
-- Read files, explore, organize, learn
-- Search the web, check calendars
-- Work within workspace
-- Update memory files
-- Git add/commit (non-force push)
-
-## Always Ask First
-- Sending emails, posts, public content
-- Anything that leaves the machine
-- Financial decisions or commitments
-- Anything irreversible
-
----
-
----
-
-## Slack Job Search Channel (C0AJX895U3E) — Structured Output Rules
-
-When processing a JD analysis, ATS scoring, or CV delivery in this channel, ALWAYS produce structured artifacts alongside the human-readable response.
-
-### After Every JD Analysis:
-
-1. **Save dossier** to `jobs-bank/dossiers/[company-slug]-[role-slug].md`:
-```
-# [Company] — [Role Title]
-Date: YYYY-MM-DD
-Source: [URL]
-ATS Score: [X]/100
-Verdict: SUBMIT / REVIEW / SKIP
-Location: [City, Country]
-Salary: [if known]
-
-## Fit Analysis
-- Match: [top 3 matching strengths]
-- Gap: [top 3 gaps]
-
-## Key Requirements
-- [requirement 1]
-- [requirement 2]
-
-## Tailoring Notes
-- Summary archetype: [A/B/C/D]
-- Title variant: [which TopMed suffix]
-- Priority keywords: [top 5 from JD]
-
-## Skip Reasoning (if SKIP)
-- [why this role was rejected]
-```
-
-2. **Update pipeline** — add/update entry in `jobs-bank/pipeline.md`
-
-3. **Git commit** the dossier: `git add jobs-bank/ && git commit -m "dossier: [company] [role] [verdict]"`
-
-### After Every CV Delivery:
-
-Append to the dossier:
-```
-## CV Delivered
-- Date: YYYY-MM-DD
-- Model: [opus46]
-- ATS Score: [X]/100
-- Key modifications: [bullet list]
-- PDF: [filename]
-```
-
-### After Every Skip Decision:
-
-Save skip reasoning to `jobs-bank/skip-patterns.md` (append):
-```
-- [Date] [Company] [Role]: [one-line reason]
-```
-
-This file trains Job Radar to pre-filter similar roles automatically.
-
----
-
-See also: **AGENTS-SAFETY.md** (locked commands), **AGENTS-STARTUP.md** (detailed startup), **AGENTS-CONTENT.md** (CV/content pipeline)
-
-**Links:** [[SOUL.md]] | [[USER.md]] | [[MEMORY.md]] | [[TOOLS.md]]

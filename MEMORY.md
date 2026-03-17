@@ -1,96 +1,199 @@
-# MEMORY.md: Cross-Session Cheat Sheet
+# MEMORY.md - Long-Term Memory
 
-*Last updated: 2026-03-15*
-*Rule: < 100 lines. Not a journal. Findable via search = doesn't belong here.*
+## Content Pipeline Workflow (Confirmed Feb 19, 2026)
+
+**Mission Control has two boards:**
+1. **Task Board** - High-level tracking (jobs, networking, applications, PMO tasks)
+2. **Content Pipeline** - LinkedIn/X content creation (drafts, review, published)
+
+**Workflow Option A (Confirmed):**
+- Content Pipeline IS the work. Task Board is for tracking.
+- Task = "Create LinkedIn post about X" → Create content post in Pipeline → Mark task complete
+- Content Pipeline stores actual posts, drafts, and published content
+- Task Board reminds us what needs to happen
+
+**Content Pipeline Columns:**
+- 💡 Ideas → 📝 Outline → ✍️ Draft → 🎨 Design → 👀 Review → ✅ Published
+
+**Approval Flow:**
+1. OpenClaw creates draft → moves to Review
+2. Ahmed reviews in Content Pipeline → approves or requests edits
+3. Ahmed moves to Published when ready to post
+
+**Trigger:** Ahmed shares job link + description
+
+**Steps:**
+1. Analyze job requirements
+2. Report ATS compatibility score (X/100)
+3. Recommend model switch to Opus (wait for approval)
+4. Create tailored CV matching keywords & requirements
+5. Export as PDF
+6. **Filename:** `Ahmed Nasr - {Title} - {Company Name}.pdf`
+7. Send PDF via Telegram
+8. Ask if switch back to MiniMax
+
+**Filename Rules:**
+- Format: `Ahmed Nasr - {Title} - {Company Name}` (spaces and dashes, NO underscores)
+- Apply to BOTH HTML and PDF files
+- Always use actual company name, not recruiter name
+- If company is confidential/unnamed, use format: `Ahmed Nasr - {Title}` (no company suffix)
+- Title should match the job title exactly
+
+**Example filenames:**
+- `Ahmed Nasr - Senior Program Manager - Nabat.html`
+- `Ahmed Nasr - Senior Program Manager - Nabat.pdf`
+- `Ahmed Nasr - Director of Business Excellence - Equinix.html`
+- `Ahmed Nasr - Director of Business Excellence - Equinix.pdf`
 
 ---
 
-## Ahmed: Quick Reference
-- Senior tech exec, 20+ years, GCC & Egypt. Acting PMO at TopMed ($50M DT, 15 hospitals)
-- Target: VP/C-Suite GCC, Q3 2026. Salary floor: 50,000 AED/mo. Dubai preferred.
-- MBA in progress: Paris ESLSCA (2025-2027). Certs: PMP, CSM, CSPO, LSS, CBAP
-- Positioning: Digital Transformation Executive (NOT consultant)
+## CV Design Rules (Permanent — Lessons Learned)
 
-## Current Priorities
-1. Land executive role in GCC, Q3 2026
-2. LinkedIn executive positioning: 2-3 posts/week (content engine live, Sun-Thu)
-3. OpenClaw system optimization (memory architecture, cron hardening)
-4. TopMed PMO delivery on track
+**Full ATS guide:** `memory/ats-best-practices.md`
 
-## No Fabrication Rule (LOCKED Mar 15, 2026)
-- NEVER fabricate, invent, or reconstruct any content from memory
-- If data lost: recover from revision history, backups, git first
-- If recovery fails: tell Ahmed honestly "I can't recover this"
-- Zero exceptions. Trust rule.
+### ATS-Friendly (Non-Negotiable)
+- ❌ NO tables — ATS scrambles them
+- ❌ NO multi-column layouts — ATS reads left-to-right across columns
+- ❌ NO text boxes or floating elements
+- ❌ NO headers/footers (often ignored by ATS)
+- ❌ NO images, icons, or graphics
+- ❌ NO special bullet characters (● ► ★)
+- ✅ Single column layout ONLY
+- ✅ Simple bullet lists (use - or •)
+- ✅ Standard section headers (Professional Summary, Experience, Education, Skills, Certifications)
+- ✅ Reverse chronological order
+- ✅ Consistent date format (MMM YYYY – Present)
 
-## Google Docs Standard (LOCKED Mar 17, 2026 — UPGRADED)
-- Doc IDs: Briefing 1gtl5sXIsvXiXhODFs29FD9L09i9mGQlsBVIrZbVkTYs, Log 1Ti5kle0bq4fXBgF54arYO2C723LtHkDUhO2o2rmDAqU, LinkedIn Posts 1hhROckb3AVGnka0rXB5vh25zywXJFDLuQYGTRa7zp4g
-- PREMIUM QUALITY STANDARD: Every Google Doc output must be executive-grade
-  - Native heading hierarchy (H1/H2/H3), bold labels, italic body, clickable links
-  - Tables for tabular data (jobs, pipeline), inline images where available
-  - Reverse chronological: PREPEND new content at top, never append
-  - Zero duplicates: check for existing date before writing
-- NEVER raw markdown. ALWAYS native API formatting via daily-briefing-generator.py
-- ALWAYS check if doc ID exists before creating new doc. Use --doc-id, NEVER create new doc.
-- Script is single source of truth. Models cannot deviate.
-- GOG_KEYRING_PASSWORD="" (empty string)
-- For headless: use scripts/gdocs-create.py (direct API) not gog CLI
-- gog CLI auth broken: nasr.ai.assistant@gmail.com token expired. Re-auth needs browser. Use direct API scripts.
+### Bullet Writing (AVR Pattern)
+Every bullet: **Action Verb + Value/What + Result/Metric**
+- ✅ "Led digital transformation across 15-hospital network, managing $50M budget"
+- ❌ "Responsible for digital transformation projects"
 
-## Job Scanner v3.0 (Mar 15, 2026)
-- Three-criteria filter: executive title + GCC location + DT/Tech domain
-- Fast mode: linkedin_fetch_description=False (no rate limiting)
-- 55 search combos (10 primary titles x 3 countries + 5 secondary x 5)
-- Output: Priority Picks + Executive Leads
-- Dedup against notified jobs, applied companies, pipeline
-- NEVER re-enable JD fetch (causes rate limiting)
+### Keyword Strategy
+- Mirror exact JD phrases (not synonyms)
+- Top 5 JD keywords must appear in Summary + most recent role
+- Include both acronyms AND full terms: "Project Management Professional (PMP)"
+- Critical keywords: 2-3x across CV (naturally distributed)
 
-## Search & Fetch Tools
-- **Search:** DuckDuckGo (ddgs) primary, Jina Reader (r.jina.ai) for URL extraction
-- **Tavily:** EXHAUSTED (HTTP 432), do not use
-- **Page extraction:** Defuddle primary, Jina fallback, Camoufox last resort
-- **here.now:** https://nasr.here.now/ (publish static content)
+---
 
-## LinkedIn Account Separation (HARD RULE)
-- Ahmed's LinkedIn: Composio ONLY. Official API posting. NEVER scrape.
-- NASR's account: Camoufox for job searches (120/day), JD fetching.
-- NEVER MIX.
+## Task Board Rule (Non-Negotiable)
 
-## CV & ATS Rules
-- ATS floor: 82% (MiniMax M2.5 primary, Opus tie-breaker 82-87)
-- Never use Haiku for ATS scoring (+4.0 drift)
-- All CV generation MUST use Opus 4.6
-- Master CV: memory/master-cv-data.md. Each app gets tailored version.
+**Every task MUST be logged to the Mission Control Task Board BEFORE work starts.**
+- No exceptions. No model exceptions. Applies to ALL models, ALL agents, ALL sessions.
+- Use `POST http://localhost:3001/api/tasks/agent` with agent name, title, description
+- Status starts as "In Progress", update to "QA" or "Completed" when done
+- This includes: sub-agent spawns, cron jobs, manual work, code changes, research, content
+- If it's work, it's on the board. Period.
+
+---
 
 ## Model Strategy
-| Task | Model |
-|------|-------|
-| Deep strategy, CVs, interviews | Opus 4.6 |
-| Drafting, LinkedIn content | Sonnet 4.6 |
-| ATS scoring, crons, heartbeats | MiniMax M2.5 |
-| Coding, agentic sub-agents | GPT-5.4 |
-| Quick lookups | Haiku 4.5 |
 
-Budget: ~$240/mo (~12,000 EGP): Claude Max EGP 9K + MiniMax $40 + ChatGPT $20
+| Task | Model | Notes |
+|------|-------|-------|
+| Default / daily | MiniMax-M2.1 | Free tier |
+| Background / cron | MiniMax-M2.1 | Free tier |
+| CV creation/review | Claude Opus 4.5 | Requires approval |
 
-## Cron Sequence (Live)
-- 6:00 AM: Jobs Scanner + Email
-- 6:30 AM: Engagement Radar
-- 7:30 AM: Morning Briefing (builds Google Doc)
-- 9:30 AM: LinkedIn Post
-- 4:00 AM: SIE (Self-Improvement Engine) daily
-
-## Key Infrastructure
-- VPS: Hostinger. Interface: Telegram + Slack
-- Tailscale: srv1352768.tail945bbc.ts.net
-- Google: ahmednasr999@gmail.com (OAuth client 583018818639)
-- X/Twitter: @Nasr2030vision via camofox CLI (cookies at /root/.openclaw/cookies/x.txt)
-
-## Where Things Live
-- Active tasks: memory/active-tasks.md
-- CV data: memory/master-cv-data.md
-- Lessons: .learnings/LEARNINGS.md
-- Daily logs: memory/YYYY-MM-DD.md
+**Rule:** Always ask before switching to paid models. Notify after any switch.
 
 ---
-*Links: [[SOUL.md]] | [[AGENTS.md]] | [[USER.md]] | [[TOOLS.md]] | [[GOALS.md]]*
+
+## Strategic Intelligence Framework (Optional)
+
+**Activation:** Only when Ahmed explicitly requests it
+
+**Triggers:**
+- "use the framework"
+- "think strategically about..."
+- "apply the 10-step system"
+- Any explicit request for multi-agent debate
+
+**Implementation: Hybrid A + B**
+
+| Request Type | Approach |
+|--------------|----------|
+| Quick strategic request | Internal simulation (fast) |
+| High-stakes, complex | Spawn sub-agents for true debate |
+| Routine tasks | Skip framework (direct output) |
+
+**Default:** Efficient direct response for everything else
+
+---
+
+## Memory System Protocol
+
+### Session Startup (Every Session)
+1. **Read MEMORY.md** (this file) — Long-term context
+2. **Check active-tasks.md** — Resume any interrupted work  
+3. **Read today's daily notes** if they exist (memory/YYYY-MM-DD.md)
+
+### During Session (Immediate Capture)
+Write to daily notes immediately when:
+- ✅ Complete something important
+- 🎯 Learn a user preference  
+- 📋 A decision gets made
+- 💡 Something worth remembering happens
+
+### Finding Things
+- **Search:** Use `memory_search "terms"` across all memory files
+- **Specific sections:** Use `memory_get` to pull exact content
+
+### Maintenance
+- **Weekly:** Move important daily notes to MEMORY.md
+- **Monthly:** Move technical learnings to TOOLS.md  
+- **Quarterly:** Remove outdated content
+
+### Principle
+**Text beats brain.** If you want to remember it, write it down.
+
+### Lessons Learned Log
+
+Store in: `memory/lessons-learned.md`
+
+Format:
+```
+## [Date]
+### What I Missed
+[Specific example]
+### Why
+[Root cause]
+### Fix
+[What I'll do differently]
+```
+
+---
+
+## Preferences
+
+- **Timezone:** Cairo (Africa/Cairo, UTC+2)
+- **Relocation:** Open to relocating to Jeddah, Saudi Arabia (confirmed Feb 18, 2026)
+- **LinkedIn posts:** Always end with question/CTA for engagement
+- **Backups:** Keep last 7, daily at 3 AM Cairo
+- **Gmail check:** Daily at 8 AM Cairo
+- **Formatting:** Never use em dashes (—) anywhere. Use hyphens (-) or commas instead.
+
+---
+
+## Key Files
+
+### Core Memory
+- **MEMORY.md** — This file, long-term context (read every session)
+- **TOOLS.md** — Technical configs and how-tos
+- **memory/active-tasks.md** — In-progress work (check on startup)
+- **memory/YYYY-MM-DD.md** — Daily notes (immediate capture)
+- **memory/master-cv-data.md** — CV source of truth
+
+### Master CV Files
+- **Master CV PDF:** `/root/.openclaw/media/inbound/file_99---61a97145-01ba-402f-b33b-5915c31c8daf.pdf`
+- **Master CV DOCX:** `/root/.openclaw/media/inbound/file_100---a1dce511-4dda-481f-aff5-c9093298c040.docx`
+
+### Skills & Frameworks
+- **ATS Best Practices:** `memory/ats-best-practices.md`
+- **Marketing Skills:** `marketing-skills/` directory
+- **Content Analysis:** `docs/content-claw/caught/` directory
+
+## CV Creation Rule (Critical)
+**ALWAYS read `memory/master-cv-data.md` before creating any CV.**
+Never fabricate roles, titles, or achievements. Use exact titles and dates from master CV.

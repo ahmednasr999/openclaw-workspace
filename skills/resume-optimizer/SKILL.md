@@ -1,8 +1,6 @@
 ---
 name: resume-optimizer
-description: Generic professional resume builder with PDF export and ATS optimization. Use ONLY for non-Ahmed resume requests (e.g., helping someone else build a resume). For Ahmed's own CVs, ALWAYS use executive-cv-builder instead, which has his master CV data, GCC positioning, and pipeline integration. This skill is the fallback for general resume work outside Ahmed's personal job search.
-metadata: {"openclaw":{"emoji":"📝","requires":{"bins":["weasyprint"]}}}
----
+description: Professional resume builder with PDF export, ATS optimization, and analysis capabilities. Use when users need to (1) Create new resumes from scratch, (2) Customize/tailor existing resumes for specific roles, (3) Analyze resumes and provide improvement recommendations, (4) Convert resumes to ATS-friendly PDF format. Supports chronological, functional, and combination resume formats.
 
 # Resume Optimizer
 

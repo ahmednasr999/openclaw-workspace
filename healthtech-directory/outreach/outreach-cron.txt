@@ -1,0 +1,8 @@
+# HealthTech Outreach Automation
+# Automated follow-up reminders
+
+# Daily follow-up check (9 AM Cairo)
+0 9 * * * cd /root/.openclaw/workspace/healthtech-directory && python3 check-followups.py >> outreach/followup.log 2>&1
+
+# Weekly outreach report (Monday 9 AM)
+0 9 * * 1 cd /root/.openclaw/workspace/healthtech-directory && python3 outreach-report.py >> outreach/report.log 2>&1

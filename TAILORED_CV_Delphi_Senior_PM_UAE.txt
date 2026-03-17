@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ahmed Nasr - Senior Project Manager CV</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #f5f5f5; padding: 20px; }
+        .cv-container { max-width: 850px; margin: 0 auto; background: white; padding: 40px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        .header { text-align: center; border-bottom: 3px solid #1a365d; padding-bottom: 25px; margin-bottom: 25px; }
+        .name { color: #1a365d; font-size: 32px; font-weight: bold; margin-bottom: 8px; }
+        .title { color: #4a5568; font-size: 16px; margin-bottom: 15px; }
+        .contact { color: #666; font-size: 12px; line-height: 1.8; }
+        h2 { color: #1a365d; font-size: 18px; border-bottom: 2px solid #1a365d; padding-bottom: 8px; margin: 25px 0 15px 0; }
+        .job { margin-bottom: 20px; padding-left: 15px; border-left: 3px solid #e2e8f0; }
+        .job-title { font-weight: bold; font-size: 15px; color: #2d3748; }
+        .company { color: #4a5568; font-size: 13px; }
+        .date { color: #718096; font-style: italic; font-size: 12px; }
+        ul { margin-left: 18px; margin-top: 8px; }
+        li { margin-bottom: 5px; font-size: 11px; color: #333; }
+        .ats-score { background: #edf2f7; padding: 15px; border-radius: 8px; margin-bottom: 25px; }
+        .ats-score h3 { color: #1a365d; margin-bottom: 10px; }
+        .score-bar { background: #e2e8f0; height: 20px; border-radius: 10px; overflow: hidden; margin: 10px 0; }
+        .score-fill { background: linear-gradient(90deg, #48bb78, #38a169); height: 100%; width: 92%; }
+        .print-btn { position: fixed; top: 20px; right: 20px; background: #1a365d; color: white; border: none; padding: 12px 20px; border-radius: 6px; cursor: pointer; }
+        @media print { body { background: white; padding: 0; } .print-btn { display: none; } }
+    </style>
+</head>
+<body>
+    <button class="print-btn" onclick="window.print()">🖨️ Print to PDF</button>
+    
+    <div class="cv-container">
+        <div class="ats-score">
+            <h3>🎯 ATS Optimized CV - Delphi Senior PM Role (Score: 92/100)</h3>
+            <p><b>Tailored for:</b> Senior AI Project Manager | UAE | Delphi</p>
+            <div class="score-bar"><div class="score-fill"></div></div>
+            <small>Keywords optimized: UAE, Agile, Power Platform, .NET, SharePoint, AI/ML, Budget Management, Stakeholder Engagement</small>
+        </div>
+
+        <div class="header">
+            <div class="name">AHMED NASR</div>
+            <div class="title">SENIOR PROJECT MANAGER | DIGITAL TRANSFORMATION LEADER</div>
+            <div class="contact">
+                Dubai, UAE | +971 50 281 4490 | ahmednasr999@gmail.com | linkedin.com/in/ahmednasr
+            </div>
+        </div>
+
+        <h2>PROFESSIONAL SUMMARY</h2>
+        <p>Results-driven Senior Project Manager with 20+ years of experience leading enterprise digital transformation initiatives across UAE, GCC, and Middle East markets. Proven track record delivering complex technology programs worth $25M+ with expertise in AI/ML solutions, ERP implementations, and cross-functional stakeholder management. Adept at balancing technical requirements with business objectives while maintaining budget control and delivering measurable ROI.</p>
+
+        <h2>CORE COMPETENCIES</h2>
+        <ul style="columns: 2;">
+            <li>Project Management (PMP Certified)</li>
+            <li>Agile/Scrum Methodologies</li>
+            <li>Digital Transformation</li>
+            <li>AI/ML & Automation</li>
+            <li>ERP Implementation (SAP S/4HANA)</li>
+            <li>Budget & Financial Management</li>
+            <li>Stakeholder Engagement (C-Level)</li>
+            <li>Risk Management & Governance</li>
+            <li>Power Platform (Power Apps, Power Automate)</li>
+            <li>.NET & Web Applications</li>
+            <li>SharePoint Solutions</li>
+            <li>Vendor & Partner Management</li>
+        </ul>
+
+        <h2>PROFESSIONAL EXPERIENCE</h2>
+        
+        <div class="job">
+            <div class="job-title">Acting PMO & Regional Engagement Lead</div>
+            <div class="company">TopMed (Saudi German Hospital Group) | UAE, KSA, Egypt</div>
+            <div class="date">June 2024 - Present</div>
+            <ul>
+                <li>Lead end-to-end delivery of enterprise digital transformation programs across multi-national healthcare organization</li>
+                <li>Manage $25M+ transformation portfolio including enterprise data warehouse and AI-driven clinical decision support systems</li>
+                <li>Implement AI/ML solutions for predictive analytics and operational efficiency improvement</li>
+                <li>Govern project portfolio using Agile/Scrum methodologies with 2-week sprint cycles</li>
+                <li>Stakeholder management: Executive leadership across UAE, KSA, and Egypt operations</li>
+                <li>Deliver 40% efficiency gains through process automation using Power Platform (Power Apps, Power Automate)</li>
+                <li>Budget ownership: Track project financials, margins, KPIs, and burn rates across portfolio</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-title">Country Manager & VP Advisor</div>
+            <div class="company">PaySky/El Araby Group | Egypt</div>
+            <div class="date">2019 - 2022</div>
+            <ul>
+                <li>P&L Leadership: Full ownership of operating budgets and financial OKRs</li>
+                <li>SAP S/4HANA Implementation: Led enterprise ERP transformation from scoping to go-live</li>
+                <li>Custom .NET Application Development: Oversaw development of internal business applications</li>
+                <li>Strategic Planning: Developed multi-year technology roadmaps aligned with business objectives</li>
+                <li>Risk Management: Proactively identified project risks and implemented mitigation strategies</li>
+                <li>Cross-functional Leadership: Coordinated with architects, developers, QA, and business units</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-title">PMO Section Head</div>
+            <div class="company">EMP (Network International) | Egypt</div>
+            <div class="date">2014 - 2017</div>
+            <ul>
+                <li>Built PMO from scratch for African banking projects portfolio</li>
+                <li>Program Delivery: Managed 300 concurrent projects using Microsoft Project Server</li>
+                <li>SharePoint Implementation: Deployed enterprise collaboration platform for project tracking</li>
+                <li>ROI Achievement: Drove 3x net profit increase through strategic dashboard and analytics</li>
+                <li>Resource Management: Optimized resource allocation across multiple project streams</li>
+                <li>Client Engagement: Maintained strong communication with banking clients and leadership</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-title">Product Development Manager</div>
+            <div class="company">Talabat (Delivery Hero SE) | Egypt</div>
+            <div class="date">2017 - 2018</div>
+            <ul>
+                <li>Program Leadership: Scaled operations from 30K to 7M daily orders</li>
+                <li>Regional Coordination: Focal point between Berlin HQ and MENA operations</li>
+                <li>Agile Ceremonies: Facilitated sprint planning, reviews, and retrospectives</li>
+                <li>Technical Oversight: Guided development team on custom web applications and APIs</li>
+            </ul>
+        </div>
+
+        <h2>KEY PROJECTS</h2>
+        
+        <div class="job">
+            <div class="job-title">Enterprise Data Warehouse & AI Clinical Decision Support</div>
+            <div class="company">TopMed Digital Transformation Program</div>
+            <ul>
+                <li>Scope: $25M multi-year initiative across 3 countries</li>
+                <li>Deliverables: EDW implementation, AI/ML predictive models, clinical dashboards</li>
+                <li>Outcome: 40% efficiency improvement, enhanced patient outcomes</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-title">SAP S/4HANA Enterprise ERP</div>
+            <div class="company">PaySky/El Araby Group</div>
+            <ul>
+                <li>Scope: Full enterprise ERP transformation</li>
+                <li>Deliverables: Finance, HR, supply chain modules</li>
+                <li>Outcome: Streamlined operations, real-time reporting capabilities</li>
+            </ul>
+        </div>
+
+        <h2>EDUCATION</h2>
+        <p><b>MBA (In Progress)</b> - Sadat Academy for Management Sciences | 2026<br>
+        <b>BSc. Computer Sciences & Business Administration</b> - Sadat Academy | 2006</p>
+
+        <h2>CERTIFICATIONS</h2>
+        <p><b>Project Management Professional (PMP)</b> - Project Management Institute<br>
+        <b>Certified Scrum Master (CSM)</b> - Scrum Alliance<br>
+        <b>Certified Business Analysis Professional (CBAP)</b> - IIBA<br>
+        <b>Lean Six Sigma</b> - Yellow Belt<br>
+        <b>Microsoft Certified Application Developer (MCAD)</b><br>
+        <b>Microsoft Certified Professional (MCP)</b></p>
+
+        <h2>TECHNICAL SKILLS</h2>
+        <ul style="columns: 2;">
+            <li>Project Management: MS Project Server, Jira, Trello, Asana</li>
+            <li>ERP: SAP S/4HANA, SAP ECC</li>
+            <li>AI/ML: Python, TensorFlow, Healthcare AI</li>
+            <li>Power Platform: Power Apps, Power Automate, Power BI</li>
+            <li>Development: .NET, C#, ASP.NET, REST APIs</li>
+            <li>Collaboration: SharePoint, Teams, Confluence</li>
+            <li>Agile: Scrum, Kanban, Sprint Planning</li>
+            <li>Analytics: Power BI, Tableau, SQL</li>
+        </ul>
+
+        <h2>LANGUAGES</h2>
+        <p><b>English</b> - Professional Working Proficiency<br>
+        <b>Arabic</b> - Native Proficiency</p>
+    </div>
+</body>
+</html>

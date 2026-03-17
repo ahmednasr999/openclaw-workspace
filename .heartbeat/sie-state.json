@@ -1,0 +1,417 @@
+{
+  "last_run": "2026-03-17T16:08:55.525972+02:00",
+  "run_count": 38,
+  "areas": {
+    "A": {
+      "name": "Applications",
+      "status": "OK",
+      "details": "No recent ATS data",
+      "timestamp": "2026-03-17T16:08:44.919621+02:00"
+    },
+    "B": {
+      "name": "Backups",
+      "status": "OK",
+      "details": "Last commit 0.0h ago",
+      "timestamp": "2026-03-17T16:08:44.926525+02:00"
+    },
+    "C": {
+      "name": "Crons",
+      "status": "OK",
+      "details": "Crons running (could not query gateway)",
+      "timestamp": "2026-03-17T16:08:55.013739+02:00"
+    },
+    "D": {
+      "name": "Disk",
+      "status": "OK",
+      "details": "Disk 56%",
+      "timestamp": "2026-03-17T16:08:55.018870+02:00"
+    },
+    "E": {
+      "name": "Errors",
+      "status": "OK",
+      "details": "No significant errors",
+      "timestamp": "2026-03-17T16:08:55.018913+02:00"
+    },
+    "F": {
+      "name": "Feedback",
+      "status": "OK",
+      "details": "Feedback processed",
+      "timestamp": "2026-03-17T16:08:55.019465+02:00"
+    },
+    "G": {
+      "name": "Gateway",
+      "status": "OK",
+      "details": "Gateway running (PID: 2586476)",
+      "timestamp": "2026-03-17T16:08:55.030952+02:00"
+    },
+    "H": {
+      "name": "Heartbeat",
+      "status": "OK",
+      "details": "No heartbeat failures",
+      "timestamp": "2026-03-17T16:08:55.031052+02:00"
+    },
+    "I": {
+      "name": "Integrations",
+      "status": "OK",
+      "details": "Integrations healthy",
+      "timestamp": "2026-03-17T16:08:55.452867+02:00"
+    },
+    "J": {
+      "name": "Jobs",
+      "status": "OK",
+      "details": "Job radar functional",
+      "timestamp": "2026-03-17T16:08:55.453631+02:00"
+    },
+    "K": {
+      "name": "Knowledge",
+      "status": "OK",
+      "details": "No relevant repos in radar, X Radar active",
+      "timestamp": "2026-03-17T16:08:55.475859+02:00"
+    },
+    "L": {
+      "name": "Learnings",
+      "status": "WARN",
+      "details": "2 learnings without enforcement action",
+      "timestamp": "2026-03-17T16:08:55.476239+02:00"
+    },
+    "M": {
+      "name": "Models",
+      "status": "OK",
+      "details": "Models stable",
+      "timestamp": "2026-03-17T16:08:55.476263+02:00"
+    },
+    "N": {
+      "name": "Notifications",
+      "status": "OK",
+      "details": "Notification volume normal",
+      "timestamp": "2026-03-17T16:08:55.476269+02:00"
+    },
+    "O": {
+      "name": "Outputs",
+      "status": "OK",
+      "details": "55 CVs generated recently",
+      "timestamp": "2026-03-17T16:08:55.478847+02:00"
+    },
+    "P": {
+      "name": "Pipeline",
+      "status": "OK",
+      "details": "Pipeline active",
+      "timestamp": "2026-03-17T16:08:55.479666+02:00"
+    },
+    "Q": {
+      "name": "Quality",
+      "status": "OK",
+      "details": "Content quality tracked",
+      "timestamp": "2026-03-17T16:08:55.479983+02:00"
+    },
+    "R": {
+      "name": "Reliability",
+      "status": "ALERT",
+      "details": "Session 506f2e03-f465-488f-a782-4c24574dcad4.jsonl is 5.7MB",
+      "timestamp": "2026-03-17T16:08:55.483746+02:00"
+    },
+    "S": {
+      "name": "Skills",
+      "status": "OK",
+      "details": "Skills healthy",
+      "timestamp": "2026-03-17T16:08:55.483767+02:00"
+    },
+    "T": {
+      "name": "Tools",
+      "status": "OK",
+      "details": "Tools available",
+      "timestamp": "2026-03-17T16:08:55.483780+02:00"
+    },
+    "U": {
+      "name": "Uptime",
+      "status": "OK",
+      "details": "Gateway up",
+      "timestamp": "2026-03-17T16:08:55.518866+02:00"
+    },
+    "V": {
+      "name": "Velocity",
+      "status": "OK",
+      "details": "185 sessions today",
+      "timestamp": "2026-03-17T16:08:55.523905+02:00"
+    },
+    "W": {
+      "name": "Workspace",
+      "status": "OK",
+      "details": "11 files in root",
+      "timestamp": "2026-03-17T16:08:55.524099+02:00"
+    },
+    "X": {
+      "name": "Execution",
+      "status": "OK",
+      "details": "Execution healthy",
+      "timestamp": "2026-03-17T16:08:55.524120+02:00"
+    },
+    "Y": {
+      "name": "Yield",
+      "status": "OK",
+      "details": "Pipeline active",
+      "timestamp": "2026-03-17T16:08:55.524847+02:00"
+    },
+    "Z": {
+      "name": "Zero-downtime",
+      "status": "OK",
+      "details": "System stable",
+      "timestamp": "2026-03-17T16:08:55.524863+02:00"
+    },
+    "NASR": {
+      "name": "NASR Behavior",
+      "status": "WARN",
+      "details": "NASR behavior: Verdict without JD: Project Director; Verdict without JD: Chief Operating Officer; Verdict without JD: Director Operations - Security Printing ",
+      "timestamp": "2026-03-17T16:08:55.525854+02:00"
+    }
+  },
+  "health_score": 96,
+  "history": [
+    {
+      "timestamp": "2026-03-14T00:14:07.399383+02:00",
+      "health_score": 85,
+      "alerts": 5,
+      "criticals": 0
+    },
+    {
+      "timestamp": "2026-03-14T00:15:45.724905+02:00",
+      "health_score": 85,
+      "alerts": 5,
+      "criticals": 0
+    },
+    {
+      "timestamp": "2026-03-14T00:16:41.485886+02:00",
+      "health_score": 85,
+      "alerts": 5,
+      "criticals": 0
+    },
+    {
+      "timestamp": "2026-03-14T00:19:59.430439+02:00",
+      "health_score": 85,
+      "alerts": 5,
+      "criticals": 0
+    },
+    {
+      "timestamp": "2026-03-14T00:26:01.842520+02:00",
+      "health_score": 94,
+      "alerts": 1,
+      "criticals": 0
+    },
+    {
+      "timestamp": "2026-03-14T00:26:38.722851+02:00",
+      "health_score": 95,
+      "alerts": 1,
+      "criticals": 0
+    },
+    {
+      "timestamp": "2026-03-14T00:26:58.483463+02:00",
+      "health_score": 95,
+      "alerts": 1,
+      "criticals": 0
+    },
+    {
+      "timestamp": "2026-03-14T00:27:19.513224+02:00",
+      "health_score": 98,
+      "alerts": 0,
+      "criticals": 0
+    },
+    {
+      "timestamp": "2026-03-14T00:41:08.323889+02:00",
+      "health_score": 98,
+      "alerts": 0,
+      "criticals": 0
+    },
+    {
+      "timestamp": "2026-03-14T01:41:17.791135+02:00",
+      "health_score": 98,
+      "alerts": 0,
+      "criticals": 0
+    },
+    {
+      "timestamp": "2026-03-14T01:45:58.639132+02:00",
+      "health_score": 98,
+      "alerts": 0,
+      "criticals": 0
+    },
+    {
+      "timestamp": "2026-03-14T04:00:24.346476+02:00",
+      "health_score": 98,
+      "alerts": 0,
+      "criticals": 0
+    },
+    {
+      "timestamp": "2026-03-14T04:24:06.696343+02:00",
+      "health_score": 98,
+      "alerts": 0,
+      "criticals": 0
+    },
+    {
+      "timestamp": "2026-03-14T04:28:25.972802+02:00",
+      "health_score": 98,
+      "alerts": 0,
+      "criticals": 0
+    },
+    {
+      "timestamp": "2026-03-14T04:29:01.641334+02:00",
+      "health_score": 98,
+      "alerts": 0,
+      "criticals": 0
+    },
+    {
+      "timestamp": "2026-03-14T04:30:44.795679+02:00",
+      "health_score": 98,
+      "alerts": 0,
+      "criticals": 0
+    },
+    {
+      "timestamp": "2026-03-14T04:31:26.892816+02:00",
+      "health_score": 98,
+      "alerts": 0,
+      "criticals": 0
+    },
+    {
+      "timestamp": "2026-03-14T04:34:48.295806+02:00",
+      "health_score": 98,
+      "alerts": 0,
+      "criticals": 0
+    },
+    {
+      "timestamp": "2026-03-14T05:02:00.918973+02:00",
+      "health_score": 98,
+      "alerts": 0,
+      "criticals": 0
+    },
+    {
+      "timestamp": "2026-03-14T05:02:20.039516+02:00",
+      "health_score": 98,
+      "alerts": 0,
+      "criticals": 0
+    },
+    {
+      "timestamp": "2026-03-14T05:02:54.832950+02:00",
+      "health_score": 98,
+      "alerts": 0,
+      "criticals": 0
+    },
+    {
+      "timestamp": "2026-03-14T07:01:39.469417+02:00",
+      "health_score": 98,
+      "alerts": 0,
+      "criticals": 0
+    },
+    {
+      "timestamp": "2026-03-14T19:19:58.471581+02:00",
+      "health_score": 92,
+      "alerts": 2,
+      "criticals": 0
+    },
+    {
+      "timestamp": "2026-03-15T04:01:25.450817+02:00",
+      "health_score": 92,
+      "alerts": 2,
+      "criticals": 0
+    },
+    {
+      "timestamp": "2026-03-15T05:09:21.804105+02:00",
+      "health_score": 91,
+      "alerts": 2,
+      "criticals": 0
+    },
+    {
+      "timestamp": "2026-03-15T06:03:31.497615+02:00",
+      "health_score": 92,
+      "alerts": 2,
+      "criticals": 0
+    },
+    {
+      "timestamp": "2026-03-15T06:04:45.924971+02:00",
+      "health_score": 92,
+      "alerts": 2,
+      "criticals": 0
+    },
+    {
+      "timestamp": "2026-03-15T06:07:21.248178+02:00",
+      "health_score": 92,
+      "alerts": 2,
+      "criticals": 0
+    },
+    {
+      "timestamp": "2026-03-15T07:05:26.078290+02:00",
+      "health_score": 92,
+      "alerts": 2,
+      "criticals": 0
+    },
+    {
+      "timestamp": "2026-03-15T07:31:01.987252+02:00",
+      "health_score": 92,
+      "alerts": 2,
+      "criticals": 0
+    },
+    {
+      "timestamp": "2026-03-16T04:00:27.431957+02:00",
+      "health_score": 94,
+      "alerts": 1,
+      "criticals": 0
+    },
+    {
+      "timestamp": "2026-03-16T07:30:45.040028+02:00",
+      "health_score": 94,
+      "alerts": 1,
+      "criticals": 0
+    },
+    {
+      "timestamp": "2026-03-16T11:39:25.578656+02:00",
+      "health_score": 93,
+      "alerts": 1,
+      "criticals": 0
+    },
+    {
+      "timestamp": "2026-03-17T04:17:35.589683+02:00",
+      "health_score": 97,
+      "alerts": 1,
+      "criticals": 0
+    },
+    {
+      "timestamp": "2026-03-17T04:41:46.426681+02:00",
+      "health_score": 98,
+      "alerts": 1,
+      "criticals": 0
+    },
+    {
+      "timestamp": "2026-03-17T05:06:27.166417+02:00",
+      "health_score": 97,
+      "alerts": 1,
+      "criticals": 0
+    },
+    {
+      "timestamp": "2026-03-17T07:30:29.531614+02:00",
+      "health_score": 97,
+      "alerts": 1,
+      "criticals": 0
+    },
+    {
+      "timestamp": "2026-03-17T16:08:55.525972+02:00",
+      "health_score": 96,
+      "alerts": 1,
+      "criticals": 0
+    }
+  ],
+  "suggestions": {
+    "total_generated": 0,
+    "implemented": 0,
+    "expired": 0,
+    "pending": 0
+  },
+  "last_fix_log": [
+    {
+      "iteration": 1,
+      "area": "R",
+      "fix": "Remove bloated session backups",
+      "message": "Removed 2 bloated files: 71c1fa9c-73aa-45b1-806a-8d428dd6827b.jsonl.reset.2026-03-14T15-53-02.270Z (6.2MB), 5a90418d-0744-493d-a2be-72559da21fd0.jsonl.reset.2026-03-16T17-25-41.429Z (5.2MB)",
+      "before": "ALERT: Session 71c1fa9c-73aa-45b1-806a-8d428dd6827b.jsonl.reset.2026-03-14T15-53-02.270Z is 6.2MB",
+      "after": "ALERT: Session 506f2e03-f465-488f-a782-4c24574dcad4.jsonl is 5.7MB",
+      "result": "NO_IMPROVEMENT",
+      "timestamp": "2026-03-17T05:06:27.166204+02:00"
+    }
+  ]
+}

@@ -7,7 +7,6 @@ tags:
   - career
   - mcp
   - jobspy
-metadata: {"openclaw":{"emoji":"🔎","requires":{"bins":["node"]}}}
 ---
 # Job Search MCP Skill
 
