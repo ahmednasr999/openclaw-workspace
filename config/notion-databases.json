@@ -42,5 +42,10 @@
     "id": "3268d599-a162-8134-b0e0-ef9e8a968f1e",
     "name": "\ud83c\udfe0 Dashboard",
     "url": "https://www.notion.so/Dashboard-3268d599a1628134b0e0ef9e8a968f1e"
+  },
+  "_killed": {
+    "linkedin_analytics": "3268d599-a162-811a-b028-e06c181bfd85",
+    "cv_tracker": "3268d599-a162-8176-a22d-c5c4c54d7879",
+    "reason": "LinkedIn Analytics: no automated data source. CV Tracker: merged into Pipeline."
   }
 }
