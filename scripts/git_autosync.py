@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Git Auto-Sync - Hourly commits with automatic pushes
+Git Auto-Sync — Hourly commits with automatic pushes
 Prevents lost work by committing all changes
 """
 
@@ -54,7 +54,7 @@ def commit_all():
     untracked = get_untracked_files()
     
     if not staged and not unstaged and not untracked:
-        print(f"🕐 {now} - No changes to sync")
+        print(f"🕐 {now} — No changes to sync")
         return True, "no_changes"
     
     # Add all changes
@@ -68,9 +68,9 @@ def commit_all():
         files = ", ".join(staged[:5])
         if len(staged) > 5:
             files += f" (+{len(staged)-5} more)"
-        msg = f"sync: {now} - {files}"
+        msg = f"sync: {now} — {files}"
     else:
-        msg = f"sync: {now} - auto-commit"
+        msg = f"sync: {now} — auto-commit"
     
     # Commit
     success, output = run(f'git commit -m "{msg}"')
@@ -95,12 +95,12 @@ def push():
 def sync():
     """Main sync function"""
     now = datetime.now().strftime("%Y-%m-%d %H:%M")
-    print(f"\n🔄 Git Auto-Sync - {now}")
+    print(f"\n🔄 Git Auto-Sync — {now}")
     print("-" * 50)
     
     # Check for merge conflicts first
     if check_merge_conflicts():
-        print("⚠️  Merge conflicts detected - skipping sync")
+        print("⚠️  Merge conflicts detected — skipping sync")
         return False, "conflict"
     
     # Commit
@@ -119,7 +119,7 @@ def sync():
     success, result = push()
     if not success:
         if result == "conflict":
-            print("⚠️  Push failed - merge conflict")
+            print("⚠️  Push failed — merge conflict")
             return False, "conflict"
         print(f"❌ Push failed: {result}")
         return False, result

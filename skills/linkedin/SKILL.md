@@ -1,8 +1,10 @@
 ---
 name: linkedin
 description: LinkedIn automation via browser relay or cookies for messaging, profile viewing, and network actions.
-homepage: https://linkedin.com
-metadata: {"openclaw":{"emoji":"💼","requires":{"config":["browser.enabled"]}}}
+Use for LinkedIn tasks: messaging, profiles, connections, content, search.
+Do NOT use for: general browsing, bookmarking, LinkedIn account management, or non-LinkedIn tasks.
+
+metadata: {"clawdbot":{"emoji":"💼"}}
 ---
 
 # LinkedIn

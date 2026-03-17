@@ -1,10 +1,3 @@
----
-description: "Known Gmail API limitations and workarounds for automation"
-type: reference
-topics: [system-ops]
-updated: 2026-03-14
----
-
 # Gmail Automation - Known Limitations & Safeguards
 
 ## ⚠️ KNOWN ISSUES

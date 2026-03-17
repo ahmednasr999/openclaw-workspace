@@ -1,0 +1,80 @@
+[
+  {
+    "id": "nasr",
+    "name": "NASR",
+    "role": "Orchestrator & Chief of Staff",
+    "description": "Routes all tasks, coordinates agents, daily briefs, strategic synthesis. The brain of the operation.",
+    "icon": "🎯",
+    "type": "core",
+    "model": "MiniMax-M2.1 (default) / Opus (complex)",
+    "persistent": true,
+    "capabilities": ["Task routing", "Agent coordination", "Daily briefings", "Strategic analysis", "Memory management"]
+  },
+  {
+    "id": "qa",
+    "name": "QA Agent",
+    "role": "Quality Assurance",
+    "description": "Verifies all agent outputs before delivery. Checks ATS compliance for CVs, tone for content, accuracy for research. Max 2 retries.",
+    "icon": "🛡️",
+    "type": "core",
+    "model": "Sonnet 4",
+    "persistent": true,
+    "capabilities": ["Output validation", "ATS compliance check", "Tone analysis", "Fact checking", "Retry management"],
+    "qaChecks": ["CV: ATS rules, no fabricated data, keyword match", "Content: tone, CTA, length, formatting", "Research: sources cited, relevance, completeness", "Code: builds without errors, matches requirements"]
+  },
+  {
+    "id": "scheduler",
+    "name": "Scheduler",
+    "role": "Automation & Scheduling",
+    "description": "Manages cron jobs, reminders, follow-ups, and proactive monitoring. Runs 24/7.",
+    "icon": "⏰",
+    "type": "core",
+    "model": "MiniMax-M2.1",
+    "persistent": true,
+    "capabilities": ["Cron management", "Reminders", "Email monitoring", "Git backups", "Usage alerts"]
+  },
+  {
+    "id": "researcher",
+    "name": "Research Agent",
+    "role": "Intelligence & Analysis",
+    "description": "Web research, company analysis, market intel, competitive research. Spawns per task, terminates when done.",
+    "icon": "🔍",
+    "type": "specialist",
+    "model": "MiniMax-M2.1",
+    "persistent": false,
+    "capabilities": ["Web search", "Company research", "News analysis", "Market intelligence", "Competitive analysis"]
+  },
+  {
+    "id": "writer",
+    "name": "Writer Agent",
+    "role": "Content & Copy",
+    "description": "LinkedIn posts, emails, thought leadership, marketing copy. Follows brand voice guidelines.",
+    "icon": "✍️",
+    "type": "specialist",
+    "model": "Sonnet 4",
+    "persistent": false,
+    "capabilities": ["LinkedIn posts", "Email drafting", "Thought leadership", "Marketing copy", "Brand voice"]
+  },
+  {
+    "id": "cv-specialist",
+    "name": "CV Specialist",
+    "role": "CV & Applications",
+    "description": "Tailored CVs, cover letters, ATS optimization. Uses master CV data. Follows strict ATS rules.",
+    "icon": "📄",
+    "type": "specialist",
+    "model": "Opus 4.5",
+    "persistent": false,
+    "capabilities": ["Tailored CVs", "ATS optimization", "Cover letters", "Keyword matching", "Format compliance"]
+  },
+  {
+    "id": "coder",
+    "name": "Coder Agent",
+    "role": "Development & Automation",
+    "description": "Mission Control features, automation scripts, integrations, bug fixes.",
+    "icon": "💻",
+    "type": "specialist",
+    "model": "Sonnet 4",
+    "persistent": false,
+    "capabilities": ["Feature development", "Bug fixes", "API integrations", "Automation scripts", "Code review"]
+  }
+]

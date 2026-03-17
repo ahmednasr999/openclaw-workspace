@@ -1,7 +1,6 @@
 ---
 name: openclaw-backup
 description: Backup and restore OpenClaw data. Use when user asks to create backups, set up automatic backup schedules, restore from backup, or manage backup rotation. Handles ~/.openclaw directory archiving with proper exclusions.
-metadata: {"openclaw":{"emoji":"💾","requires":{"bins":["tar"]}}}
 ---
 
 # OpenClaw Backup

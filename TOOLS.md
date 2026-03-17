@@ -1,269 +1,129 @@
-# TOOLS.md — Environment & Tool Reference
-
-*Last updated: 2026-03-04*
-
----
-
-## Infrastructure
-
-| Item | Detail |
-|------|--------|
-| VPS | Hostinger |
-| OS | Ubuntu (Linux) |
-| Interface | Telegram |
-| OpenClaw config | ~/.openclaw/ |
-| Agent config | ~/.openclaw/agents/main/ |
-| Memory location | memory/*.md |
-| Models config | models.json |
-
----
-
-## Tool Reference — When to Use What
-
-### File Operations
-
-| Tool | Use When |
-|------|----------|
-| read | Loading any file — memory, config, docs |
-| write | Creating new files or full overwrites |
-| edit | Surgical updates — prefer over write to avoid data loss |
-
-Rule: Always use edit over write for existing files. write overwrites silently. edit is precise.
-
-### Execution
-
-| Tool | Use When |
-|------|----------|
-| exec | Git, system checks, installs, scripts |
-| process | Long-running tasks that need monitoring |
-
-Rule: Always use trash before rm. Recoverable beats gone.
-
-### Web & Research
-
-| Tool | Use When |
-|------|----------|
-| web_search | Quick lookups, job searches, fact-checking |
-| web_fetch | Full article or JD content needed |
-| browser | Form filling, scraping, screenshots |
-
-Rule: web_fetch before browser. Browser is expensive and slow.
-
-### Memory Tools
-
-| Tool | Use When |
-|------|----------|
-| memory_search | Don't know which file — search semantically |
-| memory_get | Know the file and line range — pull directly |
-
-Rule: memory_search first on any question about past context.
-
-### Agent Orchestration
-
-| Tool | Use When |
-|------|----------|
-| sessions_spawn | Delegating a contained, specific task |
-| sessions_send | Steering an already-running sub-session |
-| sessions_list | Checking what's running |
-| sessions_history | Reading sub-agent output |
-| subagents | Managing delegated work |
-| agents_list | Checking available agent IDs |
-| session_status | Checking cost and model usage |
-
-Rule: Sub-agents write to output files only. NASR merges into shared memory. Never let sub-agents touch MEMORY.md, GOALS.md, or active-tasks.md directly.
-
-### Communication
-
-| Tool | Use When |
-|------|----------|
-| message | Proactive alerts, session results, urgent flags |
-| tts | Voice summaries (use sparingly — cost) |
-
-### Visual
-
-| Tool | Use When |
-|------|----------|
-| image | Analyzing uploaded images or screenshots |
-| canvas | Dashboards, visual explainers, HTML output |
-
----
-
-## Model Registry — Clean Lineup
-
-*Updated Mar 1, 2026. All three primary providers are flat-fee subscriptions, not per-token.*
-
-| Priority | Model | Alias | Plan | Cost/mo | Context | Limit | Best For |
-|----------|-------|-------|------|---------|---------|-------|----------|
-| 1st | MiniMax M2.5-highspeed | minimax-m2.5 | Coding Plus | $40 | 200K | 300 prompts/5hrs | Default: crons, heartbeats, quick tasks |
-| 2nd | GPT-5.4 | gpt54 | ChatGPT Plus | $20 | 1M | 45-225 msgs/5hrs | Coding, agentic workflows, long-context, computer-use |
-| 2nd | GPT-5.3-Codex | gpt53codex | ChatGPT Plus | $20 | 266K | 45-225 msgs/5hrs | Legacy fallback (superseded by GPT-5.4) |
-| 3rd | Claude Sonnet 4.6 | sonnet46 | Claude Max 20x | (incl) | 200K | 20x Pro/5hrs | Drafting, research, LinkedIn content |
-| 4th | Claude Opus 4.6 | opus46 | Claude Max 20x | (incl) | 200K | 20x Pro/5hrs | Deep strategy, CV tailoring, interviews |
-| 5th | Claude Haiku 4.5 | haiku | Claude Max 20x | (incl) | 200K | 20x Pro/5hrs | Fast, vision, lightweight fallback |
-| 6th | Kimi K2.5 | kimi | API key | ~free | 256K | n/a | Long context (256K+) |
-
-**Monthly budget: ~EGP 9,000 + $60/mo total**
-- Claude Max 20x: EGP 9,000/mo (Opus + Sonnet + Haiku, shared 20x Pro limit per 5hrs)
-- MiniMax Coding Plus: $40/mo (300 prompts/5hrs, ~100 TPS)
-- ChatGPT Plus: $20/mo (GPT-5.3-Codex, 45-225 msgs/5hrs)
-
-**Key: All limits reset every 5 hours. Spread load across providers to avoid hitting any single limit.**
-
-**Fallback chain:** MiniMax M2.5 (default) -> Claude Sonnet 4.6 -> Claude Haiku 4.5 -> GPT-5.4 -> Kimi K2.5
-
-**Auth:** Claude via API key, MiniMax via OAuth, Codex via OAuth (token expires ~June 2026)
-
----
-
-## Model Routing Rules
-
-| Task Type | Model | Alias | Reason |
-|-----------|-------|-------|--------|
-| Infrastructure decisions, post-mortems | Opus 4.6 | opus46 | Best reasoning, safety-critical |
-| Interview prep, deep strategy | Opus 4.6 | opus46 | Best reasoning |
-| CV tailoring, LinkedIn content | Sonnet 4.6 | sonnet46 | Quality drafting |
-| **ATS scoring (primary)** | **MiniMax M2.5** | **minimax-m2.5** | **Closest to Opus accuracy (+1.7 avg drift), conservative, free quota** |
-| **ATS scoring (borderline 82-87)** | **Opus 4.6** | **opus46** | **Tie-breaker for grey-zone scores only** |
-| Sub-agent work, coding tasks | GPT-5.4 | gpt54 | Best coding model, 1M context, separate quota pool |
-| Quick sub-agents, lightweight tasks | Haiku 4.5 | haiku | Fast, cheap fallback |
-| Quick formatting, lookups, vision | Haiku 4.5 | haiku | Fast, lightweight |
-| Crons, heartbeats, email, calendar | MiniMax M2.5 | minimax-m2.5 | Flat rate default |
-| Long document analysis (256K-1M) | GPT-5.4 | gpt54 | 1M context, better reasoning than Kimi |
-| Long document analysis (budget/overflow) | Kimi K2.5 | kimi | Free, 256K context |
-
-### ATS Scoring Rules (Validated Mar 5, 2026)
-- **Threshold: 82/100** (lowered from 85, calibrated against Opus baseline)
-- **Primary scorer: MiniMax M2.5** (avg +1.7 drift from Opus, most conservative)
-- **Borderline protocol:** If MiniMax scores 82-87, auto-escalate to Opus for second opinion
-- **Never use Haiku for scoring** (avg +4.0 drift, inflates borderline roles past threshold)
-- **Verdicts:** SUBMIT (82+), REVIEW (75-81), SKIP (<75)
-
-### Quota Discipline (Non-Negotiable)
-- All three providers are flat-fee. Optimization = spreading load, not saving money.
-- Default: MiniMax M2.5 (background noise, highest prompt count)
-- Sub-agents: prefer Codex (separate quota pool from Claude)
-- Claude: reserve for main session conversations and quality-critical output
-- Principle: never burn one provider's quota when another can handle it
-- Monitor: if any provider approaches 80% of 5hr limit, shift load to others
-
-### Monthly Cost Budget (Fixed)
-| Provider | Plan | Cost |
-|----------|------|------|
-| Claude Max 20x | Opus + Sonnet + Haiku | EGP 9,000/mo |
-| MiniMax Coding Plus | M2.5-highspeed | $40/mo |
-| ChatGPT Plus | GPT-5.3-Codex | $20/mo |
-| **TOTAL** | | **EGP 9,000 + $60/mo** |
-
----
-
-## Sub-Agent Conventions
-
-*(Since agents share the same workspace with no isolation)*
-
-When spawning a sub-agent task, always:
-1. Specify the model explicitly using alias
-2. Scope the task narrowly, one output, one file
-3. Tell it exactly where to write output
-4. Explicitly include: "Do NOT update MEMORY.md, GOALS.md, or active-tasks.md"
-5. Explicitly include: "Telegram-safe output only. No Markdown tables unless Ahmed explicitly asks for a table"
-6. NASR reviews and merges output after task completes
-7. **Include the Completion Guard** (see below)
-
-### Completion Guard (Inspired by Taskmaster)
-
-**Core principle: Progress is not completion. A convincing summary of partial work is still failure.**
-
-Every sub-agent brief MUST include this block at the end:
-
-```
-COMPLETION RULES:
-- You are NOT done until every part of the task is finished. Partial progress is not completion.
-- Do not summarize what you "would do next." Do the work now.
-- Do not stop because the task is "mostly done." 100% or not done.
-- If you hit an error, fix it or try an alternative. Do not report the error and stop.
-- When genuinely complete, end your response with: TASK_COMPLETE
-- If TASK_COMPLETE is missing from your output, the task is considered failed.
-```
-
-**NASR enforcement:**
-- When reviewing sub-agent output, check for `TASK_COMPLETE` token
-- If missing: the agent stopped early. Re-run or steer with: "You stopped before completing. Continue from where you left off. Do not restart. Do not summarize what was done. Just finish the remaining work."
-- Lighter models (Haiku, MiniMax) quit early more often. Compensate by giving explicit step-by-step instructions and smaller scopes.
-
-**Exceptions:** Research/analysis tasks where the deliverable is a summary are exempt. The guard applies to tasks with concrete outputs (CVs, scripts, file edits, data processing).
-
-### Recommended Model per Agent Role
-
-**HARD RULE: All CV creation/tailoring MUST run on Opus 4.6 (opus46). No exceptions. If the current session is on a different model, switch to Opus 4.6 before generating any CV.**
-
-| Agent | Folder | Default Model | Escalate To |
-|-------|--------|--------------|-------------|
-| CV Optimizer | cv-optimizer | **opus46** | Never downgrade CVs |
-| Job Hunter | job-hunter | haiku | sonnet46 if quality insufficient |
-| Researcher | researcher | haiku | sonnet46 for synthesis |
-| Content Creator | content-creator | sonnet46 | opus46 for strategic pieces |
-
----
-
-## Telegram Channel IDs
-
-*(Populate with real values)*
-
-| Channel | ID | Purpose |
-|---------|----|---------| 
-| Main chat | [YOUR_CHAT_ID] | Primary interaction |
-| Alerts | [ALERT_CHANNEL_ID] | Urgent flags |
-
----
-
-## 🤖 New Autonomous Capabilities (Feb 2026)
-
-### Tavily Search
-- **Status:** ✅ Active
-- **API Key:** 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
-- **Credits:** 1,000/month (free tier)
-
-### Google Workspace
-- **nasr.ai.assistant@gmail.com:** ✅ Gmail connected
-- **ahmednasr999@gmail.com:** ✅ Gmail + Calendar connected
-- **Credentials:** config/ahmed-google.json
-
-### Job Radar
-- **Script:** /root/.open/job-radar.shclaw/workspace/scripts
-- **Output:** memory/job-radar.md
-
----
-
-## Mac Node Pairing (Tailscale Method)
-
-**Gateway Tailscale URL:** `srv1352768.tail945bbc.ts.net`
-**WebSocket:** `wss://srv1352768.tail945bbc.ts.net`
-
-### Setup (on Mac Terminal)
-
-```bash
-# 1. Install OpenClaw
-npm install -g openclaw
-
-# 2. Connect via Tailscale (HTTPS/WSS, port 443)
-openclaw node run --host srv1352768.tail945bbc.ts.net --port 443 --tls --display-name "Ahmed-Mac"
-
-# 3. Wait for "Waiting for approval" message
-
-# 4. On VPS (NASR will do this):
-openclaw nodes pending
-openclaw nodes approve <requestId>
-
-# 5. Install as permanent service (after approval)
-openclaw node install --host srv1352768.tail945bbc.ts.net --port 443 --tls --display-name "Ahmed-Mac"
-```
-
-### Rules
-- **NEVER** bind gateway to 0.0.0.0 (exposes to public internet)
-- **ALWAYS** use Tailscale URL (encrypted, authenticated, private)
-- **NEVER** change gateway config for node pairing
-- Gateway stays on 127.0.0.1:18789, Tailscale proxies it securely
-
----
-
-**Links:** [[MEMORY.md]] | [[AGENTS.md]] | [[SOUL.md]]
+# TOOLS.md - Technical Configs & How-To
+
+*Technical configurations, troubleshooting, and environment-specific setup*
+
+## CV Creation Workflow
+
+### Models by Task
+- **Default/Daily:** MiniMax-M2.1 (free tier)
+- **CV Creation:** Claude Opus 4.5 (requires approval)
+- **Analysis/Research:** Claude Sonnet 4
+
+## Model Strategy (Verified Working - 2026-02-17)
+
+### Available Models (Tested & Confirmed)
+
+| Provider | Alias | Model | Use Case | Cost | Status |
+|----------|-------|-------|----------|------|--------|
+| **Anthropic** | `opus` | claude-opus-4-6 | Complex tasks, CV creation | 💎 Premium | ✅ Works |
+| **Anthropic** | `sonnet` | claude-sonnet-4-6 | Balanced (troubleshooting, setup) | ⚡ Mid | ✅ Works |
+| **Anthropic** | `opus-4.5` | claude-opus-4-5 | Legacy fallback | 💎 Premium | ✅ Works |
+| **Anthropic** | `sonnet-4` | claude-sonnet-4 | Legacy fallback | ⚡ Mid | ✅ Works |
+| **MiniMax** | `minimax-m2.1` | MiniMax-M2.1 | Daily tasks, bulk operations | ✅ Free | ✅ Works |
+| **Moonshot** | `Kimi` | kimi-k2.5 | Alternative reasoning, research | ⚡ Mid | ✅ Works |
+
+### Not Working (Do Not Use)
+
+| Provider | Alias | Model | Issue |
+|----------|-------|-------|-------|
+| **Anthropic** | `haiku-3.5` | claude-3-5-haiku-20250520 | ❌ 404 Error |
+| **Anthropic** | `haiku-3` | claude-3-haiku-20240307 | ❓ Untested |
+
+### Model Selection Rules
+1. **Default:** MiniMax-M2.1 (free, good for routine tasks)
+2. **CV Creation:** Claude Opus 4.5 (requires approval)
+3. **Complex Setup:** Claude Sonnet 4
+4. **Alternative Reasoning:** Kimi K2.5
+
+### Model Change Protocol
+- **Default:** MiniMax M2.1 (always)
+- **Ask before changing:** Any model switch
+- **Notify:** When switching to/from paid models
+- **Switch back:** After completing expensive tasks
+
+### Switching Models
+- Use alias: `switch to opus`, `switch to sonnet`, `switch to Kimi`
+- Always notify user when switching to paid models
+- Switch back to MiniMax after completing expensive tasks
+
+### File Naming Convention
+- Format: `Ahmed Nasr - {Title} - {Company}.pdf/html`
+- No underscores, use spaces and dashes
+- If company confidential: `Ahmed Nasr - {Title}.pdf`
+
+### ATS Compliance Checklist
+- Single column layout only
+- No tables, multi-column, images, special bullets
+- Standard headers: Professional Summary, Experience, Education, Skills, Certifications
+- AVR bullet pattern: Action + Value + Result
+
+## Authentication & APIs
+
+### Gmail (Himalaya)
+- **Status:** ✅ WORKING - Full IMAP/SMTP access
+- **Tool:** Himalaya email client
+- **Auth:** Gmail App Password (`wvdklorwnunbyjir` in `/root/.config/gmail-smtp.json`)
+- **Capabilities:** List, read, delete, move emails, folder management
+- **Limitation:** Cannot access Gmail category tabs (Promotions, Social) directly via IMAP
+- **Note:** GOG OAuth was abandoned due to persistent keyring issues
+
+### Web Search
+- **Status:** Missing Brave API key
+- **Setup:** `openclaw configure --section web`
+- **Fallback:** Use web_fetch for direct URL content
+
+## File Locations
+
+### Master Data
+- **CV Data:** `/memory/master-cv-data.md` (source of truth)
+- **Master PDFs:** `/media/inbound/file_99*.pdf` and `file_100*.docx`
+- **ATS Guide:** `/memory/ats-best-practices.md`
+
+### Marketing Skills
+- **Location:** `/marketing-skills/`
+- **Framework files:** linkedin-transformation-executive.md, transformation-consulting-positioning.md, etc.
+
+### Content Analysis
+- **Reviews:** `/docs/content-claw/caught/` (permanent)
+- **Skips:** `/docs/content-claw/released/skip/` (14-day retention)
+
+## Troubleshooting
+
+### OAuth Issues
+- GOG auth tends to fail on first setup
+- Clear auth: `gog auth remove [email]`
+- Use manual workarounds for Gmail/Calendar
+
+### Model Switching
+- Always ask before switching to paid models
+- Notify when switching back to default
+- Opus for CV creation only
+
+### File Naming Issues
+- Check MEMORY.md for filename rules
+- Master CV data has exact titles and dates
+- Never fabricate roles or achievements
+
+## Environment Setup
+
+### Cron Jobs
+- GitHub backup: Daily
+- Gmail monitoring: 8 AM Cairo (when working)
+- Usage alerts: 9 AM Cairo
+
+### Timezone
+- User: Cairo (Africa/Cairo, UTC+2)
+- System: UTC
+- Always specify timezone for meetings/deadlines
+
+## Quick References
+
+### Skill Activation
+- Built-in: Just reference by name
+- Custom: "Use the [skill-name] skill to help me with..."
+- Always read the skill file when invoked
+
+### Memory Search
+- Use `memory_search` before answering questions about past work
+- Check both MEMORY.md and memory/*.md files
+- Include source citations when helpful

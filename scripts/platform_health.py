@@ -267,7 +267,7 @@ def generate_report():
         print(f"   Uncommitted changes: {changes}")
         print(f"   Hours since commit: {hours}")
         if changes > 10:
-            print(f"   ⚠️  Many uncommitted changes - run git sync!")
+            print(f"   ⚠️  Many uncommitted changes — run git sync!")
     
     print()
     

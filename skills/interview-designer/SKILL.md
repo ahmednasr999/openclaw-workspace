@@ -1,7 +1,6 @@
 ---
 name: interview-designer
 description: Analyze resumes and design interview strategies using evidence-based methodology. Transforms interview prep from "read resume → ask questions" into "define standard → forensic evidence → future simulation". Combines Geoff Smart's Topgrading, Lou Adler's performance-based hiring, and Daniel Kahneman's bias control. Use when preparing for interviews, creating structured interview guides, or designing questions to validate candidate competencies.
-metadata: {"openclaw":{"emoji":"🎤"}}
 ---
 
 # Interview Designer Skill

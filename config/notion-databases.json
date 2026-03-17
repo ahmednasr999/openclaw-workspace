@@ -4,38 +4,43 @@
     "id": "20b72b80-6b33-44fc-af23-2126d90880f7"
   },
   "root_page": {
-    "name": "🎯 Nasr's Command Center",
+    "name": "\ud83c\udfaf Nasr's Command Center",
     "id": "30b8d599-a162-8067-9eb8-f229b473d25f",
     "url": "https://www.notion.so/Nasr-s-Command-Center-30b8d599a16280679eb8f229b473d25f"
   },
   "databases": {
     "daily_briefings": {
       "id": "3268d599-a162-812d-a59e-e5496dec80e7",
-      "name": "📊 Daily Briefings"
+      "name": "\ud83d\udcca Daily Briefings"
     },
     "job_pipeline": {
       "id": "3268d599-a162-81b4-b768-f162adfa4971",
-      "name": "💼 Job Pipeline"
+      "name": "\ud83d\udcbc Job Pipeline"
     },
     "job_dossiers": {
       "id": "3268d599-a162-8123-8584-d64a9477f887",
-      "name": "📄 Job Dossiers"
+      "name": "\ud83d\udcc4 Job Dossiers"
     },
     "cv_tracker": {
       "id": "3268d599-a162-8176-a22d-c5c4c54d7879",
-      "name": "📝 CV Tracker"
+      "name": "\ud83d\udcdd CV Tracker"
     },
     "linkedin_analytics": {
       "id": "3268d599-a162-811a-b028-e06c181bfd85",
-      "name": "📱 LinkedIn Analytics"
+      "name": "\ud83d\udcf1 LinkedIn Analytics"
     },
     "content_calendar": {
       "id": "3268d599-a162-814b-8854-c9b8bde62468",
-      "name": "📅 Content Calendar"
+      "name": "\ud83d\udcc5 Content Calendar"
     },
     "system_log": {
       "id": "3268d599-a162-81b4-8feb-d8997ddc6d73",
-      "name": "⚙️ System Log"
+      "name": "\u2699\ufe0f System Log"
     }
+  },
+  "dashboard": {
+    "id": "3268d599-a162-8134-b0e0-ef9e8a968f1e",
+    "name": "\ud83c\udfe0 Dashboard",
+    "url": "https://www.notion.so/Dashboard-3268d599a1628134b0e0ef9e8a968f1e"
   }
 }

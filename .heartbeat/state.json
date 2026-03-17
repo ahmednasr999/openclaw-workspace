@@ -1,0 +1,42 @@
+{
+  "last_run": "2026-03-17T10:09:00Z",
+  "alerts": {
+    "cron_failure": {
+      "last_alerted": null,
+      "cooldown_hours": 24
+    },
+    "session_bloat": {
+      "last_alerted": "2026-03-17T10:09:00Z",
+      "cooldown_hours": 24
+    },
+    "api_health": {
+      "last_alerted": null,
+      "cooldown_hours": 24
+    },
+    "model_fallback": {
+      "last_alerted": null,
+      "cooldown_hours": 0
+    },
+    "gateway_down": {
+      "last_alerted": null,
+      "cooldown_hours": 0
+    },
+    "disk_space": {
+      "last_alerted": null,
+      "cooldown_hours": 24
+    },
+    "deadline": {
+      "last_alerted": null,
+      "cooldown_hours": 6
+    },
+    "staleness": {
+      "last_alerted": null,
+      "cooldown_hours": 24
+    },
+    "scanner_degraded": {
+      "last_alerted": "2026-03-17T10:09:00Z",
+      "cooldown_hours": 24
+    }
+  },
+  "known_issues": []
+}
