@@ -1605,23 +1605,48 @@ def main():
             lines.append("Clear day ✅")
 
         # LinkedIn
-        if todays_post:
-            lines.append("\n📱 LINKEDIN")
-            title = todays_post.get("title", "No post")[:50]
-            lines.append(f"Today: {title}")
+        lines.append("\n📱 LINKEDIN")
+        if todays_post and todays_post.get("title"):
+            post_title = todays_post.get("title", "")[:45]
+            post_status = todays_post.get("status", "drafted")
+            lines.append(f"Post: {post_title} [{post_status}]")
+        else:
+            lines.append("No post scheduled today")
         if selected_posts:
-            lines.append(f"Targets: {len(selected_posts)} posts")
+            lines.append(f"Engage: {len(selected_posts)} comment targets ready")
+            # Show top 2 targets
+            for sp in selected_posts[:2]:
+                author = sp.get("author", "?")[:20]
+                topic = sp.get("topic", sp.get("snippet", ""))[:30]
+                lines.append(f"  • {author}: {topic}")
 
         # System
         lines.append("\n⚙️ SYSTEM")
-        # Get real disk usage
+        # Get real system health
         try:
             import shutil
             usage = shutil.disk_usage("/")
             disk_pct = int(usage.used / usage.total * 100)
         except:
             disk_pct = "?"
-        lines.append(f"Gateway: ✅ | Disk: {disk_pct}%")
+        # Gateway check
+        gw_status = "✅"
+        try:
+            gw_check = subprocess.run("pgrep -f 'openclaw.*gateway'", shell=True, capture_output=True, text=True, timeout=5)
+            if gw_check.returncode != 0:
+                gw_status = "❌ DOWN"
+        except:
+            gw_status = "?"
+        # Cron status
+        cron_line = ""
+        if errors:
+            cron_line = f" | ⚠️ {len(errors)} errors"
+        else:
+            cron_line = " | Crons: OK"
+        lines.append(f"Gateway: {gw_status} | Disk: {disk_pct}%{cron_line}")
+        if errors:
+            for e in errors[:2]:
+                lines.append(f"  ⚠️ {e.get('issue','')[:60]}")
 
         telegram_msg = "\n".join(lines)
         telegram_file = f"/tmp/briefing-telegram-{today_str}.txt"
