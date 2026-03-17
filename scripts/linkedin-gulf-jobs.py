@@ -567,6 +567,41 @@ def main():
     else:
         print(f"\n✅ Validation passed: {total_searches}/{expected_searches} searches, {total_found} found, {len(picks)+len(leads)} relevant, {len(filtered_out)} filtered.")
 
+    # === Save scanner metadata JSON for briefing orchestrator ===
+    scanner_meta = {
+        "date": date_str,
+        "total_searches": total_searches,
+        "expected_searches": expected_searches,
+        "total_found": total_found,
+        "priority_picks": len(picks),
+        "exec_leads": len(leads),
+        "filtered_out": len(filtered_out),
+        "runtime_seconds": elapsed,
+        "countries": list(set(s[1] for s in searches)),
+        "sources": ["LinkedIn", "Indeed"],
+        "source_status": {
+            "LinkedIn": "✅" if any(j.get("site") == "linkedin" for j in picks + leads) or total_found > 0 else "❌",
+            "Indeed": "✅" if any(j.get("site") == "indeed" for j in picks + leads) else "⚠️ No results",
+        },
+        "cookie_age_days": None,
+        "validation_warnings": validation_warnings,
+        "degraded": total_found < MIN_JOBS_ALERT,
+    }
+    # Check cookie age
+    for _cpath in ["/root/.openclaw/cookies/linkedin.txt"]:
+        try:
+            import pathlib
+            mtime = pathlib.Path(_cpath).stat().st_mtime
+            age_days = int((time.time() - mtime) / 86400)
+            scanner_meta["cookie_age_days"] = age_days
+        except:
+            pass
+
+    meta_file = OUTPUT_DIR / f"scanner-meta-{date_str}.json"
+    with open(meta_file, "w") as f:
+        json.dump(scanner_meta, f, indent=2)
+    print(f"\nScanner metadata saved: {meta_file}")
+
     # === Notion Sync ===
     try:
         sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))

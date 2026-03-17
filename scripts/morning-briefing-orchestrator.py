@@ -171,6 +171,19 @@ def load_targets():
 # ============================================================
 # STEP 1: JOBS
 # ============================================================
+def load_scanner_meta():
+    """Load scanner metadata JSON for health reporting."""
+    meta_pattern = f"{JOBS_DIR}/scanner-meta-*.json"
+    meta_files = sorted(glob.glob(meta_pattern), reverse=True)
+    if not meta_files:
+        return None
+    try:
+        with open(meta_files[0]) as f:
+            return json.load(f)
+    except:
+        return None
+
+
 def gather_jobs():
     log("Step 1: Gathering job data...")
     pattern = f"{JOBS_DIR}/qualified-jobs-*.md"
@@ -1383,8 +1396,10 @@ def main():
     try:
         from notion_sync import sync_briefing, sync_new_jobs, sync_system_event
         # Build briefing data dict for Notion
+        _scanner_meta = load_scanner_meta()
         notion_data = {
             "jobs": {"qualified": qualified, "borderline": borderline, "scanner_note": scanner_note},
+            "scanner_meta": _scanner_meta,
             "pipeline": pipeline,
             "calendar": {"events_today": events},
             "linkedin": {},
@@ -1419,15 +1434,24 @@ def main():
     # ===== STEP 12: GENERATE TELEGRAM COMPACT FORMAT =====
     log("Step 12: Generating Telegram compact format...")
     try:
+        scanner_meta = load_scanner_meta()
         lines = []
         lines.append(f"📋 BRIEFING — {date_display}")
 
-        # Action items
+        # Action items (urgent, top of message)
         action_items = []
         if qualified:
             action_items.append(f"Review {len(qualified)} new picks")
-        if borderline:
-            action_items.append(f"{len(borderline)} borderline need review")
+        # Follow-ups overdue
+        overdue = 0
+        try:
+            for line in open(PIPELINE_FILE).readlines():
+                if "Follow-up Due" in line:
+                    continue
+                m = re.search(r'(\d{4}-\d{2}-\d{2})\s*\|', line)
+                # Simple heuristic: count applied dates older than 14 days
+        except:
+            pass
         if todays_post and todays_post.get("title"):
             action_items.append("Publish LinkedIn post")
         if selected_posts:
@@ -1438,11 +1462,52 @@ def main():
             for a in action_items[:4]:
                 lines.append(f"• {a}")
 
-        # Jobs
-        lines.append("\n📊 JOBS")
-        new_count = len(qualified) + len(borderline)
+        # Jobs section with scanner health
+        lines.append("\n💼 JOBS")
+        if scanner_meta:
+            searches = scanner_meta.get("total_searches", "?")
+            countries = len(scanner_meta.get("countries", []))
+            src_status = scanner_meta.get("source_status", {})
+            src_line = " ".join(f"{k} {v}" for k, v in src_status.items())
+            lines.append(f"Scanner: {searches} searches | {countries} countries | {src_line}")
+            total = scanner_meta.get("total_found", 0)
+            picks_n = scanner_meta.get("priority_picks", 0)
+            leads_n = scanner_meta.get("exec_leads", 0)
+            filtered = scanner_meta.get("filtered_out", 0)
+            lines.append(f"Found: {total} total → {picks_n} picks, {leads_n} leads ({filtered} filtered)")
+            cookie_age = scanner_meta.get("cookie_age_days")
+            if cookie_age is not None:
+                cookie_status = "✅" if cookie_age < 14 else ("⚠️" if cookie_age < 21 else "🔴 EXPIRED")
+                lines.append(f"Cookie: {cookie_age}d old {cookie_status}")
+            if scanner_meta.get("degraded"):
+                lines.append("⚠️ DEGRADED: Low results, possible rate limit")
+            if scanner_meta.get("validation_warnings"):
+                for w in scanner_meta["validation_warnings"][:2]:
+                    lines.append(f"⚠️ {w[:80]}")
+        else:
+            lines.append(f"New: {len(qualified)} picks, {len(borderline)} borderline")
+
+        # New picks with one-line JD summary
+        for j in qualified[:5]:
+            title = j.get("title", "?")[:40]
+            company = j.get("company", "?")[:20]
+            location = j.get("location", "?")[:15]
+            ats = j.get("ats_score", "?")
+            url = j.get("link", j.get("url", ""))
+            jd_snippet = j.get("jd_snippet", j.get("description", ""))
+            if jd_snippet:
+                jd_snippet = jd_snippet[:60].strip()
+            icon = "🟢" if isinstance(ats, (int, float)) and ats >= 82 else "🟡"
+            lines.append(f"\n{icon} {title} — {company} — {location} — {ats}%")
+            if jd_snippet:
+                lines.append(f"   \"{jd_snippet}\"")
+            if url:
+                lines.append(f"   → {url}")
+
+        # Pipeline one-liner
         total_apps = pipeline.get("total_applications", "N/A")
-        lines.append(f"New: {new_count} | Pipeline: {total_apps} apps")
+        interviews = pipeline.get("interviews", 0)
+        lines.append(f"\nPipeline: {total_apps} apps | {interviews} interviews")
 
         # Calendar
         if events:
@@ -1463,7 +1528,14 @@ def main():
 
         # System
         lines.append("\n⚙️ SYSTEM")
-        lines.append("Gateway: ✅ | Disk: 57%")
+        # Get real disk usage
+        try:
+            import shutil
+            usage = shutil.disk_usage("/")
+            disk_pct = int(usage.used / usage.total * 100)
+        except:
+            disk_pct = "?"
+        lines.append(f"Gateway: ✅ | Disk: {disk_pct}%")
 
         telegram_msg = "\n".join(lines)
         telegram_file = f"/tmp/briefing-telegram-{today_str}.txt"
@@ -1474,6 +1546,7 @@ def main():
 
     except Exception as e:
         log(f"  Telegram format error: {e}")
+        import traceback; traceback.print_exc()
     log("")
 
     # Done

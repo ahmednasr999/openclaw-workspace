@@ -100,24 +100,62 @@ def sync_briefing(briefing_json_path=None, briefing_data=None, date_str=None):
         blocks.append(nc.callout_block(summary_text[:2000], "📊"))
         blocks.append(nc.divider_block())
 
-        # Jobs section
+        # Jobs section with scanner health
         blocks.append(nc.heading_block("💼 Job Scanner", 2))
-        scanner_note = jobs_section.get("scanner_note", "No scanner data")
-        blocks.append(nc.paragraph_block(str(scanner_note)[:2000]))
+
+        # Scanner health summary
+        scanner_meta = briefing_data.get("scanner_meta")
+        if scanner_meta:
+            searches = scanner_meta.get("total_searches", "?")
+            countries = len(scanner_meta.get("countries", []))
+            total = scanner_meta.get("total_found", 0)
+            src_status = scanner_meta.get("source_status", {})
+            src_line = " | ".join(f"{k}: {v}" for k, v in src_status.items())
+            cookie_age = scanner_meta.get("cookie_age_days", "?")
+            runtime = scanner_meta.get("runtime_seconds", "?")
+
+            blocks.append(nc.callout_block(
+                f"Searches: {searches} | Countries: {countries} | Found: {total} | Runtime: {runtime}s\n{src_line} | Cookie: {cookie_age}d old",
+                "🔍"
+            ))
+            if scanner_meta.get("degraded"):
+                blocks.append(nc.callout_block("⚠️ DEGRADED: Low results, possible rate limit or cookie expiry", "⚠️"))
+            if scanner_meta.get("validation_warnings"):
+                for w in scanner_meta["validation_warnings"]:
+                    blocks.append(nc.bullet_block(f"⚠️ {w}"))
+        else:
+            scanner_note = jobs_section.get("scanner_note", "No scanner data")
+            blocks.append(nc.paragraph_block(str(scanner_note)[:2000]))
+
+        # Priority picks with JD summary
         if qualified:
-            blocks.append(nc.heading_block("Priority Picks", 3))
-            for j in qualified[:10]:
+            blocks.append(nc.heading_block("🟢 Priority Picks", 3))
+            for j in qualified[:15]:
                 title = j.get("title", "Unknown")
                 company = j.get("company", "Unknown")
                 ats = j.get("ats_score", "N/A")
-                blocks.append(nc.bullet_block(f"{title} @ {company} (ATS: {ats})"))
+                location = j.get("location", "")
+                url = j.get("link", j.get("url", ""))
+                jd_snippet = j.get("jd_snippet", j.get("description", ""))
+
+                line = f"{title} @ {company} — {location} (ATS: {ats}%)"
+                blocks.append(nc.bullet_block(line[:200]))
+                if jd_snippet:
+                    blocks.append(nc.paragraph_block(f"  \"{jd_snippet[:300]}\""))
+                if url:
+                    blocks.append(nc.paragraph_block(f"  → {url}"))
+
+        # Borderline (Notion only, not in Telegram)
         if borderline:
-            blocks.append(nc.heading_block("Borderline", 3))
+            blocks.append(nc.heading_block("🟡 Borderline (75-81%)", 3))
             for j in borderline[:10]:
                 title = j.get("title", "Unknown")
                 company = j.get("company", "Unknown")
                 ats = j.get("ats_score", "N/A")
-                blocks.append(nc.bullet_block(f"{title} @ {company} (ATS: {ats})"))
+                location = j.get("location", "")
+                url = j.get("link", j.get("url", ""))
+                blocks.append(nc.bullet_block(f"{title} @ {company} — {location} (ATS: {ats}%) → {url}"[:200]))
+
         blocks.append(nc.divider_block())
 
         # Pipeline
