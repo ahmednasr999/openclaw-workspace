@@ -1110,7 +1110,7 @@ def main():
         try:
             r = subprocess.run(
                 f"python3 {BRIEFING_SCRIPT} --data {briefing_path}",
-                shell=True, capture_output=True, text=True, timeout=120
+                shell=True, capture_output=True, text=True, timeout=300
             )
             if r.returncode == 0:
                 went_right.append("Daily Briefing Google Doc generated.")
@@ -1162,7 +1162,7 @@ def main():
         try:
             r = subprocess.run(
                 f"python3 {SYSLOG_SCRIPT} --data {syslog_path}",
-                shell=True, capture_output=True, text=True, timeout=120
+                shell=True, capture_output=True, text=True, timeout=300
             )
             if r.returncode == 0:
                 log("  Done!")
