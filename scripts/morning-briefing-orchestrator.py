@@ -505,29 +505,43 @@ print(json.dumps({{"score": score, "verdict": verdict, "reason": reason}}))
 def check_calendar():
     log("Step 2: Checking calendar...")
     events, upcoming = [], []
+    cal_error = None
     try:
         r = subprocess.run(
             f'GOG_KEYRING_PASSWORD="" gog calendar list --today -a {ACCOUNT_EMAIL}',
             shell=True, capture_output=True, text=True, timeout=30
         )
-        if r.stdout.strip() and "no events" not in r.stdout.lower():
+        output = r.stdout.strip() + r.stderr.strip()
+        if "expired" in output.lower() or "revoked" in output.lower() or "invalid_grant" in output.lower():
+            cal_error = "Google Calendar auth expired. Re-auth needed: gog auth add ahmednasr999@gmail.com --services calendar"
+            log(f"  ⚠️ {cal_error}")
+        elif r.stdout.strip() and "no events" not in r.stdout.lower():
             for line in r.stdout.strip().split("\n"):
-                if line.strip():
-                    events.append({"time": "", "title": line.strip(), "notes": ""})
+                line = line.strip()
+                if not line:
+                    continue
+                # Try to parse time from line (format varies: "14:00 Meeting Title" or just "Meeting Title")
+                time_match = re.match(r'^(\d{1,2}:\d{2})\s+(.+)', line)
+                if time_match:
+                    events.append({"time": time_match.group(1), "title": time_match.group(2), "notes": ""})
+                else:
+                    events.append({"time": "", "title": line, "notes": ""})
         log(f"  Today: {len(events)} events")
 
-        r2 = subprocess.run(
-            f'GOG_KEYRING_PASSWORD="" gog calendar list --from today --to "+3 days" -a {ACCOUNT_EMAIL}',
-            shell=True, capture_output=True, text=True, timeout=30
-        )
-        if r2.stdout.strip() and "no events" not in r2.stdout.lower():
-            for line in r2.stdout.strip().split("\n"):
-                if line.strip():
-                    upcoming.append(line.strip())
-        log(f"  Upcoming: {len(upcoming)} items")
+        if not cal_error:
+            r2 = subprocess.run(
+                f'GOG_KEYRING_PASSWORD="" gog calendar list --from today --to "+3 days" -a {ACCOUNT_EMAIL}',
+                shell=True, capture_output=True, text=True, timeout=30
+            )
+            if r2.stdout.strip() and "no events" not in r2.stdout.lower():
+                for line in r2.stdout.strip().split("\n"):
+                    if line.strip():
+                        upcoming.append(line.strip())
+            log(f"  Upcoming: {len(upcoming)} items")
     except Exception as e:
-        log(f"  Calendar check failed: {e}")
-    return events, upcoming
+        cal_error = f"Calendar check failed: {e}"
+        log(f"  {cal_error}")
+    return events, upcoming, cal_error
 
 
 # ============================================================
@@ -1252,12 +1266,16 @@ def main():
     log("")
 
     # Step 2
+    cal_error = None
     try:
-        events, upcoming = check_calendar()
-        went_right.append("Calendar check completed.")
+        events, upcoming, cal_error = check_calendar()
+        if cal_error:
+            errors.append({"issue": cal_error, "fix": "Re-auth Google Calendar"})
+        else:
+            went_right.append("Calendar check completed.")
     except Exception as e:
         errors.append({"issue": f"Calendar failed: {e}", "fix": "Check gog auth"})
-        events, upcoming = [], []
+        events, upcoming, cal_error = [], [], str(e)
     log("")
 
     # Step 3
@@ -1445,7 +1463,8 @@ def main():
             "jobs": {"qualified": qualified, "borderline": borderline, "scanner_note": scanner_note},
             "scanner_meta": _scanner_meta,
             "pipeline": pipeline,
-            "calendar": {"events_today": events},
+            "calendar": {"events_today": events, "upcoming": upcoming},
+            "cal_error": cal_error,
             "linkedin": {},
             "todays_post": todays_post or {},
             "comments": selected_posts,
@@ -1566,13 +1585,24 @@ def main():
                 lines.append(f"  +{len(p_overdue)-5} more in Notion")
 
         # Calendar
-        if events:
-            lines.append("\n📅 CALENDAR")
-            for ev in events[:3]:
+        lines.append("\n📅 CALENDAR")
+        if cal_error:
+            lines.append("⚠️ Calendar offline (auth expired)")
+        elif events:
+            for ev in events[:4]:
                 if isinstance(ev, dict):
-                    t = ev.get("time", "??").replace(":00", "")
+                    t = ev.get("time", "")
                     title = ev.get("title", "?")[:40]
-                    lines.append(f"• {t}: {title}")
+                    if t:
+                        lines.append(f"• {t}: {title}")
+                    else:
+                        lines.append(f"• {title}")
+            if upcoming:
+                tomorrow_count = len([u for u in upcoming if u.strip()])
+                if tomorrow_count > 0:
+                    lines.append(f"Next 3 days: {tomorrow_count} events")
+        else:
+            lines.append("Clear day ✅")
 
         # LinkedIn
         if todays_post:

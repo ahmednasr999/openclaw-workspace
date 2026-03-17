@@ -204,14 +204,33 @@ def sync_briefing(briefing_json_path=None, briefing_data=None, date_str=None):
         blocks.append(nc.divider_block())
 
         # Calendar
-        if cal_events:
-            blocks.append(nc.heading_block("📅 Calendar", 2))
-            for ev in cal_events[:5]:
+        blocks.append(nc.heading_block("📅 Calendar", 2))
+        cal_err = briefing_data.get("cal_error")
+        if cal_err:
+            blocks.append(nc.callout_block(f"⚠️ Calendar offline: {cal_err}", "⚠️"))
+        elif cal_events:
+            blocks.append(nc.heading_block("Today", 3))
+            for ev in cal_events[:8]:
                 if isinstance(ev, dict):
-                    blocks.append(nc.bullet_block(f"{ev.get('time','')}: {ev.get('title','')}"[:200]))
+                    t = ev.get("time", "")
+                    title = ev.get("title", "")
+                    notes = ev.get("notes", "")
+                    line = f"{t}: {title}" if t else title
+                    blocks.append(nc.bullet_block(line[:200]))
+                    if notes:
+                        blocks.append(nc.paragraph_block(f"  {notes[:300]}"))
                 else:
                     blocks.append(nc.bullet_block(str(ev)[:200]))
-            blocks.append(nc.divider_block())
+
+            # Upcoming 3 days
+            cal_upcoming = briefing_data.get("calendar", {}).get("upcoming", [])
+            if cal_upcoming:
+                blocks.append(nc.heading_block("Next 3 Days", 3))
+                for item in cal_upcoming[:8]:
+                    blocks.append(nc.bullet_block(str(item)[:200]))
+        else:
+            blocks.append(nc.paragraph_block("Clear day, no events scheduled. ✅"))
+        blocks.append(nc.divider_block())
 
         # LinkedIn
         if todays_post:
