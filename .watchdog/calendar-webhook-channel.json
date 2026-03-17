@@ -1,0 +1,11 @@
+{
+  "channel_id": "a9472afa-4e23-4b15-8f3a-d936f027b337",
+  "resource_id": "oAOTzeil8Z-3dqVNcbSKJFJsOwY",
+  "calendar_id": "primary",
+  "address": "https://srv1352768.tail945bbc.ts.net/calendar-push",
+  "expiration": "1776299478000",
+  "expiration_human": "2026-04-13T20:31:18Z",
+  "created": "2026-03-17T00:31:18Z",
+  "ttl_days": 30,
+  "note": "Renew before April 13, 2026. Use GOOGLECALENDAR_EVENTS_WATCH with new UUID."
+}
