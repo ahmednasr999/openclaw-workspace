@@ -463,12 +463,21 @@ Source: @thejayden on X - prompt protocol for reducing hallucinations
 - **Applies to:** All sessions, all models, all sub-agents.
 - **Action:** cron-constraint — before recommending "build X", run `clawhub search` first. Added to sub-agent brief template.
 
-## 2026-03-16: Google Doc Briefing Must Use Premium Formatting
-- **What happened:** Inserted raw text into the Executive Briefing Google Doc instead of using native API formatting (headings, bold labels, clickable links).
+## 2026-03-16: Google Doc Briefing Must Use Premium Formatting (UPGRADED Mar 17)
+- **What happened:** Inserted raw text into the Executive Briefing Google Doc instead of using native API formatting (headings, bold labels, clickable links). Also appended instead of prepended, breaking date ordering.
 - **Rule in MEMORY.md:** "NEVER raw markdown. ALWAYS native API formatting via premium generator scripts."
-- **Fix:** Always use Google Docs API batchUpdate with updateParagraphStyle (HEADING_1/2) and updateTextStyle (bold, italic, links). Never just insertText with plain strings.
-- **Applies to:** All Google Doc writes, especially the morning briefing cron.
-- **Action:** code-check — gdocs-create.py uses batchUpdate with native formatting. Morning briefing cron prompt explicitly requires heading hierarchy + bold labels.
+- **PREMIUM QUALITY STANDARD (LOCKED Mar 17, 2026):** ALL Google Doc output must be executive-grade:
+  - Native heading hierarchy (HEADING_1 for dates, HEADING_2 for sections, HEADING_3 for subsections)
+  - Bold labels on all key fields (Priority Focus:, Scanner Status:, etc.)
+  - All URLs must be clickable hyperlinks (not plain text)
+  - Tables where data is tabular (jobs, pipeline, engagement)
+  - Inline images where available (LinkedIn post images, charts)
+  - Italic body text at 9pt for clean reading
+  - Footer with timestamp, grey italic
+  - Reverse chronological: newest day at TOP (prepend, never append)
+  - Zero duplicates: check for existing date before writing
+- **Applies to:** ALL Google Doc writes, every cron, every manual update. Zero exceptions.
+- **Action:** code-check — daily-briefing-generator.py now prepends (not appends), uses batchUpdate with native formatting, makes URLs clickable, applies italic+bold styling.
 
 ## 2026-03-16: ALWAYS Fetch Full JD Before Publishing Verdict in Briefing Doc
 - **What happened:** Recommended "Skip" on Sagest Capital CEO based on company name alone. Actual JD revealed it was a co-founding equity-only startup role (different skip reason entirely).

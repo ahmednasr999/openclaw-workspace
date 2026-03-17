@@ -23,17 +23,19 @@
 - If recovery fails: tell Ahmed honestly "I can't recover this"
 - Zero exceptions. Trust rule.
 
-## Google Docs Standard (LOCKED Mar 12-15, 2026)
+## Google Docs Standard (LOCKED Mar 17, 2026 — UPGRADED)
 - Doc IDs: Briefing 1gtl5sXIsvXiXhODFs29FD9L09i9mGQlsBVIrZbVkTYs, Log 1Ti5kle0bq4fXBgF54arYO2C723LtHkDUhO2o2rmDAqU, LinkedIn Posts 1hhROckb3AVGnka0rXB5vh25zywXJFDLuQYGTRa7zp4g
-- NEVER raw markdown. ALWAYS native API formatting via premium generator scripts.
-- Premium quality: embedded images, proper heading hierarchy, bold labels, clickable links.
-- ALWAYS check if doc ID exists in MEMORY.md before creating new doc. If doc exists, USE --doc-id to add content, NEVER create new doc.
-- Rules: never delete old content, prepend only, reverse chronological, no duplicates, backup first
+- PREMIUM QUALITY STANDARD: Every Google Doc output must be executive-grade
+  - Native heading hierarchy (H1/H2/H3), bold labels, italic body, clickable links
+  - Tables for tabular data (jobs, pipeline), inline images where available
+  - Reverse chronological: PREPEND new content at top, never append
+  - Zero duplicates: check for existing date before writing
+- NEVER raw markdown. ALWAYS native API formatting via daily-briefing-generator.py
+- ALWAYS check if doc ID exists before creating new doc. Use --doc-id, NEVER create new doc.
 - Script is single source of truth. Models cannot deviate.
-- Rules: never delete old content, prepend only, reverse chronological, no duplicates, backup first
 - GOG_KEYRING_PASSWORD="" (empty string)
 - For headless: use scripts/gdocs-create.py (direct API) not gog CLI
-- gog CLI auth broken: nasr.ai.assistant@gmail.com token expired. Re-auth needs browser (not possible headless). Use direct API scripts instead.
+- gog CLI auth broken: nasr.ai.assistant@gmail.com token expired. Re-auth needs browser. Use direct API scripts.
 
 ## Job Scanner v3.0 (Mar 15, 2026)
 - Three-criteria filter: executive title + GCC location + DT/Tech domain

@@ -517,14 +517,13 @@ def main():
         print(f"Header written ({num_requests} requests).")
         has_content = True  # now it has content for the append below
 
-    # APPEND: add today's content at the end
-    print("Appending today's briefing...")
-    end_index = get_document_end(docs, args.doc_id) - 1
-    if end_index < 1:
-        end_index = 1
+    # PREPEND: add today's content at the TOP (reverse chronological)
+    # Insert after the document header/title section (index 1)
+    print("Prepending today's briefing at top...")
     lines = build_document_lines(data)
-    print(f"Appending at index {end_index}...")
-    num_requests = apply_formatting(docs, args.doc_id, lines, start_index=end_index)
+    insert_index = 1  # Top of document, after any title
+    print(f"Inserting at index {insert_index} (top of doc)...")
+    num_requests = apply_formatting(docs, args.doc_id, lines, start_index=insert_index)
 
     print(f"Applied {num_requests} formatting requests.")
     print(f"Document: https://docs.google.com/document/d/{args.doc_id}/edit")
