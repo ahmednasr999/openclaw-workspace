@@ -567,6 +567,22 @@ def main():
     else:
         print(f"\n✅ Validation passed: {total_searches}/{expected_searches} searches, {total_found} found, {len(picks)+len(leads)} relevant, {len(filtered_out)} filtered.")
 
+    # === Notion Sync ===
+    try:
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        from notion_sync import sync_new_jobs, sync_system_event
+        all_new = picks + leads
+        if all_new:
+            added = sync_new_jobs(all_new)
+            print(f"\nNotion: {added} jobs synced to pipeline")
+        sync_system_event(
+            f"Scanner: {total_found} found, {len(picks)} priority, {len(leads)} leads",
+            component="Scanner",
+            details=f"Searches: {total_searches}, Filtered: {len(filtered_out)}, Warnings: {len(validation_warnings)}"
+        )
+    except Exception as e:
+        print(f"\nNotion sync skipped: {e}")
+
     print(f"\n=== DONE ({elapsed}s) ===")
     print(f"Searches:       {total_searches}/{expected_searches}")
     print(f"Jobs found:     {total_found}")

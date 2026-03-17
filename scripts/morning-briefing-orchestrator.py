@@ -1378,6 +1378,44 @@ def main():
             log(f"  ERROR: {e}")
     log("")
 
+    # Step 11: Sync to Notion
+    log("Step 11: Syncing to Notion...")
+    try:
+        from notion_sync import sync_briefing, sync_new_jobs, sync_system_event
+        # Build briefing data dict for Notion
+        notion_data = {
+            "jobs": {"qualified": qualified, "borderline": borderline, "scanner_note": scanner_note},
+            "pipeline": pipeline,
+            "calendar": {"events_today": events},
+            "linkedin": {},
+            "todays_post": todays_post or {},
+            "comments": selected_posts,
+            "went_right": went_right,
+            "errors": errors,
+        }
+        notion_url = sync_briefing(briefing_data=notion_data, date_str=today_str)
+        if notion_url:
+            went_right.append(f"Notion briefing: {notion_url}")
+            log(f"  Notion briefing: {notion_url}")
+        else:
+            log("  Notion sync failed (non-fatal)")
+
+        # Sync new jobs to pipeline
+        all_new = qualified + borderline
+        if all_new:
+            added = sync_new_jobs(all_new)
+            log(f"  {added} new jobs synced to Notion pipeline")
+
+        # Log system event
+        sync_system_event(
+            f"Morning briefing {today_str}",
+            component="Briefing",
+            details=f"{len(qualified)} priority, {len(borderline)} borderline, {len(errors)} errors"
+        )
+    except Exception as e:
+        log(f"  Notion sync error (non-fatal): {e}")
+    log("")
+
     # Done
     drafted = sum(1 for p in selected_posts if "[Comment draft" not in p.get("ready_comment",""))
     # ===== SELF-VALIDATION (Fix 1) =====
