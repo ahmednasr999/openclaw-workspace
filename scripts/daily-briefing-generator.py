@@ -249,48 +249,61 @@ def build_document_lines(data):
         lines.append(("", "NORMAL_TEXT"))
 
     if qualified:
-        lines.append(("Qualified Roles (Score 65+)", "HEADING_3"))
+        lines.append(("Recommended Roles (ATS 82+)", "HEADING_3"))
         lines.append(("", "NORMAL_TEXT"))
 
         for i, job in enumerate(qualified, 1):
-            lines.append((f"2.{i} {job['title']}", "HEADING_3"))
+            lines.append((f"{i}. {job['title']}", "HEADING_3"))
             lines.append((f"Company: {job.get('company', 'N/A')}", "NORMAL_TEXT"))
             lines.append((f"Location: {job.get('location', 'N/A')}", "NORMAL_TEXT"))
-            score_line = f"ATS Score: {job.get('score', 'N/A')}"
-            if job.get('status'):
-                score_line += f"  |  Status: {job['status']}"
-            if job.get('priority'):
-                score_line += f"  |  Priority: {job['priority']}"
+            ats = job.get('ats_score', job.get('score', 'N/A'))
+            verdict = job.get('ats_verdict', 'SUBMIT')
+            reason = job.get('ats_reason', '')
+            score_line = f"ATS Score: {ats}/100 | Verdict: {verdict}"
+            if reason:
+                score_line += f" | {reason}"
             lines.append((score_line, "NORMAL_TEXT"))
             if job.get('link'):
                 lines.append((f"Link: {job['link']}", "NORMAL_TEXT"))
-            if job.get('jd_length'):
-                lines.append((f"JD Length: {job['jd_length']}", "NORMAL_TEXT"))
-            if job.get('fit'):
-                lines.append((f"Fit: {job['fit']}", "NORMAL_TEXT"))
+            if job.get('jd_flag'):
+                lines.append((f"JD Flag: {job['jd_flag'].strip()}", "NORMAL_TEXT"))
             if job.get('cv_link'):
                 status = "Ready to apply" if job.get('cv_status') == 'ready' else 'Pending'
                 lines.append((f"Tailored CV: {job['cv_link']} ({status})", "NORMAL_TEXT"))
             lines.append(("", "NORMAL_TEXT"))
 
-    if borderline:
-        lines.append(("Executive Leads", "HEADING_3"))
+    # Borderline leads (REVIEW 75-81) and Low-fit (SKIP <75)
+    review_jobs = [j for j in borderline if j.get('ats_verdict') in ('REVIEW', 'UNSCORED', None)]
+    skip_jobs = [j for j in borderline if j.get('ats_verdict') == 'SKIP']
+
+    if review_jobs:
+        lines.append(("Borderline Leads (ATS 75-81)", "HEADING_3"))
         lines.append(("", "NORMAL_TEXT"))
-        for job in borderline:
-            lead_line = f"{bullet} {job['title']} | {job.get('company', '')} | {job.get('location', '')}"
-            if job.get('ats_score') and job['ats_score'] != 'Pending':
-                lead_line += f" | ATS: {job['ats_score']}"
-            elif job.get('score'):
-                lead_line += f" | {job['score']}"
+        for job in review_jobs:
+            ats = job.get('ats_score', '')
+            ats_str = f" | ATS: {ats}/100" if ats else ""
+            reason = job.get('ats_reason', '')
+            reason_str = f" | {reason}" if reason else ""
+            lead_line = f"{bullet} {job['title']} | {job.get('company', '')} | {job.get('location', '')}{ats_str}{reason_str}"
             lines.append((lead_line, "NORMAL_TEXT"))
             if job.get('link'):
                 lines.append((f"Link: {job['link']}", "NORMAL_TEXT"))
-            if job.get('verdict'):
-                lines.append((f"Verdict: {job['verdict']}", "NORMAL_TEXT"))
             if job.get('jd_flag'):
                 lines.append((f"JD Flag: {job['jd_flag'].strip()}", "NORMAL_TEXT"))
             if job.get('jd_fetched') is False:
-                lines.append(("JD: Could not fetch (verdict pending manual review)", "NORMAL_TEXT"))
+                lines.append(("UNSCORED: JD not fetched. Score unreliable.", "NORMAL_TEXT"))
+        lines.append(("", "NORMAL_TEXT"))
+
+    if skip_jobs:
+        lines.append(("Low Fit (ATS <75 - Not Recommended)", "HEADING_3"))
+        lines.append(("", "NORMAL_TEXT"))
+        for job in skip_jobs:
+            ats = job.get('ats_score', '')
+            reason = job.get('ats_reason', '')
+            skip_line = f"{bullet} {job['title']} | {job.get('company', '')} | ATS: {ats}/100 | {reason}"
+            lines.append((skip_line, "NORMAL_TEXT"))
+            if job.get('jd_flag'):
+                lines.append((f"JD Flag: {job['jd_flag'].strip()}", "NORMAL_TEXT"))
         lines.append(("", "NORMAL_TEXT"))
 
     if jobs.get("recommendation"):

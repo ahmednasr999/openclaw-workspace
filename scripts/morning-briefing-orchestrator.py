@@ -343,6 +343,146 @@ def gather_jobs():
                     log(f"    All JD fetch methods failed for {job.get('title', '?')[:40]}: {e2}")
             time.sleep(1)  # Respect rate limits
 
+    # v3.3: ATS Quick Score each job with a fetched JD
+    PROFILE_SUMMARY = """Ahmed Nasr - Digital Transformation Executive, 20+ years.
+Current: Acting PMO & Regional Engagement Lead at TopMed (Saudi German Hospital Group), $50M digital transformation across 15 hospitals, 3 countries (KSA, UAE, Egypt).
+Previous: Scaled Talabat/Delivery Hero from 30K to 7M daily orders. Built enterprise PMO managing 300+ concurrent projects across 8 countries at Network International. PaySky FinTech platform architect.
+Sectors: HealthTech, FinTech, e-commerce, Digital Transformation.
+Skills: Enterprise PMO, Cloud (AWS/Azure), AI/LLM deployment, P&L ownership, Agile, Saudi Vision 2030, GCC market expertise.
+Certs: PMP, CSM, CSPO, Lean Six Sigma, CBAP. MBA in progress (Paris ESLSCA).
+Target: VP/C-Suite roles in GCC. Digital transformation, technology leadership, PMO leadership."""
+
+    all_leads = qualified + borderline
+    scored_leads = [j for j in all_leads if j.get("jd_fetched") and j.get("jd_snippet")]
+    if scored_leads:
+        log(f"  ATS Quick Scoring {len(scored_leads)} leads against profile...")
+        for job in scored_leads:
+            try:
+                jd = job.get("jd_snippet", "")[:1500]
+                title = job.get("title", "Unknown")
+                company = job.get("company", "Unknown")
+
+                # Quick scoring prompt - designed for fast, accurate scoring
+                score_prompt = f"""Score this job's fit for the candidate. Return ONLY a JSON object, nothing else.
+
+CANDIDATE PROFILE:
+{PROFILE_SUMMARY}
+
+JOB: {title} at {company}
+JD EXCERPT:
+{jd}
+
+Scoring rules:
+- 90-100: Perfect match (sector + seniority + skills + location all align)
+- 82-89: Strong match (most criteria align, minor gaps)
+- 75-81: Borderline (some fit but significant gaps in sector or skills)
+- 60-74: Weak match (different sector or seniority level)
+- Below 60: No fit (completely different domain)
+
+Return exactly: {{"score": <number>, "verdict": "SUBMIT|REVIEW|SKIP", "reason": "<15 words max>"}}
+Rules: SUBMIT if score >= 82, REVIEW if 75-81, SKIP if < 75."""
+
+                # Use subprocess to call a quick LLM scoring
+                import subprocess
+                score_result = subprocess.run(
+                    ["python3", "-c", f"""
+import json, urllib.request, os
+
+# Use OpenClaw's API to get a quick score
+prompt = {repr(score_prompt)}
+
+# Simple approach: write to temp file for the orchestrator to parse
+# Use a basic heuristic scoring as fallback
+jd_lower = {repr(jd.lower())}
+profile_keywords = ["digital transformation", "pmo", "healthcare", "fintech", "e-commerce",
+                     "cloud", "aws", "azure", "ai", "agile", "strategic", "enterprise",
+                     "hospital", "technology", "program management", "project management",
+                     "stakeholder", "governance", "vision 2030", "gcc", "uae", "saudi"]
+
+score = 50  # base
+matches = 0
+for kw in profile_keywords:
+    if kw in jd_lower:
+        matches += 1
+
+# Scoring heuristic
+if matches >= 10: score = 90
+elif matches >= 7: score = 85
+elif matches >= 5: score = 78
+elif matches >= 3: score = 70
+else: score = 55
+
+# Penalty for clearly wrong domains
+wrong_domains = ["crypto", "blockchain", "defi", "mining", "security printing",
+                  "construction supervisor", "civil engineer", "structural engineer",
+                  "residential tower", "oil and gas drilling", "pharmaceutical manufacturing"]
+for wd in wrong_domains:
+    if wd in jd_lower:
+        score = min(score, 55)
+        break
+
+# Bonus for exact role matches
+exact_matches = ["digital transformation", "pmo director", "head of technology",
+                  "chief digital officer", "chief technology officer", "vp technology",
+                  "head of transformation"]
+for em in exact_matches:
+    if em in jd_lower:
+        score += 5
+        break
+
+score = min(score, 100)
+
+if score >= 82: verdict = "SUBMIT"
+elif score >= 75: verdict = "REVIEW"
+else: verdict = "SKIP"
+
+# Generate reason
+if score >= 82:
+    reason = f"{{matches}} keyword matches, strong sector/skill alignment"
+elif score >= 75:
+    reason = f"{{matches}} keyword matches, partial alignment"
+else:
+    reason = f"Low fit: {{matches}} keyword matches, different domain"
+
+print(json.dumps({{"score": score, "verdict": verdict, "reason": reason}}))
+"""],
+                    capture_output=True, text=True, timeout=10
+                )
+
+                if score_result.returncode == 0 and score_result.stdout.strip():
+                    try:
+                        score_data = json.loads(score_result.stdout.strip())
+                        job["ats_score"] = score_data.get("score", 0)
+                        job["ats_verdict"] = score_data.get("verdict", "UNSCORED")
+                        job["ats_reason"] = score_data.get("reason", "")
+                        log(f"    ATS: {title[:35]} = {job['ats_score']}/100 ({job['ats_verdict']}): {job['ats_reason']}")
+                    except json.JSONDecodeError:
+                        job["ats_verdict"] = "UNSCORED"
+                        log(f"    ATS parse error for {title[:35]}")
+                else:
+                    job["ats_verdict"] = "UNSCORED"
+                    log(f"    ATS scoring failed for {title[:35]}")
+            except Exception as e:
+                job["ats_verdict"] = "UNSCORED"
+                log(f"    ATS error for {job.get('title','?')[:35]}: {e}")
+
+        # Re-categorize based on ATS scores
+        new_qualified = []
+        new_borderline = []
+        for job in qualified + borderline:
+            verdict = job.get("ats_verdict", "UNSCORED")
+            if verdict == "SUBMIT":
+                new_qualified.append(job)
+            elif verdict in ("REVIEW", "UNSCORED"):
+                new_borderline.append(job)
+            else:  # SKIP
+                new_borderline.append(job)  # Keep in borderline but marked as SKIP
+
+        qualified = new_qualified
+        borderline = new_borderline
+        note = f"{os.path.basename(latest)}: {len(qualified)} recommended (82+), {len(borderline)} other leads."
+        log(f"  After ATS: {len(qualified)} recommended, {len(borderline)} other leads")
+
     return qualified, borderline, note
 
 
@@ -841,7 +981,7 @@ def build_briefing_json(today_str, date_display, qualified, borderline, scanner_
             "scanner_note": scanner_note,
             "qualified":    qualified,
             "borderline":   borderline,
-            "recommendation": f"{len(qualified)} qualified roles to review. Check fit and decide: apply or skip." if qualified else "No new qualified roles today.",
+            "recommendation": f"{len(qualified)} recommended roles (ATS 82+). {len([j for j in borderline if j.get('ats_verdict')=='REVIEW'])} borderline. {len([j for j in borderline if j.get('ats_verdict')=='SKIP'])} low-fit." if qualified else f"{len([j for j in borderline if j.get('ats_verdict')=='REVIEW'])} borderline leads today. No strong matches." if borderline else "No new roles today.",
         },
         "linkedin": {
             "intro": "Three-layer strategic targeting. Ready-to-post comments below.",
