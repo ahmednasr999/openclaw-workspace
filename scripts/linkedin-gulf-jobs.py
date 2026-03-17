@@ -20,31 +20,51 @@ from pathlib import Path
 # ===================== CONFIGURATION =====================
 
 # 3 priority + 3 secondary countries
-PRIORITY_COUNTRIES  = ["United Arab Emirates", "Saudi Arabia", "Qatar"]
-SECONDARY_COUNTRIES = ["Bahrain", "Kuwait", "Oman"]
+GCC_COUNTRIES = [
+    "United Arab Emirates",
+    "Saudi Arabia",
+    "Qatar",
+    "Bahrain",
+    "Kuwait",
+    "Oman",
+]
 
-# 10 primary titles searched across all priority countries
-PRIMARY_TITLES = [
+# All potential executive titles — searched across ALL GCC countries
+ALL_TITLES = [
+    # Digital Transformation
     "VP Digital Transformation",
     "Director Digital Transformation",
-    "Chief Digital Officer",
-    "Chief Technology Officer",
     "Head of Digital Transformation",
-    "PMO Director",
+    "Senior Director Digital Transformation",
+    "Chief Digital Officer",
+    # Technology Leadership
+    "Chief Technology Officer",
+    "Chief Information Officer",
     "Head of Technology",
     "VP Technology",
-    "Chief Information Officer",
-    "Program Director",
-]
-
-# 5 secondary titles — UAE + Saudi only
-SECONDARY_TITLES = [
+    "Director of Technology",
+    "Head of IT",
+    "VP Engineering",
+    "Director of Engineering",
+    # Executive / C-Suite
     "Chief Operating Officer",
     "Chief Strategy Officer",
-    "Head of IT",
-    "Director of Technology",
-    "Senior Director Digital Transformation",
+    "Chief Product Officer",
+    # PMO / Program
+    "PMO Director",
+    "Program Director",
+    "Head of PMO",
+    # Transformation / Innovation
+    "Head of Transformation",
+    "Director of Innovation",
+    "VP Operations",
 ]
+
+# Legacy aliases for backward compatibility
+PRIORITY_COUNTRIES = GCC_COUNTRIES[:3]
+SECONDARY_COUNTRIES = GCC_COUNTRIES[3:]
+PRIMARY_TITLES = ALL_TITLES[:10]
+SECONDARY_TITLES = ALL_TITLES[10:15]
 
 PREFERRED_COUNTRIES = ["Saudi Arabia", "United Arab Emirates"]
 
@@ -336,14 +356,8 @@ def main():
 
     # Build search plan
     searches = []
-    for c in PRIORITY_COUNTRIES:
-        for t in PRIMARY_TITLES:
-            searches.append((t, c))
-    for c in PRIORITY_COUNTRIES[:2]:   # UAE + Saudi only
-        for t in SECONDARY_TITLES:
-            searches.append((t, c))
-    for c in SECONDARY_COUNTRIES:
-        for t in PRIMARY_TITLES[:5]:   # top 5 only
+    for c in GCC_COUNTRIES:
+        for t in ALL_TITLES:
             searches.append((t, c))
 
     print(f"Search plan: {len(searches)} combinations | Delay: {SEARCH_DELAY}s between searches")
