@@ -1106,6 +1106,19 @@ def main():
 
     # Step 8: Generate Daily Briefing Doc
     if briefing_path and not args.dry_run:
+        # Step 7b: Validate JSON before generating doc (Fix #3)
+        log("Step 7b: Validating briefing JSON...")
+        try:
+            v = subprocess.run(
+                f"python3 {BRIEFING_SCRIPT} --data {briefing_path} --validate",
+                shell=True, capture_output=True, text=True, timeout=30
+            )
+            log(f"  Validation: {v.stdout.strip()}")
+            if v.returncode != 0:
+                log(f"  Validation fixed aliases, re-running...")
+        except Exception as e:
+            log(f"  Validation skipped: {e}")
+
         log("Step 8: Generating Daily Briefing Google Doc...")
         try:
             r = subprocess.run(

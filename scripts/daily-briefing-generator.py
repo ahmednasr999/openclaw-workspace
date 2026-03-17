@@ -93,6 +93,77 @@ def document_has_content(docs, doc_id):
     return end > 5  # More than just a newline
 
 
+# ============================================================
+# FIX #1: JSON SCHEMA VALIDATOR (prevents wrong-key errors)
+# ============================================================
+REQUIRED_SCHEMA = {
+    "summary": {
+        "required_keys": ["priority_focus", "scanner_status", "linkedin_status", "calendar_status", "pipeline_status"],
+        "aliases": {
+            "linkedin": "linkedin_status",
+            "calendar": "calendar_status",
+            "pipeline": "pipeline_status",
+            "scanner": "scanner_status",
+        }
+    },
+    "top_level": {
+        "required_keys": ["date", "summary", "jobs", "pipeline"],
+        "optional_keys": ["todays_post", "linkedin", "calendar", "engagement_radar",
+                          "content_intelligence", "strategic_notes", "action_items",
+                          "alerts", "system"],
+        "aliases": {
+            "linkedin_post": "todays_post",
+            "today_post": "todays_post",
+            # Note: "engagement" is a list of posts, NOT the same as "engagement_radar" (dict).
+            # Don't alias them — they're different data structures.
+        }
+    }
+}
+
+
+def validate_and_fix_json(data):
+    """Validate briefing JSON schema. Auto-fix known aliases. Warn on missing keys."""
+    warnings = []
+    
+    # Fix top-level aliases
+    for alias, correct in REQUIRED_SCHEMA["top_level"]["aliases"].items():
+        if alias in data and correct not in data:
+            data[correct] = data.pop(alias)
+            warnings.append(f"AUTO-FIXED: renamed '{alias}' -> '{correct}'")
+    
+    # Check required top-level keys
+    for key in REQUIRED_SCHEMA["top_level"]["required_keys"]:
+        if key not in data:
+            warnings.append(f"MISSING: top-level key '{key}' (section will be empty)")
+    
+    # Fix summary aliases
+    summary = data.get("summary", {})
+    if isinstance(summary, dict):
+        for alias, correct in REQUIRED_SCHEMA["summary"]["aliases"].items():
+            if alias in summary and correct not in summary:
+                summary[correct] = summary.pop(alias)
+                warnings.append(f"AUTO-FIXED: summary.'{alias}' -> summary.'{correct}'")
+        
+        for key in REQUIRED_SCHEMA["summary"]["required_keys"]:
+            if key not in summary:
+                warnings.append(f"MISSING: summary.'{key}' (will show default text)")
+    
+    # Ensure pipeline is a dict (not a string)
+    if "pipeline" in data and isinstance(data["pipeline"], str):
+        data["pipeline"] = {"total_applications": data["pipeline"]}
+        warnings.append("AUTO-FIXED: converted pipeline string to dict")
+    
+    if warnings:
+        print(f"\n⚠️ VALIDATION WARNINGS ({len(warnings)}):")
+        for w in warnings:
+            print(f"  - {w}")
+        print()
+    else:
+        print("✅ JSON schema validation passed")
+    
+    return data, warnings
+
+
 def build_header_lines():
     """Build document header (only used on first run). Returns list of (text, style) tuples."""
     lines = []
@@ -645,13 +716,51 @@ def main():
     parser.add_argument("--data", required=True, help="Path to briefing data JSON")
     parser.add_argument("--doc-id", default=DEFAULT_DOC_ID, help="Google Doc ID")
     parser.add_argument("--fresh", action="store_true", help="Clear document first (fresh start)")
+    parser.add_argument("--validate", action="store_true", help="Validate JSON only (no doc generation)")
     args = parser.parse_args()
 
-    # Load data
+    # Load and validate data
     with open(args.data) as f:
         data = json.load(f)
 
     print(f"Loading data from {args.data}...")
+
+    # FIX #1: Validate JSON schema and auto-fix known aliases
+    data, schema_warnings = validate_and_fix_json(data)
+    # Save fixed JSON back
+    if schema_warnings:
+        with open(args.data, 'w') as f:
+            json.dump(data, f, indent=2)
+
+    # FIX #3: --validate mode (check JSON + section completeness, no doc write)
+    if args.validate:
+        lines = build_document_lines(data)
+        sections_found = [text for text, style in lines if style in ("HEADING_2", "HEADING_3")]
+        expected_sections = ["1. Today's Summary", "3. Jobs Radar", "5. Calendar & Deadlines", "6. Pipeline Status"]
+        missing = [s for s in expected_sections if not any(s in sf for sf in sections_found)]
+        empty_sections = []
+        # Check if sections have content after their heading
+        for i, (text, style) in enumerate(lines):
+            if style == "HEADING_2" and i + 2 < len(lines):
+                next_texts = [t for t, s in lines[i+1:i+4] if t.strip() and s == "NORMAL_TEXT"]
+                if not next_texts:
+                    empty_sections.append(text)
+        
+        ok = True
+        if missing:
+            print(f"❌ MISSING SECTIONS: {missing}")
+            ok = False
+        if empty_sections:
+            print(f"⚠️ EMPTY SECTIONS: {empty_sections}")
+        if schema_warnings:
+            ok = False
+        
+        if ok:
+            print(f"✅ VALIDATE PASSED: {len(sections_found)} sections, {len(lines)} lines")
+        else:
+            print(f"❌ VALIDATE FAILED: fix JSON before generating doc")
+            sys.exit(1)
+        sys.exit(0)
 
     # Get access token
     print("Authenticating with Google...")
