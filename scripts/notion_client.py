@@ -484,6 +484,33 @@ class NotionClient:
             }
         }
 
+    @staticmethod
+    def image_block(url: str, caption: str = "") -> dict:
+        """Create an external image block."""
+        block = {
+            "object": "block",
+            "type": "image",
+            "image": {
+                "type": "external",
+                "external": {"url": url},
+            }
+        }
+        if caption:
+            block["image"]["caption"] = [{"text": {"content": caption[:2000]}}]
+        return block
+
+    @staticmethod
+    def bookmark_block(url: str, caption: str = "") -> dict:
+        """Create a bookmark block (shows URL preview)."""
+        block = {
+            "object": "block",
+            "type": "bookmark",
+            "bookmark": {"url": url}
+        }
+        if caption:
+            block["bookmark"]["caption"] = [{"text": {"content": caption[:2000]}}]
+        return block
+
     # ─── Extraction Helpers ──────────────────────────────────────
 
     @staticmethod

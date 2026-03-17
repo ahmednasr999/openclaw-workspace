@@ -235,6 +235,9 @@ def sync_briefing(briefing_json_path=None, briefing_data=None, date_str=None):
         # LinkedIn
         blocks.append(nc.heading_block("📱 LinkedIn", 2))
 
+        GITHUB_RAW_BASE = "https://raw.githubusercontent.com/ahmednasr999/openclaw-workspace/master"
+        GITHUB_BLOB_BASE = "https://github.com/ahmednasr999/openclaw-workspace/blob/master"
+
         # Today's post
         if todays_post and todays_post.get("title"):
             post_title = todays_post.get("title", "")
@@ -242,10 +245,36 @@ def sync_briefing(briefing_json_path=None, briefing_data=None, date_str=None):
             post_content = todays_post.get("content", "")
             blocks.append(nc.heading_block(f"Today's Post: {post_title}", 3))
             blocks.append(nc.callout_block(f"Status: {post_status}", "📝"))
+
+            # Embed post image if exists
+            import glob as _glob
+            date_str_local = date_str  # from outer scope
+            image_patterns = [
+                f"/root/.openclaw/workspace/linkedin/posts/{date_str_local}*.png",
+                f"/root/.openclaw/workspace/linkedin/posts/{date_str_local}*.jpg",
+            ]
+            for pat in image_patterns:
+                for img_path in _glob.glob(pat):
+                    rel_path = img_path.replace("/root/.openclaw/workspace/", "")
+                    img_url = f"{GITHUB_RAW_BASE}/{rel_path}"
+                    blocks.append(nc.image_block(img_url, f"Post image: {os.path.basename(img_path)}"))
+
+            # Post content
             if post_content:
-                # Show full post content in Notion (truncated to 2000 chars per block)
                 for chunk_start in range(0, min(len(post_content), 4000), 2000):
                     blocks.append(nc.paragraph_block(post_content[chunk_start:chunk_start+2000]))
+
+            # GitHub link to post file
+            post_file = todays_post.get("file", "")
+            if not post_file:
+                # Try to find it
+                for f in sorted(os.listdir("/root/.openclaw/workspace/linkedin/posts/"), reverse=True):
+                    if date_str_local in f and f.endswith(".md"):
+                        post_file = f"linkedin/posts/{f}"
+                        break
+            if post_file:
+                github_url = f"{GITHUB_BLOB_BASE}/{post_file}"
+                blocks.append(nc.bookmark_block(github_url, f"View on GitHub: {post_file}"))
         else:
             blocks.append(nc.paragraph_block("No post scheduled today."))
 
