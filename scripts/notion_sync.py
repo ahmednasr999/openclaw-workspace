@@ -233,41 +233,78 @@ def sync_briefing(briefing_json_path=None, briefing_data=None, date_str=None):
         blocks.append(nc.divider_block())
 
         # LinkedIn
-        if todays_post:
-            blocks.append(nc.heading_block("📱 Today's LinkedIn Post", 2))
+        blocks.append(nc.heading_block("📱 LinkedIn", 2))
+
+        # Today's post
+        if todays_post and todays_post.get("title"):
             post_title = todays_post.get("title", "")
-            blocks.append(nc.paragraph_block(post_title[:2000]))
-            blocks.append(nc.divider_block())
-
-        # Comments
-        if comments:
-            blocks.append(nc.heading_block("💬 Engagement Targets", 2))
-            for c in comments[:5]:
-                author = c.get("author", "Unknown")
-                topic = c.get("topic", c.get("snippet", ""))[:100]
-                blocks.append(nc.bullet_block(f"{author}: {topic}"))
-            blocks.append(nc.divider_block())
-
-        # System health
-        blocks.append(nc.heading_block("⚙️ System", 2))
-        if errors_list:
-            for e in errors_list:
-                issue = e.get("issue", str(e))
-                blocks.append(nc.bullet_block(f"❌ {issue}"[:200]))
+            post_status = todays_post.get("status", "drafted")
+            post_content = todays_post.get("content", "")
+            blocks.append(nc.heading_block(f"Today's Post: {post_title}", 3))
+            blocks.append(nc.callout_block(f"Status: {post_status}", "📝"))
+            if post_content:
+                # Show full post content in Notion (truncated to 2000 chars per block)
+                for chunk_start in range(0, min(len(post_content), 4000), 2000):
+                    blocks.append(nc.paragraph_block(post_content[chunk_start:chunk_start+2000]))
         else:
-            blocks.append(nc.bullet_block("All systems operational"))
+            blocks.append(nc.paragraph_block("No post scheduled today."))
+
+        # Engagement targets
+        if comments:
+            blocks.append(nc.heading_block("💬 Engagement Targets", 3))
+            blocks.append(nc.paragraph_block(f"{len(comments)} posts identified for strategic commenting:"))
+            for c in comments[:8]:
+                author = c.get("author", "Unknown")
+                topic = c.get("topic", c.get("snippet", ""))[:150]
+                url = c.get("url", "")
+                ready_comment = c.get("ready_comment", "")
+                blocks.append(nc.bullet_block(f"{author}: {topic}"[:200]))
+                if url:
+                    blocks.append(nc.paragraph_block(f"  → {url}"))
+                if ready_comment:
+                    blocks.append(nc.paragraph_block(f"  Draft: \"{ready_comment[:300]}\""))
         blocks.append(nc.divider_block())
 
-        # Action items callout
+        # System health
+        blocks.append(nc.heading_block("⚙️ System Health", 2))
+
+        # Went right
+        went_right_list = briefing_data.get("went_right", [])
+        if went_right_list:
+            blocks.append(nc.heading_block("✅ Completed", 3))
+            for item in went_right_list[:10]:
+                blocks.append(nc.bullet_block(f"✅ {item}"[:200]))
+
+        # Errors
+        if errors_list:
+            blocks.append(nc.heading_block("❌ Errors", 3))
+            for e in errors_list:
+                issue = e.get("issue", str(e))
+                fix = e.get("fix", "")
+                line = f"❌ {issue}"
+                if fix:
+                    line += f" — Fix: {fix}"
+                blocks.append(nc.bullet_block(line[:200]))
+        else:
+            blocks.append(nc.callout_block("All systems operational. No errors detected.", "✅"))
+        blocks.append(nc.divider_block())
+
+        # Action items callout (summary)
         action_items = []
         if qualified:
             action_items.append(f"Review {len(qualified)} new priority picks")
+        p_overdue = pipeline.get("overdue", [])
+        if p_overdue:
+            action_items.append(f"Follow up on {len(p_overdue)} stale applications")
         if comments:
             action_items.append(f"Post {len(comments)} engagement comments")
-        if todays_post:
+        if todays_post and todays_post.get("title"):
             action_items.append("Review and publish today's LinkedIn post")
         if action_items:
-            blocks.append(nc.callout_block("Action: " + " | ".join(action_items), "⚡"))
+            blocks.append(nc.heading_block("⚡ Today's Action Items", 2))
+            for ai in action_items:
+                blocks.append(nc.bullet_block(f"☐ {ai}"))
+            blocks.append(nc.divider_block())
 
         # Append blocks in batches (API limit: 100 blocks per call)
         for i in range(0, len(blocks), 90):
