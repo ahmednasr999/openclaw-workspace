@@ -278,14 +278,19 @@ def build_document_lines(data):
         lines.append(("", "NORMAL_TEXT"))
         for job in borderline:
             lead_line = f"{bullet} {job['title']} | {job.get('company', '')} | {job.get('location', '')}"
-            if job.get('score'):
+            if job.get('ats_score') and job['ats_score'] != 'Pending':
+                lead_line += f" | ATS: {job['ats_score']}"
+            elif job.get('score'):
                 lead_line += f" | {job['score']}"
             lines.append((lead_line, "NORMAL_TEXT"))
-            # v3.1: Show JD flags if available
+            if job.get('link'):
+                lines.append((f"Link: {job['link']}", "NORMAL_TEXT"))
+            if job.get('verdict'):
+                lines.append((f"Verdict: {job['verdict']}", "NORMAL_TEXT"))
             if job.get('jd_flag'):
-                lines.append((f"  JD Flag: {job['jd_flag'].strip()}", "NORMAL_TEXT"))
+                lines.append((f"JD Flag: {job['jd_flag'].strip()}", "NORMAL_TEXT"))
             if job.get('jd_fetched') is False:
-                lines.append(("  JD: Could not fetch (verdict pending manual review)", "NORMAL_TEXT"))
+                lines.append(("JD: Could not fetch (verdict pending manual review)", "NORMAL_TEXT"))
         lines.append(("", "NORMAL_TEXT"))
 
     if jobs.get("recommendation"):
