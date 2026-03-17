@@ -703,6 +703,31 @@ def update_log(posts, today_str):
 # ============================================================
 # STEP 7: BUILD BRIEFING JSON
 # ============================================================
+def load_content_intelligence():
+    """Load the weekly LinkedIn Content Intelligence brief if available (runs Thu 7 PM)."""
+    brief_file = f"{WORKSPACE}/memory/knowledge/weekly-content-brief.md"
+    try:
+        if os.path.exists(brief_file):
+            mtime = os.path.getmtime(brief_file)
+            from datetime import datetime as dt2
+            age_days = (time.time() - mtime) / 86400
+            if age_days <= 8:  # Fresh within a week
+                content = open(brief_file).read()
+                log(f"  Content intelligence loaded: {brief_file} (age: {age_days:.1f} days)")
+                return {
+                    "status": "available",
+                    "age_days": round(age_days, 1),
+                    "brief": content[:2000],
+                    "note": "Weekly content intelligence brief from Thursday. Use for today's post planning."
+                }
+            else:
+                log(f"  Content intelligence stale: {age_days:.1f} days old")
+                return {"status": "stale", "note": f"Brief is {age_days:.0f} days old. Next update Thursday 7 PM."}
+    except Exception as e:
+        log(f"  Content intelligence error: {e}")
+    return {"status": "not_available", "note": "No content intelligence brief found. Runs Thursdays at 7 PM Cairo."}
+
+
 def load_engagement_radar(today_str):
     """Load today's LinkedIn Engagement Radar report if available."""
     radar_file = f"{WORKSPACE}/linkedin/engagement/daily/{today_str}.md"
@@ -785,6 +810,7 @@ def build_briefing_json(today_str, date_display, qualified, borderline, scanner_
         },
         "pipeline": pipeline,
         "engagement_radar": load_engagement_radar(today_str),
+        "content_intelligence": load_content_intelligence(),
         "strategic_notes": [
             f"{len(posts)} LinkedIn posts found with ready-to-post Sonnet-drafted comments.",
             "Comment strategy: Layer 1 > Layer 2 > Layer 3 by ROI.",
