@@ -36,13 +36,27 @@ Apply any applicable insights to the post before publishing:
 - If insights say "wrap in story," add a personal story wrapper if the post is a framework dump
 - Do NOT rewrite the entire post. Make minimal, targeted improvements.
 
-### Step 4: Publish via Composio API
+### Step 4: Check for Post Image
+Look for an image to attach with the post:
+1. Check if `{post-filename}.png` exists (e.g., `2026-03-17-data-unification.png` for `2026-03-17-data-unification.md`)
+2. If not found, check the markdown content for `![...](filename.png)` references. If found, look for that file in the same `/root/.openclaw/workspace/linkedin/posts/` directory.
+3. Also check `/root/.openclaw/workspace/linkedin/posts/images/` for any matching image.
+4. Supported formats: .png, .jpg, .jpeg, .webp
+
+If an image is found:
+- Upload it using `upload_local_file(image_path)` in the COMPOSIO_REMOTE_WORKBENCH to get an `s3key`
+- Save the `s3key` for Step 5
+
+### Step 5: Publish via Composio API
 Use the `LINKEDIN_CREATE_LINKED_IN_POST` tool with:
 - `author`: `urn:li:person:mm8EyA56mj`
 - `commentary`: the post text
 - `visibility`: `PUBLIC`
+- If an image was found in Step 4, add: `images`: `[{"name": "image filename", "mimetype": "image/png", "s3key": "the s3key from upload"}]`
 
-### Step 5: Log the URN
+**IMPORTANT:** Always include the image if one exists. Text-only posts get significantly less engagement.
+
+### Step 6: Log the URN
 After successful publish, the API returns a post URN (like `urn:li:share:XXXXX`).
 
 Append to `/root/.openclaw/workspace/linkedin/engagement/post-urns.md`:
@@ -52,7 +66,7 @@ Append to `/root/.openclaw/workspace/linkedin/engagement/post-urns.md`:
 
 Also update `/root/.openclaw/workspace/linkedin/engagement/log/YYYY-MM-DD.md` with the post details.
 
-### Step 6: Git Commit
+### Step 7: Git Commit
 ```bash
 cd /root/.openclaw/workspace && git add linkedin/engagement/post-urns.md linkedin/engagement/log/ && git commit -m "linkedin: posted [topic] [date]" && git push
 ```
