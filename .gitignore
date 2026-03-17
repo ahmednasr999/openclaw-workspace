@@ -54,3 +54,4 @@ config/nasr-agent-oauth.json
 # Large log files - NEVER commit
 logs/*.jsonl
 logs/*.log
+config/notion.json
