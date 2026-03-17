@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-YouTube Intelligence Pipeline — Extract, analyze, and extract job search value from YouTube transcripts.
+YouTube Intelligence Pipeline - Extract, analyze, and extract job search value from YouTube transcripts.
 
 Usage: python3 youtube-intel.py <youtube_url> [query]
 Example: python3 youtube-intel.py "https://youtu.be/xxx" "GCC healthcare digital transformation"
@@ -113,7 +113,7 @@ def build_report(url, content, analysis):
     
     date = datetime.now().strftime("%Y-%m-%d")
     
-    report = f"""# YouTube Intelligence Report — {date}
+    report = f"""# YouTube Intelligence Report - {date}
 
 **Source:** {url}
 **Title:** {title}

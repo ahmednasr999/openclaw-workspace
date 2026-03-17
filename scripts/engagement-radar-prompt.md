@@ -53,7 +53,7 @@ For each post, draft a comment in Ahmed's voice:
 Write today's radar to `/root/.openclaw/workspace/linkedin/engagement/daily/YYYY-MM-DD.md`:
 
 ```
-# LinkedIn Engagement Radar — YYYY-MM-DD
+# LinkedIn Engagement Radar - YYYY-MM-DD
 
 **Top 5 Comment Opportunities**
 

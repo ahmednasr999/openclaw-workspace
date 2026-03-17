@@ -79,7 +79,7 @@ Skip issues that are within cooldown.
 If ANY new issues found (not within cooldown), send ONE consolidated message:
 
 ```
-⏰ SYSTEM HEALTH — [HH:MM Cairo]
+⏰ SYSTEM HEALTH - [HH:MM Cairo]
 
 🔴 [Critical items, one per line]
 🟡 [Warning items, one per line]

@@ -1,4 +1,4 @@
-# LinkedIn Post — Thursday, March 26, 2026
+# LinkedIn Post - Thursday, March 26, 2026
 
 **Pillar:** Sales (authority positioning)
 **Framework:** SLAY (Story, Lesson, Action, You)

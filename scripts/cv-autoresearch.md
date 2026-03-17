@@ -1,4 +1,4 @@
-# CV Autoresearch Loop — Agent Prompt
+# CV Autoresearch Loop - Agent Prompt
 
 You are running an autoresearch-style optimization loop for Ahmed Nasr's CV.
 Inspired by Karpathy's autoresearch: one metric, constrained scope, fast verification, automatic rollback.

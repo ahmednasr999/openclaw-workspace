@@ -1,4 +1,4 @@
-# LinkedIn Post Draft — 2026-03-14
+# LinkedIn Post Draft - 2026-03-14
 
 ## Status
 - [ ] Draft

@@ -1,10 +1,26 @@
 {
   "3c3ba638-8cb3-4a6a-a8f0-2ccd13e3aeed": {
-    "lastAlerted": "2026-03-17T04:08:00Z",
+    "lastAlerted": "2026-03-17T14:02:00Z",
     "error": "Channel is required when multiple channels are configured: telegram, slack"
   },
   "cron-channel-config-issue": {
     "lastAlerted": "2026-03-17T08:04:00Z",
     "issue": "Multiple crons failing on message delivery due to channel config"
+  },
+  "watchdog-timeout": {
+    "lastAlerted": "2026-03-17T13:22:00Z",
+    "issue": "Watchdog cron timing out (120s timeout exceeded)"
+  },
+  "linkedin-gulf-jobs-scanner": {
+    "lastAlerted": "2026-03-17T14:02:00Z",
+    "issue": "Telegram recipient @C0AJX895U3E could not be resolved to numeric chat ID"
+  },
+  "linkedin-engagement-radar": {
+    "lastAlerted": "2026-03-17T14:02:00Z",
+    "issue": "Message delivery failed"
+  },
+  "github-discovery-radar": {
+    "lastAlerted": "2026-03-17T14:02:00Z",
+    "issue": "Channel is required when multiple channels are configured"
   }
 }

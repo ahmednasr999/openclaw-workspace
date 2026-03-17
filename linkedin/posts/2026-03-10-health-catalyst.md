@@ -50,4 +50,4 @@ By the way, I've been documenting my journey managing a $50M hospital transforma
 #HealthcareIT #HealthCatalyst #DigitalHealth #PMO #HospitalTransformation
 
 ---
-**Status: POSTED ✅ — 2026-03-10**
+**Status: POSTED ✅ - 2026-03-10**

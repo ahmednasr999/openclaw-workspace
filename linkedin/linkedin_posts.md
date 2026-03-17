@@ -10,15 +10,15 @@
 
 Healthcare in the GCC is undergoing its biggest transformation in decades.
 
-With 20+ years leading digital initiatives at Intel, Microsoft, Network International, and Delivery Hero, I've seen firsthand what works—and what doesn't—when modernizing legacy systems.
+With 20+ years leading digital initiatives at Intel, Microsoft, Network International, and Delivery Hero, I've seen firsthand what works-and what doesn't-when modernizing legacy systems.
 
 Here's what I'm seeing in 2026:
 
 🔹 The winners are NOT those with the most advanced technology
 🔹 They're the ones who bridge clinical workflows with data-driven insights
-🔹 Patient-centricity isn't a buzzword—it's the new operating model
+🔹 Patient-centricity isn't a buzzword-it's the new operating model
 
-We're now deploying AI-powered Clinical Decision Support systems across hospitals in KSA, UAE & Egypt—reducing clinical variation and improving patient safety.
+We're now deploying AI-powered Clinical Decision Support systems across hospitals in KSA, UAE & Egypt-reducing clinical variation and improving patient safety.
 
 The challenge? Technology is the easy part. Change management is the hard part.
 
@@ -62,7 +62,7 @@ What SuperApp opportunities do YOU see in your industry?
 
 **FRIDAY: Leadership Lesson 🎯**
 
-I learned this at Intel, Microsoft, and Network International—and it changed everything:
+I learned this at Intel, Microsoft, and Network International-and it changed everything:
 
 **"Turn bold vision into execution that delivers measurable reality."**
 

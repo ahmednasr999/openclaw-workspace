@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Auto-Dossier Builder — Extracts company intelligence for job applications.
+Auto-Dossier Builder - Extracts company intelligence for job applications.
 Uses Defuddle (primary) and Jina (fallback) for content extraction.
 
 Usage: python3 auto-dossier.py <company_domain> [company_name] [role_title]
