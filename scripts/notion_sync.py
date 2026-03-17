@@ -352,7 +352,7 @@ def sync_briefing(briefing_json_path=None, briefing_data=None, date_str=None):
 def sync_new_jobs(jobs_list):
     """
     Push newly discovered jobs to Notion Job Pipeline.
-    jobs_list: list of dicts with keys: title, company, location, url, ats_score, site
+    jobs_list: list of dicts with keys: title, company, location, url, ats_score, site, applied_date
     Returns count of jobs added.
     """
     nc = _get_client()
@@ -370,7 +370,8 @@ def sync_new_jobs(jobs_list):
                 location=job.get("location", "")[:200],
                 source=job.get("site", "LinkedIn").capitalize()[:50],
                 url=job.get("url", ""),
-                discovered_date=job.get("date_posted", datetime.now().strftime("%Y-%m-%d"))
+                discovered_date=job.get("date_posted", datetime.now().strftime("%Y-%m-%d")),
+                applied_date=job.get("applied_date")  # Pass through if available
             )
             added += 1
         except Exception as e:
@@ -547,6 +548,166 @@ def backfill_briefings(days=14):
 
     print(f"[notion_sync] Backfill complete: {created} briefings created")
     return created
+
+
+def read_pipeline_from_notion():
+    """
+    Two-way sync: Read pipeline from Notion and detect changes vs local pipeline.md.
+    Returns dict with: jobs (list), changes (list of dicts with company, field, old, new).
+    """
+    nc = _get_client()
+    if not nc:
+        return {"jobs": [], "changes": []}
+
+    # Stage mapping: Notion emoji stages -> pipeline.md stages
+    notion_to_local = {
+        "🔍 Discovered": "🔍 Discovered",
+        "📋 Scored": "📋 Scored",
+        "📄 CV Ready": "📄 CV Ready",
+        "✅ Applied": "✅ Applied",
+        "📞 Interview": "📞 Interview",
+        "🤝 Offer": "🤝 Offer",
+        "❌ Rejected": "❌ Rejected",
+        "⏸️ Stale": "⏸️ Stale",
+        "❌ Closed": "❌ Closed",
+    }
+
+    workspace = "/root/.openclaw/workspace"
+
+    try:
+        # Read all Notion pipeline entries
+        results = nc._query_database("job_pipeline")
+        notion_jobs = {}
+
+        def _title(props, key):
+            t = props.get(key, {}).get("title", [])
+            return t[0].get("plain_text", "") if t else ""
+
+        def _text(props, key):
+            t = props.get(key, {}).get("rich_text", [])
+            return t[0].get("plain_text", "") if t else ""
+
+        def _select(props, key):
+            s = props.get(key, {}).get("select")
+            return s.get("name", "") if s else ""
+
+        for r in results:
+            props = r.get("properties", {})
+            company = _title(props, "Company")
+            role = _text(props, "Role")
+            stage_name = _select(props, "Stage")
+            ats = props.get("ATS Score", {}).get("number")
+            location = _text(props, "Location")
+            applied = props.get("Applied Date", {}).get("date")
+            applied_str = applied.get("start", "") if applied else ""
+            url = props.get("URL", {}).get("url", "") or ""
+            notes = _text(props, "Notes")
+
+            if company:
+                notion_jobs[company.lower()] = {
+                    "company": company,
+                    "role": role,
+                    "stage": stage_name,
+                    "ats": ats,
+                    "location": location,
+                    "applied": applied_str,
+                    "url": url,
+                    "notes": notes,
+                    "page_id": r["id"],
+                }
+
+        # Read local pipeline.md for comparison
+        local_jobs = {}
+        pipeline_path = os.path.join(workspace, "jobs-bank", "pipeline.md")
+        if os.path.exists(pipeline_path):
+            with open(pipeline_path) as f:
+                for line in f:
+                    if "|" not in line or line.strip().startswith("#") or line.strip().startswith("|---"):
+                        continue
+                    cols = [c.strip() for c in line.split("|")]
+                    if len(cols) < 11:
+                        continue
+                    company = cols[3].replace("~~", "").strip()
+                    stage = cols[7].strip()
+                    applied = cols[9].replace("~~", "").strip()
+                    if company:
+                        local_jobs[company.lower()] = {
+                            "company": company,
+                            "stage": stage,
+                            "applied": applied,
+                        }
+
+        # Detect changes (Notion is source of truth for stage changes)
+        changes = []
+        for key, notion_data in notion_jobs.items():
+            if key in local_jobs:
+                local_data = local_jobs[key]
+                # Check stage change
+                if notion_data["stage"] and local_data["stage"]:
+                    # Normalize for comparison
+                    n_stage = notion_data["stage"]
+                    l_stage = local_data["stage"]
+                    if n_stage != l_stage:
+                        changes.append({
+                            "company": notion_data["company"],
+                            "role": notion_data["role"],
+                            "field": "stage",
+                            "old": l_stage,
+                            "new": n_stage,
+                            "page_id": notion_data["page_id"],
+                        })
+
+        return {"jobs": list(notion_jobs.values()), "changes": changes}
+
+    except Exception as e:
+        print(f"[notion_sync] ERROR reading pipeline from Notion: {e}")
+        return {"jobs": [], "changes": []}
+
+
+def apply_notion_changes_to_pipeline(changes):
+    """
+    Apply stage changes detected from Notion back to local pipeline.md.
+    Returns count of changes applied.
+    """
+    if not changes:
+        return 0
+
+    workspace = "/root/.openclaw/workspace"
+    pipeline_path = os.path.join(workspace, "jobs-bank", "pipeline.md")
+
+    if not os.path.exists(pipeline_path):
+        print("[notion_sync] pipeline.md not found")
+        return 0
+
+    with open(pipeline_path) as f:
+        lines = f.readlines()
+
+    applied = 0
+    for change in changes:
+        company = change["company"]
+        new_stage = change["new"]
+
+        for i, line in enumerate(lines):
+            if "|" not in line:
+                continue
+            # Match company name (with or without strikethrough)
+            clean_line = line.replace("~~", "")
+            if company.lower() in clean_line.lower():
+                cols = line.split("|")
+                if len(cols) > 7:
+                    old_stage = cols[7].strip()
+                    cols[7] = f" {new_stage} "
+                    lines[i] = "|".join(cols)
+                    print(f"[notion_sync] Pipeline updated: {company} | {old_stage} -> {new_stage}")
+                    applied += 1
+                break
+
+    if applied:
+        with open(pipeline_path, "w") as f:
+            f.writelines(lines)
+        print(f"[notion_sync] {applied} changes written to pipeline.md")
+
+    return applied
 
 
 if __name__ == "__main__":

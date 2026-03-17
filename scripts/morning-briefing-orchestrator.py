@@ -1453,6 +1453,27 @@ def main():
             log(f"  ERROR: {e}")
     log("")
 
+    # Step 10.5: Two-way pipeline sync from Notion
+    log("Step 10.5: Checking Notion for pipeline changes...")
+    notion_changes = []
+    try:
+        from notion_sync import read_pipeline_from_notion, apply_notion_changes_to_pipeline
+        notion_result = read_pipeline_from_notion()
+        notion_changes = notion_result.get("changes", [])
+        if notion_changes:
+            applied_count = apply_notion_changes_to_pipeline(notion_changes)
+            log(f"  {applied_count} pipeline changes synced from Notion")
+            for c in notion_changes:
+                log(f"    {c['company']}: {c['old']} -> {c['new']}")
+            went_right.append(f"Notion two-way sync: {len(notion_changes)} changes applied")
+            # Re-read pipeline after changes
+            pipeline = read_pipeline()
+        else:
+            log("  No changes detected (in sync)")
+    except Exception as e:
+        log(f"  Notion two-way sync error (non-fatal): {e}")
+    log("")
+
     # Step 11: Sync to Notion
     log("Step 11: Syncing to Notion...")
     try:
@@ -1570,6 +1591,14 @@ def main():
         p_closed = pipeline.get("closed", 0)
         p_total = pipeline.get("total_applications", 0)
         lines.append(f"Applied: {p_applied} | Interview: {p_interview} | Stale: {p_stale}")
+
+        # Show Notion stage changes (two-way sync)
+        if notion_changes:
+            lines.append(f"🔄 {len(notion_changes)} stage change(s) from Notion:")
+            for c in notion_changes[:3]:
+                lines.append(f"  • {c['company']}: {c['old']} -> {c['new']}")
+            if len(notion_changes) > 3:
+                lines.append(f"  +{len(notion_changes)-3} more")
 
         # Interview alert (goes to top of ACTION NEEDED too)
         if p_interview > 0:
