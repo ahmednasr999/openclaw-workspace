@@ -1548,12 +1548,22 @@ def main():
         p_applied = pipeline.get("applied", 0)
         p_interview = pipeline.get("interviews", 0)
         p_stale = pipeline.get("stale", 0)
+        p_closed = pipeline.get("closed", 0)
+        p_total = pipeline.get("total_applications", 0)
         lines.append(f"Applied: {p_applied} | Interview: {p_interview} | Stale: {p_stale}")
+
+        # Interview alert (goes to top of ACTION NEEDED too)
+        if p_interview > 0:
+            lines.append(f"🎯 {p_interview} active interview(s)!")
+
+        # Overdue follow-ups (the real action item)
         p_overdue = pipeline.get("overdue", [])
         if p_overdue:
             lines.append(f"⏰ Follow-ups overdue ({len(p_overdue)}):")
-            for o in p_overdue[:3]:
-                lines.append(f"• {o['company']} {o['role']} — {o['days']}d ago")
+            for o in p_overdue[:5]:
+                lines.append(f"• {o['company']} — {o['role'][:30]} — {o['days']}d")
+            if len(p_overdue) > 5:
+                lines.append(f"  +{len(p_overdue)-5} more in Notion")
 
         # Calendar
         if events:

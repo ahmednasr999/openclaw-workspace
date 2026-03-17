@@ -166,21 +166,40 @@ def sync_briefing(briefing_json_path=None, briefing_data=None, date_str=None):
         p_stale = pipeline.get("stale", 0)
         p_total = pipeline.get("total_applications", 0)
 
+        # Summary callout
         blocks.append(nc.callout_block(
             f"Total: {p_total} | Applied: {p_applied} | Interview: {p_interview} | Closed: {p_closed} | Stale (14d+): {p_stale}",
             "📊"
         ))
 
-        # Overdue follow-ups
+        # Interview alert (prominent)
+        if p_interview > 0:
+            blocks.append(nc.callout_block(f"🎯 {p_interview} active interview(s) in pipeline!", "🎯"))
+
+        # Overdue follow-ups (the actionable part)
         p_overdue = pipeline.get("overdue", [])
         if p_overdue:
             blocks.append(nc.heading_block("⏰ Follow-ups Overdue", 3))
-            for o in p_overdue[:10]:
+            blocks.append(nc.paragraph_block(f"{len(p_overdue)} applications with no response after 14+ days:"))
+            for o in p_overdue[:20]:
+                days = o.get("days", 0)
+                urgency = "🔴" if days >= 21 else "🟡"
                 blocks.append(nc.bullet_block(
-                    f"{o['company']} — {o['role']} — applied {o['applied']} ({o['days']}d ago)"[:200]
+                    f"{urgency} {o['company']} — {o['role']} — applied {o['applied']} ({days}d ago)"[:200]
                 ))
-            if len(p_overdue) > 10:
-                blocks.append(nc.paragraph_block(f"... and {len(p_overdue) - 10} more"))
+            if len(p_overdue) > 20:
+                blocks.append(nc.paragraph_block(f"... and {len(p_overdue) - 20} more"))
+
+            # Recommendation
+            top3 = p_overdue[:3]
+            if top3:
+                names = ", ".join(o["company"] for o in top3)
+                blocks.append(nc.callout_block(
+                    f"Recommended action: Send follow-up messages to {names} (oldest, highest urgency)",
+                    "💡"
+                ))
+        else:
+            blocks.append(nc.paragraph_block("No overdue follow-ups. All applications within 14-day window."))
 
         blocks.append(nc.divider_block())
 
