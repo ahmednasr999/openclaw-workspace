@@ -47,6 +47,13 @@ stat -c %Y /root/.openclaw/workspace/memory/active-tasks.md 2>/dev/null
 ```
 - If older than 48 hours: 🟡 "active-tasks.md stale"
 
+### Model Fallbacks (check today's log)
+```bash
+grep -i 'fallback\|rate.limit\|429' /tmp/openclaw/openclaw-$(date +%Y-%m-%d).log 2>/dev/null | tail -5
+```
+- If any results found: 🔴 "Model fallback detected: [summary of lines]"
+- No cooldown on this check (always alert)
+
 ## STEP 2: Cron Failure Check
 
 1. Run: `openclaw cron list` and capture all output.

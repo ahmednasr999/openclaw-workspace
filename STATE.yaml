@@ -1,136 +1,64 @@
 # STATE.yaml — Ahmed's Autonomous Project State
-# Single source of truth for all active projects and agent status
-# Last updated: 2026-02-28T10:07:00Z
-# Updated by: NASR
+# Last updated: 2026-03-17T02:10:00Z
+# Updated by: NASR (spec-vs-reality audit)
 #
-# READ: Every agent reads this at task start
-# WRITE: Every agent updates their section on task completion
-# RULE: Never delete entries — mark as completed or archived
+# NOTE: This file was found 17 days stale during the March 17 audit.
+# Most data was from Feb 28. Updated to current reality.
+# Going forward: Morning Briefing cron should update key metrics here.
 
 ---
 
 job_search:
-  active_pipeline: 35
-  interviews_pending: 1
-  interview_details:
-    - company: Delphi Consulting
-      role: Senior AI PM
-      interview_date: 2026-02-24
-      status: awaiting_feedback
-      follow_up_due: 2026-03-02
-      contact: Kritika Chhabra
+  active_pipeline: unknown  # needs pipeline.md scan
+  interviews_pending: 0
+  interview_details: []  # Delphi: no response after Feb 24 interview
   cv_pending_review: 0
   handoffs_in_progress: []
-  last_radar_run: 2026-02-28T07:00:00Z
-  next_radar_run: 2026-03-01T07:00:00Z
-  applications_this_week: 12
-  avg_ats_score: 89
+  last_radar_run: 2026-03-16T06:00:00Z
+  applications_this_week: unknown
   pipeline_file: jobs-bank/pipeline.md
   recruiter_responses: []
 
 linkedin:
-  last_post_date: 2026-02-26
-  last_post_topic: "Talabat 233x scale story"
-  next_post_date: 2026-03-16
-  next_post_topic: "LinkedIn just became the #1 source LLMs cite for business advice"
+  last_post_date: 2026-03-16
   posting_days: [0, 1, 2, 3, 4]  # Sun-Thu
   posting_time: "09:30 Cairo"
-  weeks_fully_drafted: 7
-  calendar_through: 2026-03-27
-  calendar_gap: none
-  last_prebuild: 2026-03-13T18:00:00Z
-  next_prebuild: 2026-03-20T18:00:00Z
-  knowledge_bank_last_checked: 2026-02-28
-  performance_tracking: false  # not yet logging engagement data
+  calendar_file: memory/linkedin_content_calendar.md
+  karpathy_loop: active  # nightly content self-improvement
+  engagement_tracking: active  # URN + reactions via Composio API
 
 agents:
   job_hunter:
     status: active
-    last_weekly_review: 2026-03-08T06:01:00Z
-    next_review: 2026-03-15T08:00:00Z  # Sunday 8AM Cairo
-    last_task: "weekly domain review - pipeline health check + market scan - 51 roles active, no 30-day cold moves yet (first sweep March 29), Job Radar showing no results (LinkedIn rate limit suspected)"
     domain_file: jobs-bank/pipeline.md
-    open_triggers: []
 
   content_creator:
     status: active
-    last_weekly_review: 2026-03-13T18:00:00Z
-    next_review: 2026-03-20T18:00:00Z
-    last_task: "pre-build week 4 (Mar 16-20) - 5 posts + 5 images generated"
     domain_file: memory/linkedin_content_calendar.md
-    open_triggers: []
-
-  researcher:
-    status: active
-    last_weekly_review: null
-    next_review: null  # not yet wired as role
-    active_briefs: []
-    domain_file: null  # pending: company-dossiers/ folder
 
   cv_optimizer:
     status: active
-    last_cv_built: 2026-02-28
-    last_ats_score: 91
-    pending_updates: none
-    skill_file: skills/executive-cv-builder/SKILL.md
+    model: opus46  # LOCKED: CVs always on Opus 4.6
     domain_file: memory/master-cv-data.md
 
 system:
-  nasr_model: anthropic/claude-sonnet-4-6
   default_model: minimax-portal/MiniMax-M2.5
-  daily_spend_today: unknown  # check session_status
-  spend_threshold_warn: 3.00
-  spend_threshold_alert: 5.00
-  context_used_pct: unknown  # check at session start
-  context_flush_threshold: 75
   gateway_status: running
-  last_backup: 2026-02-28
-  github_workspace: https://github.com/ahmednasr999/openclaw-nasr
-  github_config: https://github.com/ahmednasr999/openclaw-config
+  cron_total: 34
+  cron_enabled: 29
+  cron_disabled: 5
+  heartbeat: active  # via Cron Watchdog (2h)
+  last_audit: 2026-03-17T02:00:00Z
 
 alerts:
   - type: expiry
-    item: Codex JWT token
-    deadline: 2026-03-04
-    action: Re-authenticate at platform.openai.com before March 3
-    reminder_cron: bd592147-2537-4c15-a0ec-a2ee832f496c
+    item: Codex subscription ends
+    deadline: 2026-04-01
+    action: Remove openai-codex from fallback chain
+    reminder_cron: codex-removal-reminder
     status: pending
 
-  - type: action_required
-    item: Threads bio update
-    action: Update to "Digital Transformation Executive | HealthTech, FinTech & e-commerce across GCC | PMO & AI Strategy | TopMed | ex-Talabat, Network International"
-    status: pending
-    assigned_to: Ahmed
-
-  - type: completed
-    item: GitHub 2FA enablement
-    action: GitHub 2FA enabled
-    completed_at: 2026-03-01
-    status: done
-
-  - type: follow_up
-    item: Delphi follow-up message
-    action: Send value-signal message to Kritika Chhabra
-    due: 2026-03-02
-    draft: "AI change management angle — 14 agents in clinical ops"
-    status: pending
-
-pipeline_resume:
-  # When a multi-step task is interrupted, record last completed step here
-  # Format: task_id, last_step, output_path, resume_from
-  active_resumable_tasks: []
-
----
-# HOW TO UPDATE THIS FILE
-#
-# At task START: read STATE.yaml, check your section for open triggers or resume points
-# At task END: update your section with:
-#   - last_task: description
-#   - last_task_time: ISO8601 timestamp
-#   - status of any handoffs or triggers created
-#
-# NASR updates: job_search, alerts, system sections
-# Job Hunter updates: agents.job_hunter
-# Content Creator updates: agents.content_creator, linkedin
-# CV Optimizer updates: agents.cv_optimizer
-# Researcher updates: agents.researcher
+  - type: maintenance
+    item: gog-calendar-watch broken
+    detail: "gog CLI v0.12.0 has no 'watch' command. Service disabled."
+    status: disabled_pending_fix
