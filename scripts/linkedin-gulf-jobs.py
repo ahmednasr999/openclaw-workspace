@@ -223,6 +223,15 @@ def search(title, country):
                     "location": str(row.get("location","")) if not nan(row.get("location")) else country,
                     "site":     str(row.get("site","")) if not nan(row.get("site")) else "unknown",
                     "date_posted": str(row.get("date_posted",""))[:10] if not nan(row.get("date_posted")) else "",
+                    "job_type":    str(row.get("job_type","")) if not nan(row.get("job_type")) else "",
+                    "job_level":   str(row.get("job_level","")) if not nan(row.get("job_level")) else "",
+                    "job_function": str(row.get("job_function","")) if not nan(row.get("job_function")) else "",
+                    "company_industry": str(row.get("company_industry","")) if not nan(row.get("company_industry")) else "",
+                    "is_remote":   str(row.get("is_remote","")) if not nan(row.get("is_remote")) else "",
+                    "company_url": str(row.get("company_url","")) if not nan(row.get("company_url")) else "",
+                    "min_salary":  str(row.get("min_amount","")) if not nan(row.get("min_amount")) else "",
+                    "max_salary":  str(row.get("max_amount","")) if not nan(row.get("max_amount")) else "",
+                    "currency":    str(row.get("currency","")) if not nan(row.get("currency")) else "",
                     "search_country": country,
                     "search_title":   title,
                 })
@@ -393,14 +402,29 @@ def main():
                 f.write(f"- Company: {job['company']}\n")
                 f.write(f"- Location: {job['location']}\n")
                 f.write(f"- Source: {job['site']}\n")
-                f.write(f"- URL: {job['url']}\n\n")
+                if job.get('job_level'): f.write(f"- Level: {job['job_level']}\n")
+                if job.get('job_type'): f.write(f"- Type: {job['job_type']}\n")
+                if job.get('job_function'): f.write(f"- Function: {job['job_function']}\n")
+                if job.get('company_industry'): f.write(f"- Industry: {job['company_industry']}\n")
+                if job.get('min_salary') and job.get('currency'): f.write(f"- Salary: {job['currency']} {job['min_salary']}-{job.get('max_salary','')}\n")
+                if job.get('is_remote') == 'True': f.write(f"- ⚠️ Remote (Ahmed prefers on-site)\n")
+                if job.get('company_url'): f.write(f"- Company: [{job['company']}]({job['company_url']})\n")
+                f.write(f"- URL: {job['url']}\n")
+                if job.get('date_posted'): f.write(f"- Posted: {job['date_posted']}\n")
+                f.write(f"\n")
         else:
             f.write(f"## Priority Picks\n\nNo priority picks today.\n\n")
 
         if leads:
             f.write(f"## Executive Leads — All GCC Relevant\n\n")
             for job in leads:
-                f.write(f"- **{job['title']}** | {job['company']} | {job['location']} | [{job['site']}]({job['url']})\n")
+                extras = []
+                if job.get('job_level'): extras.append(job['job_level'])
+                if job.get('company_industry'): extras.append(job['company_industry'])
+                if job.get('min_salary') and job.get('currency'): extras.append(f"{job['currency']} {job['min_salary']}-{job.get('max_salary','')}")
+                if job.get('date_posted'): extras.append(f"posted {job['date_posted']}")
+                extra_str = f" | {', '.join(extras)}" if extras else ""
+                f.write(f"- **{job['title']}** | {job['company']} | {job['location']}{extra_str} | [{job['site']}]({job['url']})\n")
 
     # ==================== FILTERED-OUT AUDIT LOG ====================
     with open(FILTERED_LOG, "w") as f:
