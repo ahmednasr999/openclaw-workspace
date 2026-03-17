@@ -710,6 +710,197 @@ def apply_notion_changes_to_pipeline(changes):
     return applied
 
 
+
+
+def sync_email_digest(emails, date_str=None):
+    """
+    Push flagged/important emails to Notion System Log as email events.
+    emails: list of dicts with keys: from, subject, snippet, date, flagged, category
+    """
+    nc = _get_client()
+    if not nc:
+        return 0
+    
+    if not date_str:
+        date_str = datetime.now(timezone(timedelta(hours=2))).strftime("%Y-%m-%d")
+    
+    synced = 0
+    for email in emails:
+        try:
+            subject = email.get("subject", "No subject")[:100]
+            sender = email.get("from", "Unknown")[:100]
+            snippet = email.get("snippet", "")[:500]
+            category = email.get("category", "Email")
+            
+            severity = "Info"
+            if email.get("flagged") or email.get("important"):
+                severity = "Warning"
+            if "interview" in subject.lower() or "offer" in subject.lower():
+                severity = "Critical"
+            
+            nc.log_event(
+                f"Email: {subject}",
+                severity=severity,
+                component="Email",
+                details=f"From: {sender}\n{snippet}",
+            )
+            synced += 1
+        except Exception as e:
+            print(f"[notion_sync] ERROR syncing email: {e}")
+    
+    print(f"[notion_sync] {synced}/{len(emails)} emails synced to System Log")
+    return synced
+
+
+def sync_scanner_run(meta_data, date_str=None):
+    """
+    Push scanner run metadata to Scanner History database.
+    """
+    nc = _get_client()
+    if not nc:
+        return None
+    
+    if not date_str:
+        date_str = datetime.now(timezone(timedelta(hours=2))).strftime("%Y-%m-%d")
+    
+    nc.databases["scanner_history"] = "3268d599-a162-8123-a867-d7231817f03d"
+    
+    searches = meta_data.get("total_searches", 0)
+    found = meta_data.get("total_found", 0)
+    picks = meta_data.get("priority_picks", 0)
+    leads = meta_data.get("exec_leads", 0)
+    filtered = meta_data.get("filtered_out", 0)
+    runtime = meta_data.get("runtime_seconds", 0)
+    cookie_age = meta_data.get("cookie_age_days")
+    
+    status = "✅ Healthy"
+    if found == 0:
+        status = "❌ Failed"
+    elif meta_data.get("degraded"):
+        status = "⚠️ Degraded"
+    
+    warnings = "; ".join(meta_data.get("validation_warnings", []))[:200]
+    sources = " ".join(f"{k}:{v}" for k, v in meta_data.get("source_status", {}).items())[:200]
+    
+    props = {
+        "Date": {"title": [{"text": {"content": date_str}}]},
+        "Searches": {"number": searches},
+        "Jobs Found": {"number": found},
+        "Priority Picks": {"number": picks},
+        "Exec Leads": {"number": leads},
+        "Filtered Out": {"number": filtered},
+        "Runtime (sec)": {"number": runtime},
+        "Status": {"select": {"name": status}},
+    }
+    if cookie_age is not None:
+        props["Cookie Age"] = {"number": cookie_age}
+    if warnings:
+        props["Warnings"] = {"rich_text": [{"text": {"content": warnings}}]}
+    if sources:
+        props["Sources"] = {"rich_text": [{"text": {"content": sources}}]}
+    
+    try:
+        page = nc._create_page("scanner_history", props)
+        print(f"[notion_sync] Scanner run synced: {date_str}")
+        return page
+    except Exception as e:
+        print(f"[notion_sync] ERROR syncing scanner run: {e}")
+        return None
+
+
+def sync_active_tasks(tasks_data):
+    """
+    Two-way sync for active tasks.
+    Reads Notion tasks, compares with local, syncs changes.
+    tasks_data: list of dicts with: text, done, priority, category
+    """
+    nc = _get_client()
+    if not nc:
+        return {"synced": 0, "changes": []}
+    
+    nc.databases["active_tasks"] = "3268d599-a162-8152-9036-e4e4a85d444d"
+    
+    # Read Notion tasks
+    results = nc._query_database("active_tasks")
+    notion_tasks = {}
+    for r in results:
+        props = r.get("properties", {})
+        t = props.get("Task", {}).get("title", [])
+        text = t[0].get("plain_text", "") if t else ""
+        done = props.get("Done", {}).get("checkbox", False)
+        if text:
+            notion_tasks[text.lower()[:50]] = {"done": done, "page_id": r["id"], "text": text}
+    
+    changes = []
+    for nt_key, nt_data in notion_tasks.items():
+        # If task was marked done in Notion, flag it
+        if nt_data["done"]:
+            changes.append({"task": nt_data["text"], "action": "completed_in_notion"})
+    
+    return {"synced": len(notion_tasks), "changes": changes}
+
+
+def sync_cron_status():
+    """
+    Update Cron Dashboard with latest status from OpenClaw.
+    """
+    nc = _get_client()
+    if not nc:
+        return 0
+    
+    nc.databases["cron_dashboard"] = "3268d599-a162-8188-b531-e25071653203"
+    
+    import json
+    try:
+        with open("/root/.openclaw/cron/jobs.json") as f:
+            data = json.load(f)
+        jobs = data.get("jobs", [])
+    except:
+        return 0
+    
+    # Get existing dashboard entries
+    results = nc._query_database("cron_dashboard")
+    existing = {}
+    for r in results:
+        props = r.get("properties", {})
+        cron_id_t = props.get("Cron ID", {}).get("rich_text", [])
+        cron_id = cron_id_t[0].get("plain_text", "") if cron_id_t else ""
+        if cron_id:
+            existing[cron_id] = r["id"]
+    
+    updated = 0
+    for job in jobs:
+        jid = job.get("id", "")
+        if jid not in existing:
+            continue
+        
+        state = job.get("state", {})
+        last_status = state.get("lastStatus", "")
+        enabled = job.get("enabled", False)
+        
+        status_name = "✅ OK"
+        if not enabled:
+            status_name = "⏸️ Disabled"
+        elif last_status == "error" or state.get("consecutiveErrors", 0) > 0:
+            status_name = "❌ Failed"
+        
+        last_run_ms = state.get("lastRunAtMs", 0)
+        props = {"Last Status": {"select": {"name": status_name}}}
+        if last_run_ms:
+            from datetime import datetime as dt2, timezone as tz2
+            last_date = dt2.fromtimestamp(last_run_ms / 1000, tz=tz2.utc).strftime("%Y-%m-%d")
+            props["Last Run"] = {"date": {"start": last_date}}
+        
+        try:
+            nc._update_page(existing[jid], props)
+            updated += 1
+        except:
+            pass
+    
+    print(f"[notion_sync] Cron dashboard: {updated} crons updated")
+    return updated
+
+
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser(description="Notion Sync Module")

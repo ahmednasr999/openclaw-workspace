@@ -605,16 +605,50 @@ def main():
     # === Notion Sync ===
     try:
         sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-        from notion_sync import sync_new_jobs, sync_system_event
+        from notion_sync import sync_new_jobs, sync_system_event, sync_scanner_run
         all_new = picks + leads
         if all_new:
             added = sync_new_jobs(all_new)
+        # Sync scanner run metadata to Notion
+        scanner_meta = {
+            "total_searches": search_count,
+            "total_found": total_found,
+            "priority_picks": len(qualified),
+            "exec_leads": len(exec_leads),
+            "filtered_out": len(filtered_jobs),
+            "runtime_seconds": int(time.time() - start_time),
+            "degraded": degradation_flag,
+            "cookie_age_days": (datetime.now() - cookie_mtime).days if cookie_mtime else None,
+            "validation_warnings": validation_warnings,
+            "source_status": source_status,
+        }
+        try:
+            sync_scanner_run(scanner_meta, today_str)
+        except Exception as e:
+            print(f"Scanner sync error: {e}")
             print(f"\nNotion: {added} jobs synced to pipeline")
         sync_system_event(
             f"Scanner: {total_found} found, {len(picks)} priority, {len(leads)} leads",
             component="Scanner",
             details=f"Searches: {total_searches}, Filtered: {len(filtered_out)}, Warnings: {len(validation_warnings)}"
         )
+        # Sync scanner run metadata to Notion
+        scanner_meta = {
+            "total_searches": search_count,
+            "total_found": total_found,
+            "priority_picks": len(qualified),
+            "exec_leads": len(exec_leads),
+            "filtered_out": len(filtered_jobs),
+            "runtime_seconds": int(time.time() - start_time),
+            "degraded": degradation_flag,
+            "cookie_age_days": (datetime.now() - cookie_mtime).days if cookie_mtime else None,
+            "validation_warnings": validation_warnings,
+            "source_status": source_status,
+        }
+        try:
+            sync_scanner_run(scanner_meta, today_str)
+        except Exception as e:
+            print(f"Scanner sync error: {e}")
     except Exception as e:
         print(f"\nNotion sync skipped: {e}")
 

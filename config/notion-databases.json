@@ -36,6 +36,26 @@
     "system_log": {
       "id": "3268d599-a162-81b4-8feb-d8997ddc6d73",
       "name": "\u2699\ufe0f System Log"
+    },
+    "learnings": {
+      "id": "3268d599-a162-810f-9f1b-ffdc280ae96d",
+      "name": "\ud83d\udcda Learnings & Errors"
+    },
+    "active_tasks": {
+      "id": "3268d599-a162-8152-9036-e4e4a85d444d",
+      "name": "\u2705 Active Tasks"
+    },
+    "session_logs": {
+      "id": "3268d599-a162-8117-afef-e4910ec15e55",
+      "name": "\ud83d\udcdd Session Logs"
+    },
+    "scanner_history": {
+      "id": "3268d599-a162-8123-a867-d7231817f03d",
+      "name": "\ud83d\udd0d Scanner History"
+    },
+    "cron_dashboard": {
+      "id": "3268d599-a162-8188-b531-e25071653203",
+      "name": "\u23f0 Cron Dashboard"
     }
   },
   "dashboard": {
