@@ -1082,9 +1082,18 @@ def main():
             pf = post_files[0]
             with open(pf) as f:
                 post_content = f.read()
-            # Check for matching image
+            # Check for matching image: first try same-name .png, then check markdown for ![...](image.png)
             img_pattern = pf.replace(".md", ".png")
             img_exists = os.path.exists(img_pattern)
+            if not img_exists:
+                # Look for image reference in markdown: ![...](filename.png)
+                import re as _re_img
+                img_ref = _re_img.search(r'!\[.*?\]\((.+?\.(?:png|jpg|jpeg|webp))\)', post_content)
+                if img_ref:
+                    ref_path = os.path.join(os.path.dirname(pf), img_ref.group(1))
+                    if os.path.exists(ref_path):
+                        img_pattern = ref_path
+                        img_exists = True
             # Extract title line (first # heading or first non-empty line)
             title_line = ""
             for line in post_content.split("\n"):
