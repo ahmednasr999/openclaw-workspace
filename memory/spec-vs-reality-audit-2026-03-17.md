@@ -187,22 +187,24 @@ STATE.yaml last updated: 2026-02-28 (17 days stale)
 
 ---
 
-## Recommended Actions (Priority Order)
+## Actions Taken (March 17, 2026 ~2 AM)
 
-### Immediate (tonight or tomorrow):
-1. Fix delivery configs: change `target` to `to` on 3 crons (Engagement Radar, Karpathy Loop, Memory Index)
-2. Remove 3 dead entries from system crontab (quota-monitor.js, duplicate linkedin-gulf-jobs.py, superseded morning-brief.sh)
-3. Fix claude-offpeak-reminder payload kind (message -> systemEvent)
+### ✅ Fixed Tonight:
+1. Delivery configs: `target` -> `to` on 4 crons (Engagement Radar, Karpathy Loop, Memory Index, claude-offpeak)
+2. Delivery configs: added missing `to=866838380` on 4 more crons (Gateway Health, memory-hygiene, monthly-content-prep, offpeak-reminder)
+3. Removed 3 dead entries from system crontab (quota-monitor.js, duplicate linkedin-gulf-jobs.py, superseded morning-brief.sh)
+4. Fixed claude-offpeak-reminder payload kind (message -> systemEvent)
+5. Stopped calendar-webhook.service (script missing, crashed 74 times) - disabled
+6. Stopped github-webhook.service (inactive, never configured) - disabled
+7. Stopped gog-calendar-watch.service (crash-looped 338,800 times, `gog calendar watch serve` command doesn't exist) - disabled
+8. Deleted 15 dead/superseded disabled crons (from 49 total to 34)
+9. HEARTBEAT.md wired into Cron Watchdog (6/7 checks live)
+10. Added spec-vs-reality check to SIE Skill Audit
 
-### This week:
-4. Delete or fix calendar-webhook.service (script missing)
-5. Debug gog-calendar-watch crash loop
-6. Fix daily-backup.sh git push failure
-7. Audit the 3 high-frequency system scripts (self-healing, watchdog, context) for actual value vs resource cost
-8. Fix disk-health-check duplicate (remove from crontab, OpenClaw has Infrastructure Monitor)
-9. Clean up 7 disabled error-state crons (delete or fix)
-
-### Optional:
-10. Decide on github-webhook.service (needed or not?)
-11. Update STATE.yaml or deprecate it
-12. Add model fallback detection to watchdog (7th check)
+### Remaining (this week):
+1. Fix daily-backup.sh git push failure
+2. Audit 3 high-frequency system scripts (self-healing every 2 min, watchdog every 3 min, context every 5 min) for value vs CPU cost
+3. Fix disk-health-check duplicate (remove from crontab, OpenClaw has Infrastructure Monitor)
+4. Investigate gog calendar watch proper command (if calendar push notifications are needed)
+5. Update STATE.yaml or deprecate it
+6. Add model fallback detection to watchdog (7th check)
