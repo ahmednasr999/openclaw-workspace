@@ -539,18 +539,62 @@ def read_pipeline():
         log("  Pipeline file not found.")
         return {}
     with open(PIPELINE_FILE) as f:
-        content = f.read()
+        lines = f.readlines()
 
-    applied = content.count("✅ Applied")
-    closed  = content.count("❌ Closed")
-    log(f"  {applied} applied, {closed} closed")
+    from datetime import datetime as _dt, timedelta as _td
+    _today = _dt.now()
+
+    applied = 0
+    interview = 0
+    closed = 0
+    stale = 0
+    overdue_list = []
+    total = 0
+
+    for line in lines:
+        if "|" not in line or line.strip().startswith("#") or line.strip().startswith("|---"):
+            continue
+        cols = [c.strip() for c in line.split("|")]
+        if len(cols) < 10:
+            continue
+        stage = cols[7] if len(cols) > 7 else ""
+        applied_date_str = cols[9] if len(cols) > 9 else ""
+        company = cols[3] if len(cols) > 3 else ""
+        role = cols[4] if len(cols) > 4 else ""
+
+        if "Applied" in stage or "Interview" in stage or "Closed" in stage:
+            total += 1
+
+        if "Applied" in stage and "~~" not in stage:
+            applied += 1
+            m = re.search(r'(\d{4}-\d{2}-\d{2})', applied_date_str)
+            if m:
+                app_date = _dt.strptime(m.group(1), "%Y-%m-%d")
+                days_ago = (_today - app_date).days
+                if days_ago >= 14:
+                    stale += 1
+                    overdue_list.append({
+                        "company": company.replace("~~", "").strip(),
+                        "role": role.replace("~~", "").strip(),
+                        "applied": m.group(1),
+                        "days": days_ago
+                    })
+        elif "Interview" in stage:
+            interview += 1
+        elif "Closed" in stage:
+            closed += 1
+
+    overdue_list.sort(key=lambda x: x["days"], reverse=True)
+
+    log(f"  Applied: {applied} | Interview: {interview} | Closed: {closed} | Stale: {stale}")
 
     return {
-        "total_applications": f"{applied} active",
-        "responses_this_week": 0,
-        "overdue": f"Review follow-up dates on all {applied} applications",
-        "recent": [],
-        "recommendation": f"{applied} applications sent. Zero responses. Action: direct email follow-up on top 5 targets."
+        "total_applications": total,
+        "applied": applied,
+        "interviews": interview,
+        "closed": closed,
+        "stale": stale,
+        "overdue": overdue_list,
     }
 
 
@@ -1442,16 +1486,11 @@ def main():
         action_items = []
         if qualified:
             action_items.append(f"Review {len(qualified)} new picks")
-        # Follow-ups overdue
-        overdue = 0
-        try:
-            for line in open(PIPELINE_FILE).readlines():
-                if "Follow-up Due" in line:
-                    continue
-                m = re.search(r'(\d{4}-\d{2}-\d{2})\s*\|', line)
-                # Simple heuristic: count applied dates older than 14 days
-        except:
-            pass
+        p_overdue = pipeline.get("overdue", [])
+        if p_overdue:
+            action_items.append(f"{len(p_overdue)} follow-ups overdue (oldest: {p_overdue[0]['days']}d)")
+        if pipeline.get("interviews", 0) > 0:
+            action_items.insert(0, f"🎯 {pipeline['interviews']} INTERVIEW(S) in pipeline!")
         if todays_post and todays_post.get("title"):
             action_items.append("Publish LinkedIn post")
         if selected_posts:
@@ -1504,10 +1543,17 @@ def main():
             if url:
                 lines.append(f"   → {url}")
 
-        # Pipeline one-liner
-        total_apps = pipeline.get("total_applications", "N/A")
-        interviews = pipeline.get("interviews", 0)
-        lines.append(f"\nPipeline: {total_apps} apps | {interviews} interviews")
+        # Pipeline section
+        lines.append("\n📊 PIPELINE")
+        p_applied = pipeline.get("applied", 0)
+        p_interview = pipeline.get("interviews", 0)
+        p_stale = pipeline.get("stale", 0)
+        lines.append(f"Applied: {p_applied} | Interview: {p_interview} | Stale: {p_stale}")
+        p_overdue = pipeline.get("overdue", [])
+        if p_overdue:
+            lines.append(f"⏰ Follow-ups overdue ({len(p_overdue)}):")
+            for o in p_overdue[:3]:
+                lines.append(f"• {o['company']} {o['role']} — {o['days']}d ago")
 
         # Calendar
         if events:

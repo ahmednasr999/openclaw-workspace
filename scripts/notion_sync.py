@@ -159,9 +159,29 @@ def sync_briefing(briefing_json_path=None, briefing_data=None, date_str=None):
         blocks.append(nc.divider_block())
 
         # Pipeline
-        blocks.append(nc.heading_block("📈 Pipeline", 2))
-        for k, v in pipeline.items():
-            blocks.append(nc.bullet_block(f"{k}: {v}"))
+        blocks.append(nc.heading_block("📊 Pipeline", 2))
+        p_applied = pipeline.get("applied", 0)
+        p_interview = pipeline.get("interviews", 0)
+        p_closed = pipeline.get("closed", 0)
+        p_stale = pipeline.get("stale", 0)
+        p_total = pipeline.get("total_applications", 0)
+
+        blocks.append(nc.callout_block(
+            f"Total: {p_total} | Applied: {p_applied} | Interview: {p_interview} | Closed: {p_closed} | Stale (14d+): {p_stale}",
+            "📊"
+        ))
+
+        # Overdue follow-ups
+        p_overdue = pipeline.get("overdue", [])
+        if p_overdue:
+            blocks.append(nc.heading_block("⏰ Follow-ups Overdue", 3))
+            for o in p_overdue[:10]:
+                blocks.append(nc.bullet_block(
+                    f"{o['company']} — {o['role']} — applied {o['applied']} ({o['days']}d ago)"[:200]
+                ))
+            if len(p_overdue) > 10:
+                blocks.append(nc.paragraph_block(f"... and {len(p_overdue) - 10} more"))
+
         blocks.append(nc.divider_block())
 
         # Calendar
