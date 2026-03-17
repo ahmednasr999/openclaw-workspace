@@ -232,7 +232,7 @@ def gather_jobs():
     note = f"{os.path.basename(latest)}: {len(qualified)} priority picks, {len(borderline)} exec leads."
     log(f"  {len(qualified)} priority picks, {len(borderline)} exec leads")
 
-    # v3.1: Fetch full JDs for all leads before publishing verdicts
+    # v3.2: Fetch full JDs for all leads before publishing verdicts
     all_leads = qualified + borderline
     if all_leads:
         log(f"  Fetching JDs for {len(all_leads)} leads...")
@@ -240,6 +240,50 @@ def gather_jobs():
             link = job.get("link", job.get("url", ""))
             if not link or "linkedin.com" not in link:
                 continue
+
+            # PRIMARY: LinkedIn public guest API (no auth needed, most reliable)
+            import re as _re2
+            job_id_match = _re2.search(r'/jobs/view/(\d+)', link)
+            if job_id_match:
+                job_id = job_id_match.group(1)
+                try:
+                    guest_url = f"https://www.linkedin.com/jobs-guest/jobs/api/jobPosting/{job_id}"
+                    req_guest = urllib.request.Request(guest_url, headers={
+                        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36",
+                        "Accept": "text/html"
+                    })
+                    with urllib.request.urlopen(req_guest, timeout=15) as resp:
+                        raw_html = resp.read().decode("utf-8", errors="replace")
+                    # Extract description div
+                    desc_match = _re2.search(r'class="description__text[^"]*"[^>]*>(.*?)</div>', raw_html, _re2.DOTALL)
+                    desc_html = desc_match.group(1) if desc_match else raw_html
+                    # Convert HTML to text
+                    import html as _html_mod
+                    jd_text = _re2.sub(r'<br\s*/?>', '\n', desc_html)
+                    jd_text = _re2.sub(r'<li[^>]*>', '\n- ', jd_text)
+                    jd_text = _re2.sub(r'<[^>]+>', ' ', jd_text)
+                    jd_text = _html_mod.unescape(jd_text)
+                    jd_text = _re2.sub(r'[ \t]+', ' ', jd_text)
+                    jd_text = _re2.sub(r'\n{3,}', '\n\n', jd_text).strip()
+                    if len(jd_text) > 200:
+                        job["jd_snippet"] = jd_text[:2000]
+                        job["jd_fetched"] = True
+                        jd_lower = jd_text.lower()
+                        if "equity" in jd_lower and "salary" not in jd_lower:
+                            job["jd_flag"] = "equity-only compensation"
+                        if "co-found" in jd_lower or "startup" in jd_lower:
+                            job["jd_flag"] = job.get("jd_flag", "") + " early-stage/startup"
+                        if "crypto" in jd_lower or "blockchain" in jd_lower or "defi" in jd_lower:
+                            job["jd_flag"] = job.get("jd_flag", "") + " crypto/blockchain"
+                        if "security printing" in jd_lower:
+                            job["jd_flag"] = job.get("jd_flag", "") + " niche: security printing"
+                        log(f"    JD fetched (guest API): {job.get('title', '?')[:40]} ({len(jd_text)} chars)")
+                        time.sleep(0.5)
+                        continue
+                except Exception as e:
+                    log(f"    Guest API failed for {job.get('title', '?')[:40]}: {e}")
+
+            # FALLBACK: Jina Reader
             try:
                 jina_url = f"https://r.jina.ai/{link}"
                 req_obj = urllib.request.Request(jina_url, headers={
