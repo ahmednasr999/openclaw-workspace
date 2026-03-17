@@ -491,7 +491,7 @@ def evaluate_github_radar(radar_file):
 
 
 def check_learnings(state):
-    """L - Learnings: Check unapplied lessons."""
+    """L - Learnings: Check unapplied lessons and unenforced entries."""
     if not os.path.exists(LEARNINGS_FILE):
         return "OK", "No learnings"
     
@@ -499,13 +499,24 @@ def check_learnings(state):
         with open(LEARNINGS_FILE) as f:
             content = f.read()
         
-        # Count pending learnings
+        # Count pending learnings (old format)
         pending = len(re.findall(r'\[LRN-\d+\](?!.*(?:applied|resolved))', content))
         
-        if pending > 5:
-            return "ALERT", f"{pending} pending learnings"
+        # Count learning entries without enforcement (Action: code-check|sie-rule|cron-constraint)
+        entries = re.findall(r'## 2026-\d{2}-\d{2}:.*', content)
+        enforced = len(re.findall(r'\*\*Action:\*\*.*(?:code-check|sie-rule|cron-constraint)', content))
+        unenforced = len(entries) - enforced
+        
+        issues = []
         if pending > 0:
-            return "WARN", f"{pending} pending learnings"
+            issues.append(f"{pending} pending")
+        if unenforced > 0:
+            issues.append(f"{unenforced} learnings without enforcement action")
+        
+        if unenforced > 3:
+            return "ALERT", "; ".join(issues)
+        if issues:
+            return "WARN", "; ".join(issues)
     except:
         pass
     
@@ -559,17 +570,20 @@ def check_notifications(state):
 
 def check_outputs(state):
     """O - Outputs: Check CV generation success."""
-    # Check for recent CV files
-    cv_dir = f"{WORKSPACE}/jobs-bank"
+    # Check for recent CV files in both jobs-bank and cvs directories
+    cv_dirs = [f"{WORKSPACE}/jobs-bank", f"{WORKSPACE}/cvs"]
     recent_cvs = []
     
-    for root, dirs, files in os.walk(cv_dir):
-        for f in files:
-            if f.endswith(".pdf") and "cv" in f.lower():
-                path = os.path.join(root, f)
-                age = file_age_hours(path)
-                if age < 48:
-                    recent_cvs.append((f, age))
+    for cv_dir in cv_dirs:
+        if not os.path.exists(cv_dir):
+            continue
+        for root, dirs, files in os.walk(cv_dir):
+            for f in files:
+                if f.endswith(".pdf"):  # All PDFs in cvs/ are CVs
+                    path = os.path.join(root, f)
+                    age = file_age_hours(path)
+                    if age < 168:  # 7 days
+                        recent_cvs.append((f, age))
     
     if not recent_cvs:
         return "WARN", "No recent CV outputs"
