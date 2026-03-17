@@ -80,8 +80,8 @@ PIPELINE_FILE  = BASE_DIR / "jobs-bank" / "pipeline.md"
 CONFIG_FILE    = Path("/root/.openclaw/openclaw.json")
 
 MAX_JOBS_PER_SEARCH  = 10
-MAX_RUNTIME_SECONDS  = 15 * 60   # 15 minutes
-SEARCH_DELAY         = 2         # seconds between searches
+MAX_RUNTIME_SECONDS  = 25 * 60   # 25 minutes (138 searches × 5s delay + backoffs)
+SEARCH_DELAY         = 5         # seconds between searches (increased for 138 combos)
 MIN_JOBS_ALERT       = 10        # alert if fewer total jobs found
 
 # Title filter: must match executive level
@@ -372,10 +372,18 @@ def main():
     with open(DETAILED_LOG, "a") as f:
         f.write(f"\n## Run: {ts} (v3.0)\n")
 
+    consecutive_errors = 0
     for title, country in searches:
         if time.time() - start > MAX_RUNTIME_SECONDS:
             print(f"  Runtime limit reached. Stopping.")
             break
+
+        # Backoff on consecutive errors (Google 429 rate limiting)
+        if consecutive_errors >= 5:
+            backoff = min(60, consecutive_errors * 5)
+            print(f"  Rate limited ({consecutive_errors} consecutive errors). Backing off {backoff}s...")
+            time.sleep(backoff)
+            consecutive_errors = 0  # Reset after backoff
 
         total_searches += 1
         jobs = search(title, country)
@@ -384,9 +392,11 @@ def main():
             f.write(f"- {title} in {country}: {len(jobs)} jobs\n")
 
         if not jobs:
+            consecutive_errors += 1
             time.sleep(1)
             continue
 
+        consecutive_errors = 0  # Reset on success
         total_found += len(jobs)
 
         for job in jobs:
