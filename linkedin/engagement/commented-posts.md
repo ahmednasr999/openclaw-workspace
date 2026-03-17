@@ -71,3 +71,5 @@
 2026-03-17 | https://www.linkedin.com/posts/william-bengtson_futureofidentity-iam-agenticai-activity-7437877884205109249-o3ou | William Bengtson | AI Agents Outnumber Humans in 47% of Orgs, 80% ... | Layer 1: Pipeline Company
 2026-03-17 | https://www.linkedin.com/posts/gilboamir_top-healthtech-stories-2026-03-13-activity-7438160312354238465-fpH5 | Gilboamir | AI Drives Clinical Care and Efficiency in HealthTech | Layer 3: Industry
 2026-03-17 | https://www.linkedin.com/posts/ecantech-esolutions_cybersecurity2026-supplychainrisk-activity-7437789341898334208-MwGd | Ecantech Esolutions | Stryker Hit by Massive Wiper Attack in 79 Countries | Layer 3: Industry
+2026-03-17 | https://www.linkedin.com/posts/activity-7432728360293761024-ZWzc | Unknown | South Africa's Cyber Security Summit2026: Building... | Link | Layer 1: Pipeline Company
+2026-03-17 | https://www.linkedin.com/posts/africa-sustainability-matters_africaopportunities-cleanenergy-climateinnovation-activity-7438129183400243200-zPbS | Africa Sustainability Matters | Africa Clean Energy Fund: Digital Innovation Grants for ... | Layer 1: Pipeline Company

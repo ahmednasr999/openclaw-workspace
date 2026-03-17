@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Heartbeat v2 — System health check. Outputs clean JSON for cron agent."""
+"""Heartbeat v2 - System health check. Outputs clean JSON for cron agent."""
 import json, subprocess, os, time
 from datetime import datetime
 from pathlib import Path

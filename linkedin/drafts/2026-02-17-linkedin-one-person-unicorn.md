@@ -26,6 +26,6 @@ The CDO who understands this will build the AI Operations nerve center.
 
 The one who doesn't will wonder why their transformation stalled.
 
-What's your take — is the one-person unicorn the future or an outlier?
+What's your take - is the one-person unicorn the future or an outlier?
 
 #AI #DigitalTransformation #Leadership #PMO #CDO

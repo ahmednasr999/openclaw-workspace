@@ -75,7 +75,7 @@
 
 > **OPENING:** "I scale digital transformation that delivers measurable growth."
 > 
-> **PROOF POINT 1:** "At Talabat (Delivery Hero), I scaled daily operations 233% — from 30K to 7M orders."
+> **PROOF POINT 1:** "At Talabat (Delivery Hero), I scaled daily operations 233% - from 30K to 7M orders."
 > 
 > **PROOF POINT 2:** "At Network International, I built the PMO from scratch, managing 300+ concurrent bank projects across 7 countries."
 > 

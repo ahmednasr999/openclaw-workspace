@@ -4,7 +4,7 @@ Mandatory method: follow /root/.openclaw/workspace/playbooks/google-search-intel
 
 ---
 
-## STEP 1 — EMAIL SCAN (Gmail)
+## STEP 1 - EMAIL SCAN (Gmail)
 
 Check Gmail (ahmednasr999@gmail.com) for the last 24 hours using GOG_KEYRING_PASSWORD=pass@123 with gog gmail commands.
 
@@ -15,13 +15,13 @@ Look for:
 - Any email from companies in the Active Pipeline at /root/.openclaw/workspace/jobs-bank/pipeline.md
 
 **Recruiter response protocol:** If any email matches a company in the pipeline:
-- Flag it IMMEDIATELY as: "🔴 RECRUITER RESPONSE: [Company] — [Subject] — Action needed NOW"
+- Flag it IMMEDIATELY as: "🔴 RECRUITER RESPONSE: [Company] - [Subject] - Action needed NOW"
 - Create trigger: /root/.openclaw/workspace/jobs-bank/handoff/recruiter-response-[slug]-[date].trigger with content: RESEARCHER_BRIEF_NEEDED
 - Log to /root/.openclaw/workspace/memory/recruiter-responses.md
 
 ---
 
-## STEP 2 — WEB SEARCH (Tavily)
+## STEP 2 - WEB SEARCH (Tavily)
 
 Run 4 targeted searches for NEW executive roles in GCC. Use operator-first query design from the playbook, keep results high signal and verifiable:
 
@@ -35,7 +35,7 @@ Max 8 results per search.
 
 ---
 
-## STEP 3 — DEDUP CHECK
+## STEP 3 - DEDUP CHECK
 
 Before processing any role, cross-check against ALL THREE dedup sources:
 1. /root/.openclaw/workspace/jobs-bank/pipeline.md (existing pipeline entries)
@@ -47,7 +47,7 @@ Apply the reliability ladder: Tier 1 official source confirmed, Tier 2 reputable
 
 ---
 
-## STEP 4 — FILTER + SCORE
+## STEP 4 - FILTER + SCORE
 
 For each NEW role from email alerts AND web search:
 
@@ -80,7 +80,7 @@ For each NEW role from email alerts AND web search:
 - Scoring criteria: keyword match, seniority alignment, sector fit, location match, required skills coverage
 - Keep only roles with ATS >= 80%
 
-**Profile match explanation (NEW — required for every role):**
+**Profile match explanation (NEW - required for every role):**
 For each qualifying role, write ONE plain-English sentence explaining why this role fits Ahmed specifically. Examples:
 - "Matches HealthTech + PMO background directly, $50M transformation experience maps to their digital health mandate."
 - "AI strategy focus aligns with 14-agent ecosystem Ahmed built at TopMed; Talabat scale story is a direct fit."
@@ -90,7 +90,7 @@ This sentence goes into the summary AND into the handoff file.
 
 ---
 
-## STEP 5 — PIPELINE UPDATE
+## STEP 5 - PIPELINE UPDATE
 
 For each new role passing all filters:
 
@@ -108,18 +108,18 @@ d) Append URL hash to /root/.openclaw/workspace/memory/job-radar-seen.txt to pre
 
 ---
 
-## STEP 6 — COMMIT TO GITHUB
+## STEP 6 - COMMIT TO GITHUB
 
-cd /root/.openclaw/workspace && git add jobs-bank/ memory/job-radar-seen.txt && git commit -m "jobs: morning radar + email scan [DATE] — [X new roles]" && git push
+cd /root/.openclaw/workspace && git add jobs-bank/ memory/job-radar-seen.txt && git commit -m "jobs: morning radar + email scan [DATE] - [X new roles]" && git push
 
 ---
 
-## STEP 7 — SEND SUMMARY TO AHMED
+## STEP 7 - SEND SUMMARY TO AHMED
 
 Format the output as clean plain text. Structure exactly as follows:
 
 ```
-📡 JOB RADAR — [Date] | [Time] Cairo
+📡 JOB RADAR - [Date] | [Time] Cairo
 
 🔴 URGENT (recruiter responses / interview invites):
 - [Item or "None today"]
@@ -131,7 +131,7 @@ Format the output as clean plain text. Structure exactly as follows:
 
 🎯 NEW ROLES FOUND: [X]
 [For each role:]
-[#]. [Company] — [Role] | [Location] | ATS: [X]%
+[#]. [Company] - [Role] | [Location] | ATS: [X]%
 Why it fits: [one-sentence profile match]
 Link: [URL]
 

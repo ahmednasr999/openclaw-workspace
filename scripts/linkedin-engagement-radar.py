@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-LinkedIn Engagement Radar — Extract latest posts from GCC influencers via Defuddle.
+LinkedIn Engagement Radar - Extract latest posts from GCC influencers via Defuddle.
 Drafts ready-to-post comments for Ahmed's engagement strategy.
 
 Usage: python3 linkedin-engagement-radar.py
@@ -166,7 +166,7 @@ def generate_report(results):
     
     extracted = [r for r in results if r["extracted"]]
     
-    report = f"""# LinkedIn Engagement Radar — {date}
+    report = f"""# LinkedIn Engagement Radar - {date}
 
 **Scanned:** {len(results)} profiles
 **With activity:** {len(extracted)} profiles

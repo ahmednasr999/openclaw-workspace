@@ -4,7 +4,7 @@ Your job: find the top performing LinkedIn posts in Ahmed's niche this week, cro
 
 ---
 
-## STEP 1 — SEARCH FOR TOP POSTS IN NICHE
+## STEP 1 - SEARCH FOR TOP POSTS IN NICHE
 
 Use web_fetch and web_search (Tavily key: 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) to find high-engagement LinkedIn posts from the past 7 days in these topics:
 
@@ -20,7 +20,7 @@ For each search, look for posts that have:
 
 ---
 
-## STEP 1b — READ THE KNOWLEDGE BANK FIRST
+## STEP 1b - READ THE KNOWLEDGE BANK FIRST
 
 Before analyzing external posts, read Ahmed's existing knowledge bank to understand what frameworks and insights are already available:
 
@@ -39,10 +39,10 @@ You will use this to cross-reference against what's trending externally in Step 
 
 ---
 
-## STEP 2 — EXTRACT AND ANALYZE PATTERNS
+## STEP 2 - EXTRACT AND ANALYZE PATTERNS
 
 For each top post found, extract:
-1. Hook (first line/sentence — what makes someone stop scrolling)
+1. Hook (first line/sentence - what makes someone stop scrolling)
 2. Format (story, numbered list, controversial take, data/stat lead, question)
 3. Topic angle (specific sub-topic within the broader niche)
 4. Approximate engagement level (likes, comments if visible)
@@ -56,7 +56,7 @@ Group findings into patterns:
 
 ---
 
-## STEP 2b — CROSS-REFERENCE: EXTERNAL TRENDS vs KNOWLEDGE BANK
+## STEP 2b - CROSS-REFERENCE: EXTERNAL TRENDS vs KNOWLEDGE BANK
 
 For each top pattern or hot topic found externally, check if Ahmed's knowledge bank has a framework that maps to it.
 
@@ -66,7 +66,7 @@ Two outcomes:
 
 **No match:** Add the new pattern as a raw entry to /root/.openclaw/workspace/memory/knowledge/raw-inspiration.md under today's date:
 ```
-## [DATE] — LinkedIn Intelligence: [Pattern Name]
+## [DATE] - LinkedIn Intelligence: [Pattern Name]
 Source: Thursday intelligence scan
 Pattern: [description]
 Example hook: [best hook found]
@@ -78,7 +78,7 @@ Also surface any banked frameworks or trends that are overdue and map to current
 
 ---
 
-## STEP 3 — UPDATE CONTENT STRATEGY FILE
+## STEP 3 - UPDATE CONTENT STRATEGY FILE
 
 Append a new weekly intelligence section to /root/.openclaw/workspace/memory/knowledge/content-strategy.md:
 
@@ -87,18 +87,18 @@ Use this exact format:
 ```
 ---
 
-## LinkedIn Intelligence — Week of [DATE] | 2026-[WW]
+## LinkedIn Intelligence - Week of [DATE] | 2026-[WW]
 **Generated:** [timestamp]
 **Source:** Top posts scraped from LinkedIn search, [X] posts analyzed
 
 ### This Week's Winning Hooks
-1. "[exact hook pattern]" — [why it works]
-2. "[exact hook pattern]" — [why it works]
-3. "[exact hook pattern]" — [why it works]
+1. "[exact hook pattern]" - [why it works]
+2. "[exact hook pattern]" - [why it works]
+3. "[exact hook pattern]" - [why it works]
 
 ### Dominant Formats This Week
-- [Format]: [% of top posts / frequency] — [example]
-- [Format]: [% of top posts / frequency] — [example]
+- [Format]: [% of top posts / frequency] - [example]
+- [Format]: [% of top posts / frequency] - [example]
 
 ### Hot Topics in Niche (Ride These)
 - [Topic]: [why it's trending, any news hook]
@@ -108,8 +108,8 @@ Use this exact format:
 - [Topic or format]: [why it's overplayed]
 
 ### Top Post Examples
-1. [Author/role] — "[Hook]" — [engagement signal] — [why it worked]
-2. [Author/role] — "[Hook]" — [engagement signal] — [why it worked]
+1. [Author/role] - "[Hook]" - [engagement signal] - [why it worked]
+2. [Author/role] - "[Hook]" - [engagement signal] - [why it worked]
 
 ### Recommendations for Ahmed's Week [N+1] Content
 - Use hook style: [specific recommendation]
@@ -120,7 +120,7 @@ Use this exact format:
 
 ---
 
-## STEP 4 — GENERATE NEXT WEEK'S CONTENT BRIEF
+## STEP 4 - GENERATE NEXT WEEK'S CONTENT BRIEF
 
 Based on the intelligence gathered, write a one-page content brief for the Content Creator agent to use when drafting next week's 5 posts.
 
@@ -128,7 +128,7 @@ Save to: /root/.openclaw/workspace/memory/knowledge/weekly-content-brief.md
 
 Format:
 ```
-# Content Brief — Week of [NEXT MONDAY DATE]
+# Content Brief - Week of [NEXT MONDAY DATE]
 Generated: [timestamp]
 Based on: LinkedIn Intelligence [DATE]
 
@@ -136,29 +136,29 @@ Based on: LinkedIn Intelligence [DATE]
 [2-3 sentences on what angle/tone to lean into, grounded in this week's external signals + knowledge bank cross-reference]
 
 ## Knowledge Bank Activations This Week
-- [Framework name]: [why it fits this week's trending topic] — recommended for [day]
-- [Banked trend]: [why it's timely now] — recommended angle: [specific]
+- [Framework name]: [why it fits this week's trending topic] - recommended for [day]
+- [Banked trend]: [why it's timely now] - recommended angle: [specific]
 - [Overdue pattern]: [last used X weeks ago, maps to current signal]
 
 ## Post Outlines (Sun-Thu)
 
-### Sunday: [Hook idea] — [Format] — [Topic]
+### Sunday: [Hook idea] - [Format] - [Topic]
 Angle: [specific angle that connects to Ahmed's experience]
 Opening line suggestion: [draft first line]
 
-### Monday: [Hook idea] — [Format] — [Topic]
+### Monday: [Hook idea] - [Format] - [Topic]
 Angle: [specific angle]
 Opening line suggestion: [draft first line]
 
-### Tuesday: [Hook idea] — [Format] — [Topic]
+### Tuesday: [Hook idea] - [Format] - [Topic]
 Angle: [specific angle]
 Opening line suggestion: [draft first line]
 
-### Wednesday: [Hook idea] — [Format] — [Topic]
+### Wednesday: [Hook idea] - [Format] - [Topic]
 Angle: [specific angle]
 Opening line suggestion: [draft first line]
 
-### Thursday: [Hook idea] — [Format] — [Topic]
+### Thursday: [Hook idea] - [Format] - [Topic]
 Angle: [specific angle]
 Opening line suggestion: [draft first line]
 
@@ -172,18 +172,18 @@ Thu: CTA-A
 
 ---
 
-## STEP 5 — COMMIT TO GITHUB
+## STEP 5 - COMMIT TO GITHUB
 
 cd /root/.openclaw/workspace && git add memory/knowledge/ && git commit -m "content: LinkedIn intelligence + week brief [DATE]" && git push
 
 ---
 
-## STEP 6 — SUMMARY TO AHMED
+## STEP 6 - SUMMARY TO AHMED
 
 Send a clean summary via Telegram:
 
 ```
-📊 LinkedIn Intelligence — [Date]
+📊 LinkedIn Intelligence - [Date]
 
 🔥 This week's winning hook style:
 "[best hook pattern]"

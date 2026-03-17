@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Security Core — Prompt injection defense and data protection
+Security Core - Prompt injection defense and data protection
 """
 
 import re, subprocess, os
@@ -167,7 +167,7 @@ def check_workspace_security():
         results["warnings"].append({
             "type": "env_files_found",
             "files": env_files,
-            "message": ".env files found in workspace — ensure .gitignore"
+            "message": ".env files found in workspace - ensure .gitignore"
         })
     
     # Check for exposed secrets in git

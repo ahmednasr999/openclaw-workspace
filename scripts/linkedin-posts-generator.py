@@ -106,7 +106,7 @@ def parse_post_file(filepath):
     # Extract title from content if not in frontmatter
     if not title:
         # Try "# LinkedIn Post -- Day, Month DD, YYYY" header
-        header_match = re.search(r'^#\s+LinkedIn Post\s*[—-]+\s*(.+)$', body, re.MULTILINE)
+        header_match = re.search(r'^#\s+LinkedIn Post\s*[--]+\s*(.+)$', body, re.MULTILINE)
         if header_match:
             title = header_match.group(1).strip()
         else:

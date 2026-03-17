@@ -1,4 +1,4 @@
-# Batch CV Processor — Design Doc
+# Batch CV Processor - Design Doc
 
 ## Sheet ID
 `1uKOh3XlsVb6SC0tAHkr239N4Y2d2fQr_BiQJcMHrjNw`

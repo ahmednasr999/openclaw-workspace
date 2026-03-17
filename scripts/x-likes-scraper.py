@@ -124,7 +124,7 @@ def save_to_memory(tweets):
     now = datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
     
     lines = [
-        f"# X Likes — Ahmed Nasr (@AhmedNasr999)",
+        f"# X Likes - Ahmed Nasr (@AhmedNasr999)",
         f"*Last updated: {now}*",
         f"*{len(tweets)} tweets fetched*",
         "",

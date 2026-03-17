@@ -1,4 +1,4 @@
-# LinkedIn Post — Monday, March 23, 2026
+# LinkedIn Post - Monday, March 23, 2026
 
 **Pillar:** Growth (niche expertise)
 **Framework:** SLAY (Story, Lesson, Action, You)

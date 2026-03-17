@@ -5,12 +5,12 @@ LinkedIn Gulf Jobs Scanner v3.0 - Fast Title Filter
 Strategy:
   - Fast search: LinkedIn + Indeed, NO JD fetch (no rate limiting)
   - Filter by: executive title + GCC location + DT/Tech domain
-  - Output: "Radar Picks" — relevant leads surfaced for review
+  - Output: "Radar Picks" - relevant leads surfaced for review
   - ATS scoring against full JD happens at apply time (not here)
   - Runs in < 5 minutes for all searches
 
 ATS_THRESHOLD (82) is applied ONLY when full JD is available.
-Title-only pass surfaces leads — Ahmed decides which to pursue.
+Title-only pass surfaces leads - Ahmed decides which to pursue.
 """
 
 import os, re, json, time
@@ -29,7 +29,7 @@ GCC_COUNTRIES = [
     "Oman",
 ]
 
-# All potential executive titles — searched across ALL GCC countries
+# All potential executive titles - searched across ALL GCC countries
 ALL_TITLES = [
     # Digital Transformation
     "VP Digital Transformation",
@@ -453,7 +453,7 @@ def main():
             f.write(f"⚠️ **DEGRADATION:** Only {total_found} jobs found. Scanner may be rate-limited.\n\n")
 
         if picks:
-            f.write(f"## Priority Picks — C-Suite + UAE/Saudi + DT\n\n")
+            f.write(f"## Priority Picks - C-Suite + UAE/Saudi + DT\n\n")
             for job in picks:
                 f.write(f"### {job['title']}\n")
                 f.write(f"- Company: {job['company']}\n")
@@ -473,7 +473,7 @@ def main():
             f.write(f"## Priority Picks\n\nNo priority picks today.\n\n")
 
         if leads:
-            f.write(f"## Executive Leads — All GCC Relevant\n\n")
+            f.write(f"## Executive Leads - All GCC Relevant\n\n")
             for job in leads:
                 extras = []
                 if job.get('job_level'): extras.append(job['job_level'])
@@ -485,7 +485,7 @@ def main():
 
     # ==================== FILTERED-OUT AUDIT LOG ====================
     with open(FILTERED_LOG, "w") as f:
-        f.write(f"# Filtered-Out Jobs Audit — {date_str}\n\n")
+        f.write(f"# Filtered-Out Jobs Audit - {date_str}\n\n")
         f.write(f"**Total filtered:** {len(filtered_out)}\n\n")
         # Group by reason
         reasons = {}
@@ -500,20 +500,20 @@ def main():
 
     # ==================== SLACK ====================
     if picks:
-        msg = f"🎯 *Gulf Scanner v3.0 — {len(picks)} Priority Picks*\n\n"
+        msg = f"🎯 *Gulf Scanner v3.0 - {len(picks)} Priority Picks*\n\n"
         for j in picks[:5]:
             msg += f"*{j['title']}* at {j['company']} ({j['location']})\n{j['url']}\n\n"
         if leads:
             msg += f"Plus {len(leads)} additional exec leads."
     else:
-        msg = f"📊 *Gulf Scanner v3.0 — {len(leads)} Exec Leads*\n"
+        msg = f"📊 *Gulf Scanner v3.0 - {len(leads)} Exec Leads*\n"
         msg += f"Searches: {total_searches} | Found: {total_found} | Leads: {len(leads)}\n"
         if leads:
             msg += "\n*Top Leads:*\n"
             for j in leads[:5]:
                 msg += f"• {j['title']} | {j['company']} | {j['location']}\n  {j['url']}\n"
         if total_found < MIN_JOBS_ALERT:
-            msg += f"\n⚠️ Low job count — possible rate limit."
+            msg += f"\n⚠️ Low job count - possible rate limit."
 
     send_slack(msg)
 

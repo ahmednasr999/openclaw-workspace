@@ -115,7 +115,7 @@ REQUIRED_SCHEMA = {
             "linkedin_post": "todays_post",
             "today_post": "todays_post",
             # Note: "engagement" is a list of posts, NOT the same as "engagement_radar" (dict).
-            # Don't alias them — they're different data structures.
+            # Don't alias them - they're different data structures.
         }
     }
 }
@@ -459,13 +459,13 @@ def build_document_lines(data):
 def apply_formatting(docs, doc_id, lines, start_index=1):
     """Insert text and apply PREMIUM formatting to Google Doc.
     
-    ARCHITECTURE (LOCKED Mar 17, 2026 — split-run immune):
+    ARCHITECTURE (LOCKED Mar 17, 2026 - split-run immune):
     Phase 1: Insert raw text only (one batch call)
     Phase 2: Re-read document to get Google's ACTUAL paragraph indices
     Phase 3: Match each paragraph to its intended style by text content
     Phase 4: Apply formatting using Google's own indices (zero calculation)
     Phase 5: Make URLs clickable using Google's own element indices
-    Phase 6: Verification pass — catch and fix any remaining splits
+    Phase 6: Verification pass - catch and fix any remaining splits
     
     NEVER calculate text positions manually. ALWAYS use Google's indices.
     """
@@ -656,7 +656,7 @@ def apply_formatting(docs, doc_id, lines, start_index=1):
         docs.documents().batchUpdate(documentId=doc_id, body={'requests': link_requests}).execute()
         print(f"Phase 5: Made {len(link_requests)} URLs clickable")
 
-    # Phase 6: Full verification — re-read and fix ANY split-run issues
+    # Phase 6: Full verification - re-read and fix ANY split-run issues
     doc = docs.documents().get(documentId=doc_id).execute()
     body = doc.get('body', {}).get('content', [])
     fix_requests = []
@@ -707,7 +707,7 @@ def apply_formatting(docs, doc_id, lines, start_index=1):
                 sizes = set(r['size'] for r in non_link)
                 colors = set(r['color'] for r in non_link)
                 if len(sizes) > 1 or len(colors) > 1:
-                    # Mismatch detected — force uniform 10pt, black
+                    # Mismatch detected - force uniform 10pt, black
                     fix_requests.append({
                         'updateTextStyle': {
                             'range': {'startIndex': el_si, 'endIndex': el_ei - 1},
@@ -734,7 +734,7 @@ def apply_formatting(docs, doc_id, lines, start_index=1):
         docs.documents().batchUpdate(documentId=doc_id, body={'requests': fix_requests}).execute()
         print(f"Phase 6: Verification fixed {len(fix_requests)} split-run issues")
     else:
-        print("Phase 6: Verification passed — zero split-run issues")
+        print("Phase 6: Verification passed - zero split-run issues")
 
     return len(format_requests) + len(link_requests) + len(fix_requests)
 

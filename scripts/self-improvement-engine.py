@@ -484,7 +484,7 @@ def evaluate_github_radar(radar_file):
             # Store recommendations in a file for later reference
             rec_file = f"{MEMORY_DIR}/sie-github-recommendations.md"
             with open(rec_file, 'w') as f:
-                f.write(f"# GitHub Radar Recommendations — {datetime.now().strftime('%Y-%m-%d')}\n\n")
+                f.write(f"# GitHub Radar Recommendations - {datetime.now().strftime('%Y-%m-%d')}\n\n")
                 for i, rec in enumerate(recommendations, 1):
                     f.write(f"{i}. {rec}\n")
             return f"GitHub Radar: {len(recommendations)} actionable repos (see sie-github-recommendations.md)"
@@ -1218,7 +1218,7 @@ def generate_insights(results, health_score, state):
                 trends.append(f"- {result['name']}: {direction} from {prev} to {curr}")
     
     # Build markdown
-    md = f"""# System Insights — {timestamp}
+    md = f"""# System Insights - {timestamp}
 
 ## System Health Score: {health_score}/100
 
@@ -1696,7 +1696,7 @@ def main():
             health = health_match.group(1) if health_match else "?"
             warnings = warnings_match.group(1).count('-') if warnings_match else 0
             
-            msg = f"🎯 SIE — Health: {health}/100"
+            msg = f"🎯 SIE - Health: {health}/100"
             if fix_log:
                 kept = sum(1 for f in fix_log if f["result"] == "KEPT")
                 failed = sum(1 for f in fix_log if f["result"] in ("FAILED", "NO_IMPROVEMENT"))
@@ -1734,7 +1734,7 @@ def send_telegram_alert(health_score, warnings, improvements):
     import json
     
     # Build message
-    msg = f"🎯 SIE Daily — Health: {health_score}/100\n\n"
+    msg = f"🎯 SIE Daily - Health: {health_score}/100\n\n"
     
     if warnings:
         msg += "⚠️ Warnings:\n"
