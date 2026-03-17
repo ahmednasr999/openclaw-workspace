@@ -919,3 +919,105 @@ if __name__ == "__main__":
             print("✅ Test event logged")
         else:
             print("❌ Notion client failed")
+
+
+def audit_learnings_staleness():
+    """
+    SIE nightly audit: Flag any learning older than 48h still at "Logged" as "Unacted".
+    Returns list of flagged entries for alerting.
+    """
+    nc = _get_client()
+    if not nc:
+        return []
+    
+    nc.databases["learnings"] = "3268d599-a162-810f-9f1b-ffdc280ae96d"
+    
+    results = nc._query_database("learnings")
+    
+    flagged = []
+    now = datetime.now(timezone(timedelta(hours=2)))
+    cutoff = now - timedelta(hours=48)
+    
+    for r in results:
+        props = r.get("properties", {})
+        status = props.get("Status", {}).get("select", {})
+        status_name = status.get("name", "") if status else ""
+        
+        if status_name != "Logged":
+            continue
+        
+        # Check date
+        date_prop = props.get("Date", {}).get("date")
+        if not date_prop or not date_prop.get("start"):
+            # No date = old entry, flag it
+            pass
+        else:
+            entry_date = datetime.fromisoformat(date_prop["start"].replace("Z", "+00:00"))
+            if hasattr(entry_date, 'tzinfo') and entry_date.tzinfo is None:
+                entry_date = entry_date.replace(tzinfo=timezone(timedelta(hours=2)))
+            if entry_date > cutoff:
+                continue  # Too recent, skip
+        
+        title_arr = props.get("Title", {}).get("title", [])
+        title = title_arr[0].get("plain_text", "") if title_arr else "Untitled"
+        
+        # Flag as Unacted
+        try:
+            nc._update_page(r["id"], {"Status": {"select": {"name": "Unacted"}}})
+            flagged.append(title[:80])
+            import time
+            time.sleep(0.35)
+        except Exception as e:
+            print(f"[audit_learnings] ERROR flagging {title[:30]}: {e}")
+    
+    print(f"[audit_learnings] {len(flagged)} entries flagged as Unacted")
+    return flagged
+
+
+def detect_repeated_learnings():
+    """
+    Find learnings that appear multiple times (similar titles).
+    Updates Times Repeated field.
+    """
+    nc = _get_client()
+    if not nc:
+        return []
+    
+    nc.databases["learnings"] = "3268d599-a162-810f-9f1b-ffdc280ae96d"
+    
+    results = nc._query_database("learnings")
+    
+    # Group by normalized title
+    title_groups = {}
+    for r in results:
+        props = r.get("properties", {})
+        title_arr = props.get("Title", {}).get("title", [])
+        title = title_arr[0].get("plain_text", "").lower().strip() if title_arr else ""
+        if not title:
+            continue
+        
+        # Normalize: remove dates, numbers, common prefixes
+        import re
+        normalized = re.sub(r'\d{4}-\d{2}-\d{2}', '', title)
+        normalized = re.sub(r'[^\w\s]', '', normalized).strip()
+        # Use first 30 chars as grouping key
+        key = normalized[:30]
+        
+        if key not in title_groups:
+            title_groups[key] = []
+        title_groups[key].append(r["id"])
+    
+    repeated = []
+    for key, page_ids in title_groups.items():
+        if len(page_ids) > 1:
+            repeated.append({"key": key, "count": len(page_ids)})
+            for pid in page_ids:
+                try:
+                    nc._update_page(pid, {"Times Repeated": {"number": len(page_ids)}})
+                    import time
+                    time.sleep(0.35)
+                except:
+                    pass
+    
+    print(f"[detect_repeated] Found {len(repeated)} repeated learning patterns")
+    return repeated
