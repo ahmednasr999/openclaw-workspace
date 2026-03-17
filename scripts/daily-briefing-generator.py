@@ -541,6 +541,16 @@ def apply_formatting(docs, doc_id, lines, start_index=1):
             })
 
         elif style == "NORMAL_TEXT":
+            # Step A0: EXPLICITLY set paragraph style to NORMAL_TEXT
+            # Without this, Google inherits the previous paragraph's heading style
+            # when inserting at the top of a document that starts with a heading
+            format_requests.append({
+                'updateParagraphStyle': {
+                    'range': {'startIndex': si, 'endIndex': ei},
+                    'paragraphStyle': {'namedStyleType': 'NORMAL_TEXT'},
+                    'fields': 'namedStyleType'
+                }
+            })
             # Step A: Uniform base style on FULL paragraph (Google's indices)
             format_requests.append({
                 'updateTextStyle': {
