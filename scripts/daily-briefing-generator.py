@@ -370,189 +370,92 @@ def build_document_lines(data):
 def apply_formatting(docs, doc_id, lines, start_index=1):
     """Insert text and apply PREMIUM formatting to Google Doc.
     
-    CRITICAL: All styling is applied to FULL PARAGRAPH RANGES to prevent
-    split-run issues where Google Docs API splits text into multiple runs
-    and only styles part of the text. NEVER style individual runs.
+    ARCHITECTURE (LOCKED Mar 17, 2026 — split-run immune):
+    Phase 1: Insert raw text only (one batch call)
+    Phase 2: Re-read document to get Google's ACTUAL paragraph indices
+    Phase 3: Match each paragraph to its intended style by text content
+    Phase 4: Apply formatting using Google's own indices (zero calculation)
+    Phase 5: Make URLs clickable using Google's own element indices
+    Phase 6: Verification pass — catch and fix any remaining splits
     
-    Premium Quality Standard (LOCKED Mar 17, 2026):
-    - H1: Date headers only (blue, bold)
-    - H2: Section titles (dark, bold)
-    - H3: Subsections (dark, bold)
-    - KV labels: Bold label, normal value, 10pt
-    - Body text: 10pt regular
-    - Footer: 8pt grey italic
-    - All URLs: clickable hyperlinks
-    - Zero split-run tolerance
+    NEVER calculate text positions manually. ALWAYS use Google's indices.
     """
-    all_requests = []
-
-    # Step 1: Insert all text at once
-    full_text = "\n".join(text for text, _ in lines)
-    all_requests.append({
-        'insertText': {'location': {'index': start_index}, 'text': full_text}
-    })
-
-    # Step 2: Apply paragraph styles AND full-range text styles together
-    # This prevents split-run issues by styling the ENTIRE paragraph range
-    current_pos = start_index
-    for text, style in lines:
-        line_end = current_pos + len(text)
-        
-        if text:
-            if style in ("HEADING_1", "HEADING_2", "HEADING_3"):
-                # Paragraph style
-                all_requests.append({
-                    'updateParagraphStyle': {
-                        'range': {'startIndex': current_pos, 'endIndex': line_end + 1},
-                        'paragraphStyle': {'namedStyleType': style},
-                        'fields': 'namedStyleType'
-                    }
-                })
-                
-                # FULL-RANGE text style for headings
-                if style == "HEADING_1":
-                    all_requests.append({
-                        'updateTextStyle': {
-                            'range': {'startIndex': current_pos, 'endIndex': line_end},
-                            'textStyle': {
-                                'bold': True,
-                                'foregroundColor': {'color': {'rgbColor': {'red': 0.1, 'green': 0.3, 'blue': 0.7}}}
-                            },
-                            'fields': 'bold,foregroundColor'
-                        }
-                    })
-                elif style == "HEADING_2":
-                    all_requests.append({
-                        'updateTextStyle': {
-                            'range': {'startIndex': current_pos, 'endIndex': line_end},
-                            'textStyle': {
-                                'bold': True,
-                                'foregroundColor': {'color': {'rgbColor': {'red': 0.15, 'green': 0.15, 'blue': 0.15}}}
-                            },
-                            'fields': 'bold,foregroundColor'
-                        }
-                    })
-                elif style == "HEADING_3":
-                    all_requests.append({
-                        'updateTextStyle': {
-                            'range': {'startIndex': current_pos, 'endIndex': line_end},
-                            'textStyle': {
-                                'bold': True,
-                                'foregroundColor': {'color': {'rgbColor': {'red': 0.2, 'green': 0.2, 'blue': 0.2}}}
-                            },
-                            'fields': 'bold,foregroundColor'
-                        }
-                    })
-            
-            elif style == "NORMAL_TEXT":
-                # Step A: Apply UNIFORM base styling to FULL paragraph range first
-                all_requests.append({
-                    'updateTextStyle': {
-                        'range': {'startIndex': current_pos, 'endIndex': line_end},
-                        'textStyle': {
-                            'bold': False,
-                            'italic': False,
-                            'fontSize': {'magnitude': 10, 'unit': 'PT'}
-                        },
-                        'fields': 'bold,italic,fontSize'
-                    }
-                })
-                
-                # Step B: Then bold ONLY the label portion (if KV pair)
-                for label in BOLD_LABELS:
-                    idx = text.find(label)
-                    if idx >= 0:
-                        all_requests.append({
-                            'updateTextStyle': {
-                                'range': {
-                                    'startIndex': current_pos + idx,
-                                    'endIndex': current_pos + idx + len(label)
-                                },
-                                'textStyle': {'bold': True},
-                                'fields': 'bold'
-                            }
-                        })
-                        break
-        
-        current_pos = line_end + 1
-
-    # Step 3: Footer styling (full range, grey italic 8pt)
-    footer_prefix = "Generated by NASR"
-    footer_idx = full_text.rfind(footer_prefix)
-    if footer_idx >= 0:
-        footer_start = start_index + footer_idx
-        footer_end = start_index + len(full_text)
-        all_requests.append({
-            'updateTextStyle': {
-                'range': {'startIndex': footer_start, 'endIndex': footer_end},
-                'textStyle': {
-                    'italic': True,
-                    'bold': False,
-                    'foregroundColor': {'color': {'rgbColor': {'red': 0.5, 'green': 0.5, 'blue': 0.5}}},
-                    'fontSize': {'magnitude': 8, 'unit': 'PT'}
-                },
-                'fields': 'italic,bold,foregroundColor,fontSize'
-            }
-        })
-
-    # Step 4: Execute all formatting in one batch
-    result = docs.documents().batchUpdate(
-        documentId=doc_id,
-        body={'requests': all_requests}
-    ).execute()
-
-    # Step 5: Second pass — make all URLs clickable hyperlinks
     import re
+
+    # Phase 1: Insert raw text only
+    full_text = "\n".join(text for text, _ in lines)
+    docs.documents().batchUpdate(
+        documentId=doc_id,
+        body={'requests': [{'insertText': {'location': {'index': start_index}, 'text': full_text}}]}
+    ).execute()
+    print(f"Phase 1: Inserted {len(full_text)} chars at index {start_index}")
+
+    # Phase 2: Re-read document to get Google's ACTUAL indices
     doc = docs.documents().get(documentId=doc_id).execute()
-    content = doc.get('body', {}).get('content', [])
-    url_pattern = re.compile(r'https?://[^\s\n]+')
-    link_requests = []
+    body = doc.get('body', {}).get('content', [])
 
-    for element in content:
-        if 'paragraph' in element:
-            for elem in element['paragraph'].get('elements', []):
-                text_run = elem.get('textRun', {})
-                text = text_run.get('content', '')
-                elem_start = elem.get('startIndex', 0)
-                existing_link = text_run.get('textStyle', {}).get('link', {})
-                if not existing_link:
-                    for match in url_pattern.finditer(text):
-                        url = match.group(0)
-                        url_start = elem_start + match.start()
-                        url_end = elem_start + match.end()
-                        link_requests.append({
-                            'updateTextStyle': {
-                                'range': {'startIndex': url_start, 'endIndex': url_end},
-                                'textStyle': {'link': {'url': url}},
-                                'fields': 'link'
-                            }
-                        })
+    # Build a map of paragraph text -> intended style from our lines
+    # We match by text content, not by position
+    style_map = {}  # text.strip() -> style
+    for text, style in lines:
+        t = text.strip()
+        if t:
+            style_map[t] = style
 
-    if link_requests:
-        docs.documents().batchUpdate(
-            documentId=doc_id,
-            body={'requests': link_requests}
-        ).execute()
-        print(f"Made {len(link_requests)} URLs clickable.")
+    # Phase 3: Match and apply formatting using Google's own indices
+    format_requests = []
+    inserted_end = start_index + len(full_text)
 
-    # Step 6: Split-run verification (catch any API-induced splits)
-    doc = docs.documents().get(documentId=doc_id).execute()
-    fix_requests = []
-    for element in doc.get('body', {}).get('content', []):
-        if 'paragraph' not in element:
+    for elem in body:
+        if 'paragraph' not in elem:
             continue
-        elements_list = element['paragraph'].get('elements', [])
-        if len(elements_list) < 2:
+        si = elem.get('startIndex', 0)
+        ei = elem.get('endIndex', 0)
+
+        # Only process paragraphs within our inserted range
+        if si < start_index or si >= inserted_end:
             continue
-        named = element['paragraph'].get('paragraphStyle', {}).get('namedStyleType', '')
-        if named in ('HEADING_1', 'HEADING_2', 'HEADING_3'):
-            # Force uniform styling across ALL runs in this heading
-            si = element.get('startIndex', 0)
-            ei = element.get('endIndex', 0)
-            color = {'red': 0.1, 'green': 0.3, 'blue': 0.7} if named == 'HEADING_1' else {'red': 0.15, 'green': 0.15, 'blue': 0.15}
-            fix_requests.append({
+
+        # Get the full paragraph text
+        para_text = ''
+        for el in elem['paragraph'].get('elements', []):
+            para_text += el.get('textRun', {}).get('content', '')
+        text = para_text.strip()
+        if not text:
+            continue
+
+        # Look up the intended style
+        style = style_map.get(text)
+        if not style:
+            # Try partial match for long lines that might be truncated
+            for key, val in style_map.items():
+                if key.startswith(text[:30]) or text.startswith(key[:30]):
+                    style = val
+                    break
+
+        if not style:
+            style = "NORMAL_TEXT"
+
+        text_end = ei - 1  # ei includes the newline; text_end is the last char
+
+        if style in ("HEADING_1", "HEADING_2", "HEADING_3"):
+            # Set paragraph style
+            format_requests.append({
+                'updateParagraphStyle': {
+                    'range': {'startIndex': si, 'endIndex': ei},
+                    'paragraphStyle': {'namedStyleType': style},
+                    'fields': 'namedStyleType'
+                }
+            })
+            # Full-range text style using Google's indices
+            color = {
+                'HEADING_1': {'red': 0.1, 'green': 0.3, 'blue': 0.7},
+                'HEADING_2': {'red': 0.15, 'green': 0.15, 'blue': 0.15},
+                'HEADING_3': {'red': 0.2, 'green': 0.2, 'blue': 0.2},
+            }[style]
+            format_requests.append({
                 'updateTextStyle': {
-                    'range': {'startIndex': si, 'endIndex': ei - 1},
+                    'range': {'startIndex': si, 'endIndex': text_end},
                     'textStyle': {
                         'bold': True,
                         'foregroundColor': {'color': {'rgbColor': color}}
@@ -560,15 +463,181 @@ def apply_formatting(docs, doc_id, lines, start_index=1):
                     'fields': 'bold,foregroundColor'
                 }
             })
-    
-    if fix_requests:
-        docs.documents().batchUpdate(
-            documentId=doc_id,
-            body={'requests': fix_requests}
-        ).execute()
-        print(f"Split-run verification: fixed {len(fix_requests)} headings.")
 
-    return len(all_requests) + len(link_requests) + len(fix_requests)
+        elif style == "NORMAL_TEXT":
+            # Step A: Uniform base style on FULL paragraph (Google's indices)
+            format_requests.append({
+                'updateTextStyle': {
+                    'range': {'startIndex': si, 'endIndex': text_end},
+                    'textStyle': {
+                        'bold': False,
+                        'italic': False,
+                        'fontSize': {'magnitude': 10, 'unit': 'PT'}
+                    },
+                    'fields': 'bold,italic,fontSize'
+                }
+            })
+
+            # Step B: Bold KV label using Google's element indices
+            for label in BOLD_LABELS:
+                label_pos = para_text.find(label)
+                if label_pos >= 0:
+                    # Find the element that contains this label
+                    char_offset = 0
+                    for el in elem['paragraph'].get('elements', []):
+                        el_text = el.get('textRun', {}).get('content', '')
+                        el_si = el.get('startIndex', 0)
+                        local_pos = label_pos - char_offset
+                        if 0 <= local_pos < len(el_text):
+                            label_start = el_si + local_pos
+                            label_end = label_start + len(label)
+                            format_requests.append({
+                                'updateTextStyle': {
+                                    'range': {'startIndex': label_start, 'endIndex': min(label_end, text_end)},
+                                    'textStyle': {'bold': True},
+                                    'fields': 'bold'
+                                }
+                            })
+                            break
+                        char_offset += len(el_text)
+                    break
+
+        # Footer detection
+        if 'Generated by NASR' in text:
+            format_requests.append({
+                'updateTextStyle': {
+                    'range': {'startIndex': si, 'endIndex': text_end},
+                    'textStyle': {
+                        'italic': True,
+                        'bold': False,
+                        'foregroundColor': {'color': {'rgbColor': {'red': 0.5, 'green': 0.5, 'blue': 0.5}}},
+                        'fontSize': {'magnitude': 8, 'unit': 'PT'}
+                    },
+                    'fields': 'italic,bold,foregroundColor,fontSize'
+                }
+            })
+
+    # Phase 4: Execute all formatting
+    if format_requests:
+        batch_size = 400
+        for i in range(0, len(format_requests), batch_size):
+            batch = format_requests[i:i+batch_size]
+            docs.documents().batchUpdate(documentId=doc_id, body={'requests': batch}).execute()
+        print(f"Phase 4: Applied {len(format_requests)} formatting requests")
+
+    # Phase 5: Make URLs clickable using Google's own element indices
+    doc = docs.documents().get(documentId=doc_id).execute()
+    body = doc.get('body', {}).get('content', [])
+    url_pattern = re.compile(r'https?://[^\s\n]+')
+    link_requests = []
+
+    for element in body:
+        if 'paragraph' not in element:
+            continue
+        el_si = element.get('startIndex', 0)
+        if el_si < start_index or el_si >= inserted_end:
+            continue
+        for el in element['paragraph'].get('elements', []):
+            text_run = el.get('textRun', {})
+            text = text_run.get('content', '')
+            elem_start = el.get('startIndex', 0)
+            existing_link = text_run.get('textStyle', {}).get('link', {})
+            if not existing_link:
+                for match in url_pattern.finditer(text):
+                    url = match.group(0)
+                    link_requests.append({
+                        'updateTextStyle': {
+                            'range': {'startIndex': elem_start + match.start(), 'endIndex': elem_start + match.end()},
+                            'textStyle': {'link': {'url': url}},
+                            'fields': 'link'
+                        }
+                    })
+
+    if link_requests:
+        docs.documents().batchUpdate(documentId=doc_id, body={'requests': link_requests}).execute()
+        print(f"Phase 5: Made {len(link_requests)} URLs clickable")
+
+    # Phase 6: Full verification — re-read and fix ANY split-run issues
+    doc = docs.documents().get(documentId=doc_id).execute()
+    body = doc.get('body', {}).get('content', [])
+    fix_requests = []
+
+    for element in body:
+        if 'paragraph' not in element:
+            continue
+        el_si = element.get('startIndex', 0)
+        el_ei = element.get('endIndex', 0)
+        if el_si < start_index or el_si >= inserted_end:
+            continue
+
+        elements_list = element['paragraph'].get('elements', [])
+        if len(elements_list) < 2:
+            continue
+
+        named = element['paragraph'].get('paragraphStyle', {}).get('namedStyleType', '')
+        para_text = ''.join(el.get('textRun', {}).get('content', '') for el in elements_list).strip()
+
+        # For headings: force uniform style across all runs
+        if named in ('HEADING_1', 'HEADING_2', 'HEADING_3'):
+            color = {'red': 0.1, 'green': 0.3, 'blue': 0.7} if named == 'HEADING_1' else {'red': 0.15, 'green': 0.15, 'blue': 0.15}
+            fix_requests.append({
+                'updateTextStyle': {
+                    'range': {'startIndex': el_si, 'endIndex': el_ei - 1},
+                    'textStyle': {'bold': True, 'foregroundColor': {'color': {'rgbColor': color}}},
+                    'fields': 'bold,foregroundColor'
+                }
+            })
+
+        # For normal text: check for font-size or color mismatches between runs
+        elif named == 'NORMAL_TEXT':
+            runs = []
+            for el in elements_list:
+                tr = el.get('textRun', {})
+                t = tr.get('content', '').strip()
+                ts = tr.get('textStyle', {})
+                if t:
+                    runs.append({
+                        'size': ts.get('fontSize', {}).get('magnitude') if ts.get('fontSize') else None,
+                        'color': str(ts.get('foregroundColor', '')),
+                        'link': bool(ts.get('link'))
+                    })
+
+            # Check for mismatches (excluding link runs)
+            non_link = [r for r in runs if not r['link']]
+            if len(non_link) >= 2:
+                sizes = set(r['size'] for r in non_link)
+                colors = set(r['color'] for r in non_link)
+                if len(sizes) > 1 or len(colors) > 1:
+                    # Mismatch detected — force uniform 10pt, black
+                    fix_requests.append({
+                        'updateTextStyle': {
+                            'range': {'startIndex': el_si, 'endIndex': el_ei - 1},
+                            'textStyle': {
+                                'fontSize': {'magnitude': 10, 'unit': 'PT'},
+                                'foregroundColor': {'color': {'rgbColor': {'red': 0, 'green': 0, 'blue': 0}}}
+                            },
+                            'fields': 'fontSize,foregroundColor'
+                        }
+                    })
+                    # Re-bold KV label if present
+                    for label in BOLD_LABELS:
+                        if para_text.startswith(label):
+                            fix_requests.append({
+                                'updateTextStyle': {
+                                    'range': {'startIndex': el_si, 'endIndex': el_si + len(label)},
+                                    'textStyle': {'bold': True},
+                                    'fields': 'bold'
+                                }
+                            })
+                            break
+
+    if fix_requests:
+        docs.documents().batchUpdate(documentId=doc_id, body={'requests': fix_requests}).execute()
+        print(f"Phase 6: Verification fixed {len(fix_requests)} split-run issues")
+    else:
+        print("Phase 6: Verification passed — zero split-run issues")
+
+    return len(format_requests) + len(link_requests) + len(fix_requests)
 
 
 def main():
