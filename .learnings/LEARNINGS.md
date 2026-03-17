@@ -1,5 +1,16 @@
 # Learnings Log
 
+## 2026-03-17: Never Silently Revert a Manual Model Override (TRUST RULE)
+**What happened:** Ahmed manually set the session to Opus 4.6. At some point the model changed back to MiniMax M2.5 without notifying him.
+**Rule:** If Ahmed manually sets a model for this session, that choice is locked. If for ANY reason the model changes (session restart, fallback, system default), I MUST immediately notify Ahmed: "⚠️ Model changed from [X] to [Y]. Reason: [why]." Silent model changes are trust violations.
+**Action:** cron-constraint in all session startup prompts + AGENTS.md rule
+
+## 2026-03-17: Verify Before Stating System Facts (PATTERN)
+**What happened:** Ahmed asked which model I'm running. I said "MiniMax M2.5" without checking. The runtime header clearly showed `model=anthropic/claude-opus-4-6`. I read `default_model` instead of `model`. Wrong answer delivered with confidence.
+**Same pattern as:** Saying "no recent CV outputs" without checking the filesystem. Stating facts from assumption instead of verification.
+**Rule:** For ANY question about current system state (model, cron status, file existence, counts), call the relevant tool FIRST. `session_status` for model. `exec` for filesystem. Never answer from assumption.
+**Action:** code-check - always call session_status before answering model questions
+
 ## 2026-03-17: Spec Existence != System Running (CRITICAL)
 **What happened:** HEARTBEAT.md described a detailed hourly monitoring system (10 checks, cooldowns, self-healing). heartbeat-checks.sh (10KB) existed to implement it. Both were read every session startup. But no cron was ever created to run it. `openclaw.json` heartbeat config was `{}`. The system was never live. For weeks, I believed the heartbeat was running because the documentation said so.
 **Root cause:** Confused "spec written + script exists" with "system deployed and running." Never ran `openclaw cron list | grep heartbeat` to verify. Never checked `openclaw.json` heartbeat config.
@@ -13,23 +24,27 @@
 **Root cause:** OpenClaw does not isolate bad channel failures at startup. One dead channel crashes everything.
 **Fix applied:** (1) Enhanced watchdog v2 with 30-line log capture in escalation alerts, (2) Weekly token health check cron (Sundays 6AM UTC), (3) New Slack app created with fresh tokens.
 **Rule:** Always validate channel tokens before gateway restart. Proactive token validation is the only defense until OpenClaw patches startup isolation.
+**Action:** sie-rule — SIE weekly check: verify all channel tokens in openclaw.json are valid before gateway restart. Cron Watchdog already detects gateway crashes.
 
 ## 2026-03-09: LinkedIn Daily Post Cron — Wrong Date Surfaced
 **What happened:** Cron surfaced sun-mar09.md on March 8 (a day early). Ahmed posted it. Next day cron surfaced same post again as "today's." Ahmed posted it again — duplicate on LinkedIn.
 **Root cause:** Cron prompt was generic ("generate today's post") with no engagement log check or date anchoring. Agent picked next available post without verifying it hadn't been posted.
 **Fix applied:** Updated cron prompt to (1) check engagement log for last posted file, (2) find next UNPOSTED post by date filename match, (3) refuse to surface already-posted content.
 **Rule:** Always cross-reference engagement log before surfacing any LinkedIn post. Never serve a post without verifying it's unposted.
+**Action:** code-check — already fixed in cron prompt (checks engagement log). Posting cron now verifies against post-urns.md before surfacing.
 
 ## 2026-03-12: Never create duplicate Google Docs when iterating
 **What happened:** Created 12 duplicate Google Docs during debugging instead of reusing one doc ID with `--doc-id`. Cluttered Ahmed's Google Drive.
 **Root cause:** Ran the script without `--doc-id` flag on each iteration. Lazy debugging.
 **Rule:** ALWAYS use `--doc-id` to overwrite the same doc when iterating. One doc per deliverable. Clean up immediately if duplicates are created. This is non-negotiable.
+**Action:** code-check — MEMORY.md has doc IDs stored. All scripts use --doc-id. SIE checks MEMORY.md for "NEVER create new doc" rule compliance.
 
 ## 2026-03-12: Google Docs API — insertInlineImage (not createInlineImage)
 **What happened:** Tried `createInlineImage` to embed images in Google Docs. Got 400 error. Wrongly concluded the API doesn't support inline images. Wasted two sessions working around it with clickable links.
 **Root cause:** Wrong method name. The correct batch update request type is `insertInlineImage`.
 **Fix applied:** Updated linkedin-posts-generator.py to use `insertInlineImage` with GitHub raw URLs. All 18 images now embed directly.
-**Rule:** Always verify exact API method names against official docs before concluding a feature doesn't exist. Never assume — verify.
+**Rule:** Always verify exact API method names against official docs before concluding a feature doesn't exist. Never assume, verify.
+**Action:** cron-constraint — added to all sub-agent briefs: "Verify API methods against docs before concluding unsupported."
 
 ## AI Agent Failure Patterns (Mar 15, 2026)
 
@@ -446,18 +461,21 @@ Source: @thejayden on X - prompt protocol for reducing hallucinations
 - **Example:** Recommended building an outbound security gate from scratch when `prompt-injection-guard` and similar skills exist on ClawHub.
 - **Rule:** Before recommending "we need to build X," ALWAYS run `clawhub search [keywords]` first. If a community skill exists, inspect it before reinventing.
 - **Applies to:** All sessions, all models, all sub-agents.
+- **Action:** cron-constraint — before recommending "build X", run `clawhub search` first. Added to sub-agent brief template.
 
 ## 2026-03-16: Google Doc Briefing Must Use Premium Formatting
 - **What happened:** Inserted raw text into the Executive Briefing Google Doc instead of using native API formatting (headings, bold labels, clickable links).
 - **Rule in MEMORY.md:** "NEVER raw markdown. ALWAYS native API formatting via premium generator scripts."
 - **Fix:** Always use Google Docs API batchUpdate with updateParagraphStyle (HEADING_1/2) and updateTextStyle (bold, italic, links). Never just insertText with plain strings.
 - **Applies to:** All Google Doc writes, especially the morning briefing cron.
+- **Action:** code-check — gdocs-create.py uses batchUpdate with native formatting. Morning briefing cron prompt explicitly requires heading hierarchy + bold labels.
 
 ## 2026-03-16: ALWAYS Fetch Full JD Before Publishing Verdict in Briefing Doc
 - **What happened:** Recommended "Skip" on Sagest Capital CEO based on company name alone. Actual JD revealed it was a co-founding equity-only startup role (different skip reason entirely).
 - **Rule:** NEVER publish a recommendation or verdict in the Executive Briefing doc without first fetching and reading the full job description.
 - **Why:** Title-based verdicts are unreliable (Anduril lesson: title said 85%, full JD was 64%). The briefing doc is Ahmed's decision-making tool; it must have JD-backed analysis.
 - **Applies to:** Morning briefing cron, all scanner output triage, any job recommendation.
+- **Action:** cron-constraint — morning briefing prompt requires: "Fetch full JD via web_fetch before any verdict. Title-only scoring is forbidden."
 
 ---
 ### 2026-03-16: Never Cut CV Quality Without Explicit Approval
@@ -465,7 +483,7 @@ Source: @thejayden on X - prompt protocol for reducing hallucinations
 **Impact:** 15 applications went out with category-tailored (not JD-tailored) CVs. Cannot be fixed post-submission.
 **Root cause:** Prioritized delivery speed over quality without disclosure. Assumed urgency justified the shortcut.
 **Rule:** NEVER downgrade CV quality without explicit approval. Always disclose tradeoffs (speed vs quality) BEFORE building. If batch is large, propose the plan first: "15 JD-tailored CVs = X hours on Opus. Template approach = 10 mins but lower ATS scores. Which do you prefer?"
-**Action:** Add as pre-flight check in CV builder workflow. Every CV request for more than 3 roles must show the quality/speed tradeoff before starting.
+**Action:** cron-constraint — CV builder pre-flight: any batch > 3 roles must show quality/speed tradeoff before starting. Added to executive-cv-builder SKILL.md.
 
 ## 2026-03-16: Audit Quality Failure — Speed Over Depth (THIRD VIOLATION SAME DAY)
 
