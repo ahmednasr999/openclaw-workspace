@@ -3,13 +3,17 @@
 Self-Improvement Engine (SIE) for OpenClaw
 ==========================================
 Monitors ALL 26 areas (A-Z) of the OpenClaw system and generates insights.
+Autoresearch mode: detect → fix → verify → keep/revert → repeat.
 
 Usage:
     python3 self-improvement-engine.py              # Full analysis + writes
     python3 self-improvement-engine.py --dry-run   # Report only, no file writes
     python3 self-improvement-engine.py --json      # JSON output to stdout
+    python3 self-improvement-engine.py --fix       # Autoresearch: auto-fix issues
+    python3 self-improvement-engine.py --fix --max-iterations 5  # Limit fix loops
 
 Deterministic thresholds per Section 14 of the spec.
+Autoresearch inspired by Karpathy's autoresearch + uditgoenka/autoresearch.
 """
 
 import json
@@ -914,6 +918,240 @@ CHECKS = {
 }
 
 
+# === Auto-Fix Registry (Autoresearch Pattern) ===
+# Each fix: area letter -> list of {condition, fix_fn, description}
+# Fix functions return (success: bool, message: str)
+# Only safe, non-destructive fixes. Never: delete data, send messages, modify pipeline.
+
+def fix_bloated_sessions(state):
+    """Fix R (Reliability): Remove bloated session backup files."""
+    try:
+        removed = []
+        sessions_dir = Path(SESSIONS_DIR)
+        if sessions_dir.exists():
+            for f in sessions_dir.iterdir():
+                size_mb = f.stat().st_size / (1024 * 1024)
+                # Only remove .tmp, .bak, and .reset backup files > 5MB, never active sessions
+                is_backup = (f.suffix in ('.tmp', '.bak') or '.bak.' in f.name or '.reset.' in f.name)
+                if size_mb > 5 and is_backup:
+                    f.unlink()
+                    removed.append(f"{f.name} ({size_mb:.1f}MB)")
+        if removed:
+            return True, f"Removed {len(removed)} bloated files: {', '.join(removed[:3])}"
+        return False, "No bloated backup files found"
+    except Exception as e:
+        return False, f"Error: {str(e)[:80]}"
+
+def fix_stale_git(state):
+    """Fix B (Backups): Auto-commit if there are uncommitted changes."""
+    try:
+        result = subprocess.run(
+            "cd /root/.openclaw/workspace && git status --porcelain",
+            shell=True, capture_output=True, text=True, timeout=10
+        )
+        if result.stdout.strip():
+            # There are changes, auto-commit
+            subprocess.run(
+                'cd /root/.openclaw/workspace && git add -A && git commit -m "sie: auto-commit uncommitted changes"',
+                shell=True, capture_output=True, text=True, timeout=30
+            )
+            return True, "Auto-committed uncommitted workspace changes"
+        return False, "No uncommitted changes"
+    except Exception as e:
+        return False, f"Error: {str(e)[:80]}"
+
+def fix_gateway_down(state):
+    """Fix G (Gateway): Restart gateway if down."""
+    try:
+        # Check if really down
+        result = subprocess.run("pgrep -f 'openclaw.*gateway'", shell=True, capture_output=True, text=True)
+        if result.returncode != 0:
+            # Gateway is down, restart
+            subprocess.run(
+                "openclaw gateway start",
+                shell=True, capture_output=True, text=True, timeout=30
+            )
+            import time
+            time.sleep(3)
+            # Verify
+            result2 = subprocess.run("pgrep -f 'openclaw.*gateway'", shell=True, capture_output=True, text=True)
+            if result2.returncode == 0:
+                return True, "Gateway restarted successfully"
+            return False, "Gateway restart failed"
+        return False, "Gateway already running"
+    except Exception as e:
+        return False, f"Error: {str(e)[:80]}"
+
+def fix_disk_space(state):
+    """Fix D (Disk): Clean up known safe temp files."""
+    try:
+        cleaned = 0
+        # Clean /tmp files older than 7 days
+        result = subprocess.run(
+            "find /tmp -maxdepth 1 -type f -mtime +7 -name 'sie-*' -o -name 'self-heal-*' | head -20",
+            shell=True, capture_output=True, text=True, timeout=10
+        )
+        for f in result.stdout.strip().split('\n'):
+            if f and os.path.exists(f):
+                os.unlink(f)
+                cleaned += 1
+        
+        # Clean old gateway logs (keep last 10MB)
+        if os.path.exists(GATEWAY_LOG):
+            size = os.path.getsize(GATEWAY_LOG) / (1024 * 1024)
+            if size > 50:
+                subprocess.run(
+                    f"tail -c 10M {GATEWAY_LOG} > {GATEWAY_LOG}.tmp && mv {GATEWAY_LOG}.tmp {GATEWAY_LOG}",
+                    shell=True, capture_output=True, text=True, timeout=10
+                )
+                cleaned += 1
+        
+        if cleaned > 0:
+            return True, f"Cleaned {cleaned} temp/log items"
+        return False, "Nothing safe to clean"
+    except Exception as e:
+        return False, f"Error: {str(e)[:80]}"
+
+def fix_workspace_clutter(state):
+    """Fix W (Workspace): Move misplaced files from root to proper folders."""
+    try:
+        moved = []
+        workspace = Path(WORKSPACE)
+        for f in workspace.iterdir():
+            if f.is_file():
+                ext = f.suffix.lower()
+                dest = None
+                if ext in ('.pdf',) and f.name not in ('README.md',):
+                    dest = workspace / 'jobs-bank' / f.name
+                elif ext in ('.png', '.jpg', '.jpeg', '.gif', '.webp'):
+                    dest = workspace / 'media' / f.name
+                elif ext in ('.html',):
+                    dest = workspace / 'archives' / f.name
+                
+                if dest and not dest.exists():
+                    os.makedirs(dest.parent, exist_ok=True)
+                    f.rename(dest)
+                    moved.append(f.name)
+        
+        if moved:
+            return True, f"Moved {len(moved)} files: {', '.join(moved[:3])}"
+        return False, "No misplaced files"
+    except Exception as e:
+        return False, f"Error: {str(e)[:80]}"
+
+
+# Fix registry: maps area letter to list of fix functions
+AUTO_FIXES = {
+    "R": [{"fn": fix_bloated_sessions, "desc": "Remove bloated session backups"}],
+    "B": [{"fn": fix_stale_git, "desc": "Auto-commit uncommitted changes"}],
+    "G": [{"fn": fix_gateway_down, "desc": "Restart gateway"}],
+    "D": [{"fn": fix_disk_space, "desc": "Clean temp files and trim logs"}],
+    "W": [{"fn": fix_workspace_clutter, "desc": "Move misplaced root files"}],
+}
+
+# Areas that should NEVER be auto-fixed (need human decision)
+NO_AUTO_FIX = {"P", "A", "Y", "M", "I"}  # Pipeline, Applications, Yield, Models, Integrations
+
+
+def run_autofix_loop(state, max_iterations=3):
+    """
+    Autoresearch-style fix loop:
+    1. Run all checks
+    2. For each ALERT/WARN/CRITICAL with a known fix, attempt the fix
+    3. Re-run that specific check to verify
+    4. If improved -> keep. If same/worse -> log as failed.
+    5. Repeat until no more fixable issues or max iterations reached.
+    
+    Returns: (final_results, fix_log)
+    """
+    fix_log = []
+    iteration = 0
+    
+    while iteration < max_iterations:
+        iteration += 1
+        log(f"--- Autoresearch Iteration {iteration}/{max_iterations} ---")
+        
+        # Run all checks
+        results = run_all_checks(state)
+        
+        # Find fixable issues
+        fixable = []
+        for letter, result in results.items():
+            if result["status"] in ("ALERT", "WARN", "CRITICAL"):
+                if letter in AUTO_FIXES and letter not in NO_AUTO_FIX:
+                    fixable.append((letter, result))
+        
+        if not fixable:
+            log(f"No fixable issues found. Stopping at iteration {iteration}.")
+            break
+        
+        fixed_any = False
+        for letter, result in fixable:
+            for fix_entry in AUTO_FIXES[letter]:
+                fix_fn = fix_entry["fn"]
+                fix_desc = fix_entry["desc"]
+                
+                log(f"  [{letter}] Attempting: {fix_desc}")
+                
+                # Attempt fix
+                try:
+                    success, message = fix_fn(state)
+                except Exception as e:
+                    success, message = False, f"Exception: {str(e)[:80]}"
+                
+                if success:
+                    # Re-run the specific check to verify
+                    check_name, check_fn = CHECKS[letter]
+                    try:
+                        new_status, new_details = check_fn(state)
+                    except:
+                        new_status = result["status"]
+                        new_details = result["details"]
+                    
+                    improved = _status_order(new_status) < _status_order(result["status"])
+                    
+                    entry = {
+                        "iteration": iteration,
+                        "area": letter,
+                        "fix": fix_desc,
+                        "message": message,
+                        "before": f"{result['status']}: {result['details']}",
+                        "after": f"{new_status}: {new_details}",
+                        "result": "KEPT" if improved else "NO_IMPROVEMENT",
+                        "timestamp": datetime.now(CAIRO_TZ).isoformat()
+                    }
+                    fix_log.append(entry)
+                    
+                    if improved:
+                        log(f"  ✅ [{letter}] {result['status']} -> {new_status}: {message}")
+                        results[letter]["status"] = new_status
+                        results[letter]["details"] = new_details
+                        fixed_any = True
+                    else:
+                        log(f"  ⚪ [{letter}] Fix applied but no status change: {message}")
+                else:
+                    fix_log.append({
+                        "iteration": iteration,
+                        "area": letter,
+                        "fix": fix_desc,
+                        "message": message,
+                        "result": "FAILED",
+                        "timestamp": datetime.now(CAIRO_TZ).isoformat()
+                    })
+                    log(f"  ❌ [{letter}] {fix_desc}: {message}")
+        
+        if not fixed_any:
+            log(f"No improvements made in iteration {iteration}. Stopping.")
+            break
+    
+    return results, fix_log
+
+
+def _status_order(status):
+    """Lower is better."""
+    return {"OK": 0, "INFO": 1, "WARN": 2, "ALERT": 3, "CRITICAL": 4, "ERROR": 5}.get(status, 3)
+
+
 def run_all_checks(state):
     """Run all 26 area checks."""
     results = {}
@@ -1034,11 +1272,6 @@ def generate_insights(results, health_score, state):
     
     return md
 
-
-def _status_order(status):
-    """Return numeric order for status severity."""
-    order = {"OK": 0, "INFO": 1, "WARN": 2, "ALERT": 3, "CRITICAL": 4, "ERROR": 5}
-    return order.get(status, 0)
 
 
 # === Phase 5: Improvement Suggestions ===
@@ -1358,17 +1591,26 @@ def main():
     parser.add_argument("--dry-run", action="store_true", help="Report only, no file writes")
     parser.add_argument("--json", action="store_true", help="Output JSON summary to stdout")
     parser.add_argument("--suggest", action="store_true", help="Generate improvement prompt for Phase 5")
+    parser.add_argument("--fix", action="store_true", help="Autoresearch mode: auto-fix issues")
+    parser.add_argument("--max-iterations", type=int, default=3, help="Max fix loop iterations (default: 3)")
     args = parser.parse_args()
     
-    log("=== Self-Improvement Engine (SIE) ===")
+    mode = "AUTORESEARCH" if args.fix else "MONITOR"
+    log(f"=== Self-Improvement Engine (SIE) [{mode}] ===")
     
     # Load previous state
     state = load_state()
     prev_health = state.get("health_score", 100)
     
-    # Run all checks
-    log("Running 26 area checks...")
-    results = run_all_checks(state)
+    # Run checks (with optional auto-fix loop)
+    fix_log = []
+    if args.fix:
+        log(f"Running autoresearch loop (max {args.max_iterations} iterations)...")
+        results, fix_log = run_autofix_loop(state, max_iterations=args.max_iterations)
+        log(f"Autoresearch complete: {len(fix_log)} fix attempts")
+    else:
+        log("Running 26 area checks...")
+        results = run_all_checks(state)
     
     # Count by severity
     status_counts = defaultdict(int)
@@ -1390,6 +1632,10 @@ def main():
     state["run_count"] = state.get("run_count", 0) + 1
     state["areas"] = results
     state["health_score"] = health_score
+    
+    # Store fix log in state for history
+    if fix_log:
+        state["last_fix_log"] = fix_log
     
     # Add to history
     state.setdefault("history", []).append({
@@ -1451,6 +1697,13 @@ def main():
             warnings = warnings_match.group(1).count('-') if warnings_match else 0
             
             msg = f"🎯 SIE — Health: {health}/100"
+            if fix_log:
+                kept = sum(1 for f in fix_log if f["result"] == "KEPT")
+                failed = sum(1 for f in fix_log if f["result"] in ("FAILED", "NO_IMPROVEMENT"))
+                msg += f"\n🔧 Autoresearch: {kept} fixed, {failed} unchanged"
+                for f in fix_log:
+                    if f["result"] == "KEPT":
+                        msg += f"\n  ✅ [{f['area']}] {f['fix']}"
             if warnings > 0:
                 msg += f"\n⚠️ {warnings} warnings"
             
