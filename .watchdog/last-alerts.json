@@ -22,5 +22,9 @@
   "github-discovery-radar": {
     "lastAlerted": "2026-03-17T14:02:00Z",
     "issue": "Channel is required when multiple channels are configured"
+  },
+  "model-fallback": {
+    "lastAlerted": "2026-03-18T00:05:00Z",
+    "issue": "Anthropic claude-opus-4-6 overloaded (529), fell back to MiniMax-M2.5"
   }
 }
