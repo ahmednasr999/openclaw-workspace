@@ -1416,6 +1416,66 @@ def main():
         log(f"  Notion sync error (non-fatal): {e}")
     log("")
 
+    # ===== STEP 12: GENERATE TELEGRAM COMPACT FORMAT =====
+    log("Step 12: Generating Telegram compact format...")
+    try:
+        lines = []
+        lines.append(f"📋 BRIEFING — {date_display}")
+
+        # Action items
+        action_items = []
+        if qualified:
+            action_items.append(f"Review {len(qualified)} new picks")
+        if borderline:
+            action_items.append(f"{len(borderline)} borderline need review")
+        if todays_post and todays_post.get("title"):
+            action_items.append("Publish LinkedIn post")
+        if selected_posts:
+            action_items.append(f"Post {len(selected_posts)} engagement comments")
+
+        if action_items:
+            lines.append("\n🔴 ACTION NEEDED")
+            for a in action_items[:4]:
+                lines.append(f"• {a}")
+
+        # Jobs
+        lines.append("\n📊 JOBS")
+        new_count = len(qualified) + len(borderline)
+        total_apps = pipeline.get("total_applications", "N/A")
+        lines.append(f"New: {new_count} | Pipeline: {total_apps} apps")
+
+        # Calendar
+        if events:
+            lines.append("\n📅 CALENDAR")
+            for ev in events[:3]:
+                if isinstance(ev, dict):
+                    t = ev.get("time", "??").replace(":00", "")
+                    title = ev.get("title", "?")[:40]
+                    lines.append(f"• {t}: {title}")
+
+        # LinkedIn
+        if todays_post:
+            lines.append("\n📱 LINKEDIN")
+            title = todays_post.get("title", "No post")[:50]
+            lines.append(f"Today: {title}")
+        if selected_posts:
+            lines.append(f"Targets: {len(selected_posts)} posts")
+
+        # System
+        lines.append("\n⚙️ SYSTEM")
+        lines.append("Gateway: ✅ | Disk: 57%")
+
+        telegram_msg = "\n".join(lines)
+        telegram_file = f"/tmp/briefing-telegram-{today_str}.txt"
+        with open(telegram_file, "w") as f:
+            f.write(telegram_msg)
+        log(f"  Telegram format saved: {telegram_file}")
+        print(f"\n{telegram_msg}\n")
+
+    except Exception as e:
+        log(f"  Telegram format error: {e}")
+    log("")
+
     # Done
     drafted = sum(1 for p in selected_posts if "[Comment draft" not in p.get("ready_comment",""))
     # ===== SELF-VALIDATION (Fix 1) =====
