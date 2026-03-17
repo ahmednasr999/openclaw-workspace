@@ -253,13 +253,27 @@ def search(title, country):
     """Fast search: no JD fetch, LinkedIn + Indeed."""
     try:
         from jobspy import scrape_jobs
+        # Load LinkedIn cookie from file
+        _li_at = None
+        for _cpath in ["/root/.openclaw/cookies/linkedin.txt", "/root/.openclaw/workspace/config/nasr-linkedin-cookies.txt"]:
+            try:
+                _txt = open(_cpath).read()
+                import re as _re
+                _m = _re.search(r'li_at\s+(\S+)', _txt)
+                if _m:
+                    _li_at = _m.group(1)
+                    break
+            except:
+                pass
+
         results = scrape_jobs(
-            site_name=["linkedin", "indeed", "glassdoor", "google"],
+            site_name=["linkedin", "indeed"],
             search_term=title,
             location=country,
             hours_old=72,
             results_wanted=MAX_JOBS_PER_SEARCH,
             linkedin_fetch_description=False,
+            **({"linkedin_cookie": _li_at} if _li_at else {}),
         )
         jobs = []
         if results is not None and len(results) > 0:
