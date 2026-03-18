@@ -213,6 +213,47 @@ Checks: [N] areas | OK: [n] | WARN: [n] | ALERT: [n]
 Actions needed: [specific list with priority]
 ```
 
+### Step 8: Cron Delivery Verification
+Check that critical crons both delivered AND synced to Notion. Detect partial failures (Telegram delivered but Notion page missing).
+
+```bash
+cd /root/.openclaw/workspace && python3 << 'CRONVERIFY'
+import json, urllib.request, ssl
+from datetime import datetime, timezone, timedelta
+
+with open('config/notion.json') as f:
+    token = json.load(f)['token']
+ctx = ssl.create_default_context()
+
+def notion_post(path, body):
+    url = f"https://api.notion.com/v1{path}"
+    data = json.dumps(body).encode()
+    req = urllib.request.Request(url, data=data, method='POST', headers={
+        'Authorization': f'Bearer {token}',
+        'Notion-Version': '2022-06-28',
+        'Content-Type': 'application/json'
+    })
+    with urllib.request.urlopen(req, context=ctx) as r:
+        return json.loads(r.read())
+
+today = datetime.now(timezone.utc).strftime('%Y-%m-%d')
+
+# Check: Morning Briefing page exists for today
+resp = notion_post('/databases/3268d599-a162-812d-a59e-e5496dec80e7/query', {
+    'filter': {'property': 'Date', 'date': {'equals': today}},
+    'page_size': 1
+})
+briefing_exists = len(resp.get('results', [])) > 0
+print(f"Morning Briefing Notion page for {today}: {'EXISTS' if briefing_exists else 'MISSING'}")
+
+if not briefing_exists:
+    print("  ALERT: Briefing likely delivered to Telegram but Notion sync failed (SIGTERM or timeout)")
+    print("  ACTION: Consider escalating to create retroactive page")
+CRONVERIFY
+```
+
+If a critical cron delivered to Telegram but has no Notion page, report as ALERT and include in action items: "Cron [name] delivered to Telegram but Notion page missing - partial failure."
+
 ## Error Handling
 - If any command fails: Report the error, continue with remaining checks
 - If Notion unreachable: Skip Notion checks, note in report
