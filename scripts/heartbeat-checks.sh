@@ -286,6 +286,16 @@ cat <<EOF
 }
 EOF
 
+# === CRON DASHBOARD SYNC ===
+python3 -c "
+import sys; sys.path.insert(0, '$WORKSPACE/scripts')
+from notion_sync import sync_cron_dashboard_full
+result = sync_cron_dashboard_full()
+if result.get('failed', 0) > 0:
+    for f in result.get('failures', []):
+        print(f'CRON_FAIL: {f[\"name\"]}: {f[\"error\"][:80]}')
+" 2>/dev/null > /tmp/cron_dashboard_check.txt || true
+
 # === SCANNER TREND CHECK ===
 scanner_trend_alert=""
 if python3 -c "

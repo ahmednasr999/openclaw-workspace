@@ -1281,3 +1281,163 @@ def get_scanner_trends():
     
     print(f"[scanner_trends] Trend: {trend}, 7d avg: {avg_found:.0f} jobs, Today: {today_found}, Alert: {alert or 'None'}")
     return result
+
+
+def sync_cron_dashboard_full():
+    """
+    Full cron dashboard sync: status, errors, duration, cost tier.
+    Called by heartbeat to keep dashboard live.
+    Returns health summary for briefing.
+    """
+    nc = _get_client()
+    if not nc:
+        return {"ok": 0, "failed": 0, "disabled": 0, "failures": []}
+    
+    nc.databases["cron_dashboard"] = "3268d599-a162-8188-b531-e25071653203"
+    
+    import json as json_mod
+    import time as t_mod
+    
+    try:
+        with open("/root/.openclaw/cron/jobs.json") as f:
+            data = json_mod.load(f)
+        jobs = data.get("jobs", [])
+    except:
+        return {"ok": 0, "failed": 0, "disabled": 0, "failures": []}
+    
+    # Get existing dashboard entries by cron ID
+    results = nc._query_database("cron_dashboard")
+    existing = {}
+    for r in results:
+        props = r.get("properties", {})
+        cron_id_t = props.get("Cron ID", {}).get("rich_text", [])
+        cron_id = cron_id_t[0].get("plain_text", "") if cron_id_t else ""
+        if cron_id:
+            existing[cron_id] = r["id"]
+    
+    # Cost tier mapping
+    def get_cost_tier(model_str):
+        if not model_str:
+            return "🟢 Free (MiniMax)"
+        m = model_str.lower()
+        if "opus" in m:
+            return "💰 Premium (Opus)"
+        elif "sonnet" in m:
+            return "🔵 Standard (Sonnet)"
+        elif "gpt" in m or "codex" in m:
+            return "🟡 Codex (GPT)"
+        elif "haiku" in m:
+            return "⚪ Light (Haiku)"
+        return "🟢 Free (MiniMax)"
+    
+    ok_count = 0
+    failed_count = 0
+    disabled_count = 0
+    failures = []
+    
+    for job in jobs:
+        jid = job.get("id", "")
+        name = job.get("name", "Unknown")[:100]
+        enabled = job.get("enabled", False)
+        state = job.get("state", {})
+        last_status = state.get("lastStatus", "")
+        consecutive_errors = state.get("consecutiveErrors", 0)
+        last_error = state.get("lastError", "")
+        last_duration_ms = state.get("lastDurationMs", 0)
+        last_run_ms = state.get("lastRunAtMs", 0)
+        payload = job.get("payload", {})
+        model = payload.get("model", "")
+        
+        # Status
+        if not enabled:
+            status_name = "⏸️ Disabled"
+            disabled_count += 1
+        elif consecutive_errors > 0 or last_status == "error":
+            status_name = "❌ Failed"
+            failed_count += 1
+            failures.append({
+                "name": name,
+                "error": last_error[:100] if last_error else "Unknown",
+                "consecutive": consecutive_errors,
+            })
+        else:
+            status_name = "✅ OK"
+            ok_count += 1
+        
+        # Build update
+        props = {
+            "Last Status": {"select": {"name": status_name}},
+            "Enabled": {"checkbox": enabled},
+            "Consecutive Errors": {"number": consecutive_errors},
+            "Cost Tier": {"select": {"name": get_cost_tier(model)}},
+        }
+        
+        if last_duration_ms:
+            props["Last Duration (sec)"] = {"number": round(last_duration_ms / 1000, 1)}
+        
+        if last_error:
+            props["Last Error"] = {"rich_text": [{"text": {"content": last_error[:2000]}}]}
+        
+        if last_run_ms:
+            dt = datetime.fromtimestamp(last_run_ms / 1000, tz=timezone(timedelta(hours=0)))
+            props["Last Run"] = {"date": {"start": dt.strftime("%Y-%m-%dT%H:%M:%S+00:00")}}
+        
+        page_id = existing.get(jid)
+        if page_id:
+            try:
+                nc._update_page(page_id, props)
+                t_mod.sleep(0.35)
+            except Exception as e:
+                print(f"[cron_dashboard] ERROR updating {name[:20]}: {e}")
+        else:
+            # New cron not in dashboard yet, create it
+            schedule = job.get("schedule", {})
+            cron_expr = schedule.get("expr", "")
+            tz = schedule.get("tz", "UTC")
+            timeout = payload.get("timeoutSeconds", 30)
+            
+            # Category
+            category = "Other"
+            nl = name.lower()
+            if "briefing" in nl or "morning" in nl: category = "Briefing"
+            elif "scanner" in nl or "job" in nl or "radar" in nl: category = "Scanner"
+            elif "linkedin" in nl or "content" in nl or "engagement" in nl: category = "LinkedIn"
+            elif "email" in nl: category = "Email"
+            elif "heartbeat" in nl or "system" in nl or "audit" in nl or "sie" in nl: category = "System"
+            
+            # Model name
+            model_name = None
+            if model:
+                if "minimax" in model.lower(): model_name = "minimax-m2.5"
+                elif "opus" in model.lower(): model_name = "opus46"
+                elif "sonnet" in model.lower(): model_name = "sonnet46"
+                elif "gpt" in model.lower(): model_name = "gpt54"
+                elif "haiku" in model.lower(): model_name = "haiku"
+            
+            create_props = {
+                "Name": {"title": [{"text": {"content": name}}]},
+                "Schedule": {"rich_text": [{"text": {"content": f"{cron_expr} ({tz})"[:200]}}]},
+                "Cron ID": {"rich_text": [{"text": {"content": jid}}]},
+                "Timeout": {"number": timeout},
+                "Category": {"select": {"name": category}},
+            }
+            create_props.update(props)
+            if model_name:
+                create_props["Model"] = {"select": {"name": model_name}}
+            
+            try:
+                nc._create_page("cron_dashboard", create_props)
+                t_mod.sleep(0.35)
+            except Exception as e:
+                print(f"[cron_dashboard] ERROR creating {name[:20]}: {e}")
+    
+    summary = {
+        "total": ok_count + failed_count + disabled_count,
+        "ok": ok_count,
+        "failed": failed_count,
+        "disabled": disabled_count,
+        "failures": failures,
+    }
+    
+    print(f"[cron_dashboard] Total: {summary['total']}, OK: {ok_count}, Failed: {failed_count}, Disabled: {disabled_count}")
+    return summary
