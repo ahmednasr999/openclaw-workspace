@@ -24,7 +24,7 @@
     "issue": "Channel is required when multiple channels are configured"
   },
   "model-fallback": {
-    "lastAlerted": "2026-03-18T02:04:00Z",
-    "issue": "Anthropic claude-opus-4-6 → MiniMax-M2.5 (succeeded), requested at 01:50 UTC"
+    "lastAlerted": "2026-03-18T14:01:00Z",
+    "issue": "Anthropic claude-opus-4-6 overloaded at 13:04 UTC, recovered to MiniMax-M2.5"
   }
 }

@@ -556,3 +556,13 @@ Built into job-scanner/SKILL.md - requires full JD fetch before scoring.
 
 ### Enforcement: SIE Rule
 SIE 360 audit depth check - must verify actual state, not just count entries.
+
+## 2026-03-18 - ATS keyword scoring is NOT career advice
+### What I Missed
+Presented 17 jobs as "ready to apply" based on keyword ATS scoring (word overlap). Half were completely wrong domains: CISO, oil & gas offshore, investment banking ECM, civil engineering. Ahmed called it out: "you are not taking this seriously."
+### Why
+ATS scoring counts keyword matches between JD and CV. High overlap != good career fit. A CISO role mentions "cloud, AI, leadership" which also appear in Ahmed's CV, but it's a fundamentally different role.
+### Fix
+Added `semantic_fit_filter()` to scanner with SKIP_DOMAINS (cybersecurity, coding, oil & gas, civil, investment banking, aviation, sales) and AHMED_DOMAINS (digital transformation, PMO, healthcare, fintech, payments). Every job now gets career_verdict (APPLY/SKIP/STRETCH), career_fit (1-10), and career_reason. This runs automatically at 6 AM - no human in the loop to skip it.
+### Rule
+**ATS score = word overlap. Career fit = domain + role + level match. Never present keyword scores as career recommendations.**
