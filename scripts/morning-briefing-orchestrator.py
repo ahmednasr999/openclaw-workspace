@@ -643,8 +643,8 @@ def create_notion_briefing(date_str, date_display, pipeline, scanner_meta, quali
     if p["interviews"]:
         summary_parts.append(f"🎯 {p['interviews']} interview(s) active")
     if qualified:
-        apply_count = len([j for j in qualified if j.get("ats_score", 0) >= 50])
-        summary_parts.append(f"{len(qualified)} new picks ({apply_count} apply-worthy)")
+        apply_count = len([j for j in qualified if j.get("career_verdict") == "APPLY" or (not j.get("career_verdict") and j.get("ats_score", 0) >= 50)])
+        summary_parts.append(f"{len(qualified)} scanned ({apply_count} genuine fits)")
     if p["stale"]:
         summary_parts.append(f"{p['stale']} stale")
     content_status = "posted ✅" if content_cal.get("today_post", {}).get("status") == "Posted" else "pending"
@@ -664,8 +664,8 @@ def create_notion_briefing(date_str, date_display, pipeline, scanner_meta, quali
         for ae in action_emails[:2]:
             actions.append(f"📧 Reply: {ae.get('subject', '')[:35]}")
     if qualified:
-        apply_count = len([j for j in qualified if j.get("ats_score", 0) >= 50])
-        actions.append(f"Review {len(qualified)} picks ({apply_count} worth applying)")
+        apply_count = len([j for j in qualified if j.get("career_verdict") == "APPLY" or (not j.get("career_verdict") and j.get("ats_score", 0) >= 50)])
+        actions.append(f"Apply to {apply_count} genuine career fits")
     if p["overdue"]:
         actions.append(f"Follow up {min(5, len(p['overdue']))} stale applications")
     if content_cal.get("today_post") and content_cal["today_post"]["status"] != "Posted":
@@ -719,44 +719,45 @@ def create_notion_briefing(date_str, date_display, pipeline, scanner_meta, quali
         add_para("No scanner data available")
 
     if qualified:
-        apply_jobs = [j for j in qualified if j.get("ats_score", 0) >= 50]
-        skip_jobs = [j for j in qualified if j.get("ats_score", 0) < 50]
+        # Use career_verdict if available (semantic filter), fallback to ATS threshold
+        apply_jobs = [j for j in qualified if j.get("career_verdict") == "APPLY" or (not j.get("career_verdict") and j.get("ats_score", 0) >= 50)]
+        skip_jobs = [j for j in qualified if j.get("career_verdict") == "SKIP" or (not j.get("career_verdict") and j.get("ats_score", 0) < 50)]
+        stretch_jobs = [j for j in qualified if j.get("career_verdict") == "STRETCH"]
 
-        def format_job(idx, j):
+        # Sort by career_fit desc, then ats_score desc
+        apply_jobs.sort(key=lambda x: (x.get("career_fit", 0), x.get("ats_score", 0)), reverse=True)
+
+        def format_job_honest(idx, j):
             title = j.get("title", "?")[:45]
-            company = j.get("company", "")[:20]
-            ats = j.get("ats_score", 0)
-            city = j.get("location", "").split(",")[0].strip()[:12] if j.get("location") else ""
+            company = j.get("company", "")[:25]
+            fit = j.get("career_fit", 0)
+            reason = j.get("career_reason", "")
             url = j.get("url", "")
-            icon = "🟢" if ats >= 75 else "🟡"
-            text = f"{idx}. {icon} {title} @ {company}"
-            if city:
-                text += f" - {city}"
-            text += f" ({ats}%)"
+            text = f"{idx}. [{fit}/10] {title} @ {company}"
+            if reason:
+                text += f" - {reason}"
             if url:
                 text += f" | {url}"
             return text
 
-        # Top 5 APPLY jobs shown directly
+        # APPLY section - genuine career fits
         if apply_jobs:
-            add_heading3(f"✅ APPLY ({len(apply_jobs)} jobs, ATS 50%+)")
-            for idx, j in enumerate(apply_jobs[:5], 1):
-                add_bullet(format_job(idx, j))
+            add_heading3(f"✅ APPLY - Genuine Career Fits ({len(apply_jobs)} jobs)")
+            for idx, j in enumerate(apply_jobs[:6], 1):
+                add_bullet(format_job_honest(idx, j))
+            if len(apply_jobs) > 6:
+                more = [format_job_honest(i, j) for i, j in enumerate(apply_jobs[6:], 7)]
+                add_toggle(f"📋 {len(apply_jobs) - 6} more career fits...", more)
 
-            # Rest in toggle
-            if len(apply_jobs) > 5:
-                more = [format_job(i, j) for i, j in enumerate(apply_jobs[5:], 6)]
-                add_toggle(f"📋 {len(apply_jobs) - 5} more apply-worthy jobs...", more)
+        # STRETCH section
+        if stretch_jobs:
+            stretch_items = [f"{j.get('title','?')[:40]} @ {j.get('company','')[:20]} - {j.get('career_reason','')} (FIT: {j.get('career_fit',0)})" for j in stretch_jobs]
+            add_toggle(f"🟡 STRETCH - Possible but Risky ({len(stretch_jobs)} jobs)", stretch_items)
 
-        # Skip in toggle (collapsed)
+        # SKIP section - domain mismatches (collapsed)
         if skip_jobs:
-            skip_items = []
-            for idx, j in enumerate(skip_jobs, len(apply_jobs) + 1):
-                title = j.get("title", "?")[:45]
-                company = j.get("company", "")[:20]
-                ats = j.get("ats_score", 0)
-                skip_items.append(f"{idx}. 🔴 {title} @ {company} ({ats}%)")
-            add_toggle(f"❌ SKIP ({len(skip_jobs)} jobs, ATS below 50%)", skip_items)
+            skip_items = [f"{j.get('title','?')[:40]} @ {j.get('company','')[:20]} - {j.get('career_reason','')} (FIT: {j.get('career_fit',0)})" for j in skip_jobs]
+            add_toggle(f"❌ SKIP - Domain Mismatch ({len(skip_jobs)} jobs)", skip_items)
 
     if trends.get("total_runs", 0) >= 3:
         add_para(f"Trend: {trends.get('trend','')} 7d avg: {trends.get('avg_7d_found',0):.0f} found, {trends.get('avg_7d_picks',0):.0f} picks")
@@ -929,8 +930,8 @@ def build_telegram_message(date_display, pipeline, scanner_meta, qualified, bord
             actions.append(f"📧 Reply: {ae.get('subject', '')[:30]}")
     # Priority 3: New job picks
     if qualified:
-        apply_count = len([q for q in qualified if q.get("ats_score", 0) >= 50])
-        actions.append(f"Review {len(qualified)} picks ({apply_count} worth applying)")
+        apply_count = len([q for q in qualified if q.get("career_verdict") == "APPLY" or (not q.get("career_verdict") and q.get("ats_score", 0) >= 50)])
+        actions.append(f"Apply to {apply_count} genuine career fits")
     # Priority 4: Stale follow-ups
     if p["overdue"]:
         actions.append(f"Follow up {min(5, len(p['overdue']))} stale applications")
@@ -982,43 +983,37 @@ def build_telegram_message(date_display, pipeline, scanner_meta, qualified, bord
         lines.append(f"\n🔍 SCANNER: No data")
 
     if qualified:
-        apply_jobs = [j for j in qualified if j.get("ats_score", 0) >= 50]
-        skip_jobs = [j for j in qualified if j.get("ats_score", 0) < 50]
+        apply_jobs = [j for j in qualified if j.get("career_verdict") == "APPLY" or (not j.get("career_verdict") and j.get("ats_score", 0) >= 50)]
+        skip_jobs = [j for j in qualified if j.get("career_verdict") == "SKIP" or (not j.get("career_verdict") and j.get("ats_score", 0) < 50)]
+        stretch_jobs = [j for j in qualified if j.get("career_verdict") == "STRETCH"]
+        apply_jobs.sort(key=lambda x: (x.get("career_fit", 0), x.get("ats_score", 0)), reverse=True)
 
         if apply_jobs:
-            lines.append(f"  ✅ APPLY ({len(apply_jobs)}):")
+            lines.append(f"  ✅ GENUINE FITS ({len(apply_jobs)}):")
             for idx, j in enumerate(apply_jobs, 1):
                 title = j.get("title", "?")[:40]
                 company = j.get("company", "")[:18]
-                city = j.get("location", "").split(",")[0].strip()[:12]
-                ats = j.get("ats_score", 0)
+                fit = j.get("career_fit", 0)
+                reason = j.get("career_reason", "")[:30]
                 url = j.get("url", "")
-                icon = "🟢" if ats >= 75 else "🟡"
-                line = f"  {idx}. {icon} {title}"
+                line = f"  {idx}. [{fit}/10] {title}"
                 if company:
                     line += f" - {company}"
-                if city:
-                    line += f" ({city})"
-                line += f" [{ats}%]"
+                if reason:
+                    line += f" ({reason})"
                 lines.append(line)
                 if url:
-                    # Clickable link format: [text](url)
                     lines.append(f"    [Apply →]({url})")
 
+        if stretch_jobs:
+            lines.append(f"  🟡 STRETCH ({len(stretch_jobs)}):")
+            for j in stretch_jobs:
+                lines.append(f"    {j.get('title','')[:35]} - {j.get('career_reason','')[:30]}")
+
         if skip_jobs:
-            lines.append(f"  ❌ SKIP ({len(skip_jobs)}):")
-            for idx, j in enumerate(skip_jobs, len(apply_jobs) + 1):
-                title = j.get("title", "?")[:40]
-                company = j.get("company", "")[:18]
-                city = j.get("location", "").split(",")[0].strip()[:12]
-                ats = j.get("ats_score", 0)
-                line = f"  {idx}. 🔴 {title}"
-                if company:
-                    line += f" - {company}"
-                if city:
-                    line += f" ({city})"
-                line += f" [{ats}%]"
-                lines.append(line)
+            lines.append(f"  ❌ SKIP ({len(skip_jobs)} domain mismatches)")
+
+        # Skip jobs shown as count only in Telegram (detail in Notion)
 
     # Email
     if emails:
