@@ -546,7 +546,7 @@ def create_notion_briefing(date_str, date_display, pipeline, scanner_meta, quali
 
     if qualified:
         add_para(f"Priority picks ({len(qualified)}):")
-        for j in qualified[:10]:
+        for idx, j in enumerate(qualified[:10], 1):
             title = j.get("title", "?")[:50]
             company = j.get("company", "")
             ats = j.get("ats_score")
@@ -561,7 +561,7 @@ def create_notion_briefing(date_str, date_display, pipeline, scanner_meta, quali
                 icon = "⚪"
                 ats_str = ""
 
-            text = f"{icon} {title}"
+            text = f"{idx}. {icon} {title}"
             if company:
                 text += f" @ {company}"
             if city:
@@ -748,7 +748,7 @@ def build_telegram_message(date_display, pipeline, scanner_meta, qualified, bord
 
     if qualified:
         lines.append(f"  📋 All {len(qualified)} picks:")
-    for j in qualified:
+    for idx, j in enumerate(qualified, 1):
         title = j.get("title", "?")[:40]
         company = j.get("company", "")[:18]
         location = j.get("location", "")
@@ -764,7 +764,7 @@ def build_telegram_message(date_display, pipeline, scanner_meta, qualified, bord
             icon = "⚪"
             ats_str = ""
 
-        line = f"  {icon} {title}"
+        line = f"  {idx}. {icon} {title}"
         if company:
             line += f" - {company}"
         if city:
