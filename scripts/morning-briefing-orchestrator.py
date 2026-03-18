@@ -787,6 +787,35 @@ def create_notion_briefing(date_str, date_display, pipeline, scanner_meta, quali
         add_para(f"⚠️ Last scheduled post in {content_cal['gap_days']} days - need more content")
     add_divider()
 
+    # 7b. LINKEDIN ENGAGEMENT
+    add_heading("🤝 LinkedIn Engagement")
+    # Calculate posting streak and engagement health
+    posted_dates = []
+    for pg in data.get('results', []) if 'data' in dir() else []:
+        pass  # handled below
+    
+    days_since_post = 0
+    if content_cal.get("today_post") and content_cal["today_post"]["status"] == "Posted":
+        days_since_post = 0
+    elif content_cal.get("posted", 0) > 0:
+        days_since_post = 1  # At least yesterday
+
+    if days_since_post == 0:
+        add_bullet(f"✅ Posted today: \"{content_cal.get('today_post', {}).get('title', 'Unknown')[:40]}\"")
+    elif days_since_post <= 1:
+        add_bullet(f"📋 Last post: yesterday")
+    else:
+        add_para(f"⚠️ No post in {days_since_post}+ days - streak broken!")
+
+    add_bullet(f"Total posts: {content_cal.get('posted', 0)} | Streak target: daily")
+    
+    if content_cal.get("today_post") and content_cal["today_post"]["status"] != "Posted":
+        add_bullet(f"📌 Ready to post: \"{content_cal['today_post']['title'][:40]}\"")
+    
+    # Engagement tip
+    add_para("💡 Tip: Comment on 3-5 GCC executive posts daily for visibility")
+    add_divider()
+
     # 8. SYSTEM HEALTH
     add_heading("🤖 System Health")
     disk_warn = " ⚠️" if isinstance(system['disk_pct'], int) and system['disk_pct'] >= 80 else ""
@@ -1003,6 +1032,16 @@ def build_telegram_message(date_display, pipeline, scanner_meta, qualified, bord
         lines.append(f"  ⚠️ Only {content_cal['drafted']} draft(s) left - pipeline drying up")
     if content_cal.get("gap_days", 99) <= 3 and content_cal.get("scheduled", 0) > 0:
         lines.append(f"  ⚠️ Last scheduled post in {content_cal['gap_days']} days")
+
+    # LinkedIn Engagement
+    lines.append(f"\n🤝 ENGAGEMENT:")
+    if content_cal.get("today_post") and content_cal["today_post"]["status"] == "Posted":
+        lines.append(f"  ✅ Posted today: \"{content_cal['today_post']['title'][:30]}\"")
+    elif content_cal.get("today_post"):
+        lines.append(f"  📋 Ready to post: \"{content_cal['today_post']['title'][:30]}\"")
+    else:
+        lines.append(f"  ⚠️ No post scheduled for today")
+    lines.append(f"  Total: {content_cal.get('posted', 0)} posts | Goal: comment on 3-5 GCC posts daily")
 
     # Tasks
     if tasks["total_open"] > 0 or tasks["overdue"]:
