@@ -1072,6 +1072,23 @@ def main():
     print(f"Output:         {out_file}")
     print(f"Audit log:      {FILTERED_LOG}")
 
+    # Cost logging
+    try:
+        import importlib.util
+        spec = importlib.util.spec_from_file_location("cost_logger", "/root/.openclaw/workspace/scripts/cost_logger.py")
+        cl = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(cl)
+        cl.log_cost(
+            session_name=f"Scanner ({date_str})",
+            model="MiniMax-M2.5",
+            agent="Scanner",
+            duration=elapsed,
+            status="success",
+            notes=f"Found: {total_found}, Picks: {len(picks)}, Sources: {total_searches}/{expected_searches}"
+        )
+    except Exception as e:
+        print(f"Cost logging failed (non-fatal): {e}")
+
 if __name__ == "__main__":
     main()
 

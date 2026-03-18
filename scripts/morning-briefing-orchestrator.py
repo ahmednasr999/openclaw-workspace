@@ -1328,11 +1328,30 @@ def main():
         update_dashboard(pipeline)
     log("")
 
+    # ---- COST LOGGING ----
+    elapsed = int((datetime.now(cairo) - now).total_seconds())
+    try:
+        import importlib.util
+        spec = importlib.util.spec_from_file_location("cost_logger", "/root/.openclaw/workspace/scripts/cost_logger.py")
+        cl = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(cl)
+        cl.log_cost(
+            session_name=f"Morning Briefing ({today_str})",
+            model="MiniMax-M2.5",
+            agent="Morning Briefing",
+            duration=elapsed,
+            status="success",
+            notes=f"Picks: {len(qualified)}, Emails: {len(emails)}, Pipeline: {pipeline['total_applications']}"
+        )
+    except Exception as e:
+        log(f"Cost logging failed (non-fatal): {e}")
+
     # ---- DONE ----
     log("=== COMPLETE ===")
     log(f"Notion: {notion_url or 'skipped'}")
     log(f"Telegram: {len(telegram_msg)} chars")
     log(f"Blocks: {len(qualified)} picks, {pipeline['interviews']} interviews, {len(emails)} emails")
+    log(f"Duration: {elapsed}s")
 
 
 if __name__ == "__main__":

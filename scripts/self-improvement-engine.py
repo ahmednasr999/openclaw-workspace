@@ -1717,6 +1717,24 @@ def main():
     except Exception as e:
         log(f"Notification failed: {e}")
     
+    # Cost logging
+    try:
+        import importlib.util
+        spec = importlib.util.spec_from_file_location("cost_logger", "/root/.openclaw/workspace/scripts/cost_logger.py")
+        cl = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(cl)
+        elapsed_s = int(time.time() - start_time) if 'start_time' in dir() else 0
+        cl.log_cost(
+            session_name=f"SIE 360 ({datetime.now().strftime('%Y-%m-%d')})",
+            model="MiniMax-M2.5",
+            agent="SIE 360",
+            duration=elapsed_s,
+            status="success" if health_score >= 50 else "failed",
+            notes=f"Score: {health_score}/100, Warnings: {len(warnings)}"
+        )
+    except Exception as e:
+        log(f"Cost logging failed (non-fatal): {e}")
+
     # Exit code based on health
     if health_score < 50:
         sys.exit(2)
