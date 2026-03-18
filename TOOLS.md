@@ -57,6 +57,54 @@
 - Standard headers: Professional Summary, Experience, Education, Skills, Certifications
 - AVR bullet pattern: Action + Value + Result
 
+## LinkedIn Posting (via Composio)
+
+### Connection
+- **Status:** ✅ WORKING - Connected since 2026-03-13
+- **Method:** Composio `LINKEDIN_CREATE_LINKED_IN_POST` tool
+- **Person URN:** `urn:li:person:mm8EyA56mj`
+- **Connected Account:** `ca_yGwr2ocbcRZi` (ACTIVE)
+
+### How to Post
+1. **Text-only post:** Call `COMPOSIO_SEARCH_TOOLS` for LinkedIn posting, then `COMPOSIO_MULTI_EXECUTE_TOOL` with:
+   - tool_slug: `LINKEDIN_CREATE_LINKED_IN_POST`
+   - arguments: `{"author": "urn:li:person:mm8EyA56mj", "commentary": "<post text>", "visibility": "PUBLIC"}`
+
+2. **Post with image:** First upload image, then post:
+   - Call `LINKEDIN_INITIALIZE_IMAGE_UPLOAD` with `{"owner": "urn:li:person:mm8EyA56mj"}`
+   - PUT image bytes to the returned `upload_url`
+   - Include image URN in the `images` array of `LINKEDIN_CREATE_LINKED_IN_POST`
+
+3. **Bold text:** LinkedIn doesn't render markdown. Convert `**text**` to Unicode Mathematical Bold:
+   - A-Z: U+1D5D4 to U+1D5ED, a-z: U+1D5EE to U+1D607, 0-9: U+1D7EC to U+1D7F5
+   - Script helper: `scripts/linkedin-auto-poster.py` has `convert_bold_markdown()` function
+
+### Auto-Poster Cron
+- **Cron ID:** `7ba5f8f7-6eec-4301-bfa6-185dee16e778`
+- **Schedule:** 9:30 AM Cairo, Sun-Thu
+- **Script:** `scripts/linkedin-auto-poster.py`
+- **SKILL.md:** `skills/cron/linkedin-daily-post/SKILL.md`
+- **Flow:** Reads Notion Content Calendar (Status=Scheduled, Date=today) -> extracts text + image -> converts bold -> posts via Composio -> updates Notion to "Posted"
+
+### Content Calendar (Notion)
+- **DB ID:** `3268d599-a162-814b-8854-c9b8bde62468`
+- **Properties:** Title, Hook, Status (Posted/Drafted/Scheduled), Planned Date, Draft, Post URL, Topic, Day
+- **Image convention:** Stored as external image blocks in page body, hosted on GitHub raw URL
+
+### LinkedIn API Limitations
+- `LINKEDIN_GET_POST_CONTENT` requires URN format, returns 403 for own posts
+- `LINKEDIN_GET_SHARE_STATS` only works for organization pages, not personal profiles
+- Post commentary max: 3000 characters
+- Images: up to 20 per post
+
+### Available Composio LinkedIn Tools
+- `LINKEDIN_CREATE_LINKED_IN_POST` - Create post (text + optional images)
+- `LINKEDIN_INITIALIZE_IMAGE_UPLOAD` - Get upload URL for image
+- `LINKEDIN_REGISTER_IMAGE_UPLOAD` - Alternative image upload method
+- `LINKEDIN_GET_MY_INFO` - Get authenticated user info
+- `LINKEDIN_GET_POST_CONTENT` - Read post content (limited)
+- `LINKEDIN_DELETE_POST` - Delete a post
+
 ## Authentication & APIs
 
 ### Gmail (Himalaya)
