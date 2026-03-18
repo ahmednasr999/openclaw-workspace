@@ -527,7 +527,14 @@ def create_notion_briefing(date_str, date_display, pipeline, scanner_meta, quali
         total = scanner_meta.get("total_found", 0)
         picks = scanner_meta.get("priority_picks", 0)
         leads = scanner_meta.get("exec_leads", 0)
+        # Source status
+        src = scanner_meta.get("source_status", {})
+        src_parts = []
+        for name, status in src.items():
+            src_parts.append(f"{name}: {status}")
+        src_str = " | ".join(src_parts) if src_parts else "LinkedIn, Indeed"
         add_para(f"Searches: {searches} | Countries: {countries} | Found: {total} | Picks: {picks} | Leads: {leads}")
+        add_para(f"Sources: {src_str}")
         if scanner_meta.get("degraded"):
             add_para("⚠️ DEGRADED: Low results, possible rate limit or cookie expiry")
     else:
@@ -729,7 +736,11 @@ def build_telegram_message(date_display, pipeline, scanner_meta, qualified, bord
         total = scanner_meta.get("total_found", 0)
         picks = scanner_meta.get("priority_picks", 0)
         age = f" ({scanner_age}d old)" if scanner_age and scanner_age > 0 else ""
-        lines.append(f"\n🔍 SCANNER: {total} found, {picks} picks{age}")
+        # Source status
+        src = scanner_meta.get("source_status", {})
+        src_parts = [f"{k}:{v}" for k, v in src.items()]
+        src_str = f" | {' '.join(src_parts)}" if src_parts else ""
+        lines.append(f"\n🔍 SCANNER: {total} found, {picks} picks{age}{src_str}")
         if trends.get("trend"):
             lines.append(f"  {trends['trend']}")
     else:
