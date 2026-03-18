@@ -1602,6 +1602,19 @@ def main():
                     lines.append(f"⚠️ {w[:80]}")
         else:
             lines.append(f"New: {len(qualified)} picks, {len(borderline)} borderline")
+        
+        # Scanner trend from Notion history
+        try:
+            from notion_sync import get_scanner_trends
+            trends = get_scanner_trends()
+            if trends.get("total_runs", 0) >= 3:
+                lines.append(f"{trends['trend']} 7d avg: {trends['avg_7d_found']:.0f} jobs, {trends['avg_7d_picks']:.0f} picks")
+            if trends.get("alert"):
+                lines.append(trends["alert"])
+            if trends.get("cookie_alert"):
+                lines.append(trends["cookie_alert"])
+        except Exception as e:
+            log(f"  Trend check error: {e}")
 
         # New picks with one-line JD summary
         for j in qualified[:5]:
