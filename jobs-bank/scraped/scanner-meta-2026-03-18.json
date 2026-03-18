@@ -25,5 +25,11 @@
   },
   "cookie_age_days": 5,
   "validation_warnings": [],
-  "degraded": false
+  "degraded": false,
+  "ats_scored": true,
+  "ats_results": {
+    "high": 3,
+    "mid": 14,
+    "low": 10
+  }
 }

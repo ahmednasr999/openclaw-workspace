@@ -172,7 +172,14 @@ def load_scanner_data(today_str):
                     else:
                         borderline.append(current_job)
                 title = line.lstrip("# ").strip()
+                # Strip ATS icon (🟢🟡🔴) and extract ATS score from title
+                title = re.sub(r'^[🟢🟡🔴]\s*', '', title)
+                ats_in_title = re.search(r'\(ATS:\s*(\d+)%?\)', title)
+                ats_val = int(ats_in_title.group(1)) if ats_in_title else None
+                title = re.sub(r'\s*\(ATS:\s*\d+%?\)\s*$', '', title)
                 current_job = {"title": title[:60], "company": "", "location": "", "url": ""}
+                if ats_val is not None:
+                    current_job["ats_score"] = ats_val
                 continue
 
             # Metadata lines under ### heading
@@ -189,6 +196,12 @@ def load_scanner_data(today_str):
                     current_job["url"] = kv.split(":", 1)[1].strip()
                 elif kv.lower().startswith("source:"):
                     current_job["source"] = kv.split(":", 1)[1].strip()
+                elif kv.lower().startswith("ats score:"):
+                    ats_str = re.search(r'(\d+)', kv.split(":", 1)[1])
+                    if ats_str:
+                        current_job["ats_score"] = int(ats_str.group(1))
+                elif kv.lower().startswith("posted:"):
+                    current_job["date_posted"] = kv.split(":", 1)[1].strip()
                 continue
 
             # Bullet format (Format B): - Title @ Company (ATS: XX)
@@ -535,10 +548,10 @@ def create_notion_briefing(date_str, date_display, pipeline, scanner_meta, quali
             url = j.get("url", "")
 
             if isinstance(ats, (int, float)) and ats > 0:
-                icon = "🟢" if ats >= 75 else ("🟡" if ats >= 65 else "🔴")
+                icon = "🟢" if ats >= 75 else ("🟡" if ats >= 50 else "🔴")
                 ats_str = f" (ATS: {ats}%)"
             else:
-                icon = "🟡"
+                icon = "⚪"
                 ats_str = ""
 
             text = f"{icon} {title}"
@@ -734,10 +747,10 @@ def build_telegram_message(date_display, pipeline, scanner_meta, qualified, bord
 
         # ATS-based icon
         if isinstance(ats, (int, float)) and ats > 0:
-            icon = "🟢" if ats >= 75 else ("🟡" if ats >= 65 else "🔴")
+            icon = "🟢" if ats >= 75 else ("🟡" if ats >= 50 else "🔴")
             ats_str = f" [{ats}%]"
         else:
-            icon = "🟡"
+            icon = "⚪"
             ats_str = ""
 
         line = f"  {icon} {title}"
