@@ -57,18 +57,14 @@ Quality gates (ALL must pass):
 - [ ] Total length under 1500 chars for Telegram readability
 - [ ] No em dashes (use hyphens)
 
-### Step 5: Sync to Notion FIRST (before Telegram)
-**This step MUST complete before any optional steps.** The cron has a 270s timeout - Notion sync is non-negotiable.
-
-1. Create page in Notion Daily Briefings DB with full briefing content
-2. Include: pipeline stats, email intel, scanner status, system health, action items
-3. Update Dashboard Stale Alerts (Step 7 below)
+### Step 5: Sync to Notion (FIRST output step)
+Create page in Notion Daily Briefings DB with full briefing content:
+1. Pipeline stats, email intel, scanner status, system health, action items
+2. All sections must have real data - no placeholders
 
 ### Step 6: Deliver to Telegram
 1. Send compact version to Telegram (chat 866838380)
 2. Include any Notion stage changes detected by two-way sync
-
-**IMPORTANT: Steps 5-6 are the CORE deliverables. Everything after is OPTIONAL and must not delay these. If timeout is approaching (>200s elapsed), skip remaining steps.**
 
 ### Step 7: Update Dashboard Stale Alerts
 ```bash
@@ -82,22 +78,29 @@ print(f'Stale alerts: {len(alerts)} items')
 "
 ```
 
-### Step 8: Optional - LinkedIn engagement (ONLY if time permits)
-LinkedIn comment drafting or engagement analysis. Skip entirely if elapsed time > 200s.
+### Step 8: LinkedIn engagement
+Check for recent LinkedIn post performance or draft engagement comments if content calendar has scheduled posts.
 
-## Execution Order Priority
-1. 🔴 Data gathering (Steps 1-2) - MUST complete
-2. 🔴 Notion page creation (Step 5) - MUST complete  
-3. 🔴 Telegram delivery (Step 6) - MUST complete
-4. 🟡 Dashboard update (Step 7) - Should complete
-5. 🟢 LinkedIn engagement (Step 8) - Nice to have, skip if tight on time
+## Execution Order
+1. Data gathering (Steps 1-2)
+2. Format and validate (Steps 3-4)
+3. Notion page creation (Step 5)
+4. Telegram delivery (Step 6)
+5. Dashboard stale alerts (Step 7)
+6. LinkedIn engagement (Step 8)
+
+**ALL steps must complete. Timeout is 600s (10 min). Do not skip any step.**
+
+## Timeout: 600s (10 min)
+This cron has a 600s timeout. All 8 steps must complete. No skipping.
 
 ## Error Handling
 - If orchestrator script fails: Run steps manually, report which step failed
-- If scanner data is stale (>24h): Show "Scanner: last run [time] — data may be stale"
-- If Gmail IMAP fails: Show "Email: connection error — check himalaya config"
+- If scanner data is stale (>24h): Show "Scanner: last run [time] - data may be stale"
+- If Gmail IMAP fails: Show "Email: connection error - check himalaya config"
 - If Notion is unreachable: Send Telegram-only briefing, note "Notion sync skipped"
-- If calendar auth expired: Show "Calendar: auth expired — re-auth needed"
+- If calendar auth expired: Show "Calendar: auth expired - re-auth needed"
+- If SIGTERM received mid-run: Notion page likely not created - SIE will detect and flag
 
 ## Output Rules
 - Never use em dashes (—). Use hyphens (-) or commas instead.
