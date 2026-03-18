@@ -19,4 +19,5 @@ updated: 2026-03-17
 <!-- For historical posts, we'll backfill by searching LinkedIn -->
 
 | 2026-03-17 | Data Unification | urn:li:share:7439574267505176576 | 3 (2 LIKE, 1 APPRECIATION) | - | 2026-03-17 |
+| 2026-03-18 | Intel Talabat | urn:li:share:7439936862955323392 | - | - | - |
 
