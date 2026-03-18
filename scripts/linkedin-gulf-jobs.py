@@ -1058,11 +1058,12 @@ AHMED_ROLES = ["pmo", "program", "director", "vp", "vice president", "head of", 
 
 SKIP_DOMAINS = {
     "cybersecurity": ["ciso", "information security officer", "security engineer", "penetration", "soc analyst"],
-    "hands-on coding": ["software engineer", "developer", "full stack", "backend engineer", "frontend engineer", "code reviews", "sdlc", "hands-on technical"],
+    "hands-on coding": ["software engineer", "developer", "full stack", "backend engineer", "frontend engineer", "code reviews", "sdlc", "hands-on technical", "production-grade ai products", "build platforms from scratch", "technical architecture and product delivery"],
     "oil & gas": ["offshore", "upstream", "downstream", "drilling", "petroleum", "subsea", "oil and gas", "oil & gas"],
     "civil engineering": ["roads", "highways", "bridges", "tunnels", "structural engineer", "geotechnical", "civil engineer"],
     "investment banking": ["equity capital markets", "ecm", "ipo execution", "block trades", "league table", "deal origination"],
     "aviation": ["aircraft", "mro", "ground support equipment", "aviation maintenance"],
+    "construction/engineering": ["engineering, construction, and project management services", "engineering and construction consultancy", "construction consultancy solutions", "engineering standards"],
     "pure sales": ["quota-carrying", "business development representative", "sales representative"],
 }
 
