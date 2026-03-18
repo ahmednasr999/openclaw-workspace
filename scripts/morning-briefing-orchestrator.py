@@ -607,301 +607,250 @@ def create_notion_briefing(date_str, date_display, pipeline, scanner_meta, quali
     def add_heading(text):
         blocks.append({"type": "heading_2", "heading_2": {"rich_text": rt(text)}})
 
+    def add_heading3(text):
+        blocks.append({"type": "heading_3", "heading_3": {"rich_text": rt(text)}})
+
     def add_para(text):
         blocks.append({"type": "paragraph", "paragraph": {"rich_text": rt(text)}})
 
     def add_bullet(text):
         blocks.append({"type": "bulleted_list_item", "bulleted_list_item": {"rich_text": rt(text)}})
 
+    def add_numbered(text):
+        blocks.append({"type": "numbered_list_item", "numbered_list_item": {"rich_text": rt(text)}})
+
     def add_divider():
         blocks.append({"type": "divider", "divider": {}})
 
-    # Header callout
-    add_callout(f"Morning Brief - {date_display}", "☀️")
+    def add_toggle(title, children_texts):
+        """Add a collapsible toggle block with bullet children."""
+        children = [{"type": "bulleted_list_item", "bulleted_list_item": {"rich_text": rt(t)}} for t in children_texts]
+        blocks.append({
+            "type": "toggle",
+            "toggle": {
+                "rich_text": rt(title),
+                "children": children[:100]
+            }
+        })
+
+    p = pipeline
+
+    # ==================== EXECUTIVE SUMMARY ====================
+    # Build summary sentence
+    summary_parts = []
+    if p["interviews"]:
+        summary_parts.append(f"🎯 {p['interviews']} interview(s) active")
+    if qualified:
+        apply_count = len([j for j in qualified if j.get("ats_score", 0) >= 50])
+        summary_parts.append(f"{len(qualified)} new picks ({apply_count} apply-worthy)")
+    if p["stale"]:
+        summary_parts.append(f"{p['stale']} stale")
+    content_status = "posted ✅" if content_cal.get("today_post", {}).get("status") == "Posted" else "pending"
+    summary_parts.append(f"content {content_status}")
+    gw_status = "🟢" if system.get("gateway") == "UP" else "🔴"
+    summary_parts.append(f"systems {gw_status}")
+
+    add_callout(" | ".join(summary_parts), "☀️")
+
+    # ==================== ACTION ITEMS (RED - TOP) ====================
+    actions = []
+    if p["interviews"]:
+        for iv in p["interview_list"]:
+            actions.append(f"🎯 Follow up {iv['company']} interview")
+    action_emails = [e for e in emails if e.get("priority") == "action"]
+    if action_emails:
+        for ae in action_emails[:2]:
+            actions.append(f"📧 Reply: {ae.get('subject', '')[:35]}")
+    if qualified:
+        apply_count = len([j for j in qualified if j.get("ats_score", 0) >= 50])
+        actions.append(f"Review {len(qualified)} picks ({apply_count} worth applying)")
+    if p["overdue"]:
+        actions.append(f"Follow up {min(5, len(p['overdue']))} stale applications")
+    if content_cal.get("today_post") and content_cal["today_post"]["status"] != "Posted":
+        actions.append(f"Publish: \"{content_cal['today_post']['title'][:30]}\"")
+    if content_cal.get("drafted", 0) == 0:
+        actions.append("📝 Content pipeline empty!")
+    if tasks.get("overdue"):
+        actions.append(f"Address {len(tasks['overdue'])} overdue tasks")
+    if isinstance(system.get('disk_pct'), int) and system['disk_pct'] >= 80:
+        actions.append(f"⚠️ Disk {system['disk_pct']}%")
+    if cal_error:
+        actions.append("Fix Calendar auth")
+
+    if actions:
+        add_callout("ACTION ITEMS\n" + "\n".join(f"{i}. {a}" for i, a in enumerate(actions[:7], 1)), "🔴")
+    else:
+        add_callout("All clear - no urgent actions", "✅")
+
     add_divider()
 
-    # 1. PIPELINE
-    add_heading("📊 Job Pipeline")
-    p = pipeline
-    add_para(f"{p['total_applications']} total | {p['applied']} applied | {p['interviews']} interviews | {p['stale']} stale (14d+) | {p['closed']} closed")
+    # ==================== PIPELINE ====================
+    add_heading("📊 Pipeline")
+    stale_pct = int(p['stale'] / max(p['total_applications'], 1) * 100)
+    response_rate = p['interviews'] / max(p['total_applications'], 1) * 100
+    add_para(f"{p['total_applications']} total | {p['applied']} applied | {p['interviews']} interviews | {p['stale']} stale ({stale_pct}%) | Response: {response_rate:.1f}%")
 
     if p["interview_list"]:
-        add_para(f"🎯 {len(p['interview_list'])} active interview(s)!")
         for iv in p["interview_list"]:
-            add_bullet(f"{iv['company']} - {iv['role']} ({iv['stage']})")
+            add_bullet(f"🎯 {iv['company']} - {iv['role']} ({iv['stage']})")
 
     if p["overdue"]:
-        add_para(f"⏰ {len(p['overdue'])} follow-ups overdue:")
-        for o in p["overdue"][:7]:
-            icon = "🔴" if o["days"] >= 21 else "🟡"
-            add_bullet(f"{icon} {o['company']} - {o['role']} - {o['days']}d ago")
+        stale_items = [f"{'🔴' if o['days'] >= 21 else '🟡'} {o['company']} - {o['role']} ({o['days']}d)" for o in p["overdue"][:10]]
+        add_toggle(f"⏰ {len(p['overdue'])} follow-ups overdue (oldest: {p['overdue'][0]['days']}d)", stale_items)
 
     if notion_changes:
-        add_para(f"🔄 {len(notion_changes)} stage changes from Notion:")
-        for c in notion_changes[:5]:
-            add_bullet(f"{c['company']}: {c.get('old','?')} -> {c.get('new','?')}")
+        change_items = [f"{c['company']}: {c.get('old','?')} → {c.get('new','?')}" for c in notion_changes[:5]]
+        add_toggle(f"🔄 {len(notion_changes)} Notion changes", change_items)
 
     add_divider()
 
-    # 2. SCANNER
-    add_heading("🔍 Job Scanner")
+    # ==================== SCANNER ====================
+    add_heading("🔍 Scanner")
     if scanner_meta:
-        searches = scanner_meta.get("total_searches", "?")
-        countries = len(scanner_meta.get("countries", []))
         total = scanner_meta.get("total_found", 0)
         picks = scanner_meta.get("priority_picks", 0)
-        leads = scanner_meta.get("exec_leads", 0)
-        # Source status
         src = scanner_meta.get("source_status", {})
-        src_parts = []
-        for name, status in src.items():
-            src_parts.append(f"{name}: {status}")
-        src_str = " | ".join(src_parts) if src_parts else "LinkedIn, Indeed"
-        add_para(f"Searches: {searches} | Countries: {countries} | Found: {total} | Picks: {picks} | Leads: {leads}")
-        add_para(f"Sources: {src_str}")
-        if scanner_meta.get("degraded"):
-            add_para("⚠️ DEGRADED: Low results, possible rate limit or cookie expiry")
+        src_str = " | ".join(f"{n}:{s}" for n, s in src.items()) if src else "LinkedIn, Indeed"
+        freshness = "fresh" if scanner_age == 0 else f"{scanner_age}d old" if scanner_age else ""
+        add_para(f"Found: {total} | Picks: {picks} | Sources: {src_str} | {freshness}")
     else:
         add_para("No scanner data available")
-
-    if scanner_age is not None:
-        freshness = "fresh" if scanner_age == 0 else f"{scanner_age}d old"
-        add_para(f"Scanner data: {freshness}")
 
     if qualified:
         apply_jobs = [j for j in qualified if j.get("ats_score", 0) >= 50]
         skip_jobs = [j for j in qualified if j.get("ats_score", 0) < 50]
 
-        def format_job_bullet(idx, j):
-            title = j.get("title", "?")[:50]
-            company = j.get("company", "")
+        def format_job(idx, j):
+            title = j.get("title", "?")[:45]
+            company = j.get("company", "")[:20]
             ats = j.get("ats_score", 0)
-            location = j.get("location", "")
-            city = location.split(",")[0].strip()[:15] if location else ""
+            city = j.get("location", "").split(",")[0].strip()[:12] if j.get("location") else ""
             url = j.get("url", "")
             icon = "🟢" if ats >= 75 else "🟡"
-            text = f"{idx}. {icon} {title}"
-            if company:
-                text += f" @ {company}"
+            text = f"{idx}. {icon} {title} @ {company}"
             if city:
                 text += f" - {city}"
-            text += f" (ATS: {ats}%)"
+            text += f" ({ats}%)"
             if url:
-                text += f"\n{url}"
+                text += f" | {url}"
             return text
 
+        # Top 5 APPLY jobs shown directly
         if apply_jobs:
-            add_para(f"✅ APPLY ({len(apply_jobs)} jobs - ATS 50%+):")
-            for idx, j in enumerate(apply_jobs, 1):
-                add_bullet(format_job_bullet(idx, j))
+            add_heading3(f"✅ APPLY ({len(apply_jobs)} jobs, ATS 50%+)")
+            for idx, j in enumerate(apply_jobs[:5], 1):
+                add_bullet(format_job(idx, j))
 
+            # Rest in toggle
+            if len(apply_jobs) > 5:
+                more = [format_job(i, j) for i, j in enumerate(apply_jobs[5:], 6)]
+                add_toggle(f"📋 {len(apply_jobs) - 5} more apply-worthy jobs...", more)
+
+        # Skip in toggle (collapsed)
         if skip_jobs:
-            add_para(f"❌ SKIP ({len(skip_jobs)} jobs - ATS below 50%):")
+            skip_items = []
             for idx, j in enumerate(skip_jobs, len(apply_jobs) + 1):
-                title = j.get("title", "?")[:50]
-                company = j.get("company", "")
+                title = j.get("title", "?")[:45]
+                company = j.get("company", "")[:20]
                 ats = j.get("ats_score", 0)
-                city = j.get("location", "").split(",")[0].strip()[:15]
-                url = j.get("url", "")
-                text = f"{idx}. 🔴 {title}"
-                if company:
-                    text += f" @ {company}"
-                if city:
-                    text += f" - {city}"
-                text += f" (ATS: {ats}%)"
-                if url:
-                    text += f"\n{url}"
-                add_bullet(text)
+                skip_items.append(f"{idx}. 🔴 {title} @ {company} ({ats}%)")
+            add_toggle(f"❌ SKIP ({len(skip_jobs)} jobs, ATS below 50%)", skip_items)
 
     if trends.get("total_runs", 0) >= 3:
-        add_para(f"Trend: {trends.get('trend','')} 7d avg: {trends.get('avg_7d_found',0):.0f} jobs, {trends.get('avg_7d_picks',0):.0f} picks")
+        add_para(f"Trend: {trends.get('trend','')} 7d avg: {trends.get('avg_7d_found',0):.0f} found, {trends.get('avg_7d_picks',0):.0f} picks")
 
     add_divider()
 
-    # 3. EMAIL INTEL
-    add_heading("📧 Email Intelligence")
+    # ==================== EMAIL + CALENDAR (compact row) ====================
+    add_heading("📧 Email & Calendar")
     if emails:
-        action_emails = [e for e in emails if e.get("priority") == "action"]
+        action_emails_list = [e for e in emails if e.get("priority") == "action"]
         job_emails = [e for e in emails if e.get("priority") in ("job", "linkedin")]
-        reply_str = f" ({len(action_emails)} need reply)" if action_emails else ""
-        add_para(f"{len(emails)} job-related emails{reply_str}:")
-
-        if action_emails:
-            add_para("🔴 ACTION NEEDED:")
-            for e in action_emails:
+        reply_str = f" - {len(action_emails_list)} NEED REPLY" if action_emails_list else ""
+        
+        if action_emails_list:
+            for e in action_emails_list:
                 unread = " 🆕" if e.get("unread") else ""
-                add_bullet(f"🔴 {e.get('subject', '')[:60]} - {e.get('sender', '')[:30]}{unread}")
+                add_bullet(f"🔴 {e.get('subject', '')[:50]} - {e.get('sender', '')[:25]}{unread}")
 
         if job_emails:
-            add_para("🟡 Job-related:")
-            for e in job_emails[:10]:
-                unread = " 🆕" if e.get("unread") else ""
-                add_bullet(f"🟡 {e.get('subject', '')[:60]} - {e.get('sender', '')[:30]}{unread}")
+            email_items = [f"🟡 {e.get('subject', '')[:50]} - {e.get('sender', '')[:25]}{'  🆕' if e.get('unread') else ''}" for e in job_emails[:10]]
+            add_toggle(f"📧 {len(emails)} job-related emails{reply_str}", email_items)
     elif email_error:
-        add_para(f"⚠️ Email check failed: {email_error}")
+        add_bullet(f"📧 ⚠️ {email_error}")
     else:
-        add_para("No job-related emails found")
-    add_divider()
+        add_bullet("📧 No job-related emails")
 
-    # 4. CALENDAR
-    add_heading("📅 Calendar")
     if cal_error:
-        add_para(f"⚠️ {cal_error}")
+        add_bullet(f"📅 ⚠️ {cal_error}")
     elif events:
-        add_para(f"{len(events)} events today:")
-        for ev in events:
-            title = ev.get("title", "Untitled")[:50]
+        for ev in events[:3]:
+            title = ev.get("title", "Untitled")[:40]
             start = ev.get("start", "")
-            time_str = ""
-            if "T" in str(start):
-                time_str = str(start).split("T")[1][:5]
-            elif ev.get("all_day"):
-                time_str = "All day"
-            cal_name = ev.get("calendar", "")
-            text = f"📌 {title}"
-            if time_str:
-                text += f" ({time_str})"
-            if cal_name:
-                text += f" - {cal_name}"
-            add_bullet(text)
+            time_str = str(start).split("T")[1][:5] if "T" in str(start) else ("All day" if ev.get("all_day") else "")
+            add_bullet(f"📅 {title} ({time_str})" if time_str else f"📅 {title}")
     else:
-        add_para("Clear day ✅")
+        add_bullet("📅 Clear day ✅")
+
     add_divider()
 
-    # 5. DASHBOARD KPIs
-    add_heading("📈 Dashboard KPIs")
-    add_bullet(f"Pipeline response rate: {(p['interviews'] / max(p['total_applications'],1) * 100):.1f}%")
-    add_bullet(f"Stale rate: {(p['stale'] / max(p['total_applications'],1) * 100):.0f}%")
-    add_bullet(f"Active interviews: {p['interviews']}")
-    add_divider()
+    # ==================== CONTENT + ENGAGEMENT (merged) ====================
+    add_heading("📝 Content & Engagement")
+    status_parts = [f"{content_cal['posted']} posted", f"{content_cal['scheduled']} scheduled", f"{content_cal['drafted']} drafted"]
+    add_para(" | ".join(status_parts))
 
-    # 6. ACTIVE TASKS
-    add_heading("✅ Active Tasks")
-    add_para(f"{tasks['total_open']} open | {tasks['completed_recent']} completed")
-    if tasks["overdue"]:
-        add_para(f"🔴 {len(tasks['overdue'])} overdue:")
-        for t in tasks["overdue"][:5]:
-            add_bullet(t)
-    if tasks["due_today"]:
-        add_para(f"📌 Due today:")
-        for t in tasks["due_today"][:5]:
-            add_bullet(t)
-    add_divider()
-
-    # 7. CONTENT CALENDAR
-    add_heading("📝 Content Calendar")
-    add_para(f"Posted: {content_cal['posted']} | Drafted: {content_cal['drafted']} | Scheduled: {content_cal['scheduled']}")
     if content_cal.get("today_post"):
         tp = content_cal["today_post"]
-        status_icon = "✅" if tp["status"] == "Posted" else "📋"
-        add_bullet(f"Today: \"{tp['title']}\" [{tp['status']}] {status_icon}")
+        icon = "✅" if tp["status"] == "Posted" else "📋"
+        add_bullet(f"Today: \"{tp['title'][:40]}\" [{tp['status']}] {icon}")
     if content_cal.get("tomorrow_post"):
         tp = content_cal["tomorrow_post"]
-        add_bullet(f"Tomorrow: \"{tp['title']}\" [{tp['status']}]")
+        add_bullet(f"Tomorrow: \"{tp['title'][:40]}\" [{tp['status']}]")
+
     if content_cal.get("drafted", 0) <= 1:
-        add_para(f"⚠️ Only {content_cal['drafted']} draft(s) left - content pipeline drying up")
-    if content_cal.get("gap_days", 99) <= 3 and content_cal.get("scheduled", 0) > 0:
-        add_para(f"⚠️ Last scheduled post in {content_cal['gap_days']} days - need more content")
+        add_bullet(f"⚠️ Only {content_cal['drafted']} draft(s) - pipeline drying up")
+    
+    add_bullet(f"🤝 {content_cal.get('posted', 0)} total posts | Goal: 3-5 GCC comments daily")
+
     add_divider()
 
-    # 7b. LINKEDIN ENGAGEMENT
-    add_heading("🤝 LinkedIn Engagement")
-    # Calculate posting streak and engagement health
-    posted_dates = []
-    for pg in data.get('results', []) if 'data' in dir() else []:
-        pass  # handled below
+    # ==================== TASKS + SYSTEM (compact) ====================
+    add_heading("✅ Tasks & System")
     
-    days_since_post = 0
-    if content_cal.get("today_post") and content_cal["today_post"]["status"] == "Posted":
-        days_since_post = 0
-    elif content_cal.get("posted", 0) > 0:
-        days_since_post = 1  # At least yesterday
-
-    if days_since_post == 0:
-        add_bullet(f"✅ Posted today: \"{content_cal.get('today_post', {}).get('title', 'Unknown')[:40]}\"")
-    elif days_since_post <= 1:
-        add_bullet(f"📋 Last post: yesterday")
-    else:
-        add_para(f"⚠️ No post in {days_since_post}+ days - streak broken!")
-
-    add_bullet(f"Total posts: {content_cal.get('posted', 0)} | Streak target: daily")
+    # Tasks
+    overdue_str = f" | 🔴 {len(tasks['overdue'])} overdue" if tasks["overdue"] else ""
+    due_str = f" | 📌 {len(tasks['due_today'])} due today" if tasks["due_today"] else ""
+    done_str = f" | ✔️ {tasks['completed_recent']} done" if tasks.get("completed_recent") else ""
+    add_para(f"Tasks: {tasks['total_open']} open{overdue_str}{due_str}{done_str}")
     
-    if content_cal.get("today_post") and content_cal["today_post"]["status"] != "Posted":
-        add_bullet(f"📌 Ready to post: \"{content_cal['today_post']['title'][:40]}\"")
-    
-    # Engagement tip
-    add_para("💡 Tip: Comment on 3-5 GCC executive posts daily for visibility")
-    add_divider()
+    if tasks["overdue"]:
+        add_toggle(f"🔴 {len(tasks['overdue'])} overdue tasks", tasks["overdue"][:5])
+    if tasks["due_today"]:
+        for t in tasks["due_today"][:3]:
+            add_bullet(f"📌 {t}")
 
-    # 8. GITHUB DISCOVERY
-    if github_discovery and github_discovery.get("repos"):
-        add_heading("🔭 GitHub Discovery")
-        repos = github_discovery["repos"]
-        age = ""
-        if github_discovery.get("date") and github_discovery["date"] != datetime.now(cairo).strftime("%Y-%m-%d"):
-            age = " (yesterday)"
-        add_para(f"{len(repos)} relevant repos found{age}:")
-        for r in repos[:5]:
-            name = r.get("name", "?")
-            desc = r.get("desc", "")[:60]
-            url = r.get("url", "")
-            why = r.get("why", "")[:60]
-            text = f"🔹 {name}"
-            if desc:
-                text += f" - {desc}"
-            add_bullet(text)
-            if why:
-                add_bullet(f"  → {why}")
-            if url:
-                add_bullet(f"  {url}")
-        add_divider()
-
-    # 9. SYSTEM HEALTH
-    add_heading("🤖 System Health")
+    # System
     disk_warn = " ⚠️" if isinstance(system['disk_pct'], int) and system['disk_pct'] >= 80 else ""
     mem_warn = " ⚠️" if isinstance(system['mem_pct'], int) and system['mem_pct'] >= 85 else ""
-    add_bullet(f"Gateway: {system['gateway']} | Uptime: {system['uptime']}")
-    add_bullet(f"Disk: {system['disk_pct']}%{disk_warn} | Memory: {system['mem_pct']}%{mem_warn}")
-    disabled_str = f" ({system['cron_disabled']} disabled)" if system.get("cron_disabled") else ""
-    add_bullet(f"Crons: {system['cron_enabled']}/{system['cron_total']} active{disabled_str}")
-    if system["errors"]:
-        for err in system["errors"][:3]:
-            add_bullet(f"❌ {err}")
+    disabled_str = f" ({system['cron_disabled']} off)" if system.get("cron_disabled") else ""
+    add_para(f"System: GW {system['gateway']} | Disk {system['disk_pct']}%{disk_warn} | Mem {system['mem_pct']}%{mem_warn} | Up {system['uptime']} | Crons {system['cron_enabled']}/{system['cron_total']}{disabled_str}")
+
     add_divider()
 
-    # 9. ACTION ITEMS
-    add_heading("⚠️ Action Items")
-    actions = []
-    if p["interviews"]:
-        for iv in p["interview_list"]:
-            actions.append(f"Follow up on {iv['company']} interview")
-    if qualified:
-        actions.append(f"Review {len(qualified)} new job picks")
-    if p["overdue"]:
-        actions.append(f"Follow up on {min(5, len(p['overdue']))} oldest stale applications")
-    if content_cal.get("today_post") and content_cal["today_post"]["status"] != "Posted":
-        actions.append(f"Publish LinkedIn: \"{content_cal['today_post']['title'][:30]}\"")
-    if content_cal.get("drafted", 0) == 0:
-        actions.append("📝 Content pipeline empty - create new drafts")
-    # Email actions
-    action_emails = [e for e in emails if e.get("priority") == "action"]
-    if action_emails:
-        for ae in action_emails[:3]:
-            actions.append(f"📧 Reply: {ae.get('subject', '')[:35]} ({ae.get('sender', '')[:15]})")
-    if cal_error:
-        actions.append("Re-auth Google Calendar")
-    if isinstance(system.get('disk_pct'), int) and system['disk_pct'] >= 80:
-        actions.append(f"⚠️ Disk at {system['disk_pct']}% - cleanup needed")
-    if isinstance(system.get('mem_pct'), int) and system['mem_pct'] >= 85:
-        actions.append(f"⚠️ Memory at {system['mem_pct']}% - investigate")
-    if tasks["overdue"]:
-        actions.append(f"Address {len(tasks['overdue'])} overdue tasks")
-
-    if not actions:
-        actions.append("All systems nominal - no urgent actions")
-
-    for i, a in enumerate(actions[:7], 1):
-        blocks.append({"type": "numbered_list_item", "numbered_list_item": {"rich_text": rt(a)}})
+    # ==================== GITHUB DISCOVERY (if available) ====================
+    if github_discovery and github_discovery.get("repos"):
+        repos = github_discovery["repos"]
+        age = " (yesterday)" if github_discovery.get("date") != datetime.now(cairo).strftime("%Y-%m-%d") else ""
+        repo_items = []
+        for r in repos[:5]:
+            text = f"🔹 {r.get('name', '?')} - {r.get('desc', '')[:50]}"
+            if r.get("why"):
+                text += f" → {r['why'][:40]}"
+            if r.get("url"):
+                text += f" | {r['url']}"
+            repo_items.append(text)
+        add_toggle(f"🔭 {len(repos)} GitHub discoveries{age}", repo_items)
+        add_divider()
 
     # Create page
     log(f"  Creating Notion page with {len(blocks)} blocks...")
