@@ -9,7 +9,7 @@
 
 | # | Applied? | Company | Role | Location | ATS | Stage | JD Status | Applied | Follow-up Due | Job URL | CV |
 |---|----------|---------|------|----------|-----|-------|-----------|---------|--------------|---------|-----|
-| 1 | ☑️ | ~~Delphi Consulting~~ | ~~Senior AI PM~~ | ~~UAE~~ | ~~91%~~ | ❌ Closed | ~~Full JD~~ | ~~2026-02-21~~ | — | N/A | — |
+| 1 | ☑️ | ~~Delphi Consulting~~ | ~~Senior AI PM~~ | ~~UAE~~ | ~~91%~~ | ❌ Rejected | ~~Full JD~~ | ~~2026-02-21~~ | — | N/A | — |
 | 2 | ☑️ | Talabat | CPTO | Dubai, UAE | 87% | ✅ Applied | Partial JD | 2026-02-24 | 2026-03-02 | [LinkedIn](https://www.linkedin.com/jobs/view/4375708512) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed_Nasr_CPTO_Talabat.pdf) |
 | 3 | ☑️ | AIQU | Director of AI | Dubai, UAE | 82% | ✅ Applied | Partial JD | 2026-02-24 | 2026-03-02 | [LinkedIn](https://www.linkedin.com/jobs/view/4375324051) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed_Nasr_Director_AI_AIQU.pdf) |
 | 4 | ☑️ | Nexus Consulting | CEO | Saudi Arabia | 78% | ✅ Applied | Partial JD | 2026-02-24 | 2026-03-02 | [LinkedIn](https://www.linkedin.com/jobs/view/4376367703) | [CV ✅](https://github.com/ahmednasr999/openclaw-nasr/blob/master/cvs/Ahmed_Nasr_CEO_Nexus.pdf) |
