@@ -1,80 +1,137 @@
 ---
 name: github-discovery
-description: "Daily GitHub radar: find new trending repos in AI, automation, and OpenClaw ecosystem."
+description: "GitHub radar: find high-quality, immediately useful repos - not hobby projects."
 ---
 
-# GitHub Discovery Radar
+# GitHub Discovery Radar v2
 
-Find new repos published or trending in the last 24 hours relevant to Ahmed's work.
+Find repos that solve problems we ACTUALLY have. Not random AI projects.
 
-## Prerequisites
-- GitHub CLI (gh) or web search access
+## NON-NEGOTIABLE RULES
+1. **Minimum 50 stars** for daily picks. No zero-star hobby projects.
+2. **Immediately actionable** - we can install it, use it, or learn a pattern from it TODAY.
+3. **"Quiet day" is valid output** - 0 picks is better than 5 useless picks.
+4. **Never pad the list** - if only 2 repos are good, report 2.
 
-## Steps
+## Search Strategy
 
-### Step 1: Search trending repos
+### Our actual problems (search for THESE):
+- LinkedIn automation / posting / scraping / analytics
+- Notion API tools / integrations / utilities
+- Job application automation / ATS optimization / resume parsing
+- PDF generation / HTML-to-PDF / CV builders
+- Browser automation anti-detection (Playwright, Puppeteer, Camoufox alternatives)
+- Cron scheduling / task orchestration for AI agents
+- Email automation (IMAP tools, email parsing)
+- Google Jobs scraping / job board APIs
+- Multi-agent coordination / shared state
+- AI-powered content writing / LinkedIn content tools
+
+### Search tiers (run ALL):
+
+**Tier 1 - DAILY (top trending, high signal)**
+Search GitHub for repos with 50+ stars created or significantly updated in last 7 days:
 ```bash
-# Search GitHub for recent relevant repos
-echo "=== AI Agent repos (last 24h) ==="
-gh search repos "ai agent" --created ">$(date -d '1 day ago' +%Y-%m-%d)" --sort stars --limit 5 2>/dev/null || echo "gh CLI not available, using web search"
+# Job search automation
+gh search repos "job application automation" --stars ">=50" --sort stars --limit 5
 
-echo ""
-echo "=== OpenClaw ecosystem ==="
-gh search repos "openclaw" --sort updated --limit 5 2>/dev/null || echo "Using web search fallback"
+# LinkedIn tools
+gh search repos "linkedin api automation" --stars ">=50" --sort stars --limit 5
 
-echo ""
-echo "=== LLM tools ==="
-gh search repos "llm automation tool" --created ">$(date -d '1 day ago' +%Y-%m-%d)" --sort stars --limit 5 2>/dev/null || echo "Using web search fallback"
+# Browser anti-detection
+gh search repos "browser automation anti-detection" --stars ">=50" --sort stars --limit 5
+
+# AI agent orchestration
+gh search repos "ai agent orchestration" --stars ">=100" --sort stars --limit 5
 ```
-If gh CLI unavailable, use web_search tool as fallback.
 
-### Step 4: Save results for briefing
-After collecting results, save to JSON for the morning briefing:
+**Tier 2 - WEEKLY (broader sweep)**
+Run on Sundays only. Search for repos with 200+ stars updated in last 30 days:
 ```bash
-# Save to /tmp/github-discovery-YYYY-MM-DD.json
+gh search repos "notion api integration" --stars ">=200" --sort updated --limit 10
+gh search repos "resume builder ats" --stars ">=100" --sort updated --limit 10
+gh search repos "linkedin scraper" --stars ">=200" --sort updated --limit 10
+gh search repos "pdf generation html" --stars ">=200" --sort updated --limit 10
+gh search repos "multi agent coordination" --stars ">=200" --sort updated --limit 10
+```
+
+**Tier 3 - MONTHLY (top of category)**
+Run on 1st of month. Find the best-in-class for each problem domain:
+```bash
+gh search repos "linkedin automation" --stars ">=1000" --sort stars --limit 10
+gh search repos "job search automation" --stars ">=500" --sort stars --limit 10
+gh search repos "notion integration" --stars ">=1000" --sort stars --limit 10
+gh search repos "browser automation" --stars ">=5000" --sort stars --limit 10
+gh search repos "ai agent framework" --stars ">=5000" --sort stars --limit 10
+```
+
+### Determine which tier to run:
+```bash
+DAY_OF_WEEK=$(date +%u)  # 1=Mon, 7=Sun
+DAY_OF_MONTH=$(date +%d)
+
+if [ "$DAY_OF_MONTH" = "01" ]; then
+    echo "TIER: monthly (all 3 tiers)"
+elif [ "$DAY_OF_WEEK" = "7" ]; then
+    echo "TIER: weekly (tier 1 + 2)"
+else
+    echo "TIER: daily (tier 1 only)"
+fi
+```
+
+## Scoring (must pass ALL):
+1. **Stars >= 50** (daily) / **>= 200** (weekly) / **>= 1000** (monthly)
+2. **Updated within 30 days** (not abandoned)
+3. **Solves a problem we have** - map to specific problem from list above
+4. **Has README with setup instructions** - no empty repos
+5. **Written in Python, Node, Rust, or Go** - languages we can run
+
+## Output Format
+
+### Save to JSON for briefing:
+```bash
 cat > /tmp/github-discovery-$(date +%Y-%m-%d).json << 'EOF'
 [
-  {"name": "repo-name", "desc": "one-line description", "stars": 0, "url": "https://github.com/...", "why": "relevance to Ahmed's work"}
+  {
+    "name": "repo-name",
+    "desc": "one-line description",
+    "stars": 1500,
+    "url": "https://github.com/owner/repo",
+    "why": "Solves: [specific problem]. We can use it for: [specific use case].",
+    "problem": "linkedin-automation",
+    "tier": "daily"
+  }
 ]
 EOF
 ```
-This file is read by the morning briefing orchestrator.
 
-### Step 2: Filter for relevance
-Score each repo 1-10:
-- Relevance to Ahmed's work (AI automation, OpenClaw, PMO tools)
-- Quality (documentation, stars, recent activity)
-- Actionability (can we use or learn from this?)
-
-### Step 3: Top picks
-Select top 5 repos. For each provide:
-- Name, description, star count
-- Why it matters to Ahmed
-- Direct GitHub link
-
-### Step 4: Report
+### Telegram report:
 ```
-GitHub Discovery - [DATE]
+🔭 GitHub Discovery - [DATE] ([TIER] scan)
 
-[X] repos scanned, [Y] relevant
+[X] repos scanned, [Y] passed quality bar
 
 Top Picks:
-1. [repo-name] - [stars] stars - [one line why it matters]
-   https://github.com/[owner/repo]
-2. ...
+1. [repo-name] (⭐ 1.5k) - [what it does]
+   Solves: [our specific problem]
+   → https://github.com/owner/repo
+
+Quiet areas: [domains with no new finds]
+```
+
+If zero repos pass the bar:
+```
+🔭 GitHub Discovery - [DATE] ([TIER] scan)
+Quiet day - nothing new above quality bar. No action needed.
 ```
 
 ## Error Handling
-- If GitHub rate limited: Use web search fallback
-- If no relevant repos: Report "Quiet day - no new discoveries matching our domains"
-- If gh CLI unavailable: Use web search exclusively
+- gh CLI unavailable: use web_search as fallback
+- GitHub rate limited: reduce search count, report partial results
+- Zero results is FINE - never fabricate or lower the bar
 
 ## Quality Gates
-- Must search at least 3 domain areas
-- Top picks must have direct GitHub links
-- Each pick must explain relevance to Ahmed's work specifically
-
-## Output Rules
-- No em dashes. Hyphens only.
-- Include clickable GitHub URLs
-- "Quiet day" is valid output - don't fabricate discoveries
+- Every pick must map to a problem from "Our actual problems" list
+- Every pick must have 50+ stars (daily minimum)
+- Every pick must explain specific use case for us, not generic "interesting"
+- README must exist and have setup instructions
