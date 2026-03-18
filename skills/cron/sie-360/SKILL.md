@@ -73,16 +73,23 @@ Report the ACTUAL counts from these commands.
 
 ### Step 3: Integration Health (RUN THESE COMMANDS)
 ```bash
-# Gmail - verify App Password auth works (NOT OAuth)
-echo "GMAIL:" && grep -q "passwd" ~/.config/himalaya/config.toml 2>/dev/null && echo "App Password configured" || echo "NOT configured"
+# Gmail - verify App Password auth works (NOT OAuth). NEVER print the actual password.
+echo "GMAIL:" && grep -q "passwd" ~/.config/himalaya/config.toml 2>/dev/null && echo "App Password configured (himalaya IMAP/SMTP)" || echo "NOT configured"
 
-# Notion - verify token exists
+# Notion - verify token and databases. NEVER print tokens or secrets.
 echo "NOTION:" && python3 -c "
 import json
 with open('/root/.openclaw/workspace/config/notion.json') as f:
     d = json.load(f)
-print('Token present' if d.get('token') else 'NO TOKEN')
-print(f'Databases: {len(d.get(\"databases\", {}))}')
+token = d.get('token', '')
+print(f'Token: {\"present (\" + str(len(token)) + \" chars)\" if token else \"MISSING\"}')
+# Check databases in config/notion-databases.json (canonical source)
+try:
+    with open('/root/.openclaw/workspace/config/notion-databases.json') as f2:
+        dbs = json.load(f2)
+    print(f'Databases: {len(dbs)} configured')
+except:
+    print('Databases: config/notion-databases.json not found')
 " 2>/dev/null
 
 # LinkedIn cookies - healthy = 10+ lines, stale if <5 lines
@@ -216,3 +223,5 @@ Actions needed: [specific list with priority]
 - Every number must come from a command you ran. No estimates.
 - If Gmail uses App Password (not OAuth), report it as HEALTHY, not an issue.
 - Be specific: "3 files without enforcement" not "some learnings need attention"
+- NEVER print passwords, tokens, API keys, or secrets in the report. Say "configured" or "present", never the actual value.
+- NEVER include NO_REPLY in your output. Your output IS the report.
