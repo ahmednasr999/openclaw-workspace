@@ -1722,8 +1722,21 @@ def main():
             cron_line = f" | ⚠️ {len(errors)} errors"
         else:
             cron_line = " | Crons: OK"
+        # Cron health from Notion dashboard
+        cron_summary = None
+        try:
+            from notion_sync import sync_cron_dashboard_full
+            cron_summary = sync_cron_dashboard_full()
+        except Exception as e:
+            log(f"  Cron dashboard sync error: {e}")
+        
+        if cron_summary:
+            cron_line = f" | Crons: {cron_summary['ok']}✅ {cron_summary['failed']}❌ {cron_summary['disabled']}⏸️"
         lines.append(f"Gateway: {gw_status} | Disk: {disk_pct}%{cron_line}")
-        if errors:
+        if cron_summary and cron_summary.get("failures"):
+            for fail in cron_summary["failures"][:3]:
+                lines.append(f"  ❌ {fail['name'][:30]}: {fail['error'][:40]}")
+        elif errors:
             for e in errors[:2]:
                 lines.append(f"  ⚠️ {e.get('issue','')[:60]}")
         
