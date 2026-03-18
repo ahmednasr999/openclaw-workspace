@@ -85,8 +85,17 @@ print('Token present' if d.get('token') else 'NO TOKEN')
 print(f'Databases: {len(d.get(\"databases\", {}))}')
 " 2>/dev/null
 
-# LinkedIn cookies
-echo "LINKEDIN:" && [ -f ~/.openclaw/cookies/linkedin.txt ] && echo "Cookies exist ($(wc -l < ~/.openclaw/cookies/linkedin.txt) lines)" || echo "No cookies"
+# LinkedIn cookies - healthy = 10+ lines, stale if <5 lines
+COOKIE_FILE=~/.openclaw/cookies/linkedin.txt
+if [ -f "$COOKIE_FILE" ]; then
+    LINES=$(wc -l < "$COOKIE_FILE")
+    AGE_DAYS=$(( ($(date +%s) - $(stat -c %Y "$COOKIE_FILE")) / 86400 ))
+    echo "LINKEDIN: Cookies exist ($LINES lines, ${AGE_DAYS}d old)"
+    if [ "$LINES" -lt 5 ]; then echo "  WARNING: Cookie file suspiciously small"; fi
+    if [ "$AGE_DAYS" -gt 14 ]; then echo "  WARNING: Cookies older than 14 days - may be stale"; fi
+else
+    echo "LINKEDIN: No cookies file"
+fi
 
 # Gateway
 echo "GATEWAY:" && openclaw gateway status 2>/dev/null | grep -v "^\[plugins\]" | head -2
@@ -95,26 +104,74 @@ Do NOT report "Gmail issue detected" if App Password is configured. OAuth is dea
 
 ### Step 4: Cron Health
 ```bash
-# Count total crons and check skill-first compliance
-openclaw cron list --json 2>&1 | sed '/^\[plugins\]/d' > /tmp/sie_crons.json
-python3 -c "
-import json
-with open('/tmp/sie_crons.json') as f:
-    text = f.read()
-decoder = json.JSONDecoder()
-data, _ = decoder.raw_decode(text)
-jobs = data.get('jobs', [])
-skill = sum(1 for j in jobs if 'Read and follow' in j.get('payload',{}).get('message','') and '.md' in j.get('payload',{}).get('message',''))
-total = len(jobs)
-enabled = sum(1 for j in jobs if j.get('enabled'))
-print(f'Total: {total}, Enabled: {enabled}, Skill-first: {skill}/{total}')
+# Step 4a: Get cron data (handle plugin log contamination)
+openclaw cron list --json 2>&1 > /tmp/sie_crons_raw.txt
 
-# Check for recent failures
+# Step 4b: Parse and analyze
+python3 << 'CRONCHECK'
+import json, re
+
+with open("/tmp/sie_crons_raw.txt") as f:
+    text = f.read()
+
+# Strip plugin log lines that contaminate JSON
+clean_lines = [l for l in text.split("\n") if not l.startswith("[plugins]")]
+clean = "\n".join(clean_lines)
+
+# Find JSON object
+decoder = json.JSONDecoder()
+# Try to find start of JSON
+for i, ch in enumerate(clean):
+    if ch == '{':
+        try:
+            data, _ = decoder.raw_decode(clean[i:])
+            break
+        except json.JSONDecodeError:
+            continue
+else:
+    print("ERROR: Could not parse cron JSON")
+    exit(1)
+
+jobs = data.get("jobs", [])
+total = len(jobs)
+enabled = sum(1 for j in jobs if j.get("enabled", False))
+disabled = total - enabled
+
+# Skill-first check: prompt contains "Read and follow" + ".md"
+skill_first = 0
+raw_prompt = 0
+raw_list = []
 for j in jobs:
-    state = j.get('state', {})
-    if state.get('consecutiveErrors', 0) > 0:
-        print(f'  FAILING: {j[\"name\"]} ({state[\"consecutiveErrors\"]} consecutive errors)')
-" 2>/dev/null
+    msg = j.get("payload", {}).get("message", "")
+    name = j.get("name", "?")
+    if "Read and follow" in msg and ".md" in msg:
+        skill_first += 1
+    else:
+        raw_prompt += 1
+        raw_list.append(name)
+
+print(f"Total: {total}, Enabled: {enabled}, Disabled: {disabled}")
+print(f"Skill-first: {skill_first}/{total} ({100*skill_first//total}%)")
+if raw_list:
+    print(f"RAW PROMPT (not skill-first):")
+    for n in raw_list:
+        print(f"  - {n}")
+
+# Check for failures
+failing = []
+for j in jobs:
+    state = j.get("state", {})
+    consec = state.get("consecutiveErrors", 0)
+    if consec > 0:
+        failing.append(f"{j['name']} ({consec} consecutive errors)")
+
+if failing:
+    print(f"FAILING CRONS:")
+    for f in failing:
+        print(f"  - {f}")
+else:
+    print("No failing crons")
+CRONCHECK
 ```
 
 ### Step 5: SIE Suggestions (optional script)
