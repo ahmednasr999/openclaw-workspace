@@ -905,21 +905,43 @@ def build_telegram_message(date_display, pipeline, scanner_meta, qualified, bord
     lines = []
     lines.append(f"☀️ Morning Brief - {date_display}")
 
-    # Action items first (red)
+    # Action items first (red) - comprehensive, prioritized
     actions = []
+    # Priority 1: Interviews
     if p["interviews"]:
         actions.append(f"🎯 {p['interviews']} INTERVIEW(S) active!")
+    # Priority 2: Email replies needed
+    action_emails = [e for e in emails if e.get("priority") == "action"]
+    if action_emails:
+        for ae in action_emails[:2]:
+            actions.append(f"📧 Reply: {ae.get('subject', '')[:30]}")
+    # Priority 3: New job picks
     if qualified:
-        actions.append(f"Review {len(qualified)} new picks")
+        apply_count = len([q for q in qualified if q.get("ats_score", 0) >= 50])
+        actions.append(f"Review {len(qualified)} picks ({apply_count} worth applying)")
+    # Priority 4: Stale follow-ups
     if p["overdue"]:
-        actions.append(f"{len(p['overdue'])} follow-ups overdue")
+        actions.append(f"Follow up {min(5, len(p['overdue']))} stale applications")
+    # Priority 5: Content
     if content_cal.get("today_post") and content_cal["today_post"]["status"] != "Posted":
-        actions.append("Publish LinkedIn post")
+        actions.append(f"Publish: \"{content_cal['today_post']['title'][:25]}\"")
+    if content_cal.get("drafted", 0) == 0:
+        actions.append("📝 Content pipeline empty!")
+    # Priority 6: Overdue tasks
+    if tasks.get("overdue"):
+        actions.append(f"Address {len(tasks['overdue'])} overdue tasks")
+    # Priority 7: System issues
+    if isinstance(system.get('disk_pct'), int) and system['disk_pct'] >= 80:
+        actions.append(f"⚠️ Disk {system['disk_pct']}%")
+    if cal_error:
+        actions.append("Fix Google Calendar")
 
     if actions:
         lines.append("\n🔴 ACTION NEEDED")
-        for a in actions[:4]:
-            lines.append(f"  {a}")
+        for i, a in enumerate(actions[:6], 1):
+            lines.append(f"  {i}. {a}")
+    else:
+        lines.append("\n✅ All clear - no urgent actions")
 
     # Pipeline
     lines.append(f"\n📊 PIPELINE: {p['total_applications']} total | {p['interviews']} interviews | {p['stale']} stale")
