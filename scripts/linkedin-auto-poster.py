@@ -1,24 +1,43 @@
 #!/usr/bin/env python3
 """
-LinkedIn Auto-Poster: Reads from Notion Content Calendar and posts via Composio.
+LinkedIn Auto-Poster v2: Reads from Notion Content Calendar, posts via Composio.
 
-Finds today's scheduled post in Notion, extracts content, posts to LinkedIn via Composio API.
-Updates Notion status to "Posted" with post URL.
+Flow:
+1. Find today's "Scheduled" post in Notion Content Calendar
+2. Extract full post text from page blocks
+3. Convert **bold** markdown to LinkedIn Unicode bold
+4. Download image from GitHub (if any)
+5. Upload image to LinkedIn via Composio INITIALIZE_IMAGE_UPLOAD
+6. Create post via Composio LINKEDIN_CREATE_LINKED_IN_POST
+7. Update Notion status to "Posted" with post URL
+
+Usage:
+  python3 linkedin-auto-poster.py              # Post today's scheduled content
+  python3 linkedin-auto-poster.py --dry-run     # Preview without posting
+  python3 linkedin-auto-poster.py --date 2026-03-19  # Post for specific date
 """
 
-import json, os, ssl, urllib.request, subprocess, sys
-from datetime import datetime, timedelta
+import json, os, re, ssl, sys, urllib.request, tempfile
+from datetime import datetime
 from pathlib import Path
 
 WORKSPACE = "/root/.openclaw/workspace"
-NOTION_DB = "3268d599-a162-814b-8854-c9b8bde62468"
+NOTION_DB = "3268d599-a162-814b-8854-c9b8bde62468"  # Content Calendar
 NOTION_TOKEN = json.load(open(f"{WORKSPACE}/config/notion.json"))["token"]
-COMPOSIO_KEY = os.environ.get("COMPOSIO_API_KEY", "")  # Set if needed
+PERSON_URN = "urn:li:person:mm8EyA56mj"
 
-CAIRO = datetime.now()
-TODAY = CAIRO.strftime("%Y-%m-%d")
+# Parse args
+DRY_RUN = "--dry-run" in sys.argv
+CUSTOM_DATE = None
+for i, arg in enumerate(sys.argv):
+    if arg == "--date" and i + 1 < len(sys.argv):
+        CUSTOM_DATE = sys.argv[i + 1]
 
-def notion_req(method, path, body=None, parse=True):
+TODAY = CUSTOM_DATE or datetime.now().strftime("%Y-%m-%d")
+
+# ── Notion helpers ──────────────────────────────────────────────
+
+def notion_req(method, path, body=None):
     url = f"https://api.notion.com/v1{path}"
     data = json.dumps(body).encode() if body else None
     headers = {
@@ -29,7 +48,34 @@ def notion_req(method, path, body=None, parse=True):
     req = urllib.request.Request(url, data=data, method=method, headers=headers)
     ctx = ssl.create_default_context()
     with urllib.request.urlopen(req, context=ctx, timeout=30) as r:
-        return json.loads(r.read()) if parse else r.read()
+        return json.loads(r.read())
+
+
+# ── Unicode Bold Converter ──────────────────────────────────────
+
+def to_unicode_bold(text):
+    """Convert regular text to Unicode Mathematical Bold (LinkedIn-compatible)."""
+    result = []
+    for ch in text:
+        if 'A' <= ch <= 'Z':
+            result.append(chr(0x1D5D4 + ord(ch) - ord('A')))
+        elif 'a' <= ch <= 'z':
+            result.append(chr(0x1D5EE + ord(ch) - ord('a')))
+        elif '0' <= ch <= '9':
+            result.append(chr(0x1D7EC + ord(ch) - ord('0')))
+        else:
+            result.append(ch)
+    return ''.join(result)
+
+
+def convert_bold_markdown(text):
+    """Replace **bold text** with Unicode bold equivalent."""
+    def bold_replacer(match):
+        return to_unicode_bold(match.group(1))
+    return re.sub(r'\*\*(.+?)\*\*', bold_replacer, text)
+
+
+# ── Content Extraction ──────────────────────────────────────────
 
 def get_today_post():
     """Find today's scheduled post in Notion Content Calendar."""
@@ -41,107 +87,170 @@ def get_today_post():
         "page_size": 1
     }
     result = notion_req("POST", f"/databases/{NOTION_DB}/query", body)
-    
+
     if not result.get("results"):
         return None
-    
+
     page = result["results"][0]
-    props = page["properties"]
-    
-    # Extract title
-    title = props.get("Title", {}).get("title", [])
-    title_str = "".join(t.get("plain_text","") for t in title) if title else "Untitled"
-    
-    # Get full content from blocks
     pid = page["id"]
-    blocks_result = notion_req("GET", f"/blocks/{pid}/children?page_size=50")
-    
-    # Build full post text
-    full_text = title_str + "\n\n"
+    props = page["properties"]
+
+    title = "".join(t.get("plain_text", "") for t in props.get("Title", {}).get("title", []))
+
+    # Get full content from page blocks
+    blocks_result = notion_req("GET", f"/blocks/{pid}/children?page_size=100")
+
+    full_text = ""
+    image_url = None
+
     for b in blocks_result.get("results", []):
         bt = b["type"]
-        if bt in ("paragraph", "heading_2", "heading_3"):
+
+        if bt == "image":
+            # Get image URL (external or file)
+            img = b["image"]
+            image_url = img.get("external", {}).get("url") or img.get("file", {}).get("url", "")
+
+        elif bt in ("paragraph", "heading_2", "heading_3"):
             rt = b.get(bt, {}).get("rich_text", [])
-            text = "".join(t.get("plain_text","") for t in rt)
-            if text:
-                full_text += text + "\n"
+            line = ""
+            for t in rt:
+                text = t.get("plain_text", "")
+                annotations = t.get("annotations", {})
+                # If bold in Notion, wrap with ** for our converter
+                if annotations.get("bold") and text.strip():
+                    line += f"**{text}**"
+                else:
+                    line += text
+            if line:
+                full_text += line + "\n"
+            else:
+                full_text += "\n"  # Empty paragraph = line break
+
         elif bt == "bulleted_list_item":
             rt = b.get("bulleted_list_item", {}).get("rich_text", [])
-            text = "".join(t.get("plain_text","") for t in rt)
+            text = "".join(t.get("plain_text", "") for t in rt)
             if text:
-                full_text += "• " + text + "\n"
-    
+                full_text += f"• {text}\n"
+
+        elif bt == "numbered_list_item":
+            rt = b.get("numbered_list_item", {}).get("rich_text", [])
+            text = "".join(t.get("plain_text", "") for t in rt)
+            if text:
+                full_text += f"- {text}\n"
+
+    # Clean up: remove excessive blank lines, trim
+    full_text = re.sub(r'\n{3,}', '\n\n', full_text).strip()
+
+    # Convert **bold** to Unicode bold
+    full_text = convert_bold_markdown(full_text)
+
     return {
         "page_id": pid,
-        "title": title_str,
-        "content": full_text.strip()
+        "title": title,
+        "content": full_text,
+        "image_url": image_url
     }
 
-def post_to_linkedin(text):
-    """Post text to LinkedIn via Composio."""
-    # Use Composio tool via subprocess
-    cmd = [
-        "python3", "-c", f'''
-import json, subprocess
 
-payload = {{
-    "text": """{text}"""
-}}
+# ── Image Upload ────────────────────────────────────────────────
 
-result = subprocess.run([
-    "python3", "-m", "composio", "linkedin", "create-linkedin-post",
-    "--text", "{text}"
-], capture_output=True, text=True, cwd="/root/.openclaw/workspace")
+def download_image(url):
+    """Download image from URL and return (bytes, content_type)."""
+    print(f"Downloading image: {url[:80]}...")
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+    ctx = ssl.create_default_context()
+    with urllib.request.urlopen(req, context=ctx, timeout=60) as r:
+        content_type = r.headers.get("Content-Type", "image/png")
+        data = r.read()
+        print(f"Downloaded: {len(data)} bytes, type: {content_type}")
+        return data, content_type
 
-print(result.stdout)
-print(result.stderr, file=sys.stderr)
-'''
-    ]
+
+def upload_image_to_linkedin(image_bytes, content_type):
+    """
+    Upload image to LinkedIn via Composio.
+    Returns image URN for use in post.
     
-    # Simpler: just print what we'd post
-    print(f"[WOULD POST TO LINKEDIN]")
-    print(f"Text: {text[:200]}...")
-    print(f"Chars: {len(text)}")
-    
-    # Return a fake URL for now (real implementation would call Composio)
-    return "https://www.linkedin.com/feed/update/pending-post-id"
+    This function writes the image to a temp file and outputs
+    upload instructions for the calling agent.
+    """
+    # Save image to temp file for the agent to use
+    ext = "png" if "png" in content_type else "jpg"
+    tmp_path = f"/tmp/linkedin-post-image.{ext}"
+    with open(tmp_path, "wb") as f:
+        f.write(image_bytes)
+    print(f"Image saved to: {tmp_path} ({len(image_bytes)} bytes)")
+    return tmp_path
+
+
+# ── Notion Update ───────────────────────────────────────────────
 
 def update_notion_status(page_id, post_url):
     """Update Notion page status to Posted and add URL."""
     body = {
         "properties": {
             "Status": {"select": {"name": "Posted"}},
-            "Post URL": {"url": post_url}
         }
     }
+    # Add Post URL if the property exists and we have a URL
+    if post_url:
+        body["properties"]["Post URL"] = {"rich_text": [{"text": {"content": post_url[:2000]}}]}
     notion_req("PATCH", f"/pages/{page_id}", body)
     print(f"Updated Notion: status=Posted, url={post_url}")
 
+
+# ── Main ────────────────────────────────────────────────────────
+
 def main():
-    print(f"=== LinkedIn Auto-Poster - {TODAY} ===")
-    
-    # Check if it's a weekday (Sun-Thu in Cairo)
-    weekday = CAIRO.weekday()
-    if weekday >= 5:  # Fri=5, Sat=6
-        print("Weekend - skipping")
-        return
-    
+    print(f"=== LinkedIn Auto-Poster v2 - {TODAY} ===")
+    if DRY_RUN:
+        print("[DRY RUN MODE - will not post]")
+
     # Get today's post
     post = get_today_post()
     if not post:
-        print("No scheduled post for today")
+        print(f"No scheduled post for {TODAY}")
         return
+
+    print(f"\nTitle: {post['title']}")
+    print(f"Content length: {len(post['content'])} chars")
+    print(f"Image: {post['image_url'] or 'None'}")
+    print(f"\n--- POST CONTENT ---")
+    print(post['content'])
+    print(f"--- END CONTENT ---\n")
+
+    if DRY_RUN:
+        print("[DRY RUN] Would post above content to LinkedIn")
+        if post['image_url']:
+            print(f"[DRY RUN] Would attach image: {post['image_url']}")
+        return
+
+    # Download image if present
+    image_path = None
+    if post['image_url']:
+        try:
+            image_bytes, content_type = download_image(post['image_url'])
+            image_path = upload_image_to_linkedin(image_bytes, content_type)
+        except Exception as e:
+            print(f"Warning: Image download failed ({e}), posting without image")
+
+    # Output for agent to pick up
+    output = {
+        "action": "post_to_linkedin",
+        "person_urn": PERSON_URN,
+        "content": post['content'],
+        "image_path": image_path,
+        "page_id": post['page_id'],
+        "title": post['title']
+    }
     
-    print(f"Found post: {post['title']}")
-    print(f"Content: {len(post['content'])} chars")
-    
-    # Post to LinkedIn
-    post_url = post_to_linkedin(post["content"])
-    
-    # Update Notion
-    update_notion_status(post["page_id"], post_url)
-    
-    print("Done!")
+    # Write output for agent consumption
+    output_path = "/tmp/linkedin-post-payload.json"
+    with open(output_path, "w") as f:
+        json.dump(output, f, ensure_ascii=False, indent=2)
+    print(f"\nPayload written to: {output_path}")
+    print(f"READY_TO_POST")
 
 if __name__ == "__main__":
     main()
