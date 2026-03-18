@@ -202,6 +202,8 @@ def load_scanner_data(today_str):
                         current_job["ats_score"] = int(ats_str.group(1))
                 elif kv.lower().startswith("posted:"):
                     current_job["date_posted"] = kv.split(":", 1)[1].strip()
+                elif kv.lower().startswith("matching keywords:"):
+                    current_job["ats_keywords"] = kv.split(":", 1)[1].strip()
                 continue
 
             # Bullet format (Format B): - Title @ Company (ATS: XX)
@@ -234,6 +236,79 @@ def load_scanner_data(today_str):
             scanner_age = (datetime.now() - scan_date).days
         except:
             pass
+
+    # Load JD cache if available (for semantic analysis)
+    jd_cache = {}
+    jd_cache_file = f"{JOBS_DIR}/jd-cache-{today_str}.json"
+    if os.path.exists(jd_cache_file):
+        try:
+            with open(jd_cache_file) as f:
+                raw_cache = json.load(f)
+            # Clean HTML from JD text
+            for url, data in raw_cache.items():
+                jd_text = data.get("jd_text", "")
+                jd_text = re.sub(r'<[^>]+>', ' ', jd_text)
+                jd_text = re.sub(r'&amp;', '&', jd_text)
+                jd_text = re.sub(r'&[a-z]+;', ' ', jd_text)
+                jd_text = re.sub(r'\s+', ' ', jd_text).strip()
+                jd_cache[url] = {"jd_text": jd_text}
+        except:
+            pass
+
+    # Apply semantic career-fit filter if not already present
+    # This ensures legacy scanner data gets filtered too
+    for job in qualified:
+        if not job.get("career_verdict"):
+            title = job.get("title", "").lower()
+            # Try to get JD from cache by URL
+            jd = ""
+            url = job.get("url", "")
+            if url in jd_cache:
+                jd = jd_cache[url].get("jd_text", "").lower()
+            keywords = job.get("ats_keywords", "").lower()
+            combined = title + " " + jd + " " + keywords
+
+            SKIP_DOMAINS = {
+                "cybersecurity": ["ciso", "information security officer", "security engineer", "penetration", "soc analyst"],
+                "hands-on coding": ["software engineer", "developer", "full stack", "backend engineer", "frontend engineer", "code reviews", "sdlc", "hands-on technical", "production-grade ai products", "build platforms from scratch", "technical architecture and product delivery"],
+                "oil & gas": ["offshore", "upstream", "downstream", "drilling", "petroleum", "subsea", "oil and gas", "oil & gas"],
+                "civil engineering": ["roads", "highways", "bridges", "tunnels", "structural engineer", "geotechnical", "civil engineer"],
+                "investment banking": ["equity capital markets", "ecm", "ipo execution", "block trades", "league table", "deal origination"],
+                "aviation": ["aircraft", "mro", "ground support equipment", "aviation maintenance"],
+                "construction/engineering": ["engineering, construction, and project management services", "engineering and construction consultancy", "construction consultancy solutions", "engineering standards"],
+                "pure sales": ["quota-carrying", "business development representative", "sales representative"],
+            }
+            AHMED_DOMAINS = ["digital transformation", "pmo", "program management", "project management",
+                "healthcare", "healthtech", "fintech", "payments", "e-commerce", "ecommerce",
+                "operational excellence", "change management", "enterprise", "consulting"]
+            AHMED_ROLES = ["pmo", "program", "director", "vp", "vice president", "head of", "chief",
+                "transformation", "operations", "strategy", "product management", "delivery"]
+
+            verdict, fit, reason = "APPLY", 5, "Default"
+            for domain, keywords in SKIP_DOMAINS.items():
+                matches = [k for k in keywords if k in combined]
+                if len(matches) >= 2:
+                    verdict, fit, reason = "SKIP", max(1, min(3, job.get("ats_score", 0) // 30)), f"Domain mismatch: {domain}"
+                    break
+                if len(matches) == 1 and any(k in title for k in keywords):
+                    verdict, fit, reason = "SKIP", 2, f"Title indicates {domain}"
+                    break
+
+            if verdict != "SKIP":
+                domain_hits = sum(1 for d in AHMED_DOMAINS if d in combined)
+                role_hits = sum(1 for r in AHMED_ROLES if r in combined)
+                if domain_hits >= 3 and role_hits >= 2:
+                    verdict, fit, reason = "APPLY", min(10, 6 + domain_hits), "Strong career fit"
+                elif domain_hits >= 2 or role_hits >= 2:
+                    verdict, fit, reason = "APPLY", min(8, 5 + domain_hits), "Good career fit"
+                elif domain_hits >= 1:
+                    verdict, fit, reason = "STRETCH", 4, "Partial domain overlap"
+                else:
+                    verdict, fit, reason = "SKIP", 2, "No relevant domain experience"
+
+            job["career_verdict"] = verdict
+            job["career_fit"] = fit
+            job["career_reason"] = reason
 
     return meta, qualified, borderline, scanner_age
 
