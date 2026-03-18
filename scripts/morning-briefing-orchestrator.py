@@ -992,11 +992,16 @@ def build_telegram_message(date_display, pipeline, scanner_meta, qualified, bord
 
     # Tasks
     if tasks["total_open"] > 0 or tasks["overdue"]:
-        lines.append(f"\n✅ TASKS: {tasks['total_open']} open")
+        overdue_str = f" | 🔴 {len(tasks['overdue'])} overdue" if tasks["overdue"] else ""
+        due_str = f" | 📌 {len(tasks['due_today'])} due today" if tasks["due_today"] else ""
+        done_str = f" | ✔️ {tasks['completed_recent']} done" if tasks.get("completed_recent") else ""
+        lines.append(f"\n✅ TASKS: {tasks['total_open']} open{overdue_str}{due_str}{done_str}")
         if tasks["overdue"]:
-            lines.append(f"  🔴 {len(tasks['overdue'])} overdue")
+            for t in tasks["overdue"][:3]:
+                lines.append(f"  🔴 {t}")
         if tasks["due_today"]:
-            lines.append(f"  📌 {len(tasks['due_today'])} due today")
+            for t in tasks["due_today"][:3]:
+                lines.append(f"  📌 {t}")
 
     # System
     lines.append(f"\n⚙️ SYSTEM: GW {system['gateway']} | Disk {system['disk_pct']}% | Crons {system['cron_ok']}✅ {system['cron_fail']}❌")
