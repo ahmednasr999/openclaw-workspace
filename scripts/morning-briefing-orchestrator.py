@@ -239,23 +239,78 @@ def load_scanner_data(today_str):
 
 
 def check_email():
-    """Check recent emails via himalaya."""
+    """Check recent emails via himalaya with smart categorization."""
     emails = []
     try:
         r = subprocess.run(
-            "himalaya envelope list --account ahmed --folder INBOX --page-size 20",
+            "himalaya envelope list --account ahmed --folder INBOX --page-size 50",
             shell=True, capture_output=True, text=True, timeout=15
         )
-        if r.returncode == 0 and r.stdout.strip():
-            # Count job-related keywords
-            job_keywords = ["interview", "application", "position", "role", "hiring",
-                          "recruiter", "offer", "assessment", "vacancy", "job"]
-            for line in r.stdout.strip().split("\n")[2:]:  # Skip header
-                if any(kw in line.lower() for kw in job_keywords):
-                    # Clean up the line
-                    parts = line.split()
-                    if len(parts) >= 3:
-                        emails.append(line.strip()[:80])
+        if r.returncode != 0 or not r.stdout.strip():
+            return [], "himalaya returned no data"
+
+        # Action-needed keywords (interview, reply needed)
+        action_keywords = ["interview", "schedule", "shortlisted", "next steps",
+                          "assessment", "offer", "congratulations", "selected",
+                          "phone screen", "technical round", "final round"]
+        # Job-related keywords
+        job_keywords = ["application", "position", "role", "hiring", "recruiter",
+                       "vacancy", "job", "career", "opportunity", "talent",
+                       "resume", "cv ", "apply", "candidate"]
+        # LinkedIn message keywords
+        linkedin_keywords = ["messaged you", "via linkedin", "linkedin"]
+
+        lines = r.stdout.strip().split("\n")
+        # Skip header rows (first 2 lines are table header + separator)
+        for line in lines[2:]:
+            line = line.strip()
+            if not line or line.startswith("|--"):
+                continue
+
+            # Parse: | ID | FLAGS | SUBJECT | FROM | DATE |
+            parts = [p.strip() for p in line.split("|")]
+            if len(parts) < 6:
+                continue
+
+            email_id = parts[1].strip()
+            flags = parts[2].strip()
+            subject = parts[3].strip()[:80]
+            sender = parts[4].strip()[:40]
+            date_str = parts[5].strip()[:20]
+
+            subj_lower = subject.lower()
+            sender_lower = sender.lower()
+
+            # Skip obvious non-job emails
+            skip_senders = ["newsletter", "prypco", "iris", "canon", "rumble",
+                           "public notice", "magnitt", "quality academy"]
+            if any(s in sender_lower for s in skip_senders):
+                continue
+
+            # Categorize
+            priority = None
+            if any(kw in subj_lower for kw in action_keywords):
+                priority = "action"  # 🔴
+            elif any(kw in subj_lower or kw in sender_lower for kw in job_keywords):
+                priority = "job"     # 🟡
+            elif any(kw in subj_lower or kw in sender_lower for kw in linkedin_keywords):
+                priority = "linkedin" # 🟡
+            else:
+                continue  # Not job-related
+
+            emails.append({
+                "id": email_id,
+                "subject": subject,
+                "sender": sender,
+                "date": date_str,
+                "priority": priority,
+                "unread": "*" in flags,
+            })
+
+        # Sort: action first, then job, then linkedin
+        priority_order = {"action": 0, "job": 1, "linkedin": 2}
+        emails.sort(key=lambda e: priority_order.get(e["priority"], 9))
+
         return emails, None
     except Exception as e:
         return [], str(e)
@@ -597,9 +652,22 @@ def create_notion_briefing(date_str, date_display, pipeline, scanner_meta, quali
     # 3. EMAIL INTEL
     add_heading("📧 Email Intelligence")
     if emails:
-        add_para(f"{len(emails)} job-related emails detected:")
-        for e in emails[:5]:
-            add_bullet(e)
+        action_emails = [e for e in emails if e.get("priority") == "action"]
+        job_emails = [e for e in emails if e.get("priority") in ("job", "linkedin")]
+        reply_str = f" ({len(action_emails)} need reply)" if action_emails else ""
+        add_para(f"{len(emails)} job-related emails{reply_str}:")
+
+        if action_emails:
+            add_para("🔴 ACTION NEEDED:")
+            for e in action_emails:
+                unread = " 🆕" if e.get("unread") else ""
+                add_bullet(f"🔴 {e.get('subject', '')[:60]} - {e.get('sender', '')[:30]}{unread}")
+
+        if job_emails:
+            add_para("🟡 Job-related:")
+            for e in job_emails[:10]:
+                unread = " 🆕" if e.get("unread") else ""
+                add_bullet(f"🟡 {e.get('subject', '')[:60]} - {e.get('sender', '')[:30]}{unread}")
     elif email_error:
         add_para(f"⚠️ Email check failed: {email_error}")
     else:
@@ -667,6 +735,11 @@ def create_notion_briefing(date_str, date_display, pipeline, scanner_meta, quali
         actions.append(f"Follow up on {min(5, len(p['overdue']))} oldest stale applications")
     if content_cal.get("today_post") and content_cal["today_post"]["status"] != "Posted":
         actions.append(f"Publish LinkedIn: \"{content_cal['today_post']['title'][:30]}\"")
+    # Email actions
+    action_emails = [e for e in emails if e.get("priority") == "action"]
+    if action_emails:
+        for ae in action_emails[:3]:
+            actions.append(f"📧 Reply: {ae.get('subject', '')[:35]} ({ae.get('sender', '')[:15]})")
     if cal_error:
         actions.append("Re-auth Google Calendar")
     if system["cron_fail"] > 0:
@@ -804,7 +877,14 @@ def build_telegram_message(date_display, pipeline, scanner_meta, qualified, bord
 
     # Email
     if emails:
-        lines.append(f"\n📧 EMAIL: {len(emails)} job-related")
+        action_count = len([e for e in emails if e.get("priority") == "action"])
+        reply_str = f" ({action_count} need reply)" if action_count else ""
+        lines.append(f"\n📧 EMAIL: {len(emails)} job-related{reply_str}")
+        for e in emails[:5]:
+            icon = "🔴" if e.get("priority") == "action" else "🟡"
+            subj = e.get("subject", "")[:45]
+            sender = e.get("sender", "")[:20]
+            lines.append(f"  {icon} {subj} - {sender}")
     elif email_error:
         lines.append(f"\n📧 EMAIL: ⚠️ {email_error[:30]}")
 
