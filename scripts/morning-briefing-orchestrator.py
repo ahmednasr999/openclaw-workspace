@@ -1002,7 +1002,8 @@ def build_telegram_message(date_display, pipeline, scanner_meta, qualified, bord
                 line += f" [{ats}%]"
                 lines.append(line)
                 if url:
-                    lines.append(f"    {url}")
+                    # Clickable link format: [text](url)
+                    lines.append(f"    [Apply →]({url})")
 
         if skip_jobs:
             lines.append(f"  ❌ SKIP ({len(skip_jobs)}):")
@@ -1109,7 +1110,7 @@ def build_telegram_message(date_display, pipeline, scanner_meta, qualified, bord
 
     # Notion link
     if notion_url:
-        lines.append(f"\n📎 Full: {notion_url}")
+        lines.append(f"\n📎 [View in Notion]({notion_url})")
 
     return "\n".join(lines)
 
