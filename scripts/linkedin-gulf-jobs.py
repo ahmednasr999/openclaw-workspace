@@ -273,6 +273,101 @@ def save_notified(job):
     with open(NOTIFIED_FILE, "a") as f:
         f.write(f"\n- {job['id']}: {job['title']} at {job['company']} ({job['location']})")
 
+# ===================== GOOGLE JOBS (via Playwright) =====================
+
+def scrape_google_jobs(search_term, location, max_results=10):
+    """Scrape Google Jobs using Playwright headless browser."""
+    try:
+        from playwright.sync_api import sync_playwright
+    except ImportError:
+        print("  Google Jobs: playwright not installed")
+        return []
+
+    jobs = []
+    try:
+        with sync_playwright() as p:
+            browser = p.chromium.launch(headless=True, args=["--no-sandbox", "--disable-gpu", "--disable-blink-features=AutomationControlled"])
+            context = browser.new_context(
+                user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/125.0.0.0 Safari/537.36",
+                locale="en-US",
+            )
+            page = context.new_page()
+
+            query = f"{search_term} {location} jobs"
+            url = f"https://www.google.com/search?q={query.replace(' ', '+')}&udm=8&hl=en&gl=ae"
+
+            page.goto(url, timeout=15000)
+            page.wait_for_timeout(3000)
+
+            # Handle consent page
+            content = page.content()
+            if "consent" in content.lower() or "accepter" in content.lower():
+                for b in page.query_selector_all('button'):
+                    t = b.inner_text().lower()
+                    if "accept" in t or "accepter" in t or "tout" in t:
+                        b.click()
+                        page.wait_for_timeout(2000)
+                        break
+                page.goto(url, timeout=15000)
+                page.wait_for_timeout(5000)
+
+            body_text = page.query_selector('body').inner_text() if page.query_selector('body') else ""
+
+            if "unusual traffic" in body_text:
+                browser.close()
+                return []
+
+            # Parse job listings from visible text
+            lines = [l.strip() for l in body_text.split('\n') if l.strip()]
+            skip_words = ['sign in', 'accessibility', 'filters', 'search results', 'date posted',
+                          'job type', 'follow', 'job postings', 'saved jobs', 'following',
+                          'results for', 'choose area', 'skip to', 'feedback',
+                          'all', 'news', 'images', 'forums', 'short videos', 'web', 'more', 'tools', 'jobs']
+
+            i = 0
+            while i < len(lines) and len(jobs) < max_results:
+                line = lines[i]
+                if any(skip in line.lower() for skip in skip_words) and len(line) < 30:
+                    i += 1
+                    continue
+
+                if i + 2 < len(lines) and '•' in lines[i+2] and 'via' in lines[i+2].lower():
+                    title = lines[i]
+                    company = lines[i+1]
+                    loc_via = lines[i+2]
+
+                    parts = loc_via.split('•')
+                    job_loc = parts[0].strip() if parts else ""
+                    source = ""
+                    if len(parts) > 1:
+                        via_match = re.search(r'via\s+(.+)', parts[1], re.IGNORECASE)
+                        if via_match:
+                            source = via_match.group(1).strip()
+
+                    if len(title) > 5 and len(company) > 2:
+                        jid = str(abs(hash(f"{title}{company}")))[:10]
+                        jobs.append({
+                            "id": jid,
+                            "title": title,
+                            "company": company,
+                            "location": job_loc or location,
+                            "site": "google",
+                            "source_via": source,
+                            "url": f"https://www.google.com/search?q={(title+' '+company).replace(' ', '+')}&udm=8&hl=en",
+                            "search_country": location,
+                            "search_title": search_term,
+                        })
+                    i += 3
+                else:
+                    i += 1
+
+            browser.close()
+    except Exception as e:
+        print(f"  Google Jobs error: {e}")
+
+    return jobs
+
+
 # ===================== JD FETCH & ATS SCORING =====================
 
 def fetch_jd(url, site="linkedin"):
@@ -622,6 +717,43 @@ def main():
 
         time.sleep(SEARCH_DELAY)
 
+    # ==================== GOOGLE JOBS SUPPLEMENT ====================
+    print(f"\n  Google Jobs: searching top titles across GCC...")
+    google_titles = ["CTO", "VP Digital Transformation", "Director Digital Transformation",
+                     "PMO Director", "Chief Digital Officer", "Head of Technology",
+                     "Chief Information Officer", "Chief Operating Officer"]
+    google_countries = ["Dubai", "Saudi Arabia", "Qatar", "Abu Dhabi"]
+    google_found = 0
+    google_new = 0
+    google_consent_handled = False
+
+    for gt in google_titles:
+        for gc in google_countries:
+            if time.time() - start > MAX_RUNTIME_SECONDS:
+                break
+            gjobs = scrape_google_jobs(gt, gc, max_results=5)
+            google_found += len(gjobs)
+            for gj in gjobs:
+                if gj["id"] in seen:
+                    continue
+                seen.add(gj["id"])
+                if is_duplicate(gj["id"], gj.get("company", "")):
+                    continue
+                relevant, reason = is_relevant(gj["title"], gj["location"])
+                if not relevant:
+                    continue
+                save_notified(gj)
+                if is_priority(gj["title"], gj["location"]):
+                    picks.append(gj)
+                    google_new += 1
+                    print(f"  GOOGLE PICK: {gj['title']} | {gj['company']} | {gj['location']}")
+                else:
+                    leads.append(gj)
+                    google_new += 1
+            time.sleep(2)  # Rate limit between Google searches
+
+    print(f"  Google Jobs: {google_found} found, {google_new} new relevant")
+
     # ==================== JD ENRICHMENT + ATS SCORING ====================
     if picks:
         picks = enrich_picks_with_jd(picks)
@@ -777,10 +909,10 @@ def main():
         "filtered_out": len(filtered_out),
         "runtime_seconds": elapsed,
         "countries": list(set(s[1] for s in searches)),
-        "sources": ["LinkedIn", "Indeed"],
+        "sources": ["LinkedIn", "Indeed", "Google"],
         "source_status": {
             src: ("✅" if any(j.get("site","").lower() == src.lower() for j in picks + leads) else "⚠️")
-            for src in ["LinkedIn", "Indeed"]
+            for src in ["LinkedIn", "Indeed", "Google"]
         },
         "cookie_age_days": None,
         "validation_warnings": validation_warnings,
