@@ -27,25 +27,38 @@ This script handles ALL data gathering: pipeline stats, scanner trends, Notion s
 - Check if any emails have "Action Required" in Email Intelligence DB
 
 ### Step 3: Format the Telegram briefing
-Use this EXACT format (no deviations):
+Use this EXACT format (no deviations, include ALL sections):
 
 ```
 ☀️ Morning Brief — [Day, Month DD]
 
-📊 Pipeline: [X] total | [Y] active | [Z] new today
-[Top 3 active applications with company + stage]
+📊 PIPELINE: [X] total | [Y] active | [Z] applied this week | [R]% response rate
+- [Company - Role - Stage - Next Step]
+- [Company - Role - Stage - Next Step]
+- (show ALL active interviews)
 
-🔍 Scanner: [X] new jobs found | Trend: [📈/➡️/📉]
-[Top 3 matches if any]
+🔍 SCANNER: [X] new jobs | Trend: [📈up/➡️stable/📉down] | Last: [date]
+- [Top 3 job matches if any]
 
-📧 Email: [X] unread | [Y] action needed
-[Any urgent items]
+📧 EMAIL INTEL: [X] job-related flagged
+- [Sender] - [Subject] - Action: [what to do]
 
-📅 Calendar: [meetings today or "Clear schedule"]
+📅 CALENDAR: [meetings or "Clear"]
+- [Meeting] - [with who]
 
-✅ Tasks: [X] overdue | [Y] due today | [Z] completed yesterday
+📈 DASHBOARD: Health [score] | Stale [X] | KPIs [green/yellow/red]
 
-🤖 System: All [X] crons healthy | [errors if any]
+✅ TASKS: [X] overdue | [Y] due today | [Z] completed
+
+📝 CONTENT CALENDAR: [X] scheduled | [Y] drafted | [Y] posted
+- [Any posts needing attention]
+
+🤖 SYSTEM: [X] crons | [errors or "all healthy"]
+
+⚠️ ACTION ITEMS:
+1. [Concrete action with owner]
+2. [Concrete action]
+3. [Concrete action]
 ```
 
 ### Step 4: Validate before sending
@@ -58,9 +71,19 @@ Quality gates (ALL must pass):
 - [ ] No em dashes (use hyphens)
 
 ### Step 5: Sync to Notion (FIRST output step)
-Create page in Notion Daily Briefings DB with full briefing content:
-1. Pipeline stats, email intel, scanner status, system health, action items
-2. All sections must have real data - no placeholders
+Create page in Notion Daily Briefings DB with FULL content (ALL sections):
+1. **Pipeline**: All stats + every active interview with company, role, stage, next step
+2. **Scanner**: Jobs found, trends, top matches
+3. **Email Intel**: Every flagged email with sender, subject, action
+4. **Calendar**: Today's meetings
+5. **Dashboard**: KPIs, stale alerts
+6. **Tasks**: Overdue, due today, completed
+7. **Content Calendar**: Scheduled, drafted, posted counts
+8. **System**: Cron health, errors
+9. **Action Items**: Full list with owners and dates
+
+Use callout blocks with emoji, heading_2 for section headers, bullet lists for items.
+Must have 10+ content blocks minimum - no short pages.
 
 ### Step 6: Deliver to Telegram
 1. Send compact version to Telegram (chat 866838380)

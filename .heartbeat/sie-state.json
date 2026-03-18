@@ -1,171 +1,171 @@
 {
-  "last_run": "2026-03-18T04:00:50.666739+02:00",
-  "run_count": 39,
+  "last_run": "2026-03-18T10:30:03.516155+02:00",
+  "run_count": 49,
   "areas": {
     "A": {
       "name": "Applications",
       "status": "OK",
       "details": "No recent ATS data",
-      "timestamp": "2026-03-18T04:00:39.412215+02:00"
+      "timestamp": "2026-03-18T10:29:52.694515+02:00"
     },
     "B": {
       "name": "Backups",
       "status": "OK",
-      "details": "Last commit 0.1h ago",
-      "timestamp": "2026-03-18T04:00:39.434696+02:00"
+      "details": "Last commit 0.3h ago",
+      "timestamp": "2026-03-18T10:29:52.704014+02:00"
     },
     "C": {
       "name": "Crons",
       "status": "OK",
       "details": "Crons running (could not query gateway)",
-      "timestamp": "2026-03-18T04:00:49.838669+02:00"
+      "timestamp": "2026-03-18T10:30:02.929607+02:00"
     },
     "D": {
       "name": "Disk",
       "status": "OK",
       "details": "Disk 58%",
-      "timestamp": "2026-03-18T04:00:49.851962+02:00"
+      "timestamp": "2026-03-18T10:30:02.942450+02:00"
     },
     "E": {
       "name": "Errors",
       "status": "OK",
       "details": "No significant errors",
-      "timestamp": "2026-03-18T04:00:49.852020+02:00"
+      "timestamp": "2026-03-18T10:30:02.942516+02:00"
     },
     "F": {
       "name": "Feedback",
       "status": "OK",
       "details": "Feedback processed",
-      "timestamp": "2026-03-18T04:00:49.852929+02:00"
+      "timestamp": "2026-03-18T10:30:02.942747+02:00"
     },
     "G": {
       "name": "Gateway",
       "status": "OK",
       "details": "Gateway running (PID: 2816835)",
-      "timestamp": "2026-03-18T04:00:49.869441+02:00"
+      "timestamp": "2026-03-18T10:30:02.961923+02:00"
     },
     "H": {
       "name": "Heartbeat",
       "status": "OK",
       "details": "No heartbeat failures",
-      "timestamp": "2026-03-18T04:00:49.869871+02:00"
+      "timestamp": "2026-03-18T10:30:02.962139+02:00"
     },
     "I": {
       "name": "Integrations",
       "status": "WARN",
       "details": "Issue: Gmail",
-      "timestamp": "2026-03-18T04:00:50.023098+02:00"
+      "timestamp": "2026-03-18T10:30:03.137079+02:00"
     },
     "J": {
       "name": "Jobs",
       "status": "OK",
       "details": "Job radar functional",
-      "timestamp": "2026-03-18T04:00:50.023924+02:00"
+      "timestamp": "2026-03-18T10:30:03.137459+02:00"
     },
     "K": {
       "name": "Knowledge",
       "status": "OK",
       "details": "GitHub Radar: 2 actionable repos (see sie-github-recommendations.md), X Radar active",
-      "timestamp": "2026-03-18T04:00:50.615445+02:00"
+      "timestamp": "2026-03-18T10:30:03.483943+02:00"
     },
     "L": {
       "name": "Learnings",
       "status": "WARN",
       "details": "2 learnings without enforcement action",
-      "timestamp": "2026-03-18T04:00:50.615948+02:00"
+      "timestamp": "2026-03-18T10:30:03.484401+02:00"
     },
     "M": {
       "name": "Models",
       "status": "OK",
       "details": "Models stable",
-      "timestamp": "2026-03-18T04:00:50.615968+02:00"
+      "timestamp": "2026-03-18T10:30:03.484425+02:00"
     },
     "N": {
       "name": "Notifications",
       "status": "OK",
       "details": "Notification volume normal",
-      "timestamp": "2026-03-18T04:00:50.615974+02:00"
+      "timestamp": "2026-03-18T10:30:03.484432+02:00"
     },
     "O": {
       "name": "Outputs",
       "status": "OK",
       "details": "57 CVs generated recently",
-      "timestamp": "2026-03-18T04:00:50.618505+02:00"
+      "timestamp": "2026-03-18T10:30:03.487212+02:00"
     },
     "P": {
       "name": "Pipeline",
       "status": "OK",
       "details": "Pipeline active",
-      "timestamp": "2026-03-18T04:00:50.620519+02:00"
+      "timestamp": "2026-03-18T10:30:03.488172+02:00"
     },
     "Q": {
       "name": "Quality",
       "status": "OK",
       "details": "Content quality tracked",
-      "timestamp": "2026-03-18T04:00:50.620628+02:00"
+      "timestamp": "2026-03-18T10:30:03.488238+02:00"
     },
     "R": {
       "name": "Reliability",
-      "status": "ALERT",
-      "details": "Session 506f2e03-f465-488f-a782-4c24574dcad4.jsonl is 5.7MB",
-      "timestamp": "2026-03-18T04:00:50.639481+02:00"
+      "status": "OK",
+      "details": "Session sizes normal",
+      "timestamp": "2026-03-18T10:30:03.492551+02:00"
     },
     "S": {
       "name": "Skills",
       "status": "OK",
       "details": "Skills healthy",
-      "timestamp": "2026-03-18T04:00:50.639525+02:00"
+      "timestamp": "2026-03-18T10:30:03.492592+02:00"
     },
     "T": {
       "name": "Tools",
       "status": "OK",
       "details": "Tools available",
-      "timestamp": "2026-03-18T04:00:50.639543+02:00"
+      "timestamp": "2026-03-18T10:30:03.492611+02:00"
     },
     "U": {
       "name": "Uptime",
       "status": "OK",
       "details": "Gateway up",
-      "timestamp": "2026-03-18T04:00:50.658141+02:00"
+      "timestamp": "2026-03-18T10:30:03.507144+02:00"
     },
     "V": {
       "name": "Velocity",
       "status": "OK",
-      "details": "225 sessions today",
-      "timestamp": "2026-03-18T04:00:50.664035+02:00"
+      "details": "201 sessions today",
+      "timestamp": "2026-03-18T10:30:03.514128+02:00"
     },
     "W": {
       "name": "Workspace",
       "status": "ALERT",
-      "details": "211 files in root (clean recommended)",
-      "timestamp": "2026-03-18T04:00:50.665011+02:00"
+      "details": "52 files in root (clean recommended)",
+      "timestamp": "2026-03-18T10:30:03.514689+02:00"
     },
     "X": {
       "name": "Execution",
       "status": "OK",
       "details": "Execution healthy",
-      "timestamp": "2026-03-18T04:00:50.665035+02:00"
+      "timestamp": "2026-03-18T10:30:03.514721+02:00"
     },
     "Y": {
       "name": "Yield",
       "status": "OK",
       "details": "Pipeline active",
-      "timestamp": "2026-03-18T04:00:50.665794+02:00"
+      "timestamp": "2026-03-18T10:30:03.515490+02:00"
     },
     "Z": {
       "name": "Zero-downtime",
       "status": "OK",
       "details": "System stable",
-      "timestamp": "2026-03-18T04:00:50.665811+02:00"
+      "timestamp": "2026-03-18T10:30:03.515507+02:00"
     },
     "NASR": {
       "name": "NASR Behavior",
       "status": "OK",
       "details": "NASR Pre-Flight behavior clean",
-      "timestamp": "2026-03-18T04:00:50.666524+02:00"
+      "timestamp": "2026-03-18T10:30:03.515951+02:00"
     }
   },
-  "health_score": 93,
+  "health_score": 96,
   "history": [
     {
       "timestamp": "2026-03-14T00:14:07.399383+02:00",
@@ -399,6 +399,66 @@
       "timestamp": "2026-03-18T04:00:50.666739+02:00",
       "health_score": 93,
       "alerts": 2,
+      "criticals": 0
+    },
+    {
+      "timestamp": "2026-03-18T04:13:01.323646+02:00",
+      "health_score": 96,
+      "alerts": 1,
+      "criticals": 0
+    },
+    {
+      "timestamp": "2026-03-18T04:21:01.352738+02:00",
+      "health_score": 96,
+      "alerts": 1,
+      "criticals": 0
+    },
+    {
+      "timestamp": "2026-03-18T04:27:31.460063+02:00",
+      "health_score": 96,
+      "alerts": 1,
+      "criticals": 0
+    },
+    {
+      "timestamp": "2026-03-18T04:36:44.432387+02:00",
+      "health_score": 96,
+      "alerts": 1,
+      "criticals": 0
+    },
+    {
+      "timestamp": "2026-03-18T04:37:02.764252+02:00",
+      "health_score": 96,
+      "alerts": 1,
+      "criticals": 0
+    },
+    {
+      "timestamp": "2026-03-18T04:41:24.589261+02:00",
+      "health_score": 96,
+      "alerts": 1,
+      "criticals": 0
+    },
+    {
+      "timestamp": "2026-03-18T07:31:14.523889+02:00",
+      "health_score": 96,
+      "alerts": 1,
+      "criticals": 0
+    },
+    {
+      "timestamp": "2026-03-18T10:18:56.051917+02:00",
+      "health_score": 96,
+      "alerts": 1,
+      "criticals": 0
+    },
+    {
+      "timestamp": "2026-03-18T10:26:13.467192+02:00",
+      "health_score": 96,
+      "alerts": 1,
+      "criticals": 0
+    },
+    {
+      "timestamp": "2026-03-18T10:30:03.516155+02:00",
+      "health_score": 96,
+      "alerts": 1,
       "criticals": 0
     }
   ],

@@ -1,10 +1,9 @@
-# System Insights - 2026-03-18 04:00
+# System Insights - 2026-03-18 10:30
 
-## System Health Score: 93/100
+## System Health Score: 96/100
 
 ## Alerts
-- [R] Reliability: Session 506f2e03-f465-488f-a782-4c24574dcad4.jsonl is 5.7MB
-- [W] Workspace: 211 files in root (clean recommended)
+- [W] Workspace: 52 files in root (clean recommended)
 
 ## Warnings
 - [I] Integrations: Issue: Gmail
@@ -12,7 +11,7 @@
 
 ## All Clear
 - [A] Applications: No recent ATS data
-- [B] Backups: Last commit 0.1h ago
+- [B] Backups: Last commit 0.3h ago
 - [C] Crons: Crons running (could not query gateway)
 - [D] Disk: Disk 58%
 - [E] Errors: No significant errors
@@ -26,10 +25,11 @@
 - [O] Outputs: 57 CVs generated recently
 - [P] Pipeline: Pipeline active
 - [Q] Quality: Content quality tracked
+- [R] Reliability: Session sizes normal
 - [S] Skills: Skills healthy
 - [T] Tools: Tools available
 - [U] Uptime: Gateway up
-- [V] Velocity: 225 sessions today
+- [V] Velocity: 201 sessions today
 - [X] Execution: Execution healthy
 - [Y] Yield: Pipeline active
 - [Z] Zero-downtime: System stable
@@ -40,7 +40,3 @@
 - Monitor warning areas for deterioration
 - System healthy - continue monitoring
 
-## Trends (vs last run)
-- Integrations: declined from OK to WARN
-- Workspace: declined from OK to ALERT
-- NASR Behavior: improved from WARN to OK

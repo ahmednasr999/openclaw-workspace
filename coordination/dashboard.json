@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-02-20T06:01:00Z",
+  "last_updated": "2026-03-18T08:25:00Z",
   "generated_by": "Chief of Staff (Max) - Morning Brief",
   "date": "Friday, February 20th, 2026",
   "time": "6:01 AM UTC",
@@ -60,8 +60,8 @@
     "applications": "No new applications"
   },
   "priorities_today": [
-    "🔴 URGENT: Follow up on Delphi interview outcome (was Feb 18)",
-    "🔴 URGENT: Complete 5+ LinkedIn connections to hit 60% weekly target",
+    "\ud83d\udd34 URGENT: Follow up on Delphi interview outcome (was Feb 18)",
+    "\ud83d\udd34 URGENT: Complete 5+ LinkedIn connections to hit 60% weekly target",
     "Review 2 content drafts (Hospital CFO Investment Case, Saying No to 6-Figure Salary)",
     "Follow up with Dr. Ahmed Al-Mansour (3 days overdue)",
     "Continue job applications (3 applied, 7 remaining to hit 10/week target)"
@@ -152,5 +152,7 @@
     "3. Review 2 content drafts",
     "4. Follow up with Dr. Ahmed Al-Mansour",
     "5. Apply to 2+ jobs"
-  ]
+  ],
+  "last_morning_briefing": "2026-03-18T10:18:00Z",
+  "stale_alerts": []
 }

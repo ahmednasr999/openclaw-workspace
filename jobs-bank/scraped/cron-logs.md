@@ -362,3 +362,10 @@
 - Leads: 0
 - Runtime: 906s
 - ⚠️ DEGRADATION
+
+## 2026-03-18 06:01:58 (v3.0)
+- Searches: 132
+- Found: 300
+- Priority picks: 27
+- Leads: 6
+- Runtime: 849s
