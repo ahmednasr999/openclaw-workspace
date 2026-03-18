@@ -436,9 +436,10 @@ def search(title, country):
                 pass
 
         results = scrape_jobs(
-            site_name=["linkedin", "indeed"],
+            site_name=["linkedin", "indeed", "google", "glassdoor", "bayt"],
             search_term=title,
             location=country,
+            google_search_term=f"{title} {country} jobs",
             hours_old=72,
             results_wanted=MAX_JOBS_PER_SEARCH,
             linkedin_fetch_description=False,
@@ -765,10 +766,10 @@ def main():
         "filtered_out": len(filtered_out),
         "runtime_seconds": elapsed,
         "countries": list(set(s[1] for s in searches)),
-        "sources": ["LinkedIn", "Indeed"],
+        "sources": ["LinkedIn", "Indeed", "Google", "Glassdoor", "Bayt"],
         "source_status": {
-            "LinkedIn": "✅" if any(j.get("site") == "linkedin" for j in picks + leads) or total_found > 0 else "❌",
-            "Indeed": "✅" if any(j.get("site") == "indeed" for j in picks + leads) else "⚠️ No results",
+            src: ("✅" if any(j.get("site","").lower() == src.lower() for j in picks + leads) else "⚠️")
+            for src in ["LinkedIn", "Indeed", "Google", "Glassdoor", "Bayt"]
         },
         "cookie_age_days": None,
         "validation_warnings": validation_warnings,
