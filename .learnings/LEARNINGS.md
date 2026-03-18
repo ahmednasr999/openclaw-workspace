@@ -566,3 +566,11 @@ ATS scoring counts keyword matches between JD and CV. High overlap != good caree
 Added `semantic_fit_filter()` to scanner with SKIP_DOMAINS (cybersecurity, coding, oil & gas, civil, investment banking, aviation, sales) and AHMED_DOMAINS (digital transformation, PMO, healthcare, fintech, payments). Every job now gets career_verdict (APPLY/SKIP/STRETCH), career_fit (1-10), and career_reason. This runs automatically at 6 AM - no human in the loop to skip it.
 ### Rule
 **ATS score = word overlap. Career fit = domain + role + level match. Never present keyword scores as career recommendations.**
+
+## 2026-03-18 - Never recommend jobs without full JD
+### What I Missed
+Presented "top picks" from Google Jobs based on title alone ("quick eye scan"). Ahmed corrected: "Never quick eye scan, always judge after getting full job description."
+### Why
+Same root cause as ATS keyword matching. Title "Senior PMO Director" looks great but JD might require telecom/banking/retail domain. Title ≠ fit.
+### Fix
+NEVER present job recommendations without reading actual JD text. If JD unavailable (403/blocked), explicitly mark as "NO JD - CAN'T JUDGE" instead of guessing from title.
