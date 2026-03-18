@@ -1,5 +1,16 @@
 # Learnings Log
 
+## 2026-03-18: Always Read Actual File Before Writing Parser
+### What I Missed
+Wrote a qualified-jobs parser assuming `- Title @ Company (ATS: XX)` bullet format. Actual format is `### Title` headings with `- Company:` metadata lines. Result: 0 jobs shown despite 27 picks existing.
+### Why
+Assumed the file format instead of reading `head -30 qualified-jobs-*.md` first.
+### Fix
+**Rule: Before writing ANY file parser, always `cat` or `head` the actual file first.** Never assume format.
+### Enforcement
+- Code Check: Before any new parser, verify with `head` command in same session
+- Logged: 2026-03-18
+
 ## 2026-03-17: Never Silently Revert a Manual Model Override (TRUST RULE)
 **What happened:** Ahmed manually set the session to Opus 4.6. At some point the model changed back to MiniMax M2.5 without notifying him.
 **Rule:** If Ahmed manually sets a model for this session, that choice is locked. If for ANY reason the model changes (session restart, fallback, system default), I MUST immediately notify Ahmed: "⚠️ Model changed from [X] to [Y]. Reason: [why]." Silent model changes are trust violations.
