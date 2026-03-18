@@ -425,13 +425,34 @@ def get_content_calendar():
 
 def get_system_health():
     """Check system health metrics."""
-    health = {"gateway": "?", "disk_pct": "?", "cron_ok": 0, "cron_fail": 0, "cron_disabled": 0, "errors": []}
+    health = {"gateway": "?", "disk_pct": "?", "mem_pct": "?", "uptime": "?",
+              "cron_total": 0, "cron_enabled": 0, "cron_disabled": 0, "errors": []}
 
     # Disk
     try:
         import shutil
         usage = shutil.disk_usage("/")
         health["disk_pct"] = int(usage.used / usage.total * 100)
+    except:
+        pass
+
+    # Memory
+    try:
+        with open("/proc/meminfo") as f:
+            meminfo = f.read()
+        total = int(re.search(r"MemTotal:\s+(\d+)", meminfo).group(1))
+        avail = int(re.search(r"MemAvailable:\s+(\d+)", meminfo).group(1))
+        health["mem_pct"] = int((total - avail) / total * 100)
+    except:
+        pass
+
+    # Uptime
+    try:
+        with open("/proc/uptime") as f:
+            uptime_secs = float(f.read().split()[0])
+        days = int(uptime_secs // 86400)
+        hours = int((uptime_secs % 86400) // 3600)
+        health["uptime"] = f"{days}d{hours}h" if days else f"{hours}h"
     except:
         pass
 
@@ -442,30 +463,18 @@ def get_system_health():
     except:
         pass
 
-    # Cron health from recent runs
+    # Cron health from jobs.json (direct read, no gateway dependency)
     try:
-        r = subprocess.run(
-            "openclaw cron list 2>/dev/null",
-            shell=True, capture_output=True, text=True, timeout=20
-        )
-        if r.stdout:
-            for line in r.stdout.strip().split("\n"):
-                # Each cron line has columns: id, name, schedule, next, last, status, ...
-                # Status column contains: ok, error, idle, disabled
-                line_lower = line.lower()
-                # Skip header lines and empty
-                if not line.strip() or line.startswith("ID") or line.startswith("--"):
-                    continue
-                # Match by the status column (appears after time columns)
-                if re.search(r'\bok\b', line_lower):
-                    health["cron_ok"] += 1
-                elif re.search(r'\b(error|failed)\b', line_lower):
-                    health["cron_fail"] += 1
-                    parts = line.split()
-                    if len(parts) >= 2:
-                        health["errors"].append(parts[1][:30])
-                elif re.search(r'\b(idle|disabled)\b', line_lower):
-                    health["cron_disabled"] += 1
+        cron_file = os.path.expanduser("~/.openclaw/cron/jobs.json")
+        with open(cron_file) as f:
+            cron_data = json.load(f)
+        jobs = cron_data.get("jobs", [])
+        health["cron_total"] = len(jobs)
+        for j in jobs:
+            if j.get("enabled", True):
+                health["cron_enabled"] += 1
+            else:
+                health["cron_disabled"] += 1
     except:
         pass
 
@@ -780,9 +789,12 @@ def create_notion_briefing(date_str, date_display, pipeline, scanner_meta, quali
 
     # 8. SYSTEM HEALTH
     add_heading("🤖 System Health")
-    add_bullet(f"Gateway: {system['gateway']}")
-    add_bullet(f"Disk: {system['disk_pct']}%")
-    add_bullet(f"Crons: {system['cron_ok']} OK, {system['cron_fail']} failed, {system['cron_disabled']} disabled/idle")
+    disk_warn = " ⚠️" if isinstance(system['disk_pct'], int) and system['disk_pct'] >= 80 else ""
+    mem_warn = " ⚠️" if isinstance(system['mem_pct'], int) and system['mem_pct'] >= 85 else ""
+    add_bullet(f"Gateway: {system['gateway']} | Uptime: {system['uptime']}")
+    add_bullet(f"Disk: {system['disk_pct']}%{disk_warn} | Memory: {system['mem_pct']}%{mem_warn}")
+    disabled_str = f" ({system['cron_disabled']} disabled)" if system.get("cron_disabled") else ""
+    add_bullet(f"Crons: {system['cron_enabled']}/{system['cron_total']} active{disabled_str}")
     if system["errors"]:
         for err in system["errors"][:3]:
             add_bullet(f"❌ {err}")
@@ -809,8 +821,10 @@ def create_notion_briefing(date_str, date_display, pipeline, scanner_meta, quali
             actions.append(f"📧 Reply: {ae.get('subject', '')[:35]} ({ae.get('sender', '')[:15]})")
     if cal_error:
         actions.append("Re-auth Google Calendar")
-    if system["cron_fail"] > 0:
-        actions.append(f"Fix {system['cron_fail']} failed cron(s)")
+    if isinstance(system.get('disk_pct'), int) and system['disk_pct'] >= 80:
+        actions.append(f"⚠️ Disk at {system['disk_pct']}% - cleanup needed")
+    if isinstance(system.get('mem_pct'), int) and system['mem_pct'] >= 85:
+        actions.append(f"⚠️ Memory at {system['mem_pct']}% - investigate")
     if tasks["overdue"]:
         actions.append(f"Address {len(tasks['overdue'])} overdue tasks")
 
@@ -1004,7 +1018,11 @@ def build_telegram_message(date_display, pipeline, scanner_meta, qualified, bord
                 lines.append(f"  📌 {t}")
 
     # System
-    lines.append(f"\n⚙️ SYSTEM: GW {system['gateway']} | Disk {system['disk_pct']}% | Crons {system['cron_ok']}✅ {system['cron_fail']}❌")
+    disk_icon = " 🔴" if isinstance(system['disk_pct'], int) and system['disk_pct'] >= 80 else ""
+    mem_icon = " 🔴" if isinstance(system['mem_pct'], int) and system['mem_pct'] >= 85 else ""
+    lines.append(f"\n⚙️ SYSTEM: GW {system['gateway']} | Disk {system['disk_pct']}%{disk_icon} | Mem {system['mem_pct']}%{mem_icon} | Up {system['uptime']}")
+    disabled_str = f" ({system['cron_disabled']} off)" if system.get("cron_disabled") else ""
+    lines.append(f"  Crons: {system['cron_enabled']}/{system['cron_total']} active{disabled_str}")
     if system["errors"]:
         for err in system["errors"][:2]:
             lines.append(f"  ❌ {err}")
@@ -1080,7 +1098,7 @@ def main():
     # 6. System Health
     log("Step 6: System health...")
     system = get_system_health()
-    log(f"  GW: {system['gateway']}, Disk: {system['disk_pct']}%, Crons: {system['cron_ok']}ok/{system['cron_fail']}fail")
+    log(f"  GW: {system['gateway']}, Disk: {system['disk_pct']}%, Mem: {system['mem_pct']}%, Crons: {system['cron_enabled']}/{system['cron_total']}")
 
     # 7. Active Tasks
     log("Step 7: Active tasks...")
