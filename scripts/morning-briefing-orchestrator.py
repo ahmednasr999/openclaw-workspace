@@ -360,13 +360,16 @@ def check_calendar():
 
 def get_content_calendar():
     """Get content calendar status from Notion."""
-    result = {"scheduled": 0, "drafted": 0, "posted": 0, "today_post": None}
+    result = {"scheduled": 0, "drafted": 0, "posted": 0, "today_post": None,
+              "tomorrow_post": None, "next_scheduled": None, "gap_days": 0}
     token = load_notion_token()
     if not token:
         return result
 
     ctx = ssl.create_default_context()
-    today_str = datetime.now(cairo).strftime("%Y-%m-%d")
+    today = datetime.now(cairo).date()
+    today_str = today.strftime("%Y-%m-%d")
+    tomorrow_str = (today + timedelta(days=1)).strftime("%Y-%m-%d")
 
     try:
         # Query content calendar
@@ -380,10 +383,13 @@ def get_content_calendar():
         with urllib.request.urlopen(req, context=ctx) as r:
             data = json.loads(r.read())
 
+        future_scheduled = []  # Track all future scheduled posts
+
         for p in data.get('results', []):
             props = p['properties']
             status = (props.get('Status', {}).get('select') or {}).get('name', '')
             planned = (props.get('Planned Date', {}).get('date') or {}).get('start', '')
+            title = ''.join(t.get('plain_text', '') for t in props.get('Title', {}).get('title', []))
 
             if status == 'Posted':
                 result["posted"] += 1
@@ -393,8 +399,24 @@ def get_content_calendar():
                 result["scheduled"] += 1
 
             if planned == today_str:
-                title = ''.join(t.get('plain_text', '') for t in props.get('Title', {}).get('title', []))
                 result["today_post"] = {"title": title[:50], "status": status, "date": planned}
+            elif planned == tomorrow_str and status != 'Posted':
+                result["tomorrow_post"] = {"title": title[:50], "status": status, "date": planned}
+
+            # Track future scheduled/drafted posts
+            if planned and planned > today_str and status in ('Scheduled', 'Drafted'):
+                future_scheduled.append(planned)
+
+        # Find content gap - days until next scheduled post runs out
+        if future_scheduled:
+            future_scheduled.sort()
+            result["next_scheduled"] = future_scheduled[0]
+            last_date = future_scheduled[-1]
+            try:
+                last_dt = datetime.strptime(last_date, "%Y-%m-%d").date()
+                result["gap_days"] = (last_dt - today).days
+            except:
+                pass
     except Exception as e:
         log(f"  Content calendar error: {e}")
 
@@ -745,7 +767,15 @@ def create_notion_briefing(date_str, date_display, pipeline, scanner_meta, quali
     add_para(f"Posted: {content_cal['posted']} | Drafted: {content_cal['drafted']} | Scheduled: {content_cal['scheduled']}")
     if content_cal.get("today_post"):
         tp = content_cal["today_post"]
-        add_bullet(f"Today: \"{tp['title']}\" [{tp['status']}]")
+        status_icon = "✅" if tp["status"] == "Posted" else "📋"
+        add_bullet(f"Today: \"{tp['title']}\" [{tp['status']}] {status_icon}")
+    if content_cal.get("tomorrow_post"):
+        tp = content_cal["tomorrow_post"]
+        add_bullet(f"Tomorrow: \"{tp['title']}\" [{tp['status']}]")
+    if content_cal.get("drafted", 0) <= 1:
+        add_para(f"⚠️ Only {content_cal['drafted']} draft(s) left - content pipeline drying up")
+    if content_cal.get("gap_days", 99) <= 3 and content_cal.get("scheduled", 0) > 0:
+        add_para(f"⚠️ Last scheduled post in {content_cal['gap_days']} days - need more content")
     add_divider()
 
     # 8. SYSTEM HEALTH
@@ -770,6 +800,8 @@ def create_notion_briefing(date_str, date_display, pipeline, scanner_meta, quali
         actions.append(f"Follow up on {min(5, len(p['overdue']))} oldest stale applications")
     if content_cal.get("today_post") and content_cal["today_post"]["status"] != "Posted":
         actions.append(f"Publish LinkedIn: \"{content_cal['today_post']['title'][:30]}\"")
+    if content_cal.get("drafted", 0) == 0:
+        actions.append("📝 Content pipeline empty - create new drafts")
     # Email actions
     action_emails = [e for e in emails if e.get("priority") == "action"]
     if action_emails:
@@ -948,7 +980,15 @@ def build_telegram_message(date_display, pipeline, scanner_meta, qualified, bord
     lines.append(f"\n📝 CONTENT: {content_cal['posted']} posted | {content_cal['scheduled']} scheduled | {content_cal['drafted']} drafted")
     if content_cal.get("today_post"):
         tp = content_cal["today_post"]
-        lines.append(f"  Today: \"{tp['title'][:35]}\" [{tp['status']}]")
+        status_icon = "✅" if tp["status"] == "Posted" else "📋"
+        lines.append(f"  Today: \"{tp['title'][:35]}\" [{tp['status']}] {status_icon}")
+    if content_cal.get("tomorrow_post"):
+        tp = content_cal["tomorrow_post"]
+        lines.append(f"  Tomorrow: \"{tp['title'][:35]}\" [{tp['status']}]")
+    if content_cal.get("drafted", 0) <= 1:
+        lines.append(f"  ⚠️ Only {content_cal['drafted']} draft(s) left - pipeline drying up")
+    if content_cal.get("gap_days", 99) <= 3 and content_cal.get("scheduled", 0) > 0:
+        lines.append(f"  ⚠️ Last scheduled post in {content_cal['gap_days']} days")
 
     # Tasks
     if tasks["total_open"] > 0 or tasks["overdue"]:
