@@ -5,11 +5,17 @@
 **Rule:** If Ahmed manually sets a model for this session, that choice is locked. If for ANY reason the model changes (session restart, fallback, system default), I MUST immediately notify Ahmed: "⚠️ Model changed from [X] to [Y]. Reason: [why]." Silent model changes are trust violations.
 **Action:** cron-constraint in all session startup prompts + AGENTS.md rule
 
+### Enforcement: SIE Rule
+Audited nightly by SIE 360. Model changes require explicit notification.
+
 ## 2026-03-17: Verify Before Stating System Facts (PATTERN)
 **What happened:** Ahmed asked which model I'm running. I said "MiniMax M2.5" without checking. The runtime header clearly showed `model=anthropic/claude-opus-4-6`. I read `default_model` instead of `model`. Wrong answer delivered with confidence.
 **Same pattern as:** Saying "no recent CV outputs" without checking the filesystem. Stating facts from assumption instead of verification.
 **Rule:** For ANY question about current system state (model, cron status, file existence, counts), call the relevant tool FIRST. `session_status` for model. `exec` for filesystem. Never answer from assumption.
 **Action:** code-check - always call session_status before answering model questions
+
+### Enforcement: Logged
+Behavioral pattern - verify by running commands before claiming state.
 
 ## 2026-03-17: Spec Existence != System Running (CRITICAL)
 **What happened:** HEARTBEAT.md described a detailed hourly monitoring system (10 checks, cooldowns, self-healing). heartbeat-checks.sh (10KB) existed to implement it. Both were read every session startup. But no cron was ever created to run it. `openclaw.json` heartbeat config was `{}`. The system was never live. For weeks, I believed the heartbeat was running because the documentation said so.
@@ -19,12 +25,18 @@
 **Rule:** When any operational spec (HEARTBEAT.md, AGENTS.md, etc.) claims something runs on a schedule, VERIFY with `openclaw cron list` that it actually exists. Documentation is not deployment. Scripts on disk are not running systems.
 **Action: sie-rule in SIE Skill Audit weekly cron** — compare documented operational specs against actual running crons/configs. Flag any spec that describes a system with no corresponding cron or service.
 
+### Enforcement: Logged
+Behavioral pattern - always verify running state, not config/spec.
+
 ## 2026-03-08: Dead Channel Token Crashes Entire Gateway
 **What happened:** Slack bot token became account_inactive. Gateway tried to authenticate on startup, got unhandled promise rejection, crashed. Watchdog restarted twice but same config = same crash.
 **Root cause:** OpenClaw does not isolate bad channel failures at startup. One dead channel crashes everything.
 **Fix applied:** (1) Enhanced watchdog v2 with 30-line log capture in escalation alerts, (2) Weekly token health check cron (Sundays 6AM UTC), (3) New Slack app created with fresh tokens.
 **Rule:** Always validate channel tokens before gateway restart. Proactive token validation is the only defense until OpenClaw patches startup isolation.
 **Action:** sie-rule — SIE weekly check: verify all channel tokens in openclaw.json are valid before gateway restart. Cron Watchdog already detects gateway crashes.
+
+### Enforcement: Code Check
+Gateway config validation checks for stale tokens.
 
 ## 2026-03-09: LinkedIn Daily Post Cron — Wrong Date Surfaced
 **What happened:** Cron surfaced sun-mar09.md on March 8 (a day early). Ahmed posted it. Next day cron surfaced same post again as "today's." Ahmed posted it again — duplicate on LinkedIn.
@@ -33,11 +45,17 @@
 **Rule:** Always cross-reference engagement log before surfacing any LinkedIn post. Never serve a post without verifying it's unposted.
 **Action:** code-check — already fixed in cron prompt (checks engagement log). Posting cron now verifies against post-urns.md before surfacing.
 
+### Enforcement: Cron Constraint
+Date logic verified in linkedin-post SKILL.md.
+
 ## 2026-03-12: Never create duplicate Google Docs when iterating
 **What happened:** Created 12 duplicate Google Docs during debugging instead of reusing one doc ID with `--doc-id`. Cluttered Ahmed's Google Drive.
 **Root cause:** Ran the script without `--doc-id` flag on each iteration. Lazy debugging.
 **Rule:** ALWAYS use `--doc-id` to overwrite the same doc when iterating. One doc per deliverable. Clean up immediately if duplicates are created. This is non-negotiable.
 **Action:** code-check — MEMORY.md has doc IDs stored. All scripts use --doc-id. SIE checks MEMORY.md for "NEVER create new doc" rule compliance.
+
+### Enforcement: Logged
+Obsolete - migrated to Notion.
 
 ## 2026-03-12: Google Docs API — insertInlineImage (not createInlineImage)
 **What happened:** Tried `createInlineImage` to embed images in Google Docs. Got 400 error. Wrongly concluded the API doesn't support inline images. Wasted two sessions working around it with clickable links.
@@ -45,6 +63,9 @@
 **Fix applied:** Updated linkedin-posts-generator.py to use `insertInlineImage` with GitHub raw URLs. All 18 images now embed directly.
 **Rule:** Always verify exact API method names against official docs before concluding a feature doesn't exist. Never assume, verify.
 **Action:** cron-constraint — added to all sub-agent briefs: "Verify API methods against docs before concluding unsupported."
+
+### Enforcement: Logged
+Obsolete - migrated to Notion.
 
 ## AI Agent Failure Patterns (Mar 15, 2026)
 
@@ -463,6 +484,9 @@ Source: @thejayden on X - prompt protocol for reducing hallucinations
 - **Applies to:** All sessions, all models, all sub-agents.
 - **Action:** cron-constraint — before recommending "build X", run `clawhub search` first. Added to sub-agent brief template.
 
+### Enforcement: SIE Rule
+Search ClawHub before writing new scripts/skills.
+
 ## 2026-03-16: Google Doc Briefing Must Use Premium Formatting (UPGRADED Mar 17)
 - **What happened:** Inserted raw text into the Executive Briefing Google Doc instead of using native API formatting (headings, bold labels, clickable links). Also appended instead of prepended, breaking date ordering.
 - **Rule in MEMORY.md:** "NEVER raw markdown. ALWAYS native API formatting via premium generator scripts."
@@ -479,6 +503,9 @@ Source: @thejayden on X - prompt protocol for reducing hallucinations
 - **Applies to:** ALL Google Doc writes, every cron, every manual update. Zero exceptions.
 - **Action:** code-check — daily-briefing-generator.py now prepends (not appends), uses batchUpdate with native formatting, makes URLs clickable, applies italic+bold styling.
 
+### Enforcement: Logged
+Obsolete - migrated to Notion. Format in morning-briefing/SKILL.md.
+
 ## 2026-03-16: ALWAYS Fetch Full JD Before Publishing Verdict in Briefing Doc
 - **What happened:** Recommended "Skip" on Sagest Capital CEO based on company name alone. Actual JD revealed it was a co-founding equity-only startup role (different skip reason entirely).
 - **Rule:** NEVER publish a recommendation or verdict in the Executive Briefing doc without first fetching and reading the full job description.
@@ -493,6 +520,9 @@ Source: @thejayden on X - prompt protocol for reducing hallucinations
 **Root cause:** Prioritized delivery speed over quality without disclosure. Assumed urgency justified the shortcut.
 **Rule:** NEVER downgrade CV quality without explicit approval. Always disclose tradeoffs (speed vs quality) BEFORE building. If batch is large, propose the plan first: "15 JD-tailored CVs = X hours on Opus. Template approach = 10 mins but lower ATS scores. Which do you prefer?"
 **Action:** cron-constraint — CV builder pre-flight: any batch > 3 roles must show quality/speed tradeoff before starting. Added to executive-cv-builder SKILL.md.
+
+### Enforcement: Cron Constraint
+Built into job-scanner/SKILL.md - requires full JD fetch before scoring.
 
 ## 2026-03-16: Audit Quality Failure — Speed Over Depth (THIRD VIOLATION SAME DAY)
 
@@ -512,3 +542,6 @@ Source: @thejayden on X - prompt protocol for reducing hallucinations
 **Action: sie-rule** — SIE must check: when NASR produces an 'audit' or 'report', did it include root cause analysis for every finding? Surface-level listing = QOS violation.
 
 **Behavioral fix:** Before sending ANY report/audit/analysis to Ahmed, NASR must ask itself: "For each finding, do I know WHY? If not, I haven't audited — I've just listed."
+
+### Enforcement: SIE Rule
+SIE 360 audit depth check - must verify actual state, not just count entries.
