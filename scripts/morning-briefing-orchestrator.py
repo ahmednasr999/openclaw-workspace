@@ -149,27 +149,70 @@ def load_scanner_data(today_str):
     if qual_file and os.path.exists(qual_file):
         with open(qual_file) as f:
             content = f.read()
-        # Parse qualified jobs
-        current_tier = ""
+        # Parse qualified jobs - supports two formats:
+        # Format A: ### Job Title\n- Company: X\n- Location: Y\n- URL: Z
+        # Format B: - Title @ Company (ATS: XX)
+        current_section = ""
+        current_job = None
+
         for line in content.split("\n"):
             line = line.strip()
-            if line.startswith("## ") or line.startswith("### "):
-                current_tier = line.lstrip("# ").strip().lower()
+
+            # Section headers (## Priority Picks, ## Leads, etc.)
+            if line.startswith("## "):
+                current_section = line.lstrip("# ").strip().lower()
                 continue
+
+            # Job title as ### heading (Format A)
+            if line.startswith("### "):
+                # Save previous job
+                if current_job:
+                    if "priority" in current_section or "pick" in current_section:
+                        qualified.append(current_job)
+                    else:
+                        borderline.append(current_job)
+                title = line.lstrip("# ").strip()
+                current_job = {"title": title[:60], "company": "", "location": "", "url": ""}
+                continue
+
+            # Metadata lines under ### heading
+            if current_job and line.startswith("- "):
+                kv = line[2:].strip()
+                if kv.lower().startswith("company:"):
+                    # Handle markdown links: [Name](url)
+                    val = kv.split(":", 1)[1].strip()
+                    link_match = re.match(r'\[(.+?)\]', val)
+                    current_job["company"] = (link_match.group(1) if link_match else val)[:30]
+                elif kv.lower().startswith("location:"):
+                    current_job["location"] = kv.split(":", 1)[1].strip()[:30]
+                elif kv.lower().startswith("url:"):
+                    current_job["url"] = kv.split(":", 1)[1].strip()
+                elif kv.lower().startswith("source:"):
+                    current_job["source"] = kv.split(":", 1)[1].strip()
+                continue
+
+            # Bullet format (Format B): - Title @ Company (ATS: XX)
             if line.startswith("- ") or line.startswith("* "):
                 job_text = line[2:].strip()
-                job = {"title": job_text[:60], "raw": job_text}
-                # Try to parse "Title @ Company (ATS: XX)"
-                at_match = re.match(r'(.+?)\s*@\s*(.+?)(?:\s*\(ATS:\s*(\d+)\))?$', job_text)
-                if at_match:
-                    job["title"] = at_match.group(1).strip()[:50]
-                    job["company"] = at_match.group(2).strip()[:30]
-                    if at_match.group(3):
-                        job["ats_score"] = int(at_match.group(3))
-                if "priority" in current_tier or "qualified" in current_tier:
-                    qualified.append(job)
-                else:
-                    borderline.append(job)
+                if not any(job_text.lower().startswith(k) for k in ["company:", "location:", "url:", "source:"]):
+                    job = {"title": job_text[:60], "raw": job_text}
+                    at_match = re.match(r'(.+?)\s*@\s*(.+?)(?:\s*\(ATS:\s*(\d+)\))?$', job_text)
+                    if at_match:
+                        job["title"] = at_match.group(1).strip()[:50]
+                        job["company"] = at_match.group(2).strip()[:30]
+                        if at_match.group(3):
+                            job["ats_score"] = int(at_match.group(3))
+                    if "priority" in current_section or "pick" in current_section:
+                        qualified.append(job)
+                    else:
+                        borderline.append(job)
+
+        # Don't forget the last job
+        if current_job:
+            if "priority" in current_section or "pick" in current_section:
+                qualified.append(current_job)
+            else:
+                borderline.append(current_job)
 
     scanner_age = None
     if meta.get("date"):
@@ -483,16 +526,29 @@ def create_notion_briefing(date_str, date_display, pipeline, scanner_meta, quali
 
     if qualified:
         add_para(f"Priority picks ({len(qualified)}):")
-        for j in qualified[:5]:
+        for j in qualified[:10]:
             title = j.get("title", "?")[:50]
             company = j.get("company", "")
-            ats = j.get("ats_score", "?")
-            icon = "🟢" if isinstance(ats, int) and ats >= 82 else "🟡"
+            ats = j.get("ats_score")
+            location = j.get("location", "")
+            city = location.split(",")[0].strip()[:15] if location else ""
+            url = j.get("url", "")
+
+            if isinstance(ats, (int, float)) and ats > 0:
+                icon = "🟢" if ats >= 75 else ("🟡" if ats >= 65 else "🔴")
+                ats_str = f" (ATS: {ats}%)"
+            else:
+                icon = "🟡"
+                ats_str = ""
+
             text = f"{icon} {title}"
             if company:
                 text += f" @ {company}"
-            if ats != "?":
-                text += f" (ATS: {ats})"
+            if city:
+                text += f" - {city}"
+            text += ats_str
+            if url:
+                text += f"\n{url}"
             add_bullet(text)
 
     if trends.get("total_runs", 0) >= 3:
@@ -666,11 +722,33 @@ def build_telegram_message(date_display, pipeline, scanner_meta, qualified, bord
     else:
         lines.append(f"\n🔍 SCANNER: No data")
 
-    for j in qualified[:3]:
-        title = j.get("title", "?")[:35]
-        company = j.get("company", "")[:15]
-        icon = "🟢" if isinstance(j.get("ats_score"), int) and j["ats_score"] >= 82 else "🟡"
-        lines.append(f"  {icon} {title}" + (f" @ {company}" if company else ""))
+    if qualified:
+        lines.append(f"  📋 All {len(qualified)} picks:")
+    for j in qualified:
+        title = j.get("title", "?")[:40]
+        company = j.get("company", "")[:18]
+        location = j.get("location", "")
+        city = location.split(",")[0].strip()[:12] if location else ""
+        ats = j.get("ats_score")
+        url = j.get("url", "")
+
+        # ATS-based icon
+        if isinstance(ats, (int, float)) and ats > 0:
+            icon = "🟢" if ats >= 75 else ("🟡" if ats >= 65 else "🔴")
+            ats_str = f" [{ats}%]"
+        else:
+            icon = "🟡"
+            ats_str = ""
+
+        line = f"  {icon} {title}"
+        if company:
+            line += f" - {company}"
+        if city:
+            line += f" ({city})"
+        line += ats_str
+        lines.append(line)
+        if url:
+            lines.append(f"    {url}")
 
     # Email
     if emails:

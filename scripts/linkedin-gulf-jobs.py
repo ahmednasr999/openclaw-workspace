@@ -83,6 +83,32 @@ MAX_JOBS_PER_SEARCH  = 10
 MAX_RUNTIME_SECONDS  = 25 * 60   # 25 minutes (138 searches × 5s delay + backoffs)
 SEARCH_DELAY         = 5         # seconds between searches (increased for 138 combos)
 MIN_JOBS_ALERT       = 10        # alert if fewer total jobs found
+ATS_THRESHOLD        = 65        # minimum ATS score to include in picks
+
+# Ahmed's CV keywords for ATS scoring (from master-cv-data.md)
+ATS_KEYWORDS = {
+    # Core skills (weight 3)
+    "digital transformation": 3, "pmo": 3, "program management": 3,
+    "project management": 3, "agile": 3, "strategic planning": 3,
+    "operational excellence": 3, "change management": 3, "stakeholder management": 3,
+    "cross-functional": 3, "p&l": 3,
+    # Domain (weight 2)
+    "healthtech": 2, "healthcare": 2, "fintech": 2, "e-commerce": 2,
+    "payments": 2, "mobile": 2, "saas": 2, "ai": 2, "data analytics": 2,
+    "cloud": 2, "emr": 2, "telemedicine": 2, "cybersecurity": 2,
+    "infrastructure": 2, "enterprise": 2, "crm": 2, "salesforce": 2,
+    # Leadership (weight 2)
+    "c-suite": 2, "executive": 2, "director": 2, "vp": 2, "head of": 2,
+    "leadership": 2, "team building": 2, "scaling": 2, "growth": 2,
+    # Geography (weight 1)
+    "gcc": 1, "uae": 1, "saudi": 1, "dubai": 1, "middle east": 1,
+    "mena": 1, "egypt": 1, "riyadh": 1, "ksa": 1,
+    # Certifications (weight 1)
+    "pmp": 1, "scrum": 1, "lean six sigma": 1, "itil": 1, "cbap": 1,
+    # Tech (weight 1)
+    "lte": 1, "4g": 1, "api": 1, "microservices": 1, "devops": 1,
+    "automation": 1, "integration": 1, "architecture": 1, "platform": 1,
+}
 
 # Title filter: must match executive level
 EXEC_WORDS = ["chief","ceo","cto","cio","cdo","coo","cso","cfo","cmo","cro",
@@ -246,6 +272,148 @@ def is_duplicate(jid, company=""):
 def save_notified(job):
     with open(NOTIFIED_FILE, "a") as f:
         f.write(f"\n- {job['id']}: {job['title']} at {job['company']} ({job['location']})")
+
+# ===================== JD FETCH & ATS SCORING =====================
+
+def fetch_jd(url, site="linkedin"):
+    """Fetch full job description from LinkedIn or Indeed URL."""
+    try:
+        import urllib.request, ssl
+        ctx = ssl.create_default_context()
+        headers = {
+            "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+        }
+        req = urllib.request.Request(url, headers=headers)
+        with urllib.request.urlopen(req, context=ctx, timeout=15) as r:
+            html = r.read().decode("utf-8", errors="ignore")
+
+        # Extract job description text from HTML
+        # LinkedIn: look for description section
+        jd_text = ""
+
+        # Try common patterns
+        import re as _re
+
+        # LinkedIn pattern: description in a specific div or section
+        patterns = [
+            r'<div[^>]*class="[^"]*description[^"]*"[^>]*>(.*?)</div>',
+            r'"description"\s*:\s*"(.*?)"',
+            r'<section[^>]*class="[^"]*description[^"]*"[^>]*>(.*?)</section>',
+        ]
+
+        for pat in patterns:
+            m = _re.search(pat, html, _re.DOTALL | _re.IGNORECASE)
+            if m:
+                jd_text = m.group(1)
+                break
+
+        if not jd_text:
+            # Fallback: extract all visible text between body tags
+            body_match = _re.search(r'<body[^>]*>(.*?)</body>', html, _re.DOTALL | _re.IGNORECASE)
+            if body_match:
+                jd_text = body_match.group(1)
+
+        # Clean HTML tags
+        jd_text = _re.sub(r'<[^>]+>', ' ', jd_text)
+        jd_text = _re.sub(r'&[a-z]+;', ' ', jd_text)
+        jd_text = _re.sub(r'\s+', ' ', jd_text).strip()
+
+        # Limit to reasonable length
+        return jd_text[:5000] if len(jd_text) > 100 else ""
+
+    except Exception as e:
+        return ""
+
+
+def fetch_jd_jobspy(url, site="linkedin"):
+    """Fetch JD using jobspy with description enabled (more reliable than raw HTTP)."""
+    try:
+        from jobspy import scrape_jobs
+        # Extract job ID from URL
+        m = re.search(r'/jobs/view/(\d+)', url)
+        if not m:
+            return ""
+
+        job_id = m.group(1)
+        # Re-scrape with description enabled
+        results = scrape_jobs(
+            site_name=[site if site != "unknown" else "linkedin"],
+            search_term="",
+            location="",
+            results_wanted=1,
+            linkedin_fetch_description=True,
+            job_url=url,
+        )
+        if results is not None and len(results) > 0:
+            desc = str(results.iloc[0].get("description", ""))
+            if desc and desc != "nan":
+                return desc[:5000]
+    except:
+        pass
+    return ""
+
+
+def score_ats(jd_text, title=""):
+    """Score a job description against Ahmed's CV keywords. Returns 0-100."""
+    if not jd_text and not title:
+        return 0, []
+
+    text = (jd_text + " " + title).lower()
+    matched = []
+    total_weight = 0
+    max_possible = sum(ATS_KEYWORDS.values())
+
+    for keyword, weight in ATS_KEYWORDS.items():
+        if keyword in text:
+            matched.append(keyword)
+            total_weight += weight
+
+    # Score as percentage of max possible, capped at 100
+    score = min(100, int(total_weight / max_possible * 100 * 2.5))  # Scale factor to normalize
+
+    return score, matched
+
+
+def enrich_picks_with_jd(picks):
+    """Fetch JDs and score ATS for priority picks. Returns enriched list."""
+    enriched = []
+    total = len(picks)
+    fetched = 0
+    scored = 0
+
+    print(f"\n  Enriching {total} picks with JD + ATS scoring...")
+
+    for i, job in enumerate(picks):
+        url = job.get("url", "")
+        site = job.get("site", "linkedin")
+
+        # Try fetching JD
+        jd = ""
+        if url:
+            jd = fetch_jd(url, site)
+            if jd:
+                fetched += 1
+            time.sleep(1)  # Rate limit between fetches
+
+        # Score ATS
+        ats_score, matched_keywords = score_ats(jd, job.get("title", ""))
+        job["jd_text"] = jd[:2000] if jd else ""
+        job["jd_fetched"] = bool(jd)
+        job["ats_score"] = ats_score
+        job["ats_keywords"] = matched_keywords
+        scored += 1
+
+        if (i + 1) % 5 == 0:
+            print(f"    Progress: {i+1}/{total} (fetched: {fetched}, scored: {scored})")
+
+        enriched.append(job)
+
+    # Sort by ATS score descending
+    enriched.sort(key=lambda x: x.get("ats_score", 0), reverse=True)
+
+    print(f"  Enrichment done: {fetched}/{total} JDs fetched, {scored} scored")
+    return enriched
+
 
 # ===================== SEARCH =====================
 
@@ -441,6 +609,15 @@ def main():
 
         time.sleep(SEARCH_DELAY)
 
+    # ==================== JD ENRICHMENT + ATS SCORING ====================
+    if picks:
+        picks = enrich_picks_with_jd(picks)
+        # Log ATS results
+        high_ats = [j for j in picks if j.get("ats_score", 0) >= 75]
+        mid_ats = [j for j in picks if 65 <= j.get("ats_score", 0) < 75]
+        low_ats = [j for j in picks if j.get("ats_score", 0) < 65]
+        print(f"  ATS results: {len(high_ats)} high (75+), {len(mid_ats)} mid (65-74), {len(low_ats)} low (<65)")
+
     # ==================== DEGRADATION CHECK ====================
     if total_found < MIN_JOBS_ALERT:
         msg = f"⚠️ Scanner degradation: {total_found} jobs from {total_searches} searches. Possible rate limit."
@@ -469,10 +646,19 @@ def main():
         if picks:
             f.write(f"## Priority Picks - C-Suite + UAE/Saudi + DT\n\n")
             for job in picks:
-                f.write(f"### {job['title']}\n")
+                ats = job.get('ats_score', 0)
+                ats_icon = "🟢" if ats >= 75 else ("🟡" if ats >= 65 else "🔴")
+                f.write(f"### {ats_icon} {job['title']} (ATS: {ats}%)\n")
                 f.write(f"- Company: {job['company']}\n")
                 f.write(f"- Location: {job['location']}\n")
                 f.write(f"- Source: {job['site']}\n")
+                f.write(f"- ATS Score: {ats}%\n")
+                if job.get('ats_keywords'):
+                    f.write(f"- Matching Keywords: {', '.join(job['ats_keywords'][:10])}\n")
+                if job.get('jd_fetched'):
+                    f.write(f"- JD: ✅ Fetched ({len(job.get('jd_text',''))} chars)\n")
+                else:
+                    f.write(f"- JD: ❌ Not fetched (score based on title only)\n")
                 if job.get('job_level'): f.write(f"- Level: {job['job_level']}\n")
                 if job.get('job_type'): f.write(f"- Type: {job['job_type']}\n")
                 if job.get('job_function'): f.write(f"- Function: {job['job_function']}\n")
