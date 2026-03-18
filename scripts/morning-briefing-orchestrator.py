@@ -294,15 +294,33 @@ def load_scanner_data(today_str):
                     verdict, fit, reason = "SKIP", 2, f"Title indicates {domain}"
                     break
 
+            # Additional SKIP: roles that sound executive but are wrong domain
+            SKIP_TITLES = ["people transformation", "hr ", "human resources", "facilities",
+                "asset management", "ip strategy", "intellectual property", "business development",
+                "sales director", "marketing director", "design director", "creative director",
+                "construction manager", "site manager", "quantity surveyor"]
             if verdict != "SKIP":
+                for st in SKIP_TITLES:
+                    if st in title:
+                        verdict, fit, reason = "SKIP", 2, f"Wrong specialization: {st.strip()}"
+                        break
+
+            if verdict != "SKIP":
+                # Require actual domain matches, not just role-level words
+                CORE_DOMAINS = ["digital transformation", "pmo", "program management", "project management",
+                    "healthcare", "healthtech", "fintech", "payments", "e-commerce", "enterprise"]
+                core_hits = sum(1 for d in CORE_DOMAINS if d in combined)
                 domain_hits = sum(1 for d in AHMED_DOMAINS if d in combined)
                 role_hits = sum(1 for r in AHMED_ROLES if r in combined)
-                if domain_hits >= 3 and role_hits >= 2:
-                    verdict, fit, reason = "APPLY", min(10, 6 + domain_hits), "Strong career fit"
-                elif domain_hits >= 2 or role_hits >= 2:
-                    verdict, fit, reason = "APPLY", min(8, 5 + domain_hits), "Good career fit"
+
+                if core_hits >= 3 and role_hits >= 1:
+                    verdict, fit, reason = "APPLY", min(10, 6 + core_hits), "Strong career fit"
+                elif core_hits >= 2:
+                    verdict, fit, reason = "APPLY", min(8, 5 + core_hits), "Good career fit"
+                elif core_hits == 1 and role_hits >= 2:
+                    verdict, fit, reason = "STRETCH", min(5, 3 + core_hits), "Partial fit - review JD"
                 elif domain_hits >= 1:
-                    verdict, fit, reason = "STRETCH", 4, "Partial domain overlap"
+                    verdict, fit, reason = "STRETCH", 4, "Weak domain overlap"
                 else:
                     verdict, fit, reason = "SKIP", 2, "No relevant domain experience"
 

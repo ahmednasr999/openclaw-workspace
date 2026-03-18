@@ -1085,11 +1085,26 @@ def semantic_fit_filter(job):
     domain_hits = sum(1 for d in AHMED_DOMAINS if d in combined)
     role_hits = sum(1 for r in AHMED_ROLES if r in combined)
 
-    if domain_hits >= 3 and role_hits >= 2:
-        return "APPLY", min(10, 6 + domain_hits), "Strong career fit"
-    elif domain_hits >= 2 or role_hits >= 2:
-        return "APPLY", min(8, 5 + domain_hits), "Good career fit"
+    # Additional SKIP: titles that sound executive but are wrong domain
+    SKIP_TITLES = ["people transformation", "hr ", "human resources", "facilities",
+        "asset management", "ip strategy", "intellectual property", "business development",
+        "sales director", "marketing director", "design director", "creative director",
+        "construction manager", "site manager", "quantity surveyor"]
+    for st in SKIP_TITLES:
+        if st in title:
+            return "SKIP", 2, f"Wrong specialization: {st.strip()}"
+
+    CORE_DOMAINS = ["digital transformation", "pmo", "program management", "project management",
+        "healthcare", "healthtech", "fintech", "payments", "e-commerce", "enterprise"]
+    core_hits = sum(1 for d in CORE_DOMAINS if d in combined)
+
+    if core_hits >= 3 and role_hits >= 1:
+        return "APPLY", min(10, 6 + core_hits), "Strong career fit"
+    elif core_hits >= 2:
+        return "APPLY", min(8, 5 + core_hits), "Good career fit"
+    elif core_hits == 1 and role_hits >= 2:
+        return "STRETCH", min(5, 3 + core_hits), "Partial fit - review JD"
     elif domain_hits >= 1:
-        return "STRETCH", 4, "Partial domain overlap"
+        return "STRETCH", 4, "Weak domain overlap"
     else:
         return "SKIP", 2, "No relevant domain experience"
