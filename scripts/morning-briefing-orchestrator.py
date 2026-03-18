@@ -546,7 +546,7 @@ def create_notion_briefing(date_str, date_display, pipeline, scanner_meta, quali
 
     if qualified:
         add_para(f"Priority picks ({len(qualified)}):")
-        for idx, j in enumerate(qualified[:10], 1):
+        for idx, j in enumerate(qualified, 1):
             title = j.get("title", "?")[:50]
             company = j.get("company", "")
             ats = j.get("ats_score")
