@@ -508,6 +508,36 @@ def enrich_picks_with_jd(picks):
     enriched.sort(key=lambda x: x.get("ats_score", 0), reverse=True)
 
     print(f"  Enrichment done: {fetched}/{total} JDs fetched, {scored} scored")
+
+    # Cache JDs to disk for CV builder
+    today_str = time.strftime("%Y-%m-%d")
+    jd_cache_file = f"{WORKSPACE}/jobs-bank/scraped/jd-cache-{today_str}.json"
+    jd_cache = {}
+    for job in enriched:
+        if job.get("jd_text"):
+            jd_cache[job.get("url", "")] = {
+                "title": job.get("title", ""),
+                "company": job.get("company", ""),
+                "jd_text": job["jd_text"],
+                "ats_score": job.get("ats_score", 0),
+                "ats_keywords": job.get("ats_keywords", []),
+            }
+    with open(jd_cache_file, "w") as f:
+        json.dump(jd_cache, f, indent=2)
+    print(f"  JD cache saved: {len(jd_cache)} JDs → {jd_cache_file}")
+
+    # Apply semantic career-fit filter
+    for job in enriched:
+        verdict, fit_score, reason = semantic_fit_filter(job)
+        job["career_verdict"] = verdict
+        job["career_fit"] = fit_score
+        job["career_reason"] = reason
+
+    apply_count = sum(1 for j in enriched if j["career_verdict"] == "APPLY")
+    skip_count = sum(1 for j in enriched if j["career_verdict"] == "SKIP")
+    stretch_count = sum(1 for j in enriched if j["career_verdict"] == "STRETCH")
+    print(f"  Career fit: {apply_count} APPLY, {skip_count} SKIP, {stretch_count} STRETCH")
+
     return enriched
 
 
@@ -789,30 +819,49 @@ def main():
             f.write(f"⚠️ **DEGRADATION:** Only {total_found} jobs found. Scanner may be rate-limited.\n\n")
 
         if picks:
-            f.write(f"## Priority Picks - C-Suite + UAE/Saudi + DT\n\n")
-            for job in picks:
+            # Separate by career verdict
+            apply_jobs = [j for j in picks if j.get('career_verdict') == 'APPLY']
+            skip_jobs = [j for j in picks if j.get('career_verdict') == 'SKIP']
+            stretch_jobs = [j for j in picks if j.get('career_verdict') == 'STRETCH']
+            # Jobs without verdict (legacy) go to apply
+            no_verdict = [j for j in picks if not j.get('career_verdict')]
+            apply_jobs.extend(no_verdict)
+
+            # Sort each group by career_fit desc, then ats_score desc
+            apply_jobs.sort(key=lambda x: (x.get('career_fit', 0), x.get('ats_score', 0)), reverse=True)
+            skip_jobs.sort(key=lambda x: x.get('ats_score', 0), reverse=True)
+            stretch_jobs.sort(key=lambda x: x.get('career_fit', 0), reverse=True)
+
+            f.write(f"## ✅ APPLY - Genuine Career Fits ({len(apply_jobs)} jobs)\n\n")
+            for job in apply_jobs:
                 ats = job.get('ats_score', 0)
-                ats_icon = "🟢" if ats >= 75 else ("🟡" if ats >= 65 else "🔴")
-                f.write(f"### {ats_icon} {job['title']} (ATS: {ats}%)\n")
+                fit = job.get('career_fit', 0)
+                reason = job.get('career_reason', '')
+                f.write(f"### [{fit}/10] {job['title']} (ATS: {ats}%)\n")
                 f.write(f"- Company: {job['company']}\n")
                 f.write(f"- Location: {job['location']}\n")
-                f.write(f"- Source: {job['site']}\n")
+                f.write(f"- Career Fit: {fit}/10 - {reason}\n")
                 f.write(f"- ATS Score: {ats}%\n")
                 if job.get('ats_keywords'):
                     f.write(f"- Matching Keywords: {', '.join(job['ats_keywords'][:10])}\n")
                 if job.get('jd_fetched'):
                     f.write(f"- JD: ✅ Fetched ({len(job.get('jd_text',''))} chars)\n")
                 else:
-                    f.write(f"- JD: ❌ Not fetched (score based on title only)\n")
-                if job.get('job_level'): f.write(f"- Level: {job['job_level']}\n")
-                if job.get('job_type'): f.write(f"- Type: {job['job_type']}\n")
-                if job.get('job_function'): f.write(f"- Function: {job['job_function']}\n")
-                if job.get('company_industry'): f.write(f"- Industry: {job['company_industry']}\n")
-                if job.get('min_salary') and job.get('currency'): f.write(f"- Salary: {job['currency']} {job['min_salary']}-{job.get('max_salary','')}\n")
-                if job.get('is_remote') == 'True': f.write(f"- ⚠️ Remote (Ahmed prefers on-site)\n")
-                if job.get('company_url'): f.write(f"- Company: [{job['company']}]({job['company_url']})\n")
+                    f.write(f"- JD: ❌ Not fetched\n")
                 f.write(f"- URL: {job['url']}\n")
                 if job.get('date_posted'): f.write(f"- Posted: {job['date_posted']}\n")
+                f.write(f"\n")
+
+            if stretch_jobs:
+                f.write(f"## 🟡 STRETCH - Possible but Risky ({len(stretch_jobs)} jobs)\n\n")
+                for job in stretch_jobs:
+                    f.write(f"- **{job['title']}** @ {job['company']} ({job['location']}) - {job.get('career_reason','')} | {job['url']}\n")
+                f.write(f"\n")
+
+            if skip_jobs:
+                f.write(f"## ❌ SKIP - Domain Mismatch ({len(skip_jobs)} jobs)\n\n")
+                for job in skip_jobs:
+                    f.write(f"- ~~{job['title']}~~ @ {job['company']} - {job.get('career_reason','')} (FIT: {job.get('career_fit',0)})\n")
                 f.write(f"\n")
         else:
             f.write(f"## Priority Picks\n\nNo priority picks today.\n\n")
@@ -994,3 +1043,52 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+# ===================== SEMANTIC FIT FILTER (Added 2026-03-18) =====================
+# This filter runs AFTER ATS keyword scoring to eliminate domain mismatches.
+# ATS score measures WORD OVERLAP. This filter measures CAREER FIT.
+
+AHMED_DOMAINS = ["digital transformation", "pmo", "program management", "project management",
+    "healthcare", "healthtech", "fintech", "payments", "e-commerce", "ecommerce",
+    "operational excellence", "change management", "enterprise", "consulting"]
+
+AHMED_ROLES = ["pmo", "program", "director", "vp", "vice president", "head of", "chief",
+    "transformation", "operations", "strategy", "product management", "delivery"]
+
+SKIP_DOMAINS = {
+    "cybersecurity": ["ciso", "information security officer", "security engineer", "penetration", "soc analyst"],
+    "hands-on coding": ["software engineer", "developer", "full stack", "backend engineer", "frontend engineer", "code reviews", "sdlc", "hands-on technical"],
+    "oil & gas": ["offshore", "upstream", "downstream", "drilling", "petroleum", "subsea", "oil and gas", "oil & gas"],
+    "civil engineering": ["roads", "highways", "bridges", "tunnels", "structural engineer", "geotechnical", "civil engineer"],
+    "investment banking": ["equity capital markets", "ecm", "ipo execution", "block trades", "league table", "deal origination"],
+    "aviation": ["aircraft", "mro", "ground support equipment", "aviation maintenance"],
+    "pure sales": ["quota-carrying", "business development representative", "sales representative"],
+}
+
+def semantic_fit_filter(job):
+    """Returns (verdict, fit_score, reason) based on actual career fit."""
+    title = job.get("title", "").lower()
+    jd = job.get("jd_text", "").lower()
+    combined = title + " " + jd
+
+    # Check SKIP domains first
+    for domain, keywords in SKIP_DOMAINS.items():
+        matches = [k for k in keywords if k in combined]
+        if len(matches) >= 2:
+            return "SKIP", max(1, min(3, job.get("ats_score", 0) // 30)), f"Domain mismatch: {domain}"
+        if len(matches) == 1 and any(k in title for k in keywords):
+            return "SKIP", 2, f"Title indicates {domain} specialization"
+
+    # Check domain relevance
+    domain_hits = sum(1 for d in AHMED_DOMAINS if d in combined)
+    role_hits = sum(1 for r in AHMED_ROLES if r in combined)
+
+    if domain_hits >= 3 and role_hits >= 2:
+        return "APPLY", min(10, 6 + domain_hits), "Strong career fit"
+    elif domain_hits >= 2 or role_hits >= 2:
+        return "APPLY", min(8, 5 + domain_hits), "Good career fit"
+    elif domain_hits >= 1:
+        return "STRETCH", 4, "Partial domain overlap"
+    else:
+        return "SKIP", 2, "No relevant domain experience"
