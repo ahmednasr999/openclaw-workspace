@@ -368,8 +368,9 @@ def score_ats(jd_text, title=""):
             matched.append(keyword)
             total_weight += weight
 
-    # Score as percentage of max possible, capped at 100
-    score = min(100, int(total_weight / max_possible * 100 * 2.5))  # Scale factor to normalize
+    # A weight of 30+ = near-perfect match for Ahmed's profile
+    # 25+ = strong (75%+), 15-24 = moderate (50-74%), <15 = weak
+    score = min(100, int(total_weight / 30 * 100))
 
     return score, matched
 
