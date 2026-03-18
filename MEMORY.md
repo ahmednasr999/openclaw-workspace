@@ -170,6 +170,9 @@ Format:
 - **Timezone:** Cairo (Africa/Cairo, UTC+2)
 - **Relocation:** Open to relocating to Jeddah, Saudi Arabia (confirmed Feb 18, 2026)
 - **LinkedIn posts:** Always end with question/CTA for engagement
+- **LinkedIn posting:** Via Composio tools (NOT cookies, NOT CLI). Person URN: `urn:li:person:mm8EyA56mj`. See TOOLS.md "LinkedIn Posting" section for full details.
+- **LinkedIn bold text:** Convert `**bold**` to Unicode Mathematical Bold (LinkedIn ignores markdown). Script: `scripts/linkedin-auto-poster.py`
+- **LinkedIn auto-poster:** Cron at 9:30 AM Cairo (Sun-Thu), reads from Notion Content Calendar, posts via Composio. SKILL.md at `skills/cron/linkedin-daily-post/SKILL.md`
 - **Backups:** Keep last 7, daily at 3 AM Cairo
 - **Gmail check:** Daily at 8 AM Cairo
 - **Formatting:** Never use em dashes (—) anywhere. Use hyphens (-) or commas instead.
