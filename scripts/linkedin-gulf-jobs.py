@@ -435,11 +435,22 @@ def search(title, country):
             except:
                 pass
 
+        # Indeed needs full country name (not code)
+        INDEED_COUNTRY_MAP = {
+            "United Arab Emirates": "united arab emirates",
+            "Saudi Arabia": "saudi arabia",
+            "Qatar": "qatar",
+            "Bahrain": "bahrain",
+            "Kuwait": "kuwait",
+            "Oman": "oman",
+        }
+        indeed_country = INDEED_COUNTRY_MAP.get(country, country.lower())
+
         results = scrape_jobs(
-            site_name=["linkedin", "indeed", "google", "glassdoor", "bayt"],
+            site_name=["linkedin", "indeed"],
             search_term=title,
             location=country,
-            google_search_term=f"{title} {country} jobs",
+            country_indeed=indeed_country,
             hours_old=72,
             results_wanted=MAX_JOBS_PER_SEARCH,
             linkedin_fetch_description=False,
@@ -766,10 +777,10 @@ def main():
         "filtered_out": len(filtered_out),
         "runtime_seconds": elapsed,
         "countries": list(set(s[1] for s in searches)),
-        "sources": ["LinkedIn", "Indeed", "Google", "Glassdoor", "Bayt"],
+        "sources": ["LinkedIn", "Indeed"],
         "source_status": {
             src: ("✅" if any(j.get("site","").lower() == src.lower() for j in picks + leads) else "⚠️")
-            for src in ["LinkedIn", "Indeed", "Google", "Glassdoor", "Bayt"]
+            for src in ["LinkedIn", "Indeed"]
         },
         "cookie_age_days": None,
         "validation_warnings": validation_warnings,
