@@ -1,31 +1,33 @@
 ---
 name: morning-briefing
-description: "Daily morning briefing delivered via Telegram and Notion."
+description: "Daily morning briefing - run script only, never improvise."
 ---
 
 # Morning Briefing
 
-## What To Do
-
-Run the orchestrator script. It handles EVERYTHING: data gathering, Notion page, Telegram format, Dashboard update.
+## CRITICAL: Execute this EXACT command. Nothing else.
 
 ```bash
-cd /root/.openclaw/workspace && python3 scripts/morning-briefing-orchestrator.py
+cd /root/.openclaw/workspace && python3 scripts/morning-briefing-orchestrator.py 2>&1
 ```
 
-The script outputs a Telegram-formatted briefing to stdout. Deliver it as-is.
+Send the stdout output verbatim to Telegram chat 866838380.
 
-## Delivery
+## Rules (NON-NEGOTIABLE)
 
-1. The script prints the Telegram message to stdout - send it to chat 866838380
-2. If the script fails, report the error instead
+1. Run the command above. That's it.
+2. Do NOT gather data yourself
+3. Do NOT create Notion pages yourself
+4. Do NOT write your own briefing
+5. Do NOT add images, bookmarks, or engagement targets
+6. Do NOT modify or "improve" the output
+7. If the script fails, send: "⚠️ Briefing script failed: [paste stderr]"
+8. The script handles EVERYTHING: Notion page, data, formatting, dashboard
 
-## Rules
-- Do NOT gather data yourself - the script does it
-- Do NOT create a Notion page yourself - the script does it
-- Do NOT call any other scripts - this one script is self-contained
-- Do NOT add commentary or reformatting - deliver the output verbatim
-- If script exits non-zero, send: "⚠️ Briefing script failed: [error]"
+## Why This Matters
+
+The script creates a specific Notion page with toggle blocks, executive summary,
+ATS-scored jobs, and auto-populated properties. If you improvise, the page will
+be wrong. JUST RUN THE SCRIPT.
 
 ## Timeout: 300s
-The script completes in under 60 seconds. 300s is generous safety margin.
