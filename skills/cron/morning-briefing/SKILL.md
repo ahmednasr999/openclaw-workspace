@@ -24,6 +24,16 @@ Send the stdout output verbatim to Telegram chat 866838380.
 7. If the script fails, send: "⚠️ Briefing script failed: [paste stderr]"
 8. The script handles EVERYTHING: Notion page, data, formatting, dashboard
 
+## Escalation Pattern
+
+If script fails:
+1. First retry: Run again (sometimes transient)
+2. If still fails: Check error type
+   - Notion API error → Wait 10s, retry once
+   - Auth/token error → Report: "⚠️ Auth issue - check credentials"
+   - Data error (no pipeline, no scanner) → Still send partial briefing if possible
+3. Final failure: Send "⚠️ Briefing failed: [error]" with error details
+
 ## Why This Matters
 
 The script creates a specific Notion page with toggle blocks, executive summary,
