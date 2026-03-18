@@ -576,6 +576,8 @@ def create_notion_briefing(date_str, date_display, pipeline, scanner_meta, quali
                            scanner_age, emails, email_error, events, cal_error, content_cal,
                            system, tasks, notion_changes, trends, github_discovery=None):
     """Create a rich Notion briefing page with ALL sections."""
+    import time as _time
+    _start_time = _time.time()
     token = load_notion_token()
     if not token:
         log("  No Notion token - skipping")
@@ -856,14 +858,35 @@ def create_notion_briefing(date_str, date_display, pipeline, scanner_meta, quali
     log(f"  Creating Notion page with {len(blocks)} blocks...")
 
     # Notion API only accepts 100 blocks per append
+    # Compute property values
+    total_found = scanner_meta.get("total_found", 0) if scanner_meta else 0
+    picks_count = len(qualified) if qualified else 0
+    email_count = len(emails) if emails else 0
+    cal_count = len(events) if events else 0
+    gw = system.get("gateway", "?")
+    disk = system.get("disk_pct", "?")
+    health_status = "🟢 Healthy" if gw == "UP" and (not isinstance(disk, int) or disk < 80) else "🟡 Warning" if gw == "UP" else "🔴 Down"
+
+    import time as _time
+    gen_time = int(_time.time() - _start_time) if '_start_time' in dir() else None
+
     page_body = {
         "parent": {"database_id": "3268d599-a162-812d-a59e-e5496dec80e7"},
         "properties": {
             "Name": {"title": rt(f"Briefing {date_str}")},
             "Date": {"date": {"start": date_str}},
+            "Jobs Found": {"number": total_found},
+            "Priority Picks": {"number": picks_count},
+            "Emails Flagged": {"number": email_count},
+            "Calendar Events": {"number": cal_count},
+            "System Health": {"select": {"name": health_status}},
+            "Status": {"select": {"name": "✅ Delivered"}},
+            "Model Used": {"rich_text": rt("orchestrator-v2")},
         },
         "children": blocks[:100]
     }
+    if gen_time is not None:
+        page_body["properties"]["Generation Time (s)"] = {"number": gen_time}
 
     try:
         page = notion_req('POST', '/pages', page_body)
