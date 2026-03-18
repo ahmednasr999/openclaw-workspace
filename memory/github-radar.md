@@ -1,37 +1,41 @@
 ---
-description: GitHub Discovery Radar - daily tracking of useful repos for Ahmed's ecosystem
-type: reference
-topics: [system-ops, job-search, linkedin-content]
-updated: 2026-03-17
+description: "Daily GitHub trending scan: auto-scraped repos with relevance filter for OpenClaw, AI agents, automation"
+type: log
+topics: [knowledge, system-ops]
+updated: 2026-03-18
 ---
 
-# GitHub Discovery Radar
+# GitHub Radar — 2026-03-18
 
-## Already Starred (Skip List)
-- speedyapply/JobSpy (job scraper)
-- GodsScion/Auto_job_applier_linkedIn (auto-apply)
-- VoltAgent/awesome-openclaw-skills (skill registry)
-- Nutlope/self.so (LinkedIn -> portfolio)
-- joeyism/linkedin_scraper
-- PaulMcInnis/JobFunnel
-- grll/mcpadapt (MCP adapter)
-- wesammustafa/Claude-Code-Everything-You-Need-to-Know
-- linkedin/school-of-sre
+## Relevant Repos (Auto-Filtered)
 
-## Daily Finds
+- **[NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent)**: Trending AI/automation project
+- **[alibaba/page-agent](https://github.com/alibaba/page-agent)**: Trending AI/automation project
+- **[apps/copilot-swe-agent](https://github.com/apps/copilot-swe-agent)**: Trending AI/automation project
 
-### 2026-03-17 (Initial Setup)
-- First run. Repos above were found and starred during initial search.
+## Top Trending (All)
 
-### 2026-03-17 (Today's Finds)
+- 2000/svg
+- 666ghj/BettaFish
+- 666ghj/MiroFish
+- AstrBotDevs/AstrBot
+- EMERTkG/NO7wKw
+- NousResearch/hermes-agent
+- alibaba/page-agent
+- apps/copilot-pull-request-reviewer
+- apps/copilot-swe-agent
+- apps/dependabot
+- apps/pre-commit-ci
+- apps/renovate
+- copilot/hovercard
+- enterprise/startups
+- explore/email
 
-**HIGH VALUE:**
-- AstrBotDevs/AstrBot (25437 stars): Major OpenClaw alternative - agentic IM chatbot with 25K+ stars. Worth monitoring for feature parity.
-- shawnpang/startup-founder-skills (64 stars): AI agent skills for startup founders. Works with Claude Code, Cursor, Codex, AND OpenClaw. Could enhance existing workflow.
-- op7418/Generative-UI-MCP (33 stars): MCP server that teaches AI to generate interactive visualizations - charts, diagrams, mockups. Could power dashboard generation.
-- SkyworkAI/Skywork-Skills (10 stars): Skills for AI office suites (PPT, Docs, Excel, Image, Search). Works with OpenClaw.
+## Filters
 
-**WORTH WATCHING:**
-- Ubundi/openclaw-cortex (2 stars): OpenClaw plugin for Cortex memory/knowledge graph. Auto-recall, auto-capture, file sync for MEMORY.md.
-- dazanza/linkedin-mcp (0 stars): MCP server for LinkedIn API - posts, comments, reactions, image uploads. Useful if Composio LinkedIn has gaps.
-- sachincse/job-auto-apply-agent (0 stars): AI job hunting automation with LinkedIn engagement, auto-responds, daily Telegram/Email reports.
+**Keywords:** agent, claude, openclaw, mcp, skill, automation, workflow, memory, context, notebooklm, browser, headless, sandbox
+
+**Note:** SIE reads this file and generates integration recommendations.
+
+---
+*Scanned: Wed Mar 18 03:00:03 EET 2026*
