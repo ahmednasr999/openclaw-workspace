@@ -481,6 +481,23 @@ def get_system_health():
     return health
 
 
+def get_github_discovery():
+    """Read GitHub Discovery Radar results from cache."""
+    today_str = datetime.now(cairo).strftime("%Y-%m-%d")
+    yesterday_str = (datetime.now(cairo) - timedelta(days=1)).strftime("%Y-%m-%d")
+    
+    for date_str in [today_str, yesterday_str]:
+        cache_file = f"/tmp/github-discovery-{date_str}.json"
+        if os.path.exists(cache_file):
+            try:
+                with open(cache_file) as f:
+                    repos = json.load(f)
+                return {"repos": repos, "date": date_str, "count": len(repos)}
+            except:
+                pass
+    return {"repos": [], "date": None, "count": 0}
+
+
 def get_active_tasks():
     """Get task status from Notion Active Tasks DB."""
     result = {"total_open": 0, "overdue": [], "due_today": [], "completed_recent": 0}
@@ -557,8 +574,8 @@ def notion_two_way_sync():
 
 def create_notion_briefing(date_str, date_display, pipeline, scanner_meta, qualified, borderline,
                            scanner_age, emails, email_error, events, cal_error, content_cal,
-                           system, tasks, notion_changes, trends):
-    """Create a rich Notion briefing page with ALL 11 sections."""
+                           system, tasks, notion_changes, trends, github_discovery=None):
+    """Create a rich Notion briefing page with ALL sections."""
     token = load_notion_token()
     if not token:
         log("  No Notion token - skipping")
@@ -816,7 +833,30 @@ def create_notion_briefing(date_str, date_display, pipeline, scanner_meta, quali
     add_para("💡 Tip: Comment on 3-5 GCC executive posts daily for visibility")
     add_divider()
 
-    # 8. SYSTEM HEALTH
+    # 8. GITHUB DISCOVERY
+    if github_discovery and github_discovery.get("repos"):
+        add_heading("🔭 GitHub Discovery")
+        repos = github_discovery["repos"]
+        age = ""
+        if github_discovery.get("date") and github_discovery["date"] != datetime.now(cairo).strftime("%Y-%m-%d"):
+            age = " (yesterday)"
+        add_para(f"{len(repos)} relevant repos found{age}:")
+        for r in repos[:5]:
+            name = r.get("name", "?")
+            desc = r.get("desc", "")[:60]
+            url = r.get("url", "")
+            why = r.get("why", "")[:60]
+            text = f"🔹 {name}"
+            if desc:
+                text += f" - {desc}"
+            add_bullet(text)
+            if why:
+                add_bullet(f"  → {why}")
+            if url:
+                add_bullet(f"  {url}")
+        add_divider()
+
+    # 9. SYSTEM HEALTH
     add_heading("🤖 System Health")
     disk_warn = " ⚠️" if isinstance(system['disk_pct'], int) and system['disk_pct'] >= 80 else ""
     mem_warn = " ⚠️" if isinstance(system['mem_pct'], int) and system['mem_pct'] >= 85 else ""
@@ -898,7 +938,7 @@ def create_notion_briefing(date_str, date_display, pipeline, scanner_meta, quali
 # ============================================================
 
 def build_telegram_message(date_display, pipeline, scanner_meta, qualified, borderline,
-                           scanner_age, emails, email_error, events, cal_error, content_cal,
+                           scanner_age, emails, email_error, events, cal_error, content_cal, github_discovery,
                            system, tasks, notion_changes, trends, notion_url):
     """Build compact Telegram briefing. Must be under 1500 chars."""
     p = pipeline
@@ -1055,6 +1095,13 @@ def build_telegram_message(date_display, pipeline, scanner_meta, qualified, bord
     if content_cal.get("gap_days", 99) <= 3 and content_cal.get("scheduled", 0) > 0:
         lines.append(f"  ⚠️ Last scheduled post in {content_cal['gap_days']} days")
 
+    # GitHub Discovery
+    if github_discovery and github_discovery.get("repos"):
+        repos = github_discovery["repos"]
+        lines.append(f"\n🔭 GITHUB: {len(repos)} repos found")
+        for r in repos[:3]:
+            lines.append(f"  🔹 {r.get('name', '?')[:30]}")
+
     # LinkedIn Engagement
     lines.append(f"\n🤝 ENGAGEMENT:")
     if content_cal.get("today_post") and content_cal["today_post"]["status"] == "Posted":
@@ -1170,6 +1217,11 @@ def main():
     log("Step 8: Scanner trends...")
     trends = get_scanner_trends()
 
+    # 8b. GitHub Discovery
+    log("Step 8b: GitHub discovery...")
+    github_discovery = get_github_discovery()
+    log(f"  {github_discovery['count']} repos found")
+
     # 9. Two-way sync
     log("Step 9: Two-way Notion sync...")
     notion_changes = notion_two_way_sync()
@@ -1185,7 +1237,7 @@ def main():
         notion_url = create_notion_briefing(
             today_str, date_display, pipeline, scanner_meta, qualified, borderline,
             scanner_age, emails, email_error, events, cal_error, content_cal,
-            system, tasks, notion_changes, trends
+            system, tasks, notion_changes, trends, github_discovery
         )
     else:
         log("  (dry-run - skipped)")
@@ -1195,7 +1247,7 @@ def main():
     log("Output 2: Telegram message...")
     telegram_msg = build_telegram_message(
         date_display, pipeline, scanner_meta, qualified, borderline,
-        scanner_age, emails, email_error, events, cal_error, content_cal,
+        scanner_age, emails, email_error, events, cal_error, content_cal, github_discovery,
         system, tasks, notion_changes, trends, notion_url
     )
 

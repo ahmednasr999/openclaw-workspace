@@ -28,6 +28,18 @@ gh search repos "llm automation tool" --created ">$(date -d '1 day ago' +%Y-%m-%
 ```
 If gh CLI unavailable, use web_search tool as fallback.
 
+### Step 4: Save results for briefing
+After collecting results, save to JSON for the morning briefing:
+```bash
+# Save to /tmp/github-discovery-YYYY-MM-DD.json
+cat > /tmp/github-discovery-$(date +%Y-%m-%d).json << 'EOF'
+[
+  {"name": "repo-name", "desc": "one-line description", "stars": 0, "url": "https://github.com/...", "why": "relevance to Ahmed's work"}
+]
+EOF
+```
+This file is read by the morning briefing orchestrator.
+
 ### Step 2: Filter for relevance
 Score each repo 1-10:
 - Relevance to Ahmed's work (AI automation, OpenClaw, PMO tools)
