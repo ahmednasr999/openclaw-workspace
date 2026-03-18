@@ -1096,3 +1096,80 @@ def two_way_sync_active_tasks():
     
     print(f"[active_tasks] Open: {result['total_open']}, Overdue: {len(overdue)}, Due today: {len(due_today)}, Completed in Notion: {len(changes)}")
     return result
+
+
+def sync_session_log(date_str=None, title=None, topics=None, decisions=0, 
+                     duration=None, focus=None, outcome=None, artifacts=None, content=None):
+    """
+    Auto-sync a session log to Notion. Called during session flush.
+    Creates or updates the session log page for the given date.
+    """
+    nc = _get_client()
+    if not nc:
+        return None
+    
+    nc.databases["session_logs"] = "3268d599-a162-8117-afef-e4910ec15e55"
+    
+    if not date_str:
+        date_str = datetime.now(timezone(timedelta(hours=2))).strftime("%Y-%m-%d")
+    
+    if not title:
+        title = f"Session {date_str}"
+    
+    # Check if page exists for this date
+    results = nc._query_database("session_logs")
+    existing_id = None
+    for r in results:
+        d = r.get("properties", {}).get("Date", {}).get("date")
+        if d and d.get("start") == date_str:
+            existing_id = r["id"]
+            break
+    
+    # Build properties
+    props = {
+        "Title": {"title": [{"text": {"content": title[:100]}}]},
+        "Date": {"date": {"start": date_str}},
+        "Decisions Made": {"number": decisions},
+    }
+    if topics:
+        props["Topics"] = {"multi_select": [{"name": t} for t in topics[:5]]}
+    if focus:
+        props["Primary Focus"] = {"select": {"name": focus}}
+    if duration:
+        props["Duration (min)"] = {"number": duration}
+    if outcome:
+        props["Key Outcome"] = {"rich_text": [{"text": {"content": outcome[:200]}}]}
+    if artifacts:
+        props["Artifacts"] = {"rich_text": [{"text": {"content": artifacts[:200]}}]}
+    
+    # Build body blocks from content
+    blocks = []
+    if content:
+        import re
+        sections = re.split(r'^##\s+', content, flags=re.MULTILINE)
+        for section in sections[:15]:
+            lines = section.strip().split("\\n")
+            if not lines:
+                continue
+            heading = lines[0].strip()
+            if heading and not heading.startswith("---") and len(heading) > 2:
+                blocks.append(nc.heading_block(heading[:100], 2))
+            for line in lines[1:25]:
+                line = line.strip()
+                if line.startswith("- "):
+                    blocks.append(nc.bullet_block(line[2:][:200]))
+                elif line and not line.startswith("#") and not line.startswith("---") and len(line) > 3:
+                    blocks.append(nc.paragraph_block(line[:2000]))
+    
+    try:
+        if existing_id:
+            nc._update_page(existing_id, props)
+            print(f"[session_log] Updated session log for {date_str}")
+            return existing_id
+        else:
+            page = nc._create_page("session_logs", props, children=blocks[:80])
+            print(f"[session_log] Created session log for {date_str}")
+            return page.get("id")
+    except Exception as e:
+        print(f"[session_log] ERROR: {e}")
+        return None
