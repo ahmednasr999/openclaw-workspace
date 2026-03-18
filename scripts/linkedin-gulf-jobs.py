@@ -747,8 +747,39 @@ def main():
 
         time.sleep(SEARCH_DELAY)
 
-    # ==================== GOOGLE JOBS SUPPLEMENT ====================
-    print(f"\n  Google Jobs: searching top titles across GCC...")
+    # ==================== GOOGLE JOBS PRE-FETCH ====================
+    google_jobs_file = f"/tmp/google-jobs-{date_str}.json"
+    google_jobs_loaded = False
+    if os.path.exists(google_jobs_file):
+        try:
+            with open(google_jobs_file, "r") as f:
+                gjobs = json.load(f)
+            if gjobs:
+                print(f"\n  Google Jobs (pre-fetch): loading {len(gjobs)} jobs from cache...")
+                for gj in gjobs:
+                    if gj.get("id") in seen:
+                        continue
+                    # Generate ID if missing
+                    gj["id"] = gj.get("id") or f"gj-{hash(gj.get('url', ''))}"
+                    seen.add(gj["id"])
+                    if is_duplicate(gj["id"], gj.get("company", "")):
+                        continue
+                    relevant, reason = is_relevant(gj["title"], gj.get("location", ""))
+                    if not relevant:
+                        continue
+                    save_notified(gj)
+                    if is_priority(gj["title"], gj.get("location", "")):
+                        picks.append(gj)
+                    else:
+                        leads.append(gj)
+                google_jobs_loaded = True
+                print(f"  Google Jobs: {len(gjobs)} pre-fetched jobs processed")
+        except Exception as e:
+            print(f"  Google Jobs: failed to load pre-fetch: {e}")
+
+    # ==================== GOOGLE JOBS SCRAPE FALLBACK ====================
+    if not google_jobs_loaded:
+        print(f"\n  Google Jobs: no pre-fetch found, trying direct scrape...")
     google_titles = ["CTO", "VP Digital Transformation", "Director Digital Transformation",
                      "PMO Director", "Chief Digital Officer", "Head of Technology",
                      "Chief Information Officer", "Chief Operating Officer"]
