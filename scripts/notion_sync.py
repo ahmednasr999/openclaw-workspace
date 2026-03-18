@@ -1551,3 +1551,142 @@ def get_email_summary():
         "urgent": urgent,
         "by_category": by_category,
     }
+
+
+# ============================================================
+# Dashboard Auto-Update Functions
+# ============================================================
+
+DASHBOARD_PAGE_ID = "3278d599-a162-81b3-b6fc-e5162160e2f1"
+KPI_BLOCK_ID = "3278d599-a162-8138-a55d-c2f26fe38933"
+STALE_ALERTS_BLOCK_ID = "3278d599-a162-8188-aa26-ce5a9efc3221"
+
+
+def update_dashboard_kpi(health_score, cron_total=33, cron_skill=33, skill_grade_a=27, skill_total=28):
+    """Update the KPI callout block on the Dashboard page after SIE run."""
+    nc = _get_client()
+    if not nc: return
+    import datetime
+    now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
+    
+    # Choose color based on score
+    if health_score >= 95:
+        color = "green_background"
+        emoji = "💚"
+    elif health_score >= 80:
+        color = "yellow_background"
+        emoji = "🟡"
+    else:
+        color = "red_background"
+        emoji = "🔴"
+    
+    text = (
+        f"SIE Health Score: {health_score}/100  |  "
+        f"Crons: {cron_skill}/{cron_total} Skill-First  |  "
+        f"Skills: {skill_grade_a}/{skill_total} Grade A  |  "
+        f"Notion DBs: 21\n"
+        f"Last updated: {now}"
+    )
+    
+    body = {
+        "callout": {
+            "rich_text": [{"type": "text", "text": {"content": text}}],
+            "icon": {"type": "emoji", "emoji": emoji},
+            "color": color
+        }
+    }
+    
+    nc._request("PATCH", f"blocks/{KPI_BLOCK_ID}", body)
+    print(f"Dashboard KPI updated: {health_score}/100 [{color}]")
+
+
+def update_stale_alerts(alerts=None):
+    """Update the Stale Alerts callout on the Dashboard page.
+    
+    alerts: list of dicts with 'type' and 'message' keys, or None for all-clear.
+    Example: [{"type": "pipeline", "message": "Acme Corp - PM role: 21 days no response"}]
+    """
+    nc = _get_client()
+    if not nc: return
+    import datetime
+    now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
+    
+    if not alerts:
+        text = f"Last updated: {now}\nAll clear - no stale items detected."
+        color = "green_background"
+        emoji = "🟢"
+    else:
+        lines = [f"Last updated: {now}", f"{len(alerts)} items need attention:", ""]
+        for a in alerts[:10]:  # Max 10 to stay under 2000 char limit
+            lines.append(f"- [{a.get('type', '?')}] {a.get('message', '')}")
+        text = "\n".join(lines)
+        if len(text) > 1900:
+            text = text[:1900] + "\n..."
+        color = "red_background"
+        emoji = "🔴"
+    
+    body = {
+        "callout": {
+            "rich_text": [{"type": "text", "text": {"content": text}}],
+            "icon": {"type": "emoji", "emoji": emoji},
+            "color": color
+        }
+    }
+    
+    nc._request("PATCH", f"blocks/{STALE_ALERTS_BLOCK_ID}", body)
+    print(f"Dashboard Stale Alerts updated: {len(alerts or [])} alerts [{color}]")
+
+
+def compute_stale_alerts():
+    """Scan pipeline + content + learnings for stale items. Returns alert list."""
+    alerts = []
+    nc = _get_client()
+    if not nc: return alerts
+    import datetime
+    now = datetime.datetime.now()
+    
+    # 1. Stale pipeline applications (14+ days in Applied, no movement)
+    try:
+        result = read_pipeline_from_notion()
+        jobs = result.get("jobs", []) if isinstance(result, dict) else result
+        for j in jobs:
+            stage = j.get("stage", "")
+            applied_date = j.get("applied_date", "")
+            if stage in ["Applied", "Discovered"] and applied_date:
+                try:
+                    d = datetime.datetime.fromisoformat(applied_date.replace("Z", ""))
+                    days = (now - d).days
+                    if days > 14:
+                        company = j.get("company", "Unknown")
+                        role = j.get("role", "Unknown")
+                        alerts.append({"type": "pipeline", "message": f"{company} - {role}: {days}d no response"})
+                except:
+                    pass
+    except Exception as e:
+        print(f"Pipeline scan failed: {e}")
+    
+    # 2. Stale content drafts (7+ days in Draft)
+    try:
+        url = f"https://api.notion.com/v1/databases/{nc.databases.get('content_calendar', '3268d599-a162-814b-8854-c9b8bde62468')}/query"
+        import json, urllib.request
+        body = json.dumps({
+            "filter": {"property": "Status", "select": {"equals": "Drafted"}},
+            "page_size": 20
+        }).encode()
+        headers = {"Authorization": f"Bearer {nc.token}", "Notion-Version": "2022-06-28", "Content-Type": "application/json"}
+        req = urllib.request.Request(url, data=body, headers=headers, method="POST")
+        resp = urllib.request.urlopen(req)
+        data = json.loads(resp.read())
+        for r in data.get("results", []):
+            created = r.get("created_time", "")[:10]
+            if created:
+                d = datetime.datetime.fromisoformat(created)
+                days = (now - d).days
+                if days > 7:
+                    title = r["properties"].get("Name", {}).get("title", [{}])
+                    name = title[0].get("plain_text", "?")[:50] if title else "?"
+                    alerts.append({"type": "content", "message": f"Draft '{name}' sitting {days}d"})
+    except Exception as e:
+        print(f"Content scan failed: {e}")
+    
+    return alerts

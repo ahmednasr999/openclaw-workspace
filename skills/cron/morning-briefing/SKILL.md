@@ -62,6 +62,18 @@ Quality gates (ALL must pass):
 2. Sync full version to Notion Daily Briefings DB
 3. Include any Notion stage changes detected by two-way sync
 
+### Step 7: Update Dashboard Stale Alerts
+```bash
+cd /root/.openclaw/workspace
+python3 -c "
+import sys; sys.path.insert(0, 'scripts')
+from notion_sync import compute_stale_alerts, update_stale_alerts
+alerts = compute_stale_alerts()
+update_stale_alerts(alerts)
+print(f'Stale alerts: {len(alerts)} items')
+"
+```
+
 ## Error Handling
 - If orchestrator script fails: Run steps manually, report which step failed
 - If scanner data is stale (>24h): Show "Scanner: last run [time] — data may be stale"
