@@ -67,5 +67,13 @@
     "linkedin_analytics": "3268d599-a162-811a-b028-e06c181bfd85",
     "cv_tracker": "3268d599-a162-8176-a22d-c5c4c54d7879",
     "reason": "LinkedIn Analytics: no automated data source. CV Tracker: merged into Pipeline."
-  }
+  },
+  "skills_registry": "3278d599-a162-8123-b725-f16270afcf96",
+  "system_architecture": "3278d599-a162-813e-b1d2-fe34fcbb45c1",
+  "goals_okrs": "3278d599-a162-8131-b4d5-ca463a770cde",
+  "scripts_inventory": "3278d599-a162-8183-b5b3-c88a26be1bdf",
+  "master_cv_data": "3278d599-a162-8169-8603-cf32218beefd",
+  "config_dashboard": "3278d599-a162-816e-b76c-d0546e5844e8",
+  "skip_patterns": "3278d599-a162-8195-a618-c700de859e97",
+  "git_activity": "3278d599-a162-81e6-b332-ea86d0183e48"
 }
