@@ -73,8 +73,8 @@ Report the ACTUAL counts from these commands.
 
 ### Step 3: Integration Health (RUN THESE COMMANDS)
 ```bash
-# Gmail - verify App Password auth works (NOT OAuth). NEVER print the actual password.
-echo "GMAIL:" && grep -q "passwd" ~/.config/himalaya/config.toml 2>/dev/null && echo "App Password configured (himalaya IMAP/SMTP)" || echo "NOT configured"
+# Gmail - verify App Password auth works (NOT OAuth). NEVER print the actual password or token.
+echo "GMAIL:" && grep -q 'auth.type = "password"' ~/.config/himalaya/config.toml 2>/dev/null && echo "App Password configured (himalaya IMAP/SMTP)" || echo "NOT configured"
 
 # Notion - verify token and databases. NEVER print tokens or secrets.
 echo "NOTION:" && python3 -c "
