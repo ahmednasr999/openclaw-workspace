@@ -317,9 +317,30 @@ def check_email():
 
 
 def check_calendar():
-    """Check calendar events."""
+    """Check calendar events. Reads from pre-fetched calendar cache or falls back to gog."""
     events = []
     cal_error = None
+
+    # Try reading pre-fetched calendar data (written by calendar cron via Composio)
+    try:
+        today_str = datetime.now(cairo).strftime("%Y-%m-%d")
+        cache_file = f"/tmp/calendar-events-{today_str}.json"
+        if os.path.exists(cache_file):
+            with open(cache_file) as f:
+                cached = json.load(f)
+            for ev in cached:
+                events.append({
+                    "title": ev.get("title", "Untitled"),
+                    "start": ev.get("start", ""),
+                    "end": ev.get("end", ""),
+                    "calendar": ev.get("calendar", ""),
+                    "all_day": ev.get("is_all_day", False),
+                })
+            return events, None
+    except Exception as e:
+        pass  # Fall through to gog
+
+    # Fallback: gog calendar (likely broken)
     try:
         r = subprocess.run(
             "gog calendar today",
@@ -679,8 +700,22 @@ def create_notion_briefing(date_str, date_display, pipeline, scanner_meta, quali
     if cal_error:
         add_para(f"⚠️ {cal_error}")
     elif events:
-        for ev in events[:5]:
-            add_bullet(ev)
+        add_para(f"{len(events)} events today:")
+        for ev in events:
+            title = ev.get("title", "Untitled")[:50]
+            start = ev.get("start", "")
+            time_str = ""
+            if "T" in str(start):
+                time_str = str(start).split("T")[1][:5]
+            elif ev.get("all_day"):
+                time_str = "All day"
+            cal_name = ev.get("calendar", "")
+            text = f"📌 {title}"
+            if time_str:
+                text += f" ({time_str})"
+            if cal_name:
+                text += f" - {cal_name}"
+            add_bullet(text)
     else:
         add_para("Clear day ✅")
     add_divider()
@@ -890,9 +925,22 @@ def build_telegram_message(date_display, pipeline, scanner_meta, qualified, bord
 
     # Calendar
     if cal_error:
-        lines.append(f"\n📅 CALENDAR: ⚠️ offline")
+        lines.append(f"\n📅 CALENDAR: ⚠️ {cal_error[:25]}")
     elif events:
-        lines.append(f"\n📅 CALENDAR: {len(events)} events")
+        lines.append(f"\n📅 CALENDAR: {len(events)} events today")
+        for ev in events[:5]:
+            title = ev.get("title", "Untitled")[:35]
+            start = ev.get("start", "")
+            # Extract time from ISO format
+            time_str = ""
+            if "T" in str(start):
+                time_str = str(start).split("T")[1][:5]
+            elif ev.get("all_day"):
+                time_str = "All day"
+            line = f"  📌 {title}"
+            if time_str:
+                line += f" ({time_str})"
+            lines.append(line)
     else:
         lines.append(f"\n📅 CALENDAR: Clear ✅")
 
