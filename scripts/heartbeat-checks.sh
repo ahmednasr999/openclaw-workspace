@@ -285,3 +285,18 @@ cat <<EOF
   "cron_output_issues": $cron_output_issues
 }
 EOF
+
+# === SCANNER TREND CHECK ===
+scanner_trend_alert=""
+if python3 -c "
+import sys; sys.path.insert(0, '$WORKSPACE/scripts')
+from notion_sync import get_scanner_trends
+trends = get_scanner_trends()
+if trends.get('alert'):
+    print(trends['alert'])
+if trends.get('cookie_alert'):
+    print(trends['cookie_alert'])
+" 2>/dev/null > /tmp/scanner_trend_check.txt; then
+    scanner_trend_alert=$(cat /tmp/scanner_trend_check.txt)
+fi
+

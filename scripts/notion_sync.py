@@ -1173,3 +1173,111 @@ def sync_session_log(date_str=None, title=None, topics=None, decisions=0,
     except Exception as e:
         print(f"[session_log] ERROR: {e}")
         return None
+
+
+def get_scanner_trends():
+    """
+    Analyze scanner history for trends and degradation.
+    Returns trend data for briefing display + updates Notion with trends.
+    """
+    nc = _get_client()
+    if not nc:
+        return {"trend": "unknown", "avg_7d": 0, "today": 0, "alert": None}
+    
+    nc.databases["scanner_history"] = "3268d599-a162-8123-a867-d7231817f03d"
+    
+    results = nc._query_database("scanner_history")
+    
+    # Parse all runs with dates and job counts
+    runs = []
+    for r in results:
+        props = r.get("properties", {})
+        t = props.get("Date", {}).get("title", [])
+        date_str = t[0].get("plain_text", "") if t else ""
+        found = props.get("Jobs Found", {}).get("number", 0) or 0
+        picks = props.get("Priority Picks", {}).get("number", 0) or 0
+        status = props.get("Status", {}).get("select", {})
+        status_name = status.get("name", "") if status else ""
+        
+        if date_str:
+            runs.append({
+                "date": date_str,
+                "found": found,
+                "picks": picks,
+                "status": status_name,
+                "page_id": r["id"],
+            })
+    
+    runs.sort(key=lambda x: x["date"])
+    
+    if len(runs) < 2:
+        return {"trend": "insufficient_data", "avg_7d": 0, "today": 0, "alert": None}
+    
+    # Calculate 7-day average
+    recent_7 = runs[-7:] if len(runs) >= 7 else runs
+    avg_found = sum(r["found"] for r in recent_7) / len(recent_7)
+    avg_picks = sum(r["picks"] for r in recent_7) / len(recent_7)
+    
+    # Today vs average
+    today = runs[-1]
+    today_found = today["found"]
+    
+    # Trend detection
+    trend = "➡️ Stable"
+    if len(runs) >= 3:
+        last_3 = [r["found"] for r in runs[-3:]]
+        if all(last_3[i] < last_3[i-1] for i in range(1, len(last_3))):
+            trend = "📉 Down"
+        elif all(last_3[i] > last_3[i-1] for i in range(1, len(last_3))):
+            trend = "📈 Up"
+    
+    # Degradation alert
+    alert = None
+    consecutive_low = 0
+    for r in reversed(runs):
+        if r["found"] < 10:
+            consecutive_low += 1
+        else:
+            break
+    
+    if consecutive_low >= 3:
+        alert = f"🔴 SCANNER DEGRADED: {consecutive_low} consecutive runs with < 10 jobs. Check cookie freshness!"
+    elif consecutive_low >= 2:
+        alert = f"🟡 Scanner warning: {consecutive_low} low-result runs in a row"
+    
+    # Cookie health check
+    import os
+    cookie_alert = None
+    cookie_path = "/root/.openclaw/cookies/linkedin.txt"
+    if os.path.exists(cookie_path):
+        cookie_age = (datetime.now().timestamp() - os.path.getmtime(cookie_path)) / 86400
+        if cookie_age > 7:
+            cookie_alert = f"🟡 LinkedIn cookie is {int(cookie_age)} days old. Refresh recommended."
+    
+    # Update Notion with trend and 7-day avg
+    import time as t_mod
+    for r in runs[-3:]:
+        try:
+            nc._update_page(r["page_id"], {
+                "7-Day Avg": {"number": round(avg_found, 1)},
+                "Trend": {"select": {"name": trend}},
+            })
+            t_mod.sleep(0.35)
+        except:
+            pass
+    
+    result = {
+        "trend": trend,
+        "trend_direction": "down" if "Down" in trend else "up" if "Up" in trend else "stable",
+        "avg_7d_found": round(avg_found, 1),
+        "avg_7d_picks": round(avg_picks, 1),
+        "today_found": today_found,
+        "today_picks": today["picks"],
+        "total_runs": len(runs),
+        "alert": alert,
+        "cookie_alert": cookie_alert,
+        "consecutive_low": consecutive_low,
+    }
+    
+    print(f"[scanner_trends] Trend: {trend}, 7d avg: {avg_found:.0f} jobs, Today: {today_found}, Alert: {alert or 'None'}")
+    return result
