@@ -218,6 +218,21 @@ Actions needed: [specific list with priority]
 - If Notion unreachable: Skip Notion checks, note in report
 - If script missing: Skip script, rely on manual checks
 
+## Step 7: Update Dashboard KPI
+After computing the health score, update the Notion Dashboard:
+```bash
+cd /root/.openclaw/workspace
+python3 -c "
+import sys; sys.path.insert(0, 'scripts')
+from notion_sync import update_dashboard_kpi, compute_stale_alerts, update_stale_alerts
+update_dashboard_kpi(SCORE)  # Replace SCORE with actual health score
+alerts = compute_stale_alerts()
+update_stale_alerts(alerts)
+print(f'Dashboard updated: score=SCORE, alerts={len(alerts)}')
+"
+```
+Replace SCORE with the actual computed health score number (e.g., 98).
+
 ## Output Rules
 - No em dashes. Hyphens only.
 - Every number must come from a command you ran. No estimates.
