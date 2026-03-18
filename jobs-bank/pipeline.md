@@ -261,3 +261,10 @@
 | 7 | Commercial Bank of Dubai | Senior Manager Virtual & Digital Assets | Dubai | REVIEW | Applied | 2026-03-16 | 2026-03-23 |
 | 8 | Anduril Industries | Sr. Manager Program Management | Abu Dhabi | REVIEW | Applied | 2026-03-16 | 2026-03-23 |
 | 9 | accesso | Director of Operations | Dubai | REVIEW | Applied | 2026-03-16 | 2026-03-23 |
+
+| 195 | ☐ | Dubai Careers | Chief IT Projects Management | Applied | 2026-03-18 | - | Dubai | LinkedIn | Tailored CV sent | https://www.linkedin.com/jobs/view/4386771057 |
+| 196 | ☐ | Ranger AI | Director of Operations | Applied | 2026-03-18 | - | UAE | LinkedIn | Tailored CV sent | https://www.linkedin.com/jobs/view/4384465264 |
+| 197 | ☐ | LEFTFIELD SOLUTIONS | Chief of Staff | Applied | 2026-03-18 | - | UAE | LinkedIn | Tailored CV sent | https://www.linkedin.com/jobs/view/4384473386 |
+| 198 | ☐ | QNB Group | VP Digital Quality Control | Applied | 2026-03-18 | - | Qatar | LinkedIn | Tailored CV sent | https://www.linkedin.com/jobs/view/4343976226 |
+| 199 | ☐ | Publicis Sapient | Assoc Director Product Mgmt FSI | Applied | 2026-03-18 | - | KSA | LinkedIn | Tailored CV sent | https://www.linkedin.com/jobs/view/4353703506 |
+| 200 | ☐ | Arab Banking Corp | Head of IT Application Support | Applied | 2026-03-18 | - | Bahrain | LinkedIn | Tailored CV sent | https://www.linkedin.com/jobs/view/4381476729 |
