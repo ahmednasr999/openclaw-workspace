@@ -1441,3 +1441,113 @@ def sync_cron_dashboard_full():
     
     print(f"[cron_dashboard] Total: {summary['total']}, OK: {ok_count}, Failed: {failed_count}, Disabled: {disabled_count}")
     return summary
+
+
+def sync_email_to_notion(subject, sender, date_str, category, company="", role="",
+                         priority="🟡 Normal", snippet="", gmail_link="", thread_id="",
+                         action_required=False, response_due=None, pipeline_stage=None):
+    """
+    Sync a single email to Notion Email Intelligence DB.
+    Called by email cron when it finds important emails.
+    """
+    nc = _get_client()
+    if not nc:
+        return None
+    
+    nc.databases["email_intelligence"] = "3278d599-a162-8123-923c-f04999d7292d"
+    
+    # Check for duplicates by thread ID
+    if thread_id:
+        results = nc._query_database("email_intelligence")
+        for r in results:
+            tid = r.get("properties", {}).get("Thread ID", {}).get("rich_text", [])
+            if tid and tid[0].get("plain_text", "") == thread_id:
+                print(f"[email] Duplicate thread {thread_id}, skipping")
+                return r["id"]
+    
+    props = {
+        "Subject": {"title": [{"text": {"content": subject[:100]}}]},
+        "From": {"rich_text": [{"text": {"content": sender[:200]}}]},
+        "Date": {"date": {"start": date_str}},
+        "Category": {"select": {"name": category}},
+        "Priority": {"select": {"name": priority}},
+        "Status": {"select": {"name": "📬 Unread"}},
+        "Action Required": {"checkbox": action_required},
+        "Auto-Synced": {"checkbox": True},
+    }
+    
+    if company:
+        props["Company"] = {"rich_text": [{"text": {"content": company[:200]}}]}
+    if role:
+        props["Role"] = {"rich_text": [{"text": {"content": role[:200]}}]}
+    if snippet:
+        props["Snippet"] = {"rich_text": [{"text": {"content": snippet[:2000]}}]}
+    if gmail_link:
+        props["Gmail Link"] = {"url": gmail_link}
+    if thread_id:
+        props["Thread ID"] = {"rich_text": [{"text": {"content": thread_id}}]}
+    if response_due:
+        props["Response Due"] = {"date": {"start": response_due}}
+    if pipeline_stage:
+        props["Pipeline Stage"] = {"select": {"name": pipeline_stage}}
+    
+    try:
+        page = nc._create_page("email_intelligence", props)
+        print(f"[email] Synced: {subject[:50]}")
+        return page.get("id")
+    except Exception as e:
+        print(f"[email] ERROR: {e}")
+        return None
+
+
+def get_email_summary():
+    """
+    Get email intelligence summary for morning briefing.
+    Returns counts by category and action items.
+    """
+    nc = _get_client()
+    if not nc:
+        return {"total": 0, "unread": 0, "action_needed": 0, "urgent": []}
+    
+    nc.databases["email_intelligence"] = "3278d599-a162-8123-923c-f04999d7292d"
+    
+    results = nc._query_database("email_intelligence")
+    
+    unread = 0
+    action_needed = 0
+    urgent = []
+    by_category = {}
+    
+    for r in results:
+        props = r.get("properties", {})
+        
+        status = props.get("Status", {}).get("select", {})
+        status_name = status.get("name", "") if status else ""
+        
+        cat = props.get("Category", {}).get("select", {})
+        cat_name = cat.get("name", "") if cat else ""
+        
+        priority = props.get("Priority", {}).get("select", {})
+        priority_name = priority.get("name", "") if priority else ""
+        
+        action = props.get("Action Required", {}).get("checkbox", False)
+        
+        subject_t = props.get("Subject", {}).get("title", [])
+        subject = subject_t[0].get("plain_text", "") if subject_t else ""
+        
+        if "Unread" in status_name:
+            unread += 1
+        if action:
+            action_needed += 1
+        if "Urgent" in priority_name:
+            urgent.append(subject[:50])
+        
+        by_category[cat_name] = by_category.get(cat_name, 0) + 1
+    
+    return {
+        "total": len(results),
+        "unread": unread,
+        "action_needed": action_needed,
+        "urgent": urgent,
+        "by_category": by_category,
+    }
