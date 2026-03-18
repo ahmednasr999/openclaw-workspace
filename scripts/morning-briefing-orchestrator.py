@@ -545,31 +545,49 @@ def create_notion_briefing(date_str, date_display, pipeline, scanner_meta, quali
         add_para(f"Scanner data: {freshness}")
 
     if qualified:
-        add_para(f"Priority picks ({len(qualified)}):")
-        for idx, j in enumerate(qualified, 1):
+        apply_jobs = [j for j in qualified if j.get("ats_score", 0) >= 50]
+        skip_jobs = [j for j in qualified if j.get("ats_score", 0) < 50]
+
+        def format_job_bullet(idx, j):
             title = j.get("title", "?")[:50]
             company = j.get("company", "")
-            ats = j.get("ats_score")
+            ats = j.get("ats_score", 0)
             location = j.get("location", "")
             city = location.split(",")[0].strip()[:15] if location else ""
             url = j.get("url", "")
-
-            if isinstance(ats, (int, float)) and ats > 0:
-                icon = "🟢" if ats >= 75 else ("🟡" if ats >= 50 else "🔴")
-                ats_str = f" (ATS: {ats}%)"
-            else:
-                icon = "⚪"
-                ats_str = ""
-
+            icon = "🟢" if ats >= 75 else "🟡"
             text = f"{idx}. {icon} {title}"
             if company:
                 text += f" @ {company}"
             if city:
                 text += f" - {city}"
-            text += ats_str
+            text += f" (ATS: {ats}%)"
             if url:
                 text += f"\n{url}"
-            add_bullet(text)
+            return text
+
+        if apply_jobs:
+            add_para(f"✅ APPLY ({len(apply_jobs)} jobs - ATS 50%+):")
+            for idx, j in enumerate(apply_jobs, 1):
+                add_bullet(format_job_bullet(idx, j))
+
+        if skip_jobs:
+            add_para(f"❌ SKIP ({len(skip_jobs)} jobs - ATS below 50%):")
+            for idx, j in enumerate(skip_jobs, len(apply_jobs) + 1):
+                title = j.get("title", "?")[:50]
+                company = j.get("company", "")
+                ats = j.get("ats_score", 0)
+                city = j.get("location", "").split(",")[0].strip()[:15]
+                url = j.get("url", "")
+                text = f"{idx}. 🔴 {title}"
+                if company:
+                    text += f" @ {company}"
+                if city:
+                    text += f" - {city}"
+                text += f" (ATS: {ats}%)"
+                if url:
+                    text += f"\n{url}"
+                add_bullet(text)
 
     if trends.get("total_runs", 0) >= 3:
         add_para(f"Trend: {trends.get('trend','')} 7d avg: {trends.get('avg_7d_found',0):.0f} jobs, {trends.get('avg_7d_picks',0):.0f} picks")
@@ -747,32 +765,42 @@ def build_telegram_message(date_display, pipeline, scanner_meta, qualified, bord
         lines.append(f"\n🔍 SCANNER: No data")
 
     if qualified:
-        lines.append(f"  📋 All {len(qualified)} picks:")
-    for idx, j in enumerate(qualified, 1):
-        title = j.get("title", "?")[:40]
-        company = j.get("company", "")[:18]
-        location = j.get("location", "")
-        city = location.split(",")[0].strip()[:12] if location else ""
-        ats = j.get("ats_score")
-        url = j.get("url", "")
+        apply_jobs = [j for j in qualified if j.get("ats_score", 0) >= 50]
+        skip_jobs = [j for j in qualified if j.get("ats_score", 0) < 50]
 
-        # ATS-based icon
-        if isinstance(ats, (int, float)) and ats > 0:
-            icon = "🟢" if ats >= 75 else ("🟡" if ats >= 50 else "🔴")
-            ats_str = f" [{ats}%]"
-        else:
-            icon = "⚪"
-            ats_str = ""
+        if apply_jobs:
+            lines.append(f"  ✅ APPLY ({len(apply_jobs)}):")
+            for idx, j in enumerate(apply_jobs, 1):
+                title = j.get("title", "?")[:40]
+                company = j.get("company", "")[:18]
+                city = j.get("location", "").split(",")[0].strip()[:12]
+                ats = j.get("ats_score", 0)
+                url = j.get("url", "")
+                icon = "🟢" if ats >= 75 else "🟡"
+                line = f"  {idx}. {icon} {title}"
+                if company:
+                    line += f" - {company}"
+                if city:
+                    line += f" ({city})"
+                line += f" [{ats}%]"
+                lines.append(line)
+                if url:
+                    lines.append(f"    {url}")
 
-        line = f"  {idx}. {icon} {title}"
-        if company:
-            line += f" - {company}"
-        if city:
-            line += f" ({city})"
-        line += ats_str
-        lines.append(line)
-        if url:
-            lines.append(f"    {url}")
+        if skip_jobs:
+            lines.append(f"  ❌ SKIP ({len(skip_jobs)}):")
+            for idx, j in enumerate(skip_jobs, len(apply_jobs) + 1):
+                title = j.get("title", "?")[:40]
+                company = j.get("company", "")[:18]
+                city = j.get("location", "").split(",")[0].strip()[:12]
+                ats = j.get("ats_score", 0)
+                line = f"  {idx}. 🔴 {title}"
+                if company:
+                    line += f" - {company}"
+                if city:
+                    line += f" ({city})"
+                line += f" [{ats}%]"
+                lines.append(line)
 
     # Email
     if emails:
