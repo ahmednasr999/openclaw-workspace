@@ -8,20 +8,22 @@ description: "Find fresh GCC LinkedIn posts worth commenting on, draft comments 
 ## Purpose
 Find 5-10 fresh LinkedIn posts from GCC executives worth commenting on. Draft comments. Save results for morning briefing.
 
+## Model Strategy
+- **Steps 1-2 (search + score):** Run on MiniMax-M2.5 (free)
+- **Step 3 (draft comments):** Switch to Sonnet 4.6 for executive voice quality
+
 ## Steps
 
 ### Step 1: Search for fresh posts
-Use camofox Google search (or web_search if available) with these queries:
+Use EXA_SEARCH (via Composio) with these queries - set `includeDomains: ["linkedin.com/posts"]` and `startPublishedDate` to 2 days ago:
 
-```
-site:linkedin.com/posts "digital transformation" (UAE OR Saudi OR GCC) -jobs -hiring
-site:linkedin.com/posts "program management" OR "PMO" (Dubai OR Riyadh OR Qatar) -hiring
-site:linkedin.com/posts "AI" OR "artificial intelligence" (Saudi OR UAE OR MENA) executive -jobs
-site:linkedin.com/posts "healthcare technology" OR "healthtech" (GCC OR Middle East) -hiring
-site:linkedin.com/posts "leadership" OR "C-suite" (Dubai OR Riyadh OR Jeddah) -jobs
-```
+Run 4 parallel EXA_SEARCH calls via COMPOSIO_MULTI_EXECUTE_TOOL:
+1. `query: "digital transformation leadership GCC region"`, `includeDomains: ["linkedin.com/posts"]`, `numResults: 8`
+2. `query: "PMO program management leadership executive Middle East"`, same domain filter
+3. `query: "AI artificial intelligence business strategy executive UAE Saudi"`, same domain filter  
+4. `query: "CTO CIO technology leadership Dubai Riyadh executive transformation"`, same domain filter
 
-Filter results: only linkedin.com/posts URLs, posted within last 48 hours.
+All with `startPublishedDate` set to 2 days ago, `type: "neural"`.
 
 ### Step 2: Score and rank (PQS 0-100)
 For each post, calculate Post Quality Score:
@@ -32,7 +34,11 @@ For each post, calculate Post Quality Score:
 
 Threshold: PQS >= 40. Select top 10.
 
-### Step 3: Draft comments
+### Step 2b: Fetch post content
+Use EXA_GET_CONTENTS_ACTION with the top 10 post URLs to get actual post text. This is critical for writing informed comments.
+
+### Step 3: Draft comments (SWITCH TO SONNET 4.6)
+**Important: Use `session_status` to switch model to `sonnet46` before drafting.**
 For each top pick, draft a 2-4 line comment in Ahmed's voice:
 - Start with insight, never generic praise
 - Include one concrete anchor (governance, cadence, metric, value)
