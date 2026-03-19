@@ -33,10 +33,11 @@
 - No post goes out without its visual. Non-negotiable.
 - Images generated as HTML, screenshotted via Playwright, committed to GitHub weekly
 
-### Hook Formula
+### Hook Formula (PROMOTED: 2026-03-19)
 - Max 8 words per line (mobile cutoff)
 - Second line = rehook (as compelling as first)
 - Use specific numbers: $50M, 233x, 300+, 15 hospitals
+- MANDATORY: Every hook must lead with a specific number. No exceptions. (Evidence: number-driven hooks outperform generic hooks by 2x minimum based on 3-week analysis)
 - "How I" > "How to" always
 - Broad hook > Narrow problem > Niche solution
 
@@ -59,6 +60,7 @@ Rotate these unrelated CTAs at the bottom of every post:
 - Job CTA always says "across the GCC" not "in Dubai"
 - Never use em dashes anywhere
 - All metrics from memory/master-cv-data.md only, never fabricate
+- EVERY post must have a custom visual image. No exceptions. (Evidence: Mar 18 text-only post got 0 likes vs 3+ for visual posts)
 
 ---
 

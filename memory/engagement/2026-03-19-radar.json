@@ -1,0 +1,66 @@
+{
+  "date": "2026-03-19",
+  "total_found": 11,
+  "qualified": 7,
+  "top_picks": [
+    {
+      "url": "https://www.linkedin.com/posts/casps_gcc-ai-globalcapabilitycenters-activity-7437808055343538176-_ttG",
+      "title": "Leaders Discuss AI Adoption in GCCs, Talent Strategy, and Pune's Potential",
+      "author": "Shammi Prabhakar Singh",
+      "score": 0.46,
+      "pqs": 69,
+      "gcc": true
+    },
+    {
+      "url": "https://www.linkedin.com/posts/troy-gilson-a9a4888_damac-uaeleadership-activity-7437811670573330432-hfvq",
+      "title": "#damac #uaeleadership",
+      "author": "Troy Gilson",
+      "score": 0.53,
+      "pqs": 62,
+      "gcc": true
+    },
+    {
+      "url": "https://www.linkedin.com/posts/etedgetimesgroup_etedgegcc2026-etedgegccsummit-indiagccs-activity-7438177160302968832-o0IW",
+      "title": "ET Edge GCC Summit 2026: GCC Leadership Drives India's Capability Center Revolution",
+      "author": "ET Edge - Times Group",
+      "score": 0.48,
+      "pqs": 62,
+      "gcc": true
+    },
+    {
+      "url": "https://www.linkedin.com/posts/dmitrymusiyenko_banking-digitaltransformation-agile-activity-7438907269708242944-4fVU",
+      "title": "Banking digital transformation agile leadership innovation mastercard",
+      "author": "Dmytro Musiienko",
+      "score": 0.49,
+      "pqs": 60,
+      "gcc": false
+    },
+    {
+      "url": "https://www.linkedin.com/posts/theceomagazine_leadership-construction-kortech-activity-7438252560727314432-JI1k",
+      "title": "Leadership construction kortech Egypt infrastructure MEP project management strategic turnaround",
+      "author": "The CEO Network",
+      "score": 0.51,
+      "pqs": 52,
+      "gcc": false
+    },
+    {
+      "url": "https://www.linkedin.com/posts/angel-onuoha_i-just-wrapped-episode-4-of-the-avelis-health-activity-7439687077274955777-8jPv",
+      "title": "Avelis Health Podcast - CEO at Valenz Health on point solution fatigue",
+      "author": "Angel Onuoha",
+      "score": 0.41,
+      "pqs": 45,
+      "gcc": false
+    },
+    {
+      "url": "https://www.linkedin.com/posts/fitzyrichard_great-to-see-this-in-arab-region-quietly-activity-7438871648679665664-2hMQ",
+      "title": "Great to see this in Arab region. Quietly going about a profitable media tech business.",
+      "author": "Richard Fitzgerald",
+      "score": 0.42,
+      "pqs": 40,
+      "gcc": true
+    }
+  ],
+  "comments_today": 0,
+  "goal": 5,
+  "streak": 0
+}

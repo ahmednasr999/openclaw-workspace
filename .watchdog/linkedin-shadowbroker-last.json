@@ -1,7 +1,7 @@
 {
   "post_url": "https://www.linkedin.com/posts/ahmednasr_uae-ksa-egypt-activity-7438215046360576000-bRj7",
   "post_title": "Real-time Healthcare Visibility: UAE, KSA, Egypt",
-  "last_check": "2026-03-18T02:02Z",
+  "last_check": "2026-03-19T04:30Z",
   "engagement": {
     "reactions": 2,
     "comments": 1,
@@ -21,5 +21,6 @@
     {"name": "Desiree Lee", "type": "like"}
   ],
   "api_status": "blocked_403",
-  "note": "Baseline state from last successful check. API cannot access post - likely connections-only visibility."
+  "check_status": "FAILED - browser_automation_unavailable",
+  "note": "Check failed. LinkedIn API blocked (403). Camofox unavailable (no API key). OpenClaw browser failed to start. Cannot retrieve current engagement."
 }

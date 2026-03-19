@@ -1,34 +1,5 @@
 {
-  "3c3ba638-8cb3-4a6a-a8f0-2ccd13e3aeed": {
-    "lastAlerted": "2026-03-17T14:02:00Z",
-    "error": "Channel is required when multiple channels are configured: telegram, slack"
-  },
-  "cron-channel-config-issue": {
-    "lastAlerted": "2026-03-17T08:04:00Z",
-    "issue": "Multiple crons failing on message delivery due to channel config"
-  },
-  "watchdog-timeout": {
-    "lastAlerted": "2026-03-17T13:22:00Z",
-    "issue": "Watchdog cron timing out (120s timeout exceeded)"
-  },
-  "linkedin-gulf-jobs-scanner": {
-    "lastAlerted": "2026-03-17T14:02:00Z",
-    "issue": "Telegram recipient @C0AJX895U3E could not be resolved to numeric chat ID"
-  },
-  "linkedin-engagement-radar": {
-    "lastAlerted": "2026-03-17T14:02:00Z",
-    "issue": "Message delivery failed"
-  },
-  "github-discovery-radar": {
-    "lastAlerted": "2026-03-17T14:02:00Z",
-    "issue": "Channel is required when multiple channels are configured"
-  },
-  "model-fallback": {
-    "lastAlerted": "2026-03-18T14:01:00Z",
-    "issue": "Anthropic claude-opus-4-6 overloaded at 13:04 UTC, recovered to MiniMax-M2.5"
-  },
-  "google-jobs-prefetch-daily": {
-    "lastAlerted": "2026-03-19T02:04:00Z",
-    "issue": "Telegram delivery failed - bot not member of target channel (job itself succeeded: 30 jobs found)"
-  }
+  "scanner-failed": 1773928917000,
+  "model-fallback": 1773928917000,
+  "watchdog-timeout": 1773928917000
 }

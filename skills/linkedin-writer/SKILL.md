@@ -7,69 +7,24 @@ description: Writes LinkedIn posts that sound like a real person, not a content 
 
 You write LinkedIn posts that sound human. Not cringe, not corporate, not "I'm humbled to announce." Real thoughts from a real person.
 
-## Post Formats That Work
+## Workflow
 
-### 1. The Story Post
-Hook → Story (3-5 short paragraphs) → Lesson → Question
+Follow these steps in order for every post request:
 
-### 2. The Contrarian Take
-Bold statement that challenges conventional wisdom → Evidence/reasoning → Nuanced conclusion
+1. **Ask intake questions** — Read `templates/intake-questions.md` and ask the user those questions before writing anything.
 
-### 3. The List Post
-Hook → Numbered list (5-10 items) → Brief closer
+2. **Choose post format** — Read `examples/post-formats.md` and select the format that best fits the user's topic and goals.
 
-### 4. The Lesson Learned
-"I used to think X. Then Y happened. Now I think Z."
+3. **Load voice rules** — Read `instructions/voice.md` and internalize these rules before writing.
 
-### 5. The Behind-the-Scenes
-Pull back the curtain on a process, decision, or failure.
+4. **Load formatting rules** — Read `instructions/formatting.md` and apply these rules to the draft.
 
-## Hook Formulas
+5. **Craft the hook** — Read `instructions/hooks.md` and choose or adapt a hook formula that fits the post.
 
-The first 2 lines determine if anyone reads the rest. Use these:
+6. **Write the draft** — Compose the full post using the chosen format, voice rules, formatting rules, and hook.
 
-- "Most people get [topic] wrong. Here's what actually works:"
-- "I [did something unexpected]. Here's what happened:"
-- "[Counterintuitive statement]."
-- "Stop doing [common practice]. Do this instead:"
-- "[Number] things I learned from [experience]:"
-- "Unpopular opinion: [take]"
-- "The best [role/thing] I ever [verbed] did something nobody talks about:"
+7. **Run quality check** — Read `eval/checklist.md` and verify every item passes before delivering.
 
-## Formatting Rules
+8. **Revise if needed** — If any checklist item fails, revise the draft until all items pass.
 
-- **Short paragraphs.** 1-2 sentences max per paragraph.
-- **Line breaks between every paragraph.** White space is your friend on LinkedIn.
-- **No hashtags in the body.** If you must, 3-5 at the very bottom.
-- **No emojis as bullet points.** One emoji per post max, if any.
-- **First line is everything.** It shows in the preview before "...see more"
-- **End with a question.** Drives comments, which drives reach.
-- **Under 1300 characters** for optimal engagement. Can go longer for story posts.
-
-## Voice Rules
-
-- Write like you talk. Read it out loud — if it sounds stiff, rewrite.
-- No buzzwords: "synergy", "leverage", "ecosystem", "disrupt", "game-changer"
-- No humble brags disguised as lessons
-- No "I'm excited to share..." — just share it
-- Specific > generic. "We grew from 12 to 47 customers" beats "We experienced significant growth"
-- First person. This is their voice, not a press release.
-- Contractions. "Don't" not "do not." "It's" not "it is."
-
-## What to Ask the User
-
-1. What's the topic or idea?
-2. Any specific story or experience to reference?
-3. What's your take / what do you want people to take away?
-4. Tone preference? (Casual, professional-casual, thought-leader)
-5. Any CTA? (Comment, share, check link in bio, etc.)
-
-## Quality Check
-
-- [ ] Hook would make you stop scrolling
-- [ ] Sounds like a person, not a brand
-- [ ] Has white space (short paragraphs with line breaks)
-- [ ] Contains at least one specific detail (numbers, names, dates)
-- [ ] Ends with engagement driver (question or clear CTA)
-- [ ] No cringe buzzwords
-- [ ] Under 1300 characters (unless story format)
+9. **Deliver final post** — Present the finished post, ready to copy-paste into LinkedIn.
