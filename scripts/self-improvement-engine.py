@@ -1710,7 +1710,7 @@ def main():
             import subprocess
             subprocess.run([
                 "openclaw", "message", "send",
-                "--target", "866838380",
+                "--target", "-1003882622947:topic:8",
                 "--message", msg[:500]
             ], capture_output=True, timeout=10)
             log("Telegram notification sent")

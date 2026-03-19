@@ -19,7 +19,8 @@ from datetime import datetime, timezone, timedelta
 
 PORT = 8789
 BOT_TOKEN = "8213291111:AAHCk2J4XIRQaTsBkACl_Xpla7LFvVx1304"
-CHAT_ID = "866838380"
+CHAT_ID = "-1003882622947"  # Nasr Command Center group
+TOPIC_ID = 1  # General topic
 SYNC_TOKEN_FILE = "/root/.openclaw/workspace/.watchdog/calendar-sync-token.json"
 
 def send_telegram(text):
@@ -27,6 +28,7 @@ def send_telegram(text):
     url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
     data = json.dumps({
         "chat_id": CHAT_ID,
+        "message_thread_id": TOPIC_ID,
         "text": text,
         "parse_mode": "HTML"
     }).encode()
