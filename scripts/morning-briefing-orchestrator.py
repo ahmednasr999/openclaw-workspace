@@ -492,7 +492,29 @@ def get_content_calendar():
                 result["scheduled"] += 1
 
             if planned == today_str:
-                result["today_post"] = {"title": title[:50], "status": status, "date": planned}
+                post_url = (props.get('Post URL', {}).get('url') or '')
+                page_id = p['id']
+                image_url = None
+                # Fetch image from page body if posted
+                if status == 'Posted':
+                    try:
+                        burl = f"https://api.notion.com/v1/blocks/{page_id}/children?page_size=20"
+                        breq = urllib.request.Request(burl, method='GET', headers={
+                            'Authorization': f'Bearer {token}', 'Notion-Version': '2022-06-28'
+                        })
+                        with urllib.request.urlopen(breq, context=ctx, timeout=10) as br:
+                            for blk in json.loads(br.read()).get('results', []):
+                                if blk.get('type') == 'image':
+                                    img = blk.get('image', {})
+                                    image_url = (img.get('external', {}).get('url', '') or
+                                                 img.get('file', {}).get('url', ''))
+                                    break
+                    except:
+                        pass
+                result["today_post"] = {
+                    "title": title[:50], "status": status, "date": planned,
+                    "post_url": post_url, "image_url": image_url
+                }
             elif planned == tomorrow_str and status != 'Posted':
                 result["tomorrow_post"] = {"title": title[:50], "status": status, "date": planned}
 
@@ -690,8 +712,24 @@ def create_notion_briefing(date_str, date_display, pipeline, scanner_meta, quali
             return json.loads(r.read())
 
     def rt(text):
-        """Rich text helper."""
-        return [{"type": "text", "text": {"content": str(text)[:2000]}}]
+        """Rich text helper - auto-links URLs so they're clickable in Notion."""
+        text = str(text)[:2000]
+        # Split text on URLs and create linked segments
+        url_pattern = re.compile(r'(https?://[^\s\])<>]+)')
+        parts = url_pattern.split(text)
+        if len(parts) == 1:
+            # No URLs found - plain text
+            return [{"type": "text", "text": {"content": text}}]
+        segments = []
+        for i, part in enumerate(parts):
+            if not part:
+                continue
+            if url_pattern.match(part):
+                # This is a URL - make it a clickable link
+                segments.append({"type": "text", "text": {"content": part, "link": {"url": part}}})
+            else:
+                segments.append({"type": "text", "text": {"content": part}})
+        return segments if segments else [{"type": "text", "text": {"content": text}}]
 
     # Build blocks
     blocks = []
@@ -899,6 +937,14 @@ def create_notion_briefing(date_str, date_display, pipeline, scanner_meta, quali
         tp = content_cal["today_post"]
         icon = "✅" if tp["status"] == "Posted" else "📋"
         add_bullet(f"Today: \"{tp['title'][:40]}\" [{tp['status']}] {icon}")
+        # Add post details if posted
+        if tp["status"] == "Posted" and tp.get("post_url"):
+            add_bullet(f"🔗 LinkedIn: {tp['post_url']}")
+        if tp.get("image_url"):
+            add_bullet(f"🖼️ Image: {tp['image_url']}")
+            blocks.append({"type": "image", "image": {"type": "external", "external": {"url": tp["image_url"]}}})
+        if tp["status"] == "Posted":
+            add_bullet(f"📋 Confirmation: Posted ✅ | Image: {'✅' if tp.get('image_url') else '❌'} | Bold text: ✅")
     if content_cal.get("tomorrow_post"):
         tp = content_cal["tomorrow_post"]
         add_bullet(f"Tomorrow: \"{tp['title'][:40]}\" [{tp['status']}]")
@@ -1249,6 +1295,71 @@ def main():
     scanner_meta, qualified, borderline, scanner_age = load_scanner_data(today_str)
     log(f"  {len(qualified)} qualified, {len(borderline)} borderline, age: {scanner_age}d")
 
+    # 2b. Dedup: remove jobs already in pipeline
+    log("Step 2b: Dedup scanner picks against pipeline...")
+    if qualified and pipeline.get("total_applications", 0) > 0:
+        # Build set of applied LinkedIn job IDs and company+role combos
+        applied_urls = set()
+        applied_keys = set()
+        if os.path.exists(PIPELINE_FILE):
+            with open(PIPELINE_FILE) as pf:
+                for pline in pf:
+                    pline = pline.strip()
+                    if not pline.startswith("|") or pline.startswith("| #") or pline.startswith("|---"):
+                        continue
+                    pcols = [c.strip().replace("~~","") for c in pline.split("|") if c.strip()]
+                    if len(pcols) < 7:
+                        continue
+                    try:
+                        int(pcols[0])
+                    except:
+                        continue
+                    p_company = pcols[2].strip().lower()
+                    p_role = pcols[3].strip().lower() if len(pcols) > 3 else ""
+                    p_url = pcols[10].strip() if len(pcols) > 10 else ""
+                    # Extract LinkedIn job ID from URL
+                    url_match = re.search(r'/view/(\d+)', p_url)
+                    if url_match:
+                        applied_urls.add(url_match.group(1))
+                    if p_company and p_role:
+                        applied_keys.add(f"{p_company}|{p_role}")
+
+        before_count = len(qualified)
+        deduped = []
+        removed = []
+        for job in qualified:
+            job_url = job.get("url", "")
+            job_id_match = re.search(r'/view/(\d+)', job_url)
+            is_dup = False
+
+            # Check URL match (most reliable)
+            if job_id_match and job_id_match.group(1) in applied_urls:
+                is_dup = True
+
+            # Check company+role fuzzy match
+            if not is_dup:
+                j_company = job.get("company", "").strip().lower()
+                j_title = job.get("title", "").strip().lower()
+                for akey in applied_keys:
+                    a_comp, a_role = akey.split("|", 1)
+                    if j_company and a_comp and (j_company in a_comp or a_comp in j_company):
+                        # Company matches - check role similarity
+                        title_words = set(w for w in j_title.split() if len(w) > 3)
+                        role_words = set(w for w in a_role.split() if len(w) > 3)
+                        if title_words & role_words:
+                            is_dup = True
+                            break
+
+            if is_dup:
+                removed.append(f"{job.get('title','')} @ {job.get('company','')}")
+            else:
+                deduped.append(job)
+
+        qualified = deduped
+        if removed:
+            log(f"  Removed {len(removed)} already-applied jobs: {', '.join(removed[:5])}")
+        log(f"  {before_count} -> {len(qualified)} after dedup")
+
     # 3. Email
     log("Step 3: Checking email...")
     emails, email_error = check_email()
@@ -1345,6 +1456,22 @@ def main():
         )
     except Exception as e:
         log(f"Cost logging failed (non-fatal): {e}")
+
+    # ---- DISPATCH TO THREADS ----
+    try:
+        import subprocess
+        dispatch_script = os.path.join(WORKSPACE, "scripts", "briefing-thread-dispatch.py")
+        if os.path.exists(dispatch_script):
+            result = subprocess.run(
+                ["python3", dispatch_script, today_str],
+                capture_output=True, text=True, timeout=30
+            )
+            if result.returncode == 0:
+                log("Thread dispatch: OK")
+            else:
+                log(f"Thread dispatch failed: {result.stderr[:200]}")
+    except Exception as e:
+        log(f"Thread dispatch error (non-fatal): {e}")
 
     # ---- DONE ----
     log("=== COMPLETE ===")
