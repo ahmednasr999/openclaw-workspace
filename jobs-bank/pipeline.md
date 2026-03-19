@@ -81,7 +81,7 @@
 ---
 
 | 59 | ⏳ | Nuxera.AI | Sr PM AI Healthcare | Cairo, Egypt | — | 🤝 Interview | CEO Amin Elhemaily reached out directly. Interview Mar 8 — went well, they will follow up | — | — | LinkedIn | — |
-| 60 | New | Experts Group International | Digital Transformation Director | Dubai | -- | Discovered | Radar | 2026-03-11 | -- | [Link](https://www.linkedin.com/jobs/view/4381727915) | ATS:80 |
+| 60 | New | Experts Group International | Digital Transformation Director | Dubai | -- | Applied | Radar | 2026-03-11 | -- | [Link](https://www.linkedin.com/jobs/view/4381727915) | ATS:80 |
 | 61 | New | Stellar Hunters | Head of Digital Transformation | Dammam | -- | Discovered | Radar | 2026-03-11 | -- | [Link](https://www.linkedin.com/jobs/view/4381538665) | ATS:80 |
 | 62 | New | MCG Talent | Chief Technology Officer (Abu Dhabi) | Dubai | -- | Discovered | Radar | 2026-03-11 | -- | [Link](https://www.linkedin.com/jobs/view/4381298688) | ATS:77 |
 | 63 | New | Talent Connect Group (TCG) | Head of PMO & Strategic Operations | Dubai | -- | Discovered | Radar | 2026-03-11 | -- | [Link](https://www.linkedin.com/jobs/view/4383733458) | ATS:72 |
@@ -268,3 +268,7 @@
 | 198 | ☐ | QNB Group | VP Digital Quality Control | Applied | 2026-03-18 | - | Qatar | LinkedIn | Tailored CV sent | https://www.linkedin.com/jobs/view/4343976226 |
 | 199 | ☐ | Publicis Sapient | Assoc Director Product Mgmt FSI | Applied | 2026-03-18 | - | KSA | LinkedIn | Tailored CV sent | https://www.linkedin.com/jobs/view/4353703506 |
 | 200 | ☐ | Arab Banking Corp | Head of IT Application Support | Applied | 2026-03-18 | - | Bahrain | LinkedIn | Tailored CV sent | https://www.linkedin.com/jobs/view/4381476729 |
+| 201 | ☐ | Discovered MENA | Head of Engineering | Applied | 2026-03-19 | - | Dubai | LinkedIn | Tailored CV sent (ATS 86%) | https://www.linkedin.com/jobs/view/4384057356 |
+| 202 | ☐ | Macdonald & Company | Managing Director | Applied | 2026-03-19 | - | Europe | LinkedIn | Tailored CV sent (ATS 80%) | https://www.linkedin.com/jobs/view/4385908621 |
+| 203 | ☐ | Publicis Sapient | Associate Director Product Management FSI KSA | Applied | 2026-03-19 | - | KSA | LinkedIn | Tailored CV sent (ATS 88%) | https://www.linkedin.com/jobs/view/4353703506 |
+| 204 | ☐ | Talan | CTO Smart Metering Programme | Applied | 2026-03-19 | - | Abu Dhabi | LinkedIn | Tailored CV sent (ATS 86%) | https://www.linkedin.com/jobs/view/4368219091 |
