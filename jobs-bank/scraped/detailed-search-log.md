@@ -3477,3 +3477,210 @@
 - Chief Information Officer in United Arab Emirates: 11 jobs
 - Chief Digital Officer in Qatar: 1 jobs
 - Head of Technology in United Arab Emirates: 20 jobs
+- VP Technology in United Arab Emirates: 8 jobs
+- Chief Technology Officer in Qatar: 9 jobs
+- Director of Technology in United Arab Emirates: 20 jobs
+- Chief Information Officer in Qatar: 9 jobs
+- Head of IT in United Arab Emirates: 20 jobs
+- VP Engineering in United Arab Emirates: 8 jobs
+- Head of Technology in Qatar: 2 jobs
+- Director of Engineering in United Arab Emirates: 20 jobs
+- Chief Operating Officer in United Arab Emirates: 10 jobs
+- VP Technology in Qatar: 1 jobs
+- Director of Technology in Qatar: 1 jobs
+- Chief Strategy Officer in United Arab Emirates: 14 jobs
+- Head of IT in Qatar: 6 jobs
+- Chief Product Officer in United Arab Emirates: 7 jobs
+- VP Engineering in Qatar: 0 jobs
+- Director of Engineering in Qatar: 0 jobs
+- Chief Operating Officer in Qatar: 10 jobs
+- PMO Director in United Arab Emirates: 6 jobs
+- Chief Strategy Officer in Qatar: 1 jobs
+- Program Director in United Arab Emirates: 20 jobs
+- Chief Product Officer in Qatar: 0 jobs
+- Head of PMO in United Arab Emirates: 10 jobs
+- PMO Director in Qatar: 1 jobs
+- Head of Transformation in United Arab Emirates: 18 jobs
+- Director of Innovation in United Arab Emirates: 17 jobs
+- Program Director in Qatar: 2 jobs
+- Head of PMO in Qatar: 0 jobs
+- Head of Transformation in Qatar: 1 jobs
+- VP Operations in United Arab Emirates: 7 jobs
+- Director of Innovation in Qatar: 0 jobs
+- VP Digital Transformation in Saudi Arabia: 0 jobs
+- VP Operations in Qatar: 2 jobs
+- VP Digital Transformation in Bahrain: 0 jobs
+- Director Digital Transformation in Bahrain: 1 jobs
+- Director Digital Transformation in Saudi Arabia: 3 jobs
+- Head of Digital Transformation in Bahrain: 0 jobs
+- Head of Digital Transformation in Saudi Arabia: 0 jobs
+- Senior Director Digital Transformation in Bahrain: 0 jobs
+- Senior Director Digital Transformation in Saudi Arabia: 1 jobs
+- Chief Digital Officer in Bahrain: 0 jobs
+- Chief Technology Officer in Bahrain: 1 jobs
+- Chief Digital Officer in Saudi Arabia: 3 jobs
+- Chief Information Officer in Bahrain: 1 jobs
+- Chief Technology Officer in Saudi Arabia: 9 jobs
+- Head of Technology in Bahrain: 1 jobs
+- VP Technology in Bahrain: 0 jobs
+- Chief Information Officer in Saudi Arabia: 8 jobs
+- Director of Technology in Bahrain: 0 jobs
+- Head of IT in Bahrain: 4 jobs
+- Head of Technology in Saudi Arabia: 8 jobs
+- VP Engineering in Bahrain: 0 jobs
+- Director of Engineering in Bahrain: 0 jobs
+- VP Technology in Saudi Arabia: 1 jobs
+- Chief Operating Officer in Bahrain: 2 jobs
+- Director of Technology in Saudi Arabia: 15 jobs
+- Chief Strategy Officer in Bahrain: 2 jobs
+- Chief Product Officer in Bahrain: 0 jobs
+- Head of IT in Saudi Arabia: 11 jobs
+- PMO Director in Bahrain: 0 jobs
+- VP Engineering in Saudi Arabia: 1 jobs
+- Program Director in Bahrain: 1 jobs
+- Director of Engineering in Saudi Arabia: 20 jobs
+- Head of PMO in Bahrain: 0 jobs
+- Head of Transformation in Bahrain: 0 jobs
+- Director of Innovation in Bahrain: 0 jobs
+- VP Operations in Bahrain: 0 jobs
+- Chief Operating Officer in Saudi Arabia: 10 jobs
+- VP Digital Transformation in Kuwait: 0 jobs
+- Chief Strategy Officer in Saudi Arabia: 2 jobs
+- Chief Product Officer in Saudi Arabia: 2 jobs
+- Director Digital Transformation in Kuwait: 0 jobs
+- Head of Digital Transformation in Kuwait: 0 jobs
+- PMO Director in Saudi Arabia: 4 jobs
+- Senior Director Digital Transformation in Kuwait: 0 jobs
+- Chief Digital Officer in Kuwait: 0 jobs
+- Program Director in Saudi Arabia: 20 jobs
+- Chief Technology Officer in Kuwait: 1 jobs
+- Head of PMO in Saudi Arabia: 7 jobs
+- Chief Information Officer in Kuwait: 1 jobs
+- Head of Technology in Kuwait: 0 jobs
+- VP Technology in Kuwait: 0 jobs
+- Head of Transformation in Saudi Arabia: 4 jobs
+- Director of Technology in Kuwait: 1 jobs
+- Head of IT in Kuwait: 0 jobs
+- VP Engineering in Kuwait: 0 jobs
+- Director of Engineering in Kuwait: 1 jobs
+- Director of Innovation in Saudi Arabia: 15 jobs
+- Chief Operating Officer in Kuwait: 2 jobs
+- VP Operations in Saudi Arabia: 3 jobs
+- Chief Strategy Officer in Kuwait: 0 jobs
+- Chief Product Officer in Kuwait: 0 jobs
+- PMO Director in Kuwait: 0 jobs
+- VP Digital Transformation in Qatar: 0 jobs
+- Director Digital Transformation in Qatar: 0 jobs
+- Head of Digital Transformation in Qatar: 1 jobs
+- Program Director in Kuwait: 2 jobs
+- Senior Director Digital Transformation in Qatar: 0 jobs
+- Head of PMO in Kuwait: 0 jobs
+- Chief Digital Officer in Qatar: 1 jobs
+- Head of Transformation in Kuwait: 1 jobs
+- Director of Innovation in Kuwait: 1 jobs
+- Chief Technology Officer in Qatar: 9 jobs
+- VP Operations in Kuwait: 1 jobs
+- Chief Information Officer in Qatar: 9 jobs
+- VP Digital Transformation in Oman: 0 jobs
+- Director Digital Transformation in Oman: 0 jobs
+- Head of Digital Transformation in Oman: 2 jobs
+- Head of Technology in Qatar: 2 jobs
+- Senior Director Digital Transformation in Oman: 0 jobs
+- Chief Digital Officer in Oman: 0 jobs
+- Chief Technology Officer in Oman: 0 jobs
+- Chief Information Officer in Oman: 0 jobs
+- VP Technology in Qatar: 1 jobs
+- Head of Technology in Oman: 6 jobs
+- Director of Technology in Qatar: 1 jobs
+- VP Technology in Oman: 4 jobs
+- Director of Technology in Oman: 1 jobs
+- Head of IT in Qatar: 6 jobs
+- VP Engineering in Qatar: 0 jobs
+- Director of Engineering in Qatar: 0 jobs
+- Chief Operating Officer in Qatar: 10 jobs
+- Head of IT in Oman: 7 jobs
+- VP Engineering in Oman: 4 jobs
+- Chief Strategy Officer in Qatar: 1 jobs
+- Chief Product Officer in Qatar: 0 jobs
+- Director of Engineering in Oman: 2 jobs
+- PMO Director in Qatar: 1 jobs
+- Chief Operating Officer in Oman: 0 jobs
+- Chief Strategy Officer in Oman: 0 jobs
+- Chief Product Officer in Oman: 0 jobs
+- PMO Director in Oman: 1 jobs
+- Program Director in Qatar: 2 jobs
+- Head of PMO in Qatar: 0 jobs
+- Head of Transformation in Qatar: 1 jobs
+- Program Director in Oman: 2 jobs
+- Director of Innovation in Qatar: 0 jobs
+- VP Operations in Qatar: 2 jobs
+- Head of PMO in Oman: 2 jobs
+- VP Digital Transformation in Bahrain: 0 jobs
+- Director Digital Transformation in Bahrain: 1 jobs
+- Head of Digital Transformation in Bahrain: 0 jobs
+- Senior Director Digital Transformation in Bahrain: 0 jobs
+- Head of Transformation in Oman: 3 jobs
+- Chief Digital Officer in Bahrain: 0 jobs
+- Director of Innovation in Oman: 0 jobs
+- VP Operations in Oman: 4 jobs
+- Chief Technology Officer in Bahrain: 1 jobs
+- Chief Information Officer in Bahrain: 1 jobs
+- Head of Technology in Bahrain: 1 jobs
+- VP Technology in Bahrain: 0 jobs
+- Director of Technology in Bahrain: 0 jobs
+- Head of IT in Bahrain: 4 jobs
+- VP Engineering in Bahrain: 0 jobs
+- Director of Engineering in Bahrain: 0 jobs
+- Chief Operating Officer in Bahrain: 2 jobs
+- Chief Strategy Officer in Bahrain: 2 jobs
+- Chief Product Officer in Bahrain: 0 jobs
+- PMO Director in Bahrain: 0 jobs
+- Program Director in Bahrain: 1 jobs
+- Head of PMO in Bahrain: 0 jobs
+- Head of Transformation in Bahrain: 0 jobs
+- Director of Innovation in Bahrain: 0 jobs
+- VP Operations in Bahrain: 0 jobs
+- VP Digital Transformation in Kuwait: 0 jobs
+- Director Digital Transformation in Kuwait: 0 jobs
+- Head of Digital Transformation in Kuwait: 0 jobs
+- Senior Director Digital Transformation in Kuwait: 0 jobs
+- Chief Digital Officer in Kuwait: 0 jobs
+- Chief Technology Officer in Kuwait: 1 jobs
+- Chief Information Officer in Kuwait: 1 jobs
+- Head of Technology in Kuwait: 0 jobs
+- VP Technology in Kuwait: 0 jobs
+- Director of Technology in Kuwait: 1 jobs
+- Head of IT in Kuwait: 0 jobs
+- VP Engineering in Kuwait: 0 jobs
+- Director of Engineering in Kuwait: 1 jobs
+- Chief Operating Officer in Kuwait: 2 jobs
+- Chief Strategy Officer in Kuwait: 0 jobs
+- Chief Product Officer in Kuwait: 0 jobs
+- PMO Director in Kuwait: 0 jobs
+- Program Director in Kuwait: 2 jobs
+- Head of PMO in Kuwait: 0 jobs
+- Head of Transformation in Kuwait: 1 jobs
+- Director of Innovation in Kuwait: 1 jobs
+- VP Operations in Kuwait: 1 jobs
+- VP Digital Transformation in Oman: 0 jobs
+- Director Digital Transformation in Oman: 0 jobs
+- Head of Digital Transformation in Oman: 2 jobs
+- Senior Director Digital Transformation in Oman: 0 jobs
+- Chief Digital Officer in Oman: 0 jobs
+- Chief Technology Officer in Oman: 0 jobs
+- Chief Information Officer in Oman: 0 jobs
+- Head of Technology in Oman: 6 jobs
+- VP Technology in Oman: 4 jobs
+- Director of Technology in Oman: 1 jobs
+- Head of IT in Oman: 7 jobs
+- VP Engineering in Oman: 4 jobs
+- Director of Engineering in Oman: 2 jobs
+- Chief Operating Officer in Oman: 0 jobs
+- Chief Strategy Officer in Oman: 0 jobs
+- Chief Product Officer in Oman: 0 jobs
+- PMO Director in Oman: 1 jobs
+- Program Director in Oman: 2 jobs
+- Head of PMO in Oman: 2 jobs
+- Head of Transformation in Oman: 3 jobs
+- Director of Innovation in Oman: 0 jobs
+- VP Operations in Oman: 4 jobs
