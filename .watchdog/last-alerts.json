@@ -26,5 +26,9 @@
   "model-fallback": {
     "lastAlerted": "2026-03-18T14:01:00Z",
     "issue": "Anthropic claude-opus-4-6 overloaded at 13:04 UTC, recovered to MiniMax-M2.5"
+  },
+  "google-jobs-prefetch-daily": {
+    "lastAlerted": "2026-03-19T02:04:00Z",
+    "issue": "Telegram delivery failed - bot not member of target channel (job itself succeeded: 30 jobs found)"
   }
 }
