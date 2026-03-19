@@ -1,0 +1,10 @@
+{
+  "publishes": {
+    "merry-quasar-m3kb": {
+      "siteUrl": "https://merry-quasar-m3kb.here.now/",
+      "claimToken": "883cf685e616e0727dadf4da96a9c4bf5c4d2b66631a416b503e07f1c90f1e67",
+      "claimUrl": "https://here.now/claim?slug=merry-quasar-m3kb&token=883cf685e616e0727dadf4da96a9c4bf5c4d2b66631a416b503e07f1c90f1e67",
+      "expiresAt": "2026-03-20T14:00:44.590Z"
+    }
+  }
+}
