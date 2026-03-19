@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-02-17T03:00:00Z",
+  "last_updated": "2026-03-19T14:08:00Z",
   "generated_by": "Chief of Staff (Max)",
   "applications": {
     "active": [
@@ -20,6 +20,54 @@
         "date_applied": "2026-02-10",
         "interview_date": "2026-02-18",
         "notes": "Prepare case study examples"
+      },
+      {
+        "id": "app-003",
+        "company": "Discovered MENA",
+        "title": "Head of Engineering",
+        "status": "applied",
+        "date_applied": "2026-03-19",
+        "location": "Dubai, UAE",
+        "fit_score": "7/10",
+        "linkedin_url": "https://www.linkedin.com/jobs/view/4384057356",
+        "applied_via": "LinkedIn",
+        "notes": "Climate tech, engineering leadership"
+      },
+      {
+        "id": "app-004",
+        "company": "Macdonald & Company",
+        "title": "Managing Director",
+        "status": "applied",
+        "date_applied": "2026-03-19",
+        "location": "London, UK",
+        "fit_score": "7/10",
+        "linkedin_url": "https://www.linkedin.com/jobs/view/4385908621",
+        "applied_via": "LinkedIn",
+        "notes": "Real estate, construction, engineering services"
+      },
+      {
+        "id": "app-005",
+        "company": "Publicis Sapient",
+        "title": "Associate Director Product Management FSI KSA",
+        "status": "applied",
+        "date_applied": "2026-03-19",
+        "location": "Riyadh, Saudi Arabia",
+        "fit_score": "7/10",
+        "linkedin_url": "https://www.linkedin.com/jobs/view/4353703506",
+        "applied_via": "LinkedIn",
+        "notes": "FSI consulting, KSA market, FinTech expertise"
+      },
+      {
+        "id": "app-006",
+        "company": "Talan",
+        "title": "CTO - Smart Metering Programme",
+        "status": "applied",
+        "date_applied": "2026-03-19",
+        "location": "Abu Dhabi, UAE",
+        "fit_score": "7/10",
+        "linkedin_url": "https://www.linkedin.com/jobs/view/4368219091",
+        "applied_via": "LinkedIn",
+        "notes": "IT consulting, smart metering, programme leadership"
       }
     ],
     "rejected": [

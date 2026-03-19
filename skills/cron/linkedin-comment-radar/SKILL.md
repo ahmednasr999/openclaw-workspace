@@ -37,7 +37,7 @@ Threshold: PQS >= 40. Select top 10.
 ### Step 2b: Fetch post content
 Use EXA_GET_CONTENTS_ACTION with the top 10 post URLs to get actual post text. This is critical for writing informed comments.
 
-### Step 3: Draft comments (SWITCH TO SONNET 4.6)
+### Step 3: Draft comments (SWITCH TO SONNET 4.6) — DO NOT POST. Present to Ahmed for approval.
 **Important: Use `session_status` to switch model to `sonnet46` before drafting.**
 For each top pick, draft a 2-4 line comment in Ahmed's voice:
 - Start with insight, never generic praise

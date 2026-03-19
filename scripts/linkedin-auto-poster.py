@@ -187,15 +187,16 @@ def upload_image_to_linkedin(image_bytes, content_type):
 # ── Notion Update ───────────────────────────────────────────────
 
 def update_notion_status(page_id, post_url):
-    """Update Notion page status to Posted and add URL."""
+    """Update Notion page status to Posted and add URL.
+    Note: Post URL property is type 'url' in Notion, NOT rich_text."""
     body = {
         "properties": {
             "Status": {"select": {"name": "Posted"}},
         }
     }
-    # Add Post URL if the property exists and we have a URL
+    # Post URL is a 'url' type property in Notion - NOT rich_text
     if post_url:
-        body["properties"]["Post URL"] = {"rich_text": [{"text": {"content": post_url[:2000]}}]}
+        body["properties"]["Post URL"] = {"url": post_url[:2000]}
     notion_req("PATCH", f"/pages/{page_id}", body)
     print(f"Updated Notion: status=Posted, url={post_url}")
 

@@ -1,0 +1,489 @@
+# WORKSPACE_INDEX.md
+# Auto-generated workspace map. Do not edit manually.
+# Rebuild: bash skills/workspace-index/generate-index.sh
+
+## Core Config (injected every session)
+- `AGENTS.md` - AGENTS.md - Sub-Agent Directory
+- `SOUL.md` - SOUL.md - Who I Am
+- `TOOLS.md` - TOOLS.md - Technical Configs & How-To
+- `IDENTITY.md` - IDENTITY.md - Who I Am
+- `USER.md` - USER.md - About Ahmed
+- `MEMORY.md` - MEMORY.md - Long-Term Memory
+- `HEARTBEAT.md` - HEARTBEAT.md
+- `STATE.yaml` - STATE.yaml — Ahmed's Autonomous Project State
+
+## Memory
+### Daily Notes (memory/YYYY-MM-DD*.md)
+- 47 daily notes. Latest: `2026-03-19.md`
+### Reference
+- `memory/10-openclaw-projects.md`
+- `memory/24-7-ai-company-50-month.md`
+- `memory/INDEX.md`
+- `memory/README.md`
+- `memory/active-tasks.md`
+- `memory/advisory-board-blueprint.md`
+- `memory/agent-tool-design-lessons.md`
+- `memory/agentic-levels.md`
+- `memory/ahmed-profile-analysis-20260215.md`
+- `memory/ai-automation-roadmap.md`
+- `memory/ats-best-practices.md`
+- `memory/canopy-distributed-memory.md`
+- `memory/chief-of-staff-claude-code.md`
+- `memory/claude-code-prompt.md`
+- `memory/completed-milestones.md`
+- `memory/content-creator-weekly-2026-03-06.md`
+- `memory/content-creator-weekly-2026-03-13.md`
+- `memory/content-ideas.md`
+- `memory/content-pipeline.md`
+- `memory/cv-history.md`
+- `memory/cv-master-update-proposal.md`
+- `memory/cv-pending-updates.md`
+- `memory/daily-briefing-sample.md`
+- `memory/daily-ideas-log.md`
+- `memory/dev-backlog.md`
+- `memory/digital-citadel.md`
+- `memory/dream-report-2026-02-18.md`
+- `memory/dream-report-2026-02-19.md`
+- `memory/dream-report-2026-02-20.md`
+- `memory/evolution-proposals.md`
+- `memory/executive-briefing-today.md`
+- `memory/financial-snapshot.md`
+- `memory/flywheel-analysis.md`
+- `memory/github-radar.md`
+- `memory/gmail-automation-limitations.md`
+- `memory/improvement-feedback.md`
+- `memory/improvement-log.md`
+- `memory/insights.md`
+- `memory/interview-prep-protocol.md`
+- `memory/job-email-alert-2026-03-08.md`
+- `memory/job-hunter-weekly-2026-03-08.md`
+- `memory/job-pipeline.md`
+- `memory/job-radar-2026-02-25.md`
+- `memory/job-radar-gcc-daily-2026-02-28.md`
+- `memory/job-radar-march-1-2026.md`
+- `memory/job-radar-march-3-2026-morning.md`
+- `memory/job-radar-v2.md`
+- `memory/job-radar.md`
+- `memory/knowledge-index.md`
+- `memory/larry-tiktok-automation.md`
+- `memory/last-session.md`
+- `memory/lessons-learned.md`
+- `memory/linkedin-ai-strategy.md`
+- `memory/linkedin-job-scout.md`
+- `memory/linkedin_content_calendar.md`
+- `memory/master-cv-data.md`
+- `memory/mission-control-concept.md`
+- `memory/mission-control-phase2-build-report.md`
+- `memory/mission-control-phase2-design.md`
+- `memory/mission-control-phase2-feedback.md`
+- `memory/mission-control-recommendations.md`
+- `memory/mission-control-spec.md`
+- `memory/model-escalation-log.md`
+- `memory/morning-briefs.md`
+- `memory/oauth-patterns.md`
+- `memory/openclaw-codex-swarm-setup.md`
+- `memory/openclaw-marketing-use-cases.md`
+- `memory/openclaw-security-2026.md`
+- `memory/pending-opus-topics.md`
+- `memory/recruiter-responses.md`
+- `memory/self-improvement-engine-spec.md`
+- `memory/shaping-skills.md`
+- `memory/shared-content.md`
+- `memory/sie-github-recommendations.md`
+- `memory/spec-vs-reality-audit-2026-03-17.md`
+- `memory/weekly-review-2026-03-09-15.md`
+- `memory/what-is-agentic-ai.md`
+- `memory/x-likes.md`
+- `memory/x-radar.md`
+
+## Job Search
+- `jobs-bank/pipeline.md` - Application pipeline tracker
+- `jobs-bank/search-policy.md` - Search criteria and filters
+- `jobs-bank/skip-patterns.md` - Auto-skip rules
+- `jobs-bank/applications/` - 0 application files
+- `jobs-bank/dossiers/` - 42 company dossiers
+
+## CVs
+- `memory/master-cv-data.md` - **SOURCE OF TRUTH** for all CV content
+- `memory/ats-best-practices.md` - ATS compliance rules
+- `cvs/Ahmed Nasr - AI Strategy & Readiness Expert - Faithful Executive.pdf`
+- `cvs/Ahmed Nasr - Associate Director Innovation Ecosystem - KAUST.pdf`
+- `cvs/Ahmed Nasr - Associate Director Product Management FSI - Publicis Sapient.pdf`
+- `cvs/Ahmed Nasr - Business Process & Internal Control Director.pdf`
+- `cvs/Ahmed Nasr - CAIDO Business Manager - Apex Group.pdf`
+- `cvs/Ahmed Nasr - CEO COO - Medical Distribution Confidential.pdf`
+- `cvs/Ahmed Nasr - COO - Disrupt.pdf`
+- `cvs/Ahmed Nasr - CTO - Atos.pdf`
+- `cvs/Ahmed Nasr - CTO - MCG Talent Abu Dhabi.pdf`
+- `cvs/Ahmed Nasr - CTO Fintech - Flatgigs.pdf`
+- `cvs/Ahmed Nasr - Chief IT Projects Management - Dubai Careers.pdf`
+- `cvs/Ahmed Nasr - Chief Operating Officer - Madison Pearl.pdf`
+- `cvs/Ahmed Nasr - Chief Strategy Officer - Madison Pearl.pdf`
+- `cvs/Ahmed Nasr - Chief Technology Officer - People Pathways.pdf`
+- `cvs/Ahmed Nasr - Chief Technology Officer - numi ME Fintech.pdf`
+- `cvs/Ahmed Nasr - Chief Transformation Officer - Bank Nizwa.pdf`
+- `cvs/Ahmed Nasr - Chief of Staff - LEFTFIELD SOLUTIONS.pdf`
+- `cvs/Ahmed Nasr - Client Engagement Director - Oracle.pdf`
+- `cvs/Ahmed Nasr - Co-Founder Venture Lead - GIL Venture Studio.pdf`
+- `cvs/Ahmed Nasr - Consultant Transformation - Huxley.pdf`
+- `cvs/Ahmed Nasr - Consumer Finance Executive.pdf`
+- `cvs/Ahmed Nasr - Country Head IT Strategy & Digital Consulting - Consulting Point.pdf`
+- `cvs/Ahmed Nasr - Data Engineering Project Lead - Riyadh Bank.pdf`
+- `cvs/Ahmed Nasr - Delivery Manager - Qashio.pdf`
+- `cvs/Ahmed Nasr - Digital Delivery Lead - Al-Futtaim Finance.pdf`
+- `cvs/Ahmed Nasr - Digital Delivery Lead, Al-Futtaim Finance - Al-Futtaim.pdf`
+- `cvs/Ahmed Nasr - Digital Delivery Manager PMO - Whiteshield.pdf`
+- `cvs/Ahmed Nasr - Digital Transformation Consultant - Contango.pdf`
+- `cvs/Ahmed Nasr - Digital Transformation Director - Experts Group International.pdf`
+- `cvs/Ahmed Nasr - Director - Digital Transformation & IT - Dubai Holding Community Management.pdf`
+- `cvs/Ahmed Nasr - Director Digital Innovation & AI - Emdad.pdf`
+- `cvs/Ahmed Nasr - Director EPMO - Confidential.pdf`
+- `cvs/Ahmed Nasr - Director Government Programs - Abu Dhabi.pdf`
+- `cvs/Ahmed Nasr - Director IT Major Systems - KBR.pdf`
+- `cvs/Ahmed Nasr - Director IT Strategy - du.pdf`
+- `cvs/Ahmed Nasr - Director OD - One Executive.pdf`
+- `cvs/Ahmed Nasr - Director Product Management - Qiddiya.pdf`
+- `cvs/Ahmed Nasr - Director Program Management - Inception.pdf`
+- `cvs/Ahmed Nasr - Director Project Management - Dubai Holding.pdf`
+- `cvs/Ahmed Nasr - Director of Data Centre Transformation - Auxo Talent.pdf`
+- `cvs/Ahmed Nasr - Director of IT Operations - HungerStation.pdf`
+- `cvs/Ahmed Nasr - Director of Operations - Payfuture.pdf`
+- `cvs/Ahmed Nasr - Director of Operations - Ranger AI.pdf`
+- `cvs/Ahmed Nasr - Director of Operations - accesso.pdf`
+- `cvs/Ahmed Nasr - Director of Product Management - ITCAN.pdf`
+- `cvs/Ahmed Nasr - Director, Customer Value, Engagement & Loyalty - Confidential.pdf`
+- `cvs/Ahmed Nasr - Director, Digital Transformation - Foreground.pdf`
+- `cvs/Ahmed Nasr - Director, Investment Platforms & Digital Enablement - byteSpark.ai GCC investment group.pdf`
+- `cvs/Ahmed Nasr - Executive Director - FAB.pdf`
+- `cvs/Ahmed Nasr - Executive Director Digital Transformation - Confidential Government.pdf`
+- `cvs/Ahmed Nasr - Executive Director Information Technology - Confidential Government.pdf`
+- `cvs/Ahmed Nasr - Executive Director Smart City IoT - Confidential Government.pdf`
+- `cvs/Ahmed Nasr - Executive Director Strategic Initiatives - Cooper Fitch.pdf`
+- `cvs/Ahmed Nasr - Executive Director Strategic PMO and VRO - Confidential Riyadh.pdf`
+- `cvs/Ahmed Nasr - Field CTO EMEA - EDB.pdf`
+- `cvs/Ahmed Nasr - Global Head of NEO Unit, Retail Banking Group - Mashreq.pdf`
+- `cvs/Ahmed Nasr - Group CIO Enterprise Architecture - Confidential Government.pdf`
+- `cvs/Ahmed Nasr - Head AI Transformation - Sky News Arabia.pdf`
+- `cvs/Ahmed Nasr - Head of AI Advisory - eMagine Solutions.pdf`
+- `cvs/Ahmed Nasr - Head of Consumer Products - Finance House.pdf`
+- `cvs/Ahmed Nasr - Head of Data - AXIAN Group.pdf`
+- `cvs/Ahmed Nasr - Head of Digital & Enterprise Service Delivery - Aldar Education.pdf`
+- `cvs/Ahmed Nasr - Head of Digital Products & BI - ADGM.pdf`
+- `cvs/Ahmed Nasr - Head of IT - EATX.pdf`
+- `cvs/Ahmed Nasr - Head of IT - Talents Tide.pdf`
+- `cvs/Ahmed Nasr - Head of IT Application Support - Arab Banking Corporation.pdf`
+- `cvs/Ahmed Nasr - Head of PMO & Strategic Operations - Talent Connect Group.pdf`
+- `cvs/Ahmed Nasr - Head of PMO - Involved Solutions.pdf`
+- `cvs/Ahmed Nasr - Head of PMO - Mark Williams Recruitment.pdf`
+- `cvs/Ahmed Nasr - Head of Payments - Discovered MENA.pdf`
+- `cvs/Ahmed Nasr - Head of Product - Circles.pdf`
+- `cvs/Ahmed Nasr - Head of Product, Dubai Mall Online - noon.pdf`
+- `cvs/Ahmed Nasr - Head of Project Excellence - Fugro.pdf`
+- `cvs/Ahmed Nasr - Head of Solutions and Delivery AI - Leru Partners.pdf`
+- `cvs/Ahmed Nasr - Head of Strategy Corporate Development and Transformation - Richmond Villages.pdf`
+- `cvs/Ahmed Nasr - Head of Strategy and Transformation - Foreground.pdf`
+- `cvs/Ahmed Nasr - Head of Tech - Confidential.pdf`
+- `cvs/Ahmed Nasr - Head of Technology Transfer Office - Dubai Health.pdf`
+- `cvs/Ahmed Nasr - Head of Transformation - Cigna Healthcare.pdf`
+- `cvs/Ahmed Nasr - Head of Transformation - Cigna.pdf`
+- `cvs/Ahmed Nasr - Head of Transformation - Northridge Bank Oman.pdf`
+- `cvs/Ahmed Nasr - Head of Transformation - Northridge Recruitment.pdf`
+- `cvs/Ahmed Nasr - Head of Transformation and Strategy - Involved Solutions.pdf`
+- `cvs/Ahmed Nasr - IT Director - Cherry.pdf`
+- `cvs/Ahmed Nasr - IT Director - Legend Holding Group.pdf`
+- `cvs/Ahmed Nasr - IT Director - Mackenzie Jones.pdf`
+- `cvs/Ahmed Nasr - IT Director Digital Transformation - MadForPeople.pdf`
+- `cvs/Ahmed Nasr - IT PMO Lead - Faze 3 Consulting.pdf`
+- `cvs/Ahmed Nasr - PMO Director Salesforce Transformation.pdf`
+- `cvs/Ahmed Nasr - Principal Digital Delivery - Cygnify.pdf`
+- `cvs/Ahmed Nasr - Principal Digital Delivery and Transformation - Whiteshield.pdf`
+- `cvs/Ahmed Nasr - Principal Technical Program Manager - AWS.pdf`
+- `cvs/Ahmed Nasr - Products Portfolio Lead - Starlink Qatar.pdf`
+- `cvs/Ahmed Nasr - Program Manager - LR Consulting.pdf`
+- `cvs/Ahmed Nasr - Programme Delivery Director - Rackspace Technology.pdf`
+- `cvs/Ahmed Nasr - Programme Director Cloud ERP - Emirates.pdf`
+- `cvs/Ahmed Nasr - Project Manager Officer (PMO) - Panamari Holding.pdf`
+- `cvs/Ahmed Nasr - Senior AI PM - Delphi Consulting.pdf`
+- `cvs/Ahmed Nasr - Senior Director Shared Services - Confidential Riyadh.pdf`
+- `cvs/Ahmed Nasr - Senior Director Technology - Confidential UAE.pdf`
+- `cvs/Ahmed Nasr - Senior Manager Digital Solutions - edari.pdf`
+- `cvs/Ahmed Nasr - Senior Manager Strategy and Execution B2B - Dubai Holding.pdf`
+- `cvs/Ahmed Nasr - Senior Manager, Virtual & Digital Assets - Commercial Bank of Dubai.pdf`
+- `cvs/Ahmed Nasr - Senior PMO Director IT Delivery.pdf`
+- `cvs/Ahmed Nasr - Senior Product Director - Qashio.pdf`
+- `cvs/Ahmed Nasr - Senior Product Manager AI Healthcare - Nuxera.pdf`
+- `cvs/Ahmed Nasr - Senior Program Manager - Salt.pdf`
+- `cvs/Ahmed Nasr - Senior Program Manager Digital Transformation - HybridGlobal.pdf`
+- `cvs/Ahmed Nasr - Senior Project Manager - Dubai Dept of Economy & Tourism.pdf`
+- `cvs/Ahmed Nasr - Senior Project Manager - Dubai Holding.pdf`
+- `cvs/Ahmed Nasr - Senior Project Manager Hybrid Cloud Infrastructure - Marc Ellis.pdf`
+- `cvs/Ahmed Nasr - Senior Technical Service Delivery Manager - HybridGlobal SDM.pdf`
+- `cvs/Ahmed Nasr - Sr Manager Program Management - Anduril Industries.pdf`
+- `cvs/Ahmed Nasr - Sr. Manager, Program Management UAE - Anduril Industries.pdf`
+- `cvs/Ahmed Nasr - Strategy & KPI Expert - RapidData.pdf`
+- `cvs/Ahmed Nasr - Strategy Director - Agay Barho.pdf`
+- `cvs/Ahmed Nasr - Strategy and PMO Director Healthcare Transformation - Confidential Riyadh.pdf`
+- `cvs/Ahmed Nasr - Technical Delivery Leader - Staq.pdf`
+- `cvs/Ahmed Nasr - Technical Delivery Manager - Visionary Tech Services.pdf`
+- `cvs/Ahmed Nasr - Technical Program Manager Health AI - Microsoft.pdf`
+- `cvs/Ahmed Nasr - VP AI & Technology - Michael Page.pdf`
+- `cvs/Ahmed Nasr - VP AI Delivery - Teleperformance.pdf`
+- `cvs/Ahmed Nasr - VP Data Services - Carter Murray.pdf`
+- `cvs/Ahmed Nasr - VP Digital Quality Control - QNB Group.pdf`
+- `cvs/Ahmed Nasr - VP Enterprise PMO - Al Ramz.pdf`
+- `cvs/Ahmed Nasr - VP Product Commercialization Digital Assets - Mastercard.pdf`
+- `cvs/Ahmed Nasr - VP Strategy Performance Management - King Salman Airport.pdf`
+- `cvs/Ahmed Nasr - VP Strategy and Performance Management - KSIA.pdf`
+- `cvs/Ahmed Nasr - VP Transformation, Corporate & Investment Banking - First Abu Dhabi Bank FAB.pdf`
+- `cvs/Ahmed Nasr - VP of Data and Performance - Snoonu.pdf`
+- `cvs/Ahmed Nasr - Vice President AI Platform Owner - RAKBANK.pdf`
+- `cvs/Ahmed_Nasr_Group_IT_Director_Bahrain.pdf`
+- `cvs/Ahmed Nasr - Associate Director Product Management FSI - Publicis Sapient.html`
+- `cvs/Ahmed Nasr - Business Process & Internal Control Director.html`
+- `cvs/Ahmed Nasr - CAIDO Business Manager - Apex Group.html`
+- `cvs/Ahmed Nasr - Chief IT Projects Management - Dubai Careers.html`
+- `cvs/Ahmed Nasr - Chief of Staff - LEFTFIELD SOLUTIONS.html`
+- `cvs/Ahmed Nasr - Co-Founder Venture Lead - GIL Venture Studio.html`
+- `cvs/Ahmed Nasr - Data Engineering Project Lead - Riyadh Bank.html`
+- `cvs/Ahmed Nasr - Digital Transformation Director - Experts Group International.html`
+- `cvs/Ahmed Nasr - Director - Digital Transformation & IT - Dubai Holding Community Management.html`
+- `cvs/Ahmed Nasr - Director Government Programs - Abu Dhabi.html`
+- `cvs/Ahmed Nasr - Director of Operations - Ranger AI.html`
+- `cvs/Ahmed Nasr - Head of IT Application Support - Arab Banking Corporation.html`
+- `cvs/Ahmed Nasr - IT PMO Lead - Faze 3 Consulting.html`
+- `cvs/Ahmed Nasr - PMO Director Salesforce Transformation.html`
+- `cvs/Ahmed Nasr - Project Manager Officer (PMO) - Panamari Holding.html`
+- `cvs/Ahmed Nasr - Senior PMO Director IT Delivery.html`
+- `cvs/Ahmed Nasr - Technical Delivery Leader - Staq.html`
+- `cvs/Ahmed Nasr - VP Digital Quality Control - QNB Group.html`
+- `cvs/Ahmed_Nasr_Senior_Director_Technology.html`
+- `cvs/cv-ahmed-nasr-director-digital-innovation-ai-emdad.html`
+- `cvs/cv-ahmed-nasr-director-pm-dubai-holding.html`
+- `cvs/cv-ahmed-nasr-dubai-holding-strategy-execution.html`
+- `cvs/cv-ahmed-nasr-exec-director-dt-cloud-confidential-gov.html`
+- `cvs/cv-ahmed-nasr-faithful-executive.html`
+- `cvs/cv-ahmed-nasr-field-cto-emea-edb.html`
+- `cvs/cv-ahmed-nasr-head-ai-advisory-emagine.html`
+- `cvs/cv-ahmed-nasr-legend-holding-it-director-v2.html`
+- `cvs/cv-ahmed-nasr-legend-holding-it-director-v3.html`
+- `cvs/cv-ahmed-nasr-legend-holding-it-director.html`
+- `cvs/cv-ahmed-nasr-rakbank-vp-ai-platform-owner.html`
+- `cvs/cv-ahmed-nasr-rapiddata-strategy.html`
+- `cvs/cv-ahmed-nasr-salt-senior-pm.html`
+- `cvs/cv-ahmed-nasr-sr-manager-pm-anduril.html`
+- `cvs/cv-ahmed-nasr-sr-pm-ai-healthcare-nuxera.html`
+- `cvs/cv-ahmed-nasr-strategy-director.html`
+- `cvs/cv-eatx-head-of-it.html`
+- `cvs/cv-starlink-qatar-portfolio-lead.html`
+- `cvs/cv1-alfuttaim.html`
+- `cvs/cv1-govt-exec-dir.html`
+- `cvs/cv2-disrupt.html`
+- `cvs/cv2-snoonu-vp-data.html`
+- `cvs/cv3-aws.html`
+- `cvs/in-progress/Ahmed-Nasr-VP-AI-Technology-Michael-Page.md`
+- `cvs/in-progress/Ahmed-Nasr-VP-Strategy-Performance-KSIA.md`
+
+## LinkedIn & Content
+- `coordination/content-calendar.json` - Content scheduling
+- `linkedin/drafts/` - 5 files
+- `linkedin/posts/` - 63 files
+- `linkedin/engagement/` - 29 files
+
+## Coordination
+- `coordination/content-calendar.json`
+- `coordination/dashboard.json`
+- `coordination/outreach-queue.json`
+- `coordination/pipeline.json`
+
+## Scripts (by function)
+### CV & Job Search
+- `scripts/ats-scorer.py`
+- `scripts/auto-cv-builder.py`
+- `scripts/auto-dossier.py`
+- `scripts/batch-cv-processor.md`
+- `scripts/cv-autoresearch.md`
+- `scripts/cv-request-handler.py`
+- `scripts/handoff-sync-check.sh`
+- `scripts/job-radar-parse.mjs`
+- `scripts/job-radar.py.bak`
+- `scripts/linkedin-gulf-jobs-cron-v2.1.md`
+- `scripts/linkedin-gulf-jobs-cron-v2.md`
+- `scripts/linkedin-gulf-jobs.py`
+- `scripts/merged-job-radar-prompt.md`
+- `scripts/recruiter-dossier.sh`
+- `scripts/recruiter-dossier.sh`
+### LinkedIn & Content
+- `scripts/linkedin-add-to-sheet.py`
+- `scripts/linkedin-auto-poster.py`
+- `scripts/linkedin-content-intelligence.md`
+- `scripts/linkedin-content-intelligence.md`
+- `scripts/linkedin-cookie-setup.py`
+- `scripts/linkedin-engagement-radar.py`
+- `scripts/linkedin-gulf-jobs-cron-v2.1.md`
+- `scripts/linkedin-gulf-jobs-cron-v2.md`
+- `scripts/linkedin-gulf-jobs.py`
+- `scripts/linkedin-jd-fetcher.py`
+- `scripts/linkedin-post-and-track.md`
+- `scripts/linkedin-posts-generator.py`
+- `scripts/screenshot-linkedin.js`
+- `scripts/x-likes-scraper.py`
+- `scripts/x-radar.sh`
+### Infrastructure & Monitoring
+- `scripts/check-openclaw-update.sh`
+- `scripts/context-watchdog.sh`
+- `scripts/cron-watchdog-prompt.md`
+- `scripts/cron-watchdog-v2.sh`
+- `scripts/daily-backup.sh`
+- `scripts/daily-snapshot.sh`
+- `scripts/disk-health-check.sh`
+- `scripts/disk-health-check.sh`
+- `scripts/disk-health-guard.sh`
+- `scripts/disk-health-guard.sh`
+- `scripts/gateway-ping.sh`
+- `scripts/gateway-watchdog.sh`
+- `scripts/gateway-watchdog.sh`
+- `scripts/key-health-check.sh`
+- `scripts/openclaw-watchdog.sh`
+- `scripts/openclaw-watchdog.sh`
+- `scripts/platform_health.py`
+- `scripts/retention-backups.sh`
+- `scripts/retention-backups.sh`
+- `scripts/retention-caches.sh`
+- `scripts/retention-snapshots.sh`
+- `scripts/retention-snapshots.sh`
+- `scripts/snapshot-prune.sh`
+- `scripts/token-health-check.sh`
+### Briefings & Intelligence
+- `scripts/briefing-direct.sh`
+- `scripts/competitive-analysis.sh`
+- `scripts/daily-briefing-generator.py`
+- `scripts/engagement-radar-prompt.md`
+- `scripts/firehose-monitor.py`
+- `scripts/github-radar-prompt.md`
+- `scripts/github-radar.sh`
+- `scripts/insights-add-table.py`
+- `scripts/insights-bank-clean.py`
+- `scripts/insights-bank-enhance.py`
+- `scripts/insights-bank-gdoc.py`
+- `scripts/insights-bank-restructured.py`
+- `scripts/insights-style-table.py`
+- `scripts/job-radar-parse.mjs`
+- `scripts/job-radar.py.bak`
+- `scripts/linkedin-content-intelligence.md`
+- `scripts/linkedin-engagement-radar.py`
+- `scripts/merged-job-radar-prompt.md`
+- `scripts/morning-brief.sh`
+- `scripts/morning-brief.sh`
+- `scripts/morning-briefing-orchestrator.py`
+- `scripts/morning-briefing-orchestrator.py`
+- `scripts/morning-briefing-orchestrator.py.bak`
+- `scripts/morning-briefing-orchestrator.py.bak`
+- `scripts/researcher-intelligence-standard.md`
+- `scripts/x-radar.sh`
+- `scripts/youtube-intel.py`
+- `scripts/youtube-intelligence.js`
+### Gmail & Notifications
+- `scripts/gmail-check.sh`
+- `scripts/gmail-notify.sh`
+- `scripts/gmail-scan.js`
+- `scripts/notion_client.py`
+- `scripts/notion_sync.py`
+- `scripts/telegram_topics.py`
+
+## Skills
+- `skills/agent-content-pipeline/`
+- `skills/ai-meeting-notes/`
+- `skills/ai-pdf-builder/`
+- `skills/ai-research-scraper/`
+- `skills/anthropic-skill-creator/`
+- `skills/apify/`
+- `skills/brave-search/`
+- `skills/chief-of-staff/`
+- `skills/clawback/`
+- `skills/content-claw/`
+- `skills/diagram-generator/`
+- `skills/doc/`
+- `skills/dream-cycle/`
+- `skills/executive-cv-builder/`
+- `skills/gh-address-comments/`
+- `skills/gh-fix-ci/`
+- `skills/github/`
+- `skills/gog-calendar/`
+- `skills/google-analytics/`
+- `skills/himalaya/`
+- `skills/hubspot/`
+- `skills/humanizer/`
+- `skills/image/`
+- `skills/interview-designer/`
+- `skills/job-search-mcp/`
+- `skills/last30days-lite/`
+- `skills/linkedin-comment-poster/`
+- `skills/linkedin-comment-radar/`
+- `skills/linkedin-gulf-jobs/`
+- `skills/linkedin-writer/`
+- `skills/linkedin/`
+- `skills/model-picker/`
+- `skills/nasr-meta/`
+- `skills/news-summary/`
+- `skills/note-processor/`
+- `skills/openclaw-backup/`
+- `skills/playwright-interactive/`
+- `skills/reactive-patterns/`
+- `skills/reminder/`
+- `skills/resume-optimizer/`
+- `skills/security-best-practices/`
+- `skills/self-improving-agent/`
+- `skills/skill-autoresearch/`
+- `skills/slides/`
+- `skills/spreadsheet/`
+- `skills/summarize/`
+- `skills/tavily-search/`
+- `skills/todoist/`
+- `skills/transcribe/`
+- `skills/video-agent/`
+- `skills/visual-explainer/`
+- `skills/workspace-index/`
+### Cron Skills
+- `skills/cron/advisory-board/`
+- `skills/cron/calendar-prefetch/`
+- `skills/cron/codex-reminder/`
+- `skills/cron/content-creator-prebuild/`
+- `skills/cron/content-creator-review/`
+- `skills/cron/content-intelligence/`
+- `skills/cron/cron-health-monitor/`
+- `skills/cron/email-check/`
+- `skills/cron/firehose-intelligence/`
+- `skills/cron/gateway-health/`
+- `skills/cron/github-discovery/`
+- `skills/cron/google-jobs-prefetch/`
+- `skills/cron/infra-monitor/`
+- `skills/cron/job-hunter-review/`
+- `skills/cron/job-scanner/`
+- `skills/cron/linkedin-daily-post/`
+- `skills/cron/linkedin-monthly-prep/`
+- `skills/cron/linkedin-shadowbroker/`
+- `skills/cron/meeting-prep/`
+- `skills/cron/memory-hygiene/`
+- `skills/cron/memory-index/`
+- `skills/cron/minimax-renewal/`
+- `skills/cron/monthly-cache/`
+- `skills/cron/monthly-maintenance/`
+- `skills/cron/morning-briefing/`
+- `skills/cron/notification-digest/`
+- `skills/cron/offpeak-reminder/`
+- `skills/cron/openclaw-auto-update/`
+- `skills/cron/scanner-test/`
+- `skills/cron/sie-360/`
+- `skills/cron/sie-skill-audit/`
+- `skills/cron/sie-weekly-report/`
+- `skills/cron/stock-review/`
+- `skills/cron/weekly-job-search/`
+- `skills/cron/weekly-pipeline-archive/`
+
+## Infrastructure
+- `mission-control/` - Mission Control dashboard app
+- `infrastructure/` - systemd configs, credential templates
+- `logs/` - Watchdog and system logs
+
+---
+_Generated: 2026-03-19T04:32:18Z_

@@ -47,15 +47,10 @@
 - Switch back to MiniMax after completing expensive tasks
 
 ### File Naming Convention
-- Format: `Ahmed Nasr - {Title} - {Company}.pdf/html`
-- No underscores, use spaces and dashes
-- If company confidential: `Ahmed Nasr - {Title}.pdf`
+See MEMORY.md "CV Design Rules" section (single source of truth).
 
-### ATS Compliance Checklist
-- Single column layout only
-- No tables, multi-column, images, special bullets
-- Standard headers: Professional Summary, Experience, Education, Skills, Certifications
-- AVR bullet pattern: Action + Value + Result
+### ATS Compliance
+Full ATS rules: See MEMORY.md "CV Design Rules" section.
 
 ## LinkedIn Posting (via Composio)
 
@@ -147,9 +142,9 @@
 - Notify when switching back to default
 - Opus for CV creation only
 
-### File Naming Issues
-- Check MEMORY.md for filename rules
-- Master CV data has exact titles and dates
+### CV Files
+- Filename rules: See MEMORY.md "CV Design Rules"
+- Master CV data: `memory/master-cv-data.md`
 - Never fabricate roles or achievements
 
 ## Environment Setup

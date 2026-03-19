@@ -77,26 +77,8 @@ Every bullet: **Action Verb + Value/What + Result/Metric**
 
 ---
 
-## Task Board Rule (Non-Negotiable)
-
-**Every task MUST be logged to the Mission Control Task Board BEFORE work starts.**
-- No exceptions. No model exceptions. Applies to ALL models, ALL agents, ALL sessions.
-- Use `POST http://localhost:3001/api/tasks/agent` with agent name, title, description
-- Status starts as "In Progress", update to "QA" or "Completed" when done
-- This includes: sub-agent spawns, cron jobs, manual work, code changes, research, content
-- If it's work, it's on the board. Period.
-
----
-
-## Model Strategy
-
-| Task | Model | Notes |
-|------|-------|-------|
-| Default / daily | MiniMax-M2.1 | Free tier |
-| Background / cron | MiniMax-M2.1 | Free tier |
-| CV creation/review | Claude Opus 4.5 | Requires approval |
-
-**Rule:** Always ask before switching to paid models. Notify after any switch.
+**Task Board Rule:** See AGENTS.md (single source of truth).
+**Model Strategy:** See TOOLS.md (single source of truth).
 
 ---
 
@@ -170,9 +152,9 @@ Format:
 - **Timezone:** Cairo (Africa/Cairo, UTC+2)
 - **Relocation:** Open to relocating to Jeddah, Saudi Arabia (confirmed Feb 18, 2026)
 - **LinkedIn posts:** Always end with question/CTA for engagement
-- **LinkedIn posting:** Via Composio tools (NOT cookies, NOT CLI). Person URN: `urn:li:person:mm8EyA56mj`. See TOOLS.md "LinkedIn Posting" section for full details.
-- **LinkedIn bold text:** Convert `**bold**` to Unicode Mathematical Bold (LinkedIn ignores markdown). Script: `scripts/linkedin-auto-poster.py`
-- **LinkedIn auto-poster:** Cron at 9:30 AM Cairo (Sun-Thu), reads from Notion Content Calendar, posts via Composio. SKILL.md at `skills/cron/linkedin-daily-post/SKILL.md`
+- **LinkedIn posting:** See TOOLS.md "LinkedIn Posting" section for full technical details.
+- **LinkedIn daily post:** Auto-post allowed (9:30 AM cron, no approval needed)
+- **LinkedIn comments:** NEVER post without Ahmed's explicit approval. Always draft and present for review first. No exceptions.
 - **Backups:** Keep last 7, daily at 3 AM Cairo
 - **Gmail check:** Daily at 8 AM Cairo
 - **Formatting:** Never use em dashes (—) anywhere. Use hyphens (-) or commas instead.
