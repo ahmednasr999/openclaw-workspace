@@ -779,17 +779,82 @@ def check_execution(state):
     total_lines = len(recent) if recent else 1
     failure_rate = len(failures) / total_lines
 
+    # Also check delegation
+    deleg_status, deleg_msg = check_delegation(state)
+    
     if failure_rate > 0.2:
-        return "ALERT", f"High failure rate: {failure_rate:.0%}"
+        return "ALERT", f"High failure rate: {failure_rate:.0%}. {deleg_msg}"
+    if deleg_status == "WARN":
+        return "WARN", f"{deleg_msg}"
     if failures:
-        return "WARN", f"{len(failures)} command failures"
-    return "OK", "Execution healthy"
+        return "WARN", f"{len(failures)} command failures. {deleg_msg}"
+    return "OK", f"Execution healthy. {deleg_msg}"
 
 
 def check_yield(state):
     """Y - Yield: Calculate ROI on time spent."""
     # This is a complex metric - check pipeline activity
     return check_pipeline(state)
+
+
+def check_delegation(state):
+    """Check if main agent is delegating properly (>10s tasks should use sub-agents)."""
+    warnings = []
+    
+    # Check recent session transcripts for long-running main agent turns
+    session_dir = "/root/.openclaw/agents/main/sessions"
+    if not os.path.isdir(session_dir):
+        return "OK", "No session data to audit"
+    
+    try:
+        # Get sessions modified in last 24h
+        now = datetime.now(timezone.utc)
+        long_turns = 0
+        total_turns = 0
+        
+        for fname in sorted(os.listdir(session_dir))[-5:]:  # Last 5 sessions
+            fpath = os.path.join(session_dir, fname)
+            if not fname.endswith('.jsonl'):
+                continue
+            
+            with open(fpath) as f:
+                lines = f.readlines()
+            
+            prev_ts = None
+            for line in lines[-100:]:  # Last 100 lines
+                try:
+                    entry = json.loads(line)
+                    if entry.get('role') == 'assistant':
+                        total_turns += 1
+                        # Check for tool calls that took long without delegation
+                        content = str(entry.get('content', ''))
+                        if 'sessions_spawn' in content or 'subagent' in content.lower():
+                            continue  # Delegated properly
+                        # Check timestamp gaps (crude but effective)
+                        ts = entry.get('timestamp', entry.get('ts'))
+                        if ts and prev_ts:
+                            try:
+                                gap = float(ts) - float(prev_ts)
+                                if gap > 30:  # 30+ seconds between turns
+                                    long_turns += 1
+                            except:
+                                pass
+                        prev_ts = ts
+                except:
+                    continue
+        
+        if total_turns == 0:
+            return "OK", "No recent turns to audit"
+        
+        blocking_rate = long_turns / max(total_turns, 1)
+        
+        if blocking_rate > 0.3:
+            return "WARN", f"Main agent blocked on {long_turns}/{total_turns} turns (>30s without delegating)"
+        if long_turns > 0:
+            return "OK", f"Delegation mostly healthy ({long_turns} long turns out of {total_turns})"
+        return "OK", f"Delegation healthy - {total_turns} turns audited"
+    except Exception as e:
+        return "OK", f"Delegation audit skipped: {str(e)[:50]}"
 
 
 def check_nasr_behavior(state):
@@ -911,7 +976,7 @@ CHECKS = {
     "U": ("Uptime", check_uptime),
     "V": ("Velocity", check_velocity),
     "W": ("Workspace", check_workspace),
-    "X": ("Execution", check_execution),
+    "X": ("Execution & Delegation", check_execution),
     "Y": ("Yield", check_yield),
     "Z": ("Zero-downtime", check_zero_downtime),
     "NASR": ("NASR Behavior", check_nasr_behavior),

@@ -3360,3 +3360,120 @@
 - VP Digital Transformation in United Arab Emirates: 1 jobs
 - Head of Transformation in United Arab Emirates: 18 jobs
 - Director Digital Transformation in United Arab Emirates: 11 jobs
+- Director of Innovation in United Arab Emirates: 17 jobs
+- Head of Digital Transformation in United Arab Emirates: 12 jobs
+- VP Operations in United Arab Emirates: 7 jobs
+- VP Digital Transformation in Saudi Arabia: 0 jobs
+- Senior Director Digital Transformation in United Arab Emirates: 5 jobs
+- Director Digital Transformation in Saudi Arabia: 3 jobs
+- Head of Digital Transformation in Saudi Arabia: 0 jobs
+- Senior Director Digital Transformation in Saudi Arabia: 1 jobs
+- Chief Digital Officer in United Arab Emirates: 9 jobs
+- Chief Technology Officer in United Arab Emirates: 16 jobs
+- Chief Digital Officer in Saudi Arabia: 3 jobs
+- Chief Information Officer in United Arab Emirates: 11 jobs
+- Head of Technology in United Arab Emirates: 20 jobs
+- Chief Technology Officer in Saudi Arabia: 9 jobs
+- VP Technology in United Arab Emirates: 8 jobs
+- Chief Information Officer in Saudi Arabia: 8 jobs
+- Director of Technology in United Arab Emirates: 20 jobs
+- Head of IT in United Arab Emirates: 20 jobs
+- Head of Technology in Saudi Arabia: 8 jobs
+- VP Technology in Saudi Arabia: 1 jobs
+- VP Engineering in United Arab Emirates: 8 jobs
+- Director of Technology in Saudi Arabia: 15 jobs
+- Director of Engineering in United Arab Emirates: 20 jobs
+- Chief Operating Officer in United Arab Emirates: 10 jobs
+- Head of IT in Saudi Arabia: 11 jobs
+- VP Engineering in Saudi Arabia: 1 jobs
+- Chief Strategy Officer in United Arab Emirates: 14 jobs
+- Director of Engineering in Saudi Arabia: 20 jobs
+- Chief Operating Officer in Saudi Arabia: 10 jobs
+- Chief Product Officer in United Arab Emirates: 7 jobs
+- Chief Strategy Officer in Saudi Arabia: 2 jobs
+- PMO Director in United Arab Emirates: 6 jobs
+- Program Director in United Arab Emirates: 20 jobs
+- Chief Product Officer in Saudi Arabia: 2 jobs
+- Head of PMO in United Arab Emirates: 10 jobs
+- Head of Transformation in United Arab Emirates: 18 jobs
+- PMO Director in Saudi Arabia: 4 jobs
+- Program Director in Saudi Arabia: 20 jobs
+- Director of Innovation in United Arab Emirates: 17 jobs
+- Head of PMO in Saudi Arabia: 7 jobs
+- VP Operations in United Arab Emirates: 7 jobs
+- VP Digital Transformation in Saudi Arabia: 0 jobs
+- Head of Transformation in Saudi Arabia: 4 jobs
+
+## Run: 2026-03-19 04:29:07 (v3.0)
+- VP Digital Transformation in United Arab Emirates: 1 jobs
+- Director Digital Transformation in United Arab Emirates: 11 jobs
+- Head of Digital Transformation in United Arab Emirates: 12 jobs
+- Senior Director Digital Transformation in United Arab Emirates: 5 jobs
+- Chief Digital Officer in United Arab Emirates: 9 jobs
+- Chief Technology Officer in United Arab Emirates: 16 jobs
+- Chief Information Officer in United Arab Emirates: 11 jobs
+- Head of Technology in United Arab Emirates: 20 jobs
+- VP Technology in United Arab Emirates: 8 jobs
+- Director of Technology in United Arab Emirates: 20 jobs
+- Head of IT in United Arab Emirates: 20 jobs
+- VP Engineering in United Arab Emirates: 8 jobs
+- Director of Engineering in United Arab Emirates: 20 jobs
+- Chief Operating Officer in United Arab Emirates: 10 jobs
+- Chief Strategy Officer in United Arab Emirates: 14 jobs
+- Chief Product Officer in United Arab Emirates: 7 jobs
+- PMO Director in United Arab Emirates: 6 jobs
+- Program Director in United Arab Emirates: 20 jobs
+- Head of PMO in United Arab Emirates: 10 jobs
+- Head of Transformation in United Arab Emirates: 18 jobs
+- Director of Innovation in United Arab Emirates: 17 jobs
+- VP Operations in United Arab Emirates: 7 jobs
+- VP Digital Transformation in Saudi Arabia: 0 jobs
+- Director Digital Transformation in Saudi Arabia: 3 jobs
+- Head of Digital Transformation in Saudi Arabia: 0 jobs
+- Senior Director Digital Transformation in Saudi Arabia: 1 jobs
+- Chief Digital Officer in Saudi Arabia: 3 jobs
+- Chief Technology Officer in Saudi Arabia: 9 jobs
+- Chief Information Officer in Saudi Arabia: 8 jobs
+
+## Run: 2026-03-19 04:33:05 (v3.0)
+- VP Digital Transformation in United Arab Emirates: 1 jobs
+- Head of Technology in Saudi Arabia: 8 jobs
+- VP Technology in Saudi Arabia: 1 jobs
+- Director Digital Transformation in United Arab Emirates: 11 jobs
+- Director of Technology in Saudi Arabia: 15 jobs
+- Head of Digital Transformation in United Arab Emirates: 12 jobs
+- Head of IT in Saudi Arabia: 11 jobs
+
+## Run: 2026-03-19 04:33:45 (v3.0)
+- Senior Director Digital Transformation in United Arab Emirates: 5 jobs
+- VP Engineering in Saudi Arabia: 1 jobs
+- VP Digital Transformation in United Arab Emirates: 1 jobs
+- Director of Engineering in Saudi Arabia: 20 jobs
+- Chief Digital Officer in United Arab Emirates: 9 jobs
+- Chief Operating Officer in Saudi Arabia: 10 jobs
+- Chief Technology Officer in United Arab Emirates: 16 jobs
+- Director Digital Transformation in United Arab Emirates: 11 jobs
+- Chief Strategy Officer in Saudi Arabia: 2 jobs
+- Head of Digital Transformation in United Arab Emirates: 12 jobs
+- Chief Product Officer in Saudi Arabia: 2 jobs
+- PMO Director in Saudi Arabia: 4 jobs
+
+## Run: 2026-03-19 04:34:32 (v3.0)
+- Program Director in Saudi Arabia: 20 jobs
+- VP Digital Transformation in United Arab Emirates: 1 jobs
+- Head of PMO in Saudi Arabia: 7 jobs
+- Director Digital Transformation in United Arab Emirates: 11 jobs
+- Head of Transformation in Saudi Arabia: 4 jobs
+- Head of Digital Transformation in United Arab Emirates: 12 jobs
+- Director of Innovation in Saudi Arabia: 15 jobs
+- Senior Director Digital Transformation in United Arab Emirates: 5 jobs
+- VP Operations in Saudi Arabia: 3 jobs
+- Chief Digital Officer in United Arab Emirates: 9 jobs
+- VP Digital Transformation in Qatar: 0 jobs
+- Director Digital Transformation in Qatar: 0 jobs
+- Head of Digital Transformation in Qatar: 1 jobs
+- Chief Technology Officer in United Arab Emirates: 16 jobs
+- Senior Director Digital Transformation in Qatar: 0 jobs
+- Chief Information Officer in United Arab Emirates: 11 jobs
+- Chief Digital Officer in Qatar: 1 jobs
+- Head of Technology in United Arab Emirates: 20 jobs
