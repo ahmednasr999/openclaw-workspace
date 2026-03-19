@@ -14,7 +14,7 @@ Searches Google Jobs for executive roles matching Ahmed's profile using Composio
 2. Use `COMPOSIO_SEARCH_TOOLS` → `BROWSER_TOOL_CREATE_TASK` → `BROWSER_TOOL_WATCH_TASK`
 3. Parse the output text into structured JSON
 4. Save to `/tmp/google-jobs-YYYY-MM-DD.json`
-5. Report count to Telegram
+5. Report summary (count of results found, top roles) - delivery handled automatically by the cron system
 
 ## Search Queries
 - `director digital transformation UAE OR Saudi OR Qatar` (udm=8, gl=ae)
