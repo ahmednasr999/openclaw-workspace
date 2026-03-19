@@ -41,13 +41,13 @@ def call(endpoint, params=None):
 
 # --- YouTube ---
 
-def youtube_transcript(video_id):
-    """Get YouTube video transcript. 1 credit."""
-    return call("youtube/transcript", {"videoId": video_id})
+def youtube_transcript(video_id_or_url):
+    """Get YouTube video transcript. 1 credit. NOTE: Endpoint may be unstable."""
+    return call("youtube/transcript", {"url": video_id_or_url})
 
-def youtube_video_details(video_id):
+def youtube_video_details(video_id_or_url):
     """Get YouTube video details. 1 credit."""
-    return call("youtube/videoDetails", {"videoId": video_id})
+    return call("youtube/video", {"url": video_id_or_url})
 
 def youtube_search(query, num_results=10):
     """Search YouTube. 1 credit."""
@@ -59,9 +59,11 @@ def youtube_channel_videos(channel_id, num_results=10):
 
 # --- Twitter/X ---
 
-def twitter_tweet(tweet_id):
-    """Get tweet details. 1 credit."""
-    return call("twitter/tweetDetails", {"tweetId": tweet_id})
+def twitter_tweet(url_or_id):
+    """Get tweet details. 1 credit. Pass full URL or tweet ID."""
+    if url_or_id.startswith("http"):
+        return call("twitter/tweet", {"url": url_or_id})
+    return call("twitter/tweet", {"url": f"https://x.com/i/status/{url_or_id}"})
 
 def twitter_transcript(tweet_id):
     """Get transcript from a Twitter video. 1 credit."""
