@@ -3328,3 +3328,35 @@
 - PMO Director in Saudi Arabia: 3 jobs
 - PMO Director in Bahrain: 0 jobs
 - Program Director in Bahrain: 1 jobs
+
+## Run: 2026-03-19 04:20:14 (v3.0)
+- VP Digital Transformation in United Arab Emirates: 1 jobs
+- Director Digital Transformation in United Arab Emirates: 11 jobs
+- Head of Digital Transformation in United Arab Emirates: 12 jobs
+- Senior Director Digital Transformation in United Arab Emirates: 5 jobs
+- Chief Digital Officer in United Arab Emirates: 9 jobs
+- Chief Technology Officer in United Arab Emirates: 16 jobs
+- Chief Information Officer in United Arab Emirates: 11 jobs
+- Head of Technology in United Arab Emirates: 20 jobs
+- VP Technology in United Arab Emirates: 8 jobs
+- Director of Technology in United Arab Emirates: 20 jobs
+
+## Run: 2026-03-19 04:21:38 (v3.0)
+- Head of IT in United Arab Emirates: 20 jobs
+- VP Digital Transformation in United Arab Emirates: 1 jobs
+- VP Engineering in United Arab Emirates: 8 jobs
+- Director Digital Transformation in United Arab Emirates: 11 jobs
+- Director of Engineering in United Arab Emirates: 20 jobs
+- Chief Operating Officer in United Arab Emirates: 10 jobs
+- Head of Digital Transformation in United Arab Emirates: 12 jobs
+- Chief Strategy Officer in United Arab Emirates: 14 jobs
+- Senior Director Digital Transformation in United Arab Emirates: 5 jobs
+- Chief Product Officer in United Arab Emirates: 7 jobs
+- PMO Director in United Arab Emirates: 6 jobs
+
+## Run: 2026-03-19 04:22:37 (v3.0)
+- Program Director in United Arab Emirates: 20 jobs
+- Head of PMO in United Arab Emirates: 10 jobs
+- VP Digital Transformation in United Arab Emirates: 1 jobs
+- Head of Transformation in United Arab Emirates: 18 jobs
+- Director Digital Transformation in United Arab Emirates: 11 jobs
