@@ -104,3 +104,41 @@ coordination/
 ├── content-calendar.json   # LinkedIn content
 └── outreach-queue.json     # Lead outreach
 ```
+
+## Context Audit Trail
+
+After spawning any sub-agent for a significant task, log a trace to `memory/context-traces/`.
+
+**When to log (mandatory):**
+- CV creation tasks
+- Content posting (LinkedIn, X)
+- Research tasks
+- Any multi-step workflow
+
+**When to skip (optional):**
+- Simple file lookups
+- Quick questions
+- Trivial information retrieval
+
+**Why:** Debugging "why did the agent do X?" requires quick access to what context/files/skills were loaded. See `memory/context-traces/README.md` for details.
+
+---
+
+## Context Loading Rules (All Agents)
+
+**Follow tiered context loading per CONTEXT-TIERS.md:**
+
+| Tier | Files | When |
+|------|-------|------|
+| **L0** | IDENTITY.md, USER.md, SOUL.md, HEARTBEAT.md (if non-empty) | Every session, always |
+| **L1** | AGENTS.md, TOOLS.md, relevant SKILL.md, coordination/*.json | Task-triggered |
+| **L2** | memory/master-cv-data.md, memory/daily-*.md, memory/ats-best-practices.md | On-demand only |
+
+**Rules:**
+1. Start with L0 files (~500-800 tokens)
+2. Identify task type after first user message
+3. Load L1 only when task requires it
+4. Load L2 only when explicitly needed (e.g., CV creation → load master-cv-data.md)
+5. Minimize file switches — complete task before returning to L0 mode
+
+**Anti-pattern:** Don't load all files on session start. Don't keep L1/L2 files in context after task completion.
