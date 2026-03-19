@@ -2,26 +2,27 @@
 description: "Daily GitHub trending scan: auto-scraped repos with relevance filter for OpenClaw, AI agents, automation"
 type: log
 topics: [knowledge, system-ops]
-updated: 2026-03-18
+updated: 2026-03-19
 ---
 
-# GitHub Radar — 2026-03-18
+# GitHub Radar — 2026-03-19
 
 ## Relevant Repos (Auto-Filtered)
 
 - **[NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent)**: Trending AI/automation project
 - **[alibaba/page-agent](https://github.com/alibaba/page-agent)**: Trending AI/automation project
+- **[andrewyng/context-hub](https://github.com/andrewyng/context-hub)**: Trending AI/automation project
 - **[apps/copilot-swe-agent](https://github.com/apps/copilot-swe-agent)**: Trending AI/automation project
+- **[langchain-ai/deepagents](https://github.com/langchain-ai/deepagents)**: Trending AI/automation project
+- **[langflow-ai/openrag](https://github.com/langflow-ai/openrag)**: Trending AI/automation project
 
 ## Top Trending (All)
 
 - 2000/svg
-- 666ghj/BettaFish
 - 666ghj/MiroFish
-- AstrBotDevs/AstrBot
-- EMERTkG/NO7wKw
 - NousResearch/hermes-agent
 - alibaba/page-agent
+- andrewyng/context-hub
 - apps/copilot-pull-request-reviewer
 - apps/copilot-swe-agent
 - apps/dependabot
@@ -30,6 +31,8 @@ updated: 2026-03-18
 - copilot/hovercard
 - enterprise/startups
 - explore/email
+- favicons/favicon
+- features/code-review
 
 ## Filters
 
@@ -38,4 +41,4 @@ updated: 2026-03-18
 **Note:** SIE reads this file and generates integration recommendations.
 
 ---
-*Scanned: Wed Mar 18 03:00:03 EET 2026*
+*Scanned: Thu Mar 19 03:00:03 EET 2026*
