@@ -538,6 +538,37 @@ def get_content_calendar():
     return result
 
 
+def get_engagement_stats():
+    """Get LinkedIn engagement stats from comment tracker."""
+    engagement_dir = os.path.join(os.path.dirname(__file__), "..", "memory", "engagement")
+    tracker_file = os.path.join(engagement_dir, "comment-tracker.json")
+    today_str = datetime.now(cairo).strftime("%Y-%m-%d")
+    radar_file = os.path.join(engagement_dir, f"{today_str}-radar.json")
+    
+    result = {"comments_today": 0, "goal": 5, "streak": 0, "total_comments": 0, "radar_picks": 0}
+    
+    try:
+        if os.path.exists(tracker_file):
+            with open(tracker_file) as f:
+                tracker = json.load(f)
+            today_data = tracker.get("daily_comments", {}).get(today_str, {})
+            result["comments_today"] = today_data.get("count", 0) if isinstance(today_data, dict) else today_data
+            result["streak"] = tracker.get("streak_days", 0)
+            result["total_comments"] = tracker.get("total_comments", 0)
+    except:
+        pass
+    
+    try:
+        if os.path.exists(radar_file):
+            with open(radar_file) as f:
+                radar = json.load(f)
+            result["radar_picks"] = len(radar.get("top_picks", []))
+    except:
+        pass
+    
+    return result
+
+
 def get_system_health():
     """Check system health metrics."""
     health = {"gateway": "?", "disk_pct": "?", "mem_pct": "?", "uptime": "?",
@@ -952,7 +983,20 @@ def create_notion_briefing(date_str, date_display, pipeline, scanner_meta, quali
     if content_cal.get("drafted", 0) <= 1:
         add_bullet(f"⚠️ Only {content_cal['drafted']} draft(s) - pipeline drying up")
     
-    add_bullet(f"🤝 {content_cal.get('posted', 0)} total posts | Goal: 3-5 GCC comments daily")
+    # Engagement stats from comment radar
+    engagement_stats = get_engagement_stats()
+    comments_today = engagement_stats.get("comments_today", 0)
+    comment_goal = engagement_stats.get("goal", 5)
+    streak = engagement_stats.get("streak", 0)
+    radar_picks = engagement_stats.get("radar_picks", 0)
+    
+    progress_bar = "🟢" * min(comments_today, comment_goal) + "⚪" * max(0, comment_goal - comments_today)
+    streak_str = f" | 🔥 {streak}d streak" if streak > 1 else ""
+    
+    add_bullet(f"💬 Comments: {comments_today}/{comment_goal} {progress_bar}{streak_str}")
+    if radar_picks > 0:
+        add_bullet(f"📡 {radar_picks} comment opportunities ready (see Content topic)")
+    add_bullet(f"🤝 {content_cal.get('posted', 0)} total posts")
 
     add_divider()
 
@@ -1217,7 +1261,16 @@ def build_telegram_message(date_display, pipeline, scanner_meta, qualified, bord
         lines.append(f"  📋 Ready to post: \"{content_cal['today_post']['title'][:30]}\"")
     else:
         lines.append(f"  ⚠️ No post scheduled for today")
-    lines.append(f"  Total: {content_cal.get('posted', 0)} posts | Goal: comment on 3-5 GCC posts daily")
+    engagement_tg = get_engagement_stats()
+    cmt_today = engagement_tg.get("comments_today", 0)
+    cmt_goal = engagement_tg.get("goal", 5)
+    cmt_streak = engagement_tg.get("streak", 0)
+    radar_n = engagement_tg.get("radar_picks", 0)
+    streak_tg = f" | 🔥 {cmt_streak}d streak" if cmt_streak > 1 else ""
+    lines.append(f"  💬 Comments: {cmt_today}/{cmt_goal}{streak_tg}")
+    if radar_n > 0:
+        lines.append(f"  📡 {radar_n} comment opportunities ready")
+    lines.append(f"  🤝 {content_cal.get('posted', 0)} total posts")
 
     # Tasks
     if tasks["total_open"] > 0 or tasks["overdue"]:
