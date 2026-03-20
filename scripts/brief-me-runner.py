@@ -107,7 +107,8 @@ def create_briefing():
         url = job.get("url", "")
         reason = job.get("verdict_reason", "")
         
-        parts = [bold(f"[Fit: {fit}/10 | ATS: {ats}/100] ")]
+        source = ", ".join(job.get("sources", [job.get("source", "?")])).upper()
+        parts = [bold(f"[Fit: {fit}/10 | ATS: {ats}/100 | {source}] ")]
         if url:
             parts.append(linked_text(title, url))
         else:
@@ -127,7 +128,8 @@ def create_briefing():
         url = job.get("url", "")
         reason = job.get("verdict_reason", "")
         
-        parts = [bold(f"[Fit: {fit}/10 | ATS: {ats}/100] ")]
+        source = ", ".join(job.get("sources", [job.get("source", "?")])).upper()
+        parts = [bold(f"[Fit: {fit}/10 | ATS: {ats}/100 | {source}] ")]
         if url:
             parts.append(linked_text(title, url))
         else:
