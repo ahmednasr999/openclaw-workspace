@@ -95,7 +95,22 @@ def create_briefing():
     
     # JOBS - ALL with clickable links + ATS
     blocks.append(h2("🔍 New Job Recommendations"))
-    blocks.append(bul(plain(f"{len(submit_jobs)} SUBMIT | {len(review_jobs)} REVIEW")))
+    # Count total scanned from jobs-merged.json
+    merged_path = DATA_DIR / "jobs-merged.json"
+    total_scanned = 0
+    source_counts = {}
+    if merged_path.exists():
+        merged = load_json(merged_path, {})
+        merged_jobs = merged.get("data", merged.get("jobs", []))
+        if isinstance(merged_jobs, list):
+            total_scanned = len(merged_jobs)
+        for mj in (merged_jobs if isinstance(merged_jobs, list) else []):
+            for s in mj.get("sources", [mj.get("source", "?")]):
+                source_counts[s] = source_counts.get(s, 0) + 1
+    source_summary = " | ".join(f"{s.upper()}: {c}" for s, c in sorted(source_counts.items(), key=lambda x: -x[1]))
+    blocks.append(bul(plain(f"Scanned {total_scanned} jobs → {len(submit_jobs)} SUBMIT | {len(review_jobs)} REVIEW")))
+    if source_summary:
+        blocks.append(bul(plain(f"Sources: {source_summary}")))
     
     blocks.append(h3("🟢 SUBMIT — Strong Career Fit"))
     for job in submit_jobs:
