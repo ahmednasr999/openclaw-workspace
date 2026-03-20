@@ -81,3 +81,6 @@
 {"agent": "jobs-review", "run_id": "d03f4d2c", "started": "2026-03-21T01:25:16.920497+02:00", "duration_ms": 218986, "status": "success", "records": 9, "error": null}
 {"agent": "jobs-review", "run_id": "a15a5d05", "started": "2026-03-21T01:33:09.582990+02:00", "duration_ms": 233025, "status": "success", "records": 9, "error": null}
 {"agent": "jobs-review", "run_id": "7ebd2119", "started": "2026-03-21T01:39:40.550893+02:00", "duration_ms": 261747, "status": "success", "records": 9, "error": null}
+{"agent": "jobs-merge", "run_id": "787f5293", "started": "2026-03-21T01:43:46.444218+02:00", "duration_ms": 27942, "status": "success", "records": 270, "error": null}
+{"agent": "jobs-review", "run_id": "492eb122", "started": "2026-03-21T01:46:57.197172+02:00", "duration_ms": 185175, "status": "success", "records": 9, "error": null}
+{"agent": "jobs-review", "run_id": "fbd4d7cd", "started": "2026-03-21T01:49:54.819825+02:00", "duration_ms": 153099, "status": "success", "records": 9, "error": null}
