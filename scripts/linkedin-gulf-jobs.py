@@ -80,8 +80,8 @@ PIPELINE_FILE  = BASE_DIR / "jobs-bank" / "pipeline.md"
 CONFIG_FILE    = Path("/root/.openclaw/openclaw.json")
 
 MAX_JOBS_PER_SEARCH  = 10
-MAX_RUNTIME_SECONDS  = 25 * 60   # 25 minutes (138 searches × 5s delay + backoffs)
-SEARCH_DELAY         = 5         # seconds between searches (increased for 138 combos)
+MAX_RUNTIME_SECONDS  = 20 * 60   # 20 minutes hard cap (well within 30-min cron timeout)
+SEARCH_DELAY         = 3         # seconds between searches (reduced from 5 - fast title filter doesn't need more)
 MIN_JOBS_ALERT       = 10        # alert if fewer total jobs found
 ATS_THRESHOLD        = 65        # minimum ATS score to include in picks
 
@@ -674,9 +674,10 @@ def main():
     _pipeline = load_pipeline()
     print(f"Cache: {len(_notified)} notified | {len(_applied)} applied | {len(_pipeline)} pipeline")
 
-    # Build search plan
+    # Build search plan - priority countries first so we get best results even if time runs out
     searches = []
-    for c in GCC_COUNTRIES:
+    priority_first = PREFERRED_COUNTRIES + [c for c in GCC_COUNTRIES if c not in PREFERRED_COUNTRIES]
+    for c in priority_first:
         for t in ALL_TITLES:
             searches.append((t, c))
 
