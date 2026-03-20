@@ -60,8 +60,8 @@ def create_briefing():
     outreach = _adapters.adapt_outreach(data["outreach"])
     email = _adapters.adapt_email(data["email"])
     
-    submit_jobs = jobs.get("submit", [])
-    review_jobs = jobs.get("review", [])
+    submit_jobs = jobs.get("submit", [])[:10]  # Cap at 10 to stay under Notion's 100-block limit
+    review_jobs = jobs.get("review", [])[:10]
     active = pipe.get("active_count", 0)
     health = content.get("content_health", {})
     pipeline_c = content.get("pipeline", {})

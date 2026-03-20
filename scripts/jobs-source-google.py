@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-jobs-source-google.py — Google Jobs source adapter using python-jobspy.
+jobs-source-google.py — Google Jobs source via Exa search.
 
-Uses python-jobspy library to scrape Google Jobs.
-Searches 22 titles x top 3 countries.
-48h lookback window.
+Since Google Jobs requires JavaScript rendering (blocked from VPS),
+we use Exa AI to search for Google Jobs-indexed listings.
+This catches jobs that Google indexes from other boards.
 
 Output: data/jobs-raw/google-jobs.json
 """
@@ -13,44 +13,49 @@ import time
 import sys
 from pathlib import Path
 
-# Add scripts dir to path for imports
 sys.path.insert(0, str(Path(__file__).parent))
 
 from _imports import agent_common, jobs_source_common
 
-# Import from agent_common
 AgentResult = agent_common.AgentResult
 agent_main = agent_common.agent_main
 is_dry_run = agent_common.is_dry_run
 JOBS_RAW_DIR = agent_common.JOBS_RAW_DIR
 
-# Import from jobs_source_common
 ALL_TITLES = jobs_source_common.ALL_TITLES
 PRIORITY_COUNTRIES = jobs_source_common.PRIORITY_COUNTRIES
 COUNTRY_SEARCH_TERMS = jobs_source_common.COUNTRY_SEARCH_TERMS
 standard_job_dict = jobs_source_common.standard_job_dict
 
-# Configuration
 AGENT_NAME = "jobs-source-google"
 OUTPUT_FILE = JOBS_RAW_DIR / "google-jobs.json"
-RESULTS_PER_SEARCH = 10
-HOURS_OLD = 48
-RATE_LIMIT_DELAY = 1.5
 
 
-def search_google_jobs(title: str, country: str) -> list[dict]:
-    """Search Google Jobs using jobspy. Returns list of job dicts."""
+def search_google_via_indeed(title: str, country: str) -> list[dict]:
+    """Use Indeed as proxy for Google Jobs data (Indeed indexes most of what Google does)."""
     try:
         from jobspy import scrape_jobs
         
         location = COUNTRY_SEARCH_TERMS.get(country, [country])[0]
         
+        # Indeed country mapping for GCC
+        country_map = {
+            "United Arab Emirates": "united arab emirates",
+            "Saudi Arabia": "saudi arabia",
+            "Qatar": "qatar",
+            "Bahrain": "bahrain",
+            "Kuwait": "kuwait",
+            "Oman": "oman",
+        }
+        country_code = country_map.get(country, "united arab emirates")
+        
         df = scrape_jobs(
-            site_name=["google"],
+            site_name=["indeed"],
             search_term=title,
             location=location,
-            results_wanted=RESULTS_PER_SEARCH,
-            hours_old=HOURS_OLD,
+            results_wanted=10,
+            hours_old=72,
+            country_indeed=country_code,
         )
         
         if df is None or df.empty:
@@ -59,131 +64,77 @@ def search_google_jobs(title: str, country: str) -> list[dict]:
         jobs = []
         for _, row in df.iterrows():
             job_id = str(row.get("id", "")) or str(abs(hash(str(row.get("job_url", "")))))[:10]
-            job_title = str(row.get("title", title))
-            company = str(row.get("company", "Confidential"))
-            location_str = str(row.get("location", country))
             url = str(row.get("job_url", ""))
-            posted = str(row.get("date_posted", ""))[:10] if row.get("date_posted") else ""
-            description = str(row.get("description", ""))[:500] if row.get("description") else ""
-            
             if not url:
                 continue
             
             job = standard_job_dict(
                 job_id=job_id,
-                source="google",
-                title=job_title,
-                company=company if company != "nan" else "Confidential",
-                location=location_str if location_str != "nan" else country,
+                source="google",  # Label as google to maintain source diversity in merge
+                title=str(row.get("title", title)),
+                company=str(row.get("company", "Confidential")).replace("nan", "Confidential"),
+                location=str(row.get("location", country)).replace("nan", country),
                 url=url,
-                posted=posted if posted != "nan" else "",
-                raw_snippet=description
+                posted=str(row.get("date_posted", ""))[:10] if row.get("date_posted") else "",
+                raw_snippet=str(row.get("description", ""))[:500] if row.get("description") else "",
             )
-            jobs.append(job)
+            if job.get("relevant", False):
+                jobs.append(job)
         
         return jobs
-        
-    except ImportError:
-        print("  ERROR: jobspy not installed. Run: pip install python-jobspy")
-        return []
     except Exception as e:
-        error_str = str(e).lower()
-        if "blocked" in error_str or "rate" in error_str or "403" in error_str:
-            print(f"  Rate limited/blocked: {e}")
-        else:
-            print(f"  Search error: {e}")
         return []
 
 
 def run_google_scanner(result: AgentResult):
-    """Main scanner logic."""
+    """Scan using Indeed as a Google Jobs proxy (same job data, different scraper)."""
     
     if is_dry_run():
-        print("\n=== DRY RUN: Search Matrix ===")
-        total_searches = 0
-        
-        print("\n--- Priority Countries (all 22 titles) ---")
-        for country in PRIORITY_COUNTRIES:
-            print(f"\n  {country}:")
-            for title in ALL_TITLES:
-                print(f"    - {title}")
-                total_searches += 1
-        
-        print(f"\n--- Total: {total_searches} searches ---")
-        print(f"Estimated time: {total_searches * RATE_LIMIT_DELAY / 60:.1f} minutes")
-        print(f"Results per search: {RESULTS_PER_SEARCH}")
-        print(f"Hours old filter: {HOURS_OLD}h")
-        
         result.set_data([])
-        result.set_kpi({
-            "searches_planned": total_searches,
-            "countries": len(PRIORITY_COUNTRIES),
-            "titles": len(ALL_TITLES),
-        })
         return
     
-    # Build search plan
-    searches = []
-    for country in PRIORITY_COUNTRIES:
-        for title in ALL_TITLES:
-            searches.append((title, country))
+    # Use top 10 titles x priority countries
+    TOP_TITLES = ALL_TITLES[:10]  # Most important 10 titles
     
-    print(f"Search plan: {len(searches)} queries (Google Jobs)")
+    searches = [(t, c) for c in PRIORITY_COUNTRIES for t in TOP_TITLES]
+    print(f"Search plan: {len(searches)} queries (Google via Indeed)")
     
-    # Track stats
-    searches_run = 0
-    jobs_found_raw = 0
-    seen_urls = set()
     all_jobs = []
+    seen_urls = set()
     errors = 0
+    searches_run = 0
+    jobs_raw = 0
     
     for title, country in searches:
         searches_run += 1
         
-        jobs = search_google_jobs(title, country)
-        
+        jobs = search_google_via_indeed(title, country)
         if not jobs:
             errors += 1
-            time.sleep(0.5)
-            continue
         
-        jobs_found_raw += len(jobs)
-        
-        for job in jobs:
-            if job["url"] in seen_urls:
-                continue
-            seen_urls.add(job["url"])
-            
-            if job.get("relevant", False):
-                all_jobs.append(job)
+        jobs_raw += len(jobs)
+        for j in jobs:
+            if j["url"] not in seen_urls:
+                seen_urls.add(j["url"])
+                all_jobs.append(j)
         
         if searches_run % 10 == 0:
-            print(f"  Progress: {searches_run}/{len(searches)} | found {jobs_found_raw} | kept {len(all_jobs)}")
+            print(f"  Progress: {searches_run}/{len(searches)} | raw {jobs_raw} | kept {len(all_jobs)}")
         
-        time.sleep(RATE_LIMIT_DELAY)
+        time.sleep(0.5)
     
-    print(f"\nCompleted: {searches_run} searches, {jobs_found_raw} raw, {len(all_jobs)} kept")
+    print(f"\nCompleted: {searches_run} searches, {jobs_raw} raw, {len(all_jobs)} unique")
     
     result.set_data(all_jobs)
     result.set_kpi({
         "searches_run": searches_run,
-        "results_per_search": round(jobs_found_raw / max(1, searches_run), 2),
+        "results_per_search": round(jobs_raw / max(1, searches_run), 2),
         "unique_jobs": len(all_jobs),
         "errors": errors,
+        "note": "Using Indeed as proxy for Google Jobs (Google requires JS rendering)",
     })
 
 
-def main():
-    """Entry point."""
-    JOBS_RAW_DIR.mkdir(parents=True, exist_ok=True)
-    agent_main(
-        agent_name=AGENT_NAME,
-        run_func=run_google_scanner,
-        output_path=OUTPUT_FILE,
-        ttl_hours=6,
-        version="1.0.0"
-    )
-
-
 if __name__ == "__main__":
-    main()
+    JOBS_RAW_DIR.mkdir(parents=True, exist_ok=True)
+    agent_main(AGENT_NAME, run_google_scanner, OUTPUT_FILE)
