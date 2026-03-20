@@ -113,7 +113,7 @@ def create_briefing():
         blocks.append(bul(plain(f"Sources: {source_summary}")))
     
     blocks.append(h3("🟢 SUBMIT — Strong Career Fit"))
-    for job in submit_jobs:
+    for idx, job in enumerate(submit_jobs, 1):
         fit = job.get("career_fit_score", "?")
         ats = job.get("ats_score", 0)
         title = job.get("title", "?")
@@ -123,7 +123,7 @@ def create_briefing():
         reason = job.get("verdict_reason", "")
         
         source = ", ".join(job.get("sources", [job.get("source", "?")])).upper()
-        parts = [bold(f"[Fit: {fit}/10 | ATS: {ats}/100 | {source}] ")]
+        parts = [bold(f"#{idx} [Fit: {fit}/10 | ATS: {ats}/100 | {source}] ")]
         if url:
             parts.append(linked_text(title, url))
         else:
@@ -134,7 +134,7 @@ def create_briefing():
             blocks.append(bul(plain(f"  → {reason}")))
     
     blocks.append(h3("🟡 REVIEW — Worth a Look"))
-    for job in review_jobs:
+    for idx, job in enumerate(review_jobs, 1):
         fit = job.get("career_fit_score", "?")
         ats = job.get("ats_score", 0)
         title = job.get("title", "?")
@@ -144,7 +144,7 @@ def create_briefing():
         reason = job.get("verdict_reason", "")
         
         source = ", ".join(job.get("sources", [job.get("source", "?")])).upper()
-        parts = [bold(f"[Fit: {fit}/10 | ATS: {ats}/100 | {source}] ")]
+        parts = [bold(f"#{idx} [Fit: {fit}/10 | ATS: {ats}/100 | {source}] ")]
         if url:
             parts.append(linked_text(title, url))
         else:
