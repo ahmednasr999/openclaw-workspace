@@ -2,17 +2,17 @@
   "meta": {
     "agent": "jobs-review",
     "version": "1.0.0",
-    "generated_at": "2026-03-21T01:33:09.582007+02:00",
-    "duration_ms": 233024,
+    "generated_at": "2026-03-21T01:39:40.549970+02:00",
+    "duration_ms": 261746,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "a15a5d05",
+    "run_id": "7ebd2119",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
-    "generated_at": "2026-03-21T01:33:09.581629+02:00",
+    "generated_at": "2026-03-21T01:39:40.549507+02:00",
     "total_candidates": 284,
     "reviewed": 50,
     "submit": [
@@ -39,7 +39,7 @@
         ],
         "career_fit_score": 9,
         "verdict": "SUBMIT",
-        "verdict_reason": "Chief Transformation Officer is the exact target role \u2014 DT/AI/Digital Transformation C-suite in Riyadh",
+        "verdict_reason": "Chief Transformation Officer with AI, Digital and Enterprise Transformation in Riyadh - near-perfect title and domain match",
         "ats_score": 54,
         "ats_verdict": "SKIP_TITLE_ONLY",
         "ats_matched": [
@@ -51,6 +51,46 @@
         ],
         "ats_gaps": [
           "Missing: project management, pmo, program management"
+        ]
+      },
+      {
+        "id": "linkedin-li-4378211126",
+        "source": "linkedin",
+        "title": "Head of Enterprise Program Management Office ( EPMO)",
+        "company": "Commercial Bank",
+        "location": "Doha, Qatar",
+        "url": "https://qa.linkedin.com/jobs/view/head-of-enterprise-program-management-office-epmo-at-commercial-bank-4378211126",
+        "posted": "2026-02-28",
+        "seniority": "Director",
+        "domain_match": true,
+        "keyword_score": 33,
+        "match_keywords": [
+          "pmo",
+          "program management",
+          "enterprise",
+          "head of"
+        ],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "career_fit_score": 7,
+        "verdict": "SUBMIT",
+        "verdict_reason": "PMO Director role in target geography Saudi Arabia, contracts background is somewhat adjacent but seniority and PMO focus match",
+        "ats_score": 53,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "program management",
+          "pmo",
+          "head",
+          "erp"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, ai"
         ]
       },
       {
@@ -78,7 +118,7 @@
         ],
         "career_fit_score": 8,
         "verdict": "SUBMIT",
-        "verdict_reason": "Head of Operations & AI Optimisation in Abu Dhabi aligns directly with Operational Excellence core strength",
+        "verdict_reason": "Operations and AI Optimisation at Director level in Abu Dhabi, operational excellence is a core strength",
         "ats_score": 49,
         "ats_verdict": "SKIP_TITLE_ONLY",
         "ats_matched": [
@@ -115,7 +155,7 @@
         ],
         "career_fit_score": 8,
         "verdict": "SUBMIT",
-        "verdict_reason": "Digital Strategy and Realisation - AI Strategy Director at PwC ME is strong consulting and transformation role in target geography",
+        "verdict_reason": "Digital Strategy and AI Strategy Director at PwC Middle East in Riyadh, transformation consulting with AI dimension is strong fit",
         "ats_score": 49,
         "ats_verdict": "SKIP_TITLE_ONLY",
         "ats_matched": [
@@ -153,7 +193,7 @@
         ],
         "career_fit_score": 7,
         "verdict": "SUBMIT",
-        "verdict_reason": "Business Engagement Director of Data & AI at Miral is a transformation and AI leadership role, Director/C-Suite in Abu Dhabi",
+        "verdict_reason": "Business Engagement Director of Data and AI at C-Suite level, transformation and stakeholder engagement core to profile",
         "ats_score": 33,
         "ats_verdict": "SKIP_TITLE_ONLY",
         "ats_matched": [
@@ -163,6 +203,45 @@
         ],
         "ats_gaps": [
           "Missing: digital transformation, project management, program management"
+        ]
+      },
+      {
+        "id": "linkedin-li-4007558068",
+        "source": "linkedin",
+        "title": "Executive Director- Private Banking MENA (UAE nationals only)",
+        "company": "First Abu Dhabi Bank (FAB)",
+        "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
+        "url": "https://ae.linkedin.com/jobs/view/executive-director-private-banking-mena-uae-nationals-only-at-first-abu-dhabi-bank-fab-4007558068",
+        "posted": "2026-03-06",
+        "seniority": "C-Suite",
+        "domain_match": false,
+        "keyword_score": 20,
+        "match_keywords": [
+          "executive",
+          "director",
+          "uae",
+          "mena"
+        ],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "career_fit_score": 7,
+        "verdict": "SUBMIT",
+        "verdict_reason": "Head of E-Commerce in target Dubai at Director level, e-commerce is a confirmed domain match, omnichannel is transformation-adjacent",
+        "ats_score": 30,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "director",
+          "cto",
+          "executive"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
         ]
       },
       {
@@ -191,7 +270,7 @@
         ],
         "career_fit_score": 8,
         "verdict": "SUBMIT",
-        "verdict_reason": "Head of AI Strategy is a strong transformation and strategic leadership role in target geography",
+        "verdict_reason": "Head of AI Strategy is Director-level strategic role in target Dubai, directly aligned with transformation and AI strengths",
         "ats_score": 24,
         "ats_verdict": "SKIP_TITLE_ONLY",
         "ats_matched": [
@@ -227,7 +306,7 @@
         ],
         "career_fit_score": 8,
         "verdict": "SUBMIT",
-        "verdict_reason": "Director of Digital Innovation & AI in Riyadh is an exact DT/AI leadership role in target geography",
+        "verdict_reason": "Digital Innovation and AI Director in target Riyadh Saudi Arabia, perfect title-domain-geography alignment",
         "ats_score": 23,
         "ats_verdict": "SKIP_TITLE_ONLY",
         "ats_matched": [
@@ -263,7 +342,7 @@
         ],
         "career_fit_score": 7,
         "verdict": "SUBMIT",
-        "verdict_reason": "Head of AI Transformation is a strong DT/leadership role in target geography, Director level",
+        "verdict_reason": "AI Transformation aligned with digital transformation core strength, Director level in target geography Dubai",
         "ats_score": 22,
         "ats_verdict": "SKIP_TITLE_ONLY",
         "ats_matched": [
@@ -298,14 +377,49 @@
         "sources": [
           "linkedin"
         ],
-        "career_fit_score": 8,
+        "career_fit_score": 7,
         "verdict": "SUBMIT",
-        "verdict_reason": "Head of Digital Product Delivery is a direct digital transformation/program delivery leadership role in target geography",
+        "verdict_reason": "Digital Product Delivery Director in Abu Dhabi, product delivery leadership is transformation and program management aligned",
         "ats_score": 14,
         "ats_verdict": "SKIP_TITLE_ONLY",
         "ats_matched": [
           "head",
           "fintech"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4320278154",
+        "source": "linkedin",
+        "title": "Head of Change Management",
+        "company": "QAFCO (Qatar Fertiliser Company)",
+        "location": "Doha, Doha, Qatar",
+        "url": "https://qa.linkedin.com/jobs/view/head-of-change-management-at-qafco-qatar-fertiliser-company-4320278154",
+        "posted": "2025-11-02",
+        "seniority": "Director",
+        "domain_match": false,
+        "keyword_score": 16,
+        "match_keywords": [
+          "change management",
+          "head of"
+        ],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "career_fit_score": 7,
+        "verdict": "SUBMIT",
+        "verdict_reason": "AI Consulting Director in Riyadh Saudi Arabia, consulting model suits executive advisory strengths, AI is transformation-aligned",
+        "ats_score": 6,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "head"
         ],
         "ats_gaps": [
           "Missing: digital transformation, project management, pmo"
@@ -339,9 +453,9 @@
         "sources": [
           "indeed"
         ],
-        "career_fit_score": 5,
+        "career_fit_score": 6,
         "verdict": "REVIEW",
-        "verdict_reason": "CTO C-suite in target geography but FMC Network is media, not a core domain",
+        "verdict_reason": "C-Suite in target geography Dubai but CTO title implies deep technical hands-on focus vs transformation leadership",
         "ats_score": 74,
         "ats_verdict": "CONDITIONAL_TITLE_ONLY",
         "ats_matched": [
@@ -360,116 +474,46 @@
         ]
       },
       {
-        "id": "exa-51069",
-        "source": "exa",
-        "title": "Director - Program Management Office (PMO) - Bupa Arabia",
-        "company": "Bupa",
-        "location": "Saudi Arabia",
-        "url": "https://careers.bupa.com.sa/en/saudi-arabia/jobs/director-program-management-office-pmo-1100071017",
-        "posted": "",
-        "seniority": "Director",
-        "domain_match": true,
-        "keyword_score": 26,
-        "match_keywords": [
-          "pmo",
-          "program management",
-          "director"
-        ],
-        "raw_snippet": "",
-        "source_count": 1,
-        "policy_status": "pass",
-        "sources": [
-          "exa"
-        ],
-        "career_fit_score": 6,
-        "verdict": "REVIEW",
-        "verdict_reason": "CIO C-suite in target geography, private markets is FinTech-adjacent, solid seniority fit",
-        "ats_score": 63,
-        "ats_verdict": "SKIP_TITLE_ONLY",
-        "ats_matched": [
-          "program management",
-          "pmo",
-          "director",
-          "cto"
-        ],
-        "ats_gaps": [
-          "Missing: digital transformation, project management, ai"
-        ]
-      },
-      {
-        "id": "linkedin-li-4378211126",
-        "source": "linkedin",
-        "title": "Head of Enterprise Program Management Office ( EPMO)",
-        "company": "Commercial Bank",
-        "location": "Doha, Qatar",
-        "url": "https://qa.linkedin.com/jobs/view/head-of-enterprise-program-management-office-epmo-at-commercial-bank-4378211126",
-        "posted": "2026-02-28",
-        "seniority": "Director",
-        "domain_match": true,
-        "keyword_score": 33,
-        "match_keywords": [
-          "pmo",
-          "program management",
-          "enterprise",
-          "head of"
-        ],
-        "raw_snippet": "",
-        "relevant": true,
-        "filter_reason": null,
-        "source_count": 1,
-        "policy_status": "pass",
-        "sources": [
-          "linkedin"
-        ],
-        "career_fit_score": 6,
-        "verdict": "REVIEW",
-        "verdict_reason": "Director/PMO in target geography but Systra is infrastructure/engineering firm, not DT domain",
-        "ats_score": 53,
-        "ats_verdict": "SKIP_TITLE_ONLY",
-        "ats_matched": [
-          "program management",
-          "pmo",
-          "head",
-          "erp"
-        ],
-        "ats_gaps": [
-          "Missing: digital transformation, project management, ai"
-        ]
-      },
-      {
-        "id": "linkedin-li-4007558068",
-        "source": "linkedin",
-        "title": "Executive Director- Private Banking MENA (UAE nationals only)",
-        "company": "First Abu Dhabi Bank (FAB)",
-        "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
-        "url": "https://ae.linkedin.com/jobs/view/executive-director-private-banking-mena-uae-nationals-only-at-first-abu-dhabi-bank-fab-4007558068",
-        "posted": "2026-03-06",
+        "id": "google-in-5bd6d3474b0865fa",
+        "source": "google",
+        "title": "Experience Operations Director - Dubai",
+        "company": "Valtech Group",
+        "location": "Dubai, DU, AE",
+        "url": "https://ae.indeed.com/viewjob?jk=5bd6d3474b0865fa",
+        "posted": "2026-03-19",
         "seniority": "C-Suite",
-        "domain_match": false,
-        "keyword_score": 20,
+        "domain_match": true,
+        "keyword_score": 23,
         "match_keywords": [
-          "executive",
+          "ai",
           "director",
-          "uae",
-          "mena"
+          "dubai",
+          "lte",
+          "api"
         ],
-        "raw_snippet": "",
+        "raw_snippet": "Why Valtech? We\u2019re advisors, visionaries, creative and techies. We embrace all things digital. We talk to each other. We have fun. We love our clients. We\u2019re looking ahead \u2022 We are global\n\n\n  \n**About Valtech:**\n\n\n\nAt Valtech, we are reshaping the way brands connect with their customers. As a global digital innovation company, we fuse creativity, technology, and strategy to solve complex business challenges and deliver exceptional experiences.\n\n\n\nWith over 6,500 experts in 60\\+ offices across 20",
         "relevant": true,
         "filter_reason": null,
-        "source_count": 1,
+        "source_count": 3,
         "policy_status": "pass",
         "sources": [
+          "google-jobs",
+          "indeed",
           "linkedin"
         ],
-        "career_fit_score": 5,
+        "career_fit_score": 6,
         "verdict": "REVIEW",
-        "verdict_reason": "Director level in target geography and e-commerce domain match, but role is commercial/growth not DT",
-        "ats_score": 30,
-        "ats_verdict": "SKIP_TITLE_ONLY",
+        "verdict_reason": "C-Suite CTO in target Dubai but title and Arabic speaker requirement suggest heavy technical depth",
+        "ats_score": 67,
+        "ats_verdict": "CONDITIONAL_TITLE_ONLY",
         "ats_matched": [
           "director",
           "cto",
-          "executive"
+          "head",
+          "ai",
+          "digital",
+          "technology",
+          "strategy"
         ],
         "ats_gaps": [
           "Missing: digital transformation, project management, pmo"
@@ -502,47 +546,12 @@
         ],
         "career_fit_score": 5,
         "verdict": "REVIEW",
-        "verdict_reason": "Director level in target geography but Head of Infrastructure is operational/technical, not transformation",
+        "verdict_reason": "Director title in target Dubai but Infrastructure focus is too technical/operational and lacks transformation angle",
         "ats_score": 22,
         "ats_verdict": "SKIP_TITLE_ONLY",
         "ats_matched": [
           "ai",
           "data",
-          "fintech"
-        ],
-        "ats_gaps": [
-          "Missing: digital transformation, project management, pmo"
-        ]
-      },
-      {
-        "id": "exa-16797",
-        "source": "exa",
-        "title": "Chief Fintech Transformation Officer \u00e2\u0080\u0093 Digital Banking Modernization -  Jobs Cyprus |  Jobs Limassol",
-        "company": "Employsolution",
-        "location": "United Arab Emirates",
-        "url": "https://www.employsolution.com/jobs/chief-fintech-transformation-officer-digital-banking-modernization/",
-        "posted": "2026-03-11",
-        "seniority": "Executive",
-        "domain_match": true,
-        "keyword_score": 20,
-        "match_keywords": [
-          "fintech",
-          "digital banking"
-        ],
-        "raw_snippet": "",
-        "source_count": 1,
-        "policy_status": "pass",
-        "sources": [
-          "exa"
-        ],
-        "career_fit_score": 5,
-        "verdict": "REVIEW",
-        "verdict_reason": "Director level in target geography and EdTech partially matches domains, but role is growth not transformation",
-        "ats_score": 22,
-        "ats_verdict": "SKIP_TITLE_ONLY",
-        "ats_matched": [
-          "chief",
-          "digital",
           "fintech"
         ],
         "ats_gaps": [
@@ -575,48 +584,12 @@
         ],
         "career_fit_score": 6,
         "verdict": "REVIEW",
-        "verdict_reason": "Director level at Dubai Holding in target geography but title is infrastructure ops, not DT transformation",
+        "verdict_reason": "Director level in Dubai target geography but Infrastructure Operations is closer to technical ops than transformation",
         "ats_score": 20,
         "ats_verdict": "SKIP_TITLE_ONLY",
         "ats_matched": [
           "head",
           "digital",
-          "fintech"
-        ],
-        "ats_gaps": [
-          "Missing: digital transformation, project management, pmo"
-        ]
-      },
-      {
-        "id": "exa-39756",
-        "source": "exa",
-        "title": "Head of Fintech Data Platforms & Financial Intelligence Systems -  Jobs Cyprus |  Jobs Limassol",
-        "company": "Employsolution",
-        "location": "Bahrain",
-        "url": "https://www.employsolution.com/jobs/head-of-fintech-data-platforms-financial-intelligence-systems/",
-        "posted": "2026-03-12",
-        "seniority": "Head",
-        "domain_match": true,
-        "keyword_score": 20,
-        "match_keywords": [
-          "fintech",
-          "head of",
-          "platform"
-        ],
-        "raw_snippet": "",
-        "source_count": 1,
-        "policy_status": "pass",
-        "sources": [
-          "exa"
-        ],
-        "career_fit_score": 5,
-        "verdict": "REVIEW",
-        "verdict_reason": "Director level in target geography but 'AI Engineer' title implies hands-on coding, anti-pattern for candidate",
-        "ats_score": 20,
-        "ats_verdict": "SKIP_TITLE_ONLY",
-        "ats_matched": [
-          "head",
-          "data",
           "fintech"
         ],
         "ats_gaps": [
@@ -649,7 +622,7 @@
         ],
         "career_fit_score": 5,
         "verdict": "REVIEW",
-        "verdict_reason": "VP/Head of Branches is in-domain (FinTech/banking) and right seniority but focused on branch ops not transformation",
+        "verdict_reason": "VP Banking Branches in target Abu Dhabi but branch banking operations is traditional banking vs digital transformation",
         "ats_score": 20,
         "ats_verdict": "SKIP_TITLE_ONLY",
         "ats_matched": [
@@ -684,7 +657,7 @@
         ],
         "career_fit_score": 5,
         "verdict": "REVIEW",
-        "verdict_reason": "Director level in target geography but 'Head of AI Engineering' implies hands-on coding focus",
+        "verdict_reason": "Head of AI Engineering title signals hands-on technical engineering work which is not suitable per anti-pattern guidance",
         "ats_score": 12,
         "ats_verdict": "SKIP_TITLE_ONLY",
         "ats_matched": [
@@ -721,7 +694,7 @@
         ],
         "career_fit_score": 5,
         "verdict": "REVIEW",
-        "verdict_reason": "Director level in target geography but Qiddiya is entertainment/sports, outside core domains; data analytics not transformation",
+        "verdict_reason": "Data Analytics Director in Riyadh at Qiddiya is GCC target but data analytics is a sub-domain vs full transformation scope",
         "ats_score": 11,
         "ats_verdict": "SKIP_TITLE_ONLY",
         "ats_matched": [
@@ -731,66 +704,31 @@
         "ats_gaps": [
           "Missing: digital transformation, project management, pmo"
         ]
-      },
-      {
-        "id": "linkedin-li-4320278154",
-        "source": "linkedin",
-        "title": "Head of Change Management",
-        "company": "QAFCO (Qatar Fertiliser Company)",
-        "location": "Doha, Doha, Qatar",
-        "url": "https://qa.linkedin.com/jobs/view/head-of-change-management-at-qafco-qatar-fertiliser-company-4320278154",
-        "posted": "2025-11-02",
-        "seniority": "Director",
-        "domain_match": false,
-        "keyword_score": 16,
-        "match_keywords": [
-          "change management",
-          "head of"
-        ],
-        "raw_snippet": "",
-        "relevant": true,
-        "filter_reason": null,
-        "source_count": 1,
-        "policy_status": "pass",
-        "sources": [
-          "linkedin"
-        ],
-        "career_fit_score": 5,
-        "verdict": "REVIEW",
-        "verdict_reason": "Head of AI Consulting in target geography but 'consulting services' implies delivery work, hands-on coding risk",
-        "ats_score": 6,
-        "ats_verdict": "SKIP_TITLE_ONLY",
-        "ats_matched": [
-          "head"
-        ],
-        "ats_gaps": [
-          "Missing: digital transformation, project management, pmo"
-        ]
       }
     ],
-    "skip_count": 27,
+    "skip_count": 28,
     "unreviewed_count": 234,
     "thresholds": {
       "submit": 7,
       "review": 5
     },
     "kpi": {
-      "submit_rate": 0.16,
-      "review_rate": 0.24,
-      "skip_rate": 0.54,
-      "avg_fit_score": 3.6,
-      "llm_latency_ms": 165936
+      "submit_rate": 0.22,
+      "review_rate": 0.14,
+      "skip_rate": 0.56,
+      "avg_fit_score": 3.8,
+      "llm_latency_ms": 135461
     }
   },
   "kpi": {
-    "submit_count": 8,
-    "review_count": 12,
-    "skip_count": 27,
-    "submit_rate": 16.0,
-    "review_rate": 24.0,
-    "skip_rate": 54.0,
-    "avg_fit_score": 3.6,
-    "llm_latency_ms": 165936
+    "submit_count": 11,
+    "review_count": 7,
+    "skip_count": 28,
+    "submit_rate": 22.0,
+    "review_rate": 14.0,
+    "skip_rate": 56.0,
+    "avg_fit_score": 3.8,
+    "llm_latency_ms": 135461
   },
   "recommendations": []
 }
