@@ -153,31 +153,47 @@ def load_scanner_data(today_str):
         # Format A: ### Job Title\n- Company: X\n- Location: Y\n- URL: Z
         # Format B: - Title @ Company (ATS: XX)
         current_section = ""
+        current_section_prev = ""
         current_job = None
 
         for line in content.split("\n"):
             line = line.strip()
 
-            # Section headers (## Priority Picks, ## Leads, etc.)
+            # Section headers (## Priority Picks, ## Leads, ## APPLY, etc.)
             if line.startswith("## "):
                 current_section = line.lstrip("# ").strip().lower()
+                # Save previous job before switching sections
+                if current_job:
+                    if any(k in current_section_prev for k in ["priority", "pick", "apply", "genuine"]):
+                        qualified.append(current_job)
+                    elif "skip" not in current_section_prev:
+                        borderline.append(current_job)
+                    current_job = None
+                current_section_prev = current_section
                 continue
 
-            # Job title as ### heading (Format A)
+                        # Job title as ### heading (Format A)
             if line.startswith("### "):
                 # Save previous job
                 if current_job:
-                    if "priority" in current_section or "pick" in current_section:
+                    if any(k in current_section for k in ["priority", "pick", "apply", "genuine"]):
+                        current_job["career_verdict"] = "APPLY"  # Trust section classification
                         qualified.append(current_job)
-                    else:
+                    elif "skip" not in current_section:
                         borderline.append(current_job)
                 title = line.lstrip("# ").strip()
-                # Strip ATS icon (🟢🟡🔴) and extract ATS score from title
+                # Strip ATS icon (🟢🟡🔴), career fit score [X/10], and ATS score from title
                 title = re.sub(r'^[🟢🟡🔴]\s*', '', title)
+                # Extract and strip career fit score like [7/10]
+                fit_in_title = re.search(r'^\[(\d+)/10\]\s*', title)
+                fit_val = int(fit_in_title.group(1)) if fit_in_title else None
+                title = re.sub(r'^\[\d+/10\]\s*', '', title)
                 ats_in_title = re.search(r'\(ATS:\s*(\d+)%?\)', title)
                 ats_val = int(ats_in_title.group(1)) if ats_in_title else None
                 title = re.sub(r'\s*\(ATS:\s*\d+%?\)\s*$', '', title)
                 current_job = {"title": title[:60], "company": "", "location": "", "url": ""}
+                if fit_val is not None:
+                    current_job["career_fit"] = fit_val
                 if ats_val is not None:
                     current_job["ats_score"] = ats_val
                 continue
@@ -217,16 +233,16 @@ def load_scanner_data(today_str):
                         job["company"] = at_match.group(2).strip()[:30]
                         if at_match.group(3):
                             job["ats_score"] = int(at_match.group(3))
-                    if "priority" in current_section or "pick" in current_section:
+                    if any(k in current_section for k in ["priority", "pick", "apply", "genuine"]):
                         qualified.append(job)
-                    else:
+                    elif "skip" not in current_section:
                         borderline.append(job)
 
         # Don't forget the last job
         if current_job:
-            if "priority" in current_section or "pick" in current_section:
+            if any(k in current_section for k in ["priority", "pick", "apply", "genuine"]):
                 qualified.append(current_job)
-            else:
+            elif "skip" not in current_section:
                 borderline.append(current_job)
 
     scanner_age = None
@@ -809,7 +825,11 @@ def create_notion_briefing(date_str, date_display, pipeline, scanner_meta, quali
         summary_parts.append(f"{len(qualified)} scanned ({apply_count} genuine fits)")
     if p["stale"]:
         summary_parts.append(f"{p['stale']} stale")
-    content_status = "posted ✅" if content_cal.get("today_post", {}).get("status") == "Posted" else "pending"
+    # Guard against content_cal being None (Notion API failure)
+    if content_cal is None:
+        content_cal = {"scheduled": 0, "drafted": 0, "posted": 0, "today_post": None,
+                       "tomorrow_post": None, "next_scheduled": None, "gap_days": 0}
+    content_status = "posted ✅" if (content_cal.get("today_post") or {}).get("status") == "Posted" else "pending"
     summary_parts.append(f"content {content_status}")
     gw_status = "🟢" if system.get("gateway") == "UP" else "🔴"
     summary_parts.append(f"systems {gw_status}")
@@ -830,8 +850,8 @@ def create_notion_briefing(date_str, date_display, pipeline, scanner_meta, quali
         actions.append(f"Apply to {apply_count} genuine career fits")
     if p["overdue"]:
         actions.append(f"Follow up {min(5, len(p['overdue']))} stale applications")
-    if content_cal.get("today_post") and content_cal["today_post"]["status"] != "Posted":
-        actions.append(f"Publish: \"{content_cal['today_post']['title'][:30]}\"")
+    if content_cal.get("today_post") and content_cal["today_post"].get("status") != "Posted":
+        actions.append(f"Publish: \"{content_cal['today_post'].get('title', '')[:30]}\"")
     if content_cal.get("drafted", 0) == 0:
         actions.append("📝 Content pipeline empty!")
     if tasks.get("overdue"):
@@ -1119,9 +1139,9 @@ def build_telegram_message(date_display, pipeline, scanner_meta, qualified, bord
     if p["overdue"]:
         actions.append(f"Follow up {min(5, len(p['overdue']))} stale applications")
     # Priority 5: Content
-    if content_cal.get("today_post") and content_cal["today_post"]["status"] != "Posted":
+    if content_cal and content_cal.get("today_post") and content_cal["today_post"]["status"] != "Posted":
         actions.append(f"Publish: \"{content_cal['today_post']['title'][:25]}\"")
-    if content_cal.get("drafted", 0) == 0:
+    if content_cal and content_cal.get("drafted", 0) == 0:
         actions.append("📝 Content pipeline empty!")
     # Priority 6: Overdue tasks
     if tasks.get("overdue"):
@@ -1157,9 +1177,19 @@ def build_telegram_message(date_display, pipeline, scanner_meta, qualified, bord
         age = f" ({scanner_age}d old)" if scanner_age and scanner_age > 0 else ""
         # Source status
         src = scanner_meta.get("source_status", {})
-        src_parts = [f"{k}:{v}" for k, v in src.items()]
-        src_str = f" | {' '.join(src_parts)}" if src_parts else ""
-        lines.append(f"\n🔍 SCANNER: {total} found, {picks} picks{age}{src_str}")
+        sources = scanner_meta.get("sources", [])
+        if src:
+            src_parts = [f"{k}:{v}" for k, v in src.items()]
+            src_str = f" | {' '.join(src_parts)}"
+        elif sources:
+            src_str = f" | {', '.join(sources)}"
+        else:
+            src_str = ""
+        searches_done = scanner_meta.get("total_searches", 0)
+        searches_expected = scanner_meta.get("expected_searches", 0)
+        countries = scanner_meta.get("countries", [])
+        country_str = f" | {len(countries)} GCC" if countries else ""
+        lines.append(f"\n🔍 SCANNER: {total} found, {picks} picks ({searches_done}/{searches_expected} searches){age}{country_str}{src_str}")
         if trends.get("trend"):
             lines.append(f"  {trends['trend']}")
     else:
@@ -1191,7 +1221,8 @@ def build_telegram_message(date_display, pipeline, scanner_meta, qualified, bord
         if stretch_jobs:
             lines.append(f"  🟡 STRETCH ({len(stretch_jobs)}):")
             for j in stretch_jobs:
-                lines.append(f"    {j.get('title','')[:35]} - {j.get('career_reason','')[:30]}")
+                stitle = re.sub(r'^\[\d+/10\]\s*', '', j.get('title',''))[:35]
+                lines.append(f"    {stitle} - {j.get('career_reason','')[:30]}")
 
         if skip_jobs:
             lines.append(f"  ❌ SKIP ({len(skip_jobs)} domain mismatches)")
@@ -1426,6 +1457,10 @@ def main():
     # 5. Content Calendar
     log("Step 5: Content calendar...")
     content_cal = get_content_calendar()
+    if content_cal is None:
+        content_cal = {"scheduled": 0, "drafted": 0, "posted": 0, "today_post": None,
+                       "tomorrow_post": None, "next_scheduled": None, "gap_days": 0}
+        log("  ⚠️ Content calendar returned None - using defaults")
     log(f"  Posted: {content_cal['posted']}, Scheduled: {content_cal['scheduled']}, Drafted: {content_cal['drafted']}")
 
     # 6. System Health

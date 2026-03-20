@@ -369,3 +369,39 @@
 - Priority picks: 27
 - Leads: 6
 - Runtime: 849s
+
+## 2026-03-20 04:58:05 (v4.0)
+- Engine: Exa neural search via Composio MCP
+- Searches: 80
+- Found: 674
+- Priority picks: 120
+- Leads: 27
+- Errors: 0
+- Runtime: 240s
+
+## 2026-03-20 06:06:25 (v4.0)
+- Engine: Exa neural search via Composio MCP
+- Searches: 83
+- Found: 699
+- Priority picks: 119
+- Leads: 28
+- Errors: 0
+- Runtime: 240s
+
+## 2026-03-20 13:52:24 (v4.0)
+- Engine: Exa neural search via Composio MCP
+- Searches: 107
+- Found: 879
+- Priority picks: 143
+- Leads: 34
+- Errors: 0
+- Runtime: 361s
+
+## 2026-03-20 14:42:33 (v4.0)
+- Engine: Exa neural search via Composio MCP
+- Searches: 126
+- Found: 1040
+- Priority picks: 161
+- Leads: 39
+- Errors: 0
+- Runtime: 410s
