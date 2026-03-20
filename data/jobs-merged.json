@@ -1,0 +1,387 @@
+{
+  "meta": {
+    "agent": "jobs-merge",
+    "version": "1.0.0",
+    "generated_at": "2026-03-20T19:22:06.379073+02:00",
+    "duration_ms": 39,
+    "ttl_hours": 6,
+    "status": "success",
+    "error": null,
+    "run_id": "d0ce853d",
+    "retries_used": 0,
+    "data_freshness": "fresh"
+  },
+  "data": [
+    {
+      "id": "exa-16462",
+      "source": "exa",
+      "title": "Director, GOMA Program Management & Operational Excellence job with Daiichi Sankyo | 3037154",
+      "company": "Biospace",
+      "location": "Bahrain",
+      "url": "https://careers.biospace.com/job/3037154/director-goma-program-management-and-operational-excellence/",
+      "posted": "2026-03-17",
+      "seniority": "Director",
+      "domain_match": true,
+      "keyword_score": 33,
+      "match_keywords": [
+        "program management",
+        "operational excellence",
+        "ai",
+        "director"
+      ],
+      "raw_snippet": "",
+      "source_count": 1,
+      "policy_status": "pass",
+      "sources": [
+        "exa"
+      ]
+    },
+    {
+      "id": "exa-93781",
+      "source": "exa",
+      "title": "Chief Fintech Infrastructure Officer \u00e2\u0080\u0093 Digital Banking & Financial Platforms -  Jobs Cyprus |  Jobs Limassol",
+      "company": "Employsolution",
+      "location": "United Arab Emirates",
+      "url": "https://www.employsolution.com/jobs/chief-fintech-infrastructure-officer-digital-banking-financial-platforms/",
+      "posted": "2026-03-12",
+      "seniority": "Executive",
+      "domain_match": true,
+      "keyword_score": 30,
+      "match_keywords": [
+        "fintech",
+        "digital banking",
+        "infrastructure",
+        "platform"
+      ],
+      "raw_snippet": "",
+      "source_count": 1,
+      "policy_status": "pass",
+      "sources": [
+        "exa"
+      ]
+    },
+    {
+      "id": "exa-25790",
+      "source": "exa",
+      "title": "Senior Vice President \u00e2\u0080\u0093 Fintech Operations & Digital Financial Infrastructure -  Jobs Cyprus |  Jobs Limassol",
+      "company": "Employsolution",
+      "location": "Bahrain",
+      "url": "https://www.employsolution.com/jobs/senior-vice-president-fintech-operations-digital-financial-infrastructure/",
+      "posted": "2026-03-10",
+      "seniority": "Executive",
+      "domain_match": true,
+      "keyword_score": 26,
+      "match_keywords": [
+        "fintech",
+        "digital financial",
+        "infrastructure"
+      ],
+      "raw_snippet": "",
+      "source_count": 1,
+      "policy_status": "pass",
+      "sources": [
+        "exa"
+      ]
+    },
+    {
+      "id": "exa-51069",
+      "source": "exa",
+      "title": "Director - Program Management Office (PMO) - Bupa Arabia",
+      "company": "Bupa",
+      "location": "Saudi Arabia",
+      "url": "https://careers.bupa.com.sa/en/saudi-arabia/jobs/director-program-management-office-pmo-1100071017",
+      "posted": "",
+      "seniority": "Director",
+      "domain_match": true,
+      "keyword_score": 26,
+      "match_keywords": [
+        "pmo",
+        "program management",
+        "director"
+      ],
+      "raw_snippet": "",
+      "source_count": 1,
+      "policy_status": "pass",
+      "sources": [
+        "exa"
+      ]
+    },
+    {
+      "id": "exa-91371",
+      "source": "exa",
+      "title": "PMO Director - Healthcare - Riyadh",
+      "company": "Aplitrak",
+      "location": "Saudi Arabia",
+      "url": "https://www.aplitrak.com",
+      "posted": "",
+      "seniority": "Director",
+      "domain_match": true,
+      "keyword_score": 26,
+      "match_keywords": [
+        "pmo",
+        "healthcare",
+        "director",
+        "riyadh"
+      ],
+      "raw_snippet": "",
+      "source_count": 1,
+      "policy_status": "pass",
+      "sources": [
+        "exa"
+      ]
+    },
+    {
+      "id": "exa-16797",
+      "source": "exa",
+      "title": "Chief Fintech Transformation Officer \u00e2\u0080\u0093 Digital Banking Modernization -  Jobs Cyprus |  Jobs Limassol",
+      "company": "Employsolution",
+      "location": "United Arab Emirates",
+      "url": "https://www.employsolution.com/jobs/chief-fintech-transformation-officer-digital-banking-modernization/",
+      "posted": "2026-03-11",
+      "seniority": "Executive",
+      "domain_match": true,
+      "keyword_score": 20,
+      "match_keywords": [
+        "fintech",
+        "digital banking"
+      ],
+      "raw_snippet": "",
+      "source_count": 1,
+      "policy_status": "pass",
+      "sources": [
+        "exa"
+      ]
+    },
+    {
+      "id": "exa-39756",
+      "source": "exa",
+      "title": "Head of Fintech Data Platforms & Financial Intelligence Systems -  Jobs Cyprus |  Jobs Limassol",
+      "company": "Employsolution",
+      "location": "Bahrain",
+      "url": "https://www.employsolution.com/jobs/head-of-fintech-data-platforms-financial-intelligence-systems/",
+      "posted": "2026-03-12",
+      "seniority": "Head",
+      "domain_match": true,
+      "keyword_score": 20,
+      "match_keywords": [
+        "fintech",
+        "head of",
+        "platform"
+      ],
+      "raw_snippet": "",
+      "source_count": 1,
+      "policy_status": "pass",
+      "sources": [
+        "exa"
+      ]
+    },
+    {
+      "id": "exa-66497",
+      "source": "exa",
+      "title": "Senior Director, Digital Transformation Operations Lead job with Regeneron Pharmaceuticals, Inc. | 3035686",
+      "company": "Biospace",
+      "location": "United Arab Emirates",
+      "url": "http://www.biospace.com/job/3035686/senior-director-digital-transformation-operations-lead/",
+      "posted": "2026-03-10",
+      "seniority": "Director",
+      "domain_match": true,
+      "keyword_score": 16,
+      "match_keywords": [
+        "digital transformation",
+        "director"
+      ],
+      "raw_snippet": "",
+      "source_count": 1,
+      "policy_status": "pass",
+      "sources": [
+        "exa"
+      ]
+    },
+    {
+      "id": "exa-8508",
+      "source": "exa",
+      "title": "Eslam Taha \u00e2\u0080\u0093 Head of Digital Transformation and Digital Channels Development",
+      "company": "Riyadh Airports Company",
+      "location": "Saudi Arabia",
+      "url": "https://wuzzuf.net/me/etaha",
+      "posted": "",
+      "seniority": "Head",
+      "domain_match": true,
+      "keyword_score": 16,
+      "match_keywords": [
+        "digital transformation",
+        "head of"
+      ],
+      "raw_snippet": "",
+      "source_count": 1,
+      "policy_status": "pass",
+      "sources": [
+        "exa"
+      ]
+    },
+    {
+      "id": "exa-80974",
+      "source": "exa",
+      "title": "Programme Director \u00e2\u0080\u0093 Digital Transformation",
+      "company": "Confidential",
+      "location": "United Arab Emirates",
+      "url": "https://www.jobleads.com/ae/job/programme-director-digital-transformation--dubai--e3523162cb42a0fb6f907c60ab20f9276",
+      "posted": "2025-11-20",
+      "seniority": "Director",
+      "domain_match": true,
+      "keyword_score": 16,
+      "match_keywords": [
+        "digital transformation",
+        "director"
+      ],
+      "raw_snippet": "",
+      "source_count": 1,
+      "policy_status": "pass",
+      "sources": [
+        "exa"
+      ]
+    },
+    {
+      "id": "exa-23289",
+      "source": "exa",
+      "title": "Senior Digital Transformation Director - Telecom",
+      "company": "Jobaaj",
+      "location": "United Arab Emirates",
+      "url": "https://jobaaj.com/job/vam-systems-senior-digital-transformation-director-telecom-dubai-united-arab-emirates-5-to-10-years-860245",
+      "posted": "2025-09-26",
+      "seniority": "Director",
+      "domain_match": true,
+      "keyword_score": 16,
+      "match_keywords": [
+        "digital transformation",
+        "director"
+      ],
+      "raw_snippet": "",
+      "source_count": 1,
+      "policy_status": "pass",
+      "sources": [
+        "exa"
+      ]
+    },
+    {
+      "id": "exa-93194",
+      "source": "exa",
+      "title": "PMO Director",
+      "company": "Weekday",
+      "location": "Saudi Arabia",
+      "url": "https://jobs.weekday.works/adree-pmo-director",
+      "posted": "2025-06-05",
+      "seniority": "Director",
+      "domain_match": true,
+      "keyword_score": 16,
+      "match_keywords": [
+        "pmo",
+        "director"
+      ],
+      "raw_snippet": "",
+      "source_count": 1,
+      "policy_status": "pass",
+      "sources": [
+        "exa"
+      ]
+    },
+    {
+      "id": "exa-38169",
+      "source": "exa",
+      "title": "Commercial/Contracts Director (PMO)",
+      "company": "Systra",
+      "location": "Saudi Arabia",
+      "url": "https://www.systra.com/arabia/job-offers/commercial-contracts-director-pmo-en-4428",
+      "posted": "2025-03-09",
+      "seniority": "Director",
+      "domain_match": true,
+      "keyword_score": 16,
+      "match_keywords": [
+        "pmo",
+        "director"
+      ],
+      "raw_snippet": "",
+      "source_count": 1,
+      "policy_status": "pass",
+      "sources": [
+        "exa"
+      ]
+    },
+    {
+      "id": "exa-48277",
+      "source": "exa",
+      "title": "PMO Director - Finance Transformation",
+      "company": "Involvedsolutions",
+      "location": "United Arab Emirates",
+      "url": "https://www.involvedsolutions.com/jobs/625854-PMO-Director---Finance-Transformation",
+      "posted": "",
+      "seniority": "Director",
+      "domain_match": true,
+      "keyword_score": 16,
+      "match_keywords": [
+        "pmo",
+        "director"
+      ],
+      "raw_snippet": "",
+      "source_count": 1,
+      "policy_status": "pass",
+      "sources": [
+        "exa"
+      ]
+    },
+    {
+      "id": "exa-51180",
+      "source": "exa",
+      "title": "Vice President of Digital Transformation",
+      "company": "Roberthalf",
+      "location": "Saudi Arabia",
+      "url": "https://www.roberthalf.com/us/en/job-details/vice-president-of-digital-transformation",
+      "posted": "",
+      "seniority": "Executive",
+      "domain_match": true,
+      "keyword_score": 10,
+      "match_keywords": [
+        "digital transformation"
+      ],
+      "raw_snippet": "",
+      "source_count": 1,
+      "policy_status": "pass",
+      "sources": [
+        "exa"
+      ]
+    },
+    {
+      "id": "exa-8264",
+      "source": "exa",
+      "title": "Vice President Of Digital Banking jobs",
+      "company": "Emirates NBD",
+      "location": "United Arab Emirates",
+      "url": "https://www.efinancialcareers.co.uk/jobs/vice-president-of-digital-banking/at-emirates-nbd",
+      "posted": "",
+      "seniority": "Executive",
+      "domain_match": true,
+      "keyword_score": 10,
+      "match_keywords": [
+        "digital banking"
+      ],
+      "raw_snippet": "",
+      "source_count": 1,
+      "policy_status": "pass",
+      "sources": [
+        "exa"
+      ]
+    }
+  ],
+  "kpi": {
+    "total_raw": 24,
+    "sources_loaded": 1,
+    "stale_sources": 0,
+    "unique_after_dedup": 23,
+    "applied_filtered": 0,
+    "policy_filtered": 7,
+    "final_candidates": 16,
+    "multi_source_jobs": 0,
+    "new_today": 16
+  },
+  "recommendations": []
+}

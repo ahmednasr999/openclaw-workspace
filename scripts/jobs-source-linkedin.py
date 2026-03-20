@@ -1,0 +1,206 @@
+#!/usr/bin/env python3
+"""
+jobs-source-linkedin.py — LinkedIn job source adapter using python-jobspy.
+
+Uses python-jobspy library to scrape LinkedIn jobs.
+Searches 22 titles x priority countries.
+Handles rate limiting/blocks gracefully.
+
+Output: data/jobs-raw/linkedin.json
+"""
+
+import time
+import sys
+from pathlib import Path
+
+# Add scripts dir to path for imports
+sys.path.insert(0, str(Path(__file__).parent))
+
+from _imports import agent_common, jobs_source_common
+
+# Import from agent_common
+AgentResult = agent_common.AgentResult
+agent_main = agent_common.agent_main
+is_dry_run = agent_common.is_dry_run
+JOBS_RAW_DIR = agent_common.JOBS_RAW_DIR
+
+# Import from jobs_source_common
+ALL_TITLES = jobs_source_common.ALL_TITLES
+GCC_COUNTRIES = jobs_source_common.GCC_COUNTRIES
+PRIORITY_COUNTRIES = jobs_source_common.PRIORITY_COUNTRIES
+COUNTRY_SEARCH_TERMS = jobs_source_common.COUNTRY_SEARCH_TERMS
+standard_job_dict = jobs_source_common.standard_job_dict
+
+# Configuration
+AGENT_NAME = "jobs-source-linkedin"
+OUTPUT_FILE = JOBS_RAW_DIR / "linkedin.json"
+RESULTS_PER_SEARCH = 10
+HOURS_OLD = 24
+RATE_LIMIT_DELAY = 2.0  # LinkedIn is aggressive about rate limiting
+
+
+def search_linkedin_jobs(title: str, country: str) -> list[dict]:
+    """Search LinkedIn using jobspy. Returns list of job dicts."""
+    try:
+        from jobspy import scrape_jobs
+        
+        # Get location term
+        location = COUNTRY_SEARCH_TERMS.get(country, [country])[0]
+        
+        # Scrape
+        df = scrape_jobs(
+            site_name=["linkedin"],
+            search_term=title,
+            location=location,
+            results_wanted=RESULTS_PER_SEARCH,
+            hours_old=HOURS_OLD,
+            country_indeed=None,
+        )
+        
+        if df is None or df.empty:
+            return []
+        
+        jobs = []
+        for _, row in df.iterrows():
+            job_id = str(row.get("id", "")) or str(abs(hash(str(row.get("job_url", "")))))[:10]
+            job_title = str(row.get("title", title))
+            company = str(row.get("company", "Confidential"))
+            location_str = str(row.get("location", country))
+            url = str(row.get("job_url", ""))
+            posted = str(row.get("date_posted", ""))[:10] if row.get("date_posted") else ""
+            description = str(row.get("description", ""))[:500] if row.get("description") else ""
+            
+            if not url:
+                continue
+            
+            job = standard_job_dict(
+                job_id=job_id,
+                source="linkedin",
+                title=job_title,
+                company=company if company != "nan" else "Confidential",
+                location=location_str if location_str != "nan" else country,
+                url=url,
+                posted=posted if posted != "nan" else "",
+                raw_snippet=description
+            )
+            jobs.append(job)
+        
+        return jobs
+        
+    except ImportError:
+        print("  ERROR: jobspy not installed. Run: pip install python-jobspy")
+        return []
+    except Exception as e:
+        error_str = str(e).lower()
+        if "blocked" in error_str or "rate" in error_str or "403" in error_str:
+            print(f"  Rate limited/blocked: {e}")
+        else:
+            print(f"  Search error: {e}")
+        return []
+
+
+def run_linkedin_scanner(result: AgentResult):
+    """Main scanner logic."""
+    
+    if is_dry_run():
+        print("\n=== DRY RUN: Search Matrix ===")
+        total_searches = 0
+        
+        print("\n--- Priority Countries (all 22 titles) ---")
+        for country in PRIORITY_COUNTRIES:
+            print(f"\n  {country}:")
+            for title in ALL_TITLES:
+                print(f"    - {title}")
+                total_searches += 1
+        
+        print(f"\n--- Total: {total_searches} searches ---")
+        print(f"Estimated time: {total_searches * RATE_LIMIT_DELAY / 60:.1f} minutes")
+        print(f"Results per search: {RESULTS_PER_SEARCH}")
+        print(f"Hours old filter: {HOURS_OLD}h")
+        
+        result.set_data([])
+        result.set_kpi({
+            "searches_planned": total_searches,
+            "countries": len(PRIORITY_COUNTRIES),
+            "titles": len(ALL_TITLES),
+        })
+        return
+    
+    # Build search plan
+    searches = []
+    for country in PRIORITY_COUNTRIES:
+        for title in ALL_TITLES:
+            searches.append((title, country))
+    
+    print(f"Search plan: {len(searches)} queries (LinkedIn)")
+    
+    # Track stats
+    searches_run = 0
+    jobs_found_raw = 0
+    seen_urls = set()
+    all_jobs = []
+    errors = 0
+    blocked = False
+    
+    for title, country in searches:
+        if blocked:
+            print("  LinkedIn appears blocked, stopping gracefully")
+            break
+        
+        searches_run += 1
+        
+        jobs = search_linkedin_jobs(title, country)
+        
+        if not jobs:
+            errors += 1
+            if errors >= 5 and jobs_found_raw == 0:
+                blocked = True
+            time.sleep(1.0)
+            continue
+        
+        jobs_found_raw += len(jobs)
+        
+        for job in jobs:
+            if job["url"] in seen_urls:
+                continue
+            seen_urls.add(job["url"])
+            
+            if job.get("relevant", False):
+                all_jobs.append(job)
+        
+        if searches_run % 10 == 0:
+            print(f"  Progress: {searches_run}/{len(searches)} | found {jobs_found_raw} | kept {len(all_jobs)}")
+        
+        time.sleep(RATE_LIMIT_DELAY)
+    
+    print(f"\nCompleted: {searches_run} searches, {jobs_found_raw} raw, {len(all_jobs)} kept")
+    if blocked:
+        print("  Note: LinkedIn rate limiting detected, partial results")
+    
+    result.set_data(all_jobs)
+    result.set_kpi({
+        "searches_run": searches_run,
+        "results_per_search": round(jobs_found_raw / max(1, searches_run), 2),
+        "unique_jobs": len(all_jobs),
+        "errors": errors,
+        "blocked": blocked,
+    })
+    
+    if blocked and len(all_jobs) > 0:
+        result.status = "partial"
+
+
+def main():
+    """Entry point."""
+    JOBS_RAW_DIR.mkdir(parents=True, exist_ok=True)
+    agent_main(
+        agent_name=AGENT_NAME,
+        run_func=run_linkedin_scanner,
+        output_path=OUTPUT_FILE,
+        ttl_hours=6,
+        version="1.0.0"
+    )
+
+
+if __name__ == "__main__":
+    main()

@@ -371,7 +371,6 @@ def sync_new_jobs(jobs_list):
                 source=job.get("site", "LinkedIn").capitalize()[:50],
                 url=job.get("url", ""),
                 discovered_date=job.get("date_posted", datetime.now().strftime("%Y-%m-%d")),
-                applied_date=job.get("applied_date")  # Pass through if available
             )
             added += 1
         except Exception as e:

@@ -1,0 +1,42 @@
+{
+  "meta": {
+    "agent": "email-agent",
+    "version": "1.0.0",
+    "generated_at": "2026-03-20T19:21:48.046510+02:00",
+    "duration_ms": 748,
+    "ttl_hours": 4,
+    "status": "success",
+    "error": null,
+    "run_id": "c8d3259e",
+    "retries_used": 0,
+    "data_freshness": "fresh"
+  },
+  "data": {
+    "scan_time": "2026-03-20T19:21:48.046237+02:00",
+    "total_scanned": 50,
+    "by_category": {
+      "interview_invite": 0,
+      "recruiter_reach": 0,
+      "application_ack": 0,
+      "rejection": 0,
+      "assessment": 0,
+      "follow_up_needed": 0,
+      "other": 50
+    },
+    "interview_invites": [],
+    "recruiter_messages": [],
+    "application_acks": [],
+    "rejections": [],
+    "assessments": [],
+    "follow_ups_needed": [],
+    "actionable_count": 0
+  },
+  "kpi": {
+    "emails_processed": 50,
+    "actionable": 0,
+    "interviews_detected": 0,
+    "recruiter_messages": 0,
+    "unread_actionable": 0
+  },
+  "recommendations": []
+}
