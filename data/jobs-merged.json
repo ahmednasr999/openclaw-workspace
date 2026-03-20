@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-merge",
     "version": "1.0.0",
-    "generated_at": "2026-03-21T00:23:57.444271+02:00",
-    "duration_ms": 29714,
+    "generated_at": "2026-03-21T00:51:54.948119+02:00",
+    "duration_ms": 29712,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "c88a1ac3",
+    "run_id": "2399e8e1",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -60,32 +60,6 @@
       "policy_status": "pass",
       "sources": [
         "exa"
-      ]
-    },
-    {
-      "id": "linkedin-li-4379328713",
-      "source": "linkedin",
-      "title": "Executive Director of Digital Transformation & Cloud Strategy",
-      "company": "Confidential Government",
-      "location": "Riyadh, Saudi Arabia",
-      "url": "https://sa.linkedin.com/jobs/view/executive-director-of-digital-transformation-cloud-strategy-at-confidential-government-4379328713",
-      "posted": "2026-03-05",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 30,
-      "match_keywords": [
-        "digital transformation",
-        "cloud",
-        "executive",
-        "director"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
       ]
     },
     {
@@ -409,30 +383,6 @@
       "policy_status": "pass",
       "sources": [
         "exa"
-      ]
-    },
-    {
-      "id": "linkedin-li-4375112810",
-      "source": "linkedin",
-      "title": "Director - Digital Transformation & IT",
-      "company": "Dubai Holding Community Management",
-      "location": "Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/director-digital-transformation-it-at-dubai-holding-community-management-4375112810",
-      "posted": "2026-02-19",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 16,
-      "match_keywords": [
-        "digital transformation",
-        "director"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
       ]
     },
     {
@@ -1115,30 +1065,6 @@
       "match_keywords": [
         "ai",
         "director"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
-      "id": "linkedin-li-4373109759",
-      "source": "linkedin",
-      "title": "Head of AI Transformation & Innovation",
-      "company": "Sky News Arabia",
-      "location": "Abu Dhabi Emirate, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/head-of-ai-transformation-innovation-at-sky-news-arabia-4373109759",
-      "posted": "2026-02-19",
-      "seniority": "Director",
-      "domain_match": true,
-      "keyword_score": 13,
-      "match_keywords": [
-        "ai",
-        "head of"
       ],
       "raw_snippet": "",
       "relevant": true,
@@ -2288,29 +2214,6 @@
       ]
     },
     {
-      "id": "linkedin-li-4350835715",
-      "source": "linkedin",
-      "title": "Head of Tech",
-      "company": "Confidential",
-      "location": "Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/head-of-tech-at-confidential-4350835715",
-      "posted": "2026-02-22",
-      "seniority": "Director",
-      "domain_match": true,
-      "keyword_score": 6,
-      "match_keywords": [
-        "head of"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
       "id": "linkedin-li-4379915961",
       "source": "linkedin",
       "title": "Chief Executive Officer",
@@ -2599,29 +2502,6 @@
       "keyword_score": 6,
       "match_keywords": [
         "director"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
-      "id": "linkedin-li-4352999603",
-      "source": "linkedin",
-      "title": "Head of Transformation",
-      "company": "The Cigna Group",
-      "location": "Dubai, Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/head-of-transformation-at-the-cigna-group-4352999603",
-      "posted": "2026-01-15",
-      "seniority": "Director",
-      "domain_match": true,
-      "keyword_score": 6,
-      "match_keywords": [
-        "head of"
       ],
       "raw_snippet": "",
       "relevant": true,
@@ -3692,29 +3572,6 @@
       ]
     },
     {
-      "id": "linkedin-li-4381667648",
-      "source": "linkedin",
-      "title": "Principal Technical Program Manager, Digital Sovereignty AWS Digital Sovereignty & European Sovereign CloudDigital",
-      "company": "Amazon Web Services (AWS)",
-      "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/principal-technical-program-manager-digital-sovereignty-aws-digital-sovereignty-european-sovereign-clouddigital-at-amazon-web-services-aws-4381667648",
-      "posted": "2026-03-05",
-      "seniority": "Principal",
-      "domain_match": true,
-      "keyword_score": 6,
-      "match_keywords": [
-        "cloud"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
       "id": "linkedin-li-4384799229",
       "source": "linkedin",
       "title": "Head of Chemistry - Yasmina British Academy - AY2026/27",
@@ -3975,29 +3832,6 @@
       "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
       "url": "https://ae.linkedin.com/jobs/view/landscape-design-director-at-blake-anderson-recruitment-4382869939",
       "posted": "2026-03-11",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 6,
-      "match_keywords": [
-        "director"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
-      "id": "linkedin-li-4376090289",
-      "source": "linkedin",
-      "title": "Director - Delivery",
-      "company": "Inception",
-      "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/director-delivery-at-inception-4376090289",
-      "posted": "2026-03-17",
       "seniority": "C-Suite",
       "domain_match": false,
       "keyword_score": 6,
@@ -5942,27 +5776,6 @@
       ]
     },
     {
-      "id": "linkedin-li-4375708512",
-      "source": "linkedin",
-      "title": "CPTO - Chief Product Technology Officer",
-      "company": "talabat",
-      "location": "Dubai, Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/cpto-chief-product-technology-officer-at-talabat-4375708512",
-      "posted": "2026-03-17",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
       "id": "linkedin-li-4372368161",
       "source": "linkedin",
       "title": "Chief Strategy Officer",
@@ -7601,27 +7414,6 @@
       ]
     },
     {
-      "id": "linkedin-li-4372693407",
-      "source": "linkedin",
-      "title": "Chief Operating Officer",
-      "company": "Artificial Intelligence",
-      "location": "Dammam, Eastern, Saudi Arabia",
-      "url": "https://sa.linkedin.com/jobs/view/chief-operating-officer-at-artificial-intelligence-4372693407",
-      "posted": "2026-02-19",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
       "id": "linkedin-li-4381825277",
       "source": "linkedin",
       "title": "Chief Operating Officer",
@@ -7795,11 +7587,11 @@
     "sources_loaded": 5,
     "stale_sources": 0,
     "unique_after_dedup": 780,
-    "applied_filtered": 14,
-    "policy_filtered": 424,
-    "final_candidates": 342,
+    "applied_filtered": 25,
+    "policy_filtered": 422,
+    "final_candidates": 333,
     "multi_source_jobs": 4,
-    "new_today": 342
+    "new_today": 333
   },
   "recommendations": []
 }

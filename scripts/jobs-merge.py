@@ -301,9 +301,20 @@ def run_merge(result: AgentResult):
     
     for job in fuzzy_deduped:
         job_id = job.get("id", "").split("-")[-1]
+        url = job.get("url", "")
+        
+        # Check job ID directly
         if job_id in applied_ids:
             applied_filtered += 1
             continue
+        
+        # Also extract any numeric ID from URL (LinkedIn URLs contain job IDs)
+        import re
+        url_ids = re.findall(r'(\d{8,})', url)
+        if any(uid in applied_ids for uid in url_ids):
+            applied_filtered += 1
+            continue
+        
         not_applied.append(job)
     
     print(f"After applied filter: {len(not_applied)} jobs (removed {applied_filtered})")
