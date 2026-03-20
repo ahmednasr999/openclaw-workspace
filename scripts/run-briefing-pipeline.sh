@@ -105,8 +105,8 @@ case "$MODE" in
     --jobs-only)
         log "=== JOB SOURCES (4x/day) ==="
         # Google Jobs & Bayt: blocked from VPS (403). Disabled.
+        # Exa dropped — unreliable (stale URLs, wrong locations, profile pages)
         run_parallel "Job Sources" \
-            "exa"       "jobs-source-exa.py"      180 \
             "linkedin"  "jobs-source-linkedin.py"  120 \
             "indeed"    "jobs-source-indeed.py"    120
         
@@ -130,7 +130,6 @@ case "$MODE" in
             "content"   "content-agent.py"         30 \
             "outreach"  "outreach-agent.py"        15 \
             "system"    "system-agent.py"           30 \
-            "exa"       "jobs-source-exa.py"       180 \
             "linkedin"  "jobs-source-linkedin.py"  120 \
             "indeed"    "jobs-source-indeed.py"    120
         

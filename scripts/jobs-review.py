@@ -451,11 +451,16 @@ def run_review(result: AgentResult):
         "posted 11 months", "posted 12 months",
     ]
     
-    for job in submit_jobs:
+    for idx, job in enumerate(submit_jobs):
         url = job.get("url", "")
         if not url:
             live_submit.append(job)
             continue
+        
+        # Rate limit: 1 sec between requests to avoid 429
+        if idx > 0:
+            time.sleep(1)
+        
         try:
             req = _urllib_req.Request(url, headers={
                 "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36"
@@ -483,16 +488,18 @@ def run_review(result: AgentResult):
         except Exception as e:
             err_str = str(e)
             err_type = type(e).__name__
-            # HTTPError (404, etc), URLError, timeout
-            if any(code in err_str for code in ["404", "410", "403", "500", "HTTP Error"]):
+            # Only treat definitive dead-page codes as expired
+            if any(code in err_str for code in ["404", "410"]):
                 expired_count += 1
-                print(f"  ❌ EXPIRED ({err_type}: {err_str[:25]}): {job.get('title','?')[:40]}")
+                print(f"  ❌ EXPIRED ({err_str[:30]}): {job.get('title','?')[:40]}")
+            elif "429" in err_str or "403" in err_str:
+                # Rate limited or access denied — NOT expired, keep the job
+                print(f"  ⚠️ RATE LIMITED/BLOCKED (keeping): {job.get('title','?')[:40]}")
+                live_submit.append(job)
             elif "timeout" in err_str.lower() or "timed out" in err_str.lower():
-                expired_count += 1
-                print(f"  ❌ TIMEOUT: {job.get('title','?')[:40]}")
-            elif "HTTPError" in err_type:
-                expired_count += 1
-                print(f"  ❌ HTTP ERROR ({err_str[:30]}): {job.get('title','?')[:40]}")
+                # Timeout — keep the job, could be network issue
+                print(f"  ⚠️ TIMEOUT (keeping): {job.get('title','?')[:40]}")
+                live_submit.append(job)
             else:
                 # Other network error - keep the job but warn
                 print(f"  ⚠️ CHECK FAILED ({err_str[:40]}): {job.get('title','?')[:50]}")
