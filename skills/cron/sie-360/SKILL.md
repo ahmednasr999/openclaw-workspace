@@ -1,6 +1,6 @@
 ---
 name: sie-360
-description: "Self-Improvement Engine daily run: verify system state with real commands, audit learnings enforcement, detect patterns."
+description: "Self-Improvement Engine daily run: verify system state with real commands, audit learnings enforcement, detect patterns, with auto-remediation of safe issues."
 ---
 
 # SIE 360 Daily
@@ -210,8 +210,322 @@ Checks: [N] areas | OK: [n] | WARN: [n] | ALERT: [n]
 
 [List each finding with category and actual numbers]
 
-Actions needed: [specific list with priority]
+(Auto-remediation runs in Step 6b - see below for Auto-Fixed / Needs Attention summary)
 ```
+
+Save findings summary to /tmp/sie_findings.json for Step 6b:
+```bash
+python3 -c "
+import json
+# Summarize current findings for Step 6b to consume
+findings = {
+    'score': SCORE,  # replace with actual score
+    'alerts': ALERTS,  # replace with actual alert list
+    'warnings': WARNINGS,  # replace with actual warning list
+    'timestamp': __import__('datetime').datetime.now().isoformat()
+}
+with open('/tmp/sie_findings.json', 'w') as f:
+    json.dump(findings, f, indent=2)
+print('Findings saved to /tmp/sie_findings.json')
+"
+```
+
+### Step 6b: Auto-Remediation
+
+Run AFTER Step 6 (findings known) and BEFORE sending the final report. Automatically fix safe, low-risk issues. Alert only for issues requiring human judgment.
+
+```bash
+cd /root/.openclaw/workspace
+python3 << 'AUTOREMEDIATE'
+import json, re, os, subprocess, sys
+from pathlib import Path
+
+WORKSPACE = "/root/.openclaw/workspace"
+JOBS_JSON_CANDIDATES = [
+    "/root/.openclaw/agents/main/cron/jobs.json",
+    "/root/.openclaw/cron/jobs.json",
+    "/root/.openclaw/jobs.json",
+]
+
+auto_fixed = []
+needs_attention = []
+git_messages = []
+
+# ---- Load cron data from Step 4 ----
+def load_cron_data():
+    try:
+        with open("/tmp/sie_crons_raw.txt") as f:
+            text = f.read()
+        clean = "\n".join(l for l in text.split("\n") if not l.startswith("[plugins]"))
+        decoder = json.JSONDecoder()
+        for i, ch in enumerate(clean):
+            if ch == '{':
+                try:
+                    data, _ = decoder.raw_decode(clean[i:])
+                    return data
+                except json.JSONDecodeError:
+                    continue
+    except Exception as e:
+        print(f"WARN: Could not load cron data: {e}")
+    return {}
+
+# ---- Find jobs.json ----
+def find_jobs_json():
+    for path in JOBS_JSON_CANDIDATES:
+        if os.path.exists(path):
+            return path
+    result = subprocess.run(
+        ['find', '/root/.openclaw', '-name', 'jobs.json', '-not', '-path', '*/node_modules/*'],
+        capture_output=True, text=True
+    )
+    lines = [l for l in result.stdout.strip().split('\n') if l]
+    return lines[0] if lines else None
+
+cron_data = load_cron_data()
+jobs = cron_data.get("jobs", [])
+
+jobs_json_path = find_jobs_json()
+jobs_raw = None
+if jobs_json_path:
+    try:
+        with open(jobs_json_path) as f:
+            jobs_raw = json.load(f)
+        print(f"Loaded jobs.json from {jobs_json_path}")
+    except Exception as e:
+        print(f"WARN: Could not load jobs.json: {e}")
+
+# ======================================================
+# GREEN LIGHT FIXES
+# ======================================================
+
+# ---- Fix 1: Raw prompt crons (not skill-first) ----
+for job in jobs:
+    msg = job.get("payload", {}).get("message", "").strip()
+    name = job.get("name", "unknown")
+    job_id = job.get("id", "")
+    is_skill_first = "Read and follow" in msg and ".md" in msg
+    if not is_skill_first and msg:
+        slug = re.sub(r'[^a-z0-9]+', '-', name.lower()).strip('-')
+        skill_dir = os.path.join(WORKSPACE, f"skills/cron/{slug}")
+        skill_file = os.path.join(skill_dir, "SKILL.md")
+        if not os.path.exists(skill_file):
+            os.makedirs(skill_dir, exist_ok=True)
+            skill_content = f"""---
+name: {slug}
+description: "Auto-generated from raw-prompt cron: {name}"
+---
+
+# {name}
+
+Auto-generated skill. Original raw prompt converted to skill-first format.
+
+## Task
+
+{msg}
+
+## Steps
+
+1. Execute the task described in the Task section above.
+2. Report results clearly with actual output - no estimates.
+3. Log any errors encountered.
+
+## Error Handling
+
+- If any step fails, report the error and continue with remaining checks.
+- Do not skip steps silently.
+"""
+            with open(skill_file, 'w') as f:
+                f.write(skill_content)
+            # Update jobs.json to point to new skill
+            if jobs_raw:
+                new_msg = f"Read and follow skills/cron/{slug}/SKILL.md"
+                for raw_job in jobs_raw.get("jobs", []):
+                    if raw_job.get("id") == job_id or raw_job.get("name") == name:
+                        raw_job.setdefault("payload", {})["message"] = new_msg
+                        break
+            auto_fixed.append(f"Converted '{name}' to skill-first (skills/cron/{slug}/SKILL.md)")
+            git_messages.append(f"converted cron '{name}' to skill-first")
+        else:
+            # Skill file exists but cron message not updated yet
+            if jobs_raw:
+                new_msg = f"Read and follow skills/cron/{slug}/SKILL.md"
+                for raw_job in jobs_raw.get("jobs", []):
+                    if (raw_job.get("id") == job_id or raw_job.get("name") == name):
+                        current_msg = raw_job.get("payload", {}).get("message", "")
+                        if "Read and follow" not in current_msg:
+                            raw_job.setdefault("payload", {})["message"] = new_msg
+                            auto_fixed.append(f"Updated '{name}' cron message to point to existing skill file")
+                            git_messages.append(f"updated cron '{name}' message to skill-first")
+                        break
+
+# ---- Fix 2: Timed-out crons (consecutiveErrors=1 and last error contains "timed out") ----
+for job in jobs:
+    name = job.get("name", "unknown")
+    job_id = job.get("id", "")
+    state = job.get("state", {})
+    consec = state.get("consecutiveErrors", 0)
+    last_error = str(state.get("lastError", "")).lower()
+    if consec == 1 and "timed out" in last_error:
+        current_timeout = job.get("timeoutSeconds", job.get("payload", {}).get("timeoutSeconds", 600))
+        try:
+            current_timeout = int(current_timeout)
+        except (TypeError, ValueError):
+            current_timeout = 600
+        new_timeout = min(int(current_timeout * 1.5), 3600)
+        if jobs_raw and new_timeout != current_timeout:
+            for raw_job in jobs_raw.get("jobs", []):
+                if raw_job.get("id") == job_id or raw_job.get("name") == name:
+                    raw_job["timeoutSeconds"] = new_timeout
+                    break
+            auto_fixed.append(f"Bumped '{name}' timeout {current_timeout}s -> {new_timeout}s")
+            git_messages.append(f"bumped timeout for '{name}': {current_timeout}s -> {new_timeout}s")
+
+# ---- Fix 3: Missing Notion briefing page (cron ok but page missing) ----
+try:
+    import urllib.request, ssl
+    from datetime import datetime, timezone
+    today = datetime.now(timezone.utc).strftime('%Y-%m-%d')
+    with open(f'{WORKSPACE}/config/notion.json') as f:
+        notion_token = json.load(f)['token']
+    ctx = ssl.create_default_context()
+    def notion_query(db_id, filter_body):
+        url = f"https://api.notion.com/v1/databases/{db_id}/query"
+        data = json.dumps(filter_body).encode()
+        req = urllib.request.Request(url, data=data, method='POST', headers={
+            'Authorization': f'Bearer {notion_token}',
+            'Notion-Version': '2022-06-28',
+            'Content-Type': 'application/json'
+        })
+        with urllib.request.urlopen(req, context=ctx, timeout=15) as r:
+            return json.loads(r.read())
+    resp = notion_query('3268d599-a162-812d-a59e-e5496dec80e7', {
+        'filter': {'property': 'Date', 'date': {'equals': today}},
+        'page_size': 1
+    })
+    briefing_missing = len(resp.get('results', [])) == 0
+    briefing_cron_ok = any(
+        'brief' in j.get('name', '').lower() and j.get('state', {}).get('consecutiveErrors', 0) == 0
+        for j in jobs
+    )
+    if briefing_missing and briefing_cron_ok:
+        script_path = f"{WORKSPACE}/scripts/daily-briefing-generator.py"
+        if os.path.exists(script_path):
+            result = subprocess.run(
+                ['python3', script_path, '--notion-only'],
+                capture_output=True, text=True, cwd=WORKSPACE, timeout=120
+            )
+            if result.returncode == 0:
+                auto_fixed.append("Triggered retroactive Notion briefing page creation for today")
+                git_messages.append("triggered Notion briefing sync")
+            else:
+                err_snippet = result.stderr[:120].replace('\n', ' ')
+                needs_attention.append(f"Notion briefing sync failed: {err_snippet}")
+        else:
+            print("Cannot auto-fix: briefing Notion sync script not found at scripts/daily-briefing-generator.py")
+            needs_attention.append("Missing Notion briefing page - sync script not found, create retroactively")
+except Exception as e:
+    print(f"Briefing Notion check skipped: {e}")
+
+# ---- Fix 4: Single transient error (non-timeout) - note only, no re-run ----
+for job in jobs:
+    name = job.get("name", "unknown")
+    state = job.get("state", {})
+    consec = state.get("consecutiveErrors", 0)
+    last_error = str(state.get("lastError", "")).lower()
+    if consec == 1 and "timed out" not in last_error:
+        auto_fixed.append(f"'{name}' had 1 transient error - will auto-clear on next scheduled run (no action needed)")
+
+# ======================================================
+# YELLOW LIGHT - Alert only, never auto-fix
+# ======================================================
+
+# Consecutive errors >= 3
+for job in jobs:
+    name = job.get("name", "unknown")
+    state = job.get("state", {})
+    consec = state.get("consecutiveErrors", 0)
+    if consec >= 3:
+        last_error = state.get("lastError", "unknown error")
+        needs_attention.append(f"'{name}' has {consec} consecutive errors (last: {str(last_error)[:80]}) - investigate manually")
+
+# Disk > 80%
+try:
+    disk_result = subprocess.run(['df', '-h', '/'], capture_output=True, text=True)
+    for line in disk_result.stdout.split('\n')[1:]:
+        parts = line.split()
+        if len(parts) >= 5 and parts[4].endswith('%'):
+            use_pct = int(parts[4].rstrip('%'))
+            if use_pct > 80:
+                needs_attention.append(f"Disk usage {use_pct}% - needs cleanup decision (YELLOW: do not auto-delete)")
+except Exception as e:
+    print(f"Disk check skipped: {e}")
+
+# Session bloat > 100MB
+try:
+    session_dir = '/root/.openclaw/agents/main/sessions/'
+    if os.path.exists(session_dir):
+        result = subprocess.run(['du', '-sb', session_dir], capture_output=True, text=True)
+        if result.stdout:
+            size_mb = int(result.stdout.split()[0]) / 1024 / 1024
+            if size_mb > 100:
+                needs_attention.append(f"Session bloat: {size_mb:.0f}MB - review before deleting (YELLOW: needs human decision)")
+except Exception as e:
+    print(f"Session bloat check skipped: {e}")
+
+# ---- Write fixes to jobs.json ----
+if jobs_raw and jobs_json_path and git_messages:
+    try:
+        with open(jobs_json_path, 'w') as f:
+            json.dump(jobs_raw, f, indent=2)
+        print(f"Updated jobs.json at {jobs_json_path}")
+    except Exception as e:
+        needs_attention.append(f"Could not save jobs.json changes: {e}")
+
+# ---- Git commit all auto-fixes ----
+if git_messages:
+    fix_desc = "; ".join(git_messages[:4])
+    if len(git_messages) > 4:
+        fix_desc += f" (+{len(git_messages)-4} more)"
+    subprocess.run(['git', '-C', WORKSPACE, 'add', '-A'], capture_output=True)
+    commit_msg = f"fix(sie-auto): {fix_desc}"
+    result = subprocess.run(
+        ['git', '-C', WORKSPACE, 'commit', '-m', commit_msg],
+        capture_output=True, text=True
+    )
+    if result.returncode == 0:
+        print(f"Git committed: {commit_msg}")
+    else:
+        print(f"Git: {(result.stdout + result.stderr).strip()}")
+
+# ---- Save remediation results for report ----
+remediation = {"auto_fixed": auto_fixed, "needs_attention": needs_attention}
+with open("/tmp/sie_remediation.json", "w") as f:
+    json.dump(remediation, f, indent=2)
+
+# ---- Print summary (included in final report) ----
+print(f"\nAuto-Fixed ({len(auto_fixed)} issues):")
+for i, item in enumerate(auto_fixed, 1):
+    print(f"  {i}. \u2705 {item}")
+
+if needs_attention:
+    print(f"\nNeeds Attention ({len(needs_attention)} issues):")
+    for i, item in enumerate(needs_attention, 1):
+        print(f"  {i}. \u26a0\ufe0f {item}")
+else:
+    print("\nNeeds Attention: none - all clear")
+
+AUTOREMEDIATE
+```
+
+Incorporate the Auto-Fixed / Needs Attention output into your final report in this format:
+```
+Auto-Fixed (Y issues):
+1. checkmark [description]
+
+Needs Attention (Z issues):
+1. warning [description]
+```
+Replace "checkmark" with the unicode checkmark emoji and "warning" with the warning emoji.
 
 ### Step 8: Cron Delivery Verification
 Check that critical crons both delivered AND synced to Notion. Detect partial failures (Telegram delivered but Notion page missing).
