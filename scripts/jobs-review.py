@@ -434,8 +434,21 @@ def run_review(result: AgentResult):
     EXPIRED_SIGNALS = [
         "this job has expired", "job posting is closed", "no longer open",
         "position has been filled", "no longer available", "job has been removed",
-        "not found", "this listing has expired", "vacancy has been closed",
+        "this listing has expired", "vacancy has been closed",
         "not a valid job", "job no longer exists",
+        "we didn't find what you were looking for",
+        "didn't find what you were looking for",
+        "this job is no longer accepting applications",
+        "sorry, this job has been closed",
+    ]
+    
+    # Stale job signals — posted too long ago
+    STALE_SIGNALS = [
+        "months ago", "month ago", "year ago", "years ago",
+        "posted 2 months", "posted 3 months", "posted 4 months",
+        "posted 5 months", "posted 6 months", "posted 7 months",
+        "posted 8 months", "posted 9 months", "posted 10 months",
+        "posted 11 months", "posted 12 months",
     ]
     
     for job in submit_jobs:
@@ -458,6 +471,12 @@ def run_review(result: AgentResult):
                 if any(signal in body for signal in EXPIRED_SIGNALS):
                     expired_count += 1
                     print(f"  ❌ EXPIRED (content): {job.get('title','?')[:50]}")
+                    continue
+                
+                # Check for stale postings (months/years old)
+                if any(signal in body for signal in STALE_SIGNALS):
+                    expired_count += 1
+                    print(f"  ❌ STALE (old posting): {job.get('title','?')[:50]}")
                     continue
                 
                 live_submit.append(job)
