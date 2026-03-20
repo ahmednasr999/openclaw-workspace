@@ -178,11 +178,15 @@ OUTPUT FORMAT (JSON array):
 ]
 
 SCORING GUIDELINES:
-- 9-10: Perfect match - exact target role, target location, strong domain fit
-- 7-8: Strong match - right seniority, good domain, minor gaps
-- 5-6: Partial match - right seniority but weak domain fit, or stretch role
-- 3-4: Weak match - some relevance but significant gaps
-- 1-2: No match - wrong domain, wrong seniority, or anti-pattern role
+- 9-10: Perfect match - exact target role (DT Director, VP PMO, Head of Technology), target location (GCC), strong domain
+- 7-8: Strong match - right seniority (Director/VP/Head/SVP/C-level), relevant domain, target geography
+- 5-6: Partial match - right seniority but different domain, or right domain but mid-level title
+- 3-4: Weak match - some relevance but wrong seniority or wrong geography
+- 1-2: No match - junior role, wrong field entirely, or anti-pattern (pure sales/HR/civil)
+
+IMPORTANT: Score based on TITLE + COMPANY + LOCATION even when no description is available.
+A job titled "Director Digital Transformation" at a GCC company is at MINIMUM a 7 based on title alone.
+Do NOT penalize jobs for missing descriptions - the title is the primary signal.
 
 Return ONLY the JSON array, no other text."""
     
