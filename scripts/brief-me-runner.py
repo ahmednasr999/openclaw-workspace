@@ -100,7 +100,7 @@ def create_briefing():
     total_scanned = 0
     source_counts = {}
     if merged_path.exists():
-        merged = load_json(merged_path, {})
+        merged = json.load(open(merged_path))
         merged_jobs = merged.get("data", merged.get("jobs", []))
         if isinstance(merged_jobs, list):
             total_scanned = len(merged_jobs)
