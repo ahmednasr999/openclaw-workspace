@@ -2,19 +2,19 @@
   "meta": {
     "agent": "outreach-agent",
     "version": "1.0.0",
-    "generated_at": "2026-03-20T23:16:19.884716+02:00",
-    "duration_ms": 8,
+    "generated_at": "2026-03-21T00:00:01.223557+02:00",
+    "duration_ms": 0,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "2cfd680c",
+    "run_id": "8c224376",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
-    "scan_time": "2026-03-20T23:16:19.876466+02:00",
+    "scan_time": "2026-03-21T00:00:01.223352+02:00",
     "today": {
-      "date": "2026-03-20",
+      "date": "2026-03-21",
       "target": 5,
       "sent": 5,
       "remaining": 0
@@ -24,7 +24,7 @@
       "sent": 15,
       "accepted": 6,
       "pending": 10,
-      "velocity": 3.0
+      "velocity": 2.5
     },
     "queue_health": {
       "queue_depth": 2,
@@ -77,27 +77,27 @@
     }
   },
   "kpi": {
-    "outreach_velocity": 3.0,
+    "outreach_velocity": 2.5,
     "response_rate": 40.0,
     "overdue_count": 1,
     "queue_depth": 2
   },
   "recommendations": [
     {
-      "id": "rec-2cfd680c-0",
+      "id": "rec-8c224376-0",
       "action": "send_follow_ups",
       "target": "1 overdue follow-ups",
       "reason": "Follow-up dates have passed",
       "urgency": "high",
-      "timestamp": "2026-03-20T23:16:19.876498+02:00"
+      "timestamp": "2026-03-21T00:00:01.223398+02:00"
     },
     {
-      "id": "rec-2cfd680c-1",
+      "id": "rec-8c224376-1",
       "action": "research_more_leads",
       "target": "Outreach queue",
       "reason": "Queue depth (2) is low - add more leads",
       "urgency": "medium",
-      "timestamp": "2026-03-20T23:16:19.876503+02:00"
+      "timestamp": "2026-03-21T00:00:01.223405+02:00"
     }
   ]
 }

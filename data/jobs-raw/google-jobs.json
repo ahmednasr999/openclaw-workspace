@@ -2,21 +2,102 @@
   "meta": {
     "agent": "jobs-source-google",
     "version": "1.0.0",
-    "generated_at": "2026-03-20T23:17:00.231150+02:00",
-    "duration_ms": 40328,
+    "generated_at": "2026-03-21T00:00:20.756913+02:00",
+    "duration_ms": 20661,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "657cba9c",
+    "run_id": "369aa7a0",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
-  "data": [],
+  "data": [
+    {
+      "id": "google-in-5bd6d3474b0865fa",
+      "source": "google",
+      "title": "Experience Operations Director - Dubai",
+      "company": "Valtech Group",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=5bd6d3474b0865fa",
+      "posted": "2026-03-19",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 23,
+      "match_keywords": [
+        "ai",
+        "director",
+        "dubai",
+        "lte",
+        "api"
+      ],
+      "raw_snippet": "Why Valtech? We\u2019re advisors, visionaries, creative and techies. We embrace all things digital. We talk to each other. We have fun. We love our clients. We\u2019re looking ahead \u2022 We are global\n\n\n  \n**About Valtech:**\n\n\n\nAt Valtech, we are reshaping the way brands connect with their customers. As a global digital innovation company, we fuse creativity, technology, and strategy to solve complex business challenges and deliver exceptional experiences.\n\n\n\nWith over 6,500 experts in 60\\+ offices across 20",
+      "relevant": true,
+      "filter_reason": null
+    },
+    {
+      "id": "google-in-025f90f1df941203",
+      "source": "google",
+      "title": "Chief Technology Officer (CTO)",
+      "company": "FMC Network",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=025f90f1df941203",
+      "posted": "2026-03-18",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 13,
+      "match_keywords": [
+        "infrastructure",
+        "integration",
+        "architecture"
+      ],
+      "raw_snippet": "We are seeking a highly qualified **Chief Technology Officer (CTO)** for immediate joining.\n\n**Key Responsibilities**\n\nAs a CTO, you will play a critical role in strengthening IT governance, risk management, and compliance frameworks. Your responsibilities will include:\n\n\u00b7 Identify and evaluate potential risks across application, network, and infrastructure architectures.\n\n\u00b7 Analyze system designs, integrations, and configurations to uncover security and operational vulnerabilities.\n\n\u00b7 Assess co",
+      "relevant": true,
+      "filter_reason": null
+    },
+    {
+      "id": "google-in-7c275ede242e0fd1",
+      "source": "google",
+      "title": "Head of Digital Curriculum Strategy",
+      "company": "SpaceDuc Learning Technologies Ltd",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=7c275ede242e0fd1",
+      "posted": "2026-03-20",
+      "seniority": "Director",
+      "domain_match": true,
+      "keyword_score": 6,
+      "match_keywords": [
+        "head of"
+      ],
+      "raw_snippet": "Transform Digital Learning and Shape the Future of Education\n\nSpaceDuc Learning Technologies Ltd is seeking a forward\\-thinking **Head of Digital Curriculum Strategy** to lead the design, development, and execution of innovative digital learning programs. This role offers the opportunity to shape scalable, technology\\-driven education solutions across diverse learning environments.\n\n**Salary:** AED 30,000 \u2013 AED 40,000 per month  \n**Schedule:** Monday to Friday\n\nAbout the Role\n\nAs Head of Digital",
+      "relevant": true,
+      "filter_reason": null
+    },
+    {
+      "id": "google-in-bdeaee706e98c45c",
+      "source": "google",
+      "title": "Head of Asset Management & AI Transformation",
+      "company": "MaxAccelerate",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=bdeaee706e98c45c",
+      "posted": "2026-03-19",
+      "seniority": "Director",
+      "domain_match": true,
+      "keyword_score": 13,
+      "match_keywords": [
+        "ai",
+        "head of"
+      ],
+      "raw_snippet": "**Head of Asset Management \\& AI Transformation**\nRemote \\| Global Role \\| Multi\\-Industry\n\n**This is not a traditional asset management role**\nThis role is designed for someone who understands that the future of maintenance and asset management is driven by **data, reliability engineering, and intelligent systems**.\n\n\nIf your experience is rooted in **Reliability\\-Centred Maintenance (RCM), preventive and predictive strategies, labour optimisation, and cost control**, and you are interested in ",
+      "relevant": true,
+      "filter_reason": null
+    }
+  ],
   "kpi": {
-    "searches_run": 66,
-    "results_per_search": 0.0,
-    "unique_jobs": 0,
-    "errors": 66
+    "searches_run": 30,
+    "results_per_search": 0.27,
+    "unique_jobs": 4,
+    "errors": 24,
+    "note": "Using Indeed as proxy for Google Jobs (Google requires JS rendering)"
   },
   "recommendations": []
 }

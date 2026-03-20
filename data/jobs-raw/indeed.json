@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-03-20T23:32:55.277796+02:00",
-    "duration_ms": 65555,
+    "generated_at": "2026-03-20T23:59:24.542773+02:00",
+    "duration_ms": 67723,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "af12f236",
+    "run_id": "cc89a09a",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -38,7 +38,7 @@
       "id": "indeed-in-7c275ede242e0fd1",
       "source": "indeed",
       "title": "Head of Digital Curriculum Strategy",
-      "company": "Confidential",
+      "company": "SpaceDuc Learning Technologies Ltd",
       "location": "Dubai, DU, AE",
       "url": "https://ae.indeed.com/viewjob?jk=7c275ede242e0fd1",
       "posted": "2026-03-20",
@@ -116,9 +116,9 @@
   ],
   "kpi": {
     "searches_run": 66,
-    "results_per_search": 0.86,
+    "results_per_search": 0.85,
     "unique_jobs": 5,
-    "errors": 44
+    "errors": 42
   },
   "recommendations": []
 }
