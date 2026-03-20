@@ -38,13 +38,14 @@ HOURS_OLD = 48
 RATE_LIMIT_DELAY = 1.5
 
 # Indeed country codes
+# JobSpy requires full country names (not 2-letter codes)
 INDEED_COUNTRY_CODES = {
-    "United Arab Emirates": "ae",
-    "Saudi Arabia": "sa",
-    "Qatar": "qa",
-    "Bahrain": "bh",
-    "Kuwait": "kw",
-    "Oman": "om",
+    "United Arab Emirates": "united arab emirates",
+    "Saudi Arabia": "saudi arabia",
+    "Qatar": "qatar",
+    "Bahrain": "bahrain",
+    "Kuwait": "kuwait",
+    "Oman": "oman",
 }
 
 

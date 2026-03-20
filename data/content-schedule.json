@@ -2,17 +2,17 @@
   "meta": {
     "agent": "content-agent",
     "version": "1.0.0",
-    "generated_at": "2026-03-20T19:21:49.996463+02:00",
-    "duration_ms": 1867,
+    "generated_at": "2026-03-20T23:16:20.845112+02:00",
+    "duration_ms": 809,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "b812b609",
+    "run_id": "9b22cecb",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
-    "scan_time": "2026-03-20T19:21:49.996234+02:00",
+    "scan_time": "2026-03-20T23:16:20.844781+02:00",
     "today": {
       "date": "2026-03-20",
       "scheduled": [],
@@ -62,11 +62,11 @@
       "streak_days": 0,
       "posts_this_month": 16,
       "topics_covered": {
-        "General": 12,
-        "Growth": 9,
-        "TAM": 4,
+        "Growth": 12,
+        "General": 7,
+        "TAM": 5,
         "Sales": 3,
-        "Digital Transformation": 1
+        "Digital Transformation": 2
       }
     },
     "drafts_ready_for_review": [
@@ -76,19 +76,19 @@
       },
       {
         "title": "The $100B question: Is the Gulf ready for AI-first healthcare?",
-        "topic": null
+        "topic": "TAM"
       },
       {
         "title": "What 15 years in GCC healthcare taught me about digital transformation",
-        "topic": null
+        "topic": "Digital Transformation"
       },
       {
         "title": "The 3 mistakes that almost killed my $50M transformation",
-        "topic": null
+        "topic": "Growth"
       },
       {
         "title": "Why I turned down a CEO role to stay in PMO (and what I learned)",
-        "topic": null
+        "topic": "Growth"
       }
     ],
     "engagement_opportunities": []
@@ -102,28 +102,28 @@
   },
   "recommendations": [
     {
-      "id": "rec-b812b609-0",
+      "id": "rec-9b22cecb-0",
       "action": "schedule_post",
       "target": "Today's content",
       "reason": "No post scheduled for today",
       "urgency": "medium",
-      "timestamp": "2026-03-20T19:21:49.996278+02:00"
+      "timestamp": "2026-03-20T23:16:20.844834+02:00"
     },
     {
-      "id": "rec-b812b609-1",
+      "id": "rec-9b22cecb-1",
       "action": "review_drafts",
       "target": "6 pending drafts",
       "reason": "Drafts accumulating - review and publish",
       "urgency": "medium",
-      "timestamp": "2026-03-20T19:21:49.996282+02:00"
+      "timestamp": "2026-03-20T23:16:20.844839+02:00"
     },
     {
-      "id": "rec-b812b609-2",
+      "id": "rec-9b22cecb-2",
       "action": "post_today",
       "target": "Posting streak",
       "reason": "No active posting streak - post today to start one",
       "urgency": "low",
-      "timestamp": "2026-03-20T19:21:49.996285+02:00"
+      "timestamp": "2026-03-20T23:16:20.844842+02:00"
     }
   ]
 }

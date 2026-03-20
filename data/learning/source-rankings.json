@@ -1,22 +1,7 @@
 {
-  "linkedin": {
-    "recommended": 0,
+  "unknown": {
+    "recommended": 47,
     "applied": 0,
-    "rate": 0
-  },
-  "indeed": {
-    "recommended": 0,
-    "applied": 0,
-    "rate": 0
-  },
-  "bayt": {
-    "recommended": 0,
-    "applied": 0,
-    "rate": 0
-  },
-  "glassdoor": {
-    "recommended": 0,
-    "applied": 0,
-    "rate": 0
+    "rate": 0.0
   }
 }

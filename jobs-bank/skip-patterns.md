@@ -13,3 +13,8 @@
 - [2026-03-15] Wonderful Field CTO Riyadh: Unknown company, vague AI-generated JD, Field CTO is presales not exec, Mid/Senior level tag
 - [2026-03-15] Talent Connect Group - Head of PMO & Strategic Operations: Mid-Senior level, 5yr PM req, agency-posted confidential company (Ahmed override: applied anyway)
 - [2026-03-16] Sagest Capital Holdings - Co-Founding Software Executor (CEO label): Equity-only comp (no salary), hands-on coding required, pre-seed 2-10 employee startup, misaligned with DT executive positioning
+
+- [2026-03-20] exa-39756: Head of FinTech Data Platforms, Bahrain — good domain, Head-level is slightly above target (auto-learned after 3 skip signals)
+- [2026-03-20] exa-23289: Senior Digital Transformation Director, Telecom, UAE — telecom is adjacent, not core domain (auto-learned after 3 skip signals)
+- [2026-03-20] exa-51180: VP Digital Transformation, Saudi Arabia — good domain and location, VP is above target seniority (auto-learned after 3 skip signals)
+- [2026-03-20] exa-8508: Head of Digital Transformation at Riyadh Airports has right title and location but airports domain is outside target domains (auto-learned after 2 skip signals)

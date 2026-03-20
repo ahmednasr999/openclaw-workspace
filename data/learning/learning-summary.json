@@ -1,0 +1,22 @@
+{
+  "generated_at": "2026-03-20T21:02:46.970357+02:00",
+  "period": "last_7_days",
+  "job_recommendation_accuracy": {
+    "rate": 0.0,
+    "total": 47,
+    "applied": 0
+  },
+  "briefing_actionability": {
+    "total_briefings": 0,
+    "changes_detected": false
+  },
+  "auto_adjustments": {
+    "skip_patterns_added": 0,
+    "weight_changes": 1,
+    "source_rankings_updated": true
+  },
+  "insights": [
+    "\u26a0\ufe0f Job recommendation accuracy low (0%) \u2014 weights adjusted",
+    "\u2696\ufe0f Adjusted 1 keyword weights"
+  ]
+}
