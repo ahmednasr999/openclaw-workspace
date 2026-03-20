@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-merge",
     "version": "1.0.0",
-    "generated_at": "2026-03-20T19:22:06.379073+02:00",
-    "duration_ms": 39,
+    "generated_at": "2026-03-20T23:36:54.264608+02:00",
+    "duration_ms": 46,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "d0ce853d",
+    "run_id": "709b7e89",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -34,6 +34,33 @@
       "policy_status": "pass",
       "sources": [
         "exa"
+      ]
+    },
+    {
+      "id": "indeed-in-ad0553c8b7e3d398",
+      "source": "indeed",
+      "title": "QA Director - Middle East",
+      "company": "Netcracker Technology",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=ad0553c8b7e3d398",
+      "posted": "2026-03-20",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 30,
+      "match_keywords": [
+        "ai",
+        "cloud",
+        "enterprise",
+        "director",
+        "middle east"
+      ],
+      "raw_snippet": "### **We're building the future of how the world communicates.**\n\n\n\nNetcracker, part of NEC Corporation, combines deep telecom industry expertise with cutting\\-edge cloud\\-native and AI\\-powered innovations to enable communications service providers and enterprises to transform their businesses, unlock innovation, and create meaningful digital experiences for millions of people around the world.\n\n\n\nWith more than 30 years of experience serving over 250 customers in more than 70 locations worldwi",
+      "relevant": true,
+      "filter_reason": null,
+      "source_count": 1,
+      "policy_status": "pass",
+      "sources": [
+        "indeed"
       ]
     },
     {
@@ -128,6 +155,58 @@
       "policy_status": "pass",
       "sources": [
         "exa"
+      ]
+    },
+    {
+      "id": "indeed-in-5bd6d3474b0865fa",
+      "source": "indeed",
+      "title": "Experience Operations Director - Dubai",
+      "company": "Valtech Group",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=5bd6d3474b0865fa",
+      "posted": "2026-03-19",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 23,
+      "match_keywords": [
+        "ai",
+        "director",
+        "dubai",
+        "lte",
+        "api"
+      ],
+      "raw_snippet": "Why Valtech? We\u2019re advisors, visionaries, creative and techies. We embrace all things digital. We talk to each other. We have fun. We love our clients. We\u2019re looking ahead \u2022 We are global\n\n\n  \n**About Valtech:**\n\n\n\nAt Valtech, we are reshaping the way brands connect with their customers. As a global digital innovation company, we fuse creativity, technology, and strategy to solve complex business challenges and deliver exceptional experiences.\n\n\n\nWith over 6,500 experts in 60\\+ offices across 20",
+      "relevant": true,
+      "filter_reason": null,
+      "source_count": 1,
+      "policy_status": "pass",
+      "sources": [
+        "indeed"
+      ]
+    },
+    {
+      "id": "indeed-in-94e320e9f2c31b95",
+      "source": "indeed",
+      "title": "Systems & Service Operations Director \u2013 Controls",
+      "company": "Johnson Controls",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=94e320e9f2c31b95",
+      "posted": "2026-03-19",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 20,
+      "match_keywords": [
+        "ai",
+        "director",
+        "leadership"
+      ],
+      "raw_snippet": "**What you will do**\n\n\nThe Systems \\& Service Operations Director for Controls is accountable for operational governance and execution excellence across the Controls Order\\-to\\-Cash lifecycle. This role ensures disciplined Percentage of Completion management, predictable backlog\\-to\\-invoice conversion, and strong system governance across countries and Controls domains. The position establishes standard work through robust SOPs and provides functional leadership to country and domain systems lea",
+      "relevant": true,
+      "filter_reason": null,
+      "source_count": 1,
+      "policy_status": "pass",
+      "sources": [
+        "indeed"
       ]
     },
     {
@@ -330,6 +409,30 @@
       ]
     },
     {
+      "id": "indeed-in-bdeaee706e98c45c",
+      "source": "indeed",
+      "title": "Head of Asset Management & AI Transformation",
+      "company": "MaxAccelerate",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=bdeaee706e98c45c",
+      "posted": "2026-03-19",
+      "seniority": "Director",
+      "domain_match": true,
+      "keyword_score": 13,
+      "match_keywords": [
+        "ai",
+        "head of"
+      ],
+      "raw_snippet": "**Head of Asset Management \\& AI Transformation**\nRemote \\| Global Role \\| Multi\\-Industry\n\n**This is not a traditional asset management role**\nThis role is designed for someone who understands that the future of maintenance and asset management is driven by **data, reliability engineering, and intelligent systems**.\n\n\nIf your experience is rooted in **Reliability\\-Centred Maintenance (RCM), preventive and predictive strategies, labour optimisation, and cost control**, and you are interested in ",
+      "relevant": true,
+      "filter_reason": null,
+      "source_count": 1,
+      "policy_status": "pass",
+      "sources": [
+        "indeed"
+      ]
+    },
+    {
       "id": "exa-51180",
       "source": "exa",
       "title": "Vice President of Digital Transformation",
@@ -370,18 +473,41 @@
       "sources": [
         "exa"
       ]
+    },
+    {
+      "id": "indeed-in-7c275ede242e0fd1",
+      "source": "indeed",
+      "title": "Head of Digital Curriculum Strategy",
+      "company": "Confidential",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=7c275ede242e0fd1",
+      "posted": "2026-03-20",
+      "seniority": "Director",
+      "domain_match": true,
+      "keyword_score": 6,
+      "match_keywords": [
+        "head of"
+      ],
+      "raw_snippet": "Transform Digital Learning and Shape the Future of Education\n\nSpaceDuc Learning Technologies Ltd is seeking a forward\\-thinking **Head of Digital Curriculum Strategy** to lead the design, development, and execution of innovative digital learning programs. This role offers the opportunity to shape scalable, technology\\-driven education solutions across diverse learning environments.\n\n**Salary:** AED 30,000 \u2013 AED 40,000 per month  \n**Schedule:** Monday to Friday\n\nAbout the Role\n\nAs Head of Digital",
+      "relevant": true,
+      "filter_reason": null,
+      "source_count": 1,
+      "policy_status": "pass",
+      "sources": [
+        "indeed"
+      ]
     }
   ],
   "kpi": {
-    "total_raw": 24,
-    "sources_loaded": 1,
+    "total_raw": 29,
+    "sources_loaded": 5,
     "stale_sources": 0,
-    "unique_after_dedup": 23,
+    "unique_after_dedup": 28,
     "applied_filtered": 0,
     "policy_filtered": 7,
-    "final_candidates": 16,
+    "final_candidates": 21,
     "multi_source_jobs": 0,
-    "new_today": 16
+    "new_today": 21
   },
   "recommendations": []
 }

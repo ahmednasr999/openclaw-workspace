@@ -43,7 +43,7 @@ AGENT_NAME = "jobs-source-exa"
 OUTPUT_FILE = JOBS_RAW_DIR / "exa.json"
 CONFIG_FILE = Path("/root/.openclaw/openclaw.json")
 COMPOSIO_MCP_URL = "https://connect.composio.dev/mcp"
-RATE_LIMIT_DELAY = 1.5  # seconds between API calls
+RATE_LIMIT_DELAY = 1.0  # seconds between API calls
 RESULTS_PER_QUERY = 10
 RECENCY_DAYS = 14
 
@@ -259,16 +259,16 @@ def run_exa_scanner(result: AgentResult):
     # Calculate start date for recency filter
     start_date = (datetime.now() - timedelta(days=RECENCY_DAYS)).strftime("%Y-%m-%d")
     
-    # Build search plan
+    # Build search plan - priority countries only (secondary too slow for Exa rate limits)
+    # 3 countries x 22 titles = 66 searches (~2 min at 1.5s rate limit)
+    # Add one broad GCC query per title to catch secondary countries
     searches = []
-    # Priority countries first
     for country in PRIORITY_COUNTRIES:
         for title in ALL_TITLES:
             searches.append((title, country))
-    # Then secondary
-    for country in SECONDARY_COUNTRIES:
-        for title in ALL_TITLES:
-            searches.append((title, country))
+    # Broad GCC catch-all for secondary countries
+    for title in ALL_TITLES:
+        searches.append((title, "GCC"))
     
     print(f"Search plan: {len(searches)} queries")
     
@@ -285,7 +285,9 @@ def run_exa_scanner(result: AgentResult):
         searches_run += 1
         
         # Build query
-        location_term = COUNTRY_SEARCH_TERMS.get(country, [country])[0]
+        location_term = COUNTRY_SEARCH_TERMS.get(country, {"GCC": "Gulf GCC Middle East"}.get(country, country))
+        if isinstance(location_term, list):
+            location_term = location_term[0]
         query = f"{title} {location_term} job opening hiring 2026"
         
         # Search

@@ -167,10 +167,13 @@ def apply_search_policy(job: dict) -> tuple[bool, str]:
     """Apply search policy filters. Returns (keep, reason)."""
     title = job.get("title", "").lower()
     
-    # Filter aggregator listings first
-    is_agg, agg_reason = is_aggregator_listing(job)
-    if is_agg:
-        return False, agg_reason
+    # Filter aggregator listings — only for Exa results
+    # Jobs from Indeed/LinkedIn/Bayt/Google are already individual listings
+    source = job.get("source", "")
+    if source == "exa":
+        is_agg, agg_reason = is_aggregator_listing(job)
+        if is_agg:
+            return False, agg_reason
     
     if not any(w in title for w in EXEC_WORDS):
         return False, "no-seniority"
