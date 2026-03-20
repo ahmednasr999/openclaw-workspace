@@ -163,9 +163,47 @@ def is_aggregator_listing(job: dict) -> tuple[bool, str]:
     return False, "individual-job"
 
 
+def is_bad_url(url: str) -> tuple[bool, str]:
+    """Detect broken/invalid/non-job URLs."""
+    if not url:
+        return True, "no-url"
+    
+    url_lower = url.lower().strip()
+    
+    # URL is just a domain with no path
+    from urllib.parse import urlparse
+    parsed = urlparse(url_lower)
+    path = parsed.path.strip("/")
+    if not path:
+        return True, "domain-only-url"
+    
+    # Profile pages (not jobs)
+    profile_patterns = [
+        "/me/", "/profile/", "/u/", "/user/", "/cv/", "/resume/",
+        "wuzzuf.net/me/", "linkedin.com/in/",
+    ]
+    for p in profile_patterns:
+        if p in url_lower:
+            return True, f"profile-page:{p}"
+    
+    return False, ""
+
+
 def apply_search_policy(job: dict) -> tuple[bool, str]:
     """Apply search policy filters. Returns (keep, reason)."""
     title = job.get("title", "").lower()
+    url = job.get("url", "")
+    
+    # Filter bad URLs (broken links, profile pages)
+    is_bad, bad_reason = is_bad_url(url)
+    if is_bad:
+        return False, bad_reason
+    
+    # Filter jobs with person names in title (CV pages indexed as jobs)
+    import re
+    # Pattern: "FirstName LastName — Title" or "FirstName LastName – Title"
+    if re.match(r'^[A-Z][a-z]+ [A-Z][a-z]+ [–—-] ', job.get("title", "")):
+        return False, "person-name-in-title"
     
     # Filter aggregator listings — only for Exa results
     # Jobs from Indeed/LinkedIn/Bayt/Google are already individual listings

@@ -202,7 +202,15 @@ def parse_llm_response(response: str, num_jobs: int) -> list[dict]:
     try:
         json_match = re.search(r'\[[\s\S]*\]', response)
         if json_match:
-            reviews = json.loads(json_match.group())
+            try:
+                reviews = json.loads(json_match.group())
+            except json.JSONDecodeError:
+                # Try fixing common LLM JSON errors
+                fixed = json_match.group()
+                fixed = re.sub(r',\s*]', ']', fixed)  # trailing comma
+                fixed = re.sub(r',\s*,', ',', fixed)   # double comma
+                fixed = re.sub(r'}\s*{', '},{', fixed)  # missing comma between objects
+                reviews = json.loads(fixed)
         else:
             print("  Warning: Could not find JSON array in LLM response")
             return []
@@ -265,15 +273,37 @@ def run_review(result: AgentResult):
         })
         return
     
-    prompt = build_review_prompt(top_jobs)
-    print(f"Calling LLM ({MODEL})...")
+    # Split into batches of 25 for more reliable LLM JSON output
+    BATCH_SIZE = 25
+    all_reviews = []
+    total_latency = 0
     
-    start_time = time.time()
-    response = call_llm(prompt)
-    llm_latency_ms = int((time.time() - start_time) * 1000)
+    for batch_start in range(0, len(top_jobs), BATCH_SIZE):
+        batch = top_jobs[batch_start:batch_start + BATCH_SIZE]
+        batch_num = batch_start // BATCH_SIZE + 1
+        print(f"Calling LLM batch {batch_num} ({len(batch)} jobs, {MODEL})...")
+        
+        prompt = build_review_prompt(batch)
+        start_time = time.time()
+        response = call_llm(prompt)
+        batch_latency = int((time.time() - start_time) * 1000)
+        total_latency += batch_latency
+        
+        if response:
+            batch_reviews = parse_llm_response(response, len(batch))
+            # Adjust job_num to be global
+            for r in batch_reviews:
+                r["job_num"] = r["job_num"] + batch_start
+            all_reviews.extend(batch_reviews)
+            print(f"  Batch {batch_num}: {len(batch_reviews)} reviews in {batch_latency}ms")
+        else:
+            print(f"  Batch {batch_num}: LLM failed")
     
-    if not response:
-        print("  LLM failed, falling back to keyword-based classification")
+    llm_latency_ms = total_latency
+    reviews = all_reviews
+    
+    if not reviews:
+        print("  All LLM batches failed, falling back to keyword-based classification")
         reviews = []
         for i, job in enumerate(top_jobs, 1):
             score = min(10, max(1, job.get("keyword_score", 50) // 10))
@@ -396,31 +426,57 @@ def run_review(result: AgentResult):
         print(f"  ATS scoring failed (non-fatal): {e}")
     
     # Liveness check: verify SUBMIT job URLs are not expired/404
+    import urllib.request as _urllib_req
     print(f"\nChecking SUBMIT job URLs for liveness...")
     live_submit = []
     expired_count = 0
+    
+    EXPIRED_SIGNALS = [
+        "this job has expired", "job posting is closed", "no longer open",
+        "position has been filled", "no longer available", "job has been removed",
+        "not found", "this listing has expired", "vacancy has been closed",
+        "not a valid job", "job no longer exists",
+    ]
+    
     for job in submit_jobs:
         url = job.get("url", "")
         if not url:
             live_submit.append(job)
             continue
         try:
-            req = _urllib_req.Request(url, method="HEAD", headers={
+            req = _urllib_req.Request(url, headers={
                 "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36"
             })
             with _urllib_req.urlopen(req, timeout=10) as resp:
-                if resp.status < 400:
-                    live_submit.append(job)
-                else:
+                if resp.status >= 400:
                     expired_count += 1
                     print(f"  ❌ EXPIRED ({resp.status}): {job.get('title','?')[:50]}")
+                    continue
+                
+                # Check page content for expiry signals (read more for better detection)
+                body = resp.read(20000).decode("utf-8", errors="ignore").lower()
+                if any(signal in body for signal in EXPIRED_SIGNALS):
+                    expired_count += 1
+                    print(f"  ❌ EXPIRED (content): {job.get('title','?')[:50]}")
+                    continue
+                
+                live_submit.append(job)
         except Exception as e:
             err_str = str(e)
-            if "404" in err_str or "410" in err_str:
+            err_type = type(e).__name__
+            # HTTPError (404, etc), URLError, timeout
+            if any(code in err_str for code in ["404", "410", "403", "500", "HTTP Error"]):
                 expired_count += 1
-                print(f"  ❌ EXPIRED: {job.get('title','?')[:50]}")
+                print(f"  ❌ EXPIRED ({err_type}: {err_str[:25]}): {job.get('title','?')[:40]}")
+            elif "timeout" in err_str.lower() or "timed out" in err_str.lower():
+                expired_count += 1
+                print(f"  ❌ TIMEOUT: {job.get('title','?')[:40]}")
+            elif "HTTPError" in err_type:
+                expired_count += 1
+                print(f"  ❌ HTTP ERROR ({err_str[:30]}): {job.get('title','?')[:40]}")
             else:
-                # Network error or other issue - keep the job
+                # Other network error - keep the job but warn
+                print(f"  ⚠️ CHECK FAILED ({err_str[:40]}): {job.get('title','?')[:50]}")
                 live_submit.append(job)
     
     if expired_count:

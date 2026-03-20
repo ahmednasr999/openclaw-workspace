@@ -75,3 +75,7 @@
 {"agent": "jobs-merge", "run_id": "2399e8e1", "started": "2026-03-21T00:51:54.952302+02:00", "duration_ms": 29716, "status": "success", "records": 333, "error": null}
 {"agent": "jobs-review", "run_id": "640aab01", "started": "2026-03-21T00:57:21.266709+02:00", "duration_ms": 120098, "status": "success", "records": 9, "error": null}
 {"agent": "jobs-review", "run_id": "a79dc03f", "started": "2026-03-21T01:01:30.000952+02:00", "duration_ms": 170308, "status": "success", "records": 9, "error": null}
+{"agent": "jobs-merge", "run_id": "bc962dd7", "started": "2026-03-21T01:13:44.199562+02:00", "duration_ms": 30600, "status": "success", "records": 284, "error": null}
+{"agent": "jobs-review", "run_id": "c57ed3ff", "started": "2026-03-21T01:15:42.567153+02:00", "duration_ms": 96196, "status": "success", "records": 9, "error": null}
+{"agent": "jobs-review", "run_id": "d82306e6", "started": "2026-03-21T01:20:11.949261+02:00", "duration_ms": 233361, "status": "success", "records": 9, "error": null}
+{"agent": "jobs-review", "run_id": "d03f4d2c", "started": "2026-03-21T01:25:16.920497+02:00", "duration_ms": 218986, "status": "success", "records": 9, "error": null}

@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-merge",
     "version": "1.0.0",
-    "generated_at": "2026-03-21T00:51:54.948119+02:00",
-    "duration_ms": 29712,
+    "generated_at": "2026-03-21T01:13:44.194916+02:00",
+    "duration_ms": 30596,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "2399e8e1",
+    "run_id": "bc962dd7",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -151,30 +151,6 @@
         "pmo",
         "program management",
         "director"
-      ],
-      "raw_snippet": "",
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "exa"
-      ]
-    },
-    {
-      "id": "exa-91371",
-      "source": "exa",
-      "title": "PMO Director - Healthcare - Riyadh",
-      "company": "Aplitrak",
-      "location": "Saudi Arabia",
-      "url": "https://www.aplitrak.com",
-      "posted": "",
-      "seniority": "Director",
-      "domain_match": true,
-      "keyword_score": 26,
-      "match_keywords": [
-        "pmo",
-        "healthcare",
-        "director",
-        "riyadh"
       ],
       "raw_snippet": "",
       "source_count": 1,
@@ -434,31 +410,6 @@
       ]
     },
     {
-      "id": "linkedin-li-4384572212",
-      "source": "linkedin",
-      "title": "Associate Director - Marine Engineering - Dubai Holding Land Estates",
-      "company": "Dubai Holding",
-      "location": "Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/associate-director-marine-engineering-dubai-holding-land-estates-at-dubai-holding-4384572212",
-      "posted": "2026-03-12",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 16,
-      "match_keywords": [
-        "ai",
-        "director",
-        "dubai"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
       "id": "linkedin-li-4383733458",
       "source": "linkedin",
       "title": "Head of PMO & Strategic Operations",
@@ -520,30 +471,6 @@
       "keyword_score": 16,
       "match_keywords": [
         "operational excellence",
-        "director"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
-      "id": "linkedin-li-4379783853",
-      "source": "linkedin",
-      "title": "Associate Director - Digital Transformation",
-      "company": "FP",
-      "location": "Riyadh, Riyadh, Saudi Arabia",
-      "url": "https://sa.linkedin.com/jobs/view/associate-director-digital-transformation-at-fp-4379783853",
-      "posted": "2026-03-02",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 16,
-      "match_keywords": [
-        "digital transformation",
         "director"
       ],
       "raw_snippet": "",
@@ -618,28 +545,6 @@
       "match_keywords": [
         "digital transformation",
         "director"
-      ],
-      "raw_snippet": "",
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "exa"
-      ]
-    },
-    {
-      "id": "exa-8508",
-      "source": "exa",
-      "title": "Eslam Taha \u00e2\u0080\u0093 Head of Digital Transformation and Digital Channels Development",
-      "company": "Riyadh Airports Company",
-      "location": "Saudi Arabia",
-      "url": "https://wuzzuf.net/me/etaha",
-      "posted": "",
-      "seniority": "Head",
-      "domain_match": true,
-      "keyword_score": 16,
-      "match_keywords": [
-        "digital transformation",
-        "head of"
       ],
       "raw_snippet": "",
       "source_count": 1,
@@ -1004,30 +909,6 @@
       ]
     },
     {
-      "id": "linkedin-li-4369469308",
-      "source": "linkedin",
-      "title": "Alliance Director - Strategic Growth Partners",
-      "company": "ZainTECH",
-      "location": "Dubai, Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/alliance-director-strategic-growth-partners-at-zaintech-4369469308",
-      "posted": "2026-01-11",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 13,
-      "match_keywords": [
-        "director",
-        "growth"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
       "id": "linkedin-li-4345421154",
       "source": "linkedin",
       "title": "Head Of Growth - EdTech (Full remote - French fluent \ud83c\uddeb\ud83c\uddf7)",
@@ -1161,30 +1042,6 @@
       "match_keywords": [
         "ai",
         "head of"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
-      "id": "linkedin-li-4384561665",
-      "source": "linkedin",
-      "title": "Executive Director \u2013 Academies & Operations Management",
-      "company": "RIG (Recruitment International Group)",
-      "location": "Abu Dhabi Emirate, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/executive-director-%E2%80%93-academies-operations-management-at-rig-recruitment-international-group-4384561665",
-      "posted": "2026-03-14",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 13,
-      "match_keywords": [
-        "executive",
-        "director"
       ],
       "raw_snippet": "",
       "relevant": true,
@@ -1364,78 +1221,6 @@
       ]
     },
     {
-      "id": "linkedin-li-4353191226",
-      "source": "linkedin",
-      "title": "Design Director - Infrastructure",
-      "company": "WSP in the Middle East",
-      "location": "Riyadh, Riyadh, Saudi Arabia",
-      "url": "https://sa.linkedin.com/jobs/view/design-director-infrastructure-at-wsp-in-the-middle-east-4353191226",
-      "posted": "2026-03-19",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 13,
-      "match_keywords": [
-        "infrastructure",
-        "director"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
-      "id": "linkedin-li-4383289496",
-      "source": "linkedin",
-      "title": "Executive Director \u2013 Commercial Strategy",
-      "company": "Foreground.",
-      "location": "Riyadh, Riyadh, Saudi Arabia",
-      "url": "https://sa.linkedin.com/jobs/view/executive-director-%E2%80%93-commercial-strategy-at-foreground-4383289496",
-      "posted": "2026-03-12",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 13,
-      "match_keywords": [
-        "executive",
-        "director"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
-      "id": "linkedin-li-4383290479",
-      "source": "linkedin",
-      "title": "Executive Director \u2013 Operations Excellence",
-      "company": "Foreground.",
-      "location": "Riyadh, Riyadh, Saudi Arabia",
-      "url": "https://sa.linkedin.com/jobs/view/executive-director-%E2%80%93-operations-excellence-at-foreground-4383290479",
-      "posted": "2026-03-12",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 13,
-      "match_keywords": [
-        "executive",
-        "director"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
       "id": "linkedin-li-4379846833",
       "source": "linkedin",
       "title": "Head of Network Infrastructure Operation",
@@ -1473,31 +1258,6 @@
       "match_keywords": [
         "ai",
         "dubai"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
-      "id": "linkedin-li-4359175355",
-      "source": "linkedin",
-      "title": "Vice President \u2013 Integration & API Platforms",
-      "company": "Al Ghurair",
-      "location": "Dubai, Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/vice-president-%E2%80%93-integration-api-platforms-at-al-ghurair-4359175355",
-      "posted": "2026-01-16",
-      "seniority": "VP",
-      "domain_match": false,
-      "keyword_score": 10,
-      "match_keywords": [
-        "api",
-        "integration",
-        "platform"
       ],
       "raw_snippet": "",
       "relevant": true,
@@ -2283,29 +2043,6 @@
       ]
     },
     {
-      "id": "linkedin-li-4385907499",
-      "source": "linkedin",
-      "title": "Senior Associate - CEO and Chairman Offices",
-      "company": "Schneider Electric",
-      "location": "Dubai, Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/senior-associate-ceo-and-chairman-offices-at-schneider-electric-4385907499",
-      "posted": "2026-03-17",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 6,
-      "match_keywords": [
-        "ai"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
       "id": "linkedin-li-4370630639",
       "source": "linkedin",
       "title": "Vice President and Head of Program Lending - Business Banking Group",
@@ -2341,52 +2078,6 @@
       "keyword_score": 6,
       "match_keywords": [
         "ai"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
-      "id": "linkedin-li-4379171211",
-      "source": "linkedin",
-      "title": "Vice President \u2013 Finance Business Partner (Retail Banking)",
-      "company": "RAKBANK",
-      "location": "Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/vice-president-%E2%80%93-finance-business-partner-retail-banking-at-rakbank-4379171211",
-      "posted": "2026-03-03",
-      "seniority": "VP",
-      "domain_match": true,
-      "keyword_score": 6,
-      "match_keywords": [
-        "ai"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
-      "id": "linkedin-li-4367138070",
-      "source": "linkedin",
-      "title": "Private Bank - Relationship Manager, Global South Asia - Vice President/Director/Managing Director",
-      "company": "Deutsche Bank",
-      "location": "Dubai, Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/private-bank-relationship-manager-global-south-asia-vice-president-director-managing-director-at-deutsche-bank-4367138070",
-      "posted": "2026-03-13",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 6,
-      "match_keywords": [
-        "director"
       ],
       "raw_snippet": "",
       "relevant": true,
@@ -2789,52 +2480,6 @@
       ]
     },
     {
-      "id": "linkedin-li-4384032996",
-      "source": "linkedin",
-      "title": "Director Operations - Security Printing \u2013 AED 45K \u2013 50K",
-      "company": "Antal International",
-      "location": "Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/director-operations-security-printing-%E2%80%93-aed-45k-%E2%80%93-50k-at-antal-international-4384032996",
-      "posted": "2026-03-16",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 6,
-      "match_keywords": [
-        "director"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
-      "id": "linkedin-li-4372912778",
-      "source": "linkedin",
-      "title": "Associate Director - Government & Technology PR",
-      "company": "Burson",
-      "location": "Dubai, Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/associate-director-government-technology-pr-at-burson-4372912778",
-      "posted": "2026-01-19",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 6,
-      "match_keywords": [
-        "director"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
       "id": "linkedin-li-4372919208",
       "source": "linkedin",
       "title": "Group Account Director - Technology PR",
@@ -3065,29 +2710,6 @@
       ]
     },
     {
-      "id": "linkedin-li-4382865975",
-      "source": "linkedin",
-      "title": "Technical Director \u2013 MEP (Data Centres)",
-      "company": "Omega Talent",
-      "location": "Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/technical-director-%E2%80%93-mep-data-centres-at-omega-talent-4382865975",
-      "posted": "2026-03-11",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 6,
-      "match_keywords": [
-        "director"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
       "id": "linkedin-li-4375288490",
       "source": "linkedin",
       "title": "Project Director (Civil)",
@@ -3141,29 +2763,6 @@
       "location": "Dubai, United Arab Emirates",
       "url": "https://ae.linkedin.com/jobs/view/director-environment-health-safety-at-jdl-recruitment-4377808325",
       "posted": "2026-02-25",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 6,
-      "match_keywords": [
-        "director"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
-      "id": "linkedin-li-4362616886",
-      "source": "linkedin",
-      "title": "Associate Director - Transport Planning",
-      "company": "AECOM",
-      "location": "Dubai, Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/associate-director-transport-planning-at-aecom-4362616886",
-      "posted": "2026-01-22",
       "seniority": "C-Suite",
       "domain_match": false,
       "keyword_score": 6,
@@ -3434,29 +3033,6 @@
       ]
     },
     {
-      "id": "linkedin-li-4314248010",
-      "source": "linkedin",
-      "title": "Vice President \u2013 Contract Management (Building/Infrastructure).",
-      "company": "ALDAR",
-      "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/vice-president-%E2%80%93-contract-management-building-infrastructure-at-aldar-4314248010",
-      "posted": "2025-10-14",
-      "seniority": "VP",
-      "domain_match": true,
-      "keyword_score": 6,
-      "match_keywords": [
-        "infrastructure"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
       "id": "linkedin-li-4384027042",
       "source": "linkedin",
       "title": "Executive Vice President, Commercial",
@@ -3469,29 +3045,6 @@
       "keyword_score": 6,
       "match_keywords": [
         "executive"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
-      "id": "linkedin-li-4381575749",
-      "source": "linkedin",
-      "title": "Vice President \u2013 Infrastructure Managed Services",
-      "company": "ALDAR",
-      "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/vice-president-%E2%80%93-infrastructure-managed-services-at-aldar-4381575749",
-      "posted": "2026-03-09",
-      "seniority": "VP",
-      "domain_match": true,
-      "keyword_score": 6,
-      "match_keywords": [
-        "infrastructure"
       ],
       "raw_snippet": "",
       "relevant": true,
@@ -3687,29 +3240,6 @@
       ]
     },
     {
-      "id": "linkedin-li-4382004689",
-      "source": "linkedin",
-      "title": "Technical Director - Oil & Gas Engineering",
-      "company": "Wison Engineering Ltd.",
-      "location": "Abu Dhabi Emirate, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/technical-director-oil-gas-engineering-at-wison-engineering-ltd-4382004689",
-      "posted": "2026-03-10",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 6,
-      "match_keywords": [
-        "director"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
       "id": "linkedin-li-4381168177",
       "source": "linkedin",
       "title": "Director of Industrial Management",
@@ -3742,29 +3272,6 @@
       "posted": "2026-02-23",
       "seniority": "C-Suite",
       "domain_match": false,
-      "keyword_score": 6,
-      "match_keywords": [
-        "director"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
-      "id": "linkedin-li-4361580477",
-      "source": "linkedin",
-      "title": "Project Director \u2013 Theme Parks",
-      "company": "Parsons Corporation",
-      "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/project-director-%E2%80%93-theme-parks-at-parsons-corporation-4361580477",
-      "posted": "2026-02-17",
-      "seniority": "C-Suite",
-      "domain_match": true,
       "keyword_score": 6,
       "match_keywords": [
         "director"
@@ -3834,29 +3341,6 @@
       "posted": "2026-03-11",
       "seniority": "C-Suite",
       "domain_match": false,
-      "keyword_score": 6,
-      "match_keywords": [
-        "director"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
-      "id": "linkedin-li-4379151843",
-      "source": "linkedin",
-      "title": "Associate Director - Treasury Operations",
-      "company": "PureHealth",
-      "location": "Abu Dhabi Emirate, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/associate-director-treasury-operations-at-purehealth-4379151843",
-      "posted": "2026-03-03",
-      "seniority": "C-Suite",
-      "domain_match": true,
       "keyword_score": 6,
       "match_keywords": [
         "director"
@@ -4653,29 +4137,6 @@
       ]
     },
     {
-      "id": "linkedin-li-4381386245",
-      "source": "linkedin",
-      "title": "Associate Director - IT BRM (CORS 255)",
-      "company": "Qiddiya | \u0627\u0644\u0642\u062f\u064a\u0629",
-      "location": "Riyadh, Riyadh, Saudi Arabia",
-      "url": "https://sa.linkedin.com/jobs/view/associate-director-it-brm-cors-255-at-qiddiya-%D8%A7%D9%84%D9%82%D8%AF%D9%8A%D8%A9-4381386245",
-      "posted": "2026-03-07",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 6,
-      "match_keywords": [
-        "director"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
       "id": "linkedin-li-4371507949",
       "source": "linkedin",
       "title": "Head of Engineering - Miza",
@@ -4711,29 +4172,6 @@
       "keyword_score": 6,
       "match_keywords": [
         "head of"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
-      "id": "linkedin-li-4277510251",
-      "source": "linkedin",
-      "title": "Associate Director \u2013 Building Services",
-      "company": "WSP in the Middle East",
-      "location": "Riyadh, Riyadh, Saudi Arabia",
-      "url": "https://sa.linkedin.com/jobs/view/associate-director-%E2%80%93-building-services-at-wsp-in-the-middle-east-4277510251",
-      "posted": "2026-03-05",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 6,
-      "match_keywords": [
-        "director"
       ],
       "raw_snippet": "",
       "relevant": true,
@@ -4938,29 +4376,6 @@
       "posted": "2026-02-05",
       "seniority": "C-Suite",
       "domain_match": false,
-      "keyword_score": 6,
-      "match_keywords": [
-        "director"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
-      "id": "linkedin-li-4378150804",
-      "source": "linkedin",
-      "title": "Project Director - SAU (f/m)",
-      "company": "DB Engineering & Consulting",
-      "location": "Riyadh, Saudi Arabia",
-      "url": "https://sa.linkedin.com/jobs/view/project-director-sau-f-m-at-db-engineering-consulting-4378150804",
-      "posted": "2026-03-03",
-      "seniority": "C-Suite",
-      "domain_match": true,
       "keyword_score": 6,
       "match_keywords": [
         "director"
@@ -5205,29 +4620,6 @@
       ]
     },
     {
-      "id": "linkedin-li-4381227321",
-      "source": "linkedin",
-      "title": "Managing Director \u2013 Heritage Site Revitalization",
-      "company": "Confidential Government",
-      "location": "Riyadh, Saudi Arabia",
-      "url": "https://sa.linkedin.com/jobs/view/managing-director-%E2%80%93-heritage-site-revitalization-at-confidential-government-4381227321",
-      "posted": "2026-03-08",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 6,
-      "match_keywords": [
-        "director"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
       "id": "linkedin-li-4384941446",
       "source": "linkedin",
       "title": "Director - Film Studio Operations SPA 240",
@@ -5389,29 +4781,6 @@
       ]
     },
     {
-      "id": "linkedin-li-4385437701",
-      "source": "linkedin",
-      "title": "Vice President - Compensation & Benefits. (UAE National only)",
-      "company": "Mashreq",
-      "location": "Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/vice-president-compensation-benefits-uae-national-only-at-mashreq-4385437701",
-      "posted": "2026-03-19",
-      "seniority": "VP",
-      "domain_match": false,
-      "keyword_score": 3,
-      "match_keywords": [
-        "uae"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
       "id": "linkedin-li-4382069582",
       "source": "linkedin",
       "title": "Regional Vice President - Middle East",
@@ -5470,29 +4839,6 @@
       "keyword_score": 3,
       "match_keywords": [
         "uae"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
-      "id": "linkedin-li-4360904927",
-      "source": "linkedin",
-      "title": "Vice President \u2013 Capital Investments & Financing",
-      "company": "ALDAR",
-      "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/vice-president-%E2%80%93-capital-investments-financing-at-aldar-4360904927",
-      "posted": "2026-01-19",
-      "seniority": "VP",
-      "domain_match": false,
-      "keyword_score": 3,
-      "match_keywords": [
-        "api"
       ],
       "raw_snippet": "",
       "relevant": true,
@@ -5965,48 +5311,6 @@
       ]
     },
     {
-      "id": "linkedin-li-4384025669",
-      "source": "linkedin",
-      "title": "Vice President - Structured Products & FX",
-      "company": "Tandem Search",
-      "location": "Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/vice-president-structured-products-fx-at-tandem-search-4384025669",
-      "posted": "2026-03-16",
-      "seniority": "VP",
-      "domain_match": false,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
-      "id": "linkedin-li-4384224395",
-      "source": "linkedin",
-      "title": "Vice President - Business Development (Partner Relations)",
-      "company": "Confidential Careers",
-      "location": "Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/vice-president-business-development-partner-relations-at-confidential-careers-4384224395",
-      "posted": "2026-03-13",
-      "seniority": "VP",
-      "domain_match": false,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
       "id": "linkedin-li-4382457932",
       "source": "linkedin",
       "title": "Vice President Of Products, IgniteTech (Remote) - $400,000/year USD",
@@ -6016,48 +5320,6 @@
       "posted": "2026-03-10",
       "seniority": "VP",
       "domain_match": true,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
-      "id": "linkedin-li-4379153801",
-      "source": "linkedin",
-      "title": "Vice President \u2013 Structured Products and FX, Wealth Management",
-      "company": "RAKBANK",
-      "location": "Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/vice-president-%E2%80%93-structured-products-and-fx-wealth-management-at-rakbank-4379153801",
-      "posted": "2026-03-03",
-      "seniority": "VP",
-      "domain_match": false,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
-      "id": "linkedin-li-4331964616",
-      "source": "linkedin",
-      "title": "Vice President - FP&A",
-      "company": "Al Ghurair",
-      "location": "Dubai, Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/vice-president-fp-a-at-al-ghurair-4331964616",
-      "posted": "2026-01-09",
-      "seniority": "VP",
-      "domain_match": false,
       "keyword_score": 0,
       "match_keywords": [],
       "raw_snippet": "",
@@ -6121,69 +5383,6 @@
       "posted": "2026-03-09",
       "seniority": "VP",
       "domain_match": false,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
-      "id": "linkedin-li-4387422787",
-      "source": "linkedin",
-      "title": "Vice President - Financial Institutions Coverage Banking - Michael Page",
-      "company": "Jobs via eFinancialCareers",
-      "location": "Dubai, Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/vice-president-financial-institutions-coverage-banking-michael-page-at-jobs-via-efinancialcareers-4387422787",
-      "posted": "2026-03-18",
-      "seniority": "VP",
-      "domain_match": false,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
-      "id": "linkedin-li-4374373441",
-      "source": "linkedin",
-      "title": "Vice President - Data Services",
-      "company": "Carter Murray",
-      "location": "Sharjah, Sharjah Emirate, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/vice-president-data-services-at-carter-murray-4374373441",
-      "posted": "2026-02-20",
-      "seniority": "VP",
-      "domain_match": true,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
-      "id": "linkedin-li-4383015285",
-      "source": "linkedin",
-      "title": "Vice President - Data Centre Design Delivery",
-      "company": "Infraviva",
-      "location": "Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/vice-president-data-centre-design-delivery-at-infraviva-4383015285",
-      "posted": "2026-03-12",
-      "seniority": "VP",
-      "domain_match": true,
       "keyword_score": 0,
       "match_keywords": [],
       "raw_snippet": "",
@@ -6268,27 +5467,6 @@
       "posted": "2026-03-16",
       "seniority": "VP",
       "domain_match": true,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
-      "id": "linkedin-li-4345598977",
-      "source": "linkedin",
-      "title": "Vice President - Facilities Management (Emirati National)",
-      "company": "High Street Resources (HSR)",
-      "location": "Dubai, Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/vice-president-facilities-management-emirati-national-at-high-street-resources-hsr-4345598977",
-      "posted": "2025-12-22",
-      "seniority": "VP",
-      "domain_match": false,
       "keyword_score": 0,
       "match_keywords": [],
       "raw_snippet": "",
@@ -6427,27 +5605,6 @@
       ]
     },
     {
-      "id": "linkedin-li-4373675685",
-      "source": "linkedin",
-      "title": "Vice President \u2013 Business Intelligence and Analytics",
-      "company": "ALDAR",
-      "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/vice-president-%E2%80%93-business-intelligence-and-analytics-at-aldar-4373675685",
-      "posted": "2026-02-19",
-      "seniority": "VP",
-      "domain_match": false,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
       "id": "linkedin-li-4384702402",
       "source": "linkedin",
       "title": "Chief Information Security Officer - Hedge Fund - $530k (base)",
@@ -6499,27 +5656,6 @@
       "posted": "2026-03-17",
       "seniority": "C-Suite",
       "domain_match": true,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
-      "id": "linkedin-li-4377376368",
-      "source": "linkedin",
-      "title": "Vice President - Business Excellence",
-      "company": "ALDAR",
-      "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/vice-president-business-excellence-at-aldar-4377376368",
-      "posted": "2026-03-02",
-      "seniority": "VP",
-      "domain_match": false,
       "keyword_score": 0,
       "match_keywords": [],
       "raw_snippet": "",
@@ -6595,48 +5731,6 @@
       ]
     },
     {
-      "id": "linkedin-li-4287395445",
-      "source": "linkedin",
-      "title": "Vice President - Tendering",
-      "company": "ALDAR",
-      "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/vice-president-tendering-at-aldar-4287395445",
-      "posted": "2025-08-18",
-      "seniority": "VP",
-      "domain_match": false,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
-      "id": "linkedin-li-4376063115",
-      "source": "linkedin",
-      "title": "Vice President \u2013 Portfolio Management",
-      "company": "ALDAR",
-      "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/vice-president-%E2%80%93-portfolio-management-at-aldar-4376063115",
-      "posted": "2026-02-24",
-      "seniority": "VP",
-      "domain_match": false,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
       "id": "linkedin-li-4360809349",
       "source": "linkedin",
       "title": "Senior Vice President - Treasury Front Office and Funding",
@@ -6687,90 +5781,6 @@
       "url": "https://ae.linkedin.com/jobs/view/founding-cto-web2-at-hyphen-connect-4368984210",
       "posted": "2026-03-19",
       "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
-      "id": "linkedin-li-4373679118",
-      "source": "linkedin",
-      "title": "Vice President - Security Governance",
-      "company": "ALDAR",
-      "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/vice-president-security-governance-at-aldar-4373679118",
-      "posted": "2026-02-19",
-      "seniority": "VP",
-      "domain_match": false,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
-      "id": "linkedin-li-4002838043",
-      "source": "linkedin",
-      "title": "Vice President - Development",
-      "company": "ALDAR",
-      "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/vice-president-development-at-aldar-4002838043",
-      "posted": "2024-08-20",
-      "seniority": "VP",
-      "domain_match": false,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
-      "id": "linkedin-li-4371512920",
-      "source": "linkedin",
-      "title": "Vice President \u2013 Insurance",
-      "company": "ALDAR",
-      "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/vice-president-%E2%80%93-insurance-at-aldar-4371512920",
-      "posted": "2026-02-12",
-      "seniority": "VP",
-      "domain_match": false,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
-      "id": "linkedin-li-4373668910",
-      "source": "linkedin",
-      "title": "Vice President - Civil Design",
-      "company": "ALDAR",
-      "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/vice-president-civil-design-at-aldar-4373668910",
-      "posted": "2026-02-19",
-      "seniority": "VP",
       "domain_match": false,
       "keyword_score": 0,
       "match_keywords": [],
@@ -6917,48 +5927,6 @@
       "location": "Saudi Arabia",
       "url": "https://sa.linkedin.com/jobs/view/chief-strategy-officer-cso-at-unlockland-4380022837",
       "posted": "2026-03-05",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
-      "id": "linkedin-li-4376577024",
-      "source": "linkedin",
-      "title": "Business Manager - CEO Office",
-      "company": "Foodics",
-      "location": "Riyadh, Riyadh, Saudi Arabia",
-      "url": "https://sa.linkedin.com/jobs/view/business-manager-ceo-office-at-foodics-4376577024",
-      "posted": "2026-02-23",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
-      "id": "linkedin-li-4362475241",
-      "source": "linkedin",
-      "title": "Project Manager - CEO Office",
-      "company": "webook.com",
-      "location": "Riyadh, Riyadh, Saudi Arabia",
-      "url": "https://sa.linkedin.com/jobs/view/project-manager-ceo-office-at-webook-com-4362475241",
-      "posted": "2026-01-13",
       "seniority": "C-Suite",
       "domain_match": true,
       "keyword_score": 0,
@@ -7171,48 +6139,6 @@
       "posted": "2026-02-01",
       "seniority": "VP",
       "domain_match": true,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
-      "id": "linkedin-li-4359976267",
-      "source": "linkedin",
-      "title": "Vice President \u2013 General Lines Relationship Management (Chinese Corporate Clients)",
-      "company": "Marsh Risk",
-      "location": "Al Olaya, Riyadh, Saudi Arabia",
-      "url": "https://sa.linkedin.com/jobs/view/vice-president-%E2%80%93-general-lines-relationship-management-chinese-corporate-clients-at-marsh-risk-4359976267",
-      "posted": "2026-03-17",
-      "seniority": "VP",
-      "domain_match": false,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
-      "id": "linkedin-li-4383777163",
-      "source": "linkedin",
-      "title": "Resilience Manager - Vice President",
-      "company": "Marsh Risk",
-      "location": "Al Olaya, Riyadh, Saudi Arabia",
-      "url": "https://sa.linkedin.com/jobs/view/resilience-manager-vice-president-at-marsh-risk-4383777163",
-      "posted": "2026-03-10",
-      "seniority": "VP",
-      "domain_match": false,
       "keyword_score": 0,
       "match_keywords": [],
       "raw_snippet": "",
@@ -7519,27 +6445,6 @@
       ]
     },
     {
-      "id": "linkedin-li-4328959529",
-      "source": "linkedin",
-      "title": "Vice President - Operations Reporting & Quality Assurance",
-      "company": "Lesha Bank",
-      "location": "Doha, Qatar",
-      "url": "https://qa.linkedin.com/jobs/view/vice-president-operations-reporting-quality-assurance-at-lesha-bank-4328959529",
-      "posted": "2026-01-25",
-      "seniority": "VP",
-      "domain_match": true,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
       "id": "linkedin-li-4379669933",
       "source": "linkedin",
       "title": "Asset & Wealth Management - Doha - Vice President - Lead Security Engineering",
@@ -7588,10 +6493,10 @@
     "stale_sources": 0,
     "unique_after_dedup": 780,
     "applied_filtered": 25,
-    "policy_filtered": 422,
-    "final_candidates": 333,
+    "policy_filtered": 471,
+    "final_candidates": 284,
     "multi_source_jobs": 4,
-    "new_today": 333
+    "new_today": 284
   },
   "recommendations": []
 }
