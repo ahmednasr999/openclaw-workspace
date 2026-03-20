@@ -65,3 +65,9 @@ LinkedIn daily post cron posted WITHOUT image when image upload failed, then fai
 - [What I'll do differently 1]
 - [What I'll do differently 2]
 ```
+
+## 2026-03-19
+### Check Existing Scripts Before Building New Solutions
+- **What happened:** Ahmed asked to transcribe a YouTube video. I downloaded audio and ran local Whisper (4 min) instead of using the existing `scripts/youtube-transcript.sh` which does it in 2 seconds via yt-dlp subtitles.
+- **Why:** Didn't scan existing workspace scripts before starting work. Went straight to "build it" mode.
+- **Fix:** Before any transcription/media task, always check `scripts/` directory first. Run `ls scripts/*transcript* scripts/*youtube*` before building anything new. Also applies broadly: search the workspace for existing solutions before creating new ones.

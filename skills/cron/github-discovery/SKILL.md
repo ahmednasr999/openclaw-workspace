@@ -125,6 +125,11 @@ If zero repos pass the bar:
 Quiet day - nothing new above quality bar. No action needed.
 ```
 
+## Time Budget
+- **Hard cap: 10 minutes total.** Stop searching after 10 minutes and report what you have.
+- **Max 5 picks.** Don't deep-dive more than 5 repos per run.
+- **Skip Tier 2/3 if Tier 1 takes >7 minutes.**
+
 ## Error Handling
 - gh CLI unavailable: use web_search as fallback
 - GitHub rate limited: reduce search count, report partial results
