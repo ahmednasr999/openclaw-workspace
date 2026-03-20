@@ -395,6 +395,38 @@ def run_review(result: AgentResult):
     except Exception as e:
         print(f"  ATS scoring failed (non-fatal): {e}")
     
+    # Liveness check: verify SUBMIT job URLs are not expired/404
+    print(f"\nChecking SUBMIT job URLs for liveness...")
+    live_submit = []
+    expired_count = 0
+    for job in submit_jobs:
+        url = job.get("url", "")
+        if not url:
+            live_submit.append(job)
+            continue
+        try:
+            req = _urllib_req.Request(url, method="HEAD", headers={
+                "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36"
+            })
+            with _urllib_req.urlopen(req, timeout=10) as resp:
+                if resp.status < 400:
+                    live_submit.append(job)
+                else:
+                    expired_count += 1
+                    print(f"  ❌ EXPIRED ({resp.status}): {job.get('title','?')[:50]}")
+        except Exception as e:
+            err_str = str(e)
+            if "404" in err_str or "410" in err_str:
+                expired_count += 1
+                print(f"  ❌ EXPIRED: {job.get('title','?')[:50]}")
+            else:
+                # Network error or other issue - keep the job
+                live_submit.append(job)
+    
+    if expired_count:
+        print(f"  Removed {expired_count} expired jobs from SUBMIT")
+    submit_jobs = live_submit
+    
     FEEDBACK_DIR.mkdir(parents=True, exist_ok=True)
     with open(RECOMMENDED_FILE, "a") as f:
         for job in submit_jobs + review_jobs:
