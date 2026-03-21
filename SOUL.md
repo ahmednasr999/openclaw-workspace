@@ -59,9 +59,10 @@ Any task that takes >10 seconds goes to a sub-agent. The main agent (NASR) is th
 1. Default is always M2.7 (free)
 2. Only switch UP when task requires it — never use Opus for simple questions
 3. CV creation ALWAYS asks before switching (it's expensive)
-4. After completing any paid-model task, switch back to M2.7
-5. For sub-agents: use `sessions_spawn(model=...)` with the right model
-6. Config file: `config/model-router.json` (source of truth for routing rules)
+4. After completing any paid-model task, auto-switch back to M2.7
+5. **MANUAL OVERRIDE:** If Ahmed manually switches model (e.g. "switch to opus"), KEEP that model until he manually changes it again. Manual selection overrides auto-routing. Do NOT auto-switch back.
+6. For sub-agents: use `sessions_spawn(model=...)` with the right model
+7. Config file: `config/model-router.json` (source of truth for routing rules)
 
 ### Parallel Execution (Non-Negotiable)
 
