@@ -349,10 +349,43 @@ def run_review(result: AgentResult):
         reviews = parse_llm_response(response, len(top_jobs))
         print(f"  LLM returned {len(reviews)} reviews in {llm_latency_ms}ms")
     
+    # Load applied/skipped IDs for final guard
+    import re as _re
+    APPLIED_IDS_FILE = Path(__file__).parent.parent / "jobs-bank" / "applied-job-ids.txt"
+    applied_ids = set()
+    try:
+        if APPLIED_IDS_FILE.exists():
+            for line in open(APPLIED_IDS_FILE):
+                line = line.strip()
+                if not line or line.startswith("#"):
+                    continue
+                parts = line.split("|")
+                if parts:
+                    aid = parts[0].strip()
+                    if aid and len(aid) >= 6:
+                        applied_ids.add(aid)
+        print(f"\n  Applied/skipped IDs loaded: {len(applied_ids)}")
+    except Exception as e:
+        print(f"  Warning: Could not load applied IDs: {e}")
+
+    def _is_already_applied(job):
+        """Check if job ID or URL numeric IDs match applied list."""
+        jid = str(job.get("id", ""))
+        url = job.get("url", "")
+        # Extract numeric/hex IDs from URL
+        url_ids = _re.findall(r'[a-f0-9]{10,}|\d{8,}', url)
+        if jid in applied_ids:
+            return True
+        for uid in url_ids:
+            if uid in applied_ids:
+                return True
+        return False
+
     reviewed_jobs = []
     submit_jobs = []
     review_jobs = []
     skip_jobs = []
+    applied_filtered = 0
     
     for i, job in enumerate(top_jobs, 1):
         review = next((r for r in reviews if r.get("job_num") == i), None)
@@ -372,6 +405,13 @@ def run_review(result: AgentResult):
                 job["verdict"] = "SKIP"
             job["verdict_reason"] = "Default (no LLM review)"
         
+        # Final guard: skip already applied/skipped jobs
+        if _is_already_applied(job) and job["verdict"] in ("SUBMIT", "REVIEW"):
+            old_verdict = job["verdict"]
+            job["verdict"] = "SKIP"
+            job["verdict_reason"] = f"Already applied/skipped (was {old_verdict})"
+            applied_filtered += 1
+        
         reviewed_jobs.append(job)
         
         if job["verdict"] == "SUBMIT":
@@ -380,6 +420,9 @@ def run_review(result: AgentResult):
             review_jobs.append(job)
         else:
             skip_jobs.append(job)
+    
+    if applied_filtered > 0:
+        print(f"  Filtered {applied_filtered} already-applied/skipped jobs from SUBMIT/REVIEW")
     
     remaining_jobs = sorted_jobs[TOP_N_JOBS:]
     for job in remaining_jobs:
