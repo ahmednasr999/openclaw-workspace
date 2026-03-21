@@ -110,6 +110,9 @@ case "$MODE" in
             "linkedin"  "jobs-source-linkedin.py"  300 \
             "indeed"    "jobs-source-indeed.py"    120
         
+        log "--- Sync Applied IDs from Notion ---"
+        timeout 15 python3 "$SCRIPTS_DIR/sync-applied-from-notion.py" >> "$LOG" 2>&1 || log "WARN: Notion sync failed (non-blocking)"
+        
         log "--- Merge (sequential) ---"
         run_agent "merge" "jobs-merge.py" 30
         
@@ -142,6 +145,9 @@ case "$MODE" in
             "li-post"   "linkedin-post-agent.py"   30
         
         # Phase 2: Merge + Review (sequential, depends on sources)
+        log "--- Phase 2: Sync Applied IDs ---"
+        timeout 15 python3 "$SCRIPTS_DIR/sync-applied-from-notion.py" >> "$LOG" 2>&1 || log "WARN: Notion sync failed (non-blocking)"
+        
         log "--- Phase 2: Merge ---"
         run_agent "merge" "jobs-merge.py" 30
         

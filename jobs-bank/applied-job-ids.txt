@@ -121,3 +121,18 @@ ad0553c8b7e3d398 | Netcracker Technology | QA Director - Middle East | 2026-03-2
 4387231698 | Talent Connect Group | Principal Data & AI FinTech | 2026-03-21 | Applied
 4372535079 | LeadingEdge HR Solutions | Head of Enterprise Architecture KSA | 2026-03-21 | Applied
 4372537019 | LeadingEdge HR Solutions | Head of DevOps & Infrastructure KSA | 2026-03-21 | Applied
+
+# Previously applied (confirmed Mar 21)
+4381727915 | Experts Group International | Digital Transformation Director | 2026-03-21 | Previously Applied
+4325582215 | Emdad By Elm | Director of Digital Innovation & AI | 2026-03-21 | Previously Applied
+
+# Skipped REVIEW tier (Mar 21)
+4377369566 | Chain Reaction | Programmatic Director | 2026-03-21 | SKIPPED: ad tech, wrong domain
+4381045669 | PER | CIO Private Markets | 2026-03-21 | SKIPPED: private equity niche
+4384441676 | cander | Head of Infrastructure | 2026-03-21 | SKIPPED: pure infrastructure
+4383279845 | Foreground | Head of E-Commerce & Omnichannel | 2026-03-21 | SKIPPED: retail/e-commerce
+
+# Synced from Notion Pipeline (3 new)
+4385975651 | Panamari Holding | Project Manager Officer (PMO) | synced from Notion | Applied
+204645539359647334431080 | Faze 3 Consulting | IT PMO Lead | synced from Notion | Applied
+20004846 | Qiddiya | القدية | Director- Data Analytics (CDU3) - 20004846 | synced from Notion | ✅ Applied
