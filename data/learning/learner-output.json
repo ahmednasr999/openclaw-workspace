@@ -2,42 +2,82 @@
   "meta": {
     "agent": "daily-learner",
     "version": "1.0.0",
-    "generated_at": "2026-03-20T21:02:46.970762+02:00",
-    "duration_ms": 2,
+    "generated_at": "2026-03-21T04:13:44.393958+02:00",
+    "duration_ms": 7,
     "ttl_hours": 24,
     "status": "success",
     "error": null,
-    "run_id": "ff0eb368",
+    "run_id": "9c97670a",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
     "job_accuracy": {
-      "total_recommendations": 47,
-      "total_unique_jobs": 19,
-      "submit_recommendations": 14,
+      "total_recommendations": 214,
+      "total_unique_jobs": 52,
+      "submit_recommendations": 35,
       "applied_count": 0,
       "accuracy_rate": 0.0,
       "skip_candidates": [
         {
-          "job_id": "exa-39756",
-          "skip_signals": 3,
-          "reason": "Head of FinTech Data Platforms, Bahrain \u2014 good domain, Head-level is slightly above target"
-        },
-        {
-          "job_id": "exa-23289",
-          "skip_signals": 3,
-          "reason": "Senior Digital Transformation Director, Telecom, UAE \u2014 telecom is adjacent, not core domain"
-        },
-        {
-          "job_id": "exa-51180",
-          "skip_signals": 3,
-          "reason": "VP Digital Transformation, Saudi Arabia \u2014 good domain and location, VP is above target seniority"
-        },
-        {
-          "job_id": "exa-8508",
+          "job_id": "linkedin-li-4379840970",
           "skip_signals": 2,
-          "reason": "Head of Digital Transformation at Riyadh Airports has right title and location but airports domain is outside target domains"
+          "reason": "Business Engagement Director of Data & AI - data/AI engagement is somewhat technical; Director level fits but Data & AI is niche vs broad transformation"
+        },
+        {
+          "job_id": "linkedin-li-4383479638",
+          "skip_signals": 2,
+          "reason": "Head of AI Strategy - strategic AI is adjacent to digital transformation but AI strategy is more niche/emerging tech vs broad programme leadership"
+        },
+        {
+          "job_id": "google-in-bdeaee706e98c45c",
+          "skip_signals": 2,
+          "reason": "Head of Asset Management & AI Transformation is AI/asset-heavy; transformation is good but asset management domain is outside core FinTech/e-commerce/HealthTech"
+        },
+        {
+          "job_id": "linkedin-li-4378141671",
+          "skip_signals": 2,
+          "reason": "Head of Operations & AI Optimisation - operational excellence core strength; AI optimisation is technical but operations focus is aligned"
+        },
+        {
+          "job_id": "linkedin-li-4375508414",
+          "skip_signals": 2,
+          "reason": "Head of Digital Product Delivery (Mobile App) - digital product is adjacent to transformation but leans product management vs programme leadership"
+        },
+        {
+          "job_id": "linkedin-li-4381045669",
+          "skip_signals": 3,
+          "reason": "CIO Private Markets - technology leadership in finance; C-suite level fits but private markets investment domain is slightly outside FinTech/payments core"
+        },
+        {
+          "job_id": "indeed-in-ad0553c8b7e3d398",
+          "skip_signals": 3,
+          "reason": "QA Director at telecom company - right seniority but domain mismatch (not FinTech/HealthTech/Payments)"
+        },
+        {
+          "job_id": "linkedin-li-4387231698",
+          "skip_signals": 5,
+          "reason": "Principal Data & AI - FinTech aligned but Principal level is below target seniority"
+        },
+        {
+          "job_id": "linkedin-li-4372537019",
+          "skip_signals": 4,
+          "reason": "Data Analytics is too narrow a specialty - candidate is a broad transformation leader, not a data specialist"
+        },
+        {
+          "job_id": "linkedin-li-4377369566",
+          "skip_signals": 2,
+          "reason": "IT Head in KSA matches geography but general IT management is below executive DT level"
+        },
+        {
+          "job_id": "linkedin-li-4372535079",
+          "skip_signals": 2,
+          "reason": "Director level in target geography but Data Analytics is a specialist function, not DT/PMO"
+        },
+        {
+          "job_id": "linkedin-li-4384441676",
+          "skip_signals": 2,
+          "reason": "Senior Director level in target geography but Software Architecture is hands-on technical"
         }
       ]
     },
@@ -45,29 +85,78 @@
       "total_briefings": 0,
       "actionable_rate": null
     },
-    "skip_patterns_added": [],
+    "skip_patterns_added": [
+      {
+        "job_id": "linkedin-li-4379840970",
+        "reason": "Business Engagement Director of Data & AI - data/AI engagement is somewhat technical; Director level fits but Data & AI is niche vs broad transformation"
+      },
+      {
+        "job_id": "linkedin-li-4383479638",
+        "reason": "Head of AI Strategy - strategic AI is adjacent to digital transformation but AI strategy is more niche/emerging tech vs broad programme leadership"
+      },
+      {
+        "job_id": "google-in-bdeaee706e98c45c",
+        "reason": "Head of Asset Management & AI Transformation is AI/asset-heavy; transformation is good but asset management domain is outside core FinTech/e-commerce/HealthTech"
+      },
+      {
+        "job_id": "linkedin-li-4378141671",
+        "reason": "Head of Operations & AI Optimisation - operational excellence core strength; AI optimisation is technical but operations focus is aligned"
+      },
+      {
+        "job_id": "linkedin-li-4375508414",
+        "reason": "Head of Digital Product Delivery (Mobile App) - digital product is adjacent to transformation but leans product management vs programme leadership"
+      },
+      {
+        "job_id": "linkedin-li-4381045669",
+        "reason": "CIO Private Markets - technology leadership in finance; C-suite level fits but private markets investment domain is slightly outside FinTech/payments core"
+      },
+      {
+        "job_id": "indeed-in-ad0553c8b7e3d398",
+        "reason": "QA Director at telecom company - right seniority but domain mismatch (not FinTech/HealthTech/Payments)"
+      },
+      {
+        "job_id": "linkedin-li-4387231698",
+        "reason": "Principal Data & AI - FinTech aligned but Principal level is below target seniority"
+      },
+      {
+        "job_id": "linkedin-li-4372537019",
+        "reason": "Data Analytics is too narrow a specialty - candidate is a broad transformation leader, not a data specialist"
+      },
+      {
+        "job_id": "linkedin-li-4377369566",
+        "reason": "IT Head in KSA matches geography but general IT management is below executive DT level"
+      },
+      {
+        "job_id": "linkedin-li-4372535079",
+        "reason": "Director level in target geography but Data Analytics is a specialist function, not DT/PMO"
+      },
+      {
+        "job_id": "linkedin-li-4384441676",
+        "reason": "Senior Director level in target geography but Software Architecture is hands-on technical"
+      }
+    ],
     "weight_changes": [
       {
         "keyword": "remote",
-        "old": 0.85,
-        "new": 0.7999999999999999,
+        "old": 0.7999999999999999,
+        "new": 0.7499999999999999,
         "delta": -0.05,
         "reason": "Low accuracy (0.0%)"
       }
     ],
     "source_rankings": {
       "unknown": {
-        "recommended": 47,
+        "recommended": 214,
         "applied": 0,
         "rate": 0.0
       }
     },
     "summary": {
-      "generated_at": "2026-03-20T21:02:46.970357+02:00",
+      "generated_at": "2026-03-21T04:13:44.393477+02:00",
       "period": "last_7_days",
       "job_recommendation_accuracy": {
         "rate": 0.0,
-        "total": 47,
+        "total": 214,
         "applied": 0
       },
       "briefing_actionability": {
@@ -75,20 +164,21 @@
         "changes_detected": false
       },
       "auto_adjustments": {
-        "skip_patterns_added": 0,
+        "skip_patterns_added": 12,
         "weight_changes": 1,
         "source_rankings_updated": true
       },
       "insights": [
         "\u26a0\ufe0f Job recommendation accuracy low (0%) \u2014 weights adjusted",
+        "\ud83d\udcdd Added 12 new skip patterns from feedback",
         "\u2696\ufe0f Adjusted 1 keyword weights"
       ]
     }
   },
   "kpi": {
     "recommendation_accuracy": 0.0,
-    "total_recommendations": 47,
-    "skip_patterns_added": 0,
+    "total_recommendations": 214,
+    "skip_patterns_added": 12,
     "weight_changes": 1
   },
   "recommendations": []

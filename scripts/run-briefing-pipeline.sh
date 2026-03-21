@@ -113,6 +113,9 @@ case "$MODE" in
         log "--- Merge (sequential) ---"
         run_agent "merge" "jobs-merge.py" 30
         
+        log "--- JD Enrichment (sequential) ---"
+        run_agent "enrich" "jobs-enrich-jd.py" 120
+        
         log "--- LLM Review (sequential) ---"
         run_agent "review" "jobs-review.py" 180
         
@@ -141,6 +144,9 @@ case "$MODE" in
         # Phase 2: Merge + Review (sequential, depends on sources)
         log "--- Phase 2: Merge ---"
         run_agent "merge" "jobs-merge.py" 30
+        
+        log "--- Phase 2b: JD Enrichment ---"
+        run_agent "enrich" "jobs-enrich-jd.py" 120
         
         log "--- Phase 3: LLM Review ---"
         run_agent "review" "jobs-review.py" 180
