@@ -412,6 +412,20 @@ def main():
     except Exception as e:
         print(f"    Feedback logger not available: {e}")
 
+    # 6c. Feedback propagation check (cross-agent corrections)
+    print("\n[6c] Cross-agent feedback propagation ...")
+    try:
+        result = subprocess.run(
+            ["python3", str(WORKSPACE / "scripts" / "propagate-feedback.py")],
+            capture_output=True, text=True, timeout=30
+        )
+        if result.stdout.strip():
+            print(result.stdout)
+        else:
+            print("    No new corrections to propagate.")
+    except Exception as e:
+        print(f"    Propagation check failed: {e}")
+
     # 7. Summary
     print("\n" + "=" * 60)
     print("  SUMMARY")
@@ -437,6 +451,7 @@ def main():
         print(f"\n  Skipped (skill files not found): {', '.join(skipped)}")
 
     print("\n  Weekly review appended to memory/lessons-learned.md")
+    print("  Cross-agent propagation: check the propagation log")
     print("=" * 60)
 
     # Exit code: 0 = healthy, 1 = issues found (for cron monitoring)

@@ -250,6 +250,9 @@ case "$MODE" in
         log "--- Phase 4: Push to Notion Pipeline ---"
         run_agent "pipeline-push" "push-submit-to-notion.py" 120
         
+        log "--- Phase 5: Pam Newsletter Digest ---"
+        run_agent "newsletter" "pam-newsletter-agent.py" 30
+        
         log "========================================="
         log "  PIPELINE COMPLETE"
         log "========================================="
