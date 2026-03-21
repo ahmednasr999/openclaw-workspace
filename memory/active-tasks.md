@@ -1,21 +1,25 @@
-# Active Tasks — Updated 2026-03-20
+# Active Tasks — Updated 2026-03-21
 
-## In Progress
-- [ ] Morning briefing system — Phase 1-3 complete, reviewing section by section with Ahmed
-- [ ] Cron job cleanup — removing old system crons, fixing timeouts
-- [ ] LinkedIn autoresearch loop — sub-agent timed out, needs resume
+## Completed (March 21)
+- [x] Autoresearch loop built (Karpathy-style job review prompt optimization)
+- [x] JD enrichment agent (46/50 jobs get full descriptions now)
+- [x] Nationals-only filter applied to job review prompt
+- [x] Model router built (deterministic task→model routing)
+- [x] All model references updated to latest versions
+- [x] SIE 360 split verified working (92/100 score)
+- [x] SIE Learner cron verified working (11 PM Cairo)
 
-## Blocked
-- [ ] HeyGen video pipeline — 0 API credits
-- [ ] ScrapeCreators integration — API key needed from Ahmed
-- [ ] Live job source adapters — will activate with first 4 AM cron run tomorrow
+## Pending
+- [ ] Process remaining REVIEW tier jobs (#2-#9)
+- [ ] Add location verification to job pipeline
+- [ ] Crack Google Jobs natively (currently using Indeed proxy)
+- [ ] Fix Gmail watcher expired OAuth token
+- [ ] Get HeyGen API credits
+- [ ] Get ScrapeCreators API key from Ahmed
 
-## Completed Today
-- [x] Built 16 scripts for modular briefing system
-- [x] Ran full E2E test — 8/8 pass
-- [x] Generated first Notion briefing with clickable links + ATS scores
-- [x] Fixed pipeline agent (discovered exclusion, stale detection)
-- [x] Fixed jobs pipeline (aggregator filter, LLM scoring, ATS integration)
-- [x] Registered 14 cron jobs
-- [x] Fixed cron timeouts (Pipeline Agent 60s -> 120s)
-- [x] Disabled old crons (notification-digest, LinkedIn Engagement Radar)
+## Recurring
+- Daily briefing: 7 AM Sun-Thu (auto)
+- LinkedIn post: 9:30 AM Sun-Thu (auto)
+- Job pipeline: 4x/day (auto)
+- SIE 360: 3:50 AM checks + 4 AM report (auto)
+- Autoresearch: Sunday 2 AM (auto)
