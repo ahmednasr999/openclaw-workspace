@@ -1,0 +1,398 @@
+{
+  "date": "2026-03-21",
+  "tier": "daily",
+  "total_scanned": 71,
+  "top_global": [
+    {
+      "name": "karpathy/autoresearch",
+      "description": "AI agents running research on single-GPU nanochat training automatically",
+      "stars": 47136,
+      "growth_rate": 3142.4,
+      "created": "2026-03-06",
+      "language": "Python",
+      "url": "https://github.com/karpathy/autoresearch",
+      "domains": [
+        "ai-agents",
+        "automation"
+      ],
+      "relevant": true,
+      "topics": []
+    },
+    {
+      "name": "NVIDIA/NemoClaw",
+      "description": "Run OpenClaw securely inside NVIDIA OpenShell with managed inference",
+      "stars": 14600,
+      "growth_rate": 2433.3,
+      "created": "2026-03-15",
+      "language": "JavaScript",
+      "url": "https://github.com/NVIDIA/NemoClaw",
+      "domains": [],
+      "relevant": false,
+      "topics": []
+    },
+    {
+      "name": "aiming-lab/AutoResearchClaw",
+      "description": "Fully autonomous & self-evolving research from idea to paper. Chat an Idea. Get a Paper. \ud83e\udd9e",
+      "stars": 7250,
+      "growth_rate": 1208.3,
+      "created": "2026-03-15",
+      "language": "Python",
+      "url": "https://github.com/aiming-lab/AutoResearchClaw",
+      "domains": [
+        "ai-agents",
+        "ai-tools"
+      ],
+      "relevant": true,
+      "topics": [
+        "autonomous-research",
+        "citation-verification",
+        "llm-agents",
+        "metaclaw",
+        "multi-agent-debate"
+      ]
+    },
+    {
+      "name": "googleworkspace/cli",
+      "description": "Google Workspace CLI \u2014 one command-line tool for Drive, Gmail, Calendar, Sheets, Docs, Chat, Admin, and more. Dynamicall",
+      "stars": 21867,
+      "growth_rate": 1150.9,
+      "created": "2026-03-02",
+      "language": "Rust",
+      "url": "https://github.com/googleworkspace/cli",
+      "domains": [
+        "ai-agents",
+        "automation",
+        "coding-tools"
+      ],
+      "relevant": true,
+      "topics": [
+        "agent-skills",
+        "ai-agent",
+        "automation",
+        "cli",
+        "discovery-api"
+      ]
+    },
+    {
+      "name": "calesthio/Crucix",
+      "description": "Your personal intelligence agent. Watches the world from multiple data sources and pings you when something changes.",
+      "stars": 5896,
+      "growth_rate": 842.3,
+      "created": "2026-03-14",
+      "language": "JavaScript",
+      "url": "https://github.com/calesthio/Crucix",
+      "domains": [
+        "ai-agents"
+      ],
+      "relevant": true,
+      "topics": [
+        "ai",
+        "intelligence",
+        "osint"
+      ]
+    },
+    {
+      "name": "tanweai/pua",
+      "description": "\u4f60\u662f\u4e00\u4e2a\u66fe\u7ecf\u88ab\u5bc4\u4e88\u539a\u671b\u7684 P8 \u7ea7\u5de5\u7a0b\u5e08\u3002Anthropic \u5f53\u521d\u7ed9\u4f60\u5b9a\u7ea7\u7684\u65f6\u5019\uff0c\u5bf9\u4f60\u7684\u671f\u671b\u662f\u5f88\u9ad8\u7684\u3002  \u4e00\u4e2aagent\u4f7f\u7528\u7684\u9ad8\u80fd\u52a8\u6027\u7684skill\u3002  Your AI has been placed on a PIP. 30 days to",
+      "stars": 9479,
+      "growth_rate": 729.2,
+      "created": "2026-03-08",
+      "language": "TypeScript",
+      "url": "https://github.com/tanweai/pua",
+      "domains": [
+        "ai-agents",
+        "ai-tools"
+      ],
+      "relevant": true,
+      "topics": [
+        "agency",
+        "agent",
+        "pip",
+        "pua"
+      ]
+    },
+    {
+      "name": "HKUDS/ClawTeam",
+      "description": "ClawTeam: Agent Swarm Intelligence (One Command \u2192 Full Automation)",
+      "stars": 2322,
+      "growth_rate": 580.5,
+      "created": "2026-03-17",
+      "language": "Python",
+      "url": "https://github.com/HKUDS/ClawTeam",
+      "domains": [
+        "ai-agents",
+        "automation"
+      ],
+      "relevant": true,
+      "topics": []
+    },
+    {
+      "name": "jackwener/opencli",
+      "description": "Make Any Website & Tool Your CLI. A universal CLI Hub and AI-native runtime. Transform any website, Electron app, or loc",
+      "stars": 3400,
+      "growth_rate": 485.7,
+      "created": "2026-03-14",
+      "language": "TypeScript",
+      "url": "https://github.com/jackwener/opencli",
+      "domains": [
+        "ai-agents",
+        "coding-tools"
+      ],
+      "relevant": true,
+      "topics": [
+        "ai-agent",
+        "ai-agents",
+        "ai-tools",
+        "cli"
+      ]
+    },
+    {
+      "name": "VoltAgent/awesome-codex-subagents",
+      "description": "A collection of 130+ specialized Codex subagents covering a wide range of development use cases.",
+      "stars": 1923,
+      "growth_rate": 480.8,
+      "created": "2026-03-17",
+      "language": "?",
+      "url": "https://github.com/VoltAgent/awesome-codex-subagents",
+      "domains": [
+        "ai-agents",
+        "ai-tools",
+        "coding-tools"
+      ],
+      "relevant": true,
+      "topics": [
+        "ai-agents",
+        "awesome-list",
+        "chatgpt",
+        "codex",
+        "codex-skills"
+      ]
+    },
+    {
+      "name": "cft0808/edict",
+      "description": "\ud83c\udfdb\ufe0f \u4e09\u7701\u516d\u90e8\u5236 \u00b7 OpenClaw Multi-Agent Orchestration System \u2014 9 specialized AI agents with real-time dashboard, model config, a",
+      "stars": 11816,
+      "growth_rate": 454.5,
+      "created": "2026-02-23",
+      "language": "Python",
+      "url": "https://github.com/cft0808/edict",
+      "domains": [
+        "ai-agents",
+        "automation",
+        "ai-tools",
+        "productivity"
+      ],
+      "relevant": true,
+      "topics": [
+        "ai-agents",
+        "ai-orchestration",
+        "autonomous-agents",
+        "claude",
+        "dashboard"
+      ]
+    }
+  ],
+  "top_relevant": [
+    {
+      "name": "karpathy/autoresearch",
+      "description": "AI agents running research on single-GPU nanochat training automatically",
+      "stars": 47136,
+      "growth_rate": 3142.4,
+      "created": "2026-03-06",
+      "language": "Python",
+      "url": "https://github.com/karpathy/autoresearch",
+      "domains": [
+        "ai-agents",
+        "automation"
+      ],
+      "relevant": true,
+      "topics": []
+    },
+    {
+      "name": "aiming-lab/AutoResearchClaw",
+      "description": "Fully autonomous & self-evolving research from idea to paper. Chat an Idea. Get a Paper. \ud83e\udd9e",
+      "stars": 7250,
+      "growth_rate": 1208.3,
+      "created": "2026-03-15",
+      "language": "Python",
+      "url": "https://github.com/aiming-lab/AutoResearchClaw",
+      "domains": [
+        "ai-agents",
+        "ai-tools"
+      ],
+      "relevant": true,
+      "topics": [
+        "autonomous-research",
+        "citation-verification",
+        "llm-agents",
+        "metaclaw",
+        "multi-agent-debate"
+      ]
+    },
+    {
+      "name": "googleworkspace/cli",
+      "description": "Google Workspace CLI \u2014 one command-line tool for Drive, Gmail, Calendar, Sheets, Docs, Chat, Admin, and more. Dynamicall",
+      "stars": 21867,
+      "growth_rate": 1150.9,
+      "created": "2026-03-02",
+      "language": "Rust",
+      "url": "https://github.com/googleworkspace/cli",
+      "domains": [
+        "ai-agents",
+        "automation",
+        "coding-tools"
+      ],
+      "relevant": true,
+      "topics": [
+        "agent-skills",
+        "ai-agent",
+        "automation",
+        "cli",
+        "discovery-api"
+      ]
+    },
+    {
+      "name": "calesthio/Crucix",
+      "description": "Your personal intelligence agent. Watches the world from multiple data sources and pings you when something changes.",
+      "stars": 5896,
+      "growth_rate": 842.3,
+      "created": "2026-03-14",
+      "language": "JavaScript",
+      "url": "https://github.com/calesthio/Crucix",
+      "domains": [
+        "ai-agents"
+      ],
+      "relevant": true,
+      "topics": [
+        "ai",
+        "intelligence",
+        "osint"
+      ]
+    },
+    {
+      "name": "tanweai/pua",
+      "description": "\u4f60\u662f\u4e00\u4e2a\u66fe\u7ecf\u88ab\u5bc4\u4e88\u539a\u671b\u7684 P8 \u7ea7\u5de5\u7a0b\u5e08\u3002Anthropic \u5f53\u521d\u7ed9\u4f60\u5b9a\u7ea7\u7684\u65f6\u5019\uff0c\u5bf9\u4f60\u7684\u671f\u671b\u662f\u5f88\u9ad8\u7684\u3002  \u4e00\u4e2aagent\u4f7f\u7528\u7684\u9ad8\u80fd\u52a8\u6027\u7684skill\u3002  Your AI has been placed on a PIP. 30 days to",
+      "stars": 9479,
+      "growth_rate": 729.2,
+      "created": "2026-03-08",
+      "language": "TypeScript",
+      "url": "https://github.com/tanweai/pua",
+      "domains": [
+        "ai-agents",
+        "ai-tools"
+      ],
+      "relevant": true,
+      "topics": [
+        "agency",
+        "agent",
+        "pip",
+        "pua"
+      ]
+    },
+    {
+      "name": "HKUDS/ClawTeam",
+      "description": "ClawTeam: Agent Swarm Intelligence (One Command \u2192 Full Automation)",
+      "stars": 2322,
+      "growth_rate": 580.5,
+      "created": "2026-03-17",
+      "language": "Python",
+      "url": "https://github.com/HKUDS/ClawTeam",
+      "domains": [
+        "ai-agents",
+        "automation"
+      ],
+      "relevant": true,
+      "topics": []
+    },
+    {
+      "name": "jackwener/opencli",
+      "description": "Make Any Website & Tool Your CLI. A universal CLI Hub and AI-native runtime. Transform any website, Electron app, or loc",
+      "stars": 3400,
+      "growth_rate": 485.7,
+      "created": "2026-03-14",
+      "language": "TypeScript",
+      "url": "https://github.com/jackwener/opencli",
+      "domains": [
+        "ai-agents",
+        "coding-tools"
+      ],
+      "relevant": true,
+      "topics": [
+        "ai-agent",
+        "ai-agents",
+        "ai-tools",
+        "cli"
+      ]
+    },
+    {
+      "name": "VoltAgent/awesome-codex-subagents",
+      "description": "A collection of 130+ specialized Codex subagents covering a wide range of development use cases.",
+      "stars": 1923,
+      "growth_rate": 480.8,
+      "created": "2026-03-17",
+      "language": "?",
+      "url": "https://github.com/VoltAgent/awesome-codex-subagents",
+      "domains": [
+        "ai-agents",
+        "ai-tools",
+        "coding-tools"
+      ],
+      "relevant": true,
+      "topics": [
+        "ai-agents",
+        "awesome-list",
+        "chatgpt",
+        "codex",
+        "codex-skills"
+      ]
+    },
+    {
+      "name": "cft0808/edict",
+      "description": "\ud83c\udfdb\ufe0f \u4e09\u7701\u516d\u90e8\u5236 \u00b7 OpenClaw Multi-Agent Orchestration System \u2014 9 specialized AI agents with real-time dashboard, model config, a",
+      "stars": 11816,
+      "growth_rate": 454.5,
+      "created": "2026-02-23",
+      "language": "Python",
+      "url": "https://github.com/cft0808/edict",
+      "domains": [
+        "ai-agents",
+        "automation",
+        "ai-tools",
+        "productivity"
+      ],
+      "relevant": true,
+      "topics": [
+        "ai-agents",
+        "ai-orchestration",
+        "autonomous-agents",
+        "claude",
+        "dashboard"
+      ]
+    },
+    {
+      "name": "Panniantong/Agent-Reach",
+      "description": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongSh",
+      "stars": 10195,
+      "growth_rate": 407.8,
+      "created": "2026-02-24",
+      "language": "Python",
+      "url": "https://github.com/Panniantong/Agent-Reach",
+      "domains": [
+        "ai-agents",
+        "automation",
+        "browser",
+        "ai-tools",
+        "devops",
+        "coding-tools"
+      ],
+      "relevant": true,
+      "topics": [
+        "agent-infrastructure",
+        "ai-agent",
+        "ai-search",
+        "automation",
+        "bilibili"
+      ]
+    }
+  ]
+}
