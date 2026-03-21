@@ -107,7 +107,7 @@ case "$MODE" in
         # Google Jobs & Bayt: blocked from VPS (403). Disabled.
         # Exa dropped — unreliable (stale URLs, wrong locations, profile pages)
         run_parallel "Job Sources" \
-            "linkedin"  "jobs-source-linkedin.py"  120 \
+            "linkedin"  "jobs-source-linkedin.py"  300 \
             "indeed"    "jobs-source-indeed.py"    120
         
         log "--- Merge (sequential) ---"
@@ -136,7 +136,7 @@ case "$MODE" in
             "content"   "content-agent.py"         30 \
             "outreach"  "outreach-agent.py"        15 \
             "system"    "system-agent.py"           30 \
-            "linkedin"  "jobs-source-linkedin.py"  120 \
+            "linkedin"  "jobs-source-linkedin.py"  300 \
             "indeed"    "jobs-source-indeed.py"    120 \
             "comment-radar" "comment-radar-agent.py" 60 \
             "li-post"   "linkedin-post-agent.py"   30

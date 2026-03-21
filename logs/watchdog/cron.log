@@ -1,0 +1,16 @@
+🔍 Watchdog v3 - Detect → Fix → Report
+✅ Gateway running (PID: 3055743)
+✅ Disk OK: 47%
+✅ active-tasks.md fresh (1h)
+✅ Jobs data fresh (10h)
+✅ SIE 360 data fresh (11h)
+✅ Pipeline lock active (1m, still valid)
+🟡 1 crons with issues
+✅ RAM OK: 32%
+
+═══════════════════════════════════
+📊 Watchdog v3 Summary
+  Fixes applied: 0
+  Warnings: 1
+  Alerts (need human): 0
+═══════════════════════════════════

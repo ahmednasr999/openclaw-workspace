@@ -2,43 +2,16 @@
   "meta": {
     "agent": "jobs-merge",
     "version": "1.0.0",
-    "generated_at": "2026-03-21T01:43:46.439506+02:00",
-    "duration_ms": 27937,
+    "generated_at": "2026-03-21T16:11:19.196758+02:00",
+    "duration_ms": 27855,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "787f5293",
+    "run_id": "971b0dca",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": [
-    {
-      "id": "linkedin-li-4378211126",
-      "source": "linkedin",
-      "title": "Head of Enterprise Program Management Office ( EPMO)",
-      "company": "Commercial Bank",
-      "location": "Doha, Qatar",
-      "url": "https://qa.linkedin.com/jobs/view/head-of-enterprise-program-management-office-epmo-at-commercial-bank-4378211126",
-      "posted": "2026-02-28",
-      "seniority": "Director",
-      "domain_match": true,
-      "keyword_score": 33,
-      "match_keywords": [
-        "pmo",
-        "program management",
-        "enterprise",
-        "head of"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ],
-      "jd_text": "About Commercial Bank Of Qatar Commercial Bank, founded in 1975 and headquartered in Doha, plays a vital role in Qatar\u2019s economic development by offering a range of personal, business, government, international and investment services. We believe in empowering our employees, providing them with opportunities for growth and professional development. By Joining us, you\u2019ll be part of a workplace culture that fosters innovation, supports work-life balance, and encourages you to reach your full potential. Join us in shaping the future of banking! Job Summary The Head of EPMO will lead the bank\u2019s enterprise-wide program management function, ensuring successful delivery of strategic IT initiatives and business process transformation projects. The Head of the EPMO role is pivotal in the bank\u2019s digital and operational transformation agenda. By ensuring disciplined execution and governance, the Head of EPMO will enable the bank to achieve efficiency, innovation, and competitive advantage in Qatar\u2019s dynamic financial services market. Key Accountabilities/ Responsibilities Strategic Leadership Partner with Business Leaders/Sponsors and Sr. Technology Leaders, to develop strategic roadmaps; deliver large/complex technology programs, and to ensure that end to end targeted business outcomes of the program are met. Oversee/manage all programs and projects comprising the change portfolio within the specified time frame and budget, Interpret, and translate strategic business requirements into EPMO services and projects. Ensure sound project governance across the project portfolio, including through relevant Steering Committees and within the bank\u2019s overall governance framework. Act as a trusted advisor to executive leadership on program priorities and risks Program management and Project Execution Oversee the full lifecycle of IT and associated business process change projects including - requirements gathering, solution design, architecture alignment, development, testing, deployment and post-deployment validation Ensure projects are delivered on time, within budget, and to quality standards Governance &amp; Reporting Manage preparation and provision of relevant management dashboards, executive reports and presentations to facilitate management decision-making. Manage the administrations of the Operations and Technology Committee, a senior executive committee that oversees formulation and execution of the strategic project portfolio. Embed a culture of proactive, disciplined project management, including early recognition and escalation of project risks and issues, through well designed protocols, and effective coaching of the EPMO team. Ensure that Regulatory recommendations are implemented effectively including the on-going measurement &amp; monitoring thereof. Subject to appropriate challenge, ensure that Internal Audit, Legal, Compliance and Operational Risk recommendations are implemented Stakeholder Management Collaborate with product teams, business units,"
-    },
     {
       "id": "indeed-in-ad0553c8b7e3d398",
       "source": "indeed",
@@ -65,61 +38,6 @@
       "sources": [
         "indeed"
       ]
-    },
-    {
-      "id": "google-in-5bd6d3474b0865fa",
-      "source": "google",
-      "title": "Experience Operations Director - Dubai",
-      "company": "Valtech Group",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=5bd6d3474b0865fa",
-      "posted": "2026-03-19",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 23,
-      "match_keywords": [
-        "ai",
-        "director",
-        "dubai",
-        "lte",
-        "api"
-      ],
-      "raw_snippet": "Why Valtech? We\u2019re advisors, visionaries, creative and techies. We embrace all things digital. We talk to each other. We have fun. We love our clients. We\u2019re looking ahead \u2022 We are global\n\n\n  \n**About Valtech:**\n\n\n\nAt Valtech, we are reshaping the way brands connect with their customers. As a global digital innovation company, we fuse creativity, technology, and strategy to solve complex business challenges and deliver exceptional experiences.\n\n\n\nWith over 6,500 experts in 60\\+ offices across 20",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 3,
-      "policy_status": "pass",
-      "sources": [
-        "google-jobs",
-        "indeed",
-        "linkedin"
-      ]
-    },
-    {
-      "id": "linkedin-li-4374990040",
-      "source": "linkedin",
-      "title": "Head of Engineering - Fintech & Digital Asset Infrastructure",
-      "company": "TENTEN Partners",
-      "location": "Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/head-of-engineering-fintech-digital-asset-infrastructure-at-tenten-partners-4374990040",
-      "posted": "2026-02-22",
-      "seniority": "Director",
-      "domain_match": true,
-      "keyword_score": 23,
-      "match_keywords": [
-        "fintech",
-        "infrastructure",
-        "head of"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ],
-      "jd_text": "TENTEN Partners is retained on a confidential mandate to hire a Head of Engineering for a regulated fintech infrastructure business operating at the intersection of payments, settlement, and digital-asset enabled workflows. This is not a \u201ckeep-the-lights-on\u201d role. It\u2019s a build + scale + harden mandate. The Mandate Own the engineering function end-to-end \u2014 people, platform, delivery, security, reliability, and execution rhythm . You will take a growing engineering team (internal + external) and turn it into an institutional-grade capability with modern DevOps, strong observability, and a security-first SDLC aligned to regulated expectations. You will be expected to operate like an engineering GM: shipping outcomes, building systems, and raising standards . What You\u2019ll Be Accountable For 1) Engineering Leadership &amp; Operating System Build and lead a high-performance team across backend, frontend, platform/DevOps, and QA Set the engineering \u201coperating system\u201d: OKRs, sprint cadence, quality gates, release governance Design the right hybrid model (in-house + vendors) and hold partners to measurable outputs Establish a culture of ownership, clean execution, and calm, high-standards delivery 2) Platform Delivery: CI/CD, IaC, and Release Velocity Implement a modern CI/CD pipeline with automated testing, approvals, and rollback strategy Drive Infrastructure-as-Code and environment consistency (e.g., Terraform, Kubernetes, Docker ) Make releases boring: predictable, observable, and safe Reduce cycle time while increasing stability and control 3) Reliability, Observability &amp; Incident Readiness Build a proper observability stack: metrics, logs, traces, alerting, SLOs Implement incident management and postmortems with measurable improvements Architect for uptime and scale across transaction-heavy flows (payments + settlement) 4) Security-First Engineering (Regulated Standard) Embed secure SDLC: code review discipline, dependency scanning, secrets management, pen testing Harden APIs and integrations (authN/authZ, idempotency, encryption, least privilege) Ensure systems are audit-ready with defensible controls and clear documentation Partner with compliance/risk to meet regulatory and institutional partner expectations 5) Payments + Digital Asset Connectivity Oversee systems that touch transaction processing, settlement workflows, reconciliation, and audit trails Lead (or intelligently govern) stablecoin / blockchain connectivity, wallet operations, and monitoring where relevant Ensure operational resiliency: observability, reconciliation, exception handling, and real-time visibility The Profile We Need This role will suit someone who has built and scaled engineering in regulated or regulation-adjacent fintech and can combine speed with controls. Must-have experience 7\u201312+ years engineering experience with 3\u20135+ years leading teams Experience delivering payments / transaction processing / settlement systems (or similarly high-integrity platforms) Strong h"
     },
     {
       "id": "linkedin-li-4387231698",
@@ -175,33 +93,6 @@
       "jd_text": "We are Global Print-on-Demand (Global POD), the Dubai-based subsidiary of The Customization Group . We bring cutting-edge and scalable top-tier print-on-demand solutions to businesses and creators worldwide. Fast, sustainable, and hassle-free \u2014 because your vision deserves the best! The Customization Group is a global leader in mass customization, leveraging AI and automation to revolutionize the personalized products industry. With a strong international presence across Europe, North America, and the Middle East , we manufacture up to 2.500.000 unique products daily , reaching millions of customers through 20+ own online shops and 1,000+ partner stores . Our AI-first strategy drives efficiency, scalability, and innovation , keeping us ahead in a fast-moving market while growing through AI-driven acquisitions and partnerships . Our diverse team of 700+ professionals from 40+ nationalities thrives in a culture of collaboration and ambition. Whether in our tech hubs, production facilities, or business locations, you\u2019ll find the perfect environment to take ownership and drive impact in the future of e-commerce. TCG is looking for an exceptional Head of CRM to lead the transformation of our global customer engagement strategy. You\u2019ll drive intelligent automation, experimentation, and data-led innovation across all brands and markets. Why You Will Love Working With Us Competitive salary \u2013 Commission &amp; performance-based bonuses! Global Exposure \u2013 Work with an international team and gain valuable cross-market experience Rapid Career Growth \u2013 A role that evolves quickly, opening doors to new opportunities Supportive Work Environment \u2013 Join a dynamic and collaborative team culture Ownership for your ideas to fuel your ambition Private Health Insurance A modern office in Dubai Internet City About The Role As our Head Of CRM , you\u2019ll set the global vision and lead two teams - CRM Marketing and CRM Automations - toward a world where customer experiences are personalized, anticipatory, and continuously optimized with AI and automation. You'll build a modern CRM ecosystem that uses data, experimentation, and smart technology to deepen customer relationships and deliver predictable, scalable revenue. This includes championing new tools, integrating emerging AI capabilities, streamlining workflows, and raising the bar on quality, speed, and impact. What You Will Do Define &amp; Define and own the global CRM strategy, driving AI-powered lifecycle orchestration and advanced personalization across all customer touchpoints (email, SMS, push, print, WhatsApp, web).\u265f\ufe0f Lead and scale two high-performing teams \u2014 CRM Marketing and CRM Automations \u2014 fostering a culture of experimentation, innovation, and impact.\ud83e\udd1d Build and evolve a next-generation CRM tech stack, introducing AI agents, predictive scoring, automated content generation, and intelligent decision engines.\ud83e\udd16 Oversee CRM campaigns, lifecycle programs, and real-time automations, embedding ML-driven segmentati"
     },
     {
-      "id": "linkedin-li-4007558068",
-      "source": "linkedin",
-      "title": "Executive Director- Private Banking MENA (UAE nationals only)",
-      "company": "First Abu Dhabi Bank (FAB)",
-      "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/executive-director-private-banking-mena-uae-nationals-only-at-first-abu-dhabi-bank-fab-4007558068",
-      "posted": "2026-03-06",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 20,
-      "match_keywords": [
-        "executive",
-        "director",
-        "uae",
-        "mena"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ],
-      "jd_text": "Company Description First Abu Dhabi Bank is an inclusive environment where each person values the experiences, perspectives, ideas and beliefs of others. We\u2019re in a unique position to learn from all our colleagues, combining international experience with deep cultural knowledge and local expertise. At FAB, you\u2019ll have the support of your team and a strong relationship with your line manager, who will trust you with responsibility and recognize your good performance. As we embrace different ways of seeing the world, listening to each other and respecting different viewpoints, we grow stronger \u2013 together. Job Description Responsible for the build out and enhancement of the Key Client Group and Private Banking proposition across all international private banking countries i.e. with a focus on the MENA region to include and focus on KSA, Bahrain, Kuwait, Oman The objective is to, in liaison with Global Head of Private Banking and other key stakeholders, formulate strategy and its implementation, including but not limited to building, enhancing and diversifying revenue streams, client centric value &amp; service propositions, governance, performance metrics, foster collaboration and team work. Lead strategy development and implementation for private banking across all relevant MENA Regions in liaison with Head of Global Private Banking. Responsible for achieving, monitoring, and management of KPIs and other performance metrics in coordination with Head of Global Private Banking and other key stakeholders. Lead coverage accountability across MENA private banking centres to deliver diversified revenue streams across core private banking client centric propositions including but not limited to investment advisory services, investment management (discretionary portfolio management &amp; in-house funds), execution only, and bespoke solutions across asset classes/ solutions such as real estate financing, private equity, wealth solutions, jumbo insurance premium financing, Shariah solutions,, etc. Lead engagement with the international private banking centre teams as well as Head Office teams including management to effectively develop and enhance cross-sell; Lead engagement between centres of product excellence, international private banking coverage teams across jurisdictions and head office to support and, where appropriate, drive delivery of, client centric value proposition/solutions. Spearhead engagement with internal and external stakeholders\u2019 on behalf of business including but not limited to legal &amp; compliance, risk management, regulators, and service providers for the purposes of effectively delivering and managing the value propositions. In liaison with Head of Global Private Banking and other stakeholders as appropriate, lead commercial arrangements, sourcing and selection, and agreements with support from strategic vendor management, legal teams, and other enablement teams to ensure a holistic approach. Engagement with coverage teams and oth"
-    },
-    {
       "id": "linkedin-li-4372535079",
       "source": "linkedin",
       "title": "Head of Enterprise Architecture-KSA",
@@ -255,29 +146,31 @@
       "jd_text": "ERP / Core Systems Transformation Director \ud83d\udccd Location: Dubai / Abu Dhabi, UAE \ud83d\udcbc Industry: Financial Services / Banking / FinTech Our client, a leading financial services organisation in the UAE, is undertaking a major enterprise-wide digital transformation to modernise its core systems and operational platforms. As part of this strategic initiative, they are seeking an experienced ERP / Core Systems Transformation Director to lead the design, implementation, and delivery of large-scale ERP and core platform transformation programmes. This role will play a critical leadership position in replacing and integrating legacy systems, enabling improved operational efficiency, regulatory compliance, and data-driven decision-making across the organisation. Key Responsibilities Transformation Leadership Lead the end-to-end ERP and core systems transformation programme , including planning, execution, and delivery. Develop and implement a strategic roadmap for modernising finance, operations, and enterprise systems. Oversee large-scale ERP implementations (e.g., SAP S/4HANA, Oracle Fusion Cloud ERP, or Microsoft Dynamics 365). Programme Delivery Manage complex multi-year transformation programmes with significant budgets. Coordinate cross-functional teams across IT, finance, operations, risk, and compliance. Lead vendor selection, implementation partners, and system integrators. Technology &amp; Architecture Ensure alignment between ERP platforms, core banking systems, and digital channels. Drive integration across enterprise systems, including finance, procurement, HR, and reporting. Establish scalable, cloud-enabled architectures to support future growth. Stakeholder Management Partner closely with executive leadership including the CIO, CFO, and Head of Transformation. Provide regular updates to executive committees and governance boards. Manage relationships with external consultants and technology vendors. Risk, Compliance &amp; Governance Ensure transformation initiatives align with financial regulatory frameworks and governance standards. Implement strong programme governance, risk management, and reporting processes. Deliver systems capable of supporting enhanced compliance, reporting, and audit requirements. Required Experience 12\u201315+ years of experience in enterprise technology or transformation programmes . Proven leadership experience delivering large-scale ERP or core platform implementations within financial services. Experience managing complex multi-country or enterprise-wide transformation initiatives . Strong understanding of finance systems, regulatory environments, and operational workflows in banking or financial services. Experience working with major ERP platforms such as SAP S/4HANA, Oracle Fusion Cloud ERP, or Microsoft Dynamics 365. Key Skills Enterprise transformation leadership ERP programme delivery Stakeholder and executive management Vendor and systems integrator management Financial systems architecture Data governance and re"
     },
     {
-      "id": "linkedin-li-4384043000",
+      "id": "linkedin-li-4384046518",
       "source": "linkedin",
-      "title": "Head of Software Engineering [Fintech]",
-      "company": "Talent Seed",
-      "location": "Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/head-of-software-engineering-fintech-at-talent-seed-4384043000",
+      "title": "Experience Operations Director - Dubai",
+      "company": "Valtech",
+      "location": "Dubai, Dubai, United Arab Emirates",
+      "url": "https://ae.linkedin.com/jobs/view/experience-operations-director-dubai-at-valtech-4384046518",
       "posted": "2026-03-16",
-      "seniority": "Director",
+      "seniority": "C-Suite",
       "domain_match": true,
       "keyword_score": 16,
       "match_keywords": [
-        "fintech",
-        "head of"
+        "ai",
+        "director",
+        "dubai"
       ],
       "raw_snippet": "",
       "relevant": true,
       "filter_reason": null,
-      "source_count": 1,
+      "source_count": 2,
       "policy_status": "pass",
       "sources": [
-        "linkedin"
+        "linkedin",
+        "indeed"
       ],
-      "jd_text": "Our fintech client is looking for a VP of Software Engineering. In this role, you will guide the software team through the design and development of our current and future products. You are comfortable taking action in an environment where complete information is unavailable and can enable your team to deliver well-architected products that maintain high quality. Experience coordinating many moving parts to meet tight deadlines and having contingency plans ready when priorities shift is a must-have. We are seeking an engineering leader who has the following: 15+ years of experience building technical software products, with at least 5 of those years as a manager of an engineering teams of 40+. Strong experience in B2C consumer platforms. Fintech is highly preferred. Experience of setting-up / working with offshore engineering hubs. Strong system design experience and ability to roll up your sleeves if needed. Relentlessly strive to push towards best practices and team goals while being flexible in a fast-paced start-up You have an entrepreneurial spirit, strong commercial acumen, grit, and a deep appreciation for quality."
+      "jd_text": "About Valtech At Valtech, we are reshaping the way brands connect with their customers. As a global digital innovation company, we fuse creativity, technology, and strategy to solve complex business challenges and deliver exceptional experiences. With over 6,500 experts in 60+ offices across 20+ countries, we are expanding our footprint in MENA with Dubai as the strategic hub. At Valtech we thrive on driving business transformation as trusted partners to the world\u2019s most recognized brands. To our people we offer growth opportunities, a values-driven culture, international careers and the chance to shape the future of experience. About The Team We are part of Valtech MENA, the experience innovation company, combining the uncommon to unlock a better way for people to experience the world. We work at the intersection of disciplines, cultures, and perspectives to create solutions that go beyond expectations, helping brands move ahead and lead in a digital world. We value clarity, collaboration, and a strong respect for craft. That mindset shapes both what we create and how we work together. Overview We are looking for an Experience Operations Lead to take ownership of how experience design is delivered across projects. This role focuses on turning strong experience direction into high quality, well structured delivery. You will ensure that ideas hold up through the realities of timelines, tools, team dynamics, and technical constraints, without losing clarity or intent. You will define how delivery works, support teams in executing it, and ensure a consistent standard across all work. The role You are responsible for making sure that experience design is delivered properly, consistently, and at a high level of quality. You work from a clear experience direction and help shape how it is delivered in practice. You are not solely responsible for defining the vision, but you contribute to how it evolves through real delivery. You create clarity where there is complexity and structure where there is ambiguity. You care about craft and about the systems that allow that craft to scale. What You Will Own Delivery and execution Own the delivery of experience design work across projects and clients Translate experience direction into clear and actionable plans Ensure UX, UI, motion, and content outputs are consistent and high quality Make decisions to maintain quality under real constraints Protect the integrity of the experience through handover to engineering Delivery strategy and standards Define how experience design is delivered across projects and programs Establish clear standards for workflows, documentation, and quality Work closely with leadership to shape delivery approaches Balance quality, speed, and feasibility in day to day work Design operations and workflow Establish scalable ways of working across teams and projects Improve collaboration between design, product, and engineering Define and apply documentation standards that teams can follow Su"
     },
     {
       "id": "linkedin-li-4383733458",
@@ -303,32 +196,6 @@
         "linkedin"
       ],
       "jd_text": "We\u2019re Hiring: Head of PMO &amp; Strategic Operations \ud83c\udde8\ud83c\uddfe | \ud83c\udde6\ud83c\uddea Location: Limassol, Cyprus OR Dubai, UAE (Hybrid/On-site) Reports to: Chief Operating Officer (COO) Department: Operations / PMO Start-Date ASAP *** FinTech, Payment, PSP, Background Required*** About the Role: As the Head of PMO, you\u2019ll be the central point for the COO, turning strategic vision into a structured, visible, and predictable execution roadmap. You\u2019ll oversee the end-to-end Payment Integration Lifecycle, coordinating the high-stakes intersection of Product, Engineering, Sales, and Compliance. What You\u2019ll Do: -Strategic Oversight: Serve as the COO\u2019s \u201cSingle Source of Truth,\u201d delivering executive-level insights via dashboards (Jira/Monday/Tableau) and weekly syncs with department heads. -Integration &amp; Product Delivery: Own PSP/Bank integrations from API review to Production Go-Live. Standardize processes to reduce Time-to-Market for new payment rails. -Operational Excellence: Proactively manage at-risk projects, align with regulatory standards (PCI DSS, PSD2), and ensure agile governance across teams. Who We\u2019re Looking For: -5+ years in Project/Program Management, with 3+ in Fintech/Payments; 1+ years leading teams of 2+. -Strong technical literacy in API architectures, Webhooks, and payment flows. -Expert in Jira/Confluence and PMO software. -Degree in Business, Engineering, or Computer Science; PMP, PRINCE2, or Agile certifications preferred. Willingness to adapt to new locations and immerse in the fintech ecosystem. If you\u2019re passionate about driving operational excellence in a fast-paced payments environment and turning strategy into action, we want to hear from you! Are you interested in helping shape the future of payments? Please apply..."
-    },
-    {
-      "id": "linkedin-li-4379164827",
-      "source": "linkedin",
-      "title": "Executive Vice President & Head of Corporate Banking \u2013 Abu Dhabi (UAE National)",
-      "company": "RAKBANK",
-      "location": "Abu Dhabi Emirate, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/executive-vice-president-head-of-corporate-banking-%E2%80%93-abu-dhabi-uae-national-at-rakbank-4379164827",
-      "posted": "2026-03-03",
-      "seniority": "VP",
-      "domain_match": false,
-      "keyword_score": 16,
-      "match_keywords": [
-        "executive",
-        "head of",
-        "uae"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ],
-      "jd_text": "RAKBANK is seeking an accomplished Executive Vice President &amp; Head of Corporate Banking \u2013 Abu Dhabi to lead our Corporate Banking franchise in the capital, driving strategic growth across large corporates, GREs, family conglomerates, and key government-linked entities. You will own the P&amp;L, shape sector strategies, deepen strategic client relationships, and strengthen our market position while ensuring disciplined risk management and governance. This role reports to the Managing Director &amp; Head of Wholesale Banking Group \u2013 Coverage and is based in Abu Dhabi. What You\u2019ll Be Doing: Business &amp; Revenue Leadership Own the full P&amp;L for Corporate Banking \u2013 Abu Dhabi, driving asset, liability, fee income and cross\u2011sell performance. Lead growth across Large Corporates, GREs, Family Groups and select Multinationals. Develop and execute sector-focused strategies (Energy, Infrastructure, Real Estate, Government, Industrials, Services, Trade). Increase wallet share through transaction banking, trade finance, treasury, cash management, FX and capital markets solutions. Client Relationship Management Serve as Senior Relationship Sponsor for top-tier strategic clients. Build and maintain strong relationships with C\u2011suite executives, owners, boards and government stakeholders. Lead complex credit structuring, negotiations, and syndication activities in partnership with Investment Banking and Risk teams. Risk &amp; Credit Oversight Ensure disciplined credit growth aligned with UAE Central Bank guidelines and internal risk appetite. Participate in and/or chair credit committees; approve exposures within delegated authority. Monitor portfolio quality, early warning indicators and remediation plans. People &amp; Leadership Lead and develop Relationship Managers and Unit Heads; drive a high\u2011performance culture. Set clear KPIs across business development, client experience and risk management. Build strong succession pipelines and promote a collaborative team environment. Stakeholder &amp; Governance Management Work closely with Risk, Compliance, Legal, Operations, Treasury, Trade and Investment Banking teams. Represent the bank with regulators, government bodies and industry forums in Abu Dhabi. Ensure adherence to governance standards, policies and regulatory requirements. Stay abreast of industry trends and drive innovative initiatives that enhance competitiveness. What We\u2019re Looking For: Bachelor\u2019s degree in Finance, Business Administration or related discipline; MBA preferred. 15+ years\u2019 experience in banking/financial services with strong Corporate Banking leadership exposure. Proven success managing large corporate/GRE portfolios and driving strategic growth. Deep knowledge of lending, trade finance, cash management and treasury products. Strong understanding of UAE market dynamics and regulatory frameworks. Exceptional stakeholder management, negotiation and communication skills. Strong leadership capabilities with a track record of developi"
     },
     {
       "id": "linkedin-li-4374374270",
@@ -381,107 +248,6 @@
       ],
       "jd_text": "Urgent: Head of DevOps &amp; Infrastructure Location: Saudi Arabia (On-site) Probation Period: 6-Month Period | Potential Permanent Conversion Industry Experience: Fintech, Remittance, or Digital Banking Skills: Kubernetes, Terraform, CI/CD, Cloud Operations Immediate candidates must reside in KSA; GCC nationals preferred or Expat with transferable Iqama Overview Our client in KSA is seeking a Head of DevOps &amp; Infrastructure to ensure zero-downtime operations and fully automated delivery pipelines. The role will lead cloud operations, CI/CD automation, and disaster recovery initiatives, ensuring secure, resilient, and highly available infrastructure across the organisation. Key Responsibilities Oversee KSA-based cloud regions (AWS/Azure) and manage high-availability operations Lead CI/CD automation to accelerate delivery while maintaining security and compliance Implement and manage Disaster Recovery plans and SOC monitoring for critical systems Define infrastructure standards , operational best practices, and governance frameworks Collaborate with Development, Architecture, and Security teams to maintain resilient, scalable systems Mentor infrastructure and DevOps teams to foster performance, reliability, and technical excellence Requirements Proven experience in DevOps, Cloud Infrastructure, or Platform Engineering within fintech or regulated financial environments Hands-on expertise in Kubernetes, Terraform, and high-security financial infrastructure Strong knowledge of CI/CD pipelines, disaster recovery, and cloud architecture best practices Experience managing AWS/Azure deployments at scale Strong leadership, stakeholder management, and strategic decision-making skills Eligibility Criteria: Currently based in Saudi Arabia and available for on-site engagement Saudi or GCC National (Bahrain, Oman, UAE, Kuwait, Qatar), or Expat with transferable Iqama Business Visit and Family Visit visas are not eligible Application Process Senior technology leaders ready to shape strategic outcomes are invited to apply via email at talent@leadingedge.plus CC: aniqa@leadingedge.plus, quoting the job title in the subject line.",
       "nationals_only": true
-    },
-    {
-      "id": "linkedin-li-4320278154",
-      "source": "linkedin",
-      "title": "Head of Change Management",
-      "company": "QAFCO (Qatar Fertiliser Company)",
-      "location": "Doha, Doha, Qatar",
-      "url": "https://qa.linkedin.com/jobs/view/head-of-change-management-at-qafco-qatar-fertiliser-company-4320278154",
-      "posted": "2025-11-02",
-      "seniority": "Director",
-      "domain_match": false,
-      "keyword_score": 16,
-      "match_keywords": [
-        "change management",
-        "head of"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ],
-      "jd_text": "Job Summary The Change Management section is situated directly under the Digital Office Manager, reporting to the Chief Technical Officer. This section serves the crucial purpose of managing and facilitating organizational changes related to digital technologies, processes, and people, particularly in relation to the implementation of the Digital Strategy, Plans, and resulting Digital Initiatives at QAFCO. Change Management is considered a structured approach to transitioning individuals, teams, and QAFCO as a whole from the current state to a desired future state. In the context of a Digital Office, where technology and processes are rapidly evolving, effective Change Management is a critical function that plays a pivotal role in ensuring that technological changes are smoothly integrated into the organization, maximizing benefits while minimizing disruptions and resistance. Additionally, the role will leverage Artificial Intelligence (AI), predictive analytics, and data-driven insights to monitor adoption trends, predict resistance patterns, personalize engagement, and enhance the overall effectiveness and agility of QAFCO\u2019s digital transformation initiatives. The Head of Change Management will act as a bridge between digital transformation and human adoption by utilizing AI-assisted tools for measuring readiness, adoption progress, and communication effectiveness. The role requires the ability to interpret AI-generated insights and translate them into tailored change interventions that improve user experience, compliance, and overall digital maturity within QAFCO\u2019s evolving digital ecosystem. The Head of Change Management Section will have the overall responsibility for planning, facilitating, and ensuring the timely delivery and sustained adoption of the Change Management Programs, including digital initiatives and AI use cases, through a structured change process, stakeholder engagement, continuous improvement methodologies, and reinforcement mechanisms. Key Accountabilities Lead and Execute Comprehensive Change Management Strategies: Drive the execution of Change Management strategies, ensuring seamless transitions in technology, processes, and organizational structure within the Digital Office. Utilize AI-assisted tools and analytics to identify adoption patterns, stakeholder sentiment, and areas requiring targeted interventions. Minimize Resistance through Effective Communication and Training: Identify and address concerns to minimize resistance by implementing effective communication, training, and support initiatives. Ensure Alignment with Business Objectives and Foster Collaboration: Align digital initiatives with overall business objectives fostering collaboration between teams and various business units. Optimize Technology Adoption with Training Programs: Implement robust training programs and support mechanisms to optimize the adoption of new technologies among end-users driven from the change impact and learning needs assessments."
-    },
-    {
-      "id": "google-in-025f90f1df941203",
-      "source": "google",
-      "title": "Chief Technology Officer (CTO)",
-      "company": "FMC Network",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=025f90f1df941203",
-      "posted": "2026-03-18",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 13,
-      "match_keywords": [
-        "infrastructure",
-        "integration",
-        "architecture"
-      ],
-      "raw_snippet": "We are seeking a highly qualified **Chief Technology Officer (CTO)** for immediate joining.\n\n**Key Responsibilities**\n\nAs a CTO, you will play a critical role in strengthening IT governance, risk management, and compliance frameworks. Your responsibilities will include:\n\n\u00b7 Identify and evaluate potential risks across application, network, and infrastructure architectures.\n\n\u00b7 Analyze system designs, integrations, and configurations to uncover security and operational vulnerabilities.\n\n\u00b7 Assess co",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "google-jobs"
-      ]
-    },
-    {
-      "id": "google-in-bdeaee706e98c45c",
-      "source": "google",
-      "title": "Head of Asset Management & AI Transformation",
-      "company": "MaxAccelerate",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=bdeaee706e98c45c",
-      "posted": "2026-03-19",
-      "seniority": "Director",
-      "domain_match": true,
-      "keyword_score": 13,
-      "match_keywords": [
-        "ai",
-        "head of"
-      ],
-      "raw_snippet": "**Head of Asset Management \\& AI Transformation**\nRemote \\| Global Role \\| Multi\\-Industry\n\n**This is not a traditional asset management role**\nThis role is designed for someone who understands that the future of maintenance and asset management is driven by **data, reliability engineering, and intelligent systems**.\n\n\nIf your experience is rooted in **Reliability\\-Centred Maintenance (RCM), preventive and predictive strategies, labour optimisation, and cost control**, and you are interested in ",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 3,
-      "policy_status": "pass",
-      "sources": [
-        "google-jobs",
-        "indeed",
-        "linkedin"
-      ]
-    },
-    {
-      "id": "linkedin-li-4388140969",
-      "source": "linkedin",
-      "title": "Head of AI Engineering",
-      "company": "ARNVIND GROUP",
-      "location": "Dubai, Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/head-of-ai-engineering-at-arnvind-group-4388140969",
-      "posted": "2026-03-20",
-      "seniority": "Director",
-      "domain_match": true,
-      "keyword_score": 13,
-      "match_keywords": [
-        "ai",
-        "head of"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ],
-      "jd_text": "EXO ARNVIND is exclusively scouting for a high-impact Head of AI Engineering for a major retail powerhouses in the UAE. Our clients is undergoing an ambitious, board-sponsored digital transformation to become \"AI-first\" enterprises. This is not a maintenance role; it is a mandate to build the organization\u2019s \"digital nervous system\" from the ground up, with significant investment and executive-level backing. The Role As the Head of AI Engineering, you will own the long-term AI roadmap for the next decade. You are the bridge between visionary strategy and deep technical execution across retail, supply chain, and digital commerce. Strategic Leadership: Set and execute the enterprise-wide Data &amp; AI strategy, identifying high-value use cases that drive measurable ROI. Full-Stack Build: Architect and scale the entire AI environment\u2014from GPUs and Lakehouses to MLOps, Vector Databases, and SLMs. Innovation Engine: Lead cross-functional teams to build prototypes and move breakthrough solutions from concept to enterprise-wide adoption. Responsible AI: Establish governance frameworks for responsible AI usage and lead enterprise-wide upskilling initiatives. Operational Excellence: Deploy automation and advanced analytics across finance, customer experience, and physical logistics. Profile Requirements We are looking for a heavyweight leader with a \"builder\" mindset and a track record of scaling AI in complex environments. Experience: Minimum 12+ years in Data, AI, and Machine Learning, with proven success leading enterprise-scale programs. Deep Tech Stack: End-to-end expertise in AI lifecycle management, GenAI, retrieval systems, and domain-specific LLMs/SLMs. Innovation Background: Experience with AI product development, patents, or startup environments is highly valued. Physical AI: Demonstrated work in Robotics or Physical AI integration is a significant advantage given the retail/supply chain focus. Leadership: Ability to partner with C-suite executives to drive cultural and technological transformation. What\u2019s in it for you? This is a high-visibility role in one of the world's fastest-growing tech hubs."
     },
     {
       "id": "linkedin-li-4381045669",
@@ -586,6 +352,32 @@
       "jd_text": "Head of Infrastructure \ud83d\udccd Dubai, UAE \ud83d\udcb0 55,000\u201360,000 AED per month + bonus + family medical and insurance We are seeking an exceptional Head of Infrastructure to lead and evolve a global technology platform supporting large scale, distributed operations. This role owns the reliability, scalability, security, and performance of production systems across cloud, edge, and microservices environments. Reporting to the CTO and part of the Technology Leadership Team, you will inherit a mature, complex ecosystem and drive its evolution for global scale across 50+ markets. Requirements 12+ years in infrastructure, platform, or systems engineering 5+ years in senior leadership roles such as Head of Infrastructure, SRE, or Platform Engineering Proven experience managing large scale, distributed systems across cloud and edge Strong background in microservices and real time data processing Deep Kubernetes expertise in production, including multi cluster environments Experience across multi cloud environments such as AWS, Azure, GCP Track record managing high throughput messaging systems such as Kafka or RabbitMQ Experience with stream processing frameworks such as Flink or Spark Exposure to AI and ML infrastructure including GPU environments and model deployment Experience operating across multiple regions, ideally APAC, Middle East, and Europe Key Responsibilities Platform Architecture and Deployment Own end to end infrastructure across cloud and edge environments Lead Kubernetes and container orchestration strategy across hybrid deployments Define and execute multi cloud strategy across AWS, Azure, GCP and regional providers Build infrastructure as code and automated deployment pipelines Ensure compliance with global data residency and sovereignty requirements Database and Storage Manage a polyglot database environment across relational, time series, graph, and cache layers Design scaling, replication, backup, and disaster recovery strategies Drive zero downtime migrations and performance optimisation Messaging and Microservices Scale high throughput messaging systems handling large IoT data volumes Own service governance, API management, and microservices communication Implement monitoring, alerting, and capacity planning Real Time and Data Processing Lead stream processing infrastructure for real time data and analytics Optimise latency and throughput across distributed systems Manage batch processing and distributed task scheduling AI and Compute Infrastructure Own infrastructure for AI model training and real time inference Design GPU and accelerator strategy for cost and performance Support LLM deployment and simulation workloads Frontend and Edge Delivery Optimise global content delivery and WebGL performance Manage CDN and caching strategies IoT and Connectivity Scale infrastructure supporting millions of connected devices Manage edge gateways and protocol integrations Implement device lifecycle management at scale Observability and Reliability Own mo"
     },
     {
+      "id": "linkedin-li-4387879962",
+      "source": "linkedin",
+      "title": "Head of Asset Management & AI Transformation",
+      "company": "Max Accelerate Technology Group",
+      "location": "Dubai, Dubai, United Arab Emirates",
+      "url": "https://ae.linkedin.com/jobs/view/head-of-asset-management-ai-transformation-at-max-accelerate-technology-group-4387879962",
+      "posted": "2026-03-19",
+      "seniority": "Director",
+      "domain_match": true,
+      "keyword_score": 13,
+      "match_keywords": [
+        "ai",
+        "head of"
+      ],
+      "raw_snippet": "",
+      "relevant": true,
+      "filter_reason": null,
+      "source_count": 2,
+      "policy_status": "pass",
+      "sources": [
+        "linkedin",
+        "indeed"
+      ],
+      "jd_text": "Remote | Global Role | Multi-Industry This is not a traditional asset management role This role is designed for someone who understands that the future of maintenance and asset management is driven by data, reliability engineering, and intelligent systems . If your experience is rooted in Reliability-Centred Maintenance (RCM), preventive and predictive strategies, labour optimisation, and cost control , and you are interested in applying this knowledge to AI-driven solutions, this is a unique opportunity to operate at the forefront of the industry. About MaxAccelerate Technology Group MaxAccelerate Technology Group is a global technology and transformation business focused on helping asset-intensive organisations improve performance, reduce cost, and scale operations through data, systems, and AI . Through our ecosystem, including DataMax AI , we work with organisations across Facilities Management, Transportation, Pharma, Manufacturing, Energy, and Infrastructure to transform how assets are managed. Our approach is grounded in real operational understanding: Maintenance strategies must be structured, measurable, and optimised Systems such as IBM Maximo and other EAM platforms must deliver actionable insight AI must be applied in a way that drives tangible outcomes across cost, labour, and asset performance The Role We are seeking a Head of Asset Management &amp; AI Transformation to lead the definition and delivery of AI-driven asset management solutions . The focus of the role is to take deep operational knowledge \u2014 including: RCM frameworks Preventive and condition-based maintenance strategies Workforce planning and labour models Spare parts, inventory, and asset lifecycle considerations and translate these into structured AI use cases and scalable solutions . Key Responsibilities Work closely with Heads of Maintenance, Engineering Leaders, and Operations teams to understand: Maintenance strategies and maturity Preventive vs reactive ratios Labour utilisation and workforce efficiency Spare parts management and inventory control Define and structure AI use cases that address: Reduction in reactive maintenance Optimisation of preventive maintenance schedules Labour efficiency and workforce planning Spare parts forecasting and cost reduction Asset lifecycle optimisation Develop and lead Proof of Concepts (PoCs) that validate: Operational improvements Cost savings Performance uplift Translate business requirements into clear scope of works for DataMax AI R&amp;D teams Ensure AI solutions integrate effectively with EAM/CMMS platforms (Maximo preferred) and align with real operational workflows Build clear ROI models, ensuring every solution delivers measurable impact across: Maintenance costs Asset uptime Labour efficiency Inventory and working capital Support clients in adopting solutions that improve their infrastructure, operations, and long-term asset strategy Why This Role Matters Most organisations have: Maintenance strategies defined on pape"
+    },
+    {
       "id": "linkedin-li-4383479638",
       "source": "linkedin",
       "title": "Head of AI Strategy",
@@ -684,6 +476,31 @@
         "linkedin"
       ],
       "jd_text": "Are you obsessed with turning insights into measurable growth? What if your experiments didn\u2019t just lift conversions but shaped how millions of people grow, learn, and act on their potential? This Isn\u2019t Another Growth Job. It\u2019s the chance to define a new category : The EcoSystem for Human Greatness Augmented with AI, combining behavioral science, technology, and AI. We\u2019re not looking for someone who only advises on what to test, we\u2019re looking for someone who builds it. A hands-on Head Of Growth who can ideate, copy, design the strategy and launch experiments directly. Someone who speaks both data and persuasion fluently, and leverages AI tools daily to generate hypotheses, build assets, and accelerate iteration speed. And you deserve it because you are\u2026 A Conversion Architect, skilled at diagnosing funnel bottlenecks and translating data into structured experimentation roadmaps that deliver measurable business outcomes. A Behavioral Strategist, fascinated by what drives human action, able to mix cognitive psychology, UX, and persuasion frameworks to design experiences that convert because they resonate. A Data-driven Creator, fluent in GA4, Hotjar, AB Tasty, VWO, Amplitude, not just running tests, but connecting insights to revenue, retention, and lifetime value. This is a full-time position, carried out remotely or from our beautiful offices in Duba\u00ef or Lisbon. About Paradox French and English fluency is required. What We Do At Paradox, we are convinced that greatness is trainable. That\u2019s why we want to empower people at scale, by leveraging cutting edge technologies like AI, and crafting user experiences with outstanding aesthetics. We do that by merging : Human Intelligence (coaches, peers, and mentors) Structured Intelligence (protocols, mental models, rituals), Technological Intelligence (AI personalization, feedback loops, adaptive journeys) To create one seamless ecosystem: Paradox OS . OUR BELIEFS We believe self-help is broken. Most learning platforms are used the same way : consuming generic theories, getting quick highs, ending with no real change. At Paradox , we believe people deserve more. More than content. More than motivation. They deserve a system that knows them , one that adapts, challenges, and grows with them. We believe that every human learns differently , and that technology can do more than entertain or save time. It can translate insight into transformation , through AI personalization, lean experimentation, and deep psychological understanding . Because learning shouldn\u2019t just make you feel inspired for a day, it should change how you live, think, and create. OUR VISION At Paradox, we want to re-invent how people grow. We do not build another course or coaching app but the Operating System for Greatness. Founded by David Laroche, a creator followed by over 2 million people and known for his interviews with icons like Tony Parker, Mike Horn, Richard Branson, and Gad Elmaleh, Paradox aims to build something that will liv"
+    },
+    {
+      "id": "linkedin-li-4372697501",
+      "source": "linkedin",
+      "title": "Director of Retail Operations",
+      "company": "Private Company",
+      "location": "Dubai, United Arab Emirates",
+      "url": "https://ae.linkedin.com/jobs/view/director-of-retail-operations-at-private-company-4372697501",
+      "posted": "2026-02-19",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 13,
+      "match_keywords": [
+        "ai",
+        "director"
+      ],
+      "raw_snippet": "",
+      "relevant": true,
+      "filter_reason": null,
+      "source_count": 1,
+      "policy_status": "pass",
+      "sources": [
+        "linkedin"
+      ],
+      "jd_text": "We are a leading multinational retailer based on GCC. We are looking for an experienced Director of Retail Operations to organize and oversee the operations of our stores. You will assume responsibility for the company\u2019s overall success by setting targets, supervising managers, and ensuring that they are attained. The Operations Director is expected to execute company strategies by maximizing store profitability. You will have control over store expenses, protect company assets, and manage overall store standards and processes for customer service excellence, merchandising and inventory management, retail operations, and ensure that team participation is consistent and well managed. Effective operations directors are skilled in managing diverse operations. They have a strategic mindset and are excellent leaders. Excellent financial and operational planning abilities are essential for this role. The goal is to ensure that our company meets and exceeds the expectations of business development and efficiency. Duties and responsibilities Provides leadership to the team and oversees retail activities. Hires, trains, and oversees management team performance. Full P/L responsibility. Sets objectives for retail teams to ensure a high standard of service provided in the store. Ensures structure is provided for the retail teams in KPIs, policies and procedures, trading feedback processes, trading calendars, and controlling retail costs. Reviews and analyzes sales and operational records and reports; uses data to project sales, determines profitability and targets, and identifies potential new markets. Prepares and implements the county budget; monitors and approves expenses. Collaborates with managers to develop sales goals for each location, monitors progress toward those goals and develops strategies to attract and retain customers. Develops marketing programs and promotions to increase sales and/or introduce new products. Identifies opportunities for improvement; designs and implements training, strategies, policies, goals, and other resources to maximize productivity and morale. Schedules and directs regular sales meetings and events to share information, set and revise goals, and increase morale. Oversees warehouse operations in conjunction with the Supply Chain Manager. Manages inventory by monitoring inventory levels and planning stock supply to ensure the availability of the full line of products. Maintains knowledge of the market, competition, and best practices and trends in sales techniques and strategies. Conducts performance evaluations that are timely and constructive. Handles discipline and termination of employees in accordance with company policy and labor law. Performs other duties as assigned. Requirements Strong verbal and written communication skills. Excellent sales and customer service skills, with proven negotiation skills. Excellent math skills to draft and implement budgets and conduct data analysis. Excellent supervisory and lead"
     },
     {
       "id": "linkedin-li-4374566130",
@@ -786,31 +603,6 @@
       "jd_text": "Are you passionate about harnessing data to power business transformation? We're looking for a visionary Business Engagement Director of Data &amp; AI to connect business strategy with data-driven insights and lead impactful change across Miral\u2019s world-class leisure and entertainment portfolio. About the Role: As the Data &amp; AI Director \u2013 Analytics Business Engagement , you will act as a strategic bridge between Miral\u2019s business units and our data analytics team. You will drive stakeholder engagement, identify high-impact analytics opportunities, and ensure data solutions directly support business goals across all Miral tenants. What You\u2019ll Do: Champion strategic engagement with business leaders to identify data needs and align on priorities Drive analytics adoption by translating complex insights into actionable business recommendations Lead cross-functional data projects from ideation to implementation Influence a data-first culture through change management and stakeholder advocacy Monitor KPIs to measure project impact and ensure alignment with business performance goals Promote data governance, process optimization, and data quality standards Stay ahead of trends and bring innovation into how we solve business challenges through data What You Bring: 10+ years of experience in business engagement or data analytics (with at least 5 years in a leadership role) Strong stakeholder management and communication skills with a passion for storytelling with data Hands-on experience with data tools such as Power BI, Tableau, SQL, and DWH platforms Strategic thinker with a sharp understanding of performance drivers in large organizations Experience driving data adoption and leading change initiatives across diverse teams Bachelor\u2019s degree in Business, Data Science, Analytics, or a related field (Master\u2019s preferred) Why Join Miral Experiences? Miral Experiences is the creative force behind Abu Dhabi\u2019s most exciting entertainment, leisure, and cultural destinations, including Yas Island, Ferrari World, SeaWorld, and more. Here, data isn\u2019t just numbers\u2014it\u2019s what fuels our future. Join us in shaping unforgettable experiences through insights that matter."
     },
     {
-      "id": "linkedin-li-4373650981",
-      "source": "linkedin",
-      "title": "Vice President, Head of Branches - Abu Dhabi and Al Ain",
-      "company": "RAKBANK",
-      "location": "Abu Dhabi Emirate, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/vice-president-head-of-branches-abu-dhabi-and-al-ain-at-rakbank-4373650981",
-      "posted": "2026-02-19",
-      "seniority": "VP",
-      "domain_match": true,
-      "keyword_score": 13,
-      "match_keywords": [
-        "ai",
-        "head of"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ],
-      "jd_text": "About The Role: The Head of Branches \u2013 Abu Dhabi &amp; Al Ain is responsible for managing and overseeing the smooth operations of all branches within the allocated district. The role ensures effective distribution of Personal Banking Products through the branch network while maintaining compliance with Standard Operating Procedures, statutory and regulatory requirements. The position focuses on delivering exceptional customer service, driving financial performance, and supporting strategic initiatives for branch transformation. This role reports directly to the Head of Branch Distribution and indirectly to the Managing Director \u2013 Retail Banking. What You\u2019ll Be Doing: Lead and manage branches within the district to achieve budgeted financial targets through effective sales, service, and product distribution. Drive service excellence and ensure adherence to customer service standards. Monitor branch productivity and implement measures for improvement. Conduct quarterly checks on sensitive files and operational activities. Support new product launches and ensure effective branch-level distribution. Manage operational risk through regular reviews and audits. Monitor MIS daily to assess business performance and ensure compliance with TAT for customer wait times. Promote customer feedback via QR codes and ensure staff engagement in service improvement. Ensure compliance with operating procedures, bank policies, and nationalization targets. Develop and upskill staff, manage performance for underperformers, and recommend career progression. Contribute to strategic goals and guide branches to act as revenue centers. Review error trackers and SEU reports, providing corrective guidance. Enforce channel migration strategies and support branch transformation initiatives. Maintain audit readiness across branches and ensure timely closure of audit observations. Manage internal staff movements to share expertise and build a collaborative culture. Monitor Branch Manager KPIs and ensure achievement within the district. What We\u2019re Looking For: Bachelor\u2019s degree in Finance or Business; MBA preferred. Experience: Minimum 10 years in retail banking, branch operations, and leadership roles. Proven track record in managing multi-branch operations and driving business growth. Certifications: Knowledge of compliance and regulatory frameworks; BCM awareness. Skills: Ability to lead large teams, foster teamwork, and manage performance. Strong analytical and decision-making skills to drive operational excellence. Deep understanding of AML guidelines, regulatory requirements, and operational risk frameworks. Commitment to delivering superior service and enhancing customer experience. Proficiency in MIS interpretation, operational audits, and process improvement. Empowering others, conflict resolution, resilience, and stress management. What You\u2019ll Gain: Competitive compensation and performance-based incentives Medical coverage for you and your family Comprehensive life insura"
-    },
-    {
       "id": "linkedin-li-4325582215",
       "source": "linkedin",
       "title": "Director of Digital Innovation & AI",
@@ -859,31 +651,6 @@
         "linkedin"
       ],
       "jd_text": "The Qiddiya Investment Company is seeking a dynamic and experienced Director of Data Analytics to The Director - Data Analytics is a quantitative leader responsible for transforming complex financial and operational data into clear dashboards, insights, and decision-ready intelligence. This high-level role will require a visionary leader who can leverage data to drive strategic decision-making, enhance operational effectiveness, and foster a culture of data-driven decision-making across the organization. The successful candidate will oversee the development and implementation of advanced analytical frameworks, data governance structures, and reporting mechanisms that align with Qiddiya's strategic objectives. Applications closing 9th March 2026. Key Accountabilities Analytics, Dashboards &amp; Insights: Design and own executive dashboards covering cost, budgets, workforce plans, and performance KPIs Translate complex datasets into clear visualizations and actionable insights Drive data storytelling to highlight trends, risks, and opportunities Cash, Workforce &amp; Budget Analytics Lead cash flow analytics, forecasting, and scenario modeling across projects Develop workforce plans, productivity analytics, and resource demand models Analyze budgets, costs, and financial performance to support decision-making Quantitative Decision Support: Act as the go-to expert for quantitative analysis, modeling, and performance measurement Deliver what-if analysis, sensitivity analysis, and forward-looking insights Ensure accuracy, consistency, and integrity of data used for decisions Systems, Tools &amp; Visualization: Leverage BI and visualization tools to deliver automated, intuitive dashboards Partner with Finance and key teams to enhance data models and reporting structures Talent Management &amp; Organizational Development Lead workforce planning, recruitment, and development for data analytics teams Reporting Line: Reports to: Head of CDU Finance and Commercial Requirements Master's degree in Data Science, Statistics, Business Analytics, or a related field; Ph.D. is a plus A minimum of 12 years of experience in data analytics, including significant leadership experience in a managerial capacity Proven expertise in advanced analytics techniques, statistical modeling, and data mining tools Strong proficiency in data visualization tools such as Power BI, Tableau, or similar platforms, and programming languages such as Python or R Deep understanding of data governance principles, data management practices, and metadata management Excellent communication skills, with the ability to convey complex data insights to non-technical stakeholders clearly Experience working in the real estate, entertainment, or tourism sectors is preferred Demonstrated ability to manage multiple projects and stakeholders in a fast-paced environment Benefits Join Qiddiya's team and enjoy a dynamic work environment that offers growth opportunities, a collaborative culture, and the chan"
-    },
-    {
-      "id": "linkedin-li-4304154287",
-      "source": "linkedin",
-      "title": "Head of AI Consulting services",
-      "company": "Supertech Innovation Labs",
-      "location": "Riyadh, Riyadh, Saudi Arabia",
-      "url": "https://sa.linkedin.com/jobs/view/head-of-ai-consulting-services-at-supertech-innovation-labs-4304154287",
-      "posted": "2025-09-22",
-      "seniority": "Director",
-      "domain_match": true,
-      "keyword_score": 13,
-      "match_keywords": [
-        "ai",
-        "head of"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ],
-      "jd_text": "Do you want to love what you do at work? Do you want to make a difference, an impact, transform people's lives? Do you want to work with a team that believes in disrupting the normal, boring, and average? If yes, then this is the job you're looking for. UXBERT Labs is one of the leading digital and user experience design agencies in the GCC, working with top regional and international brands such as STC, Amazon, Gucci , and more. As part of the Supertech Group \u2014which also includes Hala Yalla , Saudi's #1 private event ticketing and experience booking platform, and Kafu Games , the largest esports tournament platform in MENA\u2014we are continuously expanding our innovation footprint. We are now seeking a highly seasoned and visionary leader to establish and head our AI Consulting Services division . This role is pivotal in transforming our strong legacy in UX, CX, and digital transformation into a future-driven AI consulting powerhouse . The Head of AI Consulting will be responsible for defining the AI services portfolio, building a strategic roadmap, developing organizational capabilities, and driving client adoption of cutting-edge AI solutions. Key Responsibilities: Strategic Leadership Define the vision, scope, and roadmap for the new AI Consulting Services division Develop a robust framework of AI services tailored to client needs, leveraging our strengths in UX, CX, and software development Identify and evaluate global and local AI trends, competitor offerings, and best practices Service Design &amp; Roadmap Design a portfolio of AI consulting services (e.g., AI strategy advisory, AI-driven CX, predictive analytics, automation, generative AI integration, data governance, AI ethics) Translate market insights and internal capabilities into a phased roadmap for execution Define organizational structure, required skill sets, and team profiles to deliver these services Business Development Support Partner with the commercial/sales team to pitch AI offerings, close deals, and pursue strategic accounts Train and enable the sales team to confidently position and sell AI services Collaborate with clients to co-create proposals and deliver AI advisory at C-suite level Market Research &amp; Innovation Conduct competitive benchmarking of AI service offerings from leading agencies and consulting firms Leverage our research expertise to develop differentiated AI services relevant to the region and our client base Build partnerships with technology providers, startups, and academic institutions Execution &amp; Delivery Oversee pilot projects and proof-of-concepts with key clients Ensure successful delivery of consulting engagements, balancing strategic insight with practical implementation Requirements 10-15+ years of experience in technology/consulting with at least 5 years focused on AI services Proven track record of building or leading AI-focused practices or divisions in consulting firms, agencies, or large enterprises Strong expertise in AI/ML, generativ"
     },
     {
       "id": "linkedin-li-4385000187",
@@ -1308,7 +1075,8 @@
       "policy_status": "pass",
       "sources": [
         "linkedin"
-      ]
+      ],
+      "jd_text": "Head of Engineering \u2013 Capital Markets Technology Location: Riyadh | Reporting to: CTO Our client is looking for a Head of Engineering to lead and scale a high-performing, multi-disciplinary engineering organization supporting digital trading and capital markets platforms. The successful candidate will come from a leading fintech or technology-driven financial institution (e.g., Saham, Awaid, Robinhood or similar) and bring strong experience across mobile, web, backend, and data platforms . They will define the engineering strategy and architecture roadmap , ensure platform scalability, performance, and reliability , and embed modern engineering practices including CI/CD, DevOps, Agile, and automated testing . The role will lead teams across Mobile (Kotlin, Swift), Frontend (Vue.js), Backend (.NET), and Database (Oracle) , while building a culture of ownership, delivery excellence, and continuous improvement . Our client is looking for a people-first, execution-focused leader with: 10+ years in software engineering 5+ years in senior engineering leadership Proven experience scaling teams in fintech, capital markets, or trading environments Strong executive communication and stakeholder management skills Success will be measured by on-time delivery, system stability, team performance, and the development of a strong engineering leadership bench . *** Only successful candidates will be contacted ***"
     },
     {
       "id": "linkedin-li-4374058659",
@@ -1332,7 +1100,8 @@
       "policy_status": "pass",
       "sources": [
         "linkedin"
-      ]
+      ],
+      "jd_text": "We are Lenovo. We do what we say. We own what we do. We WOW our customers. Lenovo is a US$69 billion revenue global technology powerhouse, ranked #196 in the Fortune Global 500, and serving millions of customers every day in 180 markets. Focused on a bold vision to deliver Smarter Technology for All, Lenovo has built on its success as the world\u2019s largest PC company with a full-stack portfolio of AI-enabled, AI-ready, and AI-optimized devices (PCs, workstations, smartphones, tablets), infrastructure (server, storage, edge, high performance computing and software defined infrastructure), software, solutions, and services. Lenovo\u2019s continued investment in world-changing innovation is building a more equitable, trustworthy, and smarter future for everyone, everywhere. Lenovo is listed on the Hong Kong stock exchange under Lenovo Group Limited (HKSE: 992) (ADR: LNVGY). To find out more visit www.lenovo.com and read about the latest news via our StoryHub. Role Overview Lenovo\u2019s Group CTO is looking for a Director\u2011level RD Site lead (Saudi-National preferred) to establish and lead a strategic research and development presence in the Kingdom of Saudi Arabia. This role is designed for a senior, hands\u2011on technical leader with broad CTO\u2011level competence across AI, robotics, and smart manufacturing, and the maturity to operate with high autonomy and strong, inspiring leadership. The Site Lead will shape and lead the local RD agenda, build high\u2011impact technical programs, and serve as a senior interface between Lenovo\u2019s global technology leadership and the Saudi AI, technology, and RD ecosystem. Key Responsibilities Lead the strategy, execution, and growth of Lenovo\u2019s KSA RD site in alignment with global CTO priorities. Provide technical leadership and architectural guidance across advanced technology domains, including: Artificial intelligence and applied machine learning Robotics and autonomous systems Smart manufacturing and Industry 4.0 technologies Translate research and emerging technologies into practical, scalable RD initiatives with measurable impact. Build, lead, and mentor a high\u2011performing local RD organization, fostering a culture of innovation, rigor, and accountability. Operate independently with strong ownership, making informed decisions in complex and ambiguous environments. Represent Lenovo as a senior technical leader with government entities, universities, research institutions, and industry partners across the Saudi innovation ecosystem. Develop strategic partnerships aligned with national priorities in technology, innovation, and digital transformation. Act as an ambassador and advocate for AI adoption within Lenovo Qualifications Experience 12+ years of experience in RD, advanced engineering, or technology leadership, including experience at director level or equivalent. Demonstrated technical breadth across AI, robotics, manufacturing systems, or related deep\u2011tech domains. Proven ability to lead complex, multidisciplinary RD programs s"
     },
     {
       "id": "linkedin-li-4375147874",
@@ -1356,7 +1125,8 @@
       "policy_status": "pass",
       "sources": [
         "linkedin"
-      ]
+      ],
+      "jd_text": "In a world of possibilities, pursue one with endless opportunities. Imagine Next! At Parsons, you can imagine a career where you thrive, work with exceptional people, and be yourself. Guided by our leadership vision of valuing people, embracing agility, and fostering growth, we cultivate an innovative culture that empowers you to achieve your full potential. Unleash your talent and redefine what\u2019s possible. Job Description Parsons is looking for an amazingly talented Engineering Department Director - Saudi National to join our team. In this role, you will Provide management and direction for one Engineering discipline or a major section within one of the larger disciplines. May be assigned to a large program exceeding million in total installed cost as Manager of all Engineering disciplines. What You\u2019ll Be Doing Reviews and approves discipline staffing budget estimates and staffing assignment schedules on each project. Maintains appropriate staffing level, including temporary personnel, as needed. Reviews and approves staff forecasting reports. If assigned to a major program, manages all engineering and design efforts for all disciplines required for the program. Coordinates all discipline staffing requirements for the program. Monitors the quality and progress of the discipline on each project, ensuring that production requirements are satisfied. Works closely with Project Managers to resolve any existing or forecasted problems related to discipline staffing, quality of work, schedule performance, or productivity. Establishes standards and procedures manuals for the discipline. Recommends improvements to department procedures. Recruits, interviews, and evaluates prospective employees. Hires, offers personnel development, conducts performance evaluations, counsels employees, takes corrective actions (as required), and approves terminations. Ensures that new employees receive orientation on company policies and procedures. Supports pre-contract and business development efforts as required, serving as technical consultant. Ensures performance within overhead budgets authorized for the discipline. Actively participates in and promotes the Quality Improvement Program. May head a committee within the discipline, striving to motivate and educate the assigned personnel. Performs other responsibilities associated with this position as may be appropriate. What Required Skills You\u2019ll Bring Bachelor / Master in the engineering discipline from a accredited Western University. Minimum 18 years of experience to a position of engineering manager on large scale project. Extensive progressive work experience, including supervision, preferably in project and staff design engineering, systems start-up, filed engineering and utilities. Thorough knowledge and demonstrated experience in directing multidiscipline engineering team including architectural, structure, civil mechanical and electrical on large scale project. Proven ability to perform in a supervisory/manage"
     },
     {
       "id": "linkedin-li-4353705617",
@@ -1380,7 +1150,8 @@
       "policy_status": "pass",
       "sources": [
         "linkedin"
-      ]
+      ],
+      "jd_text": "T\u00e9cnicas Reunidas group (TR) is a leading Oil &amp; Gas International Engineering and Construction Company specialized in the design, construction and management of execution of Industrial plants worldwide. We participate in projects related to hydrogen, biomass, biofuels, decarbonisation, artificial intelligence, digitization. The sustainable growth, decarbonization and energy transition are the concepts that represent our culture. Our high level of professionalism and commitment drive us to a permanent research to improve efficiency and sustainability. At Tecnicas Reunidas, we have a strong commitment to equal opportunities between men and women, as well as diversity. To achieve this, we carry out rigorous selection processes that ensure it. Description: We are looking for a Project Director, to be part of our Project Management Team and for our Power EPC Projects, being responsible for: Contractor representative and ultimate project responsible to the Client and Company. Main contact person with official Bodies, Entities, Partners and other Stakeholders involved in the Project. To define the extent and nature of the services to be covered according to the contract scope of work. To manage and control the project execution in all the relevant aspects and different stages to ensure that the project targets related to cost, schedule, quality and HSE are reached. To define the project organization chart and, supported by the different departments of the Company, mobilize to the Task Force the necessary resources to cope with the project scope, including the Client team To lead, coordinate and motivate multicultural and multidisciplinary work teams to achieve the partial / final project milestones. To ensure the early submission of the different project plans and procedures in accordance with Client specifications and requirements. To implement the communication plan and meetings schedule, either with the Client or internal, to revise the project status on weekly/monthly basis. To promote Value Improvement and Constructability Methodologies during detailed Engineering. To approve the Procurement and Subcontracting strategy, based on potential risk analysis, capacity, experience and workload of vendors and subcontractors. To monitor the schedule and cost control to avoid project delays and unexpected impacts in the cashflow. To identify and guarantee that QA/QC and HSE requirements are implemented and periodically get feedback from Client about performance on these subjects. To report to the Client and Company about the project progress, alerting on potential risks and implementing corrective plans/actions to mitigate them. To establish the Management of Change in the project and to identify potential Change Orders / Contract Variations to negotiate with Client. To manage the close-out of the Contract, either in the technical or financial terms. Requirements for the position: Project Director with more than 15 years of working experience, at least 5"
     },
     {
       "id": "linkedin-li-4381526232",
@@ -1403,7 +1174,8 @@
       "policy_status": "pass",
       "sources": [
         "linkedin"
-      ]
+      ],
+      "jd_text": "Sanabil Studio is a venture builder that blends industry expertise, technology, and startup know-how to turn bold ideas into real businesses. We take concepts from zero to launch, and when a venture proves its potential, we back it with seed funding and hands on support to help it scale. This venture is one of those bets an open banking consumer micro-lending platform in Saudi Arabia that uses real-time financial data and a smart decision engine to offer fast, personalized micro-loans to consumers who are priced out or passed over by traditional lenders. We are looking for a Chief Operations Officer to lead Finance, Accounting, HR, Collections, and Customer Care and to build the operational backbone that takes this venture from early stage to scale. THE ROLE What you'll own here. Lead Finance, Accounting, HR, Collections, and Customer Care as one integrated operational function Build annual operating plans, monthly performance targets, and the financial controls to back them up Strengthen accounting accuracy, closing discipline, and full compliance with SAMA guidelines and NBFI requirements Lead budgeting, forecasting, liquidity planning, and cost management across the business Drive collections strategy, workflow automation, agency management, and portfolio health Improve HR systems \u2014 hiring, onboarding, compensation, and performance management Raise customer care quality, SLAs, and resolution times to a standard that earns trust Embed digital tools across all functions to reduce manual work and accelerate execution Manage vendors, outsourcing partners, and core system providers Support audits, regulatory reviews, and board reporting Coordinate closely with credit, product, technology, and compliance to keep everything aligned THE PROFILE You're probably a fit if\u2026 You have 10\u201315 years in consumer or micro-finance in Saudi Arabia, with a deep Finance and Accounting background You've led multiple functions simultaneously Finance, HR, Collections, Customer Care and kept them all performing You know SAMA regulations and NBFI operations well enough to advise, not just comply You have a proven track record of scaling operations through digital tools, dashboards, and workflow automation You make clear decisions under pressure and hold teams accountable with structure and KPIs, not just instinct You're a strong coach and team leader who builds capability, not dependency You're fluent in both Arabic and English you can operate seamlessly across internal teams, regulators, and partners Bonus: experience in early-stage or fast-paced lending environments where you had to build structure from scratch THE ENVIRONMENT What working here actually looks like. Operational Ownership This is not a governance role. You'll be in the business building systems, setting standards, and driving performance across every function you lead Compliance Without Compromise We operate in a regulated environment and take that seriously. You'll have the support and mandate to do thi"
     },
     {
       "id": "linkedin-li-4384185216",
@@ -1427,7 +1199,8 @@
       "policy_status": "pass",
       "sources": [
         "linkedin"
-      ]
+      ],
+      "jd_text": "With over 15+ hotels in the Kingdom, Millennium is growing fast and recruiting a Regional Director of Operations. This newly created role is pivotal in evaluating and aligning with the short and long-term goals of the existing and new hotels in the Kingdom. Operating under the direct supervision of the Managing Director, this role acts as a trusted, senior-level operational resource, providing hands-on support to property-level teams to resolve operational challenges, elevate service standards, and drive commercial outcomes. The successful candidate will have around 15-18 years hospitality experience, be a seasoned leader with strong multi-property operational expertise, capable of mobilizing quickly to address urgent issues, stabilize performance, and support projects. He/she will also act as a corporate-level ambassador for operational excellence, brand consistency, and pre-opening readiness. Arabic speaker a plus, and previous P&amp;L management as well as KSA experience a must. Key Job Responsibilities include: Provide operational support and performance oversight as well as ensure standards implementation and compliance Provide on-ground support to managed properties experiencing operational performance gaps or transitional challenges Serve as the point-of-contact for operational interventions and temporary leadership reinforcement at property level Implement brand standards, SOPs, and service recovery protocols where needed Collaborate with hotel General Managers to align operational strategies with Group objectives Monitor KPIs, guest satisfaction scores, and financial metrics to diagnose operational bottlenecks and propose solutions Only shortlisted applicants will be notified. Thank you for your interest!"
     },
     {
       "id": "linkedin-li-4375937705",
@@ -1451,7 +1224,8 @@
       "policy_status": "pass",
       "sources": [
         "linkedin"
-      ]
+      ],
+      "jd_text": "About the Role: We are a fast-growing wealth-tech company seeking an experienced Managing Director in Riyadh with proven fintech/wealth-tech experience in the KSA. This is a CMA-registrable senior executive role (equivalent to CEO/General Manager under CMIR Articles 19-20), requiring CMA approval and fit and proper status. You will serve as the company\u2019s primary representative in the Kingdom, acting as the main point of contact with the CMA and overseeing day-to-day operations. You will report to the board of directors, collaborate closely with the Compliance Officer, MLRO, operations teams, and external advisors, and ensure full alignment with CMA regulatory requirements, client protection principles, and legal compliance for arranging and advising activities. Key Responsibilities Strategy &amp; Vision : Develop and execute the market entry plan, including strategic alignment with CMA-authorized activities (arranging introductions and advising on investments) and long-term business objectives. Operations Management &amp; Licensing : Lead company setup, obtain all necessary CMA licenses and approvals (including nomination of registered persons), establish head office in the Kingdom, and ensure efficient, compliant operations with robust systems and controls. Financial Oversight : Oversee financial planning, budgeting, and reporting for the KSA entity, ensuring accuracy, transparency, and compliance with CMA disclosure standards. Leadership &amp; Team Management : Lead hiring, onboarding, and development of the local team; foster company culture; implement training programs on CMA regulations, ethics, and compliance. Stakeholder Relations : Build and maintain relationships with partners, suppliers, clients, investors, and local regulators (primarily CMA). Compliance &amp; Governance : Ensure adherence to CMA regulations, including client classification, suitability assessments for advice, risk disclosures, conflicts of interest management, fair treatment, and fiduciary duties. Appoint, resource, and supervise the Compliance Officer and MLRO (or oversee outsourced roles); promote ethical standards and a compliance culture. Risk Management &amp; Internal Controls : Oversee establishment and regular review of risk management frameworks, AML/CTF procedures, business continuity plans, and internal controls; ensure timely CMA notifications (e.g., material changes, breaches). Regulatory Engagement : Act as primary liaison with the CMA, including supporting audits, inquiries, license renewals/variations, and submissions.&nbsp; Client Protection &amp; Licensed Activities : Oversee processes for KYC, client due diligence, suitability reports (where required), and use of technology in advice delivery (with CMA approval if needed). Performance &amp; Reporting : Provide regular reports to the board on operations, compliance, risks, and regulatory matters; participate in board meetings and committee work as required. Authorities and Reporting Lines Delegated Au"
     },
     {
       "id": "linkedin-li-4301777116",
@@ -1475,31 +1249,8 @@
       "policy_status": "pass",
       "sources": [
         "linkedin"
-      ]
-    },
-    {
-      "id": "google-in-7c275ede242e0fd1",
-      "source": "google",
-      "title": "Head of Digital Curriculum Strategy",
-      "company": "SpaceDuc Learning Technologies Ltd",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=7c275ede242e0fd1",
-      "posted": "2026-03-20",
-      "seniority": "Director",
-      "domain_match": true,
-      "keyword_score": 6,
-      "match_keywords": [
-        "head of"
       ],
-      "raw_snippet": "Transform Digital Learning and Shape the Future of Education\n\nSpaceDuc Learning Technologies Ltd is seeking a forward\\-thinking **Head of Digital Curriculum Strategy** to lead the design, development, and execution of innovative digital learning programs. This role offers the opportunity to shape scalable, technology\\-driven education solutions across diverse learning environments.\n\n**Salary:** AED 30,000 \u2013 AED 40,000 per month  \n**Schedule:** Monday to Friday\n\nAbout the Role\n\nAs Head of Digital",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 2,
-      "policy_status": "pass",
-      "sources": [
-        "google-jobs",
-        "indeed"
-      ]
+      "jd_text": "At Medtronic you can begin a life-long career of exploration and innovation, while helping champion healthcare access and equity for all. You\u2019ll lead with purpose, breaking down barriers to innovation in a more connected, compassionate world. A Day in the Life Medtronic Saudi Arabia is seeking a dynamic and experienced Offer to Cash Business Process Director to lead and oversee the entire Offer to Cash (O2C) cycle, ensuring operational efficiency, compliance, and continuous improvement. This pivotal role focuses on managing the execution and ongoing enhancement of the full O2C cycle, driving streamlined operations, and aligning processes with strategic business objectives. As the Offer to Cash Business Process Director , you will be responsible for driving operational effectiveness, optimizing financial processes, and ensuring seamless integration across teams while maintaining regulatory compliance. Responsibilities may include the following and other duties may be assigned: Daily Operations Leadership &amp; Support : Manage all aspects of the O2C operations, including efficient credit management, liaising with customer care for timely order entry, logistics management for timely deliveries and pod collection, pricing and quotations, consignment management, working closely with the Operations Excellence team for dispute resolution, and data matching and uploading. Lead and oversee daily O2C activities to ensure timely execution and alignment with service level agreements (SLAs). Monitor invoice status movements to ensure performance meets or exceeds SLA targets. Develop and maintain detailed action plans by functional area, outlining resource needs, transaction volumes, and prioritization logic for both outstanding and incoming transactions. Track team and individual performance against SLA commitments, identifying and addressing gaps proactively. Collaborate with functional and commercial leaders to update risk mitigation plans and escalate unresolved issues as needed. Oversee risk management and crisis response plans. Regulatory Compliance : Ensure compliance with local regulations, corporate policies, and industry standards in all operational aspects. Stakeholder Engagement : Build and maintain strong relationships with key stakeholders, including customers, partners, and regulatory bodies. Logistics &amp; Supply Chain Coordination : Ensure the accuracy, timeliness and completeness of documentation provided by internal and external logistics teams related to customer product deliveries. Foster cross-functional collaboration between Commercial, Customer Care, and Logistics teams to drive compliance with delivery standards and support continuous improvement initiatives across the supply chain. Operational Performance Monitoring: Conduct daily and weekly tracking of key performance indicators (KPIs) Analyze root causes of underperformance and align findings with action plans. Define and implement corrective measures in collaboration with Sales, "
     },
     {
       "id": "linkedin-li-4378178161",
@@ -1522,7 +1273,8 @@
       "policy_status": "pass",
       "sources": [
         "linkedin"
-      ]
+      ],
+      "jd_text": "We are partnering with a well-established, diversified UAE-based group to appoint an experienced IT Director to lead and oversee enterprise-wide technology strategy and operations. This role offers the opportunity to drive digital transformation initiatives and shape the long-term technology vision of a multi-entity organization. Role Overview The IT Director will be responsible for defining and executing the organization\u2019s IT strategy while ensuring secure, efficient, and scalable technology operations across multiple business divisions. The role requires a strategic leader capable of aligning technology with business objectives while maintaining operational excellence. Key Responsibilities \u2022 Develop and implement the overall IT strategy aligned with organizational goals \u2022 Lead IT operations including infrastructure, networks, enterprise applications, and cybersecurity \u2022 Drive digital transformation and process automation initiatives \u2022 Establish IT governance, policies, risk management, and compliance frameworks \u2022 Manage IT budgets, vendor relationships, and technology procurement \u2022 Ensure business continuity, data protection, and information security standards \u2022 Build, mentor, and lead high-performing IT teams across business units \u2022 Partner with senior leadership to enable innovation and technology-driven growth Requirements \u2022 Bachelor\u2019s degree in Information Technology, Computer Science, or related field (Master\u2019s preferred) \u2022 12+ years of IT experience, including senior leadership roles \u2022 Proven experience within large or multi-entity organizations \u2022 Strong expertise in IT strategy, enterprise systems, and digital transformation \u2022 Experience managing large-scale IT environments and cross-functional teams \u2022 Strong stakeholder management and leadership capabilities \u2022 UAE or regional experience preferred Due to confidentiality, company details will be shared with shortlisted candidates."
     },
     {
       "id": "linkedin-li-4381839025",
@@ -1571,29 +1323,6 @@
       ]
     },
     {
-      "id": "linkedin-li-4384038104",
-      "source": "linkedin",
-      "title": "Head of Branch Transformation",
-      "company": "Tandem Search",
-      "location": "Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/head-of-branch-transformation-at-tandem-search-4384038104",
-      "posted": "2026-03-16",
-      "seniority": "Director",
-      "domain_match": true,
-      "keyword_score": 6,
-      "match_keywords": [
-        "head of"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
       "id": "linkedin-li-4326236551",
       "source": "linkedin",
       "title": "Data & Analytics Director",
@@ -1617,15 +1346,15 @@
       ]
     },
     {
-      "id": "linkedin-li-4353175270",
+      "id": "linkedin-li-4384038104",
       "source": "linkedin",
-      "title": "Head of Revenue Analytics",
-      "company": "Apex Group Ltd",
-      "location": "Dubai, Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/head-of-revenue-analytics-at-apex-group-ltd-4353175270",
-      "posted": "2026-03-20",
+      "title": "Head of Branch Transformation",
+      "company": "Tandem Search",
+      "location": "Dubai, United Arab Emirates",
+      "url": "https://ae.linkedin.com/jobs/view/head-of-branch-transformation-at-tandem-search-4384038104",
+      "posted": "2026-03-16",
       "seniority": "Director",
-      "domain_match": false,
+      "domain_match": true,
       "keyword_score": 6,
       "match_keywords": [
         "head of"
@@ -1640,15 +1369,15 @@
       ]
     },
     {
-      "id": "linkedin-li-4373109027",
+      "id": "linkedin-li-4353175270",
       "source": "linkedin",
-      "title": "Head of Digital Channel (Wholesale Banking)",
-      "company": "Emirates NBD",
-      "location": "Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/head-of-digital-channel-wholesale-banking-at-emirates-nbd-4373109027",
-      "posted": "2026-02-19",
+      "title": "Head of Revenue Analytics",
+      "company": "Apex Group Ltd",
+      "location": "Dubai, Dubai, United Arab Emirates",
+      "url": "https://ae.linkedin.com/jobs/view/head-of-revenue-analytics-at-apex-group-ltd-4353175270",
+      "posted": "2026-03-20",
       "seniority": "Director",
-      "domain_match": true,
+      "domain_match": false,
       "keyword_score": 6,
       "match_keywords": [
         "head of"
@@ -1939,12 +1668,12 @@
       ]
     },
     {
-      "id": "linkedin-li-4318354186",
+      "id": "linkedin-li-4385786912",
       "source": "linkedin",
-      "title": "Director of Data Science",
-      "company": "Careem",
+      "title": "Director Of Data Science",
+      "company": "TALENTMATE",
       "location": "Dubai, Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/director-of-data-science-at-careem-4318354186",
+      "url": "https://ae.linkedin.com/jobs/view/director-of-data-science-at-talentmate-4385786912",
       "posted": "2026-03-20",
       "seniority": "C-Suite",
       "domain_match": true,
@@ -1962,15 +1691,15 @@
       ]
     },
     {
-      "id": "linkedin-li-4387608337",
+      "id": "linkedin-li-4388706913",
       "source": "linkedin",
-      "title": "Head of Trading",
-      "company": "QuanTech Partners",
-      "location": "Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/head-of-trading-at-quantech-partners-4387608337",
-      "posted": "2026-03-18",
+      "title": "Head of Faculty \u2013 Art & Design Technology \u2013 August 2026 start",
+      "company": "Fortes Education",
+      "location": "Dubai, Dubai, United Arab Emirates",
+      "url": "https://ae.linkedin.com/jobs/view/head-of-faculty-%E2%80%93-art-design-technology-%E2%80%93-august-2026-start-at-fortes-education-4388706913",
+      "posted": "2026-03-21",
       "seniority": "Director",
-      "domain_match": false,
+      "domain_match": true,
       "keyword_score": 6,
       "match_keywords": [
         "head of"
@@ -2015,6 +1744,29 @@
       "location": "Dubai, United Arab Emirates",
       "url": "https://ae.linkedin.com/jobs/view/head-of-fraud-management-and-revenue-assurance-at-confidential-4383343369",
       "posted": "2026-03-09",
+      "seniority": "Director",
+      "domain_match": false,
+      "keyword_score": 6,
+      "match_keywords": [
+        "head of"
+      ],
+      "raw_snippet": "",
+      "relevant": true,
+      "filter_reason": null,
+      "source_count": 1,
+      "policy_status": "pass",
+      "sources": [
+        "linkedin"
+      ]
+    },
+    {
+      "id": "linkedin-li-4387608337",
+      "source": "linkedin",
+      "title": "Head of Trading",
+      "company": "QuanTech Partners",
+      "location": "Dubai, United Arab Emirates",
+      "url": "https://ae.linkedin.com/jobs/view/head-of-trading-at-quantech-partners-4387608337",
+      "posted": "2026-03-18",
       "seniority": "Director",
       "domain_match": false,
       "keyword_score": 6,
@@ -2560,13 +2312,13 @@
       ]
     },
     {
-      "id": "linkedin-li-4385469323",
+      "id": "linkedin-li-4359076971",
       "source": "linkedin",
-      "title": "Systems & Service Operations Director \u2013 Controls",
-      "company": "Johnson Controls",
+      "title": "Director of Operations",
+      "company": "Earth Hotels",
       "location": "Dubai, Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/systems-service-operations-director-%E2%80%93-controls-at-johnson-controls-4385469323",
-      "posted": "2026-03-19",
+      "url": "https://ae.linkedin.com/jobs/view/director-of-operations-at-earth-hotels-4359076971",
+      "posted": "2026-01-15",
       "seniority": "C-Suite",
       "domain_match": true,
       "keyword_score": 6,
@@ -2576,21 +2328,20 @@
       "raw_snippet": "",
       "relevant": true,
       "filter_reason": null,
-      "source_count": 2,
+      "source_count": 1,
       "policy_status": "pass",
       "sources": [
-        "linkedin",
-        "indeed"
+        "linkedin"
       ]
     },
     {
-      "id": "linkedin-li-4359076971",
+      "id": "linkedin-li-4385469323",
       "source": "linkedin",
-      "title": "Director of Operations",
-      "company": "Earth Hotels",
+      "title": "Systems & Service Operations Director \u2013 Controls",
+      "company": "Johnson Controls",
       "location": "Dubai, Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/director-of-operations-at-earth-hotels-4359076971",
-      "posted": "2026-01-15",
+      "url": "https://ae.linkedin.com/jobs/view/systems-service-operations-director-%E2%80%93-controls-at-johnson-controls-4385469323",
+      "posted": "2026-03-19",
       "seniority": "C-Suite",
       "domain_match": true,
       "keyword_score": 6,
@@ -3366,13 +3117,13 @@
       ]
     },
     {
-      "id": "linkedin-li-4379449003",
+      "id": "linkedin-li-4377275763",
       "source": "linkedin",
       "title": "Chief Executive Officer",
       "company": "Burjline Builders",
-      "location": "Riyadh, Riyadh, Saudi Arabia",
-      "url": "https://sa.linkedin.com/jobs/view/chief-executive-officer-at-burjline-builders-4379449003",
-      "posted": "2026-03-03",
+      "location": "Saudi Arabia",
+      "url": "https://sa.linkedin.com/jobs/view/chief-executive-officer-at-burjline-builders-4377275763",
+      "posted": "2026-02-26",
       "seniority": "C-Suite",
       "domain_match": false,
       "keyword_score": 6,
@@ -4079,15 +3830,15 @@
       ]
     },
     {
-      "id": "linkedin-li-4387455688",
+      "id": "linkedin-li-4378492543",
       "source": "linkedin",
-      "title": "Director of Product Management, Data",
-      "company": "Jobgether",
-      "location": "Eastern Region",
-      "url": "https://sa.linkedin.com/jobs/view/director-of-product-management-data-at-jobgether-4387455688",
-      "posted": "2026-03-16",
+      "title": "Director - EPC+F Contracts - Regional Links - Transportation - 20004046 -CDU8",
+      "company": "Qiddiya | \u0627\u0644\u0642\u062f\u064a\u0629",
+      "location": "Riyadh, Riyadh, Saudi Arabia",
+      "url": "https://sa.linkedin.com/jobs/view/director-epc%2Bf-contracts-regional-links-transportation-20004046-cdu8-at-qiddiya-%D8%A7%D9%84%D9%82%D8%AF%D9%8A%D8%A9-4378492543",
+      "posted": "2026-02-05",
       "seniority": "C-Suite",
-      "domain_match": true,
+      "domain_match": false,
       "keyword_score": 6,
       "match_keywords": [
         "director"
@@ -4102,15 +3853,15 @@
       ]
     },
     {
-      "id": "linkedin-li-4378492543",
+      "id": "linkedin-li-4387455688",
       "source": "linkedin",
-      "title": "Director - EPC+F Contracts - Regional Links - Transportation - 20004046 -CDU8",
-      "company": "Qiddiya | \u0627\u0644\u0642\u062f\u064a\u0629",
-      "location": "Riyadh, Riyadh, Saudi Arabia",
-      "url": "https://sa.linkedin.com/jobs/view/director-epc%2Bf-contracts-regional-links-transportation-20004046-cdu8-at-qiddiya-%D8%A7%D9%84%D9%82%D8%AF%D9%8A%D8%A9-4378492543",
-      "posted": "2026-02-05",
+      "title": "Director of Product Management, Data",
+      "company": "Jobgether",
+      "location": "Eastern Region",
+      "url": "https://sa.linkedin.com/jobs/view/director-of-product-management-data-at-jobgether-4387455688",
+      "posted": "2026-03-16",
       "seniority": "C-Suite",
-      "domain_match": false,
+      "domain_match": true,
       "keyword_score": 6,
       "match_keywords": [
         "director"
@@ -4362,6 +4113,29 @@
       "location": "Riyadh, Riyadh, Saudi Arabia",
       "url": "https://sa.linkedin.com/jobs/view/director-film-studio-operations-spa-240-at-qiddiya-%D8%A7%D9%84%D9%82%D8%AF%D9%8A%D8%A9-4384941446",
       "posted": "2026-02-18",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 6,
+      "match_keywords": [
+        "director"
+      ],
+      "raw_snippet": "",
+      "relevant": true,
+      "filter_reason": null,
+      "source_count": 1,
+      "policy_status": "pass",
+      "sources": [
+        "linkedin"
+      ]
+    },
+    {
+      "id": "linkedin-li-4374882998",
+      "source": "linkedin",
+      "title": "Director of Museum Operations",
+      "company": "Asaan | \u0622\u0633\u0627\u0646",
+      "location": "Riyadh, Saudi Arabia",
+      "url": "https://sa.linkedin.com/jobs/view/director-of-museum-operations-at-asaan-%D8%A2%D8%B3%D8%A7%D9%86-4374882998",
+      "posted": "2026-02-25",
       "seniority": "C-Suite",
       "domain_match": true,
       "keyword_score": 6,
@@ -4631,12 +4405,12 @@
       ]
     },
     {
-      "id": "linkedin-li-4388167576",
+      "id": "linkedin-li-4271373305",
       "source": "linkedin",
       "title": "Senior Principal Engineer - Satellite Platform",
-      "company": "TALENTMATE",
+      "company": "FADA",
       "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/senior-principal-engineer-satellite-platform-at-talentmate-4388167576",
+      "url": "https://ae.linkedin.com/jobs/view/senior-principal-engineer-satellite-platform-at-fada-4271373305",
       "posted": "2026-03-19",
       "seniority": "Principal",
       "domain_match": false,
@@ -4792,13 +4566,13 @@
       ]
     },
     {
-      "id": "linkedin-li-4382995677",
+      "id": "linkedin-li-4370301621",
       "source": "linkedin",
       "title": "Vice President Pharmacy Automation META",
-      "company": "BD Nogales Norte",
-      "location": "Riyadh, Riyadh, Saudi Arabia",
-      "url": "https://sa.linkedin.com/jobs/view/vice-president-pharmacy-automation-meta-at-bd-nogales-norte-4382995677",
-      "posted": "2026-02-12",
+      "company": "BD",
+      "location": "Riyadh Region",
+      "url": "https://sa.linkedin.com/jobs/view/vice-president-pharmacy-automation-meta-at-bd-4370301621",
+      "posted": "2026-03-02",
       "seniority": "VP",
       "domain_match": false,
       "keyword_score": 3,
@@ -5235,12 +5009,12 @@
       ]
     },
     {
-      "id": "linkedin-li-4386873396",
+      "id": "linkedin-li-4386332065",
       "source": "linkedin",
       "title": "Chief Financial Officer",
-      "company": "AMS International UAE",
-      "location": "Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/chief-financial-officer-at-ams-international-uae-4386873396",
+      "company": "ALPHA10X",
+      "location": "Dubai, Dubai, United Arab Emirates",
+      "url": "https://ae.linkedin.com/jobs/view/chief-financial-officer-at-alpha10x-4386332065",
       "posted": "2026-03-18",
       "seniority": "C-Suite",
       "domain_match": false,
@@ -5256,12 +5030,12 @@
       ]
     },
     {
-      "id": "linkedin-li-4386332065",
+      "id": "linkedin-li-4386873396",
       "source": "linkedin",
       "title": "Chief Financial Officer",
-      "company": "ALPHA10X",
-      "location": "Dubai, Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/chief-financial-officer-at-alpha10x-4386332065",
+      "company": "AMS International UAE",
+      "location": "Dubai, United Arab Emirates",
+      "url": "https://ae.linkedin.com/jobs/view/chief-financial-officer-at-ams-international-uae-4386873396",
       "posted": "2026-03-18",
       "seniority": "C-Suite",
       "domain_match": false,
@@ -5781,27 +5555,6 @@
       ]
     },
     {
-      "id": "linkedin-li-4382996662",
-      "source": "linkedin",
-      "title": "Vice President MMS META",
-      "company": "BD Nogales Norte",
-      "location": "Riyadh, Riyadh, Saudi Arabia",
-      "url": "https://sa.linkedin.com/jobs/view/vice-president-mms-meta-at-bd-nogales-norte-4382996662",
-      "posted": "2026-02-12",
-      "seniority": "VP",
-      "domain_match": false,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ]
-    },
-    {
       "id": "linkedin-li-4370306565",
       "source": "linkedin",
       "title": "Vice President MMS META",
@@ -6223,15 +5976,15 @@
     }
   ],
   "kpi": {
-    "total_raw": 868,
-    "sources_loaded": 4,
-    "stale_sources": 0,
-    "unique_after_dedup": 757,
-    "applied_filtered": 25,
-    "policy_filtered": 462,
-    "final_candidates": 270,
-    "multi_source_jobs": 4,
-    "new_today": 270
+    "total_raw": 851,
+    "sources_loaded": 2,
+    "stale_sources": 2,
+    "unique_after_dedup": 749,
+    "applied_filtered": 29,
+    "policy_filtered": 460,
+    "final_candidates": 260,
+    "multi_source_jobs": 2,
+    "new_today": 260
   },
   "recommendations": []
 }

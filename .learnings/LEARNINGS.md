@@ -584,3 +584,9 @@ Scanner `semantic_fit_filter()` requires JD text for career_verdict. Jobs withou
 - What happened: Used em dashes (—) throughout messages despite MEMORY.md explicitly saying "Never use em dashes anywhere. Use hyphens (-) or commas instead."
 - Why: Rule was in loaded context but not internalized into output generation
 - Fix: Actively check output for — before sending. Use - or commas instead.
+
+## 2026-03-21
+### Reactive Chain Instead of Proactive Fix
+- What happened: Ahmed had to ask 5 separate times to get the briefing pipeline fully working. Scanner alert, missing briefing, no delivery, stale jobs, filter bugs - all connected, all should have been one proactive sweep.
+- Why: Treated each symptom individually instead of thinking "if this is broken, what else is broken?"
+- Fix: When finding one problem, immediately audit the full chain. One broken link means check every link. Don't wait for user to discover the next failure.
