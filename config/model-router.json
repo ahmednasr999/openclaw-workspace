@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "description": "Deterministic model router - maps task patterns to optimal models",
+  "default_model": "minimax-portal/MiniMax-M2.7",
+  "rules": [
+    {
+      "id": "cv_creation",
+      "description": "CV tailoring, resume building, ATS optimization",
+      "patterns": ["cv", "resume", "tailor", "ats score", "job application", "cover letter"],
+      "model": "anthropic/claude-opus-4-6",
+      "reason": "Needs deep reasoning for keyword matching, bullet crafting, ATS optimization",
+      "confirm_before_switch": true
+    },
+    {
+      "id": "content_writing",
+      "description": "LinkedIn posts, articles, professional writing",
+      "patterns": ["linkedin post", "write a post", "draft content", "article", "write about", "content draft"],
+      "model": "anthropic/claude-sonnet-4-6",
+      "reason": "Strong writing quality without Opus cost",
+      "confirm_before_switch": false
+    },
+    {
+      "id": "complex_coding",
+      "description": "Building new scripts, complex debugging, architecture",
+      "patterns": ["build a script", "create a new", "fix this bug", "refactor", "architect", "implement"],
+      "model": "anthropic/claude-sonnet-4-6",
+      "reason": "Coding needs structured reasoning beyond M2.7",
+      "confirm_before_switch": false
+    },
+    {
+      "id": "strategic_analysis",
+      "description": "Interview prep, company research, strategic decisions",
+      "patterns": ["interview prep", "company dossier", "strategic", "analyze this role", "compare options"],
+      "model": "anthropic/claude-sonnet-4-6",
+      "reason": "Needs nuanced judgment",
+      "confirm_before_switch": false
+    },
+    {
+      "id": "quick_research",
+      "description": "Web searches, tweet analysis, link checking",
+      "patterns": ["search for", "find", "look up", "check this", "x.com", "twitter.com", "github.com"],
+      "model": "minimax-portal/MiniMax-M2.7",
+      "reason": "Fast fetch + summarize, no deep reasoning needed",
+      "confirm_before_switch": false
+    },
+    {
+      "id": "simple_tasks",
+      "description": "File reads, status checks, quick answers, model updates",
+      "patterns": ["status", "check", "list", "show me", "what is", "update", "how many"],
+      "model": "minimax-portal/MiniMax-M2.7",
+      "reason": "Routine operations",
+      "confirm_before_switch": false
+    }
+  ],
+  "cost_tiers": {
+    "free": ["minimax-portal/MiniMax-M2.7", "minimax-portal/MiniMax-M2.5", "minimax/MiniMax-M2.1", "moonshot/kimi-k2.5"],
+    "budget": ["anthropic/claude-haiku-4-5"],
+    "mid": ["anthropic/claude-sonnet-4-6"],
+    "premium": ["anthropic/claude-opus-4-6"]
+  },
+  "auto_switch_back": {
+    "enabled": true,
+    "after_task_completion": "minimax-portal/MiniMax-M2.7",
+    "description": "Always return to default after completing a paid-model task"
+  }
+}

@@ -42,6 +42,27 @@ Any task that takes >10 seconds goes to a sub-agent. The main agent (NASR) is th
 - Content drafting → Sonnet 4.6
 - Simple script execution → MiniMax-M2.7
 
+### Automatic Model Routing (Non-Negotiable)
+
+**Before starting ANY task, classify it and route to the right model:**
+
+| Task Type | Trigger Words | Model | Confirm? |
+|-----------|--------------|-------|----------|
+| CV/Resume | cv, tailor, resume, ats, job application | Opus 4.6 | ✅ Yes |
+| Content Writing | linkedin post, write a post, draft, article | Sonnet 4.6 | No |
+| Complex Coding | build script, create new, refactor, architect | Sonnet 4.6 | No |
+| Strategic Analysis | interview prep, dossier, strategic, compare | Sonnet 4.6 | No |
+| Research/Links | x.com, github.com, search, look up | M2.7 (stay) | No |
+| Simple Tasks | status, check, list, show, update | M2.7 (stay) | No |
+
+**Rules:**
+1. Default is always M2.7 (free)
+2. Only switch UP when task requires it — never use Opus for simple questions
+3. CV creation ALWAYS asks before switching (it's expensive)
+4. After completing any paid-model task, switch back to M2.7
+5. For sub-agents: use `sessions_spawn(model=...)` with the right model
+6. Config file: `config/model-router.json` (source of truth for routing rules)
+
 ### Parallel Execution (Non-Negotiable)
 
 **Default is parallel. Sequential only when there's a real dependency.**
