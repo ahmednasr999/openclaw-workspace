@@ -28,30 +28,73 @@ HEADERS = {
 }
 
 
-def add_to_notion(company, role, location, url, source, ats_score):
-    """Add job to Notion Pipeline DB."""
-    props = {
-        "Company": {"title": [{"text": {"content": company}}]},
-        "Role": {"rich_text": [{"text": {"content": role}}]},
-        "Stage": {"select": {"name": "✅ Applied"}},
-        "Location": {"rich_text": [{"text": {"content": location}}]},
-        "URL": {"url": url},
-        "Source": {"select": {"name": source}},
-        "Applied Date": {"date": {"start": datetime.now().strftime("%Y-%m-%d")}},
+def find_existing_page(url):
+    """Find existing Pipeline entry by URL."""
+    if not url:
+        return None
+    payload = {
+        "filter": {"property": "URL", "url": {"equals": url}},
+        "page_size": 1,
     }
-    if ats_score:
-        props["ATS Score"] = {"number": ats_score}
-
-    payload = {"parent": {"database_id": PIPELINE_DB}, "properties": props}
-    resp = requests.post("https://api.notion.com/v1/pages", headers=HEADERS, json=payload)
-    
+    resp = requests.post(
+        f"https://api.notion.com/v1/databases/{PIPELINE_DB}/query",
+        headers=HEADERS, json=payload,
+    )
     if resp.status_code == 200:
-        page_url = resp.json().get("url", "")
-        print(f"✅ Notion Pipeline: {page_url}")
-        return True
+        results = resp.json().get("results", [])
+        if results:
+            return results[0]["id"]
+    return None
+
+
+def add_to_notion(company, role, location, url, source, ats_score):
+    """Add job to Notion Pipeline DB, or update existing entry to Applied."""
+    
+    # Check if entry already exists (from push-submit-to-notion.py)
+    existing_id = find_existing_page(url)
+    
+    if existing_id:
+        # Update stage to Applied
+        update_props = {
+            "Stage": {"select": {"name": "✅ Applied"}},
+            "Applied Date": {"date": {"start": datetime.now().strftime("%Y-%m-%d")}},
+        }
+        resp = requests.patch(
+            f"https://api.notion.com/v1/pages/{existing_id}",
+            headers=HEADERS,
+            json={"properties": update_props},
+        )
+        if resp.status_code == 200:
+            page_url = resp.json().get("url", "")
+            print(f"✅ Notion Pipeline (updated to Applied): {page_url}")
+            return True
+        else:
+            print(f"❌ Notion update error {resp.status_code}: {resp.text[:200]}")
+            return False
     else:
-        print(f"❌ Notion error {resp.status_code}: {resp.text[:200]}")
-        return False
+        # Create new entry
+        props = {
+            "Company": {"title": [{"text": {"content": company}}]},
+            "Role": {"rich_text": [{"text": {"content": role}}]},
+            "Stage": {"select": {"name": "✅ Applied"}},
+            "Location": {"rich_text": [{"text": {"content": location}}]},
+            "URL": {"url": url},
+            "Source": {"select": {"name": source}},
+            "Applied Date": {"date": {"start": datetime.now().strftime("%Y-%m-%d")}},
+        }
+        if ats_score:
+            props["ATS Score"] = {"number": ats_score}
+
+        payload = {"parent": {"database_id": PIPELINE_DB}, "properties": props}
+        resp = requests.post("https://api.notion.com/v1/pages", headers=HEADERS, json=payload)
+        
+        if resp.status_code == 200:
+            page_url = resp.json().get("url", "")
+            print(f"✅ Notion Pipeline (created): {page_url}")
+            return True
+        else:
+            print(f"❌ Notion error {resp.status_code}: {resp.text[:200]}")
+            return False
 
 
 def add_to_applied_ids(job_id, company, role):

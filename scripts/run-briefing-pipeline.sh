@@ -115,6 +115,9 @@ case "$MODE" in
         
         log "--- LLM Review (sequential) ---"
         run_agent "review" "jobs-review.py" 180
+        
+        log "--- Push to Notion Pipeline (sequential) ---"
+        run_agent "pipeline-push" "push-submit-to-notion.py" 120
         ;;
     
     --all)
@@ -139,6 +142,9 @@ case "$MODE" in
         
         log "--- Phase 3: LLM Review ---"
         run_agent "review" "jobs-review.py" 180
+        
+        log "--- Phase 4: Push to Notion Pipeline ---"
+        run_agent "pipeline-push" "push-submit-to-notion.py" 120
         
         log "========================================="
         log "  PIPELINE COMPLETE"
