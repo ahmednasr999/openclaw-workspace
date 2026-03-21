@@ -218,7 +218,32 @@ else
 fi
 
 # ═══════════════════════════════════════════
-# 8. RAM CHECK
+# 8. PIPELINE FAILURE CLASSIFICATION CHECK
+# ═══════════════════════════════════════════
+TODAY_FAILURES="/var/log/briefing/failures-$(date +%Y-%m-%d).jsonl"
+if [ -f "$TODAY_FAILURES" ]; then
+    CONFIG_FAILS=$(grep -c '"CONFIG"' "$TODAY_FAILURES" 2>/dev/null || true)
+    LOGIC_FAILS=$(grep -c '"LOGIC"' "$TODAY_FAILURES" 2>/dev/null || true)
+    TRANSIENT_FAILS=$(grep -c '"TRANSIENT"' "$TODAY_FAILURES" 2>/dev/null || true)
+    
+    if [ "${CONFIG_FAILS:-0}" -gt 0 ] || [ "${LOGIC_FAILS:-0}" -gt 0 ]; then
+        echo "🔴 Pipeline has ${CONFIG_FAILS:-0} config + ${LOGIC_FAILS:-0} logic failures today"
+        log "ALERT: Pipeline config/logic failures need attention"
+        report "🔴 Pipeline failures: ${CONFIG_FAILS:-0} config, ${LOGIC_FAILS:-0} logic (need human review)"
+        ALERTS=$((ALERTS + 1))
+    fi
+    
+    if [ "${TRANSIENT_FAILS:-0}" -gt 5 ]; then
+        echo "🟡 ${TRANSIENT_FAILS:-0} transient failures today (possible persistent network issue)"
+        log "WARN: High transient failure count: ${TRANSIENT_FAILS:-0}"
+        WARNINGS=$((WARNINGS + 1))
+    fi
+else
+    echo "✅ No pipeline failures today"
+fi
+
+# ═══════════════════════════════════════════
+# 9. RAM CHECK
 # ═══════════════════════════════════════════
 RAM_USED_PCT=$(free | awk '/Mem:/ {printf "%.0f", $3/$2 * 100}')
 if [ "$RAM_USED_PCT" -ge 90 ]; then

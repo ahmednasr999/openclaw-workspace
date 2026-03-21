@@ -1,0 +1,2 @@
+{"ts": "2026-03-21T22:05:47.015100+00:00", "agent": "writer", "task": "linkedin_post", "status": "accepted", "reason": "", "meta": {}}
+{"ts": "2026-03-21T22:05:47.044146+00:00", "agent": "cv", "task": "cv_tailor", "status": "revised", "reason": "wrong keywords", "meta": {}}
