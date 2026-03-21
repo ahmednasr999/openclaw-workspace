@@ -578,3 +578,9 @@ Same root cause as ATS keyword matching. Title "Senior PMO Director" looks great
 NEVER present job recommendations without reading actual JD text. If JD unavailable (403/blocked), explicitly mark as "NO JD - CAN'T JUDGE" instead of guessing from title.
 ### Enforcement: Code Check
 Scanner `semantic_fit_filter()` requires JD text for career_verdict. Jobs without JD text get "NO JD - CAN'T JUDGE" status automatically.
+
+## 2026-03-21
+### Em Dash Rule Violation
+- What happened: Used em dashes (—) throughout messages despite MEMORY.md explicitly saying "Never use em dashes anywhere. Use hyphens (-) or commas instead."
+- Why: Rule was in loaded context but not internalized into output generation
+- Fix: Actively check output for — before sending. Use - or commas instead.
