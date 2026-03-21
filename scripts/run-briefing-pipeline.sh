@@ -35,28 +35,118 @@ fi
 echo $$ > "$LOCK_FILE"
 trap 'rm -f "$LOCK_FILE"' EXIT
 
+classify_failure() {
+    # Classify failure type from exit code and recent log output
+    local code="$1"
+    local name="$2"
+    local tail_output
+    tail_output=$(tail -5 "$LOG_FILE" 2>/dev/null || echo "")
+    
+    # Timeout = transient
+    if [ "$code" -eq 124 ]; then
+        echo "TRANSIENT:timeout"
+        return
+    fi
+    
+    # Auth/config errors
+    if echo "$tail_output" | grep -qiE '401|403|unauthorized|forbidden|invalid.*token|invalid.*key|auth.*fail'; then
+        echo "CONFIG:auth"
+        return
+    fi
+    
+    # Connection errors = transient
+    if echo "$tail_output" | grep -qiE 'connection.*refused|connection.*reset|dns|resolve|ETIMEDOUT|network.*unreachable|ssl.*error|socket.*timeout'; then
+        echo "TRANSIENT:network"
+        return
+    fi
+    
+    # Rate limits = transient
+    if echo "$tail_output" | grep -qiE '429|rate.limit|too.many.requests|throttl'; then
+        echo "TRANSIENT:ratelimit"
+        return
+    fi
+    
+    # Schema/logic errors
+    if echo "$tail_output" | grep -qiE 'KeyError|TypeError|ValueError|IndexError|AttributeError|schema|validation.*error|invalid.*param|missing.*field'; then
+        echo "LOGIC:script_bug"
+        return
+    fi
+    
+    # Import/dependency errors
+    if echo "$tail_output" | grep -qiE 'ModuleNotFoundError|ImportError|No module named'; then
+        echo "CONFIG:dependency"
+        return
+    fi
+    
+    # Unknown
+    echo "UNKNOWN:exit_$code"
+}
+
+FAILURE_LOG="/var/log/briefing/failures-$(date +%Y-%m-%d).jsonl"
+
+log_failure() {
+    local name="$1"
+    local classification="$2"
+    local code="$3"
+    local elapsed="$4"
+    local category="${classification%%:*}"
+    local detail="${classification#*:}"
+    
+    printf '{"ts":"%s","agent":"%s","category":"%s","detail":"%s","exit_code":%d,"elapsed":%d}\n' \
+        "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$name" "$category" "$detail" "$code" "$elapsed" \
+        >> "$FAILURE_LOG"
+}
+
 run_agent() {
     local name="$1"
     local script="$2"
     local timeout="${3:-60}"
+    local max_retries="${4:-1}"
+    local attempt=1
     
-    log "START $name"
-    local start=$(date +%s)
-    
-    if timeout "$timeout" python3 "$SCRIPTS/$script" >> "$LOG_FILE" 2>&1; then
-        local elapsed=$(( $(date +%s) - start ))
-        log "OK    $name (${elapsed}s)"
-        return 0
-    else
-        local code=$?
-        local elapsed=$(( $(date +%s) - start ))
-        if [ $code -eq 124 ]; then
-            log "TIMEOUT $name (>${timeout}s)"
-        else
-            log "FAIL  $name (exit $code, ${elapsed}s)"
+    while [ $attempt -le $max_retries ]; do
+        if [ $attempt -gt 1 ]; then
+            local wait_secs=$(( (attempt - 1) * 30 ))
+            log "RETRY $name (attempt $attempt/$max_retries, waiting ${wait_secs}s)"
+            sleep "$wait_secs"
         fi
-        return $code
-    fi
+        
+        log "START $name"
+        local start=$(date +%s)
+        
+        if timeout "$timeout" python3 "$SCRIPTS/$script" >> "$LOG_FILE" 2>&1; then
+            local elapsed=$(( $(date +%s) - start ))
+            log "OK    $name (${elapsed}s)"
+            return 0
+        else
+            local code=$?
+            local elapsed=$(( $(date +%s) - start ))
+            local classification
+            classification=$(classify_failure "$code" "$name")
+            local category="${classification%%:*}"
+            
+            if [ $code -eq 124 ]; then
+                log "TIMEOUT $name (>${timeout}s) [$classification]"
+            else
+                log "FAIL  $name (exit $code, ${elapsed}s) [$classification]"
+            fi
+            
+            log_failure "$name" "$classification" "$code" "$elapsed"
+            
+            # Only retry transient failures
+            if [ "$category" = "TRANSIENT" ] && [ $attempt -lt $max_retries ]; then
+                attempt=$((attempt + 1))
+                continue
+            fi
+            
+            # Config/logic failures: no retry, escalate immediately
+            if [ "$category" = "CONFIG" ] || [ "$category" = "LOGIC" ]; then
+                log "ESCALATE $name - $classification (not retryable)"
+            fi
+            
+            return $code
+        fi
+    done
 }
 
 run_parallel() {
@@ -98,7 +188,7 @@ case "$MODE" in
             "pipeline"  "pipeline-agent.py"  30 \
             "email"     "email-agent.py"     30 \
             "content"   "content-agent.py"   30 \
-            "outreach"  "outreach-agent.py"  15 \
+            "outreach"  "outreach-agent.py"  30 \
             "system"    "system-agent.py"    30
         ;;
     
@@ -176,9 +266,27 @@ case "$MODE" in
         ;;
 esac
 
-# Summary
+# Summary with failure classification
 ERRORS=$(grep -c -E "FAIL|TIMEOUT" "$LOG_FILE" 2>/dev/null || true)
 ERRORS=${ERRORS:-0}
+
+if [ -f "$FAILURE_LOG" ]; then
+    TRANSIENT_COUNT=$(grep -c '"TRANSIENT"' "$FAILURE_LOG" 2>/dev/null || true)
+    CONFIG_COUNT=$(grep -c '"CONFIG"' "$FAILURE_LOG" 2>/dev/null || true)
+    LOGIC_COUNT=$(grep -c '"LOGIC"' "$FAILURE_LOG" 2>/dev/null || true)
+    
+    if [ "${CONFIG_COUNT:-0}" -gt 0 ] || [ "${LOGIC_COUNT:-0}" -gt 0 ]; then
+        log "🔴 ESCALATE: ${CONFIG_COUNT:-0} config + ${LOGIC_COUNT:-0} logic failures (need human)"
+        grep -E '"CONFIG"|"LOGIC"' "$FAILURE_LOG" | while read -r line; do
+            log "  -> $line"
+        done
+    fi
+    
+    if [ "${TRANSIENT_COUNT:-0}" -gt 0 ]; then
+        log "🟡 ${TRANSIENT_COUNT:-0} transient failures (will auto-retry next run)"
+    fi
+fi
+
 if [ "$ERRORS" -gt 0 ]; then
     log "⚠️  $ERRORS errors in this run"
     exit 1
