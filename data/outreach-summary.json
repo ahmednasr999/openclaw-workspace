@@ -2,17 +2,17 @@
   "meta": {
     "agent": "outreach-agent",
     "version": "1.0.0",
-    "generated_at": "2026-03-21T00:00:01.223557+02:00",
-    "duration_ms": 0,
+    "generated_at": "2026-03-21T04:00:02.258995+02:00",
+    "duration_ms": 3,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "8c224376",
+    "run_id": "b881a5e2",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
-    "scan_time": "2026-03-21T00:00:01.223352+02:00",
+    "scan_time": "2026-03-21T04:00:02.256539+02:00",
     "today": {
       "date": "2026-03-21",
       "target": 5,
@@ -84,20 +84,20 @@
   },
   "recommendations": [
     {
-      "id": "rec-8c224376-0",
+      "id": "rec-b881a5e2-0",
       "action": "send_follow_ups",
       "target": "1 overdue follow-ups",
       "reason": "Follow-up dates have passed",
       "urgency": "high",
-      "timestamp": "2026-03-21T00:00:01.223398+02:00"
+      "timestamp": "2026-03-21T04:00:02.258768+02:00"
     },
     {
-      "id": "rec-8c224376-1",
+      "id": "rec-b881a5e2-1",
       "action": "research_more_leads",
       "target": "Outreach queue",
       "reason": "Queue depth (2) is low - add more leads",
       "urgency": "medium",
-      "timestamp": "2026-03-21T00:00:01.223405+02:00"
+      "timestamp": "2026-03-21T04:00:02.258784+02:00"
     }
   ]
 }

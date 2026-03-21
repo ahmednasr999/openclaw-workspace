@@ -148,21 +148,15 @@ CANDIDATE PROFILE:
     
     jobs_text = ""
     for i, job in enumerate(jobs, 1):
-        # Use full JD text if available (from jobs-enrich-jd.py), else fall back to snippet
-        description = job.get('jd_text', '') or job.get('raw_snippet', 'N/A')
-        desc_label = "Full JD" if job.get('jd_text') else "Snippet"
-        # Truncate to 800 chars for JD, 200 for snippet (balance context vs token cost)
-        max_desc = 800 if job.get('jd_text') else 200
-        nationals_flag = " ⚠️ NATIONALS-ONLY DETECTED" if job.get('nationals_only') else ""
         jobs_text += f"""
-JOB {i}:{nationals_flag}
+JOB {i}:
 - Title: {job.get('title', 'Unknown')}
 - Company: {job.get('company', 'Unknown')}
 - Location: {job.get('location', 'Unknown')}
 - Seniority: {job.get('seniority', 'Unknown')}
 - Domain Match: {job.get('domain_match', False)}
 - Keyword Score: {job.get('keyword_score', 0)}
-- {desc_label}: {description[:max_desc]}
+- Snippet: {job.get('raw_snippet', 'N/A')[:200]}
 """
     
     prompt = f"""{candidate_profile}
@@ -182,26 +176,6 @@ OUTPUT FORMAT (JSON array):
   {{"job_num": 2, "score": 4, "verdict": "SKIP", "reason": "Hands-on engineering focus, not strategic"}},
   ...
 ]
-
-
-═══════════════════════════════════════════════════════════
-GOLDEN RULES (DO NOT MODIFY — permanent constraints):
-- Always score based on TITLE + COMPANY + LOCATION even when no description is available
-- Never penalize a job for missing description — title is the primary signal
-- A job titled "Director Digital Transformation" at a GCC company is MINIMUM a 7
-- Never score a role 7+ if it contradicts the dealbreakers below
-═══════════════════════════════════════════════════════════
-
-
-AUTO-LEARNED EXCLUSION RULES (v1):
-
-DEALBREAKER — NATIONALS ONLY (AUTOMATIC SKIP):
-- If title or description contains ANY of the following, score 1 and SKIP immediately:
-  "nationals only", "UAE national", "Emirati only", "Saudi only", "Kuwaiti national",
-  "Bahraini national", "Qatari national", "Omani national", "citizen only", "GCC national"
-- These roles are legally restricted and cannot be applied for. Do NOT score them 7+.
-- Pattern to detect: parenthetical like "(UAE Nationals Only)" or dash like "– UAE National"
-
 
 SCORING GUIDELINES:
 - 9-10: Perfect match - exact target role (DT Director, VP PMO, Head of Technology), target location (GCC), strong domain

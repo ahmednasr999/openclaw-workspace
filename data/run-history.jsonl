@@ -85,3 +85,9 @@
 {"agent": "jobs-review", "run_id": "492eb122", "started": "2026-03-21T01:46:57.197172+02:00", "duration_ms": 185175, "status": "success", "records": 9, "error": null}
 {"agent": "jobs-review", "run_id": "fbd4d7cd", "started": "2026-03-21T01:49:54.819825+02:00", "duration_ms": 153099, "status": "success", "records": 9, "error": null}
 {"agent": "jobs-source-indeed", "run_id": "31a631a2", "started": "2026-03-21T02:01:11.375952+02:00", "duration_ms": 70065, "status": "success", "records": 5, "error": null}
+{"agent": "outreach-agent", "run_id": "b881a5e2", "started": "2026-03-21T04:00:02.259515+02:00", "duration_ms": 3, "status": "success", "records": 8, "error": null}
+{"agent": "content-agent", "run_id": "5f4029c9", "started": "2026-03-21T04:00:03.417666+02:00", "duration_ms": 999, "status": "success", "records": 7, "error": null}
+{"agent": "email-agent", "run_id": "85a0ec0f", "started": "2026-03-21T04:00:03.905728+02:00", "duration_ms": 1685, "status": "success", "records": 10, "error": null}
+{"agent": "pipeline-agent", "run_id": "ea88f441", "started": "2026-03-21T04:00:09.593044+02:00", "duration_ms": 7261, "status": "success", "records": 9, "error": null}
+{"agent": "system-agent", "run_id": "ec3cf5af", "started": "2026-03-21T04:00:12.674888+02:00", "duration_ms": 10264, "status": "success", "records": 6, "error": null}
+{"agent": "daily-learner", "run_id": "9c97670a", "started": "2026-03-21T04:13:44.394291+02:00", "duration_ms": 7, "status": "success", "records": 6, "error": null}
