@@ -1,0 +1,28 @@
+{
+  "iterations": [
+    {
+      "iteration": 1,
+      "timestamp": "2026-03-21T17:50:10.818617+02:00",
+      "post_count": 30,
+      "avg_engagement": 9.7,
+      "max_engagement": 69,
+      "analysis_summary": {
+        "top_patterns": [
+          "News hooks dominate the top 3 (Ranks 1, 6) — timely, platform-relevant claims get the highest engagement",
+          "Personal stories paired with measurable, concrete experiences perform strongly (Ranks 2-3: Salesforce rollout, 8-country PMO)",
+          "TAM (Total Addressable Market) topic appears in all top 3 posts — industry-scale insights outperform generic advice"
+        ],
+        "actionable_rules": [
+          "Lead with a news hook or contrarian claim — 'LinkedIn just became...' or 'Most [common practice] fail...' types generate 3-5x more engagement than pure insights",
+          "Pair every insight with a personal story or specific metric — 'I built a PMO across 8 countries' outperforms abstract observations",
+          "Anchor posts in a named topic (TAM, Growth, etc.) — topical posts average 4-5x more engagement than topic-free posts",
+          "Keep titles under 15 words: one idea, one hook, no preamble. 'There's a platform tracking the entire planet' (13 eng) vs 'Intel taught me precision' (0 eng) proves brevity wins",
+          "End with a question or invite — posts with explicit CTAs for comments (hiring posts have 0 comments) need 'What do you think?' framing"
+        ]
+      },
+      "prompt_file": "/root/.openclaw/workspace/data/linkedin-autoresearch/prompts/linkedin-writer-v1.md"
+    }
+  ],
+  "best_avg_engagement": 9.7,
+  "last_updated": "2026-03-21T17:50:10.818632+02:00"
+}
