@@ -198,16 +198,30 @@ def create_briefing():
                     if comment:
                         blocks.append(bul(bold("   Draft: "), plain(comment[:280])))
     
-    # ── OUTREACH ──
-    blocks.append(h2("🤝 Outreach"))
-    next_acts = outreach.get("next_actions", [])[:3]
-    if next_acts:
-        blocks.append(bul(plain(" | ".join(f"{a.get('next_action','?')}: {a.get('name','?')}" for a in next_acts))))
-    weekly = outreach.get("this_week", {})
-    if weekly:
-        blocks.append(bul(plain(f"This week: {weekly.get('sent',0)} sent | {weekly.get('accepted',0)} accepted | {weekly.get('pending',0)} pending")))
+    # ── SUGGESTED CONNECTIONS ──
+    outreach_path = DATA_DIR / "outreach-suggestions.json"
+    if outreach_path.exists():
+        outreach_data = json.load(open(outreach_path))
+        suggestions = outreach_data.get("suggestions", [])[:5]
+        if suggestions:
+            blocks.append(h2(f"🤝 Connect ({len(suggestions)} suggestions)"))
+            for idx, s in enumerate(suggestions, 1):
+                name = s.get("name", "?")[:30]
+                role = s.get("role", "")[:40]
+                company = s.get("company", "?")[:25]
+                url = s.get("url", "")
+                reason = s.get("reason", "")[:60]
+                if url:
+                    blocks.append(bul(bold(f"#{idx} "), linked_text(name, url), plain(f" - {role}" if role else "")))
+                    blocks.append(bul(plain(f"   {reason}")))
+                else:
+                    blocks.append(bul(bold(f"#{idx} {name}"), plain(f" at {company}")))
+        else:
+            blocks.append(h2("🤝 Connect"))
+            blocks.append(bul(plain("No new suggestions today")))
     else:
-        blocks.append(bul(plain("No outreach queued")))
+        blocks.append(h2("🤝 Connect"))
+        blocks.append(bul(plain("Outreach agent not run yet")))
     
     # ── DATA QUALITY (compact) ──
     blocks.append(h2("📡 Data Quality"))
