@@ -2,14 +2,14 @@
   "meta": {
     "agent": "email-agent",
     "version": "1.0.0",
-    "generated_at": "2026-03-21T12:00:03.907624+02:00",
-    "duration_ms": 1782,
+    "generated_at": "2026-03-21T18:00:20.505552+02:00",
+    "duration_ms": 18166,
     "ttl_hours": 4,
-    "status": "success",
-    "error": null,
-    "run_id": "bf99b87f",
+    "status": "partial",
+    "error": "Himalaya list failed: \u001b[2m2026-03-21T16:00:20.413404Z\u001b[0m \u001b[33m WARN\u001b[0m \u001b[2mimap_codec::response\u001b[0m\u001b[2m:\u001b[0m Rectified missing `text` to \"...\"    \n\u001b[2m2026-03-21T16:00:20.413441Z\u001b[0m \u001b[33m WARN\u001b[0m \u001b[2mimap_client::tasks::resolver\u001b[0m\u001b[2m:\u001b[0m received unsolicited \u001b[3munsolicited\u001b[0m\u001b[2m=\u001b[0mStatus(Untagged(StatusBody { kind: Ok, code: Some(Other(CodeOther(b\"HIGHESTMODSEQ 33365134\"))), text: Text(\"...\") }))\n\u001b[2m2026-03-21T16:00:20.413468Z\u001b[0m \u001b[33m WARN\u001b[0m \u001b[2mimap_client::tasks::tasks::select\u001b[0m\u001b[2m:\u001b[0m missing required UNSEEN OK untagged response\n\u001b[31mThe application panicked (crashed).\u001b[0m\nMessage:  \u001b[36massertion failed: self.is_char_boundary(new_len)\u001b[0m\nLocation: \u001b[35m/rustc/f6e511eec7342f59a25f7c0534f1dbea00d01b14/library/alloc/src/string.rs\u001b[0m:\u001b[35m1407\u001b[0m\n",
+    "run_id": "0ab7b6a7",
     "retries_used": 0,
-    "data_freshness": "fresh"
+    "data_freshness": "stale"
   },
   "data": {
     "scan_time": "2026-03-21T12:00:03.907280+02:00",
@@ -31,12 +31,6 @@
     "follow_ups_needed": [],
     "actionable_count": 0
   },
-  "kpi": {
-    "emails_processed": 50,
-    "actionable": 0,
-    "interviews_detected": 0,
-    "recruiter_messages": 0,
-    "unread_actionable": 0
-  },
+  "kpi": {},
   "recommendations": []
 }
