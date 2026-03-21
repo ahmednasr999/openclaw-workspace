@@ -111,3 +111,13 @@
 # Applied via Indeed (Mar 21, 2026)
 5bd6d3474b0865fa | Valtech Group | Experience Operations Director | 2026-03-21 | Applied
 025f90f1df941203 | FMC Network | CTO | 2026-03-21 | Applied
+
+# Applied (Mar 21, 2026 - Batch 2)
+ad0553c8b7e3d398 | Netcracker Technology | QA Director - Middle East | 2026-03-21 | Applied
+4383733458 | Talent Connect Group | Head of PMO & Strategic Operations | 2026-03-21 | Applied
+4360133249 | Qiddiya | Director Data Analytics | 2026-03-21 | Applied
+4366537196 | The Customization Group | Head of CRM (Next-Gen, AI-Driven) | 2026-03-21 | Applied
+4378141671 | Confidential | Head of Operations & AI Optimisation | 2026-03-21 | Applied
+4387231698 | Talent Connect Group | Principal Data & AI FinTech | 2026-03-21 | Applied
+4372535079 | LeadingEdge HR Solutions | Head of Enterprise Architecture KSA | 2026-03-21 | Applied
+4372537019 | LeadingEdge HR Solutions | Head of DevOps & Infrastructure KSA | 2026-03-21 | Applied
