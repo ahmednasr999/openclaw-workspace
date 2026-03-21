@@ -152,11 +152,32 @@ def search_profiles(company, role_query="recruiter OR HR OR talent acquisition")
                 if len(parts) >= 2:
                     person_role = parts[1].strip()[:60]
 
+            # Signal-based scoring (Outbound Strategist pattern)
+            signal_score = 0
+            role_lower = person_role.lower()
+            title_lower = title.lower()
+            
+            # Tier 1: Direct hiring signals (highest value)
+            if any(w in role_lower or w in title_lower for w in ["talent acquisition", "recruiter", "recruiting", "hiring"]):
+                signal_score += 30
+            # Tier 2: HR leadership
+            elif any(w in role_lower or w in title_lower for w in ["hr director", "head of hr", "chief people", "chro", "vp people", "vp hr"]):
+                signal_score += 25
+            # Tier 3: Hiring manager (executive at target company)
+            elif any(w in role_lower or w in title_lower for w in ["cto", "cio", "vp", "director", "head of", "chief"]):
+                signal_score += 20
+            # Tier 4: General HR
+            elif any(w in role_lower or w in title_lower for w in ["human resources", "hr ", "people operations"]):
+                signal_score += 15
+            else:
+                signal_score += 5
+            
             profiles.append({
                 "name": name[:50],
                 "role": person_role[:80],
                 "url": clean,
                 "company": company,
+                "signal_score": signal_score,
             })
 
         return profiles
@@ -233,7 +254,8 @@ def run_outreach():
                 unique_profiles.append(p)
 
         if unique_profiles:
-            # Pick top 1-2 per company
+            # Rank by signal score, pick top 1-2 per company
+            unique_profiles.sort(key=lambda x: x.get("signal_score", 0), reverse=True)
             for p in unique_profiles[:2]:
                 p["applied_role"] = comp["role"]
                 p["applied_date"] = comp["applied_date"]

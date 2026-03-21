@@ -175,8 +175,10 @@ def create_briefing():
     elif radar_path.exists() and json.load(open(radar_path)).get("top_posts"):
         blocks.append(bul(plain("📣 No post today — engage via Comment Radar")))
     
-    # Today's actions
+    # Today's actions + algorithm reminder
     blocks.append(bul(bold("▶ Actions: "), plain(f"1) Apply to {len(submit_jobs)} SUBMIT jobs | 2) Post LinkedIn | 3) Comment Radar")))
+    if li_has:
+        blocks.append(bul(plain("⏰ After posting: stay active 60 min, reply to every comment (algorithm test)")))
     
     # ── LINKEDIN COMMENT RADAR ──
     if radar_path.exists():
