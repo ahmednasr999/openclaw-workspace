@@ -177,6 +177,26 @@ OUTPUT FORMAT (JSON array):
   ...
 ]
 
+
+═══════════════════════════════════════════════════════════
+GOLDEN RULES (DO NOT MODIFY — permanent constraints):
+- Always score based on TITLE + COMPANY + LOCATION even when no description is available
+- Never penalize a job for missing description — title is the primary signal
+- A job titled "Director Digital Transformation" at a GCC company is MINIMUM a 7
+- Never score a role 7+ if it contradicts the dealbreakers below
+═══════════════════════════════════════════════════════════
+
+
+AUTO-LEARNED EXCLUSION RULES (v1):
+
+DEALBREAKER — NATIONALS ONLY (AUTOMATIC SKIP):
+- If title or description contains ANY of the following, score 1 and SKIP immediately:
+  "nationals only", "UAE national", "Emirati only", "Saudi only", "Kuwaiti national",
+  "Bahraini national", "Qatari national", "Omani national", "citizen only", "GCC national"
+- These roles are legally restricted and cannot be applied for. Do NOT score them 7+.
+- Pattern to detect: parenthetical like "(UAE Nationals Only)" or dash like "– UAE National"
+
+
 SCORING GUIDELINES:
 - 9-10: Perfect match - exact target role (DT Director, VP PMO, Head of Technology), target location (GCC), strong domain
 - 7-8: Strong match - right seniority (Director/VP/Head/SVP/C-level), relevant domain, target geography
