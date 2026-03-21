@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-03-21T14:01:11.732798+02:00",
-    "duration_ms": 69909,
+    "generated_at": "2026-03-21T15:55:38.520648+02:00",
+    "duration_ms": 68263,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "fedb123a",
+    "run_id": "3fd67e47",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -54,26 +54,6 @@
       "filter_reason": null
     },
     {
-      "id": "indeed-in-94e320e9f2c31b95",
-      "source": "indeed",
-      "title": "Systems & Service Operations Director \u2013 Controls",
-      "company": "Johnson Controls",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=94e320e9f2c31b95",
-      "posted": "2026-03-19",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 20,
-      "match_keywords": [
-        "ai",
-        "director",
-        "leadership"
-      ],
-      "raw_snippet": "**What you will do**\n\n\nThe Systems \\& Service Operations Director for Controls is accountable for operational governance and execution excellence across the Controls Order\\-to\\-Cash lifecycle. This role ensures disciplined Percentage of Completion management, predictable backlog\\-to\\-invoice conversion, and strong system governance across countries and Controls domains. The position establishes standard work through robust SOPs and provides functional leadership to country and domain systems lea",
-      "relevant": true,
-      "filter_reason": null
-    },
-    {
       "id": "indeed-in-ad0553c8b7e3d398",
       "source": "indeed",
       "title": "QA Director - Middle East",
@@ -98,8 +78,8 @@
   ],
   "kpi": {
     "searches_run": 66,
-    "results_per_search": 0.98,
-    "unique_jobs": 4,
+    "results_per_search": 0.91,
+    "unique_jobs": 3,
     "errors": 41
   },
   "recommendations": []

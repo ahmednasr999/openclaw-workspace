@@ -65,7 +65,7 @@ def load_applied_ids() -> set[str]:
                     parts = line.split("|")
                     if parts:
                         job_id = parts[0].strip()
-                        if job_id.isdigit():
+                        if job_id and len(job_id) >= 6:  # Any ID format (numeric or hex)
                             applied.add(job_id)
     except Exception as e:
         print(f"  Warning: Could not load applied IDs: {e}")

@@ -104,3 +104,4 @@
 {"agent": "pipeline-agent", "run_id": "3fc8d34b", "started": "2026-03-21T12:00:09.609784+02:00", "duration_ms": 7492, "status": "success", "records": 9, "error": null}
 {"agent": "system-agent", "run_id": "f671458b", "started": "2026-03-21T12:00:11.259407+02:00", "duration_ms": 9099, "status": "success", "records": 6, "error": null}
 {"agent": "jobs-source-indeed", "run_id": "fedb123a", "started": "2026-03-21T14:01:11.733636+02:00", "duration_ms": 69910, "status": "success", "records": 4, "error": null}
+{"agent": "jobs-source-indeed", "run_id": "3fd67e47", "started": "2026-03-21T15:55:38.521039+02:00", "duration_ms": 68264, "status": "success", "records": 3, "error": null}

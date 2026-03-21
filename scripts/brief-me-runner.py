@@ -51,7 +51,6 @@ def load_data():
 def create_briefing():
     data = load_data()
     today = datetime.now(CAIRO).strftime("%Y-%m-%d")
-    today_display = datetime.now(CAIRO).strftime("%A, %B %d, %Y")
     
     pipe = _adapters.adapt_pipeline(data["pipeline"])
     jobs = _adapters.adapt_jobs(data["jobs"])
@@ -60,41 +59,20 @@ def create_briefing():
     outreach = _adapters.adapt_outreach(data["outreach"])
     email = _adapters.adapt_email(data["email"])
     
-    submit_jobs = jobs.get("submit", [])[:10]  # Cap at 10 to stay under Notion's 100-block limit
-    review_jobs = jobs.get("review", [])[:10]
+    # Cap jobs to stay under Notion's 100-block limit
+    submit_jobs = jobs.get("submit", [])[:8]
+    review_jobs = jobs.get("review", [])[:8]
     active = pipe.get("active_count", 0)
     health = content.get("content_health", {})
     pipeline_c = content.get("pipeline", {})
-    infra = sys_adapted.get("infrastructure", {})
     cats = email.get("categories", {})
-    # email is already adapted via adapt_email
-    
-    # Build blocks
-    blocks = []
-    blocks.append(callout("No urgent items today. All systems operational.", "🟢"))
-    blocks.append(div())
-    
-    # PIPELINE
-    blocks.append(h2("📋 Pipeline Update"))
-    app_statuses = {k:v for k,v in pipe.get("by_status",{}).items() if "discovered" not in k.lower()}
-    blocks.append(bul(plain(f"Active applications: {active} | Total tracked: {pipe.get('total_applications', 0)}")))
-    blocks.append(bul(plain(f"External confirmed: {pipe.get('external_applied_count', 0)}")))
-    if app_statuses:
-        blocks.append(bul(plain("By status: " + ", ".join(f"{k}: {v}" for k,v in app_statuses.items() if v > 0))))
-    tw = pipe.get("this_week", {})
-    blocks.append(bul(plain(f"This week: {tw.get('applied', 0)} applications")))
-    funnel = pipe.get("conversion_funnel", {})
-    blocks.append(bul(plain(f"Funnel: {funnel.get('applied',0)} applied > {funnel.get('screening',0)} screening > {funnel.get('interview',0)} interview > {funnel.get('offer',0)} offer")))
-    stale = pipe.get("stale_applications", [])
-    blocks.append(bul(plain(f"Stale (14+ days): {len(stale)}" if stale else "No stale applications")))
-    followups = pipe.get("follow_ups_overdue", [])
-    blocks.append(bul(plain(f"Follow-ups overdue: {len(followups)}" if followups else "No overdue follow-ups")))
     interviews = pipe.get("interviews_upcoming", [])
-    blocks.append(bul(plain(f"Upcoming interviews: {len(interviews)}" if interviews else "No upcoming interviews")))
-    blocks.append(div())
+    li_post_path = DATA_DIR / "linkedin-post.json"
+    radar_path = DATA_DIR / "comment-radar.json"
+    infra = sys_adapted.get("infrastructure", {})
+    hc = sys_adapted.get("agent_health_count", 0)
+    tc = sys_adapted.get("agent_total_count", 0)
     
-    # JOBS - ALL with clickable links + ATS
-    blocks.append(h2("🔍 New Job Recommendations"))
     # Count total scanned from jobs-merged.json
     merged_path = DATA_DIR / "jobs-merged.json"
     total_scanned = 0
@@ -107,12 +85,39 @@ def create_briefing():
         for mj in (merged_jobs if isinstance(merged_jobs, list) else []):
             for s in mj.get("sources", [mj.get("source", "?")]):
                 source_counts[s] = source_counts.get(s, 0) + 1
-    source_summary = " | ".join(f"{s.upper()}: {c}" for s, c in sorted(source_counts.items(), key=lambda x: -x[1]))
-    blocks.append(bul(plain(f"Scanned {total_scanned} jobs → {len(submit_jobs)} SUBMIT | {len(review_jobs)} REVIEW")))
+    source_summary = " | ".join(f"{s.upper()}: {c}" for s, c in sorted(source_counts.items(), key=lambda x: -x[1])[:5])
+    
+    avg_fit = jobs.get("kpi", {}).get("avg_fit_score", "?")
+    n_int = len(cats.get("interview_invite", []))
+    n_rec = len(cats.get("recruiter_reach", []))
+    alert_list = sys_adapted.get("alerts", [])
+    gw_status = "✅" if infra.get("gateway_healthy") else "❌"
+    
+    # Build blocks — NO dividers to save block count
+    blocks = []
+    blocks.append(callout("No urgent items today. All systems operational.", "🟢"))
+    
+    # ── PIPELINE + SYSTEM (consolidated) ──
+    blocks.append(h2("📋 Pipeline & System"))
+    funnel = pipe.get("conversion_funnel", {})
+    blocks.append(bul(
+        plain(f"Pipeline: {active} active | {pipe.get('total_applications',0)} total | "),
+        plain(f"Funnel: {funnel.get('applied',0)}→{funnel.get('screening',0)}→{funnel.get('interview',0)}→{funnel.get('offer',0)}"),
+        plain(f" | Interviews: {len(interviews)} | Stale: {len(pipe.get('stale_applications',[]))}")
+    ))
+    blocks.append(bul(
+        plain(f"System: Disk {infra.get('disk_percent','?')}% | RAM {infra.get('ram_percent','?')}% | "),
+        plain(f"Gateway {gw_status} | Agents {hc}/{tc} healthy")
+    ))
+    if alert_list:
+        blocks.append(bul(plain("⚠️ " + " | ".join(a.get('message', str(a)) for a in alert_list[:2]))))
+    
+    # ── JOBS ──
+    blocks.append(h2(f"🔍 Jobs ({total_scanned} scanned → {len(submit_jobs)} SUBMIT | {len(review_jobs)} REVIEW)"))
     if source_summary:
         blocks.append(bul(plain(f"Sources: {source_summary}")))
     
-    blocks.append(h3("🟢 SUBMIT — Strong Career Fit"))
+    blocks.append(h3("🟢 SUBMIT"))
     for idx, job in enumerate(submit_jobs, 1):
         fit = job.get("career_fit_score", "?")
         ats = job.get("ats_score", 0)
@@ -120,20 +125,16 @@ def create_briefing():
         company = job.get("company", "?")
         location = job.get("location", "?")
         url = job.get("url", "")
-        reason = job.get("verdict_reason", "")
-        
-        source = ", ".join(job.get("sources", [job.get("source", "?")])).upper()
-        parts = [bold(f"#{idx} [Fit: {fit}/10 | ATS: {ats}/100 | {source}] ")]
+        source = ", ".join(job.get("sources", [job.get("source", "?")])).upper()[:20]
+        parts = [bold(f"#{idx} [Fit:{fit} ATS:{ats} {source}] ")]
         if url:
             parts.append(linked_text(title, url))
         else:
             parts.append(plain(title))
-        parts.append(plain(f" at {company} ({location})"))
+        parts.append(plain(f" @ {company} ({location})"))
         blocks.append(bul(*parts))
-        if reason:
-            blocks.append(bul(plain(f"  → {reason}")))
     
-    blocks.append(h3("🟡 REVIEW — Worth a Look"))
+    blocks.append(h3("🟡 REVIEW"))
     for idx, job in enumerate(review_jobs, 1):
         fit = job.get("career_fit_score", "?")
         ats = job.get("ats_score", 0)
@@ -141,158 +142,84 @@ def create_briefing():
         company = job.get("company", "?")
         location = job.get("location", "?")
         url = job.get("url", "")
-        reason = job.get("verdict_reason", "")
-        
-        source = ", ".join(job.get("sources", [job.get("source", "?")])).upper()
-        parts = [bold(f"#{idx} [Fit: {fit}/10 | ATS: {ats}/100 | {source}] ")]
+        source = ", ".join(job.get("sources", [job.get("source", "?")])).upper()[:20]
+        parts = [bold(f"#{idx} [Fit:{fit} ATS:{ats} {source}] ")]
         if url:
             parts.append(linked_text(title, url))
         else:
             parts.append(plain(title))
-        parts.append(plain(f" at {company} ({location})"))
+        parts.append(plain(f" @ {company} ({location})"))
         blocks.append(bul(*parts))
-        if reason:
-            blocks.append(bul(plain(f"  → {reason}")))
     
-    blocks.append(div())
-    
-    # EMAIL
-    blocks.append(h2("📧 Email Highlights"))
-    blocks.append(bul(plain(f"Scanned: {email.get('scanned_count', 0)} emails")))
-    n_int = len(cats.get("interview_invite", []))
-    n_rec = len(cats.get("recruiter_reach", []))
-    if n_int:
-        blocks.append(bul(plain(f"🎯 {n_int} interview invitations detected!")))
-    if n_rec:
-        blocks.append(bul(plain(f"📨 {n_rec} recruiter messages")))
+    # ── EMAIL ──
+    blocks.append(h2("📧 Email"))
+    blocks.append(bul(plain(f"Scanned: {email.get('scanned_count',0)} | 🎯 {n_int} invites | 📬 {n_rec} recruiter reach")))
     if not (n_int or n_rec):
-        blocks.append(bul(plain("No urgent emails detected")))
-    blocks.append(div())
+        blocks.append(bul(plain("No urgent emails")))
     
-    # CONTENT
-    blocks.append(h2("📝 Content Status"))
+    # ── CONTENT + ACTIONS ──
+    blocks.append(h2("📝 Content & Actions"))
     tp = content.get("today", {}).get("scheduled_post", {})
-    if tp and tp.get("title"):
-        blocks.append(bul(plain(f"Today: \"{tp['title']}\" ({tp.get('status','?')})")))
-    else:
-        blocks.append(bul(plain("No post scheduled for today")))
-    blocks.append(bul(plain(f"Streak: {health.get('posting_streak',0)} days | Runway: {health.get('days_until_content_runs_out','?')} days")))
-    blocks.append(bul(plain(f"Pipeline: {pipeline_c.get('ideas',0)} ideas | {pipeline_c.get('drafts',0)} drafts | {pipeline_c.get('scheduled',0)} scheduled | {pipeline_c.get('published',0)} published")))
+    li_has = li_post_path.exists() and json.load(open(li_post_path)).get("has_post")
+    blocks.append(bul(plain(
+        f"Streak: {health.get('posting_streak',0)}d | Runway: {health.get('days_until_content_runs_out','?')}d | "
+        f"Pipeline: {pipeline_c.get('ideas',0)}/{pipeline_c.get('drafts',0)}/{pipeline_c.get('scheduled',0)}/{pipeline_c.get('published',0)}"
+    )))
     
-    # LINKEDIN POST - Today's scheduled post with text + image
-    li_post_path = DATA_DIR / "linkedin-post.json"
-    if li_post_path.exists():
-        li_post = json.load(open(li_post_path))
-        if li_post.get("has_post"):
-            post = li_post["post"]
-            blocks.append(h3("📣 Today's LinkedIn Post"))
-            blocks.append(bul(bold(post.get("title", "Untitled")), plain(f" ({post.get('status', '?')})")))
-            if post.get("hook"):
-                blocks.append(bul(plain(f"Hook: {post['hook'][:200]}")))
-            if post.get("text"):
-                # Show first 500 chars of post text
-                preview = post["text"][:500]
-                if len(post["text"]) > 500:
-                    preview += "..."
-                blocks.append(bul(plain(preview)))
-            if post.get("image_url"):
-                blocks.append(bul(plain(f"🖼️ Image: "), linked_text("View image", post["image_url"])))
-            else:
-                blocks.append(bul(plain("⚠️ No image attached")))
-            if post.get("notion_url"):
-                blocks.append(bul(linked_text("Edit in Notion →", post["notion_url"])))
-        elif li_post.get("next_scheduled"):
-            ns = li_post["next_scheduled"]
-            blocks.append(h3("📣 LinkedIn Post"))
-            blocks.append(bul(plain(f"No post today. Next: \"{ns.get('title','?')}\" on {ns.get('date','?')}")))
-    blocks.append(div())
+    # LinkedIn post
+    if li_has:
+        li_post = json.load(open(li_post_path))["post"]
+        blocks.append(bul(bold("📣 Today: "), plain(li_post.get("title","?")[:80] + ( "..." if len(li_post.get("title","")) > 80 else ""))))
+        if not li_post.get("image_url"):
+            blocks.append(bul(plain("⚠️ No image attached!")))
+    elif radar_path.exists() and json.load(open(radar_path)).get("top_posts"):
+        blocks.append(bul(plain("📣 No post today — engage via Comment Radar")))
     
-    # LINKEDIN COMMENT RADAR
-    radar_path = DATA_DIR / "comment-radar.json"
+    # Today's actions
+    blocks.append(bul(bold("▶ Actions: "), plain(f"1) Apply to {len(submit_jobs)} SUBMIT jobs | 2) Post LinkedIn | 3) Comment Radar")))
+    
+    # ── LINKEDIN COMMENT RADAR ──
     if radar_path.exists():
         radar = json.load(open(radar_path))
-        top_posts = radar.get("top_posts", [])
+        top_posts = radar.get("top_posts", [])[:5]
         if top_posts:
-            blocks.append(h2("📡 LinkedIn Comment Radar"))
-            blocks.append(bul(plain(f"Found {radar.get('posts_found', 0)} posts | Top {len(top_posts)} shown")))
-            for idx, rp in enumerate(top_posts[:5], 1):  # Show top 5 in briefing
+            blocks.append(h2("📡 LinkedIn Radar"))
+            blocks.append(bul(plain(f"{radar.get('posts_found',0)} posts found | Top {len(top_posts)}:")))
+            for idx, rp in enumerate(top_posts, 1):
                 url = rp.get("url", "")
-                author = rp.get("author", "Unknown")[:30]
+                author = rp.get("author", "?")[:25]
                 pqs = rp.get("pqs", 0)
-                preview = rp.get("preview", "")[:100]
+                preview = rp.get("preview", "")[:80]
                 if url:
-                    blocks.append(bul(bold(f"#{idx} [PQS:{pqs}] "), linked_text(f"{author}", url)))
+                    blocks.append(bul(bold(f"#{idx}[PQS:{pqs}] "), linked_text(f"{author}", url), plain(f" — {preview}...")))
                 else:
-                    blocks.append(bul(bold(f"#{idx} [PQS:{pqs}] {author}")))
-                if preview:
-                    blocks.append(bul(plain(f"  {preview}...")))
-            blocks.append(div())
+                    blocks.append(bul(bold(f"#{idx}[PQS:{pqs}] {author}")))
     
-    # OUTREACH
-    blocks.append(h2("🤝 Network & Outreach"))
-    next_acts = outreach.get("next_actions", [])
+    # ── OUTREACH ──
+    blocks.append(h2("🤝 Outreach"))
+    next_acts = outreach.get("next_actions", [])[:3]
     if next_acts:
-        for a in next_acts[0:3]:
-            blocks.append(bul(plain(f"{a.get('next_action','?')}: {a.get('name','?')} ({a.get('title','')}, {a.get('company','')})")))
-    else:
-        blocks.append(bul(plain("No outreach actions queued")))
+        blocks.append(bul(plain(" | ".join(f"{a.get('next_action','?')}: {a.get('name','?')}" for a in next_acts))))
     weekly = outreach.get("this_week", {})
     if weekly:
         blocks.append(bul(plain(f"This week: {weekly.get('sent',0)} sent | {weekly.get('accepted',0)} accepted | {weekly.get('pending',0)} pending")))
-    blocks.append(div())
-    
-    # SYSTEM
-    blocks.append(h2("🖥️ System Health"))
-    infra = sys_adapted.get("infrastructure", {})
-    gw_status = "✅ healthy" if infra.get("gateway_healthy") else "❌ down"
-    blocks.append(bul(plain(f"Disk: {infra.get('disk_percent','?')}% | RAM: {infra.get('ram_percent','?')}% | Gateway: {gw_status}")))
-    hc = sys_adapted.get("agent_health_count", 0)
-    tc = sys_adapted.get("agent_total_count", 0)
-    blocks.append(bul(plain(f"Agents: {hc}/{tc} healthy")))
-    alert_list = sys_adapted.get("alerts", [])
-    if alert_list:
-        for a in alert_list[0:3]:
-            blocks.append(bul(plain(f"⚠️ {a.get('message', str(a))}")))
     else:
-        blocks.append(bul(plain("No alerts")))
-    blocks.append(div())
+        blocks.append(bul(plain("No outreach queued")))
     
-    # KPIs
-    blocks.append(h2("📊 KPI Dashboard"))
-    avg_fit = jobs.get("kpi", {}).get("avg_fit_score", "?")
-    blocks.append(bul(plain(f"Pipeline: {active} active | {len(interviews)} interviews")))
-    blocks.append(bul(plain(f"Jobs: {len(submit_jobs)} SUBMIT, {len(review_jobs)} REVIEW | Avg fit: {avg_fit}")))
-    blocks.append(bul(plain(f"Content: {pipeline_c.get('published',0)} published | {health.get('posting_streak',0)}d streak")))
-    blocks.append(bul(plain(f"System: {hc}/{tc} agents healthy")))
-    blocks.append(div())
-    
-    # ACTIONS
-    blocks.append(h2("▶️ Today's Actions"))
-    blocks.append(bul(plain(f"1. Review {len(submit_jobs)} SUBMIT job recommendations and apply")))
-    blocks.append(bul(plain(f"2. Check pipeline for follow-up opportunities ({active} active)")))
-    blocks.append(bul(plain(f"3. Content runway: {health.get('days_until_content_runs_out','?')} days")))
-    # LinkedIn actions
-    if li_post_path.exists() and json.load(open(li_post_path)).get("has_post"):
-        blocks.append(bul(plain("4. Review and post today's LinkedIn content")))
-    if radar_path.exists() and json.load(open(radar_path)).get("top_posts"):
-        blocks.append(bul(plain("5. Comment on top LinkedIn posts for engagement")))
-    blocks.append(div())
-    
-    # DATA QUALITY
+    # ── DATA QUALITY (compact) ──
     blocks.append(h2("📡 Data Quality"))
-    for key, d in data.items():
-        m = d.get("meta", {})
-        e = "✅" if m.get("status") == "success" else "⚠️"
-        blocks.append(bul(plain(f"{e} {m.get('agent',key)}: {m.get('status','?')} | {str(m.get('generated_at','?'))[0:19]} | {m.get('duration_ms',0)}ms")))
+    blocks.append(bul(plain(" | ".join(
+        f"{'✅' if d.get('meta',{}).get('status')=='success' else '⚠️'} {d.get('meta',{}).get('agent',k)}"
+        for k, d in data.items()
+    ))))
     
     # Properties for DB
     total_jobs = len(submit_jobs) + len(review_jobs) + jobs.get("skip_count", 0)
     gen_time = round(sum(d.get("meta", {}).get("duration_ms", 0) for d in data.values()) / 1000, 1)
-    sys_infra = sys_adapted.get("infrastructure", {})
     sys_health = "✅ All Clear"
-    disk_pct = sys_infra.get("disk_percent", 0)
+    disk_pct = infra.get("disk_percent", 0)
     disk_pct = disk_pct if isinstance(disk_pct, (int, float)) else 0
-    if disk_pct > 90 or not sys_infra.get("gateway_healthy", True):
+    if disk_pct > 90 or not infra.get("gateway_healthy", True):
         sys_health = "🔴 Issue"
     elif disk_pct > 80:
         sys_health = "⚠️ Warning"
@@ -304,7 +231,7 @@ def create_briefing():
         "System Health": {"select": {"name": sys_health}},
         "Jobs Found": {"number": total_jobs},
         "Priority Picks": {"number": len(submit_jobs)},
-        "Emails Flagged": {"number": len(email.get("action_required", []))},
+        "Emails Flagged": {"number": n_int + n_rec},
         "Calendar Events": {"number": 0},
         "LinkedIn Impressions": {"number": 0},
         "Model Used": {"rich_text": [{"text": {"content": "MiniMax-M2.7 + ATS Scorer"}}]},
