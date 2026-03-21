@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-03-21T02:01:11.375377+02:00",
-    "duration_ms": 70065,
+    "generated_at": "2026-03-21T14:01:11.732798+02:00",
+    "duration_ms": 69909,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "31a631a2",
+    "run_id": "fedb123a",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -31,24 +31,6 @@
         "api"
       ],
       "raw_snippet": "Why Valtech? We\u2019re advisors, visionaries, creative and techies. We embrace all things digital. We talk to each other. We have fun. We love our clients. We\u2019re looking ahead \u2022 We are global\n\n\n  \n**About Valtech:**\n\n\n\nAt Valtech, we are reshaping the way brands connect with their customers. As a global digital innovation company, we fuse creativity, technology, and strategy to solve complex business challenges and deliver exceptional experiences.\n\n\n\nWith over 6,500 experts in 60\\+ offices across 20",
-      "relevant": true,
-      "filter_reason": null
-    },
-    {
-      "id": "indeed-in-7c275ede242e0fd1",
-      "source": "indeed",
-      "title": "Head of Digital Curriculum Strategy",
-      "company": "SpaceDuc Learning Technologies Ltd",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=7c275ede242e0fd1",
-      "posted": "2026-03-20",
-      "seniority": "Director",
-      "domain_match": true,
-      "keyword_score": 6,
-      "match_keywords": [
-        "head of"
-      ],
-      "raw_snippet": "Transform Digital Learning and Shape the Future of Education\n\nSpaceDuc Learning Technologies Ltd is seeking a forward\\-thinking **Head of Digital Curriculum Strategy** to lead the design, development, and execution of innovative digital learning programs. This role offers the opportunity to shape scalable, technology\\-driven education solutions across diverse learning environments.\n\n**Salary:** AED 30,000 \u2013 AED 40,000 per month  \n**Schedule:** Monday to Friday\n\nAbout the Role\n\nAs Head of Digital",
       "relevant": true,
       "filter_reason": null
     },
@@ -116,9 +98,9 @@
   ],
   "kpi": {
     "searches_run": 66,
-    "results_per_search": 0.85,
-    "unique_jobs": 5,
-    "errors": 42
+    "results_per_search": 0.98,
+    "unique_jobs": 4,
+    "errors": 41
   },
   "recommendations": []
 }

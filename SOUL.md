@@ -38,9 +38,9 @@ Any task that takes >10 seconds goes to a sub-agent. The main agent (NASR) is th
 
 **Model selection for sub-agents:**
 - Coding → Opus 4.6
-- Research/search → MiniMax-M2.5 (free)
+- Research/search → MiniMax-M2.7 (free)
 - Content drafting → Sonnet 4.6
-- Simple script execution → MiniMax-M2.5
+- Simple script execution → MiniMax-M2.7
 
 ### Parallel Execution (Non-Negotiable)
 
