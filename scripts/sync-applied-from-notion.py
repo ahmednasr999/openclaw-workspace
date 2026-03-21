@@ -1,0 +1,87 @@
+#!/usr/bin/env python3
+"""
+sync-applied-from-notion.py - Sync applied job IDs from Notion Pipeline to local filter list.
+
+Runs before each pipeline review to ensure no already-applied jobs resurface.
+Reads Notion Pipeline DB, finds all "Applied" entries, extracts job IDs from URLs,
+and ensures they're in applied-job-ids.txt.
+"""
+import json, re, requests
+from pathlib import Path
+
+NOTION_TOKEN = "NOTION_TOKEN_REDACTED"
+PIPELINE_DB = "3268d599-a162-81b4-b768-f162adfa4971"
+HEADERS = {"Authorization": f"Bearer {NOTION_TOKEN}", "Content-Type": "application/json", "Notion-Version": "2022-06-28"}
+APPLIED_FILE = Path("/root/.openclaw/workspace/jobs-bank/applied-job-ids.txt")
+
+def run():
+    # Load existing IDs
+    existing = set()
+    for line in open(APPLIED_FILE):
+        line = line.strip()
+        if not line or line.startswith("#"):
+            continue
+        parts = line.split("|")
+        if parts:
+            aid = parts[0].strip()
+            if aid and len(aid) >= 6:
+                existing.add(aid)
+    
+    print(f"Existing IDs: {len(existing)}")
+    
+    # Query all pipeline entries
+    all_pages = []
+    has_more = True
+    start_cursor = None
+    while has_more:
+        body = {"page_size": 100}
+        if start_cursor:
+            body["start_cursor"] = start_cursor
+        resp = requests.post(f"https://api.notion.com/v1/databases/{PIPELINE_DB}/query",
+            headers=HEADERS, json=body)
+        data = resp.json()
+        all_pages.extend(data.get("results", []))
+        has_more = data.get("has_more", False)
+        start_cursor = data.get("next_cursor")
+    
+    print(f"Total pipeline entries: {len(all_pages)}")
+    
+    new_ids = []
+    for page in all_pages:
+        props = page.get("properties", {})
+        stage = props.get("Stage", {}).get("select", {})
+        stage_name = stage.get("name", "") if stage else ""
+        
+        # Only sync Applied or Skipped entries
+        if "Applied" not in stage_name and "Skipped" not in stage_name and "Rejected" not in stage_name:
+            continue
+        
+        company_parts = props.get("Company", {}).get("title", [])
+        company = company_parts[0].get("plain_text", "") if company_parts else "?"
+        
+        role_parts = props.get("Role", {}).get("rich_text", [])
+        role = role_parts[0].get("plain_text", "") if role_parts else "?"
+        
+        url = props.get("URL", {}).get("url", "") or ""
+        
+        # Extract IDs from URL
+        url_ids = re.findall(r'[a-f0-9]{10,}|\d{8,}', url)
+        
+        for uid in url_ids:
+            if uid not in existing:
+                new_ids.append(f"{uid} | {company} | {role[:50]} | synced from Notion | {stage_name}")
+                existing.add(uid)
+    
+    if new_ids:
+        with open(APPLIED_FILE, "a") as f:
+            f.write(f"\n# Synced from Notion Pipeline ({len(new_ids)} new)\n")
+            for line in new_ids:
+                f.write(line + "\n")
+        print(f"Added {len(new_ids)} new IDs from Notion")
+    else:
+        print("No new IDs to sync")
+    
+    print(f"Total IDs now: {len(existing)}")
+
+if __name__ == "__main__":
+    run()
