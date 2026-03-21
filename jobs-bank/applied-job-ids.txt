@@ -102,3 +102,12 @@
 4384043000 | Talent Seed | Head of Software Engineering [Fintech] | 2026-03-21
 4320278154 | QAFCO (Qatar Fertiliser Company) | Head of Change Management | 2026-03-21
 4378211126 | Commercial Bank | Head of Enterprise Program Management Office (EPMO) | 2026-03-21
+
+# Skipped (Mar 21, 2026) - nationals only or wrong fit
+4007558068 | First Abu Dhabi Bank (FAB) | Executive Director Private Banking MENA | 2026-03-21 | SKIPPED: UAE nationals only
+4388140969 | ARNVIND GROUP | Head of AI Engineering | 2026-03-21 | SKIPPED: too technical AI/ML
+4379164827 | RAKBANK | EVP Head of Corporate Banking | 2026-03-21 | SKIPPED: UAE nationals only
+
+# Applied via Indeed (Mar 21, 2026)
+5bd6d3474b0865fa | Valtech Group | Experience Operations Director | 2026-03-21 | Applied
+025f90f1df941203 | FMC Network | CTO | 2026-03-21 | Applied
