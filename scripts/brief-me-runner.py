@@ -178,7 +178,55 @@ def create_briefing():
         blocks.append(bul(plain("No post scheduled for today")))
     blocks.append(bul(plain(f"Streak: {health.get('posting_streak',0)} days | Runway: {health.get('days_until_content_runs_out','?')} days")))
     blocks.append(bul(plain(f"Pipeline: {pipeline_c.get('ideas',0)} ideas | {pipeline_c.get('drafts',0)} drafts | {pipeline_c.get('scheduled',0)} scheduled | {pipeline_c.get('published',0)} published")))
+    
+    # LINKEDIN POST - Today's scheduled post with text + image
+    li_post_path = DATA_DIR / "linkedin-post.json"
+    if li_post_path.exists():
+        li_post = json.load(open(li_post_path))
+        if li_post.get("has_post"):
+            post = li_post["post"]
+            blocks.append(h3("📣 Today's LinkedIn Post"))
+            blocks.append(bul(bold(post.get("title", "Untitled")), plain(f" ({post.get('status', '?')})")))
+            if post.get("hook"):
+                blocks.append(bul(plain(f"Hook: {post['hook'][:200]}")))
+            if post.get("text"):
+                # Show first 500 chars of post text
+                preview = post["text"][:500]
+                if len(post["text"]) > 500:
+                    preview += "..."
+                blocks.append(bul(plain(preview)))
+            if post.get("image_url"):
+                blocks.append(bul(plain(f"🖼️ Image: "), linked_text("View image", post["image_url"])))
+            else:
+                blocks.append(bul(plain("⚠️ No image attached")))
+            if post.get("notion_url"):
+                blocks.append(bul(linked_text("Edit in Notion →", post["notion_url"])))
+        elif li_post.get("next_scheduled"):
+            ns = li_post["next_scheduled"]
+            blocks.append(h3("📣 LinkedIn Post"))
+            blocks.append(bul(plain(f"No post today. Next: \"{ns.get('title','?')}\" on {ns.get('date','?')}")))
     blocks.append(div())
+    
+    # LINKEDIN COMMENT RADAR
+    radar_path = DATA_DIR / "comment-radar.json"
+    if radar_path.exists():
+        radar = json.load(open(radar_path))
+        top_posts = radar.get("top_posts", [])
+        if top_posts:
+            blocks.append(h2("📡 LinkedIn Comment Radar"))
+            blocks.append(bul(plain(f"Found {radar.get('posts_found', 0)} posts | Top {len(top_posts)} shown")))
+            for idx, rp in enumerate(top_posts[:5], 1):  # Show top 5 in briefing
+                url = rp.get("url", "")
+                author = rp.get("author", "Unknown")[:30]
+                pqs = rp.get("pqs", 0)
+                preview = rp.get("preview", "")[:100]
+                if url:
+                    blocks.append(bul(bold(f"#{idx} [PQS:{pqs}] "), linked_text(f"{author}", url)))
+                else:
+                    blocks.append(bul(bold(f"#{idx} [PQS:{pqs}] {author}")))
+                if preview:
+                    blocks.append(bul(plain(f"  {preview}...")))
+            blocks.append(div())
     
     # OUTREACH
     blocks.append(h2("🤝 Network & Outreach"))
@@ -223,6 +271,11 @@ def create_briefing():
     blocks.append(bul(plain(f"1. Review {len(submit_jobs)} SUBMIT job recommendations and apply")))
     blocks.append(bul(plain(f"2. Check pipeline for follow-up opportunities ({active} active)")))
     blocks.append(bul(plain(f"3. Content runway: {health.get('days_until_content_runs_out','?')} days")))
+    # LinkedIn actions
+    if li_post_path.exists() and json.load(open(li_post_path)).get("has_post"):
+        blocks.append(bul(plain("4. Review and post today's LinkedIn content")))
+    if radar_path.exists() and json.load(open(radar_path)).get("top_posts"):
+        blocks.append(bul(plain("5. Comment on top LinkedIn posts for engagement")))
     blocks.append(div())
     
     # DATA QUALITY
