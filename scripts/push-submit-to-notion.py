@@ -179,10 +179,10 @@ def main():
         if i > 0:
             time.sleep(0.5)  # Rate limit
         
-        # Fetch JD for SUBMIT jobs only (expensive)
-        jd_text = ""
-        if job.get("verdict") == "SUBMIT":
-            print(f"  Fetching JD: {job.get('title','?')[:40]}...")
+        # Use enriched JD from jobs-summary.json first, fetch only if missing
+        jd_text = job.get("jd_text", "") or job.get("description", "") or job.get("snippet", "")
+        if not jd_text or len(jd_text) < 100:
+            print(f"  Fetching JD (not in summary): {job.get('title','?')[:40]}...")
             jd_text = fetch_jd_text(job.get("url", ""))
         
         if create_notion_entry(job, jd_text):
