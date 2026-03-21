@@ -80,12 +80,65 @@ MIN_SKIP_SIGNALS = 2
 DRIFT_CEILING_PERCENT = 30  # Max 30% drift from original
 
 
+def normalize_job_id(job_id: str) -> str:
+    """
+    Extract the raw identifier from a prefixed job ID.
+    linkedin-li-4379840970 -> 4379840970
+    exa-16462              -> 16462
+    google-in-bdae...       -> bdae...
+    applied-id:4379840970  -> 4379840970
+    """
+    if not job_id:
+        return ""
+    # Strip known source prefixes
+    for prefix in ["linkedin-li-", "li-", "exa-", "google-in-", "indeed-in-",
+                   "bayt-", "naukri-", "applied-id:"]:
+        if job_id.startswith(prefix):
+            return job_id[len(prefix):]
+    return job_id
+
+
 def load_applied_job_ids():
-    """Load set of job IDs that Ahmed actually applied to."""
+    """
+    Load applied job IDs from applied-job-ids.txt.
+    Returns a dict with:
+      - 'ids': set of raw numeric/string IDs (stripped of line content)
+      - 'by_company_role': dict of (company_lower, role_lower) -> True for text-based entries
+      - 'raw': set of full raw ID strings (for normalization)
+    """
     if not APPLIED_IDS_FILE.exists():
-        return set()
+        return {"ids": set(), "by_company_role": {}, "raw": set()}
+
+    ids = set()
+    by_company_role = {}
+    raw = set()
+
     with open(APPLIED_IDS_FILE) as f:
-        return set(line.strip() for line in f if line.strip() and not line.startswith('#'))
+        for line in f:
+            line = line.strip()
+            if not line or line.startswith('#'):
+                continue
+            # Format: job_id | company | role | ...
+            parts = [p.strip() for p in line.split('|')]
+            if not parts:
+                continue
+            raw_id = parts[0]
+
+            if raw_id.isdigit():
+                # Pure numeric ID (LinkedIn format): store stripped
+                ids.add(raw_id)
+                raw.add(raw_id)
+            elif raw_id.startswith('http') or '@' in raw_id:
+                # URL or email-based entry — no matchable ID
+                pass
+            else:
+                # Text-based entry: match on company + role
+                company = parts[1].lower() if len(parts) > 1 else ""
+                role = parts[2].lower() if len(parts) > 2 else ""
+                if company:
+                    by_company_role[(company, role)] = True
+
+    return {"ids": ids, "by_company_role": by_company_role, "raw": raw}
 
 
 def load_jsonl(path):
@@ -128,10 +181,16 @@ def calculate_job_recommendation_accuracy(result):
     """
     Analyze jobs-recommended.jsonl against applied-job-ids.txt.
     Returns accuracy metrics and skip candidates.
+
+    Matching logic:
+    - First try normalized ID match (linkedin-li-XXXX -> XXXX)
+    - Fall back to company+role text match for entries without IDs
     """
     recommendations = load_jsonl(FEEDBACK_DIR / "jobs-recommended.jsonl")
-    applied_ids = load_applied_job_ids()
-    
+    applied = load_applied_job_ids()
+    applied_ids = applied["ids"]
+    applied_company_role = applied["by_company_role"]
+
     if not recommendations:
         return {
             "total_recommendations": 0,
@@ -140,31 +199,60 @@ def calculate_job_recommendation_accuracy(result):
             "accuracy_rate": None,
             "skip_candidates": []
         }
-    
+
     # Group by job_id to count signals
     job_signals = defaultdict(lambda: {"submit_count": 0, "skip_count": 0, "reasons": []})
-    
+
     for rec in recommendations:
         job_id = rec.get("job_id", rec.get("id", ""))
         verdict = rec.get("verdict", "").upper()
         reason = rec.get("reason", "")
-        
+        company = rec.get("company", "").lower().strip()
+        title = rec.get("title", "").lower().strip()
+
         if verdict in ["SUBMIT", "APPLY"]:
             job_signals[job_id]["submit_count"] += 1
         elif verdict in ["SKIP", "REJECT", "REVIEW"]:
             job_signals[job_id]["skip_count"] += 1
             if reason:
                 job_signals[job_id]["reasons"].append(reason)
-    
-    # Calculate accuracy
+
+    # Count matches using both ID and company+role matching
+    applied_from_recs = 0
+    for job_id, signals in job_signals.items():
+        if signals["submit_count"] == 0:
+            continue
+
+        matched = False
+
+        # Try ID-based match
+        raw_id = normalize_job_id(job_id)
+        if raw_id in applied_ids:
+            matched = True
+
+        # Try company+role text match
+        if not matched and company:
+            # Extract role keyword from title for matching
+            role_key = (company, title)
+            if role_key in applied_company_role:
+                matched = True
+            # Also try company-only match as fallback
+            for (c, r), _ in applied_company_role.items():
+                if c == company:
+                    # Partial role match
+                    if any(word in r for word in title.split() if len(word) > 4):
+                        matched = True
+                        break
+
+        if matched:
+            applied_from_recs += 1
+
     total_submit_recs = sum(1 for j in job_signals.values() if j["submit_count"] > 0)
-    applied_from_recs = sum(1 for job_id in job_signals if job_id in applied_ids and job_signals[job_id]["submit_count"] > 0)
-    
+
     # Find skip candidates (2+ consistent skip signals)
     skip_candidates = []
     for job_id, signals in job_signals.items():
         if signals["skip_count"] >= MIN_SKIP_SIGNALS and signals["submit_count"] == 0:
-            # Extract common reason
             reasons = signals["reasons"]
             common_reason = reasons[0] if reasons else "Consistently skipped"
             skip_candidates.append({
@@ -172,7 +260,7 @@ def calculate_job_recommendation_accuracy(result):
                 "skip_signals": signals["skip_count"],
                 "reason": common_reason
             })
-    
+
     return {
         "total_recommendations": len(recommendations),
         "total_unique_jobs": len(job_signals),

@@ -20,9 +20,10 @@ Instead of loading all project context files every session, we use a tiered appr
 | `IDENTITY.md` | Who I am (NASR - Strategic AI Consultant) |
 | `USER.md` | Who Ahmed is (profile, preferences, timezone) |
 | `SOUL.md` | Behavioral rules and operating principles |
-| `HEARTBEAT.md` | If non-empty — critical alerts and time-sensitive items |
+| `HEARTBEAT.md` | If non-empty - critical alerts and time-sensitive items |
+| `config/service-registry.md` | How we connect to every external service (direct API vs Composio vs CLI). MUST be checked before any external service call. |
 
-**Rationale:** These files define core identity and behavioral rules. Without them, the assistant loses essential context for every interaction.
+**Rationale:** These files define core identity, behavioral rules, and service connection methods. Without them, the assistant loses essential context or makes wrong assumptions about how to connect to services.
 
 ---
 

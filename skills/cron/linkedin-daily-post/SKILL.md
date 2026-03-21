@@ -192,3 +192,16 @@ If something fails:
 - Notion update fails → Check property types with GET, fix payload format, retry
 
 **Real cost of giving up (March 19, 2026):** Posted without image → 4 likes lost → deleted and re-posted → cold algorithm restart. Engagement damage is permanent.
+
+
+---
+## 🔧 Auto-Improvement (2026-03-21)
+> Added by weekly-agent-review.py based on recurring failure pattern.
+
+**Pattern detected (2 occurrences):**
+Add completion guard: verify ALL required outputs (image, Notion update, etc.) before marking task done.
+
+**Action required:**
+- Review this section and integrate the fix into the relevant step above.
+- Remove this block once the fix has been applied.
+

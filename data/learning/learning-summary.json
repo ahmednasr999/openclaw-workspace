@@ -1,23 +1,22 @@
 {
-  "generated_at": "2026-03-21T04:13:44.393477+02:00",
+  "generated_at": "2026-03-21T23:13:19.668393+02:00",
   "period": "last_7_days",
   "job_recommendation_accuracy": {
-    "rate": 0.0,
-    "total": 214,
-    "applied": 0
+    "rate": 43.90243902439025,
+    "total": 229,
+    "applied": 18
   },
   "briefing_actionability": {
     "total_briefings": 0,
     "changes_detected": false
   },
   "auto_adjustments": {
-    "skip_patterns_added": 12,
+    "skip_patterns_added": 0,
     "weight_changes": 1,
     "source_rankings_updated": true
   },
   "insights": [
-    "\u26a0\ufe0f Job recommendation accuracy low (0%) \u2014 weights adjusted",
-    "\ud83d\udcdd Added 12 new skip patterns from feedback",
+    "\u26a0\ufe0f Job recommendation accuracy low (44%) \u2014 weights adjusted",
     "\u2696\ufe0f Adjusted 1 keyword weights"
   ]
 }
