@@ -238,20 +238,63 @@ def create_briefing():
         "Generation Time (s)": {"number": gen_time}
     }
     
-    resp = requests.post("https://api.notion.com/v1/pages", headers=HEADERS, json={
-        "parent": {"database_id": BRIEFINGS_DB},
-        "properties": properties,
-        "children": blocks
-    })
-    
-    if resp.status_code == 200:
-        page = resp.json()
+    # Check for existing briefing page for today - update instead of creating duplicate
+    existing_page_id = None
+    try:
+        query_resp = requests.post(
+            f"https://api.notion.com/v1/databases/{BRIEFINGS_DB}/query",
+            headers=HEADERS,
+            json={"filter": {"property": "Name", "title": {"contains": today}}, "page_size": 5}
+        )
+        if query_resp.status_code == 200:
+            results = query_resp.json().get("results", [])
+            if results:
+                existing_page_id = results[0]["id"]
+                print(f"  Found existing page for {today}, updating...")
+    except Exception as e:
+        print(f"  Warning: Could not check for existing page: {e}")
+
+    if existing_page_id:
+        # Update existing page: update properties + delete old blocks + add new blocks
+        # 1. Update properties
+        requests.patch(f"https://api.notion.com/v1/pages/{existing_page_id}",
+                       headers=HEADERS, json={"properties": properties})
+        # 2. Delete old blocks
+        try:
+            old_blocks = requests.get(
+                f"https://api.notion.com/v1/blocks/{existing_page_id}/children?page_size=100",
+                headers=HEADERS
+            ).json().get("results", [])
+            for blk in old_blocks:
+                requests.delete(f"https://api.notion.com/v1/blocks/{blk['id']}", headers=HEADERS)
+        except Exception:
+            pass
+        # 3. Add new blocks (Notion limit: 100 per request)
+        for i in range(0, len(blocks), 100):
+            requests.patch(
+                f"https://api.notion.com/v1/blocks/{existing_page_id}/children",
+                headers=HEADERS, json={"children": blocks[i:i+100]}
+            )
+        page = requests.get(f"https://api.notion.com/v1/pages/{existing_page_id}", headers=HEADERS).json()
         url = page.get("url", "")
-        print(f"✅ Created: {url}")
+        print(f"✅ Updated: {url}")
         return url
     else:
-        print(f"❌ Error {resp.status_code}: {resp.text[:300]}")
-        return None
+        # Create new page
+        resp = requests.post("https://api.notion.com/v1/pages", headers=HEADERS, json={
+            "parent": {"database_id": BRIEFINGS_DB},
+            "properties": properties,
+            "children": blocks
+        })
+
+        if resp.status_code == 200:
+            page = resp.json()
+            url = page.get("url", "")
+            print(f"✅ Created: {url}")
+            return url
+        else:
+            print(f"❌ Error {resp.status_code}: {resp.text[:300]}")
+            return None
 
 if __name__ == "__main__":
     create_briefing()
