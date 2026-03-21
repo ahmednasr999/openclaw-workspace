@@ -28,8 +28,9 @@
 
 | Provider | Alias | Model | Issue |
 |----------|-------|-------|-------|
-| **Anthropic** | `haiku-3.5` | claude-3-5-haiku-20250520 | ❌ 404 Error |
-| **Anthropic** | `haiku-3` | claude-3-haiku-20240307 | ❓ Untested |
+| **Anthropic** | `haiku` | claude-haiku-4-5 | Fast, cheap tasks | 💚 Budget | ✅ Works |
+| **Anthropic** | `haiku-3.5` | claude-3-5-haiku-20250520 | Legacy | ❌ 404 Error |
+| **Anthropic** | `haiku-3` | claude-3-haiku-20240307 | Legacy | ❓ Untested |
 
 ### Model Selection Rules
 1. **Default:** MiniMax-M2.7 (free, good for routine tasks)
