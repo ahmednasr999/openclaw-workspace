@@ -8,12 +8,12 @@
 
 | Agent | Role | Model | Trigger |
 |-------|------|-------|---------|
-| **Orchestrator** | Task router & coordinator | MiniMax-M2.1 (default), Sonnet 4.5 (content), Opus 4.5 (complex) | User requests |
-| **Chief of Staff (Max)** | Agent coordination, briefs, strategy | Sonnet 4 (coordination), Opus (complex) | Daily/weekly synthesis |
-| **CV Agent** | Tailored resumes (HTML→PDF) | Opus 4.5 | Job link + description |
-| **Research Agent** | Web research, company/news analysis | MiniMax-M2.1 | Search queries |
-| **Writer Agent** | LinkedIn posts, emails, copy | Sonnet 4.5 | Content requests |
-| **Scheduler Agent** | Cron jobs, reminders | MiniMax-M2.1 | Scheduling tasks |
+| **Orchestrator** | Task router & coordinator | MiniMax-M2.7 (default), Sonnet 4.6 (content), Opus 4.6 (complex) | User requests |
+| **Chief of Staff (Max)** | Agent coordination, briefs, strategy | Sonnet 4.6 (coordination), Opus 4.6 (complex) | Daily/weekly synthesis |
+| **CV Agent** | Tailored resumes (HTML→PDF) | Opus 4.6 | Job link + description |
+| **Research Agent** | Web research, company/news analysis | MiniMax-M2.7 | Search queries |
+| **Writer Agent** | LinkedIn posts, emails, copy | Sonnet 4.6 | Content requests |
+| **Scheduler Agent** | Cron jobs, reminders | MiniMax-M2.7 | Scheduling tasks |
 
 ## Task Board Rule (Non-Negotiable - ALL Models, ALL Agents)
 

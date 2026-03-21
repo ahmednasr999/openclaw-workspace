@@ -5,9 +5,9 @@
 ## CV Creation Workflow
 
 ### Models by Task
-- **Default/Daily:** MiniMax-M2.1 (free tier)
-- **CV Creation:** Claude Opus 4.5 (requires approval)
-- **Analysis/Research:** Claude Sonnet 4
+- **Default/Daily:** MiniMax-M2.7 (free tier)
+- **CV Creation:** Claude Opus 4.6 (requires approval)
+- **Analysis/Research:** Claude Sonnet 4.6
 
 ## Model Strategy (Verified Working - 2026-02-17)
 
@@ -19,7 +19,9 @@
 | **Anthropic** | `sonnet` | claude-sonnet-4-6 | Balanced (troubleshooting, setup) | ⚡ Mid | ✅ Works |
 | **Anthropic** | `opus-4.5` | claude-opus-4-5 | Legacy fallback | 💎 Premium | ✅ Works |
 | **Anthropic** | `sonnet-4` | claude-sonnet-4 | Legacy fallback | ⚡ Mid | ✅ Works |
-| **MiniMax** | `minimax-m2.1` | MiniMax-M2.1 | Daily tasks, bulk operations | ✅ Free | ✅ Works |
+| **MiniMax** | `minimax-m2.7` | MiniMax-M2.7 | Daily tasks, default model | ✅ Free | ✅ Works |
+| **MiniMax** | `minimax-m2.5` | MiniMax-M2.5 | Lightweight tasks | ✅ Free | ✅ Works |
+| **MiniMax** | `minimax-m2.1` | MiniMax-M2.1 | Legacy fallback | ✅ Free | ✅ Works |
 | **Moonshot** | `Kimi` | kimi-k2.5 | Alternative reasoning, research | ⚡ Mid | ✅ Works |
 
 ### Not Working (Do Not Use)
@@ -30,13 +32,14 @@
 | **Anthropic** | `haiku-3` | claude-3-haiku-20240307 | ❓ Untested |
 
 ### Model Selection Rules
-1. **Default:** MiniMax-M2.1 (free, good for routine tasks)
-2. **CV Creation:** Claude Opus 4.5 (requires approval)
-3. **Complex Setup:** Claude Sonnet 4
-4. **Alternative Reasoning:** Kimi K2.5
+1. **Default:** MiniMax-M2.7 (free, good for routine tasks)
+2. **CV Creation:** Claude Opus 4.6 (requires approval)
+3. **Complex Setup:** Claude Sonnet 4.6
+4. **Content Drafting:** Claude Sonnet 4.6
+5. **Alternative Reasoning:** Kimi K2.5
 
 ### Model Change Protocol
-- **Default:** MiniMax M2.1 (always)
+- **Default:** MiniMax M2.7 (always)
 - **Ask before changing:** Any model switch
 - **Notify:** When switching to/from paid models
 - **Switch back:** After completing expensive tasks
