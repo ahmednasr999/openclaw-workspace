@@ -1,0 +1,51 @@
+{
+  "pipeline-agent": {
+    "ts": "2026-03-22T00:05:50.539159+02:00",
+    "ts_utc": "2026-03-21T22:05:50.539159+00:00",
+    "output": "/root/.openclaw/workspace/data/pipeline-status.json",
+    "hash": "4fd7e1ed",
+    "size": 1208
+  },
+  "email-agent": {
+    "ts": "2026-03-22T00:05:50.539159+02:00",
+    "ts_utc": "2026-03-21T22:05:50.539159+00:00",
+    "output": "/root/.openclaw/workspace/data/email-summary.json",
+    "hash": "8a43016e",
+    "size": 1793
+  },
+  "outreach-agent": {
+    "ts": "2026-03-21T23:35:50.539159+02:00",
+    "ts_utc": "2026-03-21T21:35:50.539159+00:00",
+    "output": "/root/.openclaw/workspace/data/outreach-summary.json",
+    "hash": "50436840",
+    "size": 2597
+  },
+  "jobs-source-linkedin": {
+    "ts": "2026-03-21T16:35:50.539159+02:00",
+    "ts_utc": "2026-03-21T14:35:50.539159+00:00",
+    "output": "/root/.openclaw/workspace/data/jobs-raw/linkedin.json",
+    "hash": "4b6a7231",
+    "size": 498528
+  },
+  "jobs-merge": {
+    "ts": "2026-03-21T16:35:50.539159+02:00",
+    "ts_utc": "2026-03-21T14:35:50.539159+00:00",
+    "output": "/root/.openclaw/workspace/data/jobs-merged.json",
+    "hash": "ce4d51a0",
+    "size": 312984
+  },
+  "jobs-review": {
+    "ts": "2026-03-21T16:35:50.539159+02:00",
+    "ts_utc": "2026-03-21T14:35:50.539159+00:00",
+    "output": "/root/.openclaw/workspace/data/jobs-summary.json",
+    "hash": "fddcf5f1",
+    "size": 55227
+  },
+  "pam-newsletter": {
+    "ts": "2026-03-22T00:36:23.299044+02:00",
+    "ts_utc": "2026-03-21T22:36:23.299060+00:00",
+    "output": "/root/.openclaw/workspace/data/pam-newsletter.json",
+    "hash": "485eac90",
+    "size": 1127
+  }
+}

@@ -2,12 +2,12 @@
   "meta": {
     "agent": "pipeline-agent",
     "version": "1.0.0",
-    "generated_at": "2026-03-21T18:00:10.459278+02:00",
-    "duration_ms": 8115,
+    "generated_at": "2026-03-22T00:00:11.091492+02:00",
+    "duration_ms": 9034,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "a8b8897f",
+    "run_id": "6e905446",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -44,7 +44,7 @@
   "kpi": {
     "total_tracked": 95,
     "active_rate": 88.4,
-    "avg_days_in_pipeline": 2.5,
+    "avg_days_in_pipeline": 3.3,
     "follow_ups_overdue": 0,
     "interviews_this_week": 0,
     "stale_count": 0

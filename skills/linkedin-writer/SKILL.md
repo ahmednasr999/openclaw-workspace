@@ -28,3 +28,16 @@ Follow these steps in order for every post request:
 8. **Revise if needed** — If any checklist item fails, revise the draft until all items pass.
 
 9. **Deliver final post** — Present the finished post, ready to copy-paste into LinkedIn.
+
+
+---
+## 🔧 Auto-Improvement (2026-03-21)
+> Added by weekly-agent-review.py based on recurring failure pattern.
+
+**Pattern detected (2 occurrences):**
+Add completion guard: verify ALL required outputs (image, Notion update, etc.) before marking task done.
+
+**Action required:**
+- Review this section and integrate the fix into the relevant step above.
+- Remove this block once the fix has been applied.
+

@@ -71,3 +71,16 @@ If browser relay isn't available, extract the `li_at` cookie from browser:
 - If logged out: Re-authenticate in browser
 - If rate limited: Wait 24 hours, reduce action frequency
 - If CAPTCHA: Complete manually in browser, then resume
+
+
+---
+## 🔧 Auto-Improvement (2026-03-21)
+> Added by weekly-agent-review.py based on recurring failure pattern.
+
+**Pattern detected (2 occurrences):**
+Add completion guard: verify ALL required outputs (image, Notion update, etc.) before marking task done.
+
+**Action required:**
+- Review this section and integrate the fix into the relevant step above.
+- Remove this block once the fix has been applied.
+

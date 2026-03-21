@@ -79,11 +79,12 @@ Exceptions: Don't boil the ocean. If the extra 10% requires a new API connection
 ## Proactive Memory Checklist
 
 Before asking user, check:
-1. **Credentials:** `~/.env`, `~/.credentials/`, `~/.openclaw/`
-2. **Coordination:** `coordination/{dashboard,pipeline,content-calendar,outreach-queue}.json`
-3. **Memory:** `MEMORY.md`, `memory/agents/daily-*.md`, `memory/lessons-learned.md`
-4. **Context:** `TOOLS.md`, `IDENTITY.md`, `USER.md`, `SKILL.md`
-5. **History:** `git log` before asking "what changed"
+1. **Service Registry:** `config/service-registry.md` -- how we connect to each service (direct API vs Composio vs CLI). NEVER assume Composio is the only path.
+2. **Credentials:** `~/.env`, `~/.credentials/`, `~/.openclaw/`, `config/*.json`
+3. **Coordination:** `coordination/{dashboard,pipeline,content-calendar,outreach-queue}.json`
+4. **Memory:** `MEMORY.md`, `memory/agents/daily-*.md`, `memory/lessons-learned.md`
+5. **Context:** `TOOLS.md`, `IDENTITY.md`, `USER.md`, `SKILL.md`
+6. **History:** `git log` before asking "what changed"
 
 ## Chief of Staff Principles
 

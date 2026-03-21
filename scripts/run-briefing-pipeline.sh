@@ -102,6 +102,7 @@ run_agent() {
     local script="$2"
     local timeout="${3:-60}"
     local max_retries="${4:-1}"
+    local output_file="${5:-}"
     local attempt=1
     
     while [ $attempt -le $max_retries ]; do
@@ -117,6 +118,12 @@ run_agent() {
         if timeout "$timeout" python3 "$SCRIPTS/$script" >> "$LOG_FILE" 2>&1; then
             local elapsed=$(( $(date +%s) - start ))
             log "OK    $name (${elapsed}s)"
+            # Track heartbeat on success
+            if [ -n "$output_file" ]; then
+                python3 "$SCRIPTS/heartbeat-tracker.py" --agent "$name" --output "$output_file" >> "$LOG_FILE" 2>&1 || true
+            else
+                python3 "$SCRIPTS/heartbeat-tracker.py" --agent "$name" >> "$LOG_FILE" 2>&1 || true
+            fi
             return 0
         else
             local code=$?
@@ -154,6 +161,8 @@ run_parallel() {
     shift
     local pids=()
     local names=()
+    local scripts=()
+    local timeouts=()
     
     log "--- $label (parallel) ---"
     
@@ -162,15 +171,26 @@ run_parallel() {
         local script="$2"
         local timeout="${3:-60}"
         shift 3
-        
-        run_agent "$name" "$script" "$timeout" &
-        pids+=($!)
+        pids+=("$name")
         names+=("$name")
+        scripts+=("$script")
+        timeouts+=("$timeout")
+    done
+    
+    # Launch all in background
+    for i in "${!pids[@]}"; do
+        (
+            timeout "${timeouts[$i]}" python3 "$SCRIPTS/${scripts[$i]}" >> "$LOG_FILE" 2>&1
+            local code=$?
+            if [ $code -eq 0 ]; then
+                python3 "$SCRIPTS/heartbeat-tracker.py" --agent "${names[$i]}" >> "$LOG_FILE" 2>&1 || true
+            fi
+        ) &
     done
     
     local failures=0
     for i in "${!pids[@]}"; do
-        if ! wait "${pids[$i]}"; then
+        if ! wait %$((i+1)) 2>/dev/null; then
             log "WARN: ${names[$i]} failed"
             ((failures++)) || true
         fi
@@ -221,6 +241,10 @@ case "$MODE" in
         log "  FULL BRIEFING PIPELINE"
         log "========================================="
         
+        # Phase 0: Heartbeat check — verify agents healthy before starting
+        log "--- Phase 0: Heartbeat Check ---"
+        timeout 30 python3 "$SCRIPTS/heartbeat-checker.py" >> "$LOG_FILE" 2>&1 || true
+        
         # Phase 1: Data agents + job sources in parallel
         # Google Jobs & Bayt: blocked from VPS (403). Disabled.
         run_parallel "Phase 1: Data + Sources" \
@@ -252,6 +276,12 @@ case "$MODE" in
         
         log "--- Phase 5: Pam Newsletter Digest ---"
         run_agent "newsletter" "pam-newsletter-agent.py" 30
+        
+        log "--- Phase 6: Outreach Follow-up Tracker ---"
+        run_agent "outreach-tracker" "outreach-followup-tracker.py" 30
+        
+        log "--- Phase 7: Pam Telegram Digest ---"
+        run_agent "pam-telegram" "pam-telegram.py" 30
         
         log "========================================="
         log "  PIPELINE COMPLETE"

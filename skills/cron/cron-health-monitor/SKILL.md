@@ -105,3 +105,16 @@ print(f'Dashboard stale alerts refreshed: {len(alerts)} items')
 - If Notion API fails: Report error, don't try to recover
 - If cron run data unavailable: Report "unable to verify", suggest manual check
 - Keep this monitor lightweight - should complete in under 60s
+
+
+---
+## 🔧 Auto-Improvement (2026-03-21)
+> Added by weekly-agent-review.py based on recurring failure pattern.
+
+**Pattern detected (7 occurrences):**
+Add explicit retry logic (3 attempts) for all external API calls.
+
+**Action required:**
+- Review this section and integrate the fix into the relevant step above.
+- Remove this block once the fix has been applied.
+
