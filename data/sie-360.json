@@ -1,0 +1,173 @@
+{
+  "generated": "2026-03-21T02:37:30.353069+00:00",
+  "health_score": 92,
+  "summary": {
+    "ok": 8,
+    "warn": 4,
+    "alert": 0
+  },
+  "workspace": {
+    "root_files": 26,
+    "disk_percent": 48,
+    "disk_used": "46G",
+    "disk_total": "96G",
+    "ram_total": "7.8Gi",
+    "ram_used": "3.1Gi",
+    "large_files": [
+      "/root/.openclaw/agents/main/qmd/node_modules/@node-llama-cpp/linux-x64-cuda/bins/linux-x64-cuda/libggml-cuda.so",
+      "/root/.openclaw/agents/main/qmd/node_modules/@node-llama-cpp/linux-x64-cuda-ext/bins/linux-x64-cuda/fallback/libggml-cuda.so",
+      "/root/.openclaw/agents/main/qmd/node_modules/@node-llama-cpp/linux-x64-vulkan/bins/linux-x64-vulkan/libggml-vulkan.so",
+      "/root/.openclaw/agents/main/qmd/node_modules/better-sqlite3/deps/sqlite3/sqlite3.c",
+      "/root/.openclaw/agents/main/qmd/node_modules/node-llama-cpp/llama/gitRelease.bundle",
+      "/root/.openclaw/agents/main/qmd/node_modules/node-llama-cpp/llama/llama.cpp/models/ggml-vocab-command-r.gguf",
+      "/root/.openclaw/agents/main/qmd/node_modules/node-llama-cpp/llama/llama.cpp/models/ggml-vocab-qwen2.gguf",
+      "/root/.openclaw/agents/main/qmd/node_modules/node-llama-cpp/llama/llama.cpp/models/ggml-vocab-nomic-bert-moe.gguf",
+      "/root/.openclaw/agents/main/qmd/node_modules/node-llama-cpp/llama/llama.cpp/models/ggml-vocab-llama-bpe.gguf",
+      "/root/.openclaw/agents/main/qmd/node_modules/node-llama-cpp/llama/llama.cpp/.git/objects/pack/pack-e7771b6bedf88279667bd60d45be01a2d5ba954a.pack",
+      "/root/.openclaw/agents/main/qmd/node_modules/typescript/lib/_tsc.js",
+      "/root/.openclaw/agents/main/qmd/node_modules/typescript/lib/typescript.js",
+      "/root/.openclaw/agents/main/qmd/xdg-cache/qmd/index.sqlite",
+      "/root/.openclaw/agents/main/sessions/sessions.json",
+      "/root/.openclaw/agents/main/sessions/c9e7570d-a391-4989-b3b7-48c29ad435c0.jsonl",
+      "/root/.openclaw/extensions/lossless-claw/node_modules/@napi-rs/canvas-linux-x64-gnu/skia.linux-x64-gnu.node",
+      "/root/.openclaw/extensions/lossless-claw/node_modules/@larksuiteoapi/node-sdk/types/index.d.ts",
+      "/root/.openclaw/extensions/lossless-claw/node_modules/pdfjs-dist/build/pdf.worker.mjs.map",
+      "/root/.openclaw/extensions/lossless-claw/node_modules/pdfjs-dist/legacy/build/pdf.worker.mjs.map",
+      "/root/.openclaw/extensions/lossless-claw/node_modules/@img/sharp-libvips-linux-x64/lib/libvips-cpp.so.8.17.3",
+      "/root/.openclaw/extensions/lossless-claw/node_modules/koffi/build/koffi/openbsd_x64/koffi.node",
+      "/root/.openclaw/extensions/lossless-claw/node_modules/koffi/build/koffi/freebsd_x64/koffi.node",
+      "/root/.openclaw/extensions/lossless-claw/node_modules/koffi/build/koffi/linux_x64/koffi.node",
+      "/root/.openclaw/extensions/lossless-claw/node_modules/koffi/build/koffi/musl_x64/koffi.node",
+      "/root/.openclaw/extensions/lossless-claw/node_modules/openclaw/dist/auth-profiles-DDVivXkv.js",
+      "/root/.openclaw/extensions/lossless-claw/node_modules/openclaw/dist/plugin-sdk/thread-bindings-SYAnWHuW.js",
+      "/root/.openclaw/extensions/lossless-claw/node_modules/openclaw/dist/auth-profiles-DRjqKE3G.js",
+      "/root/.openclaw/extensions/lossless-claw/node_modules/openclaw/dist/reply-Bm8VrLQh.js",
+      "/root/.openclaw/extensions/lossless-claw/node_modules/openclaw/dist/model-selection-46xMp11W.js",
+      "/root/.openclaw/extensions/lossless-claw/node_modules/openclaw/dist/model-selection-CU2b7bN6.js",
+      "/root/.openclaw/extensions/lossless-claw/node_modules/openclaw/dist/discord-CcCLMjHw.js",
+      "/root/.openclaw/extensions/lossless-claw/node_modules/openclaw/extensions/diffs/assets/viewer-runtime.js",
+      "/root/.openclaw/memory/main.sqlite",
+      "/root/.openclaw/workspace/tmp/insights-deck/node_modules/skia-canvas/lib/skia.node",
+      "/root/.openclaw/workspace/tools/jobspy-venv/lib/python3.13/site-packages/tls_client/dependencies/tls-client-arm64.so",
+      "/root/.openclaw/workspace/tools/jobspy-venv/lib/python3.13/site-packages/tls_client/dependencies/tls-client-amd64.so",
+      "/root/.openclaw/workspace/tools/jobspy-venv/lib/python3.13/site-packages/tls_client/dependencies/tls-client-x86.so",
+      "/root/.openclaw/workspace/tools/jobspy-venv/lib/python3.13/site-packages/tls_client/dependencies/tls-client-32.dll",
+      "/root/.openclaw/workspace/tools/jobspy-venv/lib/python3.13/site-packages/tls_client/dependencies/tls-client-x86.dylib",
+      "/root/.openclaw/workspace/tools/jobspy-venv/lib/python3.13/site-packages/tls_client/dependencies/tls-client-64.dll",
+      "/root/.openclaw/workspace/tools/jobspy-venv/lib/python3.13/site-packages/tls_client/dependencies/tls-client-arm64.dylib",
+      "/root/.openclaw/workspace/tools/jobspy-venv/lib/python3.13/site-packages/numpy.libs/libscipy_openblas64_-096271d3.so",
+      "/root/.openclaw/workspace/tools/jobspy-venv/lib/python3.13/site-packages/lxml/etree.cpython-313-x86_64-linux-gnu.so",
+      "/root/.openclaw/workspace/tools/jobspy-venv/lib/python3.13/site-packages/numpy/_core/_multiarray_umath.cpython-313-x86_64-linux-gnu.so",
+      "/root/.openclaw/workspace/tools/jobspy-venv/lib/python3.13/site-packages/primp/primp.abi3.so",
+      "/root/.openclaw/workspace/.git/objects/pack/pack-d40f43c9821ac932c344145f7745703f46a84c2d.pack",
+      "/root/.openclaw/workspace/.git/objects/pack/pack-8289eb1e5159514c227aa99a8b93fda1517d0d4f.pack"
+    ],
+    "session_mb": 28.9
+  },
+  "learnings": {
+    "total": 14,
+    "enforced": 14,
+    "unenforced": 0,
+    "unenforced_list": []
+  },
+  "integrations": {
+    "gmail": "ok",
+    "notion": "ok",
+    "linkedin": "ok",
+    "gateway": "down",
+    "details": {
+      "gmail": "App Password configured (himalaya IMAP/SMTP)",
+      "notion_token": "present (50 chars)",
+      "notion_databases": 15,
+      "linkedin_lines": 35,
+      "linkedin_age_days": 1.9,
+      "gateway_error": "Command '['openclaw', 'gateway', 'status']' timed out after 10 seconds"
+    }
+  },
+  "crons": {
+    "total": 34,
+    "enabled": 34,
+    "disabled": 0,
+    "skill_first": 32,
+    "skill_first_pct": 94,
+    "raw_prompt_list": [
+      "Briefing: Brief Me",
+      "MiniMax M2.7 API Availability Check"
+    ],
+    "failing": [
+      {
+        "name": "SIE 360 Daily",
+        "consecutive_errors": 1,
+        "last_error": "cron: job execution timed out"
+      }
+    ]
+  },
+  "briefing_notion": {
+    "today": "2026-03-21",
+    "exists": true
+  },
+  "findings": [
+    {
+      "category": "workspace",
+      "level": "ok",
+      "message": "Root files: 26 (healthy)"
+    },
+    {
+      "category": "workspace",
+      "level": "ok",
+      "message": "Disk: 48% used (46G/96G)"
+    },
+    {
+      "category": "workspace",
+      "level": "warn",
+      "message": "Large files (>5MB): 47 found in .openclaw"
+    },
+    {
+      "category": "workspace",
+      "level": "ok",
+      "message": "Session size: 28.9MB (healthy)"
+    },
+    {
+      "category": "learnings",
+      "level": "ok",
+      "message": "Learnings enforcement: 14/14 (100%)"
+    },
+    {
+      "category": "integrations",
+      "level": "ok",
+      "message": "Gmail: App Password configured via himalaya"
+    },
+    {
+      "category": "integrations",
+      "level": "ok",
+      "message": "Notion: token present, 15 databases configured"
+    },
+    {
+      "category": "integrations",
+      "level": "ok",
+      "message": "LinkedIn: cookies OK (35 lines, 2d old)"
+    },
+    {
+      "category": "integrations",
+      "level": "warn",
+      "message": "Gateway check failed: Command '['openclaw', 'gateway', 'status']' timed out after 10 seconds"
+    },
+    {
+      "category": "crons",
+      "level": "warn",
+      "message": "Cron skill-first: 32/34 (94%) - 2 raw-prompt crons"
+    },
+    {
+      "category": "crons",
+      "level": "warn",
+      "message": "Failing crons: 1 with consecutive errors"
+    },
+    {
+      "category": "briefing",
+      "level": "ok",
+      "message": "Notion briefing page for 2026-03-21: exists"
+    }
+  ],
+  "auto_fixed": [],
+  "needs_attention": []
+}
