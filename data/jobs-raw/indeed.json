@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-03-21T15:55:38.520648+02:00",
-    "duration_ms": 68263,
+    "generated_at": "2026-03-21T16:00:04.596463+02:00",
+    "duration_ms": 68134,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "3fd67e47",
+    "run_id": "cb08d0e1",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
