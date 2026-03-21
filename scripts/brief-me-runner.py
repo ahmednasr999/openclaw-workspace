@@ -183,17 +183,20 @@ def create_briefing():
         radar = json.load(open(radar_path))
         top_posts = radar.get("top_posts", [])[:5]
         if top_posts:
-            blocks.append(h2("📡 LinkedIn Radar"))
-            blocks.append(bul(plain(f"{radar.get('posts_found',0)} posts found | Top {len(top_posts)}:")))
+            drafted = radar.get("comments_drafted", 0)
+            blocks.append(h2(f"📡 Comment Radar ({drafted} drafts ready)"))
             for idx, rp in enumerate(top_posts, 1):
                 url = rp.get("url", "")
-                author = rp.get("author", "?")[:25]
+                author = rp.get("author", "?")[:30]
                 pqs = rp.get("pqs", 0)
-                preview = rp.get("preview", "")[:80]
+                pri = " [PRIORITY]" if rp.get("priority") else ""
+                preview = rp.get("preview", "")[:100]
+                comment = rp.get("draft_comment", "")
                 if url:
-                    blocks.append(bul(bold(f"#{idx}[PQS:{pqs}] "), linked_text(f"{author}", url), plain(f" — {preview}...")))
-                else:
-                    blocks.append(bul(bold(f"#{idx}[PQS:{pqs}] {author}")))
+                    blocks.append(bul(bold(f"#{idx}[PQS:{pqs}]{pri} "), linked_text(f"{author}", url)))
+                    blocks.append(bul(plain(f"   Post: {preview}...")))
+                    if comment:
+                        blocks.append(bul(bold("   Draft: "), plain(comment[:280])))
     
     # ── OUTREACH ──
     blocks.append(h2("🤝 Outreach"))

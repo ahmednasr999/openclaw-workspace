@@ -1,102 +1,49 @@
 {
-  "generated": "2026-03-21T01:07:14.770875+00:00",
-  "posts_found": 22,
+  "generated": "2026-03-21T16:20:49.860759+00:00",
+  "version": 2,
+  "posts_found": 12,
   "top_posts": [
     {
+      "url": "https://www.linkedin.com/posts/ada-mazurek_we-just-closed-a-deal-with-a-government-entity-activity-7416403629965832192-tI35",
+      "author": "Ada Mazurek",
+      "title": "Pitching in the GCC: What Works Differently | Ada Mazurek posted ...",
+      "preview": "What actually closes deals in the GCC X \"We're disrupting the industry\"\u00a0 \u2713 \"We're partnering with regional leaders\" X 10-year hockey stick projections\u00a0 \u2713 18-month profitability roadmap with conservative growth X Flashy design over substance\u00a0 \u2713 Clean, data-driven decks with regional case studies X \"T",
+      "pqs": 60,
+      "draft_comment": "Ran into this exact GCC pitch gap across 3 ministries in Egypt. Local gatekeepers read \"alignment with strategy\" as code for relationship and timing, not just content. Your finding tracks with what we've seen: the deck that wins in Europe structures credibility around innovation, while GCC decision-makers want governance clarity first."
+    },
+    {
       "url": "https://www.linkedin.com/posts/lt-col-dr-lavneesh-tyagi-522329229_hospicon2026-hospitalleadership-healthcareexecutives-activity-7430869934227779584-oB0t",
-      "author": "Unknown",
+      "author": "Lt. Col. (Dr.) Lavneesh Tyagi",
       "title": "Hospital Leadership Conference 2026: Operational Excellence ...",
       "preview": "... Digital transformation & implementation realities \u2713 Regulatory & compliance navigation \u2713 Financial sustainability models \u2713 Patient",
-      "source": "tavily",
-      "pqs": 43
+      "pqs": 58,
+      "draft_comment": "Healthcare leadership velocity matters more than ever post-COVID. HOSPICON has consistently surfaced the operational frameworks that separate resilient systems from fragile ones. The cross-functional lineup is the right signal."
     },
     {
       "url": "https://www.linkedin.com/posts/the-tech-capital_digitalinfrastructure-datacenters-infrastructureinvestment-activity-7439702097648029696-__ag",
-      "author": "Unknown",
+      "author": "The Tech Capital",
       "title": "The Tech Capital's Post - LinkedIn",
       "preview": "Gaw Capital launches $400 million GCC fund for AI, digital infrastructure. The fund has secured a US$150 million first close to back sectors",
-      "source": "tavily",
-      "pqs": 42
+      "pqs": 56,
+      "draft_comment": "$400M into GCC AI and digital infrastructure signals the ecosystem has crossed from curious to committed. Gaw Capital's track record here is worth watching closely."
     },
     {
-      "url": "https://www.linkedin.com/posts/ada-mazurek_we-just-closed-a-deal-with-a-government-entity-activity-7416403629965832192-tI35",
+      "url": "https://www.linkedin.com/posts/colabspk_the-startup-rundown-21st-march-2026-activity-7441045967174283264-3Qwh",
       "author": "Unknown",
-      "title": "Pitching in the GCC: What Works Differently | Ada Mazurek posted ...",
-      "preview": "What actually closes deals in the GCC X \"We're disrupting the industry\"\u00a0 \u2713 \"We're partnering with regional leaders\" X 10-year hockey stick projections\u00a0 \u2713 18-month profitability roadmap with conservative growth X Flashy design over substance\u00a0 \u2713 Clean, data-driven decks with regional case studies X \"T",
-      "source": "tavily",
-      "pqs": 39
+      "title": "The Startup Rundown - 21st March 2026 | COLABS - LinkedIn",
+      "preview": "Here's a quick startup rundown of what happened in the MENA region's startup ecosystem during the last week! Saudi Arabia-based fintech",
+      "pqs": 51,
+      "draft_comment": "Two $7.5M seed rounds in one week, one fintech and one blockchain infrastructure. TheSaudi fintech story with Japanese LP co-investment is the pattern to track."
     },
     {
-      "url": "https://www.linkedin.com/posts/ashishsarkar_tcs-tcscareers-walkindrive-activity-7438175290146713600-KBqq",
+      "url": "https://www.linkedin.com/posts/agileconsultants_urgent-jobs-21-mar-26-agile-consultants-activity-7441011122373136384-d9g_",
       "author": "Unknown",
-      "title": "Ashish Sarkar's Post - LinkedIn",
-      "preview": "Ashish Sarkar's Post. View profile for Ashish Sarkar. Ashish Sarkar. Global HR Leader - Strategic HR | Talent Acquisition | GCC Accelerator |",
-      "source": "tavily",
-      "pqs": 34
-    },
-    {
-      "url": "https://www.linkedin.com/posts/discovery-alert-australia_global-energy-markets-are-facing-their-most-activity-7437327783183413249-e0aA",
-      "author": "Unknown",
-      "title": "G7 Energy Ministers Meet Amid Global Market Instability - LinkedIn",
-      "preview": "If the pandemic compressed years of digital transformation into a short period, today's energy shocks could similarly accelerate investments",
-      "source": "tavily",
-      "pqs": 28
-    },
-    {
-      "url": "https://www.linkedin.com/posts/cbm-360%C2%B0-tiv%E2%84%A2_nuclearpower-cbm360tiv-icnpe2026-activity-7437327472003727360-5Ov8",
-      "author": "Unknown",
-      "title": "Nuclear Power Engineering Conference ICNPE 2026 Sur Oman",
-      "preview": "Advancing nuclear engineering dialogue in the Middle East. \u269b\ufe0f The International Conference on #NuclearPower Engineering (ICNPE 2026) serves",
-      "source": "tavily",
-      "pqs": 27
-    },
-    {
-      "url": "https://www.linkedin.com/posts/aws-user-group-pune_acdpune2026-awscommunityday-postgresql-activity-7440774336296251392-ZSvC",
-      "author": "Unknown",
-      "title": "AWS User Group Pune - LinkedIn",
-      "preview": "AW GCC Pro serve. I specialize in machine learning and artificial intelligence. My passion lies in enabling customers and helping them scale",
-      "source": "tavily",
-      "pqs": 27
-    },
-    {
-      "url": "https://www.linkedin.com/posts/qatar-airways-cargo_qatar-airways-cargo-resumes-selected-freighter-activity-7440393017418518528-g1A5",
-      "author": "Unknown",
-      "title": "Qatar Airways Cargo's Post - LinkedIn",
-      "preview": "Qatar Airways Cargo resumes selected freighter operations to and from Doha, effective 21 March 2026. Following temporary authorisation from",
-      "source": "tavily",
-      "pqs": 27
-    },
-    {
-      "url": "https://www.linkedin.com/posts/kristof-eyckmans-6803b6aa_aviation-travel-middleeast-activity-7437141009584750593-tcVS",
-      "author": "Unknown",
-      "title": "Kristof Eyckmans' Post - LinkedIn",
-      "preview": "Airlines aren't equal, and here's why. As some of you know, I was stuck in Qatar due to the current issues going on in the region.",
-      "source": "tavily",
-      "pqs": 27
-    },
-    {
-      "url": "https://www.linkedin.com/posts/indian-institute-of-technology-bombay_iit-bombay-to-lead-research-in-ai-green-activity-7320309239179059200-8EnZ",
-      "author": "Unknown",
-      "title": "IIT Bombay to focus on Industry 4.0, Energy, and Materials under PAIR",
-      "preview": "With experts from University of Melbourne, Concordia University, Brunel University of London University, and the University of Transport & Communications, we\u2019ll explore: - AI & Digital Twin innovation in the built environment - Circular Economy for construction & deconstruction - Real-world recovery",
-      "source": "tavily",
-      "pqs": 25
+      "title": "Urgent Jobs - 21-Mar-26 | Agile Consultants - LinkedIn",
+      "preview": "Artificial Intelligence \u00b7 Employee Experience \u00b7 Workplace Trends ... Business Strategy \u00b7 Change Management \u00b7 Organizational Culture \u00b7 Design",
+      "pqs": 43,
+      "draft_comment": "Agile delivery models in GCC government projects still face the same gap: framework familiarity on paper versus actual adaptive capacity on the ground. How are you screening for that distinction?"
     }
   ],
-  "status": "ok",
-  "style_guide": {
-    "max_lines": 4,
-    "min_lines": 2,
-    "banned_openers": [
-      "Strong point",
-      "Great",
-      "Excellent",
-      "Important signal",
-      "Very accurate",
-      "Very relevant"
-    ],
-    "require_anchor": true,
-    "no_em_dashes": true,
-    "tone": "Executive, practical, decision-oriented"
-  }
+  "comments_drafted": 5,
+  "status": "ok"
 }
