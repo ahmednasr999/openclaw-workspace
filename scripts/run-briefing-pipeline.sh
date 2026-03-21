@@ -134,7 +134,9 @@ case "$MODE" in
             "outreach"  "outreach-agent.py"        15 \
             "system"    "system-agent.py"           30 \
             "linkedin"  "jobs-source-linkedin.py"  120 \
-            "indeed"    "jobs-source-indeed.py"    120
+            "indeed"    "jobs-source-indeed.py"    120 \
+            "comment-radar" "comment-radar-agent.py" 60 \
+            "li-post"   "linkedin-post-agent.py"   30
         
         # Phase 2: Merge + Review (sequential, depends on sources)
         log "--- Phase 2: Merge ---"

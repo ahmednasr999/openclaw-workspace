@@ -1,0 +1,102 @@
+{
+  "generated": "2026-03-21T01:07:14.770875+00:00",
+  "posts_found": 22,
+  "top_posts": [
+    {
+      "url": "https://www.linkedin.com/posts/lt-col-dr-lavneesh-tyagi-522329229_hospicon2026-hospitalleadership-healthcareexecutives-activity-7430869934227779584-oB0t",
+      "author": "Unknown",
+      "title": "Hospital Leadership Conference 2026: Operational Excellence ...",
+      "preview": "... Digital transformation & implementation realities \u2713 Regulatory & compliance navigation \u2713 Financial sustainability models \u2713 Patient",
+      "source": "tavily",
+      "pqs": 43
+    },
+    {
+      "url": "https://www.linkedin.com/posts/the-tech-capital_digitalinfrastructure-datacenters-infrastructureinvestment-activity-7439702097648029696-__ag",
+      "author": "Unknown",
+      "title": "The Tech Capital's Post - LinkedIn",
+      "preview": "Gaw Capital launches $400 million GCC fund for AI, digital infrastructure. The fund has secured a US$150 million first close to back sectors",
+      "source": "tavily",
+      "pqs": 42
+    },
+    {
+      "url": "https://www.linkedin.com/posts/ada-mazurek_we-just-closed-a-deal-with-a-government-entity-activity-7416403629965832192-tI35",
+      "author": "Unknown",
+      "title": "Pitching in the GCC: What Works Differently | Ada Mazurek posted ...",
+      "preview": "What actually closes deals in the GCC X \"We're disrupting the industry\"\u00a0 \u2713 \"We're partnering with regional leaders\" X 10-year hockey stick projections\u00a0 \u2713 18-month profitability roadmap with conservative growth X Flashy design over substance\u00a0 \u2713 Clean, data-driven decks with regional case studies X \"T",
+      "source": "tavily",
+      "pqs": 39
+    },
+    {
+      "url": "https://www.linkedin.com/posts/ashishsarkar_tcs-tcscareers-walkindrive-activity-7438175290146713600-KBqq",
+      "author": "Unknown",
+      "title": "Ashish Sarkar's Post - LinkedIn",
+      "preview": "Ashish Sarkar's Post. View profile for Ashish Sarkar. Ashish Sarkar. Global HR Leader - Strategic HR | Talent Acquisition | GCC Accelerator |",
+      "source": "tavily",
+      "pqs": 34
+    },
+    {
+      "url": "https://www.linkedin.com/posts/discovery-alert-australia_global-energy-markets-are-facing-their-most-activity-7437327783183413249-e0aA",
+      "author": "Unknown",
+      "title": "G7 Energy Ministers Meet Amid Global Market Instability - LinkedIn",
+      "preview": "If the pandemic compressed years of digital transformation into a short period, today's energy shocks could similarly accelerate investments",
+      "source": "tavily",
+      "pqs": 28
+    },
+    {
+      "url": "https://www.linkedin.com/posts/cbm-360%C2%B0-tiv%E2%84%A2_nuclearpower-cbm360tiv-icnpe2026-activity-7437327472003727360-5Ov8",
+      "author": "Unknown",
+      "title": "Nuclear Power Engineering Conference ICNPE 2026 Sur Oman",
+      "preview": "Advancing nuclear engineering dialogue in the Middle East. \u269b\ufe0f The International Conference on #NuclearPower Engineering (ICNPE 2026) serves",
+      "source": "tavily",
+      "pqs": 27
+    },
+    {
+      "url": "https://www.linkedin.com/posts/aws-user-group-pune_acdpune2026-awscommunityday-postgresql-activity-7440774336296251392-ZSvC",
+      "author": "Unknown",
+      "title": "AWS User Group Pune - LinkedIn",
+      "preview": "AW GCC Pro serve. I specialize in machine learning and artificial intelligence. My passion lies in enabling customers and helping them scale",
+      "source": "tavily",
+      "pqs": 27
+    },
+    {
+      "url": "https://www.linkedin.com/posts/qatar-airways-cargo_qatar-airways-cargo-resumes-selected-freighter-activity-7440393017418518528-g1A5",
+      "author": "Unknown",
+      "title": "Qatar Airways Cargo's Post - LinkedIn",
+      "preview": "Qatar Airways Cargo resumes selected freighter operations to and from Doha, effective 21 March 2026. Following temporary authorisation from",
+      "source": "tavily",
+      "pqs": 27
+    },
+    {
+      "url": "https://www.linkedin.com/posts/kristof-eyckmans-6803b6aa_aviation-travel-middleeast-activity-7437141009584750593-tcVS",
+      "author": "Unknown",
+      "title": "Kristof Eyckmans' Post - LinkedIn",
+      "preview": "Airlines aren't equal, and here's why. As some of you know, I was stuck in Qatar due to the current issues going on in the region.",
+      "source": "tavily",
+      "pqs": 27
+    },
+    {
+      "url": "https://www.linkedin.com/posts/indian-institute-of-technology-bombay_iit-bombay-to-lead-research-in-ai-green-activity-7320309239179059200-8EnZ",
+      "author": "Unknown",
+      "title": "IIT Bombay to focus on Industry 4.0, Energy, and Materials under PAIR",
+      "preview": "With experts from University of Melbourne, Concordia University, Brunel University of London University, and the University of Transport & Communications, we\u2019ll explore: - AI & Digital Twin innovation in the built environment - Circular Economy for construction & deconstruction - Real-world recovery",
+      "source": "tavily",
+      "pqs": 25
+    }
+  ],
+  "status": "ok",
+  "style_guide": {
+    "max_lines": 4,
+    "min_lines": 2,
+    "banned_openers": [
+      "Strong point",
+      "Great",
+      "Excellent",
+      "Important signal",
+      "Very accurate",
+      "Very relevant"
+    ],
+    "require_anchor": true,
+    "no_em_dashes": true,
+    "tone": "Executive, practical, decision-oriented"
+  }
+}
