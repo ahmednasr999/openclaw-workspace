@@ -36,3 +36,24 @@
 [2026-03-15 07:21:02 UTC] UNHEALTHY: Consecutive failure #1
 [2026-03-15 07:21:02 UTC] BASH RESTART: Attempting gateway restart (attempt 1)
 [2026-03-15 07:21:09 UTC] BASH RESTART: Success after attempt 1
+[2026-03-21 15:03] === Watchdog v3 run ===
+[2026-03-21 15:03] FIXED: Re-triggered failed cron feb3e084-8f60-400b-8116-74dc246d9523
+[2026-03-21 15:03] FIXED: Re-triggered failed cron 3c3ba638-8cb3-4a6a-a8f0-2ccd13e3aeed
+[2026-03-21 15:03] Summary: fixes=2 warnings=1 alerts=0
+[plugins] [composio] Connecting to https://connect.composio.dev/mcp
+[plugins] [composio] Connecting to https://connect.composio.dev/mcp
+[plugins] [lcm] Plugin loaded (enabled=true, db=/root/.openclaw/lcm.db, threshold=0.75)
+[plugins] camofox-browser: loaded without install/load-path provenance; treat as untracked local code and pin trust via plugins.allow or install records (/root/.openclaw/extensions/camofox-browser/plugin.ts)
+[plugins] [lcm] Plugin loaded (enabled=true, db=/root/.openclaw/lcm.db, threshold=0.75)
+[plugins] camofox-browser: loaded without install/load-path provenance; treat as untracked local code and pin trust via plugins.allow or install records (/root/.openclaw/extensions/camofox-browser/plugin.ts)
+gateway connect failed: Error: gateway closed (1000): 
+Error: gateway closed (1000 normal closure): no close reason
+Gateway target: ws://127.0.0.1:18789
+Source: local loopback
+Config: /root/.openclaw/openclaw.json
+Bind: loopback
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:3c3ba638-8cb3-4a6a-a8f0-2ccd13e3aeed:1774098233557:1"
+}
