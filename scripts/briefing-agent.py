@@ -13,9 +13,10 @@
 Brief Me Runner - Executes the morning briefing by reading all data files
 and generating the Notion page + Telegram message.
 """
-import json, requests
+import json, re, requests
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
+from email.header import decode_header
 
 WORKSPACE = Path("/root/.openclaw/workspace")
 DATA_DIR = WORKSPACE / "data"
@@ -26,6 +27,37 @@ CAIRO = timezone(timedelta(hours=2))
 
 def linked_text(text, url):
     return {"text": {"content": str(text)[:2000], "link": {"url": url}}}
+
+def mailto(text, addr):
+    """Create a clickable mailto link."""
+    return linked_text(text, f"mailto:{addr}")
+
+def decode_email_subject(encoded):
+    """Decode quoted-printable/RFC2047 email subjects to plain text."""
+    if not encoded:
+        return "No subject"
+    try:
+        parts = decode_header(encoded)
+        decoded = ""
+        for part, charset in parts:
+            if isinstance(part, bytes):
+                decoded += part.decode(charset or 'utf-8', errors='replace')
+            elif isinstance(part, str):
+                decoded += part
+        return decoded.strip()
+    except Exception:
+        return encoded
+
+def extract_email_addr(from_field):
+    """Extract email address from 'Name <email@host>' format."""
+    if not from_field:
+        return ""
+    match = re.search(r'<([^>]+)>', from_field)
+    if match:
+        return match.group(1)
+    # Fallback: look for anything that looks like an email
+    match = re.search(r'[\w.+-]+@[\w-]+\.[\w.-]+', from_field)
+    return match.group(0) if match else ""
 
 def plain(text):
     return {"text": {"content": str(text)[:2000]}}
@@ -68,6 +100,7 @@ def create_briefing():
     sys_adapted = _adapters.adapt_system(data["system"])
     outreach = _adapters.adapt_outreach(data["outreach"])
     email = _adapters.adapt_email(data["email"])
+    raw_email = data["email"].get("data", {})
     
     # Cap jobs to stay under Notion's 100-block limit
     submit_jobs = jobs.get("submit", [])[:8]
@@ -167,6 +200,23 @@ def create_briefing():
     if not (n_int or n_rec):
         blocks.append(bul(plain("No urgent emails")))
     
+    def add_email_items(items, emoji):
+        """Render individual emails with Gmail deep links."""
+        for item in items:
+            subject = decode_email_subject(item.get("subject") or "No subject")
+            addr = extract_email_addr(item.get("from") or "")
+            subj_short = subject[:65] + ("..." if len(subject) > 65 else "")
+            if addr:
+                # Gmail deep link — clicking opens Gmail web with the email visible
+                gmail_url = f"https://mail.google.com/mail/u/0/?tab=mm&srch={requests.utils.quote(f'subject:\u201c{subject}\u201d')}"
+                blocks.append(bul(linked_text(f"{emoji} {subj_short}", gmail_url)))
+            else:
+                blocks.append(bul(plain(f"{emoji} {subj_short} (no reply address)")))
+    
+    add_email_items(raw_email.get("interview_invites", []), "🎯")
+    add_email_items(raw_email.get("recruiter_messages", []), "📬")
+    add_email_items(raw_email.get("follow_ups_needed", []), "🔁")
+    
     # ── CONTENT + ACTIONS ──
     blocks.append(h2("📝 Content & Actions"))
     tp = content.get("today", {}).get("scheduled_post", {})
@@ -241,6 +291,49 @@ def create_briefing():
         f"{'✅' if d.get('meta',{}).get('status')=='success' else '⚠️'} {d.get('meta',{}).get('agent',k)}"
         for k, d in data.items()
     ))))
+    
+    # Job source health detail
+    source_health = []
+    for src_name, src_file in [("LinkedIn", "linkedin.json"), ("Indeed", "indeed.json"), ("Google", "google-jobs.json")]:
+        src_path = Path(WORKSPACE) / "data" / "jobs-raw" / src_file
+        if src_path.exists():
+            try:
+                sd = json.loads(src_path.read_text())
+                if isinstance(sd, list):
+                    cnt = len(sd)
+                    age = "no meta"
+                else:
+                    cnt = len(sd.get("data", []))
+                    gen = sd.get("meta", {}).get("generated_at", "")
+                    if gen:
+                        from datetime import datetime as _dt
+                        gen_t = _dt.fromisoformat(gen)
+                        age_h = (now_cairo() - gen_t).total_seconds() / 3600
+                        age = f"{age_h:.0f}h ago"
+                    else:
+                        age = "no meta"
+                icon = "✅" if cnt > 0 else "❌"
+                source_health.append(f"{icon} {src_name}: {cnt} jobs ({age})")
+            except Exception:
+                source_health.append(f"⚠️ {src_name}: read error")
+        else:
+            source_health.append(f"❌ {src_name}: file missing")
+    
+    # Check for pipeline failures
+    failures_path = Path(WORKSPACE) / "data" / "source-failures.jsonl"
+    failed_agents = []
+    if failures_path.exists():
+        for line in failures_path.read_text().strip().split("\n"):
+            if line.strip():
+                try:
+                    f_data = json.loads(line)
+                    failed_agents.append(f_data.get("agent", "unknown"))
+                except Exception:
+                    pass
+    
+    blocks.append(bul(plain("Job Sources: " + " | ".join(source_health))))
+    if failed_agents:
+        blocks.append(bul(plain(f"🔴 FAILED (after retry): {', '.join(failed_agents)}")))
     
     # Properties for DB
     total_jobs = len(submit_jobs) + len(review_jobs) + jobs.get("skip_count", 0)

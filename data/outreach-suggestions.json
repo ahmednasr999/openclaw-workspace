@@ -1,20 +1,10 @@
 {
-  "generated": "2026-03-22T06:00:18.670969+00:00",
+  "generated": "2026-03-22T08:00:31.393390+00:00",
   "suggestions": [
     {
-      "name": "Fatima Khan",
-      "role": "Recruiter",
-      "url": "https://www.linkedin.com/in/fkhan-recruit",
-      "company": "Confidential",
-      "signal_score": 30,
-      "applied_role": "Head of Operations & AI Optimisation",
-      "applied_date": "2026-03-21",
-      "reason": "You applied for Head of Operations & AI Optimisation at Confidential"
-    },
-    {
-      "name": "\u200fYoussef Lahbabi\u200f",
+      "name": "\u200fGavin Murphy\u200f",
       "role": "\u200fQiddiya",
-      "url": "https://www.linkedin.com/in/youssef-lahbabi",
+      "url": "https://www.linkedin.com/in/gavin-murphy-538b615",
       "company": "Qiddiya | \u0627\u0644\u0642\u062f\u064a\u0629",
       "signal_score": 5,
       "applied_role": "Director- Data Analytics (CDU3) - 20004846",
@@ -22,34 +12,44 @@
       "reason": "You applied for Director- Data Analytics (CDU3) - 20004846 at Qiddiya | \u0627\u0644\u0642\u062f\u064a\u0629"
     },
     {
-      "name": "\u200fRyan Egan\u200f",
-      "role": "\u200fQiddiya",
-      "url": "https://www.linkedin.com/in/ryan-egan-a9119a13",
-      "company": "Qiddiya | \u0627\u0644\u0642\u062f\u064a\u0629",
+      "name": "Ashwini Gai",
+      "role": "Netcracker Technology",
+      "url": "https://www.linkedin.com/in/ashwini-gai",
+      "company": "Netcracker Technology",
       "signal_score": 5,
-      "applied_role": "Director- Data Analytics (CDU3) - 20004846",
-      "applied_date": "2026-03-21",
-      "reason": "You applied for Director- Data Analytics (CDU3) - 20004846 at Qiddiya | \u0627\u0644\u0642\u062f\u064a\u0629"
-    },
-    {
-      "name": "Sushmita Shastri",
-      "role": "Senior Associate",
-      "url": "https://www.linkedin.com/in/sushmita-shastri-8920b4128",
-      "company": "Netcracker Technology",
-      "signal_score": 30,
       "applied_role": "QA Director - Middle East",
       "applied_date": "2026-03-21",
       "reason": "You applied for QA Director - Middle East at Netcracker Technology"
     },
     {
-      "name": "Guruprasath E",
-      "role": "Lead",
-      "url": "https://www.linkedin.com/in/recruiterguru",
+      "name": "Nitika Mathur",
+      "role": "Netcracker Technology",
+      "url": "https://www.linkedin.com/in/nitika-mathur-234a1649",
       "company": "Netcracker Technology",
-      "signal_score": 30,
+      "signal_score": 5,
       "applied_role": "QA Director - Middle East",
       "applied_date": "2026-03-21",
       "reason": "You applied for QA Director - Middle East at Netcracker Technology"
+    },
+    {
+      "name": "Alex Jade\u200f",
+      "role": "\u200fFintech & AI Talent Expert",
+      "url": "https://www.linkedin.com/in/alex-jade-6215b0318",
+      "company": "Talent Connect Group (TCG)",
+      "signal_score": 5,
+      "applied_role": "Principal Data & AI \u2013 FinTech / InsurTech | UAE (Dubai)",
+      "applied_date": "2026-03-21",
+      "reason": "You applied for Principal Data & AI \u2013 FinTech / InsurTech | UAE (Dubai) at Talent Connect Group (TCG)"
+    },
+    {
+      "name": "Liam Moir-Holland",
+      "role": "Founder",
+      "url": "https://www.linkedin.com/in/liam-moir-holland-a194b3158",
+      "company": "Talent Connect Group (TCG)",
+      "signal_score": 5,
+      "applied_role": "Principal Data & AI \u2013 FinTech / InsurTech | UAE (Dubai)",
+      "applied_date": "2026-03-21",
+      "reason": "You applied for Principal Data & AI \u2013 FinTech / InsurTech | UAE (Dubai) at Talent Connect Group (TCG)"
     }
   ],
   "companies_searched": 10,

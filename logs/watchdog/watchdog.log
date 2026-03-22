@@ -84,3 +84,59 @@ Bind: loopback
 }
 [2026-03-22 08:00] === Watchdog v3 run ===
 [2026-03-22 08:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-03-22 10:00] === Watchdog v3 run ===
+[2026-03-22 10:00] FIXED: Re-triggered failed cron 7ba5f8f7-6eec-4301-bfa6-185dee16e778
+[2026-03-22 10:00] Summary: fixes=1 warnings=1 alerts=0
+[plugins] [composio] Connecting to https://connect.composio.dev/mcp
+[plugins] [lcm] Plugin loaded (enabled=true, db=/root/.openclaw/lcm.db, threshold=0.75)
+[plugins] camofox-browser: loaded without install/load-path provenance; treat as untracked local code and pin trust via plugins.allow or install records (/root/.openclaw/extensions/camofox-browser/plugin.ts)
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:7ba5f8f7-6eec-4301-bfa6-185dee16e778:1774166433337:2"
+}
+[2026-03-22 12:00] === Watchdog v3 run ===
+[2026-03-22 12:00] FIXED: Re-triggered failed cron 7ba5f8f7-6eec-4301-bfa6-185dee16e778
+[2026-03-22 12:00] FIXED: Re-triggered failed cron d87f2c6c-20ab-42f4-aa83-47cc086e9b04
+[2026-03-22 12:00] Summary: fixes=2 warnings=1 alerts=0
+[plugins] [composio] Connecting to https://connect.composio.dev/mcp
+[plugins] [composio] Connecting to https://connect.composio.dev/mcp
+[plugins] [lcm] Plugin loaded (enabled=true, db=/root/.openclaw/lcm.db, threshold=0.75)
+[plugins] camofox-browser: loaded without install/load-path provenance; treat as untracked local code and pin trust via plugins.allow or install records (/root/.openclaw/extensions/camofox-browser/plugin.ts)
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:7ba5f8f7-6eec-4301-bfa6-185dee16e778:1774173642103:3"
+}
+[plugins] [lcm] Plugin loaded (enabled=true, db=/root/.openclaw/lcm.db, threshold=0.75)
+[plugins] camofox-browser: loaded without install/load-path provenance; treat as untracked local code and pin trust via plugins.allow or install records (/root/.openclaw/extensions/camofox-browser/plugin.ts)
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:d87f2c6c-20ab-42f4-aa83-47cc086e9b04:1774173642946:4"
+}
+[2026-03-22 14:00] === Watchdog v3 run ===
+[2026-03-22 14:00] FIXED: Re-triggered failed cron 7ba5f8f7-6eec-4301-bfa6-185dee16e778
+[2026-03-22 14:00] FIXED: Re-triggered failed cron d87f2c6c-20ab-42f4-aa83-47cc086e9b04
+[2026-03-22 14:00] Summary: fixes=2 warnings=1 alerts=0
+[plugins] [composio] Connecting to https://connect.composio.dev/mcp
+[plugins] [composio] Connecting to https://connect.composio.dev/mcp
+[plugins] [lcm] Plugin loaded (enabled=true, db=/root/.openclaw/lcm.db, threshold=0.75)
+[plugins] camofox-browser: loaded without install/load-path provenance; treat as untracked local code and pin trust via plugins.allow or install records (/root/.openclaw/extensions/camofox-browser/plugin.ts)
+[plugins] [lcm] Plugin loaded (enabled=true, db=/root/.openclaw/lcm.db, threshold=0.75)
+[plugins] camofox-browser: loaded without install/load-path provenance; treat as untracked local code and pin trust via plugins.allow or install records (/root/.openclaw/extensions/camofox-browser/plugin.ts)
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:d87f2c6c-20ab-42f4-aa83-47cc086e9b04:1774180832782:5"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:7ba5f8f7-6eec-4301-bfa6-185dee16e778:1774180833714:6"
+}
+[2026-03-22 16:00] === Watchdog v3 run ===
+[2026-03-22 16:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-03-22 18:00] === Watchdog v3 run ===
+[2026-03-22 18:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-03-22 20:00] === Watchdog v3 run ===
