@@ -3,3 +3,5 @@ mission-control/node_modules/
 mission-control/.next/
 config/notion.json
 config/firehose.json
+.claude/
+.specify/
