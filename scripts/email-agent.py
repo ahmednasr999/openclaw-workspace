@@ -10,6 +10,13 @@ Categories:
   - rejection: "unfortunately", "not moving forward", "other candidates"
   - assessment: "assessment", "test", "coding challenge", "case study"
   - follow_up_needed: reply to our email with question
+
+SAFETY RULES (non-negotiable):
+  - NEVER delete emails
+  - NEVER send emails without explicit human approval
+  - NEVER mark emails as read/unread without approval
+  - NEVER modify email flags or labels
+  - Only READ and CATEGORIZE — no write operations
 """
 
 import imaplib
