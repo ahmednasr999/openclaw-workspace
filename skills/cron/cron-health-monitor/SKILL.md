@@ -118,3 +118,17 @@ Add explicit retry logic (3 attempts) for all external API calls.
 - Review this section and integrate the fix into the relevant step above.
 - Remove this block once the fix has been applied.
 
+
+## Quality Gates
+- Must check Notion page existence before declaring briefing healthy
+- Cron run status fetched from actual cron run history (not assumed)
+- Dashboard stale alerts refreshed every run - not skipped on healthy days
+- Recovery action only triggered when page is confirmed missing AND cron ran successfully
+- Monitor must complete within 60 seconds total
+
+## Output Rules
+- No em dashes - use hyphens only
+- Silent (NO_REPLY) when everything is healthy - no noise
+- If recovery triggered: "Health monitor: Notion briefing page recovered for [date]"
+- If cron failed: "ALERT: Morning briefing cron failed - manual run needed"
+- Include timestamp in any alert message

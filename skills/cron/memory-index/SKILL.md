@@ -30,3 +30,16 @@ Confirm index is searchable and up to date.
 ## Error Handling
 - If indexing fails: Report error, don't delete existing index
 - Use nice/ionice to avoid impacting system performance
+
+## Quality Gates
+- Index update runs only on files modified today (not a full re-index)
+- nice/ionice flags applied to avoid system impact
+- Existing index preserved if new indexing run fails
+- Report confirms count of files indexed matches files found in Step 1
+
+## Output Rules
+- No em dashes - use hyphens only
+- Report format: "Memory index updated: [N] files indexed - [timestamp]"
+- Keep output under 200 chars for Telegram delivery
+- If zero files changed: "Memory index: no changes today"
+- If error: include which step failed and the error message

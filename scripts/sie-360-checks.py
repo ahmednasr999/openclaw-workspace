@@ -286,7 +286,7 @@ def check_integrations():
     try:
         r = subprocess.run(
             ["openclaw", "gateway", "status"],
-            capture_output=True, text=True, timeout=10
+            capture_output=True, text=True, timeout=30
         )
         output = r.stdout + r.stderr
         # Filter plugin log lines

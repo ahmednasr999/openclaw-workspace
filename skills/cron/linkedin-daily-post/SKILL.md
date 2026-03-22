@@ -205,3 +205,17 @@ Add completion guard: verify ALL required outputs (image, Notion update, etc.) b
 - Review this section and integrate the fix into the relevant step above.
 - Remove this block once the fix has been applied.
 
+
+## Quality Gates
+- Image uploaded successfully (HTTP 201) before post creation is attempted
+- Post creation returns a valid LinkedIn URN (not just HTTP 200)
+- Notion status updated to "Posted" with correct post URL
+- Today's briefing Notion page updated with post details
+- Never mark complete if image was in content but not posted
+
+## Output Rules
+- No em dashes - use hyphens only
+- Report sent to Content topic (topic 7)
+- Format: "LinkedIn Daily Post Report - [date]: [POSTED|NO_POST|FAILED]"
+- If posted: include post URL and image status
+- If failed: include what was attempted and why each attempt failed

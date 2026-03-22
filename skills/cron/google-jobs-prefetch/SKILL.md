@@ -10,11 +10,20 @@ Searches Google Jobs for executive roles matching Ahmed's profile using Composio
 
 ## Execution
 
-1. Search Google Jobs for 2-3 queries (digital transformation, PMO, healthcare IT)
-2. Use `COMPOSIO_SEARCH_TOOLS` → `BROWSER_TOOL_CREATE_TASK` → `BROWSER_TOOL_WATCH_TASK`
-3. Parse the output text into structured JSON
-4. Save to `/tmp/google-jobs-YYYY-MM-DD.json`
-5. Print a summary to stdout (count of results found, top roles). The cron system handles delivery automatically.
+### Step 1: Search Google Jobs
+Search Google Jobs for 2-3 queries (digital transformation, PMO, healthcare IT)
+
+### Step 2: Run Browser Tool
+Use `COMPOSIO_SEARCH_TOOLS` → `BROWSER_TOOL_CREATE_TASK` → `BROWSER_TOOL_WATCH_TASK`
+
+### Step 3: Parse Output
+Parse the output text into structured JSON
+
+### Step 4: Save Results
+Save to `/tmp/google-jobs-YYYY-MM-DD.json`
+
+### Step 5: Print Summary
+Print a summary to stdout (count of results found, top roles). The cron system handles delivery automatically.
 
 ## Rules (NON-NEGOTIABLE)
 - Do NOT send Telegram messages yourself. Just print the summary. Cron delivery handles it.
@@ -33,7 +42,7 @@ Searches Google Jobs for executive roles matching Ahmed's profile using Composio
 
 ## Integration
 
-### Pipeline Auto-Save (NON-NEGOTIABLE)
+### Step 6: Pipeline Auto-Save (NON-NEGOTIABLE)
 After saving to `/tmp/google-jobs-YYYY-MM-DD.json`, you MUST also append new jobs to the pipeline:
 
 1. Read `jobs-bank/applied-job-ids.txt` and `jobs-bank/pipeline.md` to identify already-applied companies/roles
@@ -54,3 +63,28 @@ Scanner (`linkedin-gulf-jobs.py`) reads `/tmp/google-jobs-YYYY-MM-DD.json` if it
 
 ## Timeout
 10 minutes (each browser task takes ~3 min)
+Timeout
+10 minutes (each browser task takes ~3 min)
+
+## Error Handling
+- If browser task fails: retry once with 30s delay, then report error
+- If no results found: save empty array, report "0 jobs found"
+- If pipeline append fails: still save to /tmp/ and jobs-bank/scans/, report pipeline error separately
+- Never send Telegram messages directly - just print output
+
+## Quality Gates
+- JSON saved to both /tmp/ and jobs-bank/scans/
+- Each job has: title, company, location, url, source
+- Pipeline updated with new non-duplicate jobs
+- Top 3 aligned roles marked with star
+
+## Manual Run
+```bash
+cd /root/.openclaw/workspace && openclaw cron run google-jobs-prefetch
+```
+
+## Output Rules
+- No em dashes - use hyphens only
+- Print summary to stdout only - never send Telegram directly
+- Format: "Google Jobs: [N] results saved | Top roles: [role1], [role2]"
+- Include date-stamp in output and confirm both /tmp/ and jobs-bank/scans/ paths

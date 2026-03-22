@@ -1,36 +1,103 @@
 {
   "meta": {
     "agent": "email-agent",
-    "version": "1.0.0",
-    "generated_at": "2026-03-22T00:00:19.237501+02:00",
-    "duration_ms": 17312,
+    "version": "2.0.0",
+    "generated_at": "2026-03-22T04:00:08.352155+02:00",
+    "duration_ms": 6085,
     "ttl_hours": 4,
-    "status": "partial",
-    "error": "Himalaya list failed: \u001b[2m2026-03-21T22:00:19.121533Z\u001b[0m \u001b[33m WARN\u001b[0m \u001b[2mimap_codec::response\u001b[0m\u001b[2m:\u001b[0m Rectified missing `text` to \"...\"    \n\u001b[2m2026-03-21T22:00:19.121559Z\u001b[0m \u001b[33m WARN\u001b[0m \u001b[2mimap_client::tasks::resolver\u001b[0m\u001b[2m:\u001b[0m received unsolicited \u001b[3munsolicited\u001b[0m\u001b[2m=\u001b[0mStatus(Untagged(StatusBody { kind: Ok, code: Some(Other(CodeOther(b\"HIGHESTMODSEQ 33367962\"))), text: Text(\"...\") }))\n\u001b[2m2026-03-21T22:00:19.121614Z\u001b[0m \u001b[33m WARN\u001b[0m \u001b[2mimap_client::tasks::tasks::select\u001b[0m\u001b[2m:\u001b[0m missing required UNSEEN OK untagged response\n\u001b[31mThe application panicked (crashed).\u001b[0m\nMessage:  \u001b[36massertion failed: self.is_char_boundary(new_len)\u001b[0m\nLocation: \u001b[35m/rustc/f6e511eec7342f59a25f7c0534f1dbea00d01b14/library/alloc/src/string.rs\u001b[0m:\u001b[35m1407\u001b[0m\n",
-    "run_id": "5989808e",
+    "status": "success",
+    "error": null,
+    "run_id": "bb78f5c7",
     "retries_used": 0,
-    "data_freshness": "stale"
+    "data_freshness": "fresh"
   },
   "data": {
-    "scan_time": "2026-03-21T12:00:03.907280+02:00",
+    "scan_time": "2026-03-22T04:00:08.351550+02:00",
     "total_scanned": 50,
     "by_category": {
       "interview_invite": 0,
-      "recruiter_reach": 0,
-      "application_ack": 0,
+      "recruiter_reach": 4,
+      "application_ack": 2,
       "rejection": 0,
       "assessment": 0,
-      "follow_up_needed": 0,
-      "other": 50
+      "follow_up_needed": 1,
+      "other": 43
     },
     "interview_invites": [],
-    "recruiter_messages": [],
-    "application_acks": [],
+    "recruiter_messages": [
+      {
+        "id": "38160",
+        "from": "John Mason via LinkedIn <invitations@linkedin.com>",
+        "subject": "John accepted your invitation, explore their network",
+        "date": "Sat, 21 Mar 2026 19:30:33 +0000 (UTC)",
+        "unread": false
+      },
+      {
+        "id": "38146",
+        "from": "\"Indeed\" <donotreply@match.indeed.com>",
+        "subject": "Sr. QA/QC Engineer @ Confidential",
+        "date": "Sat, 21 Mar 2026 16:41:45 +0000",
+        "unread": false
+      },
+      {
+        "id": "38140",
+        "from": "\"Indeed\" <donotreply@match.indeed.com>",
+        "subject": "Director of Studies & Operations (DSO) @ IENGLISH LANGUAGES INSTITUTE",
+        "date": "Sat, 21 Mar 2026 16:01:38 +0000",
+        "unread": false
+      },
+      {
+        "id": "38130",
+        "from": "LinkedIn <groups-noreply@linkedin.com>",
+        "subject": "=?UTF-8?Q?Don=E2=80=99t_miss_conversations_in_F?=\r\n =?UTF-8?Q?inTech_=F0=9F=92=B8_Financial_Technology?=",
+        "date": "Sat, 21 Mar 2026 15:04:56 +0000 (UTC)",
+        "unread": false
+      }
+    ],
+    "application_acks": [
+      {
+        "id": "38135",
+        "from": "Miks Antoms - The Customization Group <miks.antoms@picanova.teamtailor-mail.com>",
+        "subject": "We have received your Application!",
+        "date": "Sat, 21 Mar 2026 15:13:25 +0000",
+        "unread": false
+      },
+      {
+        "id": "38134",
+        "from": "no-reply@us.greenhouse-mail.io",
+        "subject": "Thank you for applying to Netcracker",
+        "date": "Sat, 21 Mar 2026 15:11:03 +0000",
+        "unread": false
+      }
+    ],
     "rejections": [],
     "assessments": [],
-    "follow_ups_needed": [],
-    "actionable_count": 0
+    "follow_ups_needed": [
+      {
+        "id": "38167",
+        "from": "Jess Tayel <success@transformationleadership.institute>",
+        "subject": "Which one are you?",
+        "date": "Sat, 21 Mar 2026 21:01:31 +0000",
+        "unread": false
+      }
+    ],
+    "actionable_count": 1
   },
-  "kpi": {},
-  "recommendations": []
+  "kpi": {
+    "emails_processed": 50,
+    "actionable": 1,
+    "interviews_detected": 0,
+    "recruiter_messages": 4,
+    "unread_actionable": 0
+  },
+  "recommendations": [
+    {
+      "id": "rec-bb78f5c7-0",
+      "action": "review_and_respond",
+      "target": "4 recruiter message(s)",
+      "reason": "Recruiter outreach could lead to opportunities",
+      "urgency": "high",
+      "timestamp": "2026-03-22T04:00:08.351609+02:00"
+    }
+  ]
 }
