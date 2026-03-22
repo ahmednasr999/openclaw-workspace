@@ -207,7 +207,7 @@ case "$MODE" in
         run_parallel "Data Agents" \
             "pipeline"  "pipeline-agent.py"  30 \
             "email"     "email-agent.py"     30 \
-            "content"   "content-agent.py"   30 \
+            "content"   "linkedin-content-agent.py"   30 \
             "outreach"  "outreach-agent.py"  30 \
             "system"    "system-agent.py"    30
         ;;
@@ -250,7 +250,7 @@ case "$MODE" in
         run_parallel "Phase 1: Data + Sources" \
             "pipeline"  "pipeline-agent.py"       30 \
             "email"     "email-agent.py"           30 \
-            "content"   "content-agent.py"         30 \
+            "content"   "linkedin-content-agent.py"         30 \
             "outreach"  "outreach-agent.py"        15 \
             "system"    "system-agent.py"           30 \
             "linkedin"  "jobs-source-linkedin.py"  300 \
