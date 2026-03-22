@@ -343,7 +343,19 @@ def get_today_post():
 # ── Image Upload ────────────────────────────────────────────────
 
 def download_image(url):
-    """Download image from URL and return (bytes, content_type)."""
+    """Download image from URL, with local file fallback for GitHub raw URLs."""
+    # Fallback: if URL is a GitHub raw link, try reading from local workspace first
+    if "raw.githubusercontent.com" in url and "/linkedin/posts/" in url:
+        local_name = url.rsplit("/", 1)[-1]
+        local_path = os.path.join(os.path.expanduser("~/.openclaw/workspace/linkedin/posts"), local_name)
+        if os.path.exists(local_path):
+            print(f"Using local image: {local_path}")
+            with open(local_path, "rb") as f:
+                data = f.read()
+            ct = "image/png" if local_path.endswith(".png") else "image/jpeg"
+            print(f"Local image: {len(data)} bytes, type: {ct}")
+            return data, ct
+
     print(f"Downloading image: {url[:80]}...")
     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
     ctx = ssl.create_default_context()
