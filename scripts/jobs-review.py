@@ -90,7 +90,7 @@ def load_feedback_thresholds() -> tuple[int, int]:
     return submit_threshold, review_threshold
 
 
-def call_llm(prompt: str, timeout: int = 120) -> str | None:
+def call_llm(prompt: str, timeout: int = 240) -> str | None:
     """Call OpenClaw gateway with LLM request."""
     try:
         payload = {

@@ -132,3 +132,16 @@ Add explicit retry logic (3 attempts) for all external API calls.
 - If recovery triggered: "Health monitor: Notion briefing page recovered for [date]"
 - If cron failed: "ALERT: Morning briefing cron failed - manual run needed"
 - Include timestamp in any alert message
+
+
+---
+## 🔧 Auto-Improvement (2026-03-22)
+> Added by weekly-agent-review.py based on recurring failure pattern.
+
+**Pattern detected (7 occurrences):**
+Retry logic exists but may not cover all failure paths — review error handling blocks.
+
+**Action required:**
+- Review this section and integrate the fix into the relevant step above.
+- Remove this block once the fix has been applied.
+

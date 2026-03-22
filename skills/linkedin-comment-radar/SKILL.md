@@ -92,3 +92,16 @@ Add completion guard: verify ALL required outputs (image, Notion update, etc.) b
 - Review this section and integrate the fix into the relevant step above.
 - Remove this block once the fix has been applied.
 
+
+
+---
+## 🔧 Auto-Improvement (2026-03-22)
+> Added by weekly-agent-review.py based on recurring failure pattern.
+
+**Pattern detected (2 occurrences):**
+Add completion guard: verify ALL required outputs (image, Notion update, etc.) before marking task done.
+
+**Action required:**
+- Review this section and integrate the fix into the relevant step above.
+- Remove this block once the fix has been applied.
+

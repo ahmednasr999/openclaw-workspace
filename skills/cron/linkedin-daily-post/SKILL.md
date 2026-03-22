@@ -219,3 +219,16 @@ Add completion guard: verify ALL required outputs (image, Notion update, etc.) b
 - Format: "LinkedIn Daily Post Report - [date]: [POSTED|NO_POST|FAILED]"
 - If posted: include post URL and image status
 - If failed: include what was attempted and why each attempt failed
+
+
+---
+## 🔧 Auto-Improvement (2026-03-22)
+> Added by weekly-agent-review.py based on recurring failure pattern.
+
+**Pattern detected (2 occurrences):**
+Add completion guard: verify ALL required outputs (image, Notion update, etc.) before marking task done.
+
+**Action required:**
+- Review this section and integrate the fix into the relevant step above.
+- Remove this block once the fix has been applied.
+
