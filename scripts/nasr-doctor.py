@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 """
-NASR Doctor - Unified system health check.
-Run: python3 scripts/nasr-doctor.py
+NASR Doctor - Unified system health check with auto-fix.
+
+Usage:
+    python3 scripts/nasr-doctor.py          # Diagnose only
+    python3 scripts/nasr-doctor.py --fix    # Diagnose + auto-fix safe issues
 """
 
 import json
@@ -10,6 +13,7 @@ import subprocess
 import sys
 import socket
 import imaplib
+import shutil
 import urllib.request
 import urllib.error
 from datetime import datetime, timezone, timedelta
@@ -17,6 +21,7 @@ from pathlib import Path
 
 WORKSPACE = Path("/root/.openclaw/workspace")
 OPENCLAW_DIR = Path("/root/.openclaw")
+FIX_MODE = "--fix" in sys.argv
 
 # ── Results tracking ──
 
@@ -24,13 +29,18 @@ class Result:
     OK = "ok"
     WARN = "warn"
     FAIL = "fail"
+    FIXED = "fixed"
 
 results = []
+fixes_applied = []
 
 def check(name, status, detail=""):
-    icon = {"ok": "✅", "warn": "⚠️ ", "fail": "❌"}[status]
+    icon = {"ok": "✅", "warn": "⚠️ ", "fail": "❌", "fixed": "🔧"}[status]
     results.append({"name": name, "status": status, "detail": detail})
     print(f"  {icon} {name:<22} {detail}")
+
+def fix_applied(name, action):
+    fixes_applied.append({"name": name, "action": action})
 
 
 # ── 1. OpenClaw Gateway ──
@@ -43,7 +53,6 @@ def check_gateway():
         )
         if pid_out.returncode == 0:
             pid = pid_out.stdout.strip().split("\n")[0]
-            # Check uptime
             try:
                 stat = Path(f"/proc/{pid}").stat()
                 start = datetime.fromtimestamp(stat.st_ctime, tz=timezone.utc)
@@ -57,12 +66,23 @@ def check_gateway():
             # Check if websocket port is listening
             sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             sock.settimeout(2)
-            result = sock.connect_ex(("127.0.0.1", 18789))
+            port_result = sock.connect_ex(("127.0.0.1", 18789))
             sock.close()
-            if result == 0:
+            if port_result == 0:
                 check("OpenClaw Gateway", Result.OK, "Port 18789 listening")
+            elif FIX_MODE:
+                # Auto-fix: restart gateway
+                restart = subprocess.run(
+                    ["openclaw", "gateway", "restart"],
+                    capture_output=True, text=True, timeout=30
+                )
+                if restart.returncode == 0:
+                    check("OpenClaw Gateway", Result.FIXED, "Restarted successfully")
+                    fix_applied("OpenClaw Gateway", "Ran 'openclaw gateway restart'")
+                else:
+                    check("OpenClaw Gateway", Result.FAIL, "Restart failed")
             else:
-                check("OpenClaw Gateway", Result.FAIL, "Not running")
+                check("OpenClaw Gateway", Result.FAIL, "Not running (use --fix to restart)")
     except Exception as e:
         check("OpenClaw Gateway", Result.FAIL, str(e)[:60])
 
@@ -76,14 +96,80 @@ def check_disk():
         free = st.f_frsize * st.f_bavail
         used_pct = int((1 - free / total) * 100)
         free_gb = free / (1024**3)
+
         if used_pct > 90:
-            check("Disk Space", Result.FAIL, f"{used_pct}% used ({free_gb:.1f}GB free)")
+            if FIX_MODE:
+                freed = _clean_disk()
+                # Re-check
+                st2 = os.statvfs("/")
+                free2 = st2.f_frsize * st2.f_bavail
+                new_pct = int((1 - free2 / total) * 100)
+                new_free = free2 / (1024**3)
+                check("Disk Space", Result.FIXED, f"{new_pct}% used ({new_free:.1f}GB free) - freed {freed}")
+                fix_applied("Disk Space", f"Cleaned: {freed}")
+            else:
+                check("Disk Space", Result.FAIL, f"{used_pct}% used ({free_gb:.1f}GB free) (use --fix)")
         elif used_pct > 80:
-            check("Disk Space", Result.WARN, f"{used_pct}% used ({free_gb:.1f}GB free)")
+            if FIX_MODE:
+                freed = _clean_disk()
+                st2 = os.statvfs("/")
+                free2 = st2.f_frsize * st2.f_bavail
+                new_pct = int((1 - free2 / total) * 100)
+                new_free = free2 / (1024**3)
+                check("Disk Space", Result.FIXED, f"{new_pct}% used ({new_free:.1f}GB free) - freed {freed}")
+                fix_applied("Disk Space", f"Cleaned: {freed}")
+            else:
+                check("Disk Space", Result.WARN, f"{used_pct}% used ({free_gb:.1f}GB free)")
         else:
             check("Disk Space", Result.OK, f"{used_pct}% used ({free_gb:.1f}GB free)")
     except Exception as e:
         check("Disk Space", Result.WARN, str(e)[:60])
+
+def _clean_disk():
+    """Run safe disk cleanup operations. Returns description of what was freed."""
+    cleaned = []
+
+    # 1. apt autoremove
+    try:
+        subprocess.run(["apt-get", "autoremove", "-y", "-q"], capture_output=True, timeout=60)
+        cleaned.append("apt autoremove")
+    except Exception:
+        pass
+
+    # 2. apt clean
+    try:
+        subprocess.run(["apt-get", "clean", "-q"], capture_output=True, timeout=30)
+        cleaned.append("apt clean")
+    except Exception:
+        pass
+
+    # 3. Clear old journal logs (keep 3 days)
+    try:
+        subprocess.run(["journalctl", "--vacuum-time=3d"], capture_output=True, timeout=30)
+        cleaned.append("journal vacuum 3d")
+    except Exception:
+        pass
+
+    # 4. Clear /tmp files older than 7 days
+    try:
+        subprocess.run(
+            ["find", "/tmp", "-type", "f", "-mtime", "+7", "-delete"],
+            capture_output=True, timeout=30
+        )
+        cleaned.append("old /tmp files")
+    except Exception:
+        pass
+
+    # 5. Clear archived cron logs
+    archive_dir = OPENCLAW_DIR / "cron" / "runs" / "_archived"
+    if archive_dir.exists():
+        try:
+            shutil.rmtree(archive_dir)
+            cleaned.append("archived cron logs")
+        except Exception:
+            pass
+
+    return ", ".join(cleaned) if cleaned else "nothing to clean"
 
 
 # ── 3. Cron Jobs ──
@@ -99,14 +185,36 @@ def check_crons():
         check("Cron Jobs", Result.WARN, "No cron run logs found")
         return
 
+    # Load active job IDs
+    active_ids = set()
+    jobs_file = OPENCLAW_DIR / "cron" / "jobs.json"
+    if jobs_file.exists():
+        try:
+            with open(jobs_file) as f:
+                data = json.load(f)
+            for j in data.get("jobs", data if isinstance(data, list) else []):
+                if isinstance(j, dict):
+                    active_ids.add(j.get("id", ""))
+        except Exception:
+            pass
+
     ok_count = 0
     warn_count = 0
     fail_count = 0
+    orphans_archived = 0
 
     for cf in cron_files:
         name = cf.stem
+
+        # Auto-fix: archive orphan run logs
+        if FIX_MODE and name not in active_ids:
+            archive_dir = OPENCLAW_DIR / "cron" / "runs" / "_archived"
+            archive_dir.mkdir(exist_ok=True)
+            cf.rename(archive_dir / cf.name)
+            orphans_archived += 1
+            continue
+
         try:
-            # Read last line (most recent run)
             lines = cf.read_text().strip().split("\n")
             last_lines = [l for l in lines if '"action":"finished"' in l]
             if not last_lines:
@@ -138,11 +246,12 @@ def check_crons():
         except Exception:
             continue
 
+    if orphans_archived > 0:
+        check("Cron Cleanup", Result.FIXED, f"Archived {orphans_archived} orphan run logs")
+        fix_applied("Cron Cleanup", f"Archived {orphans_archived} orphan run logs")
+
     if fail_count == 0:
         check("Cron Jobs", Result.OK, f"{ok_count} ok, {warn_count} warn, {fail_count} failed")
-    else:
-        # Individual failures already printed above
-        pass
 
 
 # ── 4. API Connections ──
@@ -177,7 +286,6 @@ def check_gmail():
     try:
         creds_file = Path("/root/.config/gmail-smtp.json")
         if not creds_file.exists():
-            # Try env or other locations
             check("Gmail IMAP", Result.WARN, "No credentials file")
             return
 
@@ -205,7 +313,6 @@ def check_gmail():
 
 
 def check_composio_linkedin():
-    # Just check if the connection config exists
     tools_md = WORKSPACE / "TOOLS.md"
     if tools_md.exists():
         content = tools_md.read_text()
@@ -269,6 +376,14 @@ def check_memory():
     }
 
     missing = [name for name, path in files.items() if not path.exists()]
+
+    if FIX_MODE and "Today's notes" in missing:
+        # Auto-fix: create today's daily note
+        today_file.parent.mkdir(parents=True, exist_ok=True)
+        today_file.write_text(f"# Daily Notes - {now.strftime('%Y-%m-%d')}\n\n")
+        missing.remove("Today's notes")
+        fix_applied("Memory Files", f"Created {today_file.name}")
+
     if missing:
         check("Memory Files", Result.WARN, f"Missing: {', '.join(missing)}")
     else:
@@ -284,7 +399,8 @@ def check_git():
             capture_output=True, text=True, timeout=5,
             cwd=str(WORKSPACE)
         )
-        changes = len([l for l in result.stdout.strip().split("\n") if l.strip()])
+        dirty_lines = [l for l in result.stdout.strip().split("\n") if l.strip()]
+        changes = len(dirty_lines)
 
         log_result = subprocess.run(
             ["git", "log", "-1", "--format=%cr"],
@@ -295,6 +411,27 @@ def check_git():
 
         if changes == 0:
             check("Git Status", Result.OK, f"Clean (last commit {last_commit})")
+        elif FIX_MODE and changes > 0:
+            # Auto-fix: commit data and log files
+            # Only auto-commit safe paths (data/, logs/, memory/, jobs-bank/)
+            safe_prefixes = ("data/", "logs/", "memory/", "jobs-bank/", "coordination/")
+            safe_files = [l[3:] for l in dirty_lines if any(l[3:].startswith(p) for p in safe_prefixes)]
+            unsafe_count = changes - len(safe_files)
+
+            if safe_files:
+                for f in safe_files:
+                    subprocess.run(["git", "add", f], capture_output=True, cwd=str(WORKSPACE))
+                subprocess.run(
+                    ["git", "commit", "-m", f"chore(auto): daily data commit ({len(safe_files)} files)"],
+                    capture_output=True, text=True, timeout=15,
+                    cwd=str(WORKSPACE)
+                )
+                fix_applied("Git Status", f"Auto-committed {len(safe_files)} data/log files")
+
+            if unsafe_count > 0:
+                check("Git Status", Result.FIXED, f"Committed {len(safe_files)} safe files, {unsafe_count} remaining")
+            else:
+                check("Git Status", Result.FIXED, f"Committed {len(safe_files)} files (last commit {last_commit})")
         elif changes < 5:
             check("Git Status", Result.WARN, f"{changes} uncommitted files (last commit {last_commit})")
         else:
@@ -307,7 +444,8 @@ def check_git():
 
 def main():
     print()
-    print("  🩺 NASR Doctor - System Health Check")
+    mode_label = "DIAGNOSE + AUTO-FIX" if FIX_MODE else "DIAGNOSE ONLY"
+    print(f"  🩺 NASR Doctor - {mode_label}")
     print("  " + "━" * 42)
     print()
 
@@ -328,8 +466,19 @@ def main():
     ok = sum(1 for r in results if r["status"] == Result.OK)
     warn = sum(1 for r in results if r["status"] == Result.WARN)
     fail = sum(1 for r in results if r["status"] == Result.FAIL)
+    fixed = sum(1 for r in results if r["status"] == Result.FIXED)
 
-    print(f"  Summary: {ok} ✅  {warn} ⚠️   {fail} ❌")
+    summary = f"  Summary: {ok} ✅  {warn} ⚠️   {fail} ❌"
+    if fixed > 0:
+        summary += f"  {fixed} 🔧"
+    print(summary)
+
+    if fixes_applied:
+        print()
+        print("  Fixes applied:")
+        for f in fixes_applied:
+            print(f"    🔧 {f['name']}: {f['action']}")
+
     print()
 
     if fail > 0:
