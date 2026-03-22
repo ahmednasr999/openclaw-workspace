@@ -2,74 +2,149 @@
   "meta": {
     "agent": "email-agent",
     "version": "3.0.0",
-    "generated_at": "2026-03-22T08:01:45.086529+02:00",
-    "duration_ms": 102718,
+    "generated_at": "2026-03-22T18:00:36.574019+02:00",
+    "duration_ms": 34701,
     "ttl_hours": 4,
     "status": "success",
     "error": null,
-    "run_id": "6100ee90",
+    "run_id": "5cf291e4",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
-    "scan_time": "2026-03-22T08:00:07.343846+02:00",
+    "scan_time": "2026-03-22T18:00:07.183760+02:00",
     "total_scanned": 50,
     "by_category": {
       "interview_invite": 0,
-      "recruiter_reach": 2,
-      "application_ack": 0,
+      "recruiter_reach": 7,
+      "application_ack": 1,
       "rejection": 0,
-      "assessment": 0,
-      "follow_up_needed": 1,
-      "other": 47
+      "assessment": 1,
+      "follow_up_needed": 0,
+      "other": 41
     },
     "interview_invites": [],
     "recruiter_messages": [
       {
-        "id": "38188",
-        "from": "Naukrigulf <newjobs@naukrigulf.com>",
-        "subject": "Director -Corporate & Global Solutions, Senior Program\r\n Manager jobs for you",
-        "date": "Sun, 22 Mar 2026 09:42:20 +0530 (IST)",
+        "id": "38224",
+        "from": "Alina Timofeeva via LinkedIn <messaging-digest-noreply@linkedin.com>",
+        "subject": "Alina just messaged you",
+        "date": "Sun, 22 Mar 2026 12:03:57 +0000 (UTC)",
         "unread": false
       },
       {
-        "id": "38160",
-        "from": "John Mason via LinkedIn <invitations@linkedin.com>",
-        "subject": "John accepted your invitation, explore their network",
-        "date": "Sat, 21 Mar 2026 19:30:33 +0000 (UTC)",
+        "id": "38221",
+        "from": "Marwa Ahmed via LinkedIn <messaging-digest-noreply@linkedin.com>",
+        "subject": "Marwa just messaged you",
+        "date": "Sun, 22 Mar 2026 10:18:45 +0000 (UTC)",
         "unread": false
-      }
-    ],
-    "application_acks": [],
-    "rejections": [],
-    "assessments": [],
-    "follow_ups_needed": [
+      },
       {
-        "id": "38167",
-        "from": "Jess Tayel <success@transformationleadership.institute>",
-        "subject": "Which one are you?",
-        "date": "Sat, 21 Mar 2026 21:01:31 +0000",
+        "id": "38217",
+        "from": "Marwa Ahmed via LinkedIn <messaging-digest-noreply@linkedin.com>",
+        "subject": "Marwa just messaged you",
+        "date": "Sun, 22 Mar 2026 09:48:58 +0000 (UTC)",
+        "unread": false
+      },
+      {
+        "id": "38216",
+        "from": "Najwa Bakhsh via LinkedIn <messages-noreply@linkedin.com>",
+        "subject": "Najwa just messaged you",
+        "date": "Sun, 22 Mar 2026 09:31:23 +0000 (UTC)",
+        "unread": false
+      },
+      {
+        "id": "38215",
+        "from": "Najwa Bakhsh <invitations@linkedin.com>",
+        "subject": "I want to connect",
+        "date": "Sun, 22 Mar 2026 09:30:34 +0000 (UTC)",
+        "unread": false
+      },
+      {
+        "id": "38214",
+        "from": "Ahmed Zarour via LinkedIn <messages-noreply@linkedin.com>",
+        "subject": "Ahmed just messaged you",
+        "date": "Sun, 22 Mar 2026 09:25:00 +0000 (UTC)",
+        "unread": false
+      },
+      {
+        "id": "38206",
+        "from": "\"Indeed Apply\" <indeedapply@indeed.com>",
+        "subject": "Indeed Application: Strategy & Transformation Director",
+        "date": "Sun, 22 Mar 2026 07:36:11 +0000",
         "unread": false
       }
     ],
+    "application_acks": [
+      {
+        "id": "38209",
+        "from": "System System <system@successfactors.eu>",
+        "subject": "PwC Careers: Thank you for your Application",
+        "date": "Sun, 22 Mar 2026 07:48:07 +0000 (UTC)",
+        "unread": false
+      }
+    ],
+    "rejections": [],
+    "assessments": [
+      {
+        "id": "38230",
+        "from": "\"Pat @ Starter Story\" <pat@starterstory.com>",
+        "subject": "$17K/month from ONE marketing channel",
+        "date": "Sun, 22 Mar 2026 13:03:03 +0000 (UTC)",
+        "unread": false
+      }
+    ],
+    "follow_ups_needed": [],
     "actionable_count": 1,
-    "llm_analysis": null
+    "llm_analysis": {
+      "actionable_emails": [
+        {
+          "id": "38230",
+          "subject": "$17K/month from ONE marketing channel",
+          "from": "Pat @ Starter Story <pat@starterstory.com>",
+          "date": "Sun, 22 Mar 2026",
+          "category": "assessment",
+          "urgency": "low",
+          "intent": "Promotional newsletter content - enticing click-through with income hook",
+          "action": "no_action",
+          "response_deadline": "when convenient",
+          "notes": "Marketing newsletter, not a job assessment. Low relevance to executive search."
+        }
+      ],
+      "summary": {
+        "total_actionable": 1,
+        "critical_count": 0,
+        "requires_interview_prep": false,
+        "requires_assessment": false,
+        "recruiter_top_opportunities": [],
+        "top_priority": null,
+        "daily_focus": "No urgent job-related emails require action today. Focus on active applications and recruiter outreach."
+      }
+    }
   },
   "kpi": {
     "emails_processed": 50,
     "actionable": 1,
     "interviews_detected": 0,
-    "recruiter_messages": 2,
+    "recruiter_messages": 7,
     "unread_actionable": 0
   },
   "recommendations": [
     {
-      "id": "rec-6100ee90-0",
+      "id": "rec-5cf291e4-0",
       "action": "review_and_respond",
-      "target": "2 recruiter message(s)",
+      "target": "7 recruiter message(s)",
       "reason": "Recruiter outreach could lead to opportunities",
       "urgency": "high",
-      "timestamp": "2026-03-22T08:01:45.086190+02:00"
+      "timestamp": "2026-03-22T18:00:36.573311+02:00"
+    },
+    {
+      "id": "rec-5cf291e4-1",
+      "action": "complete_assessment",
+      "target": "1 assessment(s)",
+      "reason": "Assessments have deadlines",
+      "urgency": "high",
+      "timestamp": "2026-03-22T18:00:36.573328+02:00"
     }
   ]
 }

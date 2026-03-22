@@ -11,6 +11,7 @@
 set -euo pipefail
 
 SCRIPTS="/root/.openclaw/workspace/scripts"
+DATA_DIR="/root/.openclaw/workspace/data"
 LOG_DIR="/var/log/briefing"
 DATE=$(date +%Y-%m-%d)
 LOG_FILE="$LOG_DIR/$DATE.log"
@@ -177,21 +178,36 @@ run_parallel() {
         timeouts+=("$timeout")
     done
     
-    # Launch all in background
-    for i in "${!pids[@]}"; do
+    # Launch all in background with retry on failure
+    local bg_pids=()
+    for i in "${!names[@]}"; do
         (
-            timeout "${timeouts[$i]}" python3 "$SCRIPTS/${scripts[$i]}" >> "$LOG_FILE" 2>&1
-            local code=$?
-            if [ $code -eq 0 ]; then
-                python3 "$SCRIPTS/heartbeat-tracker.py" --agent "${names[$i]}" >> "$LOG_FILE" 2>&1 || true
-            fi
+            local attempt=1
+            local max_attempts=2
+            while [ $attempt -le $max_attempts ]; do
+                if [ $attempt -gt 1 ]; then
+                    echo "[$(date '+%H:%M:%S')] RETRY ${names[$i]} (attempt $attempt)" >> "$LOG_FILE"
+                    sleep 5
+                fi
+                timeout "${timeouts[$i]}" python3 "$SCRIPTS/${scripts[$i]}" >> "$LOG_FILE" 2>&1
+                local code=$?
+                if [ $code -eq 0 ]; then
+                    python3 "$SCRIPTS/heartbeat-tracker.py" --agent "${names[$i]}" >> "$LOG_FILE" 2>&1 || true
+                    exit 0
+                fi
+                ((attempt++))
+            done
+            # Both attempts failed — write failure marker for briefing
+            echo "{\"agent\":\"${names[$i]}\",\"status\":\"FAILED\",\"ts\":\"$(date -Iseconds)\"}" >> "$DATA_DIR/source-failures.jsonl"
+            exit 1
         ) &
+        bg_pids+=($!)
     done
     
     local failures=0
-    for i in "${!pids[@]}"; do
-        if ! wait %$((i+1)) 2>/dev/null; then
-            log "WARN: ${names[$i]} failed"
+    for i in "${!bg_pids[@]}"; do
+        if ! wait "${bg_pids[$i]}" 2>/dev/null; then
+            log "FAIL: ${names[$i]} (after retry)"
             ((failures++)) || true
         fi
     done
@@ -217,7 +233,7 @@ case "$MODE" in
         # Google Jobs & Bayt: blocked from VPS (403). Disabled.
         # Exa dropped — unreliable (stale URLs, wrong locations, profile pages)
         run_parallel "Job Sources" \
-            "linkedin"  "jobs-source-linkedin.py"  300 \
+            "linkedin"  "jobs-source-linkedin.py"  480 \
             "indeed"    "jobs-source-indeed.py"    120
         
         log "--- Sync Applied IDs from Notion ---"
@@ -241,22 +257,32 @@ case "$MODE" in
         log "  FULL BRIEFING PIPELINE"
         log "========================================="
         
+        # Clear previous failure markers
+        rm -f "$DATA_DIR/source-failures.jsonl"
+        
         # Phase 0: Heartbeat check — verify agents healthy before starting
         log "--- Phase 0: Heartbeat Check ---"
         timeout 30 python3 "$SCRIPTS/heartbeat-checker.py" >> "$LOG_FILE" 2>&1 || true
         
         # Phase 1: Data agents + job sources in parallel
-        # Google Jobs & Bayt: blocked from VPS (403). Disabled.
         run_parallel "Phase 1: Data + Sources" \
             "pipeline"  "pipeline-agent.py"       30 \
             "email"     "email-agent.py"          180 \
             "content"   "linkedin-content-agent.py"         30 \
             "outreach"  "outreach-agent.py"        15 \
             "system"    "system-agent.py"           30 \
-            "linkedin"  "jobs-source-linkedin.py"  300 \
+            "linkedin"  "jobs-source-linkedin.py"  480 \
             "indeed"    "jobs-source-indeed.py"    120 \
+            "google"    "jobs-source-google.py"    120 \
             "comment-radar" "comment-radar-agent.py" 60 \
             "li-post"   "linkedin-post-agent.py"   30
+        
+        # Alert on source failures via Telegram
+        if [ -f "$DATA_DIR/source-failures.jsonl" ]; then
+            FAILED_SOURCES=$(cat "$DATA_DIR/source-failures.jsonl" | python3 -c "import sys,json; print(', '.join(json.loads(l).get('agent','?') for l in sys.stdin if l.strip()))" 2>/dev/null || echo "unknown")
+            log "🔴 Source failures detected: $FAILED_SOURCES"
+            openclaw message send --channel telegram --to 866838380 --message "🔴 Morning Briefing Alert: Job sources FAILED after retry: $FAILED_SOURCES. Check pipeline logs." >> "$LOG_FILE" 2>&1 || true
+        fi
         
         # Phase 2: Merge + Review (sequential, depends on sources)
         log "--- Phase 2: Sync Applied IDs ---"

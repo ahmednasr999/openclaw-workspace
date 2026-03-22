@@ -234,17 +234,21 @@ def run_merge(result: AgentResult):
         
         source_files = list(JOBS_RAW_DIR.glob("*.json"))
         print(f"\nSource files in {JOBS_RAW_DIR}:")
-        
+
         total_jobs = 0
         for f in source_files:
             data = load_json(f, {})
-            meta = data.get("meta", {})
-            jobs = data.get("jobs", data.get("data", []))
+            if isinstance(data, list):
+                jobs = data
+                meta = {}
+            else:
+                meta = data.get("meta", {})
+                jobs = data.get("jobs", data.get("data", []))
             if isinstance(jobs, list):
                 count = len(jobs)
             else:
                 count = 0
-            
+
             status = "✅" if not is_stale(meta, FRESHNESS_HOURS) else "⚠️ STALE"
             print(f"  {status} {f.name}: {count} jobs | {meta.get('source', '?')} | {meta.get('generated_at', '?')}")
             total_jobs += count

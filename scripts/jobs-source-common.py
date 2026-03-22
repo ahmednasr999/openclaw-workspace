@@ -47,6 +47,12 @@ ALL_TITLES = [
     "Head of Transformation",
     "Director of Innovation",
     "VP Operations",
+    # Added 2026-03-22 — gap titles
+    "Transformation Lead",
+    "Digital Director",
+    "IT Director",
+    "VP of Programs",
+    "Head of Strategy",
 ]
 
 # GCC Countries (6)
@@ -80,9 +86,10 @@ COUNTRY_SEARCH_TERMS = {
 # Executive keywords - must have at least one
 EXEC_WORDS = [
     "chief", "ceo", "cto", "cio", "cdo", "coo", "cso", "cfo", "cmo", "cro",
-    "vp ", "vice president",
-    "director", "head of", "svp", "senior director", "managing director",
-    "executive director", "program director", "principal"
+    "vp ", "vp,", "vp-", "vp/", "avp", "vice president",
+    "director", "head", "svp", "senior director", "managing director",
+    "executive director", "program director", "principal",
+    "senior manager",
 ]
 
 # Domain keywords - must relate to DT/Tech/PMO
@@ -102,10 +109,11 @@ SKIP_WORDS = [
     "coordinator", "specialist", "intern", "trainee", "assistant", "admin",
     "recruiter", "talent acquisition", "web3", "crypto", "blockchain",
     "fundraising", "cfo ", "budget", "residences",
-    "housing", "construction", "facility", "procurement", "legal", "compliance",
-    "risk ", "audit", "partnerships", "education", "academic",
-    "medical", "patient", "hospital", "content ", "creative",
-    "communications", "pr ", "public relations", "social media"
+    "housing", "construction", "facility", "procurement", "legal",
+    "risk ", "audit", "education", "academic",
+    "medical", "patient", "hospital",
+    "pr ", "public relations", "social media",
+    "teacher", "headteacher", "mathematics", "nursery"
 ]
 
 # Fintech/banking override - these are RELEVANT domains

@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "agent": "jobs-review",
+    "version": "1.0.0",
+    "generated_at": "2026-03-22T09:22:39.866152+02:00",
+    "duration_ms": 202714,
+    "ttl_hours": 6,
+    "status": "success",
+    "error": null,
+    "run_id": "9fd241f6",
+    "retries_used": 0,
+    "data_freshness": "fresh"
+  },
+  "data": {
+    "generated_at": "2026-03-22T09:22:39.865911+02:00",
+    "total_candidates": 251,
+    "reviewed": 50,
+    "submit": [],
+    "review": [],
+    "skip_count": 50,
+    "unreviewed_count": 201,
+    "thresholds": {
+      "submit": 7,
+      "review": 5
+    },
+    "kpi": {
+      "submit_rate": 0.0,
+      "review_rate": 0.0,
+      "skip_rate": 1.0,
+      "avg_fit_score": 1.0,
+      "llm_latency_ms": 202710
+    }
+  },
+  "kpi": {
+    "submit_count": 0,
+    "review_count": 0,
+    "skip_count": 50,
+    "submit_rate": 0.0,
+    "review_rate": 0.0,
+    "skip_rate": 100.0,
+    "avg_fit_score": 1.0,
+    "llm_latency_ms": 202710
+  },
+  "recommendations": []
+}

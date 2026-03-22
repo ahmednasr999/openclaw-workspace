@@ -66,6 +66,7 @@ def search_linkedin_public(title: str, location: str) -> list[dict]:
             "location": location,
             "position": 1,
             "pageNum": 0,
+            "f_TPR": "r604800",  # Last 7 days only
         }
         
         r = requests.get(url, headers=HEADERS, params=params, timeout=15)
@@ -126,7 +127,7 @@ def run_linkedin_scanner(result: AgentResult):
         return
     
     # Build search plan: top titles x locations
-    TOP_TITLES = ALL_TITLES[:15]  # Top 15 titles
+    TOP_TITLES = ALL_TITLES  # All 27 titles
     
     searches = []
     for country in PRIORITY_COUNTRIES:

@@ -18,6 +18,7 @@ import json
 import sys
 import time
 import requests
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 # Add scripts dir to path for imports
@@ -304,26 +305,34 @@ def run_review(result: AgentResult):
     all_reviews = []
     total_latency = 0
     
-    for batch_start in range(0, len(top_jobs), BATCH_SIZE):
+    # Parallelize batches using ThreadPoolExecutor
+    def process_batch(batch_start):
         batch = top_jobs[batch_start:batch_start + BATCH_SIZE]
         batch_num = batch_start // BATCH_SIZE + 1
         print(f"Calling LLM batch {batch_num} ({len(batch)} jobs, {MODEL})...")
-        
-        prompt = build_review_prompt(batch)
         start_time = time.time()
+        prompt = build_review_prompt(batch)
         response = call_llm(prompt)
         batch_latency = int((time.time() - start_time) * 1000)
-        total_latency += batch_latency
-        
         if response:
             batch_reviews = parse_llm_response(response, len(batch))
-            # Adjust job_num to be global
             for r in batch_reviews:
                 r["job_num"] = r["job_num"] + batch_start
-            all_reviews.extend(batch_reviews)
             print(f"  Batch {batch_num}: {len(batch_reviews)} reviews in {batch_latency}ms")
+            return batch_reviews, batch_latency
         else:
             print(f"  Batch {batch_num}: LLM failed")
+            return [], batch_latency
+
+    batch_starts = list(range(0, len(top_jobs), BATCH_SIZE))
+    all_reviews = []
+    total_latency = 0
+    with ThreadPoolExecutor(max_workers=4) as ex:
+        futures = {ex.submit(process_batch, bs): bs for bs in batch_starts}
+        for future in as_completed(futures):
+            batch_reviews, batch_latency = future.result()
+            total_latency += batch_latency
+            all_reviews.extend(batch_reviews)
     
     llm_latency_ms = total_latency
     reviews = all_reviews

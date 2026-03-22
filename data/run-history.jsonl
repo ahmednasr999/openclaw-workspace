@@ -169,3 +169,26 @@
 {"agent": "jobs-merge", "run_id": "98c98bd2", "started": "2026-03-22T08:54:51.624132+02:00", "duration_ms": 10, "status": "partial", "records": 245, "error": "'list' object has no attribute 'get'"}
 {"agent": "jobs-merge", "run_id": "351b1744", "started": "2026-03-22T08:56:54.209448+02:00", "duration_ms": 27675, "status": "success", "records": 251, "error": null}
 {"agent": "jobs-review", "run_id": "8b4bb580", "started": "2026-03-22T09:02:16.162367+02:00", "duration_ms": 219750, "status": "success", "records": 9, "error": null}
+{"agent": "jobs-review", "run_id": "9fd241f6", "started": "2026-03-22T09:22:39.866443+02:00", "duration_ms": 202714, "status": "success", "records": 9, "error": null}
+{"agent": "content-agent", "run_id": "e8ea8f4b", "started": "2026-03-22T10:00:02.708782+02:00", "duration_ms": 715, "status": "success", "records": 7, "error": null}
+{"agent": "pipeline-agent", "run_id": "ac12d1ec", "started": "2026-03-22T10:00:10.150353+02:00", "duration_ms": 8138, "status": "success", "records": 9, "error": null}
+{"agent": "system-agent", "run_id": "266518f1", "started": "2026-03-22T10:00:14.261212+02:00", "duration_ms": 12216, "status": "success", "records": 6, "error": null}
+{"agent": "email-agent", "run_id": "332bacf5", "started": "2026-03-22T10:02:09.286024+02:00", "duration_ms": 126924, "status": "success", "records": 11, "error": null}
+{"agent": "content-agent", "run_id": "446e18bf", "started": "2026-03-22T12:00:03.135398+02:00", "duration_ms": 1344, "status": "success", "records": 7, "error": null}
+{"agent": "pipeline-agent", "run_id": "bf7ce04f", "started": "2026-03-22T12:00:18.117819+02:00", "duration_ms": 16186, "status": "success", "records": 9, "error": null}
+{"agent": "email-agent", "run_id": "18bc2cb7", "started": "2026-03-22T12:02:08.693877+02:00", "duration_ms": 126620, "status": "success", "records": 11, "error": null}
+{"agent": "content-agent", "run_id": "355f28fa", "started": "2026-03-22T14:00:02.843320+02:00", "duration_ms": 1483, "status": "success", "records": 7, "error": null}
+{"agent": "pipeline-agent", "run_id": "9505758b", "started": "2026-03-22T14:00:09.143529+02:00", "duration_ms": 7746, "status": "success", "records": 9, "error": null}
+{"agent": "system-agent", "run_id": "20e300dc", "started": "2026-03-22T14:00:26.656097+02:00", "duration_ms": 25272, "status": "success", "records": 6, "error": null}
+{"agent": "email-agent", "run_id": "8912bbc3", "started": "2026-03-22T14:00:28.791915+02:00", "duration_ms": 27293, "status": "success", "records": 11, "error": null}
+{"agent": "content-agent", "run_id": "976f0efb", "started": "2026-03-22T16:00:03.135646+02:00", "duration_ms": 1196, "status": "success", "records": 7, "error": null}
+{"agent": "pipeline-agent", "run_id": "436b6212", "started": "2026-03-22T16:00:12.938132+02:00", "duration_ms": 10999, "status": "success", "records": 9, "error": null}
+{"agent": "system-agent", "run_id": "7577f5af", "started": "2026-03-22T16:00:15.789481+02:00", "duration_ms": 13849, "status": "success", "records": 6, "error": null}
+{"agent": "email-agent", "run_id": "5ab45e75", "started": "2026-03-22T16:01:54.698054+02:00", "duration_ms": 112430, "status": "success", "records": 11, "error": null}
+{"agent": "email-agent", "run_id": "7f7ae5ca", "started": "2026-03-22T17:37:50.905862+02:00", "duration_ms": 32179, "status": "success", "records": 11, "error": null}
+{"agent": "jobs-merge", "run_id": "67f1b71f", "started": "2026-03-22T17:39:45.475484+02:00", "duration_ms": 29961, "status": "success", "records": 251, "error": null}
+{"agent": "content-agent", "run_id": "e1abd56d", "started": "2026-03-22T18:00:03.480695+02:00", "duration_ms": 1847, "status": "success", "records": 7, "error": null}
+{"agent": "pipeline-agent", "run_id": "0146696e", "started": "2026-03-22T18:00:11.328382+02:00", "duration_ms": 9739, "status": "success", "records": 9, "error": null}
+{"agent": "system-agent", "run_id": "27399a14", "started": "2026-03-22T18:00:12.883289+02:00", "duration_ms": 11210, "status": "success", "records": 6, "error": null}
+{"agent": "email-agent", "run_id": "5cf291e4", "started": "2026-03-22T18:00:36.574408+02:00", "duration_ms": 34701, "status": "success", "records": 11, "error": null}
+{"agent": "jobs-source-google", "run_id": "3f163ef7", "started": "2026-03-22T19:23:43.425175+02:00", "duration_ms": 20292, "status": "success", "records": 3, "error": null}
