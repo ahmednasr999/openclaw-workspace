@@ -442,7 +442,7 @@ def run_review(result: AgentResult):
     print(f"\nRunning ATS scoring on {len(submit_jobs) + len(review_jobs)} jobs...")
     try:
         from importlib.util import spec_from_file_location, module_from_spec
-        ats_spec = spec_from_file_location("ats_scorer", str(Path(__file__).parent / "ats-scorer.py"))
+        ats_spec = spec_from_file_location("job_scorer", str(Path(__file__).parent / "job-scorer.py"))
         ats_mod = module_from_spec(ats_spec)
         ats_spec.loader.exec_module(ats_mod)
         
