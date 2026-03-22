@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-source-linkedin",
     "version": "1.0.0",
-    "generated_at": "2026-03-22T05:03:15.695360+02:00",
-    "duration_ms": 190671,
+    "generated_at": "2026-03-22T07:54:10.250291+02:00",
+    "duration_ms": 190324,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "afa87412",
+    "run_id": "18623aaa",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -2857,6 +2857,24 @@
       "filter_reason": "not-exec"
     },
     {
+      "id": "linkedin-li-4386195862",
+      "source": "linkedin",
+      "title": "AI Sales Lead",
+      "company": "JCA Associates",
+      "location": "Dubai, United Arab Emirates",
+      "url": "https://ae.linkedin.com/jobs/view/ai-sales-lead-at-jca-associates-4386195862",
+      "posted": "2026-03-22",
+      "seniority": "Other",
+      "domain_match": true,
+      "keyword_score": 6,
+      "match_keywords": [
+        "ai"
+      ],
+      "raw_snippet": "",
+      "relevant": false,
+      "filter_reason": "not-exec"
+    },
+    {
       "id": "linkedin-li-4380591181",
       "source": "linkedin",
       "title": "Dealer Manager - Commercial Interiors",
@@ -3484,22 +3502,6 @@
       "filter_reason": "not-exec"
     },
     {
-      "id": "linkedin-li-4384010956",
-      "source": "linkedin",
-      "title": "Product Recall/Field Action Specialist- Temporary Contract",
-      "company": "Confidential",
-      "location": "Dubai, Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/product-recall-field-action-specialist-temporary-contract-at-confidential-4384010956",
-      "posted": "2026-03-16",
-      "seniority": "Other",
-      "domain_match": false,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "not-exec"
-    },
-    {
       "id": "linkedin-li-4386850803",
       "source": "linkedin",
       "title": "Director of Enrichment - August 2026",
@@ -4056,24 +4058,6 @@
       "location": "Ajman, Ajman Emirate, United Arab Emirates",
       "url": "https://ae.linkedin.com/jobs/view/senior-growth-manager-edtech-french-fluent-%F0%9F%87%AB%F0%9F%87%B7-at-paradox-en-4346219208",
       "posted": "2025-12-26",
-      "seniority": "Other",
-      "domain_match": true,
-      "keyword_score": 6,
-      "match_keywords": [
-        "growth"
-      ],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "not-exec"
-    },
-    {
-      "id": "linkedin-li-4346382643",
-      "source": "linkedin",
-      "title": "Senior Growth Manager - EdTech (French fluent \ud83c\uddeb\ud83c\uddf7)",
-      "company": "Paradox EN",
-      "location": "Sharjah, Sharjah Emirate, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/senior-growth-manager-edtech-french-fluent-%F0%9F%87%AB%F0%9F%87%B7-at-paradox-en-4346382643",
-      "posted": "2025-12-27",
       "seniority": "Other",
       "domain_match": true,
       "keyword_score": 6,
@@ -4675,22 +4659,6 @@
       "filter_reason": "not-exec"
     },
     {
-      "id": "linkedin-li-4373428315",
-      "source": "linkedin",
-      "title": "Senior Specialist - Structural & Hull (EPC)",
-      "company": "Drydocks World",
-      "location": "Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/senior-specialist-structural-hull-epc-at-drydocks-world-4373428315",
-      "posted": "2026-02-20",
-      "seniority": "Other",
-      "domain_match": false,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "not-exec"
-    },
-    {
       "id": "linkedin-li-4384064661",
       "source": "linkedin",
       "title": "Project Manager (Power Generation / Energy \u2013 Power Plant (EPCM)-Dubai, UAE-Duration-28 Months",
@@ -4706,22 +4674,6 @@
         "uae",
         "dubai"
       ],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "not-exec"
-    },
-    {
-      "id": "linkedin-li-4373416438",
-      "source": "linkedin",
-      "title": "Senior Specialist - Electrical (EPC, FSO, FPSO)",
-      "company": "Drydocks World",
-      "location": "Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/senior-specialist-electrical-epc-fso-fpso-at-drydocks-world-4373416438",
-      "posted": "2026-02-20",
-      "seniority": "Other",
-      "domain_match": false,
-      "keyword_score": 0,
-      "match_keywords": [],
       "raw_snippet": "",
       "relevant": false,
       "filter_reason": "not-exec"
@@ -6111,6 +6063,22 @@
       "filter_reason": null
     },
     {
+      "id": "linkedin-li-4388635014",
+      "source": "linkedin",
+      "title": "Vice President, Financial Crime Prevention",
+      "company": "General Commercial Gaming Regulatory Authority - GCGRA",
+      "location": "Abu Dhabi Emirate, United Arab Emirates",
+      "url": "https://ae.linkedin.com/jobs/view/vice-president-financial-crime-prevention-at-general-commercial-gaming-regulatory-authority-gcgra-4388635014",
+      "posted": "2026-03-22",
+      "seniority": "VP",
+      "domain_match": false,
+      "keyword_score": 0,
+      "match_keywords": [],
+      "raw_snippet": "",
+      "relevant": true,
+      "filter_reason": null
+    },
+    {
       "id": "linkedin-li-4379434407",
       "source": "linkedin",
       "title": "Vice President - Legal Counsel",
@@ -6458,6 +6426,22 @@
       "match_keywords": [
         "ai"
       ],
+      "raw_snippet": "",
+      "relevant": false,
+      "filter_reason": "not-exec"
+    },
+    {
+      "id": "linkedin-li-4388631107",
+      "source": "linkedin",
+      "title": "System Engineering Manager",
+      "company": "General Commercial Gaming Regulatory Authority - GCGRA",
+      "location": "Abu Dhabi Emirate, United Arab Emirates",
+      "url": "https://ae.linkedin.com/jobs/view/system-engineering-manager-at-general-commercial-gaming-regulatory-authority-gcgra-4388631107",
+      "posted": "2026-03-22",
+      "seniority": "Other",
+      "domain_match": true,
+      "keyword_score": 0,
+      "match_keywords": [],
       "raw_snippet": "",
       "relevant": false,
       "filter_reason": "not-exec"
@@ -8935,6 +8919,24 @@
       "filter_reason": "no-domain"
     },
     {
+      "id": "linkedin-li-4376065764",
+      "source": "linkedin",
+      "title": "Head of Performance Marketing",
+      "company": "FAST FIT EMS",
+      "location": "Riyadh Region",
+      "url": "https://sa.linkedin.com/jobs/view/head-of-performance-marketing-at-fast-fit-ems-4376065764",
+      "posted": "2026-02-24",
+      "seniority": "Director",
+      "domain_match": false,
+      "keyword_score": 6,
+      "match_keywords": [
+        "head of"
+      ],
+      "raw_snippet": "",
+      "relevant": false,
+      "filter_reason": "skip-word"
+    },
+    {
       "id": "linkedin-li-4360133249",
       "source": "linkedin",
       "title": "Director- Data Analytics (CDU3) - 20004846",
@@ -8952,24 +8954,6 @@
       "raw_snippet": "",
       "relevant": true,
       "filter_reason": null
-    },
-    {
-      "id": "linkedin-li-4376065764",
-      "source": "linkedin",
-      "title": "Head of Performance Marketing",
-      "company": "FAST FIT EMS",
-      "location": "Riyadh Region",
-      "url": "https://sa.linkedin.com/jobs/view/head-of-performance-marketing-at-fast-fit-ems-4376065764",
-      "posted": "2026-02-24",
-      "seniority": "Director",
-      "domain_match": false,
-      "keyword_score": 6,
-      "match_keywords": [
-        "head of"
-      ],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "skip-word"
     },
     {
       "id": "linkedin-li-4384623434",
@@ -9180,24 +9164,6 @@
       "filter_reason": null
     },
     {
-      "id": "linkedin-li-4388725723",
-      "source": "linkedin",
-      "title": "Chief Executive Officer (CEO/Founder)",
-      "company": "Nexus Consulting",
-      "location": "Saudi Arabia",
-      "url": "https://sa.linkedin.com/jobs/view/chief-executive-officer-ceo-founder-at-nexus-consulting-4388725723",
-      "posted": "2026-03-21",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 6,
-      "match_keywords": [
-        "executive"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null
-    },
-    {
       "id": "linkedin-li-4382547338",
       "source": "linkedin",
       "title": "Chief Strategy Officer",
@@ -9226,6 +9192,24 @@
       "keyword_score": 3,
       "match_keywords": [
         "platform"
+      ],
+      "raw_snippet": "",
+      "relevant": true,
+      "filter_reason": null
+    },
+    {
+      "id": "linkedin-li-4388725723",
+      "source": "linkedin",
+      "title": "Chief Executive Officer (CEO/Founder)",
+      "company": "Nexus Consulting",
+      "location": "Saudi Arabia",
+      "url": "https://sa.linkedin.com/jobs/view/chief-executive-officer-ceo-founder-at-nexus-consulting-4388725723",
+      "posted": "2026-03-21",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 6,
+      "match_keywords": [
+        "executive"
       ],
       "raw_snippet": "",
       "relevant": true,
@@ -10784,6 +10768,22 @@
       "filter_reason": null
     },
     {
+      "id": "linkedin-li-4370553799",
+      "source": "linkedin",
+      "title": "Unreal Engine Operator",
+      "company": "PIXOMONDO",
+      "location": "Riyadh, Riyadh, Saudi Arabia",
+      "url": "https://sa.linkedin.com/jobs/view/unreal-engine-operator-at-pixomondo-4370553799",
+      "posted": "2026-01-15",
+      "seniority": "Other",
+      "domain_match": false,
+      "keyword_score": 0,
+      "match_keywords": [],
+      "raw_snippet": "",
+      "relevant": false,
+      "filter_reason": "not-exec"
+    },
+    {
       "id": "linkedin-li-4330495590",
       "source": "linkedin",
       "title": "Senior Business Development Manager - Financial Services - KSA",
@@ -10797,38 +10797,6 @@
       "match_keywords": [
         "ksa"
       ],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "not-exec"
-    },
-    {
-      "id": "linkedin-li-4381490327",
-      "source": "linkedin",
-      "title": "Virtual Production Technician",
-      "company": "PIXOMONDO",
-      "location": "Riyadh, Riyadh, Saudi Arabia",
-      "url": "https://sa.linkedin.com/jobs/view/virtual-production-technician-at-pixomondo-4381490327",
-      "posted": "2026-02-08",
-      "seniority": "Other",
-      "domain_match": true,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "not-exec"
-    },
-    {
-      "id": "linkedin-li-4370553799",
-      "source": "linkedin",
-      "title": "Unreal Engine Operator",
-      "company": "PIXOMONDO",
-      "location": "Riyadh, Riyadh, Saudi Arabia",
-      "url": "https://sa.linkedin.com/jobs/view/unreal-engine-operator-at-pixomondo-4370553799",
-      "posted": "2026-01-15",
-      "seniority": "Other",
-      "domain_match": false,
-      "keyword_score": 0,
-      "match_keywords": [],
       "raw_snippet": "",
       "relevant": false,
       "filter_reason": "not-exec"
@@ -10848,6 +10816,22 @@
         "ai",
         "ksa"
       ],
+      "raw_snippet": "",
+      "relevant": false,
+      "filter_reason": "not-exec"
+    },
+    {
+      "id": "linkedin-li-4381490327",
+      "source": "linkedin",
+      "title": "Virtual Production Technician",
+      "company": "PIXOMONDO",
+      "location": "Riyadh, Riyadh, Saudi Arabia",
+      "url": "https://sa.linkedin.com/jobs/view/virtual-production-technician-at-pixomondo-4381490327",
+      "posted": "2026-02-08",
+      "seniority": "Other",
+      "domain_match": true,
+      "keyword_score": 0,
+      "match_keywords": [],
       "raw_snippet": "",
       "relevant": false,
       "filter_reason": "not-exec"
@@ -14626,8 +14610,8 @@
   ],
   "kpi": {
     "searches_run": 90,
-    "results_per_search": 17.7,
-    "unique_jobs": 841,
+    "results_per_search": 17.74,
+    "unique_jobs": 840,
     "errors": 8,
     "blocked": false,
     "method": "public-html-scrape"

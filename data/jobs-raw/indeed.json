@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-03-22T05:01:20.411680+02:00",
-    "duration_ms": 75916,
+    "generated_at": "2026-03-22T07:52:07.741970+02:00",
+    "duration_ms": 68123,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "dc93e870",
+    "run_id": "fb760b1f",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -56,9 +56,9 @@
   ],
   "kpi": {
     "searches_run": 66,
-    "results_per_search": 0.65,
+    "results_per_search": 0.59,
     "unique_jobs": 2,
-    "errors": 37
+    "errors": 41
   },
   "recommendations": []
 }

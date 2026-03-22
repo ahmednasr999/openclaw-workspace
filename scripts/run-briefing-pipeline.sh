@@ -206,7 +206,7 @@ case "$MODE" in
         log "=== DATA AGENTS (every 2h) ==="
         run_parallel "Data Agents" \
             "pipeline"  "pipeline-agent.py"  30 \
-            "email"     "email-agent.py"     30 \
+            "email"     "email-agent.py"    180 \
             "content"   "linkedin-content-agent.py"   30 \
             "outreach"  "outreach-agent.py"  30 \
             "system"    "system-agent.py"    30
@@ -249,7 +249,7 @@ case "$MODE" in
         # Google Jobs & Bayt: blocked from VPS (403). Disabled.
         run_parallel "Phase 1: Data + Sources" \
             "pipeline"  "pipeline-agent.py"       30 \
-            "email"     "email-agent.py"           30 \
+            "email"     "email-agent.py"          180 \
             "content"   "linkedin-content-agent.py"         30 \
             "outreach"  "outreach-agent.py"        15 \
             "system"    "system-agent.py"           30 \
@@ -269,7 +269,7 @@ case "$MODE" in
         run_agent "enrich" "jobs-enrich-jd.py" 120
         
         log "--- Phase 3: LLM Review ---"
-        run_agent "review" "jobs-review.py" 180
+        run_agent "review" "jobs-review.py" 600
         
         log "--- Phase 4: Push to Notion Pipeline ---"
         run_agent "pipeline-push" "push-submit-to-notion.py" 120
@@ -282,7 +282,10 @@ case "$MODE" in
         
         log "--- Phase 7: Pam Telegram Digest ---"
         run_agent "pam-telegram" "pam-telegram.py" 30
-        
+
+        log "--- Phase 8: Generate Notion Briefing ---"
+        run_agent "briefing" "briefing-agent.py" 120
+
         log "========================================="
         log "  PIPELINE COMPLETE"
         log "========================================="

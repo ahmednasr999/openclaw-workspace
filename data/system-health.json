@@ -2,23 +2,23 @@
   "meta": {
     "agent": "system-agent",
     "version": "1.0.0",
-    "generated_at": "2026-03-22T06:00:10.419393+02:00",
-    "duration_ms": 7885,
+    "generated_at": "2026-03-22T08:00:12.528531+02:00",
+    "duration_ms": 10343,
     "ttl_hours": 1,
     "status": "success",
     "error": null,
-    "run_id": "2a5d1b3a",
+    "run_id": "1fad2f0f",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
-    "scan_time": "2026-03-22T06:00:10.419179+02:00",
+    "scan_time": "2026-03-22T08:00:12.528371+02:00",
     "system": {
       "disk_usage_pct": 47,
       "memory": {
         "total_gb": 7.8,
-        "available_gb": 5.2,
-        "used_pct": 32.4
+        "available_gb": 4.9,
+        "used_pct": 37.2
       },
       "gateway": {
         "status": "healthy",
@@ -26,7 +26,7 @@
       },
       "openclaw_process": {
         "running": true,
-        "pid_count": 28
+        "pid_count": 26
       }
     },
     "agents": {
@@ -34,31 +34,31 @@
         {
           "agent": "pipeline-agent",
           "status": "healthy",
-          "age_hours": 1.0,
+          "age_hours": 0.1,
           "ttl_hours": 6,
-          "last_run": "2026-03-22T05:00:11.726412+02:00",
+          "last_run": "2026-03-22T07:51:08.521045+02:00",
           "last_status": "success"
         },
         {
           "agent": "email-agent",
           "status": "healthy",
-          "age_hours": 1.0,
+          "age_hours": 2.0,
           "ttl_hours": 4,
-          "last_run": "2026-03-22T05:00:10.133976+02:00",
+          "last_run": "2026-03-22T06:00:07.282210+02:00",
           "last_status": "success"
         },
         {
           "agent": "content-agent",
           "status": "healthy",
-          "age_hours": 1.0,
+          "age_hours": 0.2,
           "ttl_hours": 6,
-          "last_run": "2026-03-22T05:00:06.050424+02:00",
+          "last_run": "2026-03-22T07:51:00.241381+02:00",
           "last_status": "success"
         },
         {
           "agent": "outreach-agent",
           "status": "stale",
-          "age_hours": 12.0,
+          "age_hours": 14.0,
           "ttl_hours": 6,
           "last_run": "2026-03-21T18:00:02.319509+02:00",
           "last_status": "success"
@@ -96,12 +96,12 @@
   },
   "recommendations": [
     {
-      "id": "rec-2a5d1b3a-0",
+      "id": "rec-1fad2f0f-0",
       "action": "run_agents",
       "target": "1 stale agent(s): outreach-agent",
       "reason": "Agent data is past TTL",
       "urgency": "medium",
-      "timestamp": "2026-03-22T06:00:10.419224+02:00"
+      "timestamp": "2026-03-22T08:00:12.528408+02:00"
     }
   ]
 }
