@@ -138,3 +138,13 @@
 {"agent": "email-agent", "run_id": "bb78f5c7", "started": "2026-03-22T04:00:08.352469+02:00", "duration_ms": 6086, "status": "success", "records": 10, "error": null}
 {"agent": "pipeline-agent", "run_id": "5c5543cc", "started": "2026-03-22T04:00:14.021561+02:00", "duration_ms": 11682, "status": "success", "records": 9, "error": null}
 {"agent": "system-agent", "run_id": "c19a5118", "started": "2026-03-22T04:00:15.444654+02:00", "duration_ms": 12372, "status": "success", "records": 6, "error": null}
+{"agent": "content-agent", "run_id": "e0488882", "started": "2026-03-22T05:00:06.052879+02:00", "duration_ms": 1517, "status": "success", "records": 7, "error": null}
+{"agent": "email-agent", "run_id": "c5fdaf57", "started": "2026-03-22T05:00:10.134394+02:00", "duration_ms": 5668, "status": "success", "records": 10, "error": null}
+{"agent": "pipeline-agent", "run_id": "f2651ac8", "started": "2026-03-22T05:00:11.733730+02:00", "duration_ms": 7204, "status": "success", "records": 9, "error": null}
+{"agent": "system-agent", "run_id": "032207c5", "started": "2026-03-22T05:00:13.679548+02:00", "duration_ms": 9063, "status": "success", "records": 6, "error": null}
+{"agent": "jobs-source-indeed", "run_id": "dc93e870", "started": "2026-03-22T05:01:20.412093+02:00", "duration_ms": 75916, "status": "success", "records": 2, "error": null}
+{"agent": "jobs-source-linkedin", "run_id": "afa87412", "started": "2026-03-22T05:03:15.708382+02:00", "duration_ms": 190684, "status": "success", "records": 841, "error": null}
+{"agent": "content-agent", "run_id": "04822463", "started": "2026-03-22T06:00:03.078362+02:00", "duration_ms": 531, "status": "success", "records": 7, "error": null}
+{"agent": "email-agent", "run_id": "d83167a7", "started": "2026-03-22T06:00:07.282507+02:00", "duration_ms": 4785, "status": "success", "records": 10, "error": null}
+{"agent": "system-agent", "run_id": "2a5d1b3a", "started": "2026-03-22T06:00:10.419835+02:00", "duration_ms": 7886, "status": "success", "records": 6, "error": null}
+{"agent": "pipeline-agent", "run_id": "e1a56d95", "started": "2026-03-22T06:00:12.989888+02:00", "duration_ms": 10552, "status": "success", "records": 9, "error": null}

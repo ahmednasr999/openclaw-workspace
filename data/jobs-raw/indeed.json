@@ -2,57 +2,16 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-03-21T16:00:04.596463+02:00",
-    "duration_ms": 68134,
+    "generated_at": "2026-03-22T05:01:20.411680+02:00",
+    "duration_ms": 75916,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "cb08d0e1",
+    "run_id": "dc93e870",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": [
-    {
-      "id": "indeed-in-5bd6d3474b0865fa",
-      "source": "indeed",
-      "title": "Experience Operations Director - Dubai",
-      "company": "Valtech Group",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=5bd6d3474b0865fa",
-      "posted": "2026-03-19",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 23,
-      "match_keywords": [
-        "ai",
-        "director",
-        "dubai",
-        "lte",
-        "api"
-      ],
-      "raw_snippet": "Why Valtech? We\u2019re advisors, visionaries, creative and techies. We embrace all things digital. We talk to each other. We have fun. We love our clients. We\u2019re looking ahead \u2022 We are global\n\n\n  \n**About Valtech:**\n\n\n\nAt Valtech, we are reshaping the way brands connect with their customers. As a global digital innovation company, we fuse creativity, technology, and strategy to solve complex business challenges and deliver exceptional experiences.\n\n\n\nWith over 6,500 experts in 60\\+ offices across 20",
-      "relevant": true,
-      "filter_reason": null
-    },
-    {
-      "id": "indeed-in-bdeaee706e98c45c",
-      "source": "indeed",
-      "title": "Head of Asset Management & AI Transformation",
-      "company": "MaxAccelerate",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=bdeaee706e98c45c",
-      "posted": "2026-03-19",
-      "seniority": "Director",
-      "domain_match": true,
-      "keyword_score": 13,
-      "match_keywords": [
-        "ai",
-        "head of"
-      ],
-      "raw_snippet": "**Head of Asset Management \\& AI Transformation**\nRemote \\| Global Role \\| Multi\\-Industry\n\n**This is not a traditional asset management role**\nThis role is designed for someone who understands that the future of maintenance and asset management is driven by **data, reliability engineering, and intelligent systems**.\n\n\nIf your experience is rooted in **Reliability\\-Centred Maintenance (RCM), preventive and predictive strategies, labour optimisation, and cost control**, and you are interested in ",
-      "relevant": true,
-      "filter_reason": null
-    },
     {
       "id": "indeed-in-ad0553c8b7e3d398",
       "source": "indeed",
@@ -74,13 +33,32 @@
       "raw_snippet": "### **We're building the future of how the world communicates.**\n\n\n\nNetcracker, part of NEC Corporation, combines deep telecom industry expertise with cutting\\-edge cloud\\-native and AI\\-powered innovations to enable communications service providers and enterprises to transform their businesses, unlock innovation, and create meaningful digital experiences for millions of people around the world.\n\n\n\nWith more than 30 years of experience serving over 250 customers in more than 70 locations worldwi",
       "relevant": true,
       "filter_reason": null
+    },
+    {
+      "id": "indeed-in-f7e1d5085527773a",
+      "source": "indeed",
+      "title": "Strategy & Transformation Director",
+      "company": "International Medical Company",
+      "location": "Doha, DAW, QA",
+      "url": "https://qa.indeed.com/viewjob?jk=f7e1d5085527773a",
+      "posted": "2026-03-21",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 13,
+      "match_keywords": [
+        "executive",
+        "director"
+      ],
+      "raw_snippet": "**Job Title**\n\n***Strategy \\& Transformation Director***\n\n**Role Purpose**\n\nThe Strategy \\& Transformation Director is responsible for defining, leading, and executing the organization\u2019s strategic agenda and transformation roadmap, ensuring alignment with the company\u2019s long\u2011term vision and financial objectives. The role partners closely with the CEO and executive team to translate strategy into actionable programs that deliver measurable business impact.\n\n**Key Responsibilities**\n\n* Lead the dev",
+      "relevant": true,
+      "filter_reason": null
     }
   ],
   "kpi": {
     "searches_run": 66,
-    "results_per_search": 0.91,
-    "unique_jobs": 3,
-    "errors": 41
+    "results_per_search": 0.65,
+    "unique_jobs": 2,
+    "errors": 37
   },
   "recommendations": []
 }
