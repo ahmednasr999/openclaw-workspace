@@ -1,18 +1,18 @@
 {
-  "generated": "2026-03-21T02:37:30.353069+00:00",
-  "health_score": 92,
+  "generated": "2026-03-22T02:20:36.843365+00:00",
+  "health_score": 84,
   "summary": {
-    "ok": 8,
-    "warn": 4,
-    "alert": 0
+    "ok": 7,
+    "warn": 3,
+    "alert": 2
   },
   "workspace": {
-    "root_files": 26,
-    "disk_percent": 48,
-    "disk_used": "46G",
+    "root_files": 44,
+    "disk_percent": 47,
+    "disk_used": "45G",
     "disk_total": "96G",
     "ram_total": "7.8Gi",
-    "ram_used": "3.1Gi",
+    "ram_used": "2.5Gi",
     "large_files": [
       "/root/.openclaw/agents/main/qmd/node_modules/@node-llama-cpp/linux-x64-cuda/bins/linux-x64-cuda/libggml-cuda.so",
       "/root/.openclaw/agents/main/qmd/node_modules/@node-llama-cpp/linux-x64-cuda-ext/bins/linux-x64-cuda/fallback/libggml-cuda.so",
@@ -28,7 +28,7 @@
       "/root/.openclaw/agents/main/qmd/node_modules/typescript/lib/typescript.js",
       "/root/.openclaw/agents/main/qmd/xdg-cache/qmd/index.sqlite",
       "/root/.openclaw/agents/main/sessions/sessions.json",
-      "/root/.openclaw/agents/main/sessions/c9e7570d-a391-4989-b3b7-48c29ad435c0.jsonl",
+      "/root/.openclaw/agents/main/sessions/c9e7570d-a391-4989-b3b7-48c29ad435c0.jsonl.reset.2026-03-21T18-24-10.855Z",
       "/root/.openclaw/extensions/lossless-claw/node_modules/@napi-rs/canvas-linux-x64-gnu/skia.linux-x64-gnu.node",
       "/root/.openclaw/extensions/lossless-claw/node_modules/@larksuiteoapi/node-sdk/types/index.d.ts",
       "/root/.openclaw/extensions/lossless-claw/node_modules/pdfjs-dist/build/pdf.worker.mjs.map",
@@ -62,60 +62,63 @@
       "/root/.openclaw/workspace/.git/objects/pack/pack-d40f43c9821ac932c344145f7745703f46a84c2d.pack",
       "/root/.openclaw/workspace/.git/objects/pack/pack-8289eb1e5159514c227aa99a8b93fda1517d0d4f.pack"
     ],
-    "session_mb": 28.9
+    "session_mb": 33.7
   },
   "learnings": {
-    "total": 14,
+    "total": 16,
     "enforced": 14,
-    "unenforced": 0,
-    "unenforced_list": []
+    "unenforced": 2,
+    "unenforced_list": [
+      "## 2026-03-21",
+      "## 2026-03-21"
+    ]
   },
   "integrations": {
     "gmail": "ok",
     "notion": "ok",
     "linkedin": "ok",
-    "gateway": "down",
+    "gateway": "ok",
     "details": {
       "gmail": "App Password configured (himalaya IMAP/SMTP)",
       "notion_token": "present (50 chars)",
       "notion_databases": 15,
       "linkedin_lines": 35,
-      "linkedin_age_days": 1.9,
-      "gateway_error": "Command '['openclaw', 'gateway', 'status']' timed out after 10 seconds"
+      "linkedin_age_days": 2.9
     }
   },
   "crons": {
     "total": 34,
     "enabled": 34,
     "disabled": 0,
-    "skill_first": 32,
-    "skill_first_pct": 94,
+    "skill_first": 31,
+    "skill_first_pct": 91,
     "raw_prompt_list": [
       "Briefing: Brief Me",
+      "Weekly Team Retro",
       "MiniMax M2.7 API Availability Check"
     ],
     "failing": [
       {
-        "name": "SIE 360 Daily",
+        "name": "Job Hunter \u2014 Weekly Domain Review",
         "consecutive_errors": 1,
-        "last_error": "cron: job execution timed out"
+        "last_error": "Unexpected non-whitespace character after JSON at position 17 (line 1 column 18)"
       }
     ]
   },
   "briefing_notion": {
-    "today": "2026-03-21",
-    "exists": true
+    "today": "2026-03-22",
+    "exists": false
   },
   "findings": [
     {
       "category": "workspace",
       "level": "ok",
-      "message": "Root files: 26 (healthy)"
+      "message": "Root files: 44 (healthy)"
     },
     {
       "category": "workspace",
       "level": "ok",
-      "message": "Disk: 48% used (46G/96G)"
+      "message": "Disk: 47% used (45G/96G)"
     },
     {
       "category": "workspace",
@@ -125,12 +128,12 @@
     {
       "category": "workspace",
       "level": "ok",
-      "message": "Session size: 28.9MB (healthy)"
+      "message": "Session size: 33.7MB (healthy)"
     },
     {
       "category": "learnings",
-      "level": "ok",
-      "message": "Learnings enforcement: 14/14 (100%)"
+      "level": "alert",
+      "message": "Learnings enforcement: 14/16 (88%) - 2 untagged entries need ### Enforcement"
     },
     {
       "category": "integrations",
@@ -145,17 +148,17 @@
     {
       "category": "integrations",
       "level": "ok",
-      "message": "LinkedIn: cookies OK (35 lines, 2d old)"
+      "message": "LinkedIn: cookies OK (35 lines, 3d old)"
     },
     {
       "category": "integrations",
-      "level": "warn",
-      "message": "Gateway check failed: Command '['openclaw', 'gateway', 'status']' timed out after 10 seconds"
+      "level": "ok",
+      "message": "Gateway: running"
     },
     {
       "category": "crons",
       "level": "warn",
-      "message": "Cron skill-first: 32/34 (94%) - 2 raw-prompt crons"
+      "message": "Cron skill-first: 31/34 (91%) - 3 raw-prompt crons"
     },
     {
       "category": "crons",
@@ -164,10 +167,14 @@
     },
     {
       "category": "briefing",
-      "level": "ok",
-      "message": "Notion briefing page for 2026-03-21: exists"
+      "level": "alert",
+      "message": "Notion briefing page for 2026-03-22: MISSING - cron may have failed"
     }
   ],
-  "auto_fixed": [],
-  "needs_attention": []
+  "auto_fixed": [
+    "'Job Hunter \u2014 Weekly Domain Review' had 1 transient error - will auto-clear on next scheduled run"
+  ],
+  "needs_attention": [
+    "Morning briefing Notion page missing for 2026-03-22 - partial delivery failure"
+  ]
 }

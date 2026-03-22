@@ -17,15 +17,22 @@ Runs daily at 11 PM Cairo to automatically capture lessons from the day's sessio
 
 ## What This Does
 
-1. Finds all sessions from today in `~/.openclaw/agents/main/sessions/`
-2. Filters out trivial sessions (< 5 exchanges)
-3. Uses LLM to extract:
-   - Corrections made by user
-   - Errors encountered
-   - Preferences learned
-   - Better approaches discovered
-   - Missed opportunities
-4. Appends structured entries to `memory/lessons-learned.md`
+### Step 1: Find Sessions
+Finds all sessions from today in `~/.openclaw/agents/main/sessions/`
+
+### Step 2: Filter Trivial
+Filters out trivial sessions (< 5 exchanges)
+
+### Step 3: Extract Lessons
+Uses LLM to extract:
+- Corrections made by user
+- Errors encountered
+- Preferences learned
+- Better approaches discovered
+- Missed opportunities
+
+### Step 4: Append to Memory
+Appends structured entries to `memory/lessons-learned.md`
 
 ## Format
 
@@ -72,3 +79,13 @@ This cron is a **replacement** for the frequent self-improvement hooks:
 - New: Auto-lessons runs 1x per day → efficient
 
 Both can coexist: manual captures immediate learnings, cron captures session-wide patterns.
+
+## Error Handling
+- If sessions directory missing: report "No sessions found" and stop
+- If script fails: report error with stderr, do not retry
+- If no lessons extracted: append "No lessons captured" entry with date
+
+## Quality Gates
+- No duplicate entries (check before appending)
+- Each lesson has: date, category, what happened, what to do differently
+- Categories must be one of: correction, error, preference, improvement, missed_opportunity

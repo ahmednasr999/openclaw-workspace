@@ -96,9 +96,28 @@ Check results in:
 
 ---
 
+## Error Handling
+- If `memory/lessons-learned.md` is missing: create a stub file with `# Lessons Learned\n\n(auto-created by weekly-agent-review)` and report "lessons-learned.md was missing — stub created"
+- If a skill file read fails during Step 4 (patch): skip that skill, log skip reason to stdout, continue with remaining skills — do not abort the whole review
+- If append to `memory/lessons-learned.md` fails (disk full, permission error): log the failure and the content to `memory/cron-recovery.log` so it can be manually applied
+- If the entire script errors out: log full traceback to `memory/cron-recovery.log` and send a short alert to Ahmed
+
 ## Related
 
 - `scripts/weekly-agent-review.py` — main script
 - `memory/lessons-learned.md` — source of truth for errors
 - `skills/self-improvement/` — captures individual learnings
 - `skills/clawback/` — git discipline for skill file changes
+
+## Quality Gates
+- lessons-learned.md must have entries from the past 7 days before proceeding
+- Auto-patch only applied when same pattern appears >=2 times in 7-day window
+- Each patched skill gets exactly one dated Auto-Improvement block (no duplicates)
+- Weekly Review block appended to lessons-learned.md with date range in header
+- Flagged items (unclear patterns) listed separately from auto-patched items
+
+## Output Rules
+- No em dashes - use hyphens only
+- Include count of skills checked, auto-patched, and flagged in summary
+- Report format: "Weekly Review [date range]: [N] skills checked, [N] patched, [N] flagged"
+- Include timestamp in summary line

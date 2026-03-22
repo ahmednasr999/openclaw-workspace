@@ -101,7 +101,7 @@ Calendar updated: [X] new ideas added
 
 ## Error Handling
 - If web search fails: Use knowledge of evergreen topics in Ahmed's domains
-- If Notion unreachable: Save angles to `content-intel-backup.md`
+- If Notion unreachable: Save angles to `content-intel-backup.md` (optional, created at runtime)
 - If no trending content found: Focus on evergreen themes
 
 ## Quality Gates

@@ -84,7 +84,7 @@ Ready for Ahmed's review in Content Calendar.
 
 ## Error Handling
 - If fewer than 3 topics available: Generate additional angles from Content Intelligence
-- If Notion unreachable: Save drafts locally to `content-prebuild-backup.md`
+- If Notion unreachable: Save drafts locally to `content-prebuild-backup.md` (optional, created at runtime)
 - If linkedin-writer skill unavailable: Write in professional but human tone
 
 ## Quality Gates

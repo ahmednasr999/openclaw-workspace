@@ -24,10 +24,30 @@ Generates a structured performance review of all pipeline agents.
 - File: `memory/retros/YYYY-MM-DD-weekly-retro.md`
 - Also sent as digest to Telegram (optional)
 
-## Script
+## Steps
+
+### Step 1: Run Script
 ```bash
 python3 scripts/weekly-team-retro.py
 ```
+
+### Step 2: Review Output
+The script generates `memory/retros/YYYY-MM-DD-weekly-retro.md` containing:
+- Summary stats (runs, success rate)
+- Per-agent breakdown (runs, success rate, avg duration, avg records)
+- Top performers (most reliable, fastest, most productive)
+- Failure patterns
+- Lessons learned
+- Growth areas
+- Recommendations
+
+Review the output for any urgent action items or patterns needing human attention.
+
+### Step 3: Send Digest
+Send a summary digest to Telegram with:
+- Key metrics (total runs, overall success rate)
+- Top 2-3 findings or recommendations
+- Any agents with critical failure rates needing attention
 
 ## Manual Run
 ```bash
@@ -45,3 +65,14 @@ python3 scripts/weekly-team-retro.py --output /tmp/retro.md
 - `data/run-history.jsonl` (populated by pipeline runs)
 - `data/heartbeat.json` (populated by heartbeat tracker)
 - `memory/lessons-learned.md` (populated by auto-lessons or manual)
+
+## Error Handling
+- If run-history.jsonl missing: report "No run history - skipping retro"
+- If script fails: report error, save partial output if available
+- If no data for the week: generate "quiet week" stub report
+
+## Quality Gates
+- Report covers full 7-day window
+- Per-agent breakdown included for all active agents
+- File saved to memory/retros/ with correct date
+- Recommendations section always present (even if "no changes needed")

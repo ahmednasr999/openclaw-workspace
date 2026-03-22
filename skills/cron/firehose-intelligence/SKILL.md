@@ -4,10 +4,18 @@
 Check Firehose.com (by Ahrefs) for new web pages matching NASR's rules. Report job postings, industry trends, and company news.
 
 ## Steps
-1. Run: `cd /root/.openclaw/workspace && python3 scripts/firehose-monitor.py --check`
-2. If output says "No new matches" → report that and stop
-3. If matches found → send the report verbatim
-4. If jobs found with FIT potential → flag as HIGH PRIORITY
+
+### Step 1: Run Monitor
+Run: `cd /root/.openclaw/workspace && python3 scripts/firehose-monitor.py --check`
+
+### Step 2: Handle No Matches
+If output says "No new matches" → report that and stop
+
+### Step 3: Send Matches
+If matches found → send the report verbatim
+
+### Step 4: Flag Priority Jobs
+If jobs found with FIT potential → flag as HIGH PRIORITY
 
 ## Rules (configured in Firehose)
 - job-postings-executive: Executive IT/PMO/DT roles
@@ -26,3 +34,24 @@ Send report to Telegram. Format:
 - Do NOT summarize or modify the script output
 - If script fails, report the error
 - Keep output under 2000 chars for Telegram
+
+## Error Handling
+- If script not found: report "firehose-monitor.py missing" and stop
+- If script errors: report stderr verbatim, do not retry
+- If no matches: report "No new matches" (not an error)
+
+## Quality Gates
+- Script must exit 0 for success
+- Output under 2000 chars for Telegram
+- HIGH PRIORITY flag only for jobs with FIT potential
+
+## Manual Run
+```bash
+cd /root/.openclaw/workspace && python3 scripts/firehose-monitor.py --check
+```
+
+## Output Rules
+- No em dashes - use hyphens only
+- Keep output under 2000 chars for Telegram delivery
+- Jobs prefixed with emoji: 💼 jobs, 📰 trends, 🏢 company news
+- Include timestamp and match count in header

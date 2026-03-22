@@ -33,3 +33,14 @@ Status: [configured/already removed]
 
 ## Output Rules
 - No em dashes. Hyphens only.
+
+### Step 3: Verify Reminder Sent
+Confirm the Telegram message was delivered. If delivery failed, retry once. Log outcome to `/root/.openclaw/workspace/memory/cron-recovery.log`:
+```bash
+echo "$(date -u +%Y-%m-%dT%H:%M:%SZ) codex-reminder: delivered=[yes|no]" >> /root/.openclaw/workspace/memory/cron-recovery.log
+```
+
+## Manual Run
+```bash
+cd /root/.openclaw/workspace && openclaw cron run codex-reminder
+```

@@ -8,7 +8,7 @@ description: "Weekly strategic advisory report: market positioning, competitive 
 High-level strategic analysis and career recommendations.
 
 ## Prerequisites
-- Script: `advisory-board/phase3_engine.py`
+- Script: `advisory-board/phase3_engine.py` (deprecated — if missing, use manual analysis in Step 2)
 - Pipeline and market data
 
 ## Steps
@@ -32,6 +32,12 @@ Send summary to Telegram. Full report to Notion.
 
 ## Error Handling
 - If engine script fails: Generate manual analysis from available data
+- If data insufficient: Flag gaps and provide partial report
+
+## Output Rules
+- No em dashes. Hyphens only.
+- Executive tone. Strategic, not tactical.
+ data
 - If data insufficient: Flag gaps and provide partial report
 
 ## Output Rules

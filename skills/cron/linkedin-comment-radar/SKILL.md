@@ -93,6 +93,12 @@ Top {len(picks)} comment opportunities:
 Goal: 5 comments today | Streak: {streak} days
 ```
 
+## Error Handling
+- If EXA_SEARCH returns no results: retry with broader query (drop domain filter), report "limited results"
+- If model switch to Sonnet fails: draft comments on current model, flag in report
+- If save to engagement dir fails: print results to stdout so cron captures them
+- If fewer than 3 posts qualify (PQS >= 40): lower threshold to 30 and rerun scoring, note in report
+
 ## Comment Style Guide
 - 2-4 lines, direct and practical
 - Start with insight ("The governance gap you're describing...")
@@ -100,3 +106,21 @@ Goal: 5 comments today | Streak: {streak} days
 - Include concrete anchor: a framework, metric, or operational detail
 - ~40% should end with a genuine question
 - Match Ahmed's executive tone (20+ years, PMO, digital transformation)
+
+## Quality Gates
+- Each post entry has: URL, author, topic, engagement metrics
+- Comments drafted in Ahmed's voice (direct, strategic, no corporate speak)
+- Top 10 ranked by freshness + engagement score
+- Never post comments without Ahmed's explicit approval
+
+## Manual Run
+```bash
+cd /root/.openclaw/workspace && openclaw cron run linkedin-comment-radar
+```
+
+## Output Rules
+- No em dashes - use hyphens only
+- Report to Content topic (topic 7), not main chat
+- Include date, total found, qualified count, and top picks
+- Each pick: PQS score, author, snippet, URL, and draft comment
+- Keep total report under 3000 chars for Telegram delivery

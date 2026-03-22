@@ -143,8 +143,28 @@ One JSON line per day, append mode.
 - If Notion write fails: Retry once, then report error in Telegram message
 - If all data files are missing: Send Telegram alert "⚠️ Briefing failed — no data files found"
 
+## Quality Gates
+- All 6 data files read (pipeline-status, jobs-summary, email-summary, content-schedule, outreach-summary, system-health) — flag any missing ones
+- Notion page created successfully in Daily Briefings database
+- Telegram summary sent (max 500 chars)
+- Stale data flagged in Data Quality section (any file where age_hours > ttl_hours)
+- Feedback logged to briefing-actions.jsonl
+- briefing-actions.jsonl append must succeed (verify file exists after write)
+
 ## Output
 
 - Notion page created in Daily Briefings database
 - Telegram message sent with summary
 - Feedback logged to briefing-actions.jsonl
+
+## Manual Run
+```bash
+cd /root/.openclaw/workspace && openclaw cron run brief-me
+```
+
+## Output Rules
+- No em dashes - use hyphens only
+- Telegram summary must be under 500 chars
+- Include date in report header
+- Stale data flagged with explicit file name and age
+- Urgent items always listed first, never buried

@@ -21,8 +21,30 @@
         ]
       },
       "prompt_file": "/root/.openclaw/workspace/data/linkedin-autoresearch/prompts/linkedin-writer-v1.md"
+    },
+    {
+      "iteration": 2,
+      "timestamp": "2026-03-22T01:01:38.220495+02:00",
+      "post_count": 30,
+      "avg_engagement": 9.7,
+      "max_engagement": 69,
+      "analysis_summary": {
+        "top_patterns": [
+          "News hooks dominate top 3 - breaking industry news and trend revelations (TAM, AI, LLM) generate 69 and 12 engagement",
+          "Personal story hooks drive highest volume in top 10 (3 of top 10) - specific, credible experiences with named companies (Salesforce) outperform generic claims",
+          "Strong topic alignment: TAM and Growth topics appear in 9 of top 13 performers - healthcare/digital transformation resonates with executive audience"
+        ],
+        "actionable_rules": [
+          "Lead with news/breaking insights as hook - 'Just became #1', 'platform tracking the planet' type openers generate 13-69 engagement vs 0-5 for passive insights",
+          "Anchor personal stories with a named company or specific outcome - 'Salesforce rollout' (57) and 'PMO across 8 countries' (17) outperform vague '20 years taught me' openings (3-5)",
+          "Own your TAM/Growth expertise ruthlessly - every top-13 post connects to tech AI, digital transformation, or operational scaling; this is Ahmed's differentiated positioning",
+          "Repurpose bold claims across variations but stop when engagement decays below 6 - the 'digital transformations fail' claim hit 12→8→6→4 and should have been retired earlier",
+          "Never post without a clear topic tag - every zero-engagement post has no topic; empty topics signal unfocused content to the algorithm and reader"
+        ]
+      },
+      "prompt_file": "/root/.openclaw/workspace/data/linkedin-autoresearch/prompts/linkedin-writer-v2.md"
     }
   ],
   "best_avg_engagement": 9.7,
-  "last_updated": "2026-03-21T17:50:10.818632+02:00"
+  "last_updated": "2026-03-22T01:01:38.220507+02:00"
 }

@@ -1,47 +1,52 @@
 {
-  "generated": "2026-03-21T16:29:15.225827+00:00",
+  "generated": "2026-03-22T02:00:23.658252+00:00",
   "suggestions": [
     {
-      "name": "Arun Syal",
-      "role": "Human Resources Manager",
-      "url": "https://www.linkedin.com/in/arun-syal-929782281",
+      "name": "Manpreet S.",
+      "role": "Director of Operations",
+      "url": "https://www.linkedin.com/in/manpreet-s-6b9a88b7",
       "company": "LeadingEdge HR Solutions",
+      "signal_score": 20,
       "applied_role": "Head of DevOps & Infrastructure ( Kubernetes, Terraform)",
       "applied_date": "2026-03-21",
       "reason": "You applied for Head of DevOps & Infrastructure ( Kubernetes, Terraform) at LeadingEdge HR Solutions"
     },
     {
-      "name": "Lynn R.",
-      "role": "Confidential",
-      "url": "https://www.linkedin.com/in/lynnreid1",
-      "company": "Confidential",
-      "applied_role": "Head of Operations & AI Optimisation",
+      "name": "Kelly This-Hall, SHRM-CP",
+      "role": "Human Resources Leadership",
+      "url": "https://www.linkedin.com/in/kellythis-hall",
+      "company": "LeadingEdge HR Solutions",
+      "signal_score": 15,
+      "applied_role": "Head of DevOps & Infrastructure ( Kubernetes, Terraform)",
       "applied_date": "2026-03-21",
-      "reason": "You applied for Head of Operations & AI Optimisation at Confidential"
+      "reason": "You applied for Head of DevOps & Infrastructure ( Kubernetes, Terraform) at LeadingEdge HR Solutions"
     },
     {
-      "name": "Ren\u00e9 Dresen \u2013 The Customization Group",
-      "role": "",
-      "url": "https://www.linkedin.com/in/rene-dresen",
+      "name": "Sora Choi",
+      "role": "Global Talent Acquisition Leader",
+      "url": "https://www.linkedin.com/in/sorachoi",
       "company": "The Customization Group",
+      "signal_score": 30,
       "applied_role": "Head of CRM (Next-Gen, AI-Driven)",
       "applied_date": "2026-03-21",
       "reason": "You applied for Head of CRM (Next-Gen, AI-Driven) at The Customization Group"
     },
     {
-      "name": "Roshan Krishnan",
-      "role": "The Customization Group",
-      "url": "https://www.linkedin.com/in/roshan-krishnan-58934222b",
+      "name": "Varunika B",
+      "role": "Global Talent Acquisition",
+      "url": "https://www.linkedin.com/in/varunika-bhardwaj8787",
       "company": "The Customization Group",
+      "signal_score": 30,
       "applied_role": "Head of CRM (Next-Gen, AI-Driven)",
       "applied_date": "2026-03-21",
       "reason": "You applied for Head of CRM (Next-Gen, AI-Driven) at The Customization Group"
     },
     {
-      "name": "SULTAN ALSIQAMI\u200f",
+      "name": "Ryan Hoffman\u200f",
       "role": "\u200fQiddiya",
-      "url": "https://www.linkedin.com/in/sultanalsiqami",
+      "url": "https://www.linkedin.com/in/ryan-hoffman-5645ab4",
       "company": "Qiddiya | \u0627\u0644\u0642\u062f\u064a\u0629",
+      "signal_score": 5,
       "applied_role": "Director- Data Analytics (CDU3) - 20004846",
       "applied_date": "2026-03-21",
       "reason": "You applied for Director- Data Analytics (CDU3) - 20004846 at Qiddiya | \u0627\u0644\u0642\u062f\u064a\u0629"
