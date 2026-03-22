@@ -55,38 +55,63 @@ QUESTIONS = [
     "URGENCY: Does it create a SENSE OF URGENCY or exclusivity? Answer YES or NO.",
 ]
 
-def get_api_key():
-    """Get API key from config."""
-    cfg_path = f"{WORKSPACE}/config/models.json"
-    if os.path.exists(cfg_path):
-        cfg = json.load(open(cfg_path))
-        return cfg.get("minimax_api_key") or cfg.get("api_key") or ""
-    return os.environ.get("MINIMAX_API_KEY", "")
+# Auth: read gateway token from openclaw.json
+GATEWAY_URL = "http://127.0.0.1:18789/v1/chat/completions"
+try:
+    _gw_cfg = json.load(open(os.path.expanduser("~/.openclaw/openclaw.json")))
+    GATEWAY_TOKEN = _gw_cfg.get("gateway", {}).get("auth", {}).get("token", "")
+except Exception:
+    GATEWAY_TOKEN = ""
 
 
 def call_llm(prompt: str) -> str:
-    """Call MiniMax-M2.7 via OpenAI-compatible API."""
-    api_key = get_api_key()
-    base_url = os.environ.get("MINIMAX_BASE_URL", "https://api.minimax.chat/v1")
-    
+    """Call MiniMax-M2.7 via OpenClaw gateway (same as all other agents)."""
     payload = {
-        "model": "MiniMax-M2.7",
+        "model": "minimax-portal/MiniMax-M2.7",
         "messages": [{"role": "user", "content": prompt}],
         "max_tokens": 64,
         "temperature": 0.0,
     }
+    headers = {"Content-Type": "application/json"}
+    if GATEWAY_TOKEN:
+        headers["Authorization"] = f"Bearer {GATEWAY_TOKEN}"
     req = urllib.request.Request(
-        f"{base_url.rstrip('/')}/chat/completions",
+        GATEWAY_URL,
         data=json.dumps(payload).encode(),
-        headers={"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"},
+        headers=headers,
         method="POST",
     )
-    ctx = ssl.create_default_context()
     try:
-        with urllib.request.urlopen(req, context=ctx, timeout=30) as r:
+        with urllib.request.urlopen(req, timeout=30) as r:
             return json.loads(r.read())["choices"][0]["message"]["content"].strip()
     except Exception as e:
+        print(f"  LLM error: {e}")
         return f"ERROR: {e}"
+
+
+def call_llm_long(prompt: str) -> str:
+    """Call LLM with higher token limit for batched scoring."""
+    payload = {
+        "model": "minimax-portal/MiniMax-M2.7",
+        "messages": [{"role": "user", "content": prompt}],
+        "max_tokens": 256,
+        "temperature": 0.0,
+    }
+    headers = {"Content-Type": "application/json"}
+    if GATEWAY_TOKEN:
+        headers["Authorization"] = f"Bearer {GATEWAY_TOKEN}"
+    req = urllib.request.Request(
+        GATEWAY_URL,
+        data=json.dumps(payload).encode(),
+        headers=headers,
+        method="POST",
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=30) as r:
+            return json.loads(r.read())["choices"][0]["message"]["content"].strip()
+    except Exception as e:
+        print(f"  LLM error: {e}")
+        return ""
 
 
 def parse_answer(text: str) -> int:
@@ -95,16 +120,43 @@ def parse_answer(text: str) -> int:
 
 
 def score_post(post_text: str) -> dict:
-    """Run all 10 eval questions against post text."""
-    results = []
+    """Run all 10 eval questions in a single LLM call (10x faster)."""
     print("\n=== Scoring Post ===")
-    for i, question in enumerate(QUESTIONS):
-        answer = call_llm(f"{question}\n\nPost to evaluate:\n{post_text[:2000]}")
-        score = parse_answer(answer)
-        results.append(score)
-        print(f"  Q{i+1}: {question.split(':')[0]:20s} → {score}")
+    
+    questions_block = "\n".join(f"Q{i+1}. {q}" for i, q in enumerate(QUESTIONS))
+    prompt = f"""Evaluate this LinkedIn post against 10 quality criteria.
+For each question, answer ONLY "YES" or "NO" on a separate line.
+Format: Q1: YES/NO, Q2: YES/NO, ... Q10: YES/NO
+
+{questions_block}
+
+Post to evaluate:
+{post_text[:3000]}
+
+Answer each Q1-Q10 as YES or NO:"""
+    
+    response = call_llm_long(prompt)
+    
+    # Parse: look for YES/NO per question
+    results = []
+    for i in range(1, 11):
+        # Try patterns: "Q1: YES", "Q1. YES", "1. YES", just sequential YES/NO
+        pattern = rf'Q?{i}[.:)\s]+\s*(YES|NO)'
+        match = re.search(pattern, response, re.IGNORECASE)
+        if match:
+            results.append(1 if match.group(1).upper() == "YES" else 0)
+        else:
+            results.append(0)  # Default to 0 if unparseable
+    
+    # Fallback: if regex found nothing, count YES/NO in order
+    if sum(results) == 0 and "YES" in response.upper():
+        words = [w.strip().upper() for w in re.split(r'[,\n;]+', response) if w.strip().upper() in ("YES", "NO")]
+        for i, w in enumerate(words[:10]):
+            results[i] = 1 if w == "YES" else 0
     
     total = sum(results)
+    for i, q in enumerate(QUESTIONS):
+        print(f"  Q{i+1}: {q.split(':')[0]:25s} → {results[i]}")
     print(f"=== Score: {total}/10 ===\n")
     return {"total": total, "questions": results}
 
@@ -119,8 +171,16 @@ def log_post(post_text: str, score_result: dict, page_id: str):
     else:
         data = {"posts": [], "current_prompt": "", "prompt_history": [], "current_prompt_version": 1}
     
+    today_str = date.today().isoformat()
+    
+    # Dedup: replace existing entry for same page_id + date (don't append duplicates)
+    data["posts"] = [
+        p for p in data["posts"]
+        if not (p.get("notion_page_id") == page_id and p.get("date") == today_str and not p.get("post_url"))
+    ]
+    
     entry = {
-        "date": date.today().isoformat(),
+        "date": today_str,
         "post_text": post_text[:5000],
         "eval_score": score_result["total"],
         "questions": score_result["questions"],
@@ -328,12 +388,182 @@ def update_notion_status(page_id, post_url):
     print(f"Updated Notion: status=Posted, url={post_url}")
 
 
+def send_telegram_confirmation(post_url, title="", image_url=None):
+    """Send Telegram notification that post was published."""
+    import subprocess
+    image_status = "✅ with image" if image_url else "📝 text only"
+    msg = f"✅ LinkedIn Posted ({image_status})\n\n{title[:100]}\n\n🔗 {post_url}"
+    try:
+        subprocess.run(
+            ["openclaw", "message", "send", "--channel", "telegram",
+             "--to", "866838380", "--message", msg],
+            timeout=15, capture_output=True
+        )
+        print(f"Telegram confirmation sent")
+    except Exception as e:
+        print(f"Telegram notification failed: {e}")
+
+
+def update_briefing_page(post_url, image_url=None, title=""):
+    """Add post details to today's morning briefing Notion page."""
+    from datetime import timezone, timedelta
+    cairo = timezone(timedelta(hours=2))
+    today_str = datetime.now(cairo).strftime("%Y-%m-%d")
+    
+    # Find today's briefing page
+    briefing_db = "3268d599-a162-812d-a59e-e5496dec80e7"
+    result = notion_req("POST", f"/databases/{briefing_db}/query", {
+        "filter": {"property": "Name", "title": {"contains": today_str}},
+        "page_size": 1,
+    })
+    if not result:
+        print("  Briefing update: No API response")
+        return False
+    
+    pages = result.get("results", [])
+    if not pages:
+        print(f"  Briefing update: No page found for {today_str}")
+        return False
+    
+    briefing_page_id = pages[0]["id"]
+    
+    # Get existing blocks to find Content section
+    blocks_resp = notion_req("GET", f"/blocks/{briefing_page_id}/children?page_size=100")
+    if not blocks_resp:
+        print("  Briefing update: Could not fetch blocks")
+        return False
+    
+    blocks = blocks_resp.get("results", [])
+    
+    # Find the Content & Engagement section
+    content_section_idx = None
+    insert_after_id = None
+    for i, b in enumerate(blocks):
+        btype = b["type"]
+        rt = b.get(btype, {}).get("rich_text", [])
+        text = "".join(t.get("text", {}).get("content", "") for t in rt)
+        if "Content" in text and "Engagement" in text and btype == "heading_2":
+            content_section_idx = i
+        # Find last block before next section divider
+        if content_section_idx is not None and i > content_section_idx:
+            if b["type"] == "divider" or (b["type"] == "heading_2" and i > content_section_idx):
+                break
+            insert_after_id = b["id"]
+    
+    if not insert_after_id:
+        # Fallback: insert after the heading itself
+        if content_section_idx is not None:
+            insert_after_id = blocks[content_section_idx]["id"]
+        else:
+            print("  Briefing update: Could not find Content & Engagement section")
+            return False
+    
+    # Build blocks to insert
+    new_blocks = [
+        {
+            "type": "callout",
+            "callout": {
+                "rich_text": [{"type": "text", "text": {"content": f"Posted: {title[:80]}"}, "annotations": {"bold": True}}],
+                "icon": {"type": "emoji", "emoji": "✅"},
+                "color": "green_background",
+            }
+        },
+        {
+            "type": "bulleted_list_item",
+            "bulleted_list_item": {
+                "rich_text": [
+                    {"type": "text", "text": {"content": "LinkedIn: "}},
+                    {"type": "text", "text": {"content": post_url, "link": {"url": post_url}}},
+                ]
+            }
+        },
+    ]
+    
+    if image_url:
+        new_blocks.append({
+            "type": "image",
+            "image": {"type": "external", "external": {"url": image_url}}
+        })
+    
+    # Insert blocks
+    resp = notion_req("PATCH", f"/blocks/{briefing_page_id}/children", {
+        "children": new_blocks,
+        "after": insert_after_id,
+    })
+    
+    if resp:
+        print(f"  Briefing page updated with post details")
+        return True
+    else:
+        print(f"  Briefing update: Failed to insert blocks")
+        return False
+
+
 # ── Main ────────────────────────────────────────────────────────
 
+def check_stale_watchdog():
+    """Check if yesterday's watchdog flag still exists — means posting failed."""
+    import subprocess
+    watchdog_path = "/tmp/linkedin-post-pending.flag"
+    if not os.path.exists(watchdog_path):
+        return
+    try:
+        data = json.load(open(watchdog_path))
+        created = datetime.fromisoformat(data.get("created_at", ""))
+        age_hours = (datetime.now() - created).total_seconds() / 3600
+        if age_hours > 1:
+            title = data.get("title", "Unknown")
+            msg = f"🔴 LinkedIn post FAILED yesterday\n\nTitle: {title}\nPrepared {age_hours:.0f}h ago but never posted.\nWatchdog flag still exists."
+            try:
+                subprocess.run(
+                    ["openclaw", "message", "send", "--channel", "telegram",
+                     "--to", "866838380", "--message", msg],
+                    timeout=15, capture_output=True
+                )
+            except Exception:
+                pass
+            print(f"⚠️ Stale watchdog: {title} ({age_hours:.0f}h old)")
+            # Remove stale flag so we don't alert again
+            os.remove(watchdog_path)
+    except Exception:
+        # Corrupted flag — remove it
+        os.remove(watchdog_path)
+
+
 def main():
+    # Check for stale watchdog from previous run
+    check_stale_watchdog()
+    
     # Handle URL update mode (after agent posts)
     if UPDATE_URL and UPDATE_PAGE_ID:
         update_post_url(UPDATE_PAGE_ID, UPDATE_URL)
+        # Also update today's briefing page
+        # Read the payload to get image URL and title
+        payload_path = "/tmp/linkedin-post-payload.json"
+        image_url = None
+        title = ""
+        if os.path.exists(payload_path):
+            try:
+                payload = json.load(open(payload_path))
+                title = payload.get("title", "")
+                # Get original image URL from Notion (GitHub raw URL)
+                image_url = None
+                # Check if the post had an image
+                if payload.get("image_required") or payload.get("image_path"):
+                    # Try to find image URL from today's content calendar entry
+                    post_data = get_today_post()
+                    if post_data:
+                        image_url = post_data.get("image_url")
+            except Exception:
+                pass
+        update_briefing_page(UPDATE_URL, image_url=image_url, title=title)
+        # Remove watchdog flag — post succeeded
+        watchdog_path = "/tmp/linkedin-post-pending.flag"
+        if os.path.exists(watchdog_path):
+            os.remove(watchdog_path)
+            print("Watchdog flag removed (post successful)")
+        # Send Telegram confirmation
+        send_telegram_confirmation(UPDATE_URL, title, image_url)
         return
     
     print(f"=== LinkedIn Auto-Poster v3 - {TODAY} ===")
@@ -363,6 +593,25 @@ def main():
             print(f"[DRY RUN] Would attach image: {post['image_url']}")
         return
 
+    # Quality gate: score < 6 → flag for review, don't auto-post
+    MIN_SCORE = 6
+    if score_result["total"] < MIN_SCORE:
+        print(f"⚠️ QUALITY GATE: Score {score_result['total']}/10 < {MIN_SCORE} minimum")
+        print(f"Post flagged for manual review. NOT auto-posting.")
+        # Write flag for agent to send Telegram alert
+        flag = {
+            "action": "quality_hold",
+            "score": score_result["total"],
+            "min_score": MIN_SCORE,
+            "title": post['title'],
+            "page_id": post['page_id'],
+            "failed_questions": [QUESTIONS[i].split(":")[0] for i, s in enumerate(score_result["questions"]) if s == 0],
+        }
+        with open("/tmp/linkedin-post-payload.json", "w") as f:
+            json.dump(flag, f, ensure_ascii=False, indent=2)
+        print(f"QUALITY_HOLD")
+        return
+
     # Download image if present
     image_path = None
     if post['image_url']:
@@ -378,17 +627,31 @@ def main():
         "person_urn": PERSON_URN,
         "content": post['content'],
         "image_path": image_path,
+        "image_required": bool(post['image_url']),
         "page_id": post['page_id'],
-        "title": post['title']
+        "title": post['title'],
+        "score": score_result['total'],
     }
     
     # Write output for agent consumption
     output_path = "/tmp/linkedin-post-payload.json"
     with open(output_path, "w") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
+    
+    # Write a watchdog file — agent must delete this after successful post
+    # If it still exists 30 min after cron, something failed
+    watchdog_path = "/tmp/linkedin-post-pending.flag"
+    with open(watchdog_path, "w") as f:
+        f.write(json.dumps({
+            "created_at": datetime.now().isoformat(),
+            "page_id": post['page_id'],
+            "title": post['title'],
+        }))
+    
     print(f"\nPayload written to: {output_path}")
     print(f"SCORE: {score_result['total']}/10")
     print(f"LOGGED_TO: {RESEARCH_LOG}")
+    print(f"WATCHDOG: {watchdog_path} (agent must delete after posting)")
     print(f"POST_URL_UPDATE_CMD: python3 scripts/linkedin-auto-poster.py --update-url '<POST_URL>' --page-id {post['page_id']}")
     print(f"READY_TO_POST")
 
