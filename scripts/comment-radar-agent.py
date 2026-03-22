@@ -45,28 +45,39 @@ GCC_TERMS = "Saudi OR UAE OR Dubai OR Riyadh OR Qatar OR Bahrain OR Kuwait OR Om
 # Priority authors - posts from these people get boosted
 PRIORITY_AUTHORS_FILE = CONFIG_DIR / "priority-authors.json"
 
-COMMENT_STYLE = """You are Ahmed Nasr - PMO & Regional Engagement Lead with 20+ years in tech leadership across GCC.
+# ==============================================================================
+# LLM COMMENT DRAFTING — Anthropic XML-structured prompt
+# ==============================================================================
+COMMENT_SYSTEM = """You are Ahmed Nasr - PMO & Regional Engagement Lead with 20+ years in tech leadership across GCC."""
 
-Draft a LinkedIn comment (2-4 lines) following these rules:
-- Start with insight or experience, NEVER generic praise ("Great post", "Well said", "Important topic")
-- Include one concrete anchor: a metric, a named framework, a specific experience
-- About 40% of comments should end with a sharp question
-- No em dashes (use commas or hyphens instead)
-- Direct, executive tone - like briefing a peer, not teaching
-- Keep it 2-4 lines max
+COMMENT_TASK = """Draft a LinkedIn comment for each post provided. Each comment must be 2-4 lines, direct, and executive in tone."""
 
-Examples of GOOD openers:
-- "The 7-day handoff gap is where most PMO programs leak value..."
-- "Ran into this exact pattern rolling out Salesforce across 4 countries..."
-- "The governance piece is what breaks most DT programs at scale..."
-
-Examples of BAD openers (NEVER use):
-- "Great insights!"
-- "Thanks for sharing!"
-- "Very relevant topic."
-- "Strong point about..."
-- "Excellent breakdown."
+COMMENT_CONTEXT = """
+Your audience: Senior leaders in GCC/MENA region — PMO directors, transformation leads, CIOs, operations executives.
+Tone: Peer briefing, not teaching. Confident, specific, no fluff.
+Ahmed's background: PMO excellence, digital transformation, AI automation, healthcare/education/tech sectors across GCC.
+Content themes he engages with: PMO governance, transformation program execution, AI in operations, healthcare tech, leadership.
 """
+
+COMMENT_CONSTRAINTS = """
+- Start with insight or experience — NEVER generic praise ("Great post", "Well said", "Important topic")
+- Include one concrete anchor: a metric, a named framework, or a specific experience from Ahmed's 20+ year career
+- About 40% of comments MUST end with a sharp, thought-provoking question
+- NEVER use em dashes — use commas or hyphens instead
+- NEVER use: "Great insights!", "Thanks for sharing!", "Very relevant topic.", "Strong point", "Excellent breakdown"
+- Keep each comment to exactly 2-4 lines
+"""
+
+COMMENT_OUTPUT = """
+Return ONLY a valid JSON array with this exact structure — no markdown fences, no extra text:
+[
+  {"post_num": 1, "comment": "exact draft comment text here"},
+  {"post_num": 2, "comment": "exact draft comment text here"}
+]
+"""
+
+LLM_MODEL = "minimax-portal/MiniMax-M2.7"
+LLM_TEMP = 0.7
 
 
 def load_gateway_token():
@@ -89,11 +100,11 @@ def llm_call(prompt, max_tokens=1500):
 
     try:
         resp = requests.post(GATEWAY_URL, json={
-            "model": MODEL,
+            "model": LLM_MODEL,
             "messages": [{"role": "user", "content": prompt}],
             "max_tokens": max_tokens,
-            "temperature": 0.7,
-        }, headers=headers, timeout=60)
+            "temperature": LLM_TEMP,
+        }, headers=headers, timeout=120)
         if resp.status_code != 200:
             print(f"  LLM error: {resp.status_code}")
             return ""
@@ -286,14 +297,20 @@ def draft_comments(posts):
             f"Content: {content[:400]}\n"
         )
 
-    prompt = f"""{COMMENT_STYLE}
+    posts_section = "\n".join(post_descriptions)
 
-Draft a comment for each of these LinkedIn posts. Return ONLY a JSON array with the format:
-[{{"post_num": 1, "comment": "your draft comment here"}}, ...]
+    prompt = f"""<task>{COMMENT_TASK.strip()}</task>
 
-{chr(10).join(post_descriptions)}
+<context>{COMMENT_CONTEXT.strip()}</context>
 
-Return ONLY valid JSON, no markdown fences, no extra text."""
+<constraints>{COMMENT_CONSTRAINTS.strip()}</constraints>
+
+<output_format>{COMMENT_OUTPUT.strip()}</output_format>
+
+--- LINKEDIN POSTS ---
+{posts_section}"""
+
+
 
     response = llm_call(prompt, max_tokens=2000)
     if not response:

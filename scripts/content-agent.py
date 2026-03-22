@@ -1,4 +1,14 @@
 #!/usr/bin/env python3
+
+# ==============================================================================
+# AGENT BEHAVIOR STANDARD — Anthropic XML-Structured Format
+# ==============================================================================
+# Prompt structure for any future LLM calls:
+#   <task>What to do</task>
+#   <context>Background, Ahmed's profile, data available</context>
+#   <constraints>Rules, what NOT to do, format requirements</constraints>
+#   <output_format>Exact output structure expected</output_format>
+# ==============================================================================
 """
 content-agent.py — Reads Notion Content Calendar DB, tracks content pipeline health.
 
