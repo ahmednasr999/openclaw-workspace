@@ -32,6 +32,21 @@ Searches Google Jobs for executive roles matching Ahmed's profile using Composio
 ```
 
 ## Integration
+
+### Pipeline Auto-Save (NON-NEGOTIABLE)
+After saving to `/tmp/google-jobs-YYYY-MM-DD.json`, you MUST also append new jobs to the pipeline:
+
+1. Read `jobs-bank/applied-job-ids.txt` and `jobs-bank/pipeline.md` to identify already-applied companies/roles
+2. Filter out duplicates (match by company name + similar title)
+3. Filter out UAE-Nationals-only roles
+4. Append new jobs to `jobs-bank/pipeline.md` under a `## YYYY-MM-DD - Google Jobs Pre-Fetch` section
+5. Include: sequential # (continue from last entry), Company, Role, Location, Status (⭐ New for top picks, New for others, Review for below-level), Source (Google Jobs), Job URL as markdown link
+6. Mark top 3 most aligned roles as ⭐ New (prefer: Digital Transformation Director/Officer, AI Strategy, Senior PMO Director, Head of PMO)
+7. Save the permanent copy to `jobs-bank/scans/google-jobs-YYYY-MM-DD.json` (not just /tmp/)
+
+This ensures the morning briefing can reference new jobs from the pipeline.
+
+### Scanner Integration
 Scanner (`linkedin-gulf-jobs.py`) reads `/tmp/google-jobs-YYYY-MM-DD.json` if it exists and merges results with LinkedIn/Indeed.
 
 ## Schedule

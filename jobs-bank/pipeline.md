@@ -271,3 +271,26 @@
 | 201 | ☐ | Discovered MENA | Head of Engineering | Applied | 2026-03-19 | - | Dubai | LinkedIn | Tailored CV sent (ATS 86%) | https://www.linkedin.com/jobs/view/4384057356 |
 | 202 | ☐ | Macdonald & Company | Managing Director | Applied | 2026-03-19 | - | Europe | LinkedIn | Tailored CV sent (ATS 80%) | https://www.linkedin.com/jobs/view/4385908621 |
 | 204 | ☐ | Talan | CTO Smart Metering Programme | Applied | 2026-03-19 | - | Abu Dhabi | LinkedIn | Tailored CV sent (ATS 86%) | https://www.linkedin.com/jobs/view/4368219091 |
+
+## 2026-03-22 - Google Jobs Pre-Fetch (16 New)
+
+| # | Company | Role | Location | Status | Source | Job URL |
+|---|---------|------|----------|--------|--------|---------|
+| 205 | TATWEER MIDDLE EAST AND AFRICA L.L.C | Digital Transformation Officer | Abu Dhabi, UAE | ⭐ New | Google Jobs | [Link](https://ae.linkedin.com/jobs/view/digital-transformation-officer-at-tatweer-middle-east-and-africa-l-l-c-4386748832) |
+| 206 | DIKTUCOM | AI Strategy Director - Lead Vision & Transformation | Abu Dhabi, UAE | ⭐ New | Google Jobs | [Link](https://www.bebee.com/job/ai-strategy-director-lead-vision-transformation-abu-dhabi-diktucom) |
+| 207 | Antal International | Senior PMO Director - IT Delivery | Abu Dhabi, UAE | ⭐ New | Google Jobs | [Link](https://www.bayt.com/en/uae/jobs/senior-pmo-director-it-delivery-74117447/) |
+| 208 | Global Corporation | Senior Digital Transformation Director | Dubai, UAE | New | Google Jobs | [Link](https://www.gulftalent.com/uae/jobs/senior-digital-transformation-director-558312) |
+| 209 | Global Corporation | Associate Director Digital Transformation Education Solution | Dubai, UAE | New | Google Jobs | [Link](https://www.gulftalent.com/uae/jobs/associate-director-digital-transformation-education-solution-558323) |
+| 210 | Fugro | Head of Project Excellence (PMO) Middle East & India | Dubai, UAE | New | Google Jobs | [Link](https://drjobs.ae/job/view/MM5ZFE4G017CRL3) |
+| 211 | Talent Connect Group (TCG) | Head of PMO & Strategic Operations | Dubai, UAE | New | Google Jobs | [Link](https://ae.linkedin.com/jobs/view/head-of-pmo-strategic-operations-at-talent-connect-group-tcg-4383733458) |
+| 212 | Michael Page | Digital Transformation Consultant | UAE | New | Google Jobs | [Link](https://www.michaelpage.com/apply/job/1039120) |
+| 213 | Qataryello | Director of Digital Transformation | Sharjah, UAE | New | Google Jobs | [Link](https://www.trabajo.org/job/director-of-digital-transformation-in-sharjah-112344) |
+| 214 | Global Corporation | Senior PMO Lead | Dubai, UAE | New | Google Jobs | [Link](https://www.gulftalent.com/uae/jobs/senior-pmo-lead-556185) |
+| 215 | Dubai Investments | Project Manager - PMO | Dubai, UAE | New | Google Jobs | [Link](https://www.careersatuae.com/jobs-in-dubai/project-manager-pmo/) |
+| 216 | Talents Tide | Senior Project Manager - Digital Transformation | Dubai, UAE | New | Google Jobs | [Link](https://www.trabajo.org/job/senior-project-manager-digital-transformation-in-dubai-115234) |
+| 217 | Consultant Engineers LLC | AI & Digital Transformation Specialist | Abu Dhabi, UAE | New | Google Jobs | [Link](https://ae.jooble.org/80729770-ai-digital-transformation-specialist.html) |
+| 218 | STS Group | Programme Management Office Manager | Dubai, UAE | Review | Google Jobs | [Link](https://www.gulftalent.com/uae/jobs/programme-management-office-manager-561705) |
+| 219 | John Crane | PMO Manager | Dubai, UAE | Review | Google Jobs | [Link](https://uae.tanqeeb.com/jobs-in-uae/all/jobs/020842486.html) |
+| 220 | Global Corporation | PMO Operational Improvement Project Manager | Abu Dhabi, UAE | Review | Google Jobs | [Link](https://www.gulftalent.com/uae/jobs/pmo-operational-improvement-project-manager-553556) |
+
+**Skipped:** Experts Group (already applied), Foreground LLC (already applied), Panamari (already applied), Emirates NBD (UAE Nationals only)
