@@ -60,6 +60,27 @@ skill-name/
 - Template: `skills/anthropic-skill-creator/templates/new-skill-template/`
 - To optimize an existing skill: `run autoresearch on [skill name]` (see `skills/skill-autoresearch/`)
 
+## Spec-Driven Development (Auto-Trigger)
+
+**GitHub Spec Kit is installed.** Use it automatically - never wait to be told.
+
+**Auto-trigger when:**
+- Building a new script or tool (>50 lines)
+- Modifying existing code with multiple changes
+- Spawning a coding sub-agent for a non-trivial task
+- Any feature that touches multiple files
+
+**Workflow:** constitution (already set) → `/speckit.specify` → `/speckit.plan` → `/speckit.tasks` → `/speckit.implement`
+
+**Skip spec-kit for:**
+- One-liner fixes, config changes, content writing
+- Simple file reads or appends
+- Anything under 50 lines of new code
+
+**Rule:** If in doubt, use spec-kit. The cost of over-specifying is seconds. The cost of under-specifying is iterations.
+
+---
+
 ## Boil the Lake (Completion Standard)
 
 When AI makes the marginal cost of completeness near-zero, do the complete thing. Every sub-agent, before marking a task done, asks: **"What's the last 10% I'm skipping?"**
