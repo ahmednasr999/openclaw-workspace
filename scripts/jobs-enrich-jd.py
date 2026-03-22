@@ -21,9 +21,10 @@ from urllib.request import Request, urlopen
 
 WORKSPACE = Path("/root/.openclaw/workspace")
 MERGED = WORKSPACE / "data" / "jobs-merged.json"
-MAX_FETCH = 50  # Only enrich top 50 jobs (same as what review processes)
+MAX_FETCH = 300  # Enrich ALL candidates (review covers all now)
 FETCH_TIMEOUT = 15
-DELAY = 1.0  # seconds between requests
+DELAY = 0.5  # seconds between requests (parallel workers share load)
+MAX_WORKERS = 5  # parallel fetch threads
 
 
 def fetch_page(url, max_chars=200000):
@@ -152,45 +153,100 @@ def run():
     failed = 0
     nationals_flagged = 0
     
-    for i, job in enumerate(top_jobs):
+    EXPIRED_SIGNALS = [
+        "this job has expired", "job posting is closed", "no longer open",
+        "position has been filled", "no longer available", "job has been removed",
+        "this listing has expired", "vacancy has been closed",
+        "this job is no longer accepting applications",
+    ]
+    STALE_SIGNALS = [
+        "months ago", "month ago", "year ago", "years ago",
+    ]
+    
+    def enrich_one(job, idx):
+        """Enrich a single job. Returns (status, nationals_flag)."""
         url = job.get("url", "")
         title = job.get("title", "?")[:50]
         
         # Skip if already enriched
         if job.get("jd_text") and len(job.get("jd_text", "")) > 100:
-            skipped += 1
-            continue
+            return "skipped", False
         
         if not url or not url.startswith("http"):
-            skipped += 1
-            continue
+            return "skipped", False
         
-        print(f"  [{i+1}/{len(top_jobs)}] {title}...", end=" ", flush=True)
-        
+        time.sleep(DELAY)  # rate limit per request
         html = fetch_page(url)
         if not html:
-            print("FAIL (fetch)")
-            failed += 1
-            time.sleep(DELAY)
-            continue
+            job["jd_fetch_status"] = "fetch_failed"
+            print(f"  [{idx}] {title}... FAIL (fetch)")
+            return "failed", False
+        
+        # Liveness check
+        html_lower = html[:20000].lower()
+        if any(s in html_lower for s in EXPIRED_SIGNALS):
+            job["jd_fetch_status"] = "expired"
+            job["jd_live"] = False
+            print(f"  [{idx}] {title}... EXPIRED")
+            return "failed", False
+        if any(s in html_lower for s in STALE_SIGNALS):
+            job["jd_fetch_status"] = "stale"
+            job["jd_live"] = False
+            print(f"  [{idx}] {title}... STALE")
+            return "failed", False
+        
+        job["jd_live"] = True
+        job["jd_fetch_status"] = "ok"
+        
+        # Extract clean page text for ATS scoring
+        page_text = re.sub(r'<script[^>]*>.*?</script>', ' ', html, flags=re.DOTALL)
+        page_text = re.sub(r'<style[^>]*>.*?</style>', ' ', page_text, flags=re.DOTALL)
+        page_text = re.sub(r'<[^>]+>', ' ', page_text)
+        page_text = re.sub(r'\s+', ' ', page_text).strip()
+        if len(page_text) > 200:
+            job["jd_page_text"] = page_text[:5000]
         
         jd = extract_jd(html, url)
+        nationals = False
         if jd and len(jd) > 50:
             job["jd_text"] = jd
-            enriched += 1
-            
-            # Also check for nationals-only
             if detect_nationals_only(jd):
                 job["nationals_only"] = True
-                nationals_flagged += 1
-                print(f"OK ({len(jd)} chars) ⚠️ NATIONALS ONLY")
+                nationals = True
+                print(f"  [{idx}] {title}... OK ({len(jd)} chars) ⚠️ NATIONALS ONLY")
             else:
-                print(f"OK ({len(jd)} chars)")
+                print(f"  [{idx}] {title}... OK ({len(jd)} chars)")
+            return "enriched", nationals
         else:
-            print("FAIL (extract)")
-            failed += 1
-        
-        time.sleep(DELAY)
+            print(f"  [{idx}] {title}... FAIL (extract)")
+            return "failed", False
+    
+    # Parallel enrichment with ThreadPoolExecutor
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+    
+    to_process = []
+    for i, job in enumerate(top_jobs, 1):
+        if job.get("jd_text") and len(job.get("jd_text", "")) > 100:
+            skipped += 1
+        elif not job.get("url", "").startswith("http"):
+            skipped += 1
+        else:
+            to_process.append((job, i))
+    
+    print(f"  Fetching {len(to_process)} jobs in parallel ({MAX_WORKERS} workers)...")
+    
+    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+        futures = {executor.submit(enrich_one, job, idx): (job, idx) for job, idx in to_process}
+        for future in as_completed(futures):
+            status, nationals = future.result()
+            if status == "enriched":
+                enriched += 1
+            elif status == "failed":
+                failed += 1
+            elif status == "skipped":
+                skipped += 1
+            if nationals:
+                nationals_flagged += 1
     
     # Write back
     if isinstance(data, dict) and "data" in data:

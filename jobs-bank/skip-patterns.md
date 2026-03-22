@@ -30,3 +30,6 @@
 - [2026-03-21] linkedin-li-4377369566: IT Head in KSA matches geography but general IT management is below executive DT level (auto-learned after 2 skip signals)
 - [2026-03-21] linkedin-li-4372535079: Director level in target geography but Data Analytics is a specialist function, not DT/PMO (auto-learned after 2 skip signals)
 - [2026-03-21] linkedin-li-4384441676: Senior Director level in target geography but Software Architecture is hands-on technical (auto-learned after 2 skip signals)
+- [2026-03-22] linkedin-li-4385663641: CTO role in Dubai - technology executive but CTO is broader tech strategy vs digital transformation focus; Arabic speaker requirement (auto-learned after 3 skip signals)
+- [2026-03-22] linkedin-li-4174468962: CEO at confidential company could fit but no domain signal - too speculative (auto-learned after 2 skip signals)
+- [2026-03-22] linkedin-li-4374570926: Head of IT at Dubai Smart City initiative has technology leadership angle but IT vs DT mismatch (auto-learned after 2 skip signals)

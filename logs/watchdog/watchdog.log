@@ -140,3 +140,56 @@ Bind: loopback
 [2026-03-22 18:00] === Watchdog v3 run ===
 [2026-03-22 18:00] Summary: fixes=0 warnings=1 alerts=0
 [2026-03-22 20:00] === Watchdog v3 run ===
+[2026-03-22 20:00] FIXED: Re-triggered failed cron 7ba5f8f7-6eec-4301-bfa6-185dee16e778
+[2026-03-22 20:00] FIXED: Re-triggered failed cron d87f2c6c-20ab-42f4-aa83-47cc086e9b04
+[2026-03-22 20:00] Summary: fixes=2 warnings=1 alerts=0
+[plugins] [composio] Connecting to https://connect.composio.dev/mcp
+[plugins] [composio] Connecting to https://connect.composio.dev/mcp
+[plugins] [lcm] Plugin loaded (enabled=true, db=/root/.openclaw/lcm.db, threshold=0.75)
+[plugins] camofox-browser: loaded without install/load-path provenance; treat as untracked local code and pin trust via plugins.allow or install records (/root/.openclaw/extensions/camofox-browser/plugin.ts)
+gateway connect failed: Error: gateway closed (1000): 
+Error: gateway closed (1000 normal closure): no close reason
+Gateway target: ws://127.0.0.1:18789
+Source: local loopback
+Config: /root/.openclaw/openclaw.json
+Bind: loopback
+[plugins] [lcm] Plugin loaded (enabled=true, db=/root/.openclaw/lcm.db, threshold=0.75)
+[plugins] camofox-browser: loaded without install/load-path provenance; treat as untracked local code and pin trust via plugins.allow or install records (/root/.openclaw/extensions/camofox-browser/plugin.ts)
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:d87f2c6c-20ab-42f4-aa83-47cc086e9b04:1774202438242:1"
+}
+[2026-03-22 22:00] === Watchdog v3 run ===
+[2026-03-22 22:00] FIXED: Re-triggered failed cron 7ba5f8f7-6eec-4301-bfa6-185dee16e778
+[2026-03-22 22:00] FIXED: Re-triggered failed cron d87f2c6c-20ab-42f4-aa83-47cc086e9b04
+[2026-03-22 22:00] Summary: fixes=2 warnings=1 alerts=0
+[plugins] [composio] Connecting to https://connect.composio.dev/mcp
+[plugins] [lcm] Plugin loaded (enabled=true, db=/root/.openclaw/lcm.db, threshold=0.75)
+[plugins] camofox-browser: loaded without install/load-path provenance; treat as untracked local code and pin trust via plugins.allow or install records (/root/.openclaw/extensions/camofox-browser/plugin.ts)
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:7ba5f8f7-6eec-4301-bfa6-185dee16e778:1774209648759:2"
+}
+[plugins] [composio] Connecting to https://connect.composio.dev/mcp
+[plugins] [lcm] Plugin loaded (enabled=true, db=/root/.openclaw/lcm.db, threshold=0.75)
+[plugins] camofox-browser: loaded without install/load-path provenance; treat as untracked local code and pin trust via plugins.allow or install records (/root/.openclaw/extensions/camofox-browser/plugin.ts)
+[plugins] [composio] Ready — 7 tools registered
+gateway connect failed: Error: gateway closed (1000): 
+Error: gateway closed (1000 normal closure): no close reason
+Gateway target: ws://127.0.0.1:18789
+Source: local loopback
+Config: /root/.openclaw/openclaw.json
+Bind: loopback
+[2026-03-23 00:00] === Watchdog v3 run ===
+[2026-03-23 00:00] FIXED: Re-triggered failed cron d87f2c6c-20ab-42f4-aa83-47cc086e9b04
+[2026-03-23 00:00] Summary: fixes=1 warnings=1 alerts=0
+[plugins] [composio] Connecting to https://connect.composio.dev/mcp
+[plugins] [lcm] Plugin loaded (enabled=true, db=/root/.openclaw/lcm.db, threshold=0.75)
+[plugins] camofox-browser: loaded without install/load-path provenance; treat as untracked local code and pin trust via plugins.allow or install records (/root/.openclaw/extensions/camofox-browser/plugin.ts)
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:d87f2c6c-20ab-42f4-aa83-47cc086e9b04:1774216830774:1"
+}

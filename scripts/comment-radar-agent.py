@@ -48,35 +48,45 @@ PRIORITY_AUTHORS_FILE = CONFIG_DIR / "priority-authors.json"
 # ==============================================================================
 # LLM COMMENT DRAFTING — Anthropic XML-structured prompt
 # ==============================================================================
-COMMENT_SYSTEM = """You are Ahmed Nasr - PMO & Regional Engagement Lead with 20+ years in tech leadership across GCC."""
+COMMENT_SYSTEM = """You are Ahmed Nasr - PMO & Regional Engagement Lead with 20+ years in tech leadership across GCC. You comment on LinkedIn as a peer, not a fan."""
 
-COMMENT_TASK = """Draft a LinkedIn comment for each post provided. Each comment must be 2-4 lines, direct, and executive in tone."""
+COMMENT_TASK = """Draft ONE LinkedIn comment per post. Each comment must be 2-4 lines. One shot, make it count."""
 
 COMMENT_CONTEXT = """
-Your audience: Senior leaders in GCC/MENA region — PMO directors, transformation leads, CIOs, operations executives.
-Tone: Peer briefing, not teaching. Confident, specific, no fluff.
-Ahmed's background: PMO excellence, digital transformation, AI automation, healthcare/education/tech sectors across GCC.
-Content themes he engages with: PMO governance, transformation program execution, AI in operations, healthcare tech, leadership.
+Ahmed's background (use sparingly, only when relevant):
+- 20+ years tech leadership across GCC (UAE, Saudi, Qatar, Bahrain)
+- PMO excellence: governed $50M+ transformation programs across 15-hospital networks
+- Digital transformation: led enterprise-wide rollouts in healthcare, education, fintech
+- AI automation: building AI agent systems for operational efficiency
+- Sectors: healthcare IT, fintech, education, government, hospitality
+
+Your audience: The post author and their network - senior leaders, C-suite, directors, transformation leads in GCC/MENA.
 """
 
 COMMENT_CONSTRAINTS = """
-- Start with insight or experience — NEVER generic praise ("Great post", "Well said", "Important topic")
-- Include one concrete anchor: a metric, a named framework, or a specific experience from Ahmed's 20+ year career
-- About 40% of comments MUST end with a sharp, thought-provoking question
-- NEVER use em dashes — use commas or hyphens instead
-- NEVER use: "Great insights!", "Thanks for sharing!", "Very relevant topic.", "Strong point", "Excellent breakdown"
-- Keep each comment to exactly 2-4 lines
+STRUCTURE (every comment must follow this):
+1. OPEN WITH INSIGHT - a specific observation, data point, or contrarian angle about the post's topic. Never praise ("Great post", "Well said", "Totally agree", "Important topic", "Strong point").
+2. ADD VALUE THE POST DIDN'T COVER - extend it, challenge it, or add a dimension the author missed. The reader should learn something new from YOUR comment. Reference your experience where natural - a project, a number, a region. Not bragging, just credibility.
+3. END WITH A HOOK - a question back to the author OR a provocation that invites reply. This turns a comment into a thread.
+
+RULES:
+- 2-4 lines max. LinkedIn truncates long comments.
+- Match the author's register - casual post = casual comment, formal post = formal comment. Peer tone always.
+- NEVER use em dashes. Use commas or hyphens instead.
+- NEVER: generic agreement, self-promotion, hashtag spam, emoji overload, restating the post in different words.
+- NEVER: "Great insights!", "Thanks for sharing!", "Very relevant topic.", "Excellent breakdown", "At my company we..."
 """
 
 COMMENT_OUTPUT = """
-Return ONLY a valid JSON array with this exact structure — no markdown fences, no extra text:
+Return ONLY a valid JSON array with this exact structure - no markdown fences, no extra text:
 [
   {"post_num": 1, "comment": "exact draft comment text here"},
   {"post_num": 2, "comment": "exact draft comment text here"}
 ]
 """
 
-LLM_MODEL = "minimax-portal/MiniMax-M2.7"
+# Sonnet 4.6 for comment quality - comments carry Ahmed's professional brand
+LLM_MODEL = "anthropic/claude-sonnet-4-6"
 LLM_TEMP = 0.7
 
 
@@ -154,18 +164,42 @@ def fetch_post_content(url):
         author = "Unknown"
         content = ""
 
-        # Extract author from og:title: "Author Name posted on the topic"
+        # Method 1: Extract from URL slug (most reliable)
+        # URL format: linkedin.com/posts/username_title-activity-123
+        url_match = re.search(r'linkedin\.com/posts/([a-zA-Z0-9_-]+?)_', url)
+        if url_match:
+            slug = url_match.group(1)
+            # Convert slug to name: "john-doe" → "John Doe", "company-name" → "Company Name"
+            author_from_url = slug.replace("-", " ").replace("_", " ").title()
+            if len(author_from_url) > 2:
+                author = author_from_url
+
+        # Method 2: og:title patterns (override URL if found)
         m = re.search(r'<meta property="og:title" content="([^"]+)"', html)
         if m:
             title = m.group(1)
-            # Pattern: "Title | Author posted on" or "Author's Post"
-            am = re.match(r"^(.+?)\s*(?:\|)\s*(.+?)(?:\s+posted)", title)
-            if am:
-                author = am.group(2).strip()
+            # Pattern: "Author Name on LinkedIn: post content"
+            am = re.match(r"^(.+?)\s+on\s+LinkedIn\s*:", title)
+            if am and len(am.group(1).strip()) > 2:
+                author = am.group(1).strip()
             else:
-                am2 = re.match(r"^(.+?)(?:'s Post|\s+posted on)", title)
-                if am2:
-                    author = am2.group(1).strip()
+                # Pattern: "Title | Author posted on"
+                am = re.match(r"^(.+?)\s*(?:\|)\s*(.+?)(?:\s+posted)", title)
+                if am:
+                    author = am.group(2).strip()
+                else:
+                    # Pattern: "Author's Post"
+                    am2 = re.match(r"^(.+?)(?:'s Post|\s+posted on)", title)
+                    if am2 and len(am2.group(1).strip()) > 2:
+                        author = am2.group(1).strip()
+        
+        # Method 3: twitter:title meta (sometimes has cleaner author)
+        tm = re.search(r'<meta name="twitter:title" content="([^"]+)"', html)
+        if tm and author == "Unknown":
+            tt = tm.group(1)
+            tam = re.match(r"^(.+?)\s+on\s+LinkedIn", tt)
+            if tam:
+                author = tam.group(1).strip()
 
         # Extract content from meta description or og:description
         for pattern in [
@@ -177,10 +211,19 @@ def fetch_post_content(url):
                 content = m.group(1)[:500]
                 break
 
-        return author, content
+        # Try to extract comment count from HTML (LinkedIn sometimes includes it)
+        comment_count = 0
+        cm = re.search(r'(\d+)\s*comment', html, re.IGNORECASE)
+        if cm:
+            try:
+                comment_count = int(cm.group(1))
+            except (ValueError, TypeError):
+                pass
+
+        return author, content, comment_count
 
     except Exception as e:
-        return "Unknown", ""
+        return "Unknown", "", 0
 
 
 def extract_linkedin_posts(results):
@@ -201,10 +244,15 @@ def extract_linkedin_posts(results):
         title = r.get("title", "")
         snippet = r.get("content", r.get("snippet", ""))
 
-        # Basic author from search result title
+        # Extract author: try URL slug first, then title patterns
         author = "Unknown"
-        m = re.match(r"^(.+?)(?:\s+on LinkedIn|\s+posted on)", title)
-        if m:
+        url_m = re.search(r'linkedin\.com/posts/([a-zA-Z0-9_-]+?)_', clean_url)
+        if url_m:
+            slug = url_m.group(1)
+            author = slug.replace("-", " ").replace("_", " ").title()
+        # Override with title if it has a cleaner name
+        m = re.match(r"^(.+?)(?:\s+on LinkedIn|\s+posted on|\s*\|)", title)
+        if m and len(m.group(1).strip()) > 2 and len(m.group(1).strip()) < 50:
             author = m.group(1).strip()
 
         posts.append({
@@ -212,6 +260,7 @@ def extract_linkedin_posts(results):
             "author": author,
             "title": title[:200],
             "preview": snippet[:300] if snippet else title,
+            "published_date": r.get("published_date", ""),
             "source": "tavily",
         })
 
@@ -279,7 +328,31 @@ def score_post(post, priority_authors=None):
     else:
         score += 5
 
-    return min(score, 100)
+    # Recency bonus (15 points) - early comments get 3-5x more visibility
+    pub_date = post.get("published_date", "")
+    if pub_date:
+        try:
+            pub_dt = datetime.fromisoformat(pub_date.replace("Z", "+00:00"))
+            age_hours = (datetime.now(timezone.utc) - pub_dt).total_seconds() / 3600
+            if age_hours < 24:
+                score += 15
+            elif age_hours < 48:
+                score += 10
+            elif age_hours < 72:
+                score += 5
+        except (ValueError, TypeError):
+            pass
+
+    # Crowded post penalty - your comment drowns in 200+ comments
+    comment_count = post.get("comment_count", 0)
+    if comment_count > 200:
+        score -= 20  # Very crowded, your comment invisible
+    elif comment_count > 100:
+        score -= 10  # Crowded
+    elif 5 <= comment_count <= 30:
+        score += 5   # Sweet spot - active discussion, still visible
+
+    return max(0, min(score, 120))
 
 
 def draft_comments(posts):
@@ -386,24 +459,48 @@ def run_radar():
         json.dump(output, open(OUTPUT, "w"), indent=2)
         return
 
-    # Deduplicate
+    # Load already-commented URLs from tracker
+    commented_urls = set()
+    tracker_path = WORKSPACE / "memory" / "engagement" / "comment-tracker.json"
+    if tracker_path.exists():
+        try:
+            tracker = json.load(open(tracker_path))
+            for day_data in tracker.get("daily_comments", {}).values():
+                for post in day_data.get("posts", []):
+                    url = post.get("url", "")
+                    if url:
+                        commented_urls.add(url.split("?")[0])
+        except Exception:
+            pass
+    
+    # Deduplicate + skip already-commented
     seen = set()
     unique = []
+    skipped_commented = 0
     for p in all_posts:
-        if p["url"] not in seen:
-            seen.add(p["url"])
-            unique.append(p)
+        clean = p["url"].split("?")[0]
+        if clean in seen:
+            continue
+        seen.add(clean)
+        if clean in commented_urls:
+            skipped_commented += 1
+            continue
+        unique.append(p)
 
-    print(f"\n  Unique posts: {len(unique)}")
+    if skipped_commented:
+        print(f"\n  Skipped {skipped_commented} already-commented posts")
+    print(f"  Unique posts: {len(unique)}")
 
     # Enrich top candidates with actual LinkedIn content
     print("  Enriching posts from LinkedIn HTML...")
     for p in unique[:15]:  # Only enrich top 15 to save time
-        author, content = fetch_post_content(p["url"])
+        author, content, comment_count = fetch_post_content(p["url"])
         if author != "Unknown":
             p["author"] = author
         if content:
             p["full_content"] = content
+        if comment_count:
+            p["comment_count"] = comment_count
         time.sleep(0.5)
 
     # Score and rank
@@ -411,7 +508,36 @@ def run_radar():
         post["pqs"] = score_post(post, priority_authors)
 
     unique.sort(key=lambda x: (-x.get("priority", False), -x["pqs"]))
-    top = unique[:5]  # Top 5 for commenting
+    
+    # Content-level dedup: don't show 3 posts about the same story
+    # Compare preview text — if >50% word overlap, skip the lower-scored one
+    def word_set(text):
+        return set(re.findall(r'\w{4,}', text.lower()))
+    
+    top = []
+    for post in unique:
+        if len(top) >= 5:
+            break
+        post_words = word_set(post.get("preview", "") + " " + post.get("title", ""))
+        is_duplicate = False
+        for existing in top:
+            existing_words = word_set(existing.get("preview", "") + " " + existing.get("title", ""))
+            if not post_words or not existing_words:
+                continue
+            overlap = len(post_words & existing_words) / max(1, min(len(post_words), len(existing_words)))
+            if overlap > 0.5:
+                is_duplicate = True
+                break
+        if not is_duplicate:
+            top.append(post)
+    
+    if len(top) < 5:
+        # Fill remaining with next best non-duplicate posts
+        for post in unique:
+            if len(top) >= 5:
+                break
+            if post not in top:
+                top.append(post)
 
     print(f"\n  Top 5 posts:")
     for i, p in enumerate(top, 1):

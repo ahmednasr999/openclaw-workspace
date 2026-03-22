@@ -7,6 +7,7 @@ Detects: stale applications, follow-ups overdue, interviews upcoming
 Computes: conversion funnel rates
 """
 
+import os
 import json
 import urllib.request
 import urllib.error
@@ -30,7 +31,7 @@ WORKSPACE = common.WORKSPACE
 DATA_DIR = common.DATA_DIR
 
 # Configuration
-NOTION_TOKEN = "NOTION_TOKEN_REDACTED"
+NOTION_TOKEN = json.load(open(os.path.expanduser("~/.openclaw/workspace/config/notion.json")))["token"]
 PIPELINE_DB_ID = "3268d599-a162-81b4-b768-f162adfa4971"
 APPLIED_IDS_FILE = WORKSPACE / "jobs-bank" / "applied-job-ids.txt"
 OUTPUT_PATH = DATA_DIR / "pipeline-status.json"

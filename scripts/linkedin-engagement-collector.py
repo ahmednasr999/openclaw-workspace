@@ -8,6 +8,7 @@ Updates: Notion Content Calendar with engagement metrics
 
 Requires: playwright, LinkedIn cookies
 """
+import os
 import json, re, sys, os
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
@@ -16,7 +17,7 @@ WORKSPACE = Path("/root/.openclaw/workspace")
 DATA_DIR = WORKSPACE / "data"
 OUTPUT_FILE = DATA_DIR / "linkedin-engagement.json"
 COOKIE_FILE = Path("/root/.openclaw/media/inbound/www.linkedin.com_cookies---c22104a1-b837-4ea4-b22f-29275813363b.txt")
-NOTION_TOKEN = "NOTION_TOKEN_REDACTED"
+NOTION_TOKEN = json.load(open(os.path.expanduser("~/.openclaw/workspace/config/notion.json")))["token"]
 CONTENT_DB = "3268d599-a162-814b-8854-c9b8bde62468"
 CAIRO = timezone(timedelta(hours=2))
 

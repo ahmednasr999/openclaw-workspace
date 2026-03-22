@@ -36,10 +36,13 @@ ALERTS_PATH = DATA_DIR / "immediate-alerts.json"
 
 # Agent data files to monitor
 AGENT_DATA_FILES = [
-    ("pipeline-agent", DATA_DIR / "pipeline-status.json", 6),
-    ("email-agent", DATA_DIR / "email-summary.json", 4),
-    ("content-agent", DATA_DIR / "content-schedule.json", 6),
-    ("outreach-agent", DATA_DIR / "outreach-summary.json", 6),
+    ("jobs-merge", DATA_DIR / "jobs-merged.json", 6),
+    ("jobs-review", DATA_DIR / "jobs-summary.json", 6),
+    ("email-agent", DATA_DIR / "email-scan.json", 4),
+    ("linkedin-post", DATA_DIR / "linkedin-post.json", 6),
+    ("comment-radar", DATA_DIR / "comment-radar.json", 6),
+    ("outreach-agent", DATA_DIR / "outreach-suggestions.json", 6),
+    ("system-agent", DATA_DIR / "system-health.json", 6),
 ]
 
 
@@ -173,7 +176,24 @@ def check_cron_health():
             timeout=30
         )
         if result.returncode != 0:
-            return {"status": "error", "error": result.stderr}
+            # Filter known noise: plugin warnings, gateway transient reconnects
+            stderr = result.stderr or ""
+            noise_patterns = [
+                "loaded without install/load-path provenance",
+                "gateway closed (1000",
+                "gateway connect failed",
+                "plugins] camofox",
+            ]
+            is_noise = all(
+                any(noise in line for noise in noise_patterns)
+                for line in stderr.strip().split('\n')
+                if line.strip()
+            )
+            if is_noise and result.stdout.strip():
+                # Cron output is fine, stderr is just noise
+                pass
+            else:
+                return {"status": "error", "error": stderr[:200]}
         
         # Parse cron output
         lines = result.stdout.strip().split('\n')
@@ -201,7 +221,7 @@ def check_notion_api():
         req = urllib.request.Request(
             "https://api.notion.com/v1/users/me",
             headers={
-                "Authorization": "Bearer NOTION_TOKEN_REDACTED",
+                "Authorization": f"Bearer {NOTION_TOKEN}",
                 "Notion-Version": "2022-06-28"
             },
             method='GET'
@@ -258,10 +278,31 @@ def check_for_interview_alerts():
     return alerts
 
 
+def send_telegram_alert(message):
+    """Send critical alert to Telegram immediately."""
+    try:
+        subprocess.run(
+            ["openclaw", "message", "send", "--channel", "telegram",
+             "--to", "866838380", "--message", message],
+            timeout=15, capture_output=True
+        )
+        print(f"  Telegram alert sent: {message[:60]}...")
+    except Exception as e:
+        print(f"  Telegram alert failed: {e}")
+
+
 def write_immediate_alerts(alerts):
-    """Write immediate alerts to file."""
+    """Write immediate alerts to file and send critical ones to Telegram."""
     if not alerts:
         return
+    
+    # Send critical alerts to Telegram immediately
+    critical = [a for a in alerts if a.get("urgency") == "critical"]
+    if critical:
+        msg_lines = ["🚨 CRITICAL ALERT"]
+        for a in critical[:3]:
+            msg_lines.append(f"\n{a.get('message', 'Unknown alert')}")
+        send_telegram_alert("\n".join(msg_lines))
     
     existing = load_json(ALERTS_PATH, default={"alerts": []})
     existing_alerts = existing.get("alerts", [])
@@ -330,7 +371,7 @@ def run_system_agent(result: AgentResult):
     if gateway.get("status") == "down":
         immediate_alerts.append({
             "type": "gateway_down",
-            "urgency": "high",
+            "urgency": "critical",
             "message": f"Gateway is down: {gateway.get('error', 'Unknown error')}",
             "timestamp": now_iso()
         })

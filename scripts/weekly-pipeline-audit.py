@@ -1,0 +1,406 @@
+#!/usr/bin/env python3
+"""
+weekly-pipeline-audit.py — Deep structural audit of the Morning Briefing Pipeline.
+
+Runs every Sunday. Goes beyond the daily Doctor (which checks outputs) to check
+the CODE ITSELF for structural problems.
+
+Checks:
+1. Syntax: bash -n on shell scripts, python -m py_compile on Python
+2. Undefined variables in shell scripts
+3. Data flow: every file read by a consumer must be written by a producer
+4. Dead imports / unused files
+5. Hardcoded secrets (bot tokens, API keys in source)
+6. Timeout consistency (script timeout vs pipeline timeout)
+7. Error handling (try/except, set -e)
+
+Usage:
+  python3 weekly-pipeline-audit.py              # Full audit + Telegram
+  python3 weekly-pipeline-audit.py --dry-run    # Preview only
+"""
+
+import json, os, sys, re, subprocess
+from datetime import datetime, timezone, timedelta
+from pathlib import Path
+
+WORKSPACE = Path("/root/.openclaw/workspace")
+SCRIPTS = WORKSPACE / "scripts"
+DATA_DIR = WORKSPACE / "data"
+HISTORY_FILE = DATA_DIR / "weekly-audit-history.json"
+CAIRO = timezone(timedelta(hours=2))
+CHAT_ID = "866838380"
+
+now = datetime.now(CAIRO)
+today = now.strftime("%Y-%m-%d")
+
+# ── Pipeline scripts (the 17 that matter) ──
+PIPELINE_PYTHON = [
+    "jobs-source-linkedin.py", "jobs-source-indeed.py", "jobs-source-google.py",
+    "jobs-source-common.py", "jobs-merge.py", "jobs-enrich-jd.py", "jobs-review.py",
+    "push-submit-to-notion.py", "email-agent.py", "linkedin-auto-poster.py",
+    "comment-radar-agent.py", "outreach-agent.py", "outreach-followup-tracker.py",
+    "system-agent.py", "briefing-agent.py", "pam-telegram.py", "briefing-doctor.py",
+    "pipeline-agent.py", "linkedin-content-agent.py", "linkedin-post-agent.py",
+    "sync-applied-from-notion.py", "heartbeat-checker.py",
+]
+
+PIPELINE_SHELL = ["run-briefing-pipeline.sh"]
+
+# ── Data flow map: file → who writes it → who reads it ──
+DATA_FLOW = {
+    "jobs-raw/linkedin.json": {"writer": "jobs-source-linkedin.py", "readers": ["jobs-merge.py"]},
+    "jobs-raw/indeed.json": {"writer": "jobs-source-indeed.py", "readers": ["jobs-merge.py"]},
+    "jobs-raw/google-jobs.json": {"writer": "jobs-source-google.py", "readers": ["jobs-merge.py"]},
+    "jobs-merged.json": {"writer": "jobs-merge.py", "readers": ["jobs-enrich-jd.py", "jobs-review.py"]},
+    "jobs-summary.json": {"writer": "jobs-review.py", "readers": ["briefing-agent.py", "pam-telegram.py", "push-submit-to-notion.py"]},
+    "email-summary.json": {"writer": "email-agent.py", "readers": ["briefing-agent.py", "pam-telegram.py"]},
+    "system-health.json": {"writer": "system-agent.py", "readers": ["briefing-agent.py", "pam-telegram.py"]},
+    "comment-radar.json": {"writer": "comment-radar-agent.py", "readers": ["briefing-agent.py", "pam-telegram.py"]},
+    "outreach-suggestions.json": {"writer": "outreach-agent.py", "readers": ["briefing-agent.py", "pam-telegram.py"]},
+    "content-schedule.json": {"writer": "linkedin-content-agent.py", "readers": ["briefing-agent.py"]},
+    "pipeline-status.json": {"writer": "pipeline-agent.py", "readers": ["briefing-agent.py"]},
+    "linkedin-post.json": {"writer": "linkedin-post-agent.py", "readers": ["briefing-agent.py", "pam-telegram.py"]},
+}
+
+# Secrets patterns to flag
+SECRET_PATTERNS = [
+    (r'\b\d{10}:AA[A-Za-z0-9_-]{30,}\b', "Telegram bot token"),
+    (r'\bak_[a-zA-Z0-9]{20,}\b', "Composio API key"),
+    (r'\bsk-[a-zA-Z0-9]{20,}\b', "OpenAI API key"),
+    (r'xoxb-[0-9]+-[0-9]+-[a-zA-Z0-9]+', "Slack bot token"),
+]
+
+# Allowed: Notion token (needed in scripts that call Notion API directly)
+SECRET_ALLOW = ["ntn_"]
+
+findings = []
+
+
+def finding(severity, category, script, message):
+    findings.append({
+        "severity": severity,  # CRITICAL, WARNING, INFO
+        "category": category,
+        "script": script,
+        "message": message,
+    })
+
+
+# ── CHECK 1: Syntax ──
+def check_syntax():
+    print("  [1/7] Syntax check...")
+    
+    for script in PIPELINE_PYTHON:
+        path = SCRIPTS / script
+        if not path.exists():
+            finding("WARNING", "missing", script, f"Script not found: {path}")
+            continue
+        result = subprocess.run(
+            ["python3", "-m", "py_compile", str(path)],
+            capture_output=True, text=True
+        )
+        if result.returncode != 0:
+            finding("CRITICAL", "syntax", script, f"Python syntax error: {result.stderr[:120]}")
+    
+    for script in PIPELINE_SHELL:
+        path = SCRIPTS / script
+        if not path.exists():
+            finding("WARNING", "missing", script, f"Script not found: {path}")
+            continue
+        result = subprocess.run(
+            ["bash", "-n", str(path)],
+            capture_output=True, text=True
+        )
+        if result.returncode != 0:
+            finding("CRITICAL", "syntax", script, f"Bash syntax error: {result.stderr[:120]}")
+
+
+# ── CHECK 2: Undefined variables in shell ──
+def check_shell_vars():
+    print("  [2/7] Shell variable check...")
+    
+    for script in PIPELINE_SHELL:
+        path = SCRIPTS / script
+        if not path.exists():
+            continue
+        content = path.read_text()
+        
+        # Find all variable definitions
+        defined = set(re.findall(r'^([A-Z_][A-Z_0-9]*)=', content, re.MULTILINE))
+        defined.update(re.findall(r'\blocal\s+([a-z_][a-z_0-9]*)=', content, re.MULTILINE))
+        # Add common builtins
+        defined.update(["HOME", "PATH", "PWD", "USER", "BASH_SOURCE", "FUNCNAME",
+                       "PIPESTATUS", "RANDOM", "SECONDS", "LINENO", "HOSTNAME",
+                       "WORKSPACE", "SCRIPTS", "DATA_DIR", "LOG_FILE", "DATE",
+                       "SCRIPTS_DIR", "LOG"])
+        
+        # Find all variable usages
+        used = set(re.findall(r'\$\{?([A-Z_][A-Z_0-9]*)\}?', content))
+        
+        # Undefined = used but not defined
+        undefined = used - defined
+        # Filter noise (function params, loop vars)
+        undefined = {v for v in undefined if len(v) > 2 and v not in [
+            "PHASE2_FAILURES", "TRANSIENT_COUNT", "FAILED_SOURCES",
+            "OPTARG", "OPTIND", "IFS",
+            "CONFIG_COUNT", "LOGIC_COUNT", "LOCK_PID",  # defined via $() subshell
+        ]}
+        
+        for var in sorted(undefined):
+            finding("WARNING", "undefined_var", script, f"${var} used but may not be defined")
+
+
+# ── CHECK 3: Data flow integrity ──
+def check_data_flow():
+    print("  [3/7] Data flow integrity...")
+    
+    for data_file, flow in DATA_FLOW.items():
+        writer = flow["writer"]
+        readers = flow["readers"]
+        
+        # Check writer exists
+        writer_path = SCRIPTS / writer
+        if not writer_path.exists():
+            finding("CRITICAL", "data_flow", writer, f"Writer for {data_file} doesn't exist")
+            continue
+        
+        # Check writer actually writes this file
+        writer_content = writer_path.read_text()
+        # Simplified check: does the writer reference the filename?
+        base = Path(data_file).name
+        if base not in writer_content and data_file not in writer_content:
+            finding("WARNING", "data_flow", writer, f"Writer may not produce {data_file} (filename not in source)")
+        
+        # Check readers exist and reference the file
+        for reader in readers:
+            reader_path = SCRIPTS / reader
+            if not reader_path.exists():
+                finding("WARNING", "data_flow", reader, f"Reader of {data_file} doesn't exist")
+                continue
+            reader_content = reader_path.read_text()
+            if base not in reader_content and data_file not in reader_content:
+                finding("INFO", "data_flow", reader, f"Reader may not consume {data_file} (filename not in source)")
+
+
+# ── CHECK 4: Hardcoded secrets ──
+def check_secrets():
+    print("  [4/7] Secret scan...")
+    
+    all_scripts = PIPELINE_PYTHON + PIPELINE_SHELL
+    for script in all_scripts:
+        path = SCRIPTS / script
+        if not path.exists():
+            continue
+        content = path.read_text()
+        
+        for pattern, label in SECRET_PATTERNS:
+            matches = re.findall(pattern, content)
+            for match in matches:
+                # Check if it's in the allow list
+                if any(match.startswith(a) for a in SECRET_ALLOW):
+                    continue
+                finding("WARNING", "secret", script, f"Possible {label} found: {match[:15]}...")
+
+
+# ── CHECK 5: Error handling ──
+def check_error_handling():
+    print("  [5/7] Error handling...")
+    
+    for script in PIPELINE_PYTHON:
+        path = SCRIPTS / script
+        if not path.exists():
+            continue
+        content = path.read_text()
+        
+        # Scripts that do HTTP/API calls should have try/except
+        has_http = any(w in content for w in ["requests.", "urllib", "urlopen", "http.client"])
+        has_try = "try:" in content
+        
+        if has_http and not has_try:
+            finding("WARNING", "error_handling", script, "Does HTTP calls but has no try/except")
+        
+        # Scripts that write output files should handle write errors
+        has_json_dump = "json.dump" in content
+        if has_json_dump and "try:" not in content:
+            finding("INFO", "error_handling", script, "Writes JSON but no error handling around it")
+
+
+# ── CHECK 6: Timeout consistency ──
+def check_timeouts():
+    print("  [6/7] Timeout consistency...")
+    
+    # Parse timeouts from run-briefing-pipeline.sh
+    pipeline_path = SCRIPTS / "run-briefing-pipeline.sh"
+    if not pipeline_path.exists():
+        return
+    
+    content = pipeline_path.read_text()
+    
+    # Find run_agent calls with timeouts
+    agent_calls = re.findall(r'run_agent\s+"(\w+)"\s+"([^"]+)"\s+(\d+)', content)
+    
+    for name, script, timeout_str in agent_calls:
+        timeout = int(timeout_str)
+        
+        # Check if script has internal timeout that conflicts
+        script_path = SCRIPTS / script
+        if not script_path.exists():
+            continue
+        script_content = script_path.read_text()
+        
+        # Look for requests.get timeout or similar
+        internal_timeouts = re.findall(r'timeout[=:]\s*(\d+)', script_content)
+        for it in internal_timeouts:
+            if int(it) > timeout:
+                finding("WARNING", "timeout", script, f"Internal timeout {it}s > pipeline timeout {timeout}s (will be killed)")
+
+
+# ── CHECK 7: Orphaned files ──
+def check_orphans():
+    print("  [7/7] Orphaned files...")
+    
+    # Check data files that exist but aren't in DATA_FLOW
+    known_files = set(DATA_FLOW.keys())
+    
+    for f in DATA_DIR.glob("*.json"):
+        rel = f.name
+        if rel not in known_files and rel not in [
+            "pam-newsletter.json", "briefing-doctor-history.json",
+            "weekly-audit-history.json", "immediate-alerts.json",
+            "source-failures.jsonl", "linkedin-engagement.json",
+            "github-discovery.json", "outreach-history.json",
+            "linkedin-research-log.json",
+        ]:
+            finding("INFO", "orphan", rel, f"Data file exists but not in pipeline data flow map")
+
+
+# ── MAIN ──
+def run_audit():
+    print("🔍 Running weekly pipeline audit...")
+    
+    check_syntax()
+    check_shell_vars()
+    check_data_flow()
+    check_secrets()
+    check_error_handling()
+    check_timeouts()
+    check_orphans()
+    
+    # Score
+    critical = sum(1 for f in findings if f["severity"] == "CRITICAL")
+    warnings = sum(1 for f in findings if f["severity"] == "WARNING")
+    infos = sum(1 for f in findings if f["severity"] == "INFO")
+    
+    # Score: start at 100, -20 per critical, -5 per warning, -1 per info
+    score = max(0, 100 - (critical * 20) - (warnings * 5) - (infos * 1))
+    
+    if score >= 90:
+        grade, emoji = "A", "🟢"
+    elif score >= 75:
+        grade, emoji = "B", "🟡"
+    elif score >= 50:
+        grade, emoji = "C", "🟠"
+    else:
+        grade, emoji = "F", "🔴"
+    
+    return {
+        "date": today,
+        "score": score,
+        "grade": grade,
+        "emoji": emoji,
+        "critical": critical,
+        "warnings": warnings,
+        "infos": infos,
+        "findings": findings,
+    }
+
+
+def save_history(audit):
+    try:
+        history = json.load(open(HISTORY_FILE))
+    except Exception:
+        history = {"audits": []}
+    
+    audits = history.get("audits", [])
+    audits = [a for a in audits if a.get("date") != today]
+    audits.append({
+        "date": audit["date"],
+        "score": audit["score"],
+        "grade": audit["grade"],
+        "critical": audit["critical"],
+        "warnings": audit["warnings"],
+        "infos": audit["infos"],
+    })
+    audits = sorted(audits, key=lambda a: a["date"])[-12:]  # 12 weeks
+    
+    history["audits"] = audits
+    history["updated"] = now.isoformat()
+    
+    with open(HISTORY_FILE, "w") as f:
+        json.dump(history, f, indent=2)
+
+
+def format_telegram(audit):
+    lines = []
+    lines.append(f"{audit['emoji']} Weekly Pipeline Audit: {audit['score']}/100 (Grade {audit['grade']})")
+    lines.append(f"🔴 {audit['critical']} critical | ⚠️ {audit['warnings']} warnings | ℹ️ {audit['infos']} info")
+    lines.append("")
+    
+    # Show critical + warning findings
+    shown = 0
+    for f in audit["findings"]:
+        if f["severity"] in ("CRITICAL", "WARNING") and shown < 8:
+            icon = "🔴" if f["severity"] == "CRITICAL" else "⚠️"
+            lines.append(f"  {icon} [{f['category']}] {f['script']}: {f['message'][:70]}")
+            shown += 1
+    
+    if shown == 0:
+        lines.append("  ✅ No critical or warning issues found")
+    
+    # Trend
+    try:
+        history = json.load(open(HISTORY_FILE))
+        recent = history.get("audits", [])[-4:]
+        if len(recent) > 1:
+            trend = " -> ".join(str(a["score"]) for a in recent)
+            lines.append(f"\n📈 Trend: {trend}")
+    except Exception:
+        pass
+    
+    return "\n".join(lines)
+
+
+def send_telegram(text):
+    try:
+        result = subprocess.run(
+            ["openclaw", "message", "send", "--channel", "telegram",
+             "--to", CHAT_ID, "--message", text],
+            capture_output=True, text=True, timeout=15
+        )
+        return result.returncode == 0
+    except Exception:
+        return False
+
+
+if __name__ == "__main__":
+    dry_run = "--dry-run" in sys.argv
+    
+    audit = run_audit()
+    
+    print(f"\n{'='*50}")
+    print(f"Score: {audit['score']}/100 (Grade {audit['grade']})")
+    print(f"Critical: {audit['critical']} | Warnings: {audit['warnings']} | Info: {audit['infos']}")
+    print(f"{'='*50}")
+    
+    for f in findings:
+        icon = {"CRITICAL": "🔴", "WARNING": "⚠️", "INFO": "ℹ️"}[f["severity"]]
+        print(f"  {icon} [{f['category']}] {f['script']}: {f['message']}")
+    
+    msg = format_telegram(audit)
+    print(f"\nTelegram ({len(msg)} chars):\n{msg}")
+    
+    if not dry_run:
+        save_history(audit)
+        ok = send_telegram(msg)
+        print(f"\n{'✅ Sent' if ok else '❌ Send failed'}")
+    else:
+        print("\n[DRY RUN]")

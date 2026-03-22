@@ -52,8 +52,10 @@ def overdue_followups():
             sent = sent.replace(tzinfo=timezone(timedelta(hours=TZ_OFFSET)))
             days_ago = (now - sent).days
 
-            # Follow-up expected after 5-7 days
-            if days_ago >= 7 and s.get("response_pending", True):
+            # Follow-up expected after 7 days for messaged contacts with no response
+            status = s.get("status", "none")
+            # Only flag messaged contacts as overdue (not just suggested)
+            if days_ago >= 7 and status == "messaged":
                 overdue.append({
                     "name": s.get("name", "?"),
                     "company": s.get("company", "?"),

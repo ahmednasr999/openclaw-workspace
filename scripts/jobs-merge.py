@@ -45,7 +45,7 @@ AGENT_NAME = "jobs-merge"
 OUTPUT_FILE = DATA_DIR / "jobs-merged.json"
 APPLIED_IDS_FILE = WORKSPACE / "jobs-bank" / "applied-job-ids.txt"
 SEARCH_POLICY_FILE = WORKSPACE / "jobs-bank" / "search-policy.md"
-FRESHNESS_HOURS = 12  # Max age for source files
+FRESHNESS_HOURS = 25  # Max age for source files (survives 1 failed pipeline run)
 FUZZY_MATCH_THRESHOLD = 0.85  # 85% similarity for title+company dedup
 
 # Cairo timezone
@@ -53,7 +53,11 @@ CAIRO_TZ = timezone(timedelta(hours=2))
 
 
 def load_applied_ids() -> set[str]:
-    """Load already-applied job IDs from tracking file."""
+    """Load already-applied job IDs from tracking file.
+    
+    Stores both the raw ID and any numeric suffix extracted from it,
+    so matching works regardless of format (plain number or prefixed).
+    """
     applied = set()
     try:
         if APPLIED_IDS_FILE.exists():
@@ -65,8 +69,13 @@ def load_applied_ids() -> set[str]:
                     parts = line.split("|")
                     if parts:
                         job_id = parts[0].strip()
-                        if job_id and len(job_id) >= 6:  # Any ID format (numeric or hex)
+                        if job_id and len(job_id) >= 6:
+                            # Add the raw ID as-is
                             applied.add(job_id)
+                            # Also add just the numeric/hex suffix for prefix-agnostic matching
+                            suffix = job_id.split("-")[-1]
+                            if suffix != job_id and len(suffix) >= 6:
+                                applied.add(suffix)
     except Exception as e:
         print(f"  Warning: Could not load applied IDs: {e}")
     return applied
@@ -320,8 +329,23 @@ def run_merge(result: AgentResult):
             existing_sources = existing.get("_sources", [existing.get("_source_file", "")])
             if job.get("_source_file") not in existing_sources:
                 existing_sources.append(job.get("_source_file", ""))
-            existing["_sources"] = existing_sources
-            existing["source_count"] = len(existing_sources)
+            
+            # Prefer the record with more data (snippet + keyword_score)
+            existing_richness = len(existing.get("raw_snippet", "") or "") + (existing.get("keyword_score") or 0)
+            job_richness = len(job.get("raw_snippet", "") or "") + (job.get("keyword_score") or 0)
+            if job_richness > existing_richness:
+                # Replace with richer record, preserve merged sources
+                job["_sources"] = existing_sources
+                job["source_count"] = len(existing_sources)
+                seen_urls[url] = job
+                # Replace in url_deduped list
+                for idx, j in enumerate(url_deduped):
+                    if j.get("url") == url:
+                        url_deduped[idx] = job
+                        break
+            else:
+                existing["_sources"] = existing_sources
+                existing["source_count"] = len(existing_sources)
         else:
             job["_sources"] = [job.get("_source_file", "")]
             job["source_count"] = 1

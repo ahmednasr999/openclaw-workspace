@@ -6,10 +6,11 @@ Runs before each pipeline review to ensure no already-applied jobs resurface.
 Reads Notion Pipeline DB, finds all "Applied" entries, extracts job IDs from URLs,
 and ensures they're in applied-job-ids.txt.
 """
+import os
 import json, re, requests
 from pathlib import Path
 
-NOTION_TOKEN = "NOTION_TOKEN_REDACTED"
+NOTION_TOKEN = json.load(open(os.path.expanduser("~/.openclaw/workspace/config/notion.json")))["token"]
 PIPELINE_DB = "3268d599-a162-81b4-b768-f162adfa4971"
 HEADERS = {"Authorization": f"Bearer {NOTION_TOKEN}", "Content-Type": "application/json", "Notion-Version": "2022-06-28"}
 APPLIED_FILE = Path("/root/.openclaw/workspace/jobs-bank/applied-job-ids.txt")
@@ -37,9 +38,16 @@ def run():
         body = {"page_size": 100}
         if start_cursor:
             body["start_cursor"] = start_cursor
-        resp = requests.post(f"https://api.notion.com/v1/databases/{PIPELINE_DB}/query",
-            headers=HEADERS, json=body)
-        data = resp.json()
+        try:
+            resp = requests.post(f"https://api.notion.com/v1/databases/{PIPELINE_DB}/query",
+                headers=HEADERS, json=body, timeout=15)
+            if resp.status_code != 200:
+                print(f"  Notion query failed: {resp.status_code}")
+                break
+            data = resp.json()
+        except requests.exceptions.RequestException as e:
+            print(f"  Notion connection error: {e}")
+            break
         all_pages.extend(data.get("results", []))
         has_more = data.get("has_more", False)
         start_cursor = data.get("next_cursor")
