@@ -270,15 +270,25 @@ def run_merge(result: AgentResult):
     
     for f in source_files:
         data = load_json(f, {})
-        meta = data.get("meta", {})
-        source = meta.get("source", f.stem)
+        # Handle raw list format (some sources output list directly)
+        if isinstance(data, list):
+            jobs = data
+            source = f.stem
+            # Use file mtime as proxy for freshness
+            from datetime import datetime
+            mtime = datetime.fromtimestamp(f.stat().st_mtime, tz=timezone.utc)
+            age_hours = (datetime.now(timezone.utc) - mtime).total_seconds() / 3600
+            meta = {"generated_at": mtime.isoformat()} if age_hours < 24 else {}
+        else:
+            meta = data.get("meta", {})
+            source = meta.get("source", f.stem)
+            jobs = data.get("jobs", data.get("data", []))
         
         if is_stale(meta, FRESHNESS_HOURS):
             print(f"  ⚠️ Skipping stale: {f.name}")
             stale_sources.append(source)
             continue
         
-        jobs = data.get("jobs", data.get("data", []))
         if not isinstance(jobs, list):
             print(f"  ⚠️ Invalid format: {f.name}")
             continue

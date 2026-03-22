@@ -2,44 +2,548 @@
   "meta": {
     "agent": "jobs-review",
     "version": "1.0.0",
-    "generated_at": "2026-03-22T08:13:55.926176+02:00",
-    "duration_ms": 212064,
+    "generated_at": "2026-03-22T09:02:16.161514+02:00",
+    "duration_ms": 219749,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "b132a280",
+    "run_id": "8b4bb580",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
-    "generated_at": "2026-03-22T08:13:55.925941+02:00",
-    "total_candidates": 245,
+    "generated_at": "2026-03-22T09:02:16.161209+02:00",
+    "total_candidates": 251,
     "reviewed": 50,
-    "submit": [],
-    "review": [],
-    "skip_count": 50,
-    "unreviewed_count": 195,
+    "submit": [
+      {
+        "id": "indeed-in-f7e1d5085527773a",
+        "source": "indeed",
+        "title": "Strategy & Transformation Director",
+        "company": "International Medical Company",
+        "location": "Doha, DAW, QA",
+        "url": "https://qa.indeed.com/viewjob?jk=f7e1d5085527773a",
+        "posted": "2026-03-21",
+        "seniority": "C-Suite",
+        "domain_match": true,
+        "keyword_score": 13,
+        "match_keywords": [
+          "executive",
+          "director"
+        ],
+        "raw_snippet": "**Job Title**\n\n***Strategy \\& Transformation Director***\n\n**Role Purpose**\n\nThe Strategy \\& Transformation Director is responsible for defining, leading, and executing the organization\u2019s strategic agenda and transformation roadmap, ensuring alignment with the company\u2019s long\u2011term vision and financial objectives. The role partners closely with the CEO and executive team to translate strategy into actionable programs that deliver measurable business impact.\n\n**Key Responsibilities**\n\n* Lead the dev",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "indeed"
+        ],
+        "career_fit_score": 7,
+        "verdict": "SUBMIT",
+        "verdict_reason": "Head of Branch Transformation - exact title match, banking domain, UAE location",
+        "ats_score": 61,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "lead",
+          "director",
+          "cto",
+          "executive",
+          "medical",
+          "strategy",
+          "strategic",
+          "team"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo",
+          "Entry-level role"
+        ]
+      },
+      {
+        "id": "linkedin-li-4385000187",
+        "source": "linkedin",
+        "title": "Chief Transformation Officer (CTO) \u2013 AI, Digital & Enterprise Transformation",
+        "company": "Innovation Consulting Group (ICG)",
+        "location": "Riyadh, Riyadh, Saudi Arabia",
+        "url": "https://sa.linkedin.com/jobs/view/chief-transformation-officer-cto-%E2%80%93-ai-digital-enterprise-transformation-at-innovation-consulting-group-icg-4385000187",
+        "posted": "2026-03-18",
+        "seniority": "C-Suite",
+        "domain_match": true,
+        "keyword_score": 13,
+        "match_keywords": [
+          "ai",
+          "enterprise"
+        ],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_text": "At Innovation Consulting Group (ICG), together with a portfolio of subsidiaries and specialized entities in the Middle East, such as HFS Research and Nityo Infotech,we partner with leading organizations across the Globe to drive measurable transformation across strategy, technology, people, and operations. Our combined capabilities span enterprise applications, cloud modernization, Artificial Intelligence (AI), automation, digital engineering, cybersecurity, enterprise platforms, innovation, outsourcing, and large-scale transformation advisory. Together, we deliver a comprehensive, multi-entity transformation ecosystem, enabling organizations to modernize operations, deploy intelligent digital capabilities, strengthen resilience, and accelerate transformation initiatives aligned with Vision 2030 and regional agendas. ICG, supported by its broader group ecosystem, is evolving into an AI-first transformation platform, enabling enterprises to move from vision \u2192 architecture \u2192 execution \u2192 measurable impact. About The role We are seeking a Chief Transformation Officer (CTO) to lead the strategic development, governance, and growth of ICG\u2019s enterprise transformation portfolio across the MENA region . The CTO will act as the executive leader responsible for the firm\u2019s transformation ecosystem across ICG and its subsidiaries , orchestrating capabilities across multiple entities while ensuring a unified market approach. This role combines transformation leadership, solution architecture, and commercial ownership, with a strong focus on shaping and closing large-scale, multi-domain transformation and outsourcing deals ($100M\u2013$300M) . What You Will Do Enterprise Transformation Strategy &amp; AI Leadership Define and lead the enterprise transformation strategy across MENA Drive adoption of AI-powered solutions including generative AI, intelligent automation, and AI agents Align offerings with key transformation priorities across customer, operations, and technology Identify and shape large-scale transformation and outsourcing opportunities Position ICG and its broader group ecosystem as a leading transformation partner in the MENA region Service Line Leadership &amp; Organizational Oversight Lead the enterprise transformation organization across ICG and its subsidiaries Oversee core domains: AI, Cloud, Cybersecurity, Digital Platforms, and Strategy &amp; Innovation Drive cross-entity collaboration to deliver integrated transformation programs Ensure alignment across technology, process, organization, and product Commercial Enablement &amp; Strategic Deal Leadership Lead and support closure of large, complex transformation deals ($100M\u2013$300M) Oversee Solution Sales Experts across all domains Drive cross-selling strategies and multi-year transformation programs Engage C-level stakeholders and build long-term partnerships Lead deal structuring and integrated solution design Offering Development &amp; Consulting Frameworks Develop and standardize transformation ",
+        "career_fit_score": 7,
+        "verdict": "SUBMIT",
+        "verdict_reason": "O2C Operations Director at Medtronic - HealthTech domain, operational excellence and process improvement focus",
+        "ats_score": 56,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "cto",
+          "chief",
+          "ai",
+          "erp",
+          "digital"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4380905324",
+        "source": "linkedin",
+        "title": "Digital and Cyber - Digital Strategy and Realisation - AI Strategy - Director",
+        "company": "PwC Middle East",
+        "location": "Riyadh, Riyadh, Saudi Arabia",
+        "url": "https://sa.linkedin.com/jobs/view/digital-and-cyber-digital-strategy-and-realisation-ai-strategy-director-at-pwc-middle-east-4380905324",
+        "posted": "2026-03-04",
+        "seniority": "C-Suite",
+        "domain_match": true,
+        "keyword_score": 13,
+        "match_keywords": [
+          "ai",
+          "director"
+        ],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_text": "Why PwC At PwC, your growth is our priority. We fuel potential through coaching, feedback, and challenging work that helps you build a career path as unique as you are. You\u2019re not just joining a team\u2014you\u2019re becoming part of a movement that\u2019s shaping the future. Here, you can be yourself, work with purpose and boldness, and collaborate with talented people to deliver solutions that create real impact for clients and communities. Powered by inclusive teams, cutting-edge technology, and truly meaningful work, you\u2019ll find endless opportunities to grow, lead, and go further. Together, we set the future in motion. Consulting LoS At PwC Consulting, we lead with insight and deliver with purpose. You\u2019ll work alongside experts across industries to design and deliver forward-looking solutions in areas such as strategy and enterprise transformation, operational excellence, digital innovation, cyber resilience, and risk management. Our reimagined operating model brings together sector-aligned, solution-led teams empowered to move fast, think boldly, and create real impact. Whether transforming finance, enabling digital change, or shaping national visions, you\u2019ll be part of a collaborative, forward-thinking community\u2014built to grow with you and the world around us. BU Description The Digital &amp; Cyber Business Unit brings together deep technology expertise and bold thinking to help organizations thrive in a connected, data-driven world. We support clients in reimagining how they operate, serve, and grow\u2014by harnessing the power of digital products, emerging tech, cloud, data, and cyber resilience. Whether shaping enterprise-wide transformation or enabling targeted innovation, we work at the intersection of strategy, technology, and trust\u2014delivering scalable solutions that empower clients to move faster, think smarter, and lead with confidence. Job Summary We are seeking an experienced and visionary AI Strategy expert to lead engagements that define and deliver impactful artificial intelligence strategies, both at national and enterprise levels. The ideal candidate will possess deep expertise in AI, machine learning, and generative AI (GenAI), along with a strong grasp of business strategy, data ecosystems, and emerging technology governance. Role This role requires an individual who can bridge the gap between strategic ambition and technological execution. The successful candidate will have the ability to: Formulate national AI visions and strategies, shaping policy, capability building, and innovation ecosystems; and Design enterprise AI operating models and roadmaps, driving adoption across functions and value chains. The role involves working closely with senior executives and public sector leaders to translate AI potential into measurable impact, advising on operating models, governance frameworks, talent strategies, and data and technology foundations required to enable AI at scale. The candidate should have strong interpersonal skills, who not only enjoy",
+        "career_fit_score": 8,
+        "verdict": "SUBMIT",
+        "verdict_reason": "VP & Head of Branch Transformation - perfect title match, banking domain, UAE location",
+        "ats_score": 54,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "director",
+          "cto",
+          "ai",
+          "digital",
+          "strategy"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4372697501",
+        "source": "linkedin",
+        "title": "Director of Retail Operations",
+        "company": "Private Company",
+        "location": "Dubai, United Arab Emirates",
+        "url": "https://ae.linkedin.com/jobs/view/director-of-retail-operations-at-private-company-4372697501",
+        "posted": "2026-02-19",
+        "seniority": "C-Suite",
+        "domain_match": true,
+        "keyword_score": 13,
+        "match_keywords": [
+          "ai",
+          "director"
+        ],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_text": "We are a leading multinational retailer based on GCC. We are looking for an experienced Director of Retail Operations to organize and oversee the operations of our stores. You will assume responsibility for the company\u2019s overall success by setting targets, supervising managers, and ensuring that they are attained. The Operations Director is expected to execute company strategies by maximizing store profitability. You will have control over store expenses, protect company assets, and manage overall store standards and processes for customer service excellence, merchandising and inventory management, retail operations, and ensure that team participation is consistent and well managed. Effective operations directors are skilled in managing diverse operations. They have a strategic mindset and are excellent leaders. Excellent financial and operational planning abilities are essential for this role. The goal is to ensure that our company meets and exceeds the expectations of business development and efficiency. Duties and responsibilities Provides leadership to the team and oversees retail activities. Hires, trains, and oversees management team performance. Full P/L responsibility. Sets objectives for retail teams to ensure a high standard of service provided in the store. Ensures structure is provided for the retail teams in KPIs, policies and procedures, trading feedback processes, trading calendars, and controlling retail costs. Reviews and analyzes sales and operational records and reports; uses data to project sales, determines profitability and targets, and identifies potential new markets. Prepares and implements the county budget; monitors and approves expenses. Collaborates with managers to develop sales goals for each location, monitors progress toward those goals and develops strategies to attract and retain customers. Develops marketing programs and promotions to increase sales and/or introduce new products. Identifies opportunities for improvement; designs and implements training, strategies, policies, goals, and other resources to maximize productivity and morale. Schedules and directs regular sales meetings and events to share information, set and revise goals, and increase morale. Oversees warehouse operations in conjunction with the Supply Chain Manager. Manages inventory by monitoring inventory levels and planning stock supply to ensure the availability of the full line of products. Maintains knowledge of the market, competition, and best practices and trends in sales techniques and strategies. Conducts performance evaluations that are timely and constructive. Handles discipline and termination of employees in accordance with company policy and labor law. Performs other duties as assigned. Requirements Strong verbal and written communication skills. Excellent sales and customer service skills, with proven negotiation skills. Excellent math skills to draft and implement budgets and conduct data analysis. Excellent supervisory and lead",
+        "career_fit_score": 8,
+        "verdict": "SUBMIT",
+        "verdict_reason": "COO of fintech lending - operational excellence core strength, right domain and seniority",
+        "ats_score": 47,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "director",
+          "cto",
+          "ai",
+          "retail"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4386059897",
+        "source": "linkedin",
+        "title": "Executive Director, Information Technology",
+        "company": "Confidential Government",
+        "location": "Riyadh, Saudi Arabia",
+        "url": "https://sa.linkedin.com/jobs/view/executive-director-information-technology-at-confidential-government-4386059897",
+        "posted": "2026-03-15",
+        "seniority": "C-Suite",
+        "domain_match": true,
+        "keyword_score": 13,
+        "match_keywords": [
+          "executive",
+          "director"
+        ],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_text": "Role Overview: Ensure the efficiency and effectiveness of the Information Technology sector by overseeing the implementation of IT policies, regulations, and guidelines. The role is responsible for meeting the organization\u2019s needs for IT infrastructure and applications while enabling continuous performance improvement, supporting digital transformation, and implementing the organization\u2019s IT strategy. Key Responsibilities: \u2022 Develop strategic plans and programs for the IT department and oversee their implementation after approval. \u2022 Supervise affiliated administrative units and coordinate their activities to ensure operational integration and optimal utilization of available resources. \u2022 Oversee the development and implementation of IT policies across the organization. \u2022 Lead the development of the digital transformation roadmap and apply best practices in IT governance and management while ensuring the expected benefits from IT projects are achieved. \u2022 Contribute to the development and update of the vision, mission, and strategic objectives for information and communications technology within the organization. \u2022 Prepare periodic progress reports on IT projects, monitor performance indicators, identify obstacles, assess risks, and coordinate with the Project Management Office. \u2022 Oversee the preparation and execution of the five-year IT strategy. \u2022 Supervise the preparation of technical specifications and requirements for IT projects in coordination with relevant departments within the organization. \u2022 Oversee the development of the annual operational plan and estimated budget for the department and monitor its implementation. \u2022 Supervise the development and continuous improvement of IT operational processes and procedures. \u2022 Monitor national ICT initiatives and programs and leverage relevant opportunities for the organization. \u2022 Oversee studies related to IT service needs and requirements. \u2022 Design and develop the enterprise IT architecture supporting the organization\u2019s operations and ensure proper documentation. \u2022 Oversee the development and implementation of IT service development programs and initiatives within the organization. \u2022 Manage and operate IT services in line with recognized best practices and standards. \u2022 Develop and manage internal and external digital portals, e-services, and smart applications, and establish frameworks and tools for business intelligence and data analytics. Qualifications &amp; Experience: Bachelor\u2019s degree in Database &amp; Network Design or a related field, with a minimum of 12 years of experience. Alternatively, 10 years with a Master\u2019s degree or 8 years with a PhD in a relevant discipline.",
+        "career_fit_score": 7,
+        "verdict": "SUBMIT",
+        "verdict_reason": "IT Director driving enterprise-wide digital transformation at diversified UAE group",
+        "ats_score": 35,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "director",
+          "cto",
+          "executive",
+          "technology"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4375508414",
+        "source": "linkedin",
+        "title": "Head of Digital Product Delivery (Mobile App)",
+        "company": "Confidential",
+        "location": "Abu Dhabi Emirate, United Arab Emirates",
+        "url": "https://ae.linkedin.com/jobs/view/head-of-digital-product-delivery-mobile-app-at-confidential-4375508414",
+        "posted": "2026-02-26",
+        "seniority": "Director",
+        "domain_match": true,
+        "keyword_score": 13,
+        "match_keywords": [
+          "mobile",
+          "head of"
+        ],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_text": "A confidential, customer-focused organisation is seeking a Head of Digital Product Delivery (Mobile App) to lead the strategy, prioritisation, and delivery of a flagship consumer mobile app and its associated customer-facing digital product capabilities. This is a senior, business-led role with end-to-end accountability for turning strategic ambition into tangible digital outcomes. The role is intentionally hands-on designed for a leader who combines strong product thinking with disciplined programme and delivery execution, and who uses modern delivery practices to ship outcomes. The Role As Head of Digital Product Delivery (Mobile App) , you will act as the senior business owner for the mobile app. You will define what the product is, how it evolves, and how it delivers value for customers and the business, working in close partnership with Digital Technology teams and external delivery partners. While not responsible for hands-on software development, this role is deeply embedded in product, programme, and delivery leadership. You will personally drive planning, prioritisation, sequencing, dependencies, milestones, and day-to-day execution to ensure initiatives are delivered with quality, pace, and measurable impact. Key Responsibilities Define and own the product vision and strategic roadmap for the mobile app, aligned to customer experience, commercial objectives, and brand standards Translate high-level business goals into clear, prioritised product initiatives and releases Act as the single point of accountability between business stakeholders and delivery teams Lead the end-to-end delivery lifecycle, from concept and planning through build, launch, and ongoing optimisation Partner closely with Digital Technology teams and external agencies to ensure delivery against agreed scope, timelines, and quality standards Establish and maintain a predictable release cadence, with strong stakeholder visibility and confidence Balance short-term delivery priorities with longer-term platform scalability and evolution Champion a customer-first mindset, working closely with UX/UI resources to deliver intuitive, high-quality digital experiences Ensure product quality across functionality, performance, accessibility, and stability Define and track product success metrics, using data, analytics, and feedback to continuously improve adoption, engagement, and conversion Proactively identify and manage delivery risks, dependencies, and trade-offs in a complex, matrixed environment What We\u2019re Looking For 10+ years\u2019 experience in digital product management, digital programme leadership, or equivalent roles\u2014comfortable owning both the \u201cwhat\u201d and the \u201cwhen/how\u201d of delivery Proven track record delivering consumer-facing digital products , ideally mobile apps or complex digital platforms, with clear evidence of measurable outcomes Experience operating in environments with multiple stakeholders, vendors, and delivery partners\u2014able to align teams, manage dependencies, ",
+        "career_fit_score": 7,
+        "verdict": "SUBMIT",
+        "verdict_reason": "Managing Director at KSA wealth-tech - CMA-regulated executive, strong domain and seniority match",
+        "ats_score": 18,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "head",
+          "digital",
+          "delivery"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      }
+    ],
+    "review": [
+      {
+        "id": "linkedin-li-4174468962",
+        "source": "linkedin",
+        "title": "Director Technology Transformation & Architecture",
+        "company": "Majid Al Futtaim",
+        "location": "Dubai, Dubai, United Arab Emirates",
+        "url": "https://ae.linkedin.com/jobs/view/director-technology-transformation-architecture-at-majid-al-futtaim-4174468962",
+        "posted": "2025-03-03",
+        "seniority": "C-Suite",
+        "domain_match": true,
+        "keyword_score": 10,
+        "match_keywords": [
+          "director",
+          "architecture"
+        ],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_text": "JOB TITLE Director Technology Transformation and Architecture | MAF Global Solutions | Tech Role Summary The Director of Technology Transformation and Architecture at Group Technology leads the development of the group's transformation roadmap and manages the Enterprise Architecture landscape. They drive tech solutions, lead a team of architects and strategists, and pioneer GEN-AI solutions. ROLE PROFILE Technology Transformation: Provide a holistic view of the business and I&amp;T environment, develop a roadmap to enhance digital maturity, and formulate strategies to drive the organization's digital business. Enterprise and Solution Architecture: Establish the Enterprise and Business architecture practice, improve alignment and agility, and manage the Enterprise Architecture activities for efficient business and IT operations. Innovation: Stay aware of I&amp;T trends, identify innovation opportunities, and promote the business value of EA as a strategy enabler and technology innovation driver. Functional/Technical Competencies: Demonstrate experience in senior technology roles, strategic planning, program management, and Enterprise Architecture. Communication: Possess outstanding communication skills, with the ability to negotiate with and influence at senior leadership levels. Management Skills: Exhibit excellent management skills, with the ability to handle diverse components of multiple practices, teams, and programs concurrently. Organizational Savvy: Display organizational and political savvy, with the ability to navigate the personalities, obstacles, and politics of the organization. Technology Understanding: Have a deep understanding of current and emerging technologies and how they can be employed to drive digital business. Requirements 15 or more years of business experience in IT transformation, architecture or technology leadership. Master\u2019s or bachelor\u2019s degree in business, computer science, computer engineering, electrical engineering, system analysis or a related field of study, or equivalent experience. Certified in Architecture Frameworks; TOGAF, FEAF, DOD, Zachman. Certified Program/Project Management Professional. Deep knowledge of business ecosystems, SaaS, infrastructure as a service (IaaS), platform as a service (PaaS), SOA, APIs, open data, microservices, event-driven IT and predictive analytics. Deep understanding of information management practices, system development life cycle management, IT services management, agile and lean methodologies, infrastructure and operations, and EA and ITIL frameworks. What We Offer At Majid Al Futtaim, we\u2019re on a mission to create great moments, to spread happiness, to build, experiences that stay in our memories for a lifetime. We\u2019re proud to say that over the past 27 years, we have built a reputation as a regional market leader in what we do. Join us! Work in a friendly environment, where everyone shares positive vibes and excited about our future. Work with over 45,000 diverse and tale",
+        "career_fit_score": 5,
+        "verdict": "REVIEW",
+        "verdict_reason": "CEO of medical distribution - HealthTech domain match but supply chain focus rather than DT/PMO core strength",
+        "ats_score": 46,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "director",
+          "cto",
+          "ai",
+          "technology"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4377807384",
+        "source": "linkedin",
+        "title": "Director of Technology Operations - MENA Region",
+        "company": "High Street Resources (HSR)",
+        "location": "Dubai, Dubai, United Arab Emirates",
+        "url": "https://ae.linkedin.com/jobs/view/director-of-technology-operations-mena-region-at-high-street-resources-hsr-4377807384",
+        "posted": "2026-02-25",
+        "seniority": "C-Suite",
+        "domain_match": true,
+        "keyword_score": 10,
+        "match_keywords": [
+          "director",
+          "mena"
+        ],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_text": "Role Overview (MENA) The Director of Technology Operations - MENA is a senior regional leadership role, accountable for technology operations, service delivery, and operational excellence across the Middle East and North Africa. The role supports companys' rapidly growing MENA client base\u2014particularly regulated alternative investment firms\u2014while aligning with global standards, platforms, and governance defined by the CTO organization. Regional Scope &amp; Accountability Own day-to-day technology operations for the MENA region, including UAE-based clients and regional expansions Act as the senior operational authority for MENA client service delivery, escalations, and service transitions Ensure regional operations align with local regulatory expectations (e.g., DIFC, ADGM) and client due\u2011diligence requirements Serve as the primary regional counterpart to global Technology, Cybersecurity, and Service Delivery leadership Key Responsibilities Lead and develop regional engineering, service delivery, and service transition resources supporting MENA clients Oversee delivery of managed IT services, cloud platforms, identity, endpoint, and collaboration services across the region Ensure consistent adoption of company platforms (e.g., Microsoft 365, Azure, Intune) within the region Partner with Cybersecurity leadership to align regional operational controls with defensive and offensive cyber services Drive operational maturity, automation, and service consistency while respecting regional client nuances Support regional growth initiatives, including new client onboarding, office launches, and M&amp;A integrations Success Metrics (First 6-12 Months) Stable, high-quality service delivery for all MENA clients with measurable improvements in SLAs and CSAT Successful onboarding and transition of new regional clients and regulated entities Clear regional operational reporting and risk visibility provided to executive leadership Strong alignment between regional operations and global company standards Requirements 10+ years of experience in technology operations or IT service delivery, with regional leadership responsibility Strong background supporting financial services or other highly regulated environments Deep understanding of cloud, identity, endpoint, and collaboration platforms\u2014Microsoft ecosystem preferred Proven ability to manage senior client stakeholders and regional delivery teams Experience operating in the Middle East or comparable international markets Preferred / Differentiating Experience Prior leadership experience in the GCC or broader MENA region Exposure to regulatory and investor due\u2011diligence processes (DDQs, audits) Familiarity with cybersecurity service delivery models and governance ITIL or service\u2011management framework experience Reporting &amp; Collaboration This role reports into the CTO organization and works closely with the Managing Director EMEA, Cybersecurity leadership, Sales, Client Experience, and Global Service Delivery teams",
+        "career_fit_score": 6,
+        "verdict": "REVIEW",
+        "verdict_reason": "Head of Analytics at Yassir - e-commerce/FinTech domain match but analytics mandate rather than transformation",
+        "ats_score": 28,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "director",
+          "cto",
+          "technology"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4385663641",
+        "source": "linkedin",
+        "title": "CTO \u2013 Dubai \u2013 UAE-N/Arabic Speaker",
+        "company": "Kingston Stanley",
+        "location": "Dubai, United Arab Emirates",
+        "url": "https://ae.linkedin.com/jobs/view/cto-%E2%80%93-dubai-%E2%80%93-uae-n-arabic-speaker-at-kingston-stanley-4385663641",
+        "posted": "2026-03-17",
+        "seniority": "C-Suite",
+        "domain_match": true,
+        "keyword_score": 13,
+        "match_keywords": [
+          "ai",
+          "uae",
+          "dubai"
+        ],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_text": "CTO \u2013 Dubai \u2013 UAE-N/Arabic Speaker Key Responsibilities Define and drive the company\u2019s technology strategy, ensuring alignment with overall business objectives while identifying opportunities for innovation and operational efficiency. Lead the engineering function with a hands-on approach, including conducting architecture and code reviews, establishing technical standards, and making key build vs. buy decisions. Own and evolve the end-to-end technical architecture of the company\u2019s products and platforms, including system design, technology stack selection, data architecture, and engineering best practices. Design, implement, and oversee robust security architecture across all products, including threat modeling, secure SDLC practices, penetration testing, and incident response planning. Stay abreast of emerging technologies and industry trends, leading research and development initiatives to evaluate and adopt new solutions that support business growth. Evaluate, select, and manage technology vendors and partners, including contract negotiation and performance management to ensure optimal value delivery. Oversee the technology budget, ensuring effective allocation of resources across strategic and operational initiatives while identifying cost optimization opportunities. Collaborate closely with executive leadership and cross-functional teams to align technology initiatives with business priorities, ensuring clear communication and stakeholder engagement. Ensure compliance with relevant laws, regulations, and industry standards related to technology, data privacy, and information security, implementing policies to mitigate risk and maintain governance. Requirements Demonstrated hands-on experience in modern software development within the past 3\u20135 years. Strong ability to conduct code reviews and assess software architecture, ensuring scalability, performance, and maintainability. Proven experience working with cloud-native architectures (AWS, Azure, or GCP), along with containerization technologies such as Docker and Kubernetes, and CI/CD pipelines. Experience designing and developing APIs, microservices, and distributed systems in complex environments. Solid understanding of modern security engineering practices, extending beyond governance into implementation. Hands-on proficiency in at least one modern programming language, such as Python, Go, Java, or TypeScript. Candidates must have recent, practical experience in software development or system architecture within the last 5 years. Profiles lacking this will not be considered. Qualifications Bachelor\u2019s degree in Computer Science, Engineering, or a related field; a Master\u2019s degree is preferred. 20+ years of experience in senior technology leadership roles, with substantial hands-on expertise in software development and system architecture. Proven track record of driving technology innovation, including the design, development, and successful implementation of scalable solutions. Strong lead",
+        "career_fit_score": 6,
+        "verdict": "REVIEW",
+        "verdict_reason": "Director-level IT in banking - domain match but traditional IT management rather than DT/PMO focus",
+        "ats_score": 26,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "cto",
+          "ai"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4380447655",
+        "source": "linkedin",
+        "title": "ERP Vice President - Dubai",
+        "company": "Kataliser",
+        "location": "Dubai, Dubai, United Arab Emirates",
+        "url": "https://ae.linkedin.com/jobs/view/erp-vice-president-dubai-at-kataliser-4380447655",
+        "posted": "2026-03-05",
+        "seniority": "VP",
+        "domain_match": true,
+        "keyword_score": 10,
+        "match_keywords": [
+          "ai",
+          "dubai"
+        ],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_text": "Location: Dubai Language : Arabic - Mandatory Role Summary: This role will focus on growing sales opportunities in the respective region for ERP solutions. The successful candidate will be a self-motivated individual, who can work under dynamic conditions and can foster relationships with a diverse customer group. What will you do? Responsible for achieving quarterly &amp; annual Product sales targets by collaborating with partners. Responsible for building business plans for new business jointly with partners Demonstrates market knowledge including various solutions, markets and competitive intelligence Developing and managing sales cycles from lead to closure. Responsible for building and maintaining sales pipeline in CRM, forecasting accuracy is key Conduct regular reviews and provide feedback to partners Recruit and On-Board New Partners. Also work with existing Channel &amp; Resell partners in UAE to grow Indirect business Building and developing market plans for new business development. Lead generation and direct outreach to customers for business development Comfortable to set-up meetings and present to CXO\u2019s Qualifying sales opportunities to ensure optimal use of Pre-sales &amp; consulting resources time during the sales cycle and demonstrating leadership throughout the cycle Working with marketing and local lead Generation agencies to help develop lead generation campaigns along with target marketing to specific verticals. Evaluate partner pipeline authenticity. This can be done if candidate has a good network and knowledge of the local market Maintain a healthy and professional relationship with existing partners. Should always look for opportunities to co-sell ERP in industries where partner specialises. These could be new industries that need core ERP modules Drive partner enablement and have their employees access LMS and complete courses. Co-ordinate this with Partner success managers based in India and promote partner's participation on LI. What skills required? Bachelor\u2019s degree with a minimum of 8 years of experience in ERP Software/Solution Sales with minimum 8 years of regional experience. Strong communication skills, over the phone and face to face, and capable of managing professional sales presentations including positioning ERP products Outstanding written and verbal communication skills in regional language and English Exposure to key industry verticals especially Manufacturing &amp; Distribution Industry Have a consultative sales approach Good presentation skills Strong analytical and problem-solving skills Ability to handle multiple priorities and work under stress Self-Driven and motivated Willingness and ability to travel 20-30% of the time Ability to thrive in an entrepreneurial and dynamic environment and working with a team Skills: sales,pipeline,communication skills,mid markets,sme sales,business development,lead generation",
+        "career_fit_score": 5,
+        "verdict": "REVIEW",
+        "verdict_reason": "Head of Revenue Analytics at fund admin - domain partially relevant but analytics specialization too narrow",
+        "ats_score": 23,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "ai",
+          "erp"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4385905338",
+        "source": "linkedin",
+        "title": "Director Operations Middle East (m/f/d)",
+        "company": "HYDRO Systems GmbH & Co. KG",
+        "location": "Dubai, Dubai, United Arab Emirates",
+        "url": "https://ae.linkedin.com/jobs/view/director-operations-middle-east-m-f-d-at-hydro-systems-gmbh-co-kg-4385905338",
+        "posted": "2026-03-17",
+        "seniority": "C-Suite",
+        "domain_match": true,
+        "keyword_score": 10,
+        "match_keywords": [
+          "director",
+          "middle east"
+        ],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_text": "WE LOVE AVIATION RH Aero Systems is setting the standard for aviation support equipment and services. Through our industry-leading businesses \u2013 Rhinestahl and HYDRO \u2013 we deliver capability across custom-designed Ground Support Equipment, OEM-licensed engine and airframe tooling, 26 global service centers, and innovative engineered solutions for OEMs, MROs, and Operators worldwide. Director Operations Middle East (m/f/d) YOUR TASKS Develop deep operational capabilities in the Middle East to support and grow the company\u2019s expertise in the region and globally. Provide leadership to the teams to ensure product quality, reliability, and delivery of commitments on time and on budget. Oversee and expand service business in the region through operational efficiencies, on-time delivery, and customer experience. Drive team performance and collaboration to strengthen relationships with both internal and external stakeholders. Lead and inspire team leads to create and execute strategic plans aligned with their respective functions and targets. Provide regular reports and strategic recommendations to the leadership team. Identify and implement business improvements that enhance cost-efficiency and operational effectiveness. Clearly communicate the company\u2019s value propositions and ensure alignment with organizational processes. Proactively assess and address challenges, ensuring timely resolution of issues impacting operations or strategy. Lead and support change initiatives that foster innovation and continuous improvement across the organization. Promote a culture of compliance, accountability, and ongoing process enhancement. Align with the Director Sales on all customer-related topics and ensure stable load from the market. YOUR PROFILE Degree in Engineering, Manufacturing, Service Operations, Business, or a related field; Master\u2019s preferred. Strong background in operations management within manufacturing, ideally in the aviation industry. Demonstrated success in managing cross-functional teams with strong leadership and mentoring skills. Strong understanding of engineering and industrial production processes. Experience working in SMEs and matrix organizations. International business exposure with cultural awareness and adaptability. Expertise in project management, productivity improvement, and strategic planning. Exceptional communication, negotiation, and presentation abilities; confident at executive level. Strong analytical and problem-solving skills; thrives under pressure. High-level organizational and decision-making capabilities. Represents the company at events and maintains a strong public profile. YOUR CONTACT Daniel Geiger Vice President Human Resources HYDRO Systems GmbH &amp; Co. KG Ahfeldstra\u00dfe 10 \u25aa 77781 Biberach / Baden rhaero.com",
+        "career_fit_score": 5,
+        "verdict": "REVIEW",
+        "verdict_reason": "CEO at blockchain investment bank - FinTech-adjacent but requires investment banking expertise not in profile",
+        "ats_score": 23,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "director",
+          "cto"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4371347148",
+        "source": "linkedin",
+        "title": "Managing Director, UAE",
+        "company": "InDebted",
+        "location": "Dubai, Dubai, United Arab Emirates",
+        "url": "https://ae.linkedin.com/jobs/view/managing-director-uae-at-indebted-4371347148",
+        "posted": "2026-02-12",
+        "seniority": "C-Suite",
+        "domain_match": false,
+        "keyword_score": 10,
+        "match_keywords": [
+          "director",
+          "uae"
+        ],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_text": "As a global leader in digital, compliance-led collections, InDebted partners with the world\u2019s most innovative enterprises to modernise recovery, protect brand equity, and transform the customer experience. We are now bringing that model to the UAE through a new joint venture anchored by ADCB \u2014 and we are hiring a Managing Director to lead and scale our presence in one of our most important new markets. This is a senior, high-impact leadership role responsible for owning the UAE P&amp;L, driving enterprise growth across banks/telcos/utilities/BNPLs, and establishing InDebted as the region\u2019s benchmark for compliant, digital-first collections. About The Role The Managing Director (UAE) is the senior-most leadership position for the market, accountable for commercial growth, operational performance, regulatory alignment, and long-term client relationships. You will lead the UAE go-to-market strategy, spearhead expansion beyond ADCB, and ensure we execute a relationship-driven enterprise entry model suited to the UAE market\u2019s dynamics. You will build, lead, and manage a small but high-performing local team \u2014 including hiring and managing the Business Development Lead \u2014 while working closely with global product, compliance, operations, and executive leadership. What You\u2019ll Do Define and execute the UAE market strategy, calibrated for a traditional-industry client mix and longer enterprise procurement cycles. Own full P&amp;L responsibility for the UAE market, including revenue, costs, and profitability targets. Accelerate growth through deep relationships across banks, telcos, utilities, BNPLs, and other regulated lenders. Serve as the senior enterprise face of InDebted in the region \u2014 building trust with C-level leaders, regulators, and strategic partners. Lead development of a high-quality commercial pipeline beyond ADCB through your existing network, targeted enterprise outreach, and relationship-based selling. Oversee the activation, onboarding, and performance of ADCB as the anchor client, ensuring strong delivery, compliance, and satisfaction. Hire, develop, and manage the local BD Lead and future UAE team members. Ensure regulatory alignment across data sovereignty, digital collections standards, and client-specific compliance requirements. Partner with global product and operations to ensure seamless service delivery and continuous improvement for UAE clients. Report market insights, commercial progress, pipeline health, forecast performance, and operational KPIs to global leadership and JV stakeholders. What You'll Need 10+ years of leadership experience in collections, financial services, BNPL, telco credit, or enterprise B2B environments in the UAE. Demonstrated success in selling and delivering enterprise services to banks, telcos, or other regulated institutions.A strong, established network across senior credit, collections, risk, and operations leaders in the UAE \u2014 essential for accelerating early pipeline. Experience owning a P&amp;L, m",
+        "career_fit_score": 5,
+        "verdict": "REVIEW",
+        "verdict_reason": "VP Head of Program Lending at RAKBANK - banking domain and seniority match but SME lending focus too narrow",
+        "ats_score": 23,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "director",
+          "cto"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4374570926",
+        "source": "linkedin",
+        "title": "Senior Director Software Architecture",
+        "company": "Miral Experiences",
+        "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
+        "url": "https://ae.linkedin.com/jobs/view/senior-director-software-architecture-at-miral-experiences-4374570926",
+        "posted": "2026-02-24",
+        "seniority": "C-Suite",
+        "domain_match": true,
+        "keyword_score": 10,
+        "match_keywords": [
+          "director",
+          "architecture"
+        ],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_text": "About Miral Experiences: Miral Experiences is the region\u2019s leader in the management and operation of world-class, award-winning immersive attractions and experiences across Abu Dhabi. Our diverse portfolio includes some of the most iconic entertainment and leisure destinations, including Ferrari World Yas Island Abu Dhabi, Yas Waterworld Yas Island Abu Dhabi, Warner Bros. World\u2122 Yas Island Abu Dhabi, SeaWorld Yas Island Abu Dhabi, CLYMB\u2122 Yas Island Abu Dhabi, and TeamLab. Phenomena Abu Dhabi, and CLYMB\u2122 Abu Dhabi, as well as cultural treasures like Qasr Al Watan. We specialize in crafting unique experiences that cater to all tastes and ages, delivering a seamless blend of thrills, joy, and discovery. Our attractions are designed to ignite the imagination and create unforgettable memories for visitors from around the world. Whether you're seeking excitement, relaxation, or cultural enrichment, we offer something for everyone. As part of our digital transformation journey, we are seeking a Senior Director \u2013 Software Architecture to lead the design and implementation of scalable, innovative, and robust digital solutions across our portfolio. Role Overview: We are looking for a highly skilled Senior Software Architect to guide and mentor our development teams in delivering high-quality digital products. This role involves working closely with business and IT stakeholders to ensure projects align with the technology strategy, roadmap, scope, and budget. You will define architecture standards, oversee complex digital applications, and implement modern technologies to enhance digital experiences. Key Responsibilities: Define and implement scalable solution architectures for digital platforms, Martech, and enterprise systems Collaborate with product owners, designers, and engineers to develop solution roadmaps Lead non-functional requirement management (Performance, Security, Reliability, Scalability, Compliance) Integrate key data technologies (Azure Data Services, Azure Data Bricks, Data Factory, SQL Server) Drive adoption of enterprise digital platforms, frameworks, and DevSecOps practices Lead architecture governance and ensure alignment with enterprise architecture standards Provide mentorship and technical leadership to development teams Research emerging technologies, trends, and vendors to enhance capabilities Conduct architecture reviews, technical assessments, and optimization of existing systems Qualifications &amp; Experience: Essential: Bachelor\u2019s degree in IT, Software Engineering, Computer Science, or related field 12+ years in IT, including 8+ years in software architecture 4+ years in enterprise solutions and technical architecture Hands-on experience in Azure cloud deployments, Azure Data Services, modern integration platforms, and front-end frameworks (ReactJS, React-Native, Flutter, NextJS) Expertise in software architecture practices, DevSecOps, and digital experience platforms (e.g., Sitecore) Desirable: 5+ years of experience in th",
+        "career_fit_score": 5,
+        "verdict": "REVIEW",
+        "verdict_reason": "Head of IT at media company - Director seniority match but media/advertising domain outside target",
+        "ats_score": 23,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "director",
+          "cto"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      }
+    ],
+    "skip_count": 37,
+    "unreviewed_count": 201,
     "thresholds": {
       "submit": 7,
       "review": 5
     },
     "kpi": {
-      "submit_rate": 0.0,
-      "review_rate": 0.0,
-      "skip_rate": 1.0,
-      "avg_fit_score": 1.0,
-      "llm_latency_ms": 212059
+      "submit_rate": 0.12,
+      "review_rate": 0.14,
+      "skip_rate": 0.74,
+      "avg_fit_score": 2.6,
+      "llm_latency_ms": 203518
     }
   },
   "kpi": {
-    "submit_count": 0,
-    "review_count": 0,
-    "skip_count": 50,
-    "submit_rate": 0.0,
-    "review_rate": 0.0,
-    "skip_rate": 100.0,
-    "avg_fit_score": 1.0,
-    "llm_latency_ms": 212059
+    "submit_count": 6,
+    "review_count": 7,
+    "skip_count": 37,
+    "submit_rate": 12.0,
+    "review_rate": 14.0,
+    "skip_rate": 74.0,
+    "avg_fit_score": 2.6,
+    "llm_latency_ms": 203518
   },
   "recommendations": []
 }

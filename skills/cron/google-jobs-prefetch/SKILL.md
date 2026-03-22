@@ -6,7 +6,7 @@ description: "Pre-fetch Google Jobs results via Composio Browser Tool for scanne
 # Google Jobs Pre-fetch
 
 ## What This Does
-Searches Google Jobs for executive roles matching Ahmed's profile using Composio Browser Tool (cloud browser that bypasses Google bot detection). Saves results to `/tmp/google-jobs-YYYY-MM-DD.json` for the scanner to read.
+Searches Google Jobs for executive roles matching Ahmed's profile using Composio Browser Tool (cloud browser that bypasses Google bot detection). Saves results to `/root/.openclaw/workspace/data/jobs-raw/google-jobs.json` for the scanner to read.
 
 ## Execution
 
@@ -20,7 +20,7 @@ Use `COMPOSIO_SEARCH_TOOLS` → `BROWSER_TOOL_CREATE_TASK` → `BROWSER_TOOL_WAT
 Parse the output text into structured JSON
 
 ### Step 4: Save Results
-Save to `/tmp/google-jobs-YYYY-MM-DD.json`
+Save to `/root/.openclaw/workspace/data/jobs-raw/google-jobs.json`
 
 ### Step 5: Print Summary
 Print a summary to stdout (count of results found, top roles). The cron system handles delivery automatically.
@@ -43,7 +43,7 @@ Print a summary to stdout (count of results found, top roles). The cron system h
 ## Integration
 
 ### Step 6: Pipeline Auto-Save (NON-NEGOTIABLE)
-After saving to `/tmp/google-jobs-YYYY-MM-DD.json`, you MUST also append new jobs to the pipeline:
+After saving to `data/jobs-raw/google-jobs.json`, you MUST also append new jobs to the pipeline:
 
 1. Read `jobs-bank/applied-job-ids.txt` and `jobs-bank/pipeline.md` to identify already-applied companies/roles
 2. Filter out duplicates (match by company name + similar title)
@@ -51,12 +51,12 @@ After saving to `/tmp/google-jobs-YYYY-MM-DD.json`, you MUST also append new job
 4. Append new jobs to `jobs-bank/pipeline.md` under a `## YYYY-MM-DD - Google Jobs Pre-Fetch` section
 5. Include: sequential # (continue from last entry), Company, Role, Location, Status (⭐ New for top picks, New for others, Review for below-level), Source (Google Jobs), Job URL as markdown link
 6. Mark top 3 most aligned roles as ⭐ New (prefer: Digital Transformation Director/Officer, AI Strategy, Senior PMO Director, Head of PMO)
-7. Save the permanent copy to `jobs-bank/scans/google-jobs-YYYY-MM-DD.json` (not just /tmp/)
+7. Save the permanent copy to `jobs-bank/scans/google-jobs-YYYY-MM-DD.json` as backup archive
 
 This ensures the morning briefing can reference new jobs from the pipeline.
 
 ### Scanner Integration
-Scanner (`linkedin-gulf-jobs.py`) reads `/tmp/google-jobs-YYYY-MM-DD.json` if it exists and merges results with LinkedIn/Indeed.
+Scanner (`jobs-merge.py`) reads `data/jobs-raw/google-jobs.json` on each run and merges results with LinkedIn/Indeed.
 
 ## Schedule
 5:30 AM Cairo (before 6:00 AM scanner)
@@ -69,11 +69,11 @@ Timeout
 ## Error Handling
 - If browser task fails: retry once with 30s delay, then report error
 - If no results found: save empty array, report "0 jobs found"
-- If pipeline append fails: still save to /tmp/ and jobs-bank/scans/, report pipeline error separately
+- If pipeline append fails: still save to data/jobs-raw/ and jobs-bank/scans/, report pipeline error separately
 - Never send Telegram messages directly - just print output
 
 ## Quality Gates
-- JSON saved to both /tmp/ and jobs-bank/scans/
+- JSON saved to both data/jobs-raw/ and jobs-bank/scans/
 - Each job has: title, company, location, url, source
 - Pipeline updated with new non-duplicate jobs
 - Top 3 aligned roles marked with star
@@ -87,4 +87,4 @@ cd /root/.openclaw/workspace && openclaw cron run google-jobs-prefetch
 - No em dashes - use hyphens only
 - Print summary to stdout only - never send Telegram directly
 - Format: "Google Jobs: [N] results saved | Top roles: [role1], [role2]"
-- Include date-stamp in output and confirm both /tmp/ and jobs-bank/scans/ paths
+- Include date-stamp in output and confirm both data/jobs-raw/ and jobs-bank/scans/ paths
