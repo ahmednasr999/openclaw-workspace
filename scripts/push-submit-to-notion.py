@@ -6,14 +6,14 @@ Skips jobs already in Pipeline (checks by URL).
 
 Run after jobs-review.py produces jobs-summary.json.
 """
+import os
 import json, requests, re, time, sys
 from pathlib import Path
 from datetime import datetime
-import urllib.request
 
 WORKSPACE = Path("/root/.openclaw/workspace")
 SUMMARY_FILE = WORKSPACE / "data" / "jobs-summary.json"
-NOTION_TOKEN = "NOTION_TOKEN_REDACTED"
+NOTION_TOKEN = json.load(open(os.path.expanduser("~/.openclaw/workspace/config/notion.json")))["token"]
 PIPELINE_DB = "3268d599-a162-81b4-b768-f162adfa4971"
 HEADERS = {
     "Authorization": f"Bearer {NOTION_TOKEN}",
@@ -50,26 +50,9 @@ def get_existing_urls() -> set:
     return urls
 
 
-def fetch_jd_text(url: str) -> str:
-    """Fetch job description text from URL."""
-    if not url:
-        return ""
-    try:
-        req = urllib.request.Request(url, headers={
-            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"
-        })
-        with urllib.request.urlopen(req, timeout=15) as resp:
-            raw = resp.read(50000).decode("utf-8", errors="ignore")
-            # Strip HTML tags
-            clean = re.sub(r'<script[^>]*>.*?</script>', ' ', raw, flags=re.DOTALL)
-            clean = re.sub(r'<style[^>]*>.*?</style>', ' ', clean, flags=re.DOTALL)
-            clean = re.sub(r'<[^>]+>', ' ', clean)
-            clean = re.sub(r'\s+', ' ', clean).strip()
-            # Trim to reasonable size for Notion (2000 char limit per block)
-            return clean[:4000]
-    except Exception as e:
-        print(f"  Could not fetch JD: {str(e)[:50]}")
-        return ""
+def get_jd_text(job: dict) -> str:
+    """Get JD text from enriched data (no re-fetch — single source of truth is jobs-enrich-jd.py)."""
+    return job.get("jd_text", "") or job.get("jd_page_text", "") or job.get("raw_snippet", "")
 
 
 def create_notion_entry(job: dict, jd_text: str) -> bool:
@@ -83,10 +66,13 @@ def create_notion_entry(job: dict, jd_text: str) -> bool:
     fit_score = job.get("career_fit_score", 0)
     reason = job.get("verdict_reason", "")
 
+    verdict = job.get("verdict", "SUBMIT")
+    
     props = {
         "Company": {"title": [{"text": {"content": company[:100]}}]},
         "Role": {"rich_text": [{"text": {"content": title[:200]}}]},
-        "Stage": {"select": {"name": "📋 Recommended"}},
+        "Stage": {"select": {"name": "📋 Scored"}},
+        "Verdict": {"select": {"name": verdict}},
         "Location": {"rich_text": [{"text": {"content": location[:100]}}]},
         "Source": {"select": {"name": source}},
         "ATS Score": {"number": ats_score},
@@ -94,6 +80,9 @@ def create_notion_entry(job: dict, jd_text: str) -> bool:
     }
     if url:
         props["URL"] = {"url": url}
+    salary = job.get("salary", "")
+    if salary:
+        props["Salary"] = {"rich_text": [{"text": {"content": salary[:100]}}]}
 
     # Build page body with JD text
     children = []
@@ -128,14 +117,34 @@ def create_notion_entry(job: dict, jd_text: str) -> bool:
         "children": children[:20],  # Notion limit
     }
 
-    resp = requests.post("https://api.notion.com/v1/pages", headers=HEADERS, json=payload)
-    if resp.status_code == 200:
+    resp = safe_notion_request(requests.post, "https://api.notion.com/v1/pages", headers=HEADERS, json=payload)
+    if resp and resp.status_code == 200:
         page_url = resp.json().get("url", "")
         print(f"  ✅ {title[:40]} → {page_url}")
         return True
     else:
-        print(f"  ❌ {title[:40]}: {resp.status_code} {resp.text[:100]}")
+        status = resp.status_code if resp else "NO_RESPONSE"
+        text = resp.text[:100] if resp else "Connection failed"
+        print(f"  ❌ {title[:40]}: {status} {text}")
         return False
+
+
+def safe_notion_request(method, url, **kwargs):
+    """Wrap Notion API calls with retry and error handling."""
+    for attempt in range(3):
+        try:
+            resp = method(url, **kwargs)
+            if resp.status_code == 429:
+                wait = int(resp.headers.get("Retry-After", 2))
+                print(f"  Rate limited, waiting {wait}s...")
+                time.sleep(wait)
+                continue
+            return resp
+        except requests.exceptions.RequestException as e:
+            print(f"  HTTP error (attempt {attempt+1}/3): {e}")
+            if attempt < 2:
+                time.sleep(2 ** attempt)
+    return None
 
 
 def main():
@@ -179,16 +188,66 @@ def main():
         if i > 0:
             time.sleep(0.5)  # Rate limit
         
-        # Use enriched JD from jobs-summary.json first, fetch only if missing
-        jd_text = job.get("jd_text", "") or job.get("description", "") or job.get("snippet", "")
-        if not jd_text or len(jd_text) < 100:
-            print(f"  Fetching JD (not in summary): {job.get('title','?')[:40]}...")
-            jd_text = fetch_jd_text(job.get("url", ""))
+        jd_text = get_jd_text(job)
         
         if create_notion_entry(job, jd_text):
             added += 1
     
     print(f"\nDone: {added}/{len(new_jobs)} added to Pipeline")
+    
+    # Auto-cleanup: archive Discovered/Scored entries older than 14 days
+    auto_cleanup()
+
+
+def auto_cleanup():
+    """Archive stale pipeline entries (Discovered/Scored >14 days old)."""
+    from datetime import timezone, timedelta
+    
+    cutoff = (datetime.now(timezone.utc) - timedelta(days=14)).strftime("%Y-%m-%d")
+    
+    # Find stale entries
+    payload = {
+        "filter": {
+            "and": [
+                {"property": "Stage", "select": {"equals": "🔍 Discovered"}},
+                {"property": "Discovered Date", "date": {"before": cutoff}},
+            ]
+        },
+        "page_size": 100,
+    }
+    
+    stale_ids = []
+    has_more = True
+    while has_more:
+        resp = requests.post(
+            f"https://api.notion.com/v1/databases/{PIPELINE_DB}/query",
+            headers=HEADERS, json=payload,
+        )
+        if resp.status_code != 200:
+            break
+        data = resp.json()
+        for page in data.get("results", []):
+            stale_ids.append(page["id"])
+        has_more = data.get("has_more", False)
+        if has_more:
+            payload["start_cursor"] = data.get("next_cursor")
+    
+    if not stale_ids:
+        return
+    
+    print(f"\nAuto-cleanup: archiving {len(stale_ids)} stale Discovered entries (>14 days)...")
+    archived = 0
+    for i, pid in enumerate(stale_ids):
+        if i > 0 and i % 3 == 0:
+            time.sleep(0.4)
+        resp = requests.patch(
+            f"https://api.notion.com/v1/pages/{pid}",
+            headers=HEADERS,
+            json={"archived": True},
+        )
+        if resp.status_code == 200:
+            archived += 1
+    print(f"  Archived: {archived}/{len(stale_ids)}")
 
 
 if __name__ == "__main__":

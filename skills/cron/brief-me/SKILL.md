@@ -104,7 +104,7 @@ Structure the briefing with these sections:
 Use COMPOSIO_SEARCH_TOOLS to find Notion tools, then COMPOSIO_MULTI_EXECUTE_TOOL to create a page:
 
 **Database ID:** `3268d599-a162-812d-a59e-e5496dec80e7`
-**Notion Token:** `NOTION_TOKEN_REDACTED`
+**Notion Token:** `(loaded from config/notion.json)`
 
 Create page with:
 - **Title:** "Daily Briefing - {YYYY-MM-DD}"

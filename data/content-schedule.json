@@ -2,57 +2,57 @@
   "meta": {
     "agent": "content-agent",
     "version": "1.0.0",
-    "generated_at": "2026-03-22T18:00:03.471772+02:00",
-    "duration_ms": 1838,
+    "generated_at": "2026-03-23T00:00:02.612918+02:00",
+    "duration_ms": 624,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "e1abd56d",
+    "run_id": "4fa6c8c4",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
-    "scan_time": "2026-03-22T18:00:03.471403+02:00",
+    "scan_time": "2026-03-23T00:00:02.609861+02:00",
     "today": {
-      "date": "2026-03-22",
+      "date": "2026-03-23",
       "scheduled": [
         {
-          "title": "The GCC Just Committed $100B+ to Digital Transformation",
-          "status": "scheduled",
-          "topic": "Digital Transformation",
-          "hook": "Most of it will be wasted. Here's why."
+          "title": "The $100B question: Is the Gulf ready for AI-first healthcare?",
+          "status": "draft",
+          "topic": "TAM",
+          "hook": "The $100B question"
         }
       ],
       "count": 1
     },
     "this_week": {
-      "start": "2026-03-16",
-      "end": "2026-03-22",
+      "start": "2026-03-23",
+      "end": "2026-03-29",
       "posts": [
         {
-          "title": "Every hospital says they want a single source of truth.",
-          "date": "2026-03-17",
+          "title": "I hired 16 Project Managers in 3 years.",
+          "date": "2026-03-24",
+          "status": "scheduled"
+        },
+        {
+          "title": "The $100B question: Is the Gulf ready for AI-first healthcare?",
+          "date": "2026-03-23",
           "status": "draft"
         },
         {
-          "title": "20 years in tech taught me one thing.",
-          "date": "2026-03-16",
-          "status": "posted"
+          "title": "What 15 years in GCC healthcare taught me about digital transformation",
+          "date": "2026-03-25",
+          "status": "draft"
         },
         {
-          "title": "Intel taught me precision.",
-          "date": "2026-03-18",
-          "status": "posted"
+          "title": "The 3 mistakes that almost killed my $50M transformation",
+          "date": "2026-03-26",
+          "status": "draft"
         },
         {
-          "title": "Pursuing an MBA at 40+ while leading a $50M program.",
-          "date": "2026-03-19",
-          "status": "posted"
-        },
-        {
-          "title": "The GCC Just Committed $100B+ to Digital Transformation",
-          "date": "2026-03-22",
-          "status": "scheduled"
+          "title": "The interview question that made me realize I was underqualified",
+          "date": "2026-03-29",
+          "status": "draft"
         }
       ],
       "count": 5
@@ -65,7 +65,7 @@
       "posted": 18
     },
     "content_health": {
-      "runway_days": 5,
+      "runway_days": 4,
       "streak_days": 0,
       "posts_this_month": 16,
       "topics_covered": {
@@ -101,28 +101,28 @@
     "engagement_opportunities": []
   },
   "kpi": {
-    "posting_consistency": 72.7,
-    "content_runway_days": 5,
+    "posting_consistency": 69.6,
+    "content_runway_days": 4,
     "drafts_in_review": 6,
     "streak_days": 0,
     "posts_this_month": 16
   },
   "recommendations": [
     {
-      "id": "rec-e1abd56d-0",
+      "id": "rec-4fa6c8c4-0",
       "action": "review_drafts",
       "target": "6 pending drafts",
       "reason": "Drafts accumulating - review and publish",
       "urgency": "medium",
-      "timestamp": "2026-03-22T18:00:03.471465+02:00"
+      "timestamp": "2026-03-23T00:00:02.612618+02:00"
     },
     {
-      "id": "rec-e1abd56d-1",
+      "id": "rec-4fa6c8c4-1",
       "action": "post_today",
       "target": "Posting streak",
       "reason": "No active posting streak - post today to start one",
       "urgency": "low",
-      "timestamp": "2026-03-22T18:00:03.471471+02:00"
+      "timestamp": "2026-03-23T00:00:02.612632+02:00"
     }
   ]
 }

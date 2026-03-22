@@ -3,6 +3,7 @@
 LinkedIn Post Agent - Fetches today's scheduled post from Notion Content Calendar.
 Outputs data/linkedin-post.json for the briefing runner.
 """
+import os
 import json, re, ssl, sys
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
@@ -11,7 +12,7 @@ from urllib.request import Request, urlopen
 WORKSPACE = Path("/root/.openclaw/workspace")
 DATA_DIR = WORKSPACE / "data"
 OUTPUT = DATA_DIR / "linkedin-post.json"
-NOTION_TOKEN = "NOTION_TOKEN_REDACTED"
+NOTION_TOKEN = json.load(open(os.path.expanduser("~/.openclaw/workspace/config/notion.json")))["token"]
 CONTENT_DB = "3268d599-a162-814b-8854-c9b8bde62468"
 CAIRO = timezone(timedelta(hours=2))
 

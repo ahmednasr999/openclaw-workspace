@@ -2,29 +2,36 @@
   "meta": {
     "agent": "email-agent",
     "version": "3.0.0",
-    "generated_at": "2026-03-22T18:00:36.574019+02:00",
-    "duration_ms": 34701,
+    "generated_at": "2026-03-23T00:00:18.240251+02:00",
+    "duration_ms": 16061,
     "ttl_hours": 4,
-    "status": "success",
-    "error": null,
-    "run_id": "5cf291e4",
+    "status": "partial",
+    "error": "name 'datetime' is not defined",
+    "run_id": "426438a2",
     "retries_used": 0,
-    "data_freshness": "fresh"
+    "data_freshness": "stale"
   },
   "data": {
-    "scan_time": "2026-03-22T18:00:07.183760+02:00",
+    "scan_time": "2026-03-22T20:00:12.040114+02:00",
     "total_scanned": 50,
     "by_category": {
       "interview_invite": 0,
-      "recruiter_reach": 7,
+      "recruiter_reach": 8,
       "application_ack": 1,
       "rejection": 0,
       "assessment": 1,
-      "follow_up_needed": 0,
-      "other": 41
+      "follow_up_needed": 1,
+      "other": 39
     },
     "interview_invites": [],
     "recruiter_messages": [
+      {
+        "id": "38248",
+        "from": "Solomon Nartey <invitations@linkedin.com>",
+        "subject": "I want to connect",
+        "date": "Sun, 22 Mar 2026 17:30:34 +0000 (UTC)",
+        "unread": false
+      },
       {
         "id": "38224",
         "from": "Alina Timofeeva via LinkedIn <messaging-digest-noreply@linkedin.com>",
@@ -87,64 +94,61 @@
     "rejections": [],
     "assessments": [
       {
-        "id": "38230",
-        "from": "\"Pat @ Starter Story\" <pat@starterstory.com>",
-        "subject": "$17K/month from ONE marketing channel",
-        "date": "Sun, 22 Mar 2026 13:03:03 +0000 (UTC)",
+        "id": "38250",
+        "from": "Neil Patel <np@neilpatel.com>",
+        "subject": "One dashboard. SEO, GEO, and AEO =?UTF-8?B?4oCU?= all in one place.",
+        "date": "Sun, 22 Mar 2026 17:37:04 +0000 (UTC)",
         "unread": false
       }
     ],
-    "follow_ups_needed": [],
-    "actionable_count": 1,
+    "follow_ups_needed": [
+      {
+        "id": "38233",
+        "from": "Fintech Brainfood by Simon Taylor <sytaylor@mail.beehiiv.com>",
+        "subject": "=?UTF-8?B?8J+noA==?= Mastercard Pays $1.8bn for BVNK & Is Private\r\n Credit Cooked?",
+        "date": "Sun, 22 Mar 2026 14:01:12 +0000 (UTC)",
+        "unread": false
+      }
+    ],
+    "actionable_count": 2,
     "llm_analysis": {
       "actionable_emails": [
         {
-          "id": "38230",
-          "subject": "$17K/month from ONE marketing channel",
-          "from": "Pat @ Starter Story <pat@starterstory.com>",
-          "date": "Sun, 22 Mar 2026",
+          "id": "38250",
+          "subject": "One dashboard. SEO, GEO, and AEO all in one place.",
+          "from": "Neil Patel <np@neilpatel.com>",
+          "date": "Sun, 22 Mar 2026 17:37:04 +0000 (UTC)",
           "category": "assessment",
           "urgency": "low",
-          "intent": "Promotional newsletter content - enticing click-through with income hook",
+          "intent": "Neil Patel is promoting his all-in-one SEO/GEO/AEO analytics dashboard as a product pitch.",
           "action": "no_action",
           "response_deadline": "when convenient",
-          "notes": "Marketing newsletter, not a job assessment. Low relevance to executive search."
+          "notes": "Marketing/newsletter content; no response required unless evaluating their tool for business use."
+        },
+        {
+          "id": "38233",
+          "subject": "Mastercard Pays $1.8bn for BVNK & Is Private Credit Cooked?",
+          "from": "Fintech Brainfood by Simon Taylor <sytaylor@mail.beehiiv.com>",
+          "date": "Sun, 22 Mar 2026 14:01:12 +0000 (UTC)",
+          "category": "follow_up_needed",
+          "urgency": "low",
+          "intent": "Simon Taylor is sharing fintech market intelligence (Mastercard's BVNK acquisition) and inviting engagement or follow-up discussion.",
+          "action": "read_and_file",
+          "response_deadline": "when convenient",
+          "notes": "Industry intelligence; file for Gulf fintech context if relevant to current PMO/AI work."
         }
       ],
       "summary": {
-        "total_actionable": 1,
+        "total_actionable": 2,
         "critical_count": 0,
         "requires_interview_prep": false,
         "requires_assessment": false,
         "recruiter_top_opportunities": [],
         "top_priority": null,
-        "daily_focus": "No urgent job-related emails require action today. Focus on active applications and recruiter outreach."
+        "daily_focus": "No urgent recruiter or interview action today - use this window to advance pipeline applications or draft a strategic post while inbox is quiet."
       }
     }
   },
-  "kpi": {
-    "emails_processed": 50,
-    "actionable": 1,
-    "interviews_detected": 0,
-    "recruiter_messages": 7,
-    "unread_actionable": 0
-  },
-  "recommendations": [
-    {
-      "id": "rec-5cf291e4-0",
-      "action": "review_and_respond",
-      "target": "7 recruiter message(s)",
-      "reason": "Recruiter outreach could lead to opportunities",
-      "urgency": "high",
-      "timestamp": "2026-03-22T18:00:36.573311+02:00"
-    },
-    {
-      "id": "rec-5cf291e4-1",
-      "action": "complete_assessment",
-      "target": "1 assessment(s)",
-      "reason": "Assessments have deadlines",
-      "urgency": "high",
-      "timestamp": "2026-03-22T18:00:36.573328+02:00"
-    }
-  ]
+  "kpi": {},
+  "recommendations": []
 }

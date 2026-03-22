@@ -1,45 +1,45 @@
 # Weekly Team Retro
 
 **Period:** 2026-03-15 to 2026-03-22
-**Generated:** 2026-03-22 14:00 Cairo
+**Generated:** 2026-03-22 20:01 Cairo
 
 ## Summary
 
 | Metric | Value |
 |--------|-------|
-| Total Runs | 183 |
-| Successes | 178 |
+| Total Runs | 198 |
+| Successes | 193 |
 | Failures | 5 |
-| Overall Success Rate | 97.3% |
+| Overall Success Rate | 97.5% |
 | Active Agents | 12 |
 
 ## Agent Performance
 
 | Agent | Runs | Success Rate | Avg Duration | Avg Records |
 |-------|------|--------------|--------------|-------------|
-| pipeline-agent | 31 | ✅ 100.0% | 9.3s | 9.0 |
-| email-agent | 24 | ⚠️ 83.3% | 21.3s | 10.2 |
-| content-agent | 24 | ✅ 100.0% | 1.2s | 7.0 |
-| system-agent | 24 | ✅ 100.0% | 10.1s | 6.0 |
+| pipeline-agent | 34 | ✅ 100.0% | 9.3s | 9.0 |
+| email-agent | 28 | ⚠️ 85.7% | 25.9s | 10.3 |
+| content-agent | 27 | ✅ 100.0% | 1.2s | 7.0 |
+| system-agent | 27 | ✅ 100.0% | 10.5s | 6.0 |
 | jobs-review | 20 | ✅ 100.0% | 158.0s | 9.0 |
-| jobs-merge | 18 | ⚠️ 94.4% | 14.2s | 157.9 |
+| jobs-merge | 19 | ⚠️ 94.7% | 15.0s | 162.8 |
 | jobs-source-indeed | 12 | ✅ 100.0% | 66.7s | 3.4 |
 | outreach-agent | 11 | ✅ 100.0% | 10ms | 8.0 |
 | jobs-source-linkedin | 11 | ✅ 100.0% | 109.0s | 462.5 |
 | daily-learner | 5 | ✅ 100.0% | 4ms | 6.0 |
-| jobs-source-google | 2 | ✅ 100.0% | 30.5s | 2.0 |
+| jobs-source-google | 3 | ✅ 100.0% | 27.1s | 2.3 |
 | jobs-source-bayt | 1 | ✅ 100.0% | 72.7s | 0.0 |
 
 ## Top Performers
 
-**Most Reliable:** pipeline-agent (100.0% success rate across 31 runs)
+**Most Reliable:** pipeline-agent (100.0% success rate across 34 runs)
 **Fastest:** daily-learner (avg 4ms)
 **Most Productive:** jobs-source-linkedin (avg 462.5 records/run)
 
 ## Failure Patterns
 
 **email-agent** (4 failures):
-  - Himalaya list failed: [2m2026-03-21T20:00:18.470785Z[0m [33m WARN[0m [2mimap_codec::response[0...
+  - Himalaya list failed: [2m2026-03-21T22:00:19.121533Z[0m [33m WARN[0m [2mimap_codec::response[0...
   - Himalaya list failed: [2m2026-03-21T18:00:20.301944Z[0m [33m WARN[0m [2mimap_codec::response[0...
   - Himalaya list failed: [2m2026-03-21T16:00:20.413404Z[0m [33m WARN[0m [2mimap_codec::response[0...
 
@@ -76,7 +76,7 @@
 ## Growth Areas
 
 **Reliability improvements needed:**
-- email-agent: 83.3% success rate
+- email-agent: 85.7% success rate
 
 **Performance optimization candidates:**
 - jobs-review: avg 158.0s per run

@@ -16,6 +16,7 @@ managers at those companies via Tavily, outputs 3-5 profiles daily.
 
 Output: data/outreach-suggestions.json
 """
+import os
 import json, re, ssl, os, time, hashlib
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
@@ -28,7 +29,7 @@ OUTPUT = DATA_DIR / "outreach-suggestions.json"
 HISTORY_FILE = DATA_DIR / "outreach-history.json"
 
 # Notion config
-NOTION_TOKEN = "NOTION_TOKEN_REDACTED"
+NOTION_TOKEN = json.load(open(os.path.expanduser("~/.openclaw/workspace/config/notion.json")))["token"]
 PIPELINE_DB = "3268d599-a162-81b4-b768-f162adfa4971"
 NOTION_HEADERS = {
     "Authorization": f"Bearer {NOTION_TOKEN}",
@@ -182,13 +183,26 @@ def search_profiles(company, role_query="recruiter OR HR OR talent acquisition")
 
             # Extract their role
             person_role = ""
-            m = re.search(r' - (.+?)(?:\s*[-|@]\s*|\s+at\s+)', title)
+            # Try "Name - Role at Company | LinkedIn" first
+            m = re.search(r' - (.+?)\s+at\s+', title)
             if m:
                 person_role = m.group(1).strip()
-            elif " - " in title:
-                parts = title.split(" - ")
-                if len(parts) >= 2:
-                    person_role = parts[1].strip()[:60]
+            else:
+                # Try "Name - Role - Company | LinkedIn"
+                parts = [p.strip() for p in title.split(" - ")]
+                if len(parts) >= 3:
+                    # Middle part is likely the role
+                    person_role = parts[1][:60]
+                elif len(parts) == 2:
+                    # "Name - Company | LinkedIn" — role is unknown
+                    candidate = re.sub(r'\s*\|.*$', '', parts[1]).strip()
+                    # If it looks like a company name (matches our target), skip it
+                    if candidate.lower() == company.lower():
+                        person_role = ""
+                    else:
+                        person_role = candidate[:60]
+            # Clean up trailing "| LinkedIn"
+            person_role = re.sub(r'\s*\|.*$', '', person_role).strip()
 
             # Signal-based scoring (Outbound Strategist pattern)
             signal_score = 0
@@ -222,6 +236,95 @@ def search_profiles(company, role_query="recruiter OR HR OR talent acquisition")
     except Exception as e:
         print(f"  Search error for {company}: {e}")
         return []
+
+
+def call_llm(prompt, max_tokens=1000, model="anthropic/claude-sonnet-4-6"):
+    """Call LLM via OpenClaw gateway."""
+    gateway_url = "http://127.0.0.1:18789/v1/chat/completions"
+    payload = json.dumps({
+        "model": model,
+        "messages": [{"role": "user", "content": prompt}],
+        "max_tokens": max_tokens,
+        "temperature": 0.7,
+    }).encode()
+    ctx = ssl.create_default_context()
+    req = Request(gateway_url, data=payload,
+                  headers={"Content-Type": "application/json"}, method="POST")
+    try:
+        with urlopen(req, timeout=30, context=ctx) as r:
+            return json.loads(r.read())["choices"][0]["message"]["content"].strip()
+    except Exception as e:
+        print(f"  LLM error: {e}")
+        return ""
+
+
+def draft_connection_messages(suggestions):
+    """Draft personalized LinkedIn connection requests for each suggestion."""
+    profiles = []
+    for i, s in enumerate(suggestions, 1):
+        profiles.append(
+            f"PROFILE #{i}:\n"
+            f"Name: {s.get('name', '?')}\n"
+            f"Role: {s.get('role', 'Unknown')}\n"
+            f"Company: {s.get('company', '?')}\n"
+            f"Ahmed applied for: {s.get('applied_role', '?')} at {s.get('company', '?')}\n"
+        )
+
+    prompt = f"""<task>Draft a personalized LinkedIn connection request for each profile below. Ahmed Nasr is reaching out because he applied to a role at their company.</task>
+
+<context>
+Ahmed Nasr: 20+ years tech leadership across GCC. PMO excellence, digital transformation, AI automation. Currently seeking senior executive roles in UAE/Saudi.
+These are recruiters, HR leaders, or hiring managers at companies Ahmed has applied to.
+</context>
+
+<constraints>
+- MAX 280 characters per message (LinkedIn connection request limit)
+- Open with something specific to their role or company, not "I saw your profile"
+- Mention the role Ahmed applied for naturally, not desperately
+- End with a soft ask: "Would love to connect" or "Happy to share more context"
+- NEVER: "I'm a perfect fit", "I'd love to pick your brain", "Hope you don't mind me reaching out"
+- Tone: Confident peer, not job seeker. Executive to executive.
+- NEVER use em dashes. Use commas or hyphens instead.
+</constraints>
+
+<output_format>
+Return ONLY a valid JSON array - no markdown fences:
+[
+  {{"profile_num": 1, "message": "connection request text here"}},
+  {{"profile_num": 2, "message": "connection request text here"}}
+]
+</output_format>
+
+{"".join(profiles)}"""
+
+    response = call_llm(prompt, max_tokens=800)
+    if not response:
+        return suggestions
+
+    try:
+        clean = response.strip()
+        if clean.startswith("```"):
+            clean = re.sub(r"```\w*\n?", "", clean).strip()
+        messages = json.loads(clean)
+    except json.JSONDecodeError:
+        m = re.search(r'\[.*\]', response, re.DOTALL)
+        if m:
+            try:
+                messages = json.loads(m.group(0))
+            except Exception:
+                print("  Failed to parse connection messages")
+                return suggestions
+        else:
+            return suggestions
+
+    for msg in messages:
+        idx = msg.get("profile_num", 0) - 1
+        if 0 <= idx < len(suggestions) and msg.get("message"):
+            suggestions[idx]["draft_message"] = msg["message"][:300]
+
+    drafted = sum(1 for s in suggestions if s.get("draft_message"))
+    print(f"  Drafted {drafted}/{len(suggestions)} connection messages")
+    return suggestions
 
 
 def load_history():
@@ -310,6 +413,11 @@ def run_outreach():
     # Take top 5
     suggestions = all_suggestions[:5]
 
+    # Draft personalized connection requests via Sonnet
+    if suggestions:
+        print("\n  Drafting connection messages...")
+        suggestions = draft_connection_messages(suggestions)
+
     # Update history
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     for s in suggestions:
@@ -332,5 +440,68 @@ def run_outreach():
     print(f"\n=== Done: {len(suggestions)} connection suggestions saved ===")
 
 
+def mark_status(url_or_name, status):
+    """Mark a suggested profile as connected/messaged/response.
+    Usage: python3 outreach-agent.py --mark connected "linkedin.com/in/john-doe"
+    """
+    history = load_history()
+    updated = False
+    search = url_or_name.lower().strip()
+    
+    for entry in history.get("suggested", []):
+        entry_url = entry.get("url", "").lower()
+        entry_name = entry.get("name", "").lower()
+        if search in entry_url or search in entry_name:
+            old_status = entry.get("status", "none")
+            entry["status"] = status
+            entry["status_date"] = datetime.now(timezone.utc).isoformat()
+            updated = True
+            print(f"Updated: {entry.get('name')} ({old_status} -> {status})")
+    
+    if updated:
+        save_history(history)
+    else:
+        print(f"No match found for: {url_or_name}")
+        print("Recent suggestions:")
+        for entry in history.get("suggested", [])[-5:]:
+            print(f"  {entry.get('name', '?')} - {entry.get('url', '?')}")
+
+
+def report_stats():
+    """Print outreach funnel stats."""
+    history = load_history()
+    suggested = history.get("suggested", [])
+    
+    total = len(suggested)
+    by_status = {}
+    for s in suggested:
+        st = s.get("status", "none")
+        by_status[st] = by_status.get(st, 0) + 1
+    
+    print(f"Outreach funnel (last 90 days):")
+    print(f"  Suggested:  {total}")
+    for st in ["connected", "messaged", "response", "none"]:
+        if st in by_status:
+            pct = by_status[st] / max(1, total) * 100
+            print(f"  {st.title():12s}: {by_status[st]} ({pct:.0f}%)")
+
+
 if __name__ == "__main__":
-    run_outreach()
+    import sys
+    args = sys.argv[1:]
+    
+    if "--mark" in args:
+        idx = args.index("--mark")
+        if idx + 2 < len(args):
+            status = args[idx + 1]  # connected, messaged, response
+            target = args[idx + 2]  # URL or name
+            if status in ("connected", "messaged", "response", "rejected", "no_reply"):
+                mark_status(target, status)
+            else:
+                print(f"Invalid status: {status}. Use: connected, messaged, response, rejected, no_reply")
+        else:
+            print("Usage: python3 outreach-agent.py --mark <status> <url_or_name>")
+    elif "--stats" in args:
+        report_stats()
+    else:
+        run_outreach()

@@ -17,6 +17,7 @@ Content health: days until content runs out, posting streak, topics covered
 Merged Engagement Radar: engagement opportunities from coordination/content-calendar.json
 """
 
+import os
 import json
 import urllib.request
 import urllib.error
@@ -40,7 +41,7 @@ WORKSPACE = common.WORKSPACE
 DATA_DIR = common.DATA_DIR
 
 # Configuration
-NOTION_TOKEN = "NOTION_TOKEN_REDACTED"
+NOTION_TOKEN = json.load(open(os.path.expanduser("~/.openclaw/workspace/config/notion.json")))["token"]
 CONTENT_DB_ID = "3268d599-a162-814b-8854-c9b8bde62468"
 OUTPUT_PATH = DATA_DIR / "content-schedule.json"
 COORDINATION_CALENDAR = WORKSPACE / "coordination" / "content-calendar.json"
@@ -72,8 +73,12 @@ def fetch_notion_db(database_id):
             method='POST'
         )
         
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            data = json.loads(resp.read().decode('utf-8'))
+        try:
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                data = json.loads(resp.read().decode('utf-8'))
+        except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError) as e:
+            print(f"  Notion API error: {e}")
+            break
         
         all_results.extend(data.get("results", []))
         has_more = data.get("has_more", False)

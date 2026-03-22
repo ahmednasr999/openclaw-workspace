@@ -13,12 +13,14 @@ Usage:
         --ats-score 67 \
         --job-id "5bd6d3474b0865fa"
 """
+import json
+import os
 import argparse, requests, json, re, sys
 from datetime import datetime
 from pathlib import Path
 
 WORKSPACE = Path("/root/.openclaw/workspace")
-NOTION_TOKEN = "NOTION_TOKEN_REDACTED"
+NOTION_TOKEN = json.load(open(os.path.expanduser("~/.openclaw/workspace/config/notion.json")))["token"]
 PIPELINE_DB = "3268d599-a162-81b4-b768-f162adfa4971"
 APPLIED_IDS_FILE = WORKSPACE / "jobs-bank" / "applied-job-ids.txt"
 HEADERS = {
@@ -47,8 +49,10 @@ def find_existing_page(url):
     return None
 
 
-def add_to_notion(company, role, location, url, source, ats_score):
+def add_to_notion(company, role, location, url, source, ats_score, cv_link=None, cv_model=None, verdict=None):
     """Add job to Notion Pipeline DB, or update existing entry to Applied."""
+    
+    today = datetime.now().strftime("%Y-%m-%d")
     
     # Check if entry already exists (from push-submit-to-notion.py)
     existing_id = find_existing_page(url)
@@ -57,8 +61,22 @@ def add_to_notion(company, role, location, url, source, ats_score):
         # Update stage to Applied
         update_props = {
             "Stage": {"select": {"name": "✅ Applied"}},
-            "Applied Date": {"date": {"start": datetime.now().strftime("%Y-%m-%d")}},
+            "Applied Date": {"date": {"start": today}},
         }
+        # Add CV fields if provided
+        if cv_link:
+            update_props["CV Link"] = {"url": cv_link}
+            update_props["CV Date"] = {"date": {"start": today}}
+            update_props["Stage"] = {"select": {"name": "📄 CV Ready"}}
+        if cv_model:
+            update_props["CV Model"] = {"select": {"name": cv_model}}
+        if verdict:
+            update_props["Verdict"] = {"select": {"name": verdict}}
+        # Auto-set follow-up 7 days from now
+        from datetime import timedelta
+        follow_up = (datetime.now() + timedelta(days=7)).strftime("%Y-%m-%d")
+        update_props["Follow-up Due"] = {"date": {"start": follow_up}}
+        
         resp = requests.patch(
             f"https://api.notion.com/v1/pages/{existing_id}",
             headers=HEADERS,
@@ -80,10 +98,23 @@ def add_to_notion(company, role, location, url, source, ats_score):
             "Location": {"rich_text": [{"text": {"content": location}}]},
             "URL": {"url": url},
             "Source": {"select": {"name": source}},
-            "Applied Date": {"date": {"start": datetime.now().strftime("%Y-%m-%d")}},
+            "Applied Date": {"date": {"start": today}},
+            "Discovered Date": {"date": {"start": today}},
         }
         if ats_score:
             props["ATS Score"] = {"number": ats_score}
+        if cv_link:
+            props["CV Link"] = {"url": cv_link}
+            props["CV Date"] = {"date": {"start": today}}
+            props["Stage"] = {"select": {"name": "📄 CV Ready"}}
+        if cv_model:
+            props["CV Model"] = {"select": {"name": cv_model}}
+        if verdict:
+            props["Verdict"] = {"select": {"name": verdict}}
+        # Auto-set follow-up 7 days from now
+        from datetime import timedelta
+        follow_up = (datetime.now() + timedelta(days=7)).strftime("%Y-%m-%d")
+        props["Follow-up Due"] = {"date": {"start": follow_up}}
 
         payload = {"parent": {"database_id": PIPELINE_DB}, "properties": props}
         resp = requests.post("https://api.notion.com/v1/pages", headers=HEADERS, json=payload)
@@ -123,6 +154,23 @@ def add_to_applied_ids(job_id, company, role):
     print(f"✅ Applied IDs: added {job_id}")
 
 
+def record_outcome(company, role, url, verdict, ats_score):
+    """Append to jobs-outcomes.jsonl for the feedback loop."""
+    outcomes_file = WORKSPACE / "data" / "feedback" / "jobs-outcomes.jsonl"
+    outcomes_file.parent.mkdir(parents=True, exist_ok=True)
+    entry = {
+        "company": company,
+        "role": role,
+        "url": url,
+        "verdict": verdict,
+        "outcome": "applied",
+        "applied_date": datetime.now().strftime("%Y-%m-%d"),
+        "ats_score": ats_score or 0,
+    }
+    with open(outcomes_file, "a") as f:
+        f.write(json.dumps(entry) + "\n")
+
+
 def extract_job_id(url):
     """Extract LinkedIn/Indeed job ID from URL."""
     if not url:
@@ -150,14 +198,21 @@ def main():
     parser.add_argument("--source", default="LinkedIn")
     parser.add_argument("--ats-score", type=int, default=None)
     parser.add_argument("--job-id", default=None, help="Override auto-extracted job ID")
+    parser.add_argument("--cv-link", default=None, help="GitHub URL to tailored CV")
+    parser.add_argument("--cv-model", default=None, help="Model used (e.g. Opus 4.6)")
+    parser.add_argument("--verdict", default=None, help="SUBMIT/REVIEW")
     args = parser.parse_args()
 
     # Add to Notion
-    add_to_notion(args.company, args.role, args.location, args.url, args.source, args.ats_score)
+    add_to_notion(args.company, args.role, args.location, args.url, args.source, args.ats_score,
+                  cv_link=args.cv_link, cv_model=args.cv_model, verdict=args.verdict)
 
     # Add to applied IDs filter
     job_id = args.job_id or extract_job_id(args.url)
     add_to_applied_ids(job_id, args.company, args.role)
+    
+    # Record outcome for feedback loop
+    record_outcome(args.company, args.role, args.url, args.verdict or "SUBMIT", args.ats_score)
 
 
 if __name__ == "__main__":

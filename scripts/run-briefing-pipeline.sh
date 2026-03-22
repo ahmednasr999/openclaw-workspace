@@ -237,19 +237,19 @@ case "$MODE" in
             "indeed"    "jobs-source-indeed.py"    120
         
         log "--- Sync Applied IDs from Notion ---"
-        timeout 15 python3 "$SCRIPTS_DIR/sync-applied-from-notion.py" >> "$LOG" 2>&1 || log "WARN: Notion sync failed (non-blocking)"
+        timeout 15 python3 "$SCRIPTS/sync-applied-from-notion.py" >> "$LOG_FILE" 2>&1 || log "WARN: Notion sync failed (non-blocking)"
         
         log "--- Merge (sequential) ---"
-        run_agent "merge" "jobs-merge.py" 30
+        run_agent "merge" "jobs-merge.py" 30 2
         
         log "--- JD Enrichment (sequential) ---"
-        run_agent "enrich" "jobs-enrich-jd.py" 120
+        run_agent "enrich" "jobs-enrich-jd.py" 300 2
         
         log "--- LLM Review (sequential) ---"
-        run_agent "review" "jobs-review.py" 180
+        run_agent "review" "jobs-review.py" 900 2
         
         log "--- Push to Notion Pipeline (sequential) ---"
-        run_agent "pipeline-push" "push-submit-to-notion.py" 120
+        run_agent "pipeline-push" "push-submit-to-notion.py" 120 2
         ;;
     
     --all)
@@ -260,9 +260,11 @@ case "$MODE" in
         # Clear previous failure markers
         rm -f "$DATA_DIR/source-failures.jsonl"
         
-        # Phase 0: Heartbeat check — verify agents healthy before starting
+        # Phase 0: Heartbeat check + cleanup
         log "--- Phase 0: Heartbeat Check ---"
         timeout 30 python3 "$SCRIPTS/heartbeat-checker.py" >> "$LOG_FILE" 2>&1 || true
+        # Cleanup old calendar cache files (keep last 3 days)
+        find /tmp -name "calendar-events-*.json" -mtime +3 -delete 2>/dev/null || true
         
         # Phase 1: Data agents + job sources in parallel
         run_parallel "Phase 1: Data + Sources" \
@@ -285,32 +287,42 @@ case "$MODE" in
         fi
         
         # Phase 2: Merge + Review (sequential, depends on sources)
+        PHASE2_FAILURES=""
+        
         log "--- Phase 2: Sync Applied IDs ---"
-        timeout 15 python3 "$SCRIPTS_DIR/sync-applied-from-notion.py" >> "$LOG" 2>&1 || log "WARN: Notion sync failed (non-blocking)"
+        timeout 15 python3 "$SCRIPTS/sync-applied-from-notion.py" >> "$LOG_FILE" 2>&1 || log "WARN: Notion sync failed (non-blocking)"
         
         log "--- Phase 2: Merge ---"
-        run_agent "merge" "jobs-merge.py" 30
+        run_agent "merge" "jobs-merge.py" 30 2 || PHASE2_FAILURES="${PHASE2_FAILURES}merge "
         
         log "--- Phase 2b: JD Enrichment ---"
-        run_agent "enrich" "jobs-enrich-jd.py" 120
+        run_agent "enrich" "jobs-enrich-jd.py" 300 2 || PHASE2_FAILURES="${PHASE2_FAILURES}enrich "
         
         log "--- Phase 3: LLM Review ---"
-        run_agent "review" "jobs-review.py" 600
+        run_agent "review" "jobs-review.py" 900 2 || PHASE2_FAILURES="${PHASE2_FAILURES}review "
         
         log "--- Phase 4: Push to Notion Pipeline ---"
-        run_agent "pipeline-push" "push-submit-to-notion.py" 120
+        run_agent "pipeline-push" "push-submit-to-notion.py" 120 2 || PHASE2_FAILURES="${PHASE2_FAILURES}pipeline-push "
         
-        log "--- Phase 5: Pam Newsletter Digest ---"
-        run_agent "newsletter" "pam-newsletter-agent.py" 30
+        # Alert on Phase 2+ failures
+        if [ -n "$PHASE2_FAILURES" ]; then
+            log "🔴 Phase 2+ failures: $PHASE2_FAILURES"
+            openclaw message send --channel telegram --to 866838380 --message "🔴 Morning Briefing Alert: Phase 2 FAILED after retry: ${PHASE2_FAILURES}. Jobs may be missing from briefing." >> "$LOG_FILE" 2>&1 || true
+        fi
+        
+        # Phase 5: Newsletter REMOVED (2026-03-22) — pam-telegram.py reads fresh data directly
         
         log "--- Phase 6: Outreach Follow-up Tracker ---"
         run_agent "outreach-tracker" "outreach-followup-tracker.py" 30
         
-        log "--- Phase 7: Pam Telegram Digest ---"
+        log "--- Phase 7: Generate Notion Briefing ---"
+        run_agent "briefing" "briefing-agent.py" 120
+
+        log "--- Phase 8: Telegram Summary ---"
         run_agent "pam-telegram" "pam-telegram.py" 30
 
-        log "--- Phase 8: Generate Notion Briefing ---"
-        run_agent "briefing" "briefing-agent.py" 120
+        log "--- Phase 9: Briefing Doctor (audit) ---"
+        run_agent "briefing-doctor" "briefing-doctor.py" 30
 
         log "========================================="
         log "  PIPELINE COMPLETE"

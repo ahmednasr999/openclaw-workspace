@@ -47,7 +47,7 @@ GATEWAY_URL = "http://127.0.0.1:18789/v1/chat/completions"
 MODEL = "minimax-portal/MiniMax-M2.7"
 
 # Review settings
-TOP_N_JOBS = 50
+TOP_N_JOBS = 300  # Review all candidates (MiniMax-M2.7 is free, parallel batches keep it fast)
 DEFAULT_SUBMIT_THRESHOLD = 7
 DEFAULT_REVIEW_THRESHOLD = 5
 
@@ -139,12 +139,17 @@ def build_review_prompt(jobs: list[dict]) -> str:
     
     candidate_profile = """
 CANDIDATE PROFILE:
-- 20+ years technology executive experience
-- Core strengths: Digital Transformation, PMO/Program Management, Operational Excellence
-- Domains: FinTech, HealthTech, E-commerce, Payments
-- Target roles: VP/Director/Head of Digital Transformation, PMO, Technology
-- Target locations: GCC (UAE, Saudi Arabia, Qatar preferred)
-- Not suitable for: Pure sales, HR, hands-on coding, civil engineering, oil & gas operations
+- 20+ years technology executive experience (VP/Director/Head/C-level)
+- Core strengths: Digital Transformation, PMO/Program Management, Operational Excellence, Business Excellence
+- Technical: ERP (SAP, Oracle), Agile/Scrum, ITIL, Cloud Migration, AI/ML Strategy, Data Analytics
+- Certifications: PMP, PRINCE2, Six Sigma, ITIL
+- Domains: FinTech, HealthTech, E-commerce, Payments, Banking, Insurance, Telecom, Government/Smart City
+- Leadership: $50M+ budget management, 200+ person teams, multi-country rollouts, stakeholder management
+- Target roles: VP/Director/Head/SVP/C-level in Digital Transformation, PMO, Technology, Operations, Business Excellence
+- Target locations: GCC (UAE, Saudi Arabia, Qatar preferred), open to Bahrain, Kuwait, Oman
+- Relocation: Ready (currently Egypt, open to relocate to GCC)
+- NOT suitable for: Pure sales, HR, hands-on coding, civil/mechanical engineering, oil & gas field operations, teaching, nursing
+- RED FLAGS: Junior/mid-level roles, intern, associate, analyst, coordinator, specialist (below Director level)
 """
     
     jobs_text = ""
@@ -152,8 +157,8 @@ CANDIDATE PROFILE:
         # Use full JD text if available (from jobs-enrich-jd.py), else fall back to snippet
         description = job.get('jd_text', '') or job.get('raw_snippet', 'N/A')
         desc_label = "Full JD" if job.get('jd_text') else "Snippet"
-        # Truncate to 800 chars for JD, 200 for snippet (balance context vs token cost)
-        max_desc = 800 if job.get('jd_text') else 200
+        # Send more JD context — MiniMax-M2.7 is free, no reason to cut aggressively
+        max_desc = 2000 if job.get('jd_text') else 200
         nationals_flag = " ⚠️ NATIONALS-ONLY DETECTED" if job.get('nationals_only') else ""
         jobs_text += f"""
 JOB {i}:{nationals_flag}
@@ -176,11 +181,12 @@ For EACH job, provide:
 1. Career Fit Score (1-10): How well does this role match the candidate's profile?
 2. Verdict: SUBMIT (score 7+), REVIEW (score 5-6), or SKIP (score 1-4)
 3. One-line reason
+4. Salary: Extract any mentioned salary/compensation (e.g. "$150K-200K", "AED 40,000/month", "competitive"). Use "N/A" if not mentioned.
 
 OUTPUT FORMAT (JSON array):
 [
-  {{"job_num": 1, "score": 8, "verdict": "SUBMIT", "reason": "Strong DT leadership role in target geography"}},
-  {{"job_num": 2, "score": 4, "verdict": "SKIP", "reason": "Hands-on engineering focus, not strategic"}},
+  {{"job_num": 1, "score": 8, "verdict": "SUBMIT", "reason": "Strong DT leadership role in target geography", "salary": "AED 45,000-55,000/month"}},
+  {{"job_num": 2, "score": 4, "verdict": "SKIP", "reason": "Hands-on engineering focus, not strategic", "salary": "N/A"}},
   ...
 ]
 
@@ -302,8 +308,6 @@ def run_review(result: AgentResult):
     
     # Split into batches of 25 for more reliable LLM JSON output
     BATCH_SIZE = 25
-    all_reviews = []
-    total_latency = 0
     
     # Parallelize batches using ThreadPoolExecutor
     def process_batch(batch_start):
@@ -319,22 +323,43 @@ def run_review(result: AgentResult):
             for r in batch_reviews:
                 r["job_num"] = r["job_num"] + batch_start
             print(f"  Batch {batch_num}: {len(batch_reviews)} reviews in {batch_latency}ms")
-            return batch_reviews, batch_latency
+            return batch_reviews, batch_latency, 0
         else:
-            print(f"  Batch {batch_num}: LLM failed")
-            return [], batch_latency
+            # Fallback: keyword-based scoring for this batch (never drop jobs silently)
+            print(f"  Batch {batch_num}: LLM failed, falling back to keyword scoring")
+            fallback_reviews = []
+            for j, job in enumerate(batch, 1):
+                score = min(10, max(1, job.get("keyword_score", 50) // 10))
+                if score >= 7:
+                    verdict = "SUBMIT"
+                elif score >= 5:
+                    verdict = "REVIEW"
+                else:
+                    verdict = "SKIP"
+                fallback_reviews.append({
+                    "job_num": j + batch_start,
+                    "score": score,
+                    "verdict": verdict,
+                    "reason": f"Keyword-based (batch {batch_num} LLM failed): score {job.get('keyword_score', 0)}",
+                    "salary": "N/A",
+                })
+            return fallback_reviews, batch_latency, len(batch)
 
     batch_starts = list(range(0, len(top_jobs), BATCH_SIZE))
     all_reviews = []
     total_latency = 0
+    fallback_count = 0
     with ThreadPoolExecutor(max_workers=4) as ex:
         futures = {ex.submit(process_batch, bs): bs for bs in batch_starts}
         for future in as_completed(futures):
-            batch_reviews, batch_latency = future.result()
+            batch_reviews, batch_latency, batch_fallbacks = future.result()
             total_latency += batch_latency
+            fallback_count += batch_fallbacks
             all_reviews.extend(batch_reviews)
     
     llm_latency_ms = total_latency
+    
+    # Use all_reviews collected from parallel batches
     reviews = all_reviews
     
     if not reviews:
@@ -355,7 +380,6 @@ def run_review(result: AgentResult):
                 "reason": f"Keyword-based (LLM unavailable): score {job.get('keyword_score', 0)}"
             })
     else:
-        reviews = parse_llm_response(response, len(top_jobs))
         print(f"  LLM returned {len(reviews)} reviews in {llm_latency_ms}ms")
     
     # Load applied/skipped IDs for final guard
@@ -403,6 +427,9 @@ def run_review(result: AgentResult):
             job["career_fit_score"] = review["score"]
             job["verdict"] = review["verdict"]
             job["verdict_reason"] = review["reason"]
+            salary = review.get("salary", "N/A")
+            if salary and salary != "N/A":
+                job["salary"] = salary
         else:
             score = min(10, max(1, job.get("keyword_score", 50) // 10))
             job["career_fit_score"] = score
@@ -437,7 +464,7 @@ def run_review(result: AgentResult):
     for job in remaining_jobs:
         job["career_fit_score"] = 0
         job["verdict"] = "UNREVIEWED"
-        job["verdict_reason"] = "Below top 50, not LLM reviewed"
+        job["verdict_reason"] = "Beyond review limit, not LLM reviewed"
     
     avg_score = sum(j.get("career_fit_score", 0) for j in reviewed_jobs) / max(1, len(reviewed_jobs))
     
@@ -447,52 +474,30 @@ def run_review(result: AgentResult):
     print(f"  SKIP: {len(skip_jobs)}")
     print(f"  Avg score: {avg_score:.1f}")
     
-    # ATS scoring for SUBMIT + REVIEW jobs
-    print(f"\nRunning ATS scoring on {len(submit_jobs) + len(review_jobs)} jobs...")
+    # ATS scoring for SUBMIT + REVIEW jobs — uses enriched data from jobs-enrich-jd.py (no re-fetch)
+    print(f"\nRunning ATS scoring on {len(submit_jobs) + len(review_jobs)} jobs (using enriched data)...")
     try:
         from importlib.util import spec_from_file_location, module_from_spec
         ats_spec = spec_from_file_location("job_scorer", str(Path(__file__).parent / "job-scorer.py"))
         ats_mod = module_from_spec(ats_spec)
         ats_spec.loader.exec_module(ats_mod)
         
-        import urllib.request as _urllib_req
-        
         for job in submit_jobs + review_jobs:
-            url = job.get("url", "")
-            if not url:
-                job["ats_score"] = 0
-                job["ats_verdict"] = "NO_URL"
-                continue
-            try:
-                req = _urllib_req.Request(url, headers={
-                    "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36"
-                })
-                with _urllib_req.urlopen(req, timeout=15) as resp:
-                    raw = resp.read().decode("utf-8", errors="ignore")
-                    content = re.sub(r'<script[^>]*>.*?</script>', ' ', raw, flags=re.DOTALL)
-                    content = re.sub(r'<style[^>]*>.*?</style>', ' ', content, flags=re.DOTALL)
-                    content = re.sub(r'<[^>]+>', ' ', content)
-                    content = re.sub(r'\s+', ' ', content).strip()
-                if content and len(content) > 200:
-                    ats_result = ats_mod.calculate_score(content)
-                else:
-                    # Fallback: score from title
-                    fallback = f"{job.get('title','')} {job.get('raw_snippet','')} {job.get('company','')}"
-                    ats_result = ats_mod.calculate_score(fallback)
-                    ats_result["verdict"] = ats_result["verdict"] + "_TITLE_ONLY"
-                
-                job["ats_score"] = ats_result.get("score", 0)
-                job["ats_verdict"] = ats_result.get("verdict", "?")
-                job["ats_matched"] = ats_result.get("matched", [])[0:10]
-                job["ats_gaps"] = ats_result.get("gaps", [])[0:5]
-            except Exception:
-                # Fallback to title-based scoring
+            # Use pre-fetched page text from enrich step (single source of truth)
+            content = job.get("jd_page_text", "") or job.get("jd_text", "")
+            
+            if content and len(content) > 200:
+                ats_result = ats_mod.calculate_score(content)
+            else:
+                # Fallback: score from title + snippet only
                 fallback = f"{job.get('title','')} {job.get('raw_snippet','')} {job.get('company','')}"
                 ats_result = ats_mod.calculate_score(fallback)
-                job["ats_score"] = ats_result.get("score", 0)
-                job["ats_verdict"] = ats_result.get("verdict", "?") + "_TITLE_ONLY"
-                job["ats_matched"] = ats_result.get("matched", [])[0:10]
-                job["ats_gaps"] = ats_result.get("gaps", [])[0:5]
+                ats_result["verdict"] = ats_result["verdict"] + "_TITLE_ONLY"
+            
+            job["ats_score"] = ats_result.get("score", 0)
+            job["ats_verdict"] = ats_result.get("verdict", "?")
+            job["ats_matched"] = ats_result.get("matched", [])[0:10]
+            job["ats_gaps"] = ats_result.get("gaps", [])[0:5]
             
             print(f"  ATS: {job['ats_score']:3d}/100 | {job.get('title','?')[0:40]}")
         
@@ -503,88 +508,27 @@ def run_review(result: AgentResult):
     except Exception as e:
         print(f"  ATS scoring failed (non-fatal): {e}")
     
-    # Liveness check: verify SUBMIT job URLs are not expired/404
-    import urllib.request as _urllib_req
-    print(f"\nChecking SUBMIT job URLs for liveness...")
+    # Liveness check — uses enriched data from jobs-enrich-jd.py (no re-fetch)
+    print(f"\nChecking SUBMIT job liveness (from enriched data)...")
     live_submit = []
     expired_count = 0
     
-    EXPIRED_SIGNALS = [
-        "this job has expired", "job posting is closed", "no longer open",
-        "position has been filled", "no longer available", "job has been removed",
-        "this listing has expired", "vacancy has been closed",
-        "not a valid job", "job no longer exists",
-        "we didn't find what you were looking for",
-        "didn't find what you were looking for",
-        "this job is no longer accepting applications",
-        "sorry, this job has been closed",
-    ]
-    
-    # Stale job signals — posted too long ago
-    STALE_SIGNALS = [
-        "months ago", "month ago", "year ago", "years ago",
-        "posted 2 months", "posted 3 months", "posted 4 months",
-        "posted 5 months", "posted 6 months", "posted 7 months",
-        "posted 8 months", "posted 9 months", "posted 10 months",
-        "posted 11 months", "posted 12 months",
-    ]
-    
-    for idx, job in enumerate(submit_jobs):
-        url = job.get("url", "")
-        if not url:
+    for job in submit_jobs:
+        fetch_status = job.get("jd_fetch_status", "")
+        jd_live = job.get("jd_live")
+        
+        if fetch_status in ("expired", "stale"):
+            expired_count += 1
+            print(f"  ❌ {fetch_status.upper()}: {job.get('title','?')[:50]}")
+        elif jd_live is False:
+            expired_count += 1
+            print(f"  ❌ NOT LIVE: {job.get('title','?')[:50]}")
+        else:
+            # jd_live=True, or no enrichment data (not in top 50) — keep it
             live_submit.append(job)
-            continue
-        
-        # Rate limit: 1 sec between requests to avoid 429
-        if idx > 0:
-            time.sleep(1)
-        
-        try:
-            req = _urllib_req.Request(url, headers={
-                "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36"
-            })
-            with _urllib_req.urlopen(req, timeout=10) as resp:
-                if resp.status >= 400:
-                    expired_count += 1
-                    print(f"  ❌ EXPIRED ({resp.status}): {job.get('title','?')[:50]}")
-                    continue
-                
-                # Check page content for expiry signals (read more for better detection)
-                body = resp.read(20000).decode("utf-8", errors="ignore").lower()
-                if any(signal in body for signal in EXPIRED_SIGNALS):
-                    expired_count += 1
-                    print(f"  ❌ EXPIRED (content): {job.get('title','?')[:50]}")
-                    continue
-                
-                # Check for stale postings (months/years old)
-                if any(signal in body for signal in STALE_SIGNALS):
-                    expired_count += 1
-                    print(f"  ❌ STALE (old posting): {job.get('title','?')[:50]}")
-                    continue
-                
-                live_submit.append(job)
-        except Exception as e:
-            err_str = str(e)
-            err_type = type(e).__name__
-            # Only treat definitive dead-page codes as expired
-            if any(code in err_str for code in ["404", "410"]):
-                expired_count += 1
-                print(f"  ❌ EXPIRED ({err_str[:30]}): {job.get('title','?')[:40]}")
-            elif "429" in err_str or "403" in err_str:
-                # Rate limited or access denied — NOT expired, keep the job
-                print(f"  ⚠️ RATE LIMITED/BLOCKED (keeping): {job.get('title','?')[:40]}")
-                live_submit.append(job)
-            elif "timeout" in err_str.lower() or "timed out" in err_str.lower():
-                # Timeout — keep the job, could be network issue
-                print(f"  ⚠️ TIMEOUT (keeping): {job.get('title','?')[:40]}")
-                live_submit.append(job)
-            else:
-                # Other network error - keep the job but warn
-                print(f"  ⚠️ CHECK FAILED ({err_str[:40]}): {job.get('title','?')[:50]}")
-                live_submit.append(job)
     
     if expired_count:
-        print(f"  Removed {expired_count} expired jobs from SUBMIT")
+        print(f"  Removed {expired_count} expired/stale jobs from SUBMIT")
     submit_jobs = live_submit
     
     FEEDBACK_DIR.mkdir(parents=True, exist_ok=True)
@@ -621,6 +565,8 @@ def run_review(result: AgentResult):
             "skip_rate": len(skip_jobs) / max(1, len(reviewed_jobs)),
             "avg_fit_score": round(avg_score, 1),
             "llm_latency_ms": llm_latency_ms,
+            "fallback_count": fallback_count,
+            "fallback_pct": round(fallback_count / max(1, len(reviewed_jobs)) * 100, 1),
         }
     }
     

@@ -1,175 +1,237 @@
 #!/usr/bin/env python3
 """
-Pam Telegram Sender — Pushes the daily Pam newsletter to Telegram.
-Reads data/pam-newsletter.json and sends formatted message via OpenClaw CLI.
+pam-telegram.py — Sends morning briefing summary to Telegram.
+Reads FRESH pipeline data files directly (not stale newsletter).
+Runs AFTER briefing-agent.py so it can include the Notion URL.
 
 Usage:
   python3 pam-telegram.py              # Send full digest
-  python3 pam-telegram.py --summary    # Short summary only
   python3 pam-telegram.py --dry-run    # Preview without sending
 """
 
-import json, subprocess, sys, urllib.request, urllib.parse
+import os
+import json, subprocess, sys, os
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 WORKSPACE = Path("/root/.openclaw/workspace")
-NEWSLETTER_FILE = WORKSPACE / "data/pam-newsletter.json"
-TZ_OFFSET = 2
-BOT_TOKEN = "8213291111:AAHCk2J4XIRQaTsBkACl_Xpla7LFvVx1304"
+DATA_DIR = WORKSPACE / "data"
 CHAT_ID = "866838380"
+CAIRO = timezone(timedelta(hours=2))
 
-def load_newsletter():
+
+def load_json(path, default=None):
     try:
-        return json.load(open(NEWSLETTER_FILE))
-    except:
-        return None
+        return json.load(open(path))
+    except Exception:
+        return default or {}
 
-def format_digest(nl):
-    """Format newsletter as Telegram-friendly markdown."""
-    date = nl.get("date", datetime.now(timezone(timedelta(hours=TZ_OFFSET))).strftime("%A, %B %d %Y"))
+
+def build_message():
+    """Build Telegram summary from fresh pipeline data."""
+    today = datetime.now(CAIRO)
+    date_str = today.strftime("%A, %B %d %Y")
+    today_iso = today.strftime("%Y-%m-%d")
+
+    # Load fresh data
+    system = load_json(DATA_DIR / "system-health.json")
+    jobs = load_json(DATA_DIR / "jobs-summary.json")
+    email = load_json(DATA_DIR / "email-summary.json")
+    content = load_json(DATA_DIR / "content-schedule.json")
+    radar = load_json(DATA_DIR / "comment-radar.json")
+    outreach = load_json(DATA_DIR / "outreach-summary.json")
+
+    # Calendar
+    cal_path = Path(f"/tmp/calendar-events-{today_iso}.json")
+    cal_events = []
+    if cal_path.exists():
+        try:
+            raw = json.load(open(cal_path))
+            cal_events = raw if isinstance(raw, list) else raw.get("events", raw.get("data", []))
+        except Exception:
+            pass
 
     parts = []
-
-    # Header
-    parts.append(f"🌅 *Good Morning — {date}*")
+    parts.append(f"Good Morning, {date_str}")
     parts.append("")
 
-    # System status
-    sys_text = nl.get("system", "")
-    if sys_text:
-        if "ALERT" in sys_text or "🔴" in sys_text:
-            emoji = "🔴"
-        elif "WARN" in sys_text or "🟡" in sys_text:
-            emoji = "🟡"
-        else:
-            emoji = "✅"
-        parts.append(f"{emoji} *System:* {sys_text}")
-
-    # Jobs
-    jobs = nl.get("jobs", "")
-    if jobs:
+    # ── CALLOUT (critical items first) ──
+    critical = []
+    email_data = email.get("data", {})
+    cats = email_data.get("categories", email_data.get("by_category", {}))
+    interviews = cats.get("interview_invite", [])
+    recruiters = cats.get("recruiter_reach", [])
+    if interviews:
+        critical.append(f"INTERVIEW: {len(interviews)} invite(s) - check email NOW")
+    sys_data = system.get("data", {})
+    infra = sys_data.get("system", {})
+    gw = sys_data.get("gateway", sys_data.get("system", {}).get("gateway", {}))
+    if isinstance(gw, dict) and gw.get("status") == "down":
+        critical.append("Gateway DOWN")
+    if critical:
+        parts.append("🔴 " + " | ".join(critical))
         parts.append("")
-        parts.append("💼 *Jobs:*")
-        for line in jobs.split("\n"):
-            line = line.strip()
-            if line:
-                parts.append(f"  {line}")
 
-    # LinkedIn
-    li = nl.get("linkedin_post", "")
-    if li:
+    # ── CALENDAR ──
+    if cal_events:
+        parts.append(f"📅 Calendar ({len(cal_events)})")
+        for ev in cal_events[:4]:
+            title = ev.get("title", ev.get("summary", "?"))[:40]
+            start = ev.get("start", "")
+            is_all_day = ev.get("is_all_day", "T" not in str(start))
+            if is_all_day:
+                parts.append(f"  🗓 {title} (all day)")
+            else:
+                t = start.split("T")[-1][:5] if "T" in start else start
+                parts.append(f"  🕐 {t} {title}")
         parts.append("")
-        parts.append("✍️ *LinkedIn:*")
-        for line in li.split("\n"):
-            line = line.strip()
-            if line:
-                parts.append(f"  {line}")
 
-    # Comment Radar
-    cr = nl.get("comment_radar", "")
-    if cr:
-        parts.append("")
-        parts.append("💬 *Comment Radar:*")
-        for line in cr.split("\n"):
-            line = line.strip()
-            if line:
-                parts.append(f"  {line}")
+    # ── JOBS ──
+    jobs_data = jobs.get("data", {})
+    kpi = jobs_data.get("kpi", jobs.get("kpi", {}))
+    submit_count = kpi.get("submit_count", len(jobs_data.get("submit", [])))
+    review_count = kpi.get("review_count", len(jobs_data.get("review", [])))
+    reviewed = jobs_data.get("reviewed", "?")
+    total = jobs_data.get("total_candidates", "?")
+    parts.append(f"💼 Jobs: {total} scanned, {reviewed} reviewed -> {submit_count} SUBMIT | {review_count} REVIEW")
 
-    # Outreach
-    out = nl.get("outreach", "")
-    if out:
-        parts.append("")
-        parts.append("📬 *Outreach:*")
-        for line in out.split("\n"):
-            line = line.strip()
-            if line:
-                parts.append(f"  {line}")
+    # Top SUBMIT picks (up to 3)
+    for j in jobs_data.get("submit", [])[:3]:
+        score = j.get("career_fit_score", "?")
+        title = j.get("title", "?")[:30]
+        company = j.get("company", "?")[:20]
+        parts.append(f"  #{submit_count}. [{score}/10] {title} @ {company}")
 
-    # GitHub
-    gh = nl.get("github", "")
-    if gh:
-        parts.append("")
-        parts.append("🐙 *GitHub Radar:*")
-        for line in gh.split("\n"):
-            line = line.strip()
-            if line:
-                parts.append(f"  {line}")
-
-    # Footer
+    # If no SUBMIT, show top REVIEW
+    if not jobs_data.get("submit") and jobs_data.get("review"):
+        parts.append("  No SUBMIT - top REVIEW:")
+        for j in jobs_data.get("review", [])[:2]:
+            score = j.get("career_fit_score", "?")
+            title = j.get("title", "?")[:30]
+            company = j.get("company", "?")[:20]
+            parts.append(f"  [{score}/10] {title} @ {company}")
     parts.append("")
-    parts.append("───────────────────")
-    parts.append("🤖 Pam | NASR Command Center")
+
+    # ── EMAIL ──
+    n_int = len(interviews) if isinstance(interviews, list) else interviews
+    n_rec = len(recruiters) if isinstance(recruiters, list) else recruiters
+    scanned = email_data.get("total_scanned", email_data.get("scanned_count", 0))
+    if n_int or n_rec:
+        parts.append(f"📧 Email: {scanned} scanned | {n_int} interview | {n_rec} recruiter")
+    else:
+        parts.append(f"📧 Email: {scanned} scanned, no urgent items")
+    parts.append("")
+
+    # ── LINKEDIN ──
+    li_post = load_json(DATA_DIR / "linkedin-post.json")
+    if li_post.get("has_post"):
+        topic = li_post.get("post", {}).get("topic", li_post.get("topic", "?"))[:50]
+        parts.append(f"✍️ LinkedIn: Today - {topic}")
+    elif li_post.get("next_scheduled"):
+        ns = li_post.get("next_scheduled", {})
+        parts.append(f"✍️ LinkedIn: Scheduled - {ns.get('title', '?')[:50]}")
+    else:
+        parts.append("✍️ LinkedIn: No post today")
+
+    # Comment radar
+    cr_posts = radar.get("top_posts", radar.get("data", {}).get("top_posts", []))
+    drafted = sum(1 for p in cr_posts if p.get("draft_comment"))
+    if drafted:
+        parts.append(f"💬 Comment Radar: {drafted} drafts ready")
+    parts.append("")
+
+    # ── OUTREACH ──
+    out_data = outreach.get("data", {})
+    suggestions = out_data.get("suggestions", [])
+    if suggestions:
+        parts.append(f"🤝 Outreach: {len(suggestions)} new suggestions")
+    parts.append("")
+
+    # ── SYSTEM ──
+    disk = infra.get("disk_usage_pct", "?")
+    ram = infra.get("memory", {}).get("used_pct", "?")
+    agents = sys_data.get("agents", {})
+    healthy = agents.get("healthy_count", "?")
+    total_a = agents.get("total", "?")
+    parts.append(f"📊 System: Disk {disk}% | RAM {ram}% | Agents {healthy}/{total_a}")
+
+    # ── BRIEFING LINK ──
+    parts.append("")
+    parts.append("─────────────────")
+
+    # Find today's briefing URL
+    briefing_url = find_briefing_url(today_iso)
+    if briefing_url:
+        parts.append(f"📋 Full briefing: {briefing_url}")
+    else:
+        parts.append("📋 Full briefing: check Notion")
 
     return "\n".join(parts)
 
 
-def format_summary(nl):
-    """Short 5-line summary."""
-    date = nl.get("date", "")
-    jobs = nl.get("jobs", "")
-    outreach = nl.get("outreach", "")
-    system = nl.get("system", "")
-
-    # Extract key numbers
-    submit = next((p.strip() for p in jobs.split("|") if "Submit" in p), "—")
-    response_rate = next((p.strip() for p in outreach.split("|") if "Response" in p), "—")
-
-    lines = [
-        f"🌅 *{date} Briefing*",
-        f"✅ System: {system.split('|')[0].strip() if system else 'OK'}",
-        f"💼 Jobs: {submit}",
-        f"📬 Outreach: {response_rate}",
-        "🤖 Pam | NASR Command Center",
-    ]
-    return "\n".join(lines)
-
-
-def send_telegram(text):
-    """Send message via Telegram Bot API directly (bypasses OpenClaw gateway).
-    Replies to this message will NOT trigger any agent session."""
-    url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
-    payload = json.dumps({
-        "chat_id": CHAT_ID,
-        "text": text,
-        "parse_mode": "Markdown",
-        "disable_notification": True,  # No buzz at 5 AM
-    }).encode("utf-8")
-
-    req = urllib.request.Request(url, data=payload, headers={"Content-Type": "application/json"})
+def find_briefing_url(today_iso):
+    """Query Notion for today's briefing page URL."""
+    import urllib.request
+    token = json.load(open(os.path.expanduser("~/.openclaw/workspace/config/notion.json")))["token"]
+    db_id = "3268d599-a162-812d-a59e-e5496dec80e7"
     try:
-        with urllib.request.urlopen(req, timeout=15) as resp:
-            result = json.loads(resp.read())
-            if result.get("ok"):
-                return True, f"msg_id={result['result']['message_id']}"
-            else:
-                return False, result.get("description", "Unknown error")
+        payload = json.dumps({
+            "filter": {"property": "Name", "title": {"contains": today_iso}},
+            "page_size": 1
+        }).encode()
+        req = urllib.request.Request(
+            f"https://api.notion.com/v1/databases/{db_id}/query",
+            data=payload,
+            headers={
+                "Authorization": f"Bearer {token}",
+                "Content-Type": "application/json",
+                "Notion-Version": "2022-06-28"
+            }
+        )
+        import ssl
+        ctx = ssl.create_default_context()
+        with urllib.request.urlopen(req, context=ctx, timeout=10) as resp:
+            results = json.loads(resp.read()).get("results", [])
+            if results:
+                return results[0].get("url", "")
+    except Exception:
+        pass
+    return ""
+
+
+def send_via_openclaw(text):
+    """Send via openclaw message send — replies trigger NASR agent."""
+    try:
+        result = subprocess.run(
+            ["openclaw", "message", "send", "--channel", "telegram",
+             "--to", CHAT_ID, "--message", text],
+            capture_output=True, text=True, timeout=15
+        )
+        if result.returncode == 0:
+            return True, "sent"
+        else:
+            return False, result.stderr[:200]
     except Exception as e:
         return False, str(e)[:200]
 
 
 if __name__ == "__main__":
     dry_run = "--dry-run" in sys.argv
-    summary_only = "--summary" in sys.argv
 
-    nl = load_newsletter()
-    if not nl:
-        print("ERROR: No newsletter found. Run pam-newsletter-agent.py first.")
-        sys.exit(1)
-
-    text = format_summary(nl) if summary_only else format_digest(nl)
+    text = build_message()
 
     print("=" * 50)
-    print("PAM TELEGRAM")
+    print("TELEGRAM BRIEFING SUMMARY")
     print("=" * 50)
-    print(text[:500] + "..." if len(text) > 500 else text)
+    print(text)
     print("=" * 50)
+    print(f"Length: {len(text)} chars")
 
     if dry_run:
-        print("\n[DRY RUN — not sent]")
+        print("\n[DRY RUN - not sent]")
     else:
-        ok, msg = send_telegram(text)
+        ok, msg = send_via_openclaw(text)
         if ok:
-            print(f"\n✅ Sent to Telegram")
+            print(f"\n✅ Sent to Telegram via OpenClaw")
         else:
             print(f"\n❌ Failed: {msg}")

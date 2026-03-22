@@ -1,6 +1,48 @@
 {
-  "collected_at": "2026-03-21T22:00:37.982865+02:00",
+  "collected_at": "2026-03-22T22:00:53.476649+02:00",
   "posts": [
+    {
+      "urn": "urn:li:activity:7441454883242893312",
+      "reactions": 6,
+      "comments": 1,
+      "engagement": 7,
+      "text_preview": "The GCC just committed $100B+ to digital transformation.\nMost of it will be wasted.\nI've sat through",
+      "time": "",
+      "notion_page_id": "3268d599-a162-8115-ad03-e02325ab69cb",
+      "title": "Most digital transformations fail satisfying everyone.",
+      "hook": "",
+      "topic": "TAM",
+      "date": "2026-02-25",
+      "match_score": 0.48
+    },
+    {
+      "urn": "urn:li:activity:7441424477827014656",
+      "reactions": 4,
+      "comments": 0,
+      "engagement": 4,
+      "text_preview": "The GCC just committed $100B+ to digital transformation.\nMost of it will be wasted.\nI've sat through",
+      "time": "",
+      "notion_page_id": "3268d599-a162-8115-ad03-e02325ab69cb",
+      "title": "Most digital transformations fail satisfying everyone.",
+      "hook": "",
+      "topic": "TAM",
+      "date": "2026-02-25",
+      "match_score": 0.48
+    },
+    {
+      "urn": "urn:li:activity:7441394368415952898",
+      "reactions": 8,
+      "comments": 1,
+      "engagement": 9,
+      "text_preview": "The GCC just committed $100B+ to digital transformation.\nMost of it will be wasted.\nI've sat through",
+      "time": "",
+      "notion_page_id": "3268d599-a162-8115-ad03-e02325ab69cb",
+      "title": "Most digital transformations fail satisfying everyone.",
+      "hook": "",
+      "topic": "TAM",
+      "date": "2026-02-25",
+      "match_score": 0.48
+    },
     {
       "urn": "urn:li:activity:7440377297137856513",
       "reactions": 3,
@@ -30,46 +72,46 @@
       "match_score": 0.43
     },
     {
-      "urn": "urn:li:activity:7439574268402720770",
+      "urn": "urn:li:activity:7436296153559646208",
+      "reactions": 6,
+      "comments": 0,
+      "engagement": 6,
+      "text_preview": "GCC healthcare is about to hit a wall.\nHere's why.\n\nThe region is building hospitals at record speed",
+      "time": "",
+      "notion_page_id": "3268d599-a162-8138-9aa7-cc7e06a8f86e",
+      "title": "GCC healthcare is about to hit a wall.",
+      "hook": "",
+      "topic": "TAM",
+      "date": "2026-03-09",
+      "match_score": 0.56
+    },
+    {
+      "urn": "urn:li:activity:7435215414474919936",
+      "reactions": 5,
+      "comments": 0,
+      "engagement": 5,
+      "text_preview": "From freelancer to $50M programs.\nThe compound effect of saying yes to complexity.\n\nIn 2004, I was w",
+      "time": "",
+      "notion_page_id": "3268d599-a162-81aa-b690-f29cd93eba5e",
+      "title": "From freelancer to $50M programs.",
+      "hook": "",
+      "topic": "Sales",
+      "date": "2026-03-05",
+      "match_score": 0.51
+    },
+    {
+      "urn": "urn:li:activity:7434845333018316801",
       "reactions": 3,
       "comments": 0,
       "engagement": 3,
-      "text_preview": "I learned about hospital data unification the hard way.\n\nEvery hospital says they want a single sour",
+      "text_preview": "The Salesforce rollout taught me more than my PMP.\nNobody told me it would take 14 months.\n\nWhen Net",
       "time": "",
-      "notion_page_id": "3268d599-a162-81d0-af44-de11af531b4c",
-      "title": "Managing hospitals across countries is breaking PMOs.",
+      "notion_page_id": "3268d599-a162-816b-92bc-dfa8e6d03737",
+      "title": "The Salesforce rollout taught me more than my PMP.",
       "hook": "",
       "topic": "Growth",
-      "date": "2026-03-03",
-      "match_score": 0.35
-    },
-    {
-      "urn": "urn:li:activity:7439573872175218688",
-      "reactions": 0,
-      "comments": 0,
-      "engagement": 0,
-      "text_preview": "Every hospital says they want a single source of truth.\nAlmost none achieve it.\n\nHere's what nobody ",
-      "time": "",
-      "notion_page_id": "3268d599-a162-81d4-9df4-f897de28ab7f",
-      "title": "LinkedIn just became the #1 source LLMs cite for business advice.",
-      "hook": "",
-      "topic": "TAM",
-      "date": "2026-03-15",
-      "match_score": 0.33
-    },
-    {
-      "urn": "urn:li:activity:7439217733180891137",
-      "reactions": 1,
-      "comments": 0,
-      "engagement": 1,
-      "text_preview": "20 years in tech taught me one thing.\nYour title doesn't define your impact.\n\nI've had titles that s",
-      "time": "",
-      "notion_page_id": "3268d599-a162-8126-a047-d5bc382b4113",
-      "title": "20 years in tech taught me one thing.",
-      "hook": "",
-      "topic": "Growth",
-      "date": "2026-03-16",
-      "match_score": 0.55
+      "date": "2026-03-04",
+      "match_score": 0.68
     },
     {
       "urn": "urn:li:activity:7434488759137701888",
@@ -100,46 +142,46 @@
       "match_score": 0.51
     },
     {
-      "urn": "urn:li:activity:7433744485651726336",
-      "reactions": 0,
-      "comments": 0,
-      "engagement": 0,
-      "text_preview": "AI is replacing PMOs. Here's what survives.\n\nMcKinsey projects that 70% of current project managemen",
-      "time": "",
-      "notion_page_id": "3268d599-a162-816f-a4c6-ef5db10fc45c",
-      "title": "There's a platform tracking the entire planet in real-time:",
-      "hook": "",
-      "topic": "",
-      "date": "2026-03-13",
-      "match_score": 0.38
-    },
-    {
-      "urn": "urn:li:activity:7432684891340914688",
-      "reactions": 2,
-      "comments": 0,
-      "engagement": 2,
-      "text_preview": "We scaled from 30,000 to 7 million orders.\n\nNot in a year. In the time I was there.\n\nAt Talabat (now",
-      "time": "",
-      "notion_page_id": "3268d599-a162-81d1-9a55-c10cab6412a5",
-      "title": "We scaled from 30,000 to 7 million orders.",
-      "hook": "",
-      "topic": "Growth",
-      "date": "2026-02-26",
-      "match_score": 0.6
-    },
-    {
-      "urn": "urn:li:activity:7432376975035408384",
+      "urn": "urn:li:activity:7396268035663351809",
       "reactions": 4,
       "comments": 0,
       "engagement": 4,
-      "text_preview": "Most digital transformations fail satisfying everyone.\n\nAnd cost organizations millions.\n\nI've led t",
+      "text_preview": "hashtag\n#Healthcare | Hospitals talk about OR efficiency. You measure it.\n\nYour OR dashboards show w",
+      "time": "",
+      "notion_page_id": "3268d599-a162-8138-9aa7-cc7e06a8f86e",
+      "title": "GCC healthcare is about to hit a wall.",
+      "hook": "",
+      "topic": "TAM",
+      "date": "2026-03-09",
+      "match_score": 0.36
+    },
+    {
+      "urn": "urn:li:activity:7395681370850816000",
+      "reactions": 5,
+      "comments": 1,
+      "engagement": 6,
+      "text_preview": "Many teams in AI and digital health still treat physicians as one user group. This thinking breaks p",
       "time": "",
       "notion_page_id": "3268d599-a162-8115-ad03-e02325ab69cb",
       "title": "Most digital transformations fail satisfying everyone.",
       "hook": "",
       "topic": "TAM",
       "date": "2026-02-25",
-      "match_score": 0.71
+      "match_score": 0.4
+    },
+    {
+      "urn": "urn:li:activity:7395489343961890816",
+      "reactions": 4,
+      "comments": 1,
+      "engagement": 5,
+      "text_preview": "You cut costs when you cut tokens. Most teams miss this.\n\nRaw JSON adds size, slows responses, and i",
+      "time": "",
+      "notion_page_id": "3268d599-a162-816b-92bc-dfa8e6d03737",
+      "title": "The Salesforce rollout taught me more than my PMP.",
+      "hook": "",
+      "topic": "Growth",
+      "date": "2026-03-04",
+      "match_score": 0.3
     },
     {
       "urn": "urn:li:activity:7394559446192103424",
@@ -164,32 +206,26 @@
       "match_score": 0.3
     },
     {
-      "urn": "urn:li:activity:7393138957372444672",
-      "reactions": 7,
-      "comments": 1,
-      "engagement": 8,
-      "text_preview": "Hospital performance isn’t just financial, it’s operational.\n\nWhen patient flow slows, revenue drops",
-      "time": "",
-      "notion_page_id": "3268d599-a162-8115-ad03-e02325ab69cb",
-      "title": "Most digital transformations fail satisfying everyone.",
-      "hook": "",
-      "topic": "TAM",
-      "date": "2026-02-25",
-      "match_score": 0.4
-    },
-    {
-      "urn": "urn:li:activity:7391779514881744896",
-      "reactions": 1,
+      "urn": "urn:li:activity:7379042190917971968",
+      "reactions": 4,
       "comments": 0,
-      "engagement": 1,
+      "engagement": 4,
       "text_preview": "Ahmed Nasr MBA, PMP, CSM, CSPO, Lean Six Sigma, CBAP, MCAD, MCP\nAhmed Nasr MBA, PMP, CSM, CSPO, Lean",
       "time": ""
     },
     {
-      "urn": "urn:li:activity:7389581394919903232",
-      "reactions": 1,
+      "urn": "urn:li:activity:7378389033292386304",
+      "reactions": 2,
       "comments": 0,
-      "engagement": 1,
+      "engagement": 2,
+      "text_preview": "التحول الرقمي مش مشروع IT\nأغلب المؤسسات تفشل لأنها تعامل التحول الرقمي كـ “تكنولوجيا”.\nالنجاح الحقيق",
+      "time": ""
+    },
+    {
+      "urn": "urn:li:activity:7374581592167538688",
+      "reactions": 3,
+      "comments": 0,
+      "engagement": 3,
       "text_preview": "Ahmed Nasr MBA, PMP, CSM, CSPO, Lean Six Sigma, CBAP, MCAD, MCP\nAhmed Nasr MBA, PMP, CSM, CSPO, Lean",
       "time": ""
     },
@@ -216,27 +252,33 @@
       "match_score": 0.4
     },
     {
-      "urn": "urn:li:activity:7370029055569473536",
-      "reactions": 12,
+      "urn": "urn:li:activity:7365265356996726784",
+      "reactions": 3,
       "comments": 0,
-      "engagement": 12,
-      "text_preview": "Your dad built a house at 30, you’re renting at 30.\nSame effort, new economy.\n\nYour mom raised three",
+      "engagement": 3,
+      "text_preview": "Welcome to this week’s AN fintech and payments roundup. From a high-profile IPO in Japan and massive",
       "time": ""
     },
     {
-      "urn": "urn:li:activity:7369247952646606848",
-      "reactions": 11,
-      "comments": 0,
-      "engagement": 11,
-      "text_preview": "I’m hiring: Compliance & Regulatory Officer (KSA focus)\n\nMission\nEnsure operations and products comp",
-      "time": ""
-    },
-    {
-      "urn": "urn:li:activity:7368882459955838976",
-      "reactions": 7,
+      "urn": "urn:li:activity:7364221898504757249",
+      "reactions": 8,
       "comments": 4,
-      "engagement": 11,
-      "text_preview": "I’m hiring: Finance & Accounting Manager\n\nMission\nMaintain strong financial control and cash flow fo",
+      "engagement": 12,
+      "text_preview": "I’m hiring for the largest Medical Technology Hub in the region.\nOpen roles:\n• Business Development ",
+      "time": "",
+      "notion_page_id": "3268d599-a162-81d4-9df4-f897de28ab7f",
+      "title": "LinkedIn just became the #1 source LLMs cite for business advice.",
+      "hook": "",
+      "topic": "TAM",
+      "date": "2026-03-15",
+      "match_score": 0.35
+    },
+    {
+      "urn": "urn:li:activity:7363923909403979777",
+      "reactions": 32,
+      "comments": 3,
+      "engagement": 35,
+      "text_preview": "I’m looking for an \nhashtag\n#n8n & \nhashtag\n#automation pro.\n\nIf you have experience in:\n• Building ",
       "time": ""
     },
     {
@@ -268,40 +310,34 @@
       "match_score": 0.34
     },
     {
-      "urn": "urn:li:activity:7361300760195719171",
-      "reactions": 11,
+      "urn": "urn:li:activity:7353958119883816962",
+      "reactions": 4,
       "comments": 1,
-      "engagement": 12,
-      "text_preview": "PayPal just posted a role: Head of CEO Content.\nFull-time. San Jose. Salary up to $236K/year.\n\nYes, ",
+      "engagement": 5,
+      "text_preview": "🚨 Visa’s \nhashtag\n#VAMP 𝐈𝐒 𝐇𝐄𝐑𝐄: 𝐓𝐡𝐞 𝐒𝐢𝐥𝐞𝐧𝐭 𝐏𝐫𝐨𝐟𝐢𝐭 𝐊𝐢𝐥𝐥𝐞𝐫 𝐌𝐨𝐬𝐭 𝐌𝐞𝐫𝐜𝐡𝐚𝐧𝐭𝐬 𝐀𝐫𝐞 𝐈𝐠𝐧𝐨𝐫𝐢𝐧𝐠 (𝐔𝐧𝐭𝐢𝐥 𝐅𝐢𝐧𝐞𝐬 𝐇",
       "time": ""
     },
     {
-      "urn": "urn:li:activity:7360902135707832320",
+      "urn": "urn:li:activity:7353666970895941632",
       "reactions": 5,
-      "comments": 1,
-      "engagement": 6,
-      "text_preview": "hashtag\n#FinTech \nhashtag\n#Strategy | Walmart just flipped supply chain finance. With TreviPay, it n",
+      "comments": 0,
+      "engagement": 5,
+      "text_preview": "🧠 To all my brilliant friends in Banks & BNPL…\nYou’ve nailed the commercial game.\nYou own the market",
       "time": "",
-      "notion_page_id": "3268d599-a162-8115-ad03-e02325ab69cb",
-      "title": "Most digital transformations fail satisfying everyone.",
+      "notion_page_id": "3268d599-a162-815c-aa53-dfaec437b8b3",
+      "title": "Health Catalyst documented $1.5 billion in validated outcomes.",
       "hook": "",
-      "topic": "TAM",
-      "date": "2026-02-25",
-      "match_score": 0.31
+      "topic": "Growth",
+      "date": "2026-03-10",
+      "match_score": 0.34
     },
     {
-      "urn": "urn:li:activity:7360495116421165057",
-      "reactions": 10,
-      "comments": 2,
-      "engagement": 12,
-      "text_preview": "hashtag\n#FinTech \nhashtag\n#Strategy | Walmart just flipped supply chain finance. With TreviPay, it n",
-      "time": "",
-      "notion_page_id": "3268d599-a162-8115-ad03-e02325ab69cb",
-      "title": "Most digital transformations fail satisfying everyone.",
-      "hook": "",
-      "topic": "TAM",
-      "date": "2026-02-25",
-      "match_score": 0.31
+      "urn": "urn:li:activity:7353333432136929281",
+      "reactions": 37,
+      "comments": 10,
+      "engagement": 47,
+      "text_preview": "Why is Revolut expanding into \nhashtag\n#telco, but telcos aren’t expanding into \nhashtag\n#fintech? 🧠",
+      "time": ""
     },
     {
       "urn": "urn:li:activity:7352986247327363072",
@@ -330,62 +366,14 @@
       "topic": "",
       "date": "2026-03-13",
       "match_score": 0.36
-    },
-    {
-      "urn": "urn:li:activity:7350791014392999937",
-      "reactions": 4,
-      "comments": 0,
-      "engagement": 4,
-      "text_preview": "We’ve always believed that strategy is nothing without execution.\n\nThat’s why AN & Co. Consulting ex",
-      "time": "",
-      "notion_page_id": "3268d599-a162-8138-9aa7-cc7e06a8f86e",
-      "title": "GCC healthcare is about to hit a wall.",
-      "hook": "",
-      "topic": "TAM",
-      "date": "2026-03-09",
-      "match_score": 0.36
-    },
-    {
-      "urn": "urn:li:activity:7350423381780975616",
-      "reactions": 65,
-      "comments": 4,
-      "engagement": 69,
-      "text_preview": "hashtag\n#FinTech \nhashtag\n#Banking | \nhashtag\n#AI Bank of the Future: What Every FinTech Founder & B",
-      "time": "",
-      "notion_page_id": "3268d599-a162-81d4-9df4-f897de28ab7f",
-      "title": "LinkedIn just became the #1 source LLMs cite for business advice.",
-      "hook": "",
-      "topic": "TAM",
-      "date": "2026-03-15",
-      "match_score": 0.3
-    },
-    {
-      "urn": "urn:li:activity:7350045067606200321",
-      "reactions": 5,
-      "comments": 0,
-      "engagement": 5,
-      "text_preview": "Welcome to another game-changing week in fintech! As we navigate through July 2025, we're witnessing",
-      "time": "",
-      "notion_page_id": "3268d599-a162-8126-a047-d5bc382b4113",
-      "title": "20 years in tech taught me one thing.",
-      "hook": "",
-      "topic": "Growth",
-      "date": "2026-03-16",
-      "match_score": 0.35
     }
   ],
   "analysis": {
     "post_count": 30,
-    "avg_engagement": 9.7,
-    "max_engagement": 69,
+    "avg_engagement": 9.8,
+    "max_engagement": 57,
     "min_engagement": 0,
     "top_3": [
-      {
-        "title": "LinkedIn just became the #1 source LLMs cite for b",
-        "engagement": 69,
-        "reactions": 65,
-        "comments": 4
-      },
       {
         "title": "The Salesforce rollout taught me more than my PMP.",
         "engagement": 57,
@@ -393,19 +381,25 @@
         "comments": 5
       },
       {
-        "title": "I built a PMO across 8 countries.",
-        "engagement": 17,
-        "reactions": 12,
-        "comments": 5
+        "title": "Why is Revolut expanding into \nhashtag\n#telco, but",
+        "engagement": 47,
+        "reactions": 37,
+        "comments": 10
+      },
+      {
+        "title": "I’m looking for an \nhashtag\n#n8n & \nhashtag\n#autom",
+        "engagement": 35,
+        "reactions": 32,
+        "comments": 3
       }
     ],
     "bottom_3": [
       {
-        "title": "LinkedIn just became the #1 source LLMs cite for b",
-        "engagement": 0
+        "title": "التحول الرقمي مش مشروع IT\nأغلب المؤسسات تفشل لأنها",
+        "engagement": 2
       },
       {
-        "title": "There's a platform tracking the entire planet in r",
+        "title": "Intel taught me precision.",
         "engagement": 0
       },
       {
@@ -414,6 +408,6 @@
       }
     ],
     "avg_text_length": 100,
-    "collected_at": "2026-03-21T22:00:37.982831+02:00"
+    "collected_at": "2026-03-22T22:00:53.476616+02:00"
   }
 }

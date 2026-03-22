@@ -142,9 +142,27 @@ REJECTION_PATTERNS = [
 ]
 
 ASSESSMENT_PATTERNS = [
-    r'\bassessment\b', r'\btest\b', r'\bcoding\s*challenge\b', r'\bcase\s*study\b',
+    r'\bassessment\b', r'\bcoding\s*challenge\b', r'\bcase\s*study\b',
     r'\btechnical\s*exercise\b', r'\bhome\s*assignment\b', r'\btake\s*home\b',
     r'\bhackerrank\b', r'\bcodility\b', r'\bleetcode\b'
+]
+# Removed bare \btest\b — too many false positives (newsletters, marketing)
+
+# Newsletters, marketing, notifications — never actionable
+NOISE_SENDERS = [
+    "neilpatel.com", "substack.com", "medium.com", "hubspot.com",
+    "mailchimp.com", "sendgrid.net", "convertkit.com", "beehiiv.com",
+    "noreply@", "no-reply@", "notifications@", "news@", "newsletter@",
+    "digest@", "updates@", "marketing@", "promo@", "offers@",
+]
+
+# LinkedIn notification types that are NOT recruiter outreach
+LINKEDIN_NOISE_SUBJECTS = [
+    r'wants?\s*to\s*connect', r'accepted\s*your\s*invitation',
+    r'endorsed\s*you', r'viewed\s*your\s*profile',
+    r'anniversary', r'birthday', r'new\s*job', r'commented\s*on',
+    r'liked\s*your', r'reacted\s*to', r'mentioned\s*you\s*in',
+    r'trending\s*in\s*your\s*network', r'people\s*also\s*viewed',
 ]
 
 
@@ -185,15 +203,38 @@ def matches_patterns(text, patterns):
     return False
 
 
+def is_noise_sender(from_addr):
+    """Check if sender is a known newsletter/notification source."""
+    addr_lower = from_addr.lower()
+    for noise in NOISE_SENDERS:
+        if noise in addr_lower:
+            return True
+    return False
+
+
+def is_linkedin_noise(subject, from_addr):
+    """Check if a LinkedIn email is a notification, not recruiter outreach."""
+    if "linkedin.com" not in extract_domain(from_addr):
+        return False
+    for pattern in LINKEDIN_NOISE_SUBJECTS:
+        if re.search(pattern, subject, re.IGNORECASE):
+            return True
+    return False
+
+
 def categorize_email(subject, from_addr, body=""):
     categories = []
     text = f"{subject} {body}".lower()
+    
+    # Skip noise senders entirely (newsletters, marketing, notifications)
+    if is_noise_sender(from_addr):
+        return ["other"]
     
     if matches_patterns(text, INTERVIEW_PATTERNS):
         categories.append("interview_invite")
     
     domain = extract_domain(from_addr)
-    if is_recruiter_domain(domain):
+    if is_recruiter_domain(domain) and not is_linkedin_noise(subject, from_addr):
         categories.append("recruiter_reach")
     
     if matches_patterns(text, APPLICATION_ACK_PATTERNS):
@@ -231,6 +272,127 @@ def get_email_body(msg):
         except:
             pass
     return body[:2000]
+
+
+def update_pipeline_from_emails(categorized):
+    """Update Notion Pipeline DB when rejection/interview emails are detected."""
+    import urllib.request
+    updates = []
+    
+    NOTION_TOKEN = json.load(open(os.path.expanduser("~/.openclaw/workspace/config/notion.json")))["token"]
+    PIPELINE_DB = "3268d599-a162-81b4-b768-f162adfa4971"
+    OUTCOMES_FILE = Path(WORKSPACE) / "data" / "feedback" / "jobs-outcomes.jsonl"
+    
+    def notion_api(method, endpoint, body=None):
+        url = f"https://api.notion.com/v1/{endpoint}"
+        data = json_module.dumps(body).encode() if body else None
+        req = urllib.request.Request(url, data=data, method=method, headers={
+            "Authorization": f"Bearer {NOTION_TOKEN}",
+            "Notion-Version": "2022-06-28",
+            "Content-Type": "application/json",
+        })
+        try:
+            with urllib.request.urlopen(req, timeout=15) as resp:
+                return json_module.loads(resp.read())
+        except Exception as e:
+            print(f"    Notion API error: {e}")
+            return None
+    
+    def find_pipeline_match(company_hint, role_hint):
+        """Search Pipeline for matching Applied entry."""
+        if not company_hint:
+            return None
+        query = {
+            "filter": {"and": [
+                {"property": "Stage", "select": {"equals": "✅ Applied"}},
+                {"property": "Company", "title": {"contains": company_hint[:30]}},
+            ]},
+            "page_size": 5,
+        }
+        result = notion_api("POST", f"databases/{PIPELINE_DB}/query", query)
+        if result and result.get("results"):
+            return result["results"][0]
+        return None
+    
+    # Process rejections
+    for email_item in categorized.get("rejection", []):
+        subject = email_item.get("subject", "")
+        from_addr = email_item.get("from", "")
+        
+        # Try to extract company name from sender domain or subject
+        domain = extract_domain(from_addr)
+        company_hint = domain.split(".")[0] if domain else ""
+        
+        match = find_pipeline_match(company_hint, "")
+        if match:
+            page_id = match["id"]
+            props = match.get("properties", {})
+            company = ""
+            if props.get("Company", {}).get("title"):
+                company = props["Company"]["title"][0].get("text", {}).get("content", "")
+            
+            # Update to Rejected
+            notion_api("PATCH", f"pages/{page_id}", {
+                "properties": {
+                    "Stage": {"select": {"name": "❌ Rejected"}},
+                    "Notes": {"rich_text": [{"text": {"content": f"Auto-detected from email: {subject[:100]}"}}]},
+                }
+            })
+            
+            # Update feedback loop
+            OUTCOMES_FILE.parent.mkdir(parents=True, exist_ok=True)
+            with open(OUTCOMES_FILE, "a") as f:
+                f.write(json_module.dumps({
+                    "company": company,
+                    "url": props.get("URL", {}).get("url", ""),
+                    "verdict": "SUBMIT",
+                    "outcome": "rejected",
+                    "detected_from": "email",
+                    "email_subject": subject[:100],
+                }) + "\n")
+            
+            updates.append({"company": company, "action": "rejected", "email": subject[:60]})
+            print(f"    📧→❌ Rejection detected: {company}")
+    
+    # Process interview invites
+    for email_item in categorized.get("interview_invite", []):
+        subject = email_item.get("subject", "")
+        from_addr = email_item.get("from", "")
+        domain = extract_domain(from_addr)
+        company_hint = domain.split(".")[0] if domain else ""
+        
+        match = find_pipeline_match(company_hint, "")
+        if match:
+            page_id = match["id"]
+            props = match.get("properties", {})
+            company = ""
+            if props.get("Company", {}).get("title"):
+                company = props["Company"]["title"][0].get("text", {}).get("content", "")
+            
+            # Update to Interview stage
+            notion_api("PATCH", f"pages/{page_id}", {
+                "properties": {
+                    "Stage": {"select": {"name": "📞 Interview"}},
+                    "Notes": {"rich_text": [{"text": {"content": f"Interview detected from email: {subject[:100]}"}}]},
+                }
+            })
+            
+            # Update feedback loop
+            OUTCOMES_FILE.parent.mkdir(parents=True, exist_ok=True)
+            with open(OUTCOMES_FILE, "a") as f:
+                f.write(json_module.dumps({
+                    "company": company,
+                    "url": props.get("URL", {}).get("url", ""),
+                    "verdict": "SUBMIT",
+                    "outcome": "interview",
+                    "detected_from": "email",
+                    "email_subject": subject[:100],
+                }) + "\n")
+            
+            updates.append({"company": company, "action": "interview", "email": subject[:60]})
+            print(f"    📧→📞 Interview detected: {company}")
+    
+    return updates
 
 
 def build_llm_prompt(summary, total_emails, actionable_emails):
@@ -308,14 +470,19 @@ def run_llm_analysis(summary, total_emails, actionable_emails) -> dict:
 
 @retry_with_backoff(max_retries=3, base_delay=2)
 def fetch_email_list():
-    """Fetch last 50 emails from INBOX via imaplib."""
+    """Fetch emails from INBOX received in last 24 hours via imaplib."""
+    from datetime import timedelta
     mail = imaplib.IMAP4_SSL(IMAP_HOST, IMAP_PORT)
     mail.login(GMAIL_USER, GMAIL_APP_PASSWORD)
     mail.select("INBOX")
     
-    _, msg_ids = mail.search(None, 'ALL')
+    # Time-based: last 24 hours (IMAP SINCE uses date, not datetime — so use yesterday)
+    since_date = (datetime.now() - timedelta(days=1)).strftime("%d-%b-%Y")
+    _, msg_ids = mail.search(None, f'(SINCE "{since_date}")')
     all_ids = msg_ids[0].split()
-    recent_ids = all_ids[-50:] if len(all_ids) > 50 else all_ids
+    # Safety cap at 200 to avoid processing thousands
+    recent_ids = all_ids[-200:] if len(all_ids) > 200 else all_ids
+    print(f"  IMAP: {len(all_ids)} emails since {since_date} (processing {len(recent_ids)})")
     
     emails = []
     for uid in reversed(recent_ids):
@@ -372,12 +539,11 @@ def run_email_agent(result: AgentResult):
     
     for i, email_data in enumerate(emails):
         body = ""
-        if i < 10:
-            try:
-                msg = email.message_from_bytes(email_data["raw"])
-                body = get_email_body(msg)
-            except:
-                pass
+        try:
+            msg = email.message_from_bytes(email_data["raw"])
+            body = get_email_body(msg)
+        except:
+            pass
         
         categories = categorize_email(email_data["subject"], email_data["from"], body)
         email_data["categories"] = categories
@@ -416,6 +582,14 @@ def run_email_agent(result: AgentResult):
         "follow_ups_needed": categorized["follow_up_needed"][:5],
         "actionable_count": len(actionable_emails)
     }
+
+    # ======================================================================
+    # PIPELINE INTEGRATION — update Notion + feedback loop
+    # ======================================================================
+    pipeline_updates = update_pipeline_from_emails(categorized)
+    if pipeline_updates:
+        summary["pipeline_updates"] = pipeline_updates
+        print(f"  Pipeline: {len(pipeline_updates)} updates pushed")
 
     # ======================================================================
     # LLM ANALYSIS — XML-structured prompt (Anthropic official playbook)

@@ -13,6 +13,7 @@
 Brief Me Runner - Executes the morning briefing by reading all data files
 and generating the Notion page + Telegram message.
 """
+import os
 import json, re, requests
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
@@ -20,7 +21,7 @@ from email.header import decode_header
 
 WORKSPACE = Path("/root/.openclaw/workspace")
 DATA_DIR = WORKSPACE / "data"
-NOTION_TOKEN = "NOTION_TOKEN_REDACTED"
+NOTION_TOKEN = json.load(open(os.path.expanduser("~/.openclaw/workspace/config/notion.json")))["token"]
 HEADERS = {"Authorization": f"Bearer {NOTION_TOKEN}", "Content-Type": "application/json", "Notion-Version": "2022-06-28"}
 BRIEFINGS_DB = "3268d599-a162-812d-a59e-e5496dec80e7"
 CAIRO = timezone(timedelta(hours=2))
@@ -78,16 +79,25 @@ _adapters = _import("briefing-adapters")
 
 def load_data():
     raw = {}
-    for key, path in {
-        "pipeline":"pipeline-status.json",
-        "email":"email-summary.json", 
-        "content":"content-schedule.json",
-        "outreach":"outreach-summary.json",
-        "system":"system-health.json",
-        "jobs":"jobs-summary.json"
-    }.items():
-        with open(DATA_DIR / path) as f:
-            raw[key] = json.load(f)
+    sources = {
+        "pipeline": "pipeline-status.json",
+        "email": "email-summary.json",
+        "content": "content-schedule.json",
+        "outreach": "outreach-summary.json",
+        "system": "system-health.json",
+        "jobs": "jobs-summary.json",
+    }
+    for key, path in sources.items():
+        full = DATA_DIR / path
+        try:
+            with open(full) as f:
+                raw[key] = json.load(f)
+        except FileNotFoundError:
+            print(f"  ⚠️ Missing: {path} — using empty fallback")
+            raw[key] = {"meta": {"status": "missing"}, "data": {}, "kpi": {}}
+        except json.JSONDecodeError as e:
+            print(f"  ⚠️ Corrupt: {path} — {e}")
+            raw[key] = {"meta": {"status": "corrupt"}, "data": {}, "kpi": {}}
     return raw
 
 def create_briefing():
@@ -134,11 +144,51 @@ def create_briefing():
     n_int = len(cats.get("interview_invite", []))
     n_rec = len(cats.get("recruiter_reach", []))
     alert_list = sys_adapted.get("alerts", [])
-    gw_status = "✅" if infra.get("gateway_healthy") else "❌"
+    gw_healthy = infra.get("gateway_healthy")
+    gw_status = "✅" if gw_healthy else ("❌" if gw_healthy is False else "❓")
     
     # Build blocks — NO dividers to save block count
     blocks = []
-    blocks.append(callout("No urgent items today. All systems operational.", "🟢"))
+    # Dynamic callout based on actual alerts
+    callout_items = []
+    callout_emoji = "🟢"
+    
+    # Check for interview invites
+    if cats.get("interview_invite"):
+        callout_items.append(f"📞 {len(cats['interview_invite'])} interview invite(s) - check email")
+        callout_emoji = "🔴"
+    
+    # Check for gateway/system issues
+    if not infra.get("gateway_healthy", True):
+        callout_items.append("Gateway DOWN")
+        callout_emoji = "🔴"
+    
+    # Check for job source failures
+    failures_path = Path(WORKSPACE) / "data" / "source-failures.jsonl"
+    if failures_path.exists() and failures_path.stat().st_size > 0:
+        callout_items.append("Job source failures detected")
+        if callout_emoji != "🔴":
+            callout_emoji = "⚠️"
+    
+    # Check for recruiter messages
+    if cats.get("recruiter_reach"):
+        callout_items.append(f"💬 {len(cats['recruiter_reach'])} recruiter message(s)")
+        if callout_emoji == "🟢":
+            callout_emoji = "⚠️"
+    
+    # Check for stale agents
+    stale = sys_adapted.get("agent_stale_count", 0)
+    if stale > 0:
+        callout_items.append(f"{stale} agent(s) stale")
+        if callout_emoji == "🟢":
+            callout_emoji = "⚠️"
+    
+    if callout_items:
+        callout_text = " | ".join(callout_items)
+    else:
+        callout_text = "No urgent items today. All systems operational."
+    
+    blocks.append(callout(callout_text, callout_emoji))
     
     # ── PIPELINE + SYSTEM (consolidated) ──
     blocks.append(h2("📋 Pipeline & System"))
@@ -156,11 +206,22 @@ def create_briefing():
         blocks.append(bul(plain("⚠️ " + " | ".join(a.get('message', str(a)) for a in alert_list[:2]))))
     
     # ── JOBS ──
-    blocks.append(h2(f"🔍 Jobs ({total_scanned} scanned → {len(submit_jobs)} SUBMIT | {len(review_jobs)} REVIEW)"))
+    fallback_pct = jobs.get("kpi", {}).get("fallback_pct", 0)
+    reviewed_count = jobs.get("reviewed", jobs.get("kpi", {}).get("total_reviewed", total_scanned))
+    if reviewed_count and reviewed_count != total_scanned:
+        jobs_header = f"🔍 Jobs ({total_scanned} scanned, {reviewed_count} reviewed → {len(submit_jobs)} SUBMIT | {len(review_jobs)} REVIEW)"
+    else:
+        jobs_header = f"🔍 Jobs ({total_scanned} scanned → {len(submit_jobs)} SUBMIT | {len(review_jobs)} REVIEW)"
+    blocks.append(div())
+    blocks.append(h2(jobs_header))
+    if fallback_pct > 20:
+        blocks.append(bul(plain(f"⚠️ {fallback_pct:.0f}% of jobs scored by keyword fallback (LLM batches failed) — scores may be less accurate")))
     if source_summary:
         blocks.append(bul(plain(f"Sources: {source_summary}")))
     
     blocks.append(h3("🟢 SUBMIT"))
+    if not submit_jobs:
+        blocks.append(bul(plain("No jobs scored ≥7 today")))
     for idx, job in enumerate(submit_jobs, 1):
         fit = job.get("career_fit_score", "?")
         ats = job.get("ats_score", 0)
@@ -178,6 +239,8 @@ def create_briefing():
         blocks.append(bul(*parts))
     
     blocks.append(h3("🟡 REVIEW"))
+    if not review_jobs:
+        blocks.append(bul(plain("No jobs scored 5-6 today")))
     for idx, job in enumerate(review_jobs, 1):
         fit = job.get("career_fit_score", "?")
         ats = job.get("ats_score", 0)
@@ -193,31 +256,68 @@ def create_briefing():
             parts.append(plain(title))
         parts.append(plain(f" @ {company} ({location})"))
         blocks.append(bul(*parts))
+        # Show verdict reason for REVIEW jobs — helps Ahmed decide quickly
+        reason = job.get("verdict_reason", "")
+        if reason:
+            blocks.append(bul(plain(f"   💡 {reason[:120]}")))
+    
+    # ── CALENDAR ──
+    cal_path = Path("/tmp") / f"calendar-events-{today}.json"
+    cal_events = []
+    if cal_path.exists():
+        try:
+            cal_raw = json.load(open(cal_path))
+            if isinstance(cal_raw, list):
+                cal_events = cal_raw
+            elif isinstance(cal_raw, dict):
+                cal_events = cal_raw.get("events", cal_raw.get("data", []))
+        except Exception:
+            pass
+    
+    if cal_events:
+        blocks.append(div())
+        blocks.append(h2(f"📅 Calendar ({len(cal_events)} events)"))
+        for cal_idx, ev in enumerate(cal_events[:8], 1):
+            title = ev.get("title", ev.get("summary", "?"))[:50]
+            start = ev.get("start", "")[:16]
+            end = ev.get("end", "")[:16]
+            is_all_day = ev.get("is_all_day", not ("T" in str(ev.get("start", ""))))
+            if is_all_day:
+                blocks.append(bul(bold(f"#{cal_idx} "), plain(f"🗓 {title} (all day)")))
+            else:
+                start_time = start.split("T")[-1][:5] if "T" in start else start
+                end_time = end.split("T")[-1][:5] if "T" in end else end
+                blocks.append(bul(bold(f"#{cal_idx} "), plain(f"🕐 {start_time}-{end_time} {title}")))
     
     # ── EMAIL ──
+    blocks.append(div())
     blocks.append(h2("📧 Email"))
     blocks.append(bul(plain(f"Scanned: {email.get('scanned_count',0)} | 🎯 {n_int} invites | 📬 {n_rec} recruiter reach")))
     if not (n_int or n_rec):
         blocks.append(bul(plain("No urgent emails")))
     
+    _email_counter = [0]  # mutable for closure
     def add_email_items(items, emoji):
         """Render individual emails with Gmail deep links."""
         for item in items:
+            _email_counter[0] += 1
+            idx = _email_counter[0]
             subject = decode_email_subject(item.get("subject") or "No subject")
             addr = extract_email_addr(item.get("from") or "")
             subj_short = subject[:65] + ("..." if len(subject) > 65 else "")
             if addr:
                 # Gmail deep link — clicking opens Gmail web with the email visible
                 gmail_url = f"https://mail.google.com/mail/u/0/?tab=mm&srch={requests.utils.quote(f'subject:\u201c{subject}\u201d')}"
-                blocks.append(bul(linked_text(f"{emoji} {subj_short}", gmail_url)))
+                blocks.append(bul(bold(f"#{idx} "), linked_text(f"{emoji} {subj_short}", gmail_url)))
             else:
-                blocks.append(bul(plain(f"{emoji} {subj_short} (no reply address)")))
+                blocks.append(bul(bold(f"#{idx} "), plain(f"{emoji} {subj_short} (no reply address)")))
     
     add_email_items(raw_email.get("interview_invites", []), "🎯")
     add_email_items(raw_email.get("recruiter_messages", []), "📬")
     add_email_items(raw_email.get("follow_ups_needed", []), "🔁")
     
     # ── CONTENT + ACTIONS ──
+    blocks.append(div())
     blocks.append(h2("📝 Content & Actions"))
     tp = content.get("today", {}).get("scheduled_post", {})
     li_has = li_post_path.exists() and json.load(open(li_post_path)).get("has_post")
@@ -236,7 +336,13 @@ def create_briefing():
         blocks.append(bul(plain("📣 No post today — engage via Comment Radar")))
     
     # Today's actions + algorithm reminder
-    blocks.append(bul(bold("▶ Actions: "), plain(f"1) Apply to {len(submit_jobs)} SUBMIT jobs | 2) Post LinkedIn | 3) Comment Radar")))
+    if submit_jobs:
+        actions_text = f"1) Apply to {len(submit_jobs)} SUBMIT jobs | 2) Post LinkedIn | 3) Comment Radar"
+    elif review_jobs:
+        actions_text = f"1) No SUBMIT today - review {len(review_jobs)} REVIEW candidates | 2) Post LinkedIn | 3) Comment Radar"
+    else:
+        actions_text = "1) No jobs to apply - focus on networking | 2) Post LinkedIn | 3) Comment Radar"
+    blocks.append(bul(bold("▶ Actions: "), plain(actions_text)))
     if li_has:
         blocks.append(bul(plain("⏰ After posting: stay active 60 min, reply to every comment (algorithm test)")))
     
@@ -246,6 +352,7 @@ def create_briefing():
         top_posts = radar.get("top_posts", [])[:5]
         if top_posts:
             drafted = radar.get("comments_drafted", 0)
+            blocks.append(div())
             blocks.append(h2(f"📡 Comment Radar ({drafted} drafts ready)"))
             for idx, rp in enumerate(top_posts, 1):
                 url = rp.get("url", "")
@@ -266,26 +373,49 @@ def create_briefing():
         outreach_data = json.load(open(outreach_path))
         suggestions = outreach_data.get("suggestions", [])[:5]
         if suggestions:
+            blocks.append(div())
             blocks.append(h2(f"🤝 Connect ({len(suggestions)} suggestions)"))
+            
+            # Funnel stats from history
+            history_path = DATA_DIR / "outreach-history.json"
+            if history_path.exists():
+                try:
+                    hist = json.load(open(history_path))
+                    all_s = hist.get("suggested", [])
+                    total = len(all_s)
+                    connected = sum(1 for x in all_s if x.get("status") == "connected")
+                    messaged = sum(1 for x in all_s if x.get("status") == "messaged")
+                    replied = sum(1 for x in all_s if x.get("status") == "response")
+                    if total > 0:
+                        blocks.append(bul(plain(f"📊 Funnel: {total} suggested → {connected} connected → {messaged} messaged → {replied} replied")))
+                except Exception:
+                    pass
+            
             for idx, s in enumerate(suggestions, 1):
                 name = s.get("name", "?")[:30]
                 role = s.get("role", "")[:40]
                 company = s.get("company", "?")[:25]
                 url = s.get("url", "")
                 reason = s.get("reason", "")[:60]
+                draft = s.get("draft_message", "")
                 if url:
                     blocks.append(bul(bold(f"#{idx} "), linked_text(name, url), plain(f" - {role}" if role else "")))
                     blocks.append(bul(plain(f"   {reason}")))
+                    if draft:
+                        blocks.append(bul(plain(f"   💬 \"{draft[:120]}...\"")))
                 else:
                     blocks.append(bul(bold(f"#{idx} {name}"), plain(f" at {company}")))
         else:
+            blocks.append(div())
             blocks.append(h2("🤝 Connect"))
             blocks.append(bul(plain("No new suggestions today")))
     else:
+        blocks.append(div())
         blocks.append(h2("🤝 Connect"))
         blocks.append(bul(plain("Outreach agent not run yet")))
     
     # ── DATA QUALITY (compact) ──
+    blocks.append(div())
     blocks.append(h2("📡 Data Quality"))
     blocks.append(bul(plain(" | ".join(
         f"{'✅' if d.get('meta',{}).get('status')=='success' else '⚠️'} {d.get('meta',{}).get('agent',k)}"
@@ -354,7 +484,7 @@ def create_briefing():
         "Jobs Found": {"number": total_jobs},
         "Priority Picks": {"number": len(submit_jobs)},
         "Emails Flagged": {"number": n_int + n_rec},
-        "Calendar Events": {"number": 0},
+        "Calendar Events": {"number": len(cal_events)},
         "LinkedIn Impressions": {"number": 0},
         "Model Used": {"rich_text": [{"text": {"content": "MiniMax-M2.7 + ATS Scorer"}}]},
         "Generation Time (s)": {"number": gen_time}
@@ -377,46 +507,36 @@ def create_briefing():
         print(f"  Warning: Could not check for existing page: {e}")
 
     if existing_page_id:
-        # Update existing page: update properties + delete old blocks + add new blocks
-        # 1. Update properties
-        requests.patch(f"https://api.notion.com/v1/pages/{existing_page_id}",
-                       headers=HEADERS, json={"properties": properties})
-        # 2. Delete old blocks
-        try:
-            old_blocks = requests.get(
-                f"https://api.notion.com/v1/blocks/{existing_page_id}/children?page_size=100",
-                headers=HEADERS
-            ).json().get("results", [])
-            for blk in old_blocks:
-                requests.delete(f"https://api.notion.com/v1/blocks/{blk['id']}", headers=HEADERS)
-        except Exception:
-            pass
-        # 3. Add new blocks (Notion limit: 100 per request)
-        for i in range(0, len(blocks), 100):
+        # Archive old page and create fresh (3 API calls vs ~56)
+        requests.patch(
+            f"https://api.notion.com/v1/pages/{existing_page_id}",
+            headers=HEADERS, json={"archived": True}
+        )
+        print(f"  Archived old page {existing_page_id[:8]}...")
+        # Fall through to create new page below
+    
+    # Create new page (first 100 blocks inline, rest appended)
+    resp = requests.post("https://api.notion.com/v1/pages", headers=HEADERS, json={
+        "parent": {"database_id": BRIEFINGS_DB},
+        "properties": properties,
+        "children": blocks[:100]
+    })
+
+    if resp.status_code == 200:
+        page = resp.json()
+        page_id = page["id"]
+        url = page.get("url", "")
+        # Append remaining blocks in chunks of 100
+        for i in range(100, len(blocks), 100):
             requests.patch(
-                f"https://api.notion.com/v1/blocks/{existing_page_id}/children",
+                f"https://api.notion.com/v1/blocks/{page_id}/children",
                 headers=HEADERS, json={"children": blocks[i:i+100]}
             )
-        page = requests.get(f"https://api.notion.com/v1/pages/{existing_page_id}", headers=HEADERS).json()
-        url = page.get("url", "")
-        print(f"✅ Updated: {url}")
+        print(f"✅ Created: {url}")
         return url
     else:
-        # Create new page
-        resp = requests.post("https://api.notion.com/v1/pages", headers=HEADERS, json={
-            "parent": {"database_id": BRIEFINGS_DB},
-            "properties": properties,
-            "children": blocks
-        })
-
-        if resp.status_code == 200:
-            page = resp.json()
-            url = page.get("url", "")
-            print(f"✅ Created: {url}")
-            return url
-        else:
-            print(f"❌ Error {resp.status_code}: {resp.text[:300]}")
-            return None
+        print(f"❌ Error {resp.status_code}: {resp.text[:300]}")
+        return None
 
 if __name__ == "__main__":
     create_briefing()

@@ -2,22 +2,22 @@
   "meta": {
     "agent": "daily-learner",
     "version": "1.0.0",
-    "generated_at": "2026-03-21T23:13:19.668727+02:00",
-    "duration_ms": 3,
+    "generated_at": "2026-03-22T23:00:02.126384+02:00",
+    "duration_ms": 13,
     "ttl_hours": 24,
     "status": "success",
     "error": null,
-    "run_id": "becfa0bb",
+    "run_id": "6474f856",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
     "job_accuracy": {
-      "total_recommendations": 229,
-      "total_unique_jobs": 54,
-      "submit_recommendations": 41,
+      "total_recommendations": 254,
+      "total_unique_jobs": 67,
+      "submit_recommendations": 48,
       "applied_count": 18,
-      "accuracy_rate": 43.90243902439025,
+      "accuracy_rate": 37.5,
       "skip_candidates": [
         {
           "job_id": "linkedin-li-4379840970",
@@ -35,9 +35,9 @@
           "reason": "Head of Asset Management & AI Transformation is AI/asset-heavy; transformation is good but asset management domain is outside core FinTech/e-commerce/HealthTech"
         },
         {
-          "job_id": "linkedin-li-4375508414",
-          "skip_signals": 2,
-          "reason": "Head of Digital Product Delivery (Mobile App) - digital product is adjacent to transformation but leans product management vs programme leadership"
+          "job_id": "linkedin-li-4385663641",
+          "skip_signals": 3,
+          "reason": "CTO role in Dubai - technology executive but CTO is broader tech strategy vs digital transformation focus; Arabic speaker requirement"
         },
         {
           "job_id": "linkedin-li-4381045669",
@@ -53,6 +53,16 @@
           "job_id": "linkedin-li-4384441676",
           "skip_signals": 3,
           "reason": "Senior Director level in target geography but Software Architecture is hands-on technical"
+        },
+        {
+          "job_id": "linkedin-li-4174468962",
+          "skip_signals": 2,
+          "reason": "CEO at confidential company could fit but no domain signal - too speculative"
+        },
+        {
+          "job_id": "linkedin-li-4374570926",
+          "skip_signals": 2,
+          "reason": "Head of IT at Dubai Smart City initiative has technology leadership angle but IT vs DT mismatch"
         }
       ]
     },
@@ -60,29 +70,34 @@
       "total_briefings": 0,
       "actionable_rate": null
     },
-    "skip_patterns_added": [],
-    "weight_changes": [
+    "skip_patterns_added": [
       {
-        "keyword": "remote",
-        "old": 0.6999999999999998,
-        "new": 0.6499999999999998,
-        "delta": -0.05,
-        "reason": "Low accuracy (43.9%)"
+        "job_id": "linkedin-li-4385663641",
+        "reason": "CTO role in Dubai - technology executive but CTO is broader tech strategy vs digital transformation focus; Arabic speaker requirement"
+      },
+      {
+        "job_id": "linkedin-li-4174468962",
+        "reason": "CEO at confidential company could fit but no domain signal - too speculative"
+      },
+      {
+        "job_id": "linkedin-li-4374570926",
+        "reason": "Head of IT at Dubai Smart City initiative has technology leadership angle but IT vs DT mismatch"
       }
     ],
+    "weight_changes": [],
     "source_rankings": {
       "unknown": {
-        "recommended": 229,
+        "recommended": 254,
         "applied": 0,
         "rate": 0.0
       }
     },
     "summary": {
-      "generated_at": "2026-03-21T23:13:19.668393+02:00",
+      "generated_at": "2026-03-22T23:00:02.125182+02:00",
       "period": "last_7_days",
       "job_recommendation_accuracy": {
-        "rate": 43.90243902439025,
-        "total": 229,
+        "rate": 37.5,
+        "total": 254,
         "applied": 18
       },
       "briefing_actionability": {
@@ -90,21 +105,21 @@
         "changes_detected": false
       },
       "auto_adjustments": {
-        "skip_patterns_added": 0,
-        "weight_changes": 1,
+        "skip_patterns_added": 3,
+        "weight_changes": 0,
         "source_rankings_updated": true
       },
       "insights": [
-        "\u26a0\ufe0f Job recommendation accuracy low (44%) \u2014 weights adjusted",
-        "\u2696\ufe0f Adjusted 1 keyword weights"
+        "\u26a0\ufe0f Job recommendation accuracy low (38%) \u2014 weights adjusted",
+        "\ud83d\udcdd Added 3 new skip patterns from feedback"
       ]
     }
   },
   "kpi": {
-    "recommendation_accuracy": 43.90243902439025,
-    "total_recommendations": 229,
-    "skip_patterns_added": 0,
-    "weight_changes": 1
+    "recommendation_accuracy": 37.5,
+    "total_recommendations": 254,
+    "skip_patterns_added": 3,
+    "weight_changes": 0
   },
   "recommendations": []
 }

@@ -19,6 +19,8 @@ cd /root/.openclaw/workspace && python3 scripts/linkedin-auto-poster.py 2>&1
 
 **If output says "No scheduled post"** - Send: "📝 No LinkedIn post scheduled for today." STOP.
 
+**If output says "QUALITY_HOLD"** - Read `/tmp/linkedin-post-payload.json`. Send Telegram: "⚠️ LinkedIn post scored {score}/10 (below 6). Held for review.\nFailed: {failed_questions}\nTitle: {title}\nReview in Notion Content Calendar." STOP.
+
 **If output says "READY_TO_POST"** - Read `/tmp/linkedin-post-payload.json` and continue.
 
 ### Step 2: Read the payload
@@ -194,17 +196,10 @@ If something fails:
 **Real cost of giving up (March 19, 2026):** Posted without image → 4 likes lost → deleted and re-posted → cold algorithm restart. Engagement damage is permanent.
 
 
----
-## 🔧 Auto-Improvement (2026-03-21)
-> Added by weekly-agent-review.py based on recurring failure pattern.
-
-**Pattern detected (2 occurrences):**
-Add completion guard: verify ALL required outputs (image, Notion update, etc.) before marking task done.
-
-**Action required:**
-- Review this section and integrate the fix into the relevant step above.
-- Remove this block once the fix has been applied.
-
+## Watchdog
+After successful posting, the agent MUST delete `/tmp/linkedin-post-pending.flag`.
+If this file still exists 30 minutes after cron, the system health monitor will alert:
+"🔴 LinkedIn post was prepared but never posted."
 
 ## Quality Gates
 - Image uploaded successfully (HTTP 201) before post creation is attempted
@@ -221,14 +216,4 @@ Add completion guard: verify ALL required outputs (image, Notion update, etc.) b
 - If failed: include what was attempted and why each attempt failed
 
 
----
-## 🔧 Auto-Improvement (2026-03-22)
-> Added by weekly-agent-review.py based on recurring failure pattern.
-
-**Pattern detected (2 occurrences):**
-Add completion guard: verify ALL required outputs (image, Notion update, etc.) before marking task done.
-
-**Action required:**
-- Review this section and integrate the fix into the relevant step above.
-- Remove this block once the fix has been applied.
 
