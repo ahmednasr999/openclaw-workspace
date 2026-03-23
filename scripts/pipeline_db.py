@@ -566,6 +566,7 @@ def get_stale(days: int = 7) -> list:
             WHERE status = 'applied'
             AND applied_date <= ?
             AND applied_date IS NOT NULL
+            AND (recruiter_email IS NOT NULL OR recruiter_name IS NOT NULL)
             ORDER BY applied_date ASC
         """, (cutoff_dt,)).fetchall()
         conn.close()
