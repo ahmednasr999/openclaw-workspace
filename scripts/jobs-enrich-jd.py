@@ -23,8 +23,62 @@ WORKSPACE = Path("/root/.openclaw/workspace")
 MERGED = WORKSPACE / "data" / "jobs-merged.json"
 MAX_FETCH = 300  # Enrich ALL candidates (review covers all now)
 FETCH_TIMEOUT = 15
-DELAY = 0.5  # seconds between requests (parallel workers share load)
-MAX_WORKERS = 5  # parallel fetch threads
+DELAY = 0.3  # seconds between requests
+MAX_WORKERS = 3  # parallel fetch threads (conservative for LinkedIn API)
+
+# LinkedIn Voyager API auth (cookies-based)
+LI_COOKIES_FILE = Path("/root/.openclaw/cookies/linkedin.txt")
+
+def _load_linkedin_cookies():
+    """Load LinkedIn cookies from Netscape cookie file."""
+    if not LI_COOKIES_FILE.exists():
+        return None, None
+    cookies = {}
+    csrf = None
+    with open(LI_COOKIES_FILE) as f:
+        for line in f:
+            line = line.strip()
+            if line.startswith('#') or not line:
+                continue
+            parts = line.split('\t')
+            if len(parts) >= 7:
+                name, value = parts[5], parts[6].strip('"')
+                cookies[name] = value
+                if name == 'JSESSIONID':
+                    csrf = value.strip('"')
+    cookie_str = '; '.join(f'{k}={v}' for k, v in cookies.items())
+    return cookie_str, csrf
+
+LI_COOKIE_STR, LI_CSRF = _load_linkedin_cookies()
+
+
+def fetch_linkedin_voyager(job_id):
+    """Fetch JD from LinkedIn Voyager API using cookies. Returns JD text or None."""
+    if not LI_COOKIE_STR or not LI_CSRF:
+        return None
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "csrf-token": LI_CSRF,
+        "Cookie": LI_COOKIE_STR,
+    }
+    url = f"https://www.linkedin.com/voyager/api/jobs/jobPostings/{job_id}"
+    ctx = ssl.create_default_context()
+    req = Request(url, headers=headers)
+    try:
+        with urlopen(req, timeout=FETCH_TIMEOUT, context=ctx) as r:
+            data = json.loads(r.read(500000))
+            desc = data.get("description", {})
+            if isinstance(desc, dict):
+                return desc.get("text", "")
+            return str(desc) if desc else None
+    except Exception:
+        return None
+
+
+def extract_linkedin_job_id(url):
+    """Extract numeric job ID from LinkedIn URL."""
+    m = re.search(r'(\d{8,})', url)
+    return m.group(1) if m else None
 
 
 def fetch_page(url, max_chars=200000):
@@ -176,6 +230,25 @@ def run():
             return "skipped", False
         
         time.sleep(DELAY)  # rate limit per request
+        
+        # LinkedIn: try Voyager API first (authenticated, reliable)
+        if "linkedin.com" in url:
+            job_id = extract_linkedin_job_id(url)
+            if job_id:
+                jd = fetch_linkedin_voyager(job_id)
+                if jd and len(jd) > 100:
+                    job["jd_text"] = jd[:5000]
+                    job["jd_fetch_status"] = "voyager_ok"
+                    job["jd_live"] = True
+                    nationals = detect_nationals_only(jd)
+                    if nationals:
+                        job["nationals_only"] = True
+                        print(f"  [{idx}] {title}... VOYAGER OK ({len(jd)} chars) ⚠️ NATIONALS ONLY")
+                    else:
+                        print(f"  [{idx}] {title}... VOYAGER OK ({len(jd)} chars)")
+                    return "enriched", nationals
+        
+        # Fallback: raw HTTP fetch (works for Indeed, Google Jobs, company pages)
         html = fetch_page(url)
         if not html:
             job["jd_fetch_status"] = "fetch_failed"
