@@ -1,14 +1,14 @@
 {
-  "generated": "2026-03-22T00:36:17.456565+02:00",
+  "generated": "2026-03-23T05:10:51.418092+02:00",
   "version": "1.0.0",
-  "date": "Sunday, March 22 2026",
-  "generated_at": "2026-03-22T00:36:17.456475+02:00",
-  "system": "Disk: 47% | RAM: 30.4% | Uptime: 100%\nAgents healthy: 4",
-  "email": "  - Other: 50 unread",
-  "linkedin_post": "Next scheduled: The GCC Just Committed $100B+ to Digital Transformation\nDate: 2026-03-22",
-  "comment_radar": "Top post (PQS 60): Ada Mazurek\n  Pitching in the GCC: What Works Differently | Ada Mazurek posted ......\n  +4 more posts queued",
+  "date": "Monday, March 23 2026",
+  "generated_at": "2026-03-23T05:10:51.417975+02:00",
+  "system": "Disk: 47% | RAM: 38.3% | Uptime: 100%\nAgents healthy: 3",
+  "email": "  - Recruiter_Reach: 8 unread\n  - Application_Ack: 1 unread\n  - Assessment: 1 unread\n  - Follow_Up_Needed: 1 unread\n  - Other: 39 unread",
+  "linkedin_post": "Today's topic: Growth\nHook: Stakeholder mapping....\nStatus: ok",
+  "comment_radar": "Top post (PQS 48): Saudi Gazette\n  Saudi Arabia Empowers 666,000 Women in Data & AI - LinkedIn...\n  +4 more posts queued",
   "outreach": "Sent today: 5/5 | Response rate: 40%\n  WARNING: 1 overdue follow-ups\nQueue depth: 2",
-  "jobs": "Total merged: 260 | Reviewed: 50 | Submit: 8 | Review: 7\nTop pick: QA Director - Middle East at Netcracker Technology (?/10)",
+  "jobs": "Total merged: 156 | Reviewed: 156 | Submit: 28 | Review: 26\nTop pick: Director of Fintech at HungerStation | \u0647\u0646\u0642\u0631\u0633\u062a\u064a\u0634\u0646 (?/10)",
   "github": "  karpathy/autoresearch (47136) - AI agents running research on single-GPU nanochat training a\n  aiming-lab/AutoResearchClaw (7250) - Fully autonomous & self-evolving research from idea to paper\n  googleworkspace/cli (21867) - Google Workspace CLI \u2014 one command-line tool for Drive, Gmai",
   "autoresearch": "No recent analysis"
 }

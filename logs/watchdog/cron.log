@@ -352,3 +352,24 @@
   Warnings: 1
   Alerts (need human): 0
 ═══════════════════════════════════
+🔍 Watchdog v3 - Detect → Fix → Report
+✅ Gateway running (PID: 3137462)
+✅ Disk OK: 47%
+✅ active-tasks.md fresh (36h)
+✅ Jobs data fresh (3h)
+✅ SIE 360 data fresh (4h)
+✅ Pipeline lock active (0m, still valid)
+🟡 1 crons with issues
+  Re-triggered cron: d87f2c6c-20ab-42f4-aa83-47cc086e9b04
+✅ No pipeline failures today
+✅ RAM OK: 44%
+
+═══════════════════════════════════
+📊 Watchdog v3 Summary
+  Fixes applied: 1
+  Warnings: 1
+  Alerts (need human): 0
+═══════════════════════════════════
+
+📋 Actions taken:
+
