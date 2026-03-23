@@ -453,8 +453,25 @@ def auto_fix_cv(html_path, issues):
         html = html.replace("ATandT", "AT&amp;T").replace("AT and T", "AT&amp;T")
         fixes += 1
 
-    # Inject MISSING Certifications section from master CV
+    # Inject MISSING Education and Certifications sections from master CV
     import re as _re
+    
+    if any("MISSING: Education" in _i for _i in issues):
+        _edu = (
+            "<h2>Education</h2>"
+            "<ul>"
+            "<li><strong>Master of Business Administration (MBA)</strong>, Dubai, United Arab Emirates, 2010</li>"
+            "<li><strong>Bachelor of Science (BSc), Computing</strong>, London, United Kingdom, 2002</li>"
+            "</ul>"
+        )
+        # Insert before first h2 (usually Experience or Certifications)
+        _m = _re.search(r'<h2>', html, _re.IGNORECASE)
+        if _m:
+            html = html[:_m.start()] + _edu + html[_m.start():]
+        else:
+            html = _edu + html
+        fixes += 1
+    
     if any("MISSING: Certifications" in _i for _i in issues):
         _certs = (
             "<h2>Professional Certifications</h2>"
@@ -467,11 +484,12 @@ def auto_fix_cv(html_path, issues):
             "<li><strong>ITIL Foundations</strong> &#8212; LinkedIn, 2016</li>"
             "</ul>"
         )
-        _m = _re.search(r'(<h2>education</h2>.+?)(?=<h2>)', html, _re.DOTALL | _re.IGNORECASE)
+        # Insert before closing </body> or end of html
+        _m = _re.search(r'</body>', html, _re.IGNORECASE)
         if _m:
-            html = html[:_m.end()] + _certs + html[_m.end():]
+            html = html[:_m.start()] + _certs + html[_m.start():]
         else:
-            html = _certs + html
+            html = html + _certs
         fixes += 1
 
     if fixes > 0:
