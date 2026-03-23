@@ -3,7 +3,51 @@
     "description": "Rolling performance database. Never delete entries. Updated by LEARN layer every Sunday.",
     "created": "2026-03-23",
     "last_updated": null,
-    "total_posts_tracked": 0
+    "total_posts_tracked": 0,
+    "schema_version": "2",
+    "reaction_tracking": {
+      "enabled": true,
+      "script": "scripts/linkedin-reaction-tracker.py",
+      "registry": "data/linkedin-posts.json",
+      "snapshots_dir": "data/linkedin-engagement/",
+      "intervals_hours": [1, 24, 48, 168],
+      "cron": "0 */6 * * *"
+    }
+  },
+  "schema": {
+    "description": "Schema for each post entry in the posts array",
+    "fields": {
+      "date": "YYYY-MM-DD publish date",
+      "title": "First 5 words of post",
+      "post_type": "story|expertise|opinion|data|bts",
+      "pillar": "pmo|ai|transformation|leadership|personal",
+      "hook_style": "bold_claim|curiosity_gap|specific_story|question|stat",
+      "hook_text": "First line of post",
+      "char_count": "integer",
+      "has_image": "boolean",
+      "image_genre": "framework_diagram|photo|quote_card|data_viz|none",
+      "activity_urn": "urn:li:activity:<id>",
+      "post_url": "https://www.linkedin.com/posts/...",
+      "reactions": "integer — latest snapshot count from reaction tracker",
+      "reaction_breakdown": {
+        "LIKE": "integer",
+        "CELEBRATE": "integer",
+        "SUPPORT": "integer",
+        "LOVE": "integer",
+        "INSIGHTFUL": "integer",
+        "FUNNY": "integer"
+      },
+      "reaction_snapshots": "array of {checked_at, reaction_count} from tracker",
+      "comments": "integer — manual or API",
+      "comments_substantive": "integer — comments with >10 words",
+      "reposts": "integer",
+      "engagement_rate": "float — (reactions + comments + reposts) / impressions * 100 if known",
+      "impressions": "integer or null",
+      "experiment_var": "variable being tested e.g. hook_style",
+      "experiment_value": "value of the variable e.g. bold_claim",
+      "repurpose_candidate": "boolean — true if engagement_rate > 5%",
+      "notes": "free text"
+    }
   },
   "posts": []
 }
