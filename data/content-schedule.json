@@ -2,23 +2,23 @@
   "meta": {
     "agent": "content-agent",
     "version": "1.0.0",
-    "generated_at": "2026-03-23T08:00:04.116223+02:00",
-    "duration_ms": 800,
+    "generated_at": "2026-03-23T20:00:05.044523+02:00",
+    "duration_ms": 1609,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "8e4963fe",
+    "run_id": "93c1831b",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
-    "scan_time": "2026-03-23T08:00:04.115905+02:00",
+    "scan_time": "2026-03-23T20:00:05.034110+02:00",
     "today": {
       "date": "2026-03-23",
       "scheduled": [
         {
           "title": "I almost lost a $50M transformation because I forgot one thing.",
-          "status": "scheduled",
+          "status": "posted",
           "topic": "Growth",
           "hook": "Stakeholder mapping."
         }
@@ -37,7 +37,7 @@
         {
           "title": "I almost lost a $50M transformation because I forgot one thing.",
           "date": "2026-03-23",
-          "status": "scheduled"
+          "status": "posted"
         },
         {
           "title": "Health Catalyst closed 4.6 million care gaps globally.",
@@ -61,13 +61,13 @@
       "ideas": 0,
       "outlines": 0,
       "drafts": 1,
-      "scheduled": 8,
-      "posted": 18
+      "scheduled": 7,
+      "posted": 19
     },
     "content_health": {
-      "runway_days": 7,
-      "streak_days": 0,
-      "posts_this_month": 16,
+      "runway_days": 6,
+      "streak_days": 1,
+      "posts_this_month": 17,
       "topics_covered": {
         "Growth": 13,
         "General": 5,
@@ -85,20 +85,11 @@
     "engagement_opportunities": []
   },
   "kpi": {
-    "posting_consistency": 69.6,
-    "content_runway_days": 7,
+    "posting_consistency": 73.9,
+    "content_runway_days": 6,
     "drafts_in_review": 1,
-    "streak_days": 0,
-    "posts_this_month": 16
+    "streak_days": 1,
+    "posts_this_month": 17
   },
-  "recommendations": [
-    {
-      "id": "rec-8e4963fe-0",
-      "action": "post_today",
-      "target": "Posting streak",
-      "reason": "No active posting streak - post today to start one",
-      "urgency": "low",
-      "timestamp": "2026-03-23T08:00:04.115975+02:00"
-    }
-  ]
+  "recommendations": []
 }

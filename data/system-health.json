@@ -2,23 +2,23 @@
   "meta": {
     "agent": "system-agent",
     "version": "1.0.0",
-    "generated_at": "2026-03-23T06:14:48.512117+02:00",
-    "duration_ms": 21016,
+    "generated_at": "2026-03-23T18:00:12.816686+02:00",
+    "duration_ms": 10313,
     "ttl_hours": 1,
     "status": "success",
     "error": null,
-    "run_id": "02c89133",
+    "run_id": "5799fd1f",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
-    "scan_time": "2026-03-23T06:14:48.511920+02:00",
+    "scan_time": "2026-03-23T18:00:12.812451+02:00",
     "system": {
       "disk_usage_pct": 47,
       "memory": {
         "total_gb": 7.8,
         "available_gb": 4.2,
-        "used_pct": 46.4
+        "used_pct": 45.5
       },
       "gateway": {
         "status": "healthy",
@@ -34,17 +34,17 @@
         {
           "agent": "jobs-merge",
           "status": "healthy",
-          "age_hours": 0.1,
+          "age_hours": 3.9,
           "ttl_hours": 6,
-          "last_run": "2026-03-23T06:05:48.417624+02:00",
+          "last_run": "2026-03-23T14:05:55.531541+02:00",
           "last_status": "success"
         },
         {
           "agent": "jobs-review",
           "status": "healthy",
-          "age_hours": 0.1,
+          "age_hours": 3.8,
           "ttl_hours": 6,
-          "last_run": "2026-03-23T06:09:23.265017+02:00",
+          "last_run": "2026-03-23T14:11:38.048520+02:00",
           "last_status": "success"
         },
         {
@@ -67,9 +67,9 @@
         {
           "agent": "system-agent",
           "status": "healthy",
-          "age_hours": 0.4,
+          "age_hours": 2.0,
           "ttl_hours": 6,
-          "last_run": "2026-03-23T05:52:32.120330+02:00",
+          "last_run": "2026-03-23T16:00:18.516050+02:00",
           "last_status": "success"
         }
       ],
@@ -79,8 +79,8 @@
     },
     "cron": {
       "status": "healthy",
-      "job_count": 17,
-      "raw_output": "[plugins] [composio] Connecting to https://connect.composio.dev/mcp\n[plugins] [lcm] Plugin loaded (enabled=true, db=/root/.openclaw/lcm.db, threshold=0.75)\nID                                   Name                     Schedule                         Next       Last       Status    Target    Agent ID   Model               \n1b1d9bca-2f63-49d1-89b2-cd05a792b30a NASR Doctor (Daily)      cron 0 7 * * * @ Africa/Cairo... in 45m     23h ago    ok        isolated  -          minimax-portal/Mi...\nae585e"
+      "job_count": 18,
+      "raw_output": "[plugins] [composio] Connecting to https://connect.composio.dev/mcp\n[plugins] [lcm] Plugin loaded (enabled=true, db=/root/.openclaw/lcm.db, threshold=0.75)\nID                                   Name                     Schedule                         Next       Last       Status    Target    Agent ID   Model               \nd1343a4d-61a4-476c-83c5-15724bcce89c Content Agent: Reacti... cron 0 */6 * * * @ Africa/Cai... in 3m      6h ago     ok        isolated  -          minimax-portal/Mi...\n005129"
     },
     "external_services": {
       "notion": {
@@ -106,12 +106,12 @@
   },
   "recommendations": [
     {
-      "id": "rec-02c89133-0",
+      "id": "rec-5799fd1f-0",
       "action": "check_notion_auth",
       "target": "Notion API",
       "reason": "Notion status: unreachable",
       "urgency": "medium",
-      "timestamp": "2026-03-23T06:14:48.511967+02:00"
+      "timestamp": "2026-03-23T18:00:12.812487+02:00"
     }
   ]
 }

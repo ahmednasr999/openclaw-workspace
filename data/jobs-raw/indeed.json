@@ -2,16 +2,74 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-03-23T06:15:46.477138+02:00",
-    "duration_ms": 79183,
+    "generated_at": "2026-03-23T14:01:27.568533+02:00",
+    "duration_ms": 85733,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "143b1fba",
+    "run_id": "a1f01152",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": [
+    {
+      "id": "indeed-in-cfb35df95ccd8337",
+      "source": "indeed",
+      "title": "Senior Manager Inventory EM",
+      "company": "adidas",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=cfb35df95ccd8337",
+      "posted": "2026-03-12",
+      "seniority": "Other",
+      "domain_match": false,
+      "keyword_score": 6,
+      "match_keywords": [
+        "head of"
+      ],
+      "raw_snippet": "PURPOSE \\& OVERALL RELEVANCE FOR THE ORGANIZATION:\n\n\n\nThe Senior Manager Inventory acts as financial advisor and business partner inside the DP community, as well as towards product supply, purchasing, brand organization by providing fact\\-based data to enable and drive decision\\-making. He/she supports the head of DP HUB to build inventory targets, to track and monitor KPIs development and steer the business with on time and fact\\-based analysis. In this role the Senior Manager Inventory provid",
+      "relevant": true,
+      "filter_reason": null
+    },
+    {
+      "id": "indeed-in-a8a7fd85dbf84323",
+      "source": "indeed",
+      "title": "Director of Front Office \u2013 Curator of Guest Experience at Kimpton Sevn Dubai (Pre-Opening)",
+      "company": "Kimpton",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=a8a7fd85dbf84323",
+      "posted": "2026-03-23",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 26,
+      "match_keywords": [
+        "operational excellence",
+        "ai",
+        "director",
+        "dubai"
+      ],
+      "raw_snippet": "**Director of Front Office\\- Curator of Guest Experience**\n==========================================================\n\n### **Kimpton Sevn Dubai (Pre\\-Opening)**\n\n**Reporting to: Hotel Manager**\n\n\nAt Kimpton Sevn Dubai, we are seeking a **Director of Front Office**\u2014a charismatic, service\\-driven leader who brings energy, personality, and operational excellence to every guest interaction.\n\n\nThis role is ideal for a hospitality professional who thrives in dynamic environments, loves connecting with",
+      "relevant": true,
+      "filter_reason": null
+    },
+    {
+      "id": "indeed-in-8f603ac1283c89f5",
+      "source": "indeed",
+      "title": "Chief Financial Officer",
+      "company": "Trilogy Fab Trailers Manufacturing One Owner Company L. L. C",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=8f603ac1283c89f5",
+      "posted": "2026-03-23",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 6,
+      "match_keywords": [
+        "uae",
+        "api"
+      ],
+      "raw_snippet": "The CFO will lead the company\u2019s financial strategy and operations, with a strong focus on project\\-based financial management, profitability, and compliance within the UAE contracting sector.\n\n**Key Responsibilities:**\n\n* Oversee financial planning, budgeting, and forecasting\n* Manage project costing, cash flow, and working capital\n* Ensure UAE VAT and regulatory compliance\n* Monitor contract revenue, costs, and variations\n* Advise management on financial performance and risks\n* Lead finance tea",
+      "relevant": true,
+      "filter_reason": null
+    },
     {
       "id": "indeed-in-f7e1d5085527773a",
       "source": "indeed",
@@ -34,9 +92,9 @@
   ],
   "kpi": {
     "searches_run": 81,
-    "results_per_search": 0.4,
-    "unique_jobs": 1,
-    "errors": 55
+    "results_per_search": 0.49,
+    "unique_jobs": 4,
+    "errors": 53
   },
   "recommendations": []
 }
