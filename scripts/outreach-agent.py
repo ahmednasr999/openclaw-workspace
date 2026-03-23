@@ -248,8 +248,10 @@ def call_llm(prompt, max_tokens=1000, model="anthropic/claude-sonnet-4-6"):
         "temperature": 0.7,
     }).encode()
     ctx = ssl.create_default_context()
+    gw_token = json.load(open(os.path.expanduser("~/.openclaw/openclaw.json")))["gateway"]["auth"]["token"]
     req = Request(gateway_url, data=payload,
-                  headers={"Content-Type": "application/json"}, method="POST")
+                  headers={"Content-Type": "application/json",
+                           "Authorization": f"Bearer {gw_token}"}, method="POST")
     try:
         with urlopen(req, timeout=30, context=ctx) as r:
             return json.loads(r.read())["choices"][0]["message"]["content"].strip()
