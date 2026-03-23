@@ -201,16 +201,67 @@ def build_notion_properties(job):
         github_url = f"https://github.com/ahmednasr999/openclaw-workspace/blob/master/cvs/{filename}"
         props["CV Link"] = {"url": github_url}
     
-    # Notes
+    # Discovered Date (from created_at)
+    created_at = job.get("created_at") or ""
+    if created_at:
+        try:
+            # Parse ISO format and extract date
+            date_str = created_at[:10]
+            if len(date_str) == 10 and date_str[4] == '-':
+                props["Discovered Date"] = {"date": {"start": date_str}}
+        except:
+            pass
+    
+    # CV Date (from cv_built_at)
+    cv_built = job.get("cv_built_at") or ""
+    if cv_built:
+        try:
+            date_str = cv_built[:10]
+            if len(date_str) == 10 and date_str[4] == '-':
+                props["CV Date"] = {"date": {"start": date_str}}
+        except:
+            pass
+    
+    # Follow-up Due
+    follow_up = job.get("follow_up_date") or ""
+    if follow_up:
+        try:
+            date_str = follow_up[:10]
+            if len(date_str) == 10 and date_str[4] == '-':
+                props["Follow-up Due"] = {"date": {"start": date_str}}
+        except:
+            pass
+    
+    # Salary
+    salary = job.get("salary_range") or ""
+    if salary:
+        currency = job.get("salary_currency") or ""
+        salary_text = f"{currency} {salary}".strip() if currency else salary
+        props["Salary"] = {"rich_text": [{"text": {"content": salary_text[:100]}}]}
+    
+    # Notes (combine recruiter info, cluster, score notes, and manual notes)
     notes = job.get("notes") or ""
     recruiter = job.get("recruiter_name") or ""
     recruiter_email = job.get("recruiter_email") or ""
+    recruiter_phone = job.get("recruiter_phone") or ""
+    cluster = job.get("cv_cluster") or ""
+    score_notes = job.get("score_notes") or ""
+    next_action = job.get("next_action") or ""
     
     note_parts = []
     if recruiter:
-        note_parts.append(f"Recruiter: {recruiter}")
-    if recruiter_email:
-        note_parts.append(f"Email: {recruiter_email}")
+        contact = f"Recruiter: {recruiter}"
+        if recruiter_email:
+            contact += f" ({recruiter_email})"
+        if recruiter_phone:
+            contact += f" | {recruiter_phone}"
+        note_parts.append(contact)
+    if cluster:
+        note_parts.append(f"Cluster: {cluster}")
+    if next_action:
+        note_parts.append(f"Next: {next_action}")
+    if score_notes:
+        note_parts.append(f"Score: {score_notes[:200]}")
     if notes:
         note_parts.append(notes[:500])
     
