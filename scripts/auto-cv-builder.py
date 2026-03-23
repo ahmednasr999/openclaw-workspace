@@ -44,6 +44,9 @@ OPENCLAW_JSON = "/root/.openclaw/openclaw.json"
 
 ANTHROPIC_API_KEY = ""
 ANTHROPIC_BASE_URL = "https://api.anthropic.com"
+GATEWAY_TOKEN = ""
+GATEWAY_PORT = 18789
+USE_GATEWAY = False
 
 # CV HTML template (from proven working CVs)
 HTML_TEMPLATE = """<!DOCTYPE html>
@@ -104,13 +107,21 @@ def log(msg):
 
 
 def load_config():
-    global ANTHROPIC_API_KEY, ANTHROPIC_BASE_URL
+    global ANTHROPIC_API_KEY, ANTHROPIC_BASE_URL, GATEWAY_TOKEN, GATEWAY_PORT, USE_GATEWAY
     try:
         with open(OPENCLAW_JSON) as f:
             cfg = json.load(f)
         p = cfg.get("models", {}).get("providers", {}).get("anthropic", {})
         ANTHROPIC_API_KEY = p.get("apiKey", "")
         ANTHROPIC_BASE_URL = p.get("baseUrl", "https://api.anthropic.com")
+        # Gateway config (preferred over direct API)
+        gw = cfg.get("gateway", {})
+        gw_auth = gw.get("auth", {})
+        GATEWAY_TOKEN = gw_auth.get("token", "")
+        GATEWAY_PORT = gw.get("port", 18789)
+        if GATEWAY_TOKEN:
+            USE_GATEWAY = True
+            log(f"  Using OpenClaw Gateway on port {GATEWAY_PORT}")
     except Exception as e:
         log(f"WARNING: Could not load config: {e}")
 
@@ -181,9 +192,31 @@ def cv_already_exists(company, role):
 
 
 def call_opus(prompt, max_tokens=8000):
-    """Call Opus 4.6 via Anthropic API."""
+    """Call Opus 4.6 via OpenClaw Gateway (preferred) or direct Anthropic API."""
+    if USE_GATEWAY and GATEWAY_TOKEN:
+        payload = json.dumps({
+            "model": "anthropic/claude-opus-4-6",
+            "max_tokens": max_tokens,
+            "messages": [{"role": "user", "content": prompt}]
+        }).encode()
+
+        req = urllib.request.Request(
+            f"http://localhost:{GATEWAY_PORT}/v1/chat/completions",
+            data=payload,
+            headers={
+                "Content-Type": "application/json",
+                "Authorization": f"Bearer {GATEWAY_TOKEN}"
+            },
+            method="POST"
+        )
+
+        with urllib.request.urlopen(req, timeout=180) as resp:
+            result = json.loads(resp.read())
+            return result.get("choices", [{}])[0].get("message", {}).get("content", "").strip()
+
+    # Fallback: direct Anthropic API
     if not ANTHROPIC_API_KEY:
-        raise ValueError("No Anthropic API key")
+        raise ValueError("No Anthropic API key and no gateway token")
 
     payload = json.dumps({
         "model": "claude-opus-4-6",
