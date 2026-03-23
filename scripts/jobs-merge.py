@@ -16,10 +16,18 @@ Features:
 
 import json
 import sys
+import os
 import re
 from pathlib import Path
 from datetime import datetime, timezone, timedelta
 from difflib import SequenceMatcher
+
+# Pipeline DB (safe fallback)
+try:
+    sys.path.insert(0, os.path.dirname(__file__))
+    import pipeline_db as _pdb
+except ImportError:
+    _pdb = None
 
 # Add scripts dir to path for imports
 sys.path.insert(0, str(Path(__file__).parent))
@@ -424,7 +432,29 @@ def run_merge(result: AgentResult):
     
     print(f"\nFinal candidates: {len(final_jobs)}")
     print(f"Multi-source jobs: {multi_source}")
-    
+
+    # ── DB write (dual-write, non-blocking) ───────────────────────────────────
+    if _pdb:
+        try:
+            db_count = 0
+            for j in final_jobs:
+                job_id = j.get("id", j.get("job_id", ""))
+                _pdb.register_job(
+                    source=j.get("source", j.get("sources", ["unknown"])[0] if j.get("sources") else "unknown"),
+                    job_id=str(job_id) if job_id else "",
+                    company=j.get("company", "Unknown"),
+                    title=j.get("title", "Unknown"),
+                    location=j.get("location"),
+                    url=j.get("url"),
+                    jd_text=j.get("jd_text") or j.get("raw_snippet") or None,
+                    status="discovered",
+                )
+                db_count += 1
+            print(f"  DB: {db_count} jobs upserted")
+        except Exception as _e:
+            print(f"  DB write failed (non-fatal): {_e}")
+    # ─────────────────────────────────────────────────────────────────────────
+
     result.set_data(final_jobs)
     result.set_kpi({
         "total_raw": len(all_jobs_raw),

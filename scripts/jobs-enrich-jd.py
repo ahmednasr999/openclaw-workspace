@@ -12,12 +12,20 @@ Skips jobs that already have jd_text (idempotent).
 Rate limited: 1 request/sec to avoid 429s.
 """
 import json
+import os
 import re
 import ssl
 import sys
 import time
 from pathlib import Path
 from urllib.request import Request, urlopen
+
+# Pipeline DB (safe fallback)
+try:
+    sys.path.insert(0, os.path.dirname(__file__))
+    import pipeline_db as _pdb
+except ImportError:
+    _pdb = None
 
 WORKSPACE = Path("/root/.openclaw/workspace")
 MERGED = WORKSPACE / "data" / "jobs-merged.json"
@@ -78,6 +86,18 @@ def jd_cache_put(job_id, jd_text, source="voyager"):
         "source": source,
         "cached_at": time.strftime("%Y-%m-%dT%H:%M:%SZ"),
     }, indent=2))
+    # ── DB write (dual-write, non-blocking) ──────────────────────────────────
+    if _pdb:
+        try:
+            _pdb.update_field(
+                job_id,
+                jd_text=jd_text,
+                jd_path=str(cache_file),
+                jd_fetched_at=time.strftime("%Y-%m-%dT%H:%M:%SZ"),
+            )
+        except Exception:
+            pass
+    # ─────────────────────────────────────────────────────────────────────────
 
 
 def fetch_linkedin_voyager(job_id):

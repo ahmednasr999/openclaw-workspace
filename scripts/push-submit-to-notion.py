@@ -7,9 +7,17 @@ Skips jobs already in Pipeline (checks by URL).
 Run after jobs-review.py produces jobs-summary.json.
 """
 import os
-import json, requests, re, time, sys
+import sys
+import json, requests, re, time
 from pathlib import Path
 from datetime import datetime
+
+# Pipeline DB (safe fallback)
+try:
+    sys.path.insert(0, os.path.dirname(__file__))
+    import pipeline_db as _pdb
+except ImportError:
+    _pdb = None
 
 WORKSPACE = Path("/root/.openclaw/workspace")
 SUMMARY_FILE = WORKSPACE / "data" / "jobs-summary.json"
@@ -119,8 +127,23 @@ def create_notion_entry(job: dict, jd_text: str) -> bool:
 
     resp = safe_notion_request(requests.post, "https://api.notion.com/v1/pages", headers=HEADERS, json=payload)
     if resp and resp.status_code == 200:
-        page_url = resp.json().get("url", "")
+        resp_data = resp.json()
+        page_url = resp_data.get("url", "")
+        notion_page_id = resp_data.get("id", "")
         print(f"  ✅ {title[:40]} → {page_url}")
+        # ── DB write (dual-write, non-blocking) ──────────────────────────────
+        if _pdb:
+            try:
+                job_id = str(job.get("id", job.get("job_id", ""))).strip()
+                if job_id:
+                    _pdb.update_field(
+                        job_id,
+                        notion_page_id=notion_page_id,
+                        notion_synced=1,
+                    )
+            except Exception:
+                pass
+        # ─────────────────────────────────────────────────────────────────────
         return True
     else:
         status = resp.status_code if resp else "NO_RESPONSE"

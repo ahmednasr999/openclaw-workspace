@@ -77,8 +77,26 @@ Every bullet: **Action Verb + Value/What + Result/Metric**
 
 ---
 
-**Task Board Rule:** See AGENTS.md (single source of truth).
-**Model Strategy:** See TOOLS.md (single source of truth).
+## Task Board Rule (Non-Negotiable)
+
+**Every task MUST be logged to the Mission Control Task Board BEFORE work starts.**
+- No exceptions. No model exceptions. Applies to ALL models, ALL agents, ALL sessions.
+- Use `POST http://localhost:3001/api/tasks/agent` with agent name, title, description
+- Status starts as "In Progress", update to "QA" or "Completed" when done
+- This includes: sub-agent spawns, cron jobs, manual work, code changes, research, content
+- If it's work, it's on the board. Period.
+
+---
+
+## Model Strategy
+
+| Task | Model | Notes |
+|------|-------|-------|
+| Default / daily | MiniMax-M2.1 | Free tier |
+| Background / cron | MiniMax-M2.1 | Free tier |
+| CV creation/review | Claude Opus 4.5 | Requires approval |
+
+**Rule:** Always ask before switching to paid models. Notify after any switch.
 
 ---
 
@@ -147,94 +165,11 @@ Format:
 
 ---
 
-## Context Tiering
-
-**See CONTEXT-TIERS.md for full documentation.**
-
-Brief summary: Use tiered context loading to reduce token usage:
-- **L0** (always): IDENTITY.md, USER.md, SOUL.md, HEARTBEAT.md (if non-empty)
-- **L1** (task-triggered): AGENTS.md, TOOLS.md, SKILL.md, coordination/*.json
-- **L2** (on-demand): memory/master-cv-data.md, memory/daily-*.md, memory/ats-best-practices.md
-
-Don't load all files every session. Load only what's needed for the task.
-
----
-
-## Context Audit Trail
-
-**Purpose:** Debug sub-agent behavior by tracking what context/files/skills were loaded.
-
-**Location:** `memory/context-traces/`
-
-**When to use:**
-- After spawning a sub-agent for CV creation, content posting, or research tasks
-- When debugging unexpected agent behavior
-- Review traces to understand what context influenced the agent's output
-
-See `memory/context-traces/README.md` for full system details.
-
----
-
-## Auto Lessons Learned
-
-**Lightweight automatic lesson capture — runs daily at 11 PM Cairo.**
-
-The old self-improvement skill was disabled because it injected 12x per session, wasting tokens. This new system runs once per day instead.
-
-### How It Works
-
-1. **Cron job** (`scripts/auto-lessons-learned.py`) runs at 11 PM Cairo daily
-2. **Scans** all sessions from `~/.openclaw/agents/main/sessions/`
-3. **Filters** trivial sessions (< 5 user exchanges)
-4. **Extracts** lessons via LLM:
-   - Corrections made by user
-   - Errors encountered
-   - Preferences learned
-   - Better approaches discovered
-   - Missed opportunities
-5. **Appends** to `memory/lessons-learned.md`
-
-### Format
-
-```markdown
-## [Date]
-
-### Category
-- What happened → What to do differently
-```
-
-Categories: `correction`, `error`, `preference`, `improvement`, `missed_opportunity`
-
-### Files
-
-- **Script:** `scripts/auto-lessons-learned.py`
-- **Skill:** `skills/cron/auto-lessons/SKILL.md`
-- **Log:** `memory/lessons-learned.md`
-
-### Manual Run
-
-```bash
-python scripts/auto-lessons-learned.py --all  # Process today's sessions
-python scripts/auto-lessons-learned.py       # Latest session only
-python scripts/auto-lessons-learned.py --dry-run  # Preview
-```
-
-### Coexists with Manual Capture
-
-- **Manual:** User says "remember this" → log immediately to daily notes
-- **Auto:** Captures session-wide patterns at end of day
-- Both feed into `memory/lessons-learned.md`
-
----
-
 ## Preferences
 
 - **Timezone:** Cairo (Africa/Cairo, UTC+2)
 - **Relocation:** Open to relocating to Jeddah, Saudi Arabia (confirmed Feb 18, 2026)
 - **LinkedIn posts:** Always end with question/CTA for engagement
-- **LinkedIn posting:** See TOOLS.md "LinkedIn Posting" section for full technical details.
-- **LinkedIn daily post:** Auto-post allowed (9:30 AM cron, no approval needed)
-- **LinkedIn comments:** NEVER post without Ahmed's explicit approval. Always draft and present for review first. No exceptions.
 - **Backups:** Keep last 7, daily at 3 AM Cairo
 - **Gmail check:** Daily at 8 AM Cairo
 - **Formatting:** Never use em dashes (—) anywhere. Use hyphens (-) or commas instead.

@@ -23,6 +23,20 @@ import json, os, sys, re, subprocess
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
+# Pipeline DB (safe fallback)
+try:
+    sys.path.insert(0, str(Path(__file__).parent))
+    import pipeline_db as _pdb
+except ImportError:
+    _pdb = None
+
+# Pipeline DB (safe fallback)
+try:
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import pipeline_db as _pdb
+except ImportError:
+    _pdb = None
+
 WORKSPACE = Path("/root/.openclaw/workspace")
 SCRIPTS = WORKSPACE / "scripts"
 DATA_DIR = WORKSPACE / "data"
@@ -274,6 +288,44 @@ def check_orphans():
 
 
 # ── MAIN ──
+def check_pipeline_db_health():
+    """Check pipeline DB integrity and add findings."""
+    db_path = WORKSPACE / "data" / "nasr-pipeline.db"
+    if not db_path.exists():
+        finding("WARNING", "pipeline_db", "nasr-pipeline.db", "DB file does not exist — run migrate_to_db.py")
+        return
+    if not _pdb:
+        finding("WARNING", "pipeline_db", "pipeline_db.py", "pipeline_db module not importable")
+        return
+    try:
+        stats = _pdb.get_db_stats()
+        if stats.get("error"):
+            finding("CRITICAL", "pipeline_db", "nasr-pipeline.db", f"DB error: {stats['error'][:80]}")
+            return
+        jobs = stats.get("jobs_count", 0)
+        if jobs == 0:
+            finding("WARNING", "pipeline_db", "nasr-pipeline.db", "DB has 0 jobs — migration may not have run")
+            return
+        # Check for duplicate job_ids
+        import sqlite3
+        conn = sqlite3.connect(str(db_path))
+        dupes = conn.execute(
+            "SELECT job_id, COUNT(*) as n FROM jobs GROUP BY job_id HAVING n > 1"
+        ).fetchall()
+        conn.close()
+        if dupes:
+            finding("WARNING", "pipeline_db", "nasr-pipeline.db",
+                    f"{len(dupes)} duplicate job_ids found")
+        # Funnel sanity
+        funnel = _pdb.get_funnel()
+        applied = funnel.get("applied", 0)
+        if applied < 10:
+            finding("INFO", "pipeline_db", "nasr-pipeline.db",
+                    f"Only {applied} applied jobs in DB — check migration")
+    except Exception as e:
+        finding("WARNING", "pipeline_db", "nasr-pipeline.db", str(e)[:80])
+
+
 def run_audit():
     print("🔍 Running weekly pipeline audit...")
     
@@ -284,6 +336,7 @@ def run_audit():
     check_error_handling()
     check_timeouts()
     check_orphans()
+    check_pipeline_db_health()
     
     # Score
     critical = sum(1 for f in findings if f["severity"] == "CRITICAL")
@@ -337,6 +390,27 @@ def save_history(audit):
     
     with open(HISTORY_FILE, "w") as f:
         json.dump(history, f, indent=2)
+
+
+def get_db_metrics() -> dict:
+    """Get pipeline metrics from SQLite DB for the weekly audit."""
+    if not _pdb:
+        return {}
+    try:
+        funnel = _pdb.get_funnel()
+        stale = _pdb.get_stale(days=7)
+        stats = _pdb.get_db_stats()
+        conversion = _pdb.funnel_conversion()
+        gaps = _pdb.keyword_gaps()
+        return {
+            "funnel": funnel,
+            "stale_count": len(stale),
+            "db_stats": stats,
+            "conversion": conversion,
+            "top_gaps": [g["keyword"] for g in gaps[:5]],
+        }
+    except Exception:
+        return {}
 
 
 def format_telegram(audit):
@@ -395,6 +469,22 @@ if __name__ == "__main__":
         icon = {"CRITICAL": "🔴", "WARNING": "⚠️", "INFO": "ℹ️"}[f["severity"]]
         print(f"  {icon} [{f['category']}] {f['script']}: {f['message']}")
     
+    # ── DB metrics addition to audit ─────────────────────────────────────────
+    db_metrics = get_db_metrics()
+    if db_metrics:
+        print("\nDB Metrics:")
+        funnel = db_metrics.get("funnel", {})
+        print(f"  Total jobs in DB: {funnel.get('_total', 0)}")
+        print(f"  Applied: {funnel.get('applied', 0)} | Stale (7d): {db_metrics.get('stale_count', 0)}")
+        conversion = db_metrics.get("conversion", {})
+        if conversion:
+            print(f"  CV→Applied: {conversion.get('cv_to_applied', 0)}%")
+            print(f"  Applied→Response: {conversion.get('applied_to_response', 0)}%")
+        gaps = db_metrics.get("top_gaps", [])
+        if gaps:
+            print(f"  Keyword gaps: {', '.join(gaps)}")
+    # ─────────────────────────────────────────────────────────────────────────
+
     msg = format_telegram(audit)
     print(f"\nTelegram ({len(msg)} chars):\n{msg}")
     

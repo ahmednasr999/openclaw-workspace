@@ -14,10 +14,18 @@ Brief Me Runner - Executes the morning briefing by reading all data files
 and generating the Notion page + Telegram message.
 """
 import os
+import sys
 import json, re, requests
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from email.header import decode_header
+
+# Pipeline DB (safe fallback)
+try:
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import pipeline_db as _pdb
+except ImportError:
+    _pdb = None
 
 WORKSPACE = Path("/root/.openclaw/workspace")
 DATA_DIR = WORKSPACE / "data"
@@ -77,6 +85,12 @@ _sys.path.insert(0, str(Path(__file__).parent))
 from importlib import import_module as _import
 _adapters = _import("briefing-adapters")
 
+# Pipeline DB (safe fallback)
+try:
+    import pipeline_db as _pdb
+except ImportError:
+    _pdb = None
+
 def load_data():
     raw = {}
     sources = {
@@ -111,7 +125,29 @@ def create_briefing():
     outreach = _adapters.adapt_outreach(data["outreach"])
     email = _adapters.adapt_email(data["email"])
     raw_email = data["email"].get("data", {})
-    
+
+    # ── DB-sourced sections (supplements pipeline data) ───────────────────────
+    db_funnel = {}
+    db_stale_count = 0
+    db_total = 0
+    if _pdb:
+        try:
+            db_funnel = _pdb.get_funnel()
+            db_stale = _pdb.get_stale(days=7)
+            db_stale_count = len(db_stale)
+            db_total = db_funnel.get("_total", 0)
+            # Supplement pipeline stale data if DB has more
+            if db_stale_count > len(pipe.get("stale_applications", [])):
+                pipe["stale_applications"] = [
+                    {"company": s.get("company"), "title": s.get("title"),
+                     "applied_date": s.get("applied_date")}
+                    for s in db_stale[:10]
+                ]
+                pipe["db_stale_count"] = db_stale_count
+        except Exception:
+            pass  # DB read failed, continue with JSON data
+    # ─────────────────────────────────────────────────────────────────────────
+
     # Cap jobs to stay under Notion's 100-block limit
     submit_jobs = jobs.get("submit", [])
     review_jobs = jobs.get("review", [])
@@ -449,6 +485,13 @@ def create_briefing():
         else:
             source_health.append(f"❌ {src_name}: file missing")
     
+    # ── DB-sourced sections (stale, funnel, keyword gaps) ────────────────────
+    db_blocks = get_db_briefing_sections()
+    if db_blocks:
+        blocks.append(div())
+        blocks.extend(db_blocks)
+    # ─────────────────────────────────────────────────────────────────────────
+
     # Check for pipeline failures
     failures_path = Path(WORKSPACE) / "data" / "source-failures.jsonl"
     failed_agents = []
@@ -537,6 +580,55 @@ def create_briefing():
     else:
         print(f"❌ Error {resp.status_code}: {resp.text[:300]}")
         return None
+
+def get_db_briefing_sections() -> list:
+    """
+    Return Notion blocks sourced from the pipeline DB.
+    DB-sourced: stale applications, funnel summary, keyword gaps.
+    Returns empty list if DB unavailable (graceful fallback).
+    """
+    if not _pdb:
+        return []
+    try:
+        blocks = []
+        funnel = _pdb.get_funnel()
+        stale = _pdb.get_stale(days=7)
+        gaps = _pdb.keyword_gaps()
+
+        if funnel and funnel.get("_total", 0) > 0:
+            total = funnel.get("_total", 0)
+            applied_n = funnel.get("applied", 0)
+            scored_n = funnel.get("scored", 0)
+            cv_n = funnel.get("cv_built", 0)
+            blocks.append(h2("📊 Pipeline Funnel (DB)"))
+            blocks.append(bul(plain(
+                f"Total: {total} | Applied: {applied_n} | CV Built: {cv_n} | "
+                f"Scored: {scored_n} | Interview: {funnel.get('interview', 0)} | "
+                f"Offer: {funnel.get('offer', 0)}"
+            )))
+
+        if stale:
+            blocks.append(h3(f"⚠️ Stale Applications ({len(stale)}) — No Response in 7+ Days"))
+            for j in stale[:5]:
+                days_since = ""
+                if j.get("applied_date"):
+                    try:
+                        from datetime import date
+                        ad = date.fromisoformat(j["applied_date"])
+                        days_since = f" — {(date.today() - ad).days}d"
+                    except Exception:
+                        pass
+                blocks.append(bul(plain(f"{j['company']} | {j['title'][:50]}{days_since}")))
+
+        if gaps and len(gaps) >= 3:
+            top_gaps = [g["keyword"] for g in gaps[:8]]
+            blocks.append(h3("🔑 Keyword Gaps (in JDs, not in your CV)"))
+            blocks.append(bul(plain(", ".join(top_gaps))))
+
+        return blocks
+    except Exception as _e:
+        return []
+
 
 if __name__ == "__main__":
     create_briefing()

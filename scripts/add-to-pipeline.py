@@ -15,9 +15,17 @@ Usage:
 """
 import json
 import os
-import argparse, requests, json, re, sys
+import sys
+import argparse, requests, re
 from datetime import datetime
 from pathlib import Path
+
+# Pipeline DB (safe fallback)
+try:
+    sys.path.insert(0, os.path.dirname(__file__))
+    import pipeline_db as _pdb
+except ImportError:
+    _pdb = None
 
 WORKSPACE = Path("/root/.openclaw/workspace")
 NOTION_TOKEN = json.load(open(os.path.expanduser("~/.openclaw/workspace/config/notion.json")))["token"]
@@ -213,6 +221,30 @@ def main():
     
     # Record outcome for feedback loop
     record_outcome(args.company, args.role, args.url, args.verdict or "SUBMIT", args.ats_score)
+
+    # ── DB write (dual-write, non-blocking) ──────────────────────────────────
+    if _pdb:
+        try:
+            db_job_id = job_id or ""
+            if not db_job_id:
+                import hashlib
+                db_job_id = f"manual-{hashlib.md5(f'{args.company}|{args.role}|{args.url}'.encode()).hexdigest()[:10]}"
+            _pdb.register_job(
+                source=args.source.lower() if args.source else "manual",
+                job_id=db_job_id,
+                company=args.company,
+                title=args.role,
+                location=args.location or None,
+                url=args.url or None,
+                ats_score=args.ats_score,
+                verdict=args.verdict,
+                status="applied",
+            )
+            _pdb.mark_applied(db_job_id, applied_date=datetime.now().strftime("%Y-%m-%d"))
+            print(f"  DB: registered {db_job_id}")
+        except Exception as _e:
+            print(f"  DB write failed (non-fatal): {_e}")
+    # ─────────────────────────────────────────────────────────────────────────
 
 
 if __name__ == "__main__":
