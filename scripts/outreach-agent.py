@@ -17,10 +17,18 @@ managers at those companies via Tavily, outputs 3-5 profiles daily.
 Output: data/outreach-suggestions.json
 """
 import os
-import json, re, ssl, os, time, hashlib
+import sys
+import json, re, ssl, time, hashlib
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from urllib.request import Request, urlopen
+
+# Pipeline DB (safe fallback)
+try:
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import pipeline_db as _pdb
+except ImportError:
+    _pdb = None
 
 WORKSPACE = Path("/root/.openclaw/workspace")
 DATA_DIR = WORKSPACE / "data"
@@ -440,6 +448,29 @@ def run_outreach():
 
     json.dump(output, open(OUTPUT, "w"), indent=2)
     print(f"\n=== Done: {len(suggestions)} connection suggestions saved ===")
+
+    # ── DB write (dual-write, non-blocking) ──────────────────────────────────
+    if _pdb and suggestions:
+        try:
+            for s in suggestions:
+                company = s.get("company", "")
+                if not company:
+                    continue
+                jobs = _pdb.get_by_company(company)
+                job_db_id = jobs[0]["job_id"] if jobs else None
+                if job_db_id:
+                    _pdb.log_interaction(
+                        job_id=job_db_id,
+                        type="linkedin_message",
+                        summary=f"Outreach suggested: {s.get('name', '?')} ({s.get('role', '?')}) at {company}",
+                        from_name=s.get("name"),
+                        channel="linkedin",
+                        notes=s.get("message", "")[:300] if s.get("message") else None,
+                    )
+            print(f"  DB: logged {len(suggestions)} outreach interactions")
+        except Exception as _e:
+            print(f"  DB write failed (non-fatal): {_e}")
+    # ─────────────────────────────────────────────────────────────────────────
 
 
 def mark_status(url_or_name, status):

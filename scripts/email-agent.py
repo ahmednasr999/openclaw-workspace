@@ -84,10 +84,18 @@ import email
 from email.header import decode_header
 import re
 import sys
+import os
 import json as json_module
 import requests as req
 from pathlib import Path
 from datetime import datetime, timedelta
+
+# Pipeline DB (safe fallback)
+try:
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import pipeline_db as _pdb
+except ImportError:
+    _pdb = None
 
 sys.path.insert(0, str(Path(__file__).parent))
 from importlib import import_module
@@ -354,6 +362,24 @@ def update_pipeline_from_emails(categorized):
             
             updates.append({"company": company, "action": "rejected", "email": subject[:60]})
             print(f"    📧→❌ Rejection detected: {company}")
+            # ── DB write (dual-write, non-blocking) ──────────────────────────
+            if _pdb:
+                try:
+                    # Find job_id by company name
+                    jobs = _pdb.get_by_company(company) if company else []
+                    job_db_id = jobs[0]["job_id"] if jobs else None
+                    if job_db_id:
+                        _pdb.update_status(job_db_id, "rejected")
+                        _pdb.log_interaction(
+                            job_id=job_db_id,
+                            type="email_inbound",
+                            summary=f"Rejection email: {subject[:150]}",
+                            from_email=from_addr,
+                            channel="gmail",
+                        )
+                except Exception:
+                    pass
+            # ─────────────────────────────────────────────────────────────────
     
     # Process interview invites
     for email_item in categorized.get("interview_invite", []):
@@ -392,6 +418,24 @@ def update_pipeline_from_emails(categorized):
             
             updates.append({"company": company, "action": "interview", "email": subject[:60]})
             print(f"    📧→📞 Interview detected: {company}")
+            # ── DB write (dual-write, non-blocking) ──────────────────────────
+            if _pdb:
+                try:
+                    jobs = _pdb.get_by_company(company) if company else []
+                    job_db_id = jobs[0]["job_id"] if jobs else None
+                    if job_db_id:
+                        _pdb.update_status(job_db_id, "interview")
+                        _pdb.log_interaction(
+                            job_id=job_db_id,
+                            type="email_inbound",
+                            summary=f"Interview invite: {subject[:150]}",
+                            from_email=from_addr,
+                            channel="gmail",
+                            next_action="Schedule interview / confirm availability",
+                        )
+                except Exception:
+                    pass
+            # ─────────────────────────────────────────────────────────────────
     
     return updates
 
