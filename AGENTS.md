@@ -14,6 +14,7 @@
 | **Research Agent** | Web research, company/news analysis | MiniMax-M2.7 | Search queries |
 | **Writer Agent** | LinkedIn posts, emails, copy | Sonnet 4.6 | Content requests |
 | **Scheduler Agent** | Cron jobs, reminders | MiniMax-M2.7 | Scheduling tasks |
+| **Content Agent** | LinkedIn content lifecycle: create, publish, engage, learn | Sonnet 4.6 (create/learn), M2.7 (publish/engage) | Friday batch, daily posting, on-demand radar |
 
 ## Task Board Rule (Non-Negotiable - ALL Models, ALL Agents)
 
