@@ -1,0 +1,137 @@
+@page {
+  size: A4;
+  margin: 0.8cm 1.2cm 0.8cm 1.2cm;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 8.2pt;
+  line-height: 1.28;
+  color: #1a1a1a;
+}
+
+h1 {
+  font-size: 14.5pt;
+  font-weight: 700;
+  color: #0d2b4e;
+  letter-spacing: 0.5px;
+  margin-bottom: 1.5pt;
+}
+
+h2 {
+  font-size: 7.8pt;
+  font-weight: 700;
+  color: #0d2b4e;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1.5px solid #0d2b4e;
+  padding-bottom: 1px;
+  margin-top: 4pt;
+  margin-bottom: 2pt;
+}
+
+h3 {
+  font-size: 8.5pt;
+  font-weight: 700;
+  color: #1a1a1a;
+  display: inline;
+}
+
+.contact {
+  font-size: 7.3pt;
+  color: #555;
+  margin-bottom: 3pt;
+  letter-spacing: 0.15px;
+}
+
+p {
+  font-size: 8.2pt;
+  color: #2a2a2a;
+  text-align: justify;
+  margin-bottom: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  font-size: 8pt;
+  color: #2a2a2a;
+  padding-left: 9pt;
+  position: relative;
+  margin-bottom: 1pt;
+  line-height: 1.28;
+}
+
+ul li::before {
+  content: "\2022";
+  position: absolute;
+  left: 0;
+  color: #0d2b4e;
+  font-weight: 700;
+}
+
+ul.competencies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+ul.competencies li {
+  display: inline-block;
+  width: 50%;
+  padding-left: 9pt;
+  font-size: 7.8pt;
+  color: #1a1a1a;
+  margin-bottom: 0.5pt;
+}
+
+ul.competencies li::before {
+  content: "\25AA";
+  font-size: 5pt;
+  top: 0.5pt;
+}
+
+.role-header {
+  margin-top: 3pt;
+  margin-bottom: 0.5pt;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 5pt;
+}
+
+.role-header h3 {
+  font-size: 8.5pt;
+  font-weight: 700;
+  color: #0d2b4e;
+}
+
+.period {
+  font-size: 7.3pt;
+  color: #666;
+  white-space: nowrap;
+  font-style: italic;
+}
+
+.company {
+  font-size: 7.5pt;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 1pt;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+ul li strong {
+  color: #1a1a1a;
+}

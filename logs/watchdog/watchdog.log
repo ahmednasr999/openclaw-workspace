@@ -268,3 +268,8 @@ Bind: loopback
 }
 [2026-03-23 20:00] === Watchdog v3 run ===
 [2026-03-23 20:00] WARN: active-tasks.md stale (50h)
+[2026-03-23 20:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-03-23 22:00] === Watchdog v3 run ===
+[2026-03-23 22:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-03-24 00:00] === Watchdog v3 run ===
+[2026-03-24 00:00] Summary: fixes=0 warnings=0 alerts=0

@@ -2,35 +2,46 @@
   "meta": {
     "agent": "pipeline-agent",
     "version": "1.0.0",
-    "generated_at": "2026-03-23T18:00:14.394842+02:00",
-    "duration_ms": 11895,
+    "generated_at": "2026-03-24T00:00:10.806090+02:00",
+    "duration_ms": 8921,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "154b1b27",
+    "run_id": "6e9e6b8a",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
-    "total_applications": 213,
-    "active_count": 92,
+    "total_applications": 316,
+    "active_count": 132,
     "external_applied_count": 115,
+    "db_total": 825,
+    "db_funnel": {
+      "discovered": 550,
+      "applied": 130,
+      "cv_built": 117,
+      "scored": 27,
+      "response": 1,
+      "_total": 825
+    },
     "by_status": {
-      "\u274c rejected": 1,
-      "\u2705 applied": 92,
+      "cv built": 69,
+      "\u2705 applied": 71,
+      "applied": 61,
       "\ud83d\udd0d discovered": 329,
-      "\ud83d\udccb recommended": 17,
-      "\ud83d\udccb scored": 103
+      "\ud83d\udccb recommended": 14,
+      "\ud83d\udccb scored": 100,
+      "response": 1
     },
     "this_week": {
-      "applied": 0,
+      "applied": 46,
       "start_date": "2026-03-23"
     },
     "stale_applications": [],
     "interviews_upcoming": [],
     "follow_ups_overdue": [],
     "conversion_funnel": {
-      "applied": 92,
+      "applied": 132,
       "screening": 0,
       "interview": 0,
       "offer": 0,
@@ -42,21 +53,12 @@
     }
   },
   "kpi": {
-    "total_tracked": 213,
-    "active_rate": 43.2,
-    "avg_days_in_pipeline": 4.2,
+    "total_tracked": 316,
+    "active_rate": 41.8,
+    "avg_days_in_pipeline": 3.1,
     "follow_ups_overdue": 0,
     "interviews_this_week": 0,
     "stale_count": 0
   },
-  "recommendations": [
-    {
-      "id": "rec-154b1b27-0",
-      "action": "apply_more",
-      "target": "Job applications",
-      "reason": "Only 0 applications this week, aim for 10+",
-      "urgency": "medium",
-      "timestamp": "2026-03-23T18:00:14.376334+02:00"
-    }
-  ]
+  "recommendations": []
 }
