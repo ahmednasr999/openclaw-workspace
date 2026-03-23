@@ -131,6 +131,62 @@ Repurposing candidates: [list or "none"]
 Recommendation: [one specific change for next week]
 ```
 
+## Reaction Tracking (Automated)
+
+### Register a Post After Publishing
+
+Immediately after posting to LinkedIn, register it for reaction tracking:
+
+```bash
+python3 scripts/linkedin-reaction-tracker.py --register <activity_urn> "<Post Title>" <post_url>
+```
+
+Example:
+```bash
+python3 scripts/linkedin-reaction-tracker.py \
+  --register urn:li:activity:7441769497348317184 \
+  "Stakeholder Mapping - $50M Transformation" \
+  https://www.linkedin.com/posts/ahmednasr_pmo-stakeholdermanagement-digitaltransformation-activity-7441769497348317184-4Fko
+```
+
+Activity URN format: `urn:li:activity:<numeric_id>` — visible in post URL as `activity-<id>`.
+
+### Reaction Check Cron (Every 6 Hours)
+
+A cron job runs `--due` to find posts needing checks at the 1hr, 24hr, 48hr, and 7d marks.
+
+**Cron workflow:**
+1. Run `python3 scripts/linkedin-reaction-tracker.py --due` to get list of URNs
+2. For each URN, call `LINKEDIN_LIST_REACTIONS` via Composio with `activityUrn: <urn>`
+3. Pipe the result to `--check`:
+   ```bash
+   echo '<composio_json_output>' | python3 scripts/linkedin-reaction-tracker.py --check <urn>
+   ```
+4. Snapshots saved to `data/linkedin-engagement/<activity_id>.json`
+
+### Weekly LEARN Review Integration
+
+**In Step 1 (Fetch Performance Data)**, run:
+```bash
+python3 scripts/linkedin-reaction-tracker.py --report
+```
+
+Feed the output into the performance analysis alongside manual data.
+The report shows: reactions per post, reaction type breakdown, top performers.
+
+**In Step 2 (Update Performance Database)**, merge reaction data from
+`data/linkedin-engagement/` into `references/content-performance.json`.
+
+Match posts by title/date. Update:
+- `"reactions"`: use latest snapshot's `reaction_count`
+- `"reaction_breakdown"`: use latest snapshot's `reaction_types`
+
+### Data Files
+- Registry: `data/linkedin-posts.json` — all registered posts with URNs
+- Snapshots: `data/linkedin-engagement/<activity_id>.json` — per-post reaction history
+
+---
+
 ## Rolling Memory
 
 The performance database is cumulative. Never delete old entries. The learning system becomes more valuable over time as patterns emerge across 50, 100, 200+ posts.
