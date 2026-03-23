@@ -1,38 +1,22 @@
 {
   "activity_id": "7441769497348317184",
+  "activity_urn": "urn:li:activity:7441769497348317184",
+  "title": "Stakeholder Mapping - $50M Transformation",
   "snapshots": [
     {
-      "checked_at": "2026-03-23T09:42:49.390619+00:00",
-      "reaction_count": 4,
+      "checked_at": "2026-03-23T09:34:00+00:00",
+      "interval": "1hr",
+      "reaction_count": 1,
       "reaction_types": {
-        "LIKE": 2,
-        "CELEBRATE": 1,
-        "INSIGHTFUL": 1
+        "LIKE": 1
       },
       "reactions": [
         {
-          "actor": "urn:li:person:abc123",
+          "actor": "urn:li:person:Typ0pPzK6K",
           "type": "LIKE",
-          "time": "2025-03-23T08:53:20+00:00"
-        },
-        {
-          "actor": "urn:li:person:def456",
-          "type": "INSIGHTFUL",
-          "time": "2025-03-23T09:10:00+00:00"
-        },
-        {
-          "actor": "urn:li:person:ghi789",
-          "type": "CELEBRATE",
-          "time": "2025-03-23T09:26:40+00:00"
-        },
-        {
-          "actor": "urn:li:person:jkl012",
-          "type": "LIKE",
-          "time": "2025-03-23T09:43:20+00:00"
+          "time": 1774256566126
         }
       ]
     }
-  ],
-  "activity_urn": "urn:li:activity:7441769497348317184",
-  "title": "Stakeholder Mapping - $50M Transformation"
+  ]
 }

@@ -76,3 +76,9 @@ Send: "LinkedIn Daily Post - [date]: POSTED\nTitle: ...\nURL: ...\nImage: yes/no
 - If post creation fails: try up to 3 times. Report what failed.
 - NEVER post text-only when image exists. That is FAILURE.
 - March 19 lesson: text-only post lost all engagement. Image is mandatory.
+
+## ⚠️ COMPOSIO LINKEDIN POSTING IS BROKEN (2026-03-23)
+**DO NOT USE** `LINKEDIN_CREATE_LINKED_IN_POST` via Composio for posts over 950 characters.
+Composio silently truncates commentary at ~950 chars despite schema saying 3000.
+**Use instead:** `scripts/linkedin-direct-post.py` (requires valid LinkedIn cookies in Camofox browser)
+**Fallback:** Alert Ahmed to post manually via Telegram with ready-to-copy text + image file.

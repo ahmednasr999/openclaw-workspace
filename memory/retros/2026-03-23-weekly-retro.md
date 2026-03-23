@@ -1,57 +1,52 @@
 # Weekly Team Retro
 
 **Period:** 2026-03-16 to 2026-03-23
-**Generated:** 2026-03-23 06:00 Cairo
+**Generated:** 2026-03-23 18:03 Cairo
 
 ## Summary
 
 | Metric | Value |
 |--------|-------|
-| Total Runs | 235 |
-| Successes | 224 |
-| Failures | 11 |
-| Overall Success Rate | 95.3% |
+| Total Runs | 272 |
+| Successes | 256 |
+| Failures | 16 |
+| Overall Success Rate | 94.1% |
 | Active Agents | 12 |
 
 ## Agent Performance
 
 | Agent | Runs | Success Rate | Avg Duration | Avg Records |
 |-------|------|--------------|--------------|-------------|
-| pipeline-agent | 40 | ✅ 100.0% | 9.6s | 9.0 |
-| email-agent | 34 | ❌ 70.6% | 24.1s | 10.4 |
-| content-agent | 33 | ✅ 100.0% | 1.1s | 7.0 |
-| system-agent | 32 | ✅ 100.0% | 12.1s | 6.0 |
-| jobs-review | 21 | ✅ 100.0% | 160.5s | 9.0 |
-| jobs-merge | 20 | ✅ 95.0% | 14.7s | 162.5 |
-| jobs-source-indeed | 16 | ✅ 100.0% | 71.0s | 2.8 |
-| jobs-source-linkedin | 15 | ✅ 100.0% | 167.6s | 465.0 |
+| pipeline-agent | 45 | ✅ 100.0% | 9.8s | 9.0 |
+| email-agent | 39 | ❌ 61.5% | 27.7s | 10.5 |
+| content-agent | 38 | ✅ 100.0% | 1.2s | 7.0 |
+| system-agent | 36 | ✅ 100.0% | 12.5s | 6.0 |
+| jobs-review | 26 | ✅ 100.0% | 180.4s | 9.0 |
+| jobs-merge | 24 | ✅ 95.8% | 13.9s | 161.3 |
+| jobs-source-indeed | 20 | ✅ 100.0% | 72.9s | 2.6 |
+| jobs-source-linkedin | 19 | ✅ 100.0% | 201.9s | 466.3 |
 | outreach-agent | 11 | ✅ 100.0% | 10ms | 8.0 |
+| jobs-source-google | 7 | ✅ 100.0% | 24.1s | 1.6 |
 | daily-learner | 6 | ✅ 100.0% | 6ms | 6.0 |
-| jobs-source-google | 6 | ✅ 100.0% | 24.7s | 1.7 |
 | jobs-source-bayt | 1 | ✅ 100.0% | 72.7s | 0.0 |
 
 ## Top Performers
 
-**Most Reliable:** pipeline-agent (100.0% success rate across 40 runs)
+**Most Reliable:** pipeline-agent (100.0% success rate across 45 runs)
 **Fastest:** daily-learner (avg 6ms)
-**Most Productive:** jobs-source-linkedin (avg 465.0 records/run)
+**Most Productive:** jobs-source-linkedin (avg 466.3 records/run)
 
 ## Failure Patterns
 
-**email-agent** (10 failures):
+**email-agent** (15 failures):
+  - name 'datetime' is not defined...
+  - Himalaya list failed: [2m2026-03-21T16:00:20.413404Z[0m [33m WARN[0m [2mimap_codec::response[0...
   - Himalaya list failed: [2m2026-03-21T18:00:20.301944Z[0m [33m WARN[0m [2mimap_codec::response[0...
-  - Himalaya list failed: [2m2026-03-21T20:00:18.470785Z[0m [33m WARN[0m [2mimap_codec::response[0...
-  - Himalaya list failed: [2m2026-03-21T22:00:19.121533Z[0m [33m WARN[0m [2mimap_codec::response[0...
 
 **jobs-merge** (1 failures):
   - 'list' object has no attribute 'get'...
 
 ## Lessons Learned This Period
-
-**2026-03-21:**
-- **What happened:** Asked Ahmed to connect Notion via Composio twice, despite workspace already having direct API token in `config/notion.json` and a working client in `scripts/notion_client.py`. Ahmed had told me this before in a prior session.
-- **Root cause:** Treated Composio "no active connection" as the final answer instead of checking workspace config files first. Took the easy "ask user" shortcut instead of exhausting available resources.
-- **Fix:** Created `config/service-registry.md` as single source of truth for all service connections. Updated AGENTS.md proactive checklist to make service registry check #1. Rule: NEVER ask user to authenticate before checking service-registry.md and config/ directory.
 
 **2026-03-22:**
 - Said 'X.com blocks scrapers, can't access' when Ahmed shared a tweet - but vxtwitter API worked fine
@@ -73,15 +68,20 @@
 - Auth storage: ~/.notebooklm/storage_state.json
 - Test: YouTube video analyzed successfully - 30s end-to-end
 
+**2026-03-23:**
+- **What happened:** Posted 5 LinkedIn comments using Camofox browser which was logged into "Nasr Nasr" (linkedin.com/in/nasr-nasr-1603163b4), NOT Ahmed Nasr's account. Comments were posted under the wrong person.
+- **Root cause:** Camofox cookies at ~/.openclaw/cookies/linkedin.txt are for Nasr's account, not Ahmed's. Failed to verify which account the browser was authenticated as before posting.
+- **Fix applied:**
+
 ## Growth Areas
 
 **Reliability improvements needed:**
-- email-agent: 70.6% success rate
+- email-agent: 61.5% success rate
 
 **Performance optimization candidates:**
-- jobs-review: avg 160.5s per run
-- jobs-source-indeed: avg 71.0s per run
-- jobs-source-linkedin: avg 167.6s per run
+- jobs-review: avg 180.4s per run
+- jobs-source-indeed: avg 72.9s per run
+- jobs-source-linkedin: avg 201.9s per run
 
 ## Recommendations
 
