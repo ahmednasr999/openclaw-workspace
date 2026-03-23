@@ -24,6 +24,17 @@ try:
 except ImportError:
     _pdb = None
 
+# ── Cluster definitions ──────────────────────────────────────────────────────
+CLUSTERS = {
+    "PMO & Program Management": ["pmo", "program manager", "project director", "project management", "project controls", "project execution", "program director", "project manager", "delivery manager", "delivery lead", "service delivery", "project excellence"],
+    "Digital Transformation & Strategy": ["transformation", "strategy", "strategic", "chief strategy", "business excellence", "innovation", "change management", "chief of staff"],
+    "CTO & Technology Leadership": ["cto", "chief technology", "head of engineering", "head of it", "director of it", "director of engineering", "it director", "vp technology", "director technology", "head of tech", "head of software", "head of solutions", "group cio", "enterprise architecture"],
+    "Data & AI Leadership": ["data", "analytics", "ai ", "artificial intelligence", "machine learning", "data science", "business intelligence", "head of data"],
+    "Product & E-Commerce": ["product", "e-commerce", "ecommerce", "head of product", "director of product", "product management"],
+    "FinTech & Financial Services": ["fintech", "financial", "banking", "payments", "credit", "fund", "treasury", "revenue operations"],
+    "Operations & COO": ["coo", "chief operating", "operations", "facilities", "supply chain", "logistics", "quality control"],
+}
+
 WORKSPACE   = "/root/.openclaw/workspace"
 HANDOFF_DIR = f"{WORKSPACE}/jobs-bank/handoff"
 CVS_DIR     = f"{WORKSPACE}/cvs"
@@ -303,6 +314,112 @@ def generate_pdf(html_body, company, role):
     return html_path, pdf_path
 
 
+def classify_job(title):
+    """Return the cluster name for a job title, or None if no match."""
+    if not title:
+        return None
+    title_lower = title.lower()
+    for cluster, keywords in CLUSTERS.items():
+        for kw in keywords:
+            if kw in title_lower:
+                return cluster
+    return None
+
+
+def find_cluster_template(cluster, company):
+    """
+    Query the DB for the most recent completed CV in the same cluster (different company).
+    Returns (html_body_content, source_description) or (None, None).
+    """
+    if not _pdb or not cluster:
+        return None, None
+    try:
+        import sqlite3
+        db_path = "/root/.openclaw/workspace/data/nasr-pipeline.db"
+        conn = sqlite3.connect(db_path)
+        conn.row_factory = sqlite3.Row
+        rows = conn.execute(
+            """SELECT company, title, cv_html_path, cv_built_at
+               FROM jobs
+               WHERE cv_cluster = ?
+                 AND cv_html_path IS NOT NULL
+                 AND cv_html_path != ''
+                 AND LOWER(company) != LOWER(?)
+               ORDER BY cv_built_at DESC
+               LIMIT 5""",
+            (cluster, company)
+        ).fetchall()
+        conn.close()
+
+        for row in rows:
+            html_path = row["cv_html_path"]
+            if html_path and os.path.exists(html_path):
+                with open(html_path) as f:
+                    full_html = f.read()
+                # Extract body content only
+                body_match = re.search(r'<body[^>]*>(.*?)</body>', full_html, re.DOTALL | re.IGNORECASE)
+                body_content = body_match.group(1).strip() if body_match else full_html
+                source_desc = f"{row['title']} @ {row['company']}"
+                log(f"  Cluster template found: {source_desc} ({html_path})")
+                return body_content, source_desc
+
+    except Exception as e:
+        log(f"  find_cluster_template error (non-fatal): {e}")
+
+    return None, None
+
+
+def adapt_cv(template_html, master_cv, pending_updates, job_data):
+    """
+    Lighter Opus call: adapt an existing cluster-matched CV template for a new role.
+    Uses ~40% of the tokens vs a full tailor_cv() build.
+    """
+    log(f"  Calling Opus 4.6 for CV ADAPTATION (cluster reuse)...")
+
+    prompt = f"""You are an expert executive CV writer. Below is an existing CV (HTML body) built for a similar role. Adapt it for the new job below.
+
+## NEW JOB
+Company: {job_data.get('company', 'Unknown')}
+Role: {job_data.get('title', 'Unknown')}
+Location: {job_data.get('location', 'GCC')}
+
+{job_data.get('jd', 'No JD available')[:3000]}
+
+## EXISTING CV TEMPLATE (same cluster, similar role)
+{template_html[:6000]}
+
+## MASTER CV DATA (authoritative — never fabricate beyond this)
+{master_cv[:3000]}
+
+## PENDING UPDATES
+{pending_updates if pending_updates else 'None'}
+
+## TASK
+Adapt the existing CV template for the new role. Keep the HTML structure and layout intact. Make targeted changes:
+1. Update the Executive Summary for this specific role/company.
+2. Reorder bullet points within each job to lead with the most JD-relevant achievements.
+3. Update Core Competencies to match this JD's key terms.
+4. Do NOT change dates, job titles, company names, or metrics (unless instructed by pending updates).
+
+## OUTPUT REQUIREMENTS
+Output ONLY the HTML body content (between <body> and </body>). No <html>, <head>, <style>, or <body> tags.
+
+## HARD RULES
+- NEVER use em dashes. Use commas, periods, or colons.
+- NEVER fabricate metrics or roles not in master CV data.
+- Keep to 2 pages max.
+
+Output ONLY raw HTML. No markdown, no explanation, no ```html blocks."""
+
+    html_body = call_opus(prompt, max_tokens=5000)
+
+    # Clean up
+    html_body = html_body.replace("```html", "").replace("```", "").strip()
+    html_body = html_body.replace("\u2014", ",").replace("\u2013", ",")
+
+    return html_body
+
+
 def ats_score_check(jd_text, master_cv):
     """Quick ATS scoring via keyword matching (no LLM needed)."""
     jd_lower = jd_text.lower()
@@ -363,14 +480,35 @@ def process_trigger(trigger_path, master_cv, pending_updates, dry_run=False):
         log(f"  SKIP: ATS too low ({ats}%)")
         return None
 
+    # Classify job into cluster
+    cluster = classify_job(role)
+    if cluster:
+        log(f"  Cluster: {cluster}")
+    else:
+        log(f"  Cluster: none (will build from scratch)")
+
     if dry_run:
         log(f"  DRY RUN: Would tailor CV for {role} @ {company}")
-        return {"company": company, "role": role, "status": "dry_run", "ats_estimate": ats}
+        return {"company": company, "role": role, "status": "dry_run", "ats_estimate": ats, "cluster": cluster}
 
-    # Tailor CV via Opus 4.6
+    # Attempt cluster reuse: find a template CV from same cluster
+    template_html = None
+    template_source = None
+    build_path = "NEW"
+
+    if cluster:
+        template_html, template_source = find_cluster_template(cluster, company)
+
+    # Tailor CV via Opus 4.6 — reuse path or full build
     try:
-        html_body = tailor_cv(master_cv, pending_updates, data)
-        log(f"  CV body: {len(html_body)} chars")
+        if template_html:
+            log(f"  REUSE: adapting {template_source}")
+            build_path = f"REUSE ({template_source})"
+            html_body = adapt_cv(template_html, master_cv, pending_updates, data)
+        else:
+            log(f"  NEW: building from scratch")
+            html_body = tailor_cv(master_cv, pending_updates, data)
+        log(f"  CV body: {len(html_body)} chars [{build_path}]")
     except Exception as e:
         log(f"  ERROR calling Opus: {e}")
         return None
@@ -398,7 +536,10 @@ def process_trigger(trigger_path, master_cv, pending_updates, dry_run=False):
         "html_path": html_path,
         "ats_estimate": ats,
         "status": "built",
-        "github_link": github_link
+        "github_link": github_link,
+        "cluster": cluster,
+        "build_path": build_path,
+        "trigger": data,
     }
 
 
@@ -467,8 +608,9 @@ def main():
                     import hashlib
                     job_id = f"cv-{hashlib.md5(f'{company}|{title}'.encode()).hexdigest()[:10]}"
 
+                cluster = r.get("cluster", None)
                 if job_id and cv_path:
-                    _pdb.attach_cv(job_id=job_id, cv_path=cv_path, cv_html_path=html_path or None)
+                    _pdb.attach_cv(job_id=job_id, cv_path=cv_path, cv_html_path=html_path or None, cluster=cluster)
                     db_count += 1
 
             log(f"  DB: {db_count} CVs linked")
