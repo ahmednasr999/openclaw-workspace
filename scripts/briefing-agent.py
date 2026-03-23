@@ -113,8 +113,8 @@ def create_briefing():
     raw_email = data["email"].get("data", {})
     
     # Cap jobs to stay under Notion's 100-block limit
-    submit_jobs = jobs.get("submit", [])[:8]
-    review_jobs = jobs.get("review", [])[:8]
+    submit_jobs = jobs.get("submit", [])
+    review_jobs = jobs.get("review", [])
     active = pipe.get("active_count", 0)
     health = content.get("content_health", {})
     pipeline_c = content.get("pipeline", {})
