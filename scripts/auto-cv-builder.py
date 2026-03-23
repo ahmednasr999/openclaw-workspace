@@ -91,7 +91,16 @@ HTML_TEMPLATE = """<!DOCTYPE html>
   .edu-title {{ font-weight: bold; font-size: 10.5pt; }}
   .edu-detail {{ font-size: 9.5pt; color: #444; }}
   .certs {{ font-size: 10pt; }}
-  @media print {{ body {{ padding: 15mm; }} }}
+  @page {{
+    margin: 15mm 18mm 16mm 18mm;
+    @top-left {{ content: none; }}
+    @top-center {{ content: none; }}
+    @top-right {{ content: none; }}
+    @bottom-left {{ content: none; }}
+    @bottom-center {{ content: none; }}
+    @bottom-right {{ content: none; }}
+  }}
+  @media print {{ body {{ padding: 0; }} }}
 </style>
 </head>
 <body>
