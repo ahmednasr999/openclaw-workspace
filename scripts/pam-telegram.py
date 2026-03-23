@@ -204,7 +204,7 @@ def send_via_openclaw(text):
     try:
         result = subprocess.run(
             ["openclaw", "message", "send", "--channel", "telegram",
-             "--to", CHAT_ID, "--message", text],
+             "-t", CHAT_ID, "--message", text],
             capture_output=True, text=True, timeout=15
         )
         if result.returncode == 0:

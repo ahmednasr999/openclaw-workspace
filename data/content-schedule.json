@@ -2,17 +2,17 @@
   "meta": {
     "agent": "content-agent",
     "version": "1.0.0",
-    "generated_at": "2026-03-23T04:00:03.501210+02:00",
-    "duration_ms": 878,
+    "generated_at": "2026-03-23T06:14:28.296897+02:00",
+    "duration_ms": 823,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "2065b26f",
+    "run_id": "22158723",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
-    "scan_time": "2026-03-23T04:00:03.498861+02:00",
+    "scan_time": "2026-03-23T06:14:28.288513+02:00",
     "today": {
       "date": "2026-03-23",
       "scheduled": [
@@ -93,12 +93,12 @@
   },
   "recommendations": [
     {
-      "id": "rec-2065b26f-0",
+      "id": "rec-22158723-0",
       "action": "post_today",
       "target": "Posting streak",
       "reason": "No active posting streak - post today to start one",
       "urgency": "low",
-      "timestamp": "2026-03-23T04:00:03.500619+02:00"
+      "timestamp": "2026-03-23T06:14:28.288551+02:00"
     }
   ]
 }
