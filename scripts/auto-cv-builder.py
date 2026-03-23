@@ -428,19 +428,43 @@ Location: {job_data.get('location', 'GCC')}
 {pending_updates if pending_updates else 'None'}
 
 ## TASK
-Adapt the existing CV template for the new role. Keep the HTML structure and layout intact. Make targeted changes:
-1. Update the Executive Summary for this specific role/company.
-2. Reorder bullet points within each job to lead with the most JD-relevant achievements.
+Adapt the existing CV template for the new role. Make targeted changes:
+1. Update the Professional Summary for this specific role/company.
+2. Rewrite bullet points within each job to lead with the most JD-relevant achievements.
 3. Update Core Competencies to match this JD's key terms.
 4. Do NOT change dates, job titles, company names, or metrics (unless instructed by pending updates).
+
+## MANDATORY STRUCTURE (non-negotiable)
+The CV MUST contain ALL of these sections in this exact order:
+1. **Header**: Name, contact info (Dubai, UAE | +971 50 281 4490 | ahmednasr999@gmail.com | linkedin.com/in/ahmednasr)
+2. **Professional Summary**: 3-4 lines tailored to the JD
+3. **Core Competencies**: 10-12 items in a list, keyword-matched to JD
+4. **Professional Experience**: ALL roles in REVERSE CHRONOLOGICAL ORDER:
+   - PMO & Regional Engagement Lead | Saudi German Hospital Group | Jun 2024 - Present
+   - Country Manager | PaySky, Inc. | Apr 2021 - Jan 2022
+   - Head of E-Commerce Product & IT Strategy | Al Araby Group | Jan 2020 - Jan 2021
+   - Product Development Manager | Delivery Hero SE (Talabat) | Jun 2017 - May 2018
+   - PMO Section Head | Network International | Sep 2014 - Jun 2017
+   - Engagement Manager | Revamp Consulting | Mar 2013 - Sep 2014
+   - Earlier Career (2004-2013): Intel Corporation, BlueCloud, SySDSoft (1-2 lines)
+5. **Education**:
+   - MBA, International Business Administration - Paris ESLSCA Business School (2025 - 2027, In Progress)
+   - BSc Computer Science - Ain Shams University (2004)
+6. **Certifications**: PMP, CSM, CSPO, CBAP, Lean Six Sigma, ITIL Foundations
+
+You may omit a role ONLY if space requires it AND it is not relevant to the JD. Never omit Education or Certifications.
+
+## DATE FORMAT
+Always use: "Mon YYYY - Mon YYYY" with a hyphen surrounded by spaces. Example: "Jun 2024 - Present". Never use commas, en dashes, or other separators for date ranges.
 
 ## OUTPUT REQUIREMENTS
 Output ONLY the HTML body content (between <body> and </body>). No <html>, <head>, <style>, or <body> tags.
 
 ## HARD RULES
-- NEVER use em dashes. Use commas, periods, or colons.
+- NEVER use em dashes (—) or en dashes (–). Use commas, periods, hyphens, or colons.
 - NEVER fabricate metrics or roles not in master CV data.
 - Keep to 2 pages max.
+- Use &amp; for ampersands in HTML (e.g., AT&amp;T not ATandT).
 
 Output ONLY raw HTML. No markdown, no explanation, no ```html blocks."""
 
