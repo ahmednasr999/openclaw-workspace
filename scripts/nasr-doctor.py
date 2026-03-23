@@ -324,6 +324,43 @@ def check_composio_linkedin():
         check("LinkedIn (Composio)", Result.WARN, "TOOLS.md missing")
 
 
+def check_linkedin_cookies():
+    """Test LinkedIn Voyager API with cookies - validates JD enrichment will work."""
+    cookies_file = Path("/root/.openclaw/cookies/linkedin.txt")
+    if not cookies_file.exists():
+        check("LinkedIn Cookies", Result.FAIL, "No cookie file at ~/.openclaw/cookies/linkedin.txt")
+        return
+    # Load cookies + CSRF
+    cookies, csrf = {}, None
+    for line in cookies_file.read_text().splitlines():
+        if line.startswith('#') or not line.strip():
+            continue
+        parts = line.split('\t')
+        if len(parts) >= 7:
+            cookies[parts[5]] = parts[6].strip('"')
+            if parts[5] == 'JSESSIONID':
+                csrf = parts[6].strip('"')
+    if not csrf:
+        check("LinkedIn Cookies", Result.FAIL, "No JSESSIONID in cookie file")
+        return
+    # Test one Voyager API call
+    import ssl
+    from urllib.request import Request, urlopen
+    cookie_str = '; '.join(f'{k}={v}' for k, v in cookies.items())
+    req = Request(
+        "https://www.linkedin.com/voyager/api/me",
+        headers={"User-Agent": "Mozilla/5.0", "csrf-token": csrf, "Cookie": cookie_str},
+    )
+    try:
+        with urlopen(req, timeout=10, context=ssl.create_default_context()) as r:
+            if r.status == 200:
+                check("LinkedIn Cookies", Result.OK, "Voyager API auth working - JD enrichment will succeed")
+            else:
+                check("LinkedIn Cookies", Result.FAIL, f"Voyager API returned {r.status} - cookies expired, ask Ahmed to re-export")
+    except Exception as e:
+        check("LinkedIn Cookies", Result.FAIL, f"Voyager API failed: {e} - cookies expired, ask Ahmed to re-export")
+
+
 # ── 5. Key Scripts ──
 
 def check_scripts():
@@ -455,6 +492,7 @@ def main():
     check_firehose()
     check_gmail()
     check_composio_linkedin()
+    check_linkedin_cookies()
     check_scripts()
     check_pipeline()
     check_memory()

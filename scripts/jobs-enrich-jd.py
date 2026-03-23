@@ -21,10 +21,13 @@ from urllib.request import Request, urlopen
 
 WORKSPACE = Path("/root/.openclaw/workspace")
 MERGED = WORKSPACE / "data" / "jobs-merged.json"
+JD_CACHE_DIR = WORKSPACE / "data" / "jd-cache"
 MAX_FETCH = 300  # Enrich ALL candidates (review covers all now)
 FETCH_TIMEOUT = 15
 DELAY = 0.3  # seconds between requests
 MAX_WORKERS = 3  # parallel fetch threads (conservative for LinkedIn API)
+
+JD_CACHE_DIR.mkdir(parents=True, exist_ok=True)
 
 # LinkedIn Voyager API auth (cookies-based)
 LI_COOKIES_FILE = Path("/root/.openclaw/cookies/linkedin.txt")
@@ -52,8 +55,39 @@ def _load_linkedin_cookies():
 LI_COOKIE_STR, LI_CSRF = _load_linkedin_cookies()
 
 
+def jd_cache_get(job_id):
+    """Read JD from cache. Returns text or None."""
+    cache_file = JD_CACHE_DIR / f"{job_id}.json"
+    if cache_file.exists():
+        try:
+            data = json.loads(cache_file.read_text())
+            jd = data.get("jd_text", "")
+            if len(jd) > 100:
+                return jd
+        except Exception:
+            pass
+    return None
+
+
+def jd_cache_put(job_id, jd_text, source="voyager"):
+    """Write JD to cache."""
+    cache_file = JD_CACHE_DIR / f"{job_id}.json"
+    cache_file.write_text(json.dumps({
+        "job_id": job_id,
+        "jd_text": jd_text,
+        "source": source,
+        "cached_at": time.strftime("%Y-%m-%dT%H:%M:%SZ"),
+    }, indent=2))
+
+
 def fetch_linkedin_voyager(job_id):
-    """Fetch JD from LinkedIn Voyager API using cookies. Returns JD text or None."""
+    """Fetch JD from LinkedIn Voyager API using cookies. Returns JD text or None.
+    Checks cache first, writes to cache on success."""
+    # Check cache first
+    cached = jd_cache_get(job_id)
+    if cached:
+        return cached
+
     if not LI_COOKIE_STR or not LI_CSRF:
         return None
     headers = {
@@ -68,9 +102,10 @@ def fetch_linkedin_voyager(job_id):
         with urlopen(req, timeout=FETCH_TIMEOUT, context=ctx) as r:
             data = json.loads(r.read(500000))
             desc = data.get("description", {})
-            if isinstance(desc, dict):
-                return desc.get("text", "")
-            return str(desc) if desc else None
+            text = desc.get("text", "") if isinstance(desc, dict) else str(desc) if desc else None
+            if text and len(text) > 100:
+                jd_cache_put(job_id, text, "voyager")
+            return text
     except Exception:
         return None
 
