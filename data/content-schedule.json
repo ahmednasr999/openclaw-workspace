@@ -2,25 +2,25 @@
   "meta": {
     "agent": "content-agent",
     "version": "1.0.0",
-    "generated_at": "2026-03-23T00:00:02.612918+02:00",
-    "duration_ms": 624,
+    "generated_at": "2026-03-23T04:00:03.501210+02:00",
+    "duration_ms": 878,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "4fa6c8c4",
+    "run_id": "2065b26f",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
-    "scan_time": "2026-03-23T00:00:02.609861+02:00",
+    "scan_time": "2026-03-23T04:00:03.498861+02:00",
     "today": {
       "date": "2026-03-23",
       "scheduled": [
         {
-          "title": "The $100B question: Is the Gulf ready for AI-first healthcare?",
-          "status": "draft",
-          "topic": "TAM",
-          "hook": "The $100B question"
+          "title": "I almost lost a $50M transformation because I forgot one thing.",
+          "status": "scheduled",
+          "topic": "Growth",
+          "hook": "Stakeholder mapping."
         }
       ],
       "count": 1
@@ -35,24 +35,24 @@
           "status": "scheduled"
         },
         {
-          "title": "The $100B question: Is the Gulf ready for AI-first healthcare?",
+          "title": "I almost lost a $50M transformation because I forgot one thing.",
           "date": "2026-03-23",
-          "status": "draft"
+          "status": "scheduled"
         },
         {
-          "title": "What 15 years in GCC healthcare taught me about digital transformation",
+          "title": "Health Catalyst closed 4.6 million care gaps globally.",
           "date": "2026-03-25",
-          "status": "draft"
+          "status": "scheduled"
         },
         {
-          "title": "The 3 mistakes that almost killed my $50M transformation",
+          "title": "A recruiter told me I was overqualified last week.",
           "date": "2026-03-26",
-          "status": "draft"
+          "status": "scheduled"
         },
         {
           "title": "The interview question that made me realize I was underqualified",
           "date": "2026-03-29",
-          "status": "draft"
+          "status": "scheduled"
         }
       ],
       "count": 5
@@ -60,18 +60,18 @@
     "pipeline": {
       "ideas": 0,
       "outlines": 0,
-      "drafts": 6,
-      "scheduled": 5,
+      "drafts": 1,
+      "scheduled": 8,
       "posted": 18
     },
     "content_health": {
-      "runway_days": 4,
+      "runway_days": 7,
       "streak_days": 0,
       "posts_this_month": 16,
       "topics_covered": {
-        "Growth": 12,
-        "General": 7,
-        "TAM": 5,
+        "Growth": 13,
+        "General": 5,
+        "TAM": 4,
         "Sales": 3,
         "Digital Transformation": 2
       }
@@ -80,49 +80,25 @@
       {
         "title": "Every hospital says they want a single source of truth.",
         "topic": "Growth"
-      },
-      {
-        "title": "The $100B question: Is the Gulf ready for AI-first healthcare?",
-        "topic": "TAM"
-      },
-      {
-        "title": "What 15 years in GCC healthcare taught me about digital transformation",
-        "topic": "Digital Transformation"
-      },
-      {
-        "title": "The 3 mistakes that almost killed my $50M transformation",
-        "topic": "Growth"
-      },
-      {
-        "title": "Why I turned down a CEO role to stay in PMO (and what I learned)",
-        "topic": "Growth"
       }
     ],
     "engagement_opportunities": []
   },
   "kpi": {
     "posting_consistency": 69.6,
-    "content_runway_days": 4,
-    "drafts_in_review": 6,
+    "content_runway_days": 7,
+    "drafts_in_review": 1,
     "streak_days": 0,
     "posts_this_month": 16
   },
   "recommendations": [
     {
-      "id": "rec-4fa6c8c4-0",
-      "action": "review_drafts",
-      "target": "6 pending drafts",
-      "reason": "Drafts accumulating - review and publish",
-      "urgency": "medium",
-      "timestamp": "2026-03-23T00:00:02.612618+02:00"
-    },
-    {
-      "id": "rec-4fa6c8c4-1",
+      "id": "rec-2065b26f-0",
       "action": "post_today",
       "target": "Posting streak",
       "reason": "No active posting streak - post today to start one",
       "urgency": "low",
-      "timestamp": "2026-03-23T00:00:02.612632+02:00"
+      "timestamp": "2026-03-23T04:00:03.500619+02:00"
     }
   ]
 }

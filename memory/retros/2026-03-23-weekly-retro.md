@@ -1,7 +1,7 @@
 # Weekly Team Retro
 
 **Period:** 2026-03-16 to 2026-03-23
-**Generated:** 2026-03-23 00:01 Cairo
+**Generated:** 2026-03-23 02:01 Cairo
 
 ## Summary
 
@@ -40,8 +40,8 @@
 
 **email-agent** (6 failures):
   - Himalaya list failed: [2m2026-03-21T18:00:20.301944Z[0m [33m WARN[0m [2mimap_codec::response[0...
-  - Himalaya list failed: [2m2026-03-21T20:00:18.470785Z[0m [33m WARN[0m [2mimap_codec::response[0...
   - Himalaya list failed: [2m2026-03-21T16:00:20.413404Z[0m [33m WARN[0m [2mimap_codec::response[0...
+  - Himalaya list failed: [2m2026-03-21T20:00:18.470785Z[0m [33m WARN[0m [2mimap_codec::response[0...
 
 **jobs-merge** (1 failures):
   - 'list' object has no attribute 'get'...

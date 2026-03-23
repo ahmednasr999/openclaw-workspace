@@ -2,38 +2,16 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-03-22T07:52:07.741970+02:00",
-    "duration_ms": 68123,
+    "generated_at": "2026-03-23T02:01:29.846038+02:00",
+    "duration_ms": 87894,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "fb760b1f",
+    "run_id": "7e75b718",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": [
-    {
-      "id": "indeed-in-ad0553c8b7e3d398",
-      "source": "indeed",
-      "title": "QA Director - Middle East",
-      "company": "Netcracker Technology",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=ad0553c8b7e3d398",
-      "posted": "2026-03-20",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 30,
-      "match_keywords": [
-        "ai",
-        "cloud",
-        "enterprise",
-        "director",
-        "middle east"
-      ],
-      "raw_snippet": "### **We're building the future of how the world communicates.**\n\n\n\nNetcracker, part of NEC Corporation, combines deep telecom industry expertise with cutting\\-edge cloud\\-native and AI\\-powered innovations to enable communications service providers and enterprises to transform their businesses, unlock innovation, and create meaningful digital experiences for millions of people around the world.\n\n\n\nWith more than 30 years of experience serving over 250 customers in more than 70 locations worldwi",
-      "relevant": true,
-      "filter_reason": null
-    },
     {
       "id": "indeed-in-f7e1d5085527773a",
       "source": "indeed",
@@ -55,10 +33,10 @@
     }
   ],
   "kpi": {
-    "searches_run": 66,
-    "results_per_search": 0.59,
-    "unique_jobs": 2,
-    "errors": 41
+    "searches_run": 81,
+    "results_per_search": 0.52,
+    "unique_jobs": 1,
+    "errors": 57
   },
   "recommendations": []
 }

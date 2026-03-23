@@ -1,9 +1,9 @@
 {
-  "generated": "2026-03-22T02:20:36.843365+00:00",
-  "health_score": 84,
+  "generated": "2026-03-22T23:50:45.129955+00:00",
+  "health_score": 86,
   "summary": {
-    "ok": 7,
-    "warn": 3,
+    "ok": 8,
+    "warn": 2,
     "alert": 2
   },
   "workspace": {
@@ -12,7 +12,7 @@
     "disk_used": "45G",
     "disk_total": "96G",
     "ram_total": "7.8Gi",
-    "ram_used": "2.5Gi",
+    "ram_used": "2.6Gi",
     "large_files": [
       "/root/.openclaw/agents/main/qmd/node_modules/@node-llama-cpp/linux-x64-cuda/bins/linux-x64-cuda/libggml-cuda.so",
       "/root/.openclaw/agents/main/qmd/node_modules/@node-llama-cpp/linux-x64-cuda-ext/bins/linux-x64-cuda/fallback/libggml-cuda.so",
@@ -28,6 +28,7 @@
       "/root/.openclaw/agents/main/qmd/node_modules/typescript/lib/typescript.js",
       "/root/.openclaw/agents/main/qmd/xdg-cache/qmd/index.sqlite",
       "/root/.openclaw/agents/main/sessions/sessions.json",
+      "/root/.openclaw/agents/main/sessions/94b6e2a1-23db-4dea-9a78-55d0857475d2.jsonl",
       "/root/.openclaw/agents/main/sessions/c9e7570d-a391-4989-b3b7-48c29ad435c0.jsonl.reset.2026-03-21T18-24-10.855Z",
       "/root/.openclaw/extensions/lossless-claw/node_modules/@napi-rs/canvas-linux-x64-gnu/skia.linux-x64-gnu.node",
       "/root/.openclaw/extensions/lossless-claw/node_modules/@larksuiteoapi/node-sdk/types/index.d.ts",
@@ -46,7 +47,9 @@
       "/root/.openclaw/extensions/lossless-claw/node_modules/openclaw/dist/model-selection-CU2b7bN6.js",
       "/root/.openclaw/extensions/lossless-claw/node_modules/openclaw/dist/discord-CcCLMjHw.js",
       "/root/.openclaw/extensions/lossless-claw/node_modules/openclaw/extensions/diffs/assets/viewer-runtime.js",
+      "/root/.openclaw/lcm.db-wal",
       "/root/.openclaw/memory/main.sqlite",
+      "/root/.openclaw/lcm.db",
       "/root/.openclaw/workspace/tmp/insights-deck/node_modules/skia-canvas/lib/skia.node",
       "/root/.openclaw/workspace/tools/jobspy-venv/lib/python3.13/site-packages/tls_client/dependencies/tls-client-arm64.so",
       "/root/.openclaw/workspace/tools/jobspy-venv/lib/python3.13/site-packages/tls_client/dependencies/tls-client-amd64.so",
@@ -59,10 +62,9 @@
       "/root/.openclaw/workspace/tools/jobspy-venv/lib/python3.13/site-packages/lxml/etree.cpython-313-x86_64-linux-gnu.so",
       "/root/.openclaw/workspace/tools/jobspy-venv/lib/python3.13/site-packages/numpy/_core/_multiarray_umath.cpython-313-x86_64-linux-gnu.so",
       "/root/.openclaw/workspace/tools/jobspy-venv/lib/python3.13/site-packages/primp/primp.abi3.so",
-      "/root/.openclaw/workspace/.git/objects/pack/pack-d40f43c9821ac932c344145f7745703f46a84c2d.pack",
-      "/root/.openclaw/workspace/.git/objects/pack/pack-8289eb1e5159514c227aa99a8b93fda1517d0d4f.pack"
+      "/root/.openclaw/workspace/.git/objects/pack/pack-e4bf2dd74c09cf659614c75aa6b5fd7f450ca644.pack"
     ],
-    "session_mb": 33.7
+    "session_mb": 43.0
   },
   "learnings": {
     "total": 16,
@@ -83,31 +85,32 @@
       "notion_token": "present (50 chars)",
       "notion_databases": 15,
       "linkedin_lines": 35,
-      "linkedin_age_days": 2.9
+      "linkedin_age_days": 3.8
     }
   },
   "crons": {
-    "total": 34,
-    "enabled": 34,
+    "total": 10,
+    "enabled": 10,
     "disabled": 0,
-    "skill_first": 31,
-    "skill_first_pct": 91,
+    "skill_first": 6,
+    "skill_first_pct": 60,
     "raw_prompt_list": [
       "Briefing: Brief Me",
-      "Weekly Team Retro",
-      "MiniMax M2.7 API Availability Check"
+      "NASR Doctor (Daily)",
+      "Weekly Pipeline Audit",
+      "Weekly Team Retro"
     ],
     "failing": [
       {
-        "name": "Job Hunter \u2014 Weekly Domain Review",
-        "consecutive_errors": 1,
-        "last_error": "Unexpected non-whitespace character after JSON at position 17 (line 1 column 18)"
+        "name": "Weekly Team Retro",
+        "consecutive_errors": 5,
+        "last_error": "\u26a0\ufe0f \u2709\ufe0f Message failed"
       }
     ]
   },
   "briefing_notion": {
     "today": "2026-03-22",
-    "exists": false
+    "exists": true
   },
   "findings": [
     {
@@ -123,12 +126,12 @@
     {
       "category": "workspace",
       "level": "warn",
-      "message": "Large files (>5MB): 47 found in .openclaw"
+      "message": "Large files (>5MB): 49 found in .openclaw"
     },
     {
       "category": "workspace",
       "level": "ok",
-      "message": "Session size: 33.7MB (healthy)"
+      "message": "Session size: 43.0MB (healthy)"
     },
     {
       "category": "learnings",
@@ -148,7 +151,7 @@
     {
       "category": "integrations",
       "level": "ok",
-      "message": "LinkedIn: cookies OK (35 lines, 3d old)"
+      "message": "LinkedIn: cookies OK (35 lines, 4d old)"
     },
     {
       "category": "integrations",
@@ -157,8 +160,8 @@
     },
     {
       "category": "crons",
-      "level": "warn",
-      "message": "Cron skill-first: 31/34 (91%) - 3 raw-prompt crons"
+      "level": "alert",
+      "message": "Cron skill-first: 6/10 (60%) - too many raw-prompt crons"
     },
     {
       "category": "crons",
@@ -167,14 +170,12 @@
     },
     {
       "category": "briefing",
-      "level": "alert",
-      "message": "Notion briefing page for 2026-03-22: MISSING - cron may have failed"
+      "level": "ok",
+      "message": "Notion briefing page for 2026-03-22: exists"
     }
   ],
-  "auto_fixed": [
-    "'Job Hunter \u2014 Weekly Domain Review' had 1 transient error - will auto-clear on next scheduled run"
-  ],
+  "auto_fixed": [],
   "needs_attention": [
-    "Morning briefing Notion page missing for 2026-03-22 - partial delivery failure"
+    "'Weekly Team Retro' has 5 consecutive errors - investigate manually"
   ]
 }

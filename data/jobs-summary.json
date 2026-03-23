@@ -2,34 +2,1736 @@
   "meta": {
     "agent": "jobs-review",
     "version": "1.0.0",
-    "generated_at": "2026-03-22T09:18:00+02:00",
-    "duration_ms": 219749,
+    "generated_at": "2026-03-23T02:09:47.758784+02:00",
+    "duration_ms": 210230,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "8b4bb580",
+    "run_id": "51a416f7",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
-    "generated_at": "2026-03-22T09:02:16.161209+02:00",
-    "total_candidates": 251,
-    "reviewed": 50,
-    "submit": [],
-    "review": [
+    "generated_at": "2026-03-23T02:09:47.758539+02:00",
+    "total_candidates": 156,
+    "reviewed": 156,
+    "submit": [
       {
-        "id": "linkedin-li-4174468962",
+        "id": "linkedin-li-4369100186",
         "source": "linkedin",
-        "title": "Director Technology Transformation & Architecture",
-        "company": "Majid Al Futtaim",
-        "location": "Dubai, Dubai, United Arab Emirates",
-        "url": "https://ae.linkedin.com/jobs/view/director-technology-transformation-architecture-at-majid-al-futtaim-4174468962",
-        "posted": "2025-03-03",
+        "title": "Director of Fintech",
+        "company": "HungerStation | \u0647\u0646\u0642\u0631\u0633\u062a\u064a\u0634\u0646",
+        "location": "Riyadh, Riyadh, Saudi Arabia",
+        "url": "https://sa.linkedin.com/jobs/view/director-of-fintech-at-hungerstation-%D9%87%D9%86%D9%82%D8%B1%D8%B3%D8%AA%D9%8A%D8%B4%D9%86-4369100186",
+        "posted": "2026-03-20",
         "seniority": "C-Suite",
         "domain_match": true,
+        "keyword_score": 16,
+        "match_keywords": [
+          "fintech",
+          "director"
+        ],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_live": true,
+        "jd_fetch_status": "ok",
+        "jd_page_text": "\u062a\u0642\u0648\u0645 \u0634\u0631\u0643\u0629 HungerStation | \u0647\u0646\u0642\u0631\u0633\u062a\u064a\u0634\u0646 \u0628\u0627\u0644\u062a\u0648\u0638\u064a\u0641 \u0644\u0648\u0638\u064a\u0641\u0629 Director of Fintech \u0641\u064a \u0627\u0644\u0631\u064a\u0627\u0636 \u0627\u0644\u0631\u064a\u0627\u0636 \u0627\u0644\u0633\u0639\u0648\u062f\u064a\u0629 | LinkedIn \u062a\u062d\u062a\u0631\u0645 LinkedIn \u062e\u0635\u0648\u0635\u064a\u062a\u0643 \u200f\u2066 \u2069\u062a\u0633\u062a\u062e\u062f\u0645 LinkedIn \u0648\u0627\u0644\u0623\u0637\u0631\u0627\u0641 \u0627\u0644\u062e\u0627\u0631\u062c\u064a\u0629 \u0645\u0644\u0641\u0627\u062a \u062a\u0639\u0631\u064a\u0641 \u0627\u0644\u0627\u0631\u062a\u0628\u0627\u0637 \u0627\u0644\u0623\u0633\u0627\u0633\u064a\u0629 \u0648\u063a\u064a\u0631 \u0627\u0644\u0623\u0633\u0627\u0633\u064a\u0629 \u0644\u062a\u0648\u0641\u064a\u0631 \u062e\u062f\u0645\u0627\u062a\u0646\u0627 \u0648\u062a\u0623\u0645\u064a\u0646\u0647\u0627 \u0648\u062a\u062d\u0644\u064a\u0644\u0647\u0627 \u0648\u062a\u062d\u0633\u064a\u0646\u0647\u0627\u060c \u0648\u0639\u0631\u0636 \u0627\u0644\u0625\u0639\u0644\u0627\u0646\u0627\u062a \u0630\u0627\u062a \u0627\u0644\u0635\u0644\u0629 (\u0628\u0645\u0627 \u0641\u064a \u0630\u0644\u0643 \u2066 \u2069\u0625\u0639\u0644\u0627\u0646\u0627\u062a \u0627\u0644\u0648\u0638\u0627\u0626\u0641 \u0648\u0627\u0644\u0627\u062d\u062a\u0631\u0627\u0641\u064a\u0629\u2066 \u2069) \u062f\u0627\u062e\u0644 \u0648\u062e\u0627\u0631\u062c LinkedIn. \u0645\u0639\u0631\u0641\u0629 \u0627\u0644\u0645\u0632\u064a\u062f \u0645\u0646 \u062e\u0644\u0627\u0644 \u200f \u0633\u064a\u0627\u0633\u0629 \u0645\u0644\u0641\u0627\u062a \u062a\u0639\u0631\u064a\u0641 \u0627\u0644\u0627\u0631\u062a\u0628\u0627\u0637 \u200f \u0644\u062f\u064a\u0646\u0627.\u2066 \u2069\u200f\u2066 \u2069\u062d\u062f\u062f \u0642\u0628\u0648\u0644 \u0644\u0644\u0645\u0648\u0627\u0641\u0642\u0629 \u0623\u0648 \u0631\u0641\u0636 \u0644\u0631\u0641\u0636 \u0645\u0644\u0641\u0627\u062a \u062a\u0639\u0631\u064a\u0641 \u0627\u0644\u0627\u0631\u062a\u0628\u0627\u0637 \u063a\u064a\u0631 \u0627\u0644\u0623\u0633\u0627\u0633\u064a\u0629 \u0644\u0647\u0630\u0627 \u0627\u0644\u0627\u0633\u062a\u062e\u062f\u0627\u0645. \u064a\u0645\u0643\u0646\u0643 \u062a\u062d\u062f\u064a\u062b \u0627\u062e\u062a\u064a\u0627\u0631\u0627\u062a\u0643 \u0641\u064a \u0623\u064a \u0648\u0642\u062a \u0641\u064a \u200f settings \u200f.\u2066 \u2069 \u0642\u0628\u0648\u0644 \u0631\u0641\u0636 \u0627\u0644\u062a\u062e\u0637\u064a \u0625\u0644\u0649 \u0627\u0644\u0645\u062d\u062a\u0648\u0649 \u0627\u0644\u0631\u0626\u064a\u0633\u064a LinkedIn Director of Fintech \u0641\u064a \u0628\u0627\u0631\u064a\u0633 \u062a\u0648\u0633\u064a\u0639 \u0627\u0644\u0628\u062d\u062b \u064a\u0639\u0631\u0636 \u0647\u0630\u0627 \u0627\u0644\u0632\u0631 \u0646\u0648\u0639 \u0627\u0644\u0628\u062d\u062b \u0627\u0644\u0645\u062d\u062f\u062f \u062d\u0627\u0644\u064a\u064b\u0627. \u0639\u0646\u062f \u062a\u0648\u0633\u0639\u062a\u0647\u060c \u064a\u0648\u0641\u0631 \u0642\u0627\u0626\u0645\u0629 \u0628\u062e\u064a\u0627\u0631\u0627\u062a \u0627\u0644\u0628\u062d\u062b \u0627\u0644\u062a\u064a \u0645\u0646 \u0634\u0623\u0646\u0647\u0627 \u062a\u063a\u064a\u064a\u0631 \u0645\u062f\u062e\u0644 \u0627\u0644\u0628\u062d\u062b \u0644\u0645\u0637\u0627\u0628\u0642\u0629 \u0627\u0644\u0627\u062e\u062a\u064a\u0627\u0631 \u0627\u0644\u062d\u0627\u0644\u064a. \u0627\u0644\u0648\u0638\u0627\u0626\u0641 \u0627\u0644\u0623\u0634\u062e\u0627\u0635 \u0645\u0646\u0635\u0629 \u0627\u0644\u062a\u0639\u0644\u064a\u0645 \u0645\u0633\u062d \u0627\u0644\u0646\u0635 \u0645\u0633\u062d \u0627\u0644\u0646\u0635 \u0645\u0633\u062d \u0627\u0644\u0646\u0635 \u0645\u0633\u062d \u0627\u0644\u0646\u0635 \u0645\u0633\u062d \u0627\u0644\u0646\u0635 \u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u062f\u062e\u0648\u0644 \u0627\u0646\u0636\u0645 \u0627\u0644\u0622\u0646 Director of Fintech HungerStation | \u0647\u0646\u0642\u0631\u0633\u062a\u064a\u0634\u0646 \u0627\u0644\u0631\u064a\u0627\u0636 \u0627\u0644\u0631\u064a\u0627\u0636 \u0627\u0644\u0633\u0639\u0648\u062f\u064a\u0629 \u0627\u0644\u062a\u0642\u062f\u0645 Director of Fintech HungerStation | \u0647\u0646\u0642\u0631\u0633\u062a\u064a\u0634\u0646 \u0627\u0644\u0631\u064a\u0627\u0636 \u0627\u0644\u0631\u064a\u0627\u0636 \u0627\u0644\u0633\u0639\u0648\u062f\u064a\u0629 \u0642\u0628\u0644 \u0662 \u0623\u064a\u0627\u0645 \u0661\u0669\u0667 \u0645\u0646 \u0627\u0644\u0645\u062a\u0642\u062f\u0645\u064a\u0646 \u0645\u0639\u0631\u0641\u0629 \u0645\u0646 \u0642\u0627\u0645\u062a \u0634\u0631\u0643\u0629 HungerStation | \u0647\u0646\u0642\u0631\u0633\u062a\u064a\u0634\u0646 \u0628\u062a\u0639\u064a\u064a\u0646\u0647 \u0627\u0644\u062a\u0642\u062f\u0645 \u062d\u0641\u0638 \u0627\u0644\u0625\u0628\u0644\u0627\u063a \u0639\u0646 \u0647\u0630\u0647 \u0627\u0644\u0648\u0638\u064a\u0641\u0629 \u0627\u0633\u062a\u062e\u062f\u0645 \u0627\u0644\u0630\u0643\u0627\u0621 \u0627\u0644\u0627\u0635\u0637\u0646\u0627\u0639\u064a \u0644\u062a\u0642\u064a\u064a\u0645 \u0645\u062f\u0649 \u0645\u0644\u0627\u0621\u0645\u062a\u0643 \u0627\u062d\u0635\u0644 \u0639\u0644\u0649 \u0645\u0634\u0648\u0631\u0629 \u0645\u0633\u062a\u0646\u062f\u0629 \u0625\u0644\u0649 \u0627\u0644\u0630\u0643\u0627\u0621 \u0627\u0644\u0627\u0635\u0637\u0646\u0627\u0639\u064a \u0628\u0634\u0623\u0646 \u0647\u0630\u0647 \u0627\u0644\u0648\u0638\u064a\u0641\u0629 \u0648\u063a\u064a\u0631\u0647\u0627 \u0645\u0646 \u0627\u0644\u0645\u064a\u0632\u0627\u062a \u0627\u0644\u062d\u0635\u0631\u064a\u0629. \u0647\u0644 \u0623\u0646\u0627 \u0645\u0646\u0627\u0633\u0628 \u0644\u0647\u0630\u0647 \u0627\u0644\u0648\u0638\u064a\u0641\u0629\u061f \u062a\u062e\u0635\u064a\u0635 \u0633\u064a\u0631\u062a\u064a \u0627\u0644\u0630\u0627\u062a\u064a\u0629 \u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u062f\u062e\u0648\u0644 \u0644\u0644\u0648\u0635\u0648\u0644 \u0625\u0644\u0649 \u0627\u0644\u0645\u0634\u0648\u0631\u0629 \u0627\u0644\u0645\u0633\u062a\u0646\u062f\u0629 \u0625\u0644\u0649 \u0627\u0644\u0630\u0643\u0627\u0621 \u0627\u0644\u0627\u0635\u0637\u0646\u0627\u0639\u064a \u0627\u0644\u0628\u0631\u064a\u062f \u0627\u0644\u0625\u0644\u0643\u062a\u0631\u0648\u0646\u064a \u0623\u0648 \u0631\u0642\u0645 \u0627\u0644\u0647\u0627\u062a\u0641 \u0643\u0644\u0645\u0629 \u0627\u0644\u0645\u0631\u0648\u0631 \u0639\u0631\u0636 \u0647\u0644 \u0646\u0633\u064a\u062a \u0643\u0644\u0645\u0629 \u0627\u0644\u0645\u0631\u0648\u0631\u061f \u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u062f\u062e\u0648\u0644 \u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u062f\u062e\u0648\u0644 \u0628\u0627\u0633\u062a\u062e\u062f\u0627\u0645 \u0627\u0644\u0628\u0631\u064a\u062f \u0627\u0644\u0625\u0644\u0643\u062a\u0631\u0648\u0646\u064a \u0623\u0648 \u0639\u0636\u0648 \u062c\u062f\u064a\u062f \u0639\u0644\u0649 LinkedIn\u061f \u0627\u0646\u0636\u0645 \u0627\u0644\u0622\u0646 \u0628\u0627\u0644\u0646\u0642\u0631 \u0639\u0644\u0649 \u0627\u0644\u0627\u0633\u062a\u0645\u0631\u0627\u0631 \u0644\u0644\u0627\u0646\u0636\u0645\u0627\u0645 \u0623\u0648 \u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u062f\u062e\u0648\u0644\u060c \u0641\u0623\u0646\u062a \u062a\u0648\u0627\u0641\u0642 \u0639\u0644\u0649 \u0627\u062a\u0641\u0627\u0642\u064a\u0629 \u0627\u0644\u0645\u0633\u062a\u062e\u062f\u0645 \u0648 \u0627\u062a\u0641\u0627\u0642\u064a\u0629 \u0627\u0644\u062e\u0635\u0648\u0635\u064a\u0629 \u0648 \u0633\u064a\u0627\u0633\u0629 \u0645\u0644\u0641\u0627\u062a \u062a\u0639\u0631\u064a\u0641 \u0627\u0644\u0627\u0631\u062a\u0628\u0627\u0637 \u0639\u0644\u0649 LinkedIn. \u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u062f\u062e\u0648\u0644 \u0644\u062a\u0642\u064a\u064a\u0645 \u0645\u0647\u0627\u0631\u0627\u062a\u0643 \u0627\u0644\u0628\u0631\u064a\u062f \u0627\u0644\u0625\u0644\u0643\u062a\u0631\u0648\u0646\u064a \u0623\u0648 \u0631\u0642\u0645 \u0627\u0644\u0647\u0627\u062a\u0641 \u0643\u0644\u0645\u0629 \u0627\u0644\u0645\u0631\u0648\u0631 \u0639\u0631\u0636 \u0647\u0644 \u0646\u0633\u064a\u062a \u0643\u0644\u0645\u0629 \u0627\u0644\u0645\u0631\u0648\u0631\u061f \u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u062f\u062e\u0648\u0644 \u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u062f\u062e\u0648\u0644 \u0628\u0627\u0633\u062a\u062e\u062f\u0627\u0645 \u0627\u0644\u0628\u0631\u064a\u062f \u0627\u0644\u0625\u0644\u0643\u062a\u0631\u0648\u0646\u064a \u0623\u0648 \u0639\u0636\u0648 \u062c\u062f\u064a\u062f \u0639\u0644\u0649 LinkedIn\u061f \u0627\u0646\u0636\u0645 \u0627\u0644\u0622\u0646 \u0628\u0627\u0644\u0646\u0642\u0631 \u0639\u0644\u0649 \u0627\u0644\u0627\u0633\u062a\u0645\u0631\u0627\u0631 \u0644\u0644\u0627\u0646\u0636\u0645\u0627\u0645 \u0623\u0648 \u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u062f\u062e\u0648\u0644\u060c \u0641\u0623\u0646\u062a \u062a\u0648\u0627\u0641\u0642 \u0639\u0644\u0649 \u0627\u062a\u0641\u0627\u0642\u064a\u0629 \u0627\u0644\u0645\u0633\u062a\u062e\u062f\u0645 \u0648 \u0627\u062a\u0641\u0627\u0642\u064a\u0629 \u0627\u0644\u062e\u0635\u0648\u0635\u064a\u0629 \u0648 \u0633\u064a\u0627\u0633\u0629 \u0645\u0644\u0641\u0627\u062a \u062a\u0639\u0631\u064a\u0641 \u0627\u0644\u0627\u0631\u062a\u0628\u0627\u0637 \u0639\u0644\u0649 LinkedIn. \u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u062f\u062e\u0648\u0644 \u0644\u062a\u062e\u0635\u064a\u0635 \u0633\u064a\u0631\u062a\u0643 \u0627\u0644\u0630\u0627\u062a\u064a\u0629 \u0627\u0644\u0628\u0631\u064a\u062f \u0627\u0644\u0625\u0644\u0643\u062a\u0631\u0648\u0646\u064a \u0623\u0648 \u0631\u0642\u0645 \u0627\u0644\u0647\u0627\u062a\u0641 \u0643\u0644\u0645\u0629 \u0627\u0644\u0645\u0631\u0648\u0631 \u0639\u0631\u0636 \u0647\u0644 \u0646\u0633\u064a\u062a \u0643\u0644\u0645\u0629 \u0627\u0644\u0645\u0631\u0648\u0631\u061f \u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u062f\u062e\u0648\u0644 \u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u062f\u062e\u0648\u0644 \u0628\u0627\u0633\u062a\u062e\u062f\u0627\u0645 \u0627\u0644\u0628\u0631\u064a\u062f \u0627\u0644\u0625\u0644\u0643\u062a\u0631\u0648\u0646\u064a \u0623\u0648 \u0639\u0636\u0648 \u062c\u062f\u064a\u062f \u0639\u0644\u0649 LinkedIn\u061f \u0627\u0646\u0636\u0645 \u0627\u0644\u0622\u0646 \u0628\u0627\u0644\u0646\u0642\u0631 \u0639\u0644\u0649 \u0627\u0644\u0627\u0633\u062a\u0645\u0631\u0627\u0631 \u0644\u0644\u0627\u0646\u0636\u0645\u0627\u0645 \u0623\u0648 \u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u062f\u062e\u0648\u0644\u060c \u0641\u0623\u0646\u062a \u062a\u0648\u0627\u0641\u0642 \u0639\u0644\u0649 \u0627\u062a\u0641\u0627\u0642\u064a\u0629 \u0627\u0644\u0645\u0633\u062a\u062e\u062f\u0645 \u0648 \u0627\u062a\u0641\u0627\u0642\u064a\u0629 \u0627\u0644\u062e\u0635\u0648\u0635\u064a\u0629 \u0648 \u0633\u064a\u0627\u0633\u0629 \u0645\u0644\u0641\u0627\u062a \u062a\u0639\u0631\u064a\u0641 \u0627\u0644\u0627\u0631\u062a\u0628\u0627\u0637 \u0639\u0644\u0649 LinkedIn. HungerStation is part of the Delivery Hero Group, the world\u2019s pioneering local delivery platform, our mission is to deliver an amazing experience\u2014fast, easy, and to your door. We operate in over 70+ countries worldwide. Headquartered in Berlin, Germany. Delivery Hero has been listed on the Frankfurt Stock Exchange since 2017 and is part of the MDAX stock market index. Job Description To lead and oversee HS\u2019s efforts to use technology, in order to drive the development and implementation of financial technology solutions to enhance financial processes, customer transactions, and overall business efficiency. Fintech Develop and execute Hungerstation\u2019s financial technology strategy in alignment with business growth, digital transformation, and customer experience objectives. Lead the design and implementation of scalable fintech solutions to support high-volume transactions across customers, merchants, riders, and internal finance operations. Drive innovation in payment systems, digital wallets, refunds, settlements, and reconciliation processes to ensure speed, accuracy, and reliability. Partner closely with Product, Engineering, Data, Operations, and Finance teams to embed fintech solutions seamlessly into Hungerstation\u2019s platform and operational workflows. Ensure full compliance with Saudi regulatory requirements (SAMA, ZATCA, VAT, data protection) and Delivery Hero group policies, while proactively managing fintech-related risks and controls. Oversee fraud detection, transaction monitoring, and cybersecurity measures related to financial systems and digital payments. Own and manage the fintech budget, ensuring cost efficiency, ROI optimization, and sustainable investment in new technologies and partnerships. Analyze financial and transaction data to identify trends, revenue opportunities, cost optimization areas, and system performance improvements. Prepare executive-level financial technology reports and dashboards, providing insights on transaction performance, risk exposure, and innovation impact. Lead and develop a high-performing fintech team, fostering a culture of ownership, innovation, and continuous improvement in line with Hungerstation\u2019s leadership principles. Stay ahead of emerging fintech trends (open banking, embedded finance, BNPL, digital wallets, AI-driven fraud prevention) and assess their relevance to Hungerstation\u2019s ecosystem. Build and manage strategic relationships with banks, payment providers, fintech startups, and regulatory bodies to strengthen Hungerstation\u2019s financial infrastructure. Support business expansion initiatives by enabling new financial products and services for merchants and customers (e.g., ",
+        "jd_text": "HungerStation is part of the Delivery Hero Group, the world\u2019s pioneering local delivery platform, our mission is to deliver an amazing experience\u2014fast, easy, and to your door. We operate in over 70+ countries worldwide. Headquartered in Berlin, Germany. Delivery Hero has been listed on the Frankfurt Stock Exchange since 2017 and is part of the MDAX stock market index. Job Description To lead and oversee HS\u2019s efforts to use technology, in order to drive the development and implementation of financial technology solutions to enhance financial processes, customer transactions, and overall business efficiency. Fintech Develop and execute Hungerstation\u2019s financial technology strategy in alignment with business growth, digital transformation, and customer experience objectives. Lead the design and implementation of scalable fintech solutions to support high-volume transactions across customers, merchants, riders, and internal finance operations. Drive innovation in payment systems, digital wallets, refunds, settlements, and reconciliation processes to ensure speed, accuracy, and reliability. Partner closely with Product, Engineering, Data, Operations, and Finance teams to embed fintech solutions seamlessly into Hungerstation\u2019s platform and operational workflows. Ensure full compliance with Saudi regulatory requirements (SAMA, ZATCA, VAT, data protection) and Delivery Hero group policies, while proactively managing fintech-related risks and controls. Oversee fraud detection, transaction monitoring, and cybersecurity measures related to financial systems and digital payments. Own and manage the fintech budget, ensuring cost efficiency, ROI optimization, and sustainable investment in new technologies and partnerships. Analyze financial and transaction data to identify trends, revenue opportunities, cost optimization areas, and system performance improvements. Prepare executive-level financial technology reports and dashboards, providing insights on transaction performance, risk exposure, and innovation impact. Lead and develop a high-performing fintech team, fostering a culture of ownership, innovation, and continuous improvement in line with Hungerstation\u2019s leadership principles. Stay ahead of emerging fintech trends (open banking, embedded finance, BNPL, digital wallets, AI-driven fraud prevention) and assess their relevance to Hungerstation\u2019s ecosystem. Build and manage strategic relationships with banks, payment providers, fintech startups, and regulatory bodies to strengthen Hungerstation\u2019s financial infrastructure. Support business expansion initiatives by enabling new financial products and services for merchants and customers (e.g., faster settlements, flexible payment options, and value-added financial tools). Strategy &amp; Planning Contribute to the development and execution of the Division\u2019s ABCs and OKRs, while ensuring alignment with other Functions' heads. Make critical decisions that support the Division's strategic and tactical direction.",
+        "career_fit_score": 8,
+        "verdict": "SUBMIT",
+        "verdict_reason": "C-suite FinTech Director at e-commerce giant; payments/digital wallets/fraud detection aligned with FinTech domain; Riyadh is target location; KS=16",
+        "ats_score": 100,
+        "ats_verdict": "SKIP",
+        "ats_matched": [
+          "digital transformation",
+          "lead",
+          "director",
+          "cto",
+          "head",
+          "executive",
+          "ai",
+          "ml",
+          "data",
+          "digital"
+        ],
+        "ats_gaps": [
+          "Missing: project management, pmo, program management",
+          "Entry-level role"
+        ]
+      },
+      {
+        "id": "linkedin-li-4387269455",
+        "source": "linkedin",
+        "title": "Associate Director Project Control",
+        "company": "Mace",
+        "location": "Riyadh, Riyadh, Saudi Arabia",
+        "url": "https://sa.linkedin.com/jobs/view/associate-director-project-control-at-mace-4387269455",
+        "posted": "2026-03-18",
+        "seniority": "C-Suite",
+        "domain_match": true,
+        "keyword_score": 6,
+        "match_keywords": [
+          "director"
+        ],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_live": true,
+        "jd_fetch_status": "ok",
+        "jd_page_text": "\u062a\u0642\u0648\u0645 \u0634\u0631\u0643\u0629 Mace \u0628\u0627\u0644\u062a\u0648\u0638\u064a\u0641 \u0644\u0648\u0638\u064a\u0641\u0629 Associate Director Project Control \u0641\u064a \u0627\u0644\u0631\u064a\u0627\u0636 \u0627\u0644\u0631\u064a\u0627\u0636 \u0627\u0644\u0633\u0639\u0648\u062f\u064a\u0629 | LinkedIn \u062a\u062d\u062a\u0631\u0645 LinkedIn \u062e\u0635\u0648\u0635\u064a\u062a\u0643 \u200f\u2066 \u2069\u062a\u0633\u062a\u062e\u062f\u0645 LinkedIn \u0648\u0627\u0644\u0623\u0637\u0631\u0627\u0641 \u0627\u0644\u062e\u0627\u0631\u062c\u064a\u0629 \u0645\u0644\u0641\u0627\u062a \u062a\u0639\u0631\u064a\u0641 \u0627\u0644\u0627\u0631\u062a\u0628\u0627\u0637 \u0627\u0644\u0623\u0633\u0627\u0633\u064a\u0629 \u0648\u063a\u064a\u0631 \u0627\u0644\u0623\u0633\u0627\u0633\u064a\u0629 \u0644\u062a\u0648\u0641\u064a\u0631 \u062e\u062f\u0645\u0627\u062a\u0646\u0627 \u0648\u062a\u0623\u0645\u064a\u0646\u0647\u0627 \u0648\u062a\u062d\u0644\u064a\u0644\u0647\u0627 \u0648\u062a\u062d\u0633\u064a\u0646\u0647\u0627\u060c \u0648\u0639\u0631\u0636 \u0627\u0644\u0625\u0639\u0644\u0627\u0646\u0627\u062a \u0630\u0627\u062a \u0627\u0644\u0635\u0644\u0629 (\u0628\u0645\u0627 \u0641\u064a \u0630\u0644\u0643 \u2066 \u2069\u0625\u0639\u0644\u0627\u0646\u0627\u062a \u0627\u0644\u0648\u0638\u0627\u0626\u0641 \u0648\u0627\u0644\u0627\u062d\u062a\u0631\u0627\u0641\u064a\u0629\u2066 \u2069) \u062f\u0627\u062e\u0644 \u0648\u062e\u0627\u0631\u062c LinkedIn. \u0645\u0639\u0631\u0641\u0629 \u0627\u0644\u0645\u0632\u064a\u062f \u0645\u0646 \u062e\u0644\u0627\u0644 \u200f \u0633\u064a\u0627\u0633\u0629 \u0645\u0644\u0641\u0627\u062a \u062a\u0639\u0631\u064a\u0641 \u0627\u0644\u0627\u0631\u062a\u0628\u0627\u0637 \u200f \u0644\u062f\u064a\u0646\u0627.\u2066 \u2069\u200f\u2066 \u2069\u062d\u062f\u062f \u0642\u0628\u0648\u0644 \u0644\u0644\u0645\u0648\u0627\u0641\u0642\u0629 \u0623\u0648 \u0631\u0641\u0636 \u0644\u0631\u0641\u0636 \u0645\u0644\u0641\u0627\u062a \u062a\u0639\u0631\u064a\u0641 \u0627\u0644\u0627\u0631\u062a\u0628\u0627\u0637 \u063a\u064a\u0631 \u0627\u0644\u0623\u0633\u0627\u0633\u064a\u0629 \u0644\u0647\u0630\u0627 \u0627\u0644\u0627\u0633\u062a\u062e\u062f\u0627\u0645. \u064a\u0645\u0643\u0646\u0643 \u062a\u062d\u062f\u064a\u062b \u0627\u062e\u062a\u064a\u0627\u0631\u0627\u062a\u0643 \u0641\u064a \u0623\u064a \u0648\u0642\u062a \u0641\u064a \u200f settings \u200f.\u2066 \u2069 \u0642\u0628\u0648\u0644 \u0631\u0641\u0636 \u0627\u0644\u062a\u062e\u0637\u064a \u0625\u0644\u0649 \u0627\u0644\u0645\u062d\u062a\u0648\u0649 \u0627\u0644\u0631\u0626\u064a\u0633\u064a LinkedIn Associate Director Project Control \u0641\u064a \u0628\u0627\u0631\u064a\u0633 \u062a\u0648\u0633\u064a\u0639 \u0627\u0644\u0628\u062d\u062b \u064a\u0639\u0631\u0636 \u0647\u0630\u0627 \u0627\u0644\u0632\u0631 \u0646\u0648\u0639 \u0627\u0644\u0628\u062d\u062b \u0627\u0644\u0645\u062d\u062f\u062f \u062d\u0627\u0644\u064a\u064b\u0627. \u0639\u0646\u062f \u062a\u0648\u0633\u0639\u062a\u0647\u060c \u064a\u0648\u0641\u0631 \u0642\u0627\u0626\u0645\u0629 \u0628\u062e\u064a\u0627\u0631\u0627\u062a \u0627\u0644\u0628\u062d\u062b \u0627\u0644\u062a\u064a \u0645\u0646 \u0634\u0623\u0646\u0647\u0627 \u062a\u063a\u064a\u064a\u0631 \u0645\u062f\u062e\u0644 \u0627\u0644\u0628\u062d\u062b \u0644\u0645\u0637\u0627\u0628\u0642\u0629 \u0627\u0644\u0627\u062e\u062a\u064a\u0627\u0631 \u0627\u0644\u062d\u0627\u0644\u064a. \u0627\u0644\u0648\u0638\u0627\u0626\u0641 \u0627\u0644\u0623\u0634\u062e\u0627\u0635 \u0645\u0646\u0635\u0629 \u0627\u0644\u062a\u0639\u0644\u064a\u0645 \u0645\u0633\u062d \u0627\u0644\u0646\u0635 \u0645\u0633\u062d \u0627\u0644\u0646\u0635 \u0645\u0633\u062d \u0627\u0644\u0646\u0635 \u0645\u0633\u062d \u0627\u0644\u0646\u0635 \u0645\u0633\u062d \u0627\u0644\u0646\u0635 \u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u062f\u062e\u0648\u0644 \u0627\u0646\u0636\u0645 \u0627\u0644\u0622\u0646 Associate Director Project Control Mace \u0627\u0644\u0631\u064a\u0627\u0636 \u0627\u0644\u0631\u064a\u0627\u0636 \u0627\u0644\u0633\u0639\u0648\u062f\u064a\u0629 \u0627\u0644\u062a\u0642\u062f\u0645 \u0627\u0646\u0636\u0645 \u0623\u0648 \u0633\u062c\u0644 \u0627\u0644\u062f\u062e\u0648\u0644 \u0644\u0644\u0639\u062b\u0648\u0631 \u0639\u0644\u0649 \u0648\u0638\u064a\u0641\u062a\u0643 \u0627\u0644\u062a\u0627\u0644\u064a\u0629 \u0627\u0646\u0636\u0645 \u0644\u0644\u062a\u0642\u062f\u0645 \u0625\u0644\u0649 \u0648\u0638\u064a\u0641\u0629 \u2066 \u2069\u200fAssociate Director Project Control\u200f\u2066 \u2069 \u0641\u064a \u2066 \u2069\u200fMace\u200f \u0627\u0644\u0628\u0631\u064a\u062f \u0627\u0644\u0625\u0644\u0643\u062a\u0631\u0648\u0646\u064a \u0623\u0648 \u0631\u0642\u0645 \u0627\u0644\u0647\u0627\u062a\u0641 \u0643\u0644\u0645\u0629 \u0627\u0644\u0645\u0631\u0648\u0631 \u0639\u0631\u0636 \u0647\u0644 \u0646\u0633\u064a\u062a \u0643\u0644\u0645\u0629 \u0627\u0644\u0645\u0631\u0648\u0631\u061f \u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u062f\u062e\u0648\u0644 \u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u062f\u062e\u0648\u0644 \u0628\u0627\u0633\u062a\u062e\u062f\u0627\u0645 \u0627\u0644\u0628\u0631\u064a\u062f \u0627\u0644\u0625\u0644\u0643\u062a\u0631\u0648\u0646\u064a \u0623\u0648 \u0639\u0636\u0648 \u062c\u062f\u064a\u062f \u0639\u0644\u0649 LinkedIn\u061f \u0627\u0646\u0636\u0645 \u0627\u0644\u0622\u0646 \u0628\u0627\u0644\u0646\u0642\u0631 \u0639\u0644\u0649 \u0627\u0644\u0627\u0633\u062a\u0645\u0631\u0627\u0631 \u0644\u0644\u0627\u0646\u0636\u0645\u0627\u0645 \u0623\u0648 \u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u062f\u062e\u0648\u0644\u060c \u0641\u0623\u0646\u062a \u062a\u0648\u0627\u0641\u0642 \u0639\u0644\u0649 \u0627\u062a\u0641\u0627\u0642\u064a\u0629 \u0627\u0644\u0645\u0633\u062a\u062e\u062f\u0645 \u0648 \u0627\u062a\u0641\u0627\u0642\u064a\u0629 \u0627\u0644\u062e\u0635\u0648\u0635\u064a\u0629 \u0648 \u0633\u064a\u0627\u0633\u0629 \u0645\u0644\u0641\u0627\u062a \u062a\u0639\u0631\u064a\u0641 \u0627\u0644\u0627\u0631\u062a\u0628\u0627\u0637 \u0639\u0644\u0649 LinkedIn. Associate Director Project Control Mace \u0627\u0644\u0631\u064a\u0627\u0636 \u0627\u0644\u0631\u064a\u0627\u0636 \u0627\u0644\u0633\u0639\u0648\u062f\u064a\u0629 \u0642\u0628\u0644 \u0664 \u0623\u064a\u0627\u0645 \u0661\u0663\u0663 \u0645\u0646 \u0627\u0644\u0645\u062a\u0642\u062f\u0645\u064a\u0646 \u0645\u0639\u0631\u0641\u0629 \u0645\u0646 \u0642\u0627\u0645\u062a \u0634\u0631\u0643\u0629 Mace \u0628\u062a\u0639\u064a\u064a\u0646\u0647 \u0627\u0644\u062a\u0642\u062f\u0645 \u0627\u0646\u0636\u0645 \u0623\u0648 \u0633\u062c\u0644 \u0627\u0644\u062f\u062e\u0648\u0644 \u0644\u0644\u0639\u062b\u0648\u0631 \u0639\u0644\u0649 \u0648\u0638\u064a\u0641\u062a\u0643 \u0627\u0644\u062a\u0627\u0644\u064a\u0629 \u0627\u0646\u0636\u0645 \u0644\u0644\u062a\u0642\u062f\u0645 \u0625\u0644\u0649 \u0648\u0638\u064a\u0641\u0629 \u2066 \u2069\u200fAssociate Director Project Control\u200f\u2066 \u2069 \u0641\u064a \u2066 \u2069\u200fMace\u200f \u0627\u0644\u0628\u0631\u064a\u062f \u0627\u0644\u0625\u0644\u0643\u062a\u0631\u0648\u0646\u064a \u0623\u0648 \u0631\u0642\u0645 \u0627\u0644\u0647\u0627\u062a\u0641 \u0643\u0644\u0645\u0629 \u0627\u0644\u0645\u0631\u0648\u0631 \u0639\u0631\u0636 \u0647\u0644 \u0646\u0633\u064a\u062a \u0643\u0644\u0645\u0629 \u0627\u0644\u0645\u0631\u0648\u0631\u061f \u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u062f\u062e\u0648\u0644 \u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u062f\u062e\u0648\u0644 \u0628\u0627\u0633\u062a\u062e\u062f\u0627\u0645 \u0627\u0644\u0628\u0631\u064a\u062f \u0627\u0644\u0625\u0644\u0643\u062a\u0631\u0648\u0646\u064a \u0623\u0648 \u0639\u0636\u0648 \u062c\u062f\u064a\u062f \u0639\u0644\u0649 LinkedIn\u061f \u0627\u0646\u0636\u0645 \u0627\u0644\u0622\u0646 \u0628\u0627\u0644\u0646\u0642\u0631 \u0639\u0644\u0649 \u0627\u0644\u0627\u0633\u062a\u0645\u0631\u0627\u0631 \u0644\u0644\u0627\u0646\u0636\u0645\u0627\u0645 \u0623\u0648 \u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u062f\u062e\u0648\u0644\u060c \u0641\u0623\u0646\u062a \u062a\u0648\u0627\u0641\u0642 \u0639\u0644\u0649 \u0627\u062a\u0641\u0627\u0642\u064a\u0629 \u0627\u0644\u0645\u0633\u062a\u062e\u062f\u0645 \u0648 \u0627\u062a\u0641\u0627\u0642\u064a\u0629 \u0627\u0644\u062e\u0635\u0648\u0635\u064a\u0629 \u0648 \u0633\u064a\u0627\u0633\u0629 \u0645\u0644\u0641\u0627\u062a \u062a\u0639\u0631\u064a\u0641 \u0627\u0644\u0627\u0631\u062a\u0628\u0627\u0637 \u0639\u0644\u0649 LinkedIn. \u062d\u0641\u0638 \u0627\u0644\u0625\u0628\u0644\u0627\u063a \u0639\u0646 \u0647\u0630\u0647 \u0627\u0644\u0648\u0638\u064a\u0641\u0629 Mace combines construction expertise with consultancy to unlock potential in every person or project and redefine the boundaries of ambition. Our values shape the way we consult and define the people we want to join us on our journey. The Project This is an opportunity to work on one of the largest programmes in Saudi Arabia. This unique project consists of major mixed-use development including sports facilities, entertainment, and arts along with all associated infrastructure. Mace is one of the delivery partners requiring high-calibre and experienced professionals to lead integrated teams throughout each phase of the project. You\u2019ll Be Responsible For Lead PMO and project controls performance, designing frameworks and strategies to deliver excellence. Act as trusted advisor, building strong client relationships and providing subject matter expertise. Direct project teams in cost, schedule, change, risk, and reporting to achieve key objectives. Manage baselines, monitor delivery performance, and oversee quantitative risk analysis for cost and time. Drive structured governance, reporting, and compliance with Mace Control Centre and industry standards. Mentor and develop junior team members, fostering capability while championing sustainability and net zero carbon goals. You\u2019ll Need To Have Degree in construction, engineering, or related discipline; chartered membership preferred. Significant PMO and project controls leadership on major programmes. Expert knowledge of tools, techniques, and software including Primavera, Power BI, and risk systems. Proven ability to design frameworks, manage uncertainty, and deliver assurance strategies. Our values Safety first - Going home safe and well: We champion a safe, diverse and inclusive working environment, understanding the importance of wellbeing in every team. Client focus - Deliver on our promise: We own the quality of deliverables, strategic outcomes and build long-term relationships with our clients. Integrity - Always do the right thing: We influence positive outcomes within our industry, while always aligning with our compliance obligations. Create opportunity - For our people to excel: We champion a continuous improvement culture throughout all activities, inspiring our people and teams to develop. Mace is an inclusive employer and welcomes interest from a diverse range of candidates. Even if you feel you do not fulfil all the criteria, please apply as you may still be the best candidate for this role or another role within our organisation. We are also open to discussing part-time, flexible, and hybrid working options if suitable within the role. site Show more Show less \u0645\u0633\u062a\u0648\u0649 \u0627\u0644\u0623\u0642\u062f\u0645\u064a\u0629 \u063a\u064a\u0631 \u0645\u0637\u0628\u0642 \u0646\u0648\u0639 \u0627\u0644\u062a\u0648\u0638\u064a\u0641 \u062f\u0648\u0627\u0645 \u0643\u0627\u0645\u0644 \u0627\u0644\u0645\u0647\u0627\u0645 \u0627\u0644\u0648\u0638\u064a\u0641\u064a\u0629 \u0627\u0644\u0625\u062f\u0627\u0631\u0629 \u0648 \u0627\u0644\u062a\u0635\u0646\u064a\u0639 \u0627\u0644\u0645\u062c\u0627\u0644\u0627\u062a \u0625\u0646\u0634\u0627\u0621\u0627\u062a\u060c \u0627\u0644\u0647\u0646\u062f\u0633\u0629 \u0627\u0644\u0645\u062f\u0646\u064a\u0629\u060c \u0648 \u0627\u0644\u0647\u0646\u062f\u0633\u0629 \u0627\u0644\u0645\u0639\u0645\u0627\u0631\u064a\u0629 \u0648\u0627\u0644\u062a\u062e\u0637\u064a\u0637 \u062a\u0632\u064a\u062f \u0627\u0644\u062a\u0631\u0634\u064a\u062d\u0627\u062a \u0645\u0646 \u0641\u0631\u0635\u0643 \u0641\u064a \u0627\u0644\u0648\u0635\u0648\u0644 \u0644\u0645\u0642\u0627\u0628\u0644\u0629 \u0627\u0644\u0648\u0638\u064a\u0641\u0629 \u0641\u064a \u0634\u0631\u0643\u0629 Mace\u060c \u0625\u0644\u0649 \u0627\u0644\u0636\u0639\u0641 \u0639\u0631\u0636 \u0627\u0644\u0623\u0634\u062e\u0627\u0635 \u0627\u0644\u0630\u064a\u0646 \u062a\u0639\u0631\u0641\u0647\u0645 \u0627\u062d\u0635\u0644 \u0639\u0644\u0649 \u0625\u0634\u0639\u0627\u0631\u0627\u062a \u0639\u0646\u062f\u0645\u0627 \u064a\u062a\u0645 \u0646\u0634\u0631 \u0648\u0638\u064a\u0641\u0629 \u062c\u062f\u064a\u062f\u0629. \u062a\u0639\u064a\u064a\u0646 \u062a\u0646\u0628\u064a\u0647 \u0633\u062c\u0651\u0650\u0644 \u0627\u0644\u062f\u062e\u0648\u0644 \u0644\u062a\u0639\u064a\u064a\u0646 \u062a\u0646\u0628\u064a\u0647\u0627\u062a \u0627\u0644\u0648\u0638\u0627\u0626\u0641 \u0644\u0648\u0638\u0627\u0626\u0641 \u201d\u200f\u0645\u062f\u064a\u0631 \u0628\u0642\u0633\u0645 \u0645\u0631\u0627\u0642\u0628\u0629 \u0627\u0644\u0645\u0634\u0631\u0648\u0639\u0627\u062a\u200f\u201c. \u0627\u0644\u0628\u0631\u064a\u062f \u0627\u0644\u0625\u0644\u0643\u062a\u0631\u0648",
+        "jd_text": "Mace combines construction expertise with consultancy to unlock potential in every person or project and redefine the boundaries of ambition. Our values shape the way we consult and define the people we want to join us on our journey. The Project This is an opportunity to work on one of the largest programmes in Saudi Arabia. This unique project consists of major mixed-use development including sports facilities, entertainment, and arts along with all associated infrastructure. Mace is one of the delivery partners requiring high-calibre and experienced professionals to lead integrated teams throughout each phase of the project. You\u2019ll Be Responsible For Lead PMO and project controls performance, designing frameworks and strategies to deliver excellence. Act as trusted advisor, building strong client relationships and providing subject matter expertise. Direct project teams in cost, schedule, change, risk, and reporting to achieve key objectives. Manage baselines, monitor delivery performance, and oversee quantitative risk analysis for cost and time. Drive structured governance, reporting, and compliance with Mace Control Centre and industry standards. Mentor and develop junior team members, fostering capability while championing sustainability and net zero carbon goals. You\u2019ll Need To Have Degree in construction, engineering, or related discipline; chartered membership preferred. Significant PMO and project controls leadership on major programmes. Expert knowledge of tools, techniques, and software including Primavera, Power BI, and risk systems. Proven ability to design frameworks, manage uncertainty, and deliver assurance strategies. Our values Safety first - Going home safe and well: We champion a safe, diverse and inclusive working environment, understanding the importance of wellbeing in every team. Client focus - Deliver on our promise: We own the quality of deliverables, strategic outcomes and build long-term relationships with our clients. Integrity - Always do the right thing: We influence positive outcomes within our industry, while always aligning with our compliance obligations. Create opportunity - For our people to excel: We champion a continuous improvement culture throughout all activities, inspiring our people and teams to develop. Mace is an inclusive employer and welcomes interest from a diverse range of candidates. Even if you feel you do not fulfil all the criteria, please apply as you may still be the best candidate for this role or another role within our organisation. We are also open to discussing part-time, flexible, and hybrid working options if suitable within the role. site",
+        "career_fit_score": 7,
+        "verdict": "SUBMIT",
+        "verdict_reason": "PMO/project controls leadership on major Saudi programme; Mace is a global consultancy; right geography and seniority",
+        "ats_score": 94,
+        "ats_verdict": "CONDITIONAL",
+        "ats_matched": [
+          "pmo",
+          "lead",
+          "director",
+          "cto",
+          "ai",
+          "delivery",
+          "improve",
+          "leadership",
+          "strategic",
+          "team"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, program management"
+        ]
+      },
+      {
+        "id": "linkedin-li-4369631862",
+        "source": "linkedin",
+        "title": "Senior Manager/Director - Data Lead",
+        "company": "Capco",
+        "location": "Riyadh, Riyadh, Saudi Arabia",
+        "url": "https://sa.linkedin.com/jobs/view/senior-manager-director-data-lead-at-capco-4369631862",
+        "posted": "2026-03-20",
+        "seniority": "C-Suite",
+        "domain_match": true,
+        "keyword_score": 6,
+        "match_keywords": [
+          "director"
+        ],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_fetch_status": "fetch_failed",
+        "career_fit_score": 7,
+        "verdict": "SUBMIT",
+        "verdict_reason": "Senior Manager/Director Data Lead at Capco; Capco is a management consultancy focused on digital and financial transformation; consulting + data + transformation aligns with candidate's consulting background",
+        "ats_score": 47,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "lead",
+          "director",
+          "cto",
+          "senior manager",
+          "manager",
+          "data"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4353988367",
+        "source": "linkedin",
+        "title": "Principal (Director) Data Science Consultant Practice Lead",
+        "company": "EPAM Systems",
+        "location": "Al Khobar, Eastern, Saudi Arabia",
+        "url": "https://sa.linkedin.com/jobs/view/principal-director-data-science-consultant-practice-lead-at-epam-systems-4353988367",
+        "posted": "2026-03-22",
+        "seniority": "C-Suite",
+        "domain_match": true,
+        "keyword_score": 6,
+        "match_keywords": [
+          "director"
+        ],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_fetch_status": "fetch_failed",
+        "career_fit_score": 7,
+        "verdict": "SUBMIT",
+        "verdict_reason": "Principal/Director Data Science Consultant Practice Lead at EPAM; EPAM is an IT engineering and consulting firm; data/AI strategy consulting aligns with candidate's AI/ML and analytics strengths; Director level in target geography",
+        "ats_score": 42,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "lead",
+          "director",
+          "cto",
+          "data",
+          "data science"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4385786912",
+        "source": "linkedin",
+        "title": "Director Of Data Science",
+        "company": "TALENTMATE",
+        "location": "Dubai, Dubai, United Arab Emirates",
+        "url": "https://ae.linkedin.com/jobs/view/director-of-data-science-at-talentmate-4385786912",
+        "posted": "2026-03-20",
+        "seniority": "C-Suite",
+        "domain_match": true,
+        "keyword_score": 6,
+        "match_keywords": [
+          "director"
+        ],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_fetch_status": "fetch_failed",
+        "career_fit_score": 7,
+        "verdict": "SUBMIT",
+        "verdict_reason": "Director-level data leadership in Dubai financial services; AI/Data Analytics in-scope, strategic role fits executive profile",
+        "ats_score": 37,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "director",
+          "cto",
+          "data",
+          "data science"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4353216059",
+        "source": "linkedin",
+        "title": "Enterprise Programs Director",
+        "company": "Aspen Technology",
+        "location": "Saudi Arabia",
+        "url": "https://sa.linkedin.com/jobs/view/enterprise-programs-director-at-aspen-technology-4353216059",
+        "posted": "2026-03-21",
+        "seniority": "C-Suite",
+        "domain_match": true,
+        "keyword_score": 13,
+        "match_keywords": [
+          "enterprise",
+          "director"
+        ],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_fetch_status": "fetch_failed",
+        "career_fit_score": 7,
+        "verdict": "SUBMIT",
+        "verdict_reason": "Enterprise Programs Director is PMO/Program Management core; Aspen Technology is enterprise software; Saudi Arabia is target geography; title alone = minimum 7",
+        "ats_score": 35,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "director",
+          "cto",
+          "erp",
+          "technology"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "google-in-bdeaee706e98c45c",
+        "source": "google",
+        "title": "Head of Asset Management & AI Transformation",
+        "company": "MaxAccelerate",
+        "location": "Dubai, DU, AE",
+        "url": "https://ae.indeed.com/viewjob?jk=bdeaee706e98c45c",
+        "posted": "2026-03-19",
+        "seniority": "Director",
+        "domain_match": true,
+        "keyword_score": 13,
+        "match_keywords": [
+          "ai",
+          "head of"
+        ],
+        "raw_snippet": "**Head of Asset Management \\& AI Transformation**\nRemote \\| Global Role \\| Multi\\-Industry\n\n**This is not a traditional asset management role**\nThis role is designed for someone who understands that the future of maintenance and asset management is driven by **data, reliability engineering, and intelligent systems**.\n\n\nIf your experience is rooted in **Reliability\\-Centred Maintenance (RCM), preventive and predictive strategies, labour optimisation, and cost control**, and you are interested in ",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 2,
+        "policy_status": "pass",
+        "sources": [
+          "google-jobs",
+          "linkedin"
+        ],
+        "jd_fetch_status": "fetch_failed",
+        "career_fit_score": 8,
+        "verdict": "SUBMIT",
+        "verdict_reason": "AI Transformation + Asset Management both squarely in core domains; Dubai is target location; role title signals strategic leadership",
+        "ats_score": 30,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "head",
+          "ai",
+          "data"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4387455688",
+        "source": "linkedin",
+        "title": "Director of Product Management, Data",
+        "company": "Jobgether",
+        "location": "Eastern Region",
+        "url": "https://sa.linkedin.com/jobs/view/director-of-product-management-data-at-jobgether-4387455688",
+        "posted": "2026-03-16",
+        "seniority": "C-Suite",
+        "domain_match": true,
+        "keyword_score": 6,
+        "match_keywords": [
+          "director"
+        ],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_fetch_status": "fetch_failed",
+        "career_fit_score": 7,
+        "verdict": "SUBMIT",
+        "verdict_reason": "Director of Product Management, Data is senior tech/data leadership; product & data analytics align",
+        "ats_score": 29,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "director",
+          "cto",
+          "data"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4386864171",
+        "source": "linkedin",
+        "title": "Director of Information Technology",
+        "company": "Staff Connect UAE",
+        "location": "Dubai, United Arab Emirates",
+        "url": "https://ae.linkedin.com/jobs/view/director-of-information-technology-at-staff-connect-uae-4386864171",
+        "posted": "2026-03-18",
+        "seniority": "C-Suite",
+        "domain_match": true,
+        "keyword_score": 6,
+        "match_keywords": [
+          "director"
+        ],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_fetch_status": "fetch_failed",
+        "career_fit_score": 7,
+        "verdict": "SUBMIT",
+        "verdict_reason": "IT Director leadership \u2014 ERP, Cloud, Digital Transformation core competencies directly apply; in-scope domain",
+        "ats_score": 28,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "director",
+          "cto",
+          "technology"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4385249342",
+        "source": "linkedin",
+        "title": "Director, Government Solutions, KSA",
+        "company": "Visa",
+        "location": "Riyadh, Riyadh, Saudi Arabia",
+        "url": "https://sa.linkedin.com/jobs/view/director-government-solutions-ksa-at-visa-4385249342",
+        "posted": "2026-03-16",
+        "seniority": "C-Suite",
+        "domain_match": false,
         "keyword_score": 10,
         "match_keywords": [
           "director",
+          "ksa"
+        ],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_fetch_status": "fetch_failed",
+        "career_fit_score": 7,
+        "verdict": "SUBMIT",
+        "verdict_reason": "Government Solutions at Visa in KSA \u2014 government domain in-scope, Director-level fits, payments/FinTech relevant",
+        "ats_score": 23,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "director",
+          "cto"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4386842856",
+        "source": "linkedin",
+        "title": "Project Director",
+        "company": "Sphere Recruitment",
+        "location": "Dubai, United Arab Emirates",
+        "url": "https://ae.linkedin.com/jobs/view/project-director-at-sphere-recruitment-4386842856",
+        "posted": "2026-03-18",
+        "seniority": "C-Suite",
+        "domain_match": true,
+        "keyword_score": 6,
+        "match_keywords": [
+          "director"
+        ],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_fetch_status": "fetch_failed",
+        "career_fit_score": 7,
+        "verdict": "SUBMIT",
+        "verdict_reason": "Project Director title in target GCC geography with relevant PMO/Execution focus",
+        "ats_score": 23,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "director",
+          "cto"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4387261351",
+        "source": "linkedin",
+        "title": "Project Director",
+        "company": "AKQA",
+        "location": "Dubai, United Arab Emirates",
+        "url": "https://ae.linkedin.com/jobs/view/project-director-at-akqa-4387261351",
+        "posted": "2026-03-18",
+        "seniority": "C-Suite",
+        "domain_match": true,
+        "keyword_score": 6,
+        "match_keywords": [
+          "director"
+        ],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_fetch_status": "fetch_failed",
+        "career_fit_score": 8,
+        "verdict": "SUBMIT",
+        "verdict_reason": "AKQA is a digital/creative agency - strong alignment with digital transformation mandate",
+        "ats_score": 23,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "director",
+          "cto"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4325493775",
+        "source": "linkedin",
+        "title": "Director of Project Execution",
+        "company": "Vanderlande",
+        "location": "Dubai, Dubai, United Arab Emirates",
+        "url": "https://ae.linkedin.com/jobs/view/director-of-project-execution-at-vanderlande-4325493775",
+        "posted": "2026-03-20",
+        "seniority": "C-Suite",
+        "domain_match": true,
+        "keyword_score": 6,
+        "match_keywords": [
+          "director"
+        ],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_fetch_status": "fetch_failed",
+        "career_fit_score": 7,
+        "verdict": "SUBMIT",
+        "verdict_reason": "Direct alignment - Director of Project Execution maps directly to PMO/Program Management core strength",
+        "ats_score": 23,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "director",
+          "cto"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4388734918",
+        "source": "linkedin",
+        "title": "Project Director",
+        "company": "Confidential",
+        "location": "Riyadh, Saudi Arabia",
+        "url": "https://sa.linkedin.com/jobs/view/project-director-at-confidential-4388734918",
+        "posted": "2026-03-22",
+        "seniority": "C-Suite",
+        "domain_match": true,
+        "keyword_score": 6,
+        "match_keywords": [
+          "director"
+        ],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_fetch_status": "fetch_failed",
+        "career_fit_score": 7,
+        "verdict": "SUBMIT",
+        "verdict_reason": "Project Director C-suite in KSA with PMO core domain; company confidential limits full assessment",
+        "ats_score": 23,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "director",
+          "cto"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4385025118",
+        "source": "linkedin",
+        "title": "Innovation Director",
+        "company": "Beyond Company | \u0634\u0631\u0643\u0629 \u0628\u064f\u0639\u062f \u0627\u0644\u0625\u062f\u0627\u0631\u0629",
+        "location": "Riyadh, Riyadh, Saudi Arabia",
+        "url": "https://sa.linkedin.com/jobs/view/innovation-director-at-beyond-company-%D8%B4%D8%B1%D9%83%D8%A9-%D8%A8%D9%8F%D8%B9%D8%AF-%D8%A7%D9%84%D8%A5%D8%AF%D8%A7%D8%B1%D8%A9-4385025118",
+        "posted": "2026-03-18",
+        "seniority": "C-Suite",
+        "domain_match": true,
+        "keyword_score": 6,
+        "match_keywords": [
+          "director"
+        ],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_fetch_status": "fetch_failed",
+        "career_fit_score": 7,
+        "verdict": "SUBMIT",
+        "verdict_reason": "Innovation Director in Riyadh; innovation strategy overlaps with digital transformation leadership; C-suite equivalent seniority, target geography",
+        "ats_score": 23,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "director",
+          "cto"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4374898166",
+        "source": "linkedin",
+        "title": "VP, Technology & Data - Asset Management",
+        "company": "First Abu Dhabi Bank (FAB)",
+        "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
+        "url": "https://ae.linkedin.com/jobs/view/vp-technology-data-asset-management-at-first-abu-dhabi-bank-fab-4374898166",
+        "posted": "2026-03-18",
+        "seniority": "Other",
+        "domain_match": true,
+        "keyword_score": 6,
+        "match_keywords": [
+          "vp"
+        ],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_fetch_status": "fetch_failed",
+        "career_fit_score": 8,
+        "verdict": "SUBMIT",
+        "verdict_reason": "VP Tech & Data at FAB in target geography; Banking/FinTech is core domain",
+        "ats_score": 19,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "vp",
+          "data",
+          "technology"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4372368161",
+        "source": "linkedin",
+        "title": "Chief Strategy Officer",
+        "company": "Madison Pearl",
+        "location": "Dubai, United Arab Emirates",
+        "url": "https://ae.linkedin.com/jobs/view/chief-strategy-officer-at-madison-pearl-4372368161",
+        "posted": "2026-03-16",
+        "seniority": "C-Suite",
+        "domain_match": true,
+        "keyword_score": 0,
+        "match_keywords": [],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_fetch_status": "fetch_failed",
+        "career_fit_score": 8,
+        "verdict": "SUBMIT",
+        "verdict_reason": "Chief Strategy Officer in target geography with strong DT/senior leadership domain fit",
+        "ats_score": 15,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "chief",
+          "strategy"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4373557958",
+        "source": "linkedin",
+        "title": "Chief Strategy Officer - Madison Pearl",
+        "company": "Jobs via eFinancialCareers",
+        "location": "Dubai, Dubai, United Arab Emirates",
+        "url": "https://ae.linkedin.com/jobs/view/chief-strategy-officer-madison-pearl-at-jobs-via-efinancialcareers-4373557958",
+        "posted": "2026-03-18",
+        "seniority": "C-Suite",
+        "domain_match": true,
+        "keyword_score": 0,
+        "match_keywords": [],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_fetch_status": "fetch_failed",
+        "career_fit_score": 8,
+        "verdict": "SUBMIT",
+        "verdict_reason": "Chief Strategy Officer in target geography - same role as Job 4, strong executive fit",
+        "ats_score": 15,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "chief",
+          "strategy"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4384798843",
+        "source": "linkedin",
+        "title": "Head Of SAP Finance Product",
+        "company": "Soar",
+        "location": "Dubai, United Arab Emirates",
+        "url": "https://ae.linkedin.com/jobs/view/head-of-sap-finance-product-at-soar-4384798843",
+        "posted": "2026-03-18",
+        "seniority": "Director",
+        "domain_match": false,
+        "keyword_score": 6,
+        "match_keywords": [
+          "head of"
+        ],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_fetch_status": "fetch_failed",
+        "career_fit_score": 7,
+        "verdict": "SUBMIT",
+        "verdict_reason": "SAP Finance Product \u2014 ERP (SAP) core competency, finance product relevant, Director-level in target geography",
+        "ats_score": 13,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "head",
+          "sap"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4387814503",
+        "source": "linkedin",
+        "title": "Head of Transformation and Strategy",
+        "company": "Involved Solutions",
+        "location": "Dubai, United Arab Emirates",
+        "url": "https://ae.linkedin.com/jobs/view/head-of-transformation-and-strategy-at-involved-solutions-4387814503",
+        "posted": "2026-03-19",
+        "seniority": "Director",
+        "domain_match": true,
+        "keyword_score": 6,
+        "match_keywords": [
+          "head of"
+        ],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_fetch_status": "fetch_failed",
+        "career_fit_score": 8,
+        "verdict": "SUBMIT",
+        "verdict_reason": "Head of Transformation and Strategy - exact match to core DT/Operational Excellence profile",
+        "ats_score": 13,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "head",
+          "strategy"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4385294885",
+        "source": "linkedin",
+        "title": "Head of Revenue Operations MEA North",
+        "company": "SAP",
+        "location": "Riyadh Region",
+        "url": "https://sa.linkedin.com/jobs/view/head-of-revenue-operations-mea-north-at-sap-4385294885",
+        "posted": "2026-03-16",
+        "seniority": "Director",
+        "domain_match": true,
+        "keyword_score": 6,
+        "match_keywords": [
+          "head of"
+        ],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_fetch_status": "fetch_failed",
+        "career_fit_score": 7,
+        "verdict": "SUBMIT",
+        "verdict_reason": "Head of Revenue Operations at SAP MEA North; ERP/digital transformation enabler, Director level, right geography; aligns with candidate's SAP ERP and operational excellence background",
+        "ats_score": 13,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "head",
+          "sap"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4306540759",
+        "source": "linkedin",
+        "title": "Cybersecurity BU Head",
+        "company": "NTT DATA, Inc.",
+        "location": "Riyadh, Riyadh, Saudi Arabia",
+        "url": "https://sa.linkedin.com/jobs/view/cybersecurity-bu-head-at-ntt-data-inc-4306540759",
+        "posted": "2026-03-21",
+        "seniority": "Other",
+        "domain_match": true,
+        "keyword_score": 6,
+        "match_keywords": [
+          "cybersecurity"
+        ],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_fetch_status": "fetch_failed",
+        "career_fit_score": 7,
+        "verdict": "SUBMIT",
+        "verdict_reason": "Cybersecurity BU Head is senior tech leadership in target geography with transformation upside",
+        "ats_score": 12,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "head",
+          "data"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4386329511",
+        "source": "linkedin",
+        "title": "Head, KAUST Innovation Ventures",
+        "company": "KAUST (King Abdullah University of Science and Technology)",
+        "location": "Thuwal, Makkah, Saudi Arabia",
+        "url": "https://sa.linkedin.com/jobs/view/head-kaust-innovation-ventures-at-kaust-king-abdullah-university-of-science-and-technology-4386329511",
+        "posted": "2026-03-16",
+        "seniority": "Other",
+        "domain_match": true,
+        "keyword_score": 0,
+        "match_keywords": [],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_fetch_status": "fetch_failed",
+        "career_fit_score": 7,
+        "verdict": "SUBMIT",
+        "verdict_reason": "Head-level innovation/venture role in target geography (Saudi Arabia), fits strategic tech leadership profile",
+        "ats_score": 11,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "head",
+          "technology"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4386701732",
+        "source": "linkedin",
+        "title": "Chief Operating Officer",
+        "company": "Newbridge",
+        "location": "Dubai, United Arab Emirates",
+        "url": "https://ae.linkedin.com/jobs/view/chief-operating-officer-at-newbridge-4386701732",
+        "posted": "2026-03-17",
+        "seniority": "C-Suite",
+        "domain_match": false,
+        "keyword_score": 0,
+        "match_keywords": [],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_fetch_status": "fetch_failed",
+        "career_fit_score": 8,
+        "verdict": "SUBMIT",
+        "verdict_reason": "COO title in Dubai is strong fit for DT/Operations executive at C-suite level in target geography",
+        "ats_score": 8,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "chief"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4384038104",
+        "source": "linkedin",
+        "title": "Head of Branch Transformation",
+        "company": "Tandem Search",
+        "location": "Dubai, United Arab Emirates",
+        "url": "https://ae.linkedin.com/jobs/view/head-of-branch-transformation-at-tandem-search-4384038104",
+        "posted": "2026-03-16",
+        "seniority": "Director",
+        "domain_match": true,
+        "keyword_score": 6,
+        "match_keywords": [
+          "head of"
+        ],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_fetch_status": "fetch_failed",
+        "career_fit_score": 7,
+        "verdict": "SUBMIT",
+        "verdict_reason": "Branch Transformation in banking \u2014 banking domain in-scope, transformation mandate directly matches core expertise",
+        "ats_score": 6,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "head"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4387269276",
+        "source": "linkedin",
+        "title": "Head of Credit Decisioning",
+        "company": "Finance House",
+        "location": "Abu Dhabi Emirate, United Arab Emirates",
+        "url": "https://ae.linkedin.com/jobs/view/head-of-credit-decisioning-at-finance-house-4387269276",
+        "posted": "2026-03-18",
+        "seniority": "Director",
+        "domain_match": true,
+        "keyword_score": 6,
+        "match_keywords": [
+          "head of"
+        ],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_fetch_status": "fetch_failed",
+        "career_fit_score": 7,
+        "verdict": "SUBMIT",
+        "verdict_reason": "Credit decisioning in fintech/banking; data-driven role with DX relevance in target geography",
+        "ats_score": 6,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "head"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4387440050",
+        "source": "linkedin",
+        "title": "Head of IT Solutions and Quality - Michael Page",
+        "company": "Jobs via eFinancialCareers",
+        "location": "Jiddah, Makkah, Saudi Arabia",
+        "url": "https://sa.linkedin.com/jobs/view/head-of-it-solutions-and-quality-michael-page-at-jobs-via-efinancialcareers-4387440050",
+        "posted": "2026-03-18",
+        "seniority": "Director",
+        "domain_match": true,
+        "keyword_score": 6,
+        "match_keywords": [
+          "head of"
+        ],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_fetch_status": "fetch_failed",
+        "career_fit_score": 8,
+        "verdict": "SUBMIT",
+        "verdict_reason": "IT Solutions & Quality Director in target geography; IT/Tech domain is a strong match",
+        "ats_score": 6,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "head"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4384028980",
+        "source": "linkedin",
+        "title": "General Manager and Senior Vice President, Operations",
+        "company": "Atlantis Resorts",
+        "location": "Dubai, Dubai, United Arab Emirates",
+        "url": "https://ae.linkedin.com/jobs/view/general-manager-and-senior-vice-president-operations-at-atlantis-resorts-4384028980",
+        "posted": "2026-03-16",
+        "seniority": "VP",
+        "domain_match": true,
+        "keyword_score": 0,
+        "match_keywords": [],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_fetch_status": "fetch_failed",
+        "career_fit_score": 7,
+        "verdict": "SUBMIT",
+        "verdict_reason": "GM/SVP Operations in Dubai aligns with Operational Excellence core competency at target seniority and geography",
+        "ats_score": 3,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "manager"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      }
+    ],
+    "review": [
+      {
+        "id": "linkedin-li-4377604135",
+        "source": "linkedin",
+        "title": "Head of KSA, Business Development Climate & Sustainability Services",
+        "company": "S&P Global",
+        "location": "Riyadh Region",
+        "url": "https://sa.linkedin.com/jobs/view/head-of-ksa-business-development-climate-sustainability-services-at-s-p-global-4377604135",
+        "posted": "2026-03-20",
+        "seniority": "Director",
+        "domain_match": true,
+        "keyword_score": 16,
+        "match_keywords": [
+          "ai",
+          "head of",
+          "ksa"
+        ],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_live": true,
+        "jd_fetch_status": "ok",
+        "jd_page_text": "\u062a\u0642\u0648\u0645 \u0634\u0631\u0643\u0629 S&amp;P Global \u0628\u0627\u0644\u062a\u0648\u0638\u064a\u0641 \u0644\u0648\u0638\u064a\u0641\u0629 Head of KSA, Business Development Climate &amp; Sustainability Services \u0641\u064a Riyadh Region | LinkedIn \u062a\u062d\u062a\u0631\u0645 LinkedIn \u062e\u0635\u0648\u0635\u064a\u062a\u0643 \u200f\u2066 \u2069\u062a\u0633\u062a\u062e\u062f\u0645 LinkedIn \u0648\u0627\u0644\u0623\u0637\u0631\u0627\u0641 \u0627\u0644\u062e\u0627\u0631\u062c\u064a\u0629 \u0645\u0644\u0641\u0627\u062a \u062a\u0639\u0631\u064a\u0641 \u0627\u0644\u0627\u0631\u062a\u0628\u0627\u0637 \u0627\u0644\u0623\u0633\u0627\u0633\u064a\u0629 \u0648\u063a\u064a\u0631 \u0627\u0644\u0623\u0633\u0627\u0633\u064a\u0629 \u0644\u062a\u0648\u0641\u064a\u0631 \u062e\u062f\u0645\u0627\u062a\u0646\u0627 \u0648\u062a\u0623\u0645\u064a\u0646\u0647\u0627 \u0648\u062a\u062d\u0644\u064a\u0644\u0647\u0627 \u0648\u062a\u062d\u0633\u064a\u0646\u0647\u0627\u060c \u0648\u0639\u0631\u0636 \u0627\u0644\u0625\u0639\u0644\u0627\u0646\u0627\u062a \u0630\u0627\u062a \u0627\u0644\u0635\u0644\u0629 (\u0628\u0645\u0627 \u0641\u064a \u0630\u0644\u0643 \u2066 \u2069\u0625\u0639\u0644\u0627\u0646\u0627\u062a \u0627\u0644\u0648\u0638\u0627\u0626\u0641 \u0648\u0627\u0644\u0627\u062d\u062a\u0631\u0627\u0641\u064a\u0629\u2066 \u2069) \u062f\u0627\u062e\u0644 \u0648\u062e\u0627\u0631\u062c LinkedIn. \u0645\u0639\u0631\u0641\u0629 \u0627\u0644\u0645\u0632\u064a\u062f \u0645\u0646 \u062e\u0644\u0627\u0644 \u200f \u0633\u064a\u0627\u0633\u0629 \u0645\u0644\u0641\u0627\u062a \u062a\u0639\u0631\u064a\u0641 \u0627\u0644\u0627\u0631\u062a\u0628\u0627\u0637 \u200f \u0644\u062f\u064a\u0646\u0627.\u2066 \u2069\u200f\u2066 \u2069\u062d\u062f\u062f \u0642\u0628\u0648\u0644 \u0644\u0644\u0645\u0648\u0627\u0641\u0642\u0629 \u0623\u0648 \u0631\u0641\u0636 \u0644\u0631\u0641\u0636 \u0645\u0644\u0641\u0627\u062a \u062a\u0639\u0631\u064a\u0641 \u0627\u0644\u0627\u0631\u062a\u0628\u0627\u0637 \u063a\u064a\u0631 \u0627\u0644\u0623\u0633\u0627\u0633\u064a\u0629 \u0644\u0647\u0630\u0627 \u0627\u0644\u0627\u0633\u062a\u062e\u062f\u0627\u0645. \u064a\u0645\u0643\u0646\u0643 \u062a\u062d\u062f\u064a\u062b \u0627\u062e\u062a\u064a\u0627\u0631\u0627\u062a\u0643 \u0641\u064a \u0623\u064a \u0648\u0642\u062a \u0641\u064a \u200f settings \u200f.\u2066 \u2069 \u0642\u0628\u0648\u0644 \u0631\u0641\u0636 \u0627\u0644\u062a\u062e\u0637\u064a \u0625\u0644\u0649 \u0627\u0644\u0645\u062d\u062a\u0648\u0649 \u0627\u0644\u0631\u0626\u064a\u0633\u064a LinkedIn Head of KSA, Business Development Climate &amp; Sustainability Services \u0641\u064a \u0628\u0627\u0631\u064a\u0633 \u062a\u0648\u0633\u064a\u0639 \u0627\u0644\u0628\u062d\u062b \u064a\u0639\u0631\u0636 \u0647\u0630\u0627 \u0627\u0644\u0632\u0631 \u0646\u0648\u0639 \u0627\u0644\u0628\u062d\u062b \u0627\u0644\u0645\u062d\u062f\u062f \u062d\u0627\u0644\u064a\u064b\u0627. \u0639\u0646\u062f \u062a\u0648\u0633\u0639\u062a\u0647\u060c \u064a\u0648\u0641\u0631 \u0642\u0627\u0626\u0645\u0629 \u0628\u062e\u064a\u0627\u0631\u0627\u062a \u0627\u0644\u0628\u062d\u062b \u0627\u0644\u062a\u064a \u0645\u0646 \u0634\u0623\u0646\u0647\u0627 \u062a\u063a\u064a\u064a\u0631 \u0645\u062f\u062e\u0644 \u0627\u0644\u0628\u062d\u062b \u0644\u0645\u0637\u0627\u0628\u0642\u0629 \u0627\u0644\u0627\u062e\u062a\u064a\u0627\u0631 \u0627\u0644\u062d\u0627\u0644\u064a. \u0627\u0644\u0648\u0638\u0627\u0626\u0641 \u0627\u0644\u0623\u0634\u062e\u0627\u0635 \u0645\u0646\u0635\u0629 \u0627\u0644\u062a\u0639\u0644\u064a\u0645 \u0645\u0633\u062d \u0627\u0644\u0646\u0635 \u0645\u0633\u062d \u0627\u0644\u0646\u0635 \u0645\u0633\u062d \u0627\u0644\u0646\u0635 \u0645\u0633\u062d \u0627\u0644\u0646\u0635 \u0645\u0633\u062d \u0627\u0644\u0646\u0635 \u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u062f\u062e\u0648\u0644 \u0627\u0646\u0636\u0645 \u0627\u0644\u0622\u0646 Head of KSA, Business Development Climate &amp; Sustainability Services S&amp;P Global Riyadh Region \u0627\u0644\u062a\u0642\u062f\u0645 \u0627\u0646\u0636\u0645 \u0623\u0648 \u0633\u062c\u0644 \u0627\u0644\u062f\u062e\u0648\u0644 \u0644\u0644\u0639\u062b\u0648\u0631 \u0639\u0644\u0649 \u0648\u0638\u064a\u0641\u062a\u0643 \u0627\u0644\u062a\u0627\u0644\u064a\u0629 \u0627\u0646\u0636\u0645 \u0644\u0644\u062a\u0642\u062f\u0645 \u0625\u0644\u0649 \u0648\u0638\u064a\u0641\u0629 \u2066 \u2069\u200fHead of KSA, Business Development Climate &amp; Sustainability Services\u200f\u2066 \u2069 \u0641\u064a \u2066 \u2069\u200fS&amp;P Global\u200f \u0627\u0644\u0628\u0631\u064a\u062f \u0627\u0644\u0625\u0644\u0643\u062a\u0631\u0648\u0646\u064a \u0623\u0648 \u0631\u0642\u0645 \u0627\u0644\u0647\u0627\u062a\u0641 \u0643\u0644\u0645\u0629 \u0627\u0644\u0645\u0631\u0648\u0631 \u0639\u0631\u0636 \u0647\u0644 \u0646\u0633\u064a\u062a \u0643\u0644\u0645\u0629 \u0627\u0644\u0645\u0631\u0648\u0631\u061f \u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u062f\u062e\u0648\u0644 \u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u062f\u062e\u0648\u0644 \u0628\u0627\u0633\u062a\u062e\u062f\u0627\u0645 \u0627\u0644\u0628\u0631\u064a\u062f \u0627\u0644\u0625\u0644\u0643\u062a\u0631\u0648\u0646\u064a \u0623\u0648 \u0639\u0636\u0648 \u062c\u062f\u064a\u062f \u0639\u0644\u0649 LinkedIn\u061f \u0627\u0646\u0636\u0645 \u0627\u0644\u0622\u0646 \u0628\u0627\u0644\u0646\u0642\u0631 \u0639\u0644\u0649 \u0627\u0644\u0627\u0633\u062a\u0645\u0631\u0627\u0631 \u0644\u0644\u0627\u0646\u0636\u0645\u0627\u0645 \u0623\u0648 \u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u062f\u062e\u0648\u0644\u060c \u0641\u0623\u0646\u062a \u062a\u0648\u0627\u0641\u0642 \u0639\u0644\u0649 \u0627\u062a\u0641\u0627\u0642\u064a\u0629 \u0627\u0644\u0645\u0633\u062a\u062e\u062f\u0645 \u0648 \u0627\u062a\u0641\u0627\u0642\u064a\u0629 \u0627\u0644\u062e\u0635\u0648\u0635\u064a\u0629 \u0648 \u0633\u064a\u0627\u0633\u0629 \u0645\u0644\u0641\u0627\u062a \u062a\u0639\u0631\u064a\u0641 \u0627\u0644\u0627\u0631\u062a\u0628\u0627\u0637 \u0639\u0644\u0649 LinkedIn. Head of KSA, Business Development Climate &amp; Sustainability Services S&amp;P Global Riyadh Region \u0642\u0628\u0644 \u0662 \u0623\u064a\u0627\u0645 \u0623\u0643\u062b\u0631 \u0645\u0646 \u0662\u0660\u0660 \u0645\u062a\u0642\u062f\u0645 \u0645\u0639\u0631\u0641\u0629 \u0645\u0646 \u0642\u0627\u0645\u062a \u0634\u0631\u0643\u0629 S&amp;P Global \u0628\u062a\u0639\u064a\u064a\u0646\u0647 \u0627\u0644\u062a\u0642\u062f\u0645 \u0627\u0646\u0636\u0645 \u0623\u0648 \u0633\u062c\u0644 \u0627\u0644\u062f\u062e\u0648\u0644 \u0644\u0644\u0639\u062b\u0648\u0631 \u0639\u0644\u0649 \u0648\u0638\u064a\u0641\u062a\u0643 \u0627\u0644\u062a\u0627\u0644\u064a\u0629 \u0627\u0646\u0636\u0645 \u0644\u0644\u062a\u0642\u062f\u0645 \u0625\u0644\u0649 \u0648\u0638\u064a\u0641\u0629 \u2066 \u2069\u200fHead of KSA, Business Development Climate &amp; Sustainability Services\u200f\u2066 \u2069 \u0641\u064a \u2066 \u2069\u200fS&amp;P Global\u200f \u0627\u0644\u0628\u0631\u064a\u062f \u0627\u0644\u0625\u0644\u0643\u062a\u0631\u0648\u0646\u064a \u0623\u0648 \u0631\u0642\u0645 \u0627\u0644\u0647\u0627\u062a\u0641 \u0643\u0644\u0645\u0629 \u0627\u0644\u0645\u0631\u0648\u0631 \u0639\u0631\u0636 \u0647\u0644 \u0646\u0633\u064a\u062a \u0643\u0644\u0645\u0629 \u0627\u0644\u0645\u0631\u0648\u0631\u061f \u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u062f\u062e\u0648\u0644 \u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u062f\u062e\u0648\u0644 \u0628\u0627\u0633\u062a\u062e\u062f\u0627\u0645 \u0627\u0644\u0628\u0631\u064a\u062f \u0627\u0644\u0625\u0644\u0643\u062a\u0631\u0648\u0646\u064a \u0623\u0648 \u0639\u0636\u0648 \u062c\u062f\u064a\u062f \u0639\u0644\u0649 LinkedIn\u061f \u0627\u0646\u0636\u0645 \u0627\u0644\u0622\u0646 \u0628\u0627\u0644\u0646\u0642\u0631 \u0639\u0644\u0649 \u0627\u0644\u0627\u0633\u062a\u0645\u0631\u0627\u0631 \u0644\u0644\u0627\u0646\u0636\u0645\u0627\u0645 \u0623\u0648 \u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u062f\u062e\u0648\u0644\u060c \u0641\u0623\u0646\u062a \u062a\u0648\u0627\u0641\u0642 \u0639\u0644\u0649 \u0627\u062a\u0641\u0627\u0642\u064a\u0629 \u0627\u0644\u0645\u0633\u062a\u062e\u062f\u0645 \u0648 \u0627\u062a\u0641\u0627\u0642\u064a\u0629 \u0627\u0644\u062e\u0635\u0648\u0635\u064a\u0629 \u0648 \u0633\u064a\u0627\u0633\u0629 \u0645\u0644\u0641\u0627\u062a \u062a\u0639\u0631\u064a\u0641 \u0627\u0644\u0627\u0631\u062a\u0628\u0627\u0637 \u0639\u0644\u0649 LinkedIn. \u062d\u0641\u0638 \u0627\u0644\u0625\u0628\u0644\u0627\u063a \u0639\u0646 \u0647\u0630\u0647 \u0627\u0644\u0648\u0638\u064a\u0641\u0629 \u0627\u0633\u062a\u062e\u062f\u0645 \u0627\u0644\u0630\u0643\u0627\u0621 \u0627\u0644\u0627\u0635\u0637\u0646\u0627\u0639\u064a \u0644\u062a\u0642\u064a\u064a\u0645 \u0645\u062f\u0649 \u0645\u0644\u0627\u0621\u0645\u062a\u0643 \u0627\u062d\u0635\u0644 \u0639\u0644\u0649 \u0645\u0634\u0648\u0631\u0629 \u0645\u0633\u062a\u0646\u062f\u0629 \u0625\u0644\u0649 \u0627\u0644\u0630\u0643\u0627\u0621 \u0627\u0644\u0627\u0635\u0637\u0646\u0627\u0639\u064a \u0628\u0634\u0623\u0646 \u0647\u0630\u0647 \u0627\u0644\u0648\u0638\u064a\u0641\u0629 \u0648\u063a\u064a\u0631\u0647\u0627 \u0645\u0646 \u0627\u0644\u0645\u064a\u0632\u0627\u062a \u0627\u0644\u062d\u0635\u0631\u064a\u0629. \u0647\u0644 \u0623\u0646\u0627 \u0645\u0646\u0627\u0633\u0628 \u0644\u0647\u0630\u0647 \u0627\u0644\u0648\u0638\u064a\u0641\u0629\u061f \u062a\u062e\u0635\u064a\u0635 \u0633\u064a\u0631\u062a\u064a \u0627\u0644\u0630\u0627\u062a\u064a\u0629 \u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u062f\u062e\u0648\u0644 \u0644\u0644\u0648\u0635\u0648\u0644 \u0625\u0644\u0649 \u0627\u0644\u0645\u0634\u0648\u0631\u0629 \u0627\u0644\u0645\u0633\u062a\u0646\u062f\u0629 \u0625\u0644\u0649 \u0627\u0644\u0630\u0643\u0627\u0621 \u0627\u0644\u0627\u0635\u0637\u0646\u0627\u0639\u064a \u0627\u0644\u0628\u0631\u064a\u062f \u0627\u0644\u0625\u0644\u0643\u062a\u0631\u0648\u0646\u064a \u0623\u0648 \u0631\u0642\u0645 \u0627\u0644\u0647\u0627\u062a\u0641 \u0643\u0644\u0645\u0629 \u0627\u0644\u0645\u0631\u0648\u0631 \u0639\u0631\u0636 \u0647\u0644 \u0646\u0633\u064a\u062a \u0643\u0644\u0645\u0629 \u0627\u0644\u0645\u0631\u0648\u0631\u061f \u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u062f\u062e\u0648\u0644 \u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u062f\u062e\u0648\u0644 \u0628\u0627\u0633\u062a\u062e\u062f\u0627\u0645 \u0627\u0644\u0628\u0631\u064a\u062f \u0627\u0644\u0625\u0644\u0643\u062a\u0631\u0648\u0646\u064a \u0623\u0648 \u0639\u0636\u0648 \u062c\u062f\u064a\u062f \u0639\u0644\u0649 LinkedIn\u061f \u0627\u0646\u0636\u0645 \u0627\u0644\u0622\u0646 \u0628\u0627\u0644\u0646\u0642\u0631 \u0639\u0644\u0649 \u0627\u0644\u0627\u0633\u062a\u0645\u0631\u0627\u0631 \u0644\u0644\u0627\u0646\u0636\u0645\u0627\u0645 \u0623\u0648 \u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u062f\u062e\u0648\u0644\u060c \u0641\u0623\u0646\u062a \u062a\u0648\u0627\u0641\u0642 \u0639\u0644\u0649 \u0627\u062a\u0641\u0627\u0642\u064a\u0629 \u0627\u0644\u0645\u0633\u062a\u062e\u062f\u0645 \u0648 \u0627\u062a\u0641\u0627\u0642\u064a\u0629 \u0627\u0644\u062e\u0635\u0648\u0635\u064a\u0629 \u0648 \u0633\u064a\u0627\u0633\u0629 \u0645\u0644\u0641\u0627\u062a \u062a\u0639\u0631\u064a\u0641 \u0627\u0644\u0627\u0631\u062a\u0628\u0627\u0637 \u0639\u0644\u0649 LinkedIn. \u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u062f\u062e\u0648\u0644 \u0644\u062a\u0642\u064a\u064a\u0645 \u0645\u0647\u0627\u0631\u0627\u062a\u0643 \u0627\u0644\u0628\u0631\u064a\u062f \u0627\u0644\u0625\u0644\u0643\u062a\u0631\u0648\u0646\u064a \u0623\u0648 \u0631\u0642\u0645 \u0627\u0644\u0647\u0627\u062a\u0641 \u0643\u0644\u0645\u0629 \u0627\u0644\u0645\u0631\u0648\u0631 \u0639\u0631\u0636 \u0647\u0644 \u0646\u0633\u064a\u062a \u0643\u0644\u0645\u0629 \u0627\u0644\u0645\u0631\u0648\u0631\u061f \u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u062f\u062e\u0648\u0644 \u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u062f\u062e\u0648\u0644 \u0628\u0627\u0633\u062a\u062e\u062f\u0627\u0645 \u0627\u0644\u0628\u0631\u064a\u062f \u0627\u0644\u0625\u0644\u0643\u062a\u0631\u0648\u0646\u064a \u0623\u0648 \u0639\u0636\u0648 \u062c\u062f\u064a\u062f \u0639\u0644\u0649 LinkedIn\u061f \u0627\u0646\u0636\u0645 \u0627\u0644\u0622\u0646 \u0628\u0627\u0644\u0646\u0642\u0631 \u0639\u0644\u0649 \u0627\u0644\u0627\u0633\u062a\u0645\u0631\u0627\u0631 \u0644\u0644\u0627\u0646\u0636\u0645\u0627\u0645 \u0623\u0648 \u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u062f\u062e\u0648\u0644\u060c \u0641\u0623\u0646\u062a \u062a\u0648\u0627\u0641\u0642 \u0639\u0644\u0649 \u0627\u062a\u0641\u0627\u0642\u064a\u0629 \u0627\u0644\u0645\u0633\u062a\u062e\u062f\u0645 \u0648 \u0627\u062a\u0641\u0627\u0642\u064a\u0629 \u0627\u0644\u062e\u0635\u0648\u0635\u064a\u0629 \u0648 \u0633\u064a\u0627\u0633\u0629 \u0645\u0644\u0641\u0627\u062a \u062a\u0639\u0631\u064a\u0641 \u0627\u0644\u0627\u0631\u062a\u0628\u0627\u0637 \u0639\u0644\u0649 LinkedIn. \u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u062f\u062e\u0648\u0644 \u0644\u062a\u062e\u0635\u064a\u0635 \u0633\u064a\u0631\u062a\u0643 \u0627\u0644\u0630\u0627\u062a\u064a\u0629 \u0627\u0644\u0628\u0631\u064a\u062f \u0627\u0644\u0625\u0644\u0643\u062a\u0631\u0648\u0646\u064a \u0623\u0648 \u0631\u0642\u0645 \u0627\u0644\u0647\u0627\u062a\u0641 \u0643\u0644\u0645\u0629 \u0627\u0644\u0645\u0631\u0648\u0631 \u0639\u0631\u0636 \u0647\u0644 \u0646\u0633\u064a\u062a \u0643\u0644\u0645\u0629 \u0627\u0644\u0645\u0631\u0648\u0631\u061f \u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u062f\u062e\u0648\u0644 \u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u062f\u062e\u0648\u0644 \u0628\u0627\u0633\u062a\u062e\u062f\u0627\u0645 \u0627\u0644\u0628\u0631\u064a\u062f \u0627\u0644\u0625\u0644\u0643\u062a\u0631\u0648\u0646\u064a \u0623\u0648 \u0639\u0636\u0648 \u062c\u062f\u064a\u062f \u0639\u0644\u0649 LinkedIn\u061f \u0627\u0646\u0636\u0645 \u0627\u0644\u0622\u0646 \u0628\u0627\u0644\u0646\u0642\u0631 \u0639\u0644\u0649 \u0627\u0644\u0627\u0633\u062a\u0645\u0631\u0627\u0631 \u0644\u0644\u0627\u0646\u0636\u0645\u0627\u0645 \u0623\u0648 \u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u062f\u062e\u0648\u0644\u060c \u0641\u0623\u0646\u062a \u062a\u0648\u0627\u0641\u0642 \u0639\u0644\u0649 \u0627\u062a\u0641\u0627\u0642\u064a\u0629 \u0627\u0644\u0645\u0633\u062a\u062e\u062f\u0645 \u0648 \u0627\u062a\u0641\u0627\u0642\u064a\u0629 \u0627\u0644\u062e\u0635\u0648\u0635\u064a\u0629 \u0648 \u0633\u064a\u0627\u0633\u0629 \u0645\u0644\u0641\u0627\u062a \u062a\u0639\u0631\u064a\u0641 \u0627\u0644\u0627\u0631\u062a\u0628\u0627\u0637 \u0639\u0644\u0649 LinkedIn. About The Role Grade Level (for internal use): 12 The Role: Head of KSA, Business Development Climate &amp; Sustainability Services The Team: The candidate will be responsible for leading S&amp;P Global\u2019s Climate and Sustainability Services market expansion throughout the Kingdom, focusing on three primary client pillars: Financial Institutions, Non-Financial Corporates in hard-to-abate sectors, and Government Related Entities (GREs). This role demands deep client engagement and high-level strategic conversations, requiring the ability to connect across ministries, national champions, regulators, corporates, and financial institutions. Key expectations include building a robust on-the-ground network, meeting with senior executives and project owners, pitching tailored sustainability solutions, and designing offerings that leverage the full range of S&amp;P Global\u2019s data, analytics, platforms, and advisory services. The candidate will play a pivotal role in positioning S&amp;P Global as a trusted partner in climate and sustainability, ensuring that client needs are met with innovative and impactful solutions. Responsibilities And Impact Market Expansion &amp; Positioning - Establish S&amp;P Global\u2019s sustainability and climate services in KSA and boost local market presence through ongoing engagement with ministries, corporates, and financial institutions. Build a strong network to enhance visibility and leadership. Client Engagement &amp; Relationship Building - Cultivate lasting relationships with senior decision-makers and engage in informed discussions on climate, transition ",
+        "jd_text": "About The Role Grade Level (for internal use): 12 The Role: Head of KSA, Business Development Climate &amp; Sustainability Services The Team: The candidate will be responsible for leading S&amp;P Global\u2019s Climate and Sustainability Services market expansion throughout the Kingdom, focusing on three primary client pillars: Financial Institutions, Non-Financial Corporates in hard-to-abate sectors, and Government Related Entities (GREs). This role demands deep client engagement and high-level strategic conversations, requiring the ability to connect across ministries, national champions, regulators, corporates, and financial institutions. Key expectations include building a robust on-the-ground network, meeting with senior executives and project owners, pitching tailored sustainability solutions, and designing offerings that leverage the full range of S&amp;P Global\u2019s data, analytics, platforms, and advisory services. The candidate will play a pivotal role in positioning S&amp;P Global as a trusted partner in climate and sustainability, ensuring that client needs are met with innovative and impactful solutions. Responsibilities And Impact Market Expansion &amp; Positioning - Establish S&amp;P Global\u2019s sustainability and climate services in KSA and boost local market presence through ongoing engagement with ministries, corporates, and financial institutions. Build a strong network to enhance visibility and leadership. Client Engagement &amp; Relationship Building - Cultivate lasting relationships with senior decision-makers and engage in informed discussions on climate, transition planning, ESG, and sustainability. Act as a strategic partner for continuous client engagement. Business Development &amp; Growth - Pursue new opportunities with financial institutions, corporates, and government entities. Lead pitches and design tailored solutions utilizing S&amp;P\u2019s offerings. Lead internal teams in preparing proposals aligned with regional priorities. Solution Integration &amp; Delivery Coordination - Turn client needs into actionable projects using data, analytics, and advisory platforms. Coordinate globally for seamless delivery and contribute to RHQ\u2019s balanced onshore/offshore delivery model. What We\u2019re Looking For Basic Qualifications: Exclusive for Saudi Nationals and be based in Riyadh to ensure essential on-the-ground presence 10+ years of experience in a consulting role, ideally covering banking, investment, risk, financing, or sustainability-related areas Demonstrate fluency in Arabic and English, with exceptional business writing and executive-level communication skills Proven experience building or scaling a business, team, or regional market presence Strong, hands-on experience in sustainability and climate topics, including advisory, technical analysis, or climate-related risk Deep technical knowledge of ISSB, PCAF, GRI, and decarbonization standards Experience with quantification of financed emissions, such as PCAF methodologies Familiarity",
+        "career_fit_score": 6,
+        "verdict": "REVIEW",
+        "verdict_reason": "Director-level BD for climate services is adjacent to transformation advisory; S&P Global is reputable; sustainability is not a core domain though",
+        "ats_score": 76,
+        "ats_verdict": "SKIP",
+        "ats_matched": [
+          "lead",
+          "cto",
+          "head",
+          "executive",
+          "ai",
+          "data",
+          "leadership",
+          "strategic",
+          "team"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo",
+          "Entry-level role"
+        ]
+      },
+      {
+        "id": "linkedin-li-4352994245",
+        "source": "linkedin",
+        "title": "Director, Government Affairs & Policy",
+        "company": "Mastercard",
+        "location": "Saudi Arabia",
+        "url": "https://sa.linkedin.com/jobs/view/director-government-affairs-policy-at-mastercard-4352994245",
+        "posted": "2026-03-21",
+        "seniority": "C-Suite",
+        "domain_match": true,
+        "keyword_score": 13,
+        "match_keywords": [
+          "ai",
+          "director"
+        ],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_fetch_status": "fetch_failed",
+        "career_fit_score": 5,
+        "verdict": "REVIEW",
+        "verdict_reason": "Director-level, Saudi Arabia location, Mastercard is reputable; Government Affairs/policy is specialized function not DT/Operations core, but stakeholder management is relevant",
+        "ats_score": 41,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "director",
+          "cto",
+          "ai"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4386740425",
+        "source": "linkedin",
+        "title": "Technical Product Director",
+        "company": "SMPL AI",
+        "location": "Dubai, United Arab Emirates",
+        "url": "https://ae.linkedin.com/jobs/view/technical-product-director-at-smpl-ai-4386740425",
+        "posted": "2026-03-17",
+        "seniority": "C-Suite",
+        "domain_match": true,
+        "keyword_score": 6,
+        "match_keywords": [
+          "director"
+        ],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_fetch_status": "fetch_failed",
+        "career_fit_score": 6,
+        "verdict": "REVIEW",
+        "verdict_reason": "AI/ML product leadership has strategic elements but Technical Product is borderline hands-on; domain partially in-scope",
+        "ats_score": 41,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "director",
+          "cto",
+          "ai"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4385684767",
+        "source": "linkedin",
+        "title": "Project Director",
+        "company": "Dubai Dawn Distinguished Construction",
+        "location": "Dubai, United Arab Emirates",
+        "url": "https://ae.linkedin.com/jobs/view/project-director-at-dubai-dawn-distinguished-construction-4385684767",
+        "posted": "2026-03-17",
+        "seniority": "C-Suite",
+        "domain_match": true,
+        "keyword_score": 6,
+        "match_keywords": [
+          "director"
+        ],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_fetch_status": "fetch_failed",
+        "career_fit_score": 5,
+        "verdict": "REVIEW",
+        "verdict_reason": "Construction sector - wrong domain despite correct seniority and location",
+        "ats_score": 41,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "director",
+          "cto",
+          "ai"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4386737187",
+        "source": "linkedin",
+        "title": "Senior Project Manager/ Project Director\u2013 Design Delivery (Lead Design Consultancy)",
+        "company": "Meinhardt MENA",
+        "location": "Dubai, United Arab Emirates",
+        "url": "https://ae.linkedin.com/jobs/view/senior-project-manager-project-director%E2%80%93-design-delivery-lead-design-consultancy-at-meinhardt-mena-4386737187",
+        "posted": "2026-03-17",
+        "seniority": "C-Suite",
+        "domain_match": true,
+        "keyword_score": 6,
+        "match_keywords": [
+          "director"
+        ],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_fetch_status": "fetch_failed",
+        "career_fit_score": 5,
+        "verdict": "REVIEW",
+        "verdict_reason": "Design consultancy focus may pull toward architecture/project delivery vs digital transformation scope",
+        "ats_score": 39,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "lead",
+          "director",
+          "cto",
+          "manager",
+          "delivery"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4368219091",
+        "source": "linkedin",
+        "title": "Chief Technology Officer (CTO) \u2013 Smart Metering Programme",
+        "company": "Talan",
+        "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
+        "url": "https://ae.linkedin.com/jobs/view/chief-technology-officer-cto-%E2%80%93-smart-metering-programme-at-talan-4368219091",
+        "posted": "2026-03-17",
+        "seniority": "C-Suite",
+        "domain_match": true,
+        "keyword_score": 0,
+        "match_keywords": [],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_fetch_status": "fetch_failed",
+        "career_fit_score": 5,
+        "verdict": "REVIEW",
+        "verdict_reason": "CTO title and UAE location strong but Smart Metering Programme is narrow IoT/utility infrastructure vs broad DT executive scope",
+        "ats_score": 30,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "cto",
+          "chief",
+          "technology"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4384984896",
+        "source": "linkedin",
+        "title": "Creative Director (Digital Experience Design)",
+        "company": "Qsas | A PIF Company",
+        "location": "Riyadh, Saudi Arabia",
+        "url": "https://sa.linkedin.com/jobs/view/creative-director-digital-experience-design-at-qsas-a-pif-company-4384984896",
+        "posted": "2026-03-16",
+        "seniority": "C-Suite",
+        "domain_match": true,
+        "keyword_score": 6,
+        "match_keywords": [
+          "director"
+        ],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_fetch_status": "fetch_failed",
+        "career_fit_score": 6,
+        "verdict": "REVIEW",
+        "verdict_reason": "Creative Director Digital Experience at Qsas/PIF; PIF is a prestigious Saudi sovereign fund, and digital experience has DT adjacency, but creative direction is design-focused rather than transformation leadership",
+        "ats_score": 29,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "director",
+          "cto",
+          "digital"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4384947032",
+        "source": "linkedin",
+        "title": "IT Operations Section Head",
+        "company": "Saudi Air Navigation Services",
+        "location": "Jeddah, Makkah, Saudi Arabia",
+        "url": "https://sa.linkedin.com/jobs/view/it-operations-section-head-at-saudi-air-navigation-services-4384947032",
+        "posted": "2026-03-17",
+        "seniority": "Other",
+        "domain_match": true,
+        "keyword_score": 0,
+        "match_keywords": [],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_fetch_status": "fetch_failed",
+        "career_fit_score": 6,
+        "verdict": "REVIEW",
+        "verdict_reason": "IT Operations Section Head in Jeddah has strong domain (IT Operations) and government/navigation fit but Section Head is below VP target",
+        "ats_score": 24,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "head",
+          "ai"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4385469323",
+        "source": "linkedin",
+        "title": "Systems & Service Operations Director \u2013 Controls",
+        "company": "Johnson Controls",
+        "location": "Dubai, Dubai, United Arab Emirates",
+        "url": "https://ae.linkedin.com/jobs/view/systems-service-operations-director-%E2%80%93-controls-at-johnson-controls-4385469323",
+        "posted": "2026-03-19",
+        "seniority": "C-Suite",
+        "domain_match": true,
+        "keyword_score": 6,
+        "match_keywords": [
+          "director"
+        ],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_fetch_status": "fetch_failed",
+        "career_fit_score": 6,
+        "verdict": "REVIEW",
+        "verdict_reason": "Controls/building systems operations; Johnson Controls is in-scope industry but ops domain is narrow engineering focus",
+        "ats_score": 23,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "director",
+          "cto"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4386819896",
+        "source": "linkedin",
+        "title": "Project Director",
+        "company": "Talents Tide",
+        "location": "Dubai, United Arab Emirates",
+        "url": "https://ae.linkedin.com/jobs/view/project-director-at-talents-tide-4386819896",
+        "posted": "2026-03-18",
+        "seniority": "C-Suite",
+        "domain_match": true,
+        "keyword_score": 6,
+        "match_keywords": [
+          "director"
+        ],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_fetch_status": "fetch_failed",
+        "career_fit_score": 6,
+        "verdict": "REVIEW",
+        "verdict_reason": "Project Director in Dubai fits seniority but industry/deal context unknown; generalist project role needs vetting",
+        "ats_score": 23,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "director",
+          "cto"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4387272741",
+        "source": "linkedin",
+        "title": "Senior Director Business Development",
+        "company": "edari",
+        "location": "Dubai, United Arab Emirates",
+        "url": "https://ae.linkedin.com/jobs/view/senior-director-business-development-at-edari-4387272741",
+        "posted": "2026-03-18",
+        "seniority": "C-Suite",
+        "domain_match": false,
+        "keyword_score": 6,
+        "match_keywords": [
+          "director"
+        ],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_fetch_status": "fetch_failed",
+        "career_fit_score": 5,
+        "verdict": "REVIEW",
+        "verdict_reason": "Senior Director level and edari is a data/analytics firm - BD has sales risk but analytics context adds partial relevance",
+        "ats_score": 23,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "director",
+          "cto"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4377025992",
+        "source": "linkedin",
+        "title": "Director of Business Solutions",
+        "company": "Workplace Options",
+        "location": "Dubai, Dubai, United Arab Emirates",
+        "url": "https://ae.linkedin.com/jobs/view/director-of-business-solutions-at-workplace-options-4377025992",
+        "posted": "2026-03-17",
+        "seniority": "C-Suite",
+        "domain_match": false,
+        "keyword_score": 6,
+        "match_keywords": [
+          "director"
+        ],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_fetch_status": "fetch_failed",
+        "career_fit_score": 5,
+        "verdict": "REVIEW",
+        "verdict_reason": "Director of Business Solutions at B2B services - could mean solution architecture/consulting vs pure BD sales",
+        "ats_score": 23,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "director",
+          "cto"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4368220782",
+        "source": "linkedin",
+        "title": "Business Development Director",
+        "company": "Thunes",
+        "location": "Dubai, Dubai, United Arab Emirates",
+        "url": "https://ae.linkedin.com/jobs/view/business-development-director-at-thunes-4368220782",
+        "posted": "2026-03-19",
+        "seniority": "C-Suite",
+        "domain_match": false,
+        "keyword_score": 6,
+        "match_keywords": [
+          "director"
+        ],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_fetch_status": "fetch_failed",
+        "career_fit_score": 6,
+        "verdict": "REVIEW",
+        "verdict_reason": "BD Director in FinTech/Payments - strong domain alignment but sales mandate is a concern at any level",
+        "ats_score": 23,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "director",
+          "cto"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4385257294",
+        "source": "linkedin",
+        "title": "Director Analytics Business Engagement",
+        "company": "Miral Experiences",
+        "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
+        "url": "https://ae.linkedin.com/jobs/view/director-analytics-business-engagement-at-miral-experiences-4385257294",
+        "posted": "2026-03-16",
+        "seniority": "C-Suite",
+        "domain_match": false,
+        "keyword_score": 6,
+        "match_keywords": [
+          "director"
+        ],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_fetch_status": "fetch_failed",
+        "career_fit_score": 6,
+        "verdict": "REVIEW",
+        "verdict_reason": "Analytics Business Engagement at Miral (Abu Dhabi attractions) - analytics aligns with data/AI strength, non-target domain limits score",
+        "ats_score": 23,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "director",
+          "cto"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4385930340",
+        "source": "linkedin",
+        "title": "Facilities Asset Management Director (FM Operations)",
+        "company": "Miral Experiences",
+        "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
+        "url": "https://ae.linkedin.com/jobs/view/facilities-asset-management-director-fm-operations-at-miral-experiences-4385930340",
+        "posted": "2026-03-17",
+        "seniority": "C-Suite",
+        "domain_match": true,
+        "keyword_score": 6,
+        "match_keywords": [
+          "director"
+        ],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_fetch_status": "fetch_failed",
+        "career_fit_score": 5,
+        "verdict": "REVIEW",
+        "verdict_reason": "Director-level asset/FM operations touches operational excellence; facilities is adjacent",
+        "ats_score": 23,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "director",
+          "cto"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4386860396",
+        "source": "linkedin",
+        "title": "Commercial Director",
+        "company": "Carter Murray",
+        "location": "Jeddah, Makkah, Saudi Arabia",
+        "url": "https://sa.linkedin.com/jobs/view/commercial-director-at-carter-murray-4386860396",
+        "posted": "2026-03-18",
+        "seniority": "C-Suite",
+        "domain_match": false,
+        "keyword_score": 6,
+        "match_keywords": [
+          "director"
+        ],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_fetch_status": "fetch_failed",
+        "career_fit_score": 5,
+        "verdict": "REVIEW",
+        "verdict_reason": "Commercial Director at construction consultancy; could overlap with business development but commercial/sales risk given candidate red flags",
+        "ats_score": 23,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "director",
+          "cto"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4377043677",
+        "source": "linkedin",
+        "title": "Commercial Director",
+        "company": "Hilton",
+        "location": "Riyadh Region",
+        "url": "https://sa.linkedin.com/jobs/view/commercial-director-at-hilton-4377043677",
+        "posted": "2026-03-17",
+        "seniority": "C-Suite",
+        "domain_match": false,
+        "keyword_score": 6,
+        "match_keywords": [
+          "director"
+        ],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_fetch_status": "fetch_failed",
+        "career_fit_score": 5,
+        "verdict": "REVIEW",
+        "verdict_reason": "Commercial Director at Hilton is revenue/hospitality focused; hotel commercial roles are sales-heavy but the Director level and Saudi location warrant a second look",
+        "ats_score": 23,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "director",
+          "cto"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4374897474",
+        "source": "linkedin",
+        "title": "AVP, Client Service Engineering - AML & Financial Crime Operations",
+        "company": "First Abu Dhabi Bank (FAB)",
+        "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
+        "url": "https://ae.linkedin.com/jobs/view/avp-client-service-engineering-aml-financial-crime-operations-at-first-abu-dhabi-bank-fab-4374897474",
+        "posted": "2026-03-18",
+        "seniority": "Other",
+        "domain_match": true,
+        "keyword_score": 6,
+        "match_keywords": [
+          "vp"
+        ],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_fetch_status": "fetch_failed",
+        "career_fit_score": 5,
+        "verdict": "REVIEW",
+        "verdict_reason": "FAB domain match but AVP is below target seniority; AML engineering is niche",
+        "ats_score": 15,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "vp",
+          "ml"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4368989308",
+        "source": "linkedin",
+        "title": "Senior Solution Architect (Databricks & Energy Sector Architecture)",
+        "company": "Talan",
+        "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
+        "url": "https://ae.linkedin.com/jobs/view/senior-solution-architect-databricks-energy-sector-architecture-at-talan-4368989308",
+        "posted": "2026-03-19",
+        "seniority": "C-Suite",
+        "domain_match": true,
+        "keyword_score": 3,
+        "match_keywords": [
           "architecture"
         ],
         "raw_snippet": "",
@@ -40,37 +1742,33 @@
         "sources": [
           "linkedin"
         ],
-        "jd_text": "JOB TITLE Director Technology Transformation and Architecture | MAF Global Solutions | Tech Role Summary The Director of Technology Transformation and Architecture at Group Technology leads the development of the group's transformation roadmap and manages the Enterprise Architecture landscape. They drive tech solutions, lead a team of architects and strategists, and pioneer GEN-AI solutions. ROLE PROFILE Technology Transformation: Provide a holistic view of the business and I&amp;T environment, develop a roadmap to enhance digital maturity, and formulate strategies to drive the organization's digital business. Enterprise and Solution Architecture: Establish the Enterprise and Business architecture practice, improve alignment and agility, and manage the Enterprise Architecture activities for efficient business and IT operations. Innovation: Stay aware of I&amp;T trends, identify innovation opportunities, and promote the business value of EA as a strategy enabler and technology innovation driver. Functional/Technical Competencies: Demonstrate experience in senior technology roles, strategic planning, program management, and Enterprise Architecture. Communication: Possess outstanding communication skills, with the ability to negotiate with and influence at senior leadership levels. Management Skills: Exhibit excellent management skills, with the ability to handle diverse components of multiple practices, teams, and programs concurrently. Organizational Savvy: Display organizational and political savvy, with the ability to navigate the personalities, obstacles, and politics of the organization. Technology Understanding: Have a deep understanding of current and emerging technologies and how they can be employed to drive digital business. Requirements 15 or more years of business experience in IT transformation, architecture or technology leadership. Master\u2019s or bachelor\u2019s degree in business, computer science, computer engineering, electrical engineering, system analysis or a related field of study, or equivalent experience. Certified in Architecture Frameworks; TOGAF, FEAF, DOD, Zachman. Certified Program/Project Management Professional. Deep knowledge of business ecosystems, SaaS, infrastructure as a service (IaaS), platform as a service (PaaS), SOA, APIs, open data, microservices, event-driven IT and predictive analytics. Deep understanding of information management practices, system development life cycle management, IT services management, agile and lean methodologies, infrastructure and operations, and EA and ITIL frameworks. What We Offer At Majid Al Futtaim, we\u2019re on a mission to create great moments, to spread happiness, to build, experiences that stay in our memories for a lifetime. We\u2019re proud to say that over the past 27 years, we have built a reputation as a regional market leader in what we do. Join us! Work in a friendly environment, where everyone shares positive vibes and excited about our future. Work with over 45,000 diverse and tale",
+        "jd_fetch_status": "fetch_failed",
         "career_fit_score": 5,
         "verdict": "REVIEW",
-        "verdict_reason": "CEO of medical distribution - HealthTech domain match but supply chain focus rather than DT/PMO core strength",
-        "ats_score": 46,
+        "verdict_reason": "C-suite tech role but hands-on Databricks focus misaligned with Ahmed's DT/PMO executive strength",
+        "ats_score": 14,
         "ats_verdict": "SKIP_TITLE_ONLY",
         "ats_matched": [
-          "director",
           "cto",
-          "ai",
-          "technology"
+          "data"
         ],
         "ats_gaps": [
           "Missing: digital transformation, project management, pmo"
         ]
       },
       {
-        "id": "linkedin-li-4385663641",
+        "id": "linkedin-li-4384039021",
         "source": "linkedin",
-        "title": "CTO \u2013 Dubai \u2013 UAE-N/Arabic Speaker",
-        "company": "Kingston Stanley",
-        "location": "Dubai, United Arab Emirates",
-        "url": "https://ae.linkedin.com/jobs/view/cto-%E2%80%93-dubai-%E2%80%93-uae-n-arabic-speaker-at-kingston-stanley-4385663641",
-        "posted": "2026-03-17",
-        "seniority": "C-Suite",
+        "title": "Head of Treasury Strategy and Products\u00a0 Control / System Support",
+        "company": "Riyad Bank",
+        "location": "Riyadh, Saudi Arabia",
+        "url": "https://sa.linkedin.com/jobs/view/head-of-treasury-strategy-and-products%C2%A0-control-system-support-at-riyad-bank-4384039021",
+        "posted": "2026-03-16",
+        "seniority": "Director",
         "domain_match": true,
-        "keyword_score": 13,
+        "keyword_score": 6,
         "match_keywords": [
-          "ai",
-          "uae",
-          "dubai"
+          "head of"
         ],
         "raw_snippet": "",
         "relevant": true,
@@ -80,34 +1778,137 @@
         "sources": [
           "linkedin"
         ],
-        "jd_text": "CTO \u2013 Dubai \u2013 UAE-N/Arabic Speaker Key Responsibilities Define and drive the company\u2019s technology strategy, ensuring alignment with overall business objectives while identifying opportunities for innovation and operational efficiency. Lead the engineering function with a hands-on approach, including conducting architecture and code reviews, establishing technical standards, and making key build vs. buy decisions. Own and evolve the end-to-end technical architecture of the company\u2019s products and platforms, including system design, technology stack selection, data architecture, and engineering best practices. Design, implement, and oversee robust security architecture across all products, including threat modeling, secure SDLC practices, penetration testing, and incident response planning. Stay abreast of emerging technologies and industry trends, leading research and development initiatives to evaluate and adopt new solutions that support business growth. Evaluate, select, and manage technology vendors and partners, including contract negotiation and performance management to ensure optimal value delivery. Oversee the technology budget, ensuring effective allocation of resources across strategic and operational initiatives while identifying cost optimization opportunities. Collaborate closely with executive leadership and cross-functional teams to align technology initiatives with business priorities, ensuring clear communication and stakeholder engagement. Ensure compliance with relevant laws, regulations, and industry standards related to technology, data privacy, and information security, implementing policies to mitigate risk and maintain governance. Requirements Demonstrated hands-on experience in modern software development within the past 3\u20135 years. Strong ability to conduct code reviews and assess software architecture, ensuring scalability, performance, and maintainability. Proven experience working with cloud-native architectures (AWS, Azure, or GCP), along with containerization technologies such as Docker and Kubernetes, and CI/CD pipelines. Experience designing and developing APIs, microservices, and distributed systems in complex environments. Solid understanding of modern security engineering practices, extending beyond governance into implementation. Hands-on proficiency in at least one modern programming language, such as Python, Go, Java, or TypeScript. Candidates must have recent, practical experience in software development or system architecture within the last 5 years. Profiles lacking this will not be considered. Qualifications Bachelor\u2019s degree in Computer Science, Engineering, or a related field; a Master\u2019s degree is preferred. 20+ years of experience in senior technology leadership roles, with substantial hands-on expertise in software development and system architecture. Proven track record of driving technology innovation, including the design, development, and successful implementation of scalable solutions. Strong lead",
+        "jd_fetch_status": "fetch_failed",
+        "career_fit_score": 5,
+        "verdict": "REVIEW",
+        "verdict_reason": "Head of Treasury Strategy at Riyad Bank; banking domain match but treasury is a narrow functional discipline, not broad DT/Operations; Head level is right seniority but wrong focus area",
+        "ats_score": 13,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "head",
+          "strategy"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4384470138",
+        "source": "linkedin",
+        "title": "Technical Manager / Head of Engineering",
+        "company": "Lenador Systems",
+        "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
+        "url": "https://ae.linkedin.com/jobs/view/technical-manager-head-of-engineering-at-lenador-systems-4384470138",
+        "posted": "2026-03-17",
+        "seniority": "Director",
+        "domain_match": true,
+        "keyword_score": 6,
+        "match_keywords": [
+          "head of"
+        ],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_fetch_status": "fetch_failed",
+        "career_fit_score": 5,
+        "verdict": "REVIEW",
+        "verdict_reason": "Director-level with systems domain match but title leans hands-on engineering",
+        "ats_score": 11,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "head",
+          "manager"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4376438309",
+        "source": "linkedin",
+        "title": "Compliance Senior Manager - Digital Assets",
+        "company": "Wise",
+        "location": "Dubai, Dubai, United Arab Emirates",
+        "url": "https://ae.linkedin.com/jobs/view/compliance-senior-manager-digital-assets-at-wise-4376438309",
+        "posted": "2026-03-18",
+        "seniority": "Other",
+        "domain_match": true,
+        "keyword_score": 0,
+        "match_keywords": [],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_fetch_status": "fetch_failed",
+        "career_fit_score": 5,
+        "verdict": "REVIEW",
+        "verdict_reason": "Compliance in digital assets partially relevant but seniority (Senior Manager) below target and domain shift significant",
+        "ats_score": 9,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "senior manager",
+          "manager",
+          "digital"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4384702402",
+        "source": "linkedin",
+        "title": "Chief Information Security Officer - Hedge Fund - $530k (base)",
+        "company": "Durlston Partners",
+        "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
+        "url": "https://ae.linkedin.com/jobs/view/chief-information-security-officer-hedge-fund-%24530k-base-at-durlston-partners-4384702402",
+        "posted": "2026-03-17",
+        "seniority": "C-Suite",
+        "domain_match": true,
+        "keyword_score": 0,
+        "match_keywords": [],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_fetch_status": "fetch_failed",
         "career_fit_score": 6,
         "verdict": "REVIEW",
-        "verdict_reason": "Director-level IT in banking - domain match but traditional IT management rather than DT/PMO focus",
-        "ats_score": 26,
+        "verdict_reason": "CISO in Abu Dhabi is C-suite tech but cybersecurity is a narrow sub-domain; Hedge Fund adds financial sector niche",
+        "ats_score": 8,
         "ats_verdict": "SKIP_TITLE_ONLY",
         "ats_matched": [
-          "cto",
-          "ai"
+          "chief"
         ],
         "ats_gaps": [
           "Missing: digital transformation, project management, pmo"
         ]
       },
       {
-        "id": "linkedin-li-4385905338",
+        "id": "linkedin-li-4384057356",
         "source": "linkedin",
-        "title": "Director Operations Middle East (m/f/d)",
-        "company": "HYDRO Systems GmbH & Co. KG",
-        "location": "Dubai, Dubai, United Arab Emirates",
-        "url": "https://ae.linkedin.com/jobs/view/director-operations-middle-east-m-f-d-at-hydro-systems-gmbh-co-kg-4385905338",
-        "posted": "2026-03-17",
-        "seniority": "C-Suite",
+        "title": "Head of Engineering",
+        "company": "Discovered MENA",
+        "location": "Dubai, United Arab Emirates",
+        "url": "https://ae.linkedin.com/jobs/view/head-of-engineering-at-discovered-mena-4384057356",
+        "posted": "2026-03-16",
+        "seniority": "Director",
         "domain_match": true,
-        "keyword_score": 10,
+        "keyword_score": 6,
         "match_keywords": [
-          "director",
-          "middle east"
+          "head of"
         ],
         "raw_snippet": "",
         "relevant": true,
@@ -117,34 +1918,32 @@
         "sources": [
           "linkedin"
         ],
-        "jd_text": "WE LOVE AVIATION RH Aero Systems is setting the standard for aviation support equipment and services. Through our industry-leading businesses \u2013 Rhinestahl and HYDRO \u2013 we deliver capability across custom-designed Ground Support Equipment, OEM-licensed engine and airframe tooling, 26 global service centers, and innovative engineered solutions for OEMs, MROs, and Operators worldwide. Director Operations Middle East (m/f/d) YOUR TASKS Develop deep operational capabilities in the Middle East to support and grow the company\u2019s expertise in the region and globally. Provide leadership to the teams to ensure product quality, reliability, and delivery of commitments on time and on budget. Oversee and expand service business in the region through operational efficiencies, on-time delivery, and customer experience. Drive team performance and collaboration to strengthen relationships with both internal and external stakeholders. Lead and inspire team leads to create and execute strategic plans aligned with their respective functions and targets. Provide regular reports and strategic recommendations to the leadership team. Identify and implement business improvements that enhance cost-efficiency and operational effectiveness. Clearly communicate the company\u2019s value propositions and ensure alignment with organizational processes. Proactively assess and address challenges, ensuring timely resolution of issues impacting operations or strategy. Lead and support change initiatives that foster innovation and continuous improvement across the organization. Promote a culture of compliance, accountability, and ongoing process enhancement. Align with the Director Sales on all customer-related topics and ensure stable load from the market. YOUR PROFILE Degree in Engineering, Manufacturing, Service Operations, Business, or a related field; Master\u2019s preferred. Strong background in operations management within manufacturing, ideally in the aviation industry. Demonstrated success in managing cross-functional teams with strong leadership and mentoring skills. Strong understanding of engineering and industrial production processes. Experience working in SMEs and matrix organizations. International business exposure with cultural awareness and adaptability. Expertise in project management, productivity improvement, and strategic planning. Exceptional communication, negotiation, and presentation abilities; confident at executive level. Strong analytical and problem-solving skills; thrives under pressure. High-level organizational and decision-making capabilities. Represents the company at events and maintains a strong public profile. YOUR CONTACT Daniel Geiger Vice President Human Resources HYDRO Systems GmbH &amp; Co. KG Ahfeldstra\u00dfe 10 \u25aa 77781 Biberach / Baden rhaero.com",
+        "jd_fetch_status": "fetch_failed",
         "career_fit_score": 5,
         "verdict": "REVIEW",
-        "verdict_reason": "CEO at blockchain investment bank - FinTech-adjacent but requires investment banking expertise not in profile",
-        "ats_score": 23,
+        "verdict_reason": "Engineering leadership in Dubai but hands-on engineering likely expected; borderline given hands-on anti-pattern",
+        "ats_score": 6,
         "ats_verdict": "SKIP_TITLE_ONLY",
         "ats_matched": [
-          "director",
-          "cto"
+          "head"
         ],
         "ats_gaps": [
           "Missing: digital transformation, project management, pmo"
         ]
       },
       {
-        "id": "linkedin-li-4371347148",
+        "id": "linkedin-li-4329551298",
         "source": "linkedin",
-        "title": "Managing Director, UAE",
-        "company": "InDebted",
-        "location": "Dubai, Dubai, United Arab Emirates",
-        "url": "https://ae.linkedin.com/jobs/view/managing-director-uae-at-indebted-4371347148",
-        "posted": "2026-02-12",
-        "seniority": "C-Suite",
-        "domain_match": false,
-        "keyword_score": 10,
+        "title": "Head of People Transformation",
+        "company": "Madison Pearl",
+        "location": "Dubai, United Arab Emirates",
+        "url": "https://ae.linkedin.com/jobs/view/head-of-people-transformation-at-madison-pearl-4329551298",
+        "posted": "2026-03-16",
+        "seniority": "Director",
+        "domain_match": true,
+        "keyword_score": 6,
         "match_keywords": [
-          "director",
-          "uae"
+          "head of"
         ],
         "raw_snippet": "",
         "relevant": true,
@@ -154,44 +1953,78 @@
         "sources": [
           "linkedin"
         ],
-        "jd_text": "As a global leader in digital, compliance-led collections, InDebted partners with the world\u2019s most innovative enterprises to modernise recovery, protect brand equity, and transform the customer experience. We are now bringing that model to the UAE through a new joint venture anchored by ADCB \u2014 and we are hiring a Managing Director to lead and scale our presence in one of our most important new markets. This is a senior, high-impact leadership role responsible for owning the UAE P&amp;L, driving enterprise growth across banks/telcos/utilities/BNPLs, and establishing InDebted as the region\u2019s benchmark for compliant, digital-first collections. About The Role The Managing Director (UAE) is the senior-most leadership position for the market, accountable for commercial growth, operational performance, regulatory alignment, and long-term client relationships. You will lead the UAE go-to-market strategy, spearhead expansion beyond ADCB, and ensure we execute a relationship-driven enterprise entry model suited to the UAE market\u2019s dynamics. You will build, lead, and manage a small but high-performing local team \u2014 including hiring and managing the Business Development Lead \u2014 while working closely with global product, compliance, operations, and executive leadership. What You\u2019ll Do Define and execute the UAE market strategy, calibrated for a traditional-industry client mix and longer enterprise procurement cycles. Own full P&amp;L responsibility for the UAE market, including revenue, costs, and profitability targets. Accelerate growth through deep relationships across banks, telcos, utilities, BNPLs, and other regulated lenders. Serve as the senior enterprise face of InDebted in the region \u2014 building trust with C-level leaders, regulators, and strategic partners. Lead development of a high-quality commercial pipeline beyond ADCB through your existing network, targeted enterprise outreach, and relationship-based selling. Oversee the activation, onboarding, and performance of ADCB as the anchor client, ensuring strong delivery, compliance, and satisfaction. Hire, develop, and manage the local BD Lead and future UAE team members. Ensure regulatory alignment across data sovereignty, digital collections standards, and client-specific compliance requirements. Partner with global product and operations to ensure seamless service delivery and continuous improvement for UAE clients. Report market insights, commercial progress, pipeline health, forecast performance, and operational KPIs to global leadership and JV stakeholders. What You'll Need 10+ years of leadership experience in collections, financial services, BNPL, telco credit, or enterprise B2B environments in the UAE. Demonstrated success in selling and delivering enterprise services to banks, telcos, or other regulated institutions.A strong, established network across senior credit, collections, risk, and operations leaders in the UAE \u2014 essential for accelerating early pipeline. Experience owning a P&amp;L, m",
+        "jd_fetch_status": "fetch_failed",
         "career_fit_score": 5,
         "verdict": "REVIEW",
-        "verdict_reason": "VP Head of Program Lending at RAKBANK - banking domain and seniority match but SME lending focus too narrow",
-        "ats_score": 23,
+        "verdict_reason": "People Transformation has transformation keyword but HR recruitment firm domain reduces relevance",
+        "ats_score": 6,
         "ats_verdict": "SKIP_TITLE_ONLY",
         "ats_matched": [
-          "director",
-          "cto"
+          "head"
+        ],
+        "ats_gaps": [
+          "Missing: digital transformation, project management, pmo"
+        ]
+      },
+      {
+        "id": "linkedin-li-4350672240",
+        "source": "linkedin",
+        "title": "QNB3601 - Vice President Domestic Compliance Strategy & Supervision",
+        "company": "QNB Group",
+        "location": "Doha, Qatar",
+        "url": "https://qa.linkedin.com/jobs/view/qnb3601-vice-president-domestic-compliance-strategy-supervision-at-qnb-group-4350672240",
+        "posted": "2026-03-17",
+        "seniority": "VP",
+        "domain_match": true,
+        "keyword_score": 0,
+        "match_keywords": [],
+        "raw_snippet": "",
+        "relevant": true,
+        "filter_reason": null,
+        "source_count": 1,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "jd_fetch_status": "fetch_failed",
+        "career_fit_score": 5,
+        "verdict": "REVIEW",
+        "verdict_reason": "VP-level banking role in target geography with operational element, but compliance specialization is narrow and may require specific regulatory credentials",
+        "ats_score": 5,
+        "ats_verdict": "SKIP_TITLE_ONLY",
+        "ats_matched": [
+          "strategy"
         ],
         "ats_gaps": [
           "Missing: digital transformation, project management, pmo"
         ]
       }
     ],
-    "skip_count": 37,
-    "unreviewed_count": 201,
+    "skip_count": 102,
+    "unreviewed_count": 0,
     "thresholds": {
-      "submit": 7,
+      "submit": 8,
       "review": 5
     },
     "kpi": {
-      "submit_rate": 0.12,
-      "review_rate": 0.14,
-      "skip_rate": 0.74,
-      "avg_fit_score": 2.6,
-      "llm_latency_ms": 203518
+      "submit_rate": 0.1794871794871795,
+      "review_rate": 0.16666666666666666,
+      "skip_rate": 0.6538461538461539,
+      "avg_fit_score": 4.0,
+      "llm_latency_ms": 730578,
+      "fallback_count": 0,
+      "fallback_pct": 0.0
     }
   },
   "kpi": {
-    "submit_count": 0,
-    "review_count": 4,
-    "skip_count": 37,
-    "submit_rate": 12.0,
-    "review_rate": 14.0,
-    "skip_rate": 74.0,
-    "avg_fit_score": 2.6,
-    "llm_latency_ms": 203518
+    "submit_count": 28,
+    "review_count": 26,
+    "skip_count": 102,
+    "submit_rate": 17.9,
+    "review_rate": 16.7,
+    "skip_rate": 65.4,
+    "avg_fit_score": 4.0,
+    "llm_latency_ms": 730578
   },
   "recommendations": []
 }
