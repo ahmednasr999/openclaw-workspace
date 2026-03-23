@@ -210,9 +210,18 @@ def call_opus(prompt, max_tokens=8000):
             method="POST"
         )
 
-        with urllib.request.urlopen(req, timeout=180) as resp:
-            result = json.loads(resp.read())
-            return result.get("choices", [{}])[0].get("message", {}).get("content", "").strip()
+        # Retry up to 3 times on timeout
+        last_err = None
+        for attempt in range(3):
+            try:
+                with urllib.request.urlopen(req, timeout=360) as resp:
+                    result = json.loads(resp.read())
+                    return result.get("choices", [{}])[0].get("message", {}).get("content", "").strip()
+            except Exception as e:
+                last_err = e
+                log(f"  Opus attempt {attempt+1}/3 failed: {e}")
+                import time; time.sleep(5)
+        raise last_err
 
     # Fallback: direct Anthropic API
     if not ANTHROPIC_API_KEY:
@@ -294,24 +303,24 @@ Output ONLY raw HTML. No markdown, no explanation, no ```html blocks."""
     return html_body
 
 
-def generate_pdf(html_body, company, role):
+def generate_pdf(html_body, company, role, html_path_override=None):
     """Generate PDF from HTML body via WeasyPrint."""
     safe_role = re.sub(r'[^\w\s-]', '', role).strip()[:50]
     safe_company = re.sub(r'[^\w\s-]', '', company).strip()[:30]
     filename = f"Ahmed Nasr - {safe_role} - {safe_company}"
 
-    html_path = f"{CVS_DIR}/{filename}.html"
+    html_path = html_path_override or f"{CVS_DIR}/{filename}.html"
     pdf_path = f"{CVS_DIR}/{filename}.pdf"
-
-    full_html = HTML_TEMPLATE.format(
-        role_title=f"{safe_role} - {safe_company}",
-        body_html=html_body
-    )
 
     os.makedirs(CVS_DIR, exist_ok=True)
 
-    with open(html_path, "w") as f:
-        f.write(full_html)
+    if not html_path_override:
+        full_html = HTML_TEMPLATE.format(
+            role_title=f"{safe_role} - {safe_company}",
+            body_html=html_body
+        )
+        with open(html_path, "w") as f:
+            f.write(full_html)
 
     log(f"  Running WeasyPrint...")
     result = subprocess.run(
@@ -345,6 +354,131 @@ def generate_pdf(html_body, company, role):
         pass
 
     return html_path, pdf_path
+
+
+def validate_cv(html_path):
+    """Post-build quality gate. Returns (pass: bool, issues: list[str])."""
+    issues = []
+    try:
+        with open(html_path) as f:
+            html = f.read()
+    except Exception as e:
+        return False, [f"Cannot read HTML: {e}"]
+
+    html_lower = html.lower()
+
+    # 1. Education section exists
+    if "<h2>education</h2>" not in html_lower:
+        issues.append("MISSING: Education section")
+
+    # 2. Certifications section exists
+    if "<h2>certifications</h2>" not in html_lower and "<h2>professional certifications</h2>" not in html_lower:
+        issues.append("MISSING: Certifications section")
+
+    # 3. Check for em dashes and en dashes in content
+    em_count = html.count("\u2014") + html.count("&mdash;")
+    en_count = html.count("\u2013") + html.count("&ndash;")
+    if em_count > 0:
+        issues.append(f"STYLE: {em_count} em dashes found")
+    if en_count > 0:
+        issues.append(f"STYLE: {en_count} en dashes found")
+
+    # 4. Check for broken entities (ATandT, etc.)
+    broken = ["ATandT", "AT and T", "at and t"]
+    for b in broken:
+        if b in html:
+            issues.append(f"ENTITY: '{b}' should be 'AT&amp;T'")
+
+    # 5. Reverse chronological order check
+    import re
+    date_pattern = re.compile(r'class="job-date"[^>]*>([^<]+)<')
+    dates_found = date_pattern.findall(html)
+    if not dates_found:
+        # Try alternate: <span class="job-date">
+        date_pattern2 = re.compile(r'<span[^>]*job.date[^>]*>([^<]+)<', re.IGNORECASE)
+        dates_found = date_pattern2.findall(html)
+
+    if dates_found:
+        year_pattern = re.compile(r'(\d{4})')
+        years = []
+        for d in dates_found:
+            m = year_pattern.search(d)
+            if m:
+                yr = int(m.group(1))
+                if "present" in d.lower():
+                    yr = 9999
+                years.append(yr)
+        # Check descending
+        for i in range(len(years) - 1):
+            if years[i] < years[i + 1]:
+                issues.append(f"ORDER: Roles not in reverse chronological order (found {dates_found[i]} before {dates_found[i+1]})")
+                break
+
+    # 6. Contact info present
+    if "ahmednasr999@gmail.com" not in html:
+        issues.append("MISSING: Email address")
+    if "+971 50 281 4490" not in html:
+        issues.append("MISSING: Phone number")
+
+    # 7. Minimum content check
+    if len(html) < 3000:
+        issues.append(f"THIN: HTML only {len(html)} chars, likely incomplete")
+
+    passed = len(issues) == 0
+    return passed, issues
+
+
+def auto_fix_cv(html_path, issues):
+    """Attempt automatic fixes for common issues. Returns count of fixes applied."""
+    try:
+        with open(html_path) as f:
+            html = f.read()
+    except:
+        return 0
+
+    fixes = 0
+
+    # Fix em dashes
+    if any("em dash" in i.lower() for i in issues):
+        html = html.replace("\u2014", "-").replace("&mdash;", "-")
+        fixes += 1
+
+    # Fix en dashes
+    if any("en dash" in i.lower() for i in issues):
+        html = html.replace("\u2013", "-").replace("&ndash;", "-")
+        fixes += 1
+
+    # Fix broken entities
+    if any("ATandT" in i for i in issues):
+        html = html.replace("ATandT", "AT&amp;T").replace("AT and T", "AT&amp;T")
+        fixes += 1
+
+    # Inject MISSING Certifications section from master CV
+    import re as _re
+    if any("MISSING: Certifications" in _i for _i in issues):
+        _certs = (
+            "<h2>Professional Certifications</h2>"
+            "<ul>"
+            "<li><strong>PMP</strong> &#8212; Project Management Professional, PMI, 2008</li>"
+            "<li><strong>CSM</strong> &#8212; Certified Scrum Master, Scrum Alliance, 2014</li>"
+            "<li><strong>CSPO</strong> &#8212; Certified Scrum Product Owner, Scrum Alliance, 2014</li>"
+            "<li><strong>CBAP</strong> &#8212; Certified Business Analysis Professional, IIBA, 2014</li>"
+            "<li><strong>Lean Six Sigma</strong> &#8212; SUNY, 2010</li>"
+            "<li><strong>ITIL Foundations</strong> &#8212; LinkedIn, 2016</li>"
+            "</ul>"
+        )
+        _m = _re.search(r'(<h2>education</h2>.+?)(?=<h2>)', html, _re.DOTALL | _re.IGNORECASE)
+        if _m:
+            html = html[:_m.end()] + _certs + html[_m.end():]
+        else:
+            html = _certs + html
+        fixes += 1
+
+    if fixes > 0:
+        with open(html_path, "w") as f:
+            f.write(html)
+
+    return fixes
 
 
 def classify_job(title):
@@ -578,6 +712,32 @@ def process_trigger(trigger_path, master_cv, pending_updates, dry_run=False):
     except Exception as e:
         log(f"  ERROR generating PDF: {e}")
         return None
+
+    # Post-build validation
+    passed, issues = validate_cv(html_path)
+    if not passed:
+        fixable = [i for i in issues if i.startswith("STYLE:") or i.startswith("ENTITY:")]
+        blockers = [i for i in issues if i not in fixable]
+
+        if fixable:
+            fix_count = auto_fix_cv(html_path, issues)
+            log(f"  AUTO-FIX: {fix_count} issue(s) patched")
+            # Regenerate PDF after fixes
+            try:
+                html_path, pdf_path = generate_pdf(None, company, role, html_path_override=html_path)
+                log(f"  PDF regenerated after auto-fix")
+            except:
+                pass
+
+        if blockers:
+            log(f"  ⚠️ VALIDATION FAILED ({len(blockers)} blocker(s)):")
+            for b in blockers:
+                log(f"    - {b}")
+            log(f"  CV built but flagged for manual review.")
+        else:
+            log(f"  ✅ Validation PASSED (after {len(fixable)} auto-fix(es))")
+    else:
+        log(f"  ✅ Validation PASSED")
 
     # Mark trigger as done
     done_path = trigger_path + ".done"

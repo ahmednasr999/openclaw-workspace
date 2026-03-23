@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-source-linkedin",
     "version": "1.0.0",
-    "generated_at": "2026-03-23T14:05:38.881365+02:00",
-    "duration_ms": 336183,
+    "generated_at": "2026-03-23T22:59:34.068411+02:00",
+    "duration_ms": 336151,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "775c883b",
+    "run_id": "43d106a8",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -102,13 +102,13 @@
       "filter_reason": null
     },
     {
-      "id": "linkedin-li-4386542203",
+      "id": "linkedin-li-4387073305",
       "source": "linkedin",
-      "title": "Head of Marketing for Hospitality Group in Africa",
-      "company": "Apt Resources | Recruitment Specialists",
-      "location": "Dubai, Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/head-of-marketing-for-hospitality-group-in-africa-at-apt-resources-recruitment-specialists-4386542203",
-      "posted": "2026-03-16",
+      "title": "Head of Marketing",
+      "company": "ESMOS Recruitment",
+      "location": "Dubai, United Arab Emirates",
+      "url": "https://ae.linkedin.com/jobs/view/head-of-marketing-at-esmos-recruitment-4387073305",
+      "posted": "2026-03-23",
       "seniority": "Director",
       "domain_match": false,
       "keyword_score": 6,
@@ -120,15 +120,15 @@
       "filter_reason": "skip-word"
     },
     {
-      "id": "linkedin-li-4376570187",
+      "id": "linkedin-li-4386684850",
       "source": "linkedin",
-      "title": "Head of Data Science & Asset Risk | Financial Services - Transformation & Development",
-      "company": "Al-Futtaim",
+      "title": "Head of Marketing",
+      "company": "Nutrili",
       "location": "Dubai, Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/head-of-data-science-asset-risk-financial-services-transformation-development-at-al-futtaim-4376570187",
-      "posted": "2026-03-16",
+      "url": "https://ae.linkedin.com/jobs/view/head-of-marketing-at-nutrili-4386684850",
+      "posted": "2026-03-23",
       "seniority": "Director",
-      "domain_match": true,
+      "domain_match": false,
       "keyword_score": 6,
       "match_keywords": [
         "head of"
@@ -172,22 +172,6 @@
       "raw_snippet": "",
       "relevant": true,
       "filter_reason": null
-    },
-    {
-      "id": "linkedin-li-4385963568",
-      "source": "linkedin",
-      "title": "National Head - Sales & Brand Partnerships (Films, OTT, TV)",
-      "company": "SkyBlueMedia - UAE",
-      "location": "Dubai, Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/national-head-sales-brand-partnerships-films-ott-tv-at-skybluemedia-uae-4385963568",
-      "posted": "2026-03-17",
-      "seniority": "Other",
-      "domain_match": false,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "skip-word"
     },
     {
       "id": "linkedin-li-4387922306",
@@ -240,13 +224,31 @@
       "filter_reason": null
     },
     {
+      "id": "linkedin-li-4386692498",
+      "source": "linkedin",
+      "title": "Chief Executive Officer Crypto",
+      "company": "Monfi Digital Bank",
+      "location": "Dubai, Dubai, United Arab Emirates",
+      "url": "https://ae.linkedin.com/jobs/view/chief-executive-officer-crypto-at-monfi-digital-bank-4386692498",
+      "posted": "2026-03-23",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 6,
+      "match_keywords": [
+        "executive"
+      ],
+      "raw_snippet": "",
+      "relevant": false,
+      "filter_reason": "skip-word"
+    },
+    {
       "id": "linkedin-li-4373557958",
       "source": "linkedin",
       "title": "Chief Strategy Officer - Madison Pearl",
       "company": "Jobs via eFinancialCareers",
       "location": "Dubai, Dubai, United Arab Emirates",
       "url": "https://ae.linkedin.com/jobs/view/chief-strategy-officer-madison-pearl-at-jobs-via-efinancialcareers-4373557958",
-      "posted": "2026-03-18",
+      "posted": "2026-03-23",
       "seniority": "C-Suite",
       "domain_match": true,
       "keyword_score": 0,
@@ -315,7 +317,7 @@
       "company": "Jobs via eFinancialCareers",
       "location": "Dubai, Dubai, United Arab Emirates",
       "url": "https://ae.linkedin.com/jobs/view/vice-president-financial-institutions-coverage-banking-michael-page-at-jobs-via-efinancialcareers-4387422787",
-      "posted": "2026-03-18",
+      "posted": "2026-03-23",
       "seniority": "VP",
       "domain_match": false,
       "keyword_score": 0,
@@ -361,24 +363,6 @@
       "filter_reason": null
     },
     {
-      "id": "linkedin-li-4388163477",
-      "source": "linkedin",
-      "title": "Hands-on CTO Full-Stack AI",
-      "company": "Pragmatike",
-      "location": "Dubai, Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/hands-on-cto-full-stack-ai-at-pragmatike-4388163477",
-      "posted": "2026-03-20",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 6,
-      "match_keywords": [
-        "ai"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null
-    },
-    {
       "id": "linkedin-li-4385663641",
       "source": "linkedin",
       "title": "CTO \u2013 Dubai \u2013 UAE-N/Arabic Speaker",
@@ -394,38 +378,6 @@
         "uae",
         "dubai"
       ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null
-    },
-    {
-      "id": "linkedin-li-4386687044",
-      "source": "linkedin",
-      "title": "CTO (With Investment)",
-      "company": "Agrawal Tech Global",
-      "location": "Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/cto-with-investment-at-agrawal-tech-global-4386687044",
-      "posted": "2026-03-23",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null
-    },
-    {
-      "id": "linkedin-li-4384028980",
-      "source": "linkedin",
-      "title": "General Manager and Senior Vice President, Operations",
-      "company": "Atlantis Resorts",
-      "location": "Dubai, Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/general-manager-and-senior-vice-president-operations-at-atlantis-resorts-4384028980",
-      "posted": "2026-03-16",
-      "seniority": "VP",
-      "domain_match": true,
-      "keyword_score": 0,
-      "match_keywords": [],
       "raw_snippet": "",
       "relevant": true,
       "filter_reason": null
@@ -516,6 +468,25 @@
       "filter_reason": null
     },
     {
+      "id": "linkedin-li-4386675565",
+      "source": "linkedin",
+      "title": "Associate Director \u2013 Data Platform & Operations",
+      "company": "Salt",
+      "location": "Dubai, United Arab Emirates",
+      "url": "https://ae.linkedin.com/jobs/view/associate-director-%E2%80%93-data-platform-operations-at-salt-4386675565",
+      "posted": "2026-03-23",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 10,
+      "match_keywords": [
+        "director",
+        "platform"
+      ],
+      "raw_snippet": "",
+      "relevant": true,
+      "filter_reason": null
+    },
+    {
       "id": "linkedin-li-4387231698",
       "source": "linkedin",
       "title": "Principal Data & AI \u2013 FinTech / InsurTech | UAE (Dubai)",
@@ -569,24 +540,6 @@
       "match_keywords": [
         "director",
         "platform"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null
-    },
-    {
-      "id": "linkedin-li-4385786912",
-      "source": "linkedin",
-      "title": "Director Of Data Science",
-      "company": "TALENTMATE",
-      "location": "Dubai, Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/director-of-data-science-at-talentmate-4385786912",
-      "posted": "2026-03-20",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 6,
-      "match_keywords": [
-        "director"
       ],
       "raw_snippet": "",
       "relevant": true,
@@ -769,22 +722,6 @@
       "filter_reason": null
     },
     {
-      "id": "linkedin-li-4386655411",
-      "source": "linkedin",
-      "title": "Senior Risk & Compliance Associate",
-      "company": "EmiraTalent\u200e",
-      "location": "Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/senior-risk-compliance-associate-at-emiratalent%E2%80%8E-4386655411",
-      "posted": "2026-03-23",
-      "seniority": "Other",
-      "domain_match": false,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "not-exec"
-    },
-    {
       "id": "linkedin-li-4387378809",
       "source": "linkedin",
       "title": "Business Development Manager - Middle East (PSS07947)",
@@ -873,22 +810,6 @@
       "filter_reason": "not-exec"
     },
     {
-      "id": "linkedin-li-4386683071",
-      "source": "linkedin",
-      "title": "Senior Sales Account Manager",
-      "company": "Aspire Technology",
-      "location": "Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/senior-sales-account-manager-at-aspire-technology-4386683071",
-      "posted": "2026-03-23",
-      "seniority": "Other",
-      "domain_match": false,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "not-exec"
-    },
-    {
       "id": "linkedin-li-4386740425",
       "source": "linkedin",
       "title": "Technical Product Director",
@@ -907,22 +828,22 @@
       "filter_reason": null
     },
     {
-      "id": "linkedin-li-4384032996",
+      "id": "linkedin-li-4386689398",
       "source": "linkedin",
-      "title": "Director Operations - Security Printing \u2013 AED 45K \u2013 50K",
-      "company": "Antal International",
+      "title": "Regional Sales Director",
+      "company": "RedHolt",
       "location": "Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/director-operations-security-printing-%E2%80%93-aed-45k-%E2%80%93-50k-at-antal-international-4384032996",
-      "posted": "2026-03-16",
+      "url": "https://ae.linkedin.com/jobs/view/regional-sales-director-at-redholt-4386689398",
+      "posted": "2026-03-23",
       "seniority": "C-Suite",
-      "domain_match": true,
+      "domain_match": false,
       "keyword_score": 6,
       "match_keywords": [
         "director"
       ],
       "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null
+      "relevant": false,
+      "filter_reason": "skip-word"
     },
     {
       "id": "linkedin-li-4375244215",
@@ -948,24 +869,6 @@
       "location": "Dubai, United Arab Emirates",
       "url": "https://ae.linkedin.com/jobs/view/senior-conflicts-manager-asia-and-middle-east-at-walkers-4388140082",
       "posted": "2026-03-19",
-      "seniority": "Other",
-      "domain_match": false,
-      "keyword_score": 3,
-      "match_keywords": [
-        "middle east"
-      ],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "not-exec"
-    },
-    {
-      "id": "linkedin-li-4388168255",
-      "source": "linkedin",
-      "title": "Senior Conflicts Manager Asia And Middle East",
-      "company": "TALENTMATE",
-      "location": "Dubai, Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/senior-conflicts-manager-asia-and-middle-east-at-talentmate-4388168255",
-      "posted": "2026-03-20",
       "seniority": "Other",
       "domain_match": false,
       "keyword_score": 3,
@@ -1029,24 +932,6 @@
       "raw_snippet": "",
       "relevant": true,
       "filter_reason": null
-    },
-    {
-      "id": "linkedin-li-4386359218",
-      "source": "linkedin",
-      "title": "Head of Sales (Interior/Fit-Out)",
-      "company": "Nathan & Nathan",
-      "location": "Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/head-of-sales-interior-fit-out-at-nathan-nathan-4386359218",
-      "posted": "2026-03-16",
-      "seniority": "Director",
-      "domain_match": false,
-      "keyword_score": 6,
-      "match_keywords": [
-        "head of"
-      ],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "skip-word"
     },
     {
       "id": "linkedin-li-4374729151",
@@ -1190,24 +1075,6 @@
       "filter_reason": null
     },
     {
-      "id": "linkedin-li-4384057356",
-      "source": "linkedin",
-      "title": "Head of Engineering",
-      "company": "Discovered MENA",
-      "location": "Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/head-of-engineering-at-discovered-mena-4384057356",
-      "posted": "2026-03-16",
-      "seniority": "Director",
-      "domain_match": true,
-      "keyword_score": 6,
-      "match_keywords": [
-        "head of"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null
-    },
-    {
       "id": "linkedin-li-4386655902",
       "source": "linkedin",
       "title": "Construction Technical Director",
@@ -1261,6 +1128,22 @@
       "filter_reason": "not-exec"
     },
     {
+      "id": "linkedin-li-4378789718",
+      "source": "linkedin",
+      "title": "Engineering Manager",
+      "company": "Wood",
+      "location": "Sharjah, Sharjah Emirate, United Arab Emirates",
+      "url": "https://ae.linkedin.com/jobs/view/engineering-manager-at-wood-4378789718",
+      "posted": "2026-03-23",
+      "seniority": "Other",
+      "domain_match": true,
+      "keyword_score": 0,
+      "match_keywords": [],
+      "raw_snippet": "",
+      "relevant": false,
+      "filter_reason": "not-exec"
+    },
+    {
       "id": "linkedin-li-4389051854",
       "source": "linkedin",
       "title": "Commissioning Director",
@@ -1295,6 +1178,22 @@
       "filter_reason": "not-exec"
     },
     {
+      "id": "linkedin-li-4389097042",
+      "source": "linkedin",
+      "title": "Senior Partner Sales Manager - Global System Integrator GSI",
+      "company": "TALENTMATE",
+      "location": "Dubai, Dubai, United Arab Emirates",
+      "url": "https://ae.linkedin.com/jobs/view/senior-partner-sales-manager-global-system-integrator-gsi-at-talentmate-4389097042",
+      "posted": "2026-03-23",
+      "seniority": "Other",
+      "domain_match": false,
+      "keyword_score": 0,
+      "match_keywords": [],
+      "raw_snippet": "",
+      "relevant": false,
+      "filter_reason": "not-exec"
+    },
+    {
       "id": "linkedin-li-4386650669",
       "source": "linkedin",
       "title": "Planning Engineer [Site Supervision]",
@@ -1306,26 +1205,6 @@
       "domain_match": false,
       "keyword_score": 0,
       "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "not-exec"
-    },
-    {
-      "id": "linkedin-li-4384064661",
-      "source": "linkedin",
-      "title": "Project Manager (Power Generation / Energy \u2013 Power Plant (EPCM)-Dubai, UAE-Duration-28 Months",
-      "company": "SEGULA Technologies",
-      "location": "Dubai, Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/project-manager-power-generation-energy-%E2%80%93-power-plant-epcm-dubai-uae-duration-28-months-at-segula-technologies-4384064661",
-      "posted": "2026-03-16",
-      "seniority": "Other",
-      "domain_match": true,
-      "keyword_score": 13,
-      "match_keywords": [
-        "ai",
-        "uae",
-        "dubai"
-      ],
       "raw_snippet": "",
       "relevant": false,
       "filter_reason": "not-exec"
@@ -1353,22 +1232,6 @@
       "company": "AMS International UAE",
       "location": "Dubai, United Arab Emirates",
       "url": "https://ae.linkedin.com/jobs/view/chief-financial-officer-at-ams-international-uae-4386873396",
-      "posted": "2026-03-18",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null
-    },
-    {
-      "id": "linkedin-li-4386332065",
-      "source": "linkedin",
-      "title": "Chief Financial Officer",
-      "company": "ALPHA10X",
-      "location": "Dubai, Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/chief-financial-officer-at-alpha10x-4386332065",
       "posted": "2026-03-18",
       "seniority": "C-Suite",
       "domain_match": false,
@@ -1413,20 +1276,18 @@
       "filter_reason": null
     },
     {
-      "id": "linkedin-li-4384046518",
+      "id": "linkedin-li-4389096599",
       "source": "linkedin",
-      "title": "Experience Operations Director - Dubai",
-      "company": "Valtech",
+      "title": "Director, Business Operations",
+      "company": "Dow Jones",
       "location": "Dubai, Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/experience-operations-director-dubai-at-valtech-4384046518",
-      "posted": "2026-03-16",
+      "url": "https://ae.linkedin.com/jobs/view/director-business-operations-at-dow-jones-4389096599",
+      "posted": "2026-03-23",
       "seniority": "C-Suite",
       "domain_match": true,
-      "keyword_score": 16,
+      "keyword_score": 6,
       "match_keywords": [
-        "ai",
-        "director",
-        "dubai"
+        "director"
       ],
       "raw_snippet": "",
       "relevant": true,
@@ -1541,22 +1402,6 @@
       "filter_reason": "not-exec"
     },
     {
-      "id": "linkedin-li-4388360708",
-      "source": "linkedin",
-      "title": "Project Manager \u2013 Coupa Expense Management",
-      "company": "Bizoforce - The Innovation Platform Accelerating Digital Solutions for Enterprises",
-      "location": "Dubai, Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/project-manager-%E2%80%93-coupa-expense-management-at-bizoforce-the-innovation-platform-accelerating-digital-solutions-for-enterprises-4388360708",
-      "posted": "2026-03-20",
-      "seniority": "Other",
-      "domain_match": true,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "not-exec"
-    },
-    {
       "id": "linkedin-li-4386819896",
       "source": "linkedin",
       "title": "Project Director",
@@ -1661,43 +1506,6 @@
       "keyword_score": 3,
       "match_keywords": [
         "uae"
-      ],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "not-exec"
-    },
-    {
-      "id": "linkedin-li-4389033204",
-      "source": "linkedin",
-      "title": "HR Business Partner - UAE",
-      "company": "TALENTMATE",
-      "location": "Dubai, Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/hr-business-partner-uae-at-talentmate-4389033204",
-      "posted": "2026-03-22",
-      "seniority": "Other",
-      "domain_match": false,
-      "keyword_score": 3,
-      "match_keywords": [
-        "uae"
-      ],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "not-exec"
-    },
-    {
-      "id": "linkedin-li-4386100382",
-      "source": "linkedin",
-      "title": "Program Manager Marketplace Fees UAE National MENATR Seller Fees",
-      "company": "TALENTMATE",
-      "location": "Dubai, Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/program-manager-marketplace-fees-uae-national-menatr-seller-fees-at-talentmate-4386100382",
-      "posted": "2026-03-20",
-      "seniority": "Other",
-      "domain_match": true,
-      "keyword_score": 6,
-      "match_keywords": [
-        "uae",
-        "mena"
       ],
       "raw_snippet": "",
       "relevant": false,
@@ -1931,6 +1739,24 @@
       "filter_reason": null
     },
     {
+      "id": "linkedin-li-4389097046",
+      "source": "linkedin",
+      "title": "Operations Executive 23M26",
+      "company": "TALENTMATE",
+      "location": "Dubai, Dubai, United Arab Emirates",
+      "url": "https://ae.linkedin.com/jobs/view/operations-executive-23m26-at-talentmate-4389097046",
+      "posted": "2026-03-23",
+      "seniority": "Other",
+      "domain_match": true,
+      "keyword_score": 6,
+      "match_keywords": [
+        "executive"
+      ],
+      "raw_snippet": "",
+      "relevant": false,
+      "filter_reason": "not-exec"
+    },
+    {
       "id": "linkedin-li-4387499839",
       "source": "linkedin",
       "title": "Commercial Director, Middle East & North Africa, Cardiometabolic",
@@ -1957,6 +1783,24 @@
       "location": "Dubai, Dubai, United Arab Emirates",
       "url": "https://ae.linkedin.com/jobs/view/founding-head-of-the-investor-club-at-decentralized-masters-4378308298",
       "posted": "2026-03-19",
+      "seniority": "Director",
+      "domain_match": false,
+      "keyword_score": 6,
+      "match_keywords": [
+        "head of"
+      ],
+      "raw_snippet": "",
+      "relevant": true,
+      "filter_reason": null
+    },
+    {
+      "id": "linkedin-li-4388916252",
+      "source": "linkedin",
+      "title": "Head of Business and Economics",
+      "company": "GEMS Education",
+      "location": "Dubai, Dubai, United Arab Emirates",
+      "url": "https://ae.linkedin.com/jobs/view/head-of-business-and-economics-at-gems-education-4388916252",
+      "posted": "2026-03-23",
       "seniority": "Director",
       "domain_match": false,
       "keyword_score": 6,
@@ -2162,22 +2006,6 @@
       "filter_reason": "not-exec"
     },
     {
-      "id": "linkedin-li-4388793700",
-      "source": "linkedin",
-      "title": "Business Development Specialist",
-      "company": "TALENTMATE",
-      "location": "Dubai, Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/business-development-specialist-at-talentmate-4388793700",
-      "posted": "2026-03-22",
-      "seniority": "Other",
-      "domain_match": false,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "not-exec"
-    },
-    {
       "id": "linkedin-li-4386832794",
       "source": "linkedin",
       "title": "SAP TRM Consultant",
@@ -2185,22 +2013,6 @@
       "location": "Dubai, Dubai, United Arab Emirates",
       "url": "https://ae.linkedin.com/jobs/view/sap-trm-consultant-at-fuzixel-technologies-private-limited-4386832794",
       "posted": "2026-03-18",
-      "seniority": "Other",
-      "domain_match": false,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "not-exec"
-    },
-    {
-      "id": "linkedin-li-4386675152",
-      "source": "linkedin",
-      "title": "Manager E-Invoicing Compliance (Chartered Accountants Only",
-      "company": "N R Doshi & Partners | Auditors Business Consultants Tax Advisors",
-      "location": "Dubai, Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/manager-e-invoicing-compliance-chartered-accountants-only-at-n-r-doshi-partners-auditors-business-consultants-tax-advisors-4386675152",
-      "posted": "2026-03-23",
       "seniority": "Other",
       "domain_match": false,
       "keyword_score": 0,
@@ -2279,22 +2091,6 @@
       "filter_reason": "skip-word"
     },
     {
-      "id": "linkedin-li-4386359391",
-      "source": "linkedin",
-      "title": "Lead Network Architect (Ref: 195970)",
-      "company": "Forsyth Barnes",
-      "location": "Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/lead-network-architect-ref-195970-at-forsyth-barnes-4386359391",
-      "posted": "2026-03-16",
-      "seniority": "Other",
-      "domain_match": false,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "not-exec"
-    },
-    {
       "id": "linkedin-li-4377925194",
       "source": "linkedin",
       "title": "Technical Success Manager - Dubai (Hybrid)",
@@ -2332,35 +2128,20 @@
       "filter_reason": "not-exec"
     },
     {
-      "id": "linkedin-li-4386334477",
+      "id": "linkedin-li-4389096019",
       "source": "linkedin",
-      "title": "Arabic Speaking Cyber Security Director - Doha. 12 month contract",
-      "company": "Consulting Point",
-      "location": "Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/arabic-speaking-cyber-security-director-doha-12-month-contract-at-consulting-point-4386334477",
-      "posted": "2026-03-16",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 6,
-      "match_keywords": [
-        "director"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null
-    },
-    {
-      "id": "linkedin-li-4386358927",
-      "source": "linkedin",
-      "title": "Basic Quality Operator",
-      "company": "LIPTON Teas and Infusions",
+      "title": "Assistant Manager Manager - FAAS - Corporate Treasury - Dubai",
+      "company": "TALENTMATE",
       "location": "Dubai, Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/basic-quality-operator-at-lipton-teas-and-infusions-4386358927",
-      "posted": "2026-03-16",
+      "url": "https://ae.linkedin.com/jobs/view/assistant-manager-manager-faas-corporate-treasury-dubai-at-talentmate-4389096019",
+      "posted": "2026-03-23",
       "seniority": "Other",
-      "domain_match": false,
-      "keyword_score": 0,
-      "match_keywords": [],
+      "domain_match": true,
+      "keyword_score": 10,
+      "match_keywords": [
+        "ai",
+        "dubai"
+      ],
       "raw_snippet": "",
       "relevant": false,
       "filter_reason": "not-exec"
@@ -2401,22 +2182,6 @@
       "filter_reason": "not-exec"
     },
     {
-      "id": "linkedin-li-4385291233",
-      "source": "linkedin",
-      "title": "Lead Data Engineer",
-      "company": "Aqovia",
-      "location": "Dubai, Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/lead-data-engineer-at-aqovia-4385291233",
-      "posted": "2026-03-16",
-      "seniority": "Other",
-      "domain_match": true,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "not-exec"
-    },
-    {
       "id": "linkedin-li-4386157687",
       "source": "linkedin",
       "title": "Business Development & Sales Specialist",
@@ -2444,25 +2209,6 @@
       "domain_match": false,
       "keyword_score": 0,
       "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "not-exec"
-    },
-    {
-      "id": "linkedin-li-4385607223",
-      "source": "linkedin",
-      "title": "Salesforce Technical Architect - UAE",
-      "company": "Globant",
-      "location": "Dubai, Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/salesforce-technical-architect-uae-at-globant-4385607223",
-      "posted": "2026-03-16",
-      "seniority": "Other",
-      "domain_match": true,
-      "keyword_score": 10,
-      "match_keywords": [
-        "salesforce",
-        "uae"
-      ],
       "raw_snippet": "",
       "relevant": false,
       "filter_reason": "not-exec"
@@ -2502,24 +2248,6 @@
       "filter_reason": "not-exec"
     },
     {
-      "id": "linkedin-li-4388799322",
-      "source": "linkedin",
-      "title": "General Manager Digital Brand MENA",
-      "company": "TALENTMATE",
-      "location": "Dubai, Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/general-manager-digital-brand-mena-at-talentmate-4388799322",
-      "posted": "2026-03-21",
-      "seniority": "Other",
-      "domain_match": true,
-      "keyword_score": 3,
-      "match_keywords": [
-        "mena"
-      ],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "not-exec"
-    },
-    {
       "id": "linkedin-li-4384099325",
       "source": "linkedin",
       "title": "Director, MarTech Platform Sales, Services",
@@ -2537,24 +2265,6 @@
       "raw_snippet": "",
       "relevant": false,
       "filter_reason": "skip-word"
-    },
-    {
-      "id": "linkedin-li-4389039154",
-      "source": "linkedin",
-      "title": "Graduate Document Controller UAE National",
-      "company": "TALENTMATE",
-      "location": "Dubai, Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/graduate-document-controller-uae-national-at-talentmate-4389039154",
-      "posted": "2026-03-22",
-      "seniority": "Other",
-      "domain_match": false,
-      "keyword_score": 3,
-      "match_keywords": [
-        "uae"
-      ],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "not-exec"
     },
     {
       "id": "linkedin-li-4386724413",
@@ -2977,6 +2687,24 @@
       "filter_reason": "not-exec"
     },
     {
+      "id": "linkedin-li-4388953084",
+      "source": "linkedin",
+      "title": "Director of Business Development",
+      "company": "Confidential",
+      "location": "Dubai, United Arab Emirates",
+      "url": "https://ae.linkedin.com/jobs/view/director-of-business-development-at-confidential-4388953084",
+      "posted": "2026-03-23",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 6,
+      "match_keywords": [
+        "director"
+      ],
+      "raw_snippet": "",
+      "relevant": true,
+      "filter_reason": null
+    },
+    {
       "id": "linkedin-li-4387226381",
       "source": "linkedin",
       "title": "Head of Business Development",
@@ -3122,26 +2850,6 @@
       "filter_reason": null
     },
     {
-      "id": "linkedin-li-4323214499",
-      "source": "linkedin",
-      "title": "Head of Business Development (Crypto Derivatives) \u2013 Dubai",
-      "company": "Hyphen Connect",
-      "location": "Dubai, Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/head-of-business-development-crypto-derivatives-%E2%80%93-dubai-at-hyphen-connect-4323214499",
-      "posted": "2026-03-16",
-      "seniority": "Director",
-      "domain_match": true,
-      "keyword_score": 16,
-      "match_keywords": [
-        "ai",
-        "head of",
-        "dubai"
-      ],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "skip-word"
-    },
-    {
       "id": "linkedin-li-4385731675",
       "source": "linkedin",
       "title": "Business Development Director",
@@ -3166,6 +2874,25 @@
       "company": "Reckitt",
       "location": "Dubai, Dubai, United Arab Emirates",
       "url": "https://ae.linkedin.com/jobs/view/head-of-media-menap-at-reckitt-4379758043",
+      "posted": "2026-03-23",
+      "seniority": "Director",
+      "domain_match": false,
+      "keyword_score": 10,
+      "match_keywords": [
+        "head of",
+        "mena"
+      ],
+      "raw_snippet": "",
+      "relevant": true,
+      "filter_reason": null
+    },
+    {
+      "id": "linkedin-li-4389098007",
+      "source": "linkedin",
+      "title": "Head Of Media MENAP",
+      "company": "TALENTMATE",
+      "location": "Dubai, Dubai, United Arab Emirates",
+      "url": "https://ae.linkedin.com/jobs/view/head-of-media-menap-at-talentmate-4389098007",
       "posted": "2026-03-23",
       "seniority": "Director",
       "domain_match": false,
@@ -3213,24 +2940,6 @@
       "raw_snippet": "",
       "relevant": true,
       "filter_reason": null
-    },
-    {
-      "id": "linkedin-li-4386350336",
-      "source": "linkedin",
-      "title": "Head of Human Resources",
-      "company": "Confidential",
-      "location": "Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/head-of-human-resources-at-confidential-4386350336",
-      "posted": "2026-03-16",
-      "seniority": "Director",
-      "domain_match": false,
-      "keyword_score": 6,
-      "match_keywords": [
-        "head of"
-      ],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "skip-word"
     },
     {
       "id": "linkedin-li-4385454568",
@@ -3320,24 +3029,6 @@
       "filter_reason": "skip-word"
     },
     {
-      "id": "linkedin-li-4388770061",
-      "source": "linkedin",
-      "title": "Head Of Compliance EMEA",
-      "company": "TALENTMATE",
-      "location": "Dubai, Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/head-of-compliance-emea-at-talentmate-4388770061",
-      "posted": "2026-03-21",
-      "seniority": "Director",
-      "domain_match": false,
-      "keyword_score": 6,
-      "match_keywords": [
-        "head of"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null
-    },
-    {
       "id": "linkedin-li-4369069006",
       "source": "linkedin",
       "title": "Head of Custody, Crypto - Dubai/London",
@@ -3414,6 +3105,24 @@
       "filter_reason": "skip-word"
     },
     {
+      "id": "linkedin-li-4389082574",
+      "source": "linkedin",
+      "title": "Head of PR and Communications",
+      "company": "FIX Dessert Chocolatier",
+      "location": "Dubai, United Arab Emirates",
+      "url": "https://ae.linkedin.com/jobs/view/head-of-pr-and-communications-at-fix-dessert-chocolatier-4389082574",
+      "posted": "2026-03-23",
+      "seniority": "Director",
+      "domain_match": false,
+      "keyword_score": 6,
+      "match_keywords": [
+        "head of"
+      ],
+      "raw_snippet": "",
+      "relevant": false,
+      "filter_reason": "skip-word"
+    },
+    {
       "id": "linkedin-li-4384455808",
       "source": "linkedin",
       "title": "Sr. Manager - Data Analytics & Business Intelligence",
@@ -3455,22 +3164,6 @@
       "location": "Dubai, Dubai, United Arab Emirates",
       "url": "https://ae.linkedin.com/jobs/view/sales-and-marketing-manager-oncology-radioligand-therapy-area-gulf-cluster-at-novartis-4384481890",
       "posted": "2026-03-17",
-      "seniority": "Other",
-      "domain_match": false,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "not-exec"
-    },
-    {
-      "id": "linkedin-li-4386367825",
-      "source": "linkedin",
-      "title": "NRI Sales and Business Development Manager, IWPB",
-      "company": "HSBC",
-      "location": "Dubai, Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/nri-sales-and-business-development-manager-iwpb-at-hsbc-4386367825",
-      "posted": "2026-03-16",
       "seniority": "Other",
       "domain_match": false,
       "keyword_score": 0,
@@ -3654,22 +3347,6 @@
       "filter_reason": "skip-word"
     },
     {
-      "id": "linkedin-li-4386510889",
-      "source": "linkedin",
-      "title": "Senior Presales Manager",
-      "company": "Unikie",
-      "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/senior-presales-manager-at-unikie-4386510889",
-      "posted": "2026-03-16",
-      "seniority": "Other",
-      "domain_match": false,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "not-exec"
-    },
-    {
       "id": "linkedin-li-4386663722",
       "source": "linkedin",
       "title": "Program Director - GPU Deployment",
@@ -3688,15 +3365,15 @@
       "filter_reason": null
     },
     {
-      "id": "linkedin-li-4385257294",
+      "id": "linkedin-li-4389086605",
       "source": "linkedin",
-      "title": "Director Analytics Business Engagement",
-      "company": "Miral Experiences",
+      "title": "Program Director - GPU Deployment",
+      "company": "TALENTMATE",
       "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/director-analytics-business-engagement-at-miral-experiences-4385257294",
-      "posted": "2026-03-16",
+      "url": "https://ae.linkedin.com/jobs/view/program-director-gpu-deployment-at-talentmate-4389086605",
+      "posted": "2026-03-23",
       "seniority": "C-Suite",
-      "domain_match": false,
+      "domain_match": true,
       "keyword_score": 6,
       "match_keywords": [
         "director"
@@ -3778,13 +3455,29 @@
       "company": "Jobs via eFinancialCareers",
       "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
       "url": "https://ae.linkedin.com/jobs/view/vice-president-private-equity-global-fund-abu-dhabi-uae-per-private-equity-recruitment-at-jobs-via-efinancialcareers-4370183214",
-      "posted": "2026-03-18",
+      "posted": "2026-03-23",
       "seniority": "VP",
       "domain_match": false,
       "keyword_score": 3,
       "match_keywords": [
         "uae"
       ],
+      "raw_snippet": "",
+      "relevant": false,
+      "filter_reason": "skip-word"
+    },
+    {
+      "id": "linkedin-li-4389238454",
+      "source": "linkedin",
+      "title": "Vice President/SMB Marketing & CVM",
+      "company": "e& UAE",
+      "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
+      "url": "https://ae.linkedin.com/jobs/view/vice-president-smb-marketing-cvm-at-e-uae-4389238454",
+      "posted": "2026-03-23",
+      "seniority": "VP",
+      "domain_match": false,
+      "keyword_score": 0,
+      "match_keywords": [],
       "raw_snippet": "",
       "relevant": false,
       "filter_reason": "skip-word"
@@ -3868,25 +3561,6 @@
       "keyword_score": 6,
       "match_keywords": [
         "ai"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null
-    },
-    {
-      "id": "linkedin-li-4386675565",
-      "source": "linkedin",
-      "title": "Associate Director \u2013 Data Platform & Operations",
-      "company": "Salt",
-      "location": "Abu Dhabi Emirate, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/associate-director-%E2%80%93-data-platform-operations-at-salt-4386675565",
-      "posted": "2026-03-23",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 10,
-      "match_keywords": [
-        "director",
-        "platform"
       ],
       "raw_snippet": "",
       "relevant": true,
@@ -4142,24 +3816,6 @@
       "filter_reason": null
     },
     {
-      "id": "linkedin-li-4388752648",
-      "source": "linkedin",
-      "title": "Director - International Sales",
-      "company": "TALENTMATE",
-      "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/director-international-sales-at-talentmate-4388752648",
-      "posted": "2026-03-21",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 6,
-      "match_keywords": [
-        "director"
-      ],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "skip-word"
-    },
-    {
       "id": "linkedin-li-4369109793",
       "source": "linkedin",
       "title": "Manager - Solution Engineering",
@@ -4176,48 +3832,12 @@
       "filter_reason": "not-exec"
     },
     {
-      "id": "linkedin-li-4388794743",
-      "source": "linkedin",
-      "title": "Lead Consultant - OT Cybersecurity CPX",
-      "company": "TALENTMATE",
-      "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/lead-consultant-ot-cybersecurity-cpx-at-talentmate-4388794743",
-      "posted": "2026-03-21",
-      "seniority": "Other",
-      "domain_match": true,
-      "keyword_score": 6,
-      "match_keywords": [
-        "cybersecurity"
-      ],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "not-exec"
-    },
-    {
       "id": "linkedin-li-4376277029",
       "source": "linkedin",
       "title": "Lead Consultant - OT Cybersecurity (CPX)",
       "company": "CPX",
       "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
       "url": "https://ae.linkedin.com/jobs/view/lead-consultant-ot-cybersecurity-cpx-at-cpx-4376277029",
-      "posted": "2026-03-21",
-      "seniority": "Other",
-      "domain_match": true,
-      "keyword_score": 6,
-      "match_keywords": [
-        "cybersecurity"
-      ],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "not-exec"
-    },
-    {
-      "id": "linkedin-li-4388754599",
-      "source": "linkedin",
-      "title": "Lead Engineer - OT Cybersecurity",
-      "company": "TALENTMATE",
-      "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/lead-engineer-ot-cybersecurity-at-talentmate-4388754599",
       "posted": "2026-03-21",
       "seniority": "Other",
       "domain_match": true,
@@ -4282,22 +3902,6 @@
       "raw_snippet": "",
       "relevant": true,
       "filter_reason": null
-    },
-    {
-      "id": "linkedin-li-4386100453",
-      "source": "linkedin",
-      "title": "Manager - Solution Engineering",
-      "company": "TALENTMATE",
-      "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/manager-solution-engineering-at-talentmate-4386100453",
-      "posted": "2026-03-20",
-      "seniority": "Other",
-      "domain_match": true,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "not-exec"
     },
     {
       "id": "linkedin-li-4386329280",
@@ -4368,24 +3972,6 @@
       "raw_snippet": "",
       "relevant": false,
       "filter_reason": "not-exec"
-    },
-    {
-      "id": "linkedin-li-4384061659",
-      "source": "linkedin",
-      "title": "Cluster Director of Engineering - InterContinental Hotel & Residences Abu Dhabi",
-      "company": "IHG Hotels & Resorts",
-      "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/cluster-director-of-engineering-intercontinental-hotel-residences-abu-dhabi-at-ihg-hotels-resorts-4384061659",
-      "posted": "2026-03-16",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 6,
-      "match_keywords": [
-        "director"
-      ],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "skip-word"
     },
     {
       "id": "linkedin-li-4374897474",
@@ -4551,24 +4137,6 @@
       "filter_reason": null
     },
     {
-      "id": "linkedin-li-4385791828",
-      "source": "linkedin",
-      "title": "Chief Financial Officer CFO Finance Manager - Crypto Exchange UAE Abu Dhabi",
-      "company": "TALENTMATE",
-      "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/chief-financial-officer-cfo-finance-manager-crypto-exchange-uae-abu-dhabi-at-talentmate-4385791828",
-      "posted": "2026-03-20",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 3,
-      "match_keywords": [
-        "uae"
-      ],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "skip-word"
-    },
-    {
       "id": "linkedin-li-4388346050",
       "source": "linkedin",
       "title": "Chief Financial Officer (CFO) / Finance Manager - Crypto Exchange (UAE, Abu Dhabi)",
@@ -4585,24 +4153,6 @@
       "raw_snippet": "",
       "relevant": false,
       "filter_reason": "skip-word"
-    },
-    {
-      "id": "linkedin-li-4388694349",
-      "source": "linkedin",
-      "title": "PMO Manager-Industrial Projects",
-      "company": "TGC Consulting - Middle East",
-      "location": "Abu Dhabi Emirate, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/pmo-manager-industrial-projects-at-tgc-consulting-middle-east-4388694349",
-      "posted": "2026-03-23",
-      "seniority": "Other",
-      "domain_match": true,
-      "keyword_score": 10,
-      "match_keywords": [
-        "pmo"
-      ],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "not-exec"
     },
     {
       "id": "linkedin-li-4385610179",
@@ -4734,38 +4284,6 @@
       "filter_reason": null
     },
     {
-      "id": "linkedin-li-4374238325",
-      "source": "linkedin",
-      "title": "Program Manager, CB, PB & Marketing",
-      "company": "First Abu Dhabi Bank (FAB)",
-      "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/program-manager-cb-pb-marketing-at-first-abu-dhabi-bank-fab-4374238325",
-      "posted": "2026-03-16",
-      "seniority": "Other",
-      "domain_match": true,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "not-exec"
-    },
-    {
-      "id": "linkedin-li-4374247113",
-      "source": "linkedin",
-      "title": "Program Manager, Risk & Compliance",
-      "company": "First Abu Dhabi Bank (FAB)",
-      "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/program-manager-risk-compliance-at-first-abu-dhabi-bank-fab-4374247113",
-      "posted": "2026-03-16",
-      "seniority": "Other",
-      "domain_match": true,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "not-exec"
-    },
-    {
       "id": "linkedin-li-4385726283",
       "source": "linkedin",
       "title": "Program Delivery Manager \u2014 Unity Skills Development Programs (UAE, Contract Position)",
@@ -4816,22 +4334,6 @@
       "filter_reason": "not-exec"
     },
     {
-      "id": "linkedin-li-4374243173",
-      "source": "linkedin",
-      "title": "Program Manager, CCB",
-      "company": "First Abu Dhabi Bank (FAB)",
-      "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/program-manager-ccb-at-first-abu-dhabi-bank-fab-4374243173",
-      "posted": "2026-03-16",
-      "seniority": "Other",
-      "domain_match": true,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "not-exec"
-    },
-    {
       "id": "linkedin-li-4375923777",
       "source": "linkedin",
       "title": "Program Manager, CCB",
@@ -4848,12 +4350,30 @@
       "filter_reason": "not-exec"
     },
     {
-      "id": "linkedin-li-4386661125",
+      "id": "linkedin-li-4388943897",
       "source": "linkedin",
-      "title": "Operations Manager",
-      "company": "Windmills Group",
+      "title": "Director, Strategy & Transformation",
+      "company": "GG Selection",
       "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/operations-manager-at-windmills-group-4386661125",
+      "url": "https://ae.linkedin.com/jobs/view/director-strategy-transformation-at-gg-selection-4388943897",
+      "posted": "2026-03-23",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 6,
+      "match_keywords": [
+        "director"
+      ],
+      "raw_snippet": "",
+      "relevant": true,
+      "filter_reason": null
+    },
+    {
+      "id": "linkedin-li-4370371582",
+      "source": "linkedin",
+      "title": "Division Operations Lead",
+      "company": "Anduril Industries",
+      "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
+      "url": "https://ae.linkedin.com/jobs/view/division-operations-lead-at-anduril-industries-4370371582",
       "posted": "2026-03-23",
       "seniority": "Other",
       "domain_match": true,
@@ -4864,22 +4384,22 @@
       "filter_reason": "not-exec"
     },
     {
-      "id": "linkedin-li-4388758394",
+      "id": "linkedin-li-4386673767",
       "source": "linkedin",
-      "title": "Operations Executive 21M26",
-      "company": "TALENTMATE",
-      "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/operations-executive-21m26-at-talentmate-4388758394",
-      "posted": "2026-03-21",
-      "seniority": "Other",
+      "title": "Procurement Transformation Director (S2P & E2E)",
+      "company": "Agthia Group PJSC",
+      "location": "Abu Dhabi Emirate, United Arab Emirates",
+      "url": "https://ae.linkedin.com/jobs/view/procurement-transformation-director-s2p-e2e-at-agthia-group-pjsc-4386673767",
+      "posted": "2026-03-23",
+      "seniority": "C-Suite",
       "domain_match": true,
       "keyword_score": 6,
       "match_keywords": [
-        "executive"
+        "director"
       ],
       "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "not-exec"
+      "relevant": true,
+      "filter_reason": null
     },
     {
       "id": "linkedin-li-4386728119",
@@ -4932,22 +4452,6 @@
       "filter_reason": null
     },
     {
-      "id": "linkedin-li-4386672344",
-      "source": "linkedin",
-      "title": "Principal Software Engineer",
-      "company": "Discovered MENA",
-      "location": "Abu Dhabi Emirate, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/principal-software-engineer-at-discovered-mena-4386672344",
-      "posted": "2026-03-23",
-      "seniority": "Principal",
-      "domain_match": true,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null
-    },
-    {
       "id": "linkedin-li-4386678507",
       "source": "linkedin",
       "title": "VP, Business Planning",
@@ -4961,6 +4465,22 @@
       "match_keywords": [
         "vp"
       ],
+      "raw_snippet": "",
+      "relevant": true,
+      "filter_reason": null
+    },
+    {
+      "id": "linkedin-li-4386672344",
+      "source": "linkedin",
+      "title": "Principal Software Engineer",
+      "company": "Discovered MENA",
+      "location": "Abu Dhabi Emirate, United Arab Emirates",
+      "url": "https://ae.linkedin.com/jobs/view/principal-software-engineer-at-discovered-mena-4386672344",
+      "posted": "2026-03-23",
+      "seniority": "Principal",
+      "domain_match": true,
+      "keyword_score": 0,
+      "match_keywords": [],
       "raw_snippet": "",
       "relevant": true,
       "filter_reason": null
@@ -5018,24 +4538,6 @@
       "filter_reason": "not-exec"
     },
     {
-      "id": "linkedin-li-4384032870",
-      "source": "linkedin",
-      "title": "Cloud & IT Systems Administrator",
-      "company": "Hays",
-      "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/cloud-it-systems-administrator-at-hays-4384032870",
-      "posted": "2026-03-16",
-      "seniority": "Other",
-      "domain_match": true,
-      "keyword_score": 6,
-      "match_keywords": [
-        "cloud"
-      ],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "not-exec"
-    },
-    {
       "id": "linkedin-li-4386835663",
       "source": "linkedin",
       "title": "Specialist - Petroleum Production SME",
@@ -5080,22 +4582,6 @@
       "posted": "2026-03-17",
       "seniority": "Other",
       "domain_match": false,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "not-exec"
-    },
-    {
-      "id": "linkedin-li-4386681393",
-      "source": "linkedin",
-      "title": "Digital Marketing Manager",
-      "company": "Ziron Pro Digital Design",
-      "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/digital-marketing-manager-at-ziron-pro-digital-design-4386681393",
-      "posted": "2026-03-23",
-      "seniority": "Other",
-      "domain_match": true,
       "keyword_score": 0,
       "match_keywords": [],
       "raw_snippet": "",
@@ -5263,25 +4749,6 @@
       "filter_reason": null
     },
     {
-      "id": "linkedin-li-4359916984",
-      "source": "linkedin",
-      "title": "Director - Key Accounts (Oil & Gas), Strategy & Growth",
-      "company": "AD Ports Group",
-      "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/director-key-accounts-oil-gas-strategy-growth-at-ad-ports-group-4359916984",
-      "posted": "2026-03-16",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 13,
-      "match_keywords": [
-        "director",
-        "growth"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null
-    },
-    {
       "id": "linkedin-li-4386618776",
       "source": "linkedin",
       "title": "Project EHS Head",
@@ -5307,6 +4774,24 @@
       "posted": "2026-03-18",
       "seniority": "Director",
       "domain_match": false,
+      "keyword_score": 6,
+      "match_keywords": [
+        "head of"
+      ],
+      "raw_snippet": "",
+      "relevant": true,
+      "filter_reason": null
+    },
+    {
+      "id": "linkedin-li-4379906669",
+      "source": "linkedin",
+      "title": "Head of HVAC/Chillers Transition Strategy",
+      "company": "ENEC Operations",
+      "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
+      "url": "https://ae.linkedin.com/jobs/view/head-of-hvac-chillers-transition-strategy-at-enec-operations-4379906669",
+      "posted": "2026-03-23",
+      "seniority": "Director",
+      "domain_match": true,
       "keyword_score": 6,
       "match_keywords": [
         "head of"
@@ -5372,6 +4857,24 @@
       "filter_reason": "skip-word"
     },
     {
+      "id": "linkedin-li-4376686019",
+      "source": "linkedin",
+      "title": "AVP, Compliance - Global Corporate Finance (Emiratization)",
+      "company": "First Abu Dhabi Bank (FAB)",
+      "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
+      "url": "https://ae.linkedin.com/jobs/view/avp-compliance-global-corporate-finance-emiratization-at-first-abu-dhabi-bank-fab-4376686019",
+      "posted": "2026-03-23",
+      "seniority": "Other",
+      "domain_match": false,
+      "keyword_score": 6,
+      "match_keywords": [
+        "vp"
+      ],
+      "raw_snippet": "",
+      "relevant": true,
+      "filter_reason": null
+    },
+    {
       "id": "linkedin-li-4353703506",
       "source": "linkedin",
       "title": "Associate Director Product Management FSI KSA",
@@ -5389,6 +4892,25 @@
       "raw_snippet": "",
       "relevant": true,
       "filter_reason": null
+    },
+    {
+      "id": "linkedin-li-4389249530",
+      "source": "linkedin",
+      "title": "Account Executive, Enterprise",
+      "company": "Zscaler",
+      "location": "Saudi Arabia",
+      "url": "https://sa.linkedin.com/jobs/view/account-executive-enterprise-at-zscaler-4389249530",
+      "posted": "2026-03-23",
+      "seniority": "Other",
+      "domain_match": false,
+      "keyword_score": 13,
+      "match_keywords": [
+        "enterprise",
+        "executive"
+      ],
+      "raw_snippet": "",
+      "relevant": false,
+      "filter_reason": "not-exec"
     },
     {
       "id": "linkedin-li-4388780662",
@@ -5460,62 +4982,6 @@
       "filter_reason": null
     },
     {
-      "id": "linkedin-li-4386336593",
-      "source": "linkedin",
-      "title": "Vice President, Equity Capital Markets, MENA Coverage, Riyadh",
-      "company": "Delta Executive Search",
-      "location": "Riyadh, Saudi Arabia",
-      "url": "https://sa.linkedin.com/jobs/view/vice-president-equity-capital-markets-mena-coverage-riyadh-at-delta-executive-search-4386336593",
-      "posted": "2026-03-16",
-      "seniority": "VP",
-      "domain_match": false,
-      "keyword_score": 10,
-      "match_keywords": [
-        "mena",
-        "riyadh",
-        "api"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null
-    },
-    {
-      "id": "linkedin-li-4341161746",
-      "source": "linkedin",
-      "title": "QNB3555 - Senior Vice President - Finance (Saudization)",
-      "company": "QNB Group",
-      "location": "Riyadh, Riyadh, Saudi Arabia",
-      "url": "https://sa.linkedin.com/jobs/view/qnb3555-senior-vice-president-finance-saudization-at-qnb-group-4341161746",
-      "posted": "2026-03-16",
-      "seniority": "VP",
-      "domain_match": false,
-      "keyword_score": 3,
-      "match_keywords": [
-        "saudi"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null
-    },
-    {
-      "id": "linkedin-li-4341331684",
-      "source": "linkedin",
-      "title": "QNB3556 - Vice President - Treasury Corporate Sales (Saudization)",
-      "company": "QNB Group",
-      "location": "Riyadh, Riyadh, Saudi Arabia",
-      "url": "https://sa.linkedin.com/jobs/view/qnb3556-vice-president-treasury-corporate-sales-saudization-at-qnb-group-4341331684",
-      "posted": "2026-03-16",
-      "seniority": "VP",
-      "domain_match": false,
-      "keyword_score": 3,
-      "match_keywords": [
-        "saudi"
-      ],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "skip-word"
-    },
-    {
       "id": "linkedin-li-4374596873",
       "source": "linkedin",
       "title": "Field CTO",
@@ -5548,19 +5014,33 @@
       "filter_reason": null
     },
     {
-      "id": "linkedin-li-4341331683",
+      "id": "linkedin-li-4370306565",
       "source": "linkedin",
-      "title": "QNB3552 - Vice President \u2013 Corporate Relationship Management (Saudization)",
-      "company": "QNB Group",
-      "location": "Riyadh, Riyadh, Saudi Arabia",
-      "url": "https://sa.linkedin.com/jobs/view/qnb3552-vice-president-%E2%80%93-corporate-relationship-management-saudization-at-qnb-group-4341331683",
-      "posted": "2026-03-16",
+      "title": "Vice President MMS META",
+      "company": "BD",
+      "location": "Riyadh Region",
+      "url": "https://sa.linkedin.com/jobs/view/vice-president-mms-meta-at-bd-4370306565",
+      "posted": "2026-03-23",
       "seniority": "VP",
       "domain_match": false,
-      "keyword_score": 3,
-      "match_keywords": [
-        "saudi"
-      ],
+      "keyword_score": 0,
+      "match_keywords": [],
+      "raw_snippet": "",
+      "relevant": true,
+      "filter_reason": null
+    },
+    {
+      "id": "linkedin-li-4370196783",
+      "source": "linkedin",
+      "title": "Vice President APM META",
+      "company": "BD",
+      "location": "Riyadh Region",
+      "url": "https://sa.linkedin.com/jobs/view/vice-president-apm-meta-at-bd-4370196783",
+      "posted": "2026-03-23",
+      "seniority": "VP",
+      "domain_match": false,
+      "keyword_score": 0,
+      "match_keywords": [],
       "raw_snippet": "",
       "relevant": true,
       "filter_reason": null
@@ -5577,6 +5057,42 @@
       "domain_match": false,
       "keyword_score": 0,
       "match_keywords": [],
+      "raw_snippet": "",
+      "relevant": true,
+      "filter_reason": null
+    },
+    {
+      "id": "linkedin-li-4370301621",
+      "source": "linkedin",
+      "title": "Vice President Pharmacy Automation META",
+      "company": "BD",
+      "location": "Riyadh Region",
+      "url": "https://sa.linkedin.com/jobs/view/vice-president-pharmacy-automation-meta-at-bd-4370301621",
+      "posted": "2026-03-23",
+      "seniority": "VP",
+      "domain_match": false,
+      "keyword_score": 3,
+      "match_keywords": [
+        "automation"
+      ],
+      "raw_snippet": "",
+      "relevant": true,
+      "filter_reason": null
+    },
+    {
+      "id": "linkedin-li-4389210280",
+      "source": "linkedin",
+      "title": "Senior Vice President POM Product Manager Middle East",
+      "company": "BNY",
+      "location": "Saudi Arabia",
+      "url": "https://sa.linkedin.com/jobs/view/senior-vice-president-pom-product-manager-middle-east-at-bny-4389210280",
+      "posted": "2026-03-23",
+      "seniority": "VP",
+      "domain_match": false,
+      "keyword_score": 3,
+      "match_keywords": [
+        "middle east"
+      ],
       "raw_snippet": "",
       "relevant": true,
       "filter_reason": null
@@ -5620,7 +5136,7 @@
       "company": "Jobs via eFinancialCareers",
       "location": "Jiddah, Makkah, Saudi Arabia",
       "url": "https://sa.linkedin.com/jobs/view/head-of-it-solutions-and-quality-michael-page-at-jobs-via-efinancialcareers-4387440050",
-      "posted": "2026-03-18",
+      "posted": "2026-03-23",
       "seniority": "Director",
       "domain_match": true,
       "keyword_score": 6,
@@ -5788,24 +5304,6 @@
       "filter_reason": null
     },
     {
-      "id": "linkedin-li-4386334469",
-      "source": "linkedin",
-      "title": "Associate Director, Innovation Ecosystem",
-      "company": "KAUST (King Abdullah University of Science and Technology)",
-      "location": "Thuwal, Makkah, Saudi Arabia",
-      "url": "https://sa.linkedin.com/jobs/view/associate-director-innovation-ecosystem-at-kaust-king-abdullah-university-of-science-and-technology-4386334469",
-      "posted": "2026-03-16",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 6,
-      "match_keywords": [
-        "director"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null
-    },
-    {
       "id": "linkedin-li-4384186961",
       "source": "linkedin",
       "title": "Account Executive, Learning",
@@ -5905,6 +5403,24 @@
       "raw_snippet": "",
       "relevant": false,
       "filter_reason": "skip-word"
+    },
+    {
+      "id": "linkedin-li-4389256718",
+      "source": "linkedin",
+      "title": "Associate Engineering Director - MEP (Remote Area)",
+      "company": "Mace",
+      "location": "Riyadh, Riyadh, Saudi Arabia",
+      "url": "https://sa.linkedin.com/jobs/view/associate-engineering-director-mep-remote-area-at-mace-4389256718",
+      "posted": "2026-03-23",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 6,
+      "match_keywords": [
+        "director"
+      ],
+      "raw_snippet": "",
+      "relevant": true,
+      "filter_reason": null
     },
     {
       "id": "linkedin-li-4369143742",
@@ -6167,13 +5683,13 @@
       "filter_reason": "not-exec"
     },
     {
-      "id": "linkedin-li-4384057122",
+      "id": "linkedin-li-4388680503",
       "source": "linkedin",
-      "title": "Chief Financial Officer",
-      "company": "Macdonald & Company",
-      "location": "Riyadh, Riyadh, Saudi Arabia",
-      "url": "https://sa.linkedin.com/jobs/view/chief-financial-officer-at-macdonald-company-4384057122",
-      "posted": "2026-03-16",
+      "title": "Require a Chief Financial Officer (CFO) in Jeddah",
+      "company": "TestHiring",
+      "location": "J\u012bz\u0101n, Jizan, Saudi Arabia",
+      "url": "https://sa.linkedin.com/jobs/view/require-a-chief-financial-officer-cfo-in-jeddah-at-testhiring-4388680503",
+      "posted": "2026-03-22",
       "seniority": "C-Suite",
       "domain_match": false,
       "keyword_score": 0,
@@ -6183,13 +5699,13 @@
       "filter_reason": null
     },
     {
-      "id": "linkedin-li-4388680503",
+      "id": "linkedin-li-4387095733",
       "source": "linkedin",
-      "title": "Require a Chief Financial Officer (CFO) in Jeddah",
-      "company": "TestHiring",
-      "location": "J\u012bz\u0101n, Jizan, Saudi Arabia",
-      "url": "https://sa.linkedin.com/jobs/view/require-a-chief-financial-officer-cfo-in-jeddah-at-testhiring-4388680503",
-      "posted": "2026-03-22",
+      "title": "Founding Chief Revenue Officer",
+      "company": "Smart Brick",
+      "location": "Riyadh, Saudi Arabia",
+      "url": "https://sa.linkedin.com/jobs/view/founding-chief-revenue-officer-at-smart-brick-4387095733",
+      "posted": "2026-03-23",
       "seniority": "C-Suite",
       "domain_match": false,
       "keyword_score": 0,
@@ -6212,6 +5728,22 @@
       "match_keywords": [
         "pmo"
       ],
+      "raw_snippet": "",
+      "relevant": false,
+      "filter_reason": "not-exec"
+    },
+    {
+      "id": "linkedin-li-4388949625",
+      "source": "linkedin",
+      "title": "Senior Program Manager",
+      "company": "Planet Pharma",
+      "location": "Eastern Region",
+      "url": "https://sa.linkedin.com/jobs/view/senior-program-manager-at-planet-pharma-4388949625",
+      "posted": "2026-03-23",
+      "seniority": "Other",
+      "domain_match": true,
+      "keyword_score": 0,
+      "match_keywords": [],
       "raw_snippet": "",
       "relevant": false,
       "filter_reason": "not-exec"
@@ -6358,6 +5890,22 @@
       "filter_reason": "not-exec"
     },
     {
+      "id": "linkedin-li-4350541872",
+      "source": "linkedin",
+      "title": "Human Resources Officer",
+      "company": "Rotana Hotels",
+      "location": "Riyadh, Riyadh, Saudi Arabia",
+      "url": "https://sa.linkedin.com/jobs/view/human-resources-officer-at-rotana-hotels-4350541872",
+      "posted": "2026-03-23",
+      "seniority": "Other",
+      "domain_match": false,
+      "keyword_score": 0,
+      "match_keywords": [],
+      "raw_snippet": "",
+      "relevant": false,
+      "filter_reason": "not-exec"
+    },
+    {
       "id": "linkedin-li-4387291674",
       "source": "linkedin",
       "title": "Senior Program Director (Infrastructure and Transportation)",
@@ -6413,22 +5961,6 @@
       "filter_reason": null
     },
     {
-      "id": "linkedin-li-4386348301",
-      "source": "linkedin",
-      "title": "Project Control/Cost Manager",
-      "company": "KBR, Inc.",
-      "location": "Al Corniche, Eastern, Saudi Arabia",
-      "url": "https://sa.linkedin.com/jobs/view/project-control-cost-manager-at-kbr-inc-4386348301",
-      "posted": "2026-03-16",
-      "seniority": "Other",
-      "domain_match": true,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "not-exec"
-    },
-    {
       "id": "linkedin-li-4369092856",
       "source": "linkedin",
       "title": "2026 Program Manager Intern",
@@ -6461,13 +5993,13 @@
       "filter_reason": "not-exec"
     },
     {
-      "id": "linkedin-li-4388777855",
+      "id": "linkedin-li-4389074781",
       "source": "linkedin",
       "title": "Operations Managers (Remote)",
       "company": "Nexus Consulting",
       "location": "Saudi Arabia",
-      "url": "https://sa.linkedin.com/jobs/view/operations-managers-remote-at-nexus-consulting-4388777855",
-      "posted": "2026-03-22",
+      "url": "https://sa.linkedin.com/jobs/view/operations-managers-remote-at-nexus-consulting-4389074781",
+      "posted": "2026-03-23",
       "seniority": "Other",
       "domain_match": true,
       "keyword_score": 0,
@@ -6475,6 +6007,22 @@
       "raw_snippet": "",
       "relevant": false,
       "filter_reason": "not-exec"
+    },
+    {
+      "id": "linkedin-li-4370028511",
+      "source": "linkedin",
+      "title": "Inverto | Business & Operations Senior Manager",
+      "company": "Boston Consulting Group (BCG)",
+      "location": "Riyadh, Riyadh, Saudi Arabia",
+      "url": "https://sa.linkedin.com/jobs/view/inverto-business-operations-senior-manager-at-boston-consulting-group-bcg-4370028511",
+      "posted": "2026-03-23",
+      "seniority": "Other",
+      "domain_match": true,
+      "keyword_score": 0,
+      "match_keywords": [],
+      "raw_snippet": "",
+      "relevant": true,
+      "filter_reason": null
     },
     {
       "id": "linkedin-li-4385734099",
@@ -6599,43 +6147,6 @@
       "filter_reason": null
     },
     {
-      "id": "linkedin-li-4378176858",
-      "source": "linkedin",
-      "title": "Construction Director",
-      "company": "Outdoor Factory MEA",
-      "location": "Riyadh, Saudi Arabia",
-      "url": "https://sa.linkedin.com/jobs/view/construction-director-at-outdoor-factory-mea-4378176858",
-      "posted": "2026-03-16",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 6,
-      "match_keywords": [
-        "director"
-      ],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "skip-word"
-    },
-    {
-      "id": "linkedin-li-4385280828",
-      "source": "linkedin",
-      "title": "VP of Business Development(Saudi Arabia)",
-      "company": "UNLOCKLAND",
-      "location": "Saudi Arabia",
-      "url": "https://sa.linkedin.com/jobs/view/vp-of-business-development-saudi-arabia-at-unlockland-4385280828",
-      "posted": "2026-03-16",
-      "seniority": "VP",
-      "domain_match": false,
-      "keyword_score": 10,
-      "match_keywords": [
-        "vp",
-        "saudi"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null
-    },
-    {
       "id": "linkedin-li-4377043677",
       "source": "linkedin",
       "title": "Commercial Director",
@@ -6671,6 +6182,22 @@
       "raw_snippet": "",
       "relevant": true,
       "filter_reason": null
+    },
+    {
+      "id": "linkedin-li-4386680556",
+      "source": "linkedin",
+      "title": "Consultant",
+      "company": "Tandem Interim",
+      "location": "Riyadh, Saudi Arabia",
+      "url": "https://sa.linkedin.com/jobs/view/consultant-at-tandem-interim-4386680556",
+      "posted": "2026-03-23",
+      "seniority": "Other",
+      "domain_match": false,
+      "keyword_score": 0,
+      "match_keywords": [],
+      "raw_snippet": "",
+      "relevant": false,
+      "filter_reason": "not-exec"
     },
     {
       "id": "linkedin-li-4389072393",
@@ -6735,24 +6262,6 @@
       "raw_snippet": "",
       "relevant": false,
       "filter_reason": "not-exec"
-    },
-    {
-      "id": "linkedin-li-4351824607",
-      "source": "linkedin",
-      "title": "Business Director - Communications Consultancy",
-      "company": "Saatchi & Saatchi ME",
-      "location": "Riyadh, Riyadh, Saudi Arabia",
-      "url": "https://sa.linkedin.com/jobs/view/business-director-communications-consultancy-at-saatchi-saatchi-me-4351824607",
-      "posted": "2026-03-16",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 6,
-      "match_keywords": [
-        "director"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null
     },
     {
       "id": "linkedin-li-4377276210",
@@ -6912,22 +6421,6 @@
       "filter_reason": "not-exec"
     },
     {
-      "id": "linkedin-li-4387161537",
-      "source": "linkedin",
-      "title": "Honduras Country Representative",
-      "company": "Plan International Cambodia",
-      "location": "Makkah Region",
-      "url": "https://sa.linkedin.com/jobs/view/honduras-country-representative-at-plan-international-cambodia-4387161537",
-      "posted": "2026-03-18",
-      "seniority": "Other",
-      "domain_match": false,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "not-exec"
-    },
-    {
       "id": "linkedin-li-4306274426",
       "source": "linkedin",
       "title": "Manager | Engineering AI & Data | AI & Data | AI Architect",
@@ -6971,24 +6464,6 @@
       "location": "Riyadh Region",
       "url": "https://sa.linkedin.com/jobs/view/senior-solution-sales-executive-btm-signavio-leanix-calm-tricentis-syniti-and-walkme-at-sap-4385935615",
       "posted": "2026-03-17",
-      "seniority": "Other",
-      "domain_match": false,
-      "keyword_score": 6,
-      "match_keywords": [
-        "executive"
-      ],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "not-exec"
-    },
-    {
-      "id": "linkedin-li-4386344854",
-      "source": "linkedin",
-      "title": "Sr Account Executive",
-      "company": "HERE Technologies",
-      "location": "Riyadh, Riyadh, Saudi Arabia",
-      "url": "https://sa.linkedin.com/jobs/view/sr-account-executive-at-here-technologies-4386344854",
-      "posted": "2026-03-16",
       "seniority": "Other",
       "domain_match": false,
       "keyword_score": 6,
@@ -7153,6 +6628,22 @@
       "filter_reason": "not-exec"
     },
     {
+      "id": "linkedin-li-4387073870",
+      "source": "linkedin",
+      "title": "Commercial Manager - Kings League",
+      "company": "Kings League",
+      "location": "Riyadh, Saudi Arabia",
+      "url": "https://sa.linkedin.com/jobs/view/commercial-manager-kings-league-at-kings-league-4387073870",
+      "posted": "2026-03-23",
+      "seniority": "Other",
+      "domain_match": false,
+      "keyword_score": 0,
+      "match_keywords": [],
+      "raw_snippet": "",
+      "relevant": false,
+      "filter_reason": "not-exec"
+    },
+    {
       "id": "linkedin-li-4369631862",
       "source": "linkedin",
       "title": "Senior Manager/Director - Data Lead",
@@ -7185,24 +6676,6 @@
       "raw_snippet": "",
       "relevant": false,
       "filter_reason": "not-exec"
-    },
-    {
-      "id": "linkedin-li-4375367137",
-      "source": "linkedin",
-      "title": "Director Talent Development",
-      "company": "Riyadh Air | \u0637\u064a\u0631\u0627\u0646 \u0627\u0644\u0631\u064a\u0627\u0636",
-      "location": "Riyadh Region",
-      "url": "https://sa.linkedin.com/jobs/view/director-talent-development-at-riyadh-air-%D8%B7%D9%8A%D8%B1%D8%A7%D9%86-%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6-4375367137",
-      "posted": "2026-03-16",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 6,
-      "match_keywords": [
-        "director"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null
     },
     {
       "id": "linkedin-li-4369111562",
@@ -7294,6 +6767,24 @@
       "filter_reason": "skip-word"
     },
     {
+      "id": "linkedin-li-4387084519",
+      "source": "linkedin",
+      "title": "Manager/Senior Manager - Audit, Riyadh",
+      "company": "EY",
+      "location": "Riyadh, Riyadh, Saudi Arabia",
+      "url": "https://sa.linkedin.com/jobs/view/manager-senior-manager-audit-riyadh-at-ey-4387084519",
+      "posted": "2026-03-23",
+      "seniority": "Other",
+      "domain_match": false,
+      "keyword_score": 3,
+      "match_keywords": [
+        "riyadh"
+      ],
+      "raw_snippet": "",
+      "relevant": false,
+      "filter_reason": "skip-word"
+    },
+    {
       "id": "linkedin-li-4386600474",
       "source": "linkedin",
       "title": "FRANCHISEE, Fractional C-Suite and Part-Time Director service",
@@ -7311,40 +6802,6 @@
       "raw_snippet": "",
       "relevant": true,
       "filter_reason": null
-    },
-    {
-      "id": "linkedin-li-4386924640",
-      "source": "linkedin",
-      "title": "Senior Business Analyst",
-      "company": "Kimberly-Clark",
-      "location": "Jiddah, Makkah, Saudi Arabia",
-      "url": "https://sa.linkedin.com/jobs/view/senior-business-analyst-at-kimberly-clark-4386924640",
-      "posted": "2026-03-17",
-      "seniority": "Other",
-      "domain_match": false,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "not-exec"
-    },
-    {
-      "id": "linkedin-li-4375712223",
-      "source": "linkedin",
-      "title": "Food & Beverage Manager - Fairmont the Red Sea",
-      "company": "Fairmont Hotels & Resorts",
-      "location": "Hail Region",
-      "url": "https://sa.linkedin.com/jobs/view/food-beverage-manager-fairmont-the-red-sea-at-fairmont-hotels-resorts-4375712223",
-      "posted": "2026-03-16",
-      "seniority": "Other",
-      "domain_match": true,
-      "keyword_score": 6,
-      "match_keywords": [
-        "ai"
-      ],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "not-exec"
     },
     {
       "id": "linkedin-li-4388246239",
@@ -7419,23 +6876,22 @@
       "filter_reason": null
     },
     {
-      "id": "linkedin-li-4385249342",
+      "id": "linkedin-li-4388954269",
       "source": "linkedin",
-      "title": "Director, Government Solutions, KSA",
-      "company": "Visa",
-      "location": "Riyadh, Riyadh, Saudi Arabia",
-      "url": "https://sa.linkedin.com/jobs/view/director-government-solutions-ksa-at-visa-4385249342",
-      "posted": "2026-03-16",
-      "seniority": "C-Suite",
+      "title": "Head of Customer Success",
+      "company": "Jobgether",
+      "location": "Eastern Region",
+      "url": "https://sa.linkedin.com/jobs/view/head-of-customer-success-at-jobgether-4388954269",
+      "posted": "2026-03-23",
+      "seniority": "Director",
       "domain_match": false,
-      "keyword_score": 10,
+      "keyword_score": 6,
       "match_keywords": [
-        "director",
-        "ksa"
+        "head of"
       ],
       "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null
+      "relevant": false,
+      "filter_reason": "no-domain"
     },
     {
       "id": "linkedin-li-4386783884",
@@ -7627,22 +7083,6 @@
       "filter_reason": null
     },
     {
-      "id": "linkedin-li-4351153838",
-      "source": "linkedin",
-      "title": "QNB3604 - Assistant Vice President Regulatory Reporting (Qatarization)",
-      "company": "QNB Group",
-      "location": "Doha, Qatar",
-      "url": "https://qa.linkedin.com/jobs/view/qnb3604-assistant-vice-president-regulatory-reporting-qatarization-at-qnb-group-4351153838",
-      "posted": "2026-03-16",
-      "seniority": "VP",
-      "domain_match": false,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "skip-word"
-    },
-    {
       "id": "linkedin-li-4351381088",
       "source": "linkedin",
       "title": "QNB3610 - Assistant Vice President Project and Acquisition Finance (Qatarization)",
@@ -7675,22 +7115,6 @@
       "filter_reason": "skip-word"
     },
     {
-      "id": "linkedin-li-4352661030",
-      "source": "linkedin",
-      "title": "QNB3619 - Assistant Vice President, Data Science",
-      "company": "QNB Group",
-      "location": "Doha, Qatar",
-      "url": "https://qa.linkedin.com/jobs/view/qnb3619-assistant-vice-president-data-science-at-qnb-group-4352661030",
-      "posted": "2026-03-16",
-      "seniority": "VP",
-      "domain_match": true,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "skip-word"
-    },
-    {
       "id": "linkedin-li-4349034030",
       "source": "linkedin",
       "title": "QNB3591 - Assistant Vice President Corporate Actions (Qatarization)",
@@ -7698,38 +7122,6 @@
       "location": "Doha, Qatar",
       "url": "https://qa.linkedin.com/jobs/view/qnb3591-assistant-vice-president-corporate-actions-qatarization-at-qnb-group-4349034030",
       "posted": "2026-03-17",
-      "seniority": "VP",
-      "domain_match": false,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "skip-word"
-    },
-    {
-      "id": "linkedin-li-4341922923",
-      "source": "linkedin",
-      "title": "QNB3442 - Assistant Vice President Financial MIS (Qatarization)",
-      "company": "QNB Group",
-      "location": "Doha, Qatar",
-      "url": "https://qa.linkedin.com/jobs/view/qnb3442-assistant-vice-president-financial-mis-qatarization-at-qnb-group-4341922923",
-      "posted": "2026-03-16",
-      "seniority": "VP",
-      "domain_match": false,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "skip-word"
-    },
-    {
-      "id": "linkedin-li-4374240546",
-      "source": "linkedin",
-      "title": "QNB3650 - Assistant Vice President - Economics",
-      "company": "QNB Group",
-      "location": "Doha, Qatar",
-      "url": "https://qa.linkedin.com/jobs/view/qnb3650-assistant-vice-president-economics-at-qnb-group-4374240546",
-      "posted": "2026-03-16",
       "seniority": "VP",
       "domain_match": false,
       "keyword_score": 0,
@@ -7753,24 +7145,6 @@
       "raw_snippet": "",
       "relevant": true,
       "filter_reason": null
-    },
-    {
-      "id": "linkedin-li-4321339529",
-      "source": "linkedin",
-      "title": "Manager Entertainment (Content Partnerships) - IFE | Product Development & Design",
-      "company": "Qatar Airways",
-      "location": "Doha, Qatar",
-      "url": "https://qa.linkedin.com/jobs/view/manager-entertainment-content-partnerships-ife-product-development-design-at-qatar-airways-4321339529",
-      "posted": "2026-03-16",
-      "seniority": "Other",
-      "domain_match": true,
-      "keyword_score": 6,
-      "match_keywords": [
-        "ai"
-      ],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "not-exec"
     },
     {
       "id": "linkedin-li-4385906976",
@@ -7909,45 +7283,13 @@
       "filter_reason": null
     },
     {
-      "id": "linkedin-li-4281812502",
+      "id": "linkedin-li-4386739552",
       "source": "linkedin",
-      "title": "IFEC UI / UX Program Manager",
-      "company": "Qatar Airways",
-      "location": "Doha, Qatar",
-      "url": "https://qa.linkedin.com/jobs/view/ifec-ui-ux-program-manager-at-qatar-airways-4281812502",
-      "posted": "2026-03-16",
-      "seniority": "Other",
-      "domain_match": true,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "not-exec"
-    },
-    {
-      "id": "linkedin-li-4303698238",
-      "source": "linkedin",
-      "title": "Research & Strategy Manager | Product Development and Design",
-      "company": "Qatar Airways",
-      "location": "Doha, Qatar",
-      "url": "https://qa.linkedin.com/jobs/view/research-strategy-manager-product-development-and-design-at-qatar-airways-4303698238",
-      "posted": "2026-03-16",
-      "seniority": "Other",
-      "domain_match": true,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "not-exec"
-    },
-    {
-      "id": "linkedin-li-4370434023",
-      "source": "linkedin",
-      "title": "Manager Project Strategy and Planning | Product Development and Design",
-      "company": "Qatar Airways",
-      "location": "Doha, Qatar",
-      "url": "https://qa.linkedin.com/jobs/view/manager-project-strategy-and-planning-product-development-and-design-at-qatar-airways-4370434023",
-      "posted": "2026-03-16",
+      "title": "AFCAP 9 AF Program Manager - (Shaw AFB, South Carolina)",
+      "company": "Serco",
+      "location": "Al Wakrah, Qatar",
+      "url": "https://qa.linkedin.com/jobs/view/afcap-9-af-program-manager-shaw-afb-south-carolina-at-serco-4386739552",
+      "posted": "2026-03-17",
       "seniority": "Other",
       "domain_match": true,
       "keyword_score": 0,
@@ -7998,8 +7340,8 @@
   ],
   "kpi": {
     "searches_run": 162,
-    "results_per_search": 5.09,
-    "unique_jobs": 458,
+    "results_per_search": 4.81,
+    "unique_jobs": 420,
     "errors": 55,
     "blocked": false,
     "method": "public-html-scrape"

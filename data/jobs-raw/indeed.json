@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-03-23T14:01:27.568533+02:00",
-    "duration_ms": 85733,
+    "generated_at": "2026-03-23T22:55:26.243187+02:00",
+    "duration_ms": 88483,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "a1f01152",
+    "run_id": "a9d37dad",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -52,21 +52,23 @@
       "filter_reason": null
     },
     {
-      "id": "indeed-in-8f603ac1283c89f5",
+      "id": "indeed-in-45d6ce110c70c94d",
       "source": "indeed",
-      "title": "Chief Financial Officer",
-      "company": "Trilogy Fab Trailers Manufacturing One Owner Company L. L. C",
+      "title": "Head of Department \u2013 Pediatrics (American Board, Arabic Speaker) - Qatar",
+      "company": "Allocation Assist DMCC",
       "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=8f603ac1283c89f5",
+      "url": "https://ae.indeed.com/viewjob?jk=45d6ce110c70c94d",
       "posted": "2026-03-23",
-      "seniority": "C-Suite",
+      "seniority": "Director",
       "domain_match": false,
-      "keyword_score": 6,
+      "keyword_score": 23,
       "match_keywords": [
-        "uae",
+        "healthcare",
+        "head of",
+        "leadership",
         "api"
       ],
-      "raw_snippet": "The CFO will lead the company\u2019s financial strategy and operations, with a strong focus on project\\-based financial management, profitability, and compliance within the UAE contracting sector.\n\n**Key Responsibilities:**\n\n* Oversee financial planning, budgeting, and forecasting\n* Manage project costing, cash flow, and working capital\n* Ensure UAE VAT and regulatory compliance\n* Monitor contract revenue, costs, and variations\n* Advise management on financial performance and risks\n* Lead finance tea",
+      "raw_snippet": "Position Overview\n  \nA prestigious healthcare institution in Qatar is seeking a highly qualified Head of Department for Pediatrics to lead its pediatric division. The ideal candidate must be American Board Certified in Pediatrics and fluent in Arabic, with a strong background in clinical leadership, multidisciplinary collaboration, and patient\\-centered care. This is a senior leadership role responsible for shaping pediatric services, driving clinical excellence, and mentoring the next generatio",
       "relevant": true,
       "filter_reason": null
     },
@@ -92,9 +94,9 @@
   ],
   "kpi": {
     "searches_run": 81,
-    "results_per_search": 0.49,
+    "results_per_search": 0.75,
     "unique_jobs": 4,
-    "errors": 53
+    "errors": 49
   },
   "recommendations": []
 }

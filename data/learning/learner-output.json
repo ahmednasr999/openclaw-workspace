@@ -2,22 +2,22 @@
   "meta": {
     "agent": "daily-learner",
     "version": "1.0.0",
-    "generated_at": "2026-03-22T23:00:02.126384+02:00",
-    "duration_ms": 13,
+    "generated_at": "2026-03-23T23:00:01.126916+02:00",
+    "duration_ms": 11,
     "ttl_hours": 24,
     "status": "success",
     "error": null,
-    "run_id": "6474f856",
+    "run_id": "5918a806",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
     "job_accuracy": {
-      "total_recommendations": 254,
-      "total_unique_jobs": 67,
-      "submit_recommendations": 48,
-      "applied_count": 18,
-      "accuracy_rate": 37.5,
+      "total_recommendations": 572,
+      "total_unique_jobs": 169,
+      "submit_recommendations": 104,
+      "applied_count": 22,
+      "accuracy_rate": 21.153846153846153,
       "skip_candidates": [
         {
           "job_id": "linkedin-li-4379840970",
@@ -28,16 +28,6 @@
           "job_id": "linkedin-li-4383479638",
           "skip_signals": 2,
           "reason": "Head of AI Strategy - strategic AI is adjacent to digital transformation but AI strategy is more niche/emerging tech vs broad programme leadership"
-        },
-        {
-          "job_id": "google-in-bdeaee706e98c45c",
-          "skip_signals": 2,
-          "reason": "Head of Asset Management & AI Transformation is AI/asset-heavy; transformation is good but asset management domain is outside core FinTech/e-commerce/HealthTech"
-        },
-        {
-          "job_id": "linkedin-li-4385663641",
-          "skip_signals": 3,
-          "reason": "CTO role in Dubai - technology executive but CTO is broader tech strategy vs digital transformation focus; Arabic speaker requirement"
         },
         {
           "job_id": "linkedin-li-4381045669",
@@ -63,6 +53,106 @@
           "job_id": "linkedin-li-4374570926",
           "skip_signals": 2,
           "reason": "Head of IT at Dubai Smart City initiative has technology leadership angle but IT vs DT mismatch"
+        },
+        {
+          "job_id": "linkedin-li-4385905338",
+          "skip_signals": 3,
+          "reason": "CEO at blockchain investment bank - FinTech-adjacent but requires investment banking expertise not in profile"
+        },
+        {
+          "job_id": "linkedin-li-4377604135",
+          "skip_signals": 3,
+          "reason": "Director-level BD for climate services is adjacent to transformation advisory; S&P Global is reputable; sustainability is not a core domain though"
+        },
+        {
+          "job_id": "linkedin-li-4384984896",
+          "skip_signals": 2,
+          "reason": "Creative Director Digital Experience at Qsas/PIF; PIF is a prestigious Saudi sovereign fund, and digital experience has DT adjacency, but creative direction is design-focused rather than transformation leadership"
+        },
+        {
+          "job_id": "linkedin-li-4384947032",
+          "skip_signals": 3,
+          "reason": "IT Operations Section Head in Jeddah has strong domain (IT Operations) and government/navigation fit but Section Head is below VP target"
+        },
+        {
+          "job_id": "linkedin-li-4368220782",
+          "skip_signals": 3,
+          "reason": "BD Director in FinTech/Payments - strong domain alignment but sales mandate is a concern at any level"
+        },
+        {
+          "job_id": "linkedin-li-4374897474",
+          "skip_signals": 4,
+          "reason": "FAB domain match but AVP is below target seniority; AML engineering is niche"
+        },
+        {
+          "job_id": "linkedin-li-4368989308",
+          "skip_signals": 6,
+          "reason": "C-suite tech role but hands-on Databricks focus misaligned with Ahmed's DT/PMO executive strength"
+        },
+        {
+          "job_id": "linkedin-li-4384039021",
+          "skip_signals": 2,
+          "reason": "Head of Treasury Strategy at Riyad Bank; banking domain match but treasury is a narrow functional discipline, not broad DT/Operations; Head level is right seniority but wrong focus area"
+        },
+        {
+          "job_id": "linkedin-li-4384702402",
+          "skip_signals": 4,
+          "reason": "CISO in Abu Dhabi is C-suite tech but cybersecurity is a narrow sub-domain; Hedge Fund adds financial sector niche"
+        },
+        {
+          "job_id": "linkedin-li-4350672240",
+          "skip_signals": 5,
+          "reason": "VP-level banking role in target geography with operational element, but compliance specialization is narrow and may require specific regulatory credentials"
+        },
+        {
+          "job_id": "linkedin-li-4377189515",
+          "skip_signals": 3,
+          "reason": "C-Suite seniority and Abu Dhabi location match, but software architect is too technical/hands-on for a DT executive search"
+        },
+        {
+          "job_id": "linkedin-li-4388780662",
+          "skip_signals": 2,
+          "reason": "CEO/C-Founder in KSA at a consulting firm \u2014 right level and geography, but insufficient info to assess; consulting founding is a different track from executive search"
+        },
+        {
+          "job_id": "linkedin-li-4387658589",
+          "skip_signals": 2,
+          "reason": "Transition Portfolio Manager VP has PMO/Program Management relevance in financial services, but title is narrow and non-DT"
+        },
+        {
+          "job_id": "linkedin-li-4387111575",
+          "skip_signals": 2,
+          "reason": "Associate Project Director dilutes the seniority despite C-Suite band; acceptable fallback but 'Associate' prefix is a downgrade from true Director"
+        },
+        {
+          "job_id": "linkedin-li-4386760896",
+          "skip_signals": 2,
+          "reason": "Head of IP Strategy = Director-level seniority; technology transfer is niche and academic setting differs from corporate tech leadership"
+        },
+        {
+          "job_id": "linkedin-li-4385280828",
+          "skip_signals": 2,
+          "reason": "VP-level seniority correct but BD carries inherent sales risk; no company/domain clarity to confirm transformation angle"
+        },
+        {
+          "job_id": "linkedin-li-4388294981",
+          "skip_signals": 2,
+          "reason": "VP title in target location but Product Engineering implies hands-on technical depth; $400K USD noted but domain mismatch"
+        },
+        {
+          "job_id": "linkedin-li-4386334477",
+          "skip_signals": 2,
+          "reason": "Government cybersecurity in Doha \u2014 tech-adjacent with DT components (cloud, digital transformation, OT/IoT) but 12-month contract limits fit; Arabic mandatory"
+        },
+        {
+          "job_id": "linkedin-li-4386728119",
+          "skip_signals": 2,
+          "reason": "Senior Manager Business Solutions & Digital Transformation at sovereign wealth fund - ERP/digital transformation mandate partially aligns with core domain, but seniority below target VP/Director level"
+        },
+        {
+          "job_id": "linkedin-li-4387110495",
+          "skip_signals": 2,
+          "reason": "VP Operations & Global Expansion at AI PropTech - operations and expansion mandate partially aligns with operational excellence core domain; AI/PropTech is moderately relevant"
         }
       ]
     },
@@ -72,53 +162,121 @@
     },
     "skip_patterns_added": [
       {
-        "job_id": "linkedin-li-4385663641",
-        "reason": "CTO role in Dubai - technology executive but CTO is broader tech strategy vs digital transformation focus; Arabic speaker requirement"
+        "job_id": "linkedin-li-4385905338",
+        "reason": "CEO at blockchain investment bank - FinTech-adjacent but requires investment banking expertise not in profile"
       },
       {
-        "job_id": "linkedin-li-4174468962",
-        "reason": "CEO at confidential company could fit but no domain signal - too speculative"
+        "job_id": "linkedin-li-4377604135",
+        "reason": "Director-level BD for climate services is adjacent to transformation advisory; S&P Global is reputable; sustainability is not a core domain though"
       },
       {
-        "job_id": "linkedin-li-4374570926",
-        "reason": "Head of IT at Dubai Smart City initiative has technology leadership angle but IT vs DT mismatch"
+        "job_id": "linkedin-li-4384984896",
+        "reason": "Creative Director Digital Experience at Qsas/PIF; PIF is a prestigious Saudi sovereign fund, and digital experience has DT adjacency, but creative direction is design-focused rather than transformation leadership"
+      },
+      {
+        "job_id": "linkedin-li-4384947032",
+        "reason": "IT Operations Section Head in Jeddah has strong domain (IT Operations) and government/navigation fit but Section Head is below VP target"
+      },
+      {
+        "job_id": "linkedin-li-4368220782",
+        "reason": "BD Director in FinTech/Payments - strong domain alignment but sales mandate is a concern at any level"
+      },
+      {
+        "job_id": "linkedin-li-4374897474",
+        "reason": "FAB domain match but AVP is below target seniority; AML engineering is niche"
+      },
+      {
+        "job_id": "linkedin-li-4368989308",
+        "reason": "C-suite tech role but hands-on Databricks focus misaligned with Ahmed's DT/PMO executive strength"
+      },
+      {
+        "job_id": "linkedin-li-4384039021",
+        "reason": "Head of Treasury Strategy at Riyad Bank; banking domain match but treasury is a narrow functional discipline, not broad DT/Operations; Head level is right seniority but wrong focus area"
+      },
+      {
+        "job_id": "linkedin-li-4384702402",
+        "reason": "CISO in Abu Dhabi is C-suite tech but cybersecurity is a narrow sub-domain; Hedge Fund adds financial sector niche"
+      },
+      {
+        "job_id": "linkedin-li-4350672240",
+        "reason": "VP-level banking role in target geography with operational element, but compliance specialization is narrow and may require specific regulatory credentials"
+      },
+      {
+        "job_id": "linkedin-li-4377189515",
+        "reason": "C-Suite seniority and Abu Dhabi location match, but software architect is too technical/hands-on for a DT executive search"
+      },
+      {
+        "job_id": "linkedin-li-4388780662",
+        "reason": "CEO/C-Founder in KSA at a consulting firm \u2014 right level and geography, but insufficient info to assess; consulting founding is a different track from executive search"
+      },
+      {
+        "job_id": "linkedin-li-4387658589",
+        "reason": "Transition Portfolio Manager VP has PMO/Program Management relevance in financial services, but title is narrow and non-DT"
+      },
+      {
+        "job_id": "linkedin-li-4387111575",
+        "reason": "Associate Project Director dilutes the seniority despite C-Suite band; acceptable fallback but 'Associate' prefix is a downgrade from true Director"
+      },
+      {
+        "job_id": "linkedin-li-4386760896",
+        "reason": "Head of IP Strategy = Director-level seniority; technology transfer is niche and academic setting differs from corporate tech leadership"
+      },
+      {
+        "job_id": "linkedin-li-4385280828",
+        "reason": "VP-level seniority correct but BD carries inherent sales risk; no company/domain clarity to confirm transformation angle"
+      },
+      {
+        "job_id": "linkedin-li-4388294981",
+        "reason": "VP title in target location but Product Engineering implies hands-on technical depth; $400K USD noted but domain mismatch"
+      },
+      {
+        "job_id": "linkedin-li-4386334477",
+        "reason": "Government cybersecurity in Doha \u2014 tech-adjacent with DT components (cloud, digital transformation, OT/IoT) but 12-month contract limits fit; Arabic mandatory"
+      },
+      {
+        "job_id": "linkedin-li-4386728119",
+        "reason": "Senior Manager Business Solutions & Digital Transformation at sovereign wealth fund - ERP/digital transformation mandate partially aligns with core domain, but seniority below target VP/Director level"
+      },
+      {
+        "job_id": "linkedin-li-4387110495",
+        "reason": "VP Operations & Global Expansion at AI PropTech - operations and expansion mandate partially aligns with operational excellence core domain; AI/PropTech is moderately relevant"
       }
     ],
     "weight_changes": [],
     "source_rankings": {
       "unknown": {
-        "recommended": 254,
+        "recommended": 572,
         "applied": 0,
         "rate": 0.0
       }
     },
     "summary": {
-      "generated_at": "2026-03-22T23:00:02.125182+02:00",
+      "generated_at": "2026-03-23T23:00:01.126459+02:00",
       "period": "last_7_days",
       "job_recommendation_accuracy": {
-        "rate": 37.5,
-        "total": 254,
-        "applied": 18
+        "rate": 21.153846153846153,
+        "total": 572,
+        "applied": 22
       },
       "briefing_actionability": {
         "total_briefings": 0,
         "changes_detected": false
       },
       "auto_adjustments": {
-        "skip_patterns_added": 3,
+        "skip_patterns_added": 20,
         "weight_changes": 0,
         "source_rankings_updated": true
       },
       "insights": [
-        "\u26a0\ufe0f Job recommendation accuracy low (38%) \u2014 weights adjusted",
-        "\ud83d\udcdd Added 3 new skip patterns from feedback"
+        "\u26a0\ufe0f Job recommendation accuracy low (21%) \u2014 weights adjusted",
+        "\ud83d\udcdd Added 20 new skip patterns from feedback"
       ]
     }
   },
   "kpi": {
-    "recommendation_accuracy": 37.5,
-    "total_recommendations": 254,
-    "skip_patterns_added": 3,
+    "recommendation_accuracy": 21.153846153846153,
+    "total_recommendations": 572,
+    "skip_patterns_added": 20,
     "weight_changes": 0
   },
   "recommendations": []

@@ -92,9 +92,9 @@ Every bullet: **Action Verb + Value/What + Result/Metric**
 
 | Task | Model | Notes |
 |------|-------|-------|
-| Default / daily | MiniMax-M2.1 | Free tier |
-| Background / cron | MiniMax-M2.1 | Free tier |
-| CV creation/review | Claude Opus 4.5 | Requires approval |
+| Default / daily | MiniMax-M2.7 | Free tier |
+| Background / cron | MiniMax-M2.7 | Free tier |
+| CV creation/review | Claude Opus 4.6 | Always - no approval needed |
 
 **Rule:** Always ask before switching to paid models. Notify after any switch.
 
