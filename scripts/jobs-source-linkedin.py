@@ -14,6 +14,13 @@ import os
 import requests
 from pathlib import Path
 
+# Pipeline DB (safe fallback)
+try:
+    sys.path.insert(0, os.path.dirname(__file__))
+    import pipeline_db as _pdb
+except ImportError:
+    _pdb = None
+
 # Ensure unbuffered output for cron
 os.environ["PYTHONUNBUFFERED"] = "1"
 
@@ -175,7 +182,27 @@ def run_linkedin_scanner(result: AgentResult):
         time.sleep(RATE_LIMIT_DELAY)
     
     print(f"\nCompleted: {searches_run} searches, {jobs_raw} raw, {len(all_jobs)} unique")
-    
+
+    # ── DB write (dual-write, non-blocking) ───────────────────────────────────
+    if _pdb:
+        try:
+            db_count = 0
+            for j in all_jobs:
+                _pdb.register_job(
+                    source="linkedin",
+                    job_id=j.get("id", ""),
+                    company=j.get("company", "Unknown"),
+                    title=j.get("title", "Unknown"),
+                    location=j.get("location"),
+                    url=j.get("url"),
+                    jd_text=j.get("raw_snippet") or None,
+                )
+                db_count += 1
+            print(f"  DB: {db_count} jobs registered")
+        except Exception as _e:
+            print(f"  DB write failed (non-fatal): {_e}")
+    # ─────────────────────────────────────────────────────────────────────────
+
     result.set_data(all_jobs)
     result.set_kpi({
         "searches_run": searches_run,

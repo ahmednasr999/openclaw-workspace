@@ -8,11 +8,19 @@ Computes: conversion funnel rates
 """
 
 import os
+import sys
 import json
 import urllib.request
 import urllib.error
 from datetime import datetime, timedelta
 from pathlib import Path
+
+# Pipeline DB (safe fallback)
+try:
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import pipeline_db as _pdb
+except ImportError:
+    _pdb = None
 
 # Import from agent-common.py
 import sys
@@ -303,6 +311,30 @@ def run_pipeline_agent(result: AgentResult):
     
     # Cross-reference with applied-job-ids.txt
     external_applied_count = count_applied_ids()
+
+    # ── DB query path (reads DB if available, supplements Notion data) ───────
+    db_funnel = {}
+    db_stale = []
+    db_total = 0
+    if _pdb:
+        try:
+            db_funnel = _pdb.get_funnel()
+            db_stale = _pdb.get_stale(days=7)
+            db_total = db_funnel.get("_total", 0)
+            # Use DB stale count as authoritative if DB has data
+            if db_stale and not stale_applications:
+                for s in db_stale[:10]:
+                    stale_applications.append({
+                        "company": s.get("company"),
+                        "title": s.get("title"),
+                        "applied_date": s.get("applied_date"),
+                        "days_stale": (datetime.now() - datetime.fromisoformat(
+                            s["applied_date"] + "T00:00:00"
+                        )).days if s.get("applied_date") else 0,
+                    })
+        except Exception:
+            pass  # DB read failed, continue with Notion data
+    # ─────────────────────────────────────────────────────────────────────────
     
     # Calculate avg days in pipeline
     total_days = 0
@@ -322,11 +354,22 @@ def run_pipeline_agent(result: AgentResult):
                 pass
     avg_days = round(total_days / max(counted, 1), 1)
     
+    # ── DB read: add keywords (already have db_funnel and db_stale from above) ─
+    db_keywords = []
+    if _pdb:
+        try:
+            db_keywords = _pdb.analyze_keywords(top_n=10)
+        except Exception:
+            pass
+    # ─────────────────────────────────────────────────────────────────────────
+
     # Set data
     result.set_data({
         "total_applications": total_tracked,
         "active_count": active_count,
         "external_applied_count": external_applied_count,
+        "db_total": db_total,
+        "db_funnel": db_funnel,
         "by_status": by_status,
         "this_week": {
             "applied": this_week_applied,

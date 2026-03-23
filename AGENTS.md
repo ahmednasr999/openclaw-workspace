@@ -98,6 +98,18 @@ When AI makes the marginal cost of completeness near-zero, do the complete thing
 
 Exceptions: Don't boil the ocean. If the extra 10% requires a new API connection, external data we don't have, or would take more than 2 minutes - flag it as a suggestion instead of doing it.
 
+## Task Board Rule (Non-Negotiable - ALL Models, ALL Agents)
+
+**Every task MUST be logged to Mission Control Task Board BEFORE work starts.**
+```
+POST http://localhost:3001/api/tasks/agent
+{"title":"...","agent":"NASR (Coder)","status":"In Progress","priority":"...","category":"Task","description":"..."}
+```
+- Update to "Completed" when done via PATCH
+- No exceptions across any model or session
+
+---
+
 ## Proactive Memory Checklist
 
 Before asking user, check:

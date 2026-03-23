@@ -17,6 +17,13 @@ import json, os, sys, re, subprocess, argparse, glob, urllib.request
 from pathlib import Path
 from datetime import datetime, timezone, timedelta
 
+# Pipeline DB (safe fallback)
+try:
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import pipeline_db as _pdb
+except ImportError:
+    _pdb = None
+
 WORKSPACE   = "/root/.openclaw/workspace"
 HANDOFF_DIR = f"{WORKSPACE}/jobs-bank/handoff"
 CVS_DIR     = f"{WORKSPACE}/cvs"
@@ -443,6 +450,45 @@ def main():
     built = [r for r in results if r.get("status") == "built"]
     if built and not args.dry_run:
         git_push_cvs()
+
+    # ── DB writes for built CVs (dual-write, non-blocking) ───────────────────
+    if _pdb and built:
+        try:
+            db_count = 0
+            for r in built:
+                trigger_data = r.get("trigger", {}) if isinstance(r.get("trigger"), dict) else {}
+                job_id = str(trigger_data.get("job_id", trigger_data.get("id", ""))).strip()
+                cv_path = r.get("pdf_path", r.get("cv_path", ""))
+                html_path = r.get("html_path", "")
+                company = trigger_data.get("company", r.get("company", ""))
+                title = trigger_data.get("role", r.get("role", ""))
+
+                if not job_id and company and title:
+                    import hashlib
+                    job_id = f"cv-{hashlib.md5(f'{company}|{title}'.encode()).hexdigest()[:10]}"
+
+                if job_id and cv_path:
+                    _pdb.attach_cv(job_id=job_id, cv_path=cv_path, cv_html_path=html_path or None)
+                    db_count += 1
+
+            log(f"  DB: {db_count} CVs linked")
+        except Exception as _e:
+            log(f"  DB write failed (non-fatal): {_e}")
+    # ─────────────────────────────────────────────────────────────────────────
+
+    # ── DB query: report unbuilt CVs ─────────────────────────────────────────
+    if _pdb:
+        try:
+            # Jobs with SUBMIT verdict but no CV yet
+            submit_jobs = _pdb.search(verdict="SUBMIT")
+            unbuilt = [j for j in submit_jobs if not j.get("cv_path")]
+            if unbuilt:
+                log(f"\n  Unbuilt CVs needed: {len(unbuilt)} SUBMIT jobs without CV")
+                for j in unbuilt[:5]:
+                    log(f"    - {j['company']} | {j['title'][:50]}")
+        except Exception:
+            pass
+    # ─────────────────────────────────────────────────────────────────────────
 
     log(f"Done: {len(built)} CVs built, {len(results)} total processed")
 

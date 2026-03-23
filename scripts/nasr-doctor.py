@@ -19,6 +19,20 @@ import urllib.error
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
+# Pipeline DB (safe fallback)
+try:
+    sys.path.insert(0, str(Path(__file__).parent))
+    import pipeline_db as _pdb
+except ImportError:
+    _pdb = None
+
+# Pipeline DB (safe fallback)
+try:
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import pipeline_db as _pdb
+except ImportError:
+    _pdb = None
+
 WORKSPACE = Path("/root/.openclaw/workspace")
 OPENCLAW_DIR = Path("/root/.openclaw")
 FIX_MODE = "--fix" in sys.argv
@@ -477,6 +491,65 @@ def check_git():
         check("Git Status", Result.WARN, str(e)[:60])
 
 
+# ── Pipeline DB Health Check ──
+
+def check_pipeline_db():
+    """Check nasr-pipeline.db exists, has recent data, no corruption."""
+    db_path = WORKSPACE / "data" / "nasr-pipeline.db"
+
+    if not db_path.exists():
+        check("Pipeline DB", Result.WARN, "nasr-pipeline.db not found")
+        return
+
+    # Check file size (empty or corrupt if < 10KB)
+    size_kb = db_path.stat().st_size / 1024
+    if size_kb < 10:
+        check("Pipeline DB", Result.WARN, f"DB suspiciously small: {size_kb:.0f} KB")
+        return
+
+    if not _pdb:
+        check("Pipeline DB", Result.WARN, f"pipeline_db module not importable ({size_kb:.0f} KB)")
+        return
+
+    try:
+        stats = _pdb.get_db_stats()
+        if "error" in stats:
+            check("Pipeline DB", Result.FAIL, f"DB error: {stats['error'][:60]}")
+            return
+
+        jobs_count = stats.get("jobs_count", 0)
+        last_update = stats.get("last_update", "")
+
+        if jobs_count == 0:
+            check("Pipeline DB", Result.WARN, "DB has 0 job records — run migrate_to_db.py")
+            return
+
+        # Check data freshness (last update within 48h)
+        if last_update:
+            try:
+                lu = datetime.fromisoformat(last_update)
+                age_hours = (datetime.now() - lu.replace(tzinfo=None)).total_seconds() / 3600
+                if age_hours > 48:
+                    check("Pipeline DB", Result.WARN,
+                          f"{jobs_count} jobs | last update {age_hours:.0f}h ago (stale)")
+                    return
+            except Exception:
+                pass
+
+        check("Pipeline DB", Result.OK,
+              f"{jobs_count} jobs | {stats.get('interactions_count', 0)} interactions | "
+              f"{size_kb:.0f} KB | keywords: {stats.get('keywords_count', 0)}")
+
+        # Auto-backup if fix mode
+        if FIX_MODE:
+            backup_path = _pdb.backup()
+            if backup_path:
+                fix_applied("Pipeline DB", f"Backup created: {Path(backup_path).name}")
+
+    except Exception as e:
+        check("Pipeline DB", Result.WARN, f"Check failed: {str(e)[:60]}")
+
+
 # ── Main ──
 
 def main():
@@ -495,6 +568,7 @@ def main():
     check_linkedin_cookies()
     check_scripts()
     check_pipeline()
+    check_pipeline_db()
     check_memory()
     check_git()
 

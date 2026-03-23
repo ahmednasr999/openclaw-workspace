@@ -14,9 +14,18 @@ Automated ATS Scorer
 Scores job descriptions against Ahmed's CV
 """
 
+import os
 import re
+import sys
 import json
 from pathlib import Path
+
+# Pipeline DB (safe fallback)
+try:
+    sys.path.insert(0, os.path.dirname(__file__))
+    import pipeline_db as _pdb
+except ImportError:
+    _pdb = None
 
 # Ahmed's keyword profile (from his CV)
 CV_KEYWORDS = {
@@ -241,9 +250,33 @@ def score_from_url(url: str) -> dict:
         }
     return score_jd(jd)
 
+def score_and_save(job_id: str, jd_text: str, fit_score: int = None, verdict: str = None) -> dict:
+    """
+    Score a JD and write results to DB.
+    job_id: the pipeline DB job_id
+    jd_text: the job description text
+    fit_score: optional manual fit score override
+    verdict: optional manual verdict override
+    Returns the score result dict.
+    """
+    result = calculate_score(jd_text)
+    # ── DB write (dual-write, non-blocking) ──────────────────────────────────
+    if _pdb and job_id:
+        try:
+            _pdb.update_score(
+                job_id=job_id,
+                ats_score=result.get("score"),
+                fit_score=fit_score,
+                verdict=verdict or result.get("verdict"),
+                notes=", ".join(result.get("matched", [])[:5]),
+            )
+        except Exception:
+            pass
+    # ─────────────────────────────────────────────────────────────────────────
+    return result
+
+
 def main():
-    import sys
-    
     if len(sys.argv) < 2:
         print("Usage: ats-scorer.py <job_description_or_file>")
         sys.exit(1)

@@ -7,8 +7,16 @@ Reads Notion Pipeline DB, finds all "Applied" entries, extracts job IDs from URL
 and ensures they're in applied-job-ids.txt.
 """
 import os
+import sys
 import json, re, requests
 from pathlib import Path
+
+# Pipeline DB (safe fallback)
+try:
+    sys.path.insert(0, os.path.dirname(__file__))
+    import pipeline_db as _pdb
+except ImportError:
+    _pdb = None
 
 NOTION_TOKEN = json.load(open(os.path.expanduser("~/.openclaw/workspace/config/notion.json")))["token"]
 PIPELINE_DB = "3268d599-a162-81b4-b768-f162adfa4971"
@@ -79,6 +87,26 @@ def run():
             if uid not in existing:
                 new_ids.append(f"{uid} | {company} | {role[:50]} | synced from Notion | {stage_name}")
                 existing.add(uid)
+                # ── DB write (dual-write, non-blocking) ──────────────────────
+                if _pdb:
+                    try:
+                        notion_page_id = page.get("id", "")
+                        if "Applied" in stage_name:
+                            # Ensure job exists then mark applied
+                            _pdb.register_job(
+                                source="notion_sync",
+                                job_id=uid,
+                                company=company,
+                                title=role,
+                                url=url,
+                                status="applied",
+                            )
+                            _pdb.mark_applied(uid)
+                            if notion_page_id:
+                                _pdb.update_field(uid, notion_page_id=notion_page_id, notion_synced=1)
+                    except Exception:
+                        pass
+                # ─────────────────────────────────────────────────────────────
     
     if new_ids:
         with open(APPLIED_FILE, "a") as f:

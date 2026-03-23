@@ -25,6 +25,20 @@ import json
 from datetime import datetime
 from pathlib import Path
 
+# Pipeline DB (safe fallback)
+try:
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import pipeline_db as _pdb
+except ImportError:
+    _pdb = None
+
+# Pipeline DB (safe fallback)
+try:
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import pipeline_db as _pdb
+except ImportError:
+    _pdb = None
+
 WORKSPACE = "/root/.openclaw/workspace"
 DOSSIER_DIR = f"{WORKSPACE}/jobs-bank/dossiers"
 
@@ -77,6 +91,30 @@ def build_dossier(domain, company_name=None, role_title=None):
         company_name = domain.split(".")[0].title()
     
     log(f"Building dossier for {company_name} ({domain})")
+
+    # ── DB query: existing pipeline data for this company ────────────────────
+    db_pipeline_section = ""
+    if _pdb:
+        try:
+            jobs = _pdb.get_by_company(company_name)
+            if jobs:
+                job_lines = []
+                for j in jobs[:5]:
+                    status = j.get("status", "?")
+                    title = j.get("title", "?")
+                    verdict = j.get("verdict", "")
+                    ats = j.get("ats_score", "")
+                    applied = j.get("applied_date", "")
+                    job_lines.append(
+                        f"- [{status}] {title}"
+                        + (f" | Verdict: {verdict}" if verdict else "")
+                        + (f" | ATS: {ats}" if ats else "")
+                        + (f" | Applied: {applied}" if applied else "")
+                    )
+                db_pipeline_section = "\n".join(job_lines)
+        except Exception:
+            pass
+    # ─────────────────────────────────────────────────────────────────────────
     
     # Pages to extract
     pages = {
@@ -176,6 +214,11 @@ def build_dossier(domain, company_name=None, role_title=None):
 - Alignment: [TO BE FILLED]
 - Gaps: [TO BE FILLED]
 - Talking points: [TO BE FILLED]
+
+---
+
+## Pipeline History (from DB)
+{db_pipeline_section or "No pipeline history found for this company."}
 """
     
     # Save dossier
@@ -201,4 +244,19 @@ if __name__ == "__main__":
     name = sys.argv[2] if len(sys.argv) > 2 else None
     role = sys.argv[3] if len(sys.argv) > 3 else None
     
-    build_dossier(domain, name, role)
+    filepath = build_dossier(domain, name, role)
+
+    # ── DB lookup: show existing application history for this company ─────────
+    if _pdb and name:
+        try:
+            existing = _pdb.get_by_company(name)
+            if existing:
+                print(f"\n=== Pipeline History for {name} ({len(existing)} records) ===")
+                for j in existing:
+                    print(f"  [{j['status']}] {j['title']} | verdict={j.get('verdict','?')} | "
+                          f"ats={j.get('ats_score','?')} | cv={bool(j.get('cv_path'))}")
+            else:
+                print(f"\n  No pipeline history found for {name}")
+        except Exception:
+            pass
+    # ─────────────────────────────────────────────────────────────────────────

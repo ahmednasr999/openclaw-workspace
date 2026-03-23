@@ -10,9 +10,17 @@ Usage:
 """
 
 import os
-import json, subprocess, sys, os
+import sys
+import json, subprocess
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
+
+# Pipeline DB (safe fallback)
+try:
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import pipeline_db as _pdb
+except ImportError:
+    _pdb = None
 
 WORKSPACE = Path("/root/.openclaw/workspace")
 DATA_DIR = WORKSPACE / "data"
@@ -111,6 +119,24 @@ def build_message():
             company = j.get("company", "?")[:20]
             parts.append(f"  [{score}/10] {title} @ {company}")
     parts.append("")
+
+    # ── PIPELINE DB SUMMARY (sourced from SQLite) ────────────────────────────
+    if _pdb:
+        try:
+            db_funnel = _pdb.get_funnel()
+            db_stale = _pdb.get_stale(days=7)
+            db_total = db_funnel.get("_total", 0)
+            db_applied = db_funnel.get("applied", 0)
+            db_interview = db_funnel.get("interview", 0)
+            if db_total > 0:
+                parts.append(
+                    f"🗄 Pipeline DB: {db_total} total | {db_applied} applied | "
+                    f"{db_interview} interview | {len(db_stale)} stale"
+                )
+                parts.append("")
+        except Exception:
+            pass  # DB read failed, silent skip
+    # ─────────────────────────────────────────────────────────────────────────
 
     # ── EMAIL ──
     n_int = len(interviews) if isinstance(interviews, list) else interviews

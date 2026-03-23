@@ -15,11 +15,19 @@ Features:
 """
 
 import json
+import os
 import sys
 import time
 import requests
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
+
+# Pipeline DB (safe fallback)
+try:
+    sys.path.insert(0, os.path.dirname(__file__))
+    import pipeline_db as _pdb
+except ImportError:
+    _pdb = None
 
 # Add scripts dir to path for imports
 sys.path.insert(0, str(Path(__file__).parent))
@@ -570,6 +578,32 @@ def run_review(result: AgentResult):
         }
     }
     
+    # ── DB write (dual-write, non-blocking) ───────────────────────────────────
+    if _pdb:
+        try:
+            db_count = 0
+            all_scored = submit_jobs + review_jobs + skip_jobs
+            for job in all_scored:
+                job_id = str(job.get("id", job.get("job_id", ""))).strip()
+                if not job_id:
+                    continue
+                verdict = job.get("verdict")
+                fit_score = job.get("career_fit_score", job.get("fit_score"))
+                ats_score = job.get("ats_score")
+                notes = job.get("verdict_reason", job.get("reason", ""))
+                _pdb.update_score(
+                    job_id=job_id,
+                    ats_score=int(ats_score) if ats_score is not None else None,
+                    fit_score=int(fit_score) if fit_score is not None else None,
+                    verdict=verdict,
+                    notes=str(notes)[:500] if notes else None,
+                )
+                db_count += 1
+            print(f"  DB: {db_count} scores written")
+        except Exception as _e:
+            print(f"  DB write failed (non-fatal): {_e}")
+    # ─────────────────────────────────────────────────────────────────────────
+
     result.set_data(summary)
     result.set_kpi({
         "submit_count": len(submit_jobs),
