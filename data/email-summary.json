@@ -2,12 +2,12 @@
   "meta": {
     "agent": "email-agent",
     "version": "3.0.0",
-    "generated_at": "2026-03-23T06:14:47.138087+02:00",
-    "duration_ms": 19420,
+    "generated_at": "2026-03-23T08:00:42.706955+02:00",
+    "duration_ms": 39074,
     "ttl_hours": 4,
     "status": "partial",
     "error": "name 'json' is not defined",
-    "run_id": "657e74de",
+    "run_id": "add82266",
     "retries_used": 0,
     "data_freshness": "stale"
   },

@@ -326,9 +326,35 @@ def get_today_post():
             if text:
                 full_text += f"- {text}\n"
 
-    # Clean up: remove excessive blank lines, trim
+    # Clean up: remove metadata lines that leaked from .md files
+    full_text = re.sub(r'^File:.*$', '', full_text, flags=re.MULTILINE)
+    full_text = re.sub(r'^## Image Generated.*$', '', full_text, flags=re.MULTILINE)
+    # Remove excessive blank lines, trim
     full_text = re.sub(r'\n{3,}', '\n\n', full_text).strip()
 
+    # Check if any **bold** markers exist (from Notion annotations)
+    has_bold_markers = bool(re.search(r'\*\*.+?\*\*', full_text))
+    
+    if not has_bold_markers:
+        # Notion text has no bold annotations - try local .md file which may have **bold** 
+        local_md_candidates = [
+            f"{WORKSPACE}/linkedin/posts/{TODAY}-*.md",
+        ]
+        import glob
+        for pattern in local_md_candidates:
+            matches = glob.glob(pattern)
+            for md_path in matches:
+                with open(md_path) as f:
+                    md_content = f.read()
+                # Extract post body from .md (after "## Post Draft" header)
+                draft_match = re.search(r'## Post Draft\s*\n(.+?)(?:\n---|\Z)', md_content, re.DOTALL)
+                if draft_match:
+                    md_text = draft_match.group(1).strip()
+                    if re.search(r'\*\*.+?\*\*', md_text):
+                        print(f"Bold markers found in local .md: {md_path}")
+                        full_text = md_text
+                        break
+    
     # Convert **bold** to Unicode bold
     full_text = convert_bold_markdown(full_text)
 
@@ -368,13 +394,9 @@ def download_image(url):
 
 def upload_image_to_linkedin(image_bytes, content_type):
     """
-    Upload image to LinkedIn via Composio.
-    Returns image URN for use in post.
-    
-    This function writes the image to a temp file and outputs
-    upload instructions for the calling agent.
+    Save image to /tmp/ for agent to upload via Composio.
+    Returns the temp file path.
     """
-    # Save image to temp file for the agent to use
     ext = "png" if "png" in content_type else "jpg"
     tmp_path = f"/tmp/linkedin-post-image.{ext}"
     with open(tmp_path, "wb") as f:
@@ -631,9 +653,13 @@ def main():
             image_bytes, content_type = download_image(post['image_url'])
             image_path = upload_image_to_linkedin(image_bytes, content_type)
         except Exception as e:
-            print(f"Warning: Image download failed ({e}), posting without image")
+            print(f"WARNING: Image download failed ({e})")
+            if post['image_url']:
+                print("FATAL: Image required but download failed")
+                print("IMAGE_DOWNLOAD_FAILED")
+                sys.exit(1)
 
-    # Output for agent to pick up
+    # Write payload with EXACT content (bold already converted to Unicode)
     output = {
         "action": "post_to_linkedin",
         "person_urn": PERSON_URN,
@@ -643,15 +669,14 @@ def main():
         "page_id": post['page_id'],
         "title": post['title'],
         "score": score_result['total'],
+        "image_url_original": post['image_url'],
     }
     
-    # Write output for agent consumption
     output_path = "/tmp/linkedin-post-payload.json"
     with open(output_path, "w") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
     
-    # Write a watchdog file — agent must delete this after successful post
-    # If it still exists 30 min after cron, something failed
+    # Watchdog
     watchdog_path = "/tmp/linkedin-post-pending.flag"
     with open(watchdog_path, "w") as f:
         f.write(json.dumps({
@@ -660,10 +685,13 @@ def main():
             "title": post['title'],
         }))
     
-    print(f"\nPayload written to: {output_path}")
-    print(f"SCORE: {score_result['total']}/10")
-    print(f"LOGGED_TO: {RESEARCH_LOG}")
-    print(f"WATCHDOG: {watchdog_path} (agent must delete after posting)")
+    # Print exact instructions for the agent
+    print(f"\nSCORE: {score_result['total']}/10")
+    print(f"CONTENT_LENGTH: {len(post['content'])} chars")
+    print(f"BOLD_CONVERTED: {'yes' if any(ord(c) > 0x1D400 for c in post['content']) else 'no'}")
+    print(f"IMAGE_FILE: {image_path or 'none'}")
+    print(f"IMAGE_REQUIRED: {bool(post['image_url'])}")
+    print(f"PAGE_ID: {post['page_id']}")
     print(f"POST_URL_UPDATE_CMD: python3 scripts/linkedin-auto-poster.py --update-url '<POST_URL>' --page-id {post['page_id']}")
     print(f"READY_TO_POST")
 

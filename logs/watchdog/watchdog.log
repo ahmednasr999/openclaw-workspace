@@ -217,3 +217,5 @@ Bind: loopback
   "enqueued": true,
   "runId": "manual:d87f2c6c-20ab-42f4-aa83-47cc086e9b04:1774238428671:2"
 }
+[2026-03-23 08:00] === Watchdog v3 run ===
+[2026-03-23 08:00] Summary: fixes=0 warnings=1 alerts=0
