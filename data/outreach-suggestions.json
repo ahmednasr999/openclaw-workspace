@@ -1,55 +1,60 @@
 {
-  "generated": "2026-03-23T04:17:56.319231+00:00",
+  "generated": "2026-03-24T03:39:48.362137+00:00",
   "suggestions": [
     {
-      "name": "Majid S.",
-      "role": "Miral Experiences",
-      "url": "https://www.linkedin.com/in/majid-s-5b6467114",
-      "company": "Miral Experiences",
-      "signal_score": 5,
-      "applied_role": "Senior Director Software Architecture",
+      "name": "Jennifer Desouza",
+      "role": "Head of Recruiting",
+      "url": "https://www.linkedin.com/in/jennifer-desouza-9a8156193",
+      "company": "Confidential",
+      "signal_score": 30,
+      "applied_role": "Head of Digital Product Delivery (Mobile App)",
       "applied_date": "2026-03-22",
-      "reason": "You applied for Senior Director Software Architecture at Miral Experiences"
+      "reason": "You applied for Head of Digital Product Delivery (Mobile App) at Confidential",
+      "draft_message": "Hi Jennifer, your focus on attracting top digital talent at Confidential caught my eye. I recently applied for the Head of Digital Product Delivery role and would love to connect. Happy to share more context on my background."
     },
     {
-      "name": "Cheryl Williams",
-      "role": "Talent Acquisition - HR Business Partner",
-      "url": "https://www.linkedin.com/in/cheryl-williams",
+      "name": "Lauren Fischer",
+      "role": "Sr. Manager, Talent Acquisition",
+      "url": "https://www.linkedin.com/in/laurenfischer20",
       "company": "International Medical Company",
       "signal_score": 30,
       "applied_role": "Strategy & Transformation Director",
       "applied_date": "2026-03-22",
-      "reason": "You applied for Strategy & Transformation Director at International Medical Company"
+      "reason": "You applied for Strategy & Transformation Director at International Medical Company",
+      "draft_message": "Hi Lauren, I noticed your focus on building transformation leadership teams at International Medical Company. I applied for the Strategy and Transformation Director role and would welcome the chance to connect."
     },
     {
-      "name": "Mariana C. Tovar capella",
-      "role": "Healthcare Talent Acquisition",
-      "url": "https://www.linkedin.com/in/mtovarcapella",
+      "name": "Jennifer Chevalier",
+      "role": "HR Director",
+      "url": "https://www.linkedin.com/in/jennifer-chevalier-a1959ab",
       "company": "International Medical Company",
-      "signal_score": 30,
+      "signal_score": 25,
       "applied_role": "Strategy & Transformation Director",
       "applied_date": "2026-03-22",
-      "reason": "You applied for Strategy & Transformation Director at International Medical Company"
+      "reason": "You applied for Strategy & Transformation Director at International Medical Company",
+      "draft_message": "Hi Jennifer, your leadership in building IMC's workforce for what's next stood out to me. I recently applied for the Strategy and Transformation Director role and would love to connect. Happy to share more."
     },
     {
-      "name": "Avani Saran",
-      "role": "Talent Acquisition @PwC Middle East",
-      "url": "https://www.linkedin.com/in/avani-saran-1724b91a9",
+      "name": "Ahmed AbuJarad\u200f",
+      "role": "\u200fTalent Acquisition Senior Manager @ PwC ME",
+      "url": "https://www.linkedin.com/in/abujarad",
       "company": "PwC Middle East",
       "signal_score": 30,
       "applied_role": "Digital and Cyber - Digital Strategy and Realisation - AI Strategy - Director",
       "applied_date": "2026-03-22",
-      "reason": "You applied for Digital and Cyber - Digital Strategy and Realisation - AI Strategy - Director at PwC Middle East"
+      "reason": "You applied for Digital and Cyber - Digital Strategy and Realisation - AI Strategy - Director at PwC Middle East",
+      "draft_message": "Hi Ahmed, your work placing digital and AI talent across PwC ME is impressive. I applied for the AI Strategy Director role and would welcome the chance to connect. Happy to share more context."
     },
     {
-      "name": "Cherie Ann Rodriguez-Pelias\u200f",
-      "role": "\u200fTalent Acquisition",
-      "url": "https://www.linkedin.com/in/cherie-ann-rodriguez-pelias-3aa47142",
+      "name": "Manish Verma\u200f",
+      "role": "\u200fDirector",
+      "url": "https://www.linkedin.com/in/maanishverma",
       "company": "PwC Middle East",
-      "signal_score": 30,
+      "signal_score": 20,
       "applied_role": "Digital and Cyber - Digital Strategy and Realisation - AI Strategy - Director",
       "applied_date": "2026-03-22",
-      "reason": "You applied for Digital and Cyber - Digital Strategy and Realisation - AI Strategy - Director at PwC Middle East"
+      "reason": "You applied for Digital and Cyber - Digital Strategy and Realisation - AI Strategy - Director at PwC Middle East",
+      "draft_message": "Hi Manish, I follow your leadership in PwC ME's Digital and Cyber practice closely. I applied for the AI Strategy Director role and would love to connect. Would welcome the opportunity to share more."
     }
   ],
   "companies_searched": 10,

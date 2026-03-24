@@ -60,7 +60,7 @@ SEARCH_ROLES = [
 ]
 
 
-def retry_request(req_fn, max_retries=3, name="request"):
+def retry_request(req_fn, max_retries=2, name="request"):
     """Retry a request with backoff. Returns result or raises on exhaustion."""
     for attempt in range(1, max_retries + 1):
         try:
@@ -107,9 +107,9 @@ def notion_query_applied():
     ctx = ssl.create_default_context()
     try:
         def _notion_fetch():
-            with urlopen(req, timeout=120, context=ctx) as r:
+            with urlopen(req, timeout=30, context=ctx) as r:
                 return json.loads(r.read().decode("utf-8", errors="ignore"))
-        data = retry_request(_notion_fetch, max_retries=3, name="notion_applied")
+        data = retry_request(_notion_fetch, max_retries=2, name="notion_applied")
 
         companies = []
         for page in data.get("results", []):
@@ -161,9 +161,9 @@ def search_profiles(company, role_query="recruiter OR HR OR talent acquisition")
 
     try:
         def _tavily_fetch():
-            with urlopen(req, timeout=120, context=ctx) as r:
+            with urlopen(req, timeout=30, context=ctx) as r:
                 return json.loads(r.read().decode("utf-8", errors="ignore"))
-        data = retry_request(_tavily_fetch, max_retries=3, name=f"tavily_{company}")
+        data = retry_request(_tavily_fetch, max_retries=2, name=f"tavily_{company}")
 
         profiles = []
         seen = set()
@@ -261,7 +261,7 @@ def call_llm(prompt, max_tokens=1000, model="anthropic/claude-sonnet-4-6"):
                   headers={"Content-Type": "application/json",
                            "Authorization": f"Bearer {gw_token}"}, method="POST")
     try:
-        with urlopen(req, timeout=120, context=ctx) as r:
+        with urlopen(req, timeout=30, context=ctx) as r:
             return json.loads(r.read())["choices"][0]["message"]["content"].strip()
     except Exception as e:
         print(f"  LLM error: {e}")
