@@ -224,7 +224,7 @@ case "$MODE" in
             "pipeline"  "pipeline-agent.py"  30 \
             "email"     "email-agent.py"    180 \
             "content"   "linkedin-content-agent.py"   30 \
-            "outreach"  "outreach-agent.py"  30 \
+            "outreach"  "outreach-agent.py"  180 \
             "system"    "system-agent.py"    30
         ;;
     
@@ -271,12 +271,12 @@ case "$MODE" in
             "pipeline"  "pipeline-agent.py"       30 \
             "email"     "email-agent.py"          180 \
             "content"   "linkedin-content-agent.py"         30 \
-            "outreach"  "outreach-agent.py"        15 \
+            "outreach"  "outreach-agent.py"       180 \
             "system"    "system-agent.py"           30 \
             "linkedin"  "jobs-source-linkedin.py"  480 \
             "indeed"    "jobs-source-indeed.py"    120 \
             "google"    "jobs-source-google.py"    120 \
-            "comment-radar" "comment-radar-agent.py" 60 \
+            "comment-radar" "comment-radar-agent.py" 180 \
             "li-post"   "linkedin-post-agent.py"   30 \
             || log "⚠️ Phase 1 had failures (continuing to Phase 2+)"
         
