@@ -277,7 +277,8 @@ case "$MODE" in
             "indeed"    "jobs-source-indeed.py"    120 \
             "google"    "jobs-source-google.py"    120 \
             "comment-radar" "comment-radar-agent.py" 60 \
-            "li-post"   "linkedin-post-agent.py"   30
+            "li-post"   "linkedin-post-agent.py"   30 \
+            || log "⚠️ Phase 1 had failures (continuing to Phase 2+)"
         
         # Alert on source failures via Telegram
         if [ -f "$DATA_DIR/source-failures.jsonl" ]; then
