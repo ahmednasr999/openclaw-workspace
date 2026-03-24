@@ -1,23 +1,41 @@
 {
   "status": "ok",
-  "scan_time": "2026-03-24T10:15:21.942055+02:00",
-  "total_scanned": 0,
+  "scan_time": "2026-03-24T19:00:23.496997+02:00",
+  "total_scanned": 10,
   "by_category": {
-    "interview_invite": 0,
+    "interview_invite": 1,
     "recruiter_reach": 0,
     "application_ack": 0,
     "rejection": 0,
     "assessment": 0,
     "follow_up_needed": 0,
-    "other": 0
+    "other": 9
   },
-  "interview_invites": [],
+  "interview_invites": [
+    {
+      "id": "349973",
+      "from": "Quanterion Solutions Incorporated <reliability@quanterion.com>",
+      "subject": "Get the Early Bird Discount for Reliability Training!",
+      "date": "Tue, 24 Mar 2026 12:10:11 -0400 (EDT)",
+      "unread": true,
+      "priority": "HIGH",
+      "score": 7,
+      "pipeline_match": null
+    }
+  ],
   "recruiter_messages": [],
   "application_acks": [],
   "rejections": [],
   "assessments": [],
   "follow_ups_needed": [],
-  "actionable_count": 0,
-  "hot_alerts": [],
+  "actionable_count": 1,
+  "hot_alerts": [
+    {
+      "subject": "Get the Early Bird Discount for Reliability Training!",
+      "from": "Quanterion Solutions Incorporated <reliability@quanterion.com>",
+      "priority": "HIGH",
+      "pipeline_match": null
+    }
+  ],
   "signals": []
 }

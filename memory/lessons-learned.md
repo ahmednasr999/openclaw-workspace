@@ -212,3 +212,18 @@ LinkedIn posts via Composio were being truncated at ~950 chars. I verified posts
 3. Every post MUST be verified: fetch post content and compare char count before reporting success
 4. Add cookie health check to nasr-doctor.py morning run
 5. When a tool fails, switch approach after ONE retry max - don't burn user's time with repeated attempts
+
+---
+
+## 2026-03-24 — Grill-Me Skipped After LCM Cron Build
+
+### What I Missed
+Built the LCM Nightly Health Check cron + skill (new skill, new cron = auto-trigger) and declared done without running grill-me. Ahmed had to call it out.
+
+### Why
+Session startup sequence only reads MEMORY.md, active-tasks.md, and today's daily notes — not AGENTS.md. The grill-me obligation lives in AGENTS.md, which was not in the session startup read list.
+
+### Fix
+1. AGENTS.md updated: "Post-build reminder" clause added — if user asks "are you done?" and grill-me hasn't run, treat as failure. User should never have to remind.
+2. Changed the signal: "are you done?" = "did grill-me run?" — they are now linked in the rules.
+3. The session startup reads MEMORY.md which references AGENTS.md — the gap was that I didn't re-read AGENTS.md after learning about the new build in the same session.
