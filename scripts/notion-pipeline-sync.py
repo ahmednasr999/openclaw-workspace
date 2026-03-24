@@ -13,8 +13,17 @@ Usage:
 Cron: 1 AM Cairo daily
 """
 
-import json, os, sys, sqlite3, urllib.request, hashlib, time
+import json, os, sys, sqlite3, hashlib, time
 from datetime import datetime, timezone, timedelta
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+try:
+    from notion_client_shared import get_client, notion_req as _shared_notion_req
+    _notion_client = get_client()
+    _USE_SHARED = True
+except Exception:
+    _USE_SHARED = False
+    _notion_client = None
 
 WORKSPACE = "/root/.openclaw/workspace"
 DB_PATH = f"{WORKSPACE}/data/nasr-pipeline.db"
@@ -59,22 +68,34 @@ def load_notion_config():
 
 
 def notion_request(method, endpoint, body=None, cfg=None):
-    """Make a Notion API request with retry."""
+    """Make a Notion API request using shared client with retry/backoff.
+    Falls back to direct urllib if shared client unavailable.
+    """
+    if _USE_SHARED and _notion_client:
+        # Map method names: this function uses HTTP methods like "POST", "PATCH"
+        data, err = _shared_notion_req(_notion_client, method.lower(), endpoint.lstrip("/"), body)
+        if err:
+            log(f"  Notion API error: {err}")
+            return None
+        return data
+
+    # Fallback: direct urllib (legacy path)
+    import urllib.request, urllib.error
     if cfg is None:
         cfg = load_notion_config()
-    
+
     headers = {
         "Authorization": f"Bearer {cfg['token']}",
         "Notion-Version": cfg["version"],
         "Content-Type": "application/json",
     }
-    
+
     url = f"https://api.notion.com/v1{endpoint}"
-    data = json.dumps(body).encode() if body else None
-    
+    data_bytes = json.dumps(body).encode() if body else None
+
     for attempt in range(3):
         try:
-            req = urllib.request.Request(url, data=data, headers=headers, method=method)
+            req = urllib.request.Request(url, data=data_bytes, headers=headers, method=method)
             with urllib.request.urlopen(req, timeout=30) as resp:
                 return json.loads(resp.read())
         except urllib.error.HTTPError as e:
@@ -105,7 +126,9 @@ def log(msg):
 
 
 def get_existing_notion_pages(cfg):
-    """Fetch all existing pages in the Notion Pipeline DB, keyed by Company+Role."""
+    """Fetch all existing pages in the Notion Pipeline DB, keyed by Company+Role.
+    Returns dict: key -> {id, last_edited_time, stage}
+    """
     pages = {}
     has_more = True
     start_cursor = None
@@ -130,13 +153,38 @@ def get_existing_notion_pages(cfg):
             role_parts = props.get("Role", {}).get("rich_text", [])
             role = role_parts[0].get("plain_text", "") if role_parts else ""
             
+            # Extract stage for reverse sync
+            stage_data = props.get("Stage", {}).get("select")
+            stage = stage_data["name"] if stage_data else None
+
             key = f"{company.lower().strip()}|{role.lower().strip()}"
-            pages[key] = page["id"]
+            pages[key] = {
+                "id": page["id"],
+                "last_edited_time": page.get("last_edited_time", ""),
+                "stage": stage,
+            }
         
         has_more = result.get("has_more", False)
         start_cursor = result.get("next_cursor")
     
     return pages
+
+
+# Reverse mapping: Notion Stage → SQLite status
+STAGE_TO_STATUS = {v.lower(): k for k, v in STATUS_TO_STAGE.items()}
+# Add emoji-prefixed variants
+STAGE_TO_STATUS.update({
+    "✅ applied": "applied",
+    "📄 cv ready": "cv_built",
+    "📄 cv built": "cv_built",
+    "🎤 interview": "interview",
+    "💰 offer": "offer",
+    "❌ rejected": "rejected",
+    "🔍 discovered": "discovered",
+    "📊 scored": "scored",
+    "📩 response": "response",
+    "🚫 withdrawn": "withdrawn",
+})
 
 
 def build_notion_properties(job):
@@ -345,8 +393,27 @@ def sync_jobs(active_only=False, dry_run=False):
         
         try:
             if key in existing:
-                # Update existing page
-                page_id = existing[key]
+                page_info = existing[key]
+                page_id = page_info["id"]
+                notion_last_edit = page_info.get("last_edited_time", "")
+                notion_stage = page_info.get("stage", "")
+
+                # D4: Bidirectional sync — Status/Stage: Notion always wins
+                if notion_stage:
+                    notion_status = STAGE_TO_STATUS.get(notion_stage.lower(), None)
+                    sqlite_status = job["status"]
+                    if notion_status and notion_status != sqlite_status:
+                        # Notion has a different stage — reverse sync to SQLite
+                        log(f"  ↩️ Reverse sync: {company} | {title} — Notion '{notion_stage}' → SQLite '{notion_status}' (was '{sqlite_status}')")
+                        try:
+                            sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+                            import pipeline_db as _pdb
+                            _pdb.update_status(job["job_id"], notion_status, source="notion_sync")
+                        except Exception as rsync_err:
+                            log(f"  ⚠️ Reverse sync failed: {rsync_err}")
+                        # Don't overwrite Notion's stage in this push
+                        props.pop("Stage", None)
+
                 notion_request("PATCH", f"/pages/{page_id}", {"properties": props}, cfg)
                 updated += 1
             else:

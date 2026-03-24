@@ -326,6 +326,124 @@ def check_pipeline_db_health():
         finding("WARNING", "pipeline_db", "nasr-pipeline.db", str(e)[:80])
 
 
+# ── CHECK 8: Notion-SQLite drift ──
+def check_notion_drift():
+    """Check if Notion and SQLite record counts are in sync."""
+    print("  [8/11] Notion-SQLite drift...")
+    if not _pdb:
+        return
+    try:
+        stats = _pdb.get_db_stats()
+        db_count = stats.get("jobs_count", 0)
+        # Read notion page count from last sync output
+        sync_output = WORKSPACE / "data" / "pipeline-status.json"
+        if sync_output.exists():
+            import json
+            data = json.load(open(sync_output))
+            notion_count = data.get("total_applications", 0) + data.get("discovered_count", 0)
+            drift = abs(db_count - notion_count)
+            if drift > 50:
+                finding("CRITICAL", "drift", "notion-sync", f"Notion ({notion_count}) vs SQLite ({db_count}) drift: {drift} records")
+            elif drift > 20:
+                finding("WARNING", "drift", "notion-sync", f"Notion ({notion_count}) vs SQLite ({db_count}) drift: {drift} records")
+            else:
+                finding("INFO", "drift", "notion-sync", f"Drift: {drift} records (Notion={notion_count}, SQLite={db_count})")
+    except Exception as e:
+        finding("INFO", "drift", "notion-sync", f"Could not check drift: {e}")
+
+
+# ── CHECK 9: Near-duplicate detection ──
+def check_near_duplicates():
+    """Check for near-duplicate jobs by company+title."""
+    print("  [9/11] Near-duplicate detection...")
+    if not _pdb:
+        return
+    try:
+        import sqlite3
+        conn = sqlite3.connect(str(WORKSPACE / "data" / "nasr-pipeline.db"))
+        conn.row_factory = sqlite3.Row
+        rows = conn.execute("""
+            SELECT company, title, COUNT(*) as cnt FROM jobs
+            WHERE company IS NOT NULL AND title IS NOT NULL
+            GROUP BY LOWER(TRIM(company)), LOWER(TRIM(title))
+            HAVING cnt > 1
+        """).fetchall()
+        conn.close()
+        if rows:
+            finding("WARNING", "duplicates", "nasr-pipeline.db",
+                    f"{len(rows)} near-duplicate groups (same company+title): " +
+                    ", ".join(f"{r['company']}|{r['title']}({r['cnt']})" for r in rows[:3]))
+    except Exception as e:
+        finding("INFO", "duplicates", "nasr-pipeline.db", f"Could not check: {e}")
+
+
+# ── CHECK 10: LinkedIn cookie expiry ──
+def check_cookie_expiry():
+    """Check if LinkedIn cookies are still valid."""
+    print("  [10/11] LinkedIn cookie expiry...")
+    cookie_path = WORKSPACE / "data" / "linkedin-cookies.txt"
+    if not cookie_path.exists():
+        finding("WARNING", "cookies", "linkedin-cookies.txt", "Cookie file missing")
+        return
+    try:
+        li_at = None
+        for line in cookie_path.read_text().splitlines():
+            if line.startswith('#') or not line.strip():
+                continue
+            parts = line.strip().split('\t')
+            if len(parts) >= 7 and parts[5] == 'li_at':
+                li_at = parts[6]
+                # Check expiry timestamp
+                try:
+                    exp = int(parts[4])
+                    from datetime import datetime as dt
+                    exp_date = dt.fromtimestamp(exp)
+                    days_left = (exp_date - dt.now()).days
+                    if days_left < 0:
+                        finding("CRITICAL", "cookies", "linkedin-cookies.txt",
+                                f"li_at cookie EXPIRED {abs(days_left)} days ago")
+                    elif days_left < 7:
+                        finding("WARNING", "cookies", "linkedin-cookies.txt",
+                                f"li_at cookie expires in {days_left} days")
+                except (ValueError, OSError):
+                    pass
+                break
+        if not li_at:
+            finding("WARNING", "cookies", "linkedin-cookies.txt", "No li_at cookie found")
+    except Exception as e:
+        finding("INFO", "cookies", "linkedin-cookies.txt", f"Could not check: {e}")
+
+
+# ── CHECK 11: Cron last-run verification ──
+def check_cron_health():
+    """Verify that critical crons actually ran recently."""
+    print("  [11/11] Cron last-run health...")
+    critical_outputs = {
+        "Scanner": WORKSPACE / "jobs-bank" / "scraped",
+        "Pipeline status": WORKSPACE / "data" / "pipeline-status.json",
+    }
+    for name, path in critical_outputs.items():
+        if not path.exists():
+            finding("WARNING", "cron_health", name, f"Output path doesn't exist: {path}")
+            continue
+        try:
+            if path.is_dir():
+                files = sorted(path.glob("*"), key=lambda f: f.stat().st_mtime, reverse=True)
+                if not files:
+                    finding("WARNING", "cron_health", name, "No output files found")
+                    continue
+                last_mod = datetime.fromtimestamp(files[0].stat().st_mtime)
+            else:
+                last_mod = datetime.fromtimestamp(path.stat().st_mtime)
+            
+            hours_ago = (datetime.now() - last_mod).total_seconds() / 3600
+            if hours_ago > 48:
+                finding("WARNING", "cron_health", name,
+                        f"Last output {hours_ago:.0f}h ago (>48h) - cron may be stale")
+        except Exception as e:
+            finding("INFO", "cron_health", name, f"Could not check: {e}")
+
+
 def run_audit():
     print("🔍 Running weekly pipeline audit...")
     
@@ -337,6 +455,10 @@ def run_audit():
     check_timeouts()
     check_orphans()
     check_pipeline_db_health()
+    check_notion_drift()
+    check_near_duplicates()
+    check_cookie_expiry()
+    check_cron_health()
     
     # Score
     critical = sum(1 for f in findings if f["severity"] == "CRITICAL")

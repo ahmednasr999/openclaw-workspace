@@ -90,16 +90,23 @@ CREATE TABLE IF NOT EXISTS jobs (
     notion_page_id  TEXT,
     notion_synced   INTEGER DEFAULT 0,
 
+    url_hash        TEXT,
+    source_method   TEXT,
+    search_title    TEXT,
+    search_country  TEXT,
+    date_posted     TEXT,
+
     tags            TEXT,
     notes           TEXT,
     created_at      TEXT DEFAULT (datetime('now')),
     updated_at      TEXT DEFAULT (datetime('now'))
 );
 
-CREATE INDEX IF NOT EXISTS idx_jobs_status  ON jobs(status);
-CREATE INDEX IF NOT EXISTS idx_jobs_company ON jobs(company);
-CREATE INDEX IF NOT EXISTS idx_jobs_verdict ON jobs(verdict);
-CREATE INDEX IF NOT EXISTS idx_jobs_source  ON jobs(source);
+CREATE INDEX IF NOT EXISTS idx_jobs_status   ON jobs(status);
+CREATE INDEX IF NOT EXISTS idx_jobs_company  ON jobs(company);
+CREATE INDEX IF NOT EXISTS idx_jobs_verdict  ON jobs(verdict);
+CREATE INDEX IF NOT EXISTS idx_jobs_source   ON jobs(source);
+CREATE INDEX IF NOT EXISTS idx_jobs_url_hash ON jobs(url_hash);
 
 CREATE TABLE IF NOT EXISTS interactions (
     id          INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -137,6 +144,42 @@ CREATE TABLE IF NOT EXISTS cv_templates (
     avg_ats_score   REAL,
     created_at      TEXT DEFAULT (datetime('now')),
     updated_at      TEXT DEFAULT (datetime('now'))
+);
+
+CREATE TABLE IF NOT EXISTS status_history (
+    id          INTEGER PRIMARY KEY AUTOINCREMENT,
+    job_id      TEXT NOT NULL REFERENCES jobs(job_id),
+    from_status TEXT,
+    to_status   TEXT NOT NULL,
+    changed_at  TEXT DEFAULT (datetime('now')),
+    source      TEXT DEFAULT 'system'
+);
+
+CREATE INDEX IF NOT EXISTS idx_status_history_job_id ON status_history(job_id);
+CREATE INDEX IF NOT EXISTS idx_status_history_changed ON status_history(changed_at);
+
+CREATE TABLE IF NOT EXISTS recruiters (
+    id              INTEGER PRIMARY KEY AUTOINCREMENT,
+    name            TEXT,
+    email           TEXT,
+    phone           TEXT,
+    company         TEXT,
+    linkedin_url    TEXT,
+    last_contacted  TEXT,
+    notes           TEXT,
+    created_at      TEXT DEFAULT (datetime('now')),
+    updated_at      TEXT DEFAULT (datetime('now'))
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS idx_recruiters_email ON recruiters(email) WHERE email IS NOT NULL;
+
+CREATE TABLE IF NOT EXISTS job_recruiters (
+    id              INTEGER PRIMARY KEY AUTOINCREMENT,
+    job_id          TEXT NOT NULL REFERENCES jobs(job_id),
+    recruiter_id    INTEGER NOT NULL REFERENCES recruiters(id),
+    role            TEXT DEFAULT 'contact',
+    created_at      TEXT DEFAULT (datetime('now')),
+    UNIQUE(job_id, recruiter_id)
 );
 """
 
@@ -186,10 +229,212 @@ def _row_to_dict(row) -> dict:
 
 
 def _generate_job_id(source: str, company: str, title: str, url: str = "") -> str:
-    """Generate a stable job_id when none is provided."""
+    """Generate a stable job_id when none is provided.
+    Prefers URL-based hash (deterministic, matches scanner IDs).
+    Falls back to multi-field hash for manual entries without URLs.
+    """
     import hashlib
-    base = f"{source}|{company.lower().strip()}|{title.lower().strip()}|{url}"
+    if url:
+        return url_hash(url)
+    base = f"{source}|{company.lower().strip()}|{title.lower().strip()}"
     return f"gen-{hashlib.md5(base.encode()).hexdigest()[:12]}"
+
+
+# ── URL-based hashing (unified ID scheme) ────────────────────────────────────
+def url_hash(url: str) -> str:
+    """Deterministic 12-char SHA256 hash from URL. Single ID scheme for all scripts."""
+    import hashlib
+    return hashlib.sha256(url.encode()).hexdigest()[:12]
+
+
+# ── Scanner/Review functions (merged from jobs_db.py) ────────────────────────
+def job_exists(url: str) -> bool:
+    """Check if a job URL is already tracked."""
+    if not ENABLED or not url:
+        return False
+    try:
+        conn = _get_conn()
+        h = url_hash(url)
+        row = conn.execute("SELECT 1 FROM jobs WHERE url_hash = ? OR job_id = ?", (h, h)).fetchone()
+        conn.close()
+        return row is not None
+    except Exception as e:
+        log.error("job_exists failed: %s", e)
+        return False
+
+
+def is_duplicate(url: str) -> bool:
+    """Single dedup check - replaces all scattered dedup logic."""
+    return job_exists(url)
+
+
+def upsert_job(job: dict) -> str:
+    """Insert or update a job from scanner/review. Returns 'inserted', 'updated', or 'skipped'.
+
+    Expects dict with keys: url, title, company, location, source, source_method,
+    search_title, search_country, date_posted, ats_score, fit_score, verdict, etc.
+    Protects applied/cv_built/response status from being overwritten by discovery.
+    """
+    if not ENABLED:
+        return "skipped"
+    url = job.get("url", "")
+    if not url:
+        return "skipped"
+
+    h = url_hash(url)
+    try:
+        conn = _get_conn()
+        existing = conn.execute(
+            "SELECT id, status, job_id FROM jobs WHERE url_hash = ? OR job_id = ? OR job_url = ?",
+            (h, h, url)
+        ).fetchone()
+
+        if existing:
+            ex_status = existing["status"] or ""
+            # Don't overwrite advanced statuses with discovered
+            if ex_status in ("applied", "cv_built", "response", "interview", "offer"):
+                updates = {}
+                for field in ("ats_score", "fit_score", "verdict", "jd_text"):
+                    if job.get(field) is not None:
+                        updates[field] = job[field]
+                if updates:
+                    updates["updated_at"] = _now_iso()
+                    sets = ", ".join(f"{k} = ?" for k in updates)
+                    vals = list(updates.values()) + [existing["job_id"]]
+                    conn.execute(f"UPDATE jobs SET {sets} WHERE job_id = ?", vals)
+                    conn.commit()
+                conn.close()
+                return "updated"
+
+            # Update scoring/enrichment for discovered/scored jobs
+            updates = {}
+            for field in ("ats_score", "fit_score", "verdict", "score_notes", "jd_text",
+                          "jd_fetched_at", "source_method", "search_title", "search_country",
+                          "date_posted", "status", "location", "country"):
+                if job.get(field) is not None:
+                    updates[field] = job[field]
+            if updates:
+                updates["updated_at"] = _now_iso()
+                sets = ", ".join(f"{k} = ?" for k in updates)
+                vals = list(updates.values()) + [existing["job_id"]]
+                conn.execute(f"UPDATE jobs SET {sets} WHERE job_id = ?", vals)
+            conn.commit()
+            conn.close()
+            return "updated"
+
+        # Insert new job
+        conn.execute("""
+            INSERT INTO jobs (job_id, url_hash, job_url, title, company, location, country,
+                              source, source_method, search_title, search_country, date_posted,
+                              ats_score, fit_score, verdict, score_notes, status, created_at, updated_at)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        """, (
+            h, h, url,
+            job.get("title", "Unknown"),
+            job.get("company", "Confidential"),
+            job.get("location", ""),
+            job.get("search_country", job.get("country", "")),
+            job.get("source", job.get("site", "exa")),
+            job.get("source_method", ""),
+            job.get("search_title", ""),
+            job.get("search_country", ""),
+            job.get("date_posted", ""),
+            job.get("ats_score"),
+            job.get("fit_score", job.get("career_fit")),
+            job.get("verdict", job.get("career_verdict", "discovered")),
+            job.get("score_notes", job.get("career_reason", "")),
+            job.get("status", "discovered"),
+            _now_iso(), _now_iso(),
+        ))
+        conn.commit()
+        conn.close()
+        return "inserted"
+    except Exception as e:
+        log.error("upsert_job failed for %s: %s", url[:60], e)
+        return "skipped"
+
+
+def is_company_tracked(company: str) -> bool:
+    """Check if we have jobs from this company in applied/cv_built/response status."""
+    if not ENABLED or not company or company.lower() in ("confidential", "unknown"):
+        return False
+    try:
+        conn = _get_conn()
+        row = conn.execute("""
+            SELECT 1 FROM jobs WHERE LOWER(company) = LOWER(?)
+            AND status IN ('applied', 'cv_built', 'response', 'interview', 'offer') LIMIT 1
+        """, (company,)).fetchone()
+        conn.close()
+        return row is not None
+    except Exception as e:
+        log.error("is_company_tracked failed: %s", e)
+        return False
+
+
+def get_unscored_jobs(limit: int = 300) -> list:
+    """Get jobs that haven't been reviewed yet."""
+    if not ENABLED:
+        return []
+    try:
+        conn = _get_conn()
+        rows = conn.execute("""
+            SELECT * FROM jobs
+            WHERE status = 'discovered' AND verdict IS NULL
+            ORDER BY created_at DESC LIMIT ?
+        """, (limit,)).fetchall()
+        conn.close()
+        return [_row_to_dict(r) for r in rows]
+    except Exception as e:
+        log.error("get_unscored_jobs failed: %s", e)
+        return []
+
+
+def get_unenriched_jobs(limit: int = 50) -> list:
+    """Get scored jobs that need JD enrichment."""
+    if not ENABLED:
+        return []
+    try:
+        conn = _get_conn()
+        rows = conn.execute("""
+            SELECT * FROM jobs
+            WHERE (jd_text IS NULL OR jd_text = '')
+            AND verdict IN ('APPLY', 'STRETCH', 'SUBMIT', 'REVIEW')
+            AND status IN ('discovered', 'scored')
+            ORDER BY fit_score DESC LIMIT ?
+        """, (limit,)).fetchall()
+        conn.close()
+        return [_row_to_dict(r) for r in rows]
+    except Exception as e:
+        log.error("get_unenriched_jobs failed: %s", e)
+        return []
+
+
+def get_scanner_funnel_stats() -> dict:
+    """Pipeline funnel for scanner/review reporting."""
+    if not ENABLED:
+        return {}
+    try:
+        conn = _get_conn()
+        rows = conn.execute("""
+            SELECT status, COUNT(*) as cnt FROM jobs GROUP BY status ORDER BY cnt DESC
+        """).fetchall()
+        stats = {r["status"]: r["cnt"] for r in rows}
+
+        source_rows = conn.execute("""
+            SELECT source_method, COUNT(*) as cnt FROM jobs
+            WHERE status = 'applied' AND source_method IS NOT NULL AND source_method != ''
+            GROUP BY source_method
+        """).fetchall()
+        stats["by_source"] = {r["source_method"]: r["cnt"] for r in source_rows}
+
+        applied = stats.get("applied", 0)
+        responded = stats.get("response", 0)
+        stats["response_rate"] = f"{responded}/{applied} ({responded/applied*100:.1f}%)" if applied > 0 else "0/0"
+        conn.close()
+        return stats
+    except Exception as e:
+        log.error("get_scanner_funnel_stats failed: %s", e)
+        return {}
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -221,21 +466,24 @@ def register_job(
 
     try:
         conn = _get_conn()
+        # Compute url_hash if URL provided
+        _uhash = url_hash(url) if url else None
         # First try insert
         conn.execute("""
             INSERT OR IGNORE INTO jobs
                 (job_id, source, company, title, location, country, job_url,
-                 jd_text, status, created_at, updated_at)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                 url_hash, jd_text, status, created_at, updated_at)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """, (
             job_id, source, company, title, location, country, url,
-            jd_text, status, _now_iso(), _now_iso()
+            _uhash, jd_text, status, _now_iso(), _now_iso()
         ))
 
         # Then update any new enrichment fields that were provided
         update_fields = {}
         if url:
             update_fields["job_url"] = url
+            update_fields["url_hash"] = _uhash
         if jd_text:
             update_fields["jd_text"] = jd_text
         if location:
@@ -404,12 +652,17 @@ def log_interaction(
         return False
 
 
-def update_status(job_id: str, new_status: str, notes: str = None) -> bool:
-    """Update the lifecycle status of a job. Returns True on success."""
+def update_status(job_id: str, new_status: str, notes: str = None, source: str = "system") -> bool:
+    """Update the lifecycle status of a job. Records transition in status_history.
+    Returns True on success."""
     if not ENABLED or not job_id:
         return False
     try:
         conn = _get_conn()
+        # Get current status for history
+        row = conn.execute("SELECT status FROM jobs WHERE job_id = ?", (job_id,)).fetchone()
+        old_status = row["status"] if row else None
+
         if notes:
             conn.execute("""
                 UPDATE jobs SET status = ?, notes = COALESCE(notes || '\n', '') || ?,
@@ -420,6 +673,14 @@ def update_status(job_id: str, new_status: str, notes: str = None) -> bool:
                 "UPDATE jobs SET status = ?, updated_at = ? WHERE job_id = ?",
                 (new_status, _now_iso(), job_id)
             )
+
+        # Record transition in status_history
+        if old_status != new_status:
+            conn.execute("""
+                INSERT INTO status_history (job_id, from_status, to_status, changed_at, source)
+                VALUES (?, ?, ?, ?, ?)
+            """, (job_id, old_status, new_status, _now_iso(), source))
+
         conn.commit()
         conn.close()
         return True
@@ -897,6 +1158,250 @@ def index_keywords_from_jd(job_id: str, jd_text: str, master_cv_keywords: list =
         conn.close()
     except Exception as e:
         log.error("index_keywords_from_jd failed for %s: %s", job_id, e)
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# LIFECYCLE FUNCTIONS (D7)
+# ══════════════════════════════════════════════════════════════════════════════
+
+def get_status_history(job_id: str) -> list:
+    """Get all status transitions for a job, ordered chronologically."""
+    if not ENABLED or not job_id:
+        return []
+    try:
+        conn = _get_conn()
+        rows = conn.execute("""
+            SELECT * FROM status_history WHERE job_id = ? ORDER BY changed_at ASC
+        """, (job_id,)).fetchall()
+        conn.close()
+        return [_row_to_dict(r) for r in rows]
+    except Exception as e:
+        log.error("get_status_history failed: %s", e)
+        return []
+
+
+def get_recent_transitions(days: int = 1, to_status: str = None) -> list:
+    """Get recent status transitions. Optionally filter by destination status."""
+    if not ENABLED:
+        return []
+    try:
+        cutoff = (datetime.now() - timedelta(days=days)).isoformat()
+        conn = _get_conn()
+        if to_status:
+            rows = conn.execute("""
+                SELECT sh.*, j.company, j.title FROM status_history sh
+                JOIN jobs j ON j.job_id = sh.job_id
+                WHERE sh.changed_at >= ? AND sh.to_status = ?
+                ORDER BY sh.changed_at DESC
+            """, (cutoff, to_status)).fetchall()
+        else:
+            rows = conn.execute("""
+                SELECT sh.*, j.company, j.title FROM status_history sh
+                JOIN jobs j ON j.job_id = sh.job_id
+                WHERE sh.changed_at >= ?
+                ORDER BY sh.changed_at DESC
+            """, (cutoff,)).fetchall()
+        conn.close()
+        return [_row_to_dict(r) for r in rows]
+    except Exception as e:
+        log.error("get_recent_transitions failed: %s", e)
+        return []
+
+
+def get_stage_velocity() -> dict:
+    """Compute average days between stages from status_history."""
+    if not ENABLED:
+        return {}
+    try:
+        conn = _get_conn()
+        rows = conn.execute("""
+            SELECT job_id, from_status, to_status, changed_at
+            FROM status_history ORDER BY job_id, changed_at
+        """).fetchall()
+        conn.close()
+
+        # Group by job, compute time between transitions
+        from collections import defaultdict
+        transitions = defaultdict(list)
+        for r in rows:
+            transitions[r["job_id"]].append(_row_to_dict(r))
+
+        stage_times = defaultdict(list)
+        for job_id, hist in transitions.items():
+            for i in range(1, len(hist)):
+                from_s = hist[i-1]["to_status"]
+                to_s = hist[i]["to_status"]
+                try:
+                    t1 = datetime.fromisoformat(hist[i-1]["changed_at"].replace("Z", "+00:00"))
+                    t2 = datetime.fromisoformat(hist[i]["changed_at"].replace("Z", "+00:00"))
+                    days = (t2 - t1).total_seconds() / 86400
+                    if days >= 0:
+                        stage_times[f"{from_s}->{to_s}"].append(days)
+                except Exception:
+                    pass
+
+        velocity = {}
+        for transition, times in stage_times.items():
+            velocity[transition] = {
+                "avg_days": round(sum(times) / len(times), 1),
+                "count": len(times),
+                "min_days": round(min(times), 1),
+                "max_days": round(max(times), 1),
+            }
+        return velocity
+    except Exception as e:
+        log.error("get_stage_velocity failed: %s", e)
+        return {}
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# RECRUITER FUNCTIONS (D9)
+# ══════════════════════════════════════════════════════════════════════════════
+
+def add_recruiter(name: str = None, email: str = None, phone: str = None,
+                  company: str = None, linkedin_url: str = None, notes: str = None) -> int:
+    """Add or find a recruiter. Returns recruiter_id. Deduplicates by email."""
+    if not ENABLED:
+        return -1
+    try:
+        conn = _get_conn()
+        # Check if exists by email
+        if email:
+            row = conn.execute("SELECT id FROM recruiters WHERE email = ?", (email,)).fetchone()
+            if row:
+                # Update fields if new info provided
+                updates = {}
+                if name:
+                    updates["name"] = name
+                if phone:
+                    updates["phone"] = phone
+                if company:
+                    updates["company"] = company
+                if linkedin_url:
+                    updates["linkedin_url"] = linkedin_url
+                if notes:
+                    updates["notes"] = notes
+                if updates:
+                    updates["updated_at"] = _now_iso()
+                    sets = ", ".join(f"{k} = ?" for k in updates)
+                    vals = list(updates.values()) + [row["id"]]
+                    conn.execute(f"UPDATE recruiters SET {sets} WHERE id = ?", vals)
+                    conn.commit()
+                conn.close()
+                return row["id"]
+
+        # Insert new
+        cur = conn.execute("""
+            INSERT INTO recruiters (name, email, phone, company, linkedin_url, notes, created_at, updated_at)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+        """, (name, email, phone, company, linkedin_url, notes, _now_iso(), _now_iso()))
+        rid = cur.lastrowid
+        conn.commit()
+        conn.close()
+        return rid
+    except Exception as e:
+        log.error("add_recruiter failed: %s", e)
+        return -1
+
+
+def link_recruiter_to_job(job_id: str, recruiter_id: int, role: str = "contact") -> bool:
+    """Link a recruiter to a job (many-to-many)."""
+    if not ENABLED or not job_id or recruiter_id < 0:
+        return False
+    try:
+        conn = _get_conn()
+        conn.execute("""
+            INSERT OR IGNORE INTO job_recruiters (job_id, recruiter_id, role, created_at)
+            VALUES (?, ?, ?, ?)
+        """, (job_id, recruiter_id, role, _now_iso()))
+        conn.commit()
+        conn.close()
+        return True
+    except Exception as e:
+        log.error("link_recruiter_to_job failed: %s", e)
+        return False
+
+
+def get_job_recruiters(job_id: str) -> list:
+    """Get all recruiters linked to a job."""
+    if not ENABLED or not job_id:
+        return []
+    try:
+        conn = _get_conn()
+        rows = conn.execute("""
+            SELECT r.*, jr.role FROM recruiters r
+            JOIN job_recruiters jr ON jr.recruiter_id = r.id
+            WHERE jr.job_id = ?
+        """, (job_id,)).fetchall()
+        conn.close()
+        return [_row_to_dict(r) for r in rows]
+    except Exception as e:
+        log.error("get_job_recruiters failed: %s", e)
+        return []
+
+
+def get_recruiter_jobs(recruiter_id: int) -> list:
+    """Get all jobs linked to a recruiter."""
+    if not ENABLED or recruiter_id < 0:
+        return []
+    try:
+        conn = _get_conn()
+        rows = conn.execute("""
+            SELECT j.*, jr.role FROM jobs j
+            JOIN job_recruiters jr ON jr.job_id = j.job_id
+            WHERE jr.recruiter_id = ?
+        """, (recruiter_id,)).fetchall()
+        conn.close()
+        return [_row_to_dict(r) for r in rows]
+    except Exception as e:
+        log.error("get_recruiter_jobs failed: %s", e)
+        return []
+
+
+def update_recruiter_contacted(recruiter_id: int, date: str = None) -> bool:
+    """Update last_contacted date for a recruiter."""
+    if not ENABLED or recruiter_id < 0:
+        return False
+    try:
+        conn = _get_conn()
+        conn.execute("UPDATE recruiters SET last_contacted = ?, updated_at = ? WHERE id = ?",
+                     (date or _now_iso(), _now_iso(), recruiter_id))
+        conn.commit()
+        conn.close()
+        return True
+    except Exception as e:
+        log.error("update_recruiter_contacted failed: %s", e)
+        return False
+
+
+def migrate_flat_recruiters() -> int:
+    """Migrate existing flat recruiter fields from jobs table into recruiters/job_recruiters tables.
+    Safe to run multiple times (deduplicates by email)."""
+    if not ENABLED:
+        return 0
+    try:
+        conn = _get_conn()
+        rows = conn.execute("""
+            SELECT job_id, recruiter_name, recruiter_email, recruiter_phone, recruiter_company
+            FROM jobs WHERE recruiter_name IS NOT NULL OR recruiter_email IS NOT NULL
+        """).fetchall()
+        conn.close()
+
+        migrated = 0
+        for r in rows:
+            rid = add_recruiter(
+                name=r["recruiter_name"],
+                email=r["recruiter_email"],
+                phone=r["recruiter_phone"],
+                company=r["recruiter_company"],
+            )
+            if rid >= 0:
+                link_recruiter_to_job(r["job_id"], rid)
+                migrated += 1
+        return migrated
+    except Exception as e:
+        log.error("migrate_flat_recruiters failed: %s", e)
+        return 0
 
 
 # ── CLI entry point (for quick checks) ──────────────────────────────────────

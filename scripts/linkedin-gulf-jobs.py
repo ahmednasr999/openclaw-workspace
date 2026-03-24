@@ -235,13 +235,14 @@ def is_priority(title, location):
 # ===================== DEDUP (SQLite-based) =====================
 
 def _init_db():
-    """Initialize SQLite connection for dedup. Single source of truth."""
+    """Initialize pipeline_db for dedup. Single source of truth."""
     try:
         sys.path.insert(0, str(SCRIPTS_DIR))
-        from jobs_db import get_db, is_duplicate as db_is_dup, upsert_job, url_hash
-        return get_db(), db_is_dup, upsert_job, url_hash
+        from pipeline_db import is_duplicate as db_is_dup, upsert_job, url_hash
+        # Return True sentinel instead of conn (pipeline_db manages its own connections)
+        return True, db_is_dup, upsert_job, url_hash
     except Exception as e:
-        print(f"  Warning: jobs_db import failed ({e}), falling back to file dedup")
+        print(f"  Warning: pipeline_db import failed ({e}), falling back to file dedup")
         return None, None, None, None
 
 _db_conn = None
@@ -253,7 +254,7 @@ def is_duplicate_db(url, company=""):
     """Check dedup via SQLite. Falls back to notified-file if DB unavailable."""
     global _db_conn, _db_is_dup
     if _db_conn and _db_is_dup:
-        return _db_is_dup(_db_conn, url)
+        return _db_is_dup(url)
     # Fallback: file-based (legacy)
     jid = hashlib.sha256(url.encode()).hexdigest()[:12]
     if jid in _notified:
@@ -264,9 +265,8 @@ def save_to_db(job):
     """Write job to SQLite. Also append to notified-file for backward compat."""
     global _db_conn, _db_upsert
     if _db_conn and _db_upsert:
-        result = _db_upsert(_db_conn, job)
-        if result == "inserted":
-            _db_conn.commit()
+        result = _db_upsert(job)
+        # pipeline_db manages its own commits
     # Legacy: also write to notified file
     with open(NOTIFIED_FILE, "a") as f:
         f.write(f"\n- {job['id']}: {job['title']} at {job['company']} ({job['location']})")
