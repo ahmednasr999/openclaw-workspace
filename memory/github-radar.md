@@ -2,10 +2,10 @@
 description: "Daily GitHub trending scan: auto-scraped repos with relevance filter for OpenClaw, AI agents, automation"
 type: log
 topics: [knowledge, system-ops]
-updated: 2026-03-23
+updated: 2026-03-24
 ---
 
-# GitHub Radar — 2026-03-23
+# GitHub Radar — 2026-03-24
 
 ## Relevant Repos (Auto-Filtered)
 
@@ -20,9 +20,8 @@ updated: 2026-03-23
 
 - 2000/svg
 - 666ghj/MiroFish
-- CoKLyEUGq9g/hkilBJr01Zlk
+- Crosstalk-Solutions/project-nomad
 - FujiwaraChoki/MoneyPrinterV2
-- SYq03wjX2zKw3GYCGdvB/LgRrP8mNA5whN5
 - TauricResearch/TradingAgents
 - affaan-m/everything-claude-code
 - andrewyng/context-hub
@@ -33,6 +32,7 @@ updated: 2026-03-23
 - enterprise/startups
 - explore/email
 - favicons/favicon
+- features/code-review
 
 ## Filters
 
@@ -41,4 +41,4 @@ updated: 2026-03-23
 **Note:** SIE reads this file and generates integration recommendations.
 
 ---
-*Scanned: Mon Mar 23 03:00:03 EET 2026*
+*Scanned: Tue Mar 24 03:00:03 EET 2026*

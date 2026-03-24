@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-03-23T22:55:26.243187+02:00",
-    "duration_ms": 88483,
+    "generated_at": "2026-03-24T05:01:34.943251+02:00",
+    "duration_ms": 81723,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "a9d37dad",
+    "run_id": "6f18be52",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -71,32 +71,13 @@
       "raw_snippet": "Position Overview\n  \nA prestigious healthcare institution in Qatar is seeking a highly qualified Head of Department for Pediatrics to lead its pediatric division. The ideal candidate must be American Board Certified in Pediatrics and fluent in Arabic, with a strong background in clinical leadership, multidisciplinary collaboration, and patient\\-centered care. This is a senior leadership role responsible for shaping pediatric services, driving clinical excellence, and mentoring the next generatio",
       "relevant": true,
       "filter_reason": null
-    },
-    {
-      "id": "indeed-in-f7e1d5085527773a",
-      "source": "indeed",
-      "title": "Strategy & Transformation Director",
-      "company": "International Medical Company",
-      "location": "Doha, DAW, QA",
-      "url": "https://qa.indeed.com/viewjob?jk=f7e1d5085527773a",
-      "posted": "2026-03-21",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 13,
-      "match_keywords": [
-        "executive",
-        "director"
-      ],
-      "raw_snippet": "**Job Title**\n\n***Strategy \\& Transformation Director***\n\n**Role Purpose**\n\nThe Strategy \\& Transformation Director is responsible for defining, leading, and executing the organization\u2019s strategic agenda and transformation roadmap, ensuring alignment with the company\u2019s long\u2011term vision and financial objectives. The role partners closely with the CEO and executive team to translate strategy into actionable programs that deliver measurable business impact.\n\n**Key Responsibilities**\n\n* Lead the dev",
-      "relevant": true,
-      "filter_reason": null
     }
   ],
   "kpi": {
     "searches_run": 81,
-    "results_per_search": 0.75,
-    "unique_jobs": 4,
-    "errors": 49
+    "results_per_search": 0.77,
+    "unique_jobs": 3,
+    "errors": 54
   },
   "recommendations": []
 }

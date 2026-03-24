@@ -288,7 +288,7 @@ def update_pipeline_from_emails(categorized):
     import urllib.request
     updates = []
     
-    NOTION_TOKEN = json.load(open(os.path.expanduser("~/.openclaw/workspace/config/notion.json")))["token"]
+    NOTION_TOKEN = json_module.load(open(os.path.expanduser("~/.openclaw/workspace/config/notion.json")))["token"]
     PIPELINE_DB = "3268d599-a162-81b4-b768-f162adfa4971"
     OUTCOMES_FILE = Path(WORKSPACE) / "data" / "feedback" / "jobs-outcomes.jsonl"
     

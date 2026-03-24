@@ -156,3 +156,6 @@ f7e1d5085527773a | International Medical Company | Strategy & Transformation Dir
 4380905324 | PwC Middle East | Digital and Cyber - Digital Strategy and Realisati | synced from Notion | ✅ Applied
 4385000187 | Innovation Consulting Group (ICG) | Chief Transformation Officer (CTO) – AI, Digital & | synced from Notion | ✅ Applied
 4372697501 | Private Company | Director of Retail Operations | synced from Notion | ✅ Applied
+
+# Synced from Notion Pipeline (1 new)
+4384057356 | Discovered MENA | Head of Engineering | synced from Notion | Applied

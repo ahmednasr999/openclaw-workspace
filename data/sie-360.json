@@ -1,18 +1,18 @@
 {
-  "generated": "2026-03-22T23:50:45.129955+00:00",
-  "health_score": 86,
+  "generated": "2026-03-23T23:50:18.947781+00:00",
+  "health_score": 82,
   "summary": {
-    "ok": 8,
-    "warn": 2,
+    "ok": 6,
+    "warn": 4,
     "alert": 2
   },
   "workspace": {
-    "root_files": 44,
+    "root_files": 58,
     "disk_percent": 47,
     "disk_used": "45G",
     "disk_total": "96G",
     "ram_total": "7.8Gi",
-    "ram_used": "2.6Gi",
+    "ram_used": "3.6Gi",
     "large_files": [
       "/root/.openclaw/agents/main/qmd/node_modules/@node-llama-cpp/linux-x64-cuda/bins/linux-x64-cuda/libggml-cuda.so",
       "/root/.openclaw/agents/main/qmd/node_modules/@node-llama-cpp/linux-x64-cuda-ext/bins/linux-x64-cuda/fallback/libggml-cuda.so",
@@ -64,59 +64,67 @@
       "/root/.openclaw/workspace/tools/jobspy-venv/lib/python3.13/site-packages/primp/primp.abi3.so",
       "/root/.openclaw/workspace/.git/objects/pack/pack-e4bf2dd74c09cf659614c75aa6b5fd7f450ca644.pack"
     ],
-    "session_mb": 43.0
+    "session_mb": 63.0
   },
   "learnings": {
-    "total": 16,
+    "total": 17,
     "enforced": 14,
-    "unenforced": 2,
+    "unenforced": 3,
     "unenforced_list": [
       "## 2026-03-21",
-      "## 2026-03-21"
+      "## 2026-03-21",
+      "## 2026-03-24"
     ]
   },
   "integrations": {
     "gmail": "ok",
     "notion": "ok",
-    "linkedin": "ok",
+    "linkedin": "warn",
     "gateway": "ok",
     "details": {
       "gmail": "App Password configured (himalaya IMAP/SMTP)",
       "notion_token": "present (50 chars)",
       "notion_databases": 15,
-      "linkedin_lines": 35,
-      "linkedin_age_days": 3.8
+      "linkedin_lines": 3,
+      "linkedin_age_days": 0.1
     }
   },
   "crons": {
-    "total": 10,
-    "enabled": 10,
+    "total": 17,
+    "enabled": 17,
     "disabled": 0,
     "skill_first": 6,
-    "skill_first_pct": 60,
+    "skill_first_pct": 35,
     "raw_prompt_list": [
       "Briefing: Brief Me",
+      "Content Agent: Reaction Check",
       "NASR Doctor (Daily)",
+      "Content Agent: Pre-Post Priming",
+      "Content Agent: Engagement Window Close",
+      "Notion Pipeline Sync",
+      "Notion Pipeline Sync",
+      "Content Agent: Weekly CREATE",
       "Weekly Pipeline Audit",
-      "Weekly Team Retro"
+      "Weekly Team Retro",
+      "Content Agent: Weekly LEARN"
     ],
     "failing": [
       {
-        "name": "Weekly Team Retro",
-        "consecutive_errors": 5,
-        "last_error": "\u26a0\ufe0f \u2709\ufe0f Message failed"
+        "name": "Content Agent: Reaction Check",
+        "consecutive_errors": 1,
+        "last_error": "cron: job execution timed out"
       }
     ]
   },
   "briefing_notion": {
-    "today": "2026-03-22",
+    "today": "2026-03-23",
     "exists": true
   },
   "findings": [
     {
       "category": "workspace",
       "level": "ok",
-      "message": "Root files: 44 (healthy)"
+      "message": "Root files: 58 (healthy)"
     },
     {
       "category": "workspace",
@@ -130,13 +138,13 @@
     },
     {
       "category": "workspace",
-      "level": "ok",
-      "message": "Session size: 43.0MB (healthy)"
+      "level": "warn",
+      "message": "Session size: 63.0MB (approaching 100MB threshold)"
     },
     {
       "category": "learnings",
       "level": "alert",
-      "message": "Learnings enforcement: 14/16 (88%) - 2 untagged entries need ### Enforcement"
+      "message": "Learnings enforcement: 14/17 (82%) - 3 untagged entries need ### Enforcement"
     },
     {
       "category": "integrations",
@@ -150,8 +158,8 @@
     },
     {
       "category": "integrations",
-      "level": "ok",
-      "message": "LinkedIn: cookies OK (35 lines, 4d old)"
+      "level": "warn",
+      "message": "LinkedIn: cookies file suspiciously small (3 lines)"
     },
     {
       "category": "integrations",
@@ -161,7 +169,7 @@
     {
       "category": "crons",
       "level": "alert",
-      "message": "Cron skill-first: 6/10 (60%) - too many raw-prompt crons"
+      "message": "Cron skill-first: 6/17 (35%) - too many raw-prompt crons"
     },
     {
       "category": "crons",
@@ -171,11 +179,9 @@
     {
       "category": "briefing",
       "level": "ok",
-      "message": "Notion briefing page for 2026-03-22: exists"
+      "message": "Notion briefing page for 2026-03-23: exists"
     }
   ],
   "auto_fixed": [],
-  "needs_attention": [
-    "'Weekly Team Retro' has 5 consecutive errors - investigate manually"
-  ]
+  "needs_attention": []
 }
