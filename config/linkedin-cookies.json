@@ -1,11 +1,5 @@
-[
-  {
-    "name": "li_at",
-    "value": "AQEDAWUjXlgCx7jBAAABnK2A3lYAAAGc0Y1iVk0Aa5WjB-AGqKm24qO0QJ7xIpkX7p_J4cERbXURb_8mFxFXkX3bj6Eb5_7td0tqfbIpztsfcrc5OoUsGba3-D-dUG9YrMPAifJSOq4DVUYVUrfvJiEm",
-    "domain": ".linkedin.com",
-    "path": "/",
-    "httpOnly": true,
-    "secure": true,
-    "sameSite": "None"
-  }
-]
+{
+  "cookie_file": "/root/.openclaw/media/inbound/www.linkedin.com_cookies---c22104a1-b837-4ea4-b22f-29275813363b.txt",
+  "max_age_hours": 72,
+  "warn_age_hours": 24
+}

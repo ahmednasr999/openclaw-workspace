@@ -85,9 +85,11 @@ Return ONLY a valid JSON array with this exact structure - no markdown fences, n
 ]
 """
 
-# Sonnet 4.6 for comment quality - comments carry Ahmed's professional brand
-LLM_MODEL = "anthropic/claude-sonnet-4-6"
+# MiniMax for regular comments (free), Sonnet for priority authors only
+LLM_MODEL_DEFAULT = "minimax-portal/MiniMax-M2.7"
+LLM_MODEL_PREMIUM = "anthropic/claude-sonnet-4-6"
 LLM_TEMP = 0.7
+COMMENT_TRACKER_PATH = DATA_DIR / "comment-tracker.json"
 
 
 def load_gateway_token():
@@ -99,7 +101,7 @@ def load_gateway_token():
         return ""
 
 
-def llm_call(prompt, max_tokens=1500):
+def llm_call(prompt, max_tokens=1500, model=None):
     """Call LLM via gateway."""
     import requests
 
@@ -108,9 +110,10 @@ def llm_call(prompt, max_tokens=1500):
     if gw_token:
         headers["Authorization"] = f"Bearer {gw_token}"
 
+    use_model = model or LLM_MODEL_DEFAULT
     try:
         resp = requests.post(GATEWAY_URL, json={
-            "model": LLM_MODEL,
+            "model": use_model,
             "messages": [{"role": "user", "content": prompt}],
             "max_tokens": max_tokens,
             "temperature": LLM_TEMP,
@@ -226,6 +229,71 @@ def fetch_post_content(url):
         return "Unknown", "", 0
 
 
+def fetch_full_post_camofox(url):
+    """Fetch full LinkedIn post content via Camofox (logged-in, sees complete post body).
+    Returns post text up to 1500 chars, or empty string on failure."""
+    import subprocess
+    try:
+        # Create tab
+        result = subprocess.run(
+            ["camofox-browser", "open", url],
+            capture_output=True, text=True, timeout=30
+        )
+        tab_id = ""
+        try:
+            data = json.loads(result.stdout)
+            tab_id = data.get("tabId", "")
+        except:
+            if "tabId:" in result.stdout:
+                tab_id = result.stdout.strip().split("tabId:")[-1].strip()
+        
+        if not tab_id:
+            return ""
+        
+        time.sleep(4)  # Wait for full render
+        
+        # Get snapshot
+        result = subprocess.run(
+            ["camofox-browser", "snapshot", tab_id],
+            capture_output=True, text=True, timeout=30
+        )
+        content = result.stdout
+        
+        # Close tab
+        subprocess.run(["camofox-browser", "close", tab_id], capture_output=True, timeout=10)
+        
+        if not content or len(content) < 100:
+            return ""
+        
+        # Extract post body from snapshot (look for main content area)
+        # Remove navigation, sidebar, footer noise
+        lines = content.split("\n")
+        body_lines = []
+        capture = False
+        for line in lines:
+            stripped = line.strip()
+            # Skip empty lines and navigation elements
+            if not stripped:
+                continue
+            # Skip common LinkedIn chrome
+            if any(skip in stripped.lower() for skip in [
+                "linkedin", "sign in", "join now", "skip to main", "messaging",
+                "notifications", "home", "my network", "jobs", "more actions",
+                "report this", "copy link", "repost", "send", "like button"
+            ]):
+                continue
+            # Capture substantive text lines (>20 chars, not buttons/labels)
+            if len(stripped) > 20:
+                body_lines.append(stripped)
+        
+        text = "\n".join(body_lines[:30])  # Cap at ~30 substantive lines
+        return text[:1500] if text else ""
+        
+    except Exception as e:
+        print(f"    Camofox error: {e}")
+        return ""
+
+
 def extract_linkedin_posts(results):
     """Filter for LinkedIn post URLs only."""
     posts = []
@@ -278,22 +346,59 @@ def load_priority_authors():
 
 
 def score_post(post, priority_authors=None):
-    """Score a post for comment opportunity (PQS 0-100)."""
+    """Score a post for comment opportunity (PQS 0-130).
+    
+    Dimensions:
+    - Expertise overlap (0-30): Would Ahmed's comment add unique value?
+    - Author signal (0-25): Is this person worth engaging with?
+    - GCC relevance (0-20): Regional alignment
+    - Discussion quality (0-20): Does the post invite dialogue?
+    - Recency (0-15): Early comments get 3-5x more visibility
+    - Crowd penalty (-30 to +5): Avoid invisible comments
+    """
     score = 0
     preview = (post.get("full_content", "") or post.get("preview", "") + " " + post.get("title", "")).lower()
     author = post.get("author", "").lower()
 
-    # Topic fit (25 points)
-    topic_hits = sum(1 for t in TOPICS if t.lower() in preview)
-    score += min(topic_hits * 8, 25)
+    # Expertise overlap (30 points) - Ahmed's specific value-add areas
+    # High overlap = Ahmed can write a comment that adds genuine insight
+    expertise_high = ["pmo", "program management", "project management office",
+                      "digital transformation", "healthcare it", "hospital",
+                      "fintech", "payment", "banking technology",
+                      "governance", "portfolio management", "change management",
+                      "enterprise architecture", "pmp", "prince2", "safe"]
+    expertise_med = ["ai agent", "ai automation", "leadership", "c-suite",
+                     "executive", "strategy", "operational excellence",
+                     "agile transformation", "devops", "cloud migration"]
+    expertise_low = ["artificial intelligence", "machine learning", "startup",
+                     "technology", "innovation", "digital"]
 
-    # Author signal (25 points)
-    exec_titles = ["chief", "ceo", "coo", "cto", "cio", "vp", "vice president",
-                    "director", "head", "founder", "managing", "partner", "president"]
-    if any(w in author or w in preview[:200] for w in exec_titles):
+    high_hits = sum(1 for t in expertise_high if t in preview)
+    med_hits = sum(1 for t in expertise_med if t in preview)
+    low_hits = sum(1 for t in expertise_low if t in preview)
+
+    if high_hits >= 2:
+        score += 30
+    elif high_hits == 1:
         score += 22
-    elif any(w in preview[:200] for w in ["manager", "lead", "principal", "senior"]):
-        score += 14
+    elif med_hits >= 2:
+        score += 18
+    elif med_hits == 1:
+        score += 12
+    elif low_hits >= 1:
+        score += 5
+    # No expertise overlap = 0 points (harsh but correct)
+
+    # Author signal (25 points) - check AUTHOR name, not post body
+    exec_titles = ["chief", "ceo", "coo", "cto", "cio", "vp", "vice president",
+                    "director", "head of", "founder", "managing", "partner", "president"]
+    mid_titles = ["manager", "lead", "principal", "senior"]
+    # Check author name/title specifically (not preview body)
+    author_context = author + " " + post.get("title", "").lower()[:100]
+    if any(w in author_context for w in exec_titles):
+        score += 25
+    elif any(w in author_context for w in mid_titles):
+        score += 15
     else:
         score += 5
 
@@ -307,26 +412,23 @@ def score_post(post, priority_authors=None):
                 break
 
     # GCC relevance (20 points)
-    gcc_terms = ["saudi", "uae", "dubai", "riyadh", "qatar", "bahrain", "kuwait", "oman", "gcc", "mena", "abu dhabi", "jeddah"]
+    gcc_terms = ["saudi", "uae", "dubai", "riyadh", "qatar", "bahrain", "kuwait",
+                 "oman", "gcc", "mena", "abu dhabi", "jeddah", "doha", "muscat"]
     gcc_hits = sum(1 for t in gcc_terms if t in preview)
     score += min(gcc_hits * 6, 20)
 
-    # Content quality (15 points)
-    content_len = len(post.get("full_content", "") or post.get("preview", ""))
-    if content_len > 200:
-        score += 15
-    elif content_len > 100:
+    # Discussion quality (20 points) - does the post invite substantive dialogue?
+    strong_discussion = ["what do you think", "thoughts?", "unpopular opinion",
+                         "controversial", "disagree", "debate", "wrong about",
+                         "hot take", "challenge"]
+    mild_discussion = ["agree", "lesson", "mistake", "learned", "surprised",
+                       "question", "curious"]
+    if any(m in preview for m in strong_discussion):
+        score += 20
+    elif any(m in preview for m in mild_discussion):
         score += 10
     else:
-        score += 5
-
-    # Discussion markers (15 points)
-    discussion = ["agree", "disagree", "what do you think", "thoughts?", "debate",
-                   "challenge", "unpopular opinion", "controversial", "lesson", "mistake"]
-    if any(m in preview for m in discussion):
-        score += 15
-    else:
-        score += 5
+        score += 3
 
     # Recency bonus (15 points) - early comments get 3-5x more visibility
     pub_date = post.get("published_date", "")
@@ -343,36 +445,71 @@ def score_post(post, priority_authors=None):
         except (ValueError, TypeError):
             pass
 
-    # Crowded post penalty - your comment drowns in 200+ comments
+    # Crowd penalty - steeper than any bonus to prevent wasted comments
     comment_count = post.get("comment_count", 0)
-    if comment_count > 200:
-        score -= 20  # Very crowded, your comment invisible
-    elif comment_count > 100:
-        score -= 10  # Crowded
+    if comment_count > 150:
+        score -= 30  # Your comment is invisible in 150+ thread
+    elif comment_count > 50:
+        score -= 15  # Crowded, low visibility
+    elif comment_count > 30:
+        score -= 5   # Getting crowded
     elif 5 <= comment_count <= 30:
-        score += 5   # Sweet spot - active discussion, still visible
+        score += 5   # Sweet spot - active but visible
+    # 0 comments: no bonus/penalty (could be new OR dead)
 
-    return max(0, min(score, 120))
+    # Zero-comment + old = dead post penalty
+    if comment_count == 0 and pub_date:
+        try:
+            pub_dt = datetime.fromisoformat(pub_date.replace("Z", "+00:00"))
+            age_hours = (datetime.now(timezone.utc) - pub_dt).total_seconds() / 3600
+            if age_hours > 12:
+                score -= 10  # Zero comments after 12h = dead post
+        except (ValueError, TypeError):
+            pass
+
+    return max(0, min(score, 130))
+
+
+def parse_llm_comments(response):
+    """Parse LLM response into comment list. Returns list of {post_num, comment}."""
+    if not response:
+        return []
+    try:
+        response = response.strip()
+        if response.startswith("```"):
+            response = re.sub(r"```\w*\n?", "", response).strip()
+        return json.loads(response)
+    except json.JSONDecodeError:
+        m = re.search(r'\[.*\]', response, re.DOTALL)
+        if m:
+            try:
+                return json.loads(m.group(0))
+            except:
+                pass
+        print("  Failed to parse LLM comments")
+        return []
 
 
 def draft_comments(posts):
-    """Use LLM to draft comments for top posts."""
+    """Use LLM to draft comments. MiniMax for regular, Sonnet for priority authors."""
     if not posts:
         return posts
 
-    # Build batch prompt
-    post_descriptions = []
-    for i, p in enumerate(posts, 1):
-        content = p.get("full_content", "") or p.get("preview", "")
-        post_descriptions.append(
-            f"POST #{i}:\n"
-            f"Author: {p.get('author', 'Unknown')}\n"
-            f"Content: {content[:400]}\n"
-        )
+    # Split into priority and regular
+    priority_posts = [(i, p) for i, p in enumerate(posts) if p.get("priority")]
+    regular_posts = [(i, p) for i, p in enumerate(posts) if not p.get("priority")]
 
-    posts_section = "\n".join(post_descriptions)
-
-    prompt = f"""<task>{COMMENT_TASK.strip()}</task>
+    def build_prompt(post_list):
+        post_descriptions = []
+        for seq, (orig_idx, p) in enumerate(post_list, 1):
+            content = p.get("full_content", "") or p.get("preview", "")
+            post_descriptions.append(
+                f"POST #{seq}:\n"
+                f"Author: {p.get('author', 'Unknown')}\n"
+                f"Content: {content[:400]}\n"
+            )
+        posts_section = "\n".join(post_descriptions)
+        return f"""<task>{COMMENT_TASK.strip()}</task>
 
 <context>{COMMENT_CONTEXT.strip()}</context>
 
@@ -383,42 +520,54 @@ def draft_comments(posts):
 --- LINKEDIN POSTS ---
 {posts_section}"""
 
+    # Draft priority posts with Sonnet 4.6
+    if priority_posts:
+        print(f"  Drafting {len(priority_posts)} priority comments (Sonnet 4.6)...")
+        prompt = build_prompt(priority_posts)
+        response = llm_call(prompt, max_tokens=2000, model=LLM_MODEL_PREMIUM)
+        comments = parse_llm_comments(response)
+        for c in comments:
+            seq = c.get("post_num", 0) - 1
+            if 0 <= seq < len(priority_posts):
+                orig_idx = priority_posts[seq][0]
+                comment = c.get("comment", "").replace("\u2014", " - ").replace("\u2013", "-")
+                posts[orig_idx]["draft_comment"] = comment
+                posts[orig_idx]["model_used"] = "sonnet"
 
+    # Draft regular posts with MiniMax (free)
+    if regular_posts:
+        print(f"  Drafting {len(regular_posts)} regular comments (MiniMax)...")
+        prompt = build_prompt(regular_posts)
+        response = llm_call(prompt, max_tokens=2000, model=LLM_MODEL_DEFAULT)
+        comments = parse_llm_comments(response)
+        for c in comments:
+            seq = c.get("post_num", 0) - 1
+            if 0 <= seq < len(regular_posts):
+                orig_idx = regular_posts[seq][0]
+                comment = c.get("comment", "").replace("\u2014", " - ").replace("\u2013", "-")
+                posts[orig_idx]["draft_comment"] = comment
+                posts[orig_idx]["model_used"] = "minimax"
 
-    response = llm_call(prompt, max_tokens=2000)
-    if not response:
-        return posts
-
-    # Parse JSON response
-    try:
-        # Clean up response
-        response = response.strip()
-        if response.startswith("```"):
-            response = re.sub(r"```\w*\n?", "", response).strip()
-        comments = json.loads(response)
-    except json.JSONDecodeError:
-        # Try to extract JSON array
-        m = re.search(r'\[.*\]', response, re.DOTALL)
-        if m:
-            try:
-                comments = json.loads(m.group(0))
-            except:
-                print("  Failed to parse LLM comments")
-                return posts
-        else:
-            print("  No JSON array in LLM response")
-            return posts
-
-    # Attach comments to posts
-    for c in comments:
-        idx = c.get("post_num", 0) - 1
-        if 0 <= idx < len(posts):
-            comment = c.get("comment", "")
-            # Enforce no em dashes
-            comment = comment.replace("\u2014", " - ").replace("\u2013", "-")
-            posts[idx]["draft_comment"] = comment
+    drafted = sum(1 for p in posts if p.get("draft_comment"))
+    print(f"  Drafted {drafted}/{len(posts)} comments")
 
     return posts
+
+
+def load_comment_tracker():
+    """Load comment tracker for dedup and feedback."""
+    if COMMENT_TRACKER_PATH.exists():
+        try:
+            return json.load(open(COMMENT_TRACKER_PATH))
+        except:
+            pass
+    return {"comments": [], "stats": {"total_posted": 0, "total_drafted": 0}}
+
+
+def save_comment_tracker(tracker):
+    """Save comment tracker."""
+    COMMENT_TRACKER_PATH.parent.mkdir(parents=True, exist_ok=True)
+    json.dump(tracker, open(COMMENT_TRACKER_PATH, "w"), indent=2)
 
 
 def run_radar():
@@ -461,17 +610,11 @@ def run_radar():
 
     # Load already-commented URLs from tracker
     commented_urls = set()
-    tracker_path = WORKSPACE / "memory" / "engagement" / "comment-tracker.json"
-    if tracker_path.exists():
-        try:
-            tracker = json.load(open(tracker_path))
-            for day_data in tracker.get("daily_comments", {}).values():
-                for post in day_data.get("posts", []):
-                    url = post.get("url", "")
-                    if url:
-                        commented_urls.add(url.split("?")[0])
-        except Exception:
-            pass
+    tracker = load_comment_tracker()
+    for entry in tracker.get("comments", []):
+        url = entry.get("url", "")
+        if url:
+            commented_urls.add(url.split("?")[0])
     
     # Deduplicate + skip already-commented
     seen = set()
@@ -491,9 +634,9 @@ def run_radar():
         print(f"\n  Skipped {skipped_commented} already-commented posts")
     print(f"  Unique posts: {len(unique)}")
 
-    # Enrich top candidates with actual LinkedIn content
-    print("  Enriching posts from LinkedIn HTML...")
-    for p in unique[:15]:  # Only enrich top 15 to save time
+    # Fast pre-screen: enrich top candidates with logged-out HTML (author names + comment counts)
+    print("  Pre-screening posts from LinkedIn HTML...")
+    for p in unique[:15]:
         author, content, comment_count = fetch_post_content(p["url"])
         if author != "Unknown":
             p["author"] = author
@@ -544,6 +687,17 @@ def run_radar():
         pri = " [PRIORITY]" if p.get("priority") else ""
         print(f"  #{i} PQS:{p['pqs']} | {p['author'][:25]} | {p['title'][:50]}{pri}")
 
+    # Deep-fetch full post content via Camofox for top-5 (logged-in, sees full post)
+    print("\n  Deep-fetching full content via Camofox...")
+    for p in top:
+        full = fetch_full_post_camofox(p["url"])
+        if full and len(full) > len(p.get("full_content", "")):
+            p["full_content"] = full
+            print(f"    {p['author'][:20]}: {len(full)} chars (upgraded)")
+        else:
+            print(f"    {p['author'][:20]}: kept pre-screen content ({len(p.get('full_content', ''))} chars)")
+        time.sleep(2)  # Rate limit for LinkedIn
+
     # Draft comments via LLM
     print("\n  Drafting comments...")
     top = draft_comments(top)
@@ -566,6 +720,13 @@ def run_radar():
     }
 
     json.dump(output, open(OUTPUT, "w"), indent=2)
+
+    # Update comment tracker with drafted comments
+    tracker = load_comment_tracker()
+    tracker["stats"]["total_drafted"] = tracker["stats"].get("total_drafted", 0) + drafted
+    tracker["last_radar_run"] = datetime.now(timezone.utc).isoformat()
+    save_comment_tracker(tracker)
+
     print(f"\n=== Done: {len(top)} posts + {drafted} draft comments saved ===")
 
 

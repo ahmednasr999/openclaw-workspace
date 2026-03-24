@@ -423,6 +423,26 @@ def check_pipeline_db_tests():
         check("Pipeline DB Tests", Result.WARN, f"Error: {e}")
 
 
+def check_content_tests():
+    """Run content agent test suite."""
+    print("\n--- Content Agent Tests ---")
+    result = subprocess.run(
+        [sys.executable, str(SCRIPTS / "test-content-agent.py")],
+        capture_output=True, text=True, timeout=60
+    )
+    if result.returncode == 0:
+        # Extract pass count
+        m = re.search(r"(\d+)/(\d+) passed", result.stdout)
+        if m:
+            print(f"  ✅ Content Agent: {m.group(1)}/{m.group(2)} passed")
+        else:
+            print("  ✅ Content Agent tests passed")
+    else:
+        print(f"  ❌ Content Agent tests FAILED")
+        print(result.stdout[-300:] if result.stdout else "")
+        print(result.stderr[-300:] if result.stderr else "")
+
+
 def check_email_tests():
     """Run Email Agent test suite."""
     test_path = WORKSPACE / "scripts" / "test-email-agent.py"
@@ -666,6 +686,7 @@ def main():
     check_linkedin_tests()
     check_pipeline_db_tests()
     check_email_tests()
+    check_content_tests()
     check_pipeline()
     check_pipeline_db()
     check_memory()

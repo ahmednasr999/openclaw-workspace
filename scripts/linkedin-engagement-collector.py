@@ -8,99 +8,163 @@ Updates: Notion Content Calendar with engagement metrics
 
 Requires: playwright, LinkedIn cookies
 """
-import os
-import json, re, sys, os
+import os, time
+import json, re, sys
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 WORKSPACE = Path("/root/.openclaw/workspace")
 DATA_DIR = WORKSPACE / "data"
 OUTPUT_FILE = DATA_DIR / "linkedin-engagement.json"
-COOKIE_FILE = Path("/root/.openclaw/media/inbound/www.linkedin.com_cookies---c22104a1-b837-4ea4-b22f-29275813363b.txt")
+COOKIE_CONFIG = Path("/root/.openclaw/workspace/config/linkedin-cookies.json")
+COOKIE_FILE_FALLBACK = Path("/root/.openclaw/media/inbound/www.linkedin.com_cookies---c22104a1-b837-4ea4-b22f-29275813363b.txt")
 NOTION_TOKEN = json.load(open(os.path.expanduser("~/.openclaw/workspace/config/notion.json")))["token"]
 CONTENT_DB = "3268d599-a162-814b-8854-c9b8bde62468"
 CAIRO = timezone(timedelta(hours=2))
+MAX_COOKIE_AGE_HOURS = 72  # Hard-fail if cookies older than this
 
 
-def load_cookies():
-    from http.cookiejar import MozillaCookieJar
-    jar = MozillaCookieJar()
-    jar.load(str(COOKIE_FILE), ignore_discard=True, ignore_expires=True)
-    return [{"name": c.name, "value": c.value, "domain": c.domain, "path": c.path or "/"} for c in jar]
+def get_cookie_path():
+    """Get LinkedIn cookie file path from config or fallback."""
+    if COOKIE_CONFIG.exists():
+        try:
+            cfg = json.load(open(COOKIE_CONFIG))
+            path = Path(cfg.get("cookie_file", str(COOKIE_FILE_FALLBACK)))
+            if path.exists():
+                return path
+        except:
+            pass
+    if COOKIE_FILE_FALLBACK.exists():
+        return COOKIE_FILE_FALLBACK
+    return None
+
+
+def check_cookie_freshness(cookie_path):
+    """Check cookie file age. Warn >24h, fail >72h."""
+    import os
+    mtime = os.path.getmtime(cookie_path)
+    age_hours = (time.time() - mtime) / 3600
+    if age_hours > MAX_COOKIE_AGE_HOURS:
+        print(f"ERROR: LinkedIn cookies are {age_hours:.0f}h old (max {MAX_COOKIE_AGE_HOURS}h). Re-export cookies.")
+        return False, age_hours
+    if age_hours > 24:
+        print(f"WARNING: LinkedIn cookies are {age_hours:.0f}h old. Consider refreshing soon.")
+    return True, age_hours
 
 
 def scrape_engagement():
-    """Scrape LinkedIn activity page for post URNs and engagement counts."""
-    from playwright.sync_api import sync_playwright
+    """Scrape LinkedIn activity page via Camofox (uses pre-imported cookies)."""
+    import subprocess
+
+    # Check cookie freshness
+    cookie_path = get_cookie_path()
+    if cookie_path:
+        ok, age = check_cookie_freshness(cookie_path)
+        if not ok:
+            return []
+        print(f"Cookie age: {age:.0f}h")
     
-    cookies = load_cookies()
-    print(f"Loaded {len(cookies)} cookies")
+    url = "https://www.linkedin.com/in/ahmednasr/recent-activity/all/"
     
-    with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True, args=["--no-sandbox"])
-        ctx = browser.new_context(
-            user_agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36",
-            viewport={"width": 1280, "height": 900}
+    try:
+        # Open tab via Camofox
+        result = subprocess.run(
+            ["camofox-browser", "open", url],
+            capture_output=True, text=True, timeout=30
         )
-        ctx.add_cookies(cookies)
-        page = ctx.new_page()
+        tab_id = ""
+        try:
+            data = json.loads(result.stdout)
+            tab_id = data.get("tabId", "")
+        except:
+            if "tabId:" in result.stdout:
+                tab_id = result.stdout.strip().split("tabId:")[-1].strip()
         
-        page.goto("https://www.linkedin.com/in/ahmednasr/recent-activity/all/",
-                   wait_until="domcontentloaded", timeout=45000)
-        page.wait_for_timeout(8000)
+        if not tab_id:
+            print("ERROR: Could not get Camofox tab ID")
+            return []
         
-        # Scroll to load more posts
-        for _ in range(5):
-            page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
-            page.wait_for_timeout(3000)
+        time.sleep(6)  # Wait for initial load
         
-        # Extract structured data from each post
-        posts = page.evaluate("""
-        () => {
-            const posts = [];
-            const urnEls = document.querySelectorAll('[data-urn]');
-            
-            for (const el of urnEls) {
-                const urn = el.getAttribute('data-urn');
-                if (!urn || !urn.includes('activity')) continue;
-                
-                // Get post text (first paragraph-like content)
-                const textEls = el.querySelectorAll('.feed-shared-update-v2__description, .break-words, [dir="ltr"]');
-                let text = '';
-                for (const te of textEls) {
-                    const t = te.innerText.trim();
-                    if (t.length > 20 && t.length > text.length) {
-                        text = t.substring(0, 500);
-                    }
-                }
-                
-                // Get engagement from aria-labels
-                let reactions = 0;
-                let comments = 0;
-                
-                const ariaEls = el.querySelectorAll('[aria-label]');
-                for (const ae of ariaEls) {
-                    const label = ae.getAttribute('aria-label');
-                    const reactionMatch = label.match(/(\\d+)\\s*reaction/i);
-                    const commentMatch = label.match(/(\\d+)\\s*comment/i);
-                    if (reactionMatch) reactions = parseInt(reactionMatch[1]);
-                    if (commentMatch) comments = parseInt(commentMatch[1]);
-                }
-                
-                // Get time element
-                const timeEl = el.querySelector('time, [datetime]');
-                const timeText = timeEl ? (timeEl.getAttribute('datetime') || timeEl.innerText) : '';
-                
-                posts.push({urn, text, reactions, comments, time: timeText});
-            }
-            
-            return posts;
-        }
-        """)
+        # Scroll 5 times to load more posts
+        for i in range(5):
+            subprocess.run(
+                ["camofox-browser", "scroll", tab_id, "down", "2000"],
+                capture_output=True, timeout=10
+            )
+            time.sleep(2)
         
-        browser.close()
+        # Get snapshot
+        result = subprocess.run(
+            ["camofox-browser", "snapshot", tab_id],
+            capture_output=True, text=True, timeout=30
+        )
+        content = result.stdout
+        
+        # Close tab
+        subprocess.run(["camofox-browser", "close", tab_id], capture_output=True, timeout=10)
+        
+        if not content or len(content) < 200:
+            print("ERROR: Empty snapshot from Camofox. Cookies may be expired.")
+            return []
+        
+        # Parse snapshot text for post data
+        posts = parse_activity_snapshot(content)
+        print(f"Scraped {len(posts)} posts via Camofox")
+        return posts
+        
+    except subprocess.TimeoutExpired:
+        print("ERROR: Camofox timeout")
+        return []
+    except Exception as e:
+        print(f"ERROR: Camofox scrape failed: {e}")
+        return []
+
+
+def parse_activity_snapshot(content):
+    """Parse Camofox accessibility snapshot into post data."""
+    posts = []
+    lines = content.split("\n")
     
-    print(f"Scraped {len(posts)} posts")
+    current_post = None
+    for line in lines:
+        stripped = line.strip()
+        
+        # Look for activity URN patterns
+        urn_match = re.search(r'urn:li:activity:(\d+)', stripped)
+        if urn_match:
+            if current_post and current_post.get("urn"):
+                posts.append(current_post)
+            current_post = {
+                "urn": f"urn:li:activity:{urn_match.group(1)}",
+                "text": "",
+                "reactions": 0,
+                "comments": 0,
+                "time": ""
+            }
+            continue
+        
+        if current_post:
+            # Extract reaction/comment counts from text
+            reaction_match = re.search(r'(\d+)\s*reaction', stripped, re.IGNORECASE)
+            comment_match = re.search(r'(\d+)\s*comment', stripped, re.IGNORECASE)
+            if reaction_match:
+                current_post["reactions"] = max(current_post["reactions"], int(reaction_match.group(1)))
+            if comment_match:
+                current_post["comments"] = max(current_post["comments"], int(comment_match.group(1)))
+            
+            # Capture post text (substantive lines)
+            if len(stripped) > 30 and not any(skip in stripped.lower() for skip in [
+                "like", "comment", "repost", "send", "follow", "connect",
+                "reaction", "more actions"
+            ]):
+                if not current_post["text"]:
+                    current_post["text"] = stripped[:500]
+    
+    # Don't forget the last post
+    if current_post and current_post.get("urn"):
+        posts.append(current_post)
+    
     return posts
 
 
@@ -177,7 +241,7 @@ def match_posts(scraped, notion_posts):
                 # Compare scraped text with Notion title/hook
                 compare_text = np["title"] + " " + np.get("hook", "")
                 score = SequenceMatcher(None, sp["text"][:100].lower(), compare_text[:100].lower()).ratio()
-                if score > best_score and score > 0.3:
+                if score > best_score and score > 0.5:
                     best_score = score
                     best_match = np
         
