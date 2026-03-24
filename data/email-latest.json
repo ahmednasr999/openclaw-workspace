@@ -1,0 +1,23 @@
+{
+  "status": "ok",
+  "scan_time": "2026-03-24T10:15:21.942055+02:00",
+  "total_scanned": 0,
+  "by_category": {
+    "interview_invite": 0,
+    "recruiter_reach": 0,
+    "application_ack": 0,
+    "rejection": 0,
+    "assessment": 0,
+    "follow_up_needed": 0,
+    "other": 0
+  },
+  "interview_invites": [],
+  "recruiter_messages": [],
+  "application_acks": [],
+  "rejections": [],
+  "assessments": [],
+  "follow_ups_needed": [],
+  "actionable_count": 0,
+  "hot_alerts": [],
+  "signals": []
+}

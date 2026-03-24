@@ -61,6 +61,27 @@ skill-name/
 - Template: `skills/anthropic-skill-creator/templates/new-skill-template/`
 - To optimize an existing skill: `run autoresearch on [skill name]` (see `skills/skill-autoresearch/`)
 
+## Grill-Me Stress Test (Auto-Trigger)
+
+**After building or significantly modifying any system, auto-run a grill-me stress test.**
+
+**Auto-trigger when:**
+- A new skill, script, or workflow is created
+- An existing system gets 3+ changes in one session
+- A cron job or orchestrator is modified
+- Any user-facing output format changes (Notion pages, Telegram messages, dashboards)
+
+**Workflow:** Build → Verify it runs → Grill-me (10 Socratic questions) → Execute decisions → Verify again
+
+**Skip grill-me for:**
+- Config tweaks, typo fixes, single-line changes
+- Research-only tasks (no deliverable)
+- When user explicitly says "skip the stress test"
+
+**Rule:** The stress test catches 80% of design gaps before they hit production. It's not optional.
+
+---
+
 ## Spec-Driven Development (Auto-Trigger)
 
 **GitHub Spec Kit is installed.** Use it automatically - never wait to be told.
