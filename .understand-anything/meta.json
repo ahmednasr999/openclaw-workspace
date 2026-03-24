@@ -1,0 +1,182 @@
+{
+  "version": "1.0.0",
+  "generated_at": "2026-03-24T01:17:19.882867Z",
+  "workspace": "/root/.openclaw/workspace",
+  "pipeline_phases": [
+    "SCAN",
+    "ANALYZE",
+    "ASSEMBLE",
+    "ARCHITECTURE",
+    "TOUR",
+    "REVIEW",
+    "SAVE"
+  ],
+  "stats": {
+    "total_files_scanned": 4777,
+    "total_lines": 1677273,
+    "native_nodes": 742,
+    "edges": 163,
+    "tour_steps": 15,
+    "architecture_layers": 7,
+    "directory_clusters": 21
+  },
+  "language_breakdown": {
+    "markdown": {
+      "files": 921,
+      "lines": 138616
+    },
+    "json": {
+      "files": 537,
+      "lines": 141295
+    },
+    "bash": {
+      "files": 84,
+      "lines": 8386
+    },
+    "yaml": {
+      "files": 14,
+      "lines": 998
+    },
+    "python": {
+      "files": 2975,
+      "lines": 1266895
+    },
+    "typescript": {
+      "files": 53,
+      "lines": 9245
+    },
+    "javascript": {
+      "files": 34,
+      "lines": 6814
+    },
+    "toml": {
+      "files": 2,
+      "lines": 857
+    },
+    "other": {
+      "files": 152,
+      "lines": 104119
+    },
+    "config": {
+      "files": 5,
+      "lines": 48
+    }
+  },
+  "layer_distribution": {
+    "L2_Scripts": 136,
+    "L3_Skills": 217,
+    "L4_Services": 260,
+    "L1_Entry": 56,
+    "L7_Root": 28,
+    "L6_Data": 14,
+    "L5_Config": 31
+  },
+  "top_files_by_importance": [
+    {
+      "path": "scripts/pipeline_db.py",
+      "importance": 89,
+      "language": "python"
+    },
+    {
+      "path": "scripts/self-improvement-engine.py",
+      "importance": 74,
+      "language": "python"
+    },
+    {
+      "path": "skills/slides/assets/pptxgenjs_helpers/text.js",
+      "importance": 67,
+      "language": "javascript"
+    },
+    {
+      "path": "tmp/insights-deck/pptxgenjs_helpers/text.js",
+      "importance": 67,
+      "language": "javascript"
+    },
+    {
+      "path": "skills/slides/assets/pptxgenjs_helpers/layout.js",
+      "importance": 53,
+      "language": "javascript"
+    },
+    {
+      "path": "tmp/insights-deck/pptxgenjs_helpers/layout.js",
+      "importance": 53,
+      "language": "javascript"
+    },
+    {
+      "path": "scripts/notion_sync.py",
+      "importance": 50,
+      "language": "python"
+    },
+    {
+      "path": "scripts/linkedin-gulf-jobs.py",
+      "importance": 48,
+      "language": "python"
+    },
+    {
+      "path": "mission-control/components/Calendar.tsx",
+      "importance": 43,
+      "language": "typescript"
+    },
+    {
+      "path": "scripts/morning-briefing-orchestrator.py",
+      "importance": 43,
+      "language": "python"
+    },
+    {
+      "path": "scripts/notion_client.py",
+      "importance": 42,
+      "language": "python"
+    },
+    {
+      "path": "skills/gh-fix-ci/scripts/inspect_pr_checks.py",
+      "importance": 39,
+      "language": "python"
+    },
+    {
+      "path": "skills/slides/scripts/detect_font.py",
+      "importance": 39,
+      "language": "python"
+    },
+    {
+      "path": ".specify/scripts/bash/update-agent-context.sh",
+      "importance": 38,
+      "language": "bash"
+    },
+    {
+      "path": "scripts/auto-cv-builder.py",
+      "importance": 38,
+      "language": "python"
+    },
+    {
+      "path": "skills/transcribe/scripts/transcribe_diarize.py",
+      "importance": 37,
+      "language": "python"
+    },
+    {
+      "path": "mission-control/lib/db.ts",
+      "importance": 35,
+      "language": "typescript"
+    },
+    {
+      "path": "skills/slides/assets/pptxgenjs_helpers/index.js",
+      "importance": 34,
+      "language": "javascript"
+    },
+    {
+      "path": "tmp/insights-deck/pptxgenjs_helpers/index.js",
+      "importance": 34,
+      "language": "javascript"
+    },
+    {
+      "path": "mission-control/app/memory/page.tsx",
+      "importance": 33,
+      "language": "typescript"
+    }
+  ],
+  "entry_point": "scripts/run-briefing-pipeline.sh",
+  "tour_entry": "scripts/run-briefing-pipeline.sh",
+  "files": {
+    "knowledge_graph": "/root/.openclaw/workspace/.understand-anything/knowledge-graph.json",
+    "meta": "/root/.openclaw/workspace/.understand-anything/meta.json"
+  }
+}

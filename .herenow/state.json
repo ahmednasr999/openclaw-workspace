@@ -29,6 +29,12 @@
       "claimToken": "58614c726c43b0c3abcde3568946e1458364708bc7f7f747f537d32f0dd095dc",
       "claimUrl": "https://here.now/claim?slug=bronze-pebble-h44n&token=58614c726c43b0c3abcde3568946e1458364708bc7f7f747f537d32f0dd095dc",
       "expiresAt": "2026-03-02T21:07:33.928Z"
+    },
+    "queued-muse-g89e": {
+      "siteUrl": "https://queued-muse-g89e.here.now/",
+      "claimToken": "86e6018c5c900565e60a92295197eb165de63ed42c2d7e4859d1282bd349cd2b",
+      "claimUrl": "https://here.now/claim?slug=queued-muse-g89e&token=86e6018c5c900565e60a92295197eb165de63ed42c2d7e4859d1282bd349cd2b",
+      "expiresAt": "2026-03-25T01:24:02.427Z"
     }
   }
 }
