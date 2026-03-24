@@ -1,0 +1,13 @@
+{
+  "last_updated": "2026-03-24T06:00:13.627013+02:00",
+  "alerts": [
+    {
+      "type": "gateway_down",
+      "urgency": "critical",
+      "message": "Gateway is down: <urlopen error [Errno 111] Connection refused>",
+      "timestamp": "2026-03-24T06:00:06.184034+02:00",
+      "id": "alert-0-060013"
+    }
+  ],
+  "active_count": 1
+}
