@@ -49,64 +49,13 @@ GATEWAY_PORT = 18789
 USE_GATEWAY = False
 
 # CV HTML template (from proven working CVs)
-HTML_TEMPLATE = """<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Ahmed Nasr - {role_title}</title>
-<style>
-  * {{ margin: 0; padding: 0; box-sizing: border-box; }}
-  body {{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 10.5pt;
-    line-height: 1.45;
-    color: #111;
-    background: #fff;
-    padding: 18mm 18mm 16mm 18mm;
-  }}
-  .header-name {{ font-size: 20pt; font-weight: bold; color: #111; margin-bottom: 4pt; }}
-  .header-contact {{ font-size: 9.5pt; color: #444; margin-bottom: 10pt; }}
-  .header-divider {{ border: none; border-top: 2px solid #111; margin-bottom: 10pt; }}
-  h2 {{
-    font-size: 10.5pt; font-weight: bold; text-transform: uppercase;
-    letter-spacing: 0.6pt; color: #111; border-bottom: 1pt solid #aaa;
-    padding-bottom: 2pt; margin-top: 12pt; margin-bottom: 6pt;
-  }}
-  .summary {{ margin-bottom: 4pt; font-size: 10.5pt; }}
-  .skills-list {{ font-size: 10pt; margin-bottom: 4pt; }}
-  .job {{ margin-bottom: 9pt; }}
-  .job-row-inner {{ display: table; width: 100%; }}
-  .job-title-cell {{
-    display: table-cell; font-weight: bold; font-size: 10.5pt;
-    vertical-align: top; width: 75%;
-  }}
-  .job-date-cell {{
-    display: table-cell; font-size: 9.5pt; color: #555;
-    text-align: right; vertical-align: top; width: 25%; white-space: nowrap;
-  }}
-  .job-company {{ font-size: 9.5pt; color: #444; margin-bottom: 4pt; font-style: italic; }}
-  ul {{ margin-left: 15pt; margin-bottom: 0; }}
-  ul li {{ margin-bottom: 2.5pt; font-size: 10.5pt; }}
-  .education {{ margin-bottom: 3pt; }}
-  .edu-title {{ font-weight: bold; font-size: 10.5pt; }}
-  .edu-detail {{ font-size: 9.5pt; color: #444; }}
-  .certs {{ font-size: 10pt; }}
-  @page {{
-    margin: 15mm 18mm 16mm 18mm;
-    @top-left {{ content: none; }}
-    @top-center {{ content: none; }}
-    @top-right {{ content: none; }}
-    @bottom-left {{ content: none; }}
-    @bottom-center {{ content: none; }}
-    @bottom-right {{ content: none; }}
-  }}
-  @media print {{ body {{ padding: 0; }} }}
-</style>
-</head>
-<body>
-{body_html}
-</body>
-</html>"""
+# Load shared HTML template (Decision 10: single source of truth)
+_TEMPLATE_PATH = os.path.join(WORKSPACE, "templates", "cv-template.html")
+try:
+    with open(_TEMPLATE_PATH) as _tf:
+        HTML_TEMPLATE = _tf.read()
+except FileNotFoundError:
+    HTML_TEMPLATE = "<!DOCTYPE html><html><head><meta charset='UTF-8'><title>{role_title}</title></head><body>{body_html}</body></html>"
 
 
 def log(msg):
@@ -277,22 +226,18 @@ Location: {job_data.get('location', 'GCC')}
 ## PENDING UPDATES TO APPLY
 {pending_updates if pending_updates else 'None'}
 
-## OUTPUT REQUIREMENTS
-Generate ONLY the HTML body content (everything between <body> and </body>). Do NOT include <html>, <head>, <style>, or <body> tags.
+## STRUCTURE (mandatory, this exact order)
+Generate ONLY the HTML body content (between <body> and </body>). No <html>, <head>, <style>, or <body> tags.
 
-Structure:
-1. Header: name + contact line (phone | email | LinkedIn | location)
+1. Header: "Ahmed Nasr" + contact line (Dubai, UAE | +971 50 281 4490 | ahmednasr999@gmail.com | linkedin.com/in/ahmednasr)
 2. <hr class="header-divider">
-3. Executive Summary (h2): 3-4 sentences, tailored to THIS role. Lead with most relevant achievement.
+3. Professional Summary (h2): 3-4 sentences tailored to THIS role. Lead with most relevant achievement.
 4. Core Competencies (h2): 12-16 most relevant skills as comma-separated list in <p class="skills-list">
-5. Professional Experience (h2): All roles from master CV. Reorder bullets within each role to lead with most JD-relevant. Use <div class="job"> wrapper.
-6. Education (h2)
-7. Certifications (h2)
+5. Professional Experience (h2): All roles from master CV in reverse chronological order. Reorder bullets within each role to lead with most JD-relevant. Use <div class="job"> wrapper with <div class="job-row"><span class="job-date" style="float:right">Date</span><span class="job-title">Title</span></div>.
+6. Education (h2): MBA (Paris ESLSCA, 2025-2027, In Progress) + BSc Computer Science (Ain Shams University, 2004)
+7. Certifications (h2): PMP, CSM, CSPO, CBAP, Lean Six Sigma, ITIL Foundations
 
-## HARD RULES
-- NEVER use em dashes. Use commas, periods, or colons.
-- NEVER fabricate metrics or roles not in the master CV data.
-- NEVER put role/company name in the header (only "Ahmed Nasr" and contact).
+## TAILORING GUIDELINES
 - Position as Digital Transformation Executive, never consultant.
 - Quantify everything: $50M, 15 hospitals, 233x, 300+ projects.
 - For KSA roles: mention Saudi Vision 2030 explicitly.
@@ -300,7 +245,23 @@ Structure:
 - Reorder bullets to lead with most relevant to THIS JD.
 - Keep to 2 pages max.
 
-Output ONLY raw HTML. No markdown, no explanation, no ```html blocks."""
+## HARD RULES (zero tolerance)
+- NEVER use em dashes (\u2014) or en dashes (\u2013). Use commas, periods, hyphens, or colons.
+- NEVER fabricate metrics or roles not in the master CV data.
+- NEVER put role/company name in the header area (only "Ahmed Nasr" and contact info).
+- Use &amp; for ampersands in HTML (e.g., AT&amp;T not ATandT).
+
+## OUTPUT CHECKLIST (verify before responding)
+Before outputting, confirm ALL of these:
+[ ] Education section is present with both degrees
+[ ] Certifications section is present with all 6 certs
+[ ] Contact email ahmednasr999@gmail.com appears in header
+[ ] Phone +971 50 281 4490 appears in header
+[ ] Zero em dashes or en dashes in entire output
+[ ] All roles in reverse chronological order (2024 first, 2004 last)
+[ ] Output is raw HTML only - no markdown, no ```html blocks, no explanation
+
+Output ONLY raw HTML."""
 
     html_body = call_opus(prompt)
 
@@ -365,147 +326,28 @@ def generate_pdf(html_body, company, role, html_path_override=None):
     return html_path, pdf_path
 
 
+# ── Validation: use shared cv_validator.py ───────────────────────────────────
+try:
+    from cv_validator import validate_cv as _validate_full, auto_fix_cosmetic
+except ImportError:
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from cv_validator import validate_cv as _validate_full, auto_fix_cosmetic
+
+
 def validate_cv(html_path):
-    """Post-build quality gate. Returns (pass: bool, issues: list[str])."""
-    issues = []
-    try:
-        with open(html_path) as f:
-            html = f.read()
-    except Exception as e:
-        return False, [f"Cannot read HTML: {e}"]
-
-    html_lower = html.lower()
-
-    # 1. Education section exists
-    if "<h2>education</h2>" not in html_lower:
-        issues.append("MISSING: Education section")
-
-    # 2. Certifications section exists
-    if "<h2>certifications</h2>" not in html_lower and "<h2>professional certifications</h2>" not in html_lower:
-        issues.append("MISSING: Certifications section")
-
-    # 3. Check for em dashes and en dashes in content
-    em_count = html.count("\u2014") + html.count("&mdash;")
-    en_count = html.count("\u2013") + html.count("&ndash;")
-    if em_count > 0:
-        issues.append(f"STYLE: {em_count} em dashes found")
-    if en_count > 0:
-        issues.append(f"STYLE: {en_count} en dashes found")
-
-    # 4. Check for broken entities (ATandT, etc.)
-    broken = ["ATandT", "AT and T", "at and t"]
-    for b in broken:
-        if b in html:
-            issues.append(f"ENTITY: '{b}' should be 'AT&amp;T'")
-
-    # 5. Reverse chronological order check
-    import re
-    date_pattern = re.compile(r'class="job-date"[^>]*>([^<]+)<')
-    dates_found = date_pattern.findall(html)
-    if not dates_found:
-        # Try alternate: <span class="job-date">
-        date_pattern2 = re.compile(r'<span[^>]*job.date[^>]*>([^<]+)<', re.IGNORECASE)
-        dates_found = date_pattern2.findall(html)
-
-    if dates_found:
-        year_pattern = re.compile(r'(\d{4})')
-        years = []
-        for d in dates_found:
-            m = year_pattern.search(d)
-            if m:
-                yr = int(m.group(1))
-                if "present" in d.lower():
-                    yr = 9999
-                years.append(yr)
-        # Check descending
-        for i in range(len(years) - 1):
-            if years[i] < years[i + 1]:
-                issues.append(f"ORDER: Roles not in reverse chronological order (found {dates_found[i]} before {dates_found[i+1]})")
-                break
-
-    # 6. Contact info present
-    if "ahmednasr999@gmail.com" not in html:
-        issues.append("MISSING: Email address")
-    if "+971 50 281 4490" not in html:
-        issues.append("MISSING: Phone number")
-
-    # 7. Minimum content check
-    if len(html) < 3000:
-        issues.append(f"THIN: HTML only {len(html)} chars, likely incomplete")
-
-    passed = len(issues) == 0
-    return passed, issues
+    """Wrapper for backward compat. Returns (pass: bool, issues: list[str])."""
+    passed, blockers, cosmetic = _validate_full(html_path)
+    # Return all issues tagged so caller can distinguish
+    all_issues = [f"BLOCKER: {b}" for b in blockers] + [f"COSMETIC: {c}" for c in cosmetic]
+    return passed, all_issues
 
 
 def auto_fix_cv(html_path, issues):
-    """Attempt automatic fixes for common issues. Returns count of fixes applied."""
-    try:
-        with open(html_path) as f:
-            html = f.read()
-    except:
+    """Wrapper: only fixes cosmetic issues. Never injects content."""
+    cosmetic = [i.replace("COSMETIC: ", "") for i in issues if i.startswith("COSMETIC:")]
+    if not cosmetic:
         return 0
-
-    fixes = 0
-
-    # Fix em dashes
-    if any("em dash" in i.lower() for i in issues):
-        html = html.replace("\u2014", "-").replace("&mdash;", "-")
-        fixes += 1
-
-    # Fix en dashes
-    if any("en dash" in i.lower() for i in issues):
-        html = html.replace("\u2013", "-").replace("&ndash;", "-")
-        fixes += 1
-
-    # Fix broken entities
-    if any("ATandT" in i for i in issues):
-        html = html.replace("ATandT", "AT&amp;T").replace("AT and T", "AT&amp;T")
-        fixes += 1
-
-    # Inject MISSING Education and Certifications sections from master CV
-    import re as _re
-    
-    if any("MISSING: Education" in _i for _i in issues):
-        _edu = (
-            "<h2>Education</h2>"
-            "<ul>"
-            "<li><strong>Master of Business Administration (MBA)</strong>, Dubai, United Arab Emirates, 2010</li>"
-            "<li><strong>Bachelor of Science (BSc), Computing</strong>, London, United Kingdom, 2002</li>"
-            "</ul>"
-        )
-        # Insert before first h2 (usually Experience or Certifications)
-        _m = _re.search(r'<h2>', html, _re.IGNORECASE)
-        if _m:
-            html = html[:_m.start()] + _edu + html[_m.start():]
-        else:
-            html = _edu + html
-        fixes += 1
-    
-    if any("MISSING: Certifications" in _i for _i in issues):
-        _certs = (
-            "<h2>Professional Certifications</h2>"
-            "<ul>"
-            "<li><strong>PMP</strong> &#8212; Project Management Professional, PMI, 2008</li>"
-            "<li><strong>CSM</strong> &#8212; Certified Scrum Master, Scrum Alliance, 2014</li>"
-            "<li><strong>CSPO</strong> &#8212; Certified Scrum Product Owner, Scrum Alliance, 2014</li>"
-            "<li><strong>CBAP</strong> &#8212; Certified Business Analysis Professional, IIBA, 2014</li>"
-            "<li><strong>Lean Six Sigma</strong> &#8212; SUNY, 2010</li>"
-            "<li><strong>ITIL Foundations</strong> &#8212; LinkedIn, 2016</li>"
-            "</ul>"
-        )
-        # Insert before closing </body> or end of html
-        _m = _re.search(r'</body>', html, _re.IGNORECASE)
-        if _m:
-            html = html[:_m.start()] + _certs + html[_m.start():]
-        else:
-            html = html + _certs
-        fixes += 1
-
-    if fixes > 0:
-        with open(html_path, "w") as f:
-            f.write(html)
-
-    return fixes
+    return auto_fix_cosmetic(html_path, cosmetic)
 
 
 def classify_job(title):
@@ -583,7 +425,7 @@ Location: {job_data.get('location', 'GCC')}
 {template_html[:6000]}
 
 ## MASTER CV DATA (authoritative — never fabricate beyond this)
-{master_cv[:3000]}
+{master_cv}
 
 ## PENDING UPDATES
 {pending_updates if pending_updates else 'None'}
@@ -621,13 +463,23 @@ Always use: "Mon YYYY - Mon YYYY" with a hyphen surrounded by spaces. Example: "
 ## OUTPUT REQUIREMENTS
 Output ONLY the HTML body content (between <body> and </body>). No <html>, <head>, <style>, or <body> tags.
 
-## HARD RULES
-- NEVER use em dashes (—) or en dashes (–). Use commas, periods, hyphens, or colons.
+## HARD RULES (zero tolerance)
+- NEVER use em dashes (\u2014) or en dashes (\u2013). Use commas, periods, hyphens, or colons.
 - NEVER fabricate metrics or roles not in master CV data.
 - Keep to 2 pages max.
 - Use &amp; for ampersands in HTML (e.g., AT&amp;T not ATandT).
 
-Output ONLY raw HTML. No markdown, no explanation, no ```html blocks."""
+## OUTPUT CHECKLIST (verify before responding)
+Before outputting, confirm ALL of these:
+[ ] Education section is present with both degrees
+[ ] Certifications section is present with all 6 certs
+[ ] Contact email ahmednasr999@gmail.com appears in header
+[ ] Phone +971 50 281 4490 appears in header
+[ ] Zero em dashes or en dashes in entire output
+[ ] All roles in reverse chronological order (2024 first, 2004 last)
+[ ] Output is raw HTML only - no markdown, no explanation
+
+Output ONLY raw HTML."""
 
     html_body = call_opus(prompt, max_tokens=5000)
 
@@ -638,30 +490,68 @@ Output ONLY raw HTML. No markdown, no explanation, no ```html blocks."""
     return html_body
 
 
+def extract_jd_keywords(jd_text):
+    """Extract top 15 keywords from JD via MiniMax (cheap, fast)."""
+    if not jd_text or len(jd_text) < 100:
+        return []
+    try:
+        prompt = (
+            "Extract the 15 most important keywords and phrases from this job description. "
+            "Focus on required skills, tools, certifications, and domain expertise. "
+            "Return ONLY a JSON array of lowercase strings. No explanation.\n\n"
+            f"JD:\n{jd_text[:3000]}"
+        )
+        payload = json.dumps({
+            "model": "minimax-portal/MiniMax-M2.5",
+            "max_tokens": 300,
+            "messages": [{"role": "user", "content": prompt}],
+        }).encode()
+        req = urllib.request.Request(
+            f"http://localhost:{GATEWAY_PORT}/v1/chat/completions",
+            data=payload,
+            headers={
+                "Content-Type": "application/json",
+                "Authorization": f"Bearer {GATEWAY_TOKEN}",
+            },
+            method="POST",
+        )
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            result = json.loads(resp.read())
+        raw = result.get("choices", [{}])[0].get("message", {}).get("content", "")
+        # Parse JSON array from response
+        raw = raw.strip()
+        if raw.startswith("```"):
+            raw = raw.split("\n", 1)[-1].rsplit("```", 1)[0]
+        keywords = json.loads(raw)
+        if isinstance(keywords, list):
+            return [str(k).lower().strip() for k in keywords[:15]]
+    except Exception as e:
+        log(f"  JD keyword extraction failed (falling back): {e}")
+    return []
+
+
 def ats_score_check(jd_text, master_cv):
-    """Quick ATS scoring via keyword matching (no LLM needed)."""
-    jd_lower = jd_text.lower()
+    """ATS scoring: extract JD keywords via MiniMax, match against master CV."""
+    keywords = extract_jd_keywords(jd_text)
+
+    if not keywords:
+        # Fallback: basic term presence check
+        jd_lower = jd_text.lower()
+        cv_lower = master_cv.lower()
+        fallback_terms = [
+            "digital transformation", "pmo", "program management", "project management",
+            "ai", "machine learning", "agile", "scrum", "healthcare", "fintech",
+            "e-commerce", "leadership", "strategy", "budget", "stakeholder",
+        ]
+        matches = sum(1 for t in fallback_terms if t in jd_lower and t in cv_lower)
+        total = sum(1 for t in fallback_terms if t in jd_lower)
+        return int((matches / max(total, 1)) * 100)
+
     cv_lower = master_cv.lower()
-
-    # Key terms to check
-    matches = 0
-    total = 0
-    for term in [
-        "digital transformation", "pmo", "program management", "project management",
-        "ai", "machine learning", "cloud", "aws", "azure", "agile", "scrum",
-        "healthcare", "fintech", "e-commerce", "vision 2030",
-        "leadership", "strategy", "p&l", "budget", "stakeholder",
-        "director", "vp", "head of", "chief", "executive",
-        "gcc", "uae", "saudi", "dubai", "abu dhabi", "ksa"
-    ]:
-        if term in jd_lower:
-            total += 1
-            if term in cv_lower:
-                matches += 1
-
-    if total == 0:
-        return 50
-    return int((matches / total) * 100)
+    matches = sum(1 for kw in keywords if kw in cv_lower)
+    score = int((matches / len(keywords)) * 100)
+    log(f"  JD keywords ({len(keywords)}): {matches} matched, score {score}%")
+    return score
 
 
 def process_trigger(trigger_path, master_cv, pending_updates, dry_run=False):
@@ -679,10 +569,19 @@ def process_trigger(trigger_path, master_cv, pending_updates, dry_run=False):
         log(f"  SKIP: JD too short ({len(jd)} chars)")
         return None
 
-    # Check if CV already exists
+    # Check if CV already exists (from either Path A skill or Path B script)
     existing = cv_already_exists(company, role)
     if existing:
-        log(f"  SKIP: CV already exists: {os.path.basename(existing)}")
+        # Check if there's a meta sidecar showing it was skill-generated (Path A)
+        meta_check = existing.replace(".pdf", ".meta.json")
+        source = "unknown"
+        if os.path.exists(meta_check):
+            try:
+                with open(meta_check) as mf:
+                    source = json.load(mf).get("build_path", "unknown")
+            except:
+                pass
+        log(f"  SKIP: CV already exists: {os.path.basename(existing)} (source: {source})")
         return {
             "company": company,
             "role": role,
@@ -723,6 +622,14 @@ def process_trigger(trigger_path, master_cv, pending_updates, dry_run=False):
             log(f"  REUSE: adapting {template_source}")
             build_path = f"REUSE ({template_source})"
             html_body = adapt_cv(template_html, master_cv, pending_updates, data)
+
+            # Decision 3: check adapted quality, escalate if score drops 5+ pts
+            adapted_score = ats_score_check(jd, html_body)
+            log(f"  Adapted CV score: {adapted_score}% (JD target: {ats}%)")
+            if adapted_score < ats - 5:
+                log(f"  ESCALATE: adapted score {adapted_score}% is 5+ below JD target {ats}%. Rebuilding from scratch.")
+                build_path = f"ESCALATED (was REUSE {template_source})"
+                html_body = tailor_cv(master_cv, pending_updates, data)
         else:
             log(f"  NEW: building from scratch")
             html_body = tailor_cv(master_cv, pending_updates, data)
@@ -742,29 +649,102 @@ def process_trigger(trigger_path, master_cv, pending_updates, dry_run=False):
 
     # Post-build validation
     passed, issues = validate_cv(html_path)
-    if not passed:
-        fixable = [i for i in issues if i.startswith("STYLE:") or i.startswith("ENTITY:")]
-        blockers = [i for i in issues if i not in fixable]
+    cosmetic = [i for i in issues if i.startswith("COSMETIC:")]
+    blockers = [i for i in issues if i.startswith("BLOCKER:")]
 
-        if fixable:
-            fix_count = auto_fix_cv(html_path, issues)
-            log(f"  AUTO-FIX: {fix_count} issue(s) patched")
-            # Regenerate PDF after fixes
+    # Auto-fix cosmetic issues
+    if cosmetic:
+        fix_count = auto_fix_cv(html_path, issues)
+        log(f"  AUTO-FIX: {fix_count} cosmetic issue(s) patched")
+        if fix_count > 0:
             try:
                 html_path, pdf_path = generate_pdf(None, company, role, html_path_override=html_path)
                 log(f"  PDF regenerated after auto-fix")
             except:
                 pass
 
-        if blockers:
-            log(f"  ⚠️ VALIDATION FAILED ({len(blockers)} blocker(s)):")
-            for b in blockers:
-                log(f"    - {b}")
-            log(f"  CV built but flagged for manual review.")
-        else:
-            log(f"  ✅ Validation PASSED (after {len(fixable)} auto-fix(es))")
+    # Retry once on blockers with specific feedback
+    if blockers:
+        log(f"  ⚠️ BLOCKERS ({len(blockers)}), retrying Opus with feedback...")
+        for b in blockers:
+            log(f"    - {b}")
+        blocker_list = "\n".join(f"- {b.replace('BLOCKER: ', '')}" for b in blockers)
+        retry_prompt = (
+            f"Your previous CV output had validation failures:\n{blocker_list}\n\n"
+            f"Regenerate the COMPLETE CV HTML body for {role} at {company}. "
+            f"Ensure ALL sections are present: Header, Professional Summary, Core Competencies, "
+            f"Professional Experience, Education, Certifications. Include contact info "
+            f"(ahmednasr999@gmail.com, +971 50 281 4490). Output ONLY raw HTML body."
+        )
+        try:
+            html_body = call_opus(retry_prompt, max_tokens=8000)
+            html_body = html_body.replace("```html", "").replace("```", "").strip()
+            html_body = html_body.replace("\u2014", ",").replace("\u2013", ",")
+            html_path, pdf_path = generate_pdf(html_body, company, role)
+            passed, issues = validate_cv(html_path)
+            blockers = [i for i in issues if i.startswith("BLOCKER:")]
+            cosmetic = [i for i in issues if i.startswith("COSMETIC:")]
+            if cosmetic:
+                auto_fix_cv(html_path, issues)
+                html_path, pdf_path = generate_pdf(None, company, role, html_path_override=html_path)
+            if not blockers:
+                log(f"  ✅ Retry PASSED")
+            else:
+                log(f"  ❌ Retry still has {len(blockers)} blocker(s)")
+        except Exception as e:
+            log(f"  ERROR on retry: {e}")
+
+    # Final verdict
+    if blockers:
+        log(f"  ❌ VALIDATION FAILED after retry. NOT saving CV.")
+        for b in blockers:
+            log(f"    - {b}")
+        # Move to .failed, not .done - allows future retry
+        failed_path = trigger_path + ".failed"
+        os.rename(trigger_path, failed_path)
+        log(f"  Trigger marked as FAILED.")
+        # Clean up bad CV files
+        try:
+            if html_path and os.path.exists(html_path):
+                os.remove(html_path)
+            if pdf_path and os.path.exists(pdf_path):
+                os.remove(pdf_path)
+            log(f"  Removed bad CV files.")
+        except:
+            pass
+        # Telegram alert
+        try:
+            subprocess.run(
+                ["openclaw", "announce", f"❌ CV FAILED: {role} @ {company} - {len(blockers)} blocker(s): {blockers[0]}"],
+                capture_output=True, timeout=10,
+            )
+        except:
+            pass
+        return None
     else:
         log(f"  ✅ Validation PASSED")
+
+    # Decision 9: Write .meta.json sidecar for audit trail
+    try:
+        meta = {
+            "company": company,
+            "role": role,
+            "ats_score": ats,
+            "build_path": build_path,
+            "cluster": cluster,
+            "validation_issues": issues if issues else [],
+            "model": "claude-opus-4-6",
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+            "html_chars": len(html_body) if html_body else 0,
+            "pdf_path": pdf_path,
+        }
+        meta_path = pdf_path.replace(".pdf", ".meta.json") if pdf_path else None
+        if meta_path:
+            with open(meta_path, "w") as mf:
+                json.dump(meta, mf, indent=2)
+            log(f"  Meta sidecar: {os.path.basename(meta_path)}")
+    except Exception as e:
+        log(f"  Meta sidecar write failed (non-fatal): {e}")
 
     # Mark trigger as done
     done_path = trigger_path + ".done"

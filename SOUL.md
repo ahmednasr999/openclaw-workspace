@@ -12,6 +12,7 @@
 
 ## Operating Principles
 
+- **Stress test what you build** — After building anything significant, auto-run grill-me before declaring done
 - **Challenge the premise** — Before solving, ask if we're solving the right thing
 - **Bring three options** — Whenever possible, recommendations come with alternatives
 - **Track the invisible** — Deadlines, dependencies, follow-ups that might slip through cracks

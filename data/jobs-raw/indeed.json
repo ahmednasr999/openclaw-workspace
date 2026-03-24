@@ -2,16 +2,37 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-03-24T05:01:34.943251+02:00",
-    "duration_ms": 81723,
+    "generated_at": "2026-03-24T10:01:27.063204+02:00",
+    "duration_ms": 85797,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "6f18be52",
+    "run_id": "3fb839e0",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": [
+    {
+      "id": "indeed-in-fd87e72cd4640a7b",
+      "source": "indeed",
+      "title": "Laboratory Director - AtoG Labs",
+      "company": "Medspace Medical Centre",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=fd87e72cd4640a7b",
+      "posted": "2026-03-24",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 20,
+      "match_keywords": [
+        "ai",
+        "director",
+        "uae",
+        "dubai"
+      ],
+      "raw_snippet": "**Laboratory Director \u2013 AtoG Labs****Location:** Dubai, UAE  \n\n**Reports to:** Board of Directors\n\n**About AtoG Labs:**  \n\nAtoG Labs is a high\\-technology molecular diagnostics and genetics laboratory dedicated to advancing personalized medicine in the UAE and beyond. Our multidisciplinary expertise covers molecular biology, genetic sequencing, oncology biomarkers, infectious disease testing, and women\u2019s health diagnostics. We combine innovation with clinical integrity to deliver a new standard ",
+      "relevant": true,
+      "filter_reason": null
+    },
     {
       "id": "indeed-in-cfb35df95ccd8337",
       "source": "indeed",
@@ -52,6 +73,25 @@
       "filter_reason": null
     },
     {
+      "id": "indeed-in-8f603ac1283c89f5",
+      "source": "indeed",
+      "title": "Chief Financial Officer",
+      "company": "Trilogy Fab Trailers Manufacturing One Owner Company L. L. C",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=8f603ac1283c89f5",
+      "posted": "2026-03-23",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 6,
+      "match_keywords": [
+        "uae",
+        "api"
+      ],
+      "raw_snippet": "The CFO will lead the company\u2019s financial strategy and operations, with a strong focus on project\\-based financial management, profitability, and compliance within the UAE contracting sector.\n\n**Key Responsibilities:**\n\n* Oversee financial planning, budgeting, and forecasting\n* Manage project costing, cash flow, and working capital\n* Ensure UAE VAT and regulatory compliance\n* Monitor contract revenue, costs, and variations\n* Advise management on financial performance and risks\n* Lead finance tea",
+      "relevant": true,
+      "filter_reason": null
+    },
+    {
       "id": "indeed-in-45d6ce110c70c94d",
       "source": "indeed",
       "title": "Head of Department \u2013 Pediatrics (American Board, Arabic Speaker) - Qatar",
@@ -75,9 +115,9 @@
   ],
   "kpi": {
     "searches_run": 81,
-    "results_per_search": 0.77,
-    "unique_jobs": 3,
-    "errors": 54
+    "results_per_search": 0.83,
+    "unique_jobs": 5,
+    "errors": 53
   },
   "recommendations": []
 }

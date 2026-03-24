@@ -42,18 +42,25 @@ for i, arg in enumerate(sys.argv):
 
 # ── Autoresearch Scoring ────────────────────────────────────────
 
-QUESTIONS = [
-    "RESULT_TRANSFORMATION: Does the hook describe a RESULT or TRANSFORMATION (not just a topic)? Answer YES or NO.",
-    "SPECIFIC_PERSON: Does the post feature a SPECIFIC PERSON or STORY (not just a company)? Answer YES or NO.",
-    "SCROLL_STOPPER: Is the first line a SCROLL-STOPPER that creates a curiosity gap? Answer YES or NO.",
-    "METRIC: Does the post include a specific METRIC or DATA POINT? Answer YES or NO.",
-    "HOOK_LENGTH: Is the hook under 300 characters? Answer YES or NO.",
-    "CTA: Does the post END WITH A QUESTION or CTA for engagement? Answer YES or NO.",
-    "ACHIEVE_FRAME: Is the framing about WHAT YOU CAN ACHIEVE (not what the tool/company does)? Answer YES or NO.",
-    "NOT_PRESS_RELEASE: Does it avoid sounding like a press release or changelog? Answer YES or NO.",
-    "CONTEXT_RICH: Is it CONTEXT-RICH — does it explain WHY, not just WHAT? Answer YES or NO.",
-    "URGENCY: Does it create a SENSE OF URGENCY or exclusivity? Answer YES or NO.",
+# Scoring: weighted questions with mandatory gates
+# Format: (key, question, weight, mandatory)
+SCORED_QUESTIONS = [
+    ("RESULT_TRANSFORMATION", "Does the hook describe a RESULT or TRANSFORMATION (not just a topic)?", 1, False),
+    ("SPECIFIC_PERSON", "Does the post feature a SPECIFIC PERSON or STORY (not just a company)?", 1, False),
+    ("SCROLL_STOPPER", "Is the first line a SCROLL-STOPPER that creates a curiosity gap?", 1, True),  # MANDATORY
+    ("METRIC", "Does the post include a specific METRIC or DATA POINT?", 2, False),  # HIGH
+    ("HOOK_LENGTH", "Is the hook under 300 characters?", 1, False),
+    ("CTA", "Does the post END WITH A QUESTION or CTA for engagement?", 1, True),  # MANDATORY
+    ("ACHIEVE_FRAME", "Is the framing about WHAT YOU CAN ACHIEVE (not what the tool/company does)?", 1, False),
+    ("NOT_PRESS_RELEASE", "Does it avoid sounding like a press release or changelog?", 2, False),  # HIGH
+    ("CONTEXT_RICH", "Is it CONTEXT-RICH - does it explain WHY, not just WHAT?", 2, False),  # HIGH
+    ("URGENCY", "Does it create a SENSE OF URGENCY or exclusivity?", 1, False),
 ]
+
+# Legacy flat list for LLM prompt (just the question text)
+QUESTIONS = [f"{q[0]}: {q[1]} Answer YES or NO." for q in SCORED_QUESTIONS]
+MAX_SCORE = sum(q[2] for q in SCORED_QUESTIONS)  # 13 (3 high-weight x2 + 7 standard x1)
+MIN_SCORE = 8  # ~60% of MAX_SCORE
 
 # Auth: read gateway token from openclaw.json
 GATEWAY_URL = "http://127.0.0.1:18789/v1/chat/completions"
@@ -154,11 +161,29 @@ Answer each Q1-Q10 as YES or NO:"""
         for i, w in enumerate(words[:10]):
             results[i] = 1 if w == "YES" else 0
     
-    total = sum(results)
-    for i, q in enumerate(QUESTIONS):
-        print(f"  Q{i+1}: {q.split(':')[0]:25s} → {results[i]}")
-    print(f"=== Score: {total}/10 ===\n")
-    return {"total": total, "questions": results}
+    # Weighted scoring
+    weighted_total = 0
+    mandatory_failed = []
+    for i, (key, question, weight, mandatory) in enumerate(SCORED_QUESTIONS):
+        passed = results[i] == 1
+        pts = weight if passed else 0
+        weighted_total += pts
+        marker = "MANDATORY" if mandatory else f"x{weight}"
+        status = f"{'PASS' if passed else 'FAIL'} ({pts}/{weight})"
+        print(f"  Q{i+1}: {key:25s} [{marker:9s}] {status}")
+        if mandatory and not passed:
+            mandatory_failed.append(key)
+
+    print(f"=== Score: {weighted_total}/{MAX_SCORE} ===")
+    if mandatory_failed:
+        print(f"=== MANDATORY FAILED: {', '.join(mandatory_failed)} ===")
+    print()
+    return {
+        "total": weighted_total,
+        "max_score": MAX_SCORE,
+        "questions": results,
+        "mandatory_failed": mandatory_failed,
+    }
 
 
 def log_post(post_text: str, score_result: dict, page_id: str):
@@ -169,7 +194,11 @@ def log_post(post_text: str, score_result: dict, page_id: str):
         with open(RESEARCH_LOG) as f:
             data = json.load(f)
     else:
-        data = {"posts": [], "current_prompt": "", "prompt_history": [], "current_prompt_version": 1}
+        data = {"posts": []}
+    
+    # Migrate: remove dead fields from old schema
+    for key in ["current_prompt", "prompt_history", "current_prompt_version"]:
+        data.pop(key, None)
     
     today_str = date.today().isoformat()
     
@@ -182,11 +211,10 @@ def log_post(post_text: str, score_result: dict, page_id: str):
     entry = {
         "date": today_str,
         "post_text": post_text[:5000],
-        "eval_score": score_result["total"],
+        "score": score_result["total"],
+        "max_score": score_result.get("max_score", MAX_SCORE),
         "questions": score_result["questions"],
-        "engagement": None,
-        "prompt_version": data.get("current_prompt_version", 1),
-        "prompt_used": data.get("current_prompt", ""),
+        "mandatory_failed": score_result.get("mandatory_failed", []),
         "notion_page_id": page_id,
     }
     data["posts"].append(entry)
@@ -289,42 +317,113 @@ def get_today_post():
 
     full_text = ""
     image_url = None
+    numbered_counter = 0
+    total_blocks = 0
+    extracted_blocks = 0
+
+    def extract_rich_text(rich_text_list, respect_bold=True):
+        """Extract text from Notion rich_text array, preserving bold annotations."""
+        line = ""
+        for t in rich_text_list:
+            text = t.get("plain_text", "")
+            annotations = t.get("annotations", {})
+            if respect_bold and annotations.get("bold") and text.strip():
+                line += f"**{text}**"
+            else:
+                line += text
+        return line
 
     for b in blocks_result.get("results", []):
         bt = b["type"]
+        total_blocks += 1
 
         if bt == "image":
-            # Get image URL (external or file)
             img = b["image"]
             image_url = img.get("external", {}).get("url") or img.get("file", {}).get("url", "")
+            extracted_blocks += 1
 
-        elif bt in ("paragraph", "heading_2", "heading_3"):
+        elif bt in ("paragraph", "heading_1", "heading_2", "heading_3"):
+            numbered_counter = 0  # Reset numbered list on non-list block
             rt = b.get(bt, {}).get("rich_text", [])
-            line = ""
-            for t in rt:
-                text = t.get("plain_text", "")
-                annotations = t.get("annotations", {})
-                # If bold in Notion, wrap with ** for our converter
-                if annotations.get("bold") and text.strip():
-                    line += f"**{text}**"
-                else:
-                    line += text
+            line = extract_rich_text(rt)
             if line:
                 full_text += line + "\n"
+                extracted_blocks += 1
             else:
-                full_text += "\n"  # Empty paragraph = line break
+                full_text += "\n"
+
+        elif bt == "quote":
+            numbered_counter = 0
+            rt = b.get("quote", {}).get("rich_text", [])
+            line = extract_rich_text(rt)
+            if line:
+                full_text += f"\"{line}\"\n"
+                extracted_blocks += 1
+
+        elif bt == "callout":
+            numbered_counter = 0
+            rt = b.get("callout", {}).get("rich_text", [])
+            line = extract_rich_text(rt)
+            if line:
+                full_text += line + "\n"
+                extracted_blocks += 1
 
         elif bt == "bulleted_list_item":
+            numbered_counter = 0
             rt = b.get("bulleted_list_item", {}).get("rich_text", [])
-            text = "".join(t.get("plain_text", "") for t in rt)
-            if text:
-                full_text += f"• {text}\n"
+            line = extract_rich_text(rt)
+            if line:
+                full_text += f"\u2022 {line}\n"
+                extracted_blocks += 1
 
         elif bt == "numbered_list_item":
+            numbered_counter += 1
             rt = b.get("numbered_list_item", {}).get("rich_text", [])
-            text = "".join(t.get("plain_text", "") for t in rt)
-            if text:
-                full_text += f"- {text}\n"
+            line = extract_rich_text(rt)
+            if line:
+                full_text += f"{numbered_counter}. {line}\n"
+                extracted_blocks += 1
+
+        elif bt == "code":
+            numbered_counter = 0
+            rt = b.get("code", {}).get("rich_text", [])
+            line = extract_rich_text(rt, respect_bold=False)
+            if line:
+                full_text += line + "\n"
+                extracted_blocks += 1
+
+        elif bt in ("divider", "table_of_contents", "breadcrumb", "child_page", "child_database"):
+            numbered_counter = 0
+            # Skip non-content blocks silently
+
+        elif bt == "toggle":
+            numbered_counter = 0
+            rt = b.get("toggle", {}).get("rich_text", [])
+            line = extract_rich_text(rt)
+            if line:
+                full_text += line + "\n"
+                extracted_blocks += 1
+                print(f"  WARNING: Toggle block extracted (top-level text only, children skipped)")
+
+        else:
+            # Catch-all: try to extract rich_text from unknown block types
+            numbered_counter = 0
+            block_data = b.get(bt, {})
+            if isinstance(block_data, dict) and "rich_text" in block_data:
+                rt = block_data["rich_text"]
+                line = extract_rich_text(rt)
+                if line:
+                    full_text += line + "\n"
+                    extracted_blocks += 1
+                    print(f"  WARNING: Unknown block type '{bt}' - extracted via catch-all")
+            else:
+                print(f"  WARNING: Skipped unhandled block type '{bt}'")
+
+    # Content loss detection
+    if total_blocks > 2 and extracted_blocks > 0:
+        avg_chars = len(full_text) / extracted_blocks
+        if avg_chars < 20:
+            print(f"  WARNING: Low extraction ratio ({avg_chars:.0f} chars/block) - content may be lost")
 
     # Clean up: remove metadata lines that leaked from .md files
     full_text = re.sub(r'^File:.*$', '', full_text, flags=re.MULTILINE)
@@ -332,30 +431,7 @@ def get_today_post():
     # Remove excessive blank lines, trim
     full_text = re.sub(r'\n{3,}', '\n\n', full_text).strip()
 
-    # Check if any **bold** markers exist (from Notion annotations)
-    has_bold_markers = bool(re.search(r'\*\*.+?\*\*', full_text))
-    
-    if not has_bold_markers:
-        # Notion text has no bold annotations - try local .md file which may have **bold** 
-        local_md_candidates = [
-            f"{WORKSPACE}/linkedin/posts/{TODAY}-*.md",
-        ]
-        import glob
-        for pattern in local_md_candidates:
-            matches = glob.glob(pattern)
-            for md_path in matches:
-                with open(md_path) as f:
-                    md_content = f.read()
-                # Extract post body from .md (after "## Post Draft" header)
-                draft_match = re.search(r'## Post Draft\s*\n(.+?)(?:\n---|\Z)', md_content, re.DOTALL)
-                if draft_match:
-                    md_text = draft_match.group(1).strip()
-                    if re.search(r'\*\*.+?\*\*', md_text):
-                        print(f"Bold markers found in local .md: {md_path}")
-                        full_text = md_text
-                        break
-    
-    # Convert **bold** to Unicode bold
+    # Convert **bold** to Unicode bold (Notion annotations are the single source of truth)
     full_text = convert_bold_markdown(full_text)
 
     return {
@@ -536,9 +612,9 @@ def update_briefing_page(post_url, image_url=None, title=""):
 # ── Main ────────────────────────────────────────────────────────
 
 def check_stale_watchdog():
-    """Check if yesterday's watchdog flag still exists — means posting failed."""
+    """Check if yesterday's watchdog flag still exists - means posting failed."""
     import subprocess
-    watchdog_path = "/tmp/linkedin-post-pending.flag"
+    watchdog_path = f"{WORKSPACE}/data/linkedin-watchdog.json"
     if not os.path.exists(watchdog_path):
         return
     try:
@@ -591,8 +667,8 @@ def main():
             except Exception:
                 pass
         update_briefing_page(UPDATE_URL, image_url=image_url, title=title)
-        # Remove watchdog flag — post succeeded
-        watchdog_path = "/tmp/linkedin-post-pending.flag"
+        # Remove watchdog flag - post succeeded
+        watchdog_path = f"{WORKSPACE}/data/linkedin-watchdog.json"
         if os.path.exists(watchdog_path):
             os.remove(watchdog_path)
             print("Watchdog flag removed (post successful)")
@@ -627,26 +703,70 @@ def main():
             print(f"[DRY RUN] Would attach image: {post['image_url']}")
         return
 
-    # Quality gate: score < 6 → flag for review, don't auto-post
-    MIN_SCORE = 6
-    if score_result["total"] < MIN_SCORE:
-        print(f"⚠️ QUALITY GATE: Score {score_result['total']}/10 < {MIN_SCORE} minimum")
-        print(f"Post flagged for manual review. NOT auto-posting.")
-        # Write flag for agent to send Telegram alert
-        flag = {
-            "action": "quality_hold",
-            "score": score_result["total"],
-            "min_score": MIN_SCORE,
-            "title": post['title'],
-            "page_id": post['page_id'],
-            "failed_questions": [QUESTIONS[i].split(":")[0] for i, s in enumerate(score_result["questions"]) if s == 0],
-        }
-        with open("/tmp/linkedin-post-payload.json", "w") as f:
-            json.dump(flag, f, ensure_ascii=False, indent=2)
-        print(f"QUALITY_HOLD")
-        return
+    # Quality gate: weighted score + mandatory gates
+    gate_failed = False
+    gate_reason = []
 
-    # Download image if present
+    if score_result.get("mandatory_failed"):
+        gate_failed = True
+        gate_reason.append(f"Mandatory failed: {', '.join(score_result['mandatory_failed'])}")
+
+    if score_result["total"] < MIN_SCORE:
+        gate_failed = True
+        gate_reason.append(f"Score {score_result['total']}/{MAX_SCORE} < {MIN_SCORE}")
+
+    if gate_failed:
+        print(f"\u26a0\ufe0f QUALITY GATE: {'; '.join(gate_reason)}")
+
+        # Decision 2: Auto-rewrite attempt before holding
+        failed_keys = [SCORED_QUESTIONS[i][0] for i, s in enumerate(score_result["questions"]) if s == 0]
+        failed_descriptions = [f"- {SCORED_QUESTIONS[i][0]}: {SCORED_QUESTIONS[i][1]}"
+                               for i, s in enumerate(score_result["questions"]) if s == 0]
+        rewrite_prompt = (
+            f"This LinkedIn post scored {score_result['total']}/{MAX_SCORE}. "
+            f"It failed these quality criteria:\n"
+            + "\n".join(failed_descriptions) +
+            f"\n\nRewrite the post to pass ALL criteria while keeping the core message, "
+            f"tone, and key facts. Keep it under 2800 characters. "
+            f"Output ONLY the rewritten post text, no explanation.\n\n"
+            f"Original post:\n{post['content'][:3000]}"
+        )
+
+        print("Attempting auto-rewrite...")
+        rewritten = call_llm_long(rewrite_prompt)
+        if rewritten and len(rewritten) > 100 and not rewritten.startswith("ERROR"):
+            # Re-score the rewrite
+            rewritten_bold = convert_bold_markdown(rewritten)
+            rescore = score_post(rewritten_bold)
+            rescore_failed = bool(rescore.get("mandatory_failed")) or rescore["total"] < MIN_SCORE
+
+            if not rescore_failed:
+                print(f"\u2705 Rewrite PASSED: {rescore['total']}/{MAX_SCORE}")
+                post['content'] = rewritten_bold
+                score_result = rescore
+                gate_failed = False
+            else:
+                print(f"\u274c Rewrite also failed: {rescore['total']}/{MAX_SCORE}")
+
+        if gate_failed:
+            print(f"Post flagged for manual review. NOT auto-posting.")
+            flag = {
+                "action": "quality_hold",
+                "score": score_result["total"],
+                "max_score": MAX_SCORE,
+                "min_score": MIN_SCORE,
+                "title": post['title'],
+                "page_id": post['page_id'],
+                "failed_questions": failed_keys,
+                "mandatory_failed": score_result.get("mandatory_failed", []),
+                "rewrite_attempted": True,
+            }
+            with open("/tmp/linkedin-post-payload.json", "w") as f:
+                json.dump(flag, f, ensure_ascii=False, indent=2)
+            print(f"QUALITY_HOLD")
+            return
+
+    # Download image if present - tiered degradation (Decision 3)
     image_path = None
     if post['image_url']:
         try:
@@ -654,10 +774,24 @@ def main():
             image_path = upload_image_to_linkedin(image_bytes, content_type)
         except Exception as e:
             print(f"WARNING: Image download failed ({e})")
-            if post['image_url']:
-                print("FATAL: Image required but download failed")
-                print("IMAGE_DOWNLOAD_FAILED")
-                sys.exit(1)
+            if score_result["total"] >= 12:  # ~80% of MAX_SCORE (15)
+                print(f"DEGRADED: Score {score_result['total']}/{MAX_SCORE} is strong enough for text-only post")
+                print("Continuing without image + will alert after posting")
+                post['image_degraded'] = True
+            else:
+                print(f"HELD: Score {score_result['total']}/{MAX_SCORE} too low for text-only. Holding for review.")
+                flag = {
+                    "action": "image_failed_hold",
+                    "score": score_result["total"],
+                    "max_score": MAX_SCORE,
+                    "title": post['title'],
+                    "page_id": post['page_id'],
+                    "image_error": str(e),
+                }
+                with open("/tmp/linkedin-post-payload.json", "w") as f:
+                    json.dump(flag, f, ensure_ascii=False, indent=2)
+                print("IMAGE_HOLD")
+                return
 
     # Write payload with EXACT content (bold already converted to Unicode)
     output = {
@@ -676,23 +810,121 @@ def main():
     with open(output_path, "w") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
     
-    # Watchdog
-    watchdog_path = "/tmp/linkedin-post-pending.flag"
+    # Watchdog (persistent - survives reboots)
+    watchdog_path = f"{WORKSPACE}/data/linkedin-watchdog.json"
     with open(watchdog_path, "w") as f:
-        f.write(json.dumps({
+        json.dump({
             "created_at": datetime.now().isoformat(),
             "page_id": post['page_id'],
             "title": post['title'],
-        }))
+        }, f)
     
-    # Print exact instructions for the agent
-    print(f"\nSCORE: {score_result['total']}/10")
+    # Decision 5: Character limit safety check
+    content_len = len(post['content'])
+    if content_len > 2800:
+        print(f"\u26a0\ufe0f WARNING: Post is {content_len} chars (limit ~3000). May be truncated by LinkedIn.")
+
+    print(f"\nSCORE: {score_result['total']}/{MAX_SCORE}")
     print(f"CONTENT_LENGTH: {len(post['content'])} chars")
     print(f"BOLD_CONVERTED: {'yes' if any(ord(c) > 0x1D400 for c in post['content']) else 'no'}")
     print(f"IMAGE_FILE: {image_path or 'none'}")
     print(f"IMAGE_REQUIRED: {bool(post['image_url'])}")
     print(f"PAGE_ID: {post['page_id']}")
-    print(f"POST_URL_UPDATE_CMD: python3 scripts/linkedin-auto-poster.py --update-url '<POST_URL>' --page-id {post['page_id']}")
+
+    # Decision 9: End-to-end autonomous posting via direct-post script
+    import subprocess as sp
+    direct_post_script = f"{WORKSPACE}/scripts/linkedin-direct-post.py"
+    if os.path.exists(direct_post_script):
+        print("\nATTEMPTING DIRECT POST (autonomous mode)...")
+        cmd = ["python3", direct_post_script, "--text-file", "/dev/stdin"]
+        if image_path:
+            cmd += ["--image", image_path]
+
+        try:
+            result = sp.run(
+                ["python3", direct_post_script, "--text", post['content']]
+                + (["--image", image_path] if image_path else []),
+                capture_output=True, text=True, timeout=120,
+            )
+            stdout = result.stdout.strip()
+            stderr = result.stderr.strip()
+            print(f"  Direct-post exit: {result.returncode}")
+            if stdout:
+                print(f"  stdout: {stdout[:500]}")
+
+            # Try to extract post URL from output
+            url_match = re.search(r'https://www\.linkedin\.com/feed/update/[^\s"\']+', stdout)
+            if url_match and result.returncode == 0:
+                post_url = url_match.group(0)
+                print(f"\n\u2705 POSTED: {post_url}")
+
+                # Close the loop: update Notion, log, remove watchdog
+                update_notion_status(post['page_id'], post_url)
+                update_post_url(post['page_id'], post_url)
+                update_briefing_page(post_url, image_url=post.get('image_url'), title=post['title'])
+
+                # Remove watchdog
+                if os.path.exists(watchdog_path):
+                    os.remove(watchdog_path)
+
+                # Decision 10: Post-publish audit trail
+                os.makedirs(f"{WORKSPACE}/data/linkedin-posted-audit", exist_ok=True)
+                audit = {
+                    "date": TODAY,
+                    "title": post['title'],
+                    "content": post['content'],
+                    "content_length": len(post['content']),
+                    "score": score_result['total'],
+                    "max_score": MAX_SCORE,
+                    "post_url": post_url,
+                    "image_url": post.get('image_url'),
+                    "image_degraded": post.get('image_degraded', False),
+                    "page_id": post['page_id'],
+                }
+                with open(f"{WORKSPACE}/data/linkedin-posted-audit/{TODAY}.json", "w") as af:
+                    json.dump(audit, af, ensure_ascii=False, indent=2)
+                print(f"Audit saved: data/linkedin-posted-audit/{TODAY}.json")
+
+                # Decision 10: Post-publish verification (read-back)
+                import time
+                print("Waiting 60s for LinkedIn propagation before verification...")
+                time.sleep(60)
+                verify_result = sp.run(
+                    ["python3", direct_post_script, "--verify", post_url,
+                     "--expected-length", str(len(post['content']))],
+                    capture_output=True, text=True, timeout=30,
+                )
+                if "TRUNCATED" in verify_result.stdout:
+                    pct = re.search(r'(\d+)%', verify_result.stdout)
+                    pct_val = int(pct.group(1)) if pct else 0
+                    if pct_val < 50:
+                        print(f"\U0001f534 CRITICAL: Post truncated to {pct_val}% - auto-deleting!")
+                        sp.run(
+                            ["python3", direct_post_script, "--delete", post_url],
+                            capture_output=True, timeout=30,
+                        )
+                        print("DELETED_TRUNCATED_POST")
+                    else:
+                        print(f"\u26a0\ufe0f WARNING: Post may be truncated ({pct_val}%)")
+                elif "VERIFIED" in verify_result.stdout:
+                    print("\u2705 Post verified - content matches")
+
+                # Telegram confirmation
+                degraded_note = " (\u26a0\ufe0f without image - degraded)" if post.get('image_degraded') else ""
+                send_telegram_confirmation(post_url, post['title'], post.get('image_url'))
+                print(f"POSTED_AUTONOMOUS{degraded_note}")
+                return
+            else:
+                print(f"\u26a0\ufe0f Direct-post did not return URL. Falling back to agent mode.")
+                if stderr:
+                    print(f"  stderr: {stderr[:300]}")
+        except sp.TimeoutExpired:
+            print("\u26a0\ufe0f Direct-post timed out. Falling back to agent mode.")
+        except Exception as e:
+            print(f"\u26a0\ufe0f Direct-post error: {e}. Falling back to agent mode.")
+
+    # Fallback: agent-assisted posting
+    print(f"\nPOST_URL_UPDATE_CMD: python3 scripts/linkedin-auto-poster.py --update-url '<POST_URL>' --page-id {post['page_id']}")
     print(f"READY_TO_POST")
 
 if __name__ == "__main__":

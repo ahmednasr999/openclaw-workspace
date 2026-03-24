@@ -2,153 +2,56 @@
   "meta": {
     "agent": "email-agent",
     "version": "3.0.0",
-    "generated_at": "2026-03-24T06:41:44.316675+02:00",
-    "duration_ms": 133712,
+    "generated_at": "2026-03-24T10:15:37.983829+02:00",
+    "duration_ms": 18308,
     "ttl_hours": 4,
-    "status": "partial",
-    "error": "name 'WORKSPACE' is not defined",
-    "run_id": "0740acc7",
+    "status": "success",
+    "error": null,
+    "run_id": "93ba5d6e",
     "retries_used": 0,
-    "data_freshness": "stale"
+    "data_freshness": "fresh"
   },
   "data": {
-    "scan_time": "2026-03-22T20:00:12.040114+02:00",
-    "total_scanned": 50,
+    "status": "ok",
+    "scan_time": "2026-03-24T10:15:21.942055+02:00",
+    "total_scanned": 0,
     "by_category": {
       "interview_invite": 0,
-      "recruiter_reach": 8,
-      "application_ack": 1,
+      "recruiter_reach": 0,
+      "application_ack": 0,
       "rejection": 0,
-      "assessment": 1,
-      "follow_up_needed": 1,
-      "other": 39
+      "assessment": 0,
+      "follow_up_needed": 0,
+      "other": 0
     },
     "interview_invites": [],
-    "recruiter_messages": [
-      {
-        "id": "38248",
-        "from": "Solomon Nartey <invitations@linkedin.com>",
-        "subject": "I want to connect",
-        "date": "Sun, 22 Mar 2026 17:30:34 +0000 (UTC)",
-        "unread": false
-      },
-      {
-        "id": "38224",
-        "from": "Alina Timofeeva via LinkedIn <messaging-digest-noreply@linkedin.com>",
-        "subject": "Alina just messaged you",
-        "date": "Sun, 22 Mar 2026 12:03:57 +0000 (UTC)",
-        "unread": false
-      },
-      {
-        "id": "38221",
-        "from": "Marwa Ahmed via LinkedIn <messaging-digest-noreply@linkedin.com>",
-        "subject": "Marwa just messaged you",
-        "date": "Sun, 22 Mar 2026 10:18:45 +0000 (UTC)",
-        "unread": false
-      },
-      {
-        "id": "38217",
-        "from": "Marwa Ahmed via LinkedIn <messaging-digest-noreply@linkedin.com>",
-        "subject": "Marwa just messaged you",
-        "date": "Sun, 22 Mar 2026 09:48:58 +0000 (UTC)",
-        "unread": false
-      },
-      {
-        "id": "38216",
-        "from": "Najwa Bakhsh via LinkedIn <messages-noreply@linkedin.com>",
-        "subject": "Najwa just messaged you",
-        "date": "Sun, 22 Mar 2026 09:31:23 +0000 (UTC)",
-        "unread": false
-      },
-      {
-        "id": "38215",
-        "from": "Najwa Bakhsh <invitations@linkedin.com>",
-        "subject": "I want to connect",
-        "date": "Sun, 22 Mar 2026 09:30:34 +0000 (UTC)",
-        "unread": false
-      },
-      {
-        "id": "38214",
-        "from": "Ahmed Zarour via LinkedIn <messages-noreply@linkedin.com>",
-        "subject": "Ahmed just messaged you",
-        "date": "Sun, 22 Mar 2026 09:25:00 +0000 (UTC)",
-        "unread": false
-      },
-      {
-        "id": "38206",
-        "from": "\"Indeed Apply\" <indeedapply@indeed.com>",
-        "subject": "Indeed Application: Strategy & Transformation Director",
-        "date": "Sun, 22 Mar 2026 07:36:11 +0000",
-        "unread": false
-      }
-    ],
-    "application_acks": [
-      {
-        "id": "38209",
-        "from": "System System <system@successfactors.eu>",
-        "subject": "PwC Careers: Thank you for your Application",
-        "date": "Sun, 22 Mar 2026 07:48:07 +0000 (UTC)",
-        "unread": false
-      }
-    ],
+    "recruiter_messages": [],
+    "application_acks": [],
     "rejections": [],
-    "assessments": [
-      {
-        "id": "38250",
-        "from": "Neil Patel <np@neilpatel.com>",
-        "subject": "One dashboard. SEO, GEO, and AEO =?UTF-8?B?4oCU?= all in one place.",
-        "date": "Sun, 22 Mar 2026 17:37:04 +0000 (UTC)",
-        "unread": false
-      }
-    ],
-    "follow_ups_needed": [
-      {
-        "id": "38233",
-        "from": "Fintech Brainfood by Simon Taylor <sytaylor@mail.beehiiv.com>",
-        "subject": "=?UTF-8?B?8J+noA==?= Mastercard Pays $1.8bn for BVNK & Is Private\r\n Credit Cooked?",
-        "date": "Sun, 22 Mar 2026 14:01:12 +0000 (UTC)",
-        "unread": false
-      }
-    ],
-    "actionable_count": 2,
+    "assessments": [],
+    "follow_ups_needed": [],
+    "actionable_count": 0,
+    "hot_alerts": [],
+    "signals": [],
     "llm_analysis": {
-      "actionable_emails": [
-        {
-          "id": "38250",
-          "subject": "One dashboard. SEO, GEO, and AEO all in one place.",
-          "from": "Neil Patel <np@neilpatel.com>",
-          "date": "Sun, 22 Mar 2026 17:37:04 +0000 (UTC)",
-          "category": "assessment",
-          "urgency": "low",
-          "intent": "Neil Patel is promoting his all-in-one SEO/GEO/AEO analytics dashboard as a product pitch.",
-          "action": "no_action",
-          "response_deadline": "when convenient",
-          "notes": "Marketing/newsletter content; no response required unless evaluating their tool for business use."
-        },
-        {
-          "id": "38233",
-          "subject": "Mastercard Pays $1.8bn for BVNK & Is Private Credit Cooked?",
-          "from": "Fintech Brainfood by Simon Taylor <sytaylor@mail.beehiiv.com>",
-          "date": "Sun, 22 Mar 2026 14:01:12 +0000 (UTC)",
-          "category": "follow_up_needed",
-          "urgency": "low",
-          "intent": "Simon Taylor is sharing fintech market intelligence (Mastercard's BVNK acquisition) and inviting engagement or follow-up discussion.",
-          "action": "read_and_file",
-          "response_deadline": "when convenient",
-          "notes": "Industry intelligence; file for Gulf fintech context if relevant to current PMO/AI work."
-        }
-      ],
+      "actionable_emails": [],
       "summary": {
-        "total_actionable": 2,
+        "total_actionable": 0,
         "critical_count": 0,
         "requires_interview_prep": false,
         "requires_assessment": false,
         "recruiter_top_opportunities": [],
         "top_priority": null,
-        "daily_focus": "No urgent recruiter or interview action today - use this window to advance pipeline applications or draft a strategic post while inbox is quiet."
+        "daily_focus": "No actionable emails detected. Focus on proactive outreach, pipeline building, and LinkedIn engagement while monitoring for new opportunities."
       }
     }
   },
-  "kpi": {},
+  "kpi": {
+    "emails_processed": 0,
+    "actionable": 0,
+    "interviews_detected": 0,
+    "recruiter_messages": 0,
+    "unread_actionable": 0
+  },
   "recommendations": []
 }

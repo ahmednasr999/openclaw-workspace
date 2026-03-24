@@ -43,6 +43,7 @@ Minimum 82% ATS fit score before delivering. Below 82% = flag as REVIEW, require
 - If exists, confirm with user before rebuilding
 
 ### Step 3: Tailoring
+- Extract exact quotes from `memory/master-cv-data.md` before writing any bullet point. Never paraphrase from memory - pull the exact title, date, metric, or achievement verbatim first, then tailor around it.
 - Write custom Professional Summary (not template, not copy-paste from another CV)
 - Select and order Core Competencies to match JD keywords
 - Reorder experience bullets per JD priority (most relevant first)

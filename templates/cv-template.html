@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Ahmed Nasr - {role_title}</title>
+<style>
+  * {{ margin: 0; padding: 0; box-sizing: border-box; }}
+  body {{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10.5pt;
+    line-height: 1.45;
+    color: #111;
+    background: #fff;
+    padding: 18mm 18mm 16mm 18mm;
+  }}
+  .header-name {{ font-size: 20pt; font-weight: bold; color: #111; margin-bottom: 4pt; }}
+  .header-contact {{ font-size: 9.5pt; color: #444; margin-bottom: 10pt; }}
+  .header-divider {{ border: none; border-top: 2px solid #111; margin-bottom: 10pt; }}
+  h2 {{
+    font-size: 10.5pt; font-weight: bold; text-transform: uppercase;
+    letter-spacing: 0.6pt; color: #111; border-bottom: 1pt solid #aaa;
+    padding-bottom: 2pt; margin-top: 12pt; margin-bottom: 6pt;
+  }}
+  .summary {{ margin-bottom: 4pt; font-size: 10.5pt; }}
+  .skills-list {{ font-size: 10pt; margin-bottom: 4pt; }}
+  .job {{ margin-bottom: 9pt; }}
+  .job-row {{ overflow: hidden; margin-bottom: 1pt; }}
+  .job-title {{ font-weight: bold; font-size: 10.5pt; }}
+  .job-date {{ float: right; font-size: 9.5pt; color: #555; white-space: nowrap; }}
+  .job-company {{ font-size: 9.5pt; color: #444; margin-bottom: 4pt; font-style: italic; }}
+  ul {{ margin-left: 15pt; margin-bottom: 0; }}
+  ul li {{ margin-bottom: 2.5pt; font-size: 10.5pt; }}
+  .education {{ margin-bottom: 3pt; }}
+  .edu-title {{ font-weight: bold; font-size: 10.5pt; }}
+  .edu-detail {{ font-size: 9.5pt; color: #444; }}
+  .certs {{ font-size: 10pt; }}
+  @page {{
+    margin: 15mm 18mm 16mm 18mm;
+    @top-left {{ content: none; }}
+    @top-center {{ content: none; }}
+    @top-right {{ content: none; }}
+    @bottom-left {{ content: none; }}
+    @bottom-center {{ content: none; }}
+    @bottom-right {{ content: none; }}
+  }}
+  @media print {{ body {{ padding: 0; }} }}
+</style>
+</head>
+<body>
+{body_html}
+</body>
+</html>

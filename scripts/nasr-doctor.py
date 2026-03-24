@@ -423,6 +423,29 @@ def check_pipeline_db_tests():
         check("Pipeline DB Tests", Result.WARN, f"Error: {e}")
 
 
+def check_email_tests():
+    """Run Email Agent test suite."""
+    test_path = WORKSPACE / "scripts" / "test-email-agent.py"
+    if not test_path.exists():
+        check("Email Tests", Result.WARN, "test-email-agent.py missing")
+        return
+    try:
+        r = subprocess.run(
+            ["python3", str(test_path)],
+            capture_output=True, text=True, timeout=30
+        )
+        lines = r.stdout.strip().split("\n")
+        result_line = lines[-1] if lines else ""
+        if r.returncode == 0:
+            check("Email Tests", Result.OK, result_line)
+        else:
+            check("Email Tests", Result.WARN, f"Failures: {result_line}")
+    except subprocess.TimeoutExpired:
+        check("Email Tests", Result.WARN, "Timed out after 30s")
+    except Exception as e:
+        check("Email Tests", Result.WARN, f"Error: {e}")
+
+
 def check_cv_tests():
     """Run CV builder test suite."""
     test_path = WORKSPACE / "scripts" / "test-cv-builder.py"
@@ -642,6 +665,7 @@ def main():
     check_cv_tests()
     check_linkedin_tests()
     check_pipeline_db_tests()
+    check_email_tests()
     check_pipeline()
     check_pipeline_db()
     check_memory()

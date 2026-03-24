@@ -82,6 +82,10 @@ SECRET_PATTERNS = [
     (r'\bak_[a-zA-Z0-9]{20,}\b', "Composio API key"),
     (r'\bsk-[a-zA-Z0-9]{20,}\b', "OpenAI API key"),
     (r'xoxb-[0-9]+-[0-9]+-[a-zA-Z0-9]+', "Slack bot token"),
+    (r'APP_PASSWORD\s*=\s*"[^"]{10,}"', "Hardcoded app password"),
+    (r'BOT_TOKEN\s*=\s*"[^"]{10,}"', "Hardcoded bot token"),
+    (r'GMAIL_APP_PASSWORD\s*=\s*"[^"]{8,}"', "Hardcoded Gmail password"),
+    (r'"app_password"\s*:\s*"[^"]{8,}"', "Hardcoded password in JSON literal"),
 ]
 
 # Allowed: Notion token (needed in scripts that call Notion API directly)
