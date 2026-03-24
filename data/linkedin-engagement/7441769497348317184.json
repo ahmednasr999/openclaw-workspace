@@ -17,6 +17,31 @@
           "time": 1774256566126
         }
       ]
+    },
+    {
+      "checked_at": "2026-03-24T10:04:53.892201+00:00",
+      "reaction_count": 0,
+      "reaction_types": {},
+      "reactions": []
+    },
+    {
+      "checked_at": "2026-03-24T10:05:19.773732+00:00",
+      "reaction_count": 2,
+      "reaction_types": {
+        "LIKE": 2
+      },
+      "reactions": [
+        {
+          "actor": "",
+          "type": "LIKE",
+          "time": "2026-03-23T13:10:26.854000+00:00"
+        },
+        {
+          "actor": "",
+          "type": "LIKE",
+          "time": "2026-03-23T09:02:46.126000+00:00"
+        }
+      ]
     }
   ]
 }

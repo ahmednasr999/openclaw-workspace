@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-03-24T10:01:27.063204+02:00",
-    "duration_ms": 85797,
+    "generated_at": "2026-03-24T14:01:39.072279+02:00",
+    "duration_ms": 97680,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "3fb839e0",
+    "run_id": "10eb0992",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -52,6 +52,48 @@
       "filter_reason": null
     },
     {
+      "id": "indeed-in-cc1e6913ad154f35",
+      "source": "indeed",
+      "title": "Project Director",
+      "company": "Egis Group",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=cc1e6913ad154f35",
+      "posted": "2026-03-24",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 23,
+      "match_keywords": [
+        "ai",
+        "infrastructure",
+        "director",
+        "architecture"
+      ],
+      "raw_snippet": "**Company Description**  \n\nEgis is an international player active in architecture, consulting, construction engineering and mobility services. We create and operate intelligent infrastructures and buildings that respond to the climate emergency and contribute to more balanced, sustainable and resilient territorial development. Operating in 100 countries, Egis puts the expertise of its 19,500 employees at the service of its clients and develops cutting\\-edge innovations accessible to all projects",
+      "relevant": true,
+      "filter_reason": null
+    },
+    {
+      "id": "indeed-in-4cc935c4a31f1a8b",
+      "source": "indeed",
+      "title": "Corporate Advisory Director",
+      "company": "Confidential",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=4cc935c4a31f1a8b",
+      "posted": "2026-03-24",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 23,
+      "match_keywords": [
+        "ai",
+        "director",
+        "growth",
+        "api"
+      ],
+      "raw_snippet": "**Role Summary**\n\nThe Corporate Advisory Director will lead client advisory engagements, providing strategic guidance on corporate finance, M\\&A, capital structure, and broader business transformation initiatives. The role is responsible for originating and managing client relationships, overseeing transaction execution, and driving revenue growth for the firm.\n\n**Key Responsibilities**\n\n* Lead end\u2011to\u2011end advisory engagements (strategy, corporate finance, M\\&A, restructuring, capital raising) fr",
+      "relevant": true,
+      "filter_reason": null
+    },
+    {
       "id": "indeed-in-a8a7fd85dbf84323",
       "source": "indeed",
       "title": "Director of Front Office \u2013 Curator of Guest Experience at Kimpton Sevn Dubai (Pre-Opening)",
@@ -69,25 +111,6 @@
         "dubai"
       ],
       "raw_snippet": "**Director of Front Office\\- Curator of Guest Experience**\n==========================================================\n\n### **Kimpton Sevn Dubai (Pre\\-Opening)**\n\n**Reporting to: Hotel Manager**\n\n\nAt Kimpton Sevn Dubai, we are seeking a **Director of Front Office**\u2014a charismatic, service\\-driven leader who brings energy, personality, and operational excellence to every guest interaction.\n\n\nThis role is ideal for a hospitality professional who thrives in dynamic environments, loves connecting with",
-      "relevant": true,
-      "filter_reason": null
-    },
-    {
-      "id": "indeed-in-8f603ac1283c89f5",
-      "source": "indeed",
-      "title": "Chief Financial Officer",
-      "company": "Trilogy Fab Trailers Manufacturing One Owner Company L. L. C",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=8f603ac1283c89f5",
-      "posted": "2026-03-23",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 6,
-      "match_keywords": [
-        "uae",
-        "api"
-      ],
-      "raw_snippet": "The CFO will lead the company\u2019s financial strategy and operations, with a strong focus on project\\-based financial management, profitability, and compliance within the UAE contracting sector.\n\n**Key Responsibilities:**\n\n* Oversee financial planning, budgeting, and forecasting\n* Manage project costing, cash flow, and working capital\n* Ensure UAE VAT and regulatory compliance\n* Monitor contract revenue, costs, and variations\n* Advise management on financial performance and risks\n* Lead finance tea",
       "relevant": true,
       "filter_reason": null
     },
@@ -111,13 +134,33 @@
       "raw_snippet": "Position Overview\n  \nA prestigious healthcare institution in Qatar is seeking a highly qualified Head of Department for Pediatrics to lead its pediatric division. The ideal candidate must be American Board Certified in Pediatrics and fluent in Arabic, with a strong background in clinical leadership, multidisciplinary collaboration, and patient\\-centered care. This is a senior leadership role responsible for shaping pediatric services, driving clinical excellence, and mentoring the next generatio",
       "relevant": true,
       "filter_reason": null
+    },
+    {
+      "id": "indeed-in-31dee93c40ff6851",
+      "source": "indeed",
+      "title": "Senior Manager Business Support & Financial Control",
+      "company": "Qatar Airways",
+      "location": "Doha, DAW, QA",
+      "url": "https://qa.indeed.com/viewjob?jk=31dee93c40ff6851",
+      "posted": "2026-03-24",
+      "seniority": "Other",
+      "domain_match": false,
+      "keyword_score": 20,
+      "match_keywords": [
+        "ai",
+        "executive",
+        "leadership"
+      ],
+      "raw_snippet": "Job title\nSenior Manager Business Support \\& Financial Control\nRef \\#\n232125\nLocation\nQatar \\- Doha\nJob family\nCorporate \\& Commercial\n* Closing date: 07\\-Apr\\-2026\n\n  \n\n**About Your Role**\n\n\nYou will create added value for the Qatar Airways Group by building strong, trusted partnerships with finance and operational stakeholders through strategic analysis, financial leadership, and insightful reporting. Acting as the primary business partner for senior and executive management, you will bridge F",
+      "relevant": true,
+      "filter_reason": null
     }
   ],
   "kpi": {
     "searches_run": 81,
-    "results_per_search": 0.83,
-    "unique_jobs": 5,
-    "errors": 53
+    "results_per_search": 1.07,
+    "unique_jobs": 7,
+    "errors": 42
   },
   "recommendations": []
 }

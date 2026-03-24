@@ -80,6 +80,9 @@ skill-name/
 
 **Rule:** The stress test catches 80% of design gaps before they hit production. It's not optional.
 
+**Post-build reminder (mandatory, non-negotiable):**
+Every time ANYTHING is built, modified, or extended — regardless of whether the user asks — the post-build grill-me check fires automatically. If the user says "are you done?" and grill-me hasn't run yet, treat that as a failure. The user should never have to remind you. The signal is: build completed = grill-me triggered.
+
 ---
 
 ## Spec-Driven Development (Auto-Trigger)

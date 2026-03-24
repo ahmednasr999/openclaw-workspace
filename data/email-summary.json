@@ -2,56 +2,104 @@
   "meta": {
     "agent": "email-agent",
     "version": "3.0.0",
-    "generated_at": "2026-03-24T10:15:37.983829+02:00",
-    "duration_ms": 18308,
+    "generated_at": "2026-03-24T19:00:45.540552+02:00",
+    "duration_ms": 31767,
     "ttl_hours": 4,
     "status": "success",
     "error": null,
-    "run_id": "93ba5d6e",
+    "run_id": "a964681b",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
     "status": "ok",
-    "scan_time": "2026-03-24T10:15:21.942055+02:00",
-    "total_scanned": 0,
+    "scan_time": "2026-03-24T19:00:23.496997+02:00",
+    "total_scanned": 10,
     "by_category": {
-      "interview_invite": 0,
+      "interview_invite": 1,
       "recruiter_reach": 0,
       "application_ack": 0,
       "rejection": 0,
       "assessment": 0,
       "follow_up_needed": 0,
-      "other": 0
+      "other": 9
     },
-    "interview_invites": [],
+    "interview_invites": [
+      {
+        "id": "349973",
+        "from": "Quanterion Solutions Incorporated <reliability@quanterion.com>",
+        "subject": "Get the Early Bird Discount for Reliability Training!",
+        "date": "Tue, 24 Mar 2026 12:10:11 -0400 (EDT)",
+        "unread": true,
+        "priority": "HIGH",
+        "score": 7,
+        "pipeline_match": null
+      }
+    ],
     "recruiter_messages": [],
     "application_acks": [],
     "rejections": [],
     "assessments": [],
     "follow_ups_needed": [],
-    "actionable_count": 0,
-    "hot_alerts": [],
+    "actionable_count": 1,
+    "hot_alerts": [
+      {
+        "subject": "Get the Early Bird Discount for Reliability Training!",
+        "from": "Quanterion Solutions Incorporated <reliability@quanterion.com>",
+        "priority": "HIGH",
+        "pipeline_match": null
+      }
+    ],
     "signals": [],
     "llm_analysis": {
-      "actionable_emails": [],
+      "actionable_emails": [
+        {
+          "id": "349973",
+          "subject": "Get the Early Bird Discount for Reliability Training!",
+          "from": "Quanterion Solutions Incorporated <reliability@quanterion.com>",
+          "date": "Tue, 24 Mar 2026",
+          "category": "interview_invite",
+          "urgency": "low",
+          "intent": "Quanterion Solutions is promoting their reliability training course and offering an early bird discount \u2014 this is a marketing/promotional email, NOT an interview invite.",
+          "action": "no_action",
+          "response_deadline": "when convenient",
+          "notes": "Category mismatch: subject is marketing, not interview. No action needed unless training is strategically relevant."
+        }
+      ],
       "summary": {
-        "total_actionable": 0,
+        "total_actionable": 1,
         "critical_count": 0,
         "requires_interview_prep": false,
         "requires_assessment": false,
         "recruiter_top_opportunities": [],
         "top_priority": null,
-        "daily_focus": "No actionable emails detected. Focus on proactive outreach, pipeline building, and LinkedIn engagement while monitoring for new opportunities."
+        "daily_focus": "No genuine interview, recruiter, or assessment emails detected. The pattern-matched category appears incorrect for this email \u2014 consider refining the category rules or checking if other emails were missed."
       }
     }
   },
   "kpi": {
-    "emails_processed": 0,
-    "actionable": 0,
-    "interviews_detected": 0,
+    "emails_processed": 10,
+    "actionable": 1,
+    "interviews_detected": 1,
     "recruiter_messages": 0,
-    "unread_actionable": 0
+    "unread_actionable": 1
   },
-  "recommendations": []
+  "recommendations": [
+    {
+      "id": "rec-a964681b-0",
+      "action": "respond_immediately",
+      "target": "1 interview invite(s)",
+      "reason": "Interview invitations require prompt response",
+      "urgency": "critical",
+      "timestamp": "2026-03-24T19:00:45.540215+02:00"
+    },
+    {
+      "id": "rec-a964681b-1",
+      "action": "check_inbox",
+      "target": "1 unread actionable email(s)",
+      "reason": "Unread emails need attention",
+      "urgency": "high",
+      "timestamp": "2026-03-24T19:00:45.540233+02:00"
+    }
+  ]
 }

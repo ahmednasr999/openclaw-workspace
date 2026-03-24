@@ -4,8 +4,8 @@
 Post today's scheduled LinkedIn content. Script is end-to-end autonomous.
 
 ## NON-NEGOTIABLE RULES
-1. Run the script. It does EVERYTHING: extract, score, rewrite if needed, post, verify, update Notion.
-2. Your ONLY job is to run it, read the output, and report to Ahmed.
+1. Run the script. It handles: extract from Notion, score, rewrite if needed, image download, payload prep.
+2. After `READY_TO_POST`: use Composio to post. This is the primary posting method — no cookies needed, supports up to 3,000 chars and images.
 3. Weekend (Fri/Sat in Egypt) = skip.
 
 ## Step 1: Run the script
@@ -21,26 +21,42 @@ cd /root/.openclaw/workspace && python3 scripts/linkedin-auto-poster.py 2>&1
 | `QUALITY_HOLD` | Report score, failed questions, and that rewrite also failed. STOP. |
 | `IMAGE_HOLD` | Report image failure + score too low for text-only. STOP. |
 | `POSTED_AUTONOMOUS` | Report success: title, URL, score, image yes/no. DONE. |
-| `READY_TO_POST` | Direct-post failed. Fall back to Step 3 (agent-assisted). |
+| `READY_TO_POST` | Script prep done. Use Composio to post (Step 3 — primary method, no cookies needed). |
 | `DELETED_TRUNCATED_POST` | Report "Post was truncated and auto-deleted. Manual review needed." STOP. |
 
-## Step 3: Agent-assisted fallback (ONLY if direct-post failed)
+## Step 3: Post via Composio (primary method — no cookies needed)
+
+Composio is the posting engine. It supports up to 3,000 chars and images. No cookies required.
 
 Read the payload:
 ```bash
 cat /tmp/linkedin-post-payload.json
 ```
 
-Post using `linkedin-direct-post.py` manually:
-```bash
-cd /root/.openclaw/workspace && python3 scripts/linkedin-direct-post.py --text-file /tmp/linkedin-post-text.txt [--image /tmp/linkedin-post-image.png]
-```
+**If payload has `"image_path"` (image required):**
 
-If direct-post cookies are expired, use Composio as last resort (posts under 950 chars ONLY):
+1. Read the image path from the payload (field: `image_path`).
+
+2. Upload to Composio S3 via `COMPOSIO_REMOTE_WORKBENCH`:
+   - Use `upload_local_file(image_path)` in the workbench
+   - This returns an s3key in format: `project/pr_DBp_8iitCrNe/tool_router_session/trs_OOc0h6Vp0j01/{random_id}`
+   - Extract the `s3key` from the result
+
+3. Create post with the s3key:
+   - tool: `LINKEDIN_CREATE_LINKED_IN_POST`
+   - author: `urn:li:person:mm8EyA56mj`
+   - commentary: EXACT content from payload (already has Unicode bold)
+   - images: `[{"name": "image.png", "s3key": "<s3key from step 2>", "mimetype": "image/png"}]`
+   - visibility: `PUBLIC`
+
+**If no image (text-only):**
+
 - tool: `LINKEDIN_CREATE_LINKED_IN_POST`
 - author: `urn:li:person:mm8EyA56mj`
-- commentary: EXACT content from payload (already has Unicode bold)
+- commentary: EXACT content from payload
 - visibility: `PUBLIC`
+
+Extract the post URL from Composio's response (`https://www.linkedin.com/feed/update/...`).
 
 After posting, close the loop:
 ```bash
