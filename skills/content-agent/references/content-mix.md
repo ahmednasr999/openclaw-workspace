@@ -19,22 +19,22 @@
 
 ## Current Status
 
-_Updated by LEARN layer each Sunday._
+_Updated by content-learn.py on 2026-03-24 10:37 Cairo._
 
 | Type | Last 4 Weeks | Target | Delta |
 |------|-------------|--------|-------|
-| Story | — | 30% | — |
-| Expertise | — | 25% | — |
-| Opinion | — | 20% | — |
-| Data | — | 15% | — |
-| BTS | — | 10% | — |
+| Story | 33.3% | 30% | +3.3% |
+| Expertise | 66.7% | 25% | +41.7% |
+| Opinion | 0% | 20% | -20% |
+| Data | 0% | 15% | -15% |
+| Bts | 0% | 10% | -10% |
 
 ## Pillar Distribution (Last 4 Weeks)
 
 | Pillar | Count | % | Target Max |
 |--------|-------|---|-----------|
-| PMO | — | — | 30% |
-| DT | — | — | 30% |
-| AI | — | — | 30% |
-| GCC | — | — | 30% |
-| Leadership | — | — | 30% |
+| PMO | 0 | 0% | 30% |
+| TRANSFORMATION | 1 | 33.3% | 30% |
+| AI | 0 | 0% | 30% |
+| LEADERSHIP | 0 | 0% | 30% |
+| PERSONAL | 2 | 66.7% | 30% |

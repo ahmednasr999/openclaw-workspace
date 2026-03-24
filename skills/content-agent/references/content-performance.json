@@ -2,15 +2,20 @@
   "metadata": {
     "description": "Rolling performance database. Never delete entries. Updated by LEARN layer every Sunday.",
     "created": "2026-03-23",
-    "last_updated": null,
-    "total_posts_tracked": 0,
+    "last_updated": "2026-03-24T10:37:44.474079+02:00",
+    "total_posts_tracked": 3,
     "schema_version": "2",
     "reaction_tracking": {
       "enabled": true,
       "script": "scripts/linkedin-reaction-tracker.py",
       "registry": "data/linkedin-posts.json",
       "snapshots_dir": "data/linkedin-engagement/",
-      "intervals_hours": [1, 24, 48, 168],
+      "intervals_hours": [
+        1,
+        24,
+        48,
+        168
+      ],
       "cron": "0 */6 * * *"
     }
   },
@@ -49,5 +54,63 @@
       "notes": "free text"
     }
   },
-  "posts": []
+  "posts": [
+    {
+      "date": "2026-03-23",
+      "title": "I almost lost a $50M transformation because I forg",
+      "post_type": "story",
+      "pillar": "transformation",
+      "hook_style": "curiosity_gap",
+      "hook_text": "Stakeholder mapping.",
+      "char_count": 0,
+      "has_image": true,
+      "image_genre": "none",
+      "activity_urn": "",
+      "post_url": "https://www.linkedin.com/feed/update/7441748599270621184",
+      "reactions": 0,
+      "comments": 0,
+      "reposts": 0,
+      "engagement_rate": null,
+      "impressions": null,
+      "notes": ""
+    },
+    {
+      "date": "2026-03-19",
+      "title": "Pursuing an MBA at 40+ while leading a $50M progra",
+      "post_type": "expertise",
+      "pillar": "personal",
+      "hook_style": "curiosity_gap",
+      "hook_text": "",
+      "char_count": 0,
+      "has_image": true,
+      "image_genre": "none",
+      "activity_urn": "",
+      "post_url": "https://www.linkedin.com/feed/update/urn:li:share:7440299301513113600",
+      "reactions": 3,
+      "comments": 0,
+      "reposts": 0,
+      "engagement_rate": null,
+      "impressions": null,
+      "notes": ""
+    },
+    {
+      "date": "2026-03-18",
+      "title": "Intel taught me precision.",
+      "post_type": "expertise",
+      "pillar": "personal",
+      "hook_style": "curiosity_gap",
+      "hook_text": "",
+      "char_count": 0,
+      "has_image": true,
+      "image_genre": "none",
+      "activity_urn": "",
+      "post_url": "https://www.linkedin.com/feed/update/urn:li:share:7439963712700002304",
+      "reactions": 0,
+      "comments": 0,
+      "reposts": 0,
+      "engagement_rate": null,
+      "impressions": null,
+      "notes": ""
+    }
+  ]
 }
