@@ -9,6 +9,7 @@ Rate limited at 1.5s between API calls.
 Output: data/jobs-raw/exa.json
 """
 
+import hashlib
 import json
 import time
 import sys
@@ -196,7 +197,7 @@ def extract_job_from_result(result: dict, search_title: str, search_country: str
                 break
 
     # Generate stable ID
-    job_id = str(abs(hash(url)))[:10]
+    job_id = hashlib.sha256(url.encode()).hexdigest()[:12]
     posted = result.get("publishedDate", "")[:10] if result.get("publishedDate") else ""
 
     return standard_job_dict(

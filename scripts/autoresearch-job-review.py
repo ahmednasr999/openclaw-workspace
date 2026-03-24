@@ -474,8 +474,20 @@ def main():
     print(f"Run time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print("=" * 60)
 
+    # ── D7: Stale data guard ─────────────────────────────────────────────────
+    outcomes_dir = OUTCOMES_DIR
+    outcomes_dir.mkdir(parents=True, exist_ok=True)
+    latest_outcome = sorted(outcomes_dir.glob("*.json"), reverse=True)
+    if latest_outcome:
+        outcome_age = (datetime.now(timezone.utc) - datetime.fromtimestamp(latest_outcome[0].stat().st_mtime, tz=timezone.utc)).days
+        if outcome_age > 14:
+            print(f"  STALE DATA: Last outcomes snapshot is {outcome_age} days old (>14 day limit)")
+            print(f"  Skipping autoresearch - optimize on stale data = bad optimization")
+            print(f"  To resume: review some jobs so fresh outcome data is available")
+            return
+
     # ── Step 1: Load input data ───────────────────────────────────────────────
-    print("\n[1/6] Loading data sources...")
+    print("\n[1/7] Loading data sources...")
 
     applied_ids = load_applied_ids()
     print(f"  Applied IDs: {len(applied_ids)}")
@@ -489,7 +501,7 @@ def main():
     notion_skipped = get_notion_skipped_jobs(notion_token)
 
     # ── Step 2: Calculate metrics ─────────────────────────────────────────────
-    print("\n[2/6] Calculating accuracy metrics...")
+    print("\n[2/7] Calculating accuracy metrics...")
 
     # Determine which SUBMIT jobs were actually applied vs skipped
     # A SUBMIT job is "applied" if its ID appears in applied-job-ids.txt
@@ -553,7 +565,7 @@ def main():
     print(f"  Miss rate: {miss_rate:.1%} (target: <10%)")
 
     # ── Step 3: Extract skip patterns ─────────────────────────────────────────
-    print("\n[3/6] Extracting skip patterns...")
+    print("\n[3/7] Extracting skip patterns...")
 
     pattern_counts: dict[str, int] = {}
     skipped_with_patterns = []
@@ -569,7 +581,7 @@ def main():
         print(f"    {pattern}: {count} jobs")
 
     # ── Step 4: Load current prompt ───────────────────────────────────────────
-    print("\n[4/6] Reading current prompt from jobs-review.py...")
+    print("\n[4/7] Reading current prompt from jobs-review.py...")
 
     with open(JOBS_REVIEW_SCRIPT) as f:
         script_content = f.read()
@@ -587,7 +599,7 @@ def main():
         current_prompt_block = "# Prompt block not extracted — check jobs-review.py manually"
 
     # ── Step 5: Generate improved prompt ──────────────────────────────────────
-    print("\n[5/6] Generating improved prompt candidate...")
+    print("\n[5/7] Generating improved prompt candidate...")
 
     log = load_autoresearch_log()
     version = get_next_version(log)
@@ -627,8 +639,33 @@ def main():
         prompt_file = "none"
         print("  No prompt candidate generated.")
 
-    # ── Step 6: Log iteration and save outcomes ───────────────────────────────
-    print("\n[6/6] Logging iteration and committing...")
+    # ── Step 6: Backtest candidate (D7) ─────────────────────────────────────
+    # Compare new prompt against last 50 reviewed jobs to measure improvement
+    backtest_result = None
+    if improved_prompt and total_skipped > 0:
+        print("\n[6/7] Backtesting candidate against historical outcomes...")
+        # Use the skipped + applied jobs as test set
+        test_jobs = applied_in_submit[:25] + skipped_in_submit[:25]
+        if len(test_jobs) >= 10:
+            print(f"  Test set: {len(test_jobs)} jobs ({len(applied_in_submit[:25])} applied, {len(skipped_in_submit[:25])} skipped)")
+            # Note: Full backtesting requires running the new prompt through LLM on test_jobs.
+            # For now, log that backtesting was considered. Full implementation requires:
+            # 1. Run new prompt on test_jobs via LLM
+            # 2. Compare new verdicts against actual outcomes
+            # 3. Measure: miss_rate_new vs miss_rate_old, false_positive_rate delta
+            backtest_result = {
+                "test_set_size": len(test_jobs),
+                "status": "logged_for_manual_review",
+                "note": "Auto-backtest pending LLM integration. Review prompt candidate manually.",
+            }
+            print(f"  Backtest: logged for manual review ({len(test_jobs)} test jobs)")
+        else:
+            print(f"  Insufficient test data ({len(test_jobs)} < 10 jobs). Skipping backtest.")
+    else:
+        print("\n[6/7] Skipping backtest (no candidate generated)")
+
+    # ── Step 7: Log iteration and save outcomes ───────────────────────────────
+    print("\n[7/7] Logging iteration and committing...")
 
     date_str = datetime.now().strftime("%Y-%m-%d")
     save_outcomes_snapshot(submit_jobs, skipped_in_submit, applied_ids, date_str)
@@ -650,6 +687,7 @@ def main():
             }
             for item in skipped_with_patterns
         ],
+        "backtest": backtest_result,
     }
     log["iterations"].append(iteration)
     save_autoresearch_log(log)

@@ -314,8 +314,8 @@ def run_review(result: AgentResult):
         })
         return
     
-    # Split into batches of 25 for more reliable LLM JSON output
-    BATCH_SIZE = 25
+    # D4: Smaller batches (5) for more reliable JSON + better calibration
+    BATCH_SIZE = 5
     
     # Parallelize batches using ThreadPoolExecutor
     def process_batch(batch_start):
@@ -389,7 +389,36 @@ def run_review(result: AgentResult):
             })
     else:
         print(f"  LLM returned {len(reviews)} reviews in {llm_latency_ms}ms")
-    
+
+    # D4: Post-LLM guardrail - sanity check LLM verdicts against title heuristics
+    SKIP_TITLE_WORDS = ["nurse","doctor","physician","chef","teacher","accountant",
+                        "receptionist","secretary","intern","trainee","beautician",
+                        "pharmacist","dentist","veterinary","physiotherapist"]
+    guardrail_overrides = 0
+    for review in reviews:
+        idx = review.get("job_num", 0) - 1
+        if 0 <= idx < len(top_jobs):
+            title_lower = top_jobs[idx].get("title", "").lower()
+            if review.get("score", 0) >= 7 and any(w in title_lower for w in SKIP_TITLE_WORDS):
+                review["verdict"] = "SKIP"
+                review["reason"] = f"[GUARDRAIL] LLM scored {review['score']} but title contains skip word: {title_lower}"
+                review["score"] = 2
+                guardrail_overrides += 1
+    if guardrail_overrides:
+        print(f"  Guardrail: overrode {guardrail_overrides} false-positive LLM scores")
+
+    # Batch calibration logging
+    batch_count = len(batch_starts)
+    if batch_count > 1:
+        scores_by_batch = {}
+        for review in reviews:
+            idx = review.get("job_num", 0) - 1
+            b = idx // BATCH_SIZE
+            scores_by_batch.setdefault(b, []).append(review.get("score", 0))
+        for b, scores in sorted(scores_by_batch.items()):
+            avg = sum(scores) / len(scores) if scores else 0
+            print(f"  Batch {b+1} calibration: avg={avg:.1f}, n={len(scores)}")
+
     # Load applied/skipped IDs for final guard
     import re as _re
     APPLIED_IDS_FILE = Path(__file__).parent.parent / "jobs-bank" / "applied-job-ids.txt"

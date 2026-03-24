@@ -16,7 +16,7 @@ v4.0 Changes (2026-03-20):
   - Parallel-safe batched API calls with rate limiting
 """
 
-import os, re, json, time, sys
+import hashlib, os, re, json, time, sys
 from datetime import datetime, timedelta
 from pathlib import Path
 
@@ -232,63 +232,50 @@ def is_priority(title, location):
     score = sum([is_csuite, is_dt, is_top_gcc])
     return score >= 2
 
-# ===================== DEDUP =====================
+# ===================== DEDUP (SQLite-based) =====================
 
-def load_notified():
-    if NOTIFIED_FILE.exists():
-        return set(re.findall(r"(\d{8,})", NOTIFIED_FILE.read_text()))
-    return set()
-
-def load_applied():
-    s = set()
-    if APPLIED_DIR.exists():
-        for f in APPLIED_DIR.iterdir():
-            if f.is_dir(): s.add(f.name.lower())
-    return s
-
-def load_pipeline():
-    companies = set()
-    skip_entries = {"company","none","date","applied","new","confidential",
-                    "target salary","total tracked","active interviews",
-                    "avg ats score (all cvs)","radar (no cv yet)",
-                    "day 30 cold","discovered mena","chief operating officer",
-                    "all feb 27 batch"}
+def _init_db():
+    """Initialize SQLite connection for dedup. Single source of truth."""
     try:
-        with open(PIPELINE_FILE) as f:
-            for line in f:
-                m = re.search(r'\|\s*(?:☑️|~~)?\s*([A-Za-z][A-Za-z0-9\s&\(\)\.]+?)\s*(?:~~)?\s*\|', line)
-                if m:
-                    c = m.group(1).strip().lower()
-                    if c and c not in skip_entries and len(c) > 3:
-                        companies.add(c)
-    except FileNotFoundError:
-        pass
-    return companies
+        sys.path.insert(0, str(SCRIPTS_DIR))
+        from jobs_db import get_db, is_duplicate as db_is_dup, upsert_job, url_hash
+        return get_db(), db_is_dup, upsert_job, url_hash
+    except Exception as e:
+        print(f"  Warning: jobs_db import failed ({e}), falling back to file dedup")
+        return None, None, None, None
 
-def is_duplicate(jid, company=""):
+_db_conn = None
+_db_is_dup = None
+_db_upsert = None
+_db_url_hash = None
+
+def is_duplicate_db(url, company=""):
+    """Check dedup via SQLite. Falls back to notified-file if DB unavailable."""
+    global _db_conn, _db_is_dup
+    if _db_conn and _db_is_dup:
+        return _db_is_dup(_db_conn, url)
+    # Fallback: file-based (legacy)
+    jid = hashlib.sha256(url.encode()).hexdigest()[:12]
     if jid in _notified:
         return True
-    slug = re.sub(r"[^a-z0-9]", "-", company.lower()).strip("-")
-    skip = {"confidential","undisclosed","company","unknown","nan",
-            "confidential-careers","new","applied","date","active-interviews",
-            "target-salary","total-tracked","radar-no-cv-yet"}
-    if slug and len(slug) > 5 and slug not in skip:
-        for app in _applied:
-            if slug == app or (len(slug) > 8 and slug in app) or (len(app) > 8 and app in slug):
-                return True
-        for pc in _pipeline:
-            if len(pc) < 5:
-                continue
-            if pc == slug:
-                return True
-            if len(pc) > 8 and len(slug) > 8:
-                if pc in slug or slug in pc:
-                    return True
     return False
 
-def save_notified(job):
+def save_to_db(job):
+    """Write job to SQLite. Also append to notified-file for backward compat."""
+    global _db_conn, _db_upsert
+    if _db_conn and _db_upsert:
+        result = _db_upsert(_db_conn, job)
+        if result == "inserted":
+            _db_conn.commit()
+    # Legacy: also write to notified file
     with open(NOTIFIED_FILE, "a") as f:
         f.write(f"\n- {job['id']}: {job['title']} at {job['company']} ({job['location']})")
+
+def load_notified():
+    """Load legacy notified set for fallback dedup."""
+    if NOTIFIED_FILE.exists():
+        return set(re.findall(r"([a-f0-9]{12}|\d{8,})", NOTIFIED_FILE.read_text()))
+    return set()
 
 # ===================== COMPOSIO MCP / EXA SEARCH =====================
 
@@ -492,7 +479,7 @@ def extract_job_from_exa_result(result, search_title="", search_country=""):
                 break
 
     # Generate stable ID from URL
-    jid = str(abs(hash(url)))[:10]
+    jid = hashlib.sha256(url.encode()).hexdigest()[:12]
 
     return {
         "id": jid,
@@ -541,7 +528,7 @@ def extract_job_from_citation(citation, search_title="", search_country=""):
                 location = country
                 break
 
-    jid = str(abs(hash(url)))[:10]
+    jid = hashlib.sha256(url.encode()).hexdigest()[:12]
 
     return {
         "id": jid,
@@ -766,11 +753,9 @@ def trigger_auto_cv(job):
 # ===================== MAIN =====================
 
 _notified = set()
-_applied  = set()
-_pipeline = set()
 
 def main():
-    global _notified, _applied, _pipeline
+    global _notified, _db_conn, _db_is_dup, _db_upsert, _db_url_hash
 
     start = time.time()
     ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -794,10 +779,13 @@ def main():
         sys.exit(1)
     print("  MCP session initialized ✓")
 
+    # Initialize SQLite dedup (primary) + file fallback
+    _db_conn, _db_is_dup, _db_upsert, _db_url_hash = _init_db()
+    if _db_conn:
+        db_count = _db_conn.execute("SELECT COUNT(*) FROM jobs").fetchone()[0]
+        print(f"DB dedup: {db_count} jobs in SQLite (primary)")
     _notified = load_notified()
-    _applied  = load_applied()
-    _pipeline = load_pipeline()
-    print(f"Cache: {len(_notified)} notified | {len(_applied)} applied | {len(_pipeline)} pipeline")
+    print(f"Fallback cache: {len(_notified)} notified IDs")
 
     # Build search plan - deduplicated title+country combos
     # Strategy: group similar titles and use broader queries to reduce API calls
@@ -824,23 +812,28 @@ def main():
          "Head of Fintech", "Director Digital Banking"],
     ]
 
-    # Build consolidated search queries (fewer API calls, broader coverage)
-    # Sources: Exa (all countries) + Web + LinkedIn + Google (priority countries)
-    searches = []
-    for group in SEARCH_GROUPS:
-        # Use 1-2 representative titles per group per country
-        representative = group[:2]  # first 2 titles are most representative
-        for country in GCC_COUNTRIES:
-            for title in representative:
-                searches.append((title, country, "exa"))
-        # Priority countries get LinkedIn, Google, and Web search too
-        for country in PREFERRED_COUNTRIES:
-            searches.append((group[0], country, "web"))
-            searches.append((group[0], country, "linkedin"))
-            searches.append((group[0], country, "google"))
+    # D5: Consolidated broader queries + parallel execution
+    # Use Exa neural search semantics - broader queries find more with fewer calls
+    BROAD_QUERIES = [
+        # Group by semantic cluster, one broad query per group per country
+        "VP OR Director digital transformation",
+        "CTO OR CIO OR Head of Technology",
+        "Chief Operating Officer OR Chief Strategy Officer",
+        "PMO Director OR Program Director OR Head of PMO",
+        "VP Engineering OR Director of Engineering",
+        "Head of Transformation OR Director of Innovation OR VP Operations",
+        "VP Digital Banking OR Director Fintech OR Head of Digital Payments",
+    ]
 
-    print(f"Search plan: {len(searches)} queries | Exa neural + Web search")
-    print(f"Rate limit: {EXA_DELAY_BETWEEN}s between queries")
+    searches = []
+    for query in BROAD_QUERIES:
+        for country in GCC_COUNTRIES:
+            searches.append((query, country, "exa"))
+        # Priority countries get extra methods
+        for country in PREFERRED_COUNTRIES:
+            searches.append((query.split(" OR ")[0], country, "linkedin"))
+
+    print(f"Search plan: {len(searches)} queries (D5: consolidated + parallel)")
 
     total_searches = 0
     total_found    = 0
@@ -850,36 +843,51 @@ def main():
     leads          = []
     filtered_out   = []
     errors         = 0
+    _search_lock   = __import__('threading').Lock()
+    _rate_semaphore = __import__('threading').Semaphore(3)  # max 3 concurrent API calls
 
     with open(DETAILED_LOG, "a") as f:
-        f.write(f"\n## Run: {ts} (v4.0 - Exa API)\n")
+        f.write(f"\n## Run: {ts} (v4.0 - Exa API, parallel)\n")
 
-    for title, country, method in searches:
-        if time.time() - start > MAX_RUNTIME_SECONDS:
-            print(f"  Runtime limit reached ({MAX_RUNTIME_SECONDS}s). Stopping.")
-            break
+    def execute_search(args):
+        """Execute a single search with rate limiting."""
+        title, country, method = args
+        _rate_semaphore.acquire()
+        try:
+            time.sleep(EXA_DELAY_BETWEEN)  # respect rate limit per call
+            if method == "web":
+                return search_jobs_web(title, country), title, country, method
+            elif method == "linkedin":
+                return search_jobs_linkedin(title, country), title, country, method
+            elif method == "google":
+                return search_jobs_google(title, country), title, country, method
+            else:
+                return search_jobs_exa(title, country), title, country, method
+        except Exception as e:
+            print(f"  Search error ({method} {title} {country}): {e}")
+            return [], title, country, method
+        finally:
+            _rate_semaphore.release()
 
-        total_searches += 1
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+    with ThreadPoolExecutor(max_workers=3) as executor:
+        futures = {executor.submit(execute_search, s): s for s in searches}
+        for future in as_completed(futures):
+            if time.time() - start > MAX_RUNTIME_SECONDS:
+                print(f"  Runtime limit reached ({MAX_RUNTIME_SECONDS}s). Stopping.")
+                break
 
-        # Search using appropriate method
-        if method == "web":
-            jobs = search_jobs_web(title, country)
-        elif method == "linkedin":
-            jobs = search_jobs_linkedin(title, country)
-        elif method == "google":
-            jobs = search_jobs_google(title, country)
-        else:
-            jobs = search_jobs_exa(title, country)
+            jobs, title, country, method = future.result()
+            total_searches += 1
 
-        with open(DETAILED_LOG, "a") as f:
-            f.write(f"- [{method}] {title} in {country}: {len(jobs)} results\n")
+            with open(DETAILED_LOG, "a") as f:
+                f.write(f"- [{method}] {title} in {country}: {len(jobs)} results\n")
 
-        if not jobs:
-            errors += 1
-            time.sleep(0.5)
-            continue
+            if not jobs:
+                errors += 1
+                continue
 
-        total_found += len(jobs)
+            total_found += len(jobs)
 
         for job in jobs:
             # Dedup by URL
@@ -891,7 +899,7 @@ def main():
                 continue
             seen_ids.add(job["id"])
 
-            if is_duplicate(job["id"], job.get("company", "")):
+            if is_duplicate_db(job["url"], job.get("company", "")):
                 filtered_out.append({**job, "filter_reason": "duplicate"})
                 continue
 
@@ -900,20 +908,18 @@ def main():
                 filtered_out.append({**job, "filter_reason": reason})
                 continue
 
-            # Score ATS based on title (no JD fetch in scan phase)
+            # D3: Scanner does discovery only. All scoring deferred to review stage.
+            # Lightweight title-only ATS for the markdown report (informational, not gating)
             ats_score, matched = score_ats("", job["title"])
             job["ats_score"] = ats_score
             job["ats_keywords"] = matched
             job["jd_text"] = ""
             job["jd_fetched"] = False
+            job["career_verdict"] = "pending_review"
+            job["career_fit"] = 0
+            job["career_reason"] = "awaiting LLM review"
 
-            # Semantic fit
-            verdict, fit_score, fit_reason = semantic_fit_filter(job)
-            job["career_verdict"] = verdict
-            job["career_fit"] = fit_score
-            job["career_reason"] = fit_reason
-
-            save_notified(job)
+            save_to_db(job)
 
             if is_priority(job["title"], job["location"]):
                 picks.append(job)
@@ -1093,6 +1099,23 @@ def main():
         json.dump(scanner_meta, f, indent=2)
     print(f"\nScanner metadata saved: {meta_file}")
 
+    # === Raw JSON output (structured data for downstream pipeline) ===
+    raw_file = OUTPUT_DIR / f"jobs-raw-{date_str}.json"
+    all_jobs = picks + leads
+    with open(raw_file, "w") as f:
+        json.dump({
+            "meta": {
+                "date": date_str,
+                "engine": "exa-v4.0",
+                "total_searches": total_searches,
+                "total_found": total_found,
+                "runtime_seconds": elapsed,
+            },
+            "jobs": all_jobs,
+            "filtered_out": [{"title": j.get("title",""), "company": j.get("company",""), "url": j.get("url",""), "reason": j.get("filter_reason","")} for j in filtered_out],
+        }, f, indent=2, default=str)
+    print(f"Raw JSON saved: {raw_file} ({len(all_jobs)} jobs)")
+
     # === Notion Sync ===
     try:
         sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -1112,6 +1135,12 @@ def main():
             print(f"Scanner sync error: {e}")
     except Exception as e:
         print(f"\nNotion sync skipped: {e}")
+
+    # Close DB connection
+    if _db_conn:
+        _db_conn.commit()
+        _db_conn.close()
+        print(f"\nSQLite: committed and closed")
 
     print(f"\n=== DONE ({elapsed}s) ===")
     print(f"Searches:       {total_searches}/{expected_searches}")
