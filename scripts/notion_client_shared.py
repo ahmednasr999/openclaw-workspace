@@ -8,6 +8,7 @@ Falls back to local JSON if all retries fail.
 """
 
 import json
+import os
 import time
 from datetime import datetime
 from pathlib import Path
@@ -15,6 +16,26 @@ from pathlib import Path
 MAX_RETRIES = 3
 BACKOFF_BASE = 2  # seconds
 FALLBACK_DIR = Path("/tmp/notion-fallback")
+
+
+class NotionClient:
+    """Lightweight Notion client wrapper. Just holds the token."""
+    def __init__(self, token=None):
+        if token:
+            self.token = token
+        else:
+            # Auto-load from config
+            cfg_path = os.path.expanduser("~/.openclaw/workspace/config/notion.json")
+            if os.path.exists(cfg_path):
+                with open(cfg_path) as f:
+                    self.token = json.load(f)["token"]
+            else:
+                raise RuntimeError(f"No Notion token provided and {cfg_path} not found")
+
+
+def get_client(token=None):
+    """Get a NotionClient instance. Auto-loads token from config if not provided."""
+    return NotionClient(token)
 
 
 def notion_req(client, method, endpoint, body=None, retries=MAX_RETRIES):

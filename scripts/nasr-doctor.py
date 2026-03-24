@@ -377,12 +377,84 @@ def check_linkedin_cookies():
 
 # ── 5. Key Scripts ──
 
+def check_linkedin_tests():
+    """Run LinkedIn auto-poster test suite."""
+    test_path = WORKSPACE / "scripts" / "test-linkedin-poster.py"
+    if not test_path.exists():
+        check("LinkedIn Tests", Result.WARN, "test-linkedin-poster.py missing")
+        return
+    try:
+        r = subprocess.run(
+            ["python3", str(test_path)],
+            capture_output=True, text=True, timeout=30
+        )
+        lines = r.stdout.strip().split("\n")
+        result_line = lines[-1] if lines else ""
+        if r.returncode == 0:
+            check("LinkedIn Tests", Result.OK, result_line)
+        else:
+            check("LinkedIn Tests", Result.WARN, f"Failures: {result_line}")
+    except subprocess.TimeoutExpired:
+        check("LinkedIn Tests", Result.WARN, "Timed out after 30s")
+    except Exception as e:
+        check("LinkedIn Tests", Result.WARN, f"Error: {e}")
+
+
+def check_pipeline_db_tests():
+    """Run pipeline_db test suite."""
+    test_path = WORKSPACE / "scripts" / "test-pipeline-db.py"
+    if not test_path.exists():
+        check("Pipeline DB Tests", Result.WARN, "test-pipeline-db.py missing")
+        return
+    try:
+        r = subprocess.run(
+            ["python3", str(test_path)],
+            capture_output=True, text=True, timeout=30
+        )
+        lines = r.stdout.strip().split("\n")
+        result_line = lines[-1] if lines else ""
+        if r.returncode == 0:
+            check("Pipeline DB Tests", Result.OK, result_line)
+        else:
+            check("Pipeline DB Tests", Result.WARN, f"Failures: {result_line}")
+    except subprocess.TimeoutExpired:
+        check("Pipeline DB Tests", Result.WARN, "Timed out after 30s")
+    except Exception as e:
+        check("Pipeline DB Tests", Result.WARN, f"Error: {e}")
+
+
+def check_cv_tests():
+    """Run CV builder test suite."""
+    test_path = WORKSPACE / "scripts" / "test-cv-builder.py"
+    if not test_path.exists():
+        check("CV Tests", Result.WARN, "test-cv-builder.py missing")
+        return
+    try:
+        r = subprocess.run(
+            ["python3", str(test_path)],
+            capture_output=True, text=True, timeout=30
+        )
+        # Parse last line for results
+        lines = r.stdout.strip().split("\n")
+        result_line = lines[-1] if lines else ""
+        if r.returncode == 0:
+            check("CV Tests", Result.OK, result_line)
+        else:
+            check("CV Tests", Result.WARN, f"Failures: {result_line}")
+    except subprocess.TimeoutExpired:
+        check("CV Tests", Result.WARN, "Timed out after 30s")
+    except Exception as e:
+        check("CV Tests", Result.WARN, f"Error: {e}")
+
+
 def check_scripts():
     scripts = [
         "firehose-monitor.py",
         "email-agent.py",
         "linkedin-auto-poster.py",
         "nasr-doctor.py",
+        "cv_validator.py",
+        "test-cv-builder.py",
     ]
     missing = []
     for s in scripts:
@@ -567,6 +639,9 @@ def main():
     check_composio_linkedin()
     check_linkedin_cookies()
     check_scripts()
+    check_cv_tests()
+    check_linkedin_tests()
+    check_pipeline_db_tests()
     check_pipeline()
     check_pipeline_db()
     check_memory()

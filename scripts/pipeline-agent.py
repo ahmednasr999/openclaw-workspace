@@ -38,8 +38,13 @@ now_iso = common.now_iso
 WORKSPACE = common.WORKSPACE
 DATA_DIR = common.DATA_DIR
 
-# Configuration
-NOTION_TOKEN = json.load(open(os.path.expanduser("~/.openclaw/workspace/config/notion.json")))["token"]
+# Configuration — use shared Notion client
+try:
+    from notion_client_shared import get_client, notion_req, notion_query_db
+    _notion_client = get_client()
+except Exception:
+    _notion_client = None
+
 PIPELINE_DB_ID = "3268d599-a162-81b4-b768-f162adfa4971"
 APPLIED_IDS_FILE = WORKSPACE / "jobs-bank" / "applied-job-ids.txt"
 OUTPUT_PATH = DATA_DIR / "pipeline-status.json"
@@ -47,37 +52,24 @@ OUTPUT_PATH = DATA_DIR / "pipeline-status.json"
 
 @retry_with_backoff(max_retries=3, base_delay=2)
 def fetch_notion_db(database_id):
-    """Fetch all pages from a Notion database."""
-    url = f"https://api.notion.com/v1/databases/{database_id}/query"
-    headers = {
-        "Authorization": f"Bearer {NOTION_TOKEN}",
-        "Notion-Version": "2022-06-28",
-        "Content-Type": "application/json"
-    }
-    
+    """Fetch all pages from a Notion database using shared client with retry/backoff."""
     all_results = []
-    has_more = True
     start_cursor = None
-    
+    has_more = True
+
     while has_more:
-        body = {}
+        body = {"page_size": 100}
         if start_cursor:
             body["start_cursor"] = start_cursor
-        
-        req = urllib.request.Request(
-            url,
-            data=json.dumps(body).encode('utf-8'),
-            headers=headers,
-            method='POST'
-        )
-        
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            data = json.loads(resp.read().decode('utf-8'))
-        
+
+        data, err = notion_req(_notion_client, "post", f"databases/{database_id}/query", body)
+        if err:
+            raise RuntimeError(f"Notion query failed: {err}")
+
         all_results.extend(data.get("results", []))
         has_more = data.get("has_more", False)
         start_cursor = data.get("next_cursor")
-    
+
     return all_results
 
 

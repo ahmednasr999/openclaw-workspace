@@ -42,8 +42,54 @@ def extract_linkedin_job_id(url):
     return None
 
 
+# Import shared Voyager fetcher (D5: one implementation, one cache, one fallback chain)
+try:
+    from importlib import import_module as _imp
+    _enrich = _imp("jobs-enrich-jd")
+    _fetch_voyager = _enrich.fetch_linkedin_voyager
+    _fetch_page = _enrich.fetch_page
+    _extract_jd = _enrich.extract_linkedin_jd
+    _HAS_ENRICH = True
+except Exception:
+    _HAS_ENRICH = False
+
+
 def fetch_linkedin_jd(job_id):
-    """Fetch job details from LinkedIn Voyager API."""
+    """Fetch job details from LinkedIn Voyager API.
+    Uses shared jobs-enrich-jd.py fetcher when available (with cache + HTML fallback).
+    """
+    # D5: Use shared fetcher if available
+    if _HAS_ENRICH:
+        try:
+            jd_text = _fetch_voyager(job_id)
+            if jd_text:
+                return {
+                    "job_id": f"li-{job_id}",
+                    "title": "Unknown Role",  # Voyager text-only doesn't return metadata
+                    "company": "Unknown",
+                    "location": "",
+                    "jd_text": jd_text,
+                    "job_url": f"https://www.linkedin.com/jobs/view/{job_id}/",
+                    "source": "linkedin-manual",
+                }
+            # Try HTML fallback
+            html = _fetch_page(f"https://www.linkedin.com/jobs/view/{job_id}/")
+            if html:
+                jd_text = _extract_jd(html)
+                if jd_text:
+                    return {
+                        "job_id": f"li-{job_id}",
+                        "title": "Unknown Role",
+                        "company": "Unknown",
+                        "location": "",
+                        "jd_text": jd_text,
+                        "job_url": f"https://www.linkedin.com/jobs/view/{job_id}/",
+                        "source": "linkedin-manual",
+                    }
+        except Exception as e:
+            print(f"Shared fetcher failed: {e}, falling back to direct Voyager")
+
+    # Legacy fallback: direct Voyager call
     cookies = {}
     if os.path.exists(COOKIE_PATH):
         with open(COOKIE_PATH) as f:
