@@ -314,16 +314,23 @@ case "$MODE" in
         # Phase 5: Newsletter REMOVED (2026-03-22) — pam-telegram.py reads fresh data directly
         
         log "--- Phase 6: Outreach Follow-up Tracker ---"
-        run_agent "outreach-tracker" "outreach-followup-tracker.py" 30
-        
+        run_agent "outreach-tracker" "outreach-followup-tracker.py" 30 \
+            || log "⚠️ Phase 6 (Outreach tracker) failed — non-critical"
+
         log "--- Phase 7: Generate Notion Briefing ---"
-        run_agent "briefing" "briefing-agent.py" 120
+        run_agent "briefing" "briefing-agent.py" 180 \
+            || log "⚠️ Phase 7 (Notion briefing) failed — continuing"
 
         log "--- Phase 8: Telegram Summary ---"
-        run_agent "pam-telegram" "pam-telegram.py" 30
+        run_agent "pam-telegram" "pam-telegram.py" 60 \
+            || log "⚠️ Phase 8 (Telegram summary) failed — continuing"
 
         log "--- Phase 9: Briefing Doctor (audit) ---"
-        run_agent "briefing-doctor" "briefing-doctor.py" 30
+        run_agent "briefing-doctor" "briefing-doctor.py" 30 \
+            || log "⚠️ Phase 9 (Doctor) failed — non-critical"
+
+        log "--- Phase 10: Completion Check ---"
+        python3 "$SCRIPTS/briefing-completion-check.py" --alert >> "$LOG_FILE" 2>&1 || true
 
         log "========================================="
         log "  PIPELINE COMPLETE"
