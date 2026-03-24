@@ -303,3 +303,4 @@
 {"agent": "system-agent", "run_id": "d8cfe7bb", "started": "2026-03-24T06:00:13.627969+02:00", "duration_ms": 11980, "status": "success", "records": 6, "error": null}
 {"agent": "pipeline-agent", "run_id": "00f8ac26", "started": "2026-03-24T06:00:17.017938+02:00", "duration_ms": 15181, "status": "success", "records": 11, "error": null}
 {"agent": "email-agent", "run_id": "76d3ee5e", "started": "2026-03-24T06:02:05.963490+02:00", "duration_ms": 123766, "status": "partial", "records": 11, "error": "name 'WORKSPACE' is not defined"}
+{"agent": "email-agent", "run_id": "0740acc7", "started": "2026-03-24T06:41:44.317016+02:00", "duration_ms": 133712, "status": "partial", "records": 11, "error": "name 'WORKSPACE' is not defined"}
