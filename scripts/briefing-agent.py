@@ -228,11 +228,26 @@ def create_briefing():
     
     # ── PIPELINE + SYSTEM (consolidated) ──
     blocks.append(h2("📋 Pipeline & System"))
-    funnel = pipe.get("conversion_funnel", {})
+    # Prefer DB funnel (authoritative) over JSON fallback
+    if db_funnel and db_total > 0:
+        pipeline_total = db_total
+        pipeline_applied = db_funnel.get("applied", 0)
+        pipeline_response = db_funnel.get("response", 0)
+        pipeline_interview = db_funnel.get("interview", 0)
+        pipeline_offer = db_funnel.get("offer", 0)
+        pipeline_cv = db_funnel.get("cv_built", 0)
+    else:
+        funnel = pipe.get("conversion_funnel", {})
+        pipeline_total = pipe.get("total_applications", 0)
+        pipeline_applied = funnel.get("applied", 0)
+        pipeline_response = funnel.get("screening", 0)
+        pipeline_interview = funnel.get("interview", 0)
+        pipeline_offer = funnel.get("offer", 0)
+        pipeline_cv = 0
     blocks.append(bul(
-        plain(f"Pipeline: {active} active | {pipe.get('total_applications',0)} total | "),
-        plain(f"Funnel: {funnel.get('applied',0)}→{funnel.get('screening',0)}→{funnel.get('interview',0)}→{funnel.get('offer',0)}"),
-        plain(f" | Interviews: {len(interviews)} | Stale: {len(pipe.get('stale_applications',[]))}")
+        plain(f"Pipeline: {pipeline_applied} applied | {pipeline_total} total | "),
+        plain(f"Funnel: {pipeline_applied}→{pipeline_response}→{pipeline_interview}→{pipeline_offer}"),
+        plain(f" | CVs: {pipeline_cv} | Interviews: {len(interviews)} | Stale: {db_stale_count}")
     ))
     blocks.append(bul(
         plain(f"System: Disk {infra.get('disk_percent','?')}% | RAM {infra.get('ram_percent','?')}% | "),
