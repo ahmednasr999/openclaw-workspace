@@ -574,3 +574,26 @@
 
 📋 Actions taken:
 
+🔍 Watchdog v3 - Detect → Fix → Report
+🔴 Gateway DOWN - attempting restart...
+✅ Gateway FIXED - restarted (PID: 3449728)
+✅ Disk OK: 47%
+✅ active-tasks.md fresh (10h)
+✅ Jobs data fresh (3h)
+✅ SIE 360 data fresh (4h)
+✅ Pipeline lock active (0m, still valid)
+🟡 1 crons with issues
+  Re-triggered cron: d1343a4d-61a4-476c-83c5-15724bcce89c
+✅ No pipeline failures today
+✅ RAM OK: 34%
+
+═══════════════════════════════════
+📊 Watchdog v3 Summary
+  Fixes applied: 2
+  Warnings: 1
+  Alerts (need human): 0
+═══════════════════════════════════
+
+📋 Actions taken:
+✅ Gateway was down → auto-restarted (PID: 3449728)
+

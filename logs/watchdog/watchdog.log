@@ -283,3 +283,14 @@ Bind: loopback
   "enqueued": true,
   "runId": "manual:d1343a4d-61a4-476c-83c5-15724bcce89c:1774317614772:1"
 }
+[2026-03-24 06:00] === Watchdog v3 run ===
+[2026-03-24 06:00] ALERT: Gateway down, attempting restart
+Restarted systemd service: openclaw-gateway.service
+[2026-03-24 06:00] FIXED: Gateway restarted (PID: 3449728)
+[2026-03-24 06:00] FIXED: Re-triggered failed cron d1343a4d-61a4-476c-83c5-15724bcce89c
+[2026-03-24 06:00] Summary: fixes=2 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:d1343a4d-61a4-476c-83c5-15724bcce89c:1774324825841:1"
+}

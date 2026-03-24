@@ -299,3 +299,7 @@
 {"agent": "jobs-source-indeed", "run_id": "6f18be52", "started": "2026-03-24T05:01:34.944266+02:00", "duration_ms": 81724, "status": "success", "records": 3, "error": null}
 {"agent": "email-agent", "run_id": "748f5a72", "started": "2026-03-24T05:02:26.379515+02:00", "duration_ms": 132713, "status": "partial", "records": 11, "error": "name 'json' is not defined"}
 {"agent": "jobs-source-linkedin", "run_id": "79dd047e", "started": "2026-03-24T05:05:45.715183+02:00", "duration_ms": 332047, "status": "success", "records": 418, "error": null}
+{"agent": "content-agent", "run_id": "8d70d2cf", "started": "2026-03-24T06:00:02.867625+02:00", "duration_ms": 1238, "status": "success", "records": 7, "error": null}
+{"agent": "system-agent", "run_id": "d8cfe7bb", "started": "2026-03-24T06:00:13.627969+02:00", "duration_ms": 11980, "status": "success", "records": 6, "error": null}
+{"agent": "pipeline-agent", "run_id": "00f8ac26", "started": "2026-03-24T06:00:17.017938+02:00", "duration_ms": 15181, "status": "success", "records": 11, "error": null}
+{"agent": "email-agent", "run_id": "76d3ee5e", "started": "2026-03-24T06:02:05.963490+02:00", "duration_ms": 123766, "status": "partial", "records": 11, "error": "name 'WORKSPACE' is not defined"}

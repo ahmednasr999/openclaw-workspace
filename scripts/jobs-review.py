@@ -409,6 +409,20 @@ def run_review(result: AgentResult):
     except Exception as e:
         print(f"  Warning: Could not load applied IDs: {e}")
 
+    # Also load applied IDs from SQLite DB (authoritative source)
+    if _pdb:
+        try:
+            import sqlite3
+            conn = sqlite3.connect(str(Path(__file__).parent / "pipeline_db.py").replace("pipeline_db.py", "../data/nasr-pipeline.db"))
+            rows = conn.execute("SELECT job_id FROM jobs WHERE status IN ('applied', 'response', 'interview', 'offer')").fetchall()
+            for row in rows:
+                jid_str = str(row[0]).replace("li-", "")
+                applied_ids.add(jid_str)
+            conn.close()
+            print(f"  + DB applied IDs added: {len(rows)} (total: {len(applied_ids)})")
+        except Exception as e:
+            print(f"  Warning: Could not load DB applied IDs: {e}")
+
     def _is_already_applied(job):
         """Check if job ID or URL numeric IDs match applied list."""
         jid = str(job.get("id", ""))
