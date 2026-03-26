@@ -5,6 +5,28 @@ description: "Use when tasks involve creating, editing, analyzing, or formatting
 
 # Spreadsheet Skill
 
+## ⚠️ CRITICAL: Edit Integrity Rules
+
+**NEVER use `openpyxl load_workbook → save` for editing existing files.**
+openpyxl silently destroys pivot tables, VBA macros, sparklines, and advanced features on round-trip.
+
+**For editing existing .xlsx files: always use the XML unpack → edit → repack approach.**
+- `scripts/xlsx_unpack.py` — unpack .xlsx to a temp directory
+- Edit XML nodes directly
+- `scripts/xlsx_pack.py` — repack back to .xlsx
+
+`openpyxl` is ONLY acceptable for **creating brand new files from scratch** (no existing content to preserve).
+
+## Task Routing
+
+| Task | Method | Guide |
+|------|--------|-------|
+| **READ** — analyze existing data | `xlsx_reader.py` + pandas | `references/read-analyze.md` |
+| **CREATE** — new xlsx from scratch | XML template OR openpyxl (new files only) | `references/create.md` + `references/format.md` |
+| **EDIT** — modify existing xlsx | XML unpack→edit→pack | `references/edit.md` (+ `format.md` if styling needed) |
+| **FIX** — repair broken formulas | XML unpack→fix `<f>` nodes→pack | `references/fix.md` |
+| **VALIDATE** — check formulas | `formula_check.py` | `references/validate.md` |
+
 ## When to use
 - Create new workbooks with formulas, formatting, and structured layouts.
 - Read or analyze tabular data (filter, aggregate, pivot, compute metrics).
@@ -16,11 +38,12 @@ IMPORTANT: System and user instructions always take precedence.
 
 ## Workflow
 1. Confirm the file type and goal: create, edit, analyze, or visualize.
-2. Prefer `openpyxl` for `.xlsx` editing and formatting. Use `pandas` for analysis and CSV/TSV workflows.
-3. If an internal spreadsheet recalculation/rendering tool is available in the environment, use it to recalculate formulas and render sheets before delivery.
-4. Use formulas for derived values instead of hardcoding results.
-5. If layout matters, render for visual review and inspect the output.
-6. Save outputs, keep filenames stable, and clean up intermediate files.
+2. **For EDIT tasks on existing files**: use XML unpack→edit→repack (see scripts below). NEVER openpyxl load→save on existing files.
+3. **For CREATE tasks (new files)**: `openpyxl` is acceptable, OR use XML template approach from `references/create.md`.
+4. Use `pandas` for analysis and CSV/TSV workflows.
+5. Use formulas for derived values instead of hardcoding results.
+6. If layout matters, render for visual review and inspect the output.
+7. Save outputs, keep filenames stable, and clean up intermediate files.
 
 ## Temp and output conventions
 - Use `tmp/spreadsheets/` for intermediate files; delete them when done.
@@ -28,7 +51,25 @@ IMPORTANT: System and user instructions always take precedence.
 - Keep filenames stable and descriptive.
 
 ## Primary tooling
-- Use `openpyxl` for creating/editing `.xlsx` files and preserving formatting.
+
+### XML-Direct Editing (for existing .xlsx files — REQUIRED)
+Located in `skills/spreadsheet/scripts/`:
+```bash
+python3 scripts/xlsx_unpack.py input.xlsx /tmp/xlsx_work/   # unpack
+# Edit XML directly
+python3 scripts/xlsx_pack.py /tmp/xlsx_work/ output.xlsx    # repack
+python3 scripts/xlsx_reader.py input.xlsx                   # structure discovery
+python3 scripts/formula_check.py file.xlsx --json           # formula validation
+python3 scripts/xlsx_add_column.py /tmp/work/ --col G ...   # add column
+python3 scripts/xlsx_insert_row.py /tmp/work/ --at 6 ...    # insert row
+python3 scripts/xlsx_shift_rows.py /tmp/work/ insert 5 1    # shift rows
+python3 scripts/shared_strings_builder.py ...               # manage sharedStrings
+python3 scripts/style_audit.py ...                          # audit styles
+python3 scripts/libreoffice_recalc.py ...                   # recalc via LibreOffice
+```
+
+### openpyxl (for NEW files only)
+- Use `openpyxl` **only** for creating brand-new `.xlsx` files from scratch.
 - Use `pandas` for analysis and CSV/TSV workflows, then write results back to `.xlsx` or `.csv`.
 - Use `openpyxl.chart` for native Excel charts when needed.
 - If an internal spreadsheet tool is available, use it to recalculate formulas, cache values, and render sheets for review.
@@ -79,8 +120,15 @@ If installation is not possible in this environment, tell the user which depende
 ## Environment
 No required environment variables.
 
-## Examples
-- Runnable Codex examples (openpyxl): `references/examples/openpyxl/`
+## Reference Docs
+- XML editing guide: `references/edit.md`
+- Creating new files: `references/create.md`
+- Fixing broken formulas: `references/fix.md`
+- Formatting standards: `references/format.md`
+- Formula validation: `references/validate.md`
+- Reading/analyzing files: `references/read-analyze.md`
+- OOXML cheatsheet: `references/ooxml-cheatsheet.md`
+- Runnable openpyxl examples: `references/examples/openpyxl/`
 
 ## Formula requirements
 - Use formulas for derived values rather than hardcoding results.
@@ -127,6 +175,16 @@ No required environment variables.
 - Light red: error or flag
 - Purple: control or logic
 - Teal: visualization anchors and KPI highlights
+
+## Financial Color Standard (XML editing)
+
+When producing financial models via XML-direct editing:
+
+| Cell Role | Font Color | Hex Code |
+|-----------|-----------|----------|
+| Hard-coded input / assumption | Blue | `0000FF` |
+| Formula / computed result | Black | `000000` |
+| Cross-sheet reference formula | Green | `00B050` |
 
 ## Finance-specific requirements
 - Format zeros as `-`.

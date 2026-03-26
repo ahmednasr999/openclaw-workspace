@@ -345,36 +345,22 @@ def run():
         
         time.sleep(DELAY)  # rate limit per request
         
-        # LinkedIn: try Voyager API first (authenticated, reliable)
+        # LinkedIn: tls-client primary (no cookies needed, Chrome TLS fingerprint)
         if "linkedin.com" in url:
             job_id = extract_linkedin_job_id(url)
             if job_id:
-                jd = fetch_linkedin_voyager(job_id)
+                jd = fetch_linkedin_jobspy(job_id, title)
                 if jd and len(jd) > 100:
                     job["jd_text"] = jd[:5000]
-                    job["jd_fetch_status"] = "voyager_ok"
+                    job["jd_fetch_status"] = "tls_ok"
                     job["jd_live"] = True
                     nationals = detect_nationals_only(jd)
                     if nationals:
                         job["nationals_only"] = True
-                        print(f"  [{idx}] {title}... VOYAGER OK ({len(jd)} chars) ⚠️ NATIONALS ONLY")
+                        print(f"  [{idx}] {title}... TLS OK ({len(jd)} chars) ⚠️ NATIONALS ONLY")
                     else:
-                        print(f"  [{idx}] {title}... VOYAGER OK ({len(jd)} chars)")
+                        print(f"  [{idx}] {title}... TLS OK ({len(jd)} chars)")
                     return "enriched", nationals
-
-            # Fallback: tls-client direct fetch (no auth needed, mimics Chrome TLS)
-            jd = fetch_linkedin_jobspy(job_id, title)
-            if jd and len(jd) > 100:
-                job["jd_text"] = jd[:5000]
-                job["jd_fetch_status"] = "tls_ok"
-                job["jd_live"] = True
-                nationals = detect_nationals_only(jd)
-                if nationals:
-                    job["nationals_only"] = True
-                    print(f"  [{idx}] {title}... TLS OK ({len(jd)} chars) ⚠️ NATIONALS ONLY")
-                else:
-                    print(f"  [{idx}] {title}... TLS OK ({len(jd)} chars)")
-                return "enriched", nationals
         
         # Fallback: raw HTTP fetch (works for Indeed, Google Jobs, company pages)
         html = fetch_page(url)

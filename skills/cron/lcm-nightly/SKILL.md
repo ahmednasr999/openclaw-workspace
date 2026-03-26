@@ -89,11 +89,26 @@ ORDER BY total_tokens DESC
 LIMIT 20;" 2>/dev/null
 
 echo "---"
-echo "=== ORPHANED SUMMARIES (no linked messages) ==="
+echo "=== ORPHANED SUMMARIES (completely disconnected from DAG) ==="
+echo "Note: Condensed summaries at depth>0 connect via summary_parents, not summary_messages."
+echo "Only flag summaries with ZERO connections (no message links, no parent links, no child links)."
 sqlite3 /root/.openclaw/lcm.db "
-SELECT COUNT(*) FROM summaries s
-LEFT JOIN summary_messages sm ON sm.summary_id = s.summary_id
-WHERE sm.summary_id IS NULL;" 2>/dev/null
+SELECT COUNT(*) as true_orphans FROM summaries s
+WHERE NOT EXISTS (SELECT 1 FROM summary_messages sm WHERE sm.summary_id = s.summary_id)
+AND NOT EXISTS (SELECT 1 FROM summary_parents sp WHERE sp.summary_id = s.summary_id)
+AND NOT EXISTS (SELECT 1 FROM summary_parents sp WHERE sp.parent_summary_id = s.summary_id);" 2>/dev/null
+
+echo ""
+echo "=== UNCOMPACTED CONVERSATIONS (50+ messages, 0 summaries) ==="
+sqlite3 /root/.openclaw/lcm.db "
+SELECT c.conversation_id, c.session_id,
+  (SELECT COUNT(*) FROM messages WHERE conversation_id = c.conversation_id) as msg_count,
+  (SELECT SUM(token_count) FROM messages WHERE conversation_id = c.conversation_id) as total_tokens
+FROM conversations c
+WHERE (SELECT COUNT(*) FROM messages WHERE conversation_id = c.conversation_id) >= 50
+AND (SELECT COUNT(*) FROM summaries WHERE conversation_id = c.conversation_id) = 0
+ORDER BY msg_count DESC
+LIMIT 10;" 2>/dev/null
 ```
 
 ---
@@ -190,9 +205,10 @@ STALE CONVERSATIONS: [X] found
 [if X > 0: list top 5 by token count]
 
 TREE HEALTH:
-- Conversations with 0 summaries: [X]
+- Conversations with 0 summaries (50+ msgs): [X]
 - Conversations with 3+ summaries: [X]
-- Orphaned summaries: [X]
+- True orphaned summaries (disconnected from DAG): [X]
+- Uncompacted tokens (50+ msg convs with 0 summaries): [X]
 
 ACTIONS TAKEN:
 [list any checkpoint or other actions]
@@ -240,6 +256,6 @@ fi
 ## Quality Gates
 - DB size less than 500MB
 - WAL file less than 50MB after checkpoint
-- Zero orphaned summaries (summary_messages entries exist for all summaries)
+- Zero true orphaned summaries (completely disconnected from DAG - no summary_messages, no summary_parents in either direction)
 - At least 1 summary created in the last 7 days
-- No conversation with 100+ messages and 0 summaries
+- No conversation with 50+ messages and 0 summaries (lowered from 100 to catch more)

@@ -475,3 +475,4 @@
 {"agent": "email-agent", "run_id": "1c91eb29", "started": "2026-03-26T17:00:42.740160+02:00", "duration_ms": 29075, "status": "success", "records": 14, "error": null}
 {"agent": "system-agent", "run_id": "c3218882", "started": "2026-03-26T18:00:09.531752+02:00", "duration_ms": 7830, "status": "success", "records": 6, "error": null}
 {"agent": "pipeline-agent", "run_id": "714167c3", "started": "2026-03-26T18:00:19.262264+02:00", "duration_ms": 17559, "status": "success", "records": 11, "error": null}
+{"agent": "email-agent", "run_id": "26282b74", "started": "2026-03-26T18:00:37.868090+02:00", "duration_ms": 35984, "status": "success", "records": 14, "error": null}

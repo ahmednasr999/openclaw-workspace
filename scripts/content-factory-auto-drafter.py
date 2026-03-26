@@ -115,7 +115,7 @@ BEFORE DELIVERING, verify ALL pass:
 """
 
 
-def call_llm(prompt, max_tokens=800, model="minimax-portal/MiniMax-M2.7"):
+def call_llm(prompt, max_tokens=800, model="anthropic/claude-sonnet-4-6"):
     """Call LLM via gateway."""
     payload = {
         "model": model,
