@@ -495,8 +495,8 @@ def detect_topic(title, content):
 
 
 def download_image(url):
-    """Download image from URL, with local file fallback for GitHub raw URLs."""
-    # Fallback: if URL is a GitHub raw link, try reading from local workspace first
+    """Download image from URL, with local file fallback for GitHub raw URLs and post-visuals."""
+    # Fallback 1: GitHub raw link -> try local workspace
     if "raw.githubusercontent.com" in url and "/linkedin/posts/" in url:
         local_name = url.rsplit("/", 1)[-1]
         local_path = os.path.join(os.path.expanduser("~/.openclaw/workspace/linkedin/posts"), local_name)
@@ -507,6 +507,23 @@ def download_image(url):
             ct = "image/png" if local_path.endswith(".png") else "image/jpeg"
             print(f"Local image: {len(data)} bytes, type: {ct}")
             return data, ct
+
+    # Fallback 2: Check local media/post-visuals/ by filename (handles Notion signed URL expiry)
+    try:
+        from urllib.parse import urlparse
+        parsed = urlparse(url)
+        filename = parsed.path.rsplit("/", 1)[-1].split("?")[0]
+        if filename:
+            local_vis = os.path.join(os.path.expanduser("~/.openclaw/workspace/media/post-visuals"), filename)
+            if os.path.exists(local_vis):
+                print(f"Using local post-visual: {local_vis}")
+                with open(local_vis, "rb") as f:
+                    data = f.read()
+                ct = "image/png" if local_vis.endswith(".png") else "image/jpeg"
+                print(f"Local visual: {len(data)} bytes, type: {ct}")
+                return data, ct
+    except Exception:
+        pass  # Fall through to URL download
 
     print(f"Downloading image: {url[:80]}...")
     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
@@ -840,8 +857,9 @@ def main():
             print("IMAGE_HOLD")
             return
     else:
-        # No image in Notion — auto-generate branded visual from Content Factory
-        print("No image in Notion. Generating branded visual template...")
+        # No image in Notion — generate branded visual
+        # Strategy: PIL template for cron (autonomous), agent upgrades to Gemini AI when posting
+        print("No image in Notion. Generating visual...")
         try:
             import importlib.util
             vspec = importlib.util.spec_from_file_location(
@@ -873,7 +891,17 @@ def main():
             image_path = visual_path
             post['image_url'] = None  # Mark as auto-generated (not from Notion)
             post['auto_visual'] = True
+            post['visual_source'] = 'pil_template'
+            # Signal to agent: upgrade available via image-gen-chain with topic-aware routing
+            post['image_upgrade_available'] = True
+            post['gemini_upgrade_available'] = True  # backward compat
+            post['image_topic'] = topic
+            post['gemini_topic'] = topic  # backward compat
+            # Route hint: AI/Tech topics → Gemini first, Business → Stock first
+            ai_tech = {"AI", "Digital Transformation", "HealthTech", "FinTech", "Data", "Innovation"}
+            post['preferred_source'] = 'gemini' if topic in ai_tech else 'stock'
             print(f"Auto-visual generated: {post_format} / {topic} -> {visual_path}")
+            print(f"IMAGE_UPGRADE_HINT: Agent should use image-gen-chain.py with topic={topic} (prefer={post['preferred_source']})")
         except Exception as e:
             print(f"Visual generation failed ({e}) - posting without image")
             import traceback; traceback.print_exc()
@@ -889,6 +917,11 @@ def main():
         "title": post['title'],
         "score": score_result['total'],
         "image_url_original": post['image_url'],
+        # Image upgrade metadata for agent
+        "image_upgrade_available": post.get('image_upgrade_available', False),
+        "image_topic": post.get('image_topic', ''),
+        "preferred_image_source": post.get('preferred_source', 'gemini'),
+        "visual_source": post.get('visual_source', 'notion'),
     }
     
     output_path = "/tmp/linkedin-post-payload.json"

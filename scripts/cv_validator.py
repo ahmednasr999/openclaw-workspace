@@ -34,12 +34,19 @@ def validate_html(html_path):
 
     # ── BLOCKERS (fail the CV, require re-generation) ──
 
-    # 1. Education section must exist
-    if "<h2>education</h2>" not in html_lower and "<h2>education &" not in html_lower:
+    # 1. Education section must exist (supports both <h2> and <div class="section-title">)
+    edu_patterns = [
+        "<h2>education</h2>", "<h2>education &",
+        "section-title\">education<", "section-title\">education &"
+    ]
+    if not any(p in html_lower for p in edu_patterns):
         blockers.append("MISSING_EDUCATION: Education section not found")
 
-    # 2. Certifications section must exist
-    cert_patterns = ["certifications</h2>", "professional certifications</h2>"]
+    # 2. Certifications section must exist (supports both <h2> and <div class="section-title">)
+    cert_patterns = [
+        "certifications</h2>", "professional certifications</h2>",
+        "section-title\">certifications<", "section-title\">professional certifications<"
+    ]
     if not any(p in html_lower for p in cert_patterns):
         blockers.append("MISSING_CERTS: Certifications section not found")
 

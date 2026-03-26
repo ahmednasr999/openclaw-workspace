@@ -423,13 +423,44 @@ def run_merge(result: AgentResult):
     
     multi_source = sum(1 for j in policy_passed if j.get("source_count", 1) > 1)
     
+    # ── First-seen tracking ──────────────────────────────────────────────
+    first_seen_path = DATA_DIR / "jobs-first-seen.json"
+    try:
+        first_seen_db = json.loads(first_seen_path.read_text()) if first_seen_path.exists() else {}
+    except Exception:
+        first_seen_db = {}
+
+    from datetime import datetime as _dt_cls
+    _now_utc = _dt_cls.now(timezone.utc)
+    today_str = _now_utc.strftime("%Y-%m-%d")
+    new_today_count = 0
+
     # Clean up internal fields for output
     final_jobs = []
     for job in policy_passed:
         clean_job = {k: v for k, v in job.items() if not k.startswith("_")}
         clean_job["sources"] = job.get("_sources", [job.get("source", "")])
+
+        # Assign first_seen
+        url = clean_job.get("url", "")
+        job_key = url or f"{clean_job.get('company','')}|{clean_job.get('title','')}"
+        if job_key and job_key in first_seen_db:
+            clean_job["first_seen"] = first_seen_db[job_key]
+        else:
+            clean_job["first_seen"] = today_str
+            if job_key:
+                first_seen_db[job_key] = today_str
+            new_today_count += 1
+
         final_jobs.append(clean_job)
-    
+
+    # Prune entries older than 60 days to keep file small
+    cutoff = (_now_utc - timedelta(days=60)).strftime("%Y-%m-%d")
+    first_seen_db = {k: v for k, v in first_seen_db.items() if v >= cutoff}
+    first_seen_path.write_text(json.dumps(first_seen_db, indent=2))
+    print(f"First-seen: {new_today_count} new today, {len(first_seen_db)} tracked")
+    # ─────────────────────────────────────────────────────────────────────
+
     print(f"\nFinal candidates: {len(final_jobs)}")
     print(f"Multi-source jobs: {multi_source}")
 

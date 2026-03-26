@@ -99,6 +99,52 @@ Full ATS rules: See MEMORY.md "CV Design Rules" section.
 - Post commentary max: 3000 characters
 - Images: up to 20 per post
 
+### Manual LinkedIn Posting (Image Flow)
+When manually posting to LinkedIn with an image:
+1. **Source of truth = Notion** - always pull images from Notion page blocks (type `file` gives signed S3 URL)
+2. Download from Notion to `/tmp/`
+3. Upload to Composio S3 via `upload_local_file()` in REMOTE_WORKBENCH → get `s3key`
+4. Post via `LINKEDIN_CREATE_LINKED_IN_POST` with `images: [{name, mimetype, s3key}]`
+5. **NEVER use Google Drive links** - they may be stale/outdated versions
+
+### Image Generation Chain (Topic-Aware Routing, All Free)
+- **Chain script:** `scripts/image-gen-chain.py` (ImageGenChain class + CLI)
+- **Prompt builder:** `scripts/gemini-image-gen.py` (topic templates, Notion integration)
+- **Text overlay:** `apply_text_overlay()` in chain script - adds headline + author + hashtags to raw images
+- **Convenience:** `chain.generate_with_overlay()` - generates + overlays in one call (skips PIL since it already has text)
+
+**Topic-Aware Routing (updated 2026-03-26, 6 sources):**
+| Topic Category | Priority Order | Rationale |
+|---|---|---|
+| AI/Tech (AI, Digital Transformation, HealthTech, FinTech, Data, Innovation) | Gemini Flash → FLUX.1 → SD XL → Gemini Pro → Stock → PIL | Abstract/futuristic visuals, HF fallback before Pro |
+| Business (PMO, Strategy, Leadership, Healthcare) | Stock → Gemini Flash → FLUX.1 → Gemini Pro → SD XL → PIL | Corporate imagery first, AI gen as fallback |
+| Default/Other | Gemini Flash → FLUX.1 → Stock → SD XL → Gemini Pro → PIL | Balanced with HF models interleaved |
+
+**Working Sources:**
+1. `GEMINI_GENERATE_IMAGE` gemini-2.5-flash-image - 1344x768, ~10s, primary (Composio)
+2. **`FLUX.1-schnell`** (HuggingFace) - 1024x1024, ~8s, fast, great quality (FREE)
+3. **`Stable Diffusion XL`** (HuggingFace) - 1024x1024, ~15s, reliable (FREE)
+4. `GEMINI_GENERATE_IMAGE` gemini-3-pro-image-preview - 5504x3072 4K, ~15s, fallback (Composio)
+5. `COMPOSIO_SEARCH_IMAGE` - stock photos, ~2s, good for business topics
+6. PIL branded templates via `content-factory-visuals.py` - <1s, always works, safety net
+
+**HuggingFace Setup:**
+- Token: `config/huggingface.json` → `{"token": "hf_..."}`
+- Client: `scripts/huggingface-client.py` (image gen + chat via HF Inference API)
+- Endpoint: `https://router.huggingface.co/hf-inference/models/{model}`
+- Key win: Cron jobs now get AI-generated images without Composio (FLUX catches before PIL)
+
+**Dead Sources (removed 2026-03-26):**
+- Gemini 2.0 Flash Exp - model deprecated (404)
+- DreamStudio SDXL - 0 credits, Stability no longer gives free credits
+- Pollinations.ai - now requires auth (401)
+- SD 3.5 Large - requires paid HF endpoint
+- HuggingFace TTS (Bark/MMS/SpeechT5) - not on free inference tier
+
+- **Topic templates:** 10 topics (Healthcare, HealthTech, AI, Digital Transformation, PMO, Strategy, FinTech, Leadership, Innovation, Data)
+- **Flow in auto-poster:** Cron generates PIL template → sets `image_upgrade_available` flag with `preferred_source` (gemini or stock) → agent uses `image-gen-chain.py` with topic routing when posting
+- **Note:** S3 URLs expire (1-6 hours) - download immediately after generation
+
 ### Available Composio LinkedIn Tools
 - `LINKEDIN_CREATE_LINKED_IN_POST` - Create post (text + optional images)
 - `LINKEDIN_INITIALIZE_IMAGE_UPLOAD` - Get upload URL for image

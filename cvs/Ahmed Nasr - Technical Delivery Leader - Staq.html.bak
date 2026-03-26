@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Ahmed Nasr - Technical Delivery Leader</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10.5pt;
+    line-height: 1.45;
+    color: #111;
+    background: #fff;
+    padding: 18mm 18mm 16mm 18mm;
+  }
+
+  .header-name {
+    font-size: 20pt;
+    font-weight: bold;
+    color: #111;
+    margin-bottom: 4pt;
+  }
+  .header-contact {
+    font-size: 9.5pt;
+    color: #444;
+    margin-bottom: 10pt;
+  }
+  .header-divider {
+    border: none;
+    border-top: 2px solid #111;
+    margin-bottom: 10pt;
+  }
+
+  h2 {
+    font-size: 10.5pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.6pt;
+    color: #111;
+    border-bottom: 1pt solid #aaa;
+    padding-bottom: 2pt;
+    margin-top: 12pt;
+    margin-bottom: 6pt;
+  }
+
+  .summary { margin-bottom: 4pt; font-size: 10.5pt; }
+  .skills-list { font-size: 10pt; margin-bottom: 4pt; }
+  .job { margin-bottom: 9pt; }
+
+  .job-row-inner {
+    display: table;
+    width: 100%;
+  }
+  .job-title-cell {
+    display: table-cell;
+    font-weight: bold;
+    font-size: 10.5pt;
+    vertical-align: top;
+    width: 75%;
+  }
+  .job-date-cell {
+    display: table-cell;
+    font-size: 9.5pt;
+    color: #555;
+    text-align: right;
+    vertical-align: top;
+    width: 25%;
+    white-space: nowrap;
+  }
+  .job-company {
+    font-size: 9.5pt;
+    color: #444;
+    margin-bottom: 4pt;
+    font-style: italic;
+  }
+
+  ul { margin-left: 15pt; margin-bottom: 0; }
+  ul li { margin-bottom: 2.5pt; font-size: 10.5pt; }
+
+  .cert-row { font-size: 10pt; margin-bottom: 3pt; }
+  .edu-block { margin-bottom: 6pt; }
+
+  @page {
+    size: A4;
+    margin: 18mm 18mm 16mm 18mm;
+  }
+  @media print {
+    body { padding: 0; }
+    h2 { page-break-after: avoid; }
+    .job { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAME & CONTACT -->
+<div class="header-name">Ahmed Nasr</div>
+<div class="header-contact">
+  Dubai, UAE &nbsp;&nbsp;|&nbsp;&nbsp; +971 50 281 4490 &nbsp;&nbsp;|&nbsp;&nbsp; ahmednasr999@gmail.com &nbsp;&nbsp;|&nbsp;&nbsp; linkedin.com/in/ahmednasr &nbsp;&nbsp;|&nbsp;&nbsp; Arabic &amp; English: Fluent
+</div>
+<hr class="header-divider">
+
+<!-- PROFESSIONAL SUMMARY -->
+<h2>Professional Summary</h2>
+<p class="summary">
+  Client-facing technical delivery leader with 20+ years bridging deep technology expertise and structured delivery discipline across banking, payments, and FinTech environments in GCC and global markets. Grounded in software and mobile communications technology development (Intel, SysDSoft), then applied that technical foundation to lead complex system integrations and digital payments platform delivery at Network International - governing 300+ concurrent banking technology programs across 8 countries for 300+ banking clients including Visa and Mastercard. Founded and led technical architecture and platform delivery for Egypt's first FinTech SuperApp at PaySky, integrating payment systems, banking APIs, and digital financial services into a unified platform. Trusted by C-suite and senior banking stakeholders to translate complex technical discussions into clear execution plans and deliver with accountability. PMP and Certified Scrum Master. Fluent in Arabic and English.
+</p>
+
+<!-- CORE COMPETENCIES -->
+<h2>Core Competencies</h2>
+<div class="skills-list">
+Client-Facing Technical Delivery &nbsp;•&nbsp; Banking &amp; FinTech Platform Delivery &nbsp;•&nbsp; Payments Infrastructure &amp; System Integration &nbsp;•&nbsp; API &amp; Digital Platform Architecture &nbsp;•&nbsp; BaaS &amp; Embedded Finance Environments &nbsp;•&nbsp; Regulated Banking Environments (GCC) &nbsp;•&nbsp; Senior Stakeholder Engagement &amp; Trust Building &nbsp;•&nbsp; Project Portfolio Management &nbsp;•&nbsp; Software Development Lifecycle (SDLC) &nbsp;•&nbsp; Agile | Scrum | Waterfall Delivery &nbsp;•&nbsp; Technical Risk &amp; Issue Management &nbsp;•&nbsp; Multi-Engagement Delivery Management &nbsp;•&nbsp; Mobile &amp; Digital Financial Services &nbsp;•&nbsp; Arabic &amp; English (Fluent) &nbsp;•&nbsp; Saudi &amp; GCC Banking Market Knowledge
+</div>
+
+<!-- PROFESSIONAL EXPERIENCE -->
+<h2>Professional Experience</h2>
+
+<!-- Network International -->
+<div class="job">
+  <div class="job-row-inner">
+    <div class="job-title-cell">PMO Section Head &nbsp;(Banking Technology Delivery)</div>
+    <div class="job-date-cell">Sep 2014 – Jun 2017</div>
+  </div>
+  <div class="job-company">Network International &nbsp;|&nbsp; Egypt &nbsp;(8-Country Portfolio: Egypt, UAE, Jordan, Kenya, Nigeria, Ghana, Mauritius, South Africa)</div>
+  <ul>
+    <li>Served as primary technical delivery leader for 300+ concurrent banking and payments technology programs across 8 countries, acting as the trusted technical counterpart to senior stakeholders within 300+ banking clients - including Visa and Mastercard network integrations</li>
+    <li>Owned the full client relationship lifecycle from technical scoping and integration design through delivery, testing, and go-live - ensuring complex platform integrations were delivered on time, within scope, and to the highest technical standards</li>
+    <li>Led technical delivery of digital payments infrastructure including mobile wallet implementations, cardless transaction platforms, API-driven cross-border money transfer solutions, and mobile commerce platform integrations across GCC and Africa markets</li>
+    <li>Governed 14-month enterprise Salesforce platform implementation across 8 countries (170 users) - coordinating system integration workstreams, data migration, API configuration, and stakeholder adoption across a regulated financial services environment</li>
+    <li>Translated complex technical integration requirements into structured execution plans for both internal engineering teams and client technical stakeholders - building confidence and maintaining delivery transparency at senior levels</li>
+    <li>Built and led a team of 16 delivery managers, defining technical delivery standards, escalation protocols, and client engagement frameworks across multi-country operations</li>
+  </ul>
+</div>
+
+<!-- PaySky -->
+<div class="job">
+  <div class="job-row-inner">
+    <div class="job-title-cell">Country Manager &amp; Platform Delivery Lead</div>
+    <div class="job-date-cell">Apr 2021 – Jan 2022</div>
+  </div>
+  <div class="job-company">PaySky, Inc. &nbsp;|&nbsp; Egypt</div>
+  <ul>
+    <li>Led technical architecture and platform delivery for Egypt's first FinTech SuperApp - integrating payments APIs, banking system interfaces, e-commerce modules, and digital lifestyle services into a unified embedded finance platform</li>
+    <li>Served as primary technical liaison between financial institution partners, regulatory bodies, and the internal engineering team - translating banking compliance requirements into clear technical integration specifications</li>
+    <li>Managed end-to-end delivery of regulated financial services platform including payment gateway integrations, card scheme connectivity, and digital wallet infrastructure in a Central Bank-compliant environment</li>
+    <li>Established technical delivery governance, API documentation standards, and integration testing protocols to ensure platform reliability and security across all banking partner connections</li>
+  </ul>
+</div>
+
+<!-- SGH -->
+<div class="job">
+  <div class="job-row-inner">
+    <div class="job-title-cell">PMO &amp; Regional Engagement Lead</div>
+    <div class="job-date-cell">Jun 2024 – Present</div>
+  </div>
+  <div class="job-company">Saudi German Hospital Group &nbsp;|&nbsp; Dubai, UAE (KSA, UAE &amp; Egypt)</div>
+  <ul>
+    <li>Lead technical delivery governance for a $50M enterprise technology portfolio including AI-powered clinical decision support systems, EMR platform integrations, enterprise data warehouse, and analytics platform implementations across three countries</li>
+    <li>Act as primary technical liaison between U.S. technology partners (Health Catalyst, KLAS Research) and internal operations - translating complex technical architecture into clear client-facing delivery plans and executive reporting</li>
+    <li>Oversee system integration workstreams across multiple vendor platforms, ensuring API connectivity, data pipeline reliability, and compliance with JCI, HIMSS, and MOH regulatory standards</li>
+  </ul>
+</div>
+
+<!-- Intel / SysDSoft -->
+<div class="job">
+  <div class="job-row-inner">
+    <div class="job-title-cell">Project Manager - Mobile Communications Technology</div>
+    <div class="job-date-cell">2010 – 2012</div>
+  </div>
+  <div class="job-company">Intel Corporation &amp; SysDSoft/Intel Mobile Communications &nbsp;|&nbsp; Egypt</div>
+  <ul>
+    <li>Led LTE (4G) mobile technology development and deployment projects at Intel, working directly within software and hardware engineering teams on mobile communication platform development and technical validation</li>
+    <li>Managed cross-functional technical delivery at SysDSoft (acquired by Intel Mobile Communications) - coordinating software development teams, technical testing cycles, and integration milestones across mobile communication technology programs</li>
+    <li>Built foundational expertise in software development lifecycles, system architecture, and technical program management within a global engineering organisation</li>
+  </ul>
+</div>
+
+<!-- Revamp Consulting -->
+<div class="job">
+  <div class="job-row-inner">
+    <div class="job-title-cell">Engagement Manager</div>
+    <div class="job-date-cell">Mar 2013 – Sep 2014</div>
+  </div>
+  <div class="job-company">Revamp Consulting &nbsp;|&nbsp; USA, UAE &amp; Egypt</div>
+  <ul>
+    <li>Led structured client-facing delivery engagements for enterprise clients including Mayo Clinic and AT&amp;T, managing technical workstreams, stakeholder alignment, and delivery accountability across complex multi-party environments</li>
+  </ul>
+</div>
+
+<!-- BlueCloud -->
+<div class="job">
+  <div class="job-row-inner">
+    <div class="job-title-cell">Senior Project Manager, PMO</div>
+    <div class="job-date-cell">2012 – 2013</div>
+  </div>
+  <div class="job-company">BlueCloud &nbsp;|&nbsp; Egypt</div>
+  <ul>
+    <li>Managed IT infrastructure delivery projects for Microsoft Egypt, Vodafone Egypt, and Qatar Diar - coordinating technical teams and client stakeholders across system deployment and integration programs</li>
+  </ul>
+</div>
+
+<!-- Talabat -->
+<div class="job">
+  <div class="job-row-inner">
+    <div class="job-title-cell">Product Development Manager</div>
+    <div class="job-date-cell">Jun 2017 – May 2018</div>
+  </div>
+  <div class="job-company">Delivery Hero SE (Talabat) &nbsp;|&nbsp; GCC Markets</div>
+  <ul>
+    <li>Led technical product strategy and platform delivery coordination during hypergrowth (30,000 to 7 million daily orders; 233x), managing engineering delivery teams across GCC and Egypt markets</li>
+  </ul>
+</div>
+
+<!-- EDUCATION -->
+<h2>Education</h2>
+<div class="edu-block">
+  <div class="job-row-inner">
+    <div class="job-title-cell">MBA - Master in International Business Administration (MIBA)</div>
+    <div class="job-date-cell">2025 – 2027 (Expected)</div>
+  </div>
+  <div class="job-company">Paris ESLSCA Business School &nbsp;|&nbsp; Global Management</div>
+</div>
+<div class="edu-block">
+  <div class="job-row-inner">
+    <div class="job-title-cell">Project Management Professional (PMP) Training</div>
+    <div class="job-date-cell">2007 – 2008</div>
+  </div>
+  <div class="job-company">Université française d'Egypte</div>
+</div>
+<div class="edu-block">
+  <div class="job-row-inner">
+    <div class="job-title-cell">Software Engineering &amp; Technology Development</div>
+    <div class="job-date-cell">2004 – 2009</div>
+  </div>
+  <div class="job-company">Early Career Technical Roles - PEARDEV, Speech Workers, Code Republic, BASS &nbsp;|&nbsp; Egypt &amp; Europe</div>
+</div>
+
+<!-- CERTIFICATIONS -->
+<h2>Certifications</h2>
+<div class="cert-row"><strong>PMP</strong> - Project Management Professional, PMI, 2008 &nbsp;&nbsp;|&nbsp;&nbsp; <strong>CSM</strong> - Certified Scrum Master, Scrum Alliance, 2014</div>
+<div class="cert-row"><strong>CSPO</strong> - Certified Scrum Product Owner, Scrum Alliance, 2014 &nbsp;&nbsp;|&nbsp;&nbsp; <strong>CBAP</strong> - Certified Business Analysis Professional, IIBA, 2014</div>
+<div class="cert-row"><strong>Lean Six Sigma</strong> - SUNY, 2010 &nbsp;&nbsp;|&nbsp;&nbsp; <strong>ITIL Foundations</strong> - LinkedIn, 2016</div>
+
+</body>
+</html>

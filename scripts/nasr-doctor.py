@@ -9,6 +9,7 @@ Usage:
 
 import json
 import os
+import re
 import subprocess
 import sys
 import socket
@@ -339,40 +340,39 @@ def check_composio_linkedin():
 
 
 def check_linkedin_cookies():
-    """Test LinkedIn Voyager API with cookies - validates JD enrichment will work."""
-    cookies_file = Path("/root/.openclaw/cookies/linkedin.txt")
-    if not cookies_file.exists():
-        check("LinkedIn Cookies", Result.FAIL, "No cookie file at ~/.openclaw/cookies/linkedin.txt")
-        return
-    # Load cookies + CSRF
-    cookies, csrf = {}, None
-    for line in cookies_file.read_text().splitlines():
-        if line.startswith('#') or not line.strip():
-            continue
-        parts = line.split('\t')
-        if len(parts) >= 7:
-            cookies[parts[5]] = parts[6].strip('"')
-            if parts[5] == 'JSESSIONID':
-                csrf = parts[6].strip('"')
-    if not csrf:
-        check("LinkedIn Cookies", Result.FAIL, "No JSESSIONID in cookie file")
-        return
-    # Test one Voyager API call
-    import ssl
-    from urllib.request import Request, urlopen
-    cookie_str = '; '.join(f'{k}={v}' for k, v in cookies.items())
-    req = Request(
-        "https://www.linkedin.com/voyager/api/me",
-        headers={"User-Agent": "Mozilla/5.0", "csrf-token": csrf, "Cookie": cookie_str},
-    )
+    """Test LinkedIn JD enrichment via tls-client (primary method, no cookies needed)."""
     try:
-        with urlopen(req, timeout=10, context=ssl.create_default_context()) as r:
-            if r.status == 200:
-                check("LinkedIn Cookies", Result.OK, "Voyager API auth working - JD enrichment will succeed")
-            else:
-                check("LinkedIn Cookies", Result.FAIL, f"Voyager API returned {r.status} - cookies expired, ask Ahmed to re-export")
+        import tls_client
+        # Pick a recent job ID from raw data (avoids hardcoded stale IDs)
+        test_id = None
+        raw_file = WORKSPACE / "data" / "jobs-raw" / "linkedin.json"
+        if raw_file.exists():
+            import re as _re
+            raw_jobs = json.loads(raw_file.read_text()).get("data", [])
+            for j in raw_jobs[:10]:
+                url = j.get("job_url", "") or j.get("url", "")
+                m = _re.search(r"(\d{8,})", url)
+                if m:
+                    test_id = m.group(1)
+                    break
+        if not test_id:
+            test_id = "4386681141"  # fallback
+
+        session = tls_client.Session(client_identifier="chrome_120", random_tls_extension_order=True)
+        resp = session.get(f"https://www.linkedin.com/jobs/view/{test_id}", headers={
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36",
+            "Accept": "text/html,application/xhtml+xml",
+        }, timeout_seconds=10)
+        if resp.status_code == 200 and "show-more-less-html" in resp.text:
+            cache_dir = WORKSPACE / "data" / "jd-cache"
+            cached = len(list(cache_dir.glob("*.json"))) if cache_dir.exists() else 0
+            check("LinkedIn JD Fetch", Result.OK, f"tls-client working (job {test_id}, {cached} cached)")
+        else:
+            check("LinkedIn JD Fetch", Result.WARN, f"tls-client got {resp.status_code} for job {test_id}")
+    except ImportError:
+        check("LinkedIn JD Fetch", Result.FAIL, "tls_client not installed - run: pip install tls_client")
     except Exception as e:
-        check("LinkedIn Cookies", Result.FAIL, f"Voyager API failed: {e} - cookies expired, ask Ahmed to re-export")
+        check("LinkedIn JD Fetch", Result.FAIL, f"tls-client failed: {e}")
 
 
 # ── 5. Key Scripts ──

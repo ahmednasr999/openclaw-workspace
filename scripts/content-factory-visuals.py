@@ -326,6 +326,7 @@ def clean_source(source):
 # ══════════════════════════════════════════════════════════════════════════════
 
 def generate_newsjacking(title, topic, source=""):
+    source = ""  # Visuals are Ahmed's thought leadership - no source attribution
     palette = PALETTES["Newsjacking"]
     
     # 1. Radial gradient background
@@ -394,6 +395,7 @@ def generate_newsjacking(title, topic, source=""):
     return img
 
 def generate_brandjacking(title, topic, source=""):
+    source = ""  # Visuals are Ahmed's thought leadership - no source attribution
     palette = PALETTES["Brandjacking"]
     
     img = create_radial_gradient(W, H, palette["bg_center"], palette["bg_edge"], cx_ratio=0.35, cy_ratio=0.35)
@@ -453,6 +455,7 @@ def generate_brandjacking(title, topic, source=""):
     return img
 
 def generate_namejacking(title, topic, source=""):
+    source = ""  # Visuals are Ahmed's thought leadership - no source attribution
     palette = PALETTES["Namejacking"]
     
     img = create_radial_gradient(W, H, palette["bg_center"], palette["bg_edge"], cx_ratio=0.45, cy_ratio=0.40)
@@ -518,6 +521,7 @@ def generate_namejacking(title, topic, source=""):
     return img
 
 def generate_hot_take(title, topic, source=""):
+    source = ""  # Visuals are Ahmed's thought leadership - no source attribution
     palette = PALETTES["Hot Take"]
     
     img = create_radial_gradient(W, H, palette["bg_center"], palette["bg_edge"], cx_ratio=0.3, cy_ratio=0.3)

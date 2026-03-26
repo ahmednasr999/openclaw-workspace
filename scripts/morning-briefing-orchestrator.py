@@ -27,6 +27,9 @@ NOTION_CONFIG = f"{WORKSPACE}/config/notion.json"
 
 cairo = timezone(timedelta(hours=2))
 
+# Notion Pipeline DB (for live dedup)
+PIPELINE_DB_ID = "3268d599-a162-81b4-b768-f162adfa4971"
+
 
 def log(msg):
     ts = datetime.now(cairo).strftime("%H:%M:%S")
@@ -39,6 +42,74 @@ def load_notion_token():
             return json.load(f)['token']
     except:
         return None
+
+
+def fetch_notion_pipeline_for_dedup():
+    """
+    Query Notion Pipeline DB for ALL jobs (all stages).
+    Returns (applied_urls: set, applied_keys: set, total: int).
+    applied_urls = LinkedIn job IDs from URLs.
+    applied_keys = "company|role" normalized pairs.
+    """
+    token = load_notion_token()
+    applied_urls = set()
+    applied_keys = set()
+    total = 0
+    if not token:
+        log("  WARNING: No Notion token - falling back to pipeline.md for dedup")
+        return applied_urls, applied_keys, total
+
+    headers = {
+        'Authorization': f'Bearer {token}',
+        'Notion-Version': '2022-06-28',
+        'Content-Type': 'application/json'
+    }
+    ctx = ssl.create_default_context()
+    cursor = None
+
+    try:
+        while True:
+            body = {'page_size': 100}
+            if cursor:
+                body['start_cursor'] = cursor
+            req = urllib.request.Request(
+                f'https://api.notion.com/v1/databases/{PIPELINE_DB_ID}/query',
+                data=json.dumps(body).encode(), method='POST', headers=headers
+            )
+            resp = json.loads(urllib.request.urlopen(req, timeout=20, context=ctx).read())
+
+            for page in resp.get('results', []):
+                props = page.get('properties', {})
+                total += 1
+
+                # Extract company (title property)
+                company_arr = props.get('Company', {}).get('title', [])
+                company = company_arr[0].get('plain_text', '').strip().lower() if company_arr else ''
+
+                # Extract role (rich_text property)
+                role_arr = props.get('Role', {}).get('rich_text', [])
+                role = role_arr[0].get('plain_text', '').strip().lower() if role_arr else ''
+
+                # Extract URL
+                url = props.get('URL', {}).get('url', '') or ''
+
+                # Extract LinkedIn job ID from URL
+                url_match = re.search(r'/view/(\d+)', url)
+                if url_match:
+                    applied_urls.add(url_match.group(1))
+
+                if company and role:
+                    applied_keys.add(f"{company}|{role}")
+
+            cursor = resp.get('next_cursor')
+            if not cursor:
+                break
+
+        log(f"  Notion Pipeline: {total} jobs loaded for dedup ({len(applied_urls)} URLs, {len(applied_keys)} company|role keys)")
+    except Exception as e:
+        log(f"  WARNING: Notion Pipeline query failed ({e}), falling back to pipeline.md")
+
+    return applied_urls, applied_keys, total
 
 
 # ============================================================
@@ -340,6 +411,16 @@ def load_scanner_data(today_str):
                 else:
                     verdict, fit, reason = "SKIP", 2, "No relevant domain experience"
 
+            # ATS gate: If ATS score is meaningful (>=20, meaning JD was actually read)
+            # but still below threshold (<55), cap verdict at STRETCH.
+            # ATS < 20 typically means "couldn't fetch JD" -- don't penalize for missing data.
+            # This prevents "good title, weak JD match" jobs from being SUBMIT.
+            ats = job.get("ats_score", 0) or 0
+            if verdict == "APPLY" and 20 <= ats < 55:
+                verdict = "STRETCH"
+                fit = min(fit, 6)
+                reason = f"{reason} (ATS gate: {ats}/100 - title looks good but JD keyword match is weak)"
+
             job["career_verdict"] = verdict
             job["career_fit"] = fit
             job["career_reason"] = reason
@@ -447,7 +528,7 @@ def check_calendar():
 
 def get_content_calendar():
     """Get content calendar status from Notion."""
-    result = {"scheduled": 0, "drafted": 0, "posted": 0, "today_post": None,
+    result = {"scheduled": 0, "drafted": 0, "posted": 0, "ideas": 0, "today_post": None,
               "tomorrow_post": None, "next_scheduled": None, "gap_days": 0}
     token = load_notion_token()
     if not token:
@@ -484,6 +565,8 @@ def get_content_calendar():
                 result["drafted"] += 1
             elif status == 'Scheduled':
                 result["scheduled"] += 1
+            elif status == 'Ideas':
+                result["ideas"] += 1
 
             if planned == today_str:
                 post_url = (props.get('Post URL', {}).get('url') or '')
@@ -907,7 +990,7 @@ def create_notion_briefing(date_str, date_display, pipeline, scanner_meta, quali
         summary_parts.append(f"{p['stale']} stale")
     # Guard against content_cal being None (Notion API failure)
     if content_cal is None:
-        content_cal = {"scheduled": 0, "drafted": 0, "posted": 0, "today_post": None,
+        content_cal = {"scheduled": 0, "drafted": 0, "posted": 0, "ideas": 0, "today_post": None,
                        "tomorrow_post": None, "next_scheduled": None, "gap_days": 0}
     content_status = "posted ✅" if (content_cal.get("today_post") or {}).get("status") == "Posted" else "pending"
     summary_parts.append(f"content {content_status}")
@@ -983,58 +1066,129 @@ def create_notion_briefing(date_str, date_display, pipeline, scanner_meta, quali
 
     add_divider()
 
-    # ==================== SCANNER ====================
-    add_heading("🔍 Scanner")
+    # ==================== JOBS ====================
+    add_heading("💼 Jobs")
+
+    # Load fresh data from jobs-summary.json (the real LLM-reviewed output)
+    _jobs_summary_path = Path(WORKSPACE) / "data" / "jobs-summary.json"
+    _submit_jobs = []
+    _review_jobs = []
+    _skip_count = 0
+    _total_raw = 0
+    _total_reviewed = 0
+    _new_submit = []  # genuinely new (not in Notion)
+
+    try:
+        if _jobs_summary_path.exists():
+            with open(_jobs_summary_path) as _jsf:
+                _js_data = json.load(_jsf)
+            _jsd = _js_data.get('data', _js_data)
+            _submit_jobs = _jsd.get('submit', [])
+            _review_jobs = _jsd.get('review', [])
+            _skip_count = _jsd.get('skip_count', 0)
+            _total_reviewed = _jsd.get('reviewed', len(_submit_jobs) + len(_review_jobs) + _skip_count)
+            _total_raw = _jsd.get('total_candidates', _total_reviewed)
+    except Exception as _je:
+        log(f"  Jobs summary load error: {_je}")
+
+    # Dedup info
+    _deduped_count = len([j for j in qualified if j.get("_deduped")]) if qualified else 0
+    _new_submit = [j for j in _submit_jobs if j.get('url', '') not in [q.get('url', '_') for q in (cross_refs or {}).get('applied_urls', [])]]
+
+    # Summary line
     if scanner_meta:
         total = scanner_meta.get("total_found", 0)
-        picks = scanner_meta.get("priority_picks", 0)
         src = scanner_meta.get("source_status", {})
-        src_str = " | ".join(f"{n}:{s}" for n, s in src.items()) if src else "LinkedIn, Indeed"
+        src_str = " | ".join(f"{n}:{s}" for n, s in src.items()) if src else "LinkedIn, Indeed, Google"
         freshness = "fresh" if scanner_age == 0 else f"{scanner_age}d old" if scanner_age else ""
-        add_para(f"Found: {total} | Picks: {picks} | Sources: {src_str} | {freshness}")
+        add_para(f"Scanned: {total} raw | {_total_reviewed} reviewed | {len(_submit_jobs)} SUBMIT | {len(_review_jobs)} REVIEW | {_skip_count} SKIP | {freshness}")
     else:
-        add_para("No scanner data available")
+        add_para(f"Reviewed: {_total_reviewed} | {len(_submit_jobs)} SUBMIT | {len(_review_jobs)} REVIEW | {_skip_count} SKIP")
 
-    if qualified:
-        # Use career_verdict if available (semantic filter), fallback to ATS threshold
-        apply_jobs = [j for j in qualified if j.get("career_verdict") == "APPLY" or (not j.get("career_verdict") and j.get("ats_score", 0) >= 50)]
-        skip_jobs = [j for j in qualified if j.get("career_verdict") == "SKIP" or (not j.get("career_verdict") and j.get("ats_score", 0) < 50)]
-        stretch_jobs = [j for j in qualified if j.get("career_verdict") == "STRETCH"]
+    # Dedup status
+    if qualified is not None:
+        dedup_removed = len([j for j in (qualified or [])]) if qualified else 0
+        genuinely_new = len(qualified) if qualified else 0
+        add_para(f"After Notion dedup: {genuinely_new} genuinely new SUBMIT jobs (rest already tracked)")
 
-        # Sort by career_fit desc, then ats_score desc
-        apply_jobs.sort(key=lambda x: (x.get("career_fit", 0), x.get("ats_score", 0)), reverse=True)
+    def _format_job_line(j):
+        title = j.get("title", "?")[:45]
+        company = j.get("company", "")[:22]
+        ats = j.get("ats_score", 0)
+        loc = j.get("location", "")[:15]
+        url = j.get("url", "")
+        posted = j.get("posted", "")
+        first_seen = j.get("first_seen", "")
+        freshness = ""
+        if first_seen == today_str:
+            freshness = "🆕 "
+        elif posted:
+            try:
+                posted_dt = datetime.strptime(posted, "%Y-%m-%d").date()
+                days_old = (datetime.now(cairo).date() - posted_dt).days
+                if days_old <= 1:
+                    freshness = "🆕 "
+                elif days_old <= 3:
+                    freshness = f"📌{days_old}d "
+                else:
+                    freshness = f"🕐{days_old}d "
+            except Exception:
+                pass
+        line = f"{freshness}ATS:{ats} | {title} @ {company} | {loc}"
+        if url:
+            line += f" | {url}"
+        return line
 
-        def format_job_honest(idx, j):
-            title = j.get("title", "?")[:45]
-            company = j.get("company", "")[:25]
-            fit = j.get("career_fit", 0)
-            reason = j.get("career_reason", "")
-            url = j.get("url", "")
-            text = f"{idx}. [{fit}/10] {title} @ {company}"
-            if reason:
-                text += f" - {reason}"
-            if url:
-                text += f" | {url}"
-            return text
+    # Split by freshness
+    today_str = datetime.now(cairo).strftime("%Y-%m-%d")
+    yesterday_str = (datetime.now(cairo) - timedelta(days=1)).strftime("%Y-%m-%d")
 
-        # APPLY section - Decision 4: top 3 expanded, rest in toggle
-        if apply_jobs:
-            add_heading3(f"\u2705 APPLY - Genuine Career Fits ({len(apply_jobs)} jobs)")
-            for idx, j in enumerate(apply_jobs[:3], 1):
-                add_bullet(format_job_honest(idx, j))
-            if len(apply_jobs) > 3:
-                more = [format_job_honest(i, j) for i, j in enumerate(apply_jobs[3:], 4)]
-                add_toggle(f"\U0001f4cb {len(apply_jobs) - 3} more career fits...", more)
+    # SUBMIT section - split by fresh vs older
+    if _submit_jobs:
+        _submit_sorted = sorted(_submit_jobs, key=lambda x: x.get("ats_score", 0), reverse=True)
+        _fresh_submit = [j for j in _submit_sorted if j.get("first_seen", "") >= yesterday_str or j.get("posted", "") >= yesterday_str]
+        _older_submit = [j for j in _submit_sorted if j not in _fresh_submit]
 
-        # STRETCH section
-        if stretch_jobs:
-            stretch_items = [f"{j.get('title','?')[:40]} @ {j.get('company','')[:20]} - {j.get('career_reason','')} (FIT: {j.get('career_fit',0)})" for j in stretch_jobs]
-            add_toggle(f"🟡 STRETCH - Possible but Risky ({len(stretch_jobs)} jobs)", stretch_items)
+        add_heading3(f"🟢 SUBMIT ({len(_submit_jobs)} jobs)")
 
-        # SKIP section - domain mismatches (collapsed)
-        if skip_jobs:
-            skip_items = [f"{j.get('title','?')[:40]} @ {j.get('company','')[:20]} - {j.get('career_reason','')} (FIT: {j.get('career_fit',0)})" for j in skip_jobs]
-            add_toggle(f"❌ SKIP - Domain Mismatch ({len(skip_jobs)} jobs)", skip_items)
+        if _fresh_submit:
+            add_para(f"🆕 {len(_fresh_submit)} fresh (posted/seen in last 48h):")
+            for j in _fresh_submit[:5]:
+                add_bullet(_format_job_line(j))
+            if len(_fresh_submit) > 5:
+                more = [_format_job_line(j) for j in _fresh_submit[5:]]
+                add_toggle(f"📋 {len(_fresh_submit) - 5} more fresh SUBMIT...", more)
+
+        if _older_submit:
+            older_items = [_format_job_line(j) for j in _older_submit]
+            add_toggle(f"📌 {len(_older_submit)} still open (posted 2+ days ago)", older_items)
+
+        if not _fresh_submit:
+            add_para("No fresh SUBMIT jobs today - all are older postings still open")
+            for j in _submit_sorted[:5]:
+                add_bullet(_format_job_line(j))
+            if len(_submit_sorted) > 5:
+                more = [_format_job_line(j) for j in _submit_sorted[5:]]
+                add_toggle(f"📋 {len(_submit_sorted) - 5} more SUBMIT jobs...", more)
+
+    # REVIEW section - collapsed
+    if _review_jobs:
+        _review_sorted = sorted(_review_jobs, key=lambda x: x.get("ats_score", 0), reverse=True)
+        _fresh_review = [j for j in _review_sorted if j.get("first_seen", "") >= yesterday_str or j.get("posted", "") >= yesterday_str]
+        review_items = [_format_job_line(j) for j in _review_sorted]
+        fresh_note = f" | {len(_fresh_review)} fresh" if _fresh_review else ""
+        add_toggle(f"🟡 REVIEW ({len(_review_jobs)} jobs{fresh_note})", review_items)
+
+    # SKIP count
+    if _skip_count:
+        add_para(f"❌ {_skip_count} jobs skipped (domain mismatch or low fit)")
+
+    # ATS distribution insight
+    if _submit_jobs:
+        strong = len([j for j in _submit_jobs if j.get('ats_score', 0) >= 40])
+        mid = len([j for j in _submit_jobs if 20 <= j.get('ats_score', 0) < 40])
+        weak = len([j for j in _submit_jobs if j.get('ats_score', 0) < 20])
+        add_para(f"ATS quality: {strong} strong (≥40) | {mid} mid (20-39) | {weak} no JD (<20)")
 
     if trends.get("total_runs", 0) >= 3:
         add_para(f"Trend: {trends.get('trend','')} 7d avg: {trends.get('avg_7d_found',0):.0f} found, {trends.get('avg_7d_picks',0):.0f} picks")
@@ -1129,6 +1283,154 @@ def create_notion_briefing(date_str, date_display, pipeline, scanner_meta, quali
         if radar_picks > 0:
             add_bullet(f"\U0001f4e1 {radar_picks} comment opportunities ready")
         add_bullet(f"\U0001f91d {content_cal.get('posted', 0)} total posts")
+
+    add_divider()
+
+    # ==================== ENGAGE LAYER ====================
+    try:
+        engage_items = []
+
+        # Comment Radar data
+        radar_path = Path(WORKSPACE) / "data" / "comment-radar.json"
+        if radar_path.exists():
+            with open(radar_path) as _rf:
+                _radar = json.load(_rf)
+            radar_gen = _radar.get("generated", "?")[:16]
+            radar_count = _radar.get("posts_found", 0)
+            top_posts = _radar.get("top_posts", [])
+            if top_posts:
+                engage_items.append(f"🎯 {len(top_posts)} comment targets found (last scan: {radar_gen})")
+                for tp in top_posts[:3]:
+                    author = tp.get("author", "Unknown")
+                    pqs = tp.get("pqs", "?")
+                    topic = tp.get("topic", tp.get("title", ""))[:50]
+                    engage_items.append(f"  • {author} | PQS {pqs} | {topic}")
+            else:
+                engage_items.append(f"🎯 Comment Radar: {_radar.get('status', 'no_results')} (last: {radar_gen})")
+
+        # Comment Tracker stats
+        tracker_path = Path(WORKSPACE) / "data" / "comment-tracker.json"
+        if tracker_path.exists():
+            with open(tracker_path) as _tf:
+                _tracker = json.load(_tf)
+            stats = _tracker.get("stats", {})
+            total_posted = stats.get("total_posted", 0)
+            total_drafted = stats.get("total_drafted", 0)
+            last_radar = _tracker.get("last_radar_run", "?")[:16]
+            engage_items.append(f"📊 Comments: {total_posted} posted | {total_drafted} drafted | Last radar: {last_radar}")
+
+        # Commented posts history
+        commented_path = Path(WORKSPACE) / "data" / "commented-posts.jsonl"
+        if commented_path.exists():
+            commented_lines = commented_path.read_text().strip().split('\n')
+            commented_lines = [l for l in commented_lines if l.strip()]
+            if commented_lines:
+                last_comment = json.loads(commented_lines[-1])
+                engage_items.append(f"💬 {len(commented_lines)} comments posted via browser | Last: {last_comment.get('date', '?')}")
+
+        # Cron schedule info
+        engage_items.append("⏰ Pre-Post Priming: 9 AM (finds 5 posts) → Engage: 10:30 AM (Sun-Thu)")
+
+        if engage_items:
+            add_toggle(f"🤝 Engage Layer | {len(engage_items) - 1} data points", engage_items)
+        else:
+            add_toggle("🤝 Engage Layer | No data yet", ["Comment radar and engagement tracking will populate here"])
+    except Exception as _eng_err:
+        add_toggle(f"🤝 Engage Layer ⚠️ {str(_eng_err)[:50]}", ["Check comment-radar-agent.py"])
+
+    add_divider()
+
+    # ==================== CONTENT FACTORY ====================
+    try:
+        cf_items = []
+        # RSS Intelligence state
+        rss_state_path = Path(WORKSPACE) / "data" / "rss-intelligence-state.json"
+        if rss_state_path.exists():
+            with open(rss_state_path) as _f:
+                _rss_st = json.load(_f)
+            cf_items.append(f"📡 RSS: {len(_rss_st.get('seen_urls', []))} articles indexed | Last run: {_rss_st.get('last_run', '?')[:16]}")
+
+        # Exa Scanner status
+        exa_state_path = Path(WORKSPACE) / "data" / "exa-scanner-state.json"
+        if exa_state_path.exists():
+            with open(exa_state_path) as _f:
+                _exa_st = json.load(_f)
+            cf_items.append(f"🔎 Exa: {_exa_st.get('total_saved', '?')} saved | Last: {_exa_st.get('last_run', '?')[:16]} | Sources: Web + X + LinkedIn")
+        else:
+            cf_items.append("🔎 Exa: Mon/Wed/Fri 8 AM (12 searches across Web, X, LinkedIn)")
+
+        # Content Calendar stats (already available from content_cal var)
+        cal_total = (content_cal.get('posted', 0) + content_cal.get('scheduled', 0) +
+                     content_cal.get('drafted', 0) + content_cal.get('ideas', 0))
+        cf_items.append(f"📅 Calendar: {cal_total} total | {content_cal.get('ideas', 0)} Ideas → {content_cal.get('drafted', 0)} Drafts → {content_cal.get('scheduled', 0)} Scheduled → {content_cal.get('posted', 0)} Posted")
+
+        # Pipeline stages with times
+        cf_items.append("⏰ Daily chain: RSS 7AM → Scorer 7:30 → Exa 8 (M/W/F) → Bridge 8:30 → Drafter 9 → Poster 9:30")
+        cf_items.append("📋 Weekly: Friday 9AM Top-5 Digest to Telegram")
+
+        # Check last pipeline run log
+        pipeline_log = Path(WORKSPACE) / "data" / "pipeline-runs.jsonl"
+        if pipeline_log.exists():
+            lines = pipeline_log.read_text().strip().split('\n')
+            if lines:
+                last_run = json.loads(lines[-1])
+                stages_ok = sum(1 for s in last_run.get('stages', {}).values() if s.get('status') in ('success', 'skipped'))
+                stages_total = len(last_run.get('stages', {}))
+                cf_items.append(f"🏭 Last pipeline: {last_run.get('timestamp', '?')[:16]} | {stages_ok}/{stages_total} stages OK | {last_run.get('total_duration', 0)}s")
+
+        cf_all_ok = len(cf_items) >= 4  # Has enough data = probably healthy
+        if cf_all_ok:
+            add_toggle(f"🏭 Content Factory ✅ | {content_cal.get('drafted', 0)} drafts ready | {content_cal.get('ideas', 0)} in queue", cf_items)
+        else:
+            add_heading("🏭 Content Factory")
+            for item in cf_items:
+                add_bullet(item)
+    except Exception as _cf_err:
+        add_toggle(f"🏭 Content Factory ⚠️ Error: {str(_cf_err)[:50]}", ["Check content-factory-health-monitor.py"])
+
+    add_divider()
+
+    # ==================== SCANNER HEALTH (broken sources) ====================
+    try:
+        scanner_items = []
+        # Check each source from latest merge
+        merged_path = Path(WORKSPACE) / "data" / "jobs-merged.json"
+        source_counts = {}
+        if merged_path.exists():
+            with open(merged_path) as _f:
+                _merged = json.load(_f)
+            _jobs_list = _merged if isinstance(_merged, list) else _merged.get('jobs', _merged.get('data', []))
+            if isinstance(_jobs_list, list):
+                for _j in _jobs_list:
+                    src = _j.get('source', 'unknown')
+                    source_counts[src] = source_counts.get(src, 0) + 1
+
+        # Known scanner statuses
+        scanners = [
+            ("LinkedIn (tls-client)", source_counts.get('linkedin', source_counts.get('LinkedIn', 0)), "✅"),
+            ("Google Jobs", source_counts.get('google', source_counts.get('Google', 0)), "✅"),
+            ("Indeed", source_counts.get('indeed', source_counts.get('Indeed', 0)), "✅"),
+            ("Bayt", source_counts.get('bayt', source_counts.get('Bayt', 0)), "❌ 403 Forbidden"),
+            ("Adzuna", source_counts.get('adzuna', source_counts.get('Adzuna', 0)), "❌ 0 results (API keys present)"),
+            ("HiringCafe", source_counts.get('hiringcafe', source_counts.get('HiringCafe', 0)), "❌ Hangs on execution"),
+        ]
+
+        working = sum(1 for _, c, s in scanners if c > 0 or s == "✅")
+        broken = sum(1 for _, c, s in scanners if "❌" in s)
+
+        for name, count, status in scanners:
+            icon = "🟢" if count > 0 else ("🔴" if "❌" in status else "🟡")
+            scanner_items.append(f"{icon} {name}: {count} jobs | {status}")
+
+        total_jobs = sum(c for _, c, _ in scanners)
+        scanner_items.append(f"📊 Total: {total_jobs} raw jobs from {working} working sources")
+
+        if broken > 0:
+            add_toggle(f"📡 Job Scanners: {working}/6 working | {broken} broken ⚠️", scanner_items)
+        else:
+            add_toggle(f"📡 Job Scanners: {working}/6 all green ✅", scanner_items)
+    except Exception as _sc_err:
+        add_toggle(f"📡 Job Scanners ⚠️ Error: {str(_sc_err)[:50]}", ["Check nasr-doctor.py"])
 
     add_divider()
 
@@ -1380,13 +1682,14 @@ def main():
     scanner_meta, qualified, borderline, scanner_age = load_scanner_data(today_str)
     log(f"  {len(qualified)} qualified, {len(borderline)} borderline, age: {scanner_age}d")
 
-    # 2b. Dedup: remove jobs already in pipeline
-    log("Step 2b: Dedup scanner picks against pipeline...")
-    if qualified and pipeline.get("total_applications", 0) > 0:
-        # Build set of applied LinkedIn job IDs and company+role combos
-        applied_urls = set()
-        applied_keys = set()
-        if os.path.exists(PIPELINE_FILE):
+    # 2b. Dedup: remove jobs already in pipeline (LIVE from Notion Pipeline DB)
+    log("Step 2b: Dedup scanner picks against Notion Pipeline DB...")
+    if qualified:
+        applied_urls, applied_keys, notion_total = fetch_notion_pipeline_for_dedup()
+
+        # Fallback to pipeline.md ONLY if Notion query returned nothing
+        if notion_total == 0 and os.path.exists(PIPELINE_FILE):
+            log("  Fallback: reading pipeline.md for dedup...")
             with open(PIPELINE_FILE) as pf:
                 for pline in pf:
                     pline = pline.strip()
@@ -1402,7 +1705,6 @@ def main():
                     p_company = pcols[2].strip().lower()
                     p_role = pcols[3].strip().lower() if len(pcols) > 3 else ""
                     p_url = pcols[10].strip() if len(pcols) > 10 else ""
-                    # Extract LinkedIn job ID from URL
                     url_match = re.search(r'/view/(\d+)', p_url)
                     if url_match:
                         applied_urls.add(url_match.group(1))
@@ -1459,7 +1761,7 @@ def main():
     log("Step 5: Content calendar...")
     content_cal = get_content_calendar()
     if content_cal is None:
-        content_cal = {"scheduled": 0, "drafted": 0, "posted": 0, "today_post": None,
+        content_cal = {"scheduled": 0, "drafted": 0, "posted": 0, "ideas": 0, "today_post": None,
                        "tomorrow_post": None, "next_scheduled": None, "gap_days": 0}
         log("  ⚠️ Content calendar returned None - using defaults")
     log(f"  Posted: {content_cal['posted']}, Scheduled: {content_cal['scheduled']}, Drafted: {content_cal['drafted']}")

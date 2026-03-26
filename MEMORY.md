@@ -192,6 +192,13 @@ Used by: ALL workspace scripts (morning-briefing-orchestrator.py, linkedin-auto-
 This applies to EVERY app: Notion, Gmail, LinkedIn, Slack, Calendar, etc.
 The workspace scripts are always the ground truth for what credentials exist.
 
+## HuggingFace (Added 2026-03-26)
+- **Token:** `config/huggingface.json` (hf_NPea...pnC)
+- **Client:** `scripts/huggingface-client.py`
+- **Working free:** FLUX.1-schnell (image), SD XL (image), Llama 3.3 70B (text via router/v1)
+- **Not free:** SD 3.5, Bark TTS, MMS TTS, SpeechT5, NLLB translation, DistilBERT
+- **Endpoint changed:** Old `api-inference.huggingface.co` → New `router.huggingface.co`
+
 ## Key Files
 
 ### Core Memory
