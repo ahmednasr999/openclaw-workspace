@@ -13,3 +13,7 @@ if [ -n "$FAILED" ]; then
   curl -sf -X POST "https://api.telegram.org/bot${BOT_TOKEN}/sendMessage" \
     -d "chat_id=${CHAT_ID}" -d "text=${MSG}" > /dev/null 2>&1
 fi
+
+# Also run Content Factory token health (alerts on Notion token issues)
+python3 /root/.openclaw/workspace/scripts/content-factory-token-health.py >> /root/.openclaw/workspace/logs/cf-token-health.log 2>&1 &
+echo "[key-health-check] Content Factory token health running in background"

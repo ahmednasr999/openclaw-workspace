@@ -1,0 +1,474 @@
+[05:54:54] === RSS → Content Calendar Bridge === 2026-03-25 05:54 Cairo
+[05:54:54]   Fetching existing Content Calendar entries...
+[05:54:55]   Content Calendar has 0 existing entries
+[05:54:55]   Fetching unprocessed RSS articles...
+[05:54:57]   RSS DB: 132 articles with Status=New
+[05:54:57]   132 articles to process
+[05:54:57]   + Michael Ovitz: The Psychology of Power
+[05:54:58]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"d97db457-347c-4b27-909f-bc7ce470fcff"}
+[05:54:58]   + My AI Coach Told Me My Coaching Was Wrong. It Was Right.
+[05:54:58]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"55645ce2-a7ad-45a6-97ac-579545661e6f"}
+[05:54:58]   + Ramp Acquires Billhop to Expand Into The UK And Europe
+[05:54:58]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"c6afe290-d99f-4ead-97b7-b799f0a87c38"}
+[05:54:58]   + Inside the Mind of Robinhood Co-Founder Vlad Tenev
+[05:54:59]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"626da3e1-babb-459e-9ddd-9aa5e91c0a0f"}
+[05:54:59]   + How to Think Like a World-Class Marketer | Rory Sutherland
+[05:54:59]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"b07b3512-8c78-47b8-bae8-fe3b58d43eda"}
+[05:54:59]   + Modern Banking Infrastructure in Latin America: Five Maps Th
+[05:54:59]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"f05967ad-7738-4e16-88f3-7ec2c4f6ff56"}
+[05:54:59]   + Managing Upwards: A Survivor's Guide
+[05:54:59]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"ba0bd3d6-12a1-472d-827f-236116d268a3"}
+[05:54:59]   + Ron Shaich: Lessons from Building Panera
+[05:54:59]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"a0a1aba1-aacd-4204-8f7b-a40e4c9cc669"}
+[05:54:59]   + Viz.ai, Alnylam Pharmaceuticals partner for cardiac amyloido
+[05:55:00]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"cd17aa25-20f8-449f-865a-831f19c7c7cd"}
+[05:55:00]   + Weekly Roundup – March 21, 2026
+[05:55:00]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"8a785b0b-c6e1-4255-81f1-b75210fdccce"}
+[05:55:00]   + How to be an Inclusive Project Manager
+[05:55:00]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"216570da-2536-4c2d-90a7-a227bbd61e46"}
+[05:55:00]   + Roll-out Planning - Why Good Preparation Is Key
+[05:55:00]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"0b573d82-2188-494d-84de-996755223a7f"}
+[05:55:00]   + How Lufthansa Shapes Data-Driven Transformation Leaders
+[05:55:01]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"0c5f0419-863a-4acb-b719-eb2ec1d8e71c"}
+[05:55:01]   + Generate Value From GenAI With ‘Small t’ Transformations
+[05:55:01]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"dc18403a-2866-4a75-a796-f266f4d52055"}
+[05:55:01]   + How Grassroots Automation Speeds Digital Success
+[05:55:02]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"8b24289b-cc96-4eea-afe1-5139ea7d59d5"}
+[05:55:02]   + NjiaPay Raises $2.1M As Amsterdam’s FinTech Momentum Continu
+[05:55:02]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"b3cf8d5e-edc4-4216-b352-bff23963bac7"}
+[05:55:02]   + Keys to Success with Virtual Nursing
+[05:55:02]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"f477e392-1292-4e27-9a1d-274d44975aea"}
+[05:55:02]   + Understanding Benefits Realization and Why It Matters
+[05:55:03]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"817f3740-e5b8-4d12-b5a1-4819c8e28e27"}
+[05:55:03]   + How do I increase Return On Time Invested (ROTI) in meetings
+[05:55:03]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"6469e782-522e-4b4a-94a4-0a11ab5d71a2"}
+[05:55:03]   + A Future Ready Platform for Innovation with MEDITECH and HCA
+[05:55:03]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"c5f3b144-86f9-4fa8-8d80-39ac100d7499"}
+[05:55:03]   + [Outliers] Harrison McCain: How to Create Demand for Somethi
+[05:55:04]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"cea5a80a-c4d4-443f-a8f2-5431dcb7ff32"}
+[05:55:04]   + The Outlier Playbook: The Patterns Behind Enduring Success
+[05:55:04]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"8fac0364-c323-4551-8824-9b90c6c6eb5f"}
+[05:55:04]   + Pierre Poilievre on the Role of Government, Freedom, and Aff
+[05:55:04]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"cf895671-9538-47a8-9aeb-2d4cb5884515"}
+[05:55:04]   + Steering Committees - and the challenges of remote settings
+[05:55:05]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"02344c17-ba42-41d1-b6bf-e91b54fa2737"}
+[05:55:05]   + Discipline Over Speed: Personal reflections after HIMSS
+[05:55:05]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"14b852ea-bb70-4949-b823-9e5f7ee61b7c"}
+[05:55:05]   + Data-Driven Health Care: Enhancing Patient Outcomes Through 
+[05:55:05]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"c6d2ea30-e84d-4666-b55c-f052c66e726e"}
+[05:55:05]   + Railway secures $100 million to challenge AWS with AI-native
+[05:55:05]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"ae2198a0-024b-4c7d-8899-6e019da8de4f"}
+[05:55:05]   + The spirit of the law [in managing projects]
+[05:55:06]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"c4454016-6053-49f6-9721-c6622cd1f851"}
+[05:55:06]   + Morgan Housel: Wealth is What You Have Minus What You Want
+[05:55:06]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"f2499578-8efd-435b-b015-310b25805818"}
+[05:55:06]   + Why do Projects need Estimates?
+[05:55:06]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"b0b410dd-b7f9-4444-9883-640dbc785e5c"}
+[05:55:06]   + Effective Communication in Change Management
+[05:55:06]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"b197c7ef-7ec5-4d56-b873-c35f97446007"}
+[05:55:06]   + [Outliers] Ray Kroc: How McDonald’s Took Over America
+[05:55:07]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"bc390c68-2b54-477d-ab11-c730641ef3db"}
+[05:55:07]   + Generative AI Demystified: What It Really Means for Business
+[05:55:07]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"3d3acfaf-c7c7-4329-88e3-09acad4092d4"}
+[05:55:07]   + The Starbucks Mobile Order Timing Problem That Chick-fil-A A
+[05:55:07]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"d152a245-078f-435d-8ee6-3fe76f63086b"}
+[05:55:07]   + How To Be an Influential Project Manager
+[05:55:08]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"8d5b10cb-8d59-4697-ae8c-def4ca2e8c16"}
+[05:55:08]   + Stakeholder Management at Zalando: It’s Personal
+[05:55:08]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"e2784250-ea86-4d27-ba4f-93a0105d4dbe"}
+[05:55:08]   + The Most Misunderstood Role in the Toyota Production System
+[05:55:09]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"cae9a360-66ed-4bf5-bfa3-345388b125e5"}
+[05:55:09]   + Lessons learned - dealing with ambiguity
+[05:55:09]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"cd976cbf-0bf2-4776-af40-e1427955db89"}
+[05:55:09]   + NDA Projects - What is the Reality of Working under NDA?
+[05:55:09]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"0782b5bf-3559-41c4-971e-0bb7acebd605"}
+[05:55:09]   + Roles & Responsibilities
+[05:55:10]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"17269406-8560-4bf7-86c6-e092b254fb4d"}
+[05:55:10]   + The Role of Emotional Intelligence in Project Management
+[05:55:10]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"c028239e-6636-40bd-a24e-50aedb198080"}
+[05:55:10]   + Does Being in Charge of a Delivery Make You a Project Manage
+[05:55:11]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"226197b1-e3f7-47d0-81a9-fca5401e07da"}
+[05:55:11]   + Lean Healthcare Study Tour in Japan: September 2026
+[05:55:11]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"1453a6e9-ab50-48a8-9dce-8a8e42b8e042"}
+[05:55:11]   + Mastercard To Acquire BVNK In $1.8B Bet On Hybrid Finance
+[05:55:11]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"7543b3df-770b-4583-9216-45319beea20a"}
+[05:55:11]   + How a Typical Day of Program Manager Looks Like
+[05:55:12]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"903ab225-2397-4f42-a5bd-074c76561a01"}
+[05:55:12]   + Racing on Rails: Inside the FinTech Power Shift Behind the 2
+[05:55:12]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"03cbff10-ad75-4841-80f5-4ac858a0c0aa"}
+[05:55:12]   + Lessons from Navigating the Unknown: Taking Over Operational
+[05:55:13]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"72a0e033-cf96-4b0e-8f27-7fa67efdfb7c"}
+[05:55:13]   + [Outliers] Phil Knight: The Obsession That Built Nike
+[05:55:13]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"a0609243-4b14-4099-9d57-7f3ceaa773aa"}
+[05:55:13]   + Medisolv Expands AI Capabilities with Acquisition of Lilac S
+[05:55:15]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"48ab7001-d74c-467c-8c2b-fb3e37f16604"}
+[05:55:15]   + 7 Principles of Inner Excellence to Stay Calm Under Fire | J
+[05:55:15]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"ac6ef734-3999-4f87-883c-8901c52f9e9b"}
+[05:55:15]   + James Clear: How to Build Good Habits & Break Bad Ones
+[05:55:16]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"71856d1e-e465-41fd-a3b2-93f0a569af6e"}
+[05:55:16]   + Stakeholders react to White House national AI policy framewo
+[05:55:16]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"8a3cb07f-9927-44e0-bfb9-264c1627878b"}
+[05:55:16]   + How to rule a workshop
+[05:55:16]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"d5ea09d7-a456-4ded-877f-da2791f7dc38"}
+[05:55:16]   + How AI Changes Your Workforce
+[05:55:16]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"325e3f3d-6519-4397-894a-b59092fd7f38"}
+[05:55:16]   + AI Won’t Fix This
+[05:55:17]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"dbef0f20-57eb-47e9-b375-0ca21379bc4d"}
+[05:55:17]   + Setting up a Project for Success by being a Change Agent
+[05:55:17]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"020ce7ae-6dc1-4cde-a8f6-305a894f1850"}
+[05:55:17]   + Maturing a Project Management Office
+[05:55:17]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"36ef062c-52c9-464a-9822-cd8a65f9b120"}
+[05:55:17]   + Mastercard Launches Global Crypto Partner Program With 85 In
+[05:55:17]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"ef7580fc-35ab-4060-8a16-eeb7db5fa81c"}
+[05:55:17]   + Scaling GenAI: Get Big Value From Smaller Efforts
+[05:55:18]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"3d0dbafb-d611-463c-89e1-800acf8ab14c"}
+[05:55:18]   + Preparing Your Organization for a Generative Future
+[05:55:21]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"b6e3fda6-2f4a-4669-8779-3b2ac17967ee"}
+[05:55:21]   + The Art of negotiating and getting your project back on trac
+[05:55:21]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"246e2a44-f4fe-4396-b338-41aa09be761b"}
+[05:55:22]   + Richard Mancuso
+[05:55:22]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"e2e0194d-d6cd-44ed-8310-ffcaffb7473b"}
+[05:55:22]   + Honest feedback hurts - and that's ok
+[05:55:22]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"017a9819-e035-4d08-89b7-d557d37a292f"}
+[05:55:22]   + Contributed: Your next AI investment should not be a tool — 
+[05:55:22]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"82b88d82-7460-4018-921d-ebe471a07bbc"}
+[05:55:22]   + Stripe-Backed Tempo Launches AI Payments Protocol As Race Fo
+[05:55:22]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"575d12e2-fd87-4e26-9253-a0c8f30aafcf"}
+[05:55:22]   + Our Guide to the Spring 2024 Issue
+[05:55:23]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"ea4f1e76-2c01-4838-b919-29e0810afdb7"}
+[05:55:23]   + Top 3 power skills of project success and how to master them
+[05:55:23]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"4d2b56fd-405b-49ba-93dd-ae29c6194dd7"}
+[05:55:23]   + Malama Health Secures $9.2M | Nitra Raises $187 Million
+[05:55:24]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"4ff09cc8-42ac-451e-a620-0fc360e26104"}
+[05:55:24]   + Anthropic launches Cowork, a Claude Desktop agent that works
+[05:55:24]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"124c97ee-4589-4954-9944-152ffc62e2a8"}
+[05:55:24]   + PMP Preparation Journey: Passing the PMP Exam on the First A
+[05:55:24]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"51fa5ce4-1d54-4fda-be57-bbddb0c19ad7"}
+[05:55:24]   + N26 Investors And Founders Strike Governance Deal
+[05:55:24]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"d7a0ceb3-d846-4120-b02c-af001fdb4d40"}
+[05:55:24]   + Project Team Development
+[05:55:24]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"0d115b09-cabc-463b-a72b-2f4c4e49cbf0"}
+[05:55:24]   + The Art of seeing the bigger picture in managing Programs
+[05:55:25]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"aa49e7ef-0ea1-4df9-acbd-93662ef33a7c"}
+[05:55:25]   + WBS in the Age of Agile
+[05:55:25]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"1669b5f6-0872-4931-80d0-bcb5cf97bd15"}
+[05:55:25]   + Brookfield CEO Connor Teskey: AI Infrastructure, Data Center
+[05:55:25]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"66bf1a49-bece-4244-b68c-a2ccfefce1c7"}
+[05:55:25]   + Listen Labs raises $69M after viral billboard hiring stunt t
+[05:55:26]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"b73a07a6-65bd-4b66-8dc5-0146e4dbdb6e"}
+[05:55:26]   + A Coach for the Coach: Why the Lone Wolf Lean Practitioner N
+[05:55:30]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"5eff32e5-da23-4662-9f3c-efc96f585d31"}
+[05:55:30]   + Empower Citizen Developers to Accelerate Innovation
+[05:55:30]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"809c97cb-740d-4c43-b43a-9d765d75b51f"}
+[05:55:30]   + Start with yes… But
+[05:55:30]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"540dcf98-cebb-4253-b7b7-4b686a8dd8c2"}
+[05:55:30]   + Door of Verbalization
+[05:55:31]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"7c5ce99f-f657-4139-a313-cd793e64e274"}
+[05:55:31]   + London Overtakes New York And San Francisco As The World’s T
+[05:55:31]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"4e89d8cd-6567-491a-b9e7-a9b821b00681"}
+[05:55:31]   + How to be an Organised Program Manager
+[05:55:31]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"ba9c9f75-912e-4dbd-99a4-0d149816df32"}
+[05:55:31]   + Using BATNA in Project Management
+[05:55:32]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"b297932c-00ca-4013-a4e4-f49139dcba67"}
+[05:55:32]   + Cerebral acquires ADHD app Inflow to expand mental health pl
+[05:55:32]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"3fb21673-64c0-4451-a58b-fe101e3691cd"}
+[05:55:32]   + The Curse of Knowledge: Leverage the Feedback Loop for Stell
+[05:55:32]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"52b60a6d-c5f8-42c4-b49c-7f5ea22d494b"}
+[05:55:32]   + Bonus Features – March 22, 2026 – 54% of providers have used
+[05:55:32]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"16d56650-af8b-44f4-8167-8ee732d7ffb8"}
+[05:55:32]   + Harmony Healthcare IT Focuses on Maintaining Data Across Mer
+[05:55:33]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"c7949019-f890-473a-9831-2face322b58b"}
+[05:55:33]   + Problem-Seeing Eyes Are Everywhere. Problem-Speaking Mouths 
+[05:55:33]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"b9a5aed0-787f-49b2-aa35-07477883dc00"}
+[05:55:33]   + So you want to become a Project Manager? Here's what the the
+[05:55:33]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"f87aaef3-7f44-41c7-97c5-3185a1da259e"}
+[05:55:33]   + AI-Savvy Boards Drive Superior Performance
+[05:55:34]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"ad4120ee-5151-40a2-b3ba-71d56a2c9607"}
+[05:55:34]   + How to use (the) Best Practices
+[05:55:34]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"0dc99268-46ed-4d0a-bfc5-322788ca9ff0"}
+[05:55:34]   + Stripe vs. Adyen (2026): Two Trillion‑Dollar Visions for the
+[05:55:34]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"ece7a2a7-f699-4c93-8e10-7090767e5c71"}
+[05:55:34]   + [Outliers] Bernie Marcus: The Home Depot Story
+[05:55:35]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"cc6b31a9-e16b-4890-b6ba-32b54c6ad028"}
+[05:55:35]   + Project Planning: An Interview with Experts
+[05:55:36]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"a536fb46-fe5f-4338-a510-70619d90777a"}
+[05:55:36]   + The Best Project Management Training Isn't a Certificate, it
+[05:55:36]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"4aeb406b-8c21-4868-add9-b5d9cea0923e"}
+[05:55:36]   + Salesforce rolls out new Slackbot AI agent as it battles Mic
+[05:55:37]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"48984839-c256-402a-80b6-7a03de939e75"}
+[05:55:37]   + [Outliers] Charlie Munger: The Psychology of Human Misjudgme
+[05:55:37]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"56af04f2-510a-4efd-88c0-0863a9d684f3"}
+[05:55:37]   + The Statement Release
+[05:55:37]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"fda4bbcd-58a6-409f-aa02-51e34bdf8775"}
+[05:55:37]   + Let's talk about testing
+[05:55:37]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"794f6d96-e004-4b18-9f9a-37983338ff8f"}
+[05:55:37]   + Mastercard Turns AI Into A Virtual C-Suite For Small Busines
+[05:55:38]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"0ce41b32-d3c4-4695-9000-6398b891330a"}
+[05:55:38]   + Why Manufacturers Need a Phased Approach to Digital Transfor
+[05:55:38]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"cd98a20c-fbb5-43d8-b423-4b72c72388bd"}
+[05:55:38]   + [Outliers] The Multidisciplinary Approach to Thinking | Pete
+[05:55:38]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"df971295-e26b-4dc8-82be-233225c974ad"}
+[05:55:38]   + Three Questions to Ask About Your Digital Strategy
+[05:55:39]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"a7274315-1e25-421c-aeeb-bbb2e19484cd"}
+[05:55:39]   + Be Your Best in 2026: The Most Important Lessons from The Kn
+[05:55:39]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"06f76823-39e8-4b5a-82c0-1909d2526b96"}
+[05:55:39]   + Our Guide to the Spring 2026 Issue
+[05:55:40]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"563abae1-aa45-4b4e-a909-c355ffc281ad"}
+[05:55:40]   + Airwallex Brings Yield To The U.S. Payments Stack
+[05:55:40]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"2dac99ad-1515-49c4-8da1-1e371ed66388"}
+[05:55:40]   + Nicolai Tangen: The $2 Trillion Mind
+[05:55:40]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"5a04ecfd-720a-4584-86fd-7c59926ff66d"}
+[05:55:40]   + Planning a Project with a Fixed deadline?
+[05:55:41]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"55c288bb-2f67-44ba-90bd-ac3cd8ee9c5f"}
+[05:55:41]   + AI lessens workloads, helps physicians 'be more human'
+[05:55:41]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"c859e492-8e53-460c-a2a2-a0510b2aef6a"}
+[05:55:41]   + Santander Expands Getnet Footprint With Colombia Launch
+[05:55:41]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"2ca6a19c-26c6-4dd1-81cc-2bdd0c92fc3b"}
+[05:55:41]   + Nous Research's NousCoder-14B is an open-source coding model
+[05:55:41]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"395ea7a0-792d-4205-9bdf-d5ee052c2a8a"}
+[05:55:41]   + Parkinson's Law and Project Scheduling
+[05:55:42]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"4898c238-8d95-421f-b4c9-434e8e4db13e"}
+[05:55:42]   + Speed, Ease, and Expertise With AI: Lenovo’s Linda Yao
+[05:55:42]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"e1b85528-af24-4cbd-8c84-bedf5535b88e"}
+[05:55:42]   + The GenAI Blind Spot Leaders Have Now
+[05:55:42]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"2a44930c-ef33-4065-9cba-430e1377ec49"}
+[05:55:42]   + [Outliers] Mary Kay Ash: The Greatest Saleswoman In History
+[05:55:42]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"831a2839-f744-4951-8fd4-a05d6667d6ab"}
+[05:55:42]   + How to Approach Crucial Conversations
+[05:55:43]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"11ad35c0-0368-4e5d-aed6-dc161e638636"}
+[05:55:43]   + CIO Podcast – Episode 111: Navigating the Changing World of 
+[05:55:43]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"1d1c9611-eb13-46ad-92ec-5207ef416d8f"}
+[05:55:43]   + When Product meets Program: lessons from a career move
+[05:55:44]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"274ec4c2-ced2-4d7f-a05a-42e67e5c0033"}
+[05:55:44]   + Ryan McCormack’s Operational Excellence Mixtape: March 20, 2
+[05:55:44]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"71749ef8-1fa7-450d-9ddd-32180a8e0301"}
+[05:55:44]   + Claude Code costs up to $200 a month. Goose does the same th
+[05:55:44]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"5fa01e3c-86c6-4c48-ab49-dcdbda356083"}
+[05:55:44]   + Warehouse ITs Handheld Exchange Project Adventure: Part 1 (S
+[05:55:44]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"562ca8bf-1884-482d-a9fe-723b0779fe3f"}
+[05:55:44]   + The creator of Claude Code just revealed his workflow, and d
+[05:55:45]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"dc5407aa-a68b-4600-b1cf-b50c1bfe1200"}
+[05:55:45]   + It’s Time for “Actioning Information” to Move Past Interoper
+[05:55:45]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"114feeef-1f47-4dba-b1e3-30f39601cb45"}
+[05:55:45]   + Nubank's Stadium Surge: Palmeiras Next After Inter Miami
+[05:55:45]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"73f99191-6de6-4b51-82c3-3011d2efa019"}
+[05:55:45]   + How to start establishing visibility in a portfolio
+[05:55:45]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"20ab2061-3394-4495-a2f0-aecc61eec6f4"}
+[05:55:45]   + PhotonPay Upgrades Global Accounts To Simplify Cross-Border 
+[05:55:46]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"400d4a20-7695-4701-9381-0e425c15aa6a"}
+[05:55:46]   + 9 Ways to Use the AI Lean Coach That You Probably Haven’t Tr
+[05:55:46]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"735b5bbb-6ed4-4bd0-b8a2-225672389c82"}
+[05:55:46]   + Finding Transformation Opportunities With Generative AI
+[05:55:46]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"510de386-a302-4512-b63b-44cba5d580c0"}
+[05:55:46]   + Want Better GenAI Results? Try Speed Bumps
+[05:55:46]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"51368508-4a76-41dc-8159-4df7e85eda55"}
+[05:55:46]   + Why Digital Dexterity Is Key to Transformation
+[05:55:47]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"658c3246-9d5a-4c1b-b369-451ce29e5738"}
+[05:55:47]   + [Outliers] J.W. Marriott: Building an Empire Without a Maste
+[05:55:47]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"c43221dd-cbf6-46bf-8921-ba322481a0de"}
+[05:55:47]   + Product and Project Managers: Two Great Tastes That Taste Gr
+[05:55:47]     ERROR: HTTP 400: {"object":"error","status":400,"code":"validation_error","message":"URL is not a property that exists.","request_id":"68a25cdc-6627-43f4-835f-b854c60cc0cf"}
+[05:55:47] 
+=== Done ===
+[05:55:47]   Added to Content Calendar: 0
+[05:55:47]   Skipped (duplicate URL): 0
+[05:55:47]   Skipped (no URL): 0
+[05:55:47]   Errors: 132
+[05:58:56] === RSS → Content Calendar Bridge === 2026-03-25 05:58 Cairo
+[05:58:56]   Already ran today (2026-03-25). Skipping.
+[05:59:09] === RSS → Content Calendar Bridge === 2026-03-25 05:59 Cairo
+[05:59:09]   Fetching existing Content Calendar entries...
+[05:59:09]   Content Calendar has 26 existing entries (by title)
+[05:59:09]   Fetching unprocessed RSS articles...
+[05:59:11]   RSS DB: 132 articles with Status=New
+[05:59:11]   132 articles to process
+[05:59:11]   + Michael Ovitz: The Psychology of Power
+[05:59:22]   + My AI Coach Told Me My Coaching Was Wrong. It Was Right.
+[05:59:28]   + Ramp Acquires Billhop to Expand Into The UK And Europe
+[05:59:32]   + Inside the Mind of Robinhood Co-Founder Vlad Tenev
+[05:59:36]   + How to Think Like a World-Class Marketer | Rory Sutherland
+[05:59:40]   + Modern Banking Infrastructure in Latin America: Five Maps Th
+[05:59:45]   + Managing Upwards: A Survivor's Guide
+[05:59:53]   + Ron Shaich: Lessons from Building Panera
+[05:59:57]   + Viz.ai, Alnylam Pharmaceuticals partner for cardiac amyloido
+[06:00:06]   + Weekly Roundup – March 21, 2026
+[06:00:10]   + How to be an Inclusive Project Manager
+[06:00:17]   + Roll-out Planning - Why Good Preparation Is Key
+[06:00:22]   + How Lufthansa Shapes Data-Driven Transformation Leaders
+[06:00:27]   + Generate Value From GenAI With ‘Small t’ Transformations
+[06:00:37]   + How Grassroots Automation Speeds Digital Success
+[06:00:42]   + NjiaPay Raises $2.1M As Amsterdam’s FinTech Momentum Continu
+[06:00:46]   + Keys to Success with Virtual Nursing
+[06:00:52]   + Understanding Benefits Realization and Why It Matters
+[06:01:01]   + How do I increase Return On Time Invested (ROTI) in meetings
+[06:01:08]   + A Future Ready Platform for Innovation with MEDITECH and HCA
+[06:01:23]   + [Outliers] Harrison McCain: How to Create Demand for Somethi
+[06:01:30]   + The Outlier Playbook: The Patterns Behind Enduring Success
+[06:01:33]   + Pierre Poilievre on the Role of Government, Freedom, and Aff
+[06:01:39]   + Steering Committees - and the challenges of remote settings
+[06:01:44]   + Discipline Over Speed: Personal reflections after HIMSS
+[06:01:51]   + Data-Driven Health Care: Enhancing Patient Outcomes Through 
+[06:01:56]   + Railway secures $100 million to challenge AWS with AI-native
+[06:02:00]   + The spirit of the law [in managing projects]
+[06:02:04]   + Morgan Housel: Wealth is What You Have Minus What You Want
+[06:02:08]   + Why do Projects need Estimates?
+[06:02:11]   + Effective Communication in Change Management
+[06:02:16]   + [Outliers] Ray Kroc: How McDonald’s Took Over America
+[06:02:25]   + Generative AI Demystified: What It Really Means for Business
+[06:02:28]   + The Starbucks Mobile Order Timing Problem That Chick-fil-A A
+[06:02:42]   + How To Be an Influential Project Manager
+[06:02:49]   + Stakeholder Management at Zalando: It’s Personal
+[06:02:53]   + The Most Misunderstood Role in the Toyota Production System
+[06:02:57]   + Lessons learned - dealing with ambiguity
+[06:03:01]   + NDA Projects - What is the Reality of Working under NDA?
+[06:03:10]   + Roles & Responsibilities
+[06:03:14]   + The Role of Emotional Intelligence in Project Management
+[06:03:18]   + Does Being in Charge of a Delivery Make You a Project Manage
+[06:03:22]   + Lean Healthcare Study Tour in Japan: September 2026
+[06:03:26]   + Mastercard To Acquire BVNK In $1.8B Bet On Hybrid Finance
+[06:03:31]   + How a Typical Day of Program Manager Looks Like
+[06:03:37]   + Racing on Rails: Inside the FinTech Power Shift Behind the 2
+[06:03:40]   + Lessons from Navigating the Unknown: Taking Over Operational
+[06:03:43]   + [Outliers] Phil Knight: The Obsession That Built Nike
+[06:03:47]   + Medisolv Expands AI Capabilities with Acquisition of Lilac S
+[06:03:53]   + 7 Principles of Inner Excellence to Stay Calm Under Fire | J
+[06:03:56]   + James Clear: How to Build Good Habits & Break Bad Ones
+[06:04:02]   + Stakeholders react to White House national AI policy framewo
+[06:04:06]   + How to rule a workshop
+[06:04:10]   + How AI Changes Your Workforce
+[06:04:14]   + AI Won’t Fix This
+[06:04:18]   + Setting up a Project for Success by being a Change Agent
+[06:04:21]   + Maturing a Project Management Office
+[06:04:26]   + Mastercard Launches Global Crypto Partner Program With 85 In
+[06:04:30]   + Scaling GenAI: Get Big Value From Smaller Efforts
+[06:04:35]   + Preparing Your Organization for a Generative Future
+[06:04:40]   + The Art of negotiating and getting your project back on trac
+[06:04:43]   + Richard Mancuso
+[06:04:46]   + Honest feedback hurts - and that's ok
+[06:04:49]   + Contributed: Your next AI investment should not be a tool — 
+[06:04:54]   + Stripe-Backed Tempo Launches AI Payments Protocol As Race Fo
+[06:05:00]   + Our Guide to the Spring 2024 Issue
+[06:05:04]   + Top 3 power skills of project success and how to master them
+[06:05:09]   + Malama Health Secures $9.2M | Nitra Raises $187 Million
+[06:05:14]   + Anthropic launches Cowork, a Claude Desktop agent that works
+[06:05:18]   + PMP Preparation Journey: Passing the PMP Exam on the First A
+[06:05:22]   + N26 Investors And Founders Strike Governance Deal
+[06:05:26]   + Project Team Development
+[06:05:35]   + The Art of seeing the bigger picture in managing Programs
+[06:05:40]   + WBS in the Age of Agile
+[06:05:47]   + Brookfield CEO Connor Teskey: AI Infrastructure, Data Center
+[06:05:51]   + Listen Labs raises $69M after viral billboard hiring stunt t
+[06:05:56]   + A Coach for the Coach: Why the Lone Wolf Lean Practitioner N
+[06:06:02]   + Empower Citizen Developers to Accelerate Innovation
+[06:06:06]   + Start with yes… But
+[06:06:10]   + Door of Verbalization
+[06:06:17]   + London Overtakes New York And San Francisco As The World’s T
+[06:06:21]   + How to be an Organised Program Manager
+[06:06:27]   + Using BATNA in Project Management
+[06:06:31]   + Cerebral acquires ADHD app Inflow to expand mental health pl
+[06:06:34]   + The Curse of Knowledge: Leverage the Feedback Loop for Stell
+[06:06:38]   + Bonus Features – March 22, 2026 – 54% of providers have used
+[06:06:42]   + Harmony Healthcare IT Focuses on Maintaining Data Across Mer
+[06:06:51]   + Problem-Seeing Eyes Are Everywhere. Problem-Speaking Mouths 
+[06:06:55]   + So you want to become a Project Manager? Here's what the the
+[06:06:59]   + AI-Savvy Boards Drive Superior Performance
+[06:07:04]   + How to use (the) Best Practices
+[06:07:14]   + Stripe vs. Adyen (2026): Two Trillion‑Dollar Visions for the
+[06:07:22]   + [Outliers] Bernie Marcus: The Home Depot Story
+[06:07:25]   + Project Planning: An Interview with Experts
+[06:07:34]   + The Best Project Management Training Isn't a Certificate, it
+[06:07:39]   + Salesforce rolls out new Slackbot AI agent as it battles Mic
+[06:07:44]   + [Outliers] Charlie Munger: The Psychology of Human Misjudgme
+[06:07:49]   + The Statement Release
+[06:07:53]   + Let's talk about testing
+[06:08:09]   + Mastercard Turns AI Into A Virtual C-Suite For Small Busines
+[06:08:12]   + Why Manufacturers Need a Phased Approach to Digital Transfor
+[06:08:18]   + [Outliers] The Multidisciplinary Approach to Thinking | Pete
+[06:08:23]   + Three Questions to Ask About Your Digital Strategy
+[06:08:28]   + Be Your Best in 2026: The Most Important Lessons from The Kn
+[06:08:31]   + Our Guide to the Spring 2026 Issue
+[06:08:34]   + Airwallex Brings Yield To The U.S. Payments Stack
+[06:08:39]   + Nicolai Tangen: The $2 Trillion Mind
+[06:08:42]   + Planning a Project with a Fixed deadline?
+[06:08:55]   + AI lessens workloads, helps physicians 'be more human'
+[06:09:02]   + Santander Expands Getnet Footprint With Colombia Launch
+[06:09:06]   + Nous Research's NousCoder-14B is an open-source coding model
+[06:09:13]   + Parkinson's Law and Project Scheduling
+[06:09:20]   + Speed, Ease, and Expertise With AI: Lenovo’s Linda Yao
+[06:09:26]   + The GenAI Blind Spot Leaders Have Now
+[06:09:34]   + [Outliers] Mary Kay Ash: The Greatest Saleswoman In History
+[06:09:37]   + How to Approach Crucial Conversations
+[06:09:41]   + CIO Podcast – Episode 111: Navigating the Changing World of 
+[06:09:48]   + When Product meets Program: lessons from a career move
+[06:09:53]   + Ryan McCormack’s Operational Excellence Mixtape: March 20, 2
+[06:09:58]   + Claude Code costs up to $200 a month. Goose does the same th
+[06:10:03]   + Warehouse ITs Handheld Exchange Project Adventure: Part 1 (S
+[06:10:07]   + The creator of Claude Code just revealed his workflow, and d
+[06:10:11]   + It’s Time for “Actioning Information” to Move Past Interoper
+[06:10:15]   + Nubank's Stadium Surge: Palmeiras Next After Inter Miami
+[06:10:21]   + How to start establishing visibility in a portfolio
+[06:10:25]   + PhotonPay Upgrades Global Accounts To Simplify Cross-Border 
+[06:10:30]   + 9 Ways to Use the AI Lean Coach That You Probably Haven’t Tr
+[06:10:33]   + Finding Transformation Opportunities With Generative AI
+[06:10:36]   + Want Better GenAI Results? Try Speed Bumps
+[06:10:46]   + Why Digital Dexterity Is Key to Transformation
+[06:10:50]   + [Outliers] J.W. Marriott: Building an Empire Without a Maste
+[06:10:53]   + Product and Project Managers: Two Great Tastes That Taste Gr
+[06:10:56] 
+=== Done ===
+[06:10:56]   Added to Content Calendar: 132
+[06:10:56]   Skipped (duplicate title): 0
+[06:10:56]   Errors: 0
+[06:30:01] === RSS → Content Calendar Bridge === 2026-03-25 06:30 Cairo
+[06:30:01]   Already ran today (2026-03-25). Skipping.
+[06:30:01] === RSS → Content Calendar Bridge === 2026-03-25 06:30 Cairo
+[06:30:01]   Already ran today (2026-03-25). Skipping.
+[02:23:14] === RSS → Content Calendar Bridge === 2026-03-26 02:23 Cairo
+[02:23:14]   Fetching existing Content Calendar entries...
+[02:23:16]   Content Calendar has 29 existing entries (by title)
+[02:23:16]   Fetching unprocessed RSS articles...
+[02:23:16]   RSS DB: 11 Gold articles ready for Content Calendar
+[02:23:16]   11 articles to process
+[02:23:17]   + Generate Value From GenAI With ‘Small t’ Transformations
+[02:23:22]   + Effective Communication in Change Management
+[02:23:25]   + How AI Changes Your Workforce
+[02:23:29]   + Setting up a Project for Success by being a Change Agent
+[02:23:39]   + Why Manufacturers Need a Phased Approach to Digital Transfor
+[02:23:42]   + Our Guide to the Spring 2026 Issue
+[02:23:47]   + Finding Transformation Opportunities With Generative AI
+[02:23:50]   + Why Digital Dexterity Is Key to Transformation
+[02:23:54] 
+=== Done ===
+[02:23:54]   Added to Content Calendar: 8
+[02:23:54]   Skipped (duplicate title): 3
+[02:23:54]   Errors: 0
+[02:24:13] === RSS → Content Calendar Bridge === 2026-03-26 02:24 Cairo
+[02:24:13]   Already ran today (2026-03-26). Skipping.
+[02:24:22] === RSS → Content Calendar Bridge === 2026-03-26 02:24 Cairo
+[02:24:22]   Already ran today (2026-03-26). Skipping.
+[02:24:32] === RSS → Content Calendar Bridge === 2026-03-26 02:24 Cairo
+[02:24:32]   Fetching existing Content Calendar entries...
+[02:24:44]   Content Calendar has 37 existing entries (by title)
+[02:24:44]   Fetching unprocessed RSS articles...
+[02:24:45]   RSS DB: 11 Gold articles ready for Content Calendar
+[02:24:45]   11 articles to process
+[02:24:52] 
+=== Done ===
+[02:24:52]   Added to Content Calendar: 0
+[02:24:52]   Skipped (duplicate title): 11
+[02:24:52]   Errors: 0
+[02:25:36] === RSS → Content Calendar Bridge === 2026-03-26 02:25 Cairo
+[02:25:36]   Fetching existing Content Calendar entries...
+[02:25:38]   Content Calendar has 37 existing entries (by title)
+[02:25:38]   Fetching unprocessed RSS articles...
+[02:25:38]   RSS DB: 11 Gold articles ready for Content Calendar
+[02:25:38]   11 articles to process
+[02:25:43] 
+=== Done ===
+[02:25:43]   Added to Content Calendar: 0
+[02:25:43]   Skipped (duplicate title): 11
+[02:25:43]   Errors: 0
+[06:30:01] === RSS → Content Calendar Bridge === 2026-03-26 06:30 Cairo
+[06:30:01]   Already ran today (2026-03-26). Skipping.
+[06:30:01] === RSS → Content Calendar Bridge === 2026-03-26 06:30 Cairo
+[06:30:01]   Already ran today (2026-03-26). Skipping.

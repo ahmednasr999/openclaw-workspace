@@ -2,16 +2,112 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-03-24T14:01:39.072279+02:00",
-    "duration_ms": 97680,
+    "generated_at": "2026-03-26T06:01:45.355266+02:00",
+    "duration_ms": 103730,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "10eb0992",
+    "run_id": "84b6255c",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": [
+    {
+      "id": "indeed-in-30c54bf5503ae2a1",
+      "source": "indeed",
+      "title": "Global Head of Erection and Commissioning - Gas Services Solutions",
+      "company": "Siemens Energy",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=30c54bf5503ae2a1",
+      "posted": "2026-03-25",
+      "seniority": "Director",
+      "domain_match": false,
+      "keyword_score": 13,
+      "match_keywords": [
+        "head of",
+        "leadership"
+      ],
+      "raw_snippet": "**A Snapshot of Your Day**\n\n\nAs the Global Head of Erection and Commissioning (E\\&C) for Gas Service Solutions, you lead and empower a multidisciplinary team responsible for delivering safe, high quality, and timely execution of all erection, installation, and commissioning activities across our solutions project portfolio.\n\n\nYour day is a mix of strategic leadership, operational oversight, and cross functional coordination. You ensure that the field execution capacity needed is fulfilled, perfo",
+      "relevant": true,
+      "filter_reason": null
+    },
+    {
+      "id": "indeed-in-2e9d8b4cf355a65f",
+      "source": "indeed",
+      "title": "CHIEF, HOSTAGE INCIDENT MANAGEMENT, P5",
+      "company": "United Nations",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=2e9d8b4cf355a65f",
+      "posted": "2026-03-23",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 6,
+      "match_keywords": [
+        "leadership"
+      ],
+      "raw_snippet": "Org. Setting and Reporting\nThe Department of Safety and Security (UNDSS) is responsible for providing leadership, operational support and oversight of the United Nations security management system (UNSMS) globally. As a global leader in security risk management principles, UNDSS enables the safe and effective delivery of United Nations programmes and activities in the most complex and challenging environments, while maximizing precious resources. To this end, the work of the Department is aligne",
+      "relevant": true,
+      "filter_reason": null
+    },
+    {
+      "id": "indeed-in-3afdda613c031adb",
+      "source": "indeed",
+      "title": "Creative Graphic Designer / Art Director",
+      "company": "AD&M International Advertising, PR and Events",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=3afdda613c031adb",
+      "posted": "2026-03-25",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 13,
+      "match_keywords": [
+        "ai",
+        "director"
+      ],
+      "raw_snippet": "Job Description:\n\nWe are looking for a highly skilled and experienced Senior Graphic Designer / Art Director to join our creative team. The ideal candidate will have a strong background in design, a keen eye for detail. You will be responsible for creating visually compelling graphics that align with the concerned brands and their marketing objectives.\n\nKey Responsibilities:\n\nConceptualize and design high\\-quality graphics for a variety of mediums, including digital, print, social media, and adv",
+      "relevant": true,
+      "filter_reason": null
+    },
+    {
+      "id": "indeed-in-5dac7ad2ae793dd6",
+      "source": "indeed",
+      "title": "Senior Director - Global Tech Partners (GTP)",
+      "company": "Visa",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=5dac7ad2ae793dd6",
+      "posted": "2026-03-24",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 23,
+      "match_keywords": [
+        "payments",
+        "ai",
+        "director"
+      ],
+      "raw_snippet": "**Company Description**  \n\nVisa is a world leader in payments technology, facilitating transactions between consumers, merchants, financial institutions and government entities across more than 200 countries and territories, dedicated to uplifting everyone, everywhere by being the best way to pay and be paid.\n\n\nAt Visa, you'll have the opportunity to create impact at scale \u2014 tackling meaningful challenges, growing your skills and seeing your contributions impact lives around the world. Join Visa",
+      "relevant": true,
+      "filter_reason": null
+    },
+    {
+      "id": "indeed-in-03e420342f3c4ce9",
+      "source": "indeed",
+      "title": "Director CoE - Strategy and Execution",
+      "company": "Visa",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=03e420342f3c4ce9",
+      "posted": "2026-03-24",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 23,
+      "match_keywords": [
+        "payments",
+        "ai",
+        "director"
+      ],
+      "raw_snippet": "**Company Description**  \n\nVisa is a world leader in payments technology, facilitating transactions between consumers, merchants, financial institutions and government entities across more than 200 countries and territories, dedicated to uplifting everyone, everywhere by being the best way to pay and be paid.\n\n\nAt Visa, you'll have the opportunity to create impact at scale \u2014 tackling meaningful challenges, growing your skills and seeing your contributions impact lives around the world. Join Visa",
+      "relevant": true,
+      "filter_reason": null
+    },
     {
       "id": "indeed-in-fd87e72cd4640a7b",
       "source": "indeed",
@@ -34,20 +130,25 @@
       "filter_reason": null
     },
     {
-      "id": "indeed-in-cfb35df95ccd8337",
+      "id": "indeed-in-35ebf6801982d6c0",
       "source": "indeed",
-      "title": "Senior Manager Inventory EM",
-      "company": "adidas",
+      "title": "Project Director",
+      "company": "Omada Rail Systems",
       "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=cfb35df95ccd8337",
-      "posted": "2026-03-12",
-      "seniority": "Other",
-      "domain_match": false,
-      "keyword_score": 6,
+      "url": "https://ae.indeed.com/viewjob?jk=35ebf6801982d6c0",
+      "posted": "2026-03-24",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 36,
       "match_keywords": [
-        "head of"
+        "project management",
+        "ai",
+        "infrastructure",
+        "director",
+        "dubai",
+        "architecture"
       ],
-      "raw_snippet": "PURPOSE \\& OVERALL RELEVANCE FOR THE ORGANIZATION:\n\n\n\nThe Senior Manager Inventory acts as financial advisor and business partner inside the DP community, as well as towards product supply, purchasing, brand organization by providing fact\\-based data to enable and drive decision\\-making. He/she supports the head of DP HUB to build inventory targets, to track and monitor KPIs development and steer the business with on time and fact\\-based analysis. In this role the Senior Manager Inventory provid",
+      "raw_snippet": "* **Permanent Contract**\n* **Mid\\-Senior Level**\n* **Dubai**\n* **Project Management \\- Engineering**\n\n  \n**About Us**\n\n  \n\nEgis is an international player active in architecture, consulting, construction engineering and mobility services. We create and operate intelligent infrastructures and buildings that respond to the climate emergency and contribute to more balanced, sustainable and resilient territorial development. Operating in 100 countries, Egis puts the expertise of its 19,500 employees",
       "relevant": true,
       "filter_reason": null
     },
@@ -73,65 +174,44 @@
       "filter_reason": null
     },
     {
-      "id": "indeed-in-4cc935c4a31f1a8b",
+      "id": "indeed-in-b966489bedb6ca7f",
       "source": "indeed",
-      "title": "Corporate Advisory Director",
-      "company": "Confidential",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=4cc935c4a31f1a8b",
-      "posted": "2026-03-24",
+      "title": "Senior Managing Director, Global Strategic Advisory",
+      "company": "Ankura",
+      "location": "Dubai International Financial Center, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=b966489bedb6ca7f",
+      "posted": "2026-03-25",
       "seniority": "C-Suite",
       "domain_match": false,
-      "keyword_score": 23,
+      "keyword_score": 20,
       "match_keywords": [
         "ai",
         "director",
-        "growth",
-        "api"
+        "growth"
       ],
-      "raw_snippet": "**Role Summary**\n\nThe Corporate Advisory Director will lead client advisory engagements, providing strategic guidance on corporate finance, M\\&A, capital structure, and broader business transformation initiatives. The role is responsible for originating and managing client relationships, overseeing transaction execution, and driving revenue growth for the firm.\n\n**Key Responsibilities**\n\n* Lead end\u2011to\u2011end advisory engagements (strategy, corporate finance, M\\&A, restructuring, capital raising) fr",
+      "raw_snippet": "Ankura is a team of excellence founded on innovation and growth.\nTBC\nTBC\nAnkura is an Affirmative Action and Equal Opportunity Employer. All qualified applicants will receive consideration for employment without regard to race, color, religion, sex, sexual orientation, gender identity, national origin, or protected veteran status and will not be discriminated against based on disability. Equal Employment Opportunity Posters, if you have a disability and believe you need a reasonable accommodatio",
       "relevant": true,
       "filter_reason": null
     },
     {
-      "id": "indeed-in-a8a7fd85dbf84323",
+      "id": "indeed-in-2975f885cb7563bc",
       "source": "indeed",
-      "title": "Director of Front Office \u2013 Curator of Guest Experience at Kimpton Sevn Dubai (Pre-Opening)",
-      "company": "Kimpton",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=a8a7fd85dbf84323",
-      "posted": "2026-03-23",
+      "title": "Chief Operations Officer (COO) - Telecommunications | Saudi Arabia",
+      "company": "Rawaj - Human Capital Management",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=2975f885cb7563bc",
+      "posted": "2026-03-25",
       "seniority": "C-Suite",
       "domain_match": true,
-      "keyword_score": 26,
+      "keyword_score": 33,
       "match_keywords": [
         "operational excellence",
         "ai",
-        "director",
-        "dubai"
+        "scaling",
+        "growth",
+        "saudi"
       ],
-      "raw_snippet": "**Director of Front Office\\- Curator of Guest Experience**\n==========================================================\n\n### **Kimpton Sevn Dubai (Pre\\-Opening)**\n\n**Reporting to: Hotel Manager**\n\n\nAt Kimpton Sevn Dubai, we are seeking a **Director of Front Office**\u2014a charismatic, service\\-driven leader who brings energy, personality, and operational excellence to every guest interaction.\n\n\nThis role is ideal for a hospitality professional who thrives in dynamic environments, loves connecting with",
-      "relevant": true,
-      "filter_reason": null
-    },
-    {
-      "id": "indeed-in-45d6ce110c70c94d",
-      "source": "indeed",
-      "title": "Head of Department \u2013 Pediatrics (American Board, Arabic Speaker) - Qatar",
-      "company": "Allocation Assist DMCC",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=45d6ce110c70c94d",
-      "posted": "2026-03-23",
-      "seniority": "Director",
-      "domain_match": false,
-      "keyword_score": 23,
-      "match_keywords": [
-        "healthcare",
-        "head of",
-        "leadership",
-        "api"
-      ],
-      "raw_snippet": "Position Overview\n  \nA prestigious healthcare institution in Qatar is seeking a highly qualified Head of Department for Pediatrics to lead its pediatric division. The ideal candidate must be American Board Certified in Pediatrics and fluent in Arabic, with a strong background in clinical leadership, multidisciplinary collaboration, and patient\\-centered care. This is a senior leadership role responsible for shaping pediatric services, driving clinical excellence, and mentoring the next generatio",
+      "raw_snippet": "**Leverage your expertise and join the dynamic team of a leading Saudi telecommunications company.**\n\n\nAs a **Chief Operating Officer (COO)**, you will lead and oversee the company\u2019s overall operations, ensuring operational excellence, efficiency, and alignment with strategic objectives. You will play a critical role in driving performance, scaling operations, and enabling sustainable business growth.\n\n**Key Accountabilities**\n------------------------\n\n**The position involves:**\n\n* Lead and mana",
       "relevant": true,
       "filter_reason": null
     },
@@ -154,13 +234,51 @@
       "raw_snippet": "Job title\nSenior Manager Business Support \\& Financial Control\nRef \\#\n232125\nLocation\nQatar \\- Doha\nJob family\nCorporate \\& Commercial\n* Closing date: 07\\-Apr\\-2026\n\n  \n\n**About Your Role**\n\n\nYou will create added value for the Qatar Airways Group by building strong, trusted partnerships with finance and operational stakeholders through strategic analysis, financial leadership, and insightful reporting. Acting as the primary business partner for senior and executive management, you will bridge F",
       "relevant": true,
       "filter_reason": null
+    },
+    {
+      "id": "indeed-in-9c3c9cc1eab9498f",
+      "source": "indeed",
+      "title": "Store Director",
+      "company": "Sephora",
+      "location": "Doha, DAW, QA",
+      "url": "https://qa.indeed.com/viewjob?jk=9c3c9cc1eab9498f",
+      "posted": "2026-03-25",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 10,
+      "match_keywords": [
+        "director",
+        "lte"
+      ],
+      "raw_snippet": "**Job ID**: 197205  \n\n**Location Name:** \\[\\[filter8]]  \n\n**Address:** \\[\\[filter11]], \\[\\[filter10]], \\[\\[filter9]] \\[\\[postalcode]], Qatar (QA)  \n\n**Job Type:** Full Time  \n\n**Position Type (Regular/Temporary):** Regular  \n\n**Job Function:** \\[\\[filter14]]  \n\n**Is This Position Eligible for Remote? :** \\[\\[req\\_remoteeligible]]\n\n **MISSION:** **To** **ensure** **the** **delivery** **of** **exceptional****operational** **and commercial standards** **throughout** **the store,** **with** **focus ",
+      "relevant": true,
+      "filter_reason": null
+    },
+    {
+      "id": "indeed-in-572a2a97daa03ec4",
+      "source": "indeed",
+      "title": "Fleet Head of Transportation Dept.",
+      "company": "Al Rayes Laundry & Dry Cleaning",
+      "location": "Doha, DAW, QA",
+      "url": "https://qa.indeed.com/viewjob?jk=572a2a97daa03ec4",
+      "posted": "2026-03-25",
+      "seniority": "Director",
+      "domain_match": false,
+      "keyword_score": 13,
+      "match_keywords": [
+        "ai",
+        "head of"
+      ],
+      "raw_snippet": "**Role Overview**\n\nWe are seeking a highly organized and experienced Fleet Transportation Head to oversee and manage our laundry service fleet operations in Industrial Area Street 38\\. The ideal candidate will ensure smooth transportation of goods, optimize fleet performance, and maintain compliance with safety and regulatory standards. A valid driver\u2019s license is required.\n\n**Key Responsibilities**\n\n* Supervise and manage all fleet operations, including scheduling, routing, and dispatching vehi",
+      "relevant": true,
+      "filter_reason": null
     }
   ],
   "kpi": {
     "searches_run": 81,
-    "results_per_search": 1.07,
-    "unique_jobs": 7,
-    "errors": 42
+    "results_per_search": 1.58,
+    "unique_jobs": 13,
+    "errors": 36
   },
   "recommendations": []
 }

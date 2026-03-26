@@ -444,6 +444,56 @@ def get_today_post():
 
 # ── Image Upload ────────────────────────────────────────────────
 
+def detect_post_format(title, content):
+    """Detect which LinkedIn format a post fits best for visual generation."""
+    combined = f"{title} {content[:500]}".lower()
+    
+    # Hot Take signals: strong opinions, contrarian phrases
+    hot_take_signals = ["don't", "won't", "stop", "wrong", "myth", "unpopular", "controversial",
+                        "nobody", "everyone", "overrated", "underrated", "hot take", "truth is"]
+    if sum(1 for s in hot_take_signals if s in combined) >= 2:
+        return "Hot Take"
+    
+    # Brandjacking: mentions specific brands/companies
+    brands = ["google", "microsoft", "openai", "salesforce", "amazon", "apple", "meta",
+              "netflix", "tesla", "nvidia", "mckinsey", "deloitte", "disney", "linkedin"]
+    if any(b in combined for b in brands):
+        return "Brandjacking"
+    
+    # Namejacking: references specific people
+    people = ["ceo", "founder", "said", "according to", "as", "told", "argues"]
+    if any(p in combined for p in people):
+        return "Namejacking"
+    
+    # Default: Newsjacking (works for most content)
+    return "Newsjacking"
+
+
+def detect_topic(title, content):
+    """Detect primary topic for visual badge."""
+    combined = f"{title} {content[:500]}".lower()
+    
+    topic_keywords = {
+        "AI": ["ai ", "artificial intelligence", "machine learning", "llm", "gpt", "agent",
+               "automation", "neural", "deep learning", "claude", "chatgpt"],
+        "Digital Transformation": ["digital transformation", "digitalization", "digital strategy",
+                                   "modernization", "legacy system"],
+        "PMO": ["project management", "pmo", "program management", "agile", "scrum",
+                "portfolio", "stakeholder", "milestone", "deliverable"],
+        "Healthcare": ["healthcare", "hospital", "patient", "clinical", "medical", "health system"],
+        "HealthTech": ["healthtech", "health tech", "telehealth", "digital health", "medtech"],
+        "FinTech": ["fintech", "banking", "payments", "financial technology", "neobank"],
+        "Strategy": ["strategy", "strategic", "competitive advantage", "market position"],
+    }
+    
+    scores = {}
+    for topic, keywords in topic_keywords.items():
+        scores[topic] = sum(1 for k in keywords if k in combined)
+    
+    best = max(scores, key=scores.get)
+    return best if scores[best] > 0 else "AI"
+
+
 def download_image(url):
     """Download image from URL, with local file fallback for GitHub raw URLs."""
     # Fallback: if URL is a GitHub raw link, try reading from local workspace first
@@ -767,31 +817,66 @@ def main():
             return
 
     # Download image if present - tiered degradation (Decision 3)
+    # If no image in Notion, auto-generate branded visual template (v3 Premium)
     image_path = None
     if post['image_url']:
         try:
             image_bytes, content_type = download_image(post['image_url'])
             image_path = upload_image_to_linkedin(image_bytes, content_type)
         except Exception as e:
-            print(f"WARNING: Image download failed ({e})")
-            if score_result["total"] >= 12:  # ~80% of MAX_SCORE (15)
-                print(f"DEGRADED: Score {score_result['total']}/{MAX_SCORE} is strong enough for text-only post")
-                print("Continuing without image + will alert after posting")
-                post['image_degraded'] = True
-            else:
-                print(f"HELD: Score {score_result['total']}/{MAX_SCORE} too low for text-only. Holding for review.")
-                flag = {
-                    "action": "image_failed_hold",
-                    "score": score_result["total"],
-                    "max_score": MAX_SCORE,
-                    "title": post['title'],
-                    "page_id": post['page_id'],
-                    "image_error": str(e),
-                }
-                with open("/tmp/linkedin-post-payload.json", "w") as f:
-                    json.dump(flag, f, ensure_ascii=False, indent=2)
-                print("IMAGE_HOLD")
-                return
+            # NEVER post without image if image was expected — always hold for review
+            print(f"WARNING: Image download/upload failed ({e})")
+            print(f"HELD: Image required but failed. NOT posting text-only.")
+            flag = {
+                "action": "image_failed_hold",
+                "score": score_result["total"],
+                "max_score": MAX_SCORE,
+                "title": post['title'],
+                "page_id": post['page_id'],
+                "image_error": str(e),
+            }
+            with open("/tmp/linkedin-post-payload.json", "w") as f:
+                json.dump(flag, f, ensure_ascii=False, indent=2)
+            print("IMAGE_HOLD")
+            return
+    else:
+        # No image in Notion — auto-generate branded visual from Content Factory
+        print("No image in Notion. Generating branded visual template...")
+        try:
+            import importlib.util
+            vspec = importlib.util.spec_from_file_location(
+                "visuals", f"{WORKSPACE}/scripts/content-factory-visuals.py")
+            visuals = importlib.util.module_from_spec(vspec)
+            vspec.loader.exec_module(visuals)
+            
+            # Detect post format from title/content
+            post_format = detect_post_format(post['title'], post['content'])
+            topic = detect_topic(post['title'], post['content'])
+            
+            # Use first line of content as headline (usually the hook)
+            first_line = post['content'].split('\n')[0].strip()
+            # Remove Unicode bold for the visual (keep it clean)
+            headline = re.sub(r'[\U0001D400-\U0001D7FF]', lambda m: chr(
+                ord('A') + ord(m.group()) - 0x1D5D4 if 0x1D5D4 <= ord(m.group()) <= 0x1D5ED
+                else ord('a') + ord(m.group()) - 0x1D5EE if 0x1D5EE <= ord(m.group()) <= 0x1D607
+                else ord('0') + ord(m.group()) - 0x1D7EC if 0x1D7EC <= ord(m.group()) <= 0x1D7F5
+                else ord(m.group())
+            ), first_line)
+            # Trim to reasonable headline length
+            if len(headline) > 100:
+                headline = headline[:97] + "..."
+            
+            visual_path = visuals.generate_visual(
+                headline, post_format, topic, "Ahmed Nasr",
+                f"/tmp/linkedin-auto-visual.png"
+            )
+            image_path = visual_path
+            post['image_url'] = None  # Mark as auto-generated (not from Notion)
+            post['auto_visual'] = True
+            print(f"Auto-visual generated: {post_format} / {topic} -> {visual_path}")
+        except Exception as e:
+            print(f"Visual generation failed ({e}) - posting without image")
+            import traceback; traceback.print_exc()
 
     # Write payload with EXACT content (bold already converted to Unicode)
     output = {
@@ -831,10 +916,12 @@ def main():
     print(f"IMAGE_REQUIRED: {bool(post['image_url'])}")
     print(f"PAGE_ID: {post['page_id']}")
 
-    # Decision 9: End-to-end autonomous posting via direct-post script
+    # Decision 9: Agent-assisted posting via Composio (2026-03-25)
+    # Autonomous direct-post disabled — agent handles posting with verified Composio image flow
+    # The cron prepares payload + image, agent wakes up and posts via LINKEDIN_CREATE_LINKED_IN_POST
     import subprocess as sp
     direct_post_script = f"{WORKSPACE}/scripts/linkedin-direct-post.py"
-    if os.path.exists(direct_post_script):
+    if False and os.path.exists(direct_post_script):  # DISABLED — agent posts daily
         print("\nATTEMPTING DIRECT POST (autonomous mode)...")
         cmd = ["python3", direct_post_script, "--text-file", "/dev/stdin"]
         if image_path:

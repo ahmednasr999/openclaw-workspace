@@ -9,7 +9,12 @@
     "error": null,
     "run_id": "9f797cba",
     "retries_used": 0,
-    "data_freshness": "fresh"
+    "data_freshness": "fresh",
+    "notion_bridge": {
+      "last_run": "2026-03-25T06:25:10.852312+02:00",
+      "ideas_added": 2,
+      "total_notion_ideas": 46
+    }
   },
   "data": {
     "scan_time": "2026-03-24T08:00:03.251755+02:00",
@@ -53,12 +58,32 @@
           "title": "The interview question that made me realize I was underqualified",
           "date": "2026-03-29",
           "status": "scheduled"
+        },
+        {
+          "title": "It’s Time for “Actioning Information” to Move Past Interoperability’s Endless Data",
+          "date": "2026-03-24",
+          "topic": "Healthcare",
+          "hook": "The following is a guest article by Effie Carlson, CEO at Watershed Health The Problem Is Not Only Data Availability, It&#8217;s What We Do With It Federal mandates and billions of investment dollars",
+          "status": "scheduled",
+          "source": "notion_idea",
+          "url": "https://www.healthcareittoday.com/2026/03/24/its-time-for-actioning-information-to-move-past-interoperabilitys-endless-data/",
+          "page_id": "32e8d599-a162-8166-b9ff-f645afa41540"
+        },
+        {
+          "title": "Keys to Success with Virtual Nursing",
+          "date": "2026-03-24",
+          "topic": "Healthcare",
+          "hook": "Everyone knows we can never get enough nurses.  While we&#8217;d love to have more and should make more efforts to have and retain more nurses, I think that most organizations also realize that they&#",
+          "status": "scheduled",
+          "source": "notion_idea",
+          "url": "https://www.healthcareittoday.com/2026/03/24/keys-to-success-with-virtual-nursing/",
+          "page_id": "32e8d599-a162-8100-9f0f-c041de90b5a7"
         }
       ],
       "count": 5
     },
     "pipeline": {
-      "ideas": 0,
+      "ideas": 46,
       "outlines": 0,
       "drafts": 1,
       "scheduled": 7,

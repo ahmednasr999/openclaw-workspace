@@ -2,37 +2,36 @@
 description: "Daily GitHub trending scan: auto-scraped repos with relevance filter for OpenClaw, AI agents, automation"
 type: log
 topics: [knowledge, system-ops]
-updated: 2026-03-24
+updated: 2026-03-26
 ---
 
-# GitHub Radar — 2026-03-24
+# GitHub Radar — 2026-03-26
 
 ## Relevant Repos (Auto-Filtered)
 
+- **[NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent)**: Trending AI/automation project
 - **[TauricResearch/TradingAgents](https://github.com/TauricResearch/TradingAgents)**: Trending AI/automation project
 - **[affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code)**: Trending AI/automation project
-- **[andrewyng/context-hub](https://github.com/andrewyng/context-hub)**: Trending AI/automation project
 - **[apps/copilot-swe-agent](https://github.com/apps/copilot-swe-agent)**: Trending AI/automation project
 - **[jarrodwatts/claude-hud](https://github.com/jarrodwatts/claude-hud)**: Trending AI/automation project
-- **[langchain-ai/deepagents](https://github.com/langchain-ai/deepagents)**: Trending AI/automation project
 
 ## Top Trending (All)
 
 - 2000/svg
-- 666ghj/MiroFish
 - Crosstalk-Solutions/project-nomad
+- D/rjiN7e8nhL2YdgzyXiOSl3AkBbYVRpFwYb1QvyAofPWdq3bzqVGbLjrLoo8xZXtp
 - FujiwaraChoki/MoneyPrinterV2
+- NousResearch/hermes-agent
 - TauricResearch/TradingAgents
 - affaan-m/everything-claude-code
-- andrewyng/context-hub
 - apps/copilot-swe-agent
 - apps/dependabot
-- apps/pre-commit-ci
+- apps/open-swe
+- bytedance/deer-flow
 - copilot/hovercard
 - enterprise/startups
 - explore/email
 - favicons/favicon
-- features/code-review
 
 ## Filters
 
@@ -41,4 +40,4 @@ updated: 2026-03-24
 **Note:** SIE reads this file and generates integration recommendations.
 
 ---
-*Scanned: Tue Mar 24 03:00:03 EET 2026*
+*Scanned: Thu Mar 26 03:00:03 EET 2026*

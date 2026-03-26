@@ -38,7 +38,7 @@ ALERTS_PATH = DATA_DIR / "immediate-alerts.json"
 AGENT_DATA_FILES = [
     ("jobs-merge", DATA_DIR / "jobs-merged.json", 6),
     ("jobs-review", DATA_DIR / "jobs-summary.json", 6),
-    ("email-agent", DATA_DIR / "email-scan.json", 4),
+    ("email-agent", DATA_DIR / "email-summary.json", 4),
     ("linkedin-post", DATA_DIR / "linkedin-post.json", 6),
     ("comment-radar", DATA_DIR / "comment-radar.json", 6),
     ("outreach-agent", DATA_DIR / "outreach-suggestions.json", 6),
@@ -139,7 +139,9 @@ def check_agent_freshness(agent_name, file_path, ttl_hours):
     try:
         data = load_json(file_path)
         meta = data.get("meta", {})
-        generated_at = meta.get("generated_at")
+        # Support both meta.generated_at (standard) and top-level generated (legacy)
+        generated_at = meta.get("generated_at") or data.get("generated")
+        last_status = meta.get("status")
         
         if generated_at:
             gen_time = datetime.fromisoformat(generated_at)
@@ -151,7 +153,7 @@ def check_agent_freshness(agent_name, file_path, ttl_hours):
                 "age_hours": round(age_hours, 1),
                 "ttl_hours": ttl_hours,
                 "last_run": generated_at,
-                "last_status": meta.get("status")
+                "last_status": last_status
             }
     except Exception as e:
         return {
@@ -217,11 +219,19 @@ def check_cron_health():
 def check_notion_api():
     """Check if Notion API is reachable."""
     try:
+        # Load token from config
+        config_path = WORKSPACE / "config" / "notion.json"
+        if not config_path.exists():
+            return {"status": "error", "error": "config/notion.json not found"}
+        with open(config_path) as f:
+            notion_token = json.load(f).get("token", "")
+        if not notion_token:
+            return {"status": "error", "error": "No token in config/notion.json"}
         # Simple test query to check connectivity
         req = urllib.request.Request(
             "https://api.notion.com/v1/users/me",
             headers={
-                "Authorization": f"Bearer {NOTION_TOKEN}",
+                "Authorization": f"Bearer {notion_token}",
                 "Notion-Version": "2022-06-28"
             },
             method='GET'

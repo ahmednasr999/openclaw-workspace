@@ -1,5 +1,11 @@
 # Learnings Log
 
+## 2026-03-25
+### YouTube Transcript Skill Not Used First
+- **What I Missed:** When Ahmed shared YouTube URLs, I went straight to Exa/Camofox/web_fetch instead of checking our YouTube transcript skill first
+- **Why:** Didn't scan available_skills thoroughly - the skill exists at `skills/youtube-transcript/` but isn't listed in available_skills (it's a custom workspace skill)
+- **Fix:** For ANY YouTube URL, ALWAYS try `scripts/youtube_transcript.sh` FIRST. It uses yt-dlp + cookies and gives clean full transcripts. Only fall back to Exa/Camofox if cookies are expired and can't be refreshed.
+
 ## 2026-03-18: Always Read Actual File Before Writing Parser
 ### What I Missed
 Wrote a qualified-jobs parser assuming `- Title @ Company (ATS: XX)` bullet format. Actual format is `### Title` headings with `- Company:` metadata lines. Result: 0 jobs shown despite 27 picks existing.
@@ -585,6 +591,13 @@ Scanner `semantic_fit_filter()` requires JD text for career_verdict. Jobs withou
 - Why: Rule was in loaded context but not internalized into output generation
 - Fix: Actively check output for — before sending. Use - or commas instead.
 
+## 2026-03-25
+### Em Dash — STILL VIOLATING (3rd+ occurrence)
+- What happened: Despite the 2026-03-21 rule, em dash slipped through again in a model-switching reply: "I've flagged it — and going forward"
+- Why: No per-output check built into output generation itself. The rule exists in context but isn't checked during composition.
+- STRICT FIX: Before sending ANY reply, scan the text for the character — (U+2014 or U+2013). If found, replace with - or restructure the sentence. This must be a literal pre-send scan, not a mental note.
+- Applies to: ALL messages, ALL models, ALL sessions. Not negotiable.
+
 ## 2026-03-21
 ### Reactive Chain Instead of Proactive Fix
 - What happened: Ahmed had to ask 5 separate times to get the briefing pipeline fully working. Scanner alert, missing briefing, no delivery, stale jobs, filter bugs - all connected, all should have been one proactive sweep.
@@ -597,3 +610,34 @@ Scanner `semantic_fit_filter()` requires JD text for career_verdict. Jobs withou
 **Root cause:** WeasyPrint respects `@page` margin boxes. Without explicit `content: none`, it prints default page decorations.
 **Fix:** Added `@page` rules with `content: none` for all 6 margin positions (top-left/center/right, bottom-left/center/right). Retroactively patched 45 existing HTML files.
 **Rule:** NEVER send a CV without visually reviewing the PDF first. Every CV must pass validation AND visual check before delivery.
+
+## [2026-03-25] Model Switching Transparency
+**What happened:** Ahmed set GPT-5.4-Pro manually, but the model-router.json has an `auto_switch_back` rule that silently reverts to MiniMax-M2.7 after any paid-model task completes. Ahmed was frustrated — kept getting switched without knowing why.
+**Root cause:** `auto_switch_back.enabled: true` in `/root/.openclaw/workspace/config/model-router.json` + no notification mechanism.
+**Fix:** Added "Model Transparency" rule to SOUL.md — any model switch (auto or manual) is disclosed to Ahmed immediately after it happens.
+**Note:** GPT-5.4-Pro IS the correct model for Ahmed's sessions. The router's auto-switch was the problem, not the model selection itself.
+
+## [2026-03-25] Meta-tool "no connection" = check workspace scripts FIRST before OAuth
+
+**What happened:** Composio said "no active connection for notion" → generated OAuth link → link expired → repeated 5 times over 30 minutes. Workspace scripts had direct token all along (`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` in `notion.json`).
+
+**Root cause 1:** LCM summaries said "NOTION_API_KEY NOT FOUND" — a compressed conclusion from prior sessions, not a fact. Treated as ground truth instead of checking config files.
+
+**Root cause 2:** Composio "no active connection" triggered a narrow OAuth loop instead of a "find alternative" search. False ceiling.
+
+**Root cause 3:** Workspace scripts (ground truth) were never consulted. All morning pipeline scripts use direct token.
+
+**Fix (permanent):** MEMORY.md updated with rule: meta-tool "no connection" → grep workspace scripts for token → use direct API → only OAuth if no token found.
+
+**Scope:** ALL apps (Notion, Gmail, LinkedIn, Calendar, etc.)
+
+## 2026-03-25 - YouTube Transcript: USE THE SKILL FIRST
+### What I Missed
+Kept going to Exa/insanely-fast-whisper for YouTube transcripts when there's a dedicated skill + script already built.
+### Why
+Didn't internalize the skill from first learning. Repeated the same mistake twice in one session.
+### Fix
+Attack order for YouTube URLs:
+1. `scripts/youtube_transcript.sh` (yt-dlp + cookies) - ALWAYS FIRST
+2. Exa GET_CONTENTS - if cookies expired and Mac offline
+3. Local whisper - DELETED, not an option anymore

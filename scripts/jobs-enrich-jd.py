@@ -130,6 +130,65 @@ def fetch_linkedin_voyager(job_id):
         return None
 
 
+def fetch_linkedin_jobspy(job_id, title_hint=""):
+    """Fallback: use tls-client to fetch LinkedIn JD from public job page.
+    tls-client mimics Chrome's TLS fingerprint, bypassing LinkedIn's auth wall
+    on public job listing pages. No cookies or login required.
+    Inspired by job-ops/JobSpy extractor approach."""
+    # Check cache first
+    cached = jd_cache_get(job_id)
+    if cached:
+        return cached
+    try:
+        import tls_client
+        from html import unescape as html_unescape
+
+        session = tls_client.Session(
+            client_identifier="chrome_120",
+            random_tls_extension_order=True,
+        )
+        url = f"https://www.linkedin.com/jobs/view/{job_id}"
+        resp = session.get(url, headers={
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+                          "AppleWebKit/537.36 (KHTML, like Gecko) "
+                          "Chrome/120.0.0.0 Safari/537.36",
+            "Accept": "text/html,application/xhtml+xml",
+            "Accept-Language": "en-US,en;q=0.9",
+        })
+        if resp.status_code != 200:
+            return None
+
+        html = resp.text
+        # Primary: show-more-less-html div (LinkedIn's standard JD container)
+        m = re.search(
+            r'<div[^>]*class="show-more-less-html__markup[^"]*"[^>]*>(.*?)</div>',
+            html, re.S
+        )
+        if m:
+            text = re.sub(r'<[^>]+>', ' ', m.group(1))
+            text = re.sub(r'\s+', ' ', html_unescape(text)).strip()
+            if len(text) > 100:
+                jd_cache_put(job_id, text, "tls_public")
+                return text
+
+        # Secondary: description__text section
+        m = re.search(
+            r'class="description__text[^"]*"[^>]*>(.*?)</section>',
+            html, re.S
+        )
+        if m:
+            text = re.sub(r'<[^>]+>', ' ', m.group(1))
+            text = re.sub(r'\s+', ' ', html_unescape(text)).strip()
+            if len(text) > 100:
+                jd_cache_put(job_id, text, "tls_public")
+                return text
+
+        return None
+    except Exception as e:
+        print(f"  tls-client fallback failed: {e}")
+        return None
+
+
 def extract_linkedin_job_id(url):
     """Extract numeric job ID from LinkedIn URL."""
     m = re.search(r'(\d{8,})', url)
@@ -302,6 +361,20 @@ def run():
                     else:
                         print(f"  [{idx}] {title}... VOYAGER OK ({len(jd)} chars)")
                     return "enriched", nationals
+
+            # Fallback: tls-client direct fetch (no auth needed, mimics Chrome TLS)
+            jd = fetch_linkedin_jobspy(job_id, title)
+            if jd and len(jd) > 100:
+                job["jd_text"] = jd[:5000]
+                job["jd_fetch_status"] = "tls_ok"
+                job["jd_live"] = True
+                nationals = detect_nationals_only(jd)
+                if nationals:
+                    job["nationals_only"] = True
+                    print(f"  [{idx}] {title}... TLS OK ({len(jd)} chars) ⚠️ NATIONALS ONLY")
+                else:
+                    print(f"  [{idx}] {title}... TLS OK ({len(jd)} chars)")
+                return "enriched", nationals
         
         # Fallback: raw HTTP fetch (works for Indeed, Google Jobs, company pages)
         html = fetch_page(url)

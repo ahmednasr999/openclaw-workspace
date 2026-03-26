@@ -69,10 +69,13 @@ Full ATS rules: See MEMORY.md "CV Design Rules" section.
    - tool_slug: `LINKEDIN_CREATE_LINKED_IN_POST`
    - arguments: `{"author": "urn:li:person:mm8EyA56mj", "commentary": "<post text>", "visibility": "PUBLIC"}`
 
-2. **Post with image:** First upload image, then post:
-   - Call `LINKEDIN_INITIALIZE_IMAGE_UPLOAD` with `{"owner": "urn:li:person:mm8EyA56mj"}`
-   - PUT image bytes to the returned `upload_url`
-   - Include image URN in the `images` array of `LINKEDIN_CREATE_LINKED_IN_POST`
+2. **Post with image (TESTED WORKING 2026-03-25):**
+   - Step 1: Download image locally
+   - Step 2: Upload to Composio S3 via `upload_local_file("/tmp/image.png")` in REMOTE_WORKBENCH
+   - Step 3: Get `s3key` from upload result
+   - Step 4: Call `LINKEDIN_CREATE_LINKED_IN_POST` with `images: [{"name": "image.png", "mimetype": "image/png", "s3key": "<s3key>"}]`
+   - **NEVER post text-only if image was expected** - always hold for review
+   - Full docs: `docs/linkedin-image-post-flow.md`
 
 3. **Bold text:** LinkedIn doesn't render markdown. Convert `**text**` to Unicode Mathematical Bold:
    - A-Z: U+1D5D4 to U+1D5ED, a-z: U+1D5EE to U+1D607, 0-9: U+1D7EC to U+1D7F5

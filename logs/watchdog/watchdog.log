@@ -343,3 +343,105 @@ Restarted systemd service: openclaw-gateway.service
   "runId": "manual:0a31c73d-e888-4e67-bc7b-39605f12d67d:1774368008455:2"
 }
 [2026-03-24 20:00] === Watchdog v3 run ===
+[2026-03-24 20:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-03-24 22:00] === Watchdog v3 run ===
+[2026-03-24 22:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-03-25 00:00] === Watchdog v3 run ===
+[2026-03-25 00:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-03-25 02:00] === Watchdog v3 run ===
+[2026-03-25 02:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-03-25 04:00] === Watchdog v3 run ===
+[2026-03-25 04:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-03-25 06:00] === Watchdog v3 run ===
+[2026-03-25 06:00] FIXED: Re-triggered failed cron 48e061a6-5771-42a5-9e63-ae7b10ab24f6
+[2026-03-25 06:00] Summary: fixes=1 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:48e061a6-5771-42a5-9e63-ae7b10ab24f6:1774411209865:1"
+}
+[2026-03-25 08:00] === Watchdog v3 run ===
+[2026-03-25 08:00] FIXED: Re-triggered failed cron d1343a4d-61a4-476c-83c5-15724bcce89c
+[2026-03-25 08:00] FIXED: Re-triggered failed cron 48e061a6-5771-42a5-9e63-ae7b10ab24f6
+[2026-03-25 08:00] FIXED: Re-triggered failed cron 1b1d9bca-2f63-49d1-89b2-cd05a792b30a
+[2026-03-25 08:00] Summary: fixes=3 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:48e061a6-5771-42a5-9e63-ae7b10ab24f6:1774418411623:2"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:d1343a4d-61a4-476c-83c5-15724bcce89c:1774418413249:3"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:1b1d9bca-2f63-49d1-89b2-cd05a792b30a:1774418413440:4"
+}
+[2026-03-25 10:00] === Watchdog v3 run ===
+[2026-03-25 10:00] FIXED: Re-triggered failed cron 48e061a6-5771-42a5-9e63-ae7b10ab24f6
+[2026-03-25 10:00] Summary: fixes=1 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:48e061a6-5771-42a5-9e63-ae7b10ab24f6:1774425613520:5"
+}
+[2026-03-25 12:00] === Watchdog v3 run ===
+[2026-03-25 12:00] FIXED: Re-triggered failed cron 48e061a6-5771-42a5-9e63-ae7b10ab24f6
+[2026-03-25 12:00] FIXED: Re-triggered failed cron 0a31c73d-e888-4e67-bc7b-39605f12d67d
+[2026-03-25 12:00] Summary: fixes=2 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:48e061a6-5771-42a5-9e63-ae7b10ab24f6:1774432817831:1"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:0a31c73d-e888-4e67-bc7b-39605f12d67d:1774432817856:2"
+}
+[2026-03-25 14:00] === Watchdog v3 run ===
+[2026-03-25 14:00] FIXED: Re-triggered failed cron d1343a4d-61a4-476c-83c5-15724bcce89c
+[2026-03-25 14:00] FIXED: Re-triggered failed cron 48e061a6-5771-42a5-9e63-ae7b10ab24f6
+[2026-03-25 14:00] FIXED: Re-triggered failed cron 0a31c73d-e888-4e67-bc7b-39605f12d67d
+[2026-03-25 14:00] Summary: fixes=3 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:0a31c73d-e888-4e67-bc7b-39605f12d67d:1774440009501:1"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:d1343a4d-61a4-476c-83c5-15724bcce89c:1774440010043:2"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:48e061a6-5771-42a5-9e63-ae7b10ab24f6:1774440011946:3"
+}
+[2026-03-25 16:00] === Watchdog v3 run ===
+[2026-03-25 16:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-03-25 18:00] === Watchdog v3 run ===
+[2026-03-25 18:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-03-25 20:00] === Watchdog v3 run ===
+[2026-03-25 20:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-03-25 22:00] === Watchdog v3 run ===
+[2026-03-25 22:00] WARN: active-tasks.md stale (49h)
+[2026-03-25 22:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-03-26 00:00] === Watchdog v3 run ===
+[2026-03-26 00:00] FIXED: Re-triggered failed cron f51a7ad3-fe08-4011-b1ff-f6c6720cdd4e
+[2026-03-26 00:00] Summary: fixes=1 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:f51a7ad3-fe08-4011-b1ff-f6c6720cdd4e:1774476008732:1"
+}
+[2026-03-26 02:00] === Watchdog v3 run ===
+[2026-03-26 02:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-03-26 04:00] === Watchdog v3 run ===
+[2026-03-26 04:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-03-26 06:00] === Watchdog v3 run ===
+[2026-03-26 06:00] Summary: fixes=0 warnings=0 alerts=0

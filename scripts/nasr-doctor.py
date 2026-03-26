@@ -427,7 +427,7 @@ def check_content_tests():
     """Run content agent test suite."""
     print("\n--- Content Agent Tests ---")
     result = subprocess.run(
-        [sys.executable, str(SCRIPTS / "test-content-agent.py")],
+        [sys.executable, str(WORKSPACE / "scripts" / "test-content-agent.py")],
         capture_output=True, text=True, timeout=60
     )
     if result.returncode == 0:

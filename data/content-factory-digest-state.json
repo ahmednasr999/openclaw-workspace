@@ -1,0 +1,67 @@
+{
+  "last_digest": "2026-03-25T13:41:00.387845+02:00",
+  "message_id": 35235,
+  "articles": [
+    {
+      "index": 1,
+      "page_id": "32e8d599-a162-81f6-b1a2-e3fb9291d5c1",
+      "title": "Revolut's 2025 Report: Profitable, Growing, and Building on Their Own Terms",
+      "url": "https://www.connectingthedotsinfin.tech/revoluts-2025-report-profitable-growing-and-building-on-their-own-terms/",
+      "format_score": 3.6,
+      "formats": [
+        "Newsjacking",
+        "Namejacking"
+      ],
+      "angle": "Breaking: Revolut's 2025 Report: Profitable, Growing, and Building on ... Here's what this means for [your industry]",
+      "categories": [
+        "FinTech"
+      ],
+      "status": "pending"
+    },
+    {
+      "index": 2,
+      "page_id": "32e8d599-a162-81b5-a07c-e927f97cd1a5",
+      "title": "Stripe vs. Adyen (2026): Two Trillion\u2011Dollar Visions for the Future of Payments",
+      "url": "https://www.connectingthedotsinfin.tech/stripe-vs-adyen-2026-two-trillion-dollar-visions-for-the-future-of-payments/",
+      "format_score": 2.7,
+      "formats": [
+        "Brandjacking"
+      ],
+      "angle": "What Stripe's move teaches us about [transformation/AI/leadership]",
+      "categories": [
+        "FinTech"
+      ],
+      "status": "pending"
+    },
+    {
+      "index": 3,
+      "page_id": "32e8d599-a162-817b-96c3-f1f261890967",
+      "title": "Contributed: Your next AI investment should not be a tool \u2014 it should be a person",
+      "url": "https://www.mobihealthnews.com/news/contributed-your-next-ai-investment-should-not-be-tool-it-should-be-person",
+      "format_score": 2.4,
+      "formats": [
+        "Namejacking"
+      ],
+      "angle": "[Leader name] just said something about HealthTech that every exec should hear",
+      "categories": [
+        "HealthTech"
+      ],
+      "status": "pending"
+    },
+    {
+      "index": 4,
+      "page_id": "32e8d599-a162-817b-bce0-f0a83f00a26d",
+      "title": "Stripe-Backed Tempo Launches AI Payments Protocol As Race For Agentic Commerce Heats Up",
+      "url": "https://www.connectingthedotsinfin.tech/stripe-backed-tempo-launches-ai-payments-protocol-as-race-for-agentic-commerce-heats-up/",
+      "format_score": 2.3,
+      "formats": [
+        "Brandjacking"
+      ],
+      "angle": "What Stripe's move teaches us about [transformation/AI/leadership]",
+      "categories": [
+        "FinTech"
+      ],
+      "status": "pending"
+    }
+  ]
+}
