@@ -1,10 +1,10 @@
 {
   "status": "ok",
-  "scan_time": "2026-03-26T05:00:16.398010+02:00",
-  "total_scanned": 5,
+  "scan_time": "2026-03-26T14:00:05.312176+02:00",
+  "total_scanned": 6,
   "by_category": {
     "interview_invite": 0,
-    "recruiter_reach": 0,
+    "recruiter_reach": 1,
     "application_ack": 0,
     "rejection": 0,
     "assessment": 0,
@@ -12,7 +12,18 @@
     "other": 5
   },
   "interview_invites": [],
-  "recruiter_messages": [],
+  "recruiter_messages": [
+    {
+      "id": "350344",
+      "from": "Abdelrahman Rashed <invitations@linkedin.com>",
+      "subject": "You have an invitation",
+      "date": "Thu, 26 Mar 2026 11:30:34 +0000 (UTC)",
+      "unread": true,
+      "priority": "MEDIUM",
+      "score": 2,
+      "pipeline_match": null
+    }
+  ],
   "application_acks": [],
   "rejections": [],
   "assessments": [],

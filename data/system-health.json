@@ -2,23 +2,23 @@
   "meta": {
     "agent": "system-agent",
     "version": "1.0.0",
-    "generated_at": "2026-03-26T05:00:28.420249+02:00",
-    "duration_ms": 15752,
+    "generated_at": "2026-03-26T14:00:16.442876+02:00",
+    "duration_ms": 14300,
     "ttl_hours": 1,
     "status": "success",
     "error": null,
-    "run_id": "c88c3a05",
+    "run_id": "79870547",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
-    "scan_time": "2026-03-26T05:00:28.420033+02:00",
+    "scan_time": "2026-03-26T14:00:16.442613+02:00",
     "system": {
-      "disk_usage_pct": 48,
+      "disk_usage_pct": 47,
       "memory": {
         "total_gb": 7.8,
-        "available_gb": 3.1,
-        "used_pct": 60.5
+        "available_gb": 4.6,
+        "used_pct": 41.3
       },
       "gateway": {
         "status": "healthy",
@@ -26,25 +26,25 @@
       },
       "openclaw_process": {
         "running": true,
-        "pid_count": 35
+        "pid_count": 19
       }
     },
     "agents": {
       "health": [
         {
           "agent": "jobs-merge",
-          "status": "stale",
-          "age_hours": 14.9,
+          "status": "healthy",
+          "age_hours": 3.9,
           "ttl_hours": 6,
-          "last_run": "2026-03-25T14:06:02.668533+02:00",
+          "last_run": "2026-03-26T10:06:00.310805+02:00",
           "last_status": "success"
         },
         {
           "agent": "jobs-review",
-          "status": "stale",
-          "age_hours": 14.8,
+          "status": "healthy",
+          "age_hours": 3.7,
           "ttl_hours": 6,
-          "last_run": "2026-03-25T14:14:06.624628+02:00",
+          "last_run": "2026-03-26T10:17:26.681194+02:00",
           "last_status": "success"
         },
         {
@@ -52,21 +52,21 @@
           "status": "healthy",
           "age_hours": 1.0,
           "ttl_hours": 4,
-          "last_run": "2026-03-26T04:00:28.614074+02:00",
+          "last_run": "2026-03-26T13:00:53.559555+02:00",
           "last_status": "success"
         },
         {
           "agent": "linkedin-post",
-          "status": "healthy",
-          "age_hours": 0.0,
+          "status": "stale",
+          "age_hours": 9.0,
           "ttl_hours": 6,
           "last_run": "2026-03-26T03:00:16.193441+00:00",
           "last_status": null
         },
         {
           "agent": "comment-radar",
-          "status": "healthy",
-          "age_hours": 0.0,
+          "status": "stale",
+          "age_hours": 9.0,
           "ttl_hours": 6,
           "last_run": "2026-03-26T03:00:16.927766+00:00",
           "last_status": null
@@ -74,7 +74,7 @@
         {
           "agent": "outreach-agent",
           "status": "stale",
-          "age_hours": 20.9,
+          "age_hours": 29.9,
           "ttl_hours": 6,
           "last_run": "2026-03-25T06:03:46.402813+00:00",
           "last_status": null
@@ -82,9 +82,9 @@
         {
           "agent": "system-agent",
           "status": "healthy",
-          "age_hours": 1.0,
+          "age_hours": 2.0,
           "ttl_hours": 6,
-          "last_run": "2026-03-26T04:00:11.004241+02:00",
+          "last_run": "2026-03-26T12:00:09.346146+02:00",
           "last_status": "success"
         }
       ],
@@ -95,7 +95,7 @@
     "cron": {
       "status": "healthy",
       "job_count": 24,
-      "raw_output": "ID                                   Name                     Schedule                         Next       Last       Status    Target    Agent ID   Model               \n48e061a6-5771-42a5-9e63-ae7b10ab24f6 Briefing: Brief Me       cron 0 5 * * * (exact)           <1m ago    15h ago    running   isolated  -          minimax-portal/Mi...\nc597ad65-ce43-415f-b444-dbde4260cd1d Content Factory Scorer   cron 30 5 * * * @ Africa/Cair... in 30m     -          idle      isolated  -          -\nd1343a4d-61a"
+      "raw_output": "ID                                   Name                     Schedule                         Next       Last       Status    Target    Agent ID   Model               \n145d964f-e2e5-4b49-8058-f9ddac926f45 Email Agent (Sun-Thu)    cron 0 7,9,11,13,15,17,19,21 ... in 60m     1h ago     ok        isolated  -          -\nd1343a4d-61a4-476c-83c5-15724bcce89c Content Agent: Reacti... cron 0 */6 * * * @ Africa/Cai... in 4h      2h ago     ok        isolated  -          minimax-portal/Mi...\nf51a7ad3-fe0"
     },
     "external_services": {
       "notion": {
@@ -108,8 +108,23 @@
       }
     },
     "alerts": {
-      "immediate_count": 0,
-      "recent": []
+      "immediate_count": 2,
+      "recent": [
+        {
+          "type": "interview_detected",
+          "urgency": "critical",
+          "message": "Interview invite from \"Yogesh Chetri\" <info@engage.y-axis.com>: Your Skills Are in Demand Globally - Are Employers Seeing You?",
+          "timestamp": "2026-03-26T14:00:13.387904+02:00",
+          "id": "alert-2-140016"
+        },
+        {
+          "type": "interview_detected",
+          "urgency": "critical",
+          "message": "Interview invite from Startup Archive <mike@startuparchive.org>: Sam Altman explains how he decides to invest in a startup after 10\r\n minutes",
+          "timestamp": "2026-03-26T14:00:13.387934+02:00",
+          "id": "alert-3-140016"
+        }
+      ]
     }
   },
   "kpi": {
@@ -117,16 +132,24 @@
     "agents_healthy": 4,
     "agents_stale": 3,
     "cron_success_rate": 100,
-    "alerts_active": 0
+    "alerts_active": 2
   },
   "recommendations": [
     {
-      "id": "rec-c88c3a05-0",
+      "id": "rec-79870547-0",
       "action": "run_agents",
-      "target": "3 stale agent(s): jobs-merge, jobs-review, outreach-agent",
+      "target": "3 stale agent(s): linkedin-post, comment-radar, outreach-agent",
       "reason": "Agent data is past TTL",
       "urgency": "medium",
-      "timestamp": "2026-03-26T05:00:28.420083+02:00"
+      "timestamp": "2026-03-26T14:00:16.442651+02:00"
+    },
+    {
+      "id": "rec-79870547-1",
+      "action": "respond_immediately",
+      "target": "2 interview invite(s)",
+      "reason": "Interview invitations detected in email",
+      "urgency": "critical",
+      "timestamp": "2026-03-26T14:00:16.442658+02:00"
     }
   ]
 }

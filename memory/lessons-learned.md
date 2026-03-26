@@ -1,5 +1,13 @@
 # Lessons Learned
 
+## 2026-03-26
+### What I Missed
+Ahmed had to ask about free image generation. I had Gemini via Composio, PIL templates, and a known image reliability gap in the auto-poster - all the ingredients for the image-gen-chain - but never proactively proposed it.
+### Why
+Reactive mode. I was treating each tool/script as isolated instead of scanning for gaps across the full pipeline (Notion -> image -> auto-poster -> LinkedIn).
+### Fix
+Weekly pipeline audit: every Friday, scan the full content pipeline end-to-end for gaps, unused capabilities, and reliability risks. Surface findings to Ahmed without being asked. The question to ask: "What free tools/connections do I have that aren't wired into any workflow yet?"
+
 ## 2026-03-19
 
 ### What I Missed
@@ -227,3 +235,9 @@ Session startup sequence only reads MEMORY.md, active-tasks.md, and today's dail
 1. AGENTS.md updated: "Post-build reminder" clause added — if user asks "are you done?" and grill-me hasn't run, treat as failure. User should never have to remind.
 2. Changed the signal: "are you done?" = "did grill-me run?" — they are now linked in the rules.
 3. The session startup reads MEMORY.md which references AGENTS.md — the gap was that I didn't re-read AGENTS.md after learning about the new build in the same session.
+
+## 2026-03-26
+### LinkedIn Visual Mismatch
+**What happened:** Posted GenAI Small t to LinkedIn with old Google Drive image (240KB, with source text) instead of the correct v3 Notion-hosted image (1.57MB, no source).
+**Root cause:** Downloaded visual from Google Drive (stale) instead of from Notion (source of truth). Google Drive files were never updated after v3 regeneration.
+**Fix:** When posting to LinkedIn, always pull images from Notion File Upload API (the source of truth), not Google Drive. Update auto-poster script to use Notion → S3 staging → LinkedIn flow.
