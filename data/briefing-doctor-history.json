@@ -1,0 +1,45 @@
+{
+  "days": [
+    {
+      "date": "2026-03-25",
+      "score": 88,
+      "grade": "B",
+      "issue_count": 2,
+      "parts": {
+        "Part 1: Job Sourcing": 100,
+        "Part 2: Job Merge": 100,
+        "Part 3: Job Review": 100,
+        "Part 4: Push to Notion": 0,
+        "Part 5: Email Scan": 100,
+        "Part 6: LinkedIn Post": 100,
+        "Part 7: Comment Radar": 100,
+        "Part 8: Outreach": 100,
+        "Part 9: System Health": 100,
+        "Part 10: Briefing Page": 100,
+        "Part 11: Telegram": 50,
+        "Part 12: Calendar": 100
+      }
+    },
+    {
+      "date": "2026-03-26",
+      "score": 85,
+      "grade": "B",
+      "issue_count": 4,
+      "parts": {
+        "Part 1: Job Sourcing": 100,
+        "Part 2: Job Merge": 100,
+        "Part 3: Job Review": 100,
+        "Part 4: Push to Notion": 0,
+        "Part 5: Email Scan": 100,
+        "Part 6: LinkedIn Post": 100,
+        "Part 7: Comment Radar": 85,
+        "Part 8: Outreach": 100,
+        "Part 9: System Health": 90,
+        "Part 10: Briefing Page": 100,
+        "Part 11: Telegram": 50,
+        "Part 12: Calendar": 100
+      }
+    }
+  ],
+  "updated": "2026-03-26T05:18:21.459371+02:00"
+}

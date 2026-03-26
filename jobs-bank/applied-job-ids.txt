@@ -159,3 +159,8 @@ f7e1d5085527773a | International Medical Company | Strategy & Transformation Dir
 
 # Synced from Notion Pipeline (1 new)
 4384057356 | Discovered MENA | Head of Engineering | synced from Notion | Applied
+
+# Synced from Notion Pipeline (3 new)
+4389276852 | CMP Digital Infrastructure | Director of Program Management | synced from Notion | Applied
+4389096599 | Dow Jones | Director, Business Operations | synced from Notion | Applied
+4385463236 | Confidential | AI Enablement & Support Specialist | synced from Notion | Applied

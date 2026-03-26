@@ -1,27 +1,6 @@
 {
-  "generated": "2026-03-24T16:01:23.902764+00:00",
-  "suggestions": [
-    {
-      "name": "Antonius Wongso",
-      "role": "Head of HR",
-      "url": "https://www.linkedin.com/in/antonius-wongso-32a0a8222",
-      "company": "Confidential",
-      "signal_score": 25,
-      "applied_role": "Head of Digital Product Delivery (Mobile App)",
-      "applied_date": "2026-03-22",
-      "reason": "You applied for Head of Digital Product Delivery (Mobile App) at Confidential"
-    },
-    {
-      "name": "Navjyoth Kaur\u200f",
-      "role": "\u200fRecruiter",
-      "url": "https://www.linkedin.com/in/navjyoth-kaur-132103252",
-      "company": "Miral Experiences",
-      "signal_score": 30,
-      "applied_role": "Senior Director Software Architecture",
-      "applied_date": "2026-03-22",
-      "reason": "You applied for Senior Director Software Architecture at Miral Experiences"
-    }
-  ],
+  "generated": "2026-03-25T06:03:46.402813+00:00",
+  "suggestions": [],
   "companies_searched": 10,
   "status": "ok"
 }

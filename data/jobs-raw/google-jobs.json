@@ -2,41 +2,161 @@
   "meta": {
     "agent": "jobs-source-google",
     "version": "1.0.0",
-    "generated_at": "2026-03-24T05:00:36.226615+02:00",
-    "duration_ms": 23021,
+    "generated_at": "2026-03-26T05:00:40.798386+02:00",
+    "duration_ms": 28157,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "a53bfec9",
+    "run_id": "2d992fdb",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": [
     {
-      "id": "google-in-f7e1d5085527773a",
+      "id": "google-in-30c54bf5503ae2a1",
       "source": "google",
-      "title": "Strategy & Transformation Director",
-      "company": "International Medical Company",
-      "location": "Doha, DAW, QA",
-      "url": "https://qa.indeed.com/viewjob?jk=f7e1d5085527773a",
-      "posted": "2026-03-21",
-      "seniority": "C-Suite",
-      "domain_match": true,
+      "title": "Global Head of Erection and Commissioning - Gas Services Solutions",
+      "company": "Siemens Energy",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=30c54bf5503ae2a1",
+      "posted": "2026-03-25",
+      "seniority": "Director",
+      "domain_match": false,
       "keyword_score": 13,
       "match_keywords": [
-        "executive",
+        "head of",
+        "leadership"
+      ],
+      "raw_snippet": "**A Snapshot of Your Day**\n\n\nAs the Global Head of Erection and Commissioning (E\\&C) for Gas Service Solutions, you lead and empower a multidisciplinary team responsible for delivering safe, high quality, and timely execution of all erection, installation, and commissioning activities across our solutions project portfolio.\n\n\nYour day is a mix of strategic leadership, operational oversight, and cross functional coordination. You ensure that the field execution capacity needed is fulfilled, perfo",
+      "relevant": true,
+      "filter_reason": null
+    },
+    {
+      "id": "google-in-2e9d8b4cf355a65f",
+      "source": "google",
+      "title": "CHIEF, HOSTAGE INCIDENT MANAGEMENT, P5",
+      "company": "United Nations",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=2e9d8b4cf355a65f",
+      "posted": "2026-03-23",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 6,
+      "match_keywords": [
+        "leadership"
+      ],
+      "raw_snippet": "Org. Setting and Reporting\nThe Department of Safety and Security (UNDSS) is responsible for providing leadership, operational support and oversight of the United Nations security management system (UNSMS) globally. As a global leader in security risk management principles, UNDSS enables the safe and effective delivery of United Nations programmes and activities in the most complex and challenging environments, while maximizing precious resources. To this end, the work of the Department is aligne",
+      "relevant": true,
+      "filter_reason": null
+    },
+    {
+      "id": "google-in-3afdda613c031adb",
+      "source": "google",
+      "title": "Creative Graphic Designer / Art Director",
+      "company": "AD&M International Advertising, PR and Events",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=3afdda613c031adb",
+      "posted": "2026-03-25",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 13,
+      "match_keywords": [
+        "ai",
         "director"
       ],
-      "raw_snippet": "**Job Title**\n\n***Strategy \\& Transformation Director***\n\n**Role Purpose**\n\nThe Strategy \\& Transformation Director is responsible for defining, leading, and executing the organization\u2019s strategic agenda and transformation roadmap, ensuring alignment with the company\u2019s long\u2011term vision and financial objectives. The role partners closely with the CEO and executive team to translate strategy into actionable programs that deliver measurable business impact.\n\n**Key Responsibilities**\n\n* Lead the dev",
+      "raw_snippet": "Job Description:\n\nWe are looking for a highly skilled and experienced Senior Graphic Designer / Art Director to join our creative team. The ideal candidate will have a strong background in design, a keen eye for detail. You will be responsible for creating visually compelling graphics that align with the concerned brands and their marketing objectives.\n\nKey Responsibilities:\n\nConceptualize and design high\\-quality graphics for a variety of mediums, including digital, print, social media, and adv",
+      "relevant": true,
+      "filter_reason": null
+    },
+    {
+      "id": "google-in-5dac7ad2ae793dd6",
+      "source": "google",
+      "title": "Senior Director - Global Tech Partners (GTP)",
+      "company": "Visa",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=5dac7ad2ae793dd6",
+      "posted": "2026-03-24",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 23,
+      "match_keywords": [
+        "payments",
+        "ai",
+        "director"
+      ],
+      "raw_snippet": "**Company Description**  \n\nVisa is a world leader in payments technology, facilitating transactions between consumers, merchants, financial institutions and government entities across more than 200 countries and territories, dedicated to uplifting everyone, everywhere by being the best way to pay and be paid.\n\n\nAt Visa, you'll have the opportunity to create impact at scale \u2014 tackling meaningful challenges, growing your skills and seeing your contributions impact lives around the world. Join Visa",
+      "relevant": true,
+      "filter_reason": null
+    },
+    {
+      "id": "google-in-03e420342f3c4ce9",
+      "source": "google",
+      "title": "Director CoE - Strategy and Execution",
+      "company": "Visa",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=03e420342f3c4ce9",
+      "posted": "2026-03-24",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 23,
+      "match_keywords": [
+        "payments",
+        "ai",
+        "director"
+      ],
+      "raw_snippet": "**Company Description**  \n\nVisa is a world leader in payments technology, facilitating transactions between consumers, merchants, financial institutions and government entities across more than 200 countries and territories, dedicated to uplifting everyone, everywhere by being the best way to pay and be paid.\n\n\nAt Visa, you'll have the opportunity to create impact at scale \u2014 tackling meaningful challenges, growing your skills and seeing your contributions impact lives around the world. Join Visa",
+      "relevant": true,
+      "filter_reason": null
+    },
+    {
+      "id": "google-in-fd87e72cd4640a7b",
+      "source": "google",
+      "title": "Laboratory Director - AtoG Labs",
+      "company": "Medspace Medical Centre",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=fd87e72cd4640a7b",
+      "posted": "2026-03-24",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 20,
+      "match_keywords": [
+        "ai",
+        "director",
+        "uae",
+        "dubai"
+      ],
+      "raw_snippet": "**Laboratory Director \u2013 AtoG Labs****Location:** Dubai, UAE  \n\n**Reports to:** Board of Directors\n\n**About AtoG Labs:**  \n\nAtoG Labs is a high\\-technology molecular diagnostics and genetics laboratory dedicated to advancing personalized medicine in the UAE and beyond. Our multidisciplinary expertise covers molecular biology, genetic sequencing, oncology biomarkers, infectious disease testing, and women\u2019s health diagnostics. We combine innovation with clinical integrity to deliver a new standard ",
+      "relevant": true,
+      "filter_reason": null
+    },
+    {
+      "id": "google-in-2975f885cb7563bc",
+      "source": "google",
+      "title": "Chief Operations Officer (COO) - Telecommunications | Saudi Arabia",
+      "company": "Rawaj - Human Capital Management",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=2975f885cb7563bc",
+      "posted": "2026-03-25",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 33,
+      "match_keywords": [
+        "operational excellence",
+        "ai",
+        "scaling",
+        "growth",
+        "saudi"
+      ],
+      "raw_snippet": "**Leverage your expertise and join the dynamic team of a leading Saudi telecommunications company.**\n\n\nAs a **Chief Operating Officer (COO)**, you will lead and oversee the company\u2019s overall operations, ensuring operational excellence, efficiency, and alignment with strategic objectives. You will play a critical role in driving performance, scaling operations, and enabling sustainable business growth.\n\n**Key Accountabilities**\n------------------------\n\n**The position involves:**\n\n* Lead and mana",
       "relevant": true,
       "filter_reason": null
     }
   ],
   "kpi": {
     "searches_run": 30,
-    "results_per_search": 0.07,
-    "unique_jobs": 1,
-    "errors": 28,
+    "results_per_search": 0.33,
+    "unique_jobs": 7,
+    "errors": 23,
     "note": "Using Indeed as proxy for Google Jobs (Google requires JS rendering)"
   },
   "recommendations": []

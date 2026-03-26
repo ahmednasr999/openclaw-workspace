@@ -39,8 +39,9 @@ cat /tmp/linkedin-post-payload.json
 
 2. Upload to Composio S3 via `COMPOSIO_REMOTE_WORKBENCH`:
    - Use `upload_local_file(image_path)` in the workbench
-   - This returns an s3key in format: `project/pr_DBp_8iitCrNe/tool_router_session/trs_OOc0h6Vp0j01/{random_id}`
-   - Extract the `s3key` from the result
+   - Extract the `s3key` from the result dict (field name: `s3key`)
+   - The s3key looks like: `project/pr_.../tool_router_session/trs_.../{id}`
+   - If upload_local_file fails, print the error and STOP with IMAGE_HOLD. Do NOT post without image.
 
 3. Create post with the s3key:
    - tool: `LINKEDIN_CREATE_LINKED_IN_POST`

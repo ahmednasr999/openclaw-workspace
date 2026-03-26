@@ -1,0 +1,128 @@
+[05:54:26] === Content Factory Health Monitor === 2026-03-25 05:54 Cairo
+[05:54:26]   ✅ notion_auth: Token OK
+[05:54:33]   ✅ rss_db: OK — 132 total, 132 NEW
+[05:54:33]   ✅ content_calendar: 27 entries | Ideas=0 | Scheduled today=1 | {'Posted': 20, 'Drafted': 1, 'Scheduled': 6}
+[05:54:33]   ⚠️ rss_to_cal_bridge: Never ran (no state file)
+[05:54:33]   ✅ content_orchestrator: prime=ok, publish=completed_no_watchdog, collect=ok
+[05:54:35]   ⚠️ linkedin_post: No post made today
+[05:54:35]   ⚠️ engagement_collector: Last collected 2 days ago
+[05:54:35]   ✅ content_learning: 6 files, newest 0.3d old
+[05:54:41]   ✅ composio_linkedin: Gateway up
+[05:54:41] 
+  Summary: 6 ✅  3 ⚠️  0 🔴
+[05:54:41]   ⚠️ Warnings present — not alerting (monitoring)
+[06:12:21] === Content Factory Health Monitor === 2026-03-25 06:12 Cairo
+[06:12:22]   ✅ notion_auth: Token OK
+[06:12:30]   ✅ rss_db: OK — 132 total, 0 new (all processed)
+[06:12:33]   ✅ content_calendar: 159 entries | Ideas=132 | Scheduled today=1 | {'Posted': 20, 'Drafted': 1, 'Scheduled': 6, 'Idea': 132}
+[06:12:33]   ✅ rss_to_cal_bridge: Ran today: 132 added, 0 dup skipped
+[06:12:33]   ✅ content_orchestrator: prime=ok, publish=completed_no_watchdog, collect=ok
+[06:12:33]   ⚠️ linkedin_post: No post made today
+[06:12:33]   ⚠️ engagement_collector: Last collected 2 days ago
+[06:12:33]   ✅ content_learning: 6 files, newest 0.3d old
+[06:12:48]   🔴 composio_linkedin: Gateway unreachable
+[06:12:48] 
+  Summary: 6 ✅  2 ⚠️  1 🔴
+[06:14:17] === Content Factory Health Monitor === 2026-03-25 06:14 Cairo
+[06:14:17]   ✅ notion_auth: Token OK
+[06:14:24]   ✅ rss_db: OK — 132 total, 0 new (all processed)
+[06:14:26]   ✅ content_calendar: 159 entries | Ideas=132 | Scheduled today=1 | {'Posted': 20, 'Drafted': 1, 'Scheduled': 6, 'Idea': 132}
+[06:14:26]   ✅ rss_to_cal_bridge: Ran today: 132 added, 0 dup skipped
+[06:14:26]   ✅ content_orchestrator: prime=ok, publish=completed_no_watchdog, collect=ok
+[06:14:26]   ⚠️ linkedin_post: No post made today
+[06:14:26]   ⚠️ engagement_collector: Last collected 2 days ago
+[06:14:26]   ✅ content_learning: 6 files, newest 0.3d old
+[06:14:35]   ✅ composio_linkedin: Gateway up
+[06:14:35] 
+  Summary: 7 ✅  2 ⚠️  0 🔴
+[06:14:35]   ⚠️ Warnings present — not alerting (monitoring)
+[07:00:01] === Content Factory Health Monitor === 2026-03-25 07:00 Cairo
+[07:00:02]   ✅ notion_auth: Token OK
+[07:00:22]   ✅ rss_db: OK — 132 total, 0 new (all processed)
+[07:00:29]   ✅ content_calendar: 159 entries | Ideas=130 | Scheduled today=1 | {'Posted': 20, 'Drafted': 1, 'Scheduled': 8, 'Idea': 130}
+[07:00:29]   ✅ rss_to_cal_bridge: Ran today: 132 added, 0 dup skipped
+[07:00:29]   ✅ content_orchestrator: prime=ok, publish=completed_no_watchdog, collect=ok
+[07:00:29]   ⚠️ linkedin_post: No post made today
+[07:00:29]   ⚠️ engagement_collector: Last collected 2 days ago
+[07:00:29]   ✅ content_learning: 6 files, newest 0.3d old
+[07:00:34]   ✅ composio_linkedin: Gateway up
+[07:00:34] 
+  Summary: 7 ✅  2 ⚠️  0 🔴
+[07:00:34]   ⚠️ Warnings present — not alerting (monitoring)
+[07:00:01] === Content Factory Health Monitor === 2026-03-25 07:00 Cairo
+[07:00:02]   ✅ notion_auth: Token OK
+[07:00:22]   ✅ rss_db: OK — 132 total, 0 new (all processed)
+[07:00:29]   ✅ content_calendar: 159 entries | Ideas=130 | Scheduled today=1 | {'Posted': 20, 'Drafted': 1, 'Scheduled': 8, 'Idea': 130}
+[07:00:29]   ✅ rss_to_cal_bridge: Ran today: 132 added, 0 dup skipped
+[07:00:29]   ✅ content_orchestrator: prime=ok, publish=completed_no_watchdog, collect=ok
+[07:00:29]   ⚠️ linkedin_post: No post made today
+[07:00:29]   ⚠️ engagement_collector: Last collected 2 days ago
+[07:00:29]   ✅ content_learning: 6 files, newest 0.3d old
+[07:00:34]   ✅ composio_linkedin: Gateway up
+[07:00:34] 
+  Summary: 7 ✅  2 ⚠️  0 🔴
+[07:00:34]   ⚠️ Warnings present — not alerting (monitoring)
+[05:15:00] === Content Factory Health Monitor === 2026-03-26 05:15 Cairo
+[05:15:00]   ✅ notion_auth: Token OK
+[05:15:04]   ✅ rss_db: OK — 163 total, 17 NEW
+[05:15:04]   🔴 content_calendar: 'NoneType' object has no attribute 'get'
+[05:15:04]   ✅ rss_to_cal_bridge: Ran today: 0 added, 11 dup skipped
+[05:15:04]   ⚠️ content_orchestrator: Last ran 2026-03-24 (stale)
+[05:15:05]   ⚠️ linkedin_post: No post made today
+[05:15:05]   ⚠️ engagement_collector: Last collected 3 days ago
+[05:15:05]   ✅ content_learning: 6 files, newest 0.3d old
+[05:15:18]   ✅ composio_linkedin: Gateway up
+[05:15:18] 
+  Summary: 5 ✅  3 ⚠️  1 🔴
+[05:18:40] === Content Factory Health v2 === 2026-03-26 05:18 Cairo
+[05:18:43]   ✅ notion_auth: Token OK
+[05:18:43]   ✅ gateway: Gateway up
+[05:18:45]   ✅ rss_db: 163 total, 17 New, 15 Gold waiting
+[05:18:45]   ✅ rss_crawler: Last ran 2026-03-26T02:23, 150 URLs tracked
+[05:18:51]   ✅ scorer: 163 scored, 0 unscored
+[05:18:51]   ✅ bridge: Ran today: 0 added, 11 dup skipped
+[05:18:52]   ✅ content_calendar: 38 total | Ideas=5 | Drafts=7 | Scheduled=5 | Posted=21
+[05:18:52]   ✅ auto_drafter: 6 drafts ready for review
+[05:18:53]   ✅ linkedin_poster: 1 scheduled for today (poster fires 9:30 AM)
+[05:18:53]   ✅ visuals: 10 visuals, newest 0.1d old
+[05:18:53] 
+  Summary: 10 ✅  0 ⚠️  0 🔴  0 ℹ️
+[05:56:50] === Content Factory Health v2 === 2026-03-26 05:56 Cairo
+[05:56:50]   ✅ notion_auth: Token OK
+[05:56:50]   ✅ gateway: Gateway up
+[05:56:53]   ✅ rss_db: 163 total, 0 New, 0 Gold waiting
+[05:56:53]   ✅ rss_crawler: Last ran 2026-03-26T02:23, 150 URLs tracked
+[05:56:55]   ✅ scorer: 163 scored, 0 unscored
+[05:56:55]   ✅ bridge: Ran today: 0 added, 11 dup skipped
+[05:56:56]   ✅ content_calendar: 38 total | Ideas=5 | Drafts=7 | Scheduled=5 | Posted=21
+[05:56:56]   ✅ auto_drafter: 6 drafts ready for review
+[05:56:58]   ✅ linkedin_poster: 1 scheduled for today (poster fires 9:30 AM)
+[05:56:58]   ✅ visuals: 10 visuals, newest 0.1d old
+[05:56:58] 
+  Summary: 10 ✅  0 ⚠️  0 🔴  0 ℹ️
+[07:00:02] === Content Factory Health v2 === 2026-03-26 07:00 Cairo
+[07:00:02]   ✅ notion_auth: Token OK
+[07:00:02]   ✅ gateway: Gateway up
+[07:00:06]   ✅ rss_db: 163 total, 0 New, 0 Gold waiting
+[07:00:06]   ✅ rss_crawler: Last ran 2026-03-26T02:23, 150 URLs tracked
+[07:00:10]   ✅ scorer: 163 scored, 0 unscored
+[07:00:10]   ✅ bridge: Ran today: 0 added, 11 dup skipped
+[07:00:10]   ✅ content_calendar: 38 total | Ideas=5 | Drafts=7 | Scheduled=5 | Posted=21
+[07:00:11]   ✅ auto_drafter: 6 drafts ready for review
+[07:00:11]   ✅ linkedin_poster: 1 scheduled for today (poster fires 9:30 AM)
+[07:00:11]   ✅ visuals: 10 visuals, newest 0.2d old
+[07:00:11] 
+  Summary: 10 ✅  0 ⚠️  0 🔴  0 ℹ️
+[07:00:02] === Content Factory Health v2 === 2026-03-26 07:00 Cairo
+[07:00:02]   ✅ notion_auth: Token OK
+[07:00:02]   ✅ gateway: Gateway up
+[07:00:06]   ✅ rss_db: 163 total, 0 New, 0 Gold waiting
+[07:00:06]   ✅ rss_crawler: Last ran 2026-03-26T02:23, 150 URLs tracked
+[07:00:10]   ✅ scorer: 163 scored, 0 unscored
+[07:00:10]   ✅ bridge: Ran today: 0 added, 11 dup skipped
+[07:00:10]   ✅ content_calendar: 38 total | Ideas=5 | Drafts=7 | Scheduled=5 | Posted=21
+[07:00:11]   ✅ auto_drafter: 6 drafts ready for review
+[07:00:11]   ✅ linkedin_poster: 1 scheduled for today (poster fires 9:30 AM)
+[07:00:11]   ✅ visuals: 10 visuals, newest 0.2d old
+[07:00:11] 
+  Summary: 10 ✅  0 ⚠️  0 🔴  0 ℹ️

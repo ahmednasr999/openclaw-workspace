@@ -1,0 +1,19 @@
+[content-factory-token-health] 2026-03-26 05:00 Cairo
+  Checking Notion token...
+  ✓ OK - 100 results from RSS DB
+  Checking Notion write capability...
+  ✓ Write-capable
+  Checking Telegram bot...
+  ✓ Telegram bot 'NasrOpenClawnBot': OK
+  Checking RSS feeds...
+  ✓ RSS feeds responding
+  Checking Content Factory crons...
+  🔴 Content orchestrator: STALE (last 2026-03-24)
+
+==================================================
+🛡️ Content Factory Health — ISSUES FOUND
+2026-03-26 05:00 Cairo
+
+⚠️ Content orchestrator: STALE (last 2026-03-24)
+
+✅ OK: 4

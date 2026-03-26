@@ -176,6 +176,22 @@ Format:
 
 ---
 
+## Notion Access (Critical Rule)
+
+**Notion has a direct API token. Composio Notion connection is NOT required.**
+
+Token lives at: `~/.openclaw/workspace/config/notion.json` → `{"token": "ntn_..."}`
+Used by: ALL workspace scripts (morning-briefing-orchestrator.py, linkedin-auto-poster.py, email-agent.py, pipeline-agent.py, etc.)
+
+**When Composio/meta-tool says "no active connection" for any app:**
+1. STOP generating OAuth/reconnection flows
+2. IMMEDIATELY grep workspace scripts for that app's token/credentials
+3. If token found in scripts → use direct API, bypass Composio entirely
+4. Only if no token exists → then try OAuth connection
+
+This applies to EVERY app: Notion, Gmail, LinkedIn, Slack, Calendar, etc.
+The workspace scripts are always the ground truth for what credentials exist.
+
 ## Key Files
 
 ### Core Memory
