@@ -1,7 +1,7 @@
 {
   "status": "ok",
-  "scan_time": "2026-03-26T14:00:05.312176+02:00",
-  "total_scanned": 6,
+  "scan_time": "2026-03-26T18:00:10.449476+02:00",
+  "total_scanned": 16,
   "by_category": {
     "interview_invite": 0,
     "recruiter_reach": 1,
@@ -9,15 +9,15 @@
     "rejection": 0,
     "assessment": 0,
     "follow_up_needed": 0,
-    "other": 5
+    "other": 15
   },
   "interview_invites": [],
   "recruiter_messages": [
     {
-      "id": "350344",
-      "from": "Abdelrahman Rashed <invitations@linkedin.com>",
+      "id": "350391",
+      "from": "Ayoub ALAOUI <invitations@linkedin.com>",
       "subject": "You have an invitation",
-      "date": "Thu, 26 Mar 2026 11:30:34 +0000 (UTC)",
+      "date": "Thu, 26 Mar 2026 15:30:34 +0000 (UTC)",
       "unread": true,
       "priority": "MEDIUM",
       "score": 2,
