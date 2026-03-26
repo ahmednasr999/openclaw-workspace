@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-03-26T06:01:45.355266+02:00",
-    "duration_ms": 103730,
+    "generated_at": "2026-03-26T10:01:45.254011+02:00",
+    "duration_ms": 102756,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "84b6255c",
+    "run_id": "b3692fea",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -109,23 +109,46 @@
       "filter_reason": null
     },
     {
-      "id": "indeed-in-fd87e72cd4640a7b",
+      "id": "indeed-in-7692a8bee5456898",
       "source": "indeed",
-      "title": "Laboratory Director - AtoG Labs",
-      "company": "Medspace Medical Centre",
+      "title": "Project Director",
+      "company": "Omada Rail Systems",
       "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=fd87e72cd4640a7b",
-      "posted": "2026-03-24",
+      "url": "https://ae.indeed.com/viewjob?jk=7692a8bee5456898",
+      "posted": "2026-03-26",
       "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 20,
+      "domain_match": true,
+      "keyword_score": 36,
+      "match_keywords": [
+        "project management",
+        "ai",
+        "infrastructure",
+        "director",
+        "dubai",
+        "architecture"
+      ],
+      "raw_snippet": "* **Permanent Contract**\n* **Mid\\-Senior Level**\n* **Dubai**\n* **Project Management \\- Engineering**\n\n  \n**About Us**\n\n  \n\nEgis is an international player active in architecture, consulting, construction engineering and mobility services. We create and operate intelligent infrastructures and buildings that respond to the climate emergency and contribute to more balanced, sustainable and resilient territorial development. Operating in 100 countries, Egis puts the expertise of its 19,500 employees",
+      "relevant": true,
+      "filter_reason": null
+    },
+    {
+      "id": "indeed-in-5482cfeb938387c2",
+      "source": "indeed",
+      "title": "Project Director",
+      "company": "Egis Group",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=5482cfeb938387c2",
+      "posted": "2026-03-26",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 23,
       "match_keywords": [
         "ai",
+        "infrastructure",
         "director",
-        "uae",
-        "dubai"
+        "architecture"
       ],
-      "raw_snippet": "**Laboratory Director \u2013 AtoG Labs****Location:** Dubai, UAE  \n\n**Reports to:** Board of Directors\n\n**About AtoG Labs:**  \n\nAtoG Labs is a high\\-technology molecular diagnostics and genetics laboratory dedicated to advancing personalized medicine in the UAE and beyond. Our multidisciplinary expertise covers molecular biology, genetic sequencing, oncology biomarkers, infectious disease testing, and women\u2019s health diagnostics. We combine innovation with clinical integrity to deliver a new standard ",
+      "raw_snippet": "**Company Description**  \n\nEgis is an international player active in architecture, consulting, construction engineering and mobility services. We create and operate intelligent infrastructures and buildings that respond to the climate emergency and contribute to more balanced, sustainable and resilient territorial development. Operating in 100 countries, Egis puts the expertise of its 19,500 employees at the service of its clients and develops cutting\\-edge innovations accessible to all projects",
       "relevant": true,
       "filter_reason": null
     },
@@ -277,8 +300,8 @@
   "kpi": {
     "searches_run": 81,
     "results_per_search": 1.58,
-    "unique_jobs": 13,
-    "errors": 36
+    "unique_jobs": 14,
+    "errors": 39
   },
   "recommendations": []
 }

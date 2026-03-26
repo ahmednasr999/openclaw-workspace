@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-24T20:00:13.262204+02:00",
+  "last_updated": "2026-03-26T14:00:16.441359+02:00",
   "alerts": [
     {
       "type": "gateway_down",
@@ -14,7 +14,21 @@
       "message": "Interview invite from Quanterion Solutions Incorporated <reliability@quanterion.com>: Get the Early Bird Discount for Reliability Training!",
       "timestamp": "2026-03-24T20:00:09.570976+02:00",
       "id": "alert-1-200013"
+    },
+    {
+      "type": "interview_detected",
+      "urgency": "critical",
+      "message": "Interview invite from \"Yogesh Chetri\" <info@engage.y-axis.com>: Your Skills Are in Demand Globally - Are Employers Seeing You?",
+      "timestamp": "2026-03-26T14:00:13.387904+02:00",
+      "id": "alert-2-140016"
+    },
+    {
+      "type": "interview_detected",
+      "urgency": "critical",
+      "message": "Interview invite from Startup Archive <mike@startuparchive.org>: Sam Altman explains how he decides to invest in a startup after 10\r\n minutes",
+      "timestamp": "2026-03-26T14:00:13.387934+02:00",
+      "id": "alert-3-140016"
     }
   ],
-  "active_count": 2
+  "active_count": 4
 }

@@ -2,37 +2,37 @@
   "meta": {
     "agent": "pipeline-agent",
     "version": "1.0.0",
-    "generated_at": "2026-03-26T05:00:33.661208+02:00",
-    "duration_ms": 20987,
+    "generated_at": "2026-03-26T14:00:13.051684+02:00",
+    "duration_ms": 10717,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "c3d81600",
+    "run_id": "930f738e",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
-    "total_applications": 387,
+    "total_applications": 405,
     "active_count": 135,
     "external_applied_count": 119,
-    "db_total": 1068,
+    "db_total": 1166,
     "db_funnel": {
-      "discovered": 602,
-      "scored": 232,
+      "discovered": 661,
+      "scored": 271,
       "applied": 137,
       "cv_built": 95,
       "rejected": 1,
       "response": 1,
-      "_total": 1068
+      "_total": 1166
     },
     "by_status": {
       "cv built": 69,
       "\u2705 applied": 70,
       "applied": 65,
       "\u274c rejected": 1,
-      "\ud83d\udd0d discovered": 272,
+      "\ud83d\udd0d discovered": 250,
       "\ud83d\udccb recommended": 14,
-      "\ud83d\udccb scored": 167,
+      "\ud83d\udccb scored": 185,
       "response": 1
     },
     "this_week": {
@@ -55,9 +55,9 @@
     }
   },
   "kpi": {
-    "total_tracked": 387,
-    "active_rate": 34.9,
-    "avg_days_in_pipeline": 5.0,
+    "total_tracked": 405,
+    "active_rate": 33.3,
+    "avg_days_in_pipeline": 5.1,
     "follow_ups_overdue": 0,
     "interviews_this_week": 0,
     "stale_count": 0
