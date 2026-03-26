@@ -2,23 +2,23 @@
   "meta": {
     "agent": "system-agent",
     "version": "1.0.0",
-    "generated_at": "2026-03-26T14:00:16.442876+02:00",
-    "duration_ms": 14300,
+    "generated_at": "2026-03-26T18:00:09.531373+02:00",
+    "duration_ms": 7829,
     "ttl_hours": 1,
     "status": "success",
     "error": null,
-    "run_id": "79870547",
+    "run_id": "c3218882",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
-    "scan_time": "2026-03-26T14:00:16.442613+02:00",
+    "scan_time": "2026-03-26T18:00:09.531070+02:00",
     "system": {
-      "disk_usage_pct": 47,
+      "disk_usage_pct": 48,
       "memory": {
         "total_gb": 7.8,
-        "available_gb": 4.6,
-        "used_pct": 41.3
+        "available_gb": 5.4,
+        "used_pct": 30.2
       },
       "gateway": {
         "status": "healthy",
@@ -26,23 +26,23 @@
       },
       "openclaw_process": {
         "running": true,
-        "pid_count": 19
+        "pid_count": 21
       }
     },
     "agents": {
       "health": [
         {
           "agent": "jobs-merge",
-          "status": "healthy",
-          "age_hours": 3.9,
+          "status": "stale",
+          "age_hours": 7.9,
           "ttl_hours": 6,
           "last_run": "2026-03-26T10:06:00.310805+02:00",
           "last_status": "success"
         },
         {
           "agent": "jobs-review",
-          "status": "healthy",
-          "age_hours": 3.7,
+          "status": "stale",
+          "age_hours": 7.7,
           "ttl_hours": 6,
           "last_run": "2026-03-26T10:17:26.681194+02:00",
           "last_status": "success"
@@ -52,13 +52,13 @@
           "status": "healthy",
           "age_hours": 1.0,
           "ttl_hours": 4,
-          "last_run": "2026-03-26T13:00:53.559555+02:00",
+          "last_run": "2026-03-26T17:00:42.739845+02:00",
           "last_status": "success"
         },
         {
           "agent": "linkedin-post",
           "status": "stale",
-          "age_hours": 9.0,
+          "age_hours": 13.0,
           "ttl_hours": 6,
           "last_run": "2026-03-26T03:00:16.193441+00:00",
           "last_status": null
@@ -66,7 +66,7 @@
         {
           "agent": "comment-radar",
           "status": "stale",
-          "age_hours": 9.0,
+          "age_hours": 13.0,
           "ttl_hours": 6,
           "last_run": "2026-03-26T03:00:16.927766+00:00",
           "last_status": null
@@ -74,7 +74,7 @@
         {
           "agent": "outreach-agent",
           "status": "stale",
-          "age_hours": 29.9,
+          "age_hours": 33.9,
           "ttl_hours": 6,
           "last_run": "2026-03-25T06:03:46.402813+00:00",
           "last_status": null
@@ -84,18 +84,18 @@
           "status": "healthy",
           "age_hours": 2.0,
           "ttl_hours": 6,
-          "last_run": "2026-03-26T12:00:09.346146+02:00",
+          "last_run": "2026-03-26T16:00:09.457244+02:00",
           "last_status": "success"
         }
       ],
-      "healthy_count": 4,
-      "stale_count": 3,
+      "healthy_count": 2,
+      "stale_count": 5,
       "total": 7
     },
     "cron": {
       "status": "healthy",
       "job_count": 24,
-      "raw_output": "ID                                   Name                     Schedule                         Next       Last       Status    Target    Agent ID   Model               \n145d964f-e2e5-4b49-8058-f9ddac926f45 Email Agent (Sun-Thu)    cron 0 7,9,11,13,15,17,19,21 ... in 60m     1h ago     ok        isolated  -          -\nd1343a4d-61a4-476c-83c5-15724bcce89c Content Agent: Reacti... cron 0 */6 * * * @ Africa/Cai... in 4h      2h ago     ok        isolated  -          minimax-portal/Mi...\nf51a7ad3-fe0"
+      "raw_output": "ID                                   Name                     Schedule                         Next       Last       Status    Target    Agent ID   Model               \nd1343a4d-61a4-476c-83c5-15724bcce89c Content Agent: Reacti... cron 0 */6 * * * @ Africa/Cai... in 3m      6h ago     ok        isolated  -          minimax-portal/Mi...\n145d964f-e2e5-4b49-8058-f9ddac926f45 Email Agent (Sun-Thu)    cron 0 7,9,11,13,15,17,19,21 ... in 60m     1h ago     ok        isolated  -          -\nf51a7ad3-fe0"
     },
     "external_services": {
       "notion": {
@@ -108,48 +108,25 @@
       }
     },
     "alerts": {
-      "immediate_count": 2,
-      "recent": [
-        {
-          "type": "interview_detected",
-          "urgency": "critical",
-          "message": "Interview invite from \"Yogesh Chetri\" <info@engage.y-axis.com>: Your Skills Are in Demand Globally - Are Employers Seeing You?",
-          "timestamp": "2026-03-26T14:00:13.387904+02:00",
-          "id": "alert-2-140016"
-        },
-        {
-          "type": "interview_detected",
-          "urgency": "critical",
-          "message": "Interview invite from Startup Archive <mike@startuparchive.org>: Sam Altman explains how he decides to invest in a startup after 10\r\n minutes",
-          "timestamp": "2026-03-26T14:00:13.387934+02:00",
-          "id": "alert-3-140016"
-        }
-      ]
+      "immediate_count": 0,
+      "recent": []
     }
   },
   "kpi": {
     "system_uptime": 100,
-    "agents_healthy": 4,
-    "agents_stale": 3,
+    "agents_healthy": 2,
+    "agents_stale": 5,
     "cron_success_rate": 100,
-    "alerts_active": 2
+    "alerts_active": 0
   },
   "recommendations": [
     {
-      "id": "rec-79870547-0",
+      "id": "rec-c3218882-0",
       "action": "run_agents",
-      "target": "3 stale agent(s): linkedin-post, comment-radar, outreach-agent",
+      "target": "5 stale agent(s): jobs-merge, jobs-review, linkedin-post, comment-radar, outreach-agent",
       "reason": "Agent data is past TTL",
       "urgency": "medium",
-      "timestamp": "2026-03-26T14:00:16.442651+02:00"
-    },
-    {
-      "id": "rec-79870547-1",
-      "action": "respond_immediately",
-      "target": "2 interview invite(s)",
-      "reason": "Interview invitations detected in email",
-      "urgency": "critical",
-      "timestamp": "2026-03-26T14:00:16.442658+02:00"
+      "timestamp": "2026-03-26T18:00:09.531117+02:00"
     }
   ]
 }
