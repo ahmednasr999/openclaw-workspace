@@ -4,11 +4,12 @@ Post briefing section summaries to their matching Telegram forum threads.
 Run after morning-briefing-orchestrator.py completes.
 
 Thread mapping (Nasr Command Center forum):
-  Topic 6  = Jobs thread
-  Topic 7  = LinkedIn/Content thread
-  Topic 10 = General/System thread
-  Topic 32 = CRM/Networking thread  
-  Topic 52 = X/Twitter thread
+  Topic 7  = CMO Desk (LinkedIn/Content) — LinkedIn approvals, comment radar, content calendar
+  Topic 8  = CTO Desk (gateway, scripts, infra, AI agents)
+  Topic 9  = HR Desk (jobs pipeline, CVs, applications, outreach)
+  Topic 10 = CEO General (all-hands briefing, system status, cross-dept reminders)
+  Topic 32 = Archive (CRM/Networking — unused)
+  Topic 52 = Archive (X/Twitter — unused)
 """
 
 import json, os, sys, re, ssl, urllib.request
@@ -19,13 +20,12 @@ BOT_TOKEN = "8213291111:AAHCk2J4XIRQaTsBkACl_Xpla7LFvVx1304"
 CHAT_ID = "-1003882622947"
 ctx = ssl.create_default_context()
 
-# Thread mapping
+# Thread mapping — C-suite structure (2026-03-27)
 THREADS = {
-    "jobs": 6,
-    "content": 7,
-    "general": 10,
-    "crm": 32,
-    "twitter": 52,
+    "jobs":    9,   # HR Desk
+    "content": 7,   # CMO Desk
+    "general": 10,  # CEO General
+    # crm and twitter threads archived — topics 32 and 52 are closed
 }
 
 def send_to_thread(topic_id, text, parse_mode="HTML"):
@@ -128,7 +128,7 @@ def build_thread_messages(sections, notion_url):
     """Build messages for each thread from briefing sections."""
     messages = {}
     
-    # Jobs thread (Topic 6): Pipeline + Scanner sections
+    # Jobs thread (Topic 9): Pipeline + Scanner sections
     jobs_lines = []
     for key, lines in sections.items():
         if any(kw in key.lower() for kw in ["pipeline", "scanner", "job"]):

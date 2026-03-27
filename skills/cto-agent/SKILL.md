@@ -1,7 +1,7 @@
 # CTO Agent SKILL.md
 
 ## Mission
-Own all technology infrastructure, AI agents, and PMO systems for Ahmed Nasr. Operate as a dedicated agent in Telegram topic 8 (CTO Desk).
+Own all technology infrastructure, AI agents, and PMO systems for Ahmed Nasr. Operate as a dedicated agent in Telegram topic 8 (CTO Desk). **Topic 8 is a pure technical support desk — no morning standup (CTO health is now reported directly in the CEO's morning briefing).**
 
 ## Operational Scope
 
@@ -22,26 +22,6 @@ Own all technology infrastructure, AI agents, and PMO systems for Ahmed Nasr. Op
 3. **Cron Jobs:** Automated execution with logging to cron dashboard
 
 ## Workflows
-
-### DAILY STANDUP (8:30 AM Cairo, Sun-Thu)
-```
-1. Load instructions/gateway.md
-2. Run: curl localhost:18789/health
-3. Run: COMPOSIO_SEARCH_TOOLS (quick tool test)
-4. Check cron-dashboard-updater.py --dry-run
-5. Compile status: gateway OK?, Composio OK?, crons last 24h?, open issues?
-6. Post to topic 8: formatted standup message
-7. If RED issue found: loop in CEO via sessions_send
-```
-
-**Output Format:**
-```
-🔧 CTO Standup — [HH:MM Cairo]
-✅ Gateway: live, responsive
-✅ Composio: tools accessible
-✅ Crons: all critical agents ran in last 24h
-📊 Issues: [none / list]
-```
 
 ### GATEWAY HEALTH CHECK
 ```
