@@ -19,13 +19,22 @@ CONFIG_DIR = WORKSPACE / "config"
 GATEWAY_URL = "http://127.0.0.1:18789/v1/chat/completions"
 MODEL = "minimax-portal/MiniMax-M2.7"
 
-# Tavily API
+# Search API keys
 TAVILY_KEY = os.environ.get("TAVILY_API_KEY")
 if not TAVILY_KEY:
     tavily_conf = CONFIG_DIR / "tavily.json"
     if tavily_conf.exists():
         try:
             TAVILY_KEY = json.load(open(tavily_conf)).get("api_key")
+        except:
+            pass
+
+EXA_KEY = os.environ.get("EXA_API_KEY")
+if not EXA_KEY:
+    exa_conf = CONFIG_DIR / "exa.json"
+    if exa_conf.exists():
+        try:
+            EXA_KEY = json.load(open(exa_conf)).get("api_key")
         except:
             pass
 
@@ -128,10 +137,10 @@ def llm_call(prompt, max_tokens=1500, model=None):
 
 
 def tavily_search(query, n=10):
-    """Search using Tavily API."""
+    """Search using Tavily API. Falls back to Exa on 433 (quota) or other errors."""
     if not TAVILY_KEY:
-        print("  No Tavily API key!")
-        return []
+        print("  No Tavily API key — trying Exa fallback...")
+        return exa_search(query, n)
 
     payload = json.dumps({
         "api_key": TAVILY_KEY,
@@ -149,7 +158,57 @@ def tavily_search(query, n=10):
             data = json.loads(r.read().decode("utf-8", errors="ignore"))
         return data.get("results", [])
     except Exception as e:
+        err_str = str(e)
+        # HTTP 433 = quota exceeded — fall back to Exa immediately
+        if "433" in err_str or "exceeds the pay-as-you-go limit" in err_str:
+            print(f"  Tavily quota exceeded — falling back to Exa...")
+            return exa_search(query, n)
+        # Other errors
         print(f"  Tavily error: {e}")
+        return exa_search(query, n) if EXA_KEY else []
+
+
+def exa_search(query, n=10):
+    """Search using Exa API. Requires EXA_API_KEY env var or config/exa.json."""
+    if not EXA_KEY:
+        print("  No Exa API key (set EXA_API_KEY env or config/exa.json)")
+        return []
+
+    try:
+        import requests as exa_requests
+        resp = exa_requests.post(
+            "https://api.exa.ai/search",
+            headers={"Authorization": f"Bearer {EXA_KEY}", "Content-Type": "application/json"},
+            json={
+                "query": query,
+                "numResults": n,
+                "type": "keyword",
+                "includeDomains": ["linkedin.com"],
+            },
+            timeout=30,
+        )
+        if resp.status_code == 429:
+            print("  Exa rate limited — skipping search for this query")
+            return []
+        if resp.status_code != 200:
+            print(f"  Exa error: {resp.status_code} {resp.text[:100]}")
+            return []
+        data = resp.json()
+        # Normalize Exa response to Tavily format
+        results = []
+        for item in data.get("results", []):
+            results.append({
+                "url": item.get("url", ""),
+                "title": item.get("title", ""),
+                "content": item.get("content") or item.get("text") or item.get("snippet", ""),
+                "snippet": item.get("snippet", item.get("text", "")),
+                "published_date": item.get("publishedDate", ""),
+                "source": "exa",
+            })
+        print(f"  Exa returned {len(results)} results")
+        return results
+    except Exception as e:
+        print(f"  Exa exception: {e}")
         return []
 
 

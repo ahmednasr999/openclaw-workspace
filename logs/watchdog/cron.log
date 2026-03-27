@@ -1378,3 +1378,26 @@
 📋 Actions taken:
 🔴 Pipeline failures: 0 config, 1 logic (need human review)
 
+🔍 Watchdog v3 - Detect → Fix → Report
+🔴 Gateway DOWN - attempting restart...
+✅ Gateway FIXED - restarted (PID: 129175)
+✅ Disk OK: 48%
+✅ active-tasks.md fresh (42h)
+✅ Jobs data fresh (9h)
+✅ SIE 360 data fresh (14h)
+✅ Pipeline lock active (0m, still valid)
+✅ All crons OK
+🔴 Pipeline has 0 config + 1 logic failures today
+✅ RAM OK: 47%
+
+═══════════════════════════════════
+📊 Watchdog v3 Summary
+  Fixes applied: 1
+  Warnings: 0
+  Alerts (need human): 1
+═══════════════════════════════════
+
+📋 Actions taken:
+✅ Gateway was down → auto-restarted (PID: 129175)
+🔴 Pipeline failures: 0 config, 1 logic (need human review)
+

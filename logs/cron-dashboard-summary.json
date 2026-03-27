@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-03-27T15:01:12.756311+02:00",
+  "timestamp": "2026-03-27T17:01:16.082827+02:00",
   "total_crons": 24,
   "system_crons": 24,
   "openclaw_crons": 0,
-  "notion_created": 1,
-  "notion_updated": 23,
+  "notion_created": 0,
+  "notion_updated": 24,
   "errors": [],
   "crons": [
     {
@@ -13,7 +13,7 @@
       "type": "system",
       "last_status": {
         "status": "\u2705 OK",
-        "last_run": "2026-03-27 14:00:15.209913+02:00",
+        "last_run": "2026-03-27 16:00:34.220081+02:00",
         "error": null
       }
     },
@@ -23,7 +23,7 @@
       "type": "system",
       "last_status": {
         "status": "\u274c Failed",
-        "last_run": "2026-03-27 14:03:01.324320+02:00",
+        "last_run": "2026-03-27 16:03:01.282022+02:00",
         "error": "Check log for details"
       }
     },
@@ -53,7 +53,7 @@
       "type": "system",
       "last_status": {
         "status": "\u274c Failed",
-        "last_run": "2026-03-27 14:03:01.324320+02:00",
+        "last_run": "2026-03-27 16:03:01.282022+02:00",
         "error": "Check log for details"
       }
     },
@@ -63,7 +63,7 @@
       "type": "system",
       "last_status": {
         "status": "\u274c Failed",
-        "last_run": "2026-03-27 15:00:30.214273+02:00",
+        "last_run": "2026-03-27 15:07:16.841873+02:00",
         "error": "Check log for details"
       }
     },
@@ -83,7 +83,7 @@
       "type": "system",
       "last_status": {
         "status": "\u274c Failed",
-        "last_run": "2026-03-27 14:03:01.324320+02:00",
+        "last_run": "2026-03-27 16:03:01.282022+02:00",
         "error": "Check log for details"
       }
     },
@@ -103,7 +103,7 @@
       "type": "system",
       "last_status": {
         "status": "\u274c Failed",
-        "last_run": "2026-03-27 14:03:01.324320+02:00",
+        "last_run": "2026-03-27 16:03:01.282022+02:00",
         "error": "Check log for details"
       }
     },

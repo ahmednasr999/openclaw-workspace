@@ -560,3 +560,9 @@ Restarted systemd service: openclaw-gateway.service
   "enqueued": true,
   "runId": "manual:1b1d9bca-2f63-49d1-89b2-cd05a792b30a:1774612822484:2"
 }
+[2026-03-27 16:00] === Watchdog v3 run ===
+[2026-03-27 16:00] ALERT: Gateway down, attempting restart
+Restarted systemd service: openclaw-gateway.service
+[2026-03-27 16:00] FIXED: Gateway restarted (PID: 129175)
+[2026-03-27 16:00] ALERT: Pipeline config/logic failures need attention
+[2026-03-27 16:00] Summary: fixes=1 warnings=0 alerts=1

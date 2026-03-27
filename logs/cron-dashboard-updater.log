@@ -6,3 +6,19 @@ Update Summary:
   Updated: 23
 
 Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-03-27T16:00:01.872533+02:00] Starting Cron Dashboard Update...
+Discovered 24 crons (24 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 24
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-03-27T17:00:01.757334+02:00] Starting Cron Dashboard Update...
+Discovered 24 crons (24 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 24
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
