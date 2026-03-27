@@ -1,18 +1,29 @@
 {
   "status": "ok",
-  "scan_time": "2026-03-27T15:00:53.587235+02:00",
-  "total_scanned": 1,
+  "scan_time": "2026-03-27T16:00:10.304556+02:00",
+  "total_scanned": 16,
   "by_category": {
     "interview_invite": 0,
-    "recruiter_reach": 0,
+    "recruiter_reach": 1,
     "application_ack": 0,
     "rejection": 0,
     "assessment": 0,
     "follow_up_needed": 0,
-    "other": 1
+    "other": 15
   },
   "interview_invites": [],
-  "recruiter_messages": [],
+  "recruiter_messages": [
+    {
+      "id": "350543",
+      "from": "Mohammad Afaneh <invitations@linkedin.com>",
+      "subject": "You have an invitation",
+      "date": "Fri, 27 Mar 2026 13:30:33 +0000 (UTC)",
+      "unread": true,
+      "priority": "MEDIUM",
+      "score": 2,
+      "pipeline_match": null
+    }
+  ],
   "application_acks": [],
   "rejections": [],
   "assessments": [],

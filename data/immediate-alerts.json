@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-27T06:22:41.849963+02:00",
+  "last_updated": "2026-03-27T16:00:12.141333+02:00",
   "alerts": [
     {
       "type": "gateway_down",
@@ -56,7 +56,14 @@
       "message": "Interview invite from Notion Team <team@mail.notion.so>: All-in-one calendar",
       "timestamp": "2026-03-27T06:22:38.569417+02:00",
       "id": "alert-7-062241"
+    },
+    {
+      "type": "gateway_down",
+      "urgency": "critical",
+      "message": "Gateway is down: <urlopen error [Errno 111] Connection refused>",
+      "timestamp": "2026-03-27T16:00:07.556898+02:00",
+      "id": "alert-8-160012"
     }
   ],
-  "active_count": 8
+  "active_count": 9
 }

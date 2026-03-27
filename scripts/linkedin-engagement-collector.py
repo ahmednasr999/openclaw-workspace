@@ -202,7 +202,7 @@ def load_notion_posts():
         topic = ""
         if "Topic" in props:
             sel = props["Topic"].get("select", {})
-            topic = sel.get("name", "") if sel else ""
+            topic = (sel.get("name", "") if isinstance(sel, dict) and sel else "") or ""
         
         posts.append({
             "page_id": page["id"],
