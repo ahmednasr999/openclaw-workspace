@@ -10,6 +10,16 @@
 
 ---
 
+## Model Requirement
+
+**CV creation MUST use Claude Opus 4.6 (`opus46`).** No exceptions.
+- Before starting CV work, switch to Opus 4.6 via session_status(model="opus46")
+- After CV is delivered, switch back to default model via session_status(model="default")
+- This applies to: CV drafting, ATS scoring, cover letter generation
+- Reason: CV quality directly impacts Ahmed's career — this is not a place to save tokens
+
+---
+
 ## Trigger
 
 CV creation ONLY starts when BOTH conditions are met:
