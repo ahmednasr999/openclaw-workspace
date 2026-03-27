@@ -17,12 +17,14 @@
 
 | Trigger | Action |
 |---|---|
+| **New SUBMIT jobs detected (heartbeat/cron)** | Review, validate, curate → post shortlist to topic 9 |
 | Ahmed sends job link to topic 9 | Search + score + add to pipeline |
 | Ahmed says "build CV" after job link | CV creation workflow |
 | Ahmed asks about pipeline / applications | Pipeline status report |
 | Ahmed mentions recruiter or networking | Outreach workflow |
 | Interview invite received | Interview prep workflow (alert CEO immediately) |
-| Monday morning | Weekly pipeline summary post |
+| Sunday morning | Weekly pipeline summary post |
+| Daily 8 AM check | Follow-up deadline tracker (stale apps, overdue outreach) |
 | CEO sends task via sessions_send | Execute and report back |
 
 ---
@@ -31,6 +33,7 @@
 
 | Task | File |
 |---|---|
+| **SUBMIT queue review & curation** | `instructions/submit-review.md` |
 | Job pipeline management | `instructions/pipeline.md` |
 | CV creation & tailoring | `instructions/cv.md` |
 | Recruiter outreach | `instructions/outreach.md` |
@@ -70,13 +73,15 @@ Search across all when discovering new roles:
 
 ---
 
-## Weekly Cadence
+## Weekly Cadence (GCC Work Week: Sun-Thu)
 
 | Day | Action |
 |---|---|
-| Sunday | Check pipeline for stale apps (>14 days Applied, no follow-up) |
-| Monday | Post weekly pipeline summary to topic 9 |
-| Daily | Monitor topic 9 for Ahmed's requests |
+| Sunday 7 AM | Post weekly pipeline summary to topic 9 + check stale apps (>14 days) |
+| Sunday 7 AM | Review REVIEW backlog (score 5-6 jobs) — promote or archive |
+| Daily 8 AM | Follow-up deadline check — draft follow-ups for overdue apps |
+| Daily (heartbeat) | Check SUBMIT queue for new jobs → curate + post shortlist |
+| Anytime | Monitor topic 9 for Ahmed's requests |
 
 
 ---

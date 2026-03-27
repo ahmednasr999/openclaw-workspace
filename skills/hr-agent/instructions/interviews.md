@@ -32,6 +32,9 @@ Use it to prepare Ahmed's STAR stories with forensic precision and anticipate in
 ## Prep Workflow (Execute in Order)
 
 ### 1. Company Research
+
+**Tools:** Use `web_search` (Exa) for all research. Camofox browser for LinkedIn/Glassdoor profiles.
+
 - Business model, revenue, key clients
 - Recent news (last 90 days): acquisitions, leadership changes, launches, challenges
 - Mission, values, culture signals (LinkedIn, Glassdoor reviews)
@@ -77,10 +80,13 @@ Customize based on company research.
 
 ### 6. Salary Market Rate Research
 
+**Tools:** Use `web_search` (Exa) with queries like "{title} salary {country} {year}". Scrape Glassdoor via Camofox if needed.
+
 - Research comparable roles in target geography (GCC, specific country)
-- Sources: Glassdoor, LinkedIn Salary, Bayt Salary Index, regional recruiter data
+- Sources: Glassdoor (Camofox scrape), LinkedIn Salary, Bayt Salary Index, web_search for recruiter salary guides
 - Ahmed's target range: confirm from USER.md / MEMORY.md
 - Prepare BATNA (best alternative) position before negotiation
+- **Never hallucinate salary numbers.** If no data found, say "no reliable data" and provide the search URLs for Ahmed to check.
 
 ---
 
