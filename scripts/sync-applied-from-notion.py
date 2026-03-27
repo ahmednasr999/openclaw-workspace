@@ -109,15 +109,13 @@ def run():
                 # ─────────────────────────────────────────────────────────────
     
     if new_ids:
-        with open(APPLIED_FILE, "a") as f:
-            f.write(f"\n# Synced from Notion Pipeline ({len(new_ids)} new)\n")
-            for line in new_ids:
-                f.write(line + "\n")
-        print(f"Added {len(new_ids)} new IDs from Notion")
+        # NOTE: applied-job-ids.txt is DEPRECATED. Notion is the single source of truth.
+        # DB write below keeps the SQLite cache in sync (used by other pipeline scripts).
+        print(f"Found {len(new_ids)} new Applied jobs from Notion (DB updated, txt deprecated)")
     else:
-        print("No new IDs to sync")
+        print("No new Applied jobs in Notion")
     
-    print(f"Total IDs now: {len(existing)}")
+    print(f"Notion Applied count: {len(existing)}")
 
 if __name__ == "__main__":
     run()

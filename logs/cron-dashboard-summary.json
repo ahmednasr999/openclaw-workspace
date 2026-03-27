@@ -1,0 +1,251 @@
+{
+  "timestamp": "2026-03-27T15:01:12.756311+02:00",
+  "total_crons": 24,
+  "system_crons": 24,
+  "openclaw_crons": 0,
+  "notion_created": 1,
+  "notion_updated": 23,
+  "errors": [],
+  "crons": [
+    {
+      "name": "cron-watchdog-v3.sh",
+      "schedule": "0 */2 * * *",
+      "type": "system",
+      "last_status": {
+        "status": "\u2705 OK",
+        "last_run": "2026-03-27 14:00:15.209913+02:00",
+        "error": null
+      }
+    },
+    {
+      "name": "run-briefing-pipeline.sh",
+      "schedule": "0 */2 * * *",
+      "type": "system",
+      "last_status": {
+        "status": "\u274c Failed",
+        "last_run": "2026-03-27 14:03:01.324320+02:00",
+        "error": "Check log for details"
+      }
+    },
+    {
+      "name": "linkedin-autoresearch.py",
+      "schedule": "0 1 * * 0",
+      "type": "system",
+      "last_status": {
+        "status": "\u2705 OK",
+        "last_run": "2026-03-22 01:01:38.220954+02:00",
+        "error": null
+      }
+    },
+    {
+      "name": "autoresearch-job-review.py",
+      "schedule": "0 0 * * 0",
+      "type": "system",
+      "last_status": {
+        "status": "\u274c Failed",
+        "last_run": "2026-03-22 00:00:03.473098+02:00",
+        "error": "Check log for details"
+      }
+    },
+    {
+      "name": "run-briefing-pipeline.sh",
+      "schedule": "0 2,6,10,14 * * *",
+      "type": "system",
+      "last_status": {
+        "status": "\u274c Failed",
+        "last_run": "2026-03-27 14:03:01.324320+02:00",
+        "error": "Check log for details"
+      }
+    },
+    {
+      "name": "daily-backup.sh",
+      "schedule": "0 20 * * *",
+      "type": "system",
+      "last_status": {
+        "status": "\u274c Failed",
+        "last_run": "2026-03-27 15:00:30.214273+02:00",
+        "error": "Check log for details"
+      }
+    },
+    {
+      "name": "archive-daily-notes.sh",
+      "schedule": "0 20 1 * *",
+      "type": "system",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "run-briefing-pipeline.sh",
+      "schedule": "0 23 * * *",
+      "type": "system",
+      "last_status": {
+        "status": "\u274c Failed",
+        "last_run": "2026-03-27 14:03:01.324320+02:00",
+        "error": "Check log for details"
+      }
+    },
+    {
+      "name": "github-radar.sh",
+      "schedule": "0 3 * * *",
+      "type": "system",
+      "last_status": {
+        "status": "\u2705 OK",
+        "last_run": "2026-03-27 03:00:03.544026+02:00",
+        "error": null
+      }
+    },
+    {
+      "name": "run-briefing-pipeline.sh",
+      "schedule": "0 5 * * *",
+      "type": "system",
+      "last_status": {
+        "status": "\u274c Failed",
+        "last_run": "2026-03-27 14:03:01.324320+02:00",
+        "error": "Check log for details"
+      }
+    },
+    {
+      "name": "key-health-check.sh",
+      "schedule": "0 5 * * *",
+      "type": "system",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "token-health-check.sh",
+      "schedule": "0 6 * * 0",
+      "type": "system",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "retention-caches.sh",
+      "schedule": "15 3 * * *",
+      "type": "system",
+      "last_status": {
+        "status": "\u2705 OK",
+        "last_run": "2026-03-27 03:15:06.797861+02:00",
+        "error": null
+      }
+    },
+    {
+      "name": "x-radar.sh",
+      "schedule": "30 2 * * *",
+      "type": "system",
+      "last_status": {
+        "status": "\u2705 OK",
+        "last_run": "2026-03-27 02:30:01.461451+02:00",
+        "error": null
+      }
+    },
+    {
+      "name": "retention-backups.sh",
+      "schedule": "30 20 * * *",
+      "type": "system",
+      "last_status": {
+        "status": "\u2705 OK",
+        "last_run": "2026-03-26 20:30:01.429899+02:00",
+        "error": null
+      }
+    },
+    {
+      "name": "sie-360-checks.py",
+      "schedule": "50 1 * * *",
+      "type": "system",
+      "last_status": {
+        "status": "\u2705 OK",
+        "last_run": "2026-03-27 01:50:14.838413+02:00",
+        "error": null
+      }
+    },
+    {
+      "name": "weekly-agent-review.py",
+      "schedule": "0 8 * * 0",
+      "type": "system",
+      "last_status": {
+        "status": "\u274c Failed",
+        "last_run": "2026-03-22 08:00:02.396898+02:00",
+        "error": "Check log for details"
+      }
+    },
+    {
+      "name": "rss-to-content-calendar.py",
+      "schedule": "30 6 * * *",
+      "type": "system",
+      "last_status": {
+        "status": "\u274c Failed",
+        "last_run": "2026-03-27 06:33:42.931867+02:00",
+        "error": "Check log for details"
+      }
+    },
+    {
+      "name": "content-factory-health-monitor.py",
+      "schedule": "0 7 * * 0-4",
+      "type": "system",
+      "last_status": {
+        "status": "\u2705 OK",
+        "last_run": "2026-03-26 07:00:11.998038+02:00",
+        "error": null
+      }
+    },
+    {
+      "name": "cf-weekday-check.sh",
+      "schedule": "30 9 * * 0-4",
+      "type": "system",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "ontology-notion-sync.py",
+      "schedule": "55 2 * * *",
+      "type": "system",
+      "last_status": {
+        "status": "\u2705 OK",
+        "last_run": "2026-03-27 02:55:17.484181+02:00",
+        "error": null
+      }
+    },
+    {
+      "name": "ontology-pipeline-sync.py",
+      "schedule": "55 2 * * *",
+      "type": "system",
+      "last_status": {
+        "status": "\u2705 OK",
+        "last_run": "2026-03-27 02:55:17.484181+02:00",
+        "error": null
+      }
+    },
+    {
+      "name": "linkedin-engagement-agent.py",
+      "schedule": "0 7 * * 0-4",
+      "type": "system",
+      "last_status": {
+        "status": "\u274c Failed",
+        "last_run": "2026-03-27 00:11:28.855069+02:00",
+        "error": "Check log for details"
+      }
+    },
+    {
+      "name": "cron-dashboard-updater.py",
+      "schedule": "0 * * * *",
+      "type": "system",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    }
+  ]
+}

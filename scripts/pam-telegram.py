@@ -24,7 +24,7 @@ except ImportError:
 
 WORKSPACE = Path("/root/.openclaw/workspace")
 DATA_DIR = WORKSPACE / "data"
-CHAT_ID = "866838380"
+CHAT_ID = "-1003882622947:10"  # Briefings thread (was 866838380 DM)
 CAIRO = timezone(timedelta(hours=2))
 
 
@@ -67,10 +67,11 @@ def build_message():
     critical = []
     email_data = email.get("data", {})
     cats = email_data.get("categories", email_data.get("by_category", {}))
-    interviews = cats.get("interview_invite", [])
-    recruiters = cats.get("recruiter_reach", [])
-    if interviews:
-        critical.append(f"INTERVIEW: {len(interviews)} invite(s) - check email NOW")
+    interviews = cats.get("interview_invite", 0)
+    recruiters = cats.get("recruiter_reach", 0)
+    if interviews and (isinstance(interviews, int) and interviews > 0 or isinstance(interviews, list) and len(interviews) > 0):
+        n_int = interviews if isinstance(interviews, int) else len(interviews)
+        critical.append(f"INTERVIEW: {n_int} invite(s) - check email NOW")
     sys_data = system.get("data", {})
     infra = sys_data.get("system", {})
     gw = sys_data.get("gateway", sys_data.get("system", {}).get("gateway", {}))

@@ -2,7 +2,7 @@
 
 **RULE (NON-NEGOTIABLE): Before calling Composio, before asking the user to authenticate, before saying "I can't access X" -- READ THIS FILE.**
 
-Last updated: 2026-03-21
+Last updated: 2026-03-27
 
 ---
 
@@ -22,8 +22,16 @@ Any time a new integration is set up (new API key, new Composio connection, new 
 
 ## External Services
 
+### Telegram
+- **Method:** Direct Bot API
+- **Bot Token:** Hardcoded in scripts (e.g. `content-factory-exa-scanner.py` TELEGRAM_BOT variable)
+- **Chat IDs:** Ahmed DM: `866838380` | Group: `-1003882622947` | Content thread: topic_id=7
+- **Status:** ACTIVE
+- **⚠️ NEVER use Composio for Telegram** — direct API only
+
+
 ### Notion
-- **Method:** Direct API
+- **Method:** Direct API - ⚠️ NEVER use Composio for Notion
 - **Token:** `config/notion.json`
 - **Client:** `scripts/notion_client.py` (import NotionClient)
 - **Databases:** `config/notion-databases.json`

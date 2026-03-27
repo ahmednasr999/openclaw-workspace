@@ -16,18 +16,16 @@ One variable per week. Clear hypothesis. Measurable outcome.
 
 ## Active Experiment
 
-_None yet. First experiment starts with first full CREATE cycle._
-
 ```
-Experiment: —
-Start date: —
-End date: —
-Variable: —
-Variant A: —
-Variant B: —
-Posts in A: —
-Posts in B: —
-Winner: —
+Experiment: exp-001 (Hook Type Test)
+Start date: 2026-03-29
+End date: 2026-04-12
+Variable: hook_type
+Variant A: bold_claim (Sun 2026-03-29, Thu 2026-04-02)
+Variant B: curiosity_gap (Mon 2026-03-30, Tue 2026-03-31, Wed 2026-04-01)
+Posts in A: 2
+Posts in B: 3
+Winner: TBD (LEARN layer evaluates 2026-04-12)
 Confidence: —
 ```
 

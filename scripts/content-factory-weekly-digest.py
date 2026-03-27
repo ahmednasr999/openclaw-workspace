@@ -151,7 +151,7 @@ def promote_to_calendar(article):
         "properties": {
             "Title": {"title": [{"text": {"content": article["title"][:200]}}]},
             "Topic": {"select": {"name": article["categories"][0] if article["categories"] else "AI/Tech"}},
-            "Status": {"select": {"name": "Idea"}},
+            "Status": {"select": {"name": "Drafted"}},
             "Hook": {"rich_text": [{"text": {"content": article["angle"][:300]}}] if article["angle"] else []},
         }
     }
@@ -218,9 +218,11 @@ def main():
     
     lines.append(
         "\n─────────────────────\n"
-        "Reply: <b>approve 1 3 5</b> → moves to Content Calendar\n"
-        "Reply: <b>reject all</b> → skip this week\n"
-        "Reply: <b>approve all</b> → moves all 5"
+        "Reply: <b>approve all</b> → review each post, generate images, schedule\n"
+        "Reply: <b>approve 1 3 5</b> → review specific posts\n"
+        "Reply: <b>reject all</b> → skip this week\n\n"
+        "<i>Approval = text review + image generation + date/time set. "
+        "Only fully ready posts get Scheduled status.</i>"
     )
     
     msg_text = "\n".join(lines)
