@@ -983,6 +983,33 @@ def main():
                 update_post_url(post['page_id'], post_url)
                 update_briefing_page(post_url, image_url=post.get('image_url'), title=post['title'])
 
+                # Update ontology graph: mark LinkedInPost as posted
+                try:
+                    import json as _json, subprocess as _sp
+                    from datetime import datetime as _dt, timezone as _tz
+                    _graph = f"{WORKSPACE}/memory/ontology/graph.jsonl"
+                    _now = _dt.now(_tz.utc).isoformat()
+                    _page_id_clean = post['page_id'].replace("-", "")
+                    _entity_id = f"post_notion_{_page_id_clean[:12]}"
+                    _update = {
+                        "op": "update",
+                        "entity": {
+                            "id": _entity_id,
+                            "type": "LinkedInPost",
+                            "properties": {
+                                "status": "posted",
+                                "post_url": post_url,
+                                "posted_date": TODAY,
+                            },
+                            "updated": _now
+                        }
+                    }
+                    with open(_graph, "a") as _f:
+                        _f.write(_json.dumps(_update) + "\n")
+                    print(f"✅ Ontology graph updated: {_entity_id} → posted")
+                except Exception as _e:
+                    print(f"⚠️ Ontology graph update failed (non-blocking): {_e}")
+
                 # Remove watchdog
                 if os.path.exists(watchdog_path):
                     os.remove(watchdog_path)

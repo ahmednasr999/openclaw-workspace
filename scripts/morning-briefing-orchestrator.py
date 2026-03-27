@@ -1670,6 +1670,22 @@ def main():
     log(f"Date: {date_display}")
     log("")
 
+    # ---- STEP 0: ONTOLOGY GRAPH SYNC ----
+    log("Step 0: Syncing ontology knowledge graph...")
+    try:
+        import importlib.util as _ilu, sys as _sys
+        _sys.path.insert(0, f"{WORKSPACE}/scripts")
+        # Content calendar sync
+        from ontology_notion_sync import sync as _content_sync
+        _cr = _content_sync()
+        log(f"  Content posts: {_cr.get('new', 0)} new | {_cr.get('updated', 0)} updated")
+        # Job pipeline sync
+        from ontology_pipeline_sync import sync as _pipeline_sync
+        _pr = _pipeline_sync()
+        log(f"  Job pipeline: {_pr.get('new_jobs', 0)} new | {_pr.get('updated', 0)} updated | {_pr.get('new_orgs', 0)} new orgs")
+    except Exception as _e:
+        log(f"  ⚠️ Ontology sync skipped: {_e}")
+
     # ---- GATHER ALL DATA (pure Python, no LLM) ----
 
     # 1. Pipeline

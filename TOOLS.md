@@ -212,6 +212,38 @@ When manually posting to LinkedIn with an image:
 - System: UTC
 - Always specify timezone for meetings/deadlines
 
+## Ontology Knowledge Graph
+
+### Daily Briefing (single command, replaces reading 4 JSON files)
+```bash
+python3 /root/.openclaw/workspace/scripts/ontology-briefing.py
+```
+
+### Common Queries
+```bash
+# Open applications
+python3 skills/ontology/scripts/ontology.py list --type JobApplication
+
+# Interviews only
+python3 skills/ontology/scripts/ontology.py query --type JobApplication --where '{"status": "interview"}'
+
+# High-priority outreach
+python3 skills/ontology/scripts/ontology.py query --type Outreach --where '{"priority": "high"}'
+
+# Scheduled content
+python3 skills/ontology/scripts/ontology.py query --type LinkedInPost --where '{"status": "scheduled"}'
+
+# Add new job application
+python3 skills/ontology/scripts/ontology.py create --type JobApplication --props '{"title":"...","company":"...","status":"applied","date_applied":"YYYY-MM-DD"}'
+```
+
+### Graph Location
+- Entities: `memory/ontology/graph.jsonl` (append-only)
+- Schema: `memory/ontology/schema.yaml`
+- Briefing script: `scripts/ontology-briefing.py`
+
+---
+
 ## Quick References
 
 ### Skill Activation
