@@ -1,67 +1,105 @@
 {
-  "last_digest": "2026-03-25T13:41:00.387845+02:00",
-  "message_id": 35235,
+  "last_digest": "2026-03-27T07:02:41.627209+02:00",
+  "message_id": 35954,
   "articles": [
     {
       "index": 1,
-      "page_id": "32e8d599-a162-81f6-b1a2-e3fb9291d5c1",
-      "title": "Revolut's 2025 Report: Profitable, Growing, and Building on Their Own Terms",
-      "url": "https://www.connectingthedotsinfin.tech/revoluts-2025-report-profitable-growing-and-building-on-their-own-terms/",
-      "format_score": 3.6,
+      "page_id": "32f8d599-a162-8125-99b8-e3e1b85b9dbe",
+      "title": "An AI Reckoning for HR: Transform or Fade Away",
+      "url": "https://sloanreview.mit.edu/article/an-ai-reckoning-for-hr-transform-or-fade-away/",
+      "format_score": 6.8,
       "formats": [
-        "Newsjacking",
         "Namejacking"
       ],
-      "angle": "Breaking: Revolut's 2025 Report: Profitable, Growing, and Building on ... Here's what this means for [your industry]",
+      "angle": "[Leader name] just said something about Digital Transformation that every exec should hear",
       "categories": [
-        "FinTech"
+        "Digital Transformation"
       ],
-      "status": "pending"
+      "status": "scheduled",
+      "calendar_page_id": "3308d599-a162-81d6-bbc6-d832be2f81af",
+      "planned_date": "2026-03-29",
+      "image_generated": true
     },
     {
       "index": 2,
-      "page_id": "32e8d599-a162-81b5-a07c-e927f97cd1a5",
-      "title": "Stripe vs. Adyen (2026): Two Trillion\u2011Dollar Visions for the Future of Payments",
-      "url": "https://www.connectingthedotsinfin.tech/stripe-vs-adyen-2026-two-trillion-dollar-visions-for-the-future-of-payments/",
-      "format_score": 2.7,
+      "page_id": "32f8d599-a162-8147-9e87-d0a9e1de691f",
+      "title": "Legacy systems present modern challenges at the VA",
+      "url": "https://www.mobihealthnews.com/video/legacy-systems-present-modern-challenges-va",
+      "format_score": 4.4,
       "formats": [
-        "Brandjacking"
+        "Brandjacking",
+        "Newsjacking",
+        "Namejacking",
+        "Hot Take"
       ],
-      "angle": "What Stripe's move teaches us about [transformation/AI/leadership]",
-      "categories": [
-        "FinTech"
-      ],
-      "status": "pending"
-    },
-    {
-      "index": 3,
-      "page_id": "32e8d599-a162-817b-96c3-f1f261890967",
-      "title": "Contributed: Your next AI investment should not be a tool \u2014 it should be a person",
-      "url": "https://www.mobihealthnews.com/news/contributed-your-next-ai-investment-should-not-be-tool-it-should-be-person",
-      "format_score": 2.4,
-      "formats": [
-        "Namejacking"
-      ],
-      "angle": "[Leader name] just said something about HealthTech that every exec should hear",
+      "angle": "Breaking: Legacy systems present modern challenges at the VA... Here's what this means for [your industry]",
       "categories": [
         "HealthTech"
       ],
-      "status": "pending"
+      "status": "scheduled",
+      "calendar_page_id": "3308d599-a162-817f-9fe9-ec35f43b2b1f",
+      "planned_date": "2026-03-30",
+      "image_generated": true
+    },
+    {
+      "index": 3,
+      "page_id": "32f8d599-a162-8151-99b4-eb1b762e3fa3",
+      "title": "Healthcare Workplace Violence Is a Billion-Dollar Crisis; Integrating Scalable IT Security Solutions",
+      "url": "https://www.healthcareittoday.com/2026/03/25/healthcare-workplace-violence-is-a-billion-dollar-crisis-integrating-scalable-it-security-solutions-should-be-industry-leaders-top-priority/",
+      "format_score": 4.4,
+      "formats": [
+        "Namejacking"
+      ],
+      "angle": "[Leader name] just said something about Healthcare that every exec should hear",
+      "categories": [
+        "Healthcare"
+      ],
+      "status": "scheduled",
+      "calendar_page_id": "3308d599-a162-81ec-b1df-d159dc3f3ac9",
+      "planned_date": "2026-03-31",
+      "image_generated": true
     },
     {
       "index": 4,
-      "page_id": "32e8d599-a162-817b-bce0-f0a83f00a26d",
-      "title": "Stripe-Backed Tempo Launches AI Payments Protocol As Race For Agentic Commerce Heats Up",
-      "url": "https://www.connectingthedotsinfin.tech/stripe-backed-tempo-launches-ai-payments-protocol-as-race-for-agentic-commerce-heats-up/",
-      "format_score": 2.3,
+      "page_id": "32f8d599-a162-81c9-836a-d254b0895d0d",
+      "title": "Mastercard's Agentic Payments Live in LATAM & the Caribbean",
+      "url": "https://www.connectingthedotsinfin.tech/mastercards-agentic-payments-live-in-latam-the-caribbean/",
+      "format_score": 3.9,
       "formats": [
-        "Brandjacking"
+        "Brandjacking",
+        "Newsjacking",
+        "Namejacking"
       ],
-      "angle": "What Stripe's move teaches us about [transformation/AI/leadership]",
+      "angle": "Breaking: Mastercard's Agentic Payments Live in LATAM & the Caribbean... Here's what this means for [your industry]",
       "categories": [
         "FinTech"
       ],
-      "status": "pending"
+      "status": "scheduled",
+      "calendar_page_id": "3308d599-a162-8196-8811-ef357882f55b",
+      "planned_date": "2026-04-01",
+      "image_generated": true
+    },
+    {
+      "index": 5,
+      "page_id": "32f8d599-a162-8196-935f-f9fc1cfe0294",
+      "title": "Healthcare IT work begins at the bedside",
+      "url": "https://www.mobihealthnews.com/video/healthcare-it-work-begins-bedside",
+      "format_score": 3.9,
+      "formats": [
+        "Brandjacking",
+        "Newsjacking",
+        "Namejacking"
+      ],
+      "angle": "Breaking: Healthcare IT work begins at the bedside... Here's what this means for [your industry]",
+      "categories": [
+        "HealthTech"
+      ],
+      "status": "scheduled",
+      "calendar_page_id": "3308d599-a162-81fa-b824-cbbe96f0ac2d",
+      "planned_date": "2026-04-02",
+      "image_generated": true
     }
-  ]
+  ],
+  "approved_at": "2026-03-27T09:19:52.512988+02:00",
+  "approved_by": "Ahmed"
 }

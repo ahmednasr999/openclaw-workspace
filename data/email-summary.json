@@ -2,97 +2,45 @@
   "meta": {
     "agent": "email-agent",
     "version": "3.0.0",
-    "generated_at": "2026-03-26T19:00:52.398520+02:00",
-    "duration_ms": 38350,
+    "generated_at": "2026-03-27T09:01:36.964625+02:00",
+    "duration_ms": 26468,
     "ttl_hours": 4,
     "status": "success",
     "error": null,
-    "run_id": "933b8739",
+    "run_id": "d8840817",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
     "status": "ok",
-    "scan_time": "2026-03-26T19:00:20.621272+02:00",
-    "total_scanned": 13,
+    "scan_time": "2026-03-27T09:01:15.672531+02:00",
+    "total_scanned": 6,
     "by_category": {
-      "interview_invite": 1,
+      "interview_invite": 0,
       "recruiter_reach": 0,
       "application_ack": 0,
       "rejection": 0,
       "assessment": 0,
       "follow_up_needed": 0,
-      "other": 12
+      "other": 6
     },
-    "interview_invites": [
-      {
-        "id": "350403",
-        "from": "Eva Friday <eva@productschool.com>",
-        "subject": "=?UTF-8?q?=E2=9A=A0=EF=B8=8F_Your_$2,000_Savings_on_Certification_?=\r\n =?UTF-8?q?=E2=80=93_Limited_Spots_Available?=",
-        "date": "Thu, 26 Mar 2026 16:21:35 +0000",
-        "unread": true,
-        "priority": "MEDIUM",
-        "score": 2,
-        "pipeline_match": null
-      }
-    ],
+    "interview_invites": [],
     "recruiter_messages": [],
     "application_acks": [],
     "rejections": [],
     "assessments": [],
     "follow_ups_needed": [],
-    "actionable_count": 1,
+    "actionable_count": 0,
     "hot_alerts": [],
     "signals": [],
-    "llm_analysis": {
-      "actionable_emails": [
-        {
-          "id": "350403",
-          "subject": "\u26a0\ufe0f Your $2,000 Savings on Certification \u2013 Limited Spots Available",
-          "from": "Eva Friday <eva@productschool.com>",
-          "date": "Thu, 26 Mar 2026",
-          "category": "interview_invite",
-          "urgency": "low",
-          "intent": "ProductSchool is running a promotional campaign to drive course sign-ups by presenting a limited-time $2,000 discount.",
-          "action": "no_action",
-          "response_deadline": "when convenient",
-          "notes": "Misclassified as interview_invite - this is a cold marketing email; no real opportunity here"
-        }
-      ],
-      "summary": {
-        "total_actionable": 1,
-        "critical_count": 0,
-        "requires_interview_prep": false,
-        "requires_assessment": false,
-        "recruiter_top_opportunities": [],
-        "top_priority": null,
-        "daily_focus": "No genuine opportunities in this batch - treat the ProductSchool email as low-priority cold outreach and focus time on active job applications or networking instead"
-      }
-    }
+    "llm_analysis": null
   },
   "kpi": {
-    "emails_processed": 13,
-    "actionable": 1,
-    "interviews_detected": 1,
+    "emails_processed": 6,
+    "actionable": 0,
+    "interviews_detected": 0,
     "recruiter_messages": 0,
-    "unread_actionable": 1
+    "unread_actionable": 0
   },
-  "recommendations": [
-    {
-      "id": "rec-933b8739-0",
-      "action": "respond_immediately",
-      "target": "1 interview invite(s)",
-      "reason": "Interview invitations require prompt response",
-      "urgency": "critical",
-      "timestamp": "2026-03-26T19:00:52.398210+02:00"
-    },
-    {
-      "id": "rec-933b8739-1",
-      "action": "check_inbox",
-      "target": "1 unread actionable email(s)",
-      "reason": "Unread emails need attention",
-      "urgency": "high",
-      "timestamp": "2026-03-26T19:00:52.398234+02:00"
-    }
-  ]
+  "recommendations": []
 }

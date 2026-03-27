@@ -241,3 +241,16 @@ Session startup sequence only reads MEMORY.md, active-tasks.md, and today's dail
 **What happened:** Posted GenAI Small t to LinkedIn with old Google Drive image (240KB, with source text) instead of the correct v3 Notion-hosted image (1.57MB, no source).
 **Root cause:** Downloaded visual from Google Drive (stale) instead of from Notion (source of truth). Google Drive files were never updated after v3 regeneration.
 **Fix:** When posting to LinkedIn, always pull images from Notion File Upload API (the source of truth), not Google Drive. Update auto-poster script to use Notion → S3 staging → LinkedIn flow.
+
+## 2026-03-27
+### What I Missed
+Triggered a Composio OAuth flow for Notion and Telegram before checking workspace credentials. Both have direct API access already configured.
+
+### Why
+Defaulted to Composio before reading service-registry.md and config/ directory.
+
+### Fix
+**Hard rule (non-negotiable):**
+- **Notion** → always use `config/notion.json` token directly. Never use Composio for Notion.
+- **Telegram** → always use the bot token hardcoded in scripts (e.g. `content-factory-exa-scanner.py`) or `config/telegram.json`. Never use Composio for Telegram.
+- Before ANY auth flow: check `config/service-registry.md` + `config/` directory first. If a token exists, use it. Period.

@@ -32,3 +32,22 @@
 [05:31:14]   Gold (High Priority): 9
 [05:31:14]   Errors: 0
 [05:31:14] Stats saved to /root/.openclaw/workspace/data/content-factory-scoring-stats.json
+[05:30:11] === Content Factory Scorer v1.0 === 2026-03-27 05:30 Cairo
+[05:30:11] Found 11 unscored articles
+[05:30:11]   Scoring: Qualified Health raises $125M to scale generative AI in health sy
+[05:30:13]   Scoring: Vitality acquires Ramp Health to merge AI behavioral health and w
+[05:30:16]   Scoring: An AI Reckoning for HR: Transform or Fade Away
+[05:30:18]   Scoring: Legacy systems present modern challenges at the VA
+[05:30:21]   Scoring: Healthcare Workplace Violence Is a Billion-Dollar Crisis; Integra
+[05:30:24]   Scoring: Healthcare IT work begins at the bedside
+[05:30:26]   Scoring: An AI Gave Me an A3 Evaluation. I Needed a Coach.
+[05:30:28]   Scoring: This Week’s Health IT Jobs – March 25, 2026
+[05:30:30]   Scoring: Mastercard's Agentic Payments Live in LATAM & the Caribbean
+[05:30:32]   Scoring: Stop Wishing Fax Away. Embed Agentic AI and Fix the Outcome.
+[05:30:35]   Scoring: Heidi Uses AI to Shift Health Care to an Abundance Mentality
+[05:30:37] 
+=== Done ===
+[05:30:37]   Scored: 11
+[05:30:37]   Gold (High Priority): 10
+[05:30:37]   Errors: 0
+[05:30:37] Stats saved to /root/.openclaw/workspace/data/content-factory-scoring-stats.json

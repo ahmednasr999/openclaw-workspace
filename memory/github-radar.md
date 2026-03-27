@@ -2,10 +2,10 @@
 description: "Daily GitHub trending scan: auto-scraped repos with relevance filter for OpenClaw, AI agents, automation"
 type: log
 topics: [knowledge, system-ops]
-updated: 2026-03-26
+updated: 2026-03-27
 ---
 
-# GitHub Radar — 2026-03-26
+# GitHub Radar — 2026-03-27
 
 ## Relevant Repos (Auto-Filtered)
 
@@ -13,13 +13,14 @@ updated: 2026-03-26
 - **[TauricResearch/TradingAgents](https://github.com/TauricResearch/TradingAgents)**: Trending AI/automation project
 - **[affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code)**: Trending AI/automation project
 - **[apps/copilot-swe-agent](https://github.com/apps/copilot-swe-agent)**: Trending AI/automation project
+- **[hsliuping/TradingAgents-CN](https://github.com/hsliuping/TradingAgents-CN)**: Trending AI/automation project
 - **[jarrodwatts/claude-hud](https://github.com/jarrodwatts/claude-hud)**: Trending AI/automation project
 
 ## Top Trending (All)
 
 - 2000/svg
+- A9lAvRK0z/TszOM7
 - Crosstalk-Solutions/project-nomad
-- D/rjiN7e8nhL2YdgzyXiOSl3AkBbYVRpFwYb1QvyAofPWdq3bzqVGbLjrLoo8xZXtp
 - FujiwaraChoki/MoneyPrinterV2
 - NousResearch/hermes-agent
 - TauricResearch/TradingAgents
@@ -40,4 +41,4 @@ updated: 2026-03-26
 **Note:** SIE reads this file and generates integration recommendations.
 
 ---
-*Scanned: Thu Mar 26 03:00:03 EET 2026*
+*Scanned: Fri Mar 27 03:00:03 EET 2026*
