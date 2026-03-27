@@ -530,3 +530,9 @@
 {"agent": "system-agent", "run_id": "53b09ce4", "started": "2026-03-27T10:00:12.556786+02:00", "duration_ms": 9307, "status": "success", "records": 6, "error": null}
 {"agent": "pipeline-agent", "run_id": "7f7ce94c", "started": "2026-03-27T10:00:21.155289+02:00", "duration_ms": 17835, "status": "success", "records": 11, "error": null}
 {"agent": "email-agent", "run_id": "f68c0e37", "started": "2026-03-27T10:01:17.410227+02:00", "duration_ms": 73698, "status": "success", "records": 14, "error": null}
+{"agent": "pipeline-agent", "run_id": "653db952", "started": "2026-03-27T12:00:14.576702+02:00", "duration_ms": 12162, "status": "success", "records": 11, "error": null}
+{"agent": "system-agent", "run_id": "a8be41f2", "started": "2026-03-27T12:00:15.055853+02:00", "duration_ms": 12780, "status": "success", "records": 6, "error": null}
+{"agent": "email-agent", "run_id": "79e18fb7", "started": "2026-03-27T12:00:53.923161+02:00", "duration_ms": 50522, "status": "success", "records": 14, "error": null}
+{"agent": "pipeline-agent", "run_id": "867291d8", "started": "2026-03-27T14:00:15.245691+02:00", "duration_ms": 13207, "status": "success", "records": 11, "error": null}
+{"agent": "system-agent", "run_id": "6c6936cf", "started": "2026-03-27T14:00:15.723641+02:00", "duration_ms": 13788, "status": "success", "records": 6, "error": null}
+{"agent": "email-agent", "run_id": "a1d3ddd8", "started": "2026-03-27T14:01:10.849461+02:00", "duration_ms": 68098, "status": "success", "records": 14, "error": null}

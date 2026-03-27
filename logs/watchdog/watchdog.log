@@ -530,3 +530,33 @@ Restarted systemd service: openclaw-gateway.service
   "enqueued": true,
   "runId": "manual:1b1d9bca-2f63-49d1-89b2-cd05a792b30a:1774598417768:1"
 }
+[2026-03-27 12:00] === Watchdog v3 run ===
+[2026-03-27 12:00] FIXED: Re-triggered failed cron 1b1d9bca-2f63-49d1-89b2-cd05a792b30a
+[2026-03-27 12:00] FIXED: Re-triggered failed cron 0be247a8-7d05-4a66-9b65-d75d29486fb9
+[2026-03-27 12:00] ALERT: Pipeline config/logic failures need attention
+[2026-03-27 12:00] Summary: fixes=2 warnings=1 alerts=1
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:0be247a8-7d05-4a66-9b65-d75d29486fb9:1774605624346:1"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:1b1d9bca-2f63-49d1-89b2-cd05a792b30a:1774605624369:2"
+}
+[2026-03-27 14:00] === Watchdog v3 run ===
+[2026-03-27 14:00] FIXED: Re-triggered failed cron 1b1d9bca-2f63-49d1-89b2-cd05a792b30a
+[2026-03-27 14:00] FIXED: Re-triggered failed cron 0be247a8-7d05-4a66-9b65-d75d29486fb9
+[2026-03-27 14:00] ALERT: Pipeline config/logic failures need attention
+[2026-03-27 14:00] Summary: fixes=2 warnings=1 alerts=1
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:0be247a8-7d05-4a66-9b65-d75d29486fb9:1774612822464:1"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:1b1d9bca-2f63-49d1-89b2-cd05a792b30a:1774612822484:2"
+}

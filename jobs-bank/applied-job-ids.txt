@@ -1,6 +1,7 @@
-# Applied LinkedIn Job IDs - Source of Truth for Dedup
+# ⚠️ DEPRECATED - READ ONLY - DO NOT WRITE
+# Notion pipeline DB is now the single source of truth for applied jobs.
+# This file is kept as a historical reference only (pre-Notion entries).
 # Format: job_id | company | role | date
-# Check this file BEFORE building any CV or scoring any job
 
 # Madison Pearl (Mar 16, 2026)
 # Applied via email, no LinkedIn job IDs
@@ -164,3 +165,6 @@ f7e1d5085527773a | International Medical Company | Strategy & Transformation Dir
 4389276852 | CMP Digital Infrastructure | Director of Program Management | synced from Notion | Applied
 4389096599 | Dow Jones | Director, Business Operations | synced from Notion | Applied
 4385463236 | Confidential | AI Enablement & Support Specialist | synced from Notion | Applied
+4390138329 | Auxo Talent | Group Chief Information Officer | 2026-03-27 | hr-agent-fix
+4390310137 | Valkyrie People Consulting | Chief Digital Officer | 2026-03-27 | hr-agent-fix
+4389059330 | Combuzz HR Solutions | Head of Business Planning & Strategy | 2026-03-27 | hr-agent-fix

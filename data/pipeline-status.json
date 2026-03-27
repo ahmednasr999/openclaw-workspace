@@ -2,19 +2,19 @@
   "meta": {
     "agent": "pipeline-agent",
     "version": "1.0.0",
-    "generated_at": "2026-03-27T10:00:21.154932+02:00",
-    "duration_ms": 17835,
+    "generated_at": "2026-03-27T14:00:15.237776+02:00",
+    "duration_ms": 13199,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "7f7ce94c",
+    "run_id": "867291d8",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
     "total_applications": 426,
-    "active_count": 135,
-    "external_applied_count": 119,
+    "active_count": 163,
+    "external_applied_count": 122,
     "db_total": 1296,
     "db_funnel": {
       "discovered": 743,
@@ -26,24 +26,24 @@
       "_total": 1296
     },
     "by_status": {
-      "cv built": 69,
-      "\u2705 applied": 70,
-      "applied": 65,
+      "cv built": 65,
+      "\u2705 applied": 95,
+      "applied": 68,
       "\u274c rejected": 1,
       "\ud83d\udd0d discovered": 232,
-      "\ud83d\udccb recommended": 14,
-      "\ud83d\udccb scored": 206,
+      "\ud83d\udccb recommended": 12,
+      "\ud83d\udccb scored": 184,
       "response": 1
     },
     "this_week": {
-      "applied": 49,
+      "applied": 71,
       "start_date": "2026-03-23"
     },
     "stale_applications": [],
     "interviews_upcoming": [],
     "follow_ups_overdue": [],
     "conversion_funnel": {
-      "applied": 135,
+      "applied": 163,
       "screening": 0,
       "interview": 0,
       "offer": 0,
@@ -56,8 +56,8 @@
   },
   "kpi": {
     "total_tracked": 426,
-    "active_rate": 31.7,
-    "avg_days_in_pipeline": 6.1,
+    "active_rate": 38.3,
+    "avg_days_in_pipeline": 5.5,
     "follow_ups_overdue": 0,
     "interviews_this_week": 0,
     "stale_count": 0
