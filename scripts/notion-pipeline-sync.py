@@ -19,6 +19,10 @@ from datetime import datetime, timezone, timedelta
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 try:
     from notion_client_shared import get_client, notion_req as _shared_notion_req
+    from application_lock import ApplicationLockService
+    _LOCK_AVAILABLE = True
+except Exception:
+    _LOCK_AVAILABLE = False
     _notion_client = get_client()
     _USE_SHARED = True
 except Exception:
@@ -417,12 +421,28 @@ def sync_jobs(active_only=False, dry_run=False):
                 notion_request("PATCH", f"/pages/{page_id}", {"properties": props}, cfg)
                 updated += 1
             else:
-                # Create new page
-                notion_request("POST", "/pages", {
-                    "parent": {"database_id": NOTION_DB_ID},
-                    "properties": props,
-                }, cfg)
-                created += 1
+                # Create new page — with duplicate lock to prevent race conditions
+                if _LOCK_AVAILABLE:
+                    lock = ApplicationLockService()
+                    if not lock.acquire_lock(company, title):
+                        log(f"  ⊗ Skipped (duplicate in-flight): {company} | {title}")
+                        skipped += 1
+                        continue
+                    try:
+                        notion_request("POST", "/pages", {
+                            "parent": {"database_id": NOTION_DB_ID},
+                            "properties": props,
+                        }, cfg)
+                        created += 1
+                    finally:
+                        lock.release_lock(company, title)
+                else:
+                    # Fallback: no lock available, proceed normally
+                    notion_request("POST", "/pages", {
+                        "parent": {"database_id": NOTION_DB_ID},
+                        "properties": props,
+                    }, cfg)
+                    created += 1
             
             # Rate limit: 3 req/s max, stay at 2/s to be safe
             if (i + 1) % 2 == 0:
