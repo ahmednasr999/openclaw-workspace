@@ -59,6 +59,16 @@ Before adding any new job:
 
 ---
 
+## Job Search Tooling
+
+**Use the Job Search MCP skill** for multi-platform discovery:
+```
+Read skills/job-search-mcp/SKILL.md
+```
+JobSpy MCP server searches LinkedIn, Indeed, Glassdoor, ZipRecruiter, Google Jobs, Bayt, Naukri, and BDJobs simultaneously. Use this instead of manually searching each platform.
+
+---
+
 ## Adding a New Job
 
 ```bash

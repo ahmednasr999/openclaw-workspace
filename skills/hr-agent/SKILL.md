@@ -35,6 +35,7 @@
 | CV creation & tailoring | `instructions/cv.md` |
 | Recruiter outreach | `instructions/outreach.md` |
 | Interview preparation | `instructions/interviews.md` |
+| Ahmed's communication voice | `instructions/voice.md` |
 | Handshake protocol | `instructions/handshake.md` |
 | Quality checklist | `eval/checklist.md` |
 

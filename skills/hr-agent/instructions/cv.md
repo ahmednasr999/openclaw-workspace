@@ -7,6 +7,11 @@
 | Master CV data | `/root/.openclaw/workspace/memory/master-cv-data.md` |
 | Master PDF reference | `/root/.openclaw/media/inbound/file_99---61a97145-01ba-402f-b33b-5915c31c8daf.pdf` |
 | ATS best practices | `/root/.openclaw/workspace/memory/ats-best-practices.md` |
+| **Executive CV Builder skill** | `skills/executive-cv-builder/SKILL.md` |
+
+> **Integration:** Read `skills/executive-cv-builder/SKILL.md` before building any CV.
+> It contains WeasyPrint PDF generation, ATS scoring methodology, and pipeline tracker updates.
+> This file (cv.md) provides HR-specific workflow. The executive-cv-builder provides the build engine.
 
 ---
 

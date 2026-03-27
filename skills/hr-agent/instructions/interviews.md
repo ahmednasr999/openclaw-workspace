@@ -17,6 +17,18 @@ sessions_send(
 
 ---
 
+## Interview Design Methodology
+
+**Read `skills/interview-designer/SKILL.md` before preparing for any interview.**
+It provides evidence-based methodology combining:
+- Geoff Smart's Topgrading (structured behavioral deep-dives)
+- Lou Adler's performance-based hiring (success profile matching)
+- Daniel Kahneman's bias control (structured scoring, anchoring prevention)
+
+Use it to prepare Ahmed's STAR stories with forensic precision and anticipate interviewer methodology.
+
+---
+
 ## Prep Workflow (Execute in Order)
 
 ### 1. Company Research
