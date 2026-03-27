@@ -1,0 +1,26 @@
+{
+  "job_id": "2026-03-27-Combuzz-HR-Solutions-Head-of-Business-Planning",
+  "created_at": "2026-03-27T10:24:03.205728+00:00",
+  "updated_at": "2026-03-27T10:24:03.205754+00:00",
+  "status": "pending_build",
+  "job": {
+    "company": "Combuzz HR Solutions",
+    "role": "Head of Business Planning & Strategy (Emirati Talent)",
+    "location": "Abu Dhabi Emirate, United Arab Emirates",
+    "url": "https://ae.linkedin.com/jobs/view/head-of-business-planning-strategy-emirati-talent-at-combuzz-hr-solutions-4389059330",
+    "url_verified": true,
+    "salary_range": null,
+    "jd_raw": "Job Title: Head of Business Planning & Strategy(Strategy Initiatives / Enterprise Architecture)\nCompany Size: 200+ employeesLocation: Abu DhabiReporting To: CSO\nRole OverviewThe Head of Business Planning & Strategy will lead enterprise wide strategy initiatives and enterprise architecture to support the organization\u2019s transition into a banking environment. This role ensures that business strategy, operating models, technology architecture, and data capabilities are aligned and scalable. The position works closely with leadership to translate strategic intent into structured initiatives, roadmaps, and execution plans across the enterprise.\nKey ResponsibilitiesEnterprise Strategy & InitiativesDefine and manage enterprise level strategy initiatives aligned with the bank transformation roadmap.Translate corporate strategy into structured programs, initiatives, and execution roadmaps.Establish governance for strategic initiatives and track progress, dependencies, and outcomes.Support executive leadership with strategic analysis and recommendations.Enterprise Architecture & Operating ModelOwn and evolve the enterprise architecture framework covering business, data, application, and technology layers.Ensure alignment between business strategy, operating model, and technology architecture.Partner with IT, Digital, and Operations teams to design scalable and compliant architectures.Support regulatory readiness through structured architecture, documentation, and controls.Business Planning & Performance ManagementLead enterprise business planning and strategic reviews.Define KPIs, scorecards, and dashboards to track strategic and operational performance.Monitor execution against strategic goals and recommend corrective actions.Support budgeting and investment prioritization for strategic initiatives.Data, Analytics & Business IntelligenceOversee business analytics, data science, and decision support functions.Drive data driven decision making across leadership and business uni",
+    "jd_keywords": [
+      "head of"
+    ],
+    "ats_score": 63,
+    "priority": "HIGH"
+  },
+  "cv": {
+    "path": null,
+    "ats_score": 63,
+    "tailoring_notes": "Role: Head of Business Planning & Strategy (Emirati Talent) @ Combuzz HR Solutions\nFit: 8 ATS:63\nReason: Enterprise strategy + EA + business planning in target banking domain and GCC location \u2014 strong alignment with DT/PMO/Ops profile",
+    "pending_review": true
+  }
+}
