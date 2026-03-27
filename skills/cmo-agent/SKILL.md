@@ -13,6 +13,7 @@ The CMO Agent handles:
 - **Content Calendar:** Notion DB management (3268d599-a162-814b-8854-c9b8bde62468)
 - **LinkedIn Posting:** Text, images, bold formatting via Composio (author: urn:li:person:mm8EyA56mj)
 - **LinkedIn Engagement:** Comment discovery, drafting, approval loops, PQS scoring
+- **Social/X (Twitter):** x-radar.sh monitoring, cross-platform content repurposing (topic 52 merged into CMO Desk)
 - **Analytics:** Monthly scorecards (engagement rate, reach, follower growth)
 - **Brand Voice:** Sharp, direct, executive-level. Questions at end. No corporate speak.
 

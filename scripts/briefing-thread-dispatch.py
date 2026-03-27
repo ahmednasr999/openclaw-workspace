@@ -9,7 +9,7 @@ Thread mapping (Nasr Command Center forum):
   Topic 9  = HR Desk (jobs pipeline, CVs, applications, outreach)
   Topic 10 = CEO General (all-hands briefing, system status, cross-dept reminders)
   Topic 32 = Archive (CRM/Networking — unused)
-  Topic 52 = Archive (X/Twitter — unused)
+  Topic 52 = Archive (X/Twitter — merged into CMO Desk topic 7)
 """
 
 import json, os, sys, re, ssl, urllib.request
@@ -25,7 +25,8 @@ THREADS = {
     "jobs":    9,   # HR Desk
     "content": 7,   # CMO Desk
     "general": 10,  # CEO General
-    # crm and twitter threads archived — topics 32 and 52 are closed
+    "social": 7,   # CMO Desk — X/Twitter routed here (topic 52 merged into CMO)
+    # crm thread archived — topic 32 is closed
 }
 
 def send_to_thread(topic_id, text, parse_mode="HTML"):
