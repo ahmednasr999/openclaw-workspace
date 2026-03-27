@@ -99,47 +99,89 @@ def load_feedback_thresholds() -> tuple[int, int]:
     return submit_threshold, review_threshold
 
 
-def call_llm(prompt: str, timeout: int = 240) -> str | None:
-    """Call OpenClaw gateway with LLM request."""
-    try:
-        payload = {
-            "model": MODEL,
-            "messages": [
-                {"role": "user", "content": prompt}
-            ],
-            "temperature": 0.3,
-            "max_tokens": 4000,
-        }
-        
-        # Load gateway auth token
-        import json as _json
+def _wait_for_gateway(max_wait: int = 60) -> bool:
+    """Wait for gateway to become available. Returns True if healthy."""
+    import time as _time
+    deadline = _time.time() + max_wait
+    attempt = 0
+    while _time.time() < deadline:
         try:
-            with open("/root/.openclaw/openclaw.json") as _f:
-                _cfg = _json.load(_f)
-            gw_token = _cfg.get("gateway", {}).get("auth", {}).get("token", "")
+            r = requests.get(GATEWAY_URL.replace("/chat/completions", "/models"), timeout=5)
+            if r.status_code in (200, 401):  # 401 = up but needs auth, still alive
+                return True
         except Exception:
-            gw_token = ""
-        
-        headers = {"Content-Type": "application/json"}
-        if gw_token:
-            headers["Authorization"] = f"Bearer {gw_token}"
-        
-        resp = requests.post(GATEWAY_URL, json=payload, headers=headers, timeout=timeout)
-        
-        if resp.status_code != 200:
-            print(f"  LLM error: HTTP {resp.status_code}")
+            pass
+        attempt += 1
+        wait = min(2 ** attempt, 15)  # exponential backoff: 2, 4, 8, 15, 15...
+        print(f"  Gateway not ready, retrying in {wait}s...")
+        _time.sleep(wait)
+    return False
+
+
+def call_llm(prompt: str, timeout: int = 240, max_retries: int = 3) -> str | None:
+    """Call OpenClaw gateway with LLM request. Retries on connection failures."""
+    import time as _time
+    
+    # Load gateway auth token once
+    try:
+        with open("/root/.openclaw/openclaw.json") as _f:
+            _cfg = json.load(_f)
+        gw_token = _cfg.get("gateway", {}).get("auth", {}).get("token", "")
+    except Exception:
+        gw_token = ""
+    
+    headers = {"Content-Type": "application/json"}
+    if gw_token:
+        headers["Authorization"] = f"Bearer {gw_token}"
+    
+    payload = {
+        "model": MODEL,
+        "messages": [
+            {"role": "user", "content": prompt}
+        ],
+        "temperature": 0.3,
+        "max_tokens": 4000,
+    }
+    
+    for attempt in range(1, max_retries + 1):
+        try:
+            resp = requests.post(GATEWAY_URL, json=payload, headers=headers, timeout=timeout)
+            
+            if resp.status_code == 429:
+                retry_after = int(resp.headers.get("Retry-After", 10))
+                print(f"  Rate limited, waiting {retry_after}s...")
+                _time.sleep(retry_after)
+                continue
+            
+            if resp.status_code != 200:
+                print(f"  LLM error: HTTP {resp.status_code}")
+                return None
+            
+            data = resp.json()
+            content = data.get("choices", [{}])[0].get("message", {}).get("content", "")
+            return content
+            
+        except requests.exceptions.Timeout:
+            print(f"  LLM timeout ({timeout}s), attempt {attempt}/{max_retries}")
+            if attempt < max_retries:
+                continue
             return None
-        
-        data = resp.json()
-        content = data.get("choices", [{}])[0].get("message", {}).get("content", "")
-        return content
-        
-    except requests.exceptions.Timeout:
-        print(f"  LLM timeout ({timeout}s)")
-        return None
-    except Exception as e:
-        print(f"  LLM error: {e}")
-        return None
+        except (requests.exceptions.ConnectionError, ConnectionRefusedError) as e:
+            print(f"  Gateway connection lost (attempt {attempt}/{max_retries}): {e}")
+            if attempt < max_retries:
+                print(f"  Waiting for gateway recovery...")
+                if _wait_for_gateway(max_wait=60):
+                    print(f"  Gateway recovered, retrying...")
+                    continue
+                else:
+                    print(f"  Gateway did not recover in 60s")
+                    return None
+            return None
+        except Exception as e:
+            print(f"  LLM error: {e}")
+            return None
+    
+    return None
 
 
 def build_review_prompt(jobs: list[dict]) -> str:
@@ -357,7 +399,7 @@ def run_review(result: AgentResult):
     all_reviews = []
     total_latency = 0
     fallback_count = 0
-    with ThreadPoolExecutor(max_workers=4) as ex:
+    with ThreadPoolExecutor(max_workers=2) as ex:
         futures = {ex.submit(process_batch, bs): bs for bs in batch_starts}
         for future in as_completed(futures):
             batch_reviews, batch_latency, batch_fallbacks = future.result()
@@ -420,23 +462,11 @@ def run_review(result: AgentResult):
             print(f"  Batch {b+1} calibration: avg={avg:.1f}, n={len(scores)}")
 
     # Load applied/skipped IDs for final guard
+    # NOTE: applied-job-ids.txt is DEPRECATED (read-only historical reference only).
+    # Notion pipeline DB is the authoritative source of truth for applied jobs.
     import re as _re
-    APPLIED_IDS_FILE = Path(__file__).parent.parent / "jobs-bank" / "applied-job-ids.txt"
     applied_ids = set()
-    try:
-        if APPLIED_IDS_FILE.exists():
-            for line in open(APPLIED_IDS_FILE):
-                line = line.strip()
-                if not line or line.startswith("#"):
-                    continue
-                parts = line.split("|")
-                if parts:
-                    aid = parts[0].strip()
-                    if aid and len(aid) >= 6:
-                        applied_ids.add(aid)
-        print(f"\n  Applied/skipped IDs loaded: {len(applied_ids)}")
-    except Exception as e:
-        print(f"  Warning: Could not load applied IDs: {e}")
+    print(f"\n  Applied/skipped IDs: Notion is authoritative (txt deprecated, no entries loaded from file)")
 
     # Also load applied IDs from SQLite DB (authoritative source)
     if _pdb:
@@ -451,6 +481,68 @@ def run_review(result: AgentResult):
             print(f"  + DB applied IDs added: {len(rows)} (total: {len(applied_ids)})")
         except Exception as e:
             print(f"  Warning: Could not load DB applied IDs: {e}")
+
+    # Also load applied IDs from live Notion pipeline DB (source of truth for mid-day applies)
+    try:
+        import requests as _requests, json as _json
+        notion_conf = _json.load(open(Path(__file__).parent.parent / "config/notion.json"))
+        notion_token = notion_conf.get("token")
+        if notion_token:
+            notion_headers = {
+                "Authorization": f"Bearer {notion_token}",
+                "Notion-Version": "2022-06-28"
+            }
+            notion_db_id = "3268d599-a162-81b4-b768-f162adfa4971"
+            applied_stages = {"Applied", "✅ Applied"}
+            notion_added = 0
+            cursor = None
+            while True:
+                payload = {"page_size": 100}
+                if cursor:
+                    payload["start_cursor"] = cursor
+                nr = _requests.post(
+                    f"https://api.notion.com/v1/databases/{notion_db_id}/query",
+                    headers=notion_headers, json=payload, timeout=15
+                )
+                if nr.status_code != 200:
+                    print(f"  Warning: Notion dedup query failed: {nr.status_code}")
+                    break
+                nd = nr.json()
+                for page in nd.get("results", []):
+                    props = page.get("properties", {})
+                    stage = props.get("Stage", {})
+                    if stage.get("type") != "select":
+                        continue
+                    stage_name = stage.get("select", {}).get("name", "")
+                    if stage_name not in applied_stages:
+                        continue
+                    # Add full URL if present
+                    url_prop = props.get("URL", {})
+                    if url_prop.get("type") == "url" and url_prop.get("url"):
+                        applied_ids.add(url_prop["url"])
+                        # Also extract numeric LinkedIn/Indeed ID from URL
+                        url_val = url_prop["url"]
+                        if "linkedin.com/jobs/view/" in url_val:
+                            _m = _re.search(r'/jobs/view/(\d+)', url_val)
+                            if _m:
+                                applied_ids.add(_m.group(1))
+                                notion_added += 1
+                        elif "indeed.com/cmp/" in url_val or "indeed.com/jobs/" in url_val:
+                            _m = _re.search(r'[?&]jk=([a-zA-Z0-9]+)', url_val)
+                            if _m:
+                                applied_ids.add(_m.group(1))
+                                notion_added += 1
+                        else:
+                            notion_added += 1
+                if not nd.get("has_more") or not nd.get("next_cursor"):
+                    break
+                cursor = nd["next_cursor"]
+            if notion_added > 0:
+                print(f"  + Notion applied IDs added: {notion_added} (total: {len(applied_ids)})")
+        else:
+            print("  Warning: No Notion token found for live dedup")
+    except Exception as e:
+        print(f"  Warning: Could not load Notion applied IDs: {e}")
 
     def _is_already_applied(job):
         """Check if job ID or URL numeric IDs match applied list."""

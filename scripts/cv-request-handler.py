@@ -13,6 +13,8 @@ from datetime import datetime, timezone, timedelta
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
+from application_lock import ApplicationLockService
+
 WORKSPACE = "/root/.openclaw/workspace"
 CAIRO = timezone(timedelta(hours=2))
 
@@ -111,6 +113,36 @@ def process_cv_request(req):
     page_id = req["page_id"]
     
     print(f"[cv-handler] Processing: {role} @ {company}")
+    
+    # Check if job is already being processed (lock check)
+    lock_service = ApplicationLockService()
+    if lock_service.is_locked(company, role):
+        print(f"[cv-handler] ⚠️  DUPLICATE: {company} | {role} is already being processed")
+        msg = f"⚠️ CV Build Skipped\n{role} @ {company}\nJob is already being processed (in-flight)"
+        send_telegram(msg)
+        return None
+    
+    # Check if job already exists in pipeline_db
+    try:
+        import sqlite3
+        db_path = os.path.join(WORKSPACE, "data/nasr-pipeline.db")
+        conn = sqlite3.connect(db_path)
+        cursor = conn.cursor()
+        cursor.execute("""
+            SELECT id, status FROM jobs 
+            WHERE LOWER(company) = LOWER(?) AND LOWER(title) = LOWER(?)
+        """, (company, role))
+        existing = cursor.fetchone()
+        conn.close()
+        
+        if existing:
+            job_id, status = existing
+            print(f"[cv-handler] ⚠️  DUPLICATE: {company} | {role} already in database (status: {status})")
+            msg = f"⚠️ CV Build Skipped\n{role} @ {company}\nJob already registered in pipeline (status: {status})"
+            send_telegram(msg)
+            return None
+    except Exception as e:
+        print(f"[cv-handler] Failed to check pipeline_db: {e}")
     
     # Check if we have a dossier
     dossier_slug = f"{company.lower().replace(' ','-')}-{role.lower().replace(' ','-')}"

@@ -2,6 +2,49 @@
 
 *Technical configurations, troubleshooting, and environment-specific setup*
 
+## LinkedIn Engagement Agent
+
+### Overview
+Daily agent that finds the 5 best LinkedIn posts for Ahmed to comment on, drafts comments in his voice, and sends to Telegram for 1-tap approval before posting.
+
+### Key Files
+- **Script:** `scripts/linkedin-engagement-agent.py`
+- **Pending state:** `data/linkedin-engagement-pending.json` (active posts awaiting approval)
+- **Log:** `logs/linkedin-engagement.log`
+
+### Cron Schedule
+`0 7 * * 0-4` - 9 AM Cairo (Sun-Thu), before the working day starts
+
+### Telegram Output
+- **Chat:** Nasr Command Center (-1003882622947)
+- **Thread:** topic_id=7 (Content thread)
+- **Format:** 5 separate messages, each with [✅ Post It] [✏️ Edit] [❌ Skip] buttons
+
+### Workflow
+1. Load Ahmed's context (career, sectors, personas) from MEMORY.md + ontology graph
+2. Discover 30-50 candidate posts via Exa search (fresh GCC/sector posts)
+3. Score each post: career overlap + persona match + comment gap + brand fit (0-100)
+4. Draft comments in Ahmed's voice for top 5
+5. Send to Telegram thread for approval
+6. On approval: browser posts comment + like on Ahmed-Mac
+7. Updates ontology graph: Person entity gets `last_commented` field (14-day cooldown)
+
+### Manual Run
+```bash
+# Dry run (no Telegram send, prints to console)
+python3 scripts/linkedin-engagement-agent.py --dry-run
+
+# Live run
+python3 scripts/linkedin-engagement-agent.py
+```
+
+### Ontology Fields Used
+- `Person.last_commented` (date) - prevents re-commenting within 14 days
+- `Person.last_commented_post` (URL) - tracks which post was commented on
+- New persons auto-created when commenting on someone not yet in graph
+
+---
+
 ## CV Creation Workflow
 
 ### Models by Task
@@ -182,6 +225,19 @@ When manually posting to LinkedIn with an image:
 ### Content Analysis
 - **Reviews:** `/docs/content-claw/caught/` (permanent)
 - **Skips:** `/docs/content-claw/released/skip/` (14-day retention)
+
+## Browser Automation (Non-Negotiable)
+
+**ALWAYS use Ahmed-Mac Chrome FIRST for any browser task.**
+- Node: `Ahmed-Mac`, profile: default (omit profile param)
+- Status check: `browser(action=status, node=Ahmed-Mac)` if unsure
+- Ahmed is logged into YouTube, LinkedIn, Gmail, etc. on this browser
+- Never attempt Camoufox or server-side curl/fetch first for sites requiring login or bot protection
+- Only fall back to Camoufox/server tools if Ahmed-Mac is offline or task doesn't need login
+
+**When this rule was added:** 2026-03-27 (Ahmed corrected me for forgetting)
+
+---
 
 ## Troubleshooting
 

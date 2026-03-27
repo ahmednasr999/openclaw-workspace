@@ -245,7 +245,7 @@ case "$MODE" in
         run_agent "enrich" "jobs-enrich-jd.py" 300 2
         
         log "--- LLM Review (sequential) ---"
-        run_agent "review" "jobs-review.py" 900 2
+        run_agent "review" "jobs-review.py" 1200 2
         
         log "--- Push to Notion Pipeline (sequential) ---"
         run_agent "pipeline-push" "push-submit-to-notion.py" 120 2
@@ -282,7 +282,7 @@ case "$MODE" in
         if [ -f "$DATA_DIR/source-failures.jsonl" ]; then
             FAILED_SOURCES=$(cat "$DATA_DIR/source-failures.jsonl" | python3 -c "import sys,json; print(', '.join(json.loads(l).get('agent','?') for l in sys.stdin if l.strip()))" 2>/dev/null || echo "unknown")
             log "🔴 Source failures detected: $FAILED_SOURCES"
-            openclaw message send --channel telegram --to 866838380 --message "🔴 Morning Briefing Alert: Job sources FAILED after retry: $FAILED_SOURCES. Check pipeline logs." >> "$LOG_FILE" 2>&1 || true
+            openclaw message send --channel telegram --to "-1003882622947:10" --message "🔴 Morning Briefing Alert: Job sources FAILED after retry: $FAILED_SOURCES. Check pipeline logs." >> "$LOG_FILE" 2>&1 || true
         fi
         
         # Phase 2: Merge + Review (sequential, depends on sources)
@@ -298,7 +298,7 @@ case "$MODE" in
         run_agent "enrich" "jobs-enrich-jd.py" 300 2 || PHASE2_FAILURES="${PHASE2_FAILURES}enrich "
         
         log "--- Phase 3: LLM Review ---"
-        run_agent "review" "jobs-review.py" 900 2 || PHASE2_FAILURES="${PHASE2_FAILURES}review "
+        run_agent "review" "jobs-review.py" 1200 2 || PHASE2_FAILURES="${PHASE2_FAILURES}review "
         
         log "--- Phase 4: Push to Notion Pipeline ---"
         run_agent "pipeline-push" "push-submit-to-notion.py" 120 2 || PHASE2_FAILURES="${PHASE2_FAILURES}pipeline-push "
@@ -306,7 +306,7 @@ case "$MODE" in
         # Alert on Phase 2+ failures
         if [ -n "$PHASE2_FAILURES" ]; then
             log "🔴 Phase 2+ failures: $PHASE2_FAILURES"
-            openclaw message send --channel telegram --to 866838380 --message "🔴 Morning Briefing Alert: Phase 2 FAILED after retry: ${PHASE2_FAILURES}. Jobs may be missing from briefing." >> "$LOG_FILE" 2>&1 || true
+            openclaw message send --channel telegram --to "-1003882622947:10" --message "🔴 Morning Briefing Alert: Phase 2 FAILED after retry: ${PHASE2_FAILURES}. Jobs may be missing from briefing." >> "$LOG_FILE" 2>&1 || true
         fi
         
         # Phase 5: Newsletter REMOVED (2026-03-22) — pam-telegram.py reads fresh data directly

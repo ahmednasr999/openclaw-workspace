@@ -1,47 +1,23 @@
 {
   "status": "ok",
-  "scan_time": "2026-03-27T14:00:15.799761+02:00",
-  "total_scanned": 13,
+  "scan_time": "2026-03-27T15:00:53.587235+02:00",
+  "total_scanned": 1,
   "by_category": {
     "interview_invite": 0,
-    "recruiter_reach": 1,
+    "recruiter_reach": 0,
     "application_ack": 0,
     "rejection": 0,
     "assessment": 0,
     "follow_up_needed": 0,
-    "other": 12
+    "other": 1
   },
   "interview_invites": [],
-  "recruiter_messages": [
-    {
-      "id": "350519",
-      "from": "=?UTF-8?Q?Tariq_Qattawi=2C_PMP=C2=AE=2C_PMI-ACP=C2=AE=2C_CBDA=C2=AE?=\r\n <invitations@linkedin.com>",
-      "subject": "You have an invitation",
-      "date": "Fri, 27 Mar 2026 11:30:34 +0000 (UTC)",
-      "unread": true,
-      "priority": "MEDIUM",
-      "score": 2,
-      "pipeline_match": null
-    }
-  ],
+  "recruiter_messages": [],
   "application_acks": [],
   "rejections": [],
   "assessments": [],
   "follow_ups_needed": [],
   "actionable_count": 0,
-  "hot_alerts": [
-    {
-      "subject": "Discover Current Offers from UNIQLO",
-      "from": "UNIQLO India <newsletter@em.discountwalas.com>",
-      "priority": "MEDIUM",
-      "pipeline_match": null
-    },
-    {
-      "subject": "Biggest Offers Ever =?utf-8?Q?=E2=80=93?= Grab Them Before\r\n =?utf-8?Q?They=E2=80=99re?= Gone..",
-      "from": "Rolex Wall Clock <info@host.discountwalas.com>",
-      "priority": "MEDIUM",
-      "pipeline_match": null
-    }
-  ],
+  "hot_alerts": [],
   "signals": []
 }
