@@ -80,14 +80,14 @@ for node in imports:
             try:
                 __import__(alias.name.split('.')[0])
             except ImportError as e:
-                if not any(x in str(e) for x in ['agent_common','pipeline_db','_adapters','_imports','notion_client_shared','cv_validator']):
+                if not any(x in str(e) for x in ['agent_common','pipeline_db','_adapters','_imports','notion_client_shared','cv_validator','application_lock']):
                     print(f'ImportError: {e}')
                     sys.exit(1)
     elif isinstance(node, ast.ImportFrom) and node.module:
         try:
             __import__(node.module.split('.')[0])
         except ImportError as e:
-            if not any(x in str(e) for x in ['agent_common','pipeline_db','_adapters','_imports','notion_client_shared','cv_validator']):
+            if not any(x in str(e) for x in ['agent_common','pipeline_db','_adapters','_imports','notion_client_shared','cv_validator','application_lock']):
                 print(f'ImportError: {e}')
                 sys.exit(1)
 " 2>&1)
