@@ -42,9 +42,11 @@ For each SUBMIT job, validate:
 | **Salary floor?** | `web_search`: "{title} salary {country} {year}". If below market → FLAG. If no data → note "salary unverified" |
 | **Geographic fit?** | Must be GCC (UAE, KSA, Qatar, Bahrain, Kuwait, Oman) or remote-eligible → SKIP if not |
 
-### Step 3 — Curate Shortlist
+### Step 3 — Rank and Present ALL Validated Jobs
 
-From validated SUBMIT jobs, select the top 3-5 (maximum 7) based on:
+Show Ahmed ALL jobs that pass quality checks. Don't cap or filter out valid opportunities — that's Ahmed's decision, not HR's.
+
+Rank by:
 1. ATS score (highest first)
 2. Tier 1 > Tier 2 > Tier 3
 3. Company brand strength (known brand > unknown)
@@ -54,19 +56,23 @@ From validated SUBMIT jobs, select the top 3-5 (maximum 7) based on:
 
 Format:
 ```
-💼 New Opportunities — HR Reviewed
+💼 New Opportunities — HR Reviewed ([N] validated, [M] filtered out)
 
+🏆 Tier 1
 1. [Title] — [Company] ([City, Country])
-   ATS: [score]/100 | Tier [1/2/3] | Posted [date]
-   Why: [1-line reason this is worth Ahmed's time]
+   ATS: [score]/100 | Posted [date]
+   Why: [1-line fit reason]
    ⚠️ [any flags — salary concern, short posting, etc.]
 
+📌 Tier 2
 2. ...
 
-Filtered out: [N] jobs (duplicates: X, off-target: Y, expired: Z)
+Filtered out: [M] jobs (duplicates: X, expired: Y, geo mismatch: Z)
 
-Say "build CV for #N" to start, or "details #N" for full JD.
+Say "build CV for #N" or "details #N" for full JD.
 ```
+
+**Rule: HR filters noise. Ahmed filters opportunity. Show everything that's real.**
 
 ### Step 5 — Loop in CEO
 
