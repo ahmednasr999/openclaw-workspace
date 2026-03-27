@@ -67,6 +67,22 @@ Actively exploring VP/C-suite opportunities. Would love to stay on your radar fo
 
 ---
 
+## Email Tooling
+
+**Use the `himalaya` skill for sending outreach and follow-up emails.**
+```
+Read skills/himalaya/SKILL.md
+```
+Himalaya provides full IMAP/SMTP access to Ahmed's Gmail. Use it to:
+- Send cold outreach emails (after CEO approval)
+- Send follow-up emails
+- Check for recruiter responses
+- Read interview invite emails
+
+**Voice:** Read `instructions/voice.md` before drafting any email or LinkedIn message.
+
+---
+
 ## Follow-Up Rules
 
 | Scenario | Timing | Action |

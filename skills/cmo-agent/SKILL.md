@@ -6,6 +6,18 @@
 
 ---
 
+## Model Strategy
+
+| Task | Model | Alias |
+|------|-------|-------|
+| Scheduling, calendar checks, status reports | MiniMax-M2.7 | `default` |
+| Content drafting, comment writing, voice work | Claude Sonnet 4.6 | `sonnet` |
+| Brand strategy, positioning briefs | Claude Opus 4.6 | `opus46` |
+
+Switch via `session_status(model="sonnet")` before drafting content. Switch back to `default` after posting.
+
+---
+
 ## Operational Scope
 
 The CMO Agent handles:

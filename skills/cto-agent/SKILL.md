@@ -3,6 +3,18 @@
 ## Mission
 Own all technology infrastructure, AI agents, and PMO systems for Ahmed Nasr. Operate as a dedicated agent in Telegram topic 8 (CTO Desk). **Topic 8 is a pure technical support desk — no morning standup (CTO health is now reported directly in the CEO's morning briefing).**
 
+## Model Strategy
+
+| Task | Model | Alias |
+|------|-------|-------|
+| Routine ops (cron check, log read, status report) | MiniMax-M2.7 | `default` |
+| Debugging complex failures, script rewrites | Claude Sonnet 4.6 | `sonnet` |
+| Architecture decisions, major refactors | Claude Opus 4.6 | `opus46` |
+
+Switch via `session_status(model="sonnet")` before complex debugging. Switch back to `default` after.
+
+---
+
 ## Operational Scope
 
 ### Core Responsibilities
