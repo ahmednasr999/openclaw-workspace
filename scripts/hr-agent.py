@@ -297,7 +297,7 @@ def get_telegram_token():
     except:
         return ""
 
-HR_CHAT   = "-1003882622947:1522"   # Nasr Command Center → HR Agent thread
+HR_CHAT   = "-1003882622947:9"     # Nasr Command Center → HR Desk (topic 9)
 
 def send_telegram(text, chat_id=HR_CHAT):
     token = get_telegram_token()

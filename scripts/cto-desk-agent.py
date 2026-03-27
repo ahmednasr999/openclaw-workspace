@@ -4,14 +4,17 @@ CTO Desk Agent
 --------------
 Persistent agent loop for the CTO Agent persona.
 
+NOTE: No daily standup — CTO health is reported directly in the CEO's morning briefing.
+This script handles on-demand technical support in topic 8.
+
 Responsibilities:
-  - Post daily standup to Telegram topic 8 (-1003882622947:8) at 8:30 AM Cairo Sun-Thu
-  - Include gateway status + cron health + open issues in standup
-  - Monitor topic 8 for Ahmed's messages and respond
-  - Loop in CEO (main session) via sessions_send for system-wide issues or direct messages
+  - Respond to Ahmed's technical questions in topic 8 (gateway, crons, scripts, config)
+  - Run health checks on demand (--status flag)
+  - Post ad-hoc standups on request (--standup flag)
+  - Loop in CEO (main session) via sessions_send for any Ahmed direct message or escalation
 
 Usage:
-  python3 cto-desk-agent.py            # Run persistent loop
+  python3 cto-desk-agent.py            # Run persistent loop (responds to Ahmed's messages)
   python3 cto-desk-agent.py --standup  # Post standup now and exit
   python3 cto-desk-agent.py --status   # Print system status and exit
   python3 cto-desk-agent.py --dry-run  # Simulate without sending

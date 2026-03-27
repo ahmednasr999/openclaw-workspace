@@ -230,6 +230,35 @@ def build_blocks():
         emoji = "🟢"
     blocks.append(callout(callout_text, emoji))
 
+    # ── 1b. CTO REPORT (runs cron dashboard check live) ───────────────────
+    try:
+        import subprocess
+        result = subprocess.run(
+            ["python3", str(WORKSPACE / "scripts" / "cron-dashboard-updater.py"), "--dry-run"],
+            capture_output=True, text=True, timeout=60
+        )
+        cto_output = result.stdout.strip()
+        if cto_output:
+            lines = [l for l in cto_output.splitlines() if l.strip()]
+            if lines:
+                blocks.append(div())
+                blocks.append(h2("🛠 CTO Report"))
+                for line in lines[:8]:
+                    line = line.strip()
+                    if not line or line.startswith("#"):
+                        continue
+                    llower = line.lower()
+                    if any(x in llower for x in ["fail", "red", "error", "down"]):
+                        blocks.append(bul(plain(f"🔴 {line}")))
+                    elif any(x in llower for x in ["amber", "warn", "stale"]):
+                        blocks.append(bul(plain(f"⚠️ {line}")))
+                    elif "ok" in llower or "pass" in llower:
+                        blocks.append(bul(plain(f"🟢 {line}")))
+                    else:
+                        blocks.append(bul(plain(line)))
+    except Exception:
+        pass  # Non-blocking
+
     # ── 2. DECISIONS NEEDED ────────────────────────────────────────────────
     blocks.append(h2("🎯 Decisions Needed Today"))
 

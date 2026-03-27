@@ -17,7 +17,7 @@ Daily agent that finds the 5 best LinkedIn posts for Ahmed to comment on, drafts
 
 ### Telegram Output
 - **Chat:** Nasr Command Center (-1003882622947)
-- **Thread:** topic_id=7 (Content thread)
+- **Thread:** topic_id=7 (CMO Desk)
 - **Format:** 5 separate messages, each with [✅ Post It] [✏️ Edit] [❌ Skip] buttons
 
 ### Workflow

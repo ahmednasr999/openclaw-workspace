@@ -20,7 +20,7 @@ if DOW in ("Friday", "Saturday"):
 
 NOTION_TOKEN = json.load(open(os.path.expanduser("~/.openclaw/workspace/config/notion.json")))["token"]
 DB_ID = "3268d599-a162-814b-8854-c9b8bde62468"
-TELEGRAM_CHAT = "-1003882622947:6"  # Content topic in Command Center
+TELEGRAM_CHAT = "-1003882622947:7"  # CMO Desk (topic 7) in Nasr Command Center
 DRY_RUN = "--dry-run" in sys.argv
 
 
