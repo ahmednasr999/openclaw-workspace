@@ -2,16 +2,39 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-03-26T10:01:45.254011+02:00",
-    "duration_ms": 102756,
+    "generated_at": "2026-03-27T06:43:58.562101+02:00",
+    "duration_ms": 111168,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "b3692fea",
+    "run_id": "dca89973",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": [
+    {
+      "id": "indeed-in-55816325782c827c",
+      "source": "indeed",
+      "title": "Commercial Director",
+      "company": "MC Ledger",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=55816325782c827c",
+      "posted": "2026-03-26",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 36,
+      "match_keywords": [
+        "digital transformation",
+        "saas",
+        "infrastructure",
+        "director",
+        "gcc",
+        "platform"
+      ],
+      "raw_snippet": "**Company Description** **About Mazeed:**\n\nMazeed is a financial management platform that helps businesses automate accounting, simplify tax compliance, and stay ready for e\\-invoicing through a combination of localized software (SaaS) and Finance\\-as\\-a\\-Service (FaaS). We work with SMEs and growing companies across the GCC, enabling them to operate with clarity, control, and confidence.\n\n\nWe are building the infrastructure for the next phase of financial compliance and digital transformation i",
+      "relevant": true,
+      "filter_reason": null
+    },
     {
       "id": "indeed-in-30c54bf5503ae2a1",
       "source": "indeed",
@@ -32,20 +55,25 @@
       "filter_reason": null
     },
     {
-      "id": "indeed-in-2e9d8b4cf355a65f",
+      "id": "indeed-in-8ec552ea5f13136a",
       "source": "indeed",
-      "title": "CHIEF, HOSTAGE INCIDENT MANAGEMENT, P5",
-      "company": "United Nations",
+      "title": "Head of Mortgage (Senior Leadership Role)",
+      "company": "Xoto Proptech Real Estate LLC.",
       "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=2e9d8b4cf355a65f",
-      "posted": "2026-03-23",
-      "seniority": "C-Suite",
+      "url": "https://ae.indeed.com/viewjob?jk=8ec552ea5f13136a",
+      "posted": "2026-03-26",
+      "seniority": "Director",
       "domain_match": false,
-      "keyword_score": 6,
+      "keyword_score": 30,
       "match_keywords": [
-        "leadership"
+        "ai",
+        "head of",
+        "leadership",
+        "dubai",
+        "api",
+        "platform"
       ],
-      "raw_snippet": "Org. Setting and Reporting\nThe Department of Safety and Security (UNDSS) is responsible for providing leadership, operational support and oversight of the United Nations security management system (UNSMS) globally. As a global leader in security risk management principles, UNDSS enables the safe and effective delivery of United Nations programmes and activities in the most complex and challenging environments, while maximizing precious resources. To this end, the work of the Department is aligne",
+      "raw_snippet": "**About the Company \u2013 XOTO Proptech Real Estate**\n\nXoto Proptech Real Estate is an emerging, AI\\-powered proptech company based in Dubai, focused on transforming the real estate lifecycle through technology\\-driven solutions. The company offers a unified platform that integrates property buying, selling, mortgage financing, and home enhancement services such as landscaping and interiors.\n\nBy combining real estate services with intelligent digital tools, Xoto simplifies the customer journey\u2014from ",
       "relevant": true,
       "filter_reason": null
     },
@@ -69,42 +97,23 @@
       "filter_reason": null
     },
     {
-      "id": "indeed-in-5dac7ad2ae793dd6",
+      "id": "indeed-in-519c7e5e6c22da27",
       "source": "indeed",
-      "title": "Senior Director - Global Tech Partners (GTP)",
-      "company": "Visa",
+      "title": "Head of Company Services",
+      "company": "Gateley plc",
       "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=5dac7ad2ae793dd6",
-      "posted": "2026-03-24",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 23,
+      "url": "https://ae.indeed.com/viewjob?jk=519c7e5e6c22da27",
+      "posted": "2026-03-26",
+      "seniority": "Director",
+      "domain_match": false,
+      "keyword_score": 20,
       "match_keywords": [
-        "payments",
         "ai",
-        "director"
+        "head of",
+        "dubai",
+        "platform"
       ],
-      "raw_snippet": "**Company Description**  \n\nVisa is a world leader in payments technology, facilitating transactions between consumers, merchants, financial institutions and government entities across more than 200 countries and territories, dedicated to uplifting everyone, everywhere by being the best way to pay and be paid.\n\n\nAt Visa, you'll have the opportunity to create impact at scale \u2014 tackling meaningful challenges, growing your skills and seeing your contributions impact lives around the world. Join Visa",
-      "relevant": true,
-      "filter_reason": null
-    },
-    {
-      "id": "indeed-in-03e420342f3c4ce9",
-      "source": "indeed",
-      "title": "Director CoE - Strategy and Execution",
-      "company": "Visa",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=03e420342f3c4ce9",
-      "posted": "2026-03-24",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 23,
-      "match_keywords": [
-        "payments",
-        "ai",
-        "director"
-      ],
-      "raw_snippet": "**Company Description**  \n\nVisa is a world leader in payments technology, facilitating transactions between consumers, merchants, financial institutions and government entities across more than 200 countries and territories, dedicated to uplifting everyone, everywhere by being the best way to pay and be paid.\n\n\nAt Visa, you'll have the opportunity to create impact at scale \u2014 tackling meaningful challenges, growing your skills and seeing your contributions impact lives around the world. Join Visa",
+      "raw_snippet": "***About The Role***\n--------------------\n\nThe ***role***\n\n\n\nThe Dubai office seeks a confident, experience and proactive Head of Company Services and corporate governance to join our client facing corporate platform. The individual must be fluent in English , to support the corporate team with public relations.\n\n\n\nThe role involves executing structuring and corporate actions while helping to scale a premium company services offering that complements our Corporate/M\\&A, private clients and advis",
       "relevant": true,
       "filter_reason": null
     },
@@ -153,46 +162,42 @@
       "filter_reason": null
     },
     {
-      "id": "indeed-in-35ebf6801982d6c0",
+      "id": "indeed-in-f2306e94b980617d",
       "source": "indeed",
-      "title": "Project Director",
-      "company": "Omada Rail Systems",
+      "title": "Director - Sustainable Finance Advisory",
+      "company": "KEO International Consultants",
       "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=35ebf6801982d6c0",
-      "posted": "2026-03-24",
+      "url": "https://ae.indeed.com/viewjob?jk=f2306e94b980617d",
+      "posted": "2026-03-26",
       "seniority": "C-Suite",
       "domain_match": true,
-      "keyword_score": 36,
+      "keyword_score": 30,
       "match_keywords": [
-        "project management",
+        "agile",
         "ai",
-        "infrastructure",
-        "director",
-        "dubai",
-        "architecture"
+        "enterprise",
+        "director"
       ],
-      "raw_snippet": "* **Permanent Contract**\n* **Mid\\-Senior Level**\n* **Dubai**\n* **Project Management \\- Engineering**\n\n  \n**About Us**\n\n  \n\nEgis is an international player active in architecture, consulting, construction engineering and mobility services. We create and operate intelligent infrastructures and buildings that respond to the climate emergency and contribute to more balanced, sustainable and resilient territorial development. Operating in 100 countries, Egis puts the expertise of its 19,500 employees",
+      "raw_snippet": "Overview:\n\nKEO is a creative enterprise, where innovation is a way of life. We are uniquely resourced with end\\-to\\-end services to take clients from inspiration \u2013 through conceptualization \u2013 to realization of planning, design or project delivery in the built and natural environments.  \n\nFor over 60 years we\u2019ve led with vision, contributing to many of the world\u2019s most ambitious projects, iconic places, remarkable experiences and prosperous communities.  \n\nAs a highly integrated and agile AEP/PMC",
       "relevant": true,
       "filter_reason": null
     },
     {
-      "id": "indeed-in-cc1e6913ad154f35",
+      "id": "indeed-in-539beb9cf68d63e1",
       "source": "indeed",
-      "title": "Project Director",
-      "company": "Egis Group",
+      "title": "Regional Head of Operations - Real Assets ME",
+      "company": "Apex Group",
       "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=cc1e6913ad154f35",
-      "posted": "2026-03-24",
-      "seniority": "C-Suite",
+      "url": "https://ae.indeed.com/viewjob?jk=539beb9cf68d63e1",
+      "posted": "2026-03-26",
+      "seniority": "Director",
       "domain_match": true,
-      "keyword_score": 23,
+      "keyword_score": 13,
       "match_keywords": [
-        "ai",
-        "infrastructure",
-        "director",
-        "architecture"
+        "head of",
+        "growth"
       ],
-      "raw_snippet": "**Company Description**  \n\nEgis is an international player active in architecture, consulting, construction engineering and mobility services. We create and operate intelligent infrastructures and buildings that respond to the climate emergency and contribute to more balanced, sustainable and resilient territorial development. Operating in 100 countries, Egis puts the expertise of its 19,500 employees at the service of its clients and develops cutting\\-edge innovations accessible to all projects",
+      "raw_snippet": "The Apex Group was established in Bermuda in 2003 and is now one of the world\u2019s largest fund administration and middle office solutions providers.\nOur business is unique in its ability to reach globally, service locally and provide cross\\-jurisdictional services. With our clients at the heart of everything we do, our hard\\-working team has successfully delivered on an unprecedented growth and transformation journey, and we are now represented by over circa 13,000 employees across 112 offices wor",
       "relevant": true,
       "filter_reason": null
     },
@@ -239,13 +244,129 @@
       "filter_reason": null
     },
     {
-      "id": "indeed-in-31dee93c40ff6851",
+      "id": "indeed-in-423033d452cfdcb6",
+      "source": "indeed",
+      "title": "Associate Director - Digital Transformation",
+      "company": "Four Principles",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=423033d452cfdcb6",
+      "posted": "2026-02-23",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 23,
+      "match_keywords": [
+        "digital transformation",
+        "ai",
+        "director"
+      ],
+      "raw_snippet": "**Main Objective:**\n\n\nAs an Associate Director within the Four Principles Digital Transformation Team, you will lead project teams focused on digital transformation, digital products management, solutions development, and business transformation. You will be responsible for overseeing client engagements, managing team members, and ensuring the successful execution of digital initiatives.\n\n**Key Responsibilities:**\n\n* Lead and manage digital transformation projects from initiation to execution.\n*",
+      "relevant": true,
+      "filter_reason": null
+    },
+    {
+      "id": "indeed-in-3a325c3e5da3d482",
+      "source": "indeed",
+      "title": "Technical Director",
+      "company": "Transpo Group Middle East",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=3a325c3e5da3d482",
+      "posted": "2026-03-26",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 10,
+      "match_keywords": [
+        "director",
+        "saudi"
+      ],
+      "raw_snippet": "We are seeking an experienced **Technical Director** to lead the technical delivery of large\\-scale **hospitality and mixed\\-use developments** in Saudi Arabia. The role will oversee multidisciplinary design coordination, technical governance, and engineering excellence across all project phases from concept design through construction and handover.\n\nThe Technical Director will work closely with the client, consultants, and contractors to ensure that design solutions are technically sound, align",
+      "relevant": true,
+      "filter_reason": null
+    },
+    {
+      "id": "indeed-in-26f721b2475bd815",
+      "source": "indeed",
+      "title": "Technical Director",
+      "company": "JASARA PMC",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=26f721b2475bd815",
+      "posted": "2026-03-26",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 10,
+      "match_keywords": [
+        "director",
+        "saudi"
+      ],
+      "raw_snippet": "We are seeking an experienced **Technical Director** to lead the technical delivery of large\\-scale **hospitality and mixed\\-use developments** in Saudi Arabia. The role will oversee multidisciplinary design coordination, technical governance, and engineering excellence across all project phases from concept design through construction and handover.\n\n\nThe Technical Director will work closely with the client, consultants, and contractors to ensure that design solutions are technically sound, alig",
+      "relevant": true,
+      "filter_reason": null
+    },
+    {
+      "id": "indeed-in-0dd6f4e64ddb30e5",
+      "source": "indeed",
+      "title": "Head CCM Services and Lead BCO, Qatar",
+      "company": "HSBC",
+      "location": "Doha, DAW, QA",
+      "url": "https://qa.indeed.com/viewjob?jk=0dd6f4e64ddb30e5",
+      "posted": "2026-03-26",
+      "seniority": "Other",
+      "domain_match": false,
+      "keyword_score": 6,
+      "match_keywords": [
+        "growth"
+      ],
+      "raw_snippet": "**Head CCM Services and Lead BCO, Qatar (53345530\\)**\n\n**GCB 4**\n\n **Some careers open more doors than others.**\n\nIf you\u2019re looking to unlock new job opportunities, look at the possibilities right on your doorstep here at HSBC.\n\n\nHSBC Corporate and Institutional Banking is a markets\\-led, financing\\-focused business that provides investment and financial solutions. Through our international network, we connect emerging and mature markets, covering key growth areas. We partner with our corporate,",
+      "relevant": true,
+      "filter_reason": null
+    },
+    {
+      "id": "indeed-in-870906ecf821ec03",
+      "source": "indeed",
+      "title": "Chief Finance Officer (CFO) - Arabic Speaking",
+      "company": "Ernest Talent",
+      "location": "Doha, DAW, QA",
+      "url": "https://qa.indeed.com/viewjob?jk=870906ecf821ec03",
+      "posted": "2026-03-27",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 23,
+      "match_keywords": [
+        "fintech",
+        "ai",
+        "leadership"
+      ],
+      "raw_snippet": "The Chief Finance Officer (CFO) is responsible for overseeing company\u2019s financial strategy, risk management, regulatory compliance, and financial planning while ensuring alignment with Qatar Central Bank (QCB) Corporate Governance Guidelines. This role focuses on financial reporting, liquidity management, investment planning, and profitability optimization, ensuring company\u2019s financial health, sustainability, and compliance in the FinTech industry. The CFO collaborates with senior leadership, re",
+      "relevant": true,
+      "filter_reason": null
+    },
+    {
+      "id": "indeed-in-54352d3c8672b15b",
+      "source": "indeed",
+      "title": "Head of Public Affairs",
+      "company": "None",
+      "location": "Doha, DAW, QA",
+      "url": "https://qa.indeed.com/viewjob?jk=54352d3c8672b15b",
+      "posted": "2026-03-26",
+      "seniority": "Director",
+      "domain_match": true,
+      "keyword_score": 16,
+      "match_keywords": [
+        "ai",
+        "head of",
+        "api"
+      ],
+      "raw_snippet": "Democrazia\\-Cristiana.net LLC is seeking an experienced **Head of Public Affairs** to lead the company\u2019s external relations, government engagement, and public communications strategy. This role is pivotal in shaping the organization\u2019s reputation, managing stakeholder relationships, and ensuring alignment with regulatory and policy frameworks in Qatar and beyond.\n\nKey Responsibilities\n\n* Develop and implement public affairs strategies that support the company\u2019s objectives.\n* Build and maintain st",
+      "relevant": true,
+      "filter_reason": null
+    },
+    {
+      "id": "indeed-in-13bdf4ef894a8bc2",
       "source": "indeed",
       "title": "Senior Manager Business Support & Financial Control",
       "company": "Qatar Airways",
       "location": "Doha, DAW, QA",
-      "url": "https://qa.indeed.com/viewjob?jk=31dee93c40ff6851",
-      "posted": "2026-03-24",
+      "url": "https://qa.indeed.com/viewjob?jk=13bdf4ef894a8bc2",
+      "posted": "2026-03-26",
       "seniority": "Other",
       "domain_match": false,
       "keyword_score": 20,
@@ -254,7 +375,7 @@
         "executive",
         "leadership"
       ],
-      "raw_snippet": "Job title\nSenior Manager Business Support \\& Financial Control\nRef \\#\n232125\nLocation\nQatar \\- Doha\nJob family\nCorporate \\& Commercial\n* Closing date: 07\\-Apr\\-2026\n\n  \n\n**About Your Role**\n\n\nYou will create added value for the Qatar Airways Group by building strong, trusted partnerships with finance and operational stakeholders through strategic analysis, financial leadership, and insightful reporting. Acting as the primary business partner for senior and executive management, you will bridge F",
+      "raw_snippet": "### **General Information**\n\nRef \\#\n232125\nLocation\nQatar\\-Doha\nJob family\nCorporate \\& Commercial\n* Closing Date: 2026\\-04\\-07\n\n  \n\n### **Description**\n\n**About Your Role**\n\n\nYou will create added value for the Qatar Airways Group by building strong, trusted partnerships with finance and operational stakeholders through strategic analysis, financial leadership, and insightful reporting. Acting as the primary business partner for senior and executive management, you will bridge Finance (Business",
       "relevant": true,
       "filter_reason": null
     },
@@ -276,32 +397,13 @@
       "raw_snippet": "**Job ID**: 197205  \n\n**Location Name:** \\[\\[filter8]]  \n\n**Address:** \\[\\[filter11]], \\[\\[filter10]], \\[\\[filter9]] \\[\\[postalcode]], Qatar (QA)  \n\n**Job Type:** Full Time  \n\n**Position Type (Regular/Temporary):** Regular  \n\n**Job Function:** \\[\\[filter14]]  \n\n**Is This Position Eligible for Remote? :** \\[\\[req\\_remoteeligible]]\n\n **MISSION:** **To** **ensure** **the** **delivery** **of** **exceptional****operational** **and commercial standards** **throughout** **the store,** **with** **focus ",
       "relevant": true,
       "filter_reason": null
-    },
-    {
-      "id": "indeed-in-572a2a97daa03ec4",
-      "source": "indeed",
-      "title": "Fleet Head of Transportation Dept.",
-      "company": "Al Rayes Laundry & Dry Cleaning",
-      "location": "Doha, DAW, QA",
-      "url": "https://qa.indeed.com/viewjob?jk=572a2a97daa03ec4",
-      "posted": "2026-03-25",
-      "seniority": "Director",
-      "domain_match": false,
-      "keyword_score": 13,
-      "match_keywords": [
-        "ai",
-        "head of"
-      ],
-      "raw_snippet": "**Role Overview**\n\nWe are seeking a highly organized and experienced Fleet Transportation Head to oversee and manage our laundry service fleet operations in Industrial Area Street 38\\. The ideal candidate will ensure smooth transportation of goods, optimize fleet performance, and maintain compliance with safety and regulatory standards. A valid driver\u2019s license is required.\n\n**Key Responsibilities**\n\n* Supervise and manage all fleet operations, including scheduling, routing, and dispatching vehi",
-      "relevant": true,
-      "filter_reason": null
     }
   ],
   "kpi": {
     "searches_run": 81,
-    "results_per_search": 1.58,
-    "unique_jobs": 14,
-    "errors": 39
+    "results_per_search": 2.28,
+    "unique_jobs": 19,
+    "errors": 30
   },
   "recommendations": []
 }

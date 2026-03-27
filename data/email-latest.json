@@ -1,34 +1,34 @@
 {
   "status": "ok",
-  "scan_time": "2026-03-26T19:00:20.621272+02:00",
-  "total_scanned": 13,
+  "scan_time": "2026-03-27T10:00:05.317634+02:00",
+  "total_scanned": 2,
   "by_category": {
-    "interview_invite": 1,
-    "recruiter_reach": 0,
+    "interview_invite": 0,
+    "recruiter_reach": 1,
     "application_ack": 0,
     "rejection": 0,
     "assessment": 0,
     "follow_up_needed": 0,
-    "other": 12
+    "other": 1
   },
-  "interview_invites": [
+  "interview_invites": [],
+  "recruiter_messages": [
     {
-      "id": "350403",
-      "from": "Eva Friday <eva@productschool.com>",
-      "subject": "=?UTF-8?q?=E2=9A=A0=EF=B8=8F_Your_$2,000_Savings_on_Certification_?=\r\n =?UTF-8?q?=E2=80=93_Limited_Spots_Available?=",
-      "date": "Thu, 26 Mar 2026 16:21:35 +0000",
+      "id": "350497",
+      "from": "Bridget Nsiah <invitations@linkedin.com>",
+      "subject": "=?UTF-8?Q?You_have_an_invitation_=E2=9C=89=EF=B8=8F?=",
+      "date": "Fri, 27 Mar 2026 07:30:33 +0000 (UTC)",
       "unread": true,
       "priority": "MEDIUM",
       "score": 2,
       "pipeline_match": null
     }
   ],
-  "recruiter_messages": [],
   "application_acks": [],
   "rejections": [],
   "assessments": [],
   "follow_ups_needed": [],
-  "actionable_count": 1,
+  "actionable_count": 0,
   "hot_alerts": [],
   "signals": []
 }

@@ -1,16 +1,10 @@
 {
-  "generated": "2026-03-26T03:00:16.193441+00:00",
-  "today": "2026-03-26",
-  "has_post": true,
-  "post": {
-    "title": "Health Catalyst closed 4.6 million care gaps globally.",
-    "hook": "Care gaps.",
-    "topic": "Digital Transformation",
-    "status": "Scheduled",
-    "text": "Health Catalyst closed 4.6 million care gaps globally.\n\nThat's their marketing number. Here's what one care gap actually looks like on the ground.\n\nA diabetic patient, age 58, walks into one of our 15 hospitals for an unrelated complaint. Our Health Catalyst-powered analytics flags that she missed her last two HbA1c checks. Her last recorded blood sugar was elevated. She hasn't been seen in 6 months.\n\nThat's a care gap. It's not an abstract metric. It's a person.\n\nNow here's what closing that gap looks like in practice:\n\n1. **The analytics surfaces the problem.** (Health Catalyst does this)\n2. **A clinical workflow routes it to the right person.** (We built this)\n3. **A nurse calls the patient, schedules the appointment.** (This is the hard part)\n4. **The results get recorded back into the system.** (Most programs fail here)\n\nThe technology makes gaps visible. The transformation executive builds the system that closes them.\n\nHere's what I've learned implementing enterprise healthcare data platforms at scale:\n\n**The gap between buying a platform and realizing its outcomes is where most hospital transformations fail.**\n\nIt's not the software. It's the governance, change management, and data culture around it.\n\nIn our 15-hospital network, we've reduced identified care gaps by 34% in 8 months. Not through better technology. Through better workflows that make closing gaps part of daily operations.\n\nThe 4.6M number sounds impressive. But the real impact is one patient at a time.\n\nWhat's your experience with outcome measurement in transformation programs?\n\n..\n\nBy the way, I've been documenting my journey managing a $50M hospital transformation across 3 countries. If you're navigating a similar challenge, happy to share what's working. Drop a comment or DM.\n\n#HealthCatalyst #HealthcareData #CareGaps #DigitalTransformation #HealthcareIT",
-    "image_url": "https://raw.githubusercontent.com/ahmednasr999/openclaw-workspace/master/linkedin/posts/2026-03-25-image.png",
-    "notion_page_id": "3278d599-a162-818e-82ea-f415360683f6",
-    "notion_url": "https://www.notion.so/Health-Catalyst-closed-4-6-million-care-gaps-globally-3278d599a162818e82eaf415360683f6"
+  "generated": "2026-03-27T04:42:09.386295+00:00",
+  "today": "2026-03-27",
+  "has_post": false,
+  "next_scheduled": {
+    "date": "2026-03-29",
+    "title": "The interview question that made me realize I was underqualified"
   },
-  "status": "ok"
+  "status": "no_post_today"
 }

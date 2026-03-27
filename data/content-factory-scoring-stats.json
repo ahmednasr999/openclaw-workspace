@@ -1,116 +1,141 @@
 {
-  "last_run": "2026-03-26T05:30:14.096904+02:00",
-  "scored": 17,
-  "gold_count": 9,
+  "last_run": "2026-03-27T05:30:11.153362+02:00",
+  "scored": 11,
+  "gold_count": 10,
   "gold_items": [
     {
-      "title": "Sage Report: Health IT Spending Trends for 2026-2027",
+      "title": "Qualified Health raises $125M to scale generative AI in health systems",
+      "formats": [
+        "Newsjacking",
+        "Namejacking"
+      ],
+      "score": 7,
+      "format_score": 3.4,
+      "angle": "Breaking: Qualified Health raises $125M to scale generative AI in heal... Here's what this means for [your industry]",
+      "categories": [
+        "HealthTech"
+      ]
+    },
+    {
+      "title": "Vitality acquires Ramp Health to merge AI behavioral health and workplace safety",
       "formats": [
         "Brandjacking",
         "Newsjacking",
         "Namejacking"
       ],
-      "score": 9,
-      "format_score": 2.5,
-      "angle": "Breaking: Sage Report: Health IT Spending Trends for 2026-2027... Here's what this means for [your industry]",
-      "categories": []
+      "score": 8,
+      "format_score": 3.9,
+      "angle": "Breaking: Vitality acquires Ramp Health to merge AI behavioral health ... Here's what this means for [your industry]",
+      "categories": [
+        "HealthTech"
+      ]
     },
     {
-      "title": "Why 88% of Digital Transformation Strategies Fail",
+      "title": "An AI Reckoning for HR: Transform or Fade Away",
+      "formats": [
+        "Namejacking"
+      ],
+      "score": 9,
+      "format_score": 6.8,
+      "angle": "[Leader name] just said something about Digital Transformation that every exec should hear",
+      "categories": [
+        "Digital Transformation"
+      ]
+    },
+    {
+      "title": "Legacy systems present modern challenges at the VA",
+      "formats": [
+        "Brandjacking",
+        "Newsjacking",
+        "Namejacking",
+        "Hot Take"
+      ],
+      "score": 9,
+      "format_score": 4.4,
+      "angle": "Breaking: Legacy systems present modern challenges at the VA... Here's what this means for [your industry]",
+      "categories": [
+        "HealthTech"
+      ]
+    },
+    {
+      "title": "Healthcare Workplace Violence Is a Billion-Dollar Crisis; Integrating Scalable I",
+      "formats": [
+        "Namejacking"
+      ],
+      "score": 9,
+      "format_score": 4.4,
+      "angle": "[Leader name] just said something about Healthcare that every exec should hear",
+      "categories": [
+        "Healthcare"
+      ]
+    },
+    {
+      "title": "Healthcare IT work begins at the bedside",
       "formats": [
         "Brandjacking",
         "Newsjacking",
         "Namejacking"
       ],
-      "score": 9,
-      "format_score": 2.5,
-      "angle": "Breaking: Why 88% of Digital Transformation Strategies Fail... Here's what this means for [your industry]",
-      "categories": []
+      "score": 8,
+      "format_score": 3.9,
+      "angle": "Breaking: Healthcare IT work begins at the bedside... Here's what this means for [your industry]",
+      "categories": [
+        "HealthTech"
+      ]
     },
     {
-      "title": "CIOs 2026 Digital Transformation Playbook",
-      "formats": [
-        "Brandjacking",
-        "Newsjacking",
-        "Namejacking",
-        "Hot Take"
-      ],
-      "score": 10,
-      "format_score": 2.8,
-      "angle": "Breaking: CIOs 2026 Digital Transformation Playbook... Here's what this means for [your industry]",
-      "categories": []
-    },
-    {
-      "title": "2026 is the year AI governance broke - Tiffany Masson (75 comments)",
+      "title": "This Week\u2019s Health IT Jobs \u2013 March 25, 2026",
       "formats": [
         "Newsjacking",
-        "Namejacking",
-        "Hot Take"
+        "Namejacking"
       ],
-      "score": 10,
-      "format_score": 2.8,
-      "angle": "Breaking: 2026 is the year AI governance broke - Tiffany Masson (75 co... Here's what this means for [your industry]",
-      "categories": []
+      "score": 7,
+      "format_score": 3.4,
+      "angle": "Breaking: This Week\u2019s Health IT Jobs \u2013 March 25, 2026... Here's what this means for [your industry]",
+      "categories": [
+        "Healthcare"
+      ]
     },
     {
-      "title": "Key Challenges for CIOs in 2026: Strategy, Governance, and AI at Scale",
-      "formats": [
-        "Namejacking",
-        "Hot Take"
-      ],
-      "score": 9,
-      "format_score": 2.5,
-      "angle": "Unpopular opinion: Key Challenges for CIOs in 2026: Strategy, Governa... and why most leaders get this wrong",
-      "categories": []
-    },
-    {
-      "title": "Why 95% of Enterprise AI Projects Fail",
-      "formats": [
-        "Brandjacking",
-        "Newsjacking",
-        "Namejacking",
-        "Hot Take"
-      ],
-      "score": 10,
-      "format_score": 2.8,
-      "angle": "Breaking: Why 95% of Enterprise AI Projects Fail... Here's what this means for [your industry]",
-      "categories": []
-    },
-    {
-      "title": "IDC - CIO readiness for geopolitical disruption",
-      "formats": [
-        "Newsjacking",
-        "Namejacking",
-        "Hot Take"
-      ],
-      "score": 9,
-      "format_score": 2.5,
-      "angle": "Breaking: IDC - CIO readiness for geopolitical disruption... Here's what this means for [your industry]",
-      "categories": []
-    },
-    {
-      "title": "AI Moves Beyond Hype To Drive Real Enterprise Transformation",
+      "title": "Mastercard's Agentic Payments Live in LATAM & the Caribbean",
       "formats": [
         "Brandjacking",
         "Newsjacking",
         "Namejacking"
       ],
-      "score": 9,
-      "format_score": 2.5,
-      "angle": "Breaking: AI Moves Beyond Hype To Drive Real Enterprise Transformation... Here's what this means for [your industry]",
-      "categories": []
+      "score": 8,
+      "format_score": 3.9,
+      "angle": "Breaking: Mastercard's Agentic Payments Live in LATAM & the Caribbean... Here's what this means for [your industry]",
+      "categories": [
+        "FinTech"
+      ]
     },
     {
-      "title": "What Happens When The AI Race Has No Referee",
+      "title": "Stop Wishing Fax Away. Embed Agentic AI and Fix the Outcome.",
       "formats": [
-        "Brandjacking",
         "Newsjacking",
+        "Namejacking",
         "Hot Take"
       ],
-      "score": 9,
-      "format_score": 2.5,
-      "angle": "Breaking: What Happens When The AI Race Has No Referee... Here's what this means for [your industry]",
-      "categories": []
+      "score": 8,
+      "format_score": 3.9,
+      "angle": "Breaking: Stop Wishing Fax Away. Embed Agentic AI and Fix the Outcome.... Here's what this means for [your industry]",
+      "categories": [
+        "Healthcare"
+      ]
+    },
+    {
+      "title": "Heidi Uses AI to Shift Health Care to an Abundance Mentality",
+      "formats": [
+        "Newsjacking",
+        "Namejacking"
+      ],
+      "score": 8,
+      "format_score": 3.9,
+      "angle": "Breaking: Heidi Uses AI to Shift Health Care to an Abundance Mentality... Here's what this means for [your industry]",
+      "categories": [
+        "Healthcare"
+      ]
     }
   ]
 }

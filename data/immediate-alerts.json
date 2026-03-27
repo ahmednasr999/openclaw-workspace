@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-26T14:00:16.441359+02:00",
+  "last_updated": "2026-03-27T06:22:41.849963+02:00",
   "alerts": [
     {
       "type": "gateway_down",
@@ -28,7 +28,35 @@
       "message": "Interview invite from Startup Archive <mike@startuparchive.org>: Sam Altman explains how he decides to invest in a startup after 10\r\n minutes",
       "timestamp": "2026-03-26T14:00:13.387934+02:00",
       "id": "alert-3-140016"
+    },
+    {
+      "type": "interview_detected",
+      "urgency": "critical",
+      "message": "Interview invite from Eva Friday <eva@productschool.com>: =?UTF-8?q?=E2=9A=A0=EF=B8=8F_Your_$2,000_Savings_on_Certification_?=\r\n =?UTF-8?q?=E2=80=93_Limited_Spots_Available?=",
+      "timestamp": "2026-03-26T20:00:13.487371+02:00",
+      "id": "alert-4-200021"
+    },
+    {
+      "type": "interview_detected",
+      "urgency": "critical",
+      "message": "Interview invite from Meet Alfred <help@meetalfred.com>: Subscribe for 3 months, get 3 months free",
+      "timestamp": "2026-03-27T04:00:12.873108+02:00",
+      "id": "alert-5-040016"
+    },
+    {
+      "type": "interview_detected",
+      "urgency": "critical",
+      "message": "Interview invite from \"Jacob from Relay.app\" <jacob@send.relay.app>: How to optimize your AI credits in Relay.app",
+      "timestamp": "2026-03-27T04:00:12.873137+02:00",
+      "id": "alert-6-040016"
+    },
+    {
+      "type": "interview_detected",
+      "urgency": "critical",
+      "message": "Interview invite from Notion Team <team@mail.notion.so>: All-in-one calendar",
+      "timestamp": "2026-03-27T06:22:38.569417+02:00",
+      "id": "alert-7-062241"
     }
   ],
-  "active_count": 4
+  "active_count": 8
 }
