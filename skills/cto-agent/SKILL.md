@@ -129,3 +129,36 @@ Before closing any session, verify eval/checklist.md passes (8/8 items).
 - healthcheck (security audits, hardening)
 - gog (Gmail/Calendar management)
 - clawback (git workflow)
+
+
+---
+
+## Learning Protocol (Non-Negotiable)
+
+### Auto-Capture (Immediate)
+Write to `memory/lessons-learned.md` when:
+- An operation fails (script error, API rejection, timeout)
+- Ahmed or CEO corrects you ("No, that's wrong...", "Actually...")
+- You discover a better approach mid-task
+- An external service behaves unexpectedly
+
+Format:
+```
+## YYYY-MM-DD
+### What Happened
+[Specific example]
+### Why
+[Root cause]
+### Fix
+[What to do differently]
+```
+
+### Pre-Task Review (Before Every Major Action)
+1. Read `memory/lessons-learned.md`
+2. Check if current task matches any past failure pattern
+3. Apply the fix before repeating the mistake
+
+### Weekly Rollup
+- CEO reads all agents' lessons during Sunday strategy sync
+- Patterns that repeat 3+ times get promoted to SKILL.md rules
+- Patterns that affect multiple agents get promoted to AGENTS.md
