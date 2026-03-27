@@ -65,11 +65,14 @@ python3 scripts/linkedin-auto-poster.py --update-url '<POST_URL>' --page-id <pag
 ```
 
 ## Step 4: Report
-Send via Telegram:
+Send via Telegram to the **Content thread (topic 7)**:
+- Use `message` tool with `channel=telegram` and `target=-1003882622947` and set `threadId=7`
 - Title
 - URL (or reason for hold)
 - Score X/13
 - Image: yes/no/degraded
+
+**Critical:** Always specify `threadId=7` (Content thread). Never send to the Jobs thread (topic 6).
 
 ## Error Handling
 - Script handles retries, rewrites, and verification internally

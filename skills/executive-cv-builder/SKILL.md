@@ -49,6 +49,33 @@ Read `eval/post-gen-checks.md` and run the automated post-generation quality che
 
 Read `eval/failure-modes.md` to be aware of common failures and their prevention.
 
+## Step 5.5 — Ontology Graph Update (mandatory)
+
+After PDF is generated, register this application in the knowledge graph:
+
+```bash
+# 1. Create the Document entity (the CV itself)
+python3 /root/.openclaw/workspace/skills/ontology/scripts/ontology.py create \
+  --type Document \
+  --props "{\"title\": \"Ahmed Nasr - [Role] - [Company]\", \"type\": \"cv\", \"path\": \"cvs/Ahmed Nasr - [Role] - [Company].pdf\", \"version\": \"[YYYY-MM-DD]\", \"created_date\": \"[YYYY-MM-DD]\"}"
+
+# 2. Create the Organization entity (if not already in graph)
+python3 /root/.openclaw/workspace/skills/ontology/scripts/ontology.py create \
+  --type Organization \
+  --props "{\"name\": \"[Company]\", \"location\": \"[Location]\"}"
+
+# 3. Create the JobApplication entity
+python3 /root/.openclaw/workspace/skills/ontology/scripts/ontology.py create \
+  --type JobApplication \
+  --props "{\"title\": \"[Role]\", \"company\": \"[Company]\", \"status\": \"applied\", \"date_applied\": \"[YYYY-MM-DD]\", \"fit_score\": \"[X]/100\", \"location\": \"[Location]\", \"notes\": \"ATS: [X]%\"}"
+
+# 4. Link CV to Application (note the IDs returned from steps 1 and 3 above)
+python3 /root/.openclaw/workspace/skills/ontology/scripts/ontology.py relate \
+  --from [job_application_id] --rel used_cv --to [document_id]
+```
+
+**Note:** Use the `id` values returned by each create command for the relate step. If the company already exists in the graph, skip step 2 and use the existing org id for the relate.
+
 ## Step 6 — Handoff Update
 
 Read `templates/handoff-template.md`. If running inside Pipeline 1 with a handoff file, update it per the template.

@@ -1,34 +1,34 @@
 {
   "status": "ok",
-  "scan_time": "2026-03-26T18:00:10.449476+02:00",
-  "total_scanned": 16,
+  "scan_time": "2026-03-26T19:00:20.621272+02:00",
+  "total_scanned": 13,
   "by_category": {
-    "interview_invite": 0,
-    "recruiter_reach": 1,
+    "interview_invite": 1,
+    "recruiter_reach": 0,
     "application_ack": 0,
     "rejection": 0,
     "assessment": 0,
     "follow_up_needed": 0,
-    "other": 15
+    "other": 12
   },
-  "interview_invites": [],
-  "recruiter_messages": [
+  "interview_invites": [
     {
-      "id": "350391",
-      "from": "Ayoub ALAOUI <invitations@linkedin.com>",
-      "subject": "You have an invitation",
-      "date": "Thu, 26 Mar 2026 15:30:34 +0000 (UTC)",
+      "id": "350403",
+      "from": "Eva Friday <eva@productschool.com>",
+      "subject": "=?UTF-8?q?=E2=9A=A0=EF=B8=8F_Your_$2,000_Savings_on_Certification_?=\r\n =?UTF-8?q?=E2=80=93_Limited_Spots_Available?=",
+      "date": "Thu, 26 Mar 2026 16:21:35 +0000",
       "unread": true,
       "priority": "MEDIUM",
       "score": 2,
       "pipeline_match": null
     }
   ],
+  "recruiter_messages": [],
   "application_acks": [],
   "rejections": [],
   "assessments": [],
   "follow_ups_needed": [],
-  "actionable_count": 0,
+  "actionable_count": 1,
   "hot_alerts": [],
   "signals": []
 }

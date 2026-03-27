@@ -1182,3 +1182,10 @@
 
 📋 Actions taken:
 
+🔍 Watchdog v3 - Detect → Fix → Report
+✅ Gateway running (PID: 4097780)
+✅ Disk OK: 48%
+✅ active-tasks.md fresh (22h)
+✅ Jobs data fresh (9h)
+✅ SIE 360 data fresh (18h)
+✅ Pipeline lock active (0m, still valid)

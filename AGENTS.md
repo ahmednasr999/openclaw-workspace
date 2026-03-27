@@ -159,10 +159,39 @@ Before asking user, check:
 ```
 coordination/
 ├── dashboard.json          # Key metrics
-├── pipeline.json           # Job applications
+├── pipeline.json           # Job applications (READ-ONLY export — source of truth is ontology graph)
 ├── content-calendar.json   # LinkedIn content
-└── outreach-queue.json     # Lead outreach
+└── outreach-queue.json     # Lead outreach (READ-ONLY export — source of truth is ontology graph)
 ```
+
+## Ontology Knowledge Graph (Phase 1 — Live)
+**Source of truth for structured agent memory.**
+
+```
+memory/ontology/
+├── graph.jsonl             # Append-only entity + relation store
+└── schema.yaml             # 7 entity types with constraints
+```
+
+**Entity types:** JobApplication, Organization, Person, Outreach, LinkedInPost, Task, Document
+
+**Query examples:**
+```bash
+# All active applications
+python3 skills/ontology/scripts/ontology.py list --type JobApplication
+
+# Only interviews
+python3 skills/ontology/scripts/ontology.py query --type JobApplication --where '{"status": "interview"}'
+
+# High-priority outreach
+python3 skills/ontology/scripts/ontology.py query --type Outreach --where '{"priority": "high"}'
+
+# Add new entity
+python3 skills/ontology/scripts/ontology.py create --type JobApplication --props '{"title":"...","company":"...","status":"applied"}'
+```
+
+**Write rule:** New JobApplications and Outreach entries → write to graph first, then optionally sync to coordination/*.json
+**Phase 2:** Migrate content-calendar.json + update morning briefing to read from graph
 
 ## Context Audit Trail
 
