@@ -31,6 +31,18 @@ jobs_df = scrape_jobs(
 **Script:** `scripts/jobs-source-linkedin-jobspy.py`
 **Reference:** https://github.com/DaKheera47/job-ops
 
+## LinkedIn Engagement - Source Rules (NON-NEGOTIABLE)
+
+**Morning briefing Exa engagement** - uses Exa to find posts by topic/hashtag. Separate system. Untouched.
+
+**Daily comments job (11 AM)** - uses Ahmed-Mac Chrome ONLY to scrape his live LinkedIn feed.
+- NEVER use Exa for the daily comments job
+- NEVER add Exa as a fallback for the daily comments job
+- Source is linkedin.com/feed/ via browser tool (node=Ahmed-Mac)
+- If Ahmed-Mac is offline, skip that day - do NOT fall back to Exa
+
+These are two separate systems. Keep them separate. Always.
+
 ## LinkedIn Engagement Agent
 
 ### Overview
