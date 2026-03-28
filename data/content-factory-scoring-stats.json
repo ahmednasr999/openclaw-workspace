@@ -1,140 +1,115 @@
 {
-  "last_run": "2026-03-27T05:30:11.153362+02:00",
+  "last_run": "2026-03-28T05:30:12.801899+02:00",
   "scored": 11,
-  "gold_count": 10,
+  "gold_count": 8,
   "gold_items": [
     {
-      "title": "Qualified Health raises $125M to scale generative AI in health systems",
+      "title": "Healthcare innovation needs an ecosystem",
+      "formats": [
+        "Brandjacking",
+        "Newsjacking",
+        "Namejacking"
+      ],
+      "score": 7,
+      "format_score": 3.4,
+      "angle": "Breaking: Healthcare innovation needs an ecosystem... Here's what this means for [your industry]",
+      "categories": [
+        "HealthTech"
+      ]
+    },
+    {
+      "title": "The Costs of Missing What We Could Never See",
       "formats": [
         "Newsjacking",
         "Namejacking"
       ],
       "score": 7,
       "format_score": 3.4,
-      "angle": "Breaking: Qualified Health raises $125M to scale generative AI in heal... Here's what this means for [your industry]",
+      "angle": "Breaking: The Costs of Missing What We Could Never See... Here's what this means for [your industry]",
       "categories": [
-        "HealthTech"
+        "Healthcare"
       ]
     },
     {
-      "title": "Vitality acquires Ramp Health to merge AI behavioral health and workplace safety",
-      "formats": [
-        "Brandjacking",
-        "Newsjacking",
-        "Namejacking"
-      ],
-      "score": 8,
-      "format_score": 3.9,
-      "angle": "Breaking: Vitality acquires Ramp Health to merge AI behavioral health ... Here's what this means for [your industry]",
-      "categories": [
-        "HealthTech"
-      ]
-    },
-    {
-      "title": "An AI Reckoning for HR: Transform or Fade Away",
-      "formats": [
-        "Namejacking"
-      ],
-      "score": 9,
-      "format_score": 6.8,
-      "angle": "[Leader name] just said something about Digital Transformation that every exec should hear",
-      "categories": [
-        "Digital Transformation"
-      ]
-    },
-    {
-      "title": "Legacy systems present modern challenges at the VA",
+      "title": "Q&A: Artera's new CTO on bringing Amazon expertise to AI health tech strategy",
       "formats": [
         "Brandjacking",
         "Newsjacking",
         "Namejacking",
         "Hot Take"
       ],
-      "score": 9,
-      "format_score": 4.4,
-      "angle": "Breaking: Legacy systems present modern challenges at the VA... Here's what this means for [your industry]",
+      "score": 8,
+      "format_score": 3.9,
+      "angle": "Breaking: Q&A: Artera's new CTO on bringing Amazon expertise to AI hea... Here's what this means for [your industry]",
       "categories": [
         "HealthTech"
       ]
     },
     {
-      "title": "Healthcare Workplace Violence Is a Billion-Dollar Crisis; Integrating Scalable I",
-      "formats": [
-        "Namejacking"
-      ],
-      "score": 9,
-      "format_score": 4.4,
-      "angle": "[Leader name] just said something about Healthcare that every exec should hear",
-      "categories": [
-        "Healthcare"
-      ]
-    },
-    {
-      "title": "Healthcare IT work begins at the bedside",
+      "title": "Amplifying new voices in healthcare",
       "formats": [
         "Brandjacking",
         "Newsjacking",
         "Namejacking"
       ],
-      "score": 8,
-      "format_score": 3.9,
-      "angle": "Breaking: Healthcare IT work begins at the bedside... Here's what this means for [your industry]",
+      "score": 7,
+      "format_score": 3.4,
+      "angle": "Breaking: Amplifying new voices in healthcare... Here's what this means for [your industry]",
       "categories": [
         "HealthTech"
       ]
     },
     {
-      "title": "This Week\u2019s Health IT Jobs \u2013 March 25, 2026",
+      "title": "Heidi launches a mic for AI scribe \u2013 why?",
       "formats": [
         "Newsjacking",
         "Namejacking"
       ],
       "score": 7,
       "format_score": 3.4,
-      "angle": "Breaking: This Week\u2019s Health IT Jobs \u2013 March 25, 2026... Here's what this means for [your industry]",
+      "angle": "Breaking: Heidi launches a mic for AI scribe \u2013 why?... Here's what this means for [your industry]",
       "categories": [
-        "Healthcare"
+        "HealthTech"
       ]
     },
     {
-      "title": "Mastercard's Agentic Payments Live in LATAM & the Caribbean",
+      "title": "Real Estate Finally Meets the Chain: the Better and Coinbase Partnership",
       "formats": [
         "Brandjacking",
-        "Newsjacking",
-        "Namejacking"
+        "Newsjacking"
       ],
       "score": 8,
       "format_score": 3.9,
-      "angle": "Breaking: Mastercard's Agentic Payments Live in LATAM & the Caribbean... Here's what this means for [your industry]",
+      "angle": "Breaking: Real Estate Finally Meets the Chain: the Better and Coinbase... Here's what this means for [your industry]",
       "categories": [
         "FinTech"
       ]
     },
     {
-      "title": "Stop Wishing Fax Away. Embed Agentic AI and Fix the Outcome.",
+      "title": "Joe Liemandt: Alpha School\u00a0and the Future of Education",
       "formats": [
-        "Newsjacking",
+        "Brandjacking",
         "Namejacking",
         "Hot Take"
       ],
-      "score": 8,
-      "format_score": 3.9,
-      "angle": "Breaking: Stop Wishing Fax Away. Embed Agentic AI and Fix the Outcome.... Here's what this means for [your industry]",
+      "score": 10,
+      "format_score": 4.7,
+      "angle": "What Apple's move teaches us about [transformation/AI/leadership]",
       "categories": [
-        "Healthcare"
+        "Strategy"
       ]
     },
     {
-      "title": "Heidi Uses AI to Shift Health Care to an Abundance Mentality",
+      "title": "Strategy Deployment: Are You Playing Catch Ball or Chucking Rocks?",
       "formats": [
-        "Newsjacking",
-        "Namejacking"
+        "Brandjacking",
+        "Hot Take"
       ],
-      "score": 8,
-      "format_score": 3.9,
-      "angle": "Breaking: Heidi Uses AI to Shift Health Care to an Abundance Mentality... Here's what this means for [your industry]",
+      "score": 9,
+      "format_score": 5.8,
+      "angle": "What Meta's move teaches us about [transformation/AI/leadership]",
       "categories": [
-        "Healthcare"
+        "Operation Excellence"
       ]
     }
   ]

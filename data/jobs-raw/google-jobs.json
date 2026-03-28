@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-source-google",
     "version": "1.0.0",
-    "generated_at": "2026-03-27T06:42:30.938845+02:00",
-    "duration_ms": 23592,
+    "generated_at": "2026-03-28T05:00:49.397317+02:00",
+    "duration_ms": 29306,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "afab5617",
+    "run_id": "c09f4270",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -55,6 +55,24 @@
       "filter_reason": null
     },
     {
+      "id": "google-in-2e9d8b4cf355a65f",
+      "source": "google",
+      "title": "CHIEF, HOSTAGE INCIDENT MANAGEMENT, P5",
+      "company": "United Nations",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=2e9d8b4cf355a65f",
+      "posted": "2026-03-23",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 6,
+      "match_keywords": [
+        "leadership"
+      ],
+      "raw_snippet": "Org. Setting and Reporting\nThe Department of Safety and Security (UNDSS) is responsible for providing leadership, operational support and oversight of the United Nations security management system (UNSMS) globally. As a global leader in security risk management principles, UNDSS enables the safe and effective delivery of United Nations programmes and activities in the most complex and challenging environments, while maximizing precious resources. To this end, the work of the Department is aligne",
+      "relevant": true,
+      "filter_reason": null
+    },
+    {
       "id": "google-in-8ec552ea5f13136a",
       "source": "google",
       "title": "Head of Mortgage (Senior Leadership Role)",
@@ -78,26 +96,6 @@
       "filter_reason": null
     },
     {
-      "id": "google-in-3eeca91e71db785e",
-      "source": "google",
-      "title": "MENA Head of Communications",
-      "company": "Snap Inc.",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=3eeca91e71db785e",
-      "posted": "2026-03-24",
-      "seniority": "Director",
-      "domain_match": false,
-      "keyword_score": 13,
-      "match_keywords": [
-        "head of",
-        "mena",
-        "platform"
-      ],
-      "raw_snippet": "Snap Inc is a technology company. We believe the camera presents the greatest opportunity to improve the way people live and communicate. Snap contributes to human progress by empowering people to express themselves, live in the moment, learn about the world, and have fun together. The Company\u2019s three core products are Snapchat, a visual messaging app that enhances your relationships with friends, family, and the world; Lens Studio, an augmented reality platform that powers AR across Snapchat an",
-      "relevant": true,
-      "filter_reason": null
-    },
-    {
       "id": "google-in-3afdda613c031adb",
       "source": "google",
       "title": "Creative Graphic Designer / Art Director",
@@ -113,67 +111,6 @@
         "director"
       ],
       "raw_snippet": "Job Description:\n\nWe are looking for a highly skilled and experienced Senior Graphic Designer / Art Director to join our creative team. The ideal candidate will have a strong background in design, a keen eye for detail. You will be responsible for creating visually compelling graphics that align with the concerned brands and their marketing objectives.\n\nKey Responsibilities:\n\nConceptualize and design high\\-quality graphics for a variety of mediums, including digital, print, social media, and adv",
-      "relevant": true,
-      "filter_reason": null
-    },
-    {
-      "id": "google-in-5dac7ad2ae793dd6",
-      "source": "google",
-      "title": "Senior Director - Global Tech Partners (GTP)",
-      "company": "Visa",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=5dac7ad2ae793dd6",
-      "posted": "2026-03-24",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 23,
-      "match_keywords": [
-        "payments",
-        "ai",
-        "director"
-      ],
-      "raw_snippet": "**Company Description**  \n\nVisa is a world leader in payments technology, facilitating transactions between consumers, merchants, financial institutions and government entities across more than 200 countries and territories, dedicated to uplifting everyone, everywhere by being the best way to pay and be paid.\n\n\nAt Visa, you'll have the opportunity to create impact at scale \u2014 tackling meaningful challenges, growing your skills and seeing your contributions impact lives around the world. Join Visa",
-      "relevant": true,
-      "filter_reason": null
-    },
-    {
-      "id": "google-in-03e420342f3c4ce9",
-      "source": "google",
-      "title": "Director CoE - Strategy and Execution",
-      "company": "Visa",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=03e420342f3c4ce9",
-      "posted": "2026-03-24",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 23,
-      "match_keywords": [
-        "payments",
-        "ai",
-        "director"
-      ],
-      "raw_snippet": "**Company Description**  \n\nVisa is a world leader in payments technology, facilitating transactions between consumers, merchants, financial institutions and government entities across more than 200 countries and territories, dedicated to uplifting everyone, everywhere by being the best way to pay and be paid.\n\n\nAt Visa, you'll have the opportunity to create impact at scale \u2014 tackling meaningful challenges, growing your skills and seeing your contributions impact lives around the world. Join Visa",
-      "relevant": true,
-      "filter_reason": null
-    },
-    {
-      "id": "google-in-fd87e72cd4640a7b",
-      "source": "google",
-      "title": "Laboratory Director - AtoG Labs",
-      "company": "Medspace Medical Centre",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=fd87e72cd4640a7b",
-      "posted": "2026-03-24",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 20,
-      "match_keywords": [
-        "ai",
-        "director",
-        "uae",
-        "dubai"
-      ],
-      "raw_snippet": "**Laboratory Director \u2013 AtoG Labs****Location:** Dubai, UAE  \n\n**Reports to:** Board of Directors\n\n**About AtoG Labs:**  \n\nAtoG Labs is a high\\-technology molecular diagnostics and genetics laboratory dedicated to advancing personalized medicine in the UAE and beyond. Our multidisciplinary expertise covers molecular biology, genetic sequencing, oncology biomarkers, infectious disease testing, and women\u2019s health diagnostics. We combine innovation with clinical integrity to deliver a new standard ",
       "relevant": true,
       "filter_reason": null
     },
@@ -220,6 +157,134 @@
       "filter_reason": null
     },
     {
+      "id": "google-in-86b8cce4b69ffb05",
+      "source": "google",
+      "title": "Project Controls Director",
+      "company": "Parsons",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=86b8cce4b69ffb05",
+      "posted": "2026-03-27",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 20,
+      "match_keywords": [
+        "director",
+        "leadership",
+        "growth"
+      ],
+      "raw_snippet": "In a world of possibilities, pursue one with endless opportunities. Imagine Next!  \n\n\nAt Parsons, you can imagine a career where you thrive, work with exceptional people, and be yourself. Guided by our leadership vision of valuing people, embracing agility, and fostering growth, we cultivate an innovative culture that empowers you to achieve your full potential. Unleash your talent and redefine what\u2019s possible. **Job Description:**\n\n\nParsons is looking for an amazingly talented **Project Control",
+      "relevant": true,
+      "filter_reason": null
+    },
+    {
+      "id": "google-in-e38c8c03a1fe3986",
+      "source": "google",
+      "title": "Project Controls Director",
+      "company": "WSP",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=e38c8c03a1fe3986",
+      "posted": "2026-03-27",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 20,
+      "match_keywords": [
+        "director",
+        "leadership",
+        "growth"
+      ],
+      "raw_snippet": "As a Project Planning and Controls Director, you will play a key role by further developing and enhancing the\n  \n\nway we plan and deliver our projects. Working closely with our project and business leaders, the successful\n  \n\ncandidate will be responsible for the development and delivery of project planning and controls services and\n  \n\ninitiatives across our impressive portfolio of design and supervision projects.\n\n\n  \n* Strategic leadership, development, and growth of the WSP ME \u2018Project Plann",
+      "relevant": true,
+      "filter_reason": null
+    },
+    {
+      "id": "google-in-a971bfda08408fb6",
+      "source": "google",
+      "title": "Telecommunications Director",
+      "company": "wTe Corporation",
+      "location": "Doha, DAW, QA",
+      "url": "https://qa.indeed.com/viewjob?jk=a971bfda08408fb6",
+      "posted": "2026-03-28",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 36,
+      "match_keywords": [
+        "infrastructure",
+        "enterprise",
+        "executive",
+        "director",
+        "leadership",
+        "integration"
+      ],
+      "raw_snippet": "**Technology Director \\| WTE Corporation**\n\n**Location:** Al Bustan Building, Office 405, Al Sadd, Doha, Qatar\n\n**Position Type:** Full\\-Time / Executive Leadership\n\n**Industry:** Information Technology, Systems Integration \\& Enterprise Solutions\n\n**Position Overview**\n\nWTE Corporation is seeking a visionary and operationally elite **Technology Director** to spearhead our digital infrastructure and innovation roadmap from our Al Sadd headquarters. Located in the heart of Doha\u2019s commercial distr",
+      "relevant": true,
+      "filter_reason": null
+    },
+    {
+      "id": "google-in-fce2a73c979f7594",
+      "source": "google",
+      "title": "Media Director",
+      "company": "Confidential",
+      "location": "Doha, DAW, QA",
+      "url": "https://qa.indeed.com/viewjob?jk=fce2a73c979f7594",
+      "posted": "2026-03-27",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 13,
+      "match_keywords": [
+        "ai",
+        "director"
+      ],
+      "raw_snippet": "Job Opportunity: Media Director\n\n**Location:** Doha, Qatar  \n**Company:** Epsilon Mag Media\n\nAbout Us\n\nEpsilon Mag Media is a leading media and communications company dedicated to delivering innovative content, creative storytelling, and impactful campaigns. We specialize in digital media, publishing, and broadcasting, helping brands and audiences connect through engaging and meaningful experiences. As we expand our presence in Qatar, we are seeking a visionary leader to guide our media strategy",
+      "relevant": true,
+      "filter_reason": null
+    },
+    {
+      "id": "google-in-98572993c6940691",
+      "source": "google",
+      "title": "Technology Solutions Director",
+      "company": "Confidential",
+      "location": "Doha, DAW, QA",
+      "url": "https://qa.indeed.com/viewjob?jk=98572993c6940691",
+      "posted": "2026-03-27",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 50,
+      "match_keywords": [
+        "digital transformation",
+        "operational excellence",
+        "ai",
+        "enterprise",
+        "director",
+        "growth",
+        "integration"
+      ],
+      "raw_snippet": "Job Opportunity: Technology Solutions Director\n\n**Location:** Lusail, Qatar  \n**Company:** Zukytech Solutions\n\nAbout Us\n\nZukytech Solutions is a leading provider of innovative technology services, specializing in digital transformation, enterprise IT solutions, and advanced systems integration. We empower businesses to achieve operational excellence and sustainable growth through cutting\\-edge technology and customer\\-focused strategies. With our expansion in Lusail, we are building a hub for in",
+      "relevant": true,
+      "filter_reason": null
+    },
+    {
+      "id": "google-in-ddf3455d121aa5f6",
+      "source": "google",
+      "title": "Digital Banking Director",
+      "company": "Confidential",
+      "location": "Doha, DAW, QA",
+      "url": "https://qa.indeed.com/viewjob?jk=ddf3455d121aa5f6",
+      "posted": "2026-03-27",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 36,
+      "match_keywords": [
+        "fintech",
+        "digital banking",
+        "mobile",
+        "director",
+        "platform"
+      ],
+      "raw_snippet": "Job Opportunity: Digital Banking Director\n\n**Location:** Doha, Qatar  \n**Company:** Weh Money Digital\n\nAbout Us\n\nWeh Money Digital is a cutting\\-edge fintech company dedicated to transforming the banking experience through innovation, security, and customer\\-centric solutions. We specialize in digital banking platforms, mobile\\-first financial services, and data\\-driven strategies that empower individuals and businesses to manage their money seamlessly.\n\nRole Overview\n\nWe are seeking a **Digital",
+      "relevant": true,
+      "filter_reason": null
+    },
+    {
       "id": "google-in-0dd6f4e64ddb30e5",
       "source": "google",
       "title": "Head CCM Services and Lead BCO, Qatar",
@@ -256,13 +321,95 @@
       "raw_snippet": "The Chief Finance Officer (CFO) is responsible for overseeing company\u2019s financial strategy, risk management, regulatory compliance, and financial planning while ensuring alignment with Qatar Central Bank (QCB) Corporate Governance Guidelines. This role focuses on financial reporting, liquidity management, investment planning, and profitability optimization, ensuring company\u2019s financial health, sustainability, and compliance in the FinTech industry. The CFO collaborates with senior leadership, re",
       "relevant": true,
       "filter_reason": null
+    },
+    {
+      "id": "google-in-81decebfb3f9b887",
+      "source": "google",
+      "title": "Research & Development Director",
+      "company": "Horizon Lab",
+      "location": "Doha, DAW, QA",
+      "url": "https://qa.indeed.com/viewjob?jk=81decebfb3f9b887",
+      "posted": "2026-03-28",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 20,
+      "match_keywords": [
+        "executive",
+        "director",
+        "leadership"
+      ],
+      "raw_snippet": "**Research \\& Development (R\\&D) Director \\| Horizon Lab**\n\n**Location:** Tech 2 Building, Qatar Science \\& Technology Park (QSTP), Doha, Qatar\n\n**Position Type:** Full\\-Time / Executive Leadership\n\n**Industry:** Biotechnology, Applied Sciences \\& Technology Innovation\n\n**Position Overview**\n\nHorizon Lab is seeking a distinguished **Research \\& Development (R\\&D) Director** to lead our scientific innovation and product development programs from our flagship facility in the Qatar Science \\& Techn",
+      "relevant": true,
+      "filter_reason": null
+    },
+    {
+      "id": "google-in-fbf75540f07065f9",
+      "source": "google",
+      "title": "Media Production Director",
+      "company": "Confidential",
+      "location": "Doha, DAW, QA",
+      "url": "https://qa.indeed.com/viewjob?jk=fbf75540f07065f9",
+      "posted": "2026-03-27",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 20,
+      "match_keywords": [
+        "executive",
+        "director",
+        "leadership"
+      ],
+      "raw_snippet": "**Media Production Director \\| Tevelision Media**\n\n**Location:** Al Waab Commercial Complex, Al Rayyan, Qatar\n\n**Position Type:** Full\\-Time / Executive Leadership\n\n**Industry:** Media Production, Broadcasting \\& Digital Content\n\n**Position Overview**\n\nTevelision Media is seeking a visionary **Media Production Director** to lead our creative and technical operations from our Al Waab headquarters. As a cornerstone of the Al Rayyan media landscape, our studio delivers high\\-impact broadcast and di",
+      "relevant": true,
+      "filter_reason": null
+    },
+    {
+      "id": "google-in-3e313ed7687d414d",
+      "source": "google",
+      "title": "E-commerce Director",
+      "company": "Confidential",
+      "location": "Doha, DAW, QA",
+      "url": "https://qa.indeed.com/viewjob?jk=3e313ed7687d414d",
+      "posted": "2026-03-27",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 23,
+      "match_keywords": [
+        "e-commerce",
+        "ai",
+        "director",
+        "platform"
+      ],
+      "raw_snippet": "Job Opportunity: E\\-commerce Director\n\n**Location:** Doha, Qatar  \n**Company:** Cartyzoo E\\-commerce\n\nAbout Us\n\nCartyzoo E\\-commerce is a fast\\-growing online retail platform dedicated to delivering exceptional shopping experiences through innovation, convenience, and customer\\-centric solutions. We specialize in connecting consumers with diverse products across fashion, electronics, lifestyle, and more, while leveraging technology to redefine digital commerce in Qatar.\n\nRole Overview\n\nWe are se",
+      "relevant": true,
+      "filter_reason": null
+    },
+    {
+      "id": "google-in-3d92b7ba5b2c957c",
+      "source": "google",
+      "title": "Engineering Director",
+      "company": "Confidential",
+      "location": "Doha, DAW, QA",
+      "url": "https://qa.indeed.com/viewjob?jk=3d92b7ba5b2c957c",
+      "posted": "2026-03-27",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 23,
+      "match_keywords": [
+        "ai",
+        "infrastructure",
+        "director",
+        "api"
+      ],
+      "raw_snippet": "Job Opportunity: Engineering Director\n\n**Location:** Doha, Qatar  \n**Company:** Kayanac Engineering\n\nAbout Us\n\nKayanac Engineering is a leading engineering and construction solutions provider, delivering innovative projects across infrastructure, energy, and industrial sectors. With a commitment to excellence, sustainability, and cutting\\-edge technology, we are shaping the future of engineering in Qatar and beyond.\n\nRole Overview\n\nWe are seeking an **Engineering Director** to lead our engineeri",
+      "relevant": true,
+      "filter_reason": null
     }
   ],
   "kpi": {
     "searches_run": 30,
-    "results_per_search": 0.63,
-    "unique_jobs": 12,
-    "errors": 18,
+    "results_per_search": 1.0,
+    "unique_jobs": 19,
+    "errors": 15,
     "note": "Using Indeed as proxy for Google Jobs (Google requires JS rendering)"
   },
   "recommendations": []

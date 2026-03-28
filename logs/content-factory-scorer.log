@@ -51,3 +51,22 @@
 [05:30:37]   Gold (High Priority): 10
 [05:30:37]   Errors: 0
 [05:30:37] Stats saved to /root/.openclaw/workspace/data/content-factory-scoring-stats.json
+[05:30:12] === Content Factory Scorer v1.0 === 2026-03-28 05:30 Cairo
+[05:30:13] Found 11 unscored articles
+[05:30:13]   Scoring: Healthcare innovation needs an ecosystem
+[05:30:16]   Scoring: The Costs of Missing What We Could Never See
+[05:30:19]   Scoring: The Right Information at the Right Time for Post-Acute Care
+[05:30:21]   Scoring: Q&A: Artera's new CTO on bringing Amazon expertise to AI health t
+[05:30:23]   Scoring: Value Based Care Benefits of Strong Acute and Post-Acute Care Col
+[05:30:25]   Scoring: Amplifying new voices in healthcare
+[05:30:27]   Scoring: Heidi launches a mic for AI scribe – why?
+[05:30:29]   Scoring: Lumina Health Partners Joins ECG Management Consultants | Elsevie
+[05:30:32]   Scoring: Real Estate Finally Meets the Chain: the Better and Coinbase Part
+[05:30:33]   Scoring: Joe Liemandt: Alpha School and the Future of Education
+[05:30:35]   Scoring: Strategy Deployment: Are You Playing Catch Ball or Chucking Rocks
+[05:30:38] 
+=== Done ===
+[05:30:38]   Scored: 11
+[05:30:38]   Gold (High Priority): 8
+[05:30:38]   Errors: 0
+[05:30:38] Stats saved to /root/.openclaw/workspace/data/content-factory-scoring-stats.json
