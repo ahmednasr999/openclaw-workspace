@@ -2,35 +2,45 @@
   "meta": {
     "agent": "email-agent",
     "version": "3.0.0",
-    "generated_at": "2026-03-28T06:00:40.058290+02:00",
-    "duration_ms": 37592,
+    "generated_at": "2026-03-28T12:01:19.250962+02:00",
+    "duration_ms": 74917,
     "ttl_hours": 4,
     "status": "success",
     "error": null,
-    "run_id": "3a5cccef",
+    "run_id": "fd2d92fc",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
     "status": "ok",
-    "scan_time": "2026-03-28T06:00:03.998253+02:00",
-    "total_scanned": 2,
+    "scan_time": "2026-03-28T12:00:13.148082+02:00",
+    "total_scanned": 19,
     "by_category": {
       "interview_invite": 0,
-      "recruiter_reach": 1,
+      "recruiter_reach": 2,
       "application_ack": 0,
       "rejection": 0,
       "assessment": 0,
       "follow_up_needed": 0,
-      "other": 1
+      "other": 17
     },
     "interview_invites": [],
     "recruiter_messages": [
       {
-        "id": "350627",
-        "from": "Moin Khan <invitations@linkedin.com>",
-        "subject": "=?UTF-8?Q?You_have_an_invitation_=E2=9C=89=EF=B8=8F?=",
-        "date": "Sat, 28 Mar 2026 03:30:57 +0000 (UTC)",
+        "id": "350646",
+        "from": "Naukrigulf <info@naukrigulf.com>",
+        "subject": "Jobseeker Oasis March 2026",
+        "date": "Sat, 28 Mar 2026 12:39:43 +0530 (IST)",
+        "unread": true,
+        "priority": "MEDIUM",
+        "score": 2,
+        "pipeline_match": null
+      },
+      {
+        "id": "350650",
+        "from": "\"Akonte Lawson, ACIPM\" <invitations@linkedin.com>",
+        "subject": "You have an invitation",
+        "date": "Sat, 28 Mar 2026 09:30:33 +0000 (UTC)",
         "unread": true,
         "priority": "MEDIUM",
         "score": 2,
@@ -53,25 +63,25 @@
         "requires_assessment": false,
         "recruiter_top_opportunities": [],
         "top_priority": null,
-        "daily_focus": "No actionable emails today - good day to proactively reach out to recruiters or follow up on pending applications in the Gulf region."
+        "daily_focus": "No actionable emails today \u2014 good time to proactively reach out to recruiters or follow up on pending applications."
       }
     }
   },
   "kpi": {
-    "emails_processed": 2,
+    "emails_processed": 19,
     "actionable": 0,
     "interviews_detected": 0,
-    "recruiter_messages": 1,
+    "recruiter_messages": 2,
     "unread_actionable": 0
   },
   "recommendations": [
     {
-      "id": "rec-3a5cccef-0",
+      "id": "rec-fd2d92fc-0",
       "action": "review_and_respond",
-      "target": "1 recruiter message(s)",
+      "target": "2 recruiter message(s)",
       "reason": "Recruiter outreach could lead to opportunities",
       "urgency": "high",
-      "timestamp": "2026-03-28T06:00:40.057946+02:00"
+      "timestamp": "2026-03-28T12:01:19.249525+02:00"
     }
   ]
 }

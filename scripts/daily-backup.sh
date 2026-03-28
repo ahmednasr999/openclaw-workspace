@@ -54,7 +54,7 @@ git commit -m "$COMMIT_MSG" -- config/ scripts/ memory/ data/ logs/ media/ skill
 # ── Push with retry ──
 for attempt in $(seq 1 $MAX_RETRIES); do
     log "Push attempt $attempt/$MAX_RETRIES..."
-    PUSH_OUT=$(git push origin master 2>&1)
+    PUSH_OUT=$(git push origin master:main 2>&1)
     PUSH_EXIT=$?
     
     if [ $PUSH_EXIT -eq 0 ]; then

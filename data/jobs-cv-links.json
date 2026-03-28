@@ -1,0 +1,219 @@
+{
+  "linkedin-li-4363124950": {
+    "job_id": "linkedin-li-4363124950",
+    "rank": 1,
+    "title": "Digital Consulting Director",
+    "company": "AlixPartners",
+    "ats_score": 67,
+    "cv_url": "https://github.com/ahmednasr999/openclaw-workspace/blob/master/cvs/Ahmed%20Nasr%20-%20Digital%20Consulting%20Director%20-%20AlixPartners.pdf",
+    "cv_path": "/root/.openclaw/workspace/cvs/Ahmed Nasr - Digital Consulting Director - AlixPartners.pdf",
+    "generated": true,
+    "fallback": false,
+    "reused": false,
+    "skipped": false,
+    "skip_reason": ""
+  },
+  "linkedin-li-4388054843": {
+    "job_id": "linkedin-li-4388054843",
+    "rank": 2,
+    "title": "Director - IT Business Solutions",
+    "company": "Confidential",
+    "ats_score": 56,
+    "cv_url": "https://github.com/ahmednasr999/openclaw-workspace/blob/master/cvs/Ahmed%20Nasr%20-%20Director%20IT%20Business%20Solutions%20-%20Confidential.pdf",
+    "cv_path": "/root/.openclaw/workspace/cvs/Ahmed Nasr - Director IT Business Solutions - Confidential.pdf",
+    "generated": false,
+    "fallback": false,
+    "reused": true,
+    "skipped": false,
+    "skip_reason": ""
+  },
+  "linkedin-li-4391559082": {
+    "job_id": "linkedin-li-4391559082",
+    "title": "Vice President, Operations APAC-IMEA",
+    "company": "Brink\u2019s Inc",
+    "ats_score": 50,
+    "cv_url": null,
+    "skipped": true,
+    "skip_reason": "ATS 50 < floor 55"
+  },
+  "linkedin-li-4386668927": {
+    "job_id": "linkedin-li-4386668927",
+    "title": "Executive Director, API & Open Banking -Cash and Trade",
+    "company": "First Abu Dhabi Bank (FAB)",
+    "ats_score": 49,
+    "cv_url": null,
+    "skipped": true,
+    "skip_reason": "ATS 49 < floor 55"
+  },
+  "linkedin-li-4391737034": {
+    "job_id": "linkedin-li-4391737034",
+    "title": "Head of Information Technology",
+    "company": "Mark Williams Recruitment",
+    "ats_score": 49,
+    "cv_url": null,
+    "skipped": true,
+    "skip_reason": "ATS 49 < floor 55"
+  },
+  "google-in-98572993c6940691": {
+    "job_id": "google-in-98572993c6940691",
+    "title": "Technology Solutions Director",
+    "company": "Confidential",
+    "ats_score": 46,
+    "cv_url": null,
+    "skipped": true,
+    "skip_reason": "ATS 46 < floor 55"
+  },
+  "google-in-ddf3455d121aa5f6": {
+    "job_id": "google-in-ddf3455d121aa5f6",
+    "title": "Digital Banking Director",
+    "company": "Confidential",
+    "ats_score": 45,
+    "cv_url": null,
+    "skipped": true,
+    "skip_reason": "ATS 45 < floor 55"
+  },
+  "linkedin-li-4390541673": {
+    "job_id": "linkedin-li-4390541673",
+    "title": "Chief Technology Officer",
+    "company": "City School Holdings International",
+    "ats_score": 39,
+    "cv_url": null,
+    "skipped": true,
+    "skip_reason": "ATS 39 < floor 55"
+  },
+  "linkedin-li-4392274183": {
+    "job_id": "linkedin-li-4392274183",
+    "title": "VP, Client Service Engineering - GTB Stream",
+    "company": "First Abu Dhabi Bank (FAB)",
+    "ats_score": 38,
+    "cv_url": null,
+    "skipped": true,
+    "skip_reason": "ATS 38 < floor 55"
+  },
+  "google-in-a971bfda08408fb6": {
+    "job_id": "google-in-a971bfda08408fb6",
+    "title": "Telecommunications Director",
+    "company": "wTe Corporation",
+    "ats_score": 35,
+    "cv_url": null,
+    "skipped": true,
+    "skip_reason": "ATS 35 < floor 55"
+  },
+  "linkedin-li-4388077102": {
+    "job_id": "linkedin-li-4388077102",
+    "title": "VP - Digital Trade Solutions",
+    "company": "Confidential",
+    "ats_score": 33,
+    "cv_url": null,
+    "skipped": true,
+    "skip_reason": "ATS 33 < floor 55"
+  },
+  "linkedin-li-4389747493": {
+    "job_id": "linkedin-li-4389747493",
+    "title": "IT & Systems Director",
+    "company": "Copper Beech",
+    "ats_score": 31,
+    "cv_url": null,
+    "skipped": true,
+    "skip_reason": "ATS 31 < floor 55"
+  },
+  "linkedin-li-4300160652": {
+    "job_id": "linkedin-li-4300160652",
+    "title": "Head of Enterprise Data Platforms",
+    "company": "First Abu Dhabi Bank (FAB)",
+    "ats_score": 31,
+    "cv_url": null,
+    "skipped": true,
+    "skip_reason": "ATS 31 < floor 55"
+  },
+  "linkedin-li-4389435755": {
+    "job_id": "linkedin-li-4389435755",
+    "title": "Senior Director, Operations Excellence",
+    "company": "Brink\u2019s Inc",
+    "ats_score": 29,
+    "cv_url": null,
+    "skipped": true,
+    "skip_reason": "ATS 29 < floor 55"
+  },
+  "linkedin-li-4380690535": {
+    "job_id": "linkedin-li-4380690535",
+    "title": "Principal - Digital Delivery & Transformation-Dubai, UAE",
+    "company": "Cygnify",
+    "ats_score": 27,
+    "cv_url": null,
+    "skipped": true,
+    "skip_reason": "ATS 27 < floor 55"
+  },
+  "google-in-2975f885cb7563bc": {
+    "job_id": "google-in-2975f885cb7563bc",
+    "title": "Chief Operations Officer (COO) - Telecommunications | Saudi Arabia",
+    "company": "Rawaj - Human Capital Management",
+    "ats_score": 26,
+    "cv_url": null,
+    "skipped": true,
+    "skip_reason": "ATS 26 < floor 55"
+  },
+  "linkedin-li-4353216059": {
+    "job_id": "linkedin-li-4353216059",
+    "title": "Enterprise Programs Director",
+    "company": "Aspen Technology",
+    "ats_score": 26,
+    "cv_url": null,
+    "skipped": true,
+    "skip_reason": "ATS 26 < floor 55"
+  },
+  "linkedin-li-4387291674": {
+    "job_id": "linkedin-li-4387291674",
+    "title": "Senior Program Director (Infrastructure and Transportation)",
+    "company": "Parsons Corporation",
+    "ats_score": 22,
+    "cv_url": null,
+    "skipped": true,
+    "skip_reason": "ATS 22 < floor 55"
+  },
+  "linkedin-li-4389492499": {
+    "job_id": "linkedin-li-4389492499",
+    "title": "Digital Platforms & Systems Director",
+    "company": "Confidential",
+    "ats_score": 20,
+    "cv_url": null,
+    "skipped": true,
+    "skip_reason": "ATS 20 < floor 55"
+  },
+  "linkedin-li-4392260680": {
+    "job_id": "linkedin-li-4392260680",
+    "title": "Chief of Staff",
+    "company": "Confidential",
+    "ats_score": 20,
+    "cv_url": null,
+    "skipped": true,
+    "skip_reason": "ATS 20 < floor 55"
+  },
+  "linkedin-li-4390039717": {
+    "job_id": "linkedin-li-4390039717",
+    "title": "Chief of Staff",
+    "company": "Peko",
+    "ats_score": 17,
+    "cv_url": null,
+    "skipped": true,
+    "skip_reason": "ATS 17 < floor 55"
+  },
+  "linkedin-li-4390432191": {
+    "job_id": "linkedin-li-4390432191",
+    "title": "Director of Operations",
+    "company": "Kingston Stanley",
+    "ats_score": 5,
+    "cv_url": null,
+    "skipped": true,
+    "skip_reason": "ATS 5 < floor 55"
+  },
+  "linkedin-li-4391559373": {
+    "job_id": "linkedin-li-4391559373",
+    "title": "Head of Operations",
+    "company": "GRG",
+    "ats_score": 5,
+    "cv_url": null,
+    "skipped": true,
+    "skip_reason": "ATS 5 < floor 55"
+  }
+}

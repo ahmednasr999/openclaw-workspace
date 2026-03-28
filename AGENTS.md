@@ -4,17 +4,45 @@
 
 ---
 
-## Sub-Agents
+## C-Suite Agents (Live — Deployed 2026-03-27)
 
-| Agent | Role | Model | Trigger |
-|-------|------|-------|---------|
-| **Orchestrator** | Task router & coordinator | MiniMax-M2.7 (default), Sonnet 4.6 (content), Opus 4.6 (complex) | User requests |
-| **Chief of Staff (Max)** | Agent coordination, briefs, strategy | Sonnet 4.6 (coordination), Opus 4.6 (complex) | Daily/weekly synthesis |
-| **CV Agent** | Tailored resumes (HTML→PDF) | Opus 4.6 | Job link + description |
-| **Research Agent** | Web research, company/news analysis | MiniMax-M2.7 | Search queries |
-| **Writer Agent** | LinkedIn posts, emails, copy | Sonnet 4.6 | Content requests |
-| **Scheduler Agent** | Cron jobs, reminders | MiniMax-M2.7 | Scheduling tasks |
-| **Content Agent** | LinkedIn content lifecycle: create, publish, engage, learn | Sonnet 4.6 (create/learn), M2.7 (publish/engage) | Friday batch, daily posting, on-demand radar |
+These are **permanent peer agents** on the gateway, each with their own workspace, SOUL.md, session store, and Telegram thread. They are NOT sub-agents spawned by CEO — they run independently.
+
+**Status: ALL DEPLOYED AND LIVE** as of 2026-03-27 21:23 Cairo. Gateway bindings configured, all four responding in their threads. This is NOT aspirational — the agents are running.
+
+| Agent | Role | Thread | Workspace | Model |
+|-------|------|--------|-----------|-------|
+| **CEO (main)** | Strategy, coordination, Ahmed's DM | DM + Topic 10 (🎯 CEO General) | `~/.openclaw/workspace` | Sonnet 4.6 (default), MiniMax-M2.7 (fallback) |
+| **HR Agent** | Jobs, CVs, applications, interviews, outreach | Topic 9 (💼 HR Desk) | `~/.openclaw/workspace-hr` | Sonnet 4.6 (default), MiniMax-M2.7 (fallback) |
+| **CTO Agent** | Infrastructure, scripts, crons, gateway, debugging | Topic 8 (⚙️ CTO Desk) | `~/.openclaw/workspace-cto` | Sonnet 4.6 (default), MiniMax-M2.7 (fallback) |
+| **CMO Agent** | LinkedIn, content calendar, engagement, brand | Topic 7 (📣 CMO Desk) | `~/.openclaw/workspace-cmo` | Sonnet 4.6 (default), MiniMax-M2.7 (fallback) |
+
+### Reporting Chain
+All Chiefs report to CEO via:
+1. Write briefs to `workspace-X/reports/latest.md` after significant tasks
+2. Post alerts to CEO General (topic 10) for escalations
+3. Daily digest to `workspace-X/reports/YYYY-MM-DD.md`
+
+### Routing
+- Topic-based, NOT @mention-based
+- Message in topic 7 → CMO agent handles it
+- Message in topic 8 → CTO agent handles it
+- Message in topic 9 → HR agent handles it
+- DM or topic 10 → CEO (main) handles it
+- Ahmed can talk to any Chief directly in their thread
+
+### Legacy Sub-Agent Roles (Absorbed into C-Suite)
+The following roles from the old structure are now handled by the C-suite agents:
+
+| Old Role | Now Handled By |
+|----------|---------------|
+| Orchestrator | CEO |
+| Chief of Staff (Max) | CEO |
+| CV Agent | HR Agent |
+| Research Agent | CEO (spawns research sub-agents as needed) |
+| Writer Agent | CMO Agent |
+| Scheduler Agent | CEO / CTO Agent |
+| Content Agent | CMO Agent |
 
 ## Task Board Rule (Non-Negotiable - ALL Models, ALL Agents)
 

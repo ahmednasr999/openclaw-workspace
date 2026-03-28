@@ -863,6 +863,17 @@ def cross_reference(pipeline, emails, events, qualified):
                     alerts.append(f"📅 Meeting '{ev['title'][:35]}' matches pipeline company '{co.title()}'")
                 break
 
+    # 2b. Interview prep kit check — flag if prep kit missing for any interview-stage company
+    interview_cos = pipeline.get("interview_list", [])
+    if interview_cos:
+        prep_dir = Path("/root/.openclaw/workspace/docs/interview-prep")
+        prep_dir.mkdir(parents=True, exist_ok=True)
+        for iv in interview_cos:
+            company_slug = re.sub(r'[^\w]', '-', iv.get("company", "")).strip("-").lower()[:20]
+            existing = list(prep_dir.glob(f"*{iv.get('company','')[:10]}*.md")) if iv.get("company") else []
+            if not existing:
+                alerts.append(f"🎯 No interview prep kit for {iv.get('company','')} ({iv.get('role','')}) — run: python3 scripts/jobs-interview-prep.py --all-interviews")
+
     # 3. New scanner pick at company where already applied
     scanner_companies = set()
     for j in (qualified or []):
@@ -917,13 +928,13 @@ def create_notion_briefing(date_str, date_display, pipeline, scanner_meta, quali
                 if e.code in (429, 502, 503) and attempt < retries - 1:
                     wait = 2 ** attempt  # 1s, 2s, 4s
                     log(f"  Notion API {e.code} - retry {attempt+1}/{retries} in {wait}s")
-                    time.sleep(wait)
+                    _time.sleep(wait)
                 else:
                     raise
 
     def rt(text):
         """Rich text helper - auto-links URLs so they're clickable in Notion."""
-        text = str(text)[:2000]
+        text = str(text)[:2000]  # Notion rich_text content limit per segment is 2000
         # Split text on URLs and create linked segments
         url_pattern = re.compile(r'(https?://[^\s\])<>]+)')
         parts = url_pattern.split(text)
@@ -986,8 +997,7 @@ def create_notion_briefing(date_str, date_display, pipeline, scanner_meta, quali
     if qualified:
         apply_count = len([j for j in qualified if j.get("career_verdict") == "APPLY" or (not j.get("career_verdict") and j.get("ats_score", 0) >= 50)])
         summary_parts.append(f"{len(qualified)} scanned ({apply_count} genuine fits)")
-    if p["stale"]:
-        summary_parts.append(f"{p['stale']} stale")
+    # Stale count removed from summary - LinkedIn applications have no follow-up channel
     # Guard against content_cal being None (Notion API failure)
     if content_cal is None:
         content_cal = {"scheduled": 0, "drafted": 0, "posted": 0, "ideas": 0, "today_post": None,
@@ -1022,8 +1032,7 @@ def create_notion_briefing(date_str, date_display, pipeline, scanner_meta, quali
             top = apply_jobs[0]
             url = top.get("url", "")
             actions.append(f"Apply to {len(apply_jobs)} career fits (top: {top.get('title','')[:30]} @ {top.get('company','')[:20]}) {url}")
-    if p["overdue"]:
-        actions.append(f"Follow up {min(5, len(p['overdue']))} stale applications - {pipeline_db_url}")
+    # Stale follow-ups removed - applied via LinkedIn so no direct follow-up channel
     if content_cal.get("today_post") and content_cal["today_post"].get("status") != "Posted":
         actions.append(f"Publish: \"{content_cal['today_post'].get('title', '')[:30]}\"")
     if content_cal.get("drafted", 0) == 0:
@@ -1048,17 +1057,14 @@ def create_notion_briefing(date_str, date_display, pipeline, scanner_meta, quali
 
     # ==================== PIPELINE ====================
     add_heading("📊 Pipeline")
-    stale_pct = int(p['stale'] / max(p['total_applications'], 1) * 100)
     response_rate = p['interviews'] / max(p['total_applications'], 1) * 100
-    add_para(f"{p['total_applications']} total | {p['applied']} applied | {p['interviews']} interviews | {p['stale']} stale ({stale_pct}%) | Response: {response_rate:.1f}%")
+    add_para(f"{p['total_applications']} total | {p['applied']} applied | {p['interviews']} interviews | Response rate: {response_rate:.1f}%")
 
     if p["interview_list"]:
         for iv in p["interview_list"]:
             add_bullet(f"🎯 {iv['company']} - {iv['role']} ({iv['stage']})")
 
-    if p["overdue"]:
-        stale_items = [f"{'🔴' if o['days'] >= 21 else '🟡'} {o['company']} - {o['role']} ({o['days']}d)" for o in p["overdue"][:10]]
-        add_toggle(f"⏰ {len(p['overdue'])} follow-ups overdue (oldest: {p['overdue'][0]['days']}d)", stale_items)
+    # Stale follow-up toggle removed - LinkedIn applications have no direct follow-up channel
 
     if notion_changes:
         change_items = [f"{c['company']}: {c.get('old','?')} → {c.get('new','?')}" for c in notion_changes[:5]]
@@ -1093,25 +1099,71 @@ def create_notion_briefing(date_str, date_display, pipeline, scanner_meta, quali
 
     # Dedup info
     _deduped_count = len([j for j in qualified if j.get("_deduped")]) if qualified else 0
-    _new_submit = [j for j in _submit_jobs if j.get('url', '') not in [q.get('url', '_') for q in (cross_refs or {}).get('applied_urls', [])]]
+    _new_submit = _submit_jobs  # cross_refs is a list of strings, not a dict
 
-    # Summary line
+    # ---- Scanner Health Block ----
     if scanner_meta:
-        total = scanner_meta.get("total_found", 0)
-        src = scanner_meta.get("source_status", {})
-        src_str = " | ".join(f"{n}:{s}" for n, s in src.items()) if src else "LinkedIn, Indeed, Google"
-        freshness = "fresh" if scanner_age == 0 else f"{scanner_age}d old" if scanner_age else ""
-        add_para(f"Scanned: {total} raw | {_total_reviewed} reviewed | {len(_submit_jobs)} SUBMIT | {len(_review_jobs)} REVIEW | {_skip_count} SKIP | {freshness}")
+        _sm_total = scanner_meta.get("total_found", 0)
+        _sm_searches = scanner_meta.get("total_searches", 0)
+        _sm_countries = scanner_meta.get("countries", [])
+        _sm_sources = scanner_meta.get("sources", [])
+        _sm_source_status = scanner_meta.get("source_status", {})
+        _sm_titles = scanner_meta.get("search_terms", scanner_meta.get("titles", []))
+        _sm_freshness = "fresh" if scanner_age == 0 else f"{scanner_age}d old" if scanner_age else ""
+
+        # Applied to date count from pipeline
+        _applied_to_date = p.get("applied", 0) + p.get("interviews", 0)
+
+        # Source health line
+        if _sm_source_status:
+            _src_parts = []
+            for src_name, src_stat in _sm_source_status.items():
+                _src_parts.append(f"{src_name}: {src_stat}")
+            _src_line = " | ".join(_src_parts)
+        elif _sm_sources:
+            _src_line = " | ".join(f"{s} ✅" for s in _sm_sources)
+        else:
+            _src_line = "LinkedIn ✅ | Indeed ✅"
+
+        add_para(f"🔍 Scanned: {_sm_total} raw → {len(_submit_jobs)} SUBMIT | {len(_review_jobs)} REVIEW | {_skip_count} SKIP | {_sm_freshness}")
+        add_para(f"📋 Applied to date: {_applied_to_date} | Searches run: {_sm_searches} | Countries: {len(_sm_countries)} ({', '.join(_sm_countries[:6])})")
+        # Source health
+        _src_health_items = []
+        for src_name, src_stat in (_sm_source_status.items() if _sm_source_status else {s: '✅' for s in _sm_sources}.items()):
+            status_icon = "✅" if "✅" in str(src_stat) or str(src_stat).strip() == "✅" else "⚠️"
+            _src_health_items.append(f"{status_icon} {src_name}: {src_stat}")
+        if _src_health_items:
+            add_toggle(f"📡 Sources ({len(_src_health_items)} active)", _src_health_items)
+        # Titles covered
+        if _sm_titles:
+            add_toggle(f"🏷️ Titles covered ({len(_sm_titles)})", [f"• {t}" for t in _sm_titles])
+        elif _sm_searches:
+            add_para(f"🏷️ {_sm_searches} search queries executed across {len(_sm_countries)} countries")
     else:
         add_para(f"Reviewed: {_total_reviewed} | {len(_submit_jobs)} SUBMIT | {len(_review_jobs)} REVIEW | {_skip_count} SKIP")
 
-    # Dedup status
-    if qualified is not None:
-        dedup_removed = len([j for j in (qualified or [])]) if qualified else 0
-        genuinely_new = len(qualified) if qualified else 0
-        add_para(f"After Notion dedup: {genuinely_new} genuinely new SUBMIT jobs (rest already tracked)")
+    # Load CV links generated by jobs-cv-autogen.py
+    _cv_links = {}
+    _cv_links_file = Path("/root/.openclaw/workspace/data/jobs-cv-links.json")
+    if _cv_links_file.exists():
+        try:
+            with open(_cv_links_file) as _f:
+                _cv_links = json.load(_f)
+        except Exception:
+            pass
 
-    def _format_job_line(j):
+    # Load cover letter links generated by jobs-coverletter-autogen.py
+    _cover_links = {}
+    _cover_links_file = Path("/root/.openclaw/workspace/data/jobs-cover-links.json")
+    if _cover_links_file.exists():
+        try:
+            with open(_cover_links_file) as _f:
+                _cover_links = json.load(_f)
+        except Exception:
+            pass
+
+    def _format_job_lines(j, rank: int = None):
+        """Return a list of lines for a job — each will become its own Notion bullet."""
         title = j.get("title", "?")[:45]
         company = j.get("company", "")[:22]
         ats = j.get("ats_score", 0)
@@ -1119,6 +1171,9 @@ def create_notion_briefing(date_str, date_display, pipeline, scanner_meta, quali
         url = j.get("url", "")
         posted = j.get("posted", "")
         first_seen = j.get("first_seen", "")
+        job_id = j.get("id", "")
+        reason = j.get("sonnet_reason", "") or j.get("verdict_reason", "")
+        override_flag = " ⚡" if j.get("sonnet_overrode_m2") else ""
         freshness = ""
         if first_seen == today_str:
             freshness = "🆕 "
@@ -1134,18 +1189,53 @@ def create_notion_briefing(date_str, date_display, pipeline, scanner_meta, quali
                     freshness = f"🕐{days_old}d "
             except Exception:
                 pass
-        line = f"{freshness}ATS:{ats} | {title} @ {company} | {loc}"
+
+        rank_prefix = f"#{rank} " if rank is not None else ""
+        lines = [f"{rank_prefix}{freshness}ATS:{ats} | {title} @ {company} | {loc}{override_flag}"]
         if url:
-            line += f" | {url}"
-        return line
+            lines.append(f"  → 🔗 Apply: {url}")
+        if reason:
+            lines.append(f"  └ {reason[:120]}")
+
+        # CV link from autogen — always its own bullet so it's never truncated
+        cv_info = _cv_links.get(job_id, {})
+        cv_url = cv_info.get("cv_url", "")
+        if cv_url:
+            if cv_info.get("generated"):
+                lines.append(f"  → 📄 CV (Opus draft): {cv_url}")
+            elif cv_info.get("reused"):
+                lines.append(f"  → 📄 CV (existing): {cv_url}")
+            elif cv_info.get("fallback"):
+                lines.append(f"  → 📄 CV (closest match): {cv_url}")
+
+        # Cover letter link
+        cover_info = _cover_links.get(job_id, {})
+        cover_url = cover_info.get("cover_url", "")
+        if cover_url:
+            label = "existing" if cover_info.get("reused") else "draft"
+            lines.append(f"  → ✉️ Cover ({label}): {cover_url}")
+        return lines
+
+    def _format_job_line(j, rank: int = None):
+        """Single-string version for use in toggles (limited context)."""
+        lines = _format_job_lines(j, rank)
+        return " | ".join(l.strip() for l in lines)
+
+    def add_job_bullets(j, rank: int = None):
+        """Emit each sub-line of a job as its own bullet — ensures CV links are never truncated."""
+        for line in _format_job_lines(j, rank):
+            add_bullet(line)
 
     # Split by freshness
     today_str = datetime.now(cairo).strftime("%Y-%m-%d")
     yesterday_str = (datetime.now(cairo) - timedelta(days=1)).strftime("%Y-%m-%d")
 
-    # SUBMIT section - split by fresh vs older
+    # SUBMIT section — ranked, numbered, with CV links
     if _submit_jobs:
-        _submit_sorted = sorted(_submit_jobs, key=lambda x: x.get("ats_score", 0), reverse=True)
+        _submit_sorted = sorted(
+            _submit_jobs,
+            key=lambda x: (x.get("sonnet_rank") or 99, -(x.get("ats_score") or 0))
+        )
         _fresh_submit = [j for j in _submit_sorted if j.get("first_seen", "") >= yesterday_str or j.get("posted", "") >= yesterday_str]
         _older_submit = [j for j in _submit_sorted if j not in _fresh_submit]
 
@@ -1153,31 +1243,32 @@ def create_notion_briefing(date_str, date_display, pipeline, scanner_meta, quali
 
         if _fresh_submit:
             add_para(f"🆕 {len(_fresh_submit)} fresh (posted/seen in last 48h):")
-            for j in _fresh_submit[:5]:
-                add_bullet(_format_job_line(j))
+            for i, j in enumerate(_fresh_submit[:5], 1):
+                add_job_bullets(j, rank=i)
             if len(_fresh_submit) > 5:
-                more = [_format_job_line(j) for j in _fresh_submit[5:]]
+                more = [_format_job_line(j, rank=i+5) for i, j in enumerate(_fresh_submit[5:])]
                 add_toggle(f"📋 {len(_fresh_submit) - 5} more fresh SUBMIT...", more)
 
         if _older_submit:
-            older_items = [_format_job_line(j) for j in _older_submit]
+            base_rank = len(_fresh_submit) + 1
+            older_items = [_format_job_line(j, rank=base_rank+i) for i, j in enumerate(_older_submit)]
             add_toggle(f"📌 {len(_older_submit)} still open (posted 2+ days ago)", older_items)
 
         if not _fresh_submit:
             add_para("No fresh SUBMIT jobs today - all are older postings still open")
-            for j in _submit_sorted[:5]:
-                add_bullet(_format_job_line(j))
+            for i, j in enumerate(_submit_sorted[:5], 1):
+                add_job_bullets(j, rank=i)
             if len(_submit_sorted) > 5:
-                more = [_format_job_line(j) for j in _submit_sorted[5:]]
+                more = [_format_job_line(j, rank=i+5) for i, j in enumerate(_submit_sorted[5:])]
                 add_toggle(f"📋 {len(_submit_sorted) - 5} more SUBMIT jobs...", more)
 
-    # REVIEW section - collapsed
+    # REVIEW section — collapsed, no CV links (review only)
     if _review_jobs:
         _review_sorted = sorted(_review_jobs, key=lambda x: x.get("ats_score", 0), reverse=True)
         _fresh_review = [j for j in _review_sorted if j.get("first_seen", "") >= yesterday_str or j.get("posted", "") >= yesterday_str]
         review_items = [_format_job_line(j) for j in _review_sorted]
         fresh_note = f" | {len(_fresh_review)} fresh" if _fresh_review else ""
-        add_toggle(f"🟡 REVIEW ({len(_review_jobs)} jobs{fresh_note})", review_items)
+        add_toggle(f"🟡 REVIEW ({len(_review_jobs)} jobs{fresh_note}) — tap to expand", review_items)
 
     # SKIP count
     if _skip_count:
@@ -1434,6 +1525,51 @@ def create_notion_briefing(date_str, date_display, pipeline, scanner_meta, quali
 
     add_divider()
 
+    # ==================== OUTREACH ====================
+    _outreach_path = Path(WORKSPACE) / "data" / "outreach-summary.json"
+    try:
+        with open(_outreach_path) as _of:
+            _outreach = json.load(_of)
+        _odata = _outreach.get("data", {})
+        _this_week = _odata.get("this_week", {})
+        _queue = _odata.get("queue_health", {})
+        _next_actions = _odata.get("next_actions", [])
+        _targets = _odata.get("targets", {})
+
+        _sent = _this_week.get("sent", 0)
+        _accepted = _this_week.get("accepted", 0)
+        _pending = _this_week.get("pending", 0)
+        _overdue = _queue.get("overdue_follow_ups", 0)
+        _follow_up_due = _queue.get("follow_ups_due", 0)
+        _warm = _queue.get("warm_leads", 0)
+
+        _outreach_items = []
+        _outreach_items.append(f"This week: {_sent} sent | {_accepted} accepted | {_pending} pending")
+        if _overdue > 0:
+            _outreach_items.append(f"⚠️ {_overdue} overdue follow-up(s)")
+        if _warm > 0:
+            _outreach_items.append(f"🔥 {_warm} warm lead(s) — respond now")
+        if _targets:
+            _total_targets = _targets.get("total", 0)
+            _contacted = _targets.get("contacted", 0)
+            _connected = _targets.get("connected", 0)
+            _outreach_items.append(f"Network: {_contacted}/{_total_targets} contacted | {_connected} connected")
+        if _next_actions:
+            _action_lines = []
+            for _a in _next_actions[:5]:
+                _name = _a.get("name", "?")
+                _co = _a.get("company", "")
+                _type_action = _a.get("next_action", "?").replace("_", " ")
+                _pri = "🔴" if _a.get("priority") == "high" else "🟡"
+                _action_lines.append(f"{_pri} {_name} @ {_co} → {_type_action}")
+            add_toggle(f"🤝 Outreach | {_sent} sent this week | {_follow_up_due} follow-ups due", _outreach_items + _action_lines)
+        else:
+            add_toggle(f"🤝 Outreach | {_sent} sent this week", _outreach_items if _outreach_items else ["No outreach data"])
+    except Exception as _oe:
+        add_toggle("🤝 Outreach", [f"Data unavailable: {str(_oe)[:60]}"])
+
+    add_divider()
+
     # ==================== TASKS (own section, Decision 6) ====================
     add_heading("\u2705 Tasks")
     overdue_str = f" | \U0001f534 {len(tasks['overdue'])} overdue" if tasks["overdue"] else ""
@@ -1531,7 +1667,7 @@ def create_notion_briefing(date_str, date_display, pipeline, scanner_meta, quali
 
         # Append remaining blocks if any
         if len(blocks) > 100:
-            time.sleep(0.5)
+            _time.sleep(0.5)
             notion_req('PATCH', f'/blocks/{page_id}/children', {"children": blocks[100:]})
 
         log(f"  Notion page created: {page_url}")
@@ -1569,8 +1705,7 @@ def build_telegram_message(date_display, pipeline, scanner_meta, qualified, bord
     urgent_parts = []
     if p["interviews"]:
         urgent_parts.append(f"{p['interviews']} interview(s) active")
-    if p["overdue"]:
-        urgent_parts.append(f"{len(p['overdue'])} stale follow-ups")
+    # Stale follow-ups removed - LinkedIn applications have no direct follow-up channel
     action_emails = [e for e in emails if e.get("priority") == "action"]
     if action_emails:
         urgent_parts.append(f"{len(action_emails)} email(s) need reply")
@@ -1594,16 +1729,26 @@ def build_telegram_message(date_display, pipeline, scanner_meta, qualified, bord
             top_co = top.get("company", "")
             if top_co:
                 top_str += f", {top_co[:15]}"
-            lines.append(f"🔍 {len(apply_jobs)} new fits (top: {top_str})")
+            _sm2 = scanner_meta or {}
+            _fits_searches = _sm2.get("total_searches", "?")
+            _fits_countries = len(_sm2.get("countries", []))
+            lines.append(f"🔍 {len(apply_jobs)} new fits | {_sm2.get('total_found','?')} scanned | {_fits_searches} queries | {_fits_countries} countries (top: {top_str})")
         else:
             lines.append("🔍 No new fits today")
     elif scanner_meta:
-        lines.append("🔍 Scanner ran, no new fits")
+        _sm_total = scanner_meta.get("total_found", 0)
+        _sm_searches = scanner_meta.get("total_searches", 0)
+        _sm_countries = scanner_meta.get("countries", [])
+        _sm_src_status = scanner_meta.get("source_status", {})
+        _bad_sources = [n for n, s in _sm_src_status.items() if "✅" not in str(s)] if _sm_src_status else []
+        _src_health = f" ⚠️ {', '.join(_bad_sources)} down" if _bad_sources else ""
+        lines.append(f"🔍 {_sm_total} scanned | {_sm_searches} queries | {len(_sm_countries)} countries{_src_health} | no new fits")
     else:
         lines.append("🔍 No scanner data")
 
-    # Pipeline snapshot
-    lines.append(f"📊 Pipeline: {p['total_applications']} active, {p['interviews']} interviews")
+    # Pipeline snapshot - applied to date + interviews
+    _applied_to_date = p.get("applied", 0) + p.get("interviews", 0)
+    lines.append(f"📊 Pipeline: {p['total_applications']} tracked | {_applied_to_date} applied | {p['interviews']} interviews")
 
     # Email line
     if emails:

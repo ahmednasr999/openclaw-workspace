@@ -23,14 +23,36 @@ log() {
     echo "[$(date '+%H:%M:%S')] $1" | tee -a "$LOG_FILE"
 }
 
-# Simple lock to prevent overlapping runs
+# Robust lock to prevent overlapping runs
+# Checks: PID alive + process is actually this script + lock age < 90 min
+LOCK_MAX_AGE=5400  # 90 minutes in seconds
 if [ -f "$LOCK_FILE" ]; then
     LOCK_PID=$(cat "$LOCK_FILE" 2>/dev/null || echo "")
+    LOCK_STALE=1  # assume stale until proven active
+
     if [ -n "$LOCK_PID" ] && kill -0 "$LOCK_PID" 2>/dev/null; then
-        log "SKIP: Another pipeline run is active (PID $LOCK_PID)"
-        exit 0
+        # PID exists - verify it's actually our script (not a recycled PID)
+        LOCK_CMD=$(ps -p "$LOCK_PID" -o args= 2>/dev/null || echo "")
+        if echo "$LOCK_CMD" | grep -q "run-briefing-pipeline"; then
+            # Correct process - but check age (stuck runs)
+            LOCK_AGE=$(( $(date +%s) - $(stat -c %Y "$LOCK_FILE" 2>/dev/null || echo "0") ))
+            if [ "$LOCK_AGE" -lt "$LOCK_MAX_AGE" ]; then
+                LOCK_STALE=0
+                log "SKIP: Another pipeline run is active (PID $LOCK_PID, age ${LOCK_AGE}s)"
+                exit 0
+            else
+                log "WARN: Lock held by PID $LOCK_PID for ${LOCK_AGE}s (>${LOCK_MAX_AGE}s), killing stale run"
+                kill "$LOCK_PID" 2>/dev/null || true
+                sleep 2
+                kill -9 "$LOCK_PID" 2>/dev/null || true
+            fi
+        else
+            log "WARN: Stale lock - PID $LOCK_PID is not briefing-pipeline (cmd: ${LOCK_CMD:0:80})"
+        fi
+    else
+        log "WARN: Stale lock - PID $LOCK_PID no longer running"
     fi
-    # Stale lock
+
     rm -f "$LOCK_FILE"
 fi
 echo $$ > "$LOCK_FILE"
@@ -302,13 +324,17 @@ case "$MODE" in
         
         log "--- Phase 4: Push to Notion Pipeline ---"
         run_agent "pipeline-push" "push-submit-to-notion.py" 120 2 || PHASE2_FAILURES="${PHASE2_FAILURES}pipeline-push "
-        
+
+        log "--- Phase 4b: CV Autogen (Opus, budget-capped) ---"
+        run_agent "cv-autogen" "jobs-cv-autogen.py" 7200 1 \
+            || log "⚠️ Phase 4b (CV autogen) failed — briefing will show no CV links"
+
         # Alert on Phase 2+ failures
         if [ -n "$PHASE2_FAILURES" ]; then
             log "🔴 Phase 2+ failures: $PHASE2_FAILURES"
             openclaw message send --channel telegram --to "-1003882622947:10" --message "🔴 Morning Briefing Alert: Phase 2 FAILED after retry: ${PHASE2_FAILURES}. Jobs may be missing from briefing." >> "$LOG_FILE" 2>&1 || true
         fi
-        
+
         # Phase 5: Newsletter REMOVED (2026-03-22) — pam-telegram.py reads fresh data directly
         
         log "--- Phase 6: Outreach Follow-up Tracker ---"

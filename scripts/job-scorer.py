@@ -57,11 +57,17 @@ TIER3_SUPPORTING = {
 ALL_KEYWORDS = {**TIER1_CRITICAL, **TIER2_STRONG, **TIER3_SUPPORTING}
 MAX_KEYWORD_SCORE = sum(ALL_KEYWORDS.values())  # theoretical max
 
-MUST_HAVE = [
-    "digital transformation", "transformation",
-    "project management", "program management", "pmo",
-    "ai", "artificial intelligence",
+# Must-have groups: score if at least 1 from each group is present
+# Each group = one "category" of Ahmed's core skills. Missing entire group = penalty.
+MUST_HAVE_GROUPS = [
+    ["digital transformation", "digital", "transformation", "digitiz", "digitali", "technology transformation"],
+    ["project management", "program management", "pmo", "programme management", "project", "program", "portfolio management"],
+    ["ai", "artificial intelligence", "machine learning", "automation", "data", "analytics", "technology"],
+    ["leadership", "director", "head of", "vp", "vice president", "executive", "chief", "senior"],
 ]
+
+# Flat list for gap reporting only
+MUST_HAVE = [g[0] for g in MUST_HAVE_GROUPS]
 
 SENIORITY_KEYWORDS = [
     "vp", "vice president", "director", "chief", "head of",
@@ -84,6 +90,30 @@ def clean_text(text: str) -> str:
     text = re.sub(r'\s+', ' ', text)
     return text.strip()
 
+# Proximity matching: phrase words within N words of each other
+def phrase_in_text(phrase: str, text: str, window: int = 8) -> bool:
+    """True if exact phrase found OR all words of phrase appear within <window> words of each other."""
+    if phrase in text:
+        return True
+    words = phrase.split()
+    if len(words) == 1:
+        return words[0] in text.split()
+    # Check proximity
+    tokens = text.split()
+    positions = {}
+    for i, tok in enumerate(tokens):
+        for w in words:
+            if tok == w or tok.startswith(w):
+                positions.setdefault(w, []).append(i)
+    if not all(w in positions for w in words):
+        return False
+    # Check if any combination is within the window
+    import itertools
+    for combo in itertools.product(*[positions[w] for w in words]):
+        if max(combo) - min(combo) <= window:
+            return True
+    return False
+
 def calculate_score(job_text: str) -> dict:
     text = clean_text(job_text)
     matched = []
@@ -91,16 +121,18 @@ def calculate_score(job_text: str) -> dict:
     # ── Component 1: Keyword Coverage (0-40) ──
     raw_kw_score = 0
     for kw, weight in ALL_KEYWORDS.items():
-        if kw in text:
+        if phrase_in_text(kw, text):
             raw_kw_score += weight
             matched.append(kw)
     keyword_score = min(40, round(40 * raw_kw_score / MAX_KEYWORD_SCORE * 2))
     # * 2 factor: a good JD matching ~50% of keywords = full 40 pts
 
-    # ── Component 2: Must-Have (0-25) ──
-    must_found = sum(1 for req in MUST_HAVE if req in text)
-    must_score = round(25 * must_found / len(MUST_HAVE))
-    missing_must = [req for req in MUST_HAVE if req not in text]
+    # ── Component 2: Must-Have Groups (0-25) ──
+    # Each group = one skill category. Score if ANY term in group is present.
+    groups_found = [any(phrase_in_text(term, text) for term in group) for group in MUST_HAVE_GROUPS]
+    must_found = sum(groups_found)
+    must_score = round(25 * must_found / len(MUST_HAVE_GROUPS))
+    missing_must = [MUST_HAVE_GROUPS[i][0] for i, found in enumerate(groups_found) if not found]
 
     # ── Component 3: Seniority (0-15) ──
     sen_count = sum(1 for kw in SENIORITY_KEYWORDS if kw in text)
@@ -114,7 +146,7 @@ def calculate_score(job_text: str) -> dict:
         sen_score = 0
 
     # ── Component 4: Domain Specificity (0-20) ──
-    raw_domain = sum(w for kw, w in DOMAIN_KEYWORDS.items() if kw in text)
+    raw_domain = sum(w for kw, w in DOMAIN_KEYWORDS.items() if phrase_in_text(kw, text))
     domain_score = min(20, round(20 * raw_domain / MAX_DOMAIN_SCORE * 2.5))
 
     # ── Total ──

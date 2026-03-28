@@ -1,6 +1,62 @@
 {
-  "generated": "2026-03-27T13:02:23.319933+00:00",
-  "suggestions": [],
+  "generated": "2026-03-28T10:06:30.651726+00:00",
+  "suggestions": [
+    {
+      "name": "Mark Williams-Fenwick",
+      "role": "Sage",
+      "url": "https://www.linkedin.com/in/mark-williams-fenwick-017805142",
+      "company": "Mark Williams Recruitment",
+      "signal_score": 5,
+      "source": "exa_composio",
+      "applied_role": "Head of Information Technology",
+      "applied_date": "2026-03-27",
+      "reason": "You applied for Head of Information Technology at Mark Williams Recruitment"
+    },
+    {
+      "name": "Mark Williams",
+      "role": "Confidential",
+      "url": "https://www.linkedin.com/in/mark-williams-27619646",
+      "company": "Mark Williams Recruitment",
+      "signal_score": 5,
+      "source": "exa_composio",
+      "applied_role": "Head of Information Technology",
+      "applied_date": "2026-03-27",
+      "reason": "You applied for Head of Information Technology at Mark Williams Recruitment"
+    },
+    {
+      "name": "Julie Marie Morrissey",
+      "role": "Senior Consultant, Talent Acquisition",
+      "url": "https://www.linkedin.com/in/julesmccash",
+      "company": "Visa",
+      "signal_score": 30,
+      "source": "exa_composio",
+      "applied_role": "Director CoE - Strategy and Execution",
+      "applied_date": "2026-03-27",
+      "reason": "You applied for Director CoE - Strategy and Execution at Visa"
+    },
+    {
+      "name": "Reece Curtis",
+      "role": "",
+      "url": "https://www.linkedin.com/in/reece-curtis",
+      "company": "Visa",
+      "signal_score": 5,
+      "source": "exa_composio",
+      "applied_role": "Director CoE - Strategy and Execution",
+      "applied_date": "2026-03-27",
+      "reason": "You applied for Director CoE - Strategy and Execution at Visa"
+    },
+    {
+      "name": "Wejdaan Alharbi",
+      "role": "",
+      "url": "https://www.linkedin.com/in/wejdaan-alharbi-8495806b",
+      "company": "Foreground Jeddah",
+      "signal_score": 5,
+      "source": "exa_composio",
+      "applied_role": "Director Digital Transformation",
+      "applied_date": "2026-03-27",
+      "reason": "You applied for Director Digital Transformation at Foreground Jeddah"
+    }
+  ],
   "companies_searched": 10,
   "status": "ok"
 }

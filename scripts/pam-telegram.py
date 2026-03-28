@@ -4,6 +4,13 @@ pam-telegram.py — Sends morning briefing summary to Telegram.
 Reads FRESH pipeline data files directly (not stale newsletter).
 Runs AFTER briefing-agent.py so it can include the Notion URL.
 
+Output format (agreed 2026-03-28):
+  - 🟢 SUBMIT section with per-job lines (ATS%, 🆕 flag, URL, CV link)
+  - 🟡 REVIEW count
+  - Pipeline snapshot, email, calendar
+  - Budget rules block
+  - Notion link
+
 Usage:
   python3 pam-telegram.py              # Send full digest
   python3 pam-telegram.py --dry-run    # Preview without sending
@@ -11,43 +18,42 @@ Usage:
 
 import os
 import sys
-import json, subprocess
+import json
+import subprocess
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
-# Pipeline DB (safe fallback)
-try:
-    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-    import pipeline_db as _pdb
-except ImportError:
-    _pdb = None
-
 WORKSPACE = Path("/root/.openclaw/workspace")
 DATA_DIR = WORKSPACE / "data"
-CHAT_ID = "-1003882622947:10"  # Briefings thread (was 866838380 DM)
+CHAT_ID = "-1003882622947:10"
 CAIRO = timezone(timedelta(hours=2))
+
+# Budget rules (mirrored from jobs-cv-autogen.py)
+MAX_CVS_PER_DAY = 20
+ATS_FLOOR = 55
+CV_REUSE_DAYS = 7
 
 
 def load_json(path, default=None):
     try:
         return json.load(open(path))
     except Exception:
-        return default or {}
+        return default if default is not None else {}
 
 
 def build_message():
-    """Build Telegram summary from fresh pipeline data."""
     today = datetime.now(CAIRO)
-    date_str = today.strftime("%A, %B %d %Y")
     today_iso = today.strftime("%Y-%m-%d")
+    short_date = today.strftime("%a %b %d")
 
-    # Load fresh data
-    system = load_json(DATA_DIR / "system-health.json")
-    jobs = load_json(DATA_DIR / "jobs-summary.json")
-    email = load_json(DATA_DIR / "email-summary.json")
-    content = load_json(DATA_DIR / "content-schedule.json")
-    radar = load_json(DATA_DIR / "comment-radar.json")
-    outreach = load_json(DATA_DIR / "outreach-summary.json")
+    # Load data
+    jobs_raw = load_json(DATA_DIR / "jobs-summary.json")
+    jobs_data = jobs_raw.get("data", {})
+    kpi = jobs_data.get("kpi", jobs_raw.get("kpi", {}))
+    email_raw = load_json(DATA_DIR / "email-summary.json")
+    email_data = email_raw.get("data", email_raw)
+    system_raw = load_json(DATA_DIR / "system-health.json")
+    sys_data = system_raw.get("data", {})
 
     # Calendar
     cal_path = Path(f"/tmp/calendar-events-{today_iso}.json")
@@ -59,149 +65,179 @@ def build_message():
         except Exception:
             pass
 
-    parts = []
-    parts.append(f"Good Morning, {date_str}")
-    parts.append("")
+    # CV links (from jobs-cv-autogen.py)
+    cv_links = load_json(DATA_DIR / "jobs-cv-links.json", {})
 
-    # ── CALLOUT (critical items first) ──
-    critical = []
-    email_data = email.get("data", {})
+    # Pipeline DB
+    try:
+        sys.path.insert(0, str(WORKSPACE / "scripts"))
+        import pipeline_db as _pdb
+        db_funnel = _pdb.get_funnel()
+        db_total = db_funnel.get("_total", 0)
+        db_applied = db_funnel.get("applied", 0)
+        db_interview = db_funnel.get("interview", 0)
+    except Exception:
+        db_total = db_applied = db_interview = 0
+
+    # ── JOBS ──────────────────────────────────────────────────────────────────
+    submit_jobs = jobs_data.get("submit", [])
+    review_jobs = jobs_data.get("review", [])
+
+    # Split by freshness
+    fresh_submit = [j for j in submit_jobs if j.get("first_seen") == today_iso]
+    old_submit = [j for j in submit_jobs if j.get("first_seen") != today_iso]
+
+    # Sort each group by ATS score desc
+    fresh_submit.sort(key=lambda x: x.get("ats_score", 0), reverse=True)
+    old_submit.sort(key=lambda x: x.get("ats_score", 0), reverse=True)
+    ordered_submit = fresh_submit + old_submit
+
+    # Critical alert
     cats = email_data.get("categories", email_data.get("by_category", {}))
-    interviews = cats.get("interview_invite", 0)
-    recruiters = cats.get("recruiter_reach", 0)
-    if interviews and (isinstance(interviews, int) and interviews > 0 or isinstance(interviews, list) and len(interviews) > 0):
-        n_int = interviews if isinstance(interviews, int) else len(interviews)
-        critical.append(f"INTERVIEW: {n_int} invite(s) - check email NOW")
-    sys_data = system.get("data", {})
-    infra = sys_data.get("system", {})
-    gw = sys_data.get("gateway", sys_data.get("system", {}).get("gateway", {}))
-    if isinstance(gw, dict) and gw.get("status") == "down":
-        critical.append("Gateway DOWN")
-    if critical:
-        parts.append("🔴 " + " | ".join(critical))
-        parts.append("")
+    interviews_cat = cats.get("interview_invite", 0)
+    n_int = len(interviews_cat) if isinstance(interviews_cat, list) else (interviews_cat or 0)
 
-    # ── CALENDAR ──
-    if cal_events:
-        parts.append(f"📅 Calendar ({len(cal_events)})")
-        for ev in cal_events[:4]:
-            title = ev.get("title", ev.get("summary", "?"))[:40]
-            start = ev.get("start", "")
-            is_all_day = ev.get("is_all_day", "T" not in str(start))
-            if is_all_day:
-                parts.append(f"  🗓 {title} (all day)")
-            else:
-                t = start.split("T")[-1][:5] if "T" in start else start
-                parts.append(f"  🕐 {t} {title}")
-        parts.append("")
+    lines = []
+    lines.append(f"☀️ AM Brief - {short_date}")
 
-    # ── JOBS ──
-    jobs_data = jobs.get("data", {})
-    kpi = jobs_data.get("kpi", jobs.get("kpi", {}))
-    submit_count = kpi.get("submit_count", len(jobs_data.get("submit", [])))
-    review_count = kpi.get("review_count", len(jobs_data.get("review", [])))
-    reviewed = jobs_data.get("reviewed", "?")
-    total = jobs_data.get("total_candidates", "?")
-    parts.append(f"💼 Jobs: {total} scanned, {reviewed} reviewed -> {submit_count} SUBMIT | {review_count} REVIEW")
+    # Urgent
+    if n_int > 0:
+        lines.append(f"🔴 {n_int} INTERVIEW INVITE(S) - check email NOW")
 
-    # Top SUBMIT picks (up to 3)
-    for j in jobs_data.get("submit", [])[:3]:
-        score = j.get("career_fit_score", "?")
-        title = j.get("title", "?")[:30]
+    lines.append("")
+
+    # ── SUBMIT block ──────────────────────────────────────────────────────────
+    lines.append(f"🟢 SUBMIT ({len(submit_jobs)} jobs)")
+
+    if fresh_submit:
+        lines.append(f"🆕 {len(fresh_submit)} fresh:")
+
+    shown = 0
+    for idx, j in enumerate(ordered_submit[:6], 1):
+        title = j.get("title", "?")[:35]
         company = j.get("company", "?")[:20]
-        parts.append(f"  #{submit_count}. [{score}/10] {title} @ {company}")
+        location = j.get("location", "")
+        ats = j.get("ats_score", 0)
+        url = j.get("url", "")
+        is_new = j.get("first_seen") == today_iso
+        reason = (j.get("verdict_reason") or j.get("sonnet_reason") or "")[:70]
 
-    # If no SUBMIT, show top REVIEW
-    if not jobs_data.get("submit") and jobs_data.get("review"):
-        parts.append("  No SUBMIT - top REVIEW:")
-        for j in jobs_data.get("review", [])[:2]:
-            score = j.get("career_fit_score", "?")
-            title = j.get("title", "?")[:30]
-            company = j.get("company", "?")[:20]
-            parts.append(f"  [{score}/10] {title} @ {company}")
-    parts.append("")
+        # Location short form
+        loc_short = ""
+        if location:
+            for city in ["Dubai", "Abu Dhabi", "Riyadh", "Jeddah", "Doha", "Muscat", "Cairo"]:
+                if city.lower() in location.lower():
+                    loc_short = f" | {city}"
+                    break
+            if not loc_short and location:
+                loc_short = f" | {location[:15]}"
 
-    # ── PIPELINE DB SUMMARY (sourced from SQLite) ────────────────────────────
-    if _pdb:
-        try:
-            db_funnel = _pdb.get_funnel()
-            db_stale = _pdb.get_stale(days=7)
-            db_total = db_funnel.get("_total", 0)
-            db_applied = db_funnel.get("applied", 0)
-            db_interview = db_funnel.get("interview", 0)
-            if db_total > 0:
-                parts.append(
-                    f"🗄 Pipeline DB: {db_total} total | {db_applied} applied | "
-                    f"{db_interview} interview | {len(db_stale)} stale"
-                )
-                parts.append("")
-        except Exception:
-            pass  # DB read failed, silent skip
-    # ─────────────────────────────────────────────────────────────────────────
+        # CV link
+        job_id = j.get("id", "")
+        cv_entry = cv_links.get(job_id, {}) if cv_links else {}
+        cv_url = cv_entry.get("cv_url") or cv_entry.get("github_url") or ""
 
-    # ── EMAIL ──
-    n_int = len(interviews) if isinstance(interviews, list) else interviews
-    n_rec = len(recruiters) if isinstance(recruiters, list) else recruiters
+        new_flag = "🆕 " if is_new else "📌 "
+        lines.append(f"\n#{idx} {new_flag}ATS:{ats}% | {title} @ {company}{loc_short}")
+        if reason:
+            lines.append(f"   └ {reason}")
+        if url:
+            lines.append(f"   → 🔗 Apply: {url}")
+        if cv_url:
+            lines.append(f"   → 📄 CV: {cv_url}")
+        shown += 1
+
+    # Remaining not shown
+    remaining = len(submit_jobs) - shown
+    if remaining > 0:
+        lines.append(f"\n📌 {remaining} more - see Notion")
+
+    lines.append("")
+
+    # ── REVIEW block ──────────────────────────────────────────────────────────
+    fresh_review = [j for j in review_jobs if j.get("first_seen") == today_iso]
+    lines.append(f"🟡 REVIEW ({len(review_jobs)} jobs | {len(fresh_review)} fresh)")
+
+    lines.append("")
+
+    # ── PIPELINE SNAPSHOT ─────────────────────────────────────────────────────
+    if db_total > 0:
+        lines.append(f"📊 Pipeline: {db_total} total | {db_applied} applied | {db_interview} interviews")
+    else:
+        total_cands = jobs_data.get("total_candidates", "?")
+        reviewed = jobs_data.get("reviewed", "?")
+        lines.append(f"🔍 Scanned: {total_cands} | Reviewed: {reviewed}")
+
+    # ── EMAIL ─────────────────────────────────────────────────────────────────
     scanned = email_data.get("total_scanned", email_data.get("scanned_count", 0))
-    if n_int or n_rec:
-        parts.append(f"📧 Email: {scanned} scanned | {n_int} interview | {n_rec} recruiter")
+    recruiters_cat = cats.get("recruiter_reach", 0)
+    n_rec = len(recruiters_cat) if isinstance(recruiters_cat, list) else (recruiters_cat or 0)
+    email_parts = []
+    if n_int:
+        email_parts.append(f"{n_int} interview")
+    if n_rec:
+        email_parts.append(f"{n_rec} recruiter")
+    email_note = f" ({', '.join(email_parts)})" if email_parts else ""
+    lines.append(f"📧 Email: {scanned} scanned{email_note}")
+
+    # ── CALENDAR ──────────────────────────────────────────────────────────────
+    if cal_events:
+        lines.append(f"📅 {len(cal_events)} events today")
+        for ev in cal_events[:3]:
+            title = ev.get("title", ev.get("summary", "?"))[:35]
+            start = ev.get("start", "")
+            t = start.split("T")[-1][:5] if "T" in str(start) else ""
+            lines.append(f"   {t} {title}".strip())
     else:
-        parts.append(f"📧 Email: {scanned} scanned, no urgent items")
-    parts.append("")
+        lines.append("📅 No events today")
 
-    # ── LINKEDIN ──
-    li_post = load_json(DATA_DIR / "linkedin-post.json")
-    if li_post.get("has_post"):
-        topic = li_post.get("post", {}).get("topic", li_post.get("topic", "?"))[:50]
-        parts.append(f"✍️ LinkedIn: Today - {topic}")
-    elif li_post.get("next_scheduled"):
-        ns = li_post.get("next_scheduled", {})
-        parts.append(f"✍️ LinkedIn: Scheduled - {ns.get('title', '?')[:50]}")
+    lines.append("")
+
+    # ── BUDGET RULES ──────────────────────────────────────────────────────────
+    cv_gen_today = _count_cv_gens_today()
+    lines.append("💰 Budget rules locked:")
+    lines.append(f"   Max {MAX_CVS_PER_DAY} Opus CVs/day ({cv_gen_today} used today)")
+    lines.append(f"   ATS >= {ATS_FLOOR} only | same role {CV_REUSE_DAYS}d reuse")
+    lines.append("   404-verified before inclusion")
+
+    lines.append("")
+
+    # ── NOTION LINK ──────────────────────────────────────────────────────────
+    notion_url = find_briefing_url(today_iso)
+    if notion_url:
+        lines.append(f"📋 Full briefing: {notion_url}")
     else:
-        parts.append("✍️ LinkedIn: No post today")
+        lines.append("📋 Full briefing: check Notion")
 
-    # Comment radar
-    cr_posts = radar.get("top_posts", radar.get("data", {}).get("top_posts", []))
-    drafted = sum(1 for p in cr_posts if p.get("draft_comment"))
-    if drafted:
-        parts.append(f"💬 Comment Radar: {drafted} drafts ready")
-    parts.append("")
+    return "\n".join(lines)
 
-    # ── OUTREACH ──
-    out_data = outreach.get("data", {})
-    suggestions = out_data.get("suggestions", [])
-    if suggestions:
-        parts.append(f"🤝 Outreach: {len(suggestions)} new suggestions")
-    parts.append("")
 
-    # ── SYSTEM ──
-    disk = infra.get("disk_usage_pct", "?")
-    ram = infra.get("memory", {}).get("used_pct", "?")
-    agents = sys_data.get("agents", {})
-    healthy = agents.get("healthy_count", "?")
-    total_a = agents.get("total", "?")
-    parts.append(f"📊 System: Disk {disk}% | RAM {ram}% | Agents {healthy}/{total_a}")
-
-    # ── BRIEFING LINK ──
-    parts.append("")
-    parts.append("─────────────────")
-
-    # Find today's briefing URL
-    briefing_url = find_briefing_url(today_iso)
-    if briefing_url:
-        parts.append(f"📋 Full briefing: {briefing_url}")
-    else:
-        parts.append("📋 Full briefing: check Notion")
-
-    return "\n".join(parts)
+def _count_cv_gens_today():
+    """Count CVs generated today (not reused/fallback)."""
+    today = datetime.now(CAIRO).strftime("%Y-%m-%d")
+    log_file = DATA_DIR / "cv-autogen-log.jsonl"
+    if not log_file.exists():
+        return 0
+    count = 0
+    with open(log_file) as f:
+        for line in f:
+            try:
+                entry = json.loads(line)
+                if entry.get("date") == today and entry.get("generated"):
+                    count += 1
+            except Exception:
+                pass
+    return count
 
 
 def find_briefing_url(today_iso):
     """Query Notion for today's briefing page URL."""
-    import urllib.request
-    token = json.load(open(os.path.expanduser("~/.openclaw/workspace/config/notion.json")))["token"]
-    db_id = "3268d599-a162-812d-a59e-e5496dec80e7"
+    import urllib.request, ssl
     try:
+        token = load_json(WORKSPACE / "config/notion.json").get("token", "")
+        if not token:
+            return ""
+        db_id = "3268d599-a162-812d-a59e-e5496dec80e7"
         payload = json.dumps({
             "filter": {"property": "Name", "title": {"contains": today_iso}},
             "page_size": 1
@@ -215,7 +251,6 @@ def find_briefing_url(today_iso):
                 "Notion-Version": "2022-06-28"
             }
         )
-        import ssl
         ctx = ssl.create_default_context()
         with urllib.request.urlopen(req, context=ctx, timeout=10) as resp:
             results = json.loads(resp.read()).get("results", [])
@@ -227,7 +262,6 @@ def find_briefing_url(today_iso):
 
 
 def send_via_openclaw(text):
-    """Send via openclaw message send — replies trigger NASR agent."""
     try:
         result = subprocess.run(
             ["openclaw", "message", "send", "--channel", "telegram",
@@ -247,11 +281,11 @@ if __name__ == "__main__":
 
     text = build_message()
 
-    print("=" * 50)
+    print("=" * 60)
     print("TELEGRAM BRIEFING SUMMARY")
-    print("=" * 50)
+    print("=" * 60)
     print(text)
-    print("=" * 50)
+    print("=" * 60)
     print(f"Length: {len(text)} chars")
 
     if dry_run:

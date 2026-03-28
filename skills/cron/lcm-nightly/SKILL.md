@@ -99,13 +99,13 @@ AND NOT EXISTS (SELECT 1 FROM summary_parents sp WHERE sp.summary_id = s.summary
 AND NOT EXISTS (SELECT 1 FROM summary_parents sp WHERE sp.parent_summary_id = s.summary_id);" 2>/dev/null
 
 echo ""
-echo "=== UNCOMPACTED CONVERSATIONS (50+ messages, 0 summaries) ==="
+echo "=== UNCOMPACTED CONVERSATIONS (30+ messages, 0 summaries) ==="
 sqlite3 /root/.openclaw/lcm.db "
 SELECT c.conversation_id, c.session_id,
   (SELECT COUNT(*) FROM messages WHERE conversation_id = c.conversation_id) as msg_count,
   (SELECT SUM(token_count) FROM messages WHERE conversation_id = c.conversation_id) as total_tokens
 FROM conversations c
-WHERE (SELECT COUNT(*) FROM messages WHERE conversation_id = c.conversation_id) >= 50
+WHERE (SELECT COUNT(*) FROM messages WHERE conversation_id = c.conversation_id) >= 30
 AND (SELECT COUNT(*) FROM summaries WHERE conversation_id = c.conversation_id) = 0
 ORDER BY msg_count DESC
 LIMIT 10;" 2>/dev/null
@@ -205,10 +205,10 @@ STALE CONVERSATIONS: [X] found
 [if X > 0: list top 5 by token count]
 
 TREE HEALTH:
-- Conversations with 0 summaries (50+ msgs): [X]
+- Conversations with 0 summaries (30+ msgs): [X]
 - Conversations with 3+ summaries: [X]
 - True orphaned summaries (disconnected from DAG): [X]
-- Uncompacted tokens (50+ msg convs with 0 summaries): [X]
+- Uncompacted tokens (30+ msg convs with 0 summaries): [X]
 
 ACTIONS TAKEN:
 [list any checkpoint or other actions]
@@ -246,6 +246,36 @@ fi
 
 ---
 
+---
+
+## Step 5.5: Self-Healing — Auto-Compact Flagged Conversations
+
+**Run this BEFORE compiling the report.** If Step 2 found conversations with 30+ messages and 0 summaries, auto-compact them now.
+
+```bash
+echo "=== SELF-HEALING: Running force-compact on uncompacted convos ==="
+cd /root/.openclaw/workspace-cto/scripts && node --experimental-strip-types lcm-force-compact.mjs --mode all 2>&1
+echo "Force-compact exit code: $?"
+```
+
+- If compaction ran successfully → note "Auto-compacted X sessions" in the report under ACTIONS TAKEN
+- If compaction returned 0 candidates → note "No compaction needed"
+- If compaction errored → log the error and continue to report (do not block delivery)
+
+After running, re-check the uncompacted count:
+
+```bash
+sqlite3 /root/.openclaw/lcm.db "
+SELECT COUNT(*) as still_uncompacted
+FROM conversations c
+WHERE (SELECT COUNT(*) FROM messages WHERE conversation_id = c.conversation_id) >= 30
+AND (SELECT COUNT(*) FROM summaries WHERE conversation_id = c.conversation_id) = 0;" 2>/dev/null
+```
+
+Report the before/after counts. Quality gate passes (✅) only if still_uncompacted = 0.
+
+---
+
 ## Error Handling
 - Never delete rows from lcm.db directly
 - Never truncate messages table
@@ -258,4 +288,4 @@ fi
 - WAL file less than 50MB after checkpoint
 - Zero true orphaned summaries (completely disconnected from DAG - no summary_messages, no summary_parents in either direction)
 - At least 1 summary created in the last 7 days
-- No conversation with 50+ messages and 0 summaries (lowered from 100 to catch more)
+- No conversation with 30+ messages and 0 summaries (lowered from 50)

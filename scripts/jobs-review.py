@@ -8,7 +8,7 @@ Writes: data/jobs-summary.json (final output for Brief Me)
 
 Features:
   - Takes top 50 jobs by keyword_score
-  - Uses MiniMax-M2.7 via OpenClaw gateway for LLM review
+  - Uses Sonnet 4.6 via OpenClaw gateway for LLM review
   - Batches all jobs in one prompt
   - Career fit score 1-10 + verdict (SUBMIT/REVIEW/SKIP) + reason
   - Loads past feedback from jobs-outcomes.jsonl to adjust thresholds
@@ -52,10 +52,17 @@ OUTCOMES_FILE = FEEDBACK_DIR / "jobs-outcomes.jsonl"
 
 # OpenClaw gateway for LLM
 GATEWAY_URL = "http://127.0.0.1:18789/v1/chat/completions"
-MODEL = "minimax-portal/MiniMax-M2.7"
+MODEL = "anthropic/claude-sonnet-4-6"  # MANDATORY: Sonnet 4.6 — agreed with Ahmed. DO NOT change to MiniMax or any other model.
+REQUIRED_MODEL_PREFIX = "anthropic/claude-sonnet"  # Guardrail: pipeline aborts if model is changed
+
+# Safety assertion — abort if model was changed from agreed Sonnet
+assert MODEL.startswith(REQUIRED_MODEL_PREFIX), (
+    f"ABORT: jobs-review.py model is '{MODEL}' but must be Sonnet 4.6. "
+    f"Ahmed requires Sonnet review before jobs reach Notion/Telegram."
+)
 
 # Review settings
-TOP_N_JOBS = 300  # Review all candidates (MiniMax-M2.7 is free, parallel batches keep it fast)
+TOP_N_JOBS = 300  # Review all candidates - Sonnet 4.6 for quality verdict before Ahmed sees the list
 DEFAULT_SUBMIT_THRESHOLD = 7
 DEFAULT_REVIEW_THRESHOLD = 5
 
@@ -207,7 +214,7 @@ CANDIDATE PROFILE:
         # Use full JD text if available (from jobs-enrich-jd.py), else fall back to snippet
         description = job.get('jd_text', '') or job.get('raw_snippet', 'N/A')
         desc_label = "Full JD" if job.get('jd_text') else "Snippet"
-        # Send more JD context — MiniMax-M2.7 is free, no reason to cut aggressively
+        # Send full JD context for Sonnet quality review
         max_desc = 2000 if job.get('jd_text') else 200
         nationals_flag = " ⚠️ NATIONALS-ONLY DETECTED" if job.get('nationals_only') else ""
         jobs_text += f"""

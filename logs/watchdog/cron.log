@@ -1544,3 +1544,67 @@
 
 📋 Actions taken:
 
+🔍 Watchdog v3 - Detect → Fix → Report
+✅ Gateway running (PID: 245603)
+✅ Disk OK: 48%
+✅ active-tasks.md fresh (7h)
+✅ Jobs data fresh (2h)
+✅ SIE 360 data fresh (6h)
+✅ Pipeline lock active (0m, still valid)
+🟡 2 crons with issues
+  Re-triggered cron: d1343a4d-61a4-476c-83c5-15724bcce89c
+  Re-triggered cron: f51a7ad3-fe08-4011-b1ff-f6c6720cdd4e
+✅ No pipeline failures today
+✅ RAM OK: 43%
+
+═══════════════════════════════════
+📊 Watchdog v3 Summary
+  Fixes applied: 2
+  Warnings: 1
+  Alerts (need human): 0
+═══════════════════════════════════
+
+📋 Actions taken:
+
+🔍 Watchdog v3 - Detect → Fix → Report
+✅ Gateway running (PID: 245603)
+✅ Disk OK: 48%
+✅ active-tasks.md fresh (10h)
+✅ Jobs data fresh (4h)
+✅ SIE 360 data fresh (8h)
+✅ Pipeline lock active (0m, still valid)
+🟡 1 crons with issues
+  Re-triggered cron: f51a7ad3-fe08-4011-b1ff-f6c6720cdd4e
+✅ No pipeline failures today
+✅ RAM OK: 38%
+
+═══════════════════════════════════
+📊 Watchdog v3 Summary
+  Fixes applied: 1
+  Warnings: 1
+  Alerts (need human): 0
+═══════════════════════════════════
+
+📋 Actions taken:
+
+🔍 Watchdog v3 - Detect → Fix → Report
+✅ Gateway running (PID: 323166)
+✅ Disk OK: 48%
+✅ active-tasks.md fresh (12h)
+✅ Jobs data fresh (6h)
+✅ SIE 360 data fresh (10h)
+✅ Pipeline lock active (0m, still valid)
+🟡 1 crons with issues
+  Re-triggered cron: f51a7ad3-fe08-4011-b1ff-f6c6720cdd4e
+✅ No pipeline failures today
+✅ RAM OK: 46%
+
+═══════════════════════════════════
+📊 Watchdog v3 Summary
+  Fixes applied: 1
+  Warnings: 1
+  Alerts (need human): 0
+═══════════════════════════════════
+
+📋 Actions taken:
+
