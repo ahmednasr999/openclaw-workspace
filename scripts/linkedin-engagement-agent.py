@@ -265,32 +265,110 @@ def discover_posts_via_browser(ctx):
 
     # JS extractor — runs inside the LinkedIn page
     EXTRACTOR_JS = """() => {
-        const posts = [];
+        // LinkedIn 2025+ uses obfuscated class names.
+        // Parse from raw text of [role=listitem] elements instead.
+        const results = [];
         const seen = new Set();
-        document.querySelectorAll('[data-urn]').forEach(el => {
-            const urn = el.getAttribute('data-urn') || '';
-            if (!urn.includes('activity') || seen.has(urn)) return;
-            seen.add(urn);
-            const textEl = el.querySelector('.feed-shared-text, .update-components-text, .break-words');
-            const text = textEl ? textEl.innerText.trim().slice(0, 400) : '';
-            const titleEl = el.querySelector(
-                '.update-components-actor__description, .feed-shared-actor__description'
-            );
-            const title = titleEl ? titleEl.innerText.replace(/\\n+/g, ' ').trim() : '';
-            const nameEl = el.querySelector(
-                '.update-components-actor__name span[aria-hidden="true"], .feed-shared-actor__name'
-            );
-            const author = nameEl ? nameEl.innerText.trim() : '';
-            const reactionEl = el.querySelector('.social-details-social-counts__reactions-count');
-            const reactions = reactionEl ? reactionEl.innerText.trim() : '0';
-            const commentEl = el.querySelector('.social-details-social-counts__comments');
-            const comments = commentEl ? commentEl.innerText.trim() : '0';
-            const url = 'https://www.linkedin.com/feed/update/' + urn + '/';
-            if (text.length > 50) {
-                posts.push({urn, author, title, text, url, reactions, comments});
+
+        // Helper: parse LinkedIn relative time string -> hours ago
+        function parseAge(timeStr) {
+            if (!timeStr) return 9999;
+            const t = timeStr.trim().toLowerCase();
+            const m = t.match(/(\\d+)\\s*([smhdw])/);
+            if (!m) return 9999;
+            const n = parseInt(m[1]);
+            const unit = m[2];
+            if (unit === 's') return 0;
+            if (unit === 'm') return 0;
+            if (unit === 'h') return n;
+            if (unit === 'd') return n * 24;
+            if (unit === 'w') return n * 168;
+            return 9999;
+        }
+
+        document.querySelectorAll('[role=listitem]').forEach(el => {
+            const fullText = el.innerText || '';
+            if (!fullText.includes('Feed post') || fullText.length < 150) return;
+
+            const lines = fullText.split('\\n').map(l => l.trim()).filter(Boolean);
+            const feedIdx = lines.indexOf('Feed post');
+            if (feedIdx < 0) return;
+
+            // Author is 1 line after 'Feed post'
+            const author = lines[feedIdx + 1] || '';
+
+            // Skip promoted ads, job updates, and anniversary posts
+            if (!author || author.length < 3) return;
+            if (lines.some(l => l === 'Promoted' || l.includes('followers') && lines[feedIdx+2] === 'Promoted')) return;
+            const combinedTop = lines.slice(feedIdx, feedIdx+5).join(' ').toLowerCase();
+            if (combinedTop.includes('job update') || combinedTop.includes('started a new position') ||
+                combinedTop.includes('completed') && combinedTop.includes('years') ||
+                combinedTop.includes('anniversary') || combinedTop.includes('top applicant')) return;
+
+            // Author title: next meaningful line
+            const author_title = lines[feedIdx + 2] || '';
+
+            // Timestamp: look for LinkedIn relative time pattern near the author (1s/2m/3h/4d/1w)
+            let posted_age_hours = 9999;
+            for (let i = feedIdx; i < Math.min(feedIdx + 8, lines.length); i++) {
+                const ageMatch = lines[i].match(/^(\\d+[smhdw])$/);
+                if (ageMatch) {
+                    posted_age_hours = parseAge(ageMatch[1]);
+                    break;
+                }
             }
+
+            // Skip posts older than 48h
+            if (posted_age_hours > 48) return;
+
+            // Body: lines after author block with real content
+            const bodyLines = [];
+            let bodyStarted = false;
+            for (let i = feedIdx + 3; i < lines.length; i++) {
+                const l = lines[i];
+                if (l.match(/^\\d+.*reaction|^\\d+.*comment|^Like$|^Comment$|^Repost$|^Send$/i)) break;
+                if (l === 'Like' || l === 'Comment' || l === 'Repost') break;
+                if (l.length > 50) { bodyLines.push(l); bodyStarted = true; }
+                else if (bodyStarted && l.length > 10) bodyLines.push(l);
+                if (bodyLines.join(' ').length > 450) break;
+            }
+            const body = bodyLines.join(' ').slice(0, 450);
+            if (body.length < 40) return;
+
+            // Reactions / comments
+            const reactLine = lines.find(l => l.match(/\\d+.*reaction/i)) || '0';
+            const commLine  = lines.find(l => l.match(/\\d+.*comment/i))  || '0';
+
+            // URL: prefer urn:li:activity or urn:li:ugcPost link
+            let url = '';
+            el.querySelectorAll('a[href]').forEach(a => {
+                const h = a.href || '';
+                if (!url && (h.includes('/feed/update/urn:li:activity') || h.includes('/feed/update/urn:li:ugcPost'))) {
+                    url = h.split('?')[0];
+                }
+            });
+            // Fallback: look for profile links and build from author name if needed
+            if (!url) {
+                const profileLink = el.querySelector('a[href*="/in/"]');
+                if (profileLink) url = profileLink.href.split('?')[0];
+            }
+
+            const key = author + body.slice(0, 50);
+            if (seen.has(key)) return;
+            seen.add(key);
+
+            results.push({
+                author,
+                author_title,
+                snippet: body,
+                reactions: reactLine,
+                comments: commLine,
+                url,
+                posted_age_hours,
+            });
         });
-        return JSON.stringify(posts.slice(0, 15));
+
+        return JSON.stringify(results.slice(0, 20));
     }"""
 
     def browser_call(action, params=None):
@@ -701,11 +779,31 @@ def send_engagement_batch(top5):
         reason  = post.get("reason", "")
         score   = post.get("score", "?")
 
+        age_hours = post.get("posted_age_hours", 0)
+        age_str = ""
+        if age_hours and age_hours < 9999:
+            if age_hours < 1:
+                age_str = " | ⏱ <1h ago"
+            elif age_hours < 24:
+                age_str = f" | ⏱ {int(age_hours)}h ago"
+            else:
+                age_str = f" | ⏱ {int(age_hours//24)}d ago"
+
+        # Flag bad URLs
+        has_direct_url = (
+            "feed/update/urn:li:activity" in url
+            or "feed/update/urn:li:ugcPost" in url
+            or "feed/update/urn:li:share" in url
+        ) if url else False
+        url_display = url if url else "⚠️ No direct URL found"
+        if url and not has_direct_url:
+            url_display = f"{url}\n⚠️ This may be a profile/page link, not the post itself"
+
         text = (
-            f"🎯 <b>Post {i} of 5</b>  |  Score: {score}/100\n\n"
+            f"🎯 <b>Post {i} of 5</b>  |  Score: {score}/100{age_str}\n\n"
             f"👤 <b>{author}</b>"
             + (f"\n   {title}" if title else "")
-            + f"\n🔗 {url}\n\n"
+            + f"\n🔗 {url_display}\n\n"
             f"💬 <b>Draft Comment:</b>\n"
             f"<i>{comment}</i>\n\n"
             f"✅ <b>Why:</b> {reason}"
@@ -1030,6 +1128,35 @@ if __name__ == "__main__":
             log.error(f"Could not load posts file: {e}")
             sys.exit(1)
         log.info(f"Loaded {len(raw_posts)} posts for scoring")
+
+        # Pre-filter: drop posts older than 48h based on posted_age_hours field
+        # Also drop posts with no real post URL (page links are useless)
+        def is_valid_post_url(url):
+            if not url:
+                return False
+            # Must be a direct post link, not a company/profile page
+            return (
+                "feed/update/urn:li:activity" in url
+                or "feed/update/urn:li:ugcPost" in url
+                or "feed/update/urn:li:share" in url
+            )
+
+        pre_count = len(raw_posts)
+        raw_posts = [
+            p for p in raw_posts
+            if p.get("posted_age_hours", 0) <= 48  # drop old posts (0 = unknown age, allow through)
+        ]
+        url_filtered = [p for p in raw_posts if is_valid_post_url(p.get("url", ""))]
+        if url_filtered:
+            raw_posts = url_filtered
+            log.info(f"After age+URL filter: {len(raw_posts)}/{pre_count} posts remain (kept only direct post URLs)")
+        else:
+            log.warning(f"After age filter: {len(raw_posts)}/{pre_count} posts remain (no valid post URLs found - all will be shown with caveat)")
+
+        if not raw_posts:
+            log.error("All posts filtered out (too old or bad URLs). Nothing to score.")
+            sys.exit(1)
+
         ctx = load_ahmed_context()
         top5 = score_posts(raw_posts, ctx)
         if not top5:
