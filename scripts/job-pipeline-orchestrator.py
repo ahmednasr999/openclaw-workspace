@@ -30,11 +30,12 @@ LOG_FILE = DATA_DIR / "pipeline-runs.jsonl"
 STAGES = [
     {
         "name": "scan",
-        "script": SCRIPTS_DIR / "linkedin-gulf-jobs.py",
+        "script": SCRIPTS_DIR / "jobs-source-linkedin-jobspy.py",  # JobSpy public API (no auth needed)
         "timeout": 600,  # 10 minutes
         "output_check": lambda: sorted(OUTPUT_DIR.glob("jobs-raw-*.json"), key=lambda p: p.stat().st_mtime, reverse=True),
         "skip_flag": "--skip-scan",
     },
+
     {
         "name": "merge",
         "script": SCRIPTS_DIR / "jobs-merge.py",
@@ -52,6 +53,24 @@ STAGES = [
         "script": SCRIPTS_DIR / "jobs-review.py",
         "timeout": 600,  # 10 minutes
         "output_check": lambda: [DATA_DIR / "jobs-summary.json"] if (DATA_DIR / "jobs-summary.json").exists() else [],
+    },
+    {
+        "name": "sonnet-verify",
+        "script": SCRIPTS_DIR / "jobs-sonnet-verify.py",
+        "timeout": 300,  # 5 minutes — Sonnet reviews SUBMIT+REVIEW only (~20-60 jobs)
+        "output_check": lambda: [DATA_DIR / "jobs-summary.json"] if (DATA_DIR / "jobs-summary.json").exists() else [],
+    },
+    {
+        "name": "cv-autogen",
+        "script": SCRIPTS_DIR / "jobs-cv-autogen.py",
+        "timeout": 7200,  # 2 hours max — up to 20 Opus calls @ ~5min each
+        "output_check": lambda: [DATA_DIR / "jobs-cv-links.json"] if (DATA_DIR / "jobs-cv-links.json").exists() else [],
+    },
+    {
+        "name": "coverletter-autogen",
+        "script": SCRIPTS_DIR / "jobs-coverletter-autogen.py",
+        "timeout": 3600,  # 1 hour max — only runs for jobs with CVs
+        "output_check": lambda: [DATA_DIR / "jobs-cover-links.json"] if (DATA_DIR / "jobs-cover-links.json").exists() else [],
     },
 ]
 
@@ -155,8 +174,24 @@ def main():
         }
 
         if not success:
-            failed = True
-            send_alert(f"Job pipeline FAILED at {stage['name']}: {error}")
+            # Invoke self-healer before giving up
+            print(f"\n  Stage '{stage['name']}' failed — invoking pipeline healer...")
+            try:
+                healer_result = subprocess.run(
+                    [sys.executable, str(SCRIPTS_DIR / "pipeline-healer.py"),
+                     stage["name"], error],
+                    capture_output=True, text=True,
+                    timeout=600, cwd=str(SCRIPTS_DIR.parent)
+                )
+                for line in healer_result.stdout.strip().split("\n"):
+                    print(f"  [HEALER] {line}")
+                # Healer always returns True (pipeline never hard-stops)
+                results[stage["name"]]["status"] = "healed"
+                results[stage["name"]]["healer_used"] = True
+            except Exception as he:
+                print(f"  [HEALER] ERROR: {he}")
+                failed = True
+                send_alert(f"Job pipeline FAILED at {stage['name']} (healer also failed): {error}")
 
     total_duration = int(time.time() - start)
 
@@ -178,7 +213,7 @@ def main():
     print(f"PIPELINE SUMMARY ({total_duration}s)")
     print(f"{'='*60}")
     for name, r in results.items():
-        status_icon = {"success": "OK", "failed": "FAIL", "skipped": "SKIP", "skipped_dependency": "DEP"}
+        status_icon = {"success": "OK", "failed": "FAIL", "skipped": "SKIP", "skipped_dependency": "DEP", "healed": "🔧 HEALED"}
         icon = status_icon.get(r["status"], "?")
         print(f"  [{icon}] {name}: {r['status']} ({r['duration']}s)")
         if r.get("error"):

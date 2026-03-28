@@ -408,13 +408,21 @@ def _discover_via_exa(ctx):
     # Check for Exa credentials
     exa_key = None
     try:
-        # Try reading from environment or config
-        exa_key = os.environ.get("EXA_API_KEY")
-        if not exa_key:
-            firehose_cfg = json.loads((WORKSPACE / "config/firehose.json").read_text())
-            exa_key = firehose_cfg.get("exa_api_key") or firehose_cfg.get("exa", {}).get("api_key")
+        # Try exa.json first (primary config location)
+        exa_key = json.loads((WORKSPACE / "config/exa.json").read_text()).get("api_key")
     except Exception:
         pass
+    if not exa_key:
+        try:
+            exa_key = os.environ.get("EXA_API_KEY")
+        except Exception:
+            pass
+    if not exa_key:
+        try:
+            firehose_cfg = json.loads((WORKSPACE / "config/firehose.json").read_text())
+            exa_key = firehose_cfg.get("exa_api_key") or firehose_cfg.get("exa", {}).get("api_key")
+        except Exception:
+            pass
 
     if not exa_key:
         log.warning("No Exa API key found, falling back to RSS discovery")
@@ -450,6 +458,7 @@ def _discover_via_exa(ctx):
                 headers={
                     "Content-Type": "application/json",
                     "x-api-key": exa_key,
+                    "User-Agent": "Mozilla/5.0 (compatible; EngagementAgent/1.0)",
                 },
                 method="POST",
             )

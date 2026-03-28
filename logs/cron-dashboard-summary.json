@@ -1,36 +1,36 @@
 {
-  "timestamp": "2026-03-28T07:00:22.915371+02:00",
+  "timestamp": "2026-03-28T13:00:23.473070+02:00",
   "total_crons": 25,
   "system_crons": 25,
   "openclaw_crons": 0,
   "notion_created": 0,
   "notion_updated": 0,
   "errors": [
-    "Error creating page for 'cron-watchdog-v3.sh': 401 - {\"object\":\"error\",\"status\":401,\"code\":\"unauthorized\",\"message\":\"API token is invalid.\",\"request_id\":\"c7511b6b-1371-4397-9e5e-3ad36236363c\"}",
-    "Error creating page for 'run-briefing-pipeline.sh': 401 - {\"object\":\"error\",\"status\":401,\"code\":\"unauthorized\",\"message\":\"API token is invalid.\",\"request_id\":\"327124f6-8a44-401e-88a7-0d5c1e1643fa\"}",
-    "Error creating page for 'linkedin-autoresearch.py': 401 - {\"object\":\"error\",\"status\":401,\"code\":\"unauthorized\",\"message\":\"API token is invalid.\",\"request_id\":\"7575047e-0de5-46e9-9d43-61d366ad5e3a\"}",
-    "Error creating page for 'autoresearch-job-review.py': 401 - {\"object\":\"error\",\"status\":401,\"code\":\"unauthorized\",\"message\":\"API token is invalid.\",\"request_id\":\"26fb482f-81db-4832-bccf-1afa79503988\"}",
-    "Error creating page for 'run-briefing-pipeline.sh': 401 - {\"object\":\"error\",\"status\":401,\"code\":\"unauthorized\",\"message\":\"API token is invalid.\",\"request_id\":\"5fbd171e-ebaf-4d80-bdec-3f19ef921d9a\"}",
-    "Error creating page for 'daily-backup.sh': 401 - {\"object\":\"error\",\"status\":401,\"code\":\"unauthorized\",\"message\":\"API token is invalid.\",\"request_id\":\"b5f5280f-0be8-48e7-99bc-4819b04776b9\"}",
-    "Error creating page for 'archive-daily-notes.sh': 401 - {\"object\":\"error\",\"status\":401,\"code\":\"unauthorized\",\"message\":\"API token is invalid.\",\"request_id\":\"ec633e35-b29e-4b12-b94e-2643c443bce2\"}",
-    "Error creating page for 'run-briefing-pipeline.sh': 401 - {\"object\":\"error\",\"status\":401,\"code\":\"unauthorized\",\"message\":\"API token is invalid.\",\"request_id\":\"4ecb16f5-c8cd-4347-8054-8c991efc4830\"}",
-    "Error creating page for 'github-radar.sh': 401 - {\"object\":\"error\",\"status\":401,\"code\":\"unauthorized\",\"message\":\"API token is invalid.\",\"request_id\":\"e039b8a7-8815-4ba0-a548-4f9a3492cfa2\"}",
-    "Error creating page for 'run-briefing-pipeline.sh': 401 - {\"object\":\"error\",\"status\":401,\"code\":\"unauthorized\",\"message\":\"API token is invalid.\",\"request_id\":\"5a664adf-3a88-4106-95ac-84e522ab5a6a\"}",
-    "Error creating page for 'key-health-check.sh': 401 - {\"object\":\"error\",\"status\":401,\"code\":\"unauthorized\",\"message\":\"API token is invalid.\",\"request_id\":\"c3fb77e8-2b3b-45a0-94ba-5ad631544800\"}",
-    "Error creating page for 'token-health-check.sh': 401 - {\"object\":\"error\",\"status\":401,\"code\":\"unauthorized\",\"message\":\"API token is invalid.\",\"request_id\":\"293c5022-722e-4358-83e1-ccad5ebca23c\"}",
-    "Error creating page for 'retention-caches.sh': 401 - {\"object\":\"error\",\"status\":401,\"code\":\"unauthorized\",\"message\":\"API token is invalid.\",\"request_id\":\"aeb20d23-a21c-4525-b56d-443b8f721136\"}",
-    "Error creating page for 'x-radar.sh': 401 - {\"object\":\"error\",\"status\":401,\"code\":\"unauthorized\",\"message\":\"API token is invalid.\",\"request_id\":\"23af893b-d91a-4111-8bcb-92c9b10a2573\"}",
-    "Error creating page for 'retention-backups.sh': 401 - {\"object\":\"error\",\"status\":401,\"code\":\"unauthorized\",\"message\":\"API token is invalid.\",\"request_id\":\"606ae5ec-7e91-45a2-8208-8b2f405e40c8\"}",
-    "Error creating page for 'sie-360-checks.py': 401 - {\"object\":\"error\",\"status\":401,\"code\":\"unauthorized\",\"message\":\"API token is invalid.\",\"request_id\":\"6806c587-1925-4c6c-b84c-33ee49c684d2\"}",
-    "Error creating page for 'weekly-agent-review.py': 401 - {\"object\":\"error\",\"status\":401,\"code\":\"unauthorized\",\"message\":\"API token is invalid.\",\"request_id\":\"a61cac0d-34c1-4a9b-beb3-2de787c69538\"}",
-    "Error creating page for 'rss-to-content-calendar.py': 401 - {\"object\":\"error\",\"status\":401,\"code\":\"unauthorized\",\"message\":\"API token is invalid.\",\"request_id\":\"c9684722-a54f-4dc3-b6c3-1d4b9edb3599\"}",
-    "Error creating page for 'content-factory-health-monitor.py': 401 - {\"object\":\"error\",\"status\":401,\"code\":\"unauthorized\",\"message\":\"API token is invalid.\",\"request_id\":\"4b9b855b-6a39-4ba1-ac4a-639605ad4df3\"}",
-    "Error creating page for 'cf-weekday-check.sh': 401 - {\"object\":\"error\",\"status\":401,\"code\":\"unauthorized\",\"message\":\"API token is invalid.\",\"request_id\":\"d049f14c-7a46-48d7-bdef-dc34815d4fc6\"}",
-    "Error creating page for 'ontology-notion-sync.py': 401 - {\"object\":\"error\",\"status\":401,\"code\":\"unauthorized\",\"message\":\"API token is invalid.\",\"request_id\":\"0b82f302-0376-43f7-908a-289ea0f09a74\"}",
-    "Error creating page for 'ontology-pipeline-sync.py': 401 - {\"object\":\"error\",\"status\":401,\"code\":\"unauthorized\",\"message\":\"API token is invalid.\",\"request_id\":\"3bf6c421-157a-4360-a35d-985c6dbd7dc6\"}",
-    "Error creating page for 'linkedin-engagement-agent.py': 401 - {\"object\":\"error\",\"status\":401,\"code\":\"unauthorized\",\"message\":\"API token is invalid.\",\"request_id\":\"a3cc5b0e-0293-4460-8418-7e0d25751ee6\"}",
-    "Error creating page for 'cron-dashboard-updater.py': 401 - {\"object\":\"error\",\"status\":401,\"code\":\"unauthorized\",\"message\":\"API token is invalid.\",\"request_id\":\"1627f5b4-ceee-4fb0-b8b5-b4d7460d8606\"}",
-    "Error creating page for 'jobs-interview-prep.py': 401 - {\"object\":\"error\",\"status\":401,\"code\":\"unauthorized\",\"message\":\"API token is invalid.\",\"request_id\":\"433fe16a-7a9c-435e-9acb-0f9a0de5e0b1\"}"
+    "Error creating page for 'cron-watchdog-v3.sh': 401 - {\"object\":\"error\",\"status\":401,\"code\":\"unauthorized\",\"message\":\"API token is invalid.\",\"request_id\":\"3279c3da-3dce-4a88-a661-141930699836\"}",
+    "Error creating page for 'run-briefing-pipeline.sh': 401 - {\"object\":\"error\",\"status\":401,\"code\":\"unauthorized\",\"message\":\"API token is invalid.\",\"request_id\":\"f330e145-6e4c-4ae7-b54e-3ad6e2ef65dd\"}",
+    "Error creating page for 'linkedin-autoresearch.py': 401 - {\"object\":\"error\",\"status\":401,\"code\":\"unauthorized\",\"message\":\"API token is invalid.\",\"request_id\":\"fecb8e25-d728-43be-9d55-a11a89d6db10\"}",
+    "Error creating page for 'autoresearch-job-review.py': 401 - {\"object\":\"error\",\"status\":401,\"code\":\"unauthorized\",\"message\":\"API token is invalid.\",\"request_id\":\"44f17c26-c147-4388-a34f-c9464a712c7e\"}",
+    "Error creating page for 'run-briefing-pipeline.sh': 401 - {\"object\":\"error\",\"status\":401,\"code\":\"unauthorized\",\"message\":\"API token is invalid.\",\"request_id\":\"37649686-1d82-4412-9e48-d54bc36424c3\"}",
+    "Error creating page for 'daily-backup.sh': 401 - {\"object\":\"error\",\"status\":401,\"code\":\"unauthorized\",\"message\":\"API token is invalid.\",\"request_id\":\"dd6b62af-8c65-4bb0-b9a0-fbb1bcde38bd\"}",
+    "Error creating page for 'archive-daily-notes.sh': 401 - {\"object\":\"error\",\"status\":401,\"code\":\"unauthorized\",\"message\":\"API token is invalid.\",\"request_id\":\"b34c29a5-4dc3-4424-be78-c991a5018c75\"}",
+    "Error creating page for 'run-briefing-pipeline.sh': 401 - {\"object\":\"error\",\"status\":401,\"code\":\"unauthorized\",\"message\":\"API token is invalid.\",\"request_id\":\"11f7f436-22ae-4301-91ad-c45374cd4ddd\"}",
+    "Error creating page for 'github-radar.sh': 401 - {\"object\":\"error\",\"status\":401,\"code\":\"unauthorized\",\"message\":\"API token is invalid.\",\"request_id\":\"f678ef7c-f294-4c24-aca1-7e42274d08fc\"}",
+    "Error creating page for 'run-briefing-pipeline.sh': 401 - {\"object\":\"error\",\"status\":401,\"code\":\"unauthorized\",\"message\":\"API token is invalid.\",\"request_id\":\"94cbefdb-0202-4041-8c8d-3adb8a0acfa3\"}",
+    "Error creating page for 'key-health-check.sh': 401 - {\"object\":\"error\",\"status\":401,\"code\":\"unauthorized\",\"message\":\"API token is invalid.\",\"request_id\":\"9696ac51-60df-4606-b847-cc1cdc24e17f\"}",
+    "Error creating page for 'token-health-check.sh': 401 - {\"object\":\"error\",\"status\":401,\"code\":\"unauthorized\",\"message\":\"API token is invalid.\",\"request_id\":\"e3e78496-092a-4171-95f9-7abd747ca18e\"}",
+    "Error creating page for 'retention-caches.sh': 401 - {\"object\":\"error\",\"status\":401,\"code\":\"unauthorized\",\"message\":\"API token is invalid.\",\"request_id\":\"ee855010-f2f4-434a-b486-abd02cca55a6\"}",
+    "Error creating page for 'x-radar.sh': 401 - {\"object\":\"error\",\"status\":401,\"code\":\"unauthorized\",\"message\":\"API token is invalid.\",\"request_id\":\"28ecc09d-eefb-4c99-8d84-125f50d8ffda\"}",
+    "Error creating page for 'retention-backups.sh': 401 - {\"object\":\"error\",\"status\":401,\"code\":\"unauthorized\",\"message\":\"API token is invalid.\",\"request_id\":\"d4fc5217-562d-4261-982e-a6274a31e82d\"}",
+    "Error creating page for 'sie-360-checks.py': 401 - {\"object\":\"error\",\"status\":401,\"code\":\"unauthorized\",\"message\":\"API token is invalid.\",\"request_id\":\"47c0260c-fe86-4441-93dd-ab7bdb9f649a\"}",
+    "Error creating page for 'weekly-agent-review.py': 401 - {\"object\":\"error\",\"status\":401,\"code\":\"unauthorized\",\"message\":\"API token is invalid.\",\"request_id\":\"176687a7-ca87-4d84-bcc3-e12936f053eb\"}",
+    "Error creating page for 'rss-to-content-calendar.py': 401 - {\"object\":\"error\",\"status\":401,\"code\":\"unauthorized\",\"message\":\"API token is invalid.\",\"request_id\":\"454f1b1f-ef05-432c-9c38-9195e323ef43\"}",
+    "Error creating page for 'content-factory-health-monitor.py': 401 - {\"object\":\"error\",\"status\":401,\"code\":\"unauthorized\",\"message\":\"API token is invalid.\",\"request_id\":\"a2174176-f65b-42b4-ae23-5ab94435a7b7\"}",
+    "Error creating page for 'cf-weekday-check.sh': 401 - {\"object\":\"error\",\"status\":401,\"code\":\"unauthorized\",\"message\":\"API token is invalid.\",\"request_id\":\"dfa04644-602c-44d3-9276-3924e0aace0c\"}",
+    "Error creating page for 'ontology-notion-sync.py': 401 - {\"object\":\"error\",\"status\":401,\"code\":\"unauthorized\",\"message\":\"API token is invalid.\",\"request_id\":\"a450a95e-1610-4e63-80e8-743bcfbb0c38\"}",
+    "Error creating page for 'ontology-pipeline-sync.py': 401 - {\"object\":\"error\",\"status\":401,\"code\":\"unauthorized\",\"message\":\"API token is invalid.\",\"request_id\":\"cc35caf3-6084-487f-b7d7-4ff6a4f8a4a6\"}",
+    "Error creating page for 'linkedin-engagement-agent.py': 401 - {\"object\":\"error\",\"status\":401,\"code\":\"unauthorized\",\"message\":\"API token is invalid.\",\"request_id\":\"b61ce363-45e6-4658-b814-6d919fcd7362\"}",
+    "Error creating page for 'cron-dashboard-updater.py': 401 - {\"object\":\"error\",\"status\":401,\"code\":\"unauthorized\",\"message\":\"API token is invalid.\",\"request_id\":\"a45df18e-53d0-4ad0-a057-89cc734d2f52\"}",
+    "Error creating page for 'jobs-interview-prep.py': 401 - {\"object\":\"error\",\"status\":401,\"code\":\"unauthorized\",\"message\":\"API token is invalid.\",\"request_id\":\"9244548a-f1a2-4425-97bd-a91d3497f2b0\"}"
   ],
   "crons": [
     {
@@ -39,7 +39,7 @@
       "type": "system",
       "last_status": {
         "status": "\u2705 OK",
-        "last_run": "2026-03-28 06:00:12.798153+02:00",
+        "last_run": "2026-03-28 12:00:19.400110+02:00",
         "error": null
       }
     },
@@ -49,7 +49,7 @@
       "type": "system",
       "last_status": {
         "status": "\u274c Failed",
-        "last_run": "2026-03-28 06:03:01.710236+02:00",
+        "last_run": "2026-03-28 12:01:19.349493+02:00",
         "error": "Check log for details"
       }
     },
@@ -79,7 +79,7 @@
       "type": "system",
       "last_status": {
         "status": "\u274c Failed",
-        "last_run": "2026-03-28 06:03:01.710236+02:00",
+        "last_run": "2026-03-28 12:01:19.349493+02:00",
         "error": "Check log for details"
       }
     },
@@ -109,7 +109,7 @@
       "type": "system",
       "last_status": {
         "status": "\u274c Failed",
-        "last_run": "2026-03-28 06:03:01.710236+02:00",
+        "last_run": "2026-03-28 12:01:19.349493+02:00",
         "error": "Check log for details"
       }
     },
@@ -129,7 +129,7 @@
       "type": "system",
       "last_status": {
         "status": "\u274c Failed",
-        "last_run": "2026-03-28 06:03:01.710236+02:00",
+        "last_run": "2026-03-28 12:01:19.349493+02:00",
         "error": "Check log for details"
       }
     },

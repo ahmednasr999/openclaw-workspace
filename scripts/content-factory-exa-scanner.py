@@ -185,6 +185,7 @@ def exa_search(query, num_results=5, domain_filter=None):
             "x-api-key": api_key,
             "Content-Type": "application/json",
             "Accept": "application/json",
+            "User-Agent": "Mozilla/5.0 (compatible; ContentScanner/1.0)",
         }
     )
     

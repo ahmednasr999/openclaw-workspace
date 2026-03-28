@@ -2,6 +2,35 @@
 
 *Technical configurations, troubleshooting, and environment-specific setup*
 
+## ⚠️ NON-NEGOTIABLE: LinkedIn Job Scraping Method
+
+**ALWAYS use JobSpy with `linkedin_fetch_description=True`. No exceptions. No alternatives.**
+
+```python
+from jobspy import scrape_jobs
+jobs_df = scrape_jobs(
+    site_name=["linkedin"],
+    search_term=title,
+    location=location,
+    results_wanted=20,
+    hours_old=168,
+    linkedin_fetch_description=True,
+    description_format="markdown",
+    verbose=0,
+)
+```
+
+**Why this works:** JobSpy hits LinkedIn's public `/jobs/view/` endpoint — returns full JDs without login, cookies, or proxies. Works from any VPS.
+
+**NEVER use:**
+- `requests` + BeautifulSoup scraping of `linkedin.com/jobs/search/`
+- Selenium/Playwright LinkedIn automation for job search
+- Composio LinkedIn tools for job scraping
+- Any method requiring auth or cookies
+
+**Script:** `scripts/jobs-source-linkedin-jobspy.py`
+**Reference:** https://github.com/DaKheera47/job-ops
+
 ## LinkedIn Engagement Agent
 
 ### Overview
@@ -76,17 +105,15 @@ python3 scripts/linkedin-engagement-agent.py
 | **Anthropic** | `haiku-3` | claude-3-haiku-20240307 | Legacy | ❓ Untested |
 
 ### Model Selection Rules
-1. **Default:** MiniMax-M2.7 (free, good for routine tasks)
-2. **CV Creation:** Claude Opus 4.6 (requires approval)
-3. **Complex Setup:** Claude Sonnet 4.6
-4. **Content Drafting:** Claude Sonnet 4.6
-5. **Alternative Reasoning:** Kimi K2.5
+1. **Default (ALL agents):** Claude Sonnet 4.6 — fallback MiniMax-M2.7
+2. **CV Creation:** Claude Opus 4.6
+3. **Alternative Reasoning:** Kimi K2.5
 
 ### Model Change Protocol
-- **Default:** MiniMax M2.7 (always)
-- **Ask before changing:** Any model switch
-- **Notify:** When switching to/from paid models
-- **Switch back:** After completing expensive tasks
+- **Default:** Sonnet 4.6 (all agents, all sessions)
+- **Fallback:** MiniMax-M2.7 (automatic if Sonnet unavailable)
+- **Ask before changing:** Switching to Opus (premium)
+- **Notify:** When switching to/from Opus
 
 ### Switching Models
 - Use alias: `switch to opus`, `switch to sonnet`, `switch to Kimi`

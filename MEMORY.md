@@ -92,11 +92,11 @@ Every bullet: **Action Verb + Value/What + Result/Metric**
 
 | Task | Model | Notes |
 |------|-------|-------|
-| Default / daily | MiniMax-M2.7 | Free tier |
-| Background / cron | MiniMax-M2.7 | Free tier |
-| CV creation/review | Claude Opus 4.6 | Always - no approval needed |
+| Default (ALL agents) | Claude Sonnet 4.6 | Primary for all sessions |
+| Fallback | MiniMax-M2.7 | Auto-fallback if Sonnet unavailable |
+| CV creation/review | Claude Opus 4.6 | Premium - ask before switching |
 
-**Rule:** Always ask before switching to paid models. Notify after any switch.
+**Rule:** Sonnet 4.6 is the default for ALL agents (CEO, HR, CTO, CMO). MiniMax-M2.7 is fallback only. Ask before switching to Opus.
 
 ---
 

@@ -22,6 +22,10 @@ import json, re, ssl, time, hashlib
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from urllib.request import Request, urlopen
+try:
+    import requests as _requests
+except ImportError:
+    _requests = None
 
 # Pipeline DB (safe fallback)
 try:
@@ -45,12 +49,81 @@ NOTION_HEADERS = {
     "Content-Type": "application/json",
 }
 
-# Tavily
+# Exa (via Composio MCP — primary backend)
+COMPOSIO_MCP_URL = "https://connect.composio.dev/mcp"
+COMPOSIO_KEY = None
+try:
+    _oc = json.load(open(os.path.expanduser("~/.openclaw/openclaw.json")))
+    COMPOSIO_KEY = _oc.get("plugins", {}).get("entries", {}).get("composio", {}).get("config", {}).get("consumerKey", "")
+except:
+    pass
+
+# Legacy direct Exa key (kept as fallback reference, no longer used for HTTP calls)
+EXA_KEY = None
+try:
+    EXA_KEY = json.load(open(CONFIG_DIR / "exa.json")).get("api_key")
+except:
+    pass
+
+# Tavily (fallback search backend)
 TAVILY_KEY = None
 try:
     TAVILY_KEY = json.load(open(CONFIG_DIR / "tavily.json")).get("api_key")
 except:
     pass
+
+
+def _mcp_exa_search(query, num_results=5):
+    """Call EXA_SEARCH via Composio MCP. Returns raw results list or None on failure."""
+    if not COMPOSIO_KEY or not _requests:
+        return None
+    headers = {
+        "Content-Type": "application/json",
+        "Accept": "application/json, text/event-stream",
+        "x-consumer-api-key": COMPOSIO_KEY,
+    }
+    payload = {
+        "jsonrpc": "2.0",
+        "id": int(time.time() * 1000) % 1000000,
+        "method": "tools/call",
+        "params": {
+            "name": "COMPOSIO_MULTI_EXECUTE_TOOL",
+            "arguments": {
+                "tools": [{"tool_slug": "EXA_SEARCH", "arguments": {
+                    "query": query,
+                    "type": "neural",
+                    "numResults": num_results,
+                    "includeDomains": ["linkedin.com"],
+                }}],
+                "sync_response_to_workbench": False,
+            },
+        },
+    }
+    try:
+        resp = _requests.post(COMPOSIO_MCP_URL, json=payload, headers=headers, timeout=30)
+        if resp.status_code != 200:
+            return None
+        for line in resp.text.split("\n"):
+            if line.startswith("data:"):
+                data = json.loads(line[5:].strip())
+                if "error" in data:
+                    return None
+                result = data.get("result", {})
+                # Unwrap nested Composio response
+                # MCP wraps: result.content[0].text = JSON string of Composio response
+                # Composio structure: {"successful": true, "data": {"results": [{"response": {"data": {"results": [...]}}}]}}
+                content = result.get("content", [{}])
+                if content:
+                    text = content[0].get("text", "{}")
+                    inner = json.loads(text) if isinstance(text, str) else text
+                    tool_results = inner.get("data", {}).get("results", [])
+                    if tool_results:
+                        resp_data = tool_results[0].get("response", {}).get("data", {})
+                        return resp_data.get("results", [])
+        return None
+    except Exception as e:
+        print(f"  Composio Exa error: {e}")
+        return None
 
 # Roles to search for at target companies
 SEARCH_ROLES = [
@@ -141,8 +214,109 @@ def notion_query_applied():
         return []
 
 
-def search_profiles(company, role_query="recruiter OR HR OR talent acquisition"):
-    """Search Tavily for LinkedIn profiles at a company."""
+def _score_profile(name, person_role, title, company):
+    """Signal-based scoring (Outbound Strategist pattern)."""
+    signal_score = 0
+    role_lower = person_role.lower()
+    title_lower = title.lower()
+
+    # Tier 1: Direct hiring signals (highest value)
+    if any(w in role_lower or w in title_lower for w in ["talent acquisition", "recruiter", "recruiting", "hiring"]):
+        signal_score += 30
+    # Tier 2: HR leadership
+    elif any(w in role_lower or w in title_lower for w in ["hr director", "head of hr", "chief people", "chro", "vp people", "vp hr"]):
+        signal_score += 25
+    # Tier 3: Hiring manager (executive at target company)
+    elif any(w in role_lower or w in title_lower for w in ["cto", "cio", "vp", "director", "head of", "chief"]):
+        signal_score += 20
+    # Tier 4: General HR
+    elif any(w in role_lower or w in title_lower for w in ["human resources", "hr ", "people operations"]):
+        signal_score += 15
+    else:
+        signal_score += 5
+
+    return signal_score
+
+
+def _parse_linkedin_title(title, company):
+    """Extract name and role from a LinkedIn result title."""
+    # Extract person name
+    name = title.split(" - ")[0].strip() if " - " in title else title.split("|")[0].strip()
+    name = re.sub(r'\s*\|.*$', '', name)
+    name = re.sub(r'\s*LinkedIn.*$', '', name, flags=re.IGNORECASE)
+    name = name.strip()
+
+    # Extract their role
+    person_role = ""
+    m = re.search(r' - (.+?)\s+at\s+', title)
+    if m:
+        person_role = m.group(1).strip()
+    else:
+        parts = [p.strip() for p in title.split(" - ")]
+        if len(parts) >= 3:
+            person_role = parts[1][:60]
+        elif len(parts) == 2:
+            candidate = re.sub(r'\s*\|.*$', '', parts[1]).strip()
+            if candidate.lower() != company.lower():
+                person_role = candidate[:60]
+    person_role = re.sub(r'\s*\|.*$', '', person_role).strip()
+
+    return name[:50], person_role[:80]
+
+
+def _normalize_linkedin_url(url):
+    """Normalize LinkedIn profile URL."""
+    clean = url.split("?")[0].rstrip("/")
+    clean = re.sub(r'https?://\w+\.linkedin\.com', 'https://www.linkedin.com', clean)
+    return clean
+
+
+def _search_exa(company, role_query="recruiter OR HR OR talent acquisition"):
+    """Search Exa for LinkedIn profiles via Composio MCP (primary backend)."""
+    if not COMPOSIO_KEY:
+        return None  # None signals "try fallback"
+
+    query = f'"{company}" ({role_query}) LinkedIn profile'
+    raw = _mcp_exa_search(query, num_results=8)
+    if raw is None:
+        print(f"  Composio Exa: request failed, falling back to Tavily...")
+        return None  # Signal fallback
+
+    profiles = []
+    seen = set()
+    for r in raw:
+        url = r.get("url", "")
+        if "/in/" not in url:
+            continue
+
+        clean = _normalize_linkedin_url(url)
+        if clean in seen:
+            continue
+        seen.add(clean)
+
+        title = r.get("title", "")
+        author = r.get("author", "")
+
+        name, person_role = _parse_linkedin_title(title, company)
+        if author and (not name or len(name) < 3):
+            name = author[:50]
+
+        signal_score = _score_profile(name, person_role, title, company)
+
+        profiles.append({
+            "name": name,
+            "role": person_role,
+            "url": clean,
+            "company": company,
+            "signal_score": signal_score,
+            "source": "exa_composio",
+        })
+
+    return profiles
+
+
+def _search_tavily(company, role_query="recruiter OR HR OR talent acquisition"):
+    """Search Tavily for LinkedIn profiles at a company (fallback backend)."""
     if not TAVILY_KEY:
         return []
 
@@ -172,78 +346,47 @@ def search_profiles(company, role_query="recruiter OR HR OR talent acquisition")
             if "/in/" not in url:
                 continue
 
-            # Normalize URL: country subdomain -> www
-            clean = url.split("?")[0].rstrip("/")
-            clean = re.sub(r'https?://\w+\.linkedin\.com', 'https://www.linkedin.com', clean)
-
+            clean = _normalize_linkedin_url(url)
             if clean in seen:
                 continue
             seen.add(clean)
 
             title = r.get("title", "")
+            name, person_role = _parse_linkedin_title(title, company)
+            signal_score = _score_profile(name, person_role, title, company)
 
-            # Extract person name and role from title
-            # Pattern: "Name - Role at Company" or "Name - Company"
-            name = title.split(" - ")[0].strip() if " - " in title else title.split("|")[0].strip()
-            name = re.sub(r'\s*\|.*$', '', name)
-            name = re.sub(r'\s*LinkedIn.*$', '', name, flags=re.IGNORECASE)
-            name = name.strip()
-
-            # Extract their role
-            person_role = ""
-            # Try "Name - Role at Company | LinkedIn" first
-            m = re.search(r' - (.+?)\s+at\s+', title)
-            if m:
-                person_role = m.group(1).strip()
-            else:
-                # Try "Name - Role - Company | LinkedIn"
-                parts = [p.strip() for p in title.split(" - ")]
-                if len(parts) >= 3:
-                    # Middle part is likely the role
-                    person_role = parts[1][:60]
-                elif len(parts) == 2:
-                    # "Name - Company | LinkedIn" — role is unknown
-                    candidate = re.sub(r'\s*\|.*$', '', parts[1]).strip()
-                    # If it looks like a company name (matches our target), skip it
-                    if candidate.lower() == company.lower():
-                        person_role = ""
-                    else:
-                        person_role = candidate[:60]
-            # Clean up trailing "| LinkedIn"
-            person_role = re.sub(r'\s*\|.*$', '', person_role).strip()
-
-            # Signal-based scoring (Outbound Strategist pattern)
-            signal_score = 0
-            role_lower = person_role.lower()
-            title_lower = title.lower()
-            
-            # Tier 1: Direct hiring signals (highest value)
-            if any(w in role_lower or w in title_lower for w in ["talent acquisition", "recruiter", "recruiting", "hiring"]):
-                signal_score += 30
-            # Tier 2: HR leadership
-            elif any(w in role_lower or w in title_lower for w in ["hr director", "head of hr", "chief people", "chro", "vp people", "vp hr"]):
-                signal_score += 25
-            # Tier 3: Hiring manager (executive at target company)
-            elif any(w in role_lower or w in title_lower for w in ["cto", "cio", "vp", "director", "head of", "chief"]):
-                signal_score += 20
-            # Tier 4: General HR
-            elif any(w in role_lower or w in title_lower for w in ["human resources", "hr ", "people operations"]):
-                signal_score += 15
-            else:
-                signal_score += 5
-            
             profiles.append({
-                "name": name[:50],
-                "role": person_role[:80],
+                "name": name,
+                "role": person_role,
                 "url": clean,
                 "company": company,
                 "signal_score": signal_score,
+                "source": "tavily",
             })
 
         return profiles
     except Exception as e:
-        print(f"  Search error for {company}: {e}")
+        print(f"  Tavily search error for {company}: {e}")
         return []
+
+
+def search_profiles(company, role_query="recruiter OR HR OR talent acquisition"):
+    """Search for LinkedIn profiles at a company. Exa primary, Tavily fallback."""
+    # Try Exa first
+    results = _search_exa(company, role_query)
+    if results is not None:
+        if results:
+            return results
+        # Exa returned empty - still try Tavily
+        print(f"    Exa: 0 results, trying Tavily fallback...")
+
+    # Fallback to Tavily
+    if results is None and EXA_KEY:
+        print(f"    Exa failed, falling back to Tavily...")
+    elif not EXA_KEY:
+        pass  # Silently use Tavily when no Exa key
+
+    return _search_tavily(company, role_query)
 
 
 def call_llm(prompt, max_tokens=1000, model="anthropic/claude-sonnet-4-6"):

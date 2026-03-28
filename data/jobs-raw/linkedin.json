@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-source-linkedin",
     "version": "1.0.0",
-    "generated_at": "2026-03-28T05:05:55.908042+02:00",
-    "duration_ms": 334932,
+    "generated_at": "2026-03-28T10:05:37.709015+02:00",
+    "duration_ms": 334977,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "16480dab",
+    "run_id": "1f03259a",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -196,24 +196,6 @@
       "location": "Dubai, United Arab Emirates",
       "url": "https://ae.linkedin.com/jobs/view/head-of-marketing-at-salt-4388084358",
       "posted": "2026-03-24",
-      "seniority": "Director",
-      "domain_match": false,
-      "keyword_score": 6,
-      "match_keywords": [
-        "head of"
-      ],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "skip-word"
-    },
-    {
-      "id": "linkedin-li-4392215501",
-      "source": "linkedin",
-      "title": "Head of Marketing",
-      "company": "Confidentiel",
-      "location": "Dubai, Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/head-of-marketing-at-confidentiel-4392215501",
-      "posted": "2026-03-27",
       "seniority": "Director",
       "domain_match": false,
       "keyword_score": 6,
@@ -741,6 +723,24 @@
       "filter_reason": null
     },
     {
+      "id": "linkedin-li-4389943952",
+      "source": "linkedin",
+      "title": "Head Of Product Design",
+      "company": "TALENTMATE",
+      "location": "Dubai, Dubai, United Arab Emirates",
+      "url": "https://ae.linkedin.com/jobs/view/head-of-product-design-at-talentmate-4389943952",
+      "posted": "2026-03-24",
+      "seniority": "Director",
+      "domain_match": false,
+      "keyword_score": 6,
+      "match_keywords": [
+        "head of"
+      ],
+      "raw_snippet": "",
+      "relevant": true,
+      "filter_reason": null
+    },
+    {
       "id": "linkedin-li-4388713620",
       "source": "linkedin",
       "title": "Second in Faculty \u2013 Art & Design Technology \u2013 August 2026 start",
@@ -1000,57 +1000,6 @@
       "filter_reason": "not-exec"
     },
     {
-      "id": "linkedin-li-4371493325",
-      "source": "linkedin",
-      "title": "B2B Senior Business Development Manager (m/f) - SaaS AEC Solution (UAE Region)",
-      "company": "RIB Software",
-      "location": "Dubai, Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/b2b-senior-business-development-manager-m-f-saas-aec-solution-uae-region-at-rib-software-4371493325",
-      "posted": "2026-03-26",
-      "seniority": "Other",
-      "domain_match": false,
-      "keyword_score": 10,
-      "match_keywords": [
-        "saas",
-        "uae"
-      ],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "not-exec"
-    },
-    {
-      "id": "linkedin-li-4372106735",
-      "source": "linkedin",
-      "title": "Customer Success Manager - Spa & Wellness (Former Spa Operations Leaders Encouraged)",
-      "company": "Agilysys",
-      "location": "Dubai, Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/customer-success-manager-spa-wellness-former-spa-operations-leaders-encouraged-at-agilysys-4372106735",
-      "posted": "2026-03-25",
-      "seniority": "Other",
-      "domain_match": true,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "not-exec"
-    },
-    {
-      "id": "linkedin-li-4390542709",
-      "source": "linkedin",
-      "title": "Veterinary Practice Manager",
-      "company": "Confidential",
-      "location": "Dubai, Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/veterinary-practice-manager-at-confidential-4390542709",
-      "posted": "2026-03-26",
-      "seniority": "Other",
-      "domain_match": false,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "not-exec"
-    },
-    {
       "id": "linkedin-li-4370386540",
       "source": "linkedin",
       "title": "Associate Director - Corporate Communications (Technology)",
@@ -1087,20 +1036,36 @@
       "filter_reason": "skip-word"
     },
     {
-      "id": "linkedin-li-4390545290",
+      "id": "linkedin-li-4390542709",
       "source": "linkedin",
-      "title": "Head Strategic Business Development",
+      "title": "Veterinary Practice Manager",
       "company": "Confidential",
-      "location": "Dubai, United Arab Emirates",
-      "url": "https://ae.linkedin.com/jobs/view/head-strategic-business-development-at-confidential-4390545290",
+      "location": "Dubai, Dubai, United Arab Emirates",
+      "url": "https://ae.linkedin.com/jobs/view/veterinary-practice-manager-at-confidential-4390542709",
       "posted": "2026-03-26",
       "seniority": "Other",
       "domain_match": false,
       "keyword_score": 0,
       "match_keywords": [],
       "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null
+      "relevant": false,
+      "filter_reason": "not-exec"
+    },
+    {
+      "id": "linkedin-li-4372106735",
+      "source": "linkedin",
+      "title": "Customer Success Manager - Spa & Wellness (Former Spa Operations Leaders Encouraged)",
+      "company": "Agilysys",
+      "location": "Dubai, Dubai, United Arab Emirates",
+      "url": "https://ae.linkedin.com/jobs/view/customer-success-manager-spa-wellness-former-spa-operations-leaders-encouraged-at-agilysys-4372106735",
+      "posted": "2026-03-25",
+      "seniority": "Other",
+      "domain_match": true,
+      "keyword_score": 0,
+      "match_keywords": [],
+      "raw_snippet": "",
+      "relevant": false,
+      "filter_reason": "not-exec"
     },
     {
       "id": "linkedin-li-4322907627",
@@ -1120,6 +1085,22 @@
       "raw_snippet": "",
       "relevant": false,
       "filter_reason": "not-exec"
+    },
+    {
+      "id": "linkedin-li-4390545290",
+      "source": "linkedin",
+      "title": "Head Strategic Business Development",
+      "company": "Confidential",
+      "location": "Dubai, United Arab Emirates",
+      "url": "https://ae.linkedin.com/jobs/view/head-strategic-business-development-at-confidential-4390545290",
+      "posted": "2026-03-26",
+      "seniority": "Other",
+      "domain_match": false,
+      "keyword_score": 0,
+      "match_keywords": [],
+      "raw_snippet": "",
+      "relevant": true,
+      "filter_reason": null
     },
     {
       "id": "linkedin-li-4388679616",
@@ -3965,6 +3946,25 @@
       "filter_reason": null
     },
     {
+      "id": "linkedin-li-4389963135",
+      "source": "linkedin",
+      "title": "MENA Head Of Communications",
+      "company": "TALENTMATE",
+      "location": "Dubai, Dubai, United Arab Emirates",
+      "url": "https://ae.linkedin.com/jobs/view/mena-head-of-communications-at-talentmate-4389963135",
+      "posted": "2026-03-24",
+      "seniority": "Director",
+      "domain_match": false,
+      "keyword_score": 10,
+      "match_keywords": [
+        "head of",
+        "mena"
+      ],
+      "raw_snippet": "",
+      "relevant": true,
+      "filter_reason": null
+    },
+    {
       "id": "linkedin-li-4391588359",
       "source": "linkedin",
       "title": "Head of Sales, Middle East",
@@ -5503,6 +5503,24 @@
       "raw_snippet": "",
       "relevant": false,
       "filter_reason": "not-exec"
+    },
+    {
+      "id": "linkedin-li-4363109547",
+      "source": "linkedin",
+      "title": "AVP Fund Accountant - Qatar",
+      "company": "Apex Group Ltd",
+      "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
+      "url": "https://ae.linkedin.com/jobs/view/avp-fund-accountant-qatar-at-apex-group-ltd-4363109547",
+      "posted": "2026-03-27",
+      "seniority": "VP",
+      "domain_match": false,
+      "keyword_score": 6,
+      "match_keywords": [
+        "vp"
+      ],
+      "raw_snippet": "",
+      "relevant": false,
+      "filter_reason": "skip-word"
     },
     {
       "id": "linkedin-li-4391228517",
@@ -7895,22 +7913,6 @@
       "filter_reason": "skip-word"
     },
     {
-      "id": "linkedin-li-4388262281",
-      "source": "linkedin",
-      "title": "MRP controlling Officer",
-      "company": "ASMO",
-      "location": "Saudi Arabia",
-      "url": "https://sa.linkedin.com/jobs/view/mrp-controlling-officer-at-asmo-4388262281",
-      "posted": "2026-03-21",
-      "seniority": "Other",
-      "domain_match": false,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "not-exec"
-    },
-    {
       "id": "linkedin-li-4370084496",
       "source": "linkedin",
       "title": "Assistant Director Housekeeping - Fairmont the Red Sea",
@@ -8444,24 +8446,6 @@
       "filter_reason": "not-exec"
     },
     {
-      "id": "linkedin-li-4382551700",
-      "source": "linkedin",
-      "title": "E-Commerce Lead",
-      "company": "Confidential",
-      "location": "Doha, Qatar",
-      "url": "https://qa.linkedin.com/jobs/view/e-commerce-lead-at-confidential-4382551700",
-      "posted": "2026-03-24",
-      "seniority": "Other",
-      "domain_match": false,
-      "keyword_score": 6,
-      "match_keywords": [
-        "e-commerce"
-      ],
-      "raw_snippet": "",
-      "relevant": false,
-      "filter_reason": "not-exec"
-    },
-    {
       "id": "linkedin-li-4390812840",
       "source": "linkedin",
       "title": "Director of Engineering",
@@ -8782,11 +8766,29 @@
       "raw_snippet": "",
       "relevant": false,
       "filter_reason": "not-exec"
+    },
+    {
+      "id": "linkedin-li-4382551700",
+      "source": "linkedin",
+      "title": "E-Commerce Lead",
+      "company": "Confidential",
+      "location": "Doha, Qatar",
+      "url": "https://qa.linkedin.com/jobs/view/e-commerce-lead-at-confidential-4382551700",
+      "posted": "2026-03-24",
+      "seniority": "Other",
+      "domain_match": false,
+      "keyword_score": 6,
+      "match_keywords": [
+        "e-commerce"
+      ],
+      "raw_snippet": "",
+      "relevant": false,
+      "filter_reason": "not-exec"
     }
   ],
   "kpi": {
     "searches_run": 162,
-    "results_per_search": 5.85,
+    "results_per_search": 5.83,
     "unique_jobs": 505,
     "errors": 37,
     "blocked": false,

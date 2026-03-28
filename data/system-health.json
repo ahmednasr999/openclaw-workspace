@@ -2,47 +2,47 @@
   "meta": {
     "agent": "system-agent",
     "version": "1.0.0",
-    "generated_at": "2026-03-28T06:00:13.178235+02:00",
-    "duration_ms": 10629,
+    "generated_at": "2026-03-28T12:00:19.792204+02:00",
+    "duration_ms": 16861,
     "ttl_hours": 1,
     "status": "success",
     "error": null,
-    "run_id": "078f7151",
+    "run_id": "00399d2a",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
-    "scan_time": "2026-03-28T06:00:13.177951+02:00",
+    "scan_time": "2026-03-28T12:00:19.792024+02:00",
     "system": {
       "disk_usage_pct": 48,
       "memory": {
         "total_gb": 7.8,
-        "available_gb": 5.2,
-        "used_pct": 33.0
+        "available_gb": 5.5,
+        "used_pct": 29.2
       },
       "gateway": {
-        "status": "healthy",
-        "code": 200
+        "status": "error",
+        "error": "timed out"
       },
       "openclaw_process": {
         "running": true,
-        "pid_count": 25
+        "pid_count": 28
       }
     },
     "agents": {
       "health": [
         {
           "agent": "jobs-merge",
-          "status": "healthy",
-          "age_hours": 0.9,
+          "status": "stale",
+          "age_hours": 6.9,
           "ttl_hours": 6,
           "last_run": "2026-03-28T05:06:51.138905+02:00",
           "last_status": "success"
         },
         {
           "agent": "jobs-review",
-          "status": "healthy",
-          "age_hours": 0.6,
+          "status": "stale",
+          "age_hours": 6.6,
           "ttl_hours": 6,
           "last_run": "2026-03-28T05:21:28.534379+02:00",
           "last_status": "success"
@@ -50,52 +50,52 @@
         {
           "agent": "email-agent",
           "status": "healthy",
-          "age_hours": 1.0,
+          "age_hours": 3.0,
           "ttl_hours": 4,
-          "last_run": "2026-03-28T05:01:00.101213+02:00",
+          "last_run": "2026-03-28T09:00:46.166139+02:00",
           "last_status": "success"
         },
         {
           "agent": "linkedin-post",
-          "status": "healthy",
-          "age_hours": 1.0,
+          "status": "stale",
+          "age_hours": 7.0,
           "ttl_hours": 6,
           "last_run": "2026-03-28T03:00:22.752286+00:00",
           "last_status": null
         },
         {
           "agent": "comment-radar",
-          "status": "healthy",
-          "age_hours": 1.0,
+          "status": "stale",
+          "age_hours": 7.0,
           "ttl_hours": 6,
           "last_run": "2026-03-28T03:00:24.648751+00:00",
           "last_status": null
         },
         {
           "agent": "outreach-agent",
-          "status": "stale",
-          "age_hours": 15.0,
+          "status": "healthy",
+          "age_hours": 0.5,
           "ttl_hours": 6,
-          "last_run": "2026-03-27T13:02:23.319933+00:00",
+          "last_run": "2026-03-28T09:30:26.886066+00:00",
           "last_status": null
         },
         {
           "agent": "system-agent",
           "status": "healthy",
-          "age_hours": 1.0,
+          "age_hours": 4.0,
           "ttl_hours": 6,
-          "last_run": "2026-03-28T05:00:37.745627+02:00",
+          "last_run": "2026-03-28T08:00:14.210445+02:00",
           "last_status": "success"
         }
       ],
-      "healthy_count": 6,
-      "stale_count": 1,
+      "healthy_count": 3,
+      "stale_count": 4,
       "total": 7
     },
     "cron": {
       "status": "healthy",
-      "job_count": 24,
-      "raw_output": "ID                                   Name                     Schedule                         Next       Last       Status    Target    Agent ID   Model               \nd1343a4d-61a4-476c-83c5-15724bcce89c Content Agent: Reacti... cron 0 */6 * * * @ Africa/Cai... in 3m      6h ago     ok        isolated  -          minimax-portal/Mi...\n1b1d9bca-2f63-49d1-89b2-cd05a792b30a NASR Doctor (Daily)      cron 0 7 * * * @ Africa/Cairo... in 60m     16h ago    ok        isolated  -          minimax-portal"
+      "job_count": 25,
+      "raw_output": "ID                                   Name                     Schedule                         Next       Last       Status    Target    Agent ID   Model               \nd1343a4d-61a4-476c-83c5-15724bcce89c Content Agent: Reacti... cron 0 */6 * * * @ Africa/Cai... in 3m      4h ago     ok        isolated  -          minimax-portal/Mi...\n418e7854-d466-4b49-ad1d-f3f3debae5d7 LCM Midday Compaction... cron 0 14 * * * @ Africa/Cair... in 2h      -          idle      isolated  cmo        minimax-portal"
     },
     "external_services": {
       "notion": {
@@ -114,19 +114,27 @@
   },
   "kpi": {
     "system_uptime": 100,
-    "agents_healthy": 6,
-    "agents_stale": 1,
+    "agents_healthy": 3,
+    "agents_stale": 4,
     "cron_success_rate": 100,
     "alerts_active": 0
   },
   "recommendations": [
     {
-      "id": "rec-078f7151-0",
+      "id": "rec-00399d2a-0",
+      "action": "restart_gateway",
+      "target": "OpenClaw gateway",
+      "reason": "Gateway status: error",
+      "urgency": "high",
+      "timestamp": "2026-03-28T12:00:19.792060+02:00"
+    },
+    {
+      "id": "rec-00399d2a-1",
       "action": "run_agents",
-      "target": "1 stale agent(s): outreach-agent",
+      "target": "4 stale agent(s): jobs-merge, jobs-review, linkedin-post, comment-radar",
       "reason": "Agent data is past TTL",
       "urgency": "medium",
-      "timestamp": "2026-03-28T06:00:13.178003+02:00"
+      "timestamp": "2026-03-28T12:00:19.792069+02:00"
     }
   ]
 }
