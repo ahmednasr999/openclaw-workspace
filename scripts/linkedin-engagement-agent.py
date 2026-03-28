@@ -552,8 +552,8 @@ def score_posts(posts, ctx):
 - Location target: GCC region"""
 
     posts_json = json.dumps([
-        {"id": i, "url": p["url"], "author": p["author"],
-         "title": p["title"], "snippet": p["snippet"][:300]}
+        {"id": i, "url": p["url"], "author": p.get("author",""), "author_title": p.get("author_title",""),
+         "snippet": p.get("snippet", p.get("title",""))[:300], "reactions": p.get("reactions","0"), "comments": p.get("comments","0"), "source": p.get("query_source","")}
         for i, p in enumerate(filtered[:50])
     ], ensure_ascii=False, indent=2)
 
@@ -561,14 +561,27 @@ def score_posts(posts, ctx):
 
 Score each LinkedIn post below 0-100 for Ahmed to comment on.
 
-Scoring criteria (25 pts each):
-1. Career overlap - post topic matches Ahmed's sectors/companies/experience
-2. Persona match - author is VP+/Director+, GCC/MENA region, right sectors
-3. Comment opportunity - hiring posts, thought leadership, few visible comments (low competition)
-4. Brand fit - commenting would reinforce Ahmed's Digital Transformation Executive brand
+SELECTION CRITERIA (strict):
+INCLUDE (scores 60+):
+- Topics: PMO, digital transformation, operations, AI, GCC/MENA business, leadership, HealthTech, FinTech, technology strategy
+- Authors: C-suite, VP, Director, GM, hiring managers, industry influencers, people at companies Ahmed has applied to
+- Recency: posted in last 24 hours (fresh posts only)
+- Engagement: has some likes or comments (proof it's active, comment gets seen)
+
+SKIP (score below 30, these are hard filters):
+- Purely personal posts (birthday, travel, family, celebrations with no business angle)
+- Political or controversial topics
+- Zero engagement posts with no comments at all
+- Posts with no visible business relevance to Ahmed's sectors
+
+COMMENT VALUE (what makes a comment worthwhile):
+- Ahmed can add a real insight from his 20 years in GCC operations
+- Post invites discussion or asks a question
+- Commenting would reinforce Ahmed's brand as a Digital Transformation Executive
+- Author is someone worth being visible to (potential referral, future colleague, hiring manager)
 
 Return JSON array only, no explanation:
-[{{"id": 0, "score": 85, "reason": "one-line reason", "author_name": "...", "author_title": "..."}}, ...]
+[{{"id": 0, "score": 85, "reason": "one-line reason why this is worth commenting on", "author_name": "...", "author_title": "..."}}, ...]
 
 Posts:
 {posts_json}"""
@@ -622,13 +635,15 @@ Content: {post.get('snippet', post.get('title', ''))[:500]}
 URL: {post.get('url', '')}
 
 Write a LinkedIn comment that:
-- Is grounded in Ahmed's ACTUAL experience (reference relevant sector/role naturally if it fits)
-- Adds a genuine insight or perspective, NOT flattery
-- Ends with a question or observation that invites a response
-- Is 2-4 sentences MAX
-- Uses NO em dashes (use commas or hyphens instead)
-- Reads like a peer commenting, NOT a job seeker
-- Is specific to THIS post's content
+- Opens with a specific insight or perspective, NEVER with "Great post!", "So true!", "Absolutely!", or any empty affirmation
+- Is grounded in Ahmed's ACTUAL experience - reference his GCC operations, Talabat scaling, HealthTech/FinTech work naturally if it genuinely fits the post topic (do NOT force it)
+- Adds something real: a data point, a counter-angle, a specific challenge he's faced, or a nuanced observation
+- References Ahmed subtly if relevant: "In my experience scaling operations across GCC..." NOT "I'm looking for my next role"
+- Ends with a question or bold statement that invites a reply from the author
+- Is 2-4 sentences MAX - executives don't write essays in comments
+- Uses NO hashtags - they look automated in comments
+- Uses NO em dashes - use commas or hyphens instead
+- Reads like a peer having a genuine conversation, NOT a job seeker or fan
 
 Return ONLY the comment text, no quotes, no explanation."""
 
