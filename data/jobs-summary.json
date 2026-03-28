@@ -1389,7 +1389,12 @@
       "fallback_count": 0,
       "fallback_pct": 0.0
     },
-    "sonnet_rescore_at": "2026-03-28T15:01:00+02:00"
+    "sonnet_rescore_at": "2026-03-28T15:01:00+02:00",
+    "pipeline": {
+      "applied": 12,
+      "last_applied_date": "2026-03-28",
+      "batch_applied_2026_03_28": 13
+    }
   },
   "kpi": {
     "submit_count": 23,
