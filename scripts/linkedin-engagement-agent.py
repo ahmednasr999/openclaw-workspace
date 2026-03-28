@@ -52,15 +52,18 @@ OPENCLAW_JSON      = Path("/root/.openclaw/openclaw.json")
 CAIRO = timezone(timedelta(hours=2))
 OPENCLAW_JSON = Path("/root/.openclaw/openclaw.json")
 
-DRY_RUN   = "--dry-run" in sys.argv
-POST_ID   = None
-SKIP_ID   = None
+DRY_RUN          = "--dry-run" in sys.argv
+POST_ID          = None
+SKIP_ID          = None
+SCORE_AND_DRAFT  = None   # path to JSON file containing pre-scraped posts
 
 for i, arg in enumerate(sys.argv):
     if arg == "--post-id" and i + 1 < len(sys.argv):
         POST_ID = sys.argv[i + 1]
     if arg == "--skip-id" and i + 1 < len(sys.argv):
         SKIP_ID = sys.argv[i + 1]
+    if arg == "--score-and-draft" and i + 1 < len(sys.argv):
+        SCORE_AND_DRAFT = sys.argv[i + 1]
 
 # LLM config (loaded once)
 _ANTHROPIC_API_KEY = ""
@@ -1016,5 +1019,26 @@ if __name__ == "__main__":
         log.info(f"=== Skipping post_id={SKIP_ID} ===")
         skip_post(SKIP_ID)
         sys.exit(0)
+    elif SCORE_AND_DRAFT:
+        # Called by CMO agent after scraping feed via browser tool
+        # Input: JSON file with list of {url, author, author_title, snippet, reactions, comments}
+        log.info(f"=== Score-and-draft mode: loading posts from {SCORE_AND_DRAFT} ===")
+        load_llm_config()
+        try:
+            raw_posts = json.loads(Path(SCORE_AND_DRAFT).read_text())
+        except Exception as e:
+            log.error(f"Could not load posts file: {e}")
+            sys.exit(1)
+        log.info(f"Loaded {len(raw_posts)} posts for scoring")
+        ctx = load_ahmed_context()
+        top5 = score_posts(raw_posts, ctx)
+        if not top5:
+            log.error("No posts survived scoring. Exiting.")
+            sys.exit(1)
+        for post in top5:
+            post["comment"] = draft_comment(post, ctx)
+            post["post_id"] = f"p{uuid.uuid4().hex[:6]}"
+        send_engagement_batch(top5)
+        log.info("Score-and-draft complete. Approval cards sent to topic 7.")
     else:
         main()
