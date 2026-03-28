@@ -176,13 +176,25 @@ REQUIREMENTS:
 1. Single-column HTML with inline CSS only
 2. Mirror exact keywords from JD (not synonyms)
 3. Every bullet: Action Verb + Value + Result/Metric
-4. Professional Summary: 3-4 lines, top 3 JD keywords in first sentence
-5. Prioritize most relevant experience for THIS role
-6. NO tables, NO multi-column body, NO graphics, NO icons
-7. Font: Arial/Helvetica, 10-11pt body, 13pt name
-8. Margins: 0.75in equivalent padding
-9. Sections: Professional Summary, Core Competencies, Professional Experience, Education, Certifications
-10. Target: 1.5-2 pages when rendered as PDF
+
+4. PROFESSIONAL SUMMARY (CRITICAL - THIS IS THE MOST IMPORTANT SECTION):
+   - This summary MUST be unique and specific to THIS role at {company}.
+   - FIRST SENTENCE: Open with the exact job title "{title}" and what {company} needs most based on the JD. Do NOT open with "Senior Operations Executive" or any generic phrase.
+   - Example structure: "[Title] with X years [specific domain from JD]..." or "Executive [domain] leader with proven [specific JD requirement]..."
+   - SECOND SENTENCE: Most relevant quantified achievement that directly maps to the top requirement in THIS JD.
+   - THIRD SENTENCE: Reference {company} industry/context if known, or the specific challenge mentioned in the JD.
+   - Length: 3-4 lines. Every word must earn its place.
+   - NEVER reuse the same summary opening across different CVs.
+
+5. CORE COMPETENCIES: Reorder to lead with skills most emphasized in THIS JD. Include exact JD phrases.
+6. EXPERIENCE BULLETS: Reorder bullets within each role to lead with the most relevant achievement for THIS position. Do not just copy all bullets in the same order every time.
+7. NO tables, NO multi-column body, NO graphics, NO icons
+8. Font: Arial/Helvetica, 10-11pt body, 13pt name
+9. Margins: 0.75in equivalent padding
+10. Sections: Professional Summary, Core Competencies, Professional Experience, Education, Certifications
+11. Target: 1.5-2 pages when rendered as PDF
+
+SELF-CHECK BEFORE OUTPUT: Read back your Professional Summary first line. If it could apply to any other job, rewrite it until it cannot.
 
 OUTPUT: Complete HTML document only. No explanation. No markdown wrapper. Start with <!DOCTYPE html>"""
 
