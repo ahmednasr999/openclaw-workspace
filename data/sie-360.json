@@ -1,18 +1,18 @@
 {
-  "generated": "2026-03-26T23:50:14.836931+00:00",
-  "health_score": 79,
+  "generated": "2026-03-27T23:50:22.491908+00:00",
+  "health_score": 77,
   "summary": {
-    "ok": 6,
-    "warn": 3,
+    "ok": 5,
+    "warn": 4,
     "alert": 3
   },
   "workspace": {
-    "root_files": 64,
+    "root_files": 67,
     "disk_percent": 48,
     "disk_used": "46G",
     "disk_total": "96G",
     "ram_total": "7.8Gi",
-    "ram_used": "3.2Gi",
+    "ram_used": "3.4Gi",
     "large_files": [
       "/root/.openclaw/agents/main/qmd/node_modules/@node-llama-cpp/linux-x64-cuda/bins/linux-x64-cuda/libggml-cuda.so",
       "/root/.openclaw/agents/main/qmd/node_modules/@node-llama-cpp/linux-x64-cuda-ext/bins/linux-x64-cuda/fallback/libggml-cuda.so",
@@ -27,11 +27,14 @@
       "/root/.openclaw/agents/main/qmd/node_modules/typescript/lib/_tsc.js",
       "/root/.openclaw/agents/main/qmd/node_modules/typescript/lib/typescript.js",
       "/root/.openclaw/agents/main/qmd/xdg-cache/qmd/index.sqlite",
+      "/root/.openclaw/agents/main/sessions/sessions.json.28ab18d1-4532-4ef4-84e9-ab513ebce8a8.tmp",
+      "/root/.openclaw/agents/main/sessions/sessions.json.c5d422ed-4c0a-4668-b9ef-83b161e7f64b.tmp",
       "/root/.openclaw/agents/main/sessions/sessions.json",
       "/root/.openclaw/agents/main/sessions/94b6e2a1-23db-4dea-9a78-55d0857475d2.jsonl.reset.2026-03-24T04-55-47.007Z",
       "/root/.openclaw/agents/main/sessions/c9e7570d-a391-4989-b3b7-48c29ad435c0.jsonl.reset.2026-03-21T18-24-10.855Z",
-      "/root/.openclaw/agents/main/sessions/13647d2a-c1ab-4fce-83e2-2114622b7809.jsonl",
       "/root/.openclaw/agents/main/sessions/sessions.json.1d223764-7465-4fa4-9062-f5cf98e5652a.tmp",
+      "/root/.openclaw/agents/main/sessions/sessions.json.664b3945-0057-46ac-b1fe-f50ed980d587.tmp",
+      "/root/.openclaw/agents/main/sessions/13647d2a-c1ab-4fce-83e2-2114622b7809.jsonl.deleted.2026-03-27T20-25-39.543Z",
       "/root/.openclaw/extensions/lossless-claw/node_modules/@napi-rs/canvas-linux-x64-gnu/skia.linux-x64-gnu.node",
       "/root/.openclaw/extensions/lossless-claw/node_modules/@larksuiteoapi/node-sdk/types/index.d.ts",
       "/root/.openclaw/extensions/lossless-claw/node_modules/pdfjs-dist/build/pdf.worker.mjs.map",
@@ -73,7 +76,7 @@
       "/root/.openclaw/workspace/newsletter2.png",
       "/root/.openclaw/workspace/newsletter3.png"
     ],
-    "session_mb": 156.7
+    "session_mb": 228.2
   },
   "learnings": {
     "total": 20,
@@ -98,7 +101,7 @@
       "notion_token": "present (50 chars)",
       "notion_databases": 15,
       "linkedin_lines": 3,
-      "linkedin_age_days": 3.1
+      "linkedin_age_days": 4.1
     }
   },
   "crons": {
@@ -110,33 +113,39 @@
     "raw_prompt_list": [
       "Briefing: Brief Me",
       "Content Factory Scorer",
-      "Content Factory Exa Scanner",
       "Content Agent: Reaction Check",
-      "Content Factory Weekly Digest",
       "NASR Doctor (Daily)",
       "RSS Intelligence \u2014 Daily Crawl",
       "Content Factory Auto-Drafter",
       "Email Agent (Fri-Sat)",
-      "Content Agent: Weekly CREATE",
       "Notion Pipeline Sync",
       "Email Agent (Sun-Thu)",
       "Weekly Pipeline Audit",
       "Content Agent: Pre-Post Priming",
       "Weekly Team Retro",
       "Content Agent: Engagement Window Close",
-      "Content Agent: Weekly LEARN"
+      "Content Agent: Weekly LEARN",
+      "Content Factory Exa Scanner",
+      "Content Factory Weekly Digest",
+      "Content Agent: Weekly CREATE"
     ],
-    "failing": []
+    "failing": [
+      {
+        "name": "Notion Pipeline Sync",
+        "consecutive_errors": 1,
+        "last_error": "Error: cron: job execution timed out"
+      }
+    ]
   },
   "briefing_notion": {
-    "today": "2026-03-26",
+    "today": "2026-03-27",
     "exists": true
   },
   "findings": [
     {
       "category": "workspace",
       "level": "warn",
-      "message": "Root files: 64 (approaching clutter threshold of 100)"
+      "message": "Root files: 67 (approaching clutter threshold of 100)"
     },
     {
       "category": "workspace",
@@ -146,12 +155,12 @@
     {
       "category": "workspace",
       "level": "warn",
-      "message": "Large files (>5MB): 58 found in .openclaw"
+      "message": "Large files (>5MB): 61 found in .openclaw"
     },
     {
       "category": "workspace",
       "level": "alert",
-      "message": "Session size: 156.7MB - bloated, review sessions"
+      "message": "Session size: 228.2MB - bloated, review sessions"
     },
     {
       "category": "learnings",
@@ -185,17 +194,17 @@
     },
     {
       "category": "crons",
-      "level": "ok",
-      "message": "No failing crons"
+      "level": "warn",
+      "message": "Failing crons: 1 with consecutive errors"
     },
     {
       "category": "briefing",
       "level": "ok",
-      "message": "Notion briefing page for 2026-03-26: exists"
+      "message": "Notion briefing page for 2026-03-27: exists"
     }
   ],
   "auto_fixed": [],
   "needs_attention": [
-    "Session bloat: 156.7MB - review before deleting (needs human decision)"
+    "Session bloat: 228.2MB - review before deleting (needs human decision)"
   ]
 }

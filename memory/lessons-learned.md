@@ -254,3 +254,30 @@ Defaulted to Composio before reading service-registry.md and config/ directory.
 - **Notion** → always use `config/notion.json` token directly. Never use Composio for Notion.
 - **Telegram** → always use the bot token hardcoded in scripts (e.g. `content-factory-exa-scanner.py`) or `config/telegram.json`. Never use Composio for Telegram.
 - Before ANY auth flow: check `config/service-registry.md` + `config/` directory first. If a token exists, use it. Period.
+
+## 2026-03-27
+### Config Corruption: openclaw.json Bindings
+**What I Missed:**
+Set all `bindings[].type` to "route" via Python script, but left `acp` blocks present (invalid under RouteBindingSchema.strict()). Also never added `match.peer.kind` — a required field. Two stacked errors.
+
+**Why:**
+1. Didn't understand AcpBindingSchema vs RouteBindingSchema — they have different required/allowed fields
+2. Bulk-overwrote fields without checking each binding's schema variant
+3. Trusted misleading Zod union error messages (showed wrong variant's allowed values)
+4. No validation step after edit, no backup before edit
+
+**Fix (Rules - Non-Negotiable):**
+1. NEVER modify openclaw.json without running config validate immediately after. If validation fails, do NOT restart.
+2. NEVER bulk-overwrite fields across all bindings without understanding each binding's schema variant.
+3. Always backup before editing: `cp ~/.openclaw/openclaw.json ~/.openclaw/openclaw.json.bak.$(date +%s)`
+4. Keep the file locked (`chattr +i`) at all times. Only unlock → edit → validate → re-lock.
+5. Don't trust Zod union errors at face value — inspect the schema source when stuck.
+
+## 2026-03-28
+### LinkedIn Job Scraping - Approved Method (Non-Negotiable)
+**Rule:** HR Agent ALWAYS uses JobSpy with `linkedin_fetch_description=True` for LinkedIn jobs.
+**Why:** Hits LinkedIn's public /jobs/view/ API — no auth, no cookies, full JDs, works from VPS.
+**Script:** scripts/jobs-source-linkedin-jobspy.py
+**Reference:** https://github.com/DaKheera47/job-ops
+**NEVER use:** BeautifulSoup scraping, Selenium, Composio LinkedIn tools, or any auth-dependent method.
+**What went wrong before:** Old script used requests+BS4 against linkedin.com/jobs/search/ which blocked from VPS IPs.

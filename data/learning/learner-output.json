@@ -2,22 +2,22 @@
   "meta": {
     "agent": "daily-learner",
     "version": "1.0.0",
-    "generated_at": "2026-03-26T23:00:01.230187+02:00",
-    "duration_ms": 42,
+    "generated_at": "2026-03-27T23:00:02.574458+02:00",
+    "duration_ms": 89,
     "ttl_hours": 24,
     "status": "success",
     "error": null,
-    "run_id": "7a1179e3",
+    "run_id": "d02ba780",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
     "job_accuracy": {
-      "total_recommendations": 1209,
-      "total_unique_jobs": 266,
-      "submit_recommendations": 160,
-      "applied_count": 25,
-      "accuracy_rate": 15.625,
+      "total_recommendations": 1397,
+      "total_unique_jobs": 294,
+      "submit_recommendations": 176,
+      "applied_count": 28,
+      "accuracy_rate": 15.909090909090908,
       "skip_candidates": [
         {
           "job_id": "linkedin-li-4379840970",
@@ -61,7 +61,7 @@
         },
         {
           "job_id": "linkedin-li-4377604135",
-          "skip_signals": 9,
+          "skip_signals": 12,
           "reason": "Director-level BD for climate services is adjacent to transformation advisory; S&P Global is reputable; sustainability is not a core domain though"
         },
         {
@@ -171,7 +171,7 @@
         },
         {
           "job_id": "linkedin-li-4353175270",
-          "skip_signals": 7,
+          "skip_signals": 9,
           "reason": "Analytics is a stated strength but fund admin Salesforce/CRM analytics is not DT/Business Excellence domain"
         },
         {
@@ -181,7 +181,7 @@
         },
         {
           "job_id": "linkedin-li-4387585297",
-          "skip_signals": 2,
+          "skip_signals": 3,
           "reason": "C-suite COO in target geography but energy/industrial/machinery domain is outside candidate's core domains (FinTech, HealthTech, Payments, Government/Smart City)"
         },
         {
@@ -191,12 +191,12 @@
         },
         {
           "job_id": "linkedin-li-4389548229",
-          "skip_signals": 5,
+          "skip_signals": 6,
           "reason": "C-suite level governance role with $50M+ risk/compliance scope in target geography (KSA), NCA/SAMA frameworks are governance-heavy, but cybersecurity is a specialized domain not aligned to DT/Operations core"
         },
         {
           "job_id": "linkedin-li-4388954269",
-          "skip_signals": 5,
+          "skip_signals": 7,
           "reason": "Director-level with P&L and regulatory compliance (KYC/AML) in Saudi fintech - transferable operational leadership, but Customer Success is a different function from DT/PMO core"
         },
         {
@@ -211,7 +211,7 @@
         },
         {
           "job_id": "linkedin-li-4387595324",
-          "skip_signals": 8,
+          "skip_signals": 10,
           "reason": "Banking domain is a fit but Principal title sits below Director-level target and role is hands-on technical EA rather than strategic DT/PMO leadership"
         },
         {
@@ -235,14 +235,14 @@
           "reason": "C-suite in target geography (Riyadh) but recruiter name and no domain details make it unverifiable"
         },
         {
-          "job_id": "linkedin-li-4370306565",
-          "skip_signals": 4,
-          "reason": "VP title and target geography are right, but MMS META scope is unclear without description; potential fit pending clarification"
+          "job_id": "linkedin-li-4389084154",
+          "skip_signals": 2,
+          "reason": "Director level in target geography but Head of Creative Strategy is marketing/brand focused, not DT/PMO"
         },
         {
-          "job_id": "linkedin-li-4336229808",
-          "skip_signals": 3,
-          "reason": "C-suite seniority and FAB brand match, but role is commercial banking/client portfolio management, not transformation or PMO"
+          "job_id": "linkedin-li-4370306565",
+          "skip_signals": 5,
+          "reason": "VP title and target geography are right, but MMS META scope is unclear without description; potential fit pending clarification"
         },
         {
           "job_id": "linkedin-li-4386873396",
@@ -260,28 +260,18 @@
           "reason": "C-level in target location (Abu Dhabi) but Founding CTO is hands-on technical build role; Ahmed's strengths are DT/PMO/Operations not greenfield engineering architecture"
         },
         {
-          "job_id": "linkedin-li-4389832965",
-          "skip_signals": 4,
-          "reason": "VP Product Engineering in AI/learning is domain-adjacent but ed-tech is outside core domains; $400K USD is compelling if candidate wants remote work"
-        },
-        {
           "job_id": "linkedin-li-4388680503",
           "skip_signals": 2,
           "reason": "C-suite in target geography (Saudi Arabia) and mentions operational excellence, but FMCG/Food manufacturing domain is not in candidate's domain list and CFO keyword is anti-pattern for this profile"
         },
         {
           "job_id": "linkedin-li-4387513750",
-          "skip_signals": 3,
+          "skip_signals": 4,
           "reason": "Finance-specialist Director is too narrow; candidate's strength is cross-functional DT/operations leadership, not finance-specific"
         },
         {
-          "job_id": "linkedin-li-4388099140",
-          "skip_signals": 3,
-          "reason": "Head of Growth in FinTech is director-level with relevant domain, but growth/partnerships acquisition focus is more commercial than the candidate's core DT/PMO/Operations executive strengths"
-        },
-        {
           "job_id": "linkedin-li-4359243491",
-          "skip_signals": 2,
+          "skip_signals": 3,
           "reason": "FinTech domain match in target geography but seniority (Senior Manager) is below Ahmed's 20-year executive level; partial fit worth reviewing if scope is strategic enough"
         },
         {
@@ -291,18 +281,18 @@
         },
         {
           "job_id": "linkedin-li-4390107049",
-          "skip_signals": 2,
+          "skip_signals": 4,
           "reason": "C-suite seniority and KSA location match well, but MedTech sales/partnerships domain is a stretch from core DT/PMO/Operations strengths"
         },
         {
           "job_id": "linkedin-li-4390344259",
-          "skip_signals": 3,
+          "skip_signals": 5,
           "reason": "Senior C-suite title (Senior Managing Director) in target geography, but description is entirely boilerplate EEO text with no role details available to assess"
         },
         {
-          "job_id": "linkedin-li-4390039717",
-          "skip_signals": 3,
-          "reason": "C-suite title in target location but Chief of Staff is a strategic support/advisory role, not a standalone executive P&L role"
+          "job_id": "linkedin-li-4390103218",
+          "skip_signals": 2,
+          "reason": "C-suite fintech in target geography but CFO role is pure finance leadership - no financial background makes this a stretch despite fintech domain match"
         },
         {
           "job_id": "linkedin-li-4390108824",
@@ -316,8 +306,58 @@
         },
         {
           "job_id": "linkedin-li-4378535428",
-          "skip_signals": 2,
+          "skip_signals": 5,
           "reason": "Enterprise implementation consulting in target geography with transformation elements, but Anaplan product focus differs from candidate's broad DT/PMO expertise"
+        },
+        {
+          "job_id": "linkedin-li-4390011529",
+          "skip_signals": 3,
+          "reason": "C-Suite title and target geography align with candidate, plus systems integration and stakeholder management aspects overlap with PMO work, but rail technical depth is a stretch from core DT competencies"
+        },
+        {
+          "job_id": "linkedin-li-4380779915",
+          "skip_signals": 2,
+          "reason": "Director level + target geography, but subscription/fleet ops management is operational retail, not digital transformation or PMO leadership"
+        },
+        {
+          "job_id": "linkedin-li-4379669933",
+          "skip_signals": 2,
+          "reason": "VP-level FinTech/ banking role in target geography with relevant domain, but hands-on security engineering depth may exceed candidate's strategic CTO focus"
+        },
+        {
+          "job_id": "linkedin-li-4391024061",
+          "skip_signals": 2,
+          "reason": "Director-level FinTech in Riyadh with SAR 55-60K/month attractive, and agile/product delivery experience overlaps with Ahmed's PMO strength, but Head of Product is too product-managerial vs. transformation mandate"
+        },
+        {
+          "job_id": "linkedin-li-4390541673",
+          "skip_signals": 3,
+          "reason": "C-suite in target geography but hands-on engineering/SAP/build-from-scratch focus conflicts with candidate's transformation/operational excellence strength"
+        },
+        {
+          "job_id": "linkedin-li-4391929788",
+          "skip_signals": 3,
+          "reason": "Director/Dubai fit but data-focused role vs DT/PMO core; partial domain match in blockchain/FinTech"
+        },
+        {
+          "job_id": "linkedin-li-4380087829",
+          "skip_signals": 3,
+          "reason": "Data analytics + Director level in target geography but cargo/airline domain is tangential to DT/PMO core, operational not transformational focus"
+        },
+        {
+          "job_id": "linkedin-li-4389957354",
+          "skip_signals": 2,
+          "reason": "Rail infrastructure project management - right seniority but civil engineering focus is not core DT/PMO domain"
+        },
+        {
+          "job_id": "linkedin-li-4390562750",
+          "skip_signals": 2,
+          "reason": "Head-level BCM role in target geography (Abu Dhabi banking), aligned with Operational Excellence. However BCM is a niche risk discipline rather than broad DT/PMO leadership."
+        },
+        {
+          "job_id": "google-in-55816325782c827c",
+          "skip_signals": 2,
+          "reason": "Commercial Director in FinTech (Dubai) fits seniority but 'Commercial' leans sales/revenue focus, not digital transformation"
         }
       ]
     },
@@ -327,69 +367,69 @@
     },
     "skip_patterns_added": [
       {
-        "job_id": "linkedin-li-4370417870",
-        "reason": "Director level in target geography but Head of Product Design is design-focused, not digital transformation or PMO - wrong functional domain"
+        "job_id": "linkedin-li-4389084154",
+        "reason": "Director level in target geography but Head of Creative Strategy is marketing/brand focused, not DT/PMO"
       },
       {
-        "job_id": "linkedin-li-4368984210",
-        "reason": "C-level in target location (Abu Dhabi) but Founding CTO is hands-on technical build role; Ahmed's strengths are DT/PMO/Operations not greenfield engineering architecture"
+        "job_id": "linkedin-li-4390103218",
+        "reason": "C-suite fintech in target geography but CFO role is pure finance leadership - no financial background makes this a stretch despite fintech domain match"
       },
       {
-        "job_id": "linkedin-li-4388680503",
-        "reason": "C-suite in target geography (Saudi Arabia) and mentions operational excellence, but FMCG/Food manufacturing domain is not in candidate's domain list and CFO keyword is anti-pattern for this profile"
+        "job_id": "linkedin-li-4390011529",
+        "reason": "C-Suite title and target geography align with candidate, plus systems integration and stakeholder management aspects overlap with PMO work, but rail technical depth is a stretch from core DT competencies"
       },
       {
-        "job_id": "linkedin-li-4388099140",
-        "reason": "Head of Growth in FinTech is director-level with relevant domain, but growth/partnerships acquisition focus is more commercial than the candidate's core DT/PMO/Operations executive strengths"
+        "job_id": "linkedin-li-4380779915",
+        "reason": "Director level + target geography, but subscription/fleet ops management is operational retail, not digital transformation or PMO leadership"
       },
       {
-        "job_id": "linkedin-li-4359243491",
-        "reason": "FinTech domain match in target geography but seniority (Senior Manager) is below Ahmed's 20-year executive level; partial fit worth reviewing if scope is strategic enough"
+        "job_id": "linkedin-li-4379669933",
+        "reason": "VP-level FinTech/ banking role in target geography with relevant domain, but hands-on security engineering depth may exceed candidate's strategic CTO focus"
       },
       {
-        "job_id": "linkedin-li-4390312687",
-        "reason": "Commercial Excellence leans sales/sales ops; medical devices domain not in candidate's core domains (HealthTech yes, but medical devices is different); C-Suite seniority and Dubai location are positive"
+        "job_id": "linkedin-li-4391024061",
+        "reason": "Director-level FinTech in Riyadh with SAR 55-60K/month attractive, and agile/product delivery experience overlaps with Ahmed's PMO strength, but Head of Product is too product-managerial vs. transformation mandate"
       },
       {
-        "job_id": "linkedin-li-4390107049",
-        "reason": "C-suite seniority and KSA location match well, but MedTech sales/partnerships domain is a stretch from core DT/PMO/Operations strengths"
+        "job_id": "linkedin-li-4390541673",
+        "reason": "C-suite in target geography but hands-on engineering/SAP/build-from-scratch focus conflicts with candidate's transformation/operational excellence strength"
       },
       {
-        "job_id": "linkedin-li-4390344259",
-        "reason": "Senior C-suite title (Senior Managing Director) in target geography, but description is entirely boilerplate EEO text with no role details available to assess"
+        "job_id": "linkedin-li-4391929788",
+        "reason": "Director/Dubai fit but data-focused role vs DT/PMO core; partial domain match in blockchain/FinTech"
       },
       {
-        "job_id": "linkedin-li-4390039717",
-        "reason": "C-suite title in target location but Chief of Staff is a strategic support/advisory role, not a standalone executive P&L role"
+        "job_id": "linkedin-li-4380087829",
+        "reason": "Data analytics + Director level in target geography but cargo/airline domain is tangential to DT/PMO core, operational not transformational focus"
       },
       {
-        "job_id": "linkedin-li-4390108824",
-        "reason": "Director-level strategic partnerships in target geography, but higher education/academic ranking domain is weak alignment with DT/Operations background"
+        "job_id": "linkedin-li-4389957354",
+        "reason": "Rail infrastructure project management - right seniority but civil engineering focus is not core DT/PMO domain"
       },
       {
-        "job_id": "linkedin-li-4357521663",
-        "reason": "VP level in target geography (Abu Dhabi), AML/financial crime domain is tangential to DT/PMO/Operations core but compliance experience could transfer"
+        "job_id": "linkedin-li-4390562750",
+        "reason": "Head-level BCM role in target geography (Abu Dhabi banking), aligned with Operational Excellence. However BCM is a niche risk discipline rather than broad DT/PMO leadership."
       },
       {
-        "job_id": "linkedin-li-4378535428",
-        "reason": "Enterprise implementation consulting in target geography with transformation elements, but Anaplan product focus differs from candidate's broad DT/PMO expertise"
+        "job_id": "google-in-55816325782c827c",
+        "reason": "Commercial Director in FinTech (Dubai) fits seniority but 'Commercial' leans sales/revenue focus, not digital transformation"
       }
     ],
     "weight_changes": [],
     "source_rankings": {
       "unknown": {
-        "recommended": 1209,
+        "recommended": 1397,
         "applied": 0,
         "rate": 0.0
       }
     },
     "summary": {
-      "generated_at": "2026-03-26T23:00:01.227439+02:00",
+      "generated_at": "2026-03-27T23:00:02.571435+02:00",
       "period": "last_7_days",
       "job_recommendation_accuracy": {
-        "rate": 15.625,
-        "total": 1209,
-        "applied": 25
+        "rate": 15.909090909090908,
+        "total": 1397,
+        "applied": 28
       },
       "briefing_actionability": {
         "total_briefings": 0,
@@ -407,8 +447,8 @@
     }
   },
   "kpi": {
-    "recommendation_accuracy": 15.625,
-    "total_recommendations": 1209,
+    "recommendation_accuracy": 15.909090909090908,
+    "total_recommendations": 1397,
     "skip_patterns_added": 12,
     "weight_changes": 0
   },

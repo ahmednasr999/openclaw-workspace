@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-27T16:00:12.141333+02:00",
+  "last_updated": "2026-03-28T05:00:37.744277+02:00",
   "alerts": [
     {
       "type": "gateway_down",
@@ -63,7 +63,21 @@
       "message": "Gateway is down: <urlopen error [Errno 111] Connection refused>",
       "timestamp": "2026-03-27T16:00:07.556898+02:00",
       "id": "alert-8-160012"
+    },
+    {
+      "type": "gateway_down",
+      "urgency": "critical",
+      "message": "Gateway is down: <urlopen error [Errno 111] Connection refused>",
+      "timestamp": "2026-03-27T22:00:09.107681+02:00",
+      "id": "alert-9-220012"
+    },
+    {
+      "type": "interview_detected",
+      "urgency": "critical",
+      "message": "Interview invite from Julian Goldie <me@juliangoldie.com>: NEW Gemini 3.1 Flash Live AI Agents Are INSANE!",
+      "timestamp": "2026-03-28T05:00:33.528894+02:00",
+      "id": "alert-10-050037"
     }
   ],
-  "active_count": 9
+  "active_count": 11
 }
