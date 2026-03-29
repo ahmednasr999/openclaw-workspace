@@ -108,11 +108,21 @@ class AgentResult:
         }
 
     def write(self, output_path):
-        """Write result to JSON file."""
+        """Write result to JSON file. Auto-reconciles KPI counts with data arrays."""
         output_path = Path(output_path)
         output_path.parent.mkdir(parents=True, exist_ok=True)
+        envelope = self.to_dict()
+        # Defensive: if data has submit/review arrays, sync KPI counts
+        data = envelope.get("data", {})
+        kpi = envelope.get("kpi", {})
+        if isinstance(data, dict):
+            for key in ("submit", "review", "skip"):
+                arr = data.get(key)
+                if isinstance(arr, list):
+                    kpi[f"{key}_count"] = len(arr)
+        envelope["kpi"] = kpi
         with open(output_path, 'w') as f:
-            json.dump(self.to_dict(), f, indent=2, default=str)
+            json.dump(envelope, f, indent=2, default=str)
         return output_path
 
     def log_kpi(self):

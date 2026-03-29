@@ -1397,12 +1397,12 @@
     }
   },
   "kpi": {
-    "submit_count": 23,
-    "review_count": 29,
-    "skip_count": 149,
-    "submit_rate": 11.4,
-    "review_rate": 14.4,
-    "skip_rate": 74.1,
+    "submit_count": 13,
+    "review_count": 14,
+    "skip_count": 174,
+    "submit_rate": 6.5,
+    "review_rate": 7.0,
+    "skip_rate": 86.6,
     "avg_fit_score": 3.7,
     "llm_latency_ms": 1665804
   },
