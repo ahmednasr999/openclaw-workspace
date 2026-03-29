@@ -129,7 +129,7 @@ def build_blocks():
 
     raw_jobs = data["jobs"]
     jobs_data = raw_jobs.get("data", {})
-    submit_jobs = jobs_data.get("submit", [])[:5]  # Cap at 5
+    submit_jobs = jobs_data.get("submit", [])  # Show ALL submit jobs
     review_jobs = jobs_data.get("review", [])[:5]
     avg_fit = raw_jobs.get("kpi", {}).get("avg_fit_score", None)
 
@@ -307,7 +307,7 @@ def build_blocks():
     blocks.append(h2("💼 Top Jobs to Apply"))
 
     if submit_jobs:
-        blocks.append(bul(plain(f"Recommended ({len(submit_jobs)} shown, max 5):")))
+        blocks.append(bul(plain(f"Recommended ({len(submit_jobs)} jobs):")))
         for idx, job in enumerate(submit_jobs, 1):
             fit = job.get("career_fit_score", "?")
             ats = job.get("ats_score", 0)
