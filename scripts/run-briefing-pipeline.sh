@@ -106,6 +106,26 @@ classify_failure() {
 }
 
 FAILURE_LOG="/var/log/briefing/failures-$(date +%Y-%m-%d).jsonl"
+PHASE_STATUS_FILE="$DATA_DIR/pipeline-phase-status.json"
+
+# Initialize phase status tracker
+echo '{"generated_at":"'"$(date -u +%Y-%m-%dT%H:%M:%SZ)"'","phases":{}}' > "$PHASE_STATUS_FILE"
+
+record_phase() {
+    local name="$1"
+    local status="$2"
+    local elapsed="$3"
+    local detail="${4:-}"
+    python3 -c "
+import json, sys
+f = '$PHASE_STATUS_FILE'
+try:
+    d = json.load(open(f))
+except: d = {'phases':{}}
+d['phases']['$name'] = {'status':'$status','elapsed_s':$elapsed,'detail':'$detail'}
+json.dump(d, open(f,'w'), indent=2)
+" 2>/dev/null || true
+}
 
 log_failure() {
     local name="$1"
@@ -141,6 +161,7 @@ run_agent() {
         if timeout "$timeout" python3 "$SCRIPTS/$script" >> "$LOG_FILE" 2>&1; then
             local elapsed=$(( $(date +%s) - start ))
             log "OK    $name (${elapsed}s)"
+            record_phase "$name" "OK" "$elapsed"
             # Track heartbeat on success
             if [ -n "$output_file" ]; then
                 python3 "$SCRIPTS/heartbeat-tracker.py" --agent "$name" --output "$output_file" >> "$LOG_FILE" 2>&1 || true
@@ -157,8 +178,10 @@ run_agent() {
             
             if [ $code -eq 124 ]; then
                 log "TIMEOUT $name (>${timeout}s) [$classification]"
+                record_phase "$name" "TIMEOUT" "$elapsed" "$classification"
             else
                 log "FAIL  $name (exit $code, ${elapsed}s) [$classification]"
+                record_phase "$name" "FAIL" "$elapsed" "$classification"
             fi
             
             log_failure "$name" "$classification" "$code" "$elapsed"
@@ -267,7 +290,7 @@ case "$MODE" in
         run_agent "enrich" "jobs-enrich-jd.py" 300 2
         
         log "--- LLM Review (sequential) ---"
-        run_agent "review" "jobs-review.py" 1200 2
+        run_agent "review" "jobs-review.py" 3000 2
         
         log "--- Push to Notion Pipeline (sequential) ---"
         run_agent "pipeline-push" "push-submit-to-notion.py" 120 2
@@ -320,7 +343,7 @@ case "$MODE" in
         run_agent "enrich" "jobs-enrich-jd.py" 300 2 || PHASE2_FAILURES="${PHASE2_FAILURES}enrich "
         
         log "--- Phase 3: LLM Review ---"
-        run_agent "review" "jobs-review.py" 1200 2 || PHASE2_FAILURES="${PHASE2_FAILURES}review "
+        run_agent "review" "jobs-review.py" 3000 2 || PHASE2_FAILURES="${PHASE2_FAILURES}review "
         
         log "--- Phase 4: Push to Notion Pipeline ---"
         run_agent "pipeline-push" "push-submit-to-notion.py" 120 2 || PHASE2_FAILURES="${PHASE2_FAILURES}pipeline-push "
