@@ -274,11 +274,11 @@ case "$MODE" in
     
     --jobs-only)
         log "=== JOB SOURCES (4x/day) ==="
-        # Google Jobs & Bayt: blocked from VPS (403). Disabled.
         # Exa dropped — unreliable (stale URLs, wrong locations, profile pages)
         run_parallel "Job Sources" \
             "linkedin"  "jobs-source-linkedin.py"  480 \
-            "indeed"    "jobs-source-indeed.py"    120
+            "indeed"    "jobs-source-indeed.py"    120 \
+            "google"    "jobs-source-google.py"    120
         
         log "--- Sync Applied IDs from Notion ---"
         timeout 15 python3 "$SCRIPTS/sync-applied-from-notion.py" >> "$LOG_FILE" 2>&1 || log "WARN: Notion sync failed (non-blocking)"
@@ -294,6 +294,9 @@ case "$MODE" in
         
         log "--- Push to Notion Pipeline (sequential) ---"
         run_agent "pipeline-push" "push-submit-to-notion.py" 120 2
+        
+        log "--- Push to NocoDB + Telegram Alerts ---"
+        run_agent "nocodb-push" "push-to-nocodb.py" 120 2
         ;;
     
     --all)
@@ -347,6 +350,9 @@ case "$MODE" in
         
         log "--- Phase 4: Push to Notion Pipeline ---"
         run_agent "pipeline-push" "push-submit-to-notion.py" 120 2 || PHASE2_FAILURES="${PHASE2_FAILURES}pipeline-push "
+
+        log "--- Phase 4a: Push to NocoDB + Telegram Alerts ---"
+        run_agent "nocodb-push" "push-to-nocodb.py" 120 2 || log "⚠️ Phase 4a (NocoDB push) failed — non-critical"
 
         log "--- Phase 4b: CV Autogen (Opus, budget-capped) ---"
         run_agent "cv-autogen" "jobs-cv-autogen.py" 7200 1 \
