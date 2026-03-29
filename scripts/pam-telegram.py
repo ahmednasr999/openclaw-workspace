@@ -113,7 +113,7 @@ def build_message():
         lines.append(f"🆕 {len(fresh_submit)} fresh:")
 
     shown = 0
-    for idx, j in enumerate(ordered_submit[:6], 1):
+    for idx, j in enumerate(ordered_submit, 1):  # Show ALL submit jobs
         title = j.get("title", "?")[:35]
         company = j.get("company", "?")[:20]
         location = j.get("location", "")

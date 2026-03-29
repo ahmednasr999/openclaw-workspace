@@ -135,9 +135,133 @@ def _wait_for_gateway(max_wait: int = 60) -> bool:
     return False
 
 
-def call_llm(prompt: str, model: str, timeout: int = 240, max_retries: int = 3) -> str | None:
-    """Call OpenClaw gateway with LLM request. Retries on connection failures."""
+def _call_minimax_direct(prompt: str, model: str, timeout: int = 240, max_retries: int = 3) -> str | None:
+    """Call MiniMax API directly, bypassing the gateway. Used for batch review jobs."""
     import time as _time
+    try:
+        auth = json.load(open("/root/.openclaw/agents/main/agent/auth.json"))
+        token = auth.get("minimax-portal", {}).get("access", "")
+    except Exception:
+        return None
+    if not token:
+        return None
+    # Strip provider prefix from model name
+    model_id = model.split("/")[-1] if "/" in model else model
+    for attempt in range(1, max_retries + 1):
+        try:
+            resp = requests.post(
+                "https://api.minimax.io/anthropic/v1/messages",
+                headers={
+                    "Content-Type": "application/json",
+                    "x-api-key": token,
+                    "anthropic-version": "2023-06-01",
+                },
+                json={
+                    "model": model_id,
+                    "max_tokens": 4000,
+                    "messages": [{"role": "user", "content": prompt}],
+                },
+                timeout=timeout,
+            )
+            if resp.status_code == 429:
+                retry_after = int(resp.headers.get("Retry-After", 10))
+                print(f"  MiniMax rate limited, waiting {retry_after}s...")
+                _time.sleep(retry_after)
+                continue
+            if resp.status_code != 200:
+                print(f"  MiniMax direct error: HTTP {resp.status_code} - {resp.text[:100]}")
+                if attempt < max_retries:
+                    _time.sleep(2)
+                    continue
+                return None
+            data = resp.json()
+            # Anthropic Messages API format
+            content_blocks = data.get("content", [])
+            text_parts = [b.get("text", "") for b in content_blocks if b.get("type") == "text"]
+            return "\n".join(text_parts) if text_parts else None
+        except Exception as e:
+            print(f"  MiniMax direct error (attempt {attempt}/{max_retries}): {e}")
+            if attempt < max_retries:
+                _time.sleep(2)
+                continue
+            return None
+    return None
+
+
+def _call_anthropic_direct(prompt: str, model: str, timeout: int = 240, max_retries: int = 3) -> str | None:
+    """Call Anthropic API directly, bypassing the gateway."""
+    import time as _time
+    try:
+        with open("/root/.openclaw/openclaw.json") as f:
+            import re
+            content = f.read()
+            m = re.search(r'sk-ant-[^"]+', content)
+            api_key = m.group(0) if m else ""
+    except Exception:
+        return None
+    if not api_key:
+        return None
+    model_id = model.split("/")[-1] if "/" in model else model
+    for attempt in range(1, max_retries + 1):
+        try:
+            resp = requests.post(
+                "https://api.anthropic.com/v1/messages",
+                headers={
+                    "Content-Type": "application/json",
+                    "x-api-key": api_key,
+                    "anthropic-version": "2023-06-01",
+                },
+                json={
+                    "model": model_id,
+                    "max_tokens": 4000,
+                    "temperature": 0.3,
+                    "messages": [{"role": "user", "content": prompt}],
+                },
+                timeout=timeout,
+            )
+            if resp.status_code == 429:
+                retry_after = int(resp.headers.get("Retry-After", 15))
+                print(f"  Anthropic rate limited, waiting {retry_after}s...", flush=True)
+                _time.sleep(retry_after)
+                continue
+            if resp.status_code != 200:
+                print(f"  Anthropic direct error: HTTP {resp.status_code} - {resp.text[:100]}", flush=True)
+                if attempt < max_retries:
+                    _time.sleep(3)
+                    continue
+                return None
+            data = resp.json()
+            content_blocks = data.get("content", [])
+            text_parts = [b.get("text", "") for b in content_blocks if b.get("type") == "text"]
+            return "\n".join(text_parts) if text_parts else None
+        except Exception as e:
+            print(f"  Anthropic direct error (attempt {attempt}/{max_retries}): {e}", flush=True)
+            if attempt < max_retries:
+                _time.sleep(3)
+                continue
+            return None
+    return None
+
+
+def call_llm(prompt: str, model: str, timeout: int = 240, max_retries: int = 3) -> str | None:
+    """Call LLM directly - bypass gateway entirely to avoid connection drops."""
+    import time as _time
+
+    # For MiniMax models, call MiniMax API directly
+    if "minimax" in model.lower():
+        print(f"    → MiniMax direct call ({len(prompt)} chars)...", flush=True)
+        result = _call_minimax_direct(prompt, model, timeout, max_retries)
+        if result is not None:
+            return result
+        print("  MiniMax direct failed, falling through to gateway...", flush=True)
+
+    # For Anthropic models, call Anthropic API directly
+    if "anthropic" in model.lower() or "claude" in model.lower() or "sonnet" in model.lower():
+        print(f"    → Anthropic direct call ({len(prompt)} chars)...", flush=True)
+        result = _call_anthropic_direct(prompt, model, timeout, max_retries)
+        if result is not None:
+            return result
+        print("  Anthropic direct failed, falling through to gateway...", flush=True)
 
     try:
         with open("/root/.openclaw/openclaw.json") as _f:
@@ -279,7 +403,10 @@ def run_round1_filter(jobs: list[dict]) -> tuple[list[dict], list[dict], int]:
     def process_r1_batch(batch_start):
         batch = jobs[batch_start:batch_start + BATCH_SIZE]
         batch_num = batch_start // BATCH_SIZE + 1
+        total_batches = (len(jobs) + BATCH_SIZE - 1) // BATCH_SIZE
+        print(f"  R1 batch {batch_num}/{total_batches} ({len(batch)} jobs)...", flush=True)
         prompt = build_round1_prompt(batch)
+        print(f"    Prompt: {len(prompt)} chars, calling {MODEL_ROUND1}...", flush=True)
         response = call_llm(prompt, model=MODEL_ROUND1, timeout=120)
         if response:
             results = parse_round1_response(response, len(batch))
@@ -296,13 +423,12 @@ def run_round1_filter(jobs: list[dict]) -> tuple[list[dict], list[dict], int]:
     all_r1 = []
     failed_batches = 0
 
-    with ThreadPoolExecutor(max_workers=4) as ex:
-        futures = {ex.submit(process_r1_batch, bs): bs for bs in batch_starts}
-        for future in as_completed(futures):
-            results, failed = future.result()
-            all_r1.extend(results)
-            if failed:
-                failed_batches += 1
+    # Sequential to avoid gateway overload (was max_workers=4, crashed gateway)
+    for bs in batch_starts:
+        results, failed = process_r1_batch(bs)
+        all_r1.extend(results)
+        if failed:
+            failed_batches += 1
 
     # Build lookup: job_num -> r1_result
     r1_lookup = {r["job_num"]: r for r in all_r1}
@@ -488,13 +614,12 @@ def run_round2_review(pass_jobs: list[dict], submit_threshold: int, review_thres
     total_latency = 0
     fallback_count = 0
 
-    with ThreadPoolExecutor(max_workers=2) as ex:
-        futures = {ex.submit(process_r2_batch, bs): bs for bs in batch_starts}
-        for future in as_completed(futures):
-            reviews, latency, fallbacks = future.result()
-            all_reviews.extend(reviews)
-            total_latency += latency
-            fallback_count += fallbacks
+    # Sequential to avoid gateway overload (was max_workers=2, crashed gateway)
+    for bs in batch_starts:
+        reviews, latency, fallbacks = process_r2_batch(bs)
+        all_reviews.extend(reviews)
+        total_latency += latency
+        fallback_count += fallbacks
 
     # Build lookup
     r2_lookup = {r["job_num"]: r for r in all_reviews}
