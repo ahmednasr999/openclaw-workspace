@@ -47,17 +47,19 @@ def load_notion_token():
 def fetch_notion_pipeline_for_dedup():
     """
     Query Notion Pipeline DB for ALL jobs (all stages).
-    Returns (applied_urls: set, applied_keys: set, total: int).
+    Returns (applied_urls: set, applied_keys: set, total: int, applied_companies: dict).
     applied_urls = LinkedIn job IDs from URLs.
     applied_keys = "company|role" normalized pairs.
+    applied_companies = {normalized_company: {"count": N, "stages": [list], "roles": [list]}}
     """
     token = load_notion_token()
     applied_urls = set()
     applied_keys = set()
+    applied_companies = {}  # company -> {count, stages, roles}
     total = 0
     if not token:
         log("  WARNING: No Notion token - falling back to pipeline.md for dedup")
-        return applied_urls, applied_keys, total
+        return applied_urls, applied_keys, total, applied_companies
 
     headers = {
         'Authorization': f'Bearer {token}',
@@ -101,15 +103,61 @@ def fetch_notion_pipeline_for_dedup():
                 if company and role:
                     applied_keys.add(f"{company}|{role}")
 
+                # Track company-level application history
+                if company:
+                    # Extract stage
+                    stage = ''
+                    for sk, sv in props.items():
+                        if sv.get('type') == 'select' and sv.get('select'):
+                            stage = sv['select'].get('name', '')
+                            break
+                        elif sv.get('type') == 'status' and sv.get('status'):
+                            stage = sv['status'].get('name', '')
+                            break
+                    if company not in applied_companies:
+                        applied_companies[company] = {"count": 0, "stages": [], "roles": []}
+                    applied_companies[company]["count"] += 1
+                    if stage:
+                        applied_companies[company]["stages"].append(stage)
+                    if role:
+                        applied_companies[company]["roles"].append(role)
+
             cursor = resp.get('next_cursor')
             if not cursor:
                 break
 
-        log(f"  Notion Pipeline: {total} jobs loaded for dedup ({len(applied_urls)} URLs, {len(applied_keys)} company|role keys)")
+        # Build canonical company names (merge variants like "fab" and "first abu dhabi bank (fab)")
+        merged = {}
+        for comp, data in applied_companies.items():
+            # Find canonical key - longest name wins
+            matched = False
+            for existing in list(merged.keys()):
+                if comp in existing or existing in comp:
+                    canonical = comp if len(comp) > len(existing) else existing
+                    other = existing if canonical == comp else comp
+                    if canonical != other:
+                        merged[canonical] = {
+                            "count": merged.get(existing, {}).get("count", 0) + data["count"],
+                            "stages": merged.get(existing, {}).get("stages", []) + data["stages"],
+                            "roles": merged.get(existing, {}).get("roles", []) + data["roles"],
+                        }
+                        if other in merged:
+                            del merged[other]
+                    else:
+                        merged[canonical]["count"] += data["count"]
+                        merged[canonical]["stages"].extend(data["stages"])
+                        merged[canonical]["roles"].extend(data["roles"])
+                    matched = True
+                    break
+            if not matched:
+                merged[comp] = data
+        applied_companies = merged
+
+        log(f"  Notion Pipeline: {total} jobs loaded for dedup ({len(applied_urls)} URLs, {len(applied_keys)} company|role keys, {len(applied_companies)} companies)")
     except Exception as e:
         log(f"  WARNING: Notion Pipeline query failed ({e}), falling back to pipeline.md")
 
-    return applied_urls, applied_keys, total
+    return applied_urls, applied_keys, total, applied_companies
 
 
 # ============================================================
@@ -1846,7 +1894,13 @@ def main():
     # 2b. Dedup: remove jobs already in pipeline (LIVE from Notion Pipeline DB)
     log("Step 2b: Dedup scanner picks against Notion Pipeline DB...")
     if qualified:
-        applied_urls, applied_keys, notion_total = fetch_notion_pipeline_for_dedup()
+        applied_urls, applied_keys, notion_total, applied_companies = fetch_notion_pipeline_for_dedup()
+
+        # Log high-frequency companies
+        heavy_companies = {c: d for c, d in applied_companies.items() if d["count"] >= 3}
+        if heavy_companies:
+            _hc_parts = [f"{c}({d['count']}x)" for c, d in sorted(heavy_companies.items(), key=lambda x: -x[1]["count"])[:10]]
+            log(f"  ⚠️ High-frequency companies (3+ applications): {', '.join(_hc_parts)}")
 
         # Fallback to pipeline.md ONLY if Notion query returned nothing
         if notion_total == 0 and os.path.exists(PIPELINE_FILE):
@@ -1898,8 +1952,22 @@ def main():
                             is_dup = True
                             break
 
+            # Check company saturation (3+ existing applications = flag it)
+            company_app_count = 0
+            if not is_dup:
+                j_company = job.get("company", "").strip().lower()
+                for comp_key, comp_data in applied_companies.items():
+                    if j_company and comp_key and (j_company in comp_key or comp_key in j_company):
+                        company_app_count = comp_data["count"]
+                        if company_app_count >= 3:
+                            is_dup = True
+                            break
+
             if is_dup:
-                removed.append(f"{job.get('title','')} @ {job.get('company','')}")
+                reason = f"{job.get('title','')} @ {job.get('company','')}"
+                if company_app_count >= 3:
+                    reason += f" (company saturated: {company_app_count}x applied)"
+                removed.append(reason)
             else:
                 deduped.append(job)
 
