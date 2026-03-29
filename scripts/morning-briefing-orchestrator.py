@@ -1057,6 +1057,37 @@ def create_notion_briefing(date_str, date_display, pipeline, scanner_meta, quali
 
     add_callout(" | ".join(summary_parts), "☀️")
 
+    # ==================== PIPELINE HEALTH ====================
+    _phase_status_file = Path(WORKSPACE) / "data" / "pipeline-phase-status.json"
+    _phase_data = {}
+    try:
+        if _phase_status_file.exists():
+            with open(_phase_status_file) as _psf:
+                _phase_data = json.load(_psf).get("phases", {})
+    except Exception as _pe:
+        log(f"  Pipeline phase status load error: {_pe}")
+
+    if _phase_data:
+        _failed_phases = []
+        _ok_phases = []
+        for _pname, _pinfo in _phase_data.items():
+            _st = _pinfo.get("status", "?")
+            _el = _pinfo.get("elapsed_s", 0)
+            _det = _pinfo.get("detail", "")
+            if _st == "OK":
+                _ok_phases.append(f"✅ {_pname} ({_el}s)")
+            else:
+                _icon = "⏱️" if _st == "TIMEOUT" else "🔴"
+                _failed_phases.append(f"{_icon} {_pname}: {_st} ({_el}s) {_det}".strip())
+
+        if _failed_phases:
+            # Show failures prominently
+            _health_lines = _failed_phases + [f"({len(_ok_phases)} phases OK)"]
+            add_callout("⚠️ Pipeline Issues: " + " | ".join(_failed_phases), "🔴")
+            add_toggle(f"🔧 Full pipeline status ({len(_ok_phases)} OK, {len(_failed_phases)} failed)", _ok_phases + ["---"] + _failed_phases)
+        else:
+            add_toggle(f"✅ Pipeline healthy ({len(_ok_phases)} phases OK)", _ok_phases)
+
     # ==================== ACTION ITEMS (RED - TOP) ====================
     # Helper: Gmail web search link
     def gmail_link(subject):
