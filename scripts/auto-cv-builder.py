@@ -569,6 +569,47 @@ def process_trigger(trigger_path, master_cv, pending_updates, dry_run=False):
         log(f"  SKIP: JD too short ({len(jd)} chars)")
         return None
 
+    # Check company saturation against Notion pipeline (3+ = skip)
+    try:
+        _notion_token = ""
+        _notion_cfg = os.path.join(WORKSPACE, "config", "notion.json")
+        if os.path.exists(_notion_cfg):
+            with open(_notion_cfg) as _nf:
+                _notion_token = json.load(_nf).get("token", "")
+        if _notion_token:
+            _comp_lower = company.strip().lower()
+            _pipeline_db = "3268d599-a162-81b4-b768-f162adfa4971"
+            _comp_count = 0
+            _cursor = None
+            while True:
+                _body = {"page_size": 100}
+                if _cursor:
+                    _body["start_cursor"] = _cursor
+                _req = urllib.request.Request(
+                    f"https://api.notion.com/v1/databases/{_pipeline_db}/query",
+                    data=json.dumps(_body).encode(), method="POST",
+                    headers={"Authorization": f"Bearer {_notion_token}", "Notion-Version": "2022-06-28", "Content-Type": "application/json"})
+                _resp = json.loads(urllib.request.urlopen(_req, timeout=20).read())
+                for _page in _resp.get("results", []):
+                    _props = _page.get("properties", {})
+                    _c_arr = _props.get("Company", {}).get("title", [])
+                    _c_name = _c_arr[0].get("plain_text", "").strip().lower() if _c_arr else ""
+                    if _c_name and (_comp_lower in _c_name or _c_name in _comp_lower):
+                        _comp_count += 1
+                _cursor = _resp.get("next_cursor")
+                if not _cursor:
+                    break
+            if _comp_count >= 3:
+                log(f"  SKIP: Company saturated - {company} has {_comp_count} existing applications in pipeline")
+                # Mark trigger as dropped
+                dropped_path = trigger_path + ".dropped"
+                os.rename(trigger_path, dropped_path)
+                return {"company": company, "role": role, "status": "company_saturated", "count": _comp_count}
+            elif _comp_count > 0:
+                log(f"  NOTE: {company} has {_comp_count} existing application(s) - proceeding")
+    except Exception as _e:
+        log(f"  WARNING: Company saturation check failed ({_e}) - proceeding anyway")
+
     # Check if CV already exists (from either Path A skill or Path B script)
     existing = cv_already_exists(company, role)
     if existing:
