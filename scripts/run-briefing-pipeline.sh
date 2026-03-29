@@ -292,8 +292,7 @@ case "$MODE" in
         log "--- LLM Review (sequential) ---"
         run_agent "review" "jobs-review.py" 3000 2
         
-        log "--- Push to Notion Pipeline (sequential) ---"
-        run_agent "pipeline-push" "push-submit-to-notion.py" 120 2
+        # Notion job push REMOVED 2026-03-29 — NocoDB replaced it
         
         log "--- Push to NocoDB + Telegram Alerts ---"
         run_agent "nocodb-push" "push-to-nocodb.py" 120 2
@@ -322,7 +321,6 @@ case "$MODE" in
             "linkedin"  "jobs-source-linkedin.py"  480 \
             "indeed"    "jobs-source-indeed.py"    120 \
             "google"    "jobs-source-google.py"    120 \
-            "comment-radar" "comment-radar-agent.py" 180 \
             "li-post"   "linkedin-post-agent.py"   30 \
             || log "⚠️ Phase 1 had failures (continuing to Phase 2+)"
         
@@ -348,8 +346,7 @@ case "$MODE" in
         log "--- Phase 3: LLM Review ---"
         run_agent "review" "jobs-review.py" 3000 2 || PHASE2_FAILURES="${PHASE2_FAILURES}review "
         
-        log "--- Phase 4: Push to Notion Pipeline ---"
-        run_agent "pipeline-push" "push-submit-to-notion.py" 120 2 || PHASE2_FAILURES="${PHASE2_FAILURES}pipeline-push "
+        # Notion job push REMOVED 2026-03-29 — NocoDB replaced it
 
         log "--- Phase 4a: Push to NocoDB + Telegram Alerts ---"
         run_agent "nocodb-push" "push-to-nocodb.py" 120 2 || log "⚠️ Phase 4a (NocoDB push) failed — non-critical"
@@ -370,20 +367,8 @@ case "$MODE" in
         run_agent "outreach-tracker" "outreach-followup-tracker.py" 30 \
             || log "⚠️ Phase 6 (Outreach tracker) failed — non-critical"
 
-        log "--- Phase 7: Generate Notion Briefing ---"
-        run_agent "briefing" "briefing-agent.py" 180 \
-            || log "⚠️ Phase 7 (Notion briefing) failed — continuing"
-
-        log "--- Phase 8: Telegram Summary ---"
-        run_agent "pam-telegram" "pam-telegram.py" 60 \
-            || log "⚠️ Phase 8 (Telegram summary) failed — continuing"
-
-        log "--- Phase 9: Briefing Doctor (audit) ---"
-        run_agent "briefing-doctor" "briefing-doctor.py" 30 \
-            || log "⚠️ Phase 9 (Doctor) failed — non-critical"
-
-        log "--- Phase 10: Completion Check ---"
-        python3 "$SCRIPTS/briefing-completion-check.py" --alert >> "$LOG_FILE" 2>&1 || true
+        # Phases 7-10 REMOVED 2026-03-29 — Notion briefing + pam-telegram + doctor + completion check
+        # NocoDB + push-to-nocodb.py Telegram alerts replace the old briefing flow
 
         log "========================================="
         log "  PIPELINE COMPLETE"
