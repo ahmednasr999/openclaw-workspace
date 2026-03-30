@@ -1,13 +1,11 @@
 {
-  "checked_at": "2026-03-28T05:01:20.306283+02:00",
-  "issues": [
-    "\u26a0\ufe0f Content orchestrator: STALE (last 2026-03-24)"
-  ],
+  "checked_at": "2026-03-30T05:00:43.028035+02:00",
+  "issues": [],
   "ok": [
     "Notion: OK - 100 results from RSS DB",
     "Notion write: Write-capable",
     "Telegram bot 'NasrOpenClawnBot': OK",
     "RSS: RSS feeds responding"
   ],
-  "status": "issues"
+  "status": "ok"
 }

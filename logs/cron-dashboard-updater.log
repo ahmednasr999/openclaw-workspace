@@ -700,3 +700,874 @@ Update Summary:
     - Error creating page for 'jobs-interview-prep.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"9244548a-f1a2-4425-97bd-a91d3497f2b0"}
 
 Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-03-29T09:00:01.232117+02:00] Starting Cron Dashboard Update...
+Discovered 26 crons (26 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 0
+  Errors: 26
+    - Error creating page for 'cron-watchdog-v3.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"0d7f5914-9037-4647-84a0-e365a2fb630f"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"8fc09b02-ec09-409b-a7a0-573df19e797a"}
+    - Error creating page for 'linkedin-autoresearch.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"e34f0d2a-f2db-4e80-9840-2c2cd1ac9a2e"}
+    - Error creating page for 'autoresearch-job-review.log 2>&1': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"291f903a-2c53-4740-b8e4-886c014dac66"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"59e56fa0-4c2d-476d-8328-c1e7be5733ce"}
+    - Error creating page for 'daily-backup.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"99b38c3b-083e-441b-ae91-581f3e0c21f6"}
+    - Error creating page for 'archive-daily-notes.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"b4a349fe-f029-4a49-b721-b51efd3bbfec"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"321acab1-a4bf-4de1-8cbe-c44aa90fee54"}
+    - Error creating page for 'github-radar.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"142a14f7-d61a-428b-8ceb-e0eb95b9489b"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"80cd3974-e48e-42b6-8b5b-e4772beb9919"}
+    - Error creating page for 'key-health-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"d1dfcebc-810a-4686-b5a0-55d2dbcfaaa7"}
+    - Error creating page for 'token-health-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"71a05c65-ace6-4f64-8d21-7cd76b2c2a88"}
+    - Error creating page for 'retention-caches.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"da1f32b9-eb61-49c0-b53a-858fb4ebeff2"}
+    - Error creating page for 'x-radar.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"3ef2e148-6cba-4af6-8a5b-6d56935edc49"}
+    - Error creating page for 'retention-backups.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"0b28cf50-1af4-4318-a171-749ca13668c7"}
+    - Error creating page for 'sie-360-checks.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"caf5c97f-b2ed-4300-827c-c2c7192771d2"}
+    - Error creating page for 'weekly-agent-review.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"f10e2f72-ede6-47fc-942b-da504376f00e"}
+    - Error creating page for 'rss-to-content-calendar.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"144f4758-1f4f-4a92-9ad0-283f927651dd"}
+    - Error creating page for 'content-factory-health-monitor.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"30c9c6ee-3aa2-4a4f-82d4-f9a12f05d9e8"}
+    - Error creating page for 'cf-weekday-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"4288d6f7-3d32-4a08-abff-50b0dd3735ce"}
+    - Error creating page for 'ontology-notion-sync.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"4ea1dd75-e4df-4510-afa4-25840ea494c1"}
+    - Error creating page for 'ontology-pipeline-sync.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"33d121d4-8bbe-4952-9320-65e44165de42"}
+    - Error creating page for 'linkedin-engagement.log 2>&1': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"dea46bbd-f49a-49a9-959d-d8439158b0f3"}
+    - Error creating page for 'cron-dashboard-updater.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"ecd5a210-3dbd-4635-8d18-5f2aa5192280"}
+    - Error creating page for 'jobs-interview-prep.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"f2b3e957-99cb-43d5-be8d-79da1c64b5ab"}
+    - Error creating page for 'watchdog-gateway.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"43144fe0-031d-4cfc-8aae-e4103aa7e056"}
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-03-29T10:00:02.333753+02:00] Starting Cron Dashboard Update...
+Discovered 26 crons (26 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 0
+  Errors: 26
+    - Error creating page for 'cron-watchdog-v3.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"80472d4f-8313-425b-a095-6f1868f7d94e"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"e163e36f-d1ed-476f-b644-7e9ae1a6f617"}
+    - Error creating page for 'linkedin-autoresearch.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"25067de7-2bfe-4fb0-bac0-22b9d64e2ea8"}
+    - Error creating page for 'autoresearch-job-review.log 2>&1': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"9a59c0dc-550e-41d6-b3e0-b2e76ad3f412"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"a854fbd8-265f-4101-8014-17622d864db6"}
+    - Error creating page for 'daily-backup.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"dd1d4465-b147-4e16-b561-b6195172b355"}
+    - Error creating page for 'archive-daily-notes.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"70fe21a9-23e0-4887-9d4e-e404f2d07f7b"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"7b034361-2146-4c60-b4c7-654393b7caec"}
+    - Error creating page for 'github-radar.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"e57e7df8-222f-46d1-bb86-36c1b3012b41"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"6784bc38-cf52-4dda-b3f3-fca10b4c25dc"}
+    - Error creating page for 'key-health-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"6a5e789f-e811-4ef5-b98c-fd8a054195ac"}
+    - Error creating page for 'token-health-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"d31931ea-79f6-47d3-b59d-d9e1ca9eeca1"}
+    - Error creating page for 'retention-caches.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"bb17dce1-9961-4fbd-b07b-7943fd364f1d"}
+    - Error creating page for 'x-radar.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"7dcbbd85-6f15-46bd-8c1e-f9c735651be7"}
+    - Error creating page for 'retention-backups.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"976d6099-2142-4604-bfa6-b4c6350cce79"}
+    - Error creating page for 'sie-360-checks.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"2b89e1c2-7d97-4d77-8e1b-72138710f0ed"}
+    - Error creating page for 'weekly-agent-review.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"6add5d9a-6cf2-4632-a53a-745ee4be8974"}
+    - Error creating page for 'rss-to-content-calendar.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"00bd4f75-d8f2-4b1e-b724-63a9e5a20b65"}
+    - Error creating page for 'content-factory-health-monitor.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"e9755908-e6b3-4fbd-9772-b0a703e69e2b"}
+    - Error creating page for 'cf-weekday-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"2a802e2a-e4e5-4443-b02d-4f000060459c"}
+    - Error creating page for 'ontology-notion-sync.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"9fb5d834-b6f4-445b-8679-5899335d55a6"}
+    - Error creating page for 'ontology-pipeline-sync.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"f98141ae-6b1c-4526-9932-979637267b71"}
+    - Error creating page for 'linkedin-engagement.log 2>&1': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"45fc71d7-db70-4ab8-8dca-7e068fe5a3ad"}
+    - Error creating page for 'cron-dashboard-updater.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"25d42a6f-4ca4-4790-be3a-fbc2733ba1e4"}
+    - Error creating page for 'jobs-interview-prep.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"a0c0d283-9f93-4651-bd5c-e66bd2b00de2"}
+    - Error creating page for 'watchdog-gateway.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"f9ea32c3-eddd-496d-bb97-0ee04bd0ce7a"}
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-03-29T11:00:02.462216+02:00] Starting Cron Dashboard Update...
+Discovered 26 crons (26 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 0
+  Errors: 26
+    - Error creating page for 'cron-watchdog-v3.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"44927252-7d9b-456b-b208-eae459491766"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"399761ee-8125-4f05-a728-3722dc6ef0cb"}
+    - Error creating page for 'linkedin-autoresearch.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"e80c6475-ff8d-4808-b7d0-98e3090a0856"}
+    - Error creating page for 'autoresearch-job-review.log 2>&1': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"4db13049-3d36-4852-9794-d2eb154c49d2"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"145ffbc1-7773-4621-8533-f37b85d00a1d"}
+    - Error creating page for 'daily-backup.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"c6a7452f-2fc7-4ffb-a312-8faf0cd9728d"}
+    - Error creating page for 'archive-daily-notes.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"3a0df5d0-9466-485e-88fd-1644773e1607"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"b0c95ccd-f764-451c-96ec-a4ff2c748858"}
+    - Error creating page for 'github-radar.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"122dc6cb-0acf-4b3a-808f-ba9839f166e8"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"9b3c1278-1a41-487c-ab5d-de8a612b2261"}
+    - Error creating page for 'key-health-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"f3a6fe4b-c19c-4f65-97e6-50972a941e51"}
+    - Error creating page for 'token-health-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"a5137bfc-26b6-4f82-8ba4-dbb7d37cd344"}
+    - Error creating page for 'retention-caches.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"57f7f56d-5655-446a-b25d-e08f837448d4"}
+    - Error creating page for 'x-radar.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"fdf2509e-b8d1-4924-bc05-b340d91c5ddd"}
+    - Error creating page for 'retention-backups.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"181e7f10-15ad-4938-a18e-e05d1177b6cd"}
+    - Error creating page for 'sie-360-checks.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"0077acba-d47d-4039-99aa-89eff5abb529"}
+    - Error creating page for 'weekly-agent-review.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"b7532707-d017-4c4b-8982-2f4642d3168d"}
+    - Error creating page for 'rss-to-content-calendar.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"6d73de60-f651-42e1-8a82-dd8b526710ac"}
+    - Error creating page for 'content-factory-health-monitor.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"31ccbe7c-39db-41e2-a83f-4c48ff0116c4"}
+    - Error creating page for 'cf-weekday-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"e19980bc-df3c-40ce-be41-8545c359d84f"}
+    - Error creating page for 'ontology-notion-sync.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"c71549ca-e5fd-4749-9034-5e99bdb4eb3b"}
+    - Error creating page for 'ontology-pipeline-sync.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"cacc5340-a821-4742-9384-085c6a72d5a8"}
+    - Error creating page for 'linkedin-engagement.log 2>&1': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"7068ca9d-75be-4d62-a460-7d5e5c8405e1"}
+    - Error creating page for 'cron-dashboard-updater.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"9e4d0adf-3c42-4c83-b18e-69428630f2e0"}
+    - Error creating page for 'jobs-interview-prep.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"1a736c53-6cff-4cef-90ef-3bcfd22f8f79"}
+    - Error creating page for 'watchdog-gateway.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"b5c95295-15e5-456d-a2d9-7e398e673e5c"}
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-03-29T12:00:03.244453+02:00] Starting Cron Dashboard Update...
+Discovered 26 crons (26 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 0
+  Errors: 26
+    - Error creating page for 'cron-watchdog-v3.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"53ccdeb2-44b4-4efa-be47-a8b45281acca"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"0738c966-dc42-4ade-94f4-e164808d7dd2"}
+    - Error creating page for 'linkedin-autoresearch.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"4d8e6b85-6e8a-4648-86c8-2b18139de476"}
+    - Error creating page for 'autoresearch-job-review.log 2>&1': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"fb503515-0f68-4a7e-8560-aa890c1ec04c"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"87ae6848-c44f-4b8c-b943-68a9edf9ebba"}
+    - Error creating page for 'daily-backup.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"348cf5c8-c036-4297-bd8e-b00f879085a1"}
+    - Error creating page for 'archive-daily-notes.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"8b80a5b3-9a7b-4713-b337-1b71e97e0e52"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"b303ceb3-6fe7-42a1-9ee5-e4f41e9f450f"}
+    - Error creating page for 'github-radar.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"a29597df-7bbc-40ff-8bf0-edd6d7111b05"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"6eb7448f-9a7b-4a54-ba19-1cd343622ff7"}
+    - Error creating page for 'key-health-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"5c29e551-243b-4d77-bd1e-05e41020b8ef"}
+    - Error creating page for 'token-health-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"d8edb327-a0e0-431b-9d94-fb34d99550dc"}
+    - Error creating page for 'retention-caches.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"a49d1d4b-1080-4e6b-93c2-6231d30e385e"}
+    - Error creating page for 'x-radar.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"075cfa7c-a048-4d3a-8e47-9fe346ffcfc0"}
+    - Error creating page for 'retention-backups.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"9456a5e5-9b98-4d86-a1ce-543aab4babc0"}
+    - Error creating page for 'sie-360-checks.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"89efa1c7-224c-4a2b-bf77-3d1425d5aa07"}
+    - Error creating page for 'weekly-agent-review.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"1a1854f4-4706-458e-b098-cb7529c14070"}
+    - Error creating page for 'rss-to-content-calendar.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"6746ac02-a568-4d48-aa46-2a51be7c460a"}
+    - Error creating page for 'content-factory-health-monitor.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"ee121276-b907-4922-a54d-25d31bec5bb1"}
+    - Error creating page for 'cf-weekday-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"8c33ad17-8f97-4c8c-bdf0-bbffe086f875"}
+    - Error creating page for 'ontology-notion-sync.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"934a7d15-16e1-48b1-86b0-e1b50016fb8f"}
+    - Error creating page for 'ontology-pipeline-sync.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"788b2f44-a29c-436f-8d53-6551cf894ecd"}
+    - Error creating page for 'linkedin-engagement.log 2>&1': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"78ba8341-6fa4-4e8f-839e-09b64c2c74aa"}
+    - Error creating page for 'cron-dashboard-updater.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"56cdb51a-f38f-446a-b85f-5bf68f79b4c2"}
+    - Error creating page for 'jobs-interview-prep.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"10deaf7c-17e3-4f4c-add9-fcbf12504e06"}
+    - Error creating page for 'watchdog-gateway.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"11c5e720-660a-46d6-9631-2ba53f191daa"}
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-03-29T13:00:02.107704+02:00] Starting Cron Dashboard Update...
+Discovered 26 crons (26 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 0
+  Errors: 26
+    - Error creating page for 'cron-watchdog-v3.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"5a69eb15-f9f4-43ab-b83b-60aecd8b4495"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"c001b40b-d241-4ca1-b813-950790536aba"}
+    - Error creating page for 'linkedin-autoresearch.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"7fb5eb24-a02d-448f-9b3d-c954005fc0d9"}
+    - Error creating page for 'autoresearch-job-review.log 2>&1': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"45f097cf-9e97-427f-ad60-6da449a72352"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"3403fea9-4c15-4fe6-8b2b-efaa4d2eada9"}
+    - Error creating page for 'daily-backup.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"664001d8-997b-43e1-b55a-fcccc3483fc3"}
+    - Error creating page for 'archive-daily-notes.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"9d5a0fc7-716a-4efb-8da1-54f32458f9eb"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"f46d6067-8345-4a2c-95ff-528257a0110a"}
+    - Error creating page for 'github-radar.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"4137c8d1-b7a0-447a-9c70-6f525822782e"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"5f835cbe-74f1-4218-8bb5-091569c22768"}
+    - Error creating page for 'key-health-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"d6904b59-b8f3-40db-8b84-1261d9c6a623"}
+    - Error creating page for 'token-health-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"556f0826-f038-430a-ac74-dd185aa5ea0c"}
+    - Error creating page for 'retention-caches.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"1054ee88-d564-4048-b7c5-3393bec6149a"}
+    - Error creating page for 'x-radar.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"8e4f2402-2296-4478-8533-c0debbce2b43"}
+    - Error creating page for 'retention-backups.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"cb892a02-0e59-400e-af0e-a202ee3b5217"}
+    - Error creating page for 'sie-360-checks.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"94400539-9193-4e9e-a5c4-1b36629754f1"}
+    - Error creating page for 'weekly-agent-review.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"0a2188c1-e0ee-4959-be54-f8d16a44000e"}
+    - Error creating page for 'rss-to-content-calendar.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"b1b416d0-9b11-4b56-bc77-80d68c59a83d"}
+    - Error creating page for 'content-factory-health-monitor.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"acae3ec6-6a71-4f6a-87dd-d84f2f66b433"}
+    - Error creating page for 'cf-weekday-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"7a0780ff-3d20-446a-b72d-5854ed70bf80"}
+    - Error creating page for 'ontology-notion-sync.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"46f885a5-6f97-4d75-b592-eda84cbf67f8"}
+    - Error creating page for 'ontology-pipeline-sync.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"90ec8bf0-710d-4f98-b1fb-5ea24d10919a"}
+    - Error creating page for 'linkedin-engagement.log 2>&1': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"3955fb11-70ec-42bb-bf66-f590b8a0afec"}
+    - Error creating page for 'cron-dashboard-updater.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"52e1f659-db56-407c-ada0-370b812f9567"}
+    - Error creating page for 'jobs-interview-prep.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"e4689281-c4c4-4c63-964f-3686632e04a4"}
+    - Error creating page for 'watchdog-gateway.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"ec623ad2-a5cd-4ae3-934d-5d29b8e7dd3f"}
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-03-29T14:00:02.594075+02:00] Starting Cron Dashboard Update...
+Discovered 24 crons (24 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 0
+  Errors: 25
+    - Error parsing openclaw crons: Command '['openclaw', 'cron', 'list']' timed out after 15 seconds
+    - Error creating page for 'cron-watchdog-v3.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"cd6813fe-8c75-470a-8c9f-d0ee2329b126"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"09369784-8305-49dc-98a1-10fcbef92002"}
+    - Error creating page for 'linkedin-autoresearch.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"326f1c7a-7043-4346-a195-945db6e01904"}
+    - Error creating page for 'autoresearch-job-review.log 2>&1': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"c2c78a01-b476-4105-936d-591b06b46ad2"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"94bca345-bc5e-4a0a-aed5-b90f858cbb7b"}
+    - Error creating page for 'daily-backup.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"c1e6a7be-a76e-416d-b2d1-ce5e68d7fe58"}
+    - Error creating page for 'archive-daily-notes.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"ff26ea23-cdd0-45ee-a28f-23bdcbdf9b23"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"3d159aa7-db68-4b89-95da-4ee4eadc4a24"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"c9983921-9daa-4431-8014-e33ab4d6710c"}
+    - Error creating page for 'key-health-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"16869938-e1ee-44e0-871c-528c05fa4fb3"}
+    - Error creating page for 'token-health-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"cc0056db-6a30-47c3-b1ba-42e3b6b0e7ca"}
+    - Error creating page for 'retention-caches.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"90f9d84d-cdf7-49b4-a84e-10ae12edec53"}
+    - Error creating page for 'x-radar.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"7ad402f9-fa46-41b6-9982-b6c35fa531e5"}
+    - Error creating page for 'retention-backups.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"3219666d-1947-4032-b906-bb482ece553f"}
+    - Error creating page for 'sie-360-checks.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"c1c2795c-b758-4567-b1ba-0b02d44a0514"}
+    - Error creating page for 'weekly-agent-review.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"6ccec66a-d2c9-4fea-905e-1fb1b65b6ba8"}
+    - Error creating page for 'rss-to-content-calendar.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"c4a72e27-b7a3-40f4-9903-be8ed6b36cc7"}
+    - Error creating page for 'content-factory-health-monitor.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"6b2c10d5-49ee-4936-b087-0efa9ad6423b"}
+    - Error creating page for 'cf-weekday-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"6857271b-c20e-4834-b942-b2b311425702"}
+    - Error creating page for 'ontology-notion-sync.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"3647ad1e-f76b-47a4-89f0-d889cc4c4339"}
+    - Error creating page for 'ontology-pipeline-sync.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"52dbc369-4ac4-4899-bee9-7edb793117a8"}
+    - Error creating page for 'cron-dashboard-updater.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"ef033135-8cb7-4c3f-a560-a83a7cc341ec"}
+    - Error creating page for 'jobs-interview-prep.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"5a187b8f-86a2-4dac-b884-214708964b58"}
+    - Error creating page for 'watchdog-gateway.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"ca46f3bb-8301-46a9-80e8-61e2b9492b6e"}
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-03-29T15:00:01.788268+02:00] Starting Cron Dashboard Update...
+Discovered 24 crons (24 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 0
+  Errors: 24
+    - Error creating page for 'cron-watchdog-v3.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"8e44d27e-a354-4e0a-bd08-f15083fb6155"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"1fc329be-476e-4a39-9dad-ea28e24af6ca"}
+    - Error creating page for 'linkedin-autoresearch.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"f4f738c7-e1af-44a8-affc-e306b0de8e8c"}
+    - Error creating page for 'autoresearch-job-review.log 2>&1': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"77f9b665-833b-4d67-8944-8574d2f02f90"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"04d27589-e377-4327-ad1c-0b8070544895"}
+    - Error creating page for 'daily-backup.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"1549a7c5-1935-456b-84a4-468994d0870b"}
+    - Error creating page for 'archive-daily-notes.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"7c224987-dbfd-4364-9d92-39a8c4182b69"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"5929d51a-91d0-4223-b614-a697b3e0e822"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"e7a086ca-e748-4a87-99f9-c02410958fa8"}
+    - Error creating page for 'key-health-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"54641b42-573e-4470-a068-e1dde9cf9d6f"}
+    - Error creating page for 'token-health-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"1f7e2505-ac88-4290-8894-602a6229578e"}
+    - Error creating page for 'retention-caches.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"2470d95b-44ac-411d-aa66-aab5eeab85c4"}
+    - Error creating page for 'x-radar.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"cd2c8bf0-671b-4ae5-a761-5cda9e8c94fd"}
+    - Error creating page for 'retention-backups.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"4b7f26ad-0af1-45a2-859c-56ba01bd2b1f"}
+    - Error creating page for 'sie-360-checks.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"8e74ddb6-59be-405e-9962-fa7a52c9e4ad"}
+    - Error creating page for 'weekly-agent-review.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"15f80eda-14d0-4fc2-84d8-3bc5e6dbf682"}
+    - Error creating page for 'rss-to-content-calendar.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"c0ad6d01-8c51-49fa-999d-c2c7ff90248b"}
+    - Error creating page for 'content-factory-health-monitor.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"0d614411-a019-4f69-8a8e-c4b7bcf66ca5"}
+    - Error creating page for 'cf-weekday-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"32d8eac6-26ef-4f10-a004-5647b15b84c3"}
+    - Error creating page for 'ontology-notion-sync.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"ad54f364-d74f-4c94-b34b-e6e7f39f1755"}
+    - Error creating page for 'ontology-pipeline-sync.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"f87ac1c2-af42-44cd-b9d9-130516c9ce5f"}
+    - Error creating page for 'cron-dashboard-updater.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"9aa568d4-7472-4303-91cc-d9a770930ecb"}
+    - Error creating page for 'jobs-interview-prep.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"451b68a9-eb21-424a-9a08-03e6f79f034f"}
+    - Error creating page for 'watchdog-gateway.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"ad5c4344-6f1e-48b0-abc6-cd942f3e567c"}
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-03-29T16:00:01.808012+02:00] Starting Cron Dashboard Update...
+Discovered 24 crons (24 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 0
+  Errors: 24
+    - Error creating page for 'cron-watchdog-v3.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"9859d3ff-0634-4880-be3b-be9fdc7832f1"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"ba1aac0c-df42-4c03-a6b7-4261623d7bd7"}
+    - Error creating page for 'linkedin-autoresearch.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"8a9afea0-08ef-4408-bb4f-ee1301888666"}
+    - Error creating page for 'autoresearch-job-review.log 2>&1': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"f740a55c-f288-4e50-8e62-7b87ff3e7255"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"fa6f58ec-fe99-4b83-a987-6151ba34698b"}
+    - Error creating page for 'daily-backup.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"fb6c997c-b6bf-4888-ad33-1ff145bd1804"}
+    - Error creating page for 'archive-daily-notes.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"6e7e3b82-7a12-46e4-9a75-9bb4b2aa291f"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"bf8557fa-3929-4283-ae40-008e7dbb534a"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"1500e450-c87c-437b-8322-ba11b9c3bcdc"}
+    - Error creating page for 'key-health-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"15ab0f0d-d941-4eca-beef-a31a3750007e"}
+    - Error creating page for 'token-health-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"1142eee5-d6d0-47af-834a-08b66fe32243"}
+    - Error creating page for 'retention-caches.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"5a9add84-f5f1-44e1-b18c-70e9450e787e"}
+    - Error creating page for 'x-radar.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"69f8fb06-1546-426a-8d06-6289067376bf"}
+    - Error creating page for 'retention-backups.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"53675051-aa34-4ac1-8e6c-07c67e9982ce"}
+    - Error creating page for 'sie-360-checks.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"c6987bad-ea08-4b4d-a910-6722b79b1f8a"}
+    - Error creating page for 'weekly-agent-review.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"9f7fb27c-dd6a-4e7f-8e79-1b0d7e7753e9"}
+    - Error creating page for 'rss-to-content-calendar.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"d51b79e9-672e-45cd-98b3-68866515bba6"}
+    - Error creating page for 'content-factory-health-monitor.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"24a2b8fc-f2ba-4795-8d41-bf8cf2dc109f"}
+    - Error creating page for 'cf-weekday-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"a37b4d4c-5a0f-4437-b300-7a7d005c33a0"}
+    - Error creating page for 'ontology-notion-sync.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"b2d9d162-a77d-4218-931a-5288e78a3300"}
+    - Error creating page for 'ontology-pipeline-sync.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"ee52ffb5-29ea-4d71-a1d5-535cab749958"}
+    - Error creating page for 'cron-dashboard-updater.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"d6225d02-703c-491d-a217-e4f98d9ff915"}
+    - Error creating page for 'jobs-interview-prep.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"cc7a9725-d4db-4dea-b94e-8759475fb9d9"}
+    - Error creating page for 'watchdog-gateway.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"397642d7-580f-4110-b32c-03babe9858db"}
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-03-29T17:00:01.341255+02:00] Starting Cron Dashboard Update...
+Discovered 24 crons (24 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 0
+  Errors: 24
+    - Error creating page for 'cron-watchdog-v3.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"6f425024-7ab3-4032-aab8-cf17ba1195c9"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"12690359-0844-4465-b2d8-072cb7ba7447"}
+    - Error creating page for 'linkedin-autoresearch.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"8250e7db-91af-451a-865a-33121661f7f3"}
+    - Error creating page for 'autoresearch-job-review.log 2>&1': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"ea46df19-609f-4697-a93c-a89b3fff875b"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"3c943d65-c35b-4c73-97ea-a38a5e3f2fff"}
+    - Error creating page for 'daily-backup.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"c8c77644-3074-4aae-9773-16eb86a025d0"}
+    - Error creating page for 'archive-daily-notes.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"5218c20c-0b36-4b60-b4d8-2417084bab3e"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"3f5119bb-511f-4fda-9c2b-c1fecd294ea7"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"a5393b21-2865-4dff-9627-0fbaf2c8d3cc"}
+    - Error creating page for 'key-health-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"87aefa18-857d-49cc-bb8a-365f345daeb6"}
+    - Error creating page for 'token-health-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"2c9c4c6c-fadd-4778-b505-0747ac8bb9fa"}
+    - Error creating page for 'retention-caches.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"c3b3939e-b184-4bc3-95a2-62344c79f7b2"}
+    - Error creating page for 'x-radar.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"ff90f987-d53c-460c-9144-30d5638c0b33"}
+    - Error creating page for 'retention-backups.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"61e864a2-91c8-44c7-ba58-4049f46cafd0"}
+    - Error creating page for 'sie-360-checks.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"33c1ace1-a47f-48d1-9754-e459a8f40f15"}
+    - Error creating page for 'weekly-agent-review.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"54eea2f4-e7f2-4c14-afda-0c7b072928ad"}
+    - Error creating page for 'rss-to-content-calendar.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"9662ca04-13fe-4dad-8864-89faae9c6fe2"}
+    - Error creating page for 'content-factory-health-monitor.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"a40842a2-3a64-494b-8b39-8f5efd8f995e"}
+    - Error creating page for 'cf-weekday-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"08cdd69e-e1c5-45cb-a9b9-f76616d719a2"}
+    - Error creating page for 'ontology-notion-sync.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"f0482f78-c9ce-4874-8d41-606e3e986611"}
+    - Error creating page for 'ontology-pipeline-sync.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"a4449be0-ad76-4726-be48-c29d5d76dada"}
+    - Error creating page for 'cron-dashboard-updater.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"36d45d1f-a83e-411a-ac2e-1e3180381f34"}
+    - Error creating page for 'jobs-interview-prep.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"bf9e5fb5-2765-4d83-8945-4fd528528a9b"}
+    - Error creating page for 'watchdog-gateway.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"b9f7ab94-cd59-4bec-8c62-a69432abb57b"}
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-03-29T18:00:01.480462+02:00] Starting Cron Dashboard Update...
+Discovered 24 crons (24 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 0
+  Errors: 24
+    - Error creating page for 'cron-watchdog-v3.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"dc3b024a-dbc0-43d4-8cd6-70f2dffa473a"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"7bcd8339-3f4e-45fc-8e1e-4d623456a310"}
+    - Error creating page for 'linkedin-autoresearch.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"c4273add-8f8a-4ac4-87b3-289fb0a316d6"}
+    - Error creating page for 'autoresearch-job-review.log 2>&1': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"34a41718-3bf3-4082-9f07-8f9d9e3e0efb"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"3739826a-c398-44b3-ab1c-e338d4c5ac7d"}
+    - Error creating page for 'daily-backup.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"0fadc50d-cea8-4db7-badb-ff01efe9bb1c"}
+    - Error creating page for 'archive-daily-notes.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"2406ab7d-73ac-4d1d-b2ae-d37abfffc1fd"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"24de1032-99bb-4e25-9b07-f9006cbe8ea5"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"8c9fc316-4774-4fe0-b05c-fd20edc1e552"}
+    - Error creating page for 'key-health-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"0354fa92-e59f-4946-a634-09803fc3857c"}
+    - Error creating page for 'token-health-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"d113a810-c859-481b-8ee4-9b0bf385b472"}
+    - Error creating page for 'retention-caches.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"bcdccd9d-21d6-4239-9766-9b937ad54ae7"}
+    - Error creating page for 'x-radar.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"3a463ea1-277f-4f15-b3f9-b451e98bcd93"}
+    - Error creating page for 'retention-backups.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"536126e7-f3d8-4129-bc87-f84a07b82bda"}
+    - Error creating page for 'sie-360-checks.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"a48f500a-f8b9-40ca-b2d1-eb54a64681f6"}
+    - Error creating page for 'weekly-agent-review.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"938f0a7c-1da5-470e-999d-fe9f968992c0"}
+    - Error creating page for 'rss-to-content-calendar.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"b617a239-f331-4340-a688-08f2e05af404"}
+    - Error creating page for 'content-factory-health-monitor.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"2b97c979-9446-4d61-9ab9-664ae9d6ad92"}
+    - Error creating page for 'cf-weekday-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"58de86aa-0799-4243-a9eb-8695339aac2c"}
+    - Error creating page for 'ontology-notion-sync.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"2923ab15-709c-496c-8960-84d3f0237f54"}
+    - Error creating page for 'ontology-pipeline-sync.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"cd3d6e89-e376-4bc2-b9d7-4cb9ae7d826a"}
+    - Error creating page for 'cron-dashboard-updater.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"d4385ef3-4b2a-4a47-acce-59b818968f49"}
+    - Error creating page for 'jobs-interview-prep.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"9439e808-a16d-470b-bb62-ced38063e0d1"}
+    - Error creating page for 'watchdog-gateway.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"b8f79ef1-416a-4dea-b0c2-432eb84002d9"}
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-03-29T19:00:01.468908+02:00] Starting Cron Dashboard Update...
+Discovered 24 crons (24 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 0
+  Errors: 24
+    - Error creating page for 'cron-watchdog-v3.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"43506076-8622-44fe-bc31-5808ffe8f0b9"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"3a3b249d-ffd1-4d87-979f-5a374b3d6d51"}
+    - Error creating page for 'linkedin-autoresearch.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"ad75b60f-5b93-4a49-be41-737465ec667f"}
+    - Error creating page for 'autoresearch-job-review.log 2>&1': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"a0697f7f-84f0-4791-8537-22d7dc0d6bf9"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"361c6caf-492b-4be1-8543-ba61f0bcf08a"}
+    - Error creating page for 'daily-backup.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"b1a7ae12-493b-4d69-9a82-04f2234af3af"}
+    - Error creating page for 'archive-daily-notes.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"9b279552-5cc8-466d-bdb4-ce82bc1b4492"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"60a55c99-a752-4c82-8f92-963ce64bbd8a"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"f852a84d-1935-43eb-b734-54bfdd03d7a9"}
+    - Error creating page for 'key-health-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"fa858354-a2af-465b-b975-c7b023813990"}
+    - Error creating page for 'token-health-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"4210f107-0464-4c24-bafa-6be83d8a420e"}
+    - Error creating page for 'retention-caches.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"2d2d27cc-f19e-4622-a97c-10b1f8a9439c"}
+    - Error creating page for 'x-radar.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"2c50a301-f272-4d36-835b-0a5f713dd16d"}
+    - Error creating page for 'retention-backups.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"a3a204c5-84c1-4b36-931e-096d5a6b95a0"}
+    - Error creating page for 'sie-360-checks.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"7c6892c5-f3bd-4372-bf1e-bde78a0e0062"}
+    - Error creating page for 'weekly-agent-review.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"bb194786-4f3e-4a6d-88ec-9de52e188b98"}
+    - Error creating page for 'rss-to-content-calendar.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"c99efb5a-fbf1-44ba-b09a-587cccf3ef8d"}
+    - Error creating page for 'content-factory-health-monitor.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"dbb3838a-3420-43bd-b4cb-2119e9042612"}
+    - Error creating page for 'cf-weekday-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"539269eb-72e3-4e4b-8b2f-41d0034232eb"}
+    - Error creating page for 'ontology-notion-sync.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"58ff1f6f-a3f3-4f89-94a9-4cbbe868857a"}
+    - Error creating page for 'ontology-pipeline-sync.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"73b2c9f3-6f8d-4981-a4f8-3f32f6b77ab9"}
+    - Error creating page for 'cron-dashboard-updater.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"ea287ed8-f294-4bdd-84aa-ac9cae9131a0"}
+    - Error creating page for 'jobs-interview-prep.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"40f6b9ca-9c79-4892-b446-9eeef4e23b44"}
+    - Error creating page for 'watchdog-gateway.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"794f0bc5-d2ea-45bf-9119-0a60bf300f68"}
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-03-29T20:00:03.072361+02:00] Starting Cron Dashboard Update...
+Discovered 24 crons (24 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 0
+  Errors: 24
+    - Error creating page for 'cron-watchdog-v3.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"26bbf98a-6204-406b-979c-e728545cad7e"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"e034f443-1e57-41ad-a81d-6212f046dad1"}
+    - Error creating page for 'linkedin-autoresearch.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"b51d350b-1879-47a8-8246-0e20bfa6e935"}
+    - Error creating page for 'autoresearch-job-review.log 2>&1': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"f0bacfad-8815-4d15-9f6e-c536aa7418af"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"10a099d2-e6a5-4ce0-bd08-dcb1393d2d08"}
+    - Error creating page for 'daily-backup.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"cbf67982-ae87-49b2-b150-296100458849"}
+    - Error creating page for 'archive-daily-notes.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"5a640d2c-e7af-431e-88ae-07f48a742cff"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"498a4f33-f9ca-4f2a-b89a-20e4ceab1693"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"918e9849-c167-4c23-98a8-84b1467f7200"}
+    - Error creating page for 'key-health-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"cfa7a160-0368-4f03-b2c5-e2f8b83d9b2f"}
+    - Error creating page for 'token-health-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"7cebacb5-a117-462b-9d48-58f5b4265519"}
+    - Error creating page for 'retention-caches.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"d3a4f194-20a4-4708-8913-598783f490ca"}
+    - Error creating page for 'x-radar.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"cf7f63ce-9071-4815-9a90-2ffda520a6e5"}
+    - Error creating page for 'retention-backups.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"808a68a8-23ae-4dc1-a287-3ce4806e52b2"}
+    - Error creating page for 'sie-360-checks.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"492a3ef5-f67d-44ef-8407-ed1b63d9848e"}
+    - Error creating page for 'weekly-agent-review.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"3711e00e-362b-46e6-b3cc-4b3ff1ae0c12"}
+    - Error creating page for 'rss-to-content-calendar.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"7dd4a662-d8bf-4023-aa94-af48c04780c7"}
+    - Error creating page for 'content-factory-health-monitor.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"36622898-03c4-4264-8352-dbb333946c77"}
+    - Error creating page for 'cf-weekday-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"898bde2f-9eb5-41df-a796-be4ea630fc86"}
+    - Error creating page for 'ontology-notion-sync.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"f72cf3c1-faa4-4ad6-ae20-c58675b54063"}
+    - Error creating page for 'ontology-pipeline-sync.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"26b34e01-5e34-4561-ba93-4f865727bb18"}
+    - Error creating page for 'cron-dashboard-updater.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"d70fd811-49fc-4bcd-89c0-671486bd5877"}
+    - Error creating page for 'jobs-interview-prep.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"843aac2a-cb59-4767-af8e-e858fc9fc4f3"}
+    - Error creating page for 'watchdog-gateway.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"63a16df9-48f0-4cbd-a8a0-6eee4b886c34"}
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-03-29T21:00:01.407140+02:00] Starting Cron Dashboard Update...
+Discovered 24 crons (24 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 0
+  Errors: 24
+    - Error creating page for 'cron-watchdog-v3.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"0ad60541-e862-42a0-834c-1514b5c342be"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"b94bd25d-dbb1-4628-b60c-3bcca5455302"}
+    - Error creating page for 'linkedin-autoresearch.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"25a4692f-4c36-40a9-9ead-ae93825f6e82"}
+    - Error creating page for 'autoresearch-job-review.log 2>&1': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"506d2a08-cab1-4705-b32d-12ba3fb6c96b"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"490ebbd6-3fe0-409c-af66-2cba00c35bf8"}
+    - Error creating page for 'daily-backup.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"63178f04-78f4-4c66-bc3b-4a23926f42a7"}
+    - Error creating page for 'archive-daily-notes.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"89dc62c6-bd4c-45c9-bd04-595240121d42"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"05a8d1b9-ca7a-4687-94cc-4592ec08e0bf"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"339aac5a-44f0-47cb-8ada-cc69c92a694a"}
+    - Error creating page for 'key-health-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"a7545418-87e3-4cb8-a826-4e09a4d276a1"}
+    - Error creating page for 'token-health-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"fd698a06-4c1c-413c-8813-2499e1b24b2e"}
+    - Error creating page for 'retention-caches.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"926df443-6f39-438a-9ec6-1ab96485b1fa"}
+    - Error creating page for 'x-radar.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"8a67dbb4-3ff8-43d0-9cee-c0c36b7237fd"}
+    - Error creating page for 'retention-backups.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"4e9f2caa-0846-4e2e-98d5-69583d55f826"}
+    - Error creating page for 'sie-360-checks.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"634b4e12-1ce4-45b0-a342-4356761f6a3d"}
+    - Error creating page for 'weekly-agent-review.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"3094de2b-857b-48b4-9025-0ad1d228833c"}
+    - Error creating page for 'rss-to-content-calendar.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"562696b6-066e-4839-bdb0-880184bf03b2"}
+    - Error creating page for 'content-factory-health-monitor.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"6ea1f233-be55-4341-83fa-da1b6baf4c57"}
+    - Error creating page for 'cf-weekday-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"4fb88dc3-be0b-44e4-b1a7-0052815bb90d"}
+    - Error creating page for 'ontology-notion-sync.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"47e04a7f-08d0-49df-b16f-15ca49b9a5da"}
+    - Error creating page for 'ontology-pipeline-sync.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"ade7743c-7dc8-4cc8-87c1-1d46ce5ad85e"}
+    - Error creating page for 'cron-dashboard-updater.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"e15a90b9-acd1-454f-92a2-477ab406f477"}
+    - Error creating page for 'jobs-interview-prep.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"894d7005-f051-4a5e-a841-e17304d80697"}
+    - Error creating page for 'watchdog-gateway.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"e49b8332-e225-496d-99c3-1afdf12db67d"}
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-03-29T22:00:02.147558+02:00] Starting Cron Dashboard Update...
+Discovered 24 crons (24 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 0
+  Errors: 24
+    - Error creating page for 'cron-watchdog-v3.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"ef461235-1639-4772-83fd-0b5bbe80cbcc"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"930e702a-8c91-4fa5-9021-2b8fc0b153c6"}
+    - Error creating page for 'linkedin-autoresearch.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"21ba06b2-36cb-427f-bbc0-4ab7fc856c5a"}
+    - Error creating page for 'autoresearch-job-review.log 2>&1': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"df205c55-ccdf-452f-ad0e-97f7cc4c0079"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"51fdfceb-95e8-4c66-ae88-ec99c1246a3b"}
+    - Error creating page for 'daily-backup.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"22f2af97-3223-448a-a900-b3afe4da6415"}
+    - Error creating page for 'archive-daily-notes.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"b7c0bb4f-48de-4f50-b971-fccef7ce3044"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"941e3c67-e69c-43ee-9b64-b64e475ca2a1"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"23e22844-8502-4322-805e-7d2f5a226cf0"}
+    - Error creating page for 'key-health-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"6214b6e5-8f9f-4839-8ded-dadc520eaff0"}
+    - Error creating page for 'token-health-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"d5da31a0-598f-466d-b768-f40cf8e6db75"}
+    - Error creating page for 'retention-caches.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"2bfdeb0a-338b-4414-aa44-1c5ca7f31fd2"}
+    - Error creating page for 'x-radar.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"d63483bb-c1e3-4841-9919-eb5f117bcef4"}
+    - Error creating page for 'retention-backups.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"4abdd7f0-39f1-4cec-9557-0e8c3af2f674"}
+    - Error creating page for 'sie-360-checks.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"337f3c3e-a321-4fa5-8dd8-2e9c41ce73c7"}
+    - Error creating page for 'weekly-agent-review.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"bafb2db8-3e2e-4698-b3e3-2cb2ff28c1ce"}
+    - Error creating page for 'rss-to-content-calendar.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"35813c38-d42c-40d7-9bd8-4b64536ee15e"}
+    - Error creating page for 'content-factory-health-monitor.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"6dc91fce-e285-4911-bc26-01d20b787e23"}
+    - Error creating page for 'cf-weekday-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"496d9ca9-9610-4fac-9f35-1516b9b2abd0"}
+    - Error creating page for 'ontology-notion-sync.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"12c9b47c-fd1c-49ea-a5ad-6dc77ddec6cf"}
+    - Error creating page for 'ontology-pipeline-sync.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"c3f3675a-d390-47c2-973c-60fb72b32030"}
+    - Error creating page for 'cron-dashboard-updater.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"79955835-950e-4a0e-b783-fcb021d5c944"}
+    - Error creating page for 'jobs-interview-prep.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"947e9ee6-8f45-42e5-a44c-c84f2bb9a97c"}
+    - Error creating page for 'watchdog-gateway.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"b67a7a9d-4ba7-4a26-a563-0249454fbf3c"}
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-03-29T23:00:02.714763+02:00] Starting Cron Dashboard Update...
+Discovered 24 crons (24 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 0
+  Errors: 24
+    - Error creating page for 'cron-watchdog-v3.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"10c6764b-7074-4516-8a31-4ee934cded9e"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"9fac92a9-9c87-490d-9af9-645ed23b1dd3"}
+    - Error creating page for 'linkedin-autoresearch.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"772fa140-95c9-4269-ab24-d61a72761209"}
+    - Error creating page for 'autoresearch-job-review.log 2>&1': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"f0374a51-0aff-491d-82af-9199b009182c"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"8da05c1c-6aa2-429f-96f6-831dbbd510fd"}
+    - Error creating page for 'daily-backup.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"2ba3468c-eb63-453f-b08b-7001810a5f46"}
+    - Error creating page for 'archive-daily-notes.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"bbc74769-920e-47a4-9625-9fd0443cc8da"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"54cf63e9-5dd9-4269-b949-137af28ec72e"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"ff537841-d6a8-458c-8baf-5d4293a178fd"}
+    - Error creating page for 'key-health-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"8a3bad2f-4f0e-4b78-992e-3c2e7e6ece61"}
+    - Error creating page for 'token-health-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"78e815c2-6b14-4288-863d-cf1be409fc74"}
+    - Error creating page for 'retention-caches.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"7ea2bdbe-fe39-4ee1-87c9-d2c10e3bceb8"}
+    - Error creating page for 'x-radar.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"5b41da59-01a3-4d6e-b9c6-c513c804567a"}
+    - Error creating page for 'retention-backups.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"4cd47fe3-9d8c-4b8b-971d-15e6b071edd9"}
+    - Error creating page for 'sie-360-checks.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"4831c184-9ed4-4a4d-8298-ae43416c66aa"}
+    - Error creating page for 'weekly-agent-review.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"75c71174-6331-4f4d-ab85-293755cf6d17"}
+    - Error creating page for 'rss-to-content-calendar.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"54a0b6b5-99c9-42ba-bc35-226a288239a4"}
+    - Error creating page for 'content-factory-health-monitor.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"d0987a4d-511a-4040-9e60-b4035333c2d6"}
+    - Error creating page for 'cf-weekday-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"3c9e8622-9648-4117-8dcf-cb61b46f4595"}
+    - Error creating page for 'ontology-notion-sync.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"4f7a9cb3-0475-46c4-8fce-b23b2cd0a46c"}
+    - Error creating page for 'ontology-pipeline-sync.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"d7ef0af1-dfc6-4c25-8bbc-a364354bfaae"}
+    - Error creating page for 'cron-dashboard-updater.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"7d5d88fb-3ecb-4be6-994f-42e603382227"}
+    - Error creating page for 'jobs-interview-prep.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"137716c6-7afb-4eed-8f6b-7f3a34954af2"}
+    - Error creating page for 'watchdog-gateway.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"beaefa98-35dc-40cb-9cbd-0c4b7ac1d74b"}
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-03-30T00:00:01.775592+02:00] Starting Cron Dashboard Update...
+Discovered 24 crons (24 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 0
+  Errors: 24
+    - Error creating page for 'cron-watchdog-v3.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"af783947-43a7-4b0e-87a5-35a08cc2b5ec"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"7e44334d-1bd4-449d-80aa-ff700efe5784"}
+    - Error creating page for 'linkedin-autoresearch.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"938f3bb5-e549-4b4b-8040-2dcd112740ee"}
+    - Error creating page for 'autoresearch-job-review.log 2>&1': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"8bff8330-c099-4f3f-84d9-e7484e7517ac"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"07aea959-ba25-4a33-843d-d3e492e65420"}
+    - Error creating page for 'daily-backup.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"d287e2a8-40c5-4ee7-abe3-38c435724b93"}
+    - Error creating page for 'archive-daily-notes.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"c272d7fd-3323-43c0-a90f-ebef76c94a9c"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"76483408-1d00-4502-a62c-0dd7b69d342b"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"9ee2cb3e-7886-41c0-8a0f-520278345b17"}
+    - Error creating page for 'key-health-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"febe4a1b-c5b5-4057-b925-ae3951d08284"}
+    - Error creating page for 'token-health-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"5922a139-134c-48a4-9431-6fcbb24074a3"}
+    - Error creating page for 'retention-caches.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"1362cfa5-c663-49bf-a74f-f996e7f90e95"}
+    - Error creating page for 'x-radar.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"fe7096e0-34f9-4701-902a-ae2c273fc0cd"}
+    - Error creating page for 'retention-backups.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"35899c19-e502-47e8-a989-f392e951a53d"}
+    - Error creating page for 'sie-360-checks.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"f4796161-58ca-4601-bc48-1e2d0010ea5e"}
+    - Error creating page for 'weekly-agent-review.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"d8d3062d-1626-45ad-8d8b-2e22a5127740"}
+    - Error creating page for 'rss-to-content-calendar.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"c7cd51be-9b71-405f-a862-6c993236556d"}
+    - Error creating page for 'content-factory-health-monitor.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"7d8f0f39-521d-4fb8-8619-f41f8415175e"}
+    - Error creating page for 'cf-weekday-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"ca2a02d7-dfb5-4052-8d44-7d96f7b4e5d2"}
+    - Error creating page for 'ontology-notion-sync.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"24364fe3-53ca-4bb9-baa7-c7949821dd12"}
+    - Error creating page for 'ontology-pipeline-sync.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"82f02f47-9abe-409b-8456-d3b792e87f3e"}
+    - Error creating page for 'cron-dashboard-updater.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"5c0ef416-ee70-41ab-a741-879c83665fc2"}
+    - Error creating page for 'jobs-interview-prep.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"1bcfa024-992a-4432-852a-5ee9c5e4266b"}
+    - Error creating page for 'watchdog-gateway.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"5ee0d46c-54c1-4ced-b2b3-48d678af7abb"}
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-03-30T01:00:01.669423+02:00] Starting Cron Dashboard Update...
+Discovered 24 crons (24 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 0
+  Errors: 24
+    - Error creating page for 'cron-watchdog-v3.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"ae2e9b3d-89df-4735-a6d6-3efd0588bffe"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"28d1486f-7ef8-4f61-bf74-ff2d868422c1"}
+    - Error creating page for 'linkedin-autoresearch.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"11da121e-4c76-41d2-968e-8b84c5abb767"}
+    - Error creating page for 'autoresearch-job-review.log 2>&1': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"33b3018f-ae0c-47dc-9d25-7b6231dbe322"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"20c9d3bd-4c84-4a8d-b522-343098313091"}
+    - Error creating page for 'daily-backup.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"6acee96c-905c-46eb-b8b4-d08facb5a7d2"}
+    - Error creating page for 'archive-daily-notes.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"dec3698b-1bfa-4dd8-bba7-23bf36707288"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"d8eb0438-8506-4c57-99f7-7b46497e2d9b"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"c3bb694d-edca-42ee-9d71-2f021686ed71"}
+    - Error creating page for 'key-health-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"ca50e58b-c475-4ff6-9b25-f6c24b2a8d74"}
+    - Error creating page for 'token-health-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"b270e798-d880-4287-8111-7ac6b8630d8c"}
+    - Error creating page for 'retention-caches.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"ebce0081-6d24-4d21-a24b-eb711a69ecc4"}
+    - Error creating page for 'x-radar.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"d4885468-62c5-4fe3-a185-1aa38ef004e8"}
+    - Error creating page for 'retention-backups.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"b5c048a1-182d-497a-9f30-f0fd8a66c354"}
+    - Error creating page for 'sie-360-checks.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"8df58c45-354b-4d2f-ab3c-3a86509db24f"}
+    - Error creating page for 'weekly-agent-review.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"27efe48b-fb6b-4e8d-97f6-7be8bdb453f6"}
+    - Error creating page for 'rss-to-content-calendar.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"aa4948cb-c3c4-4fb8-98c4-edf855285998"}
+    - Error creating page for 'content-factory-health-monitor.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"f13a23f0-4240-4ba0-87c9-b421458945cb"}
+    - Error creating page for 'cf-weekday-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"681021b8-58b9-4a34-865d-bd766e8aa67b"}
+    - Error creating page for 'ontology-notion-sync.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"aa5f3672-027f-42d9-82d8-97473baf7750"}
+    - Error creating page for 'ontology-pipeline-sync.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"5bd342ca-77ac-4ef5-819d-164bb542fd73"}
+    - Error creating page for 'cron-dashboard-updater.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"90a34bef-ea98-4267-ad81-82b3ace093b7"}
+    - Error creating page for 'jobs-interview-prep.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"920ce7cf-e7d2-4337-ad42-13c415c867cd"}
+    - Error creating page for 'watchdog-gateway.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"b12b34dd-1710-4cf6-8e37-b86b4664130a"}
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-03-30T02:00:02.390978+02:00] Starting Cron Dashboard Update...
+Discovered 24 crons (24 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 0
+  Errors: 25
+    - Error parsing openclaw crons: Command '['openclaw', 'cron', 'list']' timed out after 15 seconds
+    - Error creating page for 'cron-watchdog-v3.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"8fc35b0b-15ce-421f-b617-562aab372acc"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"ea0099f3-da3a-4349-95b6-f0171cebcc19"}
+    - Error creating page for 'linkedin-autoresearch.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"988421af-64a4-4b71-b33f-5f785d8d40fc"}
+    - Error creating page for 'autoresearch-job-review.log 2>&1': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"d6c4f673-1c56-4ccd-a14e-ce78786c07f4"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"ca733ecd-4caf-4948-9c71-717a147d1be6"}
+    - Error creating page for 'daily-backup.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"ceac5b4d-4c7b-4f1c-b526-53a01e899739"}
+    - Error creating page for 'archive-daily-notes.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"0e17606b-2b14-4ec5-9dc2-61fee3ad2f74"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"f41da756-2170-4793-8311-5d07870c219c"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"84f9e117-3824-4a39-8df4-e72f6de2dc02"}
+    - Error creating page for 'key-health-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"cf505175-7948-47a4-acca-85ac22fa8a90"}
+    - Error creating page for 'token-health-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"c715227d-a45b-4560-86e1-823a2f08767d"}
+    - Error creating page for 'retention-caches.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"89081521-cec2-4b1b-ad60-8c3eab4d30f2"}
+    - Error creating page for 'x-radar.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"82edac09-90c8-4caa-8b4d-1848ef929baa"}
+    - Error creating page for 'retention-backups.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"f3ad5a3c-2305-4611-abe1-68705443045c"}
+    - Error creating page for 'sie-360-checks.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"0ecf8d76-417d-4ad6-99fb-84d376a1513a"}
+    - Error creating page for 'weekly-agent-review.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"8e9770c9-bdca-4419-8974-022281457837"}
+    - Error creating page for 'rss-to-content-calendar.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"43b56481-a64b-4881-9126-c0c15d252c49"}
+    - Error creating page for 'content-factory-health-monitor.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"4aed1fa8-a337-41e2-98b3-726b4a5a8333"}
+    - Error creating page for 'cf-weekday-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"db1fc450-421e-47f8-bfeb-02dba2a9bc75"}
+    - Error creating page for 'ontology-notion-sync.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"905f7af4-4afc-4366-a42c-1bfb7ca05a35"}
+    - Error creating page for 'ontology-pipeline-sync.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"d75c0a19-caab-42fc-83a2-0cdf44c2025d"}
+    - Error creating page for 'cron-dashboard-updater.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"eec03524-e381-4e35-9bbf-5dfaef183969"}
+    - Error creating page for 'jobs-interview-prep.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"622afedf-0450-402e-b8eb-0fbe3d98b880"}
+    - Error creating page for 'watchdog-gateway.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"852c2eae-1227-4e00-a446-f7cd6e5c9029"}
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-03-30T03:00:02.455889+02:00] Starting Cron Dashboard Update...
+Discovered 24 crons (24 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 0
+  Errors: 25
+    - Error parsing openclaw crons: Command '['openclaw', 'cron', 'list']' timed out after 15 seconds
+    - Error creating page for 'cron-watchdog-v3.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"74de06c4-d7d0-4a67-b961-8e8eb0466e11"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"77e19292-24a6-42ff-bee5-670275fbc98c"}
+    - Error creating page for 'linkedin-autoresearch.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"647d3419-14a2-4509-895e-9a86751fa2fe"}
+    - Error creating page for 'autoresearch-job-review.log 2>&1': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"8ede4194-930e-4609-a6f7-8ad3aea0483f"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"26511485-627b-4db7-b1a8-fcf6d05c2d85"}
+    - Error creating page for 'daily-backup.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"5765890b-20fe-47b1-8636-b1a44221bc00"}
+    - Error creating page for 'archive-daily-notes.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"578bce53-4c56-46c6-847e-144a4eb467ea"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"81267a3f-2bcf-4a2b-b539-59a32f876f06"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"a5a384a2-4248-41b3-8377-a9306e433a09"}
+    - Error creating page for 'key-health-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"a3676971-7f36-4a34-88b9-1faa74246a9f"}
+    - Error creating page for 'token-health-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"e3983467-3ef9-44cd-a373-c8d717b23735"}
+    - Error creating page for 'retention-caches.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"ed454941-7995-4aab-810a-c7a86c9a3da1"}
+    - Error creating page for 'x-radar.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"199099b1-390c-4e8a-8c14-aed7af44841a"}
+    - Error creating page for 'retention-backups.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"3d2bcff1-8416-47ce-9d48-5e2c33b20b37"}
+    - Error creating page for 'sie-360-checks.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"946a3723-32e7-46b7-a9e8-377f7e500dbd"}
+    - Error creating page for 'weekly-agent-review.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"bff3e6d5-f1d0-4062-90d8-3b977e4f2923"}
+    - Error creating page for 'rss-to-content-calendar.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"35607d3a-18a2-4106-be70-f16eb1ab4ecf"}
+    - Error creating page for 'content-factory-health-monitor.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"ca5150c0-dcf2-40cc-81db-f474e9c7fbd2"}
+    - Error creating page for 'cf-weekday-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"add471a8-b0e0-4330-a431-85c394a9eff2"}
+    - Error creating page for 'ontology-notion-sync.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"f0586e14-5bbd-4b20-9e29-1caa8e2374b2"}
+    - Error creating page for 'ontology-pipeline-sync.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"d2872ba2-f02a-4a98-88fd-46a82ddf45a0"}
+    - Error creating page for 'cron-dashboard-updater.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"8b5f0063-1f24-4480-b0e3-859cc9afe625"}
+    - Error creating page for 'jobs-interview-prep.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"58b2bee1-43ea-4333-8e36-cf451496259b"}
+    - Error creating page for 'watchdog-gateway.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"a37bf715-4721-4b55-9896-536766668d81"}
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-03-30T04:00:02.046560+02:00] Starting Cron Dashboard Update...
+Discovered 24 crons (24 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 0
+  Errors: 24
+    - Error creating page for 'cron-watchdog-v3.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"19fcbd7e-381b-4a8f-805e-019d96a5a9ba"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"7198d2a4-db82-4896-8c3c-106e2a0c32cd"}
+    - Error creating page for 'linkedin-autoresearch.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"6b48d611-42b8-46fe-8166-adcaf4dc5dc1"}
+    - Error creating page for 'autoresearch-job-review.log 2>&1': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"ddfb8755-1303-4881-a0f0-196206d4ec99"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"5e1a4d29-04f6-4990-9f62-0d876f09b61b"}
+    - Error creating page for 'daily-backup.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"ef586b02-c6d3-418e-ac05-2bfd51483a9d"}
+    - Error creating page for 'archive-daily-notes.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"0658ba49-1615-428e-82f9-a061ef902500"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"3482bce2-7e5d-4dac-bbd7-76246f9be56f"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"e1f99374-9354-4f22-8ee3-8196cb12fac3"}
+    - Error creating page for 'key-health-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"1330e183-c82d-47b1-b8a7-e78e310be958"}
+    - Error creating page for 'token-health-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"a044aa42-c350-4e74-a6f4-25e4e18e852a"}
+    - Error creating page for 'retention-caches.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"cd845ec0-9b12-4b9c-8436-eab8d0f3e073"}
+    - Error creating page for 'x-radar.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"77c2906f-1bb9-4a3b-ba57-2392bc958e5c"}
+    - Error creating page for 'retention-backups.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"8121d395-4d5a-401f-8bae-5db77c2bd24d"}
+    - Error creating page for 'sie-360-checks.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"131adec4-3c60-4fcf-b9c9-d89872e56359"}
+    - Error creating page for 'weekly-agent-review.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"2f807683-4508-4531-8577-bdfad5f3f5e3"}
+    - Error creating page for 'rss-to-content-calendar.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"cdf3fa72-623c-40e2-b316-61e33d17c99c"}
+    - Error creating page for 'content-factory-health-monitor.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"527e4f17-d57c-47d7-82a1-06395e465d64"}
+    - Error creating page for 'cf-weekday-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"65571fb5-f6fa-46d8-9205-a013eb36c9b5"}
+    - Error creating page for 'ontology-notion-sync.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"bb2761d5-da49-46ea-830e-75a73cd37fa2"}
+    - Error creating page for 'ontology-pipeline-sync.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"c572123e-e607-4409-b393-b3e361e71c1d"}
+    - Error creating page for 'cron-dashboard-updater.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"10c6cada-5133-4fc6-8a8d-f69d30ca7d17"}
+    - Error creating page for 'jobs-interview-prep.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"9ceedaf4-9cef-4259-997b-1578e3da69bd"}
+    - Error creating page for 'watchdog-gateway.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"6d3826c2-56d5-4526-a6c5-402f2c2c3e98"}
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-03-30T05:00:02.743215+02:00] Starting Cron Dashboard Update...
+Discovered 24 crons (24 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 0
+  Errors: 24
+    - Error creating page for 'cron-watchdog-v3.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"fa355cdd-3755-4b30-a4de-e008fdf0493f"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"a98c139d-38f6-4dc3-b40b-7df4606d90f0"}
+    - Error creating page for 'linkedin-autoresearch.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"1894ff31-847e-4c74-a8ad-3ef24a8ec585"}
+    - Error creating page for 'autoresearch-job-review.log 2>&1': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"68092d7b-a159-4e98-ab93-5470dd4ba433"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"ff7625f2-e4b6-4048-95b2-f175013b115b"}
+    - Error creating page for 'daily-backup.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"d072930e-e8fc-40a9-89a6-e604173e94a9"}
+    - Error creating page for 'archive-daily-notes.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"68cfe3ea-8340-40e7-ba18-9b35a6414c2c"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"6f10fc77-d20b-47e7-a4bf-5bfe45b095f7"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"34515376-22e1-4691-833a-9ef11f4e2e62"}
+    - Error creating page for 'key-health-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"ecfc69d8-68f0-48b1-a418-9016cf68a9fd"}
+    - Error creating page for 'token-health-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"287d4c2f-4146-483a-a663-8dbb866b966e"}
+    - Error creating page for 'retention-caches.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"a61155e4-039a-43b5-b61a-114504ed0614"}
+    - Error creating page for 'x-radar.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"fbfa7ace-5dd9-4e68-a6f1-401c80f1bd44"}
+    - Error creating page for 'retention-backups.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"3241ea03-1c5f-47ea-b2d5-d26540ed61f1"}
+    - Error creating page for 'sie-360-checks.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"ba62ee44-061a-4eb3-ae28-822fa4364f48"}
+    - Error creating page for 'weekly-agent-review.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"dc58265e-e966-4641-a720-fb1d18d69a85"}
+    - Error creating page for 'rss-to-content-calendar.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"777a8331-7b4e-458a-8eae-353a2e56f72a"}
+    - Error creating page for 'content-factory-health-monitor.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"cf47d9a6-3a8c-4888-a47b-2b32d302d9d3"}
+    - Error creating page for 'cf-weekday-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"c819b8db-b6ce-4457-9998-aeefd9a8d10e"}
+    - Error creating page for 'ontology-notion-sync.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"fa0efe18-e5ae-495b-95a6-6030fdf7a170"}
+    - Error creating page for 'ontology-pipeline-sync.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"b8c7de5a-a89d-40e8-9428-4a3c3be6a2e1"}
+    - Error creating page for 'cron-dashboard-updater.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"cba608b5-4b27-447e-9c4f-3c9f506a53d0"}
+    - Error creating page for 'jobs-interview-prep.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"a4ef770a-e03c-4dd7-b0a2-99bd4b63ef5c"}
+    - Error creating page for 'watchdog-gateway.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"4d0ba4ea-dc53-4cfb-9207-f006d569579d"}
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-03-30T06:00:02.555036+02:00] Starting Cron Dashboard Update...
+Discovered 24 crons (24 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 0
+  Errors: 24
+    - Error creating page for 'cron-watchdog-v3.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"567d9a9c-330d-435b-bead-9e61633635c1"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"124adcb5-1de1-41b4-9ff2-5605f73a8933"}
+    - Error creating page for 'linkedin-autoresearch.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"2b2191fb-e10c-4cc4-b058-44199887887d"}
+    - Error creating page for 'autoresearch-job-review.log 2>&1': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"1d300e0d-2424-477d-80a5-306c03fdcf50"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"2cf62ed3-8939-47ae-ae85-8339a03332a3"}
+    - Error creating page for 'daily-backup.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"1ea38971-1f94-4430-9f36-a6a0f4322080"}
+    - Error creating page for 'archive-daily-notes.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"183b1624-fddc-452d-9c5d-8ad072a3634e"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"b08627c1-6431-431e-aa04-bd89bee79ee6"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"6c6378f9-2f95-4a2f-a03f-3bede6442b86"}
+    - Error creating page for 'key-health-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"27ae64b9-59be-4027-8e99-0c06b6bb08b8"}
+    - Error creating page for 'token-health-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"c50a8e86-5a8c-4d71-b18c-a37e124b770f"}
+    - Error creating page for 'retention-caches.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"6bcd8beb-722e-42f0-8457-fed84d1c43e6"}
+    - Error creating page for 'x-radar.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"4917f99b-3262-402b-9f7a-ea1546b5af7b"}
+    - Error creating page for 'retention-backups.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"79b8536d-997f-4525-87f8-713e1f2b21fe"}
+    - Error creating page for 'sie-360-checks.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"9200d6d4-081e-477b-b3e9-3411a0638b5a"}
+    - Error creating page for 'weekly-agent-review.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"040452c0-b2a2-41e8-a0fb-440f83ef9cdc"}
+    - Error creating page for 'rss-to-content-calendar.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"d65a0046-8289-42b9-9389-75ef21f8dbd4"}
+    - Error creating page for 'content-factory-health-monitor.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"142127d9-33fb-4e7e-aa93-7d668f9fc95c"}
+    - Error creating page for 'cf-weekday-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"440a6754-8f5b-4003-99bd-a12742d7c7a1"}
+    - Error creating page for 'ontology-notion-sync.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"2fe98b3f-5171-4f11-9994-2d92f1005c90"}
+    - Error creating page for 'ontology-pipeline-sync.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"7e65d1a2-d940-47a5-ae00-e4484888623d"}
+    - Error creating page for 'cron-dashboard-updater.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"604ff8b0-dbcf-4842-b206-4e6936766185"}
+    - Error creating page for 'jobs-interview-prep.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"ee7a67fa-a687-4eb2-afb9-1794b4bbfe26"}
+    - Error creating page for 'watchdog-gateway.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"985487dc-5846-4609-8ca9-d30cc7101562"}
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-03-30T07:00:02.576673+02:00] Starting Cron Dashboard Update...
+Discovered 24 crons (24 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 0
+  Errors: 24
+    - Error creating page for 'cron-watchdog-v3.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"c055f2a0-e13f-4064-b7b8-b24f1832c418"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"021b0fdc-d0e3-475e-a55d-7d2d3b833c5d"}
+    - Error creating page for 'linkedin-autoresearch.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"df685ca0-e519-4cb5-ab5f-5ee3472579db"}
+    - Error creating page for 'autoresearch-job-review.log 2>&1': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"317ae133-d3de-4efd-9a6d-1e55ece79198"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"76b63b5f-7301-41c1-88ce-59d7c94c4034"}
+    - Error creating page for 'daily-backup.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"1bfa262a-4cba-42db-b58d-617498c1775e"}
+    - Error creating page for 'archive-daily-notes.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"9379d21f-cf22-48e5-9e24-00cc6592b185"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"2444e35a-5bca-4743-b9c1-e7c357c39eb7"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"73b0e997-32de-4266-91b1-726af7f03c5e"}
+    - Error creating page for 'key-health-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"e8841834-74da-4b62-8da4-e0accec9b3f6"}
+    - Error creating page for 'token-health-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"9b2a7c0e-9377-454e-9a6f-d3907f38e582"}
+    - Error creating page for 'retention-caches.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"0bfe0d0e-b613-4770-aade-90aca1bfca31"}
+    - Error creating page for 'x-radar.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"564f0fa1-8820-47c0-97ac-2e316fe0a70d"}
+    - Error creating page for 'retention-backups.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"424caed1-42a0-493c-875b-f45abb10cba3"}
+    - Error creating page for 'sie-360-checks.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"097874ef-d90c-4053-a420-dc4926ffc18c"}
+    - Error creating page for 'weekly-agent-review.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"3d43c481-0c16-4111-b5ec-758dc3aedb2b"}
+    - Error creating page for 'rss-to-content-calendar.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"c539a1d7-1de7-4c7d-9db3-138a3854dac1"}
+    - Error creating page for 'content-factory-health-monitor.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"244801e3-d9ff-427b-ad66-743a85f1858a"}
+    - Error creating page for 'cf-weekday-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"a18db38c-d684-4b42-85a7-dd73830f6485"}
+    - Error creating page for 'ontology-notion-sync.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"75542803-a8a9-4a47-b945-6c7117b7cf23"}
+    - Error creating page for 'ontology-pipeline-sync.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"3f359704-96ec-4e15-88c9-283e801f7b6d"}
+    - Error creating page for 'cron-dashboard-updater.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"cdb8681b-56d8-4f3c-877f-0adf6f7f1e60"}
+    - Error creating page for 'jobs-interview-prep.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"efd9e708-9e0e-44a5-8947-37442b304a2f"}
+    - Error creating page for 'watchdog-gateway.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"b64d4d91-2b55-4a91-813c-475733579ffb"}
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-03-30T08:00:03.501249+02:00] Starting Cron Dashboard Update...
+Discovered 24 crons (24 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 0
+  Errors: 24
+    - Error creating page for 'cron-watchdog-v3.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"4a2078dc-e4b8-4340-a62c-47aa897f6a73"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"63f73ede-0a67-4f91-bf1d-1cf6958075f2"}
+    - Error creating page for 'linkedin-autoresearch.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"ed0b416e-3ff5-4a31-906f-2812257c2592"}
+    - Error creating page for 'autoresearch-job-review.log 2>&1': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"3c319d21-fcfb-4eb5-92a1-3b547d71b9af"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"56e04a25-771a-49c4-8e8a-cf80a008b5e8"}
+    - Error creating page for 'daily-backup.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"1ce75da6-100a-4c8c-b049-a58f011f9dba"}
+    - Error creating page for 'archive-daily-notes.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"4f5c239b-a39a-4ccc-8f83-ee453ade9024"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"8321692d-73a0-4d1b-8eac-ff3e784e4b57"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"ba72a2c5-d0e6-400e-a673-c9fa945ee543"}
+    - Error creating page for 'key-health-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"d9b76f7a-2a6d-44dd-8e13-c2a61a22ba43"}
+    - Error creating page for 'token-health-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"c0b472be-a7e1-4be2-aca3-9d1b46b409f6"}
+    - Error creating page for 'retention-caches.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"eac822a5-ad93-4241-a4ce-3c44081f5eda"}
+    - Error creating page for 'x-radar.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"d122d4cd-2040-487a-b97c-48fa5f704fa2"}
+    - Error creating page for 'retention-backups.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"fee60728-d161-4552-a1ba-b473cb427181"}
+    - Error creating page for 'sie-360-checks.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"0ff16eae-16b8-4f26-b559-fe6b2ff1c04f"}
+    - Error creating page for 'weekly-agent-review.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"1dda0e6a-1026-4fb8-ae81-e034eaa60dcf"}
+    - Error creating page for 'rss-to-content-calendar.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"073f9a1d-dd07-431c-8165-4fb66e31c346"}
+    - Error creating page for 'content-factory-health-monitor.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"967982f2-e47c-411e-ae38-b72a0928f629"}
+    - Error creating page for 'cf-weekday-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"5b36b887-70d1-4038-85b1-7d97abd5d28e"}
+    - Error creating page for 'ontology-notion-sync.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"850a3134-fe54-4ac0-aa13-3acf47196965"}
+    - Error creating page for 'ontology-pipeline-sync.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"3476619a-b0eb-48f8-98fa-8d28e98a608f"}
+    - Error creating page for 'cron-dashboard-updater.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"cb681dac-dc9f-4c4a-a1cb-d87a45445427"}
+    - Error creating page for 'jobs-interview-prep.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"0cb162e5-89f4-4191-8916-7886c4633fa9"}
+    - Error creating page for 'watchdog-gateway.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"7fbe3203-298d-4f4d-8461-4c474db0b36b"}
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-03-30T09:00:01.264964+02:00] Starting Cron Dashboard Update...
+Discovered 24 crons (24 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 0
+  Errors: 24
+    - Error creating page for 'cron-watchdog-v3.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"0d1751e9-c3b1-4019-8425-668bd6b43282"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"07116dd7-534f-4979-8b62-4ac33b03fe2e"}
+    - Error creating page for 'linkedin-autoresearch.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"2bbe76be-c40a-4e89-9f1a-08cad1e2f842"}
+    - Error creating page for 'autoresearch-job-review.log 2>&1': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"f8d84d35-54ea-4bd5-aaae-afe22dc549a8"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"b635ea7f-5740-4a93-b7aa-fc8fd7fd112c"}
+    - Error creating page for 'daily-backup.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"0652dc92-95fb-46d7-b572-5e1c4dd0ae64"}
+    - Error creating page for 'archive-daily-notes.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"4d137bbf-b268-488e-97bb-0201cea7f5d1"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"b27bb51d-df49-465f-9adc-ca03164e7138"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"47583934-cf91-48b3-97e5-edbe139e1a9d"}
+    - Error creating page for 'key-health-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"8b3255ae-d825-4952-84f6-96e9d89e543a"}
+    - Error creating page for 'token-health-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"6839e41e-4fa8-4118-8aea-803a5501bea5"}
+    - Error creating page for 'retention-caches.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"3b2afc0b-dddc-4730-9da5-3c5d85f2aade"}
+    - Error creating page for 'x-radar.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"252d784f-c76b-47ab-a048-afb0fbe1562a"}
+    - Error creating page for 'retention-backups.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"698fa00b-7e98-49ae-87ef-1f338a2648e9"}
+    - Error creating page for 'sie-360-checks.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"dd58ee2d-7830-4753-8772-b2b4323d18e1"}
+    - Error creating page for 'weekly-agent-review.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"e9212be7-098e-42fd-bfed-da91b5a2ac71"}
+    - Error creating page for 'rss-to-content-calendar.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"f24b1723-dd3d-4ae7-80c8-dfd679eb0ef0"}
+    - Error creating page for 'content-factory-health-monitor.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"43957bf7-11ae-4eb4-ba36-5912730d9525"}
+    - Error creating page for 'cf-weekday-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"986861c7-e337-4270-b095-9f10d3c09290"}
+    - Error creating page for 'ontology-notion-sync.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"7ed9a4f8-5c28-4c4d-9e5f-1b9fd29625a9"}
+    - Error creating page for 'ontology-pipeline-sync.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"44f714db-ef8b-451d-8bc9-e871ed01fe89"}
+    - Error creating page for 'cron-dashboard-updater.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"833cb048-fd90-41a7-8a03-d52981984240"}
+    - Error creating page for 'jobs-interview-prep.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"857f8f5c-4d0e-4682-961e-2a9e9bed3f90"}
+    - Error creating page for 'watchdog-gateway.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"60e7a059-b1fa-4212-a73d-4b837ca04032"}
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-03-30T10:00:02.974726+02:00] Starting Cron Dashboard Update...
+Discovered 24 crons (24 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 0
+  Errors: 24
+    - Error creating page for 'cron-watchdog-v3.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"244e5d99-fa95-4d8c-8fc3-5e998adaf792"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"c076614a-3f3e-4aae-9795-a7d99a186c3f"}
+    - Error creating page for 'linkedin-autoresearch.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"45f9b623-e99d-469f-8007-7e9c5e72a348"}
+    - Error creating page for 'autoresearch-job-review.log 2>&1': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"2642f516-aaaf-45d8-9051-8fa40868c70e"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"3beb656f-d00d-4566-9d48-330202f69dec"}
+    - Error creating page for 'daily-backup.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"7de78962-ebf9-43af-963c-750dec1b1ce1"}
+    - Error creating page for 'archive-daily-notes.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"b1c5d338-a27e-494e-9e75-597f261bc793"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"653c9a86-ff96-4730-bbd1-c30348a88fe5"}
+    - Error creating page for 'run-briefing-pipeline.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"8414f176-45c1-4a0a-92e0-75eaa06f3a5e"}
+    - Error creating page for 'key-health-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"63d07cd4-cf3d-4db2-a4c6-a2a679229316"}
+    - Error creating page for 'token-health-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"60392105-2f06-4655-863f-ec78ab6a3c03"}
+    - Error creating page for 'retention-caches.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"be68e62c-d728-4dd6-9554-07719cac02e8"}
+    - Error creating page for 'x-radar.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"3e6e00ab-2c1d-48e8-8040-ba92af2ed3b0"}
+    - Error creating page for 'retention-backups.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"8e270082-5aaf-4b6f-a5e3-7708a616f053"}
+    - Error creating page for 'sie-360-checks.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"0b02e522-458c-4747-a9ee-1ea9d9b1d35a"}
+    - Error creating page for 'weekly-agent-review.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"3e2f4eba-0d69-4761-b4ac-291fe1eb4296"}
+    - Error creating page for 'rss-to-content-calendar.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"b8476760-d440-434a-8d48-1d7fc3ef8a95"}
+    - Error creating page for 'content-factory-health-monitor.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"980fe4ee-f5d4-4762-8ae7-ea2ccbf76f21"}
+    - Error creating page for 'cf-weekday-check.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"a1ebaa8b-df27-41f8-a4ad-57e12059d2da"}
+    - Error creating page for 'ontology-notion-sync.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"079b83fe-d515-4367-be9a-884f1e4bdef5"}
+    - Error creating page for 'ontology-pipeline-sync.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"426c4b6a-c252-4e07-b3be-866d0b0bf2c6"}
+    - Error creating page for 'cron-dashboard-updater.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"be285031-7c89-4a87-808b-fb5b6fde8ebc"}
+    - Error creating page for 'jobs-interview-prep.py': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"3f5de3ce-14b3-4253-8de8-9ad6cd98d496"}
+    - Error creating page for 'watchdog-gateway.sh': 401 - {"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"a7df37b0-bd1d-4581-9f1b-992a8b2aeda5"}
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json

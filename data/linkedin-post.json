@@ -1,10 +1,16 @@
 {
-  "generated": "2026-03-28T03:00:22.752286+00:00",
-  "today": "2026-03-28",
-  "has_post": false,
-  "next_scheduled": {
-    "date": "2026-03-29",
-    "title": "A recruiter told me I was overqualified last week."
+  "generated": "2026-03-30T03:00:15.697312+00:00",
+  "today": "2026-03-30",
+  "has_post": true,
+  "post": {
+    "title": "83% of AI deployments in regulated industries fail",
+    "hook": "83% of AI deployments in regulated industries fail. Most people blame the wrong thing.",
+    "topic": "AI",
+    "status": "Scheduled",
+    "text": "**83% of AI deployments** in regulated industries fail.\nNot because the model is wrong. Because the governance isn't ready.\nI call this the **Regulated AI Governance Gap**.\nMost organizations build the AI. Few build the framework to run it at scale - audit trails, explainability requirements, human-in-the-loop checkpoints.\nIn healthcare and finance, a model that can't explain its output isn't just useless. It's a liability.\nWhat I've seen work: treat your AI rollout like a regulated product launch. Build the governance before you build the features.\n**The model is the easy part.** The accountability structure is where projects die.\nWhat governance controls does your team have in place for AI deployment?\n#AI #DigitalTransformation #Governance #HealthTech #FinTech",
+    "image_url": "https://raw.githubusercontent.com/ahmednasr999/openclaw-workspace/main/media/post-images-2026-03-29-v2/post2-ai-deployments.jpg?v=3",
+    "notion_page_id": "3318d599-a162-81d8-bbee-f0ca9e0aa041",
+    "notion_url": "https://www.notion.so/83-of-AI-deployments-in-regulated-industries-fail-3318d599a16281d8bbeef0ca9e0aa041"
   },
-  "status": "no_post_today"
+  "status": "ok"
 }
