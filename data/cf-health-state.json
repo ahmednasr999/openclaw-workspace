@@ -1,37 +1,37 @@
 {
-  "checked_at": "2026-03-26T07:00:02.092362+02:00",
+  "checked_at": "2026-03-30T07:00:02.428553+02:00",
   "components": {
     "notion_auth": {
       "status": "ok",
       "message": "Token OK"
     },
     "gateway": {
-      "status": "ok",
-      "message": "Gateway up"
+      "status": "fail",
+      "message": "Gateway unreachable (crons won't fire)"
     },
     "rss_db": {
       "status": "ok",
-      "message": "163 total, 0 New, 0 Gold waiting"
+      "message": "316 total, 14 New, 0 Gold waiting"
     },
     "rss_crawler": {
       "status": "ok",
-      "message": "Last ran 2026-03-26T02:23, 150 URLs tracked"
+      "message": "Last ran 2026-03-27T06:11, 231 URLs tracked"
     },
     "scorer": {
       "status": "ok",
-      "message": "163 scored, 0 unscored"
+      "message": "302 scored, 0 unscored"
     },
     "bridge": {
       "status": "ok",
-      "message": "Ran today: 0 added, 11 dup skipped"
+      "message": "Ran today: 0 added, 93 dup skipped"
     },
     "content_calendar": {
       "status": "ok",
-      "message": "38 total | Ideas=5 | Drafts=7 | Scheduled=5 | Posted=21"
+      "message": "98 total | Ideas=93 | Drafts=0 | Scheduled=4 | Posted=1"
     },
     "auto_drafter": {
-      "status": "ok",
-      "message": "6 drafts ready for review"
+      "status": "warn",
+      "message": "No drafts in queue (drafter may not have run)"
     },
     "linkedin_poster": {
       "status": "ok",
@@ -39,7 +39,7 @@
     },
     "visuals": {
       "status": "ok",
-      "message": "10 visuals, newest 0.2d old"
+      "message": "38 visuals, newest 0.9d old"
     }
   }
 }

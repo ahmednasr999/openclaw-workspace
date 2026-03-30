@@ -622,3 +622,25 @@
 [06:32:10]   Added to Content Calendar: 8
 [06:32:10]   Skipped (duplicate title): 55
 [06:32:10]   Errors: 0
+[06:30:01] === RSS → Content Calendar Bridge === 2026-03-30 06:30 Cairo
+[06:30:01]   Fetching existing Content Calendar entries...
+[06:30:03]   Content Calendar has 98 existing entries (by title)
+[06:30:03]   Fetching unprocessed RSS articles...
+[06:30:05]   RSS DB: 93 Gold articles ready for Content Calendar
+[06:30:05]   93 articles to process
+[06:31:58] 
+=== Done ===
+[06:31:58]   Added to Content Calendar: 0
+[06:31:58]   Skipped (duplicate title): 93
+[06:31:58]   Errors: 0
+[06:30:01] === RSS → Content Calendar Bridge === 2026-03-30 06:30 Cairo
+[06:30:01]   Fetching existing Content Calendar entries...
+[06:30:03]   Content Calendar has 98 existing entries (by title)
+[06:30:03]   Fetching unprocessed RSS articles...
+[06:30:05]   RSS DB: 93 Gold articles ready for Content Calendar
+[06:30:05]   93 articles to process
+[06:31:58] 
+=== Done ===
+[06:31:58]   Added to Content Calendar: 0
+[06:31:58]   Skipped (duplicate title): 93
+[06:31:58]   Errors: 0

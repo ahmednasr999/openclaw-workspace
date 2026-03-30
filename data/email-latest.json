@@ -1,33 +1,23 @@
 {
   "status": "ok",
-  "scan_time": "2026-03-28T12:00:13.148082+02:00",
-  "total_scanned": 19,
+  "scan_time": "2026-03-30T10:00:06.051213+02:00",
+  "total_scanned": 3,
   "by_category": {
     "interview_invite": 0,
-    "recruiter_reach": 2,
+    "recruiter_reach": 1,
     "application_ack": 0,
     "rejection": 0,
     "assessment": 0,
     "follow_up_needed": 0,
-    "other": 17
+    "other": 2
   },
   "interview_invites": [],
   "recruiter_messages": [
     {
-      "id": "350646",
-      "from": "Naukrigulf <info@naukrigulf.com>",
-      "subject": "Jobseeker Oasis March 2026",
-      "date": "Sat, 28 Mar 2026 12:39:43 +0530 (IST)",
-      "unread": true,
-      "priority": "MEDIUM",
-      "score": 2,
-      "pipeline_match": null
-    },
-    {
-      "id": "350650",
-      "from": "\"Akonte Lawson, ACIPM\" <invitations@linkedin.com>",
+      "id": "350882",
+      "from": "=?UTF-8?Q?M_Faizan_Abbasi=2C_PMP=C2=AE?= <invitations@linkedin.com>",
       "subject": "You have an invitation",
-      "date": "Sat, 28 Mar 2026 09:30:33 +0000 (UTC)",
+      "date": "Mon, 30 Mar 2026 07:30:34 +0000 (UTC)",
       "unread": true,
       "priority": "MEDIUM",
       "score": 2,

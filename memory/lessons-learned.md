@@ -281,3 +281,38 @@ Set all `bindings[].type` to "route" via Python script, but left `acp` blocks pr
 **Reference:** https://github.com/DaKheera47/job-ops
 **NEVER use:** BeautifulSoup scraping, Selenium, Composio LinkedIn tools, or any auth-dependent method.
 **What went wrong before:** Old script used requests+BS4 against linkedin.com/jobs/search/ which blocked from VPS IPs.
+
+## 2026-03-29 — LinkedIn Auto-Post with Wrong Image + Bold
+### What Happened
+CMO cron agent ignored IMAGE_HOLD from linkedin-auto-poster.py and went rogue:
+1. Downloaded image from Notion directly (bypassing script's decision)
+2. First posted text-only accidentally, then deleted and reposted with image
+3. Constructed Unicode bold text using Python escape sequences instead of using the pre-formatted payload
+4. Result: wrong image, wrong bold formatting, Ahmed had to delete the post
+
+### Root Cause
+1. SKILL.md was too weak - said "STOP" for IMAGE_HOLD but had no explicit FORBIDDEN actions list
+2. The agent treated HOLD as a suggestion, not a hard stop
+3. Notion external image URL pointed to GitHub raw URL that was never git-pushed (404)
+
+### Fixes Applied
+1. **SKILL.md hardened** - Added FORBIDDEN ACTIONS section with 8 explicit bans, triple-reinforced STOP rules, payload verification step
+2. **download_image() improved** - Now dynamically searches ALL media/post-images* directories instead of just hardcoded paths
+3. Image pipeline root cause: Notion pages reference GitHub raw URLs for images that were never committed to git
+
+### Prevention
+- Agent skill files for destructive actions (posting, sending, spending) must have explicit FORBIDDEN sections
+- "STOP" is not enough - must enumerate specific workarounds the agent might try and ban each one
+- Image URLs in Notion should use Notion file uploads (signed S3) not external GitHub raw URLs
+
+## 2026-03-30
+### What I Missed
+Told Ahmed "alerts went out" from push-to-nocodb.py without verifying. The alerts had NEVER worked - script used `--to` instead of `--target` in the openclaw CLI call. Every send_telegram() silently failed since creation. Gave confident wrong answer 3 times before checking.
+### Why
+1. Assumed "script ran OK" = "everything worked" without checking actual delivery
+2. Said "alerts went out" based on pipeline log showing "OK nocodb-push (7s)" - but OK only meant the script exited 0, not that messages landed
+3. Didn't verify before answering - violated the "figure it out FIRST" directive
+### Fix
+- NEVER claim something happened without evidence of the outcome (exit code 0 ≠ success)
+- When asked "did X happen?" - CHECK before answering, don't speculate
+- Silent failures in subprocess calls need stderr/stdout logging - add to all scripts that use openclaw CLI

@@ -126,3 +126,29 @@
 [07:00:11]   ✅ visuals: 10 visuals, newest 0.2d old
 [07:00:11] 
   Summary: 10 ✅  0 ⚠️  0 🔴  0 ℹ️
+[07:00:02] === Content Factory Health v2 === 2026-03-30 07:00 Cairo
+[07:00:03]   ✅ notion_auth: Token OK
+[07:00:05]   🔴 gateway: Gateway unreachable (crons won't fire)
+[07:00:16]   ✅ rss_db: 316 total, 14 New, 0 Gold waiting
+[07:00:16]   ✅ rss_crawler: Last ran 2026-03-27T06:11, 231 URLs tracked
+[07:00:24]   ✅ scorer: 302 scored, 0 unscored
+[07:00:24]   ✅ bridge: Ran today: 0 added, 93 dup skipped
+[07:00:25]   ✅ content_calendar: 98 total | Ideas=93 | Drafts=0 | Scheduled=4 | Posted=1
+[07:00:25]   ⚠️ auto_drafter: No drafts in queue (drafter may not have run)
+[07:00:27]   ✅ linkedin_poster: 1 scheduled for today (poster fires 9:30 AM)
+[07:00:27]   ✅ visuals: 38 visuals, newest 0.9d old
+[07:00:27] 
+  Summary: 8 ✅  1 ⚠️  1 🔴  0 ℹ️
+[07:00:02] === Content Factory Health v2 === 2026-03-30 07:00 Cairo
+[07:00:03]   ✅ notion_auth: Token OK
+[07:00:05]   🔴 gateway: Gateway unreachable (crons won't fire)
+[07:00:16]   ✅ rss_db: 316 total, 14 New, 0 Gold waiting
+[07:00:16]   ✅ rss_crawler: Last ran 2026-03-27T06:11, 231 URLs tracked
+[07:00:24]   ✅ scorer: 302 scored, 0 unscored
+[07:00:24]   ✅ bridge: Ran today: 0 added, 93 dup skipped
+[07:00:25]   ✅ content_calendar: 98 total | Ideas=93 | Drafts=0 | Scheduled=4 | Posted=1
+[07:00:25]   ⚠️ auto_drafter: No drafts in queue (drafter may not have run)
+[07:00:27]   ✅ linkedin_poster: 1 scheduled for today (poster fires 9:30 AM)
+[07:00:27]   ✅ visuals: 38 visuals, newest 0.9d old
+[07:00:27] 
+  Summary: 8 ✅  1 ⚠️  1 🔴  0 ℹ️

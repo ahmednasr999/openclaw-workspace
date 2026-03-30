@@ -1,15 +1,1 @@
-{
-  "generated_at": "2026-03-29T08:00:01Z",
-  "phases": {
-    "merge": {
-      "status": "OK",
-      "elapsed_s": 12,
-      "detail": ""
-    },
-    "enrich": {
-      "status": "OK",
-      "elapsed_s": 21,
-      "detail": ""
-    }
-  }
-}
+{"generated_at":"2026-03-30T08:00:01Z","phases":{}}
