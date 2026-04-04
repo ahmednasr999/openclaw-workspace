@@ -1,0 +1,90 @@
+{
+  "iterations": [
+    {
+      "version": 1,
+      "date": "2026-03-21",
+      "prompt_file": "prompt-v1.md",
+      "metrics": {
+        "total_submit": 8,
+        "applied": 4,
+        "skipped": 3,
+        "pending": 1,
+        "accuracy": 0.5714,
+        "miss_rate": 0.4286
+      },
+      "skip_patterns_found": [
+        "unknown",
+        "nationals_only"
+      ],
+      "skip_pattern_counts": {
+        "unknown": 1,
+        "nationals_only": 2
+      },
+      "changes_made": [
+        "Added DEALBREAKER nationals-only filter (caught 2 false positives)"
+      ],
+      "skipped_jobs_analyzed": [
+        {
+          "title": "Experience Operations Director - Dubai",
+          "company": "Valtech Group",
+          "patterns": [
+            "unknown"
+          ]
+        },
+        {
+          "title": "Executive Director- Private Banking MENA (UAE nationals only)",
+          "company": "First Abu Dhabi Bank (FAB)",
+          "patterns": [
+            "nationals_only"
+          ]
+        },
+        {
+          "title": "Executive Vice President & Head of Corporate Banking \u2013 Abu Dhabi (UAE National)",
+          "company": "RAKBANK",
+          "patterns": [
+            "nationals_only"
+          ]
+        }
+      ]
+    },
+    {
+      "version": 2,
+      "date": "2026-03-22",
+      "prompt_file": "none",
+      "metrics": {
+        "total_submit": 8,
+        "applied": 7,
+        "skipped": 0,
+        "pending": 1,
+        "accuracy": 1.0,
+        "miss_rate": 0.0
+      },
+      "skip_patterns_found": [],
+      "skip_pattern_counts": {},
+      "changes_made": [
+        "No skipped jobs to analyze"
+      ],
+      "skipped_jobs_analyzed": []
+    },
+    {
+      "version": 3,
+      "date": "2026-04-05",
+      "prompt_file": "none",
+      "metrics": {
+        "total_submit": 0,
+        "applied": 0,
+        "skipped": 0,
+        "pending": 0,
+        "accuracy": 0.0,
+        "miss_rate": 0.0
+      },
+      "skip_patterns_found": [],
+      "skip_pattern_counts": {},
+      "changes_made": [
+        "No skipped jobs to analyze"
+      ],
+      "skipped_jobs_analyzed": [],
+      "backtest": null
+    }
+  ]
+}
