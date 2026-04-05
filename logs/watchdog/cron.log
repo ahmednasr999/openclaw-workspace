@@ -3127,3 +3127,96 @@
 
 📋 Actions taken:
 
+🔍 Watchdog v3 - Detect → Fix → Report
+✅ Gateway running (PID: 734469)
+✅ Disk OK: 53%
+✅ active-tasks.md fresh (34h)
+✅ Jobs data fresh (0h)
+✅ SIE 360 data fresh (6h)
+✅ Pipeline lock active (0m, still valid)
+✅ All crons OK
+✅ No pipeline failures today
+✅ RAM OK: 42%
+
+═══════════════════════════════════
+📊 Watchdog v3 Summary
+  Fixes applied: 0
+  Warnings: 0
+  Alerts (need human): 0
+═══════════════════════════════════
+🔍 Watchdog v3 - Detect → Fix → Report
+✅ Gateway running (PID: 734469)
+✅ Disk OK: 53%
+✅ active-tasks.md fresh (36h)
+✅ Jobs data fresh (1h)
+✅ SIE 360 data fresh (8h)
+✅ Pipeline lock active (0m, still valid)
+✅ All crons OK
+✅ No pipeline failures today
+✅ RAM OK: 46%
+
+═══════════════════════════════════
+📊 Watchdog v3 Summary
+  Fixes applied: 0
+  Warnings: 0
+  Alerts (need human): 0
+═══════════════════════════════════
+🔍 Watchdog v3 - Detect → Fix → Report
+✅ Gateway running (PID: 734469)
+✅ Disk OK: 53%
+✅ active-tasks.md fresh (38h)
+✅ Jobs data fresh (3h)
+✅ SIE 360 data fresh (10h)
+✅ Pipeline lock active (0m, still valid)
+🟡 1 crons with issues
+  Re-triggered cron: d8d6d364-40dd-406a-a144-aa3904bd2226
+✅ No pipeline failures today
+✅ RAM OK: 49%
+
+═══════════════════════════════════
+📊 Watchdog v3 Summary
+  Fixes applied: 1
+  Warnings: 1
+  Alerts (need human): 0
+═══════════════════════════════════
+
+📋 Actions taken:
+
+🔍 Watchdog v3 - Detect → Fix → Report
+✅ Gateway running (PID: 734469)
+✅ Disk OK: 53%
+✅ active-tasks.md fresh (40h)
+✅ Jobs data fresh (1h)
+✅ SIE 360 data fresh (12h)
+✅ Pipeline lock active (0m, still valid)
+✅ All crons OK
+✅ No pipeline failures today
+✅ RAM OK: 49%
+
+═══════════════════════════════════
+📊 Watchdog v3 Summary
+  Fixes applied: 0
+  Warnings: 0
+  Alerts (need human): 0
+═══════════════════════════════════
+🔍 Watchdog v3 - Detect → Fix → Report
+✅ Gateway running (PID: 734469)
+✅ Disk OK: 53%
+✅ active-tasks.md fresh (42h)
+✅ Jobs data fresh (3h)
+✅ SIE 360 data fresh (14h)
+✅ Pipeline lock active (0m, still valid)
+🟡 1 crons with issues
+  Re-triggered cron: 418e7854-d466-4b49-ad1d-f3f3debae5d7
+✅ No pipeline failures today
+✅ RAM OK: 49%
+
+═══════════════════════════════════
+📊 Watchdog v3 Summary
+  Fixes applied: 1
+  Warnings: 1
+  Alerts (need human): 0
+═══════════════════════════════════
+
+📋 Actions taken:
+

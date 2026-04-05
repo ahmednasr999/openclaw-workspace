@@ -1,16 +1,27 @@
 {
-  "generated": "2026-04-05T04:01:02.725819+00:00",
+  "generated": "2026-04-05T14:01:09.453536+00:00",
   "suggestions": [
     {
-      "name": "\u200fSalman Saleem\u200f",
-      "role": "\u200fTransviti\u200f",
-      "url": "https://www.linkedin.com/in/salmansaleemofficial",
-      "company": "Foreground Jeddah",
-      "signal_score": 5,
+      "name": "Shelby J.",
+      "role": "Talent Acquisition Coordinator",
+      "url": "https://www.linkedin.com/in/shelby-j-68a11494",
+      "company": "Visa",
+      "signal_score": 30,
       "source": "tavily",
-      "applied_role": "Director Digital Transformation",
+      "applied_role": "Director CoE - Strategy and Execution",
       "applied_date": "2026-03-27",
-      "reason": "You applied for Director Digital Transformation at Foreground Jeddah"
+      "reason": "You applied for Director CoE - Strategy and Execution at Visa"
+    },
+    {
+      "name": "Shelby J.",
+      "role": "Talent Acquisition Coordinator",
+      "url": "https://www.linkedin.com/in/shelby-j-68a11494",
+      "company": "Visa",
+      "signal_score": 30,
+      "source": "tavily",
+      "applied_role": "Director, Government Solutions, KSA",
+      "applied_date": "2026-03-27",
+      "reason": "You applied for Director, Government Solutions, KSA at Visa"
     }
   ],
   "companies_searched": 10,

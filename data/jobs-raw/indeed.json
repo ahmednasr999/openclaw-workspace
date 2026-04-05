@@ -2,40 +2,16 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-04-05T04:01:37.978144+02:00",
-    "duration_ms": 95585,
+    "generated_at": "2026-04-05T12:01:59.270554+02:00",
+    "duration_ms": 117033,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "8bc19665",
+    "run_id": "d7b06915",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": [
-    {
-      "id": "indeed-in-4346bb03cbb59e09",
-      "source": "indeed",
-      "title": "Project Director",
-      "company": "Confidential",
-      "location": "Dubai International Financial Center, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=4346bb03cbb59e09",
-      "posted": "2026-04-04",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 30,
-      "match_keywords": [
-        "operational excellence",
-        "ai",
-        "director",
-        "uae",
-        "dubai"
-      ],
-      "raw_snippet": "**Job Overview**\n\nTurbo Testimonials Inc is a fast\\-growing reputation management and customer feedback technology company, dedicated to helping businesses collect, manage, and showcase authentic client testimonials. With our headquarters in the Dubai International Financial Center, we serve clients across the UAE and globally. As we expand our project portfolio, we are looking for an experienced and strategic Project Director to lead high\\-impact initiatives and drive operational excellence.\n\nW",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Director of Technology"
-    },
     {
       "id": "indeed-in-9764f7246512fc81",
       "source": "indeed",
@@ -80,102 +56,52 @@
       "search_title": "Transformation Lead"
     },
     {
-      "id": "indeed-in-3a01dc48a779e9bb",
+      "id": "indeed-in-d7c665acff7a4565",
       "source": "indeed",
-      "title": "Project Director (Site Supervision)",
-      "company": "Omrania- \u0639\u0645\u0631\u0627\u0646\u064a\u0629",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=3a01dc48a779e9bb",
+      "title": "Head Draftsman",
+      "company": "Cone Cube Construction Engineering Services",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=d7c665acff7a4565",
       "posted": "2026-04-03",
-      "seniority": "C-Suite",
-      "domain_match": true,
+      "seniority": "Other",
+      "domain_match": false,
       "keyword_score": 23,
       "match_keywords": [
+        "project management",
         "ai",
-        "infrastructure",
-        "director",
-        "architecture"
+        "uae",
+        "dubai"
       ],
-      "raw_snippet": "Egis is an international player active in architecture, consulting, construction engineering and mobility services. We create and operate intelligent infrastructures and buildings that respond to the climate emergency and contribute to more balanced, sustainable and resilient territorial development. Operating in 100 countries, Egis puts the expertise of its 19,500 employees at the service of its clients and develops cutting\\-edge innovations accessible to all projects. Through its wide range of",
+      "raw_snippet": "**Job Title:** Head Draftsman  \n**Location:** Dubai, UAE\n\n**Company Overview:**  \nWe are a dynamic and growing design consultancy based in Dubai, delivering high\\-quality design and project management services across residential, commercial, and mixed\\-use developments. We are seeking a talented and experienced Project Architect to join our team.\n\n**Key Responsibilities:**\n\n* Lead and manage the drafting team across multiple projects\n* Train fresh draftsmen on DM Drawings preparation\n* Prepare, ",
       "relevant": true,
       "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Director of Engineering"
+      "search_country": "United Arab Emirates",
+      "search_title": "Head of Delivery"
     },
     {
-      "id": "indeed-in-bd7f647169078bad",
+      "id": "indeed-in-c06b594dcc5a59a0",
       "source": "indeed",
-      "title": "Project Director (Site Supervision)",
-      "company": "Omada Rail Systems",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=bd7f647169078bad",
+      "title": "Head Midwife - Nauru Deployment",
+      "company": "Global Mission Support Services LLC",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=c06b594dcc5a59a0",
       "posted": "2026-04-03",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 26,
-      "match_keywords": [
-        "ai",
-        "infrastructure",
-        "director",
-        "riyadh",
-        "architecture"
-      ],
-      "raw_snippet": "* **Site Supervision**\n* **Permanent Contract**\n* **Mid\\-Senior Level**\n* **Riyadh**\n\n  \n**About Us**\n\n  \n\nEgis is an international player active in architecture, consulting, construction engineering and mobility services. We create and operate intelligent infrastructures and buildings that respond to the climate emergency and contribute to more balanced, sustainable and resilient territorial development. Operating in 100 countries, Egis puts the expertise of its 19,500 employees at the service ",
+      "seniority": "Other",
+      "domain_match": false,
+      "keyword_score": 0,
+      "match_keywords": [],
+      "raw_snippet": "**Job Title: Head Midwife (International Experience Required)**  \n**Job Type:** Full\\-time  \n**Country Location:** Nauru  \nMust be willing to relocate to Nauru\n\n**Job Summary**\n\nWe are seeking an experienced and highly skilled **Head Midwife** to lead our maternity services. This role is critical as we establish a state\\-of\\-the\\-art labor and delivery unit, ensuring the highest standards of evidence\\-based midwifery care.\n\nThe ideal candidate will bring strong international experience and expos",
       "relevant": true,
       "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Director of Engineering"
-    },
-    {
-      "id": "indeed-in-cc036cf2c86fd546",
-      "source": "indeed",
-      "title": "Project Director (Site Supervision)",
-      "company": "Omrania",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=cc036cf2c86fd546",
-      "posted": "2026-04-03",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 23,
-      "match_keywords": [
-        "ai",
-        "infrastructure",
-        "director",
-        "architecture"
-      ],
-      "raw_snippet": "**Company Description**  \n\nEgis is an international player active in architecture, consulting, construction engineering and mobility services. We create and operate intelligent infrastructures and buildings that respond to the climate emergency and contribute to more balanced, sustainable and resilient territorial development. Operating in 100 countries, Egis puts the expertise of its 19,500 employees at the service of its clients and develops cutting\\-edge innovations accessible to all projects",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Director of Engineering"
-    },
-    {
-      "id": "indeed-in-b5babd2771f29f11",
-      "source": "indeed",
-      "title": "Head of Oil and Gas Operations",
-      "company": "Confidential",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=b5babd2771f29f11",
-      "posted": "2026-04-05",
-      "seniority": "Director",
-      "domain_match": true,
-      "keyword_score": 13,
-      "match_keywords": [
-        "ai",
-        "head of"
-      ],
-      "raw_snippet": "**Job Title**\n\n***Head of Oil and Gas Operations***\n\n**Job Summary**\n\nThe Head of Oil and Gas Operations leads and oversees all operational activities across upstream, midstream, or downstream functions to ensure safe, efficient, compliant, and profitable performance. This role is responsible for operational strategy, production execution, resource planning, budget control, risk management, and cross\\-functional coordination.\n\n**Key Responsibilities**\n\n* Lead daily and long\\-term oil and gas ope",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Head of Strategy"
+      "search_country": "United Arab Emirates",
+      "search_title": "Head of Delivery"
     }
   ],
   "kpi": {
-    "searches_run": 81,
-    "results_per_search": 1.0,
-    "unique_jobs": 7,
-    "errors": 48
+    "searches_run": 99,
+    "results_per_search": 0.88,
+    "unique_jobs": 4,
+    "errors": 55
   },
   "recommendations": []
 }

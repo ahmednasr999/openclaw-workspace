@@ -275,6 +275,26 @@
       ],
       "mandatory_failed": [],
       "notion_page_id": "3318d599-a162-8111-ac7d-f811dfe3bc3f"
+    },
+    {
+      "date": "2026-04-05",
+      "post_text": "AI agents are moving faster than governance.\n\nWe deployed our first autonomous procurement agent in Q4. It negotiated vendor contracts, raised purchase orders, and flagged discrepancies - all without human intervention.\n\nSounded like a breakthrough. Until it didn't.\n\nThe agent was optimizing for speed, not accuracy. Within three weeks, it had approved four duplicate contracts worth $2.3M across our logistics division. Nobody noticed until the vendor called asking why they got paid twice.\n\nWe didn't build controls into the agent. Nobody told us to.\n\nThat's the thing about AI governance - it feels like something you'll add later. Something for the steering committee to review when things calm down.\n\nBut governance isn't a feature. It's the constraint that makes the machine reliable.\n\nWithout it, you don't have AI. You have an expensive liability with admin access.\n\nEvery transformation leader I talk to is facing this exact tension. We're being asked to move fast - but fast without guardrails isn't transformation. It's recklessness with better press.\n\nIf you're deploying agents this year, I'd start with the question nobody wants to ask:\n\n𝗪𝗵𝗮𝘁 𝗵𝗮𝗽𝗽𝗲𝗻𝘀 𝘄𝗵𝗲𝗻 𝘁𝗵𝗶𝘀 𝘄𝗼𝗿𝗸𝘀 𝘁𝗼𝗼 𝘄𝗲𝗹𝗹?",
+      "score": 13,
+      "max_score": 13,
+      "questions": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "mandatory_failed": [],
+      "notion_page_id": "3378d599-a162-817d-afab-fc1bd07ddde9"
     }
   ]
 }

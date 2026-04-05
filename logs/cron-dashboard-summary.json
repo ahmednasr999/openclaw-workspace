@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-05T07:01:02.454734+02:00",
+  "timestamp": "2026-04-05T16:01:02.560170+02:00",
   "total_crons": 24,
   "system_crons": 24,
   "openclaw_crons": 0,
@@ -13,7 +13,7 @@
       "type": "system",
       "last_status": {
         "status": "\u2705 OK",
-        "last_run": "2026-04-05 06:00:14.657078+02:00",
+        "last_run": "2026-04-05 16:00:09.951501+02:00",
         "error": null
       }
     },
@@ -23,7 +23,7 @@
       "type": "system",
       "last_status": {
         "status": "\u274c Failed",
-        "last_run": "2026-04-05 06:01:02.938388+02:00",
+        "last_run": "2026-04-05 16:00:02.277452+02:00",
         "error": "Check log for details"
       }
     },
@@ -83,7 +83,7 @@
       "type": "system",
       "last_status": {
         "status": "\u274c Failed",
-        "last_run": "2026-04-05 06:01:02.938388+02:00",
+        "last_run": "2026-04-05 16:00:02.277452+02:00",
         "error": "Check log for details"
       }
     },
@@ -163,7 +163,7 @@
       "type": "system",
       "last_status": {
         "status": "\u274c Failed",
-        "last_run": "2026-03-29 08:00:04.103797+02:00",
+        "last_run": "2026-04-05 08:00:13.749459+02:00",
         "error": "Check log for details"
       }
     },
