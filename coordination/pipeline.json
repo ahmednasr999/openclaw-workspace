@@ -1,8 +1,17 @@
 {
-  "last_updated": "2026-03-19T14:08:00Z",
-  "generated_by": "Chief of Staff (Max)",
+  "last_updated": "2026-04-05T18:21:31Z",
+  "generated_by": "NASR CEO Agent",
   "applications": {
     "active": [
+      {
+        "title": "Transformation Lead, UAE",
+        "company": "Proximie",
+        "recruiter": "Lee Abrahams (Labrahams@proximie.com)",
+        "status": "interview",
+        "date_applied": "2026-04-03",
+        "notes": "Video screen scheduled: Tuesday April 7 after 1 PM Cairo / 12 PM UK. Lee rescheduled due to UK holiday.",
+        "source": "email"
+      },
       {
         "id": "app-001",
         "company": "Nabat",
@@ -19,7 +28,7 @@
         "status": "interview",
         "date_applied": "2026-02-10",
         "interview_date": "2026-02-18",
-        "notes": "Prepare case study examples"
+        "notes": "Interview stage - video/phone screen completed"
       },
       {
         "id": "app-003",
