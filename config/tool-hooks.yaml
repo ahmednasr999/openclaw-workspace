@@ -1,0 +1,276 @@
+# Tool Hooks Configuration
+# Pre/Post hooks that fire around tool usage
+# Agents MUST check this before and after external actions
+
+# ─── PRE-TOOL HOOKS ───────────────────────────────────────
+# Evaluated BEFORE a tool is called. Can DENY, LOG, or MODIFY.
+pre_hooks:
+
+  # Block dangerous ops in AFK mode (midnight-6AM Cairo)
+  afk_guard:
+    trigger: "time_range"
+    time_range: "00:00-06:00"
+    timezone: "Africa/Cairo"
+    blocked_actions:
+      - linkedin_post
+      - linkedin_comment
+      - email_send
+      - job_apply
+      - message_send_external   # sending to non-Ahmed targets
+      - file_delete
+      - git_push
+      - config_change
+    action: "deny"
+    message: "AFK mode active. Queued for morning review."
+    exceptions:
+      - cron_scheduled_posts     # pre-approved by Ahmed
+      - emergency_notifications  # system health alerts
+
+  # Rate limiter - prevent tool spam
+  rate_limiter:
+    trigger: "frequency"
+    limits:
+      linkedin_post: "1 per 4 hours"
+      linkedin_comment: "5 per hour"
+      email_send: "10 per hour"
+      web_search: "30 per hour"
+      image_generate: "10 per hour"
+      composio_tool_call: "60 per hour"
+    action: "deny"
+    message: "Rate limit hit for {tool}. Cooling down."
+
+  # Core file protection - require elevated effort level
+  core_file_guard:
+    trigger: "file_match"
+    protected_files:
+      - "MEMORY.md"
+      - "SOUL.md"
+      - "TOOLS.md"
+      - "AGENTS.md"
+      - "USER.md"
+      - "IDENTITY.md"
+      - "memory/master-cv-data.md"
+      - "memory/ontology/graph.jsonl"
+      - "config/tool-hooks.yaml"      # self-protection
+      - "config/tool-permissions.yaml" # self-protection
+    minimum_effort: "high"  # ● High or ◉ Max only
+    action: "warn"
+    message: "Modifying core file {file}. Effort level must be ● High or above."
+
+  # Verification gate - auto-trigger verification for multi-file changes
+  verification_gate:
+    trigger: "file_count"
+    threshold: 3  # 3+ files modified in one task
+    action: "flag"
+    message: "Multi-file change detected. Verification Agent will review on completion."
+
+# ─── POST-TOOL HOOKS ──────────────────────────────────────
+# Evaluated AFTER a tool completes. For logging, notification, and audit.
+post_hooks:
+
+  # Audit logger - log every external action
+  audit_logger:
+    trigger: "tool_category"
+    categories:
+      - external_write     # LinkedIn, email, job applications
+      - file_modify_core   # core workspace files
+      - config_change      # gateway, cron, hooks
+      - credential_access  # reading/using API keys
+    log_to: "memory/agents/audit-log.jsonl"
+    format: "jsonl"
+    fields:
+      - timestamp
+      - agent
+      - tool
+      - action
+      - target
+      - result
+      - effort_level
+
+  # CEO notification - alert on significant actions
+  ceo_notify:
+    trigger: "tool_category"
+    categories:
+      - external_write
+    notify:
+      target: "topic_10"  # CEO General
+      format: "✅ {agent}: {action} completed - {detail}"
+    skip_if: "agent_is_ceo"  # CEO doesn't notify itself
+
+  # Auto-commit after file changes
+  auto_commit:
+    trigger: "file_modify"
+    min_files: 1
+    action: "suggest"
+    message: "Files modified. Consider committing: {files}"
+
+  # Dream Mode data collection - tag actions for consolidation
+  dream_tag:
+    trigger: "always"
+    action: "append"
+    target: "memory/agents/daily-actions.jsonl"
+    fields:
+      - timestamp
+      - agent
+      - category
+      - summary
+
+# ─── TOOL CONCURRENCY & READONLY DECLARATIONS ─────────────
+# Each tool declares: concurrent (safe to run in parallel) + readonly (non-destructive)
+# Agents MUST check these before parallel execution
+tool_properties:
+  # Read-only, concurrent-safe (can run in parallel freely)
+  web_search: { concurrent: true, readonly: true }
+  web_fetch: { concurrent: true, readonly: true }
+  read: { concurrent: true, readonly: true }
+  image: { concurrent: true, readonly: true }
+  pdf: { concurrent: true, readonly: true }
+  lcm_grep: { concurrent: true, readonly: true }
+  lcm_describe: { concurrent: true, readonly: true }
+  lcm_expand: { concurrent: true, readonly: true }
+  lcm_expand_query: { concurrent: true, readonly: true }
+  camofox_snapshot: { concurrent: true, readonly: true }
+  camofox_screenshot: { concurrent: true, readonly: true }
+  camofox_list_tabs: { concurrent: true, readonly: true }
+  session_status: { concurrent: true, readonly: true }
+  sessions_list: { concurrent: true, readonly: true }
+  sessions_history: { concurrent: true, readonly: true }
+  LINKEDIN_GET_MY_INFO: { concurrent: true, readonly: true }
+  LINKEDIN_GET_POST_CONTENT: { concurrent: true, readonly: true }
+
+  # Read-only but NOT concurrent-safe (shared state)
+  camofox_scroll: { concurrent: false, readonly: true }
+
+  # Write tools - NEVER run in parallel with other writes to same target
+  edit: { concurrent: false, readonly: false }
+  write: { concurrent: false, readonly: false }
+  exec: { concurrent: false, readonly: false }
+  message: { concurrent: false, readonly: false }
+  cron: { concurrent: false, readonly: false }
+  gateway: { concurrent: false, readonly: false }
+  LINKEDIN_CREATE_LINKED_IN_POST: { concurrent: false, readonly: false }
+  LINKEDIN_DELETE_POST: { concurrent: false, readonly: false }
+  camofox_click: { concurrent: false, readonly: false }
+  camofox_type: { concurrent: false, readonly: false }
+  camofox_navigate: { concurrent: false, readonly: false }
+  sessions_spawn: { concurrent: true, readonly: false }  # spawns are independent
+  sessions_send: { concurrent: false, readonly: false }
+
+# Concurrency rules:
+# 1. Multiple concurrent:true + readonly:true tools CAN run in parallel
+# 2. concurrent:false tools MUST run sequentially
+# 3. Two write tools targeting the SAME file/resource MUST serialize
+# 4. sessions_spawn is concurrent (independent sessions) but not readonly
+# 5. When in doubt, serialize
+
+# ─── TOOL PRESETS (MODE PROFILES) ─────────────────────────
+# Named tool groups. Agents select a preset based on task type.
+# Tools not in the active preset are DENIED.
+tool_presets:
+  full:
+    description: "Full access - all tools available"
+    tools: ["*"]  # wildcard = everything
+
+  research:
+    description: "Read-only research mode - no writes, no external actions"
+    tools:
+      - web_search
+      - web_fetch
+      - read
+      - image
+      - pdf
+      - lcm_grep
+      - lcm_describe
+      - lcm_expand
+      - lcm_expand_query
+      - camofox_*        # browser reading
+      - session_status
+      - sessions_list
+      - sessions_history
+      - LINKEDIN_GET_*   # read LinkedIn only
+
+  build:
+    description: "Full development mode - file ops + tools"
+    inherits: "research"
+    additional:
+      - edit
+      - write
+      - exec
+      - cron
+      - sessions_spawn
+      - sessions_send
+      - message
+
+  review:
+    description: "Code/content review - read + search only"
+    tools:
+      - read
+      - web_search
+      - web_fetch
+      - lcm_grep
+      - lcm_expand_query
+      - session_status
+
+  afk:
+    description: "Overnight autonomous - read + pre-approved crons only"
+    tools:
+      - read
+      - web_search
+      - web_fetch
+      - lcm_grep
+      - lcm_describe
+      - exec            # for scripts only, not interactive
+      - cron            # reading cron status
+      - session_status
+    notes: "External writes (LinkedIn, email, message) are QUEUED to afk-queue.jsonl"
+
+  content:
+    description: "Content creation mode - research + LinkedIn + image gen"
+    inherits: "research"
+    additional:
+      - image_generate
+      - LINKEDIN_CREATE_LINKED_IN_POST
+      - edit
+      - write
+      - message
+
+# Preset selection rules:
+# - Default: "full" for CEO, "build" for CTO, "content" for CMO
+# - AFK mode (00:00-06:00): auto-switch to "afk" preset
+# - Research tasks: agent should self-select "research" preset
+# - Sub-agents: inherit parent's preset unless explicitly set
+
+# ─── TOOL CATEGORIES ──────────────────────────────────────
+# Map tools to categories for hook matching
+tool_categories:
+  external_write:
+    - LINKEDIN_CREATE_LINKED_IN_POST
+    - LINKEDIN_DELETE_POST
+    - email_send
+    - himalaya_send
+    - job_apply
+    - git_push
+    - message_send  # to external channels
+    - composio_execute  # any Composio write tool
+
+  external_read:
+    - web_search
+    - web_fetch
+    - LINKEDIN_GET_POST_CONTENT
+    - email_read
+    - himalaya_list
+
+  file_modify_core:
+    - edit_core_file  # any edit to files in protected_files list
+    - write_core_file
+
+  config_change:
+    - gateway_config
+    - cron_add
+    - cron_update
+    - cron_remove
+
+  credential_access:
+    - read_env
+    - read_credentials
+    - composio_manage_connections
