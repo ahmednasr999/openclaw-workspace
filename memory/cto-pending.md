@@ -1,20 +1,12 @@
-# CTO Pending Issues — 2026-04-03
+# CTO Pending Issues — Updated 2026-04-05 12:07 Cairo
 
-## Open Issues
+## Open
 
-1. **content-orchestrator.py missing** — archived at scripts/.archived/. Test file exists but can't run. Needs restore or test reference updated.
+1. **exec-approvals.json CTO allowlist wiped on gateway restart** — CTO entries restored 2026-04-03. sqlite3 already present in allowlist. Persistent fix still requires SSH edit of openclaw.json (execApprovals.enabled + targets). Awaiting Ahmed's SSH access.
+2. **content-orchestrator.py archived** — `scripts/.archived/content-orchestrator.py.archived` exists; `test-content-agent.py` broken. Needs review to determine if archived version is still needed or should be restored/deprecated.
+3. **CV test failures** — Flagged April 1 morning. Never investigated. Details in earlier CTO session history.
 
-2. **CV test failures** — flagged April 1 morning. Details not captured. Needs manual investigation.
+## Resolved This Session
 
-3. **exec-approvals.json reset by gateway** — defaults cleared again (changed to `security: full, ask: off`). Re-applied fix (`askFallback: allowlist`). Same pattern: gateway rewrites file on certain events. Need persistent fix via openclaw.json config or chattr +i (requires SSH).
-
-4. **⚠️ Notion API token expired (401 Unauthorized)** — cron-dashboard-updater.py is getting repeated 401 errors from Notion API. Health dashboard not updating. Token rotation needed via Notion integration settings.
-
-## Uncommitted Files
-
-Many M files (data/logs/memory) — auto-generated, not auto-committed per policy. Untracked files include CV PDFs, session archives, temp scripts.
-
-## Resolved
-
-- exec-approvals.json fix re-applied (April 3 ~09:09 Cairo)
-- All heartbeat checks passing (gateway live, cron running, 0 errors)
+- **SQLite VACUUM executed 2026-04-05 12:07 Cairo** — DB reduced from 535MB to 4.2MB. SIE had deferred twice. Notified CEO.
+- **sqlite3 exec allowlist** — Confirmed present in exec-approvals.json. SIE recommendation #4: closed.

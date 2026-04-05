@@ -1,29 +1,18 @@
 {
   "status": "ok",
-  "scan_time": "2026-04-05T06:00:06.597508+02:00",
-  "total_scanned": 6,
+  "scan_time": "2026-04-05T16:00:06.926932+02:00",
+  "total_scanned": 7,
   "by_category": {
     "interview_invite": 0,
-    "recruiter_reach": 1,
+    "recruiter_reach": 0,
     "application_ack": 0,
     "rejection": 0,
     "assessment": 0,
     "follow_up_needed": 0,
-    "other": 5
+    "other": 7
   },
   "interview_invites": [],
-  "recruiter_messages": [
-    {
-      "id": "351874",
-      "from": "Naukrigulf <newjobs@naukrigulf.com>",
-      "subject": "General Manager tMart Egypt, RWRSA - Director of Technology\r\n Experience jobs for you",
-      "date": "Sun, 5 Apr 2026 08:06:31 +0530 (IST)",
-      "unread": true,
-      "priority": "MEDIUM",
-      "score": 2,
-      "pipeline_match": null
-    }
-  ],
+  "recruiter_messages": [],
   "application_acks": [],
   "rejections": [],
   "assessments": [],

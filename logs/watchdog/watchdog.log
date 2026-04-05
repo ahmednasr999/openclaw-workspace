@@ -1060,3 +1060,25 @@ Restarted systemd service: openclaw-gateway.service
   "enqueued": true,
   "runId": "manual:0e2740f5-870a-454a-b493-877111829812:1775361616124:1"
 }
+[2026-04-05 08:00] === Watchdog v3 run ===
+[2026-04-05 08:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-05 10:00] === Watchdog v3 run ===
+[2026-04-05 10:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-05 12:00] === Watchdog v3 run ===
+[2026-04-05 12:00] FIXED: Re-triggered failed cron d8d6d364-40dd-406a-a144-aa3904bd2226
+[2026-04-05 12:00] Summary: fixes=1 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:d8d6d364-40dd-406a-a144-aa3904bd2226:1775383220181:2"
+}
+[2026-04-05 14:00] === Watchdog v3 run ===
+[2026-04-05 14:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-05 16:00] === Watchdog v3 run ===
+[2026-04-05 16:00] FIXED: Re-triggered failed cron 418e7854-d466-4b49-ad1d-f3f3debae5d7
+[2026-04-05 16:00] Summary: fixes=1 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:418e7854-d466-4b49-ad1d-f3f3debae5d7:1775397614898:3"
+}
