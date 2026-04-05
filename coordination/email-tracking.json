@@ -1,0 +1,346 @@
+{
+  "meta": {
+    "agent": "email-application-tracker",
+    "version": "1.0.0",
+    "generated_at": "2026-03-25T12:01:04.665007+02:00",
+    "duration_ms": 27573,
+    "ttl_hours": 4,
+    "status": "success",
+    "error": null,
+    "run_id": "2a9f0dd4",
+    "retries_used": 0,
+    "data_freshness": "fresh"
+  },
+  "data": {
+    "generated_at": "2026-03-25T12:01:04.664602+02:00",
+    "scan_window_days": 14,
+    "stats": {
+      "total_scanned": 100,
+      "recruitment_related": 17,
+      "matched": 17,
+      "unmatched": 0,
+      "by_stage": {
+        "rejection": 1,
+        "interview_invite": 2,
+        "unknown": 13,
+        "assessment": 1
+      }
+    },
+    "active_applications_count": 6,
+    "results": [
+      {
+        "email_id": "350138",
+        "subject": "Visa has received your application",
+        "from": "Visa <notification@smartrecruiters.com>",
+        "date": "2026-03-25 08:49+00:00",
+        "stage": "interview_invite",
+        "stage_confidence": 48,
+        "stage_keywords": [
+          "next steps"
+        ],
+        "matched_application": {
+          "id": "app-004",
+          "title": "Managing Director",
+          "company": "Macdonald & Company"
+        },
+        "match_confidence": 47,
+        "body_preview": "From: Visa <notification@smartrecruiters.com> To: ahmednasr999@gmail.com Subject: Visa has received your application   Dear Ahmed, Thank you for your interest in the Director CoE - Strategy and Execution job at Visa! &nbsp;We look forward to reviewing your application and will contact you shortly wi"
+      },
+      {
+        "email_id": "350097",
+        "subject": "I learned today that my coworker makes 15k more than me. We have the same job...",
+        "from": "Glassdoor Community <noreply@glassdoor.com>",
+        "date": "2026-03-25 03:22+00:00",
+        "stage": "interview_invite",
+        "stage_confidence": 48,
+        "stage_keywords": [
+          "interview"
+        ],
+        "matched_application": {
+          "id": "app-006",
+          "title": "CTO - Smart Metering Programme",
+          "company": "Talan"
+        },
+        "match_confidence": 46,
+        "body_preview": "From: Glassdoor Community <noreply@glassdoor.com> To: ahmednasr999@gmail.com Subject: I learned today that my coworker makes 15k more than me. We have the same job...  <#part type=text/html> Explore real talk from across Glassdoor \ud83c\udf7f \u200c\u200b\u200d\u200e\u200f\ufeff \u200c\u200b\u200d\u200e\u200f\ufeff \u200c\u200b\u200d\u200e\u200f\ufeff \u200c\u200b\u200d\u200e\u200f\ufeff \u200c\u200b\u200d\u200e\u200f\ufeff \u200c\u200b\u200d\u200e\u200f\ufeff \u200c\u200b\u200d\u200e\u200f\ufeff \u200c\u200b\u200d\u200e\u200f\ufeff \u200c\u200b\u200d\u200e\u200f\ufeff \u200c\u200b\u200d\u200e"
+      },
+      {
+        "email_id": "350111",
+        "subject": "[speedyapply/JobSpy] fix(glassdoor): URL-encode location param and tolerate non-fatal GraphQL errors (PR #350)",
+        "from": "Shane <notifications@github.com>",
+        "date": "2026-03-24 22:39-07:00",
+        "stage": "assessment",
+        "stage_confidence": 45,
+        "stage_keywords": [
+          "test"
+        ],
+        "matched_application": {
+          "id": "app-006",
+          "title": "CTO - Smart Metering Programme",
+          "company": "Talan"
+        },
+        "match_confidence": 36,
+        "body_preview": "From: Shane <notifications@github.com> To: speedyapply/JobSpy <JobSpy@noreply.github.com> Cc: Subscribed <subscribed@noreply.github.com> Subject: [speedyapply/JobSpy] fix(glassdoor): URL-encode location param and tolerate non-fatal GraphQL errors (PR #350)  ## Summary  Two bugs in the Glassdoor scra"
+      },
+      {
+        "email_id": "350142",
+        "subject": "Capco - Update re application for Senior Manager/Director - Data Lead",
+        "from": "Hashim Mohammed <hashim.mohammed@capco.com>",
+        "date": "2026-03-25 09:30+00:00",
+        "stage": "rejection",
+        "stage_confidence": 45,
+        "stage_keywords": [
+          "after careful consideration"
+        ],
+        "matched_application": {
+          "id": "app-001",
+          "title": "Senior Program Manager",
+          "company": "Nabat"
+        },
+        "match_confidence": 46,
+        "body_preview": "From: Hashim Mohammed <hashim.mohammed@capco.com> To: ahmednasr999@gmail.com Subject: Capco - Update re application for Senior Manager/Director - Data Lead  Dear Ahmed,  Thank you for taking the time to apply and for your interest in joining Capco. We appreciate the effort you put into your applicat"
+      },
+      {
+        "email_id": "350099",
+        "subject": "Strategy & Solutions Lead, Enterprise Learning Operations, Senior Program Manager jobs for you",
+        "from": "Naukrigulf <newjobs@naukrigulf.com>",
+        "date": "2026-03-25 09:31+05:30",
+        "stage": "unknown",
+        "stage_confidence": 0,
+        "stage_keywords": [],
+        "matched_application": {
+          "id": "app-001",
+          "title": "Senior Program Manager",
+          "company": "Nabat"
+        },
+        "match_confidence": 49,
+        "body_preview": "From: Naukrigulf <newjobs@naukrigulf.com> To: ahmednasr999@gmail.com Subject: Strategy & Solutions Lead, Enterprise Learning Operations, Senior Program Manager jobs for you  <#part type=text/html>                (https://ccs-tracking.naukrigulf.com?data=%7B%22deviceType%22%3A%22WEB%22%2C%22template%"
+      },
+      {
+        "email_id": "350098",
+        "subject": "I want to connect",
+        "from": "Torin Amirtha Sam Nelson <invitations@linkedin.com>",
+        "date": "2026-03-25 03:30+00:00",
+        "stage": "unknown",
+        "stage_confidence": 0,
+        "stage_keywords": [],
+        "matched_application": {
+          "id": "app-002",
+          "title": "Senior PM - UAE",
+          "company": "Delphi"
+        },
+        "match_confidence": 49,
+        "body_preview": "From: Torin Amirtha Sam Nelson <invitations@linkedin.com> To: Ahmed Nasr MBA, PMP, CSM, CSPO, Lean Six Sigma, CBAP, MCAD, MCP <ahmednasr999@gmail.com> Subject: I want to connect  Torin Amirtha, Delivery Manager/Senior Project Manager from Emirates is waiting for your response          Hi Ahmed Nasr "
+      },
+      {
+        "email_id": "350077",
+        "subject": "Job Vacancy",
+        "from": "recruitment.notify@oia.gov.om",
+        "date": "2026-03-25 00:08+04:00",
+        "stage": "unknown",
+        "stage_confidence": 0,
+        "stage_keywords": [],
+        "matched_application": {
+          "id": "app-002",
+          "title": "Senior PM - UAE",
+          "company": "Delphi"
+        },
+        "match_confidence": 49,
+        "body_preview": "From: recruitment.notify@oia.gov.om To:  Subject: Job Vacancy  <#part type=text/html>                 Job Vacancy       Dear all,      We are pleased to announce that Oman Investment Authority (OIA) is currently looking for potential talents to fill the following positions:           Position Open t"
+      },
+      {
+        "email_id": "350071",
+        "subject": "You have an invitation",
+        "from": "Aya Ahmed <invitations@linkedin.com>",
+        "date": "2026-03-24 23:30+00:00",
+        "stage": "unknown",
+        "stage_confidence": 0,
+        "stage_keywords": [],
+        "matched_application": {
+          "id": "app-002",
+          "title": "Senior PM - UAE",
+          "company": "Delphi"
+        },
+        "match_confidence": 45,
+        "body_preview": "From: Aya Ahmed <invitations@linkedin.com> To: Ahmed Nasr MBA, PMP, CSM, CSPO, Lean Six Sigma, CBAP, MCAD, MCP <ahmednasr999@gmail.com> Subject: You have an invitation  Aya, Business Engagement Tech Senior Specialist from Vodafone is waiting for your response          Hi Ahmed Nasr MBA,, I\u2019d like to"
+      },
+      {
+        "email_id": "350061",
+        "subject": "I want to connect",
+        "from": "Baher Ayoub <invitations@linkedin.com>",
+        "date": "2026-03-24 21:30+00:00",
+        "stage": "unknown",
+        "stage_confidence": 0,
+        "stage_keywords": [],
+        "matched_application": {
+          "id": "app-002",
+          "title": "Senior PM - UAE",
+          "company": "Delphi"
+        },
+        "match_confidence": 45,
+        "body_preview": "From: Baher Ayoub <invitations@linkedin.com> To: Ahmed Nasr MBA, PMP, CSM, CSPO, Lean Six Sigma, CBAP, MCAD, MCP <ahmednasr999@gmail.com> Subject: I want to connect  Baher, Senior Project Manager from RBC is waiting for your response          Hi Ahmed Nasr MBA,, I\u2019d like to join your professional ne"
+      },
+      {
+        "email_id": "350095",
+        "subject": "Job Vacancy",
+        "from": "recruitment.notify@oia.gov.om",
+        "date": "2026-03-25 00:00+04:00",
+        "stage": "unknown",
+        "stage_confidence": 0,
+        "stage_keywords": [],
+        "matched_application": {
+          "id": "app-005",
+          "title": "Associate Director Product Management FSI KSA",
+          "company": "Publicis Sapient"
+        },
+        "match_confidence": 45,
+        "body_preview": "From: recruitment.notify@oia.gov.om To:  Subject: Job Vacancy  <#part type=text/html>                 Job Vacancy       Dear all,      We are pleased to announce that Centralised Utilities Company LLC (Marafiq), Duqm is currently looking for potential talents to fill the following positions:        "
+      },
+      {
+        "email_id": "350137",
+        "subject": "Mahediali just messaged you",
+        "from": "Mahediali Momin via LinkedIn <messaging-digest-noreply@linkedin.com>",
+        "date": "2026-03-25 08:45+00:00",
+        "stage": "unknown",
+        "stage_confidence": 0,
+        "stage_keywords": [],
+        "matched_application": {
+          "id": "app-006",
+          "title": "CTO - Smart Metering Programme",
+          "company": "Talan"
+        },
+        "match_confidence": 40,
+        "body_preview": "From: Mahediali Momin via LinkedIn <messaging-digest-noreply@linkedin.com> To: Ahmed Nasr MBA, PMP, CSM, CSPO, Lean Six Sigma, CBAP, MCAD, MCP <ahmednasr999@gmail.com> Subject: Mahediali just messaged you  You have 1 new message  .....................................  Mahediali Momin (Enterprise IT "
+      },
+      {
+        "email_id": "350110",
+        "subject": "You have an invitation",
+        "from": "Omar BENMOUSSA <invitations@linkedin.com>",
+        "date": "2026-03-25 05:30+00:00",
+        "stage": "unknown",
+        "stage_confidence": 0,
+        "stage_keywords": [],
+        "matched_application": {
+          "id": "app-006",
+          "title": "CTO - Smart Metering Programme",
+          "company": "Talan"
+        },
+        "match_confidence": 40,
+        "body_preview": "From: Omar BENMOUSSA <invitations@linkedin.com> To: Ahmed Nasr MBA, PMP, CSM, CSPO, Lean Six Sigma, CBAP, MCAD, MCP <ahmednasr999@gmail.com> Subject: You have an invitation  Omar, CEO from Arrabet Academy is waiting for your response          Hi Ahmed Nasr MBA,, I\u2019d like to join your professional ne"
+      },
+      {
+        "email_id": "350091",
+        "subject": "You have an invitation \u2709\ufe0f",
+        "from": "Kasim Minhas <invitations@linkedin.com>",
+        "date": "2026-03-25 01:30+00:00",
+        "stage": "unknown",
+        "stage_confidence": 0,
+        "stage_keywords": [],
+        "matched_application": {
+          "id": "app-006",
+          "title": "CTO - Smart Metering Programme",
+          "company": "Talan"
+        },
+        "match_confidence": 40,
+        "body_preview": "From: Kasim Minhas <invitations@linkedin.com> To: Ahmed Nasr MBA, PMP, CSM, CSPO, Lean Six Sigma, CBAP, MCAD, MCP <ahmednasr999@gmail.com> Subject: You have an invitation \u2709\ufe0f  Kasim, Scrum Master/ Agile Delivery Manager from British Gas is waiting for your response          Hi Ahmed Nasr MBA,, I\u2019d li"
+      },
+      {
+        "email_id": "350079",
+        "subject": "You're almost in the running for an elite Vice President of Product Engineering position with $400,000 USD/yr pay!",
+        "from": "Crossover <apply@crossover.com>",
+        "date": "2026-03-24 23:56+00:00",
+        "stage": "unknown",
+        "stage_confidence": 0,
+        "stage_keywords": [],
+        "matched_application": {
+          "id": "app-003",
+          "title": "Head of Engineering",
+          "company": "Discovered MENA"
+        },
+        "match_confidence": 40,
+        "body_preview": "From: Crossover <apply@crossover.com> To: Ahmed Nasr <ahmednasr999@gmail.com> Subject: You're almost in the running for an elite Vice President of Product Engineering position with $400,000 USD/yr pay!  We need you to answer a couple of questions  Dear Ahmed,  Your application for a $400,000 USD/yr "
+      },
+      {
+        "email_id": "350057",
+        "subject": "Nitin just messaged you",
+        "from": "Nitin Bhartia via LinkedIn <messages-noreply@linkedin.com>",
+        "date": "2026-03-24 20:34+00:00",
+        "stage": "unknown",
+        "stage_confidence": 0,
+        "stage_keywords": [],
+        "matched_application": {
+          "id": "app-006",
+          "title": "CTO - Smart Metering Programme",
+          "company": "Talan"
+        },
+        "match_confidence": 40,
+        "body_preview": "From: Nitin Bhartia via LinkedIn <messages-noreply@linkedin.com> To: Ahmed Nasr MBA, PMP, CSM, CSPO, Lean Six Sigma, CBAP, MCAD, MCP <ahmednasr999@gmail.com> Subject: Nitin just messaged you  Your InMail from Nitin is awaiting response              .....................................  Nitin Bharti"
+      },
+      {
+        "email_id": "350054",
+        "subject": "Khushboo just messaged you",
+        "from": "Khushboo Sinha via LinkedIn <messages-noreply@linkedin.com>",
+        "date": "2026-03-24 20:01+00:00",
+        "stage": "unknown",
+        "stage_confidence": 0,
+        "stage_keywords": [],
+        "matched_application": {
+          "id": "app-006",
+          "title": "CTO - Smart Metering Programme",
+          "company": "Talan"
+        },
+        "match_confidence": 40,
+        "body_preview": "From: Khushboo Sinha via LinkedIn <messages-noreply@linkedin.com> To: Ahmed Nasr MBA, PMP, CSM, CSPO, Lean Six Sigma, CBAP, MCAD, MCP <ahmednasr999@gmail.com> Subject: Khushboo just messaged you  Your InMail from Khushboo is awaiting response              .....................................  Khush"
+      },
+      {
+        "email_id": "350129",
+        "subject": "Top Employers hiring@ Naukrigulf",
+        "from": "NaukriGulf <topemployers@naukrigulf.com>",
+        "date": "2026-03-25 12:02+05:30",
+        "stage": "unknown",
+        "stage_confidence": 0,
+        "stage_keywords": [],
+        "matched_application": {
+          "id": "app-004",
+          "title": "Managing Director",
+          "company": "Macdonald & Company"
+        },
+        "match_confidence": 33,
+        "body_preview": "From: NaukriGulf <topemployers@naukrigulf.com> To: ahmednasr999@gmail.com Subject: Top Employers hiring@ Naukrigulf  <#part type=text/html>  Mailer  (https://ccs-tracking.naukrigulf.com?data=%7B%22deviceType%22%3A%22WEB%22%2C%22template%22%3A%7B%22contentEngine%22%3A%222%22%2C%22idTemplate%22%3A%22n"
+      }
+    ],
+    "action_items": [
+      {
+        "urgency": "\ud83d\udfe0 HIGH",
+        "action": "Interview invite from Macdonald & Company - Schedule ASAP",
+        "email_id": "350138",
+        "company": "Macdonald & Company"
+      },
+      {
+        "urgency": "\ud83d\udfe0 HIGH",
+        "action": "Interview invite from Talan - Schedule ASAP",
+        "email_id": "350097",
+        "company": "Talan"
+      },
+      {
+        "urgency": "\ud83d\udfe0 HIGH",
+        "action": "Assessment from Talan - Complete by deadline",
+        "email_id": "350111",
+        "company": "Talan"
+      }
+    ]
+  },
+  "kpi": {
+    "emails_scanned": 100,
+    "recruitment_emails": 17,
+    "matched": 17,
+    "unmatched": 0,
+    "stages": {
+      "rejection": 1,
+      "interview_invite": 2,
+      "unknown": 13,
+      "assessment": 1
+    }
+  },
+  "recommendations": []
+}

@@ -1,0 +1,15 @@
+# memory/ is a KNOWLEDGE-ONLY directory
+# No code, no installs, no dependencies
+
+node_modules/
+package.json
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+*.py
+*.js
+*.ts
+*.sh
+*.log
+*.sqlite
+*.db

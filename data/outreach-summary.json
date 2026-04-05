@@ -1,0 +1,103 @@
+{
+  "meta": {
+    "agent": "outreach-agent",
+    "version": "1.0.0",
+    "generated_at": "2026-03-21T18:00:02.319509+02:00",
+    "duration_ms": 5,
+    "ttl_hours": 6,
+    "status": "success",
+    "error": null,
+    "run_id": "3e8ac3a2",
+    "retries_used": 0,
+    "data_freshness": "fresh"
+  },
+  "data": {
+    "scan_time": "2026-03-21T18:00:02.314448+02:00",
+    "today": {
+      "date": "2026-03-21",
+      "target": 5,
+      "sent": 5,
+      "remaining": 0
+    },
+    "this_week": {
+      "target": 25,
+      "sent": 15,
+      "accepted": 6,
+      "pending": 10,
+      "velocity": 2.5
+    },
+    "queue_health": {
+      "queue_depth": 2,
+      "warm_leads": 1,
+      "follow_ups_due": 1,
+      "overdue_follow_ups": 1
+    },
+    "prioritized_leads": [],
+    "next_actions": [
+      {
+        "id": "lead-001",
+        "name": "Dr. Ahmed Al-Mansour",
+        "title": "CEO",
+        "company": "MedCare Hospital Dubai",
+        "type": "hospital_ceo",
+        "status": "researched",
+        "source": "LinkedIn",
+        "research_notes": "Expanding to AI, recent investment news",
+        "personal_angle": "SGH connection",
+        "next_action": "send_connection",
+        "priority": "high"
+      },
+      {
+        "id": "lead-002",
+        "name": "Sarah Johnson",
+        "title": "Founder & CEO",
+        "company": "HealthTech UAE",
+        "type": "healthtech_founder",
+        "status": "researched",
+        "source": "LinkedIn",
+        "research_notes": "Seed stage, Series A prep",
+        "personal_angle": "Talabat scaling story",
+        "next_action": "send_connection",
+        "priority": "high"
+      }
+    ],
+    "targets": {
+      "hospitals_uae": 10,
+      "hospitals_ksa": 10,
+      "healthtech_uae": 10,
+      "healthtech_ksa": 10,
+      "total": 40,
+      "researched": 8,
+      "contacted": 5,
+      "connected": 2
+    },
+    "pipeline_cross_ref": {
+      "companies_matched": 0,
+      "prioritized_count": 0
+    }
+  },
+  "kpi": {
+    "outreach_velocity": 2.5,
+    "response_rate": 40.0,
+    "overdue_count": 1,
+    "queue_depth": 2
+  },
+  "recommendations": [
+    {
+      "id": "rec-3e8ac3a2-0",
+      "action": "send_follow_ups",
+      "target": "1 overdue follow-ups",
+      "reason": "Follow-up dates have passed",
+      "urgency": "high",
+      "timestamp": "2026-03-21T18:00:02.314480+02:00"
+    },
+    {
+      "id": "rec-3e8ac3a2-1",
+      "action": "research_more_leads",
+      "target": "Outreach queue",
+      "reason": "Queue depth (2) is low - add more leads",
+      "urgency": "medium",
+      "timestamp": "2026-03-21T18:00:02.314486+02:00"
+    }
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "meta": {
+    "agent": "jobs-source-indeed",
+    "version": "1.0.0",
+    "generated_at": "2026-04-05T04:01:37.978144+02:00",
+    "duration_ms": 95585,
+    "ttl_hours": 6,
+    "status": "success",
+    "error": null,
+    "run_id": "8bc19665",
+    "retries_used": 0,
+    "data_freshness": "fresh"
+  },
+  "data": [
+    {
+      "id": "indeed-in-4346bb03cbb59e09",
+      "source": "indeed",
+      "title": "Project Director",
+      "company": "Confidential",
+      "location": "Dubai International Financial Center, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=4346bb03cbb59e09",
+      "posted": "2026-04-04",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 30,
+      "match_keywords": [
+        "operational excellence",
+        "ai",
+        "director",
+        "uae",
+        "dubai"
+      ],
+      "raw_snippet": "**Job Overview**\n\nTurbo Testimonials Inc is a fast\\-growing reputation management and customer feedback technology company, dedicated to helping businesses collect, manage, and showcase authentic client testimonials. With our headquarters in the Dubai International Financial Center, we serve clients across the UAE and globally. As we expand our project portfolio, we are looking for an experienced and strategic Project Director to lead high\\-impact initiatives and drive operational excellence.\n\nW",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Director of Technology"
+    },
+    {
+      "id": "indeed-in-9764f7246512fc81",
+      "source": "indeed",
+      "title": "Director of Product Managment",
+      "company": "MTP (Mayfair Technology Partners)",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=9764f7246512fc81",
+      "posted": "2026-04-03",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 23,
+      "match_keywords": [
+        "ai",
+        "director",
+        "leadership",
+        "platform"
+      ],
+      "raw_snippet": "I'm hiring for one of my clients on urgent basis please apply only after carefully reading the job description.\n\n**SENIORITY LEVEL:** DIRECTOR As a Director of Product Management\n\n**SUMMARY OF ROLE:**  \nYou\u2019ll lead a portfolio of products and platform capabilities in a high\\-scale digital platform environment, while also owning delivery leadership. You will set direction, drive outcomes, and build strong teams that ship with speed and quality. This role requires AI fluency and a track record of ",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Director of Technology"
+    },
+    {
+      "id": "indeed-in-e806c3cc9ef2e732",
+      "source": "indeed",
+      "title": "Principal Data Engineer",
+      "company": "The Emirates Group",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=e806c3cc9ef2e732",
+      "posted": "2026-04-03",
+      "seniority": "Principal",
+      "domain_match": true,
+      "keyword_score": 10,
+      "match_keywords": [
+        "digital transformation"
+      ],
+      "raw_snippet": "##### **Job Purpose**\n\nAt Emirates Group our Analytics Centre of Excellence (ACoE) is a centralized unit that provides data and analytics support to Emirates Group businesses. This allows our businesses to make better decisions by using data and analytics to understand our customers, operations, and markets. The ACoE is an essential part of Emirates Group's digital transformation strategy. The unit is helping Emirates Group to become a more data\\-driven organization and to make better decisions ",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Transformation Lead"
+    },
+    {
+      "id": "indeed-in-3a01dc48a779e9bb",
+      "source": "indeed",
+      "title": "Project Director (Site Supervision)",
+      "company": "Omrania- \u0639\u0645\u0631\u0627\u0646\u064a\u0629",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=3a01dc48a779e9bb",
+      "posted": "2026-04-03",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 23,
+      "match_keywords": [
+        "ai",
+        "infrastructure",
+        "director",
+        "architecture"
+      ],
+      "raw_snippet": "Egis is an international player active in architecture, consulting, construction engineering and mobility services. We create and operate intelligent infrastructures and buildings that respond to the climate emergency and contribute to more balanced, sustainable and resilient territorial development. Operating in 100 countries, Egis puts the expertise of its 19,500 employees at the service of its clients and develops cutting\\-edge innovations accessible to all projects. Through its wide range of",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "Director of Engineering"
+    },
+    {
+      "id": "indeed-in-bd7f647169078bad",
+      "source": "indeed",
+      "title": "Project Director (Site Supervision)",
+      "company": "Omada Rail Systems",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=bd7f647169078bad",
+      "posted": "2026-04-03",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 26,
+      "match_keywords": [
+        "ai",
+        "infrastructure",
+        "director",
+        "riyadh",
+        "architecture"
+      ],
+      "raw_snippet": "* **Site Supervision**\n* **Permanent Contract**\n* **Mid\\-Senior Level**\n* **Riyadh**\n\n  \n**About Us**\n\n  \n\nEgis is an international player active in architecture, consulting, construction engineering and mobility services. We create and operate intelligent infrastructures and buildings that respond to the climate emergency and contribute to more balanced, sustainable and resilient territorial development. Operating in 100 countries, Egis puts the expertise of its 19,500 employees at the service ",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "Director of Engineering"
+    },
+    {
+      "id": "indeed-in-cc036cf2c86fd546",
+      "source": "indeed",
+      "title": "Project Director (Site Supervision)",
+      "company": "Omrania",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=cc036cf2c86fd546",
+      "posted": "2026-04-03",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 23,
+      "match_keywords": [
+        "ai",
+        "infrastructure",
+        "director",
+        "architecture"
+      ],
+      "raw_snippet": "**Company Description**  \n\nEgis is an international player active in architecture, consulting, construction engineering and mobility services. We create and operate intelligent infrastructures and buildings that respond to the climate emergency and contribute to more balanced, sustainable and resilient territorial development. Operating in 100 countries, Egis puts the expertise of its 19,500 employees at the service of its clients and develops cutting\\-edge innovations accessible to all projects",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "Director of Engineering"
+    },
+    {
+      "id": "indeed-in-b5babd2771f29f11",
+      "source": "indeed",
+      "title": "Head of Oil and Gas Operations",
+      "company": "Confidential",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=b5babd2771f29f11",
+      "posted": "2026-04-05",
+      "seniority": "Director",
+      "domain_match": true,
+      "keyword_score": 13,
+      "match_keywords": [
+        "ai",
+        "head of"
+      ],
+      "raw_snippet": "**Job Title**\n\n***Head of Oil and Gas Operations***\n\n**Job Summary**\n\nThe Head of Oil and Gas Operations leads and oversees all operational activities across upstream, midstream, or downstream functions to ensure safe, efficient, compliant, and profitable performance. This role is responsible for operational strategy, production execution, resource planning, budget control, risk management, and cross\\-functional coordination.\n\n**Key Responsibilities**\n\n* Lead daily and long\\-term oil and gas ope",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "Head of Strategy"
+    }
+  ],
+  "kpi": {
+    "searches_run": 81,
+    "results_per_search": 1.0,
+    "unique_jobs": 7,
+    "errors": 48
+  },
+  "recommendations": []
+}

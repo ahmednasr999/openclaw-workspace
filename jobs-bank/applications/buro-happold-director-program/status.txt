@@ -1,0 +1,34 @@
+CV Tailoring Status — Buro Happold Director, Program Advisory
+==============================================================
+Completed: 2026-02-27
+
+ATS Score Estimate: 88%+
+
+Rationale for ATS Score:
+- Title mirrors JD: "Director, Capital Program Advisory & PMO" (exact keyword alignment)
+- Heavy use of JD keywords: Capital Program Advisory, PMO, P3M maturity, program lifecycle, governance, controls, transparency, predictability, measurable impact, digital tools, business development, stakeholder management, mega-programs
+- All major JD requirements addressed explicitly:
+  ✅ Capital Program Advisory and PMO services for major clients
+  ✅ Establishing and maturing client capital program organizations
+  ✅ PMO Director equivalent (Network International + SGH)
+  ✅ Full program lifecycle (concept through close-out) — multiple examples
+  ✅ Business development angle (proposals, client presentations)
+  ✅ P3M maturity elevation (multiple explicit references)
+  ✅ Innovative digital tools and methodologies (dedicated section)
+  ✅ PMP certified (listed prominently)
+  ✅ Exceptional stakeholder/executive management (threaded throughout)
+  ✅ GCC/Middle East regional experience (KSA, UAE, Egypt, 8 countries)
+
+PDF Path: /root/.openclaw/workspace/jobs-bank/applications/buro-happold-director-program/Ahmed_Nasr_Director_Program_Advisory_BuroHappold.pdf
+MD Path:  /root/.openclaw/workspace/jobs-bank/applications/buro-happold-director-program/Ahmed_Nasr_Director_Program_Advisory_BuroHappold.md
+
+PDF Size: 131K (generated via pandoc, successful)
+
+Issues: None. All data sourced from master-cv-data.md. No fabricated roles or metrics.
+
+Notes for NASR:
+- CV leads with Capital Program Advisory angle per JD requirement
+- Added contextual framing labels to each role ("Capital Program Advisory context:") to reinforce advisory positioning
+- Al Araby SAP S/4HANA included under that role (mentioned in master-cv-data context)
+- Buro Happold is an engineering/built environment consultancy — the framing deliberately bridges Ahmed's digital PMO background to capital program advisory language used in infrastructure/built environment PMO contexts
+- Recommend Ahmed review the "Head of E-Commerce" role framing — kept SAP reference as this is a genuine credential but the role title (E-Commerce) may need a brief verbal bridge in interview

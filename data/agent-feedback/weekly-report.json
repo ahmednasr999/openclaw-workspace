@@ -1,0 +1,27 @@
+{
+  "generated": "2026-03-22T06:00:02.285011+00:00",
+  "days": 7,
+  "feedback_summary": {
+    "writer": {
+      "accepted": 1,
+      "revised": 0,
+      "rejected": 0,
+      "total": 1
+    },
+    "cv": {
+      "accepted": 0,
+      "revised": 1,
+      "rejected": 0,
+      "total": 1
+    }
+  },
+  "failure_summary": {
+    "by_category": {},
+    "by_agent": {}
+  },
+  "cron_success_rate": {
+    "total": 120,
+    "ok": 102,
+    "rate": 85.0
+  }
+}

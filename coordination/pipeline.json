@@ -1,0 +1,97 @@
+{
+  "last_updated": "2026-03-19T14:08:00Z",
+  "generated_by": "Chief of Staff (Max)",
+  "applications": {
+    "active": [
+      {
+        "id": "app-001",
+        "company": "Nabat",
+        "title": "Senior Program Manager",
+        "status": "applied",
+        "date_applied": "2026-02-15",
+        "follow_up_date": "2026-02-22",
+        "notes": "AI PMO focus"
+      },
+      {
+        "id": "app-002",
+        "company": "Delphi",
+        "title": "Senior PM - UAE",
+        "status": "interview",
+        "date_applied": "2026-02-10",
+        "interview_date": "2026-02-18",
+        "notes": "Prepare case study examples"
+      },
+      {
+        "id": "app-003",
+        "company": "Discovered MENA",
+        "title": "Head of Engineering",
+        "status": "applied",
+        "date_applied": "2026-03-19",
+        "location": "Dubai, UAE",
+        "fit_score": "7/10",
+        "linkedin_url": "https://www.linkedin.com/jobs/view/4384057356",
+        "applied_via": "LinkedIn",
+        "notes": "Climate tech, engineering leadership"
+      },
+      {
+        "id": "app-004",
+        "company": "Macdonald & Company",
+        "title": "Managing Director",
+        "status": "applied",
+        "date_applied": "2026-03-19",
+        "location": "London, UK",
+        "fit_score": "7/10",
+        "linkedin_url": "https://www.linkedin.com/jobs/view/4385908621",
+        "applied_via": "LinkedIn",
+        "notes": "Real estate, construction, engineering services"
+      },
+      {
+        "id": "app-005",
+        "company": "Publicis Sapient",
+        "title": "Associate Director Product Management FSI KSA",
+        "status": "applied",
+        "date_applied": "2026-03-19",
+        "location": "Riyadh, Saudi Arabia",
+        "fit_score": "7/10",
+        "linkedin_url": "https://www.linkedin.com/jobs/view/4353703506",
+        "applied_via": "LinkedIn",
+        "notes": "FSI consulting, KSA market, FinTech expertise"
+      },
+      {
+        "id": "app-006",
+        "company": "Talan",
+        "title": "CTO - Smart Metering Programme",
+        "status": "applied",
+        "date_applied": "2026-03-19",
+        "location": "Abu Dhabi, UAE",
+        "fit_score": "7/10",
+        "linkedin_url": "https://www.linkedin.com/jobs/view/4368219091",
+        "applied_via": "LinkedIn",
+        "notes": "IT consulting, smart metering, programme leadership"
+      }
+    ],
+    "rejected": [
+      {
+        "id": "rej-001",
+        "company": "TechCorp",
+        "title": "Digital Director",
+        "date_rejected": "2026-02-14",
+        "reason": "Budget constraints"
+      }
+    ],
+    "offers": []
+  },
+  "this_week_progress": {
+    "target_applications": 10,
+    "applied": 3,
+    "target_outreach": 25,
+    "connections_sent": 15,
+    "target_interviews": 3,
+    "interviews_scheduled": 1
+  },
+  "conversion_rates": {
+    "applied_to_response": "40%",
+    "response_to_interview": "50%",
+    "interview_to_offer": "25%"
+  }
+}

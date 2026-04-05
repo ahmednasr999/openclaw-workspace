@@ -1,0 +1,28 @@
+{
+  "date": "2026-03-20",
+  "total_searches": 126,
+  "expected_searches": 126,
+  "total_found": 1040,
+  "priority_picks": 161,
+  "exec_leads": 39,
+  "filtered_out": 262,
+  "runtime_seconds": 410,
+  "countries": [
+    "Oman",
+    "United Arab Emirates",
+    "Saudi Arabia",
+    "Qatar",
+    "Bahrain",
+    "Kuwait"
+  ],
+  "sources": [
+    "Exa",
+    "Composio Web",
+    "LinkedIn Jobs",
+    "Google Jobs"
+  ],
+  "engine": "Exa neural search via Composio MCP",
+  "errors": 0,
+  "validation_warnings": [],
+  "degraded": false
+}

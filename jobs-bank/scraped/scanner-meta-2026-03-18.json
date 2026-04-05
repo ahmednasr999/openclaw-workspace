@@ -1,0 +1,35 @@
+{
+  "date": "2026-03-18",
+  "total_searches": 132,
+  "expected_searches": 132,
+  "total_found": 300,
+  "priority_picks": 27,
+  "exec_leads": 6,
+  "filtered_out": 136,
+  "runtime_seconds": 849,
+  "countries": [
+    "Bahrain",
+    "Saudi Arabia",
+    "Oman",
+    "Qatar",
+    "Kuwait",
+    "United Arab Emirates"
+  ],
+  "sources": [
+    "LinkedIn",
+    "Indeed"
+  ],
+  "source_status": {
+    "LinkedIn": "\u2705",
+    "Indeed": "\u26a0\ufe0f No results"
+  },
+  "cookie_age_days": 5,
+  "validation_warnings": [],
+  "degraded": false,
+  "ats_scored": true,
+  "ats_results": {
+    "high": 3,
+    "mid": 14,
+    "low": 10
+  }
+}

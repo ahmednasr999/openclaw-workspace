@@ -1,0 +1,35 @@
+{
+  "id": "michael-page-ai-enterprise-manager-2026-03-02",
+  "created": "2026-03-02T05:00:00Z",
+  "company": "Confidential Diversified Enterprise (via Michael Page)",
+  "role": "AI Enterprise Manager - Architecture & Delivery",
+  "location": "Dubai, UAE",
+  "source": "Michael Page UAE - JN-022026-6946082",
+  "url": "https://www.michaelpage.ae/job-detail/ai-enterprise-manager-architecture-delivery/ref/jn-022026-6946082",
+  "ats_score": 82,
+  "extraction_method": "web_fetch",
+  "salary_range": "Not specified",
+  "jd_completeness": "partial",
+  "why_fit": "Ahmed's hands-on delivery of 14 production GenAI and Agentic AI agents in live clinical operations maps precisely to this role's mandate for enterprise-wide Generative and Agentic AI delivery, architecture governance, and structured adoption.",
+  "key_requirements": [
+    "GenAI and Agentic AI delivery experience",
+    "Enterprise AI architecture and governance frameworks",
+    "Platform agnostic (Microsoft, AWS, OpenAI)",
+    "Complex stakeholder management",
+    "Power Platform / RPA exposure beneficial",
+    "Manager/Enterprise AI Lead level"
+  ],
+  "ahmed_match": {
+    "genai_agentic": "14 production AI agents deployed in clinical operations",
+    "cloud_platforms": "AWS, Azure, GCP in CV",
+    "governance": "PMO governance frameworks across multi-country programs",
+    "stakeholder": "C-suite, clinical, operational stakeholders across 15 hospitals"
+  },
+  "gaps": [
+    "Title is Manager level - somewhat below Ahmed's VP/Director target",
+    "Power Platform / RPA not explicitly stated in CV"
+  ],
+  "status": "REJECTED_BY_AHMED",
+  "next_step": "Closed by Ahmed as No-Go due to seniority mismatch. Do not build CV.",
+  "apply_deadline": null
+}

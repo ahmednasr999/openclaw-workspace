@@ -1,0 +1,18 @@
+{
+  "generated": "2026-04-05T04:01:02.725819+00:00",
+  "suggestions": [
+    {
+      "name": "\u200fSalman Saleem\u200f",
+      "role": "\u200fTransviti\u200f",
+      "url": "https://www.linkedin.com/in/salmansaleemofficial",
+      "company": "Foreground Jeddah",
+      "signal_score": 5,
+      "source": "tavily",
+      "applied_role": "Director Digital Transformation",
+      "applied_date": "2026-03-27",
+      "reason": "You applied for Director Digital Transformation at Foreground Jeddah"
+    }
+  ],
+  "companies_searched": 10,
+  "status": "ok"
+}

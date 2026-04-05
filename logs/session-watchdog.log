@@ -1,0 +1,18 @@
+[2026-04-02T05:05:00Z] ERROR — session-watchdog cron BLOCKED: exec denied in cron mode. 'bash' not on allowlist. Policy: security=allowlist ask=on-miss askFallback=deny. Fix: add bash/sh to exec allowlist, or set security=full + ask=off for trusted automation. Reset=0 Skipped=0.
+[2026-04-02T05:42:00Z] ERROR — session-watchdog cron BLOCKED: exec denied in cron mode. Same cause. Reset=0 Skipped=0.
+[2026-04-02T11:15:30Z] RESET [main] 0f707e85-acd9-46ed-9c52-b20092bc931c-topic-10.jsonl — was 3MB → archived to 0f707e85-acd9-46ed-9c52-b20092bc931c-topic-10.20260402T111530Z.jsonl.gz
+[2026-04-02T11:15:32Z] RESET [main] 505ce5d9-c7bf-47b1-9c7d-4570427ef123.jsonl — was 3MB → archived to 505ce5d9-c7bf-47b1-9c7d-4570427ef123.20260402T111532Z.jsonl.gz
+[2026-04-02T11:15:35Z] SKIP [cto] 73f17151-a805-4708-bb5b-dd91a5a790bd.jsonl — locked by live PID 670265 (1MB)
+[2026-04-02T11:15:35Z] SKIP [cto] 6d906346-fb20-4499-944d-3172fe370429-topic-8.jsonl — locked by live PID 670265 (1MB)
+[2026-04-02T11:15:36Z] RESET [cmo] f1b7cec8-0d56-489a-9ff2-95e9e81f929a-topic-7.jsonl — was 5MB → archived to f1b7cec8-0d56-489a-9ff2-95e9e81f929a-topic-7.20260402T111536Z.jsonl.gz
+[2026-04-02T11:15:36Z] Done — reset=3 skipped=2
+[2026-04-03T02:43:18Z] SKIP [cto] 324dca10-8da7-442f-af7c-8eb04ed552d3.jsonl — locked by live PID 689384 (1MB)
+[2026-04-03T02:43:18Z] Done — reset=0 skipped=1
+[2026-04-03T05:11:33Z] RESET [main] 91823f8f-ed89-42ed-b92c-a5701a1e2244.jsonl — was 3MB → archived to 91823f8f-ed89-42ed-b92c-a5701a1e2244.20260403T051133Z.jsonl.gz
+[2026-04-03T05:11:34Z] SKIP [cto] c91888cd-add2-4064-8ded-ebde4d56023e.jsonl — locked by live PID 705226 (1MB)
+[2026-04-03T05:11:35Z] Done — reset=1 skipped=1
+[2026-04-04T01:03:37Z] RESET [main] d95cb44e-faac-4ff3-afd9-c35e258a6dfb.jsonl — was 3MB → archived to d95cb44e-faac-4ff3-afd9-c35e258a6dfb.20260404T010337Z.jsonl.gz
+[2026-04-04T01:03:38Z] SKIP [cto] 2bbe1418-71e1-4752-b69a-6862ab0dba5d.jsonl — locked by live PID 722638 (1MB)
+[2026-04-04T01:03:38Z] Done — reset=1 skipped=1
+[2026-04-05T01:03:25Z] SKIP [cto] e22652e9-b268-45bb-b168-7046c5a52098.jsonl — locked by live PID 734469 (1MB)
+[2026-04-05T01:03:26Z] Done — reset=0 skipped=1
