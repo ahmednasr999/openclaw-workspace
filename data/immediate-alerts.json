@@ -1,0 +1,125 @@
+{
+  "last_updated": "2026-04-04T00:00:28.445283+02:00",
+  "alerts": [
+    {
+      "type": "gateway_down",
+      "urgency": "critical",
+      "message": "Gateway is down: <urlopen error [Errno 111] Connection refused>",
+      "timestamp": "2026-03-24T06:00:06.184034+02:00",
+      "id": "alert-0-060013"
+    },
+    {
+      "type": "interview_detected",
+      "urgency": "critical",
+      "message": "Interview invite from Quanterion Solutions Incorporated <reliability@quanterion.com>: Get the Early Bird Discount for Reliability Training!",
+      "timestamp": "2026-03-24T20:00:09.570976+02:00",
+      "id": "alert-1-200013"
+    },
+    {
+      "type": "interview_detected",
+      "urgency": "critical",
+      "message": "Interview invite from \"Yogesh Chetri\" <info@engage.y-axis.com>: Your Skills Are in Demand Globally - Are Employers Seeing You?",
+      "timestamp": "2026-03-26T14:00:13.387904+02:00",
+      "id": "alert-2-140016"
+    },
+    {
+      "type": "interview_detected",
+      "urgency": "critical",
+      "message": "Interview invite from Startup Archive <mike@startuparchive.org>: Sam Altman explains how he decides to invest in a startup after 10\r\n minutes",
+      "timestamp": "2026-03-26T14:00:13.387934+02:00",
+      "id": "alert-3-140016"
+    },
+    {
+      "type": "interview_detected",
+      "urgency": "critical",
+      "message": "Interview invite from Eva Friday <eva@productschool.com>: =?UTF-8?q?=E2=9A=A0=EF=B8=8F_Your_$2,000_Savings_on_Certification_?=\r\n =?UTF-8?q?=E2=80=93_Limited_Spots_Available?=",
+      "timestamp": "2026-03-26T20:00:13.487371+02:00",
+      "id": "alert-4-200021"
+    },
+    {
+      "type": "interview_detected",
+      "urgency": "critical",
+      "message": "Interview invite from Meet Alfred <help@meetalfred.com>: Subscribe for 3 months, get 3 months free",
+      "timestamp": "2026-03-27T04:00:12.873108+02:00",
+      "id": "alert-5-040016"
+    },
+    {
+      "type": "interview_detected",
+      "urgency": "critical",
+      "message": "Interview invite from \"Jacob from Relay.app\" <jacob@send.relay.app>: How to optimize your AI credits in Relay.app",
+      "timestamp": "2026-03-27T04:00:12.873137+02:00",
+      "id": "alert-6-040016"
+    },
+    {
+      "type": "interview_detected",
+      "urgency": "critical",
+      "message": "Interview invite from Notion Team <team@mail.notion.so>: All-in-one calendar",
+      "timestamp": "2026-03-27T06:22:38.569417+02:00",
+      "id": "alert-7-062241"
+    },
+    {
+      "type": "gateway_down",
+      "urgency": "critical",
+      "message": "Gateway is down: <urlopen error [Errno 111] Connection refused>",
+      "timestamp": "2026-03-27T16:00:07.556898+02:00",
+      "id": "alert-8-160012"
+    },
+    {
+      "type": "gateway_down",
+      "urgency": "critical",
+      "message": "Gateway is down: <urlopen error [Errno 111] Connection refused>",
+      "timestamp": "2026-03-27T22:00:09.107681+02:00",
+      "id": "alert-9-220012"
+    },
+    {
+      "type": "interview_detected",
+      "urgency": "critical",
+      "message": "Interview invite from Julian Goldie <me@juliangoldie.com>: NEW Gemini 3.1 Flash Live AI Agents Are INSANE!",
+      "timestamp": "2026-03-28T05:00:33.528894+02:00",
+      "id": "alert-10-050037"
+    },
+    {
+      "type": "interview_detected",
+      "urgency": "critical",
+      "message": "Interview invite from Vastu mahashakti <info@host.discountwalas.com>: Join the next batch for just Rs 100 - Weekend Evening Class on\r\n 25th-26th April",
+      "timestamp": "2026-03-31T00:00:14.784760+02:00",
+      "id": "alert-11-000029"
+    },
+    {
+      "type": "interview_detected",
+      "urgency": "critical",
+      "message": "Interview invite from Vastu mahashakti Class <info@host.discountwalas.com>: update: Join the next batch for just Rs 100 - Weekend Evening Class\r\n on 25th-26th April",
+      "timestamp": "2026-03-31T14:00:17.113768+02:00",
+      "id": "alert-12-140023"
+    },
+    {
+      "type": "interview_detected",
+      "urgency": "critical",
+      "message": "Interview invite from Vastu mahashakti Class <info@host.discountwalas.com>: update: Join the next batch for just Rs 100 - Weekend Evening Class\r\n on 25th-26th April",
+      "timestamp": "2026-03-31T16:00:16.030150+02:00",
+      "id": "alert-13-160024"
+    },
+    {
+      "type": "interview_detected",
+      "urgency": "critical",
+      "message": "Interview invite from Quanterion Solutions Incorporated <reliability@quanterion.com>: Announcing a Webinar Preview of the Reliability 201 Course!",
+      "timestamp": "2026-03-31T20:00:16.553313+02:00",
+      "id": "alert-14-200024"
+    },
+    {
+      "type": "interview_detected",
+      "urgency": "critical",
+      "message": "Interview invite from YS Buzz <Newsletters@yourstory.com>: =?UTF-8?q?=F0=9F=8C=8F_Bharat_Innovates_is_taking_Indian_startups_global?=",
+      "timestamp": "2026-04-01T06:00:16.087161+02:00",
+      "id": "alert-15-060021"
+    },
+    {
+      "type": "interview_detected",
+      "urgency": "critical",
+      "message": "Interview invite from Lee Abrahams - Proximie <lee.abrahams@proximie.teamtailor-mail.com>: Reaching out from Proximie",
+      "timestamp": "2026-04-04T00:00:16.006145+02:00",
+      "id": "alert-16-000028"
+    }
+  ],
+  "active_count": 17
+}

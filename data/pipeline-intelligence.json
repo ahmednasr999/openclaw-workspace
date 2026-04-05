@@ -1,0 +1,117 @@
+{
+  "generated_at": "2026-03-24T09:49:16.927121+02:00",
+  "health": {
+    "total_tracked": 843,
+    "active_applications": 137,
+    "response_rate_pct": 0.7,
+    "interview_rate_pct": 0.0,
+    "benchmark_response_rate": 5.0,
+    "below_benchmark": true,
+    "stale_count": 0,
+    "discovered_this_week": 843
+  },
+  "funnel": {
+    "total": 843,
+    "by_status": {
+      "discovered": 462,
+      "scored": 149,
+      "applied": 136,
+      "cv_built": 95,
+      "response": 1
+    }
+  },
+  "prospects": [
+    {
+      "company": "Le Chene Recruitment",
+      "title": "Unknown Role (Recruiter Inbound)",
+      "status": "response",
+      "ats_score": null,
+      "applied_date": null,
+      "location": "Dubai, UAE"
+    },
+    {
+      "company": "Dow Jones",
+      "title": "Director, Business Operations",
+      "status": "applied",
+      "ats_score": 100,
+      "applied_date": "2026-03-24",
+      "location": "Dubai, Dubai, United Arab Emirates"
+    },
+    {
+      "company": "CMP Digital Infrastructure",
+      "title": "Director of Program Management",
+      "status": "applied",
+      "ats_score": 100,
+      "applied_date": "2026-03-24",
+      "location": "Dubai, United Arab Emirates"
+    },
+    {
+      "company": "GG Selection",
+      "title": "Director, Strategy & Transformation",
+      "status": "applied",
+      "ats_score": 99,
+      "applied_date": "2026-03-24",
+      "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates"
+    },
+    {
+      "company": "Unknown",
+      "title": "Unknown Role",
+      "status": "applied",
+      "ats_score": null,
+      "applied_date": "2026-03-24",
+      "location": null
+    },
+    {
+      "company": "PayTech Group",
+      "title": "Loyalty Program Manager / Customer Success Manager",
+      "status": "applied",
+      "ats_score": null,
+      "applied_date": "2026-03-24",
+      "location": "Kuwait City, Al Asimah, Kuwait"
+    },
+    {
+      "company": "Confidential",
+      "title": "AI Enablement & Support Specialist",
+      "status": "applied",
+      "ats_score": null,
+      "applied_date": "2026-03-24",
+      "location": "Kuwait City, Al Asimah, Kuwait"
+    },
+    {
+      "company": "byteSpark.ai",
+      "title": "Director Investment Platforms & Digital Enablement",
+      "status": "applied",
+      "ats_score": null,
+      "applied_date": "2026-03-16",
+      "location": null
+    },
+    {
+      "company": "numi",
+      "title": "Chief Technology Officer",
+      "status": "applied",
+      "ats_score": null,
+      "applied_date": "2026-03-16",
+      "location": null
+    },
+    {
+      "company": "Al-Futtaim",
+      "title": "Digital Delivery Lead Finance",
+      "status": "applied",
+      "ats_score": null,
+      "applied_date": "2026-03-16",
+      "location": null
+    }
+  ],
+  "transitions": [],
+  "alerts": [
+    {
+      "type": "recruiter_gap",
+      "count": 136,
+      "action": "136 active applications have no recruiter contact. Run outreach-agent."
+    }
+  ],
+  "recommendations": [
+    "Response rate 0.7% is below 5% benchmark. Consider: (1) tailoring CVs more aggressively, (2) adding cover letters, (3) direct recruiter outreach for top-scored roles."
+  ],
+  "velocity": {}
+}

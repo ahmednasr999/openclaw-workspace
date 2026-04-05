@@ -1,0 +1,9 @@
+[2026-03-29 07:52:38] === Auto CV Generator  ===
+[2026-03-29 07:52:38] Threshold: ATS >= 40
+[2026-03-29 07:52:38] Total SUBMIT jobs: 23
+[2026-03-29 07:52:38] Jobs with ATS >= 40: 3
+[2026-03-29 07:52:38]   QUEUE: Ahmed Nasr - Digital Consulting Director - AlixPartners (ATS:53 Fit:8)
+[2026-03-29 07:52:38]   QUEUE: Ahmed Nasr - Executive Director, API & Open Banking -Cash and Trade - First Abu Dhabi Bank (FAB) (ATS:41 Fit:7)
+[2026-03-29 07:52:38]   QUEUE: Ahmed Nasr - Head of Information Technology - Mark Williams Recruitment (ATS:41 Fit:7)
+[2026-03-29 07:52:38] Manifest written to /root/.openclaw/workspace/data/cv-queue.json
+[2026-03-29 07:52:38] Summary: 3 qualifying | 0 have CV | 3 need CV

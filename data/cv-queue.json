@@ -1,0 +1,42 @@
+{
+  "generated_at": "2026-03-29T07:52:38.459102+02:00",
+  "threshold": 40,
+  "total_qualifying": 3,
+  "already_have_cv": 0,
+  "need_cv": 3,
+  "jobs": [
+    {
+      "title": "Digital Consulting Director",
+      "company": "AlixPartners",
+      "ats_score": 53,
+      "career_fit_score": 8,
+      "url": "https://sa.linkedin.com/jobs/view/digital-consulting-director-at-alixpartners-4363124950",
+      "location": "Riyadh, Riyadh, Saudi Arabia",
+      "cv_exists": false,
+      "cv_path": "cvs/Ahmed Nasr - Digital Consulting Director - AlixPartners.pdf",
+      "github_url": null
+    },
+    {
+      "title": "Executive Director, API & Open Banking -Cash and Trade",
+      "company": "First Abu Dhabi Bank (FAB)",
+      "ats_score": 41,
+      "career_fit_score": 7,
+      "url": "https://ae.linkedin.com/jobs/view/executive-director-api-open-banking-cash-and-trade-at-first-abu-dhabi-bank-fab-4386668927",
+      "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
+      "cv_exists": false,
+      "cv_path": "cvs/Ahmed Nasr - Executive Director, API & Open Banking -Cash and Trade - First Abu Dhabi Bank (FAB).pdf",
+      "github_url": null
+    },
+    {
+      "title": "Head of Information Technology",
+      "company": "Mark Williams Recruitment",
+      "ats_score": 41,
+      "career_fit_score": 7,
+      "url": "https://ae.linkedin.com/jobs/view/head-of-information-technology-at-mark-williams-recruitment-4391737034",
+      "location": "Abu Dhabi Emirate, United Arab Emirates",
+      "cv_exists": false,
+      "cv_path": "cvs/Ahmed Nasr - Head of Information Technology - Mark Williams Recruitment.pdf",
+      "github_url": null
+    }
+  ]
+}

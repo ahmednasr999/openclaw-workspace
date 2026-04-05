@@ -1,0 +1,251 @@
+{
+  "timestamp": "2026-04-05T07:01:02.454734+02:00",
+  "total_crons": 24,
+  "system_crons": 24,
+  "openclaw_crons": 0,
+  "notion_created": 0,
+  "notion_updated": 24,
+  "errors": [],
+  "crons": [
+    {
+      "name": "cron-watchdog-v3.sh",
+      "schedule": "0 */2 * * *",
+      "type": "system",
+      "last_status": {
+        "status": "\u2705 OK",
+        "last_run": "2026-04-05 06:00:14.657078+02:00",
+        "error": null
+      }
+    },
+    {
+      "name": "run-briefing-pipeline.sh",
+      "schedule": "0 */2 * * *",
+      "type": "system",
+      "last_status": {
+        "status": "\u274c Failed",
+        "last_run": "2026-04-05 06:01:02.938388+02:00",
+        "error": "Check log for details"
+      }
+    },
+    {
+      "name": "linkedin-autoresearch.py",
+      "schedule": "0 1 * * 0",
+      "type": "system",
+      "last_status": {
+        "status": "\u274c Failed",
+        "last_run": "2026-04-05 01:00:02.304228+02:00",
+        "error": "Check log for details"
+      }
+    },
+    {
+      "name": "autoresearch-job-review.log 2>&1",
+      "schedule": "0 0 * * 0",
+      "type": "system",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "sayyad-source.sh",
+      "schedule": "0 4,8,12 * * *",
+      "type": "system",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "daily-backup.sh",
+      "schedule": "0 20 * * *",
+      "type": "system",
+      "last_status": {
+        "status": "\u274c Failed",
+        "last_run": "2026-04-04 20:00:01.686271+02:00",
+        "error": "Check log for details"
+      }
+    },
+    {
+      "name": "archive-daily-notes.sh",
+      "schedule": "0 20 1 * *",
+      "type": "system",
+      "last_status": {
+        "status": "\u274c Failed",
+        "last_run": "2026-04-01 20:00:29.491688+02:00",
+        "error": "Check log for details"
+      }
+    },
+    {
+      "name": "run-briefing-pipeline.sh",
+      "schedule": "0 23 * * *",
+      "type": "system",
+      "last_status": {
+        "status": "\u274c Failed",
+        "last_run": "2026-04-05 06:01:02.938388+02:00",
+        "error": "Check log for details"
+      }
+    },
+    {
+      "name": "sayyad-source.sh",
+      "schedule": "0 3 * * *",
+      "type": "system",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "key-health-check.sh",
+      "schedule": "0 5 * * *",
+      "type": "system",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "token-health-check.sh",
+      "schedule": "0 6 * * 0",
+      "type": "system",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "retention-caches.sh",
+      "schedule": "15 3 * * *",
+      "type": "system",
+      "last_status": {
+        "status": "\u2705 OK",
+        "last_run": "2026-04-05 03:15:05.562230+02:00",
+        "error": null
+      }
+    },
+    {
+      "name": "x-radar.sh",
+      "schedule": "30 2 * * *",
+      "type": "system",
+      "last_status": {
+        "status": "\u2705 OK",
+        "last_run": "2026-04-05 02:30:01.809892+02:00",
+        "error": null
+      }
+    },
+    {
+      "name": "retention-backups.sh",
+      "schedule": "30 20 * * *",
+      "type": "system",
+      "last_status": {
+        "status": "\u2705 OK",
+        "last_run": "2026-04-04 20:30:01.295203+02:00",
+        "error": null
+      }
+    },
+    {
+      "name": "sie-360-checks.py",
+      "schedule": "50 1 * * *",
+      "type": "system",
+      "last_status": {
+        "status": "\u2705 OK",
+        "last_run": "2026-04-05 01:50:17.677571+02:00",
+        "error": null
+      }
+    },
+    {
+      "name": "weekly-agent-review.py",
+      "schedule": "0 8 * * 0",
+      "type": "system",
+      "last_status": {
+        "status": "\u274c Failed",
+        "last_run": "2026-03-29 08:00:04.103797+02:00",
+        "error": "Check log for details"
+      }
+    },
+    {
+      "name": "rss-to-content-calendar.py",
+      "schedule": "30 6 * * *",
+      "type": "system",
+      "last_status": {
+        "status": "\u274c Failed",
+        "last_run": "2026-04-05 06:32:42.275860+02:00",
+        "error": "Check log for details"
+      }
+    },
+    {
+      "name": "content-factory-health-monitor.py",
+      "schedule": "0 7 * * 0-4",
+      "type": "system",
+      "last_status": {
+        "status": "\u2705 OK",
+        "last_run": "2026-04-05 07:00:29.815364+02:00",
+        "error": null
+      }
+    },
+    {
+      "name": "cf-weekday-check.sh",
+      "schedule": "30 9 * * 0-4",
+      "type": "system",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "ontology-notion-sync.py",
+      "schedule": "55 2 * * *",
+      "type": "system",
+      "last_status": {
+        "status": "\u2705 OK",
+        "last_run": "2026-04-05 02:55:11.744584+02:00",
+        "error": null
+      }
+    },
+    {
+      "name": "ontology-pipeline-sync.py",
+      "schedule": "55 2 * * *",
+      "type": "system",
+      "last_status": {
+        "status": "\u2705 OK",
+        "last_run": "2026-04-05 02:55:11.744584+02:00",
+        "error": null
+      }
+    },
+    {
+      "name": "cron-dashboard-updater.py",
+      "schedule": "0 * * * *",
+      "type": "system",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "jobs-interview-prep.py",
+      "schedule": "0 4 * * 0-4",
+      "type": "system",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "watchdog-gateway.sh",
+      "schedule": "*/5 * * * *",
+      "type": "system",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    }
+  ]
+}

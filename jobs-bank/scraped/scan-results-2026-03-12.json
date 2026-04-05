@@ -1,0 +1,26 @@
+{
+  "timestamp": "2026-03-12 08:59 UTC",
+  "total_found": 212,
+  "total_scored": 212,
+  "qualified_count": 0,
+  "borderline_count": 1,
+  "errors": 0,
+  "qualified": [],
+  "borderline": [
+    {
+      "title": "Group Chief Information Officer \u2013 Enterprise Architecture",
+      "company": "Confidential Government",
+      "location": "Riyadh, Saudi Arabia",
+      "country": "Saudi Arabia",
+      "url": "https://www.linkedin.com/jobs/view/4382068053",
+      "date_posted": "2026-03-10",
+      "salary_min": null,
+      "salary_max": null,
+      "site": "linkedin",
+      "job_level": "executive",
+      "job_function": "Management and Information Technology",
+      "company_industry": "Government Administration",
+      "score": 76
+    }
+  ]
+}

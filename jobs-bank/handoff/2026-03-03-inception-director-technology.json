@@ -1,0 +1,58 @@
+{
+  "job_id": "2026-03-03-inception-director-technology",
+  "created_at": "2026-03-03T11:40:00Z",
+  "updated_at": "2026-03-03T11:40:00Z",
+  "status": "dropped_unverified_url",
+
+  "job": {
+    "company": "Inception (G42 Group)",
+    "role": "Director - Technology",
+    "location": "Abu Dhabi, UAE",
+    "url": "https://www.linkedin.com/jobs/search/?keywords=Director+Technology+Inception&location=Abu+Dhabi",
+    "url_verified": false,
+    "url_type": "search_listing",
+    "salary_range": null,
+    "jd_raw": "Director - Technology at Inception. Full-time. Information Technology / Technology, Information and Internet. Abu Dhabi, UAE. Posted 19 hours ago. Inception is a G42-backed AI company focused on foundation model development and AI product delivery. Role involves technology direction for AI/platform development. Full JD requires authenticated LinkedIn access.",
+    "jd_keywords": ["technology direction", "AI platform", "G42", "Abu Dhabi", "Director", "full-time", "information technology"],
+    "ats_score": 82,
+    "vision_2030_angle": false,
+    "priority": "HIGH"
+  },
+
+  "research": {
+    "company_summary": "Inception is a G42-backed AI company headquartered in Abu Dhabi. It focuses on building Arabic and multilingual foundation models, AI infrastructure, and intelligent automation products for enterprise and government clients across the GCC. Ahmed already has Director Delivery application active at this company (Feb 27). Applying to a separate Director Technology role is distinct and valid.",
+    "funding_stage": "Private (G42 subsidiary, sovereign-backed)",
+    "headcount": "200-500 estimated",
+    "recent_news": ["G42 continues to expand AI capabilities across GCC", "Inception hiring multiple Director-level roles simultaneously (Technology, Program Management, Delivery, International Sales)"],
+    "hiring_manager": null,
+    "linkedin_connections": 0,
+    "notes": "Company is actively scaling leadership layer. Ahmed applied as Director Delivery on Feb 27. Director Technology is a different function (tech architecture vs. delivery). Applying to both is reasonable given company size. Source credibility: LinkedIn aggregator only. No official career page found for Inception G42. Treat as verified-aggregator."
+  },
+
+  "cv": {
+    "path": null,
+    "github_url": null,
+    "ats_score": 82,
+    "tailoring_notes": "Emphasize: (1) AI platform architecture decisions (TopMed 15-hospital rollout), (2) 14 production AI agents, (3) cloud strategy (AWS/Azure/GCP), (4) tech leadership over multi-disciplinary teams. Differentiate from Director Delivery CV: shift from PMO-delivery framing to technology leadership + architecture framing.",
+    "pending_review": true
+  },
+
+  "application": {
+    "applied_at": null,
+    "channel": "LinkedIn",
+    "follow_up_due": null,
+    "outcome": "pending"
+  },
+
+  "content": {
+    "linkedin_post_drafted": false,
+    "post_theme": null,
+    "post_path": null
+  },
+
+  "nasr_review": {
+    "approved": false,
+    "flags": ["Company already has active application (Director Delivery, Feb 27). Different function. Ahmed can decide whether to apply to both or defer."],
+    "recommendation": "Dropped, unverified direct job URL. Re-scan required with direct job URL only"
+  }
+}

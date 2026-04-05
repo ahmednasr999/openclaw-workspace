@@ -1,0 +1,1062 @@
+[2026-03-05 20:00:02 UTC] UNHEALTHY: Consecutive failure #1
+[2026-03-05 20:00:02 UTC] BASH RESTART: Attempting gateway restart (attempt 1)
+[2026-03-08 13:51:01 UTC] UNHEALTHY: Consecutive failure #1
+[2026-03-08 13:51:01 UTC] BASH RESTART: Attempting gateway restart (attempt 1)
+[2026-03-08 13:54:02 UTC] UNHEALTHY: Consecutive failure #2
+[2026-03-08 13:54:02 UTC] BASH RESTART: Attempting gateway restart (attempt 2)
+[2026-03-08 13:57:01 UTC] UNHEALTHY: Consecutive failure #3
+[2026-03-08 13:57:01 UTC] CLAUDE REPAIR: Escalating to Claude Code CLI
+[2026-03-08 14:00:01 UTC] UNHEALTHY: Consecutive failure #4
+[2026-03-08 14:03:01 UTC] UNHEALTHY: Consecutive failure #5
+[2026-03-08 14:06:01 UTC] UNHEALTHY: Consecutive failure #6
+[2026-03-08 14:09:01 UTC] UNHEALTHY: Consecutive failure #7
+[2026-03-08 14:12:01 UTC] UNHEALTHY: Consecutive failure #8
+[2026-03-08 14:18:02 UTC] UNHEALTHY: Consecutive failure #1
+[2026-03-08 14:18:02 UTC] BASH RESTART: Attempting gateway restart (attempt 1)
+[2026-03-08 17:09:01 UTC] UNHEALTHY: Consecutive failure #1
+[2026-03-08 17:09:01 UTC] BASH RESTART: Attempting gateway restart (attempt 1)
+[2026-03-08 17:12:01 UTC] UNHEALTHY: Consecutive failure #2
+[2026-03-08 17:12:01 UTC] BASH RESTART: Attempting gateway restart (attempt 2)
+[2026-03-08 17:15:02 UTC] UNHEALTHY: Consecutive failure #3
+[2026-03-08 17:15:02 UTC] CLAUDE REPAIR: Escalating to Claude Code CLI
+[2026-03-08 17:18:02 UTC] UNHEALTHY: Consecutive failure #4
+[2026-03-08 17:21:01 UTC] UNHEALTHY: Consecutive failure #5
+[2026-03-08 17:24:01 UTC] UNHEALTHY: Consecutive failure #6
+[2026-03-08 17:30:02 UTC] UNHEALTHY: Consecutive failure #1
+[2026-03-08 17:30:02 UTC] BASH RESTART: Attempting gateway restart (attempt 1)
+[2026-03-08 17:45:02 UTC] UNHEALTHY: Consecutive failure #1
+[2026-03-08 17:45:02 UTC] BASH RESTART: Attempting gateway restart (attempt 1)
+[2026-03-08 17:45:10 UTC] BASH RESTART: Success after attempt 1
+[2026-03-13 00:12:01 UTC] UNHEALTHY: Consecutive failure #1
+[2026-03-13 00:12:01 UTC] BASH RESTART: Attempting gateway restart (attempt 1)
+[2026-03-13 11:18:01 UTC] UNHEALTHY: Consecutive failure #1
+[2026-03-13 11:18:01 UTC] BASH RESTART: Attempting gateway restart (attempt 1)
+[2026-03-13 16:00:02 UTC] UNHEALTHY: Consecutive failure #1
+[2026-03-13 16:00:02 UTC] BASH RESTART: Attempting gateway restart (attempt 1)
+[2026-03-15 07:21:02 UTC] UNHEALTHY: Consecutive failure #1
+[2026-03-15 07:21:02 UTC] BASH RESTART: Attempting gateway restart (attempt 1)
+[2026-03-15 07:21:09 UTC] BASH RESTART: Success after attempt 1
+[2026-03-21 15:03] === Watchdog v3 run ===
+[2026-03-21 15:03] FIXED: Re-triggered failed cron feb3e084-8f60-400b-8116-74dc246d9523
+[2026-03-21 15:03] FIXED: Re-triggered failed cron 3c3ba638-8cb3-4a6a-a8f0-2ccd13e3aeed
+[2026-03-21 15:03] Summary: fixes=2 warnings=1 alerts=0
+[plugins] [composio] Connecting to https://connect.composio.dev/mcp
+[plugins] [composio] Connecting to https://connect.composio.dev/mcp
+[plugins] [lcm] Plugin loaded (enabled=true, db=/root/.openclaw/lcm.db, threshold=0.75)
+[plugins] camofox-browser: loaded without install/load-path provenance; treat as untracked local code and pin trust via plugins.allow or install records (/root/.openclaw/extensions/camofox-browser/plugin.ts)
+[plugins] [lcm] Plugin loaded (enabled=true, db=/root/.openclaw/lcm.db, threshold=0.75)
+[plugins] camofox-browser: loaded without install/load-path provenance; treat as untracked local code and pin trust via plugins.allow or install records (/root/.openclaw/extensions/camofox-browser/plugin.ts)
+gateway connect failed: Error: gateway closed (1000): 
+Error: gateway closed (1000 normal closure): no close reason
+Gateway target: ws://127.0.0.1:18789
+Source: local loopback
+Config: /root/.openclaw/openclaw.json
+Bind: loopback
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:3c3ba638-8cb3-4a6a-a8f0-2ccd13e3aeed:1774098233557:1"
+}
+[2026-03-21 16:00] === Watchdog v3 run ===
+[2026-03-21 16:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-03-21 18:00] === Watchdog v3 run ===
+[2026-03-21 18:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-03-21 20:00] === Watchdog v3 run ===
+[2026-03-21 20:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-03-21 22:00] === Watchdog v3 run ===
+[2026-03-21 22:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-03-22 00:00] === Watchdog v3 run ===
+[2026-03-22 00:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-03-22 02:00] === Watchdog v3 run ===
+[2026-03-22 02:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-03-22 04:00] === Watchdog v3 run ===
+[2026-03-22 04:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-03-22 06:00] === Watchdog v3 run ===
+[2026-03-22 06:00] FIXED: Re-triggered failed cron 48e061a6-5771-42a5-9e63-ae7b10ab24f6
+[2026-03-22 06:00] Summary: fixes=1 warnings=1 alerts=0
+[plugins] [composio] Connecting to https://connect.composio.dev/mcp
+[plugins] [lcm] Plugin loaded (enabled=true, db=/root/.openclaw/lcm.db, threshold=0.75)
+[plugins] camofox-browser: loaded without install/load-path provenance; treat as untracked local code and pin trust via plugins.allow or install records (/root/.openclaw/extensions/camofox-browser/plugin.ts)
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:48e061a6-5771-42a5-9e63-ae7b10ab24f6:1774152029092:1"
+}
+[2026-03-22 08:00] === Watchdog v3 run ===
+[2026-03-22 08:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-03-22 10:00] === Watchdog v3 run ===
+[2026-03-22 10:00] FIXED: Re-triggered failed cron 7ba5f8f7-6eec-4301-bfa6-185dee16e778
+[2026-03-22 10:00] Summary: fixes=1 warnings=1 alerts=0
+[plugins] [composio] Connecting to https://connect.composio.dev/mcp
+[plugins] [lcm] Plugin loaded (enabled=true, db=/root/.openclaw/lcm.db, threshold=0.75)
+[plugins] camofox-browser: loaded without install/load-path provenance; treat as untracked local code and pin trust via plugins.allow or install records (/root/.openclaw/extensions/camofox-browser/plugin.ts)
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:7ba5f8f7-6eec-4301-bfa6-185dee16e778:1774166433337:2"
+}
+[2026-03-22 12:00] === Watchdog v3 run ===
+[2026-03-22 12:00] FIXED: Re-triggered failed cron 7ba5f8f7-6eec-4301-bfa6-185dee16e778
+[2026-03-22 12:00] FIXED: Re-triggered failed cron d87f2c6c-20ab-42f4-aa83-47cc086e9b04
+[2026-03-22 12:00] Summary: fixes=2 warnings=1 alerts=0
+[plugins] [composio] Connecting to https://connect.composio.dev/mcp
+[plugins] [composio] Connecting to https://connect.composio.dev/mcp
+[plugins] [lcm] Plugin loaded (enabled=true, db=/root/.openclaw/lcm.db, threshold=0.75)
+[plugins] camofox-browser: loaded without install/load-path provenance; treat as untracked local code and pin trust via plugins.allow or install records (/root/.openclaw/extensions/camofox-browser/plugin.ts)
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:7ba5f8f7-6eec-4301-bfa6-185dee16e778:1774173642103:3"
+}
+[plugins] [lcm] Plugin loaded (enabled=true, db=/root/.openclaw/lcm.db, threshold=0.75)
+[plugins] camofox-browser: loaded without install/load-path provenance; treat as untracked local code and pin trust via plugins.allow or install records (/root/.openclaw/extensions/camofox-browser/plugin.ts)
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:d87f2c6c-20ab-42f4-aa83-47cc086e9b04:1774173642946:4"
+}
+[2026-03-22 14:00] === Watchdog v3 run ===
+[2026-03-22 14:00] FIXED: Re-triggered failed cron 7ba5f8f7-6eec-4301-bfa6-185dee16e778
+[2026-03-22 14:00] FIXED: Re-triggered failed cron d87f2c6c-20ab-42f4-aa83-47cc086e9b04
+[2026-03-22 14:00] Summary: fixes=2 warnings=1 alerts=0
+[plugins] [composio] Connecting to https://connect.composio.dev/mcp
+[plugins] [composio] Connecting to https://connect.composio.dev/mcp
+[plugins] [lcm] Plugin loaded (enabled=true, db=/root/.openclaw/lcm.db, threshold=0.75)
+[plugins] camofox-browser: loaded without install/load-path provenance; treat as untracked local code and pin trust via plugins.allow or install records (/root/.openclaw/extensions/camofox-browser/plugin.ts)
+[plugins] [lcm] Plugin loaded (enabled=true, db=/root/.openclaw/lcm.db, threshold=0.75)
+[plugins] camofox-browser: loaded without install/load-path provenance; treat as untracked local code and pin trust via plugins.allow or install records (/root/.openclaw/extensions/camofox-browser/plugin.ts)
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:d87f2c6c-20ab-42f4-aa83-47cc086e9b04:1774180832782:5"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:7ba5f8f7-6eec-4301-bfa6-185dee16e778:1774180833714:6"
+}
+[2026-03-22 16:00] === Watchdog v3 run ===
+[2026-03-22 16:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-03-22 18:00] === Watchdog v3 run ===
+[2026-03-22 18:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-03-22 20:00] === Watchdog v3 run ===
+[2026-03-22 20:00] FIXED: Re-triggered failed cron 7ba5f8f7-6eec-4301-bfa6-185dee16e778
+[2026-03-22 20:00] FIXED: Re-triggered failed cron d87f2c6c-20ab-42f4-aa83-47cc086e9b04
+[2026-03-22 20:00] Summary: fixes=2 warnings=1 alerts=0
+[plugins] [composio] Connecting to https://connect.composio.dev/mcp
+[plugins] [composio] Connecting to https://connect.composio.dev/mcp
+[plugins] [lcm] Plugin loaded (enabled=true, db=/root/.openclaw/lcm.db, threshold=0.75)
+[plugins] camofox-browser: loaded without install/load-path provenance; treat as untracked local code and pin trust via plugins.allow or install records (/root/.openclaw/extensions/camofox-browser/plugin.ts)
+gateway connect failed: Error: gateway closed (1000): 
+Error: gateway closed (1000 normal closure): no close reason
+Gateway target: ws://127.0.0.1:18789
+Source: local loopback
+Config: /root/.openclaw/openclaw.json
+Bind: loopback
+[plugins] [lcm] Plugin loaded (enabled=true, db=/root/.openclaw/lcm.db, threshold=0.75)
+[plugins] camofox-browser: loaded without install/load-path provenance; treat as untracked local code and pin trust via plugins.allow or install records (/root/.openclaw/extensions/camofox-browser/plugin.ts)
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:d87f2c6c-20ab-42f4-aa83-47cc086e9b04:1774202438242:1"
+}
+[2026-03-22 22:00] === Watchdog v3 run ===
+[2026-03-22 22:00] FIXED: Re-triggered failed cron 7ba5f8f7-6eec-4301-bfa6-185dee16e778
+[2026-03-22 22:00] FIXED: Re-triggered failed cron d87f2c6c-20ab-42f4-aa83-47cc086e9b04
+[2026-03-22 22:00] Summary: fixes=2 warnings=1 alerts=0
+[plugins] [composio] Connecting to https://connect.composio.dev/mcp
+[plugins] [lcm] Plugin loaded (enabled=true, db=/root/.openclaw/lcm.db, threshold=0.75)
+[plugins] camofox-browser: loaded without install/load-path provenance; treat as untracked local code and pin trust via plugins.allow or install records (/root/.openclaw/extensions/camofox-browser/plugin.ts)
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:7ba5f8f7-6eec-4301-bfa6-185dee16e778:1774209648759:2"
+}
+[plugins] [composio] Connecting to https://connect.composio.dev/mcp
+[plugins] [lcm] Plugin loaded (enabled=true, db=/root/.openclaw/lcm.db, threshold=0.75)
+[plugins] camofox-browser: loaded without install/load-path provenance; treat as untracked local code and pin trust via plugins.allow or install records (/root/.openclaw/extensions/camofox-browser/plugin.ts)
+[plugins] [composio] Ready — 7 tools registered
+gateway connect failed: Error: gateway closed (1000): 
+Error: gateway closed (1000 normal closure): no close reason
+Gateway target: ws://127.0.0.1:18789
+Source: local loopback
+Config: /root/.openclaw/openclaw.json
+Bind: loopback
+[2026-03-23 00:00] === Watchdog v3 run ===
+[2026-03-23 00:00] FIXED: Re-triggered failed cron d87f2c6c-20ab-42f4-aa83-47cc086e9b04
+[2026-03-23 00:00] Summary: fixes=1 warnings=1 alerts=0
+[plugins] [composio] Connecting to https://connect.composio.dev/mcp
+[plugins] [lcm] Plugin loaded (enabled=true, db=/root/.openclaw/lcm.db, threshold=0.75)
+[plugins] camofox-browser: loaded without install/load-path provenance; treat as untracked local code and pin trust via plugins.allow or install records (/root/.openclaw/extensions/camofox-browser/plugin.ts)
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:d87f2c6c-20ab-42f4-aa83-47cc086e9b04:1774216830774:1"
+}
+[2026-03-23 02:00] === Watchdog v3 run ===
+[2026-03-23 02:00] FIXED: Re-triggered failed cron d87f2c6c-20ab-42f4-aa83-47cc086e9b04
+[2026-03-23 02:00] Summary: fixes=1 warnings=1 alerts=0
+[plugins] [composio] Connecting to https://connect.composio.dev/mcp
+[plugins] [lcm] Plugin loaded (enabled=true, db=/root/.openclaw/lcm.db, threshold=0.75)
+[plugins] camofox-browser: loaded without install/load-path provenance; treat as untracked local code and pin trust via plugins.allow or install records (/root/.openclaw/extensions/camofox-browser/plugin.ts)
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:d87f2c6c-20ab-42f4-aa83-47cc086e9b04:1774224039526:1"
+}
+[2026-03-23 04:00] === Watchdog v3 run ===
+[2026-03-23 04:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-03-23 06:00] === Watchdog v3 run ===
+[2026-03-23 06:00] FIXED: Re-triggered failed cron d87f2c6c-20ab-42f4-aa83-47cc086e9b04
+[2026-03-23 06:00] Summary: fixes=1 warnings=1 alerts=0
+[plugins] [composio] Connecting to https://connect.composio.dev/mcp
+[plugins] [lcm] Plugin loaded (enabled=true, db=/root/.openclaw/lcm.db, threshold=0.75)
+[plugins] camofox-browser: loaded without install/load-path provenance; treat as untracked local code and pin trust via plugins.allow or install records (/root/.openclaw/extensions/camofox-browser/plugin.ts)
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:d87f2c6c-20ab-42f4-aa83-47cc086e9b04:1774238428671:2"
+}
+[2026-03-23 08:00] === Watchdog v3 run ===
+[2026-03-23 08:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-03-23 10:00] === Watchdog v3 run ===
+[2026-03-23 10:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-03-23 12:00] === Watchdog v3 run ===
+[2026-03-23 12:00] FIXED: Re-triggered failed cron 21424ce1-0b7d-451e-9757-5135149d5c8a
+[2026-03-23 12:00] FIXED: Re-triggered failed cron d87f2c6c-20ab-42f4-aa83-47cc086e9b04
+[2026-03-23 12:00] Summary: fixes=2 warnings=1 alerts=0
+[plugins] [composio] Connecting to https://connect.composio.dev/mcp
+[plugins] [composio] Connecting to https://connect.composio.dev/mcp
+[plugins] [lcm] Plugin loaded (enabled=true, db=/root/.openclaw/lcm.db, threshold=0.75)
+[plugins] camofox-browser: loaded without install/load-path provenance; treat as untracked local code and pin trust via plugins.allow or install records (/root/.openclaw/extensions/camofox-browser/plugin.ts)
+gateway connect failed: Error: gateway closed (1000): 
+Error: gateway closed (1000 normal closure): no close reason
+Gateway target: ws://127.0.0.1:18789
+Source: local loopback
+Config: /root/.openclaw/openclaw.json
+Bind: loopback
+[plugins] [lcm] Plugin loaded (enabled=true, db=/root/.openclaw/lcm.db, threshold=0.75)
+[plugins] camofox-browser: loaded without install/load-path provenance; treat as untracked local code and pin trust via plugins.allow or install records (/root/.openclaw/extensions/camofox-browser/plugin.ts)
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:21424ce1-0b7d-451e-9757-5135149d5c8a:1774260023218:1"
+}
+[2026-03-23 14:00] === Watchdog v3 run ===
+[2026-03-23 14:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-03-23 16:00] === Watchdog v3 run ===
+[2026-03-23 16:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-03-23 18:00] === Watchdog v3 run ===
+[2026-03-23 18:00] FIXED: Re-triggered failed cron 21424ce1-0b7d-451e-9757-5135149d5c8a
+[2026-03-23 18:00] FIXED: Re-triggered failed cron d87f2c6c-20ab-42f4-aa83-47cc086e9b04
+[2026-03-23 18:00] Summary: fixes=2 warnings=1 alerts=0
+[plugins] [composio] Connecting to https://connect.composio.dev/mcp
+[plugins] [composio] Connecting to https://connect.composio.dev/mcp
+[plugins] [lcm] Plugin loaded (enabled=true, db=/root/.openclaw/lcm.db, threshold=0.75)
+[plugins] camofox-browser: loaded without install/load-path provenance; treat as untracked local code and pin trust via plugins.allow or install records (/root/.openclaw/extensions/camofox-browser/plugin.ts)
+[plugins] [lcm] Plugin loaded (enabled=true, db=/root/.openclaw/lcm.db, threshold=0.75)
+[plugins] camofox-browser: loaded without install/load-path provenance; treat as untracked local code and pin trust via plugins.allow or install records (/root/.openclaw/extensions/camofox-browser/plugin.ts)
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:d87f2c6c-20ab-42f4-aa83-47cc086e9b04:1774281621070:2"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:21424ce1-0b7d-451e-9757-5135149d5c8a:1774281621311:3"
+}
+[2026-03-23 20:00] === Watchdog v3 run ===
+[2026-03-23 20:00] WARN: active-tasks.md stale (50h)
+[2026-03-23 20:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-03-23 22:00] === Watchdog v3 run ===
+[2026-03-23 22:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-03-24 00:00] === Watchdog v3 run ===
+[2026-03-24 00:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-03-24 02:00] === Watchdog v3 run ===
+[2026-03-24 02:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-03-24 04:00] === Watchdog v3 run ===
+[2026-03-24 04:00] FIXED: Re-triggered failed cron d1343a4d-61a4-476c-83c5-15724bcce89c
+[2026-03-24 04:00] Summary: fixes=1 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:d1343a4d-61a4-476c-83c5-15724bcce89c:1774317614772:1"
+}
+[2026-03-24 06:00] === Watchdog v3 run ===
+[2026-03-24 06:00] ALERT: Gateway down, attempting restart
+Restarted systemd service: openclaw-gateway.service
+[2026-03-24 06:00] FIXED: Gateway restarted (PID: 3449728)
+[2026-03-24 06:00] FIXED: Re-triggered failed cron d1343a4d-61a4-476c-83c5-15724bcce89c
+[2026-03-24 06:00] Summary: fixes=2 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:d1343a4d-61a4-476c-83c5-15724bcce89c:1774324825841:1"
+}
+[2026-03-24 08:00] === Watchdog v3 run ===
+[2026-03-24 08:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-03-24 10:00] === Watchdog v3 run ===
+[2026-03-24 10:00] FIXED: Re-triggered failed cron 76f33320-4c1a-450a-99c3-8985c17c97df
+[2026-03-24 10:00] FIXED: Re-triggered failed cron 7ba5f8f7-6eec-4301-bfa6-185dee16e778
+[2026-03-24 10:00] Summary: fixes=2 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:7ba5f8f7-6eec-4301-bfa6-185dee16e778:1774339215451:1"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:76f33320-4c1a-450a-99c3-8985c17c97df:1774339216085:2"
+}
+[2026-03-24 12:00] === Watchdog v3 run ===
+[2026-03-24 12:00] FIXED: Re-triggered failed cron 0a31c73d-e888-4e67-bc7b-39605f12d67d
+[2026-03-24 12:00] Summary: fixes=1 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:0a31c73d-e888-4e67-bc7b-39605f12d67d:1774346408595:3"
+}
+[2026-03-24 14:00] === Watchdog v3 run ===
+[2026-03-24 14:00] FIXED: Re-triggered failed cron 0a31c73d-e888-4e67-bc7b-39605f12d67d
+[2026-03-24 14:00] Summary: fixes=1 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:0a31c73d-e888-4e67-bc7b-39605f12d67d:1774353609251:4"
+}
+[2026-03-24 16:00] === Watchdog v3 run ===
+[2026-03-24 16:00] FIXED: Re-triggered failed cron 0a31c73d-e888-4e67-bc7b-39605f12d67d
+[2026-03-24 16:00] Summary: fixes=1 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:0a31c73d-e888-4e67-bc7b-39605f12d67d:1774360810051:1"
+}
+[2026-03-24 18:00] === Watchdog v3 run ===
+[2026-03-24 18:00] FIXED: Re-triggered failed cron 0a31c73d-e888-4e67-bc7b-39605f12d67d
+[2026-03-24 18:00] Summary: fixes=1 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:0a31c73d-e888-4e67-bc7b-39605f12d67d:1774368008455:2"
+}
+[2026-03-24 20:00] === Watchdog v3 run ===
+[2026-03-24 20:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-03-24 22:00] === Watchdog v3 run ===
+[2026-03-24 22:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-03-25 00:00] === Watchdog v3 run ===
+[2026-03-25 00:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-03-25 02:00] === Watchdog v3 run ===
+[2026-03-25 02:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-03-25 04:00] === Watchdog v3 run ===
+[2026-03-25 04:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-03-25 06:00] === Watchdog v3 run ===
+[2026-03-25 06:00] FIXED: Re-triggered failed cron 48e061a6-5771-42a5-9e63-ae7b10ab24f6
+[2026-03-25 06:00] Summary: fixes=1 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:48e061a6-5771-42a5-9e63-ae7b10ab24f6:1774411209865:1"
+}
+[2026-03-25 08:00] === Watchdog v3 run ===
+[2026-03-25 08:00] FIXED: Re-triggered failed cron d1343a4d-61a4-476c-83c5-15724bcce89c
+[2026-03-25 08:00] FIXED: Re-triggered failed cron 48e061a6-5771-42a5-9e63-ae7b10ab24f6
+[2026-03-25 08:00] FIXED: Re-triggered failed cron 1b1d9bca-2f63-49d1-89b2-cd05a792b30a
+[2026-03-25 08:00] Summary: fixes=3 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:48e061a6-5771-42a5-9e63-ae7b10ab24f6:1774418411623:2"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:d1343a4d-61a4-476c-83c5-15724bcce89c:1774418413249:3"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:1b1d9bca-2f63-49d1-89b2-cd05a792b30a:1774418413440:4"
+}
+[2026-03-25 10:00] === Watchdog v3 run ===
+[2026-03-25 10:00] FIXED: Re-triggered failed cron 48e061a6-5771-42a5-9e63-ae7b10ab24f6
+[2026-03-25 10:00] Summary: fixes=1 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:48e061a6-5771-42a5-9e63-ae7b10ab24f6:1774425613520:5"
+}
+[2026-03-25 12:00] === Watchdog v3 run ===
+[2026-03-25 12:00] FIXED: Re-triggered failed cron 48e061a6-5771-42a5-9e63-ae7b10ab24f6
+[2026-03-25 12:00] FIXED: Re-triggered failed cron 0a31c73d-e888-4e67-bc7b-39605f12d67d
+[2026-03-25 12:00] Summary: fixes=2 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:48e061a6-5771-42a5-9e63-ae7b10ab24f6:1774432817831:1"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:0a31c73d-e888-4e67-bc7b-39605f12d67d:1774432817856:2"
+}
+[2026-03-25 14:00] === Watchdog v3 run ===
+[2026-03-25 14:00] FIXED: Re-triggered failed cron d1343a4d-61a4-476c-83c5-15724bcce89c
+[2026-03-25 14:00] FIXED: Re-triggered failed cron 48e061a6-5771-42a5-9e63-ae7b10ab24f6
+[2026-03-25 14:00] FIXED: Re-triggered failed cron 0a31c73d-e888-4e67-bc7b-39605f12d67d
+[2026-03-25 14:00] Summary: fixes=3 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:0a31c73d-e888-4e67-bc7b-39605f12d67d:1774440009501:1"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:d1343a4d-61a4-476c-83c5-15724bcce89c:1774440010043:2"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:48e061a6-5771-42a5-9e63-ae7b10ab24f6:1774440011946:3"
+}
+[2026-03-25 16:00] === Watchdog v3 run ===
+[2026-03-25 16:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-03-25 18:00] === Watchdog v3 run ===
+[2026-03-25 18:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-03-25 20:00] === Watchdog v3 run ===
+[2026-03-25 20:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-03-25 22:00] === Watchdog v3 run ===
+[2026-03-25 22:00] WARN: active-tasks.md stale (49h)
+[2026-03-25 22:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-03-26 00:00] === Watchdog v3 run ===
+[2026-03-26 00:00] FIXED: Re-triggered failed cron f51a7ad3-fe08-4011-b1ff-f6c6720cdd4e
+[2026-03-26 00:00] Summary: fixes=1 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:f51a7ad3-fe08-4011-b1ff-f6c6720cdd4e:1774476008732:1"
+}
+[2026-03-26 02:00] === Watchdog v3 run ===
+[2026-03-26 02:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-03-26 04:00] === Watchdog v3 run ===
+[2026-03-26 04:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-03-26 06:00] === Watchdog v3 run ===
+[2026-03-26 06:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-03-26 08:00] === Watchdog v3 run ===
+[2026-03-26 08:00] FIXED: Re-triggered failed cron 1b1d9bca-2f63-49d1-89b2-cd05a792b30a
+[2026-03-26 08:00] Summary: fixes=1 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:1b1d9bca-2f63-49d1-89b2-cd05a792b30a:1774504813886:1"
+}
+[2026-03-26 10:00] === Watchdog v3 run ===
+[2026-03-26 10:00] FIXED: Re-triggered failed cron 1b1d9bca-2f63-49d1-89b2-cd05a792b30a
+[2026-03-26 10:00] Summary: fixes=1 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:1b1d9bca-2f63-49d1-89b2-cd05a792b30a:1774512009591:2"
+}
+[2026-03-26 12:00] === Watchdog v3 run ===
+[2026-03-26 12:00] FIXED: Re-triggered failed cron 1b1d9bca-2f63-49d1-89b2-cd05a792b30a
+[2026-03-26 12:00] FIXED: Re-triggered failed cron 0a31c73d-e888-4e67-bc7b-39605f12d67d
+[2026-03-26 12:00] Summary: fixes=2 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:1b1d9bca-2f63-49d1-89b2-cd05a792b30a:1774519214360:1"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:0a31c73d-e888-4e67-bc7b-39605f12d67d:1774519214386:2"
+}
+[2026-03-26 14:00] === Watchdog v3 run ===
+[2026-03-26 14:00] FIXED: Re-triggered failed cron 1b1d9bca-2f63-49d1-89b2-cd05a792b30a
+[2026-03-26 14:00] Summary: fixes=1 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:1b1d9bca-2f63-49d1-89b2-cd05a792b30a:1774526412651:3"
+}
+[2026-03-26 16:00] === Watchdog v3 run ===
+[2026-03-26 16:00] FIXED: Re-triggered failed cron 1b1d9bca-2f63-49d1-89b2-cd05a792b30a
+[2026-03-26 16:00] Summary: fixes=1 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:1b1d9bca-2f63-49d1-89b2-cd05a792b30a:1774533609912:1"
+}
+[2026-03-26 18:00] === Watchdog v3 run ===
+[2026-03-26 18:00] FIXED: Re-triggered failed cron 1b1d9bca-2f63-49d1-89b2-cd05a792b30a
+[2026-03-26 18:00] Summary: fixes=1 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:1b1d9bca-2f63-49d1-89b2-cd05a792b30a:1774540813044:2"
+}
+[2026-03-26 20:00] === Watchdog v3 run ===
+[2026-03-26 20:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-03-26 22:00] === Watchdog v3 run ===
+[2026-03-26 22:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-03-27 00:00] === Watchdog v3 run ===
+[2026-03-27 00:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-03-27 02:00] === Watchdog v3 run ===
+[2026-03-27 02:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-03-27 04:00] === Watchdog v3 run ===
+[2026-03-27 04:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-03-27 06:00] === Watchdog v3 run ===
+[2026-03-27 06:00] ALERT: Pipeline config/logic failures need attention
+[2026-03-27 06:00] Summary: fixes=0 warnings=0 alerts=1
+[2026-03-27 08:00] === Watchdog v3 run ===
+[2026-03-27 08:00] FIXED: Re-triggered failed cron 1b1d9bca-2f63-49d1-89b2-cd05a792b30a
+[2026-03-27 08:00] ALERT: Pipeline config/logic failures need attention
+[2026-03-27 08:00] Summary: fixes=1 warnings=1 alerts=1
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:1b1d9bca-2f63-49d1-89b2-cd05a792b30a:1774591220208:1"
+}
+[2026-03-27 10:00] === Watchdog v3 run ===
+[2026-03-27 10:00] FIXED: Re-triggered failed cron 1b1d9bca-2f63-49d1-89b2-cd05a792b30a
+[2026-03-27 10:00] ALERT: Pipeline config/logic failures need attention
+[2026-03-27 10:00] Summary: fixes=1 warnings=1 alerts=1
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:1b1d9bca-2f63-49d1-89b2-cd05a792b30a:1774598417768:1"
+}
+[2026-03-27 12:00] === Watchdog v3 run ===
+[2026-03-27 12:00] FIXED: Re-triggered failed cron 1b1d9bca-2f63-49d1-89b2-cd05a792b30a
+[2026-03-27 12:00] FIXED: Re-triggered failed cron 0be247a8-7d05-4a66-9b65-d75d29486fb9
+[2026-03-27 12:00] ALERT: Pipeline config/logic failures need attention
+[2026-03-27 12:00] Summary: fixes=2 warnings=1 alerts=1
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:0be247a8-7d05-4a66-9b65-d75d29486fb9:1774605624346:1"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:1b1d9bca-2f63-49d1-89b2-cd05a792b30a:1774605624369:2"
+}
+[2026-03-27 14:00] === Watchdog v3 run ===
+[2026-03-27 14:00] FIXED: Re-triggered failed cron 1b1d9bca-2f63-49d1-89b2-cd05a792b30a
+[2026-03-27 14:00] FIXED: Re-triggered failed cron 0be247a8-7d05-4a66-9b65-d75d29486fb9
+[2026-03-27 14:00] ALERT: Pipeline config/logic failures need attention
+[2026-03-27 14:00] Summary: fixes=2 warnings=1 alerts=1
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:0be247a8-7d05-4a66-9b65-d75d29486fb9:1774612822464:1"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:1b1d9bca-2f63-49d1-89b2-cd05a792b30a:1774612822484:2"
+}
+[2026-03-27 16:00] === Watchdog v3 run ===
+[2026-03-27 16:00] ALERT: Gateway down, attempting restart
+Restarted systemd service: openclaw-gateway.service
+[2026-03-27 16:00] FIXED: Gateway restarted (PID: 129175)
+[2026-03-27 16:00] ALERT: Pipeline config/logic failures need attention
+[2026-03-27 16:00] Summary: fixes=1 warnings=0 alerts=1
+[2026-03-27 18:00] === Watchdog v3 run ===
+[2026-03-27 18:00] ALERT: Pipeline config/logic failures need attention
+[2026-03-27 18:00] Summary: fixes=0 warnings=0 alerts=1
+[2026-03-27 20:00] === Watchdog v3 run ===
+[2026-03-27 20:00] ALERT: Pipeline config/logic failures need attention
+[2026-03-27 20:00] Summary: fixes=0 warnings=0 alerts=1
+[2026-03-27 22:00] === Watchdog v3 run ===
+[2026-03-27 22:00] ALERT: Pipeline config/logic failures need attention
+[2026-03-27 22:00] Summary: fixes=0 warnings=0 alerts=1
+[2026-03-28 00:00] === Watchdog v3 run ===
+[2026-03-28 00:00] WARN: active-tasks.md stale (50h)
+[2026-03-28 00:00] Summary: fixes=0 warnings=2 alerts=0
+[2026-03-28 02:00] === Watchdog v3 run ===
+[2026-03-28 02:00] FIXED: Re-triggered failed cron f51a7ad3-fe08-4011-b1ff-f6c6720cdd4e
+[2026-03-28 02:00] Summary: fixes=1 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:f51a7ad3-fe08-4011-b1ff-f6c6720cdd4e:1774656046431:1"
+}
+[2026-03-28 04:00] === Watchdog v3 run ===
+[2026-03-28 04:00] FIXED: Re-triggered failed cron f51a7ad3-fe08-4011-b1ff-f6c6720cdd4e
+[2026-03-28 04:00] Summary: fixes=1 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:f51a7ad3-fe08-4011-b1ff-f6c6720cdd4e:1774663221532:1"
+}
+[2026-03-28 06:00] === Watchdog v3 run ===
+[2026-03-28 06:00] FIXED: Re-triggered failed cron f51a7ad3-fe08-4011-b1ff-f6c6720cdd4e
+[2026-03-28 06:00] Summary: fixes=1 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:f51a7ad3-fe08-4011-b1ff-f6c6720cdd4e:1774670416231:2"
+}
+[2026-03-28 08:00] === Watchdog v3 run ===
+[2026-03-28 08:00] FIXED: Re-triggered failed cron d1343a4d-61a4-476c-83c5-15724bcce89c
+[2026-03-28 08:00] FIXED: Re-triggered failed cron f51a7ad3-fe08-4011-b1ff-f6c6720cdd4e
+[2026-03-28 08:00] Summary: fixes=2 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:f51a7ad3-fe08-4011-b1ff-f6c6720cdd4e:1774677621065:3"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:d1343a4d-61a4-476c-83c5-15724bcce89c:1774677621628:4"
+}
+[2026-03-28 10:00] === Watchdog v3 run ===
+[2026-03-28 10:00] FIXED: Re-triggered failed cron f51a7ad3-fe08-4011-b1ff-f6c6720cdd4e
+[2026-03-28 10:00] Summary: fixes=1 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:f51a7ad3-fe08-4011-b1ff-f6c6720cdd4e:1774684810314:5"
+}
+[2026-03-28 12:00] === Watchdog v3 run ===
+[2026-03-28 12:00] FIXED: Re-triggered failed cron f51a7ad3-fe08-4011-b1ff-f6c6720cdd4e
+[2026-03-28 12:00] Summary: fixes=1 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:f51a7ad3-fe08-4011-b1ff-f6c6720cdd4e:1774692023359:1"
+}
+[2026-03-29 10:00] === Watchdog v3 run ===
+[2026-03-29 10:00] WARN: High transient failure count: 6
+[2026-03-29 10:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-03-29 12:00] === Watchdog v3 run ===
+[2026-03-29 12:00] FIXED: Re-triggered failed cron d8d6d364-40dd-406a-a144-aa3904bd2226
+[2026-03-29 12:00] WARN: High transient failure count: 6
+[2026-03-29 12:00] Summary: fixes=1 warnings=2 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:d8d6d364-40dd-406a-a144-aa3904bd2226:1774778416959:1"
+}
+[2026-03-29 14:00] === Watchdog v3 run ===
+[2026-03-29 14:00] WARN: High transient failure count: 6
+[2026-03-29 14:00] Summary: fixes=0 warnings=2 alerts=0
+[2026-03-29 16:00] === Watchdog v3 run ===
+[2026-03-29 16:00] FIXED: Re-triggered failed cron d8d6d364-40dd-406a-a144-aa3904bd2226
+[2026-03-29 16:00] WARN: High transient failure count: 6
+[2026-03-29 16:00] Summary: fixes=1 warnings=2 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:d8d6d364-40dd-406a-a144-aa3904bd2226:1774792817297:1"
+}
+[2026-03-29 18:00] === Watchdog v3 run ===
+[2026-03-29 18:00] FIXED: Re-triggered failed cron d8d6d364-40dd-406a-a144-aa3904bd2226
+[2026-03-29 18:00] WARN: High transient failure count: 6
+[2026-03-29 18:00] Summary: fixes=1 warnings=2 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:d8d6d364-40dd-406a-a144-aa3904bd2226:1774800016567:2"
+}
+[2026-03-29 20:00] === Watchdog v3 run ===
+[2026-03-29 20:00] WARN: High transient failure count: 6
+[2026-03-29 20:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-03-29 22:00] === Watchdog v3 run ===
+[2026-03-29 22:00] WARN: High transient failure count: 6
+[2026-03-29 22:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-03-30 00:00] === Watchdog v3 run ===
+[2026-03-30 00:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-03-30 02:00] === Watchdog v3 run ===
+[2026-03-30 02:00] WARN: active-tasks.md stale (49h)
+[2026-03-30 02:00] Summary: fixes=0 warnings=2 alerts=0
+[2026-03-30 04:00] === Watchdog v3 run ===
+[2026-03-30 04:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-03-30 06:00] === Watchdog v3 run ===
+[2026-03-30 06:00] FIXED: Re-triggered failed cron 00512934-214a-429e-8078-e7555bb1c120
+[2026-03-30 06:00] Summary: fixes=1 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:00512934-214a-429e-8078-e7555bb1c120:1774843214786:1"
+}
+[2026-03-30 08:00] === Watchdog v3 run ===
+[2026-03-30 08:00] FIXED: Re-triggered failed cron 145d964f-e2e5-4b49-8058-f9ddac926f45
+[2026-03-30 08:00] FIXED: Re-triggered failed cron d1343a4d-61a4-476c-83c5-15724bcce89c
+[2026-03-30 08:00] FIXED: Re-triggered failed cron 00512934-214a-429e-8078-e7555bb1c120
+[2026-03-30 08:00] Summary: fixes=3 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:d1343a4d-61a4-476c-83c5-15724bcce89c:1774850423556:2"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:145d964f-e2e5-4b49-8058-f9ddac926f45:1774850425072:3"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:00512934-214a-429e-8078-e7555bb1c120:1774850429782:4"
+}
+[2026-03-30 10:00] === Watchdog v3 run ===
+[2026-03-30 10:00] FIXED: Re-triggered failed cron d1343a4d-61a4-476c-83c5-15724bcce89c
+[2026-03-30 10:00] FIXED: Re-triggered failed cron 00512934-214a-429e-8078-e7555bb1c120
+[2026-03-30 10:00] FIXED: Re-triggered failed cron 1b1d9bca-2f63-49d1-89b2-cd05a792b30a
+[2026-03-30 10:00] Summary: fixes=3 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:1b1d9bca-2f63-49d1-89b2-cd05a792b30a:1774857623859:4"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:00512934-214a-429e-8078-e7555bb1c120:1774857624058:5"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:d1343a4d-61a4-476c-83c5-15724bcce89c:1774857624073:6"
+}
+[2026-03-30 12:00] === Watchdog v3 run ===
+[2026-03-30 12:00] FIXED: Re-triggered failed cron ae585e86-30d0-4519-bba5-52aa7c5bedff
+[2026-03-30 12:00] FIXED: Re-triggered failed cron 7ba5f8f7-6eec-4301-bfa6-185dee16e778
+[2026-03-30 12:00] Summary: fixes=2 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:7ba5f8f7-6eec-4301-bfa6-185dee16e778:1774864821762:1"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:ae585e86-30d0-4519-bba5-52aa7c5bedff:1774864821842:2"
+}
+[2026-03-30 14:00] === Watchdog v3 run ===
+[2026-03-30 14:00] FIXED: Re-triggered failed cron 7ba5f8f7-6eec-4301-bfa6-185dee16e778
+[2026-03-30 14:00] FIXED: Re-triggered failed cron 418e7854-d466-4b49-ad1d-f3f3debae5d7
+[2026-03-30 14:00] Summary: fixes=2 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:7ba5f8f7-6eec-4301-bfa6-185dee16e778:1774872022866:3"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:418e7854-d466-4b49-ad1d-f3f3debae5d7:1774872022956:4"
+}
+[2026-03-30 16:00] === Watchdog v3 run ===
+[2026-03-30 16:00] FIXED: Re-triggered failed cron 7ba5f8f7-6eec-4301-bfa6-185dee16e778
+[2026-03-30 16:00] FIXED: Re-triggered failed cron 418e7854-d466-4b49-ad1d-f3f3debae5d7
+[2026-03-30 16:00] Summary: fixes=2 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:418e7854-d466-4b49-ad1d-f3f3debae5d7:1774879217975:1"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:7ba5f8f7-6eec-4301-bfa6-185dee16e778:1774879218086:2"
+}
+[2026-03-30 18:00] === Watchdog v3 run ===
+[2026-03-30 18:00] FIXED: Re-triggered failed cron 7ba5f8f7-6eec-4301-bfa6-185dee16e778
+[2026-03-30 18:00] FIXED: Re-triggered failed cron 418e7854-d466-4b49-ad1d-f3f3debae5d7
+[2026-03-30 18:00] Summary: fixes=2 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:7ba5f8f7-6eec-4301-bfa6-185dee16e778:1774886421625:1"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:418e7854-d466-4b49-ad1d-f3f3debae5d7:1774886425732:2"
+}
+[2026-03-30 20:00] === Watchdog v3 run ===
+[2026-03-30 20:00] FIXED: Re-triggered failed cron 7ba5f8f7-6eec-4301-bfa6-185dee16e778
+[2026-03-30 20:00] FIXED: Re-triggered failed cron 418e7854-d466-4b49-ad1d-f3f3debae5d7
+[2026-03-30 20:00] Summary: fixes=2 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:7ba5f8f7-6eec-4301-bfa6-185dee16e778:1774893617475:1"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:418e7854-d466-4b49-ad1d-f3f3debae5d7:1774893617671:2"
+}
+[2026-03-30 22:00] === Watchdog v3 run ===
+[2026-03-30 22:00] FIXED: Re-triggered failed cron 7ba5f8f7-6eec-4301-bfa6-185dee16e778
+[2026-03-30 22:00] FIXED: Re-triggered failed cron 418e7854-d466-4b49-ad1d-f3f3debae5d7
+[2026-03-30 22:00] Summary: fixes=2 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:7ba5f8f7-6eec-4301-bfa6-185dee16e778:1774900823469:3"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:418e7854-d466-4b49-ad1d-f3f3debae5d7:1774900823553:4"
+}
+[2026-03-31 00:00] === Watchdog v3 run ===
+[2026-03-31 00:00] FIXED: Re-triggered failed cron 7ba5f8f7-6eec-4301-bfa6-185dee16e778
+[2026-03-31 00:00] FIXED: Re-triggered failed cron 418e7854-d466-4b49-ad1d-f3f3debae5d7
+[2026-03-31 00:00] Summary: fixes=2 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:7ba5f8f7-6eec-4301-bfa6-185dee16e778:1774908021566:5"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:418e7854-d466-4b49-ad1d-f3f3debae5d7:1774908021716:6"
+}
+[2026-03-31 02:00] === Watchdog v3 run ===
+[2026-03-31 02:00] FIXED: Re-triggered failed cron 7ba5f8f7-6eec-4301-bfa6-185dee16e778
+[2026-03-31 02:00] FIXED: Re-triggered failed cron 418e7854-d466-4b49-ad1d-f3f3debae5d7
+[2026-03-31 02:00] Summary: fixes=2 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:418e7854-d466-4b49-ad1d-f3f3debae5d7:1774915228514:7"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:7ba5f8f7-6eec-4301-bfa6-185dee16e778:1774915228724:8"
+}
+[2026-03-31 04:00] === Watchdog v3 run ===
+[2026-03-31 04:00] FIXED: Re-triggered failed cron 7ba5f8f7-6eec-4301-bfa6-185dee16e778
+[2026-03-31 04:00] FIXED: Re-triggered failed cron 418e7854-d466-4b49-ad1d-f3f3debae5d7
+[2026-03-31 04:00] FIXED: Re-triggered failed cron 067d6fa5-e781-4e44-adc5-271c41e6f67d
+[2026-03-31 04:00] Summary: fixes=3 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:7ba5f8f7-6eec-4301-bfa6-185dee16e778:1774922425073:9"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:418e7854-d466-4b49-ad1d-f3f3debae5d7:1774922425471:10"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:067d6fa5-e781-4e44-adc5-271c41e6f67d:1774922426660:11"
+}
+[2026-03-31 06:00] === Watchdog v3 run ===
+[2026-03-31 06:00] FIXED: Re-triggered failed cron 7ba5f8f7-6eec-4301-bfa6-185dee16e778
+[2026-03-31 06:00] FIXED: Re-triggered failed cron 418e7854-d466-4b49-ad1d-f3f3debae5d7
+[2026-03-31 06:00] FIXED: Re-triggered failed cron 067d6fa5-e781-4e44-adc5-271c41e6f67d
+[2026-03-31 06:00] Summary: fixes=3 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:7ba5f8f7-6eec-4301-bfa6-185dee16e778:1774929617133:1"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:067d6fa5-e781-4e44-adc5-271c41e6f67d:1774929618733:2"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:418e7854-d466-4b49-ad1d-f3f3debae5d7:1774929618733:3"
+}
+[2026-03-31 08:00] === Watchdog v3 run ===
+[2026-03-31 08:00] FIXED: Re-triggered failed cron 7ba5f8f7-6eec-4301-bfa6-185dee16e778
+[2026-03-31 08:00] FIXED: Re-triggered failed cron 418e7854-d466-4b49-ad1d-f3f3debae5d7
+[2026-03-31 08:00] FIXED: Re-triggered failed cron 067d6fa5-e781-4e44-adc5-271c41e6f67d
+[2026-03-31 08:00] Summary: fixes=3 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:418e7854-d466-4b49-ad1d-f3f3debae5d7:1774936820158:1"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:7ba5f8f7-6eec-4301-bfa6-185dee16e778:1774936820804:2"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:067d6fa5-e781-4e44-adc5-271c41e6f67d:1774936820833:3"
+}
+[2026-03-31 10:00] === Watchdog v3 run ===
+[2026-03-31 10:00] FIXED: Re-triggered failed cron 224bb358-a983-4ec6-ba28-32101ab48eb8
+[2026-03-31 10:00] FIXED: Re-triggered failed cron 6a833efa-e058-4438-8f57-3cf5c2868e85
+[2026-03-31 10:00] FIXED: Re-triggered failed cron db37a524-9cba-453c-a59a-9042a268f7ea
+[2026-03-31 10:00] Summary: fixes=3 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:6a833efa-e058-4438-8f57-3cf5c2868e85:1774944020470:4"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:224bb358-a983-4ec6-ba28-32101ab48eb8:1774944022551:5"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:db37a524-9cba-453c-a59a-9042a268f7ea:1774944022551:6"
+}
+[2026-03-31 12:00] === Watchdog v3 run ===
+[2026-03-31 12:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-03-31 14:00] === Watchdog v3 run ===
+[2026-03-31 14:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-03-31 16:00] === Watchdog v3 run ===
+[2026-03-31 16:00] FIXED: Re-triggered failed cron 145d964f-e2e5-4b49-8058-f9ddac926f45
+[2026-03-31 16:00] Summary: fixes=1 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:145d964f-e2e5-4b49-8058-f9ddac926f45:1774965621385:7"
+}
+[2026-03-31 18:00] === Watchdog v3 run ===
+[2026-03-31 18:00] FIXED: Re-triggered failed cron 145d964f-e2e5-4b49-8058-f9ddac926f45
+[2026-03-31 18:00] Summary: fixes=1 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:145d964f-e2e5-4b49-8058-f9ddac926f45:1774972821972:8"
+}
+[2026-03-31 20:00] === Watchdog v3 run ===
+[2026-03-31 20:00] FIXED: Re-triggered failed cron d1343a4d-61a4-476c-83c5-15724bcce89c
+[2026-03-31 20:00] Summary: fixes=1 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:d1343a4d-61a4-476c-83c5-15724bcce89c:1774980019887:9"
+}
+[2026-03-31 22:00] === Watchdog v3 run ===
+[2026-03-31 22:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-01 00:00] === Watchdog v3 run ===
+[2026-04-01 00:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-01 02:00] === Watchdog v3 run ===
+[2026-04-01 02:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-01 04:00] === Watchdog v3 run ===
+[2026-04-01 04:00] WARN: active-tasks.md stale (50h)
+[2026-04-01 04:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-04-01 06:00] === Watchdog v3 run ===
+[2026-04-01 06:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-01 08:00] === Watchdog v3 run ===
+[2026-04-01 08:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-01 10:00] === Watchdog v3 run ===
+[2026-04-01 10:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-01 12:00] === Watchdog v3 run ===
+[2026-04-01 12:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-01 14:00] === Watchdog v3 run ===
+[2026-04-01 14:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-01 16:00] === Watchdog v3 run ===
+[2026-04-01 16:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-01 18:00] === Watchdog v3 run ===
+[2026-04-01 18:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-01 20:00] === Watchdog v3 run ===
+[2026-04-01 20:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-04-01 22:00] === Watchdog v3 run ===
+[2026-04-01 22:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-04-02 00:00] === Watchdog v3 run ===
+[2026-04-02 00:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-04-02 02:00] === Watchdog v3 run ===
+[2026-04-02 02:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-04-02 04:00] === Watchdog v3 run ===
+[2026-04-02 04:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-04-02 06:00] === Watchdog v3 run ===
+[2026-04-02 06:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-04-02 08:00] === Watchdog v3 run ===
+[2026-04-02 08:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-04-02 10:00] === Watchdog v3 run ===
+[2026-04-02 10:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-04-02 12:00] === Watchdog v3 run ===
+[2026-04-02 12:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-04-02 14:00] === Watchdog v3 run ===
+[2026-04-02 14:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-04-02 16:00] === Watchdog v3 run ===
+[2026-04-02 16:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-04-02 18:00] === Watchdog v3 run ===
+[2026-04-02 18:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-04-02 20:00] === Watchdog v3 run ===
+[2026-04-02 20:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-04-02 22:00] === Watchdog v3 run ===
+[2026-04-02 22:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-04-03 00:00] === Watchdog v3 run ===
+[2026-04-03 00:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-04-03 02:00] === Watchdog v3 run ===
+[2026-04-03 02:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-04-03 04:00] === Watchdog v3 run ===
+[2026-04-03 04:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-04-03 06:00] === Watchdog v3 run ===
+[2026-04-03 06:00] WARN: active-tasks.md stale (50h)
+[2026-04-03 06:00] Summary: fixes=0 warnings=2 alerts=0
+[2026-04-03 08:00] === Watchdog v3 run ===
+[2026-04-03 08:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-04-03 10:00] === Watchdog v3 run ===
+[2026-04-03 10:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-04-03 12:00] === Watchdog v3 run ===
+[2026-04-03 12:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-04-03 14:00] === Watchdog v3 run ===
+[2026-04-03 14:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-04-03 16:00] === Watchdog v3 run ===
+[2026-04-03 16:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-04-03 18:00] === Watchdog v3 run ===
+[2026-04-03 18:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-04-03 20:00] === Watchdog v3 run ===
+[2026-04-03 20:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-04-03 22:00] === Watchdog v3 run ===
+[2026-04-03 22:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-04 00:00] === Watchdog v3 run ===
+[2026-04-04 00:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-04 02:00] === Watchdog v3 run ===
+[2026-04-04 02:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-04 04:00] === Watchdog v3 run ===
+[2026-04-04 04:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-04 06:00] === Watchdog v3 run ===
+[2026-04-04 06:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-04 08:00] === Watchdog v3 run ===
+[2026-04-04 08:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-04 10:00] === Watchdog v3 run ===
+[2026-04-04 10:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-04 12:00] === Watchdog v3 run ===
+[2026-04-04 12:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-04 14:00] === Watchdog v3 run ===
+[2026-04-04 14:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-04 16:00] === Watchdog v3 run ===
+[2026-04-04 16:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-04 18:00] === Watchdog v3 run ===
+[2026-04-04 18:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-04 20:00] === Watchdog v3 run ===
+[2026-04-04 20:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-04 22:00] === Watchdog v3 run ===
+[2026-04-04 22:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-05 00:00] === Watchdog v3 run ===
+[2026-04-05 00:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-05 02:00] === Watchdog v3 run ===
+[2026-04-05 02:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-05 04:00] === Watchdog v3 run ===
+[2026-04-05 04:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-05 06:00] === Watchdog v3 run ===
+[2026-04-05 06:00] FIXED: Re-triggered failed cron 0e2740f5-870a-454a-b493-877111829812
+[2026-04-05 06:00] Summary: fixes=1 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:0e2740f5-870a-454a-b493-877111829812:1775361616124:1"
+}

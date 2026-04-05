@@ -1,0 +1,58 @@
+{
+  "job_id": "2026-03-03-inception-director-program-management",
+  "created_at": "2026-03-03T11:40:00Z",
+  "updated_at": "2026-03-03T11:40:00Z",
+  "status": "dropped_unverified_url",
+
+  "job": {
+    "company": "Inception (G42 Group)",
+    "role": "Director - Program Management",
+    "location": "Abu Dhabi, UAE",
+    "url": "https://www.linkedin.com/jobs/search/?keywords=Director+Program+Management+Inception&location=Abu+Dhabi",
+    "url_verified": false,
+    "url_type": "search_listing",
+    "salary_range": null,
+    "jd_raw": "Director - Program Management at Inception. Full-time. Abu Dhabi, UAE. Posted 3 days ago. Role leads program management functions within an AI company. Involves structuring and governing multi-track delivery programs, stakeholder management, and ensuring strategic alignment of technical programs. Full JD requires authenticated LinkedIn access.",
+    "jd_keywords": ["program management", "PMO", "director", "AI company", "Abu Dhabi", "stakeholder management", "full-time", "governance"],
+    "ats_score": 88,
+    "vision_2030_angle": false,
+    "priority": "HIGH"
+  },
+
+  "research": {
+    "company_summary": "Inception is a G42-backed AI company in Abu Dhabi building foundation models and AI products. Ahmed has Director Delivery application active (Feb 27). Director Program Management is a distinct PMO leadership role, different from both Director Delivery and Director Technology.",
+    "funding_stage": "Private (G42 subsidiary, sovereign-backed)",
+    "headcount": "200-500 estimated",
+    "recent_news": ["Inception is hiring a full leadership layer simultaneously across Technology, Program Management, Delivery, and International Sales", "G42 accelerating AI commercialization across GCC"],
+    "hiring_manager": null,
+    "linkedin_connections": 0,
+    "notes": "Posted 3 days ago, still active. Third Inception role discovered alongside Director Technology (19h) and Director Delivery (already applied Feb 27). PMO angle is Ahmed's strongest credential set. Source: LinkedIn aggregator. No official Inception career page confirmed. Treat as verified-aggregator."
+  },
+
+  "cv": {
+    "path": null,
+    "github_url": null,
+    "ats_score": 88,
+    "tailoring_notes": "Emphasize: (1) Enterprise PMO from ground up at Network International (300+ projects, 8 countries), (2) $50M TopMed program management (15 hospitals, Saudi German Health), (3) PMP + CSM + CSPO certifications, (4) AI program governance (14 AI agents in production, multi-vendor coordination). Strong PMO narrative that maps directly to managing AI product programs.",
+    "pending_review": true
+  },
+
+  "application": {
+    "applied_at": null,
+    "channel": "LinkedIn",
+    "follow_up_due": null,
+    "outcome": "pending"
+  },
+
+  "content": {
+    "linkedin_post_drafted": false,
+    "post_theme": null,
+    "post_path": null
+  },
+
+  "nasr_review": {
+    "approved": false,
+    "flags": ["Already have active Director Delivery application at Inception (Feb 27). This is a 3rd Inception role. Highest ATS of the three new Inception roles (88%). PMO credentials are strongest fit."],
+    "recommendation": "Dropped, unverified direct job URL. Re-scan required with direct job URL only"
+  }
+}

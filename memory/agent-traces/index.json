@@ -1,0 +1,116 @@
+{
+  "updated_at": "2026-04-03T04:07:55.245250+00:00",
+  "total_traces": 7,
+  "by_category": {
+    "content_post": [
+      {
+        "id": "trace-20260323-001",
+        "agent": "CMO",
+        "timestamp": "2026-03-23T09:30:00Z",
+        "lesson": "Always validate LinkedIn post length against 3000 char limit before posting",
+        "severity": "high"
+      },
+      {
+        "id": "trace-20260329-001",
+        "agent": "CEO",
+        "timestamp": "2026-03-29T00:00:00Z",
+        "lesson": "Never use Google Drive links for LinkedIn images \u2014 they may be stale. Always pull from Notion page blocks",
+        "severity": "high"
+      },
+      {
+        "id": "trace-20260402-002",
+        "agent": "CEO",
+        "timestamp": "2026-04-02T18:45:00Z",
+        "lesson": "Check for duplicate posts before celebrating success. Verify actual posted content, not just script logs",
+        "severity": "high"
+      }
+    ],
+    "communication": [
+      {
+        "id": "trace-20260330-001",
+        "agent": "CEO",
+        "timestamp": "2026-03-30T00:00:00Z",
+        "lesson": "CLI uses --target not --to \u2014 exit 0 does not mean success. Always verify actual delivery",
+        "severity": "high"
+      }
+    ],
+    "tool_integration": [
+      {
+        "id": "trace-20260321-001",
+        "agent": "CTO",
+        "timestamp": "2026-03-21T00:00:00Z",
+        "lesson": "Always check config/ directory and service-registry.md before initiating OAuth. Direct credentials exist for Notion, Telegram, Gmail",
+        "severity": "high"
+      }
+    ],
+    "config_system": [
+      {
+        "id": "trace-20260327-001",
+        "agent": "CTO",
+        "timestamp": "2026-03-27T21:23:00Z",
+        "lesson": "Never bulk-overwrite config bindings without understanding each binding's required schema. Always backup and validate after editing openclaw.json",
+        "severity": "high"
+      }
+    ],
+    "cron_automation": [
+      {
+        "id": "trace-20260402-001",
+        "agent": "CEO",
+        "timestamp": "2026-04-02T18:00:00Z",
+        "lesson": "OpenClaw cron tool can fail silently. For critical one-shot reminders, system crontab is more reliable",
+        "severity": "high"
+      }
+    ]
+  },
+  "recent": [
+    {
+      "id": "trace-20260323-001",
+      "agent": "CMO",
+      "category": "content_post",
+      "lesson": "Always validate LinkedIn post length against 3000 char limit before posting",
+      "timestamp": "2026-03-23T09:30:00Z"
+    },
+    {
+      "id": "trace-20260329-001",
+      "agent": "CEO",
+      "category": "content_post",
+      "lesson": "Never use Google Drive links for LinkedIn images \u2014 they may be stale. Always pull from Notion page blocks",
+      "timestamp": "2026-03-29T00:00:00Z"
+    },
+    {
+      "id": "trace-20260330-001",
+      "agent": "CEO",
+      "category": "communication",
+      "lesson": "CLI uses --target not --to \u2014 exit 0 does not mean success. Always verify actual delivery",
+      "timestamp": "2026-03-30T00:00:00Z"
+    },
+    {
+      "id": "trace-20260321-001",
+      "agent": "CTO",
+      "category": "tool_integration",
+      "lesson": "Always check config/ directory and service-registry.md before initiating OAuth. Direct credentials exist for Notion, Telegram, Gmail",
+      "timestamp": "2026-03-21T00:00:00Z"
+    },
+    {
+      "id": "trace-20260327-001",
+      "agent": "CTO",
+      "category": "config_system",
+      "lesson": "Never bulk-overwrite config bindings without understanding each binding's required schema. Always backup and validate after editing openclaw.json",
+      "timestamp": "2026-03-27T21:23:00Z"
+    },
+    {
+      "id": "trace-20260402-001",
+      "agent": "CEO",
+      "category": "cron_automation",
+      "lesson": "OpenClaw cron tool can fail silently. For critical one-shot reminders, system crontab is more reliable",
+      "timestamp": "2026-04-02T18:00:00Z"
+    },
+    {
+      "id": "trace-20260402-002",
+      "agent": "CEO",
+      "category": "content_post",
+      "lesson": "Check for duplicate posts before celebrating success. Verify actual posted content, not just script logs",
+      "timestamp": "2026-04-02T18:45:00Z"
+    }
+  ]
+}

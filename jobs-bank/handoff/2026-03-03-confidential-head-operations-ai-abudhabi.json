@@ -1,0 +1,58 @@
+{
+  "job_id": "2026-03-03-confidential-head-operations-ai-abudhabi",
+  "created_at": "2026-03-03T11:40:00Z",
+  "updated_at": "2026-03-03T11:40:00Z",
+  "status": "dropped_unverified_url",
+
+  "job": {
+    "company": "Confidential",
+    "role": "Head of Operations & AI Optimisation",
+    "location": "Abu Dhabi, UAE",
+    "url": "https://www.linkedin.com/jobs/search/?keywords=Head+Operations+AI+Optimisation&location=Abu+Dhabi&f_TPR=r86400",
+    "url_verified": false,
+    "url_type": "search_listing",
+    "salary_range": null,
+    "jd_raw": "Head of Operations & AI Optimisation. Confidential employer. Abu Dhabi, UAE. Actively Hiring. Posted 4 hours ago. Role combines operational leadership with AI-driven process optimization. Requires senior leadership background with demonstrated AI deployment in operations. Full JD requires authenticated LinkedIn access.",
+    "jd_keywords": ["head of operations", "AI optimisation", "AI deployment", "operations leadership", "confidential", "Abu Dhabi", "actively hiring"],
+    "ats_score": 81,
+    "vision_2030_angle": false,
+    "priority": "MEDIUM"
+  },
+
+  "research": {
+    "company_summary": "Employer is confidential. Abu Dhabi-based role combining operations leadership with AI optimization. Given Abu Dhabi context, potential employer could be a sovereign entity, large conglomerate, or technology company. Confidential posting limits scoring accuracy.",
+    "funding_stage": null,
+    "headcount": null,
+    "recent_news": [],
+    "hiring_manager": null,
+    "linkedin_connections": 0,
+    "notes": "Marked Actively Hiring (strong positive signal). Employer identity unknown. ATS capped at 81% due to missing JD depth. Ahmed's fit: Talabat operations at 233x scale, TopMed clinical operations for 15 hospitals, 14 AI agents in production optimizing workflows. Downgraded from 86% due to unverified JD. Source: LinkedIn aggregator only. Credibility: unverified."
+  },
+
+  "cv": {
+    "path": null,
+    "github_url": null,
+    "ats_score": 81,
+    "tailoring_notes": "Emphasize: (1) AI-powered operational improvements at scale (Talabat 233x, TopMed 15 hospitals), (2) 14 production AI agents for process automation, (3) operations KPI governance and continuous improvement methodology. Frame as operations executive who uses AI as the primary lever for optimization.",
+    "pending_review": true
+  },
+
+  "application": {
+    "applied_at": null,
+    "channel": "LinkedIn",
+    "follow_up_due": null,
+    "outcome": "pending"
+  },
+
+  "content": {
+    "linkedin_post_drafted": false,
+    "post_theme": null,
+    "post_path": null
+  },
+
+  "nasr_review": {
+    "approved": false,
+    "flags": ["Confidential employer — actual JD content not verifiable from outside LinkedIn. ATS score is indicative. Recommend Ahmed review actual JD before CV generation."],
+    "recommendation": "Dropped, unverified direct job URL. Re-scan required with direct job URL only"
+  }
+}

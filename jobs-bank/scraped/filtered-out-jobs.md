@@ -1,0 +1,291 @@
+# Filtered-Out Jobs Audit - 2026-03-20
+
+**Total filtered:** 262
+
+## duplicate (2)
+
+- **Senior Software Engineer - Payments & Treasury** | Jobgether | United Arab Emirates | https://jaabz.com/jobs/177166-senior-software-engineer-payments-treasury
+- **Vice President, Senior Transformation & Strategic Program Lead** | Rakbank | United Arab Emirates | https://careers.rakbank.ae/en/uae/jobs/vice-president-senior-transformation-strategic-program-lead-5398959
+
+## not-exec (244)
+
+- **Digital Transformation Officer** | TATWEER MIDDLE EAST AND AFRICA L.L.C | United Arab Emirates | https://www.hubmub.com/jobs/873035/digital-transformation-officer
+- **Senior Manager - Change Management - Chalhoub Group** | Chalhoubgroup | United Arab Emirates | https://careers.chalhoubgroup.com/jobs/7340997-senior-manager-change-management
+- **Yasmine Rhezouani Inspiring Procurement Vision 2026** | Dubaileadersmagazine | United Arab Emirates | https://dubaileadersmagazine.com/yasmine-rhezouani-redefining-procurement-for-the-modern-enterprise/
+- **ÙØ·ÙÙØ¨ ÙØ¯ÙØ± Ø¹Ø§ÙÙÙ ÙØ£ÙØ¸ÙØ© Ø¥Ø¯Ø§Ø±Ø© Ø§ÙØ¨ÙØ§ÙØ§Øª ÙÙ ÙÙØ§ÙØ¦ Ø¯Ø¨Ù Ø§ÙØ¹Ø§ÙÙÙØ© - Ø¯Ø¨Ù 2026 (ÙØ¯Ù Ø·ÙØ¨Ù Ø§ÙØ¢Ù)** | Emiratalyoum | United Arab Emirates | https://jobs.emiratalyoum.com/2026/03/job-7-3.html
+- **Lead, Release & Cutover Management - Chalhoub Group** | Chalhoubgroup | United Arab Emirates | https://careers.chalhoubgroup.com/jobs/7383643-lead-release-cutover-management
+- **Careers** | Cisco | United Arab Emirates | https://jobs.cisco.com/jobs/ProjectDetail/Director-AI-Infrastructure-Program-UAE/1445900
+- **Abdullah Alswaha: The Visionary Leader Driving Saudi Arabiaâs Digital Future - Wasila** | Wasila | Saudi Arabia | https://wasila.blog/abdullah-alswaha-saudi-tech-minister-profile/
+- **Advanced IT Solution Riyadh for Digital Transformation | Castocus** | Castocus | Saudi Arabia | https://castocus.com/blogs/54579/Advanced-IT-Solution-Riyadh-for-Digital-Transformation
+- **Digital Transformation Strategy Senior Manager** | KPMG UK | Saudi Arabia | https://jobgether.com/offer/67e4670a211d0e724de91955-digital-transformation-strategy-senior-manager
+- **HRSD and Sumerge complete three digital transformation projects in Saudi Arabia - Technology news and insights in the Middle East, South Asia, and Africa** | Meatechwatch | Saudi Arabia | https://meatechwatch.com/2026/03/17/hrsd-and-sumerge-complete-three-digital-transformation-projects-in-saudi-arabia/
+- **MoL offers 325 digital services, records 250,000 transactions in February | The Peninsula Qatar** | Thepeninsulaqatar | Qatar | http://www.thepeninsulaqatar.com/article/13/03/2026/mol-offers-325-digital-services-records-250000-transactions-in-february
+- **Senior IT Project Manager Jobs in Qatar - Qatar Jobs | Qatarjobfinder.com** | Qatarjobfinder | Qatar | https://qatarjobfinder.com/job/nair-systems-qatar-full-time-senior-it-project-manager/
+- **Qatarâs payments market set for rapid growth as digital transactions accelerate | The Peninsula Qatar** | Thepeninsulaqatar | Qatar | https://www.thepeninsulaqatar.com/article/10/03/2026/qatars-payments-market-set-for-rapid-growth-as-digital-transactions-accelerate
+- **Thani Humanitarian enhances digital experience through partnerships | The Peninsula Qatar** | Thepeninsulaqatar | Qatar | https://thepeninsulaqatar.com/article/08/03/2026/thani-humanitarian-enhances-digital-experience-through-partnerships
+- **Labour Ministry completes over 250,000 transactions via e-portal in February | The Peninsula Qatar** | Thepeninsulaqatar | Qatar | https://www.thepeninsulaqatar.com/article/12/03/2026/labour-ministry-completes-over-250000-transactions-via-e-portal-in-february
+- **Oracle Cloud ERP Functional Architect	  | Doha | Alchemy GTS** | Alchemyrecruitment | Qatar | http://alchemyrecruitment.com/jobs/Oracle-Cloud-ERP-Functional-Architect-18437
+- **GTA confirms continuity of services through an advanced digital system | The Peninsula Qatar** | M | Qatar | http://m.thepeninsulaqatar.com/article/08/03/2026/gta-confirms-continuity-of-services-through-an-advanced-digital-system
+- **MoL offers 325 digital services, records 250,000 transactions in February | The Peninsula Qatar** | Thepeninsulaqatar | Qatar | https://www.thepeninsulaqatar.com/article/13/03/2026/mol-offers-325-digital-services-records-250000-transactions-in-february
+- **Senior Project Manager - Agile Coach Jobs in Qatar - Qatar Jobs | Qatarjobfinder.com** | Qatarjobfinder | Qatar | https://qatarjobfinder.com/job/nair-systems-qatar-full-time-senior-project-manager-agile-coach/
+- **KFH-Bahrain encourages corporate clients to adopt advanced digital banking services - Technology news and insights in the Middle East, South Asia, and Africa** | Meatechwatch | Bahrain | https://meatechwatch.com/2026/03/17/kfh-bahrain-encourages-corporate-clients-to-adopt-advanced-digital-banking-services/
+- **KFH-Bahrain encourages corporate clients to benefit from its advanced digital services** | Zawya | Bahrain | https://www.zawya.com/en/press-release/companies-news/kfh-bahrain-encourages-corporate-clients-to-benefit-from-its-advanced-digital-services-gi3cn4gm
+- **IT Idol Technologies Delivers Scalable Charitable Platform for RHF in Bahrain â Express Press Release Distribution** | Express-Press-Release | Bahrain | https://express-press-release.net/news/2026/03/17/1741942
+- **We Are Hiring: Digital Marketing Officer â Discover Your True Potential and Achieve the Impossible in Kuwait ÙØ­Ù ÙÙØ¸Ù: ÙØ³Ø¤ÙÙ ØªØ³ÙÙÙ Ø±ÙÙÙ Ø§ÙØªØ´Ù Ø¥ÙÙØ§ÙÙØ§ØªÙ Ø§ÙØ­ÙÙÙÙØ© ÙØ­ÙÙ Ø§ÙÙØ³ØªØ­ÙÙ ÙÙ Ø§ÙÙÙÙØª** | Kuwait | Kuwait | https://kuwait.el7far.com/2026/03/we-are-hiring-digital-marketing-officer.html
+- **MTCIT unveils new drive to expand digital economy** | Muscatdaily | Oman | https://www.muscatdaily.com/2026/03/10/mtcit-unveils-new-drive-to-expand-digital-economy/
+- **Sidigiqor â Digital Transformation Partner for GCC.** | Sidigiqor | Oman | https://sidigiqor.com/digital-transformation-partner-for-kuwait-oman-bahrain-uae-saudi-arabia-qatar/
+- **Alba promotes Bahraini nationals as part of succession planning strategy - Gulf News Journal** | Gulfnewsjournal | Bahrain | https://gulfnewsjournal.com/stories/alba-promotes-bahraini-nationals-as-part-of-succession-planning-strategy/
+- **Bahrain-Refinery-Expansion-Jobs-Mechanical-Electrical-Hvac-Analyzer-Kmu - GULF TODAY JOBS** | Gulftoday | Bahrain | https://www.gulftoday.in/2025/09/bahrain-refinery-expansion-jobs.html
+- **How Digital Innovation is Transforming Businesses in Kuwait â Kevin's Tech** | Kevinanderson39 | Kuwait | https://kevinanderson39.wordpress.com/2026/03/09/how-digital-innovation-is-transforming-businesses-in-kuwait/
+- **Operational Excellence: Senior Operations Manager Opportunity in Kuwait  /  ÙØ±ØµØ© ÙØ¸ÙÙÙØ© ÙÙØ¯ÙØ± Ø¹ÙÙÙØ§Øª Ø£ÙÙ ÙÙ Ø§ÙÙÙÙØª** | Kuwait | Kuwait | https://kuwait.el7far.com/2026/03/operational-excellence-senior.html
+- **Social Media Manager Needed for Immediate Hire in Kuwait  /  ÙØ·ÙÙØ¨ ÙØ³Ø¤ÙÙ ÙØ³Ø§Ø¦Ù ØªÙØ§ØµÙ Ø§Ø¬ØªÙØ§Ø¹Ù ÙÙØªØ¹ÙÙÙ Ø§ÙÙÙØ±Ù ÙÙ Ø§ÙÙÙÙØª** | Kuwait | Kuwait | https://kuwait.el7far.com/2026/03/social-media-manager-needed-for.html
+- **Boutiqaat, the leading e-commerce platform, announces 8 job openings in Kuwait in the following fields. Apply now and don't miss this opportunity!  /  Ø¨ÙØªÙÙØ§ØªØ Ø§ÙÙÙØµØ© Ø§ÙØ±Ø§Ø¦Ø¯Ø© ÙÙ ÙØ¬Ø§Ù Ø§ÙØªØ¬Ø§Ø±Ø© Ø§ÙØ¥ÙÙØªØ±ÙÙÙØ©Ø ØªØ¹ÙÙ Ø¹Ù 8 ÙØ¸Ø§Ø¦Ù Ø´Ø§ØºØ±Ø© ÙÙ Ø§ÙÙÙÙØª ÙÙ Ø§ÙØªØ®ØµØµØ§Øª Ø§ÙØªØ§ÙÙØ© . Ø¨Ø§Ø¯Ø± Ø¨Ø§ÙØªÙØ¯ÙÙ Ø§ÙØ¢Ù ÙÙØ§ ØªÙÙÙØª ÙØ°Ù Ø§ÙÙØ±ØµØ©!** | Kuwait | Kuwait | https://kuwait.el7far.com/2026/03/boutiqaat-leading-e-commerce-platform_18.html
+- **Ooredoo Kuwait | Company Profile - Revenue, Headcount, Tech Stack, Contacts** | Bitscale | Kuwait | https://bitscale.ai/directory/ooredoo-kuwait
+- **Ø´Ø§ØºØ± ÙØ¸ÙÙÙ Ø¨ÙØ¬Ø§Ù Ø§ÙØ­Ø³Ø§Ø¨Ø§Øª Ù Ø§ÙØ¨Ø±ÙØ¬Ø© ÙÙØªØ¹ÙÙÙ Ø§ÙÙÙØ±Ù ÙÙ Ø§ÙÙÙÙØª ÙÙØ´Ø§Ø±ÙØ¹ Ø§ÙØªØ­ÙÙ Ø§ÙØ±ÙÙÙ Ø§ÙØµØ­Ù** | Kuwait | Kuwait | https://kuwait.el7far.com/2026/03/blog-post_64.html
+- **Omanâs digital economy contributes RO 800 million to GDP; national programme targets 10% by 2040 - The Arabian Stories News** | Thearabianstories | Oman | https://www.thearabianstories.com/2026/03/10/omans-digital-economy-contributes-ro-800-million-to-gdp-national-programme-targets-10-by-2040/
+- **Oman digitizes over 2,000 government services in digital economy push** | Zawya | Oman | https://www.zawya.com/en/economy/gcc/oman-digitizes-over-2-000-government-services-in-digital-economy-push-jt00scqm
+- **Digital economy contributes RO 800m to Omanâs GDP - Oman Observer** | Omanobserver | Oman | https://www.omanobserver.om/article/1185874/business/economy/digital-economy-contributes-ro-800m-to-omans-gdp
+- **BankDhofar Launches Neo Corporate Internet Banking to Drive Omanâs Digital Finance Transformation** | Theouut | Oman | http://www.theouut.com/bankdhofar-launches-neo-corporate-internet-banking-to-drive-omans-digital-finance-transformation/
+- **MoCSY Launches Digital Innovation Award for Libraries in Oman - Technology news and insights in the Middle East, South Asia, and Africa** | Meatechwatch | Oman | https://meatechwatch.com/2026/03/16/mocsy-launches-digital-innovation-award-for-libraries-in-oman/
+- **BankDhofar Launches Neo CIB to Revolutionise Corporate Banking in Oman - Arageek** | En | Oman | https://en.arageek.com/bankdhofar-launches-neo-cib-to-revolutionise-corporate-banking-in-oman
+- **MoCSY launches Digital Innovation Award for Libraries - Oman Observer** | Omanobserver | Oman | https://www.omanobserver.om/article/1186187/oman/mocsy-launches-digital-innovation-award-for-libraries
+- **BankDhofar introduces Neo Corporate Internet Banking - Fintech News UAE** | Fintechnews | United Arab Emirates | https://fintechnews.media/2026/03/16/bankdhofar-introduces-neo-corporate-internet-banking/
+- **OHRC Launches AI-Based Digital Transformation Project - Arabian Daily News** | Arabiandaily | Oman | https://arabiandaily.com/ohrc-launches-ai-based-digital-transformation-project/
+- **Digital Transformation Jobs in Riyadh - 83 Vacancies Mar 2026** | Confidential | Saudi Arabia | https://www.naukrigulf.com/digital-transformation-jobs-in-riyadh
+- **Grid Resilience and Digital Intelligence** | UTEC | Saudi Arabia | https://www.linkedin.com/posts/wael-gad-advisor-matchmaking_energytransition-utec-vision2030-activity-7438226646010195969-Uebq
+- **Digital Quality Management Revolution: AI Driven Frameworks | Osman Aboud posted on the topic** | Confidential | Saudi Arabia | https://www.linkedin.com/posts/osmanaboud_the-future-of-quality-management-in-the-digital-activity-7435932107857772544-jRvB
+- **How HDFC Bank Is Reimagining Digital Banking** | Scale with AWS | Saudi Arabia | https://www.linkedin.com/posts/kiran-shetty-551386b_how-hdfc-bank-is-reimagining-digital-banking-activity-7436712716712615936-S1wz
+- **AppsFlyer appoints Alexia Nakad as GM for Western Europe and the Middle East - Campaign Middle East | Campaign Middle East** | Confidential | Saudi Arabia | https://www.linkedin.com/posts/campaignme_appsflyer-appoints-alexia-nakad-as-gm-for-activity-7437404283177717760-KDO9
+- **#banking #digitaltransformation #agile #leadership #innovation #mastercard #maib #ceebanking | Dmytro Musiienko** | Confidential | Saudi Arabia | https://www.linkedin.com/posts/dmitrymusiyenko_banking-digitaltransformation-agile-activity-7438907269708242944-4fVU
+- **job details** | Google | Saudi Arabia | https://www.google.com/about/careers/applications/jobs/results/112090308035912390-innovation-and-digital-transformation-lead
+- **Highest Paying Job Opportunities in Saudi Arabia - Y-Axis** | Y-Axis | Saudi Arabia | https://www.y-axis.com/visa/work/saudi-arabia/most-in-demand-occupations
+- **job details** | Google | Saudi Arabia | https://www.google.com/about/careers/applications/jobs/results/111714274992104134-digital-strategy-lead
+- **Search Jobs** | Google | Saudi Arabia | https://www.google.com/about/careers/applications/jobs/results?location=Saudi%20Arabia
+- **job details** | Google | Saudi Arabia | https://www.google.com/about/careers/applications/jobs/results/131717602324947654-sales-specialist-gotomarket-databases-google-cloud?location=Saudi+Arabia
+- **Digital Transformation jobs - Dubai** | Confidential | United Arab Emirates | https://www.michaelpage.ae/jobs/digital-transformation
+- **Transformation jobs - Dubai** | Efinancialcareers-Gulf | United Arab Emirates | https://www.efinancialcareers-gulf.com/jobs/transformation
+- **Hamzeh Mahmoud - National Center of Meteorology (NCM)** | Confidential | United Arab Emirates | https://hu.linkedin.com/in/hamzeh-mahmoud-aab47b177
+- **March Issue 2026 - Channel Post MEA | Melissa VÃ©lez** | Confidential | United Arab Emirates | https://www.linkedin.com/posts/melissavelezb_march-issue-2026-channel-post-mea-activity-7436318686187212805-axsb
+- **job details** | Google | United Arab Emirates | https://www.google.com/about/careers/applications/jobs/results/92567885104194246-digital-transformation-manager
+- **Dubai Careers** | Play | United Arab Emirates | https://play.google.com/store/apps/details?id=ae.gov.dsg.tjobs
+- **Jobs in Dubai & UAE Careers** | Play | United Arab Emirates | https://play.google.com/store/apps/details?id=com.jobsindubai.uaecareersapp&hl=en_US
+- **Job Search | Odgers** | En-Odgers | United Arab Emirates | https://en-careers.odgers.com/en-ca/job/31100/
+- **Careers** | Cisco | Saudi Arabia | https://jobs.cisco.com/jobs/ProjectDetail/Solutions-Engineer-Riyadh-KSA/1437831
+- **Senior Network Administrator Jobs in Qatar - Qatar Jobs | Qatarjobfinder.com** | Qatarjobfinder | Qatar | https://qatarjobfinder.com/job/nair-systems-qatar-full-time-senior-network-administrator/
+- **Senior Manager Business Finance - Planning & Analysis  | Doha | Alchemy GTS** | Alchemyrecruitment | Qatar | http://alchemyrecruitment.com/jobs/Senior-Manager-Business-Finance-Planning-and-Analysis-18970
+- **Bahrain: Northstar Telecom standardises broadband infrastructure with HFCLâs IO** | Zawya | Bahrain | https://www.zawya.com/en/business/technology-and-telecom/bahrain-northstar-telecom-standardises-broadband-infrastructure-with-hfcls-io-maemlaoa
+- **Bahrain: Northstar Telecom standardises broadband infrastructure with HFCLâs IO - Technology news and insights in the Middle East, South Asia, and Africa** | Meatechwatch | Bahrain | https://meatechwatch.com/2026/03/17/bahrain-northstar-telecom-standardises-broadband-infrastructure-with-hfcls-io/
+- **Senior MLOps Engineer (Contract)** | turingedge | Kuwait | https://jaabz.com/jobs/182118-senior-mlops-engineer-contract-role
+- **AI/ML Engineer, MLOps Engineer, Senior Data Scientist** | turingedge | Kuwait | https://jaabz.com/jobs/180702-aiml-professionals-contract-a-international-project
+- **IT System Administrator, Kuwaiti Company, iiQ8jobs | Senior IT Business Analyst Job in Kuwait â Salary KWD 1500â2000 | Business Process & Data Analysis Expert** | Latestjobvacancieskuwait | Kuwait | https://latestjobvacancieskuwait.blogspot.com/2020/10/it-system-administrator-kuwaiti-company.html
+- **New job announcement** | Diyar United Company in Kuwait (4 job opportunities)    /     Ø§Ø¹ÙØ§Ù ØªÙØ¸ÙÙ Ø¬Ø¯ÙØ¯ Ø¨Ø´Ø±ÙÙ Ø¯ÙØ§Ø± Ø§ÙÙØªØ­Ø¯Ù ÙÙ Ø§ÙÙÙÙØª  ( 4 ÙØ±Øµ Ø¹ÙÙ ) | Kuwait | https://kuwait.el7far.com/2026/03/new-job-announcement-at-diyar-united_18.html
+- **BankDhofar Launches Neo CIB - INTLBM** | Intlbm | Oman | https://intlbm.com/2026/03/16/bankdhofar-launches-neo-cib/
+- **BankDhofar introduces digital banking platform 'Neo CIB'** | Gccbusinessnews | Oman | https://www.gccbusinessnews.com/bankdhofar-introduces-neo-cib-platform/
+- **BankDhofar launches Neo Corporate Internet Banking platform - IBS Intelligence** | Ibsintelligence | Oman | https://ibsintelligence.com/ibsi-news/bankdhofar-launches-neo-corporate-internet-banking-platform/
+- **Althaf A - Eminence Soft** | Confidential | Saudi Arabia | https://uk.linkedin.com/in/althaf-a-70359215
+- **job details** | Google | Saudi Arabia | https://www.google.com/about/careers/applications/jobs/results/79696222519993030-chief-technology-officer
+- **job details** | Google | Saudi Arabia | https://www.google.com/about/careers/applications/jobs/results/134917505649910470-head-of-security-and-compliance-cloud-ciso?location=Saudi+Arabia
+- **Jobs search â Google Careers** | Google | Saudi Arabia | https://www.google.com/about/careers/applications/jobs/results/135518777298035398-chief-technology-officer
+- **job details** | Google | Saudi Arabia | https://www.google.com/about/careers/applications/jobs/results/79696222519993030-chief-technology-officer-public-sector-google-cloud-apac
+- **IN THE NEWS** | Sites | United Arab Emirates | https://sites.google.com/view/moasady/home
+- **Senior Infrastructure Platform Engineer** | squadhubs | United Arab Emirates | https://jaabz.com/jobs/178324-senior-infrastructure-platform-engineer
+- **Engineering job** | Airbus | Saudi Arabia | https://www.jsfirm.com/Engineering/System+Integration+Engineer/Riyadh-Ar+Riyad/jobID_1553743
+- **Strong Middle Test Engineer, Riyadh - Intellias** | Career | Saudi Arabia | https://career.intellias.com/vacancy/strong-middle-test-engineer-riyadh-29712/
+- **Atmaal Announces Administrative, Engineering, and Technical Jobs in Saudi Arabia** | En | Saudi Arabia | https://en.wazaefsaudi.com/2026/03/atmaal.html
+- **ELV Project Manager Jobs in Qatar - Qatar Jobs | Qatarjobfinder.com** | Qatarjobfinder | Qatar | https://qatarjobfinder.com/job/elv-project-manager-2/
+- **Careers** | Cisco | Qatar | https://jobs.cisco.com/jobs/ProjectDetail/Mechanical-Design-Engineer/1434151?tags=CDC+locations+asia+qatar
+- **Field Service Engineer â ABB Power Management System in Doha, Ad Dawhah, Qatar | ABB** | Abb | Qatar | https://careers.abb/global/en/job/JR00016752/Field-Service-Engineer-ABB-Power-Management-System
+- **Careers** | Cisco | Qatar | https://jobs.cisco.com/jobs/ProjectDetail/Senior-Director-of-Engineering/1443942
+- **Senior Full-Stack Engineer for Blockchain Payments Infrastructure** | stable | Bahrain | https://jaabz.com/jobs/176954-full-stack-engineer
+- **Gulf Engineering Company in Kuwait is hiring (5 new job postings with details below) - for work on major projects   /   Ø­ÙÙØ© ØªÙØ¸ÙÙ ÙØ´Ø±ÙØ© Ø§ÙØ®ÙÙØ¬ Ø§ÙÙÙØ¯Ø³ÙØ© ÙÙ Ø§ÙÙÙÙØª ( 5 Ø§Ø¹ÙØ§Ù ÙØ¸ÙÙÙ Ø¬Ø¯ÙØ¯ Ø¨Ø§ÙØªÙØ§ØµÙÙ Ø§ÙØ§ØªÙØ© )  - ÙÙØ¹ÙÙ ÙÙ ÙØ¨Ø±Ù Ø§ÙÙØ´Ø§Ø±ÙØ¹** | Kuwait | Kuwait | https://kuwait.el7far.com/2026/03/gulf-engineering-company-in-kuwait-is_16.html
+- **Job Advertisement: Senior Procurement Engineer. Make every day a new step toward excellence and creativity in Kuwait. Ø¥Ø¹ÙØ§Ù ÙØ¸ÙÙØ©: ÙØ¨ÙØ± ÙÙÙØ¯Ø³Ù Ø§ÙÙØ´ØªØ±ÙØ§Øª Ø§Ø¬Ø¹Ù ÙÙ ÙÙÙ ÙØ­Ø·Ø© Ø¬Ø¯ÙØ¯Ø© ÙØ­Ù Ø§ÙØªÙÙØ² ÙØ§ÙØ¥Ø¨Ø¯Ø§Ø¹ ÙÙ Ø§ÙÙÙÙØª** | Kuwait | Kuwait | https://kuwait.el7far.com/2026/03/job-advertisement-senior-procurement.html
+- **Be part of the major energy projects in northern Kuwait and apply now for the following specialization - Kuwait Oil Company EPF 50 project  /  ÙÙ Ø¬Ø²Ø¡Ø§Ù ÙÙ ÙØ´Ø§Ø±ÙØ¹ Ø§ÙØ·Ø§ÙØ© Ø§ÙÙØ¨Ø±Ù ÙÙ Ø´ÙØ§Ù Ø§ÙÙÙÙØª Ù ÙØ¯Ù Ø§ÙØ§Ù ÙÙØªØ®ØµØµ Ø§ÙØ§ØªÙ - ÙØ´Ø±ÙØ¹ (Ø´Ø±ÙØ© ÙÙØ· Ø§ÙÙÙÙØª EPF 50)** | Kuwait | Kuwait | https://kuwait.el7far.com/2026/03/be-part-of-major-energy-projects-in.html
+- **One of the leading engineering, procurement, and construction companies in Kuwait (Archirodon Group N.V. Construction Group) is currently recruiting for two positions with the following details.  /  Ø§Ø­Ø¯Ù Ø§ÙØ´Ø±ÙØ§Øª Ø§ÙØ±Ø§Ø¦Ø¯Ø© ÙÙ ÙØ¬Ø§Ù Ø§ÙÙÙØ¯Ø³Ø© ÙØ§ÙÙØ´ØªØ±ÙØ§Øª ÙØ§ÙØ¥ÙØ´Ø§Ø¡Ø§Øª ÙÙ Ø¯ÙÙØ© Ø§ÙÙÙÙØª  ( ÙØ¬ÙÙØ¹Ø© Ø£Ø±Ø´ÙØ±ÙØ¯ÙÙ Ø¥Ù.ÙÙ. ÙÙØ¥ÙØ´Ø§Ø¡Ø§Øª )  - ØªØ¬Ø±Ù Ø§ÙØ§Ù Ø§ÙØªØ¹ÙÙÙ ÙÙÙØµØ¨ÙÙ Ø¨Ø§ÙØªÙØ§ØµÙÙ Ø§ÙØªØ§ÙÙØ©** | Kuwait | Kuwait | https://kuwait.el7far.com/2026/03/one-of-leading-engineering-procurement_18.html
+- **O&G Engineering Kuwait: 2026 Careers & Trends** | Farmonaut | Kuwait | https://farmonaut.com/mining/og-engineering-kuwait-2026-careers-trends
+- **Mechanical Engineer Required â Build Your Future with Confident Steps Toward the Top in Kuwait ÙØ·ÙÙØ¨ ÙÙÙØ¯Ø³ ÙÙÙØ§ÙÙÙÙ Ø§ØµÙØ¹ ÙØ³ØªÙØ¨ÙÙ Ø¨Ø®Ø·ÙØ§Øª ÙØ§Ø«ÙØ© ÙØ­Ù Ø§ÙÙÙØ© ÙÙ Ø§ÙÙÙÙØª** | Kuwait | Kuwait | https://kuwait.el7far.com/2026/03/mechanical-engineer-required-build-your.html
+- **Engineers required immediately. Get ready for a professional experience that will completely change your life in Kuwait. ÙØ·ÙÙØ¨ ÙÙÙØ¯Ø³ÙÙ ÙÙØ±ÙØ§ Ø§Ø³ØªØ¹Ø¯ ÙØªØ¬Ø±Ø¨Ø© ÙÙÙÙØ© ØªØºÙØ± Ø­ÙØ§ØªÙ Ø¨Ø§ÙÙØ§ÙÙ ÙÙ Ø§ÙÙÙÙØª** | Kuwait | Kuwait | https://kuwait.el7far.com/2026/03/engineers-required-immediately-get.html
+- **Project Engineer/CCTV Technician/Driver Required In Hawally - Guru Kuwait** | Gurukuwait | Kuwait | https://gurukuwait.com/ads/project-engineer-cctv-technician-driver-required-in-hawally/
+- **HSE Engineer / Officer / Supervisor required. Open the door to opportunities and start an unforgettable journey in Kuwait. ÙØ·ÙÙØ¨ ÙÙÙØ¯Ø³ / ÙØ³Ø¤ÙÙ / ÙØ´Ø±Ù Ø³ÙØ§ÙØ© ÙØ¨ÙØ¦Ø© (HSE) Ø§ÙØªØ­ Ø¨Ø§Ø¨ Ø§ÙÙØ±Øµ ÙØ§Ø¨Ø¯Ø£ Ø±Ø­ÙØ© ÙØ§ ØªÙÙØ³Ù ÙÙ Ø§ÙÙÙÙØª** | Kuwait | Kuwait | https://kuwait.el7far.com/2026/03/hse-engineer-officer-supervisor.html
+- **Senior Software Engineer â Full Stack Developer in Thiruvananthapuram, Kerala, India | Software & Digital** | Quest Global | Oman | https://careers.quest-global.com/global/en/job/P-116760/Senior-Software-Engineer-Full-Stack-Developer
+- **Omani engineer develops AI-powered mobile unit to tackle industrial fires** | Muscatdaily | Oman | https://www.muscatdaily.com/2026/03/16/omani-engineer-develops-ai-powered-mobile-unit-to-tackle-industrial-fires/
+- **Most In-Demand Engineering Jobs in Saudi Arabia - (March 2026) - Qureos** | Qureos | Saudi Arabia | https://www.qureos.com/career-guide/engineering-jobs-in-saudi-arabia
+- **#fractionalleadership #startupscaling #vpengineering #leadership #hiring | Vish Rao Dumpeti** | Confidential | Saudi Arabia | https://www.linkedin.com/posts/vdumpeti_fractionalleadership-startupscaling-vpengineering-activity-7438939570425081856-0Rkn
+- **Most AI engineering teams are solving for the wrong environment.
+
+Clean APIs. Documented workflows. Technical buyers with budget authority and short decision cycles. A procurement process that movesâ¦ | Ayyoub El Amrani** | Confidential | Saudi Arabia | https://www.linkedin.com/posts/ayyoub-elamrani_most-ai-engineering-teams-are-solving-for-activity-7438213869166063616-CsJW
+- **Angel Rafael Gonzalez Lucena - Engineering Manager | Building the Future with AI & Automation | Transforming Ideas into Scalable Solutions** | Confidential | Saudi Arabia | https://cl.linkedin.com/in/angelrg94
+- **Excited to be joining Faros AI as a Forward Deployed Engineer.
+
+Faros was founded by the team behind Salesforce Einstein and is building a platform that gives engineering leaders visibility into theâ¦ | Ali Daya** | Confidential | Saudi Arabia | https://www.linkedin.com/posts/alidaya_excited-to-be-joining-faros-ai-as-a-forward-activity-7438348480529719296-a3hr
+- **job details** | Google | Saudi Arabia | https://careers.google.com/jobs/results/119199511246447302-vp-of-engineering
+- **Top cities in Saudi Arabia for expats starting a new job** | Fourwinds-Ksa | Saudi Arabia | https://www.fourwinds-ksa.com/top-cities-in-saudi-arabia-for-expats-starting-a-new-job
+- **IT Jobs in Saudi Arabia - 3438 Vacancies Mar 2026** | Confidential | Saudi Arabia | https://www.naukrigulf.com/it-jobs-in-saudi-arabia
+- **job details** | Google | Saudi Arabia | https://www.google.com/about/careers/applications/jobs/results/85278741487329990-vice-president
+- **What are the high demand jobs in the UAE in the next 10 years? - Y-Axis** | Y-Axis | United Arab Emirates | https://www.y-axis.com/overseas-jobs/most-in-demand-jobs-in-uae-for-the-next-10-years
+- **VP, Consumer Platform Engineering - B2C (Based in Dubai)** | Talents | United Arab Emirates | https://talents.studysmarter.co.uk/companies/property-finder/vp-consumer-platform-engineering-b2c-based-in-dubai-2465854
+- **DAMAC Properties** | Confidential | United Arab Emirates | https://np.linkedin.com/company/damac-properties
+- **#damac #uaeleadership | Troy Gilson** | Confidential | United Arab Emirates | https://www.linkedin.com/posts/troy-gilson-a9a4888_damac-uaeleadership-activity-7437811670573330432-hfvq
+- **Jumpstart your hiring with a $75 credit to sponsor your first job.*** | Translate | United Arab Emirates | https://translate.google.com/translate?u=https%3A%2F%2Fwww.indeed.com%2Fhire%2Fc%2Finfo%2Fvice-president-role&hl=hi&sl=en&tl=hi&client=srp
+- **Jumpstart your hiring with a $75 credit to sponsor your first job.*** | Translate | United Arab Emirates | https://translate.google.com/translate?client=wa&hl=es&sl=en&tl=es&u=https%3A%2F%2Fwww.indeed.com%2Fhire%2Fc%2Finfo%2Fvice-president-role
+- **Operations Manager** | Buzzon | United Arab Emirates | https://buzzon.khaleejtimes.com/classifieds/operations-manager/
+- **Fintech AI Strategy Lead - All your talent and recruitment needs | LibertyLoom Talent** | Libertyloomtalent | United Arab Emirates | https://libertyloomtalent.com/job/fintech-ai-strategy-lead-7/
+- **ØªÙØ¸ÙÙ Ø¹Ø§Ø¬Ù ÙÙ Ø§ÙÙÙÙØª ÙÙØ¯ÙØ± Ø¨Ø§ÙØªÙØ§ØµÙÙ Ø§ÙØªØ§ÙÙØ© - ÙØ¯ÙØ± Ø¹ÙÙÙØ§Øª / Ø±Ø¦ÙØ³ Ø§ÙØ¹ÙÙÙØ§Øª Ø§ÙØªØ´ØºÙÙÙØ©** | Kuwait | Kuwait | https://kuwait.el7far.com/2026/03/blog-post_93.html
+- **Loylogic Appoints CCO Adam Whatling | Saudi Shopper** | Saudishopper | Saudi Arabia | https://saudishopper.com.sa/en/loylogic-appoints-cco-adam-whatling-chief-commercial-officer/
+- **Careers** | Cisco | Saudi Arabia | https://jobs.cisco.com/jobs/ProjectDetail/Sr-Manager-Strategy-Planning-Office-of-the-CEO/1440947
+- **Senior Manager Business Support and Financial Control  | Doha | Alchemy GTS** | Alchemyrecruitment | Qatar | http://alchemyrecruitment.com/jobs/Senior-Manager-Business-Support-and-Financial-Control-18845
+- **Building Global Ambitions from Doha - Aumet** | Aumet | Qatar | https://aumet.com/en/building-global-ambitions-from-doha-aumet-adel-haddad/
+- **Hiring in Kuwait â Operations Manager  ÙØ·ÙÙØ¨ ÙØ¯ÙØ± Ø¹ÙÙÙØ§Øª ÙÙ Ø§ÙÙÙÙØª** | Kuwait | Kuwait | https://kuwait.el7far.com/2023/09/_79675.html
+- **Join the sales operations and customer service (CRM) team in Kuwait  /  Ø§ÙØ¶Ù Ø¥ÙÙ ÙØ±ÙÙ Ø¹ÙÙÙØ§Øª Ø§ÙÙØ¨ÙØ¹Ø§Øª ÙØ®Ø¯ÙØ© Ø§ÙØ¹ÙÙØ§Ø¡ (CRM) ÙÙ Ø§ÙÙÙÙØª** | Kuwait | Kuwait | https://kuwait.el7far.com/2026/03/join-sales-operations-and-customer.html
+- **ÙØ·ÙÙØ¨ ÙØ¯ÙØ± ØªØ³ÙÙÙ / Ø±Ø¦ÙØ³ ÙØ³Ù Ø§ÙØªØ³ÙÙÙ  ÙØ¨Ø±Ø§ÙØ¯ Ø±Ø§Ø¦Ø¯ ÙÙ Ø§ÙÙÙÙØª Ø¨Ø§ÙØªÙØ§ØµÙÙ Ø§ÙØªØ§ÙÙØ©** | Kuwait | Kuwait | https://kuwait.el7far.com/2026/03/blog-post_13.html
+- **Two job opportunities are available** | Best Al | Kuwait | https://kuwait.el7far.com/2026/03/two-job-opportunities-are-available-at_16.html
+- **Jazeera Airways welcomes new leadership to drive further strategic growth - Times Kuwait** | Timeskuwait | Kuwait | https://timeskuwait.com/jazeera-airways-welcomes-new-leadership-to-drive-further-strategic-growth/
+- **Important!! Al Mulla Group has launched a massive recruitment campaign that includes multiple specializations for urgent recruitment - 22 jobs - for all nationalities in Kuwait  /   ÙØ§Ø§Ø§Ø§Ù !! Ø¨Ø¯Ø£Øª  ÙØ¬ÙÙØ¹Ù Ø§ÙÙÙØ§  ÙÙ Ø­ÙÙØ© ØªÙØ¸ÙÙ Ø¶Ø®ÙØ© Ø´ÙÙØª ØªØ®ØµØµØ§Øª ÙØªØ¹Ø¯Ø¯Ø© ÙÙØªÙØ¸ÙÙ Ø§ÙØ¹Ø§Ø¬Ù - Ø¹Ø¯Ø¯ 22 ÙØ¸ÙÙØ© - ÙØ¬ÙÙØ¹ Ø§ÙØ¬ÙØ³ÙØ§Øª ÙÙ Ø§ÙÙÙÙØª** | Kuwait | Kuwait | https://kuwait.el7far.com/2026/03/important-al-mulla-group-has-launched_15.html
+- **STRATEGY AND PLANNING OFFICER - KCA University** | Myjobmag | Oman | https://www.myjobmag.co.ke/apply-now/1182657
+- **HOD: IT Strategy & Software Engineering Job Vacancy** | Vodacom | Oman | https://ajirayako.co.tz/jobs/hod-it-strategy-software-engineering-job-vacancy-at-vodacom/
+- **Job Description** | Gotogulf | Saudi Arabia | https://gotogulf.com/JobDescription.aspx?job_id=575151
+- **The Family Office Company BSC (c)** | Confidential | Saudi Arabia | https://zm.linkedin.com/company/the-family-office
+- **SAB** | Confidential | Saudi Arabia | https://nl.linkedin.com/company/alawwalsab
+- **Saudi Arabiaâs Export Lifeline Is Narrower Than Markets Think** | Confidential | Saudi Arabia | https://www.linkedin.com/pulse/saudi-arabias-export-lifeline-narrower-than-markets-widdershoven-3us8e
+- **job details** | Google | Saudi Arabia | https://careers.google.com/jobs/results/85675599820923590-head-of-strategy-and-operations
+- **job details** | Google | Saudi Arabia | https://www.google.com/about/careers/applications/jobs/results/86988438850413254-head-of-operations
+- **job details** | Google | Saudi Arabia | https://www.google.com/about/careers/applications/jobs/results/89985961554780870-strategy-and-operations-lead
+- **job details** | Google | Saudi Arabia | https://www.google.com/about/careers/applications/jobs/results/119934352971702982-scaled-operations-manager
+- **job details** | Google | Saudi Arabia | https://www.google.com/about/careers/applications/jobs/results/136626828394537670-chief-of-staff-gtech-ads-customer-experience
+- **âErica Octaviaâ - âFundamental Hospitalityâ** | Confidential | United Arab Emirates | https://ae.linkedin.com/in/erica-octavia-b794391a9
+- **SGS Al Safwan Gulf Security** | Confidential | United Arab Emirates | https://ng.linkedin.com/company/al-safwan-gulf-security
+- **Jobs search â Google Careers** | Google | United Arab Emirates | https://www.google.com/about/careers/applications/jobs/results/140729132584444614-vice-president-and-chief-of-staff
+- **Leadership  Team** | Google | United Arab Emirates | https://www.google.com/goto?url=CAESXwFKi_Je6hMG2-h81zxzrx7XWVdT3evsMhJ1oTtmifGl2ZE1V4InD51Td1qdqMWwAYgRQI0NjBKRhlJYhm4SX7PvUo-3y9NiX3HKRULXABnKkGH3SYF2IhfaYobVIBrr
+- **Dubai Financial Services Authority (DFSA)** | Google | United Arab Emirates | https://www.google.com/goto?url=CAESTgFKi_Jeg_ozZzVcEE1_tg2PABnM8Hk5L2-_pkvfsDh8Z4v-W-U2T7Y_nzJkmbhrZwH-wm7LNcdHn8hw8Bq344pX9EWengIgwj3r54FMNg==
+- **Program Manager** | TATWEER MIDDLE EAST AND AFRICA L.L.C | United Arab Emirates | https://www.hubmub.com/jobs/881738/program-manager
+- **[Hiring] Project Manager â Store Projects & Maintenance Dubai UAE | Gulf Career Hunt** | Gulfcareerhunt | United Arab Emirates | https://gulfcareerhunt.com/hiring-project-manager-store-projects-maintenance-dubai-uae/
+- **Football Operations Manager Jobs in Dubai 2026 - Apply Now** | Seasonalworkvisa | United Arab Emirates | https://seasonalworkvisa.com/football-operations-manager-jobs-in-dubai/
+- **Planning Manager Job in Dubai, UAE | LearnwithFaiz** | Learnwithfaiz | United Arab Emirates | https://learnwithfaiz.com/jobs/planning-manager-real-estate/
+- **ÙØ·ÙÙØ¨ ÙØ¯ÙØ± Ø¥Ø¯Ø§Ø±Ø© ÙØ­ÙØ¸Ø© Ø§ÙÙØ´Ø§Ø±ÙØ¹ ÙÙ ÙÙØ§ØµÙØ§Øª Ø§ÙØ¥ÙØ§Ø±Ø§Øª - Ø¯Ø¨Ù 2026 (ÙØ¥Ø­ØªÙØ§Ø¬ Ø¹Ø§Ø¬Ù)** | Emiratalyoum | United Arab Emirates | https://jobs.emiratalyoum.com/2026/03/job-17-2.html
+- **Program Manager** | SHAIKH TAHIR ALZAWI CHARITY ORGANISATION | United Arab Emirates | https://www.brightermonday.co.ke/listings/program-manager-20pqd2
+- **Dubai Future Experts Program 2026 â Dubai Future Foundation** | Dubaifuture | United Arab Emirates | https://www.dubaifuture.ae/deep-2026
+- **ÙØ·ÙÙØ¨ ÙØ¯ÙØ± ÙØ´Ø±ÙØ¹ â Ø§ÙØ±ÙØ§Ø¶ | ÙØ¸Ø§Ø¦Ù Ø§ÙØ³Ø¹ÙØ¯ÙØ©** | Wadhaef-Sa | Saudi Arabia | https://www.wadhaef-sa.com/348432.html
+- **Careers** | Cisco | Saudi Arabia | https://jobs.cisco.com/jobs/ProjectDetail/People-Communities-HR-Country-Consultant-KSA-Middle-East-Riyadh/1438968?tags=CDC+Prof+operations-and-support+project+program+management%7Clnkdn
+- **IT Project Manager - Consultant Jobs in Qatar - Qatar Jobs | Qatarjobfinder.com** | Qatarjobfinder | Qatar | https://qatarjobfinder.com/job/nair-systems-qatar-full-time-it-project-manager-consultant-new/
+- **Project Manager - Wholesale (Enablment) Jobs in Qatar - Qatar Jobs | Qatarjobfinder.com** | Qatarjobfinder | Qatar | https://qatarjobfinder.com/job/nair-systems-qatar-full-time-project-manager-wholesale-enablment/
+- **Senior Project Manager - Agile Coach** | Energy Job Search | Qatar | https://www.hubmub.com/jobs/880681/senior-project-manager-agile-coach
+- **Executive Assistant, Investment Management** | Isepartners | Qatar | https://www.isepartners.com/job/V-56077/Executive-Assistant-Investment-Management-job-in-Doha
+- **Program Manager â Inclusive Education** | KidsCare Kenya | Qatar | https://www.brightermonday.co.ke/listings/program-manager-inclusive-education-5d7z6n
+- **Senior PMO Analyst (1 Year Contract Renewable)** | Efinancialsg | Bahrain | https://www.efinancialcareers.sg/jobs-Singapore-Singapore-Senior_PMO_Analyst_1_Year_Contract_Renewable.id23166138
+- **Programme Lead (Ghana)** | BASICS International | Bahrain | https://www.jobberman.com.gh/listings/programme-lead-ghana-07rvxe
+- **Tamkeen Bahrain 2026: Latest Programs, Grants & How to Apply - Fin-Soul** | Fin-Soul | Bahrain | https://fin-soul.com/blog/tamkeen-bahrain-2/
+- **Urgently Required: Project Manager (Maintenance Experience) â¢ HVAC Supervisor â¢ Documentation Officer â Make This Moment the Launchpad for an Exceptional Future in Kuwait ÙØ·ÙÙØ¨ Ø¨Ø´ÙÙ Ø¹Ø§Ø¬Ù: ÙØ¯ÙØ± ÙØ´Ø±ÙØ¹ (Ø®Ø¨Ø±Ø© ÙÙ Ø§ÙØµÙØ§ÙØ©) â¢ ÙØ´Ø±Ù HVAC â¢ ÙØ³Ø¤ÙÙ ØªÙØ«ÙÙ Ø§Ø¬Ø¹Ù ÙØ°Ù Ø§ÙÙØ­Ø¸Ø© ÙÙØ·Ø© Ø§ÙØ§ÙØ·ÙØ§Ù ÙÙØ³ØªÙØ¨Ù Ø§Ø³ØªØ«ÙØ§Ø¦Ù ÙÙ Ø§ÙÙÙÙØª** | Kuwait | Kuwait | https://kuwait.el7far.com/2026/03/urgently-required-project-manager.html
+- **Project Manager, HVAC Foreman & Document Controller â Kuwait ÙØ¯ÙØ± ÙØ´Ø±ÙØ¹Ø ÙØ´Ø±Ù Ø£ÙØ¸ÙØ© Ø§ÙØªÙÙÙÙ ÙØ§ÙØªÙÙÙØ©Ø ÙÙØ³Ø¤ÙÙ Ø§ÙÙØ«Ø§Ø¦Ù â Ø§ÙÙÙÙØª** | Kuwait | Kuwait | https://kuwait.el7far.com/2024/08/_902.html
+- **General Manager required. Your next step toward success starts here in Kuwait. ÙØ·ÙÙØ¨ ÙØ¯ÙØ± Ø¹Ø§Ù Ø®Ø·ÙØªÙ Ø§ÙÙØ§Ø¯ÙØ© ÙØ­Ù Ø§ÙÙØ¬Ø§Ø­ ØªØ¨Ø¯Ø£ ÙÙØ§ ÙÙ Ø§ÙÙÙÙØª** | Kuwait | Kuwait | https://kuwait.el7far.com/2026/03/general-manager-required-your-next-step.html
+- **Primary Teachers â British International School, Kuwait â August 2026 Start job with ASQ INTERNATIONAL | 10044762** | Theguardian | Kuwait | http://jobs.theguardian.com/job/10044762/primary-teachers-british-international-school-kuwait-august-2026-start
+- **The New English School (NES) is conducting a massive recruitment campaign in Kuwait for various levels for the academic year 2026/2027 (20 job opportunities)  /  Ø§ÙÙØ¯Ø±Ø³Ø© Ø§ÙØ¥ÙØ¬ÙÙØ²ÙØ© Ø§ÙØ¬Ø¯ÙØ¯Ø© (NES) ØªØ¬Ø±Ù Ø¹ÙÙÙØ© ØªÙØ¸ÙÙ Ø¶Ø®ÙØ© ÙÙ Ø§ÙÙÙÙØª ÙÙØªØ¹ÙÙÙ Ø¨Ø§ÙÙØ±Ø§Ø­Ù Ø§ÙÙØ®ØªÙÙØ© ÙÙØ¹Ø§Ù Ø§ÙØ¯Ø§Ø±Ø³Ù 2026 / 2027 ( 20 ÙØ±ØµØ© Ø¹ÙÙ )** | Kuwait | Kuwait | https://kuwait.el7far.com/2026/02/the-new-english-school-nes-is_94.html
+- **Gulf British Academy in Kuwait is hiring 10 candidates for the 2026/2027 academic year - Apply now  /  Ø¥Ø¹ÙØ§Ù ØªÙØ¸ÙÙ ÙØ¯Ù Ø§ÙØ§Ø¯ÙÙÙØ© Ø§ÙØ®ÙÙØ¬ Ø§ÙØ¨Ø±ÙØ·Ø§ÙÙÙ ÙÙ Ø¯ÙÙØ© Ø§ÙÙÙÙØª ÙØªØ¹ÙÙÙ 10 ÙØ±Ø´Ø­ÙÙ ÙÙØ¹Ø§Ù Ø§ÙØ¯Ø±Ø§Ø³Ù 2026 /  2027  - ÙØ¯Ù Ø§ÙØ§Ù** | Kuwait | Kuwait | https://kuwait.el7far.com/2026/03/gulf-british-academy-in-kuwait-is.html
+- **Project Manager (Energy) - Muovo Job board** | Muovo | Oman | https://muovo.eu/jobs/13624-project-manager-energy-12151
+- **OPM official accused of keeping unearned overtime payments** | Timesofmalta | Oman | https://timesofmalta.com/article/opm-official-accused-of-keeping-unearned-overtime-payments.662835
+- **Muscat hints** | his plans, says he will not 'stop abruptly' | Oman | https://timesofmalta.com/articles/view/watch-biggest-open-space-project-in-a-generation-to-be-launched-in.708504
+- **Music Programmer - NMACC Job | Mumbai | Senior** | Expertia | Oman | https://www.expertia.ai/jioworldcentre/job/hiring-music-programmer-nmacc-67dbfc13b45e06bf85c62dbe
+- **Registration for RAMâs Etimad programme from today - Oman Observer** | Omanobserver | Oman | https://www.omanobserver.om/article/1186112/oman/registration-for-rams-etimad-programme-from-today
+- **3,000+ Project Management jobs in Saudi Arabia (166 new)** | Confidential | Saudi Arabia | https://www.linkedin.com/jobs/project-management-jobs-saudi-arabia
+- **With misinformation spreading rapidly, here are the facts:
+â¢ Prince Sultan Air Base was not hit.
+â¢ King Fahd Causeway linking Saudi Arabia and Bahrain was not hit .
+â¢ No oil infrastructure was hit.
+â¢â¦ | Moaid Mahjoub | 18 comments** | Confidential | Bahrain | https://www.linkedin.com/posts/moaid-mahjoub_with-misinformation-spreading-rapidly-here-activity-7436056158488002560-3ft3
+- **PMO Must-Haves in 2026: Strategic Alignment, Data-Driven Decisions, Agile Support | PreparationInfo posted on the topic** | Confidential | Saudi Arabia | https://www.linkedin.com/posts/preparationinfo_pmo-projectmanagement-leadership-activity-7438157529953751040-2bMM
+- **Saudi Arabia Redirects Arab Light Crude to Yanbu Port | Jamie Ingram posted on the topic** | Confidential | Saudi Arabia | https://www.linkedin.com/posts/jamie-ingram-87979626_saudi-arabias-hormuz-bypass-route-from-the-activity-7435999182080876544-ZfEG
+- **Project Manager jobs in Saudi Arabia - Dubai** | Confidential | Saudi Arabia | https://www.michaelpage.ae/jobs/project-manager/saudi-arabia
+- **Jobs search â Google Careers** | Google | Saudi Arabia | https://www.google.com/about/careers/applications/jobs/results/90573220419117766-director
+- **job details** | Google | Saudi Arabia | https://www.google.com/about/careers/applications/jobs/results/91234704706937542-director
+- **job details** | Google | Saudi Arabia | https://www.google.com/about/careers/applications/jobs/results/111901376451093190-technical-program-manager-hr-engineering-core-pmo
+- **job details** | Google | Saudi Arabia | https://www.google.com/about/careers/applications/jobs/results/114465934306878150-technical-program-manager-corp-eng-pmo-enterprise-platform-engineering
+- **Executive Job Details** | Allexecutivecom | United Arab Emirates | https://www.allexecutivejobs.com/pmo-director-job-Dubai-45860
+- **4,000+ Project Management jobs in United Arab Emirates (125 new)** | Confidential | United Arab Emirates | https://www.linkedin.com/jobs/project-management-jobs-united-arab-emirates
+- **Roads and Transport Authority** | Confidential | United Arab Emirates | https://gr.linkedin.com/company/road-and-transport-authority
+- **#abudhabifuturehealthsummit2026 #adfhs2026 #meetmeatadneccentre | Mazin Gadir PhD MSc BEng PMP Prosci LSSGB EBAS Agile** | Confidential | United Arab Emirates | https://www.linkedin.com/posts/mazin-gadir-phd-msc-beng-b4a4533_abudhabifuturehealthsummit2026-adfhs2026-activity-7437067931156480000-MBVR
+- **499 Program Manager jobs in Dubai, United Arab Emirates (33 new)** | Confidential | United Arab Emirates | https://www.linkedin.com/jobs/search
+- **job details** | Google | United Arab Emirates | https://www.google.com/about/careers/applications/jobs/results/108660922007855814-director
+- **job details** | Google | United Arab Emirates | https://careers.google.com/jobs/results/93538478322524870-legal-program-manager
+- **Preparing Future Innovators: Zubair Ahmadâs Vision for Springdales School Dubai - Edarabia** | Edarabia | United Arab Emirates | https://www.edarabia.com/preparing-future-innovators-zubair-ahmads-vision-springdales-school-dubai/
+- **Open World names Dr. Al-Khaldi to lead Saudi RWA tokenization hub** | Cryptobreaking | Saudi Arabia | https://www.cryptobreaking.com/open-world-names-dr-al/
+- **RWA Tokenization Center Launches in Saudi Arabia | Saudi Shopper** | Saudishopper | Saudi Arabia | https://saudishopper.com.sa/en/open-world-rwa-tokenization-center-saudi-arabia-al-khaldi/
+- **Saudi Arabia's GASTAT introduces Innovation Lab Platform** | Gccbusinessnews | Saudi Arabia | https://www.gccbusinessnews.com/gastat-introduces-innovation-lab-platform/
+- **Mohammad Alfehaid: 5 Powerful Strategies for Sustainable Growth** | Insightssuccessmagazine | Saudi Arabia | https://insightssuccessmagazine.com/mohammad-alfehaid/
+- **Directeur Transformation et Innovation (H/F)** | Maremploi | Saudi Arabia | https://maremploi.com/emploi/directeur-transformation-et-innovation-h-f/
+- **Moza Al Kuwari on Leadership, Compliance and Growth** | Businessleadersme | Qatar | https://businessleadersme.com/moza-ghaith-al-kuwari-doha-bank-leadership-journey/
+- **Qatar** | Hundred | Qatar | https://hundred.org/en/qatar
+- **Education House Live from Doha: AI for Human Flourishing & Global Collection 2026 Celebration** | Hundred | Qatar | https://hundred.org/en/events/education-house-live-from-doha-ai-for-human-flourishing-global-collection-2026-celebration
+- **QatarâUkraine Forum shapes future of learning, innovation - Gulf Times** | Gulf-Times | Qatar | https://www.gulf-times.com/article/722321/qatar/qatarukraine-forum-shapes-future-of-learning-innovation
+- **International Conference on Advances in Digital Education ICADE on March 09-10, 2026 in Doha, Qatar** | Conferenceindex | Qatar | https://conferenceindex.org/event/international-conference-on-advances-in-digital-education-icade-2026-march-doha-qa
+- **INNOVATION AND DIGITAL TRANSFORMATION MANAGER - Zimpost | Jobs in Zimbabwe - Get daily and latest job vacancies in Zimbabwe** | Jobszimbabwe | Bahrain | https://jobszimbabwe.co.zw/jobs/innovation-and-digital-transformation-manager-zimpost/
+- **Join The First Group Hotels in Bahrain** | Dragoncityapk | Bahrain | https://dragoncityapk.com/join-the-first-group-hotels-in-bahrain-3/
+- **HRH Princess Sabeeka Global Award for Women's Empowerment** | Youthop | Bahrain | https://www.youthop.com/competitions/awards/the-hrh-global-award-for-womens-empowerment-2026
+- **The American Creativity Academy announces 8 vacancies for the 2025 academic year in Kuwait With a very attractive salary of up to $3,500, tax-free    /       ØªØ¹ÙÙ Ø§ÙØ§Ø¯ÙÙÙØ© Ø§ÙØ§Ø¨Ø¯Ø§Ø¹ Ø§ÙØ§ÙØ±ÙÙÙØ© Ø¹Ù 8 ÙØ¸Ø§Ø¦Ù Ø´Ø§ØºØ±Ø© ÙÙØ¹Ø§Ù Ø§ÙØ¯Ø±Ø§Ø³Ù 2025 ÙÙ Ø§ÙÙÙÙØª ÙØ¨Ø±Ø§ØªØ¨ ÙÙÙØ²Ø© Ø¬Ø¯Ø§ ØªØµÙ Ø§ÙÙ 3500  Ø¯ÙÙØ§Ø± ÙØ¹Ø§ÙØ§Ù ÙÙ Ø§ÙØ¶Ø±Ø§Ø¦Ø¨** | Kuwait | Kuwait | https://kuwait.el7far.com/2026/02/the-american-creativity-academy_72.html
+- **ØªØ¹ÙÙ ÙØ¯Ø±Ø³Ø© Ø§ÙØªÙÙÙ Ø§ÙÙÙØ¯ÙØ© Ø¹Ù ÙØ±ØµØ© Ø¹ÙÙ ÙÙÙØ²Ø© ÙÙØªØ¹ÙÙÙ Ø§ÙÙÙØ±Ù ÙÙ Ø§ÙÙÙÙØª   /  Indian Excellence School announces a distinguished job opportunity for immediate appointment in Kuwait** | Kuwait | Kuwait | https://kuwait.el7far.com/2026/03/indian-excellence-school-announces.html
+- **Transformation Specialist** | Betsson | Oman | https://sportstechjobs.com/transformation-specialist-betsson/69ba84df26d30b9052d32728
+- **In-Country Technical Lead Maldives | GBPN Job Opportunity** | Gbpn | Oman | https://gbpn.org/in-country-technical-lead-maldives/
+- **New space tech hub to be set up in Al Hajar Al Gharbi reserve** | Muscatdaily | Oman | https://www.muscatdaily.com/2026/03/17/new-space-tech-hub-to-be-set-up-in-al-hajar-al-gharbi-reserve/
+- **Muscat's Global Playbook for Competitive Business Districts: What It Means for Investors and Entrepreneurs in Oman | Omanet** | Omanet | Oman | https://omanet.om/en/news/economy/muscat-global-business-district-strategy/
+- **Sohar University Wins First Place** | Hammat Competition | Oman | https://www.su.edu.om/sohar-university-wins-first-place-at-hammat-competition/
+- **Senior Manager - Transformation - Systems and Digital transformation** | Wuzzuf | Saudi Arabia | https://wuzzuf.net/jobs/p/G0QOqpqz8zX4-Senior-Manager---Transformation---Systems-and-Digital-transformation-NEOM-Riyadh-Saudi-Arabia
+- **The world of work and talent is changing fast, and organisations are under increasing pressure to find smarter ways to attract, engage, hire and develop people.
+
+Against that backdrop, and as weâ¦ | Simon Reichwald** | Confidential | Saudi Arabia | https://www.linkedin.com/posts/simonreichwald_the-world-of-work-and-talent-is-changing-activity-7439613263304155136-noFi
+- **job details** | Google | Saudi Arabia | https://careers.google.com/jobs/results/81338692169278150-data-transformation-lead
+- **Change And Transformation jobs in United Arab Emirates (59)** | Efinancialcom | United Arab Emirates | https://www.efinancialcareers.com/jobs/change-and-transformation/in-united-arab-emirates
+- **job details** | Google | United Arab Emirates | https://www.google.com/about/careers/applications/jobs/results/99242475809317574-senior-data-transformation-lead
+- **job details** | Google | United Arab Emirates | https://www.google.com/about/careers/applications/jobs/results/118673962539328198-data-transformation-lead
+- **Emirates NBD - The Digital Banker** | Thedigitalbanker | United Arab Emirates | https://thedigitalbanker.com/tag/emirates-nbd/
+- **Emirates NBD modernises core pricing with Zafin to enhance agility and customer experience - The Digital Banker** | Thedigitalbanker | United Arab Emirates | https://thedigitalbanker.com/emirates-nbd-modernises-core-pricing-with-zafin-to-enhance-agility-and-customer-experience/
+- **Future of Digital Banking in UAE: Fintech Trends 2026** | Taskmastergulf | United Arab Emirates | https://taskmastergulf.com/future-digital-banking-uae-fintech/
+- **Product Manager (Treasury Product) job in Abu Dhabi, United Arab Emirates - Bybit jobs | Fintech Careers** | Fintechcom | United Arab Emirates | https://www.fintechcareers.com/job/27377/product-manager-treasury-product-abu-dhabi/
+- **Fintech Recruitment Agency in Dubai | Quantalent AI 2026** | Quantalent | United Arab Emirates | https://www.quantalent.ai/resources/fintech-recruitment-agency-dubai
+- **Interview: D360 Bank redefines cyber security for Saudi Arabiaâs cashless future | Computer Weekly** | Computerweekly | Saudi Arabia | https://www.computerweekly.com/news/366640362/Interview-D360-Bank-redefines-cyber-security-for-Saudi-Arabias-cashless-future
+- **What is Growth Strategy and Future Prospects of Riyad Bank Company? â MatrixBCG.com** | Matrixbcg | Saudi Arabia | https://matrixbcg.com/blogs/growth-strategy/riyadbank
+- **Manager SI - Digital : Recrutement Bank Assafa 2026** | Alouadifa | Saudi Arabia | https://alouadifa.ma/emploi-prive/manager-si-digital-recrutement-bank-assafa-2026/
+- **What are Mission Vision & Core Values of Riyad Bank Company? â MatrixBCG.com** | Matrixbcg | Saudi Arabia | https://matrixbcg.com/blogs/mission/riyadbank
+- **Qatarâs payments market set for rapid growth as digital transactions accelerate | The Peninsula Qatar** | Thepeninsulaqatar | Qatar | http://www.thepeninsulaqatar.com/article/10/03/2026/qatars-payments-market-set-for-rapid-growth-as-digital-transactions-accelerate
+- **What is Sales and Marketing Strategy of Qatar Islamic Bank Company? â MatrixBCG.com** | Matrixbcg | Qatar | https://matrixbcg.com/blogs/marketing-strategy/qib
+- **What is Growth Strategy and Future Prospects of Qatar Islamic Bank Company? â MatrixBCG.com** | Matrixbcg | Qatar | https://matrixbcg.com/blogs/growth-strategy/qib
+- **Digital Product Manager Lead â Career & Professional Development | University of Miami** | Herbert | Qatar | https://careers.herbert.miami.edu/jobs/the-pnc-financial-services-group-digital-product-manager-lead/
+- **QFEX 2026 Positions Doha as a Global Meeting Point for Fintech, Innovation, and Digital Transformation** | Coinidol | Qatar | https://coinidol.com/qfex-2026-positions-doha/
+- **Flooss partners with Optty to expand digital consumer financing** | checkout across the GCC | Bahrain | https://www.zawya.com/en/press-release/companies-news/flooss-partners-with-optty-to-expand-digital-consumer-financing-at-checkout-across-the-gcc-m8p5j4ld
+- **KIB confirms the continued delivery of its banking services with high efficiency | Al Bawaba** | Albawaba | Kuwait | https://www.albawaba.com/business/pr/kib-confirms-continued-delivery-its-1623400
+- **Al Ahli Bank of Kuwait â Egypt launches the upgraded Internet & Mobile Banking Services - Ø¨Ø±ÙØ¨Ø±ØªÙ Ø¨ÙØ³** | Propertypluseg | Kuwait | https://propertypluseg.com/al-ahli-bank-of-kuwait-egypt-launches-the-upgraded-internet-mobile-banking-services/
+- **International Turnkey Systems - ITS | Company Profile - Revenue, Headcount, Tech Stack, Contacts** | Bitscale | Kuwait | https://bitscale.ai/directory/international-turnkey-systems-its
+- **Fintech Innovation- Digital Finance Strategy & Financial Ecosystem Development -  Jobs Cyprus |  Jobs Limassol** | Employsolution | Kuwait | https://www.employsolution.com/jobs/fintech-innovation-digital-finance-strategy-financial-ecosystem-development/
+- **Go Digital with your Eidiya with Bank Muscat - The Arabian Stories News** | Thearabianstories | Oman | https://www.thearabianstories.com/2026/03/17/go-digital-with-your-eidiya-with-bank-muscat/
+- **Bank Muscat and Muscat Finance announce partnership to activate e-mandate service - The Arabian Stories News** | Thearabianstories | Oman | https://www.thearabianstories.com/2026/03/16/bank-muscat-and-muscat-finance-announce-partnership-to-activate-e-mandate-service/
+- **Portfolio Lead - Digital Banking with 6 - 8 Years of Experience** | Riyad Bank in Saudi Arabia,Riyadh | Saudi Arabia | https://www.founditgulf.com/job/portfolio-lead-digital-banking-riyad-bank-saudi-arabia-42722519
+- **Top 5 Digital Banks and Neobanks in Saudi Arabia in 2026** | Fintechnews | Saudi Arabia | https://fintechnews.ae/10510/saudi/top-digital-banks-in-saudi-arabia-you-need-to-know
+- **100 Fintech Digital Banking Regulated Financial Services Jobs vacancies in Gulf - Feb (2026)** | Founditgulf | Saudi Arabia | https://www.founditgulf.com/search/fintech-digital-banking-regulated-financial-services-jobs
+- **South Florida credit union adds C-suite executives - South Florida Business Journal | Eman Elshahawy** | Confidential | Saudi Arabia | https://www.linkedin.com/posts/eman-elshahawy-2b9045170_south-florida-credit-union-adds-c-suite-executives-activity-7437176054739435521-aeQX
+- **easypaisa digital bank digital bank I want to file a complaint against Ahmer Zeb. He contacted me using his personal phone number and told me that my amount would be reversed. However, the complaintâ¦ | Talal Butt â­** | Confidential | Saudi Arabia | https://www.linkedin.com/posts/talalbutt7_easypaisa-digital-bank-digital-bank-i-want-activity-7438126337321484288-G22y
+- **Top trending careers in the UAE for 2026 - GBS Dubai** | Gbs | United Arab Emirates | https://gbs.ac.ae/blog/top-trending-careers-in-the-uae-for-2026
+- **Digital Banking Lead Jobs in Dubai, United Arab Emirates** | Talentmate | United Arab Emirates | https://www.talentmate.com/jobs/uae/dubai/digital-banking-lead/2508-2775-18
+- **ENBD X - Apps on Google Play** | Play | United Arab Emirates | https://play.google.com/store/apps/details?hl=en_US&id=com.emiratesnbd.android
+- **DIB MOBILE - Apps on Google Play** | Play | United Arab Emirates | https://play.google.com/store/apps/details?id=com.dib.app&hl=en
+
+## skip-word (16)
+
+- **Director of Information Security - GRC (Governance, Risk & Compliance) - Chalhoub Group** | Chalhoubgroup | United Arab Emirates | https://careers.chalhoubgroup.com/jobs/7367025-director-of-information-security-grc-governance-risk-compliance
+- **Managing Director Job in Dubai | DNA Recruit** | Dnarecruit | United Arab Emirates | https://www.dnarecruit.com/jobs/managing-director-dubai-37705574
+- **Markel Group Inc. Appoints Phil Jones as Chief Information Officer, International, Effective 11 March 2026 | MarketScreener Saudi Arabia** | Sa | Saudi Arabia | https://sa.marketscreener.com/news/markel-group-inc-appoints-phil-jones-as-chief-information-officer-international-effective-11-marc-ce7e5fd3d18df52c
+- **HUMAIN Appoints Hani Alahdal as New Chief Human Resources Officer, ETHRWorldEMEA** | Hrme | Saudi Arabia | https://hrme.economictimes.indiatimes.com/news/industry/humain-appoints-hani-alahdal-as-new-chief-human-resources-officer/129315386
+- **Salary: Vp Of Engineering (March, 2026) United States - ZipRecruiter** | Confidential | Saudi Arabia | https://www.ziprecruiter.com/Salaries/Vp-Of-Engineering-Salary
+- **#leadership #construction #kortech #egyptinfrastructure #mep #projectmanagement #strategicturnaround #engineeringexcellence #theceonetwork #megaprojects | The CEO Network | 15 comments** | Confidential | Saudi Arabia | https://www.linkedin.com/posts/theceomagazine_leadership-construction-kortech-activity-7438252560727314432-JI1k
+- **Head of HR - Real Estate 
+
+We are currently hiring for a Head of Human Resources to join a leading Real Estate Developer in the UAE. 
+
+This is a senior leadership opportunity for an HR professionalâ¦ | Dr. Amir Basharat Butt** | Confidential | United Arab Emirates | https://www.linkedin.com/posts/dr-amir-basharat-butt-12a5336b_head-of-hr-real-estate-we-are-currently-activity-7439664771173449728-9g-A
+- **Brand New Chief Operating Officer (COO) Job Lead - Leading hospitality management company with 65+ hotels and 12,000+ rooms** | Leading-Hoteliers | United Arab Emirates | https://www.leading-hoteliers.com/post/brand-new-chief-operating-officer-coo-job-lead-leading-hospitality-management-company-with-65-h
+- **Chief Strategy Officer, fundraising focus | Remote Jobs USA** | Careerbox | United Arab Emirates | https://careerbox.42web.io/job/chief-strategy-officer-fundraising-focus-4
+- **CFO - The Global Search Company** | Theglobalsearchcompany | United Arab Emirates | https://theglobalsearchcompany.com/jobs/cfo-4/
+- **Senior job opportunities in the oil and gas sector in Kuwait for 2026 - We are seeking to hire a Senior Security and Safety Officer / Accountant / Procurement Officer  /  ÙØ±Øµ ÙØ¸ÙÙÙØ© ÙÙØ§Ø¯ÙØ© ÙÙ ÙØ·Ø§Ø¹ Ø§ÙÙÙØ· ÙØ§ÙØºØ§Ø² Ø¨Ø§ÙÙÙÙØª ÙØ¹Ø§Ù 2026 - ÙØ·ÙØ¨ ØªØ¹ÙÙÙ ÙØ³Ø¤ÙÙ Ø£ÙÙ ÙØ³ÙØ§ÙØ© Ø£ÙÙ / ÙØ­Ø§Ø³Ø¨ / ÙØ³Ø¤ÙÙ ÙØ´ØªØ±ÙØ§Øª** | Kuwait | Kuwait | https://kuwait.el7far.com/2026/03/senior-job-opportunities-in-oil-and-gas_16.html
+- **Administration and Tenders Coordinator Required â An Unmissable Opportunity to Develop Your Skills and Achieve Your Ambitions in Kuwait ÙØ·ÙÙØ¨ ÙÙØ³Ù Ø¥Ø¯Ø§Ø±Ø© ÙÙÙØ§ÙØµØ§Øª ÙØ±ØµØ© ÙØ§ ØªØ¹ÙÙØ¶ ÙØªØ·ÙÙØ± ÙÙØ§Ø±Ø§ØªÙ ÙØªØ­ÙÙÙ Ø·ÙÙØ­Ø§ØªÙ ÙÙ Ø§ÙÙÙÙØª** | Kuwait | Kuwait | https://kuwait.el7far.com/2026/03/administration-and-tenders-coordinator.html
+- **Radisson Hotel Group promotes Tim Cordon to Chief Operating Officer, Middle East & Africa - Hoteliers in Gulf | Hospitality News, Hotel Openings & Leadership Appointments in the Middle East** | Hoteliersingulf | Oman | https://hoteliersingulf.com/radisson-hotel-group-promotes-tim-cordon-coo-middle-east-africa
+- **Plume Strengthens Regulatory Foundation with New Compliance Director | Teddy Pornprinya posted on the topic** | Confidential | Saudi Arabia | https://www.linkedin.com/posts/teddy-pornprinya-b22b40a9_we-are-continuing-to-strengthen-our-regulatory-activity-7435720865079668736-kyvU
+- **A bit of personal news - Iâm thrilled to say that Iâve been appointed as Hounslowâs new Executive Director for Placemaking and Housing. 
+
+Thrilled to get the opportunity to lead the extraordinaryâ¦ | Peter O'Brien | 152 comments** | Confidential | Saudi Arabia | https://www.linkedin.com/posts/placefutures_a-bit-of-personal-news-im-thrilled-to-activity-7437157032564117504-5-Tn
+- **Director, Data Analytics - Risk & Fraud | Viber** | Viber | Saudi Arabia | https://www.viber.com/en/careers/director-data-analytics-risk-fraud/
+

@@ -1,0 +1,148 @@
+types:
+  # --- PEOPLE & ORGS ---
+  Person:
+    required: [name]
+    properties:
+      name: string
+      title: string
+      email: string
+      phone: string
+      linkedin_url: string
+      company: string       # ref to Organization id
+      source: string        # linkedin, referral, event
+      notes: string
+
+  Organization:
+    required: [name]
+    properties:
+      name: string
+      industry: string      # healthtech, fintech, pmo, consulting, etc.
+      location: string
+      website: string
+      linkedin_url: string
+      notes: string
+
+  # --- JOB SEARCH ---
+  JobApplication:
+    required: [title, company, status]
+    properties:
+      title: string
+      company: string       # ref to Organization id
+      status: string
+      status_enum: [applied, interview, offer, rejected, withdrawn]
+      date_applied: string
+      follow_up_date: string
+      interview_date: string
+      location: string
+      fit_score: string
+      linkedin_url: string
+      applied_via: string
+      cv_document: string   # ref to Document id
+      notes: string
+
+  # --- CONTENT ---
+  LinkedInPost:
+    required: [title, status]
+    properties:
+      title: string
+      hook: string
+      body: string
+      topic: string
+      status: string
+      status_enum: [idea, draft, scheduled, posted, skipped]
+      planned_date: string
+      posted_date: string
+      post_url: string
+      image_url: string
+      impressions: number
+      engagement: number
+      notes: string
+
+  # --- OUTREACH ---
+  Outreach:
+    required: [person, status]
+    properties:
+      person: string        # ref to Person id
+      company: string       # ref to Organization id
+      type: string          # job_lead, networking, partnership
+      status: string
+      status_enum: [researched, connection_sent, connected, messaged, replied, warm, cold, dead]
+      source: string
+      personal_angle: string
+      next_action: string
+      priority: string
+      priority_enum: [high, normal, low]
+      date_contacted: string
+      last_interaction: string
+      follow_up_date: string
+      notes: string
+
+  # --- TASKS ---
+  Task:
+    required: [title, status]
+    properties:
+      title: string
+      status: string
+      status_enum: [open, in_progress, blocked, done]
+      priority: string
+      priority_enum: [high, medium, low]
+      due_date: string
+      agent: string
+      category: string      # cv, content, outreach, research, pmo
+      notes: string
+
+  # --- DOCUMENTS ---
+  Document:
+    required: [title, type]
+    properties:
+      title: string
+      type: string
+      type_enum: [cv, cover_letter, report, script, research]
+      path: string
+      url: string
+      version: string
+      related_application: string   # ref to JobApplication id
+      created_date: string
+      notes: string
+
+relations:
+  # Person <-> Organization
+  works_at:
+    from_types: [Person]
+    to_types: [Organization]
+    cardinality: many_to_one
+
+  # JobApplication <-> Organization
+  applied_to:
+    from_types: [JobApplication]
+    to_types: [Organization]
+    cardinality: many_to_one
+
+  # JobApplication <-> Document (CV used)
+  used_cv:
+    from_types: [JobApplication]
+    to_types: [Document]
+    cardinality: many_to_one
+
+  # Outreach <-> Person
+  targets:
+    from_types: [Outreach]
+    to_types: [Person]
+    cardinality: many_to_one
+
+  # Outreach <-> JobApplication (outreach that led to application)
+  led_to:
+    from_types: [Outreach]
+    to_types: [JobApplication]
+    cardinality: many_to_one
+
+  # Task <-> JobApplication (task supporting an application)
+  supports:
+    from_types: [Task]
+    to_types: [JobApplication, LinkedInPost, Outreach]
+    cardinality: many_to_one
+
+  # LinkedInPost <-> Person (inspired by / mentions)
+  mentions:
+    from_types: [LinkedInPost]
+    to_types: [Person, Organization]

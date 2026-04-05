@@ -1,0 +1,11 @@
+{
+  "checked_at": "2026-04-05T05:00:29.358540+02:00",
+  "issues": [],
+  "ok": [
+    "Notion: OK - 100 results from RSS DB",
+    "Notion write: Write-capable",
+    "Telegram bot 'NasrOpenClawnBot': OK",
+    "RSS: RSS feeds responding"
+  ],
+  "status": "ok"
+}

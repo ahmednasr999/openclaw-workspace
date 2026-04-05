@@ -1,0 +1,61 @@
+{
+  "meta": {
+    "agent": "pipeline-agent",
+    "version": "1.0.0",
+    "generated_at": "2026-04-05T06:00:15.956212+02:00",
+    "duration_ms": 14019,
+    "ttl_hours": 6,
+    "status": "partial",
+    "error": "name 'notion_req' is not defined",
+    "run_id": "3789e404",
+    "retries_used": 0,
+    "data_freshness": "stale"
+  },
+  "data": {
+    "total_applications": 452,
+    "active_count": 172,
+    "external_applied_count": 122,
+    "db_total": 1527,
+    "db_funnel": {
+      "discovered": 872,
+      "scored": 389,
+      "applied": 172,
+      "cv_built": 91,
+      "expired": 1,
+      "rejected": 1,
+      "response": 1,
+      "_total": 1527
+    },
+    "by_status": {
+      "cv built": 65,
+      "\u2705 applied": 81,
+      "applied": 91,
+      "\u274c rejected": 1,
+      "\ud83d\udd0d discovered": 215,
+      "\ud83d\udccb recommended": 10,
+      "\ud83d\udccb scored": 203,
+      "response": 1,
+      "discovered": 91
+    },
+    "this_week": {
+      "applied": 0,
+      "start_date": "2026-03-30"
+    },
+    "stale_applications": [],
+    "interviews_upcoming": [],
+    "follow_ups_overdue": [],
+    "conversion_funnel": {
+      "applied": 172,
+      "screening": 0,
+      "interview": 0,
+      "offer": 0,
+      "rates": {
+        "applied_to_screening": 0.0,
+        "screening_to_interview": 0.0,
+        "interview_to_offer": 0.0
+      }
+    }
+  },
+  "kpi": {},
+  "recommendations": []
+}

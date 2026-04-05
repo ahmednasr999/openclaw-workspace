@@ -1,0 +1,53 @@
+{
+  "meta": {
+    "agent": "jobs-review",
+    "version": "2.0.0",
+    "generated_at": "2026-03-30T08:18:21.343887+02:00",
+    "duration_ms": 1278939,
+    "ttl_hours": 6,
+    "status": "success",
+    "error": null,
+    "run_id": "4219587f",
+    "retries_used": 0,
+    "data_freshness": "fresh"
+  },
+  "data": {
+    "generated_at": "2026-03-30T08:18:20.751631+02:00",
+    "total_candidates": 202,
+    "reviewed": 136,
+    "submit": [],
+    "review": [],
+    "skip_count": 202,
+    "unreviewed_count": 0,
+    "thresholds": {
+      "submit": 8,
+      "review": 5
+    },
+    "pipeline": {
+      "r1_model": "minimax-portal/MiniMax-M2.7",
+      "r2_model": "anthropic/claude-sonnet-4-6",
+      "r1_filtered": 66,
+      "r1_passed": 136,
+      "r1_failed_batches": 0,
+      "r2_latency_ms": 193937,
+      "r2_fallbacks": 136
+    },
+    "kpi": {
+      "submit_rate": 0.0,
+      "review_rate": 0.0,
+      "skip_rate": 1.4852941176470589,
+      "avg_fit_score": 1.1,
+      "r1_filter_rate": 32.7
+    }
+  },
+  "kpi": {
+    "submit_count": 0,
+    "review_count": 0,
+    "skip_count": 202,
+    "r1_filtered": 66,
+    "submit_rate": 0.0,
+    "avg_fit_score": 1.1,
+    "r2_latency_ms": 193937
+  },
+  "recommendations": []
+}

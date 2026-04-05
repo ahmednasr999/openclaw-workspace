@@ -1,0 +1,170 @@
+# ⚠️ DEPRECATED - READ ONLY - DO NOT WRITE
+# Notion pipeline DB is now the single source of truth for applied jobs.
+# This file is kept as a historical reference only (pre-Notion entries).
+# Format: job_id | company | role | date
+
+# Madison Pearl (Mar 16, 2026)
+# Applied via email, no LinkedIn job IDs
+
+# Batch 1 (Mar 16, 2026)
+4366706927 | byteSpark.ai | Director Investment Platforms & Digital Enablement | 2026-03-16
+4381700187 | AXIAN Group | Head of Data | 2026-03-16
+4373121600 | numi | Chief Technology Officer | 2026-03-16
+4381713106 | Mastercard | VP Product Commercialization Digital Assets | 2026-03-16
+4373851696 | noon | Head of Product Dubai Mall Online | 2026-03-16
+4371147001 | Circles | Head of Product | 2026-03-16
+4380081720 | Talents Tide | Head of IT | 2026-03-16
+4374034554 | Auxo Talent | Director Data Centre Transformation | 2026-03-16
+4376554833 | Al-Futtaim | Digital Delivery Lead Finance | 2026-03-16
+4373449512 | Dubai Dept Economy & Tourism | Senior Project Manager | 2026-03-16
+4371850270 | Whiteshield | Digital Delivery Manager PMO | 2026-03-16
+4367573063 | Foreground | Director Digital Transformation | 2026-03-16
+4370070767 | Qashio | Senior Product Director | 2026-03-16
+4365275806 | ADGM | Head Digital Products & BI | 2026-03-16
+4346077638 | Finance House | Head of Consumer Products | 2026-03-16
+
+# Batch 2 (Mar 16, 2026)
+4381434171 | First Abu Dhabi Bank (FAB) | VP Transformation CIB | 2026-03-16
+4382561967 | du | Director IT Strategy | 2026-03-16
+4361004969 | Mashreq | Global Head of NEO Unit | 2026-03-16
+4375974910 | Legend Holding Group | IT Director | 2026-03-16
+4363904436 | Aldar Education | Head Digital & Enterprise Service Delivery | 2026-03-16
+4375516082 | Confidential | Director Customer Value & Loyalty | 2026-03-16
+4367901428 | Commercial Bank of Dubai | Senior Manager Virtual & Digital Assets | 2026-03-16
+4371278731 | Anduril Industries | Sr Manager Program Management | 2026-03-16
+4328655463 | accesso | Director of Operations | 2026-03-16
+4374225542 | MCG Talent | IT Project Manager | 2026-03-16
+4386334469
+4386771057
+4384465264
+4384473386
+4343976226
+4353703506
+4381476729
+4379328713 | Confidential Government | Executive Director Digital Transformation & Cloud Strategy | 2026-03-21
+3834934498 | Dubai Holding | Director - Digital Transformation & IT | 2026-03-21
+
+# Synced from Notion Pipeline (2026-03-21)
+4334077967 | Notion sync | Applied | 2026-03-21
+4346704149 | Notion sync | Applied | 2026-03-21
+4350835715 | Notion sync | Applied | 2026-03-21
+4351778628 | Notion sync | Applied | 2026-03-21
+4352999603 | Notion sync | Applied | 2026-03-21
+4357830223 | Notion sync | Applied | 2026-03-21
+4360053285 | Notion sync | Applied | 2026-03-21
+4368979403 | Notion sync | Applied | 2026-03-21
+4371727536 | Notion sync | Applied | 2026-03-21
+4372468004 | Notion sync | Applied | 2026-03-21
+4372482810 | Notion sync | Applied | 2026-03-21
+4372693407 | Notion sync | Applied | 2026-03-21
+4372899733 | Notion sync | Applied | 2026-03-21
+4373081849 | Notion sync | Applied | 2026-03-21
+4373109759 | Notion sync | Applied | 2026-03-21
+4373471367 | Notion sync | Applied | 2026-03-21
+4373946376 | Notion sync | Applied | 2026-03-21
+4374243946 | Notion sync | Applied | 2026-03-21
+4374554747 | Notion sync | Applied | 2026-03-21
+4374891542 | Notion sync | Applied | 2026-03-21
+4375112810 | Notion sync | Applied | 2026-03-21
+4375140623 | Notion sync | Applied | 2026-03-21
+4375202921 | Notion sync | Applied | 2026-03-21
+4375223553 | Notion sync | Applied | 2026-03-21
+4375226171 | Notion sync | Applied | 2026-03-21
+4375324051 | Notion sync | Applied | 2026-03-21
+4375518332 | Notion sync | Applied | 2026-03-21
+4375521803 | Notion sync | Applied | 2026-03-21
+4375537686 | Notion sync | Applied | 2026-03-21
+4375708512 | Notion sync | Applied | 2026-03-21
+4375907659 | Notion sync | Applied | 2026-03-21
+4375932512 | Notion sync | Applied | 2026-03-21
+4375947657 | Notion sync | Applied | 2026-03-21
+4375967216 | Notion sync | Applied | 2026-03-21
+4376090289 | Notion sync | Applied | 2026-03-21
+4376367703 | Notion sync | Applied | 2026-03-21
+4376649232 | Notion sync | Applied | 2026-03-21
+4376782445 | Notion sync | Applied | 2026-03-21
+4377233880 | Notion sync | Applied | 2026-03-21
+4377259350 | Notion sync | Applied | 2026-03-21
+4377598782 | Notion sync | Applied | 2026-03-21
+4377615733 | Notion sync | Applied | 2026-03-21
+4377660433 | Notion sync | Applied | 2026-03-21
+4377881590 | Notion sync | Applied | 2026-03-21
+4377912517 | Notion sync | Applied | 2026-03-21
+4378033717 | Notion sync | Applied | 2026-03-21
+4378323469 | Notion sync | Applied | 2026-03-21
+4378349141 | Notion sync | Applied | 2026-03-21
+4378364156 | Notion sync | Applied | 2026-03-21
+4378690376 | Notion sync | Applied | 2026-03-21
+4381667648 | Notion sync | Applied | 2026-03-21
+4381981225 | Notion sync | Applied | 2026-03-21
+4724012101
+025f90f1df941203 | FMC Network | Chief Technology Officer | 2026-03-21
+4374990040 | TENTEN Partners | Head of Engineering - Fintech & Digital Asset Infrastructure | 2026-03-21
+4384043000 | Talent Seed | Head of Software Engineering [Fintech] | 2026-03-21
+4320278154 | QAFCO (Qatar Fertiliser Company) | Head of Change Management | 2026-03-21
+4378211126 | Commercial Bank | Head of Enterprise Program Management Office (EPMO) | 2026-03-21
+
+# Skipped (Mar 21, 2026) - nationals only or wrong fit
+4007558068 | First Abu Dhabi Bank (FAB) | Executive Director Private Banking MENA | 2026-03-21 | SKIPPED: UAE nationals only
+4388140969 | ARNVIND GROUP | Head of AI Engineering | 2026-03-21 | SKIPPED: too technical AI/ML
+4379164827 | RAKBANK | EVP Head of Corporate Banking | 2026-03-21 | SKIPPED: UAE nationals only
+
+# Applied via Indeed (Mar 21, 2026)
+5bd6d3474b0865fa | Valtech Group | Experience Operations Director | 2026-03-21 | Applied
+025f90f1df941203 | FMC Network | CTO | 2026-03-21 | Applied
+
+# Applied (Mar 21, 2026 - Batch 2)
+ad0553c8b7e3d398 | Netcracker Technology | QA Director - Middle East | 2026-03-21 | Applied
+4383733458 | Talent Connect Group | Head of PMO & Strategic Operations | 2026-03-21 | Applied
+4360133249 | Qiddiya | Director Data Analytics | 2026-03-21 | Applied
+4366537196 | The Customization Group | Head of CRM (Next-Gen, AI-Driven) | 2026-03-21 | Applied
+4378141671 | Confidential | Head of Operations & AI Optimisation | 2026-03-21 | Applied
+4387231698 | Talent Connect Group | Principal Data & AI FinTech | 2026-03-21 | Applied
+4372535079 | LeadingEdge HR Solutions | Head of Enterprise Architecture KSA | 2026-03-21 | Applied
+4372537019 | LeadingEdge HR Solutions | Head of DevOps & Infrastructure KSA | 2026-03-21 | Applied
+
+# Previously applied (confirmed Mar 21)
+4381727915 | Experts Group International | Digital Transformation Director | 2026-03-21 | Previously Applied
+4325582215 | Emdad By Elm | Director of Digital Innovation & AI | 2026-03-21 | Previously Applied
+
+# Skipped REVIEW tier (Mar 21)
+4377369566 | Chain Reaction | Programmatic Director | 2026-03-21 | SKIPPED: ad tech, wrong domain
+4381045669 | PER | CIO Private Markets | 2026-03-21 | SKIPPED: private equity niche
+4384441676 | cander | Head of Infrastructure | 2026-03-21 | SKIPPED: pure infrastructure
+4383279845 | Foreground | Head of E-Commerce & Omnichannel | 2026-03-21 | SKIPPED: retail/e-commerce
+
+# Synced from Notion Pipeline (3 new)
+4385975651 | Panamari Holding | Project Manager Officer (PMO) | synced from Notion | Applied
+204645539359647334431080 | Faze 3 Consulting | IT PMO Lead | synced from Notion | Applied
+20004846 | Qiddiya | القدية | Director- Data Analytics (CDU3) - 20004846 | synced from Notion | ✅ Applied
+4379840970 | Miral Experiences | Business Engagement Director Data & AI | 2026-03-21 | Applied
+linkedin-li-4386059897
+indeed-in-f7e1d5085527773a
+linkedin-li-4385000187
+linkedin-li-4380905324
+linkedin-li-4372697501
+linkedin-li-4375508414
+ae.linkedin-4377807384
+ae.linkedin-4380447655
+ae.linkedin-4374570926
+
+# Synced from Notion Pipeline (8 new)
+4380447655 | Kataliser | ERP Vice President - Dubai | synced from Notion | ✅ Applied
+f7e1d5085527773a | International Medical Company | Strategy & Transformation Director | synced from Notion | ✅ Applied
+4374570926 | Miral Experiences | Senior Director Software Architecture | synced from Notion | ✅ Applied
+4377807384 | High Street Resources (HSR) | Director of Technology Operations - MENA Region | synced from Notion | ✅ Applied
+4375508414 | Confidential | Head of Digital Product Delivery (Mobile App) | synced from Notion | ✅ Applied
+4380905324 | PwC Middle East | Digital and Cyber - Digital Strategy and Realisati | synced from Notion | ✅ Applied
+4385000187 | Innovation Consulting Group (ICG) | Chief Transformation Officer (CTO) – AI, Digital & | synced from Notion | ✅ Applied
+4372697501 | Private Company | Director of Retail Operations | synced from Notion | ✅ Applied
+
+# Synced from Notion Pipeline (1 new)
+4384057356 | Discovered MENA | Head of Engineering | synced from Notion | Applied
+
+# Synced from Notion Pipeline (3 new)
+4389276852 | CMP Digital Infrastructure | Director of Program Management | synced from Notion | Applied
+4389096599 | Dow Jones | Director, Business Operations | synced from Notion | Applied
+4385463236 | Confidential | AI Enablement & Support Specialist | synced from Notion | Applied
+4390138329 | Auxo Talent | Group Chief Information Officer | 2026-03-27 | hr-agent-fix
+4390310137 | Valkyrie People Consulting | Chief Digital Officer | 2026-03-27 | hr-agent-fix
+4389059330 | Combuzz HR Solutions | Head of Business Planning & Strategy | 2026-03-27 | hr-agent-fix

@@ -1,0 +1,55 @@
+CV: Ahmed_Nasr_Director_DT_IT_DubaiHolding.md
+Role: Director – Digital Transformation & IT | Dubai Holding Community Management (DHCM)
+Last Updated: 2026-02-27
+ATS Score: ~92%
+
+=== KEYWORD COVERAGE AUDIT ===
+
+JD KEYWORD                          | STATUS     | WHERE
+------------------------------------|------------|--------------------------------------------
+Digital Transformation Strategy     | ✅ HIT     | Profile, TopMed heading, Core Expertise
+AI, IoT, RPA, Data Analytics        | ✅ HIT     | All four explicit in Tech Expertise + body
+Salesforce Service & Marketing Cloud| ✅ HIT     | NI section (Service Cloud), Core Expertise
+Maximo (CAFM)                       | ✅ HIT     | TopMed section (analogy + explicit name)
+Genesys (Contact Centre)            | ✅ HIT     | TopMed section (enterprise platform governance)
+Oracle Fusion                       | ✅ HIT     | Al Araby section + Tech Expertise
+Qualtrics, Sprinklr                 | ✅ HIT     | TopMed enterprise architecture section
+Enterprise Architecture             | ✅ HIT     | Appears 5x across profile, TopMed, NI, PaySky
+IT Service Management (ITIL)        | ✅ HIT     | Certifications table + TopMed + AT&T + expertise
+Cybersecurity Governance            | ✅ HIT     | Dedicated sub-section in TopMed, Core Expertise
+Data Governance / MDM               | ✅ HIT     | TopMed analytics section + Core Expertise
+Dashboards, KPIs, Predictive Analytics | ✅ HIT  | TopMed analytics, Talabat, Tech Expertise
+IT Portfolio Oversight (~AED 35M)   | ✅ HIT     | TopMed heading, AED 35M+ framing, Key Metrics
+Vendor SLAs and Contracts           | ✅ HIT     | TopMed, Al Araby, NI sections
+Steering Committees & Executive Forums | ✅ HIT  | TopMed, NI, Core Expertise
+Change Management                   | ✅ HIT     | TopMed, AT&T consulting, Core Expertise
+14+ years experience                | ✅ HIT     | "20+ years" in profile (exceeds requirement)
+ITIL Certification                  | ✅ HIT     | Certs table + body text (TopMed, Al Araby, AT&T)
+MBA In Progress                     | ✅ HIT     | Education section (near top) + profile mention
+RPA                                 | ✅ HIT     | PaySky section + Tech Expertise
+IoT                                 | ✅ HIT     | PaySky, Intel, Talabat sections + Tech Expertise
+Blockchain awareness                | ✅ HIT     | Tech Expertise (emerging technologies)
+Vendor Negotiation                  | ✅ HIT     | NI, Al Araby, TopMed sections
+ERP (SAP / Oracle)                  | ✅ HIT     | Al Araby (SAP S/4HANA), Tech Expertise
+
+=== UPDATES MADE IN THIS VERSION ===
+
+1. ✅ Salesforce — explicit "Salesforce Service Cloud" at NI (8 countries, 170 users)
+2. ✅ Data Governance & MDM — dedicated paragraph in TopMed section
+3. ✅ RPA & IoT — added to PaySky, Intel, Talabat and Tech Expertise section
+4. ✅ IT Portfolio / Budget framing — AED 35M+ equivalent called out in TopMed + Key Metrics
+5. ✅ Dashboard & KPI reporting — explicit in TopMed analytics and Talabat
+6. ✅ Cybersecurity Governance — dedicated sub-section under TopMed
+7. ✅ Oracle/ERP — SAP S/4HANA at Al Araby with Oracle Fusion transferability note
+8. ✅ Enterprise Architecture — appears 5 times across CV
+9. ✅ Steering Committees & Executive Forums — TopMed + NI + Core Expertise
+10. ✅ MBA In Progress — Education section moved above certifications, near top
+11. ✅ ITIL — Certifications table (row 2) + body: TopMed, Al Araby, AT&T
+12. ✅ 20+ years — addresses 14+ years requirement by significantly exceeding it
+13. ✅ Change Management — dedicated call-out in TopMed, AT&T consulting
+14. ✅ Maximo, Genesys, Qualtrics, Sprinklr — named in TopMed enterprise architecture context
+15. ✅ Blockchain — added to emerging technologies (awareness signal)
+
+=== FILES ===
+MD:  Ahmed_Nasr_Director_DT_IT_DubaiHolding.md  (17KB)
+PDF: Ahmed_Nasr_Director_DT_IT_DubaiHolding.pdf (137KB)
