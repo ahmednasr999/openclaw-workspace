@@ -678,7 +678,7 @@ def run_merge(result: AgentResult):
             countries_per_source = {}
 
             for j in final_jobs:
-                job_source = j.get("source", j.get("sources", ["unknown"])[0] if j.get("sources") else "unknown")
+                job_source = j.get("_source_file", j.get("source", "unknown"))
                 _pdb.register_job(
                     source=job_source,
                     job_id=str(j.get("id", j.get("job_id", ""))) if j.get("id", j.get("job_id")) else "",
