@@ -303,13 +303,14 @@ def apply_search_policy(job: dict) -> tuple[bool, str]:
         if is_agg:
             return False, agg_reason
 
-    if not any(w in title for w in EXEC_WORDS):
+    # Check seniority FIRST — if exec-level, bypass skip-word filtering
+    has_exec = any(w in title for w in EXEC_WORDS)
+    if not has_exec:
         return False, "no-seniority"
 
-    for skip in SKIP_WORDS:
-        if skip in title:
-            return False, f"skip-word:{skip}"
-
+    # EXEC-level job — let it through regardless of skip words.
+    # The ATS scoring phase will naturally filter out irrelevant ones (HR, Sales, etc.)
+    # by comparing against Ahmed's CV profile.
     return True, "pass"
 
 
