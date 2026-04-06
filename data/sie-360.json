@@ -1,5 +1,5 @@
 {
-  "generated": "2026-04-04T23:50:17.677098+00:00",
+  "generated": "2026-04-05T23:50:20.809250+00:00",
   "health_score": 79,
   "summary": {
     "ok": 6,
@@ -7,12 +7,12 @@
     "alert": 3
   },
   "workspace": {
-    "root_files": 67,
-    "disk_percent": 53,
-    "disk_used": "51G",
+    "root_files": 68,
+    "disk_percent": 54,
+    "disk_used": "52G",
     "disk_total": "96G",
     "ram_total": "7.8Gi",
-    "ram_used": "2.7Gi",
+    "ram_used": "4.0Gi",
     "large_files": [
       "/root/.openclaw/agents/main/qmd/node_modules/@node-llama-cpp/linux-x64-cuda/bins/linux-x64-cuda/libggml-cuda.so",
       "/root/.openclaw/agents/main/qmd/node_modules/@node-llama-cpp/linux-x64-cuda-ext/bins/linux-x64-cuda/fallback/libggml-cuda.so",
@@ -38,6 +38,7 @@
       "/root/.openclaw/agents/main/sessions/sessions.json.8938d60e-f6ef-4204-88b1-eaf45ecf5e3f.tmp",
       "/root/.openclaw/agents/main/sessions/sessions.json.c5d422ed-4c0a-4668-b9ef-83b161e7f64b.tmp",
       "/root/.openclaw/agents/main/sessions/sessions.json.b2c14fec-a53c-4fdc-ba63-859e4f9fd893.tmp",
+      "/root/.openclaw/agents/main/sessions/sessions.json",
       "/root/.openclaw/agents/main/sessions/sessions.json.8ececf50-d8f8-40ed-8fa7-c18fc07de776.tmp",
       "/root/.openclaw/agents/main/sessions/sessions.json.873efadc-84f0-4210-b268-cd1df7be7f5d.tmp",
       "/root/.openclaw/agents/main/sessions/sessions.json.37bbb5c4-d7f2-4066-9c37-0b0c3fc09a56.tmp",
@@ -103,6 +104,7 @@
       "/root/.openclaw/workspace/media/post-visuals/2-gemini-pro-4k.jpg",
       "/root/.openclaw/workspace/tmp/insights-deck/node_modules/skia-canvas/lib/skia.node",
       "/root/.openclaw/workspace/minimax-skills/.git/objects/pack/pack-fa8863764b269c235de495571ed95998096dde86.pack",
+      "/root/.openclaw/workspace/data/jobs-raw/linkedin.json",
       "/root/.openclaw/workspace/tools/jobspy-venv/lib/python3.13/site-packages/tls_client/dependencies/tls-client-arm64.so",
       "/root/.openclaw/workspace/tools/jobspy-venv/lib/python3.13/site-packages/tls_client/dependencies/tls-client-amd64.so",
       "/root/.openclaw/workspace/tools/jobspy-venv/lib/python3.13/site-packages/tls_client/dependencies/tls-client-x86.so",
@@ -133,7 +135,7 @@
       "/root/.openclaw/workspace/newsletter3.png",
       "/root/.openclaw/lcm.db.bak.20260328"
     ],
-    "session_mb": 1007.8
+    "session_mb": 1016.3
   },
   "learnings": {
     "total": 20,
@@ -158,7 +160,7 @@
       "notion_token": "present (50 chars)",
       "notion_databases": 15,
       "linkedin_lines": 3,
-      "linkedin_age_days": 12.1
+      "linkedin_age_days": 13.1
     }
   },
   "crons": {
@@ -176,11 +178,8 @@
       "Content Agent: Reaction Check",
       "Email Agent (Sun-Thu)",
       "NASR Doctor (Daily)",
-      "Weekly Pipeline Audit",
       "SAYYAD \u2014 Score & Curate (midday)",
-      "Weekly Team Retro",
       "LCM Midday Compaction Sweep",
-      "Content Agent: Weekly LEARN",
       "Email Agent (Fri-Sat)",
       "X Intelligence Crawler - Weekly",
       "RSS Intelligence - Weekly Crawl",
@@ -188,7 +187,10 @@
       "Content Factory Scorer - Weekly",
       "Content Factory Weekly Digest",
       "Content Agent: Weekly CREATE",
-      "Weekly Skill Autoresearch"
+      "Weekly Skill Autoresearch",
+      "Weekly Pipeline Audit",
+      "Weekly Team Retro",
+      "Content Agent: Weekly LEARN"
     ],
     "failing": []
   },
@@ -200,22 +202,22 @@
     {
       "category": "workspace",
       "level": "warn",
-      "message": "Root files: 67 (approaching clutter threshold of 100)"
+      "message": "Root files: 68 (approaching clutter threshold of 100)"
     },
     {
       "category": "workspace",
       "level": "ok",
-      "message": "Disk: 53% used (51G/96G)"
+      "message": "Disk: 54% used (52G/96G)"
     },
     {
       "category": "workspace",
       "level": "warn",
-      "message": "Large files (>5MB): 118 found in .openclaw"
+      "message": "Large files (>5MB): 120 found in .openclaw"
     },
     {
       "category": "workspace",
       "level": "alert",
-      "message": "Session size: 1007.8MB - bloated, review sessions"
+      "message": "Session size: 1016.3MB - bloated, review sessions"
     },
     {
       "category": "learnings",
@@ -260,6 +262,6 @@
   ],
   "auto_fixed": [],
   "needs_attention": [
-    "Session bloat: 1007.8MB - review before deleting (needs human decision)"
+    "Session bloat: 1016.3MB - review before deleting (needs human decision)"
   ]
 }

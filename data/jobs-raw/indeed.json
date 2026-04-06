@@ -2,106 +2,67 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-04-05T12:01:59.270554+02:00",
-    "duration_ms": 117033,
+    "generated_at": "2026-04-06T06:42:44.027781+02:00",
+    "duration_ms": 100206,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "d7b06915",
+    "run_id": "c0960f72",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": [
     {
-      "id": "indeed-in-9764f7246512fc81",
+      "id": "indeed-in-c68ba60ea336556a",
       "source": "indeed",
-      "title": "Director of Product Managment",
-      "company": "MTP (Mayfair Technology Partners)",
+      "title": "Head of Department \u2013 Pediatrics (American Board, Arabic Speaker) - Qatar",
+      "company": "Allocation Assist DMCC",
       "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=9764f7246512fc81",
-      "posted": "2026-04-03",
-      "seniority": "C-Suite",
+      "url": "https://ae.indeed.com/viewjob?jk=c68ba60ea336556a",
+      "posted": "2026-04-05",
+      "seniority": "Director",
       "domain_match": false,
       "keyword_score": 23,
       "match_keywords": [
-        "ai",
-        "director",
+        "healthcare",
+        "head of",
         "leadership",
-        "platform"
+        "api"
       ],
-      "raw_snippet": "I'm hiring for one of my clients on urgent basis please apply only after carefully reading the job description.\n\n**SENIORITY LEVEL:** DIRECTOR As a Director of Product Management\n\n**SUMMARY OF ROLE:**  \nYou\u2019ll lead a portfolio of products and platform capabilities in a high\\-scale digital platform environment, while also owning delivery leadership. You will set direction, drive outcomes, and build strong teams that ship with speed and quality. This role requires AI fluency and a track record of ",
+      "raw_snippet": "Position Overview\n  \nA prestigious healthcare institution in Qatar is seeking a highly qualified Head of Department for Pediatrics to lead its pediatric division. The ideal candidate must be American Board Certified in Pediatrics and fluent in Arabic, with a strong background in clinical leadership, multidisciplinary collaboration, and patient\\-centered care. This is a senior leadership role responsible for shaping pediatric services, driving clinical excellence, and mentoring the next generatio",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
-      "search_title": "Director of Technology"
+      "search_title": "Head of Strategy"
     },
     {
-      "id": "indeed-in-e806c3cc9ef2e732",
+      "id": "indeed-in-c0473c6008dd79e2",
       "source": "indeed",
-      "title": "Principal Data Engineer",
-      "company": "The Emirates Group",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=e806c3cc9ef2e732",
-      "posted": "2026-04-03",
-      "seniority": "Principal",
-      "domain_match": true,
-      "keyword_score": 10,
-      "match_keywords": [
-        "digital transformation"
-      ],
-      "raw_snippet": "##### **Job Purpose**\n\nAt Emirates Group our Analytics Centre of Excellence (ACoE) is a centralized unit that provides data and analytics support to Emirates Group businesses. This allows our businesses to make better decisions by using data and analytics to understand our customers, operations, and markets. The ACoE is an essential part of Emirates Group's digital transformation strategy. The unit is helping Emirates Group to become a more data\\-driven organization and to make better decisions ",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Transformation Lead"
-    },
-    {
-      "id": "indeed-in-d7c665acff7a4565",
-      "source": "indeed",
-      "title": "Head Draftsman",
-      "company": "Cone Cube Construction Engineering Services",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=d7c665acff7a4565",
-      "posted": "2026-04-03",
-      "seniority": "Other",
+      "title": "Head of IT",
+      "company": "Hepworth PME Qatar WLL",
+      "location": "Doha, DAW, QA",
+      "url": "https://qa.indeed.com/viewjob?jk=c0473c6008dd79e2",
+      "posted": "2026-04-05",
+      "seniority": "Director",
       "domain_match": false,
-      "keyword_score": 23,
+      "keyword_score": 20,
       "match_keywords": [
-        "project management",
-        "ai",
-        "uae",
-        "dubai"
+        "cloud",
+        "infrastructure",
+        "head of"
       ],
-      "raw_snippet": "**Job Title:** Head Draftsman  \n**Location:** Dubai, UAE\n\n**Company Overview:**  \nWe are a dynamic and growing design consultancy based in Dubai, delivering high\\-quality design and project management services across residential, commercial, and mixed\\-use developments. We are seeking a talented and experienced Project Architect to join our team.\n\n**Key Responsibilities:**\n\n* Lead and manage the drafting team across multiple projects\n* Train fresh draftsmen on DM Drawings preparation\n* Prepare, ",
+      "raw_snippet": "**Job Type:** Full\\-time  \n**Industry:** Piping Manufacturing\n\n**About the Role**\n\nWe are looking for a Head of IT Infrastructure to lead and manage the company\u2019s IT environment, ensuring secure, reliable, and scalable technology services. This role drives IT strategy, oversees cloud and on\\-premises systems, networks, and security, and ensures high\\-quality end\\-user support. The Head of IT Infrastructure also manages IT budgeting, disaster recovery, and strategic projects to enable operational",
       "relevant": true,
       "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Head of Delivery"
-    },
-    {
-      "id": "indeed-in-c06b594dcc5a59a0",
-      "source": "indeed",
-      "title": "Head Midwife - Nauru Deployment",
-      "company": "Global Mission Support Services LLC",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=c06b594dcc5a59a0",
-      "posted": "2026-04-03",
-      "seniority": "Other",
-      "domain_match": false,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "**Job Title: Head Midwife (International Experience Required)**  \n**Job Type:** Full\\-time  \n**Country Location:** Nauru  \nMust be willing to relocate to Nauru\n\n**Job Summary**\n\nWe are seeking an experienced and highly skilled **Head Midwife** to lead our maternity services. This role is critical as we establish a state\\-of\\-the\\-art labor and delivery unit, ensuring the highest standards of evidence\\-based midwifery care.\n\nThe ideal candidate will bring strong international experience and expos",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Head of Delivery"
+      "search_country": "Qatar",
+      "search_title": "Head of Technology"
     }
   ],
   "kpi": {
     "searches_run": 99,
-    "results_per_search": 0.88,
-    "unique_jobs": 4,
-    "errors": 55
+    "results_per_search": 0.67,
+    "unique_jobs": 2,
+    "errors": 63
   },
   "recommendations": []
 }
