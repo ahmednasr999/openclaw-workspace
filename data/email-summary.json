@@ -2,30 +2,41 @@
   "meta": {
     "agent": "email-agent",
     "version": "3.0.0",
-    "generated_at": "2026-04-05T16:00:25.259463+02:00",
-    "duration_ms": 22187,
+    "generated_at": "2026-04-06T06:00:29.574779+02:00",
+    "duration_ms": 27360,
     "ttl_hours": 4,
     "status": "success",
     "error": null,
-    "run_id": "d4f1fba0",
+    "run_id": "417a902c",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
     "status": "ok",
-    "scan_time": "2026-04-05T16:00:06.926932+02:00",
-    "total_scanned": 7,
+    "scan_time": "2026-04-06T06:00:05.773527+02:00",
+    "total_scanned": 4,
     "by_category": {
       "interview_invite": 0,
-      "recruiter_reach": 0,
+      "recruiter_reach": 1,
       "application_ack": 0,
       "rejection": 0,
       "assessment": 0,
       "follow_up_needed": 0,
-      "other": 7
+      "other": 3
     },
     "interview_invites": [],
-    "recruiter_messages": [],
+    "recruiter_messages": [
+      {
+        "id": "351969",
+        "from": "Amal from foundit <jobmessenger@monstergulf.com>",
+        "subject": "Ahmed, Hot Job Opportunities Waiting For You",
+        "date": "Mon, 6 Apr 2026 09:08:42 +0530 (IST)",
+        "unread": true,
+        "priority": "MEDIUM",
+        "score": 2,
+        "pipeline_match": null
+      }
+    ],
     "application_acks": [],
     "rejections": [],
     "assessments": [],
@@ -33,25 +44,23 @@
     "actionable_count": 0,
     "hot_alerts": [],
     "signals": [],
-    "llm_analysis": {
-      "actionable_emails": [],
-      "summary": {
-        "total_actionable": 0,
-        "critical_count": 0,
-        "requires_interview_prep": false,
-        "requires_assessment": false,
-        "recruiter_top_opportunities": [],
-        "top_priority": null,
-        "daily_focus": "No actionable emails detected today; all 7 scanned messages categorized as informational/other."
-      }
-    }
+    "llm_analysis": null
   },
   "kpi": {
-    "emails_processed": 7,
+    "emails_processed": 4,
     "actionable": 0,
     "interviews_detected": 0,
-    "recruiter_messages": 0,
+    "recruiter_messages": 1,
     "unread_actionable": 0
   },
-  "recommendations": []
+  "recommendations": [
+    {
+      "id": "rec-417a902c-0",
+      "action": "review_and_respond",
+      "target": "1 recruiter message(s)",
+      "reason": "Recruiter outreach could lead to opportunities",
+      "urgency": "high",
+      "timestamp": "2026-04-06T06:00:29.574638+02:00"
+    }
+  ]
 }

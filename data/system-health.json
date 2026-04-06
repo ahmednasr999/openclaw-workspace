@@ -2,23 +2,23 @@
   "meta": {
     "agent": "system-agent",
     "version": "1.0.0",
-    "generated_at": "2026-04-05T16:00:10.838292+02:00",
-    "duration_ms": 8065,
+    "generated_at": "2026-04-06T06:00:14.572493+02:00",
+    "duration_ms": 12484,
     "ttl_hours": 1,
     "status": "success",
     "error": null,
-    "run_id": "85e45c76",
+    "run_id": "d253a4d7",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
-    "scan_time": "2026-04-05T16:00:10.838153+02:00",
+    "scan_time": "2026-04-06T06:00:14.572352+02:00",
     "system": {
-      "disk_usage_pct": 53,
+      "disk_usage_pct": 54,
       "memory": {
         "total_gb": 7.8,
-        "available_gb": 4.2,
-        "used_pct": 45.7
+        "available_gb": 3.6,
+        "used_pct": 53.6
       },
       "gateway": {
         "status": "healthy",
@@ -26,7 +26,7 @@
       },
       "openclaw_process": {
         "running": true,
-        "pid_count": 25
+        "pid_count": 27
       }
     },
     "agents": {
@@ -34,15 +34,15 @@
         {
           "agent": "jobs-merge",
           "status": "healthy",
-          "age_hours": 3.1,
+          "age_hours": 1.1,
           "ttl_hours": 6,
-          "last_run": "2026-04-05T12:55:07.636876+02:00",
+          "last_run": "2026-04-06T04:56:51.601746+02:00",
           "last_status": "success"
         },
         {
           "agent": "jobs-review",
           "status": "stale",
-          "age_hours": 151.7,
+          "age_hours": 165.7,
           "ttl_hours": 6,
           "last_run": "2026-03-30T08:18:21.343887+02:00",
           "last_status": "success"
@@ -50,15 +50,15 @@
         {
           "agent": "email-agent",
           "status": "healthy",
-          "age_hours": 1.0,
+          "age_hours": 2.0,
           "ttl_hours": 4,
-          "last_run": "2026-04-05T15:00:52.589057+02:00",
+          "last_run": "2026-04-06T04:00:34.071303+02:00",
           "last_status": "success"
         },
         {
           "agent": "linkedin-post",
           "status": "stale",
-          "age_hours": 155.0,
+          "age_hours": 169.0,
           "ttl_hours": 6,
           "last_run": "2026-03-30T03:00:15.697312+00:00",
           "last_status": null
@@ -66,7 +66,7 @@
         {
           "agent": "comment-radar",
           "status": "stale",
-          "age_hours": 203.0,
+          "age_hours": 217.0,
           "ttl_hours": 6,
           "last_run": "2026-03-28T03:00:24.648751+00:00",
           "last_status": null
@@ -76,7 +76,7 @@
           "status": "healthy",
           "age_hours": 2.0,
           "ttl_hours": 6,
-          "last_run": "2026-04-05T12:01:13.457811+00:00",
+          "last_run": "2026-04-06T02:01:13.388095+00:00",
           "last_status": null
         },
         {
@@ -84,7 +84,7 @@
           "status": "healthy",
           "age_hours": 2.0,
           "ttl_hours": 6,
-          "last_run": "2026-04-05T14:00:14.916703+02:00",
+          "last_run": "2026-04-06T04:00:21.572691+02:00",
           "last_status": "success"
         }
       ],
@@ -95,7 +95,7 @@
     "cron": {
       "status": "healthy",
       "job_count": 28,
-      "raw_output": "ID                                   Name                     Schedule                         Next       Last       Status    Target    Agent ID   Model               \n145d964f-e2e5-4b49-8058-f9ddac926f45 Email Agent (Sun-Thu)    cron 0 7,9,11,13,15,17,19,21 ... in 60m     1h ago     ok        isolated  -          anthropic/claude-...\nd1343a4d-61a4-476c-83c5-15724bcce89c Content Agent: Reacti... cron 0 */6 * * * @ Africa/Cai... in 2h      4h ago     ok        isolated  cmo        anthropic/clau"
+      "raw_output": "ID                                   Name                     Schedule                         Next       Last       Status    Target    Agent ID   Model               \nd1343a4d-61a4-476c-83c5-15724bcce89c Content Agent: Reacti... cron 0 */6 * * * @ Africa/Cai... in 3m      6h ago     ok        isolated  cmo        anthropic/claude-...\n145d964f-e2e5-4b49-8058-f9ddac926f45 Email Agent (Sun-Thu)    cron 0 7,9,11,13,15,17,19,21 ... in 60m     6h ago     ok        isolated  -          anthropic/clau"
     },
     "external_services": {
       "notion": {
@@ -121,12 +121,12 @@
   },
   "recommendations": [
     {
-      "id": "rec-85e45c76-0",
+      "id": "rec-d253a4d7-0",
       "action": "run_agents",
       "target": "3 stale agent(s): jobs-review, linkedin-post, comment-radar",
       "reason": "Agent data is past TTL",
       "urgency": "medium",
-      "timestamp": "2026-04-05T16:00:10.838204+02:00"
+      "timestamp": "2026-04-06T06:00:14.572404+02:00"
     }
   ]
 }

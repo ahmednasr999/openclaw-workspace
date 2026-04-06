@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-merge",
     "version": "1.0.0",
-    "generated_at": "2026-04-05T12:55:07.636876+02:00",
-    "duration_ms": 162124,
+    "generated_at": "2026-04-06T07:00:25.927203+02:00",
+    "duration_ms": 173451,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "e9a1c2d0",
+    "run_id": "8f4f7a28",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -45,64 +45,6 @@
       "first_seen": "2026-04-01"
     },
     {
-      "id": "linkedin_jobspy-li-4394410368",
-      "source": "linkedin_jobspy",
-      "title": "Head of Department of Psychiatry",
-      "company": "RCSI Medical University of Bahrain",
-      "location": "Muharraq, Muharraq Governorate, Bahrain",
-      "url": "https://www.linkedin.com/jobs/view/4394410368",
-      "posted": "",
-      "seniority": "Director",
-      "domain_match": false,
-      "keyword_score": 13,
-      "match_keywords": [
-        "ai",
-        "head of"
-      ],
-      "raw_snippet": "**Objective:** \n To build on the Department\u2019s strong foundation, fostering an environment of excellence, innovation and continuous enhancement to support the delivery of a high\\-quality Medicine programme at RCSI Bahrain. Champion academic standards and drive the implementation and continuous improv",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Bahrain",
-      "jd_text": "**Objective:** \n To build on the Department\u2019s strong foundation, fostering an environment of excellence, innovation and continuous enhancement to support the delivery of a high\\-quality Medicine programme at RCSI Bahrain. Champion academic standards and drive the implementation and continuous improvement of the curriculum, aligned with best practice and ensure the effective delivery of the undergraduate teaching programme in Psychiatry, promoting a culture of collaboration, research engagement and academic development across the School.\n   \n\n  \n\n**Reporting To:** \n VP of Academic Affairs / Head of School of Medicine\n   \n\n  \n\n**PRINCIPAL DUTIES AND RESPONSIBILITIES**\n**Academic Leadership \\& Governance:**\n* Provide strategic academic leadership for the Department of Psychiatry, ensuring excellence in teaching, assessment, research, and clinical integration.\n* Be accountable, through established University management and governance structures, for the delivery of all academic commitments associated with the post.\n* Lead the design, development, delivery, review, and continuous improvement of undergraduate and postgraduate psychiatry curricula, modules, and assessments.\n* Ensure alignment of departmental activities with national and international standards of medical education and training, including Medical Council requirements.\n* Contribute to University\\-wide academic planning, quality assurance, accreditation processes, and academic policy development as required.\n\n\n**Teaching and Training:**\n* Oversee and contribute to clinical and campus\\-based teaching across junior, intermediate, and senior cycles of the medical programme.\n* Ensure the effective delivery of teaching and training at relevant clinical sites, including responsibility for undergraduate learners.\n* Provide academic leadership in student assessment, including examination design, standard setting, delivery, evaluation, and feedback processes.\n* Support and mentor academic and clinical faculty within the department, fostering excellence in teaching and professional development.\n* Ensure appropriate use of the virtual learning environment to support teaching, communication, and student engagement.\n\n\n**Clinical Leadership and Integration:**\n* Be accountable for the clinical component of the post as ensuring integration between academic objectives and clinical service delivery.\n* Work collaboratively with Clinical Directors and hospital partners to ensure high\\-quality psychiatric training and service provision.\n* Undertake clinical duties within designated teaching hospitals, with scope and commitment defined in agreement with relevant governance structures.\n* Promote best practice in patient care, teaching, and supervision within clinical settings.\n\n\n**Research and Scholarly Activity:**\n* Provide leadership in psychiatric research, supporting departmental research strategy, grant activity, and scholarly output.\n* Supervise and mentor faculty, trainees, and students in research activities.\n* Contribute to the advancement of psychiatric knowledge through research, publication, and academic collaboration.\n\n\n**Strategic Development and External Engagement:**\n* Play a key role in the development and reform of medical education, training, and research, aligned with Government policy and institutional strategy.\n* Collaborate across University and clinical sites, and with postgraduate bodies, regulatory authorities, and professional organisations, on international, national, and regional initiatives.\n* Represent the Department and University at internal and external forums as required.\n\n\n**Compliance \\& Professional Responsibilities:**\n* Ensure adherence to all University, national, and regulatory policies and procedures, including health, safety, and staff welfare requirements.\n* Act at all times in the best interests of the Department and University, upholding professional, ethical, and academic standards.\n* Undertake such other duties as may reasonably be required in support of the role and the strategic objectives of the University.\n\n\n Requirements\n   \n\n  \n\n**PERSON SPECIFICATION ESSENTIAL:** \n  \n\n  \n\n The successful candidate will be a senior academic with substantial leadership experience in clinical education, service delivery, and governance, and will demonstrate the following:\n   \n\n* A minimum of 10\u201315 years post\\-internship clinical experience in Psychiatry, including senior leadership responsibilities.\n* Fellowship and/or Doctoral Degree in Psychiatry from a recognised international awarding body.\n* Board Certification in Psychiatry (mandatory).\n* Demonstrated experience in academic leadership, including responsibility for programme delivery, curriculum oversight, and faculty supervision.\n* Proven track record of undergraduate teaching, assessment design, curriculum development, and quality assurance in a medical education setting.\n* Experience of educational innovation, including effective use of e\\-learning and virtual learning environments (VLEs).\n* Evidence of research leadership, including supervision of junior faculty and trainees, scholarly output, and contribution to departmental or institutional research strategy.\n* Strong understanding of clinical governance, academic governance, and regulatory standards applicable to medical education and psychiatric training.\n* Excellent interpersonal, leadership, and communication skills, with the ability to work collaboratively across academic, clinical, and regulatory stakeholders.\n* Demonstrated commitment to the development and reform of medical education, training, and research, aligned with national and international standards\n\n\n\n***Note: Appointment will be made at an appropriate level commensurate with experience, qualifications, research track record and institutional requirements.***",
-      "source_count": 1,
-      "country": "Bahrain",
-      "industry_bonus": 6,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ],
-      "first_seen": "2026-04-05"
-    },
-    {
-      "id": "linkedin_jobspy-li-4383909401",
-      "source": "linkedin_jobspy",
-      "title": "Head of Distribution Automation Global Delivery Center",
-      "company": "Hitachi Energy",
-      "location": "Dubai, Dubai, United Arab Emirates",
-      "url": "https://www.linkedin.com/jobs/view/4383909401",
-      "posted": "2026-04-03",
-      "seniority": "Director",
-      "domain_match": false,
-      "keyword_score": 10,
-      "match_keywords": [
-        "head of",
-        "automation"
-      ],
-      "raw_snippet": "**The opportunity**\n Hitachi Energy is building a new, future\u2011focused global distribution model for its Distribution Automation (DA) business and is seeking a visionary leader to design it from the ground up. Rather than inheriting an existing structure, this role focuses on creating an innovative, ",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "jd_text": "**The opportunity**\n Hitachi Energy is building a new, future\u2011focused global distribution model for its Distribution Automation (DA) business and is seeking a visionary leader to design it from the ground up. Rather than inheriting an existing structure, this role focuses on creating an innovative, digitalized, and scalable delivery system that enhances customer experience, agility, and operational excellence. The ideal leader will rethink traditional processes, simplify complexity, and establish a resilient operating model for a rapidly expanding global business. As part of the DA leadership team and in close collaboration with Sales, Operations, and SCM, this leader will ultimately own the P\\&L and oversee DA\u2019s end\u2011to\u2011end delivery structure once the new model is established.\n   \n\n  \n\n**How You\u2019ll Make An Impact**\n* Design \\& Build the Future DA Delivery Model: Reimagine and architect a modern, scalable, and customer\u2011centric distribution automation delivery model that challenges existing industry norms.\n* Lead the definition, setup, and operationalization of the new Delivery model, taking full P\\&L ownership and driving continuous performance improvement.\n* Drive End\u2011to\u2011End Demand Fulfillment Excellence: Oversee the full value chain from tendering to after\u2011sales, ensuring predictable, high\u2011quality, and high\u2011speed fulfillment with maximum transparency for customers.\n* Be the Customer\u2011Facing Champion of Delivery: Act as the central reference for customers on all demand\u2011fulfillment topics, fostering trust, responsiveness, and long\u2011term partnership.\n* Enable Digitalization \\& E\u2011Commerce Transformation: Lead the implementation of our future DA e\u2011commerce and digital fulfillment solutions, enabling intuitive, frictionless customer experiences.\n* Collaborate Across the Global Organization: Build strong alignment with Sales, Operations, SCM, and Product Groups to ensure that market expectations are accurately captured and seamlessly orchestrated.\n* Support Acquisition Integration: Define and lead the operational integration of potential DA acquisitions, ensuring a smooth transition into the new delivery model.\n* Lead Customer Activities \\& Operational Excellence: Govern customer audits, FATs, visits, and special projects while ensuring highest standards in safety, quality, delivery, and cost.\n\n\n**Your background**\n* A Strategic Builder \\& Change Leader: You bring a strategic mindset and the ability to design from a blank page challenging traditional processes and implementing new methods that unlock growth.\n* Proven Leadership Across Functions: Your experience spans sourcing, customer service, production, logistics, after\u2011sales, and general management\u2014allowing you to orchestrate the full delivery lifecycle with confidence.\n* Strong Communicator \\& Influencer: You are a compelling communicator capable of building alignment, energizing teams, and influencing stakeholders across functions and geographies.\n* Proven Experience in similar roles in B2B\n* Entrepreneurial, Agile, and Customer\u2011Obsessed: You think beyond incremental improvements. You bring innovative ideas, challenge the status quo, and continuously ask: How can we deliver better, faster, and more simply?\n* Energy Industry understanding: You understand the energy/grid automation landscape and can translate market needs into operational excellence.\n* Solid Business Foundations: You have experience in P/L management and ownership, taxonomy, budgeting, business planning, and negotiations, allowing you to manage the Delivery structure as a true business leader and in the most efficient way possible.\n* A Bachelor's degree or higher in Business administration, Supply Chain/Operations Management, or related fields\n* Fluent in English\n\n\n Hitachi Energy is a global technology leader in electrification, powering a sustainable energy future through innovative power grid technologies with digital at the core. Over three billion people depend on our technologies to power their daily lives.\n   \n\n  \n\n With over a century in pioneering mission\\-critical technologies like high\\-voltage, transformers, automation, and power electronics, we are addressing the most urgent energy challenge of our time \u2013 balancing soaring electricity demand, while decarbonizing the power system.\n   \n\n  \n\n Headquartered in Switzerland, we employ over 50,000 people in 60 countries and generate revenues of around $16 billion USD. We welcome you to apply today.",
-      "source_count": 1,
-      "country": "United Arab Emirates",
-      "industry_bonus": 3,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ],
-      "first_seen": "2026-04-05"
-    },
-    {
       "id": "linkedin_jobspy-li-4395655765",
       "source": "linkedin_jobspy",
       "title": "Vice President Economics - Arabic Speaker",
@@ -132,44 +74,41 @@
       "first_seen": "2026-04-01"
     },
     {
-      "id": "linkedin_jobspy-li-4379177611",
-      "source": "linkedin_jobspy",
-      "title": "Director - Alliances and Partners",
-      "company": "Teradata",
-      "location": "Riyadh, Riyadh, Saudi Arabia",
-      "url": "https://www.linkedin.com/jobs/view/4379177611",
-      "posted": "2026-03-25",
+      "id": "google-a386866e5ccf",
+      "source": "google",
+      "title": "EMEA Programme Director. job",
+      "company": "Oracle in Dubai, United Arab Emirates \u00e2\u0080\u0093 Apply on Wuzzuf",
+      "location": "Dubai, UAE",
+      "url": "https://wuzzuf.net/jobs/p/245482-EMEA-Programme-Director--Oracle-Dubai-United-Arab-Emirates",
+      "posted": "",
       "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 10,
+      "domain_match": true,
+      "keyword_score": 6,
       "match_keywords": [
-        "director",
-        "saudi"
+        "director"
       ],
-      "raw_snippet": "**What You\u2019ll Do**\n As Director, Partners \\& Alliances, you will own Teradata\u2019s partner go\u2011to\u2011market strategy across\n **Saudi Arabia, Turkey \\& South Africa.** \n This is role uniquely blends strategic alliance ownership with field\u2011level execution, driving partner\u2011sourced demand, accelerating deals, ",
+      "raw_snippet": "",
       "relevant": true,
       "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "jd_text": "**What You\u2019ll Do**\n As Director, Partners \\& Alliances, you will own Teradata\u2019s partner go\u2011to\u2011market strategy across\n **Saudi Arabia, Turkey \\& South Africa.** \n This is role uniquely blends strategic alliance ownership with field\u2011level execution, driving partner\u2011sourced demand, accelerating deals, and ensuring strong governance across regions and cloud ecosystems.\n   \n\n  \n\n You will define and execute regional partner strategies, build repeatable operating rhythms, strengthen our joint value proposition, and enable sellers to maximize co\u2011sell and funding opportunities. Success in this role directly impacts revenue acceleration, partner influence, cloud engagement, and overall ecosystem health.\n   \n\n  \n\n**Who You\u2019ll Work With**\n You will partner closely with regional sales leadership, solution engineering, marketing, global alliances, and ecosystem teams. You will collaborate deeply with field and executive teams across Saudi Arabia, Turkey \\& South Africa to build joint plans, run governance, and unlock strategic workloads.\n   \n\n  \n\n This position reports to the\n **VP, Partners \\& Alliances, EMEA** \n .\n   \n\n  \n\n**What Makes You a Qualified Candidate**\n (Non\u2011negotiable)\n   \n\n  \n\n* 10\\+ years of experience in alliances, partner sales, or cloud ecosystem leadership.\n* Demonstrated success working with hyperscalers,\n* Strong field execution experience across MEA region\n* Exceptional communication, influence, and executive engagement skills.\n* Language capabilities aligned to the region desirable\n\n\n**What You\u2019ll Bring**\n (Preferred qualifications)\n   \n\n  \n\n* Proven ability to build and scale partner operating rhythms and governance.\n* Strong understanding of cloud go\u2011to\u2011market models, co\u2011sell frameworks, and funding programs.\n* Experience activating sector\u2011specific plays and solution accelerators.\n* Ability to map partner capacity to account opportunities and drive aligned demand creation.\n* Skilled at enabling sales teams and accelerating complex opportunities through influence.\n* Ability to develop compelling value propositions aligned to priority cloud workloads.\n* Data\u2011driven approach to pipeline management, tracking, and reporting.\n\n\n****Why We Think You\u2019ll Love Teradata**\n We prioritize a people\\-first culture because we know our people are at the very heart of our success. We embrace a flexible work model because we trust our people to make decisions about how, when, and where they work. We focus on well\\-being because we care about our people and their ability to thrive both personally and professionally. We are an anti\\-racist company because our dedication to Diversity, Equity, and Inclusion is more than a statement. It is a deep commitment to doing the work to foster an equitable environment that celebrates people for all of who they are.\n   \n\n  \n\n Teradata invites all identities and backgrounds in the workplace. We work with deliberation and intent to ensure we are cultivating collaboration and inclusivity across our global organization. \u200b We are proud to be an equal opportunity and affirmative action employer. We do not discriminate based upon race, color, ancestry, religion, creed, sex (including pregnancy, childbirth, breastfeeding, or related conditions), national origin, sexual orientation, age, citizenship, marital status, disability, medical condition, genetic information, gender identity or expression, military and veteran status, or any other legally protected status.**",
       "source_count": 1,
-      "country": "Saudi Arabia",
+      "country": "United Arab Emirates",
       "policy_status": "pass",
       "sources": [
-        "linkedin"
+        "google-jobs"
       ],
-      "first_seen": "2026-04-05"
+      "first_seen": "2026-04-06"
     }
   ],
   "kpi": {
-    "total_raw": 1087,
+    "total_raw": 1083,
     "sources_loaded": 3,
     "stale_sources": 1,
-    "unique_after_dedup": 987,
+    "unique_after_dedup": 984,
     "applied_filtered": 12,
-    "policy_filtered": 537,
-    "final_candidates": 5,
+    "policy_filtered": 541,
+    "final_candidates": 3,
     "multi_source_jobs": 0,
-    "new_today": 5
+    "new_today": 3
   },
   "recommendations": []
 }

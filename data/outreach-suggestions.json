@@ -1,29 +1,6 @@
 {
-  "generated": "2026-04-05T14:01:09.453536+00:00",
-  "suggestions": [
-    {
-      "name": "Shelby J.",
-      "role": "Talent Acquisition Coordinator",
-      "url": "https://www.linkedin.com/in/shelby-j-68a11494",
-      "company": "Visa",
-      "signal_score": 30,
-      "source": "tavily",
-      "applied_role": "Director CoE - Strategy and Execution",
-      "applied_date": "2026-03-27",
-      "reason": "You applied for Director CoE - Strategy and Execution at Visa"
-    },
-    {
-      "name": "Shelby J.",
-      "role": "Talent Acquisition Coordinator",
-      "url": "https://www.linkedin.com/in/shelby-j-68a11494",
-      "company": "Visa",
-      "signal_score": 30,
-      "source": "tavily",
-      "applied_role": "Director, Government Solutions, KSA",
-      "applied_date": "2026-03-27",
-      "reason": "You applied for Director, Government Solutions, KSA at Visa"
-    }
-  ],
+  "generated": "2026-04-06T04:01:05.680432+00:00",
+  "suggestions": [],
   "companies_searched": 10,
   "status": "ok"
 }

@@ -1082,3 +1082,44 @@ Restarted systemd service: openclaw-gateway.service
   "enqueued": true,
   "runId": "manual:418e7854-d466-4b49-ad1d-f3f3debae5d7:1775397614898:3"
 }
+[2026-04-05 22:00] === Watchdog v3 run ===
+[2026-04-05 22:00] FIXED: Re-triggered failed cron 145d964f-e2e5-4b49-8058-f9ddac926f45
+[2026-04-05 22:00] FIXED: Re-triggered failed cron 64e147b1-f9da-429a-8d1e-63421c9d0283
+[2026-04-05 22:00] Summary: fixes=2 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:145d964f-e2e5-4b49-8058-f9ddac926f45:1775419217520:5"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:64e147b1-f9da-429a-8d1e-63421c9d0283:1775419217962:6"
+}
+[2026-04-06 00:00] === Watchdog v3 run ===
+[2026-04-06 00:00] WARN: active-tasks.md stale (50h)
+[2026-04-06 00:00] FIXED: Re-triggered failed cron 145d964f-e2e5-4b49-8058-f9ddac926f45
+[2026-04-06 00:00] Summary: fixes=1 warnings=2 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:145d964f-e2e5-4b49-8058-f9ddac926f45:1775426415794:7"
+}
+[2026-04-06 02:00] === Watchdog v3 run ===
+[2026-04-06 02:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-06 04:00] === Watchdog v3 run ===
+[2026-04-06 04:00] FIXED: Re-triggered failed cron 4db2295a-d3ac-4beb-b902-47516c26432e
+[2026-04-06 04:00] Summary: fixes=1 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:4db2295a-d3ac-4beb-b902-47516c26432e:1775440822756:8"
+}
+[2026-04-06 06:00] === Watchdog v3 run ===
+[2026-04-06 06:00] FIXED: Re-triggered failed cron 0e2740f5-870a-454a-b493-877111829812
+[2026-04-06 06:00] Summary: fixes=1 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:0e2740f5-870a-454a-b493-877111829812:1775448017545:9"
+}

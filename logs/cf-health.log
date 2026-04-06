@@ -256,3 +256,8 @@
 [07:00:29]   ✅ visuals: 38 visuals, newest 6.9d old
 [07:00:29] 
   Summary: 8 ✅  0 ⚠️  1 🔴  1 ℹ️
+[07:00:01] === Content Factory Health v2 === 2026-04-06 07:00 Cairo
+[07:00:03]   ✅ notion_auth: Token OK
+[07:00:08]   🔴 gateway: Gateway unreachable (crons won't fire)
+[07:00:16]   ✅ rss_db: 433 total, 0 New, 0 Gold waiting
+[07:00:16]   ✅ rss_crawler: Last ran 2026-03-27T06:11, 290 URLs tracked
