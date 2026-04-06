@@ -47,9 +47,16 @@ wait $PID_GO && log "  Google/Exa: done ✅" || log "  Google/Exa: FAILED ❌"
 log "Phase A2: Merge & dedup"
 python3 "$SCRIPTS_DIR/jobs-merge.py" >> "$LOG" 2>&1 || log "  Merge: FAILED ❌"
 
-# Phase A3: Fetch missing JDs
-log "Phase A3: JD enrichment"
-python3 "$SCRIPTS_DIR/jobs-enrich-jd.py" >> "$LOG" 2>&1 || log "  JD enrich: FAILED ❌"
+# Phase A3: Fetch missing JDs (fire-and-forget — takes too long for pipeline timeout)
+log "Phase A3: JD enrichment (background)"
+python3 "$SCRIPTS_DIR/jobs-enrich-jd.py" >> "$LOG" 2>&1 &
+log "  JD enrich: started (background)"
+
+# Phase A3.5: Check if the previous run's JD enrich is still running
+PREV_PID=$(pgrep -f "jobs-enrich-jd.py" 2>/dev/null | grep -v $$ | head -1)
+if [ -n "$PREV_PID" ]; then
+  log "  Previous JD enrich still running (PID $PREV_PID) — OK, next run will pick it up"
+fi
 
 # Phase A4: Build source report from source_runs table
 log "Phase A4: Source report"
