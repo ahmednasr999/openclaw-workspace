@@ -1,5 +1,20 @@
 # Lessons Learned
 
+## 2026-04-06 — Telegram Commands Outage (OpenClaw 2026.4.5 partial update)
+### What happened
+All native Telegram commands (/status, /models, /new) stopped working silently. No visible error to the bot — commands were simply not responding.
+### Root cause
+OpenClaw 2026.4.5 update via npm was incomplete. dist files under `/usr/lib/node_modules/openclaw/` were partially updated, but npm still registered 2026.4.1. A renamed module file (`bot-native-commands.runtime-DmqbZsFC.js` → `DtyEJfGY`) was missing — the bot bundle referenced the old hash.
+### Fix
+Forced clean reinstall: `npm install -g openclaw@2026.4.5 --force`, then `systemctl restart openclaw-gateway.service`. All commands restored. Memory dropped from 3.2GB to ~922MB.
+### Lesson
+- After any OpenClaw update, verify commands work immediately (`/status` is a good smoke test)
+- Gateway restart after update is mandatory — files alone aren't enough
+- Partial updates can silently break core features without clear error messages
+- This reinforced the rule in TOOLS.md: gateway restarts = crash risk, but are required after updates
+### Ongoing monitoring
+- qwen3.6-plus:free via OpenRouter returning 429 rate limit errors — watch for task impact
+
 ## 2026-04-04 - Broke Notion Content, Then Stopped Waiting for Permission to Fix It
 ### What Happened
 While updating Notion page images, I ran a script that archived/deleted body content blocks for Apr 5-9 posts. The image-update script wiped existing content. After Ahmed asked about missing content, I identified the problem and started restoring — but then **stopped mid-fix** and waited for Ahmed to push me to continue. The recovery should have been automatic.

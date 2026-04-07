@@ -2,52 +2,111 @@
   "meta": {
     "agent": "jobs-review",
     "version": "2.0.0",
-    "generated_at": "2026-03-30T08:18:21.343887+02:00",
-    "duration_ms": 1278939,
+    "generated_at": "2026-04-06T09:35:20.996135+02:00",
+    "duration_ms": 49283,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "4219587f",
+    "run_id": "9b4bced0",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
-    "generated_at": "2026-03-30T08:18:20.751631+02:00",
-    "total_candidates": 202,
-    "reviewed": 136,
-    "submit": [],
+    "generated_at": "2026-04-06T09:35:20.984064+02:00",
+    "total_candidates": 6,
+    "reviewed": 3,
+    "submit": [
+      {
+        "id": "linkedin_jobspy-li-4397759795",
+        "source": "linkedin_jobspy",
+        "title": "Head of IT Delivery & Business Enablement - Corporate and Support",
+        "company": "flydubai",
+        "location": "Dubai, Dubai, United Arab Emirates",
+        "url": "https://www.linkedin.com/jobs/view/4397759795",
+        "posted": "",
+        "seniority": "Director",
+        "domain_match": true,
+        "keyword_score": 13,
+        "match_keywords": [
+          "ai",
+          "head of"
+        ],
+        "raw_snippet": "**MAIN OBJECTIVE OF ROLE**\n To manage business relationship with the internal customers at C\\-level and department heads, align IT with the business strategy, understand and translate customer needs to ensure delivery of all IT products and services to the businesses in a timely and cost\\-effective ",
+        "relevant": true,
+        "filter_reason": null,
+        "search_country": "United Arab Emirates",
+        "jd_text": "**MAIN OBJECTIVE OF ROLE**\n To manage business relationship with the internal customers at C\\-level and department heads, align IT with the business strategy, understand and translate customer needs to ensure delivery of all IT products and services to the businesses in a timely and cost\\-effective manner based on defined standards and quality criteria.\n   \n\n  \n\n**Key Responsibilities**\n* Establishes an appropriate and cost\\-effective IT and application strategy for each business unit to support the business strategy and flydubai growth plans.\n* Provides leadership across a cross\\-functional set of teams consisting of Business and System analysts, Solution Architects, Software Engineers, Application and Business support, and scouts best of breed solutions and be the enabler in providing competitive advantage to the business by early adoption of cutting\\-edge technologies.\n* Develops and maintains working relationships with Chiefs and department heads through regular direct interactions, acting as the single point of contact for all IT related matters to the business, agreeing on action plans to address any concerns and allocate team resources accordingly.\n* Provides strategic direction to Business alignment, Software Engineering and Support teams in defining and delivery of annual work programme, monitoring and reviewing key business cases for all major investments to ensure they are cost effective and resolves conflicts and work with the business portfolio stakeholders to set priorities within the portfolio.\n* Ensures that service level objectives are agreed with the business for all relevant services, conduct regular service reviews and ensure performance against service levels manages escalations related to service levels, and ensures business continuity plans are in place for all critical operations.\n* Provides relevant inputs on business requirements to IT Strategy \\& Enterprise Architecture to ensure alignment with IT Strategy in selection of technologies and design that is future proof and fit for purpose, provides competitive advantage, and delivers business value.\n* Owns ultimate responsibility for IT deliveries to the business by monitoring project milestones, costs, and key risks, actively participating in steering group decisions, and promptly resolving escalated issues to ensure customer satisfaction and successful execution.\n* Contributes to IT leadership by supporting build\\-versus\\-buy decisions, assists in the sourcing best\\-of\\-breed solutions aligned with the mobile\\-first, cloud\\-first, and digital\\-first strategy, and by assisting in the negotiations of SLAs, managing vendor relationships through regular service reviews, and escalating service issues to Chief levels when required.\n* Promotes business synergies and drive a proactive culture of innovation, along with detailed business knowledge and understanding the direction of the business and the industry as well as the evolution of technology.\n* Drives service improvement programmes that bring in cost efficiencies and reduce time to market, and identifies technology improvement, optimisation and replacement initiatives, implement and drive effective resource management to optimise resource utilization and cost.\n* Establishes career development plans, training for direct reportees and provide appropriate mentoring and coaching, by conducting timely annual and interim performance reviews and set SMART objectives to cultivate a culture of high performance, ensuring that the team develops requisite level of customer and technical knowledge to effectively manage business relationships.\n\n\n**Qualifications**\n* Bachelor's Degree (3\\+ years)\n* Bachelor\u2019s Degree or Honours in Computer Science, Information Systems, or related field. Master's degree in engineering or MBA is preferred\n* Fluent in English\n* 10\\+ yrs experience of IT Management, Product/Project delivery and Transformation programs. Experience in leading large IT teams comprising Business analysts, solution architects Software Engineering, application, and business support\n* Airline Industry knowledge and awareness of emerging technologies\n* Years with qualifications: 10 \\- 12years\n* PMP and SAFe certifications\n\n\n**COMPETENCIES**\n* Customer Focus\n* Teamwork\n* Effective Communication\n* Personal Accountability \\& Commitment to achieve\n* Resilience \\& Flexibility (Can do attitude)\n* Inspiring \\& Developing Others\n* Decision Making\n* Strategic Thinking\n* Business Acumen\n\n\n**Isr Requirements**\n Reads and complies with the ISR policies of the Company and diligently reports any weakness or incidents to the respective Line Manager or the Information Security team. Completes all required ISR awareness sessions and follows associated guidelines in the day\\-to\\-day business operations.",
+        "source_count": 1,
+        "country": "United Arab Emirates",
+        "industry_bonus": 6,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "first_seen": "2026-04-06",
+        "r1_verdict": "PASS",
+        "r1_confidence": 0.85,
+        "career_fit_score": 7,
+        "verdict": "SUBMIT",
+        "verdict_reason": "Strategic IT delivery and business enablement role at GCC airline - aligns with candidate's technology operations and stakeholder management strengths",
+        "ats_score": 28,
+        "ats_verdict": "SKIP",
+        "ats_matched": [
+          "program management",
+          "project management",
+          "transformation",
+          "pmp",
+          "ai",
+          "erp",
+          "cloud",
+          "digital",
+          "strategy",
+          "strategic"
+        ],
+        "ats_gaps": [
+          "Entry/junior level"
+        ]
+      }
+    ],
     "review": [],
-    "skip_count": 202,
+    "skip_count": 5,
     "unreviewed_count": 0,
     "thresholds": {
-      "submit": 8,
+      "submit": 7,
       "review": 5
     },
     "pipeline": {
+      "l0_auto_skip": 0,
+      "l1_jd_enriched": 0,
+      "l1_jd_coverage": "6/6",
       "r1_model": "minimax-portal/MiniMax-M2.7",
-      "r2_model": "anthropic/claude-sonnet-4-6",
-      "r1_filtered": 66,
-      "r1_passed": 136,
+      "r2_model": "minimax-portal/MiniMax-M2.7",
+      "r1_filtered": 3,
+      "r1_passed": 3,
       "r1_failed_batches": 0,
-      "r2_latency_ms": 193937,
-      "r2_fallbacks": 136
+      "r2_latency_ms": 21070,
+      "r2_fallbacks": 0
     },
     "kpi": {
-      "submit_rate": 0.0,
+      "submit_rate": 0.3333333333333333,
       "review_rate": 0.0,
-      "skip_rate": 1.4852941176470589,
-      "avg_fit_score": 1.1,
-      "r1_filter_rate": 32.7
+      "skip_rate": 1.6666666666666667,
+      "avg_fit_score": 4.7,
+      "l0_filter_rate": 0.0,
+      "r1_filter_rate": 50.0
     }
   },
   "kpi": {
-    "submit_count": 0,
+    "total_loaded": 6,
+    "l0_auto_skip": 0,
+    "l1_jd_enriched": 0,
+    "l2_filtered": 3,
+    "submit_count": 1,
     "review_count": 0,
-    "skip_count": 202,
-    "r1_filtered": 66,
-    "submit_rate": 0.0,
-    "avg_fit_score": 1.1,
-    "r2_latency_ms": 193937
+    "skip_count": 5,
+    "submit_rate": 33.3,
+    "avg_fit_score": 4.7,
+    "r2_latency_ms": 21070
   },
   "recommendations": []
 }

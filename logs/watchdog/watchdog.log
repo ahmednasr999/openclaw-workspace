@@ -1123,3 +1123,240 @@ Restarted systemd service: openclaw-gateway.service
   "enqueued": true,
   "runId": "manual:0e2740f5-870a-454a-b493-877111829812:1775448017545:9"
 }
+[2026-04-06 08:00] === Watchdog v3 run ===
+[2026-04-06 08:00] FIXED: Re-triggered failed cron 0e2740f5-870a-454a-b493-877111829812
+[2026-04-06 08:00] Summary: fixes=1 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:0e2740f5-870a-454a-b493-877111829812:1775455223884:11"
+}
+[2026-04-06 10:00] === Watchdog v3 run ===
+[2026-04-06 10:00] FIXED: Re-triggered failed cron 145d964f-e2e5-4b49-8058-f9ddac926f45
+[2026-04-06 10:00] FIXED: Re-triggered failed cron 7ba5f8f7-6eec-4301-bfa6-185dee16e778
+[2026-04-06 10:00] Summary: fixes=2 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:7ba5f8f7-6eec-4301-bfa6-185dee16e778:1775462415462:12"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:145d964f-e2e5-4b49-8058-f9ddac926f45:1775462415479:13"
+}
+[2026-04-06 12:00] === Watchdog v3 run ===
+[2026-04-06 12:00] FIXED: Re-triggered failed cron 7ba5f8f7-6eec-4301-bfa6-185dee16e778
+[2026-04-06 12:00] Summary: fixes=1 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:7ba5f8f7-6eec-4301-bfa6-185dee16e778:1775469611056:1"
+}
+[2026-04-06 14:00] === Watchdog v3 run ===
+[2026-04-06 14:00] FIXED: Re-triggered failed cron 145d964f-e2e5-4b49-8058-f9ddac926f45
+[2026-04-06 14:00] FIXED: Re-triggered failed cron 7ba5f8f7-6eec-4301-bfa6-185dee16e778
+[2026-04-06 14:00] Summary: fixes=2 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:7ba5f8f7-6eec-4301-bfa6-185dee16e778:1775476824622:2"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:145d964f-e2e5-4b49-8058-f9ddac926f45:1775476824640:3"
+}
+[2026-04-06 16:00] === Watchdog v3 run ===
+[2026-04-06 16:00] FIXED: Re-triggered failed cron 145d964f-e2e5-4b49-8058-f9ddac926f45
+[2026-04-06 16:00] FIXED: Re-triggered failed cron 418e7854-d466-4b49-ad1d-f3f3debae5d7
+[2026-04-06 16:00] Summary: fixes=2 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:145d964f-e2e5-4b49-8058-f9ddac926f45:1775484047854:1"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:418e7854-d466-4b49-ad1d-f3f3debae5d7:1775484048442:2"
+}
+[2026-04-06 18:00] === Watchdog v3 run ===
+[2026-04-06 18:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-06 20:00] === Watchdog v3 run ===
+[2026-04-06 20:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-06 22:00] === Watchdog v3 run ===
+[2026-04-06 22:00] FIXED: Re-triggered failed cron 145d964f-e2e5-4b49-8058-f9ddac926f45
+[2026-04-06 22:00] Summary: fixes=1 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:145d964f-e2e5-4b49-8058-f9ddac926f45:1775505640837:1"
+}
+[2026-04-07 00:00] === Watchdog v3 run ===
+[2026-04-07 00:00] FIXED: Re-triggered failed cron 145d964f-e2e5-4b49-8058-f9ddac926f45
+[2026-04-07 00:00] Summary: fixes=1 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:145d964f-e2e5-4b49-8058-f9ddac926f45:1775512845023:1"
+}
+[2026-04-07 02:00] === Watchdog v3 run ===
+[2026-04-07 02:00] FIXED: Re-triggered failed cron 145d964f-e2e5-4b49-8058-f9ddac926f45
+[2026-04-07 02:00] Summary: fixes=1 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:145d964f-e2e5-4b49-8058-f9ddac926f45:1775520055782:2"
+}
+[2026-04-07 04:00] === Watchdog v3 run ===
+[2026-04-07 04:00] FIXED: Re-triggered failed cron 145d964f-e2e5-4b49-8058-f9ddac926f45
+[2026-04-07 04:00] FIXED: Re-triggered failed cron 224bb358-a983-4ec6-ba28-32101ab48eb8
+[2026-04-07 04:00] FIXED: Re-triggered failed cron db37a524-9cba-453c-a59a-9042a268f7ea
+[2026-04-07 04:00] Summary: fixes=3 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:145d964f-e2e5-4b49-8058-f9ddac926f45:1775527262620:3"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:224bb358-a983-4ec6-ba28-32101ab48eb8:1775527263531:4"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:db37a524-9cba-453c-a59a-9042a268f7ea:1775527263731:5"
+}
+[2026-04-07 06:00] === Watchdog v3 run ===
+[2026-04-07 06:00] FIXED: Re-triggered failed cron 4db2295a-d3ac-4beb-b902-47516c26432e
+[2026-04-07 06:00] FIXED: Re-triggered failed cron 0e2740f5-870a-454a-b493-877111829812
+[2026-04-07 06:00] Summary: fixes=2 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:0e2740f5-870a-454a-b493-877111829812:1775534445517:1"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:4db2295a-d3ac-4beb-b902-47516c26432e:1775534445944:2"
+}
+[2026-04-07 08:00] === Watchdog v3 run ===
+[2026-04-07 08:00] FIXED: Re-triggered failed cron 0e2740f5-870a-454a-b493-877111829812
+[2026-04-07 08:00] FIXED: Re-triggered failed cron 1b1d9bca-2f63-49d1-89b2-cd05a792b30a
+[2026-04-07 08:00] Summary: fixes=2 warnings=1 alerts=0
+[plugins] [composio] No consumer key configured. Set COMPOSIO_CONSUMER_KEY env var or plugins.composio.consumerKey in config. Get your key (ck_...) from dashboard.composio.dev
+[plugins] [composio] No consumer key configured. Set COMPOSIO_CONSUMER_KEY env var or plugins.composio.consumerKey in config. Get your key (ck_...) from dashboard.composio.dev
+[plugins] [lcm] Plugin loaded (enabled=true, db=/root/.openclaw/lcm.db, threshold=0.75)
+[plugins] [lcm] Plugin loaded (enabled=true, db=/root/.openclaw/lcm.db, threshold=0.75)
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:1b1d9bca-2f63-49d1-89b2-cd05a792b30a:1775541671409:3"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:0e2740f5-870a-454a-b493-877111829812:1775541671501:4"
+}
+[2026-04-07 10:00] === Watchdog v3 run ===
+[2026-04-07 10:00] FIXED: Re-triggered failed cron 0e2740f5-870a-454a-b493-877111829812
+[2026-04-07 10:00] FIXED: Re-triggered failed cron 1b1d9bca-2f63-49d1-89b2-cd05a792b30a
+[2026-04-07 10:00] FIXED: Re-triggered failed cron 7ba5f8f7-6eec-4301-bfa6-185dee16e778
+[2026-04-07 10:00] Summary: fixes=3 warnings=1 alerts=0
+[plugins] [composio] No consumer key configured. Set COMPOSIO_CONSUMER_KEY env var or plugins.composio.consumerKey in config. Get your key (ck_...) from dashboard.composio.dev
+[plugins] [composio] No consumer key configured. Set COMPOSIO_CONSUMER_KEY env var or plugins.composio.consumerKey in config. Get your key (ck_...) from dashboard.composio.dev
+[plugins] [composio] No consumer key configured. Set COMPOSIO_CONSUMER_KEY env var or plugins.composio.consumerKey in config. Get your key (ck_...) from dashboard.composio.dev
+[plugins] [lcm] Plugin loaded (enabled=true, db=/root/.openclaw/lcm.db, threshold=0.75)
+[plugins] [lcm] Plugin loaded (enabled=true, db=/root/.openclaw/lcm.db, threshold=0.75)
+[plugins] [lcm] Plugin loaded (enabled=true, db=/root/.openclaw/lcm.db, threshold=0.75)
+gateway connect failed: Error: gateway closed (1000): 
+Error: gateway closed (1000 normal closure): no close reason
+Gateway target: ws://127.0.0.1:18789
+Source: local loopback
+Config: /root/.openclaw/openclaw.json
+Bind: loopback
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:7ba5f8f7-6eec-4301-bfa6-185dee16e778:1775548879552:6"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:0e2740f5-870a-454a-b493-877111829812:1775548878973:5"
+}
+[2026-04-07 12:00] === Watchdog v3 run ===
+[2026-04-07 12:00] FIXED: Re-triggered failed cron ea668c66-f66e-49a9-8e72-e5e50ea07477
+[2026-04-07 12:00] FIXED: Re-triggered failed cron 0e2740f5-870a-454a-b493-877111829812
+[2026-04-07 12:00] FIXED: Re-triggered failed cron 1b1d9bca-2f63-49d1-89b2-cd05a792b30a
+[2026-04-07 12:00] Summary: fixes=3 warnings=1 alerts=0
+[plugins] [composio] No consumer key configured. Set COMPOSIO_CONSUMER_KEY env var or plugins.composio.consumerKey in config. Get your key (ck_...) from dashboard.composio.dev
+[plugins] [lcm] Plugin loaded (enabled=true, db=/root/.openclaw/lcm.db, threshold=0.75)
+[plugins] [composio] No consumer key configured. Set COMPOSIO_CONSUMER_KEY env var or plugins.composio.consumerKey in config. Get your key (ck_...) from dashboard.composio.dev
+[plugins] [composio] No consumer key configured. Set COMPOSIO_CONSUMER_KEY env var or plugins.composio.consumerKey in config. Get your key (ck_...) from dashboard.composio.dev
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:1b1d9bca-2f63-49d1-89b2-cd05a792b30a:1775556061862:2"
+}
+[plugins] [lcm] Plugin loaded (enabled=true, db=/root/.openclaw/lcm.db, threshold=0.75)
+[plugins] [lcm] Plugin loaded (enabled=true, db=/root/.openclaw/lcm.db, threshold=0.75)
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:0e2740f5-870a-454a-b493-877111829812:1775556063811:3"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:ea668c66-f66e-49a9-8e72-e5e50ea07477:1775556064306:4"
+}
+[2026-04-07 14:00] === Watchdog v3 run ===
+[2026-04-07 14:00] FIXED: Re-triggered failed cron 145d964f-e2e5-4b49-8058-f9ddac926f45
+[2026-04-07 14:00] FIXED: Re-triggered failed cron d1343a4d-61a4-476c-83c5-15724bcce89c
+[2026-04-07 14:00] FIXED: Re-triggered failed cron 1b1d9bca-2f63-49d1-89b2-cd05a792b30a
+[2026-04-07 14:00] Summary: fixes=3 warnings=1 alerts=0
+[plugins] [composio] No consumer key configured. Set COMPOSIO_CONSUMER_KEY env var or plugins.composio.consumerKey in config. Get your key (ck_...) from dashboard.composio.dev
+[plugins] [composio] No consumer key configured. Set COMPOSIO_CONSUMER_KEY env var or plugins.composio.consumerKey in config. Get your key (ck_...) from dashboard.composio.dev
+[plugins] [composio] No consumer key configured. Set COMPOSIO_CONSUMER_KEY env var or plugins.composio.consumerKey in config. Get your key (ck_...) from dashboard.composio.dev
+[plugins] [lcm] Plugin loaded (enabled=true, db=/root/.openclaw/lcm.db, threshold=0.75)
+[plugins] [lcm] Plugin loaded (enabled=true, db=/root/.openclaw/lcm.db, threshold=0.75)
+[plugins] [lcm] Plugin loaded (enabled=true, db=/root/.openclaw/lcm.db, threshold=0.75)
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:145d964f-e2e5-4b49-8058-f9ddac926f45:1775563275138:6"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:d1343a4d-61a4-476c-83c5-15724bcce89c:1775563274335:5"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:1b1d9bca-2f63-49d1-89b2-cd05a792b30a:1775563275566:7"
+}
+[2026-04-07 16:00] === Watchdog v3 run ===
+[2026-04-07 16:00] FIXED: Re-triggered failed cron 145d964f-e2e5-4b49-8058-f9ddac926f45
+[2026-04-07 16:00] FIXED: Re-triggered failed cron d1343a4d-61a4-476c-83c5-15724bcce89c
+[2026-04-07 16:00] FIXED: Re-triggered failed cron 1b1d9bca-2f63-49d1-89b2-cd05a792b30a
+[2026-04-07 16:00] Summary: fixes=3 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:145d964f-e2e5-4b49-8058-f9ddac926f45:1775570470209:1"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:d1343a4d-61a4-476c-83c5-15724bcce89c:1775570470935:2"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:1b1d9bca-2f63-49d1-89b2-cd05a792b30a:1775570486004:3"
+}

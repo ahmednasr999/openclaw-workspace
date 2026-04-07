@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-04-05T07:00:01.556746+02:00",
+  "checked_at": "2026-04-07T07:00:01.219461+02:00",
   "components": {
     "notion_auth": {
       "status": "ok",
@@ -27,7 +27,7 @@
     },
     "content_calendar": {
       "status": "ok",
-      "message": "130 total | Ideas=117 | Drafts=8 | Scheduled=1 | Posted=3"
+      "message": "128 total | Ideas=117 | Drafts=5 | Scheduled=1 | Posted=4"
     },
     "auto_drafter": {
       "status": "ok",
@@ -39,7 +39,7 @@
     },
     "visuals": {
       "status": "ok",
-      "message": "38 visuals, newest 6.9d old"
+      "message": "38 visuals, newest 8.9d old"
     }
   }
 }

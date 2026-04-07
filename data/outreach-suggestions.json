@@ -1,6 +1,62 @@
 {
-  "generated": "2026-04-06T04:01:05.680432+00:00",
-  "suggestions": [],
+  "generated": "2026-04-07T14:00:57.828780+00:00",
+  "suggestions": [
+    {
+      "name": "Kristina Stanley",
+      "role": "Talent Acquisition Consultant",
+      "url": "https://www.linkedin.com/in/kristina-stanley-904b5126",
+      "company": "Kingston Stanley",
+      "signal_score": 30,
+      "source": "tavily",
+      "applied_role": "CTO \u2013 Dubai \u2013 UAE-N/Arabic Speaker",
+      "applied_date": "2026-03-28",
+      "reason": "You applied for CTO \u2013 Dubai \u2013 UAE-N/Arabic Speaker at Kingston Stanley"
+    },
+    {
+      "name": "Bob Stanley, MPA",
+      "role": "Talent Acquisition Consultant",
+      "url": "https://www.linkedin.com/in/restanley",
+      "company": "Kingston Stanley",
+      "signal_score": 30,
+      "source": "tavily",
+      "applied_role": "CTO \u2013 Dubai \u2013 UAE-N/Arabic Speaker",
+      "applied_date": "2026-03-28",
+      "reason": "You applied for CTO \u2013 Dubai \u2013 UAE-N/Arabic Speaker at Kingston Stanley"
+    },
+    {
+      "name": "Karthiga Anandan IHRP-CP",
+      "role": "",
+      "url": "https://www.linkedin.com/in/karthiga-anandan",
+      "company": "Cygnify",
+      "signal_score": 5,
+      "source": "tavily",
+      "applied_role": "Principal, Digital Delivery & Transformation",
+      "applied_date": "2026-03-28",
+      "reason": "You applied for Principal, Digital Delivery & Transformation at Cygnify"
+    },
+    {
+      "name": "Shubham Kumar Gupta",
+      "role": "",
+      "url": "https://www.linkedin.com/in/shubham-kumar-gupta-2794771a7",
+      "company": "Cygnify",
+      "signal_score": 5,
+      "source": "tavily",
+      "applied_role": "Principal, Digital Delivery & Transformation",
+      "applied_date": "2026-03-28",
+      "reason": "You applied for Principal, Digital Delivery & Transformation at Cygnify"
+    },
+    {
+      "name": "Recruiter Confidential",
+      "role": "HR",
+      "url": "https://www.linkedin.com/in/recruiter-confidential-690969105",
+      "company": "Confidential Careers",
+      "signal_score": 30,
+      "source": "tavily",
+      "applied_role": "CEO \u2014 Giga-Projects KSA",
+      "applied_date": "2026-03-28",
+      "reason": "You applied for CEO \u2014 Giga-Projects KSA at Confidential Careers"
+    }
+  ],
   "companies_searched": 10,
   "status": "ok"
 }

@@ -1,18 +1,18 @@
 {
-  "generated": "2026-04-05T23:50:20.809250+00:00",
-  "health_score": 79,
+  "generated": "2026-04-06T23:50:34.072468+00:00",
+  "health_score": 77,
   "summary": {
-    "ok": 6,
-    "warn": 3,
+    "ok": 5,
+    "warn": 4,
     "alert": 3
   },
   "workspace": {
     "root_files": 68,
-    "disk_percent": 54,
+    "disk_percent": 55,
     "disk_used": "52G",
     "disk_total": "96G",
     "ram_total": "7.8Gi",
-    "ram_used": "4.0Gi",
+    "ram_used": "2.6Gi",
     "large_files": [
       "/root/.openclaw/agents/main/qmd/node_modules/@node-llama-cpp/linux-x64-cuda/bins/linux-x64-cuda/libggml-cuda.so",
       "/root/.openclaw/agents/main/qmd/node_modules/@node-llama-cpp/linux-x64-cuda-ext/bins/linux-x64-cuda/fallback/libggml-cuda.so",
@@ -31,6 +31,7 @@
       "/root/.openclaw/agents/main/sessions/sessions.json.28ab18d1-4532-4ef4-84e9-ab513ebce8a8.tmp",
       "/root/.openclaw/agents/main/sessions/sessions.json.f6931f8d-a810-422f-a1e7-decccd1d5050.tmp",
       "/root/.openclaw/agents/main/sessions/sessions.json.07c16ce2-58af-4da7-a170-dde23d44f45d.tmp",
+      "/root/.openclaw/agents/main/sessions/sessions.json.bak-2026-04-06",
       "/root/.openclaw/agents/main/sessions/sessions.json.695b2e83-de3b-469a-ac59-1fb7aa166c28.tmp",
       "/root/.openclaw/agents/main/sessions/sessions.json.dc11cf88-cdc1-4f13-969a-df4a63f31ccc.tmp",
       "/root/.openclaw/agents/main/sessions/sessions.json.bd2b4671-4f3a-460d-845d-ad450ff847c0.tmp",
@@ -66,18 +67,8 @@
       "/root/.openclaw/agents/main/sessions/sessions.json.5a3cf81e-096a-450b-8c96-011e8d34903e.tmp",
       "/root/.openclaw/agents/main/sessions/sessions.json.606416c2-5067-4b41-ae3a-1fbf7468b77f.tmp",
       "/root/.openclaw/agents/main/sessions/sessions.json.ad3ef1f9-fc65-4561-8090-4a5e46ca3ca8.tmp",
-      "/root/.openclaw/agents/main/sessions/sessions.json.bak-2026-04-03",
       "/root/.openclaw/agents/main/sessions/sessions.json.671b22bd-744e-4dde-ab67-3db578c857e8.tmp",
       "/root/.openclaw/agents/main/sessions/sessions.json.73552fb8-0ea2-4939-9320-4bcd1f09a2ac.tmp",
-      "/root/.openclaw/media/outbound/v2-C-twilight.jpg",
-      "/root/.openclaw/media/outbound/post3-slack-message.jpg",
-      "/root/.openclaw/media/outbound/post4-gcc-frameworks.jpg",
-      "/root/.openclaw/media/outbound/post5-72-hours.jpg",
-      "/root/.openclaw/media/outbound/v2-D-editorial.jpg",
-      "/root/.openclaw/media/outbound/variant-A-keynote.jpg",
-      "/root/.openclaw/media/outbound/v2-E-holographic.jpg",
-      "/root/.openclaw/media/outbound/variant-B-cinematic.jpg",
-      "/root/.openclaw/media/outbound/post2-ai-deployments.jpg",
       "/root/.openclaw/extensions/camofox-browser/node_modules/impit-linux-x64-gnu/impit-node.linux-x64-gnu.node",
       "/root/.openclaw/extensions/camofox-browser/node_modules/better-sqlite3/deps/sqlite3/sqlite3.c",
       "/root/.openclaw/extensions/lossless-claw/node_modules/@napi-rs/canvas-linux-x64-gnu/skia.linux-x64-gnu.node",
@@ -135,7 +126,7 @@
       "/root/.openclaw/workspace/newsletter3.png",
       "/root/.openclaw/lcm.db.bak.20260328"
     ],
-    "session_mb": 1016.3
+    "session_mb": 1034.1
   },
   "learnings": {
     "total": 20,
@@ -160,7 +151,7 @@
       "notion_token": "present (50 chars)",
       "notion_databases": 15,
       "linkedin_lines": 3,
-      "linkedin_age_days": 13.1
+      "linkedin_age_days": 14.1
     }
   },
   "crons": {
@@ -192,7 +183,13 @@
       "Weekly Team Retro",
       "Content Agent: Weekly LEARN"
     ],
-    "failing": []
+    "failing": [
+      {
+        "name": "Email Agent (Sun-Thu)",
+        "consecutive_errors": 3,
+        "last_error": "FallbackSummaryError: All models failed (3): anthropic/claude-sonnet-4-6: LLM request failed: networ"
+      }
+    ]
   },
   "briefing_notion": {
     "skipped": true,
@@ -207,17 +204,17 @@
     {
       "category": "workspace",
       "level": "ok",
-      "message": "Disk: 54% used (52G/96G)"
+      "message": "Disk: 55% used (52G/96G)"
     },
     {
       "category": "workspace",
       "level": "warn",
-      "message": "Large files (>5MB): 120 found in .openclaw"
+      "message": "Large files (>5MB): 111 found in .openclaw"
     },
     {
       "category": "workspace",
       "level": "alert",
-      "message": "Session size: 1016.3MB - bloated, review sessions"
+      "message": "Session size: 1034.1MB - bloated, review sessions"
     },
     {
       "category": "learnings",
@@ -251,8 +248,8 @@
     },
     {
       "category": "crons",
-      "level": "ok",
-      "message": "No failing crons"
+      "level": "warn",
+      "message": "Failing crons: 1 with consecutive errors"
     },
     {
       "category": "briefing",
@@ -262,6 +259,7 @@
   ],
   "auto_fixed": [],
   "needs_attention": [
-    "Session bloat: 1016.3MB - review before deleting (needs human decision)"
+    "Session bloat: 1034.1MB - review before deleting (needs human decision)",
+    "'Email Agent (Sun-Thu)' has 3 consecutive errors - investigate manually"
   ]
 }

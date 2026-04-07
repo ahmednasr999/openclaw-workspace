@@ -2,12 +2,12 @@
   "meta": {
     "agent": "pipeline-agent",
     "version": "1.0.0",
-    "generated_at": "2026-04-06T06:00:16.282281+02:00",
-    "duration_ms": 14160,
+    "generated_at": "2026-04-07T16:00:15.875363+02:00",
+    "duration_ms": 14040,
     "ttl_hours": 6,
     "status": "partial",
     "error": "name 'notion_req' is not defined",
-    "run_id": "b945d62d",
+    "run_id": "2197120b",
     "retries_used": 0,
     "data_freshness": "stale"
   },

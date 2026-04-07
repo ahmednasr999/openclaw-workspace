@@ -856,3 +856,27 @@ I tri
 [06:32:29]   Added to Content Calendar: 0
 [06:32:29]   Skipped (duplicate title): 143
 [06:32:29]   Errors: 0
+[06:30:01] === RSS → Content Calendar Bridge === 2026-04-07 06:30 Cairo
+[06:30:01]   Fetching existing Content Calendar entries...
+[06:30:03]   Content Calendar has 128 existing entries (by title)
+[06:30:03]   Fetching unprocessed RSS articles...
+[06:30:05]   RSS DB: 143 Gold articles ready for Content Calendar
+[06:30:05]   143 articles to process
+[06:30:44]   ⚠️ Could not mark 32f8d599-a162-8198-b as processed: The read operation timed out
+[06:33:32] 
+=== Done ===
+[06:33:32]   Added to Content Calendar: 0
+[06:33:32]   Skipped (duplicate title): 143
+[06:33:32]   Errors: 0
+[06:30:01] === RSS → Content Calendar Bridge === 2026-04-07 06:30 Cairo
+[06:30:01]   Fetching existing Content Calendar entries...
+[06:30:03]   Content Calendar has 128 existing entries (by title)
+[06:30:03]   Fetching unprocessed RSS articles...
+[06:30:05]   RSS DB: 143 Gold articles ready for Content Calendar
+[06:30:05]   143 articles to process
+[06:30:44]   ⚠️ Could not mark 32f8d599-a162-8198-b as processed: The read operation timed out
+[06:33:32] 
+=== Done ===
+[06:33:32]   Added to Content Calendar: 0
+[06:33:32]   Skipped (duplicate title): 143
+[06:33:32]   Errors: 0
