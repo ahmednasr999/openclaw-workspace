@@ -261,3 +261,50 @@
 [07:00:08]   🔴 gateway: Gateway unreachable (crons won't fire)
 [07:00:16]   ✅ rss_db: 433 total, 0 New, 0 Gold waiting
 [07:00:16]   ✅ rss_crawler: Last ran 2026-03-27T06:11, 290 URLs tracked
+[07:00:29]   ✅ scorer: 433 scored, 0 unscored
+[07:00:29]   ✅ bridge: Ran today: 0 added, 143 dup skipped
+[07:00:30]   ✅ content_calendar: 130 total | Ideas=117 | Drafts=7 | Scheduled=1 | Posted=4
+[07:00:32]   ✅ auto_drafter: No drafts yet (CREATE job runs Fri, batch expected by weekend)
+[07:00:33]   ℹ️ linkedin_poster: No post scheduled for today
+[07:00:33]   ✅ visuals: 38 visuals, newest 7.9d old
+[07:00:33] 
+  Summary: 8 ✅  0 ⚠️  1 🔴  1 ℹ️
+[07:00:01] === Content Factory Health v2 === 2026-04-06 07:00 Cairo
+[07:00:03]   ✅ notion_auth: Token OK
+[07:00:08]   🔴 gateway: Gateway unreachable (crons won't fire)
+[07:00:16]   ✅ rss_db: 433 total, 0 New, 0 Gold waiting
+[07:00:16]   ✅ rss_crawler: Last ran 2026-03-27T06:11, 290 URLs tracked
+[07:00:29]   ✅ scorer: 433 scored, 0 unscored
+[07:00:29]   ✅ bridge: Ran today: 0 added, 143 dup skipped
+[07:00:30]   ✅ content_calendar: 130 total | Ideas=117 | Drafts=7 | Scheduled=1 | Posted=4
+[07:00:32]   ✅ auto_drafter: No drafts yet (CREATE job runs Fri, batch expected by weekend)
+[07:00:33]   ℹ️ linkedin_poster: No post scheduled for today
+[07:00:33]   ✅ visuals: 38 visuals, newest 7.9d old
+[07:00:33] 
+  Summary: 8 ✅  0 ⚠️  1 🔴  1 ℹ️
+[07:00:01] === Content Factory Health v2 === 2026-04-07 07:00 Cairo
+[07:00:01]   ✅ notion_auth: Token OK
+[07:00:02]   🔴 gateway: Gateway unreachable (crons won't fire)
+[07:00:07]   ✅ rss_db: 433 total, 0 New, 0 Gold waiting
+[07:00:07]   ✅ rss_crawler: Last ran 2026-03-27T06:11, 290 URLs tracked
+[07:00:15]   ✅ scorer: 433 scored, 0 unscored
+[07:00:15]   ✅ bridge: Ran today: 0 added, 143 dup skipped
+[07:00:17]   ✅ content_calendar: 128 total | Ideas=117 | Drafts=5 | Scheduled=1 | Posted=4
+[07:00:17]   ✅ auto_drafter: No drafts yet (CREATE job runs Fri, batch expected by weekend)
+[07:00:18]   ℹ️ linkedin_poster: No post scheduled for today
+[07:00:18]   ✅ visuals: 38 visuals, newest 8.9d old
+[07:00:18] 
+  Summary: 8 ✅  0 ⚠️  1 🔴  1 ℹ️
+[07:00:01] === Content Factory Health v2 === 2026-04-07 07:00 Cairo
+[07:00:01]   ✅ notion_auth: Token OK
+[07:00:02]   🔴 gateway: Gateway unreachable (crons won't fire)
+[07:00:07]   ✅ rss_db: 433 total, 0 New, 0 Gold waiting
+[07:00:07]   ✅ rss_crawler: Last ran 2026-03-27T06:11, 290 URLs tracked
+[07:00:15]   ✅ scorer: 433 scored, 0 unscored
+[07:00:15]   ✅ bridge: Ran today: 0 added, 143 dup skipped
+[07:00:17]   ✅ content_calendar: 128 total | Ideas=117 | Drafts=5 | Scheduled=1 | Posted=4
+[07:00:17]   ✅ auto_drafter: No drafts yet (CREATE job runs Fri, batch expected by weekend)
+[07:00:18]   ℹ️ linkedin_poster: No post scheduled for today
+[07:00:18]   ✅ visuals: 38 visuals, newest 8.9d old
+[07:00:18] 
+  Summary: 8 ✅  0 ⚠️  1 🔴  1 ℹ️

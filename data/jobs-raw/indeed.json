@@ -2,16 +2,189 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-04-06T06:42:44.027781+02:00",
-    "duration_ms": 100206,
+    "generated_at": "2026-04-07T12:02:25.589310+02:00",
+    "duration_ms": 143793,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "c0960f72",
+    "run_id": "d7b80e1a",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": [
+    {
+      "id": "indeed-in-3040c60139f19c7b",
+      "source": "indeed",
+      "title": "MCA Operational Performance Director",
+      "company": "Bureau Veritas",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=3040c60139f19c7b",
+      "posted": "2026-04-06",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 23,
+      "match_keywords": [
+        "project management",
+        "ai",
+        "director"
+      ],
+      "raw_snippet": "Minimum Required Qualifications\n\n  \n\nEducation:\n\n\nBachelor\u2019s degree in engineering or a related technical discipline (Master\u2019s preferred).\n\n  \n\nTechnical knowledge:\n\n* Experience in testing, inspection, certification activities is a plus\n* Practical experience of lean methods, 5S, standardized work, problem solving, VSM, Kaizen, Hoshin Kanri with evidence of real sustainable financial and behavioral results\n* Project management certificate or experience\n* Advanced Office 365 skills\n\n  \n\nExperien",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Director Digital Transformation"
+    },
+    {
+      "id": "indeed-in-5ba7758c5c8a302f",
+      "source": "indeed",
+      "title": "Head of IT Delivery & Business Enablement - Corporate and Support",
+      "company": "flydubai",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=5ba7758c5c8a302f",
+      "posted": "2026-04-06",
+      "seniority": "Director",
+      "domain_match": true,
+      "keyword_score": 13,
+      "match_keywords": [
+        "ai",
+        "head of"
+      ],
+      "raw_snippet": "MAIN OBJECTIVE OF ROLE:\n\nTo manage business relationship with the internal customers at C\\-level and department heads, align IT with the business strategy, understand and translate customer needs to ensure delivery of all IT products and services to the businesses in a timely and cost\\-effective manner based on defined standards and quality criteria.\nKEY RESPONSIBILITIES:\n* Establishes an appropriate and cost\\-effective IT and application strategy for each business unit to support the business s",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Head of Digital Transformation"
+    },
+    {
+      "id": "indeed-in-cca0f6d3af403aa8",
+      "source": "indeed",
+      "title": "Chief Technology Officer",
+      "company": "Z PLUS LIMOUSINE LLC",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=cca0f6d3af403aa8",
+      "posted": "2026-04-07",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 16,
+      "match_keywords": [
+        "ai",
+        "infrastructure",
+        "dubai"
+      ],
+      "raw_snippet": "Chief Technology Officer (CTO) \u2013 Technology \\& Mobility Solutions\n\nDubai, United Arab Emirates\n\nCompany: Z Plus Limousine L.L.C.\n\nJob Summary\n\nWe are seeking a highly experienced and strategic Chief Technology Officer (CTO) to lead the technology vision and execution across our mobility and EV infrastructure businesses. The ideal candidate will be responsible for building scalable systems, optimizing fleet technology, and driving innovation in electric vehicle (EV) charging and smart mobility so",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Chief Technology Officer"
+    },
+    {
+      "id": "indeed-in-ea6f1f87ed5c49f9",
+      "source": "indeed",
+      "title": "Head of Partnership & Business Development",
+      "company": "Genesis",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=ea6f1f87ed5c49f9",
+      "posted": "2026-04-01",
+      "seniority": "Director",
+      "domain_match": false,
+      "keyword_score": 13,
+      "match_keywords": [
+        "ai",
+        "head of"
+      ],
+      "raw_snippet": "**Genesis** is a Ukrainian co\\-founding IT company and one of the largest global publishers of non\\-gaming applications. We create products in the fastest\\-growing verticals\u2014from Health \\& Fitness and Education to AI\\-powered Utilities and Entertainment. Products born within the Genesis ecosystem have been downloaded over 1 billion times, with tens of millions of users engaging with them worldwide every month.\n\n\nOur **Business Development team** operates at the nexus of the Genesis ecosystem and",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Head of Technology"
+    },
+    {
+      "id": "indeed-in-ecc1928e05f9ac89",
+      "source": "indeed",
+      "title": "Sr. Principal Architect",
+      "company": "Hewlett Packard Enterprise | HPE",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=ecc1928e05f9ac89",
+      "posted": "2026-04-05",
+      "seniority": "Principal",
+      "domain_match": false,
+      "keyword_score": 13,
+      "match_keywords": [
+        "cloud",
+        "enterprise"
+      ],
+      "raw_snippet": "Sr. Principal Architect  \n\n\n\nThis role has been designated as \u2018Remote/Teleworker\u2019, which means you will primarily work from home.**Who We Are:**\n\n\nHewlett Packard Enterprise is the global edge\\-to\\-cloud company advancing the way people live and work. We help companies connect, protect, analyze, and act on their data and applications wherever they live, from edge to cloud, so they can turn insights into outcomes at the speed required to thrive in today\u2019s complex world. Our culture thrives on fin",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "VP Technology"
+    },
+    {
+      "id": "indeed-in-965dccf5d8d7ca87",
+      "source": "indeed",
+      "title": "Chief Financial Officer",
+      "company": "Noor Al Arab For Foodstuff Trading CO LLC",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=965dccf5d8d7ca87",
+      "posted": "2026-04-07",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 13,
+      "match_keywords": [
+        "ai",
+        "director"
+      ],
+      "raw_snippet": "**About Us**  \nGSY International Groups is a global trading and FMCG company with operations spanning wholesale, retail, and international exports. We are looking for a detail\\-oriented **Cheif Financial Officer** to support our business needs.\n\n**About Job Role:**\n\nThis role directly involves to report and provide daily/monthly financial insights to the management/chairman and directors.\n\nThe CFO is specifically or indirectly responsible for the following:\n\n**Key Responsibilities**\n\n* Deliver c",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Chief Operating Officer"
+    },
+    {
+      "id": "indeed-in-83ad753e6fe6c29d",
+      "source": "indeed",
+      "title": "Business Director",
+      "company": "Time machine trading",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=83ad753e6fe6c29d",
+      "posted": "2026-04-06",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 33,
+      "match_keywords": [
+        "ai",
+        "executive",
+        "director",
+        "growth",
+        "uae",
+        "dubai"
+      ],
+      "raw_snippet": "We are seeking an experienced Business Director to join our executive team and help drive our strategic growth initiatives, maximize operational efficiency, and build strong relationships with key stakeholders across various industries.\n\nKey Responsibilities:\n\n\\- Lead and execute strategic business initiatives to enhance the company\u2019s market position and drive sustainable growth in Dubai and the wider UAE region.\n\n\\- Oversee day\\-to\\-day operations, ensuring smooth implementation of business obj",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Director of Innovation"
+    },
+    {
+      "id": "indeed-in-2aa07183084bef09",
+      "source": "indeed",
+      "title": "Head of Inclusion",
+      "company": "TAALEEM",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=2aa07183084bef09",
+      "posted": "2026-04-06",
+      "seniority": "Director",
+      "domain_match": false,
+      "keyword_score": 6,
+      "match_keywords": [
+        "head of"
+      ],
+      "raw_snippet": "Taaleem is committed to safeguarding and promoting the welfare of children. At Taaleem, we hold ourselves to a high standard of effective practices in relation to child protection, and we are committed to safeguarding and promoting the welfare of children. We expect all staff to share this commitment. Successful applicants will be subject to various background checks including receipt of references, proof of relevant qualifications, identification, and police checks, including overseas checks.\n\n",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Head of Strategy"
+    },
     {
       "id": "indeed-in-c68ba60ea336556a",
       "source": "indeed",
@@ -36,6 +209,76 @@
       "search_title": "Head of Strategy"
     },
     {
+      "id": "indeed-in-c7590155af31b8ae",
+      "source": "indeed",
+      "title": "Chief Information Security Officer (vCISO) / Compliance Officer",
+      "company": "soum",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=c7590155af31b8ae",
+      "posted": "2026-04-06",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 10,
+      "match_keywords": [
+        "saudi",
+        "mena",
+        "api"
+      ],
+      "raw_snippet": "Work Week: Sunday \\- Thursday\nWork Timings: 9 AM \\- 6 PM (Saudi Arabian Time Zone)\n\n**About Us:**Soum is on a mission to revolutionize e\\-commerce in the MENA region and beyond by building the most convenient and trustworthy re\\-commerce marketplace in the region. We're reshaping how C2C marketplaces operate, making buying and selling second\\-hand products seamless and reliable. Since our launch in July 2021, Soum has become one of the fastest\\-growing startups in the region, achieving rapid exp",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "Chief Information Officer"
+    },
+    {
+      "id": "indeed-in-a747dab1295a1b18",
+      "source": "indeed",
+      "title": "Senior Manager - Regulatory & Policy Affairs",
+      "company": "Procter & Gamble",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=a747dab1295a1b18",
+      "posted": "2026-04-06",
+      "seniority": "Other",
+      "domain_match": true,
+      "keyword_score": 26,
+      "match_keywords": [
+        "healthcare",
+        "ai",
+        "growth",
+        "saudi",
+        "riyadh"
+      ],
+      "raw_snippet": "**Job Location**\n\n\nRiyadh**Job Description**\n\n**Overview of the job**\n\n\nIn this role, you will contribute to advancing P\\&G Personal Healthcare\u2019s growth in the Kingdom of Saudi Arabia by leading regulatory strategies and supporting policy engagement to enable timely product approvals and sustainable market access. You will develop and execute Regulatory Affairs strategies across the product lifecycle from regulatory pathway assessment and submissions to approvals and compliance ensuring alignmen",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "Head of Technology"
+    },
+    {
+      "id": "indeed-in-d4e17b1b91be8341",
+      "source": "indeed",
+      "title": "Senior Director - Project Management Sports Bu - Interface SPA 250",
+      "company": "Qiddiya Investment Company",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=d4e17b1b91be8341",
+      "posted": "2026-04-06",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 33,
+      "match_keywords": [
+        "project management",
+        "infrastructure",
+        "director",
+        "leadership",
+        "integration"
+      ],
+      "raw_snippet": "Qiddiya Investment Company is seeking an experienced and dynamic Senior Director \\- Project Management, Sports BU \\- Interface to lead and oversee the successful delivery of sports\\-related projects within the organization. This critical leadership role involves managing complex interfaces between various project teams, stakeholders, and business units to ensure seamless execution and integration of sports infrastructure and facilities.\n\n\nThe Senior Director will be responsible for driving strat",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "Director of Technology"
+    },
+    {
       "id": "indeed-in-c0473c6008dd79e2",
       "source": "indeed",
       "title": "Head of IT",
@@ -56,13 +299,53 @@
       "filter_reason": null,
       "search_country": "Qatar",
       "search_title": "Head of Technology"
+    },
+    {
+      "id": "indeed-in-d04ea24e4199db1a",
+      "source": "indeed",
+      "title": "Chief Steward - Waldorf Astoria Doha Lusail",
+      "company": "Hilton",
+      "location": "Doha, DAW, QA",
+      "url": "https://qa.indeed.com/viewjob?jk=d04ea24e4199db1a",
+      "posted": "2026-04-06",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 6,
+      "match_keywords": [
+        "ai"
+      ],
+      "raw_snippet": "Chief Steward \\- Waldorf Astoria Doha Lusail\n\n\nA Chief Steward trains, supports, and motivates the Back of House Team to deliver an excellent Guest and Member experience while managing cleaning schedules, moving and storing necessary equipment, and observing safety guidelines.  \n\n\n\n**What will I be doing?**\n\n\nAs a Chief Steward, you are responsible for training, supporting and motivating the Back of House Team to deliver an excellent Guest and Member experience. A Chief Steward will also be requ",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Qatar",
+      "search_title": "Head of IT"
+    },
+    {
+      "id": "indeed-in-af6316960a2c37ce",
+      "source": "indeed",
+      "title": "Director of Laundry",
+      "company": "Radisson Hotel Group",
+      "location": "Doha, DAW, QA",
+      "url": "https://qa.indeed.com/viewjob?jk=af6316960a2c37ce",
+      "posted": "2026-04-07",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 6,
+      "match_keywords": [
+        "director"
+      ],
+      "raw_snippet": "**Company Description**  \n\nRadisson Hotel Group is one of the world's largest hotel groups with ten distinctive hotel brands, and more than 1,460 hotels in operation and under development in 95\\+ countries. The Group\u2019s overarching brand promise is Every Moment Matters with a signature Yes I Can! service ethos.  \n\n  \n\nPeople are at the core of our business success and future. Our people are true Moment Makers and together we bring the culture, spirit, environment and opportunities that empower yo",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Qatar",
+      "search_title": "Director of Engineering"
     }
   ],
   "kpi": {
     "searches_run": 99,
-    "results_per_search": 0.67,
-    "unique_jobs": 2,
-    "errors": 63
+    "results_per_search": 1.97,
+    "unique_jobs": 15,
+    "errors": 37
   },
   "recommendations": []
 }
