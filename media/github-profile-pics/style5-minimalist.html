@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=500, height=500">
+  <title>Style 5 - Minimalist Clean</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      font-family: 'Inter', sans-serif;
+    }
+    .card {
+      width: 500px;
+      height: 500px;
+      background: #ffffff;
+      border-radius: 0;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .photo-area {
+      flex: 1;
+      overflow: hidden;
+    }
+    .photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    .info {
+      padding: 24px;
+      text-align: center;
+      border-top: 3px solid #000;
+    }
+    .name {
+      font-size: 32px;
+      font-weight: 600;
+      color: #000;
+      margin-bottom: 4px;
+      letter-spacing: -1px;
+    }
+    .username {
+      font-size: 18px;
+      color: #666;
+      font-weight: 400;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="photo-area">
+      <img src="profile-photo.jpg" alt="Ahmed Nasr" class="photo">
+    </div>
+    <div class="info">
+      <div class="name">Ahmed Nasr</div>
+      <div class="username">@ahmednasr999</div>
+    </div>
+  </div>
+</body>
+</html>

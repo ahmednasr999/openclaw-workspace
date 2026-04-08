@@ -1,0 +1,26 @@
+{
+  "post_url": "https://www.linkedin.com/posts/ahmednasr_uae-ksa-egypt-activity-7438215046360576000-bRj7",
+  "post_title": "Real-time Healthcare Visibility: UAE, KSA, Egypt",
+  "last_check": "2026-03-19T04:30Z",
+  "engagement": {
+    "reactions": 2,
+    "comments": 1,
+    "reposts": 0
+  },
+  "known_commenters": [
+    {
+      "name": "Mario Castañeda-Rojas",
+      "time": "3 days ago",
+      "analyzed": true,
+      "priority": "normal",
+      "needs_reply": false
+    }
+  ],
+  "reactions_detail": [
+    {"name": "Mario Castañeda-Rojas", "type": "celebrate"},
+    {"name": "Desiree Lee", "type": "like"}
+  ],
+  "api_status": "blocked_403",
+  "check_status": "FAILED - browser_automation_unavailable",
+  "note": "Check failed. LinkedIn API blocked (403). Camofox unavailable (no API key). OpenClaw browser failed to start. Cannot retrieve current engagement."
+}

@@ -1,0 +1,73 @@
+{
+  "workspace": {
+    "name": "Ahmed's Notion",
+    "id": "20b72b80-6b33-44fc-af23-2126d90880f7"
+  },
+  "root_page": {
+    "name": "\ud83c\udfaf Nasr's Command Center",
+    "id": "30b8d599-a162-8067-9eb8-f229b473d25f",
+    "url": "https://www.notion.so/Nasr-s-Command-Center-30b8d599a16280679eb8f229b473d25f"
+  },
+  "databases": {
+    "daily_briefings": {
+      "id": "3268d599-a162-812d-a59e-e5496dec80e7",
+      "name": "\ud83d\udcca Daily Briefings"
+    },
+    "job_pipeline": {
+      "id": "3268d599-a162-81b4-b768-f162adfa4971",
+      "name": "\ud83d\udcbc Job Pipeline"
+    },
+    "job_dossiers": {
+      "id": "3268d599-a162-8123-8584-d64a9477f887",
+      "name": "\ud83d\udcc4 Job Dossiers"
+    },
+    "content_calendar": {
+      "id": "3268d599-a162-814b-8854-c9b8bde62468",
+      "name": "\ud83d\udcc5 Content Calendar"
+    },
+    "system_log": {
+      "id": "3268d599-a162-81b4-8feb-d8997ddc6d73",
+      "name": "\u2699\ufe0f System Log"
+    },
+    "learnings": {
+      "id": "3268d599-a162-810f-9f1b-ffdc280ae96d",
+      "name": "\ud83d\udcda Learnings & Errors"
+    },
+    "active_tasks": {
+      "id": "3268d599-a162-8152-9036-e4e4a85d444d",
+      "name": "\u2705 Active Tasks"
+    },
+    "session_logs": {
+      "id": "3268d599-a162-8117-afef-e4910ec15e55",
+      "name": "\ud83d\udcdd Session Logs"
+    },
+    "scanner_history": {
+      "id": "3268d599-a162-8123-a867-d7231817f03d",
+      "name": "\ud83d\udd0d Scanner History"
+    },
+    "cron_dashboard": {
+      "id": "3268d599-a162-8188-b531-e25071653203",
+      "name": "\u23f0 Cron Dashboard"
+    }
+  },
+  "dashboard": {
+    "id": "3268d599-a162-8134-b0e0-ef9e8a968f1e",
+    "name": "\ud83c\udfe0 Dashboard",
+    "url": "https://www.notion.so/Dashboard-3268d599a1628134b0e0ef9e8a968f1e"
+  },
+  "_killed": {
+    "linkedin_analytics": "3268d599-a162-811a-b028-e06c181bfd85",
+    "cv_tracker": "3268d599-a162-8176-a22d-c5c4c54d7879",
+    "reason": "LinkedIn Analytics: no automated data source. CV Tracker: merged into Pipeline."
+  },
+  "skills_registry": "3278d599-a162-8123-b725-f16270afcf96",
+  "system_architecture": "3278d599-a162-813e-b1d2-fe34fcbb45c1",
+  "goals_okrs": "3278d599-a162-8131-b4d5-ca463a770cde",
+  "scripts_inventory": "3278d599-a162-8183-b5b3-c88a26be1bdf",
+  "master_cv_data": "3278d599-a162-8169-8603-cf32218beefd",
+  "config_dashboard": "3278d599-a162-816e-b76c-d0546e5844e8",
+  "skip_patterns": "3278d599-a162-8195-a618-c700de859e97",
+  "git_activity": "3278d599-a162-81e6-b332-ea86d0183e48",
+  "email_intelligence": "3278d599-a162-8123-923c-f04999d7292d",
+  "cost_tracker": "3278d599-a162-81a3-a593-f981f1e9a7af"
+}

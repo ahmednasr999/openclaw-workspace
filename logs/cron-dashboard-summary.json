@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-07T16:01:09.073827+02:00",
+  "timestamp": "2026-04-08T02:01:14.649777+02:00",
   "total_crons": 25,
   "system_crons": 25,
   "openclaw_crons": 0,
@@ -15,7 +15,7 @@
       "type": "system",
       "last_status": {
         "status": "\u2705 OK",
-        "last_run": "2026-04-07 16:00:42.812193+02:00",
+        "last_run": "2026-04-08 02:00:54.274026+02:00",
         "error": null
       }
     },
@@ -25,7 +25,7 @@
       "type": "system",
       "last_status": {
         "status": "\u274c Failed",
-        "last_run": "2026-04-07 16:00:01.410928+02:00",
+        "last_run": "2026-04-08 02:00:01.888689+02:00",
         "error": "Check log for details"
       }
     },
@@ -65,7 +65,7 @@
       "type": "system",
       "last_status": {
         "status": "\u274c Failed",
-        "last_run": "2026-04-06 20:00:02.538245+02:00",
+        "last_run": "2026-04-07 20:00:02.432451+02:00",
         "error": "Check log for details"
       }
     },
@@ -85,7 +85,7 @@
       "type": "system",
       "last_status": {
         "status": "\u274c Failed",
-        "last_run": "2026-04-07 16:00:01.410928+02:00",
+        "last_run": "2026-04-08 02:00:01.888689+02:00",
         "error": "Check log for details"
       }
     },
@@ -145,7 +145,7 @@
       "type": "system",
       "last_status": {
         "status": "\u2705 OK",
-        "last_run": "2026-04-06 20:30:01.835847+02:00",
+        "last_run": "2026-04-07 20:30:01.592747+02:00",
         "error": null
       }
     },
@@ -155,7 +155,7 @@
       "type": "system",
       "last_status": {
         "status": "\u2705 OK",
-        "last_run": "2026-04-07 01:50:34.073479+02:00",
+        "last_run": "2026-04-08 01:50:29.285036+02:00",
         "error": null
       }
     },

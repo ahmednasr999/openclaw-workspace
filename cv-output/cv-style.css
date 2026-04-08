@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 10pt;
+  line-height: 1.4;
+  color: #1a1a2e;
+  padding: 40px 50px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cv-header { text-align: center; margin-bottom: 6px; }
+
+.name {
+  font-size: 22pt;
+  font-weight: 700;
+  color: #0f2444;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.contact-line {
+  font-size: 9pt;
+  color: #444;
+  letter-spacing: 0.3px;
+}
+
+.header-divider {
+  border: none;
+  border-top: 2px solid #0f2444;
+  margin: 10px 0 14px 0;
+}
+
+h2 {
+  font-size: 11pt;
+  font-weight: 700;
+  color: #0f2444;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  border-bottom: 1.5px solid #c8d4e3;
+  padding-bottom: 3px;
+  margin: 12px 0 7px 0;
+}
+
+p { margin-bottom: 4px; }
+
+.skills-list {
+  font-size: 9.5pt;
+  color: #333;
+  line-height: 1.55;
+}
+
+.job { margin-bottom: 10px; }
+
+.job-title {
+  font-size: 10pt;
+  font-weight: 600;
+  color: #0f2444;
+  margin-bottom: 3px;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  font-size: 9.5pt;
+  color: #222;
+  padding: 1.5px 0 1.5px 14px;
+  position: relative;
+  line-height: 1.45;
+}
+
+ul li::before {
+  content: "\2022";
+  position: absolute;
+  left: 2px;
+  color: #0f2444;
+  font-weight: 700;
+}
+
+ul li strong { color: #0f2444; }

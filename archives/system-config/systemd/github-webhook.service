@@ -1,0 +1,12 @@
+[Unit]
+Description=GitHub Webhook Server
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /root/.openclaw/workspace/github-webhook.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target

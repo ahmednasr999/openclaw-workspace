@@ -1,0 +1,489 @@
+{
+  "title": "NASR Workspace: Guided Architecture Tour",
+  "subtitle": "From daily briefing pipeline to AI automation ecosystem",
+  "entry_point": "scripts/run-briefing-pipeline.sh",
+  "total_steps": 15,
+  "steps": [
+    {
+      "step": 1,
+      "title": "\ud83d\ude80 Entry Point: Daily Briefing Pipeline",
+      "node_id": "node_95362aea0d76",
+      "path": "scripts/run-briefing-pipeline.sh",
+      "language": "bash",
+      "layer": "L1_Entry",
+      "layer_label": "Entry Points & Orchestration",
+      "lines": 370,
+      "function_count": 5,
+      "class_count": 0,
+      "description": "Shell script with 5 functions \u2014 run-briefing-pipeline.sh \u2014 Master orchestrator for morning briefing data pipeline Runs deterministic Python scripts. No LLM needed. Usage: bash run-briefing-pipeline.sh [--jobs-only] [--data-only] [--",
+      "functions": [
+        "log",
+        "classify_failure",
+        "log_failure",
+        "run_agent",
+        "run_parallel"
+      ],
+      "imports": [
+        "run-briefing-pipeline.sh",
+        "/root/.openclaw/workspace/scripts/run-briefing-pipeline.sh",
+        "/root/.openclaw/workspace/scripts/run-briefing-pipeline.sh",
+        "/root/.openclaw/workspace/scripts/run-briefing-pipeline.sh",
+        "$SCRIPTS/heartbeat-tracker.py"
+      ],
+      "connects_to": [
+        {
+          "path": "scripts/heartbeat-tracker.py",
+          "name": "heartbeat-tracker.py"
+        },
+        {
+          "path": "scripts/sync-applied-from-notion.py",
+          "name": "sync-applied-from-notion.py"
+        },
+        {
+          "path": "scripts/heartbeat-checker.py",
+          "name": "heartbeat-checker.py"
+        }
+      ],
+      "connected_from": [
+        {
+          "path": "scripts/cron-watchdog-v3.sh",
+          "name": "cron-watchdog-v3.sh"
+        }
+      ]
+    },
+    {
+      "step": 2,
+      "title": "\ud83c\udfaf Orchestration: Morning Briefing Orchestrator",
+      "node_id": "node_fc5e11b8e15a",
+      "path": "scripts/morning-briefing-orchestrator.py",
+      "language": "python",
+      "layer": "L1_Entry",
+      "layer_label": "Entry Points & Orchestration",
+      "lines": 1573,
+      "function_count": 17,
+      "class_count": 0,
+      "description": "Python module with 17 functions \u2014 ============================================================ PATHS ============================================================",
+      "functions": [
+        "log",
+        "load_notion_token",
+        "read_pipeline",
+        "load_scanner_data",
+        "check_email",
+        "check_calendar",
+        "get_content_calendar",
+        "get_engagement_stats"
+      ],
+      "imports": [
+        "json",
+        "os",
+        "sys",
+        "re",
+        "subprocess"
+      ],
+      "connects_to": [
+        {
+          "path": "scripts/notion_sync.py",
+          "name": "notion_sync.py"
+        }
+      ],
+      "connected_from": [
+        {
+          "path": "scripts/briefing-direct.sh",
+          "name": "briefing-direct.sh"
+        },
+        {
+          "path": "scripts/heartbeat-checks.sh",
+          "name": "heartbeat-checks.sh"
+        }
+      ]
+    },
+    {
+      "step": 3,
+      "title": "\ud83d\uddc4\ufe0f Persistence: Pipeline Database",
+      "node_id": "node_0b5771a1740c",
+      "path": "scripts/pipeline_db.py",
+      "language": "python",
+      "layer": "L2_Scripts",
+      "layer_label": "Pipeline Scripts & Agents",
+      "lines": 941,
+      "function_count": 29,
+      "class_count": 0,
+      "description": "Python module with 29 functions \u2014 \u2500\u2500 Kill switch \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+      "functions": [
+        "_get_conn",
+        "init_db",
+        "_now_iso",
+        "_row_to_dict",
+        "_generate_job_id",
+        "register_job",
+        "update_score",
+        "attach_cv"
+      ],
+      "imports": [
+        "sqlite3",
+        "json",
+        "os",
+        "sys",
+        "shutil"
+      ],
+      "connects_to": [],
+      "connected_from": [
+        {
+          "path": "scripts/add-to-pipeline.py",
+          "name": "add-to-pipeline.py"
+        },
+        {
+          "path": "scripts/auto-cv-builder.py",
+          "name": "auto-cv-builder.py"
+        },
+        {
+          "path": "scripts/briefing-agent.py",
+          "name": "briefing-agent.py"
+        },
+        {
+          "path": "scripts/company-dossier.py",
+          "name": "company-dossier.py"
+        },
+        {
+          "path": "scripts/email-agent.py",
+          "name": "email-agent.py"
+        }
+      ]
+    },
+    {
+      "step": 4,
+      "title": "\ud83d\udccb Integration: Notion Sync",
+      "node_id": "node_53423aa5b1c6",
+      "path": "scripts/notion_sync.py",
+      "language": "python",
+      "layer": "L2_Scripts",
+      "layer_label": "Pipeline Scripts & Agents",
+      "lines": 1691,
+      "function_count": 24,
+      "class_count": 0,
+      "description": "Python module with 24 functions \u2014 Lazy-load NotionClient to avoid import errors if Notion not configured.",
+      "functions": [
+        "_get_client",
+        "sync_briefing",
+        "sync_new_jobs",
+        "sync_content_status",
+        "sync_system_event",
+        "sync_dossier",
+        "backfill_briefings",
+        "read_pipeline_from_notion"
+      ],
+      "imports": [
+        "json",
+        "os",
+        "sys",
+        "re",
+        "glob"
+      ],
+      "connects_to": [
+        {
+          "path": "scripts/notion_client.py",
+          "name": "notion_client.py"
+        }
+      ],
+      "connected_from": [
+        {
+          "path": "scripts/linkedin-gulf-jobs.py",
+          "name": "linkedin-gulf-jobs.py"
+        },
+        {
+          "path": "scripts/morning-briefing-orchestrator.py",
+          "name": "morning-briefing-orchestrator.py"
+        }
+      ]
+    },
+    {
+      "step": 5,
+      "title": "\ud83d\udcc4 CV Generation: Auto CV Builder",
+      "node_id": "node_6c0e0935444a",
+      "path": "scripts/auto-cv-builder.py",
+      "language": "python",
+      "layer": "L2_Scripts",
+      "layer_label": "Pipeline Scripts & Agents",
+      "lines": 886,
+      "function_count": 19,
+      "class_count": 0,
+      "description": "Python module with 19 functions \u2014 Pipeline DB (safe fallback) \u2500\u2500 Cluster definitions \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+      "functions": [
+        "log",
+        "load_config",
+        "load_master_cv",
+        "load_pending_updates",
+        "find_pending_triggers",
+        "parse_trigger",
+        "cv_already_exists",
+        "call_opus"
+      ],
+      "imports": [
+        "json",
+        "os",
+        "sys",
+        "re",
+        "subprocess"
+      ],
+      "connects_to": [
+        {
+          "path": "scripts/pipeline_db.py",
+          "name": "pipeline_db.py"
+        }
+      ],
+      "connected_from": []
+    },
+    {
+      "step": 6,
+      "title": "\ud83d\udd17 Social: LinkedIn Auto-Poster",
+      "node_id": "node_71eb8d5006d8",
+      "path": "scripts/linkedin-auto-poster.py",
+      "language": "python",
+      "layer": "L2_Scripts",
+      "layer_label": "Pipeline Scripts & Agents",
+      "lines": 699,
+      "function_count": 17,
+      "class_count": 0,
+      "description": "Python module with 17 functions",
+      "functions": [
+        "call_llm",
+        "call_llm_long",
+        "parse_answer",
+        "score_post",
+        "log_post",
+        "update_post_url",
+        "notion_req",
+        "to_unicode_bold"
+      ],
+      "imports": [
+        "json",
+        "os",
+        "re",
+        "ssl",
+        "sys"
+      ],
+      "connects_to": [],
+      "connected_from": []
+    },
+    {
+      "step": 7,
+      "title": "\ud83c\udfc6 Skills: Executive CV Builder Skill",
+      "node_id": "node_0f2bf9f4a4db",
+      "path": "skills/executive-cv-builder/SKILL.md",
+      "language": "markdown",
+      "layer": "L3_Skills",
+      "layer_label": "Skills & Capabilities",
+      "lines": 71,
+      "function_count": 0,
+      "class_count": 0,
+      "description": "Skill definition (SKILL.md) \u2014 Executive CV Builder \u2014 Ahmed Nasr # Step 0 \u2014 Pre-Flight Checks # Step 1 \u2014 Load Context (mandatory, in this order)",
+      "functions": [],
+      "imports": [],
+      "connects_to": [],
+      "connected_from": []
+    },
+    {
+      "step": 8,
+      "title": "\ud83e\udde0 Learning: Self-Improvement Engine",
+      "node_id": "node_a8a57f4fd9e5",
+      "path": "scripts/self-improvement-engine.py",
+      "language": "python",
+      "layer": "L2_Scripts",
+      "layer_label": "Pipeline Scripts & Agents",
+      "lines": 1840,
+      "function_count": 52,
+      "class_count": 0,
+      "description": "Python module with 52 functions \u2014 === Configuration ===",
+      "functions": [
+        "log",
+        "run_cmd",
+        "file_age_hours",
+        "read_json",
+        "write_json",
+        "load_state",
+        "save_state",
+        "check_applications"
+      ],
+      "imports": [
+        "json",
+        "os",
+        "sys",
+        "re",
+        "subprocess"
+      ],
+      "connects_to": [],
+      "connected_from": [
+        {
+          "path": "scripts/sie-with-notify.sh",
+          "name": "sie-with-notify.sh"
+        }
+      ]
+    },
+    {
+      "step": 9,
+      "title": "\u270d\ufe0f Content: Content Agent Skill",
+      "node_id": "node_69b610ec6e5f",
+      "path": "skills/content-agent/SKILL.md",
+      "language": "markdown",
+      "layer": "L3_Skills",
+      "layer_label": "Skills & Capabilities",
+      "lines": 96,
+      "function_count": 0,
+      "class_count": 0,
+      "description": "Skill definition (SKILL.md) \u2014 Content Agent # Architecture # Layer Triggers",
+      "functions": [],
+      "imports": [],
+      "connects_to": [],
+      "connected_from": []
+    },
+    {
+      "step": 10,
+      "title": "\ud83d\udcc5 UI: Mission Control Calendar",
+      "node_id": "node_fe084fe9efa2",
+      "path": "mission-control/components/Calendar.tsx",
+      "language": "typescript",
+      "layer": "L4_Services",
+      "layer_label": "Services & Integrations",
+      "lines": 827,
+      "function_count": 17,
+      "class_count": 2,
+      "description": "Typescript module with 17 functions, 2 classes",
+      "functions": [
+        "toCairoDateStr",
+        "nowCairo",
+        "todayCairoStr",
+        "Calendar",
+        "TaskFormModal",
+        "syncScroll",
+        "getTasksForDate",
+        "getTypeStyles"
+      ],
+      "imports": [
+        "react",
+        "./Icon"
+      ],
+      "connects_to": [
+        {
+          "path": "mission-control/components/Icon.tsx",
+          "name": "Icon.tsx"
+        }
+      ],
+      "connected_from": [
+        {
+          "path": "mission-control/app/calendar/page.tsx",
+          "name": "page.tsx"
+        }
+      ]
+    },
+    {
+      "step": 11,
+      "title": "\u2699\ufe0f Config: Service Configuration",
+      "node_id": "node_db8fa40b25c5",
+      "path": "config/linkedin-comment-targets.json",
+      "language": "json",
+      "layer": "L5_Config",
+      "layer_label": "Configuration & State",
+      "lines": 53,
+      "function_count": 0,
+      "class_count": 0,
+      "description": "Configuration/data file (53 lines)",
+      "functions": [],
+      "imports": [],
+      "connects_to": [],
+      "connected_from": []
+    },
+    {
+      "step": 12,
+      "title": "\ud83d\udcca State: Coordination Dashboard",
+      "node_id": "node_3053cba6540b",
+      "path": "coordination/dashboard.json",
+      "language": "json",
+      "layer": "L5_Config",
+      "layer_label": "Configuration & State",
+      "lines": 156,
+      "function_count": 0,
+      "class_count": 0,
+      "description": "Configuration/data file (156 lines)",
+      "functions": [],
+      "imports": [],
+      "connects_to": [],
+      "connected_from": []
+    },
+    {
+      "step": 13,
+      "title": "\ud83d\udd0d Jobs: LinkedIn Gulf Jobs Agent",
+      "node_id": "node_95611df2f983",
+      "path": "scripts/linkedin-gulf-jobs.py",
+      "language": "python",
+      "layer": "L2_Scripts",
+      "layer_label": "Pipeline Scripts & Agents",
+      "lines": 1144,
+      "function_count": 24,
+      "class_count": 0,
+      "description": "Python module with 24 functions \u2014 ===================== CONFIGURATION ===================== 3 priority + 3 secondary countries",
+      "functions": [
+        "is_relevant",
+        "is_priority",
+        "load_notified",
+        "load_applied",
+        "load_pipeline",
+        "is_duplicate",
+        "save_notified",
+        "load_composio_key"
+      ],
+      "imports": [
+        "os",
+        "re",
+        "json",
+        "time",
+        "sys"
+      ],
+      "connects_to": [
+        {
+          "path": "scripts/notion_sync.py",
+          "name": "notion_sync.py"
+        }
+      ],
+      "connected_from": [
+        {
+          "path": "scripts/heartbeat-checks.sh",
+          "name": "heartbeat-checks.sh"
+        }
+      ]
+    },
+    {
+      "step": 14,
+      "title": "\ud83d\udcbc Skills: Job Search MCP Skill",
+      "node_id": "node_eb0fb4d759c6",
+      "path": "skills/job-search-mcp/SKILL.md",
+      "language": "markdown",
+      "layer": "L3_Skills",
+      "layer_label": "Skills & Capabilities",
+      "lines": 636,
+      "function_count": 0,
+      "class_count": 0,
+      "description": "Skill definition (SKILL.md) \u2014 Job Search MCP Skill # When to Use This Skill # Prerequisites",
+      "functions": [],
+      "imports": [],
+      "connects_to": [],
+      "connected_from": []
+    },
+    {
+      "step": 15,
+      "title": "\ud83d\udd27 DevOps: GitHub CI Fix Skill",
+      "node_id": "node_3dfd0b1560db",
+      "path": "skills/gh-fix-ci/SKILL.md",
+      "language": "markdown",
+      "layer": "L3_Skills",
+      "layer_label": "Skills & Capabilities",
+      "lines": 69,
+      "function_count": 0,
+      "class_count": 0,
+      "description": "Skill definition (SKILL.md) \u2014 Gh Pr Checks Plan Fix # Overview # Inputs",
+      "functions": [],
+      "imports": [],
+      "connects_to": [],
+      "connected_from": []
+    }
+  ]
+}

@@ -1,60 +1,49 @@
 {
-  "generated": "2026-04-07T14:00:57.828780+00:00",
+  "generated": "2026-04-08T00:01:17.142068+00:00",
   "suggestions": [
     {
-      "name": "Kristina Stanley",
-      "role": "Talent Acquisition Consultant",
-      "url": "https://www.linkedin.com/in/kristina-stanley-904b5126",
-      "company": "Kingston Stanley",
+      "name": "Mark Williams",
+      "role": "Kansas City Chiefs",
+      "url": "https://www.linkedin.com/in/mark-williams-kcchiefs",
+      "company": "Mark Williams Recruitment",
+      "signal_score": 20,
+      "source": "tavily",
+      "applied_role": "Head of Information Technology",
+      "applied_date": "2026-03-27",
+      "reason": "You applied for Head of Information Technology at Mark Williams Recruitment"
+    },
+    {
+      "name": "Mark Williams\u200f",
+      "role": "\u200fGroup Managing Director",
+      "url": "https://www.linkedin.com/in/mark-williams-077a7b3a",
+      "company": "Mark Williams Recruitment",
+      "signal_score": 20,
+      "source": "tavily",
+      "applied_role": "Head of Information Technology",
+      "applied_date": "2026-03-27",
+      "reason": "You applied for Head of Information Technology at Mark Williams Recruitment"
+    },
+    {
+      "name": "\u200fMaisoun Selim\u200f",
+      "role": "\u200fStrategic HR & Talent Acquisition Leader",
+      "url": "https://www.linkedin.com/in/maisoun-selim-27489816",
+      "company": "Visa",
       "signal_score": 30,
       "source": "tavily",
-      "applied_role": "CTO \u2013 Dubai \u2013 UAE-N/Arabic Speaker",
-      "applied_date": "2026-03-28",
-      "reason": "You applied for CTO \u2013 Dubai \u2013 UAE-N/Arabic Speaker at Kingston Stanley"
+      "applied_role": "Director CoE - Strategy and Execution",
+      "applied_date": "2026-03-27",
+      "reason": "You applied for Director CoE - Strategy and Execution at Visa"
     },
     {
-      "name": "Bob Stanley, MPA",
-      "role": "Talent Acquisition Consultant",
-      "url": "https://www.linkedin.com/in/restanley",
-      "company": "Kingston Stanley",
+      "name": "\u200fMaisoun Selim\u200f",
+      "role": "\u200fStrategic HR & Talent Acquisition Leader",
+      "url": "https://www.linkedin.com/in/maisoun-selim-27489816",
+      "company": "Visa",
       "signal_score": 30,
       "source": "tavily",
-      "applied_role": "CTO \u2013 Dubai \u2013 UAE-N/Arabic Speaker",
-      "applied_date": "2026-03-28",
-      "reason": "You applied for CTO \u2013 Dubai \u2013 UAE-N/Arabic Speaker at Kingston Stanley"
-    },
-    {
-      "name": "Karthiga Anandan IHRP-CP",
-      "role": "",
-      "url": "https://www.linkedin.com/in/karthiga-anandan",
-      "company": "Cygnify",
-      "signal_score": 5,
-      "source": "tavily",
-      "applied_role": "Principal, Digital Delivery & Transformation",
-      "applied_date": "2026-03-28",
-      "reason": "You applied for Principal, Digital Delivery & Transformation at Cygnify"
-    },
-    {
-      "name": "Shubham Kumar Gupta",
-      "role": "",
-      "url": "https://www.linkedin.com/in/shubham-kumar-gupta-2794771a7",
-      "company": "Cygnify",
-      "signal_score": 5,
-      "source": "tavily",
-      "applied_role": "Principal, Digital Delivery & Transformation",
-      "applied_date": "2026-03-28",
-      "reason": "You applied for Principal, Digital Delivery & Transformation at Cygnify"
-    },
-    {
-      "name": "Recruiter Confidential",
-      "role": "HR",
-      "url": "https://www.linkedin.com/in/recruiter-confidential-690969105",
-      "company": "Confidential Careers",
-      "signal_score": 30,
-      "source": "tavily",
-      "applied_role": "CEO \u2014 Giga-Projects KSA",
-      "applied_date": "2026-03-28",
-      "reason": "You applied for CEO \u2014 Giga-Projects KSA at Confidential Careers"
+      "applied_role": "Director, Government Solutions, KSA",
+      "applied_date": "2026-03-27",
+      "reason": "You applied for Director, Government Solutions, KSA at Visa"
     }
   ],
   "companies_searched": 10,

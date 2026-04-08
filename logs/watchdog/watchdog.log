@@ -1360,3 +1360,52 @@ Bind: loopback
   "enqueued": true,
   "runId": "manual:1b1d9bca-2f63-49d1-89b2-cd05a792b30a:1775570486004:3"
 }
+[2026-04-07 18:00] === Watchdog v3 run ===
+[2026-04-07 18:00] FIXED: Re-triggered failed cron ea668c66-f66e-49a9-8e72-e5e50ea07477
+[2026-04-07 18:00] FIXED: Re-triggered failed cron 418e7854-d466-4b49-ad1d-f3f3debae5d7
+[2026-04-07 18:00] Summary: fixes=2 warnings=1 alerts=0
+Config warnings:\n- plugins.allow: plugin not found: auth (stale config entry ignored; remove it from plugins config)
+- plugins.allow: plugin not found: send (stale config entry ignored; remove it from plugins config)
+Config warnings:\n- plugins.allow: plugin not found: auth (stale config entry ignored; remove it from plugins config)
+- plugins.allow: plugin not found: send (stale config entry ignored; remove it from plugins config)
+Config warnings:\n- plugins.allow: plugin not found: auth (stale config entry ignored; remove it from plugins config)
+- plugins.allow: plugin not found: send (stale config entry ignored; remove it from plugins config)
+Config warnings:\n- plugins.allow: plugin not found: auth (stale config entry ignored; remove it from plugins config)
+- plugins.allow: plugin not found: send (stale config entry ignored; remove it from plugins config)
+│
+◇  Config warnings ──────────────────────────────────────────────────────╮
+│                                                                        │
+│  - plugins.allow: plugin not found: auth (stale config entry ignored;  │
+│    remove it from plugins config)                                      │
+│  - plugins.allow: plugin not found: send (stale config entry ignored;  │
+│    remove it from plugins config)                                      │
+│                                                                        │
+├────────────────────────────────────────────────────────────────────────╯
+│
+◇  Config warnings ──────────────────────────────────────────────────────╮
+│                                                                        │
+│  - plugins.allow: plugin not found: auth (stale config entry ignored;  │
+│    remove it from plugins config)                                      │
+│  - plugins.allow: plugin not found: send (stale config entry ignored;  │
+│    remove it from plugins config)                                      │
+│                                                                        │
+├────────────────────────────────────────────────────────────────────────╯
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:418e7854-d466-4b49-ad1d-f3f3debae5d7:1775577650077:1"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:ea668c66-f66e-49a9-8e72-e5e50ea07477:1775577650192:2"
+}
+[2026-04-07 20:00] === Watchdog v3 run ===
+[2026-04-07 20:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-07 22:00] === Watchdog v3 run ===
+[2026-04-07 22:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-08 00:00] === Watchdog v3 run ===
+[2026-04-08 00:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-08 02:00] === Watchdog v3 run ===
+[2026-04-08 02:00] WARN: active-tasks.md stale (50h)
+[2026-04-08 02:00] Summary: fixes=0 warnings=1 alerts=0

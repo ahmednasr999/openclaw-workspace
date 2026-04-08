@@ -1,0 +1,9 @@
+0 20 * * * /root/.openclaw/workspace/scripts/daily-backup.sh >> /tmp/openclaw-backup.log 2>&1
+0 20 1 * * /root/.openclaw/workspace/scripts/archive-daily-notes.sh >> /tmp/openclaw-archive.log 2>&1
+0 23 * * * /root/.openclaw/workspace/scripts/daily-snapshot.sh >> /tmp/openclaw-snapshot.log 2>&1
+30 20 * * * /root/.openclaw/workspace/scripts/retention-backups.sh >> /tmp/openclaw-retention-backups.log 2>&1
+30 23 * * * /root/.openclaw/workspace/scripts/retention-snapshots.sh >> /tmp/openclaw-retention-snapshots.log 2>&1
+15 3 * * * /root/.openclaw/workspace/scripts/retention-caches.sh >> /tmp/openclaw-retention-caches.log 2>&1
+0 9 * * * /root/.openclaw/workspace/scripts/disk-health-check.sh >> /tmp/disk-health-cron.log 2>&1
+0 6 * * * /root/.openclaw/workspace/scripts/job-radar.sh >> /tmp/job-radar.log 2>&1
+0 6 * * * /root/.openclaw/workspace/scripts/morning-brief.sh >> /tmp/morning-brief.log 2>&1

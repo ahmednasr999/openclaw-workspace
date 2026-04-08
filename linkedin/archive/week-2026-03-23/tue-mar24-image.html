@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1080px;
+    height: 1080px;
+    background: #0f172a;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 72px;
+  }
+  .tag {
+    display: inline-block;
+    background: #14b8a6;
+    color: #0f172a;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 8px 20px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+  .free-badge {
+    display: inline-block;
+    background: #f59e0b;
+    color: #0f172a;
+    font-size: 20px;
+    font-weight: 800;
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 32px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .headline {
+    font-size: 52px;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 32px;
+  }
+  .headline span { color: #14b8a6; }
+  .template-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .col-header {
+    font-size: 18px;
+    color: #14b8a6;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 12px 16px;
+    background: rgba(20,184,166,0.1);
+    border-radius: 8px;
+  }
+  .col-item {
+    font-size: 20px;
+    color: #94a3b8;
+    padding: 12px 16px;
+    background: #1e293b;
+    border-radius: 8px;
+    border-left: 3px solid #14b8a6;
+  }
+  .footer {
+    border-top: 1px solid #1e293b;
+    padding-top: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-name { font-size: 24px; font-weight: 700; color: #fff; }
+  .footer-title { font-size: 20px; color: #64748b; margin-top: 4px; }
+  .footer-certs { font-size: 20px; color: #14b8a6; font-weight: 600; }
+</style>
+</head>
+<body>
+  <div>
+    <div class="tag">Stakeholder Management</div>
+    <div class="free-badge">Free Template</div>
+    <div class="headline">The <span>Stakeholder Map</span><br>That Saved My<br>$50M Program</div>
+    <div class="template-grid">
+      <div class="col-header">Column</div>
+      <div class="col-header">What to Track</div>
+      <div class="col-item">Name + Role + Site</div>
+      <div class="col-item">Who they are and where</div>
+      <div class="col-item">Influence Level (1-5)</div>
+      <div class="col-item">Real influence, not seniority</div>
+      <div class="col-item">Current Stance</div>
+      <div class="col-item">Supporter / Neutral / Resistant</div>
+      <div class="col-item">What They Need</div>
+      <div class="col-item">To move in your direction</div>
+      <div class="col-item">Last Touchpoint</div>
+      <div class="col-item">Red flag if 3+ weeks for high-influence</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div>
+      <div class="footer-name">Ahmed Nasr</div>
+      <div class="footer-title">Digital Transformation Executive</div>
+    </div>
+    <div class="footer-certs">PMP · CSM · CSPO</div>
+  </div>
+</body>
+</html>

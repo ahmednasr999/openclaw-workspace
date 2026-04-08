@@ -1,0 +1,81 @@
+{
+  "timestamp": "2026-02-16T23:22:00Z",
+  "workspace": {
+    "path": "/root/.openclaw/workspace",
+    "git_head": "a03b00b"
+  },
+  "scores": {
+    "overall": 73,
+    "memory": 68,
+    "retrieval": 65,
+    "productive": 82,
+    "quality": 75,
+    "focus": 70
+  },
+  "deltas_vs_previous": null,
+  "key_findings": [
+    "Strong output: 9 CVs created in single session",
+    "Memory infrastructure exists but fragmented (4+ daily files for same day)",
+    "ClawBack learning system installed successfully",
+    "Git remote not configured - backups local only",
+    "Brave API key missing - web search blocked",
+    "No memory INDEX.md - stable facts scattered"
+  ],
+  "risk_flags": [
+    "Context compaction will lose daily fragments",
+    "No remote backup - data loss risk",
+    "Research capability blocked (Brave API, Chrome extension)"
+  ],
+  "recommendations": [
+    {
+      "title": "Create memory/INDEX.md",
+      "impact": "high",
+      "effort": "low",
+      "steps": [
+        "Create memory/INDEX.md with current objectives, active projects, operating constraints, key decisions",
+        "Extract stable facts from daily logs into INDEX.md",
+        "Update daily logs to reference INDEX.md"
+      ]
+    },
+    {
+      "title": "Configure GitHub remote",
+      "impact": "high",
+      "effort": "medium",
+      "steps": [
+        "Run: git remote add origin https://github.com/YOUR_USER/YOUR_REPO.git",
+        "Run: git push -u origin master",
+        "Verify backup in GitHub"
+      ]
+    },
+    {
+      "title": "Consolidate daily memory files",
+      "impact": "high",
+      "effort": "medium",
+      "steps": [
+        "Merge 2026-02-16 fragments into single file",
+        "Extract action items and stable facts to INDEX.md",
+        "Delete redundant files"
+      ]
+    },
+    {
+      "title": "Configure Brave API key",
+      "impact": "medium",
+      "effort": "medium",
+      "steps": [
+        "Run: openclaw configure --section web",
+        "Add Brave API key",
+        "Verify web_search works"
+      ]
+    },
+    {
+      "title": "Attach Chrome extension for LinkedIn",
+      "impact": "medium",
+      "effort": "medium",
+      "steps": [
+        "Open Chrome, navigate to LinkedIn",
+        "Click OpenClaw extension icon",
+        "Verify badge says 'ON'"
+      ]
+    }
+  ]
+}

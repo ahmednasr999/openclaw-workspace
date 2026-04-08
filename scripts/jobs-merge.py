@@ -678,8 +678,14 @@ def run_merge(result: AgentResult):
             titles_per_source = {}
             countries_per_source = {}
 
+            # Canonical source map: resolve raw source names to canonical names
+            # linkedin_jobspy jobs have source='linkedin_jobspy' in JSON but should use 'linkedin'
+            _canonical = {src: src for src in sources_loaded}
+            _canonical.update({"linkedin_jobspy": "linkedin", "google_jobs": "google-jobs"})
+
             for j in final_jobs:
-                job_source = j.get("_source_file", j.get("source", "unknown"))
+                raw_src = j.get("source", "unknown")
+                job_source = j.get("_source_file") or _canonical.get(raw_src, raw_src)
                 _pdb.register_job(
                     source=job_source,
                     job_id=str(j.get("id", j.get("job_id", ""))) if j.get("id", j.get("job_id")) else "",
@@ -697,34 +703,41 @@ def run_merge(result: AgentResult):
                 # Aggregate titles and countries for reporting
                 title = j.get("title", "Unknown") or "Unknown"
                 country = j.get("country", "Unknown") or "Unknown"
-                titles_per_source.setdefault(job_source, {})[title] = titles_per_source[job_source].get(title, 0) + 1
-                countries_per_source.setdefault(job_source, {})[country] = countries_per_source[job_source].get(country, 0) + 1
+                titles_per_source.setdefault(job_source, {})[title] = titles_per_source.get(job_source, {}).get(title, 0) + 1
+                countries_per_source.setdefault(job_source, {})[country] = countries_per_source.get(job_source, {}).get(country, 0) + 1
 
             print(f"  DB: {db_count} jobs upserted")
 
-            # ── Log source_runs for each source (LinkedIn fix: was missing) ──────
+            # ── Log source_runs for each source (per-source isolation) ───────────
             import json as _json
+            logged_sources = []
             for src, raw_count in sources_loaded.items():
-                unique_count = url_deduped_per_source.get(src, 0)
-                reg_count = db_registered_per_source.get(src, 0)
-                titles_json = _json.dumps(
-                    dict(sorted(titles_per_source.get(src, {}).items(), key=lambda x: -x[1])[:10])
-                )
-                countries_json = _json.dumps(countries_per_source.get(src, {}))
-                _pdb.log_source_run(
-                    source=src,
-                    raw_count=raw_count,
-                    unique_count=unique_count,
-                    db_registered=reg_count,
-                    countries_json=countries_json,
-                    titles_json=titles_json,
-                    duration_ms=0,
-                    errors=0,
-                )
-            print(f"  source_runs: logged for {len(sources_loaded)} sources")
+                try:
+                    unique_count = url_deduped_per_source.get(src, 0)
+                    reg_count = db_registered_per_source.get(src, 0)
+                    titles_json = _json.dumps(
+                        dict(sorted(titles_per_source.get(src, {}).items(), key=lambda x: -x[1])[:10])
+                    )
+                    countries_json = _json.dumps(countries_per_source.get(src, {}))
+                    _pdb.log_source_run(
+                        source=src,
+                        raw_count=raw_count,
+                        unique_count=unique_count,
+                        db_registered=reg_count,
+                        countries_json=countries_json,
+                        titles_json=titles_json,
+                        duration_ms=0,
+                        errors=0,
+                    )
+                    logged_sources.append(src)
+                except Exception as _ls_e:
+                    print(f"  source_runs failed for '{src}': {_ls_e}")
+            print(f"  source_runs: logged for {len(logged_sources)}/{len(sources_loaded)} sources: {logged_sources}")
             # ───────────────────────────────────────────────────────────────────
 
         except Exception as _e:
+            import traceback
+            traceback.print_exc()
             print(f"  DB write failed (non-fatal): {_e}")
     # ─────────────────────────────────────────────────────────────────────────
 

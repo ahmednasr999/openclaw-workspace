@@ -2,19 +2,19 @@
   "meta": {
     "agent": "email-agent",
     "version": "3.0.0",
-    "generated_at": "2026-04-07T16:03:22.905920+02:00",
-    "duration_ms": 33233,
+    "generated_at": "2026-04-08T02:00:43.039927+02:00",
+    "duration_ms": 38680,
     "ttl_hours": 4,
     "status": "success",
     "error": null,
-    "run_id": "6363c3e8",
+    "run_id": "b687e0e1",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
     "status": "ok",
-    "scan_time": "2026-04-07T16:02:51.033784+02:00",
-    "total_scanned": 1,
+    "scan_time": "2026-04-08T02:00:10.540600+02:00",
+    "total_scanned": 11,
     "by_category": {
       "interview_invite": 0,
       "recruiter_reach": 0,
@@ -22,7 +22,7 @@
       "rejection": 0,
       "assessment": 0,
       "follow_up_needed": 0,
-      "other": 1
+      "other": 11
     },
     "interview_invites": [],
     "recruiter_messages": [],
@@ -42,12 +42,12 @@
         "requires_assessment": false,
         "recruiter_top_opportunities": [],
         "top_priority": null,
-        "daily_focus": "No actionable emails in the inbox. Focus on proactive outreach and job applications aligned with senior leadership targets in the Gulf region."
+        "daily_focus": "No actionable recruiting emails were provided, so focus today on outbound applications and network-building."
       }
     }
   },
   "kpi": {
-    "emails_processed": 1,
+    "emails_processed": 11,
     "actionable": 0,
     "interviews_detected": 0,
     "recruiter_messages": 0,

@@ -2,12 +2,12 @@
   "meta": {
     "agent": "daily-learner",
     "version": "1.0.0",
-    "generated_at": "2026-04-06T23:00:01.758052+02:00",
-    "duration_ms": 65,
+    "generated_at": "2026-04-07T23:00:01.426425+02:00",
+    "duration_ms": 45,
     "ttl_hours": 24,
     "status": "success",
     "error": null,
-    "run_id": "da4c6d55",
+    "run_id": "930faa10",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -415,7 +415,7 @@
       }
     },
     "summary": {
-      "generated_at": "2026-04-06T23:00:01.757384+02:00",
+      "generated_at": "2026-04-07T23:00:01.425894+02:00",
       "period": "last_7_days",
       "job_recommendation_accuracy": {
         "rate": 14.814814814814813,

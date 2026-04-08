@@ -1,0 +1,17 @@
+[Unit]
+Description=OpenClaw Gateway (v2026.2.25)
+After=network.target
+
+[Service]
+Type=simple
+Environment="NVM_DIR=/root/.nvm"
+Environment="PATH=/root/.nvm/versions/node/v22.22.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+Environment="OPENCLAW_SKIP_GMAIL_WATCHER=1"
+ExecStart=/root/.nvm/versions/node/v22.22.0/bin/node /root/.nvm/versions/node/v22.22.0/bin/openclaw gateway --port 18789
+Restart=always
+RestartSec=5
+KillMode=mixed
+TimeoutStopSec=15
+
+[Install]
+WantedBy=default.target

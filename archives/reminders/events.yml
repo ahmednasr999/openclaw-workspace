@@ -1,0 +1,5 @@
+events:
+  - title: "Test reminder system"
+    datetime: "2026-02-17T10:00:00"
+    notes: "Testing reminder skill"
+    reminders: [1440, 60, 10]

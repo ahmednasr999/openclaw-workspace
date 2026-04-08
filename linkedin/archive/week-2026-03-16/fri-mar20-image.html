@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1080px;
+    height: 1080px;
+    background: #0f172a;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 72px;
+  }
+  .tag {
+    display: inline-block;
+    background: #3b82f6;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 8px 20px;
+    border-radius: 4px;
+    margin-bottom: 48px;
+  }
+  .school-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: #1e293b;
+    border: 2px solid #3b82f6;
+    border-radius: 12px;
+    padding: 16px 24px;
+    margin-bottom: 40px;
+  }
+  .school-icon { font-size: 40px; }
+  .school-info { }
+  .school-name { font-size: 22px; font-weight: 700; color: #fff; }
+  .school-degree { font-size: 18px; color: #64748b; }
+  .headline {
+    font-size: 58px;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 40px;
+  }
+  .headline span { color: #3b82f6; }
+  .parallel {
+    display: flex;
+    gap: 24px;
+  }
+  .parallel-item {
+    flex: 1;
+    padding: 24px;
+    background: #1e293b;
+    border-radius: 12px;
+    text-align: center;
+  }
+  .parallel-icon { font-size: 40px; margin-bottom: 12px; }
+  .parallel-label { font-size: 22px; color: #94a3b8; line-height: 1.4; }
+  .parallel-label strong { color: #3b82f6; display: block; font-size: 26px; }
+  .footer {
+    border-top: 1px solid #1e293b;
+    padding-top: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-name { font-size: 24px; font-weight: 700; color: #fff; }
+  .footer-title { font-size: 20px; color: #64748b; margin-top: 4px; }
+  .footer-certs { font-size: 20px; color: #3b82f6; font-weight: 600; }
+</style>
+</head>
+<body>
+  <div>
+    <div class="tag">Executive Growth</div>
+    <div class="school-badge">
+      <div class="school-icon">🎓</div>
+      <div class="school-info">
+        <div class="school-name">Paris ESLSCA Business School</div>
+        <div class="school-degree">MBA in Progress · 2025-2027</div>
+      </div>
+    </div>
+    <div class="headline">Pursuing an <span>MBA at 40+</span><br>while leading<br>a $50M program.</div>
+    <div class="parallel">
+      <div class="parallel-item">
+        <div class="parallel-icon">🏥</div>
+        <div class="parallel-label"><strong>Daytime</strong>15 hospitals. 3 countries. $50M transformation.</div>
+      </div>
+      <div class="parallel-item">
+        <div class="parallel-icon">📚</div>
+        <div class="parallel-label"><strong>MBA</strong>Building the language for executive decisions.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div>
+      <div class="footer-name">Ahmed Nasr</div>
+      <div class="footer-title">Digital Transformation Executive</div>
+    </div>
+    <div class="footer-certs">PMP · CSM · CSPO</div>
+  </div>
+</body>
+</html>
