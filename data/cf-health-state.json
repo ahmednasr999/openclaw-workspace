@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-04-07T07:00:01.219461+02:00",
+  "checked_at": "2026-04-08T07:00:01.849025+02:00",
   "components": {
     "notion_auth": {
       "status": "ok",
@@ -39,7 +39,7 @@
     },
     "visuals": {
       "status": "ok",
-      "message": "38 visuals, newest 8.9d old"
+      "message": "38 visuals, newest 9.9d old"
     }
   }
 }

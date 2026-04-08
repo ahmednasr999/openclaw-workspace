@@ -1,10 +1,10 @@
 {
   "status": "ok",
-  "scan_time": "2026-04-08T02:00:10.540600+02:00",
-  "total_scanned": 11,
+  "scan_time": "2026-04-08T06:00:10.013615+02:00",
+  "total_scanned": 12,
   "by_category": {
     "interview_invite": 0,
-    "recruiter_reach": 0,
+    "recruiter_reach": 1,
     "application_ack": 0,
     "rejection": 0,
     "assessment": 0,
@@ -12,7 +12,18 @@
     "other": 11
   },
   "interview_invites": [],
-  "recruiter_messages": [],
+  "recruiter_messages": [
+    {
+      "id": "352307",
+      "from": "Naukrigulf <newjobs@naukrigulf.com>",
+      "subject": "General Manager tMart Egypt, Senior PMO Project Coordinator\r\n jobs for you",
+      "date": "Wed, 8 Apr 2026 08:49:57 +0530 (IST)",
+      "unread": true,
+      "priority": "MEDIUM",
+      "score": 2,
+      "pipeline_match": null
+    }
+  ],
   "application_acks": [],
   "rejections": [],
   "assessments": [],

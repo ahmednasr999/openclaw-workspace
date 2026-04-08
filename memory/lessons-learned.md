@@ -440,3 +440,11 @@ Updated `model-router.json` with:
 - Also added explicit MEMORY.md note so this doesn't get lost again
 ### Prevention
 Always check `config/model-router.json` first when session keeps falling back to MiniMax. This file is the actual session-level model controller, not just OpenClaw global defaults.
+
+## 2026-04-08 - SAYYAD spec implemented partially instead of fully
+### What I got wrong
+I treated Ahmed's SAYYAD redesign as threshold tuning and source narrowing, but skipped the actual required 5-dimension scoring model and did not fully replace the flat title search method with compound queries as specified.
+### Why
+I optimized the existing pipeline incrementally instead of implementing the spec literally.
+### Fix
+When Ahmed gives a structured redesign spec, implement each numbered change exactly as stated, and show the concrete mapping from spec item to code and prompt changes before claiming completion.

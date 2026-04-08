@@ -2,22 +2,22 @@
   "meta": {
     "agent": "email-agent",
     "version": "3.0.0",
-    "generated_at": "2026-04-08T02:00:43.039927+02:00",
-    "duration_ms": 38680,
+    "generated_at": "2026-04-08T06:00:33.379224+02:00",
+    "duration_ms": 31053,
     "ttl_hours": 4,
     "status": "success",
     "error": null,
-    "run_id": "b687e0e1",
+    "run_id": "1e9427e6",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
     "status": "ok",
-    "scan_time": "2026-04-08T02:00:10.540600+02:00",
-    "total_scanned": 11,
+    "scan_time": "2026-04-08T06:00:10.013615+02:00",
+    "total_scanned": 12,
     "by_category": {
       "interview_invite": 0,
-      "recruiter_reach": 0,
+      "recruiter_reach": 1,
       "application_ack": 0,
       "rejection": 0,
       "assessment": 0,
@@ -25,7 +25,18 @@
       "other": 11
     },
     "interview_invites": [],
-    "recruiter_messages": [],
+    "recruiter_messages": [
+      {
+        "id": "352307",
+        "from": "Naukrigulf <newjobs@naukrigulf.com>",
+        "subject": "General Manager tMart Egypt, Senior PMO Project Coordinator\r\n jobs for you",
+        "date": "Wed, 8 Apr 2026 08:49:57 +0530 (IST)",
+        "unread": true,
+        "priority": "MEDIUM",
+        "score": 2,
+        "pipeline_match": null
+      }
+    ],
     "application_acks": [],
     "rejections": [],
     "assessments": [],
@@ -42,16 +53,25 @@
         "requires_assessment": false,
         "recruiter_top_opportunities": [],
         "top_priority": null,
-        "daily_focus": "No actionable recruiting emails were provided, so focus today on outbound applications and network-building."
+        "daily_focus": "No actionable recruiting emails were provided, so focus today on sourcing new Gulf-region leadership opportunities."
       }
     }
   },
   "kpi": {
-    "emails_processed": 11,
+    "emails_processed": 12,
     "actionable": 0,
     "interviews_detected": 0,
-    "recruiter_messages": 0,
+    "recruiter_messages": 1,
     "unread_actionable": 0
   },
-  "recommendations": []
+  "recommendations": [
+    {
+      "id": "rec-1e9427e6-0",
+      "action": "review_and_respond",
+      "target": "1 recruiter message(s)",
+      "reason": "Recruiter outreach could lead to opportunities",
+      "urgency": "high",
+      "timestamp": "2026-04-08T06:00:33.379066+02:00"
+    }
+  ]
 }
