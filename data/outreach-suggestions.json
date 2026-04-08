@@ -1,51 +1,6 @@
 {
-  "generated": "2026-04-08T00:01:17.142068+00:00",
-  "suggestions": [
-    {
-      "name": "Mark Williams",
-      "role": "Kansas City Chiefs",
-      "url": "https://www.linkedin.com/in/mark-williams-kcchiefs",
-      "company": "Mark Williams Recruitment",
-      "signal_score": 20,
-      "source": "tavily",
-      "applied_role": "Head of Information Technology",
-      "applied_date": "2026-03-27",
-      "reason": "You applied for Head of Information Technology at Mark Williams Recruitment"
-    },
-    {
-      "name": "Mark Williams\u200f",
-      "role": "\u200fGroup Managing Director",
-      "url": "https://www.linkedin.com/in/mark-williams-077a7b3a",
-      "company": "Mark Williams Recruitment",
-      "signal_score": 20,
-      "source": "tavily",
-      "applied_role": "Head of Information Technology",
-      "applied_date": "2026-03-27",
-      "reason": "You applied for Head of Information Technology at Mark Williams Recruitment"
-    },
-    {
-      "name": "\u200fMaisoun Selim\u200f",
-      "role": "\u200fStrategic HR & Talent Acquisition Leader",
-      "url": "https://www.linkedin.com/in/maisoun-selim-27489816",
-      "company": "Visa",
-      "signal_score": 30,
-      "source": "tavily",
-      "applied_role": "Director CoE - Strategy and Execution",
-      "applied_date": "2026-03-27",
-      "reason": "You applied for Director CoE - Strategy and Execution at Visa"
-    },
-    {
-      "name": "\u200fMaisoun Selim\u200f",
-      "role": "\u200fStrategic HR & Talent Acquisition Leader",
-      "url": "https://www.linkedin.com/in/maisoun-selim-27489816",
-      "company": "Visa",
-      "signal_score": 30,
-      "source": "tavily",
-      "applied_role": "Director, Government Solutions, KSA",
-      "applied_date": "2026-03-27",
-      "reason": "You applied for Director, Government Solutions, KSA at Visa"
-    }
-  ],
+  "generated": "2026-04-08T04:01:04.269538+00:00",
+  "suggestions": [],
   "companies_searched": 10,
   "status": "ok"
 }

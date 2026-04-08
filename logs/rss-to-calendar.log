@@ -880,3 +880,25 @@ I tri
 [06:33:32]   Added to Content Calendar: 0
 [06:33:32]   Skipped (duplicate title): 143
 [06:33:32]   Errors: 0
+[06:30:01] === RSS → Content Calendar Bridge === 2026-04-08 06:30 Cairo
+[06:30:01]   Fetching existing Content Calendar entries...
+[06:30:05]   Content Calendar has 128 existing entries (by title)
+[06:30:05]   Fetching unprocessed RSS articles...
+[06:30:07]   RSS DB: 143 Gold articles ready for Content Calendar
+[06:30:07]   143 articles to process
+[06:31:54] 
+=== Done ===
+[06:31:54]   Added to Content Calendar: 0
+[06:31:54]   Skipped (duplicate title): 143
+[06:31:54]   Errors: 0
+[06:30:01] === RSS → Content Calendar Bridge === 2026-04-08 06:30 Cairo
+[06:30:01]   Fetching existing Content Calendar entries...
+[06:30:05]   Content Calendar has 128 existing entries (by title)
+[06:30:05]   Fetching unprocessed RSS articles...
+[06:30:07]   RSS DB: 143 Gold articles ready for Content Calendar
+[06:30:07]   143 articles to process
+[06:31:54] 
+=== Done ===
+[06:31:54]   Added to Content Calendar: 0
+[06:31:54]   Skipped (duplicate title): 143
+[06:31:54]   Errors: 0

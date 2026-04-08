@@ -23,3 +23,7 @@
 [2026-04-07T01:02:03Z] SKIP [cto] 59c98288-a05a-4806-80ca-c7392dfa6251.jsonl — locked by live PID 873295 (1MB)
 [2026-04-07T01:02:03Z] RESET [cto] f4cfa4ce-e0cf-4131-b878-66568c0005ed-topic-8.jsonl — was 3MB → archived to f4cfa4ce-e0cf-4131-b878-66568c0005ed-topic-8.20260407T010203Z.jsonl.gz
 [2026-04-07T01:02:04Z] Done — reset=2 skipped=1
+[2026-04-08T01:03:32Z] RESET [main] a3fce94a-590e-43e4-bbc1-652e55e240e3.jsonl — was 3MB → archived to a3fce94a-590e-43e4-bbc1-652e55e240e3.20260408T010332Z.jsonl.gz
+[2026-04-08T01:03:33Z] RESET [main] c5bc3a7e-18d4-4920-a45f-df40ba2115cb.jsonl — was 3MB → archived to c5bc3a7e-18d4-4920-a45f-df40ba2115cb.20260408T010333Z.jsonl.gz
+[2026-04-08T01:03:34Z] SKIP [cto] 367c7852-332e-404a-957c-ff74703fb55c.jsonl — locked by live PID 1028110 (1MB)
+[2026-04-08T01:03:34Z] Done — reset=2 skipped=1

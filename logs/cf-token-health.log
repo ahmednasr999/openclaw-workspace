@@ -164,3 +164,22 @@
   ✓ Content orchestrator: Expected (ran yesterday 06:03)
 
 ✅ All checks passed (5 items)
+[content-factory-token-health] 2026-04-08 05:01 Cairo
+  Checking Notion token...
+  ✓ OK - 100 results from RSS DB
+  Checking Notion write capability...
+  ✓ Write-capable
+  Checking Telegram bot...
+  ✓ Telegram bot 'NasrOpenClawnBot': OK
+  Checking RSS feeds...
+  ✓ RSS feeds responding
+  Checking Content Factory crons...
+  🔴 Content orchestrator: STALE (last 2026-04-06)
+
+==================================================
+🛡️ Content Factory Health — ISSUES FOUND
+2026-04-08 05:01 Cairo
+
+⚠️ Content orchestrator: STALE (last 2026-04-06)
+
+✅ OK: 4

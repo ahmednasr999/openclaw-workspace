@@ -1131,3 +1131,14 @@
 {"agent": "email-agent", "run_id": "e9090506", "started": "2026-04-08T00:01:23.271140+02:00", "duration_ms": 81339, "status": "success", "records": 14, "error": null}
 {"agent": "pipeline-agent", "run_id": "68ad80b4", "started": "2026-04-08T02:00:17.419253+02:00", "duration_ms": 14142, "status": "partial", "records": 11, "error": "name 'notion_req' is not defined"}
 {"agent": "email-agent", "run_id": "b687e0e1", "started": "2026-04-08T02:00:43.040311+02:00", "duration_ms": 38681, "status": "success", "records": 14, "error": null}
+{"agent": "jobs-source-indeed", "run_id": "5f77a675", "started": "2026-04-08T03:00:42.229355+02:00", "duration_ms": 40489, "status": "success", "records": 6, "error": null}
+{"agent": "jobs-source-google", "run_id": "f8ecc769", "started": "2026-04-08T03:03:44.097430+02:00", "duration_ms": 222327, "status": "success", "records": 12, "error": null}
+{"agent": "jobs-merge", "run_id": "9664fc13", "started": "2026-04-08T03:06:46.131415+02:00", "duration_ms": 181957, "status": "success", "records": 19, "error": null}
+{"agent": "jobs-source-linkedin-jobspy", "run_id": "0eb78c8b", "started": "2026-04-08T03:33:47.407011+02:00", "duration_ms": 2025673, "status": "success", "records": 678, "error": null}
+{"agent": "pipeline-agent", "run_id": "060ef2e2", "started": "2026-04-08T04:00:18.363426+02:00", "duration_ms": 14078, "status": "partial", "records": 11, "error": "name 'notion_req' is not defined"}
+{"agent": "email-agent", "run_id": "ca2e7879", "started": "2026-04-08T04:00:38.008184+02:00", "duration_ms": 32572, "status": "success", "records": 14, "error": null}
+{"agent": "jobs-source-google", "run_id": "f4f8ee2d", "started": "2026-04-08T04:09:13.772622+02:00", "duration_ms": 550133, "status": "success", "records": 9, "error": null}
+{"agent": "jobs-merge", "run_id": "473473f1", "started": "2026-04-08T04:11:00.197353+02:00", "duration_ms": 106349, "status": "success", "records": 23, "error": null}
+{"agent": "jobs-source-linkedin-jobspy", "run_id": "43f0907e", "started": "2026-04-08T04:34:10.094387+02:00", "duration_ms": 2046853, "status": "success", "records": 682, "error": null}
+{"agent": "pipeline-agent", "run_id": "5980cd8c", "started": "2026-04-08T06:00:15.773436+02:00", "duration_ms": 14037, "status": "partial", "records": 11, "error": "name 'notion_req' is not defined"}
+{"agent": "email-agent", "run_id": "1e9427e6", "started": "2026-04-08T06:00:33.382808+02:00", "duration_ms": 31057, "status": "success", "records": 14, "error": null}
