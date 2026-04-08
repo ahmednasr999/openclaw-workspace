@@ -1,0 +1,8 @@
+{
+  "installed": {
+    "client_id": "748318689184-7fo6cqr98r33b80u54ikhbpl33kekc6o.apps.googleusercontent.com",
+    "client_secret": "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",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token"
+  }
+}

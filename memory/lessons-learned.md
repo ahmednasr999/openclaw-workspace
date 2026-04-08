@@ -425,3 +425,18 @@ The LinkedIn auto-poster script outputs READY_TO_POST with image_required=true, 
 1. If image_required=true AND image can't be uploaded → STOP and report to Ahmed. Never post text-only when an image was expected.
 2. Move images to a location the sandbox can reach (public S3, GitHub raw, Notion CDN) — not local IPs.
 3. Do NOT delete posts that are already live — always wait for Ahmed's instruction.
+
+## 2026-04-07 - Model-router.json reset after restart
+### What Happened
+After a gateway restart, the session kept falling back to MiniMax-M2.7 every message. Ahmed asked "which model do you use now" twice in a row.
+### Why
+`/root/.openclaw/workspace/config/model-router.json` had `default_model: "minimax-portal/MiniMax-M2.7"` and all rule models pointing to dead Claude IDs. This file overrides per-session model choices. It was reset after the restart.
+### Fix
+Updated `model-router.json` with:
+- `default_model: "openai-codex/gpt-5.4"`
+- All rule models updated to GPT-5.4
+- `after_task_completion: "minimax-portal/MiniMax-M2.7"` (fallback only)
+- Dead Claude references removed
+- Also added explicit MEMORY.md note so this doesn't get lost again
+### Prevention
+Always check `config/model-router.json` first when session keeps falling back to MiniMax. This file is the actual session-level model controller, not just OpenClaw global defaults.

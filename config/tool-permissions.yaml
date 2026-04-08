@@ -1,0 +1,144 @@
+# Tool Permission Context
+# Per-agent permissions using wildcard pattern matching
+# Pattern syntax: exact match, prefix* wildcard, or path:glob patterns
+# Inspired by Claude Code's `Bash(git *)`, `FileEdit(/src/*)` patterns
+
+# ─── PATTERN MATCHING RULES ────────────────────────────────
+# Patterns are checked in order. First match wins.
+# "allow" patterns are checked first, then "deny" patterns.
+# If no pattern matches, the action is ALLOWED (default-open for CEO).
+#
+# Pattern types:
+#   "tool_name"           - exact tool match
+#   "PREFIX_*"            - wildcard prefix (e.g., "LINKEDIN_*" matches all LinkedIn tools)
+#   "edit:path/glob"      - file-scoped (e.g., "edit:memory/*.md")
+#   "exec:command_prefix" - command-scoped (e.g., "exec:rm -rf")
+#
+# Actions: allow, deny, ask (prompt Ahmed)
+
+# ─── AGENT PERMISSION PROFILES ─────────────────────────────
+agent_profiles:
+
+  ceo:
+    # CEO has full access - highest authority below Ahmed
+    default_preset: "full"
+    deny_patterns: []
+    allow_patterns: ["*"]
+
+  hr:
+    # HR focuses on jobs, CVs, applications, outreach
+    default_preset: "build"
+    deny_patterns:
+      - "gateway_*"                     # no gateway operations
+      - "config_*"                      # no config changes
+      - "cron_remove"                   # can't delete crons
+      - "cron_update"                   # can't modify existing crons
+      - "LINKEDIN_*_POST"              # no LinkedIn posting
+      - "LINKEDIN_DELETE_*"            # no LinkedIn deleting
+      - "edit:SOUL.md"                 # can't modify core identity
+      - "edit:IDENTITY.md"
+      - "edit:config/*"                # can't modify configs
+      - "exec:rm -rf *"               # no destructive commands
+      - "exec:gateway *"              # no gateway commands
+    allow_patterns:
+      - "cron_add"                     # CAN create new crons
+      - "LINKEDIN_GET_*"              # CAN read LinkedIn data
+      - "edit:memory/shared/*"         # CAN append to shared memory
+      - "edit:coordination/*"          # CAN update pipeline/calendar
+      - "exec:python3 scripts/*"       # CAN run workspace scripts
+      - "exec:gh *"                    # CAN use GitHub CLI
+    notes: "HR can create crons but not modify/remove. Can read LinkedIn but not post."
+
+  cto:
+    # CTO manages infrastructure, scripts, debugging
+    default_preset: "build"
+    deny_patterns:
+      - "LINKEDIN_*_POST"             # no LinkedIn posting (CMO's job)
+      - "LINKEDIN_DELETE_*"           # no LinkedIn deleting
+      - "job_apply"                   # no job applications (HR's job)
+      - "edit:memory/master-cv-data.md"  # can't touch CV data
+      - "edit:coordination/pipeline.json" # can't modify job pipeline
+    allow_patterns:
+      - "gateway_*"                    # full gateway access
+      - "config_*"                     # full config access
+      - "cron_*"                       # full cron access
+      - "exec:*"                       # full shell access
+      - "edit:scripts/*"              # full script access
+      - "edit:config/*"               # full config access
+      - "LINKEDIN_GET_*"              # CAN read LinkedIn data
+    notes: "CTO has full infra access. Cannot post to LinkedIn or touch HR data."
+
+  cmo:
+    # CMO manages content, LinkedIn, engagement
+    default_preset: "content"
+    deny_patterns:
+      - "gateway_*"                    # no gateway operations
+      - "config_*"                     # no config changes (except content configs)
+      - "cron_remove"                  # can't delete crons
+      - "job_apply"                    # no job applications (HR's job)
+      - "edit:SOUL.md"               # can't modify core identity
+      - "edit:IDENTITY.md"
+      - "edit:memory/master-cv-data.md"
+      - "exec:rm -rf *"              # no destructive commands
+      - "exec:gateway *"
+    allow_patterns:
+      - "LINKEDIN_*"                   # full LinkedIn access
+      - "image_generate"               # can generate images
+      - "cron_add"                     # can create new crons
+      - "edit:memory/shared/*"        # can append to shared memory
+      - "edit:coordination/content-calendar.json"  # can manage content calendar
+      - "exec:python3 scripts/linkedin-*"  # can run LinkedIn scripts
+      - "exec:python3 scripts/content-*"   # can run content scripts
+    notes: "CMO has full LinkedIn + content access. No infra or HR operations."
+
+# ─── MODE OVERRIDES ────────────────────────────────────────
+# Additional restrictions applied during specific modes
+
+mode_overrides:
+
+  afk:
+    # Midnight-6AM Cairo: extra restrictions on all agents
+    additional_deny:
+      - LINKEDIN_CREATE_LINKED_IN_POST
+      - LINKEDIN_DELETE_POST
+      - email_send
+      - himalaya_send
+      - message_send_external
+      - job_apply
+      - git_push_force
+    except_for:
+      - cron_scheduled         # pre-approved cron actions
+      - system_health_alert    # critical alerts always pass
+
+  fast:
+    # Routine pipeline runs: no restrictions, but skip verification
+    additional_deny: []
+    skip_hooks:
+      - verification_gate
+      - auto_commit_suggest
+
+# ─── EFFORT-BASED GATES ───────────────────────────────────
+# Some tools require minimum effort classification
+
+effort_gates:
+  # Only ● High or ◉ Max can modify these
+  high_minimum:
+    - edit:MEMORY.md
+    - edit:SOUL.md
+    - edit:TOOLS.md
+    - edit:AGENTS.md
+    - edit:USER.md
+    - edit:IDENTITY.md
+    - edit:memory/master-cv-data.md
+    - edit:memory/ontology/graph.jsonl
+    - edit:config/tool-hooks.yaml
+    - edit:config/tool-permissions.yaml
+    - gateway_config
+    - config_apply
+    - config_patch
+
+  # Only ◉ Max can do these
+  max_only:
+    - delete:memory/
+    - delete:config/
+    - gateway_update

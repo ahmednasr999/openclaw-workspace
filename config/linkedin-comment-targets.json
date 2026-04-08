@@ -1,0 +1,53 @@
+{
+  "description": "Strategic LinkedIn comment targeting for Ahmed's job search. Priority order matters.",
+  "updated": "2026-03-12",
+  
+  "layer_1_pipeline_companies": {
+    "description": "People AT these companies. Highest ROI. Posts by employees = face time before CV review.",
+    "tier_1": [
+      "Dubai Holding", "FAB", "First Abu Dhabi Bank", "G42", "Inception",
+      "Oracle", "RAKBANK", "Talabat", "du", "EIDX", "Sky News Arabia",
+      "King Salman International Airport", "KSIA", "Fugro", "Dubai Health",
+      "Buro Happold", "Al-Gihaz"
+    ],
+    "tier_2": [
+      "AIQU", "Apex Group", "Cygnify", "EATX", "Halian", "Legend Holding",
+      "Leru Partners", "NXS Tech", "Proximie", "Qashio", "RapidData",
+      "Starlink Qatar", "SmartChoice", "UnlockLand", "Windmills"
+    ]
+  },
+
+  "layer_2_recruiters": {
+    "description": "GCC executive recruiters. They remember names. One good comment > one cold application.",
+    "firms": [
+      "Heidrick & Struggles", "Korn Ferry", "Michael Page", "Robert Half",
+      "Cooper Fitch", "Charterhouse", "Hays", "Salt", "Spencer Stuart",
+      "Egon Zehnder", "eMagine Solutions", "Auxo Talent", "Faithful Executive",
+      "Renard International"
+    ]
+  },
+
+  "layer_3_industry": {
+    "description": "Healthcare DT, PMO, AI leaders in GCC. Builds 'I keep seeing this name' effect.",
+    "topics": [
+      "digital transformation GCC", "healthcare Saudi Vision 2030",
+      "PMO transformation", "AI healthcare Middle East",
+      "CIO CTO CPTO Gulf", "enterprise architecture Saudi"
+    ]
+  },
+
+  "comment_rules": {
+    "must_include": "One specific metric or result from Ahmed's experience",
+    "tone": "Peer executive sharing experience, NOT job seeker, NOT sycophantic",
+    "length": "3-5 sentences. Long enough to add value, short enough to get read.",
+    "structure": "Open with agreement/challenge → Add specific experience → Close with insight or question",
+    "forbidden": [
+      "Great post!", "Thanks for sharing!", "I couldn't agree more!",
+      "As someone who...", "In my humble opinion", "em dashes"
+    ],
+    "examples": {
+      "good": "This resonates. Leading a $50M digital transformation across 15 hospitals in Saudi, the governance gap was the #1 killer. We lost 3 months on a pharmacy integration because nobody owned the cross-functional decision framework. The fix was simple: weekly steering with veto power at director level. Governance isn't overhead, it's velocity.",
+      "bad": "Great insights! I completely agree that governance is important in digital transformation. Thanks for sharing this valuable perspective!"
+    }
+  }
+}

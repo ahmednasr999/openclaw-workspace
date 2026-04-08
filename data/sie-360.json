@@ -1,18 +1,18 @@
 {
-  "generated": "2026-04-06T23:50:34.072468+00:00",
-  "health_score": 77,
+  "generated": "2026-04-07T23:50:29.284431+00:00",
+  "health_score": 79,
   "summary": {
-    "ok": 5,
-    "warn": 4,
+    "ok": 6,
+    "warn": 3,
     "alert": 3
   },
   "workspace": {
     "root_files": 68,
-    "disk_percent": 55,
-    "disk_used": "52G",
+    "disk_percent": 56,
+    "disk_used": "54G",
     "disk_total": "96G",
     "ram_total": "7.8Gi",
-    "ram_used": "2.6Gi",
+    "ram_used": "2.7Gi",
     "large_files": [
       "/root/.openclaw/agents/main/qmd/node_modules/@node-llama-cpp/linux-x64-cuda/bins/linux-x64-cuda/libggml-cuda.so",
       "/root/.openclaw/agents/main/qmd/node_modules/@node-llama-cpp/linux-x64-cuda-ext/bins/linux-x64-cuda/fallback/libggml-cuda.so",
@@ -51,6 +51,7 @@
       "/root/.openclaw/agents/main/sessions/sessions.json.bae50f7a-2430-4910-b77f-2f6192d405a6.tmp",
       "/root/.openclaw/agents/main/sessions/sessions.json.a5f637a8-4858-416b-b1ec-d1880ba3cd95.tmp",
       "/root/.openclaw/agents/main/sessions/b256f8ff-57ab-46d9-97d7-f3b3496c411a.jsonl.reset.2026-03-31T03-08-04.000Z",
+      "/root/.openclaw/agents/main/sessions/sessions.json.bak-2026-04-07",
       "/root/.openclaw/agents/main/sessions/sessions.json.77ba6abf-4b81-4e03-850b-07c2e47c060d.tmp",
       "/root/.openclaw/agents/main/sessions/sessions.json.a731912f-c11f-4156-80fb-7cbb57f93fdb.tmp",
       "/root/.openclaw/agents/main/sessions/sessions.json.9cf2fddc-e7ca-402a-8553-622f582e0e66.tmp",
@@ -88,7 +89,6 @@
       "/root/.openclaw/extensions/lossless-claw/node_modules/openclaw/dist/model-selection-CU2b7bN6.js",
       "/root/.openclaw/extensions/lossless-claw/node_modules/openclaw/dist/discord-CcCLMjHw.js",
       "/root/.openclaw/extensions/lossless-claw/node_modules/openclaw/extensions/diffs/assets/viewer-runtime.js",
-      "/root/.openclaw/lcm.db-wal",
       "/root/.openclaw/memory/main.sqlite",
       "/root/.openclaw/lcm.db",
       "/root/.openclaw/workspace/.understand-anything/intermediate/nodes.json",
@@ -126,7 +126,7 @@
       "/root/.openclaw/workspace/newsletter3.png",
       "/root/.openclaw/lcm.db.bak.20260328"
     ],
-    "session_mb": 1034.1
+    "session_mb": 1064.7
   },
   "learnings": {
     "total": 20,
@@ -151,21 +151,22 @@
       "notion_token": "present (50 chars)",
       "notion_databases": 15,
       "linkedin_lines": 3,
-      "linkedin_age_days": 14.1
+      "linkedin_age_days": 15.1
     }
   },
   "crons": {
-    "total": 28,
-    "enabled": 28,
+    "total": 30,
+    "enabled": 30,
     "disabled": 0,
     "skill_first": 7,
-    "skill_first_pct": 25,
+    "skill_first_pct": 23,
     "raw_prompt_list": [
       "Daily Session Cleanup",
       "session-watchdog",
       "Daily Intel Sweep",
       "Dream Mode - Memory Consolidation",
       "SAYYAD \u2014 Score & Curate",
+      "Model Guardian",
       "Content Agent: Reaction Check",
       "Email Agent (Sun-Thu)",
       "NASR Doctor (Daily)",
@@ -180,16 +181,11 @@
       "Content Agent: Weekly CREATE",
       "Weekly Skill Autoresearch",
       "Weekly Pipeline Audit",
+      "Weekly Self-Health Check",
       "Weekly Team Retro",
       "Content Agent: Weekly LEARN"
     ],
-    "failing": [
-      {
-        "name": "Email Agent (Sun-Thu)",
-        "consecutive_errors": 3,
-        "last_error": "FallbackSummaryError: All models failed (3): anthropic/claude-sonnet-4-6: LLM request failed: networ"
-      }
-    ]
+    "failing": []
   },
   "briefing_notion": {
     "skipped": true,
@@ -204,7 +200,7 @@
     {
       "category": "workspace",
       "level": "ok",
-      "message": "Disk: 55% used (52G/96G)"
+      "message": "Disk: 56% used (54G/96G)"
     },
     {
       "category": "workspace",
@@ -214,7 +210,7 @@
     {
       "category": "workspace",
       "level": "alert",
-      "message": "Session size: 1034.1MB - bloated, review sessions"
+      "message": "Session size: 1064.7MB - bloated, review sessions"
     },
     {
       "category": "learnings",
@@ -244,12 +240,12 @@
     {
       "category": "crons",
       "level": "alert",
-      "message": "Cron skill-first: 7/28 (25%) - too many raw-prompt crons"
+      "message": "Cron skill-first: 7/30 (23%) - too many raw-prompt crons"
     },
     {
       "category": "crons",
-      "level": "warn",
-      "message": "Failing crons: 1 with consecutive errors"
+      "level": "ok",
+      "message": "No failing crons"
     },
     {
       "category": "briefing",
@@ -259,7 +255,6 @@
   ],
   "auto_fixed": [],
   "needs_attention": [
-    "Session bloat: 1034.1MB - review before deleting (needs human decision)",
-    "'Email Agent (Sun-Thu)' has 3 consecutive errors - investigate manually"
+    "Session bloat: 1064.7MB - review before deleting (needs human decision)"
   ]
 }

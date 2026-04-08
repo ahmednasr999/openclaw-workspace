@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1080px;
+    height: 1080px;
+    background: #0f172a;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 72px;
+  }
+  .tag {
+    display: inline-block;
+    background: #ef4444;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 8px 20px;
+    border-radius: 4px;
+    margin-bottom: 48px;
+  }
+  .headline {
+    font-size: 58px;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 40px;
+  }
+  .headline span { color: #ef4444; }
+  .data-blocks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .block {
+    padding: 20px 28px;
+    border-radius: 10px;
+    font-size: 24px;
+    font-weight: 700;
+    border: 2px solid;
+  }
+  .block-clinical { border-color: #3b82f6; color: #3b82f6; background: rgba(59,130,246,0.08); }
+  .block-financial { border-color: #14b8a6; color: #14b8a6; background: rgba(20,184,166,0.08); }
+  .block-ops { border-color: #f59e0b; color: #f59e0b; background: rgba(245,158,11,0.08); }
+  .plus {
+    font-size: 36px;
+    color: #334155;
+    align-self: center;
+  }
+  .vendor-myth {
+    padding: 28px;
+    background: #1e293b;
+    border-left: 5px solid #ef4444;
+    border-radius: 0 12px 12px 0;
+    font-size: 26px;
+    color: #94a3b8;
+    line-height: 1.4;
+  }
+  .vendor-myth strong { color: #ef4444; }
+  .footer {
+    border-top: 1px solid #1e293b;
+    padding-top: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-name { font-size: 24px; font-weight: 700; color: #fff; }
+  .footer-title { font-size: 20px; color: #64748b; margin-top: 4px; }
+  .footer-certs { font-size: 20px; color: #ef4444; font-weight: 600; }
+</style>
+</head>
+<body>
+  <div>
+    <div class="tag">Data Unification</div>
+    <div class="headline">Every hospital wants<br>a <span>single source of truth.</span><br>Almost none achieve it.</div>
+    <div class="data-blocks">
+      <div class="block block-clinical">Clinical</div>
+      <div class="plus">+</div>
+      <div class="block block-financial">Financial</div>
+      <div class="plus">+</div>
+      <div class="block block-ops">Operational</div>
+    </div>
+    <div class="vendor-myth">
+      Vendors promise <strong>"unified data in 90 days."</strong><br>
+      They haven't tried merging Saudi MOH + JCI + legacy ERP<br>across 15 hospitals in 3 countries.
+    </div>
+  </div>
+
+  <div class="footer">
+    <div>
+      <div class="footer-name">Ahmed Nasr</div>
+      <div class="footer-title">Digital Transformation Executive</div>
+    </div>
+    <div class="footer-certs">PMP · CSM · CSPO</div>
+  </div>
+</body>
+</html>

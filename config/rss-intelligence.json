@@ -1,0 +1,15 @@
+{
+  "notion_token": "(see config/notion.json)",
+  "database_id": "32e8d599-a162-8180-9e3a-fbfc17a84e49",
+  "feeds": {
+    "Strategy": "https://fs.blog/feed/",
+    "Healthcare": "https://www.healthcareittoday.com/feed/",
+    "HealthTech": "https://www.mobihealthnews.com/rss.xml",
+    "FinTech": "https://connectingthedotsinfin.tech/rss/",
+    "Digital Transformation": "https://sloanreview.mit.edu/tag/digital-transformation/feed/",
+    "PMO": "https://pmo.zalando.com/atom.xml",
+    "Operation Excellence": "https://www.leanblog.org/feed/",
+    "AI": "https://venturebeat.com/category/ai/feed/"
+  },
+  "state_file": "/root/.openclaw/workspace/data/rss-intelligence-state.json"
+}

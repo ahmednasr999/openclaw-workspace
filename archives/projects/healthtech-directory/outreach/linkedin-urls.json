@@ -1,0 +1,290 @@
+{
+  "metadata": {
+    "created_at": "2026-02-17T04:37:00.587386",
+    "total": 47
+  },
+  "urls": [
+    {
+      "company": "National Wellness Partners",
+      "decision_maker": "Sara Al Naqbi",
+      "linkedin_url": "https://linkedin.com/in/sara-al-naqbi",
+      "action": "message"
+    },
+    {
+      "company": "National MedTech Solutions",
+      "decision_maker": "Layla Al Naqbi",
+      "linkedin_url": "https://linkedin.com/in/layla-al-naqbi",
+      "action": "message"
+    },
+    {
+      "company": "Arabian Medical Group",
+      "decision_maker": "Hana Nassar",
+      "linkedin_url": "https://linkedin.com/in/hana-nassar",
+      "action": "message"
+    },
+    {
+      "company": "Advanced Health Solutions",
+      "decision_maker": "Mohammed Ibrahim",
+      "linkedin_url": "https://linkedin.com/in/mohammed-ibrahim",
+      "action": "message"
+    },
+    {
+      "company": "Global Healthcare Systems",
+      "decision_maker": "Sami Al Ali",
+      "linkedin_url": "https://linkedin.com/in/sami-al-ali",
+      "action": "message"
+    },
+    {
+      "company": "Arabian Pharma Institute",
+      "decision_maker": "Saad Al Hashemi",
+      "linkedin_url": "https://linkedin.com/in/saad-al-hashemi",
+      "action": "message"
+    },
+    {
+      "company": "Royal Wellness Holdings",
+      "decision_maker": "Yousef Al Shehhi",
+      "linkedin_url": "https://linkedin.com/in/yousef-al-shehhi",
+      "action": "message"
+    },
+    {
+      "company": "Emirates MedTech Holdings",
+      "decision_maker": "Maya Al Ali",
+      "linkedin_url": "https://linkedin.com/in/maya-al-ali",
+      "action": "message"
+    },
+    {
+      "company": "Elite Health Center",
+      "decision_maker": "Ali Hussein",
+      "linkedin_url": "https://linkedin.com/in/ali-hussein",
+      "action": "message"
+    },
+    {
+      "company": "Global Health Systems",
+      "decision_maker": "Nasser Al Kaabi",
+      "linkedin_url": "https://linkedin.com/in/nasser-al-kaabi",
+      "action": "message"
+    },
+    {
+      "company": "Premier Pharma Solutions",
+      "decision_maker": "Omar Hassan",
+      "linkedin_url": "https://linkedin.com/in/omar-hassan",
+      "action": "message"
+    },
+    {
+      "company": "Emirates Wellness Center",
+      "decision_maker": "Mohammed Al Hashemi",
+      "linkedin_url": "https://linkedin.com/in/mohammed-al-hashemi",
+      "action": "message"
+    },
+    {
+      "company": "Arabian Digital Health Partners",
+      "decision_maker": "Sara Hussein",
+      "linkedin_url": "https://linkedin.com/in/sara-hussein",
+      "action": "message"
+    },
+    {
+      "company": "Advanced Health Holdings",
+      "decision_maker": "Sami Hussein",
+      "linkedin_url": "https://linkedin.com/in/sami-hussein",
+      "action": "message"
+    },
+    {
+      "company": "Global MedTech Holdings",
+      "decision_maker": "Waleed Ibrahim",
+      "linkedin_url": "https://linkedin.com/in/waleed-ibrahim",
+      "action": "message"
+    },
+    {
+      "company": "Elite Pharma Group",
+      "decision_maker": "Nasser Hassan",
+      "linkedin_url": "https://linkedin.com/in/nasser-hassan",
+      "action": "message"
+    },
+    {
+      "company": "Premier Health Systems",
+      "decision_maker": "Khalid Al Ketbi",
+      "linkedin_url": "https://linkedin.com/in/khalid-al-ketbi",
+      "action": "message"
+    },
+    {
+      "company": "Gulf Medical Group",
+      "decision_maker": "Nasser Al Otaibi",
+      "linkedin_url": "https://linkedin.com/in/nasser-al-otaibi",
+      "action": "message"
+    },
+    {
+      "company": "Emirates Digital Health Institute",
+      "decision_maker": "Hassan Al Mansour",
+      "linkedin_url": "https://linkedin.com/in/hassan-al-mansour",
+      "action": "message"
+    },
+    {
+      "company": "Global Wellness Group",
+      "decision_maker": "Maya Al Bulushi",
+      "linkedin_url": "https://linkedin.com/in/maya-al-bulushi",
+      "action": "message"
+    },
+    {
+      "company": "Elite Healthcare Center",
+      "decision_maker": "Hana Al Mansour",
+      "linkedin_url": "https://linkedin.com/in/hana-al-mansour",
+      "action": "message"
+    },
+    {
+      "company": "Elite MedTech Group",
+      "decision_maker": "Abdullah Hassan",
+      "linkedin_url": "https://linkedin.com/in/abdullah-hassan",
+      "action": "message"
+    },
+    {
+      "company": "Emirates Digital Health Systems",
+      "decision_maker": "Ahmed Hussein",
+      "linkedin_url": "https://linkedin.com/in/ahmed-hussein",
+      "action": "message"
+    },
+    {
+      "company": "National MedTech Group",
+      "decision_maker": "Saad Nassar",
+      "linkedin_url": "https://linkedin.com/in/saad-nassar",
+      "action": "message"
+    },
+    {
+      "company": "Arabian Digital Health Holdings",
+      "decision_maker": "Rashid Al Bulushi",
+      "linkedin_url": "https://linkedin.com/in/rashid-al-bulushi",
+      "action": "message"
+    },
+    {
+      "company": "Royal Medical Systems",
+      "decision_maker": "Hassan Al Ali",
+      "linkedin_url": "https://linkedin.com/in/hassan-al-ali",
+      "action": "message"
+    },
+    {
+      "company": "Arabian MedTech Center",
+      "decision_maker": "Tariq Al Shammari",
+      "linkedin_url": "https://linkedin.com/in/tariq-al-shammari",
+      "action": "message"
+    },
+    {
+      "company": "Gulf Healthcare Institute",
+      "decision_maker": "Hana Khalil",
+      "linkedin_url": "https://linkedin.com/in/hana-khalil",
+      "action": "message"
+    },
+    {
+      "company": "Global Digital Health Partners",
+      "decision_maker": "Layla Al Ketbi",
+      "linkedin_url": "https://linkedin.com/in/layla-al-ketbi",
+      "action": "message"
+    },
+    {
+      "company": "Arabian MedTech Institute",
+      "decision_maker": "Sami Haddad",
+      "linkedin_url": "https://linkedin.com/in/sami-haddad",
+      "action": "message"
+    },
+    {
+      "company": "Elite Pharma Center",
+      "decision_maker": "Khalid Haddad",
+      "linkedin_url": "https://linkedin.com/in/khalid-haddad",
+      "action": "message"
+    },
+    {
+      "company": "Middle East Digital Health Group",
+      "decision_maker": "Khalid Al Ketbi",
+      "linkedin_url": "https://linkedin.com/in/khalid-al-ketbi",
+      "action": "message"
+    },
+    {
+      "company": "Advanced Wellness Group",
+      "decision_maker": "Omar Al Ali",
+      "linkedin_url": "https://linkedin.com/in/omar-al-ali",
+      "action": "message"
+    },
+    {
+      "company": "Middle East Healthcare Institute",
+      "decision_maker": "Faisal Al Muhairi",
+      "linkedin_url": "https://linkedin.com/in/faisal-al-muhairi",
+      "action": "message"
+    },
+    {
+      "company": "Middle East Wellness Systems",
+      "decision_maker": "Noor Haddad",
+      "linkedin_url": "https://linkedin.com/in/noor-haddad",
+      "action": "message"
+    },
+    {
+      "company": "Gulf Wellness Center",
+      "decision_maker": "Amira Al Otaibi",
+      "linkedin_url": "https://linkedin.com/in/amira-al-otaibi",
+      "action": "message"
+    },
+    {
+      "company": "Gulf MedTech Solutions",
+      "decision_maker": "Fatima Ibrahim",
+      "linkedin_url": "https://linkedin.com/in/fatima-ibrahim",
+      "action": "message"
+    },
+    {
+      "company": "Gulf Wellness Partners",
+      "decision_maker": "Khalid Al Habshi",
+      "linkedin_url": "https://linkedin.com/in/khalid-al-habshi",
+      "action": "message"
+    },
+    {
+      "company": "National Healthcare Center",
+      "decision_maker": "Rashid Al Otaibi",
+      "linkedin_url": "https://linkedin.com/in/rashid-al-otaibi",
+      "action": "message"
+    },
+    {
+      "company": "Royal Health Systems",
+      "decision_maker": "Tariq Al Habshi",
+      "linkedin_url": "https://linkedin.com/in/tariq-al-habshi",
+      "action": "message"
+    },
+    {
+      "company": "Middle East MedTech Systems",
+      "decision_maker": "Amira Hassan",
+      "linkedin_url": "https://linkedin.com/in/amira-hassan",
+      "action": "message"
+    },
+    {
+      "company": "National Wellness Group",
+      "decision_maker": "Fatima Khalil",
+      "linkedin_url": "https://linkedin.com/in/fatima-khalil",
+      "action": "message"
+    },
+    {
+      "company": "Global Wellness Solutions",
+      "decision_maker": "Tariq Khalil",
+      "linkedin_url": "https://linkedin.com/in/tariq-khalil",
+      "action": "message"
+    },
+    {
+      "company": "Gulf MedTech Institute",
+      "decision_maker": "Amira Al Ketbi",
+      "linkedin_url": "https://linkedin.com/in/amira-al-ketbi",
+      "action": "message"
+    },
+    {
+      "company": "Gulf Health Institute",
+      "decision_maker": "Abdullah Al Ketbi",
+      "linkedin_url": "https://linkedin.com/in/abdullah-al-ketbi",
+      "action": "message"
+    },
+    {
+      "company": "National Health Systems",
+      "decision_maker": "Noor Al Hashemi",
+      "linkedin_url": "https://linkedin.com/in/noor-al-hashemi",
+      "action": "message"
+    },
+    {
+      "company": "Advanced Health Institute",
+      "decision_maker": "Ali Al Otaibi",
+      "linkedin_url": "https://linkedin.com/in/ali-al-otaibi",
+      "action": "message"
+    }
+  ]
+}

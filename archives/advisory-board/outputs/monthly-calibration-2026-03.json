@@ -1,0 +1,55 @@
+{
+  "month": "2026-03",
+  "generatedAt": "2026-03-01T20:36:57.215498+00:00",
+  "top5": [
+    {
+      "title": "**Delphi follow-up** - Send value-signal message to Kritika Chhabra on **Monday March 2**. Draft ready: AI change management angle (14 agents in clinical ops). Channel TBD (LinkedIn DM or email).",
+      "score": 81.0,
+      "domain": "career",
+      "lens": "CSO",
+      "confidence": 0.8,
+      "alignment": 0.95,
+      "evidence_quality": 0.75
+    },
+    {
+      "title": "Delphi Consulting: Senior AI PM (\ud83d\udcde Interview)",
+      "score": 76.5,
+      "domain": "career",
+      "lens": "CSO",
+      "confidence": 0.75,
+      "alignment": 0.95,
+      "evidence_quality": 0.85
+    },
+    {
+      "title": "**Policy override (active):** No proactive follow-ups for standard LinkedIn applications.",
+      "score": 45.0,
+      "domain": "career",
+      "lens": "CSO",
+      "confidence": 0.8,
+      "alignment": 0.95,
+      "evidence_quality": 0.75
+    },
+    {
+      "title": "Follow-up only when: (1) post-interview silence, or (2) active recruiter thread goes quiet.",
+      "score": 45.0,
+      "domain": "career",
+      "lens": "CSO",
+      "confidence": 0.8,
+      "alignment": 0.95,
+      "evidence_quality": 0.75
+    },
+    {
+      "title": "Current active follow-up: **Delphi only** (post-interview thread with Kritika).",
+      "score": 45.0,
+      "domain": "career",
+      "lens": "CSO",
+      "confidence": 0.8,
+      "alignment": 0.95,
+      "evidence_quality": 0.75
+    }
+  ],
+  "notes": [
+    "If all top5 are from one domain, reduce that domain impact by 10 percent next cycle.",
+    "If confidence is below 0.7 on top items, request more evidence in source files."
+  ]
+}

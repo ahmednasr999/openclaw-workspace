@@ -1,0 +1,64 @@
+# STATE.yaml — Ahmed's Autonomous Project State
+# Last updated: 2026-03-17T02:10:00Z
+# Updated by: NASR (spec-vs-reality audit)
+#
+# NOTE: This file was found 17 days stale during the March 17 audit.
+# Most data was from Feb 28. Updated to current reality.
+# Going forward: Morning Briefing cron should update key metrics here.
+
+---
+
+job_search:
+  active_pipeline: unknown  # needs pipeline.md scan
+  interviews_pending: 0
+  interview_details: []  # Delphi: no response after Feb 24 interview
+  cv_pending_review: 0
+  handoffs_in_progress: []
+  last_radar_run: 2026-03-16T06:00:00Z
+  applications_this_week: unknown
+  pipeline_file: jobs-bank/pipeline.md
+  recruiter_responses: []
+
+linkedin:
+  last_post_date: 2026-03-16
+  posting_days: [0, 1, 2, 3, 4]  # Sun-Thu
+  posting_time: "09:30 Cairo"
+  calendar_file: memory/linkedin_content_calendar.md
+  karpathy_loop: active  # nightly content self-improvement
+  engagement_tracking: active  # URN + reactions via Composio API
+
+agents:
+  job_hunter:
+    status: active
+    domain_file: jobs-bank/pipeline.md
+
+  content_creator:
+    status: active
+    domain_file: memory/linkedin_content_calendar.md
+
+  cv_optimizer:
+    status: active
+    model: opus46  # LOCKED: CVs always on Opus 4.6
+    domain_file: memory/master-cv-data.md
+
+system:
+  default_model: minimax-portal/MiniMax-M2.5
+  gateway_status: running
+  cron_total: 34
+  cron_enabled: 29
+  cron_disabled: 5
+  heartbeat: active  # via Cron Watchdog (2h)
+  last_audit: 2026-03-17T02:00:00Z
+
+alerts:
+  - type: expiry
+    item: Codex subscription ends
+    deadline: 2026-04-01
+    action: Remove openai-codex from fallback chain
+    reminder_cron: codex-removal-reminder
+    status: pending
+
+  - type: maintenance
+    item: gog-calendar-watch broken
+    detail: "gog CLI v0.12.0 has no 'watch' command. Service disabled."
+    status: disabled_pending_fix

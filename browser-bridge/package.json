@@ -1,0 +1,12 @@
+{
+  "name": "nasr-browser-bridge",
+  "version": "1.0.0",
+  "description": "WebSocket bridge between NASR VPS and Ahmed-Mac Chrome",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  }
+}

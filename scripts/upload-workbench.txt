@@ -1,0 +1,47 @@
+import base64, requests, json, os
+
+# HERE.NOW STEP 1: Get upload URL
+body = {"files":[{"path":"post-image.jpg","size":61304,"contentType":"image/jpeg"}]}
+r = requests.post("https://here.now/api/v1/publish", json=body, timeout=15)
+data = r.json()
+version_id = data["upload"]["versionId"]
+upload_url = data["upload"]["uploads"][0]["url"]
+finalize_url = data["upload"]["finalizeUrl"]
+print(f"Got upload URL")
+
+# READ BASE64 FROM s1, s2, s3 FILES
+with open("/tmp/b64_s1.py") as f:
+    exec(f.read().strip())
+with open("/tmp/b64_s2.py") as f:
+    exec(f.read().strip())
+with open("/tmp/b64_s3.py") as f:
+    exec(f.read().strip())
+
+b64_data = B64S1 + B64S2 + B64S3
+print(f"Base64 length: {len(b64_data)}")
+
+# DECODE
+img_bytes = base64.b64decode(b64_data)
+print(f"Decoded: {len(img_bytes)} bytes")
+
+# WRITE TO FILE
+with open("/tmp/post-image.jpg", "wb") as f:
+    f.write(img_bytes)
+print(f"Saved to /tmp/post-image.jpg")
+
+# UPLOAD TO HERE.NOW R2
+r2 = requests.put(upload_url, data=img_bytes, headers={"Content-Type":"image/jpeg"}, timeout=30)
+print(f"R2 PUT: {r2.status_code}")
+
+# FINALIZE
+rf = requests.post(finalize_url, json={"versionId":version_id}, timeout=15)
+print(f"Finalize: {rf.status_code}, {rf.text[:200]}")
+
+# NOW UPLOAD TO S3 VIA COMPOSIO
+result, err = upload_local_file("/tmp/post-image.jpg")
+if err:
+    print(f"S3 error: {err}")
+else:
+    s3key = result["s3key"]
+    print(f"S3 key: {s3key}")
+    print("READY")

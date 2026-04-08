@@ -1,0 +1,483 @@
+{
+  "header": {
+    "headline": "The $2.5B Growth Guy | Strategy That Scales",
+    "name": "Ahmed Nasr MBA, PMP, CSM, CSPO, Lean Six Sigma, CBAP, MCAD, MCP",
+    "location": "Dubai, United Arab Emirates",
+    "followers": "20,141",
+    "connections": "500+",
+    "open_to_work": [
+      "CEO",
+      "Country Manager",
+      "Managing Director",
+      "Chief..."
+    ]
+  },
+  "about": {
+    "summary": "Transforming Industries Through Digital Innovation with 20+ years of experience in IT development, product & project delivery, and large-scale digital transformation across FinTech, HealthTech, and FoodTech",
+    "highlights": [
+      "HealthTech Digital Transformation Leader: Spearheading next-gen healthcare solutions in GCC",
+      "Country Manager @ PaySky: Led Yalla SuperApp launch - Egypt's first SuperApp",
+      "FinTech & Digital Payments Innovator: Pioneered cashless payment solutions",
+      "Technology & Agile Transformation Expert: Implemented Agile, Lean Six Sigma"
+    ],
+    "current_focus": "Driving HealthTech Digital Transformation across Class A+ Group in KSA, UAE & Egypt with U.S. HealthTech partners"
+  },
+  "experience": [
+    {
+      "title": "PMO & Regional Engagement Lead",
+      "company": "Confidential Company (Saudi German Hospital Group)",
+      "duration": "Jun 2024 - Present",
+      "type": "Full-time",
+      "location": "Dubai, UAE - Hybrid",
+      "achievements": [
+        "Leading HealthTech Digital Transformation across Group in KSA, UAE & Egypt",
+        "Strategic Partnerships with Health Catalyst and KLAS Research",
+        "Deploying Enterprise Data Warehouse (EDW) and analytics solutions",
+        "Implementing AI-powered Clinical Decision Support (CDS)",
+        "Digital Patient & Provider Engagement platforms"
+      ]
+    },
+    {
+      "title": "Chief Executive Officer",
+      "company": "AN & Co. Consulting",
+      "duration": "Jan 2021 - Present",
+      "type": "Seasonal",
+      "location": "Dubai, UAE - Hybrid",
+      "achievements": [
+        "FinTech Architecture: Building digital payment platforms and API solutions",
+        "Digital Transformation for enterprise modernization",
+        "Health Information Systems (HIS) optimization",
+        "Product & Project Management across FinTech, healthcare, food tech"
+      ]
+    },
+    {
+      "title": "Country Manager",
+      "company": "PaySky Inc.",
+      "duration": "Apr 2021 - Jan 2022",
+      "type": "Full-time",
+      "location": "Egypt",
+      "achievements": [
+        "Launched Yalla SuperApp - Egypt's first SuperApp",
+        "Redefining financial services for the region",
+        "Financial inclusion to digital empowerment"
+      ]
+    },
+    {
+      "title": "Head of E-Commerce Product & IT Strategy",
+      "company": "Confidential",
+      "duration": "Jan 2020 - Jan 2021",
+      "type": "Full-time",
+      "achievements": [
+        "E-commerce strategy and product leadership"
+      ]
+    },
+    {
+      "title": "CEO & Business Partner",
+      "company": "Soleek Lab",
+      "duration": "May 2018 - Jul 2019",
+      "type": "Full-time",
+      "location": "Cairo Governorate, Egypt",
+      "achievements": [
+        "Product development and business strategy"
+      ]
+    },
+    {
+      "title": "Product Development Manager",
+      "company": "Delivery Hero SE (Talabat)",
+      "duration": "Jun 2017 - May 2018",
+      "type": "Full-time",
+      "achievements": [
+        "Product strategic direction and prioritization",
+        "Lean practices implementation",
+        "Operations Excellence committee leadership"
+      ]
+    },
+    {
+      "title": "PMO Section Head",
+      "company": "Network International (Acquired)",
+      "duration": "Sep 2014 - Jun 2017",
+      "type": "Full-time",
+      "location": "Egypt (HQ + 7 branches: Cairo, Dubai, Amman, Nairobi, Lagos, Accra, Port Louis)",
+      "achievements": [
+        "Built PMO from scratch, managed 16 Project Managers",
+        "300 concurrent projects with 300 banks worldwide",
+        "Delivered: VeriCash Mobile Wallet, TagPay, Cardinal Mobile Wallet",
+        "Cash by Code, Money Send, One Time PAN (Virtual Card), EMPay"
+      ]
+    },
+    {
+      "title": "Engagement Manager",
+      "company": "Revamp Consulting",
+      "duration": "Mar 2013 - Sep 2014",
+      "type": "Full-time",
+      "location": "USA, UAE & Egypt",
+      "achievements": [
+        "Mayo Clinic - FTE business process review",
+        "AT&T - Service Operations Center transformation",
+        "Warner Brothers - Personalized CD production system",
+        "Cisco - Centralized network data collection"
+      ]
+    },
+    {
+      "title": "Senior Project Manager",
+      "company": "BlueCloud",
+      "duration": "Sep 2012 - Feb 2013",
+      "type": "Full-time",
+      "location": "Egypt",
+      "achievements": [
+        "Microsoft Egypt - Infrastructure roll-out for Hyundai Egypt",
+        "Qatar Diar - Front & Back end automation",
+        "Vodafone Egypt - System Center 2012 R2 implementation"
+      ]
+    },
+    {
+      "title": "Project Manager",
+      "company": "Intel Corporation",
+      "duration": "Mar 2011 - Sep 2012",
+      "type": "Full-time",
+      "achievements": [
+        "LTE (4G) project management",
+        "Central point of contact for customer and team",
+        "Resource selection, training, coaching"
+      ]
+    },
+    {
+      "title": "Project Manager",
+      "company": "SySDSoft (Acquired by Intel)",
+      "duration": "Mar 2010 - May 2011",
+      "type": "Full-time",
+      "achievements": [
+        "Project deadlines and milestones management"
+      ]
+    },
+    {
+      "title": "Team Leader",
+      "company": "BASS",
+      "duration": "Dec 2008 - Dec 2009",
+      "type": "Full-time",
+      "achievements": [
+        "Software tools research and recommendations",
+        "System specifications analysis",
+        "Class diagrams and design patterns"
+      ]
+    },
+    {
+      "title": "Senior Web Developer",
+      "company": "Code Republic",
+      "duration": "Jan 2008 - Dec 2008",
+      "type": "Full-time",
+      "achievements": [
+        "ASP.Net development, design, implementation, testing"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Paris ESLSCA Business School",
+      "degree": "MBA - Master In International Business Administration (MIBA)",
+      "focus": "Global Management",
+      "year": "2021-2023",
+      "courses": [
+        "Managerial Economics",
+        "Managerial Accounting",
+        "Strategic Management",
+        "Financial Management",
+        "International Marketing",
+        "Organizational Behavior"
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Certified Scrum Product Owner (CSPO)",
+      "issuer": "Scrum Alliance",
+      "date": "Oct 2014"
+    },
+    {
+      "name": "ITIL Foundations",
+      "issuer": "LinkedIn",
+      "date": "Oct 2016"
+    },
+    {
+      "name": "CBAP - Certified Business Analysis Professional",
+      "issuer": "SUNY",
+      "date": "Nov 2014"
+    },
+    {
+      "name": "Lean Six Sigma Certified",
+      "issuer": "SUNY",
+      "date": "Oct 2010"
+    },
+    {
+      "name": "Certified Scrum Master (CSM)",
+      "issuer": "Scrum Alliance",
+      "date": "Oct 2014"
+    },
+    {
+      "name": "Microsoft Certified Professional (.Net)",
+      "issuer": "Microsoft",
+      "date": "Jul 2006"
+    },
+    {
+      "name": "Microsoft Certified Application Developer (.Net)",
+      "issuer": "Microsoft",
+      "date": "Jun 2006"
+    },
+    {
+      "name": "PMP - Project Management Professional",
+      "issuer": "PMI",
+      "date": "Dec 2008"
+    }
+  ],
+  "skills": [
+    {
+      "skill": "Operations Management",
+      "endorsements": "3 endorsements"
+    },
+    {
+      "skill": "Software Development",
+      "endorsements": "99+ endorsements"
+    },
+    {
+      "skill": "Program Management",
+      "endorsements": "59 endorsements"
+    },
+    {
+      "skill": "Project Management",
+      "endorsements": "63 endorsements"
+    },
+    {
+      "skill": "Software Project Management",
+      "endorsements": "48 endorsements"
+    },
+    {
+      "skill": "PMP",
+      "endorsements": "44 endorsements"
+    },
+    {
+      "skill": "Project Planning",
+      "endorsements": "35 endorsements"
+    },
+    {
+      "skill": ".NET",
+      "endorsements": "23 endorsements"
+    },
+    {
+      "skill": "Team Leadership",
+      "endorsements": "21 endorsements"
+    },
+    {
+      "skill": "Strategy",
+      "endorsements": "19 endorsements"
+    },
+    {
+      "skill": "Integration",
+      "endorsements": "17 endorsements"
+    },
+    {
+      "skill": "Management",
+      "endorsements": "17 endorsements"
+    },
+    {
+      "skill": "Microsoft SQL Server",
+      "endorsements": "14 endorsements"
+    },
+    {
+      "skill": "Databases",
+      "endorsements": "17 endorsements"
+    },
+    {
+      "skill": "Software Engineering",
+      "endorsements": "12 endorsements"
+    },
+    {
+      "skill": "Software Documentation",
+      "endorsements": "13 endorsements"
+    },
+    {
+      "skill": "Agile Methodologies",
+      "endorsements": "12 endorsements"
+    },
+    {
+      "skill": "SDLC",
+      "endorsements": "10 endorsements"
+    },
+    {
+      "skill": "ASP.NET",
+      "endorsements": "9 endorsements"
+    },
+    {
+      "skill": "Change Management",
+      "endorsements": "8 endorsements"
+    },
+    {
+      "skill": "Outsourcing",
+      "endorsements": "7 endorsements"
+    },
+    {
+      "skill": "Team Building",
+      "endorsements": "7 endorsements"
+    },
+    {
+      "skill": "Training",
+      "endorsements": "6 endorsements"
+    },
+    {
+      "skill": "Agile Project Management",
+      "endorsements": "8 endorsements"
+    },
+    {
+      "skill": "c#",
+      "endorsements": "7 endorsements"
+    },
+    {
+      "skill": "Strategic Planning",
+      "endorsements": "7 endorsements"
+    },
+    {
+      "skill": "IT Service Management",
+      "endorsements": "8 endorsements"
+    },
+    {
+      "skill": "Analysis",
+      "endorsements": "87 endorsements"
+    },
+    {
+      "skill": "Leadership",
+      "endorsements": "7 endorsements"
+    },
+    {
+      "skill": "Testing",
+      "endorsements": "8 endorsements"
+    },
+    {
+      "skill": "PMO",
+      "endorsements": "5 endorsements"
+    },
+    {
+      "skill": "MS Project",
+      "endorsements": "4 endorsements"
+    },
+    {
+      "skill": "Process Improvement",
+      "endorsements": "4 endorsements"
+    },
+    {
+      "skill": "Business Process Improvement",
+      "endorsements": "3 endorsements"
+    },
+    {
+      "skill": "Vendor Management",
+      "endorsements": "3 endorsements"
+    },
+    {
+      "skill": "Strategic Leadership",
+      "endorsements": "4 endorsements"
+    },
+    {
+      "skill": "Strategic Communications",
+      "endorsements": "2 endorsements"
+    },
+    {
+      "skill": "Enterprise Content Management",
+      "endorsements": "3 endorsements"
+    },
+    {
+      "skill": "Governance",
+      "endorsements": "2 endorsements"
+    },
+    {
+      "skill": "Process Excellence",
+      "endorsements": "2 endorsements"
+    },
+    {
+      "skill": "Stakeholder Management",
+      "endorsements": "3 endorsements"
+    },
+    {
+      "skill": "ITIL Process Implementation",
+      "endorsements": "2 endorsements"
+    },
+    {
+      "skill": "Service Delivery",
+      "endorsements": "2 endorsements"
+    },
+    {
+      "skill": "Process Automation",
+      "endorsements": "2 endorsements"
+    },
+    {
+      "skill": "Strategic Negotiations",
+      "endorsements": "2 endorsements"
+    },
+    {
+      "skill": "UML",
+      "endorsements": "2 endorsements"
+    },
+    {
+      "skill": "Software Development Life Cycle (SDLC)",
+      "endorsements": "1 endorsement"
+    },
+    {
+      "skill": "Product Development",
+      "endorsements": "1 endorsement"
+    },
+    {
+      "skill": "Product Management",
+      "endorsements": "1 endorsement"
+    },
+    {
+      "skill": "Product Strategy",
+      "endorsements": "1 endorsement"
+    },
+    {
+      "skill": "Product Innovation",
+      "endorsements": "1 endorsement"
+    }
+  ],
+  "projects": [],
+  "recommendations": [
+    {
+      "from": "Ramy Sameh",
+      "role": "Software Engineer",
+      "text": "Ahmed is a clever PM with very good knowledge and experience. Good communication skills and ability to work with all types of people."
+    },
+    {
+      "from": "Ahmed Amin Nassar",
+      "role": "Software Program Manager at Valeo",
+      "text": "Ahmed is a professional project manager. Worked with him for several years at Intel."
+    },
+    {
+      "from": "Omar EL Leissy",
+      "role": "Al Workforce Strategy Specialist",
+      "text": "Ahmed was my project manager. Hardworking, committed and conscientious. Type of person you can rely on."
+    },
+    {
+      "from": "Karim Hamdy",
+      "role": "Infrastructure Architect at BlueCloud",
+      "text": "Ahmed is a very active Project Manager, very professional, task oriented and passionate."
+    },
+    {
+      "from": "Shadi Iskander",
+      "role": "Software Engineering Manager",
+      "text": "Ahmed is a very detail oriented PM, very organized, always on schedule."
+    }
+  ],
+  "analytics": {
+    "profile_views_last_7_days": "203",
+    "post_impressions_last_7_days": "271",
+    "search_appearances": "97"
+  },
+  "master_cv": {
+    "path": "/root/.openclaw/workspace/MASTER_CV.md",
+    "last_updated": "2026-02-16",
+    "status": "ready_for_tailoring",
+    "use_cases": [
+      "Tailored CVs for specific job descriptions",
+      "Executive bio updates",
+      "LinkedIn profile optimization",
+      "Cover letter generation",
+      "Executive search submissions"
+    ]
+  }
+}

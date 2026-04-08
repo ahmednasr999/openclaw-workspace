@@ -1,0 +1,15 @@
+{
+  "metadata": {
+    "date_utc": "2026-03-04T08:01:00Z",
+    "time_window_used_hours": 24,
+    "discovery_phase": 1,
+    "total_posts_scanned": 0,
+    "posts_eligible": 0,
+    "selected_count": 0,
+    "rejected_count": 0
+  },
+  "status": "DISCOVERY_INSUFFICIENT",
+  "reason": "Browser Relay: No attached LinkedIn tab. Chrome extension relay running but no tab connected. User must click OpenClaw Chrome extension icon on LinkedIn tab to attach.",
+  "selected": [],
+  "rejected": []
+}

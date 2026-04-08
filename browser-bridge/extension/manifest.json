@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "NASR Browser Bridge",
+  "version": "1.0.0",
+  "description": "Connects Ahmed-Mac Chrome to NASR VPS for remote URL navigation",
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "scripting",
+    "alarms",
+    "cookies"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "NASR Bridge"
+  },
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  }
+}
