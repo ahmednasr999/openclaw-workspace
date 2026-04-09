@@ -183,3 +183,4 @@
 ⚠️ Content orchestrator: STALE (last 2026-04-06)
 
 ✅ OK: 4
+python3: can't open file '/root/.openclaw/workspace/scripts/content-factory-token-health.py': [Errno 2] No such file or directory
