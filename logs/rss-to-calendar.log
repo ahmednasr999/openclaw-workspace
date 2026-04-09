@@ -902,3 +902,4 @@ I tri
 [06:31:54]   Added to Content Calendar: 0
 [06:31:54]   Skipped (duplicate title): 143
 [06:31:54]   Errors: 0
+/usr/bin/python3: can't open file '/root/.openclaw/workspace/scripts/rss-to-content-calendar.py': [Errno 2] No such file or directory

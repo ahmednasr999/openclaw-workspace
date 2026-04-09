@@ -1,7 +1,7 @@
 {
   "status": "ok",
-  "scan_time": "2026-04-08T06:00:10.013615+02:00",
-  "total_scanned": 12,
+  "scan_time": "2026-04-09T06:00:07.278682+02:00",
+  "total_scanned": 7,
   "by_category": {
     "interview_invite": 0,
     "recruiter_reach": 1,
@@ -9,15 +9,15 @@
     "rejection": 0,
     "assessment": 0,
     "follow_up_needed": 0,
-    "other": 11
+    "other": 6
   },
   "interview_invites": [],
   "recruiter_messages": [
     {
-      "id": "352307",
-      "from": "Naukrigulf <newjobs@naukrigulf.com>",
-      "subject": "General Manager tMart Egypt, Senior PMO Project Coordinator\r\n jobs for you",
-      "date": "Wed, 8 Apr 2026 08:49:57 +0530 (IST)",
+      "id": "352481",
+      "from": "Mariam from foundit <jobmessenger@monstergulf.com>",
+      "subject": "Ahmed, Hot Job Opportunities Waiting For You",
+      "date": "Thu, 9 Apr 2026 08:47:33 +0530 (IST)",
       "unread": true,
       "priority": "MEDIUM",
       "score": 2,

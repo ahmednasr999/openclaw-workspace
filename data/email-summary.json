@@ -2,19 +2,19 @@
   "meta": {
     "agent": "email-agent",
     "version": "3.0.0",
-    "generated_at": "2026-04-08T06:00:33.379224+02:00",
-    "duration_ms": 31053,
+    "generated_at": "2026-04-09T06:00:28.011285+02:00",
+    "duration_ms": 24926,
     "ttl_hours": 4,
     "status": "success",
     "error": null,
-    "run_id": "1e9427e6",
+    "run_id": "c1d36f0f",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
     "status": "ok",
-    "scan_time": "2026-04-08T06:00:10.013615+02:00",
-    "total_scanned": 12,
+    "scan_time": "2026-04-09T06:00:07.278682+02:00",
+    "total_scanned": 7,
     "by_category": {
       "interview_invite": 0,
       "recruiter_reach": 1,
@@ -22,15 +22,15 @@
       "rejection": 0,
       "assessment": 0,
       "follow_up_needed": 0,
-      "other": 11
+      "other": 6
     },
     "interview_invites": [],
     "recruiter_messages": [
       {
-        "id": "352307",
-        "from": "Naukrigulf <newjobs@naukrigulf.com>",
-        "subject": "General Manager tMart Egypt, Senior PMO Project Coordinator\r\n jobs for you",
-        "date": "Wed, 8 Apr 2026 08:49:57 +0530 (IST)",
+        "id": "352481",
+        "from": "Mariam from foundit <jobmessenger@monstergulf.com>",
+        "subject": "Ahmed, Hot Job Opportunities Waiting For You",
+        "date": "Thu, 9 Apr 2026 08:47:33 +0530 (IST)",
         "unread": true,
         "priority": "MEDIUM",
         "score": 2,
@@ -53,12 +53,12 @@
         "requires_assessment": false,
         "recruiter_top_opportunities": [],
         "top_priority": null,
-        "daily_focus": "No actionable recruiting emails were provided, so focus today on sourcing new Gulf-region leadership opportunities."
+        "daily_focus": "No actionable priority emails detected, focus on sourcing new senior leadership opportunities in the Gulf region."
       }
     }
   },
   "kpi": {
-    "emails_processed": 12,
+    "emails_processed": 7,
     "actionable": 0,
     "interviews_detected": 0,
     "recruiter_messages": 1,
@@ -66,12 +66,12 @@
   },
   "recommendations": [
     {
-      "id": "rec-1e9427e6-0",
+      "id": "rec-c1d36f0f-0",
       "action": "review_and_respond",
       "target": "1 recruiter message(s)",
       "reason": "Recruiter outreach could lead to opportunities",
       "urgency": "high",
-      "timestamp": "2026-04-08T06:00:33.379066+02:00"
+      "timestamp": "2026-04-09T06:00:28.011174+02:00"
     }
   ]
 }

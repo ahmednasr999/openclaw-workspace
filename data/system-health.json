@@ -2,23 +2,23 @@
   "meta": {
     "agent": "system-agent",
     "version": "1.0.0",
-    "generated_at": "2026-04-06T12:00:10.325397+02:00",
-    "duration_ms": 6769,
+    "generated_at": "2026-04-09T06:00:22.190405+02:00",
+    "duration_ms": 19251,
     "ttl_hours": 1,
     "status": "success",
     "error": null,
-    "run_id": "d722019a",
+    "run_id": "2b3dfb05",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
-    "scan_time": "2026-04-06T12:00:10.325294+02:00",
+    "scan_time": "2026-04-09T06:00:22.190277+02:00",
     "system": {
-      "disk_usage_pct": 54,
+      "disk_usage_pct": 57,
       "memory": {
         "total_gb": 7.8,
-        "available_gb": 4.9,
-        "used_pct": 36.7
+        "available_gb": 4.5,
+        "used_pct": 41.8
       },
       "gateway": {
         "status": "healthy",
@@ -26,7 +26,7 @@
       },
       "openclaw_process": {
         "running": true,
-        "pid_count": 32
+        "pid_count": 22
       }
     },
     "agents": {
@@ -34,15 +34,15 @@
         {
           "agent": "jobs-merge",
           "status": "healthy",
-          "age_hours": 2.8,
+          "age_hours": 1.8,
           "ttl_hours": 6,
-          "last_run": "2026-04-06T09:09:26.767764+02:00",
+          "last_run": "2026-04-09T04:10:51.500035+02:00",
           "last_status": "success"
         },
         {
           "agent": "jobs-review",
-          "status": "healthy",
-          "age_hours": 2.4,
+          "status": "stale",
+          "age_hours": 68.4,
           "ttl_hours": 6,
           "last_run": "2026-04-06T09:35:20.996135+02:00",
           "last_status": "success"
@@ -50,23 +50,20 @@
         {
           "agent": "email-agent",
           "status": "healthy",
-          "age_hours": 1.9,
+          "age_hours": 2.0,
           "ttl_hours": 4,
-          "last_run": "2026-04-06T10:03:14.864818+02:00",
+          "last_run": "2026-04-09T04:00:39.033089+02:00",
           "last_status": "success"
         },
         {
           "agent": "linkedin-post",
-          "status": "stale",
-          "age_hours": 175.0,
-          "ttl_hours": 6,
-          "last_run": "2026-03-30T03:00:15.697312+00:00",
-          "last_status": null
+          "status": "missing",
+          "file": "/root/.openclaw/workspace/data/linkedin-post.json"
         },
         {
           "agent": "comment-radar",
           "status": "stale",
-          "age_hours": 223.0,
+          "age_hours": 289.0,
           "ttl_hours": 6,
           "last_run": "2026-03-28T03:00:24.648751+00:00",
           "last_status": null
@@ -76,26 +73,25 @@
           "status": "healthy",
           "age_hours": 2.0,
           "ttl_hours": 6,
-          "last_run": "2026-04-06T08:01:03.273395+00:00",
+          "last_run": "2026-04-09T02:01:21.901662+00:00",
           "last_status": null
         },
         {
           "agent": "system-agent",
           "status": "healthy",
-          "age_hours": 2.0,
+          "age_hours": 6.0,
           "ttl_hours": 6,
-          "last_run": "2026-04-06T10:00:11.100152+02:00",
+          "last_run": "2026-04-09T00:00:23.201014+02:00",
           "last_status": "success"
         }
       ],
-      "healthy_count": 5,
+      "healthy_count": 4,
       "stale_count": 2,
       "total": 7
     },
     "cron": {
-      "status": "healthy",
-      "job_count": 28,
-      "raw_output": "ID                                   Name                     Schedule                         Next       Last       Status    Target    Agent ID   Model               \nd1343a4d-61a4-476c-83c5-15724bcce89c Content Agent: Reacti... cron 0 */6 * * * @ Africa/Cai... in 3m      6h ago     ok        isolated  cmo        anthropic/claude-...\nea668c66-f66e-49a9-8e72-e5e50ea07477 SAYYAD \u2014 Score & Cura... cron 20 6,10 * * * @ UTC (exact) in 20m     4h ago     ok        isolated  hr         anthropic/clau"
+      "status": "error",
+      "error": "Invalid config at /root/.openclaw/openclaw.json:\\n- channels.slack.streaming: Invalid option: expected one of \"off\"|\"partial\"|\"block\"|\"progress\"\nConfig invalid\nFile: ~/.openclaw/openclaw.json\nProblem:"
     },
     "external_services": {
       "notion": {
@@ -114,19 +110,19 @@
   },
   "kpi": {
     "system_uptime": 100,
-    "agents_healthy": 5,
+    "agents_healthy": 4,
     "agents_stale": 2,
-    "cron_success_rate": 100,
+    "cron_success_rate": 0,
     "alerts_active": 0
   },
   "recommendations": [
     {
-      "id": "rec-d722019a-0",
+      "id": "rec-2b3dfb05-0",
       "action": "run_agents",
-      "target": "2 stale agent(s): linkedin-post, comment-radar",
+      "target": "2 stale agent(s): jobs-review, comment-radar",
       "reason": "Agent data is past TTL",
       "urgency": "medium",
-      "timestamp": "2026-04-06T12:00:10.325337+02:00"
+      "timestamp": "2026-04-09T06:00:22.190322+02:00"
     }
   ]
 }

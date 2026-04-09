@@ -1,75 +1,28 @@
 {
-  "generated": "2026-04-07T23:50:29.284431+00:00",
-  "health_score": 79,
+  "generated": "2026-04-08T23:50:22.736241+00:00",
+  "health_score": 80,
   "summary": {
-    "ok": 6,
-    "warn": 3,
-    "alert": 3
+    "ok": 4,
+    "warn": 5,
+    "alert": 2
   },
   "workspace": {
     "root_files": 68,
-    "disk_percent": 56,
-    "disk_used": "54G",
+    "disk_percent": 57,
+    "disk_used": "55G",
     "disk_total": "96G",
     "ram_total": "7.8Gi",
-    "ram_used": "2.7Gi",
+    "ram_used": "3.0Gi",
     "large_files": [
-      "/root/.openclaw/agents/main/qmd/node_modules/@node-llama-cpp/linux-x64-cuda/bins/linux-x64-cuda/libggml-cuda.so",
-      "/root/.openclaw/agents/main/qmd/node_modules/@node-llama-cpp/linux-x64-cuda-ext/bins/linux-x64-cuda/fallback/libggml-cuda.so",
-      "/root/.openclaw/agents/main/qmd/node_modules/@node-llama-cpp/linux-x64-vulkan/bins/linux-x64-vulkan/libggml-vulkan.so",
-      "/root/.openclaw/agents/main/qmd/node_modules/better-sqlite3/deps/sqlite3/sqlite3.c",
-      "/root/.openclaw/agents/main/qmd/node_modules/node-llama-cpp/llama/gitRelease.bundle",
-      "/root/.openclaw/agents/main/qmd/node_modules/node-llama-cpp/llama/llama.cpp/models/ggml-vocab-command-r.gguf",
-      "/root/.openclaw/agents/main/qmd/node_modules/node-llama-cpp/llama/llama.cpp/models/ggml-vocab-qwen2.gguf",
-      "/root/.openclaw/agents/main/qmd/node_modules/node-llama-cpp/llama/llama.cpp/models/ggml-vocab-nomic-bert-moe.gguf",
-      "/root/.openclaw/agents/main/qmd/node_modules/node-llama-cpp/llama/llama.cpp/models/ggml-vocab-llama-bpe.gguf",
-      "/root/.openclaw/agents/main/qmd/node_modules/node-llama-cpp/llama/llama.cpp/.git/objects/pack/pack-e7771b6bedf88279667bd60d45be01a2d5ba954a.pack",
-      "/root/.openclaw/agents/main/qmd/node_modules/typescript/lib/_tsc.js",
-      "/root/.openclaw/agents/main/qmd/node_modules/typescript/lib/typescript.js",
       "/root/.openclaw/agents/main/qmd/xdg-cache/qmd/index.sqlite",
-      "/root/.openclaw/agents/main/sessions/sessions.json.93420c05-ad25-4a73-b4ff-439aef13eeef.tmp",
-      "/root/.openclaw/agents/main/sessions/sessions.json.28ab18d1-4532-4ef4-84e9-ab513ebce8a8.tmp",
-      "/root/.openclaw/agents/main/sessions/sessions.json.f6931f8d-a810-422f-a1e7-decccd1d5050.tmp",
-      "/root/.openclaw/agents/main/sessions/sessions.json.07c16ce2-58af-4da7-a170-dde23d44f45d.tmp",
       "/root/.openclaw/agents/main/sessions/sessions.json.bak-2026-04-06",
-      "/root/.openclaw/agents/main/sessions/sessions.json.695b2e83-de3b-469a-ac59-1fb7aa166c28.tmp",
-      "/root/.openclaw/agents/main/sessions/sessions.json.dc11cf88-cdc1-4f13-969a-df4a63f31ccc.tmp",
-      "/root/.openclaw/agents/main/sessions/sessions.json.bd2b4671-4f3a-460d-845d-ad450ff847c0.tmp",
-      "/root/.openclaw/agents/main/sessions/sessions.json.e75be458-9a70-41d4-9a84-89dd57a5c0ac.tmp",
-      "/root/.openclaw/agents/main/sessions/sessions.json.8938d60e-f6ef-4204-88b1-eaf45ecf5e3f.tmp",
-      "/root/.openclaw/agents/main/sessions/sessions.json.c5d422ed-4c0a-4668-b9ef-83b161e7f64b.tmp",
-      "/root/.openclaw/agents/main/sessions/sessions.json.b2c14fec-a53c-4fdc-ba63-859e4f9fd893.tmp",
+      "/root/.openclaw/agents/main/sessions/sessions.json.bak-2026-04-08",
       "/root/.openclaw/agents/main/sessions/sessions.json",
-      "/root/.openclaw/agents/main/sessions/sessions.json.8ececf50-d8f8-40ed-8fa7-c18fc07de776.tmp",
-      "/root/.openclaw/agents/main/sessions/sessions.json.873efadc-84f0-4210-b268-cd1df7be7f5d.tmp",
-      "/root/.openclaw/agents/main/sessions/sessions.json.37bbb5c4-d7f2-4066-9c37-0b0c3fc09a56.tmp",
-      "/root/.openclaw/agents/main/sessions/sessions.json.66e3ff60-019e-4208-9d5d-469e43a1a08f.tmp",
-      "/root/.openclaw/agents/main/sessions/sessions.json.5cdbbc89-b710-41b7-af4b-5f74f0e5edc6.tmp",
-      "/root/.openclaw/agents/main/sessions/sessions.json.ef48ad3f-974a-4d6d-ba1e-3ca60c36471d.tmp",
-      "/root/.openclaw/agents/main/sessions/sessions.json.01983a41-958f-4130-8570-185ad6a5ae4e.tmp",
-      "/root/.openclaw/agents/main/sessions/sessions.json.99488f2d-1272-45d1-b44c-82ca8fb8f606.tmp",
-      "/root/.openclaw/agents/main/sessions/sessions.json.bae50f7a-2430-4910-b77f-2f6192d405a6.tmp",
-      "/root/.openclaw/agents/main/sessions/sessions.json.a5f637a8-4858-416b-b1ec-d1880ba3cd95.tmp",
+      "/root/.openclaw/agents/main/sessions/f4067fc9-218c-43ad-81ce-1c2ac47cd206.jsonl.reset.2026-04-08T16-30-44.594Z",
       "/root/.openclaw/agents/main/sessions/b256f8ff-57ab-46d9-97d7-f3b3496c411a.jsonl.reset.2026-03-31T03-08-04.000Z",
       "/root/.openclaw/agents/main/sessions/sessions.json.bak-2026-04-07",
-      "/root/.openclaw/agents/main/sessions/sessions.json.77ba6abf-4b81-4e03-850b-07c2e47c060d.tmp",
-      "/root/.openclaw/agents/main/sessions/sessions.json.a731912f-c11f-4156-80fb-7cbb57f93fdb.tmp",
-      "/root/.openclaw/agents/main/sessions/sessions.json.9cf2fddc-e7ca-402a-8553-622f582e0e66.tmp",
-      "/root/.openclaw/agents/main/sessions/sessions.json.3a90e14b-5066-495f-970f-891a08b64668.tmp",
-      "/root/.openclaw/agents/main/sessions/sessions.json.897ad8be-d5c0-462e-9ce0-218d8280a85a.tmp",
+      "/root/.openclaw/agents/main/sessions/f6dc568c-58fb-47d4-96a7-c5c9c8cb3011.jsonl",
       "/root/.openclaw/agents/main/sessions/archive/sessions-resets.tar.gz",
-      "/root/.openclaw/agents/main/sessions/sessions.json.b1ad53fa-a913-410b-b1a5-1bf31f0db6ad.tmp",
-      "/root/.openclaw/agents/main/sessions/sessions.json.beb742d8-460e-4b6c-bf0e-87d7eb5dd388.tmp",
-      "/root/.openclaw/agents/main/sessions/sessions.json.5b84ad32-a06c-4ebf-b552-4c5231388406.tmp",
-      "/root/.openclaw/agents/main/sessions/sessions.json.1d223764-7465-4fa4-9062-f5cf98e5652a.tmp",
-      "/root/.openclaw/agents/main/sessions/sessions.json.ca0008ea-c82e-4e10-a659-43d54adf27b3.tmp",
-      "/root/.openclaw/agents/main/sessions/sessions.json.55e7a41b-0e24-41e9-a91f-5dd20c71a613.tmp",
-      "/root/.openclaw/agents/main/sessions/sessions.json.664b3945-0057-46ac-b1fe-f50ed980d587.tmp",
-      "/root/.openclaw/agents/main/sessions/sessions.json.5a3cf81e-096a-450b-8c96-011e8d34903e.tmp",
-      "/root/.openclaw/agents/main/sessions/sessions.json.606416c2-5067-4b41-ae3a-1fbf7468b77f.tmp",
-      "/root/.openclaw/agents/main/sessions/sessions.json.ad3ef1f9-fc65-4561-8090-4a5e46ca3ca8.tmp",
-      "/root/.openclaw/agents/main/sessions/sessions.json.671b22bd-744e-4dde-ab67-3db578c857e8.tmp",
-      "/root/.openclaw/agents/main/sessions/sessions.json.73552fb8-0ea2-4939-9320-4bcd1f09a2ac.tmp",
       "/root/.openclaw/extensions/camofox-browser/node_modules/impit-linux-x64-gnu/impit-node.linux-x64-gnu.node",
       "/root/.openclaw/extensions/camofox-browser/node_modules/better-sqlite3/deps/sqlite3/sqlite3.c",
       "/root/.openclaw/extensions/lossless-claw/node_modules/@napi-rs/canvas-linux-x64-gnu/skia.linux-x64-gnu.node",
@@ -89,13 +42,12 @@
       "/root/.openclaw/extensions/lossless-claw/node_modules/openclaw/dist/model-selection-CU2b7bN6.js",
       "/root/.openclaw/extensions/lossless-claw/node_modules/openclaw/dist/discord-CcCLMjHw.js",
       "/root/.openclaw/extensions/lossless-claw/node_modules/openclaw/extensions/diffs/assets/viewer-runtime.js",
+      "/root/.openclaw/lcm.db-wal",
       "/root/.openclaw/memory/main.sqlite",
       "/root/.openclaw/lcm.db",
       "/root/.openclaw/workspace/.understand-anything/intermediate/nodes.json",
       "/root/.openclaw/workspace/media/post-visuals/2-gemini-pro-4k.jpg",
-      "/root/.openclaw/workspace/tmp/insights-deck/node_modules/skia-canvas/lib/skia.node",
       "/root/.openclaw/workspace/minimax-skills/.git/objects/pack/pack-fa8863764b269c235de495571ed95998096dde86.pack",
-      "/root/.openclaw/workspace/data/jobs-raw/linkedin.json",
       "/root/.openclaw/workspace/tools/jobspy-venv/lib/python3.13/site-packages/tls_client/dependencies/tls-client-arm64.so",
       "/root/.openclaw/workspace/tools/jobspy-venv/lib/python3.13/site-packages/tls_client/dependencies/tls-client-amd64.so",
       "/root/.openclaw/workspace/tools/jobspy-venv/lib/python3.13/site-packages/tls_client/dependencies/tls-client-x86.so",
@@ -116,17 +68,9 @@
       "/root/.openclaw/workspace/.git/objects/0e/468c177a546465115f3b69f52b1524338b301d",
       "/root/.openclaw/workspace/.git/objects/28/748c33e7873b24934f034842fd2d66785906ad",
       "/root/.openclaw/workspace/newsletter2.png",
-      "/root/.openclaw/workspace/mission-control/node_modules/jspdf/dist/jspdf.umd.js.map",
-      "/root/.openclaw/workspace/mission-control/node_modules/better-sqlite3/deps/sqlite3/sqlite3.c",
-      "/root/.openclaw/workspace/mission-control/node_modules/@next/swc-linux-x64-gnu/next-swc.linux-x64-gnu.node",
-      "/root/.openclaw/workspace/mission-control/node_modules/@next/swc-linux-x64-musl/next-swc.linux-x64-musl.node",
-      "/root/.openclaw/workspace/mission-control/node_modules/@napi-rs/wasm-runtime/dist/fs.js",
-      "/root/.openclaw/workspace/mission-control/node_modules/typescript/lib/_tsc.js",
-      "/root/.openclaw/workspace/mission-control/node_modules/typescript/lib/typescript.js",
-      "/root/.openclaw/workspace/newsletter3.png",
-      "/root/.openclaw/lcm.db.bak.20260328"
+      "/root/.openclaw/workspace/newsletter3.png"
     ],
-    "session_mb": 1064.7
+    "session_mb": 154.2
   },
   "learnings": {
     "total": 20,
@@ -145,46 +89,23 @@
     "gmail": "ok",
     "notion": "ok",
     "linkedin": "warn",
-    "gateway": "ok",
+    "gateway": "down",
     "details": {
       "gmail": "App Password configured (himalaya IMAP/SMTP)",
       "notion_token": "present (50 chars)",
       "notion_databases": 15,
       "linkedin_lines": 3,
-      "linkedin_age_days": 15.1
+      "linkedin_age_days": 16.1,
+      "gateway_output": "Invalid config at /root/.openclaw/openclaw.json:\\n- channels.slack.streaming: Invalid option: expected one of \"off\"|\"partial\"|\"block\"|\"progress\"\nGateway status failed: Error: Invalid config at /root/."
     }
   },
   "crons": {
-    "total": 30,
-    "enabled": 30,
+    "total": 0,
+    "enabled": 0,
     "disabled": 0,
-    "skill_first": 7,
-    "skill_first_pct": 23,
-    "raw_prompt_list": [
-      "Daily Session Cleanup",
-      "session-watchdog",
-      "Daily Intel Sweep",
-      "Dream Mode - Memory Consolidation",
-      "SAYYAD \u2014 Score & Curate",
-      "Model Guardian",
-      "Content Agent: Reaction Check",
-      "Email Agent (Sun-Thu)",
-      "NASR Doctor (Daily)",
-      "SAYYAD \u2014 Score & Curate (midday)",
-      "LCM Midday Compaction Sweep",
-      "Email Agent (Fri-Sat)",
-      "X Intelligence Crawler - Weekly",
-      "RSS Intelligence - Weekly Crawl",
-      "Content Factory Exa Scanner - Weekly",
-      "Content Factory Scorer - Weekly",
-      "Content Factory Weekly Digest",
-      "Content Agent: Weekly CREATE",
-      "Weekly Skill Autoresearch",
-      "Weekly Pipeline Audit",
-      "Weekly Self-Health Check",
-      "Weekly Team Retro",
-      "Content Agent: Weekly LEARN"
-    ],
+    "skill_first": 0,
+    "skill_first_pct": 0,
+    "raw_prompt_list": [],
     "failing": []
   },
   "briefing_notion": {
@@ -200,17 +121,17 @@
     {
       "category": "workspace",
       "level": "ok",
-      "message": "Disk: 56% used (54G/96G)"
+      "message": "Disk: 57% used (55G/96G)"
     },
     {
       "category": "workspace",
       "level": "warn",
-      "message": "Large files (>5MB): 111 found in .openclaw"
+      "message": "Large files (>5MB): 55 found in .openclaw"
     },
     {
       "category": "workspace",
       "level": "alert",
-      "message": "Session size: 1064.7MB - bloated, review sessions"
+      "message": "Session size: 154.2MB - bloated, review sessions"
     },
     {
       "category": "learnings",
@@ -234,18 +155,13 @@
     },
     {
       "category": "integrations",
-      "level": "ok",
-      "message": "Gateway: running"
+      "level": "warn",
+      "message": "Gateway: status unclear or not running"
     },
     {
       "category": "crons",
-      "level": "alert",
-      "message": "Cron skill-first: 7/30 (23%) - too many raw-prompt crons"
-    },
-    {
-      "category": "crons",
-      "level": "ok",
-      "message": "No failing crons"
+      "level": "warn",
+      "message": "Could not parse cron list JSON output"
     },
     {
       "category": "briefing",
@@ -255,6 +171,6 @@
   ],
   "auto_fixed": [],
   "needs_attention": [
-    "Session bloat: 1064.7MB - review before deleting (needs human decision)"
+    "Session bloat: 154.2MB - review before deleting (needs human decision)"
   ]
 }

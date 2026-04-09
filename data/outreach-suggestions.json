@@ -1,6 +1,18 @@
 {
-  "generated": "2026-04-08T04:01:04.269538+00:00",
-  "suggestions": [],
+  "generated": "2026-04-09T04:01:04.769294+00:00",
+  "suggestions": [
+    {
+      "name": "Romelyn Panganiban",
+      "role": "Dubai",
+      "url": "https://www.linkedin.com/in/romelyn-panganiban-36665b86",
+      "company": "Atlantis Resorts",
+      "signal_score": 5,
+      "source": "tavily",
+      "applied_role": "General Manager and Senior Vice President, Operations",
+      "applied_date": "2026-03-28",
+      "reason": "You applied for General Manager and Senior Vice President, Operations at Atlantis Resorts"
+    }
+  ],
   "companies_searched": 10,
   "status": "ok"
 }

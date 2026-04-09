@@ -334,3 +334,4 @@
 [07:00:18]   ✅ visuals: 38 visuals, newest 9.9d old
 [07:00:18] 
   Summary: 8 ✅  0 ⚠️  1 🔴  1 ℹ️
+/usr/bin/python3: can't open file '/root/.openclaw/workspace/scripts/content-factory-health-monitor.py': [Errno 2] No such file or directory
