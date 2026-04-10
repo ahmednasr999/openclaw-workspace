@@ -1437,3 +1437,28 @@ Config warnings:\n- plugins.allow: plugin not found: auth (stale config entry ig
 [2026-04-09 04:00] Summary: fixes=0 warnings=0 alerts=0
 [2026-04-09 06:00] === Watchdog v3 run ===
 [2026-04-09 06:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-09 08:00] === Watchdog v3 run ===
+[2026-04-09 08:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-09 10:00] === Watchdog v3 run ===
+[2026-04-09 10:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-09 12:00] === Watchdog v3 run ===
+[2026-04-09 12:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-09 14:00] === Watchdog v3 run ===
+[2026-04-09 14:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-09 16:00] === Watchdog v3 run ===
+[2026-04-09 16:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-09 18:00] === Watchdog v3 run ===
+[2026-04-09 18:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-09 20:00] === Watchdog v3 run ===
+[2026-04-09 20:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-09 22:00] === Watchdog v3 run ===
+[2026-04-09 22:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-10 00:00] === Watchdog v3 run ===
+[2026-04-10 00:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-10 02:00] === Watchdog v3 run ===
+[2026-04-10 02:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-10 04:00] === Watchdog v3 run ===
+[2026-04-10 04:00] WARN: active-tasks.md stale (49h)
+[2026-04-10 04:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-04-10 06:00] === Watchdog v3 run ===
+[2026-04-10 06:00] Summary: fixes=0 warnings=0 alerts=0

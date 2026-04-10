@@ -1,16 +1,27 @@
 {
-  "generated": "2026-04-09T04:01:04.769294+00:00",
+  "generated": "2026-04-10T04:01:09.984792+00:00",
   "suggestions": [
     {
-      "name": "Romelyn Panganiban",
-      "role": "Dubai",
-      "url": "https://www.linkedin.com/in/romelyn-panganiban-36665b86",
-      "company": "Atlantis Resorts",
-      "signal_score": 5,
+      "name": "Natalie Avalos",
+      "role": "Early Careers & University Recruiting Analyst ...",
+      "url": "https://www.linkedin.com/in/natalie-avalos",
+      "company": "Visa",
+      "signal_score": 30,
       "source": "tavily",
-      "applied_role": "General Manager and Senior Vice President, Operations",
-      "applied_date": "2026-03-28",
-      "reason": "You applied for General Manager and Senior Vice President, Operations at Atlantis Resorts"
+      "applied_role": "Director CoE - Strategy and Execution",
+      "applied_date": "2026-03-27",
+      "reason": "You applied for Director CoE - Strategy and Execution at Visa"
+    },
+    {
+      "name": "Natalie Avalos",
+      "role": "Early Careers & University Recruiting Analyst ...",
+      "url": "https://www.linkedin.com/in/natalie-avalos",
+      "company": "Visa",
+      "signal_score": 30,
+      "source": "tavily",
+      "applied_role": "Director, Government Solutions, KSA",
+      "applied_date": "2026-03-27",
+      "reason": "You applied for Director, Government Solutions, KSA at Visa"
     }
   ],
   "companies_searched": 10,

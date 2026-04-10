@@ -1,5 +1,35 @@
 # Lessons Learned
 
+## 2026-04-09 - Never Rewrite Unknown Gateway Config Fields
+### What I got wrong
+I changed `channels.slack.streaming` from Ahmed's working value `"partial"` to an object form while trying to clear a validation problem.
+### Why
+I trusted an incomplete schema interpretation instead of the known-good workspace convention and I touched a gateway config field I did not fully understand.
+### Fix
+Do not modify `channels.slack.streaming` in this workspace. More broadly, never rewrite OpenClaw config fields unless I fully understand the version-specific format and have verified the exact on-disk value first. For multi-step tasks, complete all requested steps without pausing for updates unless I hit a real blocker.
+
+## 2026-04-10 - Verify Update Target, Service Entrypoint, and Temp Headroom Before OpenClaw Updates
+### What I got wrong
+During tonight's update incident, the gateway ended up in a massive restart loop. Ahmed had to fix multiple problems: version-format mismatch, memory-lancedb validation, `/tmp` filling to 100% from update preflight, and the systemd service pointing at a different install path than the one I updated.
+### Why
+I treated `openclaw update` as a single safe action instead of verifying the full deployment chain: active service entrypoint, install method, temp-disk headroom, post-update runtime path consistency, and safe validation after each single change.
+### Fix
+Permanent rule set now promoted to SOUL.md:
+1. Before any config change, run `openclaw --version` and check systemd `ExecStart`; they must match.
+2. Before any update, ensure `/tmp` has at least 2GB free and clean preflight artifacts after update.
+3. Never change config field formats without confirming support in release notes for the current running version.
+4. After any config edit, validate with a manual 15-second gateway dry run before restart and confirm `Config invalid` does not appear.
+5. One change at a time: change, restart, verify. Never batch config changes.
+
+## 2026-04-10 - Do Useful Work Now, Do Not Hide Behind "Tomorrow"
+### What I got wrong
+I said I could turn a useful policy block into AGENTS.md tomorrow instead of either doing it now or clearly saying why it should wait.
+### Why
+I was trying to ease off after a long night, but in practice that was just deferring a useful next step without a real blocker.
+### Fix
+If a next step is useful, low-risk, and actionable now, do it now. Only defer when there is an explicit pause request, a real blocker, or a real risk reason.
+
+
 ## 2026-04-08 - Boot Check Is Not Enough For New Services
 ### What I got wrong
 I reported SearXNG as set up after proving the container was up and a single query worked, but Ahmed had to ask whether I had really tested it well.

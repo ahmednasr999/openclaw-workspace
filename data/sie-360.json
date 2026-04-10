@@ -1,5 +1,5 @@
 {
-  "generated": "2026-04-08T23:50:22.736241+00:00",
+  "generated": "2026-04-09T23:50:16.106300+00:00",
   "health_score": 80,
   "summary": {
     "ok": 4,
@@ -8,21 +8,20 @@
   },
   "workspace": {
     "root_files": 68,
-    "disk_percent": 57,
+    "disk_percent": 58,
     "disk_used": "55G",
     "disk_total": "96G",
     "ram_total": "7.8Gi",
-    "ram_used": "3.0Gi",
+    "ram_used": "4.0Gi",
     "large_files": [
       "/root/.openclaw/agents/main/qmd/xdg-cache/qmd/index.sqlite",
-      "/root/.openclaw/agents/main/sessions/sessions.json.bak-2026-04-06",
       "/root/.openclaw/agents/main/sessions/sessions.json.bak-2026-04-08",
       "/root/.openclaw/agents/main/sessions/sessions.json",
       "/root/.openclaw/agents/main/sessions/f4067fc9-218c-43ad-81ce-1c2ac47cd206.jsonl.reset.2026-04-08T16-30-44.594Z",
       "/root/.openclaw/agents/main/sessions/b256f8ff-57ab-46d9-97d7-f3b3496c411a.jsonl.reset.2026-03-31T03-08-04.000Z",
       "/root/.openclaw/agents/main/sessions/sessions.json.bak-2026-04-07",
-      "/root/.openclaw/agents/main/sessions/f6dc568c-58fb-47d4-96a7-c5c9c8cb3011.jsonl",
       "/root/.openclaw/agents/main/sessions/archive/sessions-resets.tar.gz",
+      "/root/.openclaw/agents/main/sessions/sessions.json.bak-2026-04-09",
       "/root/.openclaw/extensions/camofox-browser/node_modules/impit-linux-x64-gnu/impit-node.linux-x64-gnu.node",
       "/root/.openclaw/extensions/camofox-browser/node_modules/better-sqlite3/deps/sqlite3/sqlite3.c",
       "/root/.openclaw/extensions/lossless-claw/node_modules/@napi-rs/canvas-linux-x64-gnu/skia.linux-x64-gnu.node",
@@ -68,13 +67,17 @@
       "/root/.openclaw/workspace/.git/objects/0e/468c177a546465115f3b69f52b1524338b301d",
       "/root/.openclaw/workspace/.git/objects/28/748c33e7873b24934f034842fd2d66785906ad",
       "/root/.openclaw/workspace/newsletter2.png",
+      "/root/.openclaw/workspace/skills/scrapling/.venv/lib/python3.13/site-packages/patchright/driver/node",
+      "/root/.openclaw/workspace/skills/scrapling/.venv/lib/python3.13/site-packages/playwright/driver/node",
+      "/root/.openclaw/workspace/skills/scrapling/.venv/lib/python3.13/site-packages/lxml/etree.cpython-313-x86_64-linux-gnu.so",
+      "/root/.openclaw/workspace/skills/scrapling/.venv/lib/python3.13/site-packages/curl_cffi/_wrapper.abi3.so",
       "/root/.openclaw/workspace/newsletter3.png"
     ],
-    "session_mb": 154.2
+    "session_mb": 164.1
   },
   "learnings": {
-    "total": 20,
-    "enforced": 14,
+    "total": 21,
+    "enforced": 15,
     "unenforced": 6,
     "unenforced_list": [
       "## 2026-03-25",
@@ -95,7 +98,7 @@
       "notion_token": "present (50 chars)",
       "notion_databases": 15,
       "linkedin_lines": 3,
-      "linkedin_age_days": 16.1,
+      "linkedin_age_days": 17.1,
       "gateway_output": "Invalid config at /root/.openclaw/openclaw.json:\\n- channels.slack.streaming: Invalid option: expected one of \"off\"|\"partial\"|\"block\"|\"progress\"\nGateway status failed: Error: Invalid config at /root/."
     }
   },
@@ -121,22 +124,22 @@
     {
       "category": "workspace",
       "level": "ok",
-      "message": "Disk: 57% used (55G/96G)"
+      "message": "Disk: 58% used (55G/96G)"
     },
     {
       "category": "workspace",
       "level": "warn",
-      "message": "Large files (>5MB): 55 found in .openclaw"
+      "message": "Large files (>5MB): 58 found in .openclaw"
     },
     {
       "category": "workspace",
       "level": "alert",
-      "message": "Session size: 154.2MB - bloated, review sessions"
+      "message": "Session size: 164.1MB - bloated, review sessions"
     },
     {
       "category": "learnings",
       "level": "alert",
-      "message": "Learnings enforcement: 14/20 (70%) - 6 untagged entries need ### Enforcement"
+      "message": "Learnings enforcement: 15/21 (71%) - 6 untagged entries need ### Enforcement"
     },
     {
       "category": "integrations",
@@ -171,6 +174,6 @@
   ],
   "auto_fixed": [],
   "needs_attention": [
-    "Session bloat: 154.2MB - review before deleting (needs human decision)"
+    "Session bloat: 164.1MB - review before deleting (needs human decision)"
   ]
 }

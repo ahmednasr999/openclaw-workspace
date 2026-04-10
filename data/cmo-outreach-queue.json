@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-08T01:38:20.861278Z",
+  "last_updated": "2026-04-09T22:05:25.887423+02:00",
   "items": [
     {
       "company": "Netcracker Technology in Dubai, United Arab Emirates â Apply on Wuzzuf",
@@ -20,6 +20,24 @@
       "queued_at": "2026-04-08T03:00:00+02:00",
       "status": "exported",
       "exported_at": "2026-04-08T01:34:07.458957Z"
+    },
+    {
+      "company": "Thecignagroup",
+      "job_title": "Head of Transformation job in Dubai, United Arab Emirates - Cigna",
+      "source": "exa-web",
+      "job_url": "https://jobs.thecignagroup.com/us/en/job/26000401/Head-of-Transformation",
+      "verdict": "SUBMIT",
+      "queued_at": "2026-04-09T21:28:50.464665+02:00",
+      "status": "queued"
+    },
+    {
+      "company": "Involvedsolutions",
+      "job_title": "PMO Director - Finance Transformation",
+      "source": "exa-web",
+      "job_url": "https://www.involvedsolutions.com/jobs/625854-PMO-Director---Finance-Transformation",
+      "verdict": "SUBMIT",
+      "queued_at": "2026-04-09T21:28:50.468494+02:00",
+      "status": "queued"
     }
   ]
 }

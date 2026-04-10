@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-08T23:00:02.028745+02:00",
+  "generated_at": "2026-04-09T23:00:02.073414+02:00",
   "period": "last_7_days",
   "job_recommendation_accuracy": {
-    "rate": 14.814814814814813,
-    "total": 1486,
+    "rate": 14.736842105263156,
+    "total": 1498,
     "applied": 28
   },
   "briefing_actionability": {

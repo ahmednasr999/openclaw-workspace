@@ -1,0 +1,1918 @@
+{
+  "generated_at": "2026-04-09T20:35:00+02:00",
+  "total_orphans": 209,
+  "counts": {
+    "review": 96,
+    "preserve": 106,
+    "safe_delete": 7
+  },
+  "by_status": {
+    "Interested": 27,
+    "New": 102,
+    "Applied": 72,
+    "CV Built": 7,
+    "Rejected": 1
+  },
+  "by_verdict": {
+    "": 103,
+    "SUBMIT": 60,
+    "REVIEW": 46
+  },
+  "by_source": {
+    "": 1,
+    "LinkedIn": 105,
+    "manual": 8,
+    "Google Jobs": 1,
+    "Exa": 48,
+    "Exa-web": 42,
+    "Indeed": 2,
+    "Google": 2
+  },
+  "preserve": [
+    {
+      "Id": 167,
+      "Title": "CEO — Giga-Projects KSA",
+      "Company": "Confidential Careers",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "SUBMIT",
+      "URL": "https://www.linkedin.com/jobs/view/4373471367"
+    },
+    {
+      "Id": 168,
+      "Title": "Head of IT",
+      "Company": "EATX",
+      "Source": "manual",
+      "Status": "CV Built",
+      "Verdict": "SUBMIT",
+      "URL": "https://www.linkedin.com/jobs/view/4375907659"
+    },
+    {
+      "Id": 169,
+      "Title": "Executive Director, Strategic Initiatives",
+      "Company": "Cooper Fitch",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "SUBMIT",
+      "URL": "https://www.linkedin.com/jobs/view/4375223553/"
+    },
+    {
+      "Id": 170,
+      "Title": "CEO",
+      "Company": "Nexus Consulting",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "REVIEW",
+      "URL": "https://www.linkedin.com/jobs/view/4376367703"
+    },
+    {
+      "Id": 171,
+      "Title": "Principal, Digital Delivery & Transformation",
+      "Company": "Cygnify",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "SUBMIT",
+      "URL": "https://www.linkedin.com/jobs/view/4378690376/"
+    },
+    {
+      "Id": 172,
+      "Title": "Head of Transformation",
+      "Company": "Cigna Healthcare",
+      "Source": "manual",
+      "Status": "CV Built",
+      "Verdict": "SUBMIT",
+      "URL": "https://www.linkedin.com/jobs/view/4352999603"
+    },
+    {
+      "Id": 173,
+      "Title": "VP Global Operations",
+      "Company": "UnlockLand",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "SUBMIT",
+      "URL": "https://www.linkedin.com/jobs/view/4377615733"
+    },
+    {
+      "Id": 174,
+      "Title": "Senior Manager, Strategy & Execution (B2B)",
+      "Company": "Dubai Holding",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "SUBMIT",
+      "URL": "https://www.linkedin.com/jobs/view/4372482810"
+    },
+    {
+      "Id": 175,
+      "Title": "Programme Director, Cloud ERP",
+      "Company": "Emirates",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "REVIEW",
+      "URL": "https://www.linkedin.com/jobs/view/4375518332"
+    },
+    {
+      "Id": 176,
+      "Title": "Director, Organisational Development",
+      "Company": "One Executive",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "SUBMIT",
+      "URL": "https://www.linkedin.com/jobs/view/4375226171/"
+    },
+    {
+      "Id": 177,
+      "Title": "Director DT & IT",
+      "Company": "Dubai Holding",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "SUBMIT",
+      "URL": "https://www.linkedin.com/jobs/view/4375112810/"
+    },
+    {
+      "Id": 178,
+      "Title": "Strategy & KPI Expert",
+      "Company": "RapidData Technologies",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "SUBMIT",
+      "URL": "https://www.linkedin.com/jobs/view/4375202921"
+    },
+    {
+      "Id": 179,
+      "Title": "Delivery Manager",
+      "Company": "Qashio",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "SUBMIT",
+      "URL": "https://www.linkedin.com/jobs/view/4368979403"
+    },
+    {
+      "Id": 180,
+      "Title": "Head of Solutions & Delivery (AI)",
+      "Company": "Leru Partners",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "SUBMIT",
+      "URL": "https://www.linkedin.com/jobs/view/4377660433/"
+    },
+    {
+      "Id": 182,
+      "Title": "VP, AI & Technology",
+      "Company": "Confidential (Michael Page)",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "SUBMIT",
+      "URL": "https://www.michaelpage.ae/job-detail/vp-ai-technology/ref/jn-022026-6953563"
+    },
+    {
+      "Id": 183,
+      "Title": "COO",
+      "Company": "Disrupt.com (Gaditek)",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "SUBMIT",
+      "URL": "https://www.linkedin.com/jobs/view/4374554747/"
+    },
+    {
+      "Id": 184,
+      "Title": "Director of AI",
+      "Company": "AIQU",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "SUBMIT",
+      "URL": "https://www.linkedin.com/jobs/view/4375324051"
+    },
+    {
+      "Id": 185,
+      "Title": "Head of Project Excellence (PMO)",
+      "Company": "Fugro",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "SUBMIT",
+      "URL": "https://www.linkedin.com/jobs/view/4377259350"
+    },
+    {
+      "Id": 186,
+      "Title": "Head of Transformation",
+      "Company": "The Cigna Group",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "SUBMIT",
+      "URL": "https://www.linkedin.com/jobs/view/4352999603/"
+    },
+    {
+      "Id": 187,
+      "Title": "Director of AI",
+      "Company": "NXS Tech",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "SUBMIT",
+      "URL": "https://www.linkedin.com/jobs/view/4378323469"
+    },
+    {
+      "Id": 188,
+      "Title": "Head of Strategy, Corp Dev & Transformation",
+      "Company": "Richmond Villages",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "SUBMIT",
+      "URL": "https://www.linkedin.com/jobs/view/4346704149"
+    },
+    {
+      "Id": 189,
+      "Title": "Head of PMO",
+      "Company": "Mark Williams Recruitment",
+      "Source": "manual",
+      "Status": "Applied",
+      "Verdict": "SUBMIT",
+      "URL": "https://www.linkedin.com/jobs/view/4372468004"
+    },
+    {
+      "Id": 190,
+      "Title": "Director Client Engagement / Digital Transformation",
+      "Company": "Oracle",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "REVIEW",
+      "URL": "https://www.linkedin.com/jobs/view/4375932512/"
+    },
+    {
+      "Id": 191,
+      "Title": "VP Strategy and Performance Management",
+      "Company": "King Salman International Airport",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "SUBMIT",
+      "URL": "https://www.linkedin.com/comm/jobs/view/4378033717/"
+    },
+    {
+      "Id": 192,
+      "Title": "Senior Program Manager",
+      "Company": "Salt",
+      "Source": "manual",
+      "Status": "CV Built",
+      "Verdict": "SUBMIT",
+      "URL": "https://www.linkedin.com/jobs/view/4375521803"
+    },
+    {
+      "Id": 194,
+      "Title": "VP AI Delivery",
+      "Company": "Teleperformance (TP)",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "SUBMIT",
+      "URL": "https://www.linkedin.com/jobs/view/4378349141/"
+    },
+    {
+      "Id": 195,
+      "Title": "Head of Tech & Transformation",
+      "Company": "SmartChoice GCC",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "SUBMIT",
+      "URL": "https://www.linkedin.com/jobs/view/4374243946"
+    },
+    {
+      "Id": 196,
+      "Title": "Head of Data Science & AI",
+      "Company": "Codesearch AI",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "SUBMIT",
+      "URL": "https://www.linkedin.com/jobs/view/4378364156"
+    },
+    {
+      "Id": 197,
+      "Title": "VP Enterprise PMO",
+      "Company": "Al Ramz PJSC",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "SUBMIT",
+      "URL": "https://www.linkedin.com/jobs/view/4377881590/"
+    },
+    {
+      "Id": 199,
+      "Title": "Director, Program Management",
+      "Company": "Inception (G42)",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "SUBMIT",
+      "URL": "https://www.linkedin.com/jobs/view/4377912517"
+    },
+    {
+      "Id": 200,
+      "Title": "Vice President, AI Platform Owner",
+      "Company": "RAKBANK",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "SUBMIT",
+      "URL": "https://www.linkedin.com/jobs/view/4373081849/"
+    },
+    {
+      "Id": 201,
+      "Title": "Head of AI Innovation",
+      "Company": "Apex Group Ltd",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "SUBMIT",
+      "URL": "https://www.linkedin.com/jobs/view/4357830223/"
+    },
+    {
+      "Id": 202,
+      "Title": "Head of Transformation & Strategy",
+      "Company": "Involved Solutions",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "SUBMIT",
+      "URL": "https://www.linkedin.com/jobs/view/4381981225"
+    },
+    {
+      "Id": 203,
+      "Title": "Director IT Strategy",
+      "Company": "du",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "SUBMIT",
+      "URL": "https://www.linkedin.com/jobs/view/4374891542/"
+    },
+    {
+      "Id": 206,
+      "Title": "VP of Artificial Intelligence",
+      "Company": "Auxo Talent",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "SUBMIT",
+      "URL": "https://www.linkedin.com/jobs/view/4371727536"
+    },
+    {
+      "Id": 208,
+      "Title": "Director Program Advisory",
+      "Company": "Buro Happold",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "SUBMIT",
+      "URL": "https://vacancies.burohappold.com/jobs/job/Director-Program-Advisory/1945"
+    },
+    {
+      "Id": 210,
+      "Title": "Head of AI Transformation & Innovation",
+      "Company": "Sky News Arabia",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "SUBMIT",
+      "URL": "https://www.linkedin.com/jobs/view/4373109759"
+    },
+    {
+      "Id": 211,
+      "Title": "Products Portfolio Lead",
+      "Company": "Starlink Qatar",
+      "Source": "manual",
+      "Status": "CV Built",
+      "Verdict": "SUBMIT",
+      "URL": "https://www.linkedin.com/jobs/view/4376649232"
+    },
+    {
+      "Id": 212,
+      "Title": "CTO",
+      "Company": "Windmills Group",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "SUBMIT",
+      "URL": "https://www.linkedin.com/jobs/view/4375537686"
+    },
+    {
+      "Id": 214,
+      "Title": "Head of Artificial Intelligence",
+      "Company": "Confidential",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "SUBMIT",
+      "URL": "https://www.linkedin.com/jobs/view/4377598782/"
+    },
+    {
+      "Id": 215,
+      "Title": "AI Strategy & Readiness Expert",
+      "Company": "Faithful Executive (Client)",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "SUBMIT",
+      "URL": "https://www.linkedin.com/jobs/view/4375967216"
+    },
+    {
+      "Id": 216,
+      "Title": "Senior Director - Technology",
+      "Company": "Confidential (UAE)",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "SUBMIT",
+      "URL": "https://www.linkedin.com/jobs/view/4373946376/"
+    },
+    {
+      "Id": 217,
+      "Title": "Head of Strategy & Transformation",
+      "Company": "Foreground",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "SUBMIT",
+      "URL": "https://www.linkedin.com/jobs/view/4360053285"
+    },
+    {
+      "Id": 219,
+      "Title": "Head of AI",
+      "Company": "Hays (client)",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "SUBMIT",
+      "URL": "https://www.linkedin.com/jobs/view/4351778628"
+    },
+    {
+      "Id": 221,
+      "Title": "IT Director",
+      "Company": "Legend Holding Group",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "SUBMIT",
+      "URL": "https://www.linkedin.com/jobs/view/4375947657"
+    },
+    {
+      "Id": 222,
+      "Title": "Digital Delivery Lead",
+      "Company": "Al-Futtaim Finance",
+      "Source": "manual",
+      "Status": "CV Built",
+      "Verdict": "REVIEW",
+      "URL": "https://www.linkedin.com/jobs/view/4376554833/"
+    },
+    {
+      "Id": 223,
+      "Title": "Transformation Lead UAE",
+      "Company": "Proximie",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "SUBMIT",
+      "URL": "https://www.linkedin.com/jobs/view/4376782445"
+    },
+    {
+      "Id": 224,
+      "Title": "Principal TPM, Digital Sovereignty",
+      "Company": "AWS",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "SUBMIT",
+      "URL": "https://www.linkedin.com/jobs/view/4381667648/"
+    },
+    {
+      "Id": 225,
+      "Title": "Director Enterprise PMO",
+      "Company": "Confidential",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "SUBMIT",
+      "URL": "https://www.linkedin.com/jobs/view/4375140623"
+    },
+    {
+      "Id": 227,
+      "Title": "Director PMO — Federal Tech",
+      "Company": "Halian (Federal)",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "SUBMIT",
+      "URL": "https://www.linkedin.com/jobs/view/4377233880"
+    },
+    {
+      "Id": 228,
+      "Title": "CPTO",
+      "Company": "Talabat",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "SUBMIT",
+      "URL": "https://www.linkedin.com/jobs/view/4375708512"
+    },
+    {
+      "Id": 229,
+      "Title": "Principal Digital Delivery & Transformation",
+      "Company": "Whiteshield",
+      "Source": "LinkedIn",
+      "Status": "Rejected",
+      "Verdict": "SUBMIT",
+      "URL": "https://www.linkedin.com/jobs/view/4334077967/"
+    },
+    {
+      "Id": 230,
+      "Title": "Chief Operating Officer",
+      "Company": "Al-Gihaz Holdings",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "SUBMIT",
+      "URL": "https://www.linkedin.com/jobs/view/4372693407/"
+    },
+    {
+      "Id": 231,
+      "Title": "Head of Tech",
+      "Company": "Confidential",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "SUBMIT",
+      "URL": "https://www.linkedin.com/jobs/view/4350835715/"
+    },
+    {
+      "Id": 232,
+      "Title": "Director Tech & Innovation",
+      "Company": "Renard International",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "SUBMIT",
+      "URL": "https://www.linkedin.com/jobs/view/4372899733"
+    },
+    {
+      "Id": 233,
+      "Title": "Director - Digital Transformation & IT",
+      "Company": "Dubai Holding Community Management",
+      "Source": "Google Jobs",
+      "Status": "Applied",
+      "Verdict": "REVIEW",
+      "URL": "https://ae.linkedin.com/jobs/view/director-digital-transformation-it-at-dubai-holding-community-management-4375112810"
+    },
+    {
+      "Id": 234,
+      "Title": "Project Manager Officer (PMO)",
+      "Company": "Panamari Holding",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "REVIEW",
+      "URL": "https://ae.linkedin.com/jobs/view/project-manager-officer-pmo-at-panamari-holding-4385975651"
+    },
+    {
+      "Id": 235,
+      "Title": "IT PMO Lead",
+      "Company": "Faze 3 Consulting",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "REVIEW",
+      "URL": "https://bebee.com/ae/jobs/it-pmo-lead-faze-3-consulting-abu-dhabi--jobrapid-204645539359647334431080"
+    },
+    {
+      "Id": 236,
+      "Title": "Digital Transformation Director",
+      "Company": "Experts Group International",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "REVIEW",
+      "URL": "https://ae.linkedin.com/jobs/view/digital-transformation-director-at-experts-group-international-4381727915"
+    },
+    {
+      "Id": 454,
+      "Title": "Head of Operations & AI Optimisation",
+      "Company": "Confidential",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "REVIEW",
+      "URL": "https://ae.linkedin.com/jobs/view/head-of-operations-ai-optimisation-at-confidential-4378141671"
+    },
+    {
+      "Id": 455,
+      "Title": "Head of Change Management",
+      "Company": "QAFCO (Qatar Fertiliser Company)",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "REVIEW",
+      "URL": "https://qa.linkedin.com/jobs/view/head-of-change-management-at-qafco-qatar-fertiliser-company-4320278154"
+    },
+    {
+      "Id": 456,
+      "Title": "Director- Data Analytics (CDU3) - 20004846",
+      "Company": "Qiddiya | القدية",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "REVIEW",
+      "URL": "https://sa.linkedin.com/jobs/view/director-data-analytics-cdu3-20004846-at-qiddiya-%D8%A7%D9%84%D9%82%D8%AF%D9%8A%D8%A9-4360133249"
+    },
+    {
+      "Id": 457,
+      "Title": "QA Director - Middle East",
+      "Company": "Netcracker Technology",
+      "Source": "Indeed",
+      "Status": "Applied",
+      "Verdict": "SUBMIT",
+      "URL": "https://ae.indeed.com/viewjob?jk=ad0553c8b7e3d398"
+    },
+    {
+      "Id": 458,
+      "Title": "Head of Engineering - Fintech & Digital Asset Infrastructure",
+      "Company": "TENTEN Partners",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "REVIEW",
+      "URL": "https://ae.linkedin.com/jobs/view/head-of-engineering-fintech-digital-asset-infrastructure-at-tenten-partners-4374990040"
+    },
+    {
+      "Id": 460,
+      "Title": "Head of PMO & Strategic Operations",
+      "Company": "Talent Connect Group (TCG)",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "REVIEW",
+      "URL": "https://ae.linkedin.com/jobs/view/head-of-pmo-strategic-operations-at-talent-connect-group-tcg-4383733458"
+    },
+    {
+      "Id": 462,
+      "Title": "Experience Operations Director",
+      "Company": "Valtech Group",
+      "Source": "Indeed",
+      "Status": "Applied",
+      "Verdict": "REVIEW",
+      "URL": "https://ae.indeed.com/viewjob?jk=5bd6d3474b0865fa"
+    },
+    {
+      "Id": 463,
+      "Title": "Head of CRM (Next-Gen, AI-Driven)",
+      "Company": "The Customization Group",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "REVIEW",
+      "URL": "https://ae.linkedin.com/jobs/view/head-of-crm-next-gen-ai-driven-at-the-customization-group-4366537196"
+    },
+    {
+      "Id": 464,
+      "Title": "Executive Vice President & Head of Corporate Banking – Abu Dhabi (UAE National)",
+      "Company": "RAKBANK",
+      "Source": "LinkedIn",
+      "Status": "Interested",
+      "Verdict": "REVIEW",
+      "URL": "https://ae.linkedin.com/jobs/view/executive-vice-president-head-of-corporate-banking-%E2%80%93-abu-dhabi-uae-national-at-rakbank-4379164827"
+    },
+    {
+      "Id": 465,
+      "Title": "Head of E-Commerce & Omnichannel",
+      "Company": "Foreground.",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "REVIEW",
+      "URL": "https://ae.linkedin.com/jobs/view/head-of-e-commerce-omnichannel-at-foreground-4383279845"
+    },
+    {
+      "Id": 466,
+      "Title": "Head of Enterprise Architecture-KSA",
+      "Company": "LeadingEdge HR Solutions",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "REVIEW",
+      "URL": "https://sa.linkedin.com/jobs/view/head-of-enterprise-architecture-ksa-at-leadingedge-hr-solutions-4372535079"
+    },
+    {
+      "Id": 468,
+      "Title": "Director Operational Excellence",
+      "Company": "Silal",
+      "Source": "LinkedIn",
+      "Status": "Interested",
+      "Verdict": "REVIEW",
+      "URL": "https://ae.linkedin.com/jobs/view/director-operational-excellence-at-silal-4374374270"
+    },
+    {
+      "Id": 469,
+      "Title": "Programmatic Director / Head of Programmatic",
+      "Company": "Chain Reaction",
+      "Source": "LinkedIn",
+      "Status": "Interested",
+      "Verdict": "REVIEW",
+      "URL": "https://ae.linkedin.com/jobs/view/programmatic-director-head-of-programmatic-at-chain-reaction-4377369566"
+    },
+    {
+      "Id": 471,
+      "Title": "Chief Technology Officer (CTO)",
+      "Company": "FMC Network",
+      "Source": "Google",
+      "Status": "Applied",
+      "Verdict": "REVIEW",
+      "URL": "https://ae.indeed.com/viewjob?jk=025f90f1df941203"
+    },
+    {
+      "Id": 473,
+      "Title": "Head of DevOps & Infrastructure ( Kubernetes, Terraform)",
+      "Company": "LeadingEdge HR Solutions",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "REVIEW",
+      "URL": "https://sa.linkedin.com/jobs/view/head-of-devops-infrastructure-kubernetes-terraform-at-leadingedge-hr-solutions-4372537019"
+    },
+    {
+      "Id": 476,
+      "Title": "Head of Enterprise Program Management Office ( EPMO)",
+      "Company": "Commercial Bank",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "REVIEW",
+      "URL": "https://qa.linkedin.com/jobs/view/head-of-enterprise-program-management-office-epmo-at-commercial-bank-4378211126"
+    },
+    {
+      "Id": 477,
+      "Title": "ERP Vice President - Dubai",
+      "Company": "Kataliser",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "REVIEW",
+      "URL": "https://ae.linkedin.com/jobs/view/erp-vice-president-dubai-at-kataliser-4380447655"
+    },
+    {
+      "Id": 479,
+      "Title": "Head of Network Infrastructure Operation",
+      "Company": "Starlink Qatar",
+      "Source": "LinkedIn",
+      "Status": "Interested",
+      "Verdict": "REVIEW",
+      "URL": "https://qa.linkedin.com/jobs/view/head-of-network-infrastructure-operation-at-starlink-qatar-4379846833"
+    },
+    {
+      "Id": 480,
+      "Title": "Senior Director Software Architecture",
+      "Company": "Miral Experiences",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "REVIEW",
+      "URL": "https://ae.linkedin.com/jobs/view/senior-director-software-architecture-at-miral-experiences-4374570926"
+    },
+    {
+      "Id": 482,
+      "Title": "Director of Technology Operations - MENA Region",
+      "Company": "High Street Resources (HSR)",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "REVIEW",
+      "URL": "https://ae.linkedin.com/jobs/view/director-of-technology-operations-mena-region-at-high-street-resources-hsr-4377807384"
+    },
+    {
+      "Id": 483,
+      "Title": "Director Technology Transformation & Architecture",
+      "Company": "Majid Al Futtaim",
+      "Source": "LinkedIn",
+      "Status": "Interested",
+      "Verdict": "REVIEW",
+      "URL": "https://ae.linkedin.com/jobs/view/director-technology-transformation-architecture-at-majid-al-futtaim-4174468962"
+    },
+    {
+      "Id": 485,
+      "Title": "Head of Digital Product Delivery (Mobile App)",
+      "Company": "Confidential",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "REVIEW",
+      "URL": "https://ae.linkedin.com/jobs/view/head-of-digital-product-delivery-mobile-app-at-confidential-4375508414"
+    },
+    {
+      "Id": 486,
+      "Title": "Managing Director, UAE",
+      "Company": "InDebted",
+      "Source": "LinkedIn",
+      "Status": "Interested",
+      "Verdict": "REVIEW",
+      "URL": "https://ae.linkedin.com/jobs/view/managing-director-uae-at-indebted-4371347148"
+    },
+    {
+      "Id": 487,
+      "Title": "Digital and Cyber - Digital Strategy and Realisation - AI Strategy - Director",
+      "Company": "PwC Middle East",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "REVIEW",
+      "URL": "https://sa.linkedin.com/jobs/view/digital-and-cyber-digital-strategy-and-realisation-ai-strategy-director-at-pwc-middle-east-4380905324"
+    },
+    {
+      "Id": 489,
+      "Title": "Head of Institutional Excellence (UAE National)",
+      "Company": "Dicetek LLC",
+      "Source": "LinkedIn",
+      "Status": "Interested",
+      "Verdict": "REVIEW",
+      "URL": "https://ae.linkedin.com/jobs/view/head-of-institutional-excellence-uae-national-at-dicetek-llc-4298432535"
+    },
+    {
+      "Id": 491,
+      "Title": "Director of Retail Operations",
+      "Company": "Private Company",
+      "Source": "LinkedIn",
+      "Status": "Applied",
+      "Verdict": "REVIEW",
+      "URL": "https://ae.linkedin.com/jobs/view/director-of-retail-operations-at-private-company-4372697501"
+    },
+    {
+      "Id": 507,
+      "Title": "Executive Vice President, Commercial",
+      "Company": "Aventus",
+      "Source": "LinkedIn",
+      "Status": "Interested",
+      "Verdict": "REVIEW",
+      "URL": "https://ae.linkedin.com/jobs/view/executive-vice-president-commercial-at-aventus-4384027042"
+    },
+    {
+      "Id": 509,
+      "Title": "Director- Solutions & Business Development (UAEN)",
+      "Company": "Confidential",
+      "Source": "LinkedIn",
+      "Status": "Interested",
+      "Verdict": "REVIEW",
+      "URL": "https://ae.linkedin.com/jobs/view/director-solutions-business-development-uaen-at-confidential-4386307294"
+    },
+    {
+      "Id": 516,
+      "Title": "Head of People Transformation",
+      "Company": "Madison Pearl",
+      "Source": "LinkedIn",
+      "Status": "Interested",
+      "Verdict": "REVIEW",
+      "URL": "https://ae.linkedin.com/jobs/view/head-of-people-transformation-at-madison-pearl-4329551298"
+    },
+    {
+      "Id": 518,
+      "Title": "Head of Financial Planning & Analysis",
+      "Company": "SmartChoice International GCC",
+      "Source": "LinkedIn",
+      "Status": "Interested",
+      "Verdict": "REVIEW",
+      "URL": "https://ae.linkedin.com/jobs/view/head-of-financial-planning-analysis-at-smartchoice-international-gcc-4384034774"
+    },
+    {
+      "Id": 523,
+      "Title": "Organizational Development Director — Reporting to Chairman",
+      "Company": "BUTEC",
+      "Source": "LinkedIn",
+      "Status": "Interested",
+      "Verdict": "SUBMIT",
+      "URL": "https://ae.linkedin.com/jobs/view/organizational-development-director-%E2%80%94-reporting-to-chairman-at-butec-4377169492"
+    },
+    {
+      "Id": 541,
+      "Title": "Chief Technology Officer (CTO) – Smart Metering Programme",
+      "Company": "Talan",
+      "Source": "LinkedIn",
+      "Status": "Interested",
+      "Verdict": "REVIEW",
+      "URL": "https://ae.linkedin.com/jobs/view/chief-technology-officer-cto-%E2%80%93-smart-metering-programme-at-talan-4368219091"
+    },
+    {
+      "Id": 552,
+      "Title": "Senior Manager-Business Excellence",
+      "Company": "DAMAC Properties",
+      "Source": "LinkedIn",
+      "Status": "Interested",
+      "Verdict": "REVIEW",
+      "URL": "https://ae.linkedin.com/jobs/view/senior-manager-business-excellence-at-damac-properties-4386306619"
+    },
+    {
+      "Id": 557,
+      "Title": "Chief Strategy Officer",
+      "Company": "Madison Pearl",
+      "Source": "LinkedIn",
+      "Status": "Interested",
+      "Verdict": "SUBMIT",
+      "URL": "https://ae.linkedin.com/jobs/view/chief-strategy-officer-at-madison-pearl-4372368161"
+    },
+    {
+      "Id": 565,
+      "Title": "Smart Metering Systems Project Director",
+      "Company": "Talan",
+      "Source": "LinkedIn",
+      "Status": "Interested",
+      "Verdict": "REVIEW",
+      "URL": "https://ae.linkedin.com/jobs/view/smart-metering-systems-project-director-at-talan-4368218077"
+    },
+    {
+      "Id": 570,
+      "Title": "Director of Information Technology",
+      "Company": "Staff Connect UAE",
+      "Source": "manual",
+      "Status": "CV Built",
+      "Verdict": "SUBMIT",
+      "URL": "https://ae.linkedin.com/jobs/view/director-of-information-technology-at-staff-connect-uae-4386864171"
+    },
+    {
+      "Id": 571,
+      "Title": "Head of Treasury Strategy and Products  Control / System Support",
+      "Company": "Riyad Bank",
+      "Source": "LinkedIn",
+      "Status": "Interested",
+      "Verdict": "REVIEW",
+      "URL": "https://sa.linkedin.com/jobs/view/head-of-treasury-strategy-and-products%C2%A0-control-system-support-at-riyad-bank-4384039021"
+    },
+    {
+      "Id": 590,
+      "Title": "CIO - Chief Information Officer  - UAE Nationals Only",
+      "Company": "Robert Walters",
+      "Source": "LinkedIn",
+      "Status": "Interested",
+      "Verdict": "SUBMIT",
+      "URL": "https://ae.linkedin.com/jobs/view/cio-chief-information-officer-uae-nationals-only-at-robert-walters-4384036578"
+    },
+    {
+      "Id": 594,
+      "Title": "Head of Asset Management & AI Transformation",
+      "Company": "MaxAccelerate",
+      "Source": "Google",
+      "Status": "Interested",
+      "Verdict": "SUBMIT",
+      "URL": "https://ae.indeed.com/viewjob?jk=bdeaee706e98c45c"
+    },
+    {
+      "Id": 601,
+      "Title": "Creative Director (Digital Experience Design)",
+      "Company": "Qsas | A PIF Company",
+      "Source": "LinkedIn",
+      "Status": "Interested",
+      "Verdict": "REVIEW",
+      "URL": "https://sa.linkedin.com/jobs/view/creative-director-digital-experience-design-at-qsas-a-pif-company-4384984896"
+    },
+    {
+      "Id": 606,
+      "Title": "Head, KAUST Innovation Ventures",
+      "Company": "KAUST (King Abdullah University of Science and Technology)",
+      "Source": "LinkedIn",
+      "Status": "Interested",
+      "Verdict": "SUBMIT",
+      "URL": "https://sa.linkedin.com/jobs/view/head-kaust-innovation-ventures-at-kaust-king-abdullah-university-of-science-and-technology-4386329511"
+    },
+    {
+      "Id": 611,
+      "Title": "Head of Commercial (KSA)",
+      "Company": "Landmark Group",
+      "Source": "LinkedIn",
+      "Status": "Interested",
+      "Verdict": "REVIEW",
+      "URL": "https://sa.linkedin.com/jobs/view/head-of-commercial-ksa-at-landmark-group-4384034396"
+    },
+    {
+      "Id": 627,
+      "Title": "Head, IT Support",
+      "Company": "University of Doha for Science & Technology",
+      "Source": "LinkedIn",
+      "Status": "Interested",
+      "Verdict": "REVIEW",
+      "URL": "https://qa.linkedin.com/jobs/view/head-it-support-at-university-of-doha-for-science-technology-4375510371"
+    },
+    {
+      "Id": 643,
+      "Title": "Director of Product Management, Data",
+      "Company": "Jobgether",
+      "Source": "LinkedIn",
+      "Status": "Interested",
+      "Verdict": "SUBMIT",
+      "URL": "https://sa.linkedin.com/jobs/view/director-of-product-management-data-at-jobgether-4387455688"
+    },
+    {
+      "Id": 651,
+      "Title": "VP, Business Planning",
+      "Company": "First Abu Dhabi Bank (FAB)",
+      "Source": "LinkedIn",
+      "Status": "Interested",
+      "Verdict": "REVIEW",
+      "URL": "https://ae.linkedin.com/jobs/view/vp-business-planning-at-first-abu-dhabi-bank-fab-4386656458"
+    },
+    {
+      "Id": 664,
+      "Title": "Enterprise Account Manager– Training & Upskilling (Government Sector)",
+      "Company": "Classera",
+      "Source": "LinkedIn",
+      "Status": "Interested",
+      "Verdict": "REVIEW",
+      "URL": "https://sa.linkedin.com/jobs/view/enterprise-account-manager%E2%80%93-training-upskilling-government-sector-at-classera-4384023676"
+    },
+    {
+      "Id": 681,
+      "Title": "Head of Branch Transformation",
+      "Company": "Tandem Search",
+      "Source": "manual",
+      "Status": "CV Built",
+      "Verdict": "SUBMIT",
+      "URL": "https://ae.linkedin.com/jobs/view/head-of-branch-transformation-at-tandem-search-4384038104"
+    }
+  ],
+  "review": [
+    {
+      "Id": 1,
+      "Title": "Digital Consulting Director",
+      "Company": "AlixPartners",
+      "Source": null,
+      "Status": "Interested",
+      "Verdict": null,
+      "URL": "https://www.linkedin.com/jobs/view/4183988839"
+    },
+    {
+      "Id": 35,
+      "Title": "Transition Portfolio Manager, Vice President, State Street Investment Management",
+      "Company": "State Street",
+      "Source": "LinkedIn",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://sa.linkedin.com/jobs/view/transition-portfolio-manager-vice-president-state-street-investment-management-at-state-street-4387658589"
+    },
+    {
+      "Id": 45,
+      "Title": "Chief Financial Officer",
+      "Company": "Ooredoo Fintech",
+      "Source": "LinkedIn",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://qa.linkedin.com/jobs/view/chief-financial-officer-at-ooredoo-fintech-4390103218"
+    },
+    {
+      "Id": 59,
+      "Title": "Head of Cabin Crew Training",
+      "Company": "Etihad",
+      "Source": "LinkedIn",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://ae.linkedin.com/jobs/view/head-of-cabin-crew-training-at-etihad-4390800020"
+    },
+    {
+      "Id": 163,
+      "Title": "Fund Services.Vice President",
+      "Company": "The Citco Group Limited",
+      "Source": "LinkedIn",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://ae.linkedin.com/jobs/view/fund-services-vice-president-at-the-citco-group-limited-4378937188"
+    },
+    {
+      "Id": 250,
+      "Title": "Commercial/Contracts Director (PMO)",
+      "Company": "Systra",
+      "Source": "LinkedIn",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.systra.com/arabia/job-offers/commercial-contracts-director-pmo-en-4428"
+    },
+    {
+      "Id": 251,
+      "Title": "Head of Revenue Accounting  | Doha | Alchemy GTS",
+      "Company": "Alchemygts",
+      "Source": "Exa",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.alchemygts.com/jobs/Head-of-Revenue-Accounting-18952"
+    },
+    {
+      "Id": 263,
+      "Title": "PMO Director",
+      "Company": "Weekday",
+      "Source": "LinkedIn",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://jobs.weekday.works/adree-pmo-director"
+    },
+    {
+      "Id": 267,
+      "Title": "Chief Fintech Infrastructure Officer â Digital Banking & Financial Platforms -  Jobs Cyprus |  Job",
+      "Company": "Employsolution",
+      "Source": "LinkedIn",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.employsolution.com/jobs/chief-fintech-infrastructure-officer-digital-banking-financial-platforms/"
+    },
+    {
+      "Id": 273,
+      "Title": "Technology Director - Intellias",
+      "Company": "Career",
+      "Source": "Exa",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://career.intellias.com/vacancy/technology-director-29716/"
+    },
+    {
+      "Id": 274,
+      "Title": "New jobs announced today by GovCIO!! Apply now!  /    ÙØ¸Ø§Ø¦Ù Ø¬Ø¯ÙØ¯Ø© Ø§Ø¹ÙÙØª Ø¹ÙÙÙ Ø§Ù",
+      "Company": "Kuwait",
+      "Source": "Exa",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://kuwait.el7far.com/2026/02/new-jobs-announced-today-by-govcio_25.html"
+    },
+    {
+      "Id": 277,
+      "Title": "Chief Operating Officer (COO)",
+      "Company": "NUNU FUNDS",
+      "Source": "Exa",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.brightermonday.co.ug/listings/chief-operating-officer-coo-84e0kp"
+    },
+    {
+      "Id": 284,
+      "Title": "Director, Information Technology - PMO Job Details | Kerzner International",
+      "Company": "Kerzner",
+      "Source": "Exa-web",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://jobs.kerzner.com/job/Dubai-Director,-Information-Technology-PMO/732295022"
+    },
+    {
+      "Id": 289,
+      "Title": "Pmo director job offers in dubai",
+      "Company": "Trovit",
+      "Source": "LinkedIn",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://jobs.trovit.ae/pmo-director-jobs-in-emirate-of-dubai"
+    },
+    {
+      "Id": 294,
+      "Title": "Job Application for Chief Operating Officer - Dubai",
+      "Company": "OKX",
+      "Source": "Exa-web",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://job-boards.greenhouse.io/okx/jobs/7533142003"
+    },
+    {
+      "Id": 295,
+      "Title": "(CEX) Product Manager / Director, Strategy & AI",
+      "Company": "OKX",
+      "Source": "Exa",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://sportstechjobs.com/(cex)-product-manager-director-strategy-and-ai-okx/69ba485c26d30b9052d326e5"
+    },
+    {
+      "Id": 302,
+      "Title": "Director - Program Management Office (PMO) - Bupa Arabia",
+      "Company": "Bupa",
+      "Source": "Exa-web",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://careers.bupa.com.sa/en/saudi-arabia/jobs/director-program-management-office-pmo-1100071017"
+    },
+    {
+      "Id": 303,
+      "Title": "Head of ATF Transformation - Artefact",
+      "Company": "Artefact",
+      "Source": "Exa",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.artefact.com/job/head-of-atf-transformation/"
+    },
+    {
+      "Id": 306,
+      "Title": "Chief Operating Officer (COO) - AI Biotech / Deep Tech",
+      "Company": "Barrington James",
+      "Source": "Exa",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://jaabz.com/jobs/182388-chief-operating-officer"
+    },
+    {
+      "Id": 307,
+      "Title": "PMO Director - Finance Transformation",
+      "Company": "Involvedsolutions",
+      "Source": "Exa-web",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.involvedsolutions.com/jobs/625854-PMO-Director---Finance-Transformation"
+    },
+    {
+      "Id": 312,
+      "Title": "AVP - Product Manager, Digital - Dubai Islamic Bank",
+      "Company": "Dib",
+      "Source": "Exa-web",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://careers.dib.ae/en/uae/jobs/avp-product-manager-digital-1100012568"
+    },
+    {
+      "Id": 313,
+      "Title": "Programme Director â Digital Transformation",
+      "Company": "Confidential",
+      "Source": "LinkedIn",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.jobleads.com/ae/job/programme-director-digital-transformation--dubai--e3523162cb42a0fb6f907c60ab20f9276"
+    },
+    {
+      "Id": 315,
+      "Title": "Vice President jobs in Technology - Dubai",
+      "Company": "Confidential",
+      "Source": "Exa-web",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.michaelpage.ae/jobs/vice-president/technology"
+    },
+    {
+      "Id": 316,
+      "Title": "Chief Operating Officer jobs in United Arab Emirates (2)",
+      "Company": "Efinancialcom",
+      "Source": "Exa-web",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.efinancialcareers.com/jobs/chief-operating-officer/in-united-arab-emirates"
+    },
+    {
+      "Id": 320,
+      "Title": "Vice President jobs in Banking & Financial Services",
+      "Company": "Confidential",
+      "Source": "Exa-web",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.michaelpage.ae/jobs/vice-president/banking-financial-services"
+    },
+    {
+      "Id": 323,
+      "Title": "VP Technology - KSA",
+      "Company": "Career",
+      "Source": "Exa-web",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://career.globant.com/job/Riyadh-VP-Technology-KSA-Saud/581844517"
+    },
+    {
+      "Id": 327,
+      "Title": "Director & Compliance Officer - Digital Assets",
+      "Company": "Keyrock",
+      "Source": "Exa",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://talantix.io/jobs/director-compliance-officer-digital-assets-keyrock-20260315-tdc0"
+    },
+    {
+      "Id": 329,
+      "Title": "VP Of Engineering | FullTime | Flexionis",
+      "Company": "Flexionis",
+      "Source": "Exa",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://flexionis.wuaze.com/job/vp-of-engineering-fulltime"
+    },
+    {
+      "Id": 332,
+      "Title": "Field Chief Technology Officer - Media and Entertainment | Flexionis",
+      "Company": "Flexionis",
+      "Source": "Exa",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://flexionis.wuaze.com/job/field-chief-technology-officer-media-and-entertainment"
+    },
+    {
+      "Id": 335,
+      "Title": "Chief Operating Officer (COO)",
+      "Company": "Ultahost",
+      "Source": "Exa-web",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://ultahost.com/career-detail/chief-operating-officer-coo"
+    },
+    {
+      "Id": 337,
+      "Title": "Senior Director, Software Engineering",
+      "Company": "Walmart",
+      "Source": "Exa",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://careers.walmart.com/us/en/jobs/R-2445851"
+    },
+    {
+      "Id": 340,
+      "Title": "OPM and TM chiefs relocate offices to PL HQ as elections loom - The Shift News",
+      "Company": "Theshiftnews",
+      "Source": "Exa",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://theshiftnews.com/2026/03/15/opm-and-tm-chiefs-relocate-offices-to-pl-hq-as-elections-loom/"
+    },
+    {
+      "Id": 341,
+      "Title": "Chief Technology Officer Jobs in the Middle East",
+      "Company": "Confidential",
+      "Source": "Exa-web",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.bayt.com/en/international/jobs/chief-technology-officer-jobs"
+    },
+    {
+      "Id": 342,
+      "Title": "QTech Games appoints Jonny Youssef as CTO to lead technology strategy - Malta-Media.com",
+      "Company": "Malta-Media",
+      "Source": "Exa",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://malta-media.com/qtech-games-appoints-jonny-youssef-as-cto-to-lead-technology-strategy/"
+    },
+    {
+      "Id": 343,
+      "Title": "Engineering Director - Quinyx - Hybrid Remote",
+      "Company": "Meetfrank",
+      "Source": "Exa",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://meetfrank.ee/jobs/quinyx/engineering-director-2"
+    },
+    {
+      "Id": 346,
+      "Title": "Tourplan Appoints Eduard Liebenberger as Chief Technology Officer - Lebanon Daily News",
+      "Company": "Eu",
+      "Source": "Exa",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://eu.ldnews.com/press-release/story/566983/tourplan-appoints-eduard-liebenberger-as-chief-technology-officer/"
+    },
+    {
+      "Id": 350,
+      "Title": "Head of Engineering",
+      "Company": "Jobberman Third Party",
+      "Source": "Exa",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.jobberman.com.gh/listings/head-of-engineering-ev4m54"
+    },
+    {
+      "Id": 351,
+      "Title": "Chief Operating Officer Jobs in United Arab Emirates",
+      "Company": "Careerjet",
+      "Source": "Exa-web",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.careerjet.ae/chief-operating-officer-jobs"
+    },
+    {
+      "Id": 352,
+      "Title": "Head of Department Digital Platforms (w/m/d) - 3 Banken IT GmbH",
+      "Company": "3Bankenit",
+      "Source": "Exa",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.3bankenit.at/jobangebote/head-of-department-digital-platforms-w-m-d/"
+    },
+    {
+      "Id": 353,
+      "Title": "Chief Fintech Transformation Officer â Digital Banking Modernization -  Jobs Cyprus |  Jobs Limass",
+      "Company": "Employsolution",
+      "Source": "LinkedIn",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.employsolution.com/jobs/chief-fintech-transformation-officer-digital-banking-modernization/"
+    },
+    {
+      "Id": 354,
+      "Title": "Senior Director, Digital Transformation Operations Lead job with Regeneron Pharmaceuticals, Inc. | 3",
+      "Company": "Biospace",
+      "Source": "LinkedIn",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "http://www.biospace.com/job/3035686/senior-director-digital-transformation-operations-lead/"
+    },
+    {
+      "Id": 360,
+      "Title": "Chief Operating Officer jobs in Saudi Arabia | Careerjet",
+      "Company": "Careerjet",
+      "Source": "Exa-web",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.careerjet.com.sa/chief-operating-officer-jobs"
+    },
+    {
+      "Id": 364,
+      "Title": "VP of Data & AI with 12 - 14 Years of Experience",
+      "Company": "Rewaa in Saudi Arabia,Riyadh",
+      "Source": "Exa-web",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.founditgulf.com/job/vp-of-data-ai-rewaa-saudi-arabia-46171631"
+    },
+    {
+      "Id": 368,
+      "Title": "Senior Vice President â Fintech Operations & Digital Financial Infrastructure -  Jobs Cyprus |  Jo",
+      "Company": "Employsolution",
+      "Source": "LinkedIn",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.employsolution.com/jobs/senior-vice-president-fintech-operations-digital-financial-infrastructure/"
+    },
+    {
+      "Id": 370,
+      "Title": "Coo jobs - Dubai",
+      "Company": "Confidential",
+      "Source": "Exa-web",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.michaelpage.ae/jobs/coo"
+    },
+    {
+      "Id": 373,
+      "Title": "Director, GOMA Program Management & Operational Excellence job with Daiichi Sankyo | 3037154",
+      "Company": "Biospace",
+      "Source": "Exa",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://careers.biospace.com/job/3037154/director-goma-program-management-and-operational-excellence/"
+    },
+    {
+      "Id": 375,
+      "Title": "CTO (Chief Technology Officer) job  in Riyadh, Saudi Arabia | Aurawoo",
+      "Company": "Aurawoo",
+      "Source": "Exa-web",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.aurawoo.com/jobs/saudi-arabia/cto-chief-technology-officer-business-consulting-management-riyadh-AWJ31807"
+    },
+    {
+      "Id": 376,
+      "Title": "Vice President of Digital Transformation",
+      "Company": "Roberthalf",
+      "Source": "Exa-web",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.roberthalf.com/us/en/job-details/vice-president-of-digital-transformation"
+    },
+    {
+      "Id": 379,
+      "Title": "Vice President Of Engineering Jobs in the Middle East",
+      "Company": "Confidential",
+      "Source": "Exa-web",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.bayt.com/en/international/jobs/vice-president-of-engineering-jobs"
+    },
+    {
+      "Id": 380,
+      "Title": "Pmo director job offers in dubai",
+      "Company": "Trovit",
+      "Source": "Exa-web",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://jobs.trovit.ae/pmo-director-jobs-in-dubai,-dubai"
+    },
+    {
+      "Id": 382,
+      "Title": "Director of Projects - UVeye",
+      "Company": "Uveye",
+      "Source": "Exa",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://uveye.com/job/director-of-projects/"
+    },
+    {
+      "Id": 387,
+      "Title": "HRH the Crown Prince and Prime Minister chairs the weekly Cabinet Meeting - HRH Prince Salman bin Ha",
+      "Company": "Crownprince",
+      "Source": "Exa",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.crownprince.bh/en/news/98549/"
+    },
+    {
+      "Id": 389,
+      "Title": "21000+ Director Of Engineering jobs (1554 new)",
+      "Company": "Confidential",
+      "Source": "Exa-web",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.linkedin.com/jobs/director-of-engineering-jobs-worldwide"
+    },
+    {
+      "Id": 390,
+      "Title": "Country Director",
+      "Company": "Zebra Jobs Ltd",
+      "Source": "Exa",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.brightermonday.co.ug/listings/country-director-5dj7x6"
+    },
+    {
+      "Id": 391,
+      "Title": "VP of Operationsâ/Chief Operating Officer; COO | Flexionis",
+      "Company": "Flexionis",
+      "Source": "Exa",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.flexionis.wuaze.com/job/vp-of-operations-chief-operating-officer-coo"
+    },
+    {
+      "Id": 392,
+      "Title": "Director of Digital Transformation and Operations Excellence - Foodics | Built In",
+      "Company": "Builtin",
+      "Source": "Exa-web",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://builtin.com/job/director-digital-transformation-and-operations-excellence/4068636"
+    },
+    {
+      "Id": 393,
+      "Title": "Engineering Director, Frontend Business Lead",
+      "Company": "OKX",
+      "Source": "Exa",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://sportstechjobs.com/engineering-director-frontend-business-lead-okx/69bba55826d30b9052d3290e"
+    },
+    {
+      "Id": 396,
+      "Title": "To Accelerate Global Housing Revolution BOXABL Appoints Shan Palaniappan as Chief Technology Officer",
+      "Company": "Confidential",
+      "Source": "Exa",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.linkedin.com/posts/shan-palaniappan_to-accelerate-global-housing-revolution-boxabl-activity-7439093683720957952-fc-p"
+    },
+    {
+      "Id": 399,
+      "Title": "Chief Operating Officer jobs - Dubai",
+      "Company": "Confidential",
+      "Source": "Exa-web",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.michaelpage.ae/jobs/chief-operating-officer"
+    },
+    {
+      "Id": 400,
+      "Title": "Vice President jobs in Saudi Arabia",
+      "Company": "Confidential",
+      "Source": "Exa-web",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.michaelpage.ae/jobs/vice-president/saudi-arabia"
+    },
+    {
+      "Id": 402,
+      "Title": "Vice President Of Digital Banking jobs",
+      "Company": "Emirates NBD",
+      "Source": "Exa-web",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.efinancialcareers.co.uk/jobs/vice-president-of-digital-banking/at-emirates-nbd"
+    },
+    {
+      "Id": 403,
+      "Title": "Vp Of Engineering jobs | United Arab Emirates",
+      "Company": "Confidential",
+      "Source": "Exa",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.jobleads.com/ae/jobs/vp-of-engineering-jobs"
+    },
+    {
+      "Id": 404,
+      "Title": "Weâre hiring a Chief Technology Officer (60-80%) - Timber Finance",
+      "Company": "Timberfinance",
+      "Source": "Exa",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://timberfinance.ch/cto/"
+    },
+    {
+      "Id": 406,
+      "Title": "12,000+ Chief Technology Officer jobs in United States",
+      "Company": "Confidential",
+      "Source": "Exa-web",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://eh.linkedin.com/jobs/chief-technology-officer-jobs"
+    },
+    {
+      "Id": 407,
+      "Title": "Guy Duncan appointed Chief Technology and Product Officer",
+      "Company": "Thunes",
+      "Source": "Exa",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.linkedin.com/posts/cxolanesuk_executivemoves-fintech-technologyleadership-activity-7438886713986281473-BqXY"
+    },
+    {
+      "Id": 408,
+      "Title": "Head of Program - Uganda and South Sudan â HEKS/EPER - DOET Jobs",
+      "Company": "Career-Tips",
+      "Source": "Exa",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://career-tips.doctorsonlinee.com/head-of-program-uganda-and-south-sudan-heks-eper/"
+    },
+    {
+      "Id": 413,
+      "Title": "Remote Chief Technology Officer, Head of Product Engineering",
+      "Company": "Remotefront",
+      "Source": "Exa",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.remotefront.com/remote-jobs/deeter-analytics-cto-head-of-product-engineering-qliw8"
+    },
+    {
+      "Id": 414,
+      "Title": "Head of Technology Strategy - Telia Sverige",
+      "Company": "Jobbland",
+      "Source": "Exa",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://jobbland.se/jobb/head-of-technology-strategy-stsel-20098602"
+    },
+    {
+      "Id": 416,
+      "Title": "Vice President of Engineering - Remote",
+      "Company": "LastPass",
+      "Source": "Exa",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://talantix.io/jobs/vice-president-of-engineering-remote-lastpass-20260315-hcew"
+    },
+    {
+      "Id": 418,
+      "Title": "Head of Business & Transformation - Telia Sverige",
+      "Company": "Jobbland",
+      "Source": "Exa",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://jobbland.se/jobb/head-of-business-transformation-stsel-20098605"
+    },
+    {
+      "Id": 421,
+      "Title": "Chief Technical Officer",
+      "Company": "BrighterMonday Consulting",
+      "Source": "Exa",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.brightermonday.co.ug/listings/chief-technical-officer-npm589"
+    },
+    {
+      "Id": 422,
+      "Title": "Vice President of Digital Marketing",
+      "Company": "AC Lion Digital Executive Search",
+      "Source": "Exa",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://jaabz.com/jobs/182999-vp-digital-marketing"
+    },
+    {
+      "Id": 423,
+      "Title": "Chain Reaction Appoints Mohamad Itani as Chief Operating Officer - ArabAd",
+      "Company": "Arabaddigital",
+      "Source": "Exa",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.arabaddigital.com/en/article/6012-chain-reaction-appoints-mohamad-itani-as-chief-operating-officer"
+    },
+    {
+      "Id": 425,
+      "Title": "BIBF CEO: Bahrainâs financial sector continues to operate with strong resilience and efficiency",
+      "Company": "Zawya",
+      "Source": "Exa",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.zawya.com/en/press-release/companies-news/bibf-ceo-bahrains-financial-sector-continues-to-operate-with-strong-resilience-and-efficiency-vfglqp91"
+    },
+    {
+      "Id": 426,
+      "Title": "Chief Technology Officer | Flexionis",
+      "Company": "Flexionis",
+      "Source": "Exa",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://flexionis.wuaze.com/job/chief-technology-officer-19"
+    },
+    {
+      "Id": 427,
+      "Title": "Director IT Projects and Portfolio Management - Jobs",
+      "Company": "Edarabia",
+      "Source": "Exa-web",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.edarabia.com/director-it-projects-portfolio-management-mobily-riyadh-saudi-arabia"
+    },
+    {
+      "Id": 428,
+      "Title": "CTO â MS Dynamics 365 Role in Saudi Arabia - Skills Provision",
+      "Company": "Skills-Provision",
+      "Source": "Exa-web",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.skills-provision.com/jobs/cto-ms-dynamics-365-role-in-saudi-arabia"
+    },
+    {
+      "Id": 429,
+      "Title": "Head of Strategic Insights, Industry Transformation and Research â Google Careers",
+      "Company": "Google",
+      "Source": "Exa-web",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://careers.google.com/jobs/results/112293014587482822-head-of-strategic-insights"
+    },
+    {
+      "Id": 430,
+      "Title": "Chief Technology Officer (CTO) Job in Driven Properties - Dubai, DU, AE",
+      "Company": "Mncjobsgulf",
+      "Source": "Exa-web",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.mncjobsgulf.com/jobs/chief-technology-officer-cto-dubai-1909661"
+    },
+    {
+      "Id": 431,
+      "Title": "Head of Transformation job in Dubai, United Arab Emirates - Cigna",
+      "Company": "Thecignagroup",
+      "Source": "Exa-web",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://jobs.thecignagroup.com/us/en/job/26000401/Head-of-Transformation"
+    },
+    {
+      "Id": 432,
+      "Title": "Job position for Regional Director â Oceania (Permanent position, deadline â 10 April 2026) (Hom",
+      "Company": "Developmentaid",
+      "Source": "Exa",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.developmentaid.org/amp/jobs/view/1750350/regional-director-oceania"
+    },
+    {
+      "Id": 433,
+      "Title": "Chief Technology Officer (CTO) â AI Transformation | Flexionis",
+      "Company": "Flexionis",
+      "Source": "Exa",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://flexionis.wuaze.com/job/chief-technology-officer-cto-ai-transformation"
+    },
+    {
+      "Id": 434,
+      "Title": "CTO (Chief Technology Officer) | Flexionis",
+      "Company": "Flexionis",
+      "Source": "Exa",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.flexionis.wuaze.com/job/cto-chief-technology-officer-4"
+    },
+    {
+      "Id": 436,
+      "Title": "Eslam Taha â Head of Digital Transformation and Digital Channels Development",
+      "Company": "Riyadh Airports Company",
+      "Source": "Exa-web",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://wuzzuf.net/me/etaha"
+    },
+    {
+      "Id": 438,
+      "Title": "Chief Operating Officer (COO) - Mortgage Lending (REMOTE) | Flexionis",
+      "Company": "Flexionis",
+      "Source": "Exa",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://flexionis.wuaze.com/job/chief-operating-officer-coo-mortgage-lending-remote-16"
+    },
+    {
+      "Id": 439,
+      "Title": "Chief jobs in Technology - Dubai",
+      "Company": "Confidential",
+      "Source": "Exa-web",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.michaelpage.ae/jobs/chief/technology"
+    },
+    {
+      "Id": 440,
+      "Title": "Chief Technical Officer Job",
+      "Company": "BrighterMonday Consulting â Jobs in Uganda â Latest Jobs in Uganda, 2025 Vacancies: EverJobs",
+      "Source": "Exa",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://everjobs.ug/job/chief-technical-officer-4/"
+    },
+    {
+      "Id": 441,
+      "Title": "Director, Digital Transformation (Real Estate)",
+      "Company": "Confidential",
+      "Source": "Exa-web",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.michaelpage.ae/job-detail/director-digital-transformation-real-estate/ref/jn-062025-6771428"
+    },
+    {
+      "Id": 444,
+      "Title": "Remote Senior Director, Engineering",
+      "Company": "Remotefront",
+      "Source": "Exa",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.remotefront.com/remote-jobs/foundant-technologies-senior-director-engineering-aq72y"
+    },
+    {
+      "Id": 445,
+      "Title": "Deputy Director, Technology and Innovation | SMX",
+      "Company": "Smxtech",
+      "Source": "Exa",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.smxtech.com/jobs/smxtech/deputy-director-technology-and-innovation"
+    },
+    {
+      "Id": 447,
+      "Title": "Engineering Director - Quinyx - Hybrid Remote",
+      "Company": "Meetfrank",
+      "Source": "Exa",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://meetfrank.com/jobs/quinyx/engineering-director-2"
+    },
+    {
+      "Id": 448,
+      "Title": "Digital Software Engineering Lead Analyst- Vice President in United States | Citigroup Inc",
+      "Company": "Tietalent",
+      "Source": "Exa",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://tietalent.com/en/jobs/p-598265727/united-states-digital-software-engineering-lead-analyst-vice-president"
+    },
+    {
+      "Id": 449,
+      "Title": "Engineering Director - Mobile Platform Engineering | Flexionis",
+      "Company": "Flexionis",
+      "Source": "Exa",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://flexionis.wuaze.com/job/engineering-director-mobile-platform-engineering-3"
+    },
+    {
+      "Id": 450,
+      "Title": "Chief Information Officer EMEA & APAC",
+      "Company": "Ledigajobb",
+      "Source": "Exa",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://ledigajobb.se/jobb/c86fe5/chief-information-officer-emea-apac"
+    },
+    {
+      "Id": 451,
+      "Title": "Velexa hiring for Chief Operating Officer",
+      "Company": "Weekday",
+      "Source": "Exa-web",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://jobs.weekday.works/velexa-chief-operating-officer-edft"
+    },
+    {
+      "Id": 452,
+      "Title": "PMO Director - Healthcare - Riyadh",
+      "Company": "Aplitrak",
+      "Source": "Exa-web",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.aplitrak.com"
+    }
+  ],
+  "safe_delete": [
+    {
+      "Id": 257,
+      "Title": "Chief Operating Officer (COO) Salary (March 2026) | ACBSP",
+      "Company": "Acbsp",
+      "Source": "Exa-web",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://careers.acbsp.org/salary/chief-operating-officer-coo"
+    },
+    {
+      "Id": 299,
+      "Title": "Head Of PMO Jobs in Saudi Arabia - 551 Vacancies Mar 2026",
+      "Company": "Confidential",
+      "Source": "Exa-web",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.naukrigulf.com/head-of-pmo-jobs-in-saudi-arabia"
+    },
+    {
+      "Id": 334,
+      "Title": "VP Jobs in Saudi Arabia - 43 Vacancies Mar 2026",
+      "Company": "Confidential",
+      "Source": "Exa-web",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.naukrigulf.com/vp-jobs-in-saudi-arabia"
+    },
+    {
+      "Id": 412,
+      "Title": "Chief Operating Officer Jobs in UAE (Mar 2026) | 42 Latest Vacancies",
+      "Company": "Confidential",
+      "Source": "Exa-web",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.gulftalent.com/uae/jobs/title/chief-operating-officer"
+    },
+    {
+      "Id": 424,
+      "Title": "Chief Operating Officer Jobs in Riyadh - 6 Vacancies Feb 2026",
+      "Company": "Confidential",
+      "Source": "Exa-web",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.naukrigulf.com/chief-operating-officer-jobs-in-riyadh"
+    },
+    {
+      "Id": 443,
+      "Title": "PMO Director Jobs in Riyadh - 124 Vacancies Mar 2026",
+      "Company": "Confidential",
+      "Source": "Exa-web",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.naukrigulf.com/pmo-director-jobs-in-riyadh"
+    },
+    {
+      "Id": 446,
+      "Title": "chief operating officer jobs in Saudi Arabia",
+      "Company": "Ae",
+      "Source": "Exa-web",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://ae.jobsora.com/jobs-chief-operating-officer-saudi-arabia"
+    }
+  ]
+}
