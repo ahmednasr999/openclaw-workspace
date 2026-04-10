@@ -2,111 +2,199 @@
   "meta": {
     "agent": "jobs-review",
     "version": "2.0.0",
-    "generated_at": "2026-04-06T09:35:20.996135+02:00",
-    "duration_ms": 49283,
+    "generated_at": "2026-04-09T22:05:26.792690+02:00",
+    "duration_ms": 698031,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "9b4bced0",
+    "run_id": "c5f5cd61",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
-    "generated_at": "2026-04-06T09:35:20.984064+02:00",
-    "total_candidates": 6,
-    "reviewed": 3,
+    "generated_at": "2026-04-09T22:05:25.848252+02:00",
+    "total_candidates": 95,
+    "reviewed": 94,
     "submit": [
       {
-        "id": "linkedin_jobspy-li-4397759795",
-        "source": "linkedin_jobspy",
-        "title": "Head of IT Delivery & Business Enablement - Corporate and Support",
-        "company": "flydubai",
-        "location": "Dubai, Dubai, United Arab Emirates",
-        "url": "https://www.linkedin.com/jobs/view/4397759795",
-        "posted": "",
-        "seniority": "Director",
-        "domain_match": true,
-        "keyword_score": 13,
-        "match_keywords": [
-          "ai",
-          "head of"
-        ],
-        "raw_snippet": "**MAIN OBJECTIVE OF ROLE**\n To manage business relationship with the internal customers at C\\-level and department heads, align IT with the business strategy, understand and translate customer needs to ensure delivery of all IT products and services to the businesses in a timely and cost\\-effective ",
+        "job_id": "22086",
+        "title": "Head of Transformation job in Dubai, United Arab Emirates - Cigna",
+        "company": "Thecignagroup",
+        "location": "United Arab Emirates",
+        "url": "https://jobs.thecignagroup.com/us/en/job/26000401/Head-of-Transformation",
+        "source": "exa-web",
+        "raw_snippet": "Head of Transformation. Dubai, United Arab Emirates. Project & Program Management. The Head of Transformation is accountable for end-to-end transformation delivery across Cigna Healthcare Middle East & Africa, spanning operating model redesign, technology and data modernization, regulatory readiness, and execution discipline. The role blends transformation strategy, Agile SAFe leadership, change management, and disciplined program delivery to embed modern ways of working and unlock measurable va",
+        "jd_text": "Head of Transformation. Dubai, United Arab Emirates. Project & Program Management. The Head of Transformation is accountable for end-to-end transformation delivery across Cigna Healthcare Middle East & Africa, spanning operating model redesign, technology and data modernization, regulatory readiness, and execution discipline. The role blends transformation strategy, Agile SAFe leadership, change management, and disciplined program delivery to embed modern ways of working and unlock measurable value. You will stand up and lead the Transformation Office, orchestrate cross-functional initiatives across all value streams, and ensure outcomes are tracked and realized. Own the delivery of a multi-year enterprise transformation portfolio, including digital distribution, customer self-service, claims and medical cost transformation, provider network enablement, and core platform modernization. Advance data and analytics foundations, AI/ML use cases, process re-engineering and automation. 12\u201315+ years of experience in transformation leadership, program delivery, or corporate strategy. Healthcare or financial services experience strongly preferred. Relevant certifications include SAFe, Prosci/ADKAR, Lean Six Sigma, PMP/PgMP.",
+        "keyword_score": 3,
         "relevant": true,
-        "filter_reason": null,
-        "search_country": "United Arab Emirates",
-        "jd_text": "**MAIN OBJECTIVE OF ROLE**\n To manage business relationship with the internal customers at C\\-level and department heads, align IT with the business strategy, understand and translate customer needs to ensure delivery of all IT products and services to the businesses in a timely and cost\\-effective manner based on defined standards and quality criteria.\n   \n\n  \n\n**Key Responsibilities**\n* Establishes an appropriate and cost\\-effective IT and application strategy for each business unit to support the business strategy and flydubai growth plans.\n* Provides leadership across a cross\\-functional set of teams consisting of Business and System analysts, Solution Architects, Software Engineers, Application and Business support, and scouts best of breed solutions and be the enabler in providing competitive advantage to the business by early adoption of cutting\\-edge technologies.\n* Develops and maintains working relationships with Chiefs and department heads through regular direct interactions, acting as the single point of contact for all IT related matters to the business, agreeing on action plans to address any concerns and allocate team resources accordingly.\n* Provides strategic direction to Business alignment, Software Engineering and Support teams in defining and delivery of annual work programme, monitoring and reviewing key business cases for all major investments to ensure they are cost effective and resolves conflicts and work with the business portfolio stakeholders to set priorities within the portfolio.\n* Ensures that service level objectives are agreed with the business for all relevant services, conduct regular service reviews and ensure performance against service levels manages escalations related to service levels, and ensures business continuity plans are in place for all critical operations.\n* Provides relevant inputs on business requirements to IT Strategy \\& Enterprise Architecture to ensure alignment with IT Strategy in selection of technologies and design that is future proof and fit for purpose, provides competitive advantage, and delivers business value.\n* Owns ultimate responsibility for IT deliveries to the business by monitoring project milestones, costs, and key risks, actively participating in steering group decisions, and promptly resolving escalated issues to ensure customer satisfaction and successful execution.\n* Contributes to IT leadership by supporting build\\-versus\\-buy decisions, assists in the sourcing best\\-of\\-breed solutions aligned with the mobile\\-first, cloud\\-first, and digital\\-first strategy, and by assisting in the negotiations of SLAs, managing vendor relationships through regular service reviews, and escalating service issues to Chief levels when required.\n* Promotes business synergies and drive a proactive culture of innovation, along with detailed business knowledge and understanding the direction of the business and the industry as well as the evolution of technology.\n* Drives service improvement programmes that bring in cost efficiencies and reduce time to market, and identifies technology improvement, optimisation and replacement initiatives, implement and drive effective resource management to optimise resource utilization and cost.\n* Establishes career development plans, training for direct reportees and provide appropriate mentoring and coaching, by conducting timely annual and interim performance reviews and set SMART objectives to cultivate a culture of high performance, ensuring that the team develops requisite level of customer and technical knowledge to effectively manage business relationships.\n\n\n**Qualifications**\n* Bachelor's Degree (3\\+ years)\n* Bachelor\u2019s Degree or Honours in Computer Science, Information Systems, or related field. Master's degree in engineering or MBA is preferred\n* Fluent in English\n* 10\\+ yrs experience of IT Management, Product/Project delivery and Transformation programs. Experience in leading large IT teams comprising Business analysts, solution architects Software Engineering, application, and business support\n* Airline Industry knowledge and awareness of emerging technologies\n* Years with qualifications: 10 \\- 12years\n* PMP and SAFe certifications\n\n\n**COMPETENCIES**\n* Customer Focus\n* Teamwork\n* Effective Communication\n* Personal Accountability \\& Commitment to achieve\n* Resilience \\& Flexibility (Can do attitude)\n* Inspiring \\& Developing Others\n* Decision Making\n* Strategic Thinking\n* Business Acumen\n\n\n**Isr Requirements**\n Reads and complies with the ISR policies of the Company and diligently reports any weakness or incidents to the respective Line Manager or the Information Security team. Completes all required ISR awareness sessions and follows associated guidelines in the day\\-to\\-day business operations.",
-        "source_count": 1,
-        "country": "United Arab Emirates",
-        "industry_bonus": 6,
-        "policy_status": "pass",
-        "sources": [
-          "linkedin"
-        ],
-        "first_seen": "2026-04-06",
-        "r1_verdict": "PASS",
-        "r1_confidence": 0.85,
+        "_from_db_backfill": true,
         "career_fit_score": 7,
         "verdict": "SUBMIT",
-        "verdict_reason": "Strategic IT delivery and business enablement role at GCC airline - aligns with candidate's technology operations and stakeholder management strengths",
-        "ats_score": 28,
-        "ats_verdict": "SKIP",
+        "verdict_reason": "Excellent match: Head of Transformation in UAE with enterprise delivery, modernization, AI/ML, PMO discipline, and preferred certifications [5D role=2 | seniority=2 | geo=0 | strategic=1 | evidence=2 | fit=7/10 | llm=9 | watchlist=healthcare_gcc] [CMO outreach queued for Thecignagroup]",
+        "watchlist_matches": {
+          "company_hits": [],
+          "domain_hits": [
+            "health",
+            "healthcare",
+            "medical"
+          ],
+          "categories": [
+            "healthcare_gcc"
+          ]
+        },
+        "ats_score": 85,
+        "ats_verdict": "GO",
         "ats_matched": [
+          "digital transformation",
           "program management",
           "project management",
           "transformation",
           "pmp",
+          "lean six sigma",
           "ai",
           "erp",
-          "cloud",
-          "digital",
+          "healthcare",
+          "operating model"
+        ],
+        "ats_gaps": [],
+        "llm_fit_score": 9,
+        "fit_dimensions": {
+          "role": 2,
+          "seniority": 2,
+          "geography": 0,
+          "strategic": 1,
+          "evidence": 2
+        }
+      },
+      {
+        "job_id": "22026",
+        "title": "PMO Director - Finance Transformation",
+        "company": "Involvedsolutions",
+        "location": "United Arab Emirates",
+        "url": "https://www.involvedsolutions.com/jobs/625854-PMO-Director---Finance-Transformation",
+        "source": "exa-web",
+        "raw_snippet": "PMO Director - Finance Transformation. Dubai. Permanent. Salary AED 60000 - AED 75000 per month. Lead enterprise-wide Finance Transformation initiatives. Senior strategic role responsible for driving governance, performance, and transformation across finance operations. Establish and lead the PMO function that governs and executes the group's Finance Transformation roadmap, ensuring programmes are aligned to strategic objectives and deliver measurable business outcomes. Define governance model, ",
+        "jd_text": "PMO Director - Finance Transformation. Dubai. Permanent. Salary AED 60000 - AED 75000 per month. Lead enterprise-wide Finance Transformation initiatives. Senior strategic role responsible for driving governance, performance, and transformation across finance operations. Establish and lead the PMO function that governs and executes the group's Finance Transformation roadmap, ensuring programmes are aligned to strategic objectives and deliver measurable business outcomes. Define governance model, standards, and reporting structure. Oversee delivery of multiple transformation projects covering systems, processes, and operating models. Drive performance metrics and continuous improvement across finance functions. Partner with Finance, Technology, and Strategy leaders. Manage project portfolios, budgets, and delivery timelines. 15+ years in programme or PMO leadership roles with focus on finance transformation. PMP preferred.",
+        "keyword_score": 3,
+        "relevant": true,
+        "_from_db_backfill": true,
+        "career_fit_score": 7,
+        "verdict": "SUBMIT",
+        "verdict_reason": "Excellent fit: PMO Director leading finance transformation in Dubai with senior governance and portfolio ownership [5D role=2 | seniority=2 | geo=0 | strategic=1 | evidence=2 | fit=7/10 | llm=9] [CMO outreach queued for Involvedsolutions]",
+        "salary": "AED 60,000-75,000/month",
+        "watchlist_matches": {
+          "company_hits": [],
+          "domain_hits": [],
+          "categories": []
+        },
+        "ats_score": 66,
+        "ats_verdict": "CONDITIONAL",
+        "ats_matched": [
+          "pmo",
+          "transformation",
+          "pmp",
+          "ai",
+          "erp",
+          "governance",
+          "operating model",
+          "budget",
           "strategy",
           "strategic"
         ],
-        "ats_gaps": [
-          "Entry/junior level"
-        ]
+        "ats_gaps": [],
+        "llm_fit_score": 9,
+        "fit_dimensions": {
+          "role": 2,
+          "seniority": 2,
+          "geography": 0,
+          "strategic": 1,
+          "evidence": 2
+        }
       }
     ],
-    "review": [],
-    "skip_count": 5,
+    "review": [
+      {
+        "job_id": "22062",
+        "title": "Director of Digital Transformation and Operations Excellence - Foodics | Built In",
+        "company": "Builtin",
+        "location": "Saudi Arabia",
+        "url": "https://builtin.com/job/director-digital-transformation-and-operations-excellence/4068636",
+        "source": "exa-web",
+        "raw_snippet": "Director of Digital Transformation and Operations Excellence. Foodics. Riyadh, KSA. Leading restaurant management ecosystem and payment tech provider. Lead the company\u2019s digital transformation efforts, driving operational improvements across IT, CRM, Data, and Applications. Leverage AI, automation, and innovative technologies to optimize business processes, enhance efficiency, and support strategic goals. Lead digital transformation initiatives, operational excellence, cross-functional delivery,",
+        "jd_text": "Director of Digital Transformation and Operations Excellence. Foodics. Riyadh, KSA. Leading restaurant management ecosystem and payment tech provider. Lead the company\u2019s digital transformation efforts, driving operational improvements across IT, CRM, Data, and Applications. Leverage AI, automation, and innovative technologies to optimize business processes, enhance efficiency, and support strategic goals. Lead digital transformation initiatives, operational excellence, cross-functional delivery, change management, roadmap execution, vendor and stakeholder management, and data-driven decision making. 10+ years of experience in digital transformation, operational excellence, or business process management, with at least 5 years in leadership roles.",
+        "keyword_score": 3,
+        "relevant": true,
+        "_from_db_backfill": true,
+        "career_fit_score": 8,
+        "verdict": "REVIEW",
+        "verdict_reason": "Direct match on digital transformation and operations excellence at Director level in Saudi Arabia with payments/restaurant tech adjacency [5D role=2 | seniority=2 | geo=2 | strategic=1 | evidence=1 | fit=8/10 | llm=8]",
+        "watchlist_matches": {
+          "company_hits": [],
+          "domain_hits": [],
+          "categories": []
+        },
+        "ats_score": 60,
+        "ats_verdict": "CONDITIONAL",
+        "ats_matched": [
+          "digital transformation",
+          "transformation",
+          "ai",
+          "payment",
+          "change management",
+          "stakeholder management",
+          "vendor management",
+          "data",
+          "automation",
+          "digital"
+        ],
+        "ats_gaps": [
+          "Missing: project management"
+        ],
+        "llm_fit_score": 8,
+        "fit_dimensions": {
+          "role": 2,
+          "seniority": 2,
+          "geography": 2,
+          "strategic": 1,
+          "evidence": 1
+        }
+      }
+    ],
+    "skip_count": 92,
     "unreviewed_count": 0,
     "thresholds": {
       "submit": 7,
-      "review": 5
+      "review": 6
     },
     "pipeline": {
-      "l0_auto_skip": 0,
-      "l1_jd_enriched": 0,
-      "l1_jd_coverage": "6/6",
-      "r1_model": "minimax-portal/MiniMax-M2.7",
-      "r2_model": "minimax-portal/MiniMax-M2.7",
-      "r1_filtered": 3,
-      "r1_passed": 3,
-      "r1_failed_batches": 0,
-      "r2_latency_ms": 21070,
+      "l0_auto_skip": 1,
+      "l1_jd_enriched": 4,
+      "l1_jd_coverage": "17/94",
+      "llm_model": "openai-codex/gpt-5.4",
+      "llm_jobs_reviewed": 94,
+      "r2_latency_ms": 688190,
       "r2_fallbacks": 0
     },
     "kpi": {
-      "submit_rate": 0.3333333333333333,
-      "review_rate": 0.0,
-      "skip_rate": 1.6666666666666667,
-      "avg_fit_score": 4.7,
-      "l0_filter_rate": 0.0,
-      "r1_filter_rate": 50.0
+      "submit_rate": 0.02127659574468085,
+      "review_rate": 0.010638297872340425,
+      "skip_rate": 0.9680851063829787,
+      "avg_fit_score": 4.4,
+      "l0_filter_rate": 1.1,
+      "llm_review_rate": 100.0
     }
   },
   "kpi": {
-    "total_loaded": 6,
-    "l0_auto_skip": 0,
-    "l1_jd_enriched": 0,
-    "l2_filtered": 3,
-    "submit_count": 1,
-    "review_count": 0,
-    "skip_count": 5,
-    "submit_rate": 33.3,
-    "avg_fit_score": 4.7,
-    "r2_latency_ms": 21070
+    "total_loaded": 95,
+    "l0_auto_skip": 1,
+    "l1_jd_enriched": 4,
+    "l2_filtered": 0,
+    "submit_count": 2,
+    "review_count": 1,
+    "skip_count": 91,
+    "submit_rate": 2.1,
+    "avg_fit_score": 4.4,
+    "r2_latency_ms": 688190
   },
   "recommendations": []
 }

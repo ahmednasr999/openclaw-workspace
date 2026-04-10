@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-04T00:00:28.445283+02:00",
+  "last_updated": "2026-04-09T16:00:29.157562+02:00",
   "alerts": [
     {
       "type": "gateway_down",
@@ -119,7 +119,14 @@
       "message": "Interview invite from Lee Abrahams - Proximie <lee.abrahams@proximie.teamtailor-mail.com>: Reaching out from Proximie",
       "timestamp": "2026-04-04T00:00:16.006145+02:00",
       "id": "alert-16-000028"
+    },
+    {
+      "type": "interview_detected",
+      "urgency": "critical",
+      "message": "Interview invite from Quanterion Solutions Incorporated <reliability@quanterion.com>: Preview Reliability Training in a 15 Min. Webinar!",
+      "timestamp": "2026-04-09T16:00:18.038943+02:00",
+      "id": "alert-17-160029"
     }
   ],
-  "active_count": 17
+  "active_count": 18
 }

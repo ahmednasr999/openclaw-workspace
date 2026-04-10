@@ -1,0 +1,206 @@
+{
+  "generated_at": "2026-04-09T18:00:00+02:00",
+  "count": 20,
+  "candidates": [
+    {
+      "reason": "orphan_search_junk",
+      "Id": 258,
+      "Title": "246 Vp Engineering Jobs vacancies in Gulf - Feb (2026)",
+      "Company": "Founditgulf",
+      "Source": "Exa-web",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.founditgulf.com/search/vp-engineering-jobs"
+    },
+    {
+      "reason": "orphan_search_junk",
+      "Id": 282,
+      "Title": "VP Salaries in Dubai",
+      "Company": "Confidential",
+      "Source": "Exa-web",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.gulftalent.com/uae/salaries/dubai/vp"
+    },
+    {
+      "reason": "orphan_search_junk",
+      "Id": 290,
+      "Title": "Transformation Director jobs in Dubai",
+      "Company": "Confidential",
+      "Source": "Exa-web",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://ae.indeed.com/q-transformation-director-l-dubai-jobs.html"
+    },
+    {
+      "reason": "orphan_search_junk",
+      "Id": 296,
+      "Title": "Dubai Vice President Salaries 2026 in India, Average salary â¹39 lakhs",
+      "Company": "6Figr",
+      "Source": "Exa-web",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://6figr.com/in/salary/dubai--vice-president"
+    },
+    {
+      "reason": "orphan_search_junk",
+      "Id": 308,
+      "Title": "47 head of digital transformation jobs in Dubai, March 2026",
+      "Company": "Glassdoor",
+      "Source": "LinkedIn",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.glassdoor.co.uk/Job/dubai-head-of-digital-transformation-jobs-SRCH_IL.0,5_IC2204498_KO6,36.htm"
+    },
+    {
+      "reason": "orphan_search_junk",
+      "Id": 330,
+      "Title": "Vice President Banking Jobs in Dubai - 2604 Vacancies Mar 2026",
+      "Company": "Confidential",
+      "Source": "Exa-web",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.naukrigulf.com/vice-president-banking-jobs-in-dubai"
+    },
+    {
+      "reason": "orphan_search_junk",
+      "Id": 344,
+      "Title": "Zoo Jobs: Zoological Director",
+      "Company": "Zoowork",
+      "Source": "Exa",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "http://zoowork.blogspot.com/2017/01/zoological-director.html"
+    },
+    {
+      "reason": "orphan_search_junk",
+      "Id": 378,
+      "Title": "Vice President jobs in Dubai (36)",
+      "Company": "Efinancialcom",
+      "Source": "Exa-web",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.efinancialcareers.com/jobs/Vice-President/in-Dubai-Dubai-United-Arab-Emirates"
+    },
+    {
+      "reason": "orphan_search_junk",
+      "Id": 397,
+      "Title": "Chief Operating Officer Salaries in UAE",
+      "Company": "Confidential",
+      "Source": "Exa-web",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.gulftalent.com/uae/salaries/chief-operating-officer"
+    },
+    {
+      "reason": "orphan_search_junk",
+      "Id": 405,
+      "Title": "Urgent! chief technology officer cto jobs in Dubai - 509 current vacancies | Jobsora",
+      "Company": "Ae",
+      "Source": "Exa-web",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://ae.jobsora.com/jobs-chief-technology-officer-cto-dubai"
+    },
+    {
+      "reason": "orphan_search_junk",
+      "Id": 411,
+      "Title": "Chief Technology Officer (CTO) | AI & Digital Strategy | Jobs in Dubai",
+      "Company": "Careers-Page",
+      "Source": "Exa-web",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://www.careers-page.com/talent-bridge-dubai/job/QXR57X83"
+    },
+    {
+      "reason": "orphan_search_junk",
+      "Id": 435,
+      "Title": "507   chief technology officer  jobs  IN Riyadh",
+      "Company": "App",
+      "Source": "Exa-web",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://app.qureos.com/jobs/search/chief-technology-officer-jobs-in-riyadh"
+    },
+    {
+      "reason": "orphan_search_junk",
+      "Id": 437,
+      "Title": "Zoo Jobs: Program Director",
+      "Company": "Zoowork",
+      "Source": "Exa",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "http://zoowork.blogspot.com/2020/01/program-director.html"
+    },
+    {
+      "reason": "orphan_search_junk",
+      "Id": 442,
+      "Title": "100+ Transformation Director Jobs, Employment 10 March ...",
+      "Company": "Confidential",
+      "Source": "Exa-web",
+      "Status": "New",
+      "Verdict": null,
+      "URL": "https://ae.indeed.com/q-transformation-director-jobs.html"
+    },
+    {
+      "reason": "duplicate_search_junk",
+      "Id": 1637,
+      "Title": "Senior Manager - Process & Compliance | Al-Futtaim Automotive",
+      "Company": "Al Futtaim Group",
+      "Source": "Google",
+      "Status": "New",
+      "Verdict": "SKIP",
+      "URL": "https://www.bayt.com/en/uae/jobs/head-of-digital-transformation-jobs/"
+    },
+    {
+      "reason": "duplicate_search_junk",
+      "Id": 1639,
+      "Title": "Head CCM Services and Lead BCO, Qatar",
+      "Company": "HSBC",
+      "Source": "Google",
+      "Status": "New",
+      "Verdict": "SKIP",
+      "URL": "https://www.bayt.com/en/qatar/jobs/director-digital-transformation-jobs/"
+    },
+    {
+      "reason": "duplicate_search_junk",
+      "Id": 1640,
+      "Title": "Head Of IT Digital Transformation",
+      "Company": "Raya CX\n\n12-14 yrs",
+      "Source": "Google",
+      "Status": "New",
+      "Verdict": "SKIP",
+      "URL": "https://www.founditgulf.com/search/it-and-digital-transformation-jobs"
+    },
+    {
+      "reason": "duplicate_search_junk",
+      "Id": 1651,
+      "Title": "Collections Registration Unit Head JOB",
+      "Company": "Department of Culture and Tourism",
+      "Source": "Google",
+      "Status": "New",
+      "Verdict": "SKIP",
+      "URL": "https://www.bayt.com/en/uae/jobs/head-of-digital-transformation-jobs/"
+    },
+    {
+      "reason": "duplicate_search_junk",
+      "Id": 1652,
+      "Title": "Services Data Center Solutions Principal",
+      "Company": "Dell",
+      "Source": "Google",
+      "Status": "New",
+      "Verdict": "SKIP",
+      "URL": "https://www.bayt.com/en/qatar/jobs/director-digital-transformation-jobs/"
+    },
+    {
+      "reason": "duplicate_search_junk",
+      "Id": 1752,
+      "Title": "Director - Digital Transformation & IT",
+      "Company": "Dubai Holding Community Management\n\n14-16 yrs",
+      "Source": "Google",
+      "Status": "New",
+      "Verdict": "SKIP",
+      "URL": "https://www.founditgulf.com/search/it-and-digital-transformation-jobs"
+    }
+  ]
+}

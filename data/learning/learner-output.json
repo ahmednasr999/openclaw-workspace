@@ -2,22 +2,22 @@
   "meta": {
     "agent": "daily-learner",
     "version": "1.0.0",
-    "generated_at": "2026-04-08T23:00:02.029417+02:00",
-    "duration_ms": 33,
+    "generated_at": "2026-04-09T23:00:02.073905+02:00",
+    "duration_ms": 44,
     "ttl_hours": 24,
     "status": "success",
     "error": null,
-    "run_id": "12f82822",
+    "run_id": "4b53347b",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
     "job_accuracy": {
-      "total_recommendations": 1486,
-      "total_unique_jobs": 316,
-      "submit_recommendations": 189,
+      "total_recommendations": 1498,
+      "total_unique_jobs": 317,
+      "submit_recommendations": 190,
       "applied_count": 28,
-      "accuracy_rate": 14.814814814814813,
+      "accuracy_rate": 14.736842105263156,
       "skip_candidates": [
         {
           "job_id": "linkedin-li-4379840970",
@@ -409,17 +409,17 @@
     "weight_changes": [],
     "source_rankings": {
       "unknown": {
-        "recommended": 1486,
+        "recommended": 1498,
         "applied": 0,
         "rate": 0.0
       }
     },
     "summary": {
-      "generated_at": "2026-04-08T23:00:02.028745+02:00",
+      "generated_at": "2026-04-09T23:00:02.073414+02:00",
       "period": "last_7_days",
       "job_recommendation_accuracy": {
-        "rate": 14.814814814814813,
-        "total": 1486,
+        "rate": 14.736842105263156,
+        "total": 1498,
         "applied": 28
       },
       "briefing_actionability": {
@@ -437,8 +437,8 @@
     }
   },
   "kpi": {
-    "recommendation_accuracy": 14.814814814814813,
-    "total_recommendations": 1486,
+    "recommendation_accuracy": 14.736842105263156,
+    "total_recommendations": 1498,
     "skip_patterns_added": 0,
     "weight_changes": 0
   },

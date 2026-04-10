@@ -1,0 +1,68 @@
+{
+  "generated_at": "2026-04-09T08:29:00.137082+00:00",
+  "failures": [
+    {
+      "title": "Commercial Director",
+      "company": "Skilled Careers",
+      "url": "https://www.linkedin.com/jobs/view/4390022219",
+      "status_code": 400,
+      "response": "{\"msg\":\"Invalid option(s) \\\"CONDITIONAL\\\" provided for column \\\"Verdict\\\". Valid options are \\\"SUBMIT, REVIEW, SKIP\\\"\"}"
+    },
+    {
+      "title": "Director - OD & workforce Planning",
+      "company": "Confidential Careers",
+      "url": "https://www.linkedin.com/jobs/view/4391072823",
+      "status_code": 400,
+      "response": "{\"msg\":\"Invalid option(s) \\\"CONDITIONAL\\\" provided for column \\\"Verdict\\\". Valid options are \\\"SUBMIT, REVIEW, SKIP\\\"\"}"
+    },
+    {
+      "title": "Senior Manager Media Ecosystem",
+      "company": "Esports World Cup Foundation",
+      "url": "https://www.linkedin.com/jobs/view/4380698693",
+      "status_code": 400,
+      "response": "{\"msg\":\"Invalid option(s) \\\"CONDITIONAL\\\" provided for column \\\"Verdict\\\". Valid options are \\\"SUBMIT, REVIEW, SKIP\\\"\"}"
+    },
+    {
+      "title": "Director Business Development - CX Solutions",
+      "company": "emagine",
+      "url": "https://www.linkedin.com/jobs/view/4392192272",
+      "status_code": 400,
+      "response": "{\"msg\":\"Invalid option(s) \\\"CONDITIONAL\\\" provided for column \\\"Verdict\\\". Valid options are \\\"SUBMIT, REVIEW, SKIP\\\"\"}"
+    },
+    {
+      "title": "Director, Digital Operations",
+      "company": "Iron Mountain",
+      "url": "https://www.linkedin.com/jobs/view/4382048178",
+      "status_code": 400,
+      "response": "{\"msg\":\"Invalid option(s) \\\"CONDITIONAL\\\" provided for column \\\"Verdict\\\". Valid options are \\\"SUBMIT, REVIEW, SKIP\\\"\"}"
+    },
+    {
+      "title": "Performance Improvement Director - Refining & Chemicals (Energy & Process Industries Practice)",
+      "company": "AlixPartners",
+      "url": "https://www.linkedin.com/jobs/view/4359569857",
+      "status_code": 400,
+      "response": "{\"msg\":\"Invalid option(s) \\\"CONDITIONAL\\\" provided for column \\\"Verdict\\\". Valid options are \\\"SUBMIT, REVIEW, SKIP\\\"\"}"
+    },
+    {
+      "title": "Director, Middle East Sales",
+      "company": "Micron Technology",
+      "url": "https://www.linkedin.com/jobs/view/4387963962",
+      "status_code": 400,
+      "response": "{\"msg\":\"Invalid option(s) \\\"linkedin_jobspy\\\" provided for column \\\"Source\\\". Valid options are \\\"LinkedIn, Indeed, Google, Google Jobs, Exa, Exa-web, Recruiter Inbound, manual, notion_sync, Other\\\"\"}"
+    },
+    {
+      "title": "Vice President \u2013 Sales & Market Expansion",
+      "company": "Foreground.",
+      "url": "https://www.linkedin.com/jobs/view/4383285804",
+      "status_code": 400,
+      "response": "{\"msg\":\"Invalid option(s) \\\"linkedin_jobspy\\\" provided for column \\\"Source\\\". Valid options are \\\"LinkedIn, Indeed, Google, Google Jobs, Exa, Exa-web, Recruiter Inbound, manual, notion_sync, Other\\\"\"}"
+    },
+    {
+      "title": "Marketing Director",
+      "company": "ManpowerGroup Middle East",
+      "url": "https://www.linkedin.com/jobs/view/4397921447",
+      "status_code": 400,
+      "response": "{\"msg\":\"Invalid option(s) \\\"linkedin_jobspy\\\" provided for column \\\"Source\\\". Valid options are \\\"LinkedIn, Indeed, Google, Google Jobs, Exa, Exa-web, Recruiter Inbound, manual, notion_sync, Other\\\"\"}"
+    }
+  ]
+}
