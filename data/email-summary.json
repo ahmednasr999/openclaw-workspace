@@ -2,19 +2,19 @@
   "meta": {
     "agent": "email-agent",
     "version": "3.0.0",
-    "generated_at": "2026-04-10T06:00:31.220808+02:00",
-    "duration_ms": 29135,
+    "generated_at": "2026-04-11T06:00:42.332026+02:00",
+    "duration_ms": 37923,
     "ttl_hours": 4,
     "status": "success",
     "error": null,
-    "run_id": "a7d0b466",
+    "run_id": "ea8f3aad",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
     "status": "ok",
-    "scan_time": "2026-04-10T06:00:07.490306+02:00",
-    "total_scanned": 9,
+    "scan_time": "2026-04-11T06:00:09.705230+02:00",
+    "total_scanned": 10,
     "by_category": {
       "interview_invite": 0,
       "recruiter_reach": 1,
@@ -22,15 +22,15 @@
       "rejection": 0,
       "assessment": 0,
       "follow_up_needed": 0,
-      "other": 8
+      "other": 9
     },
     "interview_invites": [],
     "recruiter_messages": [
       {
-        "id": "352660",
+        "id": "352814",
         "from": "Mariam from foundit <jobmessenger@monstergulf.com>",
         "subject": "Ahmed, Hot Job Opportunities Waiting For You",
-        "date": "Fri, 10 Apr 2026 09:19:16 +0530 (IST)",
+        "date": "Sat, 11 Apr 2026 08:34:51 +0530 (IST)",
         "unread": true,
         "priority": "MEDIUM",
         "score": 2,
@@ -53,12 +53,12 @@
         "requires_assessment": false,
         "recruiter_top_opportunities": [],
         "top_priority": null,
-        "daily_focus": "No actionable recruiter or interview emails were provided, so focus today on sourcing new senior leadership opportunities in the Gulf region."
+        "daily_focus": "No actionable emails in the provided categories, focus today on generating new senior leadership opportunities and monitoring for recruiter outreach."
       }
     }
   },
   "kpi": {
-    "emails_processed": 9,
+    "emails_processed": 10,
     "actionable": 0,
     "interviews_detected": 0,
     "recruiter_messages": 1,
@@ -66,12 +66,12 @@
   },
   "recommendations": [
     {
-      "id": "rec-a7d0b466-0",
+      "id": "rec-ea8f3aad-0",
       "action": "review_and_respond",
       "target": "1 recruiter message(s)",
       "reason": "Recruiter outreach could lead to opportunities",
       "urgency": "high",
-      "timestamp": "2026-04-10T06:00:31.220519+02:00"
+      "timestamp": "2026-04-11T06:00:42.331827+02:00"
     }
   ]
 }
