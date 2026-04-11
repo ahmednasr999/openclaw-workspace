@@ -36,6 +36,7 @@ Senior technology executive with 20+ years in operational leadership. Currently 
 - Prefers bullet points and tables over long paragraphs for technical info.
 - Dislikes em dashes (—). Use hyphens or commas instead.
 - Pushes back when I make him do work I should be doing autonomously.
+- For multi-step tasks, expects end-to-end execution with one consolidated report at the end, unless a real decision/blocker requires interruption <!-- updated 2026-04-09 -->
 
 ### Technical Setup
 - VPS: srv1352768 (Linux, Ubuntu), primary workspace
@@ -43,12 +44,15 @@ Senior technology executive with 20+ years in operational leadership. Currently 
 - VPS IP is permanently blocked by YouTube — cannot fetch transcripts from server
 - Browser automation: no Camoufox on VPS; Ahmed-Mac Chrome accessible only via browser.proxy (HTTP proxy, not full browser nav)
 - Telegram is primary interface (chat_id 866838380)
+- Do not assume repo permissions or access scope from prior context alone; verify or let Ahmed specify the level of access for the current task <!-- updated 2026-04-08 -->
+- `channels.slack.streaming` in OpenClaw gateway config is intentionally the string `"partial"`; do not modify it unless Ahmed explicitly asks for that exact field <!-- updated 2026-04-09 -->
 
 ### Decision-Making Style
 - Researches before committing (reads GitHub READMEs, docs, comparisons)
 - Wants honest trade-off analysis, not cheerleading
 - Will push on "is there a better way" even after a solution is found
 - Thinks about long-term automation value, not one-off fixes
+- Retired Mission Control task logging. Do not use Mission Control / localhost:3001 task-board workflow unless Ahmed explicitly re-enables it. <!-- updated 2026-04-09 -->
 
 ### Job Search
 - Open to relocating to Jeddah, Saudi Arabia <!-- updated 2026-02-18 -->

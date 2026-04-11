@@ -1,0 +1,12 @@
+{
+  "date": "2026-04-06",
+  "started_at": "2026-04-06T06:03:09.985001+02:00",
+  "last_primed_at": "2026-04-06T06:03:09.985244+02:00",
+  "prime_status": "ok",
+  "prime_comments_drafted": 0,
+  "publish_status": "completed_no_watchdog",
+  "engage_status": "skipped_no_post",
+  "last_collected_at": "2026-04-06T06:03:15.988001+02:00",
+  "collect_status": "ok",
+  "last_run": "2026-04-06T06:03:09.985001+02:00"
+}

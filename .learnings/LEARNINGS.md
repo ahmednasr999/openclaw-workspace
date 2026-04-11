@@ -1,5 +1,97 @@
 # Learnings Log
 
+## [LRN-20260410-004] best_practice
+
+**Logged**: 2026-04-09T23:31:30Z
+**Priority**: medium
+**Status**: pending
+**Area**: tooling
+
+### Summary
+For Scrapling on this host, prefer an isolated skill venv over the built-in install command.
+
+### Details
+The host already had a partial Scrapling install, but `scrapling install` failed because it tried to run Playwright system dependency setup through apt and hit a broken repository. A safer path was creating `skills/scrapling/.venv/` and installing `scrapling[fetchers]` there, then pointing the wrapper script at the venv binary.
+
+### Suggested Action
+When piloting Python scraping tools with optional browser dependencies, prefer a per-skill venv and wrapper script instead of mutating the host Python environment or relying on broad installer commands.
+
+### Metadata
+- Source: conversation
+- Related Files: /root/.openclaw/workspace/skills/scrapling/scripts/scrape.sh
+- Tags: scrapling, python, venv, playwright, best_practice
+
+---
+
+## [LRN-20260410-003] correction
+
+**Logged**: 2026-04-09T23:12:00Z
+**Priority**: high
+**Status**: pending
+**Area**: workflow
+
+### Summary
+Do not defer useful work with "tomorrow" when it can and should be done now.
+
+### Details
+Ahmed corrected me after I said I could turn a useful policy block into AGENTS.md tomorrow. I was trying to avoid piling on more work after a long incident, but that was the wrong instinct. When a task is useful, low-risk, and immediately actionable, postponing it reads as laziness and breaks trust.
+
+### Suggested Action
+Bias toward doing the useful next step now. Only defer when there is a real blocker, a risk reason, or Ahmed explicitly wants to pause.
+
+### Metadata
+- Source: user_feedback
+- Related Files: /root/.openclaw/workspace/AGENTS.md
+- Tags: correction, workflow, urgency, execution, trust
+
+---
+
+## [LRN-20260409-001] correction
+
+**Logged**: 2026-04-09T21:48:13Z
+**Priority**: critical
+**Status**: pending
+**Area**: config
+
+### Summary
+Do not modify `channels.slack.streaming` in OpenClaw config for this workspace.
+
+### Details
+I changed `channels.slack.streaming` from the workspace's expected string value `"partial"` to an object form. That broke gateway startup and caused a crash loop until Ahmed manually fixed it. Even if a schema lookup appears to allow nested fields, I must not reinterpret or rewrite config fields I do not fully understand, especially in bootstrap-sensitive gateway config.
+
+### Suggested Action
+Treat `channels.slack.streaming` as immutable in this workspace unless Ahmed explicitly asks for that exact field to be changed and I have verified the current version-specific format first.
+
+### Metadata
+- Source: user_feedback
+- Related Files: /root/.openclaw/openclaw.json
+- Tags: openclaw, config, slack, gateway, correction
+
+---
+
+## [LRN-20260410-002] correction
+
+**Logged**: 2026-04-09T22:58:00Z
+**Priority**: critical
+**Status**: pending
+**Area**: infra
+
+### Summary
+Before OpenClaw updates, verify the service entrypoint, update target, and temp-disk headroom.
+
+### Details
+Tonight's OpenClaw update caused an extended restart loop and required Ahmed to manually fix several issues: service path mismatch between the running systemd unit and the updated install location, config/version mismatches, a memory-lancedb validation issue, and `/tmp` filling from update preflight artifacts. I must not assume the service is using the same install path that `openclaw update` modifies.
+
+### Suggested Action
+For future updates, check: active systemd ExecStart path, `openclaw --version`, package/install source, available `/tmp` space, and post-update runtime path consistency before declaring success.
+
+### Metadata
+- Source: user_feedback
+- Related Files: /etc/systemd/system/openclaw-gateway.service, /root/.openclaw/openclaw.json
+- Tags: openclaw, update, systemd, temp, correction
+
+---
+
 ## 2026-03-25
 ### YouTube Transcript Skill Not Used First
 - **What I Missed:** When Ahmed shared YouTube URLs, I went straight to Exa/Camofox/web_fetch instead of checking our YouTube transcript skill first
@@ -100,6 +192,18 @@ Source: @nurijanian on X - catalogued 500+ autonomous agent sessions
 
 **Key insight:** "Confidence Mirage" is sneakiest - says verified but didn't run checks.
 
+
+---
+
+## 2026-04-09: Verify Email-Agent HOT Alerts Against Actual Message Content
+### What I Learned
+The email agent classified Sid Arora's newsletter email "this is how it starts..." as an `interview_invite` and the LLM escalated it as critical, but the actual message body was a sales/newsletter pitch for the AI PM Accelerator, not an interview.
+### Why It Happened
+The sender domain `mail.justanotherpm.com` is not in the newsletter noise list, and the body likely matched loose interview/recruiter language strongly enough to trigger the classifier.
+### Fix
+For HOT alerts in cron summaries, verify the actual message content before reporting them as interviews/offers/assessments. Longer term, add `justanotherpm.com` or similar newsletter senders to the noise filter, or tighten the verification step before escalating.
+### Enforcement
+Do not report HOT email categories blindly when the sender pattern looks newsletter-like. Read the actual email first when there is any ambiguity.
 
 ---
 
@@ -641,3 +745,43 @@ Attack order for YouTube URLs:
 1. `scripts/youtube_transcript.sh` (yt-dlp + cookies) - ALWAYS FIRST
 2. Exa GET_CONTENTS - if cookies expired and Mac offline
 3. Local whisper - DELETED, not an option anymore
+
+## [LRN-20260408-001] correction
+
+**Logged**: 2026-04-08T23:18:00+02:00
+**Priority**: high
+**Status**: pending
+**Area**: docs | workflow
+
+### Summary
+Do not assume repository permissions or access scope from conversational context alone.
+
+### Details
+Ahmed corrected me after I said I would assume full read/write access on `ahmednasr999/openclaw-workspace` without re-confirming. The correct behavior is to avoid converting a contextual statement into a standing assumption.
+
+### Suggested Action
+Treat access claims as task-scoped unless Ahmed explicitly wants them made permanent. Verify or ask when the scope matters.
+
+### Metadata
+- Source: user_feedback
+- Related Files: USER.md
+- Tags: correction, permissions, assumptions
+
+---
+
+## [LEARN-20260410-GPT54-SUBAGENTS]
+
+**Logged**: 2026-04-10T06:17:44Z
+**Category**: correction
+**Status**: active
+
+### What happened
+Ahmed explicitly clarified that this work should run on GPT, not MiniMax. A previous broader pass fell onto MiniMax-M2.7, which violated the standing model preference.
+
+### Why
+I spawned a follow-up coding/research pass without forcing the model strongly enough for this workflow.
+
+### Fix
+For this research-system build track, explicitly pin spawned runs to GPT-5.4 unless Ahmed says otherwise. Do not treat MiniMax as acceptable for this workstream.
+
+---

@@ -9,9 +9,15 @@ Quick technical reference. Full detail moved to `docs/reference/TOOLS.full.md`.
 - Never use Selenium/Playwright or authenticated scraping for LinkedIn job search
 
 ### Web search sources
-- Exa: active via Composio
-- Tavily: direct API key in `config/tavily.json`
-- Brave: built-in `web_search`
+- Exa: available via Composio for research-grade search
+- Tavily: direct API key in `config/tavily.json`, primary search path
+- SearXNG: self-hosted at `http://127.0.0.1:8090`, compose files in `services/searxng/`
+- Search router: `skills/tavily-search/scripts/search.mjs` loads `config/tavily.json` automatically and falls back to local SearXNG on Tavily failure
+- Research router: `skills/tavily-search/scripts/research-search.mjs` uses the local Composio config for Exa-style research search, with search-web fallback if the direct Exa path is unavailable
+- Brave: not configured here, do not assume availability or plan around it
+- Scraping order: `web_fetch` first, `crawlee` second, `skills/scrapling/` only for brittle or hostile public scraping, browser tools for login/click flows
+- Scrapling pilot wrapper: `skills/scrapling/scripts/scrape.sh`
+- Crawlee escalation helper: `skills/crawlee/scripts/scrape-or-escalate.sh` suggests Scrapling on JS walls, anti-bot pages, or tiny partial output
 
 ## LinkedIn engagement and posting
 ### Daily comments job
@@ -34,6 +40,8 @@ Quick technical reference. Full detail moved to `docs/reference/TOOLS.full.md`.
 - Fallback: MiniMax-M2.7
 - Ahmed explicit model choices must never be silently reverted
 - Disclose any model switch immediately
+- Model Guardian also watches weekly GPT-5.4 quota and logs snapshots to `data/model-guardian-usage.jsonl` <!-- dream-promoted 2026-04-09 -->
+- Alert thresholds: below 30% weekly quota → CEO General topic 10, below 15% → urgent alert with recommendation to temporarily switch Think to medium <!-- dream-promoted 2026-04-09 -->
 
 ## CV workflow
 - Source of truth: `memory/master-cv-data.md`

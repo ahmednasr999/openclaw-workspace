@@ -92,26 +92,14 @@ This has caused 3+ incidents (Mar 23: LinkedIn truncation, Mar 29: wrong image p
 
 ---
 
-## Task Board Rule (Non-Negotiable)
+## Task Board Rule (Historical)
 
-**Every task MUST be logged to the Mission Control Task Board BEFORE work starts.**
-- No exceptions. No model exceptions. Applies to ALL models, ALL agents, ALL sessions.
-- Use `POST http://localhost:3001/api/tasks/agent` with agent name, title, description
-- Status starts as "In Progress", update to "QA" or "Completed" when done
-- This includes: sub-agent spawns, cron jobs, manual work, code changes, research, content
-- If it's work, it's on the board. Period.
+Previous workflow used Mission Control task logging at `http://localhost:3001/api/tasks/agent`.
 
----
-
-## Model Strategy
-
-| Task | Model | Notes |
-|------|-------|-------|
-| Default (ALL agents) | GPT-5.4 | Primary via OpenAI Codex OAuth |
-| Fallback | None | Disabled — GPT-5.4 is always used |
-| CV creation/review | GPT-5.4 | No switch needed |
-
-**Rule:** GPT-5.4 is the default for ALL agents (CEO, HR, CTO, CMO). auto_switch_back is disabled. MiniMax is completely retired.
+**Override from Ahmed on 2026-04-09:** No more Mission Control.
+- Do not log tasks to Mission Control
+- Do not treat localhost:3001 task-board failures as blockers
+- Only resume this workflow if Ahmed explicitly asks to re-enable it
 
 ---
 
@@ -286,14 +274,9 @@ If it reverted, fix it before doing anything else. This has happened twice (Apr 
 **Last run result:** ALL_OK (model-router correct, 118 GPT-5.4 calls in today's log)
 
 ### Watchlist
-- OpenAI Codex OAuth token expires in ~238 hours, confirm auto-refresh works
-- MiniMax is retired — do not use it unless Ahmed explicitly asks
-- Slack pong timeouts may still appear, monitor but don't act unless it causes message drops
-- stale `plugins.allow` entries (`auth`, `send`) are cosmetic, remove when convenient
-
-### Watchlist
-- OpenAI Codex OAuth token — monitor for expiry, alert Ahmed if issues arise
-- Slack pong timeouts may still appear, monitor but don't act unless it causes message drops
+- OpenAI Codex OAuth token — monitor expiry and confirm auto-refresh works
+- MiniMax is retired, do not use it unless Ahmed explicitly asks
+- Slack pong timeouts may still appear, monitor but don't act unless they cause message drops
 - stale `plugins.allow` entries (`auth`, `send`) are cosmetic, remove when convenient
 
 ### Standing Order

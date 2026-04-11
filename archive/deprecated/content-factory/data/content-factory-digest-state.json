@@ -1,0 +1,87 @@
+{
+  "last_digest": "2026-04-03T21:13:33.838978+02:00",
+  "message_id": 39438,
+  "articles": [
+    {
+      "index": 1,
+      "page_id": "32f8d599-a162-8125-99b8-e3e1b85b9dbe",
+      "title": "An AI Reckoning for HR: Transform or Fade Away",
+      "url": "https://sloanreview.mit.edu/article/an-ai-reckoning-for-hr-transform-or-fade-away/",
+      "format_score": 6.8,
+      "formats": [
+        "Namejacking"
+      ],
+      "angle": "[Leader name] just said something about Digital Transformation that every exec should hear",
+      "categories": [
+        "Digital Transformation"
+      ],
+      "status": "pending"
+    },
+    {
+      "index": 2,
+      "page_id": "3308d599-a162-81d3-ade8-c41a6004d655",
+      "title": "Strategy Deployment: Are You Playing Catch Ball or Chucking Rocks?",
+      "url": "https://www.leanblog.org/2026/03/strategy-deployment-catch-ball-chuck-rock/",
+      "format_score": 5.8,
+      "formats": [
+        "Brandjacking",
+        "Hot Take"
+      ],
+      "angle": "What Meta's move teaches us about [transformation/AI/leadership]",
+      "categories": [
+        "Operation Excellence"
+      ],
+      "status": "pending"
+    },
+    {
+      "index": 3,
+      "page_id": "3308d599-a162-81d2-a90c-f19c5471bedd",
+      "title": "Joe Liemandt: Alpha School\u00a0and the Future of Education",
+      "url": "https://fs.blog/knowledge-project-podcast/joe-liemandt/",
+      "format_score": 4.7,
+      "formats": [
+        "Brandjacking",
+        "Namejacking",
+        "Hot Take"
+      ],
+      "angle": "What Apple's move teaches us about [transformation/AI/leadership]",
+      "categories": [
+        "Strategy"
+      ],
+      "status": "pending"
+    },
+    {
+      "index": 4,
+      "page_id": "32f8d599-a162-8147-9e87-d0a9e1de691f",
+      "title": "Legacy systems present modern challenges at the VA",
+      "url": "https://www.mobihealthnews.com/video/legacy-systems-present-modern-challenges-va",
+      "format_score": 4.4,
+      "formats": [
+        "Brandjacking",
+        "Newsjacking",
+        "Namejacking",
+        "Hot Take"
+      ],
+      "angle": "Breaking: Legacy systems present modern challenges at the VA... Here's what this means for [your industry]",
+      "categories": [
+        "HealthTech"
+      ],
+      "status": "pending"
+    },
+    {
+      "index": 5,
+      "page_id": "32f8d599-a162-8151-99b4-eb1b762e3fa3",
+      "title": "Healthcare Workplace Violence Is a Billion-Dollar Crisis; Integrating Scalable IT Security Solutions",
+      "url": "https://www.healthcareittoday.com/2026/03/25/healthcare-workplace-violence-is-a-billion-dollar-crisis-integrating-scalable-it-security-solutions-should-be-industry-leaders-top-priority/",
+      "format_score": 4.4,
+      "formats": [
+        "Namejacking"
+      ],
+      "angle": "[Leader name] just said something about Healthcare that every exec should hear",
+      "categories": [
+        "Healthcare"
+      ],
+      "status": "pending"
+    }
+  ]
+}
