@@ -3,8 +3,9 @@
 jobs-source-indeed.py — Indeed job source adapter using python-jobspy.
 
 Uses python-jobspy library to scrape Indeed jobs.
-Searches 22 titles x top 3 countries only.
-48h lookback window.
+Weekly-only tertiary source.
+Searches a narrow title set across UAE + Saudi only.
+72h lookback window.
 
 Output: data/jobs-raw/indeed.json
 """
@@ -33,17 +34,30 @@ is_dry_run = agent_common.is_dry_run
 JOBS_RAW_DIR = agent_common.JOBS_RAW_DIR
 
 # Import from jobs_source_common
-ALL_TITLES = jobs_source_common.ALL_TITLES
-PRIORITY_COUNTRIES = jobs_source_common.PRIORITY_COUNTRIES
+PRIORITY_COUNTRIES = jobs_source_common.PRIORITY_COUNTRIES[:2]  # UAE, Saudi only - throttle noise
 COUNTRY_SEARCH_TERMS = jobs_source_common.COUNTRY_SEARCH_TERMS
 standard_job_dict = jobs_source_common.standard_job_dict
+
+# Indeed is noisy, so keep a narrow, high-value title set only.
+ALL_TITLES = [
+    "PMO Director",
+    "Head of PMO",
+    "Program Director",
+    "Director Digital Transformation",
+    "Head of Digital Transformation",
+    "Chief Technology Officer",
+    "Chief Information Officer",
+    "Head of Technology",
+    "Head of IT",
+    "IT Director",
+]
 
 # Configuration
 AGENT_NAME = "jobs-source-indeed"
 OUTPUT_FILE = JOBS_RAW_DIR / "indeed.json"
-RESULTS_PER_SEARCH = 10
-HOURS_OLD = 48
-RATE_LIMIT_DELAY = 1.5
+RESULTS_PER_SEARCH = 8
+HOURS_OLD = 72
+RATE_LIMIT_DELAY = 1.8
 
 # Indeed country codes
 # JobSpy requires full country names (not 2-letter codes)

@@ -112,3 +112,16 @@ git push origin master
 3. **Master CV data freshness (general):** Before loading `memory/master-cv-data.md`, check `memory/cv-pending-updates.md` for any PENDING entries older than 7 days. If found, apply them or flag for Ahmed review. Stale pending updates cause CV data to drift.
 
 **Action:** Added these as implicit pre-flight checks. The quality gates already cover post-gen validation, but these pre-gen checks prevent waste earlier in the pipeline.
+
+### 2026-04-11 — Weekly Skill Tune-Up
+
+**Reviewed signals:**
+- 2026-03-16, never cut CV quality or tailoring depth without explicit approval
+- 2026-03-18, never recommend or score from title-only without the full JD
+- 2026-03-24, every generated CV needs visual review, not just automated validation
+
+**Improvements to keep active:**
+1. **Make the quality tradeoff explicit before batch work.** If more than 3 CVs are requested, the skill should force a decision between fully tailored output and faster template-assisted output before any drafting starts.
+2. **Promote full-JD proof to a visible gate.** Step 0 already requires the complete JD, but delivery should also state where that JD came from so title-only shortcuts cannot creep back in.
+3. **Add a human-eye final check to the written workflow.** Step 5 currently points to automated gates; the skill should also require a rendered visual review of page 1 and page 2 before delivery, especially for header/footer artifacts and spacing drift.
+4. **Create an explicit `eval/checklist.md`.** This skill has strong eval files, but not one compact final checklist. Adding one would reduce missed steps during hurried runs.

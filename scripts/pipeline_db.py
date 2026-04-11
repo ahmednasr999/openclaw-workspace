@@ -75,6 +75,9 @@ CREATE TABLE IF NOT EXISTS jobs (
     status          TEXT DEFAULT 'discovered',
     applied_date    TEXT,
     applied_via     TEXT,
+    application_date TEXT,
+    callback_received INTEGER DEFAULT 0,
+    interview_stage TEXT,
 
     recruiter_name  TEXT,
     recruiter_email TEXT,
@@ -195,6 +198,20 @@ def _get_conn() -> sqlite3.Connection:
     return conn
 
 
+def _ensure_jobs_columns(conn: sqlite3.Connection):
+    """Add newly required columns without forcing a table rebuild."""
+    required = {
+        "application_date": "ALTER TABLE jobs ADD COLUMN application_date TEXT",
+        "callback_received": "ALTER TABLE jobs ADD COLUMN callback_received INTEGER DEFAULT 0",
+        "interview_stage": "ALTER TABLE jobs ADD COLUMN interview_stage TEXT",
+        "callback_date": "ALTER TABLE jobs ADD COLUMN callback_date TEXT",
+    }
+    existing = {r[1] for r in conn.execute("PRAGMA table_info(jobs)").fetchall()}
+    for col, sql in required.items():
+        if col not in existing:
+            conn.execute(sql)
+
+
 def init_db():
     """Create tables if they don't exist. Safe to call multiple times."""
     if not ENABLED:
@@ -202,6 +219,7 @@ def init_db():
     try:
         conn = _get_conn()
         conn.executescript(SCHEMA)
+        _ensure_jobs_columns(conn)
         conn.commit()
         conn.close()
         log.debug("DB initialized at %s", DB_PATH)
@@ -495,7 +513,7 @@ def register_job(
         allowed_columns = {
             "ats_score", "fit_score", "verdict", "score_notes",
             "cv_path", "cv_html_path", "cv_cluster", "cv_built_at",
-            "applied_date", "applied_via",
+            "applied_date", "applied_via", "application_date", "callback_received", "callback_date", "interview_stage",
             "recruiter_name", "recruiter_email", "recruiter_company", "recruiter_phone",
             "follow_up_date", "next_action",
             "salary_range", "salary_currency",

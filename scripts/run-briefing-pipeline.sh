@@ -267,7 +267,7 @@ case "$MODE" in
         log "=== DATA AGENTS (every 2h) ==="
         run_parallel "Data Agents" \
             "pipeline"  "pipeline-agent.py"  30 \
-            "email"     "email-agent.py"    180 \
+            "email"     "email-agent-gated.py" 180 \
             "outreach"  "outreach-agent.py"  180 \
             "system"    "system-agent.py"    30
         ;;

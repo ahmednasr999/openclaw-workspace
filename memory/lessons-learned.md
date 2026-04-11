@@ -511,3 +511,26 @@ I optimized for speed and collapsed a task-scoped clarification into a permanent
 ### Fix
 Do not assume repo permissions or access scope from prior chat context alone. Verify when it matters, or let Ahmed specify the access level for the current task.
 
+## 2026-04-11 - Telegram media send requires allowed directory
+### What I Missed
+Tried sending JobZoom report and ZIP directly from /root/.openclaw/workspace-jobzoom/reports/ via the message tool. The send failed because local media paths must be under an allowed directory.
+### Why
+I assumed the message tool would accept any local absolute path.
+### Fix
+Before sending local files through the message tool, copy them into /root/.openclaw/media (or another allowed media directory) first, then send that path.
+
+## 2026-04-11 - Cross-agent model leaks can come from workspace-local routers and persisted session overrides
+### What I got wrong
+I said the other agents were effectively on GPT after checking the main workspace and cron payloads, but I missed two live leakage paths: agent-specific `workspace-*/config/model-router.json` files and persisted `modelOverride` values inside agent session stores.
+### Why
+I verified the global router and cron jobs, but did not inspect the per-agent workspace configs and existing session JSON for CMO, HR, and CTO.
+### Fix
+When Ahmed reports an agent thread still showing MiniMax or another old model, inspect all three layers before claiming it is fixed: global router, agent workspace router, and persisted session overrides in `/root/.openclaw/agents/*/sessions/sessions.json`.
+
+## 2026-04-11 - Patch the current topic session entry, not just prior agent sessions
+### What I got wrong
+I updated old agent session metadata and router files, but Ahmed's next `/reset` created a new live topic session entry that still carried a MiniMax override.
+### Why
+I fixed historical session entries and config, but I did not re-check the newly active `sessionId` for the topic after reset.
+### Fix
+When debugging agent thread model issues, always inspect the current topic key in `/root/.openclaw/agents/<agent>/sessions/sessions.json` after the user's latest reset and patch that exact live entry if it still has `modelOverride` or stale `systemPromptReport` values.

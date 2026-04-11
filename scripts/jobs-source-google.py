@@ -53,9 +53,10 @@ except ImportError:
 AGENT_NAME = "jobs-source-google"
 OUTPUT_FILE = JOBS_RAW_DIR / "google-jobs.json"
 CONFIG_FILE = Path("/root/.openclaw/openclaw.json")
+WATCHLIST_FILE = DATA_DIR / "sayyad-company-watchlist.json"
 COMPOSIO_MCP_URL = "https://connect.composio.dev/mcp"
 RATE_LIMIT_DELAY = 1.2  # seconds between Exa calls
-RECENCY_DAYS = 14
+RECENCY_DAYS = 10
 
 # ── GCC job boards to discover (NOT already covered by our linkedin/indeed sources) ──
 DISCOVERY_BOARDS = [
@@ -66,14 +67,14 @@ DISCOVERY_BOARDS = [
     "jobaaj.com", "interviewpal.com",
 ]
 
-# Consolidated title groups for keyword searches
+# Consolidated title groups for keyword searches.
+# Google is our highest-yield discovery source, so bias toward Ahmed's exact role lanes.
 TITLE_GROUPS = [
     '"Director Digital Transformation" OR "VP Digital Transformation" OR "Head of Digital Transformation" OR "Chief Digital Officer"',
-    '"Chief Technology Officer" OR "CTO" OR "Chief Information Officer" OR "CIO" OR "VP Technology" OR "Head of Technology"',
-    '"Head of IT" OR "IT Director" OR "VP Engineering" OR "Director of Engineering"',
-    '"Chief Operating Officer" OR "Chief Strategy Officer" OR "Chief Product Officer" OR "VP Operations"',
-    '"PMO Director" OR "Program Director" OR "Head of PMO" OR "VP of Programs"',
-    '"Head of Transformation" OR "Transformation Lead" OR "Director of Innovation" OR "Digital Director"',
+    '"Chief Technology Officer" OR "CTO" OR "Chief Information Officer" OR "CIO" OR "Head of Technology" OR "IT Director" OR "Head of IT"',
+    '"PMO Director" OR "Program Director" OR "Head of PMO" OR "Director of Program Management"',
+    '"Portfolio Director" OR "Delivery Director" OR "Head of Delivery" OR "EPMO Director" OR "Programme Manager"',
+    '"Head of Transformation" OR "Business Excellence Director" OR "Operational Excellence Director" OR "Transformation Director"',
 ]
 
 LOCATION_GROUPS = [
@@ -85,11 +86,12 @@ LOCATION_GROUPS = [
 
 # For auto+includeDomains searches (more specific)
 AUTO_TITLE_GROUPS = [
-    "Director OR VP digital transformation technology hiring",
-    "CTO OR CIO OR CDO OR Chief Technology Officer hiring",
-    "Head of IT OR IT Director OR VP Engineering hiring",
-    "Program Director OR PMO Director OR VP Operations hiring",
-    "Head of Transformation OR Digital Director OR Innovation Director hiring",
+    "Director OR VP digital transformation technology hiring GCC",
+    "CTO OR CIO OR Chief Technology Officer hiring GCC",
+    "Head of IT OR IT Director OR Head of Technology hiring GCC",
+    "Program Director OR PMO Director OR Director of Program Management hiring GCC",
+    "Portfolio Director OR Delivery Director OR EPMO Director hiring GCC",
+    "Head of Transformation OR Business Excellence Director hiring GCC",
 ]
 
 AUTO_LOCATION_GROUPS = [
@@ -111,7 +113,6 @@ SINGLE_JOB_PATTERNS = [
     r'drjobpro\.com/.*job/',
     r'jooble\.org/jdp/',
     r'michaelpage\..+/job-detail/',
-    r'wuzzuf\.net/jobs/p/',
     r'jobaaj\.com/job/',
     r'interviewpal\.com/jobs/\d+',
     r'founditgulf\.com/job/',
@@ -126,7 +127,7 @@ NOISE_PATTERNS = [
     r'digitaljournal\.com', r'cio\.com/article/',
     r'eyeofriyadh\.com', r'globalaishow\.com',
     r'milestonesglobal\.com', r'svarecruitment\.com',
-    r'mitsloanme\.com',
+    r'mitsloanme\.com', r'wuzzuf\.net',
 ]
 
 LOCATION_MAP = {
@@ -143,6 +144,17 @@ def load_composio_key() -> str:
         return config.get("plugins", {}).get("entries", {}).get("composio", {}).get("config", {}).get("consumerKey", "")
     except Exception:
         return ""
+
+
+def load_watchlist() -> dict:
+    try:
+        data = load_json(WATCHLIST_FILE)
+        return {
+            "priority_companies": data.get("priority_companies", []),
+            "priority_domains": data.get("priority_domains", []),
+        }
+    except Exception:
+        return {"priority_companies": [], "priority_domains": []}
 
 
 def mcp_call(method: str, params: dict, consumer_key: str, timeout: int = 45) -> dict | None:
@@ -329,7 +341,7 @@ def extract_job_from_exa_result(result: dict) -> dict | None:
     title = re.sub(
         r'\s*[\|–\-]\s*(LinkedIn|Indeed|GulfTalent|Glassdoor|Bayt\.com|NaukriGulf|'
         r'Michael Page|Hays|Robert Half|FounditGulf|CareerJet|Jooble|DrJobPro|'
-        r'Apply Now|Wuzzuf|Jobaaj|InterviewPal).*$',
+        r'Apply Now|Jobaaj|InterviewPal).*$',
         '', raw_title, flags=re.IGNORECASE
     ).strip()
 
@@ -510,6 +522,90 @@ def parse_jobs_from_listing_text(text: str, page_url: str) -> list[dict]:
     return jobs
 
 
+BAD_TITLE_PHRASES = [
+    "didn't find the right",
+    "create job alert",
+    "job alert to receive",
+    "refine your search",
+    "search results for",
+]
+
+EMPLOYMENT_TYPE_LOCATIONS = {
+    "permanent", "temporary", "contract", "full time", "part time",
+}
+
+LOCATION_LIKE_COMPANIES = {
+    "united arab emirates", "uae", "saudi arabia", "riyadh", "jeddah",
+    "dubai", "abu dhabi", "qatar", "doha", "oman", "muscat",
+    "kuwait", "kuwait city", "bahrain", "manama",
+}
+
+GENERIC_COMPANY_WORDS = {
+    "infrastructure", "semi", "government", "contractor", "telecom",
+    "retail", "healthcare", "banking", "technology",
+}
+
+
+def normalize_google_job(job: dict) -> dict:
+    """Clean obvious title/company formatting artefacts before malformed checks."""
+    normalized = dict(job)
+    title = (normalized.get("title", "") or "").strip()
+    company = (normalized.get("company", "") or "").strip()
+    url = (normalized.get("url", "") or "").strip().lower()
+
+    title = re.sub(r'^\s*[#*\-]+\s*', '', title).strip()
+
+    if "jobaaj.com/job/" in url:
+        title = re.sub(r'^Apply to\s+', '', title, flags=re.IGNORECASE).strip()
+        title = re.sub(r'\s+Job$', '', title, flags=re.IGNORECASE).strip()
+        if company.lower() in LOCATION_LIKE_COMPANIES:
+            company = "Confidential"
+
+    by_match = re.match(r'^(.*?)\s*\|\s*Jobs?\s+in\s+.+?\s+by\s+(.+)$', title, re.IGNORECASE)
+    if by_match:
+        title = by_match.group(1).strip()
+        if company.lower() == "confidential":
+            company = by_match.group(2).strip()
+
+    normalized["title"] = title
+    normalized["company"] = company
+    return normalized
+
+
+def is_malformed_google_job(job: dict) -> tuple[bool, str]:
+    """Drop listing-page boilerplate or malformed rows before DB write."""
+    title = (job.get("title", "") or "").strip().lower()
+    company = (job.get("company", "") or "").strip().lower()
+    location = (job.get("location", "") or "").strip().lower()
+    url = (job.get("url", "") or "").strip().lower()
+
+    if any(phrase in title for phrase in BAD_TITLE_PHRASES):
+        return True, "bad-title-phrase"
+
+    if company in {"create an alert", "create job alert"}:
+        return True, "alert-boilerplate"
+
+    if location.startswith("create job alert") or location.startswith("job alert to receive"):
+        return True, "alert-location"
+
+    if location in EMPLOYMENT_TYPE_LOCATIONS:
+        return True, "employment-type-as-location"
+
+    if "michaelpage" in url and company in LOCATION_LIKE_COMPANIES:
+        return True, "location-as-company"
+
+    if "michaelpage" in url and company in GENERIC_COMPANY_WORDS:
+        return True, "generic-company-from-listing"
+
+    if title != title.lstrip('#*- ').strip():
+        return True, "markdown-title-artifact"
+
+    if company in GENERIC_COMPANY_WORDS and location in {"government", "semi-government", "tier 1 contractor - dubai"}:
+        return True, "generic-company-location-pair"
+
+    return False, "ok"
+
+
 def run_google_scanner(result: AgentResult):
     """Main scanner: three-phase Exa search → classify → extract."""
 
@@ -537,6 +633,9 @@ def run_google_scanner(result: AgentResult):
     print("  MCP session initialized ✓")
 
     start_date = (datetime.now() - timedelta(days=RECENCY_DAYS)).strftime("%Y-%m-%d")
+    watchlist = load_watchlist()
+    watch_companies = watchlist.get("priority_companies", [])
+    watch_domains = watchlist.get("priority_domains", [])
     all_exa_results = []
     searches_run = 0
     errors = 0
@@ -606,6 +705,46 @@ def run_google_scanner(result: AgentResult):
         time.sleep(RATE_LIMIT_DELAY)
 
     print(f"  Neural done: {len(all_exa_results) - before_neural} new results")
+
+    # ── Phase 1d: Watchlist company discovery ─────────────────────────────
+    if watch_companies:
+        print(f"\n=== Phase 1d: Watchlist company discovery ({len(watch_companies)} queries) ===")
+        before_watch = len(all_exa_results)
+        for company in watch_companies:
+            searches_run += 1
+            query = f'("{company}" AND ("digital transformation" OR PMO OR "program director" OR CTO OR CIO OR "head of IT" OR "business excellence")) GCC job 2026'
+            results = exa_search(query, consumer_key, search_type="keyword", num_results=10, start_date=start_date)
+            if results:
+                for item in results:
+                    item["watchlist_company"] = company
+                all_exa_results.extend(results)
+            else:
+                errors += 1
+            time.sleep(RATE_LIMIT_DELAY)
+        print(f"  Watchlist done: {len(all_exa_results) - before_watch} new results")
+
+    # ── Phase 1e: Watchlist career page discovery ──────────────────────────
+    if watch_companies:
+        print(f"\n=== Phase 1e: Watchlist career-page discovery ({len(watch_companies)} queries) ===")
+        before_careers = len(all_exa_results)
+        for company in watch_companies:
+            searches_run += 1
+            query = f'("{company}" AND (careers OR jobs OR hiring) AND ("digital transformation" OR PMO OR "program director" OR CTO OR CIO OR "head of IT")) GCC'
+            results = exa_search(
+                query, consumer_key, search_type="keyword", num_results=8,
+                include_domains=["bayt.com", "gulftalent.com", "greenhouse.io", "lever.co", "smartrecruiters.com", "workday.com"],
+                start_date=start_date,
+            )
+            if results:
+                for item in results:
+                    item["watchlist_company"] = company
+                    item["watchlist_careers"] = True
+                all_exa_results.extend(results)
+            else:
+                errors += 1
+            time.sleep(RATE_LIMIT_DELAY)
+        print(f"  Career-page discovery done: {len(all_exa_results) - before_careers} new results")
+
     print(f"\nPhase 1 total: {len(all_exa_results)} raw results from {searches_run} queries ({errors} errors)")
 
     # ── Phase 2: Classify URLs ──────────────────────────────────────────
@@ -677,13 +816,39 @@ def run_google_scanner(result: AgentResult):
     # Dedup all_jobs by URL
     final_jobs = []
     final_urls = set()
-    for j in all_jobs:
+    malformed_filtered = 0
+    for raw_job in all_jobs:
+        j = normalize_google_job(raw_job)
+        malformed, malformed_reason = is_malformed_google_job(j)
+        if malformed:
+            malformed_filtered += 1
+            j["filter_reason"] = malformed_reason
+            continue
         url = j.get("url", "")
         if url not in final_urls:
             final_urls.add(url)
             final_jobs.append(j)
 
+    if malformed_filtered:
+        print(f"  Malformed rows filtered: {malformed_filtered}")
+
+    watch_company_hits = 0
+    watch_domain_hits = 0
+    for j in final_jobs:
+        company_lower = (j.get("company", "") or "").lower()
+        text_blob = f"{j.get('title','')} {j.get('raw_snippet','')} {j.get('company','')}".lower()
+        matched_companies = [c for c in watch_companies if c.lower() in company_lower]
+        matched_domains = [d for d in watch_domains if d.lower() in text_blob]
+        if matched_companies:
+            watch_company_hits += 1
+            j["watchlist_company"] = matched_companies[0]
+        if matched_domains:
+            watch_domain_hits += 1
+            j["watchlist_domain"] = matched_domains[0]
+
     print(f"\n=== Final: {len(final_jobs)} unique relevant jobs ===")
+    if watch_company_hits or watch_domain_hits:
+        print(f"  Watchlist hits: company={watch_company_hits}, domain={watch_domain_hits}")
 
     if _pdb:
         try:
@@ -731,12 +896,14 @@ def run_google_scanner(result: AgentResult):
         "exa_results_raw": len(all_exa_results),
         "single_jobs_direct": stats.get("single_job", 0),
         "listing_pages_found": stats.get("listing_page", 0),
-        "listing_pages_extracted": min(len([u for u in listing_pages if any(b in u for b in ["bayt", "gulftalent", "glassdoor", "michaelpage", "founditgulf", "wuzzuf"])]), 15),
+        "listing_pages_extracted": min(len([u for u in listing_pages if any(b in u for b in ["bayt", "gulftalent", "glassdoor", "michaelpage", "founditgulf"])]), 15),
         "noise_filtered": stats.get("noise", 0),
+        "malformed_filtered": malformed_filtered,
         "unique_jobs_final": len(final_jobs),
         "errors": errors,
         "exa_cost_estimate_usd": round(searches_run * 0.007 + min(len(listing_pages), 15) * 0.003, 3),
-        "strategy": "Exa keyword + auto(domain) + neural → classify → GET_CONTENTS",
+        "strategy": "Exa keyword + auto(domain) + neural + watchlist company discovery → classify → GET_CONTENTS",
+        "watchlist_companies": len(watch_companies),
     })
 
 

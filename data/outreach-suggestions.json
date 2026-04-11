@@ -1,27 +1,16 @@
 {
-  "generated": "2026-04-11T04:01:06.915457+00:00",
+  "generated": "2026-04-11T16:01:14.950233+00:00",
   "suggestions": [
     {
-      "name": "Atlantis HR Consulting Services & Solutions",
-      "role": "Founder",
-      "url": "https://www.linkedin.com/in/atlantis-hr-consulting-services-solutions-23825396",
-      "company": "Atlantis Resorts",
-      "signal_score": 15,
-      "source": "tavily",
-      "applied_role": "General Manager and Senior Vice President, Operations",
-      "applied_date": "2026-03-28",
-      "reason": "You applied for General Manager and Senior Vice President, Operations at Atlantis Resorts"
-    },
-    {
-      "name": "Monika Ward",
-      "role": "Emirates",
-      "url": "https://www.linkedin.com/in/monika-ward-985524185",
-      "company": "Atlantis Resorts",
+      "name": "Mark Williams",
+      "role": "JAM Recruitment",
+      "url": "https://www.linkedin.com/in/mark-williams-17620732",
+      "company": "Mark Williams Recruitment",
       "signal_score": 5,
       "source": "tavily",
-      "applied_role": "General Manager and Senior Vice President, Operations",
-      "applied_date": "2026-03-28",
-      "reason": "You applied for General Manager and Senior Vice President, Operations at Atlantis Resorts"
+      "applied_role": "Head of Information Technology",
+      "applied_date": "2026-03-27",
+      "reason": "You applied for Head of Information Technology at Mark Williams Recruitment"
     }
   ],
   "companies_searched": 10,

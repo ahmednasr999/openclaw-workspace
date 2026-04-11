@@ -45,60 +45,36 @@ ALL_TITLES = jobs_source_common.ALL_TITLES
 GCC_COUNTRIES = jobs_source_common.GCC_COUNTRIES
 standard_job_dict = jobs_source_common.standard_job_dict
 
+WATCHLIST_FILE = Path('/root/.openclaw/workspace/data/sayyad-company-watchlist.json')
+
 AGENT_NAME = "jobs-source-linkedin-jobspy"
 OUTPUT_FILE = JOBS_RAW_DIR / "linkedin.json"
 
 # JobSpy settings
-RESULTS_PER_SEARCH = 50
-HOURS_OLD = 720  # 30 days (still accepting apps, just age-rank lower)
+RESULTS_PER_SEARCH = 35
+HOURS_OLD = 336  # 14 days, fresher and lower noise
 RATE_LIMIT_DELAY = 2.0  # seconds between searches (be respectful)
 
-# Priority: top titles × all 6 GCC countries
+# Priority: prune LinkedIn to the role families that actually produce signal.
+# Broad searches are restricted to PMO / program / delivery roles only.
 PRIORITY_TITLES = [
-    # Core targets
     "PMO Director",
     "Head of PMO",
-    "Senior PMO Manager",
-    "Head of Business Excellence",
-    # Digital transformation
-    "Chief Digital Officer",
-    "VP Digital Transformation",
-    "Director Digital Transformation",
-    "Head of Digital Transformation",
-    "Transformation Director",
-    # Technology leadership
-    "Chief Technology Officer",
-    "Chief Information Officer",
-    "Head of Technology",
-    # Operations & strategy
-    "Chief Operating Officer",
-    "Chief Strategy Officer",
-    "VP Operations",
-    "VP Technology",
-    "Director of Strategy",
     "Director of Program Management",
     "Program Director",
-    # Innovation
-    "Director of Innovation",
-    "Head of Transformation",
-    # Added 2026-04-05 — critical missing roles
     "Delivery Director",
-    "Programme Manager",
     "Project Director",
     "Head of Delivery",
     "Portfolio Director",
-    "EPMO Director",
 ]
 
-# Cross-functional keyword searches — catches non-standard titles
-# (e.g. "Programme Delivery Director", "Associate Director - Transformation")
+# Cross-domain searches that match Ahmed's profile more tightly.
 KEYWORD_SEARCHES = [
-    "PMO",                          # all PMO roles regardless of title
-    "Digital Transformation",        # all DT roles regardless of title
-    "Portfolio Director OR PMO",     # combo for LinkedIn search
-    "Transformation Director",       # variant of transformation roles
-    "Head of Strategy",              # strategic leadership
-    "Operations Director",           # broad ops leadership
+    "Programme Delivery Director",
+    '"digital transformation" AND "director" AND "healthcare"',
+    '"PMO" AND ("payment" OR "fintech")',
+    '"program director" AND ("bank" OR "financial services")',
+    '"transformation" AND "head" AND "hospital"',
 ]
 
 # Location map: country → search location string for JobSpy
@@ -110,6 +86,14 @@ LOCATION_MAP = {
     "Kuwait": "Kuwait City, Kuwait",
     "Oman": "Muscat, Oman",
 }
+
+
+def load_watchlist_companies() -> list[str]:
+    try:
+        data = json.loads(WATCHLIST_FILE.read_text()) if WATCHLIST_FILE.exists() else {}
+        return data.get('priority_companies', [])[:12]
+    except Exception:
+        return []
 
 
 def scrape_linkedin_jobspy(title: str, location: str, country: str = "", dry_run: bool = False) -> list[dict]:
@@ -158,6 +142,9 @@ def scrape_linkedin_jobspy(title: str, location: str, country: str = "", dry_run
             )
             # Attach extra fields that merge step can use
             job["search_country"] = country  # critical for country extraction in merge step
+            job["search_title"] = title
+            # linkedin_id used by daily_run dedup (not set by standard_job_dict)
+            job["linkedin_id"] = f"li-{job_id}" if job_id and not str(job_id).startswith("li-") else str(job_id)
             if description:
                 job["jd_text"] = description
             if salary_raw:
@@ -194,9 +181,17 @@ def run_linkedin_jobspy(result: AgentResult):
         for kw in KEYWORD_SEARCHES
     ]
 
-    all_searches = search_pairs + KEYWORD_PAIRS
+    # Watchlist-company monitoring: capture recruiter activity and hiring signals for target companies
+    watchlist_companies = load_watchlist_companies()
+    WATCHLIST_PAIRS = [
+        (f'"{company}" ("Chief Technology Officer" OR CTO OR "Chief Information Officer" OR CIO OR "Head of Technology" OR "IT Director" OR "Head of IT" OR "Chief Digital Officer" OR CDO OR "VP Digital Transformation" OR "Head of Business Excellence" OR PMO OR transformation OR director)', loc_str, country_name, "watchlist-company")
+        for company in watchlist_companies
+        for country_name, loc_str in LOCATION_MAP.items()
+    ]
 
-    print(f"LinkedIn JobSpy: {len(all_searches)} searches ({len(search_pairs)} title + {len(KEYWORD_PAIRS)} keyword across {len(LOCATION_MAP)} countries)")
+    all_searches = search_pairs + KEYWORD_PAIRS + WATCHLIST_PAIRS
+
+    print(f"LinkedIn JobSpy: {len(all_searches)} searches ({len(search_pairs)} title + {len(KEYWORD_PAIRS)} keyword + {len(WATCHLIST_PAIRS)} watchlist-company across {len(LOCATION_MAP)} countries)")
     print(f"linkedin_fetch_description=True — full JDs via public API")
 
     if dry_run:
@@ -238,6 +233,7 @@ def run_linkedin_jobspy(result: AgentResult):
             "failed": failed_searches,
             "titles": len(PRIORITY_TITLES),
             "countries": len(LOCATION_MAP),
+            "watchlist_companies": watchlist_companies,
         }
     }
     with open(OUTPUT_FILE, "w") as f:

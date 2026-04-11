@@ -3,9 +3,13 @@
 # Runs at 3 AM Cairo via cron. Cleans JSONL sessions + sessions.json registry.
 # Safe: backs up sessions.json before pruning.
 
-SESSIONS_DIR="/root/.openclaw/agents/main/sessions"
-LOG="/root/.openclaw/workspace/logs/session-cleanup.log"
+set -euo pipefail
+
+SESSIONS_DIR="${SESSION_CLEANUP_DIR:-/root/.openclaw/agents/main/sessions}"
+LOG="${SESSION_CLEANUP_LOG:-/root/.openclaw/workspace/logs/session-cleanup.log}"
 TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+
+mkdir -p "$(dirname "$LOG")"
 
 echo "[$TIMESTAMP] Starting session cleanup" >> "$LOG"
 
@@ -14,7 +18,6 @@ ARCHIVED=0
 CUTOFF=$(date -d '1 day ago' +%s)
 for f in "$SESSIONS_DIR"/*.jsonl; do
     [ -f "$f" ] || continue
-    # Skip topic/channel sessions
     basename "$f" | grep -q "topic\|channel\|dm\|hook" && continue
     SIZE=$(stat -c%s "$f" 2>/dev/null || echo 0)
     MTIME=$(stat -c%Y "$f" 2>/dev/null || echo 0)
@@ -27,52 +30,82 @@ done
 
 # ── 2. Prune stale entries from sessions.json registry (keep < 3 days or persistent) ──
 SESSIONS_JSON="$SESSIONS_DIR/sessions.json"
+PRUNED=0
+REGISTRY_STATUS="missing"
+REGISTRY_BEFORE=0
+REGISTRY_AFTER=0
 if [ -f "$SESSIONS_JSON" ]; then
     SIZE_BEFORE=$(du -sh "$SESSIONS_JSON" | cut -f1)
-    cp "$SESSIONS_JSON" "${SESSIONS_JSON}.bak-$(date +%Y-%m-%d)" 2>/dev/null
+    cp "$SESSIONS_JSON" "${SESSIONS_JSON}.bak-$(date +%Y-%m-%d)" 2>/dev/null || true
 
-    python3 - << 'PYEOF'
-import json, os, time
+    PRUNE_ENV=$(mktemp)
+    python3 - "$SESSIONS_JSON" > "$PRUNE_ENV" <<'PYEOF'
+import json, os, sys, time
 
-src = '/root/.openclaw/agents/main/sessions/sessions.json'
+src = sys.argv[1]
 lock = src + '.lock'
 
-# Check lock - skip if locked
-if os.path.exists(lock):
-    print("sessions.json locked, skipping registry prune")
-    exit(0)
-
-with open(src) as f:
-    d = json.load(f)
-
-now = time.time() * 1000
-kept = {}
+status = 'ok'
+before = 0
+after = 0
 pruned = 0
 
-for k, v in d.items():
-    ua = v.get('updatedAt', 0)
-    age_days = (now - ua) / (1000 * 86400)
-    # Keep persistent sessions (topic/channel/dm) or < 3 days old
-    is_persistent = any(x in k for x in ['topic', 'channel', 'dm', 'telegram', 'signal', 'discord', 'whatsapp'])
-    if age_days < 3 or is_persistent:
-        kept[k] = v
+try:
+    if os.path.exists(lock):
+        status = 'locked'
     else:
-        pruned += 1
+        with open(src) as f:
+            data = json.load(f)
 
-with open(src, 'w') as f:
-    json.dump(kept, f)
+        now = time.time() * 1000
+        kept = {}
+        before = len(data)
 
-print(f"sessions.json: {len(d)} -> {len(kept)} entries, pruned {pruned}")
+        for key, value in data.items():
+            updated_at = value.get('updatedAt', 0)
+            age_days = (now - updated_at) / (1000 * 86400)
+            is_persistent = any(x in key for x in ['topic', 'channel', 'dm', 'telegram', 'signal', 'discord', 'whatsapp'])
+            if age_days < 3 or is_persistent:
+                kept[key] = value
+            else:
+                pruned += 1
+
+        after = len(kept)
+        with open(src, 'w') as f:
+            json.dump(kept, f)
+except Exception:
+    status = 'error'
+
+print(f'PRUNE_STATUS={status}')
+print(f'PRUNE_BEFORE={before}')
+print(f'PRUNE_AFTER={after}')
+print(f'PRUNE_COUNT={pruned}')
 PYEOF
+    # shellcheck disable=SC1090
+    source "$PRUNE_ENV"
+    rm -f "$PRUNE_ENV"
+
+    REGISTRY_STATUS="${PRUNE_STATUS:-error}"
+    REGISTRY_BEFORE="${PRUNE_BEFORE:-0}"
+    REGISTRY_AFTER="${PRUNE_AFTER:-0}"
+    PRUNED="${PRUNE_COUNT:-0}"
 
     SIZE_AFTER=$(du -sh "$SESSIONS_JSON" | cut -f1)
-    echo "  sessions.json: $SIZE_BEFORE -> $SIZE_AFTER" >> "$LOG"
+    echo "  sessions.json: $SIZE_BEFORE -> $SIZE_AFTER (${REGISTRY_STATUS}, pruned ${PRUNED})" >> "$LOG"
 fi
 
 # ── 3. Remove old backups (keep last 3) ──
-ls -t "$SESSIONS_DIR"/sessions.json.bak-* 2>/dev/null | tail -n +4 | xargs rm -f 2>/dev/null
+BACKUPS_REMOVED=0
+mapfile -t OLD_BACKUPS < <(ls -1t "$SESSIONS_DIR"/sessions.json.bak-* 2>/dev/null | tail -n +4 || true)
+if [ ${#OLD_BACKUPS[@]} -gt 0 ]; then
+    rm -f -- "${OLD_BACKUPS[@]}"
+    BACKUPS_REMOVED=${#OLD_BACKUPS[@]}
+fi
 
+END_TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
 echo "  Archived JSONL: $ARCHIVED files" >> "$LOG"
-echo "[$TIMESTAMP] Cleanup done" >> "$LOG"
+echo "[$END_TIMESTAMP] Cleanup done" >> "$LOG"
 
-echo "Session cleanup complete: archived $ARCHIVED JSONL files, sessions.json pruned"
+if [ "$ARCHIVED" -gt 0 ] || [ "$PRUNED" -gt 0 ] || [ "$BACKUPS_REMOVED" -gt 0 ] || [ "$REGISTRY_STATUS" = "locked" ] || [ "$REGISTRY_STATUS" = "error" ]; then
+    echo "session-cleanup: archived=$ARCHIVED pruned=$PRUNED backups_removed=$BACKUPS_REMOVED registry=$REGISTRY_STATUS"
+fi

@@ -39,6 +39,8 @@ WORKSPACE = common.WORKSPACE
 DATA_DIR = common.DATA_DIR
 
 # Configuration — use shared Notion client
+notion_req = None
+notion_query_db = None
 try:
     from notion_client_shared import get_client, notion_req, notion_query_db
     _notion_client = get_client()
@@ -53,6 +55,9 @@ OUTPUT_PATH = DATA_DIR / "pipeline-status.json"
 @retry_with_backoff(max_retries=3, base_delay=2)
 def fetch_notion_db(database_id):
     """Fetch all pages from a Notion database using shared client with retry/backoff."""
+    if _notion_client is None or notion_req is None:
+        return []
+
     all_results = []
     start_cursor = None
     has_more = True

@@ -13,6 +13,7 @@ Provides:
   - standard_job_dict(): Build standardized job record
 """
 
+import json
 import re
 from pathlib import Path
 
@@ -89,6 +90,84 @@ COUNTRY_SEARCH_TERMS = {
     "Oman": ["Muscat", "Oman"],
 }
 
+# ===================== WATCHLIST =====================
+
+WATCHLIST_FILE = Path('/root/.openclaw/workspace/data/sayyad-company-watchlist.json')
+
+DEFAULT_COMPANY_WATCHLISTS = {
+    "healthcare_gcc": [
+        "Saudi German Hospital Group", "Cleveland Clinic Abu Dhabi", "Mediclinic Middle East",
+        "NMC Healthcare", "Aster DM Healthcare", "King Faisal Specialist Hospital",
+        "SEHA", "Abu Dhabi Health Services", "Hamad Medical Corporation",
+        "Al Habib Medical Group", "Fakeeh Care"
+    ],
+    "fintech_gcc": [
+        "Careem", "Tabby", "Tamara", "Lean Technologies", "Checkout.com",
+        "Network International", "Talabat", "RAKBANK", "Qatar National Bank", "Mashreq Bank"
+    ],
+    "government_semi_gov_gcc": [
+        "ADDA", "Abu Dhabi Digital Authority", "SDAIA", "Saudi Data & AI Authority",
+        "Dubai Digital Authority", "Emirates Investment Authority", "NEOM", "Qiddiya",
+        "PIF Portfolio Companies", "DEWA", "RTA Dubai", "Smart Dubai"
+    ],
+}
+
+DEFAULT_DOMAIN_WATCHLISTS = {
+    "healthcare_gcc": ["healthcare", "hospital", "medical", "clinic", "health"],
+    "fintech_gcc": ["fintech", "bank", "banking", "payments", "wallet", "digital banking"],
+    "government_semi_gov_gcc": ["government", "public sector", "authority", "smart city", "digital authority", "pif"]
+}
+
+
+def load_watchlists() -> dict:
+    default = {
+        "company_watchlists": DEFAULT_COMPANY_WATCHLISTS,
+        "domain_watchlists": DEFAULT_DOMAIN_WATCHLISTS,
+        "priority_companies": sorted({c for vals in DEFAULT_COMPANY_WATCHLISTS.values() for c in vals}),
+        "priority_domains": sorted({d for vals in DEFAULT_DOMAIN_WATCHLISTS.values() for d in vals}),
+    }
+    try:
+        if not WATCHLIST_FILE.exists():
+            return default
+        data = json.loads(WATCHLIST_FILE.read_text())
+        company_watchlists = data.get("company_watchlists") or DEFAULT_COMPANY_WATCHLISTS
+        domain_watchlists = data.get("domain_watchlists") or DEFAULT_DOMAIN_WATCHLISTS
+        priority_companies = data.get("priority_companies") or sorted({c for vals in company_watchlists.values() for c in vals})
+        priority_domains = data.get("priority_domains") or sorted({d for vals in domain_watchlists.values() for d in vals})
+        return {
+            "company_watchlists": company_watchlists,
+            "domain_watchlists": domain_watchlists,
+            "priority_companies": priority_companies,
+            "priority_domains": priority_domains,
+        }
+    except Exception:
+        return default
+
+
+def get_watchlist_matches(company: str = "", text: str = "") -> dict:
+    wl = load_watchlists()
+    company_lower = (company or "").lower()
+    text_lower = (text or "").lower()
+    company_hits = []
+    domain_hits = []
+    categories = set()
+
+    for category, companies in wl["company_watchlists"].items():
+        for c in companies:
+            if c.lower() in company_lower:
+                company_hits.append(c)
+                categories.add(category)
+    for category, domains in wl["domain_watchlists"].items():
+        for d in domains:
+            if d.lower() in text_lower or d.lower() in company_lower:
+                domain_hits.append(d)
+                categories.add(category)
+    return {
+        "company_hits": sorted(set(company_hits)),
+        "domain_hits": sorted(set(domain_hits)),
+        "categories": sorted(categories),
+    }
+
 # ===================== FILTER WORDS =====================
 
 # Executive keywords - must have at least one
@@ -106,6 +185,14 @@ DOMAIN_WORDS = [
     "transformation", "innovation", "ai", "data", "strategy", "cyber",
     "cloud", "operations", "infrastructure", "engineering", "tech",
     "ict ", "software", "systems"
+]
+
+# Strategic role families - strong title alignment for Ahmed's target roles
+STRATEGIC_ROLE_WORDS = [
+    "digital transformation", "transformation", "pmo", "program", "programme",
+    "portfolio", "delivery", "business excellence", "operational excellence",
+    "technology", "head of it", "it director", "head of technology",
+    "vp technology", "director of technology", "cio", "cto", "operations"
 ]
 
 # Hard skip words - clearly irrelevant roles
@@ -133,6 +220,11 @@ SKIP_WORDS = [
     "oil and gas", "petroleum", "drilling",  # Not a target sector
     "retail", "store manager", "merchandising",
     "call center", "customer service", "data entry",
+    # Tightened 2026-04-08 - off-target senior roles creating false REVIEWs
+    "chief of staff", "market expansion", "demand planning", "s&op",
+    "risk management", "risk advisory", "forensics", "cyber security",
+    "digital trust", "equity-only", "co-founder", "paid media",
+    "alliances", "product management",
 ]
 
 # Fintech/banking override - these are RELEVANT domains
@@ -207,39 +299,31 @@ ATS_KEYWORDS = {
 
 def is_relevant(title: str, location: str = "") -> tuple[bool, str]:
     """
-    Three-criteria filter: executive + domain + not irrelevant.
+    Tight relevance filter: executive + strategic role/domain + no off-target title.
+    Geography is a boost signal, not a substitute for role fit.
     Returns: (is_relevant, reason)
     """
     t = title.lower()
-    loc = location.lower()
 
     # 1. Must have executive keyword
     if not any(w in t for w in EXEC_WORDS):
         return False, "not-exec"
 
-    # 2. Must relate to DT/Tech/PMO OR location is GCC (broad exec catch)
-    gcc = any(w in loc for w in [
-        "saudi", "uae", "united arab emirates", "dubai",
-        "riyadh", "qatar", "doha", "bahrain", "kuwait",
-        "oman", "abu dhabi", "jeddah", "dammam", "sharjah",
-        "ajman", "muscat"
-    ])
-    domain_match = any(w in t for w in DOMAIN_WORDS)
-    if not domain_match and not gcc:
-        return False, "no-domain"
-
-    # 3. Must not be in hard skip list (with fintech/banking override)
+    # 2. Hard skip off-target senior roles (with narrow fintech override only)
     fintech_match = any(w in t for w in FINTECH_OVERRIDE_WORDS)
     for skip in SKIP_WORDS:
         if skip in t:
-            # Allow fintech/banking roles
-            if fintech_match:
-                continue
-            # Allow only if title ALSO has strong exec+domain combo
             strong_exec = any(w in t for w in ["chief", "vp ", "vice president", "cto", "cio", "cdo"])
-            strong_domain = any(w in t for w in ["digital", "technology", "pmo", "transformation"])
-            if not (strong_exec and strong_domain):
-                return False, "skip-word"
+            strong_transform = any(w in t for w in ["digital transformation", "pmo", "program", "portfolio", "delivery", "head of it", "it director"])
+            if fintech_match and strong_exec and strong_transform:
+                continue
+            return False, f"skip-word:{skip}"
+
+    # 3. Must have real domain/role-family alignment. GCC location alone is not enough.
+    domain_match = any(w in t for w in DOMAIN_WORDS)
+    strategic_role_match = any(w in t for w in STRATEGIC_ROLE_WORDS)
+    if not domain_match and not strategic_role_match:
+        return False, "no-role-family"
 
     return True, "ok"
 
