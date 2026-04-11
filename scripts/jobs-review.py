@@ -1,16 +1,13 @@
 #!/usr/bin/env python3
 """
-jobs-review.py — Layer 3: Two-round LLM review of merged jobs.
+jobs-review.py — Final LLM review for merged jobs.
 
-Round 1 - MiniMax M2.7 (free, fast):
-  - Reviews ALL 300 jobs
-  - Conservative filter: only SKIPs if career_fit < 3/10 with confidence >= 0.8
-  - Everything uncertain passes through to Round 2
+Pipeline:
+- Layer 0: zero-cost keyword/rules pre-filter
+- Layer 1: JD enrichment
+- Layer 2: GPT-5.4 final quality gate
 
-Round 2 - Sonnet 4.6 (quality gate, mandatory):
-  - Reviews only Round 1 survivors (~100-150 jobs)
-  - Makes final SUBMIT / REVIEW / SKIP verdict
-  - This is the authoritative output Ahmed sees
+This is the authoritative scoring path Ahmed sees.
 
 Reads: data/jobs-merged.json
 Writes: data/jobs-summary.json (final output for Brief Me)
@@ -52,25 +49,178 @@ INPUT_FILE = DATA_DIR / "jobs-merged.json"
 OUTPUT_FILE = DATA_DIR / "jobs-summary.json"
 RECOMMENDED_FILE = FEEDBACK_DIR / "jobs-recommended.jsonl"
 OUTCOMES_FILE = FEEDBACK_DIR / "jobs-outcomes.jsonl"
+CMO_OUTREACH_QUEUE = DATA_DIR / "cmo-outreach-queue.json"
+LOCAL_LINKEDIN_QUEUE = DATA_DIR.parent / "coordination" / "outreach-queue.json"
+ARCHIVE_LINKEDIN_PROFILE = DATA_DIR.parent / "archive" / "linkedin-data" / "ahmed_linkedin_profile_db.json"
 
 # OpenClaw gateway for LLM
 GATEWAY_URL = "http://127.0.0.1:18789/v1/chat/completions"
 
-# Two-round model config
-MODEL_ROUND1 = "minimax-portal/MiniMax-M2.7"   # Fast filter — free, reviews all
-MODEL_ROUND2 = "minimax-portal/MiniMax-M2.7"   # Deep review — free, full JD analysis
-# Note: Anthropic OAuth key (sk-ant-oat01) fails direct API (400) and gateway (403).
-# Using MiniMax M2.7 for both rounds until gateway auth is fixed.
-# Both rounds use DIFFERENT prompts (R1=pass/skip, R2=scored verdict) so R2 still adds value.
+# Model config
+MODEL_ROUND1 = "openai-codex/gpt-5.4"          # Batch pre-filter, now pinned to GPT-5.4
+MODEL_ROUND2 = "openai-codex/gpt-5.4"          # Final deep review, primary SAYYAD scorer
 
-# Round 1 filter settings
-R1_SKIP_THRESHOLD = 3       # MiniMax scores below this are candidates for SKIP
-R1_CONFIDENCE_FLOOR = 0.80  # MiniMax must be >= 80% confident to SKIP (conservative)
-
-# Round 2 verdict settings
+# Final verdict settings
 TOP_N_JOBS = 1500  # Bumped from 300 to handle DB backfill of unscored jobs
 DEFAULT_SUBMIT_THRESHOLD = 7
-DEFAULT_REVIEW_THRESHOLD = 5
+DEFAULT_REVIEW_THRESHOLD = 6
+ATS_SUBMIT_MIN = 65
+ATS_REVIEW_MIN = 60
+
+
+def _load_local_linkedin_signals() -> dict:
+    signals = {"warm_companies": set(), "known_companies": set()}
+    try:
+        if LOCAL_LINKEDIN_QUEUE.exists():
+            data = json.loads(LOCAL_LINKEDIN_QUEUE.read_text())
+            for section in ("warm_leads", "pending_queue", "follow_ups_due"):
+                for item in data.get(section, []):
+                    company = (item.get("company") or "").strip()
+                    if company:
+                        signals["known_companies"].add(company.lower())
+                        if section == "warm_leads":
+                            signals["warm_companies"].add(company.lower())
+    except Exception:
+        pass
+    try:
+        if ARCHIVE_LINKEDIN_PROFILE.exists():
+            data = json.loads(ARCHIVE_LINKEDIN_PROFILE.read_text())
+            for exp in data.get("experience", []):
+                company = (exp.get("company") or "").strip()
+                if company:
+                    signals["known_companies"].add(company.lower())
+    except Exception:
+        pass
+    return signals
+
+
+def _update_score_fallback(job: dict, ats_score=None, fit_score=None, verdict=None, notes=None) -> bool:
+    """Write score updates using pipeline job_id when available, else fall back to SQLite row id."""
+    job_id = str(job.get("job_id", "")).strip()
+    # DB backfill rows encode the SQLite numeric id into job_id. Those must be
+    # written back by row id, not by pipeline job_id.
+    if _pdb and job_id and not job_id.isdigit():
+        try:
+            if _pdb.update_score(
+                job_id=job_id,
+                ats_score=ats_score,
+                fit_score=fit_score,
+                verdict=verdict,
+                notes=notes,
+            ):
+                return True
+        except Exception:
+            pass
+
+    try:
+        import sqlite3 as _sql
+        row_id = job.get("id")
+        if row_id is None and job_id.isdigit():
+            row_id = int(job_id)
+        if row_id is None:
+            return False
+        db_path = Path(__file__).parent.parent / "data" / "nasr-pipeline.db"
+        conn = _sql.connect(str(db_path))
+        fields = {}
+        if ats_score is not None:
+            fields["ats_score"] = ats_score
+        if fit_score is not None:
+            fields["fit_score"] = fit_score
+        if verdict is not None:
+            fields["verdict"] = verdict
+            if verdict in ("SUBMIT", "REVIEW", "SKIP"):
+                fields["status"] = "scored"
+        if notes is not None:
+            fields["score_notes"] = notes
+        if not fields:
+            conn.close()
+            return False
+        fields["updated_at"] = now_iso()
+        sets = ", ".join(f"{k} = ?" for k in fields)
+        vals = list(fields.values()) + [row_id]
+        conn.execute(f"UPDATE jobs SET {sets} WHERE id = ?", vals)
+        conn.commit()
+        conn.close()
+        return True
+    except Exception:
+        return False
+
+
+def _queue_cmo_outreach(company: str, job: dict):
+    if not company:
+        return
+    if company.strip().lower() in {"confidential", "none", "unknown"}:
+        return
+    CMO_OUTREACH_QUEUE.parent.mkdir(parents=True, exist_ok=True)
+    payload = {"last_updated": now_iso(), "items": []}
+    if CMO_OUTREACH_QUEUE.exists():
+        try:
+            payload = json.loads(CMO_OUTREACH_QUEUE.read_text())
+        except Exception:
+            pass
+    items = payload.setdefault("items", [])
+    company_key = company.strip().lower()
+    if not any((item.get("company") or "").strip().lower() == company_key for item in items):
+        items.append({
+            "company": company.strip(),
+            "job_title": job.get("title"),
+            "source": job.get("source"),
+            "job_url": job.get("url"),
+            "verdict": job.get("verdict"),
+            "queued_at": now_iso(),
+            "status": "queued",
+        })
+    payload["last_updated"] = now_iso()
+    CMO_OUTREACH_QUEUE.write_text(json.dumps(payload, ensure_ascii=False, indent=2))
+
+
+def _score_jobs_for_ats(jobs: list[dict], ats_mod) -> int:
+    """Populate ATS fields for every supplied job, not just SUBMIT/REVIEW buckets."""
+    scored = 0
+    for job in jobs:
+        content = job.get("jd_page_text", "") or job.get("jd_text", "")
+        if content and len(content) > 200:
+            ats_result = ats_mod.calculate_score(content)
+        else:
+            fallback = f"{job.get('title','')} {job.get('raw_snippet','')} {job.get('company','')}"
+            ats_result = ats_mod.calculate_score(fallback)
+            ats_result["verdict"] = ats_result.get("verdict", "UNKNOWN") + "_TITLE_ONLY"
+
+        job["ats_score"] = ats_result.get("score", 0)
+        job["ats_verdict"] = ats_result.get("verdict", "?")
+        job["ats_matched"] = ats_result.get("matched", [])[:10]
+        job["ats_gaps"] = ats_result.get("gaps", [])[:5]
+        scored += 1
+    return scored
+
+
+def _append_recommendation_log(jobs: list[dict], run_id: str):
+    """Write recommendation log once per job per scoring run."""
+    FEEDBACK_DIR.mkdir(parents=True, exist_ok=True)
+    seen = set()
+    with open(RECOMMENDED_FILE, "a") as f:
+        for job in jobs:
+            job_key = str(job.get("job_id") or job.get("id") or job.get("url") or "").strip()
+            if not job_key:
+                job_key = f"{(job.get('company') or '').strip().lower()}|{(job.get('title') or '').strip().lower()}"
+            dedupe_key = (run_id, job_key)
+            if dedupe_key in seen:
+                continue
+            seen.add(dedupe_key)
+            entry = {
+                "timestamp": now_iso(),
+                "run_id": run_id,
+                "job_id": job.get("job_id") or job.get("id"),
+                "title": job.get("title"),
+                "company": job.get("company"),
+                "location": job.get("location"),
+                "url": job.get("url"),
+                "verdict": job.get("verdict"),
+                "score": job.get("career_fit_score"),
+                "ats_score": job.get("ats_score"),
+                "reason": job.get("verdict_reason"),
+            }
+            f.write(json.dumps(entry) + "\n")
 
 
 def load_feedback_thresholds() -> tuple[int, int]:
@@ -136,59 +286,6 @@ def _wait_for_gateway(max_wait: int = 60) -> bool:
     return False
 
 
-def _call_minimax_direct(prompt: str, model: str, timeout: int = 240, max_retries: int = 3) -> str | None:
-    """Call MiniMax API directly, bypassing the gateway. Used for batch review jobs."""
-    import time as _time
-    try:
-        auth = json.load(open("/root/.openclaw/agents/main/agent/auth.json"))
-        token = auth.get("minimax-portal", {}).get("access", "")
-    except Exception:
-        return None
-    if not token:
-        return None
-    # Strip provider prefix from model name
-    model_id = model.split("/")[-1] if "/" in model else model
-    for attempt in range(1, max_retries + 1):
-        try:
-            resp = requests.post(
-                "https://api.minimax.io/anthropic/v1/messages",
-                headers={
-                    "Content-Type": "application/json",
-                    "x-api-key": token,
-                    "anthropic-version": "2023-06-01",
-                },
-                json={
-                    "model": model_id,
-                    "max_tokens": 4000,
-                    "messages": [{"role": "user", "content": prompt}],
-                },
-                timeout=timeout,
-            )
-            if resp.status_code == 429:
-                retry_after = int(resp.headers.get("Retry-After", 10))
-                print(f"  MiniMax rate limited, waiting {retry_after}s...")
-                _time.sleep(retry_after)
-                continue
-            if resp.status_code != 200:
-                print(f"  MiniMax direct error: HTTP {resp.status_code} - {resp.text[:100]}")
-                if attempt < max_retries:
-                    _time.sleep(2)
-                    continue
-                return None
-            data = resp.json()
-            # Anthropic Messages API format
-            content_blocks = data.get("content", [])
-            text_parts = [b.get("text", "") for b in content_blocks if b.get("type") == "text"]
-            return "\n".join(text_parts) if text_parts else None
-        except Exception as e:
-            print(f"  MiniMax direct error (attempt {attempt}/{max_retries}): {e}")
-            if attempt < max_retries:
-                _time.sleep(2)
-                continue
-            return None
-    return None
-
-
 def _call_anthropic_direct(prompt: str, model: str, timeout: int = 240, max_retries: int = 3) -> str | None:
     """Call Anthropic API directly, bypassing the gateway."""
     import time as _time
@@ -245,16 +342,8 @@ def _call_anthropic_direct(prompt: str, model: str, timeout: int = 240, max_retr
 
 
 def call_llm(prompt: str, model: str, timeout: int = 240, max_retries: int = 3) -> str | None:
-    """Call LLM directly - bypass gateway entirely to avoid connection drops."""
+    """Call LLM through OpenClaw gateway, with direct Anthropic fallback only when explicitly requested."""
     import time as _time
-
-    # For MiniMax models, call MiniMax API directly
-    if "minimax" in model.lower():
-        print(f"    → MiniMax direct call ({len(prompt)} chars)...", flush=True)
-        result = _call_minimax_direct(prompt, model, timeout, max_retries)
-        if result is not None:
-            return result
-        print("  MiniMax direct failed, falling through to gateway...", flush=True)
 
     # For Anthropic models, call Anthropic API directly
     if "anthropic" in model.lower() or "claude" in model.lower() or "sonnet" in model.lower():
@@ -275,8 +364,16 @@ def call_llm(prompt: str, model: str, timeout: int = 240, max_retries: int = 3) 
     if gw_token:
         headers["Authorization"] = f"Bearer {gw_token}"
 
+    gateway_model = model
+    # OpenClaw's OpenAI-compatible chat endpoint is agent-oriented. For Codex-backed
+    # models we must route through an OpenClaw agent model and pass the real provider
+    # model via x-openclaw-model.
+    if "openai-codex/" in model.lower():
+        headers["x-openclaw-model"] = model
+        gateway_model = "openclaw/hr"
+
     payload = {
-        "model": model,
+        "model": gateway_model,
         "messages": [{"role": "user", "content": prompt}],
         "temperature": 0.3,
         "max_tokens": 4000,
@@ -323,7 +420,7 @@ def call_llm(prompt: str, model: str, timeout: int = 240, max_retries: int = 3) 
     return None
 
 
-# ── ROUND 1: MiniMax filter prompt ───────────────────────────────────────────
+# ── ROUND 1: GPT-5.4 pre-filter prompt ───────────────────────────────────────
 
 CANDIDATE_PROFILE_SHORT = """
 Ahmed Nasr - 20+ year technology executive (VP/Director/Head/C-level).
@@ -355,8 +452,9 @@ TASK: Quick pre-filter. For each job decide: PASS (needs full review) or SKIP (c
 RULES:
 - SKIP only if you are >= 80% confident this job is COMPLETELY wrong for Ahmed
 - SKIP automatically if: nationals-only flag, junior role (analyst/intern/coordinator/specialist), wrong field (nursing/teaching/civil engineering/oil field), wrong geography (outside GCC + relocation-unfriendly)
-- PASS everything else — wrong to miss a good job than to review an irrelevant one
-- If unsure: PASS
+- SKIP executive-but-off-target roles such as sales, market expansion, demand planning, risk/risk advisory, forensics, chief of staff, product management, staffing/recruitment, beauty/cosmetics, cyber/digital trust, and co-founder/equity-only startup roles
+- PASS only jobs that plausibly fit Ahmed's real target lanes: digital transformation, PMO/program/portfolio/delivery, business excellence, IT/technology leadership, operations leadership
+- If unsure between PASS and SKIP, prefer PASS only when the role family is still close to those target lanes
 
 {jobs_text}
 
@@ -395,11 +493,11 @@ def parse_round1_response(response: str, num_jobs: int) -> list[dict]:
 
 def run_round1_filter(jobs: list[dict]) -> tuple[list[dict], list[dict], int]:
     """
-    Run MiniMax Round 1 filter on all jobs.
+    Run Round 1 pre-filter on all jobs.
     Returns: (pass_jobs, skipped_jobs, failed_batch_count)
     """
-    BATCH_SIZE = 10  # Larger batches for R1 — simpler prompt
-    print(f"\n--- Round 1: MiniMax M2.7 pre-filter ({len(jobs)} jobs) ---")
+    BATCH_SIZE = 10  # Larger batches for R1, simpler prompt
+    print(f"\n--- Round 1: GPT-5.4 pre-filter ({len(jobs)} jobs) ---")
 
     def process_r1_batch(batch_start):
         batch = jobs[batch_start:batch_start + BATCH_SIZE]
@@ -461,10 +559,10 @@ def run_round1_filter(jobs: list[dict]) -> tuple[list[dict], list[dict], int]:
     return pass_jobs, skipped_jobs, failed_batches
 
 
-# ── ROUND 2: Sonnet quality gate ─────────────────────────────────────────────
+# ── ROUND 2: GPT-5.4 quality gate ────────────────────────────────────────────
 
 def build_round2_prompt(jobs: list[dict]) -> str:
-    """Full detailed Round 2 prompt for Sonnet quality verdict."""
+    """Full detailed Round 2 prompt for GPT-5.4 quality verdict."""
 
     candidate_profile = """
 CANDIDATE PROFILE:
@@ -507,7 +605,7 @@ TASK: Final quality review. These jobs passed the Round 1 pre-filter. Give each 
 
 For EACH job, provide:
 1. Career Fit Score (1-10)
-2. Verdict: SUBMIT (score 7+), REVIEW (score 5-6), or SKIP (score 1-4)
+2. Verdict: SUBMIT (only if score 7+ AND ATS-likely 65+), REVIEW (only if score 6+ AND ATS-likely 60+), or SKIP (everything else)
 3. One-line reason
 4. Salary: Extract any mentioned salary/compensation. Use "N/A" if not mentioned.
 
@@ -523,19 +621,21 @@ GOLDEN RULES:
 - A job titled "Director Digital Transformation" at a GCC company is MINIMUM a 7
 - NATIONALS ONLY jobs: score 1, SKIP immediately
 - Never score 7+ if it contradicts dealbreakers (junior, wrong field, nationals-only)
+- Do NOT reward geography alone. GCC location is helpful, but it never compensates for the wrong role family.
+- Treat these as off-target unless there is overwhelming transformation evidence: sales, market expansion, demand planning/S&OP, risk, forensics, chief of staff, product management, beauty/cosmetics, cyber/digital trust, staffing/recruitment, co-founder startup roles.
 
 SCORING GUIDELINES:
-- 9-10: Perfect match - exact target role, GCC location, strong domain
-- 7-8: Strong match - right seniority (Director+), relevant domain, target geography
-- 5-6: Partial match - right seniority but different domain, or right domain but mid-level
-- 3-4: Weak match - some relevance but wrong seniority or geography
-- 1-2: No match - junior, wrong field, or nationals-only
+- 9-10: Perfect match - exact transformation/PMO/IT leadership role, GCC location, strong domain
+- 7-8: Strong match - right seniority (Director+), target role family, target geography, credible domain fit
+- 6: Borderline but real - right role family with one notable gap
+- 3-5: Senior but off-target - adjacent domain/function, weak role-family alignment, or missing JD
+- 1-2: No match - junior, wrong field, nationals-only, or hard dealbreaker
 
 Return ONLY the JSON array."""
 
 
 def parse_round2_response(response: str, num_jobs: int) -> list[dict]:
-    """Parse Round 2 Sonnet response."""
+    """Parse Round 2 GPT-5.4 response."""
     import re
     reviews = []
     try:
@@ -575,16 +675,16 @@ def parse_round2_response(response: str, num_jobs: int) -> list[dict]:
 
 def run_round2_review(pass_jobs: list[dict], submit_threshold: int, review_threshold: int) -> list[dict]:
     """
-    Run Sonnet Round 2 quality review on Round 1 survivors.
+    Run GPT-5.4 Round 2 quality review on Round 1 survivors.
     Returns jobs with final verdict attached.
     """
     BATCH_SIZE = 5
-    print(f"\n--- Round 2: Sonnet 4.6 quality gate ({len(pass_jobs)} jobs) ---")
+    print(f"\n--- Round 2: GPT-5.4 quality gate ({len(pass_jobs)} jobs) ---")
 
     def process_r2_batch(batch_start):
         batch = pass_jobs[batch_start:batch_start + BATCH_SIZE]
         batch_num = batch_start // BATCH_SIZE + 1
-        print(f"  Sonnet batch {batch_num} ({len(batch)} jobs, {MODEL_ROUND2})...")
+        print(f"  GPT-5.4 batch {batch_num} ({len(batch)} jobs, {MODEL_ROUND2})...")
         start_time = time.time()
         prompt = build_round2_prompt(batch)
         response = call_llm(prompt, model=MODEL_ROUND2, timeout=240)
@@ -596,7 +696,7 @@ def run_round2_review(pass_jobs: list[dict], submit_threshold: int, review_thres
             print(f"    Batch {batch_num}: {len(reviews)} reviews in {latency_ms}ms")
             return reviews, latency_ms, 0
         else:
-            print(f"    Batch {batch_num}: Sonnet failed, falling back to keyword scoring")
+            print(f"    Batch {batch_num}: GPT-5.4 failed, falling back to keyword scoring")
             fallback = []
             for j, job in enumerate(batch, 1):
                 score = min(10, max(1, job.get("keyword_score", 50) // 10))
@@ -605,7 +705,7 @@ def run_round2_review(pass_jobs: list[dict], submit_threshold: int, review_thres
                     "job_num": j + batch_start,
                     "score": score,
                     "verdict": verdict,
-                    "reason": f"[FALLBACK] Keyword score {job.get('keyword_score', 0)} (Sonnet batch {batch_num} failed)",
+                    "reason": f"[FALLBACK] Keyword score {job.get('keyword_score', 0)} (GPT-5.4 batch {batch_num} failed)",
                     "salary": "N/A",
                 })
             return fallback, latency_ms, len(batch)
@@ -638,7 +738,7 @@ def run_round2_review(pass_jobs: list[dict], submit_threshold: int, review_thres
             score = min(10, max(1, job.get("keyword_score", 50) // 10))
             job["career_fit_score"] = score
             job["verdict"] = "SUBMIT" if score >= submit_threshold else ("REVIEW" if score >= review_threshold else "SKIP")
-            job["verdict_reason"] = "Default (no Sonnet review for this job)"
+            job["verdict_reason"] = "Default (no GPT-5.4 review for this job)"
 
     print(f"  Round 2 complete: {total_latency}ms total, {fallback_count} fallbacks")
     return pass_jobs, total_latency, fallback_count
@@ -667,7 +767,10 @@ def _run_layer0_prefilter(all_jobs: list[dict]) -> tuple[list[dict], list[dict]]
     # Hard skip title patterns — clearly not Ahmed's domain
     L0_SKIP_TITLE_WORDS = [
         "marketing", "sales manager", "account executive", "sales executive",
-        "sales director",  # pure sales roles
+        "sales director", "market expansion", "demand planning", "s&op",
+        "risk management", "risk advisory", "forensics", "chief of staff",
+        "product manager", "product management", "cyber", "digital trust",
+        "co-founder", "paid media", "alliances",  # off-target senior roles
         "nurse", "nursing", "doctor", "physician", "medical director",
         "clinical", "dental", "pharmacist", "dentist", "veterinary",
         "physiotherapist", "patient", "hospital director",
@@ -698,8 +801,8 @@ def _run_layer0_prefilter(all_jobs: list[dict]) -> tuple[list[dict], list[dict]]
     L0_KEEP_OVERRIDES = [
         "digital", "technology", "IT ", "transformation", "data", "ai ",
         "artificial intelligence", "machine learning", "platform",
-        "software", "engineering", "fintech", "cloud", "cyber",
-        "innovation", "pmo", "program", "product", "agile",
+        "software", "engineering", "fintech", "cloud",
+        "innovation", "pmo", "program", "portfolio", "delivery", "agile",
         "devops", "e-commerce", "ecommerce", "chief technology",
         "chief digital", "chief information", "chief operating",
         "cto", "cio", "cdo",
@@ -873,8 +976,8 @@ def run_review(result: AgentResult):
 
     Layer 0: Keyword pre-filter (zero cost, auto-SKIP junk)
     Layer 1: JD enrichment (fetch JDs before scoring)
-    Layer 2: MiniMax R1 pre-filter (cheap LLM, pass/fail)
-    Layer 3: Sonnet R2 quality gate (expensive LLM, final verdict)
+    Layer 2: GPT-5.4 R1 pre-filter (batch pass/fail)
+    Layer 3: GPT-5.4 R2 quality gate (final verdict)
     """
 
     merged_data = load_json(INPUT_FILE, {})
@@ -953,13 +1056,13 @@ def run_review(result: AgentResult):
             if not job_id:
                 continue
             try:
-                _pdb.update_score(
-                    job_id=job_id,
+                if _update_score_fallback(
+                    job,
                     fit_score=0,
                     verdict="SKIP",
                     notes=f"[L0 pre-filter] {job.get('l0_skip_reason', 'keyword_filter')}",
-                )
-                l0_db_count += 1
+                ):
+                    l0_db_count += 1
             except Exception:
                 pass
         print(f"  L0 DB writes: {l0_db_count}")
@@ -986,15 +1089,14 @@ def run_review(result: AgentResult):
         print(f"\nTotal loaded: {len(all_jobs)}")
         print(f"L0 auto-SKIP: {len(l0_skipped)}")
         print(f"L1 JD enriched: {l1_enriched} (coverage: {jd_coverage}/{len(l0_pass)})")
-        print(f"Jobs for LLM: {len(top_jobs)}")
+        print(f"Jobs for final LLM review: {len(top_jobs)}")
         print(f"\nTop {min(10, len(top_jobs))} jobs by keyword score:")
         for i, job in enumerate(top_jobs[:10], 1):
             has_jd = "✓JD" if job.get("jd_text") and len(job.get("jd_text","")) > 100 else "  "
             print(f"  {i}. [{job.get('keyword_score', 0):2d}] {has_jd} {job.get('title','?')[:45]} @ {job.get('company','?')[:20]}")
         if len(top_jobs) > 10:
             print(f"  ... and {len(top_jobs) - 10} more")
-        print(f"\nRound 1 model: {MODEL_ROUND1}")
-        print(f"Round 2 model: {MODEL_ROUND2}")
+        print(f"\nFinal model: {MODEL_ROUND2}")
         print(f"Thresholds: SUBMIT >= {submit_threshold}, REVIEW >= {review_threshold}")
         result.set_data([])
         result.set_kpi({
@@ -1007,43 +1109,54 @@ def run_review(result: AgentResult):
         return
 
     # ══════════════════════════════════════════════════════════════════════════
-    # LAYER 2: MiniMax R1 pre-filter (cheap LLM)
+    # LAYER 2: GPT-5.4 final quality gate
     # ══════════════════════════════════════════════════════════════════════════
     print(f"\n{'='*60}")
-    print(f"  LAYER 2: MiniMax R1 Pre-Filter ({len(top_jobs)} jobs)")
-    print(f"{'='*60}")
-    pass_jobs, r1_skipped, r1_failed = run_round1_filter(top_jobs)
-
-    # ══════════════════════════════════════════════════════════════════════════
-    # LAYER 3: Sonnet R2 Quality Gate (expensive LLM, final verdict)
-    # ══════════════════════════════════════════════════════════════════════════
-    print(f"\n{'='*60}")
-    print(f"  LAYER 3: Sonnet R2 Quality Gate ({len(pass_jobs)} jobs)")
+    print(f"  LAYER 2: GPT-5.4 Final Quality Gate ({len(top_jobs)} jobs)")
     print(f"{'='*60}")
     reviewed_jobs, r2_latency_ms, r2_fallbacks = run_round2_review(
-        pass_jobs, submit_threshold, review_threshold
+        top_jobs, submit_threshold, review_threshold
     )
 
-    # Jobs filtered by Round 1 get automatic SKIP (not shown to Ahmed)
-    for job in r1_skipped:
-        job["career_fit_score"] = 1
-        job["verdict"] = "SKIP"
-        job["verdict_reason"] = f"[Round 1 filter] {job.get('r1_reason', 'Filtered by MiniMax')} (confidence {job.get('r1_confidence', 0):.0%})"
+    r1_skipped = []
+    r1_failed = 0
 
-    # Guardrail: sanity check Sonnet verdicts against hard title patterns
+    # Load watchlist metadata now so the final scoring model can use it after ATS scoring.
+    try:
+        from _imports import jobs_source_common
+        _get_watchlist_matches = jobs_source_common.get_watchlist_matches
+        _target_industries = [w.lower() for w in jobs_source_common.TARGET_INDUSTRY_WORDS]
+    except Exception:
+        _get_watchlist_matches = lambda company='', text='': {"company_hits": [], "domain_hits": [], "categories": []}
+        _target_industries = []
+
+    for job in reviewed_jobs:
+        text_blob = " ".join([
+            job.get('title', '') or '',
+            job.get('company', '') or '',
+            job.get('location', '') or '',
+            (job.get('raw_snippet', '') or '')[:500],
+            (job.get('jd_text', '') or '')[:1000],
+        ])
+        job['watchlist_matches'] = _get_watchlist_matches(job.get('company', ''), text_blob)
+
+    # Guardrail: sanity check high scores against hard title patterns
     SKIP_TITLE_WORDS = ["nurse", "doctor", "physician", "chef", "teacher", "accountant",
                         "receptionist", "secretary", "intern", "trainee", "beautician",
-                        "pharmacist", "dentist", "veterinary", "physiotherapist"]
+                        "pharmacist", "dentist", "veterinary", "physiotherapist",
+                        "sales", "market expansion", "demand planning", "risk management",
+                        "risk advisory", "forensics", "chief of staff", "product",
+                        "cyber", "digital trust", "staffing", "co-founder"]
     guardrail_overrides = 0
     for job in reviewed_jobs:
         title_lower = job.get("title", "").lower()
         if job.get("career_fit_score", 0) >= 7 and any(w in title_lower for w in SKIP_TITLE_WORDS):
             job["verdict"] = "SKIP"
-            job["verdict_reason"] = f"[GUARDRAIL] Sonnet scored {job['career_fit_score']} but title skip word: {title_lower}"
+            job["verdict_reason"] = f"[GUARDRAIL] GPT-5.4 scored {job['career_fit_score']} but title skip word: {title_lower}"
             job["career_fit_score"] = 2
             guardrail_overrides += 1
     if guardrail_overrides:
-        print(f"\n  Guardrail: overrode {guardrail_overrides} false-positive Sonnet scores")
+        print(f"\n  Guardrail: overrode {guardrail_overrides} false-positive GPT-5.4 scores")
 
     # Load applied IDs for dedup
     import re as _re
@@ -1149,40 +1262,139 @@ def run_review(result: AgentResult):
     print(f"{'='*60}")
     print(f"  L0 auto-SKIP (keyword):  {len(l0_skipped)}")
     print(f"  L1 JD enriched:          {l1_enriched} (coverage: {jd_coverage}/{len(l0_pass)})")
-    print(f"  L2 MiniMax filtered:     {len(r1_skipped)}")
-    print(f"  L3 Sonnet SUBMIT:        {len(submit_jobs)}")
-    print(f"  L3 Sonnet REVIEW:        {len(review_jobs)}")
-    print(f"  L3 Sonnet SKIP:          {len([j for j in skip_jobs if j.get('r1_verdict') != 'SKIP'])}")
-    print(f"  Avg Sonnet score:        {avg_score:.1f}")
+    print(f"  L2 GPT-5.4 filtered:     {len(r1_skipped)}")
+    print(f"  L3 GPT-5.4 SUBMIT:       {len(submit_jobs)}")
+    print(f"  L3 GPT-5.4 REVIEW:       {len(review_jobs)}")
+    print(f"  L3 GPT-5.4 SKIP:         {len([j for j in skip_jobs if j.get('r1_verdict') != 'SKIP'])}")
+    print(f"  Avg GPT-5.4 score:       {avg_score:.1f}")
 
-    # ATS scoring for SUBMIT + REVIEW jobs
-    print(f"\nRunning ATS scoring on {len(submit_jobs) + len(review_jobs)} jobs...")
+    # ATS scoring for every reviewed job so DB/reporting coverage does not collapse on SKIPs
+    ats_targets = reviewed_jobs + r1_skipped
+    print(f"\nRunning ATS scoring on {len(ats_targets)} reviewed jobs...")
     try:
         from importlib.util import spec_from_file_location, module_from_spec
         ats_spec = spec_from_file_location("job_scorer", str(Path(__file__).parent / "job-scorer.py"))
         ats_mod = module_from_spec(ats_spec)
         ats_spec.loader.exec_module(ats_mod)
 
-        for job in submit_jobs + review_jobs:
-            content = job.get("jd_page_text", "") or job.get("jd_text", "")
-            if content and len(content) > 200:
-                ats_result = ats_mod.calculate_score(content)
-            else:
-                fallback = f"{job.get('title','')} {job.get('raw_snippet','')} {job.get('company','')}"
-                ats_result = ats_mod.calculate_score(fallback)
-                ats_result["verdict"] = ats_result["verdict"] + "_TITLE_ONLY"
-
-            job["ats_score"] = ats_result.get("score", 0)
-            job["ats_verdict"] = ats_result.get("verdict", "?")
-            job["ats_matched"] = ats_result.get("matched", [])[:10]
-            job["ats_gaps"] = ats_result.get("gaps", [])[:5]
+        _score_jobs_for_ats(ats_targets, ats_mod)
+        for job in (submit_jobs + review_jobs)[:20]:
             print(f"  ATS: {job['ats_score']:3d}/100 | {job.get('title','?')[:40]}")
 
         submit_jobs.sort(key=lambda x: x.get("ats_score", 0), reverse=True)
         review_jobs.sort(key=lambda x: x.get("ats_score", 0), reverse=True)
-        print(f"  ATS scoring complete")
+        print(f"  ATS scoring complete: {sum(1 for j in ats_targets if j.get('ats_score') is not None)}/{len(ats_targets)} populated")
     except Exception as e:
         print(f"  ATS scoring failed (non-fatal): {e}")
+
+    # Final policy alignment: ATS + full 5-dimension fit model + role-family gates
+    strict_submit = []
+    strict_review = []
+    strict_skip = []
+    for job in submit_jobs + review_jobs:
+        title_lower = (job.get("title", "") or "").lower()
+        company_lower = (job.get("company", "") or "").lower()
+        location_lower = (job.get("location", "") or "").lower()
+        raw_text = " ".join([
+            job.get("title", "") or "",
+            job.get("company", "") or "",
+            job.get("location", "") or "",
+            job.get("raw_snippet", "") or "",
+            job.get("jd_text", "") or "",
+        ]).lower()
+        ats_score = job.get("ats_score") or 0
+        llm_fit_score = job.get("career_fit_score") or 0
+        role_family_match = any(w in title_lower for w in [
+            "digital transformation", "transformation", "pmo", "program", "programme",
+            "portfolio", "delivery", "business excellence", "operational excellence",
+            "head of it", "it director", "head of technology", "vp technology",
+            "director of technology", "cio", "cto", "operations"
+        ])
+        adjacent_role_match = any(w in title_lower for w in [
+            "strategy", "ai", "data", "innovation", "engineering", "operations"
+        ])
+        hard_skip_match = any(w in title_lower for w in [
+            "sales", "market expansion", "demand planning", "risk management",
+            "risk advisory", "forensics", "chief of staff", "product",
+            "beauty", "cosmetics", "cyber", "digital trust", "staffing",
+            "recruitment", "headhunter", "co-founder", "paid media", "alliances"
+        ])
+
+        # 5-dimension fit model (0-10 total)
+        role_dim = 2 if role_family_match else (1 if adjacent_role_match else 0)
+        if any(w in title_lower for w in ["chief", "cto", "cio", "cdo", "coo", "vp ", "vice president", "director", "head"]):
+            seniority_dim = 2
+        elif any(w in title_lower for w in ["senior manager", "principal", "lead"]):
+            seniority_dim = 1
+        else:
+            seniority_dim = 0
+
+        if any(w in location_lower for w in ["saudi", "riyadh", "uae", "dubai", "abu dhabi", "qatar", "doha"]):
+            geo_dim = 2
+        elif any(w in location_lower for w in ["bahrain", "kuwait", "oman", "gcc", "remote"]):
+            geo_dim = 1
+        else:
+            geo_dim = 0
+
+        watch = job.get("watchlist_matches") or {"company_hits": [], "domain_hits": [], "categories": []}
+        company_hits = watch.get("company_hits", [])
+        domain_hits = watch.get("domain_hits", [])
+        strategic_dim = 2 if company_hits else (1 if domain_hits or any(w in raw_text for w in _target_industries) else 0)
+
+        has_jd = 1 if len(job.get("jd_text", "") or "") > 200 or len(job.get("jd_page_text", "") or "") > 200 else 0
+        if ats_score >= ATS_SUBMIT_MIN and has_jd:
+            evidence_dim = 2
+        elif ats_score >= ATS_REVIEW_MIN or has_jd:
+            evidence_dim = 1
+        else:
+            evidence_dim = 0
+
+        fit_score = role_dim + seniority_dim + geo_dim + strategic_dim + evidence_dim
+        job["llm_fit_score"] = llm_fit_score
+        job["career_fit_score"] = fit_score
+        job["fit_dimensions"] = {
+            "role": role_dim,
+            "seniority": seniority_dim,
+            "geography": geo_dim,
+            "strategic": strategic_dim,
+            "evidence": evidence_dim,
+        }
+
+        dim_bits = [
+            f"role={role_dim}", f"seniority={seniority_dim}", f"geo={geo_dim}",
+            f"strategic={strategic_dim}", f"evidence={evidence_dim}",
+            f"fit={fit_score}/10", f"llm={llm_fit_score}"
+        ]
+        if watch.get("categories"):
+            dim_bits.append(f"watchlist={','.join(watch['categories'])}")
+
+        if hard_skip_match:
+            job["verdict"] = "SKIP"
+            job["verdict_reason"] = f"[POLICY] Hard-skip off-target role family: {job.get('title','')} [{' | '.join(dim_bits)}]"
+            strict_skip.append(job)
+        elif fit_score >= submit_threshold and ats_score >= ATS_SUBMIT_MIN and role_family_match:
+            job["verdict"] = "SUBMIT"
+            job["verdict_reason"] = f"{job.get('verdict_reason','')} [5D {' | '.join(dim_bits)}]".strip()
+            strict_submit.append(job)
+        elif fit_score >= review_threshold and ats_score >= ATS_REVIEW_MIN and role_family_match:
+            job["verdict"] = "REVIEW"
+            job["verdict_reason"] = f"{job.get('verdict_reason','')} [5D {' | '.join(dim_bits)}]".strip()
+            strict_review.append(job)
+        else:
+            job["verdict"] = "SKIP"
+            if not role_family_match:
+                why = "wrong role family"
+            elif ats_score < ATS_REVIEW_MIN:
+                why = f"ATS below review floor ({ats_score} < {ATS_REVIEW_MIN})"
+            else:
+                why = f"fit below review floor ({fit_score} < {review_threshold})"
+            job["verdict_reason"] = f"[POLICY] {why} [5D {' | '.join(dim_bits)}]"
+            strict_skip.append(job)
+
+    submit_jobs = strict_submit
+    review_jobs = strict_review
+    skip_jobs.extend(strict_skip)
+    print(f"  Policy alignment complete: {len(submit_jobs)} SUBMIT, {len(review_jobs)} REVIEW, {len(strict_skip)} SKIP")
 
     # Liveness check
     print(f"\nChecking SUBMIT job liveness...")
@@ -1198,22 +1410,8 @@ def run_review(result: AgentResult):
         print(f"  Removed {expired_count} expired jobs from SUBMIT")
     submit_jobs = live_submit
 
-    # Write recommended log
-    FEEDBACK_DIR.mkdir(parents=True, exist_ok=True)
-    with open(RECOMMENDED_FILE, "a") as f:
-        for job in submit_jobs + review_jobs:
-            entry = {
-                "timestamp": now_iso(),
-                "job_id": job.get("id"),
-                "title": job.get("title"),
-                "company": job.get("company"),
-                "location": job.get("location"),
-                "url": job.get("url"),
-                "verdict": job.get("verdict"),
-                "score": job.get("career_fit_score"),
-                "reason": job.get("verdict_reason"),
-            }
-            f.write(json.dumps(entry) + "\n")
+    run_id = now_iso()
+    _append_recommendation_log(submit_jobs + review_jobs, run_id)
 
     # Build summary output
     remaining_jobs = sorted_jobs[TOP_N_JOBS:]
@@ -1223,7 +1421,7 @@ def run_review(result: AgentResult):
         job["verdict_reason"] = "Beyond review limit"
 
     summary = {
-        "generated_at": now_iso(),
+        "generated_at": run_id,
         "total_candidates": len(all_jobs),
         "reviewed": len(reviewed_jobs),
         "submit": submit_jobs,
@@ -1235,11 +1433,8 @@ def run_review(result: AgentResult):
             "l0_auto_skip": len(l0_skipped),
             "l1_jd_enriched": l1_enriched,
             "l1_jd_coverage": f"{jd_coverage}/{len(l0_pass)}",
-            "r1_model": MODEL_ROUND1,
-            "r2_model": MODEL_ROUND2,
-            "r1_filtered": len(r1_skipped),
-            "r1_passed": len(pass_jobs),
-            "r1_failed_batches": r1_failed,
+            "llm_model": MODEL_ROUND2,
+            "llm_jobs_reviewed": len(top_jobs),
             "r2_latency_ms": r2_latency_ms,
             "r2_fallbacks": r2_fallbacks,
         },
@@ -1249,7 +1444,7 @@ def run_review(result: AgentResult):
             "skip_rate": len(skip_jobs) / max(1, len(reviewed_jobs)),
             "avg_fit_score": round(avg_score, 1),
             "l0_filter_rate": round(len(l0_skipped) / max(1, len(all_jobs)) * 100, 1),
-            "r1_filter_rate": round(len(r1_skipped) / max(1, len(top_jobs)) * 100, 1),
+            "llm_review_rate": round(len(reviewed_jobs) / max(1, len(top_jobs)) * 100, 1),
         }
     }
 
@@ -1257,17 +1452,29 @@ def run_review(result: AgentResult):
     if _pdb:
         try:
             db_count = 0
+            linkedin_signals = _load_local_linkedin_signals()
             for job in submit_jobs + review_jobs + skip_jobs:
                 job_id = str(job.get("id", job.get("job_id", ""))).strip()
                 if not job_id:
                     continue
-                _pdb.update_score(
-                    job_id=job_id,
+                _update_score_fallback(
+                    job,
                     ats_score=int(job["ats_score"]) if job.get("ats_score") is not None else None,
                     fit_score=int(job.get("career_fit_score", 0)),
                     verdict=job.get("verdict"),
                     notes=str(job.get("verdict_reason", ""))[:500],
                 )
+                if job.get("verdict") == "SUBMIT":
+                    company = (job.get("company") or "").strip()
+                    company_key = company.lower()
+                    if company_key and company_key in linkedin_signals.get("warm_companies", set()):
+                        job["verdict_reason"] = f"{job.get('verdict_reason','')} [Warm intro possible: existing LinkedIn signal at {company}]".strip()
+                        _update_score_fallback(job, notes=str(job.get("verdict_reason", ""))[:500])
+                    else:
+                        _queue_cmo_outreach(company, job)
+                        if company:
+                            job["verdict_reason"] = f"{job.get('verdict_reason','')} [CMO outreach queued for {company}]".strip()
+                            _update_score_fallback(job, notes=str(job.get("verdict_reason", ""))[:500])
                 db_count += 1
             print(f"  DB: {db_count} scores written")
         except Exception as _e:

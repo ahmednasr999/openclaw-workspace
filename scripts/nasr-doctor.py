@@ -27,13 +27,6 @@ try:
 except ImportError:
     _pdb = None
 
-# Pipeline DB (safe fallback)
-try:
-    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-    import pipeline_db as _pdb
-except ImportError:
-    _pdb = None
-
 WORKSPACE = Path("/root/.openclaw/workspace")
 OPENCLAW_DIR = Path("/root/.openclaw")
 FIX_MODE = "--fix" in sys.argv
@@ -265,7 +258,9 @@ def check_crons():
         check("Cron Cleanup", Result.FIXED, f"Archived {orphans_archived} orphan run logs")
         fix_applied("Cron Cleanup", f"Archived {orphans_archived} orphan run logs")
 
-    if fail_count == 0:
+    if fail_count > 0 or warn_count > 0:
+        check("Cron Jobs", Result.WARN, f"{ok_count} ok, {warn_count} warn, {fail_count} failed")
+    else:
         check("Cron Jobs", Result.OK, f"{ok_count} ok, {warn_count} warn, {fail_count} failed")
 
 
@@ -299,12 +294,14 @@ def check_firehose():
 
 def check_gmail():
     try:
-        creds_file = Path("/root/.config/gmail-smtp.json")
-        if not creds_file.exists():
+        creds_file = WORKSPACE / "config" / "gmail-imap.json"
+        fallback_file = Path("/root/.config/gmail-smtp.json")
+        source_file = creds_file if creds_file.exists() else fallback_file
+        if not source_file.exists():
             check("Gmail IMAP", Result.WARN, "No credentials file")
             return
 
-        creds = json.loads(creds_file.read_text())
+        creds = json.loads(source_file.read_text())
         user = creds.get("user", creds.get("email", ""))
         password = creds.get("password", creds.get("app_password", ""))
 
@@ -425,22 +422,27 @@ def check_pipeline_db_tests():
 
 def check_content_tests():
     """Run content agent test suite."""
-    print("\n--- Content Agent Tests ---")
-    result = subprocess.run(
-        [sys.executable, str(WORKSPACE / "scripts" / "test-content-agent.py")],
-        capture_output=True, text=True, timeout=60
-    )
-    if result.returncode == 0:
-        # Extract pass count
-        m = re.search(r"(\d+)/(\d+) passed", result.stdout)
-        if m:
-            print(f"  ✅ Content Agent: {m.group(1)}/{m.group(2)} passed")
+    test_path = WORKSPACE / "scripts" / "test-content-agent.py"
+    if not test_path.exists():
+        check("Content Tests", Result.WARN, "test-content-agent.py missing")
+        return
+    try:
+        result = subprocess.run(
+            [sys.executable, str(test_path)],
+            capture_output=True, text=True, timeout=60
+        )
+        combined = "\n".join(filter(None, [result.stdout.strip(), result.stderr.strip()]))
+        match = re.search(r"(\d+)/(\d+) passed", combined)
+        if result.returncode == 0:
+            detail = f"{match.group(1)}/{match.group(2)} passed" if match else "tests passed"
+            check("Content Tests", Result.OK, detail)
         else:
-            print("  ✅ Content Agent tests passed")
-    else:
-        print(f"  ❌ Content Agent tests FAILED")
-        print(result.stdout[-300:] if result.stdout else "")
-        print(result.stderr[-300:] if result.stderr else "")
+            tail = combined.splitlines()[-1][:80] if combined else "unknown failure"
+            check("Content Tests", Result.WARN, f"Failures: {tail}")
+    except subprocess.TimeoutExpired:
+        check("Content Tests", Result.WARN, "Timed out after 60s")
+    except Exception as e:
+        check("Content Tests", Result.WARN, f"Error: {e}")
 
 
 def check_email_tests():

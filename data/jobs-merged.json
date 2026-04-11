@@ -2,16 +2,51 @@
   "meta": {
     "agent": "jobs-merge",
     "version": "1.0.0",
-    "generated_at": "2026-04-11T04:09:41.223340+02:00",
-    "duration_ms": 55857,
+    "generated_at": "2026-04-11T12:09:28.068465+02:00",
+    "duration_ms": 52178,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "e747ca76",
+    "run_id": "25f1938e",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": [
+    {
+      "id": "linkedin_jobspy-li-4400681468",
+      "source": "linkedin_jobspy",
+      "title": "Senior Executive Director- Business Development",
+      "company": "RIG (Recruitment International Group)",
+      "location": "Dubai, United Arab Emirates",
+      "url": "https://www.linkedin.com/jobs/view/4400681468",
+      "posted": "",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 40,
+      "match_keywords": [
+        "ai",
+        "enterprise",
+        "executive",
+        "director",
+        "leadership",
+        "growth"
+      ],
+      "raw_snippet": "POSITION OBJECTIVE\n \n\n\n\n The Senior Executive Director \u2013 Business Development provides enterprise\\-level strategic leadership to architect and execute at the forefront of institutional growth, sector expansion, and enterprise revenue performance aiming for 5X growth in 5 Years.\n \n\n\n\n  \n\n\n\n\n\n The inc",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Program Director",
+      "linkedin_id": "li-4400681468",
+      "jd_text": "POSITION OBJECTIVE\n \n\n\n\n The Senior Executive Director \u2013 Business Development provides enterprise\\-level strategic leadership to architect and execute at the forefront of institutional growth, sector expansion, and enterprise revenue performance aiming for 5X growth in 5 Years.\n \n\n\n\n  \n\n\n\n\n\n The incumbent is responsible for governing enterprise commercial architecture, sector diversification, institutional revenue sustainability, bid governance oversight, solution design alignment, pricing discipline, and commercial risk mitigation. This role ensures scalable, diversified, and margin\\-accretive growth aligned with long\\-term strategic objectives and institutional capability.\n \n\n\n\n  \n\n\n\n\n\n This role involves cultivating strong institutional and government relationships, identifying new market opportunities, and developing comprehensive growth strategies to expand reach across sectors and geographies. The Executive Director will lead the Business Development function to ensure alignment with overall mission and long\\-term strategic objectives.\n \n\n\n\n  \n\n\n\n\n\n ACADEMIC QUALIFICATIONS\n \n\n\n\n A Master\u2019s degree in Business Administration, Strategy, Management, or a related field is required with executive education or advanced commercial leadership qualifications being highly preferred.\n \n\n\n\n  \n\n\n\n\n\n Doctoral qualification considered advantageous\n \n\n\n\n  \n\n\n\n\n\n SKILLS AND EXPERIENCE\n \n\n\n\n  \n\n\n\n\n\n Experience\n \n\n\n\n \u2022 Minimum of 15\u201320 years of progressive experience in Business Development, Commercial Strategy, or Enterprise Growth leadership.\n \n\n\n\n \u2022 Proven track record managing diversified large\\-scale revenue portfolios with multi\\-sector expansion.\n \n\n\n\n \u2022 Experience supervising Executive Director\\-level leaders and commercial vertical heads.\n \n\n\n\n \u2022 Extensive experience in UAE institutional and government markets within multi\\-cultural environments.\n \n\n\n\n  \n\n\n\n\n\n Technical \\& Strategic Expertise\n \n\n\n\n \u2022 Enterprise growth strategy execution aligned to \u226530% CAGR performance expectations.\n \n\n\n\n \u2022 Revenue diversification and concentration risk governance frameworks.\n \n\n\n\n \u2022 Pricing architecture, margin protection, and contract structuring expertise.\n \n\n\n\n \u2022 Pipeline forecasting governance with structured variance control discipline.\n \n\n\n\n \u2022 Thorough Knowledge of strategic revenue planning, enterprise forecasting, and commercial governance frameworks in post\\-secondary/tertiary education and lifelong learning.\n \n\n\n\n \u2022 Knowledge of contract administration, negotiations, business planning and change management\n \n\n\n\n \u2022 Ability to analyze and interpret revenue performance, pipeline data, and margin metrics.\n \n\n\n\n \u2022 Excellent interpersonal and communication skills and a polished, professional presence with proven ability to build strong client relationships from the C\\-level of target clients.\n \n\n\n\n \u2022 Exceptional presentation and bespoke solutions selling skills with proven success in with contemporary higher educational practices, learning theories, active learning and formative, authentic assessment products.\n \n\n\n\n \u2022 Knowledge of communication, marketing, and public relation techniques aligned to growth strategyManagement \\& Leadership Skills\n \n\n\n\n \u2022 Enterprise growth strategy execution aligned to \u226530% CAGR performance expectations.\n \n\n\n\n \u2022 Revenue diversification and concentration risk governance frameworks.\n \n\n\n\n \u2022 Pricing architecture, margin protection, and contract structuring expertise.\n \n\n\n\n \u2022 Pipeline forecasting governance with structured variance control discipline\n \n\n\n\n \u2022 Ability to build and motivate high\\-performance Business Development teams.\n \n\n\n\n \u2022 Strong leadership capability in managing enterprise\\-level growth targets and transformation initiatives.\n \n\n\n\n \u2022 Previous leadership experience within rapid change or transformation in Education \\& Training\n \n\n\n\n \u2022 Superior management and leadership skills as demonstrated by the ability to form professional relationships at all levels of government, the organization and with appropriate external stakeholders as well as the ability to work effectively with a wide range of constituencies in a diverse community",
+      "source_count": 1,
+      "country": "United Arab Emirates",
+      "industry_bonus": 3,
+      "policy_status": "pass",
+      "sources": [
+        "linkedin"
+      ],
+      "first_seen": "2026-04-11"
+    },
     {
       "id": "linkedin_jobspy-li-4399009780",
       "source": "linkedin_jobspy",
@@ -172,15 +207,15 @@
     }
   ],
   "kpi": {
-    "total_raw": 338,
+    "total_raw": 353,
     "sources_loaded": 2,
     "stale_sources": 2,
-    "unique_after_dedup": 308,
+    "unique_after_dedup": 321,
     "applied_filtered": 0,
-    "policy_filtered": 198,
-    "final_candidates": 5,
+    "policy_filtered": 210,
+    "final_candidates": 6,
     "multi_source_jobs": 0,
-    "new_today": 5
+    "new_today": 6
   },
   "recommendations": []
 }

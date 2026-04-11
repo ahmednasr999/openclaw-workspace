@@ -19,6 +19,14 @@ Scrape any website. Full data extraction, structured output, no setup needed.
    ```bash
    node ~/.openclaw/workspace/skills/crawlee/scripts/scrape.mjs <url> [options]
    ```
+   For unknown or brittle targets, prefer the helper wrapper:
+   ```bash
+   bash ~/.openclaw/workspace/skills/crawlee/scripts/scrape-or-escalate.sh <url> [options]
+   ```
+   Or auto-run the fallback when needed:
+   ```bash
+   bash ~/.openclaw/workspace/skills/crawlee/scripts/scrape-or-escalate.sh --auto <url> [options]
+   ```
 4. **Process results:** Parse output, summarize, or save to file.
 
 ## CLI Reference
@@ -68,10 +76,11 @@ node scrape.mjs https://blog.example.com --depth 3 --max 50 --glob "*/blog/*" --
 ## Decision Rules
 
 - **Simple page read** (no extraction needed) → use `web_fetch` instead (lighter)
-- **Need JavaScript rendering** → use browser tools (Camoufox) instead
+- **Need JavaScript rendering** → first decide if Scrapling `fetch` is enough, use browser tools only when real interaction or login is required
 - **Structured data extraction** → use `--selector` with CSS selectors
 - **Full site crawl** → set `--depth` and `--max` appropriately
 - **Large outputs** → always use `--output` to save to file
+- **Unknown or likely-hostile public target** → start with `scrape-or-escalate.sh` so JS walls and anti-bot pages suggest Scrapling automatically
 
 ## Output Formats
 
@@ -87,6 +96,20 @@ Installed in `skills/crawlee/scripts/node_modules/`:
 
 ## Limitations
 
-- HTTP-only (no JavaScript rendering). For JS-heavy sites, use browser tools.
+- HTTP-only for the core `scrape.mjs` path. If the page is JS-heavy but still public, escalate to `skills/scrapling/` before jumping to full browser automation.
 - Respects robots.txt by default.
 - Max recommended: ~100 pages per crawl to avoid timeouts.
+
+## Escalation helper
+Use:
+```bash
+bash ~/.openclaw/workspace/skills/crawlee/scripts/scrape-or-escalate.sh <url> [options]
+```
+It runs Crawlee first, then warns when the output looks like a JS wall, anti-bot page, tiny partial page, or hard failure.
+
+Flags:
+- `--suggest-only` - print the fallback suggestion only
+- `--auto` - execute the suggested Scrapling fallback automatically
+
+Environment fallback:
+- `SCRAPLING_AUTO_RUN=1` still works, but prefer the explicit flags for normal use.

@@ -12,7 +12,7 @@ Handles the mechanical work of job applications:
 
 For the AI-generated content (cover letter, outreach),
 the agent is meant to be run WITHIN an AI session where
-the AI generates the content using Sonnet 4.6.
+the AI generates the content using GPT-5.4.
 
 Standalone usage (no LLM content):
   python3 hr-agent.py --job 17 [--job 3 --job 12]
@@ -315,24 +315,43 @@ def send_telegram(text, chat_id=HR_CHAT):
         log(f"Telegram error: {e}")
 
 # ═══════════════════════════════════════════════════════════════════
-# MINIMAX (free fallback for content generation)
+# GPT CONTENT GENERATION VIA OPENCLAW
 # ═══════════════════════════════════════════════════════════════════
-def generate_content(prompt, system, max_tokens=600):
-    """Use MiniMax M2.7 for free content generation."""
-    body = json.dumps({
-        "model": "MiniMax-M2.7",
-        "max_tokens": max_tokens,
-        "system": system,
-        "messages": [{"role": "user", "content": prompt}]
-    }).encode()
+def get_gateway_token():
     try:
-        proc = subprocess.run([
-            "curl", "-s", "-X", "POST",
-            "https://api.minimaxi.chat/v1/text/chatcompletion_v2",
-            "-H", "Content-Type: application/json",
-            "-d", body
-        ], capture_output=True, timeout=60)
-        result = json.loads(proc.stdout)
+        with open(OPENCLAW_JSON) as f:
+            cfg = json.load(f)
+        return cfg.get("gateway", {}).get("auth", {}).get("token", "")
+    except Exception:
+        return ""
+
+
+def generate_content(prompt, system, max_tokens=600):
+    """Generate content through the local OpenClaw gateway, pinned to GPT-5.4."""
+    body = json.dumps({
+        "model": "openclaw/hr",
+        "max_tokens": max_tokens,
+        "messages": [
+            {"role": "system", "content": system},
+            {"role": "user", "content": prompt}
+        ]
+    }).encode()
+    headers = {
+        "Content-Type": "application/json",
+        "x-openclaw-model": "openai-codex/gpt-5.4",
+    }
+    gateway_token = get_gateway_token()
+    if gateway_token:
+        headers["Authorization"] = f"Bearer {gateway_token}"
+    req = urllib.request.Request(
+        "http://127.0.0.1:18789/v1/chat/completions",
+        data=body,
+        method="POST",
+        headers=headers,
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=90) as resp:
+            result = json.loads(resp.read().decode())
         return result.get("choices", [{}])[0].get("message", {}).get("content", "[No response]")
     except Exception as e:
         return f"[Content generation failed: {e}]"
@@ -420,9 +439,9 @@ def process_job(job_ref, dry_run=False, force=False, cover_letter=None, outreach
         "cv_path": None, "notion_updated": 0, "ontology_updated": False
     }
 
-    # Content generation (MiniMax free, unless cover_letter/outreach passed in)
+    # Content generation (GPT-5.4 via OpenClaw, unless cover_letter/outreach passed in)
     if not cover_letter and not no_llm:
-        log("✍️  Cover letter (MiniMax M2.7)...")
+        log("✍️  Cover letter (GPT-5.4)...")
         result["cover_letter"] = generate_content(
             make_cover_letter_prompt(job),
             system="Senior executive resume writer. Write sharp, direct, evidence-driven content. No fluff.",
@@ -431,7 +450,7 @@ def process_job(job_ref, dry_run=False, force=False, cover_letter=None, outreach
         log(f"   {len(result['cover_letter'])} chars")
 
     if not outreach and not no_llm:
-        log("✍️  LinkedIn outreach (MiniMax M2.7)...")
+        log("✍️  LinkedIn outreach (GPT-5.4)...")
         result["outreach"] = generate_content(
             make_outreach_prompt(job, graph),
             system="Write LinkedIn outreach in Ahmed Nasr's voice — direct, professional, specific. 3 sentences max.",

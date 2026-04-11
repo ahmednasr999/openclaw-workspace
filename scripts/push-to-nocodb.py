@@ -19,6 +19,7 @@ import json
 import os
 import sys
 import time
+import signal
 import subprocess
 from pathlib import Path
 from datetime import datetime, timezone, timedelta
@@ -30,6 +31,10 @@ NOCODB_CONFIG = CONFIG_DIR / "nocodb.json"
 MERGED_FILE = DATA_DIR / "jobs-merged.json"
 SUMMARY_FILE = DATA_DIR / "jobs-summary.json"
 PHASE_STATUS_FILE = DATA_DIR / "pipeline-phase-status.json"
+NOCODB_AUDIT_DIR = DATA_DIR / "nocodb-audit"
+SUBMIT_ALERT_STATE_FILE = DATA_DIR / "submit-ready-alert-state.json"
+STALE_SUBMIT_HOURS = 24
+OPENCLAW_SEND_TIMEOUT = 20
 
 # Telegram config
 TG_GROUP = "-1003882622947"
@@ -83,24 +88,50 @@ def get_existing_urls(noco):
 
 
 def send_telegram(message, topic=None):
-    """Send message to Telegram via openclaw CLI."""
+    """Send message to Telegram via openclaw CLI without letting child processes hang the pipeline."""
     target = TG_GROUP
     if topic:
         target = f"{TG_GROUP}:{topic}"
+
+    cmd = [
+        "openclaw", "message", "send", "--channel", "telegram",
+        "--target", target, "--message", message,
+    ]
+
     try:
-        result = subprocess.run(
-            ["openclaw", "message", "send", "--channel", "telegram",
-             "--target", target, "--message", message],
-            capture_output=True, text=True, timeout=15
+        proc = subprocess.Popen(
+            cmd,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True,
+            start_new_session=True,
         )
-        if result.returncode != 0 or "Sent via Telegram" not in (result.stdout + result.stderr):
-            print(f"  [TG ERROR] Delivery failed: {(result.stdout + result.stderr).strip()[:200]}")
-        else:
-            # Extract message ID
-            _mid = next((p for p in (result.stdout+result.stderr).split() if p.strip().isdigit()), None)
-            print(f"  [TG OK] Delivered (msg_id={_mid})")
+        try:
+            stdout, stderr = proc.communicate(timeout=OPENCLAW_SEND_TIMEOUT)
+        except subprocess.TimeoutExpired:
+            try:
+                os.killpg(proc.pid, signal.SIGKILL)
+            except Exception:
+                proc.kill()
+            stdout, stderr = proc.communicate()
+            output = ((stdout or "") + (stderr or "")).strip()
+            print(
+                f"  [TG ERROR] Delivery timed out after {OPENCLAW_SEND_TIMEOUT}s, "
+                f"killed process group. {(output[:200])}"
+            )
+            return False
+
+        output = ((stdout or "") + (stderr or "")).strip()
+        if proc.returncode != 0 or "Sent via Telegram" not in output:
+            print(f"  [TG ERROR] Delivery failed: {output[:200]}")
+            return False
+
+        _mid = next((p for p in output.split() if p.strip().isdigit()), None)
+        print(f"  [TG OK] Delivered (msg_id={_mid})")
+        return True
     except Exception as e:
         print(f"  Telegram send failed: {e}")
+        return False
 
 
 def format_source_status():
@@ -151,42 +182,145 @@ def format_source_status():
     return "\n".join(lines)
 
 
-def push_new_jobs(noco, dry_run=False):
-    """Push new merged jobs to NocoDB. Returns stats dict."""
-    if not MERGED_FILE.exists():
-        return {"new": 0, "dupes": 0, "errors": 0, "total_merged": 0}
+def load_jobs_from_sqlite():
+    """Load jobs from SQLite as the source of truth for NocoDB inserts."""
+    import sqlite3 as _sql
 
-    merged = json.loads(MERGED_FILE.read_text())
-    jobs = merged.get("data", merged) if isinstance(merged, dict) else merged
-    if not isinstance(jobs, list):
+    db_path = WORKSPACE / "data" / "nasr-pipeline.db"
+    if not db_path.exists():
+        print("  WARNING: SQLite DB not found for NocoDB insert stage")
+        return []
+
+    conn = _sql.connect(str(db_path))
+    conn.row_factory = _sql.Row
+    cur = conn.cursor()
+    cur.execute(
+        """
+        SELECT title, company, location, job_url, source,
+               jd_text, ats_score, fit_score, verdict, score_notes,
+               tags, country, search_country, search_title,
+               source_method, url_hash, days_to_apply, salary_range,
+               salary_currency, status, applied_date, applied_via,
+               response_date, recruiter_name, recruiter_email,
+               recruiter_phone, recruiter_company, cv_path,
+               cv_html_path, cv_cluster, cv_built_at,
+               jd_path, jd_fetched_at, next_action,
+               created_at, updated_at
+        FROM jobs
+        WHERE job_url IS NOT NULL AND job_url != ''
+        ORDER BY datetime(created_at) ASC, id ASC
+        """
+    )
+    rows = [dict(r) for r in cur.fetchall()]
+    conn.close()
+    return rows
+
+
+def build_nocodb_row_from_sqlite(j):
+    source_cap = {
+        "linkedin": "LinkedIn",
+        "linkedin_jobspy": "LinkedIn",
+        "linkedin-manual": "LinkedIn",
+        "indeed": "Indeed",
+        "google": "Google",
+        "google-jobs": "Google Jobs",
+        "exa": "Exa",
+        "exa-web": "Exa-web",
+        "recruiter-inbound": "Recruiter Inbound",
+        "manual": "manual",
+        "notion_sync": "notion_sync",
+    }
+    row = {
+        "Title": (j.get("title", "") or "Unknown")[:200],
+        "Company": (j.get("company", "") or "Unknown")[:200],
+        "Location": (j.get("location", "") or "")[:200],
+        "URL": j.get("job_url", ""),
+        "Source": source_cap.get(j.get("source", ""), "Other"),
+        "Status": "New",
+        "Keyword Score": 0,
+        "Matched Keywords": "",
+        "Seniority": "",
+        "Domain Match": False,
+    }
+
+    verdict = (j.get("verdict") or "").strip()
+    if verdict == "CONDITIONAL":
+        verdict = "REVIEW"
+    status = (j.get("status") or "").strip()
+    if status == "applied":
+        row["Status"] = "Applied"
+    elif status == "interview":
+        row["Status"] = "Interview"
+    elif verdict in {"SUBMIT", "REVIEW"}:
+        row["Status"] = "Interested"
+
+    if j.get("ats_score") is not None:
+        row["ATS Score"] = j.get("ats_score") or 0
+    if j.get("fit_score") is not None:
+        row["Fit Score"] = j.get("fit_score") or 0
+    if verdict:
+        row["Verdict"] = verdict
+    if j.get("score_notes"):
+        row["AI Reasoning"] = str(j["score_notes"])[:5000]
+
+    jd = j.get("jd_text") or ""
+    if jd and len(jd) > 100:
+        row["Full Description"] = jd[:50000]
+
+    if j.get("applied_date"):
+        row["Applied Date"] = str(j["applied_date"])[:10]
+    if j.get("response_date"):
+        row["Response Date"] = str(j["response_date"])[:10]
+    if j.get("created_at"):
+        row["Discovered Date"] = str(j["created_at"])[:10]
+
+    extra_fields = {
+        "country": "Country", "search_country": "Search Country",
+        "search_title": "Search Title", "source_method": "Source Method",
+        "tags": "Tags", "url_hash": "URL Hash",
+        "salary_currency": "Salary Currency", "salary_range": "Salary",
+        "days_to_apply": "Days to Apply", "jd_path": "JD Path",
+        "jd_fetched_at": "JD Fetched At", "next_action": "Next Action",
+        "applied_via": "Applied Via", "recruiter_name": "Recruiter Name",
+        "recruiter_email": "Recruiter Email", "recruiter_phone": "Recruiter Phone",
+        "recruiter_company": "Recruiter Company", "cv_path": "CV Link",
+        "cv_html_path": "CV HTML Path", "cv_cluster": "CV Cluster",
+        "cv_built_at": "CV Built At",
+    }
+    for sq_col, noco_col in extra_fields.items():
+        val = j.get(sq_col)
+        if val is not None and val != "" and val != 0:
+            if isinstance(val, str) and len(val) > 500:
+                val = val[:500]
+            row[noco_col] = val
+
+    return row
+
+
+def write_nocodb_insert_audit(failures):
+    if not failures:
+        return None
+    NOCODB_AUDIT_DIR.mkdir(parents=True, exist_ok=True)
+    ts = datetime.now().strftime("%Y%m%d-%H%M%S")
+    out = NOCODB_AUDIT_DIR / f"insert-failures-{ts}.json"
+    out.write_text(json.dumps({"generated_at": datetime.now(timezone.utc).isoformat(), "failures": failures}, indent=2))
+    print(f"  Wrote NocoDB insert audit: {out}")
+    return out
+
+
+def push_new_jobs(noco, dry_run=False):
+    """Push new jobs from SQLite to NocoDB. Returns stats dict."""
+    jobs = load_jobs_from_sqlite()
+    if not jobs:
         return {"new": 0, "dupes": 0, "errors": 0, "total_merged": 0}
 
     existing_urls = get_existing_urls(noco)
     table_url = f"{noco['url']}/api/v2/tables/{noco['table_id']}/records"
 
-    # Source capitalization map
-    source_cap = {"linkedin": "LinkedIn", "indeed": "Indeed", "google": "Google"}
-
-    # Pre-load JD texts from SQLite for any jobs missing JD in merged JSON
-    jd_from_db = {}
-    try:
-        import sqlite3 as _sql
-        db_path = WORKSPACE / "data" / "nasr-pipeline.db"
-        if db_path.exists():
-            conn = _sql.connect(str(db_path))
-            cur = conn.cursor()
-            cur.execute("SELECT job_url, jd_text FROM jobs WHERE jd_text IS NOT NULL AND length(jd_text) > 100 AND job_url IS NOT NULL")
-            for row in cur.fetchall():
-                jd_from_db[row[0]] = row[1]
-            conn.close()
-            print(f"  Loaded {len(jd_from_db)} JDs from SQLite for backfill")
-    except Exception as e:
-        print(f"  SQLite JD load warning: {e}")
-
     new_jobs = []
     dupes = 0
     for j in jobs:
-        url = j.get("url", "")
+        url = j.get("job_url", "")
         if url in existing_urls:
             dupes += 1
             continue
@@ -197,60 +331,54 @@ def push_new_jobs(noco, dry_run=False):
 
     created = 0
     errors = 0
+    failed_rows = []
 
     for i in range(0, len(new_jobs), 10):
-        batch = []
-        for j in new_jobs[i:i + 10]:
-            row = {
-                "Title": (j.get("title", "") or "Unknown")[:200],
-                "Company": (j.get("company", "") or "Unknown")[:200],
-                "Location": (j.get("location", "") or "")[:200],
-                "URL": j.get("url", ""),
-                "Source": source_cap.get(j.get("source", ""), j.get("source", "Other")),
-                "Status": "New",
-                "Keyword Score": j.get("keyword_score", 0),
-                "Matched Keywords": (j.get("match_keywords", "") or "")[:500],
-                "Seniority": (j.get("seniority", "") or "")[:50],
-                "Domain Match": bool(j.get("domain_match")),
-            }
-
-            # JD from enrich step, fallback to SQLite
-            jd = j.get("jd_text", "")
-            if not jd or len(jd) < 100:
-                jd = jd_from_db.get(j.get("url", ""), "")
-            if jd and len(jd) > 100:
-                row["Full Description"] = jd[:50000]
-
-            # Raw snippet as fallback
-            if j.get("raw_snippet") and not row.get("Full Description"):
-                row["Raw Snippet"] = j["raw_snippet"][:2000]
-
-            # Date
-            posted = j.get("posted") or j.get("first_seen", "")[:10]
-            if posted and len(posted) >= 10:
-                row["Posted"] = posted[:10]
-
-            # Additional fields from SQLite (identical schema sync)
-            extra_map = {
-                "country": "Country", "search_country": "Search Country",
-                "search_title": "Search Title", "source_method": "Source Method",
-                "tags": "Tags", "url_hash": "URL Hash",
-            }
-            for jk, nk in extra_map.items():
-                v = j.get(jk) or ""
-                if v:
-                    row[nk] = str(v)[:500]
-
-            batch.append(row)
+        batch_jobs = new_jobs[i:i + 10]
+        batch = [build_nocodb_row_from_sqlite(j) for j in batch_jobs]
 
         try:
             resp = requests.post(table_url, json=batch, headers=noco["headers"], timeout=30)
             if resp.status_code == 200:
                 created += len(batch)
             else:
-                errors += len(batch)
-        except Exception:
-            errors += len(batch)
+                print(f"  Batch insert error: {resp.status_code} {resp.text[:500]}")
+                for row in batch:
+                    try:
+                        single = requests.post(table_url, json=[row], headers=noco["headers"], timeout=30)
+                        if single.status_code == 200:
+                            created += 1
+                        else:
+                            errors += 1
+                            failed_rows.append({
+                                "title": row.get("Title"),
+                                "company": row.get("Company"),
+                                "url": row.get("URL"),
+                                "status_code": single.status_code,
+                                "response": single.text[:1000],
+                            })
+                    except Exception as e:
+                        errors += 1
+                        failed_rows.append({
+                            "title": row.get("Title"),
+                            "company": row.get("Company"),
+                            "url": row.get("URL"),
+                            "exception": str(e),
+                        })
+        except Exception as e:
+            print(f"  Batch insert exception: {e}")
+            for row in batch:
+                errors += 1
+                failed_rows.append({
+                    "title": row.get("Title"),
+                    "company": row.get("Company"),
+                    "url": row.get("URL"),
+                    "exception": str(e),
+                })
+
+    audit_path = write_nocodb_insert_audit(failed_rows)
+    if audit_path:
+        print(f"  Insert failures captured in {audit_path}")
 
     return {"new": created, "dupes": dupes, "errors": errors, "total_merged": len(jobs)}
 
@@ -268,7 +396,7 @@ def update_scored_jobs(noco, dry_run=False):
     conn.row_factory = _sql.Row
     cur = conn.cursor()
 
-    # Get ALL scored jobs from SQLite (the single source of truth)
+    # Get ALL scored jobs from SQLite (the single source of truth), newest first.
     cur.execute("""
         SELECT id, title, company, job_url, jd_text, ats_score, fit_score,
                verdict, score_notes, status, applied_date,
@@ -277,41 +405,57 @@ def update_scored_jobs(noco, dry_run=False):
                country, search_country, search_title, days_to_apply,
                jd_path, jd_fetched_at, source_method, next_action,
                tags, applied_via, response_date, url_hash, salary_currency, salary_range,
-               created_at
+               created_at, updated_at
         FROM jobs
         WHERE verdict IS NOT NULL AND verdict != ''
           AND job_url IS NOT NULL AND job_url != ''
+        ORDER BY datetime(COALESCE(updated_at, created_at)) DESC, id DESC
     """)
     rows = cur.fetchall()
     conn.close()
 
-    # Build score map by URL
-    score_map = {}
-    submit_count = 0
-    review_count = 0
+    # Canonicalize to the latest SQLite row per URL.
+    latest_rows = {}
+    duplicate_rows = 0
     for r in rows:
         url = r["job_url"]
         if not url:
             continue
+        if url in latest_rows:
+            duplicate_rows += 1
+            continue
+        latest_rows[url] = r
+
+    # Build score map by canonical URL
+    score_map = {}
+    submit_count = 0
+    review_count = 0
+    for url, r in latest_rows.items():
+        verdict = (r["verdict"] or "").strip()
+        if verdict == "CONDITIONAL":
+            verdict = "REVIEW"
 
         patch = {
-            "Verdict": r["verdict"],
+            "Verdict": verdict,
             "ATS Score": r["ats_score"] or 0,
             "Fit Score": r["fit_score"] or 0,
             "AI Reasoning": (r["score_notes"] or "")[:5000],
         }
 
-        # Map pipeline status to NocoDB status
-        status = r["status"] or ""
+        # Map canonical pipeline status to a safe NocoDB status.
+        status = (r["status"] or "").strip().lower()
         if status == "applied":
             patch["Status"] = "Applied"
         elif status == "interview":
             patch["Status"] = "Interview"
-        elif r["verdict"] == "SUBMIT":
+        elif verdict in {"SUBMIT", "REVIEW"}:
             patch["Status"] = "Interested"
+        else:
+            patch["Status"] = "New"
+
+        if verdict == "SUBMIT":
             submit_count += 1
-        elif r["verdict"] == "REVIEW":
-            patch["Status"] = "Interested"
+        elif verdict == "REVIEW":
             review_count += 1
 
         # Always sync JD text if available
@@ -353,7 +497,8 @@ def update_scored_jobs(noco, dry_run=False):
     if not score_map:
         return {"updated": 0, "submit": submit_count, "review": review_count, "total_scored": 0}
 
-    print(f"  SQLite has {len(score_map)} scored jobs with URLs")
+    print(f"  SQLite has {len(rows)} scored rows with URLs")
+    print(f"  Canonicalized to {len(score_map)} latest URLs ({duplicate_rows} older duplicate rows ignored)")
 
     if dry_run:
         return {"updated": len(score_map), "submit": submit_count, "review": review_count, "total_scored": len(score_map)}
@@ -494,21 +639,122 @@ def format_push_summary(push_stats, score_stats):
     return "\n".join(lines)
 
 
+def _load_submit_alert_state():
+    try:
+        return json.loads(SUBMIT_ALERT_STATE_FILE.read_text())
+    except Exception:
+        return {"last_updated": None, "sent_job_keys": []}
+
+
+def _save_submit_alert_state(state):
+    SUBMIT_ALERT_STATE_FILE.write_text(json.dumps(state, indent=2, ensure_ascii=False))
+
+
+def _job_alert_key(job):
+    return str(job.get("job_id") or job.get("id") or job.get("url") or f"{job.get('company','')}|{job.get('title','')}").strip()
+
+
+def _parse_job_timestamp(value):
+    if not value:
+        return None
+    try:
+        text = str(value).strip().replace("Z", "+00:00")
+        dt = datetime.fromisoformat(text)
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=timezone.utc)
+        return dt.astimezone(timezone.utc)
+    except Exception:
+        return None
+
+
+def load_stale_submit_jobs(hours=STALE_SUBMIT_HOURS):
+    """Return SUBMIT jobs still unactioned after the escalation window."""
+    import sqlite3 as _sql
+
+    db_path = WORKSPACE / "data" / "nasr-pipeline.db"
+    if not db_path.exists():
+        return []
+
+    cutoff = datetime.now(timezone.utc) - timedelta(hours=hours)
+    conn = _sql.connect(str(db_path))
+    conn.row_factory = _sql.Row
+    cur = conn.cursor()
+    cur.execute(
+        """
+        SELECT id, title, company, location, job_url, verdict, status,
+               applied_date, updated_at, created_at
+        FROM jobs
+        WHERE verdict = 'SUBMIT'
+          AND job_url IS NOT NULL AND job_url != ''
+        ORDER BY datetime(COALESCE(updated_at, created_at)) ASC, id ASC
+        """
+    )
+    rows = [dict(r) for r in cur.fetchall()]
+    conn.close()
+
+    stale = []
+    for row in rows:
+        status = (row.get("status") or "").strip().lower()
+        if status in {"applied", "interview", "rejected", "closed"}:
+            continue
+        if row.get("applied_date"):
+            continue
+        verdict_at = _parse_job_timestamp(row.get("updated_at")) or _parse_job_timestamp(row.get("created_at"))
+        if verdict_at and verdict_at <= cutoff:
+            row["age_hours"] = round((datetime.now(timezone.utc) - verdict_at).total_seconds() / 3600, 1)
+            stale.append(row)
+    return stale
+
+
+def format_stale_submit_alert(stale_jobs, hours=STALE_SUBMIT_HOURS):
+    if not stale_jobs:
+        return None
+
+    lines = [f"🚨 FAILURE: {len(stale_jobs)} SUBMIT job(s) unactioned for more than {hours}h", ""]
+    for i, job in enumerate(stale_jobs[:10], 1):
+        title = job.get("title", "?")[:48]
+        company = job.get("company", "?")[:28]
+        location = job.get("location", "")[:20]
+        age = job.get("age_hours", "?")
+        lines.append(f"#{i} {title}")
+        lines.append(f"   {company} ({location}) - {age}h old")
+        if job.get("job_url"):
+            lines.append(f"   {job['job_url']}")
+        lines.append("")
+
+    lines.append("This breaches the 24h SUBMIT-action rule and needs immediate review.")
+    return "\n".join(lines)
+
+
 def format_top_jobs():
     """Format top SUBMIT jobs for Telegram alert."""
     if not SUMMARY_FILE.exists():
-        return None
+        return None, None
 
     summary = json.loads(SUMMARY_FILE.read_text())
     submit_jobs = summary.get("data", {}).get("submit", [])
 
     if not submit_jobs:
-        return None
+        return None, None
+
+    today_iso = datetime.now(timezone(timedelta(hours=2))).strftime("%Y-%m-%d")
+    state = _load_submit_alert_state()
+    sent_job_keys = set(state.get("sent_job_keys", [])) if state.get("last_updated") == today_iso else set()
+
+    fresh_submit = [j for j in submit_jobs if (j.get("first_seen") or "")[:10] == today_iso]
+    unsent_fresh = [j for j in fresh_submit if _job_alert_key(j) not in sent_job_keys]
 
     # Sort by ATS desc
     submit_jobs.sort(key=lambda j: j.get("ats_score", 0), reverse=True)
+    unsent_fresh.sort(key=lambda j: j.get("ats_score", 0), reverse=True)
 
     lines = [f"🎯 Top {min(len(submit_jobs), 10)} SUBMIT Jobs\n"]
+    if unsent_fresh:
+        lines.append(f"🚨 Approval needed today: {len(unsent_fresh)} new SUBMIT-ready job(s)")
+        for i, j in enumerate(unsent_fresh[:5], 1):
+            lines.append(f"  {i}. {j.get('title','?')[:42]} @ {j.get('company','?')[:24]} (ATS {j.get('ats_score', 0)})")
+        lines.append("")
+
     for i, j in enumerate(submit_jobs[:10], 1):
         fit = j.get("career_fit_score", 0)
         ats = j.get("ats_score", 0)
@@ -523,9 +769,14 @@ def format_top_jobs():
             lines.append(f"   {url}")
         lines.append("")
 
-    lines.append(f"📊 View all: http://100.99.230.14:8080 - Kanban Pipeline view")
+    lines.append("🤝 Auto-apply is approval-gated, these SUBMIT jobs still need same-day human action.")
+    lines.append("📊 View all: http://100.99.230.14:8080 - Kanban Pipeline view")
 
-    return "\n".join(lines)
+    new_state = {
+        "last_updated": today_iso,
+        "sent_job_keys": sorted(sent_job_keys | {_job_alert_key(j) for j in unsent_fresh}),
+    }
+    return "\n".join(lines), new_state
 
 
 def main():
@@ -575,11 +826,22 @@ def main():
         send_telegram(push_msg, topic=TG_TOPIC_HR)
 
     # Phase 6: Top jobs alert
-    top_msg = format_top_jobs()
+    top_msg, alert_state = format_top_jobs()
     if top_msg:
         print(top_msg)
         if not dry_run:
             send_telegram(top_msg, topic=TG_TOPIC_HR)
+            if alert_state is not None:
+                _save_submit_alert_state(alert_state)
+
+    # Phase 7: stale SUBMIT escalation
+    stale_submit_jobs = load_stale_submit_jobs()
+    stale_msg = format_stale_submit_alert(stale_submit_jobs)
+    if stale_msg:
+        print(stale_msg)
+        if not dry_run:
+            send_telegram(stale_msg, topic=TG_TOPIC_HR)
+            send_telegram(stale_msg, topic=TG_TOPIC_CEO)
 
     print("\n✅ Done")
 

@@ -3,9 +3,14 @@
 # Runs all sources → merge/dedup → JD fetch → wake HR agent
 # Cron: 03:00, 04:00, 08:00, 12:00 Cairo daily
 #
-# Option B: LinkedIn runs fire-and-forget (takes ~15 min).
+# Source allocation policy (2026-04-08):
+# - Google/web boards = primary discovery source (highest relevance yield)
+# - LinkedIn JobSpy = secondary discovery source, narrowed to exact target lanes
+# - Indeed = tertiary source, throttled to a narrow title/country set because of noise
+#
+# LinkedIn runs fire-and-forget (takes ~15 min).
 # Each run picks up the previous run's linkedin.json during merge.
-# Google + Indeed are fast (~2-3 min) and waited on.
+# Google + Indeed are faster and waited on.
 #
 # This script does ALL plumbing (no LLM). HR Agent does ALL thinking.
 
@@ -14,6 +19,7 @@ SCRIPTS_DIR="$(cd "$(dirname "$0")" && pwd)"
 LOG_DIR="/var/log/sayyad"
 mkdir -p "$LOG_DIR"
 DATE=$(date +%Y-%m-%d)
+REPORT_DATE=$(date "+%d %b %Y")
 LOG="$LOG_DIR/$DATE-source.log"
 
 log() { echo "[$(date '+%H:%M:%S')] $1" | tee -a "$LOG"; }
@@ -31,14 +37,22 @@ python3 "$SCRIPTS_DIR/jobs-source-linkedin-jobspy.py" >> "$LOG" 2>&1 &
 PID_LI=$!
 log "  LinkedIn: started (PID $PID_LI, fire-and-forget)"
 
-# Google + Indeed: fast, wait for them
-python3 "$SCRIPTS_DIR/jobs-source-indeed.py" >> "$LOG" 2>&1 &
-PID_IN=$!
+# Google always runs. Indeed is sunset to weekly-only.
+PID_IN=""
+if [ "$(date +%u)" = "7" ]; then
+  python3 "$SCRIPTS_DIR/jobs-source-indeed.py" >> "$LOG" 2>&1 &
+  PID_IN=$!
+  log "  Indeed: started weekly run (PID $PID_IN)"
+else
+  log "  Indeed: skipped (weekly-only source)"
+fi
 python3 "$SCRIPTS_DIR/jobs-source-google.py" >> "$LOG" 2>&1 &
 PID_GO=$!
 
-# Wait for Google + Indeed only
-wait $PID_IN && log "  Indeed: done ✅" || log "  Indeed: FAILED ❌"
+# Wait for Google and the weekly Indeed run only
+if [ -n "$PID_IN" ]; then
+  wait $PID_IN && log "  Indeed: done ✅" || log "  Indeed: FAILED ❌"
+fi
 wait $PID_GO && log "  Google/Exa: done ✅" || log "  Google/Exa: FAILED ❌"
 
 # Phase A2: Merge (dedup within SQLite)
@@ -65,25 +79,41 @@ import sqlite3, json
 db = sqlite3.connect('$SCRIPTS_DIR/../data/nasr-pipeline.db')
 db.row_factory = sqlite3.Row
 
-# Today's source runs
+# Latest run per source for today
 runs = db.execute('''
-    SELECT source, raw_count, unique_count, db_registered, countries_json, titles_json, errors
-    FROM source_runs WHERE run_date = date('now') ORDER BY created_at DESC
+    SELECT sr.source, sr.raw_count, sr.unique_count, sr.db_registered, sr.countries_json, sr.titles_json, sr.errors
+    FROM source_runs sr
+    INNER JOIN (
+        SELECT source, MAX(id) AS max_id
+        FROM source_runs
+        WHERE date(created_at, 'localtime') = date('now', 'localtime')
+        GROUP BY source
+    ) latest
+      ON sr.source = latest.source AND sr.id = latest.max_id
+    ORDER BY sr.source
 ''').fetchall()
 
-# Today's fresh unscored jobs
+# Today's discovered jobs (actual net landed jobs, not just unscored)
+today_total = db.execute('''
+    SELECT COUNT(*) FROM jobs
+    WHERE date(created_at, 'localtime') = date('now', 'localtime')
+''').fetchone()[0]
+
+# Today's unscored jobs
 fresh = db.execute('''
     SELECT COUNT(*) FROM jobs WHERE verdict IS NULL
-    AND date(created_at) = date('now')
+    AND date(created_at, 'localtime') = date('now', 'localtime')
 ''').fetchone()[0]
 
 # Total unscored
 total_unscored = db.execute('SELECT COUNT(*) FROM jobs WHERE verdict IS NULL').fetchone()[0]
 
-# JD coverage for today's fresh
+# JD coverage for today's discovered jobs
 jd_ready = db.execute('''
-    SELECT COUNT(*) FROM jobs WHERE verdict IS NULL
-    AND date(created_at) = date('now') AND jd_text IS NOT NULL
+    SELECT COUNT(*) FROM jobs
+    WHERE date(created_at, 'localtime') = date('now', 'localtime')
+      AND jd_text IS NOT NULL
+      AND trim(jd_text) != ''
 ''').fetchone()[0]
 
 name_map = {
@@ -94,7 +124,7 @@ name_map = {
     'manual':          'Manual',
 }
 
-lines = ['📊 SAYYAD Source Report — $(date \"+%d %b %Y\")', '━' * 36]
+lines = ['📊 SAYYAD Source Report - $REPORT_DATE', '━' * 36]
 total_raw = 0
 total_unique = 0
 all_countries = {}
@@ -113,7 +143,8 @@ for r in runs:
             all_titles[k] = all_titles.get(k, 0) + v
 
 lines.append('━' * 36)
-lines.append(f'Total new today: {fresh} (after dedup)')
+lines.append(f'Total jobs landed today: {today_total} (after dedup)')
+lines.append(f'Unscored today: {fresh}')
 lines.append(f'Total unscored in DB: {total_unscored}')
 
 if all_countries:
@@ -124,7 +155,7 @@ if all_titles:
     top_t = sorted(all_titles.items(), key=lambda x: -x[1])[:5]
     lines.append(f\"Top titles: {', '.join(f'{k} ({v})' for k, v in top_t)}\")
 
-lines.append(f'JDs ready: {jd_ready}/{fresh} ({round(100*jd_ready/max(1,fresh))}%)')
+lines.append(f'JDs ready today: {jd_ready}/{today_total} ({round(100*jd_ready/max(1,today_total))}%)')
 lines.append('━' * 36)
 lines.append('Ready for scoring ✅')
 print('\n'.join(lines))

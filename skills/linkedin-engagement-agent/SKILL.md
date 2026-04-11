@@ -104,3 +104,16 @@ Reply "⏭ Skipped" and move on.
 3. **Comment posting verification (from 3/29 agent going rogue):** After Step 6 posts a comment, verify the comment actually appears on the post page before reporting success. The 3/29 incident showed LinkedIn sometimes silently drops comments — never assume click = posted. Navigate back to the post and confirm the comment text is visible.
 
 4. **No auto-scoring changes:** The scoring model (career overlap + persona + comment gap + brand fit) is working well. No changes needed this cycle.
+
+### 2026-04-11 — Weekly Skill Tune-Up
+
+**Reviewed signals:**
+- 2026-03-23, comments risked going out under the wrong LinkedIn account
+- 2026-03-29, agents on LinkedIn write paths need stronger forbidden-action language
+- Weekly review history, completion guards need to be explicit, not implied
+
+**Improvements to keep active:**
+1. **Turn Step 6 into a hard pre-flight + post-flight block.** Require account identity check, comment submission, like action, then visible confirmation of both before success is reported.
+2. **Add explicit forbidden fallbacks.** State clearly: no Camofox cookies, no server-side authenticated fallback, no posting from any account that is not Ahmed-Mac Chrome.
+3. **Add an `eval/checklist.md`.** This skill currently has no dedicated checklist file. It should have a compact approval/posting checklist covering account identity, cooldown, URL match, posted-comment visibility, and ontology update.
+4. **Separate discovery success from posting success.** Finding good posts is not completion. Completion only happens after approval flow, verified comment publish, and graph update all pass.

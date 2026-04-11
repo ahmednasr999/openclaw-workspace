@@ -26,7 +26,7 @@ This workflow runs when:
 
 ```sql
 SELECT * FROM jobs WHERE verdict = 'SUBMIT' AND status = 'discovered'
-ORDER BY career_fit_score DESC
+ORDER BY fit_score DESC, ats_score DESC
 ```
 
 ### Step 2 — HR Quality Checks (per job)
@@ -39,6 +39,7 @@ For each SUBMIT job, validate:
 | **Company reputation?** | `web_search` (Exa): "{company} layoffs OR fraud OR reviews {year}". Glassdoor <3.0 → SKIP with note |
 | **Role still open?** | `web_fetch` the posting URL. If 404/expired → SKIP |
 | **Tier match?** | Cross-reference against `memory/career-strategy.md` Tier 1-3 criteria. Off-target → SKIP |
+| **Role-family match?** | Must be real transformation / PMO / portfolio / delivery / business excellence / IT-technology leadership. Senior-but-wrong roles (sales, risk, demand planning, chief of staff, product, staffing, beauty/cosmetics, cyber) → SKIP |
 | **Salary floor?** | `web_search`: "{title} salary {country} {year}". If below market → FLAG. If no data → note "salary unverified" |
 | **Geographic fit?** | Must be GCC (UAE, KSA, Qatar, Bahrain, Kuwait, Oman) or remote-eligible → SKIP if not |
 
@@ -48,9 +49,10 @@ Show Ahmed ALL jobs that pass quality checks. Don't cap or filter out valid oppo
 
 Rank by:
 1. ATS score (highest first)
-2. Tier 1 > Tier 2 > Tier 3
-3. Company brand strength (known brand > unknown)
-4. Role freshness (posted <7 days > older)
+2. Fit score (highest first)
+3. Tier 1 > Tier 2 > Tier 3
+4. Company brand strength (known brand > unknown)
+5. Role freshness (posted <7 days > older)
 
 ### Step 4 — Present to Ahmed (Topic 9)
 

@@ -2,23 +2,23 @@
   "meta": {
     "agent": "system-agent",
     "version": "1.0.0",
-    "generated_at": "2026-04-11T00:00:31.282839+02:00",
-    "duration_ms": 27308,
+    "generated_at": "2026-04-11T12:00:19.473259+02:00",
+    "duration_ms": 16292,
     "ttl_hours": 1,
     "status": "success",
     "error": null,
-    "run_id": "af5268e1",
+    "run_id": "0f65c7f9",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
-    "scan_time": "2026-04-11T00:00:31.282703+02:00",
+    "scan_time": "2026-04-11T12:00:19.473135+02:00",
     "system": {
       "disk_usage_pct": 58,
       "memory": {
         "total_gb": 7.8,
-        "available_gb": 5.5,
-        "used_pct": 28.9
+        "available_gb": 4.3,
+        "used_pct": 44.0
       },
       "gateway": {
         "status": "healthy",
@@ -26,23 +26,23 @@
       },
       "openclaw_process": {
         "running": true,
-        "pid_count": 22
+        "pid_count": 25
       }
     },
     "agents": {
       "health": [
         {
           "agent": "jobs-merge",
-          "status": "stale",
-          "age_hours": 11.8,
+          "status": "healthy",
+          "age_hours": 3.8,
           "ttl_hours": 6,
-          "last_run": "2026-04-10T12:10:35.512951+02:00",
+          "last_run": "2026-04-11T08:09:40.446917+02:00",
           "last_status": "success"
         },
         {
           "agent": "jobs-review",
           "status": "stale",
-          "age_hours": 25.9,
+          "age_hours": 37.9,
           "ttl_hours": 6,
           "last_run": "2026-04-09T22:05:26.792690+02:00",
           "last_status": "success"
@@ -52,7 +52,7 @@
           "status": "healthy",
           "age_hours": 2.0,
           "ttl_hours": 4,
-          "last_run": "2026-04-10T22:01:42.096838+02:00",
+          "last_run": "2026-04-11T10:00:51.618710+02:00",
           "last_status": "success"
         },
         {
@@ -63,7 +63,7 @@
         {
           "agent": "comment-radar",
           "status": "stale",
-          "age_hours": 331.0,
+          "age_hours": 343.0,
           "ttl_hours": 6,
           "last_run": "2026-03-28T03:00:24.648751+00:00",
           "last_status": null
@@ -73,20 +73,20 @@
           "status": "healthy",
           "age_hours": 2.0,
           "ttl_hours": 6,
-          "last_run": "2026-04-10T20:01:11.024212+00:00",
+          "last_run": "2026-04-11T08:01:02.064798+00:00",
           "last_status": null
         },
         {
           "agent": "system-agent",
           "status": "healthy",
-          "age_hours": 4.0,
+          "age_hours": 2.0,
           "ttl_hours": 6,
-          "last_run": "2026-04-10T20:00:29.680817+02:00",
+          "last_run": "2026-04-11T10:00:24.204855+02:00",
           "last_status": "success"
         }
       ],
-      "healthy_count": 3,
-      "stale_count": 3,
+      "healthy_count": 4,
+      "stale_count": 2,
       "total": 7
     },
     "cron": {
@@ -110,19 +110,19 @@
   },
   "kpi": {
     "system_uptime": 100,
-    "agents_healthy": 3,
-    "agents_stale": 3,
+    "agents_healthy": 4,
+    "agents_stale": 2,
     "cron_success_rate": 0,
     "alerts_active": 0
   },
   "recommendations": [
     {
-      "id": "rec-af5268e1-0",
+      "id": "rec-0f65c7f9-0",
       "action": "run_agents",
-      "target": "3 stale agent(s): jobs-merge, jobs-review, comment-radar",
+      "target": "2 stale agent(s): jobs-review, comment-radar",
       "reason": "Agent data is past TTL",
       "urgency": "medium",
-      "timestamp": "2026-04-11T00:00:31.282760+02:00"
+      "timestamp": "2026-04-11T12:00:19.473192+02:00"
     }
   ]
 }

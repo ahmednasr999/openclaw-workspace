@@ -47,8 +47,8 @@ JOBS_RAW_DIR = agent_common.JOBS_RAW_DIR
 # Import from jobs_source_common
 SKIP_WORDS = jobs_source_common.SKIP_WORDS
 EXEC_WORDS = jobs_source_common.EXEC_WORDS
-TARGET_INDUSTRY_WORDS = jobs_source_common.TARGET_INDUSTRY_WORDS
-EXCLUDED_INDUSTRY_WORDS = jobs_source_common.EXCLUDED_INDUSTRY_WORDS
+DOMAIN_WORDS = jobs_source_common.DOMAIN_WORDS
+STRATEGIC_ROLE_WORDS = jobs_source_common.STRATEGIC_ROLE_WORDS
 TARGET_INDUSTRY_WORDS = jobs_source_common.TARGET_INDUSTRY_WORDS
 EXCLUDED_INDUSTRY_WORDS = jobs_source_common.EXCLUDED_INDUSTRY_WORDS
 
@@ -199,6 +199,11 @@ NEGATIVE_TITLE_KEYWORDS = [
     "analyst", "associate", "graduate", "coordinator",
     "home service", "concierge", "beauty salon",
     "commercial director",  # Usually sales/commercial, not exec ops
+    # Tightened 2026-04-10 - recurrent Sayyad false positives
+    "public affairs", "government affairs", "public policy",
+    "urban designer", "urban design",
+    "commercial management", "commercial manager",
+    "events and sports management", "sports management",
 ]
 
 
@@ -281,8 +286,11 @@ def is_bad_url(url: str) -> tuple[bool, str]:
 
 def apply_search_policy(job: dict) -> tuple[bool, str]:
     """Apply search policy filters. Returns (keep, reason)."""
-    title = job.get("title", "").lower()
+    title_raw = job.get("title", "")
+    title = title_raw.lower()
     url = job.get("url", "")
+    jd_text = (job.get("jd_text", "") or job.get("raw_snippet", "") or "").lower()
+    combined = f"{title} {jd_text}"
 
     # Filter bad URLs (broken links, profile pages)
     is_bad, bad_reason = is_bad_url(url)
@@ -292,7 +300,7 @@ def apply_search_policy(job: dict) -> tuple[bool, str]:
     # Filter jobs with person names in title (CV pages indexed as jobs)
     import re
     # Pattern: "FirstName LastName - Title" or "FirstName LastName - Title"
-    if re.match(r'^[A-Z][a-z]+ [A-Z][a-z]+ [---] ', job.get("title", "")):
+    if re.match(r'^[A-Z][a-z]+ [A-Z][a-z]+\s+[-–—]\s+', title_raw):
         return False, "person-name-in-title"
 
     # Filter aggregator listings - only for Exa results
@@ -303,14 +311,32 @@ def apply_search_policy(job: dict) -> tuple[bool, str]:
         if is_agg:
             return False, agg_reason
 
-    # Check seniority FIRST — if exec-level, bypass skip-word filtering
+    # Must be senior enough to matter
     has_exec = any(w in title for w in EXEC_WORDS)
     if not has_exec:
         return False, "no-seniority"
 
-    # EXEC-level job — let it through regardless of skip words.
-    # The ATS scoring phase will naturally filter out irrelevant ones (HR, Sales, etc.)
-    # by comparing against Ahmed's CV profile.
+    # Tight role-family alignment: broad senior management is not enough.
+    strategic_role_match = any(w in combined for w in STRATEGIC_ROLE_WORDS)
+    domain_match = any(w in combined for w in DOMAIN_WORDS)
+    target_industry_match = any(w in combined for w in TARGET_INDUSTRY_WORDS)
+
+    # Allow strong watchlist-company scans some flexibility, but still require
+    # either a role-family match or target-industry evidence.
+    search_title = (job.get("search_title", "") or "").lower()
+    watchlist_query = 'chief technology officer' in search_title or 'head of business excellence' in search_title
+
+    if not strategic_role_match and not domain_match:
+        if not (watchlist_query and target_industry_match):
+            return False, "no-role-family"
+
+    # Pure operations titles are only useful when clearly tied to the target lanes.
+    if "operations" in title and not any(w in combined for w in [
+        "program", "programme", "pmo", "portfolio", "delivery",
+        "transformation", "digital", "technology", "it ", "head of project management"
+    ]):
+        return False, "operations-no-target-lane"
+
     return True, "pass"
 
 
@@ -695,6 +721,8 @@ def run_merge(result: AgentResult):
                     country=j.get("country", "Unknown"),
                     url=j.get("url"),
                     jd_text=j.get("jd_text") or j.get("raw_snippet") or None,
+                    search_country=j.get("search_country"),
+                    search_title=j.get("search_title"),
                     status="discovered",
                 )
                 db_count += 1
