@@ -1,0 +1,116 @@
+{
+  "metadata": {
+    "description": "Rolling performance database. Never delete entries. Updated by LEARN layer every Sunday.",
+    "created": "2026-03-23",
+    "last_updated": "2026-03-24T10:37:44.474079+02:00",
+    "total_posts_tracked": 3,
+    "schema_version": "2",
+    "reaction_tracking": {
+      "enabled": true,
+      "script": "scripts/linkedin-reaction-tracker.py",
+      "registry": "data/linkedin-posts.json",
+      "snapshots_dir": "data/linkedin-engagement/",
+      "intervals_hours": [
+        1,
+        24,
+        48,
+        168
+      ],
+      "cron": "0 */6 * * *"
+    }
+  },
+  "schema": {
+    "description": "Schema for each post entry in the posts array",
+    "fields": {
+      "date": "YYYY-MM-DD publish date",
+      "title": "First 5 words of post",
+      "post_type": "story|expertise|opinion|data|bts",
+      "pillar": "pmo|ai|transformation|leadership|personal",
+      "hook_style": "bold_claim|curiosity_gap|specific_story|question|stat",
+      "hook_text": "First line of post",
+      "char_count": "integer",
+      "has_image": "boolean",
+      "image_genre": "framework_diagram|photo|quote_card|data_viz|none",
+      "activity_urn": "urn:li:activity:<id>",
+      "post_url": "https://www.linkedin.com/posts/...",
+      "reactions": "integer — latest snapshot count from reaction tracker",
+      "reaction_breakdown": {
+        "LIKE": "integer",
+        "CELEBRATE": "integer",
+        "SUPPORT": "integer",
+        "LOVE": "integer",
+        "INSIGHTFUL": "integer",
+        "FUNNY": "integer"
+      },
+      "reaction_snapshots": "array of {checked_at, reaction_count} from tracker",
+      "comments": "integer — manual or API",
+      "comments_substantive": "integer — comments with >10 words",
+      "reposts": "integer",
+      "engagement_rate": "float — (reactions + comments + reposts) / impressions * 100 if known",
+      "impressions": "integer or null",
+      "experiment_var": "variable being tested e.g. hook_style",
+      "experiment_value": "value of the variable e.g. bold_claim",
+      "repurpose_candidate": "boolean — true if engagement_rate > 5%",
+      "notes": "free text"
+    }
+  },
+  "posts": [
+    {
+      "date": "2026-03-23",
+      "title": "I almost lost a $50M transformation because I forg",
+      "post_type": "story",
+      "pillar": "transformation",
+      "hook_style": "curiosity_gap",
+      "hook_text": "Stakeholder mapping.",
+      "char_count": 0,
+      "has_image": true,
+      "image_genre": "none",
+      "activity_urn": "",
+      "post_url": "https://www.linkedin.com/feed/update/7441748599270621184",
+      "reactions": 0,
+      "comments": 0,
+      "reposts": 0,
+      "engagement_rate": null,
+      "impressions": null,
+      "notes": ""
+    },
+    {
+      "date": "2026-03-19",
+      "title": "Pursuing an MBA at 40+ while leading a $50M progra",
+      "post_type": "expertise",
+      "pillar": "personal",
+      "hook_style": "curiosity_gap",
+      "hook_text": "",
+      "char_count": 0,
+      "has_image": true,
+      "image_genre": "none",
+      "activity_urn": "",
+      "post_url": "https://www.linkedin.com/feed/update/urn:li:share:7440299301513113600",
+      "reactions": 3,
+      "comments": 0,
+      "reposts": 0,
+      "engagement_rate": null,
+      "impressions": null,
+      "notes": ""
+    },
+    {
+      "date": "2026-03-18",
+      "title": "Intel taught me precision.",
+      "post_type": "expertise",
+      "pillar": "personal",
+      "hook_style": "curiosity_gap",
+      "hook_text": "",
+      "char_count": 0,
+      "has_image": true,
+      "image_genre": "none",
+      "activity_urn": "",
+      "post_url": "https://www.linkedin.com/feed/update/urn:li:share:7439963712700002304",
+      "reactions": 0,
+      "comments": 0,
+      "reposts": 0,
+      "engagement_rate": null,
+      "impressions": null,
+      "notes": ""
+    }
+  ]
+}

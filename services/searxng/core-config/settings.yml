@@ -1,0 +1,29 @@
+use_default_settings: true
+
+search:
+  formats:
+    - html
+    - json
+
+server:
+  secret_key: "bswlerOk71pe5Zigvzwnhhio1Gs6cR5nduzu0B59rpc"
+  limiter: false
+  image_proxy: true
+  base_url: "http://127.0.0.1:8090/"
+
+valkey:
+  url: valkey://searxng-valkey:6379/0
+
+engines:
+  - name: ahmia
+    inactive: true
+  - name: torch
+    inactive: true
+  - name: karmasearch
+    inactive: true
+  - name: karmasearch images
+    inactive: true
+  - name: karmasearch videos
+    inactive: true
+  - name: karmasearch news
+    inactive: true

@@ -85,6 +85,26 @@
       ],
       "skipped_jobs_analyzed": [],
       "backtest": null
+    },
+    {
+      "version": 4,
+      "date": "2026-04-12",
+      "prompt_file": "none",
+      "metrics": {
+        "total_submit": 2,
+        "applied": 0,
+        "skipped": 0,
+        "pending": 2,
+        "accuracy": 0.0,
+        "miss_rate": 0.0
+      },
+      "skip_patterns_found": [],
+      "skip_pattern_counts": {},
+      "changes_made": [
+        "No skipped jobs to analyze"
+      ],
+      "skipped_jobs_analyzed": [],
+      "backtest": null
     }
   ]
 }
