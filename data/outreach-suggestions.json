@@ -1,27 +1,27 @@
 {
-  "generated": "2026-04-10T04:01:09.984792+00:00",
+  "generated": "2026-04-11T04:01:06.915457+00:00",
   "suggestions": [
     {
-      "name": "Natalie Avalos",
-      "role": "Early Careers & University Recruiting Analyst ...",
-      "url": "https://www.linkedin.com/in/natalie-avalos",
-      "company": "Visa",
-      "signal_score": 30,
+      "name": "Atlantis HR Consulting Services & Solutions",
+      "role": "Founder",
+      "url": "https://www.linkedin.com/in/atlantis-hr-consulting-services-solutions-23825396",
+      "company": "Atlantis Resorts",
+      "signal_score": 15,
       "source": "tavily",
-      "applied_role": "Director CoE - Strategy and Execution",
-      "applied_date": "2026-03-27",
-      "reason": "You applied for Director CoE - Strategy and Execution at Visa"
+      "applied_role": "General Manager and Senior Vice President, Operations",
+      "applied_date": "2026-03-28",
+      "reason": "You applied for General Manager and Senior Vice President, Operations at Atlantis Resorts"
     },
     {
-      "name": "Natalie Avalos",
-      "role": "Early Careers & University Recruiting Analyst ...",
-      "url": "https://www.linkedin.com/in/natalie-avalos",
-      "company": "Visa",
-      "signal_score": 30,
+      "name": "Monika Ward",
+      "role": "Emirates",
+      "url": "https://www.linkedin.com/in/monika-ward-985524185",
+      "company": "Atlantis Resorts",
+      "signal_score": 5,
       "source": "tavily",
-      "applied_role": "Director, Government Solutions, KSA",
-      "applied_date": "2026-03-27",
-      "reason": "You applied for Director, Government Solutions, KSA at Visa"
+      "applied_role": "General Manager and Senior Vice President, Operations",
+      "applied_date": "2026-03-28",
+      "reason": "You applied for General Manager and Senior Vice President, Operations at Atlantis Resorts"
     }
   ],
   "companies_searched": 10,

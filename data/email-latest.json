@@ -1,7 +1,7 @@
 {
   "status": "ok",
-  "scan_time": "2026-04-10T06:00:07.490306+02:00",
-  "total_scanned": 9,
+  "scan_time": "2026-04-11T06:00:09.705230+02:00",
+  "total_scanned": 10,
   "by_category": {
     "interview_invite": 0,
     "recruiter_reach": 1,
@@ -9,15 +9,15 @@
     "rejection": 0,
     "assessment": 0,
     "follow_up_needed": 0,
-    "other": 8
+    "other": 9
   },
   "interview_invites": [],
   "recruiter_messages": [
     {
-      "id": "352660",
+      "id": "352814",
       "from": "Mariam from foundit <jobmessenger@monstergulf.com>",
       "subject": "Ahmed, Hot Job Opportunities Waiting For You",
-      "date": "Fri, 10 Apr 2026 09:19:16 +0530 (IST)",
+      "date": "Sat, 11 Apr 2026 08:34:51 +0530 (IST)",
       "unread": true,
       "priority": "MEDIUM",
       "score": 2,
