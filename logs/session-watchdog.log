@@ -37,3 +37,6 @@
 [2026-04-10T01:02:19Z] Done — reset=2 skipped=1
 [2026-04-11T01:02:33Z] SKIP [cto] 9c577a84-1fdb-44dd-95f8-451b32fc2c3c.jsonl — locked by live PID 1501808 (1MB)
 [2026-04-11T01:02:33Z] Done — reset=0 skipped=1
+[2026-04-12T01:02:16Z] RESET [main] e8ac913a-ccd0-416c-8bca-8a47bac102db.jsonl was 12MB -> archived to e8ac913a-ccd0-416c-8bca-8a47bac102db.20260412T010215Z.jsonl.gz
+[2026-04-12T01:02:18Z] SKIP [cto] 6d0cba4f-f17d-4797-8306-05c2087f1fa5.jsonl locked by live PID 1670490 (1MB)
+[2026-04-12T01:02:19Z] Done reset=1 skipped=1 errors=0

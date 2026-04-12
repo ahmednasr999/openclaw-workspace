@@ -1,16 +1,60 @@
 {
-  "generated": "2026-04-11T16:01:14.950233+00:00",
+  "generated": "2026-04-12T00:01:29.419082+00:00",
   "suggestions": [
     {
-      "name": "Mark Williams",
-      "role": "JAM Recruitment",
-      "url": "https://www.linkedin.com/in/mark-williams-17620732",
-      "company": "Mark Williams Recruitment",
+      "name": "Eric Grasso",
+      "role": "Talent Acquisition Leader",
+      "url": "https://www.linkedin.com/in/eric-grasso",
+      "company": "Career",
+      "signal_score": 30,
+      "source": "tavily",
+      "applied_role": "Chief Operations Officer - Saudi Post| SPL",
+      "applied_date": "2026-03-28",
+      "reason": "You applied for Chief Operations Officer - Saudi Post| SPL at Career"
+    },
+    {
+      "name": "Steve Kweller",
+      "role": "",
+      "url": "https://www.linkedin.com/in/skweller",
+      "company": "Visa",
       "signal_score": 5,
       "source": "tavily",
-      "applied_role": "Head of Information Technology",
+      "applied_role": "Director CoE - Strategy and Execution",
       "applied_date": "2026-03-27",
-      "reason": "You applied for Head of Information Technology at Mark Williams Recruitment"
+      "reason": "You applied for Director CoE - Strategy and Execution at Visa"
+    },
+    {
+      "name": "Linda A.",
+      "role": "",
+      "url": "https://www.linkedin.com/in/lindaarman",
+      "company": "Visa",
+      "signal_score": 5,
+      "source": "tavily",
+      "applied_role": "Director CoE - Strategy and Execution",
+      "applied_date": "2026-03-27",
+      "reason": "You applied for Director CoE - Strategy and Execution at Visa"
+    },
+    {
+      "name": "Steve Kweller",
+      "role": "",
+      "url": "https://www.linkedin.com/in/skweller",
+      "company": "Visa",
+      "signal_score": 5,
+      "source": "tavily",
+      "applied_role": "Director, Government Solutions, KSA",
+      "applied_date": "2026-03-27",
+      "reason": "You applied for Director, Government Solutions, KSA at Visa"
+    },
+    {
+      "name": "Linda A.",
+      "role": "",
+      "url": "https://www.linkedin.com/in/lindaarman",
+      "company": "Visa",
+      "signal_score": 5,
+      "source": "tavily",
+      "applied_role": "Director, Government Solutions, KSA",
+      "applied_date": "2026-03-27",
+      "reason": "You applied for Director, Government Solutions, KSA at Visa"
     }
   ],
   "companies_searched": 10,

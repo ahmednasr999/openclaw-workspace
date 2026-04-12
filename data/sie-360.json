@@ -1,29 +1,35 @@
 {
-  "generated": "2026-04-10T23:50:19.892932+00:00",
-  "health_score": 80,
+  "generated": "2026-04-11T23:50:30.607066+00:00",
+  "health_score": 79,
   "summary": {
-    "ok": 4,
-    "warn": 5,
-    "alert": 2
+    "ok": 6,
+    "warn": 3,
+    "alert": 3
   },
   "workspace": {
     "root_files": 68,
-    "disk_percent": 58,
-    "disk_used": "56G",
+    "disk_percent": 66,
+    "disk_used": "63G",
     "disk_total": "96G",
     "ram_total": "7.8Gi",
-    "ram_used": "3.2Gi",
+    "ram_used": "3.1Gi",
     "large_files": [
       "/root/.openclaw/agents/main/qmd/xdg-cache/qmd/index.sqlite",
-      "/root/.openclaw/agents/main/sessions/sessions.json.bak-2026-04-08",
+      "/root/.openclaw/agents/main/sessions/missing-file-registry-cleanup-20260411T125530Z/manifest.json",
+      "/root/.openclaw/agents/main/sessions/missing-file-registry-cleanup-20260411T125530Z/sessions.json.before-cleanup",
       "/root/.openclaw/agents/main/sessions/sessions.json",
+      "/root/.openclaw/agents/main/sessions/orphan-archive-20260411T125235Z/22c099e1-cc21-4575-b9f1-b5f2b7c3505f.jsonl",
       "/root/.openclaw/agents/main/sessions/f4067fc9-218c-43ad-81ce-1c2ac47cd206.jsonl.reset.2026-04-08T16-30-44.594Z",
       "/root/.openclaw/agents/main/sessions/b256f8ff-57ab-46d9-97d7-f3b3496c411a.jsonl.reset.2026-03-31T03-08-04.000Z",
       "/root/.openclaw/agents/main/sessions/sessions.json.f6147166-be06-42fb-997a-81c3676bccb6.tmp",
       "/root/.openclaw/agents/main/sessions/archive/sessions-resets.tar.gz",
       "/root/.openclaw/agents/main/sessions/sessions.json.bak-2026-04-09",
+      "/root/.openclaw/agents/main/sessions/e8ac913a-ccd0-416c-8bca-8a47bac102db.jsonl",
       "/root/.openclaw/agents/main/sessions/sessions.json.dec1cbf4-d0ef-467f-b15b-4315195f2e70.tmp",
       "/root/.openclaw/agents/main/sessions/sessions.json.bak-2026-04-10",
+      "/root/.openclaw/agents/main/sessions/sessions.json.bak-2026-04-11",
+      "/root/.openclaw/agents/main/sessions/archive-cleanup-20260411T123955Z/sessions.json.before-cleanup",
+      "/root/.openclaw/agents/session-cleanup-telegram-20260411T124730Z/main/sessions.json.before-cleanup",
       "/root/.openclaw/extensions/camofox-browser/node_modules/impit-linux-x64-gnu/impit-node.linux-x64-gnu.node",
       "/root/.openclaw/extensions/camofox-browser/node_modules/better-sqlite3/deps/sqlite3/sqlite3.c",
       "/root/.openclaw/extensions/lossless-claw/node_modules/@napi-rs/canvas-linux-x64-gnu/skia.linux-x64-gnu.node",
@@ -49,6 +55,8 @@
       "/root/.openclaw/workspace/.understand-anything/intermediate/nodes.json",
       "/root/.openclaw/workspace/media/post-visuals/2-gemini-pro-4k.jpg",
       "/root/.openclaw/workspace/minimax-skills/.git/objects/pack/pack-fa8863764b269c235de495571ed95998096dde86.pack",
+      "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-04-11_070024.db",
+      "/root/.openclaw/workspace/data/nasr-pipeline.db",
       "/root/.openclaw/workspace/tools/jobspy-venv/lib/python3.13/site-packages/tls_client/dependencies/tls-client-arm64.so",
       "/root/.openclaw/workspace/tools/jobspy-venv/lib/python3.13/site-packages/tls_client/dependencies/tls-client-amd64.so",
       "/root/.openclaw/workspace/tools/jobspy-venv/lib/python3.13/site-packages/tls_client/dependencies/tls-client-x86.so",
@@ -75,7 +83,7 @@
       "/root/.openclaw/workspace/skills/scrapling/.venv/lib/python3.13/site-packages/curl_cffi/_wrapper.abi3.so",
       "/root/.openclaw/workspace/newsletter3.png"
     ],
-    "session_mb": 265.2
+    "session_mb": 399.0
   },
   "learnings": {
     "total": 21,
@@ -94,23 +102,44 @@
     "gmail": "ok",
     "notion": "ok",
     "linkedin": "warn",
-    "gateway": "down",
+    "gateway": "ok",
     "details": {
       "gmail": "App Password configured (himalaya IMAP/SMTP)",
       "notion_token": "present (50 chars)",
       "notion_databases": 15,
       "linkedin_lines": 3,
-      "linkedin_age_days": 18.1,
-      "gateway_output": "Invalid config at /root/.openclaw/openclaw.json:\\n- channels.slack.streaming: Invalid option: expected one of \"off\"|\"partial\"|\"block\"|\"progress\"\nGateway status failed: Error: Invalid config at /root/."
+      "linkedin_age_days": 19.1
     }
   },
   "crons": {
-    "total": 0,
-    "enabled": 0,
+    "total": 27,
+    "enabled": 27,
     "disabled": 0,
-    "skill_first": 0,
-    "skill_first_pct": 0,
-    "raw_prompt_list": [],
+    "skill_first": 6,
+    "skill_first_pct": 22,
+    "raw_prompt_list": [
+      "Daily Session Cleanup",
+      "session-watchdog",
+      "Daily Intel Sweep",
+      "Dream Mode - Memory Consolidation",
+      "JobZoom Daily Scan",
+      "Model Guardian",
+      "Email Agent (Sun-Thu)",
+      "NASR Doctor (Daily)",
+      "CMO Weekly Outreach Queue \u2014 Sunday",
+      "Weekly Pipeline Audit",
+      "Weekly Self-Health Check",
+      "Tomorrow morning post-change verification",
+      "Weekly Team Retro",
+      "LCM Midday Compaction Sweep",
+      "CMO Weekly Drafting",
+      "CMO Daily Post Approval Send",
+      "Email Agent (Fri-Sat)",
+      "X Intelligence Crawler - Weekly",
+      "RSS Intelligence - Weekly Crawl",
+      "CMO Weekly Content Report",
+      "Weekly Skill Autoresearch"
+    ],
     "failing": []
   },
   "briefing_notion": {
@@ -126,17 +155,17 @@
     {
       "category": "workspace",
       "level": "ok",
-      "message": "Disk: 58% used (56G/96G)"
+      "message": "Disk: 66% used (63G/96G)"
     },
     {
       "category": "workspace",
       "level": "warn",
-      "message": "Large files (>5MB): 60 found in .openclaw"
+      "message": "Large files (>5MB): 68 found in .openclaw"
     },
     {
       "category": "workspace",
       "level": "alert",
-      "message": "Session size: 265.2MB - bloated, review sessions"
+      "message": "Session size: 399.0MB - bloated, review sessions"
     },
     {
       "category": "learnings",
@@ -160,13 +189,18 @@
     },
     {
       "category": "integrations",
-      "level": "warn",
-      "message": "Gateway: status unclear or not running"
+      "level": "ok",
+      "message": "Gateway: running"
     },
     {
       "category": "crons",
-      "level": "warn",
-      "message": "Could not parse cron list JSON output"
+      "level": "alert",
+      "message": "Cron skill-first: 6/27 (22%) - too many raw-prompt crons"
+    },
+    {
+      "category": "crons",
+      "level": "ok",
+      "message": "No failing crons"
     },
     {
       "category": "briefing",
@@ -176,6 +210,6 @@
   ],
   "auto_fixed": [],
   "needs_attention": [
-    "Session bloat: 265.2MB - review before deleting (needs human decision)"
+    "Session bloat: 399.0MB - review before deleting (needs human decision)"
   ]
 }
