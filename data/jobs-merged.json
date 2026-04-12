@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-merge",
     "version": "1.0.0",
-    "generated_at": "2026-04-11T12:09:28.068465+02:00",
-    "duration_ms": 52178,
+    "generated_at": "2026-04-12T04:09:42.679289+02:00",
+    "duration_ms": 53646,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "25f1938e",
+    "run_id": "443abcb9",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -54,7 +54,7 @@
       "company": "Compunnel Inc.",
       "location": "Dubai, United Arab Emirates",
       "url": "https://www.linkedin.com/jobs/view/4399009780",
-      "posted": "",
+      "posted": "2026-04-10",
       "seniority": "C-Suite",
       "domain_match": false,
       "keyword_score": 33,
@@ -82,13 +82,109 @@
       "first_seen": "2026-04-11"
     },
     {
+      "id": "indeed-in-6d6c311ea3d2f678",
+      "source": "indeed",
+      "title": "Executive Director, Corporate Banking Dubai & NE",
+      "company": "bankfab",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=6d6c311ea3d2f678",
+      "posted": "2026-03-03",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 33,
+      "match_keywords": [
+        "ai",
+        "executive",
+        "director",
+        "growth",
+        "uae",
+        "dubai"
+      ],
+      "raw_snippet": "Job Description\n\nJoin the UAE\u2019s largest bank and one of the world\u2019s largest and safest financial institutions. Our focus is to create value for our employees, customers, shareholders and communities to grow through differentiation, agility and innovation. We are looking for top talent and your success is our success. Accelerate your growth as you help us reach our goals and advance your career. Be ready to make your mark a top company, in an exciting \\& dynamic industry.  \n\n\n\nJob Purpose:\n\n\nTo g",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Program Director",
+      "source_count": 1,
+      "country": "United Arab Emirates",
+      "industry_bonus": 3,
+      "policy_status": "pass",
+      "sources": [
+        "indeed"
+      ],
+      "first_seen": "2026-04-12",
+      "jd_fetch_status": "fetch_failed"
+    },
+    {
+      "id": "indeed-in-f7a24d9a1aeb1b13",
+      "source": "indeed",
+      "title": "Head of Business Strategy & Performance",
+      "company": "Keolis",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=f7a24d9a1aeb1b13",
+      "posted": "2026-04-09",
+      "seniority": "Director",
+      "domain_match": true,
+      "keyword_score": 26,
+      "match_keywords": [
+        "enterprise",
+        "executive",
+        "director",
+        "head of"
+      ],
+      "raw_snippet": "The Head of Business Strategy \\& Performance holds a global, organization\\-wide mandate to steer the strategic direction of Keolis\\-MHI, lead enterprise performance, and oversee the development and deployment of business intelligence capabilities. Reporting directly to the Managing Director, part of the Executive Committee as a non\\-executive member, this role is responsible for driving strategic business change, aligning financial and operational strategies, and ensuring the effective execution",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Director Digital Transformation",
+      "source_count": 1,
+      "country": "United Arab Emirates",
+      "policy_status": "pass",
+      "sources": [
+        "indeed"
+      ],
+      "first_seen": "2026-04-12",
+      "jd_fetch_status": "fetch_failed"
+    },
+    {
+      "id": "indeed-in-0b8662085fae7423",
+      "source": "indeed",
+      "title": "Executive Director, Aviation",
+      "company": "bankfab",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=0b8662085fae7423",
+      "posted": "2026-03-23",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 23,
+      "match_keywords": [
+        "executive",
+        "director",
+        "growth",
+        "uae"
+      ],
+      "raw_snippet": "Job Description\n\nJoin the UAE\u2019s largest bank and one of the world\u2019s largest and safest financial institutions. Our focus is to create value for our employees, customers, shareholders and communities to grow through differentiation, agility and innovation. We are looking for top talent and your success is our success. Accelerate your growth as you help us reach our goals and advance your career. Be ready to make your mark a top company, in an exciting \\& dynamic industry.\n\n\n**Job Purpose:**\n\nTo o",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Program Director",
+      "source_count": 1,
+      "country": "United Arab Emirates",
+      "policy_status": "pass",
+      "sources": [
+        "indeed"
+      ],
+      "first_seen": "2026-04-12",
+      "jd_fetch_status": "fetch_failed"
+    },
+    {
       "id": "linkedin_jobspy-li-4398149888",
       "source": "linkedin_jobspy",
       "title": "Executive Director, Digital Assets Risk",
       "company": "Standard Chartered",
       "location": "Dubai, Dubai, United Arab Emirates",
       "url": "https://www.linkedin.com/jobs/view/4398149888",
-      "posted": "",
+      "posted": "2026-04-10",
       "seniority": "C-Suite",
       "domain_match": true,
       "keyword_score": 16,
@@ -104,14 +200,108 @@
       "search_title": "Program Director",
       "linkedin_id": "li-4398149888",
       "jd_text": "**Job Summary**\n This role could be based in UAE and Hong Kong. When you start the application process you will be presented with a drop down menu showing all countries, Please ensure that you select a country where the role is based.\n   \n\n  \n\n* Act as the second line Subject Matter Expert for Digital Assets (DA) as an asset class including advising across all relevant Risk Types (reputational risk, traded/market, treasury/capital and liquidity, operational, technology, cyber security, and credit risk).\n* Lead provision of DA risk specific expertise to continuously enhance and maintain all elements of the DA Risk Management Approach (DARMA) which sets out the approach to risk management and the control framework within which risks are managed.\n* Lead assessment of material risk types that the Group may be potentially exposed to arising from direct or indirect DA activities and direct Risk Framework Ownership to such risk types.\n* Lead effectiveness reviews to assess relevant first and second line understand and accept their DA risk management responsibilities.\n* Review and challenge that policies and standards are being adapted or created to address DA risks and training is available to staff (on a targeted basis).\n* Review and challenge the assessment of DA Risk considerations in the Group\u2019s Risk Appetite framework.\n* Monitor that the Risk Framework Owners (RFOs) propose adequate risk appetite with DA risks evaluation for consideration and approval by the Board.\n* Monitor Risk Type compliance to Board approved risk appetite with DA considerations using the risk information report covering all Risk Types; and highlight significant matters to the Group Chief Risk Officer (\u201cGCRO\u201d), senior management and senior risk committees.\n* Review infrastructure to support DA reviews, and the monitoring of exposures and actions as required.\n* Lead provision of regulatory interpretation for regulations classified as \u201cLarge\\-Scale\u201d with Framework implications. This also includes working with countries to support their regulatory requirements.\n\n\n**Key Responsibilities**\n**Strategy**\n* Influence the Group\u2019s DA Strategy and activities, advising on alignment with specific Risk Type framework, policies, standards, risk registers and risk appetite.\n* Actively engage thought leaders in the DA industries to improve risk understanding, innovation, exploration, and adoption of alternative risk models and data sources.\n* Conduct regulatory interpretation and associated assessments for DA related initiatives with adherence to legal and regulatory requirements.\n* Evaluate and advise on risks associated with DA projects, products and investments, including the assessment of blockchain technologies and tokenomics, to ensure robust risk mitigation strategies are in place.\n\n\n**Business**\n* Inform the strategic intent and collective agenda for the DA Risk Management Approach\n* Influence stakeholders and DA Risk subject matter experts on thinking and approach for Digital Asset activities, including situations where the Group seeks to engage clients heavily exposed to DAs\n* Advise Business on alignment of individual DA activities to the Group\u2019s DA business strategy and execution within the risk framework and parameters.\n* Direct the business to undertake appropriate evaluations with regards to DA stress scenarios with support from the Group Treasury and Group Stress Testing teams as required.\n* Provide timely advice, support and challenge to enable compliance with all relevant laws and regulations and support pro\\-active and pre\\-emptive risk mitigation.\n\n\n**Processes**\n* The Candidate is responsible for discharging Policy Owner related responsibilities as defined in the ERMF:\n* Ensuring that processes within the DA Risk Management central function are identified and defined by Process Owners, and ensuring the completeness and accuracy of these identified processes; and\n* Reviewing, challenging, and providing oversight of the DA risk profile monitored bythe DA Risk Management Function process universe.\n\n\n**People \\& Talent**\n* Create a culture of continuous learning and development\n* Foster an open environment to stimulate creativity and develop innovative solution to supports Group\u2019s aspiration.\n* Lead through example and build the appropriate culture and values.\n* Set appropriate tone and expectations from the team and work in collaboration with risk and control partners.\n\n\n**Risk Management**\n**For DAs Initiatives, Lead Inter\\-alia**\n* Oversight of development of the risk assessment approach (DARMA) for any planned business direct exposure to DAs and/or entities heavily exposed to DAs.\n* Required DA risk reviews:\n* Provide subject matter expertise on DA risks and their interactions to core banking Business risks (across CIB/WRB) including capital and liquidity impacts, and traded and credit risk limits\n* Review and challenge enhanced DA Due Diligence reviews on Business DA clients, products, initiatives and investments to enable adherence to DARMA.\n* Evaluate DA risk assessments for confirmation by existing Business authorities including evaluation of blockchains and tokens, DA key management and wallet management infrastructure, operations and partnerships with DA third parties e.g. DA custodians, exchanges, staking providers etc\n* Direct and review notification requirements to relevant regulators\n* Oversight and challenge for the Group\u2019s DA Risk Profile and activities including development and implementation of appropriate infrastructure to support DA reviews, and the monitoring of exposures and actions as required.\n* Direct DA considerations in Risk Appetite by relevant Risk Framework Owners.\n* monitoring the approved metrics through the risk information reports on an ongoing basis and that incidents of breach are being escalated by the relevant Business and/or Risk Type to the respective Committees.\n\n\n**Governance**\n* Run and maintain a governance forum/committee structure to provide effective risk oversight of the DA Risk Profile across the Group.\n* Conduct annual effectiveness reviews to identify improvement areas and implement necessary actions.\n* Lead review and challenge of on\\-going compliance with and effectiveness of the risk control environment and overall exposure and risk levels to DAs\n* Monitor top and emerging risks through forward looking indicators, taking into consideration to external events which may be material.\n* Review and assess management action being taken to mitigate their impact.\n\n\n**Regulatory \\& Business Conduct**\n* Display exemplary conduct and live by the Group\u2019s Values and Code of Conduct.\n* Take personal responsibility for embedding the highest standards of ethics, including regulatory and business conduct, across Standard Chartered Bank. This includes understanding and ensuring compliance with, in letter and spirit, all applicable laws, regulations, guidelines and the Group Code of Conduct.\n* Effectively and collaboratively identify, escalate, mitigate and resolve risk, conduct and compliance matters.\n\n\n**Key stakeholders**\n Internal\n   \n\n  \n\n Digital Assets\n   \n\n  \n\n* Members of the Group Management Team\n* Digital Assets Centre of Excellence\n* Business heads\n* Group and Country Risk Framework Owners\n* Digital Assets SMEs\n* Group Head, Internal Audit\n\n\n External\n   \n\n  \n\n* Home and host regulators including Prudential Regulation Authority (PRA) and Financial Conduct Authority (FCA)\n* The Group's external auditors\n\n\n**Skills And Experience**\n* Traded Risk\n* Digital Assets\n* Credit\n* Traded Risk\n* Operational and Cyber Security\n* Reputational\n* Compliance\n* Treasury\n\n\n**Qualifications**\n* Strong academic background\n* \\>15 years of experience in banking / financial services specifically capital, liquidity risk, traded and credit risk.\n* \\>15 years of experience in emerging Digital technology\n* \\>5 years direct experience in Digital Asset technology working for a Digital Asset Service Provider\n* Deep expertise (at least 5 years) of evaluating financial and non\\-financial risks associated with blockchains, tokens, CBDCs, stablecoins and cryptocurrencies.\n* A clear understanding of novel risks in DA and how these risks manifest within relevant Risk Types such as Reputational, Traded/Market, Treasury/Capital and Liquidity, Operational, Technology and Cyber Security Risks, and Credit Risk.\n* Broad experience across diverse business models within banking and Fintechs\n* Strong expertise within risk management including governance and frameworks including proven verbal and written communication skills to the Board level.\n* Thought leadership in digital\\-related risks (Digital\\-asset risk, technology risk, ICS risk, resilience)\n* Strong understanding of Digital\\-assets and fintech industry trends / developments, risk implications and impacts on the financial sector\n* Knowledge of key regulatory and supervisory frameworks. Ideal \\- direct experience of working closely with supervisors / regulators\n* Strong stakeholder management, communication and influencing skills\n* Excellent interpersonal skills, multicultural awareness and sensitivity\n* Programme/project management\n* Experience paper writing for senior level committees.\n* Creativity and appetite for continuous improvement\n\n\n**About Standard Chartered**\n We're an international bank, nimble enough to act, big enough for impact. For more than 170 years, we've worked to make a positive difference for our clients, communities, and each other. We question the status quo, love a challenge and enjoy finding new opportunities to grow and do better than before. If you're looking for a career with purpose and you want to work for a bank making a difference, we want to hear from you. You can count on us to celebrate your unique talents and we can't wait to see the talents you can bring us.\n   \n\n  \n\n Our purpose, to drive commerce and prosperity through our unique diversity, together with our brand promise, to be here for good are achieved by how we each live our valued behaviours. When you work with us, you'll see how we value difference and advocate inclusion.\n   \n\n  \n\n**Together We**\n* Do the right thing and are assertive, challenge one another, and live with integrity, while putting the client at the heart of what we do\n* Never settle, continuously striving to improve and innovate, keeping things simple and learning from doing well, and not so well\n* Are better together, we can be ourselves, be inclusive, see more good in others, and work collectively to build for the long term\n\n\n**What We Offer**\n**In line with our Fair Pay Charter,** \n we offer a competitive salary and benefits to support your mental, physical, financial and social wellbeing.\n   \n\n  \n\n* Core bank funding for retirement savings, medical and life insurance, with flexible and voluntary benefits available in some locations.\n* Time\\-off including annual leave, parental/maternity (20 weeks), sabbatical (12 months maximum) and volunteering leave (3 days), along with minimum global standards for annual and public holiday, which is combined to 30 days minimum.\n* Flexible working options based around home and office locations, with flexible working patterns.\n* Proactive wellbeing support through Unmind, a market\\-leading digital wellbeing platform, development courses for resilience and other human skills, global Employee Assistance Programme, sick leave, mental health first\\-aiders and all sorts of self\\-help toolkits\n* A continuous learning culture to support your growth, with opportunities to reskill and upskill and access to physical, virtual and digital learning.\n* Being part of an inclusive and values driven organisation, one that embraces and celebrates our unique diversity, across our teams, business functions and geographies \\- everyone feels respected and can realise their full potential.",
-      "source_count": 1,
+      "source_count": 2,
       "country": "United Arab Emirates",
       "industry_bonus": 9,
       "policy_status": "pass",
       "sources": [
-        "linkedin"
+        "linkedin",
+        "indeed"
       ],
       "first_seen": "2026-04-11"
+    },
+    {
+      "id": "indeed-in-b7591ff66cc5a732",
+      "source": "indeed",
+      "title": "(Chief) Product Expert AI for Region UAE",
+      "company": "SAP",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=b7591ff66cc5a732",
+      "posted": "2026-04-10",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 16,
+      "match_keywords": [
+        "ai",
+        "growth",
+        "uae"
+      ],
+      "raw_snippet": "**We help the world run better**  \n\nAt SAP, we keep it simple: you bring your best to us, and we'll bring out the best in you. We're builders touching over 20 industries and 80% of global commerce, and we need your unique talents to help shape what's next. The work is challenging \u2013 but it matters. You'll find a place where you can be yourself, prioritize your wellbeing, and truly belong. What's in it for you? Constant learning, skill growth, great benefits, and a team that wants you to grow and ",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Program Director",
+      "source_count": 1,
+      "country": "United Arab Emirates",
+      "industry_bonus": 3,
+      "policy_status": "pass",
+      "sources": [
+        "indeed"
+      ],
+      "first_seen": "2026-04-12",
+      "jd_fetch_status": "fetch_failed"
+    },
+    {
+      "id": "indeed-in-0de0566c1d872498",
+      "source": "indeed",
+      "title": "Director of Housekeeping - The St. Regis Downtown Dubai",
+      "company": "Marriott International",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=0de0566c1d872498",
+      "posted": "2026-04-10",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 16,
+      "match_keywords": [
+        "ai",
+        "director",
+        "dubai"
+      ],
+      "raw_snippet": "**Additional Information**  \n\n**Job Number**26044375  \n\n**Job Category**Housekeeping \\& Laundry  \n\n**Location**The St. Regis Downtown Dubai, Marasi Drive, Dubai, United Arab Emirates, United Arab Emirates, 191984  \n\n**Schedule**Full Time  \n\n**Located Remotely?**N  \n\n**Position Type** Management  \n\n**JOB SUMMARY**\n\n  \n\n\n\nManages housekeeping functions and staff on a daily basis to ensure property guest rooms, public space and employee areas are clean and well maintained. Directs and works with te",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Program Director",
+      "source_count": 1,
+      "country": "United Arab Emirates",
+      "industry_bonus": 3,
+      "policy_status": "pass",
+      "sources": [
+        "indeed"
+      ],
+      "first_seen": "2026-04-12",
+      "jd_fetch_status": "fetch_failed"
+    },
+    {
+      "id": "indeed-in-b31496fa37227811",
+      "source": "indeed",
+      "title": "Director Of Finance",
+      "company": "Marriott International",
+      "location": "\u0627\u0644\u062f\u0631\u0639\u064a\u0629, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=b31496fa37227811",
+      "posted": "2026-04-09",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 20,
+      "match_keywords": [
+        "ai",
+        "director",
+        "saudi",
+        "riyadh"
+      ],
+      "raw_snippet": "**Additional Information**  \n\n**Job Number**26043859  \n\n**Job Category**Finance \\& Accounting  \n\n**Location**Bab Samhan a Luxury Collection Hotel Diriyah, 7628 King Faisal Ibn Abd Al Aziz Road, Diriyah, Riyadh, Saudi Arabia, Saudi Arabia, 13712  \n\n**Schedule**Full Time  \n\n**Located Remotely?**N  \n\n**Position Type** Management  \n\n**JOB SUMMARY**\n\n  \n\n\n\nFunctions as the property\u2019s strategic financial business leader. The position champions, develops and implements property\\-wide strategies that de",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "Program Director",
+      "source_count": 1,
+      "country": "Saudi Arabia",
+      "policy_status": "pass",
+      "sources": [
+        "indeed"
+      ],
+      "first_seen": "2026-04-12",
+      "jd_fetch_status": "fetch_failed"
     },
     {
       "id": "linkedin_jobspy-li-4400523917",
@@ -120,7 +310,7 @@
       "company": "BlackStone eIT",
       "location": "Dubai, Dubai, United Arab Emirates",
       "url": "https://www.linkedin.com/jobs/view/4400523917",
-      "posted": "",
+      "posted": "2026-04-10",
       "seniority": "Director",
       "domain_match": false,
       "keyword_score": 13,
@@ -135,12 +325,13 @@
       "search_title": "Delivery Director",
       "linkedin_id": "li-4400523917",
       "jd_text": "BlackStone eIT is seeking a strategic and results\\-driven Head of Product \\& Delivery to lead our product development and delivery teams. This leadership role will be responsible for overseeing the entire product lifecycle, from ideation to launch and ongoing improvement, while ensuring efficient delivery and high\\-quality outcomes. The successful candidate will align product strategy with business goals, foster collaboration across teams, and drive innovation to meet customer needs.\n   \n\n  \n\n**Key Responsibilities:**\n* Lead and manage the product and delivery teams, providing vision, motivation, and support\n* Develop and execute product strategies that align with company objectives and market demands\n* Oversee project delivery processes to ensure timely, high\\-quality product releases\n* Collaborate with stakeholders to define product roadmaps, priorities, and success metrics\n* Implement best practices in Agile and other delivery methodologies to optimize performance\n* Establish and monitor KPIs to assess product and delivery team effectiveness\n* Drive continuous improvement initiatives to enhance product quality and customer satisfaction\n* Manage resource allocation and budgeting to maximize efficiency and outcomes\n* Maintain strong communication across departments, fostering a collaborative and innovative culture\n* \\- Programme delivery across all active workstreams: executive portal, data platform, governance, AI agents, crisis management systems\n* \\- Sprint execution: planning, backlog management, Definition of Done, mid\\-sprint check\\-ins, sprint reviews with live demos\n* \\- External vendor coordination: tracking classification vendor milestones against your integration needs; tracking agentic platform delivery against your data readiness timeline\n* \\- Stakeholder management: milestone reports to senior leadership, weekly status updates, requirements conversations with internal business owners\n* \\- Scope discipline: deciding what gets cut when time is at risk, deferring gracefully, tracking deferred work\n* \\- Resource management: contractor onboarding, work package definition, daily task allocation, quality review\n* \\- User acceptance testing: designing and facilitating UAT with non\\-technical end users and senior leadership\n* \\- Delivery risk management: identifying risks before they become blockers, maintaining a cleared backlog that proceeds when external dependencies are slow\n* \\- Office representation: authorized to represent the Data \\& AI Office at all levels when technical leadership is unavailable\n\n\n**Requirements**\n* Bachelor's or Master's degree in Business, Computer Science, Engineering, or related field\n* Minimum 10\\+ years of experience in product management and delivery leadership roles\n* Proven track record of successfully managing product portfolios and delivery teams\n* Strong knowledge and experience with Agile methodologies and software development lifecycles\n* Excellent leadership and people management skills with the ability to build and mentor high\\-performing teams\n* Exceptional strategic thinking, problem\\-solving, and decision\\-making abilities\n* Strong communication and stakeholder management skills\n* Experience with project management tools and product management platforms\n* Ability to manage multiple projects and priorities in a fast\\-paced environment\n* Experience in the technology or software industry is highly preferred\n* Required Skills \\& Experience\n* \\- Has shipped working software to real users under a hard deadline \u2014 owned the outcome, not just managed the timeline\n* \\- Agile/sprint delivery in small engineering teams (2\\-8 people) producing working output, not status updates\n* \\- Technical fluency: can read an OpenAPI spec, evaluate engineering estimates, identify scope creep, and challenge \"it's complex\" when it's really \"I haven't started\"\n* \\- Vendor management: has managed external delivery engagements and held vendors accountable to milestones\n* \\- Writing functional requirements with testable acceptance criteria\n* \\- UAT design and facilitation for non\\-technical executives\n* \\- Risk identification and escalation \u2014 knows the difference between a delay and a blocker\n* \\- Stakeholder communication at C\\-suite level \u2014 can write a one\\-page status note that senior leadership reads and trusts\n* \\- Programme management across multiple concurrent workstreams (3\\-5 simultaneous)\n* \\- Task tracking tools (GitHub Projects, Linear, Jira)\n* \\- Experience operating as a deputy or chief of staff to a technical executive\n* \\- Experience in government, sovereign, or institutional environments is a strong plus\n\n\n**Benefits**\n* Paid Time Off\n* Performance Bonus\n* Remote Job",
-      "source_count": 1,
+      "source_count": 2,
       "country": "United Arab Emirates",
       "industry_bonus": 9,
       "policy_status": "pass",
       "sources": [
-        "linkedin"
+        "linkedin",
+        "indeed"
       ],
       "first_seen": "2026-04-11"
     },
@@ -151,7 +342,7 @@
       "company": "A.P. Moller - Maersk",
       "location": "Dammam, Eastern, Saudi Arabia",
       "url": "https://www.linkedin.com/jobs/view/4400507351",
-      "posted": "",
+      "posted": "2026-04-10",
       "seniority": "Director",
       "domain_match": false,
       "keyword_score": 13,
@@ -176,46 +367,45 @@
       "first_seen": "2026-04-11"
     },
     {
-      "id": "linkedin_jobspy-li-4400395958",
-      "source": "linkedin_jobspy",
-      "title": "Head of Delivery & Operations",
-      "company": "Supertech Innovation Labs",
-      "location": "Riyadh, Riyadh, Saudi Arabia",
-      "url": "https://www.linkedin.com/jobs/view/4400395958",
-      "posted": "",
-      "seniority": "Director",
-      "domain_match": true,
-      "keyword_score": 6,
+      "id": "indeed-in-f1b9f4050cab15ab",
+      "source": "indeed",
+      "title": "Senior Director- HSE (MAS7)",
+      "company": "Qiddiya Investment Company",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=f1b9f4050cab15ab",
+      "posted": "2026-04-09",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 13,
       "match_keywords": [
-        "head of"
+        "director",
+        "leadership"
       ],
-      "raw_snippet": "Do you want to love what you do at work? Do you want to make a difference, an impact, transform people's lives? Do you want to work with a team that believes in disrupting the normal, boring, and average?\n   \n\n  \n\n If yes, then this is the job you're looking for.\n **UXBERT Labs** \n is one of the bes",
+      "raw_snippet": "Qiddiya Investment Company is looking for a highly experienced Senior Director \\- HSE to lead and oversee the Health, Safety, and Environment functions within our dynamic organization. This leadership role is critical to ensuring the highest standards of safety and environmental management across all company operations and projects.\n\n\nThe Senior Director \\- HSE will be responsible for developing strategic initiatives, ensuring compliance with all local and international HSE regulations, and cult",
       "relevant": true,
       "filter_reason": null,
       "search_country": "Saudi Arabia",
-      "search_title": "Delivery Director",
-      "linkedin_id": "li-4400395958",
-      "jd_text": "Do you want to love what you do at work? Do you want to make a difference, an impact, transform people's lives? Do you want to work with a team that believes in disrupting the normal, boring, and average?\n   \n\n  \n\n If yes, then this is the job you're looking for.\n **UXBERT Labs** \n is one of the best digital and user experience design agencies in the GCC working with the biggest regional and international brands such as STC, Amazon, Gucci and more. UXBERT Labs is part of the Supertech Group also consisting of Hala Yalla, Saudi's \\#1 private event ticketing and experience booking platform, and Kafu Games, the largest esports tournament platform in MENA.\n   \n\n  \n\n We are looking for a highly experienced and dynamic\n **Head of Delivery \\& Operations** \n to lead and oversee the successful execution of all current and future technology and digital transformation projects across the company. This role is central to ensuring seamless delivery, maintaining high levels of client satisfaction, and fostering operational excellence across the organization.\n   \n\n  \n\n You will work closely with cross\\-functional teams\u2014including design, development, research, and strategy\u2014to ensure all projects are executed with the highest level of quality and efficiency. The role also includes contributing to strategic business initiatives, including client engagement, proposal development, and supporting commercial growth alongside the Head of Commercial.\n   \n\n  \n\n**Key Responsibilities**\n* Lead the planning, execution, and delivery of all ongoing and upcoming digital transformation and technology projects\n* Ensure projects are delivered on time, within scope, and aligned with the company's quality standards\n* Implement and optimize delivery frameworks, methodologies, and best practices\n* Build and maintain strong, trust\\-based relationships with key clients to ensure long\\-term partnerships and client satisfaction\n* Serve as the primary escalation point for project challenges, ensuring swift and effective resolution\n* Regularly engage with clients to align expectations, provide updates, and gather feedback\n* Drive operational excellence across departments, ensuring efficient workflows and team collaboration\n* Foster a culture of ownership, accountability, and continuous improvement\n* Lead by example to cultivate harmony, motivation, and problem\\-solving across delivery teams\n* Mentor and manage delivery and operations teams, ensuring clear alignment with goals and KPIs\n* Promote cross\\-functional collaboration between design, development, UX, CX, and product teams\n* Identify skill gaps and recommend strategic hiring or training initiatives\n* Support the Head of Commercial in client meetings, proposal development, and business opportunities\n* Contribute to the company's revenue goals by identifying upsell opportunities and ensuring delivery excellence that drives repeat business\n* Provide insights into project scoping, budgeting, and resource planning during the sales process\n\n\n**Requirements**\n* Proven experience (10\\+ years) in a senior delivery or operations leadership role within a digital agency or consultancy environment (client\\-side experience is not suitable)\n* Deep understanding of digital transformation, software development, UX/CX, and agile delivery methodologies\n* Strong commercial acumen with experience in client engagement and supporting business development efforts\n* Excellent leadership and communication skills, with the ability to lead diverse, cross\\-functional teams\n* Experience working in or with GCC\\-based clients is a strong advantage\n* Preferably of European or British nationality\n* Willing to be based full\\-time in Riyadh, Saudi Arabia",
+      "search_title": "Program Director",
       "source_count": 1,
       "country": "Saudi Arabia",
-      "industry_bonus": 9,
       "policy_status": "pass",
       "sources": [
-        "linkedin"
+        "indeed"
       ],
-      "first_seen": "2026-04-11"
+      "first_seen": "2026-04-12",
+      "jd_fetch_status": "fetch_failed"
     }
   ],
   "kpi": {
-    "total_raw": 353,
-    "sources_loaded": 2,
-    "stale_sources": 2,
-    "unique_after_dedup": 321,
+    "total_raw": 352,
+    "sources_loaded": 3,
+    "stale_sources": 1,
+    "unique_after_dedup": 316,
     "applied_filtered": 0,
-    "policy_filtered": 210,
-    "final_candidates": 6,
-    "multi_source_jobs": 0,
-    "new_today": 6
+    "policy_filtered": 198,
+    "final_candidates": 12,
+    "multi_source_jobs": 2,
+    "new_today": 12
   },
   "recommendations": []
 }

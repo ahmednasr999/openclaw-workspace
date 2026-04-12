@@ -2,89 +2,86 @@
   "meta": {
     "agent": "email-agent",
     "version": "3.0.0",
-    "generated_at": "2026-04-11T18:01:33.363264+02:00",
-    "duration_ms": 88829,
+    "generated_at": "2026-04-12T06:00:58.363138+02:00",
+    "duration_ms": 51056,
     "ttl_hours": 4,
     "status": "success",
     "error": null,
-    "run_id": "c6461463",
+    "run_id": "f3c3c14a",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
     "status": "ok",
-    "scan_time": "2026-04-11T18:00:36.387661+02:00",
-    "total_scanned": 17,
+    "scan_time": "2026-04-12T06:00:20.923613+02:00",
+    "total_scanned": 4,
     "by_category": {
       "interview_invite": 0,
-      "recruiter_reach": 0,
+      "recruiter_reach": 2,
       "application_ack": 0,
       "rejection": 0,
       "assessment": 0,
-      "follow_up_needed": 1,
-      "other": 16
+      "follow_up_needed": 0,
+      "other": 2
     },
     "interview_invites": [],
-    "recruiter_messages": [],
-    "application_acks": [],
-    "rejections": [],
-    "assessments": [],
-    "follow_ups_needed": [
+    "recruiter_messages": [
       {
-        "id": "352866",
-        "from": "Mindshare by Bankless <team@bankless.com>",
-        "subject": "=?UTF-8?q?=F0=9F=A7=A0_The_Personal_Agent_Unlock?=",
-        "date": "Sat, 11 Apr 2026 14:02:30 +0000",
+        "id": "352915",
+        "from": "Mariam from foundit <jobmessenger@monstergulf.com>",
+        "subject": "Ahmed, Hot Job Opportunities Waiting For You",
+        "date": "Sun, 12 Apr 2026 07:58:28 +0530 (IST)",
         "unread": true,
-        "priority": "LOW",
-        "score": 0,
+        "priority": "MEDIUM",
+        "score": 2,
+        "pipeline_match": null
+      },
+      {
+        "id": "352917",
+        "from": "Naukrigulf <newjobs@naukrigulf.com>",
+        "subject": "Senior Manager Transformation Digitale & Innovation, Senior\r\n PMO Project Coordinator jobs for you",
+        "date": "Sun, 12 Apr 2026 08:26:15 +0530 (IST)",
+        "unread": true,
+        "priority": "MEDIUM",
+        "score": 2,
         "pipeline_match": null
       }
     ],
-    "actionable_count": 1,
+    "application_acks": [],
+    "rejections": [],
+    "assessments": [],
+    "follow_ups_needed": [],
+    "actionable_count": 0,
     "hot_alerts": [],
     "signals": [],
     "llm_analysis": {
-      "actionable_emails": [
-        {
-          "id": "352866",
-          "subject": "=?UTF-8?q?=F0=9F=A7=A0_The_Personal_Agent_Unlock?=",
-          "from": "Mindshare by Bankless <team@bankless.com>",
-          "date": "Sat, 11 Apr 2026 14:02:30 +0000",
-          "category": "follow_up_needed",
-          "urgency": "low",
-          "intent": "cannot determine from available content",
-          "action": "read_and_file",
-          "response_deadline": "when convenient",
-          "notes": "Flagged for follow-up, but metadata alone does not justify a reply."
-        }
-      ],
+      "actionable_emails": [],
       "summary": {
-        "total_actionable": 1,
+        "total_actionable": 0,
         "critical_count": 0,
         "requires_interview_prep": false,
         "requires_assessment": false,
         "recruiter_top_opportunities": [],
-        "top_priority": "352866",
-        "daily_focus": "Validate whether this lone flagged email is truly actionable, then keep attention on senior-role opportunities."
+        "top_priority": null,
+        "daily_focus": "No actionable recruiting emails today, focus on outbound networking and targeted senior-role applications in the Gulf region."
       }
     }
   },
   "kpi": {
-    "emails_processed": 17,
-    "actionable": 1,
+    "emails_processed": 4,
+    "actionable": 0,
     "interviews_detected": 0,
-    "recruiter_messages": 0,
-    "unread_actionable": 1
+    "recruiter_messages": 2,
+    "unread_actionable": 0
   },
   "recommendations": [
     {
-      "id": "rec-c6461463-0",
-      "action": "check_inbox",
-      "target": "1 unread actionable email(s)",
-      "reason": "Unread emails need attention",
+      "id": "rec-f3c3c14a-0",
+      "action": "review_and_respond",
+      "target": "2 recruiter message(s)",
+      "reason": "Recruiter outreach could lead to opportunities",
       "urgency": "high",
-      "timestamp": "2026-04-11T18:01:33.362957+02:00"
+      "timestamp": "2026-04-12T06:00:58.362240+02:00"
     }
   ]
 }

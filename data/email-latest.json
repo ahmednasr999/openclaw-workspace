@@ -1,34 +1,44 @@
 {
   "status": "ok",
-  "scan_time": "2026-04-11T18:00:36.387661+02:00",
-  "total_scanned": 17,
+  "scan_time": "2026-04-12T06:00:20.923613+02:00",
+  "total_scanned": 4,
   "by_category": {
     "interview_invite": 0,
-    "recruiter_reach": 0,
+    "recruiter_reach": 2,
     "application_ack": 0,
     "rejection": 0,
     "assessment": 0,
-    "follow_up_needed": 1,
-    "other": 16
+    "follow_up_needed": 0,
+    "other": 2
   },
   "interview_invites": [],
-  "recruiter_messages": [],
-  "application_acks": [],
-  "rejections": [],
-  "assessments": [],
-  "follow_ups_needed": [
+  "recruiter_messages": [
     {
-      "id": "352866",
-      "from": "Mindshare by Bankless <team@bankless.com>",
-      "subject": "=?UTF-8?q?=F0=9F=A7=A0_The_Personal_Agent_Unlock?=",
-      "date": "Sat, 11 Apr 2026 14:02:30 +0000",
+      "id": "352915",
+      "from": "Mariam from foundit <jobmessenger@monstergulf.com>",
+      "subject": "Ahmed, Hot Job Opportunities Waiting For You",
+      "date": "Sun, 12 Apr 2026 07:58:28 +0530 (IST)",
       "unread": true,
-      "priority": "LOW",
-      "score": 0,
+      "priority": "MEDIUM",
+      "score": 2,
+      "pipeline_match": null
+    },
+    {
+      "id": "352917",
+      "from": "Naukrigulf <newjobs@naukrigulf.com>",
+      "subject": "Senior Manager Transformation Digitale & Innovation, Senior\r\n PMO Project Coordinator jobs for you",
+      "date": "Sun, 12 Apr 2026 08:26:15 +0530 (IST)",
+      "unread": true,
+      "priority": "MEDIUM",
+      "score": 2,
       "pipeline_match": null
     }
   ],
-  "actionable_count": 1,
+  "application_acks": [],
+  "rejections": [],
+  "assessments": [],
+  "follow_ups_needed": [],
+  "actionable_count": 0,
   "hot_alerts": [],
   "signals": []
 }

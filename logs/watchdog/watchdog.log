@@ -1499,3 +1499,15 @@ Config warnings:\n- plugins.allow: plugin not found: auth (stale config entry ig
 [2026-04-11 18:00] === Watchdog v3 run ===
 [2026-04-11 18:01] Summary: fixes=0 warnings=0 alerts=0
 [2026-04-11 20:00] === Watchdog v3 run ===
+[2026-04-11 20:01] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-11 22:00] === Watchdog v3 run ===
+[2026-04-11 22:01] Summary: fixes=0 warnings=1 alerts=0
+[2026-04-12 00:00] === Watchdog v3 run ===
+[2026-04-12 00:01] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-12 02:00] === Watchdog v3 run ===
+[2026-04-12 02:01] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-12 04:00] === Watchdog v3 run ===
+[2026-04-12 04:01] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-12 06:00] === Watchdog v3 run ===
+[2026-04-12 06:00] WARN: active-tasks.md stale (50h)
+[2026-04-12 06:01] Summary: fixes=0 warnings=1 alerts=0
