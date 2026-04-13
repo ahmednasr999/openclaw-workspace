@@ -1,13 +1,13 @@
 {
-  "timestamp": "2026-04-12T07:01:06.077067+02:00",
+  "timestamp": "2026-04-13T06:01:05.755122+02:00",
   "total_crons": 25,
   "system_crons": 25,
   "openclaw_crons": 0,
-  "notion_created": 0,
-  "notion_updated": 24,
+  "notion_created": 2,
+  "notion_updated": 23,
   "errors": [
     "Error parsing openclaw crons: Command '['openclaw', 'cron', 'list']' timed out after 15 seconds",
-    "Exception updating page 'content-factory-health-monitor.py': HTTPSConnectionPool(host='api.notion.com', port=443): Read timed out. (read timeout=10)"
+    "Error finding page 'retention-backups.sh': HTTPSConnectionPool(host='api.notion.com', port=443): Read timed out. (read timeout=10)"
   ],
   "crons": [
     {
@@ -16,7 +16,7 @@
       "type": "system",
       "last_status": {
         "status": "\u2705 OK",
-        "last_run": "2026-04-12 06:01:19.395929+02:00",
+        "last_run": "2026-04-13 06:00:49.733967+02:00",
         "error": null
       }
     },
@@ -26,7 +26,7 @@
       "type": "system",
       "last_status": {
         "status": "\u274c Failed",
-        "last_run": "2026-04-12 06:03:02.782600+02:00",
+        "last_run": "2026-04-13 06:00:01.642655+02:00",
         "error": "Check log for details"
       }
     },
@@ -66,7 +66,7 @@
       "type": "system",
       "last_status": {
         "status": "\u274c Failed",
-        "last_run": "2026-04-11 20:00:26.456447+02:00",
+        "last_run": "2026-04-12 20:00:01.412276+02:00",
         "error": "Check log for details"
       }
     },
@@ -86,7 +86,7 @@
       "type": "system",
       "last_status": {
         "status": "\u274c Failed",
-        "last_run": "2026-04-12 06:03:02.782600+02:00",
+        "last_run": "2026-04-13 06:00:01.642655+02:00",
         "error": "Check log for details"
       }
     },
@@ -126,7 +126,7 @@
       "type": "system",
       "last_status": {
         "status": "\u2705 OK",
-        "last_run": "2026-04-12 03:15:05.224402+02:00",
+        "last_run": "2026-04-13 03:15:07.285397+02:00",
         "error": null
       }
     },
@@ -136,7 +136,7 @@
       "type": "system",
       "last_status": {
         "status": "\u2705 OK",
-        "last_run": "2026-04-12 02:30:01.495906+02:00",
+        "last_run": "2026-04-13 02:30:01.889869+02:00",
         "error": null
       }
     },
@@ -146,7 +146,7 @@
       "type": "system",
       "last_status": {
         "status": "\u2705 OK",
-        "last_run": "2026-04-11 20:30:02.177925+02:00",
+        "last_run": "2026-04-12 20:30:01.881961+02:00",
         "error": null
       }
     },
@@ -156,7 +156,7 @@
       "type": "system",
       "last_status": {
         "status": "\u2705 OK",
-        "last_run": "2026-04-12 01:50:30.607544+02:00",
+        "last_run": "2026-04-13 01:50:32.418516+02:00",
         "error": null
       }
     },
@@ -166,7 +166,7 @@
       "type": "system",
       "last_status": {
         "status": "\u274c Failed",
-        "last_run": "2026-04-05 08:00:13.749459+02:00",
+        "last_run": "2026-04-12 08:00:08.683168+02:00",
         "error": "Check log for details"
       }
     },
@@ -206,7 +206,7 @@
       "type": "system",
       "last_status": {
         "status": "\u2705 OK",
-        "last_run": "2026-04-12 02:55:09.914675+02:00",
+        "last_run": "2026-04-13 02:55:12.579659+02:00",
         "error": null
       }
     },
@@ -216,7 +216,7 @@
       "type": "system",
       "last_status": {
         "status": "\u2705 OK",
-        "last_run": "2026-04-12 02:55:09.914675+02:00",
+        "last_run": "2026-04-13 02:55:12.579659+02:00",
         "error": null
       }
     },

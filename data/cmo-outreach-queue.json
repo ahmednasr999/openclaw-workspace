@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-09T22:05:25.887423+02:00",
+  "last_updated": "2026-04-12T05:19:00Z",
   "items": [
     {
       "company": "Netcracker Technology in Dubai, United Arab Emirates â Apply on Wuzzuf",
@@ -28,7 +28,39 @@
       "job_url": "https://jobs.thecignagroup.com/us/en/job/26000401/Head-of-Transformation",
       "verdict": "SUBMIT",
       "queued_at": "2026-04-09T21:28:50.464665+02:00",
-      "status": "queued"
+      "status": "researched",
+      "exported_at": "2026-04-12T05:10:23.070371Z",
+      "processed_at": "2026-04-12T05:18:00Z",
+      "warm_intro_rating": "high",
+      "warm_intro_candidates": [
+        {
+          "name": "Leah Cotterill",
+          "title": "Chief Executive Officer, Middle East And Africa (outside KSA)",
+          "linkedin_url": "https://ae.linkedin.com/in/leah-cotterill-24500019",
+          "why": "Regional CEO in Dubai with direct MEA ownership. Best senior sponsor path for a transformation mandate."
+        },
+        {
+          "name": "Sevda Esenturk",
+          "title": "Head of HR, Cigna Healthcare International",
+          "linkedin_url": "https://ae.linkedin.com/in/sevdaakcay",
+          "why": "Dubai-based HR leader responsible for International Health people strategy across MEA, APAC, Europe, and the US. Strongest HR route for role visibility."
+        },
+        {
+          "name": "Samer Taleb",
+          "title": "Chief Financial Officer, Middle East And Africa / former Head of Strategy",
+          "linkedin_url": "https://ae.linkedin.com/in/samertaleb",
+          "why": "Direct strategy and execution adjacency to the transformation office. Strong business-side sponsor candidate."
+        }
+      ],
+      "queue_notes": [
+        "Local LinkedIn cookie file was present but browser session still required password, so profile validation relied on local workspace data plus active LinkedIn public profile fetches.",
+        "Cigna is the warmest queue item this week because Ahmed has live GCC healthcare transformation credibility and the role sits inside the same regional transformation context."
+      ],
+      "next_actions": [
+        "Prioritize Leah Cotterill and Sevda Esenturk for connection requests.",
+        "Use a healthcare-transformation angle, not a generic job-seeker note.",
+        "If one connection is accepted, follow with a short note referencing MEA transformation, data modernization, and Ahmed's current SGH-group mandate."
+      ]
     },
     {
       "company": "Involvedsolutions",
@@ -37,7 +69,33 @@
       "job_url": "https://www.involvedsolutions.com/jobs/625854-PMO-Director---Finance-Transformation",
       "verdict": "SUBMIT",
       "queued_at": "2026-04-09T21:28:50.468494+02:00",
-      "status": "queued"
+      "status": "researched",
+      "exported_at": "2026-04-12T05:10:23.070405Z",
+      "processed_at": "2026-04-12T05:18:00Z",
+      "warm_intro_rating": "medium",
+      "warm_intro_candidates": [
+        {
+          "name": "Abs Khan",
+          "title": "Director at Involved Solutions",
+          "linkedin_url": "https://ae.linkedin.com/in/abskhan",
+          "why": "Dubai-based director at the recruiting firm. Shared GCC tech hiring context and a Talabat connection make this the strongest warm-ish route."
+        },
+        {
+          "name": "Jack Gibson",
+          "title": "Recruitment Consultant at Involved Solutions",
+          "linkedin_url": "https://uk.linkedin.com/in/1jack-gibson",
+          "why": "Direct recruiter at the firm, useful if the PMO Director search is being run cross-border from London."
+        }
+      ],
+      "queue_notes": [
+        "This looks cooler than Cigna because the company is a staffing/recruiting intermediary, not the end employer.",
+        "Abs Khan is still worth prioritizing because of his UAE location and prior Talabat recruiting experience, which creates a credible shared angle for Ahmed."
+      ],
+      "next_actions": [
+        "Send the first connection request to Abs Khan with a shared Talabat and GCC transformation angle.",
+        "Treat this as recruiter outreach, not a direct business-leader introduction.",
+        "If no reply in 5 to 7 days, follow with Jack Gibson or ask Abs directly whether he owns the PMO Director mandate."
+      ]
     }
   ]
 }

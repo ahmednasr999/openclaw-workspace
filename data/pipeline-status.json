@@ -2,12 +2,12 @@
   "meta": {
     "agent": "pipeline-agent",
     "version": "1.0.0",
-    "generated_at": "2026-04-12T06:00:03.475779+02:00",
-    "duration_ms": 212,
+    "generated_at": "2026-04-13T06:00:02.129186+02:00",
+    "duration_ms": 42,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "a252a924",
+    "run_id": "0c17986d",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -15,10 +15,10 @@
     "total_applications": 0,
     "active_count": 0,
     "external_applied_count": 122,
-    "db_total": 2331,
+    "db_total": 2336,
     "db_funnel": {
       "skipped": 2030,
-      "discovered": 155,
+      "discovered": 160,
       "scored": 97,
       "applied": 38,
       "duplicate-applied": 3,
@@ -27,12 +27,12 @@
       "archived": 1,
       "interview": 1,
       "rejected": 1,
-      "_total": 2331
+      "_total": 2336
     },
     "by_status": {},
     "this_week": {
       "applied": 0,
-      "start_date": "2026-04-06"
+      "start_date": "2026-04-13"
     },
     "stale_applications": [],
     "interviews_upcoming": [],
@@ -59,12 +59,12 @@
   },
   "recommendations": [
     {
-      "id": "rec-a252a924-0",
+      "id": "rec-0c17986d-0",
       "action": "apply_more",
       "target": "Job applications",
       "reason": "Only 0 applications this week, aim for 10+",
       "urgency": "medium",
-      "timestamp": "2026-04-12T06:00:03.462031+02:00"
+      "timestamp": "2026-04-13T06:00:02.129040+02:00"
     }
   ]
 }

@@ -1,5 +1,61 @@
 # Lessons Learned
 
+## 2026-04-12 - Premium Visual Requests Need Real Design, Not Template Import
+### What I got wrong
+Ahmed asked for a strong Canva-ready carousel and I delivered a deck that was structurally correct but visually weak, generic, and nowhere near premium quality.
+### Why
+I optimized for fast importability and clean structure instead of treating visual quality as the core requirement. I solved the mechanics, not the standard.
+### Fix
+For premium content requests, prioritize art direction, hierarchy, spacing, and visual distinctiveness before delivery. Do not hand off a first import as "final" unless it actually looks premium on review. Build and QA against that bar, not just technical completion.
+
+## 2026-04-12 - Do Not Invent Product/App Names For Device Pairing
+### What I got wrong
+I told Ahmed to open an "OpenClaw app" on iPhone/iPad without verifying the actual companion app name or distribution path first.
+### Why
+I generalized from the platform name instead of checking the local docs and current product surface.
+### Fix
+For device pairing or mobile access, verify the exact companion app name and onboarding path from local docs before instructing Ahmed. Do not invent product names.
+
+## 2026-04-12 - Recurring Work Must Become A Skill, Not A One-Off
+### What I got wrong
+Ahmed had to restate the recurring-work rule explicitly: if work is the kind of thing that will happen again, I am not allowed to leave it as ad hoc execution.
+### Why
+I was still treating some repeated operational work as task completion instead of process discovery that must converge into a single owner skill and, when appropriate, cron automation.
+### Fix
+For recurring work, follow this cycle every time: concept, manual prototype on 3-10 real items, review with Ahmed, extend or create exactly one owner skill in `workspace/skills/`, add cron if it should run automatically, then monitor early runs. If Ahmed has to ask a second time, treat that as workflow failure and fix the skill ownership gap.
+
+## 2026-04-12 - Emoji Preference Missed Again In Routine Replies
+### What I got wrong
+Ahmed had to correct me again because I let a routine status-style reply go out without emojis, despite repeated reminders.
+### Why
+I was still mentally separating operational updates from conversational style, instead of applying his communication preference consistently across both.
+### Fix
+Use at least light emoji support in normal Ahmed-facing replies, including routine daily summaries when they are delivered in chat. Keep it tasteful and sparse, but stop sending fully flat replies by accident. ✅
+
+## 2026-04-12 - Emoji Preference Is Explicit, Not Optional
+### What I got wrong
+Ahmed reminded me again that he has asked many times for emojis, and I still answered too plainly.
+### Why
+I kept defaulting to a minimal executive tone instead of treating his stated communication preference as a standing instruction.
+### Fix
+Use emojis naturally in normal replies by default with Ahmed, especially in conversational messages and light summaries. Keep them sparse and useful, but do not wait to be asked again. 🙂
+
+## 2026-04-12 - Do Not Trust sessions_spawn cwd Without Verification
+### What I got wrong
+I treated an eval failure as prompt drift before proving that `sessions_spawn` was actually honoring the `cwd` I passed.
+### Why
+I assumed the harness was doing what the API shape implied, and I started tuning instructions before verifying the execution context.
+### Fix
+When a subagent result looks unrelated or cannot find obviously provided files, first prove the actual working directory with a tiny `pwd`/`ls` sanity run. Treat harness behavior as a separate variable before editing prompts.
+
+## 2026-04-12 - Use Emojis When Ahmed Expects Them
+### What I got wrong
+I kept defaulting to plain report tone and underused emojis even after Ahmed told me multiple times to use them.
+### Why
+I over-indexed on clean executive style and treated warmth as optional instead of following Ahmed's explicit communication preference.
+### Fix
+Use emojis naturally in normal chat replies and light summaries unless the context is sensitive or highly formal. Keep them sparse and additive, but do not omit them when Ahmed has clearly asked for them.
+
 ## 2026-04-09 - Never Rewrite Unknown Gateway Config Fields
 ### What I got wrong
 I changed `channels.slack.streaming` from Ahmed's working value `"partial"` to an object form while trying to clear a validation problem.
@@ -534,3 +590,50 @@ I updated old agent session metadata and router files, but Ahmed's next `/reset`
 I fixed historical session entries and config, but I did not re-check the newly active `sessionId` for the topic after reset.
 ### Fix
 When debugging agent thread model issues, always inspect the current topic key in `/root/.openclaw/agents/<agent>/sessions/sessions.json` after the user's latest reset and patch that exact live entry if it still has `modelOverride` or stale `systemPromptReport` values.
+
+
+## Weekly Review (2026-04-05 → 2026-04-12)
+
+_Generated by weekly-agent-review.py at 2026-04-12 08:00_
+
+
+
+### Flagged for Human Review
+
+- **clawback**: Pattern unclear — flagged for human review.
+- **cron**: Pattern unclear — flagged for human review.
+- **cron/job-scanner**: Pattern unclear — flagged for human review.
+- **job-search-mcp**: Pattern unclear — flagged for human review.
+- **general**: 25 unclassified signal(s) — manual review recommended.
+## 2026-04-12 - Clean means no visible leftover Notion images
+### What I got wrong
+I told Ahmed the Notion pages were clean because the image blocks matched the Approved Asset and there were no duplicate page images. That was the wrong standard. Ahmed meant the old visible images should be gone from the page body and cover entirely.
+### Why
+I optimized for pipeline correctness instead of user-visible cleanliness and did not check the Notion page cover before answering.
+### Fix
+When Ahmed asks whether old images were cleaned in Notion, verify and report on both visible page body images and page cover images. Treat Approved Asset as separate from visible page content.
+
+## 2026-04-12 - Check premium generator before sending CMO images
+### What I got wrong
+Ahmed rejected the Apr 13 image and pointed me to scripts/generate-premium-content-card.py. I sent an image from the weaker path without first checking the stronger premium generator already in the workspace.
+### Why
+I optimized for pipeline completion instead of checking the highest-quality existing generation path in the repo before asking for review.
+### Fix
+For CMO LinkedIn image work, inspect the premium generation scripts in the main workspace before sending any asset for review, especially when visual quality is the concern.
+
+## 2026-04-12 - Keep the Apr 13 premium generator as the default for follow-on post images
+### What I got wrong
+When Ahmed said to move to the next day, I evaluated Apr 14 using the old minimal card asset instead of continuing with the same premium image workflow that had just been approved for Apr 13.
+### Why
+I treated Apr 14 as a readiness check instead of preserving the approved creative production method across the series.
+### Fix
+For this content series, default to `workspace-cmo/scripts/generate-premium-content-card.py` for subsequent post-image work unless Ahmed explicitly asks to switch tools or styles.
+
+
+## 2026-04-12 - Give in-place remediation first when performance diagnosis is done
+### What I got wrong
+Ahmed asked for recommendations to solve the slowness on the current system, and I led with resizing the VPS instead of prioritizing actions that can improve performance in-place.
+### Why
+I optimized for the highest-impact infrastructure fix instead of the user's actual constraint and intent.
+### Fix
+When Ahmed asks for recommendations to solve runtime slowness, prioritize in-place remediation first: reduce hot background workloads, clean stale state, restart only if justified, and present infrastructure resizing only as a last resort.
