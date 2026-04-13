@@ -1511,3 +1511,61 @@ Config warnings:\n- plugins.allow: plugin not found: auth (stale config entry ig
 [2026-04-12 06:00] === Watchdog v3 run ===
 [2026-04-12 06:00] WARN: active-tasks.md stale (50h)
 [2026-04-12 06:01] Summary: fixes=0 warnings=1 alerts=0
+[2026-04-12 08:00] === Watchdog v3 run ===
+[2026-04-12 08:01] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-12 10:00] === Watchdog v3 run ===
+[2026-04-12 10:01] FIXED: Re-triggered failed cron c7cf8709-4d01-4b9d-a8a3-64ebfe559d7f
+[2026-04-12 10:01] Summary: fixes=1 warnings=1 alerts=0
+[plugins] [composio] Connecting to https://connect.composio.dev/mcp
+[plugins] [lcm] Plugin loaded (enabled=true, db=/root/.openclaw/lcm.db, threshold=0.75)
+[plugins] [composio] Connecting to https://connect.composio.dev/mcp
+[plugins] [lcm] Plugin loaded (enabled=true, db=/root/.openclaw/lcm.db, threshold=0.75)
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:c7cf8709-4d01-4b9d-a8a3-64ebfe559d7f:1775980912553:1"
+}
+[2026-04-12 12:00] === Watchdog v3 run ===
+[2026-04-12 12:01] FIXED: Re-triggered failed cron c7cf8709-4d01-4b9d-a8a3-64ebfe559d7f
+[2026-04-12 12:01] FIXED: Re-triggered failed cron d8d6d364-40dd-406a-a144-aa3904bd2226
+[2026-04-12 12:01] Summary: fixes=2 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:d8d6d364-40dd-406a-a144-aa3904bd2226:1775988101293:1"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:c7cf8709-4d01-4b9d-a8a3-64ebfe559d7f:1775988101295:2"
+}
+[2026-04-12 14:00] === Watchdog v3 run ===
+[2026-04-12 14:00] FIXED: Re-triggered failed cron c7cf8709-4d01-4b9d-a8a3-64ebfe559d7f
+[2026-04-12 14:00] FIXED: Re-triggered failed cron d8d6d364-40dd-406a-a144-aa3904bd2226
+[2026-04-12 14:00] Summary: fixes=2 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:d8d6d364-40dd-406a-a144-aa3904bd2226:1775995265289:2"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:c7cf8709-4d01-4b9d-a8a3-64ebfe559d7f:1775995265305:3"
+}
+[2026-04-12 16:00] === Watchdog v3 run ===
+[2026-04-12 16:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-04-12 18:00] === Watchdog v3 run ===
+[2026-04-12 18:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-04-12 20:00] === Watchdog v3 run ===
+[2026-04-12 20:01] Summary: fixes=0 warnings=1 alerts=0
+[2026-04-12 22:00] === Watchdog v3 run ===
+[2026-04-12 22:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-04-13 00:00] === Watchdog v3 run ===
+[2026-04-13 00:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-04-13 02:00] === Watchdog v3 run ===
+[2026-04-13 02:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-04-13 04:00] === Watchdog v3 run ===
+[2026-04-13 04:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-04-13 06:00] === Watchdog v3 run ===
+[2026-04-13 06:00] Summary: fixes=0 warnings=1 alerts=0

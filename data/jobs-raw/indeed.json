@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-04-12T04:00:53.583355+02:00",
-    "duration_ms": 48677,
+    "generated_at": "2026-04-12T12:00:48.671663+02:00",
+    "duration_ms": 44340,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "7974ba9f",
+    "run_id": "17e16699",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -176,28 +176,6 @@
       "search_title": "Chief Technology Officer"
     },
     {
-      "id": "indeed-in-705e22704ed021cf",
-      "source": "indeed",
-      "title": "Chief Technical Officer",
-      "company": "Z PLUS LIMOUSINE LLC",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=705e22704ed021cf",
-      "posted": "2026-04-09",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 16,
-      "match_keywords": [
-        "ai",
-        "infrastructure",
-        "dubai"
-      ],
-      "raw_snippet": "**Job Title: Chief Technical Officer (CTO) \u2013 Fleet Operations \\& EV Charging**\n\n**Company:** Z Plus Limousine LLC / Q Volt EV Charging LLC  \n**Location:** Dubai, United Arab Emirates  \n**Employment Type:** Full\\-Time\n\n**Job Overview**\n\nWe are seeking a highly experienced and strategic **Chief Technical Officer (CTO)** to lead and manage our **fleet operations and EV charging infrastructure**. The ideal candidate will have strong expertise in **vehicle fleet management, EV ecosystem, charging tec",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Chief Technology Officer"
-    },
-    {
       "id": "indeed-in-b71c03f9d9a7f54f",
       "source": "indeed",
       "title": "Head of Product & Delivery",
@@ -306,57 +284,12 @@
       "filter_reason": null,
       "search_country": "Saudi Arabia",
       "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-9402338d3820e319",
-      "source": "indeed",
-      "title": "Associate Director, Public Affairs",
-      "company": "APCO Worldwide",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=9402338d3820e319",
-      "posted": "2026-04-09",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 26,
-      "match_keywords": [
-        "ai",
-        "director",
-        "leadership",
-        "saudi",
-        "riyadh"
-      ],
-      "raw_snippet": "**The Opportunity**  \n\nWe are seeking an **Account Director** with expertise in public affairs, government relations, and strategic communications. This professional will have a strong background in **policy advocacy, issues management, stakeholder engagement** , and project leadership. The successful candidate will join our growing **Public Affairs practice in Riyadh** , contributing to high\\-profile campaigns that align with Saudi Arabia\u2019s **Vision 2030** and other national priorities\n  \n\n  \n\n",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-f1b9f4050cab15ab",
-      "source": "indeed",
-      "title": "Senior Director- HSE (MAS7)",
-      "company": "Qiddiya Investment Company",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=f1b9f4050cab15ab",
-      "posted": "2026-04-09",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 13,
-      "match_keywords": [
-        "director",
-        "leadership"
-      ],
-      "raw_snippet": "Qiddiya Investment Company is looking for a highly experienced Senior Director \\- HSE to lead and oversee the Health, Safety, and Environment functions within our dynamic organization. This leadership role is critical to ensuring the highest standards of safety and environmental management across all company operations and projects.\n\n\nThe Senior Director \\- HSE will be responsible for developing strategic initiatives, ensuring compliance with all local and international HSE regulations, and cult",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Program Director"
     }
   ],
   "kpi": {
     "searches_run": 20,
-    "results_per_search": 2.8,
-    "unique_jobs": 15,
+    "results_per_search": 2.5,
+    "unique_jobs": 12,
     "errors": 7
   },
   "recommendations": []

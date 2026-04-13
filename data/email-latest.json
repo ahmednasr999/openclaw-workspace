@@ -1,33 +1,23 @@
 {
   "status": "ok",
-  "scan_time": "2026-04-12T06:00:20.923613+02:00",
+  "scan_time": "2026-04-13T06:00:06.353436+02:00",
   "total_scanned": 4,
   "by_category": {
     "interview_invite": 0,
-    "recruiter_reach": 2,
+    "recruiter_reach": 1,
     "application_ack": 0,
     "rejection": 0,
     "assessment": 0,
     "follow_up_needed": 0,
-    "other": 2
+    "other": 3
   },
   "interview_invites": [],
   "recruiter_messages": [
     {
-      "id": "352915",
+      "id": "352988",
       "from": "Mariam from foundit <jobmessenger@monstergulf.com>",
       "subject": "Ahmed, Hot Job Opportunities Waiting For You",
-      "date": "Sun, 12 Apr 2026 07:58:28 +0530 (IST)",
-      "unread": true,
-      "priority": "MEDIUM",
-      "score": 2,
-      "pipeline_match": null
-    },
-    {
-      "id": "352917",
-      "from": "Naukrigulf <newjobs@naukrigulf.com>",
-      "subject": "Senior Manager Transformation Digitale & Innovation, Senior\r\n PMO Project Coordinator jobs for you",
-      "date": "Sun, 12 Apr 2026 08:26:15 +0530 (IST)",
+      "date": "Mon, 13 Apr 2026 08:42:40 +0530 (IST)",
       "unread": true,
       "priority": "MEDIUM",
       "score": 2,

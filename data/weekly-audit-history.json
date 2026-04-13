@@ -15,7 +15,15 @@
       "critical": 2,
       "warnings": 10,
       "infos": 35
+    },
+    {
+      "date": "2026-04-12",
+      "score": 0,
+      "grade": "F",
+      "critical": 4,
+      "warnings": 13,
+      "infos": 29
     }
   ],
-  "updated": "2026-04-05T08:04:23.507077+02:00"
+  "updated": "2026-04-12T08:05:29.400350+02:00"
 }

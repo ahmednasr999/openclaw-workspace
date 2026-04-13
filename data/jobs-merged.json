@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-merge",
     "version": "1.0.0",
-    "generated_at": "2026-04-12T04:09:42.679289+02:00",
-    "duration_ms": 53646,
+    "generated_at": "2026-04-13T04:09:40.615014+02:00",
+    "duration_ms": 53171,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "443abcb9",
+    "run_id": "1f7e9dac",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -19,7 +19,7 @@
       "company": "RIG (Recruitment International Group)",
       "location": "Dubai, United Arab Emirates",
       "url": "https://www.linkedin.com/jobs/view/4400681468",
-      "posted": "",
+      "posted": "2026-04-11",
       "seniority": "C-Suite",
       "domain_match": false,
       "keyword_score": 40,
@@ -116,6 +116,39 @@
       "jd_fetch_status": "fetch_failed"
     },
     {
+      "id": "linkedin_jobspy-li-4399117105",
+      "source": "linkedin_jobspy",
+      "title": "Director of Projects Department (Emirati)",
+      "company": "Talents Tide",
+      "location": "Dubai, United Arab Emirates",
+      "url": "https://www.linkedin.com/jobs/view/4399117105",
+      "posted": "",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 26,
+      "match_keywords": [
+        "project management",
+        "ai",
+        "director",
+        "dubai"
+      ],
+      "raw_snippet": "**Job Details** \n\n\n\n* **Job Title:** \n Director of Projects Department (Emirati)\n* **Client:** \n Dubai Government\n* **Sector:** \n Strategy Sector\n* **Department:** \n Project Management\n* **Grade:** \n Job Grade 16\n* **Job Family:** \n Strategy \\& Excellence\n* **Sub\\-Family:** \n Project Management\n\n\n\n ",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Head of PMO",
+      "linkedin_id": "li-4399117105",
+      "jd_text": "**Job Details** \n\n\n\n* **Job Title:** \n Director of Projects Department (Emirati)\n* **Client:** \n Dubai Government\n* **Sector:** \n Strategy Sector\n* **Department:** \n Project Management\n* **Grade:** \n Job Grade 16\n* **Job Family:** \n Strategy \\& Excellence\n* **Sub\\-Family:** \n Project Management\n\n\n\n  \n\n\n\n\n\n**Reporting Lines** \n\n\n\n* **Reports Directly To:** \n Executive Director of Strategy Sector\n* **Direct Reports:**\n* Senior Project Specialist\n* Project Specialist\n* Senior Officer\n\n\n\n  \n\n\n\n\n\n**Job Purpose** \n\n\n\n\n To lead the strategic planning process for projects and oversee project management activities within the authority. This includes establishing a unified methodology for projects and contributing to the development of operational plans and sector strategies at the organizational level.\n \n\n\n\n  \n\n\n\n\n\n**Key Responsibilities** \n\n\n\n\n**Functional Responsibilities** \n\n\n\n* Oversee the preparation and execution of the annual operational plan, including KPIs, targets, projects, programs, and budget requirements in coordination with relevant organizational units.\n* Develop project management policies, procedures, standards, and guidelines, and ensure compliance across all organizational units.\n* Lead the development of strategic project objectives, initiatives, and programs aligned with the authority\u2019s long\\-term strategy.\n* Manage and direct the review and evaluation of proposed projects to ensure alignment with the strategic plan.\n* Oversee the management of the project portfolio, tracking progress against timelines, budgets, resources, and KPIs.\n* Supervise the development of project performance management plans and provide improvement recommendations aligned with strategic goals.\n* Monitor implementation of initiatives, projects, and events while ensuring integration and effective coordination among stakeholders.\n* Lead the review of all project management documentation, including project plans and risk management plans, and provide guidance for improvement.\n* Oversee project closure processes, ensuring proper documentation of deliverables and lessons learned.\n* Provide technical advice and guidance to sectors and departments on project management best practices.\n* Oversee preparation of progress reports, analyze deviations and challenges, and develop mitigation plans.\n* Lead the development of methodologies to measure the impact and effectiveness of projects and programs.\n* Ensure efficient project risk management through assessment and implementation of corrective and preventive actions.\n* Oversee project budget allocation and monitor compliance to avoid overspending.\n* Lead capability development within the project management function, including training and knowledge transfer.\n* Represent the authority in relevant meetings and events and report to senior management.\n* Support innovation and institutional excellence initiatives aligned with the authority\u2019s strategic agenda.\n* Ensure compliance with information security policies and report any breaches.\n* Adhere to occupational health, safety, and environmental policies.\n* Perform any other duties related to the role as assigned.\n\n\n\n  \n\n\n\n\n\n**Operational Responsibilities** \n\n\n\n* Ensure timely submission of data and reports to leadership with recommendations for operational improvements.\n* Monitor monthly and quarterly performance results, identify gaps, and lead corrective action planning.\n* Track project management performance through KPIs and identify areas for improvement to support sector strategy.\n\n\n\n**Financial Management** \n\n\n\n* Manage project budget allocation and ensure compliance with approved plans, identifying deviations and implementing corrective actions.\n* Consolidate all workforce\\-related budget inputs for project management and submit them for approval.\n\n\n\n**People Management** \n\n\n\n* Develop workforce planning strategies, recruitment, training, and development plans to ensure operational efficiency.\n* Set departmental objectives for direct reports and conduct mid\\-year and annual performance reviews.\n* Monitor performance and provide guidance to ensure objectives are achieved.\n* Identify required competencies.\n* Provide guidance to department managers on operational and people management matters.\n* Support and direct managers to ensure effective execution of operational requirements.\n\n\n\n**Stakeholder Management** \n\n\n\n\n**Internal Stakeholders:** \n\n\n\n* All organizational units within the authority\n\n\n\n**External Stakeholders:** \n\n\n\n* Semi\\-government and private sector entities\n* Relevant local and federal entities\n\n\n\n  \n\n\n\n\n\n**Required Qualifications** \n\n\n\n\n**Academic Qualifications** \n\n\n\n* Bachelor\u2019s degree in Project Management, Business Administration, or a related field from an accredited university\n\n\n\n**Professional Experience \\& Skills** \n\n\n\n* Minimum of 10 years of relevant experience\n* Ability to develop policy recommendations and legislative inputs\n* Experience in managing high\\-impact programs and working with multiple stakeholders\n* Experience in leading multidisciplinary teams and coordinating strategic initiatives\n* Knowledge of sector trends and ability to develop enabling strategies and policies",
+      "source_count": 1,
+      "country": "United Arab Emirates",
+      "industry_bonus": 3,
+      "policy_status": "pass",
+      "sources": [
+        "linkedin"
+      ],
+      "first_seen": "2026-04-13"
+    },
+    {
       "id": "indeed-in-f7a24d9a1aeb1b13",
       "source": "indeed",
       "title": "Head of Business Strategy & Performance",
@@ -209,6 +242,38 @@
         "indeed"
       ],
       "first_seen": "2026-04-11"
+    },
+    {
+      "id": "linkedin_jobspy-li-4400971096",
+      "source": "linkedin_jobspy",
+      "title": "Director, Strategic Projects",
+      "company": "Ooredoo Group",
+      "location": "Doha, Qatar",
+      "url": "https://www.linkedin.com/jobs/view/4400971096",
+      "posted": "",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 16,
+      "match_keywords": [
+        "infrastructure",
+        "director",
+        "middle east"
+      ],
+      "raw_snippet": "**Our business landscape** \n\n\n\n\n  \n\n\n\n\n\n We\u2019re an award\\-winning global communications company operating in nine countries across the Middle East, North Africa, and Southeast Asia. Our strategy is to become the region\u2019s leading digital infrastructure provider. Ooredoo Group\u2019s strategic vision is gui",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Qatar",
+      "search_title": "\"PMO\" AND (\"payment\" OR \"fintech\")",
+      "linkedin_id": "li-4400971096",
+      "jd_text": "**Our business landscape** \n\n\n\n\n  \n\n\n\n\n\n We\u2019re an award\\-winning global communications company operating in nine countries across the Middle East, North Africa, and Southeast Asia. Our strategy is to become the region\u2019s leading digital infrastructure provider. Ooredoo Group\u2019s strategic vision is guided by five key pillars:\n \n\n\n\n  \n\n\n\n\n* **Value\\-Focused Portfolio:** \n Boosting asset returns by focusing on telco operations, towers, data centres, the sea cable business and fintech.\n\n\n\n  \n\n\n\n\n* **Strengthen the Core:** \n Optimally using deployed capital and maintain an appropriate cost structure.\n\n\n\n  \n\n\n\n\n* **Evolve the Core:** \n Monetising opportunities to generate new revenue streams via programmes focusing on analytics, digitalisation of operations, and partnerships with digital service providers.\n\n\n\n  \n\n\n\n\n* **People:** \n Building an engaged and empowered workforce through integrated learning programs and coaching and mentoring.\n\n\n\n  \n\n\n\n\n* **Excellence in Customer Experience:** \n Creating superior customer experiences.\n\n\n\n  \n\n\n\n\n\n From day one, every employee who joins our team becomes an integral part of our success journey. We offer you the chance to enhance your skills, advance your career, and maintain a healthy work\\-life balance. Empowering you to catapult your personal and professional growth. If you\u2019re looking to challenge your growth potential, Ooredoo is the employer for you.\n \n\n\n\n  \n\n\n\n\n\n**Job overview** \n\n\n\n\n  \n\n\n\n\n* The Director, Strategic projects is responsible for leading the planning, execution, and governance of the strategy\u2019s most critical cross\\-functional initiatives\n* This role ensures that high\\-impact projects are delivered on time, within scope, and in alignment with the\n* Group\u2019s strategic and financial objectives. The position combines leadership in corporate development, strategic execution, and stakeholder management across business units, regions, and external partners\n* The role ensures end\\-to\\-end ownership of strategic projects, from origination to execution and value realization, aligning with the Group\u2019s growth, digital transformation, and shareholder objectives.\n* The role together with the team member reporting to the role holder will oversee a wide range of projects and programs.\n* One of the initial focus will be the key strategic initiative related to the expansions in scope, and territories of Ooredoo\u2019s push into Data Centers as well AI? GPU as a service.\n* While Syntys team is responsible for the day\\-to\\-day operation of these assets, the role holder will drive the expansion into new territories which is a key part of the strategy\n* It will also include new strategic projects as approved as part of the updated strategy.\n\n\n\n  \n\n\n\n\n\n The role holder acts not only as a PMO or project manager but as the project owner, driving the actual content and delivery of the project and providing content expertise in the relevant field.\n \n\n\n\n  \n\n\n\n\n\n**Your impact on our goals** \n\n\n\n\n  \n\n\n\n\n\n**Strategic Program Leadership** \n\n\n\n* Lead the planning, structuring, and delivery of complex, multi\\-stakeholder projects, including joint ventures, market entries, and major transformations.\n* Define strategic objectives, milestones, and performance indicators in coordination with the\n* Establish project governance frameworks, steering committees, and reporting standards.\n* Drive decision\\-making through data\\-driven insights, structured analysis, and scenario planning.\n\n\n\n  \n\n\n\n\n\n**Provide direct support to the CEO and Board during major transaction and strategic processes** \n .\n \n\n\n\n  \n\n\n\n\n\n**Drive the portfolio of strategic projects, partnerships JV and transactions related to Data Center, Ai infrastructure and GPU as a service and AI infrastructure including** \n\n\n\n* Drive expansion in this area in particular expansion outside Ooredoo Group and its affiliates current footprint\n* Drive the design, execution and implementation of relevant strategic initiatives related to this area.\n* Negotiate strategic agreements and partnerships\n\n\n\n  \n\n\n\n\n\n**Cross\\-Functional Program Management** \n\n\n\n* Coordinate workstreams across Finance, Legal, HR, Operations, IT, and Business Units.\n* Identify interdependencies, risks, and bottlenecks, and implement mitigation strategies.\n* Manage cross\\-border teams, consultants, and advisors to deliver outcomes efficiently.\n* Ensure alignment of initiatives with budget, resource allocation, and strategic KPIs.\n* Coordinate engagement across all operating companies\n\n\n\n**Executive \\& Communication Board** \n\n\n\n* Prepare executive\\-level presentations, Board papers, and investor communications related to strategic projects.\n* Translate complex analyses into clear recommendations and progress updates.\n* Lead stakeholder management with theCEO and Group Strategy in stakeholder engagement with shareholders, regulators, and partners.\n\n\n\n**Team Leadership \\& Capability Building** \n\n\n\n* Lead and mentor project managers and analysts\n* Foster a culture of accountability, analytical excellence, and collaboration.\n* Institutionalize best practices in project management and performance tracking.\n\n\n\n  \n\n\n\n\n\n**Experience and Qualifications** \n\n\n\n\n  \n\n\n\n\n* Prior experience of transformation and transaction planning and execution within Ooredoo\n* Experience driving large scale transformation projects\n* Experience at a Senior Level in a telecom operator in strategy or M\\&A team at a senior level (CXO or CX\\-1\\)\n* 15 / 20 years of experience preferable in the Telco industry (not just technical)\n* Knowledge and prior experience relating to DC and AI\n* Experience in managing large scale transformation projects\n* Experience in managing top management escalations and creating buy\\-in with stakeholders\n* Multi disciplinary cross border program management\n* Finance \u2013 business planning, valuation, accounting, tax, budgeting, AOP impact assessment, accounting separation\n* Employee transfer requirements\n* Organisation planning\n* Scope specification for transaction advisors\n* Contract drafting and negotiation\n* Corporate Governance\n* Transitional services arrangements\n* Bachelor or Master degree \u2013 finance or business preferred",
+      "source_count": 1,
+      "country": "Qatar",
+      "industry_bonus": 6,
+      "policy_status": "pass",
+      "sources": [
+        "linkedin"
+      ],
+      "first_seen": "2026-04-12"
     },
     {
       "id": "indeed-in-b7591ff66cc5a732",
@@ -336,6 +401,38 @@
       "first_seen": "2026-04-11"
     },
     {
+      "id": "linkedin_jobspy-li-4399365907",
+      "source": "linkedin_jobspy",
+      "title": "Saudi COO (Co-Founder Role)",
+      "company": "21Doctors",
+      "location": "Riyadh, Riyadh, Saudi Arabia",
+      "url": "https://www.linkedin.com/jobs/view/4399365907",
+      "posted": "",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 13,
+      "match_keywords": [
+        "healthcare",
+        "saudi",
+        "platform"
+      ],
+      "raw_snippet": "**Company Description**\n\n 21Doctors is a leading digital health platform that combines advanced technology with medical services to enhance the healthcare experience. Our platform connects patients with a broad network of qualified physicians, healthcare providers, pharmacies, and laboratories. We p",
+      "relevant": false,
+      "filter_reason": "skip-word:co-founder",
+      "search_country": "Saudi Arabia",
+      "search_title": "Head of PMO",
+      "linkedin_id": "li-4399365907",
+      "jd_text": "**Company Description**\n\n 21Doctors is a leading digital health platform that combines advanced technology with medical services to enhance the healthcare experience. Our platform connects patients with a broad network of qualified physicians, healthcare providers, pharmacies, and laboratories. We prioritize accessibility, streamlined appointment scheduling, and direct interaction between patients and doctors. With a commitment to transparency and trust, 21Doctors strives to offer high\\-quality integrated care and foster a reliable healthcare ecosystem. Our vision is to become the leading platform for facilitating seamless and trustworthy healthcare connections.\n   \n\n\n\n\n**Role Description**\n\n This is a full\\-time on\\-site role based in Amman, Jordan, for a Saudi COO (Co\\-Founder Role) at 21Doctors. Responsibilities include managing business operations, implementing business strategies, and leading cross\\-functional teams to ensure organizational efficiency. The COO will oversee budgeting and financial planning, establish operational strategies, and further the company\u2019s mission of digital healthcare transformation. The role also entails providing strategic leadership alongside the co\\-founders to scale the business in alignment with market needs and opportunities.\n   \n\n\n\n\n**Qualifications**\n* Proficiency in Business Planning and developing strategic growth initiatives.\n* Expertise in Operations Management and ensuring process efficiency.\n* Strong Analytical Skills to evaluate operational performance and market trends.\n* Experience in Finance and Budgeting, including planning and monitoring resource allocation.\n* Demonstrated leadership and decision\\-making capabilities in dynamic environments.\n* Strong understanding of the healthcare and technology industries is highly desirable.\n* Bachelor\u2019s degree in Business Administration, Management, or a related field is required; an advanced degree such as an MBA is a plus",
+      "source_count": 1,
+      "country": "Saudi Arabia",
+      "industry_bonus": 9,
+      "policy_status": "pass",
+      "sources": [
+        "linkedin"
+      ],
+      "first_seen": "2026-04-13"
+    },
+    {
       "id": "linkedin_jobspy-li-4400507351",
       "source": "linkedin_jobspy",
       "title": "Area Head of MPL - SAA",
@@ -367,45 +464,46 @@
       "first_seen": "2026-04-11"
     },
     {
-      "id": "indeed-in-f1b9f4050cab15ab",
-      "source": "indeed",
-      "title": "Senior Director- HSE (MAS7)",
-      "company": "Qiddiya Investment Company",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=f1b9f4050cab15ab",
-      "posted": "2026-04-09",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 13,
+      "id": "linkedin_jobspy-li-4398786845",
+      "source": "linkedin_jobspy",
+      "title": "Head Waiter/Waitress",
+      "company": "7 Management",
+      "location": "Dubai, Dubai, United Arab Emirates",
+      "url": "https://www.linkedin.com/jobs/view/4398786845",
+      "posted": "",
+      "seniority": "Other",
+      "domain_match": true,
+      "keyword_score": 6,
       "match_keywords": [
-        "director",
-        "leadership"
+        "ai"
       ],
-      "raw_snippet": "Qiddiya Investment Company is looking for a highly experienced Senior Director \\- HSE to lead and oversee the Health, Safety, and Environment functions within our dynamic organization. This leadership role is critical to ensuring the highest standards of safety and environmental management across all company operations and projects.\n\n\nThe Senior Director \\- HSE will be responsible for developing strategic initiatives, ensuring compliance with all local and international HSE regulations, and cult",
+      "raw_snippet": "**Company Overview**\n Established in 2015, 7 Management has grown into a premier hospitality and management group, renowned for its innovative concepts and acclaimed international brands. From casual dining to upscale entertainment, 7 Management delivers experiences that go beyond traditional hospit",
       "relevant": true,
       "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Program Director",
+      "search_country": "United Arab Emirates",
+      "search_title": "Head of Delivery",
+      "linkedin_id": "li-4398786845",
+      "jd_text": "**Company Overview**\n Established in 2015, 7 Management has grown into a premier hospitality and management group, renowned for its innovative concepts and acclaimed international brands. From casual dining to upscale entertainment, 7 Management delivers experiences that go beyond traditional hospitality across the Middle East and Europe. With a rapidly expanding presence, the group sets the standard in restaurants, lounges, bars, and clubs, seamlessly combining exceptional cuisine with unforgettable entertainment.\n   \n\n  \n\n**Role Overview**\n The Head Waiter/Waitress is responsible for leading the service team and ensuring exceptional guest experiences through attentive, professional, and personalized service. Acting as the link between management and the service staff, the Head Waiter/Waitress oversees daily floor operations, ensures service standards are upheld, and supports the Restaurant Manager in maintaining smooth, efficient, and guest\\-focused operations.\n   \n\n  \n\n**Key Responsibilities**\n* Service Supervision: Leads the service team during shifts, ensuring smooth coordination, timely order delivery, and adherence to service standards. Monitors the dining area to ensure guest satisfaction and efficient workflow.\n* Guest Experience: Provides an exceptional level of service, anticipating guest needs and handling inquiries or complaints with professionalism and care. Ensures guests receive a memorable dining experience that reflects the brand\u2019s standards.\n* Team Leadership and Training: Guides, motivates, and supports waitstaff in their daily duties. Assists in training new employees on service techniques, menu knowledge, and guest interaction. Promotes teamwork and a positive work environment.\n* Upselling and Product Knowledge: Maintains thorough knowledge of the menu, daily specials, and promotions. Encourages upselling of food and beverages to enhance guest experience and maximize sales.\n\n\n**Qualifications**\n* Minimum 3\u20135 years of experience in a high\\-end restaurant, lounge, or hospitality venue, with at least 1\u20132 years in a senior role.\n* In\\-depth knowledge of food and beverage service, dining etiquette, and POS systems.\n* Professional appearance, positive attitude, and strong sense of responsibility.\n* Flexible to work evenings, weekends, and holidays as required.",
       "source_count": 1,
-      "country": "Saudi Arabia",
+      "country": "United Arab Emirates",
+      "industry_bonus": 3,
       "policy_status": "pass",
       "sources": [
-        "indeed"
+        "linkedin"
       ],
-      "first_seen": "2026-04-12",
-      "jd_fetch_status": "fetch_failed"
+      "first_seen": "2026-04-13"
     }
   ],
   "kpi": {
-    "total_raw": 352,
+    "total_raw": 369,
     "sources_loaded": 3,
     "stale_sources": 1,
-    "unique_after_dedup": 316,
+    "unique_after_dedup": 333,
     "applied_filtered": 0,
-    "policy_filtered": 198,
-    "final_candidates": 12,
+    "policy_filtered": 214,
+    "final_candidates": 15,
     "multi_source_jobs": 2,
-    "new_today": 12
+    "new_today": 15
   },
   "recommendations": []
 }
