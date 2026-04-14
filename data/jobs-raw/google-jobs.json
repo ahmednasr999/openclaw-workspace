@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-source-google",
     "version": "1.0.0",
-    "generated_at": "2026-04-13T04:08:47.355114+02:00",
-    "duration_ms": 524757,
+    "generated_at": "2026-04-14T04:09:12.889071+02:00",
+    "duration_ms": 550026,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "fef9888d",
+    "run_id": "6175a274",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -30,17 +30,35 @@
       "raw_snippet": "",
       "relevant": true,
       "filter_reason": null
+    },
+    {
+      "id": "google-a66b1c91ffe6",
+      "source": "google",
+      "title": "Director",
+      "company": "Post",
+      "location": "Integration Value: Agri-Food Experience Essential",
+      "url": "https://www.michaelpage.ae/jobs/strategy",
+      "posted": "",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 6,
+      "match_keywords": [
+        "director"
+      ],
+      "raw_snippet": "",
+      "relevant": true,
+      "filter_reason": null
     }
   ],
   "kpi": {
     "searches_run": 107,
-    "exa_results_raw": 657,
-    "single_jobs_direct": 7,
+    "exa_results_raw": 680,
+    "single_jobs_direct": 5,
     "listing_pages_found": 6,
-    "listing_pages_extracted": 3,
-    "noise_filtered": 464,
-    "malformed_filtered": 12,
-    "unique_jobs_final": 1,
+    "listing_pages_extracted": 4,
+    "noise_filtered": 473,
+    "malformed_filtered": 16,
+    "unique_jobs_final": 2,
     "errors": 0,
     "exa_cost_estimate_usd": 0.767,
     "strategy": "Exa keyword + auto(domain) + neural + watchlist company discovery \u2192 classify \u2192 GET_CONTENTS",

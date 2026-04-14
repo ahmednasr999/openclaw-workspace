@@ -492,3 +492,247 @@ Update Summary:
     - Error finding page 'retention-backups.sh': HTTPSConnectionPool(host='api.notion.com', port=443): Read timed out. (read timeout=10)
 
 Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-04-13T07:00:01.424513+02:00] Starting Cron Dashboard Update...
+Discovered 25 crons (25 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 25
+  Errors: 1
+    - Error parsing openclaw crons: Command '['openclaw', 'cron', 'list']' timed out after 15 seconds
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-04-13T08:00:03.521733+02:00] Starting Cron Dashboard Update...
+Discovered 25 crons (25 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 25
+  Errors: 1
+    - Error parsing openclaw crons: Command '['openclaw', 'cron', 'list']' timed out after 15 seconds
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-04-13T09:00:01.558910+02:00] Starting Cron Dashboard Update...
+Discovered 25 crons (25 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 25
+  Errors: 1
+    - Error parsing openclaw crons: Command '['openclaw', 'cron', 'list']' timed out after 15 seconds
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-04-13T10:00:03.451864+02:00] Starting Cron Dashboard Update...
+Discovered 25 crons (25 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 25
+  Errors: 1
+    - Error parsing openclaw crons: Command '['openclaw', 'cron', 'list']' timed out after 15 seconds
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-04-13T11:00:01.327482+02:00] Starting Cron Dashboard Update...
+Discovered 25 crons (25 system, 0 openclaw)
+
+Update Summary:
+  Created: 1
+  Updated: 24
+  Errors: 2
+    - Error parsing openclaw crons: Command '['openclaw', 'cron', 'list']' timed out after 15 seconds
+    - Error finding page 'cf-weekday-check.sh': HTTPSConnectionPool(host='api.notion.com', port=443): Read timed out. (read timeout=10)
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-04-13T12:00:01.704791+02:00] Starting Cron Dashboard Update...
+Discovered 25 crons (25 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 25
+  Errors: 1
+    - Error parsing openclaw crons: Command '['openclaw', 'cron', 'list']' timed out after 15 seconds
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-04-13T13:00:01.449443+02:00] Starting Cron Dashboard Update...
+Discovered 25 crons (25 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 25
+  Errors: 1
+    - Error parsing openclaw crons: Command '['openclaw', 'cron', 'list']' timed out after 15 seconds
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-04-13T14:00:02.216033+02:00] Starting Cron Dashboard Update...
+Discovered 25 crons (25 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 24
+  Errors: 2
+    - Error parsing openclaw crons: Command '['openclaw', 'cron', 'list']' timed out after 15 seconds
+    - Error updating page 'linkedin-autoresearch.py': 502
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-04-13T15:00:01.870598+02:00] Starting Cron Dashboard Update...
+Discovered 25 crons (25 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 25
+  Errors: 1
+    - Error parsing openclaw crons: Command '['openclaw', 'cron', 'list']' timed out after 15 seconds
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-04-13T16:00:02.534218+02:00] Starting Cron Dashboard Update...
+Discovered 25 crons (25 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 25
+  Errors: 1
+    - Error parsing openclaw crons: Command '['openclaw', 'cron', 'list']' timed out after 15 seconds
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-04-13T17:00:01.613491+02:00] Starting Cron Dashboard Update...
+Discovered 25 crons (25 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 24
+  Errors: 2
+    - Error parsing openclaw crons: Command '['openclaw', 'cron', 'list']' timed out after 15 seconds
+    - Exception updating page 'linkedin-autoresearch.py': HTTPSConnectionPool(host='api.notion.com', port=443): Read timed out. (read timeout=10)
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-04-13T18:00:01.905379+02:00] Starting Cron Dashboard Update...
+Discovered 25 crons (25 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 25
+  Errors: 1
+    - Error parsing openclaw crons: Command '['openclaw', 'cron', 'list']' timed out after 15 seconds
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-04-13T19:00:02.345285+02:00] Starting Cron Dashboard Update...
+Discovered 25 crons (25 system, 0 openclaw)
+
+Update Summary:
+  Created: 1
+  Updated: 24
+  Errors: 2
+    - Error parsing openclaw crons: Command '['openclaw', 'cron', 'list']' timed out after 15 seconds
+    - Error finding page 'sayyad-source.sh': HTTPSConnectionPool(host='api.notion.com', port=443): Read timed out. (read timeout=10)
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-04-13T20:00:01.435171+02:00] Starting Cron Dashboard Update...
+Discovered 25 crons (25 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 25
+  Errors: 1
+    - Error parsing openclaw crons: Command '['openclaw', 'cron', 'list']' timed out after 15 seconds
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-04-13T21:00:02.270706+02:00] Starting Cron Dashboard Update...
+Discovered 25 crons (25 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 25
+  Errors: 1
+    - Error parsing openclaw crons: Command '['openclaw', 'cron', 'list']' timed out after 15 seconds
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-04-13T22:00:03.814065+02:00] Starting Cron Dashboard Update...
+Discovered 25 crons (25 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 25
+  Errors: 1
+    - Error parsing openclaw crons: Command '['openclaw', 'cron', 'list']' timed out after 15 seconds
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-04-13T23:00:02.343439+02:00] Starting Cron Dashboard Update...
+Discovered 25 crons (25 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 25
+  Errors: 1
+    - Error parsing openclaw crons: Command '['openclaw', 'cron', 'list']' timed out after 15 seconds
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-04-14T00:00:02.907387+02:00] Starting Cron Dashboard Update...
+Discovered 25 crons (25 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 25
+  Errors: 1
+    - Error parsing openclaw crons: Command '['openclaw', 'cron', 'list']' timed out after 15 seconds
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-04-14T01:00:02.131206+02:00] Starting Cron Dashboard Update...
+Discovered 25 crons (25 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 25
+  Errors: 1
+    - Error parsing openclaw crons: Command '['openclaw', 'cron', 'list']' timed out after 15 seconds
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-04-14T02:00:02.234807+02:00] Starting Cron Dashboard Update...
+Discovered 25 crons (25 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 25
+  Errors: 1
+    - Error parsing openclaw crons: Command '['openclaw', 'cron', 'list']' timed out after 15 seconds
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-04-14T03:00:01.426867+02:00] Starting Cron Dashboard Update...
+Discovered 25 crons (25 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 25
+  Errors: 1
+    - Error parsing openclaw crons: Command '['openclaw', 'cron', 'list']' timed out after 15 seconds
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-04-14T04:00:03.417164+02:00] Starting Cron Dashboard Update...
+Discovered 25 crons (25 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 25
+  Errors: 1
+    - Error parsing openclaw crons: Command '['openclaw', 'cron', 'list']' timed out after 15 seconds
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-04-14T05:00:03.211714+02:00] Starting Cron Dashboard Update...
+Discovered 25 crons (25 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 25
+  Errors: 1
+    - Error parsing openclaw crons: Command '['openclaw', 'cron', 'list']' timed out after 15 seconds
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-04-14T06:00:01.383871+02:00] Starting Cron Dashboard Update...
+Discovered 25 crons (25 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 25
+  Errors: 1
+    - Error parsing openclaw crons: Command '['openclaw', 'cron', 'list']' timed out after 15 seconds
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
