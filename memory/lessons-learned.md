@@ -215,6 +215,14 @@ LinkedIn daily post cron posted WITHOUT image when image upload failed, then fai
 
 ---
 
+## 2026-04-13 - Checked only the native lane, missed Composio Gemini
+### What I got wrong
+Ahmed asked whether Gemini was back. I answered from the native OpenClaw runtime only, using session status and built-in image provider checks, and said Gemini was not back. That missed the active Gemini path exposed through Composio.
+### Why
+I treated "availability" as a single surface instead of checking both lanes separately: native OpenClaw providers and Composio tool-router providers. I stopped at the first partial signal.
+### Fix
+For any model or app availability question, check all relevant execution lanes before answering. In this setup that means: native runtime/config, built-in tools, and Composio-discovered tools if the service can also arrive through Composio. Answer with lane-specific status, not a blanket yes/no.
+
 ## Template (Future)
 
 ```

@@ -1569,3 +1569,33 @@ Config warnings:\n- plugins.allow: plugin not found: auth (stale config entry ig
 [2026-04-13 04:00] Summary: fixes=0 warnings=1 alerts=0
 [2026-04-13 06:00] === Watchdog v3 run ===
 [2026-04-13 06:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-04-13 08:00] === Watchdog v3 run ===
+[2026-04-13 08:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-04-13 10:00] === Watchdog v3 run ===
+[2026-04-13 10:01] Summary: fixes=0 warnings=1 alerts=0
+[2026-04-13 12:00] === Watchdog v3 run ===
+[2026-04-13 12:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-04-13 14:00] === Watchdog v3 run ===
+[2026-04-13 14:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-04-13 16:00] === Watchdog v3 run ===
+[2026-04-13 16:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-04-13 18:00] === Watchdog v3 run ===
+[2026-04-13 18:01] Summary: fixes=0 warnings=1 alerts=0
+[2026-04-13 20:00] === Watchdog v3 run ===
+[2026-04-13 20:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-04-13 22:00] === Watchdog v3 run ===
+[2026-04-13 22:01] Summary: fixes=0 warnings=1 alerts=0
+[2026-04-14 00:00] === Watchdog v3 run ===
+[2026-04-14 00:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-04-14 02:00] === Watchdog v3 run ===
+[2026-04-14 02:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-04-14 04:00] === Watchdog v3 run ===
+[2026-04-14 04:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-04-14 06:00] === Watchdog v3 run ===
+[2026-04-14 06:00] FIXED: Re-triggered failed cron 0e2740f5-870a-454a-b493-877111829812
+[2026-04-14 06:00] Summary: fixes=1 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:0e2740f5-870a-454a-b493-877111829812:1776139249415:1"
+}

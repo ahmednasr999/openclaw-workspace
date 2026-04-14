@@ -2,23 +2,23 @@
   "meta": {
     "agent": "system-agent",
     "version": "1.0.0",
-    "generated_at": "2026-04-11T12:00:19.473259+02:00",
-    "duration_ms": 16292,
+    "generated_at": "2026-04-14T00:00:26.798730+02:00",
+    "duration_ms": 25331,
     "ttl_hours": 1,
     "status": "success",
     "error": null,
-    "run_id": "0f65c7f9",
+    "run_id": "89f4a4f1",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
-    "scan_time": "2026-04-11T12:00:19.473135+02:00",
+    "scan_time": "2026-04-14T00:00:26.798566+02:00",
     "system": {
-      "disk_usage_pct": 58,
+      "disk_usage_pct": 69,
       "memory": {
         "total_gb": 7.8,
-        "available_gb": 4.3,
-        "used_pct": 44.0
+        "available_gb": 5.1,
+        "used_pct": 34.8
       },
       "gateway": {
         "status": "healthy",
@@ -26,23 +26,23 @@
       },
       "openclaw_process": {
         "running": true,
-        "pid_count": 25
+        "pid_count": 26
       }
     },
     "agents": {
       "health": [
         {
           "agent": "jobs-merge",
-          "status": "healthy",
-          "age_hours": 3.8,
+          "status": "stale",
+          "age_hours": 11.8,
           "ttl_hours": 6,
-          "last_run": "2026-04-11T08:09:40.446917+02:00",
+          "last_run": "2026-04-13T12:13:56.941603+02:00",
           "last_status": "success"
         },
         {
           "agent": "jobs-review",
           "status": "stale",
-          "age_hours": 37.9,
+          "age_hours": 97.9,
           "ttl_hours": 6,
           "last_run": "2026-04-09T22:05:26.792690+02:00",
           "last_status": "success"
@@ -52,7 +52,7 @@
           "status": "healthy",
           "age_hours": 2.0,
           "ttl_hours": 4,
-          "last_run": "2026-04-11T10:00:51.618710+02:00",
+          "last_run": "2026-04-13T22:00:45.262510+02:00",
           "last_status": "success"
         },
         {
@@ -63,35 +63,35 @@
         {
           "agent": "comment-radar",
           "status": "stale",
-          "age_hours": 343.0,
+          "age_hours": 403.0,
           "ttl_hours": 6,
           "last_run": "2026-03-28T03:00:24.648751+00:00",
           "last_status": null
         },
         {
           "agent": "outreach-agent",
-          "status": "healthy",
-          "age_hours": 2.0,
+          "status": "stale",
+          "age_hours": 46.0,
           "ttl_hours": 6,
-          "last_run": "2026-04-11T08:01:02.064798+00:00",
+          "last_run": "2026-04-12T00:01:29.419082+00:00",
           "last_status": null
         },
         {
           "agent": "system-agent",
-          "status": "healthy",
-          "age_hours": 2.0,
+          "status": "stale",
+          "age_hours": 60.0,
           "ttl_hours": 6,
-          "last_run": "2026-04-11T10:00:24.204855+02:00",
+          "last_run": "2026-04-11T12:00:19.473259+02:00",
           "last_status": "success"
         }
       ],
-      "healthy_count": 4,
-      "stale_count": 2,
+      "healthy_count": 1,
+      "stale_count": 5,
       "total": 7
     },
     "cron": {
       "status": "error",
-      "error": "Invalid config at /root/.openclaw/openclaw.json:\\n- channels.slack.streaming: Invalid option: expected one of \"off\"|\"partial\"|\"block\"|\"progress\"\nConfig invalid\nFile: ~/.openclaw/openclaw.json\nProblem:"
+      "error": "gateway connect failed: Error: gateway closed (1006): \nError: gateway closed (1006 abnormal closure (no close frame)): no close reason\nGateway target: ws://127.0.0.1:18789\nSource: local loopback\nConfi"
     },
     "external_services": {
       "notion": {
@@ -110,19 +110,19 @@
   },
   "kpi": {
     "system_uptime": 100,
-    "agents_healthy": 4,
-    "agents_stale": 2,
+    "agents_healthy": 1,
+    "agents_stale": 5,
     "cron_success_rate": 0,
     "alerts_active": 0
   },
   "recommendations": [
     {
-      "id": "rec-0f65c7f9-0",
+      "id": "rec-89f4a4f1-0",
       "action": "run_agents",
-      "target": "2 stale agent(s): jobs-review, comment-radar",
+      "target": "5 stale agent(s): jobs-merge, jobs-review, comment-radar, outreach-agent, system-agent",
       "reason": "Agent data is past TTL",
       "urgency": "medium",
-      "timestamp": "2026-04-11T12:00:19.473192+02:00"
+      "timestamp": "2026-04-14T00:00:26.798646+02:00"
     }
   ]
 }
