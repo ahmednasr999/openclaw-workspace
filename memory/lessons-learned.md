@@ -1,5 +1,21 @@
 # Lessons Learned
 
+## 2026-04-15 - Verify ACP runtime availability before promising Codex/Claude harness execution
+### What I got wrong
+I moved straight from drafting a Codex ACP brief to trying to spawn an ACP harness session without first verifying that the ACP runtime backend was configured on this host.
+### Why
+I assumed the presence of ACP-oriented tooling and prompts implied the runtime plugin was available, but `sessions_spawn` failed because the `acpx` runtime plugin is not configured here.
+### Fix
+Before offering to launch Codex, Claude Code, or another ACP harness, verify ACP runtime availability first. If ACP is unavailable, say so plainly and offer the closest acceptable fallback instead of implying the harness launch will just work.
+
+## 2026-04-15 - Important Recruiter Follow-Ups Must Not Fall Through Narrow Email Rules
+### What I got wrong
+I missed the important email `Ranger AI - Followup` from `sari@rangerrfx.com` even though it had already been scanned earlier that day.
+### Why
+The email classifier was too narrow. `rangerrfx.com` was not recognized as a recruiter/hiring domain, the subject/body patterns did not match the existing interview/follow-up regexes, and recruiter emails were allowed to fall out of the actionable path. That caused the message to be stored as `other` with low priority instead of being surfaced.
+### Fix
+Treat recruiter follow-ups as high-sensitivity signals. Expand subject/body patterns beyond literal `interview` and `schedule`, include recruiter-domain and known-contact reach in actionable detection, and keep regression tests for important real examples like Ranger AI so they cannot silently regress again.
+
 ## 2026-04-12 - Premium Visual Requests Need Real Design, Not Template Import
 ### What I got wrong
 Ahmed asked for a strong Canva-ready carousel and I delivered a deck that was structurally correct but visually weak, generic, and nowhere near premium quality.

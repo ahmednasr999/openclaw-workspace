@@ -1,23 +1,33 @@
 {
   "status": "ok",
-  "scan_time": "2026-04-14T06:00:05.038454+02:00",
-  "total_scanned": 4,
+  "scan_time": "2026-04-15T06:00:06.729095+02:00",
+  "total_scanned": 8,
   "by_category": {
     "interview_invite": 0,
-    "recruiter_reach": 1,
+    "recruiter_reach": 2,
     "application_ack": 0,
     "rejection": 0,
     "assessment": 0,
     "follow_up_needed": 0,
-    "other": 3
+    "other": 6
   },
   "interview_invites": [],
   "recruiter_messages": [
     {
-      "id": "353128",
+      "id": "353343",
+      "from": "Naukrigulf <newjobs@naukrigulf.com>",
+      "subject": "Senior Expert Hybrid Solution Design, Project Manager\r\n (Industry Agnostic) jobs for you",
+      "date": "Wed, 15 Apr 2026 08:20:32 +0530 (IST)",
+      "unread": true,
+      "priority": "MEDIUM",
+      "score": 2,
+      "pipeline_match": null
+    },
+    {
+      "id": "353344",
       "from": "Mariam from foundit <jobmessenger@monstergulf.com>",
       "subject": "Ahmed, Hot Job Opportunities Waiting For You",
-      "date": "Tue, 14 Apr 2026 09:01:55 +0530 (IST)",
+      "date": "Wed, 15 Apr 2026 08:22:05 +0530 (IST)",
       "unread": true,
       "priority": "MEDIUM",
       "score": 2,
@@ -28,7 +38,14 @@
   "rejections": [],
   "assessments": [],
   "follow_ups_needed": [],
-  "actionable_count": 0,
-  "hot_alerts": [],
+  "actionable_count": 2,
+  "hot_alerts": [
+    {
+      "subject": "I have 14 days of use or lose PTO and am planning to leave my job. Is\r\n it a...",
+      "from": "Glassdoor Community <noreply@glassdoor.com>",
+      "priority": "HIGH",
+      "pipeline_match": null
+    }
+  ],
   "signals": []
 }
