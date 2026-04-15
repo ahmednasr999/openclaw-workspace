@@ -47,3 +47,6 @@
 [2026-04-13T01:03:23Z] Done reset=3 skipped=1 errors=0
 [2026-04-14T01:03:26Z] SKIP [cto] 106783dd-f9a7-4249-89d8-60d141f79592.jsonl locked by live PID 1853534 (1MB)
 [2026-04-14T01:03:27Z] Done reset=0 skipped=1 errors=0
+[2026-04-15T01:04:02Z] RESET [hr] cdc8764b-617a-4543-9433-6ae634f9b5d4-topic-9.jsonl was 3MB -> archived to cdc8764b-617a-4543-9433-6ae634f9b5d4-topic-9.20260415T010402Z.jsonl.gz
+[2026-04-15T01:04:04Z] SKIP [cto] 15fc0612-80b3-45dc-8ff3-55fd34a47231.jsonl locked by live PID 1853534 (1MB)
+[2026-04-15T01:04:05Z] Done reset=1 skipped=1 errors=0

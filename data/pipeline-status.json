@@ -2,12 +2,12 @@
   "meta": {
     "agent": "pipeline-agent",
     "version": "1.0.0",
-    "generated_at": "2026-04-14T06:00:01.434803+02:00",
-    "duration_ms": 16,
+    "generated_at": "2026-04-15T06:00:01.631266+02:00",
+    "duration_ms": 49,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "d01e60e9",
+    "run_id": "2fcca8a8",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -15,10 +15,10 @@
     "total_applications": 0,
     "active_count": 0,
     "external_applied_count": 122,
-    "db_total": 2372,
+    "db_total": 2385,
     "db_funnel": {
       "skipped": 2030,
-      "discovered": 196,
+      "discovered": 209,
       "scored": 97,
       "applied": 38,
       "duplicate-applied": 3,
@@ -27,7 +27,7 @@
       "archived": 1,
       "interview": 1,
       "rejected": 1,
-      "_total": 2372
+      "_total": 2385
     },
     "by_status": {},
     "this_week": {
@@ -59,12 +59,12 @@
   },
   "recommendations": [
     {
-      "id": "rec-d01e60e9-0",
+      "id": "rec-2fcca8a8-0",
       "action": "apply_more",
       "target": "Job applications",
       "reason": "Only 0 applications this week, aim for 10+",
       "urgency": "medium",
-      "timestamp": "2026-04-14T06:00:01.434715+02:00"
+      "timestamp": "2026-04-15T06:00:01.631118+02:00"
     }
   ]
 }

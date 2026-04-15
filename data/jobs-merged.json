@@ -2,16 +2,51 @@
   "meta": {
     "agent": "jobs-merge",
     "version": "1.0.0",
-    "generated_at": "2026-04-14T04:09:58.436054+02:00",
-    "duration_ms": 45458,
+    "generated_at": "2026-04-15T04:10:28.842793+02:00",
+    "duration_ms": 48638,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "5b335b9d",
+    "run_id": "ca2be1e3",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": [
+    {
+      "id": "linkedin_jobspy-li-4399755034",
+      "source": "linkedin_jobspy",
+      "title": "Customer Success/Sales Director - SAAS/Enterprise",
+      "company": "Robert Walters",
+      "location": "Dubai, Dubai, United Arab Emirates",
+      "url": "https://www.linkedin.com/jobs/view/4399755034",
+      "posted": "",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 36,
+      "match_keywords": [
+        "saas",
+        "enterprise",
+        "director",
+        "leadership",
+        "growth",
+        "mena"
+      ],
+      "raw_snippet": "We are currently partnering with a leading, global SaaS organisation to appoint a Customer Success Director to lead their MENAT region. This is a strategic leadership role focused on driving revenue growth, customer retention, and long\\-term client value across a portfolio of enterprise accounts.\n \n",
+      "relevant": false,
+      "filter_reason": "skip-word:sales",
+      "search_country": "United Arab Emirates",
+      "search_title": "Portfolio Director",
+      "linkedin_id": "li-4399755034",
+      "jd_text": "We are currently partnering with a leading, global SaaS organisation to appoint a Customer Success Director to lead their MENAT region. This is a strategic leadership role focused on driving revenue growth, customer retention, and long\\-term client value across a portfolio of enterprise accounts.\n \n\n\n\n**The Role**\n As Customer Success Director, you will lead a high\\-performing team responsible for account strategy, growth, and customer satisfaction. You will work closely with senior stakeholders, building C\\-level relationships and identifying opportunities to expand services and deliver measurable business impact.\n \n\n\n\n**Key Responsibilities** \n\n\n\n* Own revenue targets and ensure strong retention across key accounts\n* Drive growth through cross\\-sell and upsell strategies\n* Lead, coach, and develop a high\\-performing Customer Success team\n* Define and execute strategic account plans aligned to client objectives\n* Build and manage senior client relationships at C\\-level\n* Implement structured sales methodologies (e.g. MEDDPICC)\n* Enhance customer engagement and satisfaction (NPS\\-driven)\n* Identify market trends, risks, and growth opportunities\n\n\n\n**About You** \n\n\n\n* Proven leadership experience within SaaS / technology environments\n* Strong background in Financial Crime, Fraud, or AML solutions\n* Track record of managing enterprise accounts and exceeding revenue targets\n* Experience leading and developing high\\-performing teams\n* Strong commercial acumen and stakeholder management skills\n* Must be based in UAE\n\n\n\n**What's on Offer** \n\n\n\n* Competitive salary and bonus structure\n* Hybrid working model\n* Opportunity to join a high\\-growth, market\\-leading organisation",
+      "source_count": 1,
+      "country": "United Arab Emirates",
+      "industry_bonus": 3,
+      "policy_status": "pass",
+      "sources": [
+        "linkedin"
+      ],
+      "first_seen": "2026-04-15"
+    },
     {
       "id": "linkedin_jobspy-li-4393011548",
       "source": "linkedin_jobspy",
@@ -115,6 +150,39 @@
       "first_seen": "2026-04-13"
     },
     {
+      "id": "linkedin_jobspy-li-4402006154",
+      "source": "linkedin_jobspy",
+      "title": "Service Delivery Director",
+      "company": "Salesforce",
+      "location": "Dubai, Dubai, United Arab Emirates",
+      "url": "https://www.linkedin.com/jobs/view/4402006154",
+      "posted": "",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 26,
+      "match_keywords": [
+        "ai",
+        "crm",
+        "salesforce",
+        "director"
+      ],
+      "raw_snippet": "*To get the best candidate experience, please consider applying for a maximum of 3 roles within 12 months to ensure you are not duplicating efforts.*\n Job Category\n   \n\n  \n\n Customer Success\n   \n\n  \n\n Job Details\n   \n\n  \n\n**About Salesforce**\n Salesforce is the \\#1 AI CRM, where humans with agents d",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Director of Program Management",
+      "linkedin_id": "li-4402006154",
+      "jd_text": "*To get the best candidate experience, please consider applying for a maximum of 3 roles within 12 months to ensure you are not duplicating efforts.*\n Job Category\n   \n\n  \n\n Customer Success\n   \n\n  \n\n Job Details\n   \n\n  \n\n**About Salesforce**\n Salesforce is the \\#1 AI CRM, where humans with agents drive customer success together. Here, ambition meets action. Tech meets trust. And innovation isn\u2019t a buzzword \u2014 it\u2019s a way of life. The world of work as we know it is changing and we're looking for Trailblazers who are passionate about bettering business and the world through AI, driving innovation, and keeping Salesforce's core values at the heart of it all.\n   \n\n  \n\n Ready to level\\-up your career at the company leading workforce transformation in the agentic era? You\u2019re in the right place! Agentforce is the future of AI, and you are the future of Salesforce.\n   \n\n  \n\n**About The Role**\n We are looking for a dynamic and experienced\n **Service Delivery Director** \n to lead our professional services and customer success operations across the Middle East region. Based in the UAE (or KSA), this senior leadership role is responsible for driving delivery excellence, growing a high\\-performing team, and ensuring customers achieve measurable outcomes from their investments.\n   \n\n  \n\n This is a unique opportunity to shape the future of service delivery across one of the world's most exciting and fast\\-growing technology markets.\n   \n\n  \n\n What You'll Be Doing\n   \n\n  \n\n Delivery Leadership\n   \n\n  \n\n* Own end\\-to\\-end service delivery across the Middle East, ensuring projects are delivered on time, within scope, and to the highest quality standards\n* Define and execute regional delivery strategy aligned with global frameworks and local market needs\n* Establish and continuously improve delivery methodologies, governance models, and best practices\n* Drive operational KPIs including CSAT, NPS, utilization, revenue, and margin\n\n\n Customer \\& Stakeholder Engagement\n   \n\n  \n\n* Build trusted, executive\\-level relationships with key customers and partners across the GCC and broader Middle East\n* Act as an escalation point for complex delivery challenges, driving swift and effective resolution\n* Partner with Sales and Pre\\-Sales to support business development, solution scoping, and proposal development\n* Present delivery performance and strategic roadmaps to C\\-level stakeholders\n\n\n Team \\& Talent Development\n   \n\n  \n\n* Lead, mentor, and grow a diverse team of project managers, consultants, and delivery professionals\n* Foster a culture of accountability, continuous learning, and customer obsession\n* Drive talent acquisition, onboarding, and retention strategies for the region\n* Partner with HR and global teams to develop career paths and succession plans\n\n\n Business Growth\n   \n\n  \n\n* Collaborate with Sales on go\\-to\\-market strategies and new business opportunities\n* Identify and develop service offerings tailored to regional needs and customer segments\n* Contribute to revenue targets through effective resource planning and delivery efficiency\n* Support partner ecosystem development and enablement across the region\n\n\n What We're Looking For\n   \n\n  \n\n**Experience \\& Qualifications**\n* 12\\+ years of experience in professional services, consulting, or technology delivery\n* 5\\+ years in a senior leadership or director\\-level role managing regional delivery operations\n* Proven track record of delivering large\\-scale, complex technology projects (CRM, ERP, SaaS, or cloud platforms)\n* Experience operating in the Middle East market \u2014 GCC experience is strongly preferred\n* Bachelor's degree required; MBA or relevant postgraduate qualification is a plus\n* PMP, PRINCE2, or equivalent project/program management certification preferred\n* Deep understanding of Middle East business culture, government sector dynamics, and enterprise buying behavior\n* English fluent mandatory; Arabic language skills is a strong advantage\n* Willingness to travel across the region as required (estimated 30\u201340%)\n* Existing network of senior relationships across GCC enterprises and government entities is highly desirable\n\n\n Skills \\& Competencies\n   \n\n  \n\n* Exceptional leadership and people management skills with experience leading multicultural teams\n* Strong executive presence with the ability to influence and engage at C\\-suite level\n* Deep understanding of professional services business models (T\\&M, fixed\\-price, managed services)\n* Excellent commercial acumen \u2014 P\\&L management, forecasting, and resource planning\n* Strong analytical and problem\\-solving skills with a data\\-driven mindset\n* Outstanding communication, presentation, and negotiation skills\n\n\n What Makes You Stand Out\n   \n\n  \n\n* Experience in digital transformation programs at scale\n* Familiarity with Salesforce, ServiceNow, SAP, Oracle, or similar enterprise platforms\n* Track record of building delivery practices from the ground up in emerging or high\\-growth markets\n* Passion for developing talent and creating inclusive, high\\-performing team cultures\n\n\n Unleash Your Potential\n   \n\n  \n\n When you join Salesforce, you\u2019ll be limitless in all areas of your life. Our benefits and resources support you to find balance and\n *be your best* \n , and our AI agents accelerate your impact so you can\n *do your best* \n . Together, we\u2019ll bring the power of Agentforce to organizations of all sizes and deliver amazing experiences that customers love. Apply today to not only shape the future \u2014 but to redefine what\u2019s possible \u2014 for yourself, for AI, and the world.\n   \n\n  \n\n Accommodations\n   \n\n  \n\n If you need a reasonable accommodation during the application or the recruiting process, please submit a request via this Accommodations Request Form.\n   \n\n  \n\n Please note that Salesforce uses artificial intelligence (AI) tools to help our recruiters assess and evaluate candidates\u2019 resumes and qualifications throughout the recruiting process. Humans will always make any candidate selection and hiring decisions. Please see our Candidate Privacy Statement for more information about how we use your personal data and your rights, including with regard to use of AI tools and opt out options.\n   \n\n  \n\n Posting Statement\n   \n\n  \n\n Salesforce is an equal opportunity employer and maintains a policy of non\\-discrimination with all employees and applicants for employment. What does that mean exactly? It means that at Salesforce, we believe in equality for all. And we believe we can lead the path to equality in part by creating a workplace that\u2019s inclusive, and free from discrimination. Know your rights: workplace discrimination is illegal. Any employee or potential employee will be assessed on the basis of merit, competence and qualifications \u2013 without regard to race, religion, color, national origin, sex, sexual orientation, gender expression or identity, transgender status, age, disability, veteran or marital status, political viewpoint, or other classifications protected by law. This policy applies to current and prospective employees, no matter where they are in their Salesforce employment journey. It also applies to recruiting, hiring, job assignment, compensation, promotion, benefits, training, assessment of job performance, discipline, termination, and everything in between. Recruiting, hiring, and promotion decisions at Salesforce are fair and based on merit. The same goes for compensation, benefits, promotions, transfers, reduction in workforce, recall, training, and education.",
+      "source_count": 1,
+      "country": "United Arab Emirates",
+      "industry_bonus": 12,
+      "policy_status": "pass",
+      "sources": [
+        "linkedin"
+      ],
+      "first_seen": "2026-04-15"
+    },
+    {
       "id": "linkedin_jobspy-li-4401005244",
       "source": "linkedin_jobspy",
       "title": "Senior Vice President, Client Service Executive, Global Payments & Trade",
@@ -179,6 +247,73 @@
       "first_seen": "2026-04-13"
     },
     {
+      "id": "linkedin_jobspy-li-4400095946",
+      "source": "linkedin_jobspy",
+      "title": "Director of Business Development, WooCommerce",
+      "company": "Jobgether",
+      "location": "",
+      "url": "https://www.linkedin.com/jobs/view/4400095946",
+      "posted": "",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 20,
+      "match_keywords": [
+        "director",
+        "leadership",
+        "saudi",
+        "api"
+      ],
+      "raw_snippet": "**This position is posted by Jobgether on behalf of a partner company. We are currently looking for a Director of Business Development, WooCommerce in Saudi Arabia.**\n This is a high\\-impact leadership role focused on shaping and expanding a global partnership ecosystem within the ecommerce space. Y",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Bahrain",
+      "search_title": "Portfolio Director",
+      "linkedin_id": "li-4400095946",
+      "jd_text": "**This position is posted by Jobgether on behalf of a partner company. We are currently looking for a Director of Business Development, WooCommerce in Saudi Arabia.**\n This is a high\\-impact leadership role focused on shaping and expanding a global partnership ecosystem within the ecommerce space. You will drive strategic alliances that enhance platform capabilities, accelerate revenue growth, and deliver meaningful value to merchants worldwide. Operating in a fully remote and highly collaborative environment, you will work cross\\-functionally with product, legal, and marketing teams to unlock new opportunities. The role combines strategic vision with hands\\-on execution, requiring both analytical rigor and strong relationship\\-building skills. You will engage with leading global technology partners across payments, logistics, marketing, and more. This is an opportunity to influence the future of open commerce while contributing to a rapidly evolving digital ecosystem.\n   \n\n  \n\n**Accountabilities**\n* Lead the development and execution of a comprehensive partner program aligned with business goals and market trends\n* Identify, evaluate, and secure high\\-impact strategic partnerships that drive platform adoption and revenue growth\n* Negotiate complex partnership agreements, including new deals, renewals, and expansions across multiple categories\n* Build and maintain strong relationships with key global partners, including large enterprise organizations\n* Monitor partnership performance through data analysis, identifying opportunities, risks, and areas for optimization\n* Design and implement scalable processes, frameworks, and reporting systems to support ecosystem growth\n\n\n**Requirements**\n* 8\\+ years of experience in business development, strategic partnerships, or similar roles within ecommerce, SaaS, or fintech environments\n* Strong understanding of SMB, mid\\-market, and consumer business models, including familiarity with marketing, analytics, and advertising ecosystems\n* Proven ability to build, scale, and manage partnerships that deliver measurable business impact\n* Demonstrated expertise in negotiating and managing complex commercial agreements\n* Experience collaborating cross\\-functionally with legal, engineering, and marketing teams\n* Strategic mindset with the ability to navigate ambiguity, challenge assumptions, and adapt quickly\n* Strong interpersonal and communication skills, with a collaborative and feedback\\-driven approach\n* Experience with mergers, acquisitions, or investment activities is a plus\n\n\n**Benefits**\n* Competitive salary range of $105,000 to $215,000 USD, based on experience and impact potential\n* Fully remote work environment with flexibility to work from anywhere\n* Open vacation policy supporting work\\-life balance\n* Comprehensive benefits package (healthcare, wellness, and additional perks depending on location)\n* Opportunity to work with globally recognized partners and cutting\\-edge technologies\n* Career growth in a fast\\-scaling, innovation\\-driven environment\n* Inclusive and diverse culture with strong emphasis on collaboration and autonomy\n\n\n**How Jobgether Works**\n We use an\n **AI\\-powered matching process** \n to ensure your application is reviewed quickly, objectively, and fairly against the role's core requirements. Our system identifies the top\\-fitting candidates, and this shortlist is then shared directly with the hiring company. The final decision and next steps (interviews, assessments) are managed by their internal team.\n   \n\n  \n\n We appreciate your interest and wish you the best!\n   \n\n  \n\n Why Apply Through Jobgether?\n   \n\n  \n\n**Data Privacy Notice:** \n By submitting your application, you acknowledge that Jobgether will process your personal data to evaluate your candidacy and share relevant information with the hiring employer. This processing is based on legitimate interest and pre\\-contractual measures under applicable data protection laws (including GDPR). You may exercise your rights (access, rectification, erasure, objection) at any time.\n   \n\n  \n\n We may use artificial intelligence (AI) tools to support parts of the hiring process, such as reviewing applications, analyzing resumes, or assessing responses. These tools assist our recruitment team but do not replace human judgment. Final hiring decisions are ultimately made by humans. If you would like more information about how your data is processed, please contact us.",
+      "source_count": 1,
+      "country": "Bahrain",
+      "industry_bonus": 18,
+      "policy_status": "pass",
+      "sources": [
+        "linkedin"
+      ],
+      "first_seen": "2026-04-15"
+    },
+    {
+      "id": "linkedin_jobspy-li-4401724773",
+      "source": "linkedin_jobspy",
+      "title": "Greater Gulf Medical Head, General Medicines",
+      "company": "Sanofi",
+      "location": "",
+      "url": "https://www.linkedin.com/jobs/view/4401724773",
+      "posted": "",
+      "seniority": "Other",
+      "domain_match": false,
+      "keyword_score": 20,
+      "match_keywords": [
+        "ai",
+        "uae",
+        "saudi",
+        "dubai",
+        "riyadh"
+      ],
+      "raw_snippet": "**Job Title: Greater Gulf Medical Head, General Medicines**\n* Grade: 5\\.1\n* Location: Riyadh (Saudi Arabia) or Dubai (UAE)\n* Manager\u2019s name: Alan DIVANOVIC\n* Manager\u2019s title: Key Markets Medical Head, General Medicines\n\n\n**About Sanofi**\n Sanofi is an R\\&D\\-driven, AI\\-powered biopharma company comm",
+      "relevant": false,
+      "filter_reason": "skip-word:medical",
+      "search_country": "Saudi Arabia",
+      "search_title": "\"technology\" AND (\"director\" OR \"head\") AND (\"healthcare\" OR \"fintech\")",
+      "linkedin_id": "li-4401724773",
+      "jd_text": "**Job Title: Greater Gulf Medical Head, General Medicines**\n* Grade: 5\\.1\n* Location: Riyadh (Saudi Arabia) or Dubai (UAE)\n* Manager\u2019s name: Alan DIVANOVIC\n* Manager\u2019s title: Key Markets Medical Head, General Medicines\n\n\n**About Sanofi**\n Sanofi is an R\\&D\\-driven, AI\\-powered biopharma company committed to improving people's lives and delivering compelling growth. We apply our deep understanding of the immune system to invent medicines and vaccines that treat and protect millions of people around the world, with an innovative pipeline that could benefit millions more. Our team is guided by one purpose: we chase the miracles of science to improve people's lives; this inspires us to drive progress and deliver positive impact for our people and the communities we serve, by addressing the most urgent healthcare, environmental, and societal challenges of our time.\n   \n\n  \n\n Sanofi General Medicines Global Business Unit Is Dedicated To Delivering Standard\\-of\\-care Medicines That Help People Manage Their Health And Relieve Pressure On Healthcare Systems. It Is Continuously Evolving To Stay Relevant To Customers With The Following Strategies\n   \n\n  \n\n* Launching transformative therapies in the areas of autoimmune Type 1 Diabetes (aT1D) and Transplant.\n* Growing core assets and increasing their reach with new digital health and AI\\-driven business models.\n* Coupling technology with clinical expertise to better understand patient needs, empowering them to manage chronic conditions.\n* Rebuilding pipeline through internal and external innovation.\n* Boosting omnichannel strategy for customers and patients, using data and Artificial Intelligence to personalize the engagements.\n\n\n The General Medicines Medical is primarily focused on aT1D and Transplant as core innovative areas, while continuing to maintain efforts on improving the day\\-to\\-day health of millions of patients with chronic conditions such as diabetes and cardiovascular disease.\n   \n\n  \n\n Greater Gulf (GG) is a Multi Country Organization (MCO) that includes Saudi Arabia, UAE, Kuwait, Qatar, Oman and Bahrein. It is one of Sanofi's eight Key Markets globally. Key Markets designate a select group of priority geographies that represent major business opportunity and growth potential for the organization. This designation reflects the strategic importance of the Greater Gulf region within the broader Sanofi enterprise.\n   \n\n  \n\n**About The Job**\n As a member of both the Sanofi Greater Gulf General Medicines Leadership Team and Key Markets Medical Leadership Team, the GG Medical Head will develop and execute medical strategy and operational plans for innovations in aT1D and Transplant. This position requires aligning global strategy with local business needs while serving as an inspirational leader and catalyst for transformation in the rapidly evolving healthcare landscape.\n   \n\n  \n\n The role demands a forward\\-thinking pioneer who combines deep scientific expertise with digital fluency, leveraging AI\\-powered analytics, real\\-world evidence platforms, and emerging technologies to transform medical insights into breakthrough strategies to accelerate patient impact and redefine healthcare possibilities.\n   \n\n  \n\n This leader will inspire and empower a high\\-performing team while fostering a culture of continuous learning, technological curiosity, and adaptive thinking. Building the next\\-generation capabilities \\- from AI\\-assisted medical affairs to digital stakeholder engagement \u2013 while maintaining the highest ethical standards and proactive compliance, ensuring that every scientific and technology advancement ultimately serves the purpose of improving people's lives.\n   \n\n  \n\n**Key Responsibilities**\n* Shape the Future of Medicine in GG: architect the medical strategy, planning, and resourcing framework to ensure flawless, high\\-impact launches of transformative therapies in autoimmune Type 1 Diabetes (aT1D) and Transplant \u2014 setting a new benchmark for what medical excellence looks like across Greater Gulf.\n* Orchestrate Best in Class Product Launches: Define and execute bold medical strategies across the full product lifecycle \u2014 from pre\\-launch through post\\-launch \u2014 ensuring transformative therapies reach patients faster, smarter, and with maximum impact. Drive optimal lifecycle management across both innovative and established portfolios.\n* Champion a Bold GLocal Vision: Craft and own a compelling, future\\-forward vision for Medical Affairs across Greater Gulf, seamlessly bridging global strategy with local realities. Be the architect of a GLocal model that is agile, patient\\-centric, and built for the speed of tomorrow's healthcare landscape.\n* Lead with Strategic Influence: Drive strategic leadership for the Medical across Greater Gulf, co\\-creating integrated action plans with cross\\-functional partners that combine scientific rigor, business acumen, and an unwavering focus on patient outcomes.\n* Build a Thriving Scientific Ecosystem: Cultivate a dynamic, future\\-ready scientific ecosystem across Greater Gulf \u2014 forging powerful alliances with KOLs, external experts, HTA bodies, and health authorities \u2014 to cement Sanofi's position as the trusted scientific partner of choice in aT1D and Transplant.\n* Catalyze Cross\\-Functional Excellence: Lead the optimization and execution of affiliate medical plans that unlock full product value. Act as a unifying force across commercial, market access, public affairs, regulatory, safety, clinical operations, and R\\&D \u2014 driving integrated, data\\-rich plans that span publications, health authority submissions, and scientific congresses.\n* Inspire, Develop \\& Future\\-Proof Your Team: Lead a high\\-performing, agile medical organization built on a customer\\-first mindset. Champion talent development, build a robust pipeline of future leaders, and foster a culture of bold thinking, continuous learning, and seamless collaboration with global Go\\-to\\-Market Capabilities.\n* Harness AI, Digital \\& Real\\-World Evidence: Be at the forefront of the digital health revolution \u2014 leveraging real\\-world data, artificial intelligence, and cutting\\-edge digital enablers to generate breakthrough evidence and insights. Transform data into decisions that accelerate medical affairs performance and, most importantly, improve patient outcomes.\n* Drive Smart, Responsible Resource Stewardship: Manage the country medical budget with strategic foresight and entrepreneurial discipline \u2014 identifying synergies, optimizing resource allocation, and ensuring every investment delivers meaningful impact for patients and the business.\n* Set the Gold Standard for Ethical Leadership: Champion a culture of proactive compliance and uncompromising integrity \u2014 establishing the highest ethical standards for the medical function and ensuring every decision is grounded in patient\\-centered risk/benefit principles.\n\n\n**About You**\n Education \\& Credentials\n   \n\n  \n\n* Advanced scientific degree: MD, PhD, or PharmD (Medical Degree preferred)\n\n\n Experience \\& Expertise\n   \n\n  \n\n* 10\\+ years of progressive medical affairs experience with proven impact\n* Demonstrated success developing and executing medical strategy across Greater Gulf markets, with substantial experience leading high\\-performing medical teams\n* Established network of key opinion leaders and scientific influencers throughout Greater Gulf\n* Track record of cross\\-functional collaboration with R\\&D, Commercial, Market Access, Public Affairs, Patient Safety, and Regulatory teams\n* Deep understanding of Greater Gulf's evolving healthcare ecosystem and regulatory environment\n* Thrives in complex, matrixed global organizations with ability to navigate ambiguity\n* Hands\\-on experience deploying AI, digital tools, and data analytics to transform medical operations\n* Strong commercial acumen with ability to connect medical strategy to business outcomes\n\n\n Leadership Capabilities\n   \n\n  \n\n* Visionary strategist who thinks boldly, acts decisively, and focuses relentlessly on impact over activity\n* Transformational leader who creates compelling visions, inspires teams, and drives change in dynamic environments\n* High\\-energy self\\-starter who contributes beyond functional boundaries and challenges the status quo\n* Relationship architect who builds trust and credibility across diverse stakeholders\u2014internal teams, senior leadership, and external partners\n* Influential communicator who shapes thinking, drives alignment, and mobilizes action at all organizational levels\n* Collaborative, open\\-minded, and adaptable with unwavering patient\\-centricity\n* Lead by uncompromising integrity and ethics principles in all decisions\n\n\n**Exemplifie The One Sanofi Culture And Values**\n* Aim Higher: Focus on what matters, set high standards and move with urgency, learning from setbacks as we go to achieve higher performance.\n* Act for Patients: Never compromise on integrity, eliminate barriers and partner with others to go faster and further for patients.\n* Be Bold: Take thoughtful risks, seize opportunities and think beyond what's possible to accelerate our science and drive compelling growth.\n* Lead Together: Build trust and collaborate openly on our shared goals, celebrate collective wins and foster a sense of belonging.\n\n\n**Language Skills**\n Oral and written fluency in English. Arabic is a plus.\n   \n\n  \n\n Pursue progress, discover extraordinary\n   \n\n  \n\n Better is out there. Better medications, better outcomes, better science. But progress doesn\u2019t happen without people \u2013 people from different backgrounds, in different locations, doing different roles, all united by one thing: a desire to make miracles happen. So, let\u2019s be those people.\n   \n\n  \n\n At Sanofi, we provide equal opportunities to all regardless of race, colour, ancestry, religion, sex, national origin, sexual orientation, age, citizenship, marital status, disability, or gender identity.\n   \n\n  \n\n Watch our ALL IN video and check out our Diversity Equity and Inclusion actions at sanofi.com!\n   \n\n  \n\n null",
+      "source_count": 1,
+      "country": "Saudi Arabia",
+      "industry_bonus": 12,
+      "policy_status": "pass",
+      "sources": [
+        "linkedin"
+      ],
+      "first_seen": "2026-04-15"
+    },
+    {
       "id": "linkedin_jobspy-li-4398149888",
       "source": "linkedin_jobspy",
       "title": "Executive Director, Digital Assets Risk",
@@ -211,45 +346,13 @@
       "first_seen": "2026-04-11"
     },
     {
-      "id": "linkedin_jobspy-li-4399506683",
-      "source": "linkedin_jobspy",
-      "title": "Head of Marketing",
-      "company": "New Town Real Estate LLC",
-      "location": "Dubai, Dubai, United Arab Emirates",
-      "url": "https://www.linkedin.com/jobs/view/4399506683",
-      "posted": "",
-      "seniority": "Director",
-      "domain_match": false,
-      "keyword_score": 16,
-      "match_keywords": [
-        "ai",
-        "head of",
-        "dubai"
-      ],
-      "raw_snippet": "**Job Title: Head of Marketing**\n\n\n\n\n**Industry:** \n Real Estate\n \n\n\n\n**Experience Required:** \n 5\u201310 Years\n \n\n\n\n**Location:** \n Dubai\n \n\n\n\n**Salary Range:** \n Up to 10,000 AED per month (based on experience \\& performance)\n \n\n\n\n**Employment Type:** \n Full\\-Time\n \n\n\n\n**Role Overview** \n\n\n\n\n We are s",
-      "relevant": false,
-      "filter_reason": "skip-word:marketing",
-      "search_country": "United Arab Emirates",
-      "search_title": "Head of Digital Transformation",
-      "linkedin_id": "li-4399506683",
-      "jd_text": "**Job Title: Head of Marketing**\n\n\n\n\n**Industry:** \n Real Estate\n \n\n\n\n**Experience Required:** \n 5\u201310 Years\n \n\n\n\n**Location:** \n Dubai\n \n\n\n\n**Salary Range:** \n Up to 10,000 AED per month (based on experience \\& performance)\n \n\n\n\n**Employment Type:** \n Full\\-Time\n \n\n\n\n**Role Overview** \n\n\n\n\n We are seeking a dynamic and strategic\n **Head of Marketing** \n to lead and execute the overall marketing vision of our real estate business. The ideal candidate will bring strong expertise in strategic planning, brand positioning, high\\-quality lead generation, and international market exposure. This role requires a data\\-driven leader who can drive revenue growth, enhance brand equity, and build scalable marketing systems.\n \n\n\n\n**Key Responsibilities** \n\n\n\n\n**1\\. Strategic Planning \\& Leadership** \n\n\n\n* Develop and implement comprehensive marketing strategies aligned with business objectives.\n* Create annual and quarterly marketing roadmaps with defined KPIs and ROI tracking.\n* Lead, mentor, and manage the marketing team to deliver high performance.\n* Collaborate closely with Sales, CRM, and Business Development teams to align lead generation goals.\n\n\n\n**2\\. Brand Development \\& Positioning** \n\n\n\n* Build and strengthen the company\u2019s brand identity in domestic and international markets.\n* Oversee brand messaging, positioning, and communication strategy.\n* Ensure consistency across all marketing channels (digital, print, events, PR).\n* Manage corporate branding, project branding, and luxury segment positioning (if applicable).\n\n\n\n**3\\. Lead Generation \\& Performance Marketing** \n\n\n\n* Drive high\\-quality lead generation campaigns across digital and offline platforms.\n* Optimize CPL (Cost per Lead) and improve lead\\-to\\-conversion ratios.\n* Manage paid media campaigns (Google, Meta, LinkedIn, etc.).\n* Develop funnel strategies for residential, commercial, and international buyers.\n* Implement marketing automation and CRM integration for lead nurturing.\n\n\n\n\n\n\n\n\n**4\\. International Market Development** \n\n\n\n* Develop marketing strategies targeting NRI and international investors.\n* Plan global roadshows, expos, Open house and partnership marketing initiatives.\n* Understand international buyer behaviour and regulatory considerations.\n* Build alliances with overseas channel partners and brokers.\n\n\n\n**5\\. Digital \\& Offline Marketing Management** \n\n\n\n* Oversee website strategy, SEO/SEM, and content marketing initiatives.\n* Manage social media strategy and brand engagement campaigns.\n* Plan and execute ATL/BTL campaigns, print media, hoardings, and event marketing.\n* Analyse campaign performance using data analytics tools.\n\n\n\n**6\\. Budgeting \\& ROI Management** \n\n\n\n* Develop and manage the annual marketing budget.\n* Monitor ROI across all campaigns and optimize spending.\n* Present monthly performance reports to senior leadership.\n\n\n\n  \n\n\n\n\n\n**Required Qualifications** \n\n\n\n* Bachelor\u2019s degree in marketing, Business Administration, or related field (MBA preferred).\n* 5\u201310 years of marketing experience, with at least 3 years in UAE real estate.\n* Proven experience in strategic marketing planning and execution.\n* Strong experience in performance marketing and high\\-quality lead generation.\n* Experience targeting international real estate markets (NRI/investor segment preferred).\n* Strong analytical and data interpretation skills.\n* Excellent leadership, communication, and negotiation skills.\n\n\n\n  \n\n\n\n\n\n**Key Skills \\& Competencies** \n\n\n\n* Strategic Thinking \\& Business Acumen\n* Brand Strategy \\& Positioning\n* Digital Marketing \\& Automation\n* Lead Generation \\& Conversion Optimization\n* International Market Exposure\n* Budget \\& ROI Management\n* Team Leadership \\& Cross\\-Functional Collaboration",
-      "source_count": 1,
-      "country": "United Arab Emirates",
-      "industry_bonus": 9,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ],
-      "first_seen": "2026-04-14"
-    },
-    {
       "id": "linkedin_jobspy-li-4401079227",
       "source": "linkedin_jobspy",
       "title": "Chief Information Security Officer",
       "company": "Boundless",
       "location": "Dubai, United Arab Emirates",
       "url": "https://www.linkedin.com/jobs/view/4401079227",
-      "posted": "",
+      "posted": "2026-04-13",
       "seniority": "C-Suite",
       "domain_match": true,
       "keyword_score": 16,
@@ -402,62 +505,93 @@
       "first_seen": "2026-04-13"
     },
     {
-      "id": "linkedin_jobspy-li-4399176195",
+      "id": "linkedin_jobspy-li-4401790500",
       "source": "linkedin_jobspy",
-      "title": "Group Chief Executive Officer (Large Hospital Group - Relocation to Vietnam)",
-      "company": "Caliber8 Recruitment",
+      "title": "Head of Performance Marketing",
+      "company": "Hantec Trader",
       "location": "Dubai, United Arab Emirates",
-      "url": "https://www.linkedin.com/jobs/view/4399176195",
+      "url": "https://www.linkedin.com/jobs/view/4401790500",
       "posted": "",
-      "seniority": "C-Suite",
+      "seniority": "Director",
       "domain_match": false,
       "keyword_score": 13,
       "match_keywords": [
-        "healthcare",
-        "executive"
+        "ai",
+        "head of"
       ],
-      "raw_snippet": "**Group Chief Executive Officer (Large Hospital Group \\- Relocation to Vietnam)** \n\n\n\n\n  \n\n\n\n\n\n*\\*Vietnamese speaking not required\\** \n\n\n\n\n  \n\n\n\n\n\n**About the Role** \n\n\n\n\n We are seeking an accomplished and visionary Group Chief Executive Officer to lead a leading private healthcare provider in Asia",
+      "raw_snippet": "**Why Join Hantec Trader?** \n\n\n\n\n  \n\n\n\n\n\n As Hantec Trader has grown we require a dedicated support agent who will be able to provide support to customers via multiple channels but also act as a liaison for internal teams in resolving complex issues. With our volume in South America increasing, the ",
       "relevant": false,
-      "filter_reason": "skip-word:hospital",
+      "filter_reason": "skip-word:marketing",
       "search_country": "United Arab Emirates",
-      "search_title": "Chief Operating Officer",
-      "linkedin_id": "li-4399176195",
-      "jd_text": "**Group Chief Executive Officer (Large Hospital Group \\- Relocation to Vietnam)** \n\n\n\n\n  \n\n\n\n\n\n*\\*Vietnamese speaking not required\\** \n\n\n\n\n  \n\n\n\n\n\n**About the Role** \n\n\n\n\n We are seeking an accomplished and visionary Group Chief Executive Officer to lead a leading private healthcare provider in Asia. This role is central to driving strategic growth, ensuring operational excellence, and delivering high\\-quality healthcare services across the group\u2019s network.\n \n\n\n\n The successful candidate will combine strategic acumen with strong financial expertise, proven leadership of large\\-scale enterprises, and the ability to influence at Board level. Beyond operational excellence, the GCEO will inspire senior leadership, foster innovation, and strengthen the organization\u2019s mission to deliver trusted and accessible healthcare.\n \n\n\n\n  \n\n\n\n\n\n**Key Responsibilities** \n\n\n\n\n**Strategic Leadership** \n\n\n\n* Define and execute the group\u2019s strategic direction in alignment with investor expectations and long\\-term growth objectives.\n* Act as a key advisor to the Board of Directors, providing insights on financial, operational, and regulatory matters.\n* Serve as the principal spokesperson, representing the group to stakeholders, partners, and the wider community.\n\n\n\n  \n\n\n\n\n\n**Operational \\& Financial Excellence** \n\n\n\n* Oversee the organization\u2019s performance, ensuring profitability, efficiency, and adherence to global operating standards.\n* Partner closely with the CFO and finance team to manage cash flow, banking relationships, and financial planning.\n* Drive continuous improvement by evaluating and optimizing financial, operational, sales, and marketing structures.\n\n\n\n  \n\n\n\n\n\n**Governance \\& Business Development** \n\n\n\n* Implement and enforce robust policies and procedures that strengthen compliance, risk management, and business integrity.\n* Lead assessments of mergers, acquisitions, and partnerships to expand market position and service offerings.\n* Provide strategic input and negotiation expertise for major contracts and commercial agreements.\n\n\n\n  \n\n\n\n\n\n**Leadership \\& People Development** \n\n\n\n* Mentor and inspire senior executives, fostering a culture of accountability, innovation, and growth.\n* Oversee subsidiary boards and ensure alignment across the group.\n* Drive talent development initiatives including succession planning, performance management, and leadership training.\n\n\n\n  \n\n\n\n\n\n**Community \\& Standards** \n\n\n\n* Champion delivery of quality healthcare that meets patient and community needs.\n* Ensure adherence to best practices in compliance, information governance, and safety standards.\n* Promote diversity, equal opportunity, and organizational integrity across all levels of the business.\n\n\n\n  \n\n\n\n\n\n**What We\u2019re Looking For** \n\n\n\n\n**Experience \\& Background** \n\n\n\n* 10\\+ years\u2019 experience managing and operating group\\-level enterprises, ideally within healthcare or related industries.\n* Proven success in strategic and operational leadership within large, complex organizations.\n* Strong expertise in financial reporting, planning, and Board\\-level engagement.\n\n\n\n  \n\n\n\n\n\n**Leadership \\& Skills** \n\n\n\n* Strategic mindset with the ability to translate long\\-term vision into execution.\n* Strong leadership skills with a track record of building and developing high\\-performing teams.\n* Exceptional communication and stakeholder management skills, able to influence at the highest levels.\n* Business acumen with excellent problem\\-solving and decision\\-making abilities.\n\n\n\n  \n\n\n\n\n\n**Attributes \\& Mindset** \n\n\n\n* Results\\-driven, resilient, and committed to continuous improvement.\n* Ability to deliver sustainable growth while maintaining community impact.\n* Inspirational leader with integrity and accountability at the core.\n\n\n\n  \n\n\n\n\n\n**Education** \n\n\n\n* Bachelor\u2019s degree in business administration, Healthcare Management, or related discipline.\n\n\n\n  \n\n\n\n\n\n Based in Vietnam \\- Vietnamese language not required.",
+      "search_title": "Head of Digital Transformation",
+      "linkedin_id": "li-4401790500",
+      "jd_text": "**Why Join Hantec Trader?** \n\n\n\n\n  \n\n\n\n\n\n As Hantec Trader has grown we require a dedicated support agent who will be able to provide support to customers via multiple channels but also act as a liaison for internal teams in resolving complex issues. With our volume in South America increasing, the need for a PT speaker has increased.\n \n\n\n\n  \n\n\n\n\n\n**Role Overview:** \n\n\n\n\n  \n\n\n\n\n\n We are seeking a commercially driven and data led Head of Performance Marketing to lead our global acquisition strategy across all paid media and performance channels.\n \n\n\n\n In this role, you will own the end to end growth engine, from strategic planning and funnel design through to optimisation, attribution, and measurable revenue impact. You will play a critical role in scaling customer acquisition, improving conversion efficiency, and maximising long term customer value through data driven and AI powered strategies.\n \n\n\n\n You will collaborate cross functionally with CRM, Product, Data, Compliance, and Creative teams to deliver a seamless and high performing customer journey across global markets.\n \n\n\n\n  \n\n\n\n\n\n**Key Responsibilities:** \n\n\n\n\n  \n\n\n\n\n\n**Performance Strategy and Growth** \n\n\n\n\n Define and execute full funnel acquisition strategies across Google Ads, Meta, TikTok, Microsoft Ads, programmatic, and affiliate channels\n \n\n\n\n Drive scalable customer acquisition and revenue growth across key international markets\n \n\n\n\n Continuously optimise CAC, ROAS, and customer lifetime value\n \n\n\n\n  \n\n\n\n\n\n**Funnel and Conversion Optimisation** \n\n\n\n\n Own and enhance the full customer journey from ad to landing page to onboarding to retention\n \n\n\n\n Lead CRO initiatives to improve landing pages, forms, and conversion flows\n \n\n\n\n Partner with CRM teams to strengthen retargeting and lifecycle marketing strategies\n \n\n\n\n  \n\n\n\n\n\n**Tracking, Data and Attribution** \n\n\n\n\n Oversee tracking infrastructure including UTM governance, GTM, and GA4 implementation\n \n\n\n\n Develop and refine event based tracking frameworks\n \n\n\n\n Improve attribution accuracy and performance measurement across channels\n \n\n\n\n  \n\n\n\n\n\n**AI, Testing and Creative Performance** \n\n\n\n\n Leverage AI tools to drive creative production, testing, and optimisation\n \n\n\n\n Build and scale structured A B testing frameworks across campaigns and landing pages\n \n\n\n\n Collaborate closely with Creative teams to identify and scale high performing assets\n \n\n\n\n  \n\n\n\n\n\n**Budget and Performance Governance** \n\n\n\n\n Own budget allocation across channels and geographies to maximise return on investment\n \n\n\n\n Scale high performing campaigns while maintaining efficiency benchmarks\n \n\n\n\n Deliver clear performance insights and strategic recommendations to senior leadership\n \n\n\n\n  \n\n\n\n\n\n**Skills and Experience:** \n\n\n\n* 7 plus years experience in performance marketing, including team leadership\n* Strong background within fintech, trading, or proprietary trading environments\n* Proven expertise across Google Ads, Meta, TikTok, Microsoft Ads, and programmatic platforms\n* Deep understanding of GTM, GA4, attribution modelling, and conversion tracking\n* Experience using AI tools for optimisation, automation, and creative testing\n* Highly analytical with strong stakeholder management and communication skills\n\n\n\n  \n\n\n\n\n\n**What we offer:** \n\n\n\n* Annual Ticket Home \\- 2,500 AED a year offered after 1 year of employment\n* VISA Sponsorship\n* Health Insurance\n* Annual Discretionary Bonus Pool \u2013 rewarding high performance\n* Monthly $100 Core Values Nominations \u2013 recognition for living our values\n* Quarterly Core Values Winner \u2013 exclusive dinner with our Directors\n* Yearly Core Values Champion \u2013 an all\\-inclusive paid work trip to one of our global offices\n* Work from Other Offices \u2013 flexibility to work remotely from our worldwide locations (at employee\u2019s expense)",
       "source_count": 1,
       "country": "United Arab Emirates",
-      "industry_bonus": 6,
+      "industry_bonus": 9,
       "policy_status": "pass",
       "sources": [
         "linkedin"
       ],
-      "first_seen": "2026-04-14"
+      "first_seen": "2026-04-15"
     },
     {
-      "id": "linkedin_jobspy-li-4399365907",
+      "id": "linkedin_jobspy-li-4399395327",
       "source": "linkedin_jobspy",
-      "title": "Saudi COO (Co-Founder Role)",
-      "company": "21Doctors",
-      "location": "Riyadh, Riyadh, Saudi Arabia",
-      "url": "https://www.linkedin.com/jobs/view/4399365907",
+      "title": "CEO Co-founder (unpaid position)",
+      "company": "IntelliVerse",
+      "location": "Dubai, United Arab Emirates",
+      "url": "https://www.linkedin.com/jobs/view/4399395327",
       "posted": "2026-04-12",
       "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 13,
+      "match_keywords": [
+        "ai",
+        "scaling"
+      ],
+      "raw_snippet": "Co\\-founder for fundraising and scaling.\n \n\n\n\n  \n\n\n\n\n\n IntelliVerse \\- AI Universe, including:\n \n\n\n\n  \n\n\n\n\n\n OneClickTrip \\- your smart AI\\-powered travel planner. Plan your dream vacation with one click. Simply describe your dream trip or upload inspiration, and instantly get a personalized plan fo",
+      "relevant": false,
+      "filter_reason": "skip-word:co-founder",
+      "search_country": "United Arab Emirates",
+      "search_title": "Chief Digital Officer",
+      "linkedin_id": "li-4399395327",
+      "jd_text": "Co\\-founder for fundraising and scaling.\n \n\n\n\n  \n\n\n\n\n\n IntelliVerse \\- AI Universe, including:\n \n\n\n\n  \n\n\n\n\n\n OneClickTrip \\- your smart AI\\-powered travel planner. Plan your dream vacation with one click. Simply describe your dream trip or upload inspiration, and instantly get a personalized plan for each day with transportation options, hotel links, budget estimates, and local tips\u2014all in one click.\n \n\n\n\n  \n\n\n\n\n\n CheapTrip \\- Unique search engine that finds the cheapest ways between cities, combining flights, buses, trains and ferries.\n \n\n\n\n  \n\n\n\n\n\n DietTracker \\- helps users monitor their intake of calories, fats, proteins, carbohydrates, vitamins, and minerals in food. It not only counts these elements, but also analyzes what is absorbed by the body after digestion. Users can upload images of products, after which the application recognizes the ingredients and provides the ability to edit the list.\n \n\n\n\n  \n\n\n\n\n\n SchoolKiller \\- AI assistant for schoolchildren and students.\n \n\n\n\n  \n\n\n\n\n\n StyleTranslator \\- converts text to different styles, tones and languages.\n \n\n\n\n  \n\n\n\n\n\n Matter of choice \\- interactive scenarios for studying different subjects, languages and decision making.\n \n\n\n\n  \n\n\n\n\n\n VirtualClone \\- AI\\-Powered Digital Twin from Your YouTube\n \n\n\n\n  \n\n\n\n\n\n At VirtualClone, we transform YouTube channels into AI digital twins. Our technology transcribes your videos, learns your expertise, and creates a text\\-based assistant that communicates with your audience in multiple languages.\n \n\n\n\n  \n\n\n\n\n\n \u2728 Key Features:\n \n\n\n\n Primary input: YouTube videos (auto\\-transcription \\& knowledge extraction).\n \n\n\n\n Additional inputs: websites, articles, and other content.\n \n\n\n\n Engage your audience with answers in your authentic style \u2014 or choose from different styles (educational, inspiring, business\\-focused, casual).\n \n\n\n\n Expand your reach with multilingual content and SEO\\-ready text.\n \n\n\n\n Save time, scale your presence, and never leave your audience without an answer.\n \n\n\n\n We don\u2019t just replicate \u2014 we amplify your voice and adapt it to new contexts.",
+      "source_count": 1,
+      "country": "United Arab Emirates",
+      "industry_bonus": 3,
+      "policy_status": "pass",
+      "sources": [
+        "linkedin"
+      ],
+      "first_seen": "2026-04-15"
+    },
+    {
+      "id": "linkedin_jobspy-li-4383941847",
+      "source": "linkedin_jobspy",
+      "title": "Head of Risk E-Money MENA (SVF)",
+      "company": "Capital.com",
+      "location": "Dubai, Dubai, United Arab Emirates",
+      "url": "https://www.linkedin.com/jobs/view/4383941847",
+      "posted": "2026-04-03",
+      "seniority": "Director",
       "domain_match": false,
       "keyword_score": 13,
       "match_keywords": [
-        "healthcare",
-        "saudi",
+        "head of",
+        "mena",
         "platform"
       ],
-      "raw_snippet": "**Company Description**\n\n 21Doctors is a leading digital health platform that combines advanced technology with medical services to enhance the healthcare experience. Our platform connects patients with a broad network of qualified physicians, healthcare providers, pharmacies, and laboratories. We p",
+      "raw_snippet": "We are a leading trading platform that is ambitiously expanding to the four corners of the globe. Our top\\-rated products have won prestigious industry awards for their cutting\\-edge technology and seamless client experience. We deliver only the best, so we are always in search of the best people to",
       "relevant": false,
-      "filter_reason": "skip-word:co-founder",
-      "search_country": "Saudi Arabia",
-      "search_title": "Chief Operating Officer",
-      "linkedin_id": "li-4399365907",
-      "jd_text": "**Company Description**\n\n 21Doctors is a leading digital health platform that combines advanced technology with medical services to enhance the healthcare experience. Our platform connects patients with a broad network of qualified physicians, healthcare providers, pharmacies, and laboratories. We prioritize accessibility, streamlined appointment scheduling, and direct interaction between patients and doctors. With a commitment to transparency and trust, 21Doctors strives to offer high\\-quality integrated care and foster a reliable healthcare ecosystem. Our vision is to become the leading platform for facilitating seamless and trustworthy healthcare connections.\n   \n\n\n\n\n**Role Description**\n\n This is a full\\-time on\\-site role based in Amman, Jordan, for a Saudi COO (Co\\-Founder Role) at 21Doctors. Responsibilities include managing business operations, implementing business strategies, and leading cross\\-functional teams to ensure organizational efficiency. The COO will oversee budgeting and financial planning, establish operational strategies, and further the company\u2019s mission of digital healthcare transformation. The role also entails providing strategic leadership alongside the co\\-founders to scale the business in alignment with market needs and opportunities.\n   \n\n\n\n\n**Qualifications**\n* Proficiency in Business Planning and developing strategic growth initiatives.\n* Expertise in Operations Management and ensuring process efficiency.\n* Strong Analytical Skills to evaluate operational performance and market trends.\n* Experience in Finance and Budgeting, including planning and monitoring resource allocation.\n* Demonstrated leadership and decision\\-making capabilities in dynamic environments.\n* Strong understanding of the healthcare and technology industries is highly desirable.\n* Bachelor\u2019s degree in Business Administration, Management, or a related field is required; an advanced degree such as an MBA is a plus",
+      "filter_reason": "skip-word:risk ",
+      "search_country": "United Arab Emirates",
+      "search_title": "\"technology\" AND (\"director\" OR \"head\") AND (\"healthcare\" OR \"fintech\")",
+      "linkedin_id": "li-4383941847",
+      "jd_text": "We are a leading trading platform that is ambitiously expanding to the four corners of the globe. Our top\\-rated products have won prestigious industry awards for their cutting\\-edge technology and seamless client experience. We deliver only the best, so we are always in search of the best people to join our ever\\-growing talented team.\n   \n\n  \n\n As the Head of Risk MENA (SVF), you will build and lead the independent second line risk function for Capital.com\u2019s Store Value Facility (SVF) entity. You will set the risk direction, define the risk appetite framework, and ensure the business operates within approved limits while scaling wallets, prepaid cards, P2P payments, and remittances across MENA.\n   \n\n  \n\n This position carries regulatory responsibilities and is expected to be subject to regulatory approval where applicable. You will be accountable for risk governance, effective oversight of safeguarding and liquidity, and ensuring the firm\u2019s growth is matched by strong controls, clear escalation, and Board level visibility.\n   \n\n  \n\n**Responsibilities:**\n* Strategic Risk Leadership: Define and drive the SVF risk strategy for MENA, aligned with the Group risk framework and the SVF business plan\n* Risk Governance: Own the Enterprise Risk Management Framework, risk appetite statements, KRIs, policies, and committee governance. Ensure direct escalation access to the Board or its committees\n* Regulatory Alignment: Lead risk engagement with the CBUAE and other relevant UAE regulators where applicable. Support regulatory submissions, inspections, findings remediation, and ongoing supervisory expectations\n* Safeguarding and Liquidity Oversight: Provide independent oversight of safeguarding arrangements, client funds flows, reconciliations oversight, settlement exposures, and liquidity risk management. Ensure stress testing reflects peak redemption and operational disruption scenarios\n* Product and Change Risk: Provide independent challenge for new products, material changes, and partnerships. Ensure risk sign\\-off is a gating step before launch and that residual risk is within appetite\n* Operational and Technology Risk: Oversee operational risk, including payments operations, fraud risk oversight, incident management, systems availability, cybersecurity risk oversight, and operational resilience\n* Outsourcing and Third Party Risk: Set the third party risk framework and oversee risks from banks, processors, fintech partners, cloud providers, and outsourced operations. Ensure robust due diligence, ongoing monitoring, and exit planning\n* Monitoring and Reporting: Maintain the risk register and control assurance approach. Deliver clear, decision\\-ready reporting to senior management and the Board, including breaches, incidents, emerging risks, and remediation status\n* Cross Functional Coordination: Work closely with Compliance, MLRO, Finance, Treasury, Product, Operations, and Technology to ensure clear ownership and no gaps. Risk owns oversight and challenge. First line owns execution\n\n\n**Requirements:**\n* Education \\& Experience: University degree and 8\\+ years in risk management within regulated financial services. Payments, e\\-money, SVF, or digital wallets experience is strongly preferred\n* Regulatory Knowledge: Strong practical knowledge of CBUAE expectations relevant to SVF and payment activities, including governance, safeguarding, outsourcing, and operational resilience. Prior regulatory approval in the UAE is a strong advantage\n* Governance: Proven Board and committee engagement, strong escalation discipline, and experience running a second line risk function with clear independence\n* Risk Technical Strength: Demonstrated capability across operational risk, technology and cyber risk oversight, third party risk, liquidity risk oversight, stress testing, and incident management\n* Leadership: Ability to build and lead a high accountability risk function in a fast\\-paced environment, and to challenge senior stakeholders without creating noise or blockers\n* Integrity: High ethical standards, independence of judgment, and ability to meet fit and proper expectations. Professional risk qualifications (FRM, PRM, CFA) are an advantage\n\n\n What you will get in return:\n   \n\n  \n\n* Competitive Salary: We believe great work deserves great pay! Your skills and talents will be rewarded with a salary that makes you feel valued and motivated\n* Work\\-Life Harmony: Join a company that genuinely cares about you \\-because your life outside of work matters just as much as your time on the clock\n* Generous Time Off: Need a breather? Our annual leave policy lets you recharge and enjoy life outside of work without a worry\n* Employee Referral Program: Love working here? Share the love! Bring your talented friends on board and get rewarded for growing our awesome team\n* Comprehensive Health Benefits: We\u2019ve got your back with a medical insurance plan. Plus, location\\-specific benefits and perks!\n* Workation Wonderland: Live your digital nomad dreams with 30 extra days to work remotely from anywhere in the world (some restrictions apply). Adventure awaits!\n* Volunteer Days: Make a difference! Take two additional paid days each year to support causes you care about and give back to the community\n\n\n Be a key player at the forefront of the digital assets movement, propelling your career to new heights! Join a dynamic and rapidly expanding company that values and rewards talent, initiative, and creativity. Work alongside one of the most brilliant teams in the industry.",
       "source_count": 1,
-      "country": "Saudi Arabia",
-      "industry_bonus": 9,
+      "country": "United Arab Emirates",
+      "industry_bonus": 18,
       "policy_status": "pass",
       "sources": [
         "linkedin"
@@ -590,37 +724,6 @@
       "first_seen": "2026-04-13"
     },
     {
-      "id": "linkedin_jobspy-li-4400551708",
-      "source": "linkedin_jobspy",
-      "title": "Vice President Tax \u2502 Aircraft Leasing",
-      "company": "GKR Search and Selection",
-      "location": "Dubai, United Arab Emirates",
-      "url": "https://www.linkedin.com/jobs/view/4400551708",
-      "posted": "2026-04-10",
-      "seniority": "VP",
-      "domain_match": true,
-      "keyword_score": 10,
-      "match_keywords": [
-        "ai",
-        "platform"
-      ],
-      "raw_snippet": "We are working with a leading global aircraft leasing platform which has an opening for a Vice President Tax. This is a deal\\-facing role that contributes to transaction execution and broader portfolio strategy across a global platform.\n \n\n\n\n  \n\n\n\n\n\n**Responsibilities** \n\n\n\n* Support tax input acros",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Chief Operating Officer",
-      "linkedin_id": "li-4400551708",
-      "jd_text": "We are working with a leading global aircraft leasing platform which has an opening for a Vice President Tax. This is a deal\\-facing role that contributes to transaction execution and broader portfolio strategy across a global platform.\n \n\n\n\n  \n\n\n\n\n\n**Responsibilities** \n\n\n\n* Support tax input across transaction evaluation and execution\n* Provide insight on cross\\-border considerations and structuring approaches\n* Collaborate with internal teams across commercial, finance and legal functions\n* Work alongside external advisors on transaction\\-related matters\n* Contribute to broader planning and optimisation initiatives\n* Partner with deal teams on aircraft transactions across acquisitions, lease placements and financing\n* Provide input into structuring and pricing considerations across a global portfolio\n* Work closely with senior stakeholders to support commercial outcomes\n* Contribute to portfolio\\-level initiatives and strategic projects\n\n\n\n  \n\n\n\n\n\n**Requirements** \n\n\n\n* At least 10\\+ years of experience in tax\n* Strong understanding of cross\\-border structures and deal dynamics\n* Experience within aviation leasing or a similar asset\\-backed sector\n* Commercial mindset with the ability to support decision\\-making in a deal context\n\n\n\n  \n\n\n\n\n\n**The Opportunity** \n\n\n\n* Direct involvement in live transactions and commercial decision\\-making\n* Broad exposure across deals, portfolio and strategy\n* Highly collaborative, team\\-integrated environment\n* Opportunity to contribute within a scaled, global platform\n* Market\\-leading package and excellent career opportunities\n\n\n\n  \n\n\n\n\n\n For a confidential discussion, please reach out to Karinda at GKR.\n \n\n\n\n  \n\n\n\n\n\n Following your application for this role, GKR may contact you regarding other positions we feel may be suitable. If you do not wish to be contacted about additional opportunities, please let us know. For more details, please refer to our privacy statement on our website.\n \n\n\n\n  \n\n\n\n\n\n**\\#AircraftLeasing \\#AviationFinance \\#Tax \\#AssetFinance \\#AviationJobs \\#FinancialServices \\#TaxCompliance**",
-      "source_count": 1,
-      "country": "United Arab Emirates",
-      "industry_bonus": 6,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ],
-      "first_seen": "2026-04-13"
-    },
-    {
       "id": "linkedin_jobspy-li-4399205899",
       "source": "linkedin_jobspy",
       "title": "VP - Business Development (Real Estate)",
@@ -650,37 +753,6 @@
         "linkedin"
       ],
       "first_seen": "2026-04-13"
-    },
-    {
-      "id": "linkedin_jobspy-li-4395655765",
-      "source": "linkedin_jobspy",
-      "title": "Vice President Economics - Arabic Speaker",
-      "company": "Ernest Hunter Green",
-      "location": "Doha, Qatar",
-      "url": "https://www.linkedin.com/jobs/view/4395655765",
-      "posted": "2026-03-31",
-      "seniority": "VP",
-      "domain_match": false,
-      "keyword_score": 10,
-      "match_keywords": [
-        "leadership",
-        "middle east"
-      ],
-      "raw_snippet": "**Vice President \u2013 Economics** \n\n\n\n\n \ud83d\udccd Middle East \\| Full\\-Time \\| Senior Leadership\n \n\n\n\n**T** \n\n\n\n\n**he Opportunity** \n\n\n\n\n We are seeking a highly analytical and commercially aware\n **Vice President \u2013 Economics** \n to lead macroeconomic research, market intelligence, and thought leadership for a",
-      "relevant": false,
-      "filter_reason": "no-role-family",
-      "search_country": "Qatar",
-      "search_title": "Chief Operating Officer",
-      "linkedin_id": "li-4395655765",
-      "jd_text": "**Vice President \u2013 Economics** \n\n\n\n\n \ud83d\udccd Middle East \\| Full\\-Time \\| Senior Leadership\n \n\n\n\n**T** \n\n\n\n\n**he Opportunity** \n\n\n\n\n We are seeking a highly analytical and commercially aware\n **Vice President \u2013 Economics** \n to lead macroeconomic research, market intelligence, and thought leadership for a leading financial institution.\n \n\n\n\n This role is central to shaping economic insights that inform strategic decision\\-making, investment direction, and senior management discussions. You will oversee the production of high\\-quality economic research and play a key role in supporting executive committees and investor\\-facing activities.\n \n\n\n\n  \n\n\n\n\n\n**Key Responsibilities** \n\n\n\n\n**Economic Research \\& Thought Leadership** \n\n\n\n* Lead the development and publication of\n **macroeconomic research and insights** \n across global and regional markets\n* Oversee flagship publications including economic reports, market commentary, and bespoke research\n* Ensure high\\-quality, timely delivery of all economic outputs\n\n\n\n**Market Intelligence \\& Forecasting** \n\n\n\n* Monitor and analyse\n **global economic trends, financial markets, and competitive developments**\n* Provide macroeconomic forecasts and insights to support\n **business planning and strategic decisions**\n* Contribute to budget planning and forecasting through economic inputs\n\n\n\n**Stakeholder Engagement** \n\n\n\n* Support senior committees including\n **Investment, ALCO, Risk, and Management Committees** \n with economic insights\n* Contribute to\n **investor relations and external communications** \n through thought leadership\n* Maintain strong relationships with internal stakeholders across business units\n\n\n\n**Team Leadership \\& Development** \n\n\n\n* Lead, mentor, and develop a team of economists and analysts\n* Promote high standards of research, performance, and collaboration\n* Support recruitment and capability development within the function\n\n\n\n**Operational Excellence** \n\n\n\n* Oversee the use of research tools, data sources, and statistical models\n* Drive efficiency, productivity, and continuous improvement across research processes\n* Ensure adherence to KPIs, SLAs, and internal standards\n\n\n\n  \n\n\n\n\n\n**About You** \n\n\n\n\n**Experience \\& Qualifications:** \n\n\n\n* Must be a fluent speaker in\n **Arabic and English**\n* Bachelor\u2019s degree in\n **Economics, Finance, or related field**\n* Master\u2019s or PhD in Economics from a top\\-tier institution is highly desirable\n* Minimum\n **10\\+ years of experience** \n in economic research within a financial institution\n* At least\n **5 years\u2019 experience as a professional economist**\n* Proven track record in producing\n **macroeconomic reports and analysis**\n\n\n\n**Skills \\& Competencies:** \n\n\n\n* Strong analytical and quantitative skills\n* Excellent report writing and presentation capabilities\n* Deep understanding of\n **global macroeconomic trends and financial markets**\n* Strong stakeholder management and communication skills\n* Leadership experience with the ability to manage and develop teams\n\n\n\n**What Sets You Apart** \n\n\n\n* Ability to translate complex economic data into\n **clear, actionable insights**\n* Strong commercial awareness and understanding of financial markets\n* A thought leader with the ability to influence senior stakeholders\n* A proactive mindset with a focus on innovation and continuous improvement\n\n\n\n**Why Apply?** \n\n\n\n* High\\-impact role influencing\n **strategic and investment decisions**\n* Exposure to senior leadership and key decision\\-making forums\n* Opportunity to lead\n **thought leadership and economic research at scale**\n* Collaborative, intellectually stimulating environment",
-      "source_count": 1,
-      "country": "Qatar",
-      "industry_bonus": 3,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ],
-      "first_seen": "2026-04-01"
     },
     {
       "id": "linkedin_jobspy-li-4397761811",
@@ -720,7 +792,7 @@
       "company": "RAKBANK",
       "location": "Dubai, United Arab Emirates",
       "url": "https://www.linkedin.com/jobs/view/4399144811",
-      "posted": "",
+      "posted": "2026-04-13",
       "seniority": "VP",
       "domain_match": true,
       "keyword_score": 6,
@@ -750,7 +822,7 @@
       "company": "African Queen Marketing Management",
       "location": "Dubai, United Arab Emirates",
       "url": "https://www.linkedin.com/jobs/view/4399385872",
-      "posted": "",
+      "posted": "2026-04-13",
       "seniority": "C-Suite",
       "domain_match": false,
       "keyword_score": 6,
@@ -805,34 +877,64 @@
       "first_seen": "2026-04-13"
     },
     {
-      "id": "linkedin_jobspy-li-4397494830",
+      "id": "linkedin_jobspy-li-4401772645",
       "source": "linkedin_jobspy",
-      "title": "Greater Gulf Medical Head, General Medicines",
-      "company": "Sanofi",
-      "location": "",
-      "url": "https://www.linkedin.com/jobs/view/4397494830",
-      "posted": "2026-04-05",
-      "seniority": "Other",
+      "title": "Director, Legal Counsel - MEA",
+      "company": "PayPal",
+      "location": "Dubai, Dubai, United Arab Emirates",
+      "url": "https://www.linkedin.com/jobs/view/4401772645",
+      "posted": "",
+      "seniority": "C-Suite",
       "domain_match": false,
       "keyword_score": 6,
       "match_keywords": [
-        "healthcare"
+        "director"
       ],
-      "raw_snippet": "**Job Title: Greater Gulf Medical Head, General Medicines**\n* Location: Riyad\n\n\n**About Sanofi**\n Sanofi is an innovative global healthcare company, driven by one purpose: to chase the miracles of science to improve people\u2019s lives. Sanofi\u2019s team, across the world, is dedicated to transforming the pr",
+      "raw_snippet": "**The Company**\n PayPal has been revolutionizing commerce globally for more than 25 years. Creating innovative experiences that make moving money, selling, and shopping simple, personalized, and secure, PayPal empowers consumers and businesses in approximately 200 markets to join and thrive in the g",
       "relevant": false,
-      "filter_reason": "skip-word:medical",
-      "search_country": "Saudi Arabia",
+      "filter_reason": "skip-word:legal",
+      "search_country": "United Arab Emirates",
       "search_title": "\"technology\" AND (\"director\" OR \"head\") AND (\"healthcare\" OR \"fintech\")",
-      "linkedin_id": "li-4397494830",
-      "jd_text": "**Job Title: Greater Gulf Medical Head, General Medicines**\n* Location: Riyad\n\n\n**About Sanofi**\n Sanofi is an innovative global healthcare company, driven by one purpose: to chase the miracles of science to improve people\u2019s lives. Sanofi\u2019s team, across the world, is dedicated to transforming the practice of medicine by working to turn the impossible into the possible. We provide life\\-changing treatment options and life\\-saving vaccine protection to millions of people globally, while putting sustainability and social responsibility at the centre of their ambitions.\n   \n\n  \n\n The General Medicines Business unit is one of three Sanofi\u2019s BUs. It is the largest one, employing over 15,500 people worldwide, with broad geographical footprint spanning most of the countries.\n   \n\n  \n\n GBU Medical teams are primarily focused on Autoimmune Type 1 Diabetes and Transplant as core innovative areas, while continuing to support efforts on improving the day\\-to\\-day health of patients with chronic conditions such as diabetes and cardiovascular diseases.\n   \n\n  \n\n**The GBU Is Continuously Evolving To**\n* Launching transformative therapies in the areas of autoimmune T1D and Transplant.\n* Coupling technology with clinical expertise to better understand patient needs, empowering them to manage chronic conditions.\n* Rebuilding pipeline through internal and external innovation\n* Boosting omnichannel strategy for customers and patients, using data and Artificial Intelligence to personalize the engagements.\n* Growing core assets and increasing their reach with new digital health business models\n\n\n**About The Job**\n The Greater Gulf is a multi country organisation that consists of the 6 following countries : Kingdom of Saudi Arabia, United Arab Emirates, Kuwait, Qatar, Oman and Bahrein, As Greater Gulf Medical Head, you are part of the Key Markets Medical Leadership Team as well as Greater Gulf Leadership Team, and you will shape the MCO medical strategy \\& operational medical plans for an exciting \\& innovative portfolio, in alignment with the global and local strategy.\n   \n\n  \n\n**Responsibilities**\n You will also be responsible to accelerate medical capabilities according to the current and future needs of the company and the market, and to achieve medical leadership and competitive advantage in Greater Gulf, and thus to realize our vision:\n   \n\n  \n\n* to improve public health by finding healthcare solutions for patients and through the appropriate and effective use of both our innovations and established products, within the highest ethical and compliance standards.\n* by contributing actively to drive our R\\&D driven, AI empowered ambition in digital healthcare and Real\\-World Evidence generation\n\n\n**Main Responsibilities**\n* Lead in the region medical strategy, planning and resourcing for successful launch of transformative therapies in autoimmune T1D and Transplant areas\n* Build scientific ecosystem in Greater Gulf embracing transformative therapies in aT1D and Transplant areas leveraging partnerships with relevant scientific and institutional stakeholders (key opinion leaders, external experts, health technology assessment bodies and health regulatory authorities). Maintain and reinforce the strategic \\& scientific position of Sanofi in the healthcare ecosystem\n* Provide strategic leadership for the medical function in Greater Gulf and partner with the business to co\\-create the coherent strategic action plan, ensuring scientific rigor and patient outcomes\n* Leverage Real World data and deploy Artificial Intelligence and digital enablers to generate evidence and insights, build a foundation for a data driven decision making to improve medical affairs decisions and operational efficiency, aiming to improve patient outcomes\n* Ensure optimal life cycle management for growth products and legacy portfolio in partnership with relevant functional counterparts\n* Develop a compelling vision for Medical Affairs in Greater Gulf in accordance with company \u201cGlocal model\u201d principles, aligned with global medical strategy and business objectives.\n* Lead optimization and execution of Greater Gulf medical plans that maximize product value. Proactively enable and drive cross\\-functional partnerships across medical and non\\-medical functions \u2013 commercial, market access, public affairs, regulatory, safety, clinical operations, R\\&D \u2013 to ensure building of integrated plans \\- including data generation \\- across all functions, (reports, publications, presentations to health authorities, presentations to scientific congresses, or company sponsored events)\n* Lead transformations and develop high performing teams \\& talent pipeline. Develop agile ways of working, with a \u2018customer first\u2019 mindset, foster strong collaboration with a global Go To Market Capabilities organization\n* Manage proactively the country medical budget. Identify synergies, propose the appropriate resource allocation for medical initiatives at General Medicines and cross\\-BU level\n\n\n**About You**\n**Education**\n* Advanced scientific background: i.e. Medical Degree, PhD, PharmD (MD highly preferred).\n\n\n**Experience \\& Knowledge**\n* Minimum of 10 years of job\\-related experience\n* Strong track record in developing and executing a medical strategy and leading a sizable medical affairs function\n* Demonstrated track record of building and maintaining a KOL network, ideally in Greater Gulf\n* Product launch experience\n* Experience in working across and building effective partnerships among R\\&D, Commercial, Medical, Safety, and Regulatory\n* Strong understanding of the healthcare landscape\n* Experience in deploying digital enablers in Medical Affairs\n* Significant leadership experience, people management and proven ability to partner with and impact key stakeholders\n\n\n**Leadership Profile**\n* Innovative thinking\n* Collaborative \\& open\\-minded\n* Strong interpersonal and influencing skills\n* Transformative leadership: Ability to create and articulate a vision for the medical organization and embark teams in that evolutive journey\n* Strategic and innovative thinking; ease to move from activity to impact\n* Ability to take calculated risks and feel comfortable with making bold decisions\n* High energy, motivated, driven, with the ability to think and contribute beyond functional expertise. Entrepreneurial spirit\n* Strong business savvy\n* Customer \\& patient orientation\n* High standards of integrity\n\n\n* Embody Sanofi's Take the Lead approach:\n* \n+ Aim Higher: Continuously push boundaries in transplant innovation and patient care\n+ Act for Patients: Prioritize patient outcomes in all strategic decisions\n+ Be Bold: Make courageous decisions to drive the transplant franchise forward\n+ undefined\n\n\n**Language Skills**\n Oral and written fluency in English. Arabic is a plus.\n   \n\n  \n\n Pursue progress, discover extraordinary\n   \n\n  \n\n Better is out there. Better medications, better outcomes, better science. But progress doesn\u2019t happen without people \u2013 people from different backgrounds, in different locations, doing different roles, all united by one thing: a desire to make miracles happen. So, let\u2019s be those people.\n   \n\n  \n\n At Sanofi, we provide equal opportunities to all regardless of race, colour, ancestry, religion, sex, national origin, sexual orientation, age, citizenship, marital status, disability, or gender identity.\n   \n\n  \n\n Watch our ALL IN video and check out our Diversity Equity and Inclusion actions at sanofi.com!\n   \n\n  \n\n null",
+      "linkedin_id": "li-4401772645",
+      "jd_text": "**The Company**\n PayPal has been revolutionizing commerce globally for more than 25 years. Creating innovative experiences that make moving money, selling, and shopping simple, personalized, and secure, PayPal empowers consumers and businesses in approximately 200 markets to join and thrive in the global economy.\n   \n\n  \n\n We operate a global, two\\-sided network at scale that connects hundreds of millions of merchants and consumers. We help merchants and consumers connect, transact, and complete payments, whether they are online or in person. PayPal is more than a connection to third\\-party payment networks. We provide proprietary payment solutions accepted by merchants that enable the completion of payments on our platform on behalf of our customers.\n   \n\n  \n\n We offer our customers the flexibility to use their accounts to purchase and receive payments for goods and services, as well as the ability to transfer and withdraw funds. We enable consumers to exchange funds more safely with merchants using a variety of funding sources, which may include a bank account, a PayPal or Venmo account balance, PayPal and Venmo branded credit products, a credit card, a debit card, certain cryptocurrencies, or other stored value products such as gift cards, and eligible credit card rewards. Our PayPal, Venmo, and Xoom products also make it safer and simpler for friends and family to transfer funds to each other. We offer merchants an end\\-to\\-end payments solution that provides authorization and settlement capabilities, as well as instant access to funds and payouts. We also help merchants connect with their customers, process exchanges and returns, and manage risk. We enable consumers to engage in cross\\-border shopping and merchants to extend their global reach while reducing the complexity and friction involved in enabling cross\\-border trade.\n   \n\n  \n\n Our beliefs are the foundation for how we conduct business every day. We live each day guided by our core values of Inclusion, Innovation, Collaboration, and Wellness. Together, our values ensure that we work together as one global team with our customers at the center of everything we do \u2013 and they push us to ensure we take care of ourselves, each other, and our communities.\n   \n\n  \n\n**Job Summary:**\n This position will lead our legal function in the Middle East and Africa and is based in Dubai.\n   \n\n  \n\n The position involves working closely with the business to support key strategic initiatives across MEA in particular advising on the launch of new products, relevant law and regulation that impacts the PayPal business and its products and supporting disputes and litigation, data privacy and commercial negotiations. In addition, the role will provide governance support to relevant legal entities across the region.\n   \n\n  \n\n**Job Description:**\n**Essential Responsibilities:**\n* Provide strategic legal advice and support to senior management, influencing business strategy an decision making.\n* Anticipate regulatory and legal risks, and proactively design strategies to manage them.\n* Perform legal and regulatory compliance risk assessments, propose creative solutions where applicable, and help advance business objectives.\n* Manage escalations, collaborate across other teams and develop solutions to enable business partners to achieve their goals.\n* Develop a strong rapport and working relationship with business counterparts across the enterprise to help drive the delivery of effective legal services.\n* Ensure compliance with relevant laws and regulations, leading the adoption of cutting\\-edge legal technologies and best practices.\n* Manage legal risks and safeguard PayPal's legal interests, developing forward\\-looking risk management strategies.\n* Provide key inputs as an industry leader and expert, staying ahead of legal trends and influencing industry standards.\n\n\n**Minimum Qualifications:**\n* 10\\+ years relevant experience and a Juris doctorate degree OR Any equivalent combination of education and experience.\n\n\n**Additional Responsibilities \\& Preferred Qualifications:**\n**Core Responsibilities**\n* Working with the PayPal business teams to advise on the development and implementation of new products and services, including the regulatory and business risk implications across the MEA.\n* Dealing with regulatory issues and advising on the impact of new and existing laws and regulations and local governance matters.\n* Advising on and negotiating agreements with key partners, payment processors and financial institutions to further the expansion of the PayPal business.\n* Helping to develop and build the wider, non\\-legal team\u2019s understanding of relevant laws and regulations to encourage a culture of compliance and responsibility.\n\n\n The ideal candidate will be an accomplished senior lawyer with strong interpersonal and organizational skills and a demonstrated ability to effectively and proactively provide sound legal advice, exercise good business judgment, work with senior management and execute on a cross\\-functional basis in a fast paced environment.\n   \n\n  \n\n To succeed in this challenging role, candidates should be mature, self\\-motivated and well\\-organised with excellent communication and problem solving skills. Candidates should also be flexible with a global outlook and collaborative working style.\n   \n\n  \n\n An ability to work in a matrixed environment with multiple stakeholders is essential. PayPal is a global company and the successful candidate will need to have flexibility to work with and occasionally accommodate colleagues in different time zones.\n   \n\n  \n\n**Job Requirements:**\n* Admitted as a lawyer with at least 6 year\u2019s post\\-admission experience gained in a law firm or as in\\-house counsel\n* Experience in banking, payments, financial services or fintech would be desirable\n* Ability to collaborate with senior management and cross functional stakeholders\n* Accomplished senior lawyer with a keen attention for detail and an ability to manage multiple tasks and projects simultaneously.\n* Creative thinker with strong problem\\-solving skills and the ability to stay calm under challenging circumstances\n* Ability to handle multiple assignments simultaneously, with effective resolution of conflicting priorities\n* Ability to thrive in a fast\\-paced, changing environment and matrixed organisation\n* Flexibility to work with colleagues in Europe, the United States and Asia and accommodate calls and deadlines aligned to their time zones\n\n\n**Subsidiary:**\n PayPal\n   \n\n  \n\n**Travel Percent:**\n 0\n   \n\n  \n\n PayPal does not charge candidates any fees for courses, applications, resume reviews, interviews, background checks, or onboarding. When making an application directly, we will never ask you to share passwords, one\\-time passcodes (OTP), or verification codes. Any such request is a red flag and likely part of a scam. All communication regarding your application will come from official PayPal email domains. If you suspect fraudulent activity, please report it immediately. To learn more about how to identify and avoid recruitment fraud please visit https://careers.pypl.com/contact\\-us.\n   \n\n  \n\n For the majority of employees, PayPal's balanced hybrid work model offers 3 days in the office for effective in\\-person collaboration and 2 days at your choice of either the PayPal office or your home workspace, ensuring that you equally have the benefits and conveniences of both locations.\n   \n\n  \n\n**Our Benefits:**\n At PayPal, we\u2019re committed to building an equitable and inclusive global economy. And we can\u2019t do this without our most important asset\\-you. That\u2019s why we offer comprehensive, choice\\-based programs, to support all aspects of personal wellbeing\u2014physical, emotional, and financial\u2014delivering meaningful value where it matters most.\u202fWe strive to create a flexible, balanced work culture with a holistic approach to benefits, including generous paid time off, healthcare coverage for you and your family, and resources to create financial security and support your mental health.\n   \n\n  \n\n**Who We Are:**\n Click Here to learn more about our culture and community.\n   \n\n  \n\n**Commitment to Diversity and Inclusion**\n PayPal provides equal employment opportunity (EEO) to all persons regardless of age, color, national origin, citizenship status, physical or mental disability, race, religion, creed, gender, sex, pregnancy, sexual orientation, gender identity and/or expression, genetic information, marital status, status with regard to public assistance, veteran status, or any other characteristic protected by federal, state, or local law. In addition, PayPal will provide reasonable accommodations for qualified individuals with disabilities. If you are unable to submit an application because of incompatible assistive technology or a disability, please contact us at paypalglobaltalentacquisition@paypal.com.\n   \n\n  \n\n**Belonging at PayPal:**\n Our employees are central to advancing our mission, and we strive to create an environment where everyone can do their best work with a sense of purpose and belonging. Belonging at PayPal means creating a workplace with a sense of acceptance and security where all employees feel included and valued. We are proud to have a diverse workforce reflective of the merchants, consumers, and communities that we serve, and we continue to take tangible actions to cultivate inclusivity and belonging at PayPal.\n   \n\n  \n\n Any general requests for consideration of your skills, please Join our Talent Community.\n   \n\n  \n\n We know the confidence gap and imposter syndrome can get in the way of meeting spectacular candidates. Please don\u2019t hesitate to apply.",
       "source_count": 1,
-      "country": "Saudi Arabia",
-      "industry_bonus": 9,
+      "country": "United Arab Emirates",
+      "industry_bonus": 15,
       "policy_status": "pass",
       "sources": [
         "linkedin"
       ],
-      "first_seen": "2026-04-13"
+      "first_seen": "2026-04-15"
+    },
+    {
+      "id": "linkedin_jobspy-li-4401744408",
+      "source": "linkedin_jobspy",
+      "title": "Head of HR Hub MEIA",
+      "company": "Maschinenfabrik Reinhausen",
+      "location": "Dubai, Dubai, United Arab Emirates",
+      "url": "https://www.linkedin.com/jobs/view/4401744408",
+      "posted": "",
+      "seniority": "Director",
+      "domain_match": false,
+      "keyword_score": 6,
+      "match_keywords": [
+        "head of"
+      ],
+      "raw_snippet": "At the world market leader in energy technology, you will contribute to keeping the energy supply stable in the future. With our intelligent digital and analogue solutions, you will help shape the implementation of the energy transition. In a global team of 5\\.000 committed colleagues, which is char",
+      "relevant": false,
+      "filter_reason": "skip-word:hr ",
+      "search_country": "United Arab Emirates",
+      "search_title": "\"Careem\" (\"Chief Technology Officer\" OR CTO OR \"Chief Information Officer\" OR CIO OR \"Head of Technology\" OR \"IT Director\" OR \"Head of IT\" OR \"Chief Digital Officer\" OR CDO OR \"VP Digital Transformation\" OR \"Head of Business Excellence\" OR PMO OR transformation OR director)",
+      "linkedin_id": "li-4401744408",
+      "jd_text": "At the world market leader in energy technology, you will contribute to keeping the energy supply stable in the future. With our intelligent digital and analogue solutions, you will help shape the implementation of the energy transition. In a global team of 5\\.000 committed colleagues, which is characterized by the unique cohesion of our family\\-run group of companies. Reinhausen \\- where Power meets Passion.\n   \n\n  \n\n**What Awaits You**\n* You translate business goals into a coherent Hub People Strategy along the entire HR value chain\n* You take full responsibility for day\\-to\\-day HR operations in your local entity, including hire\\-to\\-retire processes and labor relations\n* You act as a strategic HR business partner for top management within the MEIA region as well as sparring partner for managers and employees in your local entity\n* You lead and develop local HR teams within your hub and drive HR synergies with a strong focus on operational excellence\n* You ensure high\\-quality HR data, derive insights and support data\\-based decision\\-making across the hub\n* You represent your hub in global HR initiatives and implement global HR standards, policies and projects locally\n\n\n**What You Bring To The Table**\n* You hold a university degree in Human Resources, Business Administration or a comparable field with an HR focus\n* You bring deep operational HR experience and socializazion in the MEIA region as well as profound knowledge of local labor laws\n* You have a strong hands\\-on mindset and proven experience in managing day\\-to\\-day HR operations, including hire\\-to\\-retire processes and employee relations\n* You have senior\\-level HR generalist experience in an international, matrix\\-driven organization\n* You have proven leadership experience and are confident in consulting and coaching senior business leaders\n* You combine strategic thinking with a solution\\-oriented mindset and strong implementation capability\n* You communicate fluently in English and act with integrity, professionalism and confidentiality\n\n\n**Our Benefits**\n**Hover over our benefit icons and learn more about your benefits with us!**\n**Annual Bonus \\& Service Rewards**\n We recognize employee dedication through an annual performance bonus and end\\-of\\-service benefits in line with UAE labor laws\u2014rewarding both your achievements and long\\-term commitment.\n   \n\n  \n\n**Comprehensive Health, Safety and Wellness Coverage**\n We care for your physical and mental well\\-being through international health insurance (including dental \\& optical), travel and workmen insurance, fitness programs, and psychological support\u2014from your first day to retirement.\n   \n\n  \n\n**Empowered Culture \\& Global Collaboration**\n We offer flexible working models, sabbaticals and a strong focus on work\\-life balance. Our culture thrives on community, learning and sustainability. Networking events, mentoring and a digital learning platform. Employees experience a working environment that encourages international collaboration and professional development.\n   \n\n  \n\n**Family Support**\n We care about your family as much as you do. Our benefits include annual flight tickets to your home country, school tuition fee support for your children, and a dependant package covering UAE residency, health insurance, and family travel\u2014all designed to support your family\u2019s well\\-being and stability.\n   \n\n  \n\n**Housing And Transportation Benefits**\n We offer a housing allowance to support comfortable living, along with flexible mobility options including a company car or transportation allowance, covering fuel, tolls, parking, and a Careem corporate account for local travel.",
+      "source_count": 1,
+      "country": "United Arab Emirates",
+      "industry_bonus": 6,
+      "policy_status": "pass",
+      "sources": [
+        "linkedin"
+      ],
+      "first_seen": "2026-04-15"
     },
     {
       "id": "linkedin_jobspy-li-4398809056",
@@ -865,35 +967,6 @@
       "first_seen": "2026-04-13"
     },
     {
-      "id": "google-a66b1c91ffe6",
-      "source": "google",
-      "title": "Director",
-      "company": "Post",
-      "location": "Integration Value: Agri-Food Experience Essential",
-      "url": "https://www.michaelpage.ae/jobs/strategy",
-      "posted": "",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 6,
-      "match_keywords": [
-        "director"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null,
-      "source_count": 1,
-      "country": "Unknown",
-      "policy_status": "pass",
-      "sources": [
-        "google-jobs"
-      ],
-      "first_seen": "2026-04-14",
-      "jd_live": true,
-      "jd_fetch_status": "ok",
-      "jd_page_text": "Strategy jobs | Michael Page Skip to main navigation Mobile Menu English Accessibility Tools Job Search Save jobs, 0 currently saved jobs 0 Save jobs Register / Sign in I&#039;m a Candidate I&#039;m an Employer New Job Search Save jobs, 0 currently saved jobs 0 Save jobs Register / Sign in NG Main Navigation Job seekers Job seekers Start your search here Browse our jobs and apply for your next role. Our vacancies Find a job Job search Submit your CV Search for a job Tools CV Fitness Test Talent Trends: Interactive Tool Advice Career advice Being happy at work Growing your career Cover letter and CV advice Job interview tips Job search advice Popular articles How to send an engaging follow-up email after your interview Social etiquette and rules in Saudi Arabia Six great ways to market yourself How to Make Your CV Stand Out Employers Employers The right candidate is just a few clicks away Reach out to us or discover some great insights that could help you fill your next vacancy. Request a call back Fill a vacancy Find candidates Request a call back Submit a job spec Our expertise Banking and Financial Services Consultancy, Strategy &amp; Change Data &amp; Analytics Digital Engineering and Manufacturing See all sectors Advice Management advice Development and retention Attraction and recruitment Emiratisation recruitment Recruiting in Saudi Arabia Insights Latest insights Webinars &amp; events Salary Guide 2026 UAE Salary Guide 2026 KSA The Ultimate Onboarding Guide About About Start your career with us PageGroup changes lives for people through creating opportunity to reach potential. Apply now Work for us Work at Michael Page Why choose us? Your role here Use your skills Internships About us About us Who we are About PageGroup Contact Contact Contact us today We find the best talent for our clients and match candidates to their ideal jobs. Contact us Contact us Get in touch Find our offices Feedback Salary Guides 2026 Breadcrumb Home / Strategy Search Job title Location Sort by Relevance Changed Salary Max Base Salary Min Base Salary Min Salary min 0 10k 20k 30k 40k 50k 75k 100k 125k 150k 200k 250k 500k 800k+ Salary Max Salary max 0 10k 20k 30k 40k 50k 75k 100k 125k 150k 200k 250k 500k 800k+ Cancel Cancel Create Job Alert 58 Strategy jobs Create Job Alert Sort by Relevance Most recent Salary (high to low) Salary (low to high) Close Filter Close Reset Location button United Arab Emirates 32 Dubai 23 Dubai 10 Abu Dhabi 7 Al Ain 1 Saudi Arabia 12 Riyadh 6 Riyadh 4 Makkah 4 Jeddah 4 International 9 Egypt 2 Cairo 2 Cairo 1 Bahrain 1 Kuwait 1 Syria 1 Sector button Human Resources 13 Recruitment 5 Talent Management 3 Learning &amp; Development 2 Compensation &amp; Benefits 1 Head of HR 1 HR Manager 1 Technology 9 Senior Technical 3 Senior IT Management 2 Consulting 1 IT Business Analysis 1 IT Development 1 Technology consultancy 1 Consultancy, Strategy and Change 7 Corporate Strategy 2 Transformation &amp; Change Management 2 Advisory 1 Project &amp; Program Management 1 Research &amp; Analysis 1 Healthcare &amp; Life Sciences 7 Marketing/Procurement 3 Sales 2 Medical Affairs 1 Pharmaceutical 1 Sales 5 Financial &amp; Professional Services 2 FMCG &amp; Consumer 1 IT &amp; Telecommunications 1 Public Sector &amp; Not-For-Profit 1 Banking &amp; Financial Services 4 Venture Capitalism &amp; Private Equity 2 Corporate Finance / Mergers &amp; Acquisitions 1 Equity Research 1 Marketing 4 Financial Services 1 FMCG &amp; Consumer 1 Hi Tech &amp; Computing 1 Industrial &amp; Utilities 1 Property 3 Property &amp; Asset Management 3 Executive Search 2 Sales 1 Technology 1 Finance &amp; Accounting 2 Financial Director / CFO 2 Digital 1 Ecommerce 1 Retail 1 Merchandise &amp; Supply Chain 1 Industry button Technology &amp; Telecoms 9 Business Services 7 Financial Services 7 Healthcare / Pharmaceutical 7 Property 7 Retail 6 Public Sector 4 Industrial / Manufacturing 3 FMCG (Fast Moving Consumer Goods) 2 Leisure, Travel &amp; Tourism 2 Not For Profit 2 Transport &amp; Distribution 2 Type of contract button Permanent 57 Temporary 1 Job Nature button Work from home 1 Yearly salary (AED) Expand / collapse Search Job title Location Sort by Relevance Changed Salary Max Base Salary Min Base Salary Min Salary min 0 10k 20k 30k 40k 50k 75k 100k 125k 150k 200k 250k 500k 800k+ Salary Max Salary max 0 10k 20k 30k 40k 50k 75k 100k 125k 150k 200k 250k 500k 800k+ Cancel Strategy Manager : In-House Strategy Management Abu Dhabi Permanent As a Strategy Manager, you will lead the refresh and execution of strategy initiatives, focusing on strategic projects, stakeholder engagement, and performance tracking across multiple international assets. This role emphasises strategic thinking and project leadership. Drive strategic initiatives for an international organisation, HQ&#039;d in Abu Dhabi 8+ years of strategy/consulting experience with project management skills Save Job View Job Head of Strategy and Transformation: Consumer Sector Dubai Permanen",
-      "jd_text": "Search for Strategy jobs at some of the world&#039;s top companies using UAE&#039;s leading recruitment consultancy - Michael Page."
-    },
-    {
       "id": "linkedin_jobspy-li-4400537467",
       "source": "linkedin_jobspy",
       "title": "Director of Sales & Marketing",
@@ -916,34 +989,6 @@
       "jd_text": "Park Hyatt Doha is seeking an experienced\n **Director of Sales \\& Marketing** \n to lead the hotel\u2019s commercial strategy and drive revenue performance across all segments. This role oversees Sales, Events, Marketing, and supports the Revenue function, ensuring strong market positioning, strategic partnerships, and effective execution of business plans. The ideal candidate will elevate the hotel\u2019s presence in local and international markets while upholding the refined standards of the Park Hyatt brand.\n \n\n\n\n  \n\n\n\n\n\n**Qualifications** \n\n\n\n\n  \n\n\n\n\n* Proven leadership experience in Sales \\& Marketing within a luxury hotel environment\n* Strong commercial acumen with a track record of delivering revenue growth\n* Expertise in market analysis, digital marketing, and brand positioning\n* Established network within the GCC region is an advantage\n* Excellent communication, negotiation, and team\u2011leadership skills\n* Ability to collaborate effectively across departments\n* Bachelor\u2019s degree in Business, Marketing, or Hospitality (postgraduate studies preferred)\n\n\n\n  \n\n\n\n\n\n We invite driven, strategic, and brand\u2011minded leaders to join us in shaping the next chapter of Park Hyatt Doha\u2019s commercial success.",
       "source_count": 1,
       "country": "Qatar",
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ],
-      "first_seen": "2026-04-13"
-    },
-    {
-      "id": "linkedin_jobspy-li-4398102484",
-      "source": "linkedin_jobspy",
-      "title": "Chief Technology Officer",
-      "company": "Tiro International",
-      "location": "Dubai, United Arab Emirates",
-      "url": "https://www.linkedin.com/jobs/view/4398102484",
-      "posted": "2026-04-10",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "Our client \u2013 operating in the\n **FMCG sector** \n is looking for a Chief Technology Officer.\n \n\n\n\n  \n\n\n\n\n\n**The role will be\n \n physically located in Kuala Lumpur \u2013 Malaysia.**\n\n\n\n\n  \n\n\n\n\n\n**Job Summary:** \n\n\n\n\n***Responsible for architecting and delivering the Group\u2019s end\\-to\\-end digital evolution ",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Director Digital Transformation",
-      "linkedin_id": "li-4398102484",
-      "jd_text": "Our client \u2013 operating in the\n **FMCG sector** \n is looking for a Chief Technology Officer.\n \n\n\n\n  \n\n\n\n\n\n**The role will be\n \n physically located in Kuala Lumpur \u2013 Malaysia.**\n\n\n\n\n  \n\n\n\n\n\n**Job Summary:** \n\n\n\n\n***Responsible for architecting and delivering the Group\u2019s end\\-to\\-end digital evolution across global trading, refinery, manufacturing, supply chain, warehousing, and distribution operations.***\n\n\n\n\n***This role is created to reposition the Group from a traditional integrated commodity and FMCG player into a technology\\-empowered, data\\-intelligent and globally synchronized enterprise.***\n\n\n\n\n  \n\n\n\n\n\n**Primary responsibilities include:** \n\n\n\n\n**Enterprise Digital Transformation Leadership** \n\n\n\n* Design and execute a bold 5\\-year Digital \\& Technology Transformation Blueprint.\n* Lead the enterprise\\-wide modernization of legacy systems into integrated, scalable digital platforms while progressively embedding AI capabilities into core daily operations.\n* Re\\-architect technology to support global expansion and potential new market expansion using new cloud\\-based technology with a global control tower dashboard for senior leadership based in HQ.\n* Drive digitization across trading, manufacturing, and logistics operations.\n* Transform IT from a support function into a strategic growth engine.\n\n\n\n  \n\n\n\n\n\n**Global ERP \\& Systems Harmonization** \n\n\n\n* Lead proven, large\\-scale ERP deployments across multi\\-country operations.\n* Standardize global business processes across:\n* Trading \\& commodity risk management\n* Manufacturing \\& production planning\n* Inventory \\& warehouse management\n* Supply chain \\& distribution\n* Finance \\& consolidation\n* Distribution system and sales force automation for FMCG\n* Build a single source of truth data platform across the Group.\n* Implement global data governance and reporting architecture.\n* Lead development of business dashboards for monitoring and tracking financial and operational KPIs.\n* Reduce system fragmentation and manual reconciliation risks, replacing them with AI workflow orchestration solutions.\n\n\n\n  \n\n\n\n\n\n**Technology\\-Enabled Trading \\& Risk Excellence** \n\n\n\n* Digitally enhance commodity trading platforms with:\n* Real\\-time analytics\n* Risk management dashboards\n* Exposure visibility\n* Margin intelligence tools\n* Strengthen controls and governance to mitigate trading and compliance risks.\n* Integrate finance, trading and supply chain data for unified visibility.\n\n\n\n  \n\n\n\n\n\n**AI, Data \\& Advanced Analytics Strategy** \n\n\n\n* Establish a Group\\-wide enterprise data architecture.\n* Build advanced analytics capabilities across:\n* Demand forecasting\n* Procurement optimization\n* Production efficiency\n* Commodity pricing insights\n* Drive AI adoption responsibly and strategically.\n* Elevate executive decision\\-making through real\\-time dashboards.\n* Champion adoption of an AI\\-first mindset across all business units.\n\n\n\n  \n\n\n\n\n\n**Strategic Budgeting** \n\n\n\n* Own and optimize global technology CAPEX and OPEX budgets.\n* Develop disciplined ROI\\-driven investment frameworks.\n* Prioritize digital investments aligned with business growth.\n* Lead vendor strategy, contract negotiation and platform rationalization.\n* Ensure every technology initiative delivers measurable value.\n\n\n\n  \n\n\n\n\n\n**Cybersecurity \\& Enterprise Risk Governance** \n\n\n\n* Build a resilient cybersecurity framework across global operations.\n* Strengthen disaster recovery and business continuity planning.\n* Protect trading, financial and operational data integrity.\n* Implement global compliance and regulatory frameworks.\n* Conduct regular risk maturity assessments and audits.\n* Prepare and operationalize IT Delegation of Authority for enhanced governance.\n\n\n\n  \n\n\n\n\n\n**Executive \\& Board\\-Level Leadership** \n\n\n\n* Serve as a strategic advisor to the Board on digital opportunities.\n* Translate technology transformation into shareholder value.\n* Partner with regional CEOs and senior leadership team.\n* Influence digital culture across all geographies.\n\n\n\n  \n\n\n\n\n\n**Global Team Building \\& Organizational Design** \n\n\n\n* Build a high\\-caliber, future\\-ready technology organization.\n* Develop strong regional technology leadership bench strength.\n* Introduce performance metrics aligned to business outcomes.\n* Foster a culture of innovation, accountability and execution excellence.\n* Attract global talent capable of operating in multi\\-country environments.\n\n\n\n  \n\n\n\n\n\n**Role Requirements:** \n\n\n\n* 15\u201320\\+ years of progressive technology leadership experience, including at least 8\u201310 years in executive roles such as IT Director, CIO or CTO.\n* Proven experience leading multi\\-country ERP implementations across trading, manufacturing, supply chain, warehousing, and distribution environments.\n* Demonstrated success in enterprise\\-wide digital transformation.\n* Experience in AI and data strategy deployment.\n* Executive gravitas and Board\\-level influence.\n* Proven ability to build and lead high\\-performing global teams.\n* Experience operating in emerging markets and complex, multi\\-entity organizations is highly desirable.\n* Relevant professional certifications in ERP platforms (e.g., SAP, Oracle, Microsoft Dynamics), enterprise architecture, cybersecurity governance, project management, and cloud technologies are strongly preferred.\n* Executive education in digital strategy, Industry 4\\.0, or corporate governance would further strengthen the profile.\n\n\n\n  \n\n\n\n\n\n**What's on offer:** \n\n\n\n* Monthly Salary: USD 9,000 \\- 9,500/\\- p.m. (Basic\\+Housing\\+Transporatation)\n* Education allowance for children\n* Family medical insurance\n* Family air\\-tickets\n* Annual Performance Bonus",
-      "source_count": 1,
-      "country": "United Arab Emirates",
-      "industry_bonus": 9,
       "policy_status": "pass",
       "sources": [
         "linkedin"
@@ -977,18 +1022,47 @@
         "linkedin"
       ],
       "first_seen": "2026-04-13"
+    },
+    {
+      "id": "linkedin_jobspy-li-4399928040",
+      "source": "linkedin_jobspy",
+      "title": "Chief Revenue Officer",
+      "company": "Koru Impact",
+      "location": "Doha, Qatar",
+      "url": "https://www.linkedin.com/jobs/view/4399928040",
+      "posted": "",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 0,
+      "match_keywords": [],
+      "raw_snippet": "Job Description\n   \n\n\n Every large organization in Qatar is now making decisions about artificial intelligence, data governance, and operational resilience \u2014 and almost none of them can prove those decisions were made correctly. The documentation exists. The policies exist. What does not exist, in m",
+      "relevant": false,
+      "filter_reason": "no-role-family",
+      "search_country": "Qatar",
+      "search_title": "\"technology\" AND (\"director\" OR \"head\") AND (\"healthcare\" OR \"fintech\")",
+      "linkedin_id": "li-4399928040",
+      "jd_text": "Job Description\n   \n\n\n Every large organization in Qatar is now making decisions about artificial intelligence, data governance, and operational resilience \u2014 and almost none of them can prove those decisions were made correctly. The documentation exists. The policies exist. What does not exist, in most cases, is an independently verifiable record that connects the decision to the framework it was supposed to follow, timestamps it, and makes it immutable. That gap between intent and evidence is where regulators, auditors, and boards are beginning to ask uncomfortable questions.\n \n\n\n\n  \n\n\n\n\n\n We built a consultancy and a technology platform around closing that gap. We advise organizations on strategic planning, risk management, AI governance, data privacy, and operational resilience \u2014 and we built a proprietary diagnostic platform that produces cryptographic proof of compliance decisions across multiple regulatory frameworks simultaneously. Not documentation. Proof. Deterministic, hash\\-chained, auditor\\-ready.\n \n\n\n\n  \n\n\n\n\n\n What we have not built is a commercial presence in Doha. That is this role.\n \n\n\n\n  \n\n\n\n\n\n**The firm** \n\n\n\n\n  \n\n\n\n\n\n Koru Impact LLC is a management consultancy, IT advisory, and regulatory technology firm registered in the Qatar Financial Centre (Registration No. 04642\\). We hold five permitted activity codes: strategic and operating model planning, risk management advisory, IT consultancy in AI and machine learning, IT consultancy in governance and data privacy, and customised software. These codes are not sector\\-specific. Our clients include \u2014 or will include \u2014 banks, insurers, energy companies, telecoms operators, government entities, healthcare institutions, and any organization where governance decisions carry regulatory or reputational consequence.\n \n\n\n\n  \n\n\n\n\n\n We are pre\\-revenue. Incorporated February 2026\\. A 91\\-institution pipeline spanning Qatar and the GCC, tiered by regulatory urgency and commercial accessibility. The CEO is based in Istanbul. The platform is built. The advisory thesis is tested. The pipeline is identified.\n \n\n\n\n  \n\n\n\n\n\n What is missing is the person in Doha who converts all of that into signed engagement letters.\n \n\n\n\n  \n\n\n\n\n\n**What the role requires** \n\n\n\n\n  \n\n\n\n\n\n This is a B2B commercial partnership, not salaried employment. You would contract with us through your own legal entity and invoice for your work. There is no employment relationship, no sponsorship, and no guaranteed monthly income.\n \n\n\n\n  \n\n\n\n\n\n The work itself: converting named institutional leads into scoping conversations, proposals, and closed engagements. The target organizations are large and mid\\-size entities in Qatar and the GCC \u2014 across sectors \u2014 that face governance, risk, AI, data privacy, or operational resilience obligations they cannot fully address with internal resources alone. Banks and financial institutions are a primary segment, but they are not the only one. Energy companies preparing for ISSB sustainability reporting, telecoms operators deploying AI across customer operations, government bodies building AI governance frameworks, and healthcare institutions managing sensitive data architectures all sit within the firm's advisory scope.\n \n\n\n\n You would represent the firm in meetings with C\\-suite and senior leadership: Chief Compliance Officers, Chief Risk Officers, Chief Technology Officers, Chief Information Security Officers, Heads of Strategy, and their equivalents across sectors. You would diagnose governance gaps, position our advisory and platform services, and write proposals that close.\n \n\n\n\n  \n\n\n\n\n\n You would work from our registered office at Burj Doha on a regular basis. The relationships that produce advisory mandates in Qatar are built in person, in Arabic and English, with people who recognize your name before you arrive.\n \n\n\n\n  \n\n\n\n\n\n The revenue target is $200,000 in Year 1\\. The pipeline is built. The product is real. What is absent is a commercially credible principal who can sit across the table from a decision\\-maker at QNB, Ooredoo, Qatar Energy, or the Qatar Free Zones Authority and articulate why this firm's approach to governance is worth $25,000 to $200,000 of their budget.\n \n\n\n\n  \n\n\n\n\n\n**How you earn** \n\n\n\n\n  \n\n\n\n\n\n Three streams. All performance\\-linked.\n \n\n\n\n  \n\n\n\n\n\n*Delivery.* \n When you deliver advisory work personally, you earn from the engagement delivery pool at your agreed hourly rate ($150\u2013$250 depending on engagement complexity). The delivery pool is total engagement revenue minus the firm's platform fee. Deliver solo and the entire pool is yours.\n \n\n\n\n  \n\n\n\n\n\n*Origination and introduction.* \n For every engagement you originate: a credit equal to 8% of the platform fee. For every new client you introduce: 15% of gross engagement value on the first engagement, 10% on the second, and a 36\\-month trailing credit of 2% on all subsequent work with that client.\n \n\n\n\n  \n\n\n\n\n\n*Revenue royalty \u2014 60 months.* \n You receive 3% of all collected firm revenue for five years, beginning from the date you close your first engagement. All firm revenue \u2014 not only engagements you originated. This is a platform participation right that compounds as the practice grows.\n \n\n\n\n  \n\n\n\n\n\n At $100,000 in Year 1 collected revenue with 50% personal delivery, total compensation is approximately $50,000\\. At $200,000 with 30% personal delivery, total compensation exceeds $63,000 with no ceiling above that. The five\\-year royalty alone is worth $30,000 at $200,000 annual revenue, scaling linearly with growth.\n \n\n\n\n  \n\n\n\n\n\n There is no retainer. No draw. No floor. This structure is designed for a person whose network, commercial instinct, and professional reputation are sufficient to generate revenue without a salary guaranteeing they will try.\n \n\n\n\n  \n\n\n\n\n\n**Who this is for** \n\n\n\n\n  \n\n\n\n\n\n You are currently resident in Doha with a valid Qatar ID. You have spent at least five years in a client\\-facing advisory, consulting, or business development role in the GCC \u2014 selling professional services, technology advisory, or management consulting to institutional buyers. Not products. Services. The distinction matters: you understand that a $75,000 advisory engagement is sold on trust, scoped on insight, and closed on credibility \u2014 not on a feature list.\n \n\n\n\n  \n\n\n\n\n\n You have closed B2B engagements worth $50,000 or more, repeatedly, with organizations that have procurement functions and budget committees. You are comfortable in a room with a CTO, a CCO, or a government undersecretary, and you can hold a conversation about governance, risk, data privacy, or AI strategy without reading from a script.\n \n\n\n\n  \n\n\n\n\n\n You speak business\\-fluent English. Arabic at business fluency or above is strongly preferred \u2014 it remains the primary language of institutional trust in Qatar.\n \n\n\n\n  \n\n\n\n\n\n You operate through your own legal entity, or you are prepared to establish one promptly.\n \n\n\n\n  \n\n\n\n\n\n**Who this is not for** \n\n\n\n\n  \n\n\n\n\n\n If you require guaranteed monthly compensation above QAR 25,000, this opportunity is structured differently than what you need. If your experience is exclusively in product sales \u2014 software licences, hardware, commodities \u2014 the consultative selling cycle in advisory work is a different discipline. If you have never closed a B2B professional services engagement above $50,000, the timeline does not accommodate a learning curve. If you are currently employed by a prospective client organization, the conflict\\-of\\-interest exposure is disqualifying for both parties.\n \n\n\n\n  \n\n\n\n\n\n**Next step** \n\n\n\n\n  \n\n\n\n\n\n Send a direct message to the Director ( Sener Cem Irmak) with two things: a brief note on why this interests you, and the names of three organizations in Qatar where you hold active senior relationships. No CV at this stage. We assess fit through conversation.\n \n\n\n\n  \n\n\n\n\n\n First conversations happen within 48 hours.\n \n\n\n\n  \n\n\n\n\n* Koru Impact LLC Qatar Financial Centre \u00b7 Registration No. 04642 Burj Doha, Servcorp Qatar LLC \u00b7 Doha, Qatar\n* https://koruimpact.org",
+      "salary": "USD 150.0-250.0 hourly",
+      "source_count": 1,
+      "country": "Qatar",
+      "industry_bonus": 24,
+      "policy_status": "pass",
+      "sources": [
+        "linkedin"
+      ],
+      "first_seen": "2026-04-15"
     }
   ],
   "kpi": {
-    "total_raw": 305,
+    "total_raw": 313,
     "sources_loaded": 2,
     "stale_sources": 2,
-    "unique_after_dedup": 283,
+    "unique_after_dedup": 293,
     "applied_filtered": 2,
-    "policy_filtered": 165,
-    "final_candidates": 31,
+    "policy_filtered": 180,
+    "final_candidates": 33,
     "multi_source_jobs": 0,
-    "new_today": 31
+    "new_today": 33
   },
   "recommendations": []
 }

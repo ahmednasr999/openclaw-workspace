@@ -2,35 +2,45 @@
   "meta": {
     "agent": "email-agent",
     "version": "3.0.0",
-    "generated_at": "2026-04-14T06:00:33.929922+02:00",
-    "duration_ms": 31387,
+    "generated_at": "2026-04-15T06:00:44.237730+02:00",
+    "duration_ms": 41792,
     "ttl_hours": 4,
     "status": "success",
     "error": null,
-    "run_id": "95ddb1fd",
+    "run_id": "4c855207",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
     "status": "ok",
-    "scan_time": "2026-04-14T06:00:05.038454+02:00",
-    "total_scanned": 4,
+    "scan_time": "2026-04-15T06:00:06.729095+02:00",
+    "total_scanned": 8,
     "by_category": {
       "interview_invite": 0,
-      "recruiter_reach": 1,
+      "recruiter_reach": 2,
       "application_ack": 0,
       "rejection": 0,
       "assessment": 0,
       "follow_up_needed": 0,
-      "other": 3
+      "other": 6
     },
     "interview_invites": [],
     "recruiter_messages": [
       {
-        "id": "353128",
+        "id": "353343",
+        "from": "Naukrigulf <newjobs@naukrigulf.com>",
+        "subject": "Senior Expert Hybrid Solution Design, Project Manager\r\n (Industry Agnostic) jobs for you",
+        "date": "Wed, 15 Apr 2026 08:20:32 +0530 (IST)",
+        "unread": true,
+        "priority": "MEDIUM",
+        "score": 2,
+        "pipeline_match": null
+      },
+      {
+        "id": "353344",
         "from": "Mariam from foundit <jobmessenger@monstergulf.com>",
         "subject": "Ahmed, Hot Job Opportunities Waiting For You",
-        "date": "Tue, 14 Apr 2026 09:01:55 +0530 (IST)",
+        "date": "Wed, 15 Apr 2026 08:22:05 +0530 (IST)",
         "unread": true,
         "priority": "MEDIUM",
         "score": 2,
@@ -41,37 +51,80 @@
     "rejections": [],
     "assessments": [],
     "follow_ups_needed": [],
-    "actionable_count": 0,
-    "hot_alerts": [],
+    "actionable_count": 2,
+    "hot_alerts": [
+      {
+        "subject": "I have 14 days of use or lose PTO and am planning to leave my job. Is\r\n it a...",
+        "from": "Glassdoor Community <noreply@glassdoor.com>",
+        "priority": "HIGH",
+        "pipeline_match": null
+      }
+    ],
     "signals": [],
     "llm_analysis": {
-      "actionable_emails": [],
+      "actionable_emails": [
+        {
+          "id": "353343",
+          "subject": "Senior Expert Hybrid Solution Design, Project Manager\r\n (Industry Agnostic) jobs for you",
+          "from": "Naukrigulf <newjobs@naukrigulf.com>",
+          "date": "Wed, 15 Apr 2026 08:20:32 +0530 (IST)",
+          "category": "recruiter_reach",
+          "urgency": "low",
+          "intent": "Automated job alert prompting review of matching role openings.",
+          "action": "read_and_file",
+          "response_deadline": "when convenient",
+          "notes": "Automated alert, worth screening for Gulf senior-role fit."
+        },
+        {
+          "id": "353344",
+          "subject": "Ahmed, Hot Job Opportunities Waiting For You",
+          "from": "Mariam from foundit <jobmessenger@monstergulf.com>",
+          "date": "Wed, 15 Apr 2026 08:22:05 +0530 (IST)",
+          "category": "recruiter_reach",
+          "urgency": "low",
+          "intent": "Automated outreach encouraging review of available job opportunities.",
+          "action": "read_and_file",
+          "response_deadline": "when convenient",
+          "notes": "Personalized subject line, but content appears job-board driven."
+        }
+      ],
       "summary": {
-        "total_actionable": 0,
+        "total_actionable": 2,
         "critical_count": 0,
         "requires_interview_prep": false,
         "requires_assessment": false,
-        "recruiter_top_opportunities": [],
+        "recruiter_top_opportunities": [
+          "Naukrigulf <newjobs@naukrigulf.com>",
+          "Mariam from foundit <jobmessenger@monstergulf.com>"
+        ],
         "top_priority": null,
-        "daily_focus": "No actionable inbound emails today, so focus on proactive outreach and high-fit UAE/Gulf leadership applications."
+        "daily_focus": "Quickly screen both recruiter alerts for UAE/Gulf senior-fit roles, then file non-matches."
       }
     }
   },
   "kpi": {
-    "emails_processed": 4,
-    "actionable": 0,
+    "emails_processed": 8,
+    "actionable": 2,
     "interviews_detected": 0,
-    "recruiter_messages": 1,
-    "unread_actionable": 0
+    "recruiter_messages": 2,
+    "unread_actionable": 2
   },
   "recommendations": [
     {
-      "id": "rec-95ddb1fd-0",
+      "id": "rec-4c855207-0",
       "action": "review_and_respond",
-      "target": "1 recruiter message(s)",
+      "target": "2 recruiter message(s)",
       "reason": "Recruiter outreach could lead to opportunities",
       "urgency": "high",
-      "timestamp": "2026-04-14T06:00:33.929819+02:00"
+      "timestamp": "2026-04-15T06:00:44.237568+02:00"
+    },
+    {
+      "id": "rec-4c855207-1",
+      "action": "check_inbox",
+      "target": "2 unread actionable email(s)",
+      "reason": "Unread emails need attention",
+      "urgency": "high",
+      "timestamp": "2026-04-15T06:00:44.237608+02:00"
     }
   ]
 }
