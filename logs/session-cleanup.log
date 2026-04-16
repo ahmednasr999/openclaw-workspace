@@ -74,3 +74,7 @@
   sessions.json: 13M -> 8.6M (ok, pruned 20)
   Archived JSONL: 18 files
 [2026-04-15T01:04:30Z] Cleanup done
+[2026-04-16T01:03:38Z] Starting session cleanup
+  sessions.json: 13M -> 8.4M (ok, pruned 24)
+  Archived JSONL: 14 files
+[2026-04-16T01:03:39Z] Cleanup done

@@ -2,19 +2,19 @@
   "meta": {
     "agent": "email-agent",
     "version": "3.0.0",
-    "generated_at": "2026-04-15T06:00:44.237730+02:00",
-    "duration_ms": 41792,
+    "generated_at": "2026-04-16T06:00:46.349857+02:00",
+    "duration_ms": 43323,
     "ttl_hours": 4,
     "status": "success",
     "error": null,
-    "run_id": "4c855207",
+    "run_id": "74bf1a6f",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
     "status": "ok",
-    "scan_time": "2026-04-15T06:00:06.729095+02:00",
-    "total_scanned": 8,
+    "scan_time": "2026-04-16T06:00:07.039656+02:00",
+    "total_scanned": 7,
     "by_category": {
       "interview_invite": 0,
       "recruiter_reach": 2,
@@ -22,25 +22,25 @@
       "rejection": 0,
       "assessment": 0,
       "follow_up_needed": 0,
-      "other": 6
+      "other": 5
     },
     "interview_invites": [],
     "recruiter_messages": [
       {
-        "id": "353343",
-        "from": "Naukrigulf <newjobs@naukrigulf.com>",
-        "subject": "Senior Expert Hybrid Solution Design, Project Manager\r\n (Industry Agnostic) jobs for you",
-        "date": "Wed, 15 Apr 2026 08:20:32 +0530 (IST)",
+        "id": "353531",
+        "from": "Tala from foundit <jobmessenger@monstergulf.com>",
+        "subject": "Ahmed, Hot Job Opportunities Waiting For You",
+        "date": "Thu, 16 Apr 2026 08:23:35 +0530 (IST)",
         "unread": true,
         "priority": "MEDIUM",
         "score": 2,
         "pipeline_match": null
       },
       {
-        "id": "353344",
-        "from": "Mariam from foundit <jobmessenger@monstergulf.com>",
-        "subject": "Ahmed, Hot Job Opportunities Waiting For You",
-        "date": "Wed, 15 Apr 2026 08:22:05 +0530 (IST)",
+        "id": "353532",
+        "from": "Bayt.com <notify@bayt.com>",
+        "subject": "=?utf-8?B?RW1wbG95ZXJzIGFyZSBzZWFyY2hpbmcgcmlnaHQgbm93?=",
+        "date": "Wed, 15 Apr 2026 21:51:32 GMT",
         "unread": true,
         "priority": "MEDIUM",
         "score": 2,
@@ -52,40 +52,33 @@
     "assessments": [],
     "follow_ups_needed": [],
     "actionable_count": 2,
-    "hot_alerts": [
-      {
-        "subject": "I have 14 days of use or lose PTO and am planning to leave my job. Is\r\n it a...",
-        "from": "Glassdoor Community <noreply@glassdoor.com>",
-        "priority": "HIGH",
-        "pipeline_match": null
-      }
-    ],
+    "hot_alerts": [],
     "signals": [],
     "llm_analysis": {
       "actionable_emails": [
         {
-          "id": "353343",
-          "subject": "Senior Expert Hybrid Solution Design, Project Manager\r\n (Industry Agnostic) jobs for you",
-          "from": "Naukrigulf <newjobs@naukrigulf.com>",
-          "date": "Wed, 15 Apr 2026 08:20:32 +0530 (IST)",
+          "id": "353531",
+          "subject": "Ahmed, Hot Job Opportunities Waiting For You",
+          "from": "Tala from foundit <jobmessenger@monstergulf.com>",
+          "date": "Thu, 16 Apr 2026 08:23:35 +0530 (IST)",
           "category": "recruiter_reach",
-          "urgency": "low",
-          "intent": "Automated job alert prompting review of matching role openings.",
+          "urgency": "medium",
+          "intent": "The sender appears to want Ahmed to review current job opportunities and engage with the platform.",
           "action": "read_and_file",
-          "response_deadline": "when convenient",
-          "notes": "Automated alert, worth screening for Gulf senior-role fit."
+          "response_deadline": "1 week",
+          "notes": "Named sender, but content not shown, review if targeting Gulf executive roles."
         },
         {
-          "id": "353344",
-          "subject": "Ahmed, Hot Job Opportunities Waiting For You",
-          "from": "Mariam from foundit <jobmessenger@monstergulf.com>",
-          "date": "Wed, 15 Apr 2026 08:22:05 +0530 (IST)",
+          "id": "353532",
+          "subject": "=?utf-8?B?RW1wbG95ZXJzIGFyZSBzZWFyY2hpbmcgcmlnaHQgbm93?=",
+          "from": "Bayt.com <notify@bayt.com>",
+          "date": "Wed, 15 Apr 2026 21:51:32 GMT",
           "category": "recruiter_reach",
           "urgency": "low",
-          "intent": "Automated outreach encouraging review of available job opportunities.",
+          "intent": "The sender appears to be notifying Ahmed about employer activity, but the exact ask cannot be determined from available content.",
           "action": "read_and_file",
           "response_deadline": "when convenient",
-          "notes": "Personalized subject line, but content appears job-board driven."
+          "notes": "Likely platform alert, not enough content to confirm a direct opportunity."
         }
       ],
       "summary": {
@@ -94,16 +87,15 @@
         "requires_interview_prep": false,
         "requires_assessment": false,
         "recruiter_top_opportunities": [
-          "Naukrigulf <newjobs@naukrigulf.com>",
-          "Mariam from foundit <jobmessenger@monstergulf.com>"
+          "Tala from foundit <jobmessenger@monstergulf.com>"
         ],
-        "top_priority": null,
-        "daily_focus": "Quickly screen both recruiter alerts for UAE/Gulf senior-fit roles, then file non-matches."
+        "top_priority": "353531",
+        "daily_focus": "Review the foundit message first for senior Gulf-relevant roles, then skim Bayt only if it shows direct executive-fit openings."
       }
     }
   },
   "kpi": {
-    "emails_processed": 8,
+    "emails_processed": 7,
     "actionable": 2,
     "interviews_detected": 0,
     "recruiter_messages": 2,
@@ -111,20 +103,20 @@
   },
   "recommendations": [
     {
-      "id": "rec-4c855207-0",
+      "id": "rec-74bf1a6f-0",
       "action": "review_and_respond",
       "target": "2 recruiter message(s)",
       "reason": "Recruiter outreach could lead to opportunities",
       "urgency": "high",
-      "timestamp": "2026-04-15T06:00:44.237568+02:00"
+      "timestamp": "2026-04-16T06:00:46.349706+02:00"
     },
     {
-      "id": "rec-4c855207-1",
+      "id": "rec-74bf1a6f-1",
       "action": "check_inbox",
       "target": "2 unread actionable email(s)",
       "reason": "Unread emails need attention",
       "urgency": "high",
-      "timestamp": "2026-04-15T06:00:44.237608+02:00"
+      "timestamp": "2026-04-16T06:00:46.349730+02:00"
     }
   ]
 }
