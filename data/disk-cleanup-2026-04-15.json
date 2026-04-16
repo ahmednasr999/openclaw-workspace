@@ -1,0 +1,398 @@
+{
+  "timestamp": "2026-04-15T21:15:23.239935+00:00",
+  "removed_count": 65,
+  "removed_bytes": 5580052996,
+  "removed": [
+    {
+      "path": "/tmp/.pnpm-store",
+      "type": "dir",
+      "bytes": 2473635705,
+      "reason": "rebuildable_pnpm_store"
+    },
+    {
+      "path": "/root/openclaw-backups/openclaw-2026-04-11_1607.tar.gz",
+      "type": "file",
+      "bytes": 1559727585,
+      "reason": "older_full_backup_tar"
+    },
+    {
+      "path": "/root/openclaw-backups/openclaw-2026-04-08_1749.tar.gz",
+      "type": "file",
+      "bytes": 1220580091,
+      "reason": "older_full_backup_tar"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/sessions.json.bak-2026-04-13",
+      "type": "file",
+      "bytes": 35850449,
+      "reason": "older_sessions_backup"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/sessions.json.bak.1776017977870",
+      "type": "file",
+      "bytes": 43626857,
+      "reason": "older_sessions_backup"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/sessions.json.f8a003bf-1179-42db-b5c1-4ac84da201e5.tmp",
+      "type": "file",
+      "bytes": 524288,
+      "reason": "stale_sessions_tmp"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/sessions.json.668c1e01-cb7f-4235-b8ef-447677781108.tmp",
+      "type": "file",
+      "bytes": 524288,
+      "reason": "stale_sessions_tmp"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/sessions.json.9377e1c3-b3ee-4696-8d43-93ccffbdf137.tmp",
+      "type": "file",
+      "bytes": 36175872,
+      "reason": "stale_sessions_tmp"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/sessions.json.8277ec3e-dfaa-443e-860b-a83aa6d7da92.tmp",
+      "type": "file",
+      "bytes": 0,
+      "reason": "stale_sessions_tmp"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/sessions.json.aa49e93d-9437-400a-8a93-037dada9984d.tmp",
+      "type": "file",
+      "bytes": 1048576,
+      "reason": "stale_sessions_tmp"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/sessions.json.f6147166-be06-42fb-997a-81c3676bccb6.tmp",
+      "type": "file",
+      "bytes": 27262976,
+      "reason": "stale_sessions_tmp"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/sessions.json.be69826a-a621-4af3-b82f-2e05747e6d39.tmp",
+      "type": "file",
+      "bytes": 524288,
+      "reason": "stale_sessions_tmp"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/sessions.json.dec1cbf4-d0ef-467f-b15b-4315195f2e70.tmp",
+      "type": "file",
+      "bytes": 23592960,
+      "reason": "stale_sessions_tmp"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/sessions.json.beec7698-589a-456c-a6c7-a1144d6cddbd.tmp",
+      "type": "file",
+      "bytes": 2097152,
+      "reason": "stale_sessions_tmp"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/missing-file-registry-cleanup-20260411T125530Z/sessions.json.before-cleanup",
+      "type": "file",
+      "bytes": 43666627,
+      "reason": "cleanup_snapshot"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/archive-cleanup-20260411T123955Z/sessions.json.before-cleanup",
+      "type": "file",
+      "bytes": 44036997,
+      "reason": "cleanup_snapshot"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/cf13e410-85f4-48ff-8fd2-36f20c2d7565.jsonl.reset.2026-04-05T08-00-19.230Z",
+      "type": "file",
+      "bytes": 2593688,
+      "reason": "old_reset_artifact"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/b256f8ff-57ab-46d9-97d7-f3b3496c411a.jsonl.reset.2026-03-31T02-44-20.000Z",
+      "type": "file",
+      "bytes": 5175096,
+      "reason": "old_reset_artifact"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/b2f8411e-109e-40f7-980c-5b823d074e06.jsonl.reset.2026-03-29T04-10-48.982Z",
+      "type": "file",
+      "bytes": 5843,
+      "reason": "old_reset_artifact"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/984808b8-3a8a-4f83-9924-c330f7f3525d.jsonl.reset.2026-04-07T23-42-06.303Z",
+      "type": "file",
+      "bytes": 133680,
+      "reason": "old_reset_artifact"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/663ff7bd-8ffc-49e9-a404-a327d0e19cd9.jsonl.reset.2026-04-07T11-24-50.860Z",
+      "type": "file",
+      "bytes": 590675,
+      "reason": "old_reset_artifact"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/663ff7bd-8ffc-49e9-a404-a327d0e19cd9.jsonl.reset.2026-04-07T12-10-59.136Z",
+      "type": "file",
+      "bytes": 299717,
+      "reason": "old_reset_artifact"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/0f707e85-acd9-46ed-9c52-b20092bc931c-topic-10.jsonl.reset.2026-04-07T15-42-47.276Z",
+      "type": "file",
+      "bytes": 51988,
+      "reason": "old_reset_artifact"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/70ed5b09-96ea-4a75-af9e-394e9a4aa772.jsonl.reset.2026-04-06T13-50-21.566Z",
+      "type": "file",
+      "bytes": 43085,
+      "reason": "old_reset_artifact"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/ad5e243a-16d4-461f-ba19-1d5468586ec9-topic-10.jsonl.reset.2026-03-29T11-08-42.140Z",
+      "type": "file",
+      "bytes": 7030,
+      "reason": "old_reset_artifact"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/b256f8ff-57ab-46d9-97d7-f3b3496c411a.jsonl.reset.2026-03-31T02-52-31.000Z",
+      "type": "file",
+      "bytes": 180984,
+      "reason": "old_reset_artifact"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/d10d780e-a107-4fc6-bae1-2b5d75add6e8.jsonl.reset.2026-04-06T13-44-52.181Z",
+      "type": "file",
+      "bytes": 88915,
+      "reason": "old_reset_artifact"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/df6daae3-6642-48fc-8e5a-a01fb67c3903.jsonl.reset.2026-04-10T14-41-45.250Z",
+      "type": "file",
+      "bytes": 934557,
+      "reason": "old_reset_artifact"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/f4067fc9-218c-43ad-81ce-1c2ac47cd206.jsonl.reset.2026-04-08T16-30-44.594Z",
+      "type": "file",
+      "bytes": 7558064,
+      "reason": "old_reset_artifact"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/c42b2c64-6df2-47cb-9323-722984c228bd.jsonl.reset.2026-04-10T10-05-45.115Z",
+      "type": "file",
+      "bytes": 1555215,
+      "reason": "old_reset_artifact"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/0d27f55b-8fa0-4d8b-9bee-f292946288d5.jsonl.reset.2026-04-07T15-15-44.412Z",
+      "type": "file",
+      "bytes": 7386,
+      "reason": "old_reset_artifact"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/96f189df-1a0d-44e0-ad89-33f92a33d372.jsonl.reset.2026-03-29T11-07-59.315Z",
+      "type": "file",
+      "bytes": 2482408,
+      "reason": "old_reset_artifact"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/c1c3fc03-2deb-43e0-99f1-ce80de17eae5.jsonl.reset.2026-04-04T19-00-59.932Z",
+      "type": "file",
+      "bytes": 1907411,
+      "reason": "old_reset_artifact"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/e738b887-7e1c-4918-a193-28882ce67026.jsonl.reset.2026-04-03T19-08-48.253Z",
+      "type": "file",
+      "bytes": 867704,
+      "reason": "old_reset_artifact"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/8c2f859e-a25b-4ee8-ac22-882f740d7b40.jsonl.reset.2026-04-10T13-05-43.053Z",
+      "type": "file",
+      "bytes": 306482,
+      "reason": "old_reset_artifact"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/ba0e66b0-58bc-492b-ab3d-2839e5f5d041.jsonl.reset.2026-03-28T13-04-09.765Z",
+      "type": "file",
+      "bytes": 5820,
+      "reason": "old_reset_artifact"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/4674e4fe-1eec-46b4-85ea-784d6b0770b4.jsonl.reset.2026-04-07T09-12-15.810Z",
+      "type": "file",
+      "bytes": 318948,
+      "reason": "old_reset_artifact"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/22bd2622-57a4-4efe-b694-be87ae4ccd6b.jsonl.reset.2026-04-07T14-49-19.862Z",
+      "type": "file",
+      "bytes": 996320,
+      "reason": "old_reset_artifact"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/f762e1e8-4fb1-462c-a453-995909e339b2.jsonl.reset.2026-04-10T12-56-11.725Z",
+      "type": "file",
+      "bytes": 2774630,
+      "reason": "old_reset_artifact"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/91823f8f-ed89-42ed-b92c-a5701a1e2244.jsonl.reset.2026-04-03T05-56-56.164Z",
+      "type": "file",
+      "bytes": 162291,
+      "reason": "old_reset_artifact"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/b256f8ff-57ab-46d9-97d7-f3b3496c411a.jsonl.reset.2026-03-31T03-08-04.000Z",
+      "type": "file",
+      "bytes": 5596424,
+      "reason": "old_reset_artifact"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/f6dc568c-58fb-47d4-96a7-c5c9c8cb3011.jsonl.reset.2026-04-09T20-23-14.745Z",
+      "type": "file",
+      "bytes": 4455734,
+      "reason": "old_reset_artifact"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/b256f8ff-57ab-46d9-97d7-f3b3496c411a.jsonl.reset.2026-03-31T02-53-25.000Z",
+      "type": "file",
+      "bytes": 722874,
+      "reason": "old_reset_artifact"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/8bd23d23-4fe9-4508-9ae5-18fc7a87e88d.jsonl.reset.2026-04-07T15-24-08.731Z",
+      "type": "file",
+      "bytes": 13463,
+      "reason": "old_reset_artifact"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/1e3cef56-c054-402f-9a6b-5c6887c2eb3c.jsonl.reset.2026-04-03T19-09-21.071Z",
+      "type": "file",
+      "bytes": 653,
+      "reason": "old_reset_artifact"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/fd3859f7-3d55-4dca-81c9-aa51fe2ed642-topic-10.jsonl.reset.2026-03-28T09-40-20.735Z",
+      "type": "file",
+      "bytes": 1113469,
+      "reason": "old_reset_artifact"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/83cc82c4-00ed-413b-bff6-3bbe6b4e816e.jsonl.reset.2026-04-06T14-03-08.642Z",
+      "type": "file",
+      "bytes": 223045,
+      "reason": "old_reset_artifact"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/56b073fe-6d14-4ad4-b16c-ff7987fb5cbd.jsonl.reset.2026-04-05T08-30-25.782Z",
+      "type": "file",
+      "bytes": 467980,
+      "reason": "old_reset_artifact"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/82e9823b-8a03-4e47-8e67-713a5204a6d8.jsonl.reset.2026-04-07T15-09-49.110Z",
+      "type": "file",
+      "bytes": 48362,
+      "reason": "old_reset_artifact"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/b256f8ff-57ab-46d9-97d7-f3b3496c411a.jsonl.reset.2026-03-31T02-51-14.000Z",
+      "type": "file",
+      "bytes": 502657,
+      "reason": "old_reset_artifact"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/2b607d6c-0bf5-4e0b-821e-62de7a92656c.jsonl.reset.2026-04-07T22-12-27.028Z",
+      "type": "file",
+      "bytes": 3278,
+      "reason": "old_reset_artifact"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/96f189df-1a0d-44e0-ad89-33f92a33d372.jsonl.reset.2026-03-29T04-40-17.000Z",
+      "type": "file",
+      "bytes": 3341078,
+      "reason": "old_reset_artifact"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/ad5e243a-16d4-461f-ba19-1d5468586ec9-topic-10.jsonl.reset.2026-03-29T04-40-17.000Z",
+      "type": "file",
+      "bytes": 74293,
+      "reason": "old_reset_artifact"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/93af63aa-5c80-4089-bb46-0a0c50e81377.jsonl.reset.2026-04-07T22-12-08.266Z",
+      "type": "file",
+      "bytes": 5001731,
+      "reason": "old_reset_artifact"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/2bcb026c-c859-4b6c-9cba-5bac17a79e4f.jsonl.reset.2026-03-31T03-14-48.407Z",
+      "type": "file",
+      "bytes": 3114,
+      "reason": "old_reset_artifact"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/ad5e243a-16d4-461f-ba19-1d5468586ec9-topic-10.jsonl.reset.2026-03-29T01-51-30.000Z",
+      "type": "file",
+      "bytes": 585175,
+      "reason": "old_reset_artifact"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/3662b33e-f466-4db5-8a24-08923eec8409.jsonl.reset.2026-04-03T18-02-16.775Z",
+      "type": "file",
+      "bytes": 3084993,
+      "reason": "old_reset_artifact"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/60a6b984-0fc6-43d9-b5c6-d73bc8410c13.jsonl.reset.2026-04-01T03-23-56.240Z",
+      "type": "file",
+      "bytes": 9992,
+      "reason": "old_reset_artifact"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/d10d780e-a107-4fc6-bae1-2b5d75add6e8.jsonl.reset.20260406T150233",
+      "type": "file",
+      "bytes": 4376025,
+      "reason": "old_reset_artifact"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/8d3c3150-f336-4b8b-9855-bdcc923546d1.jsonl.reset.2026-04-07T22-51-32.232Z",
+      "type": "file",
+      "bytes": 22783,
+      "reason": "old_reset_artifact"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/6c3332e9-b923-4487-ab70-637bf36a676b.jsonl.reset.2026-03-27T11-25-30.503Z",
+      "type": "file",
+      "bytes": 2864133,
+      "reason": "old_reset_artifact"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/c7a3b807-b450-4650-ba6e-b96707db328e.jsonl.reset.2026-04-07T22-35-58.175Z",
+      "type": "file",
+      "bytes": 10028,
+      "reason": "old_reset_artifact"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/505ce5d9-c7bf-47b1-9c7d-4570427ef123.jsonl.reset.2026-04-02T16-46-26.783Z",
+      "type": "file",
+      "bytes": 635727,
+      "reason": "old_reset_artifact"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/6d9e13dd-7b43-4258-a0f4-f83d3c100508.jsonl.reset.2026-03-28T00-37-38.595Z",
+      "type": "file",
+      "bytes": 4843744,
+      "reason": "old_reset_artifact"
+    },
+    {
+      "path": "/root/.openclaw/agents/main/sessions/ad5e243a-16d4-461f-ba19-1d5468586ec9-topic-10.jsonl.reset.2026-03-29T04-13-59.000Z",
+      "type": "file",
+      "bytes": 129593,
+      "reason": "old_reset_artifact"
+    }
+  ],
+  "errors": []
+}

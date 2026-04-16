@@ -2,23 +2,23 @@
   "meta": {
     "agent": "system-agent",
     "version": "1.0.0",
-    "generated_at": "2026-04-14T00:00:26.798730+02:00",
-    "duration_ms": 25331,
+    "generated_at": "2026-04-16T06:00:24.032935+02:00",
+    "duration_ms": 22225,
     "ttl_hours": 1,
     "status": "success",
     "error": null,
-    "run_id": "89f4a4f1",
+    "run_id": "7217b591",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
-    "scan_time": "2026-04-14T00:00:26.798566+02:00",
+    "scan_time": "2026-04-16T06:00:24.032827+02:00",
     "system": {
-      "disk_usage_pct": 69,
+      "disk_usage_pct": 68,
       "memory": {
         "total_gb": 7.8,
-        "available_gb": 5.1,
-        "used_pct": 34.8
+        "available_gb": 5.2,
+        "used_pct": 32.8
       },
       "gateway": {
         "status": "healthy",
@@ -26,23 +26,23 @@
       },
       "openclaw_process": {
         "running": true,
-        "pid_count": 26
+        "pid_count": 23
       }
     },
     "agents": {
       "health": [
         {
           "agent": "jobs-merge",
-          "status": "stale",
-          "age_hours": 11.8,
+          "status": "healthy",
+          "age_hours": 1.8,
           "ttl_hours": 6,
-          "last_run": "2026-04-13T12:13:56.941603+02:00",
+          "last_run": "2026-04-16T04:10:38.748460+02:00",
           "last_status": "success"
         },
         {
           "agent": "jobs-review",
           "status": "stale",
-          "age_hours": 97.9,
+          "age_hours": 151.9,
           "ttl_hours": 6,
           "last_run": "2026-04-09T22:05:26.792690+02:00",
           "last_status": "success"
@@ -52,7 +52,7 @@
           "status": "healthy",
           "age_hours": 2.0,
           "ttl_hours": 4,
-          "last_run": "2026-04-13T22:00:45.262510+02:00",
+          "last_run": "2026-04-16T04:00:52.708306+02:00",
           "last_status": "success"
         },
         {
@@ -63,7 +63,7 @@
         {
           "agent": "comment-radar",
           "status": "stale",
-          "age_hours": 403.0,
+          "age_hours": 457.0,
           "ttl_hours": 6,
           "last_run": "2026-03-28T03:00:24.648751+00:00",
           "last_status": null
@@ -71,27 +71,28 @@
         {
           "agent": "outreach-agent",
           "status": "stale",
-          "age_hours": 46.0,
+          "age_hours": 100.0,
           "ttl_hours": 6,
           "last_run": "2026-04-12T00:01:29.419082+00:00",
           "last_status": null
         },
         {
           "agent": "system-agent",
-          "status": "stale",
-          "age_hours": 60.0,
+          "status": "healthy",
+          "age_hours": 6.0,
           "ttl_hours": 6,
-          "last_run": "2026-04-11T12:00:19.473259+02:00",
+          "last_run": "2026-04-16T00:00:18.042215+02:00",
           "last_status": "success"
         }
       ],
-      "healthy_count": 1,
-      "stale_count": 5,
+      "healthy_count": 3,
+      "stale_count": 3,
       "total": 7
     },
     "cron": {
-      "status": "error",
-      "error": "gateway connect failed: Error: gateway closed (1006): \nError: gateway closed (1006 abnormal closure (no close frame)): no close reason\nGateway target: ws://127.0.0.1:18789\nSource: local loopback\nConfi"
+      "status": "healthy",
+      "job_count": 30,
+      "raw_output": "ID                                   Name                     Schedule                         Next       Last       Status    Target    Agent ID   Model               \n068f8a9b-00e3-4bc3-85b5-9d31220a4859 Model Guardian           cron 0 */6 * * * @ Africa/Cai... in <1m     6h ago     ok        isolated  main       openai-codex/gpt-5.4\nadf135b8-ce5f-47ce-94dc-130f66706b10 Monitor lossless-claw... every 2h                         in 58m     1h ago     ok        session:agent:main:telegram:direct:"
     },
     "external_services": {
       "notion": {
@@ -110,19 +111,19 @@
   },
   "kpi": {
     "system_uptime": 100,
-    "agents_healthy": 1,
-    "agents_stale": 5,
-    "cron_success_rate": 0,
+    "agents_healthy": 3,
+    "agents_stale": 3,
+    "cron_success_rate": 100,
     "alerts_active": 0
   },
   "recommendations": [
     {
-      "id": "rec-89f4a4f1-0",
+      "id": "rec-7217b591-0",
       "action": "run_agents",
-      "target": "5 stale agent(s): jobs-merge, jobs-review, comment-radar, outreach-agent, system-agent",
+      "target": "3 stale agent(s): jobs-review, comment-radar, outreach-agent",
       "reason": "Agent data is past TTL",
       "urgency": "medium",
-      "timestamp": "2026-04-14T00:00:26.798646+02:00"
+      "timestamp": "2026-04-16T06:00:24.032872+02:00"
     }
   ]
 }

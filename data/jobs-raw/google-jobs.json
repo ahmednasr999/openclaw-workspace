@@ -2,16 +2,35 @@
   "meta": {
     "agent": "jobs-source-google",
     "version": "1.0.0",
-    "generated_at": "2026-04-15T04:09:40.117622+02:00",
-    "duration_ms": 576129,
+    "generated_at": "2026-04-16T04:09:13.889292+02:00",
+    "duration_ms": 549674,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "2552b02d",
+    "run_id": "c48ae61e",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": [
+    {
+      "id": "google-37c7abb02919",
+      "source": "google",
+      "title": "Project Controls Director",
+      "company": "KBR",
+      "location": "Abu Dhabi, UAE",
+      "url": "https://www.gulftalent.com/uae/jobs/project-controls-director-538176",
+      "posted": "",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 10,
+      "match_keywords": [
+        "director",
+        "uae"
+      ],
+      "raw_snippet": "",
+      "relevant": true,
+      "filter_reason": null
+    },
     {
       "id": "google-23e0c9302452",
       "source": "google",
@@ -30,19 +49,37 @@
       "raw_snippet": "",
       "relevant": true,
       "filter_reason": null
+    },
+    {
+      "id": "google-b5781fbe6082",
+      "source": "google",
+      "title": "[United Arab Emirates35](https://www.michaelpage.ae/jobs/director/united",
+      "company": "arab",
+      "location": "emirates)",
+      "url": "https://www.michaelpage.ae/jobs/director",
+      "posted": "",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 6,
+      "match_keywords": [
+        "director"
+      ],
+      "raw_snippet": "",
+      "relevant": true,
+      "filter_reason": null
     }
   ],
   "kpi": {
     "searches_run": 107,
-    "exa_results_raw": 639,
-    "single_jobs_direct": 3,
-    "listing_pages_found": 7,
-    "listing_pages_extracted": 4,
-    "noise_filtered": 445,
-    "malformed_filtered": 14,
-    "unique_jobs_final": 1,
+    "exa_results_raw": 653,
+    "single_jobs_direct": 5,
+    "listing_pages_found": 9,
+    "listing_pages_extracted": 5,
+    "noise_filtered": 458,
+    "malformed_filtered": 23,
+    "unique_jobs_final": 3,
     "errors": 0,
-    "exa_cost_estimate_usd": 0.77,
+    "exa_cost_estimate_usd": 0.776,
     "strategy": "Exa keyword + auto(domain) + neural + watchlist company discovery \u2192 classify \u2192 GET_CONTENTS",
     "watchlist_companies": 33
   },

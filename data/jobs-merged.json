@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-merge",
     "version": "1.0.0",
-    "generated_at": "2026-04-15T04:10:28.842793+02:00",
-    "duration_ms": 48638,
+    "generated_at": "2026-04-16T04:10:38.748460+02:00",
+    "duration_ms": 84775,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "ca2be1e3",
+    "run_id": "0174728e",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -19,7 +19,7 @@
       "company": "Robert Walters",
       "location": "Dubai, Dubai, United Arab Emirates",
       "url": "https://www.linkedin.com/jobs/view/4399755034",
-      "posted": "",
+      "posted": "2026-04-14",
       "seniority": "C-Suite",
       "domain_match": false,
       "keyword_score": 36,
@@ -48,43 +48,9 @@
       "first_seen": "2026-04-15"
     },
     {
-      "id": "linkedin_jobspy-li-4393011548",
-      "source": "linkedin_jobspy",
-      "title": "Head of Platform Growth and Monetization",
-      "company": "Astra Tech",
-      "location": "Dubai, Dubai, United Arab Emirates",
-      "url": "https://www.linkedin.com/jobs/view/4393011548",
-      "posted": "2026-04-01",
-      "seniority": "Director",
-      "domain_match": false,
-      "keyword_score": 33,
-      "match_keywords": [
-        "fintech",
-        "ai",
-        "head of",
-        "growth",
-        "platform"
-      ],
-      "raw_snippet": "**Role Summary**\n The Head of Platform Growth \\& Monetisation is responsible for driving sustainable user and revenue growth across the Astra Tech \\& Botim ecosystem by unlocking value from the platform\u2019s communication, fintech, and digital services portfolio. The role serves as the custodian of pla",
-      "relevant": false,
-      "filter_reason": "no-role-family",
-      "search_country": "United Arab Emirates",
-      "search_title": "\"technology\" AND (\"director\" OR \"head\") AND (\"healthcare\" OR \"fintech\")",
-      "linkedin_id": "li-4393011548",
-      "jd_text": "**Role Summary**\n The Head of Platform Growth \\& Monetisation is responsible for driving sustainable user and revenue growth across the Astra Tech \\& Botim ecosystem by unlocking value from the platform\u2019s communication, fintech, and digital services portfolio. The role serves as the custodian of platform economics, ensuring alignment between user growth, engagement, and monetisation strategies across the platform\u2019s services. This leader will define scalable growth frameworks, leverage data\\-driven experimentation, and optimize monetisation opportunities across Astra Tech \\& Botim's expanding digital ecosystem.\n   \n\n  \n\n**Responsibilities** \n**2\\. Platform Monetisation** \n**3\\. Portfolio Performance Ownership.** \n**4\\. Data\\-Driven Growth**\n* Platform Growth Strategy\n* Define and execute Astra Tech \\& Botim platform growth roadmap across communication, fintech, and digital services.\n* Drive strategies to increase user acquisition, engagement, and retention across the platform.\n* Design scalable growth loops across product, marketing, and lifecycle channels.\n* Develop monetisation frameworks that maximize the value of Astra Tech \\& Botim's large user base. Identify opportunities across: \\- Fintech services \\- Payments and remittances \\- Digital services \\- Value\\-added offerings\n* Optimize revenue per active user through pricing, bundles, and user lifecycle strategies.\n* Act as the business performance owner for the platform services portfolio, ensuring each service contributes to overall growth and monetization goals.\n* Monitor service performance through clear metrics around adoption, engagement, and revenue contribution.\n* Prioritize initiatives based on data insights and business impact.\n\n\n Establish and scale a culture of experimentation and measurable growth across the platform. Implement frameworks for: \\- A/B testing \\- cohort analysis \\- lifecycle optimization \\- Translate user behaviour insights into actionable growth strategies.\n **6\\. Cross\\-Functional Leadership**\n* Ecosystem Development\n* Collaborate with internal teams to expand the range of services available on the platform.\n* Support the integration of new services and offerings that enhance the platform\u2019s value proposition. Ensure new services align with platform growth and monetisation objectives.\n* Work closely with Product, Marketing, Data, and Commercial teams to drive growth initiatives.\n* Align stakeholders around platform growth priorities and monetisation opportunities.\n* Ensure consistent execution of growth strategies across different services\n\n\n**Requirements**\n* 8\\+ years of experience in consumer technology, fintech, or digital platforms.\n* Demonstrated experience driving growth and monetisation in large\\-scale digital products.\n* Strong background in user lifecycle growth, engagement strategy, and revenue optimization.\n* Experience working with multi\\-service platforms or digital ecosystems.\n* Strong analytical mindset with experience leveraging data to inform growth decisions.\n* Exposure to emerging markets and digital financial services is highly valued.\n* Ability to optimize growth across a portfolio of services rather than a single product.\n* Growth Orientation: Deep understanding of user acquisition, engagement, retention, and monetization levers.\n* Commercial Acumen: Strong instinct for identifying scalable revenue opportunities within large digital user bases.\n* Data Fluency: Ability to translate analytics and experimentation into strategic decision\\-making.\n* Collaborative Leadership: Comfort working across product, marketing, data, and commercial teams to deliver platform\\-wide growth.",
-      "source_count": 1,
-      "country": "United Arab Emirates",
-      "industry_bonus": 12,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ],
-      "first_seen": "2026-04-13"
-    },
-    {
       "id": "linkedin_jobspy-li-4395971563",
       "source": "linkedin_jobspy",
-      "title": "Chief Executive Officer",
+      "title": "Chief Executive Officer (MEP)",
       "company": "Talents Tide",
       "location": "Dubai, United Arab Emirates",
       "url": "https://www.linkedin.com/jobs/view/4395971563",
@@ -156,7 +122,7 @@
       "company": "Salesforce",
       "location": "Dubai, Dubai, United Arab Emirates",
       "url": "https://www.linkedin.com/jobs/view/4402006154",
-      "posted": "",
+      "posted": "2026-04-14",
       "seniority": "C-Suite",
       "domain_match": false,
       "keyword_score": 26,
@@ -181,38 +147,6 @@
         "linkedin"
       ],
       "first_seen": "2026-04-15"
-    },
-    {
-      "id": "linkedin_jobspy-li-4401005244",
-      "source": "linkedin_jobspy",
-      "title": "Senior Vice President, Client Service Executive, Global Payments & Trade",
-      "company": "BNY",
-      "location": "Dubai, Dubai, United Arab Emirates",
-      "url": "https://www.linkedin.com/jobs/view/4401005244",
-      "posted": "2026-04-12",
-      "seniority": "VP",
-      "domain_match": false,
-      "keyword_score": 23,
-      "match_keywords": [
-        "payments",
-        "executive",
-        "growth"
-      ],
-      "raw_snippet": "**Job Description**\n Senior Vice President, Client Service Executive, Global Payments \\& Trade\n   \n\n  \n\n At BNY, our culture allows us to run our company better and enables employees\u2019 growth and success. As a leading global financial services company at the heart of the global financial system, we i",
-      "relevant": false,
-      "filter_reason": "no-role-family",
-      "search_country": "United Arab Emirates",
-      "search_title": "Chief Operating Officer",
-      "linkedin_id": "li-4401005244",
-      "jd_text": "**Job Description**\n Senior Vice President, Client Service Executive, Global Payments \\& Trade\n   \n\n  \n\n At BNY, our culture allows us to run our company better and enables employees\u2019 growth and success. As a leading global financial services company at the heart of the global financial system, we influence nearly 20% of the world\u2019s investible assets. Every day, our teams harness cutting\\-edge AI and breakthrough technologies to collaborate with clients, driving transformative solutions that redefine industries and uplift communities worldwide.\n   \n\n  \n\n Recognized as a top destination for innovators, BNY is where bold ideas meet advanced technology and exceptional talent. Together, we power the future of finance \u2013 and this is what is all about. Join us and be part of something extraordinary.\n   \n\n  \n\n We\u2019re seeking a future team member for the role of Senior Vice President, Client Service Executive to join our Global Payments \\& Trade team. This role is in Dubai.\n   \n\n  \n\n The successful candidate will combine deep client\\-facing experience, strong knowledge of payments and trade servicing, and proven people leadership capability to drive service excellence, manage escalations, and contribute strategic insight across service delivery, product, technology, and operations. This role also plays a key part in supporting relationship management activity and enhancing the experience of both existing and prospective clients .\n   \n\n  \n\n In this role, you\u2019ll make an impact in the following ways:\n   \n\n  \n\n* Develop a deep understanding of clients\u2019 businesses, operating models, and technology strategies in order to deliver services aligned to their needs and expectations across products and services.\n* Act as a senior point of contact for clients and internal stakeholders, building trusted relationships and promoting high\\-quality client experience.\n* Provide day\\-to\\-day service support to Global Payments \\& Trade Commercial Team, helping to maintain positive experiences for both existing and prospective clients.\n* Monitor service quality, product performance, and the overall client experience, proactively identifying potential risks, service issues, and improvement opportunities.\n* Deliver strategic insight and recommendations to enhance service delivery, client outcomes, operational effectiveness, and product and technology solutions.\n* Serve as the primary escalation point for clients and internal stakeholders across multiple market segments, regions, countries, and languages.\n* Lead resolution of complex client issues, including matters relating to payments, trade, and other BNY products and services.\n* Coordinate effectively across internal teams to ensure timely, transparent, and client\\-focused issue resolution.\n* Lead, manage, and support the local Client Service team, ensuring the team is well positioned to deliver consistently exceptional service.\n* Recruit, direct, motivate, coach, and develop team members, fostering high performance, accountability, collaboration, and continuous growth.\n* Drive achievement of team goals and objectives, with responsibility for talent management, employee development, and day\\-to\\-day supervision.\n* Build a strong team culture that enables individuals to maximize their contribution and operate effectively as a cohesive unit.\n* Identify themes and trends across client feedback, service issues, and operational performance to inform continuous improvement.\n* Partner with internal stakeholders across product, operations, technology, and relationship management to optimize client solutions and service outcomes.\n* Contribute leadership insight into evolving client needs, service enhancements, and regional servicing strategy.\n\n\n To be successful in this role, we\u2019re seeking the following:\n   \n\n  \n\n* Significant direct client\\-facing experience within financial services.\n* Strong experience in correspondent banking and/or a strong understanding of payments products and the end\\-to\\-end payments lifecycle.\n* Demonstrated experience managing client service teams and leading people effectively.\n* Proven ability to manage complex escalations and work across multiple stakeholders, regions, and service areas.\n* Strong commercial awareness and ability to align service delivery with client business needs.\n* Excellent communication, relationship management, and problem\\-solving skills.\n* Leadership Capabilities\n\n\n At BNY, our culture speaks for itself, check out the latest BNY news at:\n   \n\n  \n\n* BNY Newsroom\n* BNY LinkedIn\n\n\n**Here\u2019s a Few Of Our Recent Awards**\n* America\u2019s Most Innovative Companies, Fortune, 2025\n* World\u2019s Most Admired Companies, Fortune 2025\n* \u201cMost Just Companies\u201d, Just Capital and CNBC, 2025\n\n\n**Our Benefits And Rewards**\n BNY offers highly competitive compensation, benefits, and wellbeing programs rooted in a strong culture of excellence and our pay\\-for\\-performance philosophy. We provide access to flexible global resources and tools for your life\u2019s journey. Focus on your health, foster your personal resilience, and reach your financial goals as a valued member of our team, along with generous paid leaves, including paid volunteer time, that can support you and your family through moments that matter.\n   \n\n  \n\n BNY is an Equal Employment Opportunity/Affirmative Action Employer \\- Underrepresented racial and ethnic groups/Females/Individuals with Disabilities/Protected Veterans.",
-      "source_count": 1,
-      "country": "United Arab Emirates",
-      "industry_bonus": 6,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ],
-      "first_seen": "2026-04-13"
     },
     {
       "id": "linkedin_jobspy-li-4398459427",
@@ -247,13 +181,46 @@
       "first_seen": "2026-04-13"
     },
     {
+      "id": "linkedin_jobspy-li-4401427955",
+      "source": "linkedin_jobspy",
+      "title": "Director \u2013 Facilities & Asset Operations",
+      "company": "Foreground.",
+      "location": "Riyadh, Riyadh, Saudi Arabia",
+      "url": "https://www.linkedin.com/jobs/view/4401427955",
+      "posted": "",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 23,
+      "match_keywords": [
+        "ai",
+        "infrastructure",
+        "director",
+        "saudi"
+      ],
+      "raw_snippet": "Our client is a large facility and asset management organisation supporting commercial and infrastructure assets across Saudi Arabia. The business manages complex, high\\-value portfolios.\n   \n\n  \n\n**The Role**\n The Director will oversee facility operations, maintenance strategy, and asset lifecycle ",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "Chief Operating Officer",
+      "linkedin_id": "li-4401427955",
+      "jd_text": "Our client is a large facility and asset management organisation supporting commercial and infrastructure assets across Saudi Arabia. The business manages complex, high\\-value portfolios.\n   \n\n  \n\n**The Role**\n The Director will oversee facility operations, maintenance strategy, and asset lifecycle management. This role will manage multi\\-site operations and large technical teams. A key focus will be service reliability, cost optimisation, and compliance with SLAs. The Director will work closely with clients, contractors, and internal stakeholders. This role will also drive operational standardisation and performance reporting. Leadership across technical and non\\-technical teams is essential.\n   \n\n  \n\n**Candidate Profile**\n Candidates must have senior experience in facility or asset operations. Strong exposure to large portfolios and technical environments is essential. Experience in Saudi Arabia is highly preferred. The ideal profile demonstrates operational rigour, leadership maturity, and client management skills. Technical qualifications are advantageous.",
+      "source_count": 1,
+      "country": "Saudi Arabia",
+      "industry_bonus": 3,
+      "policy_status": "pass",
+      "sources": [
+        "linkedin"
+      ],
+      "first_seen": "2026-04-16"
+    },
+    {
       "id": "linkedin_jobspy-li-4400095946",
       "source": "linkedin_jobspy",
       "title": "Director of Business Development, WooCommerce",
       "company": "Jobgether",
       "location": "",
       "url": "https://www.linkedin.com/jobs/view/4400095946",
-      "posted": "",
+      "posted": "2026-04-14",
       "seniority": "C-Suite",
       "domain_match": false,
       "keyword_score": 20,
@@ -286,7 +253,7 @@
       "company": "Sanofi",
       "location": "",
       "url": "https://www.linkedin.com/jobs/view/4401724773",
-      "posted": "",
+      "posted": "2026-04-14",
       "seniority": "Other",
       "domain_match": false,
       "keyword_score": 20,
@@ -378,35 +345,68 @@
       "first_seen": "2026-04-14"
     },
     {
-      "id": "linkedin_jobspy-li-4397578130",
+      "id": "linkedin_jobspy-li-4402265097",
       "source": "linkedin_jobspy",
-      "title": "Senior Vice President, Public Sector, EEMEA",
-      "company": "Mastercard",
-      "location": "Dubai, United Arab Emirates",
-      "url": "https://www.linkedin.com/jobs/view/4397578130",
-      "posted": "2026-04-03",
+      "title": "Managing Director",
+      "company": "Kasumigaseki (MENA)",
+      "location": "Dubai, Dubai, United Arab Emirates",
+      "url": "https://www.linkedin.com/jobs/view/4402265097",
+      "posted": "2026-04-15",
       "seniority": "C-Suite",
       "domain_match": false,
       "keyword_score": 16,
       "match_keywords": [
-        "payments",
-        "ai"
+        "ai",
+        "director",
+        "dubai"
       ],
-      "raw_snippet": "**Our Purpose**\n*Mastercard powers economies and empowers people in 200\\+ countries and territories worldwide. Together with our customers, we\u2019re helping build a sustainable economy where everyone can prosper. We support a wide range of digital payments choices, making transactions secure, simple, s",
+      "raw_snippet": "**Company Overview**\n Kasumigaseki Restaurant is a premium Japanese dining concept in Dubai, offering an authentic and refined culinary experience rooted in traditional Japanese hospitality and craftsmanship. Committed to excellence, the restaurant delivers exceptional service standards through a se",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
       "search_title": "Chief Operating Officer",
-      "linkedin_id": "li-4397578130",
-      "jd_text": "**Our Purpose**\n*Mastercard powers economies and empowers people in 200\\+ countries and territories worldwide. Together with our customers, we\u2019re helping build a sustainable economy where everyone can prosper. We support a wide range of digital payments choices, making transactions secure, simple, smart and accessible. Our technology and innovation, partnerships and networks combine to deliver a unique set of products and services that help people, businesses and governments realize their greatest potential.*\n**Title And Summary**\n Senior Vice President, Public Sector, EEMEA\n   \n\n  \n\n Location is flexible but must be in EEMEA region.\n   \n\n  \n\n Who is Mastercard?\n   \n\n  \n\n Mastercard is a global technology company in the payments industry. Our mission is to connect and power an inclusive, digital economy that benefits everyone, everywhere by making transactions safe, simple, smart, and accessible. Using secure data and networks, partnerships and passion, our innovations and solutions help individuals, financial institutions, governments, and businesses realize their greatest potential.\n   \n\n  \n\n Our decency quotient, or DQ, drives our culture and everything we do inside and outside of our company. With connections across more than 210 countries and territories, we are building a sustainable world that unlocks priceless possibilities for all.\n   \n\n  \n\n**Overview**\n Mastercard is dedicated to promoting inclusive growth and financial inclusion. The mandate of the Regional Public Sector unit is to build durable, trusted relationships with key government agencies to accelerate their transition to a cashless ecosystem though digitalization, while increasing revenues and seeding new markets for Mastercard. We drive relevance and revenues in the government space by developing effective regional go to market programs supported by clear priorities, success metrics and incentives. We provide expert sales support to both country managers and local sales resources through a solid client engagement playbook approach. We guide the transition from reactive solutions sales to strategic public sector programs. And we ensure alignment between regional demand and our global solutions.\n   \n\n  \n\n* The Regional Public Sector Senior Vice President role focuses on aligning Mastercard\u2019s\n\n\n product, service and ecosystem capabilities to solve for the challenges government client face today in the areas of financial inclusion, citizen service efficiency, inclusive economic growth and government operational excellence. We do this by engaging, listening and leading. Our regional team is comprised of industry leaders, relationship builders and deal closers. We apply Mastercard\u2019s digital tools, business insights, last mile solutions and market organizing skills to support client success. We also have a passion for learning, exploring new capabilities, and applying the best methodologies and insights to the government business.\n   \n\n  \n\n* This role is at the heart of our intent to scale our business across all regions to drive revenue, market\n\n\n relevance and social impact. The unit is regionally deployed and focuses on a select number of priority\n   \n\n  \n\n markets, segments and clients, directly agreed with the senior leadership in the region.\n   \n\n  \n\n* The Regional Public Sector SVP is accountable for:\n* The development of the regional government vision, strategy and execution program including a list of prioritized markets, clients and solution opportunities.\n* Identify and pursue opportunities in digitizing big government flows, transformational infrastructure partnerships, major transit and tourism initiatives\n* The acceleration of Mastercard\u2019s revenue performance in the region, through a structured and diligent sales excellence approach.\n* The effective management of a growing team of senior government specialists across target markets, in a peer alignment to the Divisional Presidents.\n* The effective representation of the Public Sector business opportunity within the region\u2019s senior management team, as well as the negotiation of the related revenue and relevance objectives with other members of the management team.\n* The alignment of global, regional and local resources to drive execution, in close coordination with the Region\u2019s President, the Divisional Presidents, the regional product and service units and the Mastercard Strategic Growth management team.\n* Direct engagement on key government opportunities, at the top civil servant and political government executive level, developing the business opportunities across the region, assisting country managers and helping win strategic deals.\n* Capacity building at the markets level by training sales on relevant Mastercard solutions, narrative and client references.\n* The establishment and management of a regional community of practice to cross\\-fertilize regional and global best practices.\n* This position reports directly to EVP, Market Development \\- EEMEA with a dotted line reporting relationship into the Global Lead, Public Sector Center of Excellence. Location is flexible but must be in region.\n\n\n Role\n   \n\n  \n\n* Primary accountability for development and execution of the regional government strategy, starting\n\n\n**From**\n* Develop a deep understanding of regional, national and local priorities.\n* Engaging region and division leadership in a peer fashion to prioritize clients and solution opportunities. Negotiate and secure local support of resources, aligning them to execution.\n* Securing global and regional resources to execute on the plan and drive marquee wins. Build a region\\-wide Public Sector extended steering committee including peers in the Public Policy, Legal, Services, Consumer and commercial products, O\\&T and Delivery units.\n* Lead a team of segment experts, helping them growing in their roles by active coaching and talent planning\n* Accelerate solutions deployment by providing regional trainings to own team and other in market units, provide expert sales support for marquee engagements.\n* Liaison with the peers across the five global regions of MA and the Global PS team to represent EEMEA and draw on expertise and market development support\n* Personally initiate and drive marquee, commercial deals.\n* Represent the Region within Strategic Growth\u2019s management team. Drive strategic alignment with global units.\n* Build and curate the regional community of practice. Mobilize the team to act as first line of support for regional \\& divisional presidents for thought leadership and strategic engagements.\n\n\n**All About You**\n* Experience working for or closely with government agencies, managing process improvement and\n\n\n transformative change initiatives, as well as proven experience in engaging very senior government\n   \n\n  \n\n leaders to build durable relations.\n   \n\n  \n\n* Proven track in leading and closing large and complex government deals in the region.\n* Consultative selling focused, with deep product, services, and solutions expertise and hands\\-on approach\n* Adept at interacting with senior Mastercard stakeholders \u2013 in terms of engagement, communication and transparency of purpose. Can skillfully lead complex regional initiatives that require collaboration across functional, geographical and cultural lines.\n* Demonstrated ability to work across divisional boundaries, within the region, acting as peer to other senior leaders.\n* Self\\-motivated, thrives in a fast\\-paced environment; readiness to take\\-on stretch goals.\n* Strong gravitas, exceptional relationship management, influencing and communication skills.\n* Open to travel across the region and globally\n* English fluency is required. At least one other regional language a strong plus.\n\n\n**Corporate Security Responsibility**\n All activities involving access to Mastercard assets, information, and networks comes with an inherent risk to the organization and, therefore, it is expected that every person working for, or on behalf of, Mastercard is responsible for information security and must:\n   \n\n  \n\n* Abide by Mastercard\u2019s security policies and practices;\n* Ensure the confidentiality and integrity of the information being accessed;\n* Report any suspected information security violation or breach, and\n* Complete all periodic mandatory security trainings in accordance with Mastercard\u2019s guidelines.",
+      "linkedin_id": "li-4402265097",
+      "jd_text": "**Company Overview**\n Kasumigaseki Restaurant is a premium Japanese dining concept in Dubai, offering an authentic and refined culinary experience rooted in traditional Japanese hospitality and craftsmanship. Committed to excellence, the restaurant delivers exceptional service standards through a seamless blend of precision, elegance, and highly personalized guest experiences. Since its launch, Kasumigaseki has earned notable industry recognition, winning Best Newcomer 2025 at the Hotel \\& Catering Awards and receiving nominations for Best Japanese Restaurant at both the Time Out Dubai Awards 2026 and the FACT Dining Awards 2026, reinforcing its position as a distinguished destination in Dubai's upscale dining scene.\n   \n\n  \n\n**Role Summary**\n We are seeking an experienced and dynamic Managing Director to lead the overall operations and strategic direction of Kasumigaseki restaurant in Dubai. This is a full\\-time, on\\-site leadership role responsible for driving business performance, maintaining brand excellence, and delivering an exceptional guest experience while aligning with headquarters' vision.\n   \n\n  \n\n**Key Responsibilities**\n* Oversee full restaurant operations, including service, kitchen coordination, and quality control\n* Drive financial performance through revenue growth, cost management, and achievement of KPIs\n* Lead and develop teams, including recruitment, training, and performance management\n* Enhance customer satisfaction and manage relationships with VIP guests\n* Develop and execute brand strategies, marketing initiatives, and business growth plans\n* Build and manage relationships with local suppliers, including negotiation and procurement\n* Ensure compliance with health, safety, and regulatory standards, driving continuous improvement\n* Act as the key liaison with headquarters, ensuring alignment and timely reporting\n\n\n**Qualifications**\n* Minimum 5 years of management experience in the food and beverage industry\n* Strong business\\-level proficiency in English\n* Proven experience in financial and operational management, including P\\&L ownership and KPI management\n* Demonstrated leadership and team management capabilities\n\n\n**Key Competencies**\n* Experience in fine dining or high\\-end restaurant environments\n* Strong understanding of Japanese cuisine and hospitality culture\n* International experience or proven ability to manage multicultural teams\n* Experience in new business launches, concept development, or brand building\n* Strategic thinker with a strong business perspective and ability to make independent decisions\n* Committed to both preserving brand identity and driving continuous evolution\n* Proactive and resilient, with the ability to operate effectively in dynamic and uncertain environments\n* Strong leadership presence with the ability to inspire, align, and develop diverse teams\n* Ability to balance exceptional hospitality standards with strong commercial and operational acumen\n\n\n**What We Offer**\n* Opportunity to lead a premium Japanese dining brand in Dubai\n* Dynamic, high\\-performance and entrepreneurial work environment\n* Competitive executive compensation and career growth opportunities",
       "source_count": 1,
       "country": "United Arab Emirates",
-      "industry_bonus": 9,
+      "industry_bonus": 3,
       "policy_status": "pass",
       "sources": [
         "linkedin"
       ],
-      "first_seen": "2026-04-04"
+      "first_seen": "2026-04-16"
+    },
+    {
+      "id": "linkedin_jobspy-li-4401440135",
+      "source": "linkedin_jobspy",
+      "title": "Insurance Business Development Director",
+      "company": "Estithmar Capital",
+      "location": "Doha, Qatar",
+      "url": "https://www.linkedin.com/jobs/view/4401440135",
+      "posted": "",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 16,
+      "match_keywords": [
+        "director",
+        "growth",
+        "api"
+      ],
+      "raw_snippet": "The Insurance Business Development Director is responsible for driving the growth and strategic expansion of Estithmar Capital\u2019s insurance portfolio. This role focuses on identifying investment opportunities, building strategic partnerships, and developing innovative insurance solutions across tradi",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Qatar",
+      "search_title": "Portfolio Director",
+      "linkedin_id": "li-4401440135",
+      "jd_text": "The Insurance Business Development Director is responsible for driving the growth and strategic expansion of Estithmar Capital\u2019s insurance portfolio. This role focuses on identifying investment opportunities, building strategic partnerships, and developing innovative insurance solutions across traditional and digital channels.\n \n\n\n\n The position plays a critical role in aligning insurance initiatives with the firm\u2019s broader investment strategy, ensuring sustainable growth, profitability, and market positioning across regional and international markets.\n \n\n\n\n**Key Responsibilities** \n\n\n\n\n**1\\. Portfolio Management** \n\n\n\n* Oversee and manage the firm\u2019s insurance investments, partnerships, and ventures.\n* Monitor financial and operational performance of insurance\\-related assets.\n* Develop and execute strategies to enhance portfolio value, profitability, and scalability.\n* Prepare performance reports and insights for senior management and shareholders.\n\n\n\n**2\\. Business Development \\& Investments** \n\n\n\n* Identify and evaluate new opportunities across:\n* Insurance companies\n* Insurtech platforms\n* Brokerage firms\n* Strategic distribution partnerships\n* Lead end\\-to\\-end deal execution including sourcing, structuring, negotiation, and closing.\n* Develop new revenue streams and scalable insurance business models.\n\n\n\n**3\\. Strategic Partnerships** \n\n\n\n* Build and manage relationships with:\n* Insurance and reinsurance companies\n* Brokers and intermediaries\n* Financial institutions and banks\n* Structure and negotiate distribution agreements, joint ventures, and alliances.\n* Represent Estithmar Capital in key industry engagements and forums.\n\n\n\n**4\\. Market \\& Industry Analysis** \n\n\n\n* Conduct in\\-depth research on regional and global insurance markets.\n* Identify emerging trends and opportunities such as:\n* Digital insurance / Insurtech\n* Bancassurance\n* Embedded insurance\n* Health and life insurance segments\n* Provide strategic insights to support investment decisions.\n\n\n\n**5\\. Product Development \\& Distribution** \n\n\n\n* Collaborate with partners to design and launch innovative insurance products.\n* Develop multi\\-channel distribution strategies including:\n* Corporate partnerships\n* Digital platforms\n* Financial services ecosystems\n* Drive go\\-to\\-market strategies for new insurance offerings.\n\n\n\n**6\\. Regulatory \\& Compliance Coordination** \n\n\n\n* Ensure all insurance\\-related activities comply with applicable regulatory frameworks.\n* Liaise with regulatory bodies and supervisory authorities where required.\n* Monitor regulatory developments impacting insurance and financial services sectors.\n\n\n\n**7\\. Financial \\& Investment Analysis** \n\n\n\n* Conduct financial modeling, valuation, and due diligence for insurance investments.\n* Assess profitability, capital requirements, and associated risks.\n* Support investment committees with data\\-driven recommendations and insights.\n\n\n\n**Qualifications \\& Experience** \n\n\n\n* Bachelor\u2019s degree in Finance, Economics, Business Administration, or related field (Master\u2019s preferred).\n* Minimum\n **12\u201315 years of experience** \n in insurance, financial services, or investment management.\n* Strong exposure to:\n* Insurance business development\n* Investment structuring and partnerships\n* Insurtech / digital insurance ecosystems\n* Experience within\n **investment firms, insurance groups, or financial institutions** \n is highly preferred.\n* Regional (GCC) market experience is an advantage.\n\n\n\n**Core Competencies** \n\n\n\n* Strong commercial and investment acumen\n* Strategic thinking with execution capability\n* Advanced financial modeling and analytical skills\n* High\\-level negotiation and stakeholder management\n* Deep understanding of insurance value chains and distribution models\n* Ability to operate in a fast\\-paced, multi\\-asset investment environment\n\n\n\n**Regulatory Considerations** \n\n\n\n* May require regulatory approval depending on the scope of insurance and investment activities.\n* Must ensure compliance with applicable financial services and insurance regulations.",
+      "source_count": 1,
+      "country": "Qatar",
+      "industry_bonus": 6,
+      "policy_status": "pass",
+      "sources": [
+        "linkedin"
+      ],
+      "first_seen": "2026-04-16"
     },
     {
       "id": "linkedin_jobspy-li-4400992300",
@@ -511,7 +511,7 @@
       "company": "Hantec Trader",
       "location": "Dubai, United Arab Emirates",
       "url": "https://www.linkedin.com/jobs/view/4401790500",
-      "posted": "",
+      "posted": "2026-04-14",
       "seniority": "Director",
       "domain_match": false,
       "keyword_score": 13,
@@ -536,27 +536,27 @@
       "first_seen": "2026-04-15"
     },
     {
-      "id": "linkedin_jobspy-li-4399395327",
+      "id": "linkedin_jobspy-li-4402540739",
       "source": "linkedin_jobspy",
-      "title": "CEO Co-founder (unpaid position)",
-      "company": "IntelliVerse",
-      "location": "Dubai, United Arab Emirates",
-      "url": "https://www.linkedin.com/jobs/view/4399395327",
-      "posted": "2026-04-12",
-      "seniority": "C-Suite",
-      "domain_match": true,
+      "title": "Head of Brand Partnerships",
+      "company": "TWIC, The Wolf Is Coming Agency",
+      "location": "Dubai, Dubai, United Arab Emirates",
+      "url": "https://www.linkedin.com/jobs/view/4402540739",
+      "posted": "",
+      "seniority": "Director",
+      "domain_match": false,
       "keyword_score": 13,
       "match_keywords": [
         "ai",
-        "scaling"
+        "head of"
       ],
-      "raw_snippet": "Co\\-founder for fundraising and scaling.\n \n\n\n\n  \n\n\n\n\n\n IntelliVerse \\- AI Universe, including:\n \n\n\n\n  \n\n\n\n\n\n OneClickTrip \\- your smart AI\\-powered travel planner. Plan your dream vacation with one click. Simply describe your dream trip or upload inspiration, and instantly get a personalized plan fo",
+      "raw_snippet": "TWIC is a premier talent management and communication agency with a global footprint across Spain. We represent an elite roster of A\\-list celebrities, actors, professional athletes, and top\\-tier digital creators and profesional international tournaments. We are the bridge between European excellen",
       "relevant": false,
-      "filter_reason": "skip-word:co-founder",
+      "filter_reason": "no-role-family",
       "search_country": "United Arab Emirates",
-      "search_title": "Chief Digital Officer",
-      "linkedin_id": "li-4399395327",
-      "jd_text": "Co\\-founder for fundraising and scaling.\n \n\n\n\n  \n\n\n\n\n\n IntelliVerse \\- AI Universe, including:\n \n\n\n\n  \n\n\n\n\n\n OneClickTrip \\- your smart AI\\-powered travel planner. Plan your dream vacation with one click. Simply describe your dream trip or upload inspiration, and instantly get a personalized plan for each day with transportation options, hotel links, budget estimates, and local tips\u2014all in one click.\n \n\n\n\n  \n\n\n\n\n\n CheapTrip \\- Unique search engine that finds the cheapest ways between cities, combining flights, buses, trains and ferries.\n \n\n\n\n  \n\n\n\n\n\n DietTracker \\- helps users monitor their intake of calories, fats, proteins, carbohydrates, vitamins, and minerals in food. It not only counts these elements, but also analyzes what is absorbed by the body after digestion. Users can upload images of products, after which the application recognizes the ingredients and provides the ability to edit the list.\n \n\n\n\n  \n\n\n\n\n\n SchoolKiller \\- AI assistant for schoolchildren and students.\n \n\n\n\n  \n\n\n\n\n\n StyleTranslator \\- converts text to different styles, tones and languages.\n \n\n\n\n  \n\n\n\n\n\n Matter of choice \\- interactive scenarios for studying different subjects, languages and decision making.\n \n\n\n\n  \n\n\n\n\n\n VirtualClone \\- AI\\-Powered Digital Twin from Your YouTube\n \n\n\n\n  \n\n\n\n\n\n At VirtualClone, we transform YouTube channels into AI digital twins. Our technology transcribes your videos, learns your expertise, and creates a text\\-based assistant that communicates with your audience in multiple languages.\n \n\n\n\n  \n\n\n\n\n\n \u2728 Key Features:\n \n\n\n\n Primary input: YouTube videos (auto\\-transcription \\& knowledge extraction).\n \n\n\n\n Additional inputs: websites, articles, and other content.\n \n\n\n\n Engage your audience with answers in your authentic style \u2014 or choose from different styles (educational, inspiring, business\\-focused, casual).\n \n\n\n\n Expand your reach with multilingual content and SEO\\-ready text.\n \n\n\n\n Save time, scale your presence, and never leave your audience without an answer.\n \n\n\n\n We don\u2019t just replicate \u2014 we amplify your voice and adapt it to new contexts.",
+      "search_title": "Head of Digital Transformation",
+      "linkedin_id": "li-4402540739",
+      "jd_text": "TWIC is a premier talent management and communication agency with a global footprint across Spain. We represent an elite roster of A\\-list celebrities, actors, professional athletes, and top\\-tier digital creators and profesional international tournaments. We are the bridge between European excellence and Middle Eastern luxury, specializing in high\\-impact endorsements and strategic brand alignments.\n \n\n\n**The Role** \n\n We are looking for a\n **high\\-performing, connected, and strategic Partnerships Leader** \n to spearhead our commercial expansion in the GCC. Your mission is to secure high end endorsement deals, ambassadorships, and strategic partnerships for our top\\-tier Spanish and European celebrities with the region\u2019s biggest brands and government entities.\n \n\n\n**Key Responsibilities** \n* **Rainmaking:** \n Leverage your existing network to secure major endorsement deals with luxury brands, real estate giants (EMAAR, NEOM), telecommunications, and government tourism boards (Visit Saudi, Dubai Tourism).\n* **Strategic Matchmaking:** \n Identify the perfect synergy between our talent\u2019s DNA and the GCC\u2019s market needs.\n* **Negotiation \\& Closing:** \n Lead high\\-stakes negotiations for image rights, ambassadorships, and appearances, ensuring the highest standards of professional service for our talent.\n* **KSA Expansion:** \n Directly target and cultivate relationships within the Kingdom of Saudi Arabia (PIF projects, Vision 2030 initiatives).\n* **Stakeholder Management:** \n Act as the primary liaison between our European HQ and GCC\\-based clients.\n\n\n**What We Are Looking For** \n* **7\\+ Years of Experience** \n in talent management, luxury brand partnerships, or high\\-level media sales in Dubai/GCC.\n\n\n\n  \n\n\n\n\n**What We Offer** \n* **Access:** \n Direct access to some of the most influential celebrities and athletes in Europe.\n* **Infrastructure:** \n A solid legal and operational base (SRL/Spain\\-Italy) to back your deals.\n* **Incentives:** \n Competitive base salary with an\n **aggressive, uncapped commission structure** \n on all closed endorsements.\n* **Growth:** \n The opportunity to be the face of TWIC in the world\u2019s most exciting emerging market.",
       "source_count": 1,
       "country": "United Arab Emirates",
       "industry_bonus": 3,
@@ -564,7 +564,38 @@
       "sources": [
         "linkedin"
       ],
-      "first_seen": "2026-04-15"
+      "first_seen": "2026-04-16"
+    },
+    {
+      "id": "linkedin_jobspy-li-4399954648",
+      "source": "linkedin_jobspy",
+      "title": "Personal Assistant to Chief Executive Officer",
+      "company": "Majestic International Company",
+      "location": "Riyadh, Riyadh, Saudi Arabia",
+      "url": "https://www.linkedin.com/jobs/view/4399954648",
+      "posted": "",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 13,
+      "match_keywords": [
+        "executive",
+        "growth"
+      ],
+      "raw_snippet": "**Company Description**\n\n Majestic International Company, established in 1986, has a global presence and a reputation for excellence. Initially operating in the defense sector, the company has since diversified into key strategic industries to foster development and growth. Built on American busines",
+      "relevant": false,
+      "filter_reason": "skip-word:assistant",
+      "search_country": "Saudi Arabia",
+      "search_title": "Chief Operating Officer",
+      "linkedin_id": "li-4399954648",
+      "jd_text": "**Company Description**\n\n Majestic International Company, established in 1986, has a global presence and a reputation for excellence. Initially operating in the defense sector, the company has since diversified into key strategic industries to foster development and growth. Built on American business principles, including discipline, adaptability, and a commitment to excellence, Majestic International delivers high\\-performing, efficient, and premium services. Our teams leverage cutting\\-edge technology and specialized skills to exceed client and customer expectations worldwide.\n   \n\n\n\n\n**Role Description**\n\n This is a full\\-time on\\-site role for a Personal Assistant to the Chief Executive Officer, based in Riyadh. The Personal Assistant will manage the CEO's daily schedule, provide executive administrative support, and assist with clerical duties. The role involves organizing meetings, maintaining efficient communication, preparing reports, and ensuring smooth day\\-to\\-day operations to support the CEO\u2019s activities and priorities. This role requires professionalism, adaptability, and exceptional organizational skills.\n   \n\n\n\n\n**Qualifications**\n* Proficiency in Executive Administrative Assistance and Personal Assistance\n* Experience in Diary Management and scheduling\n* Strong Administrative Assistance and Clerical Skills\n* Exceptional organizational and time management abilities\n* Strong written and verbal communication skills\n* Proficiency with office software and scheduling tools\n* Ability to maintain confidentiality and handle sensitive information\n* Prior experience in a similar role is preferred\n* Bachelor\u2019s degree in Business Administration, Management, or a related field is advantageous\n* Fluency in English is required, and proficiency in Arabic is a plus",
+      "source_count": 1,
+      "country": "Saudi Arabia",
+      "industry_bonus": 6,
+      "policy_status": "pass",
+      "sources": [
+        "linkedin"
+      ],
+      "first_seen": "2026-04-16"
     },
     {
       "id": "linkedin_jobspy-li-4383941847",
@@ -662,6 +693,37 @@
       "first_seen": "2026-04-13"
     },
     {
+      "id": "linkedin_jobspy-li-4399549551",
+      "source": "linkedin_jobspy",
+      "title": "Head of IT Governance - Permanent \u2013 Bahrain \u2013 Job Ref: 26025",
+      "company": "Howard Lock Consulting Ltd",
+      "location": "Manama, Capital Governorate, Bahrain",
+      "url": "https://www.linkedin.com/jobs/view/4399549551",
+      "posted": "2026-04-13",
+      "seniority": "Director",
+      "domain_match": true,
+      "keyword_score": 13,
+      "match_keywords": [
+        "ai",
+        "head of"
+      ],
+      "raw_snippet": "Job Title:\n **Head of IT Governance** \n\n\n\n\n Salary\n **: 4\\-5k BD a month** \n\n\n\n\n Sector:\n **Banking** \n\n\n\n\n Role Type:\n **Permanent** \n\n\n\n\n Location:\n **Bahrain** \n\n\n\n\n Job Ref:\n **26025** \n\n\n\n\n  \n\n\n\n\n\n**Role Statement \\& Purpose:** \n\n\n\n\n  \n\n\n\n\n* Head \u2013 IT Ops Governance and Control will streamline ",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Bahrain",
+      "search_title": "\"Aster DM Healthcare\" (\"Chief Technology Officer\" OR CTO OR \"Chief Information Officer\" OR CIO OR \"Head of Technology\" OR \"IT Director\" OR \"Head of IT\" OR \"Chief Digital Officer\" OR CDO OR \"VP Digital Transformation\" OR \"Head of Business Excellence\" OR PMO OR transformation OR director)",
+      "linkedin_id": "li-4399549551",
+      "jd_text": "Job Title:\n **Head of IT Governance** \n\n\n\n\n Salary\n **: 4\\-5k BD a month** \n\n\n\n\n Sector:\n **Banking** \n\n\n\n\n Role Type:\n **Permanent** \n\n\n\n\n Location:\n **Bahrain** \n\n\n\n\n Job Ref:\n **26025** \n\n\n\n\n  \n\n\n\n\n\n**Role Statement \\& Purpose:** \n\n\n\n\n  \n\n\n\n\n* Head \u2013 IT Ops Governance and Control will streamline and harmonize all processes and control measures across the technology landscape, ensure alignment with overarching business objectives, promote a cohesive approach across units with IT to ensure tight control, yet allow for agile delivery, in the most effective and efficient manner.\n* The role will ensure prioritization of tasks, compliance to standards and policies, define and disseminate service level agreements within Business Units at each entity and across entities for shared services and uniformity of process, procedures, and control measures.\n* The role will undertake the budgeting, project tracking for the technology deliverables and Operational expense control and monitoring including entity recharges and agreements on the specific contracts and share of each entity.\n* The role will closely work with Finance, Strategy, and PMO to ensure alignment and reporting consistency and information updates.\n\n\n\n  \n\n\n\n\n\n**Objectives:** \n\n\n\n\n  \n\n\n\n\n* Functional Governance Framework which is aligned with the Group.\n* Documented Service Level Agreements (SLAs) with Business Units, subsidiaries and Group.\n* Functional Organization Structure with clear segregation of duties and no single points of failure\n* Published Governance Processes and Procedures in alignment with the Organizational policies and industry best practices.\n* Annual Technology Budgets (CAPEX and OPEX).\n* Published \u201cKey Performance Indicators\u201d\n\n\n\n  \n\n\n\n\n\n**Responsibilities:** \n\n\n\n\n  \n\n\n\n\n* Implement local control in line with group polices.\n* Ensure license compliance in line with group enterprise agreement. Share license utilization with Group\n* Coordinate and support the group in tracking the group and local SLA\u2019s and provide periodical reports for adherence and non\\-compliance.\n* Keep the Group updated on major incidents faced at the subsidiary level and impacts the Technology services.\n* Establish the Governance Framework and align with the Group establishing local controls (like CAB) in line with Group policies\n* Establish the Service Level Agreements (SLAs) with Business Units, subsidiaries and Group. Once agreed and established, ensure regular monitoring and adjustments are done to optimize the services and SLAs\n* Functional Organization Structure with clear segregation of duties and no single points of failure.\n* Published Governance Processes and Procedures in alignment with the Organizational policies and industry best practices.\n* Annual Technology Budgets (CAPEX and OPEX).\n* Published \u201cKey Performance Indicators\u201d.\n* Annual review and adjustment of organization structure covering roles and responsibilities to adapt the evolving landscape, organization strategic initiatives, directions and Group alignment.\n* Establish and regularly update Governance Processes and Procedures in alignment with the published policies, industry best practices and Group guidance.\n* Define, Manage, Maintain, Track and Report the technology budgets and expenses ensuring all expenses are complaint with the Expense Policy and payments are cleared within the terms as the agreements.\n* Define, Review, Track, and Report on the \u201cKey Performance Indicators\u201d.\n* Conducting regular \u201cOperational Risk Self Assessments\u201d. Track, Review, and take corrective actions for all recorded IT Risks.\n* Prepare and review IT resource capacity plans and take necessary actions to ensure the capacity is aligned with the IT workload covering both \u201cBusiness as Usual\u201d and \u201cProjects\u201d.\n* Manage vendor relationships and contracts ensuring regular reviews and assessments as per the Policies are completed including timely notifications for contract expiries and terminations.\n* Manage and Track asset inventory to ensure effective utilization of assets avoiding duplicate functionality by aligning with Architecture business objectives.\n* Keep the Group updated on major incidents faced and impacts on the Technology services.\n\n\n\n  \n\n\n\n\n\n**Minimum education level/discipline:** \n\n\n\n\n  \n\n\n\n\n* A bachelor\u2019s degree in information technology, Computer Science, or a related field.\n* Experience with ISO 27001 Certification or PCI\\-DSS Certification.\n\n\n\n  \n\n\n\n\n\n**Required experience in terms of region/industry/business/function/role:** \n\n\n\n\n  \n\n\n\n\n\n Requires a seasoned professional with a comprehensive background in the banking or financial services industry, adept in managing IT applications, development, infrastructure, and operations within the GCC region (preferred) and international one is accepted in a well reputed company and experienced in senior roles overseeing information technology architecture.\n \n\n\n\n  \n\n\n\n\n\n**Required System Access:** \n\n\n\n\n  \n\n\n\n\n* **Core Banking Systems** \n : Read\\-only access for audit log reviews.\n* **Incident Response Systems** \n : Read Only Access to platforms for coordinating incident response and disaster recovery.\n* **GRC Tools** \n : Read\\-only access to manage governance, risk, and compliance (GRC) processes.\n* **Procurement System** \n : Reviewer and Approver role to review budgets and approve requests (PO, Invoices) including the Dashboards related to expenses, orders, and payments.\n* **OSR Management System** \n : Reviewer and Approver role review and approve the OSR onboarding and renewal requests.",
+      "source_count": 1,
+      "country": "Bahrain",
+      "industry_bonus": 9,
+      "policy_status": "pass",
+      "sources": [
+        "linkedin"
+      ],
+      "first_seen": "2026-04-16"
+    },
+    {
       "id": "linkedin_jobspy-li-4398690828",
       "source": "linkedin_jobspy",
       "title": "Division CEO (F&B)",
@@ -724,27 +786,27 @@
       "first_seen": "2026-04-13"
     },
     {
-      "id": "linkedin_jobspy-li-4399205899",
+      "id": "linkedin_jobspy-li-4399942880",
       "source": "linkedin_jobspy",
-      "title": "VP - Business Development (Real Estate)",
-      "company": "Michael Page",
+      "title": "Chief Marketing Officer (CMO) | Performance Marketing & Pipeline Growth",
+      "company": "Ecomma",
       "location": "Dubai, Dubai, United Arab Emirates",
-      "url": "https://www.linkedin.com/jobs/view/4399205899",
-      "posted": "2026-04-08",
-      "seniority": "VP",
+      "url": "https://www.linkedin.com/jobs/view/4399942880",
+      "posted": "",
+      "seniority": "C-Suite",
       "domain_match": false,
       "keyword_score": 10,
       "match_keywords": [
-        "vp",
-        "platform"
+        "growth",
+        "api"
       ],
-      "raw_snippet": "* Great opportunity\n* Excellent salary and benefits\n\n\n**About Our Client**\n The client is a DIFC\u2011based asset manager with a strong presence in regional real estate investments. The platform focuses on identifying value\u2011driven opportunities across multiple real estate strategies and partnering with i",
+      "raw_snippet": "Ecomma is a rapidly growing private equity firm with proven expertise in acquiring ecommerce brands worldwide. We excel in a range of areas that drive genuine results and online growth, including:\n \n\n\n* **Value Creation** \n : Strategically investing to maximize the potential of our acquired brands.\n",
       "relevant": false,
-      "filter_reason": "skip-word:real estate",
+      "filter_reason": "skip-word:marketing",
       "search_country": "United Arab Emirates",
-      "search_title": "VP Operations",
-      "linkedin_id": "li-4399205899",
-      "jd_text": "* Great opportunity\n* Excellent salary and benefits\n\n\n**About Our Client**\n The client is a DIFC\u2011based asset manager with a strong presence in regional real estate investments. The platform focuses on identifying value\u2011driven opportunities across multiple real estate strategies and partnering with institutional and private capital.\n   \n\n  \n\n**Job Description**\n The role reporting to the Head of Real Estate:\n   \n\n  \n\n* Develop and execute strategic business development plans to drive revenue growth within the Banking \\& Financial Services sector.\n* Identify and establish relationships with potential clients and key stakeholders in Dubai and beyond.\n* Conduct market analysis to identify trends, opportunities, and potential challenges in the business services industry.\n* Collaborate with internal teams to develop tailored solutions that meet client needs and align with company goals.\n* Lead negotiations and close high\\-value deals to achieve sales targets and expand the client portfolio.\n* Represent the company at industry events, conferences, and networking opportunities to promote services and build brand awareness.\n* Prepare and deliver presentations, proposals, and business cases to prospective clients and senior management.\n* Monitor and report on business development activities, providing regular updates to senior leadership.\n\n\n**The Successful Applicant**\n The ideal candidate should have:\n   \n\n  \n\n* 9\\-12 years' experience in real estate business development, investments or acquisitions within the GCC\n* Bachelor's degree in Finance, Real Estate, Business, Economics or a related discipline\n* Proven track record of originating real estate deals in the UAE, with strong exposure to Saudi Arabia\n* Established network across developers, advisors, banks and investment counterparties\n* Strong commercial judgement and ability to identify value\u2011add opportunities\n* Excellent relationship\u2011building, negotiation and communication skills\n* Experience working with asset managers, private equity firms, developers or investment platforms\n* Ability to work independently while collaborating effectively with cross\u2011functional teams\n\n\n**What's on Offer**\n Great opportunity\n   \n\n  \n\n Excellent salary and benefits\n   \n\n  \n\n**Contact: Gitika Aggarwal**\n**Quote job ref: JN\\-022026\\-6953518**",
+      "search_title": "Chief Digital Officer",
+      "linkedin_id": "li-4399942880",
+      "jd_text": "Ecomma is a rapidly growing private equity firm with proven expertise in acquiring ecommerce brands worldwide. We excel in a range of areas that drive genuine results and online growth, including:\n \n\n\n* **Value Creation** \n : Strategically investing to maximize the potential of our acquired brands.\n* **Operational Excellence** \n : Leveraging best practices and a seasoned team to optimize brand operations.\n* **Sustainable Growth** \n : Prioritizing long\\-term success with sustainable practices.\n* **Data\\-driven Marketing Strategies** \n : Using data to tailor marketing campaigns for optimal reach and conversion.\n\n\n\n  \n\n\n\n\n\n We asked our current team members to tell us what they love about working at Ecomma, and here's what they shared:\n \n\n\n* Supporting\n **top\\-tier brands** \n that truly make a difference in the world.\n* Knowing the impact of our\n **expertise** \n (check out our success stories).\n* Connecting with\n **C\\-level executives** \n and leading e\\-commerce businesses.\n* Working in the world's most progressive industry at a firm that prioritizes\n **personal development.**\n* Enjoying a\n **great atmosphere** \n with fun team outings.\n* Having the opportunity for\n **substantial compensation, including lucrative bonuses.**\n* As\n **Chief Marketing Officer \\| CMO** \n , you will be the driving force behind Ecomma\u2019s growth engine. Your mission is simple: build and lead a lean, high\\-performance marketing machine that significantly increases the number of qualified leads entering our pipeline across the UAE and US markets.\n\n\n\n  \n\n\n\n\n\n This is a highly commercial and performance\\-focused role. You will take ownership of our paid media, email marketing, social media, SEO, events, and broader demand generation strategy, with the clear goal of doubling qualified lead volume over time. You will work closely with our CCO, COO and leadership team to ensure marketing directly supports sales growth and revenue outcomes.\n \n\n\n\n We are looking for a CMO with a strong online marketing and paid media background. Someone who understands how to win in high\\-ticket markets, how to build a team, how to move fast, and how to use AI tools and workflows to create a lean and highly effective marketing department.\n \n\n\n\n Are you the next CMO ready to scale Ecomma to the next level?\n \n\n\n\n  \n\n\n\n\n\n What you will do\n \n\n\n\n  \n\n\n\n\n* **Own Lead Generation Strategy:** \n Take full ownership of the marketing strategy across the UAE and US markets, with the primary goal of doubling the amount of qualified leads entering our pipeline.\n* **Drive Paid Media Performance:** \n Lead and optimize performance across Meta Ads, Google Ads, and other relevant paid acquisition channels. You know how to allocate budget, test fast, improve CAC, and scale what works.\n* **Build a High\\-Performance Marketing Team:** \n Lead the setup and management of a lean but effective team, including performance marketers, a social media manager, a creative/editor, and additional junior or intern support where needed.\n* **Align Closely with Sales:** \n Work side by side with the CCO and commercial team to improve lead quality, conversion rates, campaign messaging, market feedback loops, and overall pipeline performance.\n* **Own Email Marketing \\& Lifecycle:** \n Build and improve email marketing across lead nurturing, follow\\-up, reactivation, and broader lifecycle campaigns to increase conversion from lead to call to deal.\n* **Own Social Media Growth:** \n Build a stronger social media presence that supports authority, trust, brand awareness, and inbound demand. Translate content into commercial results.\n* **Launch and Scale SEO:** \n Establish SEO as an owned growth channel. Build the strategy, priorities, content direction, and execution process to improve long\\-term inbound lead generation.\n* **Lead Events and Launches:** \n Own the planning and execution of events, launch moments, and other brand\\-building initiatives that help generate attention, authority, and qualified commercial opportunities.\n* **Implement AI\\-First Workflows:** \n Bring an AI\\-first mindset to the marketing department by using AI tools, automations, and systems to improve speed, output, testing, reporting, and team efficiency.\n* **Track Performance Relentlessly:** \n Set clear KPIs and reporting structures across all channels. You understand that marketing exists to generate measurable business outcomes, not vanity metrics.\n* **Improve Messaging and Positioning:** \n Continuously refine our offers, campaigns, landing pages, creative direction, and growth messaging to improve qualified lead volume and performance across the funnel.\n* **Create a Scalable Growth Engine:** \n Build a marketing function that is structured, repeatable, lean, and able to scale alongside the company as we continue to grow.\n\n\n\n  \n\n\n\n\n\n We operate using Google Workspace, Slack, and Notion. Thus, familiarity and hands\\-on experience with these platforms are important for this role. The candidate should be fluent in English, with excellent interpersonal, verbal, and written communication skills. A strong commercial instinct, analytical thinking, fast execution, and high ownership are essential.\n \n\n\n\n Tools in use may include Meta Ads Manager, Google Ads, GA4, Google Search Console, Mailchimp and email tools, reporting dashboards, landing page tools, and AI platforms that improve output, speed, and efficiency.\n \n\n\n\n  \n\n\n\n\n\n What you bring to the table:\n \n\n\n* 5\\+ years of experience in growth marketing, performance marketing, or digital marketing leadership, ideally in a high\\-growth environment.\n* Proven experience scaling qualified leads through channels such as Meta Ads, Google Ads, email marketing, SEO, and content/social.\n* A strong background in paid media and online demand generation, with clear evidence that you know how to turn spend into pipeline.\n* Experience leading and managing marketing teams, including performance marketers, creatives, and cross\\-functional contributors.\n* A highly commercial mindset. You understand how marketing should directly support revenue, sales performance, and business growth.\n* Experience working in high\\-ticket, lead generation, investor, acquisition, ecommerce, or similar performance\\-driven environments is a strong plus.\n* Strong analytical skills and confidence with reporting, attribution, testing, and decision\\-making based on data.\n* An AI\\-first mindset. You actively use AI tools, workflows, and automations to improve marketing output, team efficiency, and speed of execution.\n* Excellent organizational skills with the ability to manage multiple channels, campaigns, and priorities at the same time.\n* Strong communication skills and the ability to collaborate effectively with sales, leadership, and creative teams.\n* A hands\\-on mentality. You are strategic, but you are also willing to execute, test, fix, and improve directly when needed.\n* High standards, strong ownership, and the ability to build a lean and mean team that performs.\n* Fluent in English with strong verbal and written communication skills.\n* High ethical standards and a commitment to conducting business with integrity.\n\n\n\n  \n\n\n\n\n\n The position will be filled immediately for the right candidate.\n \n\n\n\n  \n\n\n\n\n\n Working at Ecomma is more than just a job. If you believe in seizing the present to enhance your future, you're in the right place. Combining hard work with the right atmosphere is our golden formula. We don't operate with a 9\\-5 mindset, allowing you to manage your own working hours. We've found this approach yields the best results. Ecomma: a private equity firm you can count on.\n \n\n\n\n  \n\n\n\n\n\n Please note: Proficiency in English is required.\n \n\n\n\n  \n\n\n\n\n\n Does this opportunity excite you? Are you eager to dive in and unleash your creative finance mind? If you want to be a part of the Ecomma team, send your motivation letter and CV addressed to the respective job title application.\n \n\n\n\n  \n\n\n\n\n\n*If this role isn't a fit for you but you know someone it might suit, please share it with them \\- we'd greatly appreciate it!*",
       "source_count": 1,
       "country": "United Arab Emirates",
       "industry_bonus": 6,
@@ -752,7 +814,7 @@
       "sources": [
         "linkedin"
       ],
-      "first_seen": "2026-04-13"
+      "first_seen": "2026-04-16"
     },
     {
       "id": "linkedin_jobspy-li-4397761811",
@@ -786,6 +848,67 @@
       "first_seen": "2026-04-13"
     },
     {
+      "id": "linkedin_jobspy-li-4397438811",
+      "source": "linkedin_jobspy",
+      "title": "CEO Executive Assistant",
+      "company": "SSC HR Solutions",
+      "location": "Riyadh, Riyadh, Saudi Arabia",
+      "url": "https://www.linkedin.com/jobs/view/4397438811",
+      "posted": "2026-04-04",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 10,
+      "match_keywords": [
+        "executive",
+        "saudi"
+      ],
+      "raw_snippet": "We are looking for a high\\-caliber Executive Assistant to the CEO to be based in Saudi Arabia. The ideal candidate will be a proactive, highly organized professional who thrives in dynamic environments and is capable of handling complex administrative and operational duties at the executive level.\n ",
+      "relevant": false,
+      "filter_reason": "skip-word:assistant",
+      "search_country": "Saudi Arabia",
+      "search_title": "\"Fakeeh Care\" (\"Chief Technology Officer\" OR CTO OR \"Chief Information Officer\" OR CIO OR \"Head of Technology\" OR \"IT Director\" OR \"Head of IT\" OR \"Chief Digital Officer\" OR CDO OR \"VP Digital Transformation\" OR \"Head of Business Excellence\" OR PMO OR transformation OR director)",
+      "linkedin_id": "li-4397438811",
+      "jd_text": "We are looking for a high\\-caliber Executive Assistant to the CEO to be based in Saudi Arabia. The ideal candidate will be a proactive, highly organized professional who thrives in dynamic environments and is capable of handling complex administrative and operational duties at the executive level.\n   \n\n  \n\n Key Responsibilities:\n   \n\n  \n\n* Provide comprehensive support to the CEO, including managing calendars, meetings, travel arrangements, and confidential correspondence\n* Act as a key liaison between the CEO and internal departments, external stakeholders, and partners\n* Coordinate across departments to ensure alignment with executive priorities and strategic objectives\n* Draft professional reports, presentations, and official communications\n* Prepare meeting agendas, take detailed minutes, and follow up on action points\n* Handle sensitive matters with a high level of confidentiality and professionalism\n* Understand organizational policies and procedures, and ensure their proper implementation to streamline daily operations and enhance workflow efficiency\n* Oversee departmental and individual KPIs, generate weekly performance reports, and conduct general evaluations for staff and department heads, tracking progress toward monthly and quarterly goals\n* Collaborate with internal teams to support the development and optimization of the organization's ERP system, enhancing digital workflows and operational transparency\n\n\n**Requirements**\n Requirements:\n   \n\n  \n\n* Native Arabic speaker with fluent English communication skills (written and spoken)\n* Minimum 7 years of experience in executive or C\\-level support roles\n* Strong organizational, problem\\-solving, and multitasking skills\n* Ability to work independently, manage shifting priorities, and meet tight deadlines\n* Proficient in Microsoft Office (Word, Excel, PowerPoint, Outlook) and modern communication tools\n* Bachelor's degree in Business Administration, Communications, or a related field preferred\n\n\n Preferred Qualities:\n   \n\n  \n\n* Previous experience in fast\\-paced, multinational or regional companies\n* High attention to detail and strong interpersonal skills\n* Discretion, loyalty, and a strong sense of responsibility",
+      "source_count": 1,
+      "country": "Saudi Arabia",
+      "industry_bonus": 3,
+      "policy_status": "pass",
+      "sources": [
+        "linkedin"
+      ],
+      "first_seen": "2026-04-15"
+    },
+    {
+      "id": "linkedin_jobspy-li-4399951036",
+      "source": "linkedin_jobspy",
+      "title": "Head of Marketing - MEA",
+      "company": "Elpen Pharmaceutical Co. Inc.",
+      "location": "Dubai, United Arab Emirates",
+      "url": "https://www.linkedin.com/jobs/view/4399951036",
+      "posted": "",
+      "seniority": "Director",
+      "domain_match": false,
+      "keyword_score": 6,
+      "match_keywords": [
+        "head of"
+      ],
+      "raw_snippet": "**ELPEN Pharmaceutical** \n , founded in 1965, has grown into Greece\u2019s leading pharmaceutical company, with a presence in 90\\+ countries\u2014driven by a simple belief: effective treatments can improve and extend lives.\n \n\n\n\n  \n\n\n\n\n\n Our mission is clear: to grow as a leading European pharma company with ",
+      "relevant": false,
+      "filter_reason": "skip-word:marketing",
+      "search_country": "United Arab Emirates",
+      "search_title": "Head of Digital Transformation",
+      "linkedin_id": "li-4399951036",
+      "jd_text": "**ELPEN Pharmaceutical** \n , founded in 1965, has grown into Greece\u2019s leading pharmaceutical company, with a presence in 90\\+ countries\u2014driven by a simple belief: effective treatments can improve and extend lives.\n \n\n\n\n  \n\n\n\n\n\n Our mission is clear: to grow as a leading European pharma company with global reach, always putting people first. We are now seeking an exceptional leader to drive this vision forward in the MEA region.\n \n\n\n\n  \n\n\n\n\n\n**We\u2019re Hiring: Head of Marketing \u2013 MEA Dubai, UAE \\| Regional Leadership Role** \n\n\n\n\n  \n\n\n\n\n\n This is more than a role \u2014 it\u2019s a seat at the strategic table. We\u2019re looking for a visionary marketing leader to architect brand ecosystems, translate data into decisive commercial action, and lead with influence in a business that is scaling with purpose and long\\-term ambition.\n \n\n\n\n  \n\n\n\n\n\n In this role, you will: Think in patient journeys Speak in data and insights Listen deeply to communities and markets Execute with measurable impact All while embodying our core values: Respect, Care, Commitment to Quality, and Rewarding Creativity. As a key bridge between European pharmaceutical excellence and patients across the Middle East \\& Africa, you will champion a simple but powerful belief: Geography should never limit access to world\\-class care. Reporting directly to the General Manager, MEA, this role offers the opportunity to shape strategy, influence growth, and make a meaningful difference at scale.\n \n\n\n\n  \n\n\n\n\n\n**What You\u2019ll Drive as Head of Marketing \u2013 MEA** \n\n\n\n\n  \n\n\n\n\n* Drive market share growth through insight\\-led brand strategies, clear differentiation, and disciplined execution \u2014 translating therapy leadership into measurable commercial impact across MEA\n* Develop robust, data\\-driven forecasting models leveraging IQVIA analytics, epidemiology, and market potential assessments \u2014 ensuring every launch is timely, scalable, and commercially ready\n* Build and champion transparent, action\\-oriented brand plans \u2014 translating strategy into clear milestones, ownership, and accountability across the commercial organization\n* Lead segment development beyond product \u2014 shaping disease awareness, redefining diagnostic pathways, and creating markets in under\\-served therapeutic areas\n* Track and continuously optimize brand performance \u2014 across equity, prescriber loyalty, penetration, and share of voice \u2014 to build sustained leadership\n* Architect integrated brand strategies across MEA \u2014 from positioning and value proposition to full lifecycle management, grounded in science and patient need\n* Shape future pipeline decisions by channelling MEA insights, unmet needs, and commercial opportunity analyses into Global Business Development\n* Map and optimize the full patient journey \u2014 from awareness and diagnosis to adherence and long\\-term outcomes \u2014 designing around real patient experiences\n* Build strategic partnerships with health societies, scientific associations, and advocacy groups \u2014 extending impact beyond the prescription\n* Champion a clear purpose: improving patient outcomes and enabling healthier, more productive lives across communities\n* Foster a culture of innovation, collaboration, and continuous growth \u2014 inspiring teams to challenge the status quo\n* Establish a strong multi\\-stakeholder ecosystem \u2014 engaging HCPs, KOLs, payers, regulators, and health authorities through trust\\-based relationships\n* Integrate ESG principles into all initiatives \u2014 advancing health equity, ethics, and sustainable impact\n* Design and govern the promotional mix with scientific rigor and full compliance with global standards and ethics\n* Steward marketing investments with discipline \u2014 optimizing spend within governance frameworks\n* Build best\\-in\\-class omnichannel ecosystems \u2014 integrating digital, CRM, e\\-detailing, medical platforms, and field activation\n* Drive digital excellence across SEO/SEM, content, social, and precision targeting for HCPs and patients\n* Lead impactful medical education and scientific engagement platforms \u2014 positioning the organization as a trusted partner\n* Partner closely with Sales to elevate field capabilities through training in product knowledge, science, and therapy expertise\n* Collaborate with global marketing teams to leverage best practices and ensure brand consistency across markets\n* Lead without authority \u2014 aligning Medical, Regulatory, Market Access, BD, and Commercial teams through vision, influence, and shared purpose\n\n\n\n  \n\n\n\n\n\n**Your Foundation** \n\n\n\n\n  \n\n\n\n\n* 5\\+ years in pharmaceutical marketing \u2014 with clear impact in a brand lead or senior role (MNC exposure preferred)\n* Medical or pharmacy degree \u2014 your scientific credibility is non\\-negotiable\n* Strong GCC/MEA expertise \u2014 deep understanding of healthcare systems, payer dynamics, and cultural nuance\n\n\n\n  \n\n\n\n\n\n**Your Expertise** \n\n\n\n\n  \n\n\n\n\n* A disciplined forecaster and commercial planner \u2014 combining market modelling with launch excellence\n* A proven launch leader \u2014 from pre\\-launch strategy to uptake acceleration and sustained growth\n* Experience contributing to pipeline or business development is a strong advantage\n* Fluent in omnichannel and digital \u2014 you lead digital thinking, you don\u2019t delegate it\n* Strong analytical mindset \u2014 turning IQVIA data, patient flows, and market insights into action\n\n\n\n  \n\n\n\n\n\n**Your Mindset** \n\n\n\n\n  \n\n\n\n\n* A patient\\-journey thinker \u2014 you see the human story behind every prescription \u25b8\n* A natural alliance builder \u2014 trusted by HCPs, KOLs, societies, and policymakers alike \u25b8\n* An ESG advocate \u2014 you believe ethical, responsible marketing is a responsibility, not a constraint\n* A culture carrier \u2014 you embody Respect, Care, Quality, and Creativity in everything you do\n\n\n\n  \n\n\n\n\n\n**Your Leadership** \n\n\n\n\n  \n\n\n\n\n* Strong command of promotional strategy, budget governance, and compliance\\-led execution\n* A team builder \u2014 elevating capabilities across marketing and sales, especially in scientific engagement\n* Collaborative by nature \u2014 able to influence across Medical, Regulatory, Market Access, and Commercial teams\n\n\n\n  \n\n\n\n\n\n**What Sets You Apart** \n\n\n\n\n  \n\n\n\n\n* Experience in Cardiometabolic, Respiratory, and/or Oncology is a strong advantage\n* Ambitious, analytical, and comfortable in ambiguity \u2014 you build structure where none exists\n\n\n\n  \n\n\n\n\n\n At\n **ELPEN,** \n success isn\u2019t just measured in numbers. It\u2019s measured in lives improved.\n \n\n\n\n  \n\n\n\n\n\n If you\u2019re driven by impact, not comfort\n \n\n\n\n If you think long\\-term and act decisively\n \n\n\n\n If you believe marketing in pharma should mean something\u2026\n \n\n\n\n  \n\n\n\n\n\n If you\u2019re ready to lead with purpose and impact, we\u2019d love to connect.",
+      "source_count": 1,
+      "country": "United Arab Emirates",
+      "industry_bonus": 9,
+      "policy_status": "pass",
+      "sources": [
+        "linkedin"
+      ],
+      "first_seen": "2026-04-16"
+    },
+    {
       "id": "linkedin_jobspy-li-4399144811",
       "source": "linkedin_jobspy",
       "title": "Senior Vice President, Head of Strategy and Planning - Business Banking Group",
@@ -814,6 +937,36 @@
         "linkedin"
       ],
       "first_seen": "2026-04-13"
+    },
+    {
+      "id": "linkedin_jobspy-li-4399942889",
+      "source": "linkedin_jobspy",
+      "title": "Chief Operating Officer",
+      "company": "AJYAL HR Solutions & Services",
+      "location": "Muscat, Masqa\u0163, Oman",
+      "url": "https://www.linkedin.com/jobs/view/4399942889",
+      "posted": "",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 6,
+      "match_keywords": [
+        "ai"
+      ],
+      "raw_snippet": "**Job Purpose:** \n To lead and oversee all aspects of the plant's operations and act as the official Management Representative responsible for implementing, maintaining, and improving the Integrated Management Systems. The role ensures operational efficiency, product quality, environmental complianc",
+      "relevant": false,
+      "filter_reason": "no-role-family",
+      "search_country": "Oman",
+      "search_title": "Chief Operating Officer",
+      "linkedin_id": "li-4399942889",
+      "jd_text": "**Job Purpose:** \n To lead and oversee all aspects of the plant's operations and act as the official Management Representative responsible for implementing, maintaining, and improving the Integrated Management Systems. The role ensures operational efficiency, product quality, environmental compliance, employee safety, and adherence to management system standards, aligning daily plant functions with the company's strategic objectives.\n \n\n\n\n  \n\n\n\n\n\n**Tasks and Responsibilities:** \n\n\n\n* Manage Overall Plant Operations.\n* Act as the Management Representative.\n* Ensure Regulatory \\& Standard Compliance.\n* Ensure that customer requirements and specifications are consistently met or exceeded.\n* Anticipate risks and establish contingency plans for potential production, quality, or safety issues.\n* Report plant performance and management system effectiveness to executive leadership and participate in strategic planning\n\n\n\n  \n\n\n\n\n\n**Qualifications and Experience:** \n\n\n\n* Bachelor's Degree in Mechanical, Industrial, Metallurgical, or Electrical Engineering.\n* Master's Degree in Engineering Management, Business Administration, or Operations.\n* 10\\-15 years in industrial or manufacturing, with at least 5 years in plant management or senior operations leadership.\n* Experience in process optimization, CAPEX projects, and managing multifunctional teams.\n* Strong project management and audit preparation skills.\n* Ability to manage change, risk, and crises.\n\n\n\n  \n\n\n\n\n\n**Note: We thank all applicants for their interest, however only those candidates who are shortlisted will be contacted.**",
+      "source_count": 1,
+      "country": "Oman",
+      "industry_bonus": 3,
+      "policy_status": "pass",
+      "sources": [
+        "linkedin"
+      ],
+      "first_seen": "2026-04-16"
     },
     {
       "id": "linkedin_jobspy-li-4399385872",
@@ -877,64 +1030,34 @@
       "first_seen": "2026-04-13"
     },
     {
-      "id": "linkedin_jobspy-li-4401772645",
+      "id": "linkedin_jobspy-li-4401429901",
       "source": "linkedin_jobspy",
-      "title": "Director, Legal Counsel - MEA",
-      "company": "PayPal",
-      "location": "Dubai, Dubai, United Arab Emirates",
-      "url": "https://www.linkedin.com/jobs/view/4401772645",
+      "title": "Director \u2013 Customer Experience Transformation",
+      "company": "Foreground.",
+      "location": "Riyadh, Riyadh, Saudi Arabia",
+      "url": "https://www.linkedin.com/jobs/view/4401429901",
       "posted": "",
       "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 6,
+      "domain_match": true,
+      "keyword_score": 10,
       "match_keywords": [
-        "director"
+        "director",
+        "saudi"
       ],
-      "raw_snippet": "**The Company**\n PayPal has been revolutionizing commerce globally for more than 25 years. Creating innovative experiences that make moving money, selling, and shopping simple, personalized, and secure, PayPal empowers consumers and businesses in approximately 200 markets to join and thrive in the g",
-      "relevant": false,
-      "filter_reason": "skip-word:legal",
-      "search_country": "United Arab Emirates",
-      "search_title": "\"technology\" AND (\"director\" OR \"head\") AND (\"healthcare\" OR \"fintech\")",
-      "linkedin_id": "li-4401772645",
-      "jd_text": "**The Company**\n PayPal has been revolutionizing commerce globally for more than 25 years. Creating innovative experiences that make moving money, selling, and shopping simple, personalized, and secure, PayPal empowers consumers and businesses in approximately 200 markets to join and thrive in the global economy.\n   \n\n  \n\n We operate a global, two\\-sided network at scale that connects hundreds of millions of merchants and consumers. We help merchants and consumers connect, transact, and complete payments, whether they are online or in person. PayPal is more than a connection to third\\-party payment networks. We provide proprietary payment solutions accepted by merchants that enable the completion of payments on our platform on behalf of our customers.\n   \n\n  \n\n We offer our customers the flexibility to use their accounts to purchase and receive payments for goods and services, as well as the ability to transfer and withdraw funds. We enable consumers to exchange funds more safely with merchants using a variety of funding sources, which may include a bank account, a PayPal or Venmo account balance, PayPal and Venmo branded credit products, a credit card, a debit card, certain cryptocurrencies, or other stored value products such as gift cards, and eligible credit card rewards. Our PayPal, Venmo, and Xoom products also make it safer and simpler for friends and family to transfer funds to each other. We offer merchants an end\\-to\\-end payments solution that provides authorization and settlement capabilities, as well as instant access to funds and payouts. We also help merchants connect with their customers, process exchanges and returns, and manage risk. We enable consumers to engage in cross\\-border shopping and merchants to extend their global reach while reducing the complexity and friction involved in enabling cross\\-border trade.\n   \n\n  \n\n Our beliefs are the foundation for how we conduct business every day. We live each day guided by our core values of Inclusion, Innovation, Collaboration, and Wellness. Together, our values ensure that we work together as one global team with our customers at the center of everything we do \u2013 and they push us to ensure we take care of ourselves, each other, and our communities.\n   \n\n  \n\n**Job Summary:**\n This position will lead our legal function in the Middle East and Africa and is based in Dubai.\n   \n\n  \n\n The position involves working closely with the business to support key strategic initiatives across MEA in particular advising on the launch of new products, relevant law and regulation that impacts the PayPal business and its products and supporting disputes and litigation, data privacy and commercial negotiations. In addition, the role will provide governance support to relevant legal entities across the region.\n   \n\n  \n\n**Job Description:**\n**Essential Responsibilities:**\n* Provide strategic legal advice and support to senior management, influencing business strategy an decision making.\n* Anticipate regulatory and legal risks, and proactively design strategies to manage them.\n* Perform legal and regulatory compliance risk assessments, propose creative solutions where applicable, and help advance business objectives.\n* Manage escalations, collaborate across other teams and develop solutions to enable business partners to achieve their goals.\n* Develop a strong rapport and working relationship with business counterparts across the enterprise to help drive the delivery of effective legal services.\n* Ensure compliance with relevant laws and regulations, leading the adoption of cutting\\-edge legal technologies and best practices.\n* Manage legal risks and safeguard PayPal's legal interests, developing forward\\-looking risk management strategies.\n* Provide key inputs as an industry leader and expert, staying ahead of legal trends and influencing industry standards.\n\n\n**Minimum Qualifications:**\n* 10\\+ years relevant experience and a Juris doctorate degree OR Any equivalent combination of education and experience.\n\n\n**Additional Responsibilities \\& Preferred Qualifications:**\n**Core Responsibilities**\n* Working with the PayPal business teams to advise on the development and implementation of new products and services, including the regulatory and business risk implications across the MEA.\n* Dealing with regulatory issues and advising on the impact of new and existing laws and regulations and local governance matters.\n* Advising on and negotiating agreements with key partners, payment processors and financial institutions to further the expansion of the PayPal business.\n* Helping to develop and build the wider, non\\-legal team\u2019s understanding of relevant laws and regulations to encourage a culture of compliance and responsibility.\n\n\n The ideal candidate will be an accomplished senior lawyer with strong interpersonal and organizational skills and a demonstrated ability to effectively and proactively provide sound legal advice, exercise good business judgment, work with senior management and execute on a cross\\-functional basis in a fast paced environment.\n   \n\n  \n\n To succeed in this challenging role, candidates should be mature, self\\-motivated and well\\-organised with excellent communication and problem solving skills. Candidates should also be flexible with a global outlook and collaborative working style.\n   \n\n  \n\n An ability to work in a matrixed environment with multiple stakeholders is essential. PayPal is a global company and the successful candidate will need to have flexibility to work with and occasionally accommodate colleagues in different time zones.\n   \n\n  \n\n**Job Requirements:**\n* Admitted as a lawyer with at least 6 year\u2019s post\\-admission experience gained in a law firm or as in\\-house counsel\n* Experience in banking, payments, financial services or fintech would be desirable\n* Ability to collaborate with senior management and cross functional stakeholders\n* Accomplished senior lawyer with a keen attention for detail and an ability to manage multiple tasks and projects simultaneously.\n* Creative thinker with strong problem\\-solving skills and the ability to stay calm under challenging circumstances\n* Ability to handle multiple assignments simultaneously, with effective resolution of conflicting priorities\n* Ability to thrive in a fast\\-paced, changing environment and matrixed organisation\n* Flexibility to work with colleagues in Europe, the United States and Asia and accommodate calls and deadlines aligned to their time zones\n\n\n**Subsidiary:**\n PayPal\n   \n\n  \n\n**Travel Percent:**\n 0\n   \n\n  \n\n PayPal does not charge candidates any fees for courses, applications, resume reviews, interviews, background checks, or onboarding. When making an application directly, we will never ask you to share passwords, one\\-time passcodes (OTP), or verification codes. Any such request is a red flag and likely part of a scam. All communication regarding your application will come from official PayPal email domains. If you suspect fraudulent activity, please report it immediately. To learn more about how to identify and avoid recruitment fraud please visit https://careers.pypl.com/contact\\-us.\n   \n\n  \n\n For the majority of employees, PayPal's balanced hybrid work model offers 3 days in the office for effective in\\-person collaboration and 2 days at your choice of either the PayPal office or your home workspace, ensuring that you equally have the benefits and conveniences of both locations.\n   \n\n  \n\n**Our Benefits:**\n At PayPal, we\u2019re committed to building an equitable and inclusive global economy. And we can\u2019t do this without our most important asset\\-you. That\u2019s why we offer comprehensive, choice\\-based programs, to support all aspects of personal wellbeing\u2014physical, emotional, and financial\u2014delivering meaningful value where it matters most.\u202fWe strive to create a flexible, balanced work culture with a holistic approach to benefits, including generous paid time off, healthcare coverage for you and your family, and resources to create financial security and support your mental health.\n   \n\n  \n\n**Who We Are:**\n Click Here to learn more about our culture and community.\n   \n\n  \n\n**Commitment to Diversity and Inclusion**\n PayPal provides equal employment opportunity (EEO) to all persons regardless of age, color, national origin, citizenship status, physical or mental disability, race, religion, creed, gender, sex, pregnancy, sexual orientation, gender identity and/or expression, genetic information, marital status, status with regard to public assistance, veteran status, or any other characteristic protected by federal, state, or local law. In addition, PayPal will provide reasonable accommodations for qualified individuals with disabilities. If you are unable to submit an application because of incompatible assistive technology or a disability, please contact us at paypalglobaltalentacquisition@paypal.com.\n   \n\n  \n\n**Belonging at PayPal:**\n Our employees are central to advancing our mission, and we strive to create an environment where everyone can do their best work with a sense of purpose and belonging. Belonging at PayPal means creating a workplace with a sense of acceptance and security where all employees feel included and valued. We are proud to have a diverse workforce reflective of the merchants, consumers, and communities that we serve, and we continue to take tangible actions to cultivate inclusivity and belonging at PayPal.\n   \n\n  \n\n Any general requests for consideration of your skills, please Join our Talent Community.\n   \n\n  \n\n We know the confidence gap and imposter syndrome can get in the way of meeting spectacular candidates. Please don\u2019t hesitate to apply.",
+      "raw_snippet": "Our client is a large service\\-oriented organisation serving a broad customer base across Saudi Arabia. Customer experience is a strategic priority for differentiation and retention.\n   \n\n  \n\n**The Role**\n The Director will lead customer experience transformation initiatives across channels and touc",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "Director Digital Transformation",
+      "linkedin_id": "li-4401429901",
+      "jd_text": "Our client is a large service\\-oriented organisation serving a broad customer base across Saudi Arabia. Customer experience is a strategic priority for differentiation and retention.\n   \n\n  \n\n**The Role**\n The Director will lead customer experience transformation initiatives across channels and touchpoints. This role will design CX frameworks, journey mapping, and service improvement programs. A key focus will be embedding customer\\-centric metrics and accountability across operations. The Director will work closely with operations, digital, and frontline teams. This role will also oversee voice\\-of\\-customer analytics and continuous improvement cycles. Executive visibility and cross\\-functional influence are central to success.\n   \n\n  \n\n**Candidate Profile**\n Candidates must have senior experience in customer experience or service transformation roles. Strong exposure to service\\-driven or consumer\\-facing environments is essential. Experience in Saudi Arabia is highly preferred. The ideal profile combines analytical capability with operational understanding. Strong stakeholder engagement and change leadership skills are required.",
       "source_count": 1,
-      "country": "United Arab Emirates",
-      "industry_bonus": 15,
+      "country": "Saudi Arabia",
       "policy_status": "pass",
       "sources": [
         "linkedin"
       ],
-      "first_seen": "2026-04-15"
-    },
-    {
-      "id": "linkedin_jobspy-li-4401744408",
-      "source": "linkedin_jobspy",
-      "title": "Head of HR Hub MEIA",
-      "company": "Maschinenfabrik Reinhausen",
-      "location": "Dubai, Dubai, United Arab Emirates",
-      "url": "https://www.linkedin.com/jobs/view/4401744408",
-      "posted": "",
-      "seniority": "Director",
-      "domain_match": false,
-      "keyword_score": 6,
-      "match_keywords": [
-        "head of"
-      ],
-      "raw_snippet": "At the world market leader in energy technology, you will contribute to keeping the energy supply stable in the future. With our intelligent digital and analogue solutions, you will help shape the implementation of the energy transition. In a global team of 5\\.000 committed colleagues, which is char",
-      "relevant": false,
-      "filter_reason": "skip-word:hr ",
-      "search_country": "United Arab Emirates",
-      "search_title": "\"Careem\" (\"Chief Technology Officer\" OR CTO OR \"Chief Information Officer\" OR CIO OR \"Head of Technology\" OR \"IT Director\" OR \"Head of IT\" OR \"Chief Digital Officer\" OR CDO OR \"VP Digital Transformation\" OR \"Head of Business Excellence\" OR PMO OR transformation OR director)",
-      "linkedin_id": "li-4401744408",
-      "jd_text": "At the world market leader in energy technology, you will contribute to keeping the energy supply stable in the future. With our intelligent digital and analogue solutions, you will help shape the implementation of the energy transition. In a global team of 5\\.000 committed colleagues, which is characterized by the unique cohesion of our family\\-run group of companies. Reinhausen \\- where Power meets Passion.\n   \n\n  \n\n**What Awaits You**\n* You translate business goals into a coherent Hub People Strategy along the entire HR value chain\n* You take full responsibility for day\\-to\\-day HR operations in your local entity, including hire\\-to\\-retire processes and labor relations\n* You act as a strategic HR business partner for top management within the MEIA region as well as sparring partner for managers and employees in your local entity\n* You lead and develop local HR teams within your hub and drive HR synergies with a strong focus on operational excellence\n* You ensure high\\-quality HR data, derive insights and support data\\-based decision\\-making across the hub\n* You represent your hub in global HR initiatives and implement global HR standards, policies and projects locally\n\n\n**What You Bring To The Table**\n* You hold a university degree in Human Resources, Business Administration or a comparable field with an HR focus\n* You bring deep operational HR experience and socializazion in the MEIA region as well as profound knowledge of local labor laws\n* You have a strong hands\\-on mindset and proven experience in managing day\\-to\\-day HR operations, including hire\\-to\\-retire processes and employee relations\n* You have senior\\-level HR generalist experience in an international, matrix\\-driven organization\n* You have proven leadership experience and are confident in consulting and coaching senior business leaders\n* You combine strategic thinking with a solution\\-oriented mindset and strong implementation capability\n* You communicate fluently in English and act with integrity, professionalism and confidentiality\n\n\n**Our Benefits**\n**Hover over our benefit icons and learn more about your benefits with us!**\n**Annual Bonus \\& Service Rewards**\n We recognize employee dedication through an annual performance bonus and end\\-of\\-service benefits in line with UAE labor laws\u2014rewarding both your achievements and long\\-term commitment.\n   \n\n  \n\n**Comprehensive Health, Safety and Wellness Coverage**\n We care for your physical and mental well\\-being through international health insurance (including dental \\& optical), travel and workmen insurance, fitness programs, and psychological support\u2014from your first day to retirement.\n   \n\n  \n\n**Empowered Culture \\& Global Collaboration**\n We offer flexible working models, sabbaticals and a strong focus on work\\-life balance. Our culture thrives on community, learning and sustainability. Networking events, mentoring and a digital learning platform. Employees experience a working environment that encourages international collaboration and professional development.\n   \n\n  \n\n**Family Support**\n We care about your family as much as you do. Our benefits include annual flight tickets to your home country, school tuition fee support for your children, and a dependant package covering UAE residency, health insurance, and family travel\u2014all designed to support your family\u2019s well\\-being and stability.\n   \n\n  \n\n**Housing And Transportation Benefits**\n We offer a housing allowance to support comfortable living, along with flexible mobility options including a company car or transportation allowance, covering fuel, tolls, parking, and a Careem corporate account for local travel.",
-      "source_count": 1,
-      "country": "United Arab Emirates",
-      "industry_bonus": 6,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ],
-      "first_seen": "2026-04-15"
+      "first_seen": "2026-04-16"
     },
     {
       "id": "linkedin_jobspy-li-4398809056",
@@ -967,6 +1090,35 @@
       "first_seen": "2026-04-13"
     },
     {
+      "id": "google-b5781fbe6082",
+      "source": "google",
+      "title": "[United Arab Emirates35](https://www.michaelpage.ae/jobs/director/united",
+      "company": "arab",
+      "location": "emirates)",
+      "url": "https://www.michaelpage.ae/jobs/director",
+      "posted": "",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 6,
+      "match_keywords": [
+        "director"
+      ],
+      "raw_snippet": "",
+      "relevant": true,
+      "filter_reason": null,
+      "source_count": 1,
+      "country": "Unknown",
+      "policy_status": "pass",
+      "sources": [
+        "google-jobs"
+      ],
+      "first_seen": "2026-04-09",
+      "jd_live": true,
+      "jd_fetch_status": "ok",
+      "jd_page_text": "Director jobs | Michael Page Skip to main navigation Mobile Menu English Accessibility Tools Job Search Save jobs, 0 currently saved jobs 0 Save jobs Register / Sign in I&#039;m a Candidate I&#039;m an Employer New Job Search Save jobs, 0 currently saved jobs 0 Save jobs Register / Sign in NG Main Navigation Job seekers Job seekers Start your search here Browse our jobs and apply for your next role. Our vacancies Find a job Job search Submit your CV Search for a job Tools CV Fitness Test Talent Trends: Interactive Tool Advice Career advice Being happy at work Growing your career Cover letter and CV advice Job interview tips Job search advice Popular articles How to send an engaging follow-up email after your interview Social etiquette and rules in Saudi Arabia Six great ways to market yourself How to Make Your CV Stand Out Employers Employers The right candidate is just a few clicks away Reach out to us or discover some great insights that could help you fill your next vacancy. Request a call back Fill a vacancy Find candidates Request a call back Submit a job spec Our expertise Banking and Financial Services Consultancy, Strategy &amp; Change Data &amp; Analytics Digital Engineering and Manufacturing See all sectors Advice Management advice Development and retention Attraction and recruitment Emiratisation recruitment Recruiting in Saudi Arabia Insights Latest insights Webinars &amp; events Salary Guide 2026 UAE Salary Guide 2026 KSA The Ultimate Onboarding Guide About About Start your career with us PageGroup changes lives for people through creating opportunity to reach potential. Apply now Work for us Work at Michael Page Why choose us? Your role here Use your skills Internships About us About us Who we are About PageGroup Contact Contact Contact us today We find the best talent for our clients and match candidates to their ideal jobs. Contact us Contact us Get in touch Find our offices Feedback Salary Guides 2026 Breadcrumb Home / Director Search Job title Location Sort by Relevance Changed Salary Max Base Salary Min Base Salary Min Salary min 0 10k 20k 30k 40k 50k 75k 100k 125k 150k 200k 250k 500k 800k+ Salary Max Salary max 0 10k 20k 30k 40k 50k 75k 100k 125k 150k 200k 250k 500k 800k+ Cancel Cancel Create Job Alert 69 Director jobs Create Job Alert Sort by Relevance Most recent Salary (high to low) Salary (low to high) Close Filter Close Reset Location button United Arab Emirates 32 Dubai 22 Dubai 11 Abu Dhabi 6 Saudi Arabia 18 Riyadh 11 Riyadh 4 Makkah 4 Jeddah 4 Eastern Province 1 International 12 Egypt 2 Alexandria 1 Cairo 1 Kuwait 2 Oman 1 Qatar 1 Syria 1 Sector button Sales 11 Financial &amp; Professional Services 3 FMCG &amp; Consumer 2 IT &amp; Telecommunications 2 Travel / Leisure / Hospitality 2 Business Services 1 Public Sector &amp; Not-For-Profit 1 Human Resources 10 Compensation &amp; Benefits 2 HR Director 2 Learning &amp; Development 2 Talent Management 2 HR Administrator 1 Recruitment 1 Banking &amp; Financial Services 8 Corporate Finance / Mergers &amp; Acquisitions 2 Credit Analysis &amp; Research 2 Venture Capitalism &amp; Private Equity 2 Compliance &amp; Legal 1 Portfolio / Fund / Asset Manager 1 Healthcare &amp; Life Sciences 6 Sales 3 Marketing/Procurement 1 Pharmaceutical 1 Research &amp; Development 1 Property 6 Property &amp; Asset Management 5 Project Manager 1 Finance &amp; Accounting 5 Financial Director / CFO 3 Credit Analysis 1 Internal Audit 1 Marketing 4 Financial Services 1 FMCG &amp; Consumer 1 Hi Tech &amp; Computing 1 Industrial &amp; Utilities 1 Technology 4 Senior IT Management 3 IT Business Analysis 1 Construction 3 Project Manager 2 Construction Director 1 Consultancy, Strategy and Change 3 Transformation &amp; Change Management 2 Corporate Strategy 1 Engineering &amp; Manufacturing 3 General Management 2 Operations Management 1 Executive Search 2 Hospitality &amp; Leisure 1 Sales 1 Retail 2 Director 1 Merchandise &amp; Supply Chain 1 Digital 1 Creative / Art Direction 1 Legal 1 Fraud / White Collar / Crime 1 Industry button Property 12 Financial Services 9 Business Services 7 Healthcare / Pharmaceutical 7 Leisure, Travel &amp; Tourism 6 Public Sector 5 Technology &amp; Telecoms 5 FMCG (Fast Moving Consumer Goods) 4 Retail 4 Energy &amp; Natural Resources 3 Industrial / Manufacturing 3 Transport &amp; Distribution 3 Insurance 1 Type of contract button Permanent 68 Temporary 1 Job Nature button Work from home 4 Yearly salary (AED) Expand / collapse Search Job title Location Sort by Relevance Changed Salary Max Base Salary Min Base Salary Min Salary min 0 10k 20k 30k 40k 50k 75k 100k 125k 150k 200k 250k 500k 800k+ Salary Max Salary max 0 10k 20k 30k 40k 50k 75k 100k 125k 150k 200k 250k 500k 800k+ Cancel Regional HR Director - Luxury Retail Riyadh Permanent AED55,000 - AED65,000 per month (AED660,000 - AED780,000 per year) Work from home The Regional HR Director position for this fast paced, high growth luxury retail new-comer will oversee all HR activities acros",
+      "jd_text": "Search for Director jobs at some of the world&#039;s top companies using UAE&#039;s leading recruitment consultancy - Michael Page."
+    },
+    {
       "id": "linkedin_jobspy-li-4400537467",
       "source": "linkedin_jobspy",
       "title": "Director of Sales & Marketing",
@@ -994,6 +1146,34 @@
         "linkedin"
       ],
       "first_seen": "2026-04-13"
+    },
+    {
+      "id": "linkedin_jobspy-li-4401460753",
+      "source": "linkedin_jobspy",
+      "title": "Chief Product Technology Officer (CPTO)",
+      "company": "1inch",
+      "location": "Dubai, United Arab Emirates",
+      "url": "https://www.linkedin.com/jobs/view/4401460753",
+      "posted": "",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 0,
+      "match_keywords": [],
+      "raw_snippet": "1inch is the DeFi ecosystem building financial freedom for everyone. 1inch products help users and builders trade, hold and track digital assets \\- with the self\\-custody, comprehensive security and the intuitive user experience they need to unlock the potential of true crypto ownership. 1inch proto",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Chief Digital Officer",
+      "linkedin_id": "li-4401460753",
+      "jd_text": "1inch is the DeFi ecosystem building financial freedom for everyone. 1inch products help users and builders trade, hold and track digital assets \\- with the self\\-custody, comprehensive security and the intuitive user experience they need to unlock the potential of true crypto ownership. 1inch protocols and APIs provide core infrastructure across the DeFi industry and beyond.\n   \n\n  \n\n So if you\u2019re someone who thinks big, moves fast and wants to make an impact right from day one, then get ready to join our industry\\-changing team.\n   \n\n  \n\n*Location: We prioritise candidates who are based in Dubai then consider those working remotely in one of our European Hub Locations (UK, Spain or Germany).*\n The Chief Product and Technology Officer leads the company\u2019s product organization and shapes the overall product and technology portfolio. This role is responsible for defining product strategy, setting roadmaps, improving delivery, and ensuring a high level of product quality across the business.\n   \n\n  \n\n The CPTO connects customer needs, business goals, product priorities, and technology direction into one clear operating model. The role ensures that the company not only decides what products to build, but also how to build them in a scalable, reliable, and efficient way.\n   \n\n  \n\n This person needs strong product leadership and a solid understanding of technology and architecture. They must be able to guide major product and technical trade\\-offs, support long\\-term platform thinking, and improve how Product, Design, Engineering, and other teams work together. The CPTO is accountable for turning strategy into focused execution and for building products that deliver sustainable value to customers and the business.\n   \n\n  \n\n**Key Responsibilities**\n* Define and evolve the company\u2019s product strategy in line with business goals, customer needs, and market opportunities\n* Shape the overall product portfolio and make clear investment and prioritization decisions across products and capabilities\n* Ensure product plans balance growth opportunities, customer value, operational needs, and long\\-term sustainability\n* Translate company strategy into clear product direction and strategic priorities\n* Own product roadmap governance across the organization\n* Ensure roadmaps are clear, realistic, and aligned with available resources and technical constraints\n* Drive prioritization decisions across short\\-term business goals and longer\\-term platform or architecture investments\n* Establish transparent decision\\-making processes that improve focus and alignment across teams\n* Be accountable for delivery effectiveness, execution discipline, and predictable outcomes across the product organization\n* Ensure critical initiatives are executed with clear accountability, strong follow\\-through, and timely escalation when needed\n* Be accountable for the quality of the company\u2019s products across user experience, reliability, performance, scalability, and maintainability\n* Provide strong leadership on technology direction and ensure architecture choices support product strategy and delivery goals\n* Guide major trade\\-offs involving technical debt, platform investment, complexity, speed, and long\\-term product health\n* Promote high standards for product development, release quality, and continuous improvement\n\n\n**Job Requirements**\n* 12\\+ years of experience in product management, technology, engineering, or related leadership roles, including senior executive responsibility\n* Proven experience leading product strategy, portfolio management, and roadmap decisions in a technology\\-driven business\n* Strong track record of improving delivery effectiveness and leading cross\\-functional execution across Product, Design, and Engineering\n* Strong understanding of software development, system architecture, platform strategy, and technical trade\\-offs\n* Experience balancing customer value, business priorities, and technical constraints in complex product environments\n* Proven experience building and leading high\\-performing teams and senior leaders\n* Demonstrated ability to improve product quality, operating models, and organizational clarity at scale\n* Strong strategic thinking combined with the ability to drive operational execution and accountability\n* Excellent communication and stakeholder management skills at executive and team level\n* Strong ownership mindset, sound judgment, and high standards for quality and performance\n\n\n**Nice\\-to\\-Haves**\n* Experience in fintech, crypto, Web3, or other highly technical digital product environments\n* Experience leading both product and technology organizations under a unified executive model\n* Experience with platform modernization, architecture transformation, or scaling complex product ecosystems\n* Strong understanding of data\\-informed product management and performance measurement\n* Experience working in fast\\-growing, globally distributed organizations\n\n\n**Why work for us?**\n* Join a young, creative team in a fast\\-paced and supportive environment\n* We\u2019re open to new ideas \u2014 if you\u2019ve got a vision, pitch it and make it happen\n* Enjoy competitive pay that matches your skills and experience\n* Be part of a company that\u2019s shaping the future of DeFi\n* Take time when you need it \u2014 we offer unlimited vacation days\n* Get fully compensated for your work gear \u2014 we\u2019ll set you up for success\n\n\n We may use artificial intelligence (AI) tools to support parts of the hiring process, such as reviewing applications, analyzing resumes, or assessing responses. These tools assist our recruitment team but do not replace human judgment. Final hiring decisions are ultimately made by humans. If you would like more information about how your data is processed, please contact us.",
+      "source_count": 1,
+      "country": "United Arab Emirates",
+      "industry_bonus": 12,
+      "policy_status": "pass",
+      "sources": [
+        "linkedin"
+      ],
+      "first_seen": "2026-04-16"
     },
     {
       "id": "linkedin_jobspy-li-4400557402",
@@ -1030,7 +1210,7 @@
       "company": "Koru Impact",
       "location": "Doha, Qatar",
       "url": "https://www.linkedin.com/jobs/view/4399928040",
-      "posted": "",
+      "posted": "2026-04-14",
       "seniority": "C-Suite",
       "domain_match": false,
       "keyword_score": 0,
@@ -1054,15 +1234,15 @@
     }
   ],
   "kpi": {
-    "total_raw": 313,
+    "total_raw": 513,
     "sources_loaded": 2,
     "stale_sources": 2,
-    "unique_after_dedup": 293,
+    "unique_after_dedup": 480,
     "applied_filtered": 2,
-    "policy_filtered": 180,
-    "final_candidates": 33,
+    "policy_filtered": 369,
+    "final_candidates": 39,
     "multi_source_jobs": 0,
-    "new_today": 33
+    "new_today": 39
   },
   "recommendations": []
 }
