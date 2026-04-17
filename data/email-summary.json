@@ -2,45 +2,35 @@
   "meta": {
     "agent": "email-agent",
     "version": "3.0.0",
-    "generated_at": "2026-04-16T06:00:46.349857+02:00",
-    "duration_ms": 43323,
+    "generated_at": "2026-04-17T06:00:38.884728+02:00",
+    "duration_ms": 35712,
     "ttl_hours": 4,
     "status": "success",
     "error": null,
-    "run_id": "74bf1a6f",
+    "run_id": "1b7dc4e8",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
     "status": "ok",
-    "scan_time": "2026-04-16T06:00:07.039656+02:00",
+    "scan_time": "2026-04-17T06:00:07.549608+02:00",
     "total_scanned": 7,
     "by_category": {
       "interview_invite": 0,
-      "recruiter_reach": 2,
+      "recruiter_reach": 1,
       "application_ack": 0,
       "rejection": 0,
       "assessment": 0,
       "follow_up_needed": 0,
-      "other": 5
+      "other": 6
     },
     "interview_invites": [],
     "recruiter_messages": [
       {
-        "id": "353531",
-        "from": "Tala from foundit <jobmessenger@monstergulf.com>",
-        "subject": "Ahmed, Hot Job Opportunities Waiting For You",
-        "date": "Thu, 16 Apr 2026 08:23:35 +0530 (IST)",
-        "unread": true,
-        "priority": "MEDIUM",
-        "score": 2,
-        "pipeline_match": null
-      },
-      {
-        "id": "353532",
-        "from": "Bayt.com <notify@bayt.com>",
-        "subject": "=?utf-8?B?RW1wbG95ZXJzIGFyZSBzZWFyY2hpbmcgcmlnaHQgbm93?=",
-        "date": "Wed, 15 Apr 2026 21:51:32 GMT",
+        "id": "353703",
+        "from": "GulfTalent Jobs <jobs@gulftalent.com>",
+        "subject": "RTC-1 needs an Offshore Project Manager",
+        "date": "Thu, 16 Apr 2026 22:36:43 -0500",
         "unread": true,
         "priority": "MEDIUM",
         "score": 2,
@@ -51,72 +41,60 @@
     "rejections": [],
     "assessments": [],
     "follow_ups_needed": [],
-    "actionable_count": 2,
+    "actionable_count": 1,
     "hot_alerts": [],
     "signals": [],
     "llm_analysis": {
       "actionable_emails": [
         {
-          "id": "353531",
-          "subject": "Ahmed, Hot Job Opportunities Waiting For You",
-          "from": "Tala from foundit <jobmessenger@monstergulf.com>",
-          "date": "Thu, 16 Apr 2026 08:23:35 +0530 (IST)",
+          "id": "353703",
+          "subject": "RTC-1 needs an Offshore Project Manager",
+          "from": "GulfTalent Jobs <jobs@gulftalent.com>",
+          "date": "Thu, 16 Apr 2026 22:36:43 -0500",
           "category": "recruiter_reach",
           "urgency": "medium",
-          "intent": "The sender appears to want Ahmed to review current job opportunities and engage with the platform.",
+          "intent": "The sender appears to be surfacing a job opportunity for an Offshore Project Manager.",
           "action": "read_and_file",
           "response_deadline": "1 week",
-          "notes": "Named sender, but content not shown, review if targeting Gulf executive roles."
-        },
-        {
-          "id": "353532",
-          "subject": "=?utf-8?B?RW1wbG95ZXJzIGFyZSBzZWFyY2hpbmcgcmlnaHQgbm93?=",
-          "from": "Bayt.com <notify@bayt.com>",
-          "date": "Wed, 15 Apr 2026 21:51:32 GMT",
-          "category": "recruiter_reach",
-          "urgency": "low",
-          "intent": "The sender appears to be notifying Ahmed about employer activity, but the exact ask cannot be determined from available content.",
-          "action": "read_and_file",
-          "response_deadline": "when convenient",
-          "notes": "Likely platform alert, not enough content to confirm a direct opportunity."
+          "notes": "Automated job alert, review fit before engaging"
         }
       ],
       "summary": {
-        "total_actionable": 2,
+        "total_actionable": 1,
         "critical_count": 0,
         "requires_interview_prep": false,
         "requires_assessment": false,
         "recruiter_top_opportunities": [
-          "Tala from foundit <jobmessenger@monstergulf.com>"
+          "GulfTalent Jobs - RTC-1 needs an Offshore Project Manager"
         ],
-        "top_priority": "353531",
-        "daily_focus": "Review the foundit message first for senior Gulf-relevant roles, then skim Bayt only if it shows direct executive-fit openings."
+        "top_priority": "353703",
+        "daily_focus": "Review recruiter leads for Gulf-market fit and prioritize only roles aligned with your senior leadership trajectory."
       }
     }
   },
   "kpi": {
     "emails_processed": 7,
-    "actionable": 2,
+    "actionable": 1,
     "interviews_detected": 0,
-    "recruiter_messages": 2,
-    "unread_actionable": 2
+    "recruiter_messages": 1,
+    "unread_actionable": 1
   },
   "recommendations": [
     {
-      "id": "rec-74bf1a6f-0",
+      "id": "rec-1b7dc4e8-0",
       "action": "review_and_respond",
-      "target": "2 recruiter message(s)",
+      "target": "1 recruiter message(s)",
       "reason": "Recruiter outreach could lead to opportunities",
       "urgency": "high",
-      "timestamp": "2026-04-16T06:00:46.349706+02:00"
+      "timestamp": "2026-04-17T06:00:38.884620+02:00"
     },
     {
-      "id": "rec-74bf1a6f-1",
+      "id": "rec-1b7dc4e8-1",
       "action": "check_inbox",
-      "target": "2 unread actionable email(s)",
+      "target": "1 unread actionable email(s)",
       "reason": "Unread emails need attention",
       "urgency": "high",
-      "timestamp": "2026-04-16T06:00:46.349730+02:00"
+      "timestamp": "2026-04-17T06:00:38.884637+02:00"
     }
   ]
 }

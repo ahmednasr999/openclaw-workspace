@@ -2,10 +2,10 @@
 description: "Daily X/Twitter scan: relevant posts about OpenClaw, AI agents, automation"
 type: log
 topics: [knowledge, system-ops]
-updated: 2026-04-16
+updated: 2026-04-17
 ---
 
-# X Radar — 2026-04-16
+# X Radar — 2026-04-17
 
 ## Key Accounts to Monitor
 
@@ -41,4 +41,4 @@ updated: 2026-04-16
 - When you share X links, I'll analyze and add here
 
 ---
-*Scanned: Thu Apr 16 02:30:02 EET 2026*
+*Scanned: Fri Apr 17 02:30:01 EET 2026*
