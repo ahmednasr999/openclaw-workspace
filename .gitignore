@@ -32,3 +32,14 @@ media/inbound/*.docx
 
 # Local-only state
 *.local.json
+
+# Local repo hygiene, generated outputs, and sensitive browser state
+/.agents/
+/.notifications/
+/artifacts/
+/backups/
+/cvs/
+/cookies/
+/config/*cookies*
+/*.pptx
+/*.ppt
