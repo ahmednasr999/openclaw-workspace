@@ -48,16 +48,21 @@ After EVERY sub-agent completes, auto-generate a structured summary appended to 
    - The audit log entries during the agent's session
    - File system changes (git diff if available)
 
-2. **Append to audit log** - every summary gets logged:
+2. **Preserve user style preferences** - when converting sub-agent output into a parent-facing summary, inherit the parent session's communication style and any durable user preferences from workspace memory files such as `USER.md`.
+   - If the user prefers light emojis, keep them natural and present instead of flattening the summary into sterile text.
+   - Do not strip warmth or tone just because the source result is structured.
+   - Keep summaries concise, but match the user's established style.
+
+3. **Append to audit log** - every summary gets logged:
    ```json
    {"timestamp":"ISO","type":"agent_summary","agent":"...","status":"...","summary":"..."}
    ```
 
-3. **Append to daily actions** - for Dream Mode consumption
+4. **Append to daily actions** - for Dream Mode consumption
 
-4. **If the agent was stuck** - include the stuck protocol output in the summary
+5. **If the agent was stuck** - include the stuck protocol output in the summary
 
-5. **If verification failed** - include the verification verdict
+6. **If verification failed** - include the verification verdict
 
 ## Delivery
 - Sub-agent summaries → returned to parent agent automatically
