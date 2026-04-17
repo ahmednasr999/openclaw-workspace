@@ -2,23 +2,23 @@
   "meta": {
     "agent": "system-agent",
     "version": "1.0.0",
-    "generated_at": "2026-04-16T06:00:24.032935+02:00",
-    "duration_ms": 22225,
+    "generated_at": "2026-04-17T06:00:23.003928+02:00",
+    "duration_ms": 21147,
     "ttl_hours": 1,
     "status": "success",
     "error": null,
-    "run_id": "7217b591",
+    "run_id": "c0c19a9c",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
-    "scan_time": "2026-04-16T06:00:24.032827+02:00",
+    "scan_time": "2026-04-17T06:00:23.003817+02:00",
     "system": {
-      "disk_usage_pct": 68,
+      "disk_usage_pct": 67,
       "memory": {
         "total_gb": 7.8,
-        "available_gb": 5.2,
-        "used_pct": 32.8
+        "available_gb": 5.0,
+        "used_pct": 35.1
       },
       "gateway": {
         "status": "healthy",
@@ -26,7 +26,7 @@
       },
       "openclaw_process": {
         "running": true,
-        "pid_count": 23
+        "pid_count": 25
       }
     },
     "agents": {
@@ -36,13 +36,13 @@
           "status": "healthy",
           "age_hours": 1.8,
           "ttl_hours": 6,
-          "last_run": "2026-04-16T04:10:38.748460+02:00",
+          "last_run": "2026-04-17T04:09:37.933383+02:00",
           "last_status": "success"
         },
         {
           "agent": "jobs-review",
           "status": "stale",
-          "age_hours": 151.9,
+          "age_hours": 175.9,
           "ttl_hours": 6,
           "last_run": "2026-04-09T22:05:26.792690+02:00",
           "last_status": "success"
@@ -52,7 +52,7 @@
           "status": "healthy",
           "age_hours": 2.0,
           "ttl_hours": 4,
-          "last_run": "2026-04-16T04:00:52.708306+02:00",
+          "last_run": "2026-04-17T04:00:34.812679+02:00",
           "last_status": "success"
         },
         {
@@ -63,7 +63,7 @@
         {
           "agent": "comment-radar",
           "status": "stale",
-          "age_hours": 457.0,
+          "age_hours": 481.0,
           "ttl_hours": 6,
           "last_run": "2026-03-28T03:00:24.648751+00:00",
           "last_status": null
@@ -71,7 +71,7 @@
         {
           "agent": "outreach-agent",
           "status": "stale",
-          "age_hours": 100.0,
+          "age_hours": 124.0,
           "ttl_hours": 6,
           "last_run": "2026-04-12T00:01:29.419082+00:00",
           "last_status": null
@@ -81,7 +81,7 @@
           "status": "healthy",
           "age_hours": 6.0,
           "ttl_hours": 6,
-          "last_run": "2026-04-16T00:00:18.042215+02:00",
+          "last_run": "2026-04-17T00:00:16.901272+02:00",
           "last_status": "success"
         }
       ],
@@ -118,12 +118,12 @@
   },
   "recommendations": [
     {
-      "id": "rec-7217b591-0",
+      "id": "rec-c0c19a9c-0",
       "action": "run_agents",
       "target": "3 stale agent(s): jobs-review, comment-radar, outreach-agent",
       "reason": "Agent data is past TTL",
       "urgency": "medium",
-      "timestamp": "2026-04-16T06:00:24.032872+02:00"
+      "timestamp": "2026-04-17T06:00:23.003863+02:00"
     }
   ]
 }

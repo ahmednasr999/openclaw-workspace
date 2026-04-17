@@ -1,33 +1,23 @@
 {
   "status": "ok",
-  "scan_time": "2026-04-16T06:00:07.039656+02:00",
+  "scan_time": "2026-04-17T06:00:07.549608+02:00",
   "total_scanned": 7,
   "by_category": {
     "interview_invite": 0,
-    "recruiter_reach": 2,
+    "recruiter_reach": 1,
     "application_ack": 0,
     "rejection": 0,
     "assessment": 0,
     "follow_up_needed": 0,
-    "other": 5
+    "other": 6
   },
   "interview_invites": [],
   "recruiter_messages": [
     {
-      "id": "353531",
-      "from": "Tala from foundit <jobmessenger@monstergulf.com>",
-      "subject": "Ahmed, Hot Job Opportunities Waiting For You",
-      "date": "Thu, 16 Apr 2026 08:23:35 +0530 (IST)",
-      "unread": true,
-      "priority": "MEDIUM",
-      "score": 2,
-      "pipeline_match": null
-    },
-    {
-      "id": "353532",
-      "from": "Bayt.com <notify@bayt.com>",
-      "subject": "=?utf-8?B?RW1wbG95ZXJzIGFyZSBzZWFyY2hpbmcgcmlnaHQgbm93?=",
-      "date": "Wed, 15 Apr 2026 21:51:32 GMT",
+      "id": "353703",
+      "from": "GulfTalent Jobs <jobs@gulftalent.com>",
+      "subject": "RTC-1 needs an Offshore Project Manager",
+      "date": "Thu, 16 Apr 2026 22:36:43 -0500",
       "unread": true,
       "priority": "MEDIUM",
       "score": 2,
@@ -38,7 +28,7 @@
   "rejections": [],
   "assessments": [],
   "follow_ups_needed": [],
-  "actionable_count": 2,
+  "actionable_count": 1,
   "hot_alerts": [],
   "signals": []
 }
