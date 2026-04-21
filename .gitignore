@@ -43,3 +43,17 @@ media/inbound/*.docx
 /config/*cookies*
 /*.pptx
 /*.ppt
+
+# Workspace scratch outputs
+/work/
+
+# HTML slides system generated outputs
+/html-slides-system/builds/
+/html-slides-system/planning/latest/
+
+# Slides skill generated/example outputs
+/skills/slides/examples/**/exports/
+/skills/slides/examples/**/rendered/
+/skills/slides/examples/**/montage.png
+/skills/slides/examples/**/pptxgenjs_helpers/
+/skills/ontology/scripts/*.pre-fix-*

@@ -1,0 +1,63 @@
+[
+  {
+    "name": "warm-editorial-brand",
+    "input": {
+      "bodyBackground": "#F6F0E8",
+      "cardBackground": "#FBF7F2",
+      "primaryText": "#1E1915",
+      "secondaryText": "#5B524A",
+      "borderColor": "#D9CEC2",
+      "accentColor": "#C86432",
+      "titleFont": "Inter Tight",
+      "bodyFont": "Inter",
+      "monoFont": "IBM Plex Mono"
+    },
+    "expect": {
+      "bg": "F6F0E8",
+      "surface": "FBF7F2",
+      "text-primary": "1E1915",
+      "text-secondary": "5B524A",
+      "accent": "C86432"
+    }
+  },
+  {
+    "name": "pure-white-site-fallback",
+    "input": {
+      "bodyBackground": "#FFFFFF",
+      "cardBackground": "#FFFFFF",
+      "primaryText": "#111111",
+      "secondaryText": "#6B6B6B",
+      "borderColor": "#DDDDDD",
+      "accentColor": "#0F62FE",
+      "titleFont": "Sora",
+      "bodyFont": "Inter",
+      "monoFont": "JetBrains Mono"
+    },
+    "expect": {
+      "bg": "FAF7F2",
+      "surface": "FFFDFC",
+      "text-primary": "111111",
+      "accent": "0F62FE"
+    }
+  },
+  {
+    "name": "over-colorful-brand-reduction",
+    "input": {
+      "bodyBackground": "#F4F6FA",
+      "cardBackground": "#FFFFFF",
+      "primaryText": "#102033",
+      "secondaryText": "#607080",
+      "borderColor": "#CCD4DD",
+      "accentColor": "#FF2D55",
+      "titleFont": "Manrope",
+      "bodyFont": "Manrope",
+      "monoFont": "SF Mono"
+    },
+    "expect": {
+      "bg": "F4F6FA",
+      "surface": "FFFFFF",
+      "text-primary": "102033",
+      "accent": "FF2D55"
+    }
+  }
+]

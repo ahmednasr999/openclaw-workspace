@@ -1,0 +1,20 @@
+{
+  "name": "html-slides-system",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "plan": "npx --yes tsx src/planner/planDeck.ts",
+    "render": "npx --yes tsx src/renderer/renderDeck.ts",
+    "build": "npm run plan && npm run render"
+  },
+  "dependencies": {
+    "nunjucks": "^3.2.4"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.2",
+    "typescript": "^5.8.3",
+    "@types/node": "^22.15.3",
+    "@types/nunjucks": "^3.2.6"
+  }
+}

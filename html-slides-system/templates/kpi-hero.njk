@@ -1,0 +1,10 @@
+<section class="slide slide-kpi">
+  {% if eyebrow %}<div class="eyebrow">{{ eyebrow }}</div>{% endif %}
+  <h1 class="slide-title">{{ title }}</h1>
+  <div class="card alt" style="padding:28px; margin-top:18px;">
+    <div class="metric">{{ metric }}</div>
+    <div class="metric-label">{{ metricLabel }}</div>
+    {% if supportingText %}<div class="body-text" style="margin-top:18px; max-width:540px;">{{ supportingText }}</div>{% endif %}
+  </div>
+  {% if footnote %}<div class="footnote">{{ footnote }}</div>{% endif %}
+</section>
