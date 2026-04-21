@@ -1,0 +1,14 @@
+<section class="slide slide-timeline">
+  {% if eyebrow %}<div class="eyebrow">{{ eyebrow }}</div>{% endif %}
+  <h1 class="slide-title">{{ title }}</h1>
+  <div class="timeline" style="grid-template-columns: repeat({{ phases.length }}, 1fr);">
+    {% for phase in phases %}
+      <div class="timeline-phase {% if currentLabel and currentLabel == phase.label %}current{% endif %}">
+        <div class="timeline-label">{{ phase.label }}</div>
+        {% if phase.title %}<div class="timeline-title">{{ phase.title }}</div>{% endif %}
+        <div class="timeline-detail">{{ phase.detail }}</div>
+      </div>
+    {% endfor %}
+  </div>
+  {% if notes %}<div class="footnote">{{ notes }}</div>{% endif %}
+</section>

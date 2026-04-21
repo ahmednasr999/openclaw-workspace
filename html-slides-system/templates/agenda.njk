@@ -1,0 +1,11 @@
+<section class="slide slide-agenda">
+  {% if eyebrow %}<div class="eyebrow">{{ eyebrow }}</div>{% endif %}
+  <h1 class="slide-title">{{ title }}</h1>
+  {% if subtitle %}<p class="slide-subtitle">{{ subtitle }}</p>{% endif %}
+  <div class="card">
+    <ol class="list" style="padding-left:24px;">
+      {% for item in items %}<li>{{ item }}</li>{% endfor %}
+    </ol>
+  </div>
+  {% if notes %}<div class="footnote">{{ notes }}</div>{% endif %}
+</section>

@@ -1,0 +1,27 @@
+<section class="slide slide-thesis">
+  {% if eyebrow %}<div class="eyebrow">{{ eyebrow }}</div>{% endif %}
+  <h1 class="slide-title">{{ title }}</h1>
+  {% if thesis %}
+    <div class="card alt" style="margin:10px 0 24px 0;">
+      <div class="body-text" style="font-size:26px; line-height:1.18; font-weight:800;">{{ thesis }}</div>
+    </div>
+  {% endif %}
+  <div class="grid-2">
+    <div class="card">
+      {% if supportingPoints and supportingPoints.length %}
+        <div class="card-title">Supporting points</div>
+        <ul class="list">
+          {% for point in supportingPoints %}<li>{{ point }}</li>{% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+    <div class="card alt">
+      {% if visual and visual.src %}
+        <img src="{{ visual.src }}" alt="{{ visual.alt or title }}" style="width:100%; height:280px; object-fit:cover; border-radius:14px;">
+      {% else %}
+        <div style="height:280px; display:flex; align-items:center; justify-content:center; color:var(--text-soft);">Visual slot</div>
+      {% endif %}
+    </div>
+  </div>
+  {% if notes %}<div class="footnote">{{ notes }}</div>{% endif %}
+</section>

@@ -1,0 +1,23 @@
+<section class="slide slide-table">
+  {% if eyebrow %}<div class="eyebrow">{{ eyebrow }}</div>{% endif %}
+  <h1 class="slide-title">{{ title }}</h1>
+  <table class="data-table">
+    <thead>
+      <tr>
+        {% for col in columns %}
+          <th class="{% if highlightColumn is defined and highlightColumn == loop.index0 %}highlight{% endif %}">{{ col }}</th>
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in rows %}
+        <tr>
+          {% for cell in row %}
+            <td class="{% if highlightColumn is defined and highlightColumn == loop.index0 %}highlight{% endif %}">{{ cell }}</td>
+          {% endfor %}
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% if footnote %}<div class="footnote">{{ footnote }}</div>{% endif %}
+</section>

@@ -1,0 +1,273 @@
+[
+  {
+    "name": "executive_thesis",
+    "targetSlideCount": 6,
+    "entries": [
+      {
+        "id": "brief-1",
+        "displayName": "executive-brief.md",
+        "sourceKind": "markdown",
+        "wordCount": 420,
+        "confidence": "high",
+        "titleHint": "Transformation Thesis",
+        "preview": "Strategic brief",
+        "sections": [
+          {
+            "title": "Problem",
+            "kind": "problem",
+            "items": [
+              "The operating model is fragmented across business units."
+            ]
+          },
+          {
+            "title": "Recommendations",
+            "kind": "recommendations",
+            "items": [
+              "Adopt a phased automation program led by one transformation office."
+            ]
+          }
+        ],
+        "extractionQuality": "full",
+        "extractionStatus": "completed"
+      }
+    ],
+    "expectations": [
+      {"slideNumber": 1, "pattern": "cover"},
+      {"slideNumber": 2, "pattern": "agenda"},
+      {"workingTitle": "Problem", "pattern": "thesis-summary"},
+      {"workingTitle": "Recommendations", "pattern": "thesis-summary"},
+      {"slideNumber": 6, "pattern": "closing"}
+    ]
+  },
+  {
+    "name": "kpi_story",
+    "targetSlideCount": 5,
+    "entries": [
+      {
+        "id": "data-1",
+        "displayName": "kpis.csv",
+        "sourceKind": "data",
+        "wordCount": 180,
+        "confidence": "high",
+        "titleHint": "KPI Review",
+        "preview": "Metrics review",
+        "sections": [
+          {
+            "title": "Metrics",
+            "kind": "metrics",
+            "items": [
+              "Revenue increased 18 percent year over year.",
+              "Margin improved 4 points."
+            ]
+          }
+        ],
+        "extractionQuality": "full",
+        "extractionStatus": "completed"
+      }
+    ],
+    "expectations": [
+      {"slideNumber": 1, "pattern": "cover"},
+      {"workingTitle": "Metrics", "pattern": "metric"},
+      {"slideNumber": 5, "pattern": "closing"}
+    ]
+  },
+  {
+    "name": "roadmap_sequence",
+    "targetSlideCount": 6,
+    "entries": [
+      {
+        "id": "plan-1",
+        "displayName": "plan.pdf",
+        "sourceKind": "pdf",
+        "wordCount": 520,
+        "confidence": "high",
+        "titleHint": "Roadmap",
+        "preview": "Implementation plan",
+        "sections": [
+          {
+            "title": "Timeline",
+            "kind": "timeline",
+            "items": [
+              "Phase 1 in Q1",
+              "Phase 2 in Q2",
+              "Phase 3 in Q3"
+            ]
+          },
+          {
+            "title": "Next Steps",
+            "kind": "next_steps",
+            "items": [
+              "Approve the first pilot and assign owners."
+            ]
+          }
+        ],
+        "extractionQuality": "full",
+        "extractionStatus": "completed"
+      }
+    ],
+    "expectations": [
+      {"slideNumber": 1, "pattern": "cover"},
+      {"workingTitle": "Timeline", "pattern": "process-timeline"},
+      {"workingTitle": "Next Steps", "pattern": "process-timeline"},
+      {"slideNumber": 6, "pattern": "closing"}
+    ]
+  },
+  {
+    "name": "comparison_risks",
+    "targetSlideCount": 6,
+    "entries": [
+      {
+        "id": "risk-1",
+        "displayName": "risk-review.md",
+        "sourceKind": "markdown",
+        "wordCount": 390,
+        "confidence": "high",
+        "titleHint": "Risk Review",
+        "preview": "Risk assessment",
+        "sections": [
+          {
+            "title": "Risks",
+            "kind": "risks",
+            "items": [
+              "Delay from fragmented ownership.",
+              "Budget leakage from duplicated tooling.",
+              "Change resistance across business units."
+            ]
+          }
+        ],
+        "extractionQuality": "full",
+        "extractionStatus": "completed"
+      }
+    ],
+    "expectations": [
+      {"workingTitle": "Risks", "pattern": "comparison"}
+    ]
+  },
+  {
+    "name": "pattern_fields_present",
+    "targetSlideCount": 7,
+    "entries": [
+      {
+        "id": "brief-2",
+        "displayName": "transformation-brief.md",
+        "sourceKind": "markdown",
+        "wordCount": 560,
+        "confidence": "high",
+        "titleHint": "Transformation Brief",
+        "preview": "Transformation brief",
+        "sections": [
+          {
+            "title": "Problem",
+            "kind": "problem",
+            "items": [
+              "Operating friction is slowing execution."
+            ]
+          },
+          {
+            "title": "Recommendations",
+            "kind": "recommendations",
+            "items": [
+              "Create one transformation office.",
+              "Run one pilot before scaling."
+            ]
+          },
+          {
+            "title": "Timeline",
+            "kind": "timeline",
+            "items": [
+              "Pilot in Q1",
+              "Scale in Q2",
+              "Standardize in Q3"
+            ]
+          },
+          {
+            "title": "Next Steps",
+            "kind": "next_steps",
+            "items": [
+              "Approve pilot scope",
+              "Assign one accountable owner"
+            ]
+          }
+        ],
+        "extractionQuality": "full",
+        "extractionStatus": "completed"
+      }
+    ],
+    "expectations": [
+      {"slideNumber": 2, "pattern": "agenda"},
+      {"workingTitle": "Timeline", "pattern": "process-timeline"},
+      {"workingTitle": "Recommendations", "pattern": "thesis-summary"},
+      {"slideNumber": 7, "pattern": "closing"}
+    ]
+  },
+  {
+    "name": "multi_source_explainer",
+    "targetSlideCount": 6,
+    "entries": [
+      {
+        "id": "web-1",
+        "displayName": "article.md",
+        "sourceKind": "url",
+        "wordCount": 260,
+        "confidence": "medium",
+        "titleHint": "Market context",
+        "preview": "Market context",
+        "sections": [
+          {
+            "title": "Overview",
+            "kind": "content",
+            "items": [
+              "The market is consolidating around fewer higher-value vendors."
+            ]
+          }
+        ],
+        "extractionQuality": "basic",
+        "extractionStatus": "completed"
+      },
+      {
+        "id": "pdf-1",
+        "displayName": "case-study.pdf",
+        "sourceKind": "pdf",
+        "wordCount": 330,
+        "confidence": "medium",
+        "titleHint": "Case study",
+        "preview": "Case study",
+        "sections": [
+          {
+            "title": "Overview",
+            "kind": "content",
+            "items": [
+              "The pilot improved adoption when the rollout was limited to one function first."
+            ]
+          }
+        ],
+        "extractionQuality": "basic",
+        "extractionStatus": "completed"
+      },
+      {
+        "id": "img-1",
+        "displayName": "reference.png",
+        "sourceKind": "image",
+        "wordCount": 40,
+        "confidence": "low",
+        "titleHint": "Reference image",
+        "preview": "Visual reference",
+        "sections": [
+          {
+            "title": "Overview",
+            "kind": "content",
+            "items": [
+              "One visual reference supports the narrative."
+            ]
+          }
+        ],
+        "extractionQuality": "basic",
+        "extractionStatus": "completed"
+      }
+    ],
+    "expectations": [
+      {"workingTitle": "Market context", "pattern": "2-column-explainer"},
+      {"workingTitle": "Case study", "pattern": "2-column-explainer"}
+    ]
+  }
+]

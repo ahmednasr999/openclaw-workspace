@@ -1,0 +1,16 @@
+<section class="slide slide-closing">
+  {% if eyebrow %}<div class="eyebrow">{{ eyebrow }}</div>{% endif %}
+  <h1 class="slide-title">{{ title }}</h1>
+  {% if closingStatement %}
+    <div class="card alt" style="margin-top:18px;">
+      <div style="font-size:28px; line-height:1.15; font-weight:800; color:var(--text);">{{ closingStatement }}</div>
+    </div>
+  {% endif %}
+  {% if supportingText %}<p class="body-text" style="margin-top:22px; max-width:900px;">{{ supportingText }}</p>{% endif %}
+  {% if cta %}
+    <div class="card" style="margin-top:28px; display:inline-block; padding:14px 20px; border-color:var(--accent);">
+      <div style="font-size:14px; font-weight:800; color:var(--accent); text-transform:uppercase; letter-spacing:0.06em;">{{ cta }}</div>
+    </div>
+  {% endif %}
+  {% if notes %}<div class="footnote">{{ notes }}</div>{% endif %}
+</section>

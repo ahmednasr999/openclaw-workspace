@@ -1,0 +1,17 @@
+<section class="slide slide-comparison">
+  {% if eyebrow %}<div class="eyebrow">{{ eyebrow }}</div>{% endif %}
+  <h1 class="slide-title">{{ title }}</h1>
+  <div class="compare">
+    <div class="pane {% if preferredSide == 'left' %}preferred{% endif %}">
+      <div class="compare-title">{{ leftTitle }}</div>
+      <div class="compare-body">{{ leftBody }}</div>
+      {% if preferredSide == 'left' %}<div class="preferred-badge">Preferred</div>{% endif %}
+    </div>
+    <div class="pane {% if preferredSide == 'right' %}preferred{% endif %}">
+      <div class="compare-title">{{ rightTitle }}</div>
+      <div class="compare-body">{{ rightBody }}</div>
+      {% if preferredSide == 'right' %}<div class="preferred-badge">Preferred</div>{% endif %}
+    </div>
+  </div>
+  {% if notes %}<div class="footnote">{{ notes }}</div>{% endif %}
+</section>
