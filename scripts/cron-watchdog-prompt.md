@@ -76,16 +76,27 @@ Skip issues that are within cooldown.
 
 ## STEP 4: Alert or Silence
 
-If ANY new issues found (not within cooldown), send ONE consolidated message:
+If ANY new issues found (not within cooldown), send ONE consolidated traffic-light message:
 
 ```
-⏰ SYSTEM HEALTH - [HH:MM Cairo]
+⏰ SYSTEM HEALTH — [HH:MM Cairo]
 
-🔴 [Critical items, one per line]
-🟡 [Warning items, one per line]
+🔴 BLOCKER — [Critical item, direct impact]
+⚠️ WARNING — [Warning item, risk if ignored]
+
+🟢 Gateway: live
+🟢 Disk: [percent]
+🟢 Cron health: [summary]
 
 Action needed: [brief]
 ```
+
+Formatting rules:
+- Put 🔴 blockers first, then ⚠️ warnings, then 🟢 healthy checks.
+- One line per check; keep it mobile-scannable.
+- Do not include healthy checks that add no useful context unless they help explain the alert.
+- Use `🔴 BLOCKER` for current failures or secret/exposure risk.
+- Use `⚠️ WARNING` for degraded or misaligned state that does not need immediate interruption.
 
 Update `/root/.openclaw/workspace/.watchdog/last-alerts.json` with alert timestamps for each reported issue.
 
