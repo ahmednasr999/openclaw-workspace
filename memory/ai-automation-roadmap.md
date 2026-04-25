@@ -21,7 +21,7 @@ updated: 2026-03-14
 | 6 | Gmail Automation (Himalaya) | ✅ Live | CLI | On demand |
 | 7 | Quota Monitor + Fallback Validator | ✅ Live | Bash/Node | Daily 00:00 + 06:00 UTC |
 | 8 | Monthly Maintenance | ✅ Live | MiniMax M2.5 | 1st of month 9 AM Cairo |
-| 9 | Memory Indexing (QMD) | ✅ Live | Ollama | 5min debounce |
+| 9 | Memory Indexing (QMD) | ✅ Live | Local embeddings | 5min debounce |
 | 10 | Mission Control v3 Dashboard | ✅ Live | Next.js | PM2 managed |
 
 ## 🟡 Next High-Value Automations

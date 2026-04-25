@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-09T16:00:29.157562+02:00",
+  "last_updated": "2026-04-24T13:00:22.209608+02:00",
   "alerts": [
     {
       "type": "gateway_down",
@@ -126,7 +126,28 @@
       "message": "Interview invite from Quanterion Solutions Incorporated <reliability@quanterion.com>: Preview Reliability Training in a 15 Min. Webinar!",
       "timestamp": "2026-04-09T16:00:18.038943+02:00",
       "id": "alert-17-160029"
+    },
+    {
+      "type": "interview_detected",
+      "urgency": "critical",
+      "message": "Interview invite from \"GatedTalent\" <response@gatedtalent.com>: Webinar next week: The Behaviours That Accelerate or Undermine Your Progress (free to attend)",
+      "timestamp": "2026-04-18T18:00:16.564544+02:00",
+      "id": "alert-18-180031"
+    },
+    {
+      "type": "interview_detected",
+      "urgency": "critical",
+      "message": "Interview invite from YS Buzz <Newsletters@yourstory.com>: =?UTF-8?q?=F0=9F=AB=84Advancing_women=E2=80=99s_reproductive_rights?=",
+      "timestamp": "2026-04-24T05:00:13.750658+02:00",
+      "id": "alert-19-060026"
+    },
+    {
+      "type": "gateway_down",
+      "urgency": "critical",
+      "message": "Gateway is down: <urlopen error [Errno 111] Connection refused>",
+      "timestamp": "2026-04-24T13:00:10.273966+02:00",
+      "id": "alert-20-140022"
     }
   ],
-  "active_count": 18
+  "active_count": 21
 }

@@ -40,3 +40,19 @@
 ✅ Pipeline sync: 0 new jobs | 758 updated | 1 new orgs | 758 total in Notion
 /usr/bin/python3: can't open file '/root/.openclaw/workspace/scripts/ontology-notion-sync.py': [Errno 2] No such file or directory
 ✅ Pipeline sync: 0 new jobs | 758 updated | 1 new orgs | 758 total in Notion
+/usr/bin/python3: can't open file '/root/.openclaw/workspace/scripts/ontology-notion-sync.py': [Errno 2] No such file or directory
+✅ Pipeline sync: 0 new jobs | 758 updated | 1 new orgs | 758 total in Notion
+/usr/bin/python3: can't open file '/root/.openclaw/workspace/scripts/ontology-notion-sync.py': [Errno 2] No such file or directory
+✅ Pipeline sync: 0 new jobs | 758 updated | 1 new orgs | 758 total in Notion
+/usr/bin/python3: can't open file '/root/.openclaw/workspace/scripts/ontology-notion-sync.py': [Errno 2] No such file or directory
+✅ Pipeline sync: 0 new jobs | 758 updated | 1 new orgs | 758 total in Notion
+/usr/bin/python3: can't open file '/root/.openclaw/workspace/scripts/ontology-notion-sync.py': [Errno 2] No such file or directory
+✅ Pipeline sync: 0 new jobs | 300 updated | 1 new orgs | 300 total in Notion
+/usr/bin/python3: can't open file '/root/.openclaw/workspace/scripts/ontology-notion-sync.py': [Errno 2] No such file or directory
+✅ Pipeline sync: 0 new jobs | 758 updated | 1 new orgs | 758 total in Notion
+flock: cannot open lock file /var/lock/openclaw/ontology-notion-sync.lock: No such file or directory
+flock: cannot open lock file /var/lock/openclaw/ontology-pipeline-sync.lock: No such file or directory
+flock: cannot open lock file /var/lock/openclaw/ontology-notion-sync.lock: No such file or directory
+flock: cannot open lock file /var/lock/openclaw/ontology-pipeline-sync.lock: No such file or directory
+/usr/bin/python3: can't open file '/root/.openclaw/workspace/scripts/ontology-notion-sync.py': [Errno 2] No such file or directory
+✅ Pipeline sync: 0 new jobs | 758 updated | 1 new orgs | 758 total in Notion

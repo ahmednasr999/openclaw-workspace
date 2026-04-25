@@ -1070,3 +1070,56 @@ Node.js v20.19.4
 ## Calendar - Today's Events
 Get "https://www.googleapis.com/calendar/v3/users/me/calendarList?alt=json&maxResults=250&prettyPrint=false": round trip: base token source: oauth2: "unauthorized_client" "Unauthorized"
 
+=== Morning Brief - 2026-04-18 03:31 PM ===
+
+## Claude 2x Usage Reminder
+
+## Job Radar (from Tavily)
+[search-router] Tavily unavailable, falling back to local SearXNG: Tavily Search failed (433): {"detail":{"error":"This request exceeds the pay-as-you-go limit. You can increase your limit on the Tavily dashboard."}}
+## Sources
+
+_(provider: searxng)_
+
+- **Search Roles – Deutsche Bank Careers**
+  https://careers.db.com/professionals/search-roles/
+  Use our search tool to find current opportunities here at Deutsche Bank.
+
+- **‏Khaled Naggar‏ - ‏Chief Transformation Officer‏ | LinkedIn**
+  https://ae.linkedin.com/in/khalednaggar
+  Chief Digital Transformation Officer · VP Digital Transformation & Innovationn · Regional Head of Digital Innovation (APAC) · Growth & Innovation Advisor - New ...
+
+- **‏Jaleel Rahiman‏ - ‏Prime Healthcare Group LLC‏ | LinkedIn**
+  https://ae.linkedin.com/in/jaleel-rahiman-03438720b
+  الخبرة: ‏Prime Healthcare Group LLC‏ · الموقع: ‏دبي‏. عرض ملف ‏Jaleel Rahiman‏ ‏‏ الشخصي على LinkedIn، وهو مجتمع احترافي يضم مليار عضو.
+
+- **Dubai Chamber of Commerce - Dubai Business Hub - Dubai ...**
+  https://www.dubaichambercommerce.com/
+  3 days ago · Creating a favourable business environment to help companies achieve success and consolidate Dubai’s position as a leading global hub for business, trade, and investment.
+
+- **Technology, Digital & Transformation Recruitment | Aventus**
+  https://www.aventusglobal.com/digital-technology-recruitment
+  From government digitalisation programmes to AI-driven enterprises and smart city initiatives, the region's technology landscape is evolving at speed. Aventus ...
+
+## Gmail - New Opportunities
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/root/.openclaw/workspace/scripts/gmail-scan.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.0
+
+## Calendar - Today's Events
+*Calendar API unavailable (gog v0.12.0 bug - tracking fix)*
+

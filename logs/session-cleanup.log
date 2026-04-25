@@ -82,3 +82,35 @@
   sessions.json: 13M -> 7.9M (ok, pruned 27)
   Archived JSONL: 11 files
 [2026-04-17T01:05:16Z] Cleanup done
+[2026-04-18T01:04:44Z] Starting session cleanup
+  sessions.json: 11M -> 6.6M (ok, pruned 27)
+  Archived JSONL: 13 files
+[2026-04-18T01:04:45Z] Cleanup done
+[2026-04-19T01:05:11Z] Starting session cleanup
+  sessions.json: 9.7M -> 6.0M (ok, pruned 23)
+  Archived JSONL: 13 files
+[2026-04-19T01:05:12Z] Cleanup done
+[2026-04-20T01:04:39Z] Starting session cleanup
+  sessions.json: 9.8M -> 6.2M (ok, pruned 20)
+  Archived JSONL: 12 files
+[2026-04-20T01:04:40Z] Cleanup done
+[2026-04-21T01:04:26Z] Starting session cleanup
+  sessions.json: 9.4M -> 5.9M (ok, pruned 19)
+  Archived JSONL: 15 files
+[2026-04-21T01:04:28Z] Cleanup done
+[2026-04-22T01:04:35Z] Starting session cleanup
+  sessions.json: 9.3M -> 6.1M (ok, pruned 18)
+  Archived JSONL: 11 files
+[2026-04-22T01:04:37Z] Cleanup done
+[2026-04-23T01:05:13Z] Starting session cleanup
+  sessions.json: 996K -> 776K (ok, pruned 0)
+  Archived JSONL: 0 files
+[2026-04-23T01:05:13Z] Cleanup done
+[2026-04-24T00:06:43Z] Starting session cleanup
+  sessions.json: 4.1M -> 3.2M (ok, pruned 0)
+  Archived JSONL: 2 files
+[2026-04-24T00:06:44Z] Cleanup done
+[2026-04-25T00:04:15Z] Starting session cleanup
+  sessions.json: 5.2M -> 4.1M (ok, pruned 0)
+  Archived JSONL: 5 files
+[2026-04-25T00:04:17Z] Cleanup done

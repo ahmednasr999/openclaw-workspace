@@ -2,99 +2,56 @@
   "meta": {
     "agent": "email-agent",
     "version": "3.0.0",
-    "generated_at": "2026-04-17T06:00:38.884728+02:00",
-    "duration_ms": 35712,
+    "generated_at": "2026-04-25T05:00:21.959452+02:00",
+    "duration_ms": 18740,
     "ttl_hours": 4,
     "status": "success",
     "error": null,
-    "run_id": "1b7dc4e8",
+    "run_id": "c641047d",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
     "status": "ok",
-    "scan_time": "2026-04-17T06:00:07.549608+02:00",
-    "total_scanned": 7,
+    "scan_time": "2026-04-25T05:00:06.606654+02:00",
+    "total_scanned": 5,
     "by_category": {
       "interview_invite": 0,
-      "recruiter_reach": 1,
+      "recruiter_reach": 0,
       "application_ack": 0,
       "rejection": 0,
       "assessment": 0,
       "follow_up_needed": 0,
-      "other": 6
+      "other": 5
     },
     "interview_invites": [],
-    "recruiter_messages": [
-      {
-        "id": "353703",
-        "from": "GulfTalent Jobs <jobs@gulftalent.com>",
-        "subject": "RTC-1 needs an Offshore Project Manager",
-        "date": "Thu, 16 Apr 2026 22:36:43 -0500",
-        "unread": true,
-        "priority": "MEDIUM",
-        "score": 2,
-        "pipeline_match": null
-      }
-    ],
+    "recruiter_messages": [],
     "application_acks": [],
     "rejections": [],
     "assessments": [],
     "follow_ups_needed": [],
-    "actionable_count": 1,
+    "actionable_count": 0,
     "hot_alerts": [],
     "signals": [],
     "llm_analysis": {
-      "actionable_emails": [
-        {
-          "id": "353703",
-          "subject": "RTC-1 needs an Offshore Project Manager",
-          "from": "GulfTalent Jobs <jobs@gulftalent.com>",
-          "date": "Thu, 16 Apr 2026 22:36:43 -0500",
-          "category": "recruiter_reach",
-          "urgency": "medium",
-          "intent": "The sender appears to be surfacing a job opportunity for an Offshore Project Manager.",
-          "action": "read_and_file",
-          "response_deadline": "1 week",
-          "notes": "Automated job alert, review fit before engaging"
-        }
-      ],
+      "actionable_emails": [],
       "summary": {
-        "total_actionable": 1,
+        "total_actionable": 0,
         "critical_count": 0,
         "requires_interview_prep": false,
         "requires_assessment": false,
-        "recruiter_top_opportunities": [
-          "GulfTalent Jobs - RTC-1 needs an Offshore Project Manager"
-        ],
-        "top_priority": "353703",
-        "daily_focus": "Review recruiter leads for Gulf-market fit and prioritize only roles aligned with your senior leadership trajectory."
+        "recruiter_top_opportunities": [],
+        "top_priority": null,
+        "daily_focus": "No actionable career emails were provided, so focus today on outbound executive networking and targeted GCC applications."
       }
     }
   },
   "kpi": {
-    "emails_processed": 7,
-    "actionable": 1,
+    "emails_processed": 5,
+    "actionable": 0,
     "interviews_detected": 0,
-    "recruiter_messages": 1,
-    "unread_actionable": 1
+    "recruiter_messages": 0,
+    "unread_actionable": 0
   },
-  "recommendations": [
-    {
-      "id": "rec-1b7dc4e8-0",
-      "action": "review_and_respond",
-      "target": "1 recruiter message(s)",
-      "reason": "Recruiter outreach could lead to opportunities",
-      "urgency": "high",
-      "timestamp": "2026-04-17T06:00:38.884620+02:00"
-    },
-    {
-      "id": "rec-1b7dc4e8-1",
-      "action": "check_inbox",
-      "target": "1 unread actionable email(s)",
-      "reason": "Unread emails need attention",
-      "urgency": "high",
-      "timestamp": "2026-04-17T06:00:38.884637+02:00"
-    }
-  ]
+  "recommendations": []
 }

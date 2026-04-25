@@ -270,3 +270,11 @@ Simon Sinek's motivational speeches in 2026 focus on personal growth, self-impro
 - Add a new Mission Control panel: Handoff Quality Gate.
 - Show per-run counts: direct URLs verified, search/listing links rejected, dropped_unverified_url, and roles promoted to CV stage.
 - This converts quality policy into live operational control and prevents silent regressions.
+
+
+---
+
+## YouTube Weekly Scan | 2026-04-18
+*0/8 channels had content*
+
+*For full transcripts: ask NASR to pull any URL above via Browser Relay*

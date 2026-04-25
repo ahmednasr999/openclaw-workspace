@@ -137,7 +137,7 @@ The env var was **TAVILY_API_KEY**. Instead of adding it to `openclaw.json` (whi
 
 Added line:
 ```
-Environment=TAVILY_API_KEY=<redacted>
+Environment=TAVILY_API_KEY=[redacted]
 ```
 
 **Confirmed working** - Tavily search tested successfully after restart.

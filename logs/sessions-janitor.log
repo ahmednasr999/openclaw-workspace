@@ -1,0 +1,14 @@
+[2026-04-24T19:38:28Z] Starting. args={'apply': False, 'force': False, 'agents': ['main', 'hr', 'cto', 'cmo', 'jobzoom'], 'min_stale_minutes': 30, 'dry_run': False}
+[2026-04-24T19:38:28Z] Scanning agents: ['cmo', 'cto', 'hr', 'jobzoom', 'main']
+[2026-04-24T19:38:32Z] Loaded 33 cron jobs
+[2026-04-24T19:38:32Z] Dry run complete. No changes made.
+[2026-04-24T19:42:25Z] Starting. args={'apply': False, 'force': False, 'agents': ['main', 'hr', 'cto', 'cmo', 'jobzoom'], 'min_stale_minutes': 30, 'dry_run': False}
+[2026-04-24T19:42:25Z] Scanning agents: ['cmo', 'cto', 'hr', 'jobzoom', 'main']
+[2026-04-24T19:42:29Z] Loaded 33 cron jobs
+[2026-04-24T19:42:30Z] Dry run complete. No changes made.
+[2026-04-24T19:42:33Z] Starting. args={'apply': True, 'force': True, 'agents': ['main', 'hr', 'cto', 'cmo', 'jobzoom'], 'min_stale_minutes': 30, 'dry_run': False}
+[2026-04-24T19:42:33Z] Scanning agents: ['cmo', 'cto', 'hr', 'jobzoom', 'main']
+[2026-04-24T19:42:38Z] Loaded 33 cron jobs
+[2026-04-24T19:42:38Z] Backup: /root/.openclaw/workspace/backups/sessions-janitor/20260424-194238/main.sessions.json.bak
+[2026-04-24T19:42:38Z] Cleaned 3 entries in main/sessions.json
+[2026-04-24T19:42:38Z] Done. 3 entries updated. Backups: /root/.openclaw/workspace/backups/sessions-janitor/20260424-194238
