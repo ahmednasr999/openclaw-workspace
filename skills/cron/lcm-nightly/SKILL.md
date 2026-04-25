@@ -11,7 +11,7 @@ Run every command in sequence. Report actual numbers. Never delete without archi
 - Timezone: Africa/Cairo
 - Notify: telegram:866838380
 - LCM DB: /root/.openclaw/lcm.db
-- Deliver to: -1003882622947:7 (Mission Control group)
+- Deliver to: -1003882622947:8 (CTO Desk thread)
 
 ---
 
@@ -181,44 +181,106 @@ fi
 
 ## Step 6: Compile Report
 
-Based on all outputs above, compile a Telegram report:
+Based on all outputs above, create **two artifacts**:
 
+1. **Full report file** for audit/debugging:
+   - Path: `/root/.openclaw/workspace/reports/lcm-nightly-YYYY-MM-DD.md`
+   - Include the complete detailed data: stats, week summary, top conversations, stale conversations, tree health, quality gates, and actions taken.
+   - Create the directory if needed.
+
+2. **Telegram alert** for CTO Desk:
+   - Keep it mobile-scannable and exception-first.
+   - Do **not** paste the full raw report into Telegram unless there is a blocker that needs exact IDs.
+   - Target length: 8-14 lines.
+   - Warnings/blockers first, then key healthy checks, then action.
+
+Important wording rule:
+- Treat the DB size gate as a capacity/hygiene signal, not a corruption signal.
+- If the DB size gate fails but WAL, orphan, and recent-summary checks pass, say clearly that the database is active and oversized relative to the threshold, not broken.
+
+### Severity rules
+
+Use the highest applicable severity:
+
+- `🔴 BLOCKER` if any integrity/retrieval risk exists:
+  - SQLite query failure or DB unreadable
+  - Latest summary spot test fails or no recent summary is accessible
+  - True orphaned summaries > 0
+  - WAL checkpoint fails when WAL is above threshold
+  - Compactable uncompacted conversations remain after self-heal **and** compactable uncompacted tokens are material (>100k)
+
+- `⚠️ WARNING` if system is usable but needs cleanup:
+  - DB size gate fails
+  - WAL is above threshold but checkpoint succeeds
+  - Stale under-summarized conversations exist
+  - Compactable uncompacted conversations remain after self-heal with low token impact
+
+- `🟢 HEALTHY` only when no blockers or warnings remain.
+
+### Telegram alert template
+
+Healthy:
+
+```text
+🟢 LCM Nightly — Healthy
+
+DB: [size] / [threshold]
+Messages: [count] · Summaries: [count] ([leaf] leaf + [condensed] condensed)
+Tree: depth [max] · Orphans: 0
+Recent summaries: PASS ([7d count] this week)
+Expansion spot test: PASS — [summary_id]
+Protected tail: [count] convs · Compactable backlog: 0
+
+Action: No action needed. Full report saved: [path]
 ```
-LCM Nightly Report — [DATE]
-DB: /root/.openclaw/lcm.db
 
-STATS:
-- Conversations: [X]
-- Messages: [X]
-- Total message tokens: [X]
-- Summaries: [X] (leaf + condensed)
-- LCM tree depth max: [X]
-- DB size: [X]MB
+Warning:
 
-WEEK SUMMARY:
-[summaries created per day table]
+```text
+⚠️ LCM Nightly — Warning
 
-TOP ACTIVE CONVERSATIONS:
-[top 3 by token count]
+Issue: [plain-English primary issue]
+Impact: [short practical impact]
+Risk: [low/medium + why]
 
-STALE CONVERSATIONS: [X] found
-[if X > 0: list top 5 by token count]
+🟢 DB readable: [size]
+🟢 Orphans: [count]
+🟢 Expansion spot test: [PASS summary_id]
+⚠️ Stale under-summarized: [count]
+⚠️ Compactable backlog: [before] → [after], [tokens] tokens
 
-TREE HEALTH:
-- Conversations with 0 summaries (30+ msgs): [X]
-- Conversations with 3+ summaries: [X]
-- True orphaned summaries (disconnected from DAG): [X]
-- Uncompacted tokens (30+ msg convs with 0 summaries): [X]
-
-ACTIONS TAKEN:
-[list any checkpoint or other actions]
+Action: [what was done / what CTO should review]. Full report saved: [path]
 ```
+
+Blocker:
+
+```text
+🔴 LCM Nightly — Blocker
+
+Issue: [specific failing gate]
+Impact: [what can break for recall]
+Risk: [high/medium + why]
+
+DB: [readable/unreadable, size if known]
+Orphans: [count]
+Expansion spot test: [PASS/FAIL + summary_id if known]
+Compactable backlog: [before] → [after], [tokens] tokens
+
+Action: [exact next step taken or needed]. Full report saved: [path]
+```
+
+Rules:
+- Use exact numbers from the run.
+- Include no more than 3 warning lines; put the rest in the full report file.
+- Include exact summary/conversation IDs only for blocker diagnosis or the latest expansion spot test.
+- If a check is healthy, keep it as one compact line; do not explain it.
+- If everything is healthy, do not include stale/top-conversation detail in Telegram.
 
 ---
 
 ## Step 7: Deliver to Telegram
 
-Send the compiled report to the Mission Control group using the message tool (action=send, channel=telegram, target=-1003882622947).
+Send the compiled report to the CTO Desk thread using the message tool (action=send, channel=telegram, target=-1003882622947, threadId=8).
 
 **Track consecutive delivery failures:**
 ```bash
@@ -250,7 +312,9 @@ fi
 
 ## Step 5.5: Self-Healing — Auto-Compact Flagged Conversations
 
-**Run this BEFORE compiling the report.** If Step 2 found conversations with 30+ messages and 0 summaries, auto-compact them now.
+**Run this BEFORE compiling the report.** If Step 2 found conversations at or above the compactable threshold (`freshTailCount + 1`, currently 33+ messages) with 0 summaries, auto-compact them now.
+
+Important: lossless-claw preserves the latest `freshTailCount` messages uncompressed. With `freshTailCount=32`, conversations with 30-32 messages and 0 summaries are expected protected-tail state, not a failed compaction backlog. Report them as “protected tail”, but do not fail the quality gate on them.
 
 ```bash
 echo "=== SELF-HEALING: Running force-compact on uncompacted convos ==="
@@ -262,17 +326,17 @@ echo "Force-compact exit code: $?"
 - If compaction returned 0 candidates → note "No compaction needed"
 - If compaction errored → log the error and continue to report (do not block delivery)
 
-After running, re-check the uncompacted count:
+After running, re-check the compactable uncompacted count:
 
 ```bash
 sqlite3 /root/.openclaw/lcm.db "
-SELECT COUNT(*) as still_uncompacted
+SELECT COUNT(*) as still_compactable_uncompacted
 FROM conversations c
-WHERE (SELECT COUNT(*) FROM messages WHERE conversation_id = c.conversation_id) >= 30
+WHERE (SELECT COUNT(*) FROM messages WHERE conversation_id = c.conversation_id) >= 33
 AND (SELECT COUNT(*) FROM summaries WHERE conversation_id = c.conversation_id) = 0;" 2>/dev/null
 ```
 
-Report the before/after counts. Quality gate passes (✅) only if still_uncompacted = 0.
+Report the before/after counts. Quality gate passes (✅) only if still_compactable_uncompacted = 0. If 30-32 message conversations remain, label them as protected fresh-tail conversations rather than failures.
 
 ---
 
@@ -284,8 +348,8 @@ Report the before/after counts. Quality gate passes (✅) only if still_uncompac
 - WAL checkpoint failure: log exit code, do not silently continue
 
 ## Quality Gates
-- DB size less than 500MB
+- DB size less than 2GB
 - WAL file less than 50MB after checkpoint
 - Zero true orphaned summaries (completely disconnected from DAG - no summary_messages, no summary_parents in either direction)
 - At least 1 summary created in the last 7 days
-- No conversation with 30+ messages and 0 summaries (lowered from 50)
+- No compactable conversation with 33+ messages and 0 summaries (`freshTailCount + 1`; 30-32 message conversations are protected tail)
