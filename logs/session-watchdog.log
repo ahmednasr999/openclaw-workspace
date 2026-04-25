@@ -58,3 +58,43 @@
 [2026-04-17T01:04:54Z] SKIP [cto] 39e82ae6-2f70-4645-82d3-9d1f6610cbcf.jsonl locked by live PID 1921336 (1MB)
 [2026-04-17T01:04:54Z] RESET [cto] 6d906346-fb20-4499-944d-3172fe370429-topic-8.jsonl was 3MB -> archived to 6d906346-fb20-4499-944d-3172fe370429-topic-8.20260417T010454Z.jsonl.gz
 [2026-04-17T01:04:55Z] Done reset=2 skipped=1 errors=0
+[2026-04-18T01:04:21Z] RESET [main] e4702fa1-165f-4a6b-817d-e14118a2a306.jsonl was 7MB -> archived to e4702fa1-165f-4a6b-817d-e14118a2a306.20260418T010420Z.jsonl.gz
+[2026-04-18T01:04:21Z] RESET [hr] cdc8764b-617a-4543-9433-6ae634f9b5d4-topic-9.jsonl was 3MB -> archived to cdc8764b-617a-4543-9433-6ae634f9b5d4-topic-9.20260418T010421Z.jsonl.gz
+[2026-04-18T01:04:24Z] SKIP [cto] 5238abe1-b5a7-41a6-9e5a-83a0d1c45bcc.jsonl locked by live PID 2005380 (1MB)
+[2026-04-18T01:04:24Z] RESET [cmo] ed515fbb-7d9e-4e1d-980c-e8e9214e3cb7.jsonl was 9MB -> archived to ed515fbb-7d9e-4e1d-980c-e8e9214e3cb7.20260418T010424Z.jsonl.gz
+[2026-04-18T01:04:24Z] Done reset=3 skipped=1 errors=0
+[2026-04-19T01:04:40Z] RESET [main] 6c6983e5-b36e-4f7d-bb4e-d21610ae91b8.jsonl was 3MB -> archived to 6c6983e5-b36e-4f7d-bb4e-d21610ae91b8.20260419T010440Z.jsonl.gz
+[2026-04-19T01:04:42Z] RESET [hr] 3de8ac7a-e6a6-46a1-aed2-d2a90ea3c774-topic-9.jsonl was 7MB -> archived to 3de8ac7a-e6a6-46a1-aed2-d2a90ea3c774-topic-9.20260419T010442Z.jsonl.gz
+[2026-04-19T01:04:43Z] RESET [cto] 7fa984d1-e5f2-4365-bef5-def5758ac46b-topic-8.jsonl was 3MB -> archived to 7fa984d1-e5f2-4365-bef5-def5758ac46b-topic-8.20260419T010443Z.jsonl.gz
+[2026-04-19T01:04:43Z] SKIP [cto] 0607aa36-03cc-41ed-8a37-37b6a997c6f4.jsonl locked by live PID 2043661 (1MB)
+[2026-04-19T01:04:44Z] Done reset=3 skipped=1 errors=0
+[2026-04-20T01:04:13Z] RESET [main] 13ad6636-c2d3-4b0f-bd20-687cb77d7205.jsonl was 7MB -> archived to 13ad6636-c2d3-4b0f-bd20-687cb77d7205.20260420T010413Z.jsonl.gz
+[2026-04-20T01:04:16Z] SKIP [cto] 2dd3c81e-81fb-4926-af81-a75826e91129.jsonl locked by live PID 2077562 (1MB)
+[2026-04-20T01:04:17Z] Done reset=1 skipped=1 errors=0
+[2026-04-21T01:04:00Z] RESET [main] facfe451-c9e4-4178-bdb9-f072d479584a.jsonl was 10MB -> archived to facfe451-c9e4-4178-bdb9-f072d479584a.20260421T010359Z.jsonl.gz
+[2026-04-21T01:04:04Z] RESET [hr] 3de8ac7a-e6a6-46a1-aed2-d2a90ea3c774-topic-9.jsonl was 3MB -> archived to 3de8ac7a-e6a6-46a1-aed2-d2a90ea3c774-topic-9.20260421T010404Z.jsonl.gz
+[2026-04-21T01:04:04Z] SKIP [cto] c14851f0-0f97-4368-ad9a-25f193c3466d.jsonl locked by live PID 2117660 (1MB)
+[2026-04-21T01:04:05Z] Done reset=2 skipped=1 errors=0
+[2026-04-22T01:04:14Z] RESET [main] 10f30b07-2d36-4c45-b7d6-a5854124630c.jsonl was 12MB -> archived to 10f30b07-2d36-4c45-b7d6-a5854124630c.20260422T010414Z.jsonl.gz
+[2026-04-22T01:04:17Z] SKIP [cto] a1883e2d-1425-415f-97ed-5970c2910161.jsonl locked by live PID 2179714 (1MB)
+[2026-04-22T01:04:17Z] RESET [cmo] e2803d19-c66e-4ed9-8344-3ca3fa7c64f1-topic-7.jsonl was 3MB -> archived to e2803d19-c66e-4ed9-8344-3ca3fa7c64f1-topic-7.20260422T010417Z.jsonl.gz
+[2026-04-22T01:04:18Z] Done reset=2 skipped=1 errors=0
+[2026-04-23T01:04:47Z] RESET [main] ee00293d-6a02-4400-8ce9-e5c2024cd073.jsonl was 6MB -> archived to ee00293d-6a02-4400-8ce9-e5c2024cd073.20260423T010447Z.jsonl.gz
+[2026-04-23T01:04:49Z] SKIP [cto] 85d868e2-ae98-4738-a91a-7ffebcb3f802.jsonl locked by live PID 6384 (1MB)
+[2026-04-23T01:04:50Z] RESET [cto] 7fa984d1-e5f2-4365-bef5-def5758ac46b-topic-8.jsonl was 10MB -> archived to 7fa984d1-e5f2-4365-bef5-def5758ac46b-topic-8.20260423T010449Z.jsonl.gz
+[2026-04-23T01:04:51Z] Done reset=2 skipped=1 errors=0
+[2026-04-24T00:06:16Z] RESET [main] 385a21d2-635a-41e6-82ac-46944b4549b1.trajectory.jsonl was 15MB -> archived to 385a21d2-635a-41e6-82ac-46944b4549b1.trajectory.20260424T000616Z.jsonl.gz
+[2026-04-24T00:06:17Z] SKIP [main] 385a21d2-635a-41e6-82ac-46944b4549b1.jsonl locked by live PID 40775 (7MB)
+[2026-04-24T00:06:19Z] SKIP [cto] 14d84e1e-f1b4-497f-bbb9-91c4d3f9c2f9.jsonl locked by live PID 40775 (1MB)
+[2026-04-24T00:06:20Z] Done reset=1 skipped=2 errors=0
+[2026-04-25T00:03:56Z] RESET [main] 385a21d2-635a-41e6-82ac-46944b4549b1.trajectory.jsonl was 49MB -> archived to 385a21d2-635a-41e6-82ac-46944b4549b1.trajectory.20260425T000354Z.jsonl.gz
+[2026-04-25T00:03:56Z] RESET [main] 318f5d00-707a-4395-925e-94f2e0cf9ffa-topic-10.trajectory.jsonl was 3MB -> archived to 318f5d00-707a-4395-925e-94f2e0cf9ffa-topic-10.trajectory.20260425T000356Z.jsonl.gz
+[2026-04-25T00:03:57Z] RESET [main] 385a21d2-635a-41e6-82ac-46944b4549b1.jsonl was 19MB -> archived to 385a21d2-635a-41e6-82ac-46944b4549b1.20260425T000356Z.jsonl.gz
+[2026-04-25T00:03:58Z] RESET [hr] cdc8764b-617a-4543-9433-6ae634f9b5d4-topic-9.trajectory.jsonl was 7MB -> archived to cdc8764b-617a-4543-9433-6ae634f9b5d4-topic-9.trajectory.20260425T000358Z.jsonl.gz
+[2026-04-25T00:03:58Z] RESET [hr] 881c5d3f-9b09-4a1e-9ca8-891df1a31a33-topic-9.trajectory.jsonl was 8MB -> archived to 881c5d3f-9b09-4a1e-9ca8-891df1a31a33-topic-9.trajectory.20260425T000358Z.jsonl.gz
+[2026-04-25T00:03:59Z] RESET [cto] 8e347ea8-2ee1-4365-abae-e3da91e19c2a-topic-8.trajectory.jsonl was 12MB -> archived to 8e347ea8-2ee1-4365-abae-e3da91e19c2a-topic-8.trajectory.20260425T000359Z.jsonl.gz
+[2026-04-25T00:04:00Z] RESET [cto] 1dd63ae6-77e5-4770-92dc-4e5c21380028-topic-8.trajectory.jsonl was 12MB -> archived to 1dd63ae6-77e5-4770-92dc-4e5c21380028-topic-8.trajectory.20260425T000359Z.jsonl.gz
+[2026-04-25T00:04:00Z] SKIP [cto] eb8d872f-1a85-4787-bed8-b22aec7ba792.jsonl locked by live PID 77806 (1MB)
+[2026-04-25T00:04:01Z] RESET [cmo] b9943fa9-7dee-44d6-a3b1-18af96774c55-topic-7.jsonl was 4MB -> archived to b9943fa9-7dee-44d6-a3b1-18af96774c55-topic-7.20260425T000401Z.jsonl.gz
+[2026-04-25T00:04:03Z] RESET [cmo] b9943fa9-7dee-44d6-a3b1-18af96774c55-topic-7.trajectory.jsonl was 51MB -> archived to b9943fa9-7dee-44d6-a3b1-18af96774c55-topic-7.trajectory.20260425T000402Z.jsonl.gz
+[2026-04-25T00:04:03Z] Done reset=9 skipped=1 errors=0

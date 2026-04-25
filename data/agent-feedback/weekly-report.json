@@ -1,5 +1,5 @@
 {
-  "generated": "2026-04-12T06:00:07.446287+00:00",
+  "generated": "2026-04-19T06:00:11.260437+00:00",
   "days": 7,
   "feedback_summary": {},
   "failure_summary": {
@@ -7,8 +7,8 @@
     "by_agent": {}
   },
   "cron_success_rate": {
-    "total": 424,
-    "ok": 384,
-    "rate": 90.6
+    "total": 438,
+    "ok": 398,
+    "rate": 90.9
   }
 }

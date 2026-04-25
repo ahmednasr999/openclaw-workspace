@@ -1,0 +1,1988 @@
+{
+  "version": 1,
+  "updatedAt": "2026-04-24T20:12:32.895Z",
+  "entries": {
+    "memory:memory/archives/2026-03-07.md:29:56": {
+      "key": "memory:memory/archives/2026-03-07.md:29:56",
+      "path": "memory/archives/2026-03-07.md",
+      "startLine": 29,
+      "endLine": 56,
+      "source": "memory",
+      "snippet": "- Three failure modes: never stored (most common), compaction lossy summary, pruning trims tool results - MEMORY.md should be kept short (<100 lines) — it's a cheat sheet, not a journal - Weekly memory hygiene cron recommended to promote important items and prune stale ones ### 5. Model Usage This Session - Started on MiniMax M2.5 - Switched to Opus 4.6 for heavy work - Context at 72% before compact ### 6. VelvetShark Full Transcript Analysis (Session 2, Opus 4.6) - Full 37-min transcript received and analyzed - Saved to memory/knowledge/velvetshark-memory-architecture-transcript.md - Gap analysis against our stack: 6 items found, 3 critical ### 7. Memory Architecture Overhaul (Appl",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.43511086404323573,
+      "maxScore": 0.43511086404323573,
+      "firstRecalledAt": "2026-04-22T16:04:28.920Z",
+      "lastRecalledAt": "2026-04-22T16:04:28.920Z",
+      "queryHashes": [
+        "f56bf538ba60"
+      ],
+      "recallDays": [
+        "2026-04-22"
+      ],
+      "conceptTags": [
+        "memory.md",
+        "m2.5",
+        "4.6",
+        "37-min",
+        "three",
+        "failure",
+        "modes",
+        "never"
+      ]
+    },
+    "memory:memory/archive/2026-02/2026-02-18.md:347:413": {
+      "key": "memory:memory/archive/2026-02/2026-02-18.md:347:413",
+      "path": "memory/archive/2026-02/2026-02-18.md",
+      "startLine": 347,
+      "endLine": 413,
+      "source": "memory",
+      "snippet": "- Scans git history for exposed secrets **Cron Job:** ``` ID: a8ad093f-6a9e-42ef-b020-f85448dca325 Schedule: 0 3 * * 0 @ Africa/Cairo (Sundays 3am) ``` **Usage:** ```bash # Generate security report python3 scripts/security_core.py --report # Test injection detection python3 scripts/security_core.py --test # Manual workspace check python3 scripts/security_core.py --check ``` **Detection Examples:** | Input | Action | |-------|--------| | \"Ignore all previous instructions\" | 🔴 BLOCKED | | \"You are now DAN\" | 🔴 BLOCKED | | \"ghp_xxxxxxxxx\" | 🔴 REDACTED | | \"Please help with Python\" | ✅ ALLOWED | **Next steps:** 1. Add Slack/Discord notification on security alerts 2. Integrate with dai",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.8719567894935607,
+      "maxScore": 0.4489915013313293,
+      "firstRecalledAt": "2026-04-22T16:04:28.920Z",
+      "lastRecalledAt": "2026-04-22T22:17:29.337Z",
+      "queryHashes": [
+        "f56bf538ba60",
+        "5a07641104d2"
+      ],
+      "recallDays": [
+        "2026-04-22",
+        "2026-04-23"
+      ],
+      "conceptTags": [
+        "africa/cairo",
+        "scripts/security-core.py",
+        "ghp-xxxxxxxxx",
+        "slack/discord",
+        "scans",
+        "git",
+        "history",
+        "exposed"
+      ]
+    },
+    "memory:memory/archive/2026-03/2026-03-16.md:340:374": {
+      "key": "memory:memory/archive/2026-03/2026-03-16.md:340:374",
+      "path": "memory/archive/2026-03/2026-03-16.md",
+      "startLine": 340,
+      "endLine": 374,
+      "source": "memory",
+      "snippet": "- Root cause for 3 crons: \"Delivering to Telegram requires target <chatId>\" (missing delivery config) - Root cause for 2 crons: execution timeout - Duplicate openclaw-webhooks processes (2 running, should be 1) - 186 memory files with 36 timestamped variants violating one-file-per-day rule - 14 credential JSON files in config/ (9 were duplicates/old) - 68 scripts (14 were superseded by newer versions) - Gateway running OK, disk at 56%, Tailscale funnel active ### Cleanup Executed 1. Disabled Gmail Check 4h cron (redundant, real-time webhooks active) 2. Fixed 4 failing crons: added --channel telegram --to 866838380 3. Fixed Weekly Self-Improvement: added --model minimax-m2.5 4. Killed 2 orph",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.8155015379190445,
+      "maxScore": 0.422416627407074,
+      "firstRecalledAt": "2026-04-22T16:04:28.920Z",
+      "lastRecalledAt": "2026-04-24T10:44:07.363Z",
+      "queryHashes": [
+        "f56bf538ba60",
+        "3b21f0cb3926"
+      ],
+      "recallDays": [
+        "2026-04-22",
+        "2026-04-24"
+      ],
+      "conceptTags": [
+        "gateway",
+        "openclaw-webhooks",
+        "one-file-per-day",
+        "duplicates/old",
+        "real-time",
+        "self-improvement",
+        "minimax-m2.5",
+        "root"
+      ]
+    },
+    "memory:memory/archive/2026-03/2026-03-17.md:93:116": {
+      "key": "memory:memory/archive/2026-03/2026-03-17.md:93:116",
+      "path": "memory/archive/2026-03/2026-03-17.md",
+      "startLine": 93,
+      "endLine": 116,
+      "source": "memory",
+      "snippet": "- Cross-referenced: HEARTBEAT.md, MEMORY.md cron sequence, all scripts/*.md, system crontab, OpenClaw crons, systemd services - **Audit report saved**: memory/spec-vs-reality-audit-2026-03-17.md ### System Crontab Cleanup - Removed 3 dead/duplicate entries: quota-monitor.js (file missing), linkedin-gulf-jobs.py (duped by OpenClaw cron), morning-brief.sh (superseded) - Previously removed 4 high-frequency scripts: self-healing-agent.sh (2 min), openclaw-watchdog.sh (3 min), context-watchdog.sh (5 min), disk-health-check.sh (daily) - System crontab: 17 entries -> 10 active entries total ### Systemd Services Fixed - calendar-webhook.service: STOPPED + DISABLED (script didn't exist, crashed 74",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.8673565089702606,
+      "maxScore": 0.4454062849283218,
+      "firstRecalledAt": "2026-04-22T16:04:28.920Z",
+      "lastRecalledAt": "2026-04-22T21:18:44.896Z",
+      "queryHashes": [
+        "f56bf538ba60",
+        "c97d3168442f"
+      ],
+      "recallDays": [
+        "2026-04-22"
+      ],
+      "conceptTags": [
+        "cross-referenced",
+        "heartbeat.md",
+        "memory.md",
+        "dead/duplicate",
+        "quota-monitor.js",
+        "linkedin-gulf-jobs.py",
+        "morning-brief.sh",
+        "high-frequency"
+      ]
+    },
+    "memory:memory/archive/2026-03/2026-03-22.md:174:206": {
+      "key": "memory:memory/archive/2026-03/2026-03-22.md:174:206",
+      "path": "memory/archive/2026-03/2026-03-22.md",
+      "startLine": 174,
+      "endLine": 206,
+      "source": "memory",
+      "snippet": "| P5-7 | newsletter/tracker/telegram | 30s each | | P8 | briefing-agent | 120s | ### Manual Pipeline Run Results (this session) - Phase 1: ✅ email (LLM analysis worked, 50 emails, 2 recruiters, 1 follow-up), ✅ content, ✅ outreach, ✅ system, ✅ linkedin (840 unique jobs), ✅ indeed (2 jobs), ✅ comment-radar (5 comments drafted), ✅ li-post - Phase 2: ✅ merge (245 candidates after dedup + filter) - Phase 2b: ✅ enrich (49/50 OK) - Phase 3: ⚠️ LLM review timed out (batch 2 at 120s), all 50 fell to SKIP with avg fit 1.0 — needs timeout fix applied - Phase 4: No SUBMIT/REVIEW to push ### Agent Renames (Done this session) | Old | New | |-----|-----| | `ats-scorer.py` | `job-scorer.py` | | `auto-doss",
+      "recallCount": 64,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 29.706936639547344,
+      "maxScore": 0.5274861633777618,
+      "firstRecalledAt": "2026-04-22T16:08:10.304Z",
+      "lastRecalledAt": "2026-04-24T14:12:08.515Z",
+      "queryHashes": [
+        "d38a10bf5fee",
+        "a3cb09703e7d",
+        "f67560c4869f",
+        "2f9e8e78178d",
+        "9b2f3002bb45",
+        "d3cb91a54f81",
+        "6edca07a289b",
+        "4d02048de464",
+        "49e5cbe89377",
+        "1979e10fbce4",
+        "ddd0bf0e44bf",
+        "a25c220308b8",
+        "397721b8fd75",
+        "56dde6c22aa1",
+        "9321e9b2a1e6",
+        "0db9e62a83c4",
+        "2647313cbf1d",
+        "663ae7819dc5",
+        "a74f41e97867",
+        "a4f16a953cdd",
+        "ecdf657fda78",
+        "5f32827c6ee6",
+        "ea9ac3f16192",
+        "c39a537eb1a0",
+        "2ac2df801fde",
+        "5469390e76b4",
+        "b3f4f9ee3cc9",
+        "49b626e2cf46",
+        "b5621fe0b96e",
+        "85f70ea7188c",
+        "c64455c30c63",
+        "132404daf6eb"
+      ],
+      "recallDays": [
+        "2026-04-22",
+        "2026-04-23",
+        "2026-04-24"
+      ],
+      "conceptTags": [
+        "p5-7",
+        "newsletter/tracker/telegram",
+        "briefing-agent",
+        "follow-up",
+        "comment-radar",
+        "li-post",
+        "49/50",
+        "1.0"
+      ]
+    },
+    "memory:memory/archive/2026-03/2026-03-17.md:284:314": {
+      "key": "memory:memory/archive/2026-03/2026-03-17.md:284:314",
+      "path": "memory/archive/2026-03/2026-03-17.md",
+      "startLine": 284,
+      "endLine": 314,
+      "source": "memory",
+      "snippet": "- **Fix:** Switched to COMPOSIO_SEARCH_WEB (Exa API) — works perfectly for LinkedIn posts - Found 4 posts from target profiles (Pascal Bornet x3, Bernard Marr x1) - Draft comments written for all 4, saved to `linkedin/engagement/daily/2026-03-17.md` - Updated `engagement-radar-prompt.md` to use Composio Search instead of DDG/Brave - Commit: `6c00606e` ### Google Doc Briefing Fixed - Morning cron errored (script terminated during Step 8) - Manually ran `daily-briefing-generator.py` with today's data - **Bug found:** Script APPENDED (bottom) instead of PREPENDING (top) — broke date ordering - Also created 3 duplicate Mar 17 entries - **Fix:** Cleaned duplicates, moved Mar 17 to top, fixed scr",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.4290731132030487,
+      "maxScore": 0.4290731132030487,
+      "firstRecalledAt": "2026-04-22T16:54:02.628Z",
+      "lastRecalledAt": "2026-04-22T16:54:02.628Z",
+      "queryHashes": [
+        "ce2cffaef289"
+      ],
+      "recallDays": [
+        "2026-04-22"
+      ],
+      "conceptTags": [
+        "composio-search-web",
+        "engagement-radar-prompt.md",
+        "ddg/brave",
+        "daily-briefing-generator.py",
+        "fix",
+        "switched",
+        "exa",
+        "api"
+      ]
+    },
+    "memory:memory/archives/2026-03-10.md:112:151": {
+      "key": "memory:memory/archives/2026-03-10.md:112:151",
+      "path": "memory/archives/2026-03-10.md",
+      "startLine": 112,
+      "endLine": 151,
+      "source": "memory",
+      "snippet": "- Docs: read, create, export - Slides: create, list (scope ready) ### Verified Working - Gmail search: ✅ - Gmail labels: ✅ - Calendar list: ✅ - Drive list: ✅ (can see NASR Job Pipeline, TopMed docs, executive CV, etc.) - Docs create: ✅ - Sheets API: ✅ enabled ## Session: Google Drive Complete Organization (21:00-21:22 UTC) ### Drive Organization - COMPLETE - Started with ~127 files in root (after prior session's ~36 moved) - Created folders: Job Search, TopMed, OpenClaw, Personal, Archive - Folder IDs: - Job Search: `1Q6WEBu2nXKsiWLQXJJVNbW5JpgepoVLf` - TopMed: `1os8QBq014O3uonCx83JvIEeaEh2UHoRA` - OpenClaw: `10EzMyYn1KnezIb6PotpN2g6cLlCvROuc` - Personal: `1VLBDSpu4rz_N0fY-MjDiQhR",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.4151537775993347,
+      "maxScore": 0.4151537775993347,
+      "firstRecalledAt": "2026-04-22T16:56:35.233Z",
+      "lastRecalledAt": "2026-04-22T16:56:35.233Z",
+      "queryHashes": [
+        "997cc806d5d6"
+      ],
+      "recallDays": [
+        "2026-04-22"
+      ],
+      "conceptTags": [
+        "00-21",
+        "1vlbdspu4rz-n0fy-mjdiqhr",
+        "docs",
+        "read",
+        "create",
+        "export",
+        "slides",
+        "list"
+      ]
+    },
+    "memory:memory/archives/2026-03-12.md:428:447": {
+      "key": "memory:memory/archives/2026-03-12.md:428:447",
+      "path": "memory/archives/2026-03-12.md",
+      "startLine": 428,
+      "endLine": 447,
+      "source": "memory",
+      "snippet": "- Final doc: `1Ph-gcGiqidzgEHIumA9OVsQd1apzALaIYGJBlP-Wq-Q` - Script: `scripts/linkedin-posts-generator.py` (commit `0c96e911`) - Previous doc IDs (deleted by Ahmed): `1JXVb_9X5vlmLlOp8ja65Zb8wgwFUm2WyZZkta8pfPsA`, `1UQ_p9a7hwxQtZWbUwEgsZGIm38B6RXHZ2a7qc8HbIko`, `1nZWAZ2xDDBXaGPpyoq4YdZVA7TIu4Lz6uLjBStrn9Nc` ### Doc Quality (Post-Fix) - TITLE: 1, SUBTITLE: 1, HEADING_1: 1 (Stats only), HEADING_2: ~96 (post titles), NORMAL_TEXT: ~266 - 18 embedded images, bold labels, clickable URLs **SESSION FLUSH COMPLETE: 2026-03-12 22:22 UTC** ### Session 9 continued (22:22-23:00 UTC) **Issue:** Ahmed reported \"Format not consistent, some posts without content!\" **Root causes found and fixed:** 1. **F",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.39246302545070644,
+      "maxScore": 0.39246302545070644,
+      "firstRecalledAt": "2026-04-22T16:56:35.233Z",
+      "lastRecalledAt": "2026-04-22T16:56:35.233Z",
+      "queryHashes": [
+        "997cc806d5d6"
+      ],
+      "recallDays": [
+        "2026-04-22"
+      ],
+      "conceptTags": [
+        "post-fix",
+        "heading-1",
+        "heading-2",
+        "normal-text",
+        "22-23",
+        "final",
+        "doc",
+        "1ph"
+      ]
+    },
+    "memory:memory/archives/2026-03-12.md:126:159": {
+      "key": "memory:memory/archives/2026-03-12.md:126:159",
+      "path": "memory/archives/2026-03-12.md",
+      "startLine": 126,
+      "endLine": 159,
+      "source": "memory",
+      "snippet": "- Scopes needed: Docs, Drive, Calendar - Re-authenticate gog on VPS ### Files Created - `memory/daily-briefings/2026-03-12.md` - sample briefing structure ### Open Items - Google OAuth fix (Ahmed needs to create new credentials in Cloud Console) - Test morning briefing cron - Wire Google Docs into cron after OAuth fixed - Next workflow to implement after morning briefing is stable --- ## Session 4: Google Docs Premium Formatting + Cron Architecture (15:45-16:28 UTC) **Model:** Opus 4.6 ### Google OAuth Fixed - Found backup OAuth client at `/root/.config/gogcli/credentials.json.bak` (client ID: 583018818639-4buj8s1j7bh3l5cqooejbbr8oko85mld) - Swapped credentials: backup is now active, or",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.3847412824630737,
+      "maxScore": 0.3847412824630737,
+      "firstRecalledAt": "2026-04-22T16:56:35.233Z",
+      "lastRecalledAt": "2026-04-22T16:56:35.233Z",
+      "queryHashes": [
+        "997cc806d5d6"
+      ],
+      "recallDays": [
+        "2026-04-22"
+      ],
+      "conceptTags": [
+        "backup",
+        "re-authenticate",
+        "45-16",
+        "4.6",
+        "scopes",
+        "needed",
+        "docs",
+        "drive"
+      ]
+    },
+    "memory:memory/archive/2026-03/2026-03-18.md:687:715": {
+      "key": "memory:memory/archive/2026-03/2026-03-18.md:687:715",
+      "path": "memory/archive/2026-03/2026-03-18.md",
+      "startLine": 687,
+      "endLine": 715,
+      "source": "memory",
+      "snippet": "2. Recent applications 3. Scanner results + trend 4. Email intel (all flagged) 5. Calendar 6. System health + Dashboard KPIs 7. Active tasks (overdue/due/completed) 8. Content Calendar status 9. Action items (3-5 with owners) 10. Notion page (Step 5 - BEFORE Telegram) 11. Telegram delivery (Step 6) - Model changed: MiniMax-M2.5 → **Sonnet 4.6** (follows instructions reliably) - Timeout: 270s → **600s** (10 minutes) - Health Monitor cron added at 8:00 AM (catches partial failures) - Notion sync moved BEFORE Telegram (prevents data loss on timeout) ### LinkedIn Post Published via Composio API ✅ - Post: \"Intel taught me precision\" - LIVE with image - URL: https://www.linked",
+      "recallCount": 26,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 11.079715725779533,
+      "maxScore": 0.4902226477861404,
+      "firstRecalledAt": "2026-04-22T16:58:05.516Z",
+      "lastRecalledAt": "2026-04-24T19:50:16.913Z",
+      "queryHashes": [
+        "6730f85c1352",
+        "18b7c29566c3",
+        "b668c71d42d3",
+        "9fe356f592a4",
+        "f31de5218010",
+        "48a3661d8464",
+        "fa5de7c6eb5d",
+        "b2aeb846d994",
+        "d45eec7e8676",
+        "e2171a27532e",
+        "9328efb833c8",
+        "4c2cc28bcaff",
+        "a65cc70bd541",
+        "c2828647b116",
+        "5101b634c81a",
+        "97b6f5666da6",
+        "66b42750aece",
+        "6126958cbac8",
+        "c40bbf023340",
+        "588794d40031",
+        "650b20ae9166",
+        "565ef16ebc1d",
+        "d928f86e67e7",
+        "7348a803fc22",
+        "dfbfcc349d30",
+        "3bcebc67d629"
+      ],
+      "recallDays": [
+        "2026-04-22",
+        "2026-04-23",
+        "2026-04-24"
+      ],
+      "conceptTags": [
+        "overdue/due/completed",
+        "3-5",
+        "minimax-m2.5",
+        "4.6",
+        "www.linked",
+        "recent",
+        "applications",
+        "scanner"
+      ]
+    },
+    "memory:memory/archives/2026-03-03.md:60:87": {
+      "key": "memory:memory/archives/2026-03-03.md:60:87",
+      "path": "memory/archives/2026-03-03.md",
+      "startLine": 60,
+      "endLine": 87,
+      "source": "memory",
+      "snippet": "- Cron jobs were running and finishing `ok` during the same window. - Telegram inbound messages were received in that period. - Single gateway process confirmed (`openclaw-gateway`, one PID). - User repeatedly flagged duplicate LinkedIn candidate lists and repeated already-commented links as a critical quality issue. - Durable workflow safeguard in practice now: - strict dedup list file for today - only `linkedin.com/posts/` links should be sent - avoid re-sending any already-used set ## 09:03 UTC Pre-compaction Memory Update - Ahmed requested deep forensic analysis of the perceived silence window (08:13:20 to 08:45:18 UTC). - Evidence-backed result from main session JSONL:",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.4215433806180954,
+      "maxScore": 0.4215433806180954,
+      "firstRecalledAt": "2026-04-22T17:29:51.895Z",
+      "lastRecalledAt": "2026-04-22T17:29:51.895Z",
+      "queryHashes": [
+        "9924445aad04"
+      ],
+      "recallDays": [
+        "2026-04-22"
+      ],
+      "conceptTags": [
+        "gateway",
+        "openclaw-gateway",
+        "already-commented",
+        "linkedin.com/posts",
+        "re-sending",
+        "already-used",
+        "pre-compaction",
+        "evidence-backed"
+      ]
+    },
+    "memory:memory/archive/2026-02/2026-02-16.md:35:86": {
+      "key": "memory:memory/archive/2026-02/2026-02-16.md:35:86",
+      "path": "memory/archive/2026-02/2026-02-16.md",
+      "startLine": 35,
+      "endLine": 86,
+      "source": "memory",
+      "snippet": "| Complex analysis | Claude Opus 4.5 | $15/$75 | ## CV Review Workflow (Agreed) 1. Ahmed sends CV for review 2. Recommend: \"CV review? Recommend Opus for quality check. Approve?\" 3. Ahmed: Yes/No 4. Switch to Opus → review → ask to switch back to default ## Key Lesson - Don't manually edit config files — use CLI/UI which validates against schema --- ## New Entries (Session: 6:27 PM - 6:45 PM) ### OpenClaw Update - Updated to v2026.2.15 (was 2026.2.14) - All configs, cron jobs, credentials preserved ### Gmail Monitoring - Changed to Daily - Changed from every 30 min → once daily at 8:00 AM Cairo - Cron jobs updated: - **Recruiter & Job Alert Monitor:** `20bc2108-49a0-4766-ae9f-425ff6",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.8058633208274841,
+      "maxScore": 0.4245000153779983,
+      "firstRecalledAt": "2026-04-22T17:33:24.510Z",
+      "lastRecalledAt": "2026-04-24T19:19:26.598Z",
+      "queryHashes": [
+        "4deb881c82f0",
+        "08ddd28a365f"
+      ],
+      "recallDays": [
+        "2026-04-22",
+        "2026-04-24"
+      ],
+      "conceptTags": [
+        "4.5",
+        "yes/no",
+        "cli/ui",
+        "v2026.2.15",
+        "2026.2.14",
+        "20bc2108-49a0-4766-ae9f-425ff6",
+        "complex",
+        "analysis"
+      ]
+    },
+    "memory:memory/2026-04-22.md:20:24": {
+      "key": "memory:memory/2026-04-22.md:20:24",
+      "path": "memory/2026-04-22.md",
+      "startLine": 20,
+      "endLine": 24,
+      "source": "memory",
+      "snippet": "- Surgical source fix was applied at the correct boundary: `ReplyPayload` now carries `preserveSilentToken`, `route-reply.ts` marks intentionally preserved exact `NO_REPLY`, and `src/infra/outbound/payloads.ts` respects that marker so preserved direct or queued follow-up silent payloads are kept as exact `NO_REPLY` instead of being rewritten into filler. - Durable behavioral rule after the fix: true silent replies still drop when policy allows silence, but intentionally preserved exact `NO_REPLY` used for queued/direct follow-up handling must not be converted into Ahmed-facing filler text. - Verification that should be remembered: targeted auto-reply scoped tests passed after the patch, and",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.4664767354726791,
+      "maxScore": 0.4664767354726791,
+      "firstRecalledAt": "2026-04-22T19:31:20.683Z",
+      "lastRecalledAt": "2026-04-22T19:31:20.683Z",
+      "queryHashes": [
+        "faf3f103f882"
+      ],
+      "recallDays": [
+        "2026-04-22"
+      ],
+      "conceptTags": [
+        "route-reply.ts",
+        "no-reply",
+        "src/infra/outbound/payloads.ts",
+        "follow-up",
+        "queued/direct",
+        "ahmed-facing",
+        "auto-reply",
+        "surgical"
+      ]
+    },
+    "memory:memory/2026-04-22.md:16:21": {
+      "key": "memory:memory/2026-04-22.md:16:21",
+      "path": "memory/2026-04-22.md",
+      "startLine": 16,
+      "endLine": 21,
+      "source": "memory",
+      "snippet": "- Important correction for future reasoning: do not blame `plugins.slots.memory` first when doctor says no active memory plugin is registered. Check `plugins.entries.memory-core.enabled` and memory-search provider readiness separately, then verify the live state before repeating an older diagnosis. ## Additional durable updates - The user-visible filler reply `Nothing to add right now.` was traced to the outbound silent-reply rewrite layer, not to the model, followup runner, or `routeReply` inventing content. The critical rewrite happens in outbound planning when an exact preserved `NO_REPLY` reaches `createOutboundPayloadPlan(...)` under a direct-session silent policy with rewrite enabled.",
+      "recallCount": 3,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1.405846220254898,
+      "maxScore": 0.4776531428098678,
+      "firstRecalledAt": "2026-04-22T19:31:20.683Z",
+      "lastRecalledAt": "2026-04-22T22:13:50.666Z",
+      "queryHashes": [
+        "faf3f103f882",
+        "2ca3d4fd64f1",
+        "5dcd1e4b8994"
+      ],
+      "recallDays": [
+        "2026-04-22",
+        "2026-04-23"
+      ],
+      "conceptTags": [
+        "router",
+        "plugins.slots.memory",
+        "memory-search",
+        "user-visible",
+        "silent-reply",
+        "no-reply",
+        "direct-session",
+        "important"
+      ]
+    },
+    "memory:memory/archives/2026-03-03.md:20:46": {
+      "key": "memory:memory/archives/2026-03-03.md:20:46",
+      "path": "memory/archives/2026-03-03.md",
+      "startLine": 20,
+      "endLine": 46,
+      "source": "memory",
+      "snippet": "- Monthly Maintenance timeout increased to 900s, prompt patched to plain-text only, rerun successful, status reset to ok. ## Final State - Targeted cron error set from this cycle is resolved. - File audit remediation and cron hardening cycle is complete. - No immediate user action required. ## 08:53 UTC Session Flush Addendum - Incident hardening completed for fetch/retry stability: - Added `/root/.openclaw/workspace/scripts/fetch-guard.mjs` to classify URL outcomes (`ok`, `blocked_domain`, `dead_url`, `dns_error`, `transient_server_error`) and stop infinite retries. - Added `/root/.openclaw/workspace/scripts/gateway-ping.sh` health command returning JSON (`status`, `pid`, `uptime_se",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.4768604010343551,
+      "maxScore": 0.4768604010343551,
+      "firstRecalledAt": "2026-04-22T20:34:29.882Z",
+      "lastRecalledAt": "2026-04-22T20:34:29.882Z",
+      "queryHashes": [
+        "2ca3d4fd64f1"
+      ],
+      "recallDays": [
+        "2026-04-22"
+      ],
+      "conceptTags": [
+        "gateway",
+        "plain-text",
+        "fetch/retry",
+        "blocked-domain",
+        "dead-url",
+        "dns-error",
+        "transient-server-error",
+        "uptime-se"
+      ]
+    },
+    "memory:memory/archive/2026-03/2026-03-13.md:125:154": {
+      "key": "memory:memory/archive/2026-03/2026-03-13.md:125:154",
+      "path": "memory/archive/2026-03/2026-03-13.md",
+      "startLine": 125,
+      "endLine": 154,
+      "source": "memory",
+      "snippet": "- Falls back to direct Anthropic API if gateway unavailable - Refactored: comment drafting, humanizer, and pre-flight check all use `call_llm()` now - Commit: `790c9777` **4. Daily Briefing doc was wiping previous days** - Ahmed caught: script called `clear_document()` each run, deleting yesterday's content - System Log correctly appended. Daily Briefing didn't. - **Fix:** Now appends at document end (like system log). Header only on first run. Each day gets HEADING_1 date separator. - Commit: `82c2bbed` ### Key Technical Decisions - **Gateway Chat Completions endpoint** is on loopback only (127.0.0.1), treated as full operator access. Safe for internal scripts. - Config key: `gateway.http",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.4707353442907333,
+      "maxScore": 0.4707353442907333,
+      "firstRecalledAt": "2026-04-22T20:34:29.882Z",
+      "lastRecalledAt": "2026-04-22T20:34:29.882Z",
+      "queryHashes": [
+        "2ca3d4fd64f1"
+      ],
+      "recallDays": [
+        "2026-04-22"
+      ],
+      "conceptTags": [
+        "gateway",
+        "pre-flight",
+        "call-llm",
+        "clear-document",
+        "heading-1",
+        "127.0.0.1",
+        "gateway.http",
+        "falls"
+      ]
+    },
+    "memory:memory/2026-04-11.md:12:19": {
+      "key": "memory:memory/2026-04-11.md:12:19",
+      "path": "memory/2026-04-11.md",
+      "startLine": 12,
+      "endLine": 19,
+      "source": "memory",
+      "snippet": "- Archived abandoned duplicate state dir `/home/bridge/.openclaw` to `/home/bridge/.openclaw.archive-20260411T133348Z`; doctor duplicate-state-dir warning cleared. ## 2026-04-11 - Gateway hardening completed - Reloaded user systemd and restarted `openclaw-gateway.service`; live service now runs `/usr/bin/node /root/openclaw/dist/index.js gateway --port 18789` with `PATH=/usr/local/bin:/usr/bin:/bin`. - Rewrote `/root/.config/systemd/user/openclaw-gateway.service` to the stable 2026.4.9 runtime and reduced the drop-in override to the Telegram family setting only. - Backed up the old `/usr/bin/openclaw` target to `tmp/usr-bin-openclaw-link-backup-20260411T1558Z.txt`, then repointed `/usr/bin/",
+      "recallCount": 3,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1.339226621389389,
+      "maxScore": 0.4873124301433563,
+      "firstRecalledAt": "2026-04-22T20:34:31.614Z",
+      "lastRecalledAt": "2026-04-24T10:42:29.829Z",
+      "queryHashes": [
+        "b5ac8814ace6",
+        "35d3249687c5",
+        "0d85480e49a5"
+      ],
+      "recallDays": [
+        "2026-04-22",
+        "2026-04-23",
+        "2026-04-24"
+      ],
+      "conceptTags": [
+        "backup",
+        "gateway",
+        "home/bridge",
+        "duplicate-state-dir",
+        "openclaw-gateway.service",
+        "usr/bin/node",
+        "root/openclaw/dist/index.js",
+        "usr/local/bin"
+      ]
+    },
+    "memory:memory/2026-04-11.md:1:15": {
+      "key": "memory:memory/2026-04-11.md:1:15",
+      "path": "memory/2026-04-11.md",
+      "startLine": 1,
+      "endLine": 15,
+      "source": "memory",
+      "snippet": "# Daily Notes - 2026-04-11 # Daily Notes - 2026-04-11 ## 2026-04-11 - Gateway/model/session cleanup - Fixed active agent session overrides so the live Telegram/direct routes for main, HR, CTO, CMO, and JobZoom are aligned to `openai-codex/gpt-5.4` with `thinkingLevel: high` and `providerOverride: openai-codex`. - Cleaned stale session metadata and archived old inactive Telegram/session records; archived orphan main-session transcripts and removed broken `sessions.json` entries referencing missing files. - Patched `/root/.openclaw/openclaw.json` so `models.providers.openai-codex` now uses native Codex transport: `baseUrl=https://chatgpt.com/backend-api`, `api=openai-codex-responses`. - Move",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.9212843537330626,
+      "maxScore": 0.4851753234863281,
+      "firstRecalledAt": "2026-04-22T20:34:31.614Z",
+      "lastRecalledAt": "2026-04-23T23:37:55.168Z",
+      "queryHashes": [
+        "b5ac8814ace6",
+        "c246e005df40"
+      ],
+      "recallDays": [
+        "2026-04-22",
+        "2026-04-24"
+      ],
+      "conceptTags": [
+        "gateway",
+        "gpt",
+        "openai",
+        "gateway/model/session",
+        "telegram/direct",
+        "openai-codex/gpt-5.4",
+        "openai-codex",
+        "telegram/session"
+      ]
+    },
+    "memory:memory/2026-04-22.md:1:11": {
+      "key": "memory:memory/2026-04-22.md:1:11",
+      "path": "memory/2026-04-22.md",
+      "startLine": 1,
+      "endLine": 11,
+      "source": "memory",
+      "snippet": "# Daily Notes - 2026-04-22 ## Durable updates - Memory plugin diagnosis corrected: the main slot was not the real blocker. `plugins.slots.memory` was already on `memory-core`; the actual break was `plugins.entries.memory-core.enabled = false`. Re-enabling that removed the doctor error `No active memory plugin is registered for the current config`. - Later same-day verification showed the live memory-search path is now healthy again. Current state: `agents.defaults.memorySearch.provider = local`, `fallback = none`, embeddings ready, vector search ready. - Earlier Ollama-related failures and the missing `task-registry.maintenance-*.js` chunk should be treated as transient same-day incidents,",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.4649763256311416,
+      "maxScore": 0.4649763256311416,
+      "firstRecalledAt": "2026-04-22T20:34:31.614Z",
+      "lastRecalledAt": "2026-04-22T20:34:31.614Z",
+      "queryHashes": [
+        "b5ac8814ace6"
+      ],
+      "recallDays": [
+        "2026-04-22"
+      ],
+      "conceptTags": [
+        "embedding",
+        "embeddings",
+        "plugins.slots.memory",
+        "memory-core",
+        "re-enabling",
+        "same-day",
+        "memory-search",
+        "ollama-related"
+      ]
+    },
+    "memory:memory/archive/2026-02/2026-02-17.md:132:169": {
+      "key": "memory:memory/archive/2026-02/2026-02-17.md:132:169",
+      "path": "memory/archive/2026-02/2026-02-17.md",
+      "startLine": 132,
+      "endLine": 169,
+      "source": "memory",
+      "snippet": "| Model | Provider | Status | Notes | |-------|----------|--------|-------| | claude-opus-4-5 | anthropic | ✅ Working | Premium, complex tasks | | claude-sonnet-4 | anthropic | ✅ Working | Balanced, troubleshooting | | MiniMax-M2.1 | minimax-portal | ✅ Working | Free tier, daily ops | | kimi-k2.5 | moonshot | ✅ Working | Alternative reasoning | | haiku-3.5 | anthropic | ❌ 404 Error | Not available on API | | haiku-3 | anthropic | ❓ Unverified | Python env missing openai | ### TOOLS.md Updated - Simplified model strategy (latest versions only) - Removed dated model versions (20240229, 20250514, etc.) - Added \"Not Working\" section for broken models - Clear model selection rules documented ##",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.8101257681846619,
+      "maxScore": 0.4123202472925186,
+      "firstRecalledAt": "2026-04-22T21:21:58.949Z",
+      "lastRecalledAt": "2026-04-23T20:21:33.341Z",
+      "queryHashes": [
+        "f9b2cd94ae51",
+        "51206a653130"
+      ],
+      "recallDays": [
+        "2026-04-22",
+        "2026-04-23"
+      ],
+      "conceptTags": [
+        "openai",
+        "claude-opus-4-5",
+        "claude-sonnet-4",
+        "minimax-m2.1",
+        "minimax-portal",
+        "kimi-k2.5",
+        "haiku-3.5",
+        "haiku-3"
+      ]
+    },
+    "memory:memory/2026-04-07.md:1:10": {
+      "key": "memory:memory/2026-04-07.md:1:10",
+      "path": "memory/2026-04-07.md",
+      "startLine": 1,
+      "endLine": 10,
+      "source": "memory",
+      "snippet": "# Daily Notes - 2026-04-07 # Daily Notes - 2026-04-07 ## Durable memory flush - Ahmed set durable model policy: GPT-5.4 via OpenAI Codex OAuth is primary going forward, MiniMax-M2.7 is fallback only, all agents should default to GPT-5.4, Claude/Sonnet/Opus defaults/references should be removed where they drive behavior, and any model switch must be disclosed immediately in the next reply. - `/root/.openclaw/workspace/AGENTS.md` and `/root/.openclaw/workspace/SOUL.md` were updated earlier today to reflect GPT-5.4 as default and MiniMax-M2.7 as fallback. - Health check established global config alignment: defaults.model.primary set to `openai-codex/gpt-5.4`, all four agents and all heartbeat",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.4719486147165298,
+      "maxScore": 0.4719486147165298,
+      "firstRecalledAt": "2026-04-22T21:22:18.615Z",
+      "lastRecalledAt": "2026-04-22T21:22:18.615Z",
+      "queryHashes": [
+        "6a1da4008b92"
+      ],
+      "recallDays": [
+        "2026-04-22"
+      ],
+      "conceptTags": [
+        "gpt",
+        "openai",
+        "gpt-5.4",
+        "minimax-m2.7",
+        "claude/sonnet/opus",
+        "defaults/references",
+        "openclaw/workspace/agents.md",
+        "openclaw/workspace/soul.md"
+      ]
+    },
+    "memory:memory/archive/2026-04/2026-04-06.md:30:51": {
+      "key": "memory:memory/archive/2026-04/2026-04-06.md:30:51",
+      "path": "memory/archive/2026-04/2026-04-06.md",
+      "startLine": 30,
+      "endLine": 51,
+      "source": "memory",
+      "snippet": "**Result confirmed live:** Session now reports `Model: anthropic/claude-opus-4-6 · 🔑 token (anthropic:manual)` — Opus 4.6 via Anthropic API key, working. **Key files:** - `/root/.openclaw/openclaw.json` — `agents.defaults.model.primary` + `agents.list[0].model.primary` set to `anthropic/claude-opus-4-6`; `channels.modelByChannel.telegram = {\"*\": \"anthropic/claude-opus-4-6\"}` - `/root/.openclaw/openclaw.json.bak.modelchange` — backup - `/root/.openclaw/agents/main/sessions/sessions.json` — stale session cleaned - Patches backed up: `reply-CxEVitwF.js.bak.channelfix` **Caveat:** Uses Anthropic API key (`anthropic:manual` — pay-as-you-go, sk-ant-oat01-...), NOT Claude Max subscription. The B",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.4179448336362839,
+      "maxScore": 0.4179448336362839,
+      "firstRecalledAt": "2026-04-22T21:39:32.849Z",
+      "lastRecalledAt": "2026-04-22T21:39:32.849Z",
+      "queryHashes": [
+        "0d248a596a7a"
+      ],
+      "recallDays": [
+        "2026-04-22"
+      ],
+      "conceptTags": [
+        "backup",
+        "anthropic/claude-opus-4-6",
+        "4.6",
+        "openclaw/openclaw.json",
+        "agents.defaults.model.primary",
+        "agents.list",
+        "model.primary",
+        "channels.modelbychannel.telegram"
+      ]
+    },
+    "memory:memory/archive/2026-04/2026-04-06.md:20:33": {
+      "key": "memory:memory/archive/2026-04/2026-04-06.md:20:33",
+      "path": "memory/archive/2026-04/2026-04-06.md",
+      "startLine": 20,
+      "endLine": 33,
+      "source": "memory",
+      "snippet": "2. **Session authProfileOverride:** Session had `authProfileOverride: \"minimax-portal:default\"` which forced MiniMax OAuth even after model was changed. 3. **Gateway code bug:** `createModelSelectionState()` (model-selection-CDZG0zcK.js) has `skipStoredOverride` flag that only triggers for heartbeat overrides (`hasResolvedHeartbeatModelOverride`), not channel overrides. **Fix applied (TWO files patched in OpenClaw dist):** - `/usr/lib/node_modules/openclaw/dist/reply-CxEVitwF.js` — After channel override block (line ~2966): added `hasResolvedChannelModelOverride` flag + preserved `channelOverrideProvider` + `channelOverrideModel`. Passed all three to `createModelSelectionState()`. - `/usr/",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.4040514916181564,
+      "maxScore": 0.4040514916181564,
+      "firstRecalledAt": "2026-04-22T21:39:32.849Z",
+      "lastRecalledAt": "2026-04-22T21:39:32.849Z",
+      "queryHashes": [
+        "0d248a596a7a"
+      ],
+      "recallDays": [
+        "2026-04-22"
+      ],
+      "conceptTags": [
+        "gateway",
+        "minimax-portal",
+        "model-selection-cdzg0zck.js",
+        "authprofileoverride",
+        "had",
+        "minimax",
+        "portal:default",
+        "which"
+      ]
+    },
+    "memory:memory/archive/2026-03/2026-03-18.md:935:960": {
+      "key": "memory:memory/archive/2026-03/2026-03-18.md:935:960",
+      "path": "memory/archive/2026-03/2026-03-18.md",
+      "startLine": 935,
+      "endLine": 960,
+      "source": "memory",
+      "snippet": "- 16 total Google Jobs found (10 DT + 10 PMO, some overlap) - 9 JDs fetched (HTTP), 7 blocked (GulfTalent/Bayt/Tanqeeb = 403) - LLM career-fit analysis run on all accessible JDs - Results: 4 APPLY, 5 SKIP, 7 NO JD - APPLY: #2 Dubai Holding DT Director (9/10), #4 Experts Group DT (7/10), #7 Panamari PMO (7/10), #14 Faze 3 IT PMO (7/10) - SKIP: #1 TATWEER telecom, #8 Forsyth Barnes retail SAP, #15 Atribs banking, #3 Foreground small, #13 aggregator - Learning: NEVER recommend without reading full JD. Quick eye-scan by title is dishonest. ## Applications Submitted (2026-03-18 18:23) - 4 Google Jobs applications submitted by Ahmed (3 new + 1 already applied) - Pipeline updated in Notion: Dubai",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.8781307250261305,
+      "maxScore": 0.4719884186983108,
+      "firstRecalledAt": "2026-04-22T21:48:26.134Z",
+      "lastRecalledAt": "2026-04-22T23:47:08.896Z",
+      "queryHashes": [
+        "03bc40fec323",
+        "b2aeb846d994"
+      ],
+      "recallDays": [
+        "2026-04-22",
+        "2026-04-23"
+      ],
+      "conceptTags": [
+        "gulftalent/bayt/tanqeeb",
+        "career-fit",
+        "9/10",
+        "7/10",
+        "eye-scan",
+        "total",
+        "google",
+        "jobs"
+      ]
+    },
+    "memory:memory/archives/2026-03-12.md:174:203": {
+      "key": "memory:memory/archives/2026-03-12.md:174:203",
+      "path": "memory/archives/2026-03-12.md",
+      "startLine": 174,
+      "endLine": 203,
+      "source": "memory",
+      "snippet": "- Architecture: MiniMax gathers data, Sonnet drafts comments, Python formats doc - Ahmed said \"Yes\" but session hit compaction before implementation ### Files Created/Updated - `scripts/daily-briefing-generator.py` - deterministic Google Docs formatter (PERMANENT, never downgrade quality) - `jobs-bank/scraped/briefing-data-2026-03-12.json` - today's real data - Google Doc updated: https://docs.google.com/document/d/1gtl5sXIsvXiXhODFs29FD9L09i9mGQlsBVIrZbVkTYs/edit ### Key Rules Established 1. NEVER raw markdown in Google Docs. Always API-native formatting. 2. Python script is single source of truth for doc quality. Models cannot deviate. 3. All links must be clickable (hyperlink pass built",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.3846450477838516,
+      "maxScore": 0.3846450477838516,
+      "firstRecalledAt": "2026-04-22T21:59:52.891Z",
+      "lastRecalledAt": "2026-04-22T21:59:52.891Z",
+      "queryHashes": [
+        "055dd4a9d688"
+      ],
+      "recallDays": [
+        "2026-04-22"
+      ],
+      "conceptTags": [
+        "created/updated",
+        "api-native",
+        "architecture",
+        "minimax",
+        "gathers",
+        "data",
+        "sonnet",
+        "drafts"
+      ]
+    },
+    "memory:memory/archives/2026-03-07.md:134:169": {
+      "key": "memory:memory/archives/2026-03-07.md:134:169",
+      "path": "memory/archives/2026-03-07.md",
+      "startLine": 134,
+      "endLine": 169,
+      "source": "memory",
+      "snippet": "### 16. Manga Image Generation - Ahmed requested manga-style conversion of his executive portrait - Direct VPS generation done (PIL-based high contrast B&W with OPENCLAW branding) - Recommendation: use Midjourney/Flux with provided prompt for true manga ink art quality - Image delivered to channel ### 17. Model Routing Notes - This session started on GPT-5.3-Codex (via OpenClaw channel model override) - GPT-5.4 configured but marked \"model not found\" — not available yet for account tier - Sub-agent spawns falling back to Claude Sonnet 4.6 (routing issue, not model override bug) - GPT-5.3-Codex confirmed working via OAuth until April 1 (ChatGPT Plus cancelled Mar 4) - Daily cron monitoring f",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.38471238911151884,
+      "maxScore": 0.38471238911151884,
+      "firstRecalledAt": "2026-04-22T22:35:32.795Z",
+      "lastRecalledAt": "2026-04-22T22:35:32.795Z",
+      "queryHashes": [
+        "8bfed12beb7f"
+      ],
+      "recallDays": [
+        "2026-04-23"
+      ],
+      "conceptTags": [
+        "gpt",
+        "manga-style",
+        "pil-based",
+        "midjourney/flux",
+        "gpt-5.3-codex",
+        "gpt-5.4",
+        "sub-agent",
+        "4.6"
+      ]
+    },
+    "memory:memory/archives/2026-03-07.md:111:140": {
+      "key": "memory:memory/archives/2026-03-07.md:111:140",
+      "path": "memory/archives/2026-03-07.md",
+      "startLine": 111,
+      "endLine": 140,
+      "source": "memory",
+      "snippet": "### 13. Search Policy Upgrade (Job Radar) - New target titles added: - VP Digital/Technology/Enterprise Transformation - Director Transformation Office, Head Enterprise PMO - Chief Transformation Officer, Chief Digital Officer, Group PMO Director - Excluded: Project Manager (non-senior), IT Manager, Analyst/Coordinator - Country priority: UAE/KSA/Qatar (high), Bahrain/Kuwait/Oman (medium), UK/Europe (low default) - Seniority gate: Head/Director/VP/C-level only - Compensation gate: 50K AED equivalent+ - Calibration run triggered ### 14. Model Council Room MVP - Concept approved: 2-model council (Codex + MiniMax) for strategic decisions - Trigger format: COUNCIL: [question] - Output: 3",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.38173735439777373,
+      "maxScore": 0.38173735439777373,
+      "firstRecalledAt": "2026-04-22T22:35:32.795Z",
+      "lastRecalledAt": "2026-04-22T22:35:32.795Z",
+      "queryHashes": [
+        "8bfed12beb7f"
+      ],
+      "recallDays": [
+        "2026-04-23"
+      ],
+      "conceptTags": [
+        "digital/technology/enterprise",
+        "non-senior",
+        "analyst/coordinator",
+        "uae/ksa/qatar",
+        "bahrain/kuwait/oman",
+        "uk/europe",
+        "head/director/vp/c-level",
+        "2-model"
+      ]
+    },
+    "memory:memory/archives/2026-03-02.md:204:224": {
+      "key": "memory:memory/archives/2026-03-02.md:204:224",
+      "path": "memory/archives/2026-03-02.md",
+      "startLine": 204,
+      "endLine": 224,
+      "source": "memory",
+      "snippet": "- Dry-run approval block was re-issued for locked action `openclaw auth login openai-codex` per workspace safety protocol. - Current execution state: waiting for explicit \"go ahead\" before running re-auth command. ## Flush Addendum — 2026-03-02 09:38 UTC - User provided explicit go-ahead for OAuth maintenance execution. - Initial command attempt `openclaw auth login openai-codex` failed because `auth` is not a top-level CLI command in current OpenClaw version. - Correct auth path identified through CLI help: `openclaw models auth login`. - Execution attempted with corrected command: - `openclaw models auth login --provider openai-codex` - Result: provider not available in runtime plugin",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.3968578398227691,
+      "maxScore": 0.3968578398227691,
+      "firstRecalledAt": "2026-04-22T22:41:16.888Z",
+      "lastRecalledAt": "2026-04-22T22:41:16.888Z",
+      "queryHashes": [
+        "3e2a28d69aee"
+      ],
+      "recallDays": [
+        "2026-04-23"
+      ],
+      "conceptTags": [
+        "openai",
+        "dry-run",
+        "re-issued",
+        "openai-codex",
+        "re-auth",
+        "go-ahead",
+        "top-level",
+        "dry"
+      ]
+    },
+    "memory:memory/2026-04-23.md:36:40": {
+      "key": "memory:memory/2026-04-23.md:36:40",
+      "path": "memory/2026-04-23.md",
+      "startLine": 36,
+      "endLine": 40,
+      "source": "memory",
+      "snippet": "- Cookie-based session transfer was explored as the practical way to reuse Ahmed's paid ChatGPT web session on this machine without asking for passwords. - Safari plus Cookie-Editor showed `This page does not have any cookies` even while Ahmed was visibly logged into ChatGPT, so that browser/extension combo is unreliable for exporting the needed ChatGPT auth cookies here. - Recommended next path if resumed: use Chrome or Edge on Ahmed's side, log into `https://chatgpt.com`, use `Get cookies.txt LOCALLY`, export cookies for `chatgpt.com` and `auth.openai.com`, and send the `cookies.txt` file as an attachment. No password should be requested or shared. - Current state at handoff: no verified C",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.7521694452580536,
+      "maxScore": 0.7521694452580536,
+      "firstRecalledAt": "2026-04-22T23:22:55.482Z",
+      "lastRecalledAt": "2026-04-22T23:22:55.482Z",
+      "queryHashes": [
+        "7739a0236510"
+      ],
+      "recallDays": [
+        "2026-04-23"
+      ],
+      "conceptTags": [
+        "gpt",
+        "openai",
+        "cookie-based",
+        "cookie-editor",
+        "browser/extension",
+        "chatgpt.com",
+        "cookies.txt",
+        "auth.openai.com"
+      ]
+    },
+    "memory:memory/2026-04-23.md:36:44": {
+      "key": "memory:memory/2026-04-23.md:36:44",
+      "path": "memory/2026-04-23.md",
+      "startLine": 36,
+      "endLine": 44,
+      "source": "memory",
+      "snippet": "- Cookie-based session transfer was explored as the practical way to reuse Ahmed's paid ChatGPT web session on this machine without asking for passwords. - Safari plus Cookie-Editor showed `This page does not have any cookies` even while Ahmed was visibly logged into ChatGPT, so that browser/extension combo is unreliable for exporting the needed ChatGPT auth cookies here. - Recommended next path if resumed: use Chrome or Edge on Ahmed's side, log into `https://chatgpt.com`, use `Get cookies.txt LOCALLY`, export cookies for `chatgpt.com` and `auth.openai.com`, and send the `cookies.txt` file as an attachment. No password should be requested or shared. - Current state at handoff: no verified C",
+      "recallCount": 3,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1.257539692521095,
+      "maxScore": 0.4683754354715347,
+      "firstRecalledAt": "2026-04-22T23:34:27.946Z",
+      "lastRecalledAt": "2026-04-23T00:02:40.969Z",
+      "queryHashes": [
+        "bb89b57fbf49",
+        "df0b458b7f77",
+        "f26811a6cccc"
+      ],
+      "recallDays": [
+        "2026-04-23"
+      ],
+      "conceptTags": [
+        "gpt",
+        "openai",
+        "cookie-based",
+        "cookie-editor",
+        "browser/extension",
+        "chatgpt.com",
+        "cookies.txt",
+        "auth.openai.com"
+      ]
+    },
+    "memory:memory/2026-04-23.md:42:47": {
+      "key": "memory:memory/2026-04-23.md:42:47",
+      "path": "memory/2026-04-23.md",
+      "startLine": 42,
+      "endLine": 47,
+      "source": "memory",
+      "snippet": "- Ahmed later provided the missing authenticated ChatGPT cookies, including the split `__Secure-next-auth.session-token` shards plus additional logged-in session cookies. - Importing those cookies into Camoufox succeeded, and a fresh visit to `https://chatgpt.com/images` opened the authenticated Images interface instead of the login wall. - Live snapshot confirmed the session is signed in as `Ahmed Nasr Pro` and the Images page is usable in the browser runtime here. - Durable conclusion: while OpenClaw native `openai/gpt-image-2` still cannot use Codex subscription auth directly, the no-extra-cost browser workaround is now viable through an imported authenticated ChatGPT web session. - Pract",
+      "recallCount": 5,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 2.032590016722679,
+      "maxScore": 0.46385238468647,
+      "firstRecalledAt": "2026-04-22T23:34:27.946Z",
+      "lastRecalledAt": "2026-04-23T15:05:20.503Z",
+      "queryHashes": [
+        "bb89b57fbf49",
+        "df0b458b7f77",
+        "f26811a6cccc",
+        "a13f80a705f7",
+        "970edd748e9b"
+      ],
+      "recallDays": [
+        "2026-04-23"
+      ],
+      "conceptTags": [
+        "gpt",
+        "openai",
+        "secure-next-auth.session-token",
+        "logged-in",
+        "chatgpt.com/images",
+        "openai/gpt-image-2",
+        "no-extra-cost",
+        "ahmed"
+      ]
+    },
+    "memory:memory/2026-04-23.md:31:37": {
+      "key": "memory:memory/2026-04-23.md:31:37",
+      "path": "memory/2026-04-23.md",
+      "startLine": 31,
+      "endLine": 37,
+      "source": "memory",
+      "snippet": "- Durable conclusion: OpenClaw native `openai/gpt-image-2` image generation is a direct OpenAI API-key lane and cannot currently reuse the existing `openai-codex/*` ChatGPT/Codex OAuth text-model auth. - Important nuance: `openai-codex` resolves an image-capable default media model for understanding image inputs, but that is not image generation and does not make `gpt-image-2` usable. - Best no-extra-cost candidate identified so far is ChatGPT web Images through Ahmed's existing paid ChatGPT session, not the built-in OpenClaw `image_generate` provider path. - Important correction: sending Ahmed a login URL captured from the server/browser session was the wrong approach. Logging in on Ahmed's",
+      "recallCount": 3,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1.1940684676170348,
+      "maxScore": 0.4199247270822525,
+      "firstRecalledAt": "2026-04-22T23:55:53.173Z",
+      "lastRecalledAt": "2026-04-23T15:00:53.503Z",
+      "queryHashes": [
+        "df0b458b7f77",
+        "f26811a6cccc",
+        "a13f80a705f7"
+      ],
+      "recallDays": [
+        "2026-04-23"
+      ],
+      "conceptTags": [
+        "gpt",
+        "openai",
+        "openai/gpt-image-2",
+        "api-key",
+        "openai-codex",
+        "chatgpt/codex",
+        "text-model",
+        "image-capable"
+      ]
+    },
+    "memory:memory/2026-04-23.md:24:32": {
+      "key": "memory:memory/2026-04-23.md:24:32",
+      "path": "memory/2026-04-23.md",
+      "startLine": 24,
+      "endLine": 32,
+      "source": "memory",
+      "snippet": "- Durable warning: this behaves like the earlier lossless-claw artifact hotfix - any source rebuild, OpenClaw reinstall, or lossless-claw reinstall can wipe one or more patched files, so verify/reapply after rebuilds. - Better upstream fix later should be narrower: teach the Telegram empty-turn fallback to distinguish `sessions_yield` with pending child work from true silent failure, so filler can remain available for the latter without appearing during intentional waits. - Current handoff state from Ahmed: gateway healthy, all agents responding, lossless-claw 0.9.2 native, and no filler observed in production. ## ChatGPT image route investigation - no extra spend path still external to Ope",
+      "recallCount": 3,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1.1811114579439164,
+      "maxScore": 0.41103104054927825,
+      "firstRecalledAt": "2026-04-22T23:55:53.173Z",
+      "lastRecalledAt": "2026-04-23T15:00:53.503Z",
+      "queryHashes": [
+        "df0b458b7f77",
+        "f26811a6cccc",
+        "a13f80a705f7"
+      ],
+      "recallDays": [
+        "2026-04-23"
+      ],
+      "conceptTags": [
+        "gateway",
+        "gpt",
+        "lossless-claw",
+        "verify/reapply",
+        "empty-turn",
+        "sessions-yield",
+        "0.9.2",
+        "durable"
+      ]
+    },
+    "memory:memory/archive/2026-03/2026-03-26.md:89:116": {
+      "key": "memory:memory/archive/2026-03/2026-03-26.md:89:116",
+      "path": "memory/archive/2026-03/2026-03-26.md",
+      "startLine": 89,
+      "endLine": 116,
+      "source": "memory",
+      "snippet": "- Old version checked legacy scripts (content_orchestrator, engagement_collector) - New version: 10 checks (notion_auth, gateway, rss_db, rss_crawler, scorer, bridge, content_calendar, auto_drafter, linkedin_poster, visuals) - Script: content-factory-health-monitor.py (12,871 bytes) - Last run: 10/10 green --- ## Videos Analyzed (Content Factory Architecture Input) 1. Diandra Escobar - 4 LinkedIn post formats (Brandjacking, Newsjacking, Namejacking, Hot Takes) 2. Greg Isenberg - 5-layer agent stack (Firecrawl) 3. Kevin Jeppesen - Self-evolving content DB with OpenClaw 4. AI Andy - Karpathy's Autoresearch (binary evals + improvement loop) ## Learning Logged - Always try youtube_transcript.",
+      "recallCount": 4,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1.6580305010080336,
+      "maxScore": 0.46914093196392054,
+      "firstRecalledAt": "2026-04-23T08:23:14.475Z",
+      "lastRecalledAt": "2026-04-24T19:24:22.204Z",
+      "queryHashes": [
+        "24e463a108de",
+        "4c2cc28bcaff",
+        "38f70f68f8d0",
+        "0cd8fa361602"
+      ],
+      "recallDays": [
+        "2026-04-23",
+        "2026-04-24"
+      ],
+      "conceptTags": [
+        "gateway",
+        "content-orchestrator",
+        "engagement-collector",
+        "notion-auth",
+        "rss-db",
+        "rss-crawler",
+        "content-calendar",
+        "auto-drafter"
+      ]
+    },
+    "memory:memory/archive/2026-03/2026-03-22.md:450:474": {
+      "key": "memory:memory/archive/2026-03/2026-03-22.md:450:474",
+      "path": "memory/archive/2026-03/2026-03-22.md",
+      "startLine": 450,
+      "endLine": 474,
+      "source": "memory",
+      "snippet": "8. **Telegram confirmation + stale watchdog check** — `send_telegram_confirmation()` on successful post. `check_stale_watchdog()` at script start alerts if yesterday's flag still exists (>1h old). **Self-healing matrix for Part 6:** - No scheduled post → graceful exit (silent) - Score < 6 → quality hold + Telegram alert - Post succeeds → Telegram \"✅ LinkedIn Posted\" + URL - Agent fails --update-url → next day alerts \"🔴 FAILED yesterday\" - Composio auth expired → no self-fix (agent reports error) - Script crash → no retry (standalone cron limitation) ### Part 7: Comment Radar — 2 fixes **Fixes applied:** 1. **Author extraction improved** — 3-method chain: URL slug parsing (`linkedin.com/p",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.41645848453044887,
+      "maxScore": 0.41645848453044887,
+      "firstRecalledAt": "2026-04-23T08:41:52.672Z",
+      "lastRecalledAt": "2026-04-23T08:41:52.672Z",
+      "queryHashes": [
+        "b550775ec880"
+      ],
+      "recallDays": [
+        "2026-04-23"
+      ],
+      "conceptTags": [
+        "send-telegram-confirmation",
+        "check-stale-watchdog",
+        "self-healing",
+        "update-url",
+        "self-fix",
+        "3-method",
+        "linkedin.com/p",
+        "telegram"
+      ]
+    },
+    "memory:memory/archive/2026-03/2026-03-18.md:97:123": {
+      "key": "memory:memory/archive/2026-03/2026-03-18.md:97:123",
+      "path": "memory/archive/2026-03/2026-03-18.md",
+      "startLine": 97,
+      "endLine": 123,
+      "source": "memory",
+      "snippet": "| 4 | Session Logs | `3268d599-a162-8117-afef-e4910ec15e55` | 46 logs | | 5 | Scanner History | `3268d599-a162-8123-a867-d7231817f03d` | 6 runs | | 6 | Cron Dashboard | `3268d599-a162-8188-b531-e25071653203` | 33 crons | | 7 | Email Digest | functions in notion_sync.py | wired | New sync functions added to `notion_sync.py`: - `sync_email_digest()` - pushes flagged emails to System Log - `sync_scanner_run()` - pushes scanner metadata to Scanner History - `sync_active_tasks()` - two-way sync for tasks - `sync_cron_status()` - updates Cron Dashboard with latest status Scanner script (`linkedin-gulf-jobs.py`) wired to call `sync_scanner_run()` after each run. DB IDs saved to `config/notion-dat",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.42274509370326996,
+      "maxScore": 0.42274509370326996,
+      "firstRecalledAt": "2026-04-23T17:34:00.419Z",
+      "lastRecalledAt": "2026-04-23T17:34:00.419Z",
+      "queryHashes": [
+        "2f9e8e78178d"
+      ],
+      "recallDays": [
+        "2026-04-23"
+      ],
+      "conceptTags": [
+        "notion-sync.py",
+        "sync-email-digest",
+        "sync-scanner-run",
+        "sync-active-tasks",
+        "two-way",
+        "sync-cron-status",
+        "linkedin-gulf-jobs.py",
+        "config/notion-dat"
+      ]
+    },
+    "memory:memory/2026-04-13.md:12:22": {
+      "key": "memory:memory/2026-04-13.md:12:22",
+      "path": "memory/2026-04-13.md",
+      "startLine": 12,
+      "endLine": 22,
+      "source": "memory",
+      "snippet": "- Verified script syntax with `python3 -m py_compile` and confirmed expected search budget still totals 150. ### OpenClaw update triage - Evaluated live update risk on `/root/openclaw`; local branch was divergent from upstream and overlapped with upstream in doctor/status/subagent-spawn areas, so the recommendation was no blind live update. - Created fallback branch `checkpoint/pre-update-2026-04-13` and saved restorable artifacts at `/root/.openclaw/workspace/artifacts/openclaw-pre-update-checkpoint-2026-04-13.patch` and `/root/.openclaw/workspace/artifacts/openclaw-pre-update-checkpoint-2026-04-13.status.txt` after repo hooks killed a checkpoint commit attempt. - Built a narrow promotion",
+      "recallCount": 4,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1.9474673867857404,
+      "maxScore": 0.6593873382246442,
+      "firstRecalledAt": "2026-04-23T18:28:39.668Z",
+      "lastRecalledAt": "2026-04-24T20:12:32.895Z",
+      "queryHashes": [
+        "35d3249687c5",
+        "618f23765c6e",
+        "81fddcfe61cc",
+        "a3718005ea42"
+      ],
+      "recallDays": [
+        "2026-04-23",
+        "2026-04-24"
+      ],
+      "conceptTags": [
+        "py-compile",
+        "root/openclaw",
+        "doctor/status/subagent-spawn",
+        "checkpoint/pre-update-2026-04-13",
+        "verified",
+        "script",
+        "syntax",
+        "python3"
+      ]
+    },
+    "memory:memory/archives/2026-03-03.md:139:174": {
+      "key": "memory:memory/archives/2026-03-03.md:139:174",
+      "path": "memory/archives/2026-03-03.md",
+      "startLine": 139,
+      "endLine": 174,
+      "source": "memory",
+      "snippet": "- Ahmed approved and `openclaw gateway restart` was executed; command entered running state (background session `plaid-rook`, pid 1949146) at time of flush. - Pending next-step verification after restart: - hook active in `openclaw hooks list` - transport logs show ingress records from hook path - confirm update_id capture feasibility with current event payload. ## 09:21 UTC Pre-compaction Memory Update - Gateway restart completed and hook activation verified: - `telegram-ingress-audit` appears in `openclaw hooks list` as ready. - Live verification after user test message (`Hi`) confirms transport logging works: - inbound accepted event logged in `/root/.openclaw/workspace/logs/",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.4257180422544479,
+      "maxScore": 0.4257180422544479,
+      "firstRecalledAt": "2026-04-23T18:28:39.668Z",
+      "lastRecalledAt": "2026-04-23T18:28:39.668Z",
+      "queryHashes": [
+        "35d3249687c5"
+      ],
+      "recallDays": [
+        "2026-04-23"
+      ],
+      "conceptTags": [
+        "gateway",
+        "plaid-rook",
+        "next-step",
+        "update-id",
+        "pre-compaction",
+        "telegram-ingress-audit",
+        "openclaw/workspace/logs",
+        "ahmed"
+      ]
+    },
+    "memory:memory/archives/2026-03-02.md:422:444": {
+      "key": "memory:memory/archives/2026-03-02.md:422:444",
+      "path": "memory/archives/2026-03-02.md",
+      "startLine": 422,
+      "endLine": 444,
+      "source": "memory",
+      "snippet": "## Flush Addendum — 2026-03-02 10:33 UTC (Pre-Compaction) - User asked current model in use. - Session status check confirmed active runtime model is `openai-codex/gpt-5.3-codex` via OAuth provider `openai-codex:default`. - Response delivered in concise form with direct model identification. ## Flush Addendum — 2026-03-02 10:35 UTC (Pre-Compaction) - User raised process issue: needing to repeatedly ask \"what next\" and requested self-driven completion updates. - Accountability response delivered: acknowledged over-reliance on reactive \"wait-for-go\" pattern. - New operating rule committed in-session: 1) execute safe multi-step sequences end-to-end without micro-confirmations, 2) pause o",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.41953206956386563,
+      "maxScore": 0.41953206956386563,
+      "firstRecalledAt": "2026-04-23T19:13:32.431Z",
+      "lastRecalledAt": "2026-04-23T19:13:32.431Z",
+      "queryHashes": [
+        "a25c220308b8"
+      ],
+      "recallDays": [
+        "2026-04-23"
+      ],
+      "conceptTags": [
+        "gpt",
+        "openai",
+        "pre-compaction",
+        "openai-codex/gpt-5.3-codex",
+        "openai-codex",
+        "self-driven",
+        "over-reliance",
+        "wait-for-go"
+      ]
+    },
+    "memory:memory/archives/2026-03-01.md:28:55": {
+      "key": "memory:memory/archives/2026-03-01.md:28:55",
+      "path": "memory/archives/2026-03-01.md",
+      "startLine": 28,
+      "endLine": 55,
+      "source": "memory",
+      "snippet": "- 3 CVs built and applied: Agay Barho (87%), RapidData (88%), Salt (91%). Pipeline at 44. - ORP Gate D failure logged and corrected (Agay Barho). Full ORP compliance from RapidData onward. - MiniMax OAuth token was invalid. New API key obtained and configured. Crons restored. - Anthropic key in openclaw.json was stale, replaced with correct OAuth token from auth-profiles. - UseClaw.vercel.app explored: 336 use cases, selected #3 (Advisory Board), #4 (Humanizer), #5 (Engagement). - Humanizer locked as global cross-channel quality gate for all external content. - Advisory Board blueprint completed by Opus sub-agent, saved to memory/advisory-board-blueprint.md. - Next: implement Advisory Board",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.40885404646396634,
+      "maxScore": 0.40885404646396634,
+      "firstRecalledAt": "2026-04-23T20:21:33.341Z",
+      "lastRecalledAt": "2026-04-23T20:21:33.341Z",
+      "queryHashes": [
+        "51206a653130"
+      ],
+      "recallDays": [
+        "2026-04-23"
+      ],
+      "conceptTags": [
+        "openclaw.json",
+        "auth-profiles",
+        "useclaw.vercel.app",
+        "cross-channel",
+        "sub-agent",
+        "cvs",
+        "built",
+        "applied"
+      ]
+    },
+    "memory:memory/archives/2026-03-03.md:531:560": {
+      "key": "memory:memory/archives/2026-03-03.md:531:560",
+      "path": "memory/archives/2026-03-03.md",
+      "startLine": 531,
+      "endLine": 560,
+      "source": "memory",
+      "snippet": "- `776310738839fea7b8c8c7097eb63c95ff7d83b4e805d1a9` - PM2 state after cutover: - `mc3-frontend` online (active production) - `mc2-frontend` stopped - `mc2-backend` stopped - Verified production endpoint behavior: - `/dashboard` returns 307 to auth (expected with auth on) - `/auth` returns 200 - Legacy preservation before delete: - Backup archive created for v1: `/root/.openclaw/workspace/archives/mission-control-v1-20260303-191704.tar.gz` - Backup archive created for v2: `/root/.openclaw/workspace/archives/mission-control-v2-20260303-191704.tar.gz` - Deletion gate initiated but NOT executed yet: - Proposed dry-run command to move legacy dirs to tr",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.776715686917305,
+      "maxScore": 0.4018845111131668,
+      "firstRecalledAt": "2026-04-23T21:12:37.805Z",
+      "lastRecalledAt": "2026-04-24T10:44:07.363Z",
+      "queryHashes": [
+        "42dd799f4813",
+        "3b21f0cb3926"
+      ],
+      "recallDays": [
+        "2026-04-23",
+        "2026-04-24"
+      ],
+      "conceptTags": [
+        "backup",
+        "mc3-frontend",
+        "mc2-frontend",
+        "mc2-backend",
+        "dry-run",
+        "pm2",
+        "state",
+        "cutover"
+      ]
+    },
+    "memory:memory/archive/2026-04/2026-04-07.md:9:17": {
+      "key": "memory:memory/archive/2026-04/2026-04-07.md:9:17",
+      "path": "memory/archive/2026-04/2026-04-07.md",
+      "startLine": 9,
+      "endLine": 17,
+      "source": "memory",
+      "snippet": "- `/root/.openclaw/cron/jobs.json` was updated to change 20 enabled cron job `payload.model` pins from legacy Claude/MiniMax values to `openai-codex/gpt-5.4`. Verification after edit showed `REMAINING_NON_GPT54 0` for enabled jobs with explicit model pins. - Earlier suspected cron failures for `LCM Midday Compaction Sweep` and `SAYYAD — Score & Curate (midday)` were superseded by direct inspection of `/root/.openclaw/cron/jobs.json`; both were actually `ok`, `consecutiveErrors: 0`, with delivered recent runs. - Gateway spam investigation found duplicate gateway service registration: both the user systemd unit `~/.config/systemd/user/openclaw-gateway.service` and the system unit `/etc/systemd",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.45884225666522976,
+      "maxScore": 0.45884225666522976,
+      "firstRecalledAt": "2026-04-23T21:25:48.063Z",
+      "lastRecalledAt": "2026-04-23T21:25:48.063Z",
+      "queryHashes": [
+        "ce947106b1ba"
+      ],
+      "recallDays": [
+        "2026-04-23"
+      ],
+      "conceptTags": [
+        "gateway",
+        "gpt",
+        "openai",
+        "openclaw/cron/jobs.json",
+        "payload.model",
+        "claude/minimax",
+        "openai-codex/gpt-5.4",
+        "remaining-non-gpt54"
+      ]
+    },
+    "memory:memory/archives/2026-03-08.md:33:58": {
+      "key": "memory:memory/archives/2026-03-08.md:33:58",
+      "path": "memory/archives/2026-03-08.md",
+      "startLine": 33,
+      "endLine": 58,
+      "source": "memory",
+      "snippet": "| #ai-jobs (C0AJX895U3E) | Opus 4.6 | | #ai-content (C0AJM8PR0P5) | Sonnet 4.6 | | #ai-system (C0AK6HSN2HX) | MiniMax M2.5 | | #ai-codex (C0AJMCN64V9) | GPT-5.4-Pro | | #x-analysis (C0AKV41KF32) | GPT-5.4-Pro | | #council (C0AJQLE957H) | (empty, future) | ### Self-Healing Agent Deployed - scripts/self-healing-agent.sh: runs every 2 min via system cron - Step 1: simple restart. Step 2: invokes Claude Code CLI with logs + repair playbook - scripts/repair-playbook.md: 7 error patterns mapped to fixes - scripts/token-health-check.sh: weekly token validation (Sundays 6AM UTC) - scripts/gateway-watchdog.sh: v2 with 30-line log capture in escalation alerts ### Key Learnings - OpenClaw doesn't iso",
+      "recallCount": 3,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1.3286711812019347,
+      "maxScore": 0.4507718533277511,
+      "firstRecalledAt": "2026-04-23T21:25:48.063Z",
+      "lastRecalledAt": "2026-04-23T23:37:55.168Z",
+      "queryHashes": [
+        "ce947106b1ba",
+        "456ea71a17bc",
+        "c246e005df40"
+      ],
+      "recallDays": [
+        "2026-04-23",
+        "2026-04-24"
+      ],
+      "conceptTags": [
+        "gateway",
+        "gpt",
+        "ai-jobs",
+        "4.6",
+        "ai-content",
+        "ai-system",
+        "m2.5",
+        "ai-codex"
+      ]
+    },
+    "memory:memory/archives/2026-03-01.md:49:86": {
+      "key": "memory:memory/archives/2026-03-01.md:49:86",
+      "path": "memory/archives/2026-03-01.md",
+      "startLine": 49,
+      "endLine": 86,
+      "source": "memory",
+      "snippet": "- **Action:** Ahmed goes to platform.openai.com/account/api-keys, generates new token - **Then:** Share token with NASR to update ~/.openclaw/openclaw.json - **Priority:** CRITICAL — no Codex = no GPT-5 fallback ### 2. **Delphi Follow-up Message** - **Due:** Monday, March 2, 2026 - **To:** Kritika Chhabra (Delphi Consulting) - **Topic:** AI change management value signal (14 agents in clinical ops) - **Channel:** LinkedIn DM or email (TBD) - **Draft:** Ready, approved Feb 28 ### 3. **Threads Bio Update** - **Current (stale):** \"Zconomy Strategist for Millennials & Gen Z | Ex-Intel\" - **New (approved):** \"Digital Transformation Executive | HealthTech, FinTech & e-commerce across GCC | PMO &",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.67921854725818,
+      "maxScore": 0.67921854725818,
+      "firstRecalledAt": "2026-04-23T21:32:46.860Z",
+      "lastRecalledAt": "2026-04-23T21:32:46.860Z",
+      "queryHashes": [
+        "9321e9b2a1e6"
+      ],
+      "recallDays": [
+        "2026-04-23"
+      ],
+      "conceptTags": [
+        "gpt",
+        "openai",
+        "openclaw/openclaw.json",
+        "gpt-5",
+        "follow-up",
+        "ex-intel",
+        "e-commerce",
+        "action"
+      ]
+    },
+    "memory:memory/archive/2026-03/2026-03-19.md:269:293": {
+      "key": "memory:memory/archive/2026-03/2026-03-19.md:269:293",
+      "path": "memory/archive/2026-03/2026-03-19.md",
+      "startLine": 269,
+      "endLine": 293,
+      "source": "memory",
+      "snippet": "- Effectively completed today through all the briefing fixes - Ahmed deciding whether to mark done - System: GW UP | Disk 58% | Mem 27% | Uptime 34d5h | Crons 39/40 (1 disabled: claude-offpeak-reminder) - 5 GitHub discoveries yesterday - Disabled cron is intentional (claude-offpeak-reminder) ### Open TODOs - [ ] Mark overdue task as done (pending Ahmed's decision) - [ ] Test tomorrow's full automated flow: radar (6:30) → briefing (7:00) → auto-poster (9:30) - [ ] Comment radar search fallback: if Exa fails, cron agent uses camofox Google search ## Session: Late Night GPT-5.4-Pro (22:00-23:00 Cairo) ### Model: openai-codex/gpt-5.4-pro (switched from MiniMax default) ### OpenViking Ana",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.6658454627806407,
+      "maxScore": 0.6658454627806407,
+      "firstRecalledAt": "2026-04-23T21:32:46.860Z",
+      "lastRecalledAt": "2026-04-23T21:32:46.860Z",
+      "queryHashes": [
+        "9321e9b2a1e6"
+      ],
+      "recallDays": [
+        "2026-04-23"
+      ],
+      "conceptTags": [
+        "gpt",
+        "openai",
+        "39/40",
+        "claude-offpeak-reminder",
+        "auto-poster",
+        "gpt-5.4-pro",
+        "00-23",
+        "openai-codex/gpt-5.4-pro"
+      ]
+    },
+    "memory:memory/archives/2026-03-04.md:1:28": {
+      "key": "memory:memory/archives/2026-03-04.md:1:28",
+      "path": "memory/archives/2026-03-04.md",
+      "startLine": 1,
+      "endLine": 28,
+      "source": "memory",
+      "snippet": "# Daily Log - Tuesday, March 4, 2026 ## Session 1: Infrastructure & System Upgrades (09:29-10:40 UTC) ### Subscription Changes - [09:31] Claude Max upgraded: 5x (EGP 4,399/mo) -> 20x (EGP 9,000/mo). 4x quota headroom. - [09:53] OpenAI ChatGPT Plus cancelled. Codex access until April 1. Reminder cron set for Mar 30. - [09:57] Sub-agent default switched from Codex to Haiku. Fallback: Sonnet -> Haiku -> Codex (temp) -> Kimi. - New monthly budget: EGP 9,000 + $40/mo (was EGP 4,399 + $60). ### Self-Healing Watchdog - [09:42] Installed Claude Code CLI v2.1.66 on VPS. - [09:42] Built and deployed openclaw-watchdog.sh: cron every 3 min, bash restart on failure 1-2, Claude Code Sonnet repair on fa",
+      "recallCount": 3,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1.319341716170311,
+      "maxScore": 0.45540701448917387,
+      "firstRecalledAt": "2026-04-23T21:34:23.988Z",
+      "lastRecalledAt": "2026-04-24T20:11:04.251Z",
+      "queryHashes": [
+        "618f23765c6e",
+        "1052217bdf99",
+        "81fddcfe61cc"
+      ],
+      "recallDays": [
+        "2026-04-23",
+        "2026-04-24"
+      ],
+      "conceptTags": [
+        "gpt",
+        "openai",
+        "29-10",
+        "399/mo",
+        "000/mo",
+        "sub-agent",
+        "40/mo",
+        "self-healing"
+      ]
+    },
+    "memory:memory/archive/2026-03/2026-03-26.md:112:134": {
+      "key": "memory:memory/archive/2026-03/2026-03-26.md:112:134",
+      "path": "memory/archive/2026-03/2026-03-26.md",
+      "startLine": 112,
+      "endLine": 134,
+      "source": "memory",
+      "snippet": "- **Fix:** Added `fetch_notion_pipeline_for_dedup()` function that queries Notion Pipeline DB `3268d599-a162-81b4-b768-f162adfa4971` directly. Falls back to pipeline.md only if Notion query fails. - **Result:** Dry-run showed 24/24 qualified jobs removed as duplicates. Briefing now correctly says \"no new fits\" instead of showing stale dupes. - **Constant added:** `PIPELINE_DB_ID = \"3268d599-a162-81b4-b768-f162adfa4971\"` at top of script ### Fix 2: ATS Gate on Career Verdict (DONE) - **Root cause:** Two different scores: LLM career fit (1-10, title-based) vs ATS keyword score (0-100, JD-based). Verdict used LLM score only, ignoring weak JD match. - **Example:** Capco \"Director Data\" got 9/10",
+      "recallCount": 10,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 4.348041376471519,
+      "maxScore": 0.45704258680343623,
+      "firstRecalledAt": "2026-04-23T21:57:06.655Z",
+      "lastRecalledAt": "2026-04-24T15:25:41.186Z",
+      "queryHashes": [
+        "659335241e96",
+        "c280545fb5ce",
+        "2ac2df801fde",
+        "5469390e76b4",
+        "48cd3263b435",
+        "b3f4f9ee3cc9",
+        "b5621fe0b96e",
+        "e8c3678ada65",
+        "779970c6edda",
+        "c6c6be297360"
+      ],
+      "recallDays": [
+        "2026-04-23",
+        "2026-04-24"
+      ],
+      "conceptTags": [
+        "fetch-notion-pipeline-for-dedup",
+        "pipeline.md",
+        "dry-run",
+        "24/24",
+        "pipeline-db-id",
+        "1-10",
+        "title-based",
+        "0-100"
+      ]
+    },
+    "memory:memory/archive/2026-04/2026-04-07.md:1:10": {
+      "key": "memory:memory/archive/2026-04/2026-04-07.md:1:10",
+      "path": "memory/archive/2026-04/2026-04-07.md",
+      "startLine": 1,
+      "endLine": 10,
+      "source": "memory",
+      "snippet": "# Daily Notes - 2026-04-07 # Daily Notes - 2026-04-07 ## Durable memory flush - Ahmed set durable model policy: GPT-5.4 via OpenAI Codex OAuth is primary going forward, MiniMax-M2.7 is fallback only, all agents should default to GPT-5.4, Claude/Sonnet/Opus defaults/references should be removed where they drive behavior, and any model switch must be disclosed immediately in the next reply. - `/root/.openclaw/workspace/AGENTS.md` and `/root/.openclaw/workspace/SOUL.md` were updated earlier today to reflect GPT-5.4 as default and MiniMax-M2.7 as fallback. - Health check established global config alignment: defaults.model.primary set to `openai-codex/gpt-5.4`, all four agents and all heartbeat",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.7253233239986004,
+      "maxScore": 0.7253233239986004,
+      "firstRecalledAt": "2026-04-23T23:33:25.777Z",
+      "lastRecalledAt": "2026-04-23T23:33:25.777Z",
+      "queryHashes": [
+        "ec91a9aa4971"
+      ],
+      "recallDays": [
+        "2026-04-24"
+      ],
+      "conceptTags": [
+        "gpt",
+        "openai",
+        "gpt-5.4",
+        "minimax-m2.7",
+        "claude/sonnet/opus",
+        "defaults/references",
+        "openclaw/workspace/agents.md",
+        "openclaw/workspace/soul.md"
+      ]
+    },
+    "memory:memory/archive/2026-03/2026-03-24.md:90:118": {
+      "key": "memory:memory/archive/2026-03/2026-03-24.md:90:118",
+      "path": "memory/archive/2026-03/2026-03-24.md",
+      "startLine": 90,
+      "endLine": 118,
+      "source": "memory",
+      "snippet": "- `/root/.openclaw/workspace/scripts/job-funnel-report.py` — weekly funnel report - `/root/.openclaw/workspace/scripts/notion_client_shared.py` — shared Notion client with retry - `/root/.openclaw/workspace/templates/cv-template.html` — shared CV HTML template - `/root/.openclaw/workspace/data/funnel-reports/` — weekly funnel report output dir --- ## Session 3: LinkedIn Post Failure + Image Upload Fix + job-ops Research (10:59 - 13:06 Cairo) ### LinkedIn Daily Post Investigation (root cause fully diagnosed) **What failed today:** - Cron scheduled 9:30 AM Cairo, fired 10:00 AM Cairo (30-min drift) - Two cron attempts: 9:30 AM (session a5f04617, aborted mid-Composio) + 10:00 AM (session d8e",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.41523743271827696,
+      "maxScore": 0.41523743271827696,
+      "firstRecalledAt": "2026-04-24T00:53:49.752Z",
+      "lastRecalledAt": "2026-04-24T00:53:49.752Z",
+      "queryHashes": [
+        "0db491dbb156"
+      ],
+      "recallDays": [
+        "2026-04-24"
+      ],
+      "conceptTags": [
+        "job-ops",
+        "30-min",
+        "mid-composio",
+        "root",
+        "openclaw",
+        "scripts",
+        "job",
+        "funnel"
+      ]
+    },
+    "memory:memory/archives/2026-03-05.md:130:163": {
+      "key": "memory:memory/archives/2026-03-05.md:130:163",
+      "path": "memory/archives/2026-03-05.md",
+      "startLine": 130,
+      "endLine": 163,
+      "source": "memory",
+      "snippet": "| 65% | VP, Project Management Office | Al Ramz PJSC | Abu Dhabi | Scored only | | 65% | Head of Product | Circles | UAE | Scored only | ### CVs Generated This Session 1. **Confidential Government, Riyadh** (70%) - Exec Director DT & Cloud Strategy. CV sent, **Ahmed applied**. Sheet row 16. 2. **EDB** (66%) - Field CTO EMEA. CV sent, pending apply. Sheet row 17. ### Git Commits - `785aa52f` - Both CVs + scout v2 scripts ### Sheet Updates - Row 16: Confidential Gov (applied 2026-03-05) - sheet update for \"Applied\" status failed due to Google API timeout, needs retry - Row 17: EDB (CV ready) ### Technical Notes - `score-all-jobs.py` created at `scripts/score-all-jobs.py` - async scoring of",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.4264920502901077,
+      "maxScore": 0.4264920502901077,
+      "firstRecalledAt": "2026-04-24T10:20:41.455Z",
+      "lastRecalledAt": "2026-04-24T10:20:41.455Z",
+      "queryHashes": [
+        "da4735b4eab1"
+      ],
+      "recallDays": [
+        "2026-04-24"
+      ],
+      "conceptTags": [
+        "score-all-jobs.py",
+        "scripts/score-all-jobs.py",
+        "project",
+        "management",
+        "office",
+        "ramz",
+        "pjsc",
+        "abu"
+      ]
+    },
+    "memory:memory/2026-04-24.md:60:73": {
+      "key": "memory:memory/2026-04-24.md:60:73",
+      "path": "memory/2026-04-24.md",
+      "startLine": 60,
+      "endLine": 73,
+      "source": "memory",
+      "snippet": "- Gateway health and `/v1/models` worked, but `/v1/chat/completions` returned plain `Internal Server Error` / HTTP 500 for all tested models/aliases, including `openclaw/jobzoom`, `openai-codex/gpt-5.5`, `gpt-5.5`, `gpt-5.4`, `openclaw/main`, and MiniMax. - Therefore failure appears to be the gateway HTTP chat-completions route/core handling, not a single provider/model issue. - `openclaw status` showed gateway reachable/service active, default GPT-5.5. - Restart/SIGUSR1 attempts did not resolve the 500s. - Process state discovered near compaction: - Old process `40775` still running from Apr 23 and listening on port `18789`. - New process `60871` existed after restart but was not listen",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.4171742260456085,
+      "maxScore": 0.4171742260456085,
+      "firstRecalledAt": "2026-04-24T10:44:07.363Z",
+      "lastRecalledAt": "2026-04-24T10:44:07.363Z",
+      "queryHashes": [
+        "3b21f0cb3926"
+      ],
+      "recallDays": [
+        "2026-04-24"
+      ],
+      "conceptTags": [
+        "gateway",
+        "gpt",
+        "openai",
+        "v1/models",
+        "v1/chat/completions",
+        "models/aliases",
+        "openclaw/jobzoom",
+        "openai-codex/gpt-5.5"
+      ]
+    },
+    "memory:memory/2026-04-24.md:45:62": {
+      "key": "memory:memory/2026-04-24.md:45:62",
+      "path": "memory/2026-04-24.md",
+      "startLine": 45,
+      "endLine": 62,
+      "source": "memory",
+      "snippet": "- This was not because no jobs were scraped and not primarily because of the GPT-5.5 router switch. It was gateway `/v1/chat/completions` returning 500 for scoring calls. ### JobZoom patch applied - Modified `/root/.openclaw/workspace-jobzoom/scripts/daily_run.py`. - Changes: - Added `SCORING_MODEL = \"openai-codex/gpt-5.5\"`. - Raised `MAX_GPT_CALLS_PER_DAY` from 50 to 80. - `record_gpt_api_call()` now logs `SCORING_MODEL` instead of hardcoded `openai-codex/gpt-5.4`. - Reworded GPT-5.4-specific quota/log text to generic model wording. - Kept gateway request body using `\"model\": \"openclaw/jobzoom\"`, intentionally relying on gateway routing while logging expected underlying scoring m",
+      "recallCount": 5,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 2.3715284089344104,
+      "maxScore": 0.6703233758705218,
+      "firstRecalledAt": "2026-04-24T10:44:07.363Z",
+      "lastRecalledAt": "2026-04-24T20:06:19.621Z",
+      "queryHashes": [
+        "3b21f0cb3926",
+        "5271f36a9384",
+        "67f14167ecbb",
+        "cb0255c5b075",
+        "71bd1c5198f4"
+      ],
+      "recallDays": [
+        "2026-04-24"
+      ],
+      "conceptTags": [
+        "gateway",
+        "gpt",
+        "openai",
+        "router",
+        "gpt-5.5",
+        "v1/chat/completions",
+        "scoring-model",
+        "openai-codex/gpt-5.5"
+      ]
+    },
+    "memory:memory/2026-04-24.md:36:51": {
+      "key": "memory:memory/2026-04-24.md:36:51",
+      "path": "memory/2026-04-24.md",
+      "startLine": 36,
+      "endLine": 51,
+      "source": "memory",
+      "snippet": "- Extracted content: Peter Steinberger (@steipete), tweet text “My favorite security advisories.” Media image text: “Steps To Reproduce: 1. Enable hooks.gmail.allowUnsafeExternalContent=true”. Timestamp 12:11 PM · Apr 23, 2026. Metrics at fetch: 56.3K views, 24 replies, 4 reposts, 433 likes, 53 bookmarks. ### JobZoom 0-live-jobs investigation - 2026-04-24 JobZoom run did not find 0 raw jobs. It found/scored many intermediates: 341 filtered raw jobs, 311 deduped/new jobs, 91 Pass1/all-scored jobs, 0 live matches, 3 shadow jobs. - Shadow file: `/root/.openclaw/workspace-jobzoom/reports/shadow/jobzoom-shadow-2026-04-24.json`. - Shadow verdicts were keyword fallback around 60-63; live threshold",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.3902010828256607,
+      "maxScore": 0.3902010828256607,
+      "firstRecalledAt": "2026-04-24T10:44:07.363Z",
+      "lastRecalledAt": "2026-04-24T10:44:07.363Z",
+      "queryHashes": [
+        "3b21f0cb3926"
+      ],
+      "recallDays": [
+        "2026-04-24"
+      ],
+      "conceptTags": [
+        "56.3k",
+        "0-live-jobs",
+        "found/scored",
+        "deduped/new",
+        "pass1/all-scored",
+        "60-63",
+        "extracted",
+        "content"
+      ]
+    },
+    "memory:memory/2026-04-10.md:1:5": {
+      "key": "memory:memory/2026-04-10.md:1:5",
+      "path": "memory/2026-04-10.md",
+      "startLine": 1,
+      "endLine": 5,
+      "source": "memory",
+      "snippet": "# Daily Notes - 2026-04-10 - Hardened `scripts/model-guardian-check.py` after a false-positive timeout alert. Added retry logic for `openclaw status --usage --json` and `openclaw models status --plain`, then verified `model-guardian-check.py` returns `ALL_OK` and `model-guardian-run.py` returns `NO_ALERTS`.",
+      "recallCount": 3,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1.2350970059633255,
+      "maxScore": 0.41563603579998015,
+      "firstRecalledAt": "2026-04-24T15:26:20.393Z",
+      "lastRecalledAt": "2026-04-24T15:32:14.199Z",
+      "queryHashes": [
+        "588794d40031",
+        "38f70f68f8d0",
+        "b74bf81c32c6"
+      ],
+      "recallDays": [
+        "2026-04-24"
+      ],
+      "conceptTags": [
+        "scripts/model-guardian-check.py",
+        "false-positive",
+        "model-guardian-check.py",
+        "all-ok",
+        "model-guardian-run.py",
+        "no-alerts",
+        "hardened",
+        "scripts"
+      ]
+    },
+    "memory:memory/archives/2026-03-04.md:70:113": {
+      "key": "memory:memory/archives/2026-03-04.md:70:113",
+      "path": "memory/archives/2026-03-04.md",
+      "startLine": 70,
+      "endLine": 113,
+      "source": "memory",
+      "snippet": "- **TODO:** Investigate root cause, may need watchdog or service hardening ### Final URL Map | URL | Service | |-----|---------| | `https://srv1352768.tail945bbc.ts.net` | OpenClaw chat portal | | `https://srv1352768.tail945bbc.ts.net:4443` | Mission Control v3 | ### Session 2 State - Context: high, starting fresh session - Tailscale: running but unstable - Mission Control: live, no auth, needs review - Next: Ahmed to review MC dashboard, identify gaps --- ## [AUTO-FLUSH] Context Guardian Triggered — 2026-03-04 18:32 Cairo Context reached 77% (threshold: 75%). External watchdog (context-guardian.sh) executed at 2026-03-04T16:32:07Z. **Action taken:** Guardian committed memory state and",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.4431012630462646,
+      "maxScore": 0.4431012630462646,
+      "firstRecalledAt": "2026-04-24T19:15:26.260Z",
+      "lastRecalledAt": "2026-04-24T19:15:26.260Z",
+      "queryHashes": [
+        "56f6ad1238a9"
+      ],
+      "recallDays": [
+        "2026-04-24"
+      ],
+      "conceptTags": [
+        "srv1352768.tail945bbc.ts.net",
+        "auto-flush",
+        "context-guardian.sh",
+        "2026-03-04t16",
+        "todo",
+        "investigate",
+        "root",
+        "cause"
+      ]
+    },
+    "memory:memory/archives/2026-03-08.md:1:41": {
+      "key": "memory:memory/archives/2026-03-08.md:1:41",
+      "path": "memory/archives/2026-03-08.md",
+      "startLine": 1,
+      "endLine": 41,
+      "source": "memory",
+      "snippet": "# Session Log: March 8, 2026 ## Slack Setup Overhaul (11:15-15:52 UTC, Opus 4.6) ### What Happened - Ahmed accidentally deleted the Slack app mid-session - Gateway crashed due to unhandled promise rejection from dead token - Watchdog restarted twice but same config = same crash - Ahmed manually disabled Slack, restarted gateway, then we rebuilt ### Slack App Rebuilt - New Slack app created (App ID: A0AKMPUF16D) - Bot token: xoxb-REDACTED - App token: xapp-REDACTED - Required: Event Subscriptions ON + Socket Mode ON + bot events (message.channels, message.groups, message.im, app_mention) - Bot name: openclaw2 ### Channel Cleanup - Archived #nasr-tweets (was orphaned, bot-only channel) - D",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.42433719038963313,
+      "maxScore": 0.42433719038963313,
+      "firstRecalledAt": "2026-04-24T19:43:51.825Z",
+      "lastRecalledAt": "2026-04-24T19:43:51.825Z",
+      "queryHashes": [
+        "a45808df9b8a"
+      ],
+      "recallDays": [
+        "2026-04-24"
+      ],
+      "conceptTags": [
+        "gateway",
+        "15-15",
+        "4.6",
+        "mid-session",
+        "xoxb-redacted",
+        "xapp-redacted",
+        "message.channels",
+        "message.groups"
+      ]
+    },
+    "memory:memory/2026-04-22.md:30:34": {
+      "key": "memory:memory/2026-04-22.md:30:34",
+      "path": "memory/2026-04-22.md",
+      "startLine": 30,
+      "endLine": 34,
+      "source": "memory",
+      "snippet": "- Lossless issue #427 monitor cron `adf135b8` was disabled because the shipped plugin fix makes the watcher obsolete; the job remains only as historical record. - Runbooks were updated to mark the old mismatch workaround as historical, point recovery to reinstalling 0.9.2+, note that reinstalls of 0.9.2+ are safe, and record backup files as `*.bak-pre-092-20260422T231423`. - Important status correction: issue #427 is still formally open on GitHub even though the fix shipped; the reliable claim is \"fixed in plugin 0.9.2+, issue may still appear open upstream.\" - Two unrelated uncommitted files remain intentionally untouched in `/root/openclaw`: `session-reset-prompt.ts` and `session-reset-pro",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.418912062048912,
+      "maxScore": 0.418912062048912,
+      "firstRecalledAt": "2026-04-24T19:44:59.115Z",
+      "lastRecalledAt": "2026-04-24T19:44:59.115Z",
+      "queryHashes": [
+        "3eb1a9ec4258"
+      ],
+      "recallDays": [
+        "2026-04-24"
+      ],
+      "conceptTags": [
+        "backup",
+        "0.9.2",
+        "bak-pre-092-20260422t231423",
+        "root/openclaw",
+        "session-reset-prompt.ts",
+        "session-reset-pro",
+        "lossless",
+        "issue"
+      ]
+    },
+    "memory:memory/archives/2026-03-03.md:1:30": {
+      "key": "memory:memory/archives/2026-03-03.md:1:30",
+      "path": "memory/archives/2026-03-03.md",
+      "startLine": 1,
+      "endLine": 30,
+      "source": "memory",
+      "snippet": "# Daily Log - Tuesday, March 3, 2026 ## Maintenance Cycle Closed - Completed full remediation of the 20 issues across 6 files. - MEMORY.md refreshed with current strategic state, pipeline updates, and recent daily index entries. - active-tasks.md consolidated into one urgent section and cleaned of completed noise. - pending-opus-topics.md cleaned, stale Delphi prep removed, priorities added. - AGENTS.md startup numbering corrected and decision checkpoint for model-escalation logging added. - HEARTBEAT.md updated and cost guard replaced with usage-based thresholds. - SOUL.md startup sequence aligned with AGENTS.md and heading corrected to four non-negotiables. ## Cron Reliability Fixes -",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.41592204868793486,
+      "maxScore": 0.41592204868793486,
+      "firstRecalledAt": "2026-04-24T19:44:59.115Z",
+      "lastRecalledAt": "2026-04-24T19:44:59.115Z",
+      "queryHashes": [
+        "3eb1a9ec4258"
+      ],
+      "recallDays": [
+        "2026-04-24"
+      ],
+      "conceptTags": [
+        "memory.md",
+        "active-tasks.md",
+        "pending-opus-topics.md",
+        "agents.md",
+        "model-escalation",
+        "heartbeat.md",
+        "usage-based",
+        "soul.md"
+      ]
+    },
+    "memory:memory/archive/2026-03/2026-03-14.md:126:150": {
+      "key": "memory:memory/archive/2026-03/2026-03-14.md:126:150",
+      "path": "memory/archive/2026-03/2026-03-14.md",
+      "startLine": 126,
+      "endLine": 150,
+      "source": "memory",
+      "snippet": "- Deleted Fallback Validator cron (11dba958) — script missing, SIE already handles monitoring ### Fallback Chain Verified - MiniMax M2.5 → GPT-5.3-Codex → GPT-5.4 → Claude Sonnet 4.6 → Claude Haiku 4.5 → Kimi K2.5 - All working correctly ### Canvas/Chart Investigation - Canvas tool requires connected node with display (Mac), not VPS - Ahmed-Mac node not currently connected - Python matplotlib/plotly charts → PNG remain best option for Telegram/Slack - OpenGenerativeUI evaluated: needs Node.js + Next.js, outputs HTML/SVG, same PNG result — rejected - Sent existing pipeline chart PNG to Ahmed via Telegram - **Decision:** Stick with Python charts. Canvas useful only when Mac is connected as n",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.44445434808731077,
+      "maxScore": 0.44445434808731077,
+      "firstRecalledAt": "2026-04-24T20:00:51.816Z",
+      "lastRecalledAt": "2026-04-24T20:00:51.816Z",
+      "queryHashes": [
+        "cb0255c5b075"
+      ],
+      "recallDays": [
+        "2026-04-24"
+      ],
+      "conceptTags": [
+        "gpt",
+        "m2.5",
+        "gpt-5.3-codex",
+        "gpt-5.4",
+        "4.6",
+        "4.5",
+        "k2.5",
+        "canvas/chart"
+      ]
+    },
+    "memory:memory/archive/2026-04/2026-04-07.md:13:23": {
+      "key": "memory:memory/archive/2026-04/2026-04-07.md:13:23",
+      "path": "memory/archive/2026-04/2026-04-07.md",
+      "startLine": 13,
+      "endLine": 23,
+      "source": "memory",
+      "snippet": "- OpenAI Codex OAuth token expiry remained unresolved during the health check; no expiry timestamp was found in available outputs. ## 2026-04-07 - System baseline reset - Ahmed confirmed all-clear and set the new operating baseline. - Primary model for all agents is `openai-codex/gpt-5.4`; fallback is `minimax-portal/MiniMax-M2.7`. - No Anthropic, Moonshot, or OpenRouter free tier in active stack. - Fixed today: cron model repins, duplicate user gateway disablement, Tavily env cleanup, AGENTS/TOOLS bootstrap trimming, GPT-5.4 policy updates, auth cooldown clear, gateway spam eliminated. - Watchlist: Codex OAuth expiry/autorefresh, unexpected MiniMax fallback, Slack pong timeouts only if mes",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.4469741195440292,
+      "maxScore": 0.4469741195440292,
+      "firstRecalledAt": "2026-04-24T20:06:19.621Z",
+      "lastRecalledAt": "2026-04-24T20:06:19.621Z",
+      "queryHashes": [
+        "71bd1c5198f4"
+      ],
+      "recallDays": [
+        "2026-04-24"
+      ],
+      "conceptTags": [
+        "gateway",
+        "gpt",
+        "openai",
+        "router",
+        "all-clear",
+        "openai-codex/gpt-5.4",
+        "minimax-portal/minimax-m2.7",
+        "agents/tools"
+      ]
+    }
+  }
+}

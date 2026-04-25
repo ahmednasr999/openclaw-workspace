@@ -40,7 +40,7 @@ updated: 2026-03-14
 |---------|-----------|-------|
 | Tavily Search | 1,000 credits/mo | Low (~50/mo) |
 | Kimi K2.5 | Essentially free | Backup only |
-| Ollama (local) | Free | Memory indexing |
+| Local embeddings | Free | Memory indexing |
 
 ## Budget Rule
 

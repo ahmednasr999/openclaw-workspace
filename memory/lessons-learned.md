@@ -1,5 +1,205 @@
 # Lessons Learned
 
+## 2026-04-23 - Visual Briefs Need Semantic Background Alignment And Explicit Signature Rules
+### What I got wrong
+I kept optimizing the card for premium feel while missing two concrete brief requirements: the background needed to be semantically tied to the topic, and the card should include `Ahmed Nasr | Digital Transformation Executive` while not requiring Ahmed's portrait.
+### Why
+I over-focused on style matching and portrait integration instead of locking the actual content constraints from Ahmed's corrections.
+### Fix
+For branded social visuals, confirm and preserve the non-negotiables: topic-related background, whether portrait is required, and exact footer/signature text. Do not keep iterating premium styling while those brief anchors are still wrong.
+
+## 2026-04-23 - Stop Iterating A Broken Visual Direction After The User Clearly Dislikes It
+### What I got wrong
+Ahmed said he did not like the visual, and I kept iterating within the same weak direction instead of stepping back and changing the concept or asking for a sharper choice on direction.
+### Why
+I treated repeated polish passes as progress even after the underlying concept was not landing. I optimized the artifact instead of re-evaluating the brief.
+### Fix
+When Ahmed rejects a visual direction, stop the polish loop. Switch modes immediately: either propose 2-3 fresh directions with clearly different concepts, or ask one sharp question about what feels wrong. Do not burn turns polishing a direction he already dislikes.
+
+## 2026-04-23 - Premium LinkedIn Visuals Cannot Use Text-On-Face Generic AI Portrait Layouts
+### What I got wrong
+I delivered a Talabat LinkedIn visual that put large text directly on Ahmed's face/suit, used a generic airbrushed AI-portrait look, and called it premium.
+### Why
+I prioritized making something quickly presentable instead of measuring it against premium editorial standards: clean negative space, semantic background, credible composition, and typography that does not fight the subject.
+### Fix
+For premium LinkedIn visuals, reject layouts that place core copy across the face, rely on generic AI-portrait aesthetics, or use weak decorative labels. Use either a semantically relevant environment with clean text zone, or a proper editorial/poster composition with deliberate typography separation.
+
+## 2026-04-23 - Social Posts Need Platform-Native Composition, Not Poster Or Editorial Cover Logic
+### What I got wrong
+Ahmed wanted something that reads like a social media post, and I kept drifting into editorial-cover, poster, or presentation-style compositions.
+### Why
+I optimized for premium aesthetics in isolation instead of checking whether the artifact actually looked native to a LinkedIn feed.
+### Fix
+For LinkedIn visuals, check the format test first: does it read like a feed-native social asset at a glance? Prefer stronger hook hierarchy, simpler social-card structure, clearer platform-native pacing, and less magazine-cover staging when the goal is a post image rather than a campaign poster.
+
+## 2026-04-23 - Never Let Raw NO_REPLY Leak To Ahmed
+### What I got wrong
+A raw `NO_REPLY` surfaced in chat as if it were a real assistant message.
+### Why
+I treated an internal silent-reply artifact like a safe user-facing output instead of catching it and replacing it with either a real reply or silence.
+### Fix
+Never send raw `NO_REPLY` to Ahmed. If the runtime/tooling echoes it, immediately clarify that it was an internal artifact and continue with a normal user-facing reply.
+
+## 2026-04-22 - Reverify Live Issue State Before Stating Open vs Closed
+### What I got wrong
+I stated that lossless-claw issue #427 was closed based on the saved monitor state, but Ahmed had fresher live evidence that the issue page still showed open even though a released fix existed.
+### Why
+I trusted cached monitor state as if it were definitive current truth instead of treating it as potentially stale and separating issue-state visibility from release-fix status.
+### Fix
+When summarizing live upstream status, reverify the current page/API state before saying an issue is open or closed. Keep the fix-status claim separate: a shipped fix can be true even if the issue state/reporting looks inconsistent.
+
+## 2026-04-22 - Do Not Blame Session State Before Proving Tool Exposure
+### What I got wrong
+I kept framing the LinkedIn posting failure as a stale-session or reconnect issue before proving whether the Composio execution lane was actually exposed in the runtime.
+### Why
+I inferred too much from prior successful runs and from the user reconnecting LinkedIn, instead of treating fresh-session verification as the decisive test earlier.
+### Fix
+When an external tool lane appears missing, verify tool exposure first. Do not send Ahmed through reconnect/new-session loops unless there is evidence that session state is the real blocker. Once a fresh session still lacks the lane, say plainly that the issue is runtime integration, not user action.
+
+## 2026-04-21 - Do Not Mislabel Vendor SEO Emails As Interview Invites
+### What I got wrong
+I surfaced a Diib SEO/marketing report email as if it were an interview invite.
+### Why
+I trusted a bad triage/category label instead of sanity-checking the sender, subject, and actual email intent before presenting it to Ahmed.
+### Fix
+Before calling anything an interview invite, verify it is actually from a recruiter, hiring team, employer, or assessment/interview workflow. Vendor alerts, SEO reports, newsletters, and marketing emails must never be labeled as interview activity.
+
+## 2026-04-21 - Distinguish Carousel Preview, Carousel Asset, and Single-Post Visual
+### What I got wrong
+Ahmed asked for the visual for today’s LinkedIn post, and I mixed up three different things: the carousel preview montage, the actual carousel file, and the standalone single-post visual.
+### Why
+I moved too fast from asset discovery to delivery and treated the nearest existing file as publish-ready instead of matching the asset type to the actual posting format.
+### Fix
+For LinkedIn content, verify the format first: preview image for review, carousel file for carousel publishing, or standalone visual for a single-image post. Do not send one as if it were another.
+
+## 2026-04-21 - Do Not Restart The Gateway From Inside The Same Live DM Recovery Run
+### What I got wrong
+During main DM recovery, the agent rebuilt successfully, then tried to restart the gateway from inside the same live user-facing run that depended on that gateway path to finish the reply.
+### Why
+The recovery logic overreached. It treated restart as the natural next step after rebuild without respecting that the active DM run could lose its own execution path mid-recovery.
+### Fix
+For DM/topic runtime failures, do not stop or restart the gateway from inside the same live user-facing recovery run. Rebuild and verify first, then recover through a safer out-of-band path, or tell Ahmed to retry once the lane is healthy again.
+
+## 2026-04-21 - Match LinkedIn visuals to the actual post thesis
+### What I got wrong
+I presented Apr 22 visuals that were available in the content lane, but they did not semantically match the post's thesis about fintech moats shifting to licensing, rails, and regulatory readiness.
+### Why
+I optimized for date/file availability instead of checking whether the visual metaphor actually reinforced the post content.
+### Fix
+For LinkedIn post reviews, do not present a visual as the candidate just because it is scheduled or locally attached. First verify that the image concept directly matches the post thesis, industry, and metaphor. If it does not, say so immediately and propose replacement directions.
+
+## 2026-04-21 - Claude Code OAuth here requires pasting the browser auth code into the waiting terminal
+### What I got wrong
+I kept telling Ahmed the browser-side completion alone should finish Claude Code OAuth, and I treated the pasted auth code as unnecessary or unsupported by this CLI path.
+### Why
+I trusted incomplete CLI help output and the failing remote-session behavior more than the actual browser evidence, which clearly showed an Authentication Code page instructing the user to paste the code into Claude Code.
+### Fix
+For Claude Code OAuth in this environment, treat the browser auth code page as authoritative: the terminal is usually waiting for that code. Instruct Ahmed to paste the code into the same waiting VPS terminal and press Enter, then run follow-up verification commands only after login completes.
+
+## 2026-04-19 - Do Not Pause Mid-Remediation Waiting For Another Push
+### What I got wrong
+Ahmed told me to keep going until the security remediation was done, but I paused after an intermediate step and waited for another nudge.
+### Why
+I treated an async command boundary like a decision boundary instead of owning the workflow through verification and the next safe action.
+### Fix
+When Ahmed says continue until done, keep driving the sequence proactively. After each command or restart, immediately verify, take the next safe step, and only surface real blockers or final results.
+
+## 2026-04-18 - Agent Status Updates Still Need Emojis
+### What I got wrong
+An agent completion update to Ahmed went out flat, without emojis, even though he has explicitly asked for them repeatedly.
+### Why
+I treated agent-result delivery as sterile telemetry instead of a normal user-facing message that should still reflect Ahmed's communication preference.
+### Fix
+Use light emojis in agent completion and status updates by default, unless the message is highly sensitive. Operational does not mean emotionless.
+
+## 2026-04-20 - Do Not Go Quiet Or Imply Progress When A Live Posting Workflow Is Blocked
+### What I got wrong
+Ahmed asked me to post today’s LinkedIn post. I kept pushing a broken automation path, went quiet for stretches, and did not surface the blocker fast enough. I also made progress-sounding updates before I had a verified successful post.
+### Why
+I overcommitted to recovering the automation path in-turn, instead of quickly escalating once image staging and browser fallback both failed. I let persistence turn into silence.
+### Fix
+For live posting or delivery workflows, if the publish step is not verified, say so immediately. Give short progress updates while actively debugging, and if two publish paths fail, surface the blocker clearly with the fastest alternative instead of disappearing into tool retries.
+
+## 2026-04-18 - When The User Wants A Template Match, Do Not Drift Into Style Approximation
+### What I got wrong
+Ahmed asked for a final picture that looked like the provided blue ad reference but with his image, and I delivered a result that was far from the template structure.
+### Why
+I optimized for style inspiration and general likeness instead of matching the concrete layout constraints of the reference, including the blue rounded panel, subject placement, footer blocks, and ad-template composition.
+### Fix
+When Ahmed asks for a close visual match, treat the reference as a layout spec. First compare the generated result against the reference on composition, subject placement, panel geometry, background, and CTA/footer structure. If it misses those anchors, do not present it as close.
+
+## 2026-04-17 - Do Not Use Ambiguous "Half-Done" Wording When Work Is Actually Complete
+### What I got wrong
+I answered with wording that included "Nothing important is left half-done tonight," which invited the interpretation that something was half done.
+### Why
+I was trying to reassure on completeness, but used a phrase that sounded like there were dangling items.
+### Fix
+When work is complete, say it plainly: done, complete, or closed out. Do not use ambiguous reassurance phrasing that implies unfinished work.
+
+## 2026-04-17 - Do Not Touch JobZoom Without Explicit Approval
+### What I got wrong
+After Ahmed explicitly protected JobZoom as a full-scan lane, I still suggested trimming `workspace-jobzoom/SOUL.md` as part of context cleanup.
+### Why
+I treated JobZoom as just another optimization target instead of respecting it as a protected workflow boundary.
+### Fix
+Do not modify, trim, optimize, gate, or otherwise touch JobZoom artifacts unless Ahmed explicitly asks for JobZoom changes. Treat JobZoom as out of bounds by default.
+
+## 2026-04-17 - Topic Theory Was Too Narrow, The Failure Also Hits Telegram DM
+### What I got wrong
+I kept framing the command problem as mainly an HR topic or forum-topic ingestion issue, but Ahmed confirmed the same failure response appears even in Telegram DM.
+### Why
+I anchored too hard on the topic evidence and did not widen the hypothesis fast enough once the same symptom appeared outside the topic.
+### Fix
+Treat repeated "Something went wrong while processing your request" responses across both topic and DM as a broader Telegram command or dispatch-path failure, not a topic-only bug.
+
+## 2026-04-17 - Rebuild Success Does Not Prove Telegram Topic Commands Are Fixed
+### What I got wrong
+I treated a successful OpenClaw rebuild and disappearance of stale dist references as if that likely solved Telegram topic command handling, then asked Ahmed to test again before I had hard proof.
+### Why
+I over-weighted build cleanliness and under-weighted end-to-end verification. A cleaner dist state is not the same thing as working command ingestion in Telegram forum topics.
+### Fix
+Do not infer command-path recovery from rebuild output alone. After any command-surface repair, verify with a real end-to-end command result before suggesting the issue is probably fixed.
+
+## 2026-04-17 - Do Not Treat Retired Notion Dashboard Health As An HR-Agent Requirement
+### What I got wrong
+I kept Notion dashboard timeouts in the HR health discussion after Ahmed made clear the dashboard is no longer needed.
+### Why
+I treated old visibility plumbing as part of the live requirement instead of pruning it from the decision once Ahmed ruled it out.
+### Fix
+If Ahmed says a reporting/dashboard surface is no longer needed, stop using its errors as evidence of agent health. Separate operationally required paths from retired visibility layers.
+
+## 2026-04-17 - Do Not Treat Retired SAYYAD Automation As A Live HR Requirement
+### What I got wrong
+I treated disabled SAYYAD scoring and curation crons as an HR-agent problem and recommended re-enabling them before confirming whether Ahmed still wanted SAYYAD at all.
+### Why
+I inferred current requirements from old automation and heartbeat docs instead of checking whether that workflow was still wanted.
+### Fix
+Treat SAYYAD as retired unless Ahmed explicitly reactivates it. Do not recommend re-enabling SAYYAD crons or score HR health against SAYYAD automation until that assumption is revalidated.
+
+## 2026-04-17 - Do Not Use Generic OpenClaw Update Flow On A Symlinked Repo Checkout Without Proving The Install Topology
+### What I got wrong
+I used the standard OpenClaw update flow on this host before proving how the `openclaw` binary was installed. The host resolves `openclaw` to a symlinked local repo checkout at `/root/openclaw`, not a normal packaged install, and the updater moved that checkout from the working `update/v2026.4.14-local-fleet` branch to an old `main`, effectively downgrading the CLI to 2026.4.11.
+### Why
+I followed the normal update safety checklist but missed the more fundamental topology check: this box runs OpenClaw from a live git worktree via the NVM global symlink. That makes `update.run` a git-worktree mutation, not a package-only upgrade.
+### Fix
+Before any future OpenClaw update here, first prove install topology with `command -v openclaw`, `readlink -f $(command -v openclaw)`, `npm -g ls openclaw --depth=0`, and repo branch status under `/root/openclaw`. If it is a repo-backed checkout, never use generic update flow blindly. Create a git checkpoint, preserve the working branch, and update intentionally as a git operation.
+
+## 2026-04-17 - Agent Heartbeat Updates Must Be Properly Formatted And Use Emojis
+### What I got wrong
+I let an HR agent heartbeat-style update go out in a flat blocky format without the light emoji styling Ahmed expects.
+### Why
+I treated the message like raw operational telemetry instead of a user-facing update that still needs clean structure and Ahmed's preferred tone.
+### Fix
+Format heartbeat and agent updates with short sections or bullets, clearer visual hierarchy, and light emojis by default. Do not send dense plain-text status blobs to Ahmed.
+
+## 2026-04-17 - Do Not Declare The Lossless CLI Surface Resolved Before Proving The Exact Command Path
+### What I got wrong
+I told Ahmed the leftover around `lossless` command access likely did not need a config change and treated the issue as mostly command-path confusion before I had fully proven the actual CLI behavior on this host.
+### Why
+I over-interpreted partial evidence. `lossless-claw` being present in `plugins.allow` does not prove the bundled `openclaw lossless` or `openclaw /lossless` surfaces are actually admitted by the current CLI/router behavior.
+### Fix
+When command-surface behavior is in doubt, prove the exact command with a bounded probe before drawing conclusions. Distinguish clearly between plugin allowlisting and command alias exposure, and do not reassure Ahmed that no change is needed until the command works end to end.
+
 ## 2026-04-15 - Verify ACP runtime availability before promising Codex/Claude harness execution
 ### What I got wrong
 I moved straight from drafting a Codex ACP brief to trying to spawn an ACP harness session without first verifying that the ACP runtime backend was configured on this host.
@@ -23,6 +223,14 @@ Ahmed asked for a strong Canva-ready carousel and I delivered a deck that was st
 I optimized for fast importability and clean structure instead of treating visual quality as the core requirement. I solved the mechanics, not the standard.
 ### Fix
 For premium content requests, prioritize art direction, hierarchy, spacing, and visual distinctiveness before delivery. Do not hand off a first import as "final" unless it actually looks premium on review. Build and QA against that bar, not just technical completion.
+
+## 2026-04-19 - Check Native X/Twitter Lane Before Starting Composio Auth
+### What I got wrong
+I started a Composio X connection flow before checking the local service registry and native workspace config for an existing X/Twitter method.
+### Why
+I followed the generic Composio path too quickly and skipped the documented decision order in `config/service-registry.md`.
+### Fix
+Before starting any X/Twitter auth flow here, first check `config/service-registry.md` and local config files. Prefer the native lane already documented in the workspace: public tweet reading via oEmbed and engagement via cookies/browser. Only use Composio for X if the registry or current task clearly requires it.
 
 ## 2026-04-12 - Do Not Invent Product/App Names For Device Pairing
 ### What I got wrong
@@ -661,3 +869,117 @@ Ahmed asked for recommendations to solve the slowness on the current system, and
 I optimized for the highest-impact infrastructure fix instead of the user's actual constraint and intent.
 ### Fix
 When Ahmed asks for recommendations to solve runtime slowness, prioritize in-place remediation first: reduce hot background workloads, clean stale state, restart only if justified, and present infrastructure resizing only as a last resort.
+
+## 2026-04-18 - Do not stop at the architecture memo when implementation is the obvious next step
+### What I got wrong
+After comparing ppt-master with our slides lane and proposing Slides Lane v2, I stopped at the memo and asked Ahmed what to do next instead of continuing into the first concrete implementation slice.
+### Why
+I treated the strategy document as the deliverable instead of recognizing that the next action was already obvious and low-risk.
+### Fix
+When I produce an architecture recommendation and the next build step is clear, I should continue directly into the first implementation slice in the same thread unless Ahmed explicitly wants to stop at planning.
+
+## 2026-04-22 - Do not let queued system wrappers leak into Ahmed-facing replies
+### What I got wrong
+While handling the LinkedIn publish attempt, I let queued system/exec metadata dominate the conversation and Ahmed received confusing wrapper-like replies instead of one clean human update.
+### Why
+I stayed too deep in tool-state recovery and did not collapse the queued noise into a single plain-language status message fast enough.
+### Fix
+When multiple queued system events arrive, ignore the wrapper noise in the user-facing reply, answer Ahmed directly in one clean message, and separate runtime/debug detail from the actual status or blocker.
+
+## 2026-04-22 - Silent direct fallback filler came from Telegram fallback rewrite, not only routed reply handling
+### What I got wrong
+I treated the visible `Nothing to add right now.` symptom as if the routed-reply preserve-token fix fully covered it, but Ahmed proved the live production filler was still being synthesized by the Telegram extension's empty-turn fallback path.
+### Why
+I fixed the routed reply boundary but did not fully account for a second path that fabricates `NO_REPLY` inside the Telegram extension and then rewrites it through outbound planning under direct silent-reply rewrite.
+### Fix
+For future silent-reply/filler debugging, check both routed reply preservation and transport-specific empty-turn fallbacks. Treat Telegram's synthetic `NO_REPLY` fallback as a separate path, and verify whether direct silent rewrite defaults at source/dist/plugin levels are overriding the intended silent behavior.
+
+
+## Weekly Review (2026-04-12 → 2026-04-19)
+
+_Generated by weekly-agent-review.py at 2026-04-19 08:00_
+
+
+
+### Flagged for Human Review
+
+- **cron/job-scanner**: Pattern unclear — flagged for human review.
+- **job-search-mcp**: Pattern unclear — flagged for human review.
+- **cron**: Pattern unclear — flagged for human review.
+- **cron/linkedin-daily-post**: Pattern unclear — flagged for human review.
+- **himalaya**: Pattern unclear — flagged for human review.
+- **cron/email-check**: Pattern unclear — flagged for human review.
+- **general**: 35 unclassified signal(s) — manual review recommended.
+
+## 2026-04-23 - Use the exact account Ahmed specifies for live auth flows
+### What I got wrong
+I started the ChatGPT web login flow with nasr.ai.assistant@gmail.com after Ahmed said to proceed, instead of first confirming and using the exact email he wanted for the login.
+### Why
+I reused the nearest visible account from the Google chooser and optimized for momentum instead of treating account identity as a user choice that must be followed exactly.
+### Fix
+For any live auth or publishing flow, use the exact account Ahmed specifies. If multiple remembered or suggested accounts exist, pause long enough to match the chosen one exactly before continuing.
+
+
+## 2026-04-24 - Do not use AI-recreated face for Ahmed brand visuals
+### What I got wrong
+I generated a branded visual where Ahmed's face was AI-recreated and it did not look like him.
+### Why
+I optimized for premium styling instead of preserving identity fidelity. For personal-brand assets, resemblance is non-negotiable.
+### Fix
+Use Ahmed's real profile photo as the base for personal-brand visuals, then add layout, background treatment, and typography around it. Avoid AI face regeneration unless Ahmed explicitly asks for stylization.
+
+## 2026-04-24 - Premium brand visuals need restraint
+### What I got wrong
+I created a no-face typographic visual that looked like a generic tech flyer, not a premium executive/personal-brand asset.
+### Why
+I overused decorative grids, nodes, borders, and large filler typography instead of using restraint, whitespace, hierarchy, and refined composition.
+### Fix
+For Ahmed's premium brand visuals, default to minimal executive design: fewer elements, high contrast, elegant spacing, restrained gold accents, and no busy tech motifs unless explicitly requested.
+
+## 2026-04-24 - Confirm progress during long public posting tasks
+### What I got wrong
+Ahmed asked me to post on LinkedIn with the latest visual, and I spent about 12 minutes debugging the image upload without giving a timely confirmation or progress update.
+### Why
+I prioritized solving the technical upload blocker over communicating status during a public/external action.
+### Fix
+For public posting or other external actions, confirm receipt immediately, then send a concise progress/update if execution takes more than a couple of minutes or hits a blocker. Never leave Ahmed guessing whether the order is being handled.
+
+## 2026-04-24 - Proactive closeout after config cleanup
+### What I got wrong
+After completing the GPT-5.5 agent/cron cleanup, I did not proactively send a clear final status immediately. Ahmed had to ask "Status?", "So are you done?", and "What about the agents?".
+### Why
+I kept verifying and narrating internally/tool-by-tool instead of treating the verified end state as requiring one consolidated closeout. I also allowed repeated duplicate tool-flow noise to delay a crisp answer.
+### Fix
+For config hygiene, migrations, cron edits, model cleanup, and similar operational work: once verification is complete, send a concise final status without waiting to be asked. Include what changed, verification evidence, exceptions, and backup path if relevant.
+
+## 2026-04-24 - Model Guardian Cron Wrapper False Fix
+### What I got wrong
+I initially treated the Model Guardian failure as fixed after updating the GPT-5.4 expectation to GPT-5.5 and patching the OpenClaw cron payload. A forced run proved the agentTurn cron wrapper still timed out / failed to generate a response even though the underlying script completed cleanly.
+### Why
+I verified the script before fully verifying the live cron execution path, and I underestimated the fragility of using an LLM agent wrapper for a deterministic health-check script.
+### Fix
+For deterministic monitoring jobs, prefer direct system cron scripts with self-contained alert delivery. Verify with an actual forced/scheduled execution path before declaring the cron fixed.
+
+## 2026-04-24 - Session Resume Prefix Still Present
+### What I got wrong
+I previously said the misleading "Automatic session resume failed, so sending the status directly" prefix had been removed and should no longer appear. Ahmed later noticed it still appeared repeatedly, and live inspection showed the string is still present in both source and dist.
+### Why
+I relied on earlier summarized fix history and did not re-verify the currently loaded source/dist before answering durability. The prior fix was either overwritten, incomplete, or not present in this runtime version.
+### Fix
+For any claimed runtime fix, verify current source, current dist, and running gateway behavior before saying it is fixed. Treat historical LCM summaries as clues, not proof of the current runtime state.
+
+## 2026-04-24 - Verify channel model overrides before declaring model fallback fixed
+### What I got wrong
+I declared CTO/GPT-5.5 routing fixed after removing agent fallbacks and repairing session metadata, but missed `channels.modelByChannel.telegram["*"] = anthropic/claude-opus-4-6`, which kept forcing Telegram sessions back to Claude as a channel priority override.
+### Why
+I checked router files, agent defaults, and session state but did not include channel-level model overrides in the mandatory model-leak checklist before final closeout.
+### Fix
+For any model-routing issue, verify all active layers before declaring success: router config, root agent defaults, agent-local session overrides, persisted session runtime fields, channel/group/topic model overrides, cron payload models, and live `/status` evidence when possible.
+
+## 2026-04-25 - Do not over-alert email notifications without reading source
+### What I got wrong
+I escalated LinkedIn/GulfTalent notification subjects as a CRITICAL ALERT before reading the underlying emails and analyzing actual relevance.
+### Why
+I treated notification metadata as enough evidence instead of verifying the message body and distinguishing connection invites/job alerts from real interview invitations.
+### Fix
+For job/interview/email alerts, read the actual message first, classify it, assess relevance against Ahmed's target profile, and only mark critical when the content truly warrants interruption.

@@ -616,7 +616,7 @@ Swap:           15Gi       1.8Gi        14Gi
         "enabled": true,
         "apiKey": "REDACTED",
         "env": {
-          "TAVILY_API_KEY": "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"
+          "TAVILY_API_KEY": "[redacted]"
         }
       },
       "github": {
