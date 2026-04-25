@@ -57,3 +57,11 @@ media/inbound/*.docx
 /skills/slides/examples/**/montage.png
 /skills/slides/examples/**/pptxgenjs_helpers/
 /skills/ontology/scripts/*.pre-fix-*
+
+# Local virtual environments
+/tools/jobspy-venv/
+/skills/scrapling/.venv/
+
+# Local research/scratch directories (not source of truth)
+/research/
+/sweepers/
