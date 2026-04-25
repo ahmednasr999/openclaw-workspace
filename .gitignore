@@ -65,3 +65,6 @@ media/inbound/*.docx
 # Local research/scratch directories (not source of truth)
 /research/
 /sweepers/
+
+# Generated reports (local/runtime output)
+/reports/
