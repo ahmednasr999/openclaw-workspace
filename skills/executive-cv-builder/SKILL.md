@@ -125,3 +125,38 @@ git push origin master
 2. **Promote full-JD proof to a visible gate.** Step 0 already requires the complete JD, but delivery should also state where that JD came from so title-only shortcuts cannot creep back in.
 3. **Add a human-eye final check to the written workflow.** Step 5 currently points to automated gates; the skill should also require a rendered visual review of page 1 and page 2 before delivery, especially for header/footer artifacts and spacing drift.
 4. **Create an explicit `eval/checklist.md`.** This skill has strong eval files, but not one compact final checklist. Adding one would reduce missed steps during hurried runs.
+
+### 2026-04-18 — Weekly Skill Tune-Up
+
+**Audit note:** No fresh CV-builder-tagged lessons were logged in the last 7 days, so this stayed in the weekly audit as a default high-value skill and was reviewed for instruction drift.
+
+**Improvements to add next:**
+1. **Replace the stale Opus-only wording with the current workspace model rule.** `eval/quality-gates.md` still hard-codes Opus 4.6, which no longer matches the active workspace model policy. The skill should require the best approved current model, not an outdated one.
+2. **Promote JD provenance into the delivery contract.** The final response should explicitly state where the full JD came from, pasted text, fetched page, or handoff file, so title-only drift cannot slip back in.
+3. **Make ontology writes blocking and verified.** Step 5.5 should require checking that every `ontology.py create` call returns a real id before the skill can claim completion.
+4. **Add one compact final checklist file.** The missing `eval/checklist.md` is still the biggest structural gap. It should cover model, full-JD proof, ATS floor, rendered visual QA, post-generation text extraction, and ontology update confirmation.
+
+### 2026-04-18 - Weekly Skill Tune-Up (cron refresh)
+
+**Audit basis:** No direct executive-cv-builder-tagged lessons were found in `memory/lessons-learned.md`, so this stayed in scope as a default high-value skill and the refresh focused on structural drift in the current instructions.
+
+**Improvements to add next:**
+1. **Turn the model gate into a current-policy check, not a stale hard-code.** `eval/quality-gates.md` still says CV work must run on Opus 4.6. Replace that with the current workspace-approved top-tier model rule so the skill cannot fail for the wrong reason.
+2. **Make the missing checklist a real blocker.** Add `eval/checklist.md` and require it before Step 5.5. Keep it binary: full JD proven, ATS floor met, rendered page 1 and page 2 visually reviewed, `pdftotext` clean, ontology ids captured, delivery filename correct.
+3. **Gate ontology and git actions behind proof, not hope.** Step 5.5 and Step 8 should require explicit confirmation that ontology create calls returned ids and the PDF exists at the delivery path before any commit or push instruction runs.
+4. **Expose JD provenance in the delivery format.** The final handoff should state whether the JD came from pasted text, fetched URL, or handoff file so title-only drift is impossible to hide.
+
+### 2026-04-25 - Weekly Skill Tune-Up
+
+**Audit basis:** No fresh executive-CV-specific failure dominated the last 7 days, but the weekly check kept this skill in scope as a default high-value workflow. The requested `eval/checklist.md` is still missing, so the main risk is instruction drift across multiple eval files during rushed CV delivery.
+
+**Reviewed lessons:**
+- 2026-04-21, do not mislabel vendor/marketing emails as interview activity. This matters for CV/application triage because the skill should only build application materials from verified hiring signals.
+- 2026-04-15, important recruiter follow-ups can fall through narrow email rules. CV requests triggered by recruiter follow-up should preserve the full thread and JD/source proof before tailoring.
+- 2026-04-17, avoid ambiguous “half-done” wording. CV closeout should state completed artifacts, checks run, and any blocker plainly.
+
+**Improvement recommendation:**
+1. **Add a recruiter-signal verification gate before CV work.** Confirm the request is tied to a real JD, recruiter/hiring team message, or application handoff, not vendor marketing or a weak title-only signal.
+2. **Create the missing compact checklist.** `eval/checklist.md` should be added next with binary gates for full JD/source proof, ATS floor, rendered PDF review, text extraction, ontology IDs, filename, and delivery wording.
+3. **Make CV closeout artifact-based.** Final delivery should list the generated PDF path, ATS score, JD provenance, visual QA result, ontology update status, and whether any follow-up is genuinely blocked.
+4. **Keep stale model language out of gates.** Any model check should refer to the current workspace-approved top-tier model policy, not outdated hard-coded model names.

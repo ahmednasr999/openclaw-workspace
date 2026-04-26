@@ -53,15 +53,18 @@ def run_with_retries(args, timeouts, parser=None, ok_text=None, label='command')
     raise RuntimeError(last_error or f'{label} failed', last_output)
 
 
+EXPECTED_DEFAULT_MODEL = 'openai-codex/gpt-5.5'
+EXPECTED_DEFAULT_LABEL = 'GPT-5.5'
+
 # 1. model-router.json default
 try:
     with open('/root/.openclaw/workspace/config/model-router.json') as f:
         cfg = json.load(f)
     default = cfg.get('default_model', '')
-    if default != 'openai-codex/gpt-5.4':
-        ALERTS.append(f"model-router default is '{default}' — expected GPT-5.4")
+    if default != EXPECTED_DEFAULT_MODEL:
+        ALERTS.append(f"model-router default is '{default}' — expected {EXPECTED_DEFAULT_LABEL}")
     else:
-        print('OK: model-router default is GPT-5.4')
+        print(f'OK: model-router default is {EXPECTED_DEFAULT_LABEL}')
 except Exception as e:
     ALERTS.append(f'model-router.json read failed: {e}')
 
@@ -114,13 +117,13 @@ try:
     _, combined, attempts, _ = run_with_retries(
         ['openclaw', 'models', 'status', '--plain'],
         timeouts=[20, 40],
-        ok_text='openai-codex/gpt-5.4',
+        ok_text=EXPECTED_DEFAULT_MODEL,
         label='models status probe',
     )
     if attempts > 1:
-        print(f'OK: models status reports GPT-5.4 as configured default after retry {attempts}')
+        print(f'OK: models status reports {EXPECTED_DEFAULT_LABEL} as configured default after retry {attempts}')
     else:
-        print('OK: models status reports GPT-5.4 as configured default')
+        print(f'OK: models status reports {EXPECTED_DEFAULT_LABEL} as configured default')
 except Exception as e:
     ALERTS.append(f'models status probe failed after retries: {e}')
 

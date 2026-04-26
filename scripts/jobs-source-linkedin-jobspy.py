@@ -24,6 +24,7 @@ import os
 import time
 import json
 from pathlib import Path
+from datetime import datetime
 
 sys.path.insert(0, str(Path(__file__).parent))
 os.environ["PYTHONUNBUFFERED"] = "1"
@@ -46,6 +47,7 @@ GCC_COUNTRIES = jobs_source_common.GCC_COUNTRIES
 standard_job_dict = jobs_source_common.standard_job_dict
 
 WATCHLIST_FILE = Path('/root/.openclaw/workspace/data/sayyad-company-watchlist.json')
+SEARCH_LOG_DIR = Path('/root/.openclaw/workspace-jobzoom/data/search-logs')
 
 AGENT_NAME = "jobs-source-linkedin-jobspy"
 OUTPUT_FILE = JOBS_RAW_DIR / "linkedin.json"
@@ -96,7 +98,18 @@ def load_watchlist_companies() -> list[str]:
         return []
 
 
-def scrape_linkedin_jobspy(title: str, location: str, country: str = "", dry_run: bool = False) -> list[dict]:
+def write_search_log(run_id: str, rows: list[dict]) -> Path:
+    SEARCH_LOG_DIR.mkdir(parents=True, exist_ok=True)
+    path = SEARCH_LOG_DIR / f"linkedin-jobspy-search-log-{run_id}.jsonl"
+    with path.open("w") as f:
+        for row in rows:
+            f.write(json.dumps(row, ensure_ascii=False, default=str) + "\n")
+    latest = SEARCH_LOG_DIR / "linkedin-jobspy-search-log-latest.jsonl"
+    latest.write_text(path.read_text())
+    return path
+
+
+def scrape_linkedin_jobspy(title: str, location: str, country: str = "", dry_run: bool = False, raise_errors: bool = False) -> list[dict]:
     """Scrape LinkedIn via JobSpy for a single title+location combo."""
     try:
         from jobspy import scrape_jobs
@@ -153,10 +166,14 @@ def scrape_linkedin_jobspy(title: str, location: str, country: str = "", dry_run
 
         return results
 
-    except ImportError:
-        print("  ERROR: jobspy not installed — run: pip install jobspy")
+    except ImportError as e:
+        if raise_errors:
+            raise
+        print("  ERROR: jobspy not installed - run: pip install jobspy")
         return []
     except Exception as e:
+        if raise_errors:
+            raise
         print(f"  Error scraping '{title}' @ {location}: {e}")
         return []
 
@@ -167,6 +184,7 @@ def run_linkedin_jobspy(result: AgentResult):
     all_jobs = {}
     total_searches = 0
     failed_searches = 0
+    search_log_rows = []
 
     search_pairs = [
         (title, loc_str, country_name, "title")
@@ -200,12 +218,26 @@ def run_linkedin_jobspy(result: AgentResult):
             print(f"  → [{kind}] '{title}' @ {loc} [{ctry}]")
         print(f"  ... and {len(all_searches)-5} more")
         result.set_data([])
-        result.set_kpi({"searches_planned": len(search_pairs), "dry_run": True})
+        result.set_kpi({
+            "searches_planned": len(all_searches),
+            "title_searches": len(search_pairs),
+            "keyword_searches": len(KEYWORD_PAIRS),
+            "watchlist_company_searches": len(WATCHLIST_PAIRS),
+            "dry_run": True,
+        })
         return
 
     for i, (title, location, country_name, kind) in enumerate(all_searches, 1):
         print(f"  [{i}/{len(all_searches)}] [{kind}] '{title}' @ {location}...", end=" ", flush=True)
-        jobs = scrape_linkedin_jobspy(title, location, country_name)
+        started = time.time()
+        error = None
+        jobs = []
+        try:
+            jobs = scrape_linkedin_jobspy(title, location, country_name, raise_errors=True)
+        except Exception as exc:
+            error = f"{type(exc).__name__}: {exc}"
+            failed_searches += 1
+        runtime_ms = int((time.time() - started) * 1000)
 
         new_count = 0
         for job in jobs:
@@ -214,14 +246,30 @@ def run_linkedin_jobspy(result: AgentResult):
                 all_jobs[jid] = job
                 new_count += 1
 
+        search_log_rows.append({
+            "seq": i,
+            "run_id": result.run_id,
+            "timestamp": datetime.now().isoformat(),
+            "kind": kind,
+            "query": title,
+            "location": location,
+            "country": country_name,
+            "found": len(jobs),
+            "new_unique": new_count,
+            "running_unique_total": len(all_jobs),
+            "runtime_ms": runtime_ms,
+            "error": error,
+        })
         print(f"{len(jobs)} found, {new_count} new (total: {len(all_jobs)})")
         total_searches += 1
 
-        if i < len(search_pairs):
+        if i < len(all_searches):
             time.sleep(RATE_LIMIT_DELAY)
 
     jobs_list = list(all_jobs.values())
+    search_log_path = write_search_log(result.run_id, search_log_rows)
     print(f"\nTotal unique LinkedIn jobs: {len(jobs_list)} from {total_searches} searches")
+    print(f"Per-search log: {search_log_path}")
 
     # Write output
     JOBS_RAW_DIR.mkdir(parents=True, exist_ok=True)
@@ -234,6 +282,7 @@ def run_linkedin_jobspy(result: AgentResult):
             "titles": len(PRIORITY_TITLES),
             "countries": len(LOCATION_MAP),
             "watchlist_companies": watchlist_companies,
+            "search_log_path": str(search_log_path),
         }
     }
     with open(OUTPUT_FILE, "w") as f:
@@ -245,6 +294,7 @@ def run_linkedin_jobspy(result: AgentResult):
         "searches": total_searches,
         "failed": failed_searches,
         "output_file": str(OUTPUT_FILE),
+        "search_log_path": str(search_log_path),
     })
 
 

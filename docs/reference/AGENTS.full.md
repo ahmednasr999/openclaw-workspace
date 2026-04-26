@@ -12,10 +12,10 @@ These are **permanent peer agents** on the gateway, each with their own workspac
 
 | Agent | Role | Thread | Workspace | Model |
 |-------|------|--------|-----------|-------|
-| **CEO (main)** | Strategy, coordination, Ahmed's DM | DM + Topic 10 (🎯 CEO General) | `~/.openclaw/workspace` | GPT-5.4 (default), MiniMax-M2.7 (fallback) |
-| **HR Agent** | Jobs, CVs, applications, interviews, outreach | Topic 9 (💼 HR Desk) | `~/.openclaw/workspace-hr` | GPT-5.4 (default), MiniMax-M2.7 (fallback) |
-| **CTO Agent** | Infrastructure, scripts, crons, gateway, debugging | Topic 8 (⚙️ CTO Desk) | `~/.openclaw/workspace-cto` | GPT-5.4 (default), MiniMax-M2.7 (fallback) |
-| **CMO Agent** | LinkedIn, content calendar, engagement, brand | Topic 7 (📣 CMO Desk) | `~/.openclaw/workspace-cmo` | GPT-5.4 (default), MiniMax-M2.7 (fallback) |
+| **CEO (main)** | Strategy, coordination, Ahmed's DM | DM + Topic 10 (🎯 CEO General) | `~/.openclaw/workspace` | GPT-5.5 (default), MiniMax-M2.7 only if explicitly approved |
+| **HR Agent** | Jobs, CVs, applications, interviews, outreach | Topic 9 (💼 HR Desk) | `~/.openclaw/workspace-hr` | GPT-5.5 (default), MiniMax-M2.7 only if explicitly approved |
+| **CTO Agent** | Infrastructure, scripts, crons, gateway, debugging | Topic 8 (⚙️ CTO Desk) | `~/.openclaw/workspace-cto` | GPT-5.5 (default), MiniMax-M2.7 only if explicitly approved |
+| **CMO Agent** | LinkedIn, content calendar, engagement, brand | Topic 7 (📣 CMO Desk) | `~/.openclaw/workspace-cmo` | GPT-5.5 (default), MiniMax-M2.7 only if explicitly approved |
 
 ### Reporting Chain
 All Chiefs report to CEO via:
@@ -161,10 +161,10 @@ Classify every incoming task before starting. Effort level determines model, ver
 
 | Effort | When | Model | Verify | Docs | Grill-Me |
 |--------|------|-------|--------|------|----------|
-| ○ Low | Config tweaks, file reads, quick lookups, simple questions | MiniMax-M2.7 | Skip | Skip | Skip |
-| ◐ Medium | Research, drafts, single-file scripts, email checks | GPT-5.4 | Skip | Light | Skip |
-| ● High | CVs, multi-file features, cron jobs, pipeline changes | GPT-5.4 | Verify | Full | Auto |
-| ◉ Max | Strategy decisions, interview prep, system architecture changes | GPT-5.4 | Verify + grill-me | Full | Mandatory |
+| ○ Low | Config tweaks, file reads, quick lookups, simple questions | GPT-5.5 unless Ahmed explicitly approves a cheaper model | Skip | Skip | Skip |
+| ◐ Medium | Research, drafts, single-file scripts, email checks | GPT-5.5 | Skip | Light | Skip |
+| ● High | CVs, multi-file features, cron jobs, pipeline changes | GPT-5.5 | Verify | Full | Auto |
+| ◉ Max | Strategy decisions, interview prep, system architecture changes | GPT-5.5 | Verify + grill-me | Full | Mandatory |
 
 **Classification rule:** Default to ◐ Medium. Upgrade when task matches higher tier. Never downgrade a task that touches core files (MEMORY.md, SOUL.md, TOOLS.md, AGENTS.md) below ● High.
 

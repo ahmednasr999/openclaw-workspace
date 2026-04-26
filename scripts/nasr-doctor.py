@@ -326,14 +326,23 @@ def check_gmail():
 
 def check_composio_linkedin():
     tools_md = WORKSPACE / "TOOLS.md"
-    if tools_md.exists():
-        content = tools_md.read_text()
-        if "ACTIVE" in content and "linkedin" in content.lower():
-            check("LinkedIn (Composio)", Result.OK, "Config shows ACTIVE")
-        else:
-            check("LinkedIn (Composio)", Result.WARN, "Status unclear in TOOLS.md")
-    else:
+    if not tools_md.exists():
         check("LinkedIn (Composio)", Result.WARN, "TOOLS.md missing")
+        return
+
+    content = tools_md.read_text().lower()
+    signals = [
+        "post tool:",
+        "linkedin_create_linked_in_post",
+        "person urn:",
+        "auto-poster script:",
+        "scripts/linkedin-auto-poster.py",
+    ]
+    found = [s for s in signals if s in content]
+    if len(found) >= 3:
+        check("LinkedIn (Composio)", Result.OK, "LinkedIn posting config documented")
+    else:
+        check("LinkedIn (Composio)", Result.WARN, "LinkedIn config incomplete in TOOLS.md")
 
 
 def check_linkedin_cookies():

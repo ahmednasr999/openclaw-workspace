@@ -10,6 +10,26 @@ WORKSPACE = Path('/root/.openclaw/workspace')
 CHECK_SCRIPT = WORKSPACE / 'scripts' / 'model-guardian-check.py'
 USAGE_FILE = WORKSPACE / 'data' / 'model-guardian-usage.jsonl'
 CAIRO = ZoneInfo('Africa/Cairo')
+AHMED_DM_TARGET = '866838380'
+CEO_GENERAL_TARGET = '-1003882622947:10'
+
+
+def send_telegram(target: str, text: str) -> tuple[bool, str]:
+    try:
+        result = subprocess.run(
+            ['openclaw', 'message', 'send', '--channel', 'telegram', '--target', target, '--message', text],
+            capture_output=True,
+            text=True,
+            timeout=20,
+        )
+        output = ((result.stdout or '') + '\n' + (result.stderr or '')).strip()
+        if result.returncode == 0:
+            return True, output
+        return False, output or f'exit code {result.returncode}'
+    except subprocess.TimeoutExpired:
+        return False, 'timeout'
+    except Exception as e:
+        return False, str(e)
 
 
 def parse_json_from_mixed_output(text: str):
@@ -156,21 +176,33 @@ def main():
         burn_text = f'{daily_burn}% per day' if daily_burn is not None else 'n/a'
         if weekly_left < 15:
             ceo_alerts.append(
-                f"🚨 Model Guardian urgent quota alert: weekly GPT-5.4 quota is below 15% remaining ({weekly_left}% left, reset in {time_left}). Estimated burn rate: {burn_text}. Think: high may not be sustainable on Pro at this rate. Recommendation: temporarily switch Think to medium until the window resets."
+                f"🚨 Model Guardian urgent quota alert: weekly GPT-5.5 quota is below 15% remaining ({weekly_left}% left, reset in {time_left}). Estimated burn rate: {burn_text}. Think: high may not be sustainable on Pro at this rate. Recommendation: temporarily switch Think to medium until the window resets."
             )
         elif weekly_left < 30:
             ceo_alerts.append(
-                f"⚠️ Model Guardian quota alert: weekly GPT-5.4 quota is below 30% remaining ({weekly_left}% left, reset in {time_left}). Estimated burn rate: {burn_text}. Think: high may be increasing burn rate. Review usage sustainability."
+                f"⚠️ Model Guardian quota alert: weekly GPT-5.5 quota is below 30% remaining ({weekly_left}% left, reset in {time_left}). Estimated burn rate: {burn_text}. Think: high may be increasing burn rate. Review usage sustainability."
             )
     except Exception as e:
         dm_alerts.append(f'Model Guardian alert: usage snapshot failed - {e}')
+
+    delivery_failures = []
 
     for line in info:
         print(f'INFO: {line}')
     for alert in dm_alerts:
         print(f'DM_ALERT: {alert}')
+        ok, detail = send_telegram(AHMED_DM_TARGET, alert)
+        print(f'INFO: DM delivery {"OK" if ok else "FAILED"}: {detail}')
+        if not ok:
+            delivery_failures.append(f'DM delivery failed: {detail}')
     for alert in ceo_alerts:
         print(f'CEO_ALERT: {alert}')
+        ok, detail = send_telegram(CEO_GENERAL_TARGET, alert)
+        print(f'INFO: CEO delivery {"OK" if ok else "FAILED"}: {detail}')
+        if not ok:
+            delivery_failures.append(f'CEO delivery failed: {detail}')
+    if delivery_failures:
+        raise RuntimeError('; '.join(delivery_failures))
     if not dm_alerts and not ceo_alerts:
         print('NO_ALERTS')
 

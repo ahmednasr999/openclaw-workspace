@@ -194,8 +194,8 @@ openclaw auth login openai-codex
 
 Set in environment or config:
 ```bash
-# Key: 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
-export TAVILY_API_KEY="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"
+# Key: [redacted, rotate if exposed]
+export TAVILY_API_KEY="[redacted]"
 ```
 
 ---
@@ -416,7 +416,7 @@ After the system is verified:
 | Telegram Chat ID | `866838380` |
 | MiniMax Portal | OAuth login at https://www.minimax.io |
 | Moonshot API Key | https://platform.moonshot.cn/console/api-keys |
-| Tavily API Key | `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` |
+| Tavily API Key | `[redacted]` |
 | GitHub | https://github.com/ahmednasr999 (repos: openclaw-nasr, openclaw-config) |
 | Google OAuth | Project: nasr-agent (438071512086) |
 | GOG Keyring Password | `pass@123` |

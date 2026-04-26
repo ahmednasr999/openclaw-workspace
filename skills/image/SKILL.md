@@ -79,3 +79,20 @@ This skill does NOT:
 - [ ] Dimensions/aspect ratio defined
 - [ ] Compression quality set
 - [ ] Metadata handling decided
+
+---
+
+## Learned Improvements
+
+### 2026-04-25 - Weekly Skill Tune-Up
+
+**Reviewed lessons:**
+- 2026-04-23, visual briefs need semantic background alignment and exact signature/footer rules.
+- 2026-04-23, do not keep polishing a visual direction after Ahmed clearly dislikes it.
+- 2026-04-23, premium LinkedIn visuals cannot place core text over Ahmed's face or rely on generic AI portrait layouts.
+
+**Improvement recommendation:**
+1. **Add a social-visual brief lock before generation.** For LinkedIn or branded social assets, capture the required topic/background metaphor, portrait requirement, asset type, and exact footer/signature before producing or optimizing an image.
+2. **Reject non-native social compositions early.** Do not present poster, magazine-cover, or generic AI portrait layouts when Ahmed asked for a feed-native LinkedIn asset. The image should pass a quick feed test: clear hook hierarchy, clean text zone, and no copy over the face or suit.
+3. **Stop failed visual directions instead of iterating them.** If Ahmed dislikes the direction, switch to 2-3 materially different concepts or ask one sharp diagnostic question. Do not spend more turns polishing the same weak concept.
+4. **Create a future `eval/checklist.md`.** Keep it binary: semantic background matches topic, asset type matches request, text is readable, no text on face, signature is exact, output feels LinkedIn-native.

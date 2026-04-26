@@ -1,72 +1,100 @@
-# USER.md - About Ahmed
+# USER.md - Ahmed Nasr
+
+## Identity
 
 - **Name:** Ahmed Nasr
-- **What to call them:** Ahmed
+- **Call him:** Ahmed
 - **Pronouns:** he/him
-- **Timezone:** Cairo (Africa/Cairo, UTC+2)
-
-## Profile Photo
-- **Path:** `/root/.openclaw/workspace/profile-photo.jpg`
-- **Description:** Man in black suit, white dress shirt, dark tie, white pocket square. Smiling confidently in modern office setting with glass-walled offices and elegant lighting in background.
+- **Timezone:** Africa/Cairo (UTC+2 standard, UTC+3 during daylight saving when active)
+- **Primary channel:** Telegram DM, chat id `866838380`
 
 ## Profile
-Senior technology executive with 20+ years in operational leadership. Currently serving as PMO while building AI automation systems. Actively pursuing next executive role.
 
-## Work Style
-- Values strategic thinking over busywork
-- Wants to be challenged, not just supported
-- Expects proactive insights and recommendations
-- Operates at executive level — no hand-holding needed
+Senior technology executive with 20+ years in operational leadership. Currently serving as PMO while building AI automation systems and pursuing the next executive role.
 
-## Context
-- Building AI automation systems
-- Managing PMO responsibilities
-- Transitioning to next executive opportunity
-- Needs strategic alignment and deadline tracking
+Target direction:
+- VP/C-suite roles in GCC.
+- Healthcare, digital transformation, PMO, transformation, and execution leadership.
+- Open to relocating to Jeddah, Saudi Arabia.
 
-## Notes
-24/7 thinking partner. Alert on time-sensitive items. Check in during quiet periods. Surface opportunities and risks without waiting to be asked.
+## Working Relationship
 
----
+Ahmed wants a thinking partner, not a passive assistant.
 
-## Observed Preferences <!-- dynamic — updated by agent -->
+He values:
+- strategic judgment over task completion theater
+- direct answers over long explanations
+- proactive risk/opportunity surfacing
+- end-to-end execution
+- honest trade-off analysis
+- systems that reduce babysitting
 
-### Communication Style
-- Direct, no fluff. Gets frustrated by over-explaining or hand-holding.
-- Prefers bullet points and tables over long paragraphs for technical info.
-- Dislikes em dashes (—). Use hyphens or commas instead.
-- Pushes back when I make him do work I should be doing autonomously.
-- For multi-step tasks, expects end-to-end execution with one consolidated report at the end, unless a real decision/blocker requires interruption <!-- updated 2026-04-09 -->
+He dislikes:
+- hand-holding
+- over-explaining
+- asking him for information already available in files
+- stopping after a partial fix
+- cheerleading without substance
+- em dashes
 
-### Technical Setup
-- VPS: srv1352768 (Linux, Ubuntu), primary workspace
-- Mac: Ahmed-Mac node (darwin, no companion app installed = no system.run)
-- VPS IP is permanently blocked by YouTube — cannot fetch transcripts from server
-- Browser automation: no Camoufox on VPS; Ahmed-Mac Chrome accessible only via browser.proxy (HTTP proxy, not full browser nav)
-- Telegram is primary interface (chat_id 866838380)
-- Do not assume repo permissions or access scope from prior context alone; verify or let Ahmed specify the level of access for the current task <!-- updated 2026-04-08 -->
-- `channels.slack.streaming` in OpenClaw gateway config is intentionally the string `"partial"`; do not modify it unless Ahmed explicitly asks for that exact field <!-- updated 2026-04-09 -->
+## Communication Preferences
 
-### Decision-Making Style
-- Researches before committing (reads GitHub READMEs, docs, comparisons)
-- Wants honest trade-off analysis, not cheerleading
-- Will push on "is there a better way" even after a solution is found
-- Thinks about long-term automation value, not one-off fixes
-- Retired Mission Control task logging. Do not use Mission Control / localhost:3001 task-board workflow unless Ahmed explicitly re-enables it. <!-- updated 2026-04-09 -->
+- Be concise, direct, and specific.
+- Prefer bullets and tables for technical material.
+- Lead with the answer or recommendation.
+- Use emojis naturally but sparingly.
+- For multi-step work, execute end-to-end and send one consolidated report unless a real blocker or decision needs Ahmed.
+- If Ahmed pushes with "why" or "?", treat it as a quality challenge, not a request for filler.
 
-### Job Search
-- Open to relocating to Jeddah, Saudi Arabia <!-- updated 2026-02-18 -->
-- Targeting VP/C-Suite roles in GCC (healthcare, digital transformation, PMO)
-- ATS score threshold: 82%+ before applying
+## Decision Style
 
-### AI Interests
-- Actively tracking AI agent frameworks (OpenClaw, Hermes, Codex)
-- Wants autonomous systems that require zero babysitting
-- Values: self-improving agents, cross-session memory, autonomous logging
-- Not interested in migrating away from OpenClaw unless a framework is clearly superior
+Ahmed researches before committing and expects the same from me.
 
-### Session Patterns
-- Often works late evening Cairo time (20:00+)
-- Short, direct messages — doesn't write long prompts
-- Follows up on unresolved items from previous sessions
-- Tests system capabilities by pushing edge cases
+He prefers:
+- live checks for mutable facts
+- honest pros/cons
+- clear recommendations
+- reusable workflows for recurring asks
+- automation only after output quality is proven on a real sample
+
+If Ahmed asks repeatedly for the same workflow, the system failed and should be codified.
+
+## Technical Setup
+
+- VPS: `srv1352768`, Linux/Ubuntu, primary OpenClaw host.
+- Main workspace: `/root/.openclaw/workspace`.
+- Mac node: `Ahmed-Mac`, darwin. No companion app/system.run.
+- Telegram is the primary interface.
+- Browser/account tasks should prefer Ahmed-Mac Chrome when login state matters.
+- VPS IP is blocked by YouTube, do not rely on it for YouTube transcript fetching.
+- `channels.slack.streaming` intentionally uses string value `"partial"`; do not change it unless Ahmed explicitly asks.
+
+## Model and OpenClaw Preferences
+
+- Current default model is GPT-5.5 via OpenAI Codex OAuth unless Ahmed changes it.
+- Ahmed's explicit model choices must not be silently reverted.
+- Always disclose model switches.
+- He is interested in OpenClaw, Codex, ACP/ACPX, Hermes, autonomous memory, and self-improving agents.
+- He is not interested in migrating away from OpenClaw unless another framework is clearly superior.
+
+## Job Search Rules
+
+- Target: senior GCC leadership roles, especially healthcare, digital transformation, PMO, transformation, and program delivery.
+- ATS threshold: 82%+ before applying.
+- Never fabricate roles, titles, achievements, or credentials.
+- Job-email alerts must be body-read and classified before escalation.
+- JobZoom is a protected full-scan daily lane. Do not optimize, trim, or reduce runs unless Ahmed explicitly asks.
+- Do not modify JobZoom prompts/files unless the current task is explicitly JobZoom-related.
+
+## Content and LinkedIn
+
+- LinkedIn content should be executive-level, practical, and end with a question/CTA when appropriate.
+- LinkedIn posting/image workflows require explicit care: do not post text-only when an image is expected.
+- Content-gap alerts should be short decision-cards: action first, evidence second.
+
+## Memory Notes
+
+- Profile photo path: `/root/.openclaw/workspace/profile-photo.jpg`.
+- Profile photo description: man in black suit, white dress shirt, dark tie, white pocket square, smiling in modern office with glass-walled background.
+- Master CV source and ATS rules live under workspace memory files.
+- Historical facts belong in `MEMORY.md`; behavior rules belong in `SOUL.md`; technical gotchas belong in `TOOLS.md`; routing/workflow rules belong in `AGENTS.md`.

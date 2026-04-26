@@ -42,8 +42,10 @@ Actionable emails (interview/assessment/follow-up): {actionable_count}
 <constraints>
 - Only analyze emails that are categorized as: interview_invite, assessment, follow_up_needed, recruiter_reach
 - NEVER invent email content — analyze only what is provided
+- Use the provided body_excerpt and classification_evidence before assigning urgency
 - Set urgency: critical (response within 24h), high (within 48h), medium (within week), low (informational only)
 - Set action: respond, forward, read_and_file, no_action
+- If the body excerpt does not prove an interview, assessment, recruiter opportunity, or reply need, do not mark it critical
 - If insufficient context to determine, say "cannot determine from available content"
 </constraints>
 
@@ -89,6 +91,9 @@ import json as json_module
 import requests as req
 from pathlib import Path
 from datetime import datetime, timedelta
+from functools import lru_cache
+from email.utils import parseaddr
+from html import unescape
 
 # Pipeline DB (safe fallback)
 try:
@@ -146,7 +151,36 @@ RECRUITER_DOMAINS = [
 INTERVIEW_PATTERNS = [
     r'\binterview\b', r'\bscheduled?\b.*\bcall\b', r'\bavailability\b',
     r'\bmeet\b.*\bteam\b', r'\bcalendar\b.*\blink\b', r'\bschedule\b.*\bmeeting\b',
-    r'\bzoom\b.*\blink\b', r'\bteams\b.*\binvite\b', r'\bgoogle meet\b'
+    r'\bzoom\b.*\blink\b', r'\bteams\b.*\binvite\b', r'\bgoogle meet\b',
+    r'\bnext\s*stage\b', r'\bnext\s*round\b', r'\bmove\s*forward\b',
+    r'\bdeeper\s*conversation\b', r'\bpotential\s*next\s*steps\b'
+]
+
+STRICT_INTERVIEW_PATTERNS = [
+    r'\binterview\b', r'\binterview\s+invitation\b', r'\binterview\s+invite\b',
+    r'\bphone\s*screen\b', r'\btechnical\s*round\b', r'\bfinal\s*round\b',
+    r'\bpanel\s*interview\b', r'\bhiring\s*manager\s*interview\b'
+]
+
+HIRING_CONTEXT_PATTERNS = [
+    r'\byour\s+application\b', r'\bapplication\s+for\b', r'\bapplied\s+for\b',
+    r'\bposition\b', r'\brole\b', r'\bcandidate\b', r'\bhiring\b',
+    r'\brecruiter\b', r'\btalent\s+acquisition\b', r'\bhr\b',
+    r'\bhuman\s+resources\b', r'\bjob\b', r'\bvacancy\b',
+    r'\bcompensation\s+range\b', r'\bnext\s+steps\s+in\s+your\s+application\b',
+    r'\bshortlisted\b', r'\bassessment\b', r'\bcoding\s*challenge\b',
+    r'\bcase\s*study\b'
+]
+
+HIRING_SENDER_MARKERS = [
+    "hr", "recruiter", "recruiting", "talent", "hiring", "careers", "jobs"
+]
+
+MEETING_INVITE_PATTERNS = [
+    r'\bmicrosoft teams meeting\b', r'https://teams\.microsoft\.com/meet',
+    r'\bmeeting id\b', r'\bjoin with google meet\b', r'\bzoom meeting\b',
+    r'\bwebex\b', r'\btext/calendar\b', r'\bcontent-class:\s*urn:content-classes:calendarmessage\b',
+    r'\bmethod:(request|cancel|reply)\b', r'\borganizer:\b', r'\bjoin:\s*https?://'
 ]
 
 APPLICATION_ACK_PATTERNS = [
@@ -168,6 +202,14 @@ ASSESSMENT_PATTERNS = [
     r'\bhackerrank\b', r'\bcodility\b', r'\bleetcode\b'
 ]
 # Removed bare \btest\b — too many false positives (newsletters, marketing)
+
+FOLLOW_UP_PATTERNS = [
+    r'please\s*(let|confirm|reply|respond)',
+    r'could\s+you\s+share',
+    r'would\s+you\s+be\s+able\s+to',
+    r'looking\s+forward\s+to\s+your\s+response',
+    r'before\s+we\s+move\s+forward'
+]
 
 # Newsletters, marketing, notifications — never actionable
 NOISE_SENDERS = [
@@ -209,6 +251,87 @@ def extract_domain(email_address):
     return match.group(1).lower() if match else ""
 
 
+def _normalize_key(text: str) -> str:
+    return re.sub(r'[^a-z0-9]+', '', (text or '').lower())
+
+
+def _keyword_tokens(text: str) -> list:
+    return [t for t in re.findall(r'[a-z0-9]+', (text or '').lower()) if len(t) >= 4]
+
+
+@lru_cache(maxsize=1)
+def _get_active_pipeline_jobs():
+    if not _pdb:
+        return []
+    jobs = []
+    seen = set()
+    try:
+        for status in ACTIVE_PIPELINE_STATUSES:
+            for job in _pdb.search(status=status, limit=500):
+                job_id = job.get("job_id") or f"{job.get('company')}|{job.get('title')}|{status}"
+                if job_id in seen:
+                    continue
+                seen.add(job_id)
+                jobs.append(job)
+    except Exception:
+        return []
+    return jobs
+
+
+def _match_pipeline_company(subject: str, from_addr: str, body: str = ""):
+    sender_name, sender_email = parseaddr(from_addr or "")
+    sender_domain = extract_domain(sender_email or from_addr or "")
+    subject_norm = _normalize_key(subject)
+    body_norm = _normalize_key(body[:4000])
+    sender_name_norm = _normalize_key(sender_name)
+    sender_email_norm = (sender_email or "").strip().lower()
+    sender_domain_norm = _normalize_key(sender_domain)
+
+    best_company = None
+    best_score = 0
+
+    for job in _get_active_pipeline_jobs():
+        company = job.get("company") or ""
+        recruiter_name = job.get("recruiter_name") or ""
+        recruiter_email = (job.get("recruiter_email") or "").strip().lower()
+        recruiter_company = job.get("recruiter_company") or ""
+        title = job.get("title") or ""
+
+        company_norm = _normalize_key(company)
+        recruiter_name_norm = _normalize_key(recruiter_name)
+        recruiter_company_norm = _normalize_key(recruiter_company)
+        title_norm = _normalize_key(title)
+
+        score = 0
+        if recruiter_email and recruiter_email == sender_email_norm:
+            score += 10
+        if recruiter_name_norm and recruiter_name_norm in sender_name_norm:
+            score += 8
+        if company_norm and company_norm in subject_norm:
+            score += 8
+        elif company_norm and company_norm in body_norm:
+            score += 4
+        if recruiter_company_norm and recruiter_company_norm in subject_norm:
+            score += 6
+        elif recruiter_company_norm and recruiter_company_norm in body_norm:
+            score += 3
+        if title_norm and title_norm in subject_norm:
+            score += 3
+
+        for token in _keyword_tokens(company) + _keyword_tokens(recruiter_company):
+            if token and token in sender_domain_norm:
+                score += 2
+                break
+
+        if score > best_score:
+            best_company = company
+            best_score = score
+
+    if best_score >= 6:
+        return best_company, best_score
+    return None, 0
+
+
 def is_recruiter_domain(domain):
     for rec_domain in RECRUITER_DOMAINS:
         if domain.endswith(rec_domain) or rec_domain in domain:
@@ -247,19 +370,25 @@ def is_linkedin_noise(subject, from_addr):
 KEYWORD_WEIGHTS = {
     "interview": 3, "shortlisted": 3, "offer": 3, "congratulations": 3,
     "selected": 3, "phone screen": 3, "technical round": 3, "final round": 3,
+    "next stage": 3, "next round": 3, "move forward": 3,
     "assessment": 2, "coding challenge": 2, "case study": 2,
     "availability": 2, "schedule": 2, "calendar link": 2,
+    "deeper conversation": 2, "looking forward to your response": 2,
+    "microsoft teams meeting": 2, "join with google meet": 2, "zoom meeting": 2,
+    "meeting id": 1, "text/calendar": 2,
     "unfortunately": 1, "regret to inform": 1, "not moving forward": 1,
     "thank you for applying": 1, "application received": 1,
 }
 PIPELINE_MATCH_BONUS = 5
 RECRUITER_DOMAIN_BONUS = 2
 PRIORITY_THRESHOLDS = {"HIGH": 5, "MEDIUM": 2, "LOW": 0}
+ACTIVE_PIPELINE_STATUSES = ("applied", "cv_built", "response", "interview", "offer")
 
 HOT_KEYWORDS = [
     "interview", "shortlisted", "offer", "congratulations", "selected",
     "phone screen", "technical round", "final round", "assessment invite",
-    "next steps in your application"
+    "next steps in your application", "next stage", "next round",
+    "move forward"
 ]
 
 
@@ -269,25 +398,28 @@ def score_email(subject, from_addr, body=""):
     score = 0
     pipeline_company = None
 
-    # Keyword weights
-    for kw, weight in KEYWORD_WEIGHTS.items():
-        if kw in text:
-            score += weight
+    # Pipeline company match (D5 + D10)
+    pipeline_company, pipeline_match_score = _match_pipeline_company(subject, from_addr, body)
+
+    job_context = has_hiring_context(subject, from_addr, body, pipeline_company=pipeline_company)
+
+    # Keyword weights only count when this actually looks job-related.
+    if job_context:
+        for kw, weight in KEYWORD_WEIGHTS.items():
+            if kw in text:
+                score += weight
 
     # Recruiter domain bonus
-    domain = extract_domain(from_addr)
+    sender_email = parseaddr(from_addr or "")[1]
+    domain = extract_domain(sender_email or from_addr)
     if is_recruiter_domain(domain):
         score += RECRUITER_DOMAIN_BONUS
 
-    # Pipeline company match (D5 + D10)
-    if _pdb:
-        try:
-            company = domain.split(".")[0] if domain else ""
-            if company and len(company) >= 3 and _pdb.is_company_tracked(company):
-                score += PIPELINE_MATCH_BONUS
-                pipeline_company = company
-        except Exception:
-            pass
+    if job_context and is_external_meeting_invite(subject, from_addr, body):
+        score += 4
+
+    if pipeline_company:
+        score += PIPELINE_MATCH_BONUS + min(3, pipeline_match_score // 4)
 
     return score, pipeline_company
 
@@ -303,63 +435,154 @@ def get_priority(score):
 
 def is_hot_email(subject, from_addr):
     """Check if email should trigger immediate Telegram alert."""
+    if is_noise_sender(from_addr):
+        return False
     text = f"{subject}".lower()
+    pipeline_company, _ = _match_pipeline_company(subject, from_addr, "")
+    if not has_hiring_context(subject, from_addr, "", pipeline_company=pipeline_company):
+        return False
     for kw in HOT_KEYWORDS:
         if kw in text:
             return True
     return False
 
 
+def has_hiring_context(subject, from_addr, body="", pipeline_company=None):
+    """Require job/recruiting context before classifying sensitive email types."""
+    if is_noise_sender(from_addr):
+        return False
+
+    sender_name, sender_email = parseaddr(from_addr or "")
+    domain = extract_domain(sender_email or from_addr)
+    if is_recruiter_domain(domain) and not is_linkedin_noise(subject, from_addr):
+        return True
+
+    sender_local = (sender_email.split('@', 1)[0] if sender_email and '@' in sender_email else sender_email or '').lower()
+    sender_name_lower = (sender_name or '').lower()
+    sender_context = f"{sender_local} {sender_name_lower}"
+    if any(marker in sender_context for marker in HIRING_SENDER_MARKERS):
+        return True
+
+    if pipeline_company:
+        return True
+
+    text = f"{subject} {body}".lower()
+    return matches_patterns(text, HIRING_CONTEXT_PATTERNS)
+
+
 def categorize_email(subject, from_addr, body=""):
     categories = []
     text = f"{subject} {body}".lower()
+    pipeline_company, _pipeline_score = _match_pipeline_company(subject, from_addr, body)
+    hiring_context = has_hiring_context(subject, from_addr, body, pipeline_company=pipeline_company)
     
     # Skip noise senders entirely (newsletters, marketing, notifications)
     if is_noise_sender(from_addr):
         return ["other"]
     
-    if matches_patterns(text, INTERVIEW_PATTERNS):
+    if matches_patterns(text, STRICT_INTERVIEW_PATTERNS):
+        categories.append("interview_invite")
+    elif hiring_context and (matches_patterns(text, INTERVIEW_PATTERNS) or is_external_meeting_invite(subject, from_addr, body)):
         categories.append("interview_invite")
     
     domain = extract_domain(from_addr)
     if is_recruiter_domain(domain) and not is_linkedin_noise(subject, from_addr):
         categories.append("recruiter_reach")
     
-    if matches_patterns(text, APPLICATION_ACK_PATTERNS):
+    if hiring_context and matches_patterns(text, APPLICATION_ACK_PATTERNS):
         categories.append("application_ack")
+
+    if pipeline_company and "recruiter_reach" not in categories:
+        categories.append("recruiter_reach")
     
-    if matches_patterns(text, REJECTION_PATTERNS):
+    if hiring_context and matches_patterns(text, REJECTION_PATTERNS):
         categories.append("rejection")
     
-    if matches_patterns(text, ASSESSMENT_PATTERNS):
+    if hiring_context and matches_patterns(text, ASSESSMENT_PATTERNS):
         categories.append("assessment")
     
-    if re.search(r'\?\s*$', text) or re.search(r'please\s*(let|confirm|reply|respond)', text):
-        if not categories:
+    if hiring_context and (re.search(r'\?\s*$', text) or matches_patterns(text, FOLLOW_UP_PATTERNS)):
+        if "follow_up_needed" not in categories:
             categories.append("follow_up_needed")
     
     return categories if categories else ["other"]
 
 
+def _strip_html(text):
+    text = unescape(text or "")
+    text = re.sub(r'<(script|style)[^>]*>.*?</\1>', ' ', text, flags=re.IGNORECASE | re.DOTALL)
+    text = re.sub(r'<[^>]+>', ' ', text)
+    text = re.sub(r'\s+', ' ', text)
+    return text.strip()
+
+
+def is_external_meeting_invite(subject, from_addr, body=""):
+    text = f"{subject} {body}".lower()
+    sender_email = parseaddr(from_addr or "")[1]
+    domain = extract_domain(sender_email or from_addr)
+    if not domain:
+        return False
+    if domain in {"gmail.com", "googlemail.com"}:
+        return False
+    if is_noise_sender(from_addr):
+        return False
+    return matches_patterns(text, MEETING_INVITE_PATTERNS)
+
+
 def get_email_body(msg):
-    body = ""
+    snippets = []
+    calendar_detected = False
+
     if msg.is_multipart():
         for part in msg.walk():
-            ctype = part.get_content_type()
-            if ctype == "text/plain":
-                charset = part.get_content_charset() or "utf-8"
+            ctype = (part.get_content_type() or "").lower()
+            charset = part.get_content_charset() or "utf-8"
+            payload = part.get_payload(decode=True)
+            filename = decode_str(part.get_filename() or "")
+            disposition = (part.get("Content-Disposition") or "").lower()
+            content_class = (part.get("Content-Class") or "").lower()
+
+            if ctype == "text/plain" and payload:
                 try:
-                    body = part.get_payload(decode=True).decode(charset, errors="replace")
-                    break
-                except:
+                    snippets.append(payload.decode(charset, errors="replace"))
+                except Exception:
                     pass
+            elif ctype == "text/html" and payload:
+                try:
+                    snippets.append(_strip_html(payload.decode(charset, errors="replace")))
+                except Exception:
+                    pass
+            elif ctype == "text/calendar":
+                calendar_detected = True
+                if payload:
+                    try:
+                        snippets.append(payload.decode(charset, errors="replace"))
+                    except Exception:
+                        pass
+
+            if filename.lower().endswith('.ics') or 'attachment' in disposition and 'ics' in filename.lower():
+                calendar_detected = True
+            if 'calendarmessage' in content_class:
+                calendar_detected = True
     else:
         charset = msg.get_content_charset() or "utf-8"
-        try:
-            body = msg.get_payload(decode=True).decode(charset, errors="replace")
-        except:
-            pass
-    return body[:2000]
+        payload = msg.get_payload(decode=True)
+        ctype = (msg.get_content_type() or "").lower()
+        if payload:
+            try:
+                decoded = payload.decode(charset, errors="replace")
+                snippets.append(_strip_html(decoded) if ctype == "text/html" else decoded)
+            except Exception:
+                pass
+        if ctype == "text/calendar":
+            calendar_detected = True
+
+    if calendar_detected:
+        snippets.append("text/calendar calendar invite meeting invite")
+
+    body = "\n".join(s for s in snippets if s)
+    body = re.sub(r'\s+', ' ', body).strip()
+    return body[:4000]
 
 
 def update_pipeline_from_emails(categorized):
@@ -519,9 +742,17 @@ def update_pipeline_from_emails(categorized):
     return updates
 
 
+def safe_body_excerpt(body: str, limit: int = 1200) -> str:
+    """Return a compact body excerpt for classification evidence, not full email storage."""
+    body = re.sub(r"\s+", " ", body or "").strip()
+    if len(body) <= limit:
+        return body
+    return body[: limit - 1].rstrip() + "…"
+
+
 def build_llm_prompt(summary, total_emails, actionable_emails):
     """Build the XML-structured LLM prompt with email data."""
-    # Send actionable emails as a focused list (not full raw emails)
+    # Send actionable emails as a focused list with enough body evidence to avoid subject-only escalation.
     actionable_list = []
     for e in actionable_emails:
         actionable_list.append({
@@ -530,7 +761,13 @@ def build_llm_prompt(summary, total_emails, actionable_emails):
             "from": e.get("from", ""),
             "date": e.get("date", ""),
             "categories": e.get("categories", []),
-            "unread": e.get("unread", False)
+            "unread": e.get("unread", False),
+            "classification_evidence": {
+                "priority": e.get("priority", ""),
+                "priority_score": e.get("priority_score", 0),
+                "pipeline_match": e.get("pipeline_match"),
+            },
+            "body_excerpt": e.get("body_excerpt", ""),
         })
     emails_json = json_module.dumps({"actionable": actionable_list}, indent=2, default=str)
     categories = summary.get("by_category", {})
@@ -808,6 +1045,7 @@ def run_email_agent(result: AgentResult):
 
         categories = categorize_email(email_data["subject"], email_data["from"], body)
         email_data["categories"] = categories
+        email_data["body_excerpt"] = safe_body_excerpt(body)
         score, pipeline_company = score_email(email_data["subject"], email_data["from"], body)
         email_data["priority_score"] = score
         email_data["priority"] = get_priority(score)
@@ -828,7 +1066,7 @@ def run_email_agent(result: AgentResult):
             if cat in categorized:
                 categorized[cat].append(email_summary)
 
-        if "interview_invite" in categories or "assessment" in categories or "follow_up_needed" in categories:
+        if "interview_invite" in categories or "assessment" in categories or "follow_up_needed" in categories or "recruiter_reach" in categories:
             actionable_emails.append(email_data)
             if email_data.get("unread"):
                 unread_actionable += 1

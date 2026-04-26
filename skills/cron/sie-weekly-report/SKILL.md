@@ -5,45 +5,57 @@ description: "Weekly SIE summary: aggregate daily findings, track improvement tr
 
 # SIE Weekly Report
 
-Aggregate the week's SIE 360 daily runs into a trend report.
+Aggregate the week's SIE 360 daily snapshots into a trend report.
 
 ## Steps
 
-### Step 1: Get this week's SIE runs
-```bash
-openclaw cron runs --id 3c3ba638-8cb3-4a6a-a8f0-2ccd13e3aeed --limit 7 2>&1 | grep -v "^\[plugins\]" > /tmp/sie_weekly_runs.json
+### Step 1: Get this week's SIE snapshots
+Use git history for `data/sie-360.json`. The daily deterministic check overwrites that file each day, and the daily data commit preserves the history.
 
+```bash
+cd /root/.openclaw/workspace
 python3 << 'WEEKLY'
 import json
+import subprocess
+from collections import Counter
+from datetime import datetime
 
-with open("/tmp/sie_weekly_runs.json") as f:
-    text = f.read()
+log = subprocess.run(
+    ["git", "log", "--since=8.days", "--format=%H", "--", "data/sie-360.json"],
+    capture_output=True, text=True, check=True
+)
+commits = [c for c in log.stdout.splitlines() if c.strip()][:7]
+if not commits:
+    print("SIE snapshots this week: 0")
+    raise SystemExit(0)
 
-decoder = json.JSONDecoder()
-for i, ch in enumerate(text):
-    if ch == '{':
-        try:
-            data, _ = decoder.raw_decode(text[i:])
-            break
-        except: continue
+snapshots = []
+for sha in commits:
+    blob = subprocess.run(
+        ["git", "show", f"{sha}:data/sie-360.json"],
+        capture_output=True, text=True, check=True
+    ).stdout
+    data = json.loads(blob)
+    snapshots.append(data)
 
-entries = data.get("entries", [])
-print(f"SIE runs this week: {len(entries)}")
-
-for e in entries:
-    status = e.get("status", "?")
-    duration = e.get("durationMs", 0) // 1000
-    summary = e.get("summary", "")[:100]
-    print(f"  [{status}] {duration}s - {summary}...")
+snapshots.sort(key=lambda d: d.get("generated", ""))
+print(f"SIE snapshots this week: {len(snapshots)}")
+for s in snapshots:
+    gen = s.get("generated", "?")
+    score = s.get("health_score", "?")
+    summary = s.get("summary", {})
+    print(f"  {gen} | score={score} | ok={summary.get('ok','?')} warn={summary.get('warn','?')} alert={summary.get('alert','?')}")
 WEEKLY
 ```
 
 ### Step 2: Trend analysis
-From the daily summaries:
+From the daily snapshots:
 - Health score trend (improving/declining/stable)
 - Recurring issues (same issue appearing 3+ days)
 - Areas that improved
 - New issues that appeared
+
+Use only evidence visible across the retrieved daily `data/sie-360.json` snapshots. Do not invent missing days.
 
 ### Step 3: Learnings status
 ```bash
@@ -71,13 +83,14 @@ Recommendations for next week:
 ```
 
 ## Error Handling
-- If no runs this week: Report "No SIE runs - check if cron is enabled"
-- If run data parsing fails: Report partial data
+- If no snapshots this week: Report "No SIE snapshots found in git history - check daily data commits"
+- If git history lookup fails but `data/sie-360.json` exists: report that only the latest snapshot is available and trends are limited
+- If snapshot parsing fails: report partial data and say which snapshot failed
 
 ## Quality Gates
-- Must include at least 5 days of data for meaningful trends
-- Must identify recurring issues (not just list daily reports)
-- Health score trend must be calculated, not guessed
+- Must include at least 5 daily snapshots for meaningful trends
+- Must identify recurring issues from repeated findings, not just list one day's output
+- Health score trend must be calculated from snapshot data, not guessed
 
 ## Output Rules
 - No em dashes. Hyphens only.

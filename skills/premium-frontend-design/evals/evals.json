@@ -1,0 +1,20 @@
+{
+  "skill_name": "premium-frontend-design",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Audit this existing React dashboard and give me the highest-impact UI fixes without rewriting the app.",
+      "expected_output": "A concise audit covering hierarchy, spacing/layout, color/surface, states/accessibility, responsiveness, and prioritized fixes."
+    },
+    {
+      "id": 2,
+      "prompt": "Build a premium SaaS landing page hero and feature section for an AI operations product. Keep it executive and not flashy.",
+      "expected_output": "Frontend guidance or implementation that avoids generic AI-purple styling, includes responsive layout, real states where relevant, and credible executive copy."
+    },
+    {
+      "id": 3,
+      "prompt": "Polish this Tailwind component so it feels less AI-generated and more product-grade.",
+      "expected_output": "Targeted component improvements for typography, spacing, states, accessibility, and dependency-safe implementation."
+    }
+  ]
+}

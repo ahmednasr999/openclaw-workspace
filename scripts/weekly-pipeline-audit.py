@@ -47,33 +47,28 @@ CHAT_ID = "866838380"
 now = datetime.now(CAIRO)
 today = now.strftime("%Y-%m-%d")
 
-# ── Pipeline scripts (the 17 that matter) ──
+# ── Pipeline scripts (live morning briefing pipeline + core consumers) ──
 PIPELINE_PYTHON = [
-    "jobs-source-linkedin.py", "jobs-source-indeed.py", "jobs-source-google.py",
+    "jobs-source-linkedin-jobspy.py", "jobs-source-indeed.py", "jobs-source-google.py",
     "jobs-source-common.py", "jobs-merge.py", "jobs-enrich-jd.py", "jobs-review.py",
-    "push-submit-to-notion.py", "email-agent.py", "linkedin-auto-poster.py",
-    "comment-radar-agent.py", "outreach-agent.py", "outreach-followup-tracker.py",
-    "system-agent.py", "briefing-agent.py", "pam-telegram.py", "briefing-doctor.py",
-    "pipeline-agent.py", "linkedin-content-agent.py", "linkedin-post-agent.py",
-    "sync-applied-from-notion.py", "heartbeat-checker.py",
+    "email-agent.py", "email-agent-gated.py", "outreach-agent.py", "outreach-followup-tracker.py",
+    "system-agent.py", "pipeline-agent.py", "push-to-nocodb.py", "heartbeat-checker.py",
+    "daily-learner.py", "briefing-agent.py", "pam-telegram.py", "briefing-doctor.py",
 ]
 
 PIPELINE_SHELL = ["run-briefing-pipeline.sh"]
 
 # ── Data flow map: file → who writes it → who reads it ──
 DATA_FLOW = {
-    "jobs-raw/linkedin.json": {"writer": "jobs-source-linkedin.py", "readers": ["jobs-merge.py"]},
+    "jobs-raw/linkedin.json": {"writer": "jobs-source-linkedin-jobspy.py", "readers": ["jobs-merge.py"]},
     "jobs-raw/indeed.json": {"writer": "jobs-source-indeed.py", "readers": ["jobs-merge.py"]},
     "jobs-raw/google-jobs.json": {"writer": "jobs-source-google.py", "readers": ["jobs-merge.py"]},
     "jobs-merged.json": {"writer": "jobs-merge.py", "readers": ["jobs-enrich-jd.py", "jobs-review.py"]},
-    "jobs-summary.json": {"writer": "jobs-review.py", "readers": ["briefing-agent.py", "pam-telegram.py", "push-submit-to-notion.py"]},
-    "email-summary.json": {"writer": "email-agent.py", "readers": ["briefing-agent.py", "pam-telegram.py"]},
-    "system-health.json": {"writer": "system-agent.py", "readers": ["briefing-agent.py", "pam-telegram.py"]},
-    "comment-radar.json": {"writer": "comment-radar-agent.py", "readers": ["briefing-agent.py", "pam-telegram.py"]},
+    "jobs-summary.json": {"writer": "jobs-review.py", "readers": ["briefing-agent.py", "pam-telegram.py", "push-to-nocodb.py", "briefing-doctor.py"]},
+    "email-summary.json": {"writer": "email-agent.py", "readers": ["briefing-agent.py", "pam-telegram.py", "briefing-doctor.py"]},
+    "system-health.json": {"writer": "system-agent.py", "readers": ["briefing-agent.py", "pam-telegram.py", "briefing-doctor.py"]},
     "outreach-suggestions.json": {"writer": "outreach-agent.py", "readers": ["briefing-agent.py", "pam-telegram.py"]},
-    "content-schedule.json": {"writer": "linkedin-content-agent.py", "readers": ["briefing-agent.py"]},
-    "pipeline-status.json": {"writer": "pipeline-agent.py", "readers": ["briefing-agent.py"]},
-    "linkedin-post.json": {"writer": "linkedin-post-agent.py", "readers": ["briefing-agent.py", "pam-telegram.py"]},
+    "pipeline-status.json": {"writer": "pipeline-agent.py", "readers": ["briefing-agent.py", "heartbeat-checker.py", "daily-learner.py"]},
 }
 
 # Secrets patterns to flag
@@ -142,9 +137,9 @@ def check_shell_vars():
             continue
         content = path.read_text()
         
-        # Find all variable definitions
-        defined = set(re.findall(r'^([A-Z_][A-Z_0-9]*)=', content, re.MULTILINE))
-        defined.update(re.findall(r'\blocal\s+([a-z_][a-z_0-9]*)=', content, re.MULTILINE))
+        # Find all variable definitions, including indented assignments inside conditionals/functions
+        defined = set(re.findall(r'^\s*([A-Z_][A-Z_0-9]*)=', content, re.MULTILINE))
+        defined.update(re.findall(r'\blocal\s+([A-Za-z_][A-Za-z_0-9]*)=', content, re.MULTILINE))
         # Add common builtins
         defined.update(["HOME", "PATH", "PWD", "USER", "BASH_SOURCE", "FUNCNAME",
                        "PIPESTATUS", "RANDOM", "SECONDS", "LINENO", "HOSTNAME",
