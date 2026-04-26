@@ -1,13 +1,11 @@
 {
-  "timestamp": "2026-04-25T06:00:46.464515+03:00",
+  "timestamp": "2026-04-25T21:00:41.750261+03:00",
   "total_crons": 26,
   "system_crons": 26,
   "openclaw_crons": 0,
   "notion_created": 0,
   "notion_updated": 26,
-  "errors": [
-    "Error parsing openclaw crons: Command '['openclaw', 'cron', 'list']' timed out after 15 seconds"
-  ],
+  "errors": [],
   "crons": [
     {
       "name": "cron-watchdog-v3.sh",
@@ -15,7 +13,7 @@
       "type": "system",
       "last_status": {
         "status": "\u274c Failed",
-        "last_run": "2026-04-25 06:00:29.904254+03:00",
+        "last_run": "2026-04-25 20:00:19.638145+03:00",
         "error": "Check log for details"
       }
     },
@@ -25,7 +23,7 @@
       "type": "system",
       "last_status": {
         "status": "\u274c Failed",
-        "last_run": "2026-04-25 06:00:01.756069+03:00",
+        "last_run": "2026-04-25 20:03:01.340204+03:00",
         "error": "Check log for details"
       }
     },
@@ -65,7 +63,7 @@
       "type": "system",
       "last_status": {
         "status": "\u2705 OK",
-        "last_run": "2026-04-24 20:00:01.935570+03:00",
+        "last_run": "2026-04-25 20:00:01.264025+03:00",
         "error": null
       }
     },
@@ -85,7 +83,7 @@
       "type": "system",
       "last_status": {
         "status": "\u274c Failed",
-        "last_run": "2026-04-25 06:00:01.756069+03:00",
+        "last_run": "2026-04-25 20:03:01.340204+03:00",
         "error": "Check log for details"
       }
     },
@@ -145,7 +143,7 @@
       "type": "system",
       "last_status": {
         "status": "\u2705 OK",
-        "last_run": "2026-04-24 20:30:01.264363+03:00",
+        "last_run": "2026-04-25 20:30:01.563823+03:00",
         "error": null
       }
     },
@@ -175,7 +173,7 @@
       "type": "system",
       "last_status": {
         "status": "\u274c Failed",
-        "last_run": "2026-04-24 16:13:22.748564+03:00",
+        "last_run": "2026-04-25 06:30:01.167838+03:00",
         "error": "Check log for details"
       }
     },

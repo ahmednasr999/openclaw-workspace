@@ -2068,3 +2068,23 @@ Start with: systemctl --user start openclaw-gateway.service
 [2026-04-25 04:00] Summary: fixes=0 warnings=0 alerts=0
 [2026-04-25 06:00] === Watchdog v3 run ===
 [2026-04-25 06:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-25 08:00] === Watchdog v3 run ===
+[2026-04-25 08:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-25 10:00] === Watchdog v3 run ===
+[2026-04-25 10:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-25 12:00] === Watchdog v3 run ===
+[2026-04-25 12:00] FIXED: Re-triggered failed cron 82dd85c2-9300-4083-98d7-fa5cff90b795
+[2026-04-25 12:00] Summary: fixes=1 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:82dd85c2-9300-4083-98d7-fa5cff90b795:1777107639007:2"
+}
+[2026-04-25 14:00] === Watchdog v3 run ===
+[2026-04-25 14:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-25 16:00] === Watchdog v3 run ===
+[2026-04-25 16:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-25 18:00] === Watchdog v3 run ===
+[2026-04-25 18:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-04-25 20:00] === Watchdog v3 run ===
+[2026-04-25 20:00] Summary: fixes=0 warnings=0 alerts=0

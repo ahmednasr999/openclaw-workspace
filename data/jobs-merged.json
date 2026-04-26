@@ -2,51 +2,16 @@
   "meta": {
     "agent": "jobs-merge",
     "version": "1.0.0",
-    "generated_at": "2026-04-25T03:10:13.076875+02:00",
-    "duration_ms": 55387,
+    "generated_at": "2026-04-25T11:10:11.686520+02:00",
+    "duration_ms": 57521,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "392e732d",
+    "run_id": "98f88883",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": [
-    {
-      "id": "linkedin_jobspy-li-4400681468",
-      "source": "linkedin_jobspy",
-      "title": "Senior Executive Director- Business Development",
-      "company": "RIG (Recruitment International Group)",
-      "location": "Dubai, United Arab Emirates",
-      "url": "https://www.linkedin.com/jobs/view/4400681468",
-      "posted": "2026-04-11",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 40,
-      "match_keywords": [
-        "ai",
-        "enterprise",
-        "executive",
-        "director",
-        "leadership",
-        "growth"
-      ],
-      "raw_snippet": "POSITION OBJECTIVE\n \n\n\n\n The Senior Executive Director \u2013 Business Development provides enterprise\\-level strategic leadership to architect and execute at the forefront of institutional growth, sector expansion, and enterprise revenue performance aiming for 5X growth in 5 Years.\n \n\n\n\n  \n\n\n\n\n\n The inc",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Program Director",
-      "linkedin_id": "li-4400681468",
-      "jd_text": "POSITION OBJECTIVE\n \n\n\n\n The Senior Executive Director \u2013 Business Development provides enterprise\\-level strategic leadership to architect and execute at the forefront of institutional growth, sector expansion, and enterprise revenue performance aiming for 5X growth in 5 Years.\n \n\n\n\n  \n\n\n\n\n\n The incumbent is responsible for governing enterprise commercial architecture, sector diversification, institutional revenue sustainability, bid governance oversight, solution design alignment, pricing discipline, and commercial risk mitigation. This role ensures scalable, diversified, and margin\\-accretive growth aligned with long\\-term strategic objectives and institutional capability.\n \n\n\n\n  \n\n\n\n\n\n This role involves cultivating strong institutional and government relationships, identifying new market opportunities, and developing comprehensive growth strategies to expand reach across sectors and geographies. The Executive Director will lead the Business Development function to ensure alignment with overall mission and long\\-term strategic objectives.\n \n\n\n\n  \n\n\n\n\n\n ACADEMIC QUALIFICATIONS\n \n\n\n\n A Master\u2019s degree in Business Administration, Strategy, Management, or a related field is required with executive education or advanced commercial leadership qualifications being highly preferred.\n \n\n\n\n  \n\n\n\n\n\n Doctoral qualification considered advantageous\n \n\n\n\n  \n\n\n\n\n\n SKILLS AND EXPERIENCE\n \n\n\n\n  \n\n\n\n\n\n Experience\n \n\n\n\n \u2022 Minimum of 15\u201320 years of progressive experience in Business Development, Commercial Strategy, or Enterprise Growth leadership.\n \n\n\n\n \u2022 Proven track record managing diversified large\\-scale revenue portfolios with multi\\-sector expansion.\n \n\n\n\n \u2022 Experience supervising Executive Director\\-level leaders and commercial vertical heads.\n \n\n\n\n \u2022 Extensive experience in UAE institutional and government markets within multi\\-cultural environments.\n \n\n\n\n  \n\n\n\n\n\n Technical \\& Strategic Expertise\n \n\n\n\n \u2022 Enterprise growth strategy execution aligned to \u226530% CAGR performance expectations.\n \n\n\n\n \u2022 Revenue diversification and concentration risk governance frameworks.\n \n\n\n\n \u2022 Pricing architecture, margin protection, and contract structuring expertise.\n \n\n\n\n \u2022 Pipeline forecasting governance with structured variance control discipline.\n \n\n\n\n \u2022 Thorough Knowledge of strategic revenue planning, enterprise forecasting, and commercial governance frameworks in post\\-secondary/tertiary education and lifelong learning.\n \n\n\n\n \u2022 Knowledge of contract administration, negotiations, business planning and change management\n \n\n\n\n \u2022 Ability to analyze and interpret revenue performance, pipeline data, and margin metrics.\n \n\n\n\n \u2022 Excellent interpersonal and communication skills and a polished, professional presence with proven ability to build strong client relationships from the C\\-level of target clients.\n \n\n\n\n \u2022 Exceptional presentation and bespoke solutions selling skills with proven success in with contemporary higher educational practices, learning theories, active learning and formative, authentic assessment products.\n \n\n\n\n \u2022 Knowledge of communication, marketing, and public relation techniques aligned to growth strategyManagement \\& Leadership Skills\n \n\n\n\n \u2022 Enterprise growth strategy execution aligned to \u226530% CAGR performance expectations.\n \n\n\n\n \u2022 Revenue diversification and concentration risk governance frameworks.\n \n\n\n\n \u2022 Pricing architecture, margin protection, and contract structuring expertise.\n \n\n\n\n \u2022 Pipeline forecasting governance with structured variance control discipline\n \n\n\n\n \u2022 Ability to build and motivate high\\-performance Business Development teams.\n \n\n\n\n \u2022 Strong leadership capability in managing enterprise\\-level growth targets and transformation initiatives.\n \n\n\n\n \u2022 Previous leadership experience within rapid change or transformation in Education \\& Training\n \n\n\n\n \u2022 Superior management and leadership skills as demonstrated by the ability to form professional relationships at all levels of government, the organization and with appropriate external stakeholders as well as the ability to work effectively with a wide range of constituencies in a diverse community",
-      "source_count": 1,
-      "country": "United Arab Emirates",
-      "industry_bonus": 3,
-      "policy_status": "pass",
-      "sources": [
-        "linkedin"
-      ],
-      "first_seen": "2026-04-11"
-    },
     {
       "id": "linkedin_jobspy-li-4405291492",
       "source": "linkedin_jobspy",
@@ -120,7 +85,7 @@
       "company": "Park Brown International",
       "location": "Dubai, United Arab Emirates",
       "url": "https://www.linkedin.com/jobs/view/4405069724",
-      "posted": "",
+      "posted": "2026-04-24",
       "seniority": "C-Suite",
       "domain_match": false,
       "keyword_score": 23,
@@ -749,7 +714,7 @@
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
-      "search_title": "Program Director",
+      "search_title": "Project Director",
       "linkedin_id": "li-4404999475",
       "jd_text": "KEO is a creative enterprise, where innovation is a way of life. We are uniquely resourced with end\\-to\\-end services to take clients from inspiration \u2013 through conceptualization \u2013 to realization of planning, design or project delivery in the built and natural environments. For over 60 years we\u2019ve led with vision, contributing to many of the world\u2019s most ambitious projects, iconic places, remarkable experiences and prosperous communities.\n \n\n\n\n  \n\n\n\n\n\n As a highly integrated and agile AEP/PMCM firm, KEO is recognized by ENR as one of the Top 225 International Design Firms and one of the Top 20 International PM/CM Firms. We are also ranked by World Architecture as the 51st largest global architecture firm and the \\#1 Firm in the Middle East Region in their 2024 WA100 Survey.\n \n\n\n\n  \n\n\n\n\n\n We invite you to join us. Why?\n \n\n\n\n  \n\n\n\n\n\n When you join KEO, you\u2019ll discover more than just a job \u2013 you\u2019ll find a supportive environment that fosters your professional development through internal global mobility and career development and does so within a culture that supports company\\-wide health and well\\-being through on\\-demand counselling services and regular workplace clinics. You will be invited to celebrate community events such as sports days, fun\\-runs, in\\-house sports teams and beach clean ups. In addition to your competitive package and benefits you will have access to a suite of policies that include hybrid working arrangements, individual athletic sponsorship, study assistance sponsorship, employee referral rewards.\n \n\n\n\n  \n\n\n\n\n\n Our newest opportunity is for a talented\n **Director \\- Project Controls** \n to join our PMCM Division based in\n **Dubai OR Abu Dhabi, UAE** \n . This position is responsible for establishing, managing and continuously improving KEO's project controls framework across GCC\\-based projects. This core\\-office position ensures the effective planning, scheduling, resourcing, progress monitoring, reporting, and document control of multi\\-disciplinary consultancy projects.\n \n\n\n\n  \n\n\n\n\n\n The role provides strategic oversight and governance to ensure that projects are delivered on time, within approved schedules, and in alignment with contractual, corporate, and client requirements. The Director will act as a trusted advisor to project directors and senior leadership, supporting informed decision\\-making through accurate data, forecasting, and performance analysis.\n \n\n\n\n  \n\n\n\n\n\n We envisage success in this role to include;\n \n\n\n\n  \n\n\n\n\n* Establish and maintain corporate standards, procedures, and best practices for project planning and scheduling across all projects.\n* Provide strategic oversight of project baseline schedules, ensuring alignment with contracts, scopes, and milestones.\n* Review, validate, and approve project schedules, recovery plans, and revised programs.\n* Ensure integration of schedules across disciplines, phases, and stakeholders.\n* Monitor schedule performance, identify critical path risks, and drive mitigation strategies in collaboration with project teams.\n* Oversee project performance measurement systems, including progress tracking, earned value management, and KPI reporting.\n* Ensure timely and accurate preparation of executive dashboards, monthly reports, and schedule risk assessments.\n* Analyze trends, variances, and forecast impacts on project timelines and advise leadership on corrective actions.\n* Support senior management with data\\-driven insights for strategic planning and decision\\-making.\n* Lead the development and management of resource planning and forecasting across all projects in GCC.\n* Ensure optimal allocation of personnel in line with project requirements, skills, availability, and workload.\n* Work closely with HR, Operations, and Project Directors to address resource gaps, mobilization planning, and recruitment forecasting.\n* Monitor utilization rates and proactively manage capacity planning to support business objectives.\n* Support succession planning and development of project controls talent within the organization.\n\n\n\n  \n\n\n\n\n\n To be successful in this dynamic opportunity, we envision that your career journey to date will include minimum 15 years work experience partnered with a Bachelor's Degree in Engineering, Constructuon Management , Project Management or related discipline.\n \n\n\n\n  \n\n\n\n\n\n Chartered status or Professional Membership will be viewed favourably.\n \n\n\n\n  \n\n\n\n\n\n KEO\u2019s performance is founded upon integrity, results, innovation, safety and our people. We embrace diversity and recognise its\u2019 contribution to client success wherever we work.\n \n\n\n\n We are excited to hear how you can partner with our award\\-winning team and treat all expressions of interest confidentially.",
       "source_count": 1,
@@ -1282,15 +1247,15 @@
     }
   ],
   "kpi": {
-    "total_raw": 358,
+    "total_raw": 359,
     "sources_loaded": 2,
     "stale_sources": 2,
-    "unique_after_dedup": 328,
+    "unique_after_dedup": 326,
     "applied_filtered": 0,
-    "policy_filtered": 235,
-    "final_candidates": 40,
+    "policy_filtered": 233,
+    "final_candidates": 39,
     "multi_source_jobs": 0,
-    "new_today": 40
+    "new_today": 39
   },
   "recommendations": []
 }

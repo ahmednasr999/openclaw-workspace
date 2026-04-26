@@ -983,3 +983,27 @@ I escalated LinkedIn/GulfTalent notification subjects as a CRITICAL ALERT before
 I treated notification metadata as enough evidence instead of verifying the message body and distinguishing connection invites/job alerts from real interview invitations.
 ### Fix
 For job/interview/email alerts, read the actual message first, classify it, assess relevance against Ahmed's target profile, and only mark critical when the content truly warrants interruption.
+
+## 2026-04-25 - JobZoom Needs Persistent Applied-Job Dedup Before Pass 1
+### What I got wrong
+JobZoom was allowed to surface jobs Ahmed had already applied to in previous runs. Same-day duplicate detection worked, but applied roles from prior days were not being persisted and excluded before Pass 1.
+### Why
+I treated daily run deduplication as sufficient and did not close the loop between Ahmed's "applied to all X jobs" confirmation and future scrape filtering.
+### Fix
+JobZoom must write applied job IDs/URLs/signatures to a permanent applied-jobs ledger whenever Ahmed confirms applications were completed, and every future run must load that ledger and exclude those roles before Pass 1 scoring. Report filenames should use the actual run date (`jobzoom-YYYYMMDD`) and PDF tables must be checked for overflow before delivery.
+
+## 2026-04-25 - Email alerts need analysis, not raw forwarding
+### What I got wrong
+I forwarded a Gmail "critical alert" as raw invite-like lines and mislabeled generic application acknowledgements/job alerts as interview invites.
+### Why
+I trusted subject/sender pattern matching instead of reading message bodies and classifying actual stage, action required, deadline, and priority.
+### Fix
+For job/recruiting email alerts, read the email body before alerting. Classify each item as interview invite, application acknowledgement, recruiter screen, job alert, rejection, or newsletter. Include priority, why it matters, required action, and recommended next step. Do not call it an interview invite unless the body explicitly requests or schedules an interview/screening.
+
+## 2026-04-25 - Proactive core-system improvement should originate from me
+### What I got wrong
+Ahmed had to bring an external example before I tightened the core operating files. I should have identified the drift myself: long files, stale model references, Mission Control contradiction, and weak alert classification rules.
+### Why
+I treated core-file maintenance as reactive cleanup instead of a standing proactive responsibility.
+### Fix
+Periodically audit the operating contract without waiting for Ahmed: check SOUL/USER/AGENTS/TOOLS for contradictions, stale rules, model drift, alert-quality gaps, and rules that no longer steer behavior. Surface the recommendation before Ahmed has to prompt it.
