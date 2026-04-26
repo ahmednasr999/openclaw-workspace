@@ -1,5 +1,122 @@
 # Learnings Log
 
+## [LRN-20260413-001] best_practice
+
+**Logged**: 2026-04-13T18:52:00Z
+**Priority**: high
+**Status**: pending
+**Area**: workflow
+
+### Summary
+When using lab directories outside the workspace, do not surface `apply_patch` sandbox-root failures as if the actual repo or plan failed.
+
+### Details
+While reconciling the update lab under `/tmp`, I tried to use `apply_patch` directly on files outside the workspace root. The tool correctly refused, but I then surfaced that failure noisily instead of immediately framing it as a tooling-scope limitation. In the same update sequence, I also reported the checkpoint commit as failed before re-checking git state, and later confirmed the commit had actually landed. The fix is to verify repository state first, then explain whether a failure is real, lab-only, or tool-scope only.
+
+### Suggested Action
+Before reporting failure, check live git state (`git log`, `git status`) and distinguish among: tool limitation, lab-only failure, and real repo failure. For `/tmp` lab edits, use exec-based file mutation instead of workspace-only patch tools.
+
+### Metadata
+- Source: conversation
+- Related Files: /root/.openclaw/workspace/.learnings/LEARNINGS.md
+- Tags: workflow, tooling, git, update, verification, best_practice
+
+---
+
+## [LRN-20260412-003] correction
+
+**Logged**: 2026-04-12T16:35:00Z
+**Priority**: high
+**Status**: pending
+**Area**: workflow
+
+### Summary
+When Ahmed moves to the next CMO post image, keep using `scripts/generate-premium-content-card.py` as the default production path.
+
+### Details
+Ahmed corrected me after I moved from Apr 13 to Apr 14 and evaluated the older minimal card asset instead of continuing with the same premium generator that had just been established for the series. The miss was not the image itself, it was breaking the approved workflow continuity.
+
+### Suggested Action
+For this CMO LinkedIn series, use `/root/.openclaw/workspace-cmo/scripts/generate-premium-content-card.py` by default for follow-on image generation and revisions unless Ahmed explicitly asks for a different tool or style path.
+
+### Metadata
+- Source: user_feedback
+- Related Files: /root/.openclaw/workspace-cmo/scripts/generate-premium-content-card.py, /root/.openclaw/workspace/memory/lessons-learned.md
+- Tags: correction, cmo, images, workflow, consistency, premium-generator
+- See Also: LRN-20260412-001
+
+---
+
+## [LRN-20260412-002] correction
+
+**Logged**: 2026-04-12T11:01:00Z
+**Priority**: high
+**Status**: pending
+**Area**: docs
+
+### Summary
+Routine status replies also need light emoji use for Ahmed, not just casual conversation.
+
+### Details
+Ahmed corrected me again after a reply to an email-agent status update went out without emojis. The failure pattern is consistency: I remember the preference in casual chat, then drop it in operational summaries. That split is wrong for this user.
+
+### Suggested Action
+Apply the emoji preference consistently across conversational and routine status replies. Default to at least one light, relevant emoji when replying directly to Ahmed unless the context is sensitive or highly formal.
+
+### Metadata
+- Source: user_feedback
+- Related Files: /root/.openclaw/workspace/USER.md, /root/.openclaw/workspace/memory/lessons-learned.md
+- Tags: correction, communication, emoji, consistency, style
+- See Also: LRN-20260412-001
+
+---
+
+## [LRN-20260412-001] correction
+
+**Logged**: 2026-04-12T09:35:00Z
+**Priority**: high
+**Status**: pending
+**Area**: docs
+
+### Summary
+Ahmed explicitly expects emojis in replies, and underusing them after repeated reminders is a preference miss.
+
+### Details
+Ahmed corrected me again after I answered a question about emojis too defensively and still sounded like I was treating emojis as optional. His preference is already documented in USER.md, so repeating the miss means I was not following stored memory closely enough.
+
+### Suggested Action
+Use emojis naturally in Ahmed-facing replies by default, especially in conversational messages, acknowledgments, and light summaries. Keep them sparse and additive, not noisy.
+
+### Metadata
+- Source: user_feedback
+- Related Files: /root/.openclaw/workspace/USER.md, /root/.openclaw/workspace/memory/lessons-learned.md
+- Tags: correction, communication, emoji, preference, style
+
+---
+
+## [LRN-20260411-001] best_practice
+
+**Logged**: 2026-04-11T14:45:00Z
+**Priority**: high
+**Status**: pending
+**Area**: infra
+
+### Summary
+`gateway update.run` tracks upstream `origin/main`, not necessarily the latest tagged release, so do not assume a release-tag upgrade when using it.
+
+### Details
+I checked upstream and discussed `v2026.4.10` as the next release, but the actual `gateway update.run` advanced the repo from `2026.4.9` to `2026.4.11` because the update flow rebased onto the current upstream main commit. That means version targeting must be explicit if the user wants a specific release tag rather than the newest mainline build.
+
+### Suggested Action
+When proposing or executing OpenClaw updates, state clearly whether the path is latest tagged release or latest upstream main. If exact version control matters, do not assume `update.run` will stop at the most recent tag.
+
+### Metadata
+- Source: conversation
+- Related Files: /root/openclaw, /root/.openclaw/openclaw.json
+- Tags: openclaw, update, versioning, rollout, best_practice
+
+---
+
 ## [LRN-20260410-004] best_practice
 
 **Logged**: 2026-04-09T23:31:30Z
@@ -723,7 +840,7 @@ Scanner `semantic_fit_filter()` requires JD text for career_verdict. Jobs withou
 
 ## [2026-03-25] Meta-tool "no connection" = check workspace scripts FIRST before OAuth
 
-**What happened:** Composio said "no active connection for notion" → generated OAuth link → link expired → repeated 5 times over 30 minutes. Workspace scripts had direct token all along (stored in `notion.json`).
+**What happened:** Composio said "no active connection for notion" → generated OAuth link → link expired → repeated 5 times over 30 minutes. Workspace scripts had direct token all along (`[REDACTED_SECRET]` in `notion.json`).
 
 **Root cause 1:** LCM summaries said "NOTION_API_KEY NOT FOUND" — a compressed conclusion from prior sessions, not a fact. Treated as ground truth instead of checking config files.
 
@@ -782,6 +899,86 @@ Ahmed explicitly clarified that this work should run on GPT, not MiniMax. A prev
 I spawned a follow-up coding/research pass without forcing the model strongly enough for this workflow.
 
 ### Fix
-For this research-system build track, explicitly pin spawned runs to GPT-5.4 unless Ahmed says otherwise. Do not treat MiniMax as acceptable for this workstream.
+Superseded 2026-04-25: current preferred model is GPT-5.5. For this research-system build track, explicitly pin spawned runs to GPT-5.5 unless Ahmed says otherwise. Do not treat MiniMax as acceptable for this workstream.
 
 ---
+
+
+## [LRN-20260412-002] correction
+
+**Logged**: 2026-04-12T20:13:08+02:00
+**Priority**: high
+**Status**: pending
+**Area**: infra
+
+### Summary
+When Ahmed asks for performance recommendations, give in-place remediation first instead of leading with server resizing.
+
+### Details
+I diagnosed the VPS correctly, but then recommended increasing VPS size before laying out the practical fixes that can be done on the current host. Ahmed explicitly wanted solutions to the current issue, not an infrastructure upsell.
+
+### Suggested Action
+For performance incidents, rank recommendations in this order: current-host remediation, safe cleanup, workload reduction, and only then optional capacity upgrades.
+
+### Metadata
+- Source: user_feedback
+- Related Files: memory/lessons-learned.md
+- Tags: correction, performance, recommendations, prioritization
+
+---
+## [LRN-20260417-001] correction
+
+**Logged**: 2026-04-17T13:22:45.354679Z
+**Priority**: high
+**Status**: pending
+**Area**: config
+
+### Summary
+Sub-agents can ignore Ahmed's emoji preference when the preference is not explicitly propagated into their brief or session bootstrap.
+
+### Details
+Ahmed corrected that the email agent again replied without emojis despite an established preference in USER.md to use emojis naturally and sparingly. The likely failure mode is that detached/sub-agent workflows are not consistently inheriting user-style preferences from main-session memory/context.
+
+### Suggested Action
+For recurring delegated agents, explicitly include the emoji/style preference in the sub-agent brief or shared prompt context instead of assuming USER.md inheritance will be enough.
+
+### Metadata
+- Source: user_feedback
+- Related Files: /root/.openclaw/workspace/USER.md
+- Tags: subagent, style, emoji, preference-propagation
+
+---
+
+## [LRN-20260425-001] correction
+
+**Logged**: 2026-04-25T17:35:00Z
+**Priority**: high
+**Status**: pending
+**Area**: workflow
+
+### Summary
+Core operating-file cleanup should be proactively recommended by the agent, not only after Ahmed shares an external example.
+
+### Details
+Ahmed asked why improvements like the SOUL/USER/AGENTS/TOOLS cleanup did not originate from me. The miss was treating prompt-file quality as reactive maintenance instead of a standing responsibility.
+
+### Suggested Action
+Run periodic operating-contract audits for stale model references, contradictions, retired workflows, alert-quality gaps, and bloated rules. Surface the recommendation before Ahmed has to prompt it.
+
+### Metadata
+- Source: user_feedback
+- Related Files: SOUL.md, USER.md, AGENTS.md, TOOLS.md
+- Tags: correction, proactive, operating-contract, self-improvement
+
+---
+
+## 2026-04-26 - Continue standing work after completing one item
+
+### What Happened
+Ahmed corrected me after I fixed and committed the X Intelligence Crawler work but stopped instead of continuing to the next known remaining item.
+
+### Lesson
+When there is an explicit remaining-items list and the current item is complete, do not wait for another prompt. Continue to the next safe actionable item, schedule time-bound observations with cron, and only stop for real blockers, risky external/destructive actions, or decisions Ahmed must make.
+
+### Do Differently
+After each completed workstream, check the active remaining list and immediately advance the next safe item or create scheduled follow-up checks for items that depend on time.
