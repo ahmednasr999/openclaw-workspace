@@ -16,7 +16,7 @@ python3 scripts/notion-query.py --db 3268d599-a162-814b-8854-c9b8bde62468 \
 ```
 
 ✅ PASS: 5 posts scheduled across next 5 business days
-❌ FAIL: Any gap → trigger gap alert to CEO immediately
+❌ FAIL: Any gap in business days 1–3 → trigger the decision-card gap alert to CEO immediately; gap only in days 4–5 → log as backlog health warning and add to Friday batch/approval follow-up.
 
 ---
 

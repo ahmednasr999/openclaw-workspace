@@ -39,7 +39,36 @@ Minimum viable calendar:
 - No more than 1 post per business day
 - At least 2 posts per week should be original insight (not just reposts)
 
-If calendar drops below 3 days of content → alert CEO DM with a brief content gap note.
+Alert threshold vs planning target:
+- Alert CEO immediately when any of the next 3 business days lacks a `Scheduled` post.
+- Treat 5-business-day coverage as the planning/QA target; days 4–5 are a backlog health warning, not the emergency page threshold.
+
+If the 3-business-day threshold is breached → alert CEO DM with a short decision-card, not a paragraph:
+
+```
+🚨 Content Gap Alert - [High|Medium]
+
+🎯 Action required
+[Specific approve/schedule action and deadline]
+
+📌 Situation
+- Window at risk: [dates]
+- Scheduled: [count] posts
+- Gap days: [dates]
+
+📝 Ready queue
+- [date]: [title] ([status])
+
+✅ System checks
+- Notion direct access: working
+- Publishing watchdog: [clean|issue]
+- Pending approvals: [count]
+- Engagement-log errors: [none|count]
+
+Bottom line: this is an approval/scheduling gap, not a system failure.
+```
+
+Use `/root/.openclaw/workspace-cmo/scripts/format_content_gap_alert.py` with the JSON from `heartbeat_check_current.py` when possible.
 
 ## Session End
 

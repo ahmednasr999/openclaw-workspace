@@ -54,8 +54,12 @@ log = logging.getLogger("cmo-desk-agent")
 # ─── Helpers ────────────────────────────────────────────────────────────────────
 
 def run_script(script_name: str, args: list[str] = []) -> tuple[str, int]:
-    """Run a script from SCRIPTS_DIR, return (output, returncode)."""
-    script_path = SCRIPTS_DIR / script_name
+    """Run a script from SCRIPTS_DIR or workspace-cmo/scripts, return (output, returncode)."""
+    script_path = Path(script_name)
+    if not script_path.is_absolute():
+        primary = SCRIPTS_DIR / script_name
+        cmo_path = Path("/root/.openclaw/workspace-cmo/scripts") / script_name
+        script_path = primary if primary.exists() else cmo_path
     cmd = [sys.executable, str(script_path)] + args
     result = subprocess.run(cmd, capture_output=True, text=True, cwd=str(WORKSPACE))
     output = result.stdout + result.stderr
@@ -96,20 +100,32 @@ def sessions_send_to_ceo(message: str, dry_run: bool = False) -> bool:
     return True
 
 
-def get_notion_scheduled_posts(days_ahead: int = 5) -> list[dict]:
-    """Query Notion for Scheduled posts in the next N days."""
-    output, code = run_script("notion-query.py", [
-        "--db", NOTION_DB_ID,
-        "--filter", f'{{"status": "Scheduled", "days_ahead": {days_ahead}}}'
-    ])
+def get_content_calendar_snapshot() -> dict:
+    """Use the maintained workspace-cmo heartbeat check as Notion source of truth."""
+    output, code = run_script("heartbeat_check_current.py")
     if code != 0:
-        log.warning(f"notion-query.py failed: {output}")
-        return []
+        log.warning(f"heartbeat_check_current.py failed: {output}")
+        return {}
     try:
         return json.loads(output)
     except json.JSONDecodeError:
-        log.warning(f"Could not parse notion-query output: {output[:200]}")
-        return []
+        log.warning(f"Could not parse heartbeat_check_current output: {output[:200]}")
+        return {}
+
+
+def format_content_gap_alert(snapshot: dict) -> str:
+    """Format approved 3-business-day decision-card content gap alert."""
+    proc = subprocess.run(
+        [sys.executable, "/root/.openclaw/workspace-cmo/scripts/format_content_gap_alert.py"],
+        input=json.dumps(snapshot),
+        capture_output=True,
+        text=True,
+        cwd=str(WORKSPACE),
+    )
+    if proc.returncode != 0:
+        log.warning(f"format_content_gap_alert.py failed: {proc.stderr or proc.stdout}")
+        return ""
+    return proc.stdout.strip()
 
 
 def get_pending_engagement() -> list[dict]:
@@ -129,42 +145,25 @@ def get_pending_engagement() -> list[dict]:
 
 def check_calendar_gaps(dry_run: bool = False) -> bool:
     """
-    Check for content calendar gaps.
+    Check for the 3-business-day content-gap alert threshold.
+
+    Five-business-day coverage remains the CMO QA/planning target, but only
+    gaps inside the next 3 business days should page CEO with the decision card.
     Returns True if a gap was detected (and alert sent).
     """
-    scheduled = get_notion_scheduled_posts(days_ahead=5)
+    snapshot = get_content_calendar_snapshot()
+    if not snapshot:
+        return False
 
-    if len(scheduled) == 0:
-        alert = (
-            "⚠️ *Content gap detected!*\n"
-            "No posts scheduled for the next 5 business days.\n\n"
-            "Action needed: Move at least 3 posts from Draft/Ideas → Scheduled in Notion.\n"
-            f"Notion DB: https://notion.so/{NOTION_DB_ID}"
-        )
-        log.warning("Calendar gap detected — alerting CEO")
+    alert = format_content_gap_alert(snapshot)
+    if alert:
+        log.warning("3-business-day calendar gap detected — alerting CEO")
         send_telegram(TELEGRAM_CHAT_ID, alert, thread_id=TELEGRAM_TOPIC_ID, dry_run=dry_run)
         sessions_send_to_ceo(alert, dry_run=dry_run)
         return True
 
-    # Check streak: need ≥3 posts/week Sun–Thu
-    today = datetime.date.today()
-    week_start = today - datetime.timedelta(days=today.weekday())  # Monday
-    week_posts = [
-        p for p in scheduled
-        if p.get("planned_date") and week_start <= datetime.date.fromisoformat(p["planned_date"]) <= week_start + datetime.timedelta(days=4)
-    ]
-    if len(week_posts) < 3:
-        alert = (
-            f"⚠️ *Streak risk:* Only {len(week_posts)} post(s) scheduled this week.\n"
-            "Target: 3+ posts Sun–Thu for GCC executive visibility.\n"
-            "Please move content from Ideas/Draft → Scheduled."
-        )
-        log.warning(f"Streak risk: {len(week_posts)}/3 posts this week")
-        send_telegram(TELEGRAM_CHAT_ID, alert, thread_id=TELEGRAM_TOPIC_ID, dry_run=dry_run)
-        sessions_send_to_ceo(alert, dry_run=dry_run)
-        return True
-
-    log.info(f"Calendar OK: {len(scheduled)} posts scheduled in next 5 days")
+    scheduled = snapshot.get("next_3_days_with_scheduled") or []
+    log.info(f"Calendar OK: {len(scheduled)} scheduled post(s) in next 3 business days")
     return False
 
 

@@ -162,7 +162,7 @@ The CMO Agent handles:
 - Weekly batch summaries
 - Engagement approvals
 - Failure alerts
-- Gap warnings (>5 days without post)
+- 3-business-day content-gap warnings (5 business days remains the QA coverage target)
 
 **To Telegram topic 7:**
 - Respond to Ahmed's direct messages
@@ -180,7 +180,7 @@ The CMO Agent handles:
 ## Quality Checklist (eval/checklist.md)
 
 Run eval/checklist.md after posting or weekly:
-1. Next 5 business days have scheduled posts ✓
+1. Next 5 business days have scheduled posts ✓ (QA target; alert only if the gap is within next 3 business days)
 2. Last 3 scheduled posts have valid images in Notion ✓
 3. Engagement agent sent 3+ comment approvals to CEO this week ✓
 4. No post in "Scheduled" >48 hours without posting (unless paused) ✓
