@@ -2,12 +2,12 @@
   "meta": {
     "agent": "pipeline-agent",
     "version": "1.0.0",
-    "generated_at": "2026-04-25T05:00:02.387763+02:00",
-    "duration_ms": 72,
+    "generated_at": "2026-04-25T19:00:01.607010+02:00",
+    "duration_ms": 30,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "62a1a1b9",
+    "run_id": "504d3160",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -59,12 +59,12 @@
   },
   "recommendations": [
     {
-      "id": "rec-62a1a1b9-0",
+      "id": "rec-504d3160-0",
       "action": "apply_more",
       "target": "Job applications",
       "reason": "Only 0 applications this week, aim for 10+",
       "urgency": "medium",
-      "timestamp": "2026-04-25T05:00:02.387443+02:00"
+      "timestamp": "2026-04-25T19:00:01.606901+02:00"
     }
   ]
 }

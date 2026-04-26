@@ -13,3 +13,18 @@ INFO: OK: latest guardian snapshot shows 72.0% weekly quota remaining
 INFO: ALL_OK
 INFO: SNAPSHOT: weekly=71.0% left, reset in 3d 15h
 NO_ALERTS
+INFO: OK: model-router default is GPT-5.5
+INFO: OK: usage probe succeeded on retry 2
+INFO: OK: Codex usage visible — 5h: 2% used, Week: 30% used
+INFO: OK: models status reports GPT-5.5 as configured default
+INFO: OK: latest guardian snapshot shows 71.0% weekly quota remaining
+INFO: ALL_OK
+INFO: SNAPSHOT: weekly=70.0% left, reset in 3d 9h
+NO_ALERTS
+INFO: OK: model-router default is GPT-5.5
+INFO: OK: Codex usage visible — 5h: 7% used, Week: 31% used
+INFO: OK: models status reports GPT-5.5 as configured default
+INFO: OK: latest guardian snapshot shows 70.0% weekly quota remaining
+INFO: ALL_OK
+INFO: SNAPSHOT: weekly=69.0% left, reset in 3d 3h
+NO_ALERTS

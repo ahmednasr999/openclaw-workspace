@@ -98,3 +98,13 @@
 [2026-04-25T00:04:01Z] RESET [cmo] b9943fa9-7dee-44d6-a3b1-18af96774c55-topic-7.jsonl was 4MB -> archived to b9943fa9-7dee-44d6-a3b1-18af96774c55-topic-7.20260425T000401Z.jsonl.gz
 [2026-04-25T00:04:03Z] RESET [cmo] b9943fa9-7dee-44d6-a3b1-18af96774c55-topic-7.trajectory.jsonl was 51MB -> archived to b9943fa9-7dee-44d6-a3b1-18af96774c55-topic-7.trajectory.20260425T000402Z.jsonl.gz
 [2026-04-25T00:04:03Z] Done reset=9 skipped=1 errors=0
+[2026-04-26T00:05:53Z] RESET [main] eff56784-4287-4a7d-b73b-4c51dbec3122.trajectory.jsonl was 24MB -> archived to eff56784-4287-4a7d-b73b-4c51dbec3122.trajectory.20260426T000552Z.jsonl.gz
+[2026-04-26T00:05:53Z] SKIP [main] eff56784-4287-4a7d-b73b-4c51dbec3122.jsonl locked by live PID 113097 (12MB)
+[2026-04-26T00:05:55Z] RESET [hr] cdc8764b-617a-4543-9433-6ae634f9b5d4-topic-9.trajectory.jsonl was 8MB -> archived to cdc8764b-617a-4543-9433-6ae634f9b5d4-topic-9.trajectory.20260426T000555Z.jsonl.gz
+[2026-04-26T00:05:58Z] RESET [cto] 6d906346-fb20-4499-944d-3172fe370429-topic-8.jsonl was 3MB -> archived to 6d906346-fb20-4499-944d-3172fe370429-topic-8.20260426T000558Z.jsonl.gz
+[2026-04-26T00:05:58Z] RESET [cto] 6d906346-fb20-4499-944d-3172fe370429-topic-8.trajectory.jsonl was 6MB -> archived to 6d906346-fb20-4499-944d-3172fe370429-topic-8.trajectory.20260426T000558Z.jsonl.gz
+[2026-04-26T00:05:59Z] RESET [cto] 69b726ab-6831-4db5-8362-41cfd61f1d87-topic-8.trajectory.jsonl was 8MB -> archived to 69b726ab-6831-4db5-8362-41cfd61f1d87-topic-8.trajectory.20260426T000558Z.jsonl.gz
+[2026-04-26T00:05:59Z] SKIP [cto] ce1042e9-3817-4afe-a507-db8914e006de.jsonl locked by live PID 113097 (1MB)
+[2026-04-26T00:06:00Z] RESET [cmo] e2803d19-c66e-4ed9-8344-3ca3fa7c64f1-topic-7.trajectory.jsonl was 7MB -> archived to e2803d19-c66e-4ed9-8344-3ca3fa7c64f1-topic-7.trajectory.20260426T000559Z.jsonl.gz
+[2026-04-26T00:06:00Z] RESET [cmo] 71b05de7-16fc-4b47-8aa6-b5e6224493f5-topic-7.trajectory.jsonl was 7MB -> archived to 71b05de7-16fc-4b47-8aa6-b5e6224493f5-topic-7.trajectory.20260426T000600Z.jsonl.gz
+[2026-04-26T00:06:00Z] Done reset=7 skipped=2 errors=0

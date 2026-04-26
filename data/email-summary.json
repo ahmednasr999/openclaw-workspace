@@ -2,19 +2,19 @@
   "meta": {
     "agent": "email-agent",
     "version": "3.0.0",
-    "generated_at": "2026-04-25T05:00:21.959452+02:00",
-    "duration_ms": 18740,
+    "generated_at": "2026-04-25T20:01:13.786332+02:00",
+    "duration_ms": 29137,
     "ttl_hours": 4,
     "status": "success",
     "error": null,
-    "run_id": "c641047d",
+    "run_id": "1f0704bf",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
     "status": "ok",
-    "scan_time": "2026-04-25T05:00:06.606654+02:00",
-    "total_scanned": 5,
+    "scan_time": "2026-04-25T20:00:47.028848+02:00",
+    "total_scanned": 4,
     "by_category": {
       "interview_invite": 0,
       "recruiter_reach": 0,
@@ -22,7 +22,7 @@
       "rejection": 0,
       "assessment": 0,
       "follow_up_needed": 0,
-      "other": 5
+      "other": 4
     },
     "interview_invites": [],
     "recruiter_messages": [],
@@ -42,12 +42,12 @@
         "requires_assessment": false,
         "recruiter_top_opportunities": [],
         "top_priority": null,
-        "daily_focus": "No actionable career emails were provided, so focus today on outbound executive networking and targeted GCC applications."
+        "daily_focus": "No actionable recruiting emails were provided; focus today on proactive applications and networking."
       }
     }
   },
   "kpi": {
-    "emails_processed": 5,
+    "emails_processed": 4,
     "actionable": 0,
     "interviews_detected": 0,
     "recruiter_messages": 0,

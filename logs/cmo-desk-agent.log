@@ -1,0 +1,12 @@
+2026-04-25 21:08:45,927 [CMO] INFO CMO Desk Agent starting up...
+2026-04-25 21:08:45,928 [CMO] INFO DRY RUN mode — no real Telegram/LinkedIn/Notion writes
+2026-04-25 21:08:47,590 [CMO] WARNING 3-business-day calendar gap detected — alerting CEO
+2026-04-25 21:08:47,590 [CMO] INFO [DRY RUN] → Telegram -1003882622947:7: 🚨 Content Gap Alert - High
+
+🎯 Action required
+Approve and schedule the Apr 26 post before the next p...
+2026-04-25 21:08:47,590 [CMO] INFO [DRY RUN] → sessions_send to CEO: 🚨 Content Gap Alert - High
+
+🎯 Action required
+Approve and schedule the Apr 26 post before the next p...
+2026-04-25 21:08:49,420 [CMO] INFO --once flag set, exiting after first run
