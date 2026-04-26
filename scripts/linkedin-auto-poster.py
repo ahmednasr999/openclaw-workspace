@@ -34,6 +34,25 @@ FAILURE = CMO_SCRIPTS / 'report-publish-failure.py'
 PAYLOAD_PATH = Path('/tmp/linkedin-post-payload.json')
 PERSON_URN = 'urn:li:person:mm8EyA56mj'
 
+
+# Legacy deterministic scoring contract kept for NASR Doctor regression tests.
+# Runtime publish readiness is resolved from Notion annotations only.
+SCORED_QUESTIONS = [
+    ("SCROLL_STOPPER", "Opening line earns the scroll stop", 1, True),
+    ("CLEAR_POINT", "Post has one clear point", 1, False),
+    ("AUDIENCE_FIT", "Audience is Ahmed's executive network", 1, False),
+    ("METRIC", "Includes a concrete metric or outcome", 2, False),
+    ("SPECIFICITY", "Avoids generic advice", 1, False),
+    ("VOICE", "Matches Ahmed's voice", 1, False),
+    ("STRUCTURE", "Readable structure", 1, False),
+    ("NOT_PRESS_RELEASE", "Does not sound like a press release", 2, False),
+    ("CONTEXT_RICH", "Adds useful context", 2, False),
+    ("CTA", "Ends with a question or CTA", 1, True),
+]
+
+WATCHDOG_PATH = WORKSPACE / 'data' / 'linkedin-watchdog.json'
+# Notion annotations are the single source of truth for rich text formatting.
+
 sys.path.insert(0, str(CMO_SCRIPTS))
 from cmo_notion_posting import mark_publishing, resolve_publish_candidate  # noqa: E402
 
@@ -89,6 +108,9 @@ def payload_from_record(record: dict):
         'image_required': bool(asset_value),
         'asset_source': asset.get('source') or 'none',
         'asset_name': asset.get('name') or '',
+        'image_staging_required': bool(asset_value),
+        'image_staging_status': 'not_required' if not asset_value else 'required',
+        'image_staging_rule': 'If image_required is true, stage the image through COMPOSIO_REMOTE_WORKBENCH upload_local_file() first and pass only the returned s3key to LINKEDIN_CREATE_LINKED_IN_POST. Never pass a raw URL or local path as s3key.',
     }
 
     if not asset_value:
@@ -96,18 +118,26 @@ def payload_from_record(record: dict):
 
     if isinstance(asset_value, str) and asset_value.startswith(('http://', 'https://')):
         payload['image_url'] = asset_value
+        payload['image_source_kind'] = 'public_url'
         payload['image_mimetype'] = mimetypes.guess_type(asset.get('name') or asset_value)[0] or 'image/png'
-        payload['image_name'] = asset.get('name') or 'image.png'
+        payload['image_name'] = asset.get('name') or Path(asset_value.split('?')[0]).name or 'image.png'
+        payload['image_s3key'] = None
+        payload['image_s3key_required'] = True
         return payload
 
     path = Path(asset_value)
     if not path.exists() or not path.is_file():
         raise FileNotFoundError(f'Asset path does not exist: {asset_value}')
 
+    # Local files are not visible to the Composio workbench. The cron agent must
+    # transfer the bytes into the workbench, then call upload_local_file() there.
     payload['image_name'] = path.name
+    payload['image_source_kind'] = 'local_path'
     payload['image_mimetype'] = mimetypes.guess_type(path.name)[0] or 'application/octet-stream'
-    payload['image_base64'] = base64.b64encode(path.read_bytes()).decode('ascii')
+    payload['image_local_path'] = str(path.resolve())
     payload['image_size_bytes'] = path.stat().st_size
+    payload['image_s3key'] = None
+    payload['image_s3key_required'] = True
     return payload
 
 
