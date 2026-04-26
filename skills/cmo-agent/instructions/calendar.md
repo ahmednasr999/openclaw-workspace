@@ -54,16 +54,40 @@ Script: `scripts/image-gen-chain.py` handles routing automatically based on `Top
 
 ## Gap Detection (Non-Negotiable)
 
-**Rule:** If no post has Status=`Scheduled` for the next 5 calendar days → alert CEO immediately.
+**Planning target:** Keep 5 business days of content ahead. This is the weekly QA/backlog health standard.
+
+**Alert threshold:** Alert CEO immediately when any of the next 3 business days lacks a post with Status=`Scheduled`. Do not use a 5-calendar-day emergency threshold; it creates false urgency and conflicts with the formatter used by `cmo-desk-agent.py`.
 
 **Check frequency:** Daily (run by cmo-desk-agent.py at startup and at 8 AM Cairo)
 
 **Alert format (sessions_send + topic 7 message):**
+Use a short decision-card that leads with the action, not a paragraph:
+
 ```
-⚠️ Content gap detected: No posts scheduled for the next 5 days.
-Last scheduled post: [title] on [date]
-Action needed: Move at least 3 posts from Draft/Ideas → Scheduled
+🚨 Content Gap Alert - [High|Medium]
+
+🎯 Action required
+[Specific approve/schedule action and deadline]
+
+📌 Situation
+- Window at risk: [dates]
+- Scheduled: [count] posts
+- Gap days: [dates]
+
+📝 Ready queue
+- [date]: [title] ([status])
+
+✅ System checks
+- Notion direct access: working
+- Publishing watchdog: [clean|issue]
+- Pending approvals: [count]
+- Engagement-log errors: [none|count]
+
+Bottom line: this is an approval/scheduling gap, not a system failure.
 ```
+
+When possible, generate the alert with:
+`python3 /root/.openclaw/workspace-cmo/scripts/heartbeat_check_current.py | python3 /root/.openclaw/workspace-cmo/scripts/format_content_gap_alert.py`
 
 **Do not auto-schedule** content without CEO approval. Alert only.
 
