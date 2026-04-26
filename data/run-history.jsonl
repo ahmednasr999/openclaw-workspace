@@ -2041,3 +2041,4 @@
 {"agent": "email-agent", "run_id": "1f0704bf", "started": "2026-04-25T20:01:13.786673+02:00", "duration_ms": 29137, "status": "success", "records": 14, "error": null}
 {"agent": "jobs-source-linkedin-jobspy", "run_id": "b2a00041", "started": "2026-04-26T04:17:54.922835+02:00", "duration_ms": 929053, "status": "success", "records": 350, "error": null}
 {"agent": "email-agent", "run_id": "573a6496", "started": "2026-04-26T06:06:32.605153+02:00", "duration_ms": 50992, "status": "success", "records": 14, "error": null}
+{"agent": "email-agent", "run_id": "231e494f", "started": "2026-04-26T08:01:14.249546+02:00", "duration_ms": 39893, "status": "success", "records": 14, "error": null}

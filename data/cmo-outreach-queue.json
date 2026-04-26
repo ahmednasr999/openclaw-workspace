@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-19T05:10:26.532801Z",
+  "last_updated": "2026-04-26T05:18:11Z",
   "items": [
     {
       "company": "Netcracker Technology in Dubai, United Arab Emirates â Apply on Wuzzuf",
@@ -8,8 +8,36 @@
       "job_url": "https://wuzzuf.net/jobs/p/es7vyfgfwwoy-program-director-netcracker-technology-dubai-united-arab-emirates",
       "verdict": "SUBMIT",
       "queued_at": "2026-04-08T03:00:00+02:00",
-      "status": "exported",
-      "exported_at": "2026-04-08T01:34:07.458893Z"
+      "status": "researched",
+      "exported_at": "2026-04-08T01:34:07.458893Z",
+      "processed_at": "2026-04-26T05:18:11Z",
+      "warm_intro_rating": "medium",
+      "warm_intro_candidates": [
+        {
+          "name": "Guruprasath E",
+          "title": "Lead, Talent Acquisition at Netcracker Technology",
+          "linkedin_url": "https://in.linkedin.com/in/recruiterguru",
+          "why": "Public LinkedIn result shows a Netcracker TA lead with 500+ connections and active Netcracker hiring posts. Best recruiter route for the Dubai Program Director / managed services mandate."
+        },
+        {
+          "name": "Sushmita Shastri",
+          "title": "Senior Associate - Talent Acquisition at Netcracker Technology",
+          "linkedin_url": "https://in.linkedin.com/in/sushmita-shastri-8920b4128",
+          "why": "Already present in local outreach history for Netcracker and public LinkedIn result confirms Netcracker TA/recruiting activity. Good secondary recruiter route if Guruprasath is not responsive."
+        }
+      ],
+      "queue_notes": [
+        "No new queued companies were exported this Sunday; this was an older exported backlog item from 2026-04-08, now processed.",
+        "Local outreach history already had Netcracker people: Sushmita Shastri, Guruprasath E, Ashwini Gai, and Nitika Mathur. Public search validated Guruprasath and Sushmita as the strongest TA routes.",
+        "LinkedIn cookies imported into Camoufox, but LinkedIn still redirected to login, so profile validation used local history plus public LinkedIn snippets instead of an authenticated LinkedIn people search.",
+        "Role fit is moderate: senior transformation/program governance is strong, but telecom/BSS domain specificity makes this warmer as recruiter outreach than as direct executive sponsor outreach."
+      ],
+      "next_actions": [
+        "Draft-first approach only; do not send connection requests without Ahmed approval.",
+        "Prioritize Guruprasath E, then Sushmita Shastri, with a concise note around Dubai Program Director, multi-country PMO, client governance, profitability, and digital transformation delivery.",
+        "If one accepts, follow with a short message asking whether the Dubai Program Director / managed services mandate is still active and who owns the hiring process.",
+        "Suggested connection note: Hi Guruprasath — I saw Netcracker’s Dubai Program Director mandate. I’ve led multi-country PMO and digital transformation portfolios across GCC banking/payments and healthcare, including steering governance and client delivery. Happy to connect if this is still active."
+      ]
     },
     {
       "company": "Hitachi Energy",
@@ -18,8 +46,42 @@
       "job_url": "https://www.linkedin.com/jobs/view/4383909401",
       "verdict": "SUBMIT",
       "queued_at": "2026-04-08T03:00:00+02:00",
-      "status": "exported",
-      "exported_at": "2026-04-08T01:34:07.458957Z"
+      "status": "researched",
+      "exported_at": "2026-04-08T01:34:07.458957Z",
+      "processed_at": "2026-04-26T05:18:11Z",
+      "warm_intro_rating": "high",
+      "warm_intro_candidates": [
+        {
+          "name": "Faizal Khan",
+          "title": "Lead Talent Partner - COE at Hitachi Energy for UAE, Egypt and South Africa",
+          "linkedin_url": "https://in.linkedin.com/in/faizal-khan-339267a1",
+          "why": "Public LinkedIn result points to a Hitachi Energy talent partner covering UAE/Egypt/South Africa. Best direct recruiting route for a Dubai-based global delivery leadership role."
+        },
+        {
+          "name": "Helga-Carla Benegui (Botz)",
+          "title": "Global Head of HR for Functions / Head of HR MEA at Hitachi Energy",
+          "linkedin_url": "https://ae.linkedin.com/in/helga-botz",
+          "why": "Senior HR leader for MEA at Hitachi Energy. Good warm route for leadership-level fit, especially if the role sits across functions and geographies."
+        },
+        {
+          "name": "Nader Abdellatif",
+          "title": "Hitachi Energy leader in Dubai with current full P&L responsibility",
+          "linkedin_url": "https://ae.linkedin.com/in/nader-abdellatif-1606418",
+          "why": "Business-side senior leader in Dubai with P&L responsibility. Good strategic sponsor route because the role itself has future P&L ownership and cross-functional delivery model design."
+        }
+      ],
+      "queue_notes": [
+        "No new queued companies were exported this Sunday; this was an older exported backlog item from 2026-04-08, now processed.",
+        "The role is one of the strongest warm-intro candidates in the queue: blank-page global delivery model, P&L ownership, digital fulfillment/e-commerce, customer experience, and cross-functional operating model design all align with Ahmed’s transformation narrative.",
+        "Public sources show the role is/was posted across LinkedIn and job mirrors with Dubai included as a client-provided location. The Muse page says the job is no longer available, so outreach should position as relationship-building and verification, not assume the vacancy remains open.",
+        "LinkedIn cookies imported into Camoufox, but LinkedIn still redirected to login, so validation used local job data plus public LinkedIn snippets."
+      ],
+      "next_actions": [
+        "Draft-first approach only; do not send connection requests without Ahmed approval.",
+        "Prioritize Faizal Khan first as the UAE/Egypt/South Africa talent partner; use Helga-Carla Benegui as the senior HR escalation route if Faizal does not respond.",
+        "Use Nader Abdellatif as the business-side connection target if Ahmed wants a strategic sponsor route rather than recruiter route.",
+        "Suggested connection note: Hi Faizal — I saw Hitachi Energy’s Distribution Automation global delivery leadership mandate in Dubai. I’ve led multi-country transformation/PMO portfolios across GCC healthcare and payments, with governance, delivery model design, and executive stakeholder ownership. Happy to connect."
+      ]
     },
     {
       "company": "Thecignagroup",
