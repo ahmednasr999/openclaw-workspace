@@ -8,7 +8,7 @@ from notion_client import Client
 import os
 
 # ⚠️ EDIT THIS: Your Notion API key
-NOTION_KEY = "(see config/notion.json)"
+NOTION_KEY = "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"
 
 # ⚠️ EDIT THIS: Path to your workspace (where your .md files are)
 WORKSPACE = os.path.expanduser("~/openclaw-workspace")

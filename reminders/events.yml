@@ -3,3 +3,17 @@ events:
     datetime: "2026-02-17T10:00:00"
     notes: "Testing reminder skill"
     reminders: [1440, 60, 10]
+
+  - title: "Verify overnight cron optimization batch"
+    datetime: "2026-04-12T09:30:00+02:00"
+    notes: "Check email gate behavior, Daily Intel freshness, calendar prefetch freshness, maintenance-job noise reduction, and JobZoom health after the safe cron optimization changes made on 2026-04-11."
+    reminders: [0]
+
+  - title: "Revisit next CMO content batch after Apr 16"
+    datetime: "2026-04-17T09:00:00+02:00"
+    notes: "Reminder to create or prepare the next live Notion batch after Apr 16, and make sure each post is scheduled with Approved Asset present."
+    reminders: [0]
+  - title: "Discuss Execution Blueprint premium video direction"
+    datetime: "2026-04-26T10:00:00+02:00"
+    notes: "Parked on Apr 25. Review whether to use the static carousel montage for the approved Apr 26 LinkedIn post, make a more premium video/reel version, or keep video as follow-up. Current safe publishing path uses the image asset and passes READY_TO_POST; video drafts exist at /root/.openclaw/media/generated/execution-blueprint-premium-video/ and -v2/."
+    reminders: [0]

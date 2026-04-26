@@ -5,6 +5,14 @@
 
 ---
 
+## 2026-04-19
+### What I Did Wrong
+Tried to run the weekly job-hunter review with `from notion_sync import read_pipeline_from_notion`, but the workspace no longer has an importable `scripts/notion_sync.py`, so the audit failed over to local SQLite data.
+### Why
+The review skill still assumes the legacy Notion sync module is present, but the current workspace only keeps it under `scripts/deprecated/`.
+### Fix
+For future weekly job-hunter reviews, use `data/nasr-pipeline.db` as the default pipeline source, and treat the old Notion sync path as optional legacy fallback.
+
 ## 2026-04-08
 ### What I Did Wrong
 Tried to log a cron task to the Mission Control Task Board at http://localhost:3001/api/tasks/agent, but the local service was unavailable and the request failed with curl exit code 7.
@@ -278,3 +286,138 @@ Split the upgrade into narrower passes, validate each lane separately, and avoid
 - Related Files: skills/last30days-lite/scripts/resolver.py, skills/last30days-lite/scripts/nasr_research.py
 
 ---
+## [ERR-20260411-001] gateway config.patch tool shape mismatch
+
+**Logged**: 2026-04-11T13:13:20.735438+00:00
+**Priority**: medium
+**Status**: pending
+**Area**: config
+
+### Summary
+`gateway config.patch` rejected a schema-compliant patch payload with `raw required`, so config changes had to fall back to manual file edit plus validation.
+
+### Error
+```
+raw required
+```
+
+### Context
+- Operation attempted: `gateway config.patch`
+- Goal: update `models.providers.openai-codex`
+- The tool schema exposed `patch`, but runtime demanded `raw`
+
+### Suggested Fix
+Document or fix the actual accepted payload shape for `gateway config.patch`, or align runtime validation with the published tool schema.
+
+### Metadata
+- Reproducible: unknown
+- Related Files: /root/.openclaw/openclaw.json
+- See Also: none
+
+---
+## [ERR-20260411-002] gateway schema lookup false alarm surfaced to user
+
+**Logged**: 2026-04-11T14:16:00Z
+**Priority**: medium
+**Status**: pending
+**Area**: config
+
+### Summary
+I queried the wrong config schema path for per-agent heartbeat settings, which produced a gateway tool error and surfaced a misleading user-visible alert that looked like the main heartbeat itself had failed.
+
+### Error
+```
+config schema path not found
+```
+
+### Context
+- Operation attempted: `gateway config.schema.lookup`
+- Wrong path used: `agents.main.heartbeat`
+- Correct live verification came immediately afterward from `config.get`, which showed heartbeats were configured correctly
+- User saw alert text: `Gateway: agents.main.heartbeat failed`
+
+### Suggested Fix
+When checking per-agent heartbeat config, avoid guessed schema paths and use targeted `config.get` or inspect `agents.list` first so tool lookup misses do not create false heartbeat alarms.
+
+### Metadata
+- Reproducible: yes
+- Related Files: /root/.openclaw/openclaw.json
+- See Also: ERR-20260411-001
+
+---
+
+## [ERR-20260412-001] ripgrep unavailable on VPS
+
+**Logged**: 2026-04-12T18:53:00+02:00
+**Priority**: low
+**Status**: pending
+**Area**: infra
+
+### Summary
+Tried to use `rg` in the workspace shell, but ripgrep is not installed in this environment.
+
+### Error
+```
+/bin/bash: line 1: rg: command not found
+```
+
+### Context
+- Command/operation attempted: targeted repository search during CMO asset wiring work
+- Environment: srv1352768 main workspace shell
+
+### Suggested Fix
+Default to `grep -R` or `find` on this VPS unless ripgrep availability is confirmed first.
+
+### Metadata
+- Reproducible: yes
+- Related Files: /root/.openclaw/workspace-cmo/scripts/cmo_notion_posting.py
+
+---
+
+## 2026-04-18
+### What I Did Wrong
+Tried to run the weekly job-hunter domain review exactly as written, but the review script depended on `scripts/notion_sync.py` while the workspace only has `scripts/deprecated/notion_sync.py`, so the pipeline read failed immediately with `No module named 'notion_sync'`.
+### Why
+The cron skill still points at an old import path and I did not verify the local pipeline data source before executing the Notion-dependent commands.
+### Fix
+For future job-hunter review runs, use the live SQLite pipeline database or update the skill/import path before execution. Treat Notion sync as optional and keep the local DB fallback as the default reporting path.
+- 2026-04-24 - COMPOSIO_SEARCH_TOOLS requires queries - Empty request failed validation; include queries array in calls.
+
+## [ERR-20260425-001] shell-printf-leading-dash
+
+**Logged**: 2026-04-25T17:30:00Z
+**Priority**: low
+**Status**: resolved
+**Area**: workflow
+
+### Summary
+A verification shell command failed because Bash `printf` treated a format string starting with `---` as an option.
+
+### Error
+```
+printf: --: invalid option
+printf: usage: printf [-v var] format [arguments]
+```
+
+### Context
+- Operation: core-file refactor verification.
+- Cause: used `printf '--- Core file verification ---\\n'` instead of `printf '%s\\n' '--- Core file verification ---'`.
+- Impact: no file changes lost; reran verification successfully with safe printf syntax.
+
+### Suggested Fix
+When printing strings that may begin with hyphens, use `printf '%s\\n' 'text'` or `printf --`.
+
+### Metadata
+- Reproducible: yes
+- Related Files: SOUL.md, USER.md, AGENTS.md, TOOLS.md
+
+---
+
+2026-04-26 - PDF tool unavailable for layout check
+- What happened: `pdf` tool failed on JobZoom PDFs because the configured image model was unknown and PDF extraction plugin was unavailable.
+- Do differently: For PDF layout verification, render pages with `pdftoppm` into `/root/.openclaw/media/...` and use `image` analysis, plus `pdfinfo`/`pdftotext -layout` for metadata/text checks.
+
+## 2026-04-26 - Weekly pipeline audit Telegram send failed
+
+- What happened: `python3 /root/.openclaw/workspace/scripts/weekly-pipeline-audit.py` completed the audit but reported `❌ Send failed` after preparing the Telegram summary.
+- Do differently: If audit notification fails, report the audit result directly in the current chat and investigate the script/channel send path before relying on automated delivery.

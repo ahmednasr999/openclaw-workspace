@@ -1,0 +1,20 @@
+{
+  "skill_name": "sweeper-status-loop",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Set up a sweeper dashboard for stale CMO content queue rows. It should propose actions but not post anything.",
+      "expected_output": "Creates or describes a sweeper workspace with item records, README dashboard, proposed-vs-applied separation, and no external posting."
+    },
+    {
+      "id": 2,
+      "prompt": "Turn these JobZoom leads into a conservative review loop so we can reject obvious misses and keep strategic edge cases.",
+      "expected_output": "Defines JobZoom-specific categories, item record format, dashboard metrics, and human-review rules for edge cases."
+    },
+    {
+      "id": 3,
+      "prompt": "Create a README-as-dashboard status loop for OpenClaw health findings and failed crons.",
+      "expected_output": "Produces a scan/propose/apply workflow with health-specific safety constraints and no casual gateway restart."
+    }
+  ]
+}

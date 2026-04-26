@@ -117,3 +117,43 @@ Reply "⏭ Skipped" and move on.
 2. **Add explicit forbidden fallbacks.** State clearly: no Camofox cookies, no server-side authenticated fallback, no posting from any account that is not Ahmed-Mac Chrome.
 3. **Add an `eval/checklist.md`.** This skill currently has no dedicated checklist file. It should have a compact approval/posting checklist covering account identity, cooldown, URL match, posted-comment visibility, and ontology update.
 4. **Separate discovery success from posting success.** Finding good posts is not completion. Completion only happens after approval flow, verified comment publish, and graph update all pass.
+
+### 2026-04-18 — Weekly Skill Tune-Up
+
+**Reviewed signals:**
+- 2026-03-23, wrong LinkedIn account was used for comments
+- Weekly reviews on 2026-03-21 and 2026-03-22, completion guards on LinkedIn engagement flows were still too implicit
+- 2026-03-29, LinkedIn write paths needed explicit forbidden-action language, not soft STOP wording
+
+**Improvements to add next:**
+1. **Lock approvals to a post identity, not just a number.** Each Telegram card should carry the author URL plus activity URN, and Step 6 should re-check both before typing any comment so stale "post 3" approvals cannot land on the wrong target.
+2. **Make proof-of-post explicit.** After submit + like, the workflow should require a fresh snapshot showing Ahmed's visible comment text on the intended post before success is reported.
+3. **Add a hard abort for missing provenance.** If account identity, post URL, author URL, or cooldown status cannot be proven in the same session, abort instead of improvising.
+4. **Create the missing `eval/checklist.md`.** Keep it short and binary: right account, right post, cooldown clear, approved text matches, visible comment confirmed, ontology updated.
+
+### 2026-04-18 - Weekly Skill Tune-Up (cron refresh)
+
+**Reviewed lessons:**
+- 2026-03-23, wrong LinkedIn account for comments
+- Weekly Review (2026-03-15 → 2026-03-22), LinkedIn comment-radar still needed explicit completion guards
+- Weekly Review (2026-03-14 → 2026-03-21), the same completion-guard pattern was already recurring
+
+**Improvements to add next:**
+1. **Bind every approval card to an immutable post identity.** Include activity URN, author profile URL, and a short hash of the approved comment text. Step 6 must re-check all three before typing anything.
+2. **Abort on environment drift.** If Ahmed-Mac is offline, the authenticated account changed, the post resolves to a different activity, or cooldown status cannot be proven, abort and regenerate cards instead of improvising.
+3. **Make proof-of-post a first-class output.** Success requires a fresh post-submit snapshot showing Ahmed's visible comment text on the exact post, plus the like state when that step runs.
+4. **Create the missing `eval/checklist.md`.** Keep it binary and short: right account, right post, cooldown clear, approved text unchanged, visible comment confirmed, ontology updated.
+
+### 2026-04-25 - Weekly Skill Tune-Up
+
+**Reviewed lessons:**
+- 2026-04-22, do not frame LinkedIn failures as stale-session issues before proving tool/lane exposure.
+- 2026-04-21, LinkedIn content workflows must verify the exact asset or post identity before acting.
+- 2026-04-20, live LinkedIn write workflows need timely blocker escalation and verified success only.
+
+**Improvement recommendation:**
+1. **Add a same-session lane check before discovery and before posting.** Discovery must prove Ahmed-Mac Chrome is online and logged into Ahmed's account. Posting must re-prove the same account before typing or liking anything.
+2. **Bind approvals to immutable post identity.** Each approval card should include activity URN, post URL, author profile URL, and approved comment text hash. Step 6 should re-check all fields before submitting so stale approvals cannot land on the wrong post.
+3. **Treat write-path ambiguity as a hard abort.** If the account, post identity, cooldown status, or visible comment proof cannot be verified, abort and regenerate cards rather than improvising with another browser/session.
+4. **Escalate live blockers quickly.** If submit or proof-of-post fails twice, report the blocker in thread 7 with a concise recovery option. Do not keep retrying silently or imply that the comment is posted before visible proof exists.
+5. **Create the missing `eval/checklist.md`.** Keep it binary: Ahmed account verified, post identity matched, cooldown clear, approval text unchanged, visible comment confirmed, like state checked, ontology updated.

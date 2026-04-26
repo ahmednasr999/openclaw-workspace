@@ -112,6 +112,46 @@ ok("linkedin noise (connection) filtered",
 ok("generic email -> other",
    ea.categorize_email("Hello there", "friend@gmail.com") == ["other"])
 
+ok("real estate promo with investment language -> other",
+   ea.categorize_email("Invest in Arabian Ranches from just AED 500", "discovery@prypco.com") == ["other"])
+
+ok("ecommerce stock alert -> other",
+   ea.categorize_email("₹163 only: The #1 best seller is back in stock", "info@host.discountwalas.com") == ["other"])
+
+ok("availability alone without hiring context -> other",
+   ea.categorize_email("Please share your availability", "events@vendor.com") == ["other"])
+
+original_pipeline_jobs = ea._get_active_pipeline_jobs
+ea._get_active_pipeline_jobs = lambda: [{
+    "job_id": "linkedin-li-4384465264",
+    "company": "Ranger AI",
+    "title": "Director of Operations",
+    "recruiter_name": "Sari Saadi",
+    "recruiter_email": None,
+    "recruiter_company": "Ranger AI (Co-Founder)",
+}]
+
+ranger_body = """Hi Ahmed,\n\nI would like to take you to the next stage of our process.\nBefore we move forward, could you share the compensation range you are expecting?\nLooking forward to your response.\n"""
+ranger_categories = ea.categorize_email("Ranger AI - Followup", "Sari Saadi <sari@rangerrfx.com>", ranger_body)
+ok("ranger follow-up -> interview_invite",
+   "interview_invite" in ranger_categories,
+   f"categories={ranger_categories}")
+ok("ranger follow-up -> follow_up_needed",
+   "follow_up_needed" in ranger_categories,
+   f"categories={ranger_categories}")
+ok("tracked pipeline company -> recruiter_reach",
+   "recruiter_reach" in ranger_categories,
+   f"categories={ranger_categories}")
+
+pipeline_only_categories = ea.categorize_email(
+   "Ranger AI update",
+   "Sari Saadi <sari@rangerrfx.com>",
+   "Hi Ahmed, sharing a quick update after our previous discussion."
+)
+ok("pipeline-aware match promotes neutral email to recruiter_reach",
+   "recruiter_reach" in pipeline_only_categories,
+   f"categories={pipeline_only_categories}")
+
 
 # ==============================================================================
 # TEST 5: Weighted Scoring (D5)
@@ -127,6 +167,14 @@ ok("newsletter scores 0", score2 == 0, f"score={score2}")
 score3, _ = ea.score_email("Exciting PM Role", "jane@michaelpage.com")
 ok("recruiter domain adds bonus", score3 >= 2, f"score={score3}")
 
+score4, pipeline_company = ea.score_email("Ranger AI - Followup", "Sari Saadi <sari@rangerrfx.com>", ranger_body)
+ok("ranger follow-up scores medium+", score4 >= 2, f"score={score4}")
+ok("ranger follow-up resolves pipeline company", pipeline_company == "Ranger AI", f"pipeline_company={pipeline_company}")
+
+score5, pipeline_company2 = ea.score_email("Ranger AI update", "Sari Saadi <sari@rangerrfx.com>", "Quick follow-up note")
+ok("pipeline-aware score boost applies", score5 >= ea.PIPELINE_MATCH_BONUS, f"score={score5}")
+ok("pipeline-aware score identifies company", pipeline_company2 == "Ranger AI", f"pipeline_company={pipeline_company2}")
+
 ok("HIGH priority from high score", ea.get_priority(5) == "HIGH")
 ok("MEDIUM priority from mid score", ea.get_priority(3) == "MEDIUM")
 ok("LOW priority from low score", ea.get_priority(0) == "LOW")
@@ -141,6 +189,8 @@ ok("interview is hot", ea.is_hot_email("Interview with VP Engineering", "hr@comp
 ok("offer is hot", ea.is_hot_email("Job Offer - Senior Director", "hr@company.com"))
 ok("newsletter NOT hot", not ea.is_hot_email("Weekly tech roundup", "news@substack.com"))
 ok("assessment is hot", ea.is_hot_email("Complete assessment invite", "hr@company.com"))
+ok("next stage is hot", ea.is_hot_email("Ranger AI - Followup, next stage", "sari@rangerrfx.com"))
+ok("promo email is NOT hot", not ea.is_hot_email("Invest in Arabian Ranches from just AED 500", "discovery@prypco.com"))
 
 
 # ==============================================================================
@@ -179,6 +229,7 @@ ok("error latest has last_success", error_data["last_success"] == "2026-03-24T10
 
 # Restore
 ea.STATE_PATH = original_state
+ea._get_active_pipeline_jobs = original_pipeline_jobs
 shutil.rmtree(tmp_dir)
 
 

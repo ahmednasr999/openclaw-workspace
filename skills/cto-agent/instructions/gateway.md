@@ -346,6 +346,6 @@ Gateway health check fails?
 
 - Gateway runs on `localhost:18789` (not exposed externally)
 - All requests go through this gateway (no direct API calls)
-- Restart is safe — doesn't kill running cron jobs
+- Restart is safe for the service itself, but do **not** stop or restart it from inside the same live DM/topic recovery run that still depends on the gateway path to finish replying. Use an out-of-band recovery path or ask Ahmed to retry after recovery instead.
 - Check health every morning (standup)
 - Log rotation happens automatically (old logs compressed)
