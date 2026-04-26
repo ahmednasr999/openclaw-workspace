@@ -2,56 +2,259 @@
   "meta": {
     "agent": "email-agent",
     "version": "3.0.0",
-    "generated_at": "2026-04-25T20:01:13.786332+02:00",
-    "duration_ms": 29137,
+    "generated_at": "2026-04-26T06:06:32.603704+02:00",
+    "duration_ms": 50990,
     "ttl_hours": 4,
     "status": "success",
     "error": null,
-    "run_id": "1f0704bf",
+    "run_id": "573a6496",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
     "status": "ok",
-    "scan_time": "2026-04-25T20:00:47.028848+02:00",
-    "total_scanned": 4,
+    "scan_time": "2026-04-26T06:05:52.307069+02:00",
+    "total_scanned": 31,
     "by_category": {
-      "interview_invite": 0,
-      "recruiter_reach": 0,
+      "interview_invite": 3,
+      "recruiter_reach": 1,
       "application_ack": 0,
-      "rejection": 0,
-      "assessment": 0,
+      "rejection": 1,
+      "assessment": 1,
       "follow_up_needed": 0,
-      "other": 4
+      "other": 27
     },
-    "interview_invites": [],
-    "recruiter_messages": [],
+    "interview_invites": [
+      {
+        "id": "355012",
+        "from": "richemont@myworkday.com",
+        "subject": "Application Update - Retail Project Manager - KSA",
+        "date": "Sat, 25 Apr 2026 22:59:26 +0000",
+        "unread": true,
+        "priority": "HIGH",
+        "score": 6,
+        "pipeline_match": null
+      },
+      {
+        "id": "355023",
+        "from": "talent acquisition <opportunities@foundit.in>",
+        "subject": "=?UTF-8?Q?Re:_We=E2=80=99re_Hiring_in_England|_Apply_Now_Oppo?=\r\n =?UTF-8?Q?rtunity_-_Have_You_Read_Our_Previous_Email=3F?=",
+        "date": "Sun, 26 Apr 2026 03:25:04 +0000 (GMT)",
+        "unread": true,
+        "priority": "HIGH",
+        "score": 9,
+        "pipeline_match": null
+      },
+      {
+        "id": "355024",
+        "from": "Susmitha Golla <Susmitha@flatgigs.com>",
+        "subject": "Product & Project Manager - IoT Platform - Flatgigs",
+        "date": "Sun, 26 Apr 2026 03:48:13 +0000",
+        "unread": true,
+        "priority": "HIGH",
+        "score": 13,
+        "pipeline_match": null
+      }
+    ],
+    "recruiter_messages": [
+      {
+        "id": "355020",
+        "from": "Naukrigulf <newjobs@naukrigulf.com>",
+        "subject": "Sr. IT Project Manager - Payments and Digital Transformation,\r\n Group Head of IT jobs for you",
+        "date": "Sun, 26 Apr 2026 08:10:20 +0530 (IST)",
+        "unread": true,
+        "priority": "MEDIUM",
+        "score": 2,
+        "pipeline_match": null
+      }
+    ],
     "application_acks": [],
-    "rejections": [],
-    "assessments": [],
+    "rejections": [
+      {
+        "id": "355012",
+        "from": "richemont@myworkday.com",
+        "subject": "Application Update - Retail Project Manager - KSA",
+        "date": "Sat, 25 Apr 2026 22:59:26 +0000",
+        "unread": true,
+        "priority": "HIGH",
+        "score": 6,
+        "pipeline_match": null
+      }
+    ],
+    "assessments": [
+      {
+        "id": "355024",
+        "from": "Susmitha Golla <Susmitha@flatgigs.com>",
+        "subject": "Product & Project Manager - IoT Platform - Flatgigs",
+        "date": "Sun, 26 Apr 2026 03:48:13 +0000",
+        "unread": true,
+        "priority": "HIGH",
+        "score": 13,
+        "pipeline_match": null
+      }
+    ],
     "follow_ups_needed": [],
-    "actionable_count": 0,
-    "hot_alerts": [],
-    "signals": [],
+    "actionable_count": 4,
+    "hot_alerts": [
+      {
+        "subject": "Re: [openclaw/openclaw] Add a core eval harness for memory, tool\r\n routing, delegation, and proactive behavior (Issue #68205)",
+        "from": "Peter Steinberger <notifications@github.com>",
+        "priority": "HIGH",
+        "pipeline_match": "Harness"
+      },
+      {
+        "subject": "Re: [openclaw/openclaw] Add a core eval harness for memory, tool\r\n routing, delegation, and proactive behavior (Issue #68205)",
+        "from": "Peter Steinberger <notifications@github.com>",
+        "priority": "HIGH",
+        "pipeline_match": "Harness"
+      },
+      {
+        "subject": "Application Update - Retail Project Manager - KSA",
+        "from": "richemont@myworkday.com",
+        "priority": "HIGH",
+        "pipeline_match": null
+      },
+      {
+        "subject": "=?UTF-8?Q?Re:_We=E2=80=99re_Hiring_in_England|_Apply_Now_Oppo?=\r\n =?UTF-8?Q?rtunity_-_Have_You_Read_Our_Previous_Email=3F?=",
+        "from": "talent acquisition <opportunities@foundit.in>",
+        "priority": "HIGH",
+        "pipeline_match": null
+      },
+      {
+        "subject": "Product & Project Manager - IoT Platform - Flatgigs",
+        "from": "Susmitha Golla <Susmitha@flatgigs.com>",
+        "priority": "HIGH",
+        "pipeline_match": null
+      }
+    ],
+    "signals": [
+      {
+        "company": "Harness",
+        "signal": "recruiter_email",
+        "subject": "Re: [openclaw/openclaw] Add a core eval harness for memory, tool\r\n routing, delegation, and proactive behavior (Issue #68205)",
+        "sender": "Peter Steinberger <notifications@github.com>",
+        "job_ids": [
+          "linkedin_jobspy-li-4382069582"
+        ],
+        "score": 7,
+        "timestamp": "2026-04-26T06:05:52.204021+02:00"
+      },
+      {
+        "company": "Harness",
+        "signal": "recruiter_email",
+        "subject": "Re: [openclaw/openclaw] Add a core eval harness for memory, tool\r\n routing, delegation, and proactive behavior (Issue #68205)",
+        "sender": "Peter Steinberger <notifications@github.com>",
+        "job_ids": [
+          "linkedin_jobspy-li-4382069582"
+        ],
+        "score": 7,
+        "timestamp": "2026-04-26T06:05:52.211083+02:00"
+      }
+    ],
     "llm_analysis": {
-      "actionable_emails": [],
+      "actionable_emails": [
+        {
+          "id": "355012",
+          "subject": "Application Update - Retail Project Manager - KSA",
+          "from": "richemont@myworkday.com",
+          "date": "Sat, 25 Apr 2026 22:59:26 +0000",
+          "category": "interview_invite",
+          "urgency": "low",
+          "intent": "The sender is notifying Ahmed that Richemont will not proceed with his application.",
+          "action": "read_and_file",
+          "response_deadline": "when convenient",
+          "notes": "Misclassified as interview; body proves rejection."
+        },
+        {
+          "id": "355020",
+          "subject": "Sr. IT Project Manager - Payments and Digital Transformation,\r\n Group Head of IT jobs for you",
+          "from": "Naukrigulf <newjobs@naukrigulf.com>",
+          "date": "Sun, 26 Apr 2026 08:10:20 +0530 (IST)",
+          "category": "recruiter_reach",
+          "urgency": "medium",
+          "intent": "The sender is sharing job alerts matching Ahmed's profile across UAE, Qatar, and Saudi Arabia.",
+          "action": "read_and_file",
+          "response_deadline": "1 week",
+          "notes": "Review UAE/GCC leadership matches selectively."
+        },
+        {
+          "id": "355023",
+          "subject": "=?UTF-8?Q?Re:_We=E2=80=99re_Hiring_in_England|_Apply_Now_Oppo?=\r\n =?UTF-8?Q?rtunity_-_Have_You_Read_Our_Previous_Email=3F?=",
+          "from": "talent acquisition <opportunities@foundit.in>",
+          "date": "Sun, 26 Apr 2026 03:25:04 +0000 (GMT)",
+          "category": "recruiter_reach",
+          "urgency": "medium",
+          "intent": "The sender is following up to discuss a UK-based hiring opportunity.",
+          "action": "respond",
+          "response_deadline": "1 week",
+          "notes": "Not GCC-focused; respond only if UK is acceptable."
+        },
+        {
+          "id": "355024",
+          "subject": "Product & Project Manager - IoT Platform - Flatgigs",
+          "from": "Susmitha Golla <Susmitha@flatgigs.com>",
+          "date": "Sun, 26 Apr 2026 03:48:13 +0000",
+          "category": "assessment",
+          "urgency": "high",
+          "intent": "The sender is confirming Ahmed's application and explaining the screening and assessment timeline.",
+          "action": "read_and_file",
+          "response_deadline": "48h",
+          "notes": "No action yet; prepare for possible screening/assessment."
+        }
+      ],
       "summary": {
-        "total_actionable": 0,
+        "total_actionable": 4,
         "critical_count": 0,
-        "requires_interview_prep": false,
-        "requires_assessment": false,
-        "recruiter_top_opportunities": [],
-        "top_priority": null,
-        "daily_focus": "No actionable recruiting emails were provided; focus today on proactive applications and networking."
+        "requires_interview_prep": true,
+        "requires_assessment": true,
+        "recruiter_top_opportunities": [
+          "Susmitha Golla - Flatgigs",
+          "Naukrigulf UAE/GCC job alerts"
+        ],
+        "top_priority": "355024",
+        "daily_focus": "Prioritize Flatgigs prep and selectively review GCC-aligned Naukrigulf roles; no critical reply is proven."
       }
     }
   },
   "kpi": {
-    "emails_processed": 4,
-    "actionable": 0,
-    "interviews_detected": 0,
-    "recruiter_messages": 0,
-    "unread_actionable": 0
+    "emails_processed": 31,
+    "actionable": 4,
+    "interviews_detected": 3,
+    "recruiter_messages": 1,
+    "unread_actionable": 4
   },
-  "recommendations": []
+  "recommendations": [
+    {
+      "id": "rec-573a6496-0",
+      "action": "respond_immediately",
+      "target": "3 interview invite(s)",
+      "reason": "Interview invitations require prompt response",
+      "urgency": "critical",
+      "timestamp": "2026-04-26T06:06:32.603496+02:00"
+    },
+    {
+      "id": "rec-573a6496-1",
+      "action": "review_and_respond",
+      "target": "1 recruiter message(s)",
+      "reason": "Recruiter outreach could lead to opportunities",
+      "urgency": "high",
+      "timestamp": "2026-04-26T06:06:32.603518+02:00"
+    },
+    {
+      "id": "rec-573a6496-2",
+      "action": "check_inbox",
+      "target": "4 unread actionable email(s)",
+      "reason": "Unread emails need attention",
+      "urgency": "high",
+      "timestamp": "2026-04-26T06:06:32.603523+02:00"
+    },
+    {
+      "id": "rec-573a6496-3",
+      "action": "complete_assessment",
+      "target": "1 assessment(s)",
+      "reason": "Assessments have deadlines",
+      "urgency": "high",
+      "timestamp": "2026-04-26T06:06:32.603527+02:00"
+    }
+  ]
 }
