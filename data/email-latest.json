@@ -1,76 +1,23 @@
 {
   "status": "ok",
-  "scan_time": "2026-04-26T08:00:39.766323+02:00",
+  "scan_time": "2026-04-26T20:00:37.665279+02:00",
   "total_scanned": 8,
   "by_category": {
-    "interview_invite": 1,
-    "recruiter_reach": 1,
+    "interview_invite": 0,
+    "recruiter_reach": 0,
     "application_ack": 0,
     "rejection": 0,
     "assessment": 0,
     "follow_up_needed": 0,
-    "other": 6
+    "other": 8
   },
-  "interview_invites": [
-    {
-      "id": "355035",
-      "from": "Fady <fady@fadyramzy.com>",
-      "subject": "=?utf-8?Q?=E2=80=9CI=E2=80=99ll=20wait=20until=20things=20are=20clearer.=E2=80=9D=20=28read=20this=20first=29?=",
-      "date": "Sun, 26 Apr 2026 05:57:48 +0000",
-      "unread": true,
-      "priority": "MEDIUM",
-      "score": 3,
-      "pipeline_match": null
-    }
-  ],
-  "recruiter_messages": [
-    {
-      "id": "355032",
-      "from": "Naukrigulf <similarjobs@naukrigulf.com>",
-      "subject": "Ahmed Nasr, Check out jobs applied by  other PMOs",
-      "date": "Sun, 26 Apr 2026 10:51:33 +0530 (IST)",
-      "unread": true,
-      "priority": "HIGH",
-      "score": 9,
-      "pipeline_match": "SAP"
-    }
-  ],
+  "interview_invites": [],
+  "recruiter_messages": [],
   "application_acks": [],
   "rejections": [],
   "assessments": [],
   "follow_ups_needed": [],
-  "actionable_count": 2,
-  "hot_alerts": [
-    {
-      "subject": "Ahmed Nasr, Check out jobs applied by  other PMOs",
-      "from": "Naukrigulf <similarjobs@naukrigulf.com>",
-      "priority": "HIGH",
-      "pipeline_match": "SAP"
-    }
-  ],
-  "signals": [
-    {
-      "company": "SAP",
-      "signal": "recruiter_email",
-      "subject": "Ahmed Nasr, Check out jobs applied by  other PMOs",
-      "sender": "Naukrigulf <similarjobs@naukrigulf.com>",
-      "job_ids": [
-        "indeed-in-b2195113ff678ef7",
-        "indeed-in-b7591ff66cc5a732",
-        "linkedin_jobspy-li-4380812358",
-        "linkedin-li-4349578134",
-        "linkedin-li-4394078700",
-        "linkedin-li-4380812358",
-        "linkedin-li-4362170335",
-        "linkedin-li-4362562926",
-        "linkedin-li-4385935615",
-        "linkedin-li-4353703506",
-        "app-005",
-        "cv-5fbf4a9aa7",
-        "linkedin-li-4385294885"
-      ],
-      "score": 9,
-      "timestamp": "2026-04-26T08:00:39.747301+02:00"
-    }
-  ]
+  "actionable_count": 0,
+  "hot_alerts": [],
+  "signals": []
 }
