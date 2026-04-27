@@ -2,159 +2,56 @@
   "meta": {
     "agent": "email-agent",
     "version": "3.0.0",
-    "generated_at": "2026-04-26T08:01:14.248515+02:00",
-    "duration_ms": 39892,
+    "generated_at": "2026-04-26T20:00:52.537537+02:00",
+    "duration_ms": 18751,
     "ttl_hours": 4,
     "status": "success",
     "error": null,
-    "run_id": "231e494f",
+    "run_id": "d3735ff3",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
     "status": "ok",
-    "scan_time": "2026-04-26T08:00:39.766323+02:00",
+    "scan_time": "2026-04-26T20:00:37.665279+02:00",
     "total_scanned": 8,
     "by_category": {
-      "interview_invite": 1,
-      "recruiter_reach": 1,
+      "interview_invite": 0,
+      "recruiter_reach": 0,
       "application_ack": 0,
       "rejection": 0,
       "assessment": 0,
       "follow_up_needed": 0,
-      "other": 6
+      "other": 8
     },
-    "interview_invites": [
-      {
-        "id": "355035",
-        "from": "Fady <fady@fadyramzy.com>",
-        "subject": "=?utf-8?Q?=E2=80=9CI=E2=80=99ll=20wait=20until=20things=20are=20clearer.=E2=80=9D=20=28read=20this=20first=29?=",
-        "date": "Sun, 26 Apr 2026 05:57:48 +0000",
-        "unread": true,
-        "priority": "MEDIUM",
-        "score": 3,
-        "pipeline_match": null
-      }
-    ],
-    "recruiter_messages": [
-      {
-        "id": "355032",
-        "from": "Naukrigulf <similarjobs@naukrigulf.com>",
-        "subject": "Ahmed Nasr, Check out jobs applied by  other PMOs",
-        "date": "Sun, 26 Apr 2026 10:51:33 +0530 (IST)",
-        "unread": true,
-        "priority": "HIGH",
-        "score": 9,
-        "pipeline_match": "SAP"
-      }
-    ],
+    "interview_invites": [],
+    "recruiter_messages": [],
     "application_acks": [],
     "rejections": [],
     "assessments": [],
     "follow_ups_needed": [],
-    "actionable_count": 2,
-    "hot_alerts": [
-      {
-        "subject": "Ahmed Nasr, Check out jobs applied by  other PMOs",
-        "from": "Naukrigulf <similarjobs@naukrigulf.com>",
-        "priority": "HIGH",
-        "pipeline_match": "SAP"
-      }
-    ],
-    "signals": [
-      {
-        "company": "SAP",
-        "signal": "recruiter_email",
-        "subject": "Ahmed Nasr, Check out jobs applied by  other PMOs",
-        "sender": "Naukrigulf <similarjobs@naukrigulf.com>",
-        "job_ids": [
-          "indeed-in-b2195113ff678ef7",
-          "indeed-in-b7591ff66cc5a732",
-          "linkedin_jobspy-li-4380812358",
-          "linkedin-li-4349578134",
-          "linkedin-li-4394078700",
-          "linkedin-li-4380812358",
-          "linkedin-li-4362170335",
-          "linkedin-li-4362562926",
-          "linkedin-li-4385935615",
-          "linkedin-li-4353703506",
-          "app-005",
-          "cv-5fbf4a9aa7",
-          "linkedin-li-4385294885"
-        ],
-        "score": 9,
-        "timestamp": "2026-04-26T08:00:39.747301+02:00"
-      }
-    ],
+    "actionable_count": 0,
+    "hot_alerts": [],
+    "signals": [],
     "llm_analysis": {
-      "actionable_emails": [
-        {
-          "id": "355032",
-          "subject": "Ahmed Nasr, Check out jobs applied by other PMOs",
-          "from": "Naukrigulf <similarjobs@naukrigulf.com>",
-          "date": "Sun, 26 Apr 2026 10:51:33 +0530 (IST)",
-          "category": "recruiter_reach",
-          "urgency": "medium",
-          "intent": "The sender is sharing recommended job listings similar to Ahmed's profile.",
-          "action": "read_and_file",
-          "response_deadline": "1 week",
-          "notes": "Job alert, not recruiter outreach; review only if roles fit."
-        },
-        {
-          "id": "355035",
-          "subject": "\u201cI\u2019ll wait until things are clearer.\u201d (read this first)",
-          "from": "Fady <fady@fadyramzy.com>",
-          "date": "Sun, 26 Apr 2026 05:57:48 +0000",
-          "category": "interview_invite",
-          "urgency": "low",
-          "intent": "The sender appears to be sending newsletter content about career clarity and personal branding.",
-          "action": "read_and_file",
-          "response_deadline": "when convenient",
-          "notes": "Excerpt does not prove an interview invite."
-        }
-      ],
+      "actionable_emails": [],
       "summary": {
-        "total_actionable": 2,
+        "total_actionable": 0,
         "critical_count": 0,
         "requires_interview_prep": false,
         "requires_assessment": false,
         "recruiter_top_opportunities": [],
-        "top_priority": "355032",
-        "daily_focus": "No confirmed interview or assessment needs action today; only review the job alert if time permits."
+        "top_priority": null,
+        "daily_focus": "No actionable leadership-role emails were provided, so focus on proactive applications and networking today."
       }
     }
   },
   "kpi": {
     "emails_processed": 8,
-    "actionable": 2,
-    "interviews_detected": 1,
-    "recruiter_messages": 1,
-    "unread_actionable": 2
+    "actionable": 0,
+    "interviews_detected": 0,
+    "recruiter_messages": 0,
+    "unread_actionable": 0
   },
-  "recommendations": [
-    {
-      "id": "rec-231e494f-0",
-      "action": "respond_immediately",
-      "target": "1 interview invite(s)",
-      "reason": "Interview invitations require prompt response",
-      "urgency": "critical",
-      "timestamp": "2026-04-26T08:01:14.248390+02:00"
-    },
-    {
-      "id": "rec-231e494f-1",
-      "action": "review_and_respond",
-      "target": "1 recruiter message(s)",
-      "reason": "Recruiter outreach could lead to opportunities",
-      "urgency": "high",
-      "timestamp": "2026-04-26T08:01:14.248406+02:00"
-    },
-    {
-      "id": "rec-231e494f-2",
-      "action": "check_inbox",
-      "target": "2 unread actionable email(s)",
-      "reason": "Unread emails need attention",
-      "urgency": "high",
-      "timestamp": "2026-04-26T08:01:14.248409+02:00"
-    }
-  ]
+  "recommendations": []
 }
