@@ -405,3 +405,13 @@
 - Leads: 39
 - Errors: 0
 - Runtime: 410s
+
+## 2026-04-28 17:16:20 (v4.0)
+- Engine: Exa neural search via Composio MCP
+- Searches: 56
+- Found: 0
+- Priority picks: 0
+- Leads: 0
+- Errors: 56
+- Runtime: 434s
+- ⚠️ DEGRADATION

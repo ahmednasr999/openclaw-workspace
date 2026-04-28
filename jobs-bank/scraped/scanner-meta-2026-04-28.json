@@ -1,0 +1,31 @@
+{
+  "date": "2026-04-28",
+  "total_searches": 56,
+  "expected_searches": 56,
+  "total_found": 0,
+  "priority_picks": 0,
+  "exec_leads": 0,
+  "filtered_out": 0,
+  "runtime_seconds": 434,
+  "countries": [
+    "Saudi Arabia",
+    "Kuwait",
+    "United Arab Emirates",
+    "Bahrain",
+    "Oman",
+    "Qatar"
+  ],
+  "sources": [
+    "Exa",
+    "Composio Web",
+    "LinkedIn Jobs",
+    "Google Jobs"
+  ],
+  "engine": "Exa neural search via Composio MCP",
+  "errors": 56,
+  "validation_warnings": [
+    "ZERO RESULTS: 56 searches returned 0 jobs. API may be down.",
+    "HIGH ERROR RATE: 56/56 searches failed."
+  ],
+  "degraded": true
+}

@@ -1,10 +1,10 @@
-# CTO Pending Issues — Updated 2026-04-25 22:01 Cairo
+# CTO Pending Issues — Updated 2026-04-28 19:47 Cairo
 
 ## Open
 
-1. **daily-backup path still needs review, but the freshness alert is no longer active** — `/tmp/openclaw-backup.log` is present and was updated at `2026-04-25 20:00:01 +0300` with `No significant changes — nothing to commit`, so the immediate 48-hour freshness threshold from HEARTBEAT.md is not breached. However, `scripts/daily-backup.sh` still pushes `origin master:main` while the active workspace branch is `workspace-sync`, so the backup path may still miss current branch activity and should be reviewed deliberately.
+1. **daily-backup is now stale by HEARTBEAT threshold** — `/tmp/openclaw-backup.log` is present but last updated at `2026-04-25 20:00:01 +0300`, about 72 hours old at the 2026-04-28 19:47 heartbeat. This breaches the 48-hour freshness threshold from HEARTBEAT.md and needs follow-up/escalation. The older branch-target review remains relevant too: `scripts/daily-backup.sh` has historically pushed `origin master:main` while the active workspace branch is `workspace-sync`, so the backup path may miss current branch activity.
 
-2. **Root-level untracked `.v2` markdown files are active heartbeat blockers** — `git ls-files --others --exclude-standard --directory` reports `AGENTS.v2.md`, `SOUL.v2.md`, `TOOLS.v2.md`, and `USER.v2.md` at the workspace root. Basic file inspection shows normal markdown-sized files and targeted secret-pattern scan found no matches, but under HEARTBEAT.md they still block HEARTBEAT_OK until intentionally tracked, moved, ignored, or removed. Previous `reports/` directory blocker is no longer reported after commit `187984dc` ignored generated reports.
+2. **Root-level untracked backup markdown files are active heartbeat blockers** — `git ls-files --others --exclude-standard` reports `SOUL.md.runtime-leak-fix-20260428133354.bak` and `TOOLS.md.bak-active-memory-20260427-230818` at the workspace root. `ls -la` shows normal markdown-sized backup files, and a targeted secret-pattern scan found no matches, but under HEARTBEAT.md they still block HEARTBEAT_OK until intentionally tracked, moved, ignored, or removed. The previous `.v2` markdown blocker set is no longer reported.
 
 3. **exec-approvals.json CTO allowlist does not persist cleanly across gateway restart** — The allowlist entries were restored and `sqlite3` is present, but the durable fix still needs the underlying config change so CTO exec approvals survive restarts without manual repair.
 
@@ -55,6 +55,10 @@ Heartbeat note 2026-04-25 17:46 Cairo — Gateway is live (HTTP 200), latest com
 Heartbeat note 2026-04-25 19:56 Cairo — Gateway is live (HTTP 200), latest commit is `238a9640 Add revenue precision LinkedIn visual` from about 8 minutes ago, cron dashboard log is present with 0 ERROR lines in the last 100 lines, workspace disk usage is 60%, and the daily-backup signal file remains fresh at `2026-04-24 20:00:01 +0300`. The only root-level untracked blocker now reported is `reports/`, which appears empty. Previous `research/` and `sweepers/` blockers are no longer reported by `git ls-files --others --exclude-standard --directory`.
 
 Heartbeat note 2026-04-25 22:01 Cairo — Gateway is live (HTTP 200), latest commit is `187984dc chore(repo): ignore generated reports dir` from about 2 hours ago, cron dashboard log is present with 0 ERROR lines in the last 100 lines, workspace disk usage is 60%, and the daily-backup signal file advanced to `2026-04-25 20:00:01 +0300`. Root-level untracked blockers changed again: `reports/` is no longer reported, but `AGENTS.v2.md`, `SOUL.v2.md`, `TOOLS.v2.md`, and `USER.v2.md` are now untracked at workspace root. Targeted secret-pattern scan across those four files found no matches.
+
+Heartbeat note 2026-04-28 09:47 Cairo — Gateway is live (HTTP 200), latest commit is `3e69c2f6 chore(auto): daily data commit (29 files)` from about 3 hours ago, cron dashboard log is present with 0 ERROR lines in the last 100 lines, and workspace disk usage is 64%. Two active blockers were confirmed: the daily-backup signal file is stale at `2026-04-25 20:00:01 +0300` (about 62 hours old), and root-level untracked `TOOLS.md.bak-active-memory-20260427-230818` is present. Targeted secret-pattern scan of that file found no matches.
+
+Heartbeat note 2026-04-28 19:47 Cairo — Gateway is live (HTTP 200), latest commit remains `3e69c2f6 chore(auto): daily data commit (29 files)` from about 13 hours ago, cron dashboard log is present with 0 ERROR lines in the last 100 lines, and workspace disk usage is 75%. Active blockers persist: `/tmp/openclaw-backup.log` is still stale at `2026-04-25 20:00:01 +0300` (about 72 hours old), and root-level untracked backup files `SOUL.md.runtime-leak-fix-20260428133354.bak` plus `TOOLS.md.bak-active-memory-20260427-230818` are present. Targeted secret-pattern scan of those two files found no matches.
 
 ## Cleared / Removed From Pending
 

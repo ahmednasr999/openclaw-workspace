@@ -211,14 +211,16 @@ CAIRO_HOUR=$(TZ="Africa/Cairo" date +"%H")
 
 if [ -f "$SCANNER_FILE" ]; then
   scanner_status="exists"
-  scanner_picks=$(grep -c "^### " "$SCANNER_FILE" 2>/dev/null || echo "0")
-  scanner_leads=$(grep -c "^- \*\*" "$SCANNER_FILE" 2>/dev/null || echo "0")
+  scanner_picks=$(grep -c "^### " "$SCANNER_FILE" 2>/dev/null || true)
+  scanner_leads=$(grep -c "^- \*\*" "$SCANNER_FILE" 2>/dev/null || true)
+  scanner_picks=${scanner_picks:-0}
+  scanner_leads=${scanner_leads:-0}
   scanner_total=$((scanner_picks + scanner_leads))
   if [ "$scanner_total" -eq 0 ]; then
     scanner_status="empty"
-    scanner_repair="Re-run scanner: cd /root/.openclaw/workspace && python3 scripts/linkedin-gulf-jobs.py. If still 0, check LinkedIn cookie freshness (linkedin.txt age), check JobSpy import works, check network connectivity."
+    scanner_repair="Re-run scanner: cd /root/.openclaw/workspace && python3 scripts/linkedin-gulf-jobs.py. If still 0, check Composio/Exa tool health and network connectivity."
   elif [ "$scanner_total" -lt 10 ]; then
-    scanner_repair="Scanner degraded. Check: 1) LinkedIn cookie age (>3 days = refresh needed), 2) JobSpy rate limiting, 3) Search delay too low."
+    scanner_repair="Scanner degraded. Check Composio/Exa tool health, rate limits, and search logs."
   fi
 elif [ "$CAIRO_HOUR" -ge 7 ]; then
   scanner_status="missing"
@@ -243,10 +245,21 @@ if not os.path.exists(scanner_f) and int('${CAIRO_HOUR}') >= 7:
 elif os.path.exists(scanner_f) and os.path.getsize(scanner_f) < 200:
     issues.append({'cron': 'Jobs Scanner', 'issue': 'Output file suspiciously small', 'severity': 'medium', 'repair': 'Check script logs, re-run scanner'})
 
-# Engagement radar output
-radar_f = '$WORKSPACE/linkedin/engagement/daily/${TODAY}.md'
-if not os.path.exists(radar_f) and int('${CAIRO_HOUR}') >= 7:
-    issues.append({'cron': 'Engagement Radar', 'issue': 'No output file for today', 'severity': 'medium', 'repair': 'cd /root/.openclaw/workspace && python3 scripts/linkedin-engagement-radar.py'})
+# Engagement radar output (current implementation writes data/comment-radar.json)
+radar_f = '$WORKSPACE/data/comment-radar.json'
+if int('${CAIRO_HOUR}') >= 7:
+    if not os.path.exists(radar_f):
+        issues.append({'cron': 'Engagement Radar', 'issue': 'comment-radar.json missing', 'severity': 'medium', 'repair': 'cd /root/.openclaw/workspace && python3 scripts/comment-radar-agent.py'})
+    else:
+        generated = None
+        try:
+            with open(radar_f) as f:
+                generated = (json.load(f) or {}).get('generated')
+        except Exception:
+            pass
+        radar_date = (generated or datetime.fromtimestamp(os.path.getmtime(radar_f)).isoformat())[:10]
+        if radar_date < today:
+            issues.append({'cron': 'Engagement Radar', 'issue': f'comment-radar.json stale ({radar_date})', 'severity': 'medium', 'repair': 'cd /root/.openclaw/workspace && python3 scripts/comment-radar-agent.py'})
 
 # Morning Briefing check REMOVED 2026-03-31
 # Pipeline migrated to NocoDB + Telegram alerts - no briefing JSON file is created.
@@ -308,4 +321,3 @@ if trends.get('cookie_alert'):
 " 2>/dev/null > /tmp/scanner_trend_check.txt; then
     scanner_trend_alert=$(cat /tmp/scanner_trend_check.txt)
 fi
-

@@ -869,10 +869,11 @@ def main():
         finally:
             _rate_semaphore.release()
 
-    from concurrent.futures import ThreadPoolExecutor, as_completed
-    with ThreadPoolExecutor(max_workers=3) as executor:
-        futures = {executor.submit(execute_search, s): s for s in searches}
-        for future in as_completed(futures):
+    from concurrent.futures import ThreadPoolExecutor, as_completed, TimeoutError
+    executor = ThreadPoolExecutor(max_workers=3)
+    futures = {executor.submit(execute_search, s): s for s in searches}
+    try:
+        for future in as_completed(futures, timeout=MAX_RUNTIME_SECONDS):
             if time.time() - start > MAX_RUNTIME_SECONDS:
                 print(f"  Runtime limit reached ({MAX_RUNTIME_SECONDS}s). Stopping.")
                 break
@@ -889,50 +890,57 @@ def main():
 
             total_found += len(jobs)
 
-        for job in jobs:
-            # Dedup by URL
-            if job["url"] in seen_urls:
-                continue
-            seen_urls.add(job["url"])
+            for job in jobs:
+                # Dedup by URL
+                if job["url"] in seen_urls:
+                    continue
+                seen_urls.add(job["url"])
 
-            if job["id"] in seen_ids:
-                continue
-            seen_ids.add(job["id"])
+                if job["id"] in seen_ids:
+                    continue
+                seen_ids.add(job["id"])
 
-            if is_duplicate_db(job["url"], job.get("company", "")):
-                filtered_out.append({**job, "filter_reason": "duplicate"})
-                continue
+                if is_duplicate_db(job["url"], job.get("company", "")):
+                    filtered_out.append({**job, "filter_reason": "duplicate"})
+                    continue
 
-            relevant, reason = is_relevant(job["title"], job["location"])
-            if not relevant:
-                filtered_out.append({**job, "filter_reason": reason})
-                continue
+                relevant, reason = is_relevant(job["title"], job["location"])
+                if not relevant:
+                    filtered_out.append({**job, "filter_reason": reason})
+                    continue
 
-            # D3: Scanner does discovery only. All scoring deferred to review stage.
-            # Lightweight title-only ATS for the markdown report (informational, not gating)
-            ats_score, matched = score_ats("", job["title"])
-            job["ats_score"] = ats_score
-            job["ats_keywords"] = matched
-            job["jd_text"] = ""
-            job["jd_fetched"] = False
-            job["career_verdict"] = "pending_review"
-            job["career_fit"] = 0
-            job["career_reason"] = "awaiting LLM review"
+                # D3: Scanner does discovery only. All scoring deferred to review stage.
+                # Lightweight title-only ATS for the markdown report (informational, not gating)
+                ats_score, matched = score_ats("", job["title"])
+                job["ats_score"] = ats_score
+                job["ats_keywords"] = matched
+                job["jd_text"] = ""
+                job["jd_fetched"] = False
+                job["career_verdict"] = "pending_review"
+                job["career_fit"] = 0
+                job["career_reason"] = "awaiting LLM review"
 
-            save_to_db(job)
+                save_to_db(job)
 
-            if is_priority(job["title"], job["location"]):
-                picks.append(job)
-                print(f"  PICK: {job['title']} | {job['company']} | {job['location']}")
-            else:
-                leads.append(job)
-                print(f"  Lead: {job['title']} | {job['company']} | {job['location']}")
+                if is_priority(job["title"], job["location"]):
+                    picks.append(job)
+                    print(f"  PICK: {job['title']} | {job['company']} | {job['location']}")
+                else:
+                    leads.append(job)
+                    print(f"  Lead: {job['title']} | {job['company']} | {job['location']}")
 
-        if total_searches % 10 == 0:
-            elapsed_so_far = int(time.time() - start)
-            print(f"  Progress: {total_searches}/{len(searches)} | found {total_found} | picks {len(picks)} | leads {len(leads)} | {elapsed_so_far}s")
+            if total_searches % 10 == 0:
+                elapsed_so_far = int(time.time() - start)
+                print(f"  Progress: {total_searches}/{len(searches)} | found {total_found} | picks {len(picks)} | leads {len(leads)} | {elapsed_so_far}s")
 
-        time.sleep(EXA_DELAY_BETWEEN)
+            time.sleep(EXA_DELAY_BETWEEN)
+    except TimeoutError:
+        print(f"  Runtime limit reached ({MAX_RUNTIME_SECONDS}s). Stopping.")
+    finally:
+        for future in futures:
+            if not future.done():
+                future.cancel()
+        executor.shutdown(wait=False, cancel_futures=True)
 
     # ==================== DEGRADATION CHECK ====================
     if total_found < MIN_JOBS_ALERT:

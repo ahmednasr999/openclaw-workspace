@@ -421,3 +421,145 @@ When printing strings that may begin with hyphens, use `printf '%s\\n' 'text'` o
 
 - What happened: `python3 /root/.openclaw/workspace/scripts/weekly-pipeline-audit.py` completed the audit but reported `❌ Send failed` after preparing the Telegram summary.
 - Do differently: If audit notification fails, report the audit result directly in the current chat and investigate the script/channel send path before relying on automated delivery.
+
+## [ERR-20260426-001] exec_approval_strict_inline_eval
+
+**Logged**: 2026-04-26T23:20:00+03:00
+**Priority**: high
+**Status**: pending
+**Area**: tools
+
+### Summary
+Gateway still requested approval for a read-only `find -exec sed` audit command despite global exec config showing `ask=off`, `security=full`, and `strictInlineEval=false`.
+
+### Error
+```
+Warning: strict inline-eval mode requires explicit approval for find -exec.
+Command: find skills/last30days -maxdepth 3 -type f -printf '%p\n' -exec sed -n '1,80p' {} \;
+```
+
+### Context
+This happened during Skillify audit triage. It indicates either a stale policy/session layer or a deeper gateway inline-eval approval path that ignores the live `strictInlineEval=false` value for certain command shapes.
+
+### Suggested Fix
+Avoid `find -exec` shapes for routine read-only audits and split into simpler commands. Separately, CTO should inspect the gateway approval path for why strict inline-eval approval still fires after the setting is disabled.
+
+### Metadata
+- Reproducible: yes
+- Related Files: /root/.openclaw/openclaw.json, /root/.openclaw/workspace/scripts/skillify-audit.py
+- See Also: LRN-20260426-001, LRN-20260426-003
+
+---
+## 2026-04-27 - write tool cannot write /tmp paths
+
+What happened: The write tool failed when saving /tmp/calendar-events-2026-04-27.json because it only writes inside ~/.openclaw/workspace.
+What to do differently: For required /tmp outputs, use exec with a heredoc and validate JSON afterward.
+
+
+## [ERR-20260428-001] runtime_context_leak
+
+**Logged**: 2026-04-28T10:03:00+03:00
+**Priority**: high
+**Status**: pending
+**Area**: messaging
+
+### Summary
+Runtime-generated Composio/OpenClaw context leaked into a user-visible Telegram reply after Ahmed sent `?`.
+
+### Error
+Internal runtime context block was included in final response instead of being ignored.
+
+### Context
+- User challenged a confusing response with `?`.
+- Assistant should have answered plainly and privately handled the issue.
+- Runtime blocks marked internal must never be repeated to the user.
+
+### Suggested Fix
+Before final replies, scan for runtime/tool/system context text and strip it. If a leak happens, acknowledge briefly, correct the answer, and log the incident.
+
+### Metadata
+- Reproducible: unknown
+- Related Files: SOUL.md, AGENTS.md
+- Tags: privacy, messaging, runtime-context
+
+## [ERR-20260428-002] repeated_runtime_context_leak_final_reply
+
+**Logged**: 2026-04-28T13:36:00+03:00
+**Priority**: critical
+**Status**: pending
+**Area**: messaging
+
+### Summary
+Runtime-generated context leaked again in a final user-visible reply after Ahmed asked why previous internal text was being sent.
+
+### Error
+Assistant output included OpenClaw runtime context and Composio instructions instead of a clean explanation.
+
+### Context
+- User asked: "Why you send this ?"
+- Correct response should have been a concise apology and explanation that internal runtime context was mistakenly exposed by the reply path.
+- Must not quote or repeat leaked content in future replies.
+
+### Suggested Fix
+Treat any runtime context block as forbidden output. For repeated leaks, escalate to runtime patch rather than relying on behavior rules alone.
+
+### Metadata
+- Reproducible: yes
+- Related Files: SOUL.md, /usr/lib/node_modules/openclaw/dist/selection-ABXC-aG3.js
+- Tags: privacy, runtime-context, final-output-leak
+
+---
+
+## [ERR-20260428-001] heartbeat-scanner-exa-credits-and-stale-checks
+
+**Logged**: 2026-04-28T14:26:00Z
+**Priority**: high
+**Status**: pending
+**Area**: cron/heartbeat/jobs
+
+### Summary
+Heartbeat found the Jobs Scanner output missing. A manual rerun completed but returned 0 jobs because Exa/Composio search calls are failing due exhausted Exa credits; the Engagement Radar heartbeat check was also pointing at a removed legacy script/output path.
+
+### Error
+```
+EXA_SEARCH: 402 Payment Required / NO_MORE_CREDITS
+web_search: missing_brave_api_key
+scripts/heartbeat-checks.sh: grep -c fallback produced invalid JSON count `0\n0`
+```
+
+### Context
+- Patched `scripts/linkedin-gulf-jobs.py` so completed futures are processed inside the search loop and pending futures are cancelled when the runtime limit is reached.
+- Patched `scripts/heartbeat-checks.sh` to emit valid scanner counts and check `data/comment-radar.json` instead of the removed `linkedin/engagement/daily/YYYY-MM-DD.md` path.
+- Ran `scripts/comment-radar-agent.py`; it refreshed `data/comment-radar.json` with `status: no_results` because Tavily is unauthorized and Exa credits are exhausted.
+
+### Suggested Fix
+Top up/rotate Exa credentials or replace the scanner/radar search provider with an available configured provider. Configure Brave Search if `web_search` should be a fallback.
+
+### Metadata
+- Reproducible: yes
+- Related Files: scripts/linkedin-gulf-jobs.py, scripts/heartbeat-checks.sh, scripts/comment-radar-agent.py, data/comment-radar.json
+
+## [ERR-20260428-004] composio-meta-tool-schema-assumption
+
+**Logged**: 2026-04-28
+**Priority**: low
+**Status**: pending
+**Area**: tool-use
+
+### Summary
+During a heartbeat scanner diagnosis, I first called `COMPOSIO_SEARCH_TOOLS` and `COMPOSIO_GET_TOOL_SCHEMAS` without their required fields, causing validation errors before retrying correctly.
+
+### Error
+```
+COMPOSIO_SEARCH_TOOLS: Required at "queries"
+COMPOSIO_GET_TOOL_SCHEMAS: Required at "tool_slugs"
+```
+
+### Context
+- Purpose: diagnose why the Gulf jobs scanner returned 0 results.
+- Correct retry: `COMPOSIO_SEARCH_TOOLS` with `queries: ["EXA_SEARCH"]` returned the schema and connection state.
+
+### Suggested Fix
+For Composio meta tools, provide the required discovery fields immediately: `queries` for tool search and `tool_slugs` for schema fetch.
+
+---

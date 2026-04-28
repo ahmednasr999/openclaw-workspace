@@ -1,0 +1,86 @@
+#!/usr/bin/env python3
+"""Check known OpenClaw runtime patches that can be overwritten by updates.
+
+This is intended for post-update verification. It does not modify files.
+"""
+from __future__ import annotations
+
+from pathlib import Path
+import sys
+
+CHECKS = [
+    {
+        "name": "session-resume fallback prefix suppressed",
+        "mode": "absent",
+        "needle": "Automatic session resume failed, so sending the status directly.",
+        "paths": [
+            Path("/usr/lib/node_modules/openclaw/dist"),
+            Path("/root/openclaw/dist"),
+        ],
+        "alert": (
+            "OpenClaw runtime contains the session-resume fallback prefix again. "
+            "Reapply the known patch or use the upstream/source fix."
+        ),
+    },
+    {
+        "name": "active-memory direct FTS live-reply patch present",
+        "mode": "present",
+        "needle": "directFts=1",
+        "paths": [
+            Path("/usr/lib/node_modules/openclaw/dist/extensions/active-memory/index.js"),
+        ],
+        "alert": (
+            "Active-memory direct FTS patch is missing. Do not enable semantic/vector "
+            "active-memory in live Telegram replies until isolated tests prove it is fast."
+        ),
+    },
+]
+
+
+def iter_files(path: Path):
+    if path.is_file():
+        yield path
+    elif path.is_dir():
+        yield from path.rglob("*.js")
+
+
+def main() -> int:
+    failures: list[str] = []
+    for check in CHECKS:
+        matches: list[str] = []
+        needle = check["needle"]
+        for root in check["paths"]:
+            for file_path in iter_files(root):
+                try:
+                    text = file_path.read_text(errors="ignore")
+                except OSError:
+                    continue
+                if needle in text:
+                    for line_no, line in enumerate(text.splitlines(), 1):
+                        if needle in line:
+                            matches.append(f"{file_path}:{line_no}: {line.strip()}")
+        mode = check.get("mode", "absent")
+        if mode == "absent":
+            if matches:
+                failures.append(
+                    f"FAIL: {check['name']}\n{check['alert']}\n" + "\n".join(matches)
+                )
+            else:
+                print(f"OK: {check['name']}")
+        elif mode == "present":
+            if matches:
+                print(f"OK: {check['name']}")
+            else:
+                failures.append(f"FAIL: {check['name']}\n{check['alert']}")
+        else:
+            failures.append(f"FAIL: {check['name']}\nUnknown check mode: {mode}")
+
+
+    if failures:
+        print("\n\n".join(failures), file=sys.stderr)
+        return 1
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

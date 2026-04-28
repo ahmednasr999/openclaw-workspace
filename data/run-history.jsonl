@@ -2063,3 +2063,12 @@
 {"agent": "email-agent", "run_id": "aff1981d", "started": "2026-04-27T18:02:08.784989+02:00", "duration_ms": 49151, "status": "success", "records": 14, "error": null}
 {"agent": "email-agent", "run_id": "1a00e21e", "started": "2026-04-27T20:01:51.490327+02:00", "duration_ms": 38442, "status": "success", "records": 14, "error": null}
 {"agent": "jobs-source-linkedin-jobspy", "run_id": "61379e1f", "started": "2026-04-28T04:20:02.606531+02:00", "duration_ms": 1145519, "status": "success", "records": 359, "error": null}
+{"agent": "email-agent", "run_id": "522cf98c", "started": "2026-04-28T06:03:33.508785+02:00", "duration_ms": 66058, "status": "success", "records": 14, "error": null}
+{"agent": "email-agent", "run_id": "cd61a617", "started": "2026-04-28T08:03:09.340504+02:00", "duration_ms": 127219, "status": "success", "records": 14, "error": null}
+{"agent": "email-agent", "run_id": "65f61c0e", "started": "2026-04-28T10:01:51.748113+02:00", "duration_ms": 44970, "status": "success", "records": 14, "error": null}
+{"agent": "email-agent", "run_id": "9f36a059", "started": "2026-04-28T10:03:16.119354+02:00", "duration_ms": 34429, "status": "success", "records": 14, "error": null}
+{"agent": "email-agent", "run_id": "ed207e07", "started": "2026-04-28T12:01:58.447291+02:00", "duration_ms": 56883, "status": "success", "records": 14, "error": null}
+{"agent": "email-agent", "run_id": "9521bc9a", "started": "2026-04-28T14:03:30.544913+02:00", "duration_ms": 96368, "status": "success", "records": 14, "error": null}
+{"agent": "email-agent", "run_id": "d0ad4d1e", "started": "2026-04-28T16:02:09.184185+02:00", "duration_ms": 47878, "status": "success", "records": 14, "error": null}
+{"agent": "email-agent", "run_id": "2595dc97", "started": "2026-04-28T18:01:38.703492+02:00", "duration_ms": 50005, "status": "success", "records": 14, "error": null}
+{"agent": "email-agent", "run_id": "a0121b28", "started": "2026-04-28T18:02:16.594268+02:00", "duration_ms": 18713, "status": "success", "records": 14, "error": null}

@@ -4720,3 +4720,96 @@
 - [web] VP Digital Banking in United Arab Emirates: 8 results
 - [linkedin] VP Digital Banking in United Arab Emirates: 8 results
 - [google] VP Digital Banking in United Arab Emirates: 6 results
+
+## Run: 2026-04-28 17:05:15 (v4.0 - Exa API, parallel)
+- [exa] VP OR Director digital transformation in Qatar: 0 results
+- [exa] VP OR Director digital transformation in United Arab Emirates: 0 results
+- [exa] VP OR Director digital transformation in Saudi Arabia: 0 results
+- [exa] VP OR Director digital transformation in Bahrain: 0 results
+- [exa] VP OR Director digital transformation in Oman: 0 results
+- [exa] VP OR Director digital transformation in Kuwait: 0 results
+- [linkedin] VP in Saudi Arabia: 0 results
+- [exa] CTO OR CIO OR Head of Technology in United Arab Emirates: 0 results
+- [linkedin] VP in United Arab Emirates: 0 results
+- [exa] CTO OR CIO OR Head of Technology in Saudi Arabia: 0 results
+- [exa] CTO OR CIO OR Head of Technology in Bahrain: 0 results
+- [exa] CTO OR CIO OR Head of Technology in Qatar: 0 results
+- [exa] CTO OR CIO OR Head of Technology in Oman: 0 results
+- [exa] CTO OR CIO OR Head of Technology in Kuwait: 0 results
+- [linkedin] CTO in Saudi Arabia: 0 results
+- [exa] Chief Operating Officer OR Chief Strategy Officer in United Arab Emirates: 0 results
+- [linkedin] CTO in United Arab Emirates: 0 results
+- [exa] Chief Operating Officer OR Chief Strategy Officer in Saudi Arabia: 0 results
+- [exa] Chief Operating Officer OR Chief Strategy Officer in Kuwait: 0 results
+- [exa] Chief Operating Officer OR Chief Strategy Officer in Bahrain: 0 results
+- [exa] Chief Operating Officer OR Chief Strategy Officer in Qatar: 0 results
+- [linkedin] Chief Operating Officer in United Arab Emirates: 0 results
+- [linkedin] Chief Operating Officer in Saudi Arabia: 0 results
+- [exa] Chief Operating Officer OR Chief Strategy Officer in Oman: 0 results
+- [exa] PMO Director OR Program Director OR Head of PMO in United Arab Emirates: 0 results
+- [exa] PMO Director OR Program Director OR Head of PMO in Qatar: 0 results
+- [exa] PMO Director OR Program Director OR Head of PMO in Saudi Arabia: 0 results
+- [exa] PMO Director OR Program Director OR Head of PMO in Bahrain: 0 results
+- [exa] PMO Director OR Program Director OR Head of PMO in Kuwait: 0 results
+- [exa] PMO Director OR Program Director OR Head of PMO in Oman: 0 results
+- [linkedin] PMO Director in Saudi Arabia: 0 results
+- [linkedin] PMO Director in United Arab Emirates: 0 results
+- [exa] VP Engineering OR Director of Engineering in United Arab Emirates: 0 results
+
+## Run: 2026-04-28 17:16:20 (v4.0 - Exa API, parallel)
+- [exa] VP OR Director digital transformation in Saudi Arabia: 0 results
+- [exa] VP OR Director digital transformation in United Arab Emirates: 0 results
+- [exa] VP OR Director digital transformation in Qatar: 0 results
+- [exa] VP OR Director digital transformation in Oman: 0 results
+- [exa] VP OR Director digital transformation in Bahrain: 0 results
+- [exa] VP OR Director digital transformation in Kuwait: 0 results
+- [linkedin] VP in Saudi Arabia: 0 results
+- [linkedin] VP in United Arab Emirates: 0 results
+- [exa] CTO OR CIO OR Head of Technology in United Arab Emirates: 0 results
+- [exa] CTO OR CIO OR Head of Technology in Saudi Arabia: 0 results
+- [exa] CTO OR CIO OR Head of Technology in Qatar: 0 results
+- [exa] CTO OR CIO OR Head of Technology in Bahrain: 0 results
+- [exa] CTO OR CIO OR Head of Technology in Oman: 0 results
+- [linkedin] CTO in Saudi Arabia: 0 results
+- [linkedin] CTO in United Arab Emirates: 0 results
+- [exa] CTO OR CIO OR Head of Technology in Kuwait: 0 results
+- [exa] Chief Operating Officer OR Chief Strategy Officer in United Arab Emirates: 0 results
+- [exa] Chief Operating Officer OR Chief Strategy Officer in Saudi Arabia: 0 results
+- [exa] Chief Operating Officer OR Chief Strategy Officer in Qatar: 0 results
+- [exa] Chief Operating Officer OR Chief Strategy Officer in Bahrain: 0 results
+- [exa] Chief Operating Officer OR Chief Strategy Officer in Oman: 0 results
+- [linkedin] Chief Operating Officer in Saudi Arabia: 0 results
+- [linkedin] Chief Operating Officer in United Arab Emirates: 0 results
+- [exa] PMO Director OR Program Director OR Head of PMO in United Arab Emirates: 0 results
+- [exa] Chief Operating Officer OR Chief Strategy Officer in Kuwait: 0 results
+- [exa] PMO Director OR Program Director OR Head of PMO in Bahrain: 0 results
+- [exa] PMO Director OR Program Director OR Head of PMO in Kuwait: 0 results
+- [exa] PMO Director OR Program Director OR Head of PMO in Qatar: 0 results
+- [exa] PMO Director OR Program Director OR Head of PMO in Saudi Arabia: 0 results
+- [linkedin] PMO Director in United Arab Emirates: 0 results
+- [exa] PMO Director OR Program Director OR Head of PMO in Oman: 0 results
+- [linkedin] PMO Director in Saudi Arabia: 0 results
+- [exa] VP Engineering OR Director of Engineering in Qatar: 0 results
+- [exa] VP Engineering OR Director of Engineering in United Arab Emirates: 0 results
+- [exa] VP Engineering OR Director of Engineering in Saudi Arabia: 0 results
+- [exa] VP Engineering OR Director of Engineering in Oman: 0 results
+- [exa] VP Engineering OR Director of Engineering in Bahrain: 0 results
+- [exa] VP Engineering OR Director of Engineering in Kuwait: 0 results
+- [exa] Head of Transformation OR Director of Innovation OR VP Operations in United Arab Emirates: 0 results
+- [linkedin] VP Engineering in Saudi Arabia: 0 results
+- [linkedin] VP Engineering in United Arab Emirates: 0 results
+- [exa] Head of Transformation OR Director of Innovation OR VP Operations in Qatar: 0 results
+- [exa] Head of Transformation OR Director of Innovation OR VP Operations in Bahrain: 0 results
+- [exa] Head of Transformation OR Director of Innovation OR VP Operations in Kuwait: 0 results
+- [exa] Head of Transformation OR Director of Innovation OR VP Operations in Saudi Arabia: 0 results
+- [exa] Head of Transformation OR Director of Innovation OR VP Operations in Oman: 0 results
+- [linkedin] Head of Transformation in Saudi Arabia: 0 results
+- [linkedin] Head of Transformation in United Arab Emirates: 0 results
+- [exa] VP Digital Banking OR Director Fintech OR Head of Digital Payments in United Arab Emirates: 0 results
+- [exa] VP Digital Banking OR Director Fintech OR Head of Digital Payments in Saudi Arabia: 0 results
+- [exa] VP Digital Banking OR Director Fintech OR Head of Digital Payments in Kuwait: 0 results
+- [exa] VP Digital Banking OR Director Fintech OR Head of Digital Payments in Qatar: 0 results
+- [exa] VP Digital Banking OR Director Fintech OR Head of Digital Payments in Oman: 0 results
+- [exa] VP Digital Banking OR Director Fintech OR Head of Digital Payments in Bahrain: 0 results
+- [linkedin] VP Digital Banking in Saudi Arabia: 0 results
+- [linkedin] VP Digital Banking in United Arab Emirates: 0 results

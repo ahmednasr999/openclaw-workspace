@@ -65,9 +65,26 @@ Write traces after:
 - If not time-based, keep it as a reusable skill/checklist.
 - Sensitive, public, destructive, or paid actions remain approval-gated.
 
+## Skillify Protocol
+
+System-wide rule: every repeated failure, user correction, wrong approval boundary, brittle workflow, or successful ad-hoc fix should be assessed for skillification across CEO/NASR, HR, CTO, CMO, and JobZoom.
+
+NASR owns governance. Each agent owns durable fixes in its lane:
+- HR: job search, CV, ATS, recruiter/email, pipeline, application-lock, JobZoom handoffs.
+- CTO: gateway, config, scripts, runtime patches, health checks, tool behavior.
+- CMO: LinkedIn, content, brand, image generation, posting, engagement.
+- CEO/NASR: strategy, routing, memory, cross-agent policy, user-facing quality.
+- JobZoom: search coverage, dedupe, applied ledger, protected daily scan/report lane.
+
+Decision ladder: memory note -> learning entry -> workflow rule -> skill -> deterministic script -> test/eval/check -> cron/doctor check. Use the smallest durable fix that prevents recurrence.
+
+Minimum closeout for promoted failures: incident, owner, durable fix, verification, residual risk. Full protocol: `docs/agent-governance/skillify-protocol.md`.
+
 ## Tool Discipline
 
 Before acting, check the relevant risks: permission/approval, effort, user impact, rate limits, core-file safety, and verification. Keep the check mental for low-risk work; make it explicit when risk is high.
+
+Do not interrupt Ahmed for safe read-only inspections or approved routine standing checks, including the Gmail job-search email agent when it only reads/summarizes local state. Preserve approval gates for destructive, external, public, credential, gateway, and unscheduled write actions. <!-- dream-promoted 2026-04-27 -->
 
 After acting, confirm the real outcome, not just exit code. Log lessons for failures or corrections, escalate only when useful, and recover automatically when safe.
 
@@ -84,7 +101,7 @@ Retrieval budget: start with the most likely local/source-of-truth evidence. Sea
 
 ## Sub-Agent Rules
 
-Every spawn brief must define the outcome, success criteria, verification, timeout, and non-delegation expectation. Require side findings when useful. Never allow a sub-agent to claim success while errors remain.
+Every spawn brief must define the outcome, success criteria, verification, timeout, and non-delegation expectation. Require side findings when useful. Include Ahmed-specific style constraints, especially concise replies and light natural emoji use when appropriate, because sub-agents may not inherit preferences reliably. Never allow a sub-agent to claim success while errors remain.
 
 Use isolated context by default. Use forked context only when the child truly needs this transcript.
 
