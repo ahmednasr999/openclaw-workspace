@@ -1,10 +1,86 @@
 # Learnings Log
 
+## [LRN-20260426-003] correction
+
+**Logged**: 2026-04-26T18:05:31+03:00
+**Priority**: high
+**Status**: pending
+**Area**: workflow
+
+### Summary
+CMO read-only script inspection should also be pre-approved, not just HR/JobZoom checks.
+
+### Details
+Ahmed corrected that the approval prompt for `sed -n '1,220p' scripts/generate-premium-content-card.py` in `/root/.openclaw/workspace-cmo` should be pre-approved as well. The command was only reading the CMO premium content-card generator script. The previous framing was too narrow around HR/JobZoom; Ahmed's preference applies across routine read-only local workspace inspections, including CMO assets/scripts.
+
+Current gateway exec config already supports this broader behavior: `tools.exec.ask=off`, `tools.exec.security=full`, and `tools.exec.strictInlineEval=false`. If old sessions still show prompts, treat them as stale/pending approvals unless a new non-read, external, destructive, or policy-gated action is involved.
+
+### Suggested Action
+For all agent workstreams, do not surface approval prompts for routine local read-only inspections. If a read-only CMO/HR/JobZoom/Main command still prompts, first suspect stale session state or a separate approval layer, then verify live config before asking Ahmed. Keep safety gates for outbound emails, public posts, job applications, destructive deletes, and gateway/config/runtime changes.
+
+### Metadata
+- Source: user_feedback
+- Related Files: /root/.openclaw/workspace-cmo/scripts/generate-premium-content-card.py, /root/.openclaw/openclaw.json
+- Tags: correction, approvals, read-only, cmo, hr, jobzoom, workflow, tool-policy
+- See Also: LRN-20260426-001
+
+---
+
+## [LRN-20260426-002] best_practice
+
+**Logged**: 2026-04-26T14:47:00+03:00
+**Priority**: high
+**Status**: pending
+**Area**: infra
+
+### Summary
+Known runtime patch: OpenClaw session-resume fallback prefix is suppressed in the installed bash-tools chunk.
+
+### Details
+Ahmed approved a runtime patch after repeated user-facing messages saying `Automatic session resume failed, so sending the status directly.` Investigation found the exact string in `/usr/lib/node_modules/openclaw/dist/bash-tools-MqL7r1OX.js` at line 215, not in `dist/index.js`. The file was backed up to `/usr/lib/node_modules/openclaw/dist/bash-tools-MqL7r1OX.js.bak.20260426143646`, then the return statement was changed from returning the ugly prefix to `return "";`. Gateway was restarted afterward. A background exec test completed without showing the ugly prefix.
+
+This is a runtime `dist/` patch, not a source-level fix. Any OpenClaw update can overwrite it. Treat it like the lossless-claw runtime patch pattern: verify after updates and reapply or upstream/source-fix if needed.
+
+### Suggested Action
+After OpenClaw updates, grep installed runtime for `Automatic session resume failed`; if present, reapply the suppression or implement a source-level fix with retry/backoff and internal-only logging. Do not claim the session-resume root cause is fixed by this patch; it only suppresses the user-facing fallback prefix.
+
+### Metadata
+- Source: conversation
+- Related Files: /usr/lib/node_modules/openclaw/dist/bash-tools-MqL7r1OX.js
+- Backup: /usr/lib/node_modules/openclaw/dist/bash-tools-MqL7r1OX.js.bak.20260426143646
+- Upstream Issue: https://github.com/openclaw/openclaw/issues/72143
+- Tags: openclaw, runtime-patch, gateway, exec-followup, session-resume, known-patches
+
+---
+
+## [LRN-20260426-001] correction
+
+**Logged**: 2026-04-26T12:13:00+03:00
+**Priority**: high
+**Status**: pending
+**Area**: workflow
+
+### Summary
+Ahmed expects read-only inspection commands to be pre-approved instead of interrupting him for manual approval.
+
+### Details
+After a read-only workspace health command requested approval, Ahmed corrected that all read-only operations should be treated as pre-approved. The command only inspected untracked files, disk space, backup-log timestamp, and latest git commit. The miss was surfacing an approval for safe inspection work instead of relying on pre-approval where policy allows.
+
+### Suggested Action
+For read-only commands, avoid asking Ahmed for approval unless the command touches sensitive/private external data, changes state, escalates privileges, or bundles non-read operations. If the gateway still prompts for obviously read-only checks, simplify the command or adjust the relevant approval policy after explicit config-change confirmation.
+
+### Metadata
+- Source: user_feedback
+- Related Files: /root/.openclaw/workspace/config/tool-permissions.yaml, /root/.openclaw/workspace/TOOLS.md
+- Tags: correction, approvals, read-only, workflow, tool-policy
+
+---
+
 ## [LRN-20260413-001] best_practice
 
 **Logged**: 2026-04-13T18:52:00Z
 **Priority**: high
-**Status**: pending
+**Status**: promoted
 **Area**: workflow
 
 ### Summary
@@ -23,11 +99,15 @@ Before reporting failure, check live git state (`git log`, `git status`) and dis
 
 ---
 
+### Promotion
+Promoted during system-wide Skillify Protocol triage on 2026-04-26. Durable rule added to AGENTS.md, SOUL.md, TOOLS.md, or USER.md as appropriate.
+
+
 ## [LRN-20260412-003] correction
 
 **Logged**: 2026-04-12T16:35:00Z
 **Priority**: high
-**Status**: pending
+**Status**: promoted
 **Area**: workflow
 
 ### Summary
@@ -47,11 +127,15 @@ For this CMO LinkedIn series, use `/root/.openclaw/workspace-cmo/scripts/generat
 
 ---
 
+### Promotion
+Promoted during system-wide Skillify Protocol triage on 2026-04-26. Durable rule added to AGENTS.md, SOUL.md, TOOLS.md, or USER.md as appropriate.
+
+
 ## [LRN-20260412-002] correction
 
 **Logged**: 2026-04-12T11:01:00Z
 **Priority**: high
-**Status**: pending
+**Status**: promoted
 **Area**: docs
 
 ### Summary
@@ -71,11 +155,15 @@ Apply the emoji preference consistently across conversational and routine status
 
 ---
 
+### Promotion
+Promoted during system-wide Skillify Protocol triage on 2026-04-26. Durable rule added to AGENTS.md, SOUL.md, TOOLS.md, or USER.md as appropriate.
+
+
 ## [LRN-20260412-001] correction
 
 **Logged**: 2026-04-12T09:35:00Z
 **Priority**: high
-**Status**: pending
+**Status**: promoted
 **Area**: docs
 
 ### Summary
@@ -94,11 +182,15 @@ Use emojis naturally in Ahmed-facing replies by default, especially in conversat
 
 ---
 
+### Promotion
+Promoted during system-wide Skillify Protocol triage on 2026-04-26. Durable rule added to AGENTS.md, SOUL.md, TOOLS.md, or USER.md as appropriate.
+
+
 ## [LRN-20260411-001] best_practice
 
 **Logged**: 2026-04-11T14:45:00Z
 **Priority**: high
-**Status**: pending
+**Status**: promoted
 **Area**: infra
 
 ### Summary
@@ -116,6 +208,10 @@ When proposing or executing OpenClaw updates, state clearly whether the path is 
 - Tags: openclaw, update, versioning, rollout, best_practice
 
 ---
+
+### Promotion
+Promoted during system-wide Skillify Protocol triage on 2026-04-26. Durable rule added to AGENTS.md, SOUL.md, TOOLS.md, or USER.md as appropriate.
+
 
 ## [LRN-20260410-004] best_practice
 
@@ -144,7 +240,7 @@ When piloting Python scraping tools with optional browser dependencies, prefer a
 
 **Logged**: 2026-04-09T23:12:00Z
 **Priority**: high
-**Status**: pending
+**Status**: promoted
 **Area**: workflow
 
 ### Summary
@@ -163,11 +259,15 @@ Bias toward doing the useful next step now. Only defer when there is a real bloc
 
 ---
 
+### Promotion
+Promoted during system-wide Skillify Protocol triage on 2026-04-26. Durable rule added to AGENTS.md, SOUL.md, TOOLS.md, or USER.md as appropriate.
+
+
 ## [LRN-20260409-001] correction
 
 **Logged**: 2026-04-09T21:48:13Z
 **Priority**: critical
-**Status**: pending
+**Status**: promoted
 **Area**: config
 
 ### Summary
@@ -186,11 +286,15 @@ Treat `channels.slack.streaming` as immutable in this workspace unless Ahmed exp
 
 ---
 
+### Promotion
+Promoted during system-wide Skillify Protocol triage on 2026-04-26. Durable rule added to AGENTS.md, SOUL.md, TOOLS.md, or USER.md as appropriate.
+
+
 ## [LRN-20260410-002] correction
 
 **Logged**: 2026-04-09T22:58:00Z
 **Priority**: critical
-**Status**: pending
+**Status**: promoted
 **Area**: infra
 
 ### Summary
@@ -832,6 +936,10 @@ Scanner `semantic_fit_filter()` requires JD text for career_verdict. Jobs withou
 **Fix:** Added `@page` rules with `content: none` for all 6 margin positions (top-left/center/right, bottom-left/center/right). Retroactively patched 45 existing HTML files.
 **Rule:** NEVER send a CV without visually reviewing the PDF first. Every CV must pass validation AND visual check before delivery.
 
+### Promotion
+Promoted during system-wide Skillify Protocol triage on 2026-04-26. Durable rule added to AGENTS.md, SOUL.md, TOOLS.md, or USER.md as appropriate.
+
+
 ## [2026-03-25] Model Switching Transparency
 **What happened:** Ahmed set GPT-5.4-Pro manually, but the model-router.json has an `auto_switch_back` rule that silently reverts to MiniMax-M2.7 after any paid-model task completes. Ahmed was frustrated — kept getting switched without knowing why.
 **Root cause:** `auto_switch_back.enabled: true` in `/root/.openclaw/workspace/config/model-router.json` + no notification mechanism.
@@ -908,7 +1016,7 @@ Superseded 2026-04-25: current preferred model is GPT-5.5. For this research-sys
 
 **Logged**: 2026-04-12T20:13:08+02:00
 **Priority**: high
-**Status**: pending
+**Status**: promoted
 **Area**: infra
 
 ### Summary
@@ -926,11 +1034,16 @@ For performance incidents, rank recommendations in this order: current-host reme
 - Tags: correction, performance, recommendations, prioritization
 
 ---
+
+### Promotion
+Promoted during system-wide Skillify Protocol triage on 2026-04-26. Durable rule added to SOUL.md: lead with in-place diagnosis/remediation before recommending larger servers or major architecture changes.
+
+
 ## [LRN-20260417-001] correction
 
 **Logged**: 2026-04-17T13:22:45.354679Z
 **Priority**: high
-**Status**: pending
+**Status**: promoted
 **Area**: config
 
 ### Summary
@@ -948,6 +1061,10 @@ For recurring delegated agents, explicitly include the emoji/style preference in
 - Tags: subagent, style, emoji, preference-propagation
 
 ---
+
+### Promotion
+Promoted during system-wide Skillify Protocol triage on 2026-04-26. Durable rule added to AGENTS.md, SOUL.md, TOOLS.md, or USER.md as appropriate.
+
 
 ## [LRN-20260425-001] correction
 
@@ -982,3 +1099,10 @@ When there is an explicit remaining-items list and the current item is complete,
 
 ### Do Differently
 After each completed workstream, check the active remaining list and immediately advance the next safe item or create scheduled follow-up checks for items that depend on time.
+
+## 2026-04-28 - Send generated images as direct attachments
+
+Ahmed corrected that saying an image is done without visibly showing/sending it is not useful. For generated images, especially Telegram, send the actual media attachment directly with the reply instead of relying only on a MEDIA path or status text. Verify the delivery path when possible.
+
+## 2026-04-28 - Repeated JobZoom Health Warning Should Be Fixed, Not Explained Away
+Ahmed flagged that JobZoom showed `AI Scoring Engine: WARNING` for the second day in a row. The warning came from a fragile pre-scoring health probe even though real batch scoring succeeded. When a warning repeats and creates report noise, fix the report logic to use the real scoring outcome as source of truth instead of repeatedly explaining the warning.

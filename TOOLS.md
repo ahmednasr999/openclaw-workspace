@@ -39,6 +39,7 @@ Posting:
 - For image posts, upload image first and use the returned true `s3key`.
 - Never pass raw GitHub URLs, local paths, Notion URLs, or short links as `s3key`.
 - Never post text-only when an image was expected.
+- For the CMO premium image/content-card workflow, default to `/root/.openclaw/workspace-cmo/scripts/generate-premium-content-card.py` unless Ahmed explicitly chooses another path.
 
 Content calendar:
 - Notion DB: `3268d599-a162-814b-8854-c9b8bde62468`.
@@ -98,6 +99,10 @@ Never use Composio for Notion or Telegram when direct credentials exist.
 - Heredoc syntax is blocked by the gateway security scanner.
 - When doctor says no active memory plugin is registered, check `plugins.entries.memory-core.enabled` before changing memory slots.
 - ACP harness requests may fail if ACP runtime plugin is not configured. Verify runtime availability before promising Codex/Claude harness launch.
+- `gateway update.run` follows upstream/git update behavior, not necessarily the latest tagged release. Before updates, verify the actual target, active service entrypoint, and `/tmp` headroom.
+- Post-update runtime patch check: run `python3 scripts/check-openclaw-runtime-patches.py` after OpenClaw updates. It alerts if the session-resume fallback prefix patch was overwritten or the active-memory direct FTS live-reply patch is missing.
+- Active-memory live replies intentionally use the direct FTS patch, not the stock embedded LLM recall path. Do not re-enable semantic/vector active-memory in the live Telegram path until isolated tests prove p95 under 2s with no timeout leaks. See `docs/runtime-patches/active-memory-direct-fts.md`.
+- `apply_patch`, `read`, and similar workspace-scoped file tools can reject paths outside `/root/.openclaw/workspace`. For `/tmp`, lab directories, or other workspaces, treat that as a tool-scope limitation and verify repo state before reporting failure.
 
 ## JobZoom Protected Lane
 
@@ -105,6 +110,8 @@ Never use Composio for Notion or Telegram when direct credentials exist.
 - Do not reduce scan scope or optimize away LinkedIn volume unless Ahmed explicitly asks.
 - Applied jobs must be persistently excluded via JobZoom's applied ledger/table workflow.
 - Delivered report filenames should remain human-readable and dated.
+- JobZoom summary reports should use: `JOBZOOM SUMMARY - Today: X matches | Yesterday: X ↑/↓/= | This week total: X | This month total: X`, using the latest completed run per date to avoid double-counting reruns. Funnel labels should distinguish Jobs scraped, Eligible after exclusions, After dedup, After Pass 1, and After Pass 2. <!-- dream-promoted 2026-04-28 -->
+- JobZoom `scoring_health_check` failures are not quota failures unless the model/API returns HTTP 429. Non-429 health-check failures with successful batch scoring should be reported as a warning about gateway/model latency or request errors, not as quota exhaustion. <!-- dream-promoted 2026-04-27 -->
 
 ## References
 

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-27T19:25:55.858Z",
+  "updatedAt": "2026-04-28T14:04:30.991Z",
   "entries": {
     "memory:memory/archives/2026-03-07.md:29:56": {
       "key": "memory:memory/archives/2026-03-07.md:29:56",
@@ -1746,18 +1746,20 @@
       "endLine": 51,
       "source": "memory",
       "snippet": "- Extracted content: Peter Steinberger (@steipete), tweet text “My favorite security advisories.” Media image text: “Steps To Reproduce: 1. Enable hooks.gmail.allowUnsafeExternalContent=true”. Timestamp 12:11 PM · Apr 23, 2026. Metrics at fetch: 56.3K views, 24 replies, 4 reposts, 433 likes, 53 bookmarks. ### JobZoom 0-live-jobs investigation - 2026-04-24 JobZoom run did not find 0 raw jobs. It found/scored many intermediates: 341 filtered raw jobs, 311 deduped/new jobs, 91 Pass1/all-scored jobs, 0 live matches, 3 shadow jobs. - Shadow file: `/root/.openclaw/workspace-jobzoom/reports/shadow/jobzoom-shadow-2026-04-24.json`. - Shadow verdicts were keyword fallback around 60-63; live threshold",
-      "recallCount": 1,
+      "recallCount": 2,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 0.3902010828256607,
-      "maxScore": 0.3902010828256607,
+      "totalScore": 1.3902010828256608,
+      "maxScore": 1,
       "firstRecalledAt": "2026-04-24T10:44:07.363Z",
-      "lastRecalledAt": "2026-04-24T10:44:07.363Z",
+      "lastRecalledAt": "2026-04-28T06:07:07.261Z",
       "queryHashes": [
-        "3b21f0cb3926"
+        "3b21f0cb3926",
+        "73675e2f27f1"
       ],
       "recallDays": [
-        "2026-04-24"
+        "2026-04-24",
+        "2026-04-28"
       ],
       "conceptTags": [
         "56.3k",
@@ -2080,6 +2082,99 @@
         "innovation",
         "ecosystem",
         "ats"
+      ]
+    },
+    "memory:memory/2026-04-27.md:1:10": {
+      "key": "memory:memory/2026-04-27.md:1:10",
+      "path": "memory/2026-04-27.md",
+      "startLine": 1,
+      "endLine": 10,
+      "source": "memory",
+      "snippet": "## 2026-04-27 06:42 Cairo - JobZoom incident and report logic updates - JobZoom daily run was delayed, but completed successfully. Root cause of the visible delay was OpenClaw gateway memory pressure/OOM around 05:22 Cairo, followed by systemd restart, not a JobZoom logic failure. - Final JobZoom 2026-04-27 results: 150 searches, 150 successful, 0 failed, 341 eligible jobs after exclusions, 265 after dedup, 62 after Pass 1, 2 final AI matches at 70+, 2 CVs generated, report delivered successfully. - Delivery IDs from cron summary: Telegram summary 8792, PDF 8793, CV ZIP 8794. - JobZoom matched roles on 2026-04-27: OMPAY Program Manager in Oman, score 83; Johnson Controls Field Remediation",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-04-28T06:07:07.261Z",
+      "lastRecalledAt": "2026-04-28T06:07:07.261Z",
+      "queryHashes": [
+        "73675e2f27f1"
+      ],
+      "recallDays": [
+        "2026-04-28"
+      ],
+      "conceptTags": [
+        "gateway",
+        "pressure/oom",
+        "cairo",
+        "jobzoom",
+        "incident",
+        "report",
+        "logic",
+        "updates"
+      ]
+    },
+    "memory:memory/2026-04-27.md:9:14": {
+      "key": "memory:memory/2026-04-27.md:9:14",
+      "path": "memory/2026-04-27.md",
+      "startLine": 9,
+      "endLine": 14,
+      "source": "memory",
+      "snippet": "- Mitigation applied: Dream Mode cron moved away from JobZoom window to 06:15 Cairo, Sun-Thu, with description noting it is staggered after JobZoom to avoid 05:00 concurrency/heap pressure. JobZoom stayed protected at 05:00 Cairo daily. - Report health note interpretation: “AI Scoring Engine: WARNING” means the pre-scoring model health check timed out, but live batch scoring succeeded. It is not a quota failure. - Ahmed corrected JobZoom summary format. Future report section should be: “JOBZOOM SUMMARY - Today: X matches | Yesterday: X ↑/↓/= | This week total: X | This month total: X”. Logic should use latest completed run per date to avoid double-counting reruns. - At the time of correction",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-04-28T06:07:07.261Z",
+      "lastRecalledAt": "2026-04-28T06:07:07.261Z",
+      "queryHashes": [
+        "73675e2f27f1"
+      ],
+      "recallDays": [
+        "2026-04-28"
+      ],
+      "conceptTags": [
+        "sun-thu",
+        "concurrency/heap",
+        "pre-scoring",
+        "double-counting",
+        "mitigation",
+        "applied",
+        "dream",
+        "mode"
+      ]
+    },
+    "memory:memory/archive/2026-03/2026-03-13.md:146:183": {
+      "key": "memory:memory/archive/2026-03/2026-03-13.md:146:183",
+      "path": "memory/archive/2026-03/2026-03-13.md",
+      "startLine": 146,
+      "endLine": 183,
+      "source": "memory",
+      "snippet": "### Commits This Session - `93af34f4`: scanner report label fix - `790c9777`: route LLM calls through gateway - `82c2bbed`: daily briefing append mode (preserve previous days) ## Session 15: Heartbeat Hardening + OpenClaw Update Check (13:03-13:13 Cairo) ### Heartbeat Hardening — COMPLETE - Built 3 artifacts for hardened heartbeat system: 1. `.heartbeat/state.json` — cooldown tracker to prevent alert fatigue 2. `scripts/heartbeat-checks.sh` — deterministic health check script (runs <2s, outputs JSON) 3. `HEARTBEAT.md` — fully rewritten with 8 hourly checks (was 3), alert tiers, cooldown protocol ### New Checks Added (would have caught today's incidents) - 🔴 Gateway health (no coold",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-04-28T14:04:30.991Z",
+      "lastRecalledAt": "2026-04-28T14:04:30.991Z",
+      "queryHashes": [
+        "3d05fa080dd0"
+      ],
+      "recallDays": [
+        "2026-04-28"
+      ],
+      "conceptTags": [
+        "gateway",
+        "03-13",
+        "heartbeat/state.json",
+        "scripts/heartbeat-checks.sh",
+        "heartbeat.md",
+        "commits",
+        "93af34f4",
+        "scanner"
       ]
     }
   }

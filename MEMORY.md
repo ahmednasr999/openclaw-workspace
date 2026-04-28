@@ -20,6 +20,11 @@ Current rule:
 - Pipeline columns: Ideas, Outline, Draft, Design, Review, Published.
 - Approval flow: OpenClaw creates draft and moves to Review, Ahmed reviews, Ahmed moves to Published when ready.
 
+## LinkedIn Reel Style, Confirmed 2026-04-25 <!-- dream-promoted 2026-04-27 -->
+Repurposed LinkedIn video/reel assets should be premium, executive, concise, and cinematic rather than basic utility renders.
+
+Approved pattern: 9:16 vertical reel, dark executive visual system, clean typography hierarchy, glass-card UI treatment, subtle motion, restrained premium gradient, and narrative pacing such as shift -> risk -> rule -> question.
+
 ## Job Application and CV Workflow
 Trigger: Ahmed shares a job link and description.
 

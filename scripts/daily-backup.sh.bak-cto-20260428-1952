@@ -29,17 +29,13 @@ echo $$ > "$LOCK_FILE"
 trap 'rm -f "$LOCK_FILE"' EXIT
 
 # ── Nothing to commit check ──
-# Stage tracked changes plus approved workspace areas; keep sensitive config excluded.
-git add -u 2>/dev/null || true
-for path in config scripts memory data logs media skills docs intel jobs-bank AGENTS.md MEMORY.md SOUL.md TOOLS.md .learnings; do
-    [ -e "$path" ] && git add -- "$path" 2>/dev/null || true
-done
-git reset -q -- \
-    config/notion.json \
-    config/tavily.json \
-    config/huggingface.json \
-    config/google-ai-studio.json \
-    config/service-registry.md \
+# Stage all non-sensitive files only (exclude secrets)
+git add -A \
+    -- ':!config/notion.json' \
+    -- ':!config/tavily.json' \
+    -- ':!config/huggingface.json' \
+    -- ':!config/google-ai-studio.json' \
+    -- ':!config/service-registry.md' \
     2>/dev/null || true
 
 if ! git diff --cached --quiet; then
@@ -52,17 +48,17 @@ fi
 # ── Commit (non-blocking) ──
 COMMIT_MSG="Auto-backup $(date -u +%Y-%m-%d_%H:%M)"
 log "Committing: $COMMIT_MSG"
-git commit -m "$COMMIT_MSG" 2>/dev/null || true
+git commit -m "$COMMIT_MSG" -- config/ scripts/ memory/ data/ logs/ media/ skills/ \
+    2>/dev/null || git commit -m "$COMMIT_MSG" 2>/dev/null || true
 
 # ── Push with retry ──
 for attempt in $(seq 1 $MAX_RETRIES); do
     log "Push attempt $attempt/$MAX_RETRIES..."
-    BRANCH=$(git rev-parse --abbrev-ref HEAD)
-    PUSH_OUT=$(git push origin "$BRANCH:$BRANCH" 2>&1)
+    PUSH_OUT=$(git push origin master:main 2>&1)
     PUSH_EXIT=$?
     
     if [ $PUSH_EXIT -eq 0 ]; then
-        log "SUCCESS: Pushed to origin $BRANCH"
+        log "SUCCESS: Pushed to origin master"
         exit 0
     fi
     
@@ -76,7 +72,7 @@ for attempt in $(seq 1 $MAX_RETRIES); do
     
     # Try pull + retry for normal divergence
     log "Push failed — attempting merge-and-retry..."
-    git pull --no-rebase origin "$BRANCH" 2>/dev/null || true
+    git pull --no-rebase origin master 2>/dev/null || true
     if [ $attempt -lt $MAX_RETRIES ]; then
         log "Waiting ${RETRY_WAIT}s before retry..."
         sleep $RETRY_WAIT
