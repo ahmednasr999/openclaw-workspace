@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-24T20:12:32.895Z",
+  "updatedAt": "2026-04-27T19:25:55.858Z",
   "entries": {
     "memory:memory/archives/2026-03-07.md:29:56": {
       "key": "memory:memory/archives/2026-03-07.md:29:56",
@@ -138,16 +138,14 @@
       "endLine": 206,
       "source": "memory",
       "snippet": "| P5-7 | newsletter/tracker/telegram | 30s each | | P8 | briefing-agent | 120s | ### Manual Pipeline Run Results (this session) - Phase 1: ✅ email (LLM analysis worked, 50 emails, 2 recruiters, 1 follow-up), ✅ content, ✅ outreach, ✅ system, ✅ linkedin (840 unique jobs), ✅ indeed (2 jobs), ✅ comment-radar (5 comments drafted), ✅ li-post - Phase 2: ✅ merge (245 candidates after dedup + filter) - Phase 2b: ✅ enrich (49/50 OK) - Phase 3: ⚠️ LLM review timed out (batch 2 at 120s), all 50 fell to SKIP with avg fit 1.0 — needs timeout fix applied - Phase 4: No SUBMIT/REVIEW to push ### Agent Renames (Done this session) | Old | New | |-----|-----| | `ats-scorer.py` | `job-scorer.py` | | `auto-doss",
-      "recallCount": 64,
+      "recallCount": 67,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 29.706936639547344,
+      "totalScore": 31.175652205944054,
       "maxScore": 0.5274861633777618,
       "firstRecalledAt": "2026-04-22T16:08:10.304Z",
-      "lastRecalledAt": "2026-04-24T14:12:08.515Z",
+      "lastRecalledAt": "2026-04-27T19:11:02.282Z",
       "queryHashes": [
-        "d38a10bf5fee",
-        "a3cb09703e7d",
         "f67560c4869f",
         "2f9e8e78178d",
         "9b2f3002bb45",
@@ -177,12 +175,15 @@
         "b5621fe0b96e",
         "85f70ea7188c",
         "c64455c30c63",
-        "132404daf6eb"
+        "132404daf6eb",
+        "29e49685012a",
+        "be0d108fef32"
       ],
       "recallDays": [
         "2026-04-22",
         "2026-04-23",
-        "2026-04-24"
+        "2026-04-24",
+        "2026-04-27"
       ],
       "conceptTags": [
         "p5-7",
@@ -1541,13 +1542,13 @@
       "endLine": 134,
       "source": "memory",
       "snippet": "- **Fix:** Added `fetch_notion_pipeline_for_dedup()` function that queries Notion Pipeline DB `3268d599-a162-81b4-b768-f162adfa4971` directly. Falls back to pipeline.md only if Notion query fails. - **Result:** Dry-run showed 24/24 qualified jobs removed as duplicates. Briefing now correctly says \"no new fits\" instead of showing stale dupes. - **Constant added:** `PIPELINE_DB_ID = \"3268d599-a162-81b4-b768-f162adfa4971\"` at top of script ### Fix 2: ATS Gate on Career Verdict (DONE) - **Root cause:** Two different scores: LLM career fit (1-10, title-based) vs ATS keyword score (0-100, JD-based). Verdict used LLM score only, ignoring weak JD match. - **Example:** Capco \"Director Data\" got 9/10",
-      "recallCount": 10,
+      "recallCount": 12,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 4.348041376471519,
+      "totalScore": 5.198476061224937,
       "maxScore": 0.45704258680343623,
       "firstRecalledAt": "2026-04-23T21:57:06.655Z",
-      "lastRecalledAt": "2026-04-24T15:25:41.186Z",
+      "lastRecalledAt": "2026-04-27T19:10:59.463Z",
       "queryHashes": [
         "659335241e96",
         "c280545fb5ce",
@@ -1558,11 +1559,13 @@
         "b5621fe0b96e",
         "e8c3678ada65",
         "779970c6edda",
-        "c6c6be297360"
+        "c6c6be297360",
+        "29e49685012a"
       ],
       "recallDays": [
         "2026-04-23",
-        "2026-04-24"
+        "2026-04-24",
+        "2026-04-27"
       ],
       "conceptTags": [
         "fetch-notion-pipeline-for-dedup",
@@ -1706,22 +1709,24 @@
       "endLine": 62,
       "source": "memory",
       "snippet": "- This was not because no jobs were scraped and not primarily because of the GPT-5.5 router switch. It was gateway `/v1/chat/completions` returning 500 for scoring calls. ### JobZoom patch applied - Modified `/root/.openclaw/workspace-jobzoom/scripts/daily_run.py`. - Changes: - Added `SCORING_MODEL = \"openai-codex/gpt-5.5\"`. - Raised `MAX_GPT_CALLS_PER_DAY` from 50 to 80. - `record_gpt_api_call()` now logs `SCORING_MODEL` instead of hardcoded `openai-codex/gpt-5.4`. - Reworded GPT-5.4-specific quota/log text to generic model wording. - Kept gateway request body using `\"model\": \"openclaw/jobzoom\"`, intentionally relying on gateway routing while logging expected underlying scoring m",
-      "recallCount": 5,
+      "recallCount": 7,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 2.3715284089344104,
-      "maxScore": 0.6703233758705218,
+      "totalScore": 4.37152840893441,
+      "maxScore": 1,
       "firstRecalledAt": "2026-04-24T10:44:07.363Z",
-      "lastRecalledAt": "2026-04-24T20:06:19.621Z",
+      "lastRecalledAt": "2026-04-27T19:25:55.483Z",
       "queryHashes": [
         "3b21f0cb3926",
         "5271f36a9384",
         "67f14167ecbb",
         "cb0255c5b075",
-        "71bd1c5198f4"
+        "71bd1c5198f4",
+        "9a2c68c1ab4e"
       ],
       "recallDays": [
-        "2026-04-24"
+        "2026-04-24",
+        "2026-04-27"
       ],
       "conceptTags": [
         "gateway",
@@ -1982,6 +1987,99 @@
         "openai-codex/gpt-5.4",
         "minimax-portal/minimax-m2.7",
         "agents/tools"
+      ]
+    },
+    "memory:memory/archive/2026-02/2026-02-18.md:206:272": {
+      "key": "memory:memory/archive/2026-02/2026-02-18.md:206:272",
+      "path": "memory/archive/2026-02/2026-02-18.md",
+      "startLine": 206,
+      "endLine": 272,
+      "source": "memory",
+      "snippet": "- Per-request cost estimation - By provider, model, task type - Usage examples: ```bash # Log an API call python3 log_usage.py claude-opus-4-6 anthropic CV_creation 8000 3000 # Generate report python3 model_cost.py week python3 model_cost.py week --telegram ``` **Cron Job:** ``` ID: bb7d0055-4aaf-4a77-8dbf-cca467e04149 Schedule: 0 9 * * 0 @ Africa/Cairo (Sundays 9am) ``` **Important Note:** - MiniMax is NOT free - 6 days left on trial then charges - Cost tracking critical to avoid surprise bills **Next steps:** 1. Integrate logging into actual API calls (wrapper function) 2. Add actual token counts from API responses 3. Set budget alerts (e.g., warn at $10/month) --- ##",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.39608020186424253,
+      "maxScore": 0.39608020186424253,
+      "firstRecalledAt": "2026-04-27T19:18:00.084Z",
+      "lastRecalledAt": "2026-04-27T19:18:00.084Z",
+      "queryHashes": [
+        "6b01a4b8ee3f"
+      ],
+      "recallDays": [
+        "2026-04-27"
+      ],
+      "conceptTags": [
+        "per-request",
+        "log-usage.py",
+        "claude-opus-4-6",
+        "cv-creation",
+        "model-cost.py",
+        "africa/cairo",
+        "e.g",
+        "10/month"
+      ]
+    },
+    "memory:memory/2026-04-25.md:79:83": {
+      "key": "memory:memory/2026-04-25.md:79:83",
+      "path": "memory/2026-04-25.md",
+      "startLine": 79,
+      "endLine": 83,
+      "source": "memory",
+      "snippet": "- Promoted v2 drafts into live `SOUL.md`, `USER.md`, `AGENTS.md`, and `TOOLS.md`. - Main cleanup: removed stale GPT-5.4 references from live core operating files, aligned current default model to GPT-5.5, removed em dash characters, removed the stale Mission Control task-logging contradiction, and made alert classification/body-read rules explicit. - Preserved key non-negotiables: no email without approval, no public/external writes without approval path, model-switch disclosure, gateway safety, JobZoom protected full-scan lane, direct Notion/credential-first behavior, verify-before-done, and no partial-fix stopping. - Verification after promotion: `SOUL.md` 792 words, `USER.md` 597 words, `",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 2,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-04-27T19:25:00.825Z",
+      "lastRecalledAt": "2026-04-27T19:25:55.858Z",
+      "queryHashes": [
+        "cde85b823f86"
+      ],
+      "recallDays": [
+        "2026-04-27"
+      ],
+      "conceptTags": [
+        "gateway",
+        "gpt",
+        "soul.md",
+        "user.md",
+        "agents.md",
+        "tools.md",
+        "gpt-5.4",
+        "gpt-5.5"
+      ]
+    },
+    "memory:memory/archive/2026-03/2026-03-17.md:469:504": {
+      "key": "memory:memory/archive/2026-03/2026-03-17.md:469:504",
+      "path": "memory/archive/2026-03/2026-03-17.md",
+      "startLine": 469,
+      "endLine": 504,
+      "source": "memory",
+      "snippet": "- KAUST Associate Director Innovation Ecosystem: ATS 83%, applied. Dossier saved. Commit `b509f5bb` - Head of Transformation, Omani Bank (Northridge): ATS 84%, PDF delivered. Follow-up due Mar 31. ### LinkedIn Posting Fixes - Image support added: upload via Composio s3key, detect from filename + markdown refs. Commit `a4ca7179` - Unicode bold conversion: `**text**` → 𝗯𝗼𝗹𝗱 for LinkedIn rendering. Commit `e1a6e349` ### Em Dash Purge - 76 em dashes removed across 38 files (scripts, prompts, templates, posts) - Root cause: templates contained em dashes that models copied into output - Commit `a362821d` ### Commits (Late Afternoon/Evening) - `ad99559a`: ATS scoring in orchestrator pipeline",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-04-27T19:25:00.825Z",
+      "lastRecalledAt": "2026-04-27T19:25:00.825Z",
+      "queryHashes": [
+        "cde85b823f86"
+      ],
+      "recallDays": [
+        "2026-04-27"
+      ],
+      "conceptTags": [
+        "follow-up",
+        "afternoon/evening",
+        "kaust",
+        "associate",
+        "director",
+        "innovation",
+        "ecosystem",
+        "ats"
       ]
     }
   }
