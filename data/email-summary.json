@@ -2,19 +2,19 @@
   "meta": {
     "agent": "email-agent",
     "version": "3.0.0",
-    "generated_at": "2026-04-26T20:00:52.537537+02:00",
-    "duration_ms": 18751,
+    "generated_at": "2026-04-27T20:01:51.486071+02:00",
+    "duration_ms": 38438,
     "ttl_hours": 4,
     "status": "success",
     "error": null,
-    "run_id": "d3735ff3",
+    "run_id": "1a00e21e",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
     "status": "ok",
-    "scan_time": "2026-04-26T20:00:37.665279+02:00",
-    "total_scanned": 8,
+    "scan_time": "2026-04-27T20:01:25.209319+02:00",
+    "total_scanned": 16,
     "by_category": {
       "interview_invite": 0,
       "recruiter_reach": 0,
@@ -22,7 +22,7 @@
       "rejection": 0,
       "assessment": 0,
       "follow_up_needed": 0,
-      "other": 8
+      "other": 16
     },
     "interview_invites": [],
     "recruiter_messages": [],
@@ -42,12 +42,12 @@
         "requires_assessment": false,
         "recruiter_top_opportunities": [],
         "top_priority": null,
-        "daily_focus": "No actionable leadership-role emails were provided, so focus on proactive applications and networking today."
+        "daily_focus": "No actionable job-search emails from the provided data today; focus on proactive outreach and applications."
       }
     }
   },
   "kpi": {
-    "emails_processed": 8,
+    "emails_processed": 16,
     "actionable": 0,
     "interviews_detected": 0,
     "recruiter_messages": 0,

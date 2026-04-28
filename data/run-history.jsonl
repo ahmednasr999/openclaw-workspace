@@ -2054,3 +2054,12 @@
 {"agent": "email-agent", "run_id": "d3735ff3", "started": "2026-04-26T20:00:52.538540+02:00", "duration_ms": 18752, "status": "success", "records": 14, "error": null}
 {"agent": "jobs-source-linkedin-jobspy", "run_id": "7597e281", "started": "2026-04-27T04:22:13.155697+02:00", "duration_ms": 1147370, "status": "success", "records": 364, "error": null}
 {"agent": "jobs-source-linkedin-jobspy", "run_id": "a4dfb59c", "started": "2026-04-27T04:45:36.250046+02:00", "duration_ms": 1157987, "status": "success", "records": 359, "error": null}
+{"agent": "email-agent", "run_id": "c997869d", "started": "2026-04-27T06:02:17.762523+02:00", "duration_ms": 34523, "status": "success", "records": 14, "error": null}
+{"agent": "email-agent", "run_id": "c88cf78e", "started": "2026-04-27T08:01:13.760497+02:00", "duration_ms": 36067, "status": "success", "records": 14, "error": null}
+{"agent": "email-agent", "run_id": "c8bd315b", "started": "2026-04-27T10:01:15.670422+02:00", "duration_ms": 33726, "status": "success", "records": 14, "error": null}
+{"agent": "email-agent", "run_id": "97e88d75", "started": "2026-04-27T12:01:31.289720+02:00", "duration_ms": 51648, "status": "success", "records": 14, "error": null}
+{"agent": "email-agent", "run_id": "33785eb4", "started": "2026-04-27T14:01:16.924969+02:00", "duration_ms": 39784, "status": "success", "records": 14, "error": null}
+{"agent": "email-agent", "run_id": "625d3ce1", "started": "2026-04-27T16:01:33.352221+02:00", "duration_ms": 48944, "status": "success", "records": 14, "error": null}
+{"agent": "email-agent", "run_id": "aff1981d", "started": "2026-04-27T18:02:08.784989+02:00", "duration_ms": 49151, "status": "success", "records": 14, "error": null}
+{"agent": "email-agent", "run_id": "1a00e21e", "started": "2026-04-27T20:01:51.490327+02:00", "duration_ms": 38442, "status": "success", "records": 14, "error": null}
+{"agent": "jobs-source-linkedin-jobspy", "run_id": "61379e1f", "started": "2026-04-28T04:20:02.606531+02:00", "duration_ms": 1145519, "status": "success", "records": 359, "error": null}
