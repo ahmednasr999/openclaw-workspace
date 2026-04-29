@@ -16,7 +16,7 @@ v4.0 Changes (2026-03-20):
   - Parallel-safe batched API calls with rate limiting
 """
 
-import hashlib, os, re, json, time, sys
+import hashlib, os, re, json, time, sys, subprocess
 from datetime import datetime, timedelta
 from pathlib import Path
 
@@ -83,6 +83,7 @@ COUNTRY_SEARCH_TERMS = {
 
 # Paths
 BASE_DIR       = Path("/root/.openclaw/workspace")
+SCRIPTS_DIR    = BASE_DIR / "scripts"
 OUTPUT_DIR     = BASE_DIR / "jobs-bank" / "scraped"
 LOG_FILE       = OUTPUT_DIR / "cron-logs.md"
 DETAILED_LOG   = OUTPUT_DIR / "detailed-search-log.md"
@@ -98,9 +99,21 @@ ATS_THRESHOLD        = 65       # minimum ATS score to include in picks
 EXA_RESULTS_PER_QUERY = 10     # results per Exa search
 EXA_DELAY_BETWEEN     = 1.5    # seconds between API calls (rate limit)
 
+# Credit-safe fallback: OpenClaw's provider-backed web search can use a
+# non-Exa provider (duckduckgo by default). This keeps the daily scanner useful
+# when Composio/Exa returns 402 NO_MORE_CREDITS.
+WEB_FALLBACK_ENABLED = os.environ.get("GULF_JOBS_WEB_FALLBACK", "1") != "0"
+WEB_FALLBACK_PROVIDER = os.environ.get("GULF_JOBS_WEB_PROVIDER", "duckduckgo")
+WEB_FALLBACK_RESULTS_PER_QUERY = int(os.environ.get("GULF_JOBS_WEB_RESULTS", "8"))
+WEB_FALLBACK_TIMEOUT = int(os.environ.get("GULF_JOBS_WEB_TIMEOUT", "30"))
+WEB_FALLBACK_MAX_FAILURES = int(os.environ.get("GULF_JOBS_WEB_MAX_FAILURES", "3"))
+
 # Composio MCP config
 COMPOSIO_MCP_URL = "https://connect.composio.dev/mcp"
 COMPOSIO_CONSUMER_KEY = ""  # loaded from openclaw.json
+COMPOSIO_CREDIT_EXHAUSTED = False  # circuit-break after Exa/Composio 402
+WEB_FALLBACK_FAILURES = 0
+WEB_FALLBACK_CIRCUIT_OPEN = False
 
 # Ahmed's CV keywords for ATS scoring (from master-cv-data.md)
 ATS_KEYWORDS = {
@@ -134,6 +147,58 @@ EXEC_WORDS = ["chief","ceo","cto","cio","cdo","coo","cso","cfo","cmo","cro",
               "vp ","vice president",
               "director","head of","svp","senior director","managing director",
               "executive director","program director","principal"]
+
+# Search fallback can return broad web pages where short abbreviations are not
+# job titles (for example VP Racing Fuels, JD Vance's @VP account, Wikipedia).
+# Treat bare "VP" as executive only when it is followed by a job/domain cue.
+VP_ROLE_RE = re.compile(
+    r"\bvp\b\s*(?:[,/-]\s*)?(?:of\s+|for\s+|[-–—]\s*)?"
+    r"(?:digital|technology|it\b|information|data|product|engineering|operations|"
+    r"transformation|pmo|program|project|strategy|platform|ai\b|chief|director|head)",
+    re.IGNORECASE,
+)
+
+
+def has_executive_keyword(text):
+    """Executive-title detector with a stricter bare-VP rule."""
+    patterns = [
+        r"\bchief\b", r"\bceo\b", r"\bcto\b", r"\bcio\b", r"\bcdo\b",
+        r"\bcoo\b", r"\bcso\b", r"\bcfo\b", r"\bcmo\b", r"\bcro\b",
+        r"\bvice\s+president\b", r"\bdirector\b", r"\bhead\s+of\b",
+        r"\bsvp\b", r"\bsenior\s+director\b", r"\bmanaging\s+director\b",
+        r"\bexecutive\s+director\b", r"\bprogram\s+director\b", r"\bprincipal\b",
+    ]
+    return any(re.search(p, text, flags=re.IGNORECASE) for p in patterns) or bool(VP_ROLE_RE.search(text))
+
+
+NON_JOB_SOURCE_DOMAINS = {
+    "x.com", "twitter.com", "instagram.com", "facebook.com", "tiktok.com",
+    "wikipedia.org", "en.wikipedia.org", "britannica.com", "npr.org",
+}
+
+GENERIC_JOB_INDEX_RE = re.compile(
+    r"(?:\b\d[\d,]*\+?\s+.*\bjobs?\b|\bjobs?\s+in\b|\bemployment\s+in\b|\bjob\s+search\b)",
+    re.IGNORECASE,
+)
+
+
+def plausible_job_result(job):
+    """Reject generic/search/noise pages before they become scanner leads."""
+    title = (job.get("title") or "").strip()
+    url = job.get("url") or ""
+    source = (job.get("source_via") or "").lower().removeprefix("www.")
+    parsed = re.match(r"https?://(?:www\.)?([^/]+)(/.*)?", url)
+    domain = (parsed.group(1).lower() if parsed else source).removeprefix("www.")
+
+    if domain in NON_JOB_SOURCE_DOMAINS:
+        return False, "non-job-source"
+
+    # Fallback web search frequently returns category pages rather than one job.
+    # Keep those out of the actionable report; the scanner should surface roles.
+    if job.get("site") == "openclaw-web" and GENERIC_JOB_INDEX_RE.search(title):
+        return False, "job-index-page"
+
+    return True, "ok"
 
 # Domain filter: must relate to DT/Tech/PMO (balanced)
 DOMAIN_WORDS = ["digital","technology","it ","information","pmo","program","project",
@@ -169,7 +234,7 @@ def is_relevant(title, location=""):
     loc = location.lower()
 
     # 1. Must have executive keyword
-    if not any(w in t for w in EXEC_WORDS):
+    if not has_executive_keyword(title):
         return False, "not-exec"
 
     # 2. Must relate to DT/Tech/PMO OR location is GCC (broad exec catch)
@@ -189,7 +254,7 @@ def is_relevant(title, location=""):
             if fintech_match:
                 continue
             # Allow only if title ALSO has strong exec+domain combo
-            strong_exec = any(w in t for w in ["chief","vp ","vice president","cto","cio","cdo"])
+            strong_exec = any(w in t for w in ["chief","vice president","cto","cio","cdo"]) or bool(VP_ROLE_RE.search(title))
             strong_domain = any(w in t for w in ["digital","technology","pmo","transformation"])
             if not (strong_exec and strong_domain):
                 return False, "skip-word"
@@ -302,6 +367,15 @@ def load_composio_key():
     return False
 
 
+def mark_composio_credit_exhausted(detail=""):
+    """Circuit-break Composio calls after credit exhaustion is detected."""
+    global COMPOSIO_CREDIT_EXHAUSTED
+    if not COMPOSIO_CREDIT_EXHAUSTED:
+        COMPOSIO_CREDIT_EXHAUSTED = True
+        suffix = f": {detail[:160]}" if detail else ""
+        print(f"    Composio/Exa credits exhausted; switching to web fallback{suffix}")
+
+
 def mcp_call(method, params, timeout=30):
     """Make a JSON-RPC call to Composio MCP endpoint. Returns parsed result or None."""
     import requests
@@ -322,6 +396,8 @@ def mcp_call(method, params, timeout=30):
     try:
         resp = requests.post(COMPOSIO_MCP_URL, json=payload, headers=headers, timeout=timeout)
         if resp.status_code != 200:
+            if resp.status_code == 402 or "NO_MORE_CREDITS" in resp.text or "credits limit" in resp.text.lower():
+                mark_composio_credit_exhausted(resp.text)
             print(f"    MCP HTTP {resp.status_code}: {resp.text[:200]}")
             return None
 
@@ -330,6 +406,9 @@ def mcp_call(method, params, timeout=30):
             if line.startswith("data:"):
                 data = json.loads(line[5:].strip())
                 if "error" in data:
+                    err_text = json.dumps(data["error"], ensure_ascii=False)
+                    if "NO_MORE_CREDITS" in err_text or "credits limit" in err_text.lower():
+                        mark_composio_credit_exhausted(err_text)
                     print(f"    MCP error: {data['error']}")
                     return None
                 return data.get("result", {})
@@ -355,6 +434,9 @@ def mcp_initialize():
 
 def exa_search(query, num_results=10, start_date=None):
     """Search via EXA_SEARCH through Composio MCP. Returns list of result dicts."""
+    if COMPOSIO_CREDIT_EXHAUSTED:
+        return []
+
     args = {
         "query": query,
         "type": "neural",
@@ -387,12 +469,17 @@ def exa_search(query, num_results=10, start_date=None):
             return []
         outer = json.loads(text)
         if not outer.get("successful"):
+            if "NO_MORE_CREDITS" in text or "credits limit" in text.lower():
+                mark_composio_credit_exhausted(text)
             return []
         results_list = outer.get("data", {}).get("results", [])
         if not results_list:
             return []
         inner = results_list[0].get("response", {})
         if not inner.get("successful"):
+            inner_text = json.dumps(inner, ensure_ascii=False)
+            if "NO_MORE_CREDITS" in inner_text or "credits limit" in inner_text.lower():
+                mark_composio_credit_exhausted(inner_text)
             return []
         return inner.get("data", {}).get("results", [])
     except (json.JSONDecodeError, KeyError, IndexError) as e:
@@ -402,6 +489,9 @@ def exa_search(query, num_results=10, start_date=None):
 
 def composio_web_search(query):
     """Search via COMPOSIO_SEARCH_WEB through MCP. Returns citations list."""
+    if COMPOSIO_CREDIT_EXHAUSTED:
+        return [], ""
+
     result = mcp_call("tools/call", {
         "name": "COMPOSIO_MULTI_EXECUTE_TOOL",
         "arguments": {
@@ -423,12 +513,17 @@ def composio_web_search(query):
         text = content[0].get("text", "")
         outer = json.loads(text)
         if not outer.get("successful"):
+            if "NO_MORE_CREDITS" in text or "credits limit" in text.lower():
+                mark_composio_credit_exhausted(text)
             return [], ""
         results_list = outer.get("data", {}).get("results", [])
         if not results_list:
             return [], ""
         inner = results_list[0].get("response", {})
         if not inner.get("successful"):
+            inner_text = json.dumps(inner, ensure_ascii=False)
+            if "NO_MORE_CREDITS" in inner_text or "credits limit" in inner_text.lower():
+                mark_composio_credit_exhausted(inner_text)
             return [], ""
         data = inner.get("data", {})
         citations = data.get("citations", [])
@@ -437,6 +532,85 @@ def composio_web_search(query):
     except (json.JSONDecodeError, KeyError, IndexError) as e:
         print(f"    Parse error: {e}")
         return [], ""
+
+
+def clean_external_text(text):
+    """Remove OpenClaw external-content wrappers from web search strings."""
+    if not text:
+        return ""
+    text = re.sub(r'<<<EXTERNAL_UNTRUSTED_CONTENT[^>]*>>>', '', str(text))
+    text = re.sub(r'<<<END_EXTERNAL_UNTRUSTED_CONTENT[^>]*>>>', '', text)
+    text = re.sub(r'^\s*Source:\s*Web Search\s*---\s*', '', text, flags=re.IGNORECASE | re.MULTILINE)
+    return re.sub(r'\s+', ' ', text).strip()
+
+
+def openclaw_web_search(query, limit=None):
+    """Run OpenClaw web.search using a non-Exa provider. Returns result dicts."""
+    global WEB_FALLBACK_FAILURES, WEB_FALLBACK_CIRCUIT_OPEN
+    if not WEB_FALLBACK_ENABLED:
+        return []
+    if WEB_FALLBACK_CIRCUIT_OPEN:
+        return []
+
+    limit = limit or WEB_FALLBACK_RESULTS_PER_QUERY
+    cmd = [
+        "openclaw", "infer", "web", "search",
+        "--query", query,
+        "--limit", str(limit),
+        "--provider", WEB_FALLBACK_PROVIDER,
+        "--json",
+    ]
+
+    try:
+        proc = subprocess.run(cmd, capture_output=True, text=True, timeout=WEB_FALLBACK_TIMEOUT)
+    except FileNotFoundError:
+        WEB_FALLBACK_FAILURES += 1
+        print("    Web fallback unavailable: openclaw CLI not found")
+        return []
+    except subprocess.TimeoutExpired:
+        WEB_FALLBACK_FAILURES += 1
+        print(f"    Web fallback timeout ({WEB_FALLBACK_TIMEOUT}s)")
+        return []
+    except Exception as e:
+        WEB_FALLBACK_FAILURES += 1
+        print(f"    Web fallback error: {e}")
+        return []
+
+    if proc.returncode != 0:
+        WEB_FALLBACK_FAILURES += 1
+        err = (proc.stderr or proc.stdout or "").strip().split("\n")[-1][:200]
+        print(f"    Web fallback failed ({proc.returncode}): {err}")
+        if WEB_FALLBACK_FAILURES >= WEB_FALLBACK_MAX_FAILURES:
+            WEB_FALLBACK_CIRCUIT_OPEN = True
+            print(f"    Web fallback circuit opened after {WEB_FALLBACK_FAILURES} failures; skipping remaining fallback calls.")
+        return []
+
+    try:
+        payload = json.loads(proc.stdout)
+        outputs = payload.get("outputs", [])
+        if not payload.get("ok") or not outputs:
+            WEB_FALLBACK_FAILURES += 1
+            return []
+        results = outputs[0].get("result", {}).get("results", [])
+        if not results and outputs[0].get("result", {}).get("error"):
+            WEB_FALLBACK_FAILURES += 1
+            err = outputs[0].get("result", {}).get("error", "unknown_error")
+            print(f"    Web fallback provider error: {err}")
+            if WEB_FALLBACK_FAILURES >= WEB_FALLBACK_MAX_FAILURES:
+                WEB_FALLBACK_CIRCUIT_OPEN = True
+                print(f"    Web fallback circuit opened after {WEB_FALLBACK_FAILURES} failures; skipping remaining fallback calls.")
+            return []
+        for r in results:
+            r["title"] = clean_external_text(r.get("title", ""))
+            r["snippet"] = clean_external_text(r.get("snippet", ""))
+        return results
+    except Exception as e:
+        WEB_FALLBACK_FAILURES += 1
+        print(f"    Web fallback parse error: {e}")
+        if WEB_FALLBACK_FAILURES >= WEB_FALLBACK_MAX_FAILURES:
+            WEB_FALLBACK_CIRCUIT_OPEN = True
+            print(f"    Web fallback circuit opened after {WEB_FALLBACK_FAILURES} failures; skipping remaining fallback calls.")
+        return []
 
 
 def extract_job_from_exa_result(result, search_title="", search_country=""):
@@ -578,6 +752,29 @@ def search_jobs_web(title, country):
     for c in citations:
         job = extract_job_from_citation(c, search_title=title, search_country=country)
         if job["url"]:
+            jobs.append(job)
+
+    return jobs
+
+
+def search_jobs_openclaw_web(title, country, linkedin_only=False):
+    """Search via OpenClaw web.search fallback (default duckduckgo, not Exa)."""
+    country_terms = COUNTRY_SEARCH_TERMS.get(country, [country])
+    location_term = country_terms[0]
+
+    if linkedin_only:
+        query = f"site:linkedin.com/jobs {title} {location_term} job"
+    else:
+        query = f"{title} {location_term} job opening apply 2026"
+
+    results = openclaw_web_search(query)
+
+    jobs = []
+    for r in results:
+        job = extract_job_from_citation(r, search_title=title, search_country=country)
+        if job["url"]:
+            job["site"] = "openclaw-web"
+            job["source_provider"] = WEB_FALLBACK_PROVIDER
             jobs.append(job)
 
     return jobs
@@ -767,23 +964,32 @@ def main():
     # Ensure output dir exists
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    # Load Composio key
+    # Load Composio key / initialize MCP. If the credit-safe web fallback is
+    # enabled, keep running in fallback-only mode instead of failing the whole
+    # daily scanner when Composio/Exa is unavailable.
+    mcp_available = False
     if not load_composio_key():
-        print("FATAL: No Composio API key. Exiting.")
-        sys.exit(1)
-
-    # Initialize MCP session
-    print("Initializing Composio MCP...")
-    if not mcp_initialize():
-        print("FATAL: Could not initialize MCP session. Exiting.")
-        sys.exit(1)
-    print("  MCP session initialized ✓")
+        if WEB_FALLBACK_ENABLED:
+            print(f"  Warning: Composio key unavailable; continuing with web fallback only ({WEB_FALLBACK_PROVIDER}).")
+        else:
+            print("FATAL: No Composio API key. Exiting.")
+            sys.exit(1)
+    else:
+        print("Initializing Composio MCP...")
+        if not mcp_initialize():
+            if WEB_FALLBACK_ENABLED:
+                print(f"  Warning: MCP unavailable; continuing with web fallback only ({WEB_FALLBACK_PROVIDER}).")
+            else:
+                print("FATAL: Could not initialize MCP session. Exiting.")
+                sys.exit(1)
+        else:
+            mcp_available = True
+            print("  MCP session initialized ✓")
 
     # Initialize SQLite dedup (primary) + file fallback
     _db_conn, _db_is_dup, _db_upsert, _db_url_hash = _init_db()
     if _db_conn:
-        db_count = _db_conn.execute("SELECT COUNT(*) FROM jobs").fetchone()[0]
-        print(f"DB dedup: {db_count} jobs in SQLite (primary)")
+        print("DB dedup: pipeline_db enabled (primary)")
     _notified = load_notified()
     print(f"Fallback cache: {len(_notified)} notified IDs")
 
@@ -847,7 +1053,8 @@ def main():
     _rate_semaphore = __import__('threading').Semaphore(3)  # max 3 concurrent API calls
 
     with open(DETAILED_LOG, "a") as f:
-        f.write(f"\n## Run: {ts} (v4.0 - Exa API, parallel)\n")
+        fallback_note = f", web fallback={WEB_FALLBACK_PROVIDER}" if WEB_FALLBACK_ENABLED else ", web fallback=disabled"
+        f.write(f"\n## Run: {ts} (v4.0 - Exa API, parallel{fallback_note})\n")
 
     def execute_search(args):
         """Execute a single search with rate limiting."""
@@ -856,13 +1063,29 @@ def main():
         try:
             time.sleep(EXA_DELAY_BETWEEN)  # respect rate limit per call
             if method == "web":
-                return search_jobs_web(title, country), title, country, method
+                if mcp_available:
+                    return search_jobs_web(title, country), title, country, method
+                jobs = search_jobs_openclaw_web(title, country)
+                return jobs, title, country, "web-fallback-only"
             elif method == "linkedin":
-                return search_jobs_linkedin(title, country), title, country, method
+                jobs = search_jobs_linkedin(title, country) if mcp_available else []
+                if not jobs and WEB_FALLBACK_ENABLED:
+                    jobs = search_jobs_openclaw_web(title, country, linkedin_only=True)
+                    if jobs:
+                        return jobs, title, country, "linkedin+web-fallback" if mcp_available else "linkedin-fallback-only"
+                return jobs, title, country, method
             elif method == "google":
-                return search_jobs_google(title, country), title, country, method
+                if mcp_available:
+                    return search_jobs_google(title, country), title, country, method
+                jobs = search_jobs_openclaw_web(title, country)
+                return jobs, title, country, "google-fallback-only"
             else:
-                return search_jobs_exa(title, country), title, country, method
+                jobs = search_jobs_exa(title, country) if mcp_available else []
+                if not jobs and WEB_FALLBACK_ENABLED:
+                    jobs = search_jobs_openclaw_web(title, country)
+                    if jobs:
+                        return jobs, title, country, "exa+web-fallback" if mcp_available else "exa-fallback-only"
+                return jobs, title, country, method
         except Exception as e:
             print(f"  Search error ({method} {title} {country}): {e}")
             return [], title, country, method
@@ -904,6 +1127,11 @@ def main():
                     filtered_out.append({**job, "filter_reason": "duplicate"})
                     continue
 
+                plausible, reason = plausible_job_result(job)
+                if not plausible:
+                    filtered_out.append({**job, "filter_reason": reason})
+                    continue
+
                 relevant, reason = is_relevant(job["title"], job["location"])
                 if not relevant:
                     filtered_out.append({**job, "filter_reason": reason})
@@ -942,20 +1170,32 @@ def main():
                 future.cancel()
         executor.shutdown(wait=False, cancel_futures=True)
 
-    # ==================== DEGRADATION CHECK ====================
+    # ==================== VALIDATION / DEGRADATION ====================
+    elapsed = int(time.time() - start)
+    expected_searches = len(searches)
+    validation_warnings = []
+    if total_searches < expected_searches * 0.5:
+        validation_warnings.append(f"SEARCH COUNT LOW: ran {total_searches}, expected {expected_searches}. Runtime limit.")
+    if total_found == 0 and total_searches > 5:
+        validation_warnings.append(f"ZERO RESULTS: {total_searches} searches returned 0 jobs. API may be down.")
+    if errors > total_searches * 0.5:
+        validation_warnings.append(f"HIGH ERROR RATE: {errors}/{total_searches} searches failed.")
+
+    degraded = total_found < MIN_JOBS_ALERT or bool(validation_warnings)
     if total_found < MIN_JOBS_ALERT:
         msg = f"⚠️ Scanner degradation: {total_found} jobs from {total_searches} searches. API may be having issues."
         print(f"\n  {msg}")
-        send_slack(msg)
 
     # ==================== SAVE REPORT ====================
-    elapsed = int(time.time() - start)
     out_file = OUTPUT_DIR / f"qualified-jobs-{date_str}.md"
 
     with open(out_file, "w") as f:
         f.write(f"# LinkedIn Gulf Jobs Scanner v4.0 - Report\n\n")
         f.write(f"**Date:** {date_str}\n")
-        f.write(f"**Engine:** Exa neural search via Composio MCP (no browser)\n")
+        engine = "Exa neural search via Composio MCP (no browser)"
+        if WEB_FALLBACK_ENABLED:
+            engine += f" + OpenClaw web fallback ({WEB_FALLBACK_PROVIDER})"
+        f.write(f"**Engine:** {engine}\n")
         f.write(f"**Searches:** {total_searches}\n")
         f.write(f"**Jobs found:** {total_found}\n")
         f.write(f"**Unique/relevant:** {len(picks)+len(leads)}\n")
@@ -1032,7 +1272,12 @@ def main():
             f.write("\n")
 
     # ==================== SLACK ====================
-    if picks:
+    if degraded:
+        msg = f"⚠️ *Gulf Scanner v4.0 degraded - Slack lead list suppressed*\n"
+        msg += f"Searches: {total_searches}/{expected_searches} | Found: {total_found} | Picks: {len(picks)} | Leads: {len(leads)} | Errors: {errors}\n"
+        if validation_warnings:
+            msg += "Warnings: " + "; ".join(validation_warnings[:3])
+    elif picks:
         msg = f"🎯 *Gulf Scanner v4.0 - {len(picks)} Priority Picks*\n\n"
         for j in picks[:5]:
             msg += f"*{j['title']}* at {j['company']} ({j['location']})\n{j['url']}\n\n"
@@ -1063,16 +1308,7 @@ def main():
         if total_found < MIN_JOBS_ALERT:
             f.write(f"- ⚠️ DEGRADATION\n")
 
-    # ==================== VALIDATION ====================
-    expected_searches = len(searches)
-    validation_warnings = []
-    if total_searches < expected_searches * 0.5:
-        validation_warnings.append(f"SEARCH COUNT LOW: ran {total_searches}, expected {expected_searches}. Runtime limit.")
-    if total_found == 0 and total_searches > 5:
-        validation_warnings.append(f"ZERO RESULTS: {total_searches} searches returned 0 jobs. API may be down.")
-    if errors > total_searches * 0.5:
-        validation_warnings.append(f"HIGH ERROR RATE: {errors}/{total_searches} searches failed.")
-
+    # ==================== VALIDATION REPORTING ====================
     if validation_warnings:
         print(f"\n⚠️ VALIDATION WARNINGS ({len(validation_warnings)}):")
         for w in validation_warnings:
@@ -1099,7 +1335,10 @@ def main():
         "engine": "Exa neural search via Composio MCP",
         "errors": errors,
         "validation_warnings": validation_warnings,
-        "degraded": total_found < MIN_JOBS_ALERT,
+        "degraded": degraded,
+        "fallback_provider": WEB_FALLBACK_PROVIDER if WEB_FALLBACK_ENABLED else None,
+        "fallback_failures": WEB_FALLBACK_FAILURES,
+        "fallback_circuit_open": WEB_FALLBACK_CIRCUIT_OPEN,
     }
 
     meta_file = OUTPUT_DIR / f"scanner-meta-{date_str}.json"
@@ -1145,7 +1384,7 @@ def main():
         print(f"\nNotion sync skipped: {e}")
 
     # Close DB connection
-    if _db_conn:
+    if _db_conn and hasattr(_db_conn, "commit"):
         _db_conn.commit()
         _db_conn.close()
         print(f"\nSQLite: committed and closed")

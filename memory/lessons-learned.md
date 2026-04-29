@@ -1007,3 +1007,8 @@ Ahmed had to bring an external example before I tightened the core operating fil
 I treated core-file maintenance as reactive cleanup instead of a standing proactive responsibility.
 ### Fix
 Periodically audit the operating contract without waiting for Ahmed: check SOUL/USER/AGENTS/TOOLS for contradictions, stale rules, model drift, alert-quality gaps, and rules that no longer steer behavior. Surface the recommendation before Ahmed has to prompt it.
+
+## 2026-04-29 - CMO Visual Default Requires Reference-Level Craft, Not Template Imitation
+- Incident: CMO repeatedly produced LinkedIn visuals that technically followed the Ahmed AI execution card direction but fell below the original reference quality.
+- What failed: first output became a generic PMO infographic, second pasted text over the reference image, third used a clean 9:16 boardroom layout but looked weaker than the original, flatter, less cinematic, less premium, with weaker typography, visual depth, and execution metaphor.
+- Do differently: For Ahmed LinkedIn visuals, require reference-level craft, not rough similarity. Compare against `/root/.openclaw/workspace/output/jobzoom-visuals/ahmed-linkedin-ai-execution-card-4k.jpg` before presenting. Reject outputs that feel generic, flat, stock-like, under-designed, or less premium than the reference.

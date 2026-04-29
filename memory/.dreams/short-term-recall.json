@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-28T17:12:46.929Z",
+  "updatedAt": "2026-04-29T10:02:15.507Z",
   "entries": {
     "memory:memory/archives/2026-03-07.md:29:56": {
       "key": "memory:memory/archives/2026-03-07.md:29:56",
@@ -327,13 +327,13 @@
       "endLine": 715,
       "source": "memory",
       "snippet": "2. Recent applications 3. Scanner results + trend 4. Email intel (all flagged) 5. Calendar 6. System health + Dashboard KPIs 7. Active tasks (overdue/due/completed) 8. Content Calendar status 9. Action items (3-5 with owners) 10. Notion page (Step 5 - BEFORE Telegram) 11. Telegram delivery (Step 6) - Model changed: MiniMax-M2.5 → **Sonnet 4.6** (follows instructions reliably) - Timeout: 270s → **600s** (10 minutes) - Health Monitor cron added at 8:00 AM (catches partial failures) - Notion sync moved BEFORE Telegram (prevents data loss on timeout) ### LinkedIn Post Published via Composio API ✅ - Post: \"Intel taught me precision\" - LIVE with image - URL: https://www.linked",
-      "recallCount": 26,
+      "recallCount": 27,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 11.079715725779533,
-      "maxScore": 0.4902226477861404,
+      "totalScore": 12.079715725779533,
+      "maxScore": 1,
       "firstRecalledAt": "2026-04-22T16:58:05.516Z",
-      "lastRecalledAt": "2026-04-24T19:50:16.913Z",
+      "lastRecalledAt": "2026-04-29T06:44:29.926Z",
       "queryHashes": [
         "6730f85c1352",
         "18b7c29566c3",
@@ -360,12 +360,14 @@
         "d928f86e67e7",
         "7348a803fc22",
         "dfbfcc349d30",
-        "3bcebc67d629"
+        "3bcebc67d629",
+        "a0a73cdd43be"
       ],
       "recallDays": [
         "2026-04-22",
         "2026-04-23",
-        "2026-04-24"
+        "2026-04-24",
+        "2026-04-29"
       ],
       "conceptTags": [
         "overdue/due/completed",
@@ -1746,21 +1748,23 @@
       "endLine": 51,
       "source": "memory",
       "snippet": "- Extracted content: Peter Steinberger (@steipete), tweet text “My favorite security advisories.” Media image text: “Steps To Reproduce: 1. Enable hooks.gmail.allowUnsafeExternalContent=true”. Timestamp 12:11 PM · Apr 23, 2026. Metrics at fetch: 56.3K views, 24 replies, 4 reposts, 433 likes, 53 bookmarks. ### JobZoom 0-live-jobs investigation - 2026-04-24 JobZoom run did not find 0 raw jobs. It found/scored many intermediates: 341 filtered raw jobs, 311 deduped/new jobs, 91 Pass1/all-scored jobs, 0 live matches, 3 shadow jobs. - Shadow file: `/root/.openclaw/workspace-jobzoom/reports/shadow/jobzoom-shadow-2026-04-24.json`. - Shadow verdicts were keyword fallback around 60-63; live threshold",
-      "recallCount": 3,
+      "recallCount": 4,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 2.390201082825661,
+      "totalScore": 3.390201082825661,
       "maxScore": 1,
       "firstRecalledAt": "2026-04-24T10:44:07.363Z",
-      "lastRecalledAt": "2026-04-28T17:12:46.929Z",
+      "lastRecalledAt": "2026-04-29T06:15:14.025Z",
       "queryHashes": [
         "3b21f0cb3926",
         "73675e2f27f1",
-        "8db888f6c422"
+        "8db888f6c422",
+        "936db56b7cd0"
       ],
       "recallDays": [
         "2026-04-24",
-        "2026-04-28"
+        "2026-04-28",
+        "2026-04-29"
       ],
       "conceptTags": [
         "56.3k",
@@ -1970,18 +1974,20 @@
       "endLine": 23,
       "source": "memory",
       "snippet": "- OpenAI Codex OAuth token expiry remained unresolved during the health check; no expiry timestamp was found in available outputs. ## 2026-04-07 - System baseline reset - Ahmed confirmed all-clear and set the new operating baseline. - Primary model for all agents is `openai-codex/gpt-5.4`; fallback is `minimax-portal/MiniMax-M2.7`. - No Anthropic, Moonshot, or OpenRouter free tier in active stack. - Fixed today: cron model repins, duplicate user gateway disablement, Tavily env cleanup, AGENTS/TOOLS bootstrap trimming, GPT-5.4 policy updates, auth cooldown clear, gateway spam eliminated. - Watchlist: Codex OAuth expiry/autorefresh, unexpected MiniMax fallback, Slack pong timeouts only if mes",
-      "recallCount": 1,
+      "recallCount": 2,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 0.4469741195440292,
-      "maxScore": 0.4469741195440292,
+      "totalScore": 1.4469741195440293,
+      "maxScore": 1,
       "firstRecalledAt": "2026-04-24T20:06:19.621Z",
-      "lastRecalledAt": "2026-04-24T20:06:19.621Z",
+      "lastRecalledAt": "2026-04-29T08:02:39.014Z",
       "queryHashes": [
-        "71bd1c5198f4"
+        "71bd1c5198f4",
+        "47d092ffbd0c"
       ],
       "recallDays": [
-        "2026-04-24"
+        "2026-04-24",
+        "2026-04-29"
       ],
       "conceptTags": [
         "gateway",
@@ -2094,19 +2100,21 @@
       "endLine": 10,
       "source": "memory",
       "snippet": "## 2026-04-27 06:42 Cairo - JobZoom incident and report logic updates - JobZoom daily run was delayed, but completed successfully. Root cause of the visible delay was OpenClaw gateway memory pressure/OOM around 05:22 Cairo, followed by systemd restart, not a JobZoom logic failure. - Final JobZoom 2026-04-27 results: 150 searches, 150 successful, 0 failed, 341 eligible jobs after exclusions, 265 after dedup, 62 after Pass 1, 2 final AI matches at 70+, 2 CVs generated, report delivered successfully. - Delivery IDs from cron summary: Telegram summary 8792, PDF 8793, CV ZIP 8794. - JobZoom matched roles on 2026-04-27: OMPAY Program Manager in Oman, score 83; Johnson Controls Field Remediation",
-      "recallCount": 2,
+      "recallCount": 3,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 2,
+      "totalScore": 3,
       "maxScore": 1,
       "firstRecalledAt": "2026-04-28T06:07:07.261Z",
-      "lastRecalledAt": "2026-04-28T17:12:46.929Z",
+      "lastRecalledAt": "2026-04-29T06:15:14.025Z",
       "queryHashes": [
         "73675e2f27f1",
-        "8db888f6c422"
+        "8db888f6c422",
+        "936db56b7cd0"
       ],
       "recallDays": [
-        "2026-04-28"
+        "2026-04-28",
+        "2026-04-29"
       ],
       "conceptTags": [
         "gateway",
@@ -2157,18 +2165,20 @@
       "endLine": 183,
       "source": "memory",
       "snippet": "### Commits This Session - `93af34f4`: scanner report label fix - `790c9777`: route LLM calls through gateway - `82c2bbed`: daily briefing append mode (preserve previous days) ## Session 15: Heartbeat Hardening + OpenClaw Update Check (13:03-13:13 Cairo) ### Heartbeat Hardening — COMPLETE - Built 3 artifacts for hardened heartbeat system: 1. `.heartbeat/state.json` — cooldown tracker to prevent alert fatigue 2. `scripts/heartbeat-checks.sh` — deterministic health check script (runs <2s, outputs JSON) 3. `HEARTBEAT.md` — fully rewritten with 8 hourly checks (was 3), alert tiers, cooldown protocol ### New Checks Added (would have caught today's incidents) - 🔴 Gateway health (no coold",
-      "recallCount": 1,
+      "recallCount": 2,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 1,
+      "totalScore": 2,
       "maxScore": 1,
       "firstRecalledAt": "2026-04-28T14:04:30.991Z",
-      "lastRecalledAt": "2026-04-28T14:04:30.991Z",
+      "lastRecalledAt": "2026-04-29T10:02:15.507Z",
       "queryHashes": [
-        "3d05fa080dd0"
+        "3d05fa080dd0",
+        "16ba9ac34b18"
       ],
       "recallDays": [
-        "2026-04-28"
+        "2026-04-28",
+        "2026-04-29"
       ],
       "conceptTags": [
         "gateway",
@@ -2250,18 +2260,20 @@
       "endLine": 43,
       "source": "memory",
       "snippet": "- Started low-risk latency cleanup: reduced obvious context bloat knobs, validated config successfully, attempted a soft reload, then moved toward controlled gateway/systemd restart and transcript/context cleanup with backup first. Final post-cleanup verification still needs to be completed after compaction/resume. ## JobZoom AI Scoring Engine warning fix - Ahmed challenged why JobZoom kept showing `AI Scoring Engine: WARNING` for 2 consecutive days when batch scoring had actually succeeded. - Verified 2026-04-28 JobZoom run in `/root/.openclaw/workspace-jobzoom`: - 150 searches, 150 successful, 0 failed - 359 scraped jobs - 341 eligible after exclusions - 264 after dedup - 70 aft",
-      "recallCount": 1,
+      "recallCount": 2,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 1,
+      "totalScore": 2,
       "maxScore": 1,
       "firstRecalledAt": "2026-04-28T17:12:46.929Z",
-      "lastRecalledAt": "2026-04-28T17:12:46.929Z",
+      "lastRecalledAt": "2026-04-29T06:15:14.025Z",
       "queryHashes": [
-        "8db888f6c422"
+        "8db888f6c422",
+        "936db56b7cd0"
       ],
       "recallDays": [
-        "2026-04-28"
+        "2026-04-28",
+        "2026-04-29"
       ],
       "conceptTags": [
         "backup",
@@ -2272,6 +2284,68 @@
         "post-cleanup",
         "compaction/resume",
         "openclaw/workspace-jobzoom"
+      ]
+    },
+    "memory:memory/archive/2026-03/2026-03-18.md:711:739": {
+      "key": "memory:memory/archive/2026-03/2026-03-18.md:711:739",
+      "path": "memory/archive/2026-03/2026-03-18.md",
+      "startLine": 711,
+      "endLine": 739,
+      "source": "memory",
+      "snippet": "- Composio session_id for LinkedIn: `over` ### Composio LinkedIn Integration Details - Connected account: `ca_yGwr2ocbcRZi` (ACTIVE since 2026-03-13) - Tools available: LINKEDIN_CREATE_LINKED_IN_POST, LINKEDIN_GET_MY_INFO, LINKEDIN_REGISTER_IMAGE_UPLOAD, LINKEDIN_GET_POST_CONTENT, LINKEDIN_DELETE_POST, LINKEDIN_INITIALIZE_IMAGE_UPLOAD - Image upload flow: local file → GitHub raw URL download in sandbox → upload_local_file → s3key → post with images[] - Note: Composio sandbox can't access /root/ directly - need to download from GitHub or copy via base64 ### Dashboard Auto-Update Wired - SIE updates KPI callout block after each run (daily 4 AM) - Morning briefing updates Stale Alerts callout",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-04-29T06:44:29.926Z",
+      "lastRecalledAt": "2026-04-29T06:44:29.926Z",
+      "queryHashes": [
+        "a0a73cdd43be"
+      ],
+      "recallDays": [
+        "2026-04-29"
+      ],
+      "conceptTags": [
+        "session-id",
+        "ca-ygwr2ocbcrzi",
+        "linkedin-create-linked-in-post",
+        "linkedin-get-my-info",
+        "linkedin-register-image-upload",
+        "linkedin-get-post-content",
+        "linkedin-delete-post",
+        "linkedin-initialize-image-upload"
+      ]
+    },
+    "memory:memory/archives/2026-03-02.md:55:76": {
+      "key": "memory:memory/archives/2026-03-02.md:55:76",
+      "path": "memory/archives/2026-03-02.md",
+      "startLine": 55,
+      "endLine": 76,
+      "source": "memory",
+      "snippet": "- /root/.openclaw/workspace/linkedin-today.png - LinkedIn post copy for Monday Mar 2 is available and marked ready to publish. - LinkedIn cron self-heal reported both LinkedIn crons in running state after retry logic. ## Flush Addendum — 2026-03-02 08:14 UTC - LinkedIn Engagement Radar cron (9e3c6815) patched with hard URL validation. - New guardrail: only accepts true LinkedIn post URLs (linkedin.com/posts, linkedin.com/feed/update, linkedin.com/pulse). - Non-LinkedIn links are now auto-rejected and cron must return INSUFFICIENT VALID POSTS when valid candidates are fewer than 3. - This closes a quality bug where external articles were misclassified as commentable LinkedIn posts. ## Fl",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-04-29T06:44:29.926Z",
+      "lastRecalledAt": "2026-04-29T06:44:29.926Z",
+      "queryHashes": [
+        "a0a73cdd43be"
+      ],
+      "recallDays": [
+        "2026-04-29"
+      ],
+      "conceptTags": [
+        "self-heal",
+        "linkedin.com/posts",
+        "linkedin.com/feed/update",
+        "linkedin.com/pulse",
+        "non-linkedin",
+        "auto-rejected",
+        "root",
+        "openclaw"
       ]
     }
   }

@@ -1,23 +1,65 @@
 {
   "status": "ok",
-  "scan_time": "2026-04-28T20:01:48.567412+02:00",
-  "total_scanned": 0,
+  "scan_time": "2026-04-29T18:01:43.732378+02:00",
+  "total_scanned": 23,
   "by_category": {
     "interview_invite": 0,
-    "recruiter_reach": 0,
+    "recruiter_reach": 1,
     "application_ack": 0,
     "rejection": 0,
     "assessment": 0,
     "follow_up_needed": 0,
-    "other": 0
+    "other": 22
   },
   "interview_invites": [],
-  "recruiter_messages": [],
+  "recruiter_messages": [
+    {
+      "id": "355547",
+      "from": "Emirates NBD Important Updates<Info@EmiratesNBD.com>",
+      "subject": "Update on our WhatsApp Banking Services",
+      "date": "Wed, 29 Apr 2026 18:03:09 +0400",
+      "unread": true,
+      "priority": "HIGH",
+      "score": 7,
+      "pipeline_match": "SAP"
+    }
+  ],
   "application_acks": [],
   "rejections": [],
   "assessments": [],
   "follow_ups_needed": [],
-  "actionable_count": 0,
-  "hot_alerts": [],
-  "signals": []
+  "actionable_count": 1,
+  "hot_alerts": [
+    {
+      "subject": "Update on our WhatsApp Banking Services",
+      "from": "Emirates NBD Important Updates<Info@EmiratesNBD.com>",
+      "priority": "HIGH",
+      "pipeline_match": "SAP"
+    }
+  ],
+  "signals": [
+    {
+      "company": "SAP",
+      "signal": "recruiter_email",
+      "subject": "Update on our WhatsApp Banking Services",
+      "sender": "Emirates NBD Important Updates<Info@EmiratesNBD.com>",
+      "job_ids": [
+        "indeed-in-b2195113ff678ef7",
+        "indeed-in-b7591ff66cc5a732",
+        "linkedin_jobspy-li-4380812358",
+        "linkedin-li-4349578134",
+        "linkedin-li-4394078700",
+        "linkedin-li-4380812358",
+        "linkedin-li-4362170335",
+        "linkedin-li-4362562926",
+        "linkedin-li-4385935615",
+        "linkedin-li-4353703506",
+        "app-005",
+        "cv-5fbf4a9aa7",
+        "linkedin-li-4385294885"
+      ],
+      "score": 7,
+      "timestamp": "2026-04-29T18:01:43.618811+02:00"
+    }
+  ]
 }

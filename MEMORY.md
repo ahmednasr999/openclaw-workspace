@@ -8,6 +8,7 @@
 - Gmail check: daily at 8 AM Cairo.
 - Formatting: never use em dashes. Use hyphens or commas.
 - Current default model is GPT-5.5 via OpenAI Codex OAuth unless Ahmed changes it. Do not silently switch models.
+- Image generation cost preference: do not add direct OpenAI API billing just to unlock image generation if the authenticated ChatGPT web Images workaround is viable. <!-- dream-promoted 2026-04-29 -->
 
 ## Content Pipeline Workflow, Confirmed 2026-02-19
 Mission Control had two boards:
@@ -24,6 +25,13 @@ Current rule:
 Repurposed LinkedIn video/reel assets should be premium, executive, concise, and cinematic rather than basic utility renders.
 
 Approved pattern: 9:16 vertical reel, dark executive visual system, clean typography hierarchy, glass-card UI treatment, subtle motion, restrained premium gradient, and narrative pacing such as shift -> risk -> rule -> question.
+
+## LinkedIn Visual Default, Confirmed 2026-04-29
+Universal default for every Ahmed LinkedIn post visual: use Ahmed's LinkedIn AI execution card format unless Ahmed explicitly requests another direction.
+
+Reference asset: `/root/.openclaw/workspace/output/jobzoom-visuals/ahmed-linkedin-ai-execution-card-4k.jpg`
+
+Required style: 9:16 dark executive card, bold mobile-readable hook hierarchy, blue/gold accent system, execution/governance visual language, and Ahmed-branded footer.
 
 ## Job Application and CV Workflow
 Trigger: Ahmed shares a job link and description.

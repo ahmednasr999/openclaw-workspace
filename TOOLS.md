@@ -12,6 +12,7 @@ Full detail lives in `docs/reference/TOOLS.full.md`.
 - Search router: `skills/tavily-search/scripts/search.mjs`.
 - Research router: `skills/tavily-search/scripts/research-search.mjs`.
 - If Tavily is rate-limited for live search/content radar, fall back to Google via Camoufox.
+- Gulf jobs scanner: if Exa/Composio search returns HTTP 402 or `NO_MORE_CREDITS`, use the DuckDuckGo/OpenClaw web fallback and avoid repeated Exa retries until credits are restored. <!-- dream-promoted 2026-04-29 -->
 - Brave is not configured. Do not plan around it.
 
 ## Browser Automation
@@ -39,7 +40,7 @@ Posting:
 - For image posts, upload image first and use the returned true `s3key`.
 - Never pass raw GitHub URLs, local paths, Notion URLs, or short links as `s3key`.
 - Never post text-only when an image was expected.
-- For the CMO premium image/content-card workflow, default to `/root/.openclaw/workspace-cmo/scripts/generate-premium-content-card.py` unless Ahmed explicitly chooses another path.
+- For the CMO premium image/content-card workflow, universal default reference is `/root/.openclaw/workspace/output/jobzoom-visuals/ahmed-linkedin-ai-execution-card-4k.jpg`. Use that Ahmed LinkedIn AI execution card format for every LinkedIn post visual unless Ahmed explicitly requests a different visual direction. The script `/root/.openclaw/workspace-cmo/scripts/generate-premium-content-card.py` remains the implementation path, but its output should match the AI execution card format by default.
 
 Content calendar:
 - Notion DB: `3268d599-a162-814b-8854-c9b8bde62468`.

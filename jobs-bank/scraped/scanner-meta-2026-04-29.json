@@ -1,0 +1,33 @@
+{
+  "date": "2026-04-29",
+  "total_searches": 56,
+  "expected_searches": 56,
+  "total_found": 16,
+  "priority_picks": 3,
+  "exec_leads": 4,
+  "filtered_out": 6,
+  "runtime_seconds": 72,
+  "countries": [
+    "Oman",
+    "United Arab Emirates",
+    "Bahrain",
+    "Qatar",
+    "Saudi Arabia",
+    "Kuwait"
+  ],
+  "sources": [
+    "Exa",
+    "Composio Web",
+    "LinkedIn Jobs",
+    "Google Jobs"
+  ],
+  "engine": "Exa neural search via Composio MCP",
+  "errors": 54,
+  "validation_warnings": [
+    "HIGH ERROR RATE: 54/56 searches failed."
+  ],
+  "degraded": true,
+  "fallback_provider": "duckduckgo",
+  "fallback_failures": 4,
+  "fallback_circuit_open": true
+}

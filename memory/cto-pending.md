@@ -1,14 +1,18 @@
-# CTO Pending Issues — Updated 2026-04-28 22:08 Cairo
+# CTO Pending Issues — Updated 2026-04-29 11:45 Cairo
 
 ## Open
 
 1. **daily-backup freshness alert is cleared; backup path review remains** — `/tmp/openclaw-backup.log` advanced to `2026-04-28 20:00:01 +0300`, and the log shows a successful push to `origin workspace-sync` at 19:53. The immediate 48-hour freshness threshold is no longer breached. Keep the older branch-target review only as a follow-up if needed, since the latest evidence shows current backup activity on `workspace-sync`.
 
-2. **Root-level untracked `product-specs/` directory is an active heartbeat blocker** — `git ls-files --others --exclude-standard` reports `product-specs/` at the workspace root. Direct inspection is in progress/has shown the directory exists; targeted secret-pattern scanning should be kept current. The previous root backup markdown files are no longer reported.
+2. **Root-level untracked product/output blocker cleared locally on 2026-04-29** — `product-specs/` was inspected, documented with `product-specs/README.md`, targeted secret-pattern scanned clean except descriptive false positives (`password`, `token count`), and committed as `48e62951 docs(product): track JobZoom specs`. Newly surfaced `output/doc/` and `output/jobzoom-visuals/` artifacts were also scanned clean except descriptive false positives and committed as `ae0be538 assets(jobzoom): track BRD and visual system outputs`. Remaining untracked files are daily runtime outputs inside tracked directories (`intel/intel-2026-04-29.md` and `jobs-bank/scraped/*2026-04-29*`), not a root-level untracked directory blocker. These commits are local until the normal backup/push path advances `origin/workspace-sync`.
 
 3. **exec-approvals.json CTO allowlist does not persist cleanly across gateway restart** — The allowlist entries were restored and `sqlite3` is present, but the durable fix still needs the underlying config change so CTO exec approvals survive restarts without manual repair.
 
 4. **Archived content orchestrator needs disposition** — `scripts/.archived/content-orchestrator.py.archived` and `scripts/.archived/test-content-agent.py.archived` still exist. This needs a deliberate call: restore, replace, or permanently retire.
+
+Heartbeat note 2026-04-29 11:45 Cairo — Gateway is live (HTTP 200), latest commit is `ae0be538 assets(jobzoom): track BRD and visual system outputs` (~42m old), cron dashboard log is present with 0 ERROR lines in the last 100 lines, workspace disk usage is 78%, backup log remains fresh at `2026-04-28 20:00:01 +0300` (~15.8h old), and no root-level untracked paths were reported. The previous `product-specs/` blocker is cleared, so this heartbeat is `HEARTBEAT_OK`.
+
+Heartbeat note 2026-04-29 09:51 Cairo — Gateway is live (HTTP 200), latest commit is `16070da8 chore(auto): daily data commit (33 files)` (~3h old), cron dashboard log is present with 0 ERROR lines in the last 100 lines, workspace disk usage is 78%, and backup log is fresh at `2026-04-28 20:00:01 +0300` (~13.9h old). The only active heartbeat blocker is root-level untracked `product-specs/`; direct listing found four markdown spec/prompt files and targeted secret-pattern scanning found no matches.
 
 Heartbeat note 2026-04-22 16:16 Cairo — Gateway is live (HTTP 200), latest commit is `8251f697 feat: harden workflow automation and operating playbooks`, cron dashboard log is present with 0 ERROR lines in the last 100 lines, workspace disk usage is 65%, backup log is still fresh at `2026-04-21 20:00:01 +0200`, and no root-level untracked paths were reported. No new heartbeat blockers were found; open issues above remain unchanged.
 

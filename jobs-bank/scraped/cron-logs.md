@@ -415,3 +415,31 @@
 - Errors: 56
 - Runtime: 434s
 - ⚠️ DEGRADATION
+
+## 2026-04-29 07:03:23 (v4.0)
+- Engine: Exa neural search via Composio MCP
+- Searches: 56
+- Found: 16
+- Priority picks: 7
+- Leads: 0
+- Errors: 54
+- Runtime: 360s
+
+## 2026-04-29 07:13:09 (v4.0)
+- Engine: Exa neural search via Composio MCP
+- Searches: 56
+- Found: 0
+- Priority picks: 0
+- Leads: 0
+- Errors: 56
+- Runtime: 47s
+- ⚠️ DEGRADATION
+
+## 2026-04-29 09:04:40 (v4.0)
+- Engine: Exa neural search via Composio MCP
+- Searches: 56
+- Found: 16
+- Priority picks: 3
+- Leads: 4
+- Errors: 54
+- Runtime: 72s
