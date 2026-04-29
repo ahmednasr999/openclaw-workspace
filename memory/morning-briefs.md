@@ -1123,3 +1123,56 @@ Node.js v22.22.0
 ## Calendar - Today's Events
 *Calendar API unavailable (gog v0.12.0 bug - tracking fix)*
 
+=== Morning Brief - 2026-04-29 06:00 AM ===
+
+## Claude 2x Usage Reminder
+
+## Job Radar (from Tavily)
+[search-router] Tavily unavailable, falling back to local SearXNG: Tavily Search failed (401): {"detail":{"error":"Unauthorized: missing or invalid API key."}}
+## Sources
+
+_(provider: searxng)_
+
+- **Head Of Digital Transformation Jobs in UAE (Apr 2026) - Bayt.com**
+  https://www.bayt.com/en/uae/jobs/head-of-digital-transformation-jobs/
+  To VP & Sales Area Head JOB PURPOSE To sell Core ... , outputs and staff performances through digital platforms Key Responsibilities Core ...
+
+- **83 pmo Jobs in United Arab Emirates, January 2026 | Glassdoor**
+  https://www.glassdoor.com/Job/united-arab-emirates-pmo-jobs-SRCH_IL.0,20_IN6_KO21,24.htm
+  The top companies hiring now are Blue Book Global, Atlantis Dubai, Unique Group, Emirates Nuclear Energy Company, Julphar, BlackStone eIT, VaporVM, Dicetek LLC, Omnix International, Schneider Electric
+
+- **waifu-diffusion/tokenizer/vocab.json at main · jack-op11 ...**
+  https://github.com/jack-op11/waifu-diffusion/blob/main/tokenizer/vocab.json
+  Contribute to jack-op11/waifu-diffusion development by creating an account on GitHub.
+
+- **Sunil Karani - Dubai - LinkedIn**
+  https://ae.linkedin.com/in/sunilkarani
+  Head of Program Management | Digital Transformation & Portfolio Director | VP PMO | AED 350M+ Portfolios Delivered | Built Teams from 2 to 480 Resources ...
+
+- **‏Rayed Saad Altukhais‏ - ‏VP Digital and Technological Transformation ...**
+  https://sa.linkedin.com/in/rayed-saad-altukhais
+  - Developing and implementing a comprehensive digital health strategy aligned with national healthcare goals and the Ministry's vision by providing strategic leadership to drive the adoption of digital health technologies across the cluster - Managing the implementation of robust data governance fra...
+
+## Gmail - New Opportunities
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/root/.openclaw/workspace/scripts/gmail-scan.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+
+## Calendar - Today's Events
+*Calendar API unavailable (gog v0.12.0 bug - tracking fix)*
+
