@@ -1,0 +1,1576 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>JobZoom Business Requirements Document</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">JobZoom Business Requirements Document</h1>
+</header>
+<h1 id="business-requirements-document---jobzoom">Business Requirements
+Document - JobZoom</h1>
+<h2 id="document-control">Document Control</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Item</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Product</td>
+<td>JobZoom</td>
+</tr>
+<tr class="even">
+<td>Document Type</td>
+<td>Business Requirements Document (BRD)</td>
+</tr>
+<tr class="odd">
+<td>Version</td>
+<td>1.0</td>
+</tr>
+<tr class="even">
+<td>Date</td>
+<td>2026-04-28</td>
+</tr>
+<tr class="odd">
+<td>Owner</td>
+<td>Ahmed Nasr</td>
+</tr>
+<tr class="even">
+<td>Prepared by</td>
+<td>NASR</td>
+</tr>
+<tr class="odd">
+<td>Status</td>
+<td>Draft for product validation and AI-builder handoff</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="executive-summary">1. Executive Summary</h2>
+<p>JobZoom is a subscription-based GCC job-search automation product.
+The user uploads their CV once, pays a single monthly subscription fee,
+and receives a daily email containing:</p>
+<ol type="1">
+<li>A PDF report showing the best matched jobs across GCC
+countries.</li>
+<li>A ZIP file containing tailored ATS-friendly CVs for the top matched
+jobs.</li>
+</ol>
+<p>The product is designed for serious professionals who are actively
+looking for opportunities across Saudi Arabia, UAE, Qatar, Kuwait,
+Bahrain, and Oman. It is not a generic job board and not a simple AI CV
+writer. It is a daily career-application production engine.</p>
+<p>The core promise is:</p>
+<blockquote>
+<p>Upload your CV once. JobZoom scans GCC jobs daily and sends you
+ready-to-apply tailored CVs for the roles that fit your career.</p>
+</blockquote>
+<p>The initial commercial model is a single plan priced at
+<strong>$200/month</strong>.</p>
+<p>The recommended go-to-market approach is a controlled beta with 10
+paying users, using an MVP that focuses on reliable daily delivery
+rather than a complex dashboard.</p>
+<hr />
+<h2 id="business-background">2. Business Background</h2>
+<p>Professionals searching for GCC jobs face several recurring
+problems:</p>
+<ul>
+<li>Job portals contain too many irrelevant listings.</li>
+<li>Searching across multiple GCC countries is time-consuming.</li>
+<li>Job titles vary widely across companies and countries.</li>
+<li>Most candidates do not know which jobs are truly worth applying
+to.</li>
+<li>Tailoring CVs for each role is repetitive and slow.</li>
+<li>ATS optimization is confusing.</li>
+<li>Job seekers often miss opportunities because they lack daily
+discipline.</li>
+<li>Existing platforms provide job listings, but not a complete daily
+action package.</li>
+</ul>
+<p>JobZoom solves this by combining job discovery, matching, ATS CV
+optimization, and daily delivery into one subscription service.</p>
+<hr />
+<h2 id="business-objectives">3. Business Objectives</h2>
+<h3 id="primary-objectives">3.1 Primary Objectives</h3>
+<ol type="1">
+<li>Create a paid monthly product that automates daily GCC job-search
+preparation.</li>
+<li>Save users time by filtering jobs and preparing tailored CVs.</li>
+<li>Improve user application quality through ATS-friendly CV
+tailoring.</li>
+<li>Build a repeatable, scalable subscription business.</li>
+<li>Validate willingness to pay at $200/month.</li>
+</ol>
+<h3 id="secondary-objectives">3.2 Secondary Objectives</h3>
+<ol type="1">
+<li>Build a job-market intelligence database across GCC countries.</li>
+<li>Create reusable user career profiles from uploaded CVs.</li>
+<li>Build a foundation for future features such as weekly market
+insights, interview preparation, recruiter outreach drafts, and
+application tracking.</li>
+<li>Establish JobZoom as a premium job-search automation service for GCC
+professionals.</li>
+</ol>
+<hr />
+<h2 id="problem-statement">4. Problem Statement</h2>
+<p>Job seekers across the GCC spend too much time searching, filtering,
+and tailoring applications manually. Job portals help users find
+listings, but they do not solve the full workflow.</p>
+<p>The current job-search process is fragmented:</p>
+<ol type="1">
+<li>User searches across multiple job sites.</li>
+<li>User filters irrelevant jobs manually.</li>
+<li>User decides whether a job fits their experience.</li>
+<li>User edits the CV for each job.</li>
+<li>User checks ATS keywords manually.</li>
+<li>User tracks daily opportunities inconsistently.</li>
+</ol>
+<p>This creates wasted time, inconsistent application quality, and
+missed opportunities.</p>
+<p>JobZoom addresses the full workflow by converting the job-search
+process into a daily automated service.</p>
+<hr />
+<h2 id="product-concept">5. Product Concept</h2>
+<p>JobZoom is a subscription service with this workflow:</p>
+<ol type="1">
+<li>User signs up and pays $200/month.</li>
+<li>User uploads a CV.</li>
+<li>System parses the CV and creates a structured profile.</li>
+<li>System generates an optimized ATS master CV.</li>
+<li>System generates position-title tracks based on the user’s career
+history.</li>
+<li>System scans jobs daily across all GCC countries.</li>
+<li>System scores and ranks jobs against the user profile.</li>
+<li>System generates tailored ATS CVs for the strongest matches.</li>
+<li>System creates a daily PDF report.</li>
+<li>System creates a ZIP file containing tailored CVs.</li>
+<li>System emails both attachments to the user daily.</li>
+</ol>
+<hr />
+<h2 id="product-scope">6. Product Scope</h2>
+<h3 id="in-scope-for-mvp">6.1 In Scope for MVP</h3>
+<ul>
+<li>Landing page</li>
+<li>User signup/login</li>
+<li>Subscription payment</li>
+<li>CV upload</li>
+<li>CV parsing</li>
+<li>Structured profile creation</li>
+<li>ATS master CV generation</li>
+<li>Position-title generation</li>
+<li>GCC-wide daily job search</li>
+<li>Job normalization</li>
+<li>Job deduplication</li>
+<li>User-job matching and scoring</li>
+<li>Tailored CV generation</li>
+<li>Daily PDF report generation</li>
+<li>ZIP file generation</li>
+<li>Daily email delivery</li>
+<li>Admin monitoring dashboard</li>
+<li>Failure logging and manual resend</li>
+</ul>
+<h3 id="out-of-scope-for-mvp">6.2 Out of Scope for MVP</h3>
+<ul>
+<li>Auto-apply functionality</li>
+<li>Recruiter messaging</li>
+<li>Interview coaching</li>
+<li>Advanced analytics dashboard</li>
+<li>Mobile app</li>
+<li>Complex user customization</li>
+<li>Multiple subscription tiers</li>
+<li>Public job board</li>
+<li>Employer-side product</li>
+<li>Guaranteeing interviews or offers</li>
+<li>Manual consultant review for every report</li>
+</ul>
+<hr />
+<h2 id="target-market">7. Target Market</h2>
+<h3 id="geographic-scope">7.1 Geographic Scope</h3>
+<p>JobZoom will focus on GCC countries:</p>
+<ul>
+<li>Saudi Arabia</li>
+<li>United Arab Emirates</li>
+<li>Qatar</li>
+<li>Kuwait</li>
+<li>Bahrain</li>
+<li>Oman</li>
+</ul>
+<h3 id="primary-customer-segment">7.2 Primary Customer Segment</h3>
+<p>The initial target customer is a professional actively seeking GCC
+opportunities and willing to pay for time savings and better
+applications.</p>
+<p>Best-fit profiles:</p>
+<ul>
+<li>senior professionals</li>
+<li>managers</li>
+<li>senior managers</li>
+<li>directors</li>
+<li>PMO professionals</li>
+<li>digital transformation professionals</li>
+<li>IT and technology professionals</li>
+<li>operations leaders</li>
+<li>healthcare and business transformation professionals</li>
+<li>expatriates targeting GCC relocation or mobility</li>
+</ul>
+<h3 id="excluded-or-lower-priority-segments">7.3 Excluded or
+Lower-Priority Segments</h3>
+<ul>
+<li>fresh graduates</li>
+<li>junior job seekers</li>
+<li>blue-collar workers</li>
+<li>users seeking free job alerts</li>
+<li>users expecting guaranteed job placement</li>
+<li>users expecting automatic applications</li>
+</ul>
+<hr />
+<h2 id="customer-personas">8. Customer Personas</h2>
+<h3 id="persona-1-senior-manager-seeking-gcc-move">Persona 1: Senior
+Manager Seeking GCC Move</h3>
+<ul>
+<li>Age: 35-50</li>
+<li>Experience: 10-20 years</li>
+<li>Goal: move to UAE, Saudi Arabia, Qatar, or another GCC country</li>
+<li>Pain: does not have time to search daily</li>
+<li>Value trigger: daily relevant jobs with tailored CVs ready</li>
+<li>Willingness to pay: high if product saves time and improves
+application quality</li>
+</ul>
+<h3 id="persona-2-gcc-based-professional-seeking-better-role">Persona 2:
+GCC-Based Professional Seeking Better Role</h3>
+<ul>
+<li>Already located in GCC</li>
+<li>Wants better compensation or seniority</li>
+<li>Uses LinkedIn and job boards but finds too much noise</li>
+<li>Needs help identifying suitable titles and applying
+consistently</li>
+</ul>
+<h3 id="persona-3-executive-or-director-level-candidate">Persona 3:
+Executive or Director-Level Candidate</h3>
+<ul>
+<li>Higher salary target</li>
+<li>Limited time</li>
+<li>Needs quality over volume</li>
+<li>Will pay if the product feels premium, private, and accurate</li>
+</ul>
+<hr />
+<h2 id="value-proposition">9. Value Proposition</h2>
+<h3 id="main-value-proposition">Main Value Proposition</h3>
+<p>JobZoom saves professionals hours every week by scanning GCC jobs,
+filtering relevant opportunities, and generating tailored ATS-friendly
+CVs every day.</p>
+<h3 id="user-facing-promise">User-Facing Promise</h3>
+<blockquote>
+<p>Upload your CV once. Receive a daily GCC job report and tailored CV
+pack ready for application.</p>
+</blockquote>
+<h3 id="differentiation">Differentiation</h3>
+<p>JobZoom is different because it does not stop at job alerts. It
+produces application-ready documents.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Existing Solution</th>
+<th>Limitation</th>
+<th>JobZoom Advantage</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Job portals</td>
+<td>Too many irrelevant jobs</td>
+<td>Filters and ranks jobs for the user</td>
+</tr>
+<tr class="even">
+<td>CV writers</td>
+<td>One-time CV service</td>
+<td>Daily tailored CVs for real jobs</td>
+</tr>
+<tr class="odd">
+<td>AI writing tools</td>
+<td>User must do all workflow steps</td>
+<td>End-to-end daily automation</td>
+</tr>
+<tr class="even">
+<td>Recruiters</td>
+<td>Focus on employer needs</td>
+<td>Focus on candidate’s daily search</td>
+</tr>
+<tr class="odd">
+<td>Job alerts</td>
+<td>Send listings only</td>
+<td>Sends report plus tailored CV pack</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="pricing-and-revenue-model">10. Pricing and Revenue Model</h2>
+<h3 id="pricing">10.1 Pricing</h3>
+<p>Single plan:</p>
+<p><strong>$200 per month</strong></p>
+<h3 id="billing">10.2 Billing</h3>
+<ul>
+<li>Monthly recurring subscription</li>
+<li>Payment collected upfront</li>
+<li>Cancel anytime</li>
+<li>Access continues until end of billing cycle</li>
+</ul>
+<h3 id="revenue-scenarios">10.3 Revenue Scenarios</h3>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Paying Users</th>
+<th style="text-align: right;">Monthly Revenue</th>
+<th style="text-align: right;">Annualized Revenue</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">$2,000</td>
+<td style="text-align: right;">$24,000</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">$5,000</td>
+<td style="text-align: right;">$60,000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">$10,000</td>
+<td style="text-align: right;">$120,000</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">$20,000</td>
+<td style="text-align: right;">$240,000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">250</td>
+<td style="text-align: right;">$50,000</td>
+<td style="text-align: right;">$600,000</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">500</td>
+<td style="text-align: right;">$100,000</td>
+<td style="text-align: right;">$1,200,000</td>
+</tr>
+</tbody>
+</table>
+<h3 id="unit-economics-target">10.4 Unit Economics Target</h3>
+<p>Target gross margin should be above 70% after:</p>
+<ul>
+<li>AI/API usage</li>
+<li>email delivery</li>
+<li>storage</li>
+<li>hosting</li>
+<li>payment processing</li>
+<li>operational support</li>
+</ul>
+<h3 id="usage-cap">10.5 Usage Cap</h3>
+<p>To protect quality and margin:</p>
+<ul>
+<li>Maximum 5 tailored CVs per user per day.</li>
+<li>If fewer than 5 strong matches exist, generate fewer CVs.</li>
+<li>Do not force weak matches just to fill the quota.</li>
+</ul>
+<hr />
+<h2 id="business-rules">11. Business Rules</h2>
+<h3 id="subscription-rules">11.1 Subscription Rules</h3>
+<ol type="1">
+<li>Only active paid users receive daily reports.</li>
+<li>If payment fails, user enters grace period, if configured.</li>
+<li>After grace period, daily processing pauses.</li>
+<li>User can cancel subscription.</li>
+<li>User can request data deletion.</li>
+</ol>
+<h3 id="job-matching-rules">11.2 Job Matching Rules</h3>
+<ol type="1">
+<li>Jobs must be scored from 0 to 100.</li>
+<li>Jobs below 60 should not appear in the main report.</li>
+<li>Jobs from 60-69 may appear as near misses.</li>
+<li>Jobs above 70 may appear as matches.</li>
+<li>Tailored CVs should normally be generated only for top matches.</li>
+<li>Maximum 5 tailored CVs should be generated per user per day.</li>
+<li>Quality is more important than quantity.</li>
+</ol>
+<h3 id="cv-rules">11.3 CV Rules</h3>
+<ol type="1">
+<li>Do not fabricate experience.</li>
+<li>Do not fabricate education.</li>
+<li>Do not fabricate certifications.</li>
+<li>Do not change employment dates.</li>
+<li>Do not invent metrics.</li>
+<li>Do not invent tools or technologies.</li>
+<li>Tailoring must use facts from the uploaded CV/profile only.</li>
+<li>CV format must be ATS-safe.</li>
+</ol>
+<h3 id="delivery-rules">11.4 Delivery Rules</h3>
+<ol type="1">
+<li>Each active user receives one daily email.</li>
+<li>Email includes PDF report and ZIP file, unless using secure download
+links.</li>
+<li>Failed email deliveries must be logged.</li>
+<li>Admin must be able to resend.</li>
+</ol>
+<h3 id="privacy-rules">11.5 Privacy Rules</h3>
+<ol type="1">
+<li>A user must never access another user’s files.</li>
+<li>Reports, CVs, and ZIPs must be user-specific.</li>
+<li>Uploaded CVs must be private.</li>
+<li>Admin access must be controlled.</li>
+<li>User data deletion must be supported.</li>
+</ol>
+<hr />
+<h2 id="functional-requirements">12. Functional Requirements</h2>
+<h3 id="fr-001-landing-page">FR-001 Landing Page</h3>
+<p>The system shall provide a public landing page explaining JobZoom,
+the $200/month plan, key benefits, sample output, and signup CTA.</p>
+<p>Acceptance criteria:</p>
+<ul>
+<li>Visitor can understand the product in under 60 seconds.</li>
+<li>Pricing is visible.</li>
+<li>CTA leads to signup/payment.</li>
+<li>Sample report link or image is available.</li>
+</ul>
+<h3 id="fr-002-user-signup">FR-002 User Signup</h3>
+<p>The system shall allow users to create an account.</p>
+<p>Required fields:</p>
+<ul>
+<li>name</li>
+<li>email</li>
+<li>password or magic link authentication</li>
+</ul>
+<p>Acceptance criteria:</p>
+<ul>
+<li>User can create account.</li>
+<li>User receives confirmation or login access.</li>
+<li>Duplicate email handling exists.</li>
+</ul>
+<h3 id="fr-003-subscription-payment">FR-003 Subscription Payment</h3>
+<p>The system shall collect $200/month subscription payment.</p>
+<p>Acceptance criteria:</p>
+<ul>
+<li>User can pay.</li>
+<li>Payment status is stored.</li>
+<li>Failed/cancelled subscriptions are tracked.</li>
+<li>Only active paid users are processed daily.</li>
+</ul>
+<h3 id="fr-004-cv-upload">FR-004 CV Upload</h3>
+<p>The system shall allow users to upload a CV.</p>
+<p>Accepted formats:</p>
+<ul>
+<li>PDF</li>
+<li>DOCX</li>
+</ul>
+<p>Acceptance criteria:</p>
+<ul>
+<li>File upload succeeds.</li>
+<li>File is linked to the correct user.</li>
+<li>File is stored privately.</li>
+<li>User cannot access another user’s file.</li>
+</ul>
+<h3 id="fr-005-cv-parsing">FR-005 CV Parsing</h3>
+<p>The system shall parse the uploaded CV into structured profile
+data.</p>
+<p>Extract:</p>
+<ul>
+<li>name</li>
+<li>contact details</li>
+<li>work history</li>
+<li>job titles</li>
+<li>companies</li>
+<li>dates</li>
+<li>responsibilities</li>
+<li>achievements</li>
+<li>skills</li>
+<li>education</li>
+<li>certifications</li>
+<li>languages</li>
+<li>industries</li>
+</ul>
+<p>Acceptance criteria:</p>
+<ul>
+<li>Parsed profile is stored as structured data.</li>
+<li>Parsing failure is logged.</li>
+<li>Admin can see parsing status.</li>
+</ul>
+<h3 id="fr-006-ats-master-cv-generation">FR-006 ATS Master CV
+Generation</h3>
+<p>The system shall generate an ATS-friendly master CV from the uploaded
+CV.</p>
+<p>Acceptance criteria:</p>
+<ul>
+<li>Output is PDF.</li>
+<li>Format is single-column.</li>
+<li>No tables, icons, images, columns, text boxes, or complex
+formatting.</li>
+<li>No unsupported facts are added.</li>
+</ul>
+<h3 id="fr-007-position-title-generation">FR-007 Position-Title
+Generation</h3>
+<p>The system shall generate target job-title tracks based on user
+career history.</p>
+<p>Title categories:</p>
+<ul>
+<li>direct-fit titles</li>
+<li>adjacent-fit titles</li>
+<li>stretch-fit titles</li>
+<li>avoid/low-fit titles, internal optional</li>
+</ul>
+<p>Acceptance criteria:</p>
+<ul>
+<li>Titles are generated and stored.</li>
+<li>Titles are used in daily job search.</li>
+<li>Titles are relevant to the user profile.</li>
+</ul>
+<h3 id="fr-008-gcc-job-search">FR-008 GCC Job Search</h3>
+<p>The system shall scan job sources across all GCC countries daily.</p>
+<p>Countries:</p>
+<ul>
+<li>Saudi Arabia</li>
+<li>UAE</li>
+<li>Qatar</li>
+<li>Kuwait</li>
+<li>Bahrain</li>
+<li>Oman</li>
+</ul>
+<p>Acceptance criteria:</p>
+<ul>
+<li>Jobs are collected daily.</li>
+<li>Source, title, company, location, URL, and description are
+stored.</li>
+<li>Search execution status is logged.</li>
+</ul>
+<h3 id="fr-009-job-normalization">FR-009 Job Normalization</h3>
+<p>The system shall normalize jobs into a standard schema.</p>
+<p>Acceptance criteria:</p>
+<ul>
+<li>Raw job source data is converted into standard fields.</li>
+<li>Missing optional data does not break processing.</li>
+<li>Source URL is retained.</li>
+</ul>
+<h3 id="fr-010-job-deduplication">FR-010 Job Deduplication</h3>
+<p>The system shall deduplicate jobs from multiple sources or repeated
+scans.</p>
+<p>Deduplication logic:</p>
+<ul>
+<li>source job ID</li>
+<li>URL</li>
+<li>title + company + country</li>
+<li>fuzzy matching where needed</li>
+</ul>
+<p>Acceptance criteria:</p>
+<ul>
+<li>Duplicate jobs are reduced.</li>
+<li>Canonical job record is maintained.</li>
+<li>Deduplication reason can be logged internally.</li>
+</ul>
+<h3 id="fr-011-job-scoring">FR-011 Job Scoring</h3>
+<p>The system shall score each relevant job against each active user
+profile.</p>
+<p>Acceptance criteria:</p>
+<ul>
+<li>Score is 0-100.</li>
+<li>Score is stored.</li>
+<li>Explanation is generated.</li>
+<li>Risk/gap is generated.</li>
+</ul>
+<h3 id="fr-012-top-match-selection">FR-012 Top Match Selection</h3>
+<p>The system shall select top matches for the daily report.</p>
+<p>Acceptance criteria:</p>
+<ul>
+<li>Only high-quality matches are selected.</li>
+<li>Maximum 5 jobs are selected for tailored CV generation.</li>
+<li>If no strong matches exist, report states that clearly.</li>
+</ul>
+<h3 id="fr-013-tailored-cv-generation">FR-013 Tailored CV
+Generation</h3>
+<p>The system shall generate tailored ATS CVs for top selected jobs.</p>
+<p>Acceptance criteria:</p>
+<ul>
+<li>Each generated CV is user-specific.</li>
+<li>Each CV references the target job.</li>
+<li>Each CV uses only source profile facts.</li>
+<li>Each CV is ATS-safe.</li>
+<li>Filename includes user name, job title, and company.</li>
+</ul>
+<h3 id="fr-014-pdf-daily-report">FR-014 PDF Daily Report</h3>
+<p>The system shall generate a daily PDF report for each active
+user.</p>
+<p>Report must include:</p>
+<ul>
+<li>user name</li>
+<li>date</li>
+<li>daily summary</li>
+<li>recommended actions</li>
+<li>top matches</li>
+<li>match scores</li>
+<li>why each job fits</li>
+<li>concern/gap for each job</li>
+<li>application links</li>
+<li>tailored CV filenames</li>
+<li>near misses</li>
+<li>market signals</li>
+<li>disclaimer</li>
+</ul>
+<p>Acceptance criteria:</p>
+<ul>
+<li>Report is readable and polished.</li>
+<li>Report does not expose internal technical logs.</li>
+<li>Report is attached or linked in daily email.</li>
+</ul>
+<h3 id="fr-015-zip-cv-pack">FR-015 ZIP CV Pack</h3>
+<p>The system shall generate a ZIP file containing tailored CVs.</p>
+<p>Acceptance criteria:</p>
+<ul>
+<li>ZIP contains only that user’s files.</li>
+<li>ZIP is named clearly.</li>
+<li>ZIP is attached or linked in daily email.</li>
+</ul>
+<h3 id="fr-016-daily-email-delivery">FR-016 Daily Email Delivery</h3>
+<p>The system shall email the report and ZIP to each active user
+daily.</p>
+<p>Acceptance criteria:</p>
+<ul>
+<li>Email subject summarizes match count.</li>
+<li>PDF and ZIP are attached or linked.</li>
+<li>Delivery status is logged.</li>
+<li>Failed deliveries can be retried.</li>
+</ul>
+<h3 id="fr-017-admin-dashboard">FR-017 Admin Dashboard</h3>
+<p>The system shall provide an admin dashboard.</p>
+<p>Admin can view:</p>
+<ul>
+<li>users</li>
+<li>subscription status</li>
+<li>CV upload status</li>
+<li>latest run status</li>
+<li>match counts</li>
+<li>CV generation counts</li>
+<li>report links</li>
+<li>email status</li>
+<li>failures</li>
+</ul>
+<p>Acceptance criteria:</p>
+<ul>
+<li>Admin can identify failed users quickly.</li>
+<li>Admin can manually resend report.</li>
+<li>Admin can pause/resume user.</li>
+</ul>
+<h3 id="fr-018-user-dashboard">FR-018 User Dashboard</h3>
+<p>The system shall provide a minimal user dashboard.</p>
+<p>User can:</p>
+<ul>
+<li>view subscription status</li>
+<li>upload/replace CV</li>
+<li>download latest report</li>
+<li>download latest ZIP</li>
+<li>cancel subscription</li>
+<li>request data deletion</li>
+</ul>
+<p>Acceptance criteria:</p>
+<ul>
+<li>User sees only their own data.</li>
+<li>Downloads are secure.</li>
+</ul>
+<hr />
+<h2 id="non-functional-requirements">13. Non-Functional
+Requirements</h2>
+<h3 id="nfr-001-security">NFR-001 Security</h3>
+<ul>
+<li>Use HTTPS.</li>
+<li>Store files privately.</li>
+<li>Enforce user-level access control.</li>
+<li>Protect admin routes.</li>
+<li>Avoid public file URLs.</li>
+<li>Use signed URLs if download links are used.</li>
+</ul>
+<h3 id="nfr-002-privacy">NFR-002 Privacy</h3>
+<ul>
+<li>Treat CVs as sensitive personal data.</li>
+<li>Provide deletion request process.</li>
+<li>Minimize data collection.</li>
+<li>Do not share user data externally except required processors.</li>
+</ul>
+<h3 id="nfr-003-reliability">NFR-003 Reliability</h3>
+<ul>
+<li>Daily run should complete for all active users.</li>
+<li>Partial failures should not stop the full batch.</li>
+<li>System must retry recoverable failures.</li>
+<li>Admin must receive failure alerts.</li>
+</ul>
+<h3 id="nfr-004-performance">NFR-004 Performance</h3>
+<ul>
+<li>User dashboard should load within reasonable time.</li>
+<li>Daily batch should complete before target delivery time.</li>
+<li>Scoring should be batched and optimized.</li>
+</ul>
+<h3 id="nfr-005-scalability">NFR-005 Scalability</h3>
+<p>Architecture should support growth from 10 users to 100+ users
+without redesign.</p>
+<p>Key scaling principle:</p>
+<ul>
+<li>scan jobs centrally once</li>
+<li>score jobs per user</li>
+<li>generate reports per user</li>
+</ul>
+<h3 id="nfr-006-maintainability">NFR-006 Maintainability</h3>
+<ul>
+<li>Code should be modular.</li>
+<li>Job ingestion, scoring, CV generation, report generation, and email
+delivery should be separate services/modules.</li>
+<li>Logs must be clear.</li>
+</ul>
+<h3 id="nfr-007-compliance-and-legal">NFR-007 Compliance and Legal</h3>
+<ul>
+<li>Terms of service required.</li>
+<li>Privacy policy required.</li>
+<li>No job guarantee claims.</li>
+<li>No auto-apply unless future legal review is completed.</li>
+</ul>
+<hr />
+<h2 id="data-requirements">14. Data Requirements</h2>
+<h3 id="user-data">14.1 User Data</h3>
+<ul>
+<li>user ID</li>
+<li>name</li>
+<li>email</li>
+<li>subscription status</li>
+<li>payment provider customer ID</li>
+<li>signup date</li>
+<li>cancellation status</li>
+</ul>
+<h3 id="cv-data">14.2 CV Data</h3>
+<ul>
+<li>original CV file</li>
+<li>parsed CV JSON</li>
+<li>generated master CV</li>
+<li>extracted skills</li>
+<li>extracted work history</li>
+<li>certifications</li>
+<li>education</li>
+</ul>
+<h3 id="job-data">14.3 Job Data</h3>
+<ul>
+<li>source</li>
+<li>source job ID</li>
+<li>title</li>
+<li>company</li>
+<li>country</li>
+<li>city</li>
+<li>URL</li>
+<li>description</li>
+<li>posted date</li>
+<li>discovered date</li>
+<li>normalized job fields</li>
+</ul>
+<h3 id="match-data">14.4 Match Data</h3>
+<ul>
+<li>user ID</li>
+<li>job ID</li>
+<li>score</li>
+<li>match explanation</li>
+<li>gap/concern</li>
+<li>ranking</li>
+<li>selected for CV</li>
+<li>selected for report</li>
+</ul>
+<h3 id="generated-artifact-data">14.5 Generated Artifact Data</h3>
+<ul>
+<li>master CV path</li>
+<li>tailored CV paths</li>
+<li>daily report path</li>
+<li>ZIP path</li>
+<li>email delivery status</li>
+</ul>
+<hr />
+<h2 id="recommended-database-model">15. Recommended Database Model</h2>
+<h3 id="users">users</h3>
+<ul>
+<li>id</li>
+<li>name</li>
+<li>email</li>
+<li>auth_provider_id</li>
+<li>subscription_status</li>
+<li>payment_customer_id</li>
+<li>created_at</li>
+<li>updated_at</li>
+</ul>
+<h3 id="uploaded_cvs">uploaded_cvs</h3>
+<ul>
+<li>id</li>
+<li>user_id</li>
+<li>original_filename</li>
+<li>storage_path</li>
+<li>file_type</li>
+<li>upload_status</li>
+<li>parsed_status</li>
+<li>created_at</li>
+</ul>
+<h3 id="user_profiles">user_profiles</h3>
+<ul>
+<li>id</li>
+<li>user_id</li>
+<li>parsed_profile_json</li>
+<li>master_profile_json</li>
+<li>title_tracks_json</li>
+<li>skills_json</li>
+<li>industries_json</li>
+<li>seniority_level</li>
+<li>master_cv_path</li>
+<li>created_at</li>
+<li>updated_at</li>
+</ul>
+<h3 id="jobs">jobs</h3>
+<ul>
+<li>id</li>
+<li>source</li>
+<li>source_job_id</li>
+<li>url</li>
+<li>title</li>
+<li>company</li>
+<li>country</li>
+<li>city</li>
+<li>description</li>
+<li>posted_date</li>
+<li>discovered_date</li>
+<li>normalized_json</li>
+<li>is_active</li>
+<li>created_at</li>
+<li>updated_at</li>
+</ul>
+<h3 id="job_matches">job_matches</h3>
+<ul>
+<li>id</li>
+<li>user_id</li>
+<li>job_id</li>
+<li>score</li>
+<li>score_band</li>
+<li>explanation</li>
+<li>concern</li>
+<li>positioning_angle</li>
+<li>selected_for_report</li>
+<li>selected_for_cv</li>
+<li>match_date</li>
+<li>created_at</li>
+</ul>
+<h3 id="generated_cvs">generated_cvs</h3>
+<ul>
+<li>id</li>
+<li>user_id</li>
+<li>job_id</li>
+<li>match_id</li>
+<li>filename</li>
+<li>storage_path</li>
+<li>generation_status</li>
+<li>created_at</li>
+</ul>
+<h3 id="daily_reports">daily_reports</h3>
+<ul>
+<li>id</li>
+<li>user_id</li>
+<li>report_date</li>
+<li>pdf_path</li>
+<li>zip_path</li>
+<li>jobs_scanned</li>
+<li>matches_count</li>
+<li>cvs_generated_count</li>
+<li>generation_status</li>
+<li>email_status</li>
+<li>created_at</li>
+</ul>
+<h3 id="email_deliveries">email_deliveries</h3>
+<ul>
+<li>id</li>
+<li>user_id</li>
+<li>report_id</li>
+<li>recipient_email</li>
+<li>subject</li>
+<li>provider_message_id</li>
+<li>status</li>
+<li>error_message</li>
+<li>sent_at</li>
+</ul>
+<hr />
+<h2 id="process-flow">16. Process Flow</h2>
+<h3 id="onboarding-flow">16.1 Onboarding Flow</h3>
+<ol type="1">
+<li>User visits landing page.</li>
+<li>User creates account.</li>
+<li>User pays subscription.</li>
+<li>User uploads CV.</li>
+<li>System parses CV.</li>
+<li>System creates structured profile.</li>
+<li>System generates ATS master CV.</li>
+<li>System generates title tracks.</li>
+<li>User becomes active for daily processing.</li>
+</ol>
+<h3 id="daily-processing-flow">16.2 Daily Processing Flow</h3>
+<ol type="1">
+<li>Scheduler starts daily run.</li>
+<li>System scans jobs across GCC countries.</li>
+<li>System normalizes jobs.</li>
+<li>System deduplicates jobs.</li>
+<li>System retrieves active users.</li>
+<li>For each user:
+<ul>
+<li>score jobs against user profile</li>
+<li>select top matches</li>
+<li>generate tailored CVs</li>
+<li>generate PDF report</li>
+<li>generate ZIP file</li>
+<li>email user</li>
+<li>log result</li>
+</ul></li>
+<li>Admin receives internal run summary.</li>
+</ol>
+<h3 id="failure-flow">16.3 Failure Flow</h3>
+<p>If a user’s report fails:</p>
+<ol type="1">
+<li>Mark user run as failed.</li>
+<li>Continue processing other users.</li>
+<li>Log error.</li>
+<li>Alert admin.</li>
+<li>Allow manual retry/resend.</li>
+</ol>
+<hr />
+<h2 id="report-requirements">17. Report Requirements</h2>
+<p>The report must feel like a decision brief, not a system log.</p>
+<h3 id="required-report-sections">Required Report Sections</h3>
+<ol type="1">
+<li>Cover/header</li>
+<li>Today’s summary</li>
+<li>Recommended action list</li>
+<li>Top matched jobs</li>
+<li>Tailored CV filenames</li>
+<li>Application links</li>
+<li>Near misses</li>
+<li>Market signals</li>
+<li>Disclaimer/footer</li>
+</ol>
+<h3 id="report-language">Report Language</h3>
+<p>Use simple professional language.</p>
+<p>Avoid internal terms:</p>
+<ul>
+<li>scraping engine</li>
+<li>pass 1</li>
+<li>pass 2</li>
+<li>fuzzy dedupe</li>
+<li>model health check</li>
+<li>raw token count</li>
+</ul>
+<h3 id="example-top-match-format">Example Top Match Format</h3>
+<p><strong>Rank #1 - Program Manager at Example Company</strong></p>
+<ul>
+<li>Country: Saudi Arabia</li>
+<li>Score: 86/100</li>
+<li>Why it fits: Strong match with program governance, stakeholder
+management, and transformation experience.</li>
+<li>Concern: Role may be slightly below director level.</li>
+<li>Recommended action: Apply today.</li>
+<li>CV included: John Smith - Program Manager - Example Company.pdf</li>
+<li>Link: [job URL]</li>
+</ul>
+<hr />
+<h2 id="email-requirements">18. Email Requirements</h2>
+<h3 id="daily-email-subject">Daily Email Subject</h3>
+<p><code>JobZoom Daily: {X} GCC matches and {Y} tailored CVs ready</code></p>
+<h3 id="daily-email-body">Daily Email Body</h3>
+<pre><code>Hi {Name},
+
+Your JobZoom daily report is ready.
+
+Today we found {X} strong GCC job matches for your profile and prepared {Y} tailored CVs.
+
+Attached:
+1. Daily PDF report
+2. Tailored CV ZIP pack
+
+Recommended first application: {Top Role} at {Company}, score {Score}/100.
+
+Regards,
+JobZoom</code></pre>
+<h3 id="attachment-rules">Attachment Rules</h3>
+<ul>
+<li>Attach PDF and ZIP if within size limits.</li>
+<li>If too large, provide secure download links.</li>
+<li>Links must expire or require authentication.</li>
+</ul>
+<hr />
+<h2 id="admin-requirements">19. Admin Requirements</h2>
+<p>Admin must be able to manage and monitor operations.</p>
+<h3 id="admin-features">Admin Features</h3>
+<ul>
+<li>View all users</li>
+<li>View subscription status</li>
+<li>View uploaded CV status</li>
+<li>View latest daily report</li>
+<li>View latest ZIP</li>
+<li>View daily run status</li>
+<li>View email delivery status</li>
+<li>Retry failed report generation</li>
+<li>Resend email</li>
+<li>Pause user</li>
+<li>Resume user</li>
+<li>Delete user data on request</li>
+</ul>
+<h3 id="admin-daily-summary">Admin Daily Summary</h3>
+<p>Admin should receive a daily internal summary:</p>
+<ul>
+<li>users processed</li>
+<li>reports generated</li>
+<li>emails sent</li>
+<li>failed users</li>
+<li>job scan health</li>
+<li>total jobs collected</li>
+<li>total matches generated</li>
+</ul>
+<hr />
+<h2 id="security-requirements">20. Security Requirements</h2>
+<h3 id="critical-security-requirement">Critical Security
+Requirement</h3>
+<p>No user must ever access another user’s data.</p>
+<h3 id="controls">Controls</h3>
+<ul>
+<li>Use user IDs in all file paths and database records.</li>
+<li>Enforce backend authorization on every download.</li>
+<li>Do not expose raw storage paths publicly.</li>
+<li>Use private buckets or private server storage.</li>
+<li>Use signed URLs with expiration if direct downloads are needed.</li>
+<li>Log admin access to sensitive files.</li>
+<li>Protect admin dashboard with strong authentication.</li>
+</ul>
+<hr />
+<h2 id="privacy-requirements">21. Privacy Requirements</h2>
+<p>The product handles sensitive personal data.</p>
+<p>Required privacy controls:</p>
+<ul>
+<li>privacy policy</li>
+<li>user consent at signup</li>
+<li>data deletion request</li>
+<li>secure storage</li>
+<li>limited internal access</li>
+<li>no selling user data</li>
+<li>no sharing CVs with employers automatically</li>
+</ul>
+<p>Recommended privacy statement:</p>
+<blockquote>
+<p>JobZoom uses your CV only to generate your career profile, match
+jobs, and prepare application documents. We do not apply to jobs or
+share your CV with employers without your action.</p>
+</blockquote>
+<hr />
+<h2 id="legal-and-compliance-requirements">22. Legal and Compliance
+Requirements</h2>
+<p>JobZoom must include:</p>
+<ul>
+<li>Terms of Service</li>
+<li>Privacy Policy</li>
+<li>Refund/Cancellation Policy</li>
+<li>Disclaimer that JobZoom does not guarantee employment outcomes</li>
+<li>Consent for AI-assisted CV generation</li>
+<li>Consent for processing uploaded CV data</li>
+</ul>
+<p>Avoid these claims:</p>
+<ul>
+<li>guaranteed interviews</li>
+<li>guaranteed job offer</li>
+<li>guaranteed ATS pass</li>
+<li>official partnership with job platforms unless true</li>
+</ul>
+<hr />
+<h2 id="technical-assumptions">23. Technical Assumptions</h2>
+<p>Recommended stack can be flexible, but one MVP stack could be:</p>
+<ul>
+<li>Frontend: Next.js or similar</li>
+<li>Backend: Node.js/Python API</li>
+<li>Database: PostgreSQL</li>
+<li>Queue/Jobs: BullMQ, Celery, or equivalent</li>
+<li>Storage: S3-compatible private storage</li>
+<li>Email: Postmark, SendGrid, Mailgun, SES</li>
+<li>Payments: Stripe or Paddle</li>
+<li>PDF generation: HTML-to-PDF engine</li>
+<li>CV generation: deterministic document templates plus LLM
+rewriting</li>
+<li>Scheduler: cron/background worker</li>
+</ul>
+<p>The AI builder may choose equivalent tools if they satisfy the
+requirements.</p>
+<hr />
+<h2 id="integration-requirements">24. Integration Requirements</h2>
+<h3 id="payment-provider">Payment Provider</h3>
+<ul>
+<li>Create subscription</li>
+<li>Track active/inactive status</li>
+<li>Process renewals</li>
+<li>Handle failed payments</li>
+<li>Handle cancellations</li>
+</ul>
+<h3 id="email-provider">Email Provider</h3>
+<ul>
+<li>Send daily emails</li>
+<li>Attach PDF and ZIP or send download links</li>
+<li>Track delivery status</li>
+<li>Track bounces/errors</li>
+</ul>
+<h3 id="job-sources">Job Sources</h3>
+<ul>
+<li>Search and retrieve job listings</li>
+<li>Store source and URL</li>
+<li>Handle source failures gracefully</li>
+</ul>
+<h3 id="aillm-provider">AI/LLM Provider</h3>
+<p>Used for:</p>
+<ul>
+<li>CV parsing support</li>
+<li>profile extraction</li>
+<li>title-track generation</li>
+<li>job matching explanation</li>
+<li>tailored CV rewriting</li>
+<li>report narrative</li>
+</ul>
+<p>Must be constrained to avoid fabrication.</p>
+<hr />
+<h2 id="quality-assurance-requirements">25. Quality Assurance
+Requirements</h2>
+<h3 id="test-cases">Test Cases</h3>
+<ol type="1">
+<li>User signup and payment.</li>
+<li>CV upload with PDF.</li>
+<li>CV upload with DOCX.</li>
+<li>CV parsing success.</li>
+<li>CV parsing failure.</li>
+<li>Master CV generation.</li>
+<li>Title-track generation.</li>
+<li>Job ingestion.</li>
+<li>Deduplication.</li>
+<li>Scoring.</li>
+<li>Tailored CV generation.</li>
+<li>PDF report generation.</li>
+<li>ZIP generation.</li>
+<li>Email delivery.</li>
+<li>Failed email retry.</li>
+<li>User cancellation.</li>
+<li>Payment inactive user not processed.</li>
+<li>User cannot access another user file.</li>
+<li>Admin can resend report.</li>
+<li>Daily run completes for 10 users.</li>
+</ol>
+<h3 id="security-tests">Security Tests</h3>
+<ul>
+<li>Try downloading another user’s report.</li>
+<li>Try accessing another user’s ZIP URL.</li>
+<li>Try changing user ID in API request.</li>
+<li>Confirm access is denied.</li>
+</ul>
+<h3 id="cv-quality-tests">CV Quality Tests</h3>
+<ul>
+<li>Verify no fabricated details.</li>
+<li>Verify ATS-safe formatting.</li>
+<li>Extract PDF text to ensure ATS readability.</li>
+</ul>
+<hr />
+<h2 id="mvp-acceptance-criteria">26. MVP Acceptance Criteria</h2>
+<p>The MVP is accepted when:</p>
+<ol type="1">
+<li>A user can sign up.</li>
+<li>A user can pay $200/month.</li>
+<li>A user can upload a CV.</li>
+<li>System can parse CV into structured profile.</li>
+<li>System can generate ATS master CV.</li>
+<li>System can generate title tracks.</li>
+<li>System can scan GCC jobs.</li>
+<li>System can match and score jobs.</li>
+<li>System can generate up to 5 tailored CVs per user per day.</li>
+<li>System can generate daily PDF report.</li>
+<li>System can generate ZIP file.</li>
+<li>System can email report and ZIP to user.</li>
+<li>Admin can monitor daily run status.</li>
+<li>Failed deliveries are visible and retryable.</li>
+<li>User data is isolated.</li>
+<li>System runs successfully for 10 users for 7 consecutive days.</li>
+</ol>
+<hr />
+<h2 id="key-risks-and-mitigations">27. Key Risks and Mitigations</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Risk</th>
+<th>Impact</th>
+<th>Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Poor match quality</td>
+<td>User cancels</td>
+<td>strict thresholds, feedback, scoring tuning</td>
+</tr>
+<tr class="even">
+<td>AI fabricates CV details</td>
+<td>Trust/reputation risk</td>
+<td>use uploaded CV as only source, validation checks</td>
+</tr>
+<tr class="odd">
+<td>Job source failure</td>
+<td>Weak daily reports</td>
+<td>multiple sources, caching, monitoring</td>
+</tr>
+<tr class="even">
+<td>Email delivery issues</td>
+<td>User does not receive product</td>
+<td>proper email provider, retries, logs</td>
+</tr>
+<tr class="odd">
+<td>Attachments too large</td>
+<td>Delivery failure</td>
+<td>max 5 CVs, compression, secure links</td>
+</tr>
+<tr class="even">
+<td>Data leakage</td>
+<td>Severe trust/legal risk</td>
+<td>strict tenant isolation, private storage, tests</td>
+</tr>
+<tr class="odd">
+<td>High support load</td>
+<td>Low margin</td>
+<td>no customization MVP, clear rules, admin tools</td>
+</tr>
+<tr class="even">
+<td>Users expect job guarantee</td>
+<td>Misaligned expectations</td>
+<td>clear disclaimer and positioning</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="launch-plan">28. Launch Plan</h2>
+<h3 id="phase-1---internal-productization">Phase 1 - Internal
+Productization</h3>
+<p>Goal: convert current JobZoom logic into multi-user-ready
+pipeline.</p>
+<p>Duration: 2-4 weeks.</p>
+<p>Deliverables:</p>
+<ul>
+<li>user folders/database</li>
+<li>profile extraction</li>
+<li>per-user reports</li>
+<li>per-user CV packs</li>
+<li>manual/admin delivery</li>
+</ul>
+<h3 id="phase-2---paid-beta">Phase 2 - Paid Beta</h3>
+<p>Goal: validate willingness to pay.</p>
+<p>Duration: 30 days.</p>
+<p>Users: 10.</p>
+<p>Price: $200/month or temporary founding price.</p>
+<p>Success criteria:</p>
+<ul>
+<li>7/10 users remain after 30 days</li>
+<li>users open reports regularly</li>
+<li>users apply using generated CVs</li>
+<li>support remains manageable</li>
+</ul>
+<h3 id="phase-3---mvp-platform">Phase 3 - MVP Platform</h3>
+<p>Goal: automate customer onboarding and delivery.</p>
+<p>Deliverables:</p>
+<ul>
+<li>landing page</li>
+<li>payment</li>
+<li>CV upload</li>
+<li>user dashboard</li>
+<li>admin dashboard</li>
+<li>automated daily email</li>
+</ul>
+<h3 id="phase-4---scale">Phase 4 - Scale</h3>
+<p>Goal: improve reliability and expand user base.</p>
+<p>Deliverables:</p>
+<ul>
+<li>more job sources</li>
+<li>feedback loops</li>
+<li>secure download links</li>
+<li>weekly insights</li>
+<li>analytics</li>
+</ul>
+<hr />
+<h2 id="open-questions">29. Open Questions</h2>
+<ol type="1">
+<li>Should daily reports be sent every day or only business days?</li>
+<li>Should the first month be full price or discounted beta?</li>
+<li>Should ZIP files be attached or delivered as secure links?</li>
+<li>Which payment provider will be available for the target market?</li>
+<li>Which email provider should be used for best deliverability?</li>
+<li>What refund policy should apply?</li>
+<li>Should users be allowed to replace CV anytime or once per
+month?</li>
+<li>Should the system support Arabic CVs at launch?</li>
+<li>Should reports include salary information when available?</li>
+<li>Should weekly market summary be included in MVP or Phase 2?</li>
+</ol>
+<hr />
+<h2 id="final-business-recommendation">30. Final Business
+Recommendation</h2>
+<p>JobZoom is commercially feasible if launched as a premium, focused,
+GCC-wide job-search automation service.</p>
+<p>The product should not compete as a normal job board. It should
+compete as a daily application preparation engine.</p>
+<p>Recommended initial offer:</p>
+<blockquote>
+<p>JobZoom Premium - $200/month. Upload your CV once. Receive a daily
+GCC job report and up to 5 tailored ATS CVs for the strongest matching
+roles.</p>
+</blockquote>
+<p>Recommended next step:</p>
+<p>Build a controlled MVP and test with 10 paying beta users before
+investing in a full SaaS dashboard.</p>
+<hr />
+<h2 id="appendix-a---ai-builder-build-prompt">Appendix A - AI Builder
+Build Prompt</h2>
+<p>Build JobZoom, a paid monthly GCC job-search automation SaaS.</p>
+<p>The product flow is:</p>
+<ol type="1">
+<li>User signs up and pays $200/month.</li>
+<li>User uploads a CV in PDF or DOCX.</li>
+<li>System parses the CV into structured profile data.</li>
+<li>System generates an ATS-friendly master CV.</li>
+<li>System generates target job-title tracks from the user’s career
+history.</li>
+<li>System scans jobs daily across all GCC countries: Saudi Arabia, UAE,
+Qatar, Kuwait, Bahrain, Oman.</li>
+<li>System normalizes and deduplicates jobs.</li>
+<li>System scores jobs against each user profile from 0-100.</li>
+<li>System selects the strongest matches only.</li>
+<li>System generates tailored ATS CV PDFs for up to 5 top matches per
+user per day.</li>
+<li>System generates a daily PDF report summarizing matches, reasoning,
+gaps, links, and CV filenames.</li>
+<li>System creates a ZIP file containing tailored CVs.</li>
+<li>System emails the user the PDF report and ZIP file daily.</li>
+<li>Admin can monitor users, run status, generated reports, emails, and
+failures.</li>
+</ol>
+<p>Important constraints:</p>
+<ul>
+<li>Do not build an auto-apply bot.</li>
+<li>Do not fabricate CV content.</li>
+<li>Use the uploaded CV as the only factual source.</li>
+<li>Keep CVs ATS-safe: no tables, columns, icons, images,
+headers/footers, or complex formatting.</li>
+<li>Use strict user data isolation.</li>
+<li>One user must never access another user’s CV, report, ZIP, or
+profile.</li>
+<li>Start with a simple MVP, not a complex dashboard.</li>
+<li>Prioritize backend reliability and daily delivery over UI
+polish.</li>
+</ul>
+<p>MVP screens:</p>
+<ul>
+<li>landing page</li>
+<li>signup/login</li>
+<li>payment page</li>
+<li>CV upload page</li>
+<li>simple dashboard showing subscription status and latest report
+downloads</li>
+<li>admin dashboard for user/run/email monitoring</li>
+</ul>
+<p>MVP backend:</p>
+<ul>
+<li>user management</li>
+<li>payment status</li>
+<li>CV upload and storage</li>
+<li>CV parser</li>
+<li>profile extractor</li>
+<li>ATS CV generator</li>
+<li>title-track generator</li>
+<li>job ingestion</li>
+<li>deduplication</li>
+<li>matching/scoring</li>
+<li>tailored CV generator</li>
+<li>PDF report generator</li>
+<li>ZIP generator</li>
+<li>email sender</li>
+<li>daily scheduler</li>
+<li>admin logs and retry/resend</li>
+</ul>
+<p>Done when the system can run daily for 10 paid users, generate
+user-specific reports and CV ZIPs, email them successfully, and prove
+that user data is isolated.</p>
+</body>
+</html>
