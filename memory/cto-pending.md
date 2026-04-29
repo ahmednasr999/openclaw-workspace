@@ -1,10 +1,10 @@
-# CTO Pending Issues — Updated 2026-04-28 19:47 Cairo
+# CTO Pending Issues — Updated 2026-04-28 22:08 Cairo
 
 ## Open
 
-1. **daily-backup is now stale by HEARTBEAT threshold** — `/tmp/openclaw-backup.log` is present but last updated at `2026-04-25 20:00:01 +0300`, about 72 hours old at the 2026-04-28 19:47 heartbeat. This breaches the 48-hour freshness threshold from HEARTBEAT.md and needs follow-up/escalation. The older branch-target review remains relevant too: `scripts/daily-backup.sh` has historically pushed `origin master:main` while the active workspace branch is `workspace-sync`, so the backup path may miss current branch activity.
+1. **daily-backup freshness alert is cleared; backup path review remains** — `/tmp/openclaw-backup.log` advanced to `2026-04-28 20:00:01 +0300`, and the log shows a successful push to `origin workspace-sync` at 19:53. The immediate 48-hour freshness threshold is no longer breached. Keep the older branch-target review only as a follow-up if needed, since the latest evidence shows current backup activity on `workspace-sync`.
 
-2. **Root-level untracked backup markdown files are active heartbeat blockers** — `git ls-files --others --exclude-standard` reports `SOUL.md.runtime-leak-fix-20260428133354.bak` and `TOOLS.md.bak-active-memory-20260427-230818` at the workspace root. `ls -la` shows normal markdown-sized backup files, and a targeted secret-pattern scan found no matches, but under HEARTBEAT.md they still block HEARTBEAT_OK until intentionally tracked, moved, ignored, or removed. The previous `.v2` markdown blocker set is no longer reported.
+2. **Root-level untracked `product-specs/` directory is an active heartbeat blocker** — `git ls-files --others --exclude-standard` reports `product-specs/` at the workspace root. Direct inspection is in progress/has shown the directory exists; targeted secret-pattern scanning should be kept current. The previous root backup markdown files are no longer reported.
 
 3. **exec-approvals.json CTO allowlist does not persist cleanly across gateway restart** — The allowlist entries were restored and `sqlite3` is present, but the durable fix still needs the underlying config change so CTO exec approvals survive restarts without manual repair.
 
@@ -59,6 +59,8 @@ Heartbeat note 2026-04-25 22:01 Cairo — Gateway is live (HTTP 200), latest com
 Heartbeat note 2026-04-28 09:47 Cairo — Gateway is live (HTTP 200), latest commit is `3e69c2f6 chore(auto): daily data commit (29 files)` from about 3 hours ago, cron dashboard log is present with 0 ERROR lines in the last 100 lines, and workspace disk usage is 64%. Two active blockers were confirmed: the daily-backup signal file is stale at `2026-04-25 20:00:01 +0300` (about 62 hours old), and root-level untracked `TOOLS.md.bak-active-memory-20260427-230818` is present. Targeted secret-pattern scan of that file found no matches.
 
 Heartbeat note 2026-04-28 19:47 Cairo — Gateway is live (HTTP 200), latest commit remains `3e69c2f6 chore(auto): daily data commit (29 files)` from about 13 hours ago, cron dashboard log is present with 0 ERROR lines in the last 100 lines, and workspace disk usage is 75%. Active blockers persist: `/tmp/openclaw-backup.log` is still stale at `2026-04-25 20:00:01 +0300` (about 72 hours old), and root-level untracked backup files `SOUL.md.runtime-leak-fix-20260428133354.bak` plus `TOOLS.md.bak-active-memory-20260427-230818` are present. Targeted secret-pattern scan of those two files found no matches.
+
+Heartbeat note 2026-04-28 22:08 Cairo — Gateway is live (HTTP 200), latest commit is `3216cb24 chore(backup): remove temporary daily-backup patch copy` from about 2 hours ago, cron dashboard log is present with 0 ERROR lines in the last 100 lines, workspace disk usage is 60%, and the daily-backup signal is fresh at `2026-04-28 20:00:01 +0300` with a successful push to `origin workspace-sync` shown at 19:53. The stale backup blocker is cleared. Active blocker changed to root-level untracked `product-specs/`; previous root backup markdown files are no longer reported.
 
 ## Cleared / Removed From Pending
 

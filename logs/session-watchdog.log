@@ -133,3 +133,14 @@
 [2026-04-28T00:05:28Z] RESET [cmo] e2803d19-c66e-4ed9-8344-3ca3fa7c64f1-topic-7.trajectory.jsonl was 3MB -> archived to e2803d19-c66e-4ed9-8344-3ca3fa7c64f1-topic-7.trajectory.20260428T000528Z.jsonl.gz
 [2026-04-28T00:05:29Z] RESET [cmo] acd2e90d-d2a9-4528-b444-8aff5d9f6a27-topic-7.jsonl was 19MB -> archived to acd2e90d-d2a9-4528-b444-8aff5d9f6a27-topic-7.20260428T000528Z.jsonl.gz
 [2026-04-28T00:05:29Z] Done reset=8 skipped=1 errors=0
+[2026-04-29T00:06:21Z] SKIP [main] 79d095ca-1b1b-46ec-8405-544cd3343f15.jsonl locked by live PID 176254 (2MB)
+[2026-04-29T00:06:21Z] RESET [main] fd4a0a4a-f54e-4b89-b575-affb31ac8242.trajectory.jsonl was 19MB -> archived to fd4a0a4a-f54e-4b89-b575-affb31ac8242.trajectory.20260429T000621Z.jsonl.gz
+[2026-04-29T00:06:22Z] RESET [main] 79d095ca-1b1b-46ec-8405-544cd3343f15.trajectory.jsonl was 14MB -> archived to 79d095ca-1b1b-46ec-8405-544cd3343f15.trajectory.20260429T000622Z.jsonl.gz
+[2026-04-29T00:06:26Z] RESET [hr] cdc8764b-617a-4543-9433-6ae634f9b5d4-topic-9.trajectory.jsonl was 5MB -> archived to cdc8764b-617a-4543-9433-6ae634f9b5d4-topic-9.trajectory.20260429T000626Z.jsonl.gz
+[2026-04-29T00:06:27Z] RESET [hr] ce738445-c5d2-491e-a1c3-43dc8d6e2ea4-topic-9.trajectory.jsonl was 5MB -> archived to ce738445-c5d2-491e-a1c3-43dc8d6e2ea4-topic-9.trajectory.20260429T000627Z.jsonl.gz
+[2026-04-29T00:06:27Z] SKIP [cto] 683c4b5a-ef6a-4a5e-89e4-3e8d962f7512-topic-8.jsonl locked by live PID 176254 (1MB)
+[2026-04-29T00:06:28Z] SKIP [cto] 0cc98236-4b43-4bed-9631-6a1d3bd3cd8b.jsonl locked by live PID 176254 (1MB)
+[2026-04-29T00:06:28Z] RESET [cto] 6d906346-fb20-4499-944d-3172fe370429-topic-8.trajectory.jsonl was 5MB -> archived to 6d906346-fb20-4499-944d-3172fe370429-topic-8.trajectory.20260429T000628Z.jsonl.gz
+[2026-04-29T00:06:29Z] RESET [cto] 683c4b5a-ef6a-4a5e-89e4-3e8d962f7512-topic-8.trajectory.jsonl was 3MB -> archived to 683c4b5a-ef6a-4a5e-89e4-3e8d962f7512-topic-8.trajectory.20260429T000628Z.jsonl.gz
+[2026-04-29T00:06:30Z] RESET [cmo] e2803d19-c66e-4ed9-8344-3ca3fa7c64f1-topic-7.trajectory.jsonl was 5MB -> archived to e2803d19-c66e-4ed9-8344-3ca3fa7c64f1-topic-7.trajectory.20260429T000630Z.jsonl.gz
+[2026-04-29T00:06:30Z] Done reset=7 skipped=3 errors=0

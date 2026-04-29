@@ -2,13 +2,14 @@
 
 ## 2026-04-28 - Gulf jobs scanner blocked by Exa credits
 - Priority: high
-- Status: blocked
+- Status: mitigated, needs next-run verification
 - Context: today's `jobs-bank/scraped/qualified-jobs-2026-04-28.md` reported 0 jobs, 0 picks/leads, and 56/56 failed searches.
 - Verification: a direct `EXA_SEARCH` call through Composio failed with HTTP 402 `NO_MORE_CREDITS`: "You have exceeded your credits limit. Please top up to keep using Exa at dashboard.exa.ai".
-- Impact: LinkedIn/Gulf jobs scanner v4.0 depends on Exa via Composio for both `EXA_SEARCH` and `COMPOSIO_SEARCH_WEB`, so regular daily output is unreliable until credits are restored or a non-Exa fallback is added.
+- Impact: LinkedIn/Gulf jobs scanner v4.0 depended on Exa via Composio, so regular daily output was unreliable while Exa credits were exhausted.
+- 2026-04-28 heartbeat progress: added a credit-safe fallback in `scripts/linkedin-gulf-jobs.py` using `openclaw infer web search --provider duckduckgo --json`. Exa/LinkedIn searches now retry through the fallback when they return no jobs, the scanner can continue fallback-only if Composio/MCP is unavailable, and it now circuit-breaks Composio/Exa calls after detecting a 402/`NO_MORE_CREDITS` response. Verified with `python3 -m py_compile`, direct fallback function calls returning Riyadh CTO results, and a targeted circuit-breaker assertion.
 - Next steps:
-  1. top up/restore Exa credits, then rerun `python3 scripts/linkedin-gulf-jobs.py`, or
-  2. add a fallback path using a non-Exa search provider before tomorrow's run.
+  1. rerun `python3 scripts/linkedin-gulf-jobs.py` or wait for tomorrow's scheduled run to verify end-to-end output,
+  2. still top up/restore Exa credits for better neural search quality when possible.
 
 ## 2026-04-17 - JobZoom scorer reliability check
 - Priority: medium

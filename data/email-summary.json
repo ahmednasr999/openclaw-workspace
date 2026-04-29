@@ -2,18 +2,18 @@
   "meta": {
     "agent": "email-agent",
     "version": "3.0.0",
-    "generated_at": "2026-04-28T18:02:16.593828+02:00",
-    "duration_ms": 18713,
+    "generated_at": "2026-04-28T20:02:08.655131+02:00",
+    "duration_ms": 20588,
     "ttl_hours": 4,
     "status": "success",
     "error": null,
-    "run_id": "a0121b28",
+    "run_id": "d8486ef1",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
     "status": "ok",
-    "scan_time": "2026-04-28T18:01:58.365602+02:00",
+    "scan_time": "2026-04-28T20:01:48.567412+02:00",
     "total_scanned": 0,
     "by_category": {
       "interview_invite": 0,
@@ -42,7 +42,7 @@
         "requires_assessment": false,
         "recruiter_top_opportunities": [],
         "top_priority": null,
-        "daily_focus": "No actionable leadership-role emails were provided, so no response or prep is needed today."
+        "daily_focus": "No actionable leadership-role emails were provided, so no response is needed today."
       }
     }
   },
