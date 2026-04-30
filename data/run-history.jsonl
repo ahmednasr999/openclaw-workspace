@@ -2082,3 +2082,6 @@
 {"agent": "email-agent", "run_id": "bac4f611", "started": "2026-04-29T14:01:31.515452+02:00", "duration_ms": 42623, "status": "success", "records": 14, "error": null}
 {"agent": "email-agent", "run_id": "67dc1ee3", "started": "2026-04-29T16:01:40.633040+02:00", "duration_ms": 35260, "status": "success", "records": 14, "error": null}
 {"agent": "email-agent", "run_id": "c4da6531", "started": "2026-04-29T18:02:13.622750+02:00", "duration_ms": 77542, "status": "success", "records": 14, "error": null}
+{"agent": "email-agent", "run_id": "e10070f0", "started": "2026-04-29T20:01:55.091397+02:00", "duration_ms": 52337, "status": "success", "records": 14, "error": null}
+{"agent": "email-agent", "run_id": "a7b92e84", "started": "2026-04-29T22:19:01.000019+02:00", "duration_ms": 41242, "status": "success", "records": 14, "error": null}
+{"agent": "email-agent", "run_id": "dbb2a69a", "started": "2026-04-29T22:20:16.843502+02:00", "duration_ms": 19316, "status": "success", "records": 14, "error": null}

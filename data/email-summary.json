@@ -2,94 +2,39 @@
   "meta": {
     "agent": "email-agent",
     "version": "3.0.0",
-    "generated_at": "2026-04-29T18:02:13.621743+02:00",
-    "duration_ms": 77541,
+    "generated_at": "2026-04-29T22:20:16.843140+02:00",
+    "duration_ms": 19315,
     "ttl_hours": 4,
     "status": "success",
     "error": null,
-    "run_id": "c4da6531",
+    "run_id": "dbb2a69a",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
     "status": "ok",
-    "scan_time": "2026-04-29T18:01:43.732378+02:00",
-    "total_scanned": 23,
+    "scan_time": "2026-04-29T22:19:59.105559+02:00",
+    "total_scanned": 2,
     "by_category": {
       "interview_invite": 0,
-      "recruiter_reach": 1,
+      "recruiter_reach": 0,
       "application_ack": 0,
       "rejection": 0,
       "assessment": 0,
       "follow_up_needed": 0,
-      "other": 22
+      "other": 2
     },
     "interview_invites": [],
-    "recruiter_messages": [
-      {
-        "id": "355547",
-        "from": "Emirates NBD Important Updates<Info@EmiratesNBD.com>",
-        "subject": "Update on our WhatsApp Banking Services",
-        "date": "Wed, 29 Apr 2026 18:03:09 +0400",
-        "unread": true,
-        "priority": "HIGH",
-        "score": 7,
-        "pipeline_match": "SAP"
-      }
-    ],
+    "recruiter_messages": [],
     "application_acks": [],
     "rejections": [],
     "assessments": [],
     "follow_ups_needed": [],
-    "actionable_count": 1,
-    "hot_alerts": [
-      {
-        "subject": "Update on our WhatsApp Banking Services",
-        "from": "Emirates NBD Important Updates<Info@EmiratesNBD.com>",
-        "priority": "HIGH",
-        "pipeline_match": "SAP"
-      }
-    ],
-    "signals": [
-      {
-        "company": "SAP",
-        "signal": "recruiter_email",
-        "subject": "Update on our WhatsApp Banking Services",
-        "sender": "Emirates NBD Important Updates<Info@EmiratesNBD.com>",
-        "job_ids": [
-          "indeed-in-b2195113ff678ef7",
-          "indeed-in-b7591ff66cc5a732",
-          "linkedin_jobspy-li-4380812358",
-          "linkedin-li-4349578134",
-          "linkedin-li-4394078700",
-          "linkedin-li-4380812358",
-          "linkedin-li-4362170335",
-          "linkedin-li-4362562926",
-          "linkedin-li-4385935615",
-          "linkedin-li-4353703506",
-          "app-005",
-          "cv-5fbf4a9aa7",
-          "linkedin-li-4385294885"
-        ],
-        "score": 7,
-        "timestamp": "2026-04-29T18:01:43.618811+02:00"
-      }
-    ],
+    "actionable_count": 0,
+    "hot_alerts": [],
+    "signals": [],
     "llm_analysis": {
-      "actionable_emails": [
-        {
-          "id": "355547",
-          "subject": "Update on our WhatsApp Banking Services",
-          "from": "Emirates NBD Important Updates<Info@EmiratesNBD.com>",
-          "date": "Wed, 29 Apr 2026 18:03:09 +0400",
-          "category": "recruiter_reach",
-          "urgency": "low",
-          "intent": "Sender is informing the customer about changes to Emirates NBD WhatsApp banking services.",
-          "action": "read_and_file",
-          "response_deadline": "when convenient",
-          "notes": "False positive recruiter match; banking notice only."
-        }
-      ],
+      "actionable_emails": [],
       "summary": {
         "total_actionable": 0,
         "critical_count": 0,
@@ -97,33 +42,16 @@
         "requires_assessment": false,
         "recruiter_top_opportunities": [],
         "top_priority": null,
-        "daily_focus": "No career-actionable email is proven from the available content today."
+        "daily_focus": "No actionable leadership-role emails were provided; focus on proactive job pipeline work today."
       }
     }
   },
   "kpi": {
-    "emails_processed": 23,
-    "actionable": 1,
+    "emails_processed": 2,
+    "actionable": 0,
     "interviews_detected": 0,
-    "recruiter_messages": 1,
-    "unread_actionable": 1
+    "recruiter_messages": 0,
+    "unread_actionable": 0
   },
-  "recommendations": [
-    {
-      "id": "rec-c4da6531-0",
-      "action": "review_and_respond",
-      "target": "1 recruiter message(s)",
-      "reason": "Recruiter outreach could lead to opportunities",
-      "urgency": "high",
-      "timestamp": "2026-04-29T18:02:13.621619+02:00"
-    },
-    {
-      "id": "rec-c4da6531-1",
-      "action": "check_inbox",
-      "target": "1 unread actionable email(s)",
-      "reason": "Unread emails need attention",
-      "urgency": "high",
-      "timestamp": "2026-04-29T18:02:13.621635+02:00"
-    }
-  ]
+  "recommendations": []
 }

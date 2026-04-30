@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-29T10:02:15.507Z",
+  "updatedAt": "2026-04-29T23:42:09.968Z",
   "entries": {
     "memory:memory/archives/2026-03-07.md:29:56": {
       "key": "memory:memory/archives/2026-03-07.md:29:56",
@@ -2346,6 +2346,68 @@
         "auto-rejected",
         "root",
         "openclaw"
+      ]
+    },
+    "memory:memory/archive/2026-04/2026-04-11.md:12:19": {
+      "key": "memory:memory/archive/2026-04/2026-04-11.md:12:19",
+      "path": "memory/archive/2026-04/2026-04-11.md",
+      "startLine": 12,
+      "endLine": 19,
+      "source": "memory",
+      "snippet": "- Archived abandoned duplicate state dir `/home/bridge/.openclaw` to `/home/bridge/.openclaw.archive-20260411T133348Z`; doctor duplicate-state-dir warning cleared. ## 2026-04-11 - Gateway hardening completed - Reloaded user systemd and restarted `openclaw-gateway.service`; live service now runs `/usr/bin/node /root/openclaw/dist/index.js gateway --port 18789` with `PATH=/usr/local/bin:/usr/bin:/bin`. - Rewrote `/root/.config/systemd/user/openclaw-gateway.service` to the stable 2026.4.9 runtime and reduced the drop-in override to the Telegram family setting only. - Backed up the old `/usr/bin/openclaw` target to `tmp/usr-bin-openclaw-link-backup-20260411T1558Z.txt`, then repointed `/usr/bin/",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-04-29T23:42:09.968Z",
+      "lastRecalledAt": "2026-04-29T23:42:09.968Z",
+      "queryHashes": [
+        "963ffb4d7efe"
+      ],
+      "recallDays": [
+        "2026-04-30"
+      ],
+      "conceptTags": [
+        "backup",
+        "gateway",
+        "home/bridge",
+        "duplicate-state-dir",
+        "openclaw-gateway.service",
+        "usr/bin/node",
+        "root/openclaw/dist/index.js",
+        "usr/local/bin"
+      ]
+    },
+    "memory:memory/2026-04-28.md:1:21": {
+      "key": "memory:memory/2026-04-28.md:1:21",
+      "path": "memory/2026-04-28.md",
+      "startLine": 1,
+      "endLine": 21,
+      "source": "memory",
+      "snippet": "# Daily Notes - 2026-04-28 # Daily Notes - 2026-04-28 ## OpenClaw update, runtime patches, and latency cleanup - Ahmed approved an OpenClaw update and careful post-update verification on 2026-04-28. - OpenClaw was updated from `2026.4.25` to `2026.4.26 (be8c246)` using `/usr/bin/npm i -g openclaw@latest --no-fund --no-audit --loglevel=error` after backup. - Backup archive created: `/root/.openclaw/backups/manual-update-20260428/openclaw-2026-04-28_1555.tar.gz` (~6.5G). Patch backup dir: `/root/.openclaw/backups/manual-update-20260428/patches-20260428-160308`. - Update overwrote runtime patches; they were restored and verified afterward: - session-resume fallback prefix suppressed - act",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-04-29T23:42:09.968Z",
+      "lastRecalledAt": "2026-04-29T23:42:09.968Z",
+      "queryHashes": [
+        "963ffb4d7efe"
+      ],
+      "recallDays": [
+        "2026-04-30"
+      ],
+      "conceptTags": [
+        "backup",
+        "backups",
+        "post-update",
+        "2026.4.25",
+        "2026.4.26",
+        "usr/bin/npm",
+        "no-fund",
+        "no-audit"
       ]
     }
   }
