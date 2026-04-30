@@ -32,6 +32,7 @@ Universal default for every Ahmed LinkedIn post visual: use Ahmed's LinkedIn AI 
 Reference asset: `/root/.openclaw/workspace/output/jobzoom-visuals/ahmed-linkedin-ai-execution-card-4k.jpg`
 
 Required style: 9:16 dark executive card, bold mobile-readable hook hierarchy, blue/gold accent system, execution/governance visual language, and Ahmed-branded footer.
+Quality bar: match the reference card's craft level, not just its structure; reject outputs that feel generic, flat, stock-like, under-designed, less cinematic, or weaker in typography/depth/execution metaphor. <!-- dream-promoted 2026-04-29 -->
 
 ## Job Application and CV Workflow
 Trigger: Ahmed shares a job link and description.

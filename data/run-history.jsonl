@@ -2085,3 +2085,13 @@
 {"agent": "email-agent", "run_id": "e10070f0", "started": "2026-04-29T20:01:55.091397+02:00", "duration_ms": 52337, "status": "success", "records": 14, "error": null}
 {"agent": "email-agent", "run_id": "a7b92e84", "started": "2026-04-29T22:19:01.000019+02:00", "duration_ms": 41242, "status": "success", "records": 14, "error": null}
 {"agent": "email-agent", "run_id": "dbb2a69a", "started": "2026-04-29T22:20:16.843502+02:00", "duration_ms": 19316, "status": "success", "records": 14, "error": null}
+{"agent": "email-agent", "run_id": "feebd10a", "started": "2026-04-30T06:02:40.905088+02:00", "duration_ms": 59766, "status": "success", "records": 14, "error": null}
+{"agent": "jobs-source-linkedin-jobspy", "run_id": "add21c58", "started": "2026-04-30T06:18:56.124018+02:00", "duration_ms": 1138831, "status": "success", "records": 371, "error": null}
+{"agent": "email-agent", "run_id": "70b2d8cf", "started": "2026-04-30T08:01:03.110476+02:00", "duration_ms": 45505, "status": "success", "records": 14, "error": null}
+{"agent": "email-agent", "run_id": "aa89f77e", "started": "2026-04-30T10:00:54.609959+02:00", "duration_ms": 37076, "status": "success", "records": 14, "error": null}
+{"agent": "email-agent", "run_id": "630cb4d3", "started": "2026-04-30T10:01:30.317396+02:00", "duration_ms": 15944, "status": "success", "records": 14, "error": null}
+{"agent": "email-agent", "run_id": "01198a69", "started": "2026-04-30T12:00:52.183269+02:00", "duration_ms": 34010, "status": "success", "records": 14, "error": null}
+{"agent": "email-agent", "run_id": "9aa531ac", "started": "2026-04-30T14:01:14.865220+02:00", "duration_ms": 55910, "status": "success", "records": 14, "error": null}
+{"agent": "email-agent", "run_id": "c0ad830b", "started": "2026-04-30T14:02:02.627862+02:00", "duration_ms": 18195, "status": "success", "records": 14, "error": null}
+{"agent": "email-agent", "run_id": "a1325503", "started": "2026-04-30T16:00:56.462990+02:00", "duration_ms": 36665, "status": "success", "records": 14, "error": null}
+{"agent": "email-agent", "run_id": "5060a975", "started": "2026-04-30T18:00:57.754553+02:00", "duration_ms": 31374, "status": "success", "records": 14, "error": null}

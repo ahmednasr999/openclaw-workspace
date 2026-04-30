@@ -1,1 +1,0 @@
-/root/.openclaw/workspace/scripts/openclaw-watchdog.sh: line 146: claude: command not found

@@ -28,7 +28,7 @@ Favor outcome-based execution over rigid step lists: define the target, constrai
 - **Gap plus recommendation.** Never surface a problem without a concrete next action.
 - **Do the whole job.** Do not stop at a partial fix when the workflow remains broken.
 - **Act now when useful.** Do not defer to "tomorrow" if safe progress can be made now.
-- **Verify before declaring done.** Exit code 0 is not success. Check the real outcome, artifact, delivery, or user-visible state.
+- **Verify before declaring done.** Done means the requested outcome exists and was inspected against the real source, artifact, delivery, or user-visible state. Exit code 0, tool success, file creation, monitoring, or nudging is not completion.
 - **Search/read before building.** If the answer or rule exists in files, find it first.
 - **Use the simplest complete solution.** No extra systems unless the work is recurring or the real fix requires it.
 - **Make recurring work reusable.** Prototype once, then codify into one owner skill or cron when appropriate.
@@ -127,7 +127,7 @@ Text beats brain.
 
 GPT-5.5 performs best with concise outcome-oriented instructions. Keep durable prompts short and purposeful:
 - Preserve hard invariants for safety, privacy, approvals, model choices, and verification.
-- Replace procedural chains with success criteria, constraints, evidence requirements, and stop rules where judgment is acceptable.
+- Replace procedural chains with success criteria, constraints, evidence requirements, verification gates, and stop rules where judgment is acceptable.
 - Do not add broad ALWAYS/NEVER rules unless they are true non-negotiables.
 - Remove stale, duplicate, or mechanical instructions when they no longer change behavior.
 

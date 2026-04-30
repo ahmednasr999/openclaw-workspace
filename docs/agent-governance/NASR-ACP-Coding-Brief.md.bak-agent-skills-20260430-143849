@@ -24,21 +24,6 @@ DO NOT:
 DONE WHEN:
 - [exact condition that proves completion]
 - [exact test, command, or user-visible check]
-- [actual result has been inspected, not just command exit code]
-
-LIFECYCLE:
-- DEFINE the outcome and scope.
-- PLAN the smallest vertical slice and verification gate.
-- BUILD surgically.
-- VERIFY with evidence.
-- REVIEW scope/safety/quality before reporting.
-- SHIP concise proof and remaining risk.
-
-ANTI-RATIONALIZATION:
-- Do not say "tests later".
-- Do not treat tool success, patch application, or sub-agent claims as proof.
-- Do not make unrelated cleanups.
-- Do not rely on memory for mutable APIs/config/security/runtime facts.
 
 REPORT FORMAT:
 - CHANGED
@@ -94,12 +79,6 @@ RETRIEVAL BUDGET:
 DONE WHEN:
 - [artifact/result exists]
 - [real inspection/check confirms it meets the success criteria]
-- [evidence is strong enough to support the completion claim]
-
-ANTI-RATIONALIZATION:
-- Tool success is not outcome success.
-- Monitoring/nudging is not completion.
-- If quality is below the stated bar, self-reject and continue or report a blocker.
 
 STOP CONDITIONS:
 - Stop and report a specific blocker after two materially different failed attempts or if a missing decision creates material risk.
@@ -119,11 +98,10 @@ When using this brief:
 1. Keep the task sentence singular and concrete.
 2. Scope the agent tightly.
 3. Name at least one real verification step in `DONE WHEN`.
-4. Add anti-rationalization constraints when the task has a known failure mode.
-5. If the task is ambiguous, include the primary assumption explicitly.
-6. If the task is risky, say what is off limits in `DO NOT`.
-7. For non-coding sub-agents, prefer outcome, success criteria, verification, and stop conditions over long procedural instructions.
-8. Never let a sub-agent report done for monitoring, nudging, or tool success when the requested artifact/outcome is still missing.
+4. If the task is ambiguous, include the primary assumption explicitly.
+5. If the task is risky, say what is off limits in `DO NOT`.
+6. For non-coding sub-agents, prefer outcome, success criteria, verification, and stop conditions over long procedural instructions.
+7. Never let a sub-agent report done for monitoring, nudging, or tool success when the requested artifact/outcome is still missing.
 
 ## Example
 

@@ -89,7 +89,7 @@ If Ahmed asks repeatedly for the same workflow, the system failed and should be 
 ## Content and LinkedIn
 
 - LinkedIn content should be executive-level, practical, and end with a question/CTA when appropriate.
-- LinkedIn posting/image workflows require explicit care: do not post text-only when an image is expected.
+- LinkedIn posting/image workflows require explicit care: do not post text-only when an image is expected, and do not treat generated/sent media as complete until it passes the relevant quality gate.
 - Content-gap alerts should be short decision-cards: action first, evidence second.
 
 ## Memory Notes

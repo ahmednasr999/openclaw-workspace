@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+set -euo pipefail
 cd /root
-ls -1dt openclaw-snapshot-* 2>/dev/null | tail -n +4 | xargs -r rm -rf
-echo "Snapshots retention cleanup completed - kept last 3"
+ls -1dt openclaw-snapshot-* 2>/dev/null | tail -n +3 | xargs -r rm -rf --one-file-system
+echo "Snapshots retention cleanup completed - kept last 2"

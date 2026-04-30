@@ -42,7 +42,7 @@ Posting:
 - For image posts, upload image first and use the returned true `s3key`.
 - Never pass raw GitHub URLs, local paths, Notion URLs, or short links as `s3key`.
 - Never post text-only when an image was expected.
-- For the CMO premium image/content-card workflow, universal default reference is `/root/.openclaw/workspace/output/jobzoom-visuals/ahmed-linkedin-ai-execution-card-4k.jpg`. Use that Ahmed LinkedIn AI execution card format for every LinkedIn post visual unless Ahmed explicitly requests a different visual direction. The script `/root/.openclaw/workspace-cmo/scripts/generate-premium-content-card.py` remains the implementation path, but its output should match the AI execution card format by default.
+- For the CMO premium image/content-card workflow, universal default reference is `/root/.openclaw/workspace/output/jobzoom-visuals/ahmed-linkedin-ai-execution-card-4k.jpg`. Use that Ahmed LinkedIn AI execution card format for every LinkedIn post visual unless Ahmed explicitly requests a different visual direction. The script `/root/.openclaw/workspace-cmo/scripts/generate-premium-content-card.py` remains the implementation path, but its output should match the AI execution card format by default. Completion requires the premium visual quality gate in `skills/content-claw/SKILL.md`; tool success, file creation, or a CMO nudge is not proof.
 
 Content calendar:
 - Notion DB: `3268d599-a162-814b-8854-c9b8bde62468`.

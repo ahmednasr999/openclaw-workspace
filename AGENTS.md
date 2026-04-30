@@ -86,7 +86,7 @@ Before acting, check the relevant risks: permission/approval, effort, user impac
 
 Do not interrupt Ahmed for safe read-only inspections or approved routine standing checks, including the Gmail job-search email agent when it only reads/summarizes local state. Preserve approval gates for destructive, external, public, credential, gateway, and unscheduled write actions. <!-- dream-promoted 2026-04-27 -->
 
-After acting, confirm the real outcome, not just exit code. Log lessons for failures or corrections, escalate only when useful, and recover automatically when safe.
+After acting, confirm the real outcome, not just exit code. Tool success, generated files, monitoring, nudging, and sub-agent claims are not completion unless the requested artifact/outcome was inspected against the quality bar. Log lessons for failures or corrections, escalate only when useful, and recover automatically when safe.
 
 Retrieval budget: start with the most likely local/source-of-truth evidence. Search or inspect again only when a required fact is missing, the first source is stale/weak, the user requested comprehensive coverage, or an unsupported claim would matter.
 
@@ -101,7 +101,9 @@ Retrieval budget: start with the most likely local/source-of-truth evidence. Sea
 
 ## Sub-Agent Rules
 
-Every spawn brief must define the outcome, success criteria, verification, timeout, and non-delegation expectation. Require side findings when useful. Include Ahmed-specific style constraints, especially concise replies and light natural emoji use when appropriate, because sub-agents may not inherit preferences reliably. Never allow a sub-agent to claim success while errors remain.
+Every spawn brief must define the outcome, success criteria, verification, timeout, and non-delegation expectation. Prefer concise outcome-first briefs over long procedural scripts. Require side findings when useful. Include Ahmed-specific style constraints, especially concise replies and light natural emoji use when appropriate, because sub-agents may not inherit preferences reliably. Add anti-rationalization constraints for known failure modes, for example no "tests later", no unrelated cleanup, no proof by tool success, no quality claims without inspection. Never allow a sub-agent to claim success while errors remain or while the requested artifact/outcome is still missing.
+
+Default non-coding sub-agent brief template: `docs/agent-governance/NASR-ACP-Coding-Brief.md`.
 
 Use isolated context by default. Use forked context only when the child truly needs this transcript.
 
@@ -119,6 +121,7 @@ Full coding closeout must include:
 - files changed
 - tests/checks run
 - key decisions
+- evidence that the actual outcome was inspected
 - remaining uncertainty/risk
 
 ## References

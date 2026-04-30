@@ -31,19 +31,6 @@ This is not meant to add another layer of generic prompt sludge. It is meant to 
 ### Gap
 The gap is not lack of principles. The gap is that the principles are spread across multiple places.
 
-## Execution lifecycle
-
-For non-trivial coding work, use this lifecycle as the default mental model:
-
-1. **DEFINE** - clarify the requested outcome, scope, constraints, and success criteria.
-2. **PLAN** - identify the smallest vertical slice and the verification gate before editing.
-3. **BUILD** - make surgical changes only inside the approved scope.
-4. **VERIFY** - prove the requested behavior changed using a relevant test, build, reproduction, or inspection.
-5. **REVIEW** - check scope control, safety boundaries, maintainability, and whether the evidence is strong enough.
-6. **SHIP** - report what changed, evidence, remaining risk, and any real next step.
-
-Do not treat lifecycle words as ceremony. If a task is tiny, compress the lifecycle mentally. If a task is risky, make the gates explicit before touching files.
-
 ## The rules
 
 ### 1. State assumptions before implementation
@@ -100,35 +87,18 @@ Completion should include:
 If two materially different attempts hit the same wall, or three approaches fail overall, stop improvising.
 Report the blocker, diagnosis, and the smallest decision needed from Ahmed.
 
-### 13. Reject rationalizations early
-Agents often drift by justifying skipped gates. Treat these as failure signals, not efficiency:
-
-| Rationalization | Counter-rule |
-|---|---|
-| "I will add tests later" | Tests/checks define done; later usually means never. |
-| "The patch applied, so it worked" | Patch application proves only file mutation, not behavior. |
-| "The command exited 0" | Exit code is weak evidence unless the command directly checks the requested outcome. |
-| "This nearby cleanup is harmless" | Unrequested cleanup expands blast radius and review cost. Mention it instead. |
-| "The user probably wants the robust version" | Build the smallest complete version unless the user asked for architecture. |
-| "I already know this API/config" | For mutable frameworks, APIs, configs, and security work, verify against source/version first. |
-| "The sub-agent said done" | Done requires inspected evidence, not a worker claim. |
-
-### 14. Prefer source-driven implementation for mutable systems
-For framework/API/config/security/runtime work, check the current version, schema, official docs, local source, or release notes before making exact claims or edits. Do not rely on memory when stale knowledge would matter.
-
 ## Default execution pattern
 
 For non-trivial coding work, default to this sequence:
 
-1. DEFINE: name the target artifact and requested outcome.
-2. PLAN: name the likely defect/decision and the smallest vertical slice.
+1. Name the target artifact.
+2. Name the likely defect or decision.
 3. Read the target and direct dependency.
 4. State assumptions or forks if ambiguity exists.
-5. Define the success check before editing.
-6. BUILD: make the smallest complete change.
-7. VERIFY: run a real verification step and inspect the result.
-8. REVIEW: check scope, safety, and evidence strength.
-9. SHIP: report with proof and remaining risk.
+5. Define the success check.
+6. Make the smallest complete change.
+7. Run a real verification step.
+8. Report with evidence.
 
 ## Completion format
 
