@@ -1176,3 +1176,56 @@ Node.js v22.22.1
 ## Calendar - Today's Events
 *Calendar API unavailable (gog v0.12.0 bug - tracking fix)*
 
+=== Morning Brief - 2026-04-30 06:00 AM ===
+
+## Claude 2x Usage Reminder
+
+## Job Radar (from Tavily)
+[search-router] Tavily unavailable, falling back to local SearXNG: Tavily Search failed (401): {"detail":{"error":"Unauthorized: missing or invalid API key."}}
+## Sources
+
+_(provider: searxng)_
+
+- **GCC Resilience Drives Sustainable Growth in 2026 - LinkedIn**
+  https://www.linkedin.com/posts/ahmed-e-el-rabbat_mrbfholding-futurepresent-activity-7432304653553475584-Lw9Q
+  Floyd D'Souza. VP / Director | Transformation & PMO | Head of ... In global markets like the UAE and wider GCC, digital transformation budgets are ...
+
+- **NASARAWA SOCIAL MEDIA ADVOCACY GROUP (NASOMAG) | #THEHUB ...**
+  https://www.facebook.com/groups/1103986289684777/posts/6470291366387549/
+  For everyday news highlights.) *PUNCH* Federal civil servants ignore employment ban, milk suffering job-seekers US court jails Nigerian, others for $2.6m fraud Abductors of RCCG pastors wife demand N100m ransom Ministers-designate complete documentation, get invites for three guests Leaked memo: DSS...
+
+- **edari hiring Director - Transformation and PMO Governance in Dubai ...**
+  https://www.linkedin.com/jobs/view/4312968719
+  We are looking to hire a Director - Transformation and PMO Governance who will be responsible for leading large-scale, multi-million-dollar transformation initiatives focused on digital ...
+
+- **Sunil Karani - Dubai - LinkedIn**
+  https://ae.linkedin.com/in/sunilkarani
+  Head of Program Management | Digital Transformation & Portfolio Director | VP PMO | AED 350M+ Portfolios Delivered | Built Teams from 2 to 480 Resources ...
+
+- **Reuters | Breaking International News & Views**
+  https://www.reuters.com/
+  3 days ago · Find latest news from every corner of the globe at Reuters.com, your online source for breaking international news coverage.
+
+## Gmail - New Opportunities
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/root/.openclaw/workspace/scripts/gmail-scan.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+
+## Calendar - Today's Events
+*Calendar API unavailable (gog v0.12.0 bug - tracking fix)*
+
