@@ -20,6 +20,8 @@ Full detail lives in `docs/reference/TOOLS.full.md`.
 - Prefer Camoufox tools for external sites with bot detection.
 - For account/session tasks, prefer Ahmed-Mac Chrome when login state matters.
 - Avoid server-side browser fallback when account session matters.
+- Browser-reading hard stop: after 3 screenshots/scrolls on the same page without new extractable content, stop browsing, summarize what is known, and state the blocker. Do not keep a user-facing run open in a visual loop.
+- For X/Twitter links specifically, use a small screenshot budget, then answer from visible evidence or say the tweet could not be reliably read. Never repeat scroll/screenshot cycles just to search for certainty.
 
 ## LinkedIn Jobs
 
