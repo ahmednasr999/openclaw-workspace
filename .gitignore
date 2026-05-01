@@ -68,3 +68,6 @@ media/inbound/*.docx
 
 # Generated reports (local/runtime output)
 /reports/
+
+# Runtime logs
+logs/openclaw-backup.log

@@ -1,3 +1,0 @@
-[2026-05-01 15:05:55] INFO: Backup log moved from /tmp/openclaw-backup.log to persistent workspace logs after VPS reboot cleared /tmp.
-[2026-05-01 15:05:55] INFO: Latest workspace commit: 01b32ef4 2026-05-01 14:52:12 +0300 docs: record disk guard hardening and salary preference
-[2026-05-01 15:05:55] INFO: Next scheduled daily-backup.sh run remains 20:00 Africa/Cairo.
