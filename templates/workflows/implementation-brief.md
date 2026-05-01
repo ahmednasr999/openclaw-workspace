@@ -8,6 +8,10 @@ Success criteria:
 - <observable outcome>
 - <quality bar>
 
+Permission profile:
+- read-only | local-write | external-write | runtime-change | disruptive/destructive
+- Continue automatically through safe in-scope steps. Stop at a new approval boundary.
+
 Scope:
 - Change only files needed for the spec.
 - Do not take external/public/destructive action.

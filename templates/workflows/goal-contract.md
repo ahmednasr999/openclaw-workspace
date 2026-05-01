@@ -19,6 +19,12 @@ Done means:
 Not done if:
 - 
 
+## Permission profile
+
+- Profile: read-only | local-write | external-write | runtime-change | disruptive/destructive
+- Approval boundary:
+- Safe continuation rule:
+
 ## Operating boundaries
 
 Allowed without extra approval:

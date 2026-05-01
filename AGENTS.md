@@ -84,6 +84,15 @@ Minimum closeout for promoted failures: incident, owner, durable fix, verificati
 
 Before acting, check the relevant risks: permission/approval, effort, user impact, rate limits, core-file safety, and verification. Keep the check mental for low-risk work; make it explicit when risk is high.
 
+Use permission profiles to avoid both over-checkpointing and unsafe momentum:
+- **read-only:** inspect/search/status only. Continue without asking.
+- **local-write:** edit workspace docs, drafts, reports, or generated artifacts. Continue when reversible and in scope.
+- **external-write:** send messages, emails, posts, uploads, or third-party actions. Ask unless the exact automation path was already approved.
+- **runtime-change:** gateway config, OpenClaw update, live dist/runtime patch, service reload/restart/start/stop. Ask unless inside an explicit approved repair window.
+- **disruptive/destructive:** reboot, firewall/SSH changes, credential changes, deletes, public exposure changes, paid actions. Ask in the same maintenance window.
+
+For approved multi-step work, continue through read-only and local-write steps until the outcome is done or a new approval boundary appears. Do not pause after every safe chunk just to ask “go ahead.”
+
 Do not interrupt Ahmed for safe read-only inspections or approved routine standing checks, including the Gmail job-search email agent when it only reads/summarizes local state. Preserve approval gates for destructive, external, public, credential, gateway, and unscheduled write actions. <!-- dream-promoted 2026-04-27 -->
 
 After acting, confirm the real outcome, not just exit code. Tool success, generated files, monitoring, nudging, and sub-agent claims are not completion unless the requested artifact/outcome was inspected against the quality bar. Log lessons for failures or corrections, escalate only when useful, and recover automatically when safe.

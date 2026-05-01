@@ -3,6 +3,10 @@
 ## Outcome inspected
 <artifact/source/delivery/user-visible state inspected>
 
+## Permission profile observed
+- Profile: <read-only/local-write/external-write/runtime-change/disruptive-destructive>
+- Approval boundary respected: <yes/no>
+
 ## Checks run
 - <command/check>: <result>
 
