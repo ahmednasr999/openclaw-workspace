@@ -20,6 +20,7 @@ Use this skill for Ahmed's executive content workflow when the task concerns con
 - Premium content-card completion requires a binary visual quality gate before any candidate is sent as done. Compare the candidate against the reference on two axes: format compliance and premium craft parity. Reject if it is only structurally similar but feels cheaper, flatter, more generic, more stock-like, less cinematic, weaker in gold/white typography, weaker in depth, weaker in footer polish, or missing an execution/system metaphor.
 - Never use the reference image as a literal canvas with new text pasted over old text. Remake a clean card in the same direction. Reject any old-text contamination, overlapping text, generic infographic boxes, dense labels, unreadable small copy, or accidental UI/poster artifacts.
 - Done means an inspected candidate exists, passes the gate, and has a side-by-side comparison or equivalent visual evidence. Nudging another agent, generating a file, or receiving a successful tool response is not done.
+- For premium card production, prefer the image-to-UI workflow in `docs/content-claw/image-to-ui-premium-card-workflow.md`: use image generation/reference for taste, then controlled code/composition for typography, spacing, footer, and mobile fidelity when raw generation is not precise enough.
 
 ## Premium Visual Quality Gate
 
