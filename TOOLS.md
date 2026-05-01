@@ -95,6 +95,12 @@ Never use Composio for Notion or Telegram when direct credentials exist.
 - For local media sends, copy files to an allowed media directory such as `/root/.openclaw/media` first.
 - Verify actual delivery or returned message state before saying a message/file was sent.
 
+## Queue and Concurrency
+
+- OpenClaw command queue is active by default even when `messages.queue` is absent from config: default mode is `steer`, with `debounceMs: 500`, `cap: 20`, and `drop: summarize`. Keep this default unless a specific channel/session behavior proves problematic.
+- For bursty Telegram follow-ups, prefer a temporary per-session `/queue collect debounce:1s cap:20 drop:summarize` rather than changing global queue config. Avoid `interrupt` unless Ahmed explicitly wants newer messages to abort active work.
+- Queue protects inbound session collisions, but it does not replace tool/process discipline. Avoid stacked long-running background exec/tool runs in the same Telegram thread unless necessary; verify with process/session tools instead of assuming the queue solved lock timeouts. <!-- promoted 2026-05-01 -->
+
 ## Gateway Safety
 
 - Gateway restart is crash-prone. Do not restart casually.
