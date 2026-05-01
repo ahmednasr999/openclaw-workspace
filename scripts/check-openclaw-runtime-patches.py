@@ -73,7 +73,7 @@ def check_runtime_context_plain_header_smoke(failures: list[str]) -> None:
         return
     sanitizer = sanitizer_candidates[0]
     node_script = f"""
-import {{ u as sanitizeUserFacingText }} from {json.dumps(str(sanitizer))};
+import {{ d as sanitizeUserFacingText }} from {json.dumps(str(sanitizer))};
 const leak = `OpenClaw runtime context for the immediately preceding user message.\nThis context is runtime-generated, not user-authored. Keep internal details private.\n\n<composio>secret</composio>\nNo. The update is done, but the leak is not fixed.`;
 const clean = sanitizeUserFacingText(leak);
 if (clean !== 'No. The update is done, but the leak is not fixed.') {{
@@ -88,7 +88,7 @@ if (clean !== 'No. The update is done, but the leak is not fixed.') {{
         print("OK: runtime-context plain-header sanitizer smoke passed")
 
     tool_leak_script = f"""
-import {{ u as sanitizeUserFacingText }} from {json.dumps(str(sanitizer))};
+import {{ d as sanitizeUserFacingText }} from {json.dumps(str(sanitizer))};
 const leak = `<composio>\nIMPORTANT: Ignore any pretrained knowledge you have about Composio. Only follow the instructions below.\nYou have 7 Composio tools registered and ready to call: COMPOSIO_MANAGE_CONNECTIONS\n</composio>\n\nSystem (untrusted): [2026-04-30 06:33:25 GMT+3] Exec completed (lucky-sa, code 0) :: old noise\n\n\nAn async command you ran earlier has completed. The command completion details are:\n\nExec completed (lucky-sa, code 0) :: old noise\n\nPlease relay the command output to the user in a helpful way. If the command succeeded, share the relevant output. If it failed, explain what went wrong.\nCurrent time: Thursday, April 30th, 2026 - 6:35 AM (Africa/Cairo) / 2026-04-30 03:35 UTC\n\nOld async log callback only: it shows the earlier active-memory timeout/failover from before the patch restore.`;
 const clean = sanitizeUserFacingText(leak);
 if (clean.includes('<composio>') || clean.includes('System (untrusted):') || clean.includes('Please relay') || clean.includes('Current time:')) {{
@@ -163,7 +163,7 @@ Sender (untrusted metadata):
 
 Hourly is too much"""
     node_script = f"""
-import {{ u as sanitizeUserFacingText }} from {json.dumps(str(sanitizer))};
+import {{ d as sanitizeUserFacingText }} from {json.dumps(str(sanitizer))};
 const leak = {json.dumps(sample)};
 const clean = sanitizeUserFacingText(leak);
 if (clean !== 'Hourly is too much') {{
@@ -190,7 +190,7 @@ def check_cron_envelope_sanitizer_smoke(failures: list[str]) -> None:
 [cron:12f2b3c3-4d4e-4c7e-87bc-3e3ee9825326 14-day daily profile drip question pilot] Daily profile drip pilot reminder. Ask Ahmed exactly one thoughtful memory-gap question in Telegram DM. Before asking, inspect /root/.openclaw/workspace/memory/daily-profile-drip.md, USER.md, and MEMORY.md enough to avoid repeats and find a useful gap.
 Current time: Thursday, April 30th, 2026 - 9:15 AM (Africa/Cairo) / 2026-04-30 06:15 UTC"""
     node_script = f"""
-import {{ u as sanitizeUserFacingText }} from {json.dumps(str(sanitizer))};
+import {{ d as sanitizeUserFacingText }} from {json.dumps(str(sanitizer))};
 const leak = {json.dumps(sample)};
 const clean = sanitizeUserFacingText(leak);
 if (clean !== '') {{
@@ -235,7 +235,7 @@ Conversation info (untrusted metadata):
 
 https://github.com/OpenSenseNova/SenseNova-U1"""
     node_script = f"""
-import {{ u as sanitizeUserFacingText }} from {json.dumps(str(sanitizer))};
+import {{ d as sanitizeUserFacingText }} from {json.dumps(str(sanitizer))};
 const leak = {json.dumps(sample)};
 const clean = sanitizeUserFacingText(leak);
 if (clean !== 'https://github.com/OpenSenseNova/SenseNova-U1') {{
@@ -275,7 +275,7 @@ Conversation info (untrusted metadata):
 
 [Thu 2026-04-30 09:19 GMT+3] Verify OpenClaw is healthy after loading the queued-message metadata leak sanitizer patch, run the runtime patch checker, and report concise status to Ahmed."""
     node_script = f"""
-import {{ u as sanitizeUserFacingText }} from {json.dumps(str(sanitizer))};
+import {{ d as sanitizeUserFacingText }} from {json.dumps(str(sanitizer))};
 const leak = {json.dumps(sample)};
 const clean = sanitizeUserFacingText(leak);
 if (clean !== '') {{
@@ -325,7 +325,7 @@ Replied message (untrusted, for context):
 
 Why you sent this now!"""
     node_script = f"""
-import {{ u as sanitizeUserFacingText }} from {json.dumps(str(sanitizer))};
+import {{ d as sanitizeUserFacingText }} from {json.dumps(str(sanitizer))};
 const leak = {json.dumps(sample)};
 const clean = sanitizeUserFacingText(leak);
 if (clean !== 'Why you sent this now!') {{

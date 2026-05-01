@@ -25,6 +25,8 @@ Use this skill for Ahmed's executive content workflow when the task concerns con
 
 Use this gate for every Ahmed LinkedIn premium card unless Ahmed explicitly chooses a different visual direction.
 
+Canonical checklist: `docs/content-claw/premium-linkedin-visual-quality-gate.md`
+
 Reference: `/root/.openclaw/workspace/output/jobzoom-visuals/ahmed-linkedin-ai-execution-card-4k.jpg`
 
 Pass requires all of the following:
