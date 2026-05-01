@@ -1,8 +1,6 @@
-# CTO Pending Issues — Updated 2026-04-30 16:01 Cairo
+# CTO Pending Issues — Updated 2026-05-01 07:48 Cairo
 
 ## Open
-
-1. **Root-level untracked backup file blocks heartbeat** — `/root/.openclaw/workspace/AGENTS.md.bak-agent-skills-20260430-143849` is a new untracked file at workspace root. Direct inspection at 16:01 Cairo showed it is 6,610 bytes, appears to be an AGENTS.md backup, and targeted secret-pattern scan found no matches. It still blocks `HEARTBEAT_OK` until tracked, moved, ignored, or removed.
 
 1. **daily-backup freshness alert is cleared; backup path review remains** — `/tmp/openclaw-backup.log` advanced to `2026-04-28 20:00:01 +0300`, and the log shows a successful push to `origin workspace-sync` at 19:53. The immediate 48-hour freshness threshold is no longer breached. Keep the older branch-target review only as a follow-up if needed, since the latest evidence shows current backup activity on `workspace-sync`.
 
@@ -69,6 +67,8 @@ Heartbeat note 2026-04-28 19:47 Cairo — Gateway is live (HTTP 200), latest com
 Heartbeat note 2026-04-28 22:08 Cairo — Gateway is live (HTTP 200), latest commit is `3216cb24 chore(backup): remove temporary daily-backup patch copy` from about 2 hours ago, cron dashboard log is present with 0 ERROR lines in the last 100 lines, workspace disk usage is 60%, and the daily-backup signal is fresh at `2026-04-28 20:00:01 +0300` with a successful push to `origin workspace-sync` shown at 19:53. The stale backup blocker is cleared. Active blocker changed to root-level untracked `product-specs/`; previous root backup markdown files are no longer reported.
 
 Heartbeat note 2026-04-30 16:01 Cairo — Gateway 200, latest commit `fb8a9608 chore(auto): daily data commit (29 files)` (~9h old), cron dashboard log present with 0 ERRORs in last 100 lines, disk 61%, backup log fresh at `2026-04-29 20:00:16 +0300` (~20h old). Root-level untracked check found only `AGENTS.md.bak-agent-skills-20260430-143849`; inspected and secret-scanned with no matches. Heartbeat remains blocked until that root backup file is handled.
+
+Heartbeat note 2026-05-01 07:48 Cairo — Gateway 200, latest commit `846ed2a6 chore(auto): daily data commit (12 files)` (~47m old), cron dashboard log present with 0 ERRORs in last 100 lines, no root-level untracked paths, disk 81%. `/tmp/openclaw-backup.log` is missing, so backup freshness cannot be verified from the required source even though recent commits exist. Previous root backup file blocker is cleared.
 
 ## Cleared / Removed From Pending
 

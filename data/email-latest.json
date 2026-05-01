@@ -1,23 +1,71 @@
 {
   "status": "ok",
-  "scan_time": "2026-04-30T20:00:26.267366+02:00",
-  "total_scanned": 15,
+  "scan_time": "2026-05-01T14:03:10.186895+02:00",
+  "total_scanned": 33,
   "by_category": {
-    "interview_invite": 0,
-    "recruiter_reach": 0,
+    "interview_invite": 1,
+    "recruiter_reach": 1,
     "application_ack": 0,
     "rejection": 0,
     "assessment": 0,
     "follow_up_needed": 0,
-    "other": 15
+    "other": 32
   },
-  "interview_invites": [],
-  "recruiter_messages": [],
+  "interview_invites": [
+    {
+      "id": "355869",
+      "from": "Miral Talent Acquisition <talent@miral.ae>",
+      "subject": "=?Windows-1252?Q?Thank_You_for_Applying_to_Facilities_Asset_Management_Di?=\r\n =?Windows-1252?Q?rector_(FM_Operations)_=96_An_Update_on_Your_Application?=\r\n =?Windows-1252?Q?_at_Miral_Experiences?=",
+      "date": "Fri, 1 May 2026 10:12:58 +0000",
+      "unread": true,
+      "priority": "HIGH",
+      "score": 10,
+      "pipeline_match": "Miral Experiences"
+    }
+  ],
+  "recruiter_messages": [
+    {
+      "id": "355869",
+      "from": "Miral Talent Acquisition <talent@miral.ae>",
+      "subject": "=?Windows-1252?Q?Thank_You_for_Applying_to_Facilities_Asset_Management_Di?=\r\n =?Windows-1252?Q?rector_(FM_Operations)_=96_An_Update_on_Your_Application?=\r\n =?Windows-1252?Q?_at_Miral_Experiences?=",
+      "date": "Fri, 1 May 2026 10:12:58 +0000",
+      "unread": true,
+      "priority": "HIGH",
+      "score": 10,
+      "pipeline_match": "Miral Experiences"
+    }
+  ],
   "application_acks": [],
   "rejections": [],
   "assessments": [],
   "follow_ups_needed": [],
-  "actionable_count": 0,
-  "hot_alerts": [],
-  "signals": []
+  "actionable_count": 1,
+  "hot_alerts": [
+    {
+      "subject": "=?Windows-1252?Q?Thank_You_for_Applying_to_Facilities_Asset_Management_Di?=\r\n =?Windows-1252?Q?rector_(FM_Operations)_=96_An_Update_on_Your_Application?=\r\n =?Windows-1252?Q?_at_Miral_Experiences?=",
+      "from": "Miral Talent Acquisition <talent@miral.ae>",
+      "priority": "HIGH",
+      "pipeline_match": "Miral Experiences"
+    }
+  ],
+  "signals": [
+    {
+      "company": "Miral Experiences",
+      "signal": "interview_signal",
+      "subject": "=?Windows-1252?Q?Thank_You_for_Applying_to_Facilities_Asset_Management_Di?=\r\n =?Windows-1252?Q?rector_(FM_Operations)_=96_An_Update_on_Your_Applicatio",
+      "sender": "Miral Talent Acquisition <talent@miral.ae>",
+      "job_ids": [
+        "linkedin-li-4379840970",
+        "linkedin-li-4391732874",
+        "linkedin-li-4391730893",
+        "linkedin-li-4376069893",
+        "linkedin-li-4385930340",
+        "linkedin-li-4377189515",
+        "linkedin-li-4385257294",
+        "4379840970"
+      ],
+      "score": 10,
+      "timestamp": "2026-05-01T14:03:10.104900+02:00"
+    }
+  ]
 }

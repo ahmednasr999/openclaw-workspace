@@ -11,7 +11,12 @@ from dateutil import parser as dateparser
 # ── Config ────────────────────────────────────────────────────────────────────
 BASE = os.path.dirname(os.path.abspath(__file__))
 CFG = json.load(open(f"{BASE}/../config/rss-intelligence.json"))
-TOKEN = CFG["notion_token"]
+NOTION_CFG_PATH = f"{BASE}/../config/notion.json"
+if os.path.exists(NOTION_CFG_PATH):
+    NOTION_CFG = json.load(open(NOTION_CFG_PATH))
+else:
+    NOTION_CFG = {}
+TOKEN = NOTION_CFG.get("token") or CFG["notion_token"]
 DB = CFG["database_id"]
 FEEDS = CFG["feeds"]
 STATE_FILE = CFG.get("state_file", f"{BASE}/../data/rss-intelligence-state.json")
@@ -149,8 +154,8 @@ def telegram_msg(text):
         return json.loads(r.read())
 
 # ── Main ─────────────────────────────────────────────────────────────────────
-print(f"[{datetime.now().strftime('%H:%M:%S')}] RSS Intelligence Crawler v2")
-print(f"Feeds: {len(FEEDS)} | Seen URLs: {len(seen)}")
+print(f"[{datetime.now().strftime('%H:%M:%S')}] RSS Intelligence Crawler v2", flush=True)
+print(f"Feeds: {len(FEEDS)} | Seen URLs: {len(seen)}", flush=True)
 
 new_count = 0
 new_articles = []
@@ -159,18 +164,18 @@ errors = []
 for category, url in FEEDS.items():
     try:
         articles, source_name = parse_feed(url, category)
-        print(f"  {category}: {len(articles)} new")
+        print(f"  {category}: {len(articles)} new", flush=True)
         for title, link, item in articles:
             ok, result = add_article(title, link, item, category, source_name)
             if ok:
                 seen.add(link)
                 new_count += 1
                 new_articles.append((category, title, link))
-                print(f"    + {title[:65]}")
+                print(f"    + {title[:65]}", flush=True)
             else:
                 errors.append(f"{category}/{title[:30]}: {result}")
     except Exception as e:
-        print(f"  FAIL {category}: {e}")
+        print(f"  FAIL {category}: {e}", flush=True)
         errors.append(f"{category}: {e}")
 
 # Save state
@@ -188,10 +193,10 @@ if new_count > 0:
         lines.append(f"\n⚠️ Errors: {len(errors)}")
     try:
         telegram_msg("\n".join(lines))
-        print(f"\nTelegram: sent ({new_count} articles)")
+        print(f"\nTelegram: sent ({new_count} articles)", flush=True)
     except Exception as e:
-        print(f"\nTelegram FAIL: {e}")
+        print(f"\nTelegram FAIL: {e}", flush=True)
 else:
-    print("\nNo new articles.")
+    print("\nNo new articles.", flush=True)
 
-print(f"\nDone. {new_count} new added. {len(seen)} total in state.")
+print(f"\nDone. {new_count} new added. {len(seen)} total in state.", flush=True)
