@@ -49,6 +49,11 @@ Content calendar:
 - Auto-poster: `scripts/linkedin-auto-poster.py`.
 - Direct Notion access is the default. Do not claim Notion is disconnected if direct token access works.
 
+## Memory Wiki
+
+- Keep memory-wiki conservative by default: isolated vault, bridge disabled, URL ingest disabled, prompt digest disabled, and manual compile/lint after meaningful changes unless Ahmed approves a broader pilot.
+- For the current isolated vault, use `vault.renderMode: "obsidian"`. Native Markdown report links can trigger false `broken-wikilink` lint warnings because generated links include `.md` while the linter validates extensionless targets. Obsidian links compile/lint cleanly. <!-- promoted 2026-05-01 -->
+
 ## Model Policy
 
 - Current primary model: GPT-5.5 via OpenAI Codex OAuth.
