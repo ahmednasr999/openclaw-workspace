@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-29T23:42:09.968Z",
+  "updatedAt": "2026-05-01T02:39:36.670Z",
   "entries": {
     "memory:memory/archives/2026-03-07.md:29:56": {
       "key": "memory:memory/archives/2026-03-07.md:29:56",
@@ -1748,23 +1748,25 @@
       "endLine": 51,
       "source": "memory",
       "snippet": "- Extracted content: Peter Steinberger (@steipete), tweet text “My favorite security advisories.” Media image text: “Steps To Reproduce: 1. Enable hooks.gmail.allowUnsafeExternalContent=true”. Timestamp 12:11 PM · Apr 23, 2026. Metrics at fetch: 56.3K views, 24 replies, 4 reposts, 433 likes, 53 bookmarks. ### JobZoom 0-live-jobs investigation - 2026-04-24 JobZoom run did not find 0 raw jobs. It found/scored many intermediates: 341 filtered raw jobs, 311 deduped/new jobs, 91 Pass1/all-scored jobs, 0 live matches, 3 shadow jobs. - Shadow file: `/root/.openclaw/workspace-jobzoom/reports/shadow/jobzoom-shadow-2026-04-24.json`. - Shadow verdicts were keyword fallback around 60-63; live threshold",
-      "recallCount": 4,
+      "recallCount": 5,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 3.390201082825661,
+      "totalScore": 4.39020108282566,
       "maxScore": 1,
       "firstRecalledAt": "2026-04-24T10:44:07.363Z",
-      "lastRecalledAt": "2026-04-29T06:15:14.025Z",
+      "lastRecalledAt": "2026-05-01T02:39:36.670Z",
       "queryHashes": [
         "3b21f0cb3926",
         "73675e2f27f1",
         "8db888f6c422",
-        "936db56b7cd0"
+        "936db56b7cd0",
+        "62d1011768ae"
       ],
       "recallDays": [
         "2026-04-24",
         "2026-04-28",
-        "2026-04-29"
+        "2026-04-29",
+        "2026-05-01"
       ],
       "conceptTags": [
         "56.3k",
@@ -2100,21 +2102,23 @@
       "endLine": 10,
       "source": "memory",
       "snippet": "## 2026-04-27 06:42 Cairo - JobZoom incident and report logic updates - JobZoom daily run was delayed, but completed successfully. Root cause of the visible delay was OpenClaw gateway memory pressure/OOM around 05:22 Cairo, followed by systemd restart, not a JobZoom logic failure. - Final JobZoom 2026-04-27 results: 150 searches, 150 successful, 0 failed, 341 eligible jobs after exclusions, 265 after dedup, 62 after Pass 1, 2 final AI matches at 70+, 2 CVs generated, report delivered successfully. - Delivery IDs from cron summary: Telegram summary 8792, PDF 8793, CV ZIP 8794. - JobZoom matched roles on 2026-04-27: OMPAY Program Manager in Oman, score 83; Johnson Controls Field Remediation",
-      "recallCount": 3,
+      "recallCount": 4,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 3,
+      "totalScore": 4,
       "maxScore": 1,
       "firstRecalledAt": "2026-04-28T06:07:07.261Z",
-      "lastRecalledAt": "2026-04-29T06:15:14.025Z",
+      "lastRecalledAt": "2026-05-01T02:39:36.670Z",
       "queryHashes": [
         "73675e2f27f1",
         "8db888f6c422",
-        "936db56b7cd0"
+        "936db56b7cd0",
+        "62d1011768ae"
       ],
       "recallDays": [
         "2026-04-28",
-        "2026-04-29"
+        "2026-04-29",
+        "2026-05-01"
       ],
       "conceptTags": [
         "gateway",
@@ -2408,6 +2412,37 @@
         "usr/bin/npm",
         "no-fund",
         "no-audit"
+      ]
+    },
+    "memory:memory/2026-04-29.md:51:64": {
+      "key": "memory:memory/2026-04-29.md:51:64",
+      "path": "memory/2026-04-29.md",
+      "startLine": 51,
+      "endLine": 64,
+      "source": "memory",
+      "snippet": "- Patched `/root/.openclaw/workspace-jobzoom/scripts/daily_run.py` for better scoring observability: - gateway calls now record `elapsed_ms` in `gpt_api_calls.note`, including failures, - batch scoring logs attempt start, timeout budget, per-attempt duration, total batch duration, scores, and fallback duration. - Verified with `python3 -m py_compile /root/.openclaw/workspace-jobzoom/scripts/daily_run.py`. - Path drift task: confirmed `/root/.openclaw/workspace-jobzoom/scripts/jobs-source-linkedin-jobspy.py` is a symlink to `/root/.openclaw/workspace/scripts/jobs-source-linkedin-jobspy.py`, and `daily_run.py` calls `preflight_jobspy_path()` before scraping. Marked the drift guard task res",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-01T02:39:36.670Z",
+      "lastRecalledAt": "2026-05-01T02:39:36.670Z",
+      "queryHashes": [
+        "62d1011768ae"
+      ],
+      "recallDays": [
+        "2026-05-01"
+      ],
+      "conceptTags": [
+        "gateway",
+        "gpt",
+        "elapsed-ms",
+        "gpt-api-calls.note",
+        "per-attempt",
+        "py-compile",
+        "daily-run.py",
+        "preflight-jobspy-path"
       ]
     }
   }

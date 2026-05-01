@@ -2,19 +2,19 @@
   "meta": {
     "agent": "email-agent",
     "version": "3.0.0",
-    "generated_at": "2026-04-30T18:00:57.753433+02:00",
-    "duration_ms": 31373,
+    "generated_at": "2026-04-30T20:00:45.855937+02:00",
+    "duration_ms": 26659,
     "ttl_hours": 4,
     "status": "success",
     "error": null,
-    "run_id": "5060a975",
+    "run_id": "aa8d13d0",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
     "status": "ok",
-    "scan_time": "2026-04-30T18:00:36.845526+02:00",
-    "total_scanned": 22,
+    "scan_time": "2026-04-30T20:00:26.267366+02:00",
+    "total_scanned": 15,
     "by_category": {
       "interview_invite": 0,
       "recruiter_reach": 0,
@@ -22,7 +22,7 @@
       "rejection": 0,
       "assessment": 0,
       "follow_up_needed": 0,
-      "other": 22
+      "other": 15
     },
     "interview_invites": [],
     "recruiter_messages": [],
@@ -42,12 +42,12 @@
         "requires_assessment": false,
         "recruiter_top_opportunities": [],
         "top_priority": null,
-        "daily_focus": "No actionable leadership-role emails were provided, so focus today on pipeline building and targeted follow-ups."
+        "daily_focus": "No actionable leadership-opportunity emails were provided; monitor for recruiter, interview, or assessment messages."
       }
     }
   },
   "kpi": {
-    "emails_processed": 22,
+    "emails_processed": 15,
     "actionable": 0,
     "interviews_detected": 0,
     "recruiter_messages": 0,
