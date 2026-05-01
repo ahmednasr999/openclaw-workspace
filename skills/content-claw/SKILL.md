@@ -22,6 +22,8 @@ Use this skill for Ahmed's executive content workflow when the task concerns con
 - Done means an inspected candidate exists, passes the gate, and has a side-by-side comparison or equivalent visual evidence. Nudging another agent, generating a file, or receiving a successful tool response is not done.
 - For premium card production, prefer the image-to-UI workflow in `docs/content-claw/image-to-ui-premium-card-workflow.md`: use image generation/reference for taste, then controlled code/composition for typography, spacing, footer, and mobile fidelity when raw generation is not precise enough.
 - For posts explaining an AI agent, automation, or operating model, use `docs/content-claw/ai-agent-workflow-card-template.md` for the content anatomy, then compress it into the 9:16 execution-card format. Do not copy dense horizontal dashboard layouts unless Ahmed explicitly asks.
+- For multi-step CMO/content work, use the lightweight workflow-status pattern in `docs/content-claw/codex-social-ai-team-adaptation-2026-05-01.md` when it reduces ambiguity: current stage, next action, blocker, approved assets, publishing status, and quality gate. Do not create process theater for one-step tasks.
+- Before any LinkedIn handoff, scheduling preparation, or public posting approval request, run publisher QA: caption approved or clearly draft, creative approved and matched to caption, correct platform/date/ratio, alt text where useful, no unapproved claims, no private data, correct media paths, and explicit approval before any external post/schedule action.
 
 ## Premium Visual Quality Gate
 
