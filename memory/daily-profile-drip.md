@@ -16,3 +16,8 @@ Pilot window: 2026-04-30 to 2026-05-13, 09:15 Cairo daily.
 
 ## Questions and Answers
 
+
+### 2026-05-01
+Question: When evaluating GCC executive roles, after title and compensation, what should carry the most weight? Options included healthcare impact, transformation mandate, budget/team size, reporting line, city/family fit, company stability, or other.
+Raw answer: #7. Other: Salary.
+Note: Ahmed corrected the framing: salary remains a primary factor, not something to exclude after compensation.

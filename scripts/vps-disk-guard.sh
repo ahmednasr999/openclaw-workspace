@@ -7,11 +7,53 @@ WORKSPACE="/root/.openclaw/workspace"
 LOG_DIR="$WORKSPACE/logs/disk-guard"
 TMP_DIR="$WORKSPACE/tmp"
 STATE_FILE="$WORKSPACE/tmp/disk-guard-last-trigger.txt"
+BACKUP_WARN_GB="${DISK_GUARD_BACKUP_WARN_GB:-8}"
+BACKUP_KEEP_DAYS="${DISK_GUARD_BACKUP_KEEP_DAYS:-14}"
+BACKUP_PRUNE="${DISK_GUARD_PRUNE_BACKUPS:-0}"
 mkdir -p "$LOG_DIR" "$TMP_DIR"
 
 now_iso() { date -Is; }
 usage_pct() { df -P "$ROOT" | awk 'NR==2 {gsub(/%/,"",$5); print $5}'; }
 disk_line() { df -hT "$ROOT" | awk 'NR==2 {print $3 " used / " $5 " / " $6 " free"}'; }
+backup_warn_bytes() { awk -v gb="$BACKUP_WARN_GB" 'BEGIN {printf "%.0f", gb * 1024 * 1024 * 1024}'; }
+
+backup_report() {
+  local warn_bytes
+  warn_bytes="$(backup_warn_bytes)"
+  echo "Backup/snapshot audit: files >= ${BACKUP_WARN_GB}G or older than ${BACKUP_KEEP_DAYS} days."
+  find /root/openclaw-backups /root/.openclaw/backups -xdev \
+    \( -type f -name '*.tar.gz' -o -type d -name 'manual-update-*' \) \
+    \( -size +"${warn_bytes}"c -o -mtime +"${BACKUP_KEEP_DAYS}" \) \
+    -printf '%TY-%Tm-%Td %TH:%TM %s %p\n' 2>/dev/null | sort || true
+  find /root -xdev -maxdepth 1 -type d -name 'openclaw-snapshot-*' \
+    \( -mtime +"${BACKUP_KEEP_DAYS}" -o -size +"${warn_bytes}"c \) \
+    -printf '%TY-%Tm-%Td %TH:%TM %s %p\n' 2>/dev/null | sort || true
+}
+
+prune_backup_candidates() {
+  # Destructive backup pruning is opt-in. Keep disabled unless Ahmed explicitly approves
+  # this behavior, because these files may be rollback points for gateway updates.
+  if [[ "$BACKUP_PRUNE" != "1" ]]; then
+    echo "Backup pruning disabled. Set DISK_GUARD_PRUNE_BACKUPS=1 only after explicit approval."
+    return 0
+  fi
+
+  local warn_bytes
+  warn_bytes="$(backup_warn_bytes)"
+  echo "Pruning backup/snapshot candidates older than ${BACKUP_KEEP_DAYS} days or larger than ${BACKUP_WARN_GB}G."
+  find /root/openclaw-backups /root/.openclaw/backups -xdev \
+    \( -type f -name '*.tar.gz' -o -type d -name 'manual-update-*' \) \
+    \( -size +"${warn_bytes}"c -o -mtime +"${BACKUP_KEEP_DAYS}" \) \
+    -exec rm -rf --one-file-system {} + 2>/dev/null || true
+  find /root -xdev -maxdepth 1 -type d -name 'openclaw-snapshot-*' \
+    \( -mtime +"${BACKUP_KEEP_DAYS}" -o -size +"${warn_bytes}"c \) \
+    -exec rm -rf --one-file-system {} + 2>/dev/null || true
+}
+
+if [[ "${1:-}" == "--audit-backups" ]]; then
+  backup_report
+  exit 0
+fi
 
 USED_BEFORE="$(usage_pct)"
 if [[ "$USED_BEFORE" -lt "$THRESHOLD" ]]; then
@@ -49,6 +91,10 @@ LOG="$LOG_DIR/cleanup-$(date +%Y%m%d-%H%M%S).log"
   if command -v docker >/dev/null 2>&1; then
     docker system prune -af || true
   fi
+
+  echo "\nBackup/snapshot audit, no destructive pruning by default."
+  backup_report
+  prune_backup_candidates
 
   echo "\nAfter: $(df -hT "$ROOT" | awk 'NR==2 {print $3 " used, " $5 " used%, " $6 " free"}')"
   echo "Largest remaining /root items:"

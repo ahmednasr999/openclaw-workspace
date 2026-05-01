@@ -57,6 +57,9 @@ He prefers:
 - reusable workflows for recurring asks
 - automation only after output quality is proven on a real sample
 
+Executive role evaluation:
+- Salary remains a primary decision factor and should not be excluded or treated as already resolved when comparing GCC roles.
+
 If Ahmed asks repeatedly for the same workflow, the system failed and should be codified.
 
 ## Technical Setup
