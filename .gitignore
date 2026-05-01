@@ -71,3 +71,7 @@ media/inbound/*.docx
 
 # Runtime logs
 logs/openclaw-backup.log
+
+# Generated local content/media artifacts
+output/linkedin/
+archive/linkedin-healthcare-ai-roi-2026-05-01/
