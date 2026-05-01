@@ -1229,3 +1229,56 @@ Node.js v22.22.1
 ## Calendar - Today's Events
 *Calendar API unavailable (gog v0.12.0 bug - tracking fix)*
 
+=== Morning Brief - 2026-05-01 06:00 AM ===
+
+## Claude 2x Usage Reminder
+
+## Job Radar (from Tavily)
+[search-router] Tavily unavailable, falling back to local SearXNG: Tavily Search failed (401): {"detail":{"error":"Unauthorized: missing or invalid API key."}}
+## Sources
+
+_(provider: searxng)_
+
+- **Head Of Digital Transformation Jobs in UAE (May 2026) - Bayt.com**
+  https://www.bayt.com/en/uae/jobs/head-of-digital-transformation-jobs/
+  Summary: Elevate your career as the Head of Transformation, where you will drive comprehensive transformation initiatives across Cigna Healthcare Middle ...
+
+- **83 pmo Jobs in United Arab Emirates, January 2026 | Glassdoor**
+  https://www.glassdoor.com/Job/united-arab-emirates-pmo-jobs-SRCH_IL.0,20_IN6_KO21,24.htm
+  The top companies hiring now are Blue Book Global, Atlantis Dubai, Unique Group, Emirates Nuclear Energy Company, Julphar, BlackStone eIT, VaporVM, Dicetek LLC, Omnix International, Schneider Electric
+
+- **UAE Launches World’s Largest Solar and Battery Storage ...**
+  https://gccbusinesswatch.com/news/uae-launches-worlds-largest-solar-and-battery-storage-project-to-deliver-24-7-clean-energy/
+  Oct 27, 2025 · Abu Dhabi — The United Arab Emirates has unveiled the world’s largest integrated solar power and battery storage facility, designed to deliver 1 gigawatt (GW) of continuous renewable energy — a breakthrough that ensures clean power supply around the clock. The landmark project, repres...
+
+- **Sunil Karani - Dubai - LinkedIn**
+  https://ae.linkedin.com/in/sunilkarani
+  Head of Program Management | Digital Transformation & Portfolio Director | VP PMO | AED 350M+ Portfolios Delivered | Built Teams from 2 to 480 Resources ...
+
+- **Ohannes Bedrossian, PfMP, PgMP, PMP, ITIL, SAFe, PMO-CP**
+  https://ae.linkedin.com/in/ohannesbedrossian
+  Head of PMO (PMO Director) with 12+ years building and scaling PMOs and Enterprise PMOs (EPMOs) across the GCC and MENA. Over the past decade, I have centralized portfolio governance and directed 8 portfolios (600+ projects) valued at $90M+, spanning IT, construction, infrastructure, and digital tra...
+
+## Gmail - New Opportunities
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/root/.openclaw/workspace/scripts/gmail-scan.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+
+## Calendar - Today's Events
+*Calendar API unavailable (gog v0.12.0 bug - tracking fix)*
+
