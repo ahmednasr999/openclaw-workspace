@@ -39,7 +39,7 @@ def load_notion_token():
 
 # Cron log mappings (script path -> log file)
 LOG_PATHS = {
-    "daily-backup.sh": "/tmp/openclaw-backup.log",
+    "daily-backup.sh": "/root/.openclaw/workspace/logs/openclaw-backup.log",
     "archive-daily-notes.sh": "/tmp/openclaw-archive.log",
     "daily-snapshot.sh": "/tmp/openclaw-snapshot.log",
     "retention-backups.sh": "/tmp/openclaw-retention-backups.log",

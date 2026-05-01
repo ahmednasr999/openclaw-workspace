@@ -5,7 +5,7 @@ set -euo pipefail
 
 WORKSPACE="/root/.openclaw/workspace"
 LOCK_FILE="/tmp/daily-backup.lock"
-LOG_FILE="/tmp/openclaw-backup.log"
+LOG_FILE="/root/.openclaw/workspace/logs/openclaw-backup.log"
 MAX_RETRIES=3
 RETRY_WAIT=15
 
