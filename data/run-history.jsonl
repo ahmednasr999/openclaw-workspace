@@ -2099,3 +2099,4 @@
 {"agent": "jobs-source-linkedin-jobspy", "run_id": "bff59d90", "started": "2026-05-01T04:20:48.103630+02:00", "duration_ms": 1153818, "status": "success", "records": 368, "error": null}
 {"agent": "email-agent", "run_id": "c5984124", "started": "2026-05-01T08:03:57.279828+02:00", "duration_ms": 141137, "status": "success", "records": 14, "error": null}
 {"agent": "email-agent", "run_id": "023b50b3", "started": "2026-05-01T14:04:52.977838+02:00", "duration_ms": 122332, "status": "success", "records": 15, "error": null}
+{"agent": "email-agent", "run_id": "354d8d92", "started": "2026-05-01T20:03:12.551428+02:00", "duration_ms": 126705, "status": "success", "records": 14, "error": null}

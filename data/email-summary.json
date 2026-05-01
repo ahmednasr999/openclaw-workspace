@@ -2,149 +2,339 @@
   "meta": {
     "agent": "email-agent",
     "version": "3.0.0",
-    "generated_at": "2026-05-01T14:04:52.977174+02:00",
-    "duration_ms": 122331,
+    "generated_at": "2026-05-01T20:03:12.548651+02:00",
+    "duration_ms": 126702,
     "ttl_hours": 4,
     "status": "success",
     "error": null,
-    "run_id": "023b50b3",
+    "run_id": "354d8d92",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
     "status": "ok",
-    "scan_time": "2026-05-01T14:03:10.186895+02:00",
-    "total_scanned": 33,
+    "scan_time": "2026-05-01T20:01:44.471495+02:00",
+    "total_scanned": 64,
     "by_category": {
-      "interview_invite": 1,
-      "recruiter_reach": 1,
+      "interview_invite": 2,
+      "recruiter_reach": 4,
       "application_ack": 0,
       "rejection": 0,
-      "assessment": 0,
+      "assessment": 2,
       "follow_up_needed": 0,
-      "other": 32
+      "other": 57
     },
     "interview_invites": [
       {
-        "id": "355869",
-        "from": "Miral Talent Acquisition <talent@miral.ae>",
-        "subject": "=?Windows-1252?Q?Thank_You_for_Applying_to_Facilities_Asset_Management_Di?=\r\n =?Windows-1252?Q?rector_(FM_Operations)_=96_An_Update_on_Your_Application?=\r\n =?Windows-1252?Q?_at_Miral_Experiences?=",
-        "date": "Fri, 1 May 2026 10:12:58 +0000",
+        "id": "355907",
+        "from": "Rob Howard <rob@innovatingwithai.com>",
+        "subject": "AI outperformed ER doctors with a model that's already obsolete",
+        "date": "Fri, 01 May 2026 14:06:42 +0000 (UTC)",
         "unread": true,
         "priority": "HIGH",
-        "score": 10,
-        "pipeline_match": "Miral Experiences"
+        "score": 6,
+        "pipeline_match": null
+      },
+      {
+        "id": "355947",
+        "from": "GulfTalent Jobs <jobs@gulftalent.com>",
+        "subject": "RTC-1 needs an Offshore Project Manager",
+        "date": "Fri, 01 May 2026 12:24:33 -0500",
+        "unread": true,
+        "priority": "HIGH",
+        "score": 5,
+        "pipeline_match": null
       }
     ],
     "recruiter_messages": [
       {
-        "id": "355869",
-        "from": "Miral Talent Acquisition <talent@miral.ae>",
-        "subject": "=?Windows-1252?Q?Thank_You_for_Applying_to_Facilities_Asset_Management_Di?=\r\n =?Windows-1252?Q?rector_(FM_Operations)_=96_An_Update_on_Your_Application?=\r\n =?Windows-1252?Q?_at_Miral_Experiences?=",
-        "date": "Fri, 1 May 2026 10:12:58 +0000",
+        "id": "355891",
+        "from": "Stock Analysis <contact@stockanalysis.com>",
+        "subject": "Market Bullets: Apple gains 3% on strong iPhone sales, Blue Owl\r\n rockets due to SpaceX, SanDisk drops on earnings",
+        "date": "Fri, 01 May 2026 12:59:13 +0000 (UTC)",
+        "unread": true,
+        "priority": "HIGH",
+        "score": 7,
+        "pipeline_match": "SAP"
+      },
+      {
+        "id": "355909",
+        "from": "Aisha from foundit <jobmessenger@monstergulf.com>",
+        "subject": "Job recommendations for you | foundit (Monster)",
+        "date": "Fri, 1 May 2026 19:46:13 +0530 (IST)",
+        "unread": true,
+        "priority": "HIGH",
+        "score": 5,
+        "pipeline_match": null
+      },
+      {
+        "id": "355944",
+        "from": "\"Series Business from The Ankler\" <newsletters@mail.theankler.com> ",
+        "subject": "=?utf-8?Q?TV_in_3:_The_Messy_Truth_Behind_Amazon?=\r\n  =?utf-8?Q?=e2=80=99s_'Apprentice'_Fantasy?=",
+        "date": "Sat, 02 May 2026 03:23:36 +1000",
         "unread": true,
         "priority": "HIGH",
         "score": 10,
-        "pipeline_match": "Miral Experiences"
+        "pipeline_match": "SAP"
+      },
+      {
+        "id": "355947",
+        "from": "GulfTalent Jobs <jobs@gulftalent.com>",
+        "subject": "RTC-1 needs an Offshore Project Manager",
+        "date": "Fri, 01 May 2026 12:24:33 -0500",
+        "unread": true,
+        "priority": "HIGH",
+        "score": 5,
+        "pipeline_match": null
       }
     ],
     "application_acks": [],
     "rejections": [],
-    "assessments": [],
+    "assessments": [
+      {
+        "id": "355900",
+        "from": "Gaurav Vij <gaurav@heyneo.so>",
+        "subject": "Qwen 3.6 27B Float 16 vs 8 bit vs 4 bit models evaluated by Neo!",
+        "date": "Fri, 1 May 2026 13:47:30 +0000",
+        "unread": true,
+        "priority": "MEDIUM",
+        "score": 2,
+        "pipeline_match": null
+      },
+      {
+        "id": "355929",
+        "from": "Priyanka | Informalnewz <info@host.discountwalas.com>",
+        "subject": "05/01/2026 - Top 5 stories",
+        "date": "Fri, 01 May 2026 16:12:09 +0000",
+        "unread": true,
+        "priority": "MEDIUM",
+        "score": 2,
+        "pipeline_match": null
+      }
+    ],
     "follow_ups_needed": [],
-    "actionable_count": 1,
+    "actionable_count": 7,
     "hot_alerts": [
       {
-        "subject": "=?Windows-1252?Q?Thank_You_for_Applying_to_Facilities_Asset_Management_Di?=\r\n =?Windows-1252?Q?rector_(FM_Operations)_=96_An_Update_on_Your_Application?=\r\n =?Windows-1252?Q?_at_Miral_Experiences?=",
-        "from": "Miral Talent Acquisition <talent@miral.ae>",
+        "subject": "Market Bullets: Apple gains 3% on strong iPhone sales, Blue Owl\r\n rockets due to SpaceX, SanDisk drops on earnings",
+        "from": "Stock Analysis <contact@stockanalysis.com>",
         "priority": "HIGH",
-        "pipeline_match": "Miral Experiences"
+        "pipeline_match": "SAP"
+      },
+      {
+        "subject": "AI outperformed ER doctors with a model that's already obsolete",
+        "from": "Rob Howard <rob@innovatingwithai.com>",
+        "priority": "HIGH",
+        "pipeline_match": null
+      },
+      {
+        "subject": "Job recommendations for you | foundit (Monster)",
+        "from": "Aisha from foundit <jobmessenger@monstergulf.com>",
+        "priority": "HIGH",
+        "pipeline_match": null
+      },
+      {
+        "subject": "=?utf-8?Q?TV_in_3:_The_Messy_Truth_Behind_Amazon?=\r\n  =?utf-8?Q?=e2=80=99s_'Apprentice'_Fantasy?=",
+        "from": "\"Series Business from The Ankler\" <newsletters@mail.theankler.com> ",
+        "priority": "HIGH",
+        "pipeline_match": "SAP"
+      },
+      {
+        "subject": "RTC-1 needs an Offshore Project Manager",
+        "from": "GulfTalent Jobs <jobs@gulftalent.com>",
+        "priority": "HIGH",
+        "pipeline_match": null
       }
     ],
     "signals": [
       {
-        "company": "Miral Experiences",
-        "signal": "interview_signal",
-        "subject": "=?Windows-1252?Q?Thank_You_for_Applying_to_Facilities_Asset_Management_Di?=\r\n =?Windows-1252?Q?rector_(FM_Operations)_=96_An_Update_on_Your_Applicatio",
-        "sender": "Miral Talent Acquisition <talent@miral.ae>",
+        "company": "SAP",
+        "signal": "recruiter_email",
+        "subject": "Market Bullets: Apple gains 3% on strong iPhone sales, Blue Owl\r\n rockets due to SpaceX, SanDisk drops on earnings",
+        "sender": "Stock Analysis <contact@stockanalysis.com>",
         "job_ids": [
-          "linkedin-li-4379840970",
-          "linkedin-li-4391732874",
-          "linkedin-li-4391730893",
-          "linkedin-li-4376069893",
-          "linkedin-li-4385930340",
-          "linkedin-li-4377189515",
-          "linkedin-li-4385257294",
-          "4379840970"
+          "indeed-in-b2195113ff678ef7",
+          "indeed-in-b7591ff66cc5a732",
+          "linkedin_jobspy-li-4380812358",
+          "linkedin-li-4349578134",
+          "linkedin-li-4394078700",
+          "linkedin-li-4380812358",
+          "linkedin-li-4362170335",
+          "linkedin-li-4362562926",
+          "linkedin-li-4385935615",
+          "linkedin-li-4353703506",
+          "app-005",
+          "cv-5fbf4a9aa7",
+          "linkedin-li-4385294885"
+        ],
+        "score": 7,
+        "timestamp": "2026-05-01T20:01:44.146924+02:00"
+      },
+      {
+        "company": "SAP",
+        "signal": "recruiter_email",
+        "subject": "=?utf-8?Q?TV_in_3:_The_Messy_Truth_Behind_Amazon?=\r\n  =?utf-8?Q?=e2=80=99s_'Apprentice'_Fantasy?=",
+        "sender": "\"Series Business from The Ankler\" <newsletters@mail.theankler.com> ",
+        "job_ids": [
+          "indeed-in-b2195113ff678ef7",
+          "indeed-in-b7591ff66cc5a732",
+          "linkedin_jobspy-li-4380812358",
+          "linkedin-li-4349578134",
+          "linkedin-li-4394078700",
+          "linkedin-li-4380812358",
+          "linkedin-li-4362170335",
+          "linkedin-li-4362562926",
+          "linkedin-li-4385935615",
+          "linkedin-li-4353703506",
+          "app-005",
+          "cv-5fbf4a9aa7",
+          "linkedin-li-4385294885"
         ],
         "score": 10,
-        "timestamp": "2026-05-01T14:03:10.104900+02:00"
-      }
-    ],
-    "pipeline_updates": [
-      {
-        "company": "Miral Experiences",
-        "action": "interview",
-        "email": "=?Windows-1252?Q?Thank_You_for_Applying_to_Facilities_Asset_"
+        "timestamp": "2026-05-01T20:01:44.456728+02:00"
       }
     ],
     "llm_analysis": {
       "actionable_emails": [
         {
-          "id": "355869",
-          "subject": "Thank You for Applying to Facilities Asset Management Director (FM Operations) - An Update on Your Application at Miral Experiences",
-          "from": "Miral Talent Acquisition <talent@miral.ae>",
-          "date": "Fri, 1 May 2026 10:12:58 +0000",
+          "id": "355891",
+          "subject": "Market Bullets: Apple gains 3% on strong iPhone sales, Blue Owl\r\n rockets due to SpaceX, SanDisk drops on earnings",
+          "from": "Stock Analysis <contact@stockanalysis.com>",
+          "date": "Fri, 01 May 2026 12:59:13 +0000 (UTC)",
           "category": "recruiter_reach",
           "urgency": "low",
-          "intent": "The sender is informing Ahmed that Miral selected another candidate.",
+          "intent": "The sender is sharing a market-news newsletter, not a recruiter opportunity.",
+          "action": "no_action",
+          "response_deadline": "when convenient",
+          "notes": "Classification appears false-positive."
+        },
+        {
+          "id": "355900",
+          "subject": "Qwen 3.6 27B Float 16 vs 8 bit vs 4 bit models evaluated by Neo!",
+          "from": "Gaurav Vij <gaurav@heyneo.so>",
+          "date": "Fri, 1 May 2026 13:47:30 +0000",
+          "category": "assessment",
+          "urgency": "low",
+          "intent": "The sender is sharing an AI model evaluation case study.",
           "action": "read_and_file",
           "response_deadline": "when convenient",
-          "notes": "False positive classification: rejection, no response needed."
+          "notes": "Not a candidate assessment."
+        },
+        {
+          "id": "355907",
+          "subject": "AI outperformed ER doctors with a model that's already obsolete",
+          "from": "Rob Howard <rob@innovatingwithai.com>",
+          "date": "Fri, 01 May 2026 14:06:42 +0000 (UTC)",
+          "category": "interview_invite",
+          "urgency": "low",
+          "intent": "The sender is sharing an AI healthcare newsletter article.",
+          "action": "read_and_file",
+          "response_deadline": "when convenient",
+          "notes": "No interview proof in excerpt."
+        },
+        {
+          "id": "355909",
+          "subject": "Job recommendations for you | foundit (Monster)",
+          "from": "Aisha from foundit <jobmessenger@monstergulf.com>",
+          "date": "Fri, 1 May 2026 19:46:13 +0530 (IST)",
+          "category": "recruiter_reach",
+          "urgency": "medium",
+          "intent": "The sender is sharing automated job recommendations matching Ahmed's profile.",
+          "action": "read_and_file",
+          "response_deadline": "1 week",
+          "notes": "Review Jeddah PMO/project control role."
+        },
+        {
+          "id": "355929",
+          "subject": "05/01/2026 - Top 5 stories",
+          "from": "Priyanka | Informalnewz <info@host.discountwalas.com>",
+          "date": "Fri, 01 May 2026 16:12:09 +0000",
+          "category": "assessment",
+          "urgency": "low",
+          "intent": "The sender is sharing a daily news digest.",
+          "action": "no_action",
+          "response_deadline": "when convenient",
+          "notes": "Not a candidate assessment."
+        },
+        {
+          "id": "355944",
+          "subject": "=?utf-8?Q?TV_in_3:_The_Messy_Truth_Behind_Amazon?=\r\n  =?utf-8?Q?=e2=80=99s_'Apprentice'_Fantasy?=",
+          "from": "\"Series Business from The Ankler\" <newsletters@mail.theankler.com> ",
+          "date": "Sat, 02 May 2026 03:23:36 +1000",
+          "category": "recruiter_reach",
+          "urgency": "low",
+          "intent": "The sender is sharing an entertainment industry newsletter.",
+          "action": "no_action",
+          "response_deadline": "when convenient",
+          "notes": "Classification appears false-positive."
+        },
+        {
+          "id": "355947",
+          "subject": "RTC-1 needs an Offshore Project Manager",
+          "from": "GulfTalent Jobs <jobs@gulftalent.com>",
+          "date": "Fri, 01 May 2026 12:24:33 -0500",
+          "category": "recruiter_reach",
+          "urgency": "medium",
+          "intent": "The sender is sharing automated GulfTalent job matches for Ahmed's profile.",
+          "action": "read_and_file",
+          "response_deadline": "1 week",
+          "notes": "Review UAE/Saudi project roles."
         }
       ],
       "summary": {
-        "total_actionable": 1,
+        "total_actionable": 7,
         "critical_count": 0,
         "requires_interview_prep": false,
         "requires_assessment": false,
-        "recruiter_top_opportunities": [],
-        "top_priority": null,
-        "daily_focus": "No action needed on this email; focus today on higher-fit Gulf leadership opportunities."
+        "recruiter_top_opportunities": [
+          "foundit: Project Control Department Manager, Jeddah",
+          "GulfTalent: Offshore Project Manager, UAE",
+          "GulfTalent: Senior IT Project Manager - Digital Transformation, Dubai"
+        ],
+        "top_priority": "355947",
+        "daily_focus": "Ignore false positives and review only the GulfTalent/foundit job matches for strategic GCC fit."
       }
     }
   },
   "kpi": {
-    "emails_processed": 33,
-    "actionable": 1,
-    "interviews_detected": 1,
-    "recruiter_messages": 1,
-    "unread_actionable": 1
+    "emails_processed": 64,
+    "actionable": 7,
+    "interviews_detected": 2,
+    "recruiter_messages": 4,
+    "unread_actionable": 7
   },
   "recommendations": [
     {
-      "id": "rec-023b50b3-0",
+      "id": "rec-354d8d92-0",
       "action": "respond_immediately",
-      "target": "1 interview invite(s)",
+      "target": "2 interview invite(s)",
       "reason": "Interview invitations require prompt response",
       "urgency": "critical",
-      "timestamp": "2026-05-01T14:04:52.977026+02:00"
+      "timestamp": "2026-05-01T20:03:12.548417+02:00"
     },
     {
-      "id": "rec-023b50b3-1",
+      "id": "rec-354d8d92-1",
       "action": "review_and_respond",
-      "target": "1 recruiter message(s)",
+      "target": "4 recruiter message(s)",
       "reason": "Recruiter outreach could lead to opportunities",
       "urgency": "high",
-      "timestamp": "2026-05-01T14:04:52.977041+02:00"
+      "timestamp": "2026-05-01T20:03:12.548439+02:00"
     },
     {
-      "id": "rec-023b50b3-2",
+      "id": "rec-354d8d92-2",
       "action": "check_inbox",
-      "target": "1 unread actionable email(s)",
+      "target": "7 unread actionable email(s)",
       "reason": "Unread emails need attention",
       "urgency": "high",
-      "timestamp": "2026-05-01T14:04:52.977044+02:00"
+      "timestamp": "2026-05-01T20:03:12.548444+02:00"
+    },
+    {
+      "id": "rec-354d8d92-3",
+      "action": "complete_assessment",
+      "target": "2 assessment(s)",
+      "reason": "Assessments have deadlines",
+      "urgency": "high",
+      "timestamp": "2026-05-01T20:03:12.548447+02:00"
     }
   ]
 }
