@@ -21,6 +21,7 @@ Use this skill for Ahmed's executive content workflow when the task concerns con
 - Never use the reference image as a literal canvas with new text pasted over old text. Remake a clean card in the same direction. Reject any old-text contamination, overlapping text, generic infographic boxes, dense labels, unreadable small copy, or accidental UI/poster artifacts.
 - Done means an inspected candidate exists, passes the gate, and has a side-by-side comparison or equivalent visual evidence. Nudging another agent, generating a file, or receiving a successful tool response is not done.
 - For premium card production, prefer the image-to-UI workflow in `docs/content-claw/image-to-ui-premium-card-workflow.md`: use image generation/reference for taste, then controlled code/composition for typography, spacing, footer, and mobile fidelity when raw generation is not precise enough.
+- For posts explaining an AI agent, automation, or operating model, use `docs/content-claw/ai-agent-workflow-card-template.md` for the content anatomy, then compress it into the 9:16 execution-card format. Do not copy dense horizontal dashboard layouts unless Ahmed explicitly asks.
 
 ## Premium Visual Quality Gate
 
