@@ -1,144 +1,48 @@
 {
   "status": "ok",
-  "scan_time": "2026-05-01T20:01:44.471495+02:00",
-  "total_scanned": 64,
+  "scan_time": "2026-05-02T14:01:10.168006+02:00",
+  "total_scanned": 21,
   "by_category": {
-    "interview_invite": 2,
-    "recruiter_reach": 4,
+    "interview_invite": 0,
+    "recruiter_reach": 1,
     "application_ack": 0,
     "rejection": 0,
-    "assessment": 2,
+    "assessment": 0,
     "follow_up_needed": 0,
-    "other": 57
+    "other": 20
   },
-  "interview_invites": [
-    {
-      "id": "355907",
-      "from": "Rob Howard <rob@innovatingwithai.com>",
-      "subject": "AI outperformed ER doctors with a model that's already obsolete",
-      "date": "Fri, 01 May 2026 14:06:42 +0000 (UTC)",
-      "unread": true,
-      "priority": "HIGH",
-      "score": 6,
-      "pipeline_match": null
-    },
-    {
-      "id": "355947",
-      "from": "GulfTalent Jobs <jobs@gulftalent.com>",
-      "subject": "RTC-1 needs an Offshore Project Manager",
-      "date": "Fri, 01 May 2026 12:24:33 -0500",
-      "unread": true,
-      "priority": "HIGH",
-      "score": 5,
-      "pipeline_match": null
-    }
-  ],
+  "interview_invites": [],
   "recruiter_messages": [
     {
-      "id": "355891",
-      "from": "Stock Analysis <contact@stockanalysis.com>",
-      "subject": "Market Bullets: Apple gains 3% on strong iPhone sales, Blue Owl\r\n rockets due to SpaceX, SanDisk drops on earnings",
-      "date": "Fri, 01 May 2026 12:59:13 +0000 (UTC)",
+      "id": "356002",
+      "from": "Tools World - =?utf-8?b?2LnZgNin2YTZhSDYp9mE2LnZgNiv2K8=?=\r\n\t<sales@toolsworldeg.com>",
+      "subject": "PEDROLLO 1470 -\r\n =?utf-8?b?2KrYtNmD2YrZhNipINmF2KrZhtmI2LnZhyDZhdmGINmF2LbYrtin2Kog2Yg=?=\r\n =?utf-8?b?INi32YTZhdio2KfYqiDYqNmK2K/YsdmK2YTZhNmIINin2YTYpdmK2LfYp9mE2YrZhw==?=\r\n ( =?utf-8?b?2LHZiNin2LPYqC8g2YXYp9ihINmG2LjZitmB2KkgLw==?=\r\n =?utf-8?b?INix2YHYuSAp2YXYqtmI2YHYsdmHINmE2K/ZiiDZhdi52KfYsdi2INmI2LPZiNmC?=\r\n =?utf-8?b?INi52KfZhNmFINin2YTYudiv2K8g2KfZhNin2YTZg9iq2LHZiNmG2Yo=?=",
+      "date": "Sat, 02 May 2026 08:53:38 +0000",
       "unread": true,
       "priority": "HIGH",
       "score": 7,
       "pipeline_match": "SAP"
-    },
-    {
-      "id": "355909",
-      "from": "Aisha from foundit <jobmessenger@monstergulf.com>",
-      "subject": "Job recommendations for you | foundit (Monster)",
-      "date": "Fri, 1 May 2026 19:46:13 +0530 (IST)",
-      "unread": true,
-      "priority": "HIGH",
-      "score": 5,
-      "pipeline_match": null
-    },
-    {
-      "id": "355944",
-      "from": "\"Series Business from The Ankler\" <newsletters@mail.theankler.com> ",
-      "subject": "=?utf-8?Q?TV_in_3:_The_Messy_Truth_Behind_Amazon?=\r\n  =?utf-8?Q?=e2=80=99s_'Apprentice'_Fantasy?=",
-      "date": "Sat, 02 May 2026 03:23:36 +1000",
-      "unread": true,
-      "priority": "HIGH",
-      "score": 10,
-      "pipeline_match": "SAP"
-    },
-    {
-      "id": "355947",
-      "from": "GulfTalent Jobs <jobs@gulftalent.com>",
-      "subject": "RTC-1 needs an Offshore Project Manager",
-      "date": "Fri, 01 May 2026 12:24:33 -0500",
-      "unread": true,
-      "priority": "HIGH",
-      "score": 5,
-      "pipeline_match": null
     }
   ],
   "application_acks": [],
   "rejections": [],
-  "assessments": [
-    {
-      "id": "355900",
-      "from": "Gaurav Vij <gaurav@heyneo.so>",
-      "subject": "Qwen 3.6 27B Float 16 vs 8 bit vs 4 bit models evaluated by Neo!",
-      "date": "Fri, 1 May 2026 13:47:30 +0000",
-      "unread": true,
-      "priority": "MEDIUM",
-      "score": 2,
-      "pipeline_match": null
-    },
-    {
-      "id": "355929",
-      "from": "Priyanka | Informalnewz <info@host.discountwalas.com>",
-      "subject": "05/01/2026 - Top 5 stories",
-      "date": "Fri, 01 May 2026 16:12:09 +0000",
-      "unread": true,
-      "priority": "MEDIUM",
-      "score": 2,
-      "pipeline_match": null
-    }
-  ],
+  "assessments": [],
   "follow_ups_needed": [],
-  "actionable_count": 7,
+  "actionable_count": 1,
   "hot_alerts": [
     {
-      "subject": "Market Bullets: Apple gains 3% on strong iPhone sales, Blue Owl\r\n rockets due to SpaceX, SanDisk drops on earnings",
-      "from": "Stock Analysis <contact@stockanalysis.com>",
+      "subject": "PEDROLLO 1470 -\r\n =?utf-8?b?2KrYtNmD2YrZhNipINmF2KrZhtmI2LnZhyDZhdmGINmF2LbYrtin2Kog2Yg=?=\r\n =?utf-8?b?INi32YTZhdio2KfYqiDYqNmK2K/YsdmK2YTZhNmIINin2YTYpdmK2LfYp9mE2YrZhw==?=\r\n ( =?utf-8?b?2LHZiNin2LPYqC8g2YXYp9ihINmG2LjZitmB2KkgLw==?=\r\n =?utf-8?b?INix2YHYuSAp2YXYqtmI2YHYsdmHINmE2K/ZiiDZhdi52KfYsdi2INmI2LPZiNmC?=\r\n =?utf-8?b?INi52KfZhNmFINin2YTYudiv2K8g2KfZhNin2YTZg9iq2LHZiNmG2Yo=?=",
+      "from": "Tools World - =?utf-8?b?2LnZgNin2YTZhSDYp9mE2LnZgNiv2K8=?=\r\n\t<sales@toolsworldeg.com>",
       "priority": "HIGH",
       "pipeline_match": "SAP"
-    },
-    {
-      "subject": "AI outperformed ER doctors with a model that's already obsolete",
-      "from": "Rob Howard <rob@innovatingwithai.com>",
-      "priority": "HIGH",
-      "pipeline_match": null
-    },
-    {
-      "subject": "Job recommendations for you | foundit (Monster)",
-      "from": "Aisha from foundit <jobmessenger@monstergulf.com>",
-      "priority": "HIGH",
-      "pipeline_match": null
-    },
-    {
-      "subject": "=?utf-8?Q?TV_in_3:_The_Messy_Truth_Behind_Amazon?=\r\n  =?utf-8?Q?=e2=80=99s_'Apprentice'_Fantasy?=",
-      "from": "\"Series Business from The Ankler\" <newsletters@mail.theankler.com> ",
-      "priority": "HIGH",
-      "pipeline_match": "SAP"
-    },
-    {
-      "subject": "RTC-1 needs an Offshore Project Manager",
-      "from": "GulfTalent Jobs <jobs@gulftalent.com>",
-      "priority": "HIGH",
-      "pipeline_match": null
     }
   ],
   "signals": [
     {
       "company": "SAP",
       "signal": "recruiter_email",
-      "subject": "Market Bullets: Apple gains 3% on strong iPhone sales, Blue Owl\r\n rockets due to SpaceX, SanDisk drops on earnings",
-      "sender": "Stock Analysis <contact@stockanalysis.com>",
+      "subject": "PEDROLLO 1470 -\r\n =?utf-8?b?2KrYtNmD2YrZhNipINmF2KrZhtmI2LnZhyDZhdmGINmF2LbYrtin2Kog2Yg=?=\r\n =?utf-8?b?INi32YTZhdio2KfYqiDYqNmK2K/YsdmK2YTZhNmIINin2YT",
+      "sender": "Tools World - =?utf-8?b?2LnZgNin2YTZhSDYp9mE2LnZgNiv2K8=?=\r\n\t<sales@toolsworldeg.com>",
       "job_ids": [
         "indeed-in-b2195113ff678ef7",
         "indeed-in-b7591ff66cc5a732",
@@ -155,30 +59,7 @@
         "linkedin-li-4385294885"
       ],
       "score": 7,
-      "timestamp": "2026-05-01T20:01:44.146924+02:00"
-    },
-    {
-      "company": "SAP",
-      "signal": "recruiter_email",
-      "subject": "=?utf-8?Q?TV_in_3:_The_Messy_Truth_Behind_Amazon?=\r\n  =?utf-8?Q?=e2=80=99s_'Apprentice'_Fantasy?=",
-      "sender": "\"Series Business from The Ankler\" <newsletters@mail.theankler.com> ",
-      "job_ids": [
-        "indeed-in-b2195113ff678ef7",
-        "indeed-in-b7591ff66cc5a732",
-        "linkedin_jobspy-li-4380812358",
-        "linkedin-li-4349578134",
-        "linkedin-li-4394078700",
-        "linkedin-li-4380812358",
-        "linkedin-li-4362170335",
-        "linkedin-li-4362562926",
-        "linkedin-li-4385935615",
-        "linkedin-li-4353703506",
-        "app-005",
-        "cv-5fbf4a9aa7",
-        "linkedin-li-4385294885"
-      ],
-      "score": 10,
-      "timestamp": "2026-05-01T20:01:44.456728+02:00"
+      "timestamp": "2026-05-02T14:01:10.121076+02:00"
     }
   ]
 }

@@ -47,3 +47,17 @@ Fail fast and iterate if any item fails. Do not tell Ahmed it is done until the 
 ## Skillify Trigger
 
 If a content workflow fails, repeats, or requires Ahmed to babysit, convert it into a durable CMO rule, script, checklist, or test under the NASR Skillify Protocol.
+
+## Learned Improvements
+
+### 2026-05-02 - Weekly Skill Tune-Up
+
+**Reviewed lessons:**
+- 2026-04-29, CMO visuals followed the reference direction but still fell below reference-level craft.
+- 2026-04-23, premium LinkedIn visuals failed when copy landed on Ahmed's face, backgrounds were generic, or the concept stayed in a disliked direction.
+- 2026-04-21, LinkedIn visuals were selected by date/file availability instead of semantic match to the post thesis.
+
+**Improvement recommendation:**
+Before any premium LinkedIn visual is marked ready, run a three-part rejection gate: thesis match, platform-native composition, and reference-level craft parity. Reject candidates that merely imitate the template, look cheaper than the reference, use generic AI portrait logic, place copy over Ahmed's face/suit, or lack a clear execution metaphor tied to the post. If Ahmed dislikes the concept, stop polishing that direction and propose 2-3 fresh concepts instead.
+
+**Checklist status:** `eval/checklist.md` is not present for this skill. Until one exists, use `docs/content-claw/premium-linkedin-visual-quality-gate.md` plus the rejection gate above.

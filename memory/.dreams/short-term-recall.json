@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-02T02:40:26.762Z",
+  "updatedAt": "2026-05-02T07:01:08.342Z",
   "entries": {
     "memory:memory/archives/2026-03-07.md:29:56": {
       "key": "memory:memory/archives/2026-03-07.md:29:56",
@@ -2449,6 +2449,68 @@
         "py-compile",
         "daily-run.py",
         "preflight-jobspy-path"
+      ]
+    },
+    "memory:memory/2026-05-01.md:50:70": {
+      "key": "memory:memory/2026-05-01.md:50:70",
+      "path": "memory/2026-05-01.md",
+      "startLine": 50,
+      "endLine": 70,
+      "source": "memory",
+      "snippet": "- Follow-up needed after next 05:00 run: verify delivery flag, Telegram delivery, ZIP creation, and that the longer timeout prevents end-of-run interruption. ### Kernel/CVE watch and system health - Kernel watch materially changed from “patched kernel not yet available” to resolved after later checks: - running kernel `6.17.0-23-generic` - relevant packages installed/candidate at `6.17.0-23.23` - no pending kernel upgrade for relevant packages - `/etc/modprobe.d/disable-algif.conf` exists with `install algif_aead /bin/false` - `algif_aead` module not loaded - port 631 has no listeners - Conclusion: CVE kernel watch appears resolved, with mitigations still safe. - OpenClaw health",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-02T06:15:59.145Z",
+      "lastRecalledAt": "2026-05-02T06:15:59.145Z",
+      "queryHashes": [
+        "791cbdafcc50"
+      ],
+      "recallDays": [
+        "2026-05-02"
+      ],
+      "conceptTags": [
+        "follow-up",
+        "end-of-run",
+        "kernel/cve",
+        "6.17.0-23-generic",
+        "installed/candidate",
+        "6.17.0-23.23",
+        "algif-aead",
+        "bin/false"
+      ]
+    },
+    "memory:memory/archive/2026-03/2026-03-19.md:290:309": {
+      "key": "memory:memory/archive/2026-03/2026-03-19.md:290:309",
+      "path": "memory/archive/2026-03/2026-03-19.md",
+      "startLine": 290,
+      "endLine": 309,
+      "source": "memory",
+      "snippet": "- Three ideas worth stealing: tiered loading, auto lessons-learned, context audit trail ### OpenViking-Inspired Upgrades - ALL THREE BUILT (Parallel Sonnet Sub-Agents) 1. **Tiered Context Loading** - Created `CONTEXT-TIERS.md` with L0/L1/L2 strategy. Updated AGENTS.md + MEMORY.md with loading rules. Estimated 30-50% token savings. 2. **Auto Lessons-Learned** - Created `scripts/auto-lessons-learned.py` + `skills/cron/auto-lessons/SKILL.md`. Daily cron at 11 PM Cairo. Replaces disabled self-improvement hook (was 12x/session, now 1x/day). Found 6 significant sessions with 127 exchanges today. 3. **Context Audit Trail** - Created `memory/context-traces/` with README.md + _template.md. Updated A",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-02T07:01:08.342Z",
+      "lastRecalledAt": "2026-05-02T07:01:08.342Z",
+      "queryHashes": [
+        "8072fab39a6e"
+      ],
+      "recallDays": [
+        "2026-05-02"
+      ],
+      "conceptTags": [
+        "lessons-learned",
+        "openviking-inspired",
+        "sub-agents",
+        "context-tiers.md",
+        "l0/l1/l2",
+        "agents.md",
+        "memory.md",
+        "30-50"
       ]
     }
   }

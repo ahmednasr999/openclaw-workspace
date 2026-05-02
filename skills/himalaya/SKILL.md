@@ -216,3 +216,17 @@ RUST_LOG=trace RUST_BACKTRACE=1 himalaya envelope list
 - Message IDs are relative to the current folder; re-list after folder changes.
 - For composing rich emails with attachments, use MML syntax (see `references/message-composition.md`).
 - Store passwords securely using `pass`, system keyring, or a command that outputs the password.
+
+## Learned Improvements
+
+### 2026-05-02 - Weekly Skill Tune-Up
+
+**Reviewed lessons:**
+- 2026-04-25, email notifications were over-alerted before reading the source messages.
+- 2026-04-25, generic application acknowledgements and job alerts were mislabeled as interview invites.
+- 2026-04-21, vendor SEO and marketing emails were incorrectly treated as interview activity.
+
+**Improvement recommendation:**
+For job-search or recruiting email triage, Himalaya is only the retrieval layer. Always read the message body before escalating, then classify the email as one of: interview invite, recruiter screen, application acknowledgement, job alert, rejection, or newsletter/noise. Only mark an alert critical when the body shows a real interview/recruiter action, deadline, assessment, or direct hiring-team request. Subject lines, sender names, and notification metadata are not enough evidence.
+
+**Checklist status:** `eval/checklist.md` is not present for this skill. Until one exists, use a binary triage check: body read, sender intent verified, category assigned, action/deadline identified, and interruption level justified.

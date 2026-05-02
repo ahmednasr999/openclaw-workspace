@@ -634,3 +634,17 @@ Run: `pip install python-jobspy>=1.1.82`
 | International search | `country_indeed: "germany"` |
 | More results | `results_wanted: 25` |
 | Paginate results | `offset: 25` (after first 25) |
+
+## Learned Improvements
+
+### 2026-05-02 - Weekly Skill Tune-Up
+
+**Reviewed lessons:**
+- 2026-04-25, JobZoom resurfaced roles Ahmed had already applied to because prior-day applied jobs were not persistently excluded before scoring.
+- 2026-04-25, job alerts needed analysis rather than raw forwarding or stage mislabeling.
+- 2026-04-25, job/interview alerts should only interrupt when the source content truly warrants it.
+
+**Improvement recommendation:**
+For any recurring job-search workflow built on this skill, load a persistent applied-jobs ledger before scoring or ranking. Exclude previously applied jobs by URL, job ID, and normalized title/company/location signature before Pass 1 or any shortlist generation. When Ahmed confirms applications were completed, write the applied roles back to that ledger so future runs do not resurface them. Keep run reports explicit about counts before exclusions, after applied-ledger filtering, after dedup, and after scoring.
+
+**Checklist status:** `eval/checklist.md` is not present for this skill. Until one exists, use a binary job-search QA check: source count captured, applied ledger loaded, prior applications excluded, same-run duplicates removed, descriptions inspected where required, and report counts match the filtered data.

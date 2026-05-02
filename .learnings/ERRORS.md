@@ -612,3 +612,13 @@ For JobZoom DB checks, inspect `.tables` or use the known current schema: `runs`
 - What happened: A read-only heartbeat check used `printf '--- crontab backup line ---\n'`, which failed with `printf: --: invalid option` under this shell.
 - Impact: The command still ran subsequent checks, but the section header emitted an avoidable error.
 - Do differently: Use `printf '%s\n' '--- heading ---'` or `echo` for headings that begin with dashes.
+
+---
+
+## 2026-05-02
+### What Happened
+During the JobZoom daily run, the pipeline completed scraping, scoring, CV generation, and report generation, but its legacy `openclaw message send` subprocess hung at ~100% CPU for each Telegram delivery step.
+### Impact
+The script marked delivery as failed until I killed the stuck subprocesses, sent the summary/report/CV bundle with the first-class `message` tool, and manually marked `runs.report_delivered=1` after confirmed message IDs.
+### Fix
+For JobZoom delivery failures, prefer the first-class `message` tool with files copied under `/root/.openclaw/media`. Avoid relying on legacy CLI `openclaw message send` from inside long-running scripts unless it has a timeout or is replaced with direct tool/plugin delivery.

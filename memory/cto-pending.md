@@ -1,6 +1,8 @@
-# CTO Pending Issues — Updated 2026-05-01 07:48 Cairo
+# CTO Pending Issues — Updated 2026-05-02 09:46 Cairo
 
 ## Open
+- Root-level untracked `labs/` is an active heartbeat blocker until tracked, moved, ignored, or removed. Current inspection shows `labs/obsidian-aios-pilot/` with Obsidian/AIOS pilot materials and a nested cloned repo; no live secret pattern confirmed in targeted scan.
+
 
 1. **daily-backup freshness alert is cleared; backup path review remains** — `/tmp/openclaw-backup.log` advanced to `2026-04-28 20:00:01 +0300`, and the log shows a successful push to `origin workspace-sync` at 19:53. The immediate 48-hour freshness threshold is no longer breached. Keep the older branch-target review only as a follow-up if needed, since the latest evidence shows current backup activity on `workspace-sync`.
 
@@ -77,3 +79,7 @@ Heartbeat note 2026-05-01 07:48 Cairo — Gateway 200, latest commit `846ed2a6 c
 - **LinkedIn/content test failure note** — Removed from pending until re-produced with fresh evidence. The old note was stale, and this cleanup pass did not find enough current evidence to keep it as an active CTO issue.
 
 Heartbeat note 2026-04-24 22:03 Cairo — Cleared root-level untracked `brand/` blocker. Inspected files, added `brand/README.md`, ran targeted secret-pattern scan with no matches, committed only `brand/` via clean temp clone, pushed `871fec4a docs(brand): track visual prompt library` to `origin/workspace-sync`, reset local HEAD to remote, and verified `git status --short -- brand` is clean with no root-level untracked paths.
+
+## Heartbeat notes
+
+- 2026-05-02 09:46 Cairo — heartbeat blocked by new root-level untracked `labs/`. Direct checks: gateway 200, latest commit `6b645cd3 chore(auto): daily data commit (16 files)` (~3h old), cron-dashboard log present with 0 ERRORs, disk 72%, persistent backup log fresh at `2026-05-01 20:00:04 +0300` (~13.8h old), `/tmp/openclaw-backup.log` still absent because cron now writes to `/root/.openclaw/workspace/logs/openclaw-backup.log`. `labs/` contains `obsidian-aios-pilot/` with extracted docs, vault files, and a nested `obsidian-skills/.git/`; targeted scan found only git log/email/README URL-style hits, no live secret pattern confirmed.

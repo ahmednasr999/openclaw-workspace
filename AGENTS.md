@@ -108,6 +108,32 @@ Retrieval budget: start with the most likely local/source-of-truth evidence. Sea
 | High | CVs, cron, core files, multi-file changes | full |
 | Max | strategy, architecture, interview prep, public-risk workflows | full + stress test |
 
+
+
+## Personal Agent Workflow Design
+
+Build personal-agent automations around relief loops, not capability lists. Start from the recurring burden, trust boundary, existing channel, and smallest useful intervention. <!-- promoted 2026-05-02 from Cathryn OpenClaw personal assistant ingestion -->
+
+Before creating or expanding an automation, identify:
+- the recurring task Ahmed should not have to think about
+- the existing channel or behavior it should fit into, usually Telegram unless another channel clearly reduces friction
+- the approval/trust boundary
+- the smallest useful intervention
+- the interruption standard: when to stay silent vs notify
+
+Measure success by burden removed, not features added. Avoid dashboards Ahmed has to check manually, low-signal alerts, or new workflows created just because the agent can support them.
+
+## Agent Scope Rule
+
+Default to one primary agent or lane owner. Add sub-agents only when a clear failure mode or execution need justifies it:
+- isolated research or source gathering
+- independent verification or critique
+- parallel work that does not need shared mutable context
+- specialized artifact production with clear success criteria
+- long-running work that should not block the main conversation
+
+Do not add agents for vague brainstorming, role-played debate without a decision need, or work where coordination overhead is larger than the benefit. Add scope when failure modes pull it in, not because the task feels important. <!-- promoted 2026-05-01 from Rohit AI Agents 2026 ingestion -->
+
 ## Sub-Agent Rules
 
 Every spawn brief must define the outcome, success criteria, verification, timeout, and non-delegation expectation. Prefer concise outcome-first briefs over long procedural scripts. Require side findings when useful. Include Ahmed-specific style constraints, especially concise replies and light natural emoji use when appropriate, because sub-agents may not inherit preferences reliably. Add anti-rationalization constraints for known failure modes, for example no "tests later", no unrelated cleanup, no proof by tool success, no quality claims without inspection. Never allow a sub-agent to claim success while errors remain or while the requested artifact/outcome is still missing.

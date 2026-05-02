@@ -1,0 +1,28 @@
+Disk guard triggered at 2026-05-02T07:07:40+03:00
+Threshold: 65%
+Before: 96G used, 28G used%, 72% free
+\nSafe cleanup: workspace tmp files older than 2 days, preserving guard logs and current research markdown.
+\nSafe cleanup: OpenClaw logs older than 7 days.
+\nSafe cleanup: npm/pnpm metadata logs and generic temp caches.
+Removed all cached metadata files
+Removed 0 files
+Removed 0 packages
+npm warn using --force Recommended protections disabled.
+Total reclaimed space: 0B
+\nBackup/snapshot audit, no destructive pruning by default.
+Backup/snapshot audit: files >= 8G or older than 14 days.
+Backup pruning disabled. Set DISK_GUARD_PRUNE_BACKUPS=1 only after explicit approval.
+\nAfter: 96G used, 28G used%, 72% free
+Largest remaining /root items:
+314M	/root/.node-llama-cpp
+363M	/root/.cache
+498M	/root/openclaw-backups
+616M	/root/.local
+794M	/root/.venvs
+936M	/root/go
+1.4G	/root/.camofox
+3.9G	/root/.nvm
+4.1G	/root/openclaw
+5.2G	/root/openclaw-snapshot-20260501
+21G	/root/.openclaw
+39G	/root

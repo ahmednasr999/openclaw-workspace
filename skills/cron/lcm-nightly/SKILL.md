@@ -177,6 +177,38 @@ else
 fi
 ```
 
+### Step 5.1: Image Payload Bloat Guard
+
+Run the sanitizer in dry-run mode every nightly check. This is a prevention guard for embedded base64 image payloads in `message_parts.metadata.raw.data`.
+
+```bash
+echo "=== LCM IMAGE PAYLOAD BLOAT GUARD ==="
+node /root/.openclaw/workspace-cto/scripts/lcm-externalize-image-payloads.mjs --dry-run --min-bytes 52428800 2>&1
+```
+
+Interpretation:
+- If `candidate_data_bytes` is below `52428800` (50MB), do not mutate anything; report healthy/OK.
+- If `candidate_data_bytes` is 50MB or more, run the apply path below. This is allowed because it preserves payloads as sidecar files with hashes and replaces only inline DB blobs with pointers.
+- Do not run VACUUM from the nightly agent. VACUUM/FTS rebuild belongs in a quiet maintenance window.
+
+```bash
+node /root/.openclaw/workspace-cto/scripts/lcm-externalize-image-payloads.mjs --apply --min-bytes 52428800 2>&1
+```
+
+After apply, verify with:
+
+```bash
+sqlite3 /root/.openclaw/lcm.db "PRAGMA quick_check;"
+sqlite3 /root/.openclaw/lcm.db "PRAGMA integrity_check;"
+sqlite3 /root/.openclaw/lcm.db "
+SELECT COUNT(*) AS image_data_rows,
+       COALESCE(SUM(LENGTH(json_extract(metadata,'$.raw.data'))),0) AS image_data_bytes
+FROM message_parts
+WHERE part_type='file'
+  AND json_extract(metadata,'$.raw.type')='image'
+  AND json_type(metadata,'$.raw.data')='text';"
+```
+
 ---
 
 ## Step 6: Compile Report
@@ -196,6 +228,12 @@ Based on all outputs above, create **two artifacts**:
 
 Important wording rule:
 - Treat the DB size gate as a capacity/hygiene signal, not a corruption signal.
+- Use tiered DB-size thresholds, not the old hard 2GB alert:
+  - Under 3GB: no DB-size warning if integrity, WAL, orphans, and expansion checks pass.
+  - 3GB to under 4GB: warning only if growth is rapid (>250MB/day) or another hygiene warning is present.
+  - 4GB or higher: warning even if integrity is healthy.
+  - Critical only for integrity/retrieval failure, WAL/checkpoint failure, or disk pressure.
+- If DB size is above the old 2GB gate but below the tiered warning threshold, record it in the full report but do not alert Telegram for size alone.
 - If the DB size gate fails but WAL, orphan, and recent-summary checks pass, say clearly that the database is active and oversized relative to the threshold, not broken.
 
 ### Severity rules
@@ -210,7 +248,8 @@ Use the highest applicable severity:
   - Compactable uncompacted conversations remain after self-heal **and** compactable uncompacted tokens are material (>100k)
 
 - `⚠️ WARNING` if system is usable but needs cleanup:
-  - DB size gate fails
+  - DB is 4GB or larger, or 3GB+ with rapid growth (>250MB/day) or another hygiene warning
+  - Image payload bloat guard finds/applies 50MB+ of inline image data
   - WAL is above threshold but checkpoint succeeds
   - Stale under-summarized conversations exist
   - Compactable uncompacted conversations remain after self-heal with low token impact
