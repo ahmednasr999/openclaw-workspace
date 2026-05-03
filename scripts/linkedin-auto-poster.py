@@ -205,8 +205,10 @@ def main():
         print(f'ERROR: Payload preparation failed: {exc}')
         return 1
 
-    patch = mark_publishing(record, dry_run=dry_run)
+    # Write payload before changing Notion to Publishing. If the caller agent
+    # crashes after this point, recovery can inspect the exact prepared payload.
     PAYLOAD_PATH.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+    patch = mark_publishing(record, dry_run=dry_run)
 
     print(json.dumps({
         'date': target_date,

@@ -201,7 +201,7 @@ def check_crons():
             with open(jobs_file) as f:
                 data = json.load(f)
             for j in data.get("jobs", data if isinstance(data, list) else []):
-                if isinstance(j, dict):
+                if isinstance(j, dict) and j.get("enabled", True):
                     active_ids.add(j.get("id", ""))
         except Exception:
             pass
