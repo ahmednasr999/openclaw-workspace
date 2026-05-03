@@ -622,3 +622,13 @@ During the JobZoom daily run, the pipeline completed scraping, scoring, CV gener
 The script marked delivery as failed until I killed the stuck subprocesses, sent the summary/report/CV bundle with the first-class `message` tool, and manually marked `runs.report_delivered=1` after confirmed message IDs.
 ### Fix
 For JobZoom delivery failures, prefer the first-class `message` tool with files copied under `/root/.openclaw/media`. Avoid relying on legacy CLI `openclaw message send` from inside long-running scripts unless it has a timeout or is replaced with direct tool/plugin delivery.
+
+## 2026-05-02 - LinkedIn duplicate publish during CMO recovery
+- What happened: During recovery of the approved AI agents LinkedIn post, a CMO/subagent success log already existed for `urn:li:share:7456440658388688896` at 23:33, but the main session proceeded to publish the same approved post again as `urn:li:share:7456442093582954496`.
+- Root cause: Did not re-check the local publish success log immediately before the final external write after a long recovery path.
+- Do differently: For any external publish recovery, run a final duplicate guard against success logs/live state immediately before `LINKEDIN_CREATE_LINKED_IN_POST`. If a success entry exists, stop and report it instead of publishing.
+## 2026-05-03 - JobZoom script CLI delivery hung again
+- What happened: `daily_run.py` completed scraping/scoring/report generation, then each embedded `openclaw message send` subprocess pegged CPU and hung during Telegram delivery. I SIGKILLed the stuck subprocesses, then delivered the summary, report PDF, and CV ZIP manually with the first-class `message` tool.
+- Root cause: The legacy CLI delivery path inside JobZoom is unreliable in this runtime and lacks per-send timeouts.
+- Do differently: Replace JobZoom embedded CLI delivery with a timeout-protected path or direct message/plugin delivery. Until fixed, verify report artifacts and use the first-class `message` tool for recovery.
+

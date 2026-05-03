@@ -2,154 +2,123 @@
   "meta": {
     "agent": "email-agent",
     "version": "3.0.0",
-    "generated_at": "2026-05-03T06:02:56.708734+02:00",
-    "duration_ms": 31917,
+    "generated_at": "2026-05-03T18:01:24.144286+02:00",
+    "duration_ms": 42793,
     "ttl_hours": 4,
     "status": "success",
     "error": null,
-    "run_id": "ead6ed51",
+    "run_id": "d5a98b32",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
     "status": "ok",
-    "scan_time": "2026-05-03T06:02:30.174560+02:00",
-    "total_scanned": 12,
+    "scan_time": "2026-05-03T18:00:48.181362+02:00",
+    "total_scanned": 13,
     "by_category": {
-      "interview_invite": 0,
-      "recruiter_reach": 2,
+      "interview_invite": 1,
+      "recruiter_reach": 1,
       "application_ack": 0,
       "rejection": 0,
       "assessment": 0,
       "follow_up_needed": 0,
-      "other": 10
+      "other": 12
     },
-    "interview_invites": [],
-    "recruiter_messages": [
+    "interview_invites": [
       {
-        "id": "356073",
-        "from": "Naukrigulf <newjobs@naukrigulf.com>",
-        "subject": "Senior Product Manager, Principal Solution Architect\r\n -Platform & Integration jobs for you",
-        "date": "Sun, 3 May 2026 08:03:06 +0530 (IST)",
-        "unread": true,
-        "priority": "MEDIUM",
-        "score": 2,
-        "pipeline_match": null
-      },
-      {
-        "id": "356075",
-        "from": "QR Talent Acquisition <talentacquisition@careers1.qatarairways.com>",
-        "subject": "=?utf-8?Q?Regarding_Your_Qatar_Airways_Applicat?=\r\n =?utf-8?Q?ion_=E2=80=93_Program_Manager_-_MRO_Programs_?=",
-        "date": "Sat, 2 May 2026 23:15:14 -0400 (EDT)",
+        "id": "356128",
+        "from": "GulfTalent Jobs <jobs@gulftalent.com>",
+        "subject": "RTC-1 needs an Offshore Project Manager",
+        "date": "Sun, 03 May 2026 08:48:33 -0500",
         "unread": true,
         "priority": "HIGH",
-        "score": 7,
-        "pipeline_match": "SAP"
+        "score": 5,
+        "pipeline_match": null
+      }
+    ],
+    "recruiter_messages": [
+      {
+        "id": "356128",
+        "from": "GulfTalent Jobs <jobs@gulftalent.com>",
+        "subject": "RTC-1 needs an Offshore Project Manager",
+        "date": "Sun, 03 May 2026 08:48:33 -0500",
+        "unread": true,
+        "priority": "HIGH",
+        "score": 5,
+        "pipeline_match": null
       }
     ],
     "application_acks": [],
     "rejections": [],
     "assessments": [],
     "follow_ups_needed": [],
-    "actionable_count": 2,
+    "actionable_count": 1,
     "hot_alerts": [
       {
-        "subject": "=?utf-8?Q?Regarding_Your_Qatar_Airways_Applicat?=\r\n =?utf-8?Q?ion_=E2=80=93_Program_Manager_-_MRO_Programs_?=",
-        "from": "QR Talent Acquisition <talentacquisition@careers1.qatarairways.com>",
+        "subject": "RTC-1 needs an Offshore Project Manager",
+        "from": "GulfTalent Jobs <jobs@gulftalent.com>",
         "priority": "HIGH",
-        "pipeline_match": "SAP"
+        "pipeline_match": null
       }
     ],
-    "signals": [
-      {
-        "company": "SAP",
-        "signal": "recruiter_email",
-        "subject": "=?utf-8?Q?Regarding_Your_Qatar_Airways_Applicat?=\r\n =?utf-8?Q?ion_=E2=80=93_Program_Manager_-_MRO_Programs_?=",
-        "sender": "QR Talent Acquisition <talentacquisition@careers1.qatarairways.com>",
-        "job_ids": [
-          "indeed-in-b2195113ff678ef7",
-          "indeed-in-b7591ff66cc5a732",
-          "linkedin_jobspy-li-4380812358",
-          "linkedin-li-4349578134",
-          "linkedin-li-4394078700",
-          "linkedin-li-4380812358",
-          "linkedin-li-4362170335",
-          "linkedin-li-4362562926",
-          "linkedin-li-4385935615",
-          "linkedin-li-4353703506",
-          "app-005",
-          "cv-5fbf4a9aa7",
-          "linkedin-li-4385294885"
-        ],
-        "score": 7,
-        "timestamp": "2026-05-03T06:02:30.174026+02:00"
-      }
-    ],
+    "signals": [],
     "llm_analysis": {
       "actionable_emails": [
         {
-          "id": "356073",
-          "subject": "Senior Product Manager, Principal Solution Architect -Platform & Integration jobs for you",
-          "from": "Naukrigulf <newjobs@naukrigulf.com>",
-          "date": "Sun, 3 May 2026 08:03:06 +0530 (IST)",
+          "id": "356128",
+          "subject": "RTC-1 needs an Offshore Project Manager",
+          "from": "GulfTalent Jobs <jobs@gulftalent.com>",
+          "date": "Sun, 03 May 2026 08:48:33 -0500",
           "category": "recruiter_reach",
           "urgency": "low",
-          "intent": "The sender is sharing a job-alert list matching Ahmed's profile.",
+          "intent": "The sender is sharing automated job recommendations matching Ahmed's profile.",
           "action": "read_and_file",
           "response_deadline": "when convenient",
-          "notes": "Review selectively for GCC senior tech/executive roles."
-        },
-        {
-          "id": "356075",
-          "subject": "Regarding Your Qatar Airways Application \u2013 Program Manager - MRO Programs",
-          "from": "QR Talent Acquisition <talentacquisition@careers1.qatarairways.com>",
-          "date": "Sat, 2 May 2026 23:15:14 -0400 (EDT)",
-          "category": "recruiter_reach",
-          "urgency": "low",
-          "intent": "The sender is informing Ahmed that this Qatar Airways application was not selected.",
-          "action": "read_and_file",
-          "response_deadline": "when convenient",
-          "notes": "This is a rejection, not a recruiter opportunity."
+          "notes": "Job alert only; no interview, assessment, or recruiter reply need proven."
         }
       ],
       "summary": {
-        "total_actionable": 2,
+        "total_actionable": 1,
         "critical_count": 0,
         "requires_interview_prep": false,
         "requires_assessment": false,
-        "recruiter_top_opportunities": [
-          "Naukrigulf job alert: CEO Oman Investment Authority",
-          "Naukrigulf job alert: General Manager Technology Oman Investment Authority",
-          "Naukrigulf job alert: KSA Head of Systems Vice President MUFG Bank"
-        ],
+        "recruiter_top_opportunities": [],
         "top_priority": null,
-        "daily_focus": "No urgent replies today; selectively review the Naukrigulf senior GCC roles and archive the Qatar Airways rejection."
+        "daily_focus": "No urgent response needed; review the GulfTalent leads only if job-scan capacity allows."
       }
     }
   },
   "kpi": {
-    "emails_processed": 12,
-    "actionable": 2,
-    "interviews_detected": 0,
-    "recruiter_messages": 2,
-    "unread_actionable": 2
+    "emails_processed": 13,
+    "actionable": 1,
+    "interviews_detected": 1,
+    "recruiter_messages": 1,
+    "unread_actionable": 1
   },
   "recommendations": [
     {
-      "id": "rec-ead6ed51-0",
-      "action": "review_and_respond",
-      "target": "2 recruiter message(s)",
-      "reason": "Recruiter outreach could lead to opportunities",
-      "urgency": "high",
-      "timestamp": "2026-05-03T06:02:56.708590+02:00"
+      "id": "rec-d5a98b32-0",
+      "action": "respond_immediately",
+      "target": "1 interview invite(s)",
+      "reason": "Interview invitations require prompt response",
+      "urgency": "critical",
+      "timestamp": "2026-05-03T18:01:24.144157+02:00"
     },
     {
-      "id": "rec-ead6ed51-1",
+      "id": "rec-d5a98b32-1",
+      "action": "review_and_respond",
+      "target": "1 recruiter message(s)",
+      "reason": "Recruiter outreach could lead to opportunities",
+      "urgency": "high",
+      "timestamp": "2026-05-03T18:01:24.144177+02:00"
+    },
+    {
+      "id": "rec-d5a98b32-2",
       "action": "check_inbox",
-      "target": "2 unread actionable email(s)",
+      "target": "1 unread actionable email(s)",
       "reason": "Unread emails need attention",
       "urgency": "high",
-      "timestamp": "2026-05-03T06:02:56.708609+02:00"
+      "timestamp": "2026-05-03T18:01:24.144180+02:00"
     }
   ]
 }

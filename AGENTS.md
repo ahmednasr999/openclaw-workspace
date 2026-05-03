@@ -8,6 +8,7 @@ Full historical detail lives in `docs/reference/AGENTS.full.md`.
 - If the answer exists in a file, find it first.
 - Mission Control task logging is retired. Do not use `localhost:3001` task-board workflows unless Ahmed explicitly re-enables them.
 - External writes, public posts, and third-party messages require the correct approval path and follow-up notification.
+- Before retrying or recovering any external publish action, re-check local success logs/live state immediately before the final publish call to avoid duplicates. <!-- dream-promoted 2026-05-03 -->
 - Read trace lessons before significant or repeated work; write traces after failures, user corrections, and workflow misses.
 - Multi-step ops work must end with a verified closeout: what changed, evidence, remaining risk.
 - Core-file edits (`SOUL.md`, `USER.md`, `AGENTS.md`, `TOOLS.md`, `MEMORY.md`) are high-risk: back up, edit deliberately, verify.
@@ -26,6 +27,21 @@ Routing:
 - Topic 8 -> CTO
 - Topic 9 -> HR
 - DM or topic 10 -> CEO
+
+
+## Daily Message Format
+
+All recurring daily operational messages should use a compact decision-card format:
+
+1. **Header:** `AREA Daily - YYYY-MM-DD - 🟢/🟡/🔴 Verdict`
+2. **Decision:** one sentence on whether Ahmed needs to act.
+3. **What changed:** 2-4 bullets, only material deltas since the last report.
+4. **Numbers:** key metrics with yesterday/week comparison when available.
+5. **Risk / blocker:** only real risks, with severity and cause.
+6. **Action taken / next:** what NASR already did and the next checkpoint.
+7. **Ask:** explicit `Needs Ahmed: No` or the one decision required.
+
+Keep green/no-action days short. Do not send status theater. Escalate only when there is a decision, material risk, external action, or completed recovery worth interrupting Ahmed.
 
 ## Reporting Chain
 

@@ -12,6 +12,14 @@ Rules:
 - Promote only durable, clear facts to USER.md or MEMORY.md, and only when appropriate.
 - If an answer is sensitive, ambiguous, or tentative, keep it here as a note rather than permanent truth.
 
+Daily message format:
+- Start with: `🎯 Daily profile calibration`
+- Then: `Why it matters: ...` in one short sentence tied to a real use, such as JobZoom filtering, CV positioning, interview prep, outreach, or automation behavior.
+- Then: `Question: ...` exactly one thoughtful question.
+- Then: `Reply format: ...` with a low-friction answer pattern, for example `Top 1-2 + hard no`, `A/B/C`, `one sentence`, or `minimum number + currency`.
+- Keep the whole message under 5 short lines.
+- Do not send bare questions without why/context and a reply format.
+
 Pilot window: 2026-04-30 to 2026-05-13, 09:15 Cairo daily.
 
 ## Questions and Answers
@@ -26,3 +34,8 @@ Note: Ahmed corrected the framing: salary remains a primary factor, not somethin
 Question: Quick profile calibration for JobZoom and role filtering: what minimum monthly total package makes a GCC executive role worth serious consideration? Rough ranges are fine. Format: UAE: X, Saudi: Y, Qatar: Z, Oman: W.
 Raw answer: 55000 AED, so do your calculations for remaining countries.
 Derived baseline for monthly total package filtering: UAE AED 55,000; Saudi about SAR 56,000; Qatar about QAR 55,000; Oman about OMR 5,750. Optional equivalents if needed later: Bahrain about BHD 5,650; Kuwait about KWD 4,600.
+
+### 2026-05-03
+Question: For GCC executive targeting, which employer type should I prioritize when roles are otherwise similar: healthcare operator, government/semi-government transformation, large private group, or tech/vendor side? Pick top 1-2, plus any hard no.
+Raw answer: The answer is the employer will pay more salary.
+Note: Ahmed clarified that employer type is secondary; prioritize whichever employer pays more salary when roles are otherwise similar.

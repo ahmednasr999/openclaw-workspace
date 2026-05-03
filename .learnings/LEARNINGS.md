@@ -1106,3 +1106,30 @@ Ahmed corrected that saying an image is done without visibly showing/sending it 
 
 ## 2026-04-28 - Repeated JobZoom Health Warning Should Be Fixed, Not Explained Away
 Ahmed flagged that JobZoom showed `AI Scoring Engine: WARNING` for the second day in a row. The warning came from a fragile pre-scoring health probe even though real batch scoring succeeded. When a warning repeats and creates report noise, fix the report logic to use the real scoring outcome as source of truth instead of repeatedly explaining the warning.
+
+## [LRN-20260503-001] best_practice
+
+**Logged**: 2026-05-03T19:15:00+03:00
+**Priority**: medium
+**Status**: pending
+**Area**: infra
+
+### Summary
+For OpenClaw plugin edits, verify runtime registration with `openclaw plugins inspect <plugin-id> --runtime --json`, not only health and log greps.
+
+### Details
+After adding missing `contracts.tools` declarations to `camofox-browser` and `composio`, gateway health was OK and post-start log warnings were zero. A later plugin-management doc check showed the stronger proof is `openclaw plugins inspect <id> --runtime --json`, which confirms runtime surfaces discovered by the running Gateway. This is better closeout evidence after plugin installs, updates, or manifest changes.
+
+### Suggested Action
+Promote to `TOOLS.md` under Gateway/Plugins: after plugin code or manifest changes, restart the gateway if needed, then run `openclaw plugins inspect <plugin-id> --runtime --json` for each touched plugin and check current-start logs for contract warnings.
+
+### Metadata
+- Source: conversation
+- Related Files: /root/.openclaw/workspace/TOOLS.md, /root/.openclaw/extensions/*/openclaw.plugin.json
+- Tags: openclaw, plugins, verification, gateway
+- Pattern-Key: openclaw.plugins.runtime_verify
+- Recurrence-Count: 1
+- First-Seen: 2026-05-03
+- Last-Seen: 2026-05-03
+
+---
