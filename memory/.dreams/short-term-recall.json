@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-02T07:01:08.342Z",
+  "updatedAt": "2026-05-03T03:30:17.772Z",
   "entries": {
     "memory:memory/archives/2026-03-07.md:29:56": {
       "key": "memory:memory/archives/2026-03-07.md:29:56",
@@ -1748,27 +1748,30 @@
       "endLine": 51,
       "source": "memory",
       "snippet": "- Extracted content: Peter Steinberger (@steipete), tweet text “My favorite security advisories.” Media image text: “Steps To Reproduce: 1. Enable hooks.gmail.allowUnsafeExternalContent=true”. Timestamp 12:11 PM · Apr 23, 2026. Metrics at fetch: 56.3K views, 24 replies, 4 reposts, 433 likes, 53 bookmarks. ### JobZoom 0-live-jobs investigation - 2026-04-24 JobZoom run did not find 0 raw jobs. It found/scored many intermediates: 341 filtered raw jobs, 311 deduped/new jobs, 91 Pass1/all-scored jobs, 0 live matches, 3 shadow jobs. - Shadow file: `/root/.openclaw/workspace-jobzoom/reports/shadow/jobzoom-shadow-2026-04-24.json`. - Shadow verdicts were keyword fallback around 60-63; live threshold",
-      "recallCount": 6,
+      "recallCount": 8,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 5.39020108282566,
+      "totalScore": 7.39020108282566,
       "maxScore": 1,
       "firstRecalledAt": "2026-04-24T10:44:07.363Z",
-      "lastRecalledAt": "2026-05-02T02:40:26.762Z",
+      "lastRecalledAt": "2026-05-03T02:56:14.831Z",
       "queryHashes": [
         "3b21f0cb3926",
         "73675e2f27f1",
         "8db888f6c422",
         "936db56b7cd0",
         "62d1011768ae",
-        "97d8d9266e77"
+        "97d8d9266e77",
+        "02526ea543a9",
+        "ae92f28623d7"
       ],
       "recallDays": [
         "2026-04-24",
         "2026-04-28",
         "2026-04-29",
         "2026-05-01",
-        "2026-05-02"
+        "2026-05-02",
+        "2026-05-03"
       ],
       "conceptTags": [
         "56.3k",
@@ -1945,20 +1948,22 @@
       "endLine": 150,
       "source": "memory",
       "snippet": "- Deleted Fallback Validator cron (11dba958) — script missing, SIE already handles monitoring ### Fallback Chain Verified - MiniMax M2.5 → GPT-5.3-Codex → GPT-5.4 → Claude Sonnet 4.6 → Claude Haiku 4.5 → Kimi K2.5 - All working correctly ### Canvas/Chart Investigation - Canvas tool requires connected node with display (Mac), not VPS - Ahmed-Mac node not currently connected - Python matplotlib/plotly charts → PNG remain best option for Telegram/Slack - OpenGenerativeUI evaluated: needs Node.js + Next.js, outputs HTML/SVG, same PNG result — rejected - Sent existing pipeline chart PNG to Ahmed via Telegram - **Decision:** Stick with Python charts. Canvas useful only when Mac is connected as n",
-      "recallCount": 2,
+      "recallCount": 3,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 1.4444543480873109,
+      "totalScore": 2.444454348087311,
       "maxScore": 1,
       "firstRecalledAt": "2026-04-24T20:00:51.816Z",
-      "lastRecalledAt": "2026-04-28T17:06:54.649Z",
+      "lastRecalledAt": "2026-05-02T21:11:56.157Z",
       "queryHashes": [
         "cb0255c5b075",
-        "2c02c1e53fd2"
+        "2c02c1e53fd2",
+        "1f409fe934d1"
       ],
       "recallDays": [
         "2026-04-24",
-        "2026-04-28"
+        "2026-04-28",
+        "2026-05-03"
       ],
       "conceptTags": [
         "gpt",
@@ -2104,25 +2109,28 @@
       "endLine": 10,
       "source": "memory",
       "snippet": "## 2026-04-27 06:42 Cairo - JobZoom incident and report logic updates - JobZoom daily run was delayed, but completed successfully. Root cause of the visible delay was OpenClaw gateway memory pressure/OOM around 05:22 Cairo, followed by systemd restart, not a JobZoom logic failure. - Final JobZoom 2026-04-27 results: 150 searches, 150 successful, 0 failed, 341 eligible jobs after exclusions, 265 after dedup, 62 after Pass 1, 2 final AI matches at 70+, 2 CVs generated, report delivered successfully. - Delivery IDs from cron summary: Telegram summary 8792, PDF 8793, CV ZIP 8794. - JobZoom matched roles on 2026-04-27: OMPAY Program Manager in Oman, score 83; Johnson Controls Field Remediation",
-      "recallCount": 5,
+      "recallCount": 7,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 5,
+      "totalScore": 7,
       "maxScore": 1,
       "firstRecalledAt": "2026-04-28T06:07:07.261Z",
-      "lastRecalledAt": "2026-05-02T02:40:26.762Z",
+      "lastRecalledAt": "2026-05-03T02:56:14.831Z",
       "queryHashes": [
         "73675e2f27f1",
         "8db888f6c422",
         "936db56b7cd0",
         "62d1011768ae",
-        "97d8d9266e77"
+        "97d8d9266e77",
+        "02526ea543a9",
+        "ae92f28623d7"
       ],
       "recallDays": [
         "2026-04-28",
         "2026-04-29",
         "2026-05-01",
-        "2026-05-02"
+        "2026-05-02",
+        "2026-05-03"
       ],
       "conceptTags": [
         "gateway",
@@ -2425,20 +2433,22 @@
       "endLine": 64,
       "source": "memory",
       "snippet": "- Patched `/root/.openclaw/workspace-jobzoom/scripts/daily_run.py` for better scoring observability: - gateway calls now record `elapsed_ms` in `gpt_api_calls.note`, including failures, - batch scoring logs attempt start, timeout budget, per-attempt duration, total batch duration, scores, and fallback duration. - Verified with `python3 -m py_compile /root/.openclaw/workspace-jobzoom/scripts/daily_run.py`. - Path drift task: confirmed `/root/.openclaw/workspace-jobzoom/scripts/jobs-source-linkedin-jobspy.py` is a symlink to `/root/.openclaw/workspace/scripts/jobs-source-linkedin-jobspy.py`, and `daily_run.py` calls `preflight_jobspy_path()` before scraping. Marked the drift guard task res",
-      "recallCount": 2,
+      "recallCount": 3,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 2,
+      "totalScore": 3,
       "maxScore": 1,
       "firstRecalledAt": "2026-05-01T02:39:36.670Z",
-      "lastRecalledAt": "2026-05-02T02:40:26.762Z",
+      "lastRecalledAt": "2026-05-03T02:29:37.527Z",
       "queryHashes": [
         "62d1011768ae",
-        "97d8d9266e77"
+        "97d8d9266e77",
+        "02526ea543a9"
       ],
       "recallDays": [
         "2026-05-01",
-        "2026-05-02"
+        "2026-05-02",
+        "2026-05-03"
       ],
       "conceptTags": [
         "gateway",
@@ -2511,6 +2521,161 @@
         "agents.md",
         "memory.md",
         "30-50"
+      ]
+    },
+    "memory:memory/archive/2026-02/2026-02-18.md:1150:1180": {
+      "key": "memory:memory/archive/2026-02/2026-02-18.md:1150:1180",
+      "path": "memory/archive/2026-02/2026-02-18.md",
+      "startLine": 1150,
+      "endLine": 1180,
+      "source": "memory",
+      "snippet": "- Cognitive load protection - Strategic decisions deserve deep analysis ### What's Wrong - Too rigid - routine tasks may benefit from Red Team critique - Missing trigger: Public content representing Ahmed - Missing trigger: External-facing work - Missing emotional/stakes dimension - Missing time pressure assessment ### Enhancements Needed - Add trigger: Content going public (LinkedIn, investor comms, external representation) - Add: Personal brand/reputation impact - Add: Stakeholder emotional investment - Add: Time pressure test (is this urgent?) - Add: Competitive pressure assessment ### Framework Refined Strategic decision criteria: 1. Public-facing content (LinkedIn, investors, externa",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-02T21:11:56.157Z",
+      "lastRecalledAt": "2026-05-02T21:11:56.157Z",
+      "queryHashes": [
+        "1f409fe934d1"
+      ],
+      "recallDays": [
+        "2026-05-03"
+      ],
+      "conceptTags": [
+        "external-facing",
+        "emotional/stakes",
+        "brand/reputation",
+        "public-facing",
+        "cognitive",
+        "load",
+        "protection",
+        "strategic"
+      ]
+    },
+    "memory:memory/archive/2026-02/2026-02-18.md:1100:1160": {
+      "key": "memory:memory/archive/2026-02/2026-02-18.md:1100:1160",
+      "path": "memory/archive/2026-02/2026-02-18.md",
+      "startLine": 1100,
+      "endLine": 1160,
+      "source": "memory",
+      "snippet": "- Technical documentation --- ## Strategic Intelligence System Strategic intelligence involves gathering and analyzing information about competitors, markets, and environments to make better decisions. A multi-agent system could automate this through various AI agents. ### Core Capabilities - Competitor monitoring - Market research - Technology scouting - Risk identification - Opportunity analysis ### Multi-Agent Architecture - Research agents for data gathering - Analysis agents for synthesis - Synthesis agents for conclusions - Reporting agents for outputs ### Use Cases - Investment decisions - Market entry analysis - Competitive positioning - Risk assessment ### Integration Points",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-02T21:11:56.157Z",
+      "lastRecalledAt": "2026-05-02T21:11:56.157Z",
+      "queryHashes": [
+        "1f409fe934d1"
+      ],
+      "recallDays": [
+        "2026-05-03"
+      ],
+      "conceptTags": [
+        "multi-agent",
+        "technical",
+        "documentation",
+        "strategic",
+        "intelligence",
+        "involves",
+        "gathering",
+        "analyzing"
+      ]
+    },
+    "memory:memory/archives/2026-03-02.md:441:461": {
+      "key": "memory:memory/archives/2026-03-02.md:441:461",
+      "path": "memory/archives/2026-03-02.md",
+      "startLine": 441,
+      "endLine": 461,
+      "source": "memory",
+      "snippet": "- User clarified intent: request is not about dry-run mechanics, it is about execution ownership and communication flow. - Explicit preference confirmed: NASR should self-drive tasks end-to-end, route only true decisions through Ahmed, and auto-send completion updates without requiring repeated prompts. - This clarification supersedes earlier framing and is now the active interaction rule for this session baseline. ## Flush Addendum — 2026-03-02 10:36 UTC (Pre-Compaction, Follow-up) - User reiterated expectation that he should not need to prompt for next steps. - Final commitment restated: NASR will self-initiate, execute to completion, provide automatic completion updates, and interrupt o",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-03T03:30:17.772Z",
+      "lastRecalledAt": "2026-05-03T03:30:17.772Z",
+      "queryHashes": [
+        "4ceb78c94012"
+      ],
+      "recallDays": [
+        "2026-05-03"
+      ],
+      "conceptTags": [
+        "dry-run",
+        "self-drive",
+        "end-to-end",
+        "auto-send",
+        "pre-compaction",
+        "follow-up",
+        "self-initiate",
+        "clarified"
+      ]
+    },
+    "memory:memory/archives/2026-03-02.md:233:258": {
+      "key": "memory:memory/archives/2026-03-02.md:233:258",
+      "path": "memory/archives/2026-03-02.md",
+      "startLine": 233,
+      "endLine": 258,
+      "source": "memory",
+      "snippet": "- Monitoring commitment recorded: maintain ongoing Codex health verification cadence until auth-provider login path is restored. ## Flush Addendum — 2026-03-02 09:42 UTC - User acknowledged final status and accepted silent-monitoring mode. - Communication protocol set: no routine noise, only alert user when direct action is required. ## Flush Addendum — 2026-03-02 09:42 UTC (Gateway Watchdog Event) - User surfaced watchdog message: \"Detected 6 auth errors in 5min. Auto-restarted. Cooldown 15m active.\" - Clarification delivered: this indicates automatic recovery from short-window authentication failure spikes, not persistent outage. - Immediate health check run via `openclaw status` confi",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-03T03:30:17.772Z",
+      "lastRecalledAt": "2026-05-03T03:30:17.772Z",
+      "queryHashes": [
+        "4ceb78c94012"
+      ],
+      "recallDays": [
+        "2026-05-03"
+      ],
+      "conceptTags": [
+        "gateway",
+        "auth-provider",
+        "silent-monitoring",
+        "auto-restarted",
+        "short-window",
+        "monitoring",
+        "commitment",
+        "recorded"
+      ]
+    },
+    "memory:memory/archives/2026-03-02.md:168:192": {
+      "key": "memory:memory/archives/2026-03-02.md:168:192",
+      "path": "memory/archives/2026-03-02.md",
+      "startLine": 168,
+      "endLine": 192,
+      "source": "memory",
+      "snippet": "- User requested simplified explanation, and status was reframed in plain terms: - Codex token is working now but can fail after expiry if not refreshed. - LinkedIn radar is running but quality issue remains due to stale post selection. - Action framing simplified into two concrete tasks for today: 1) Refresh Codex token proactively 2) Enforce strict freshness cap on LinkedIn discovery and return insufficient results instead of stale outputs ## Flush Addendum — 2026-03-02 09:32 UTC (OAuth Clarification) - User corrected auth model explicitly: Codex integration is OAuth-based, not manual token paste workflow. - Guidance was corrected accordingly: risk vector is OAuth session/refresh",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-03T03:30:17.772Z",
+      "lastRecalledAt": "2026-05-03T03:30:17.772Z",
+      "queryHashes": [
+        "4ceb78c94012"
+      ],
+      "recallDays": [
+        "2026-05-03"
+      ],
+      "conceptTags": [
+        "oauth-based",
+        "session/refresh",
+        "requested",
+        "simplified",
+        "explanation",
+        "status",
+        "was",
+        "reframed"
       ]
     }
   }

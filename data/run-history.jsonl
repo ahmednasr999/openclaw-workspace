@@ -2103,3 +2103,5 @@
 {"agent": "jobs-source-linkedin-jobspy", "run_id": "6da333a6", "started": "2026-05-02T04:20:08.289524+02:00", "duration_ms": 1149158, "status": "success", "records": 381, "error": null}
 {"agent": "email-agent", "run_id": "a2494a7b", "started": "2026-05-02T08:02:34.995439+02:00", "duration_ms": 101614, "status": "success", "records": 14, "error": null}
 {"agent": "email-agent", "run_id": "5797c142", "started": "2026-05-02T14:02:06.717585+02:00", "duration_ms": 75176, "status": "success", "records": 14, "error": null}
+{"agent": "email-agent", "run_id": "0e1e14bd", "started": "2026-05-02T20:03:14.974656+02:00", "duration_ms": 102270, "status": "success", "records": 14, "error": null}
+{"agent": "jobs-source-linkedin-jobspy", "run_id": "d05e2be4", "started": "2026-05-03T04:20:23.416195+02:00", "duration_ms": 1156722, "status": "success", "records": 375, "error": null}

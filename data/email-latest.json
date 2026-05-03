@@ -1,38 +1,71 @@
 {
   "status": "ok",
-  "scan_time": "2026-05-02T14:01:10.168006+02:00",
-  "total_scanned": 21,
+  "scan_time": "2026-05-02T20:01:58.811626+02:00",
+  "total_scanned": 53,
   "by_category": {
-    "interview_invite": 0,
-    "recruiter_reach": 1,
+    "interview_invite": 1,
+    "recruiter_reach": 2,
     "application_ack": 0,
     "rejection": 0,
     "assessment": 0,
     "follow_up_needed": 0,
-    "other": 20
+    "other": 51
   },
-  "interview_invites": [],
-  "recruiter_messages": [
+  "interview_invites": [
     {
-      "id": "356002",
-      "from": "Tools World - =?utf-8?b?2LnZgNin2YTZhSDYp9mE2LnZgNiv2K8=?=\r\n\t<sales@toolsworldeg.com>",
-      "subject": "PEDROLLO 1470 -\r\n =?utf-8?b?2KrYtNmD2YrZhNipINmF2KrZhtmI2LnZhyDZhdmGINmF2LbYrtin2Kog2Yg=?=\r\n =?utf-8?b?INi32YTZhdio2KfYqiDYqNmK2K/YsdmK2YTZhNmIINin2YTYpdmK2LfYp9mE2YrZhw==?=\r\n ( =?utf-8?b?2LHZiNin2LPYqC8g2YXYp9ihINmG2LjZitmB2KkgLw==?=\r\n =?utf-8?b?INix2YHYuSAp2YXYqtmI2YHYsdmHINmE2K/ZiiDZhdi52KfYsdi2INmI2LPZiNmC?=\r\n =?utf-8?b?INi52KfZhNmFINin2YTYudiv2K8g2KfZhNin2YTZg9iq2LHZiNmG2Yo=?=",
-      "date": "Sat, 02 May 2026 08:53:38 +0000",
+      "id": "356019",
+      "from": "GulfTalent Jobs <jobs@gulftalent.com>",
+      "subject": "RTC-1 needs an Offshore Project Manager",
+      "date": "Sat, 02 May 2026 07:27:18 -0500",
       "unread": true,
       "priority": "HIGH",
-      "score": 7,
-      "pipeline_match": "SAP"
+      "score": 5,
+      "pipeline_match": null
+    }
+  ],
+  "recruiter_messages": [
+    {
+      "id": "356019",
+      "from": "GulfTalent Jobs <jobs@gulftalent.com>",
+      "subject": "RTC-1 needs an Offshore Project Manager",
+      "date": "Sat, 02 May 2026 07:27:18 -0500",
+      "unread": true,
+      "priority": "HIGH",
+      "score": 5,
+      "pipeline_match": null
+    },
+    {
+      "id": "356031",
+      "from": "Aisha from foundit <jobmessenger@monstergulf.com>",
+      "subject": "Job recommendations for you | foundit (Monster)",
+      "date": "Sat, 2 May 2026 19:26:18 +0530 (IST)",
+      "unread": true,
+      "priority": "HIGH",
+      "score": 5,
+      "pipeline_match": null
     }
   ],
   "application_acks": [],
   "rejections": [],
   "assessments": [],
   "follow_ups_needed": [],
-  "actionable_count": 1,
+  "actionable_count": 2,
   "hot_alerts": [
     {
-      "subject": "PEDROLLO 1470 -\r\n =?utf-8?b?2KrYtNmD2YrZhNipINmF2KrZhtmI2LnZhyDZhdmGINmF2LbYrtin2Kog2Yg=?=\r\n =?utf-8?b?INi32YTZhdio2KfYqiDYqNmK2K/YsdmK2YTZhNmIINin2YTYpdmK2LfYp9mE2YrZhw==?=\r\n ( =?utf-8?b?2LHZiNin2LPYqC8g2YXYp9ihINmG2LjZitmB2KkgLw==?=\r\n =?utf-8?b?INix2YHYuSAp2YXYqtmI2YHYsdmHINmE2K/ZiiDZhdi52KfYsdi2INmI2LPZiNmC?=\r\n =?utf-8?b?INi52KfZhNmFINin2YTYudiv2K8g2KfZhNin2YTZg9iq2LHZiNmG2Yo=?=",
-      "from": "Tools World - =?utf-8?b?2LnZgNin2YTZhSDYp9mE2LnZgNiv2K8=?=\r\n\t<sales@toolsworldeg.com>",
+      "subject": "RTC-1 needs an Offshore Project Manager",
+      "from": "GulfTalent Jobs <jobs@gulftalent.com>",
+      "priority": "HIGH",
+      "pipeline_match": null
+    },
+    {
+      "subject": "Job recommendations for you | foundit (Monster)",
+      "from": "Aisha from foundit <jobmessenger@monstergulf.com>",
+      "priority": "HIGH",
+      "pipeline_match": null
+    },
+    {
+      "subject": "=?UTF-8?q?=F0=9F=A4=96_AI_kills_Apple=E2=80=99s_$599_Mac_mini...?=",
+      "from": "BrainBuzz <brainbuzz@mail.beehiiv.com>",
       "priority": "HIGH",
       "pipeline_match": "SAP"
     }
@@ -41,8 +74,8 @@
     {
       "company": "SAP",
       "signal": "recruiter_email",
-      "subject": "PEDROLLO 1470 -\r\n =?utf-8?b?2KrYtNmD2YrZhNipINmF2KrZhtmI2LnZhyDZhdmGINmF2LbYrtin2Kog2Yg=?=\r\n =?utf-8?b?INi32YTZhdio2KfYqiDYqNmK2K/YsdmK2YTZhNmIINin2YT",
-      "sender": "Tools World - =?utf-8?b?2LnZgNin2YTZhSDYp9mE2LnZgNiv2K8=?=\r\n\t<sales@toolsworldeg.com>",
+      "subject": "=?UTF-8?q?=F0=9F=A4=96_AI_kills_Apple=E2=80=99s_$599_Mac_mini...?=",
+      "sender": "BrainBuzz <brainbuzz@mail.beehiiv.com>",
       "job_ids": [
         "indeed-in-b2195113ff678ef7",
         "indeed-in-b7591ff66cc5a732",
@@ -59,7 +92,7 @@
         "linkedin-li-4385294885"
       ],
       "score": 7,
-      "timestamp": "2026-05-02T14:01:10.121076+02:00"
+      "timestamp": "2026-05-02T20:01:58.680192+02:00"
     }
   ]
 }
