@@ -2,60 +2,49 @@
   "meta": {
     "agent": "email-agent",
     "version": "3.0.0",
-    "generated_at": "2026-05-02T20:03:14.973945+02:00",
-    "duration_ms": 102269,
+    "generated_at": "2026-05-03T06:02:56.708734+02:00",
+    "duration_ms": 31917,
     "ttl_hours": 4,
     "status": "success",
     "error": null,
-    "run_id": "0e1e14bd",
+    "run_id": "ead6ed51",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
     "status": "ok",
-    "scan_time": "2026-05-02T20:01:58.811626+02:00",
-    "total_scanned": 53,
+    "scan_time": "2026-05-03T06:02:30.174560+02:00",
+    "total_scanned": 12,
     "by_category": {
-      "interview_invite": 1,
+      "interview_invite": 0,
       "recruiter_reach": 2,
       "application_ack": 0,
       "rejection": 0,
       "assessment": 0,
       "follow_up_needed": 0,
-      "other": 51
+      "other": 10
     },
-    "interview_invites": [
-      {
-        "id": "356019",
-        "from": "GulfTalent Jobs <jobs@gulftalent.com>",
-        "subject": "RTC-1 needs an Offshore Project Manager",
-        "date": "Sat, 02 May 2026 07:27:18 -0500",
-        "unread": true,
-        "priority": "HIGH",
-        "score": 5,
-        "pipeline_match": null
-      }
-    ],
+    "interview_invites": [],
     "recruiter_messages": [
       {
-        "id": "356019",
-        "from": "GulfTalent Jobs <jobs@gulftalent.com>",
-        "subject": "RTC-1 needs an Offshore Project Manager",
-        "date": "Sat, 02 May 2026 07:27:18 -0500",
+        "id": "356073",
+        "from": "Naukrigulf <newjobs@naukrigulf.com>",
+        "subject": "Senior Product Manager, Principal Solution Architect\r\n -Platform & Integration jobs for you",
+        "date": "Sun, 3 May 2026 08:03:06 +0530 (IST)",
         "unread": true,
-        "priority": "HIGH",
-        "score": 5,
+        "priority": "MEDIUM",
+        "score": 2,
         "pipeline_match": null
       },
       {
-        "id": "356031",
-        "from": "Aisha from foundit <jobmessenger@monstergulf.com>",
-        "subject": "Job recommendations for you | foundit (Monster)",
-        "date": "Sat, 2 May 2026 19:26:18 +0530 (IST)",
+        "id": "356075",
+        "from": "QR Talent Acquisition <talentacquisition@careers1.qatarairways.com>",
+        "subject": "=?utf-8?Q?Regarding_Your_Qatar_Airways_Applicat?=\r\n =?utf-8?Q?ion_=E2=80=93_Program_Manager_-_MRO_Programs_?=",
+        "date": "Sat, 2 May 2026 23:15:14 -0400 (EDT)",
         "unread": true,
         "priority": "HIGH",
-        "score": 5,
-        "pipeline_match": null
+        "score": 7,
+        "pipeline_match": "SAP"
       }
     ],
     "application_acks": [],
@@ -65,20 +54,8 @@
     "actionable_count": 2,
     "hot_alerts": [
       {
-        "subject": "RTC-1 needs an Offshore Project Manager",
-        "from": "GulfTalent Jobs <jobs@gulftalent.com>",
-        "priority": "HIGH",
-        "pipeline_match": null
-      },
-      {
-        "subject": "Job recommendations for you | foundit (Monster)",
-        "from": "Aisha from foundit <jobmessenger@monstergulf.com>",
-        "priority": "HIGH",
-        "pipeline_match": null
-      },
-      {
-        "subject": "=?UTF-8?q?=F0=9F=A4=96_AI_kills_Apple=E2=80=99s_$599_Mac_mini...?=",
-        "from": "BrainBuzz <brainbuzz@mail.beehiiv.com>",
+        "subject": "=?utf-8?Q?Regarding_Your_Qatar_Airways_Applicat?=\r\n =?utf-8?Q?ion_=E2=80=93_Program_Manager_-_MRO_Programs_?=",
+        "from": "QR Talent Acquisition <talentacquisition@careers1.qatarairways.com>",
         "priority": "HIGH",
         "pipeline_match": "SAP"
       }
@@ -87,8 +64,8 @@
       {
         "company": "SAP",
         "signal": "recruiter_email",
-        "subject": "=?UTF-8?q?=F0=9F=A4=96_AI_kills_Apple=E2=80=99s_$599_Mac_mini...?=",
-        "sender": "BrainBuzz <brainbuzz@mail.beehiiv.com>",
+        "subject": "=?utf-8?Q?Regarding_Your_Qatar_Airways_Applicat?=\r\n =?utf-8?Q?ion_=E2=80=93_Program_Manager_-_MRO_Programs_?=",
+        "sender": "QR Talent Acquisition <talentacquisition@careers1.qatarairways.com>",
         "job_ids": [
           "indeed-in-b2195113ff678ef7",
           "indeed-in-b7591ff66cc5a732",
@@ -105,34 +82,34 @@
           "linkedin-li-4385294885"
         ],
         "score": 7,
-        "timestamp": "2026-05-02T20:01:58.680192+02:00"
+        "timestamp": "2026-05-03T06:02:30.174026+02:00"
       }
     ],
     "llm_analysis": {
       "actionable_emails": [
         {
-          "id": "356019",
-          "subject": "RTC-1 needs an Offshore Project Manager",
-          "from": "GulfTalent Jobs <jobs@gulftalent.com>",
-          "date": "Sat, 02 May 2026 07:27:18 -0500",
+          "id": "356073",
+          "subject": "Senior Product Manager, Principal Solution Architect -Platform & Integration jobs for you",
+          "from": "Naukrigulf <newjobs@naukrigulf.com>",
+          "date": "Sun, 3 May 2026 08:03:06 +0530 (IST)",
           "category": "recruiter_reach",
-          "urgency": "medium",
-          "intent": "The sender is sharing automated job recommendations matching Ahmed's profile.",
+          "urgency": "low",
+          "intent": "The sender is sharing a job-alert list matching Ahmed's profile.",
           "action": "read_and_file",
-          "response_deadline": "1 week",
-          "notes": "Not an interview invite; review only if roles fit target criteria."
+          "response_deadline": "when convenient",
+          "notes": "Review selectively for GCC senior tech/executive roles."
         },
         {
-          "id": "356031",
-          "subject": "Job recommendations for you | foundit (Monster)",
-          "from": "Aisha from foundit <jobmessenger@monstergulf.com>",
-          "date": "Sat, 2 May 2026 19:26:18 +0530 (IST)",
+          "id": "356075",
+          "subject": "Regarding Your Qatar Airways Application \u2013 Program Manager - MRO Programs",
+          "from": "QR Talent Acquisition <talentacquisition@careers1.qatarairways.com>",
+          "date": "Sat, 2 May 2026 23:15:14 -0400 (EDT)",
           "category": "recruiter_reach",
-          "urgency": "medium",
-          "intent": "The sender is sharing automated job recommendations based on recent applications.",
+          "urgency": "low",
+          "intent": "The sender is informing Ahmed that this Qatar Airways application was not selected.",
           "action": "read_and_file",
-          "response_deadline": "1 week",
-          "notes": "System-generated; do not reply. Jeddah role may be worth reviewing."
+          "response_deadline": "when convenient",
+          "notes": "This is a rejection, not a recruiter opportunity."
         }
       ],
       "summary": {
@@ -141,45 +118,38 @@
         "requires_interview_prep": false,
         "requires_assessment": false,
         "recruiter_top_opportunities": [
-          "pink camel recruitment - Project Control Department Manager, Jeddah",
-          "RTC-1 Employment Services - Offshore Project Manager, UAE"
+          "Naukrigulf job alert: CEO Oman Investment Authority",
+          "Naukrigulf job alert: General Manager Technology Oman Investment Authority",
+          "Naukrigulf job alert: KSA Head of Systems Vice President MUFG Bank"
         ],
-        "top_priority": "356031",
-        "daily_focus": "No urgent reply is needed today; review the Jeddah and UAE recommendations only if they meet salary and executive-fit criteria."
+        "top_priority": null,
+        "daily_focus": "No urgent replies today; selectively review the Naukrigulf senior GCC roles and archive the Qatar Airways rejection."
       }
     }
   },
   "kpi": {
-    "emails_processed": 53,
+    "emails_processed": 12,
     "actionable": 2,
-    "interviews_detected": 1,
+    "interviews_detected": 0,
     "recruiter_messages": 2,
     "unread_actionable": 2
   },
   "recommendations": [
     {
-      "id": "rec-0e1e14bd-0",
-      "action": "respond_immediately",
-      "target": "1 interview invite(s)",
-      "reason": "Interview invitations require prompt response",
-      "urgency": "critical",
-      "timestamp": "2026-05-02T20:03:14.973699+02:00"
-    },
-    {
-      "id": "rec-0e1e14bd-1",
+      "id": "rec-ead6ed51-0",
       "action": "review_and_respond",
       "target": "2 recruiter message(s)",
       "reason": "Recruiter outreach could lead to opportunities",
       "urgency": "high",
-      "timestamp": "2026-05-02T20:03:14.973718+02:00"
+      "timestamp": "2026-05-03T06:02:56.708590+02:00"
     },
     {
-      "id": "rec-0e1e14bd-2",
+      "id": "rec-ead6ed51-1",
       "action": "check_inbox",
       "target": "2 unread actionable email(s)",
       "reason": "Unread emails need attention",
       "urgency": "high",
-      "timestamp": "2026-05-02T20:03:14.973722+02:00"
+      "timestamp": "2026-05-03T06:02:56.708609+02:00"
     }
   ]
 }
