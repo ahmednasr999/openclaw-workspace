@@ -190,3 +190,12 @@
 [2026-05-03T00:09:02Z] RESET [cmo] e2803d19-c66e-4ed9-8344-3ca3fa7c64f1-topic-7.trajectory.jsonl was 7MB -> archived to e2803d19-c66e-4ed9-8344-3ca3fa7c64f1-topic-7.trajectory.20260503T000902Z.jsonl.gz
 [2026-05-03T00:09:03Z] RESET [cmo] ec238a44-16a4-4217-afd8-8878a6900898-topic-7.jsonl was 4MB -> archived to ec238a44-16a4-4217-afd8-8878a6900898-topic-7.20260503T000903Z.jsonl.gz
 [2026-05-03T00:09:03Z] Done reset=8 skipped=1 errors=0
+[2026-05-04T00:06:13Z] RESET [main] 7009a155-b95d-4827-b2c8-2e61b80e3b3a.trajectory.jsonl was 7MB -> archived to 7009a155-b95d-4827-b2c8-2e61b80e3b3a.trajectory.20260504T000613Z.jsonl.gz
+[2026-05-04T00:06:15Z] RESET [main] 99c4b687-599a-486b-a056-a20240362420.trajectory.jsonl was 25MB -> archived to 99c4b687-599a-486b-a056-a20240362420.trajectory.20260504T000614Z.jsonl.gz
+[2026-05-04T00:06:16Z] RESET [hr] cdc8764b-617a-4543-9433-6ae634f9b5d4-topic-9.trajectory.jsonl was 5MB -> archived to cdc8764b-617a-4543-9433-6ae634f9b5d4-topic-9.trajectory.20260504T000616Z.jsonl.gz
+[2026-05-04T00:06:17Z] RESET [cto] 684aaf8e-e5d3-4609-bae9-576684c65f6f-topic-8.trajectory.jsonl was 3MB -> archived to 684aaf8e-e5d3-4609-bae9-576684c65f6f-topic-8.trajectory.20260504T000617Z.jsonl.gz
+[2026-05-04T00:06:17Z] SKIP [cto] 684aaf8e-e5d3-4609-bae9-576684c65f6f-topic-8.jsonl locked by live PID 523199 (1MB)
+[2026-05-04T00:06:19Z] SKIP [cto] 7e8d34f1-6497-47f5-92a2-b277ad21fb2e.jsonl locked by live PID 523199 (1MB)
+[2026-05-04T00:06:19Z] RESET [cto] 6d906346-fb20-4499-944d-3172fe370429-topic-8.trajectory.jsonl was 5MB -> archived to 6d906346-fb20-4499-944d-3172fe370429-topic-8.trajectory.20260504T000619Z.jsonl.gz
+[2026-05-04T00:06:20Z] RESET [cmo] 4cc76310-2319-42d6-afb7-e6e6f9c77aa6-topic-7.trajectory.jsonl was 6MB -> archived to 4cc76310-2319-42d6-afb7-e6e6f9c77aa6-topic-7.trajectory.20260504T000620Z.jsonl.gz
+[2026-05-04T00:06:23Z] Done reset=6 skipped=2 errors=0

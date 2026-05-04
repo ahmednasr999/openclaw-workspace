@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-03T03:30:17.772Z",
+  "updatedAt": "2026-05-03T23:37:07.032Z",
   "entries": {
     "memory:memory/archives/2026-03-07.md:29:56": {
       "key": "memory:memory/archives/2026-03-07.md:29:56",
@@ -2530,18 +2530,20 @@
       "endLine": 1180,
       "source": "memory",
       "snippet": "- Cognitive load protection - Strategic decisions deserve deep analysis ### What's Wrong - Too rigid - routine tasks may benefit from Red Team critique - Missing trigger: Public content representing Ahmed - Missing trigger: External-facing work - Missing emotional/stakes dimension - Missing time pressure assessment ### Enhancements Needed - Add trigger: Content going public (LinkedIn, investor comms, external representation) - Add: Personal brand/reputation impact - Add: Stakeholder emotional investment - Add: Time pressure test (is this urgent?) - Add: Competitive pressure assessment ### Framework Refined Strategic decision criteria: 1. Public-facing content (LinkedIn, investors, externa",
-      "recallCount": 1,
+      "recallCount": 2,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 1,
+      "totalScore": 2,
       "maxScore": 1,
       "firstRecalledAt": "2026-05-02T21:11:56.157Z",
-      "lastRecalledAt": "2026-05-02T21:11:56.157Z",
+      "lastRecalledAt": "2026-05-03T23:37:07.032Z",
       "queryHashes": [
-        "1f409fe934d1"
+        "1f409fe934d1",
+        "6b29fd4ebf3e"
       ],
       "recallDays": [
-        "2026-05-03"
+        "2026-05-03",
+        "2026-05-04"
       ],
       "conceptTags": [
         "external-facing",
@@ -2676,6 +2678,37 @@
         "status",
         "was",
         "reframed"
+      ]
+    },
+    "memory:memory/archive/2026-02/2026-02-17.md:102:137": {
+      "key": "memory:memory/archive/2026-02/2026-02-17.md:102:137",
+      "path": "memory/archive/2026-02/2026-02-17.md",
+      "startLine": 102,
+      "endLine": 137,
+      "source": "memory",
+      "snippet": "### Gmail Automation Limitations Documented - Created `/memory/gmail-automation-limitations.md` - IMAP sync issues documented - Verification protocols established - User checkpoint workflow implemented ### Model Optimization - ✅ Switched to MiniMax-M2.1 for routine Gmail operations (cost-effective) - ✅ Proactive recommendation to user about model usage - Strategic thinking applied to resource management ### Today's Total Cleanup (Cumulative) - **Emails deleted**: 400+ total - **Labels cleaned**: 4 empty (Twitter, LinkedIN/linked in, PM, LinkedIN/docs - in progress) - **Storage freed**: Significant (promotional, old notifications, LinkedIn spam) ### Critical User Preference (2026-02-17 20:",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-03T19:28:36.106Z",
+      "lastRecalledAt": "2026-05-03T19:28:36.106Z",
+      "queryHashes": [
+        "448721ebd3a6"
+      ],
+      "recallDays": [
+        "2026-05-03"
+      ],
+      "conceptTags": [
+        "minimax-m2.1",
+        "cost-effective",
+        "linkedin/linked",
+        "linkedin/docs",
+        "gmail",
+        "automation",
+        "limitations",
+        "documented"
       ]
     }
   }

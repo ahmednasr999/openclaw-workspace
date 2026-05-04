@@ -2,16 +2,37 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-05-03T17:00:33.429465+02:00",
-    "duration_ms": 31334,
+    "generated_at": "2026-05-04T05:00:31.246361+02:00",
+    "duration_ms": 29201,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "50be21f9",
+    "run_id": "00c87470",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": [
+    {
+      "id": "indeed-in-34cdc3f0791383dc",
+      "source": "indeed",
+      "title": "Senior Director - Ethics & Compliance, Gulf",
+      "company": "Eli Lilly",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=34cdc3f0791383dc",
+      "posted": "2026-05-03",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 13,
+      "match_keywords": [
+        "healthcare",
+        "director"
+      ],
+      "raw_snippet": "At Lilly, we unite caring with discovery to make life better for people around the world. We are a global healthcare leader headquartered in Indianapolis, Indiana. Our employees around the world work to discover and bring life\\-changing medicines to those who need them, improve the understanding and management of disease, and give back to our communities through philanthropy and volunteerism. We give our best effort to our work, and we put people first. We\u2019re looking for people who are determine",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Program Director"
+    },
     {
       "id": "indeed-in-53353204a9396d92",
       "source": "indeed",
@@ -120,6 +141,28 @@
       "search_title": "PMO Director"
     },
     {
+      "id": "indeed-in-27cef88342559aa8",
+      "source": "indeed",
+      "title": "Senior Director - Ethics & Compliance, KSA",
+      "company": "Eli Lilly",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=27cef88342559aa8",
+      "posted": "2026-05-03",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 16,
+      "match_keywords": [
+        "healthcare",
+        "director",
+        "ksa"
+      ],
+      "raw_snippet": "At Lilly, we unite caring with discovery to make life better for people around the world. We are a global healthcare leader headquartered in Indianapolis, Indiana. Our employees around the world work to discover and bring life\\-changing medicines to those who need them, improve the understanding and management of disease, and give back to our communities through philanthropy and volunteerism. We give our best effort to our work, and we put people first. We\u2019re looking for people who are determine",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "Program Director"
+    },
+    {
       "id": "indeed-in-a0d39c4dda92414a",
       "source": "indeed",
       "title": "Director, Engineering KSA",
@@ -142,35 +185,13 @@
       "filter_reason": null,
       "search_country": "Saudi Arabia",
       "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-6526fb3709c8d79d",
-      "source": "indeed",
-      "title": "Tech Director - CyberSecurity",
-      "company": "Globant",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=6526fb3709c8d79d",
-      "posted": "2026-04-30",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 20,
-      "match_keywords": [
-        "cybersecurity",
-        "enterprise",
-        "director"
-      ],
-      "raw_snippet": "At Globant, we are working to make the world a better place, one step at a time. We enhance business development and enterprise solutions to prepare them for a digital future. With a diverse and talented team present in more than 30 countries, we are strategic partners to leading global companies in their business process transformation.  \n\n\n\n**We seek a Tech Director \\- Cybersecurity, Expert Level who shares our passion for innovation and change. This role is critical to helping our business pa",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Director Digital Transformation"
     }
   ],
   "kpi": {
     "searches_run": 20,
-    "results_per_search": 2.1,
-    "unique_jobs": 7,
-    "errors": 9
+    "results_per_search": 2.0,
+    "unique_jobs": 8,
+    "errors": 10
   },
   "recommendations": []
 }

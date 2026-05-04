@@ -49,6 +49,57 @@
   - Final checker was fully green, including: session-resume fallback prefix suppressed, active-memory direct FTS live-reply patch present, runtime-context custom-message queue disabled, runtime-context plain-header stripper/smoke passed, leaked tool-callback sanitizer smoke passed, heartbeat reply sanitizer path present, cron envelope smoke passed, queued-message metadata smoke passed, active-memory queued system smoke passed, restart-sentinel smoke passed, reply-context metadata smoke passed.
   - Runtime reload used SIGUSR1 with reason `Load restored OpenClaw runtime sanitizer patches after 2026.5.2 update`; no extra full service disruption beyond update restart was needed.
   - Durable lesson: after OpenClaw updates, duplicate hashed bundles can make patch checks fail even if the active-looking bundle is patched. Patch/check both real active bundles and stale duplicate bundles selected by checker logic, especially `bash-tools-*` and `queue-*`.
+# 2026-05-03 Durable Session Notes
+
+- LinkedIn publish recovery: approved post about AI agents needing systems was published twice due to a recovery race between CMO/subagent and main session.
+  - First/keep candidate: `https://www.linkedin.com/feed/update/urn:li:share:7456440658388688896` published/logged by CMO/subagent around 2026-05-02 23:33 Cairo.
+  - Second/duplicate candidate: `https://www.linkedin.com/feed/update/urn:li:share:7456442093582954496/` published by main session around 2026-05-02 23:38 Cairo.
+  - Recommendation given to Ahmed: delete the second post and keep the first. No deletion was performed because deletion is public/destructive and requires explicit approval.
+  - Durable lesson: before any external publish recovery, re-check local success logs/live state immediately before the final `LINKEDIN_CREATE_LINKED_IN_POST` call to prevent duplicates.
+- Composio LinkedIn image-post lane is proven end-to-end:
+  1. stage approved image to `openclaw-workspace` branch `images-latest` under `images/posts/...`,
+  2. verify raw GitHub URL returns the correct bytes/hash,
+  3. download raw URL inside Composio workbench session,
+  4. call workbench `upload_local_file()` to obtain `images[].s3key`,
+  5. call `LINKEDIN_CREATE_LINKED_IN_POST` with `author: urn:li:person:mm8EyA56mj`, `visibility: PUBLIC`, approved commentary, and image object `{name, mimetype, s3key}`.
+  - Confirmed raw URL for this incident: `https://raw.githubusercontent.com/ahmednasr999/openclaw-workspace/images-latest/images/posts/ai-agents-need-a-system-stack.jpg`
+  - Confirmed image sha256: `2c6f8c4fde3f8a6b33d77ecb0aca5eb580eaf5f608455a2c205c752835ba3a20`
+  - Main-session S3 key used: `project/pr_Gqp3256AsBat/tool_router_session/trs_gNwouOSOw0Ze/G0ntv4Jrxiwb`
+- Important pitfall: `COMPOSIO_REMOTE_WORKBENCH` requires Python `code_to_execute`; it is not an `{action:"upload_local_file", path:...}` wrapper. The file must already exist inside the remote sandbox before `upload_local_file(path)` can return a valid `s3key`.
+- Browser fallback remains unsuitable for LinkedIn publishing unless authenticated: imported LinkedIn cookies redirected to login/password, and Ahmed-Mac relay was disconnected during the incident.
+
+- JobZoom daily scan logic was patched in `/root/.openclaw/workspace-jobzoom/scripts/daily_run.py` after discovering a design flaw: older-but-still-open roles returned by today's LinkedIn scrape were being silently dropped by the strict freshness gate before scoring/saving.
+  - Backup: `/root/.openclaw/workspace-jobzoom/scripts/daily_run.py.bak-still-open-20260503`.
+  - New lane preserves strict fresh matching while adding a separate still-open review lane for roles older than yesterday but within `STILL_OPEN_LOOKBACK_DAYS = 14`, excluding already-applied roles.
+  - New constants: `STILL_OPEN_LOOKBACK_DAYS = 14`, `STILL_OPEN_SCORE_THRESHOLD = 70`, `STILL_OPEN_MAX_AI_SCORE = 20`, `STILL_OPEN_MAX_REPORT = 12`.
+  - Validation on current scrape data showed: fresh eligible 11, still-open raw candidates 350, after applied exclusions 305, expanded review filter 206. Future runs should AI-score top 20 and report separately; no auto-CV generation yet.
+  - Durable lesson: for probabilistic LinkedIn search, do not equate posted-date freshness with discovery-date freshness. If a role appears in today's scrape, strong older-but-open roles need a bounded review lane instead of being discarded silently.
+
+- OpenClaw update completed on 2026-05-03 after explicit approval.
+  - Pre-update backup: `/root/.openclaw/backups/pre-openclaw-update-20260503-060358`.
+  - Installed package update target was `2026.5.2`; active package root `/usr/lib/node_modules/openclaw`.
+  - Corrected update path forced `/usr/bin/openclaw` because `/usr/local/bin/openclaw` points to stale dirty checkout `/root/openclaw` (`2026.4.22`), while `/usr/bin/openclaw` points to package install (`2026.4.29` before update, `2026.5.2` after update).
+  - Successful update log: `/root/.openclaw/workspace/tmp/openclaw-controlled-update-package.log`; helper script: `/root/.openclaw/workspace/tmp/openclaw-controlled-update-package.sh`.
+  - First attempted update log/script: `/root/.openclaw/workspace/tmp/openclaw-controlled-update.log` and `.sh`; it hit the wrong `/root/openclaw` checkout due to PATH precedence and skipped because the checkout was dirty.
+  - Final active version after update: `OpenClaw 2026.5.2 (8b2a6e5)`, gateway enabled/running under systemd, loopback `127.0.0.1:18789`, admin-capable.
+  - Durable lesson: detached/systemd jobs must force `/usr/bin` before `/usr/local/bin` or use an absolute CLI path for package updates, otherwise stale source checkout can hijack OpenClaw commands.
+
+- Post-update runtime sanitizer patches were overwritten and restored against OpenClaw `2026.5.2` dist bundles.
+  - Verification source: `/root/.openclaw/workspace/scripts/check-openclaw-runtime-patches.py`.
+  - Patched/restored files included:
+    - `/usr/lib/node_modules/openclaw/dist/sanitize-user-facing-text-Cz177X8d.js`
+    - `/usr/lib/node_modules/openclaw/dist/queue-y-VPBYRY.js`
+    - `/usr/lib/node_modules/openclaw/dist/heartbeat-runner-BHI-wtwo.js`
+    - `/usr/lib/node_modules/openclaw/dist/bash-tools-CUUGvp_C.js`
+    - `/usr/lib/node_modules/openclaw/dist/bash-tools-CwNyLceP.js`
+    - `/usr/lib/node_modules/openclaw/dist/extensions/active-memory/index.js`
+    - `/usr/lib/node_modules/openclaw/dist/runtime-context-prompt-BusW75hm.js`
+    - `/usr/lib/node_modules/openclaw/dist/internal-runtime-context-TysOkYqY.js`
+    - `/usr/lib/node_modules/openclaw/dist/queue-helpers-CjFYraLI.js`
+  - Backups created for early patched bundles with suffix `.bak-post-20260503-0618`.
+  - Final checker was fully green, including: session-resume fallback prefix suppressed, active-memory direct FTS live-reply patch present, runtime-context custom-message queue disabled, runtime-context plain-header stripper/smoke passed, leaked tool-callback sanitizer smoke passed, heartbeat reply sanitizer path present, cron envelope smoke passed, queued-message metadata smoke passed, active-memory queued system smoke passed, restart-sentinel smoke passed, reply-context metadata smoke passed.
+  - Runtime reload used SIGUSR1 with reason `Load restored OpenClaw runtime sanitizer patches after 2026.5.2 update`; no extra full service disruption beyond update restart was needed.
+  - Durable lesson: after OpenClaw updates, duplicate hashed bundles can make patch checks fail even if the active-looking bundle is patched. Patch/check both real active bundles and stale duplicate bundles selected by checker logic, especially `bash-tools-*` and `queue-*`.
 
 - Disk cleanup on OpenClaw VPS completed after approval.
   - Before cleanup: root filesystem `/dev/sda1` 96G total, 72G used, 25G free, 75%.

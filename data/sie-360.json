@@ -1,18 +1,18 @@
 {
-  "generated": "2026-05-03T07:02:01.593761+00:00",
-  "health_score": 77,
+  "generated": "2026-05-03T22:50:13.236299+00:00",
+  "health_score": 79,
   "summary": {
-    "ok": 5,
-    "warn": 4,
+    "ok": 6,
+    "warn": 3,
     "alert": 3
   },
   "workspace": {
-    "root_files": 77,
-    "disk_percent": 56,
-    "disk_used": "53G",
+    "root_files": 72,
+    "disk_percent": 62,
+    "disk_used": "60G",
     "disk_total": "96G",
     "ram_total": "7.8Gi",
-    "ram_used": "1.7Gi",
+    "ram_used": "1.4Gi",
     "large_files": [
       "/root/.openclaw/agents/main/qmd/xdg-cache/qmd/index.sqlite",
       "/root/.openclaw/agents/main/sessions/sessions.json.bak.1776877462456",
@@ -31,6 +31,8 @@
       "/root/.openclaw/agents/main/sessions/c268cdda-e715-4949-97a1-eb0d41b538f6.jsonl.reset.2026-05-01T20-03-42.178Z",
       "/root/.openclaw/agents/main/sessions/eff56784-4287-4a7d-b73b-4c51dbec3122.jsonl.reset.2026-04-26T01-05-12.462Z",
       "/root/.openclaw/agents/main/sessions/sessions.json.bak.1776880840219",
+      "/root/.openclaw/agents/main/sessions/99c4b687-599a-486b-a056-a20240362420.trajectory.jsonl",
+      "/root/.openclaw/agents/cmo/sessions/4cc76310-2319-42d6-afb7-e6e6f9c77aa6-topic-7.trajectory.jsonl",
       "/root/.openclaw/agents/cmo/sessions/acd2e90d-d2a9-4528-b444-8aff5d9f6a27-topic-7.jsonl.bak-157027-1777319013726",
       "/root/.openclaw/agents/jobzoom/sessions/sessions.json.bak.1777429720921",
       "/root/.openclaw/agents/jobzoom/sessions/sessions.json.bak-gpt55-20260424T023531",
@@ -42,9 +44,11 @@
       "/root/.openclaw/media/inbound/RAYA_Data_Intelligence_Building_MENA_s_Premier_AI_Data_Label---0ab6beab-b758-4180-9d68-cd8d66ffe0ec.pptx",
       "/root/.openclaw/extensions/camofox-browser/node_modules/impit-linux-x64-gnu/impit-node.linux-x64-gnu.node",
       "/root/.openclaw/extensions/camofox-browser/node_modules/better-sqlite3/deps/sqlite3/sqlite3.c",
+      "/root/.openclaw/extensions/lossless-claw/node_modules/@napi-rs/canvas-linux-x64-musl/skia.linux-x64-musl.node",
       "/root/.openclaw/extensions/lossless-claw/node_modules/@napi-rs/canvas-linux-x64-gnu/skia.linux-x64-gnu.node",
       "/root/.openclaw/extensions/lossless-claw/node_modules/pdfjs-dist/build/pdf.worker.mjs.map",
       "/root/.openclaw/extensions/lossless-claw/node_modules/pdfjs-dist/legacy/build/pdf.worker.mjs.map",
+      "/root/.openclaw/extensions/lossless-claw/node_modules/@img/sharp-libvips-linuxmusl-x64/lib/libvips-cpp.so.8.17.3",
       "/root/.openclaw/extensions/lossless-claw/node_modules/@img/sharp-libvips-linux-x64/lib/libvips-cpp.so.8.17.3",
       "/root/.openclaw/extensions/lossless-claw/node_modules/openclaw/dist/extensions/diffs/assets/viewer-runtime.js",
       "/root/.openclaw/lcm.db-wal",
@@ -180,7 +184,7 @@
       "/root/.openclaw/plugin-runtime-deps/openclaw-2026.5.2-4eca5026e977/node_modules/pdfjs-dist/legacy/build/pdf.worker.mjs.map",
       "/root/.openclaw/plugin-runtime-deps/openclaw-2026.5.2-4eca5026e977/node_modules/@img/sharp-libvips-linux-x64/lib/libvips-cpp.so.8.17.3"
     ],
-    "session_mb": 398.8
+    "session_mb": 572.9
   },
   "learnings": {
     "total": 24,
@@ -208,7 +212,7 @@
       "notion_token": "present (50 chars)",
       "notion_databases": 15,
       "linkedin_lines": 3,
-      "linkedin_age_days": 40.4
+      "linkedin_age_days": 41.0
     }
   },
   "crons": {
@@ -218,21 +222,19 @@
     "skill_first": 7,
     "skill_first_pct": 23,
     "raw_prompt_list": [
-      "Weekly Team Retro",
-      "Email Agent (Sun-Thu)",
-      "OpenClaw Health Guard",
-      "CVE-2026-31431 kernel patch availability watch",
-      "LCM Midday Compaction Sweep",
-      "CMO Weekly Drafting",
       "Daily Session Cleanup",
       "session-watchdog",
       "Daily Intel Sweep",
       "JobZoom Daily Scan",
+      "OpenClaw Health Guard",
+      "CVE-2026-31431 kernel patch availability watch",
       "Dream Mode - Memory Consolidation",
+      "Email Agent (Sun-Thu)",
       "NASR Doctor (Daily)",
       "VPS disk guard at 65%",
       "CMO Publishing Watchdog",
       "14-day daily profile drip question pilot",
+      "LCM Midday Compaction Sweep",
       "Email Agent (Fri-Sat)",
       "RSS Intelligence - Weekly Crawl",
       "CMO Weekly Content Report",
@@ -240,20 +242,11 @@
       "Weekly Pipeline Audit",
       "CMO Weekly Outreach Queue \u2014 Sunday",
       "Weekly Self-Health Check",
+      "Weekly Team Retro",
+      "CMO Weekly Drafting",
       "End 14-day daily profile drip pilot"
     ],
-    "failing": [
-      {
-        "name": "CMO Daily LinkedIn Autoposter",
-        "consecutive_errors": 1,
-        "last_error": "\u26a0\ufe0f Agent couldn't generate a response. Note: some tool actions may have already been executed \u2014 plea"
-      },
-      {
-        "name": "RSS Intelligence - Weekly Crawl",
-        "consecutive_errors": 1,
-        "last_error": "cron: job execution timed out"
-      }
-    ]
+    "failing": []
   },
   "briefing_notion": {
     "skipped": true,
@@ -263,22 +256,22 @@
     {
       "category": "workspace",
       "level": "warn",
-      "message": "Root files: 77 (approaching clutter threshold of 100)"
+      "message": "Root files: 72 (approaching clutter threshold of 100)"
     },
     {
       "category": "workspace",
       "level": "ok",
-      "message": "Disk: 56% used (53G/96G)"
+      "message": "Disk: 62% used (60G/96G)"
     },
     {
       "category": "workspace",
       "level": "warn",
-      "message": "Large files (>5MB): 165 found in .openclaw"
+      "message": "Large files (>5MB): 169 found in .openclaw"
     },
     {
       "category": "workspace",
       "level": "alert",
-      "message": "Session size: 398.8MB - bloated, review sessions"
+      "message": "Session size: 572.9MB - bloated, review sessions"
     },
     {
       "category": "learnings",
@@ -312,8 +305,8 @@
     },
     {
       "category": "crons",
-      "level": "warn",
-      "message": "Failing crons: 2 with consecutive errors"
+      "level": "ok",
+      "message": "No failing crons"
     },
     {
       "category": "briefing",
@@ -321,10 +314,8 @@
       "message": "Notion briefing check disabled - pipeline uses NocoDB+Telegram"
     }
   ],
-  "auto_fixed": [
-    "'CMO Daily LinkedIn Autoposter' had 1 transient error - will auto-clear on next scheduled run"
-  ],
+  "auto_fixed": [],
   "needs_attention": [
-    "Session bloat: 398.8MB - review before deleting (needs human decision)"
+    "Session bloat: 572.9MB - review before deleting (needs human decision)"
   ]
 }
