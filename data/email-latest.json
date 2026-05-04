@@ -1,7 +1,7 @@
 {
   "status": "ok",
-  "scan_time": "2026-05-03T20:00:23.191475+02:00",
-  "total_scanned": 8,
+  "scan_time": "2026-05-04T18:01:27.791837+02:00",
+  "total_scanned": 0,
   "by_category": {
     "interview_invite": 0,
     "recruiter_reach": 0,
@@ -9,7 +9,7 @@
     "rejection": 0,
     "assessment": 0,
     "follow_up_needed": 0,
-    "other": 8
+    "other": 0
   },
   "interview_invites": [],
   "recruiter_messages": [],
@@ -18,25 +18,6 @@
   "assessments": [],
   "follow_ups_needed": [],
   "actionable_count": 0,
-  "hot_alerts": [
-    {
-      "subject": "The Agent Harness Demo",
-      "from": "\"The Business Engineer \" <thebusinessengineer@substack.com>",
-      "priority": "HIGH",
-      "pipeline_match": "Harness"
-    }
-  ],
-  "signals": [
-    {
-      "company": "Harness",
-      "signal": "recruiter_email",
-      "subject": "The Agent Harness Demo",
-      "sender": "\"The Business Engineer \" <thebusinessengineer@substack.com>",
-      "job_ids": [
-        "linkedin_jobspy-li-4382069582"
-      ],
-      "score": 7,
-      "timestamp": "2026-05-03T20:00:23.179173+02:00"
-    }
-  ]
+  "hot_alerts": [],
+  "signals": []
 }

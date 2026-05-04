@@ -1133,3 +1133,58 @@ Promote to `TOOLS.md` under Gateway/Plugins: after plugin code or manifest chang
 - Last-Seen: 2026-05-03
 
 ---
+
+## [LRN-20260503-002] best_practice
+
+**Logged**: 2026-05-03T21:48:00+03:00
+**Priority**: medium
+**Status**: promoted
+**Area**: infra
+
+### Summary
+Plugin closeout should verify the specific runtime surface changed, not only use a single generic plugin check.
+
+### Details
+OpenClaw docs clarify plugin verification by surface: `plugins list` is cold discovery; `plugins inspect <id> --runtime --json` proves runtime surfaces like tools, hooks, services, and Gateway methods; plugin-owned CLI roots should also be tested with one safe command from that root. This refines the earlier `inspect --runtime` rule.
+
+### Suggested Action
+Keep `TOOLS.md` Gateway Safety rule focused on surface-matched verification: runtime inspect for runtime surfaces, safe CLI command for CLI roots, list only for cold discovery, logs as supporting evidence.
+
+### Metadata
+- Source: user_feedback
+- Related Files: /root/.openclaw/workspace/TOOLS.md
+- Tags: openclaw, plugins, cli, verification
+- See Also: LRN-20260503-001
+- Pattern-Key: openclaw.plugins.surface_verify
+- Recurrence-Count: 1
+- First-Seen: 2026-05-03
+- Last-Seen: 2026-05-03
+
+---
+
+## [LRN-20260503-003] best_practice
+
+**Logged**: 2026-05-03T22:02:00+03:00
+**Priority**: medium
+**Status**: promoted
+**Area**: infra
+
+### Summary
+OpenClaw plugin docs imply ingress, voice, computer-use, memory, and presentation plugins need different safety/verification standards.
+
+### Details
+Docs reviewed for Codex Computer Use, Google Meet, Webhooks, Voice Call, Memory Wiki, Memory LanceDB, and Message Presentation. The durable operating pattern is: external ingress and voice/meeting automation need explicit approval and narrow permissions; computer-use is separate from text/code Codex harness routing and must be verified independently; vector memory should be benchmarked before live active-memory use; presentation blocks must degrade cleanly to plain text.
+
+### Suggested Action
+Promoted concise rules to `TOOLS.md` covering Google Meet privacy, Codex Computer Use verification, webhooks/voice-call ingress safety, LanceDB/vector-memory pilot gating, and plain-text-safe message presentation.
+
+### Metadata
+- Source: conversation
+- Related Files: /root/.openclaw/workspace/TOOLS.md
+- Tags: openclaw, plugins, safety, memory, voice, webhooks, presentation
+- Pattern-Key: openclaw.plugins.safety_posture
+- Recurrence-Count: 1
+- First-Seen: 2026-05-03
+- Last-Seen: 2026-05-03
+
+---

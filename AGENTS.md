@@ -156,6 +156,8 @@ Every spawn brief must define the outcome, success criteria, verification, timeo
 
 Default non-coding sub-agent brief template: `docs/agent-governance/NASR-ACP-Coding-Brief.md`.
 
+For OpenClaw maintenance or repair briefs to Codex app, external coding agents, or sub-agents, use the standard repair-prompt pattern: point to the OpenClaw repo/docs and `~/.openclaw/openclaw.json`, require investigation before changes, ask before risky changes, back up files before edits, and report exact changed/backup paths. This supplements NASR gateway safety rules; it does not replace them. <!-- dream-promoted 2026-05-04 -->
+
 Use isolated context by default. Use forked context only when the child truly needs this transcript.
 
 ## Coding Dispatch

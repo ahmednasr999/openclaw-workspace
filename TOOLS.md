@@ -20,6 +20,7 @@ Full detail lives in `docs/reference/TOOLS.full.md`.
 
 - Prefer Camoufox tools for external sites with bot detection.
 - For account/session tasks, prefer Ahmed-Mac Chrome when login state matters.
+- Google Meet automation is privacy-sensitive. Do not auto-join, record, transcribe, or summarize meetings unless Ahmed explicitly approves the workflow/session; prefer node/browser setups with known login state and narrow permissions.
 - Avoid server-side browser fallback when account session matters.
 - Browser-reading hard stop: after 3 screenshots/scrolls on the same page without new extractable content, stop browsing, summarize what is known, and state the blocker. Do not keep a user-facing run open in a visual loop.
 - For X/Twitter links specifically, use a small screenshot budget, then answer from visible evidence or say the tweet could not be reliably read. Never repeat scroll/screenshot cycles just to search for certainty.
@@ -41,6 +42,7 @@ Posting:
 - Composio post action: `LINKEDIN_CREATE_LINKED_IN_POST`.
 - Person URN: `urn:li:person:mm8EyA56mj`.
 - For image posts, upload image first and use the returned true `s3key`.
+- Composio workbench image upload gotcha: `COMPOSIO_REMOTE_WORKBENCH` expects Python `code_to_execute`; download or stage the file inside the remote sandbox first, then call `upload_local_file(path)` to obtain the true `s3key`. It is not an action/path wrapper. <!-- dream-promoted 2026-05-04 -->
 - Never pass raw GitHub URLs, local paths, Notion URLs, or short links as `s3key`.
 - Never post text-only when an image was expected.
 - For the CMO premium image/content-card workflow, universal default reference is `/root/.openclaw/workspace/output/jobzoom-visuals/ahmed-linkedin-ai-execution-card-4k.jpg`. Use that Ahmed LinkedIn AI execution card format for every LinkedIn post visual unless Ahmed explicitly requests a different visual direction. The script `/root/.openclaw/workspace-cmo/scripts/generate-premium-content-card.py` remains the implementation path, but its output should match the AI execution card format by default. Completion requires the premium visual quality gate in `skills/content-claw/SKILL.md`; tool success, file creation, or a CMO nudge is not proof.
@@ -92,6 +94,7 @@ Never use Composio for Notion or Telegram when direct credentials exist.
 
 ## Messaging and Media
 
+- Message presentation blocks are optional enhancement, not the source of truth. Any important alert, daily card, approval-style prompt, or decision message must remain readable as plain text if buttons, selects, cards, or pins degrade on the target channel.
 - OpenClaw CLI messaging uses `--target`, not `--to`.
 - For local media sends, copy files to an allowed media directory such as `/root/.openclaw/media` first.
 - Verify actual delivery or returned message state before saying a message/file was sent.
@@ -114,11 +117,14 @@ Never use Composio for Notion or Telegram when direct credentials exist.
 - Heredoc syntax is blocked by the gateway security scanner.
 - When doctor says no active memory plugin is registered, check `plugins.entries.memory-core.enabled` before changing memory slots.
 - ACP harness requests may fail if ACP runtime plugin is not configured. Verify runtime availability before promising Codex/Claude harness launch.
+- Codex Computer Use is separate from Codex text/code harness routing. Before promising computer-use actions, verify `computerUse` config, selected marketplace/backend, installed/enabled plugin state, and node/backend availability.
 - `gateway update.run` follows upstream/git update behavior, not necessarily the latest tagged release. Before updates, verify the actual target, active service entrypoint, and `/tmp` headroom.
 - For package OpenClaw updates on this host, force `/usr/bin/openclaw` or put `/usr/bin` before `/usr/local/bin`; `/usr/local/bin/openclaw` can resolve to stale dirty checkout `/root/openclaw` and hijack update commands. <!-- dream-promoted 2026-05-03 -->
 - Post-update runtime patch check: run `python3 scripts/check-openclaw-runtime-patches.py` after OpenClaw updates. It alerts if the session-resume fallback prefix patch was overwritten or the active-memory direct FTS live-reply patch is missing.
-- After plugin installs, updates, or manifest edits, use `openclaw plugins inspect <plugin-id> --runtime --json` as runtime proof for each touched plugin; `plugins list` is only a cold inventory check, and health/log greps alone are weaker evidence. Also check current-start logs for `plugin must declare contracts.tools` warnings. <!-- promoted 2026-05-03 -->
+- After plugin installs, updates, or manifest edits, match verification to the surface changed: `openclaw plugins inspect <plugin-id> --runtime --json` for tools/hooks/services/gateway methods; one safe root command for plugin-owned CLI commands; `openclaw plugins list --json` only for cold manifest/config discovery. Health/log greps are supporting evidence, not primary proof. Also check current-start logs for `plugin must declare contracts.tools` warnings. <!-- promoted 2026-05-03 -->
+- Webhooks and voice-call plugins are high-risk external ingress. Keep them disabled unless explicitly approved; if enabled, use narrow session binding, strong unique secrets or allowlists, minimal tool policy, rate/timeout guards, and no external-write tools by default.
 - Active-memory live replies intentionally use the direct FTS patch, not the stock embedded LLM recall path. Do not re-enable semantic/vector active-memory in the live Telegram path until isolated tests prove p95 under 2s with no timeout leaks. See `docs/runtime-patches/active-memory-direct-fts.md`.
+- Memory LanceDB / vector memory belongs in isolated benchmark or pilot lanes first. Do not connect it to live Telegram active-memory or enable autoCapture until latency, timeout, privacy, and recall-quality checks pass.
 - `apply_patch`, `read`, and similar workspace-scoped file tools can reject paths outside `/root/.openclaw/workspace`. For `/tmp`, lab directories, or other workspaces, treat that as a tool-scope limitation and verify repo state before reporting failure.
 
 ## JobZoom Protected Lane

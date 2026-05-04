@@ -39,3 +39,8 @@ Derived baseline for monthly total package filtering: UAE AED 55,000; Saudi abou
 Question: For GCC executive targeting, which employer type should I prioritize when roles are otherwise similar: healthcare operator, government/semi-government transformation, large private group, or tech/vendor side? Pick top 1-2, plus any hard no.
 Raw answer: The answer is the employer will pay more salary.
 Note: Ahmed clarified that employer type is secondary; prioritize whichever employer pays more salary when roles are otherwise similar.
+
+### 2026-05-04
+Question: Besides salary, what is your biggest hard-no for GCC executive roles: weak authority, unstable company, bad reporting line, poor city/family fit, or something else?
+Raw answer: It's all about salary nothing more.
+Note: Ahmed clarified that salary is the overriding decision factor. Do not invent additional hard-no filters unless salary is acceptable or Ahmed explicitly adds them.

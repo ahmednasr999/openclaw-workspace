@@ -58,7 +58,7 @@ He prefers:
 - automation only after output quality is proven on a real sample
 
 Executive role evaluation:
-- Salary remains a primary decision factor and should not be excluded or treated as already resolved when comparing GCC roles.
+- Salary is the overriding decision factor for GCC executive roles. Do not treat other hard-no filters as primary unless salary is acceptable or Ahmed explicitly adds them.
 - When roles are otherwise similar, prioritize the employer that pays more salary over employer type preferences.
 - Minimum monthly total-package baseline for serious GCC executive-role consideration: UAE AED 55,000; Saudi about SAR 56,000; Qatar about QAR 55,000; Oman about OMR 5,750. Optional equivalents: Bahrain about BHD 5,650; Kuwait about KWD 4,600.
 

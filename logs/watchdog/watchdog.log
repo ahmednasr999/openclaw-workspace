@@ -2178,3 +2178,100 @@ Config was last written by a newer OpenClaw (2026.5.2); current version is 2026.
 [2026-05-04 06:00] WARN: Jobs data stale (209h), triggering pipeline
 [2026-05-04 06:00] FIXED: Pipeline triggered
 [2026-05-04 06:00] Summary: fixes=1 warnings=0 alerts=0
+[2026-05-04 08:00] === Watchdog v3 run ===
+[2026-05-04 08:00] WARN: Jobs data stale (211h), triggering pipeline
+[2026-05-04 08:00] FIXED: Pipeline triggered
+[2026-05-04 08:00] FIXED: Re-triggered failed cron 23316b4b-191b-4cd7-b290-aebc7ab4e1ca
+[2026-05-04 08:00] Summary: fixes=2 warnings=1 alerts=0
+Config was last written by a newer OpenClaw (2026.5.2); current version is 2026.4.22.
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:23316b4b-191b-4cd7-b290-aebc7ab4e1ca:1777870816417:1"
+}
+[2026-05-04 10:00] === Watchdog v3 run ===
+[2026-05-04 10:00] WARN: Jobs data stale (213h), triggering pipeline
+[2026-05-04 10:00] FIXED: Pipeline triggered
+[2026-05-04 10:00] FIXED: Re-triggered failed cron 23316b4b-191b-4cd7-b290-aebc7ab4e1ca
+[2026-05-04 10:00] FIXED: Re-triggered failed cron 165989bc-b630-48a7-b097-169f7d75967d
+[2026-05-04 10:00] Summary: fixes=3 warnings=1 alerts=0
+Config was last written by a newer OpenClaw (2026.5.2); current version is 2026.4.22.
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:23316b4b-191b-4cd7-b290-aebc7ab4e1ca:1777878023252:2"
+}
+Config was last written by a newer OpenClaw (2026.5.2); current version is 2026.4.22.
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:165989bc-b630-48a7-b097-169f7d75967d:1777878024600:3"
+}
+[2026-05-04 12:00] === Watchdog v3 run ===
+[2026-05-04 12:00] WARN: Jobs data stale (215h), triggering pipeline
+[2026-05-04 12:00] FIXED: Pipeline triggered
+[2026-05-04 12:00] FIXED: Re-triggered failed cron 23316b4b-191b-4cd7-b290-aebc7ab4e1ca
+[2026-05-04 12:00] FIXED: Re-triggered failed cron 165989bc-b630-48a7-b097-169f7d75967d
+[2026-05-04 12:00] Summary: fixes=3 warnings=1 alerts=0
+Config was last written by a newer OpenClaw (2026.5.2); current version is 2026.4.22.
+Config was last written by a newer OpenClaw (2026.5.2); current version is 2026.4.22.
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:23316b4b-191b-4cd7-b290-aebc7ab4e1ca:1777885221465:4"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:165989bc-b630-48a7-b097-169f7d75967d:1777885222795:5"
+}
+[2026-05-04 14:00] === Watchdog v3 run ===
+[2026-05-04 14:00] WARN: Jobs data stale (217h), triggering pipeline
+[2026-05-04 14:00] FIXED: Pipeline triggered
+[2026-05-04 14:00] FIXED: Re-triggered failed cron 23316b4b-191b-4cd7-b290-aebc7ab4e1ca
+[2026-05-04 14:00] FIXED: Re-triggered failed cron 165989bc-b630-48a7-b097-169f7d75967d
+[2026-05-04 14:00] Summary: fixes=3 warnings=1 alerts=0
+Config was last written by a newer OpenClaw (2026.5.2); current version is 2026.4.22.
+Config was last written by a newer OpenClaw (2026.5.2); current version is 2026.4.22.
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:165989bc-b630-48a7-b097-169f7d75967d:1777892416951:6"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:23316b4b-191b-4cd7-b290-aebc7ab4e1ca:1777892419274:7"
+}
+[2026-05-04 16:00] === Watchdog v3 run ===
+[2026-05-04 16:00] WARN: Jobs data stale (219h), triggering pipeline
+[2026-05-04 16:00] FIXED: Pipeline triggered
+[2026-05-04 16:00] FIXED: Re-triggered failed cron 23316b4b-191b-4cd7-b290-aebc7ab4e1ca
+[2026-05-04 16:00] Summary: fixes=2 warnings=1 alerts=0
+Config was last written by a newer OpenClaw (2026.5.2); current version is 2026.4.22.
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:23316b4b-191b-4cd7-b290-aebc7ab4e1ca:1777899615264:8"
+}
+[2026-05-04 18:00] === Watchdog v3 run ===
+[2026-05-04 18:00] WARN: Jobs data stale (221h), triggering pipeline
+[2026-05-04 18:00] FIXED: Pipeline triggered
+[2026-05-04 18:00] FIXED: Re-triggered failed cron 23316b4b-191b-4cd7-b290-aebc7ab4e1ca
+[2026-05-04 18:00] FIXED: Re-triggered failed cron bec0eaf3-48f8-41d0-8dee-cb9a03b27f85
+[2026-05-04 18:00] Summary: fixes=3 warnings=1 alerts=0
+Config was last written by a newer OpenClaw (2026.5.2); current version is 2026.4.22.
+Config was last written by a newer OpenClaw (2026.5.2); current version is 2026.4.22.
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:bec0eaf3-48f8-41d0-8dee-cb9a03b27f85:1777906823980:9"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:23316b4b-191b-4cd7-b290-aebc7ab4e1ca:1777906826154:10"
+}
+[2026-05-04 20:00] === Watchdog v3 run ===
+[2026-05-04 20:00] WARN: Jobs data stale (223h), triggering pipeline
+[2026-05-04 20:00] FIXED: Pipeline triggered

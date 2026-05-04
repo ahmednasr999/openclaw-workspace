@@ -8,7 +8,7 @@
 - Gmail check: daily at 8 AM Cairo.
 - Formatting: never use em dashes. Use hyphens or commas.
 - Current default model is GPT-5.5 via OpenAI Codex OAuth unless Ahmed changes it. Do not silently switch models.
-- Salary remains a primary decision factor when evaluating GCC executive roles; do not treat it as already resolved or secondary. <!-- dream-promoted 2026-05-03 -->
+- Salary is the overriding decision factor when evaluating GCC executive roles; do not treat it as already resolved, secondary, or outweighed by non-salary hard-no filters unless Ahmed explicitly adds one. <!-- updated 2026-05-04 -->
 - Image generation cost preference: do not add direct OpenAI API billing just to unlock image generation if the authenticated ChatGPT web Images workaround is viable. <!-- dream-promoted 2026-04-29 -->
 
 ## Content Pipeline Workflow, Confirmed 2026-02-19
