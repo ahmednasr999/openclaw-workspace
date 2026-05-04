@@ -1388,3 +1388,56 @@ Node.js v22.22.1
 ## Calendar - Today's Events
 *Calendar API unavailable (gog v0.12.0 bug - tracking fix)*
 
+=== Morning Brief - 2026-05-04 06:00 AM ===
+
+## Claude 2x Usage Reminder
+
+## Job Radar (from Tavily)
+[search-router] Tavily unavailable, falling back to local SearXNG: Tavily Search failed (401): {"detail":{"error":"Unauthorized: missing or invalid API key."}}
+## Sources
+
+_(provider: searxng)_
+
+- **How Much Does McKinsey & Company Pay in 2026? (34,950 ...**
+  https://www.glassdoor.com/Salary/McKinsey-and-Company-Salaries-E2893.htm
+  A free inside look at McKinsey & Company salary trends based on 34950 salaries wages for 1354 jobs at McKinsey & Company. Salaries posted anonymously by McKinsey & Company employees.
+
+- **Sunil Karani - Dubai - LinkedIn**
+  https://ae.linkedin.com/in/sunilkarani
+  Head of Program Management | Digital Transformation & Portfolio Director | VP PMO | AED 350M+ Portfolios Delivered | Built Teams from 2 to 480 Resources ...
+
+- **Ohannes Bedrossian, PfMP, PgMP, PMP, ITIL, SAFe, PMO-CP**
+  https://ae.linkedin.com/in/ohannesbedrossian
+  Head of PMO (PMO Director) with 12+ years building and scaling PMOs and Enterprise PMOs (EPMOs) across the GCC and MENA. Over the past decade, I have centralized portfolio governance and directed 8 portfolios (600+ projects) valued at $90M+, spanning IT, construction, infrastructure, and digital tra...
+
+- **Reuters | Breaking International News & Views**
+  https://www.reuters.com/
+  Apr 27, 2026 · Find latest news from every corner of the globe at Reuters.com, your online source for breaking international news coverage.
+
+- **Head Of PMO Jobs in Saudi Arabia - 729 Vacancies May 2026**
+  https://www.naukrigulf.com/head-of-pmo-jobs-in-saudi-arabia
+  KSA Head of Systems Vice President. MUFG Bank. 7 - 12 Years; Riyadh - Saudi Arabia. Oversee IT systems delivery, ensure regulatory compliance ...
+
+## Gmail - New Opportunities
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/root/.openclaw/workspace/scripts/gmail-scan.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+
+## Calendar - Today's Events
+*Calendar API unavailable (gog v0.12.0 bug - tracking fix)*
+
