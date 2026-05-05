@@ -1441,3 +1441,56 @@ Node.js v22.22.1
 ## Calendar - Today's Events
 *Calendar API unavailable (gog v0.12.0 bug - tracking fix)*
 
+=== Morning Brief - 2026-05-05 06:00 AM ===
+
+## Claude 2x Usage Reminder
+
+## Job Radar (from Tavily)
+[search-router] Tavily unavailable, falling back to local SearXNG: Tavily Search failed (401): {"detail":{"error":"Unauthorized: missing or invalid API key."}}
+## Sources
+
+_(provider: searxng)_
+
+- **Reuters | Breaking International News & Views**
+  https://www.reuters.com/
+  3 hours ago · Find latest news from every corner of the globe at Reuters.com, your online source for breaking international news coverage.
+
+- **Ohannes Bedrossian, PfMP, PgMP, PMP, ITIL, SAFe, PMO-CP**
+  https://ae.linkedin.com/in/ohannesbedrossian
+  Head of PMO (PMO Director) with 12+ years building and scaling PMOs and Enterprise PMOs (EPMOs) across the GCC and MENA. Over the past decade, I have centralized portfolio governance and directed 8 portfolios (600+ projects) valued at $90M+, spanning IT, construction, infrastructure, and digital tra...
+
+- **Sunil Karani - Dubai - LinkedIn**
+  https://ae.linkedin.com/in/sunilkarani
+  Head of Program Management | Digital Transformation & Portfolio Director | VP PMO | AED 350M+ Portfolios Delivered | Built Teams from 2 to 480 Resources ...
+
+- **Qwen-Fine-Tuning-Pipeline-on-Cloud-Infrastructure/data/final ...**
+  https://github.com/Haaziq386/Qwen-Fine-Tuning-Pipeline-on-Cloud-Infrastructure/blob/main/data/final_data_test.jsonl
+  Contribute to Haaziq386/Qwen-Fine-Tuning-Pipeline-on-Cloud-Infrastructure development by creating an account on GitHub.
+
+- **Digital Transformation Director Jobs in UAE (May 2026) - Bayt.com**
+  https://www.bayt.com/en/uae/jobs/digital-transformation-director-jobs/
+  Apply now to over 250 Digital Transformation Director jobs in UAE and make your job hunting simpler. Find the latest Digital Transformation Director job vacancies and employment opportunities in UAE.
+
+## Gmail - New Opportunities
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/root/.openclaw/workspace/scripts/gmail-scan.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+
+## Calendar - Today's Events
+*Calendar API unavailable (gog v0.12.0 bug - tracking fix)*
+
