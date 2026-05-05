@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-05-04T17:00:37.393139+02:00",
-    "duration_ms": 34668,
+    "generated_at": "2026-05-05T05:00:38.332624+02:00",
+    "duration_ms": 36472,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "6c43554e",
+    "run_id": "8fef47f7",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -36,6 +36,53 @@
       "filter_reason": null,
       "search_country": "United Arab Emirates",
       "search_title": "PMO Director"
+    },
+    {
+      "id": "indeed-in-b0e48405d6b959d5",
+      "source": "indeed",
+      "title": "Senior Associate Director - Priority Banking",
+      "company": "Standard Chartered Bank",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=b0e48405d6b959d5",
+      "posted": "2026-05-04",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 26,
+      "match_keywords": [
+        "agile",
+        "ai",
+        "director",
+        "dubai"
+      ],
+      "raw_snippet": "**Requisition Number:** 49968\n**Job Location:** Dubai, ARE\n**Global Grade:** Band 6\n**Work Type:** Office Working\n**Employment Type:** Permanent\n**Posting Start Date:** 04/05/2026\n**Posting End Date:** 18/05/2026\n**:****About Us**Our team consists of 25,000 colleagues, spread across 35 countries. We believe in transformation \u2013 embracing agile and new ways of working together, which helps us to truly \u2018think client\u2019 and serve millions of our affluent and emerging affluent clients, across the world",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Program Director"
+    },
+    {
+      "id": "indeed-in-07e3ced6d2d3199e",
+      "source": "indeed",
+      "title": "Director, Consumer and Shopper Insights and Portfolio Management, Middle East Region",
+      "company": "The Coca-Cola Company",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=07e3ced6d2d3199e",
+      "posted": "2026-05-04",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 26,
+      "match_keywords": [
+        "ai",
+        "director",
+        "growth",
+        "middle east",
+        "integration"
+      ],
+      "raw_snippet": "EME OU (Eurasia Middle East Operating Unit) Marketing is undergoing a step\\-change to deliver more balanced, sustainable growth, powered by deeper consumer intimacy, stronger integration, accelerated innovation, and data\\- and tech\\-enabled precision marketing. The organization is designed to combine local relevance with scale, shift data and technology from experimentation to competitive advantage, and operate through flywheel execution with clear accountability for impact and ROI (Return on In",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Program Director"
     },
     {
       "id": "indeed-in-8671f839fe2d3f09",
@@ -83,49 +130,6 @@
       "search_title": "Program Director"
     },
     {
-      "id": "indeed-in-53353204a9396d92",
-      "source": "indeed",
-      "title": "Telecoms QA Director",
-      "company": "Netcracker Technology",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=53353204a9396d92",
-      "posted": "2026-05-01",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 26,
-      "match_keywords": [
-        "ai",
-        "cloud",
-        "enterprise",
-        "director"
-      ],
-      "raw_snippet": "**We're building the future of how the world communicates.**\n\n\n\nNetcracker, part of NEC Corporation, combines deep telecom industry expertise with cutting\\-edge cloud\\-native and AI\\-powered innovations to enable communications service providers and enterprises to transform their businesses, unlock innovation, and create meaningful digital experiences for millions of people around the world. With more than 30 years of experience serving over 250 customers in more than 70 locations worldwide, we ",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-fe2f6ae4a73badb0",
-      "source": "indeed",
-      "title": "PROJECT DIRECTOR",
-      "company": "ARTELIA",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=fe2f6ae4a73badb0",
-      "posted": "2026-05-01",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 6,
-      "match_keywords": [
-        "director"
-      ],
-      "raw_snippet": "**1 Mission**\n\nThe Project Director is in charge of the complete implementation of the management strategy for projects under his/her responsibility, and for which he/she has the support of resources either inside or outside the affiliate.\n\n\n\nTo meet the expectations of Clients, for whom he/she is the direct and key contact, the Project Director supervises architectural and technical studies. Every decision of design modification leading to financial consequences is taken by him/her. At the same",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Program Director"
-    },
-    {
       "id": "indeed-in-e83e338dbf81983a",
       "source": "indeed",
       "title": "Chief Technology Officer",
@@ -144,6 +148,48 @@
       "filter_reason": null,
       "search_country": "United Arab Emirates",
       "search_title": "Chief Technology Officer"
+    },
+    {
+      "id": "indeed-in-c73bf9bf641e683f",
+      "source": "indeed",
+      "title": "Head Waiter / Waiter / Runner - Summer Season in Bodrum - GAIA- Turkish",
+      "company": "Fundamental Hospitality",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=c73bf9bf641e683f",
+      "posted": "2026-05-02",
+      "seniority": "Other",
+      "domain_match": true,
+      "keyword_score": 6,
+      "match_keywords": [
+        "ai"
+      ],
+      "raw_snippet": "Summer Season in Bodrum!\n\n\nLocation : Bodrum, Turkey\n\n\nDuration: May \\- September\n\n\nAnother summer, another **\\#opening**\u2026 but this one is special.\n\n**\\#GAIA** **\\#Bodrum** is coming soon and we\u2019re on the hunt for the team that will bring it to life.\n\n\nWe\u2019re looking for strong personalities, great energy, and people who thrive in busy, high\\-level environments.\n\n**For now, due to visa restrictions, we will only be considering** **\\#Turkish** **nationals**.\n\n\nPositions available:\n\n* **\\#Headwaite",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Head of IT"
+    },
+    {
+      "id": "indeed-in-b9ba3461a6982da4",
+      "source": "indeed",
+      "title": "FIDIC Contracts Management Director",
+      "company": "Parsons",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=b9ba3461a6982da4",
+      "posted": "2026-05-04",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 20,
+      "match_keywords": [
+        "director",
+        "leadership",
+        "growth"
+      ],
+      "raw_snippet": "In a world of possibilities, pursue one with endless opportunities. Imagine Next!  \n\n\nAt Parsons, you can imagine a career where you thrive, work with exceptional people, and be yourself. Guided by our leadership vision of valuing people, embracing agility, and fostering growth, we cultivate an innovative culture that empowers you to achieve your full potential. Unleash your talent and redefine what\u2019s possible. **Job Description:**\n\n\nParsons is looking for an amazingly talented **FIDIC Contracts",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "Program Director"
     },
     {
       "id": "indeed-in-27cef88342559aa8",
@@ -165,14 +211,14 @@
       "relevant": true,
       "filter_reason": null,
       "search_country": "Saudi Arabia",
-      "search_title": "Program Director"
+      "search_title": "Director Digital Transformation"
     }
   ],
   "kpi": {
     "searches_run": 20,
-    "results_per_search": 2.6,
-    "unique_jobs": 7,
-    "errors": 6
+    "results_per_search": 2.8,
+    "unique_jobs": 9,
+    "errors": 5
   },
   "recommendations": []
 }

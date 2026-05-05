@@ -2275,3 +2275,55 @@ Config was last written by a newer OpenClaw (2026.5.2); current version is 2026.
 [2026-05-04 20:00] === Watchdog v3 run ===
 [2026-05-04 20:00] WARN: Jobs data stale (223h), triggering pipeline
 [2026-05-04 20:00] FIXED: Pipeline triggered
+[2026-05-04 20:00] FIXED: Re-triggered failed cron 23316b4b-191b-4cd7-b290-aebc7ab4e1ca
+[2026-05-04 20:00] FIXED: Re-triggered failed cron bec0eaf3-48f8-41d0-8dee-cb9a03b27f85
+[2026-05-04 20:00] Summary: fixes=3 warnings=1 alerts=0
+Config was last written by a newer OpenClaw (2026.5.2); current version is 2026.4.22.
+Config was last written by a newer OpenClaw (2026.5.2); current version is 2026.4.22.
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:23316b4b-191b-4cd7-b290-aebc7ab4e1ca:1777914020905:11"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:bec0eaf3-48f8-41d0-8dee-cb9a03b27f85:1777914022381:12"
+}
+[2026-05-04 22:00] === Watchdog v3 run ===
+[2026-05-04 22:00] WARN: Jobs data stale (225h), triggering pipeline
+[2026-05-04 22:00] FIXED: Pipeline triggered
+[2026-05-04 22:00] FIXED: Re-triggered failed cron 23316b4b-191b-4cd7-b290-aebc7ab4e1ca
+[2026-05-04 22:00] Summary: fixes=2 warnings=1 alerts=0
+Config was last written by a newer OpenClaw (2026.5.2); current version is 2026.4.22.
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:23316b4b-191b-4cd7-b290-aebc7ab4e1ca:1777921214321:13"
+}
+[2026-05-05 00:00] === Watchdog v3 run ===
+[2026-05-05 00:00] WARN: Jobs data stale (227h), triggering pipeline
+[2026-05-05 00:00] FIXED: Pipeline triggered
+[2026-05-05 00:00] FIXED: Re-triggered failed cron 23316b4b-191b-4cd7-b290-aebc7ab4e1ca
+[2026-05-05 00:00] Summary: fixes=2 warnings=1 alerts=0
+Config warnings:
+- plugins.entries.file-transfer: plugin not found: file-transfer (stale config entry ignored; remove it from plugins config)
+- plugins.allow: plugin not found: file-transfer (stale config entry ignored; remove it from plugins config)
+Config was last written by a newer OpenClaw (2026.5.3-1); current version is 2026.4.22.
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:23316b4b-191b-4cd7-b290-aebc7ab4e1ca:1777928414004:1"
+}
+[2026-05-05 02:00] === Watchdog v3 run ===
+[2026-05-05 02:00] WARN: Jobs data stale (229h), triggering pipeline
+[2026-05-05 02:00] FIXED: Pipeline triggered
+[2026-05-05 02:00] Summary: fixes=1 warnings=0 alerts=0
+[2026-05-05 04:00] === Watchdog v3 run ===
+[2026-05-05 04:00] WARN: Jobs data stale (231h), triggering pipeline
+[2026-05-05 04:00] FIXED: Pipeline triggered
+[2026-05-05 04:00] Summary: fixes=1 warnings=0 alerts=0
+[2026-05-05 06:00] === Watchdog v3 run ===
+[2026-05-05 06:00] WARN: Jobs data stale (233h), triggering pipeline
+[2026-05-05 06:00] FIXED: Pipeline triggered
+[2026-05-05 06:00] Summary: fixes=1 warnings=0 alerts=0

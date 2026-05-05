@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-03T23:37:07.032Z",
+  "updatedAt": "2026-05-04T23:52:37.692Z",
   "entries": {
     "memory:memory/archives/2026-03-07.md:29:56": {
       "key": "memory:memory/archives/2026-03-07.md:29:56",
@@ -327,13 +327,13 @@
       "endLine": 715,
       "source": "memory",
       "snippet": "2. Recent applications 3. Scanner results + trend 4. Email intel (all flagged) 5. Calendar 6. System health + Dashboard KPIs 7. Active tasks (overdue/due/completed) 8. Content Calendar status 9. Action items (3-5 with owners) 10. Notion page (Step 5 - BEFORE Telegram) 11. Telegram delivery (Step 6) - Model changed: MiniMax-M2.5 → **Sonnet 4.6** (follows instructions reliably) - Timeout: 270s → **600s** (10 minutes) - Health Monitor cron added at 8:00 AM (catches partial failures) - Notion sync moved BEFORE Telegram (prevents data loss on timeout) ### LinkedIn Post Published via Composio API ✅ - Post: \"Intel taught me precision\" - LIVE with image - URL: https://www.linked",
-      "recallCount": 27,
+      "recallCount": 28,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 12.079715725779533,
+      "totalScore": 13.079715725779533,
       "maxScore": 1,
       "firstRecalledAt": "2026-04-22T16:58:05.516Z",
-      "lastRecalledAt": "2026-04-29T06:44:29.926Z",
+      "lastRecalledAt": "2026-05-04T23:52:37.692Z",
       "queryHashes": [
         "6730f85c1352",
         "18b7c29566c3",
@@ -361,13 +361,15 @@
         "7348a803fc22",
         "dfbfcc349d30",
         "3bcebc67d629",
-        "a0a73cdd43be"
+        "a0a73cdd43be",
+        "2ef09ae3db17"
       ],
       "recallDays": [
         "2026-04-22",
         "2026-04-23",
         "2026-04-24",
-        "2026-04-29"
+        "2026-04-29",
+        "2026-05-05"
       ],
       "conceptTags": [
         "overdue/due/completed",
@@ -2309,18 +2311,20 @@
       "endLine": 739,
       "source": "memory",
       "snippet": "- Composio session_id for LinkedIn: `over` ### Composio LinkedIn Integration Details - Connected account: `ca_yGwr2ocbcRZi` (ACTIVE since 2026-03-13) - Tools available: LINKEDIN_CREATE_LINKED_IN_POST, LINKEDIN_GET_MY_INFO, LINKEDIN_REGISTER_IMAGE_UPLOAD, LINKEDIN_GET_POST_CONTENT, LINKEDIN_DELETE_POST, LINKEDIN_INITIALIZE_IMAGE_UPLOAD - Image upload flow: local file → GitHub raw URL download in sandbox → upload_local_file → s3key → post with images[] - Note: Composio sandbox can't access /root/ directly - need to download from GitHub or copy via base64 ### Dashboard Auto-Update Wired - SIE updates KPI callout block after each run (daily 4 AM) - Morning briefing updates Stale Alerts callout",
-      "recallCount": 1,
+      "recallCount": 2,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 1,
+      "totalScore": 2,
       "maxScore": 1,
       "firstRecalledAt": "2026-04-29T06:44:29.926Z",
-      "lastRecalledAt": "2026-04-29T06:44:29.926Z",
+      "lastRecalledAt": "2026-05-04T23:52:37.692Z",
       "queryHashes": [
-        "a0a73cdd43be"
+        "a0a73cdd43be",
+        "2ef09ae3db17"
       ],
       "recallDays": [
-        "2026-04-29"
+        "2026-04-29",
+        "2026-05-05"
       ],
       "conceptTags": [
         "session-id",
@@ -2340,18 +2344,20 @@
       "endLine": 76,
       "source": "memory",
       "snippet": "- /root/.openclaw/workspace/linkedin-today.png - LinkedIn post copy for Monday Mar 2 is available and marked ready to publish. - LinkedIn cron self-heal reported both LinkedIn crons in running state after retry logic. ## Flush Addendum — 2026-03-02 08:14 UTC - LinkedIn Engagement Radar cron (9e3c6815) patched with hard URL validation. - New guardrail: only accepts true LinkedIn post URLs (linkedin.com/posts, linkedin.com/feed/update, linkedin.com/pulse). - Non-LinkedIn links are now auto-rejected and cron must return INSUFFICIENT VALID POSTS when valid candidates are fewer than 3. - This closes a quality bug where external articles were misclassified as commentable LinkedIn posts. ## Fl",
-      "recallCount": 1,
+      "recallCount": 2,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 1,
+      "totalScore": 2,
       "maxScore": 1,
       "firstRecalledAt": "2026-04-29T06:44:29.926Z",
-      "lastRecalledAt": "2026-04-29T06:44:29.926Z",
+      "lastRecalledAt": "2026-05-04T23:52:37.692Z",
       "queryHashes": [
-        "a0a73cdd43be"
+        "a0a73cdd43be",
+        "2ef09ae3db17"
       ],
       "recallDays": [
-        "2026-04-29"
+        "2026-04-29",
+        "2026-05-05"
       ],
       "conceptTags": [
         "self-heal",
