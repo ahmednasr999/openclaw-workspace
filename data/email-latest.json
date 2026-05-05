@@ -1,52 +1,23 @@
 {
   "status": "ok",
-  "scan_time": "2026-05-04T20:00:35.270298+02:00",
-  "total_scanned": 16,
+  "scan_time": "2026-05-05T18:00:42.789175+02:00",
+  "total_scanned": 24,
   "by_category": {
-    "interview_invite": 1,
+    "interview_invite": 0,
     "recruiter_reach": 0,
     "application_ack": 0,
     "rejection": 0,
-    "assessment": 1,
+    "assessment": 0,
     "follow_up_needed": 0,
-    "other": 15
+    "other": 24
   },
-  "interview_invites": [
-    {
-      "id": "356294",
-      "from": "Desiree from Close <desiree.echevarria@email.close.com>",
-      "subject": "=?UTF-8?q?The_Case_for_Voice-Led_Growth_=F0=9F=8E=99=EF=B8=8F?=",
-      "date": "Mon, 04 May 2026 18:00:05 +0000",
-      "unread": true,
-      "priority": "HIGH",
-      "score": 5,
-      "pipeline_match": null
-    }
-  ],
+  "interview_invites": [],
   "recruiter_messages": [],
   "application_acks": [],
   "rejections": [],
-  "assessments": [
-    {
-      "id": "356294",
-      "from": "Desiree from Close <desiree.echevarria@email.close.com>",
-      "subject": "=?UTF-8?q?The_Case_for_Voice-Led_Growth_=F0=9F=8E=99=EF=B8=8F?=",
-      "date": "Mon, 04 May 2026 18:00:05 +0000",
-      "unread": true,
-      "priority": "HIGH",
-      "score": 5,
-      "pipeline_match": null
-    }
-  ],
+  "assessments": [],
   "follow_ups_needed": [],
-  "actionable_count": 1,
-  "hot_alerts": [
-    {
-      "subject": "=?UTF-8?q?The_Case_for_Voice-Led_Growth_=F0=9F=8E=99=EF=B8=8F?=",
-      "from": "Desiree from Close <desiree.echevarria@email.close.com>",
-      "priority": "HIGH",
-      "pipeline_match": null
-    }
-  ],
+  "actionable_count": 0,
+  "hot_alerts": [],
   "signals": []
 }

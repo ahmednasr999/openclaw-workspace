@@ -14,7 +14,7 @@ mkdir -p "$LOG_DIR" "$TMP_DIR"
 
 now_iso() { date -Is; }
 usage_pct() { df -P "$ROOT" | awk 'NR==2 {gsub(/%/,"",$5); print $5}'; }
-disk_line() { df -hT "$ROOT" | awk 'NR==2 {print $3 " used / " $5 " / " $6 " free"}'; }
+disk_line() { df -hT "$ROOT" | awk 'NR==2 {print $4 " used / " $5 " free / " $6 " used"}'; }
 backup_warn_bytes() { awk -v gb="$BACKUP_WARN_GB" 'BEGIN {printf "%.0f", gb * 1024 * 1024 * 1024}'; }
 
 backup_report() {
@@ -65,9 +65,9 @@ LOG="$LOG_DIR/cleanup-$(date +%Y%m%d-%H%M%S).log"
 {
   echo "Disk guard triggered at $(now_iso)"
   echo "Threshold: ${THRESHOLD}%"
-  echo "Before: $(df -hT "$ROOT" | awk 'NR==2 {print $3 " used, " $5 " used%, " $6 " free"}')"
+  echo "Before: $(disk_line)"
 
-  echo "\nSafe cleanup: workspace tmp files older than 2 days, preserving guard logs and current research markdown."
+  printf '\nSafe cleanup: workspace tmp files older than 2 days, preserving guard logs and current research markdown.\n'
   find "$TMP_DIR" -xdev -type f -mtime +2 \
     ! -name 'vps-disk-cleanup-*' \
     ! -name 'disk-guard-last-trigger.txt' \
@@ -75,10 +75,10 @@ LOG="$LOG_DIR/cleanup-$(date +%Y%m%d-%H%M%S).log"
     -delete 2>/dev/null || true
   find "$TMP_DIR" -xdev -type d -empty -delete 2>/dev/null || true
 
-  echo "\nSafe cleanup: OpenClaw logs older than 7 days."
+  printf '\nSafe cleanup: OpenClaw logs older than 7 days.\n'
   find /root/.openclaw -xdev -path '*/logs/*' -type f -mtime +7 -delete 2>/dev/null || true
 
-  echo "\nSafe cleanup: npm/pnpm metadata logs and generic temp caches."
+  printf '\nSafe cleanup: npm/pnpm metadata logs and generic temp caches.\n'
   find /root/.openclaw/plugin-runtime-deps -xdev -type d \( -name '_logs' -o -name '.cache' \) -prune -exec rm -rf {} + 2>/dev/null || true
   rm -rf /root/.cache/pip /root/.cache/ms-playwright /root/.cache/puppeteer 2>/dev/null || true
 
@@ -92,11 +92,11 @@ LOG="$LOG_DIR/cleanup-$(date +%Y%m%d-%H%M%S).log"
     docker system prune -af || true
   fi
 
-  echo "\nBackup/snapshot audit, no destructive pruning by default."
+  printf '\nBackup/snapshot audit, no destructive pruning by default.\n'
   backup_report
   prune_backup_candidates
 
-  echo "\nAfter: $(df -hT "$ROOT" | awk 'NR==2 {print $3 " used, " $5 " used%, " $6 " free"}')"
+  printf '\nAfter: %s\n' "$(disk_line)"
   echo "Largest remaining /root items:"
   du -xh --max-depth=1 /root 2>/dev/null | sort -h | tail -12 || true
 } > "$LOG" 2>&1

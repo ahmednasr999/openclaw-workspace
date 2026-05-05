@@ -1448,3 +1448,5 @@
 - 3128ab6c9661: Vice President of the United States - Wikipedia at En (United Arab Emirates)
 - 8d851a300f6c: Vice President JD Vance (@vp) • Instagram photos and videos at Instagram (United Arab Emirates)
 - 92d183ff702a: Trump picks J.D. Vance as his vice president at RNC Monday : NPR (Qatar)
+- 8f597b1293d0: PER hiring VP / SVP, Private Equity Operational ... at Confidential (Saudi Arabia)
+- 0f52452849d7: VP / SVP, Private Equity Operational Transformation, Riyadh, Saudi ... at Efinancialcom (Saudi Arabia)

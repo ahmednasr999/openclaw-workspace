@@ -4987,3 +4987,26 @@
 - [exa] VP Digital Banking OR Director Fintech OR Head of Digital Payments in Oman: 0 results
 - [linkedin] VP Digital Banking in Saudi Arabia: 0 results
 - [linkedin] VP Digital Banking in United Arab Emirates: 0 results
+
+## Run: 2026-05-05 15:03:15 (v4.0 - Exa API, parallel, web fallback=duckduckgo)
+- [exa] VP OR Director digital transformation in Qatar: 0 results
+- [exa+web-fallback] VP OR Director digital transformation in Saudi Arabia: 8 results
+- [exa+web-fallback] VP OR Director digital transformation in United Arab Emirates: 8 results
+- [exa] VP OR Director digital transformation in Bahrain: 0 results
+- [exa] VP OR Director digital transformation in Oman: 0 results
+- [exa] VP OR Director digital transformation in Kuwait: 0 results
+- [linkedin] VP in Saudi Arabia: 0 results
+- [linkedin] VP in United Arab Emirates: 0 results
+- [exa] CTO OR CIO OR Head of Technology in United Arab Emirates: 0 results
+- [exa] CTO OR CIO OR Head of Technology in Saudi Arabia: 0 results
+- [exa] CTO OR CIO OR Head of Technology in Qatar: 0 results
+- [exa] CTO OR CIO OR Head of Technology in Bahrain: 0 results
+- [exa] CTO OR CIO OR Head of Technology in Kuwait: 0 results
+- [exa] CTO OR CIO OR Head of Technology in Oman: 0 results
+- [linkedin] CTO in Saudi Arabia: 0 results
+- [linkedin] CTO in United Arab Emirates: 0 results
+- [exa] Chief Operating Officer OR Chief Strategy Officer in United Arab Emirates: 0 results
+- [exa] Chief Operating Officer OR Chief Strategy Officer in Saudi Arabia: 0 results
+- [exa] Chief Operating Officer OR Chief Strategy Officer in Qatar: 0 results
+- [exa] Chief Operating Officer OR Chief Strategy Officer in Bahrain: 0 results
+- [exa] Chief Operating Officer OR Chief Strategy Officer in Kuwait: 0 results

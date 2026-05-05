@@ -21,6 +21,7 @@
 
 ## Jobzoom Daily Scan
 - ❌ Investigate scoring endpoint response body before changing thresholds; keep fallback visible in daily summary. Use first-class message tool for delivery recovery when script CLI delivery fails. (JobZoom/HR lane, 2026-05-05)
+- ❌ For JobZoom scoring, do not trust HTTP 200 or report existence. Keep prompts small enough to avoid LCM/file-reference substitution, persist raw bad scoring responses, and verify batch outputs parse before allowing fallback results to stand. (NASR/JobZoom, 2026-05-05)
 
 ## Tool Integration
 - ✅ Always check config/ directory and service-registry.md before initiating OAuth. Direct credentials exist for Notion, Telegram, Gmail (CTO, 2026-03-21)

@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-05-05T05:00:38.332624+02:00",
-    "duration_ms": 36472,
+    "generated_at": "2026-05-05T17:00:38.946615+02:00",
+    "duration_ms": 37253,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "8fef47f7",
+    "run_id": "67790d85",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -109,6 +109,28 @@
       "search_title": "Program Director"
     },
     {
+      "id": "indeed-in-599f231885f79334",
+      "source": "indeed",
+      "title": "Director | Corp Rep (Financial & Professional Services) | Strategic Communications",
+      "company": "FTI Consulting, Inc.",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=599f231885f79334",
+      "posted": "2026-05-05",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 13,
+      "match_keywords": [
+        "director",
+        "middle east",
+        "api"
+      ],
+      "raw_snippet": "**Who We Are**\n\n\nFTI Consulting is the leading global expert firm for organisations facing crisis and transformation. We partner with top multinational corporations, law firms, banks and private equity firms on their most critical issues to deliver meaningful impact. Our teams respond rapidly to complex, dynamic situations, and from day one you\u2019ll work alongside leaders who have shaped history.\n\n **About The Role**\n\n\nFTI Consulting has operated in the Middle East for over twenty years, advising ",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Director Digital Transformation"
+    },
+    {
       "id": "indeed-in-34cdc3f0791383dc",
       "source": "indeed",
       "title": "Senior Director - Ethics & Compliance, Gulf",
@@ -127,7 +149,7 @@
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
-      "search_title": "Program Director"
+      "search_title": "Director Digital Transformation"
     },
     {
       "id": "indeed-in-e83e338dbf81983a",
@@ -150,24 +172,52 @@
       "search_title": "Chief Technology Officer"
     },
     {
-      "id": "indeed-in-c73bf9bf641e683f",
+      "id": "indeed-in-b5f5bef33873eb88",
       "source": "indeed",
-      "title": "Head Waiter / Waiter / Runner - Summer Season in Bodrum - GAIA- Turkish",
-      "company": "Fundamental Hospitality",
+      "title": "Associate Director, Enablement, Client Management UAE and MENA",
+      "company": "Standard Chartered Bank",
       "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=c73bf9bf641e683f",
-      "posted": "2026-05-02",
-      "seniority": "Other",
-      "domain_match": true,
-      "keyword_score": 6,
+      "url": "https://ae.indeed.com/viewjob?jk=b5f5bef33873eb88",
+      "posted": "2026-05-05",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 33,
       "match_keywords": [
-        "ai"
+        "operational excellence",
+        "ai",
+        "director",
+        "uae",
+        "dubai",
+        "mena"
       ],
-      "raw_snippet": "Summer Season in Bodrum!\n\n\nLocation : Bodrum, Turkey\n\n\nDuration: May \\- September\n\n\nAnother summer, another **\\#opening**\u2026 but this one is special.\n\n**\\#GAIA** **\\#Bodrum** is coming soon and we\u2019re on the hunt for the team that will bring it to life.\n\n\nWe\u2019re looking for strong personalities, great energy, and people who thrive in busy, high\\-level environments.\n\n**For now, due to visa restrictions, we will only be considering** **\\#Turkish** **nationals**.\n\n\nPositions available:\n\n* **\\#Headwaite",
+      "raw_snippet": "**Requisition Number:** 52999\n**Job Location:** Dubai, ARE\n**Global Grade:** Band 6\n**Work Type:** Office Working\n**Employment Type:** Permanent\n**Posting Start Date:** 05/05/2026\n**Posting End Date:** 19/05/2026\n**:****Job Summary**\n\nWe are seeking a dedicated Associate Director to lead Enablement efforts across Client Management teams within the UAE and MENA region. This role plays a pivotal part in championing standardised procedures and best practices to enhance operational excellence and ri",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
-      "search_title": "Head of IT"
+      "search_title": "Head of Technology"
+    },
+    {
+      "id": "indeed-in-93c156693ec24ae2",
+      "source": "indeed",
+      "title": "Program Director",
+      "company": "ServiceNow",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=93c156693ec24ae2",
+      "posted": "2026-05-05",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 23,
+      "match_keywords": [
+        "ai",
+        "cloud",
+        "director",
+        "platform"
+      ],
+      "raw_snippet": "**Company Description**  \n\nIt all started in sunny San Diego, California in 2004 when a visionary engineer, Fred Luddy, saw the potential to transform how we work. Fast forward to today \u2014 ServiceNow stands as a global market leader, bringing innovative AI\\-enhanced technology to over 8,100 customers, including 85% of the Fortune 500\u00ae. Our intelligent cloud\\-based platform seamlessly connects people, systems, and processes to empower organizations to find smarter, faster, and better ways to work.",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "Program Director"
     },
     {
       "id": "indeed-in-b9ba3461a6982da4",
@@ -212,13 +262,36 @@
       "filter_reason": null,
       "search_country": "Saudi Arabia",
       "search_title": "Director Digital Transformation"
+    },
+    {
+      "id": "indeed-in-9897c9a50ef82b6f",
+      "source": "indeed",
+      "title": "Director - City OPS IT/OT Network and Security Operations",
+      "company": "Qiddiya Investment Company",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=9897c9a50ef82b6f",
+      "posted": "2026-05-05",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 23,
+      "match_keywords": [
+        "infrastructure",
+        "director",
+        "leadership",
+        "platform"
+      ],
+      "raw_snippet": "The **Director of IT/OT Network \\& Security Operations** is a critical leadership role within City Operations IT, responsible for the end\\-to\\-end management, reliability, and security of Qiddiya\u2019s converged IT and Operational Technology (OT) infrastructure.\n\n\nAs Qiddiya transitions from construction to operations, this role will lead operational readiness, infrastructure acceptance, and the ongoing management of city\\-wide digital platforms, including fiber networks, active network equipment, s",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "IT Director"
     }
   ],
   "kpi": {
     "searches_run": 20,
-    "results_per_search": 2.8,
-    "unique_jobs": 9,
-    "errors": 5
+    "results_per_search": 3.45,
+    "unique_jobs": 12,
+    "errors": 4
   },
   "recommendations": []
 }

@@ -2327,3 +2327,71 @@ Config was last written by a newer OpenClaw (2026.5.3-1); current version is 202
 [2026-05-05 06:00] WARN: Jobs data stale (233h), triggering pipeline
 [2026-05-05 06:00] FIXED: Pipeline triggered
 [2026-05-05 06:00] Summary: fixes=1 warnings=0 alerts=0
+[2026-05-05 08:00] === Watchdog v3 run ===
+[2026-05-05 08:00] WARN: Jobs data stale (235h), triggering pipeline
+[2026-05-05 08:00] FIXED: Pipeline triggered
+[2026-05-05 08:00] FIXED: Re-triggered failed cron 23316b4b-191b-4cd7-b290-aebc7ab4e1ca
+[2026-05-05 08:00] Summary: fixes=2 warnings=1 alerts=0
+Config warnings:
+- plugins.entries.file-transfer: plugin not found: file-transfer (stale config entry ignored; remove it from plugins config)
+- plugins.allow: plugin not found: file-transfer (stale config entry ignored; remove it from plugins config)
+Config was last written by a newer OpenClaw (2026.5.3-1); current version is 2026.4.22.
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:23316b4b-191b-4cd7-b290-aebc7ab4e1ca:1777957226899:2"
+}
+[2026-05-05 10:00] === Watchdog v3 run ===
+[2026-05-05 10:00] WARN: Jobs data stale (237h), triggering pipeline
+[2026-05-05 10:00] FIXED: Pipeline triggered
+[2026-05-05 10:00] FIXED: Re-triggered failed cron 23316b4b-191b-4cd7-b290-aebc7ab4e1ca
+[2026-05-05 10:00] Summary: fixes=2 warnings=1 alerts=0
+Config warnings:
+- plugins.entries.file-transfer: plugin not found: file-transfer (stale config entry ignored; remove it from plugins config)
+- plugins.allow: plugin not found: file-transfer (stale config entry ignored; remove it from plugins config)
+Config was last written by a newer OpenClaw (2026.5.3-1); current version is 2026.4.22.
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:23316b4b-191b-4cd7-b290-aebc7ab4e1ca:1777964436500:3"
+}
+[2026-05-05 12:00] === Watchdog v3 run ===
+[2026-05-05 12:00] WARN: Jobs data stale (239h), triggering pipeline
+[2026-05-05 12:00] FIXED: Pipeline triggered
+[2026-05-05 12:00] FIXED: Re-triggered failed cron 23316b4b-191b-4cd7-b290-aebc7ab4e1ca
+[2026-05-05 12:00] Summary: fixes=2 warnings=1 alerts=0
+Config warnings:
+- plugins.entries.file-transfer: plugin not found: file-transfer (stale config entry ignored; remove it from plugins config)
+- plugins.allow: plugin not found: file-transfer (stale config entry ignored; remove it from plugins config)
+Config was last written by a newer OpenClaw (2026.5.3-1); current version is 2026.4.22.
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:23316b4b-191b-4cd7-b290-aebc7ab4e1ca:1777971620056:4"
+}
+[2026-05-05 14:00] === Watchdog v3 run ===
+[2026-05-05 14:00] WARN: active-tasks.md stale (50h)
+[2026-05-05 14:00] WARN: Jobs data stale (241h), triggering pipeline
+[2026-05-05 14:00] FIXED: Pipeline triggered
+[2026-05-05 14:00] FIXED: Re-triggered failed cron 23316b4b-191b-4cd7-b290-aebc7ab4e1ca
+[2026-05-05 14:00] Summary: fixes=2 warnings=2 alerts=0
+Config warnings:
+- plugins.entries.file-transfer: plugin not found: file-transfer (stale config entry ignored; remove it from plugins config)
+- plugins.allow: plugin not found: file-transfer (stale config entry ignored; remove it from plugins config)
+Config was last written by a newer OpenClaw (2026.5.3-1); current version is 2026.4.22.
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:23316b4b-191b-4cd7-b290-aebc7ab4e1ca:1777978824809:5"
+}
+[2026-05-05 16:00] === Watchdog v3 run ===
+[2026-05-05 16:00] WARN: Jobs data stale (243h), triggering pipeline
+[2026-05-05 16:00] FIXED: Pipeline triggered
+[2026-05-05 16:00] Summary: fixes=1 warnings=1 alerts=0
+[2026-05-05 18:00] === Watchdog v3 run ===
+[2026-05-05 18:00] WARN: Jobs data stale (245h), triggering pipeline
+[2026-05-05 18:00] FIXED: Pipeline triggered
+[2026-05-05 18:00] Summary: fixes=1 warnings=1 alerts=0
+[2026-05-05 20:00] === Watchdog v3 run ===
+[2026-05-05 20:00] WARN: Jobs data stale (247h), triggering pipeline
+[2026-05-05 20:00] FIXED: Pipeline triggered

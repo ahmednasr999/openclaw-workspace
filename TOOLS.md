@@ -39,6 +39,7 @@ Daily comments:
 - If Ahmed-Mac is offline, skip the day.
 
 Posting:
+- Approval rule: when Ahmed asks CMO/NASR to post on LinkedIn, or when a specific post is already marked/approved for publishing, the LinkedIn publish action is pre-approved for that specific post. Do not ask again unless content/media changed materially, the target account is unclear, or duplicate/live-state checks create a risk.
 - Composio post action: `LINKEDIN_CREATE_LINKED_IN_POST`.
 - Person URN: `urn:li:person:mm8EyA56mj`.
 - For image posts, upload image first and use the returned true `s3key`.
@@ -135,6 +136,7 @@ Never use Composio for Notion or Telegram when direct credentials exist.
 - Delivered report filenames should remain human-readable and dated.
 - JobZoom summary reports should use: `JOBZOOM SUMMARY - Today: X matches | Yesterday: X ↑/↓/= | This week total: X | This month total: X`, using the latest completed run per date to avoid double-counting reruns. Funnel labels should distinguish Jobs scraped, Eligible after exclusions, After dedup, After Pass 1, and After Pass 2. <!-- dream-promoted 2026-04-28 -->
 - JobZoom `scoring_health_check` failures are not quota failures unless the model/API returns HTTP 429. Non-429 health-check failures with successful batch scoring should be reported as a warning about gateway/model latency or request errors, not as quota exhaustion. <!-- dream-promoted 2026-04-27 -->
+- For JobZoom SQLite diagnostics, inspect `.schema runs` and `.schema gpt_api_calls` before writing queries. Known useful columns include `runs.run_date`, `runs.start_time`, `runs.end_time`, `runs.total_searches`, `runs.successful_searches`, `runs.failed_searches`, `runs.after_pass1`, `runs.after_pass2`, plus `gpt_api_calls.phase` and `gpt_api_calls.created_at`; do not assume generic `started_at` or `run_id` fields. <!-- dream-promoted 2026-05-05 -->
 
 ## References
 

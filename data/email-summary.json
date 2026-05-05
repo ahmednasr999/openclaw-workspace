@@ -2,123 +2,56 @@
   "meta": {
     "agent": "email-agent",
     "version": "3.0.0",
-    "generated_at": "2026-05-04T20:01:01.808592+02:00",
-    "duration_ms": 41436,
+    "generated_at": "2026-05-05T18:01:01.160145+02:00",
+    "duration_ms": 32324,
     "ttl_hours": 4,
     "status": "success",
     "error": null,
-    "run_id": "3a0956d1",
+    "run_id": "a3d376d4",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
     "status": "ok",
-    "scan_time": "2026-05-04T20:00:35.270298+02:00",
-    "total_scanned": 16,
+    "scan_time": "2026-05-05T18:00:42.789175+02:00",
+    "total_scanned": 24,
     "by_category": {
-      "interview_invite": 1,
+      "interview_invite": 0,
       "recruiter_reach": 0,
       "application_ack": 0,
       "rejection": 0,
-      "assessment": 1,
+      "assessment": 0,
       "follow_up_needed": 0,
-      "other": 15
+      "other": 24
     },
-    "interview_invites": [
-      {
-        "id": "356294",
-        "from": "Desiree from Close <desiree.echevarria@email.close.com>",
-        "subject": "=?UTF-8?q?The_Case_for_Voice-Led_Growth_=F0=9F=8E=99=EF=B8=8F?=",
-        "date": "Mon, 04 May 2026 18:00:05 +0000",
-        "unread": true,
-        "priority": "HIGH",
-        "score": 5,
-        "pipeline_match": null
-      }
-    ],
+    "interview_invites": [],
     "recruiter_messages": [],
     "application_acks": [],
     "rejections": [],
-    "assessments": [
-      {
-        "id": "356294",
-        "from": "Desiree from Close <desiree.echevarria@email.close.com>",
-        "subject": "=?UTF-8?q?The_Case_for_Voice-Led_Growth_=F0=9F=8E=99=EF=B8=8F?=",
-        "date": "Mon, 04 May 2026 18:00:05 +0000",
-        "unread": true,
-        "priority": "HIGH",
-        "score": 5,
-        "pipeline_match": null
-      }
-    ],
+    "assessments": [],
     "follow_ups_needed": [],
-    "actionable_count": 1,
-    "hot_alerts": [
-      {
-        "subject": "=?UTF-8?q?The_Case_for_Voice-Led_Growth_=F0=9F=8E=99=EF=B8=8F?=",
-        "from": "Desiree from Close <desiree.echevarria@email.close.com>",
-        "priority": "HIGH",
-        "pipeline_match": null
-      }
-    ],
+    "actionable_count": 0,
+    "hot_alerts": [],
     "signals": [],
     "llm_analysis": {
-      "actionable_emails": [
-        {
-          "id": "356294",
-          "subject": "The Case for Voice-Led Growth \ud83c\udf99\ufe0f",
-          "from": "Desiree from Close <desiree.echevarria@email.close.com>",
-          "date": "Mon, 04 May 2026 18:00:05 +0000",
-          "category": "assessment",
-          "urgency": "low",
-          "intent": "The sender is sharing a sales newsletter about voice-led growth.",
-          "action": "no_action",
-          "response_deadline": "when convenient",
-          "notes": "Body does not prove interview, assessment, recruiter opportunity, or reply need."
-        }
-      ],
+      "actionable_emails": [],
       "summary": {
-        "total_actionable": 1,
+        "total_actionable": 0,
         "critical_count": 0,
         "requires_interview_prep": false,
         "requires_assessment": false,
         "recruiter_top_opportunities": [],
         "top_priority": null,
-        "daily_focus": "No job-search action is required from this email; focus only on verified interview, assessment, or recruiter messages."
+        "daily_focus": "No actionable interview, assessment, follow-up, or recruiter emails were provided today."
       }
     }
   },
   "kpi": {
-    "emails_processed": 16,
-    "actionable": 1,
-    "interviews_detected": 1,
+    "emails_processed": 24,
+    "actionable": 0,
+    "interviews_detected": 0,
     "recruiter_messages": 0,
-    "unread_actionable": 1
+    "unread_actionable": 0
   },
-  "recommendations": [
-    {
-      "id": "rec-3a0956d1-0",
-      "action": "respond_immediately",
-      "target": "1 interview invite(s)",
-      "reason": "Interview invitations require prompt response",
-      "urgency": "critical",
-      "timestamp": "2026-05-04T20:01:01.808438+02:00"
-    },
-    {
-      "id": "rec-3a0956d1-1",
-      "action": "check_inbox",
-      "target": "1 unread actionable email(s)",
-      "reason": "Unread emails need attention",
-      "urgency": "high",
-      "timestamp": "2026-05-04T20:01:01.808460+02:00"
-    },
-    {
-      "id": "rec-3a0956d1-2",
-      "action": "complete_assessment",
-      "target": "1 assessment(s)",
-      "reason": "Assessments have deadlines",
-      "urgency": "high",
-      "timestamp": "2026-05-04T20:01:01.808467+02:00"
-    }
-  ]
+  "recommendations": []
 }

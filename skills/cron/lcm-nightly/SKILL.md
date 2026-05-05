@@ -356,16 +356,29 @@ fi
 Important: lossless-claw preserves the latest `freshTailCount` messages uncompressed. With `freshTailCount=32`, conversations with 30-32 messages and 0 summaries are expected protected-tail state, not a failed compaction backlog. Report them as “protected tail”, but do not fail the quality gate on them.
 
 ```bash
-echo "=== SELF-HEALING: Running force-compact on uncompacted convos ==="
+echo "=== SELF-HEALING: Building force-compact queue ==="
 cd /root/.openclaw/workspace-cto/scripts && node --experimental-strip-types lcm-force-compact.mjs --mode all 2>&1
-echo "Force-compact exit code: $?"
+QUEUE_EXIT=$?
+echo "Force-compact queue builder exit code: $QUEUE_EXIT"
+
+if [ "$QUEUE_EXIT" -eq 0 ] && [ -s /tmp/lcm-compact-queue.json ]; then
+  QUEUED=$(jq 'length' /tmp/lcm-compact-queue.json 2>/dev/null || echo 0)
+  if [ "$QUEUED" -gt 0 ]; then
+    echo "=== SELF-HEALING: Processing force-compact queue ($QUEUED items) ==="
+    bash /root/.openclaw/workspace-cto/scripts/lcm-compact-processor.sh 2>&1
+    echo "Compact processor exit code: $?"
+  else
+    echo "No compaction needed (queue empty)."
+  fi
+fi
 ```
 
-- If compaction ran successfully → note "Auto-compacted X sessions" in the report under ACTIONS TAKEN
-- If compaction returned 0 candidates → note "No compaction needed"
-- If compaction errored → log the error and continue to report (do not block delivery)
+- If queue builder + processor run successfully → note "Auto-compacted X sessions" in the report under ACTIONS TAKEN
+- If the queue is empty → note "No compaction needed"
+- If the queue builder or processor errors → log the error and continue to report (do not block delivery)
+- Do not call the queue builder alone and treat that as compaction; it only creates `/tmp/lcm-compact-queue.json`. The processor must run to write summaries.
 
-After running, re-check the compactable uncompacted count:
+After running the processor, re-check the compactable uncompacted count:
 
 ```bash
 sqlite3 /root/.openclaw/lcm.db "
@@ -387,8 +400,8 @@ Report the before/after counts. Quality gate passes (✅) only if still_compacta
 - WAL checkpoint failure: log exit code, do not silently continue
 
 ## Quality Gates
-- DB size less than 2GB
-- WAL file less than 50MB after checkpoint
+- DB size follows the tiered threshold rule from Step 6 (under 3GB is not a warning by itself when integrity/WAL/orphans/retrieval pass; 3-4GB warns only with rapid growth or another hygiene warning; 4GB+ warns)
+- WAL file is below threshold or checkpoint succeeds
 - Zero true orphaned summaries (completely disconnected from DAG - no summary_messages, no summary_parents in either direction)
 - At least 1 summary created in the last 7 days
-- No compactable conversation with 33+ messages and 0 summaries (`freshTailCount + 1`; 30-32 message conversations are protected tail)
+- No compactable conversation with 33+ messages and 0 summaries after the queue processor runs (`freshTailCount + 1`; 30-32 message conversations are protected tail)
