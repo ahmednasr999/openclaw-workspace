@@ -2395,3 +2395,69 @@ Config was last written by a newer OpenClaw (2026.5.3-1); current version is 202
 [2026-05-05 20:00] === Watchdog v3 run ===
 [2026-05-05 20:00] WARN: Jobs data stale (247h), triggering pipeline
 [2026-05-05 20:00] FIXED: Pipeline triggered
+[2026-05-05 20:00] Summary: fixes=1 warnings=1 alerts=0
+[2026-05-05 22:00] === Watchdog v3 run ===
+[2026-05-05 22:00] WARN: Jobs data stale (249h), triggering pipeline
+[2026-05-05 22:00] FIXED: Pipeline triggered
+[2026-05-05 22:00] Summary: fixes=1 warnings=1 alerts=0
+[2026-05-06 00:00] === Watchdog v3 run ===
+[2026-05-06 00:00] WARN: Jobs data stale (251h), triggering pipeline
+[2026-05-06 00:00] FIXED: Pipeline triggered
+[2026-05-06 00:00] Summary: fixes=1 warnings=1 alerts=0
+[2026-05-06 02:00] === Watchdog v3 run ===
+[2026-05-06 02:00] ALERT: Gateway down, attempting restart
+Config invalid
+File: ~/.openclaw/openclaw.json
+Problem:
+  - messages.groupChat: Unrecognized key: "visibleReplies"
+  - plugins.entries.active-memory.hooks: Unrecognized key: "timeouts"
+  - plugins: Unrecognized key: "bundledDiscovery"
+
+Run: openclaw doctor --fix
+Gateway aborted: config is invalid.
+messages.groupChat: Unrecognized key: "visibleReplies"
+plugins.entries.active-memory.hooks: Unrecognized key: "timeouts"
+plugins: Unrecognized key: "bundledDiscovery"
+Fix the config and retry, or run "openclaw doctor" to repair.
+[2026-05-06 02:00] ALERT: Gateway restart failed
+[2026-05-06 02:00] WARN: Jobs data stale (253h), triggering pipeline
+[2026-05-06 02:00] FIXED: Pipeline triggered
+[2026-05-06 02:00] Summary: fixes=1 warnings=1 alerts=1
+[2026-05-06 04:00] === Watchdog v3 run ===
+[2026-05-06 04:00] ALERT: Gateway down, attempting restart
+Config invalid
+File: ~/.openclaw/openclaw.json
+Problem:
+  - messages.groupChat: Unrecognized key: "visibleReplies"
+  - plugins.entries.active-memory.hooks: Unrecognized key: "timeouts"
+  - plugins: Unrecognized key: "bundledDiscovery"
+
+Run: openclaw doctor --fix
+Gateway aborted: config is invalid.
+messages.groupChat: Unrecognized key: "visibleReplies"
+plugins.entries.active-memory.hooks: Unrecognized key: "timeouts"
+plugins: Unrecognized key: "bundledDiscovery"
+Fix the config and retry, or run "openclaw doctor" to repair.
+[2026-05-06 04:00] ALERT: Gateway restart failed
+[2026-05-06 04:00] WARN: Jobs data stale (255h), triggering pipeline
+[2026-05-06 04:00] FIXED: Pipeline triggered
+[2026-05-06 04:00] Summary: fixes=1 warnings=1 alerts=1
+[2026-05-06 06:00] === Watchdog v3 run ===
+[2026-05-06 06:00] ALERT: Gateway down, attempting restart
+Config invalid
+File: ~/.openclaw/openclaw.json
+Problem:
+  - messages.groupChat: Unrecognized key: "visibleReplies"
+  - plugins.entries.active-memory.hooks: Unrecognized key: "timeouts"
+  - plugins: Unrecognized key: "bundledDiscovery"
+
+Run: openclaw doctor --fix
+Gateway aborted: config is invalid.
+messages.groupChat: Unrecognized key: "visibleReplies"
+plugins.entries.active-memory.hooks: Unrecognized key: "timeouts"
+plugins: Unrecognized key: "bundledDiscovery"
+Fix the config and retry, or run "openclaw doctor" to repair.
+[2026-05-06 06:00] ALERT: Gateway restart failed
+[2026-05-06 06:00] WARN: Jobs data stale (257h), triggering pipeline
+[2026-05-06 06:00] FIXED: Pipeline triggered
+[2026-05-06 06:00] Summary: fixes=1 warnings=1 alerts=1

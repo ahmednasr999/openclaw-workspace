@@ -1,18 +1,18 @@
 {
-  "generated": "2026-05-04T22:50:13.996305+00:00",
-  "health_score": 79,
+  "generated": "2026-05-05T22:50:15.066279+00:00",
+  "health_score": 82,
   "summary": {
-    "ok": 6,
-    "warn": 3,
-    "alert": 3
+    "ok": 5,
+    "warn": 4,
+    "alert": 2
   },
   "workspace": {
-    "root_files": 73,
-    "disk_percent": 55,
-    "disk_used": "53G",
+    "root_files": 76,
+    "disk_percent": 64,
+    "disk_used": "62G",
     "disk_total": "96G",
     "ram_total": "7.8Gi",
-    "ram_used": "1.6Gi",
+    "ram_used": "619Mi",
     "large_files": [
       "/root/.openclaw/agents/main/qmd/xdg-cache/qmd/index.sqlite",
       "/root/.openclaw/agents/main/sessions/sessions.json.bak.1776877462456",
@@ -24,7 +24,7 @@
       "/root/.openclaw/agents/main/sessions/10f30b07-2d36-4c45-b7d6-a5854124630c.jsonl.reset.2026-04-22T12-09-56.265Z",
       "/root/.openclaw/agents/main/sessions/sessions.json.834be566-a717-4d12-9d62-9673f8c01957.tmp",
       "/root/.openclaw/agents/main/sessions/sessions.json.bak.1776880840579",
-      "/root/.openclaw/agents/main/sessions/026bf982-e56d-4e07-b770-37af21af094e.trajectory.jsonl",
+      "/root/.openclaw/agents/main/sessions/8189f672-2e92-4beb-ab40-f44109e00082.trajectory.jsonl",
       "/root/.openclaw/agents/main/sessions/ebf3495e-b4a2-455e-bab5-7bb53c9af827.jsonl.reset.2026-04-18T21-10-56.196Z",
       "/root/.openclaw/agents/main/sessions/c268cdda-e715-4949-97a1-eb0d41b538f6.trajectory.jsonl.deleted.20260501-211515",
       "/root/.openclaw/agents/main/sessions/archive/sessions-resets.tar.gz",
@@ -66,32 +66,34 @@
       "/root/.openclaw/workspace-clean-publish/data/nasr-pipeline.db",
       "/root/.openclaw/workspace-clean-publish/newsletter2.png",
       "/root/.openclaw/workspace-clean-publish/newsletter3.png",
-      "/root/.openclaw/backups/pre-openclaw-update-20260503-060358/agents/main/qmd/xdg-cache/qmd/index.sqlite",
-      "/root/.openclaw/backups/pre-openclaw-update-20260503-060358/agents/main/sessions/sessions.json.bak.1776877462456",
-      "/root/.openclaw/backups/pre-openclaw-update-20260503-060358/agents/main/sessions/missing-file-registry-cleanup-20260411T125530Z/manifest.json",
-      "/root/.openclaw/backups/pre-openclaw-update-20260503-060358/agents/main/sessions/dbb01869-e168-4d7c-b1d7-3cb66563eed4.jsonl.reset.2026-05-01T01-01-37.939Z",
-      "/root/.openclaw/backups/pre-openclaw-update-20260503-060358/agents/main/sessions/orphan-archive-20260411T125235Z/22c099e1-cc21-4575-b9f1-b5f2b7c3505f.jsonl",
-      "/root/.openclaw/backups/pre-openclaw-update-20260503-060358/agents/main/sessions/15f2051e-da84-42be-9324-088e3d84d6d8.jsonl.reset.2026-04-17T15-01-06.970Z",
-      "/root/.openclaw/backups/pre-openclaw-update-20260503-060358/agents/main/sessions/c268cdda-e715-4949-97a1-eb0d41b538f6.jsonl.bak-154233-1777659607600",
-      "/root/.openclaw/backups/pre-openclaw-update-20260503-060358/agents/main/sessions/10f30b07-2d36-4c45-b7d6-a5854124630c.jsonl.reset.2026-04-22T12-09-56.265Z",
-      "/root/.openclaw/backups/pre-openclaw-update-20260503-060358/agents/main/sessions/sessions.json.834be566-a717-4d12-9d62-9673f8c01957.tmp",
-      "/root/.openclaw/backups/pre-openclaw-update-20260503-060358/agents/main/sessions/sessions.json.bak.1776880840579",
-      "/root/.openclaw/backups/pre-openclaw-update-20260503-060358/agents/main/sessions/ebf3495e-b4a2-455e-bab5-7bb53c9af827.jsonl.reset.2026-04-18T21-10-56.196Z",
-      "/root/.openclaw/backups/pre-openclaw-update-20260503-060358/agents/main/sessions/c268cdda-e715-4949-97a1-eb0d41b538f6.trajectory.jsonl.deleted.20260501-211515",
-      "/root/.openclaw/backups/pre-openclaw-update-20260503-060358/agents/main/sessions/archive/sessions-resets.tar.gz",
-      "/root/.openclaw/backups/pre-openclaw-update-20260503-060358/agents/main/sessions/c268cdda-e715-4949-97a1-eb0d41b538f6.jsonl.reset.2026-05-01T20-03-42.178Z",
-      "/root/.openclaw/backups/pre-openclaw-update-20260503-060358/agents/main/sessions/eff56784-4287-4a7d-b73b-4c51dbec3122.jsonl.reset.2026-04-26T01-05-12.462Z",
-      "/root/.openclaw/backups/pre-openclaw-update-20260503-060358/agents/main/sessions/sessions.json.bak.1776880840219",
-      "/root/.openclaw/backups/pre-openclaw-update-20260503-060358/agents/cmo/sessions/acd2e90d-d2a9-4528-b444-8aff5d9f6a27-topic-7.jsonl.bak-157027-1777319013726",
-      "/root/.openclaw/backups/pre-openclaw-update-20260503-060358/agents/jobzoom/sessions/sessions.json.bak.1777429720921",
-      "/root/.openclaw/backups/pre-openclaw-update-20260503-060358/agents/jobzoom/sessions/sessions.json.bak-gpt55-20260424T023531",
-      "/root/.openclaw/backups/pre-openclaw-update-20260503-060358/agents/jobzoom/sessions/sessions.json",
-      "/root/.openclaw/backups/pre-openclaw-update-20260503-060358/agents/jobzoom/sessions/sessions.json.bak.1777429728645",
-      "/root/.openclaw/backups/pre-openclaw-update-20260503-060358/agents/jobzoom/sessions/sessions.json.bak.1777429729436",
-      "/root/.openclaw/backups/pre-openclaw-update-20260503-060358/agents/hr/sessions/sessions.json.bak-gpt55-20260424T023531",
-      "/root/.openclaw/backups/pre-openclaw-update-20260503-060358/agents/hr/sessions/86e78db7-bcc1-4b64-8331-9ebdf731aa47-topic-9.jsonl.reset.2026-04-13T21-26-35.916Z",
       "/root/.openclaw/backups/lcm.db.null-key-prune-stage3-20260417T075757Z.bak.zst",
       "/root/.openclaw/backups/lcm.db.null-key-prune-stage2-20260416T032432Z.bak.zst",
+      "/root/.openclaw/backups/update-20260505-140402/agents/main/qmd/xdg-cache/qmd/index.sqlite",
+      "/root/.openclaw/backups/update-20260505-140402/agents/main/sessions/sessions.json.bak.1776877462456",
+      "/root/.openclaw/backups/update-20260505-140402/agents/main/sessions/missing-file-registry-cleanup-20260411T125530Z/manifest.json",
+      "/root/.openclaw/backups/update-20260505-140402/agents/main/sessions/dbb01869-e168-4d7c-b1d7-3cb66563eed4.jsonl.reset.2026-05-01T01-01-37.939Z",
+      "/root/.openclaw/backups/update-20260505-140402/agents/main/sessions/orphan-archive-20260411T125235Z/22c099e1-cc21-4575-b9f1-b5f2b7c3505f.jsonl",
+      "/root/.openclaw/backups/update-20260505-140402/agents/main/sessions/15f2051e-da84-42be-9324-088e3d84d6d8.jsonl.reset.2026-04-17T15-01-06.970Z",
+      "/root/.openclaw/backups/update-20260505-140402/agents/main/sessions/c268cdda-e715-4949-97a1-eb0d41b538f6.jsonl.bak-154233-1777659607600",
+      "/root/.openclaw/backups/update-20260505-140402/agents/main/sessions/10f30b07-2d36-4c45-b7d6-a5854124630c.jsonl.reset.2026-04-22T12-09-56.265Z",
+      "/root/.openclaw/backups/update-20260505-140402/agents/main/sessions/sessions.json.834be566-a717-4d12-9d62-9673f8c01957.tmp",
+      "/root/.openclaw/backups/update-20260505-140402/agents/main/sessions/sessions.json.bak.1776880840579",
+      "/root/.openclaw/backups/update-20260505-140402/agents/main/sessions/8189f672-2e92-4beb-ab40-f44109e00082.trajectory.jsonl",
+      "/root/.openclaw/backups/update-20260505-140402/agents/main/sessions/ebf3495e-b4a2-455e-bab5-7bb53c9af827.jsonl.reset.2026-04-18T21-10-56.196Z",
+      "/root/.openclaw/backups/update-20260505-140402/agents/main/sessions/c268cdda-e715-4949-97a1-eb0d41b538f6.trajectory.jsonl.deleted.20260501-211515",
+      "/root/.openclaw/backups/update-20260505-140402/agents/main/sessions/archive/sessions-resets.tar.gz",
+      "/root/.openclaw/backups/update-20260505-140402/agents/main/sessions/c268cdda-e715-4949-97a1-eb0d41b538f6.jsonl.reset.2026-05-01T20-03-42.178Z",
+      "/root/.openclaw/backups/update-20260505-140402/agents/main/sessions/eff56784-4287-4a7d-b73b-4c51dbec3122.jsonl.reset.2026-04-26T01-05-12.462Z",
+      "/root/.openclaw/backups/update-20260505-140402/agents/main/sessions/sessions.json.bak.1776880840219",
+      "/root/.openclaw/backups/update-20260505-140402/agents/cmo/sessions/acd2e90d-d2a9-4528-b444-8aff5d9f6a27-topic-7.jsonl.bak-157027-1777319013726",
+      "/root/.openclaw/backups/update-20260505-140402/agents/jobzoom/sessions/sessions.json.bak.1777429720921",
+      "/root/.openclaw/backups/update-20260505-140402/agents/jobzoom/sessions/sessions.json.bak-gpt55-20260424T023531",
+      "/root/.openclaw/backups/update-20260505-140402/agents/jobzoom/sessions/sessions.json",
+      "/root/.openclaw/backups/update-20260505-140402/agents/jobzoom/sessions/sessions.json.bak.1777429728645",
+      "/root/.openclaw/backups/update-20260505-140402/agents/jobzoom/sessions/sessions.json.bak.1777429729436",
+      "/root/.openclaw/backups/update-20260505-140402/agents/hr/sessions/sessions.json.bak-gpt55-20260424T023531",
+      "/root/.openclaw/backups/update-20260505-140402/agents/hr/sessions/86e78db7-bcc1-4b64-8331-9ebdf731aa47-topic-9.jsonl.reset.2026-04-13T21-26-35.916Z",
+      "/root/.openclaw/backups/update-20260505-140402/lcm.db",
       "/root/.openclaw/lcm.db",
       "/root/.openclaw/workspace-cto/.pushsync-worktree/.understand-anything/intermediate/nodes.json",
       "/root/.openclaw/workspace-cto/.pushsync-worktree/media/post-visuals/2-gemini-pro-4k.jpg",
@@ -142,7 +144,9 @@
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-04-24_070024.db",
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-04-17_070024.db",
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-04-26_071159.db",
+      "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-05-05_070019.db",
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-04-30_070103.db",
+      "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-05-05_070031.db",
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-05-04_070019.db",
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-04-13_070027.db",
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-04-27_070045.db",
@@ -174,7 +178,7 @@
       "/root/.openclaw/workspace/newsletter2.png",
       "/root/.openclaw/workspace/newsletter3.png"
     ],
-    "session_mb": 576.8
+    "session_mb": 586.2
   },
   "learnings": {
     "total": 24,
@@ -202,41 +206,16 @@
       "notion_token": "present (50 chars)",
       "notion_databases": 15,
       "linkedin_lines": 3,
-      "linkedin_age_days": 42.0
+      "linkedin_age_days": 43.0
     }
   },
   "crons": {
-    "total": 31,
-    "enabled": 31,
+    "total": 0,
+    "enabled": 0,
     "disabled": 0,
-    "skill_first": 7,
-    "skill_first_pct": 23,
-    "raw_prompt_list": [
-      "Daily Session Cleanup",
-      "session-watchdog",
-      "Daily Intel Sweep",
-      "JobZoom Daily Scan",
-      "OpenClaw Health Guard",
-      "CVE-2026-31431 kernel patch availability watch",
-      "Dream Mode - Memory Consolidation",
-      "Email Agent (Sun-Thu)",
-      "NASR Doctor (Daily)",
-      "VPS disk guard at 65%",
-      "CMO Publishing Watchdog",
-      "14-day daily profile drip question pilot",
-      "LCM Midday Compaction Sweep",
-      "Email Agent (Fri-Sat)",
-      "RSS Intelligence - Weekly Crawl",
-      "CMO Weekly Content Report",
-      "Weekly Skill Autoresearch",
-      "Weekly Pipeline Audit",
-      "CMO Weekly Outreach Queue \u2014 Sunday",
-      "Weekly OpenClaw read-only health baseline",
-      "Weekly Self-Health Check",
-      "Weekly Team Retro",
-      "CMO Weekly Drafting",
-      "End 14-day daily profile drip pilot"
-    ],
+    "skill_first": 0,
+    "skill_first_pct": 0,
+    "raw_prompt_list": [],
     "failing": []
   },
   "briefing_notion": {
@@ -247,22 +226,22 @@
     {
       "category": "workspace",
       "level": "warn",
-      "message": "Root files: 73 (approaching clutter threshold of 100)"
+      "message": "Root files: 76 (approaching clutter threshold of 100)"
     },
     {
       "category": "workspace",
       "level": "ok",
-      "message": "Disk: 55% used (53G/96G)"
+      "message": "Disk: 64% used (62G/96G)"
     },
     {
       "category": "workspace",
       "level": "warn",
-      "message": "Large files (>5MB): 159 found in .openclaw"
+      "message": "Large files (>5MB): 163 found in .openclaw"
     },
     {
       "category": "workspace",
       "level": "alert",
-      "message": "Session size: 576.8MB - bloated, review sessions"
+      "message": "Session size: 586.2MB - bloated, review sessions"
     },
     {
       "category": "learnings",
@@ -291,13 +270,8 @@
     },
     {
       "category": "crons",
-      "level": "alert",
-      "message": "Cron skill-first: 7/31 (23%) - too many raw-prompt crons"
-    },
-    {
-      "category": "crons",
-      "level": "ok",
-      "message": "No failing crons"
+      "level": "warn",
+      "message": "Could not parse cron list JSON output"
     },
     {
       "category": "briefing",
@@ -307,6 +281,6 @@
   ],
   "auto_fixed": [],
   "needs_attention": [
-    "Session bloat: 576.8MB - review before deleting (needs human decision)"
+    "Session bloat: 586.2MB - review before deleting (needs human decision)"
   ]
 }

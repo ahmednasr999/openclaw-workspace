@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-05T08:54:33.844Z",
+  "updatedAt": "2026-05-05T21:24:14.615Z",
   "entries": {
     "memory:memory/archives/2026-03-07.md:29:56": {
       "key": "memory:memory/archives/2026-03-07.md:29:56",
@@ -2721,6 +2721,37 @@
         "automation",
         "limitations",
         "documented"
+      ]
+    },
+    "memory:memory/archives/2026-03-02.md:474:494": {
+      "key": "memory:memory/archives/2026-03-02.md:474:494",
+      "path": "memory/archives/2026-03-02.md",
+      "startLine": 474,
+      "endLine": 494,
+      "source": "memory",
+      "snippet": "- Operational recommendation captured: continue using threshold governance on rolling windows (70 percent warning, 90 percent block) as primary quota-control method. - Full inbox sweep report captured in-session (40 emails reviewed, morning batch). - Durable outcome from inbox review: - 0 genuine recruiter responses mapped to active pipeline roles. - Michael Page message for VP AI & Technology identified as automated submission confirmation, not recruiter outreach. - Delphi remains key monitored thread, no new response yet, checkpoint remains March 9. - No response-trigger files, recruiter dossiers, or escalation artifacts required from this batch. - Final action posture from inbox",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-05T21:24:14.615Z",
+      "lastRecalledAt": "2026-05-05T21:24:14.615Z",
+      "queryHashes": [
+        "4a47e3965264"
+      ],
+      "recallDays": [
+        "2026-05-06"
+      ],
+      "conceptTags": [
+        "quota-control",
+        "in-session",
+        "response-trigger",
+        "operational",
+        "recommendation",
+        "captured",
+        "continue",
+        "threshold"
       ]
     }
   }

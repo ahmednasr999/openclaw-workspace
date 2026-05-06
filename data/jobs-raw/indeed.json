@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-05-05T17:00:38.946615+02:00",
-    "duration_ms": 37253,
+    "generated_at": "2026-05-06T05:00:53.788188+02:00",
+    "duration_ms": 37300,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "67790d85",
+    "run_id": "26a3cf2f",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -79,30 +79,6 @@
         "integration"
       ],
       "raw_snippet": "EME OU (Eurasia Middle East Operating Unit) Marketing is undergoing a step\\-change to deliver more balanced, sustainable growth, powered by deeper consumer intimacy, stronger integration, accelerated innovation, and data\\- and tech\\-enabled precision marketing. The organization is designed to combine local relevance with scale, shift data and technology from experimentation to competitive advantage, and operate through flywheel execution with clear accountability for impact and ROI (Return on In",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-8671f839fe2d3f09",
-      "source": "indeed",
-      "title": "Network Director \u2013 Business Payments & Operations",
-      "company": "Thunes",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=8671f839fe2d3f09",
-      "posted": "2026-05-04",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 36,
-      "match_keywords": [
-        "payments",
-        "mobile",
-        "ai",
-        "infrastructure",
-        "director"
-      ],
-      "raw_snippet": "**Network Director \u2013 Global Payments Infrastructure**\n\n\n**About Thunes**\n\n\n\nThunes is the Smart Superhighway for money movement around the world. Thunes' proprietary Direct Global Network allows Members to make payments in real\\-time in over 130 countries and more than 80 currencies.\n\n\n\nThunes' Network connects directly to over 7 billion mobile wallets and bank accounts worldwide, via more than 350 different payment methods, such as GCash, M\\-Pesa, Airtel, MTN, Orange, JazzCash, Easypaisa, AliPa",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
@@ -289,8 +265,8 @@
   ],
   "kpi": {
     "searches_run": 20,
-    "results_per_search": 3.45,
-    "unique_jobs": 12,
+    "results_per_search": 3.8,
+    "unique_jobs": 11,
     "errors": 4
   },
   "recommendations": []
