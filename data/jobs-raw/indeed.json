@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-05-06T05:00:53.788188+02:00",
-    "duration_ms": 37300,
+    "generated_at": "2026-05-06T17:00:40.361095+02:00",
+    "duration_ms": 38046,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "26a3cf2f",
+    "run_id": "4a9569d0",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -38,47 +38,22 @@
       "search_title": "PMO Director"
     },
     {
-      "id": "indeed-in-b0e48405d6b959d5",
+      "id": "indeed-in-ba3ceba918652106",
       "source": "indeed",
-      "title": "Senior Associate Director - Priority Banking",
-      "company": "Standard Chartered Bank",
+      "title": "VP-Financial Operations",
+      "company": "CXM Direct LLC",
       "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=b0e48405d6b959d5",
-      "posted": "2026-05-04",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 26,
+      "url": "https://ae.indeed.com/viewjob?jk=ba3ceba918652106",
+      "posted": "2026-05-06",
+      "seniority": "Other",
+      "domain_match": true,
+      "keyword_score": 20,
       "match_keywords": [
-        "agile",
-        "ai",
-        "director",
-        "dubai"
+        "executive",
+        "vp",
+        "head of"
       ],
-      "raw_snippet": "**Requisition Number:** 49968\n**Job Location:** Dubai, ARE\n**Global Grade:** Band 6\n**Work Type:** Office Working\n**Employment Type:** Permanent\n**Posting Start Date:** 04/05/2026\n**Posting End Date:** 18/05/2026\n**:****About Us**Our team consists of 25,000 colleagues, spread across 35 countries. We believe in transformation \u2013 embracing agile and new ways of working together, which helps us to truly \u2018think client\u2019 and serve millions of our affluent and emerging affluent clients, across the world",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-07e3ced6d2d3199e",
-      "source": "indeed",
-      "title": "Director, Consumer and Shopper Insights and Portfolio Management, Middle East Region",
-      "company": "The Coca-Cola Company",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=07e3ced6d2d3199e",
-      "posted": "2026-05-04",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 26,
-      "match_keywords": [
-        "ai",
-        "director",
-        "growth",
-        "middle east",
-        "integration"
-      ],
-      "raw_snippet": "EME OU (Eurasia Middle East Operating Unit) Marketing is undergoing a step\\-change to deliver more balanced, sustainable growth, powered by deeper consumer intimacy, stronger integration, accelerated innovation, and data\\- and tech\\-enabled precision marketing. The organization is designed to combine local relevance with scale, shift data and technology from experimentation to competitive advantage, and operate through flywheel execution with clear accountability for impact and ROI (Return on In",
+      "raw_snippet": "Position Title: Vice President, Financial Operations  \n\n  \n\nReporting Line: Reports directly to the Head of Treasury \\& Accounting, with executive oversight from the Chief Financial Officer (CFO).  \n\n  \n\nLocation: Fully Remote or Hybrid, determined by candidate location and business needs on a case\\-by\\-case basis.  \n\n  \n\nGeneral Purpose: Responsible for leading the Payment Operations function and overseeing transaction processing for a global CFD brokerage and cryptocurrency exchange.  \n\n  \n\nSp",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
@@ -107,6 +82,29 @@
       "search_title": "Director Digital Transformation"
     },
     {
+      "id": "indeed-in-b0e48405d6b959d5",
+      "source": "indeed",
+      "title": "Senior Associate Director - Priority Banking",
+      "company": "Standard Chartered Bank",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=b0e48405d6b959d5",
+      "posted": "2026-05-04",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 26,
+      "match_keywords": [
+        "agile",
+        "ai",
+        "director",
+        "dubai"
+      ],
+      "raw_snippet": "**Requisition Number:** 49968\n**Job Location:** Dubai, ARE\n**Global Grade:** Band 6\n**Work Type:** Office Working\n**Employment Type:** Permanent\n**Posting Start Date:** 04/05/2026\n**Posting End Date:** 18/05/2026\n**:****About Us**Our team consists of 25,000 colleagues, spread across 35 countries. We believe in transformation \u2013 embracing agile and new ways of working together, which helps us to truly \u2018think client\u2019 and serve millions of our affluent and emerging affluent clients, across the world",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Director Digital Transformation"
+    },
+    {
       "id": "indeed-in-34cdc3f0791383dc",
       "source": "indeed",
       "title": "Senior Director - Ethics & Compliance, Gulf",
@@ -128,6 +126,28 @@
       "search_title": "Director Digital Transformation"
     },
     {
+      "id": "indeed-in-1b4b978e73f5546b",
+      "source": "indeed",
+      "title": "VP, Credit - Digitization & AI Portfolio Management",
+      "company": "bankfab",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=1b4b978e73f5546b",
+      "posted": "2026-05-06",
+      "seniority": "Other",
+      "domain_match": true,
+      "keyword_score": 23,
+      "match_keywords": [
+        "digital transformation",
+        "ai",
+        "vp"
+      ],
+      "raw_snippet": "Job Description\n  \nResponsibilities\n\n**Job Purpose:**\n\nThis is a senior level VP role within Personal Banking Credit unit and it covers end\\-to\\-end strategic coordination of units digital and AI initiatives. The role bridges the gap between high\\-level strategy and technical execution, ensuring that AI and digital transformation investments deliver measurable commercial value. Drive cultural shift within the unit in adopting digitization and AI across all functional areas and existing processes",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Head of Digital Transformation"
+    },
+    {
       "id": "indeed-in-e83e338dbf81983a",
       "source": "indeed",
       "title": "Chief Technology Officer",
@@ -146,6 +166,31 @@
       "filter_reason": null,
       "search_country": "United Arab Emirates",
       "search_title": "Chief Technology Officer"
+    },
+    {
+      "id": "indeed-in-dcb035e73553677c",
+      "source": "indeed",
+      "title": "Business Head- Software Solutions",
+      "company": "Meridian IT Solutions",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=dcb035e73553677c",
+      "posted": "2026-05-06",
+      "seniority": "Other",
+      "domain_match": true,
+      "keyword_score": 30,
+      "match_keywords": [
+        "mobile",
+        "ai",
+        "crm",
+        "uae",
+        "dubai",
+        "middle east"
+      ],
+      "raw_snippet": "Meridian IT Solutions, based in Dubai, UAE, is part of Meridian IT Solutions India, a leading Software House specializing in ERP, CRM, Mobile Applications, and Online Marketing Services. The agency is known for its ability to adapt to changes and its commitment to developing web\\-related technologies, making it a premiere Software company in the Middle East. Meridian IT Solutions delivers solutions that significantly impact the online presence of corporate clients in the region.\n\n**Role Descript",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Head of Technology"
     },
     {
       "id": "indeed-in-b5f5bef33873eb88",
@@ -173,6 +218,28 @@
       "search_title": "Head of Technology"
     },
     {
+      "id": "indeed-in-a7eb35152986a631",
+      "source": "indeed",
+      "title": "Program Director",
+      "company": "HanmiGlobal Saudi",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=a7eb35152986a631",
+      "posted": "2026-05-06",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 20,
+      "match_keywords": [
+        "executive",
+        "director",
+        "leadership"
+      ],
+      "raw_snippet": "**Role Summary**\nThe Program Director provides executive\\-level leadership and strategic oversight across all LDIP PMCM phases. As the primary point of accountability, the incumbent ensures that all PMCM services are delivered to the highest professional standards, on time, and in full compliance with the requirements, contractual obligations, and applicable national and international standards.\n\n**Key Responsibilities**\n\n* **Strategic Leadership \\& Program Governance**\n* Serve as the ultimate p",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "Program Director"
+    },
+    {
       "id": "indeed-in-93c156693ec24ae2",
       "source": "indeed",
       "title": "Program Director",
@@ -190,28 +257,6 @@
         "platform"
       ],
       "raw_snippet": "**Company Description**  \n\nIt all started in sunny San Diego, California in 2004 when a visionary engineer, Fred Luddy, saw the potential to transform how we work. Fast forward to today \u2014 ServiceNow stands as a global market leader, bringing innovative AI\\-enhanced technology to over 8,100 customers, including 85% of the Fortune 500\u00ae. Our intelligent cloud\\-based platform seamlessly connects people, systems, and processes to empower organizations to find smarter, faster, and better ways to work.",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-b9ba3461a6982da4",
-      "source": "indeed",
-      "title": "FIDIC Contracts Management Director",
-      "company": "Parsons",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=b9ba3461a6982da4",
-      "posted": "2026-05-04",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 20,
-      "match_keywords": [
-        "director",
-        "leadership",
-        "growth"
-      ],
-      "raw_snippet": "In a world of possibilities, pursue one with endless opportunities. Imagine Next!  \n\n\nAt Parsons, you can imagine a career where you thrive, work with exceptional people, and be yourself. Guided by our leadership vision of valuing people, embracing agility, and fostering growth, we cultivate an innovative culture that empowers you to achieve your full potential. Unleash your talent and redefine what\u2019s possible. **Job Description:**\n\n\nParsons is looking for an amazingly talented **FIDIC Contracts",
       "relevant": true,
       "filter_reason": null,
       "search_country": "Saudi Arabia",
@@ -265,8 +310,8 @@
   ],
   "kpi": {
     "searches_run": 20,
-    "results_per_search": 3.8,
-    "unique_jobs": 11,
+    "results_per_search": 4.0,
+    "unique_jobs": 13,
     "errors": 4
   },
   "recommendations": []

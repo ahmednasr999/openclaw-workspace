@@ -1,64 +1,23 @@
 {
   "status": "ok",
-  "scan_time": "2026-05-06T06:03:08.460171+02:00",
-  "total_scanned": 46,
+  "scan_time": "2026-05-06T12:00:42.423319+02:00",
+  "total_scanned": 17,
   "by_category": {
-    "interview_invite": 2,
-    "recruiter_reach": 3,
+    "interview_invite": 0,
+    "recruiter_reach": 1,
     "application_ack": 0,
     "rejection": 0,
     "assessment": 0,
     "follow_up_needed": 0,
-    "other": 42
+    "other": 16
   },
-  "interview_invites": [
-    {
-      "id": "356512",
-      "from": "GulfTalent Jobs <jobs@gulftalent.com>",
-      "subject": "Michael Page needs a PMO (Saudi Nationals)",
-      "date": "Tue, 05 May 2026 17:58:39 -0500",
-      "unread": true,
-      "priority": "HIGH",
-      "score": 12,
-      "pipeline_match": "SAP"
-    },
-    {
-      "id": "356520",
-      "from": "YS Buzz <Newsletters@yourstory.com>",
-      "subject": "=?UTF-8?q?=F0=9F=8D=A6_Ice_cream_players_embrace_Q_com?=",
-      "date": "Wed, 06 May 2026 02:43:14 +0000",
-      "unread": true,
-      "priority": "LOW",
-      "score": 0,
-      "pipeline_match": null
-    }
-  ],
+  "interview_invites": [],
   "recruiter_messages": [
     {
-      "id": "356512",
-      "from": "GulfTalent Jobs <jobs@gulftalent.com>",
-      "subject": "Michael Page needs a PMO (Saudi Nationals)",
-      "date": "Tue, 05 May 2026 17:58:39 -0500",
-      "unread": true,
-      "priority": "HIGH",
-      "score": 12,
-      "pipeline_match": "SAP"
-    },
-    {
-      "id": "356518",
-      "from": "Naukrigulf <newjobs@naukrigulf.com>",
-      "subject": "Liquidity Management Services Product Manager, KSA Head of\r\n Systems Vice President jobs for you",
-      "date": "Wed, 6 May 2026 08:05:05 +0530 (IST)",
-      "unread": true,
-      "priority": "MEDIUM",
-      "score": 2,
-      "pipeline_match": null
-    },
-    {
-      "id": "356521",
-      "from": "Latifa from foundit <jobmessenger@monstergulf.com>",
-      "subject": "Ahmed, Hot Job Opportunities Waiting For You",
-      "date": "Wed, 6 May 2026 08:24:38 +0530 (IST)",
+      "id": "356567",
+      "from": "\"LinkedIn Premium\" <linkedin@em.linkedin.com>",
+      "subject": "New this May: 1 year of Lovable Pro",
+      "date": "Wed, 06 May 2026 02:13:23 -0700",
       "unread": true,
       "priority": "HIGH",
       "score": 5,
@@ -69,44 +28,41 @@
   "rejections": [],
   "assessments": [],
   "follow_ups_needed": [],
-  "actionable_count": 4,
+  "actionable_count": 1,
   "hot_alerts": [
     {
-      "subject": "Michael Page needs a PMO (Saudi Nationals)",
-      "from": "GulfTalent Jobs <jobs@gulftalent.com>",
+      "subject": "Thank you for your interest in Snoonu!",
+      "from": "Snoonu <no-reply@kekamail.com>",
       "priority": "HIGH",
-      "pipeline_match": "SAP"
+      "pipeline_match": "Snoonu"
     },
     {
-      "subject": "Ahmed, Hot Job Opportunities Waiting For You",
-      "from": "Latifa from foundit <jobmessenger@monstergulf.com>",
+      "subject": "New this May: 1 year of Lovable Pro",
+      "from": "\"LinkedIn Premium\" <linkedin@em.linkedin.com>",
       "priority": "HIGH",
       "pipeline_match": null
     }
   ],
   "signals": [
     {
-      "company": "SAP",
-      "signal": "interview_signal",
-      "subject": "Michael Page needs a PMO (Saudi Nationals)",
-      "sender": "GulfTalent Jobs <jobs@gulftalent.com>",
+      "company": "Snoonu",
+      "signal": "recruiter_email",
+      "subject": "Thank you for your interest in Snoonu!",
+      "sender": "Snoonu <no-reply@kekamail.com>",
       "job_ids": [
-        "indeed-in-b2195113ff678ef7",
-        "indeed-in-b7591ff66cc5a732",
-        "linkedin_jobspy-li-4380812358",
-        "linkedin-li-4349578134",
-        "linkedin-li-4394078700",
-        "linkedin-li-4380812358",
-        "linkedin-li-4362170335",
-        "linkedin-li-4362562926",
-        "linkedin-li-4385935615",
-        "linkedin-li-4353703506",
-        "app-005",
-        "cv-5fbf4a9aa7",
-        "linkedin-li-4385294885"
+        "linkedin_jobspy-li-4386880115",
+        "linkedin_jobspy-li-4303823281",
+        "linkedin_jobspy-li-4385249338",
+        "linkedin_jobspy-li-4374939454",
+        "linkedin_jobspy-li-4302494006",
+        "linkedin_jobspy-li-4372321327",
+        "linkedin-li-4302494006",
+        "linkedin-li-4372321327",
+        "linkedin-li-4380034742",
+        "cv-a3738fc040"
       ],
-      "score": 12,
-      "timestamp": "2026-05-06T06:03:08.371011+02:00"
+      "score": 7,
+      "timestamp": "2026-05-06T12:00:42.366414+02:00"
     }
   ]
 }

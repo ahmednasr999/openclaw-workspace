@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-05T21:24:14.615Z",
+  "updatedAt": "2026-05-06T06:14:52.963Z",
   "entries": {
     "memory:memory/archives/2026-03-07.md:29:56": {
       "key": "memory:memory/archives/2026-03-07.md:29:56",
@@ -2113,13 +2113,13 @@
       "endLine": 10,
       "source": "memory",
       "snippet": "## 2026-04-27 06:42 Cairo - JobZoom incident and report logic updates - JobZoom daily run was delayed, but completed successfully. Root cause of the visible delay was OpenClaw gateway memory pressure/OOM around 05:22 Cairo, followed by systemd restart, not a JobZoom logic failure. - Final JobZoom 2026-04-27 results: 150 searches, 150 successful, 0 failed, 341 eligible jobs after exclusions, 265 after dedup, 62 after Pass 1, 2 final AI matches at 70+, 2 CVs generated, report delivered successfully. - Delivery IDs from cron summary: Telegram summary 8792, PDF 8793, CV ZIP 8794. - JobZoom matched roles on 2026-04-27: OMPAY Program Manager in Oman, score 83; Johnson Controls Field Remediation",
-      "recallCount": 8,
+      "recallCount": 9,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 8,
+      "totalScore": 9,
       "maxScore": 1,
       "firstRecalledAt": "2026-04-28T06:07:07.261Z",
-      "lastRecalledAt": "2026-05-05T08:54:33.844Z",
+      "lastRecalledAt": "2026-05-06T06:14:52.963Z",
       "queryHashes": [
         "73675e2f27f1",
         "8db888f6c422",
@@ -2128,7 +2128,8 @@
         "97d8d9266e77",
         "02526ea543a9",
         "ae92f28623d7",
-        "9dd97a05c915"
+        "9dd97a05c915",
+        "693875a3b6f1"
       ],
       "recallDays": [
         "2026-04-28",
@@ -2136,7 +2137,8 @@
         "2026-05-01",
         "2026-05-02",
         "2026-05-03",
-        "2026-05-05"
+        "2026-05-05",
+        "2026-05-06"
       ],
       "conceptTags": [
         "gateway",
