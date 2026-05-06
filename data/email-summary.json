@@ -2,97 +2,159 @@
   "meta": {
     "agent": "email-agent",
     "version": "3.0.0",
-    "generated_at": "2026-05-05T20:00:45.547963+02:00",
-    "duration_ms": 30869,
+    "generated_at": "2026-05-06T06:05:11.995348+02:00",
+    "duration_ms": 143852,
     "ttl_hours": 4,
     "status": "success",
     "error": null,
-    "run_id": "9a3b419e",
+    "run_id": "741a07d2",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
     "status": "ok",
-    "scan_time": "2026-05-05T20:00:23.852852+02:00",
-    "total_scanned": 18,
+    "scan_time": "2026-05-06T06:03:08.460171+02:00",
+    "total_scanned": 46,
     "by_category": {
-      "interview_invite": 1,
-      "recruiter_reach": 0,
+      "interview_invite": 2,
+      "recruiter_reach": 3,
       "application_ack": 0,
       "rejection": 0,
       "assessment": 0,
       "follow_up_needed": 0,
-      "other": 17
+      "other": 42
     },
     "interview_invites": [
       {
-        "id": "356467",
-        "from": "\"Prestige Junkie from The Ankler\" <newsletters@mail.theankler.com> ",
-        "subject": "=?utf-8?Q?=f0=9f=8e=a7_'Industry'_Blows_Up_Its_Core_Relationship.?=\r\n  =?utf-8?Q?_Its_Stars_Tell_All?=",
-        "date": "Wed, 06 May 2026 02:45:33 +1000",
+        "id": "356512",
+        "from": "GulfTalent Jobs <jobs@gulftalent.com>",
+        "subject": "Michael Page needs a PMO (Saudi Nationals)",
+        "date": "Tue, 05 May 2026 17:58:39 -0500",
         "unread": true,
-        "priority": "MEDIUM",
-        "score": 3,
+        "priority": "HIGH",
+        "score": 12,
+        "pipeline_match": "SAP"
+      },
+      {
+        "id": "356520",
+        "from": "YS Buzz <Newsletters@yourstory.com>",
+        "subject": "=?UTF-8?q?=F0=9F=8D=A6_Ice_cream_players_embrace_Q_com?=",
+        "date": "Wed, 06 May 2026 02:43:14 +0000",
+        "unread": true,
+        "priority": "LOW",
+        "score": 0,
         "pipeline_match": null
       }
     ],
-    "recruiter_messages": [],
+    "recruiter_messages": [
+      {
+        "id": "356512",
+        "from": "GulfTalent Jobs <jobs@gulftalent.com>",
+        "subject": "Michael Page needs a PMO (Saudi Nationals)",
+        "date": "Tue, 05 May 2026 17:58:39 -0500",
+        "unread": true,
+        "priority": "HIGH",
+        "score": 12,
+        "pipeline_match": "SAP"
+      },
+      {
+        "id": "356518",
+        "from": "Naukrigulf <newjobs@naukrigulf.com>",
+        "subject": "Liquidity Management Services Product Manager, KSA Head of\r\n Systems Vice President jobs for you",
+        "date": "Wed, 6 May 2026 08:05:05 +0530 (IST)",
+        "unread": true,
+        "priority": "MEDIUM",
+        "score": 2,
+        "pipeline_match": null
+      },
+      {
+        "id": "356521",
+        "from": "Latifa from foundit <jobmessenger@monstergulf.com>",
+        "subject": "Ahmed, Hot Job Opportunities Waiting For You",
+        "date": "Wed, 6 May 2026 08:24:38 +0530 (IST)",
+        "unread": true,
+        "priority": "HIGH",
+        "score": 5,
+        "pipeline_match": null
+      }
+    ],
     "application_acks": [],
     "rejections": [],
     "assessments": [],
     "follow_ups_needed": [],
-    "actionable_count": 1,
-    "hot_alerts": [],
-    "signals": [],
-    "llm_analysis": {
-      "actionable_emails": [
-        {
-          "id": "356467",
-          "subject": "\ud83c\udfa7 'Industry' Blows Up Its Core Relationship. Its Stars Tell All",
-          "from": "\"Prestige Junkie from The Ankler\" <newsletters@mail.theankler.com>",
-          "date": "Wed, 06 May 2026 02:45:33 +1000",
-          "category": "interview_invite",
-          "urgency": "low",
-          "intent": "Sender is promoting newsletter content about a TV show interview, not a job interview.",
-          "action": "read_and_file",
-          "response_deadline": "when convenient",
-          "notes": "False positive; no career action needed."
-        }
-      ],
-      "summary": {
-        "total_actionable": 0,
-        "critical_count": 0,
-        "requires_interview_prep": false,
-        "requires_assessment": false,
-        "recruiter_top_opportunities": [],
-        "top_priority": null,
-        "daily_focus": "No job-search action needed today from this scan; file the newsletter false positive."
+    "actionable_count": 4,
+    "hot_alerts": [
+      {
+        "subject": "Michael Page needs a PMO (Saudi Nationals)",
+        "from": "GulfTalent Jobs <jobs@gulftalent.com>",
+        "priority": "HIGH",
+        "pipeline_match": "SAP"
+      },
+      {
+        "subject": "Ahmed, Hot Job Opportunities Waiting For You",
+        "from": "Latifa from foundit <jobmessenger@monstergulf.com>",
+        "priority": "HIGH",
+        "pipeline_match": null
       }
-    }
+    ],
+    "signals": [
+      {
+        "company": "SAP",
+        "signal": "interview_signal",
+        "subject": "Michael Page needs a PMO (Saudi Nationals)",
+        "sender": "GulfTalent Jobs <jobs@gulftalent.com>",
+        "job_ids": [
+          "indeed-in-b2195113ff678ef7",
+          "indeed-in-b7591ff66cc5a732",
+          "linkedin_jobspy-li-4380812358",
+          "linkedin-li-4349578134",
+          "linkedin-li-4394078700",
+          "linkedin-li-4380812358",
+          "linkedin-li-4362170335",
+          "linkedin-li-4362562926",
+          "linkedin-li-4385935615",
+          "linkedin-li-4353703506",
+          "app-005",
+          "cv-5fbf4a9aa7",
+          "linkedin-li-4385294885"
+        ],
+        "score": 12,
+        "timestamp": "2026-05-06T06:03:08.371011+02:00"
+      }
+    ],
+    "llm_analysis": null
   },
   "kpi": {
-    "emails_processed": 18,
-    "actionable": 1,
-    "interviews_detected": 1,
-    "recruiter_messages": 0,
-    "unread_actionable": 1
+    "emails_processed": 46,
+    "actionable": 4,
+    "interviews_detected": 2,
+    "recruiter_messages": 3,
+    "unread_actionable": 4
   },
   "recommendations": [
     {
-      "id": "rec-9a3b419e-0",
+      "id": "rec-741a07d2-0",
       "action": "respond_immediately",
-      "target": "1 interview invite(s)",
+      "target": "2 interview invite(s)",
       "reason": "Interview invitations require prompt response",
       "urgency": "critical",
-      "timestamp": "2026-05-05T20:00:45.547468+02:00"
+      "timestamp": "2026-05-06T06:05:11.995191+02:00"
     },
     {
-      "id": "rec-9a3b419e-1",
+      "id": "rec-741a07d2-1",
+      "action": "review_and_respond",
+      "target": "3 recruiter message(s)",
+      "reason": "Recruiter outreach could lead to opportunities",
+      "urgency": "high",
+      "timestamp": "2026-05-06T06:05:11.995218+02:00"
+    },
+    {
+      "id": "rec-741a07d2-2",
       "action": "check_inbox",
-      "target": "1 unread actionable email(s)",
+      "target": "4 unread actionable email(s)",
       "reason": "Unread emails need attention",
       "urgency": "high",
-      "timestamp": "2026-05-05T20:00:45.547490+02:00"
+      "timestamp": "2026-05-06T06:05:11.995222+02:00"
     }
   ]
 }
