@@ -1547,3 +1547,56 @@ Node.js v22.22.1
 ## Calendar - Today's Events
 *Calendar API unavailable (gog v0.12.0 bug - tracking fix)*
 
+=== Morning Brief - 2026-05-07 06:00 AM ===
+
+## Claude 2x Usage Reminder
+
+## Job Radar (from Tavily)
+[search-router] Tavily unavailable, falling back to local SearXNG: Tavily Search failed (401): {"detail":{"error":"Unauthorized: missing or invalid API key."}}
+## Sources
+
+_(provider: searxng)_
+
+- **Head Of Digital Transformation Jobs in UAE (May 2026) - Bayt.com**
+  https://www.bayt.com/en/uae/jobs/head-of-digital-transformation-jobs/
+  Summary: Elevate your career as the Head of Transformation, where you will drive comprehensive transformation initiatives across Cigna Healthcare Middle ...
+
+- **83 pmo Jobs in United Arab Emirates, January 2026 | Glassdoor**
+  https://www.glassdoor.com/Job/united-arab-emirates-pmo-jobs-SRCH_IL.0,20_IN6_KO21,24.htm
+  The top companies hiring now are Blue Book Global, Atlantis Dubai, Unique Group, Emirates Nuclear Energy Company, Julphar, BlackStone eIT, VaporVM, Dicetek LLC, Omnix International, Schneider Electric
+
+- **Justice Integrity Report - March 2026 News (Pt. 1)**
+  https://www.justice-integrity.org/news-reports/2167-march-2026-news-pt-1
+  The United Arab Emirates defense ministry said its air defenses “engaged” 9 ballistic missiles and 33 drones launched by Iran on Saturday, and Saudi Arabia’s defense ministry reported a handful of drone interceptions during the day.
+
+- **Ohannes Bedrossian, PfMP, PgMP, PMP, ITIL, SAFe, PMO-CP**
+  https://ae.linkedin.com/in/ohannesbedrossian
+  Head of PMO (PMO Director) with 12+ years building and scaling PMOs and Enterprise PMOs (EPMOs) across the GCC and MENA. Over the past decade, I have centralized portfolio governance and directed 8 portfolios (600+ projects) valued at $90M+, spanning IT, construction, infrastructure, and digital tra...
+
+- **Sunil Karani - Dubai - LinkedIn**
+  https://ae.linkedin.com/in/sunilkarani
+  Head of Program Management | Digital Transformation & Portfolio Director | VP PMO | AED 350M+ Portfolios Delivered | Built Teams from 2 to 480 Resources ...
+
+## Gmail - New Opportunities
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/root/.openclaw/workspace/scripts/gmail-scan.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+
+## Calendar - Today's Events
+*Calendar API unavailable (gog v0.12.0 bug - tracking fix)*
+
