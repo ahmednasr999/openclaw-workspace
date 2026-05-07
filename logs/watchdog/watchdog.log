@@ -2488,3 +2488,24 @@ Fix the config and retry, or run "openclaw doctor" to repair.
 [2026-05-06 20:00] === Watchdog v3 run ===
 [2026-05-06 20:00] WARN: Jobs data stale (271h), triggering pipeline
 [2026-05-06 20:00] FIXED: Pipeline triggered
+[2026-05-06 20:00] Summary: fixes=1 warnings=1 alerts=0
+[2026-05-06 22:00] === Watchdog v3 run ===
+[2026-05-06 22:00] WARN: Jobs data stale (273h), triggering pipeline
+[2026-05-06 22:00] FIXED: Pipeline triggered
+[2026-05-06 22:00] Summary: fixes=1 warnings=1 alerts=0
+[2026-05-07 00:00] === Watchdog v3 run ===
+[2026-05-07 00:00] WARN: Jobs data stale (275h), triggering pipeline
+[2026-05-07 00:00] FIXED: Pipeline triggered
+[2026-05-07 00:00] Summary: fixes=1 warnings=2 alerts=0
+[2026-05-07 02:00] === Watchdog v3 run ===
+[2026-05-07 02:00] WARN: Jobs data stale (277h), triggering pipeline
+[2026-05-07 02:00] FIXED: Pipeline triggered
+[2026-05-07 02:00] Summary: fixes=1 warnings=2 alerts=0
+[2026-05-07 04:00] === Watchdog v3 run ===
+[2026-05-07 04:00] WARN: Jobs data stale (279h), triggering pipeline
+[2026-05-07 04:00] FIXED: Pipeline triggered
+[2026-05-07 04:00] Summary: fixes=1 warnings=2 alerts=0
+[2026-05-07 06:00] === Watchdog v3 run ===
+[2026-05-07 06:00] WARN: Jobs data stale (281h), triggering pipeline
+[2026-05-07 06:00] FIXED: Pipeline triggered
+[2026-05-07 06:00] Summary: fixes=1 warnings=2 alerts=0
