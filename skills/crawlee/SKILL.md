@@ -38,7 +38,7 @@ Options:
   --depth N        Max crawl depth (default: 0 = single page)
   --max N          Max pages to crawl (default: 1)
   --selector CSS   CSS selector to extract specific elements
-  --output FILE    Save results to file
+  --output FILE    Save results to file, constrained to the current working directory by fs-safe
   --format FMT     json | text | markdown (default: markdown)
   --links          Also extract all links
   --headers        Include HTTP response headers
@@ -80,6 +80,7 @@ node scrape.mjs https://blog.example.com --depth 3 --max 50 --glob "*/blog/*" --
 - **Structured data extraction** → use `--selector` with CSS selectors
 - **Full site crawl** → set `--depth` and `--max` appropriately
 - **Large outputs** → always use `--output` to save to file
+- **Output path safety** → `--output` is fs-safe bounded to the current working directory by default. Set `OPENCLAW_CRAWLEE_OUTPUT_ROOT` only when an explicit broader output root is intended; paths outside that root are rejected.
 - **Unknown or likely-hostile public target** → start with `scrape-or-escalate.sh` so JS walls and anti-bot pages suggest Scrapling automatically
 
 ## Output Formats

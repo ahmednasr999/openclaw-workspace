@@ -2,131 +2,56 @@
   "meta": {
     "agent": "email-agent",
     "version": "3.0.0",
-    "generated_at": "2026-05-06T12:00:59.448580+02:00",
-    "duration_ms": 26557,
+    "generated_at": "2026-05-07T18:01:15.930489+02:00",
+    "duration_ms": 37693,
     "ttl_hours": 4,
     "status": "success",
     "error": null,
-    "run_id": "523dbed3",
+    "run_id": "edda075b",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
     "status": "ok",
-    "scan_time": "2026-05-06T12:00:42.423319+02:00",
-    "total_scanned": 17,
+    "scan_time": "2026-05-07T18:01:07.073747+02:00",
+    "total_scanned": 28,
     "by_category": {
       "interview_invite": 0,
-      "recruiter_reach": 1,
+      "recruiter_reach": 0,
       "application_ack": 0,
       "rejection": 0,
       "assessment": 0,
       "follow_up_needed": 0,
-      "other": 16
+      "other": 28
     },
     "interview_invites": [],
-    "recruiter_messages": [
-      {
-        "id": "356567",
-        "from": "\"LinkedIn Premium\" <linkedin@em.linkedin.com>",
-        "subject": "New this May: 1 year of Lovable Pro",
-        "date": "Wed, 06 May 2026 02:13:23 -0700",
-        "unread": true,
-        "priority": "HIGH",
-        "score": 5,
-        "pipeline_match": null
-      }
-    ],
+    "recruiter_messages": [],
     "application_acks": [],
     "rejections": [],
     "assessments": [],
     "follow_ups_needed": [],
-    "actionable_count": 1,
-    "hot_alerts": [
-      {
-        "subject": "Thank you for your interest in Snoonu!",
-        "from": "Snoonu <no-reply@kekamail.com>",
-        "priority": "HIGH",
-        "pipeline_match": "Snoonu"
-      },
-      {
-        "subject": "New this May: 1 year of Lovable Pro",
-        "from": "\"LinkedIn Premium\" <linkedin@em.linkedin.com>",
-        "priority": "HIGH",
-        "pipeline_match": null
-      }
-    ],
-    "signals": [
-      {
-        "company": "Snoonu",
-        "signal": "recruiter_email",
-        "subject": "Thank you for your interest in Snoonu!",
-        "sender": "Snoonu <no-reply@kekamail.com>",
-        "job_ids": [
-          "linkedin_jobspy-li-4386880115",
-          "linkedin_jobspy-li-4303823281",
-          "linkedin_jobspy-li-4385249338",
-          "linkedin_jobspy-li-4374939454",
-          "linkedin_jobspy-li-4302494006",
-          "linkedin_jobspy-li-4372321327",
-          "linkedin-li-4302494006",
-          "linkedin-li-4372321327",
-          "linkedin-li-4380034742",
-          "cv-a3738fc040"
-        ],
-        "score": 7,
-        "timestamp": "2026-05-06T12:00:42.366414+02:00"
-      }
-    ],
+    "actionable_count": 0,
+    "hot_alerts": [],
+    "signals": [],
     "llm_analysis": {
-      "actionable_emails": [
-        {
-          "id": "356567",
-          "subject": "New this May: 1 year of Lovable Pro",
-          "from": "\"LinkedIn Premium\" <linkedin@em.linkedin.com>",
-          "date": "Wed, 06 May 2026 02:13:23 -0700",
-          "category": "recruiter_reach",
-          "urgency": "low",
-          "intent": "LinkedIn Premium is promoting a limited-time Lovable Pro benefit and AI-related events.",
-          "action": "no_action",
-          "response_deadline": "when convenient",
-          "notes": "Marketing offer; no recruiter or role opportunity proven."
-        }
-      ],
+      "actionable_emails": [],
       "summary": {
-        "total_actionable": 1,
+        "total_actionable": 0,
         "critical_count": 0,
         "requires_interview_prep": false,
         "requires_assessment": false,
         "recruiter_top_opportunities": [],
         "top_priority": null,
-        "daily_focus": "No urgent job-search action is needed from this scan; ignore the LinkedIn Premium promo unless useful."
+        "daily_focus": "No actionable interview, assessment, follow-up, or recruiter emails were provided today."
       }
     }
   },
   "kpi": {
-    "emails_processed": 17,
-    "actionable": 1,
+    "emails_processed": 28,
+    "actionable": 0,
     "interviews_detected": 0,
-    "recruiter_messages": 1,
-    "unread_actionable": 1
+    "recruiter_messages": 0,
+    "unread_actionable": 0
   },
-  "recommendations": [
-    {
-      "id": "rec-523dbed3-0",
-      "action": "review_and_respond",
-      "target": "1 recruiter message(s)",
-      "reason": "Recruiter outreach could lead to opportunities",
-      "urgency": "high",
-      "timestamp": "2026-05-06T12:00:59.448333+02:00"
-    },
-    {
-      "id": "rec-523dbed3-1",
-      "action": "check_inbox",
-      "target": "1 unread actionable email(s)",
-      "reason": "Unread emails need attention",
-      "urgency": "high",
-      "timestamp": "2026-05-06T12:00:59.448354+02:00"
-    }
-  ]
+  "recommendations": []
 }

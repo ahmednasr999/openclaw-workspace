@@ -1,5 +1,28 @@
 # Learnings Log
 
+## [LRN-20260507-001] correction
+
+**Logged**: 2026-05-07T08:20:00+03:00
+**Priority**: high
+**Status**: promoted
+**Area**: workflow
+
+### Summary
+Avoid creating repeated approval cards for routine read-only verification.
+
+### Details
+Ahmed saw many approval requests after 1:00 AM during fs-safe verification. The noisy prompts came from read-only inspection commands that used inline eval or sed-style shell snippets. Those commands either timed out or required approval even though safer first-class tools could have verified the same facts.
+
+### Suggested Action
+For routine local verification, prefer first-class tools (`read`, `dir_list`, `file_fetch`, `session_status`) or simple allowlisted checks. Avoid `node -e`, `python -c`, sed/awk one-liners, and similar inline-eval patterns unless genuinely necessary. If a read-only check prompts for approval, stop and switch approach instead of producing repeated approval cards.
+
+### Metadata
+- Source: user_feedback
+- Related Files: /root/.openclaw/workspace/TOOLS.md
+- Tags: correction, approvals, read-only, exec, verification, tool-policy
+
+---
+
 ## [LRN-20260426-003] correction
 
 **Logged**: 2026-04-26T18:05:31+03:00
@@ -1186,5 +1209,51 @@ Promoted concise rules to `TOOLS.md` covering Google Meet privacy, Codex Compute
 - Recurrence-Count: 1
 - First-Seen: 2026-05-03
 - Last-Seen: 2026-05-03
+
+---
+
+## [LRN-20260506-JOBZOOM-PREAPPROVAL] correction
+
+**Logged**: 2026-05-06T22:06:44+03:00
+**Priority**: high
+**Status**: applied
+**Area**: workflow/approvals
+
+### Summary
+Ahmed corrected that anything related to JobZoom should be treated as pre-approved.
+
+### Details
+For JobZoom, do not ask approval for protected-lane operations such as scans, scoring, reruns, diagnostics, report generation, CV generation, artifact checks, and Telegram delivery to Ahmed. These are part of the standing JobZoom automation lane. Preserve approval gates only for actions outside the protected lane, especially actual job applications, emails, recruiter messages, public posts, paid actions, credential changes, destructive deletes, or gateway/runtime changes.
+
+### Suggested Action
+Apply this rule in AGENTS.md and USER.md, and avoid unnecessary approval prompts for JobZoom operations.
+
+### Metadata
+- Source: user_feedback
+- Related Files: AGENTS.md, USER.md
+- Tags: jobzoom, approvals, protected-lane
+
+---
+
+## [LRN-20260506-HR-PREAPPROVAL] correction
+
+**Logged**: 2026-05-06T22:25:52
+**Priority**: high
+**Status**: promoted
+**Area**: hr
+
+### Summary
+Ahmed corrected that HR-related internal operations should be treated as pre-approved.
+
+### Details
+Do not pause for approval for routine HR-lane internal work such as searches/scans, diagnostics, pipeline inspection, ATS analysis, scoring, report/CV generation, artifact verification, local HR workspace edits, and Telegram delivery to Ahmed. Tool-level safety approvals may still appear for shell policy reasons, but they should not be interpreted as Ahmed approval boundaries.
+
+### Suggested Action
+Use first-class tools or safer commands to avoid unnecessary shell approval prompts. Preserve approval gates for external/reputation-risk actions: applications, recruiter/employer messages, public/external writes, paid actions, credentials, destructive deletes, and gateway/runtime changes.
+
+### Metadata
+- Source: user_feedback
+- Related Files: AGENTS.md, USER.md
+- Tags: hr, approvals, protected-lane
 
 ---

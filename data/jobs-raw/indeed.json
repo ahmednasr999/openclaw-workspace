@@ -2,41 +2,16 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-05-07T05:00:39.723186+02:00",
-    "duration_ms": 37568,
+    "generated_at": "2026-05-07T17:00:38.893575+02:00",
+    "duration_ms": 37085,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "976133c0",
+    "run_id": "2544c57a",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": [
-    {
-      "id": "indeed-in-5f10a35762981cab",
-      "source": "indeed",
-      "title": "Director PMO",
-      "company": "Ezra",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=5f10a35762981cab",
-      "posted": "2026-05-04",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 33,
-      "match_keywords": [
-        "pmo",
-        "ai",
-        "director",
-        "uae",
-        "dubai",
-        "platform"
-      ],
-      "raw_snippet": "**Director \\- Business Solutions and Delivery**\n\n\n**Location:** Dubai, UAE\n\n\n**Reports to:** Chief Operations Officer\n\n  \n\n\n### **About the role:**\n\n\n\nThe role will lead the end\\-to\\-end execution of strategic projects, programmes and product delivery across the company's credit\\-lending platform and its market deployments. Responsible for ensuring that complex, cross\\-functional initiatives are planned and executed with precision, the role works closely with technology, operations, compliance, ",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "PMO Director"
-    },
     {
       "id": "indeed-in-a2fd81d9f3577958",
       "source": "indeed",
@@ -74,28 +49,6 @@
         "director"
       ],
       "raw_snippet": "### **Job Summary**\n\n\n\nThe Director, Residential Portfolio Management is responsible for the portfolio\u2011level governance, planning, and setup of branded residential components across Kerzner\u2019s global Private Homes and Branded Residences development pipeline.\n\n\n\nThe role focuses on the pre\u2011opening residential lifecycle, from early pre\u2011development and planning through to opening, providing structured management and coordination with internal and external stakeholders. The objective is to ensure tha",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-ba3ceba918652106",
-      "source": "indeed",
-      "title": "VP-Financial Operations",
-      "company": "CXM Direct LLC",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=ba3ceba918652106",
-      "posted": "2026-05-06",
-      "seniority": "Other",
-      "domain_match": true,
-      "keyword_score": 20,
-      "match_keywords": [
-        "executive",
-        "vp",
-        "head of"
-      ],
-      "raw_snippet": "Position Title: Vice President, Financial Operations  \n\n  \n\nReporting Line: Reports directly to the Head of Treasury \\& Accounting, with executive oversight from the Chief Financial Officer (CFO).  \n\n  \n\nLocation: Fully Remote or Hybrid, determined by candidate location and business needs on a case\\-by\\-case basis.  \n\n  \n\nGeneral Purpose: Responsible for leading the Payment Operations function and overseeing transaction processing for a global CFD brokerage and cryptocurrency exchange.  \n\n  \n\nSp",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
@@ -169,24 +122,49 @@
       "search_title": "Head of Digital Transformation"
     },
     {
-      "id": "indeed-in-e83e338dbf81983a",
+      "id": "indeed-in-ba3ceba918652106",
       "source": "indeed",
-      "title": "Chief Technology Officer",
-      "company": "Lever Building Materials",
+      "title": "VP-Financial Operations",
+      "company": "CXM Direct LLC",
       "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=e83e338dbf81983a",
-      "posted": "2026-05-04",
-      "seniority": "C-Suite",
+      "url": "https://ae.indeed.com/viewjob?jk=ba3ceba918652106",
+      "posted": "2026-05-06",
+      "seniority": "Other",
       "domain_match": true,
-      "keyword_score": 10,
+      "keyword_score": 20,
       "match_keywords": [
-        "digital transformation"
+        "executive",
+        "vp",
+        "head of"
       ],
-      "raw_snippet": "**About Lever Building Materials:**  \nLever Building Materials is a leading supplier of premium construction materials, committed to delivering innovative solutions for the building and construction industry. As we continue to expand and innovate, we are seeking a dynamic and visionary Chief Technology Officer (CTO) to lead our technology initiatives, drive digital transformation, and enhance operational efficiency through cutting\\-edge solutions.\n\n**Job Overview:**  \nAs the CTO, you will be res",
+      "raw_snippet": "Position Title: Vice President, Financial Operations  \n\n  \n\nReporting Line: Reports directly to the Head of Treasury \\& Accounting, with executive oversight from the Chief Financial Officer (CFO).  \n\n  \n\nLocation: Fully Remote or Hybrid, determined by candidate location and business needs on a case\\-by\\-case basis.  \n\n  \n\nGeneral Purpose: Responsible for leading the Payment Operations function and overseeing transaction processing for a global CFD brokerage and cryptocurrency exchange.  \n\n  \n\nSp",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
       "search_title": "Chief Technology Officer"
+    },
+    {
+      "id": "indeed-in-32f692fac42cc9f0",
+      "source": "indeed",
+      "title": "Executive Director - HRBP",
+      "company": "Qiddiya Investment Company",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=32f692fac42cc9f0",
+      "posted": "2026-05-07",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 26,
+      "match_keywords": [
+        "executive",
+        "director",
+        "leadership",
+        "growth"
+      ],
+      "raw_snippet": "We are seeking an Executive Director \u2013 HR Business Partner (HRBP) to act as a strategic advisor to the Development side of the business. Reporting directly to the CHRO, this role will lead the full HR agenda across a complex, fast\\-paced and high\\-growth environment.\n\n\nYou will partner closely with executive leadership on a broad spectrum of people \\& business issues to enable delivery of large\\-scale development programs, ensuring the organization is structured, resourced, and equipped to meet ",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "Program Director"
     },
     {
       "id": "indeed-in-b9bc17606f0c2c25",
@@ -227,29 +205,6 @@
         "leadership"
       ],
       "raw_snippet": "**Role Summary**\nThe Program Director provides executive\\-level leadership and strategic oversight across all LDIP PMCM phases. As the primary point of accountability, the incumbent ensures that all PMCM services are delivered to the highest professional standards, on time, and in full compliance with the requirements, contractual obligations, and applicable national and international standards.\n\n**Key Responsibilities**\n\n* **Strategic Leadership \\& Program Governance**\n* Serve as the ultimate p",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-93c156693ec24ae2",
-      "source": "indeed",
-      "title": "Program Director",
-      "company": "ServiceNow",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=93c156693ec24ae2",
-      "posted": "2026-05-05",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 23,
-      "match_keywords": [
-        "ai",
-        "cloud",
-        "director",
-        "platform"
-      ],
-      "raw_snippet": "**Company Description**  \n\nIt all started in sunny San Diego, California in 2004 when a visionary engineer, Fred Luddy, saw the potential to transform how we work. Fast forward to today \u2014 ServiceNow stands as a global market leader, bringing innovative AI\\-enhanced technology to over 8,100 customers, including 85% of the Fortune 500\u00ae. Our intelligent cloud\\-based platform seamlessly connects people, systems, and processes to empower organizations to find smarter, faster, and better ways to work.",
       "relevant": true,
       "filter_reason": null,
       "search_country": "Saudi Arabia",
@@ -328,36 +283,13 @@
       "filter_reason": null,
       "search_country": "Saudi Arabia",
       "search_title": "IT Director"
-    },
-    {
-      "id": "indeed-in-9897c9a50ef82b6f",
-      "source": "indeed",
-      "title": "Director - City OPS IT/OT Network and Security Operations",
-      "company": "Qiddiya Investment Company",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=9897c9a50ef82b6f",
-      "posted": "2026-05-05",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 23,
-      "match_keywords": [
-        "infrastructure",
-        "director",
-        "leadership",
-        "platform"
-      ],
-      "raw_snippet": "The **Director of IT/OT Network \\& Security Operations** is a critical leadership role within City Operations IT, responsible for the end\\-to\\-end management, reliability, and security of Qiddiya\u2019s converged IT and Operational Technology (OT) infrastructure.\n\n\nAs Qiddiya transitions from construction to operations, this role will lead operational readiness, infrastructure acceptance, and the ongoing management of city\\-wide digital platforms, including fiber networks, active network equipment, s",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "IT Director"
     }
   ],
   "kpi": {
     "searches_run": 20,
-    "results_per_search": 4.05,
-    "unique_jobs": 15,
-    "errors": 4
+    "results_per_search": 3.65,
+    "unique_jobs": 12,
+    "errors": 5
   },
   "recommendations": []
 }

@@ -87,6 +87,10 @@ System-wide rule: every repeated failure, user correction, wrong approval bounda
 
 NASR owns governance. Each agent owns durable fixes in its lane:
 - HR: job search, CV, ATS, recruiter/email, pipeline, application-lock, JobZoom handoffs.
+
+## HR Protected Lane
+
+HR-related internal operations are pre-approved: searches/scans, diagnostics, pipeline inspection, scoring, ATS analysis, report generation, CV drafting/generation, artifact verification, local workspace edits in the HR lane, and Telegram delivery to Ahmed. Do not ask approval for these routine HR-lane operations. Keep approval gates for actual job applications, recruiter/employer messages, public/external third-party actions, paid actions, credential changes, destructive deletes, gateway/runtime changes, or anything that could affect Ahmed's reputation externally. <!-- updated 2026-05-06 from Ahmed correction -->
 - CTO: gateway, config, scripts, runtime patches, health checks, tool behavior.
 - CMO: LinkedIn, content, brand, image generation, posting, engagement.
 - CEO/NASR: strategy, routing, memory, cross-agent policy, user-facing quality.
@@ -184,3 +188,8 @@ Full coding closeout must include:
 - Tool hooks: `config/tool-hooks.yaml`
 - Session handoff: `templates/session-handoff.md`
 - ACP presets: `templates/acp-*-preset.md`
+
+## JobZoom Protected Lane
+
+- JobZoom is a protected daily full-scan lane.
+- JobZoom protected-lane operations are pre-approved: scans, reruns, diagnostics, scoring, report generation, CV generation, artifact verification, and Telegram delivery to Ahmed. Do not ask approval for these routine JobZoom operations. Keep approval gates for actions outside the protected lane, including actual job applications, emails/recruiter messages, public posts, paid actions, credential changes, destructive deletes, and gateway/runtime changes. <!-- promoted 2026-05-06 from Ahmed correction -->

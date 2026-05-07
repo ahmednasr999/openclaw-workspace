@@ -1,68 +1,23 @@
 {
   "status": "ok",
-  "scan_time": "2026-05-06T12:00:42.423319+02:00",
-  "total_scanned": 17,
+  "scan_time": "2026-05-07T18:01:07.073747+02:00",
+  "total_scanned": 28,
   "by_category": {
     "interview_invite": 0,
-    "recruiter_reach": 1,
+    "recruiter_reach": 0,
     "application_ack": 0,
     "rejection": 0,
     "assessment": 0,
     "follow_up_needed": 0,
-    "other": 16
+    "other": 28
   },
   "interview_invites": [],
-  "recruiter_messages": [
-    {
-      "id": "356567",
-      "from": "\"LinkedIn Premium\" <linkedin@em.linkedin.com>",
-      "subject": "New this May: 1 year of Lovable Pro",
-      "date": "Wed, 06 May 2026 02:13:23 -0700",
-      "unread": true,
-      "priority": "HIGH",
-      "score": 5,
-      "pipeline_match": null
-    }
-  ],
+  "recruiter_messages": [],
   "application_acks": [],
   "rejections": [],
   "assessments": [],
   "follow_ups_needed": [],
-  "actionable_count": 1,
-  "hot_alerts": [
-    {
-      "subject": "Thank you for your interest in Snoonu!",
-      "from": "Snoonu <no-reply@kekamail.com>",
-      "priority": "HIGH",
-      "pipeline_match": "Snoonu"
-    },
-    {
-      "subject": "New this May: 1 year of Lovable Pro",
-      "from": "\"LinkedIn Premium\" <linkedin@em.linkedin.com>",
-      "priority": "HIGH",
-      "pipeline_match": null
-    }
-  ],
-  "signals": [
-    {
-      "company": "Snoonu",
-      "signal": "recruiter_email",
-      "subject": "Thank you for your interest in Snoonu!",
-      "sender": "Snoonu <no-reply@kekamail.com>",
-      "job_ids": [
-        "linkedin_jobspy-li-4386880115",
-        "linkedin_jobspy-li-4303823281",
-        "linkedin_jobspy-li-4385249338",
-        "linkedin_jobspy-li-4374939454",
-        "linkedin_jobspy-li-4302494006",
-        "linkedin_jobspy-li-4372321327",
-        "linkedin-li-4302494006",
-        "linkedin-li-4372321327",
-        "linkedin-li-4380034742",
-        "cv-a3738fc040"
-      ],
-      "score": 7,
-      "timestamp": "2026-05-06T12:00:42.366414+02:00"
-    }
-  ]
+  "actionable_count": 0,
+  "hot_alerts": [],
+  "signals": []
 }

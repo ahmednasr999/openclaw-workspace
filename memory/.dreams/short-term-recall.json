@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-06T06:14:52.963Z",
+  "updatedAt": "2026-05-07T05:52:01.812Z",
   "entries": {
     "memory:memory/archives/2026-03-07.md:29:56": {
       "key": "memory:memory/archives/2026-03-07.md:29:56",
@@ -1750,13 +1750,13 @@
       "endLine": 51,
       "source": "memory",
       "snippet": "- Extracted content: Peter Steinberger (@steipete), tweet text “My favorite security advisories.” Media image text: “Steps To Reproduce: 1. Enable hooks.gmail.allowUnsafeExternalContent=true”. Timestamp 12:11 PM · Apr 23, 2026. Metrics at fetch: 56.3K views, 24 replies, 4 reposts, 433 likes, 53 bookmarks. ### JobZoom 0-live-jobs investigation - 2026-04-24 JobZoom run did not find 0 raw jobs. It found/scored many intermediates: 341 filtered raw jobs, 311 deduped/new jobs, 91 Pass1/all-scored jobs, 0 live matches, 3 shadow jobs. - Shadow file: `/root/.openclaw/workspace-jobzoom/reports/shadow/jobzoom-shadow-2026-04-24.json`. - Shadow verdicts were keyword fallback around 60-63; live threshold",
-      "recallCount": 9,
+      "recallCount": 10,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 8.39020108282566,
+      "totalScore": 9.39020108282566,
       "maxScore": 1,
       "firstRecalledAt": "2026-04-24T10:44:07.363Z",
-      "lastRecalledAt": "2026-05-05T08:54:33.844Z",
+      "lastRecalledAt": "2026-05-07T05:21:49.283Z",
       "queryHashes": [
         "3b21f0cb3926",
         "73675e2f27f1",
@@ -1766,7 +1766,8 @@
         "97d8d9266e77",
         "02526ea543a9",
         "ae92f28623d7",
-        "9dd97a05c915"
+        "9dd97a05c915",
+        "83f965b9faa6"
       ],
       "recallDays": [
         "2026-04-24",
@@ -1775,7 +1776,8 @@
         "2026-05-01",
         "2026-05-02",
         "2026-05-03",
-        "2026-05-05"
+        "2026-05-05",
+        "2026-05-07"
       ],
       "conceptTags": [
         "56.3k",
@@ -1952,22 +1954,24 @@
       "endLine": 150,
       "source": "memory",
       "snippet": "- Deleted Fallback Validator cron (11dba958) — script missing, SIE already handles monitoring ### Fallback Chain Verified - MiniMax M2.5 → GPT-5.3-Codex → GPT-5.4 → Claude Sonnet 4.6 → Claude Haiku 4.5 → Kimi K2.5 - All working correctly ### Canvas/Chart Investigation - Canvas tool requires connected node with display (Mac), not VPS - Ahmed-Mac node not currently connected - Python matplotlib/plotly charts → PNG remain best option for Telegram/Slack - OpenGenerativeUI evaluated: needs Node.js + Next.js, outputs HTML/SVG, same PNG result — rejected - Sent existing pipeline chart PNG to Ahmed via Telegram - **Decision:** Stick with Python charts. Canvas useful only when Mac is connected as n",
-      "recallCount": 3,
+      "recallCount": 4,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 2.444454348087311,
+      "totalScore": 3.444454348087311,
       "maxScore": 1,
       "firstRecalledAt": "2026-04-24T20:00:51.816Z",
-      "lastRecalledAt": "2026-05-02T21:11:56.157Z",
+      "lastRecalledAt": "2026-05-07T05:52:01.812Z",
       "queryHashes": [
         "cb0255c5b075",
         "2c02c1e53fd2",
-        "1f409fe934d1"
+        "1f409fe934d1",
+        "a8de4890a37f"
       ],
       "recallDays": [
         "2026-04-24",
         "2026-04-28",
-        "2026-05-03"
+        "2026-05-03",
+        "2026-05-07"
       ],
       "conceptTags": [
         "gpt",
@@ -2113,13 +2117,13 @@
       "endLine": 10,
       "source": "memory",
       "snippet": "## 2026-04-27 06:42 Cairo - JobZoom incident and report logic updates - JobZoom daily run was delayed, but completed successfully. Root cause of the visible delay was OpenClaw gateway memory pressure/OOM around 05:22 Cairo, followed by systemd restart, not a JobZoom logic failure. - Final JobZoom 2026-04-27 results: 150 searches, 150 successful, 0 failed, 341 eligible jobs after exclusions, 265 after dedup, 62 after Pass 1, 2 final AI matches at 70+, 2 CVs generated, report delivered successfully. - Delivery IDs from cron summary: Telegram summary 8792, PDF 8793, CV ZIP 8794. - JobZoom matched roles on 2026-04-27: OMPAY Program Manager in Oman, score 83; Johnson Controls Field Remediation",
-      "recallCount": 9,
+      "recallCount": 10,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 9,
+      "totalScore": 10,
       "maxScore": 1,
       "firstRecalledAt": "2026-04-28T06:07:07.261Z",
-      "lastRecalledAt": "2026-05-06T06:14:52.963Z",
+      "lastRecalledAt": "2026-05-07T05:21:49.283Z",
       "queryHashes": [
         "73675e2f27f1",
         "8db888f6c422",
@@ -2129,7 +2133,8 @@
         "02526ea543a9",
         "ae92f28623d7",
         "9dd97a05c915",
-        "693875a3b6f1"
+        "693875a3b6f1",
+        "83f965b9faa6"
       ],
       "recallDays": [
         "2026-04-28",
@@ -2138,7 +2143,8 @@
         "2026-05-02",
         "2026-05-03",
         "2026-05-05",
-        "2026-05-06"
+        "2026-05-06",
+        "2026-05-07"
       ],
       "conceptTags": [
         "gateway",
@@ -2222,18 +2228,20 @@
       "endLine": 183,
       "source": "memory",
       "snippet": "- Ahmed-Mac browser proxy: RUNNING on port 9222 - Chrome version: 2026.2.26 (bc50708) - Full browser automation available from VPS through real signed-in Chrome session - Test: YouTube video loaded successfully (no sign-in wall) - Socat tunnel (port 3334, PID 67034) — can be killed on Mac, no longer needed **Browser browser tool invocation:** ``` browser(action=\"start/open/screenshot/snapshot\", target=\"node\", node=\"Ahmed-Mac\") ``` ### Node-Connect Skill Applied - Canonical diagnosis: `openclaw devices list` showed Ahmed-Mac still in paired list (VPS hadn't lost pairing) - Error \"pairing required\" was transient — node reconnected after LaunchAgent cleanup - cdpPort 9222 confirmed via `nodes",
-      "recallCount": 1,
+      "recallCount": 2,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 1,
+      "totalScore": 2,
       "maxScore": 1,
       "firstRecalledAt": "2026-04-28T17:06:54.649Z",
-      "lastRecalledAt": "2026-04-28T17:06:54.649Z",
+      "lastRecalledAt": "2026-05-07T05:52:01.812Z",
       "queryHashes": [
-        "2c02c1e53fd2"
+        "2c02c1e53fd2",
+        "a8de4890a37f"
       ],
       "recallDays": [
-        "2026-04-28"
+        "2026-04-28",
+        "2026-05-07"
       ],
       "conceptTags": [
         "ahmed-mac",
@@ -2445,24 +2453,26 @@
       "endLine": 64,
       "source": "memory",
       "snippet": "- Patched `/root/.openclaw/workspace-jobzoom/scripts/daily_run.py` for better scoring observability: - gateway calls now record `elapsed_ms` in `gpt_api_calls.note`, including failures, - batch scoring logs attempt start, timeout budget, per-attempt duration, total batch duration, scores, and fallback duration. - Verified with `python3 -m py_compile /root/.openclaw/workspace-jobzoom/scripts/daily_run.py`. - Path drift task: confirmed `/root/.openclaw/workspace-jobzoom/scripts/jobs-source-linkedin-jobspy.py` is a symlink to `/root/.openclaw/workspace/scripts/jobs-source-linkedin-jobspy.py`, and `daily_run.py` calls `preflight_jobspy_path()` before scraping. Marked the drift guard task res",
-      "recallCount": 4,
+      "recallCount": 5,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 4,
+      "totalScore": 5,
       "maxScore": 1,
       "firstRecalledAt": "2026-05-01T02:39:36.670Z",
-      "lastRecalledAt": "2026-05-05T08:54:33.844Z",
+      "lastRecalledAt": "2026-05-07T05:21:49.283Z",
       "queryHashes": [
         "62d1011768ae",
         "97d8d9266e77",
         "02526ea543a9",
-        "9dd97a05c915"
+        "9dd97a05c915",
+        "83f965b9faa6"
       ],
       "recallDays": [
         "2026-05-01",
         "2026-05-02",
         "2026-05-03",
-        "2026-05-05"
+        "2026-05-05",
+        "2026-05-07"
       ],
       "conceptTags": [
         "gateway",
@@ -2754,6 +2764,68 @@
         "captured",
         "continue",
         "threshold"
+      ]
+    },
+    "memory:memory/2026-04-30.md:137:167": {
+      "key": "memory:memory/2026-04-30.md:137:167",
+      "path": "memory/2026-04-30.md",
+      "startLine": 137,
+      "endLine": 167,
+      "source": "memory",
+      "snippet": "- Runs hourly at minute 7, Africa/Cairo timezone. - If script returns `OK:`, job stays silent. - If script returns `DISK_GUARD_TRIGGERED`, job should notify Ahmed with before/after usage and log path. Verification: - Current disk at creation: 59G used / 38G free / 61%. - Guard dry run output: `OK: disk 61% below threshold 65%`. - Script syntax check passed. ## VPS Disk Guard Cadence Updated Ahmed said hourly disk guard checks are too much. The existing `VPS disk guard at 65%` cron job was updated from hourly to every 6 hours at minute 7, Africa/Cairo timezone: `7 */6 * * *`. Behavior remains unchanged: - If below 65%, stay silent. - If 65% or higher, run safe cleanup and notify Ahmed wit",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-07T05:52:01.812Z",
+      "lastRecalledAt": "2026-05-07T05:52:01.812Z",
+      "queryHashes": [
+        "a8de4890a37f"
+      ],
+      "recallDays": [
+        "2026-05-07"
+      ],
+      "conceptTags": [
+        "africa/cairo",
+        "disk-guard-triggered",
+        "before/after",
+        "runs",
+        "hourly",
+        "minute",
+        "africa",
+        "cairo"
+      ]
+    },
+    "memory:memory/2026-04-30.md:109:143": {
+      "key": "memory:memory/2026-04-30.md:109:143",
+      "path": "memory/2026-04-30.md",
+      "startLine": 109,
+      "endLine": 143,
+      "source": "memory",
+      "snippet": "- Total improvement from initial state: 82G used / 15G free / 85% -> 59G used / 38G free / 61%, about 23G recovered. - Inodes healthy at 10% used. - Tasks clean: 0 running. - OpenClaw version 2026.4.27 verified. - Runtime patch checker green. ## VPS Disk Guard at 65 Percent Ahmed requested: when VPS root disk reaches 65%, inform him and run safe cleanup automatically. Implemented: - Created executable guard script: `/root/.openclaw/workspace/scripts/vps-disk-guard.sh`. - Threshold defaults to 65% via `DISK_GUARD_THRESHOLD`. - Script checks `/` usage and exits silently/OK if below threshold. - If threshold is reached/exceeded, it performs safe cleanup only: - old workspace tmp files olde",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-07T05:52:01.812Z",
+      "lastRecalledAt": "2026-05-07T05:52:01.812Z",
+      "queryHashes": [
+        "a8de4890a37f"
+      ],
+      "recallDays": [
+        "2026-05-07"
+      ],
+      "conceptTags": [
+        "2026.4.27",
+        "disk-guard-threshold",
+        "silently/ok",
+        "reached/exceeded",
+        "total",
+        "improvement",
+        "initial",
+        "state"
       ]
     }
   }

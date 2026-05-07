@@ -2,16 +2,26 @@
 // Job Radar v2 — Parser, deduplicator, and profile matcher
 // Usage: node job-radar-parse.mjs <date> <seen-file-path>
 
-import { readFileSync, writeFileSync, appendFileSync, existsSync } from 'fs';
+import { root as safeRoot } from '@openclaw/fs-safe';
 import { createHash } from 'crypto';
 import { execFile } from 'child_process';
+import { relative, resolve } from 'path';
 import { promisify } from 'util';
 
 const TAVILY_API_KEY = process.env.TAVILY_API_KEY;
 const date = process.argv[2] || new Date().toISOString().split('T')[0];
-const seenFile = process.argv[3] || '/root/.openclaw/workspace/memory/job-radar-seen.txt';
+const DEFAULT_SEEN_FILE = '/root/.openclaw/workspace/memory/job-radar-seen.txt';
+const SEEN_FILE_ROOT = process.env.OPENCLAW_JOB_RADAR_SEEN_ROOT || '/root/.openclaw/workspace/memory';
+const seenFile = process.argv[3] || DEFAULT_SEEN_FILE;
 const execFileAsync = promisify(execFile);
 const FETCH_GUARD_PATH = '/root/.openclaw/workspace/scripts/fetch-guard.mjs';
+const seenRoot = await safeRoot(SEEN_FILE_ROOT, {
+  mkdir: true,
+  symlinks: 'reject',
+  hardlinks: 'reject',
+});
+const seenFilePath = resolve(seenFile);
+const seenRelativePath = relative(seenRoot.rootDir, seenFilePath);
 
 // Ahmed's profile — used for matching
 const AHMED_PROFILE = {
@@ -23,13 +33,18 @@ const AHMED_PROFILE = {
 };
 
 // Load seen URLs to avoid duplicates
-function loadSeen() {
-  if (!existsSync(seenFile)) return new Set();
-  return new Set(readFileSync(seenFile, 'utf8').split('\n').filter(Boolean));
+async function loadSeen() {
+  try {
+    const seenText = await seenRoot.readText(seenRelativePath, { encoding: 'utf8' });
+    return new Set(seenText.split('\n').filter(Boolean));
+  } catch (err) {
+    if (err?.code === 'ENOENT') return new Set();
+    throw err;
+  }
 }
 
-function saveSeen(seen) {
-  writeFileSync(seenFile, [...seen].join('\n') + '\n');
+async function saveSeen(seen) {
+  await seenRoot.write(seenRelativePath, [...seen].join('\n') + '\n', { encoding: 'utf8', mkdir: true });
 }
 
 // Hash a URL for deduplication
@@ -123,7 +138,7 @@ function formatJob(result, match, rank) {
 }
 
 async function main() {
-  const seen = loadSeen();
+  const seen = await loadSeen();
   const searches = [
     {
       label: 'VP/C-Suite Digital Transformation — UAE/Dubai',
@@ -190,7 +205,7 @@ async function main() {
   });
 
   // Save updated seen list
-  saveSeen(seen);
+  await saveSeen(seen);
 }
 
 main().catch(err => {

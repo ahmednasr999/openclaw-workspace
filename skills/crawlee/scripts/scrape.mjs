@@ -11,8 +11,8 @@
  */
 
 import { CheerioCrawler, Dataset, Configuration } from 'crawlee';
-import { writeFileSync } from 'fs';
-import { resolve } from 'path';
+import { root as safeRoot } from '@openclaw/fs-safe';
+import { relative, resolve } from 'path';
 
 // Parse CLI args
 const args = process.argv.slice(2);
@@ -208,8 +208,17 @@ if (format === 'json') {
 }
 
 if (outputFile) {
-  writeFileSync(resolve(outputFile), output, 'utf-8');
-  console.log(`Results saved to ${outputFile} (${results.length} pages)`);
+  const outputRootPath = process.env.OPENCLAW_CRAWLEE_OUTPUT_ROOT || process.cwd();
+  const outputRoot = await safeRoot(outputRootPath, {
+    mkdir: true,
+    symlinks: 'reject',
+    hardlinks: 'reject',
+  });
+  const outputPath = resolve(outputFile);
+  const relativeOutputPath = relative(outputRoot.rootDir, outputPath);
+
+  await outputRoot.write(relativeOutputPath, output, { encoding: 'utf8', mkdir: true });
+  console.log(`Results saved to ${outputPath} (${results.length} pages)`);
 } else {
   console.log(output);
 }

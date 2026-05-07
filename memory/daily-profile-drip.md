@@ -44,3 +44,8 @@ Note: Ahmed clarified that employer type is secondary; prioritize whichever empl
 Question: Besides salary, what is your biggest hard-no for GCC executive roles: weak authority, unstable company, bad reporting line, poor city/family fit, or something else?
 Raw answer: It's all about salary nothing more.
 Note: Ahmed clarified that salary is the overriding decision factor. Do not invent additional hard-no filters unless salary is acceptable or Ahmed explicitly adds them.
+
+### 2026-05-07
+Question: What is the lowest acceptable reporting line for a GCC role: CEO/Board only, C-level, Regional GM, or any if salary is high enough?
+Raw answer: Any if salary is high enough.
+Note: Ahmed clarified that reporting line should not be treated as a hard filter when salary is high enough.

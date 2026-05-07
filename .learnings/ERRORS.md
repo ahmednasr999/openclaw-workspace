@@ -632,3 +632,52 @@ For JobZoom delivery failures, prefer the first-class `message` tool with files 
 - Root cause: The legacy CLI delivery path inside JobZoom is unreliable in this runtime and lacks per-send timeouts.
 - Do differently: Replace JobZoom embedded CLI delivery with a timeout-protected path or direct message/plugin delivery. Until fixed, verify report artifacts and use the first-class `message` tool for recovery.
 
+
+## [ERR-20260506-OPENCLAW-UPDATE-RUNTIME-PATH] openclaw_update_runtime_path_model_alias_failure
+
+**Logged**: 2026-05-06T21:42:10+03:00
+**Priority**: critical
+**Status**: pending
+**Area**: infra/config
+
+### Summary
+OpenClaw update left gateway on stale/incorrect runtime path and silently changed agent model references from Codex OAuth provider to plain OpenAI provider, breaking all agents.
+
+### Error
+Agents failed with: Missing API key for OpenAI on the gateway.
+Gateway also hit repeated status=78 CONFIG failures while service/runtime/config versions disagreed.
+
+### Context
+- Upgrade path moved toward OpenClaw 2026.5.6.
+- Gateway service override still forced older runtime path/version behavior after npm upgrade.
+- Config schema changed and deprecated keys had to be removed:
+  - plugins.entries.active-memory.hooks.timeouts
+  - plugins.bundledDiscovery
+  - active-memory.config
+- Agent model references were changed from openai-codex/gpt-5.5 to openai/gpt-5.5, but only Codex OAuth was configured.
+- OpenAI Codex OAuth had to be re-authenticated.
+- systemd gateway service was stale/corrupted and required repair plus explicit correct runtime binary override.
+- Temporary compatibility flag enabled: OPENCLAW_ALLOW_OLDER_BINARY_DESTRUCTIVE_ACTIONS=1.
+
+### Recovery
+- Removed deprecated config keys.
+- Re-authenticated OpenAI Codex OAuth.
+- Restored all agent models to openai-codex/gpt-5.5.
+- Upgraded CLI/runtime fully to 2026.5.6.
+- Repaired stale systemd gateway service and forced correct runtime binary.
+- Verified gateway runtime running, connectivity OK, port 18789 listening, Telegram connected, NASR responding.
+
+### Suggested Fix
+For future OpenClaw updates, verify all three before declaring success:
+1. CLI version and service runtime binary path/version match.
+2. systemd service override does not point to stale NVM/npm paths.
+3. Agent model references remain on configured provider, especially openai-codex/gpt-5.5 when using Codex OAuth.
+
+Also compare config against current schema and remove deprecated keys before restart.
+
+### Metadata
+- Reproducible: yes
+- Related Files: /root/.openclaw/openclaw.json, ~/.config/systemd/user/openclaw-gateway.service, service override files, config/model-router.json, /root/.openclaw/agents/*/sessions/sessions.json
+- Tags: openclaw-update, gateway, systemd, model-router, codex-oauth, config-schema
+
+---

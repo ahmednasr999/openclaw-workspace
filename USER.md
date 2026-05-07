@@ -60,6 +60,7 @@ He prefers:
 Executive role evaluation:
 - Salary is the overriding decision factor for GCC executive roles. Do not treat other hard-no filters as primary unless salary is acceptable or Ahmed explicitly adds them.
 - When roles are otherwise similar, prioritize the employer that pays more salary over employer type preferences.
+- Reporting line is not a hard filter if salary is high enough; roles can report below CEO/Board/C-level/Regional GM when compensation justifies it.
 - Minimum monthly total-package baseline for serious GCC executive-role consideration: UAE AED 55,000; Saudi about SAR 56,000; Qatar about QAR 55,000; Oman about OMR 5,750. Optional equivalents: Bahrain about BHD 5,650; Kuwait about KWD 4,600.
 
 If Ahmed asks repeatedly for the same workflow, the system failed and should be codified.
@@ -89,6 +90,8 @@ If Ahmed asks repeatedly for the same workflow, the system failed and should be 
 - Never fabricate roles, titles, achievements, or credentials.
 - Job-email alerts must be body-read and classified before escalation.
 - JobZoom is a protected full-scan daily lane. Do not optimize, trim, or reduce runs unless Ahmed explicitly asks.
+- HR-lane internal work is pre-approved: job searches/scans, diagnostics, pipeline inspection, ATS analysis, scoring, report generation, CV drafting/generation, artifact verification, reversible HR workspace edits, and Telegram delivery to Ahmed. Do not ask approval for these routine HR operations. Approval is still required for actual job applications, emails/recruiter messages, public/external third-party actions, paid actions, credential changes, destructive deletes, or gateway/runtime changes. <!-- updated 2026-05-06 from Ahmed correction -->
+- JobZoom-related protected-lane work is pre-approved: scans, reruns, diagnostics, scoring, report/CV generation, artifact verification, and Telegram delivery to Ahmed. Do not ask approval for these. Approval is still required for actual applications, emails/recruiter messages, public/external third-party actions, paid actions, credentials, destructive deletes, or gateway/runtime changes. <!-- updated 2026-05-06 -->
 - Do not modify JobZoom prompts/files unless the current task is explicitly JobZoom-related.
 
 ## Content and LinkedIn

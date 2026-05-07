@@ -102,17 +102,25 @@ Never use Composio for Notion or Telegram when direct credentials exist.
 
 ## Queue and Concurrency
 
+- Avoid approval-noise from read-only verification: prefer first-class tools such as `read`, `dir_list`, `file_fetch`, `session_status`, and simple allowlisted checks before `exec`; avoid inline eval/interpreter snippets (`node -e`, `python -c`) and sed/awk one-liners for routine inspection unless genuinely needed. If a read-only verification command prompts, switch to a safer tool/command rather than creating repeated approval cards. <!-- promoted 2026-05-07 from fs-safe verification approval noise -->
 - OpenClaw command queue is active by default even when `messages.queue` is absent from config: default mode is `steer`, with `debounceMs: 500`, `cap: 20`, and `drop: summarize`. Keep this default unless a specific channel/session behavior proves problematic.
 - For bursty Telegram follow-ups, prefer a temporary per-session `/queue collect debounce:1s cap:20 drop:summarize` rather than changing global queue config. Avoid `interrupt` unless Ahmed explicitly wants newer messages to abort active work.
 - Queue protects inbound session collisions, but it does not replace tool/process discipline. Avoid stacked long-running background exec/tool runs in the same Telegram thread unless necessary; verify with process/session tools instead of assuming the queue solved lock timeouts. <!-- promoted 2026-05-01 -->
 
 ## Gateway Safety
 
+- Before OpenClaw update/restart/config-change windows, run `scripts/openclaw-update-guard.py --write-report` from the workspace. Treat `FAIL` as a stop condition; inspect `WARN`; then still pair with a real Telegram/NASR response test for final proof. See `docs/openclaw-update-guard.md`. <!-- promoted 2026-05-06 from update incident guard -->
+- CLI health checks: use `openclaw status` for a fast broad read-only snapshot, `openclaw status --all` for shareable/heavier diagnostics, `openclaw status --usage` for provider quota, and `openclaw status --deep` for live channel probes. Treat `status --deep` as potentially slow or blocking under channel/plugin pressure; do not let it replace gateway-specific checks. <!-- promoted 2026-05-06 from status CLI docs review -->
+- Gateway CLI maintenance: prefer `openclaw gateway status --deep` and `openclaw gateway probe --json` for post-restart/update checks; verify systemd `ExecStart`, `MainPID`, and `ExecMainStartTimestamp` as separate evidence. Use `openclaw gateway restart --safe` for manual restarts unless an operator explicitly accepts interruption with `--force`. <!-- promoted 2026-05-06 from CLI docs review -->
+- Plugin runtime checks: use `openclaw plugins list --verbose --json` plus `openclaw plugins inspect <id> --runtime --json`. Tool contracts in inspect output are proof of declared runtime registration; plugin-owned CLI commands run as root OpenClaw groups (`openclaw <command> ...`), not under `openclaw plugins`. <!-- promoted 2026-05-06 from CLI docs review -->
+
+
 - Gateway restart is crash-prone. Do not restart casually.
 - Do not edit `openclaw.json` blindly.
 - Use `openclaw config schema` to inspect config shape before config changes.
 - Validate config after edits with `openclaw config validate`.
 - For gateway service status, prefer `openclaw gateway status` plus `systemctl --user show openclaw-gateway -p ExecStart`; plain system service status can be misleading here.
+- After OpenClaw updates, verify the live service binary/path and all agent model provider references before declaring success. A package update can leave systemd on a stale runtime path or service override; schema migrations can remove/rename config keys; agent sessions/model-router can silently drift from `openai-codex/gpt-5.5` to `openai/gpt-5.5`, which breaks when only Codex OAuth is configured. Check `openclaw --version`, `openclaw gateway status`, `systemctl --user show openclaw-gateway -p ExecStart -p MainPID -p ExecMainStartTimestamp`, config validation, and agent/session model refs. <!-- promoted 2026-05-06 from OpenClaw 2026.5.6 update incident -->
 - Cron jobs live in the gateway DB, not `openclaw.json`.
 - A rebuilt `dist/` does not refresh the live gateway process by itself.
 - Heredoc syntax is blocked by the gateway security scanner.
