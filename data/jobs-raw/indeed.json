@@ -2,33 +2,56 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-05-07T17:00:38.893575+02:00",
-    "duration_ms": 37085,
+    "generated_at": "2026-05-08T05:00:38.694360+02:00",
+    "duration_ms": 36277,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "2544c57a",
+    "run_id": "22e026c2",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": [
     {
-      "id": "indeed-in-a2fd81d9f3577958",
+      "id": "indeed-in-05bc64d421e03ac5",
       "source": "indeed",
-      "title": "Project Director (Design Delivery)",
-      "company": "KEO International Consultants",
+      "title": "Director, Transformation Governance",
+      "company": "Chalhoub Group",
       "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=a2fd81d9f3577958",
-      "posted": "2026-05-06",
+      "url": "https://ae.indeed.com/viewjob?jk=05bc64d421e03ac5",
+      "posted": "2026-05-07",
       "seniority": "C-Suite",
       "domain_match": true,
-      "keyword_score": 23,
+      "keyword_score": 16,
       "match_keywords": [
-        "agile",
-        "enterprise",
-        "director"
+        "ai",
+        "director",
+        "middle east"
       ],
-      "raw_snippet": "Overview:\n\nKEO is a creative enterprise, where innovation is a way of life. We are uniquely resourced with end\\-to\\-end services to take clients from inspiration \u2013 through conceptualization \u2013 to realization of planning, design or project delivery in the built and natural environments. For over 60 years we\u2019ve led with vision, contributing to many of the world\u2019s most ambitious projects, iconic places, remarkable experiences and prosperous communities.  \n\nAs a highly integrated and agile AEP/PMCM f",
+      "raw_snippet": "**INSPIRE \\| EXHILARATE \\| DELIGHT**\n\n\nFor over seven decades, Chalhoub Group has been a partner and creator of luxury experiences in the Middle East. In its pursuit to excel as a hybrid luxury retailer, the Group has curated a portfolio of over 10 owned brands and strengthened its distribution and marketing expertise for over 400 international names across luxury fashion, beauty, jewellery, watches, eyewear, and art de vivre categories.\n\n\nEvery step at Chalhoub Group is taken to build a future ",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Program Director"
+    },
+    {
+      "id": "indeed-in-ae40fcde03bc45af",
+      "source": "indeed",
+      "title": "Country Compliance Officer UAE - Director",
+      "company": "Citi",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=ae40fcde03bc45af",
+      "posted": "2026-05-07",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 20,
+      "match_keywords": [
+        "ai",
+        "director",
+        "uae",
+        "dubai"
+      ],
+      "raw_snippet": "Job Req Id:\n26960084\nLocation(s):\nDubai, Dubai, United Arab Emirates\nJob Type:\nOn\\-Site/Resident\nPosted:\nMay. 07, 2026\n  \n**Discover your future at Citi**\n--------------------------------\n\n\nWorking at Citi is far more than just a job. A career with us means joining a team of more than 230,000 dedicated people from around the globe. At Citi, you\u2019ll have the opportunity to grow your career, give back to your community and make a real impact.\n\n\n**Job Overview**\n----------------\n\n\nThe Citi Country C",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
@@ -71,29 +94,6 @@
         "api"
       ],
       "raw_snippet": "**Who We Are**\n\n\nFTI Consulting is the leading global expert firm for organisations facing crisis and transformation. We partner with top multinational corporations, law firms, banks and private equity firms on their most critical issues to deliver meaningful impact. Our teams respond rapidly to complex, dynamic situations, and from day one you\u2019ll work alongside leaders who have shaped history.\n\n **About The Role**\n\n\nFTI Consulting has operated in the Middle East for over twenty years, advising ",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Director Digital Transformation"
-    },
-    {
-      "id": "indeed-in-b0e48405d6b959d5",
-      "source": "indeed",
-      "title": "Senior Associate Director - Priority Banking",
-      "company": "Standard Chartered Bank",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=b0e48405d6b959d5",
-      "posted": "2026-05-04",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 26,
-      "match_keywords": [
-        "agile",
-        "ai",
-        "director",
-        "dubai"
-      ],
-      "raw_snippet": "**Requisition Number:** 49968\n**Job Location:** Dubai, ARE\n**Global Grade:** Band 6\n**Work Type:** Office Working\n**Employment Type:** Permanent\n**Posting Start Date:** 04/05/2026\n**Posting End Date:** 18/05/2026\n**:****About Us**Our team consists of 25,000 colleagues, spread across 35 countries. We believe in transformation \u2013 embracing agile and new ways of working together, which helps us to truly \u2018think client\u2019 and serve millions of our affluent and emerging affluent clients, across the world",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
@@ -287,7 +287,7 @@
   ],
   "kpi": {
     "searches_run": 20,
-    "results_per_search": 3.65,
+    "results_per_search": 3.8,
     "unique_jobs": 12,
     "errors": 5
   },

@@ -2,56 +2,128 @@
   "meta": {
     "agent": "email-agent",
     "version": "3.0.0",
-    "generated_at": "2026-05-07T18:01:15.930489+02:00",
-    "duration_ms": 37693,
+    "generated_at": "2026-05-07T20:00:48.277448+02:00",
+    "duration_ms": 28970,
     "ttl_hours": 4,
     "status": "success",
     "error": null,
-    "run_id": "edda075b",
+    "run_id": "2656d9a2",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
     "status": "ok",
-    "scan_time": "2026-05-07T18:01:07.073747+02:00",
-    "total_scanned": 28,
+    "scan_time": "2026-05-07T20:00:31.767609+02:00",
+    "total_scanned": 16,
     "by_category": {
-      "interview_invite": 0,
+      "interview_invite": 1,
       "recruiter_reach": 0,
       "application_ack": 0,
       "rejection": 0,
       "assessment": 0,
       "follow_up_needed": 0,
-      "other": 28
+      "other": 15
     },
-    "interview_invites": [],
+    "interview_invites": [
+      {
+        "id": "356818",
+        "from": "\"Prestige Junkie from The Ankler\" <newsletters@mail.theankler.com> ",
+        "subject": "No Dragons: How 'Knight' Flipped the 'Game of Thrones' Formula",
+        "date": "Fri, 08 May 2026 03:13:05 +1000",
+        "unread": true,
+        "priority": "LOW",
+        "score": 0,
+        "pipeline_match": null
+      }
+    ],
     "recruiter_messages": [],
     "application_acks": [],
     "rejections": [],
     "assessments": [],
     "follow_ups_needed": [],
-    "actionable_count": 0,
-    "hot_alerts": [],
-    "signals": [],
+    "actionable_count": 1,
+    "hot_alerts": [
+      {
+        "subject": "Long Lake to acquire Amex GBT for $6.3bn | Currensea granted European\r\n payments institution licence | Eventus appoints Cameron Routh as CEO",
+        "from": "FinTech Futures Daily Newsletter <news@email.fintechfutures.com>",
+        "priority": "HIGH",
+        "pipeline_match": "SAP"
+      }
+    ],
+    "signals": [
+      {
+        "company": "SAP",
+        "signal": "recruiter_email",
+        "subject": "Long Lake to acquire Amex GBT for $6.3bn | Currensea granted European\r\n payments institution licence | Eventus appoints Cameron Routh as CEO",
+        "sender": "FinTech Futures Daily Newsletter <news@email.fintechfutures.com>",
+        "job_ids": [
+          "indeed-in-b2195113ff678ef7",
+          "indeed-in-b7591ff66cc5a732",
+          "linkedin_jobspy-li-4380812358",
+          "linkedin-li-4349578134",
+          "linkedin-li-4394078700",
+          "linkedin-li-4380812358",
+          "linkedin-li-4362170335",
+          "linkedin-li-4362562926",
+          "linkedin-li-4385935615",
+          "linkedin-li-4353703506",
+          "app-005",
+          "cv-5fbf4a9aa7",
+          "linkedin-li-4385294885"
+        ],
+        "score": 7,
+        "timestamp": "2026-05-07T20:00:31.680654+02:00"
+      }
+    ],
     "llm_analysis": {
-      "actionable_emails": [],
+      "actionable_emails": [
+        {
+          "id": "356818",
+          "subject": "No Dragons: How 'Knight' Flipped the 'Game of Thrones' Formula",
+          "from": "\"Prestige Junkie from The Ankler\" <newsletters@mail.theankler.com>",
+          "date": "Fri, 08 May 2026 03:13:05 +1000",
+          "category": "interview_invite",
+          "urgency": "low",
+          "intent": "The sender is sharing a newsletter/article about entertainment industry interviews.",
+          "action": "read_and_file",
+          "response_deadline": "when convenient",
+          "notes": "False-positive interview match; not a job interview invite."
+        }
+      ],
       "summary": {
-        "total_actionable": 0,
+        "total_actionable": 1,
         "critical_count": 0,
         "requires_interview_prep": false,
         "requires_assessment": false,
         "recruiter_top_opportunities": [],
         "top_priority": null,
-        "daily_focus": "No actionable interview, assessment, follow-up, or recruiter emails were provided today."
+        "daily_focus": "No career action needed from this scan; ignore the newsletter false positive and focus on real GCC leadership opportunities."
       }
     }
   },
   "kpi": {
-    "emails_processed": 28,
-    "actionable": 0,
-    "interviews_detected": 0,
+    "emails_processed": 16,
+    "actionable": 1,
+    "interviews_detected": 1,
     "recruiter_messages": 0,
-    "unread_actionable": 0
+    "unread_actionable": 1
   },
-  "recommendations": []
+  "recommendations": [
+    {
+      "id": "rec-2656d9a2-0",
+      "action": "respond_immediately",
+      "target": "1 interview invite(s)",
+      "reason": "Interview invitations require prompt response",
+      "urgency": "critical",
+      "timestamp": "2026-05-07T20:00:48.277304+02:00"
+    },
+    {
+      "id": "rec-2656d9a2-1",
+      "action": "check_inbox",
+      "target": "1 unread actionable email(s)",
+      "reason": "Unread emails need attention",
+      "urgency": "high",
+      "timestamp": "2026-05-07T20:00:48.277320+02:00"
+    }
+  ]
 }
