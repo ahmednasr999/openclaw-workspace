@@ -1600,3 +1600,56 @@ Node.js v22.22.1
 ## Calendar - Today's Events
 *Calendar API unavailable (gog v0.12.0 bug - tracking fix)*
 
+=== Morning Brief - 2026-05-08 06:00 AM ===
+
+## Claude 2x Usage Reminder
+
+## Job Radar (from Tavily)
+[search-router] Tavily unavailable, falling back to local SearXNG: Tavily Search failed (401): {"detail":{"error":"Unauthorized: missing or invalid API key."}}
+## Sources
+
+_(provider: searxng)_
+
+- **unsupervised_topic_modeling/topics/fr/11/50/50/topics at ...**
+  https://github.com/annontopicmodel/unsupervised_topic_modeling/blob/master/topics/fr/11/50/50/topics
+  ---------------------------------------------------------------------------------------- c0 fringuer parfumer ramÃ¨ner remaquiller dechainer tasser rÃ©animer magner rejouir snapÃ© demnder pretter rÃ©conforter. feinter faufiler reveiler teleporter recoiffer trucider regaler soÃ»ler. fiancer graillÃ© ...
+
+- **‏Khaled Naggar‏ - ‏Chief Transformation Officer‏ | LinkedIn**
+  https://ae.linkedin.com/in/khalednaggar
+  Chief Digital Transformation Officer · VP Digital Transformation & Innovationn · Regional Head of Digital Innovation (APAC) · Growth & Innovation Advisor - New ...
+
+- **edari hiring Director - Transformation and PMO Governance in Dubai ...**
+  https://www.linkedin.com/jobs/view/4312968719
+  We are looking to hire a Director - Transformation and PMO Governance who will be responsible for leading large-scale, multi-million-dollar transformation initiatives focused on digital ...
+
+- **unsupervised_topic_modeling/topics/en/17/100/50/topics at ...**
+  https://github.com/annontopicmodel/unsupervised_topic_modeling/blob/master/topics/en/17/100/50/topics
+  Contribute to annontopicmodel/unsupervised_topic_modeling development by creating an account on GitHub.
+
+- **Head Of Digital Transformation Jobs in UAE (May 2026) - Bayt.com**
+  https://www.bayt.com/en/uae/jobs/head-of-digital-transformation-jobs/
+  At Medtronic you can begin a life-long career of exploration and innovation, while helping champion healthcare access and equity for… 5 days ago. Senior ...
+
+## Gmail - New Opportunities
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/root/.openclaw/workspace/scripts/gmail-scan.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+
+## Calendar - Today's Events
+*Calendar API unavailable (gog v0.12.0 bug - tracking fix)*
+
