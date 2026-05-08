@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-07T05:52:01.812Z",
+  "updatedAt": "2026-05-08T09:04:04.690Z",
   "entries": {
     "memory:memory/archives/2026-03-07.md:29:56": {
       "key": "memory:memory/archives/2026-03-07.md:29:56",
@@ -2826,6 +2826,161 @@
         "improvement",
         "initial",
         "state"
+      ]
+    },
+    "memory:memory/archive/2026-02/2026-02-18.md:253:317": {
+      "key": "memory:memory/archive/2026-02/2026-02-18.md:253:317",
+      "path": "memory/archive/2026-02/2026-02-18.md",
+      "startLine": 253,
+      "endLine": 317,
+      "source": "memory",
+      "snippet": "Schedule: 0 * * * * @ Africa/Cairo (hourly) ``` **Usage:** ```bash # Manual sync python3 scripts/git_autosync.py # Force push without waiting for cron ``` **Git Config:** ``` user.name: Ahmed Nasr user.email: ahmednasr999@gmail.com ``` **Next steps:** 1. Add pre-commit hook to prevent accidentally committing secrets 2. Add branch protection rules in GitHub 3. Add automatic backup before sync --- ## #3 Urgent Email Detection — COMPLETED (Feb 18, 2026 02:58 UTC) **Status:** ✅ Built and running **Deliverables:** - Script: `/root/.openclaw/workspace/knowledge-base/urgent_email.py` - Cron job: Every 3 hours **Features:** - Scans INBOX via Himalaya - Urgency scoring (0-10) based on keyword",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-08T09:04:04.690Z",
+      "lastRecalledAt": "2026-05-08T09:04:04.690Z",
+      "queryHashes": [
+        "5793bee9ace4"
+      ],
+      "recallDays": [
+        "2026-05-08"
+      ],
+      "conceptTags": [
+        "backup",
+        "africa/cairo",
+        "scripts/git-autosync.py",
+        "user.name",
+        "user.email",
+        "gmail.com",
+        "pre-commit",
+        "0-10"
+      ]
+    },
+    "memory:memory/archive/2026-03/2026-03-22.md:260:277": {
+      "key": "memory:memory/archive/2026-03/2026-03-22.md:260:277",
+      "path": "memory/archive/2026-03/2026-03-22.md",
+      "startLine": 260,
+      "endLine": 277,
+      "source": "memory",
+      "snippet": "## Session: Briefing Walkthrough + Technical Documentation (10:30 AM - 11:39 AM Cairo) ### Briefing Walkthrough (Ahmed reviewed section by section) - Ahmed wants to walk through the briefing one section at a time - Questions answered about Content & Actions section: post source (Notion Content Calendar), image source (Notion page body blocks, extracted by linkedin-post-agent.py) - linkedin-post-agent.py was already extracting images — just needed re-run to refresh data - Today's post body confirmed live: GCC $100B+ digital transformation post, hook = \"Most of it will be wasted\", image = https://raw.githubusercontent.com/ahmednasr999/openclaw-workspace/master/linkedin/posts/2026-03-22-image.",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-08T09:04:04.690Z",
+      "lastRecalledAt": "2026-05-08T09:04:04.690Z",
+      "queryHashes": [
+        "5793bee9ace4"
+      ],
+      "recallDays": [
+        "2026-05-08"
+      ],
+      "conceptTags": [
+        "linkedin-post-agent.py",
+        "re-run",
+        "briefing",
+        "walkthrough",
+        "technical",
+        "documentation",
+        "cairo",
+        "ahmed"
+      ]
+    },
+    "memory:memory/archive/2026-03/2026-03-18.md:297:331": {
+      "key": "memory:memory/archive/2026-03/2026-03-18.md:297:331",
+      "path": "memory/archive/2026-03/2026-03-18.md",
+      "startLine": 297,
+      "endLine": 331,
+      "source": "memory",
+      "snippet": "- 16 properties: Subject, From, Date, Category (7 types), Company, Role, Action Required, Priority, Status, Response Due, Gmail Link, Pipeline Stage, Thread ID, Auto-Synced, Snippet - sync_email_to_notion(): pushes emails with thread-based dedup - get_email_summary(): feeds briefing with unread/action/urgent counts - Blocked on Gmail re-auth for auto-sync. DB structure ready. **Final Notion Command Center count: 21 databases** **Session truly closed: 02:40 AM Cairo** ### 02:40-02:45 AM — Email Intelligence DB + Gmail Composio auth **Built:** Email Intelligence DB (#21, commit 4a7cbdd1) - DB ID: 3278d599-a162-8123-923c-f04999d7292d - sync_email_to_notion() and get_email_summary() added to",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-08T09:04:04.690Z",
+      "lastRecalledAt": "2026-05-08T09:04:04.690Z",
+      "queryHashes": [
+        "5793bee9ace4"
+      ],
+      "recallDays": [
+        "2026-05-08"
+      ],
+      "conceptTags": [
+        "auto-synced",
+        "sync-email-to-notion",
+        "thread-based",
+        "get-email-summary",
+        "unread/action/urgent",
+        "re-auth",
+        "auto-sync",
+        "40-02"
+      ]
+    },
+    "memory:memory/archive/2026-03/2026-03-18.md:271:305": {
+      "key": "memory:memory/archive/2026-03/2026-03-18.md:271:305",
+      "path": "memory/archive/2026-03/2026-03-18.md",
+      "startLine": 271,
+      "endLine": 305,
+      "source": "memory",
+      "snippet": "- 528f1258: Cron Dashboard live status + cost tiers - 56159d0b: 8 new databases (Skills, Architecture, Goals, Scripts, CV Data, Config, Skip Patterns, Git) **Awaiting verification:** - Morning briefing at 7:30 AM (first run with all new integrations) - Scanner at 2:00 AM (first run with cookie fix) - SIE at 4:00 AM (first learnings audit in Notion) **Session ended: 02:37 AM Cairo. Ahmed going to sleep.** ### 02:37 AM — Email Intelligence DB proposed Ahmed asked about a Gmail page in Notion. Recommended building it with focus on job search email intelligence: - Recruiter responses (highest value signal) - Application confirmations (links to Pipeline) - Interview invites (auto-flag urgent)",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-08T09:04:04.690Z",
+      "lastRecalledAt": "2026-05-08T09:04:04.690Z",
+      "queryHashes": [
+        "5793bee9ace4"
+      ],
+      "recallDays": [
+        "2026-05-08"
+      ],
+      "conceptTags": [
+        "auto-flag",
+        "528f1258",
+        "cron",
+        "dashboard",
+        "live",
+        "status",
+        "cost",
+        "tiers"
+      ]
+    },
+    "memory:memory/archive/2026-02/2026-02-18.md:305:363": {
+      "key": "memory:memory/archive/2026-02/2026-02-18.md:305:363",
+      "path": "memory/archive/2026-02/2026-02-18.md",
+      "startLine": 305,
+      "endLine": 363,
+      "source": "memory",
+      "snippet": "python3 knowledge-base/urgent_email.py --scan # Send to Telegram python3 knowledge-base/urgent_email.py --telegram # Record feedback python3 urgent_email.py --feedback --urgent <email> <subject> python3 urgent_email.py --feedback --not-urgent <email> <subject> ``` **Next steps:** 1. Add learned patterns from feedback 2. Connect to Todoist for action items 3. Add time-gating (only alert during waking hours) --- ## #13 Security Core — COMPLETED (Feb 18, 2026 03:01 UTC) **Status:** ✅ Built and running **Deliverables:** - Script: `/root/.openclaw/workspace/scripts/security_core.py` - Pre-commit hook: `.git/hooks/pre-commit` - Weekly security cron **Features:** - **Prompt Injection Detecti",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-08T09:04:04.690Z",
+      "lastRecalledAt": "2026-05-08T09:04:04.690Z",
+      "queryHashes": [
+        "5793bee9ace4"
+      ],
+      "recallDays": [
+        "2026-05-08"
+      ],
+      "conceptTags": [
+        "knowledge-base/urgent-email.py",
+        "urgent-email.py",
+        "not-urgent",
+        "time-gating",
+        "pre-commit",
+        "git/hooks/pre-commit",
+        "python3",
+        "knowledge"
       ]
     }
   }

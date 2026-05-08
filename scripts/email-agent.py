@@ -217,6 +217,7 @@ NOISE_SENDERS = [
     "mailchimp.com", "sendgrid.net", "convertkit.com", "beehiiv.com",
     "noreply@", "no-reply@", "notifications@", "news@", "newsletter@",
     "digest@", "updates@", "marketing@", "promo@", "offers@",
+    "workinpro.io",
 ]
 
 # LinkedIn notification types that are NOT recruiter outreach
@@ -226,6 +227,23 @@ LINKEDIN_NOISE_SUBJECTS = [
     r'anniversary', r'birthday', r'new\s*job', r'commented\s*on',
     r'liked\s*your', r'reacted\s*to', r'mentioned\s*you\s*in',
     r'trending\s*in\s*your\s*network', r'people\s*also\s*viewed',
+    r'thought\s*leader\s*ad', r'take\s*it\s*to\s*the\s*next\s*level',
+    r'promoted\s*post', r'sponsored',
+]
+
+# Automated job-board alerts are useful market signals, but not recruiter outreach
+# and never interview/follow-up evidence on their own.
+JOB_ALERT_DOMAINS = [
+    "bayt.com", "naukrigulf.com", "gulftalent.com", "monstergulf.com",
+    "foundit", "indeed.com", "glassdoor.com", "linkedin.com",
+]
+
+JOB_ALERT_PATTERNS = [
+    r'\bjob\s*alert\b', r'\bnew\s+[\w\s-]{0,50}\s+jobs?\b',
+    r'\bhot\s+job\s+opportunit', r'\bjob\s+opportunit.*waiting\s+for\s+you\b',
+    r'\bcheck\s+out\s+jobs?\b', r'\bjobs?\s+applied\s+by\b',
+    r'\bsimilar\s+jobs?\b', r'\bmatched\s+jobs?\b',
+    r'\brecommended\s+jobs?\b', r'\bneeds\s+a\s+[\w\s/-]{2,80}\b',
 ]
 
 
@@ -366,6 +384,44 @@ def is_linkedin_noise(subject, from_addr):
     return False
 
 
+def is_job_alert(subject, from_addr, body=""):
+    """Detect automated job-board alerts separately from recruiter outreach."""
+    sender_email = parseaddr(from_addr or "")[1]
+    domain = extract_domain(sender_email or from_addr)
+    text = f"{subject} {body}".lower()
+
+    domain_match = any(marker in domain for marker in JOB_ALERT_DOMAINS)
+    pattern_match = matches_patterns(text, JOB_ALERT_PATTERNS)
+
+    # LinkedIn marketing/notification emails are noise, not job alerts.
+    if is_linkedin_noise(subject, from_addr):
+        return False
+
+    return domain_match and pattern_match
+
+
+def has_interview_evidence(subject, from_addr, body=""):
+    """Require body/sender-backed evidence before escalating an interview."""
+    subject_text = subject or ""
+    body_text = body or ""
+    combined = f"{subject_text} {body_text}"
+    sender_email = parseaddr(from_addr or "")[1]
+    domain = extract_domain(sender_email or from_addr)
+
+    if is_noise_sender(from_addr) or is_job_alert(subject, from_addr, body):
+        return False
+
+    if is_external_meeting_invite(subject, from_addr, body):
+        return True
+
+    # A subject with explicit interview language is acceptable from a real company
+    # or recruiting domain, but not from generic automated job-alert senders.
+    if matches_patterns(subject_text, STRICT_INTERVIEW_PATTERNS) and is_recruiter_domain(domain):
+        return True
+
+    return matches_patterns(combined, STRICT_INTERVIEW_PATTERNS) and has_hiring_context(subject, from_addr, body)
+
+
 # Weighted keyword scoring (D5)
 KEYWORD_WEIGHTS = {
     "interview": 3, "shortlisted": 3, "offer": 3, "congratulations": 3,
@@ -398,6 +454,11 @@ def score_email(subject, from_addr, body=""):
     score = 0
     pipeline_company = None
 
+    if is_noise_sender(from_addr):
+        return 0, None
+
+    job_alert = is_job_alert(subject, from_addr, body)
+
     # Pipeline company match (D5 + D10)
     pipeline_company, pipeline_match_score = _match_pipeline_company(subject, from_addr, body)
 
@@ -412,14 +473,18 @@ def score_email(subject, from_addr, body=""):
     # Recruiter domain bonus
     sender_email = parseaddr(from_addr or "")[1]
     domain = extract_domain(sender_email or from_addr)
-    if is_recruiter_domain(domain):
+    if is_recruiter_domain(domain) and not job_alert:
         score += RECRUITER_DOMAIN_BONUS
 
     if job_context and is_external_meeting_invite(subject, from_addr, body):
         score += 4
 
-    if pipeline_company:
+    if pipeline_company and not job_alert:
         score += PIPELINE_MATCH_BONUS + min(3, pipeline_match_score // 4)
+
+    if job_alert:
+        score = min(score, PRIORITY_THRESHOLDS["MEDIUM"])
+        pipeline_company = None
 
     return score, pipeline_company
 
@@ -433,23 +498,24 @@ def get_priority(score):
     return "LOW"
 
 
-def is_hot_email(subject, from_addr):
+def is_hot_email(subject, from_addr, body="", categories=None, score=0):
     """Check if email should trigger immediate Telegram alert."""
-    if is_noise_sender(from_addr):
+    if is_noise_sender(from_addr) or is_job_alert(subject, from_addr, body):
         return False
-    text = f"{subject}".lower()
-    pipeline_company, _ = _match_pipeline_company(subject, from_addr, "")
-    if not has_hiring_context(subject, from_addr, "", pipeline_company=pipeline_company):
-        return False
-    for kw in HOT_KEYWORDS:
-        if kw in text:
-            return True
+    categories = categories or []
+    if "interview_invite" in categories or "assessment" in categories:
+        return True
+    if "follow_up_needed" in categories and score >= PRIORITY_THRESHOLDS["HIGH"]:
+        return True
     return False
 
 
 def has_hiring_context(subject, from_addr, body="", pipeline_company=None):
     """Require job/recruiting context before classifying sensitive email types."""
     if is_noise_sender(from_addr):
+        return False
+
+    if is_job_alert(subject, from_addr, body):
         return False
 
     sender_name, sender_email = parseaddr(from_addr or "")
@@ -479,10 +545,13 @@ def categorize_email(subject, from_addr, body=""):
     # Skip noise senders entirely (newsletters, marketing, notifications)
     if is_noise_sender(from_addr):
         return ["other"]
+
+    if is_job_alert(subject, from_addr, body):
+        return ["job_alert"]
     
-    if matches_patterns(text, STRICT_INTERVIEW_PATTERNS):
+    if has_interview_evidence(subject, from_addr, body):
         categories.append("interview_invite")
-    elif hiring_context and (matches_patterns(text, INTERVIEW_PATTERNS) or is_external_meeting_invite(subject, from_addr, body)):
+    elif hiring_context and matches_patterns(text, INTERVIEW_PATTERNS) and has_interview_evidence(subject, from_addr, body):
         categories.append("interview_invite")
     
     domain = extract_domain(from_addr)
@@ -885,7 +954,8 @@ def fetch_email_list():
         err_str = str(e)
         if err_str.startswith("AUTH_FAILURE"):
             print(f"  IMAP AUTH FAILED: {e} — not retrying")
-            _write_error_latest(err_str, state)
+            if not common.is_dry_run():
+                _write_error_latest(err_str, state)
             return []
         raise  # Let retry_with_backoff handle network errors
 
@@ -940,12 +1010,16 @@ def fetch_email_list():
 
     mail.logout()
 
-    # Update state (crash-safe: only after successful processing)
-    if max_uid_seen > last_uid:
-        state["last_seen_uid"] = max_uid_seen
-    state["last_success"] = now_iso()
-    state["processed_count"] = state.get("processed_count", 0) + len(emails)
-    _save_state(state)
+    # Update state (crash-safe: only after successful processing). Dry-run must
+    # remain production-read-only so tests cannot advance the UID checkpoint.
+    if common.is_dry_run():
+        print("  DRY RUN: not updating email UID state")
+    else:
+        if max_uid_seen > last_uid:
+            state["last_seen_uid"] = max_uid_seen
+        state["last_success"] = now_iso()
+        state["processed_count"] = state.get("processed_count", 0) + len(emails)
+        _save_state(state)
 
     return emails
 
@@ -1025,6 +1099,7 @@ def run_email_agent(result: AgentResult):
         "rejection": [],
         "assessment": [],
         "follow_up_needed": [],
+        "job_alert": [],
         "other": []
     }
 
@@ -1077,16 +1152,18 @@ def run_email_agent(result: AgentResult):
             recruiter_messages += 1
 
         # D7: append to history
-        _append_history(email_data, categories, score, pipeline_company)
+        if not common.is_dry_run():
+            _append_history(email_data, categories, score, pipeline_company)
 
         # D10: emit pipeline signal
-        if pipeline_company:
+        if pipeline_company and not common.is_dry_run():
             sig = _emit_signal(email_data, pipeline_company, categories, score)
             signals.append(sig)
 
         # D8: hot alert (integrated, no separate cron needed)
-        if is_hot_email(email_data["subject"], email_data["from"]) or score >= PRIORITY_THRESHOLDS["HIGH"]:
+        if is_hot_email(email_data["subject"], email_data["from"], body, categories, score):
             hot_alerts.append({
+                "id": email_data["id"],
                 "subject": email_data["subject"],
                 "from": email_data["from"],
                 "priority": email_data["priority"],
@@ -1104,22 +1181,29 @@ def run_email_agent(result: AgentResult):
         "rejections": categorized["rejection"][:10],
         "assessments": categorized["assessment"][:5],
         "follow_ups_needed": categorized["follow_up_needed"][:5],
+        "job_alerts": categorized["job_alert"][:10],
         "actionable_count": len(actionable_emails),
         "hot_alerts": hot_alerts,
         "signals": signals,
     }
 
     # D4: Write shared snapshot for briefing + other consumers
-    LATEST_PATH.parent.mkdir(parents=True, exist_ok=True)
-    json_module.dump(summary, open(LATEST_PATH, "w"), indent=2)
+    if common.is_dry_run():
+        print("  DRY RUN: not writing email-latest.json")
+    else:
+        LATEST_PATH.parent.mkdir(parents=True, exist_ok=True)
+        json_module.dump(summary, open(LATEST_PATH, "w"), indent=2)
 
     # ======================================================================
     # PIPELINE INTEGRATION — update Notion + feedback loop
     # ======================================================================
-    pipeline_updates = update_pipeline_from_emails(categorized)
-    if pipeline_updates:
-        summary["pipeline_updates"] = pipeline_updates
-        print(f"  Pipeline: {len(pipeline_updates)} updates pushed")
+    if common.is_dry_run():
+        print("  DRY RUN: not updating pipeline/Notion")
+    else:
+        pipeline_updates = update_pipeline_from_emails(categorized)
+        if pipeline_updates:
+            summary["pipeline_updates"] = pipeline_updates
+            print(f"  Pipeline: {len(pipeline_updates)} updates pushed")
 
     # ======================================================================
     # LLM ANALYSIS — XML-structured prompt (Anthropic official playbook)

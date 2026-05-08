@@ -1,0 +1,63 @@
+{
+  "status": "ok",
+  "scan_time": "2026-05-08T11:13:39.222841+02:00",
+  "total_scanned": 20,
+  "by_category": {
+    "interview_invite": 1,
+    "recruiter_reach": 1,
+    "application_ack": 0,
+    "rejection": 0,
+    "assessment": 0,
+    "follow_up_needed": 1,
+    "other": 18
+  },
+  "interview_invites": [
+    {
+      "id": "356881",
+      "from": "Gasper Crepinsek <gasper@workinpro.io>",
+      "subject": "78,557 people didn't see it coming either",
+      "date": "Fri, 08 May 2026 06:37:40 +0000 (UTC)",
+      "unread": true,
+      "priority": "HIGH",
+      "score": 6,
+      "pipeline_match": null
+    }
+  ],
+  "recruiter_messages": [
+    {
+      "id": "356882",
+      "from": "=?utf-8?B?QmF5dC5jb20=?= <notify@bayt.com>",
+      "subject": "=?utf-8?B?MjAgbmV3IEVuZ2luZWVycyBqb2JzIGluIFFhdGFyIQ==?=",
+      "date": "Fri, 08 May 2026 05:51:39 GMT",
+      "unread": true,
+      "priority": "MEDIUM",
+      "score": 2,
+      "pipeline_match": null
+    }
+  ],
+  "application_acks": [],
+  "rejections": [],
+  "assessments": [],
+  "follow_ups_needed": [
+    {
+      "id": "356882",
+      "from": "=?utf-8?B?QmF5dC5jb20=?= <notify@bayt.com>",
+      "subject": "=?utf-8?B?MjAgbmV3IEVuZ2luZWVycyBqb2JzIGluIFFhdGFyIQ==?=",
+      "date": "Fri, 08 May 2026 05:51:39 GMT",
+      "unread": true,
+      "priority": "MEDIUM",
+      "score": 2,
+      "pipeline_match": null
+    }
+  ],
+  "actionable_count": 2,
+  "hot_alerts": [
+    {
+      "subject": "78,557 people didn't see it coming either",
+      "from": "Gasper Crepinsek <gasper@workinpro.io>",
+      "priority": "HIGH",
+      "pipeline_match": null
+    }
+  ],
+  "signals": []
+}

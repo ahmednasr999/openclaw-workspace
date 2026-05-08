@@ -2211,3 +2211,13 @@
 {"agent": "jobs-source-indeed", "run_id": "eb90091b", "started": "2026-05-08T03:00:38.156057+02:00", "duration_ms": 36630, "status": "success", "records": 12, "error": null}
 {"agent": "jobs-source-linkedin-jobspy", "run_id": "599d6fbe", "started": "2026-05-08T04:20:54.879844+02:00", "duration_ms": 1220577, "status": "success", "records": 393, "error": null}
 {"agent": "jobs-source-indeed", "run_id": "22e026c2", "started": "2026-05-08T05:00:38.695822+02:00", "duration_ms": 36279, "status": "success", "records": 12, "error": null}
+{"agent": "jobs-source-indeed", "run_id": "f748568b", "started": "2026-05-08T07:00:38.128013+02:00", "duration_ms": 35419, "status": "success", "records": 13, "error": null}
+{"agent": "email-agent", "run_id": "d805c23c", "started": "2026-05-08T08:01:40.939130+02:00", "duration_ms": 85894, "status": "success", "records": 14, "error": null}
+{"agent": "jobs-source-indeed", "run_id": "fbcf769e", "started": "2026-05-08T09:00:42.270360+02:00", "duration_ms": 39372, "status": "success", "records": 13, "error": null}
+{"agent": "jobs-source-indeed", "run_id": "44a8c8ff", "started": "2026-05-08T11:00:39.013386+02:00", "duration_ms": 36742, "status": "success", "records": 13, "error": null}
+{"agent": "jobs-source-google", "run_id": "cbb699ad", "started": "2026-05-08T13:00:13.463405+02:00", "duration_ms": 11302, "status": "error", "records": 0, "error": "Failed to initialize MCP session"}
+{"agent": "jobs-source-indeed", "run_id": "d0f33e29", "started": "2026-05-08T13:00:40.367494+02:00", "duration_ms": 38213, "status": "success", "records": 13, "error": null}
+{"agent": "email-agent", "run_id": "1fcde199", "started": "2026-05-08T14:01:10.071672+02:00", "duration_ms": 24389, "status": "success", "records": 15, "error": null}
+{"agent": "email-agent", "run_id": "dcdc0341", "started": "2026-05-08T14:01:35.152753+02:00", "duration_ms": 12231, "status": "success", "records": 15, "error": null}
+{"agent": "jobs-source-indeed", "run_id": "7371457e", "started": "2026-05-08T15:00:38.662662+02:00", "duration_ms": 37216, "status": "success", "records": 15, "error": null}
+{"agent": "jobs-source-indeed", "run_id": "e15862f2", "started": "2026-05-08T17:00:38.578508+02:00", "duration_ms": 36265, "status": "success", "records": 15, "error": null}

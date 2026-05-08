@@ -166,11 +166,13 @@ Use isolated context by default. Use forked context only when the child truly ne
 
 ## Coding Dispatch
 
-- **Simple:** one-file/tiny obvious fixes. Stay in current session.
-- **Medium:** bounded multi-file change with clear path. Spawn ACP coding session if available.
-- **Full:** feature, refactor, integration, architecture, or unclear path. Spawn ACP and require plan -> implement -> self-review -> report.
+Before coding, require systems-context inspection proportional to risk: repo structure, existing patterns, recent changes, open issues/PRs when available, and relevant docs/config. Do not let a coding agent jump straight from prompt to patch unless the task is truly tiny and the existing context is already known.
+
+- **Simple:** one-file/tiny obvious fixes. Stay in current session, but still inspect the target file and nearby pattern first.
+- **Medium:** bounded multi-file change with clear path. Spawn ACP coding session if available and require inspect -> plan -> implement -> verify.
+- **Full:** feature, refactor, integration, architecture, or unclear path. Spawn ACP and require repo/issues/PRs/recent-context inspection -> plan -> implement -> self-review -> report.
 - **Plan-only:** when Ahmed asks to scope/review/plan without coding. Save plan under `plans/` when repo is writable.
-- **Implement-from-plan:** use saved plan if scope has not changed.
+- **Implement-from-plan:** use saved plan if scope has not changed, but re-check recent changes before editing.
 
 Resolve repo/cwd before spawning. If unclear, ask once.
 

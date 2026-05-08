@@ -4,7 +4,7 @@
 - Timezone: Cairo, Africa/Cairo.
 - Relocation: open to relocating to Jeddah, Saudi Arabia, confirmed 2026-02-18.
 - LinkedIn posts: always end with a question or CTA for engagement.
-- Backups: keep last 7, daily at 3 AM Cairo.
+- Backups: keep only the latest backup, daily at 3 AM Cairo.
 - Gmail check: daily at 8 AM Cairo.
 - Formatting: never use em dashes. Use hyphens or commas.
 - Current default model is GPT-5.5 via OpenAI Codex OAuth unless Ahmed changes it. Do not silently switch models.

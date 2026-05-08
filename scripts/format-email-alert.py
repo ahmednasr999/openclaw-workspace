@@ -24,6 +24,30 @@ ACTIONABLE_CATEGORIES = {
     "follow_up_needed",
     "recruiter_reach",
 }
+NON_ACTIONABLE_CATEGORIES = {"job_alert", "marketing", "newsletter", "other"}
+AUTOMATED_ALERT_SENDERS = {
+    "bayt",
+    "bayt.com",
+    "gulftalent",
+    "gulftalent.com",
+    "monstergulf",
+    "monstergulf.com",
+    "naukrigulf",
+    "naukrigulf.com",
+    "linkedin",
+    "linkedin.com",
+    "foundit",
+    "monster",
+}
+AUTOMATED_ALERT_SUBJECTS = [
+    r"thought\s*leader\s*ad",
+    r"hot\s+job\s+opportunit",
+    r"check\s+out\s+jobs?",
+    r"new\s+.+\s+jobs?",
+    r"jobs?\s+applied\s+by",
+    r"needs\s+a\s+",
+    r"opportunit.*waiting\s+for\s+you",
+]
 
 
 def load_summary(path: Path) -> dict[str, Any]:
@@ -50,6 +74,14 @@ def clean_subject(value: str) -> str:
     value = decode_mime(value)
     value = re.sub(r"\s+", " ", value).strip()
     return value or "No subject"
+
+
+def is_automated_alert(sender: str, subject: str) -> bool:
+    sender_l = (sender or "").lower()
+    subject_l = (subject or "").lower()
+    domain_match = any(marker in sender_l for marker in AUTOMATED_ALERT_SENDERS)
+    subject_match = any(re.search(pattern, subject_l, re.IGNORECASE) for pattern in AUTOMATED_ALERT_SUBJECTS)
+    return domain_match and subject_match
 
 
 def short(value: str, limit: int = 82) -> str:
@@ -96,19 +128,40 @@ def collect_items(summary: dict[str, Any]) -> list[dict[str, Any]]:
     llm = data.get("llm_analysis") or {}
     items = []
 
+    def item_key(item: dict[str, Any]) -> tuple[str, str]:
+        item_id = str(item.get("id") or "").strip()
+        if item_id:
+            return ("id", item_id)
+        return ("fingerprint", f"{clean_sender(item.get('from') or '')}|{clean_subject(item.get('subject') or '')}".lower())
+
+    seen_keys = set()
+
     for item in llm.get("actionable_emails") or []:
-        items.append({
+        category = (item.get("category") or "").strip().lower()
+        action = (item.get("action") or "").strip().lower()
+        if category in NON_ACTIONABLE_CATEGORIES or action in {"no_action", "read_and_file"}:
+            continue
+        notes = f"{item.get('notes') or ''} {item.get('intent') or ''}".lower()
+        if any(marker in notes for marker in ("marketing", "automated", "job alert", "recommendations")) and action != "respond":
+            continue
+        sender = clean_sender(item.get("from") or "")
+        subject = clean_subject(item.get("subject") or "")
+        if is_automated_alert(sender, subject) and action != "respond":
+            continue
+        normalized = {
             "id": str(item.get("id") or ""),
-            "from": clean_sender(item.get("from") or ""),
-            "subject": clean_subject(item.get("subject") or ""),
+            "from": sender,
+            "subject": subject,
             "category": item.get("category") or "",
             "urgency": (item.get("urgency") or "medium").lower(),
             "action": item.get("action") or "",
             "response_deadline": item.get("response_deadline") or "",
             "notes": item.get("notes") or item.get("intent") or "",
-        })
+        }
+        seen_keys.add(item_key(normalized))
+        seen_keys.add(("fingerprint", f"{normalized['from']}|{normalized['subject']}".lower()))
+        items.append(normalized)
 
-    seen_ids = {item["id"] for item in items if item.get("id")}
     fallback_groups = [
         ("interview_invite", data.get("interview_invites") or []),
         ("assessment", data.get("assessments") or []),
@@ -119,13 +172,19 @@ def collect_items(summary: dict[str, Any]) -> list[dict[str, Any]]:
     for category, group in fallback_groups:
         for raw in group:
             raw_id = str(raw.get("id") or raw.get("email_id") or "")
-            if raw_id and raw_id in seen_ids:
-                continue
             sender = clean_sender(raw.get("from") or "")
             subject = clean_subject(raw.get("subject") or "")
             if not raw_id and sender == "Unknown sender" and subject == "No subject":
                 continue
+            if is_automated_alert(sender, subject):
+                continue
+            normalized = {"id": raw_id, "from": sender, "subject": subject}
+            key = item_key(normalized)
+            if key in seen_keys:
+                continue
             priority = (raw.get("priority") or raw.get("urgency") or "medium").lower()
+            if category == "interview_invite" and priority not in {"critical", "high", "hot"}:
+                continue
             items.append({
                 "id": raw_id,
                 "from": sender,
@@ -136,8 +195,7 @@ def collect_items(summary: dict[str, Any]) -> list[dict[str, Any]]:
                 "response_deadline": "24h" if category == "interview_invite" else "",
                 "notes": "",
             })
-            if raw_id:
-                seen_ids.add(raw_id)
+            seen_keys.add(key)
 
     def rank(item: dict[str, Any]) -> tuple[int, int]:
         urgency_rank = {"critical": 0, "high": 1, "medium": 2, "low": 3}.get(item.get("urgency"), 2)
@@ -173,8 +231,8 @@ def build_alert(summary: dict[str, Any]) -> str:
     hot_alerts = data.get("hot_alerts") or []
     urgent_items = [item for item in items if (item.get("urgency") or "").lower() in URGENT_LEVELS]
 
-    if urgent_items or (hot_alerts and items):
-        picked = urgent_items or items[:1]
+    if urgent_items:
+        picked = urgent_items
         if not picked:
             scanned = "new emails" if total_scanned is None else f"{total_scanned} new email(s)"
             return f"📬 Email scan: all clear ✅\nScanned {scanned}. Nothing requiring action."
@@ -182,6 +240,10 @@ def build_alert(summary: dict[str, Any]) -> str:
         for item in picked[:3]:
             lines.extend(format_item(item, urgent=True))
         focus = ((data.get("llm_analysis") or {}).get("summary") or {}).get("daily_focus")
+        if focus:
+            allowed_subjects = [clean_subject(item.get("subject") or "").lower() for item in items]
+            if not any(subject and subject[:35] in focus.lower() for subject in allowed_subjects):
+                focus = None
         bottom = focus or "Handle the highest-priority email first."
         lines.extend(["", f"✅ Bottom line: {short(bottom, 120)}"])
         return "\n".join(lines)

@@ -20,12 +20,6 @@ DO NOT:
 - no speculative refactors
 - no config changes, restarts, or dependency changes unless explicitly requested
 - no edits outside scope
-- no coding before inspecting the existing system context
-
-BEFORE CODING:
-- Inspect repo structure, existing patterns, relevant docs/config, and target files.
-- Check recent changes, issues, and PRs when available or relevant.
-- State the smallest safe implementation plan and verification gate before editing.
 
 DONE WHEN:
 - [exact condition that proves completion]
@@ -34,7 +28,6 @@ DONE WHEN:
 
 LIFECYCLE:
 - DEFINE the outcome and scope.
-- INSPECT the system context before coding.
 - PLAN the smallest vertical slice and verification gate.
 - BUILD surgically.
 - VERIFY with evidence.
@@ -55,7 +48,7 @@ REPORT FORMAT:
 - RISK
 - NEXT
 
-Before coding, inspect system context and follow:
+Before coding, follow:
 - /root/.openclaw/workspace/docs/agent-governance/NASR-Coding-Rules-v1.md
 ```
 
@@ -125,13 +118,12 @@ When using this brief:
 
 1. Keep the task sentence singular and concrete.
 2. Scope the agent tightly.
-3. Require repo/pattern/recent-context inspection before implementation for anything beyond a truly tiny known-context fix.
-4. Name at least one real verification step in `DONE WHEN`.
-5. Add anti-rationalization constraints when the task has a known failure mode.
-6. If the task is ambiguous, include the primary assumption explicitly.
-7. If the task is risky, say what is off limits in `DO NOT`.
-8. For non-coding sub-agents, prefer outcome, success criteria, verification, and stop conditions over long procedural instructions.
-9. Never let a sub-agent report done for monitoring, nudging, or tool success when the requested artifact/outcome is still missing.
+3. Name at least one real verification step in `DONE WHEN`.
+4. Add anti-rationalization constraints when the task has a known failure mode.
+5. If the task is ambiguous, include the primary assumption explicitly.
+6. If the task is risky, say what is off limits in `DO NOT`.
+7. For non-coding sub-agents, prefer outcome, success criteria, verification, and stop conditions over long procedural instructions.
+8. Never let a sub-agent report done for monitoring, nudging, or tool success when the requested artifact/outcome is still missing.
 
 ## Example
 

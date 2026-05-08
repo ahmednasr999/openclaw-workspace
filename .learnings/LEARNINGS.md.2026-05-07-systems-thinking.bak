@@ -1,53 +1,5 @@
 # Learnings Log
 
-## [LRN-20260508-001] correction
-
-**Logged**: 2026-05-08T07:30:00+03:00
-**Priority**: high
-**Status**: pending
-**Area**: interaction
-
-### Summary
-Stop immediately after confirming completion; do not continue background checks or skill reads.
-
-### Details
-After Ahmed asked "Are you done?", NASR confirmed completion but then continued triggering additional skill reads, healthcheck reads, disk-log reads, and planning/tool calls. This created confusing duplicate messages and made a completed maintenance window look like it was still active. Completion confirmation must be a hard stop unless Ahmed asks a new follow-up or there is a verified safety-critical issue that needs immediate escalation.
-
-### Suggested Action
-When the user asks "Are you done?" or equivalent after a maintenance/task sequence, first check for active tool/process work if needed, then answer once and stop. Do not opportunistically read skills, start new plans, inspect unrelated logs, or surface optional cleanup ideas in the same turn.
-
-### Metadata
-- Source: user_feedback
-- Related Files: /root/.openclaw/workspace/SOUL.md, /root/.openclaw/workspace/AGENTS.md
-- Tags: correction, completion, stop-rule, tool-discipline, duplicate-replies
-- Pattern-Key: completion.stop_after_done
-
----
-
-## [LRN-20260507-003] best_practice
-
-**Logged**: 2026-05-07T23:02:00+03:00
-**Priority**: high
-**Status**: promoted
-**Area**: workflow
-
-### Summary
-Coding-agent briefs should require systems-context inspection before implementation.
-
-### Details
-A Cathryn Lavery tweet highlighted a useful failure mode: coding agents can write components, fixes, and tests, but they do not automatically teach or apply systems thinking. For NASR/OpenClaw coding dispatch, the durable rule is to inspect the repo, target files, existing patterns, docs/config, recent changes, and open issues/PRs when available before building. This reduces local patches that ignore architecture or recent context.
-
-### Suggested Action
-Promoted into `AGENTS.md`, `NASR-ACP-Coding-Brief.md`, and `NASR-Coding-Rules-v1.md`: require inspect -> plan -> implement -> verify for non-trivial coding work, with tiny known-context fixes allowed to compress the lifecycle.
-
-### Metadata
-- Source: conversation
-- Related Files: /root/.openclaw/workspace/AGENTS.md, /root/.openclaw/workspace/docs/agent-governance/NASR-ACP-Coding-Brief.md, /root/.openclaw/workspace/docs/agent-governance/NASR-Coding-Rules-v1.md
-- Tags: coding-agents, systems-thinking, acp, codex, workflow, context-inspection
-- Pattern-Key: coding.system_context_before_patch
-
----
-
 ## [LRN-20260507-002] correction
 
 **Logged**: 2026-05-07T22:10:00+03:00

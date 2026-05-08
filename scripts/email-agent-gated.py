@@ -196,8 +196,7 @@ def run_full_agent(args: list[str], reason: str) -> int:
 
 def main() -> int:
     args = sys.argv[1:]
-    if "--dry-run" in args:
-        return run_full_agent(args, "dry-run bypass")
+    dry_run = "--dry-run" in args
 
     started = time.monotonic()
     email_state = load_json(STATE_PATH)
@@ -214,6 +213,10 @@ def main() -> int:
     if should_skip:
         gate_payload = build_gate_payload(reason, mailbox, email_state or {})
         duration_ms = int((time.monotonic() - started) * 1000)
+        if dry_run:
+            print(f"email gate: dry-run would skip full agent ({reason})")
+            print(json.dumps(gate_payload, indent=2, default=str))
+            return 0
         try:
             write_skip_outputs(summary or {}, latest, gate_payload, duration_ms)
             save_gate_checkpoint(mailbox, email_state, "skip", reason)
