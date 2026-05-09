@@ -2,16 +2,106 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-05-08T17:00:38.577112+02:00",
-    "duration_ms": 36264,
+    "generated_at": "2026-05-09T05:00:39.663299+02:00",
+    "duration_ms": 37243,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "e15862f2",
+    "run_id": "7254a8c2",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": [
+    {
+      "id": "indeed-in-178d9ac50b9310da",
+      "source": "indeed",
+      "title": "Program Director",
+      "company": "Netcracker Technology",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=178d9ac50b9310da",
+      "posted": "2026-05-08",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 26,
+      "match_keywords": [
+        "ai",
+        "cloud",
+        "enterprise",
+        "director"
+      ],
+      "raw_snippet": "**We\u2019re building the future of how the world communicates.**\n\n\nNetcracker, part of NEC Corporation, combines deep telecom industry expertise with cutting\\-edge cloud\\-native and AI\\-powered innovations to enable communications service providers and enterprises to transform their businesses, unlock innovation, and create meaningful digital experiences for millions of people around the world. With more than 30 years of experience serving over 250 customers in more than 70 locations worldwide, we a",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "PMO Director"
+    },
+    {
+      "id": "indeed-in-d10193990a5db09e",
+      "source": "indeed",
+      "title": "Penske Media Corp: Director, EMEA Licensing",
+      "company": "Penske Media",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=d10193990a5db09e",
+      "posted": "2026-05-08",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 23,
+      "match_keywords": [
+        "ai",
+        "executive",
+        "director",
+        "dubai"
+      ],
+      "raw_snippet": "**Penske Media Corp: Director, EMEA Licensing**\n\n\n\nPenske Media Corporation (PMC), the parent company of Rolling Stone, Variety, Billboard, The Hollywood Reporter, SXSW, The Golden Globes, and many more brands, is looking for a Dubai\\- or London\\-based, talented and results\\-oriented, Director/Senior Director, EMEA Licensing to join our Corporate Business Development team. This person will be the primary executive generating licensing revenue for PMC brands in the EMEA region and will be tasked ",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Program Director"
+    },
+    {
+      "id": "indeed-in-e3871e2f39541517",
+      "source": "indeed",
+      "title": "Director of Spa and Recreation",
+      "company": "Marriott International",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=e3871e2f39541517",
+      "posted": "2026-05-08",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 16,
+      "match_keywords": [
+        "ai",
+        "director",
+        "dubai"
+      ],
+      "raw_snippet": "**Additional Information**  \n\n**Job Number**26056725  \n\n**Job Category**Spa  \n\n**Location**Bvlgari Resort Dubai, Jumeirah Bay Island, Dubai, United Arab Emirates, United Arab Emirates, 72223  \n\n**Schedule**Full Time  \n\n**Located Remotely?**N  \n\n**Position Type** Management  \n\n**JOB SUMMARY**\n\n  \n\n\n\nResponsible for managing and supervising all areas of the spa, including its programs, services, hours of operation, facilities and staff. Coordinates the delivery of spa services, including salon, sk",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Program Director"
+    },
+    {
+      "id": "indeed-in-6530d84bb3cd5d87",
+      "source": "indeed",
+      "title": "CRM and Loyalty Director",
+      "company": "Sephora",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=6530d84bb3cd5d87",
+      "posted": "2026-05-08",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 20,
+      "match_keywords": [
+        "ai",
+        "crm",
+        "director"
+      ],
+      "raw_snippet": "At Sephora, beauty is about feeling seen, valued, and empowered, individually and collectively. It is connecting deeply with others, celebrating diversity and inclusivity, unlocking your potential and making a difference every day. Together, we belong to something beautiful. Since its inception in 1969 in Limoges, France, and as part of the LVMH Group since 1997, Sephora has been disrupting the prestige beauty retail industry. Today, Sephora continues to break with convention to drive its missio",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Program Director"
+    },
     {
       "id": "indeed-in-66bd3e9eb903d7e0",
       "source": "indeed",
@@ -49,29 +139,6 @@
         "head of"
       ],
       "raw_snippet": "The job is responsible for developing plans and work mechanisms for programs and production, and contributing to achieving the vision and objectives of Al Oula Radio by supervising and monitoring all administrative and technical tasks related to programs and production.\n\n\nDuties \\& Responsibilities:\n\n* Developing the operational plan and contingency plan for the Programs and Production Department, monitoring its implementation, and ensuring that the plan\u2019s pathways align with and serve the gener",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-ae40fcde03bc45af",
-      "source": "indeed",
-      "title": "Country Compliance Officer UAE - Director",
-      "company": "Citi",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=ae40fcde03bc45af",
-      "posted": "2026-05-07",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 20,
-      "match_keywords": [
-        "ai",
-        "director",
-        "uae",
-        "dubai"
-      ],
-      "raw_snippet": "Job Req Id:\n26960084\nLocation(s):\nDubai, Dubai, United Arab Emirates\nJob Type:\nOn\\-Site/Resident\nPosted:\nMay. 07, 2026\n  \n**Discover your future at Citi**\n--------------------------------\n\n\nWorking at Citi is far more than just a job. A career with us means joining a team of more than 230,000 dedicated people from around the globe. At Citi, you\u2019ll have the opportunity to grow your career, give back to your community and make a real impact.\n\n\n**Job Overview**\n----------------\n\n\nThe Citi Country C",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
@@ -145,6 +212,29 @@
       "search_title": "Head of Digital Transformation"
     },
     {
+      "id": "indeed-in-ae40fcde03bc45af",
+      "source": "indeed",
+      "title": "Country Compliance Officer UAE - Director",
+      "company": "Citi",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=ae40fcde03bc45af",
+      "posted": "2026-05-07",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 20,
+      "match_keywords": [
+        "ai",
+        "director",
+        "uae",
+        "dubai"
+      ],
+      "raw_snippet": "Job Req Id:\n26960084\nLocation(s):\nDubai, Dubai, United Arab Emirates\nJob Type:\nOn\\-Site/Resident\nPosted:\nMay. 07, 2026\n  \n**Discover your future at Citi**\n--------------------------------\n\n\nWorking at Citi is far more than just a job. A career with us means joining a team of more than 230,000 dedicated people from around the globe. At Citi, you\u2019ll have the opportunity to grow your career, give back to your community and make a real impact.\n\n\n**Job Overview**\n----------------\n\n\nThe Citi Country C",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Chief Technology Officer"
+    },
+    {
       "id": "indeed-in-ba3ceba918652106",
       "source": "indeed",
       "title": "VP-Financial Operations",
@@ -191,6 +281,29 @@
       "filter_reason": null,
       "search_country": "United Arab Emirates",
       "search_title": "Head of IT"
+    },
+    {
+      "id": "indeed-in-bd7e095fae18fd87",
+      "source": "indeed",
+      "title": "Telecoms QA Director",
+      "company": "Netcracker Technology",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=bd7e095fae18fd87",
+      "posted": "2026-05-08",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 26,
+      "match_keywords": [
+        "ai",
+        "cloud",
+        "enterprise",
+        "director"
+      ],
+      "raw_snippet": "**We\u2019re building the future of how the world communicates.**\n\n\nNetcracker, part of NEC Corporation, combines deep telecom industry expertise with cutting\\-edge cloud\\-native and AI\\-powered innovations to enable communications service providers and enterprises to transform their businesses, unlock innovation, and create meaningful digital experiences for millions of people around the world. With more than 30 years of experience serving over 250 customers in more than 70 locations worldwide, we a",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "Program Director"
     },
     {
       "id": "indeed-in-32f692fac42cc9f0",
@@ -362,9 +475,9 @@
   ],
   "kpi": {
     "searches_run": 20,
-    "results_per_search": 3.8,
-    "unique_jobs": 15,
-    "errors": 5
+    "results_per_search": 3.9,
+    "unique_jobs": 20,
+    "errors": 4
   },
   "recommendations": []
 }
