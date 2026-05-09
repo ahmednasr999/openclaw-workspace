@@ -1653,3 +1653,56 @@ Node.js v22.22.1
 ## Calendar - Today's Events
 *Calendar API unavailable (gog v0.12.0 bug - tracking fix)*
 
+=== Morning Brief - 2026-05-09 06:00 AM ===
+
+## Claude 2x Usage Reminder
+
+## Job Radar (from Tavily)
+[search-router] Tavily unavailable, falling back to local SearXNG: Tavily Search failed (401): {"detail":{"error":"Unauthorized: missing or invalid API key."}}
+## Sources
+
+_(provider: searxng)_
+
+- **Head Of Digital Transformation Jobs in UAE (May 2026) - Bayt.com**
+  https://www.bayt.com/en/uae/jobs/head-of-digital-transformation-jobs/
+  At Medtronic you can begin a life-long career of exploration and innovation, while helping champion healthcare access and equity for… 5 days ago. Senior ...
+
+- **83 pmo Jobs in United Arab Emirates, January 2026 | Glassdoor**
+  https://www.glassdoor.com/Job/united-arab-emirates-pmo-jobs-SRCH_IL.0,20_IN6_KO21,24.htm
+  The top companies hiring now are Blue Book Global, Atlantis Dubai, Unique Group, Emirates Nuclear Energy Company, Julphar, BlackStone eIT, VaporVM, Dicetek LLC, Omnix International, Schneider Electric
+
+- **Justice Integrity Report - March 2026 News (Pt. 1)**
+  https://www.justice-integrity.org/news-reports/2167-march-2026-news-pt-1
+  The United Arab Emirates defense ministry said its air defenses “engaged” 9 ballistic missiles and 33 drones launched by Iran on Saturday, and Saudi Arabia’s defense ministry reported a handful of drone interceptions during the day.
+
+- **‏Khaled Naggar‏ - ‏Chief Transformation Officer‏ | LinkedIn**
+  https://ae.linkedin.com/in/khalednaggar
+  Chief Digital Transformation Officer · VP Digital Transformation & Innovationn · Regional Head of Digital Innovation (APAC) · Growth & Innovation Advisor - New ...
+
+- **‏Abid Hussain Shah‏ - ‏Digital Transformation Leader ... - LinkedIn**
+  https://ae.linkedin.com/in/shahabid
+  Recognized for leading complex, high-impact digital initiatives that optimize operations, enhance patient and customer experiences, and deliver measurable business value. Currently serving as the Group Chief Information Digital Officer at Saudi German Health UAE, I lead the digital transformation ag...
+
+## Gmail - New Opportunities
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/root/.openclaw/workspace/scripts/gmail-scan.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+
+## Calendar - Today's Events
+*Calendar API unavailable (gog v0.12.0 bug - tracking fix)*
+
