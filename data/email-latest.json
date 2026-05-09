@@ -1,25 +1,55 @@
 {
   "status": "ok",
-  "scan_time": "2026-05-08T20:00:41.409028+02:00",
-  "total_scanned": 50,
+  "scan_time": "2026-05-09T14:00:58.457705+02:00",
+  "total_scanned": 20,
   "by_category": {
-    "interview_invite": 0,
-    "recruiter_reach": 0,
+    "interview_invite": 1,
+    "recruiter_reach": 1,
     "application_ack": 0,
     "rejection": 0,
     "assessment": 0,
     "follow_up_needed": 0,
     "job_alert": 0,
-    "other": 50
+    "other": 19
   },
-  "interview_invites": [],
-  "recruiter_messages": [],
+  "interview_invites": [
+    {
+      "id": "357002",
+      "from": "<webmaster@naukrigulf.com>",
+      "subject": "Start your job search securely!",
+      "date": "Sat, 9 May 2026 12:19:29 +0530 (IST)",
+      "unread": true,
+      "priority": "HIGH",
+      "score": 8,
+      "pipeline_match": null
+    }
+  ],
+  "recruiter_messages": [
+    {
+      "id": "357002",
+      "from": "<webmaster@naukrigulf.com>",
+      "subject": "Start your job search securely!",
+      "date": "Sat, 9 May 2026 12:19:29 +0530 (IST)",
+      "unread": true,
+      "priority": "HIGH",
+      "score": 8,
+      "pipeline_match": null
+    }
+  ],
   "application_acks": [],
   "rejections": [],
   "assessments": [],
   "follow_ups_needed": [],
   "job_alerts": [],
-  "actionable_count": 0,
-  "hot_alerts": [],
+  "actionable_count": 1,
+  "hot_alerts": [
+    {
+      "id": "357002",
+      "subject": "Start your job search securely!",
+      "from": "<webmaster@naukrigulf.com>",
+      "priority": "HIGH",
+      "pipeline_match": null
+    }
+  ],
   "signals": []
 }

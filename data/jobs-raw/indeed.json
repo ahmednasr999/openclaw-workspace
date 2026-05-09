@@ -2,39 +2,16 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-05-09T05:00:39.663299+02:00",
-    "duration_ms": 37243,
+    "generated_at": "2026-05-09T17:00:36.775575+02:00",
+    "duration_ms": 35284,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "7254a8c2",
+    "run_id": "50395bf6",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": [
-    {
-      "id": "indeed-in-178d9ac50b9310da",
-      "source": "indeed",
-      "title": "Program Director",
-      "company": "Netcracker Technology",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=178d9ac50b9310da",
-      "posted": "2026-05-08",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 26,
-      "match_keywords": [
-        "ai",
-        "cloud",
-        "enterprise",
-        "director"
-      ],
-      "raw_snippet": "**We\u2019re building the future of how the world communicates.**\n\n\nNetcracker, part of NEC Corporation, combines deep telecom industry expertise with cutting\\-edge cloud\\-native and AI\\-powered innovations to enable communications service providers and enterprises to transform their businesses, unlock innovation, and create meaningful digital experiences for millions of people around the world. With more than 30 years of experience serving over 250 customers in more than 70 locations worldwide, we a",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "PMO Director"
-    },
     {
       "id": "indeed-in-d10193990a5db09e",
       "source": "indeed",
@@ -190,22 +167,25 @@
       "search_title": "Director Digital Transformation"
     },
     {
-      "id": "indeed-in-1b4b978e73f5546b",
+      "id": "indeed-in-baebe8d0c3bd1a35",
       "source": "indeed",
-      "title": "VP, Credit - Digitization & AI Portfolio Management",
-      "company": "bankfab",
+      "title": "Head of IT",
+      "company": "TGD Services DMCC",
       "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=1b4b978e73f5546b",
-      "posted": "2026-05-06",
-      "seniority": "Other",
-      "domain_match": true,
-      "keyword_score": 23,
+      "url": "https://ae.indeed.com/viewjob?jk=baebe8d0c3bd1a35",
+      "posted": "2026-05-09",
+      "seniority": "Director",
+      "domain_match": false,
+      "keyword_score": 36,
       "match_keywords": [
-        "digital transformation",
-        "ai",
-        "vp"
+        "infrastructure",
+        "enterprise",
+        "head of",
+        "leadership",
+        "growth",
+        "platform"
       ],
-      "raw_snippet": "Job Description\n  \nResponsibilities\n\n**Job Purpose:**\n\nThis is a senior level VP role within Personal Banking Credit unit and it covers end\\-to\\-end strategic coordination of units digital and AI initiatives. The role bridges the gap between high\\-level strategy and technical execution, ensuring that AI and digital transformation investments deliver measurable commercial value. Drive cultural shift within the unit in adopting digitization and AI across all functional areas and existing processes",
+      "raw_snippet": "**Position Overview:**The Head of IT will be responsible for the strategy, leadership, and management of allinternal IT systems, ensuring the smooth operation of both customer\\-facing platformsand internal colleague services. This role will ensure that the organization\u2019s ITinfrastructure supports business growth, drives efficiency, and provides a positive end user experience for colleagues. Key areas of focus include enterprise collaboration tools (e.g., Microsoft Teams), Wi\\-Fi, desktop infrast",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
@@ -235,26 +215,27 @@
       "search_title": "Chief Technology Officer"
     },
     {
-      "id": "indeed-in-ba3ceba918652106",
+      "id": "indeed-in-f065a0cbc767ddde",
       "source": "indeed",
-      "title": "VP-Financial Operations",
-      "company": "CXM Direct LLC",
+      "title": "Head of IT, Automation & AI Solutions",
+      "company": "MOOEi",
       "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=ba3ceba918652106",
-      "posted": "2026-05-06",
-      "seniority": "Other",
+      "url": "https://ae.indeed.com/viewjob?jk=f065a0cbc767ddde",
+      "posted": "2026-05-09",
+      "seniority": "Director",
       "domain_match": true,
       "keyword_score": 20,
       "match_keywords": [
-        "executive",
-        "vp",
-        "head of"
+        "ai",
+        "head of",
+        "dubai",
+        "automation"
       ],
-      "raw_snippet": "Position Title: Vice President, Financial Operations  \n\n  \n\nReporting Line: Reports directly to the Head of Treasury \\& Accounting, with executive oversight from the Chief Financial Officer (CFO).  \n\n  \n\nLocation: Fully Remote or Hybrid, determined by candidate location and business needs on a case\\-by\\-case basis.  \n\n  \n\nGeneral Purpose: Responsible for leading the Payment Operations function and overseeing transaction processing for a global CFD brokerage and cryptocurrency exchange.  \n\n  \n\nSp",
+      "raw_snippet": "About the Role\n\nWe are a Dubai\\-based luxury fashion group seeking a hands\\-on technical leader to own our entire IT, automation, and AI ecosystem. You will **build, manage, and lead** our in\\-house tech team and external developers, creating the digital backbone that runs our business \u2014 websites, internal systems, automation workflows, AI solutions, and the logic that connects them all.\n\nYou think like an architect: every system runs independently, every process has clear triggers and condition",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
-      "search_title": "Chief Technology Officer"
+      "search_title": "Head of IT"
     },
     {
       "id": "indeed-in-622d3f71f7ff3ae5",
@@ -283,29 +264,6 @@
       "search_title": "Head of IT"
     },
     {
-      "id": "indeed-in-bd7e095fae18fd87",
-      "source": "indeed",
-      "title": "Telecoms QA Director",
-      "company": "Netcracker Technology",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=bd7e095fae18fd87",
-      "posted": "2026-05-08",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 26,
-      "match_keywords": [
-        "ai",
-        "cloud",
-        "enterprise",
-        "director"
-      ],
-      "raw_snippet": "**We\u2019re building the future of how the world communicates.**\n\n\nNetcracker, part of NEC Corporation, combines deep telecom industry expertise with cutting\\-edge cloud\\-native and AI\\-powered innovations to enable communications service providers and enterprises to transform their businesses, unlock innovation, and create meaningful digital experiences for millions of people around the world. With more than 30 years of experience serving over 250 customers in more than 70 locations worldwide, we a",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Program Director"
-    },
-    {
       "id": "indeed-in-32f692fac42cc9f0",
       "source": "indeed",
       "title": "Executive Director - HRBP",
@@ -323,50 +281,6 @@
         "growth"
       ],
       "raw_snippet": "We are seeking an Executive Director \u2013 HR Business Partner (HRBP) to act as a strategic advisor to the Development side of the business. Reporting directly to the CHRO, this role will lead the full HR agenda across a complex, fast\\-paced and high\\-growth environment.\n\n\nYou will partner closely with executive leadership on a broad spectrum of people \\& business issues to enable delivery of large\\-scale development programs, ensuring the organization is structured, resourced, and equipped to meet ",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-b9bc17606f0c2c25",
-      "source": "indeed",
-      "title": "Senior Technical Director",
-      "company": "Parsons",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=b9bc17606f0c2c25",
-      "posted": "2026-05-06",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 20,
-      "match_keywords": [
-        "director",
-        "leadership",
-        "growth"
-      ],
-      "raw_snippet": "In a world of possibilities, pursue one with endless opportunities. Imagine Next!  \n\n\nAt Parsons, you can imagine a career where you thrive, work with exceptional people, and be yourself. Guided by our leadership vision of valuing people, embracing agility, and fostering growth, we cultivate an innovative culture that empowers you to achieve your full potential. Unleash your talent and redefine what\u2019s possible. **Job Description:**\n\n\nParsons is looking for an amazingly talented **Senior** **Tech",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-a7eb35152986a631",
-      "source": "indeed",
-      "title": "Program Director",
-      "company": "HanmiGlobal Saudi",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=a7eb35152986a631",
-      "posted": "2026-05-06",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 20,
-      "match_keywords": [
-        "executive",
-        "director",
-        "leadership"
-      ],
-      "raw_snippet": "**Role Summary**\nThe Program Director provides executive\\-level leadership and strategic oversight across all LDIP PMCM phases. As the primary point of accountability, the incumbent ensures that all PMCM services are delivered to the highest professional standards, on time, and in full compliance with the requirements, contractual obligations, and applicable national and international standards.\n\n**Key Responsibilities**\n\n* **Strategic Leadership \\& Program Governance**\n* Serve as the ultimate p",
       "relevant": true,
       "filter_reason": null,
       "search_country": "Saudi Arabia",
@@ -471,13 +385,37 @@
       "filter_reason": null,
       "search_country": "Saudi Arabia",
       "search_title": "IT Director"
+    },
+    {
+      "id": "indeed-in-a4bf0e45f2d70974",
+      "source": "indeed",
+      "title": "Business Development Director",
+      "company": "Omada Rail Systems",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=a4bf0e45f2d70974",
+      "posted": "2026-05-06",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 26,
+      "match_keywords": [
+        "ai",
+        "infrastructure",
+        "director",
+        "riyadh",
+        "architecture"
+      ],
+      "raw_snippet": "* **Permanent Contract**\n* **Director**\n* **Riyadh**\n* **Technical Engineering**\n\n  \n**About Us**\n\n  \n\nEgis is an international player active in architecture, consulting, construction engineering and mobility services. We create and operate intelligent infrastructures and buildings that respond to the climate emergency and contribute to more balanced, sustainable and resilient territorial development. Operating in 100 countries, Egis puts the expertise of its 19,500 employees at the service of i",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "IT Director"
     }
   ],
   "kpi": {
     "searches_run": 20,
-    "results_per_search": 3.9,
-    "unique_jobs": 20,
-    "errors": 4
+    "results_per_search": 3.4,
+    "unique_jobs": 17,
+    "errors": 7
   },
   "recommendations": []
 }

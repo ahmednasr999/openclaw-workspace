@@ -160,3 +160,17 @@ git push origin master
 2. **Create the missing compact checklist.** `eval/checklist.md` should be added next with binary gates for full JD/source proof, ATS floor, rendered PDF review, text extraction, ontology IDs, filename, and delivery wording.
 3. **Make CV closeout artifact-based.** Final delivery should list the generated PDF path, ATS score, JD provenance, visual QA result, ontology update status, and whether any follow-up is genuinely blocked.
 4. **Keep stale model language out of gates.** Any model check should refer to the current workspace-approved top-tier model policy, not outdated hard-coded model names.
+### 2026-05-09 - Weekly Skill Tune-Up
+
+**Audit basis:** No lessons were logged in the last 7 days, so this stayed in scope as a default high-value skill. `eval/checklist.md` is still missing, while `eval/quality-gates.md` still contains stale Opus-only wording that conflicts with the current workspace model policy.
+
+**Reviewed lessons:**
+- No direct CV, resume, or ATS lessons were found in `memory/lessons-learned.md`.
+- Adjacent recruiting lessons from 2026-04-25 reinforce source verification before treating an alert as actionable.
+- Repeated closeout lessons reinforce artifact-based completion language instead of vague status.
+
+**Improvement recommendation:**
+1. **Create the missing compact checklist.** Add `eval/checklist.md` with binary gates for full JD/source proof, recruiter or application signal verification, ATS floor, rendered PDF review, clean `pdftotext`, ontology IDs, filename, and delivery wording.
+2. **Replace stale model wording.** Update `eval/quality-gates.md` from hard-coded Opus 4.6 to the current workspace-approved top-tier model requirement.
+3. **Make closeout artifact-based.** Delivery should list the PDF path, ATS score, JD provenance, visual QA result, ontology status, and any real blocker.
+

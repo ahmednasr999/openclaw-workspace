@@ -157,3 +157,18 @@ Reply "⏭ Skipped" and move on.
 3. **Treat write-path ambiguity as a hard abort.** If the account, post identity, cooldown status, or visible comment proof cannot be verified, abort and regenerate cards rather than improvising with another browser/session.
 4. **Escalate live blockers quickly.** If submit or proof-of-post fails twice, report the blocker in thread 7 with a concise recovery option. Do not keep retrying silently or imply that the comment is posted before visible proof exists.
 5. **Create the missing `eval/checklist.md`.** Keep it binary: Ahmed account verified, post identity matched, cooldown clear, approval text unchanged, visible comment confirmed, like state checked, ontology updated.
+
+### 2026-05-09 - Weekly Skill Tune-Up
+
+**Audit basis:** No lessons were logged in the last 7 days, so this stayed in scope as a default LinkedIn operations skill. The skill still has no `eval/checklist.md`, and the latest LinkedIn lessons continue to stress verified lane/account/post identity before any write action.
+
+**Reviewed lessons:**
+- 2026-04-22, prove LinkedIn tool or browser lane exposure before blaming stale sessions or asking Ahmed to reconnect.
+- 2026-04-20, live LinkedIn write workflows need timely blocker escalation and verified success only.
+- 2026-04-23, use the exact account Ahmed specifies for live auth or publishing flows.
+
+**Improvement recommendation:**
+1. **Add a lane-exposure preflight.** Before discovery and again before posting, prove Ahmed-Mac Chrome is online, logged into the correct Ahmed account, and able to access the target post.
+2. **Bind approvals to immutable identity.** Approval cards should include activity URN, post URL, author profile URL, and a hash or exact copy of the approved comment text. Step 6 must re-check all fields before typing.
+3. **Create the missing `eval/checklist.md`.** Keep it binary: correct account, correct post, cooldown clear, approved text unchanged, visible comment confirmed, like state checked, ontology updated, blocker escalated after two failed proof attempts.
+

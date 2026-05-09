@@ -2,58 +2,126 @@
   "meta": {
     "agent": "email-agent",
     "version": "3.0.0",
-    "generated_at": "2026-05-08T20:00:52.350439+02:00",
-    "duration_ms": 36627,
+    "generated_at": "2026-05-09T14:01:11.325015+02:00",
+    "duration_ms": 37971,
     "ttl_hours": 4,
     "status": "success",
     "error": null,
-    "run_id": "7067fd69",
+    "run_id": "d40ffb4a",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
     "status": "ok",
-    "scan_time": "2026-05-08T20:00:41.409028+02:00",
-    "total_scanned": 50,
+    "scan_time": "2026-05-09T14:00:58.457705+02:00",
+    "total_scanned": 20,
     "by_category": {
-      "interview_invite": 0,
-      "recruiter_reach": 0,
+      "interview_invite": 1,
+      "recruiter_reach": 1,
       "application_ack": 0,
       "rejection": 0,
       "assessment": 0,
       "follow_up_needed": 0,
       "job_alert": 0,
-      "other": 50
+      "other": 19
     },
-    "interview_invites": [],
-    "recruiter_messages": [],
+    "interview_invites": [
+      {
+        "id": "357002",
+        "from": "<webmaster@naukrigulf.com>",
+        "subject": "Start your job search securely!",
+        "date": "Sat, 9 May 2026 12:19:29 +0530 (IST)",
+        "unread": true,
+        "priority": "HIGH",
+        "score": 8,
+        "pipeline_match": null
+      }
+    ],
+    "recruiter_messages": [
+      {
+        "id": "357002",
+        "from": "<webmaster@naukrigulf.com>",
+        "subject": "Start your job search securely!",
+        "date": "Sat, 9 May 2026 12:19:29 +0530 (IST)",
+        "unread": true,
+        "priority": "HIGH",
+        "score": 8,
+        "pipeline_match": null
+      }
+    ],
     "application_acks": [],
     "rejections": [],
     "assessments": [],
     "follow_ups_needed": [],
     "job_alerts": [],
-    "actionable_count": 0,
-    "hot_alerts": [],
+    "actionable_count": 1,
+    "hot_alerts": [
+      {
+        "id": "357002",
+        "subject": "Start your job search securely!",
+        "from": "<webmaster@naukrigulf.com>",
+        "priority": "HIGH",
+        "pipeline_match": null
+      }
+    ],
     "signals": [],
     "llm_analysis": {
-      "actionable_emails": [],
+      "actionable_emails": [
+        {
+          "id": "357002",
+          "subject": "Start your job search securely!",
+          "from": "<webmaster@naukrigulf.com>",
+          "date": "Sat, 9 May 2026 12:19:29 +0530 (IST)",
+          "category": "recruiter_reach",
+          "urgency": "low",
+          "intent": "The sender is providing general job-search safety advice, not requesting a reply.",
+          "action": "read_and_file",
+          "response_deadline": "when convenient",
+          "notes": "False positive; no interview or recruiter action proven."
+        }
+      ],
       "summary": {
-        "total_actionable": 0,
+        "total_actionable": 1,
         "critical_count": 0,
         "requires_interview_prep": false,
         "requires_assessment": false,
         "recruiter_top_opportunities": [],
         "top_priority": null,
-        "daily_focus": "No actionable job-search emails were provided, focus on proactive applications and pipeline quality today."
+        "daily_focus": "No urgent career action from this batch; ignore the Naukrigulf safety notice unless needed."
       }
     }
   },
   "kpi": {
-    "emails_processed": 50,
-    "actionable": 0,
-    "interviews_detected": 0,
-    "recruiter_messages": 0,
-    "unread_actionable": 0
+    "emails_processed": 20,
+    "actionable": 1,
+    "interviews_detected": 1,
+    "recruiter_messages": 1,
+    "unread_actionable": 1
   },
-  "recommendations": []
+  "recommendations": [
+    {
+      "id": "rec-d40ffb4a-0",
+      "action": "respond_immediately",
+      "target": "1 interview invite(s)",
+      "reason": "Interview invitations require prompt response",
+      "urgency": "critical",
+      "timestamp": "2026-05-09T14:01:11.324648+02:00"
+    },
+    {
+      "id": "rec-d40ffb4a-1",
+      "action": "review_and_respond",
+      "target": "1 recruiter message(s)",
+      "reason": "Recruiter outreach could lead to opportunities",
+      "urgency": "high",
+      "timestamp": "2026-05-09T14:01:11.324665+02:00"
+    },
+    {
+      "id": "rec-d40ffb4a-2",
+      "action": "check_inbox",
+      "target": "1 unread actionable email(s)",
+      "reason": "Unread emails need attention",
+      "urgency": "high",
+      "timestamp": "2026-05-09T14:01:11.324668+02:00"
+    }
+  ]
 }

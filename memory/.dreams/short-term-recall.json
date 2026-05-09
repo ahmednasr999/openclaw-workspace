@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-08T09:04:04.690Z",
+  "updatedAt": "2026-05-09T07:00:19.725Z",
   "entries": {
     "memory:memory/archives/2026-03-07.md:29:56": {
       "key": "memory:memory/archives/2026-03-07.md:29:56",
@@ -2981,6 +2981,99 @@
         "git/hooks/pre-commit",
         "python3",
         "knowledge"
+      ]
+    },
+    "memory:memory/archive/2026-03/2026-03-18.md:404:441": {
+      "key": "memory:memory/archive/2026-03/2026-03-18.md:404:441",
+      "path": "memory/archive/2026-03/2026-03-18.md",
+      "startLine": 404,
+      "endLine": 441,
+      "source": "memory",
+      "snippet": "- Created 28 SKILL.md files in skills/cron/ directory - Rewired ~20+ crons to skill-first pattern - Each cron prompt now: \"Read and follow: ~/skills/cron/[name]/SKILL.md\" **Skills created:** ``` skills/cron/ ├── morning-briefing/SKILL.md # Daily 7:30 AM ├── email-check/SKILL.md # Morning + Afternoon ├── sie-360/SKILL.md # Daily 4 AM ├── job-scanner/SKILL.md # Daily 6 AM ├── linkedin-shadowbroker/SKILL.md ├── github-discovery/SKILL.md # Daily 12 PM ├── meeting-prep/SKILL.md # Daily 9 PM ├── memory-index/SKILL.md # Daily 10:30 PM ├── content-intelligence/SKILL.md # Thursday ├── content-creator-review/SKILL.md # Friday ├─",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-09T07:00:19.725Z",
+      "lastRecalledAt": "2026-05-09T07:00:19.725Z",
+      "queryHashes": [
+        "9c40ca4f0976"
+      ],
+      "recallDays": [
+        "2026-05-09"
+      ],
+      "conceptTags": [
+        "skill.md",
+        "skills/cron",
+        "skill-first",
+        "morning-briefing/skill.md",
+        "email-check/skill.md",
+        "sie-360/skill.md",
+        "job-scanner/skill.md",
+        "linkedin-shadowbroker/skill.md"
+      ]
+    },
+    "memory:memory/archive/2026-03/2026-03-18.md:370:413": {
+      "key": "memory:memory/archive/2026-03/2026-03-18.md:370:413",
+      "path": "memory/archive/2026-03/2026-03-18.md",
+      "startLine": 370,
+      "endLine": 413,
+      "source": "memory",
+      "snippet": "8. If you change a process, change the skill first **Cron prompt template:** ``` Read and follow: ~/skills/[skill-name]/SKILL.md Context: - Project: ~/projects/[project]/ - Service: systemctl --user restart [service-name] - Notify: [telegram-id or email] - Data: ~/data/[relevant-file].json ``` **SKILL.md template:** - Prerequisites (what must exist) - Steps (numbered, detailed, no limit on lines) - Validation rules and checks - Output format and templates - Edge cases and error handling - Quality gates **Do NOT put in SKILL.md:** schedule/time, environment-specific paths, model selection **Do NOT put in cron:** workflow steps, business logic, output formatting **His experience:** 52 acti",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-09T07:00:19.725Z",
+      "lastRecalledAt": "2026-05-09T07:00:19.725Z",
+      "queryHashes": [
+        "9c40ca4f0976"
+      ],
+      "recallDays": [
+        "2026-05-09"
+      ],
+      "conceptTags": [
+        "skill-name",
+        "skill.md",
+        "service-name",
+        "telegram-id",
+        "relevant-file",
+        "schedule/time",
+        "environment-specific",
+        "change"
+      ]
+    },
+    "memory:memory/archive/2026-03/2026-03-18.md:348:383": {
+      "key": "memory:memory/archive/2026-03/2026-03-18.md:348:383",
+      "path": "memory/archive/2026-03/2026-03-18.md",
+      "startLine": 348,
+      "endLine": 383,
+      "source": "memory",
+      "snippet": "- Cron = schedule + context (paths, services, notify). Skill = workflow + steps + validation + error handling. - Single source of truth: update skill file, all crons pick up changes. Zero cron edits. - Fixes inconsistent output (morning briefing format drift) - TODO: Convert top 5 crons to skill-first pattern (morning briefing, scanner, email digest, SIE audit, content pipeline) **Pending for tomorrow:** - Build email two-way sync (Notion checkbox → Gmail read status) - Convert top 5 crons to skill-first pattern - Verify morning briefing at 7:30 AM with all new integrations ### 03:17 AM — Full YouTube transcript captured: Cron Skills Pattern **Source:** https://www.youtube.com/watch?v=Bjb",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-09T07:00:19.725Z",
+      "lastRecalledAt": "2026-05-09T07:00:19.725Z",
+      "queryHashes": [
+        "9c40ca4f0976"
+      ],
+      "recallDays": [
+        "2026-05-09"
+      ],
+      "conceptTags": [
+        "skill-first",
+        "two-way",
+        "www.youtube.com/watch",
+        "cron",
+        "schedule",
+        "context",
+        "paths",
+        "services"
       ]
     }
   }
