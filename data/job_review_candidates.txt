@@ -1,0 +1,35 @@
+- Riyadh Air | طيران الرياض - Senior Manager Program Delivery [discovered] fit=9 ats=82 verdict=SUBMIT loc=
+- Dubai - Apply to Senior Digital Transformation Director - Telecom Job [discovered] fit=8 ats=74 verdict=SUBMIT loc=Dubai, UAE
+- Confidential - Pmo Director [discovered] fit=8 ats=74 verdict=SUBMIT loc=Abu Dhabi, UAE
+- Zand - Head of Project Management [discovered] fit=8 ats=74 verdict=SUBMIT loc=Dubai, United Arab Emirates
+- Thecignagroup - Head of Transformation job in Dubai, United Arab Emirates - Cigna [scored] fit=7 ats=85 verdict=SUBMIT loc=United Arab Emirates
+- Confidential - Senior Digital Transformation Director - Telecom [discovered] fit=7 ats=67 verdict=SUBMIT loc=Dubai, UAE
+- Involvedsolutions - PMO Director - Finance Transformation [scored] fit=7 ats=66 verdict=SUBMIT loc=United Arab Emirates
+- Qiddiya | القدية - Director - Development Financial Planning - 20004770 RES350 [discovered] fit=9 ats=60 verdict=REVIEW loc=Riyadh, Riyadh, Saudi Arabia
+- Confidential - Head of Strategic Transformation & PMO [discovered] fit=8 ats=64 verdict=REVIEW loc=UAE
+- Builtin - Director of Digital Transformation and Operations Excellence - Foodics | Built In [scored] fit=8 ats=60 verdict=REVIEW loc=Saudi Arabia
+- Confidential - Senior Manager Corporate Program Management [discovered] fit=6 ats=68 verdict=REVIEW loc=Dubai, UAE
+- aramco digital - Principal System Integration Solution Architect [discovered] fit=6 ats=64 verdict=REVIEW loc=Dhahran, Eastern, Saudi Arabia
+- Confidential - TAHALUF - Head of Technology [discovered] fit=6 ats=63 verdict=REVIEW loc=Riyadh, Saudi Arabia
+- Confidential - Project Controls Director | Jobs in Abu Dhabi, UAE by KBR [discovered] fit=6 ats=62 verdict=REVIEW loc=Abu Dhabi, UAE
+- Confidential - Director Of Strategic Program [discovered] fit=6 ats=61 verdict=REVIEW loc=Dubai, UAE
+- Hilton - Chief Steward - Waldorf Astoria Doha Lusail [discovered] fit=10 ats=15 verdict=SKIP loc=Doha, DAW, QA
+- Radisson Hotel Group - Director of Laundry [discovered] fit=10 ats=15 verdict=SKIP loc=Doha, DAW, QA
+- Amicorp Group - Head of Digital [discovered] fit=9 ats=84 verdict=SKIP loc=Dubai, Dubai, United Arab Emirates
+- RAKBANK - Vice President – AI Platform Owner [discovered] fit=9 ats=59 verdict=SKIP loc=Dubai, United Arab Emirates
+- Ankura - Senior Director, Risk Advisory. Forensics [discovered] fit=8 ats=70 verdict=SKIP loc=Dubai, Dubai, United Arab Emirates
+- Sully.ai - Head of Engineering, UAE [discovered] fit=8 ats=65 verdict=SKIP loc=Dubai, Dubai, United Arab Emirates
+- Alvarez & Marsal - Director & Senior Director, Public Sector (Infra, KSA) [discovered] fit=8 ats=54 verdict=SKIP loc=Riyadh, Riyadh, Saudi Arabia
+- Stake - Director of Company Operations [scored] fit=8 ats=41 verdict=SKIP loc=Dubai, United Arab Emirates
+- Bupa - Director - Program Management Office (PMO) - Bupa Arabia [scored] fit=8 ats=None verdict=SKIP loc=Saudi Arabia
+- Madison Pearl - Vice President – Risk Management (Financial & Operational Risk) [discovered] fit=7 ats=65 verdict=SKIP loc=Dubai, United Arab Emirates
+- Buro Happold - Design Management Director [discovered] fit=7 ats=57 verdict=SKIP loc=Riyadh, Riyadh, Saudi Arabia
+- Career - VP Technology - KSA [scored] fit=7 ats=56 verdict=SKIP loc=Saudi Arabia
+- Scott Bader - Site Director [discovered] fit=7 ats=53 verdict=SKIP loc=Dubai, United Arab Emirates
+- Goodman Masson Oman - Head of Custody Operations [discovered] fit=7 ats=51 verdict=SKIP loc=Muscat, Masqaţ, Oman
+- FinTop Consulting - Chief Technology Officer [discovered] fit=7 ats=48 verdict=SKIP loc=Dubai, United Arab Emirates
+- Edarabia - Director IT Projects and Portfolio Management - Jobs [scored] fit=7 ats=37 verdict=SKIP loc=Saudi Arabia
+- Aplitrak - PMO Director - Healthcare - Riyadh [scored] fit=7 ats=36 verdict=SKIP loc=Saudi Arabia
+- Yassir - Head of Product [discovered] fit=7 ats=35 verdict=SKIP loc=Dubai, Dubai, United Arab Emirates
+- J&F Holdings - Head of Nursing [discovered] fit=7 ats=12 verdict=SKIP loc=Dubai, United Arab Emirates
+- Confidential - Director, Digital Transformation (Real Estate) [scored] fit=7 ats=None verdict=SKIP loc=Saudi Arabia

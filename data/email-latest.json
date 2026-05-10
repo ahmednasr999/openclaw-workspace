@@ -1,25 +1,61 @@
 {
   "status": "ok",
-  "scan_time": "2026-05-09T20:01:20.853821+02:00",
-  "total_scanned": 45,
+  "scan_time": "2026-05-10T18:00:23.163904+02:00",
+  "total_scanned": 13,
   "by_category": {
-    "interview_invite": 0,
+    "interview_invite": 2,
     "recruiter_reach": 0,
     "application_ack": 0,
     "rejection": 0,
     "assessment": 0,
     "follow_up_needed": 0,
     "job_alert": 0,
-    "other": 45
+    "other": 11
   },
-  "interview_invites": [],
+  "interview_invites": [
+    {
+      "id": "357128",
+      "from": "Rania Ziad <rziad@fsitksa.com>",
+      "subject": "Updated invitation: Ahmed Nasr and Rania Ziad @ Wed May 13, 2026 3pm\r\n - 3:20pm (GMT+3) (ahmednasr999@gmail.com)",
+      "date": "Sun, 10 May 2026 15:32:35 +0000",
+      "unread": true,
+      "priority": "LOW",
+      "score": 0,
+      "pipeline_match": null
+    },
+    {
+      "id": "357129",
+      "from": "Rania Ziad <rziad@fsitksa.com>",
+      "subject": "Updated invitation: Ahmed Nasr and Rania Ziad @ Wed May 13, 2026\r\n 2:50pm - 3:10pm (GMT+3) (ahmednasr999@gmail.com)",
+      "date": "Sun, 10 May 2026 15:33:35 +0000",
+      "unread": true,
+      "priority": "LOW",
+      "score": 0,
+      "pipeline_match": null
+    }
+  ],
   "recruiter_messages": [],
   "application_acks": [],
   "rejections": [],
   "assessments": [],
   "follow_ups_needed": [],
   "job_alerts": [],
-  "actionable_count": 0,
-  "hot_alerts": [],
+  "actionable_count": 2,
+  "hot_alerts": [
+    {
+      "id": "357128",
+      "subject": "Updated invitation: Ahmed Nasr and Rania Ziad @ Wed May 13, 2026 3pm\r\n - 3:20pm (GMT+3) (ahmednasr999@gmail.com)",
+      "from": "Rania Ziad <rziad@fsitksa.com>",
+      "priority": "LOW",
+      "pipeline_match": null
+    },
+    {
+      "id": "357129",
+      "subject": "Updated invitation: Ahmed Nasr and Rania Ziad @ Wed May 13, 2026\r\n 2:50pm - 3:10pm (GMT+3) (ahmednasr999@gmail.com)",
+      "from": "Rania Ziad <rziad@fsitksa.com>",
+      "priority": "LOW",
+      "pipeline_match": null
+    }
+  ],
   "signals": []
 }

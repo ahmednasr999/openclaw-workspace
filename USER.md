@@ -61,6 +61,7 @@ Executive role evaluation:
 - Salary is the overriding decision factor for GCC executive roles. Do not treat other hard-no filters as primary unless salary is acceptable or Ahmed explicitly adds them.
 - When roles are otherwise similar, prioritize the employer that pays more salary over employer type preferences.
 - Reporting line is not a hard filter if salary is high enough; roles can report below CEO/Board/C-level/Regional GM when compensation justifies it.
+- Work arrangement is not a hard filter if salary is high enough; onsite, hybrid, or remote can be acceptable when compensation justifies it.
 - Minimum monthly total-package baseline for serious GCC executive-role consideration: UAE AED 55,000; Saudi about SAR 56,000; Qatar about QAR 55,000; Oman about OMR 5,750. Optional equivalents: Bahrain about BHD 5,650; Kuwait about KWD 4,600.
 
 If Ahmed asks repeatedly for the same workflow, the system failed and should be codified.

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-09T07:00:19.725Z",
+  "updatedAt": "2026-05-10T13:06:25.730Z",
   "entries": {
     "memory:memory/archives/2026-03-07.md:29:56": {
       "key": "memory:memory/archives/2026-03-07.md:29:56",
@@ -2055,18 +2055,20 @@
       "endLine": 83,
       "source": "memory",
       "snippet": "- Promoted v2 drafts into live `SOUL.md`, `USER.md`, `AGENTS.md`, and `TOOLS.md`. - Main cleanup: removed stale GPT-5.4 references from live core operating files, aligned current default model to GPT-5.5, removed em dash characters, removed the stale Mission Control task-logging contradiction, and made alert classification/body-read rules explicit. - Preserved key non-negotiables: no email without approval, no public/external writes without approval path, model-switch disclosure, gateway safety, JobZoom protected full-scan lane, direct Notion/credential-first behavior, verify-before-done, and no partial-fix stopping. - Verification after promotion: `SOUL.md` 792 words, `USER.md` 597 words, `",
-      "recallCount": 2,
+      "recallCount": 3,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 2,
+      "totalScore": 3,
       "maxScore": 1,
       "firstRecalledAt": "2026-04-27T19:25:00.825Z",
-      "lastRecalledAt": "2026-04-27T19:25:55.858Z",
+      "lastRecalledAt": "2026-05-10T13:06:25.730Z",
       "queryHashes": [
-        "cde85b823f86"
+        "cde85b823f86",
+        "94c4085ae3f8"
       ],
       "recallDays": [
-        "2026-04-27"
+        "2026-04-27",
+        "2026-05-10"
       ],
       "conceptTags": [
         "gateway",
@@ -2117,13 +2119,13 @@
       "endLine": 10,
       "source": "memory",
       "snippet": "## 2026-04-27 06:42 Cairo - JobZoom incident and report logic updates - JobZoom daily run was delayed, but completed successfully. Root cause of the visible delay was OpenClaw gateway memory pressure/OOM around 05:22 Cairo, followed by systemd restart, not a JobZoom logic failure. - Final JobZoom 2026-04-27 results: 150 searches, 150 successful, 0 failed, 341 eligible jobs after exclusions, 265 after dedup, 62 after Pass 1, 2 final AI matches at 70+, 2 CVs generated, report delivered successfully. - Delivery IDs from cron summary: Telegram summary 8792, PDF 8793, CV ZIP 8794. - JobZoom matched roles on 2026-04-27: OMPAY Program Manager in Oman, score 83; Johnson Controls Field Remediation",
-      "recallCount": 10,
+      "recallCount": 11,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 10,
+      "totalScore": 11,
       "maxScore": 1,
       "firstRecalledAt": "2026-04-28T06:07:07.261Z",
-      "lastRecalledAt": "2026-05-07T05:21:49.283Z",
+      "lastRecalledAt": "2026-05-10T11:53:37.439Z",
       "queryHashes": [
         "73675e2f27f1",
         "8db888f6c422",
@@ -2134,7 +2136,8 @@
         "ae92f28623d7",
         "9dd97a05c915",
         "693875a3b6f1",
-        "83f965b9faa6"
+        "83f965b9faa6",
+        "3588eba33b1e"
       ],
       "recallDays": [
         "2026-04-28",
@@ -2144,7 +2147,8 @@
         "2026-05-03",
         "2026-05-05",
         "2026-05-06",
-        "2026-05-07"
+        "2026-05-07",
+        "2026-05-10"
       ],
       "conceptTags": [
         "gateway",
@@ -2453,26 +2457,29 @@
       "endLine": 64,
       "source": "memory",
       "snippet": "- Patched `/root/.openclaw/workspace-jobzoom/scripts/daily_run.py` for better scoring observability: - gateway calls now record `elapsed_ms` in `gpt_api_calls.note`, including failures, - batch scoring logs attempt start, timeout budget, per-attempt duration, total batch duration, scores, and fallback duration. - Verified with `python3 -m py_compile /root/.openclaw/workspace-jobzoom/scripts/daily_run.py`. - Path drift task: confirmed `/root/.openclaw/workspace-jobzoom/scripts/jobs-source-linkedin-jobspy.py` is a symlink to `/root/.openclaw/workspace/scripts/jobs-source-linkedin-jobspy.py`, and `daily_run.py` calls `preflight_jobspy_path()` before scraping. Marked the drift guard task res",
-      "recallCount": 5,
+      "recallCount": 7,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 5,
+      "totalScore": 7,
       "maxScore": 1,
       "firstRecalledAt": "2026-05-01T02:39:36.670Z",
-      "lastRecalledAt": "2026-05-07T05:21:49.283Z",
+      "lastRecalledAt": "2026-05-10T11:53:37.439Z",
       "queryHashes": [
         "62d1011768ae",
         "97d8d9266e77",
         "02526ea543a9",
         "9dd97a05c915",
-        "83f965b9faa6"
+        "83f965b9faa6",
+        "ce9564d11535",
+        "3588eba33b1e"
       ],
       "recallDays": [
         "2026-05-01",
         "2026-05-02",
         "2026-05-03",
         "2026-05-05",
-        "2026-05-07"
+        "2026-05-07",
+        "2026-05-10"
       ],
       "conceptTags": [
         "gateway",
@@ -3074,6 +3081,131 @@
         "context",
         "paths",
         "services"
+      ]
+    },
+    "memory:memory/archive/2026-03/2026-03-27.md:40:75": {
+      "key": "memory:memory/archive/2026-03/2026-03-27.md:40:75",
+      "path": "memory/archive/2026-03/2026-03-27.md",
+      "startLine": 40,
+      "endLine": 75,
+      "source": "memory",
+      "snippet": "- pam-telegram reads: `data/briefing-data.json` or `data/pipeline-status.json` - Jobs summary: `data/jobs-summary.json` (325KB, updated by jobs-review.py) ## Action Items Outstanding 1. Investigate Content Agent: Weekly Review 600s timeout (cron 0be247a8..., runs Fri 10 AM) 2. Fix outreach-agent repeating failure 3. Verify NASR Doctor uses 180s timeout from tomorrow's run --- ## C-Suite Reorganization (12:00 PM - 6:42 PM Cairo) ### Organizational Restructure — Finalized Ahmed Nasr (Chairman) established a C-suite model for OpenClaw: - Ahmed = Owner/Chairman (strategic direction only) - Nasr (this AI) = CEO / Chief of Staff (coordinates everything) - HR Agent = Jobs pipeline, CVs, applic",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 2,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-10T06:00:48.023Z",
+      "lastRecalledAt": "2026-05-10T06:01:13.057Z",
+      "queryHashes": [
+        "6d216e796c49",
+        "4ddb908e3884"
+      ],
+      "recallDays": [
+        "2026-05-10"
+      ],
+      "conceptTags": [
+        "pam-telegram",
+        "data/briefing-data.json",
+        "data/pipeline-status.json",
+        "data/jobs-summary.json",
+        "jobs-review.py",
+        "outreach-agent",
+        "c-suite",
+        "owner/chairman"
+      ]
+    },
+    "memory:memory/archive/2026-04/2026-04-24.md:36:51": {
+      "key": "memory:memory/archive/2026-04/2026-04-24.md:36:51",
+      "path": "memory/archive/2026-04/2026-04-24.md",
+      "startLine": 36,
+      "endLine": 51,
+      "source": "memory",
+      "snippet": "- Extracted content: Peter Steinberger (@steipete), tweet text “My favorite security advisories.” Media image text: “Steps To Reproduce: 1. Enable hooks.gmail.allowUnsafeExternalContent=true”. Timestamp 12:11 PM · Apr 23, 2026. Metrics at fetch: 56.3K views, 24 replies, 4 reposts, 433 likes, 53 bookmarks. ### JobZoom 0-live-jobs investigation - 2026-04-24 JobZoom run did not find 0 raw jobs. It found/scored many intermediates: 341 filtered raw jobs, 311 deduped/new jobs, 91 Pass1/all-scored jobs, 0 live matches, 3 shadow jobs. - Shadow file: `/root/.openclaw/workspace-jobzoom/reports/shadow/jobzoom-shadow-2026-04-24.json`. - Shadow verdicts were keyword fallback around 60-63; live threshold",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-10T11:53:37.439Z",
+      "lastRecalledAt": "2026-05-10T11:53:37.439Z",
+      "queryHashes": [
+        "3588eba33b1e"
+      ],
+      "recallDays": [
+        "2026-05-10"
+      ],
+      "conceptTags": [
+        "56.3k",
+        "0-live-jobs",
+        "found/scored",
+        "deduped/new",
+        "pass1/all-scored",
+        "60-63",
+        "extracted",
+        "content"
+      ]
+    },
+    "memory:memory/2026-05-05.md:11:20": {
+      "key": "memory:memory/2026-05-05.md:11:20",
+      "path": "memory/2026-05-05.md",
+      "startLine": 11,
+      "endLine": 20,
+      "source": "memory",
+      "snippet": "- Ahmed-Mac remains paired but disconnected, so file-transfer end-to-end smoke test is still pending. ## 2026-05-05 - JobZoom scoring recovery and final artifact delivery - JobZoom 2026-05-05 initially looked like 0 matches, but user-surfaced warning showed AI scoring returned non-JSON parse errors and fell back to keyword scoring. Treat this as materially degraded output, not a clean weak-market day. - Root cause found: oversized JobZoom scoring prompt caused the OpenClaw route to return LCM/file-reference/runtime-unavailable text while still HTTP 200. Lesson: HTTP 200/model-call success is not proof of usable scoring. Validate parseable JSON and report degraded scoring explicitly. - Patc",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-10T11:53:37.439Z",
+      "lastRecalledAt": "2026-05-10T11:53:37.439Z",
+      "queryHashes": [
+        "3588eba33b1e"
+      ],
+      "recallDays": [
+        "2026-05-10"
+      ],
+      "conceptTags": [
+        "ahmed-mac",
+        "file-transfer",
+        "end-to-end",
+        "user-surfaced",
+        "non-json",
+        "weak-market",
+        "200/model-call",
+        "ahmed"
+      ]
+    },
+    "memory:memory/2026-04-27.md:13:17": {
+      "key": "memory:memory/2026-04-27.md:13:17",
+      "path": "memory/2026-04-27.md",
+      "startLine": 13,
+      "endLine": 17,
+      "source": "memory",
+      "snippet": "- Funnel wording was corrected conceptually so future PDFs distinguish true scraped count from eligible jobs: Jobs scraped, Eligible after exclusions, After dedup, After Pass 1, After Pass 2. For 2026-04-27 this maps to roughly 359 scraped unique, 341 eligible after exclusions, 265 after dedup, 62 after Pass 1, 2 after Pass 2. - JobZoom explainability improvements were requested and reported as completed for future PDFs: AI score bands (80+, 70-79, 60-69, 50-59, <50) and a “Near Misses - Watchlist 60-69” top 5 section. Final CV generation remains 70+ only. - User asked for opinion on whole JobZoom logic. Assessment: core logic is solid, full protected scan plus layered funnel is right, but r",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-10T13:06:25.730Z",
+      "lastRecalledAt": "2026-05-10T13:06:25.730Z",
+      "queryHashes": [
+        "94c4085ae3f8"
+      ],
+      "recallDays": [
+        "2026-05-10"
+      ],
+      "conceptTags": [
+        "70-79",
+        "60-69",
+        "50-59",
+        "funnel",
+        "wording",
+        "was",
+        "corrected",
+        "conceptually"
       ]
     }
   }

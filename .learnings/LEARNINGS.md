@@ -1329,3 +1329,25 @@ Use first-class tools or safer commands to avoid unnecessary shell approval prom
 - Tags: hr, approvals, protected-lane
 
 ---
+## [LRN-20260510-SILENT-HEALTHCHECK-DM] correction
+
+**Logged**: 2026-05-10T12:05:00+03:00
+**Priority**: medium
+**Status**: active
+**Area**: communication/healthcheck
+
+### Summary
+Ahmed replied after a silent health-check/reminder run, and the assistant needed to clarify that silence meant the checks were OK.
+
+### Details
+For background system-event checks that explicitly allow silence on OK, use `NO_REPLY` only when no user-visible message is needed. If Ahmed follows up or the runtime asks to relay prior command output, answer in normal language and explain the result briefly rather than repeating internal silent behavior.
+
+### Suggested Action
+Keep health-check wake handling quiet on OK, but when Ahmed asks "yes?" or similar after a silent check, respond with the reason for silence and the relevant OK evidence.
+
+### Metadata
+- Source: user_followup
+- Related Files: HEARTBEAT.md, SELF_IMPROVEMENT_REMINDER.md
+- Tags: healthcheck, no_reply, telegram, communication
+
+---

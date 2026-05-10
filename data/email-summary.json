@@ -2,58 +2,136 @@
   "meta": {
     "agent": "email-agent",
     "version": "3.0.0",
-    "generated_at": "2026-05-09T20:01:29.674552+02:00",
-    "duration_ms": 75297,
+    "generated_at": "2026-05-10T18:00:47.046609+02:00",
+    "duration_ms": 31892,
     "ttl_hours": 4,
     "status": "success",
     "error": null,
-    "run_id": "0ec9245b",
+    "run_id": "596b7306",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
     "status": "ok",
-    "scan_time": "2026-05-09T20:01:20.853821+02:00",
-    "total_scanned": 45,
+    "scan_time": "2026-05-10T18:00:23.163904+02:00",
+    "total_scanned": 13,
     "by_category": {
-      "interview_invite": 0,
+      "interview_invite": 2,
       "recruiter_reach": 0,
       "application_ack": 0,
       "rejection": 0,
       "assessment": 0,
       "follow_up_needed": 0,
       "job_alert": 0,
-      "other": 45
+      "other": 11
     },
-    "interview_invites": [],
+    "interview_invites": [
+      {
+        "id": "357128",
+        "from": "Rania Ziad <rziad@fsitksa.com>",
+        "subject": "Updated invitation: Ahmed Nasr and Rania Ziad @ Wed May 13, 2026 3pm\r\n - 3:20pm (GMT+3) (ahmednasr999@gmail.com)",
+        "date": "Sun, 10 May 2026 15:32:35 +0000",
+        "unread": true,
+        "priority": "LOW",
+        "score": 0,
+        "pipeline_match": null
+      },
+      {
+        "id": "357129",
+        "from": "Rania Ziad <rziad@fsitksa.com>",
+        "subject": "Updated invitation: Ahmed Nasr and Rania Ziad @ Wed May 13, 2026\r\n 2:50pm - 3:10pm (GMT+3) (ahmednasr999@gmail.com)",
+        "date": "Sun, 10 May 2026 15:33:35 +0000",
+        "unread": true,
+        "priority": "LOW",
+        "score": 0,
+        "pipeline_match": null
+      }
+    ],
     "recruiter_messages": [],
     "application_acks": [],
     "rejections": [],
     "assessments": [],
     "follow_ups_needed": [],
     "job_alerts": [],
-    "actionable_count": 0,
-    "hot_alerts": [],
+    "actionable_count": 2,
+    "hot_alerts": [
+      {
+        "id": "357128",
+        "subject": "Updated invitation: Ahmed Nasr and Rania Ziad @ Wed May 13, 2026 3pm\r\n - 3:20pm (GMT+3) (ahmednasr999@gmail.com)",
+        "from": "Rania Ziad <rziad@fsitksa.com>",
+        "priority": "LOW",
+        "pipeline_match": null
+      },
+      {
+        "id": "357129",
+        "subject": "Updated invitation: Ahmed Nasr and Rania Ziad @ Wed May 13, 2026\r\n 2:50pm - 3:10pm (GMT+3) (ahmednasr999@gmail.com)",
+        "from": "Rania Ziad <rziad@fsitksa.com>",
+        "priority": "LOW",
+        "pipeline_match": null
+      }
+    ],
     "signals": [],
     "llm_analysis": {
-      "actionable_emails": [],
+      "actionable_emails": [
+        {
+          "id": "357128",
+          "subject": "Updated invitation: Ahmed Nasr and Rania Ziad @ Wed May 13, 2026 3pm\r\n - 3:20pm (GMT+3) (ahmednasr999@gmail.com)",
+          "from": "Rania Ziad <rziad@fsitksa.com>",
+          "date": "Sun, 10 May 2026 15:32:35 +0000",
+          "category": "interview_invite",
+          "urgency": "low",
+          "intent": "The sender is notifying Ahmed of an updated FSIT interview time via Google Meet.",
+          "action": "read_and_file",
+          "response_deadline": "when convenient",
+          "notes": "Likely superseded by newer update one minute later."
+        },
+        {
+          "id": "357129",
+          "subject": "Updated invitation: Ahmed Nasr and Rania Ziad @ Wed May 13, 2026\r\n 2:50pm - 3:10pm (GMT+3) (ahmednasr999@gmail.com)",
+          "from": "Rania Ziad <rziad@fsitksa.com>",
+          "date": "Sun, 10 May 2026 15:33:35 +0000",
+          "category": "interview_invite",
+          "urgency": "critical",
+          "intent": "The sender is confirming an updated FSIT interview slot with Google Meet details.",
+          "action": "respond",
+          "response_deadline": "24h",
+          "notes": "Confirm attendance and prepare for FSIT interview."
+        }
+      ],
       "summary": {
-        "total_actionable": 0,
-        "critical_count": 0,
-        "requires_interview_prep": false,
+        "total_actionable": 2,
+        "critical_count": 1,
+        "requires_interview_prep": true,
         "requires_assessment": false,
         "recruiter_top_opportunities": [],
-        "top_priority": null,
-        "daily_focus": "No actionable interview, assessment, follow-up, or recruiter emails were provided today."
+        "top_priority": "357129",
+        "daily_focus": "Confirm the latest FSIT interview slot and prepare targeted interview talking points today."
       }
     }
   },
   "kpi": {
-    "emails_processed": 45,
-    "actionable": 0,
-    "interviews_detected": 0,
+    "emails_processed": 13,
+    "actionable": 2,
+    "interviews_detected": 2,
     "recruiter_messages": 0,
-    "unread_actionable": 0
+    "unread_actionable": 2
   },
-  "recommendations": []
+  "recommendations": [
+    {
+      "id": "rec-596b7306-0",
+      "action": "respond_immediately",
+      "target": "2 interview invite(s)",
+      "reason": "Interview invitations require prompt response",
+      "urgency": "critical",
+      "timestamp": "2026-05-10T18:00:47.046481+02:00"
+    },
+    {
+      "id": "rec-596b7306-1",
+      "action": "check_inbox",
+      "target": "2 unread actionable email(s)",
+      "reason": "Unread emails need attention",
+      "urgency": "high",
+      "timestamp": "2026-05-10T18:00:47.046498+02:00"
+    }
+  ]
 }

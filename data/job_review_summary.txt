@@ -1,0 +1,12 @@
+active_apps=44
+interviews=4
+closed_rejected_expired=4
+total_jobs_db=2544
+top_locations=Dubai, United Arab Emirates (14); Dubai, Dubai, United Arab Emirates (4); Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates (4); Riyadh, Riyadh, Saudi Arabia (3); Abu Dhabi Emirate, United Arab Emirates (3)
+multi_active=Confidential (4); Confidential Jobs (2); Miral Experiences (2)
+multi_db_top=Unknown (231); Confidential (169); TALENTMATE (49); First Abu Dhabi Bank (FAB) (39); WSP in the Middle East (23); QNB Group (20); Foreground. (17); Confidential Government (16); Al-Futtaim (14); Confidential Careers (12); Parsons Corporation (12); Salt (12)
+stale_count=37
+oldest_stale=48d Ranger AI - Director of Operations: Enterprise Delivery + RevOps; 47d Miral Experiences - Business Engagement Director of Data & AI; 47d Meinhardt MENA - Senior Project Manager/ Project Director– Design Delivery (Lead Design Consultancy); 47d GG Selection - Director, Strategy & Transformation; 47d Dow Jones - Director, Business Operations; 47d CMP Digital Infrastructure - Director of Program Management; 45d Valkyrie People Consulting - Chief Digital Officer; 41d Otech (Oman Data Park) - Senior Manager Strategy Planning & Process Development; 41d Miral Experiences - Director Analytics Business Engagement; 41d Involved Solutions - Head of Transformation and Strategy; 41d Emirates Investment Authority - Senior Manager, Business Solutions; 41d Capco - Senior Manager/Director - Data Lead
+cv_archive_files=58
+cv_pdfs=29
+cv_pdfs_last_7d=0

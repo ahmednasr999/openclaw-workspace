@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-05-10T05:00:33.791164+02:00",
-    "duration_ms": 31766,
+    "generated_at": "2026-05-10T17:00:35.577052+02:00",
+    "duration_ms": 33305,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "46dbb652",
+    "run_id": "d1c7ef50",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -264,23 +264,22 @@
       "search_title": "Head of IT"
     },
     {
-      "id": "indeed-in-32f692fac42cc9f0",
+      "id": "indeed-in-7bd2594c617efb3a",
       "source": "indeed",
-      "title": "Executive Director - HRBP",
-      "company": "Qiddiya Investment Company",
+      "title": "Project Director",
+      "company": "Parsons",
       "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=32f692fac42cc9f0",
-      "posted": "2026-05-07",
+      "url": "https://sa.indeed.com/viewjob?jk=7bd2594c617efb3a",
+      "posted": "2026-05-10",
       "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 26,
+      "domain_match": true,
+      "keyword_score": 20,
       "match_keywords": [
-        "executive",
         "director",
         "leadership",
         "growth"
       ],
-      "raw_snippet": "We are seeking an Executive Director \u2013 HR Business Partner (HRBP) to act as a strategic advisor to the Development side of the business. Reporting directly to the CHRO, this role will lead the full HR agenda across a complex, fast\\-paced and high\\-growth environment.\n\n\nYou will partner closely with executive leadership on a broad spectrum of people \\& business issues to enable delivery of large\\-scale development programs, ensuring the organization is structured, resourced, and equipped to meet ",
+      "raw_snippet": "In a world of possibilities, pursue one with endless opportunities. Imagine Next!  \n\n\nAt Parsons, you can imagine a career where you thrive, work with exceptional people, and be yourself. Guided by our leadership vision of valuing people, embracing agility, and fostering growth, we cultivate an innovative culture that empowers you to achieve your full potential. Unleash your talent and redefine what\u2019s possible. **Job Description:**\n\n\nParsons is looking for an amazingly talented and proactive **P",
       "relevant": true,
       "filter_reason": null,
       "search_country": "Saudi Arabia",
@@ -315,7 +314,7 @@
   ],
   "kpi": {
     "searches_run": 20,
-    "results_per_search": 2.95,
+    "results_per_search": 2.85,
     "unique_jobs": 13,
     "errors": 8
   },

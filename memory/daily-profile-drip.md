@@ -49,3 +49,8 @@ Note: Ahmed clarified that salary is the overriding decision factor. Do not inve
 Question: What is the lowest acceptable reporting line for a GCC role: CEO/Board only, C-level, Regional GM, or any if salary is high enough?
 Raw answer: Any if salary is high enough.
 Note: Ahmed clarified that reporting line should not be treated as a hard filter when salary is high enough.
+
+### 2026-05-10
+Question: For GCC roles, is remote or hybrid acceptable if salary clears your threshold?
+Raw answer: It’s all about salary
+Note: Ahmed clarified again that work arrangement should not override salary. Treat onsite, hybrid, or remote as acceptable if compensation is strong enough unless he later sets a specific constraint.
