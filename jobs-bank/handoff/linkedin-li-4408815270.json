@@ -1,0 +1,24 @@
+{
+  "job_id": "linkedin-li-4408815270",
+  "source": "linkedin",
+  "company": "edari",
+  "role": "Manager - IT PMO",
+  "location": "Dubai, UAE",
+  "url": "https://www.linkedin.com/jobs/view/4408815270/",
+  "status": "cv_ready",
+  "ats_score": 84,
+  "recommendation": "HOLD - tactical PMO contract option unless Ahmed wants this lane",
+  "cv": {
+    "path": "cvs/Ahmed Nasr - Manager - IT PMO - edari.pdf",
+    "html_path": "cvs/Ahmed Nasr - Manager - IT PMO - edari.html",
+    "github_url": "https://github.com/ahmednasr999/openclaw-workspace/blob/master/cvs/Ahmed%20Nasr%20-%20Manager%20-%20IT%20PMO%20-%20edari.pdf",
+    "ats_score": 84,
+    "tailoring_notes": "Positioned Ahmed around enterprise PMO, large-scale technology programs, governance, risk/dependency management, senior stakeholder reporting, SAP/Salesforce implementations, and GCC transformation delivery. Flagged seniority overmatch, real estate preference, and M&A/tool gaps.",
+    "pending_review": false
+  },
+  "nasr_review": {
+    "approved": false,
+    "next_action": "Ahmed to decide whether to apply via LinkedIn"
+  },
+  "updated_at": "2026-05-10T16:06:00+03:00"
+}
