@@ -1,11 +1,11 @@
 {
-  "messages": 45610,
-  "unseen": 31159,
-  "uidnext": 357019,
+  "messages": 45654,
+  "unseen": 31158,
+  "uidnext": 357063,
   "uidvalidity": 3,
-  "checked_at": "2026-05-09T15:01:12.976740+03:00",
+  "checked_at": "2026-05-09T21:01:31.111046+03:00",
   "decision": "run",
   "reason": "uidnext changed",
-  "last_seen_uid": 357017,
-  "last_email_success": "2026-05-09T14:00:58.284227+02:00"
+  "last_seen_uid": 357062,
+  "last_email_success": "2026-05-09T20:01:20.483284+02:00"
 }

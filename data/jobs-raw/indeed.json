@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-05-09T17:00:36.775575+02:00",
-    "duration_ms": 35284,
+    "generated_at": "2026-05-10T05:00:33.791164+02:00",
+    "duration_ms": 31766,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "50395bf6",
+    "run_id": "46dbb652",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -287,55 +287,6 @@
       "search_title": "Program Director"
     },
     {
-      "id": "indeed-in-b9dd1679bc94af62",
-      "source": "indeed",
-      "title": "Adobe DXP Director - KSA",
-      "company": "Globant",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=b9dd1679bc94af62",
-      "posted": "2026-05-06",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 26,
-      "match_keywords": [
-        "enterprise",
-        "director",
-        "scaling",
-        "ksa",
-        "architecture"
-      ],
-      "raw_snippet": "At Globant, we are working to make the world a better place, one step at a time. We enhance business development and enterprise solutions to prepare them for a digital future. With a diverse and talented team present in more than 30 countries, we are strategic partners to leading global companies in their business process transformation.  \n\n  \n\n  \n\n\n\n**Role Overview:**\n\nWe are looking for a **DXP Director** to lead the architecture, implementation, and scaling of Adobe\\-based Digital Experience ",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Director Digital Transformation"
-    },
-    {
-      "id": "indeed-in-db8b44c47ac864cc",
-      "source": "indeed",
-      "title": "Director - Revenue Cycle Management (Healthcare Industry Exp) - QHC0005",
-      "company": "Qiddiya Investment Company",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=db8b44c47ac864cc",
-      "posted": "2026-05-06",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 33,
-      "match_keywords": [
-        "healthcare",
-        "ai",
-        "enterprise",
-        "director",
-        "riyadh",
-        "ksa"
-      ],
-      "raw_snippet": "**Director \u2013 Revenue Cycle Management (Healthcare Industry Exp)**\n\n**General Job Information**\n\n* **Job Title:** Director, Revenue Cycle Management\n* **Department:** Finance\n* **Reporting Line:** TBC\n* **Location:** King Faisal Specialized Hospital / Riyadh, KSA\n* **Job Grade:** TBC\n\n**Role Summary**\n\n\nThe Revenue Cycle Director leads the enterprise\\-wide revenue cycle function across the Medical City ecosystem, driving revenue optimization, operational efficiency, payer strategy, and compliance",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Director Digital Transformation"
-    },
-    {
       "id": "indeed-in-f0a53cdcf7a320c2",
       "source": "indeed",
       "title": "Head of Operations - Lifestyle Caf\u00e9 Group",
@@ -360,62 +311,13 @@
       "filter_reason": null,
       "search_country": "Saudi Arabia",
       "search_title": "Head of IT"
-    },
-    {
-      "id": "indeed-in-2bc07fcef341dc82",
-      "source": "indeed",
-      "title": "Director Investment & Business Development - Saudi National",
-      "company": "Omada Rail Systems",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=2bc07fcef341dc82",
-      "posted": "2026-05-06",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 30,
-      "match_keywords": [
-        "ai",
-        "infrastructure",
-        "director",
-        "saudi",
-        "riyadh",
-        "architecture"
-      ],
-      "raw_snippet": "* **Permanent Contract**\n* **Director**\n* **Riyadh**\n* **HR Generalists**\n\n  \n**About Us**\n\n  \n\nEgis is an international player active in architecture, consulting, construction engineering and mobility services. We create and operate intelligent infrastructures and buildings that respond to the climate emergency and contribute to more balanced, sustainable and resilient territorial development. Operating in 100 countries, Egis puts the expertise of its 19,500 employees at the service of its clie",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "IT Director"
-    },
-    {
-      "id": "indeed-in-a4bf0e45f2d70974",
-      "source": "indeed",
-      "title": "Business Development Director",
-      "company": "Omada Rail Systems",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=a4bf0e45f2d70974",
-      "posted": "2026-05-06",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 26,
-      "match_keywords": [
-        "ai",
-        "infrastructure",
-        "director",
-        "riyadh",
-        "architecture"
-      ],
-      "raw_snippet": "* **Permanent Contract**\n* **Director**\n* **Riyadh**\n* **Technical Engineering**\n\n  \n**About Us**\n\n  \n\nEgis is an international player active in architecture, consulting, construction engineering and mobility services. We create and operate intelligent infrastructures and buildings that respond to the climate emergency and contribute to more balanced, sustainable and resilient territorial development. Operating in 100 countries, Egis puts the expertise of its 19,500 employees at the service of i",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "IT Director"
     }
   ],
   "kpi": {
     "searches_run": 20,
-    "results_per_search": 3.4,
-    "unique_jobs": 17,
-    "errors": 7
+    "results_per_search": 2.95,
+    "unique_jobs": 13,
+    "errors": 8
   },
   "recommendations": []
 }
