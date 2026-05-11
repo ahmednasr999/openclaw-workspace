@@ -499,13 +499,23 @@ def get_priority(score):
 
 
 def is_hot_email(subject, from_addr, body="", categories=None, score=0):
-    """Check if email should trigger immediate Telegram alert."""
+    """Check if email should trigger immediate Telegram alert.
+
+    Production callers pass precomputed categories/score. Tests and small
+    scripts may call this helper directly, so derive them when omitted.
+    """
     if is_noise_sender(from_addr) or is_job_alert(subject, from_addr, body):
         return False
-    categories = categories or []
+    if categories is None:
+        categories = categorize_email(subject, from_addr, body)
+    if not score:
+        score, _ = score_email(subject, from_addr, body)
     if "interview_invite" in categories or "assessment" in categories:
         return True
     if "follow_up_needed" in categories and score >= PRIORITY_THRESHOLDS["HIGH"]:
+        return True
+    subject_text = subject or ""
+    if matches_patterns(subject_text, [r"\boffer\b"]) and has_hiring_context(subject, from_addr, body):
         return True
     return False
 
@@ -549,12 +559,18 @@ def categorize_email(subject, from_addr, body=""):
     if is_job_alert(subject, from_addr, body):
         return ["job_alert"]
     
+    domain = extract_domain(from_addr)
+
     if has_interview_evidence(subject, from_addr, body):
         categories.append("interview_invite")
-    elif hiring_context and matches_patterns(text, INTERVIEW_PATTERNS) and has_interview_evidence(subject, from_addr, body):
+    elif hiring_context and matches_patterns(text, INTERVIEW_PATTERNS) and (
+        pipeline_company or is_recruiter_domain(domain)
+    ):
+        # Pipeline/recruiter messages about next stage / next round are actionable
+        # even before a calendar invite appears. Keep this gated by hiring context
+        # to avoid promoting newsletters or job-board alerts.
         categories.append("interview_invite")
-    
-    domain = extract_domain(from_addr)
+
     if is_recruiter_domain(domain) and not is_linkedin_noise(subject, from_addr):
         categories.append("recruiter_reach")
     
