@@ -2259,3 +2259,11 @@
 {"agent": "email-agent", "run_id": "640ac3fd", "started": "2026-05-10T16:00:43.861001+02:00", "duration_ms": 12970, "status": "success", "records": 15, "error": null}
 {"agent": "jobs-source-indeed", "run_id": "d1c7ef50", "started": "2026-05-10T17:00:35.577714+02:00", "duration_ms": 33306, "status": "success", "records": 13, "error": null}
 {"agent": "email-agent", "run_id": "596b7306", "started": "2026-05-10T18:00:47.047076+02:00", "duration_ms": 31892, "status": "success", "records": 15, "error": null}
+{"agent": "jobs-source-indeed", "run_id": "2bec708e", "started": "2026-05-10T19:00:34.667527+02:00", "duration_ms": 32879, "status": "success", "records": 13, "error": null}
+{"agent": "email-agent", "run_id": "862d487d", "started": "2026-05-10T20:00:28.310182+02:00", "duration_ms": 12216, "status": "success", "records": 15, "error": null}
+{"agent": "jobs-source-indeed", "run_id": "d60227ee", "started": "2026-05-10T21:00:34.090962+02:00", "duration_ms": 31799, "status": "success", "records": 13, "error": null}
+{"agent": "jobs-source-indeed", "run_id": "9292092b", "started": "2026-05-10T23:00:33.144554+02:00", "duration_ms": 31373, "status": "success", "records": 13, "error": null}
+{"agent": "jobs-source-indeed", "run_id": "a3e5746a", "started": "2026-05-11T01:00:33.791393+02:00", "duration_ms": 31434, "status": "success", "records": 12, "error": null}
+{"agent": "jobs-source-indeed", "run_id": "6d4d31af", "started": "2026-05-11T03:00:32.305935+02:00", "duration_ms": 30742, "status": "success", "records": 12, "error": null}
+{"agent": "jobs-source-linkedin-jobspy", "run_id": "f6542a87", "started": "2026-05-11T04:21:43.058611+02:00", "duration_ms": 1284114, "status": "success", "records": 430, "error": null}
+{"agent": "jobs-source-indeed", "run_id": "8f52fd1b", "started": "2026-05-11T05:00:33.828479+02:00", "duration_ms": 31176, "status": "success", "records": 12, "error": null}

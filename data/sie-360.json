@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-09T22:50:08.683807+00:00",
+  "generated": "2026-05-10T22:50:12.424559+00:00",
   "health_score": 80,
   "summary": {
     "ok": 4,
@@ -8,17 +8,17 @@
   },
   "workspace": {
     "root_files": 95,
-    "disk_percent": 59,
-    "disk_used": "57G",
+    "disk_percent": 65,
+    "disk_used": "62G",
     "disk_total": "96G",
     "ram_total": "7.8Gi",
-    "ram_used": "1.6Gi",
+    "ram_used": "2.5Gi",
     "large_files": [
       "/root/.openclaw/agents/main/qmd/xdg-cache/qmd/index.sqlite",
       "/root/.openclaw/agents/main/sessions/sessions.json.bak.1776877462456",
       "/root/.openclaw/agents/main/sessions/missing-file-registry-cleanup-20260411T125530Z/manifest.json",
-      "/root/.openclaw/agents/main/sessions/972f33e7-b01d-4b74-9ff4-1de013943832.trajectory.jsonl",
       "/root/.openclaw/agents/main/sessions/dbb01869-e168-4d7c-b1d7-3cb66563eed4.jsonl.reset.2026-05-01T01-01-37.939Z",
+      "/root/.openclaw/agents/main/sessions/002780b8-6326-41f5-8930-04bbec6e6fe2.trajectory.jsonl",
       "/root/.openclaw/agents/main/sessions/orphan-archive-20260411T125235Z/22c099e1-cc21-4575-b9f1-b5f2b7c3505f.jsonl",
       "/root/.openclaw/agents/main/sessions/15f2051e-da84-42be-9324-088e3d84d6d8.jsonl.reset.2026-04-17T15-01-06.970Z",
       "/root/.openclaw/agents/main/sessions/c268cdda-e715-4949-97a1-eb0d41b538f6.jsonl.bak-154233-1777659607600",
@@ -113,6 +113,7 @@
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-04-26_070250.db",
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-05-03_071205.db",
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-04-19_070307.db",
+      "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-05-10_070159.db",
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-04-28_070050.db",
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-04-21_070025.db",
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-05-07_070046.db",
@@ -160,7 +161,7 @@
       "/root/.openclaw/workspace/newsletter2.png",
       "/root/.openclaw/workspace/newsletter3.png"
     ],
-    "session_mb": 613.9
+    "session_mb": 626.4
   },
   "learnings": {
     "total": 24,
@@ -188,7 +189,7 @@
       "notion_token": "present (50 chars)",
       "notion_databases": 15,
       "linkedin_lines": 3,
-      "linkedin_age_days": 47.0,
+      "linkedin_age_days": 48.0,
       "gateway_output": "Invalid config at /root/.openclaw/openclaw.json:\\n- agents.defaults: Unrecognized key: \"agentRuntime\"\n- agents.list.0: Unrecognized key: \"agentRuntime\"\n- agents.list.1: Unrecognized key: \"agentRuntime"
     }
   },
@@ -214,17 +215,17 @@
     {
       "category": "workspace",
       "level": "ok",
-      "message": "Disk: 59% used (57G/96G)"
+      "message": "Disk: 65% used (62G/96G)"
     },
     {
       "category": "workspace",
       "level": "warn",
-      "message": "Large files (>5MB): 145 found in .openclaw"
+      "message": "Large files (>5MB): 146 found in .openclaw"
     },
     {
       "category": "workspace",
       "level": "alert",
-      "message": "Session size: 613.9MB - bloated, review sessions"
+      "message": "Session size: 626.4MB - bloated, review sessions"
     },
     {
       "category": "learnings",
@@ -264,6 +265,6 @@
   ],
   "auto_fixed": [],
   "needs_attention": [
-    "Session bloat: 613.9MB - review before deleting (needs human decision)"
+    "Session bloat: 626.4MB - review before deleting (needs human decision)"
   ]
 }
