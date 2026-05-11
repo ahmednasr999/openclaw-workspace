@@ -314,10 +314,25 @@
 | Confidential | Manager PMO Strategy | Riyadh, Saudi Arabia | 76% | CV Ready Stretch | Not yet | N/A | https://www.linkedin.com/jobs/view/4407703496 |
 
 ## UNLOCKLAND - Vice President of Global Expansion
-- Status: CV Ready
+- Status: Applied
+- Date Applied: 2026-05-11
 - ATS Score: 91/100
 - Location: Saudi Arabia
 - Source: LinkedIn job 4409982586
 - CV: cvs/Ahmed Nasr - Vice President of Global Expansion - UNLOCKLAND.pdf
-- Notes: AI PropTech global expansion and operations scaling role. Recommendation APPLY, direct PropTech depth is the main gap. Application not submitted yet.
+- Notes: AI PropTech global expansion and operations scaling role. Applied by Ahmed. Follow up only if direct recruiter/email channel appears, not for routine LinkedIn Easy Apply.
 - Updated: 2026-05-11
+
+## DAMAC Properties - Senior Director AI
+
+- Status: Applied
+- Company: DAMAC Properties
+- Role: Senior Director AI
+- Location: Dubai, UAE
+- ATS: 88/100
+- Source: LinkedIn job 4408147977
+- CV: cvs/Ahmed Nasr - Senior Director AI - DAMAC Properties.pdf
+- Date Applied: 2026-05-11
+- Notes: Applied by Ahmed on 2026-05-11. Enterprise AI deployment at scale across real estate, capital projects, sales, marketing, and corporate platforms. Strong fit on AI-enabled transformation, governance, adoption, ROI tracking, and cross-functional delivery. Stretch areas: hands-on MLOps depth and direct capital projects exposure. Follow up only if direct recruiter/email channel appears, not for routine LinkedIn Easy Apply.
+- Updated: 2026-05-11
+

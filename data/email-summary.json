@@ -2,19 +2,19 @@
   "meta": {
     "agent": "email-agent",
     "version": "3.0.0",
-    "generated_at": "2026-05-10T20:00:28.309629+02:00",
-    "duration_ms": 12215,
+    "generated_at": "2026-05-11T12:01:50.318635+02:00",
+    "duration_ms": 46092,
     "ttl_hours": 4,
     "status": "success",
     "error": null,
-    "run_id": "862d487d",
+    "run_id": "2f2dd157",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
     "status": "ok",
-    "scan_time": "2026-05-10T20:00:18.656756+02:00",
-    "total_scanned": 4,
+    "scan_time": "2026-05-11T12:01:26.872089+02:00",
+    "total_scanned": 14,
     "by_category": {
       "interview_invite": 0,
       "recruiter_reach": 0,
@@ -23,7 +23,7 @@
       "assessment": 0,
       "follow_up_needed": 0,
       "job_alert": 0,
-      "other": 4
+      "other": 14
     },
     "interview_invites": [],
     "recruiter_messages": [],
@@ -44,12 +44,12 @@
         "requires_assessment": false,
         "recruiter_top_opportunities": [],
         "top_priority": null,
-        "daily_focus": "No actionable hiring emails were provided, so no response or prep is needed today."
+        "daily_focus": "No actionable leadership-role emails were provided; monitor for recruiter, interview, assessment, or follow-up messages."
       }
     }
   },
   "kpi": {
-    "emails_processed": 4,
+    "emails_processed": 14,
     "actionable": 0,
     "interviews_detected": 0,
     "recruiter_messages": 0,

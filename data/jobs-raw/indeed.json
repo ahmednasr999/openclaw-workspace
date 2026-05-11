@@ -2,16 +2,62 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-05-11T05:00:33.827235+02:00",
-    "duration_ms": 31175,
+    "generated_at": "2026-05-11T13:00:39.983609+02:00",
+    "duration_ms": 36340,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "8f52fd1b",
+    "run_id": "8e52ce7b",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": [
+    {
+      "id": "indeed-in-088ede37e31e83dd",
+      "source": "indeed",
+      "title": "Project Management Director (UAE Nationals ONLY)",
+      "company": "Hamdan Bin Mohammed Smart University",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=088ede37e31e83dd",
+      "posted": "2026-05-11",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 30,
+      "match_keywords": [
+        "pmo",
+        "project management",
+        "director",
+        "uae"
+      ],
+      "raw_snippet": "Job Summary\n\n\nThe Project Manager is responsible for managing and delivering transformation projects and other strategic initiatives under Transformation \\& PMO. Ensure that projects align with organizational goals, adhere to project management best practices, and drive continuous improvement in business processes. Additionally, project planning, execution, stakeholder coordination, and risk management to ensure timely and successful project completion.\n\n\nEssential Duties and Responsibilities\n\n\n",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "PMO Director"
+    },
+    {
+      "id": "indeed-in-9aa75e7e21e23f1e",
+      "source": "indeed",
+      "title": "Project Management Director (UAE Nationals Only)",
+      "company": "Hamdan Bin Mohammed Smart University",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=9aa75e7e21e23f1e",
+      "posted": "2026-05-11",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 30,
+      "match_keywords": [
+        "pmo",
+        "project management",
+        "director",
+        "uae"
+      ],
+      "raw_snippet": "Category\n\n\nAdministrative Positions\n\n\nType\n\n\nFull time\n\n\nDescription\n\n The Project Management Director is responsible for managing and delivering transformation projects and other strategic initiatives under Transformation \\& PMO. Ensure that projects align with organizational goals, adhere to project management best practices, and drive continuous improvement in business processes. Additionally, project planning, execution, stakeholder coordination, and risk management to ensure timely and succ",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "PMO Director"
+    },
     {
       "id": "indeed-in-d10193990a5db09e",
       "source": "indeed",
@@ -102,71 +148,6 @@
       "search_title": "Program Director"
     },
     {
-      "id": "indeed-in-776654af3a9764c9",
-      "source": "indeed",
-      "title": "Head of Programs & Production",
-      "company": "Confidential",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=776654af3a9764c9",
-      "posted": "2026-05-08",
-      "seniority": "Director",
-      "domain_match": true,
-      "keyword_score": 6,
-      "match_keywords": [
-        "head of"
-      ],
-      "raw_snippet": "The job is responsible for developing plans and work mechanisms for programs and production, and contributing to achieving the vision and objectives of Al Oula Radio by supervising and monitoring all administrative and technical tasks related to programs and production.\n\n\nDuties \\& Responsibilities:\n\n* Developing the operational plan and contingency plan for the Programs and Production Department, monitoring its implementation, and ensuring that the plan\u2019s pathways align with and serve the gener",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-41df1417cace044c",
-      "source": "indeed",
-      "title": "Director Commercial & Products",
-      "company": "DU",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=41df1417cace044c",
-      "posted": "2026-05-08",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 40,
-      "match_keywords": [
-        "fintech",
-        "digital financial",
-        "director",
-        "growth",
-        "uae",
-        "platform"
-      ],
-      "raw_snippet": "**About du Pay**\n\ndu Pay is one of the fastest\\-growing fintech platforms in the UAE, with a strong market position in digital remittances, cards, and financial inclusion services. Backed by the strength of the du ecosystem, du Pay is evolving into a broader digital financial services platform targeting consumers, affluent underserved segments, blue\\-collar workers, SMEs/SOHO businesses, and ecosystem partners.\n\n\nThe company is entering a major growth and diversification phase, with ambitions to",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Director Digital Transformation"
-    },
-    {
-      "id": "indeed-in-c8864518a9b964c8",
-      "source": "indeed",
-      "title": "Sr Director Analyst - IT Strategy & Transformation",
-      "company": "Gartner",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=c8864518a9b964c8",
-      "posted": "2026-05-08",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 6,
-      "match_keywords": [
-        "director"
-      ],
-      "raw_snippet": "**About the role:**\n\nGartner Analysts are industry thought leaders who create must\\-have insights, market predictions and best practices for a broad range of world\\-leading organizations. A Senior Director serves as a leader within Gartner\u2019s Business and Technology Insights (BTI) group, establishing oneself as a credible voice within their designated market at local, regional and global levels. Utilizing exceptional research and analytical skills, a Senior Director plays a significant role in pr",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Director Digital Transformation"
-    },
-    {
       "id": "indeed-in-baebe8d0c3bd1a35",
       "source": "indeed",
       "title": "Head of IT",
@@ -192,53 +173,25 @@
       "search_title": "Head of Digital Transformation"
     },
     {
-      "id": "indeed-in-f065a0cbc767ddde",
+      "id": "indeed-in-c52a521a0f9ab153",
       "source": "indeed",
-      "title": "Head of IT, Automation & AI Solutions",
-      "company": "MOOEi",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=f065a0cbc767ddde",
-      "posted": "2026-05-09",
-      "seniority": "Director",
+      "title": "Director - AV & Creative Technology (Del-284)",
+      "company": "Qiddiya Investment Company",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=c52a521a0f9ab153",
+      "posted": "2026-05-11",
+      "seniority": "C-Suite",
       "domain_match": true,
-      "keyword_score": 20,
+      "keyword_score": 13,
       "match_keywords": [
         "ai",
-        "head of",
-        "dubai",
-        "automation"
+        "director"
       ],
-      "raw_snippet": "About the Role\n\nWe are a Dubai\\-based luxury fashion group seeking a hands\\-on technical leader to own our entire IT, automation, and AI ecosystem. You will **build, manage, and lead** our in\\-house tech team and external developers, creating the digital backbone that runs our business \u2014 websites, internal systems, automation workflows, AI solutions, and the logic that connects them all.\n\nYou think like an architect: every system runs independently, every process has clear triggers and condition",
+      "raw_snippet": "The Director \u2013 AV \\& Creative Technology leads the strategy, governance, procurement, and delivery of audiovisual, show, and immersive technology systems across Qiddiya City\u2019s location\\-based entertainment and theme park portfolio.\n\n\nThe role ensures that creative technology systems deliver world\\-class guest experiences while meeting the highest standards of performance, reliability, safety, and operational sustainability. The Director provides strategic oversight across multiple attractions an",
       "relevant": true,
       "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Head of IT"
-    },
-    {
-      "id": "indeed-in-622d3f71f7ff3ae5",
-      "source": "indeed",
-      "title": "Head of Operations - Lifestyle Caf\u00e9 Group",
-      "company": "Sihamco",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=622d3f71f7ff3ae5",
-      "posted": "2026-05-08",
-      "seniority": "Director",
-      "domain_match": true,
-      "keyword_score": 46,
-      "match_keywords": [
-        "operational excellence",
-        "ai",
-        "head of",
-        "leadership",
-        "scaling",
-        "growth",
-        "saudi"
-      ],
-      "raw_snippet": "**Head of Operations \\- Homegrown Saudi Caf\u00e9 Chain****Driving Growth. Ensuring Excellence. Elevating the Brand.**\n\n**About the Role:**\n\n\nWe are seeking a highly experienced Head of Operations to oversee and elevate all operational aspects of a fast\\-growing homegrown Saudi caf\u00e9 chain, this includes multiple outlets as well as a central kitchen. The ideal candidate must have proven experience in scaling caf\u00e9 or fast\\-casual brands, operational excellence, leadership, systems development, and fran",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Head of IT"
+      "search_country": "Saudi Arabia",
+      "search_title": "Program Director"
     },
     {
       "id": "indeed-in-7bd2594c617efb3a",
@@ -261,39 +214,13 @@
       "filter_reason": null,
       "search_country": "Saudi Arabia",
       "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-f0a53cdcf7a320c2",
-      "source": "indeed",
-      "title": "Head of Operations - Lifestyle Caf\u00e9 Group",
-      "company": "Sihamco",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=f0a53cdcf7a320c2",
-      "posted": "2026-05-08",
-      "seniority": "Director",
-      "domain_match": true,
-      "keyword_score": 46,
-      "match_keywords": [
-        "operational excellence",
-        "ai",
-        "head of",
-        "leadership",
-        "scaling",
-        "growth",
-        "saudi"
-      ],
-      "raw_snippet": "**Head of Operations \\- Homegrown Saudi Caf\u00e9 Chain****Driving Growth. Ensuring Excellence. Elevating the Brand.**\n\n**About the Role:**\n\n\nWe are seeking a highly experienced Head of Operations to oversee and elevate all operational aspects of a fast\\-growing homegrown Saudi caf\u00e9 chain, this includes multiple outlets as well as a central kitchen. The ideal candidate must have proven experience in scaling caf\u00e9 or fast\\-casual brands, operational excellence, leadership, systems development, and fran",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Head of IT"
     }
   ],
   "kpi": {
     "searches_run": 20,
-    "results_per_search": 2.5,
-    "unique_jobs": 12,
-    "errors": 8
+    "results_per_search": 2.95,
+    "unique_jobs": 9,
+    "errors": 7
   },
   "recommendations": []
 }

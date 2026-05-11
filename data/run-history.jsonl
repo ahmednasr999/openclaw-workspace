@@ -2267,3 +2267,12 @@
 {"agent": "jobs-source-indeed", "run_id": "6d4d31af", "started": "2026-05-11T03:00:32.305935+02:00", "duration_ms": 30742, "status": "success", "records": 12, "error": null}
 {"agent": "jobs-source-linkedin-jobspy", "run_id": "f6542a87", "started": "2026-05-11T04:21:43.058611+02:00", "duration_ms": 1284114, "status": "success", "records": 430, "error": null}
 {"agent": "jobs-source-indeed", "run_id": "8f52fd1b", "started": "2026-05-11T05:00:33.828479+02:00", "duration_ms": 31176, "status": "success", "records": 12, "error": null}
+{"agent": "email-agent", "run_id": "7324f539", "started": "2026-05-11T06:01:50.558136+02:00", "duration_ms": 49735, "status": "success", "records": 15, "error": null}
+{"agent": "jobs-source-indeed", "run_id": "1aa1e946", "started": "2026-05-11T07:00:37.510598+02:00", "duration_ms": 35235, "status": "success", "records": 11, "error": null}
+{"agent": "email-agent", "run_id": "0c8d9283", "started": "2026-05-11T08:01:04.770923+02:00", "duration_ms": 21993, "status": "success", "records": 15, "error": null}
+{"agent": "email-agent", "run_id": "dc53a82a", "started": "2026-05-11T08:01:33.341929+02:00", "duration_ms": 9807, "status": "success", "records": 15, "error": null}
+{"agent": "jobs-source-indeed", "run_id": "eb32d730", "started": "2026-05-11T09:00:36.885453+02:00", "duration_ms": 34553, "status": "success", "records": 10, "error": null}
+{"agent": "email-agent", "run_id": "f19a1083", "started": "2026-05-11T10:01:08.653235+02:00", "duration_ms": 27385, "status": "success", "records": 15, "error": null}
+{"agent": "jobs-source-indeed", "run_id": "5bf088bd", "started": "2026-05-11T11:00:37.420795+02:00", "duration_ms": 34341, "status": "success", "records": 10, "error": null}
+{"agent": "email-agent", "run_id": "2f2dd157", "started": "2026-05-11T12:01:50.319343+02:00", "duration_ms": 46092, "status": "success", "records": 15, "error": null}
+{"agent": "jobs-source-indeed", "run_id": "8e52ce7b", "started": "2026-05-11T13:00:39.985987+02:00", "duration_ms": 36343, "status": "success", "records": 9, "error": null}
