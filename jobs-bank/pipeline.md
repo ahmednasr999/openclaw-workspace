@@ -294,3 +294,30 @@
 | 220 | Global Corporation | PMO Operational Improvement Project Manager | Abu Dhabi, UAE | Review | Google Jobs | [Link](https://www.gulftalent.com/uae/jobs/pmo-operational-improvement-project-manager-553556) |
 
 **Skipped:** Experts Group (already applied), Foreground LLC (already applied), Panamari (already applied), Emirates NBD (UAE Nationals only)
+
+## 2026-05-11 - CV Ready
+
+| Company | Role | Location | ATS | Stage | Applied | Follow-up | Job URL |
+|---|---|---|---|---|---|---|---|
+| Aventus / Confidential | Chief Strategy & Regulatory Officer | Manama, Bahrain | 90% | CV Ready | Not yet | N/A | https://www.linkedin.com/jobs/view/4401605794 |
+
+## 2026-05-11 - CV Ready
+
+| Company | Role | Location | ATS | Stage | Applied | Follow-up | Job URL |
+|---|---|---|---|---|---|---|---|
+| Syntys | Vice-President Business Performance Management | Doha, Qatar | 91% | CV Ready | Not yet | N/A | https://www.linkedin.com/jobs/view/4406045152 |
+
+## 2026-05-11 - CV Ready Stretch
+
+| Company | Role | Location | ATS | Stage | Applied | Follow-up | Job URL |
+|---|---|---|---|---|---|---|---|
+| Confidential | Manager PMO Strategy | Riyadh, Saudi Arabia | 76% | CV Ready Stretch | Not yet | N/A | https://www.linkedin.com/jobs/view/4407703496 |
+
+## UNLOCKLAND - Vice President of Global Expansion
+- Status: CV Ready
+- ATS Score: 91/100
+- Location: Saudi Arabia
+- Source: LinkedIn job 4409982586
+- CV: cvs/Ahmed Nasr - Vice President of Global Expansion - UNLOCKLAND.pdf
+- Notes: AI PropTech global expansion and operations scaling role. Recommendation APPLY, direct PropTech depth is the main gap. Application not submitted yet.
+- Updated: 2026-05-11
