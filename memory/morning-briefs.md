@@ -1759,3 +1759,56 @@ Node.js v22.22.1
 ## Calendar - Today's Events
 *Calendar API unavailable (gog v0.12.0 bug - tracking fix)*
 
+=== Morning Brief - 2026-05-11 06:00 AM ===
+
+## Claude 2x Usage Reminder
+
+## Job Radar (from Tavily)
+[search-router] Tavily unavailable, falling back to local SearXNG: Tavily Search failed (401): {"detail":{"error":"Unauthorized: missing or invalid API key."}}
+## Sources
+
+_(provider: searxng)_
+
+- **American Express Careers & Job Openings | Amex Careers US**
+  https://www.americanexpress.com/en-us/careers/
+  Jan 21, 2026 · Browse American Express US Job Openings. Find Your Place on #TeamAmex and Explore American Express Careers that Match Your Skills Today!
+
+- **Bilal Khattak‏ - ‏Transformation | Digital Governance - LinkedIn**
+  https://ae.linkedin.com/in/bilal-khatak
+  Transformation | Digital Governance | PMO & Strategy Execution | 15+ Years | UAE ... Based in Dubai and always open to conversations around transformation ...
+
+- **‏Abid Hussain Shah‏ - ‏Digital Transformation Leader ... - LinkedIn**
+  https://ae.linkedin.com/in/shahabid
+  Recognized for leading complex, high-impact digital initiatives that optimize operations, enhance patient and customer experiences, and deliver measurable business value. Currently serving as the Group Chief Information Digital Officer at Saudi German Health UAE, I lead the digital transformation ag...
+
+- **directory-list-2.4.txt/directory-list-2.4.txt at ... - GitHub**
+  https://github.com/bestutsengineer/directory-list-2.4.txt/blob/main/directory-list-2.4.txt
+  Notifications You must be signed in to change notification settings Fork 0
+
+- **Technology, Digital & Transformation Recruitment | Aventus**
+  https://www.aventusglobal.com/digital-technology-recruitment
+  From government digitalisation programmes to AI-driven enterprises and smart city initiatives, the region's technology landscape is evolving at speed. Aventus ...
+
+## Gmail - New Opportunities
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/root/.openclaw/workspace/scripts/gmail-scan.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+
+## Calendar - Today's Events
+*Calendar API unavailable (gog v0.12.0 bug - tracking fix)*
+
