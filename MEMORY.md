@@ -8,7 +8,7 @@
 - Gmail check: daily at 8 AM Cairo.
 - Formatting: never use em dashes. Use hyphens or commas.
 - Current default model is GPT-5.5 via OpenAI Codex OAuth unless Ahmed changes it. Do not silently switch models.
-- Salary is the overriding decision factor when evaluating GCC executive roles; do not treat it as already resolved, secondary, or outweighed by non-salary hard-no filters unless Ahmed explicitly adds one. Reporting line is not a hard filter if salary is high enough. <!-- updated 2026-05-07 -->
+- Salary is the overriding decision factor when evaluating GCC executive roles; do not treat it as already resolved, secondary, or outweighed by non-salary hard-no filters unless Ahmed explicitly adds one. Reporting line and work arrangement are not hard filters if salary is high enough; onsite, hybrid, or remote can be acceptable when compensation justifies it. <!-- dream-promoted 2026-05-11 -->
 - Image generation cost preference: do not add direct OpenAI API billing just to unlock image generation if the authenticated ChatGPT web Images workaround is viable. <!-- dream-promoted 2026-04-29 -->
 
 ## Content Pipeline Workflow, Confirmed 2026-02-19

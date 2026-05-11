@@ -1351,3 +1351,72 @@ Keep health-check wake handling quiet on OK, but when Ahmed asks "yes?" or simil
 - Tags: healthcheck, no_reply, telegram, communication
 
 ---
+## [LRN-20260510-001] correction
+
+**Logged**: 2026-05-10T21:47:00+03:00
+**Priority**: high
+**Status**: promoted
+**Area**: workflow
+
+### Summary
+HR protected-lane internal work must not create approval noise for Ahmed.
+
+### Details
+Ahmed corrected that everything related to routine HR agent work should be pre-approved. The durable policy already existed in AGENTS.md and USER.md, but command-shape mismatches in `config/tool-permissions.yaml` could still trigger native exec approvals when HR used direct scripts/tools or venv paths outside the narrow allowlist.
+
+### Suggested Action
+Keep external applications, recruiter/employer messages, emails, public posts, credentials, destructive deletes, and gateway/config changes approval-gated. For routine HR internal work, use scripts/tools under `/root/.openclaw/workspace-hr/scripts` or `/root/.openclaw/workspace-hr/tools` and run them through the configured pre-approved interpreter paths. Avoid ad-hoc pipelines and inline evals that trip native exec approval.
+
+### Metadata
+- Source: user_feedback
+- Related Files: /root/.openclaw/workspace/config/tool-permissions.yaml, /root/.openclaw/workspace/TOOLS.md, /root/.openclaw/workspace/AGENTS.md, /root/.openclaw/workspace/USER.md
+- Tags: correction, hr, approvals, protected-lane, tool-policy
+- See Also: LRN-20260426-001
+
+---
+## [LRN-20260511-NO-RAW-SILENCE-TOKEN] correction
+
+**Logged**: 2026-05-11T12:10:00+03:00
+**Priority**: high
+**Status**: pending
+**Area**: messaging
+
+### Summary
+Do not send raw `NO_REPLY` or internal silence tokens into Ahmed's visible Telegram chat.
+
+### Details
+During health/reminder follow-ups, the silent token surfaced visibly more than once. If a proactive check has nothing material to report, stay silent through the runtime path where supported. If Ahmed asks a direct follow-up such as "done?", answer plainly with the outcome instead of emitting `NO_REPLY`.
+
+### Suggested Action
+Before finalizing any user-visible message, strip internal silence tokens. For health checks with no issue, either remain silent correctly or provide a concise status only when Ahmed directly asks.
+
+### Metadata
+- Source: user_feedback
+- Related Files: SOUL.md, HEARTBEAT.md, .learnings/LEARNINGS.md
+- Tags: correction, messaging, silent-reply, telegram, healthcheck
+- See Also: LRN-20260510-SILENT-HEALTHCHECK-DM
+
+---
+## [LRN-20260511-HR-SAFE-TOOLBOX] best_practice
+
+**Logged**: 2026-05-11T12:51:00+03:00
+**Priority**: high
+**Status**: implemented
+**Area**: tools
+
+### Summary
+Use approved HR toolbox scripts for routine HR/JobZoom checks instead of ad-hoc inline shell/eval commands.
+
+### Details
+HR protected-lane work is pre-approved, but `strictInlineEval=true` still prompts for command shapes such as `python -c`, `node -e`, and some sed/awk inline programs. Created read-only helper scripts under `/root/.openclaw/workspace-hr/tools/` so common HR status, JobZoom DB, and CV artifact checks run through allowlisted script paths without weakening gateway safety.
+
+### Suggested Action
+For future HR agents, prefer `/root/.openclaw/workspace-hr/tools/hr-status.py`, `jobzoom-latest-run.py`, and `cv-artifact-verify.py`; add new reusable HR checks as scripts in `workspace-hr/tools/` or `workspace-hr/scripts/` before expanding runtime approvals.
+
+### Metadata
+- Source: conversation
+- Related Files: /root/.openclaw/workspace-hr/tools/, /root/.openclaw/workspace/TOOLS.md, /root/.openclaw/workspace/config/tool-permissions.yaml
+- Tags: hr, approvals, protected-lane, toolbox, strictInlineEval
+- See Also: LRN-20260510-001
+
+---

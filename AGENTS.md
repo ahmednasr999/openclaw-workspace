@@ -91,6 +91,8 @@ NASR owns governance. Each agent owns durable fixes in its lane:
 ## HR Protected Lane
 
 HR-related internal operations are pre-approved: searches/scans, diagnostics, pipeline inspection, scoring, ATS analysis, report generation, CV drafting/generation, artifact verification, local workspace edits in the HR lane, and Telegram delivery to Ahmed. Do not ask approval for these routine HR-lane operations. Keep approval gates for actual job applications, recruiter/employer messages, public/external third-party actions, paid actions, credential changes, destructive deletes, gateway/runtime changes, or anything that could affect Ahmed's reputation externally. <!-- updated 2026-05-06 from Ahmed correction -->
+
+Approval-noise rule for HR/JobZoom: prefer the safe toolbox in `/root/.openclaw/workspace-hr/tools/` for routine diagnostics before ad-hoc shell. Use `hr-status.py`, `jobzoom-latest-run.py`, and `cv-artifact-verify.py` instead of inline eval (`python -c`, `node -e`) or one-liner parsing (`sed`/`awk`/long grep pipelines). `strictInlineEval=true` is intentionally kept on, so command-shape approvals can still appear when agents bypass the toolbox. Do not weaken gateway/tool policy to avoid that noise; update the workflow/tooling instead. <!-- updated 2026-05-11 from HR approval-noise fix -->
 - CTO: gateway, config, scripts, runtime patches, health checks, tool behavior.
 - CMO: LinkedIn, content, brand, image generation, posting, engagement.
 - CEO/NASR: strategy, routing, memory, cross-agent policy, user-facing quality.
