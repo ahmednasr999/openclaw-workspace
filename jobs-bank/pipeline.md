@@ -336,3 +336,15 @@
 - Notes: Applied by Ahmed on 2026-05-11. Enterprise AI deployment at scale across real estate, capital projects, sales, marketing, and corporate platforms. Strong fit on AI-enabled transformation, governance, adoption, ROI tracking, and cross-functional delivery. Stretch areas: hands-on MLOps depth and direct capital projects exposure. Follow up only if direct recruiter/email channel appears, not for routine LinkedIn Easy Apply.
 - Updated: 2026-05-11
 
+## National Digital Transformation Program - Chief Artificial Intelligence and Data Strategy Officer
+
+- Status: CV Ready
+- Company: National Digital Transformation Program
+- Role: Chief Artificial Intelligence and Data Strategy Officer
+- Location: Riyadh, Saudi Arabia
+- ATS: 91/100
+- Source: Direct JD via Telegram, apply to moayadalmaylam@nextstephire.org
+- CV: cvs/Ahmed Nasr - Chief Artificial Intelligence and Data Strategy Officer - National Digital Transformation Program.pdf
+- Notes: Strong match for executive AI adoption, data governance, enterprise analytics, intelligent automation, Saudi Vision 2030 digital transformation, and cross-functional technology leadership. Stretch area: direct smart government program ownership should be positioned through KSA healthcare and critical enterprise systems transformation, not overstated.
+- Updated: 2026-05-11
+

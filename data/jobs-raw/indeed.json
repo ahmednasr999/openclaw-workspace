@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-05-11T13:00:39.983609+02:00",
-    "duration_ms": 36340,
+    "generated_at": "2026-05-11T17:00:36.278617+02:00",
+    "duration_ms": 33943,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "8e52ce7b",
+    "run_id": "24d17ab7",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -59,6 +59,29 @@
       "search_title": "PMO Director"
     },
     {
+      "id": "indeed-in-3e1f77e5ed19f41c",
+      "source": "indeed",
+      "title": "Senior Associate Director, Priority Banking",
+      "company": "Standard Chartered Bank",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=3e1f77e5ed19f41c",
+      "posted": "2026-05-11",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 26,
+      "match_keywords": [
+        "agile",
+        "ai",
+        "director",
+        "dubai"
+      ],
+      "raw_snippet": "**Requisition Number:** 52688\n**Job Location:** Dubai, ARE\n**Global Grade:** Band 6\n**Work Type:** Office Working\n**Employment Type:** Permanent\n**Posting Start Date:** 11/05/2026\n**Posting End Date:** 25/05/2026\n**:****About Us**Our team consists of 25,000 colleagues, spread across 35 countries. We believe in transformation \u2013 embracing agile and new ways of working together, which helps us to truly \u2018think client\u2019 and serve millions of our affluent and emerging affluent clients, across the world",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Program Director"
+    },
+    {
       "id": "indeed-in-d10193990a5db09e",
       "source": "indeed",
       "title": "Penske Media Corp: Director, EMEA Licensing",
@@ -104,50 +127,6 @@
       "search_title": "Program Director"
     },
     {
-      "id": "indeed-in-6530d84bb3cd5d87",
-      "source": "indeed",
-      "title": "CRM and Loyalty Director",
-      "company": "Sephora",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=6530d84bb3cd5d87",
-      "posted": "2026-05-08",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 20,
-      "match_keywords": [
-        "ai",
-        "crm",
-        "director"
-      ],
-      "raw_snippet": "At Sephora, beauty is about feeling seen, valued, and empowered, individually and collectively. It is connecting deeply with others, celebrating diversity and inclusivity, unlocking your potential and making a difference every day. Together, we belong to something beautiful. Since its inception in 1969 in Limoges, France, and as part of the LVMH Group since 1997, Sephora has been disrupting the prestige beauty retail industry. Today, Sephora continues to break with convention to drive its missio",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-66bd3e9eb903d7e0",
-      "source": "indeed",
-      "title": "Director Water",
-      "company": "NSF International",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=66bd3e9eb903d7e0",
-      "posted": "2026-05-08",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 16,
-      "match_keywords": [
-        "director",
-        "growth",
-        "middle east"
-      ],
-      "raw_snippet": "We are seeking a dynamic **Water leader** to lead and grow our high performing **Water business across South Asia, the Middle East and North Africa.** The primary responsibility is to build and lead a high\\-performing sales team, focused on driving world\\-class customer service and commercial excellence to achieve regional revenue and new business targets. **This individual will own the regional P\\&L and drive the region's financial performance, ensuring consistent growth and alignment with the ",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Program Director"
-    },
-    {
       "id": "indeed-in-baebe8d0c3bd1a35",
       "source": "indeed",
       "title": "Head of IT",
@@ -173,6 +152,51 @@
       "search_title": "Head of Digital Transformation"
     },
     {
+      "id": "indeed-in-0174b9f3ce90ef26",
+      "source": "indeed",
+      "title": "Chief Information & Technology Officer",
+      "company": "Lakhraim Group",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=0174b9f3ce90ef26",
+      "posted": "2026-05-08",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 16,
+      "match_keywords": [
+        "digital transformation",
+        "growth"
+      ],
+      "raw_snippet": "We are seeking an experienced and strategic Chief Information \\& Technology Officer (CITO) to lead the company\u2019s technology strategy, digital transformation, and IT operations. The ideal candidate will drive innovation, enhance operational efficiency, and ensure secure, scalable technology solutions that support business growth.\n\n**Key Responsibilities**\n\n* Develop and implement the company\u2019s technology strategy aligned with business objectives.\n* Lead digital transformation and technology innov",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Chief Technology Officer"
+    },
+    {
+      "id": "indeed-in-500ab0d91bc53ac4",
+      "source": "indeed",
+      "title": "Associate Director, Enablement, Client Management UAE and MENA (UAE National)",
+      "company": "Standard Chartered Bank",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=500ab0d91bc53ac4",
+      "posted": "2026-05-11",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 23,
+      "match_keywords": [
+        "ai",
+        "director",
+        "uae",
+        "dubai",
+        "mena"
+      ],
+      "raw_snippet": "**Requisition Number:** 52998\n**Job Location:** Dubai, ARE\n**Global Grade:** Band 6\n**Work Type:** Office Working\n**Employment Type:** Permanent\n**Posting Start Date:** 11/05/2026\n**Posting End Date:** 25/05/2026\n**:****Job Summary**\n\nAs the Associate Director for Enablement within Client Management teams across UAE and MENA, you will play a pivotal role in enforcing and championing the Department Operating Instructions (DOIs) to ensure consistent and effective application across all client inte",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Head of Technology"
+    },
+    {
       "id": "indeed-in-c52a521a0f9ab153",
       "source": "indeed",
       "title": "Director - AV & Creative Technology (Del-284)",
@@ -188,6 +212,29 @@
         "director"
       ],
       "raw_snippet": "The Director \u2013 AV \\& Creative Technology leads the strategy, governance, procurement, and delivery of audiovisual, show, and immersive technology systems across Qiddiya City\u2019s location\\-based entertainment and theme park portfolio.\n\n\nThe role ensures that creative technology systems deliver world\\-class guest experiences while meeting the highest standards of performance, reliability, safety, and operational sustainability. The Director provides strategic oversight across multiple attractions an",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "Program Director"
+    },
+    {
+      "id": "indeed-in-4717cbe64eb97d89",
+      "source": "indeed",
+      "title": "HSEQ Director",
+      "company": "AtkinsR\u00e9alis",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=4717cbe64eb97d89",
+      "posted": "2026-05-10",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 20,
+      "match_keywords": [
+        "director",
+        "leadership",
+        "saudi",
+        "ksa"
+      ],
+      "raw_snippet": "**Overview**\n------------\n\n\nAtkinsR\u00e9alis is seeking an experienced HSEW Director to lead and oversee Health, Safety, Environment, and Wellbeing (HSEW) functions for remote projects in the Kingdom of Saudi Arabia (KSA). This role requires strong leadership in managing HSEW strategies for high\\-end luxury hospitality and residential developments, ensuring compliance, safety excellence, and a culture of continuous improvement across all project phases.\n\n**Your role**\n-------------\n\n* Lead and manag",
       "relevant": true,
       "filter_reason": null,
       "search_country": "Saudi Arabia",
@@ -218,8 +265,8 @@
   ],
   "kpi": {
     "searches_run": 20,
-    "results_per_search": 2.95,
-    "unique_jobs": 9,
+    "results_per_search": 3.05,
+    "unique_jobs": 11,
     "errors": 7
   },
   "recommendations": []
