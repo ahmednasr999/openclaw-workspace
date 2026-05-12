@@ -2731,3 +2731,24 @@ Fix the config and retry, or run "openclaw doctor" to repair.
 [2026-05-11 20:00] WARN: active-tasks.md stale (50h)
 [2026-05-11 20:00] WARN: Jobs data stale (391h), triggering pipeline
 [2026-05-11 20:00] FIXED: Pipeline triggered
+[2026-05-11 20:00] Summary: fixes=1 warnings=2 alerts=0
+[2026-05-11 22:00] === Watchdog v3 run ===
+[2026-05-11 22:00] WARN: Jobs data stale (393h), triggering pipeline
+[2026-05-11 22:00] FIXED: Pipeline triggered
+[2026-05-11 22:00] Summary: fixes=1 warnings=1 alerts=0
+[2026-05-12 00:00] === Watchdog v3 run ===
+[2026-05-12 00:00] WARN: Jobs data stale (395h), triggering pipeline
+[2026-05-12 00:00] FIXED: Pipeline triggered
+[2026-05-12 00:00] Summary: fixes=1 warnings=1 alerts=0
+[2026-05-12 02:00] === Watchdog v3 run ===
+[2026-05-12 02:00] WARN: Jobs data stale (397h), triggering pipeline
+[2026-05-12 02:00] FIXED: Pipeline triggered
+[2026-05-12 02:00] Summary: fixes=1 warnings=1 alerts=0
+[2026-05-12 04:00] === Watchdog v3 run ===
+[2026-05-12 04:00] WARN: Jobs data stale (399h), triggering pipeline
+[2026-05-12 04:00] FIXED: Pipeline triggered
+[2026-05-12 04:00] Summary: fixes=1 warnings=1 alerts=0
+[2026-05-12 06:00] === Watchdog v3 run ===
+[2026-05-12 06:00] WARN: Jobs data stale (401h), triggering pipeline
+[2026-05-12 06:00] FIXED: Pipeline triggered
+[2026-05-12 06:00] Summary: fixes=1 warnings=1 alerts=0

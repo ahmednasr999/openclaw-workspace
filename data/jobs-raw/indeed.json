@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-05-11T17:00:36.278617+02:00",
-    "duration_ms": 33943,
+    "generated_at": "2026-05-12T05:00:35.104850+02:00",
+    "duration_ms": 33208,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "24d17ab7",
+    "run_id": "57273b56",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -82,91 +82,18 @@
       "search_title": "Program Director"
     },
     {
-      "id": "indeed-in-d10193990a5db09e",
+      "id": "indeed-in-40a3d0d9102df800",
       "source": "indeed",
-      "title": "Penske Media Corp: Director, EMEA Licensing",
-      "company": "Penske Media",
+      "title": "Chief Technology Officer",
+      "company": "RAQEEQ FOR FLOOR AND WALL TILING WORKS",
       "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=d10193990a5db09e",
-      "posted": "2026-05-08",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 23,
-      "match_keywords": [
-        "ai",
-        "executive",
-        "director",
-        "dubai"
-      ],
-      "raw_snippet": "**Penske Media Corp: Director, EMEA Licensing**\n\n\n\nPenske Media Corporation (PMC), the parent company of Rolling Stone, Variety, Billboard, The Hollywood Reporter, SXSW, The Golden Globes, and many more brands, is looking for a Dubai\\- or London\\-based, talented and results\\-oriented, Director/Senior Director, EMEA Licensing to join our Corporate Business Development team. This person will be the primary executive generating licensing revenue for PMC brands in the EMEA region and will be tasked ",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-e3871e2f39541517",
-      "source": "indeed",
-      "title": "Director of Spa and Recreation",
-      "company": "Marriott International",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=e3871e2f39541517",
-      "posted": "2026-05-08",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 16,
-      "match_keywords": [
-        "ai",
-        "director",
-        "dubai"
-      ],
-      "raw_snippet": "**Additional Information**  \n\n**Job Number**26056725  \n\n**Job Category**Spa  \n\n**Location**Bvlgari Resort Dubai, Jumeirah Bay Island, Dubai, United Arab Emirates, United Arab Emirates, 72223  \n\n**Schedule**Full Time  \n\n**Located Remotely?**N  \n\n**Position Type** Management  \n\n**JOB SUMMARY**\n\n  \n\n\n\nResponsible for managing and supervising all areas of the spa, including its programs, services, hours of operation, facilities and staff. Coordinates the delivery of spa services, including salon, sk",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-baebe8d0c3bd1a35",
-      "source": "indeed",
-      "title": "Head of IT",
-      "company": "TGD Services DMCC",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=baebe8d0c3bd1a35",
-      "posted": "2026-05-09",
-      "seniority": "Director",
-      "domain_match": false,
-      "keyword_score": 36,
-      "match_keywords": [
-        "infrastructure",
-        "enterprise",
-        "head of",
-        "leadership",
-        "growth",
-        "platform"
-      ],
-      "raw_snippet": "**Position Overview:**The Head of IT will be responsible for the strategy, leadership, and management of allinternal IT systems, ensuring the smooth operation of both customer\\-facing platformsand internal colleague services. This role will ensure that the organization\u2019s ITinfrastructure supports business growth, drives efficiency, and provides a positive end user experience for colleagues. Key areas of focus include enterprise collaboration tools (e.g., Microsoft Teams), Wi\\-Fi, desktop infrast",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Head of Digital Transformation"
-    },
-    {
-      "id": "indeed-in-0174b9f3ce90ef26",
-      "source": "indeed",
-      "title": "Chief Information & Technology Officer",
-      "company": "Lakhraim Group",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=0174b9f3ce90ef26",
-      "posted": "2026-05-08",
+      "url": "https://ae.indeed.com/viewjob?jk=40a3d0d9102df800",
+      "posted": "2026-05-11",
       "seniority": "C-Suite",
       "domain_match": true,
-      "keyword_score": 16,
-      "match_keywords": [
-        "digital transformation",
-        "growth"
-      ],
-      "raw_snippet": "We are seeking an experienced and strategic Chief Information \\& Technology Officer (CITO) to lead the company\u2019s technology strategy, digital transformation, and IT operations. The ideal candidate will drive innovation, enhance operational efficiency, and ensure secure, scalable technology solutions that support business growth.\n\n**Key Responsibilities**\n\n* Develop and implement the company\u2019s technology strategy aligned with business objectives.\n* Lead digital transformation and technology innov",
+      "keyword_score": 0,
+      "match_keywords": [],
+      "raw_snippet": "**About Us:**  \nRAQEEQ FOR FLOOR AND WALL TILING WORKS is a leading company specializing in high\\-quality tiling services for both residential and commercial properties. With a reputation for excellence, precision, and innovative designs, we provide top\\-tier solutions in flooring and wall tiling. As we continue to expand our operations and enhance our services, we are seeking a visionary and strategic leader to join us as the Chief Technology Officer (CTO).\n\n**Role Overview:**  \nWe are looking ",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
@@ -218,29 +145,6 @@
       "search_title": "Program Director"
     },
     {
-      "id": "indeed-in-4717cbe64eb97d89",
-      "source": "indeed",
-      "title": "HSEQ Director",
-      "company": "AtkinsR\u00e9alis",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=4717cbe64eb97d89",
-      "posted": "2026-05-10",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 20,
-      "match_keywords": [
-        "director",
-        "leadership",
-        "saudi",
-        "ksa"
-      ],
-      "raw_snippet": "**Overview**\n------------\n\n\nAtkinsR\u00e9alis is seeking an experienced HSEW Director to lead and oversee Health, Safety, Environment, and Wellbeing (HSEW) functions for remote projects in the Kingdom of Saudi Arabia (KSA). This role requires strong leadership in managing HSEW strategies for high\\-end luxury hospitality and residential developments, ensuring compliance, safety excellence, and a culture of continuous improvement across all project phases.\n\n**Your role**\n-------------\n\n* Lead and manag",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Program Director"
-    },
-    {
       "id": "indeed-in-7bd2594c617efb3a",
       "source": "indeed",
       "title": "Project Director",
@@ -265,8 +169,8 @@
   ],
   "kpi": {
     "searches_run": 20,
-    "results_per_search": 3.05,
-    "unique_jobs": 11,
+    "results_per_search": 2.85,
+    "unique_jobs": 7,
     "errors": 7
   },
   "recommendations": []
