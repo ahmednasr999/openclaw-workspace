@@ -1420,3 +1420,57 @@ For future HR agents, prefer `/root/.openclaw/workspace-hr/tools/hr-status.py`, 
 - See Also: LRN-20260510-001
 
 ---
+
+## [LRN-20260511-telegram-media-context] correction
+
+**Logged**: 2026-05-11T21:05:00+03:00
+**Priority**: high
+**Status**: pending
+**Area**: messaging
+
+### Summary
+Do not let unrelated queued/context-replayed work override Ahmed's current Telegram request.
+
+### Details
+Ahmed asked to show four generated logo images. The assistant mixed in unrelated HR/toolbox and health-check follow-ups before finally sending the media paths. In Telegram, a direct media/show request should be answered directly from the current visible request and attachment context. Background/session artifacts must not hijack the reply.
+
+### Suggested Action
+Before replying in a noisy/compacted Telegram session, identify the current user-visible ask and ignore stale queued context unless it is explicitly relevant. For media requests, send the requested MEDIA lines immediately and do not interleave unrelated operational status.
+
+### Metadata
+- Source: user_feedback
+- Related Files: SOUL.md, TOOLS.md
+- Tags: telegram, media, context-hygiene, reply-boundary
+- Pattern-Key: reply.current_user_ask_first
+- Recurrence-Count: 1
+- First-Seen: 2026-05-11
+- Last-Seen: 2026-05-11
+
+---
+
+## [LRN-20260511-telegram-media-context] correction
+
+**Logged**: 2026-05-11T21:05:00+03:00
+**Priority**: high
+**Status**: pending
+**Area**: messaging
+
+### Summary
+Do not let unrelated queued/context-replayed work override Ahmed's current Telegram request.
+
+### Details
+Ahmed asked to show four generated logo images. The assistant mixed in unrelated HR/toolbox and health-check follow-ups before finally sending the media paths. In Telegram, a direct media/show request should be answered directly from the current visible request and attachment context. Background/session artifacts must not hijack the reply.
+
+### Suggested Action
+Before replying in a noisy/compacted Telegram session, identify the current user-visible ask and ignore stale queued context unless it is explicitly relevant. For media requests, send the requested MEDIA lines immediately and do not interleave unrelated operational status.
+
+### Metadata
+- Source: user_feedback
+- Related Files: SOUL.md, TOOLS.md
+- Tags: telegram, media, context-hygiene, reply-boundary
+- Pattern-Key: reply.current_user_ask_first
+- Recurrence-Count: 1
+- First-Seen: 2026-05-11
+- Last-Seen: 2026-05-11
+
+---

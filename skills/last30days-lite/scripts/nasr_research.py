@@ -75,6 +75,23 @@ def lane_report(status: str, count: int = 0, note: str = "", **extra: object) ->
 # Tavily search
 # ---------------------------------------------------------------------------
 
+def _load_tavily_key() -> tuple[str, str]:
+    cfg_key = ""
+    cfg = CONFIG_DIR / "tavily.json"
+    if cfg.exists():
+        try:
+            cfg_key = str(json.loads(cfg.read_text()).get("api_key", "")).strip()
+        except Exception:
+            cfg_key = ""
+
+    env_key = os.environ.get("TAVILY_API_KEY", "").strip()
+    if cfg_key:
+        if env_key and env_key != cfg_key:
+            print("[tavily] env key differs from config/tavily.json; using config key", file=sys.stderr)
+        return cfg_key, "config/tavily.json"
+    return env_key, "env:TAVILY_API_KEY" if env_key else "missing"
+
+
 def search_tavily(query: str, api_key: str, max_results: int = 8) -> list[dict]:
     if not api_key:
         print("[tavily] skipped, no API key available", file=sys.stderr)
@@ -1141,11 +1158,8 @@ def run(topic: str, save_dir: Path = SAVE_DIR, max_items: int = 20) -> str:
     ranking_profile = build_ranking_profile(topic, plan)
     print(f"[ranking] profile → {ranking_profile.name}", file=sys.stderr)
 
-    tavily_key = os.environ.get("TAVILY_API_KEY", "")
-    if not tavily_key:
-        cfg = CONFIG_DIR / "tavily.json"
-        if cfg.exists():
-            tavily_key = json.loads(cfg.read_text()).get("api_key", "")
+    tavily_key, tavily_source = _load_tavily_key()
+    print(f"[tavily] key source → {tavily_source}", file=sys.stderr)
 
     web_queries = (plan.get("queries") or {}).get("web", [])[:3]
     raw_lanes: dict[str, list[dict]] = {"tavily": [], "reddit": [], "hn": [], "github": []}

@@ -1,0 +1,131 @@
+{
+  "timestamp": "2026-05-12T14:51:22.458178+03:00",
+  "total_crons": 12,
+  "system_crons": 12,
+  "openclaw_crons": 0,
+  "notion_created": 1,
+  "notion_updated": 11,
+  "errors": [],
+  "crons": [
+    {
+      "name": "daily-backup.sh",
+      "schedule": "0 20 * * *",
+      "type": "system",
+      "last_status": {
+        "status": "\u2705 OK",
+        "last_run": "2026-05-11 20:00:09.457829+03:00",
+        "error": null
+      }
+    },
+    {
+      "name": "archive-daily-notes.sh",
+      "schedule": "0 20 1 * *",
+      "type": "system",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "daily-snapshot.sh",
+      "schedule": "0 23 * * *",
+      "type": "system",
+      "last_status": {
+        "status": "\u2705 OK",
+        "last_run": "2026-05-11 23:01:12.293484+03:00",
+        "error": null
+      }
+    },
+    {
+      "name": "retention-backups.sh",
+      "schedule": "30 20 * * *",
+      "type": "system",
+      "last_status": {
+        "status": "\u2705 OK",
+        "last_run": "2026-05-11 20:30:02.067481+03:00",
+        "error": null
+      }
+    },
+    {
+      "name": "retention-snapshots.sh",
+      "schedule": "30 23 * * *",
+      "type": "system",
+      "last_status": {
+        "status": "\u2705 OK",
+        "last_run": "2026-05-11 23:30:01.908955+03:00",
+        "error": null
+      }
+    },
+    {
+      "name": "retention-caches.sh",
+      "schedule": "15 3 * * *",
+      "type": "system",
+      "last_status": {
+        "status": "\u2705 OK",
+        "last_run": "2026-05-12 03:15:02.357147+03:00",
+        "error": null
+      }
+    },
+    {
+      "name": "disk-health-check.sh",
+      "schedule": "0 9 * * *",
+      "type": "system",
+      "last_status": {
+        "status": "\u2705 OK",
+        "last_run": "2026-05-03 09:00:01.393126+03:00",
+        "error": null
+      }
+    },
+    {
+      "name": "job-radar.sh",
+      "schedule": "0 6 * * *",
+      "type": "system",
+      "last_status": {
+        "status": "\u2705 OK",
+        "last_run": "2026-05-12 06:00:01.287214+03:00",
+        "error": null
+      }
+    },
+    {
+      "name": "morning-brief.sh",
+      "schedule": "0 6 * * *",
+      "type": "system",
+      "last_status": {
+        "status": "\u2705 OK",
+        "last_run": "2026-05-12 06:00:07.406255+03:00",
+        "error": null
+      }
+    },
+    {
+      "name": "clear-stale-context-maintenance.py",
+      "schedule": "*/5 * * * *",
+      "type": "system",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "cron-watchdog-v3.sh",
+      "schedule": "0 */2 * * *",
+      "type": "system",
+      "last_status": {
+        "status": "\u274c Failed",
+        "last_run": "2026-05-12 14:00:12.550199+03:00",
+        "error": "Check log for details"
+      }
+    },
+    {
+      "name": "sie-360-checks.py",
+      "schedule": "50 1 * * *",
+      "type": "system",
+      "last_status": {
+        "status": "\u2705 OK",
+        "last_run": "2026-05-12 01:50:12.601683+03:00",
+        "error": null
+      }
+    }
+  ]
+}

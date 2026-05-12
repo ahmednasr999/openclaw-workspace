@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-05-12T05:00:35.104850+02:00",
-    "duration_ms": 33208,
+    "generated_at": "2026-05-12T17:00:34.773821+02:00",
+    "duration_ms": 33218,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "57273b56",
+    "run_id": "2a8a016e",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -100,28 +100,24 @@
       "search_title": "Chief Technology Officer"
     },
     {
-      "id": "indeed-in-500ab0d91bc53ac4",
+      "id": "indeed-in-bda7529915502c8b",
       "source": "indeed",
-      "title": "Associate Director, Enablement, Client Management UAE and MENA (UAE National)",
-      "company": "Standard Chartered Bank",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=500ab0d91bc53ac4",
-      "posted": "2026-05-11",
+      "title": "Senior Wellness Program Director",
+      "company": "Confidential",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=bda7529915502c8b",
+      "posted": "2026-05-12",
       "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 23,
+      "domain_match": true,
+      "keyword_score": 6,
       "match_keywords": [
-        "ai",
-        "director",
-        "uae",
-        "dubai",
-        "mena"
+        "director"
       ],
-      "raw_snippet": "**Requisition Number:** 52998\n**Job Location:** Dubai, ARE\n**Global Grade:** Band 6\n**Work Type:** Office Working\n**Employment Type:** Permanent\n**Posting Start Date:** 11/05/2026\n**Posting End Date:** 25/05/2026\n**:****Job Summary**\n\nAs the Associate Director for Enablement within Client Management teams across UAE and MENA, you will play a pivotal role in enforcing and championing the Department Operating Instructions (DOIs) to ensure consistent and effective application across all client inte",
+      "raw_snippet": "**Job Summary:**\n\nWe are seeking an experienced and people\\-focused Senior Wellness Program Director to lead wellness initiatives, program development, and community engagement efforts within a growing wellness\\-focused organization. This role is ideal for professionals passionate about health, wellness, mindfulness, employee wellbeing, and delivering meaningful wellness experiences that positively impact individuals and communities.\n\nThe successful candidate will oversee wellness programs, supp",
       "relevant": true,
       "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Head of Technology"
+      "search_country": "Saudi Arabia",
+      "search_title": "Program Director"
     },
     {
       "id": "indeed-in-c52a521a0f9ab153",
@@ -169,7 +165,7 @@
   ],
   "kpi": {
     "searches_run": 20,
-    "results_per_search": 2.85,
+    "results_per_search": 3.35,
     "unique_jobs": 7,
     "errors": 7
   },

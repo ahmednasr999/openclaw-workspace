@@ -2752,3 +2752,30 @@ Fix the config and retry, or run "openclaw doctor" to repair.
 [2026-05-12 06:00] WARN: Jobs data stale (401h), triggering pipeline
 [2026-05-12 06:00] FIXED: Pipeline triggered
 [2026-05-12 06:00] Summary: fixes=1 warnings=1 alerts=0
+[2026-05-12 08:00] === Watchdog v3 run ===
+[2026-05-12 08:00] WARN: Jobs data stale (403h), triggering pipeline
+[2026-05-12 08:00] FIXED: Pipeline triggered
+[2026-05-12 08:00] Summary: fixes=1 warnings=1 alerts=0
+[2026-05-12 10:00] === Watchdog v3 run ===
+[2026-05-12 10:00] WARN: Jobs data stale (405h), triggering pipeline
+[2026-05-12 10:00] FIXED: Pipeline triggered
+[2026-05-12 10:00] Summary: fixes=1 warnings=1 alerts=0
+[2026-05-12 12:00] === Watchdog v3 run ===
+[2026-05-12 12:00] WARN: Jobs data stale (407h), triggering pipeline
+[2026-05-12 12:00] FIXED: Pipeline triggered
+[2026-05-12 12:00] Summary: fixes=1 warnings=1 alerts=0
+[2026-05-12 14:00] === Watchdog v3 run ===
+[2026-05-12 14:00] WARN: Jobs data stale (409h), triggering pipeline
+[2026-05-12 14:00] FIXED: Pipeline triggered
+[2026-05-12 14:00] Summary: fixes=1 warnings=1 alerts=0
+[2026-05-12 16:00] === Watchdog v3 run ===
+[2026-05-12 16:00] WARN: Jobs data stale (411h), triggering pipeline
+[2026-05-12 16:00] FIXED: Pipeline triggered
+[2026-05-12 16:00] Summary: fixes=1 warnings=1 alerts=0
+[2026-05-12 18:00] === Watchdog v3 run ===
+[2026-05-12 18:00] WARN: Jobs data stale (413h), triggering pipeline
+[2026-05-12 18:00] FIXED: Pipeline triggered
+[2026-05-12 18:00] Summary: fixes=1 warnings=1 alerts=0
+[2026-05-12 20:00] === Watchdog v3 run ===
+[2026-05-12 20:00] WARN: Jobs data stale (415h), triggering pipeline
+[2026-05-12 20:00] FIXED: Pipeline triggered
