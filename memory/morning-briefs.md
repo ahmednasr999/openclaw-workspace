@@ -1812,3 +1812,56 @@ Node.js v22.22.1
 ## Calendar - Today's Events
 *Calendar API unavailable (gog v0.12.0 bug - tracking fix)*
 
+=== Morning Brief - 2026-05-12 06:00 AM ===
+
+## Claude 2x Usage Reminder
+
+## Job Radar (from Tavily)
+[search-router] Tavily unavailable, falling back to local SearXNG: Tavily Search failed (401): {"detail":{"error":"Unauthorized: missing or invalid API key."}}
+## Sources
+
+_(provider: searxng)_
+
+- **American Express Careers & Job Openings | Amex Careers US**
+  https://www.americanexpress.com/en-us/careers/
+  Jan 21, 2026 · Browse American Express US Job Openings. Find Your Place on #TeamAmex and Explore American Express Careers that Match Your Skills Today!
+
+- **Ahmed Samir‏ - ‏Strategic IT Executive Proven Success as VP, IT ...**
+  https://ae.linkedin.com/in/ahmedsamir2
+  Strategic IT Executive Proven Success as VP, IT Director, Head of IT & PMO Driving Digital Transformation, Innovation & Operational Excellence‏ · ‏Leverages ...
+
+- **‏Abid Hussain Shah‏ - ‏Digital Transformation Leader ... - LinkedIn**
+  https://ae.linkedin.com/in/shahabid
+  Recognized for leading complex, high-impact digital initiatives that optimize operations, enhance patient and customer experiences, and deliver measurable business value. Currently serving as the Group Chief Information Digital Officer at Saudi German Health UAE, I lead the digital transformation ag...
+
+- **UAE Salary Guide 2026: The Complete Breakdown for Job Seekers**
+  https://blog.jobxdubai.com/2025/10/15/uae-salary-guide-2026/
+  Oct 15, 2025 · Get the latest 2026 UAE salary benchmarks. Discover the top-paying jobs in Dubai and Abu Dhabi, key industry trends, and in-demand skills.
+
+- **Digital Transformation Lead Jobs in Saudi Arabia - Bayt.com**
+  https://www.bayt.com/en/saudi-arabia/jobs/digital-transformation-lead-jobs/
+  Summary: Drive impactful marketing strategies in the financial services sector as a Marketing Manager for Mobility Solutions.
+
+## Gmail - New Opportunities
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/root/.openclaw/workspace/scripts/gmail-scan.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+
+## Calendar - Today's Events
+*Calendar API unavailable (gog v0.12.0 bug - tracking fix)*
+
