@@ -2,19 +2,19 @@
   "meta": {
     "agent": "email-agent",
     "version": "3.0.0",
-    "generated_at": "2026-05-12T20:00:35.346366+02:00",
-    "duration_ms": 18400,
+    "generated_at": "2026-05-13T18:00:42.736579+02:00",
+    "duration_ms": 28280,
     "ttl_hours": 4,
     "status": "success",
     "error": null,
-    "run_id": "834994a7",
+    "run_id": "2a737a7e",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
     "status": "ok",
-    "scan_time": "2026-05-12T20:00:25.281329+02:00",
-    "total_scanned": 15,
+    "scan_time": "2026-05-13T18:00:28.331878+02:00",
+    "total_scanned": 20,
     "by_category": {
       "interview_invite": 0,
       "recruiter_reach": 0,
@@ -23,7 +23,7 @@
       "assessment": 0,
       "follow_up_needed": 0,
       "job_alert": 0,
-      "other": 15
+      "other": 20
     },
     "interview_invites": [],
     "recruiter_messages": [],
@@ -44,12 +44,12 @@
         "requires_assessment": false,
         "recruiter_top_opportunities": [],
         "top_priority": null,
-        "daily_focus": "No actionable interview, assessment, follow-up, or recruiter emails were provided today."
+        "daily_focus": "No actionable interview, assessment, follow-up, or recruiter emails are present in the provided data today."
       }
     }
   },
   "kpi": {
-    "emails_processed": 15,
+    "emails_processed": 20,
     "actionable": 0,
     "interviews_detected": 0,
     "recruiter_messages": 0,

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-12T14:27:44.887Z",
+  "updatedAt": "2026-05-13T15:12:15.505Z",
   "entries": {
     "memory:memory/archives/2026-03-07.md:29:56": {
       "key": "memory:memory/archives/2026-03-07.md:29:56",
@@ -3334,6 +3334,68 @@
         "sessions-yield",
         "0.9.2",
         "durable"
+      ]
+    },
+    "memory:memory/2026-05-03.md:111:115": {
+      "key": "memory:memory/2026-05-03.md:111:115",
+      "path": "memory/2026-05-03.md",
+      "startLine": 111,
+      "endLine": 115,
+      "source": "memory",
+      "snippet": "- Browser docs reinforced: account/session tasks should use Ahmed-Mac Chrome when login state matters; never ask Ahmed for passwords or automate risky logins; use snapshots/refs over fragile coordinate clicks; verify CDP/profile/node layers before blaming agent/tool; avoid visual loops after repeated screenshots/scrolls without extractable content. - Automation docs reinforced: cron jobs live in gateway DB; cron day-of-month and day-of-week use OR logic; cron for schedules/reminders, heartbeat for proactive wakes, TaskFlow/OpenProse/Lobster only when durable orchestration/deterministic approval-gated workflow is justified; standing order content should live in durable files, cron only tr",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-13T15:12:15.505Z",
+      "lastRecalledAt": "2026-05-13T15:12:15.505Z",
+      "queryHashes": [
+        "ae8751f1f531"
+      ],
+      "recallDays": [
+        "2026-05-13"
+      ],
+      "conceptTags": [
+        "gateway",
+        "account/session",
+        "ahmed-mac",
+        "snapshots/refs",
+        "cdp/profile/node",
+        "agent/tool",
+        "screenshots/scrolls",
+        "day-of-month"
+      ]
+    },
+    "memory:memory/archive/2026-04/2026-04-25.md:79:83": {
+      "key": "memory:memory/archive/2026-04/2026-04-25.md:79:83",
+      "path": "memory/archive/2026-04/2026-04-25.md",
+      "startLine": 79,
+      "endLine": 83,
+      "source": "memory",
+      "snippet": "- Promoted v2 drafts into live `SOUL.md`, `USER.md`, `AGENTS.md`, and `TOOLS.md`. - Main cleanup: removed stale GPT-5.4 references from live core operating files, aligned current default model to GPT-5.5, removed em dash characters, removed the stale Mission Control task-logging contradiction, and made alert classification/body-read rules explicit. - Preserved key non-negotiables: no email without approval, no public/external writes without approval path, model-switch disclosure, gateway safety, JobZoom protected full-scan lane, direct Notion/credential-first behavior, verify-before-done, and no partial-fix stopping. - Verification after promotion: `SOUL.md` 792 words, `USER.md` 597 words, `",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-13T15:12:15.505Z",
+      "lastRecalledAt": "2026-05-13T15:12:15.505Z",
+      "queryHashes": [
+        "ae8751f1f531"
+      ],
+      "recallDays": [
+        "2026-05-13"
+      ],
+      "conceptTags": [
+        "gateway",
+        "gpt",
+        "soul.md",
+        "user.md",
+        "agents.md",
+        "tools.md",
+        "gpt-5.4",
+        "gpt-5.5"
       ]
     }
   }
