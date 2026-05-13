@@ -1,44 +1,25 @@
 {
   "status": "ok",
-  "scan_time": "2026-05-12T18:00:36.711195+02:00",
-  "total_scanned": 29,
+  "scan_time": "2026-05-12T20:00:25.281329+02:00",
+  "total_scanned": 15,
   "by_category": {
     "interview_invite": 0,
     "recruiter_reach": 0,
     "application_ack": 0,
     "rejection": 0,
-    "assessment": 1,
+    "assessment": 0,
     "follow_up_needed": 0,
     "job_alert": 0,
-    "other": 28
+    "other": 15
   },
   "interview_invites": [],
   "recruiter_messages": [],
   "application_acks": [],
   "rejections": [],
-  "assessments": [
-    {
-      "id": "357425",
-      "from": "\"Eivy @ ImmigCanada\" <contact@immigcanada.com>",
-      "subject": "Ahmed Nasr MBA, PMP, CSM, CSPO, Lean Six Sigma, CBAP, MCAD,,\r\n British Columbia PNP Latest Draw",
-      "date": "Tue, 12 May 2026 15:31:19 +0000",
-      "unread": true,
-      "priority": "MEDIUM",
-      "score": 2,
-      "pipeline_match": null
-    }
-  ],
+  "assessments": [],
   "follow_ups_needed": [],
   "job_alerts": [],
-  "actionable_count": 1,
-  "hot_alerts": [
-    {
-      "id": "357425",
-      "subject": "Ahmed Nasr MBA, PMP, CSM, CSPO, Lean Six Sigma, CBAP, MCAD,,\r\n British Columbia PNP Latest Draw",
-      "from": "\"Eivy @ ImmigCanada\" <contact@immigcanada.com>",
-      "priority": "MEDIUM",
-      "pipeline_match": null
-    }
-  ],
+  "actionable_count": 0,
+  "hot_alerts": [],
   "signals": []
 }

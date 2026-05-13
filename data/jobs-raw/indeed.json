@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-05-12T17:00:34.773821+02:00",
-    "duration_ms": 33218,
+    "generated_at": "2026-05-13T05:00:39.084338+02:00",
+    "duration_ms": 37591,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "2a8a016e",
+    "run_id": "d4b8370f",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -59,6 +59,76 @@
       "search_title": "PMO Director"
     },
     {
+      "id": "indeed-in-942862033e317de7",
+      "source": "indeed",
+      "title": "Commercial Director \u2013 Middle East",
+      "company": "DroneShield",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=942862033e317de7",
+      "posted": "2026-05-13",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 26,
+      "match_keywords": [
+        "ai",
+        "infrastructure",
+        "director",
+        "middle east",
+        "api"
+      ],
+      "raw_snippet": "Work with cutting edge AI technology, making the world a safer and more secure place. DroneShield (ASX:DRO) offers an opportunity to solve some of world\u2019s most challenging technical problems in the rapidly growing counter\\-drone sector.\n\n\nOur customers operate in some of the most challenging and high\\-stakes environments in the world, including military organisations, government agencies, airports, critical infrastructure operators, and law enforcement. Protecting airspace in these settings requ",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Program Director"
+    },
+    {
+      "id": "indeed-in-bda88e033b997efc",
+      "source": "indeed",
+      "title": "Fitch Learning | Data Science Trainer, Associate Director - Dubai, UAE",
+      "company": "Fitch Learning",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=bda88e033b997efc",
+      "posted": "2026-05-12",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 20,
+      "match_keywords": [
+        "ai",
+        "director",
+        "uae",
+        "dubai"
+      ],
+      "raw_snippet": "**Requisition ID:** 49962\n**Business Unit:** Fitch Learning\n**Category:** Faculty\n**Location:**Dubai, Dubai, AE\n**Date Posted:** May 12, 2026\nFitch Learning is a leader in financial services training. With unrivaled breadth and depth, the company delivers learning solutions for apprentices, graduates, and those with 10\\+ years\u2019 experience in Financial Services. Our offerings include expert faculty, e\\-learning, coaching, and blended assessments, improving individual and collective business perfo",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Program Director"
+    },
+    {
+      "id": "indeed-in-685a3bb7a9b712a3",
+      "source": "indeed",
+      "title": "Director, Priority Private Banking",
+      "company": "Standard Chartered Bank",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=685a3bb7a9b712a3",
+      "posted": "2026-05-12",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 26,
+      "match_keywords": [
+        "agile",
+        "ai",
+        "director",
+        "dubai"
+      ],
+      "raw_snippet": "**Requisition Number:** 54110\n**Job Location:** Dubai, ARE\n**Global Grade:** Band 5\n**Work Type:** Office Working\n**Employment Type:** Permanent\n**Posting Start Date:** 12/05/2026\n**Posting End Date:** 01/06/2026\n**:****About Us**Our team consists of 25,000 colleagues, spread across 35 countries. We believe in transformation \u2013 embracing agile and new ways of working together, which helps us to truly \u2018think client\u2019 and serve millions of our affluent and emerging affluent clients, across the world",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Program Director"
+    },
+    {
       "id": "indeed-in-3e1f77e5ed19f41c",
       "source": "indeed",
       "title": "Senior Associate Director, Priority Banking",
@@ -79,7 +149,7 @@
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
-      "search_title": "Program Director"
+      "search_title": "Director Digital Transformation"
     },
     {
       "id": "indeed-in-40a3d0d9102df800",
@@ -98,6 +168,97 @@
       "filter_reason": null,
       "search_country": "United Arab Emirates",
       "search_title": "Chief Technology Officer"
+    },
+    {
+      "id": "indeed-in-ff080fbe6f148d15",
+      "source": "indeed",
+      "title": "Director of Community and Operations",
+      "company": "Decentralized Masters",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=ff080fbe6f148d15",
+      "posted": "2026-05-12",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 10,
+      "match_keywords": [
+        "director",
+        "api"
+      ],
+      "raw_snippet": "**About Us**\n\n\nInflection Club is a private co\\-investment community for accredited investors, operators, and family offices who want direct access to pre\\-IPO deals in the companies shaping the future. Built under Catalyst Capital Holdings, we provide curated access from early to late\\-stage opportunities that traditionally only flow to endowments, pension funds, and institutional allocators \\- names like Anthropic, Polymarket, Kraken, and Lovable.\n\n\nOur thesis is simple: the biggest returns of",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "IT Director"
+    },
+    {
+      "id": "indeed-in-c7c9083563a52738",
+      "source": "indeed",
+      "title": "Commercial Director \u2013 Middle East",
+      "company": "DroneShield",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=c7c9083563a52738",
+      "posted": "2026-05-13",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 26,
+      "match_keywords": [
+        "ai",
+        "infrastructure",
+        "director",
+        "middle east",
+        "api"
+      ],
+      "raw_snippet": "Work with cutting edge AI technology, making the world a safer and more secure place. DroneShield (ASX:DRO) offers an opportunity to solve some of world\u2019s most challenging technical problems in the rapidly growing counter\\-drone sector.\n\n\nOur customers operate in some of the most challenging and high\\-stakes environments in the world, including military organisations, government agencies, airports, critical infrastructure operators, and law enforcement. Protecting airspace in these settings requ",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "Program Director"
+    },
+    {
+      "id": "indeed-in-1d640ad425e6e516",
+      "source": "indeed",
+      "title": "Fitch Learning | Data Science Trainer, Associate Director - Riyadh, Saudi Arabia",
+      "company": "Fitch Learning",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=1d640ad425e6e516",
+      "posted": "2026-05-12",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 20,
+      "match_keywords": [
+        "ai",
+        "director",
+        "saudi",
+        "riyadh"
+      ],
+      "raw_snippet": "**Requisition ID:** 49963\n**Business Unit:** Fitch Learning\n**Category:** Faculty\n**Location:**Riyadh, SA\n**Date Posted:** May 12, 2026\nFitch Learning is a leader in financial services training. With unrivaled breadth and depth, the company delivers learning solutions for apprentices, graduates, and those with 10\\+ years\u2019 experience in Financial Services. Our offerings include expert faculty, e\\-learning, coaching, and blended assessments, improving individual and collective business performance",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "Program Director"
+    },
+    {
+      "id": "indeed-in-7abe32a788af48f7",
+      "source": "indeed",
+      "title": "Director, Technology Consulting - Telecom SME",
+      "company": "EPAM Systems",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=7abe32a788af48f7",
+      "posted": "2026-05-12",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 26,
+      "match_keywords": [
+        "digital transformation",
+        "ai",
+        "director",
+        "platform"
+      ],
+      "raw_snippet": "**About us**\n\n\nEPAM Systems is a leading global provider of digital platform engineering and software development services. Founded in 1993 and headquartered in Newtown, Pennsylvania, EPAM has been helping clients navigate digital transformation for over 30 years, delivering innovative solutions to stay competitive in constantly evolving markets.\n\n\nAs consultants, designers, architects, engineers and trainers, at EPAM, we specialize in building long\\-term partnerships, enabling businesses to rei",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "Program Director"
     },
     {
       "id": "indeed-in-bda7529915502c8b",
@@ -138,36 +299,14 @@
       "relevant": true,
       "filter_reason": null,
       "search_country": "Saudi Arabia",
-      "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-7bd2594c617efb3a",
-      "source": "indeed",
-      "title": "Project Director",
-      "company": "Parsons",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=7bd2594c617efb3a",
-      "posted": "2026-05-10",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 20,
-      "match_keywords": [
-        "director",
-        "leadership",
-        "growth"
-      ],
-      "raw_snippet": "In a world of possibilities, pursue one with endless opportunities. Imagine Next!  \n\n\nAt Parsons, you can imagine a career where you thrive, work with exceptional people, and be yourself. Guided by our leadership vision of valuing people, embracing agility, and fostering growth, we cultivate an innovative culture that empowers you to achieve your full potential. Unleash your talent and redefine what\u2019s possible. **Job Description:**\n\n\nParsons is looking for an amazingly talented and proactive **P",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Program Director"
+      "search_title": "IT Director"
     }
   ],
   "kpi": {
     "searches_run": 20,
-    "results_per_search": 3.35,
-    "unique_jobs": 7,
-    "errors": 7
+    "results_per_search": 3.75,
+    "unique_jobs": 13,
+    "errors": 4
   },
   "recommendations": []
 }
