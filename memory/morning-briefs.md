@@ -1865,3 +1865,56 @@ Node.js v22.22.1
 ## Calendar - Today's Events
 *Calendar API unavailable (gog v0.12.0 bug - tracking fix)*
 
+=== Morning Brief - 2026-05-13 06:00 AM ===
+
+## Claude 2x Usage Reminder
+
+## Job Radar (from Tavily)
+[search-router] Tavily unavailable, falling back to local SearXNG: Tavily Search failed (402): {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+## Sources
+
+_(provider: searxng)_
+
+- **UAE Salary Guide 2026: The Complete Breakdown for Job Seekers**
+  https://blog.jobxdubai.com/2025/10/15/uae-salary-guide-2026/
+  Oct 15, 2025 · Get the latest 2026 UAE salary benchmarks. Discover the top-paying jobs in Dubai and Abu Dhabi, key industry trends, and in-demand skills.
+
+- **‏Rawan Masri‏ - ‏PMO & Program Management Lead - LinkedIn**
+  https://sa.linkedin.com/in/rawan-masri-9403b8123
+  PMO & Program Management Lead | Governance | Delivery Excellence | Aviation & Digital Transformation ... Dubai, United Arab Emirates. رسم بياني ‏Freightos ...
+
+- **‏Rayed Saad Altukhais‏ - ‏VP Digital and Technological Transformation ...**
+  https://sa.linkedin.com/in/rayed-saad-altukhais
+  ‏VP Digital and Technological Transformation | CIO| CDTO | National Transformation | Vision 2030‏ · ‏Futuristic C-Level IT and Digital Transformation Leader with over 15 years of experience, driving high-impact projects by executing trailblazing strategies while aligning technology investments with ...
+
+- **Justice Integrity Report - March 2026 News (Pt. 1)**
+  https://www.justice-integrity.org/news-reports/2167-march-2026-news-pt-1
+  The United Arab Emirates defense ministry said its air defenses “engaged” 9 ballistic missiles and 33 drones launched by Iran on Saturday, and Saudi Arabia’s defense ministry reported a handful of drone interceptions during the day.
+
+- **Digital Transformation Manager Jobs in the Middle East - Bayt.com**
+  https://www.bayt.com/en/international/jobs/digital-transformation-manager-jobs/
+  Digital Transformation Manager — Dubai, UAE. Emagine Solutions FZE ... Summary: A pivotal role exists for a PMO professional in Saudi Arabia ...
+
+## Gmail - New Opportunities
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/root/.openclaw/workspace/scripts/gmail-scan.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+
+## Calendar - Today's Events
+*Calendar API unavailable (gog v0.12.0 bug - tracking fix)*
+
