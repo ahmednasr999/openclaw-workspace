@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-05-13T17:00:42.749448+02:00",
-    "duration_ms": 40831,
+    "generated_at": "2026-05-14T05:00:43.639251+02:00",
+    "duration_ms": 41508,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "9b93c9c1",
+    "run_id": "f4d4cf15",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -59,6 +59,47 @@
       "search_title": "PMO Director"
     },
     {
+      "id": "indeed-in-5f32202692772df9",
+      "source": "indeed",
+      "title": "Senior Manager Delivery",
+      "company": "TELUS Digital",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=5f32202692772df9",
+      "posted": "2026-05-13",
+      "seniority": "Other",
+      "domain_match": false,
+      "keyword_score": 10,
+      "match_keywords": [
+        "agile"
+      ],
+      "raw_snippet": "**Who We Are**\n--------------\n\n\nWelcome to TELUS Digital \u2014 where innovation drives impact at a global scale. As an award\\-winning digital product consultancy and the digital division of TELUS, one of Canada\u2019s largest telecommunications providers, we design and deliver transformative customer experiences through cutting\\-edge technology, agile thinking, and a people\\-first culture.\n\n\nWith a global team across North America, South America, Central America, Europe, Africa, and APAC, we offer end\\-t",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Program Director"
+    },
+    {
+      "id": "indeed-in-e0103ab4b08c2549",
+      "source": "indeed",
+      "title": "Director Global Security and Asset Protection (GSAP) EME OU",
+      "company": "The Coca-Cola Company",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=e0103ab4b08c2549",
+      "posted": "2026-05-13",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 13,
+      "match_keywords": [
+        "director",
+        "leadership"
+      ],
+      "raw_snippet": "A Global Security and Asset Protection (GSAP) Director is tasked with protecting The Coca\\-Cola Company from security and high\\-risk issues that seriously threaten operations, consumer trust or shareholder confidence by delivering high\\-order threat prevention and resolution support to the global business system, including the development and implementation of complex security programs during major events. The role also provides strategic leadership to drive state of the art security advice and ",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Program Director"
+    },
+    {
       "id": "indeed-in-942862033e317de7",
       "source": "indeed",
       "title": "Commercial Director \u2013 Middle East",
@@ -77,29 +118,6 @@
         "api"
       ],
       "raw_snippet": "Work with cutting edge AI technology, making the world a safer and more secure place. DroneShield (ASX:DRO) offers an opportunity to solve some of world\u2019s most challenging technical problems in the rapidly growing counter\\-drone sector.\n\n\nOur customers operate in some of the most challenging and high\\-stakes environments in the world, including military organisations, government agencies, airports, critical infrastructure operators, and law enforcement. Protecting airspace in these settings requ",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-bda88e033b997efc",
-      "source": "indeed",
-      "title": "Fitch Learning | Data Science Trainer, Associate Director - Dubai, UAE",
-      "company": "Fitch Learning",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=bda88e033b997efc",
-      "posted": "2026-05-12",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 20,
-      "match_keywords": [
-        "ai",
-        "director",
-        "uae",
-        "dubai"
-      ],
-      "raw_snippet": "**Requisition ID:** 49962\n**Business Unit:** Fitch Learning\n**Category:** Faculty\n**Location:**Dubai, Dubai, AE\n**Date Posted:** May 12, 2026\nFitch Learning is a leader in financial services training. With unrivaled breadth and depth, the company delivers learning solutions for apprentices, graduates, and those with 10\\+ years\u2019 experience in Financial Services. Our offerings include expert faculty, e\\-learning, coaching, and blended assessments, improving individual and collective business perfo",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
@@ -126,7 +144,7 @@
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
-      "search_title": "Program Director"
+      "search_title": "Director Digital Transformation"
     },
     {
       "id": "indeed-in-3e1f77e5ed19f41c",
@@ -191,6 +209,30 @@
       "search_title": "IT Director"
     },
     {
+      "id": "indeed-in-2f9e9b0c81a181e2",
+      "source": "indeed",
+      "title": "PMO Director",
+      "company": "Talent 360",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=2f9e9b0c81a181e2",
+      "posted": "2026-05-14",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 40,
+      "match_keywords": [
+        "pmo",
+        "project management",
+        "ai",
+        "executive",
+        "director"
+      ],
+      "raw_snippet": "The PMO Director is responsible for leading the Project Management Office (PMO) function, ensuring effective governance, execution oversight, and portfolio management across strategic programs and projects. The role focuses on driving delivery excellence, standardizing project management practices, and supporting executive decision\\-making.  \n\n  \n\n**Key Responsibilities**\n\n* Lead and oversee the PMO function across all projects and transformation initiatives.\n* Establish and maintain project gov",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "PMO Director"
+    },
+    {
       "id": "indeed-in-b2e5436bafc13867",
       "source": "indeed",
       "title": "Head of Data & AI Delivery",
@@ -214,93 +256,23 @@
       "search_title": "Head of PMO"
     },
     {
-      "id": "indeed-in-0f9f21946dd22ddb",
+      "id": "indeed-in-9ae94e38179889d7",
       "source": "indeed",
-      "title": "Consulting Director",
+      "title": "Venture Capital Director",
       "company": "Talent 360",
       "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=0f9f21946dd22ddb",
-      "posted": "2026-05-13",
+      "url": "https://sa.indeed.com/viewjob?jk=9ae94e38179889d7",
+      "posted": "2026-05-14",
       "seniority": "C-Suite",
       "domain_match": false,
-      "keyword_score": 26,
+      "keyword_score": 23,
       "match_keywords": [
         "ai",
         "director",
-        "leadership",
-        "growth"
-      ],
-      "raw_snippet": "The Consulting Director is a senior leadership role responsible for overseeing multiple consulting engagements, driving strategic client relationships, and ensuring successful delivery of complex, multi\\-stream transformation programs. The role also plays a key part in business growth, thought leadership, and organizational capability development.  \n\n  \n\n**Key Responsibilities**\n\n* Lead multiple large\\-scale consulting engagements across strategy, transformation, and advisory domains.\n* Define o",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-c7c9083563a52738",
-      "source": "indeed",
-      "title": "Commercial Director \u2013 Middle East",
-      "company": "DroneShield",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=c7c9083563a52738",
-      "posted": "2026-05-13",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 26,
-      "match_keywords": [
-        "ai",
-        "infrastructure",
-        "director",
-        "middle east",
+        "growth",
         "api"
       ],
-      "raw_snippet": "Work with cutting edge AI technology, making the world a safer and more secure place. DroneShield (ASX:DRO) offers an opportunity to solve some of world\u2019s most challenging technical problems in the rapidly growing counter\\-drone sector.\n\n\nOur customers operate in some of the most challenging and high\\-stakes environments in the world, including military organisations, government agencies, airports, critical infrastructure operators, and law enforcement. Protecting airspace in these settings requ",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-1d640ad425e6e516",
-      "source": "indeed",
-      "title": "Fitch Learning | Data Science Trainer, Associate Director - Riyadh, Saudi Arabia",
-      "company": "Fitch Learning",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=1d640ad425e6e516",
-      "posted": "2026-05-12",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 20,
-      "match_keywords": [
-        "ai",
-        "director",
-        "saudi",
-        "riyadh"
-      ],
-      "raw_snippet": "**Requisition ID:** 49963\n**Business Unit:** Fitch Learning\n**Category:** Faculty\n**Location:**Riyadh, SA\n**Date Posted:** May 12, 2026\nFitch Learning is a leader in financial services training. With unrivaled breadth and depth, the company delivers learning solutions for apprentices, graduates, and those with 10\\+ years\u2019 experience in Financial Services. Our offerings include expert faculty, e\\-learning, coaching, and blended assessments, improving individual and collective business performance",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-7abe32a788af48f7",
-      "source": "indeed",
-      "title": "Director, Technology Consulting - Telecom SME",
-      "company": "EPAM Systems",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=7abe32a788af48f7",
-      "posted": "2026-05-12",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 26,
-      "match_keywords": [
-        "digital transformation",
-        "ai",
-        "director",
-        "platform"
-      ],
-      "raw_snippet": "**About us**\n\n\nEPAM Systems is a leading global provider of digital platform engineering and software development services. Founded in 1993 and headquartered in Newtown, Pennsylvania, EPAM has been helping clients navigate digital transformation for over 30 years, delivering innovative solutions to stay competitive in constantly evolving markets.\n\n\nAs consultants, designers, architects, engineers and trainers, at EPAM, we specialize in building long\\-term partnerships, enabling businesses to rei",
+      "raw_snippet": "The Venture Capital Director is responsible for managing venture capital investment activities, supporting portfolio growth, identifying investment opportunities, and contributing to strategic investment initiatives. The role focuses on driving investment performance, supporting deal execution, and maintaining strong relationships within the startup ecosystem.  \n\n  \n\n**Key Responsibilities**\n\n* Lead sourcing, evaluation, and execution of venture capital investment opportunities.\n* Conduct market",
       "relevant": true,
       "filter_reason": null,
       "search_country": "Saudi Arabia",
@@ -351,6 +323,29 @@
       "search_title": "Director Digital Transformation"
     },
     {
+      "id": "indeed-in-7abe32a788af48f7",
+      "source": "indeed",
+      "title": "Director, Technology Consulting - Telecom SME",
+      "company": "EPAM Systems",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=7abe32a788af48f7",
+      "posted": "2026-05-12",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 26,
+      "match_keywords": [
+        "digital transformation",
+        "ai",
+        "director",
+        "platform"
+      ],
+      "raw_snippet": "**About us**\n\n\nEPAM Systems is a leading global provider of digital platform engineering and software development services. Founded in 1993 and headquartered in Newtown, Pennsylvania, EPAM has been helping clients navigate digital transformation for over 30 years, delivering innovative solutions to stay competitive in constantly evolving markets.\n\n\nAs consultants, designers, architects, engineers and trainers, at EPAM, we specialize in building long\\-term partnerships, enabling businesses to rei",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "Director Digital Transformation"
+    },
+    {
       "id": "indeed-in-c3f4ed4190bd5c44",
       "source": "indeed",
       "title": "Head of AI Consulting services",
@@ -371,13 +366,37 @@
       "filter_reason": null,
       "search_country": "Saudi Arabia",
       "search_title": "Head of Digital Transformation"
+    },
+    {
+      "id": "indeed-in-c7c9083563a52738",
+      "source": "indeed",
+      "title": "Commercial Director \u2013 Middle East",
+      "company": "DroneShield",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=c7c9083563a52738",
+      "posted": "2026-05-13",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 26,
+      "match_keywords": [
+        "ai",
+        "infrastructure",
+        "director",
+        "middle east",
+        "api"
+      ],
+      "raw_snippet": "Work with cutting edge AI technology, making the world a safer and more secure place. DroneShield (ASX:DRO) offers an opportunity to solve some of world\u2019s most challenging technical problems in the rapidly growing counter\\-drone sector.\n\n\nOur customers operate in some of the most challenging and high\\-stakes environments in the world, including military organisations, government agencies, airports, critical infrastructure operators, and law enforcement. Protecting airspace in these settings requ",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "Chief Technology Officer"
     }
   ],
   "kpi": {
     "searches_run": 20,
-    "results_per_search": 4.2,
-    "unique_jobs": 16,
-    "errors": 2
+    "results_per_search": 4.55,
+    "unique_jobs": 17,
+    "errors": 1
   },
   "recommendations": []
 }

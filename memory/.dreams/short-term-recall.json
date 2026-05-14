@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-13T15:12:15.505Z",
+  "updatedAt": "2026-05-13T21:05:50.571Z",
   "entries": {
     "memory:memory/archives/2026-03-07.md:29:56": {
       "key": "memory:memory/archives/2026-03-07.md:29:56",
@@ -2457,13 +2457,13 @@
       "endLine": 64,
       "source": "memory",
       "snippet": "- Patched `/root/.openclaw/workspace-jobzoom/scripts/daily_run.py` for better scoring observability: - gateway calls now record `elapsed_ms` in `gpt_api_calls.note`, including failures, - batch scoring logs attempt start, timeout budget, per-attempt duration, total batch duration, scores, and fallback duration. - Verified with `python3 -m py_compile /root/.openclaw/workspace-jobzoom/scripts/daily_run.py`. - Path drift task: confirmed `/root/.openclaw/workspace-jobzoom/scripts/jobs-source-linkedin-jobspy.py` is a symlink to `/root/.openclaw/workspace/scripts/jobs-source-linkedin-jobspy.py`, and `daily_run.py` calls `preflight_jobspy_path()` before scraping. Marked the drift guard task res",
-      "recallCount": 7,
+      "recallCount": 8,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 7,
+      "totalScore": 8,
       "maxScore": 1,
       "firstRecalledAt": "2026-05-01T02:39:36.670Z",
-      "lastRecalledAt": "2026-05-10T11:53:37.439Z",
+      "lastRecalledAt": "2026-05-13T21:05:50.571Z",
       "queryHashes": [
         "62d1011768ae",
         "97d8d9266e77",
@@ -2471,7 +2471,8 @@
         "9dd97a05c915",
         "83f965b9faa6",
         "ce9564d11535",
-        "3588eba33b1e"
+        "3588eba33b1e",
+        "f7ee14a29b8e"
       ],
       "recallDays": [
         "2026-05-01",
@@ -2479,7 +2480,8 @@
         "2026-05-03",
         "2026-05-05",
         "2026-05-07",
-        "2026-05-10"
+        "2026-05-10",
+        "2026-05-14"
       ],
       "conceptTags": [
         "gateway",
