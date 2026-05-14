@@ -2,61 +2,38 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-05-14T05:00:43.639251+02:00",
-    "duration_ms": 41508,
+    "generated_at": "2026-05-14T17:00:42.989577+02:00",
+    "duration_ms": 40531,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "f4d4cf15",
+    "run_id": "9a644341",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": [
     {
-      "id": "indeed-in-088ede37e31e83dd",
+      "id": "indeed-in-8e6f4f1e42438921",
       "source": "indeed",
-      "title": "Project Management Director (UAE Nationals ONLY)",
-      "company": "Hamdan Bin Mohammed Smart University",
+      "title": "Associate Director, Priority Banking",
+      "company": "Standard Chartered Bank",
       "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=088ede37e31e83dd",
-      "posted": "2026-05-11",
+      "url": "https://ae.indeed.com/viewjob?jk=8e6f4f1e42438921",
+      "posted": "2026-05-14",
       "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 30,
+      "domain_match": false,
+      "keyword_score": 26,
       "match_keywords": [
-        "pmo",
-        "project management",
+        "agile",
+        "ai",
         "director",
-        "uae"
+        "dubai"
       ],
-      "raw_snippet": "Job Summary\n\n\nThe Project Manager is responsible for managing and delivering transformation projects and other strategic initiatives under Transformation \\& PMO. Ensure that projects align with organizational goals, adhere to project management best practices, and drive continuous improvement in business processes. Additionally, project planning, execution, stakeholder coordination, and risk management to ensure timely and successful project completion.\n\n\nEssential Duties and Responsibilities\n\n\n",
+      "raw_snippet": "**Requisition Number:** 54261\n**Job Location:** Dubai, ARE\n**Global Grade:** Band 7\n**Work Type:** Office Working\n**Employment Type:** Permanent\n**Posting Start Date:** 14/05/2026\n**Posting End Date:** 28/05/2026\n**:****About Us**Our team consists of 25,000 colleagues, spread across 35 countries. We believe in transformation \u2013 embracing agile and new ways of working together, which helps us to truly \u2018think client\u2019 and serve millions of our affluent and emerging affluent clients, across the world",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
-      "search_title": "PMO Director"
-    },
-    {
-      "id": "indeed-in-9aa75e7e21e23f1e",
-      "source": "indeed",
-      "title": "Project Management Director (UAE Nationals Only)",
-      "company": "Hamdan Bin Mohammed Smart University",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=9aa75e7e21e23f1e",
-      "posted": "2026-05-11",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 30,
-      "match_keywords": [
-        "pmo",
-        "project management",
-        "director",
-        "uae"
-      ],
-      "raw_snippet": "Category\n\n\nAdministrative Positions\n\n\nType\n\n\nFull time\n\n\nDescription\n\n The Project Management Director is responsible for managing and delivering transformation projects and other strategic initiatives under Transformation \\& PMO. Ensure that projects align with organizational goals, adhere to project management best practices, and drive continuous improvement in business processes. Additionally, project planning, execution, stakeholder coordination, and risk management to ensure timely and succ",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "PMO Director"
+      "search_title": "Program Director"
     },
     {
       "id": "indeed-in-5f32202692772df9",
@@ -100,30 +77,6 @@
       "search_title": "Program Director"
     },
     {
-      "id": "indeed-in-942862033e317de7",
-      "source": "indeed",
-      "title": "Commercial Director \u2013 Middle East",
-      "company": "DroneShield",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=942862033e317de7",
-      "posted": "2026-05-13",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 26,
-      "match_keywords": [
-        "ai",
-        "infrastructure",
-        "director",
-        "middle east",
-        "api"
-      ],
-      "raw_snippet": "Work with cutting edge AI technology, making the world a safer and more secure place. DroneShield (ASX:DRO) offers an opportunity to solve some of world\u2019s most challenging technical problems in the rapidly growing counter\\-drone sector.\n\n\nOur customers operate in some of the most challenging and high\\-stakes environments in the world, including military organisations, government agencies, airports, critical infrastructure operators, and law enforcement. Protecting airspace in these settings requ",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Program Director"
-    },
-    {
       "id": "indeed-in-685a3bb7a9b712a3",
       "source": "indeed",
       "title": "Director, Priority Private Banking",
@@ -147,27 +100,52 @@
       "search_title": "Director Digital Transformation"
     },
     {
-      "id": "indeed-in-3e1f77e5ed19f41c",
+      "id": "indeed-in-fbda4ec10ef4301f",
       "source": "indeed",
-      "title": "Senior Associate Director, Priority Banking",
-      "company": "Standard Chartered Bank",
+      "title": "CEO - AI Acquisition",
+      "company": "AI Acquisition",
       "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=3e1f77e5ed19f41c",
-      "posted": "2026-05-11",
+      "url": "https://ae.indeed.com/viewjob?jk=fbda4ec10ef4301f",
+      "posted": "2026-05-14",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 26,
+      "match_keywords": [
+        "ai",
+        "enterprise",
+        "growth",
+        "api",
+        "platform"
+      ],
+      "raw_snippet": "About AI Acquisition\nAI Acquisition is at the forefront of the AI revolution, empowering entrepreneurs and marketing agencies globally to harness cutting\\-edge AI tools for scalable business growth. We have rapidly scaled from a startup to a multi\\-8 figure enterprise within three years, poised to hit the 9\\-figure mark. Our innovative programs and platforms enable members to achieve transformative results with efficiency and ease.\n\n\nRole Overview\nWe are seeking a visionary and dynamic **Chief E",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Chief Technology Officer"
+    },
+    {
+      "id": "indeed-in-942862033e317de7",
+      "source": "indeed",
+      "title": "Commercial Director \u2013 Middle East",
+      "company": "DroneShield",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=942862033e317de7",
+      "posted": "2026-05-13",
       "seniority": "C-Suite",
       "domain_match": false,
       "keyword_score": 26,
       "match_keywords": [
-        "agile",
         "ai",
+        "infrastructure",
         "director",
-        "dubai"
+        "middle east",
+        "api"
       ],
-      "raw_snippet": "**Requisition Number:** 52688\n**Job Location:** Dubai, ARE\n**Global Grade:** Band 6\n**Work Type:** Office Working\n**Employment Type:** Permanent\n**Posting Start Date:** 11/05/2026\n**Posting End Date:** 25/05/2026\n**:****About Us**Our team consists of 25,000 colleagues, spread across 35 countries. We believe in transformation \u2013 embracing agile and new ways of working together, which helps us to truly \u2018think client\u2019 and serve millions of our affluent and emerging affluent clients, across the world",
+      "raw_snippet": "Work with cutting edge AI technology, making the world a safer and more secure place. DroneShield (ASX:DRO) offers an opportunity to solve some of world\u2019s most challenging technical problems in the rapidly growing counter\\-drone sector.\n\n\nOur customers operate in some of the most challenging and high\\-stakes environments in the world, including military organisations, government agencies, airports, critical infrastructure operators, and law enforcement. Protecting airspace in these settings requ",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
-      "search_title": "Director Digital Transformation"
+      "search_title": "Chief Technology Officer"
     },
     {
       "id": "indeed-in-40a3d0d9102df800",
@@ -254,6 +232,28 @@
       "filter_reason": null,
       "search_country": "Saudi Arabia",
       "search_title": "Head of PMO"
+    },
+    {
+      "id": "indeed-in-056c239c2d8b2b43",
+      "source": "indeed",
+      "title": "Delivery Director",
+      "company": "Adree",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=056c239c2d8b2b43",
+      "posted": "2026-05-14",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 23,
+      "match_keywords": [
+        "operational excellence",
+        "director",
+        "leadership"
+      ],
+      "raw_snippet": "As the Delivery Director at Adree, you will be responsible for overseeing the end\\-to\\-end delivery of multiple complex projects and programs, ensuring they meet quality, timeline, and budget expectations. You will lead delivery teams, drive operational excellence, and collaborate with stakeholders to align delivery strategies with business goals.\n\n\nYour primary responsibilities will include:\n\n* Providing strategic leadership to delivery teams to ensure successful project execution and client sa",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "Program Director"
     },
     {
       "id": "indeed-in-9ae94e38179889d7",
@@ -390,13 +390,79 @@
       "filter_reason": null,
       "search_country": "Saudi Arabia",
       "search_title": "Chief Technology Officer"
+    },
+    {
+      "id": "indeed-in-0655486e33f47c21",
+      "source": "indeed",
+      "title": "Director - Corporate Enablement - CM5",
+      "company": "Qiddiya Investment Company",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=0655486e33f47c21",
+      "posted": "2026-05-14",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 13,
+      "match_keywords": [
+        "director",
+        "leadership"
+      ],
+      "raw_snippet": "Role Purpose\n\n\nLead and coordinate the delivery of corporate support services for this cultural and heritage programme ensuring effective HR operations, procurement coordination, finance support, IT administration, legal coordination, and administrative services to enable smooth day\\-to\\-day operations and compliance, in alignment with Qiddiya Group centralized functions.\n\n\nKey Responsibilities:\n\n\nCorporate Enablement Leadership \\& Service Delivery\n\n\n* Lead the planning, coordination, and contin",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "IT Director"
+    },
+    {
+      "id": "indeed-in-596cf399c44a319a",
+      "source": "indeed",
+      "title": "Associate Director (CM)",
+      "company": "Turner & Townsend Pty Limited",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=596cf399c44a319a",
+      "posted": "2026-05-14",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 6,
+      "match_keywords": [
+        "director"
+      ],
+      "raw_snippet": "**Company Description**  \n\nAt Turner \\& Townsend we\u2019re passionate about making the difference. That means delivering better outcomes for our clients, helping our people to realize their potential, and doing our part to create a prosperous society.  \n\nEvery day we help our major global clients deliver ambitious and highly technical projects, in over 130 countries worldwide.  \n\nOur team is dynamic, innovative and client\\-focused, supported by an inclusive and fun company culture. Our clients value",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "IT Director"
+    },
+    {
+      "id": "indeed-in-6f61dfc526885f9d",
+      "source": "indeed",
+      "title": "Senior Commercial Director KSA",
+      "company": "Hilton",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=6f61dfc526885f9d",
+      "posted": "2026-05-13",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 30,
+      "match_keywords": [
+        "ai",
+        "director",
+        "growth",
+        "saudi",
+        "ksa",
+        "api"
+      ],
+      "raw_snippet": "Senior Commercial Director KSA\n\n\nThe Senior Commercial Director for KSA, Bahrain, and Kuwait is responsible for shaping and executing a long\u2011term (3\u20135 year) commercial strategy with a strong focus on accelerating growth in the Kingdom of Saudi Arabia\u2014one of Hilton\u2019s most strategically important markets, expected to exceed 100 hotels within five years.\n\n\nThis role leads the development of the value proposition and investment cases required to unlock this growth, ensuring the right commercial foun",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "IT Director"
     }
   ],
   "kpi": {
     "searches_run": 20,
-    "results_per_search": 4.55,
-    "unique_jobs": 17,
-    "errors": 1
+    "results_per_search": 4.1,
+    "unique_jobs": 20,
+    "errors": 2
   },
   "recommendations": []
 }

@@ -185,6 +185,8 @@ Full coding closeout must include:
 - evidence that the actual outcome was inspected
 - remaining uncertainty/risk
 
+For non-trivial code edits, PR fixes, or branch review work, use `skills/codex-review-closeout/` before final closeout when Codex review is available. Treat review findings as evidence, not authority: classify each accepted/rejected/deferred finding, fix only real in-scope issues, rerun focused checks after accepted fixes, and keep commits/pushes/PR comments behind the normal approval boundary. Tiny obvious edits can skip this gate unless risk is high or Ahmed asks for review.
+
 ## References
 
 - Full AGENTS reference: `docs/reference/AGENTS.full.md`

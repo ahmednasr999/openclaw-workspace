@@ -10,6 +10,8 @@ STATE_FILE="$WORKSPACE/tmp/disk-guard-last-trigger.txt"
 BACKUP_WARN_GB="${DISK_GUARD_BACKUP_WARN_GB:-8}"
 BACKUP_KEEP_DAYS="${DISK_GUARD_BACKUP_KEEP_DAYS:-14}"
 BACKUP_PRUNE="${DISK_GUARD_PRUNE_BACKUPS:-0}"
+SAFE_TMP_AGE_DAYS="${DISK_GUARD_SAFE_TMP_AGE_DAYS:-3}"
+COMPILE_CACHE_AGE_DAYS="${DISK_GUARD_COMPILE_CACHE_AGE_DAYS:-2}"
 mkdir -p "$LOG_DIR" "$TMP_DIR"
 
 now_iso() { date -Is; }
@@ -77,10 +79,20 @@ LOG="$LOG_DIR/cleanup-$(date +%Y%m%d-%H%M%S).log"
 
   printf '\nSafe cleanup: OpenClaw logs older than 7 days.\n'
   find /root/.openclaw -xdev -path '*/logs/*' -type f -mtime +7 -delete 2>/dev/null || true
+  find "$LOG_DIR" -xdev -type f -name 'cleanup-*.log' -mtime +30 -delete 2>/dev/null || true
+
+  printf '\nSafe cleanup: stale system temp files older than %s days.\n' "$SAFE_TMP_AGE_DAYS"
+  find /tmp /var/tmp -xdev -mindepth 1 -maxdepth 1 \
+    \( -name 'systemd-private-*' -o -name '.X11-unix' -o -name '.ICE-unix' -o -name '.font-unix' \) -prune -o \
+    -mtime +"$SAFE_TMP_AGE_DAYS" -exec rm -rf --one-file-system {} + 2>/dev/null || true
+
+  printf '\nSafe cleanup: OpenClaw compile cache entries older than %s days.\n' "$COMPILE_CACHE_AGE_DAYS"
+  find /var/tmp/openclaw-compile-cache -xdev -mindepth 1 -mtime +"$COMPILE_CACHE_AGE_DAYS" \
+    -exec rm -rf --one-file-system {} + 2>/dev/null || true
 
   printf '\nSafe cleanup: npm/pnpm metadata logs and generic temp caches.\n'
   find /root/.openclaw/plugin-runtime-deps -xdev -type d \( -name '_logs' -o -name '.cache' \) -prune -exec rm -rf {} + 2>/dev/null || true
-  rm -rf /root/.cache/pip /root/.cache/ms-playwright /root/.cache/puppeteer 2>/dev/null || true
+  rm -rf /root/.cache/pip /root/.cache/ms-playwright /root/.cache/puppeteer /root/.npm/_npx 2>/dev/null || true
 
   if command -v pnpm >/dev/null 2>&1; then
     pnpm store prune || true

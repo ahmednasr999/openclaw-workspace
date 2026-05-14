@@ -25,6 +25,24 @@ Use this skill for Ahmed's executive content workflow when the task concerns con
 - For multi-step CMO/content work, use the lightweight workflow-status pattern in `docs/content-claw/codex-social-ai-team-adaptation-2026-05-01.md` when it reduces ambiguity: current stage, next action, blocker, approved assets, publishing status, and quality gate. Do not create process theater for one-step tasks.
 - Before any LinkedIn handoff, scheduling preparation, or public posting approval request, run publisher QA: caption approved or clearly draft, creative approved and matched to caption, correct platform/date/ratio, alt text where useful, no unapproved claims, no private data, correct media paths, and explicit approval before any external post/schedule action.
 
+
+## Modular Publishing Safety References
+
+For detailed publishing safety, load only the needed file:
+
+References:
+- `references/linkedin-posting.md` - LinkedIn approval, upload, and s3key rules.
+- `references/visual-quality.md` - premium visual reference and rejection rules.
+- `references/notion-content-calendar.md` - content calendar source-of-truth.
+- `references/duplicate-prevention.md` - live/local duplicate prevention before external writes.
+
+Checklists:
+- `checklists/pre-publish.md` - before approval requests, scheduling, or publishing.
+- `checklists/image-post-quality.md` - before saying a visual is ready.
+- `checklists/post-publish-verification.md` - after publish or retry.
+
+Default rule: draft locally, verify quality, check duplicates, and require the correct approval boundary before any public/external action.
+
 ## Premium Visual Quality Gate
 
 Use this gate for every Ahmed LinkedIn premium card unless Ahmed explicitly chooses a different visual direction.

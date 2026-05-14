@@ -1,25 +1,60 @@
 {
   "status": "ok",
-  "scan_time": "2026-05-13T20:00:23.128545+02:00",
-  "total_scanned": 13,
+  "scan_time": "2026-05-14T18:00:53.485395+02:00",
+  "total_scanned": 23,
   "by_category": {
     "interview_invite": 0,
-    "recruiter_reach": 0,
+    "recruiter_reach": 1,
     "application_ack": 0,
     "rejection": 0,
     "assessment": 0,
     "follow_up_needed": 0,
     "job_alert": 0,
-    "other": 13
+    "other": 22
   },
   "interview_invites": [],
-  "recruiter_messages": [],
+  "recruiter_messages": [
+    {
+      "id": "357736",
+      "from": "Mindstream <hello@mindstream.news>",
+      "subject": "WhatsApp lets you chat to AI without logs now",
+      "date": "Thu, 14 May 2026 15:06:13 +0000 (UTC)",
+      "unread": true,
+      "priority": "HIGH",
+      "score": 10,
+      "pipeline_match": "SAP"
+    }
+  ],
   "application_acks": [],
   "rejections": [],
   "assessments": [],
   "follow_ups_needed": [],
   "job_alerts": [],
-  "actionable_count": 0,
+  "actionable_count": 1,
   "hot_alerts": [],
-  "signals": []
+  "signals": [
+    {
+      "company": "SAP",
+      "signal": "recruiter_email",
+      "subject": "WhatsApp lets you chat to AI without logs now",
+      "sender": "Mindstream <hello@mindstream.news>",
+      "job_ids": [
+        "indeed-in-b2195113ff678ef7",
+        "indeed-in-b7591ff66cc5a732",
+        "linkedin_jobspy-li-4380812358",
+        "linkedin-li-4349578134",
+        "linkedin-li-4394078700",
+        "linkedin-li-4380812358",
+        "linkedin-li-4362170335",
+        "linkedin-li-4362562926",
+        "linkedin-li-4385935615",
+        "linkedin-li-4353703506",
+        "app-005",
+        "cv-5fbf4a9aa7",
+        "linkedin-li-4385294885"
+      ],
+      "score": 10,
+      "timestamp": "2026-05-14T18:00:53.365313+02:00"
+    }
+  ]
 }
