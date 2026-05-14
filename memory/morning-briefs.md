@@ -1918,3 +1918,56 @@ Node.js v22.22.1
 ## Calendar - Today's Events
 *Calendar API unavailable (gog v0.12.0 bug - tracking fix)*
 
+=== Morning Brief - 2026-05-14 06:00 AM ===
+
+## Claude 2x Usage Reminder
+
+## Job Radar (from Tavily)
+[search-router] Tavily unavailable, falling back to local SearXNG: Tavily Search failed (402): {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+## Sources
+
+_(provider: searxng)_
+
+- **Digital Health Transformation in the UAE: DHA and DoH.**
+  https://sbs-me.com/digital-health-transformation-in-the-uae-dha-and-doh/
+  The UAE is rapidly advancing its healthcare sector through digital transformation initiatives, positioning itself as a regional hub for innovation, efficiency, and patient-centric care. In 2026, Dubai and Abu Dhabi are taking complementary approaches to modernize healthcare systems, emphasizing tele...
+
+- **What do digital transformation companies in UAE offer?**
+  https://imperiumglobalmedia.com/digital-transformation-companies-2026-guide/
+  Digital transformation companies in UAE deliver services across cloud migration, AI automation, custom software development, data analytics, and enterprise application integration. The scope varies by firm. Some focus on a specific technology category while others manage end-to-end transformation pr...
+
+- **Transforming healthcare in the Middle East | Deloitte Middle East**
+  https://www.deloitte.com/middle-east/en/our-thinking/mepov-magazine/frontiers/transforming-healthcare-in-the-middle-east.html
+  Launched in 2021, the newly established Health Sector Transformation Program aims to provide inclusive health services to 88% of the Kingdom’s population and implement a unified digital medical records system for 100% of the population by 2025. The Saudi Arabian Ministry of Health has further partne...
+
+- **Reuters | Breaking International News & Views**
+  https://www.reuters.com/
+  1 day ago · Find latest news from every corner of the globe at Reuters.com, your online source for breaking international news coverage.
+
+- **Head Of Digital Transformation Jobs in UAE (Apr 2026) - Bayt.com**
+  https://www.bayt.com/en/uae/jobs/head-of-digital-transformation-jobs/
+  Director, GTB Digital Transformation – PMO Department CIBG - GTB Direct Supervisor – Head of PMO ...
+
+## Gmail - New Opportunities
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/root/.openclaw/workspace/scripts/gmail-scan.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+
+## Calendar - Today's Events
+*Calendar API unavailable (gog v0.12.0 bug - tracking fix)*
+
