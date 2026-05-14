@@ -10,6 +10,7 @@ import sys
 import json
 import subprocess
 import re
+import argparse
 from datetime import datetime, timedelta
 from pathlib import Path
 import requests
@@ -48,7 +49,9 @@ LOG_PATHS = {
     "disk-health-check.sh": "/tmp/disk-health-cron.log",
     "job-radar.sh": "/tmp/job-radar.log",
     "morning-brief.sh": "/tmp/morning-brief.log",
+    "clear-stale-context-maintenance.py": "/tmp/openclaw-stale-context-maintenance.log",
     "cron-watchdog-v3.sh": "/root/.openclaw/workspace/logs/watchdog/cron.log",
+    "cron-dashboard-updater.py": "/root/.openclaw/workspace/logs/cron-dashboard-updater.log",
     "run-briefing-pipeline.sh": "/var/log/briefing/cron.log",
     "linkedin-autoresearch.py": "/tmp/linkedin-autoresearch.log",
     "autoresearch-job-review.py": "/tmp/autoresearch-job-review.log",
@@ -65,15 +68,18 @@ LOG_PATHS = {
     "ontology-notion-sync.py": "/root/.openclaw/workspace/logs/ontology-sync.log",
     "ontology-pipeline-sync.py": "/root/.openclaw/workspace/logs/ontology-sync.log",
     "linkedin-engagement-agent.py": "/root/.openclaw/workspace/logs/linkedin-engagement.log",
+    "run_approved_14day_daily_post.py": "/root/.openclaw/workspace-cmo/logs/approved-14day-linkedin-cron.log",
+    "send_approved_14day_engagement_alert.py": "/root/.openclaw/workspace-cmo/logs/approved-14day-linkedin-cron.log",
 }
 
 
 class CronDashboardUpdater:
-    def __init__(self):
-        self.token = load_notion_token()
+    def __init__(self, dry_run=False):
+        self.dry_run = dry_run
+        self.token = None if dry_run else load_notion_token()
         self.db_id = NOTION_DB_ID
         self.headers = {
-            "Authorization": f"Bearer {self.token}",
+            "Authorization": f"Bearer {self.token}" if self.token else "",
             "Notion-Version": NOTION_VERSION,
             "Content-Type": "application/json",
         }
@@ -204,9 +210,9 @@ class CronDashboardUpdater:
             stat = os.stat(log_path)
             last_run = datetime.fromtimestamp(stat.st_mtime, tz=CAIRO_TZ)
 
-            # Read last 50 lines to detect error
+            # Read last 50 lines to detect recent errors.
             with open(log_path, "r") as f:
-                content = f.read()
+                content = "".join(f.readlines()[-50:])
 
             # Check for common error patterns
             error_patterns = [
@@ -399,13 +405,16 @@ class CronDashboardUpdater:
         all_crons = system_crons + openclaw_crons
         print(f"Discovered {len(all_crons)} crons ({len(system_crons)} system, {len(openclaw_crons)} openclaw)")
 
-        # Update Notion
-        for cron in all_crons:
-            existing = self.notion_find_page(cron["name"])
-            if existing:
-                self.notion_update_page(existing["id"], cron)
-            else:
-                self.notion_create_page(cron)
+        if self.dry_run:
+            print("Dry run: skipping Notion writes")
+        else:
+            # Update Notion
+            for cron in all_crons:
+                existing = self.notion_find_page(cron["name"])
+                if existing:
+                    self.notion_update_page(existing["id"], cron)
+                else:
+                    self.notion_create_page(cron)
 
         # Output summary
         print(f"\nUpdate Summary:")
@@ -446,5 +455,13 @@ class CronDashboardUpdater:
 
 
 if __name__ == "__main__":
-    updater = CronDashboardUpdater()
+    parser = argparse.ArgumentParser(description="Update the Notion cron dashboard.")
+    parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="discover crons and update the local summary without writing to Notion",
+    )
+    args = parser.parse_args()
+
+    updater = CronDashboardUpdater(dry_run=args.dry_run)
     sys.exit(updater.run())
