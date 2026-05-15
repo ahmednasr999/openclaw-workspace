@@ -1971,3 +1971,56 @@ Node.js v22.22.1
 ## Calendar - Today's Events
 *Calendar API unavailable (gog v0.12.0 bug - tracking fix)*
 
+=== Morning Brief - 2026-05-15 06:00 AM ===
+
+## Claude 2x Usage Reminder
+
+## Job Radar (from Tavily)
+[search-router] Tavily unavailable, falling back to local SearXNG: Tavily Search failed (402): {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+## Sources
+
+_(provider: searxng)_
+
+- **Jokes, Motivation and Quotes | *TOP GHANA NEWS ... - Facebook**
+  https://www.facebook.com/groups/150780891667149/posts/25176318905353335/
+  *TOP GHANA NEWS HEADLINES FOR TODAY, SATURDAY, 29TH NOV, 2025* *General FOAM (Francis Owusu-Ansah Marfo)* *GENERAL NEWS HEADLINES* *State funeral for former First Lady Nana Konadu Agyeman-Rawlings *President Mahama leads Ghanaians to bid farewell to former First Lady *Anglican Church of Ghana weighs...
+
+- **‏Rawan Masri‏ - ‏PMO & Program Management Lead - LinkedIn**
+  https://sa.linkedin.com/in/rawan-masri-9403b8123
+  PMO & Program Management Lead | Governance | Delivery Excellence | Aviation & Digital Transformation ... Dubai, United Arab Emirates. رسم بياني ‏Freightos ...
+
+- **IPPIS CIVIL SERVANT | *NEWSPAPER HEADLINES FOR THURSDAY 12TH ...**
+  https://www.facebook.com/groups/932337681606549/posts/1452248429615469/
+  OCR: CIVIL SERVICE DAILY NEWS Thursday, 2026 ADMINISTRATION INTRODUCES PROMOTION promotion policy announced for workers the Federal Capital Territory. The Administration has officially introduced Promotion Under the new policy, promotions depend availability positions within ministries, departments,...
+
+- **PMO Director Jobs in the Middle East (May 2026) - Bayt.com**
+  https://www.bayt.com/en/international/jobs/pmo-director-jobs/
+  Summary: A pivotal role exists for a PMO professional in Saudi Arabia, focusing on delivering projects that align with national objectives and ...
+
+- **American Express Careers & Job Openings | Amex Careers US**
+  https://www.americanexpress.com/en-us/careers/
+  Browse American Express US Job Openings. Find Your Place on #TeamAmex and Explore American Express Careers that Match Your Skills Today!
+
+## Gmail - New Opportunities
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/root/.openclaw/workspace/scripts/gmail-scan.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+
+## Calendar - Today's Events
+*Calendar API unavailable (gog v0.12.0 bug - tracking fix)*
+
