@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-05-05T07:14:48.130574+00:00",
-  "total_traces": 10,
+  "updated_at": "2026-05-14T23:46:03.291112+00:00",
+  "total_traces": 14,
   "by_category": {
     "content_post": [
       {
@@ -50,6 +50,34 @@
         "timestamp": "2026-03-27T21:23:00Z",
         "lesson": "Never bulk-overwrite config bindings without understanding each binding's required schema. Always backup and validate after editing openclaw.json",
         "severity": "high"
+      },
+      {
+        "id": "trace-20260506-active-memory-jobzoom-maintenance",
+        "agent": "NASR/CTO maintenance",
+        "timestamp": "2026-05-06T04:30:30.217936+00:00",
+        "lesson": "For active-memory live replies, auth-correct helper models are not sufficient evidence. Verify hook elapsed logs after hot reload, and disable active-memory if it still times out in the live lane. For JobZoom delivery, parse send confirmation structurally, not substring-match only.",
+        "severity": "medium"
+      },
+      {
+        "id": "trace-20260515-openclaw-update-recovery",
+        "agent": "NASR/CTO recovery",
+        "timestamp": "2026-05-15T02:13:00+03:00",
+        "lesson": "OpenClaw update recovery must verify binary path alignment, service ExecStart, Codex harness/plugin registration, lossless-claw dependency health, stale paired node versions, and a real Telegram /new then hi response before declaring success.",
+        "severity": "medium"
+      },
+      {
+        "id": "trace-20260515-cron-dashboard-updater-missing",
+        "agent": "CTO",
+        "timestamp": "2026-05-15T02:25:00+03:00",
+        "lesson": "For monitor health checks, verify the scheduler entry, the expected log file, and the monitor's own dry-run behavior before trusting documentation or stale summary JSON.",
+        "severity": "medium"
+      },
+      {
+        "id": "trace-20260515-openclaw-cleanup-npm-prefix",
+        "agent": "NASR/CTO cleanup",
+        "timestamp": "2026-05-15T02:48:00+03:00",
+        "lesson": "For OpenClaw binary-drift cleanup, do not use npm uninstall -g unless npm prefix has been verified. Remove duplicate non-active OpenClaw installs by explicit path after confirming the active service binary, then immediately verify /usr/bin/openclaw and /usr/local/bin/openclaw versions.",
+        "severity": "medium"
       }
     ],
     "cv_creation": [
@@ -157,6 +185,34 @@
       "category": "jobzoom_daily_scan",
       "lesson": "For JobZoom scoring, do not trust HTTP 200 or report existence. Keep prompts small enough to avoid LCM/file-reference substitution, persist raw bad scoring responses, and verify batch outputs parse before allowing fallback results to stand.",
       "timestamp": "2026-05-05T07:14:29.946980+00:00"
+    },
+    {
+      "id": "trace-20260506-active-memory-jobzoom-maintenance",
+      "agent": "NASR/CTO maintenance",
+      "category": "config_system",
+      "lesson": "For active-memory live replies, auth-correct helper models are not sufficient evidence. Verify hook elapsed logs after hot reload, and disable active-memory if it still times out in the live lane. For JobZoom delivery, parse send confirmation structurally, not substring-match only.",
+      "timestamp": "2026-05-06T04:30:30.217936+00:00"
+    },
+    {
+      "id": "trace-20260515-openclaw-update-recovery",
+      "agent": "NASR/CTO recovery",
+      "category": "config_system",
+      "lesson": "OpenClaw update recovery must verify binary path alignment, service ExecStart, Codex harness/plugin registration, lossless-claw dependency health, stale paired node versions, and a real Telegram /new then hi response before declaring success.",
+      "timestamp": "2026-05-15T02:13:00+03:00"
+    },
+    {
+      "id": "trace-20260515-cron-dashboard-updater-missing",
+      "agent": "CTO",
+      "category": "config_system",
+      "lesson": "For monitor health checks, verify the scheduler entry, the expected log file, and the monitor's own dry-run behavior before trusting documentation or stale summary JSON.",
+      "timestamp": "2026-05-15T02:25:00+03:00"
+    },
+    {
+      "id": "trace-20260515-openclaw-cleanup-npm-prefix",
+      "agent": "NASR/CTO cleanup",
+      "category": "config_system",
+      "lesson": "For OpenClaw binary-drift cleanup, do not use npm uninstall -g unless npm prefix has been verified. Remove duplicate non-active OpenClaw installs by explicit path after confirming the active service binary, then immediately verify /usr/bin/openclaw and /usr/local/bin/openclaw versions.",
+      "timestamp": "2026-05-15T02:48:00+03:00"
     }
   ]
 }

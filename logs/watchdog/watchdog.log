@@ -2876,3 +2876,32 @@ Fix the config and retry, or run "openclaw doctor" to repair.
 [2026-05-14 20:00] === Watchdog v3 run ===
 [2026-05-14 20:00] WARN: Jobs data stale (463h), triggering pipeline
 [2026-05-14 20:00] FIXED: Pipeline triggered
+[2026-05-14 20:00] Summary: fixes=1 warnings=1 alerts=0
+[2026-05-14 22:00] === Watchdog v3 run ===
+[2026-05-14 22:00] WARN: Jobs data stale (465h), triggering pipeline
+[2026-05-14 22:00] FIXED: Pipeline triggered
+[2026-05-14 22:00] Summary: fixes=1 warnings=1 alerts=0
+[2026-05-15 00:00] === Watchdog v3 run ===
+[2026-05-15 00:00] WARN: Jobs data stale (467h), triggering pipeline
+[2026-05-15 00:00] FIXED: Pipeline triggered
+[2026-05-15 00:00] Summary: fixes=1 warnings=1 alerts=0
+[2026-05-15 02:00] === Watchdog v3 run ===
+[2026-05-15 02:00] WARN: Jobs data stale (469h), triggering pipeline
+[2026-05-15 02:00] FIXED: Pipeline triggered
+[2026-05-15 02:00] Summary: fixes=1 warnings=1 alerts=0
+[2026-05-15 04:00] === Watchdog v3 run ===
+[2026-05-15 04:00] WARN: Jobs data stale (471h), triggering pipeline
+[2026-05-15 04:00] FIXED: Pipeline triggered
+[2026-05-15 04:00] Summary: fixes=1 warnings=0 alerts=0
+[2026-05-15 06:00] === Watchdog v3 run ===
+[2026-05-15 06:00] WARN: Jobs data stale (473h), triggering pipeline
+[2026-05-15 06:00] FIXED: Pipeline triggered
+[2026-05-15 06:00] FIXED: Re-triggered failed cron 2a6d6e4f-0ea6-4836-935d-e4bc1fa8c2e3
+[2026-05-15 06:00] Summary: fixes=2 warnings=1 alerts=0
+Config warnings:
+- plugins.allow: plugin not installed: slack — install the official external plugin with: openclaw plugins install @openclaw/slack
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:2a6d6e4f-0ea6-4836-935d-e4bc1fa8c2e3:1778814022042:1"
+}

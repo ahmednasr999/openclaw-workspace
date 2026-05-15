@@ -2,16 +2,38 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-05-14T17:00:42.989577+02:00",
-    "duration_ms": 40531,
+    "generated_at": "2026-05-15T05:00:43.522317+02:00",
+    "duration_ms": 39922,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "9a644341",
+    "run_id": "d6512a58",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": [
+    {
+      "id": "indeed-in-384650d1b51867fa",
+      "source": "indeed",
+      "title": "Lead Engagement Director",
+      "company": "DataRobot",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=384650d1b51867fa",
+      "posted": "2026-05-14",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 16,
+      "match_keywords": [
+        "ai",
+        "director",
+        "platform"
+      ],
+      "raw_snippet": "**Job Description:**\n\n\nDataRobot delivers AI that maximizes impact and minimizes business risk. Our platform and applications integrate into core business processes so teams can develop, deliver, and govern AI at scale. DataRobot empowers practitioners to deliver predictive and generative AI, and enables leaders to secure their AI assets. Organizations worldwide rely on DataRobot for AI that makes sense for their business \u2014 today and in the future.\n\n**Purpose \\& Overall Relevance for the Organiz",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Program Director"
+    },
     {
       "id": "indeed-in-8e6f4f1e42438921",
       "source": "indeed",
@@ -56,27 +78,6 @@
       "search_title": "Program Director"
     },
     {
-      "id": "indeed-in-e0103ab4b08c2549",
-      "source": "indeed",
-      "title": "Director Global Security and Asset Protection (GSAP) EME OU",
-      "company": "The Coca-Cola Company",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=e0103ab4b08c2549",
-      "posted": "2026-05-13",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 13,
-      "match_keywords": [
-        "director",
-        "leadership"
-      ],
-      "raw_snippet": "A Global Security and Asset Protection (GSAP) Director is tasked with protecting The Coca\\-Cola Company from security and high\\-risk issues that seriously threaten operations, consumer trust or shareholder confidence by delivering high\\-order threat prevention and resolution support to the global business system, including the development and implementation of complex security programs during major events. The role also provides strategic leadership to drive state of the art security advice and ",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Program Director"
-    },
-    {
       "id": "indeed-in-685a3bb7a9b712a3",
       "source": "indeed",
       "title": "Director, Priority Private Banking",
@@ -98,30 +99,6 @@
       "filter_reason": null,
       "search_country": "United Arab Emirates",
       "search_title": "Director Digital Transformation"
-    },
-    {
-      "id": "indeed-in-fbda4ec10ef4301f",
-      "source": "indeed",
-      "title": "CEO - AI Acquisition",
-      "company": "AI Acquisition",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=fbda4ec10ef4301f",
-      "posted": "2026-05-14",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 26,
-      "match_keywords": [
-        "ai",
-        "enterprise",
-        "growth",
-        "api",
-        "platform"
-      ],
-      "raw_snippet": "About AI Acquisition\nAI Acquisition is at the forefront of the AI revolution, empowering entrepreneurs and marketing agencies globally to harness cutting\\-edge AI tools for scalable business growth. We have rapidly scaled from a startup to a multi\\-8 figure enterprise within three years, poised to hit the 9\\-figure mark. Our innovative programs and platforms enable members to achieve transformative results with efficiency and ease.\n\n\nRole Overview\nWe are seeking a visionary and dynamic **Chief E",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Chief Technology Officer"
     },
     {
       "id": "indeed-in-942862033e317de7",
@@ -148,22 +125,47 @@
       "search_title": "Chief Technology Officer"
     },
     {
-      "id": "indeed-in-40a3d0d9102df800",
+      "id": "indeed-in-53ff8dd9a65c3e6a",
       "source": "indeed",
-      "title": "Chief Technology Officer",
-      "company": "RAQEEQ FOR FLOOR AND WALL TILING WORKS",
+      "title": "Head, Business Operations, Amazon Payment Services (APS)",
+      "company": "Amazon.com",
       "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=40a3d0d9102df800",
-      "posted": "2026-05-11",
-      "seniority": "C-Suite",
+      "url": "https://ae.indeed.com/viewjob?jk=53ff8dd9a65c3e6a",
+      "posted": "2026-05-13",
+      "seniority": "Other",
       "domain_match": true,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "**About Us:**  \nRAQEEQ FOR FLOOR AND WALL TILING WORKS is a leading company specializing in high\\-quality tiling services for both residential and commercial properties. With a reputation for excellence, precision, and innovative designs, we provide top\\-tier solutions in flooring and wall tiling. As we continue to expand our operations and enhance our services, we are seeking a visionary and strategic leader to join us as the Chief Technology Officer (CTO).\n\n**Role Overview:**  \nWe are looking ",
+      "keyword_score": 20,
+      "match_keywords": [
+        "operational excellence",
+        "leadership",
+        "uae"
+      ],
+      "raw_snippet": "**DESCRIPTION**\n---------------\n\n\nIn this leadership role, you will lead business operations for Amazon Payment Services based in the UAE, managing strategic partnerships with payment schemes, banks, and technology providers. Oversee vendor onboarding, merchant escalation support, and 24/7 incident management operations. Drive operational excellence through team leadership, process optimization, and execution of special programs that enhance merchant and partner experience.  \n\n  \n\nKey job respon",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
-      "search_title": "Chief Technology Officer"
+      "search_title": "Head of Technology"
+    },
+    {
+      "id": "indeed-in-e0103ab4b08c2549",
+      "source": "indeed",
+      "title": "Director Global Security and Asset Protection (GSAP) EME OU",
+      "company": "The Coca-Cola Company",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=e0103ab4b08c2549",
+      "posted": "2026-05-13",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 13,
+      "match_keywords": [
+        "director",
+        "leadership"
+      ],
+      "raw_snippet": "A Global Security and Asset Protection (GSAP) Director is tasked with protecting The Coca\\-Cola Company from security and high\\-risk issues that seriously threaten operations, consumer trust or shareholder confidence by delivering high\\-order threat prevention and resolution support to the global business system, including the development and implementation of complex security programs during major events. The role also provides strategic leadership to drive state of the art security advice and ",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "IT Director"
     },
     {
       "id": "indeed-in-ff080fbe6f148d15",
@@ -185,6 +187,28 @@
       "filter_reason": null,
       "search_country": "United Arab Emirates",
       "search_title": "IT Director"
+    },
+    {
+      "id": "indeed-in-2f2ab1068c9b782f",
+      "source": "indeed",
+      "title": "Associate Director \u00e2\u20ac\u201c Project Controls \u00e2\u20ac\u201c Rail",
+      "company": "Mace Group",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=2f2ab1068c9b782f",
+      "posted": "2026-05-14",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 16,
+      "match_keywords": [
+        "ai",
+        "director",
+        "middle east"
+      ],
+      "raw_snippet": "Build the Future of Rail in the Middle East with Mace\n\n\nAs we expand our rail capability across the Middle East, Mace is seeking exceptional talent to help shape and deliver some of the region\u2019s most ambitious transport programmes.\n\n\nWith a globally recognised track record across high\u2011speed rail, conventional rail, metro, and complex station environments, we are now growing our presence in the region \u2014 and building a high\u2011calibre talent pool to support this next phase.\n\n\nWe are looking for exper",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "PMO Director"
     },
     {
       "id": "indeed-in-2f9e9b0c81a181e2",
@@ -234,6 +258,52 @@
       "search_title": "Head of PMO"
     },
     {
+      "id": "indeed-in-f8653abbe412d959",
+      "source": "indeed",
+      "title": "Director - Operations & Event Delivery",
+      "company": "Qiddiya Investment Company",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=f8653abbe412d959",
+      "posted": "2026-05-14",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 23,
+      "match_keywords": [
+        "ai",
+        "director",
+        "saudi",
+        "riyadh",
+        "api"
+      ],
+      "raw_snippet": "Qiddiya is Saudi Arabia\u2019s future capital of entertainment, sports, and culture \u2014 a 360 km\u00b2 mega\\-project just outside Riyadh. From F1\\-grade racetracks and theme parks to stadiums and performance venues, we\u2019re creating a destination like no other. This is more than a project \u2014 it\u2019s a national transformation. As construction accelerates, we\u2019re hiring ambitious talent to help shape it. If you\u2019re driven by scale, impact, and the chance to build something iconic from the ground up \u2014 Qiddiya is calli",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "Program Director"
+    },
+    {
+      "id": "indeed-in-75ba0e3f1d00b3a4",
+      "source": "indeed",
+      "title": "Technical Director",
+      "company": "Parsons",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=75ba0e3f1d00b3a4",
+      "posted": "2026-05-14",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 20,
+      "match_keywords": [
+        "director",
+        "leadership",
+        "growth"
+      ],
+      "raw_snippet": "In a world of possibilities, pursue one with endless opportunities. Imagine Next!  \n\n\nAt Parsons, you can imagine a career where you thrive, work with exceptional people, and be yourself. Guided by our leadership vision of valuing people, embracing agility, and fostering growth, we cultivate an innovative culture that empowers you to achieve your full potential. Unleash your talent and redefine what\u2019s possible. **Job Description:**\n\n\nParsons is looking for an amazingly talented **Technical Direc",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "Program Director"
+    },
+    {
       "id": "indeed-in-056c239c2d8b2b43",
       "source": "indeed",
       "title": "Delivery Director",
@@ -256,27 +326,26 @@
       "search_title": "Program Director"
     },
     {
-      "id": "indeed-in-9ae94e38179889d7",
+      "id": "indeed-in-b26fc89a874652de",
       "source": "indeed",
-      "title": "Venture Capital Director",
-      "company": "Talent 360",
+      "title": "Associate Director \u00e2\u20ac\u201c Programme Management - Rail",
+      "company": "Mace Group",
       "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=9ae94e38179889d7",
+      "url": "https://sa.indeed.com/viewjob?jk=b26fc89a874652de",
       "posted": "2026-05-14",
       "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 23,
+      "domain_match": true,
+      "keyword_score": 16,
       "match_keywords": [
         "ai",
         "director",
-        "growth",
-        "api"
+        "middle east"
       ],
-      "raw_snippet": "The Venture Capital Director is responsible for managing venture capital investment activities, supporting portfolio growth, identifying investment opportunities, and contributing to strategic investment initiatives. The role focuses on driving investment performance, supporting deal execution, and maintaining strong relationships within the startup ecosystem.  \n\n  \n\n**Key Responsibilities**\n\n* Lead sourcing, evaluation, and execution of venture capital investment opportunities.\n* Conduct market",
+      "raw_snippet": "Build the Future of Rail in the Middle East with Mace\n\n\nAs we expand our rail capability across the Middle East, Mace is seeking exceptional talent to help shape and deliver some of the region\u2019s most ambitious transport programmes.\n\n\nWith a globally recognised track record across high\u2011speed rail, conventional rail, metro, and complex station environments, we are now growing our presence in the region \u2014 and building a high\u2011calibre talent pool to support this next phase.\n\n\nWe are looking for exper",
       "relevant": true,
       "filter_reason": null,
       "search_country": "Saudi Arabia",
-      "search_title": "Program Director"
+      "search_title": "Director Digital Transformation"
     },
     {
       "id": "indeed-in-7063c818ecd0a6fe",
@@ -413,26 +482,6 @@
       "search_title": "IT Director"
     },
     {
-      "id": "indeed-in-596cf399c44a319a",
-      "source": "indeed",
-      "title": "Associate Director (CM)",
-      "company": "Turner & Townsend Pty Limited",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=596cf399c44a319a",
-      "posted": "2026-05-14",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 6,
-      "match_keywords": [
-        "director"
-      ],
-      "raw_snippet": "**Company Description**  \n\nAt Turner \\& Townsend we\u2019re passionate about making the difference. That means delivering better outcomes for our clients, helping our people to realize their potential, and doing our part to create a prosperous society.  \n\nEvery day we help our major global clients deliver ambitious and highly technical projects, in over 130 countries worldwide.  \n\nOur team is dynamic, innovative and client\\-focused, supported by an inclusive and fun company culture. Our clients value",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "IT Director"
-    },
-    {
       "id": "indeed-in-6f61dfc526885f9d",
       "source": "indeed",
       "title": "Senior Commercial Director KSA",
@@ -460,9 +509,9 @@
   ],
   "kpi": {
     "searches_run": 20,
-    "results_per_search": 4.1,
-    "unique_jobs": 20,
-    "errors": 2
+    "results_per_search": 3.8,
+    "unique_jobs": 22,
+    "errors": 3
   },
   "recommendations": []
 }

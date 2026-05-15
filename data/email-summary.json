@@ -2,123 +2,58 @@
   "meta": {
     "agent": "email-agent",
     "version": "3.0.0",
-    "generated_at": "2026-05-14T18:01:07.736321+02:00",
-    "duration_ms": 25890,
+    "generated_at": "2026-05-14T20:00:57.402272+02:00",
+    "duration_ms": 15121,
     "ttl_hours": 4,
     "status": "success",
     "error": null,
-    "run_id": "477f8e78",
+    "run_id": "adc3d6cf",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
     "status": "ok",
-    "scan_time": "2026-05-14T18:00:53.485395+02:00",
-    "total_scanned": 23,
+    "scan_time": "2026-05-14T20:00:48.501950+02:00",
+    "total_scanned": 11,
     "by_category": {
       "interview_invite": 0,
-      "recruiter_reach": 1,
+      "recruiter_reach": 0,
       "application_ack": 0,
       "rejection": 0,
       "assessment": 0,
       "follow_up_needed": 0,
       "job_alert": 0,
-      "other": 22
+      "other": 11
     },
     "interview_invites": [],
-    "recruiter_messages": [
-      {
-        "id": "357736",
-        "from": "Mindstream <hello@mindstream.news>",
-        "subject": "WhatsApp lets you chat to AI without logs now",
-        "date": "Thu, 14 May 2026 15:06:13 +0000 (UTC)",
-        "unread": true,
-        "priority": "HIGH",
-        "score": 10,
-        "pipeline_match": "SAP"
-      }
-    ],
+    "recruiter_messages": [],
     "application_acks": [],
     "rejections": [],
     "assessments": [],
     "follow_ups_needed": [],
     "job_alerts": [],
-    "actionable_count": 1,
+    "actionable_count": 0,
     "hot_alerts": [],
-    "signals": [
-      {
-        "company": "SAP",
-        "signal": "recruiter_email",
-        "subject": "WhatsApp lets you chat to AI without logs now",
-        "sender": "Mindstream <hello@mindstream.news>",
-        "job_ids": [
-          "indeed-in-b2195113ff678ef7",
-          "indeed-in-b7591ff66cc5a732",
-          "linkedin_jobspy-li-4380812358",
-          "linkedin-li-4349578134",
-          "linkedin-li-4394078700",
-          "linkedin-li-4380812358",
-          "linkedin-li-4362170335",
-          "linkedin-li-4362562926",
-          "linkedin-li-4385935615",
-          "linkedin-li-4353703506",
-          "app-005",
-          "cv-5fbf4a9aa7",
-          "linkedin-li-4385294885"
-        ],
-        "score": 10,
-        "timestamp": "2026-05-14T18:00:53.365313+02:00"
-      }
-    ],
+    "signals": [],
     "llm_analysis": {
-      "actionable_emails": [
-        {
-          "id": "357736",
-          "subject": "WhatsApp lets you chat to AI without logs now",
-          "from": "Mindstream <hello@mindstream.news>",
-          "date": "Thu, 14 May 2026 15:06:13 +0000 (UTC)",
-          "category": "recruiter_reach",
-          "urgency": "low",
-          "intent": "Sender is sharing an AI/news newsletter; no recruiter opportunity is evident.",
-          "action": "no_action",
-          "response_deadline": "when convenient",
-          "notes": "False positive recruiter match; newsletter content only."
-        }
-      ],
+      "actionable_emails": [],
       "summary": {
-        "total_actionable": 1,
+        "total_actionable": 0,
         "critical_count": 0,
         "requires_interview_prep": false,
         "requires_assessment": false,
         "recruiter_top_opportunities": [],
         "top_priority": null,
-        "daily_focus": "No urgent career action needed; ignore this false positive and focus on real recruiter/interview emails."
+        "daily_focus": "No actionable interview, assessment, follow-up, or recruiter emails were provided today."
       }
     }
   },
   "kpi": {
-    "emails_processed": 23,
-    "actionable": 1,
+    "emails_processed": 11,
+    "actionable": 0,
     "interviews_detected": 0,
-    "recruiter_messages": 1,
-    "unread_actionable": 1
+    "recruiter_messages": 0,
+    "unread_actionable": 0
   },
-  "recommendations": [
-    {
-      "id": "rec-477f8e78-0",
-      "action": "review_and_respond",
-      "target": "1 recruiter message(s)",
-      "reason": "Recruiter outreach could lead to opportunities",
-      "urgency": "high",
-      "timestamp": "2026-05-14T18:01:07.735741+02:00"
-    },
-    {
-      "id": "rec-477f8e78-1",
-      "action": "check_inbox",
-      "target": "1 unread actionable email(s)",
-      "reason": "Unread emails need attention",
-      "urgency": "high",
-      "timestamp": "2026-05-14T18:01:07.735758+02:00"
-    }
-  ]
+  "recommendations": []
 }

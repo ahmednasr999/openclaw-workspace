@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-05-12T14:51:22.458178+03:00",
-  "total_crons": 12,
-  "system_crons": 12,
+  "timestamp": "2026-05-15T06:30:29.720271+03:00",
+  "total_crons": 15,
+  "system_crons": 15,
   "openclaw_crons": 0,
-  "notion_created": 1,
-  "notion_updated": 11,
+  "notion_created": 0,
+  "notion_updated": 15,
   "errors": [],
   "crons": [
     {
@@ -13,7 +13,7 @@
       "type": "system",
       "last_status": {
         "status": "\u2705 OK",
-        "last_run": "2026-05-11 20:00:09.457829+03:00",
+        "last_run": "2026-05-14 20:00:15.159364+03:00",
         "error": null
       }
     },
@@ -33,7 +33,7 @@
       "type": "system",
       "last_status": {
         "status": "\u2705 OK",
-        "last_run": "2026-05-11 23:01:12.293484+03:00",
+        "last_run": "2026-05-14 23:00:56.770129+03:00",
         "error": null
       }
     },
@@ -43,7 +43,7 @@
       "type": "system",
       "last_status": {
         "status": "\u2705 OK",
-        "last_run": "2026-05-11 20:30:02.067481+03:00",
+        "last_run": "2026-05-14 20:30:01.683187+03:00",
         "error": null
       }
     },
@@ -53,7 +53,7 @@
       "type": "system",
       "last_status": {
         "status": "\u2705 OK",
-        "last_run": "2026-05-11 23:30:01.908955+03:00",
+        "last_run": "2026-05-14 23:30:01.224679+03:00",
         "error": null
       }
     },
@@ -63,7 +63,7 @@
       "type": "system",
       "last_status": {
         "status": "\u2705 OK",
-        "last_run": "2026-05-12 03:15:02.357147+03:00",
+        "last_run": "2026-05-15 03:15:01.203032+03:00",
         "error": null
       }
     },
@@ -72,9 +72,9 @@
       "schedule": "0 9 * * *",
       "type": "system",
       "last_status": {
-        "status": "\u2705 OK",
-        "last_run": "2026-05-03 09:00:01.393126+03:00",
-        "error": null
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
       }
     },
     {
@@ -83,7 +83,7 @@
       "type": "system",
       "last_status": {
         "status": "\u2705 OK",
-        "last_run": "2026-05-12 06:00:01.287214+03:00",
+        "last_run": "2026-05-15 06:00:01.709274+03:00",
         "error": null
       }
     },
@@ -93,7 +93,7 @@
       "type": "system",
       "last_status": {
         "status": "\u2705 OK",
-        "last_run": "2026-05-12 06:00:07.406255+03:00",
+        "last_run": "2026-05-15 06:01:09.638723+03:00",
         "error": null
       }
     },
@@ -102,9 +102,9 @@
       "schedule": "*/5 * * * *",
       "type": "system",
       "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
+        "status": "\u2705 OK",
+        "last_run": "2026-05-15 06:30:01.389222+03:00",
+        "error": null
       }
     },
     {
@@ -112,9 +112,9 @@
       "schedule": "0 */2 * * *",
       "type": "system",
       "last_status": {
-        "status": "\u274c Failed",
-        "last_run": "2026-05-12 14:00:12.550199+03:00",
-        "error": "Check log for details"
+        "status": "\u2705 OK",
+        "last_run": "2026-05-15 06:00:17.022375+03:00",
+        "error": null
       }
     },
     {
@@ -123,8 +123,38 @@
       "type": "system",
       "last_status": {
         "status": "\u2705 OK",
-        "last_run": "2026-05-12 01:50:12.601683+03:00",
+        "last_run": "2026-05-15 01:50:10.692458+03:00",
         "error": null
+      }
+    },
+    {
+      "name": "run_approved_14day_daily_post.py",
+      "schedule": "0 11 15-28 5 *",
+      "type": "system",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "send_approved_14day_engagement_alert.py",
+      "schedule": "0 12 15-28 5 *",
+      "type": "system",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "cron-dashboard-updater.py",
+      "schedule": "*/30 * * * *",
+      "type": "system",
+      "last_status": {
+        "status": "\u274c Failed",
+        "last_run": "2026-05-15 06:00:36.564647+03:00",
+        "error": "Check log for details"
       }
     }
   ]

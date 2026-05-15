@@ -1,12 +1,16 @@
 # Agent Lessons Learned
 
-*Auto-curated from agent traces. Updated: 2026-05-05*
+*Auto-curated from agent traces. Updated: 2026-05-14*
 
 ## Communication
 - ✅ CLI uses --target not --to — exit 0 does not mean success. Always verify actual delivery (CEO, 2026-03-30)
 
 ## Config System
 - ✅ Never bulk-overwrite config bindings without understanding each binding's required schema. Always backup and validate after editing openclaw.json (CTO, 2026-03-27)
+- ❌ For active-memory live replies, auth-correct helper models are not sufficient evidence. Verify hook elapsed logs after hot reload, and disable active-memory if it still times out in the live lane. For JobZoom delivery, parse send confirmation structurally, not substring-match only. (NASR/CTO maintenance, 2026-05-06)
+- ❌ OpenClaw update recovery must verify binary path alignment, service ExecStart, Codex harness/plugin registration, lossless-claw dependency health, stale paired node versions, and a real Telegram /new then hi response before declaring success. (NASR/CTO recovery, 2026-05-15)
+- ❌ For monitor health checks, verify the scheduler entry, the expected log file, and the monitor's own dry-run behavior before trusting documentation or stale summary JSON. (CTO, 2026-05-15)
+- ❌ For OpenClaw binary-drift cleanup, do not use npm uninstall -g unless npm prefix has been verified. Remove duplicate non-active OpenClaw installs by explicit path after confirming the active service binary, then immediately verify /usr/bin/openclaw and /usr/local/bin/openclaw versions. (NASR/CTO cleanup, 2026-05-15)
 
 ## Content Post
 - ✅ Always validate LinkedIn post length against 3000 char limit before posting (CMO, 2026-03-23)

@@ -1012,3 +1012,21 @@ Periodically audit the operating contract without waiting for Ahmed: check SOUL/
 - Incident: CMO repeatedly produced LinkedIn visuals that technically followed the Ahmed AI execution card direction but fell below the original reference quality.
 - What failed: first output became a generic PMO infographic, second pasted text over the reference image, third used a clean 9:16 boardroom layout but looked weaker than the original, flatter, less cinematic, less premium, with weaker typography, visual depth, and execution metaphor.
 - Do differently: For Ahmed LinkedIn visuals, require reference-level craft, not rough similarity. Compare against `/root/.openclaw/workspace/output/jobzoom-visuals/ahmed-linkedin-ai-execution-card-4k.jpg` before presenting. Reject outputs that feel generic, flat, stock-like, under-designed, or less premium than the reference.
+
+## 2026-05-15 - Avoid Empty Private Closeouts After Telegram Sends
+### What I got wrong
+Ahmed sent quick greetings in Telegram. I correctly used the `message` tool for the visible Telegram reply, but then added private final replies like "Done" and "Sent", which created useless transcript noise and made the exchange look mechanical.
+### Why
+I treated the tool action as something that needed a separate completion receipt, even when the visible user-facing reply had already been delivered.
+### Fix
+For simple Telegram replies sent through the `message` tool, make the visible message the actual answer and keep any private final closeout empty or meaningfully contextual. Do not add "Done", "Sent", or other bookkeeping text unless Ahmed asked for delivery confirmation or the action has operational significance.
+
+## 2026-05-15 - OpenClaw Update Recovery Requires Binary, Harness, Plugin, and Node Checks
+### Incident
+After the OpenClaw 2026.5.12 update, Telegram messages reached the gateway but agents returned "Something went wrong" because runtime startup failed before replies completed.
+### Root causes
+Multiple OpenClaw binaries drifted across `/usr/bin`, `/usr/local/bin`, and NVM paths; Codex harness support was requested before `@openclaw/codex` was installed/enabled; `lossless-claw` missed `@mariozechner/pi-coding-agent`; and a stale Ahmed-Mac node on 2026.2.26 kept reconnecting to the newer gateway.
+### Fix
+Installed/enabled `@openclaw/codex`, restored the `lossless-claw` dependency, disabled stale Mac node launch agents/processes, replaced stale `/usr/local/bin/openclaw` with a symlink to `/usr/bin/openclaw`, restarted via the service binary, and verified Telegram with a real response.
+### Do differently
+Before and after OpenClaw updates, verify every active binary path, service `ExecStart`, required plugins, Codex harness registration, lossless-claw dependency health, node-client version alignment, and real Telegram `/new` then `hi` behavior. Use `/usr/bin/openclaw gateway restart` and keep one config change at a time with validation before restart.
