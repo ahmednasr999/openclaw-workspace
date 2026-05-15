@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-05-14T23:46:03.291112+00:00",
-  "total_traces": 14,
+  "updated_at": "2026-05-15T15:20:27.579295+00:00",
+  "total_traces": 16,
   "by_category": {
     "content_post": [
       {
@@ -77,6 +77,20 @@
         "agent": "NASR/CTO cleanup",
         "timestamp": "2026-05-15T02:48:00+03:00",
         "lesson": "For OpenClaw binary-drift cleanup, do not use npm uninstall -g unless npm prefix has been verified. Remove duplicate non-active OpenClaw installs by explicit path after confirming the active service binary, then immediately verify /usr/bin/openclaw and /usr/local/bin/openclaw versions.",
+        "severity": "medium"
+      },
+      {
+        "id": "trace-20260515-openclaw-runtime-sanitizer-repair",
+        "agent": "NASR/CTO repair",
+        "timestamp": "2026-05-15T10:40:00+00:00",
+        "lesson": "After OpenClaw updates, do not treat gateway health as enough. Run the runtime patch checker, back up current hashed dist bundles, patch the active hashed files only, reload the gateway, and verify health dashboard OK before saying done.",
+        "severity": "medium"
+      },
+      {
+        "id": "trace-20260515-model-guardian-stale-plugin-status-mismatch",
+        "agent": "NASR/CTO repair",
+        "timestamp": "2026-05-15T18:18:00+03:00",
+        "lesson": "For model guardian checks, distinguish configured provider IDs from user-facing model status IDs, and remove stale plugin allowlist entries only after confirming the channel is disabled and backing up openclaw.json.",
         "severity": "medium"
       }
     ],
@@ -213,6 +227,20 @@
       "category": "config_system",
       "lesson": "For OpenClaw binary-drift cleanup, do not use npm uninstall -g unless npm prefix has been verified. Remove duplicate non-active OpenClaw installs by explicit path after confirming the active service binary, then immediately verify /usr/bin/openclaw and /usr/local/bin/openclaw versions.",
       "timestamp": "2026-05-15T02:48:00+03:00"
+    },
+    {
+      "id": "trace-20260515-openclaw-runtime-sanitizer-repair",
+      "agent": "NASR/CTO repair",
+      "category": "config_system",
+      "lesson": "After OpenClaw updates, do not treat gateway health as enough. Run the runtime patch checker, back up current hashed dist bundles, patch the active hashed files only, reload the gateway, and verify health dashboard OK before saying done.",
+      "timestamp": "2026-05-15T10:40:00+00:00"
+    },
+    {
+      "id": "trace-20260515-model-guardian-stale-plugin-status-mismatch",
+      "agent": "NASR/CTO repair",
+      "category": "config_system",
+      "lesson": "For model guardian checks, distinguish configured provider IDs from user-facing model status IDs, and remove stale plugin allowlist entries only after confirming the channel is disabled and backing up openclaw.json.",
+      "timestamp": "2026-05-15T18:18:00+03:00"
     }
   ]
 }

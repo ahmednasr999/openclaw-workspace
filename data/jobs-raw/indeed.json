@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-05-15T05:00:43.522317+02:00",
-    "duration_ms": 39922,
+    "generated_at": "2026-05-15T17:00:45.165698+02:00",
+    "duration_ms": 42751,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "d6512a58",
+    "run_id": "22fcaac1",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -78,6 +78,27 @@
       "search_title": "Program Director"
     },
     {
+      "id": "indeed-in-e0103ab4b08c2549",
+      "source": "indeed",
+      "title": "Director Global Security and Asset Protection (GSAP) EME OU",
+      "company": "The Coca-Cola Company",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=e0103ab4b08c2549",
+      "posted": "2026-05-13",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 13,
+      "match_keywords": [
+        "director",
+        "leadership"
+      ],
+      "raw_snippet": "A Global Security and Asset Protection (GSAP) Director is tasked with protecting The Coca\\-Cola Company from security and high\\-risk issues that seriously threaten operations, consumer trust or shareholder confidence by delivering high\\-order threat prevention and resolution support to the global business system, including the development and implementation of complex security programs during major events. The role also provides strategic leadership to drive state of the art security advice and ",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Program Director"
+    },
+    {
       "id": "indeed-in-685a3bb7a9b712a3",
       "source": "indeed",
       "title": "Director, Priority Private Banking",
@@ -125,64 +146,70 @@
       "search_title": "Chief Technology Officer"
     },
     {
-      "id": "indeed-in-53ff8dd9a65c3e6a",
+      "id": "indeed-in-cc9a432f97171188",
       "source": "indeed",
-      "title": "Head, Business Operations, Amazon Payment Services (APS)",
-      "company": "Amazon.com",
+      "title": "DESIGN HEAD - Interior Fit Out",
+      "company": "3D Visualizer",
       "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=53ff8dd9a65c3e6a",
-      "posted": "2026-05-13",
+      "url": "https://ae.indeed.com/viewjob?jk=cc9a432f97171188",
+      "posted": "2026-05-15",
       "seniority": "Other",
       "domain_match": true,
-      "keyword_score": 20,
+      "keyword_score": 16,
       "match_keywords": [
-        "operational excellence",
+        "ai",
         "leadership",
-        "uae"
+        "integration"
       ],
-      "raw_snippet": "**DESCRIPTION**\n---------------\n\n\nIn this leadership role, you will lead business operations for Amazon Payment Services based in the UAE, managing strategic partnerships with payment schemes, banks, and technology providers. Oversee vendor onboarding, merchant escalation support, and 24/7 incident management operations. Drive operational excellence through team leadership, process optimization, and execution of special programs that enhance merchant and partner experience.  \n\n  \n\nKey job respon",
+      "raw_snippet": "**Job Overview:**  \nWe are seeking a highly skilled **Design Head** with a strong background in Interior Fit\\-Out and project leadership. This role is ideal for a creative visionary who has a passion for innovative, sustainable design and is eager to lead a team of talented designers. The Design Head will be responsible for overseeing the entire design process, ensuring seamless integration with client goals, managing design teams, and driving excellence in every project.\n\n**Key Responsibilities",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
       "search_title": "Head of Technology"
     },
     {
-      "id": "indeed-in-e0103ab4b08c2549",
+      "id": "indeed-in-ad3ec6f54c6641d3",
       "source": "indeed",
-      "title": "Director Global Security and Asset Protection (GSAP) EME OU",
-      "company": "The Coca-Cola Company",
+      "title": "Director",
+      "company": "Emirates NBD",
       "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=e0103ab4b08c2549",
-      "posted": "2026-05-13",
+      "url": "https://ae.indeed.com/viewjob?jk=ad3ec6f54c6641d3",
+      "posted": "2026-05-15",
       "seniority": "C-Suite",
       "domain_match": false,
-      "keyword_score": 13,
+      "keyword_score": 23,
       "match_keywords": [
+        "ai",
         "director",
-        "leadership"
+        "uae",
+        "middle east",
+        "mena"
       ],
-      "raw_snippet": "A Global Security and Asset Protection (GSAP) Director is tasked with protecting The Coca\\-Cola Company from security and high\\-risk issues that seriously threaten operations, consumer trust or shareholder confidence by delivering high\\-order threat prevention and resolution support to the global business system, including the development and implementation of complex security programs during major events. The role also provides strategic leadership to drive state of the art security advice and ",
+      "raw_snippet": "**About ENBD**\n\nEmirates NBD is a market leader across the MENAT (Middle East, North Africa and T\u00fcrkiye) region with a presence in 13 countries, serving over 9 million customers. Emirates NBD is the leading financial services brand in the UAE with a Brand value of approximately USD 4 billion. We serve our customers and help them realise their financial objectives through a range of banking products and services including retail banking, corporate \\& institutional banking, Islamic banking, invest",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
       "search_title": "IT Director"
     },
     {
-      "id": "indeed-in-ff080fbe6f148d15",
+      "id": "indeed-in-b693304200fe8307",
       "source": "indeed",
-      "title": "Director of Community and Operations",
-      "company": "Decentralized Masters",
+      "title": "Director",
+      "company": "Emirates Islamic",
       "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=ff080fbe6f148d15",
-      "posted": "2026-05-12",
+      "url": "https://ae.indeed.com/viewjob?jk=b693304200fe8307",
+      "posted": "2026-05-15",
       "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 10,
+      "domain_match": false,
+      "keyword_score": 23,
       "match_keywords": [
+        "ai",
         "director",
-        "api"
+        "uae",
+        "middle east",
+        "mena"
       ],
-      "raw_snippet": "**About Us**\n\n\nInflection Club is a private co\\-investment community for accredited investors, operators, and family offices who want direct access to pre\\-IPO deals in the companies shaping the future. Built under Catalyst Capital Holdings, we provide curated access from early to late\\-stage opportunities that traditionally only flow to endowments, pension funds, and institutional allocators \\- names like Anthropic, Polymarket, Kraken, and Lovable.\n\n\nOur thesis is simple: the biggest returns of",
+      "raw_snippet": "**About ENBD**\n\nEmirates NBD is a market leader across the MENAT (Middle East, North Africa and T\u00fcrkiye) region with a presence in 13 countries, serving over 9 million customers. Emirates NBD is the leading financial services brand in the UAE with a Brand value of approximately USD 4 billion. We serve our customers and help them realise their financial objectives through a range of banking products and services including retail banking, corporate \\& institutional banking, Islamic banking, invest",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
@@ -510,7 +537,7 @@
   "kpi": {
     "searches_run": 20,
     "results_per_search": 3.8,
-    "unique_jobs": 22,
+    "unique_jobs": 23,
     "errors": 3
   },
   "recommendations": []

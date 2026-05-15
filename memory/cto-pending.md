@@ -1,7 +1,7 @@
-# CTO Pending Issues — Updated 2026-05-02 09:46 Cairo
+# CTO Pending Issues — Updated 2026-05-15 07:47 Cairo
 
 ## Open
-- Root-level untracked `labs/` is an active heartbeat blocker until tracked, moved, ignored, or removed. Current inspection shows `labs/obsidian-aios-pilot/` with Obsidian/AIOS pilot materials and a nested cloned repo; no live secret pattern confirmed in targeted scan.
+- Root-level untracked workspace paths are active heartbeat blockers until tracked, moved, ignored, or removed. Current blockers: `TOOLS.md.bak-20260515-openclaw-update-recovery`, `archive/20260514-proxyline-cleanup/`, `archive/20260514-stale-backups-cleanup/`, `email-inbox-last80.json`, `email-review-20260514/`, `intel/intel-2026-05-15.md`, `lab/`, `plans/google-skills-adaptation-plan.md`, `templates/nasr-coding-agent-goal-prompt.md`, and `templates/openclaw-skill-template/`. Targeted scan of small files found no obvious secret-pattern matches.
 
 
 1. **daily-backup freshness alert is cleared; backup path review remains** — `/tmp/openclaw-backup.log` advanced to `2026-04-28 20:00:01 +0300`, and the log shows a successful push to `origin workspace-sync` at 19:53. The immediate 48-hour freshness threshold is no longer breached. Keep the older branch-target review only as a follow-up if needed, since the latest evidence shows current backup activity on `workspace-sync`.
@@ -81,5 +81,7 @@ Heartbeat note 2026-05-01 07:48 Cairo — Gateway 200, latest commit `846ed2a6 c
 Heartbeat note 2026-04-24 22:03 Cairo — Cleared root-level untracked `brand/` blocker. Inspected files, added `brand/README.md`, ran targeted secret-pattern scan with no matches, committed only `brand/` via clean temp clone, pushed `871fec4a docs(brand): track visual prompt library` to `origin/workspace-sync`, reset local HEAD to remote, and verified `git status --short -- brand` is clean with no root-level untracked paths.
 
 ## Heartbeat notes
+
+- 2026-05-15 07:47 Cairo — heartbeat blocked by root-level untracked workspace paths listed above. Direct checks: gateway 200, latest commit `88beff5e chore(auto): daily data commit (32 files)` (~47m old), cron-dashboard log present with 0 ERRORs in the last 100 lines, disk 53%, and persistent backup log fresh at `2026-05-14 20:00:15 +0300` (~11.8h old). Untrusted NASR Doctor cron warnings were not confirmed by direct heartbeat evidence: watchdog cron log showed 0 matching error/timed-out lines in the last 100 lines, with only a re-trigger notice found for one reported cron ID.
 
 - 2026-05-02 09:46 Cairo — heartbeat blocked by new root-level untracked `labs/`. Direct checks: gateway 200, latest commit `6b645cd3 chore(auto): daily data commit (16 files)` (~3h old), cron-dashboard log present with 0 ERRORs, disk 72%, persistent backup log fresh at `2026-05-01 20:00:04 +0300` (~13.8h old), `/tmp/openclaw-backup.log` still absent because cron now writes to `/root/.openclaw/workspace/logs/openclaw-backup.log`. `labs/` contains `obsidian-aios-pilot/` with extracted docs, vault files, and a nested `obsidian-skills/.git/`; targeted scan found only git log/email/README URL-style hits, no live secret pattern confirmed.

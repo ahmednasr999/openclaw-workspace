@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-15T06:30:29.720271+03:00",
+  "timestamp": "2026-05-15T19:30:25.941478+03:00",
   "total_crons": 15,
   "system_crons": 15,
   "openclaw_crons": 0,
@@ -72,9 +72,9 @@
       "schedule": "0 9 * * *",
       "type": "system",
       "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
+        "status": "\u2705 OK",
+        "last_run": "2026-05-15 09:00:01.208858+03:00",
+        "error": null
       }
     },
     {
@@ -103,7 +103,7 @@
       "type": "system",
       "last_status": {
         "status": "\u2705 OK",
-        "last_run": "2026-05-15 06:30:01.389222+03:00",
+        "last_run": "2026-05-15 19:30:01.440132+03:00",
         "error": null
       }
     },
@@ -113,7 +113,7 @@
       "type": "system",
       "last_status": {
         "status": "\u2705 OK",
-        "last_run": "2026-05-15 06:00:17.022375+03:00",
+        "last_run": "2026-05-15 18:00:13.298462+03:00",
         "error": null
       }
     },
@@ -132,9 +132,9 @@
       "schedule": "0 11 15-28 5 *",
       "type": "system",
       "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
+        "status": "\u2705 OK",
+        "last_run": "2026-05-15 12:00:01.411179+03:00",
+        "error": null
       }
     },
     {
@@ -142,9 +142,9 @@
       "schedule": "0 12 15-28 5 *",
       "type": "system",
       "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
+        "status": "\u2705 OK",
+        "last_run": "2026-05-15 12:00:01.411179+03:00",
+        "error": null
       }
     },
     {
@@ -152,9 +152,9 @@
       "schedule": "*/30 * * * *",
       "type": "system",
       "last_status": {
-        "status": "\u274c Failed",
-        "last_run": "2026-05-15 06:00:36.564647+03:00",
-        "error": "Check log for details"
+        "status": "\u2705 OK",
+        "last_run": "2026-05-15 19:00:44.943508+03:00",
+        "error": null
       }
     }
   ]

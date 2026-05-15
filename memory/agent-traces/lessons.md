@@ -1,6 +1,6 @@
 # Agent Lessons Learned
 
-*Auto-curated from agent traces. Updated: 2026-05-14*
+*Auto-curated from agent traces. Updated: 2026-05-15*
 
 ## Communication
 - ✅ CLI uses --target not --to — exit 0 does not mean success. Always verify actual delivery (CEO, 2026-03-30)
@@ -11,6 +11,8 @@
 - ❌ OpenClaw update recovery must verify binary path alignment, service ExecStart, Codex harness/plugin registration, lossless-claw dependency health, stale paired node versions, and a real Telegram /new then hi response before declaring success. (NASR/CTO recovery, 2026-05-15)
 - ❌ For monitor health checks, verify the scheduler entry, the expected log file, and the monitor's own dry-run behavior before trusting documentation or stale summary JSON. (CTO, 2026-05-15)
 - ❌ For OpenClaw binary-drift cleanup, do not use npm uninstall -g unless npm prefix has been verified. Remove duplicate non-active OpenClaw installs by explicit path after confirming the active service binary, then immediately verify /usr/bin/openclaw and /usr/local/bin/openclaw versions. (NASR/CTO cleanup, 2026-05-15)
+- ❌ After OpenClaw updates, do not treat gateway health as enough. Run the runtime patch checker, back up current hashed dist bundles, patch the active hashed files only, reload the gateway, and verify health dashboard OK before saying done. (NASR/CTO repair, 2026-05-15)
+- ❌ For model guardian checks, distinguish configured provider IDs from user-facing model status IDs, and remove stale plugin allowlist entries only after confirming the channel is disabled and backing up openclaw.json. (NASR/CTO repair, 2026-05-15)
 
 ## Content Post
 - ✅ Always validate LinkedIn post length against 3000 char limit before posting (CMO, 2026-03-23)

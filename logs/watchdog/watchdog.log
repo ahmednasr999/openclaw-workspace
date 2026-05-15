@@ -2905,3 +2905,87 @@ Config warnings:
   "enqueued": true,
   "runId": "manual:2a6d6e4f-0ea6-4836-935d-e4bc1fa8c2e3:1778814022042:1"
 }
+[2026-05-15 08:00] === Watchdog v3 run ===
+[2026-05-15 08:00] WARN: Jobs data stale (475h), triggering pipeline
+[2026-05-15 08:00] FIXED: Pipeline triggered
+[2026-05-15 08:00] FIXED: Re-triggered failed cron dff61426-08b9-42c4-abe5-d3f9e28d4b1f
+[2026-05-15 08:00] FIXED: Re-triggered failed cron 2a6d6e4f-0ea6-4836-935d-e4bc1fa8c2e3
+[2026-05-15 08:00] Summary: fixes=3 warnings=1 alerts=0
+Config warnings:
+- plugins.allow: plugin not installed: slack — install the official external plugin with: openclaw plugins install @openclaw/slack
+Config warnings:
+- plugins.allow: plugin not installed: slack — install the official external plugin with: openclaw plugins install @openclaw/slack
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:dff61426-08b9-42c4-abe5-d3f9e28d4b1f:1778821219751:2"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:2a6d6e4f-0ea6-4836-935d-e4bc1fa8c2e3:1778821234825:3"
+}
+[2026-05-15 10:00] === Watchdog v3 run ===
+[2026-05-15 10:00] WARN: Jobs data stale (477h), triggering pipeline
+[2026-05-15 10:00] FIXED: Pipeline triggered
+[2026-05-15 10:00] FIXED: Re-triggered failed cron 2a6d6e4f-0ea6-4836-935d-e4bc1fa8c2e3
+[2026-05-15 10:00] Summary: fixes=2 warnings=1 alerts=0
+Config warnings:
+- plugins.allow: plugin not installed: slack — install the official external plugin with: openclaw plugins install @openclaw/slack
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:2a6d6e4f-0ea6-4836-935d-e4bc1fa8c2e3:1778828419481:4"
+}
+[2026-05-15 12:00] === Watchdog v3 run ===
+[2026-05-15 12:00] WARN: Jobs data stale (479h), triggering pipeline
+[2026-05-15 12:00] FIXED: Pipeline triggered
+[2026-05-15 12:00] FIXED: Re-triggered failed cron 2a6d6e4f-0ea6-4836-935d-e4bc1fa8c2e3
+[2026-05-15 12:00] Summary: fixes=2 warnings=1 alerts=0
+Config warnings:
+- plugins.allow: plugin not installed: slack — install the official external plugin with: openclaw plugins install @openclaw/slack
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:2a6d6e4f-0ea6-4836-935d-e4bc1fa8c2e3:1778835626483:5"
+}
+[2026-05-15 14:00] === Watchdog v3 run ===
+[2026-05-15 14:00] WARN: Jobs data stale (481h), triggering pipeline
+[2026-05-15 14:00] FIXED: Pipeline triggered
+[2026-05-15 14:00] Summary: fixes=1 warnings=1 alerts=0
+[2026-05-15 16:00] === Watchdog v3 run ===
+[2026-05-15 16:00] WARN: Jobs data stale (483h), triggering pipeline
+[2026-05-15 16:00] FIXED: Pipeline triggered
+[2026-05-15 16:00] FIXED: Re-triggered failed cron dff61426-08b9-42c4-abe5-d3f9e28d4b1f
+[2026-05-15 16:00] FIXED: Re-triggered failed cron d93228ad-b2b2-4c17-b1b5-210f87df9608
+[2026-05-15 16:00] Summary: fixes=3 warnings=1 alerts=0
+Config warnings:
+- plugins.allow: plugin not installed: slack — install the official external plugin with: openclaw plugins install @openclaw/slack
+Config warnings:
+- plugins.allow: plugin not installed: slack — install the official external plugin with: openclaw plugins install @openclaw/slack
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:d93228ad-b2b2-4c17-b1b5-210f87df9608:1778850019697:4"
+}
+gateway connect failed: Error: gateway closed (1000): 
+GatewayTransportError: gateway closed (1000 normal closure): no close reason
+Gateway target: ws://127.0.0.1:18789
+Source: local loopback
+Config: /root/.openclaw/openclaw.json
+Bind: loopback
+[2026-05-15 18:00] === Watchdog v3 run ===
+[2026-05-15 18:00] WARN: Jobs data stale (485h), triggering pipeline
+[2026-05-15 18:00] FIXED: Pipeline triggered
+[2026-05-15 18:00] FIXED: Re-triggered failed cron dff61426-08b9-42c4-abe5-d3f9e28d4b1f
+[2026-05-15 18:00] Summary: fixes=2 warnings=1 alerts=0
+Config warnings:
+- plugins.allow: plugin not installed: slack — install the official external plugin with: openclaw plugins install @openclaw/slack
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:dff61426-08b9-42c4-abe5-d3f9e28d4b1f:1778857218431:5"
+}
+[2026-05-15 20:00] === Watchdog v3 run ===
+[2026-05-15 20:00] WARN: Jobs data stale (487h), triggering pipeline
+[2026-05-15 20:00] FIXED: Pipeline triggered

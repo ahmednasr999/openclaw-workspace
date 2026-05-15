@@ -55,6 +55,7 @@ def run_with_retries(args, timeouts, parser=None, ok_text=None, label='command')
 
 EXPECTED_DEFAULT_MODEL = 'openai-codex/gpt-5.5'
 EXPECTED_DEFAULT_LABEL = 'GPT-5.5'
+EXPECTED_STATUS_MODEL = 'openai/gpt-5.5'
 
 # 1. model-router.json default
 try:
@@ -117,7 +118,7 @@ try:
     _, combined, attempts, _ = run_with_retries(
         ['openclaw', 'models', 'status', '--plain'],
         timeouts=[20, 40],
-        ok_text=EXPECTED_DEFAULT_MODEL,
+        ok_text=EXPECTED_STATUS_MODEL,
         label='models status probe',
     )
     if attempts > 1:

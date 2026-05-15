@@ -1030,3 +1030,11 @@ Multiple OpenClaw binaries drifted across `/usr/bin`, `/usr/local/bin`, and NVM 
 Installed/enabled `@openclaw/codex`, restored the `lossless-claw` dependency, disabled stale Mac node launch agents/processes, replaced stale `/usr/local/bin/openclaw` with a symlink to `/usr/bin/openclaw`, restarted via the service binary, and verified Telegram with a real response.
 ### Do differently
 Before and after OpenClaw updates, verify every active binary path, service `ExecStart`, required plugins, Codex harness registration, lossless-claw dependency health, node-client version alignment, and real Telegram `/new` then `hi` behavior. Use `/usr/bin/openclaw gateway restart` and keep one config change at a time with validation before restart.
+
+## 2026-05-15 - Fix Low-Risk JobZoom Warnings Instead of Reporting Them
+### What I got wrong
+After a successful JobZoom validation, I reported a model health pre-check timeout as a remaining warning instead of immediately checking whether it was a low-risk false-positive that could be fixed.
+### Why
+I treated the warning as harmless because batch scoring completed, but Ahmed expects preventable recurring noise to be removed when safe.
+### Fix
+For protected JobZoom internal work, if a warning is caused by local wrapper/reporting/preflight logic and the run outcome is verified clean, inspect and fix the warning source in the same turn. Keep approval gates for external, destructive, credential, gateway, or live-runtime changes.
