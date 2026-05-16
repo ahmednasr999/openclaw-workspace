@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
 """
-pipeline-healer.py — Self-healing layer for the job pipeline.
+pipeline-healer.py - Self-healing layer for the job pipeline.
 
 Called by job-pipeline-orchestrator.py when any stage fails.
-Escalation chain: Sonnet 4.6 → Opus 4.6 → Alert Ahmed → Continue with best data.
+Escalation chain: GPT-5.5 retry -> Alert Ahmed -> Continue with best data.
 
 Strategy per stage:
   - scan (linkedin/exa/google/indeed/bayt): retry with JobSpy fallback for LinkedIn,
       use cached last-known-good data for others
   - merge: reconstruct from raw files directly
   - enrich: skip enrichment (JDs available from JobSpy), mark as partial
-  - review: Sonnet steps in and does the review itself
-  - sonnet-verify: already Sonnet — escalate to Opus directly
+  - review: GPT-5.5 steps in and does the review itself
+  - sonnet-verify: legacy stage name, verify with GPT-5.5
   - briefing: reconstruct from last available jobs-summary.json
 
 Key principle: Pipeline NEVER hard-stops. Always produce a briefing.
@@ -34,11 +34,7 @@ SCRIPTS_DIR = WORKSPACE / "scripts"
 JOBS_RAW_DIR = DATA_DIR / "jobs-raw"
 
 GATEWAY_URL = "http://127.0.0.1:18789/v1/chat/completions"
-SONNET_MODEL = "anthropic/claude-sonnet-4-6"
-OPUS_MODEL = "anthropic/claude-opus-4-6"
-
-MAX_SONNET_ATTEMPTS = 2
-MAX_OPUS_ATTEMPTS = 1
+GPT55_MODEL = "openai-codex/gpt-5.5"
 
 TELEGRAM_CHAT_ID = "-1003882622947"
 TELEGRAM_TOPIC_ID = "10"
@@ -145,8 +141,8 @@ def heal_scan_stage(stage_name: str, error: str) -> bool:
 
 
 def heal_review_stage(error: str) -> bool:
-    """Review stage failure: Sonnet steps in to do the LLM review itself."""
-    print("\n  Healer: review stage failed — Sonnet stepping in as reviewer")
+    """Review stage failure: GPT-5.5 steps in to do the LLM review itself."""
+    print("\n  Healer: review stage failed - GPT-5.5 stepping in as reviewer")
 
     merged_file = DATA_DIR / "jobs-merged.json"
     summary_file = DATA_DIR / "jobs-summary.json"
@@ -167,7 +163,7 @@ def heal_review_stage(error: str) -> bool:
         return True
 
     top_jobs = sorted(all_jobs, key=lambda x: x.get("keyword_score", 0), reverse=True)[:50]
-    print(f"  Sonnet reviewing {len(top_jobs)} jobs (top by keyword score)...")
+    print(f"  GPT-5.5 reviewing {len(top_jobs)} jobs (top by keyword score)...")
 
     CANDIDATE_PROFILE = """Senior technology executive (20+ yrs): Digital Transformation, PMO, Operational Excellence.
 Target: VP/Director/Head/SVP/C-level in DT, PMO, Technology, Operations. GCC geography (UAE/Saudi/Qatar priority).
@@ -192,7 +188,7 @@ Verdicts: SUBMIT (7+), REVIEW (5-6), SKIP (<5)
 
 {jobs_text}"""
 
-        for model, label in [(SONNET_MODEL, "Sonnet"), (SONNET_MODEL, "Sonnet retry"), (OPUS_MODEL, "Opus")]:
+        for model, label in [(GPT55_MODEL, "GPT-5.5"), (GPT55_MODEL, "GPT-5.5 retry")]:
             print(f"    Batch {batch_start//BATCH_SIZE+1}: trying {label}...", end=" ", flush=True)
             response = call_llm(prompt, model, timeout=120)
             if response:
@@ -281,13 +277,13 @@ def heal_merge_stage(error: str) -> bool:
     return True
 
 
-def heal_sonnet_verify_stage(error: str) -> bool:
-    """Sonnet verify failed — escalate directly to Opus."""
-    print("\n  Healer: sonnet-verify stage failed — escalating to Opus 4.6")
+def heal_verifier_stage(error: str) -> bool:
+    """Legacy verifier stage failed, rerun verification with GPT-5.5."""
+    print("\n  Healer: verifier stage failed - rerunning with GPT-5.5")
 
     summary_file = DATA_DIR / "jobs-summary.json"
     if not summary_file.exists():
-        print("  No jobs-summary.json — skipping verification")
+        print("  No jobs-summary.json - skipping verification")
         return True
 
     with open(summary_file) as f:
@@ -297,16 +293,16 @@ def heal_sonnet_verify_stage(error: str) -> bool:
     candidates = data.get("submit", []) + data.get("review", [])
 
     if not candidates:
-        print("  No candidates to verify — skipping")
+        print("  No candidates to verify - skipping")
         return True
 
-    print(f"  Opus verifying {len(candidates)} jobs...")
+    print(f"  GPT-5.5 verifying {len(candidates)} jobs...")
     BATCH_SIZE = 10
 
     for batch_start in range(0, len(candidates), BATCH_SIZE):
         batch = candidates[batch_start:batch_start + BATCH_SIZE]
         jobs_text = "\n".join([
-            f"JOB {i+1}: {j.get('title')} @ {j.get('company')} | {j.get('location')} | M2.7: {j.get('verdict')}"
+            f"JOB {i+1}: {j.get('title')} @ {j.get('company')} | {j.get('location')} | prior: {j.get('verdict')}"
             for i, j in enumerate(batch)
         ])
 
@@ -316,7 +312,7 @@ Verify these job verdicts. Return JSON only:
 
 {jobs_text}"""
 
-        response = call_llm(prompt, OPUS_MODEL, timeout=180)
+        response = call_llm(prompt, GPT55_MODEL, timeout=180)
         if response:
             import re
             match = re.search(r'\[[\s\S]*\]', response)
@@ -342,12 +338,12 @@ Verify these job verdicts. Return JSON only:
     data["submit"] = sorted(new_submit, key=lambda x: x.get("sonnet_rank") or 99)
     data["review"] = new_review
     data["sonnet_verified"] = True
-    data["healer_escalated_to_opus"] = True
+    data["healer_verified_with_gpt55"] = True
 
     with open(summary_file, "w") as f:
         json.dump(summary, f, indent=2)
 
-    print(f"  ✅ Opus verification complete: {len(new_submit)} SUBMIT | {len(new_review)} REVIEW")
+    print(f"  ✅ GPT-5.5 verification complete: {len(new_submit)} SUBMIT | {len(new_review)} REVIEW")
     return True
 
 
@@ -377,22 +373,21 @@ def heal_stage(stage_name: str, error: str) -> bool:
         attempted_fixes.append("enrich_skip")
 
     elif stage_name == "review":
-        # Sonnet attempt 1
-        print(f"  Attempt 1/2: Sonnet 4.6...")
+        # GPT-5.5 review attempt
+        print(f"  Attempt 1/2: GPT-5.5...")
         success = heal_review_stage(error)
-        attempted_fixes.append("review_sonnet")
+        attempted_fixes.append("review_gpt55")
         if not success:
-            # Escalate to Opus
-            print(f"  Attempt 2/2: Escalating to Opus 4.6...")
-            success = heal_review_stage(error)  # heal_review_stage already tries Opus internally
-            attempted_fixes.append("review_opus")
+            print(f"  Attempt 2/2: GPT-5.5 retry...")
+            success = heal_review_stage(error)
+            attempted_fixes.append("review_gpt55_retry")
 
     elif stage_name == "sonnet-verify":
-        success = heal_sonnet_verify_stage(error)
-        attempted_fixes.append("verify_opus_escalation")
+        success = heal_verifier_stage(error)
+        attempted_fixes.append("verify_gpt55")
 
     else:
-        print(f"  Healer: no strategy for stage '{stage_name}' — continuing")
+        print(f"  Healer: no strategy for stage '{stage_name}' - continuing")
         success = True
         attempted_fixes.append(f"unknown_stage_passthrough")
 

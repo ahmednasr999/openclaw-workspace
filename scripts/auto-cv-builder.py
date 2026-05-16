@@ -2,7 +2,7 @@
 """
 Auto CV Builder
 ===============
-Reads trigger files from jobs-bank/handoff/, calls Opus 4.6 to tailor CV,
+Reads trigger files from jobs-bank/handoff/, calls GPT-5.5 to tailor CV,
 generates PDF via WeasyPrint, pushes to GitHub.
 
 Usage:
@@ -42,11 +42,10 @@ MASTER_CV   = f"{WORKSPACE}/memory/master-cv-data.md"
 PENDING_CV  = f"{WORKSPACE}/memory/cv-pending-updates.md"
 OPENCLAW_JSON = "/root/.openclaw/openclaw.json"
 
-ANTHROPIC_API_KEY = ""
-ANTHROPIC_BASE_URL = "https://api.anthropic.com"
 GATEWAY_TOKEN = ""
 GATEWAY_PORT = 18789
 USE_GATEWAY = False
+APPROVED_CV_MODEL = "openai-codex/gpt-5.5"
 
 # CV HTML template (from proven working CVs)
 # Load shared HTML template (Decision 10: single source of truth)
@@ -64,14 +63,19 @@ def log(msg):
     print(f"[{ts}] {msg}", file=sys.stderr, flush=True)
 
 
+def enforce_cv_model(model, context="CV generation"):
+    if model != APPROVED_CV_MODEL:
+        raise RuntimeError(
+            f"{context} blocked: model must be {APPROVED_CV_MODEL}, got {model}"
+        )
+    return model
+
+
 def load_config():
-    global ANTHROPIC_API_KEY, ANTHROPIC_BASE_URL, GATEWAY_TOKEN, GATEWAY_PORT, USE_GATEWAY
+    global GATEWAY_TOKEN, GATEWAY_PORT, USE_GATEWAY
     try:
         with open(OPENCLAW_JSON) as f:
             cfg = json.load(f)
-        p = cfg.get("models", {}).get("providers", {}).get("anthropic", {})
-        ANTHROPIC_API_KEY = p.get("apiKey", "")
-        ANTHROPIC_BASE_URL = p.get("baseUrl", "https://api.anthropic.com")
         # Gateway config (preferred over direct API)
         gw = cfg.get("gateway", {})
         gw_auth = gw.get("auth", {})
@@ -149,67 +153,45 @@ def cv_already_exists(company, role):
     return matches2[0] if matches2 else None
 
 
-def call_opus(prompt, max_tokens=8000):
-    """Call Opus 4.6 via OpenClaw Gateway (preferred) or direct Anthropic API."""
-    if USE_GATEWAY and GATEWAY_TOKEN:
-        payload = json.dumps({
-            "model": "anthropic/claude-opus-4-6",
-            "max_tokens": max_tokens,
-            "messages": [{"role": "user", "content": prompt}]
-        }).encode()
+def call_cv_model(prompt, max_tokens=8000):
+    """Call the approved GPT-5.5 CV model through the OpenClaw Gateway."""
+    if not (USE_GATEWAY and GATEWAY_TOKEN):
+        raise ValueError("No OpenClaw gateway token available for GPT-5.5 CV generation")
 
-        req = urllib.request.Request(
-            f"http://localhost:{GATEWAY_PORT}/v1/chat/completions",
-            data=payload,
-            headers={
-                "Content-Type": "application/json",
-                "Authorization": f"Bearer {GATEWAY_TOKEN}"
-            },
-            method="POST"
-        )
-
-        # Retry up to 3 times on timeout
-        last_err = None
-        for attempt in range(3):
-            try:
-                with urllib.request.urlopen(req, timeout=360) as resp:
-                    result = json.loads(resp.read())
-                    return result.get("choices", [{}])[0].get("message", {}).get("content", "").strip()
-            except Exception as e:
-                last_err = e
-                log(f"  Opus attempt {attempt+1}/3 failed: {e}")
-                import time; time.sleep(5)
-        raise last_err
-
-    # Fallback: direct Anthropic API
-    if not ANTHROPIC_API_KEY:
-        raise ValueError("No Anthropic API key and no gateway token")
-
+    model = enforce_cv_model(APPROVED_CV_MODEL)
     payload = json.dumps({
-        "model": "claude-opus-4-6",
+        "model": model,
         "max_tokens": max_tokens,
         "messages": [{"role": "user", "content": prompt}]
     }).encode()
 
     req = urllib.request.Request(
-        f"{ANTHROPIC_BASE_URL}/v1/messages",
+        f"http://localhost:{GATEWAY_PORT}/v1/chat/completions",
         data=payload,
         headers={
             "Content-Type": "application/json",
-            "x-api-key": ANTHROPIC_API_KEY,
-            "anthropic-version": "2023-06-01"
+            "Authorization": f"Bearer {GATEWAY_TOKEN}"
         },
         method="POST"
     )
 
-    with urllib.request.urlopen(req, timeout=120) as resp:
-        result = json.loads(resp.read())
-        return result.get("content", [{}])[0].get("text", "").strip()
+    # Retry up to 3 times on timeout
+    last_err = None
+    for attempt in range(3):
+        try:
+            with urllib.request.urlopen(req, timeout=360) as resp:
+                result = json.loads(resp.read())
+                return result.get("choices", [{}])[0].get("message", {}).get("content", "").strip()
+        except Exception as e:
+            last_err = e
+            log(f"  GPT-5.5 attempt {attempt+1}/3 failed: {e}")
+            import time; time.sleep(5)
+    raise last_err
 
 
 def tailor_cv(master_cv, pending_updates, job_data):
-    """Call Opus 4.6 to tailor CV body HTML for a specific role."""
-    log(f"  Calling Opus 4.6 for CV tailoring...")
+    """Call GPT-5.5 to tailor CV body HTML for a specific role."""
+    log(f"  Calling GPT-5.5 for CV tailoring...")
 
     prompt = f"""You are an expert executive CV writer. Tailor Ahmed Nasr's CV for this specific role.
 
@@ -263,7 +245,7 @@ Before outputting, confirm ALL of these:
 
 Output ONLY raw HTML."""
 
-    html_body = call_opus(prompt)
+    html_body = call_cv_model(prompt)
 
     # Clean up any stray markdown
     html_body = html_body.replace("```html", "").replace("```", "").strip()
@@ -407,10 +389,10 @@ def find_cluster_template(cluster, company):
 
 def adapt_cv(template_html, master_cv, pending_updates, job_data):
     """
-    Lighter Opus call: adapt an existing cluster-matched CV template for a new role.
+    Lighter GPT-5.5 call: adapt an existing cluster-matched CV template for a new role.
     Uses ~40% of the tokens vs a full tailor_cv() build.
     """
-    log(f"  Calling Opus 4.6 for CV ADAPTATION (cluster reuse)...")
+    log(f"  Calling GPT-5.5 for CV ADAPTATION (cluster reuse)...")
 
     prompt = f"""You are an expert executive CV writer. Below is an existing CV (HTML body) built for a similar role. Adapt it for the new job below.
 
@@ -481,7 +463,7 @@ Before outputting, confirm ALL of these:
 
 Output ONLY raw HTML."""
 
-    html_body = call_opus(prompt, max_tokens=5000)
+    html_body = call_cv_model(prompt, max_tokens=5000)
 
     # Clean up
     html_body = html_body.replace("```html", "").replace("```", "").strip()
@@ -491,7 +473,7 @@ Output ONLY raw HTML."""
 
 
 def extract_jd_keywords(jd_text):
-    """Extract top 15 keywords from JD via MiniMax (cheap, fast)."""
+    """Extract top 15 keywords from JD via the approved GPT-5.5 CV model."""
     if not jd_text or len(jd_text) < 100:
         return []
     try:
@@ -501,8 +483,9 @@ def extract_jd_keywords(jd_text):
             "Return ONLY a JSON array of lowercase strings. No explanation.\n\n"
             f"JD:\n{jd_text[:3000]}"
         )
+        model = enforce_cv_model(APPROVED_CV_MODEL, "CV keyword extraction")
         payload = json.dumps({
-            "model": "minimax-portal/MiniMax-M2.5",
+            "model": model,
             "max_tokens": 300,
             "messages": [{"role": "user", "content": prompt}],
         }).encode()
@@ -531,7 +514,7 @@ def extract_jd_keywords(jd_text):
 
 
 def ats_score_check(jd_text, master_cv):
-    """ATS scoring: extract JD keywords via MiniMax, match against master CV."""
+    """ATS scoring: extract JD keywords via GPT-5.5, match against master CV."""
     keywords = extract_jd_keywords(jd_text)
 
     if not keywords:
@@ -657,7 +640,7 @@ def process_trigger(trigger_path, master_cv, pending_updates, dry_run=False):
     if cluster:
         template_html, template_source = find_cluster_template(cluster, company)
 
-    # Tailor CV via Opus 4.6 — reuse path or full build
+    # Tailor CV via GPT-5.5 - reuse path or full build
     try:
         if template_html:
             log(f"  REUSE: adapting {template_source}")
@@ -676,7 +659,7 @@ def process_trigger(trigger_path, master_cv, pending_updates, dry_run=False):
             html_body = tailor_cv(master_cv, pending_updates, data)
         log(f"  CV body: {len(html_body)} chars [{build_path}]")
     except Exception as e:
-        log(f"  ERROR calling Opus: {e}")
+        log(f"  ERROR calling GPT-5.5: {e}")
         return None
 
     # Generate PDF
@@ -706,7 +689,7 @@ def process_trigger(trigger_path, master_cv, pending_updates, dry_run=False):
 
     # Retry once on blockers with specific feedback
     if blockers:
-        log(f"  ⚠️ BLOCKERS ({len(blockers)}), retrying Opus with feedback...")
+        log(f"  ⚠️ BLOCKERS ({len(blockers)}), retrying GPT-5.5 with feedback...")
         for b in blockers:
             log(f"    - {b}")
         blocker_list = "\n".join(f"- {b.replace('BLOCKER: ', '')}" for b in blockers)
@@ -718,7 +701,7 @@ def process_trigger(trigger_path, master_cv, pending_updates, dry_run=False):
             f"(ahmednasr999@gmail.com, +971 50 281 4490). Output ONLY raw HTML body."
         )
         try:
-            html_body = call_opus(retry_prompt, max_tokens=8000)
+            html_body = call_cv_model(retry_prompt, max_tokens=8000)
             html_body = html_body.replace("```html", "").replace("```", "").strip()
             html_body = html_body.replace("\u2014", ",").replace("\u2013", ",")
             html_path, pdf_path = generate_pdf(html_body, company, role)
@@ -774,7 +757,7 @@ def process_trigger(trigger_path, master_cv, pending_updates, dry_run=False):
             "build_path": build_path,
             "cluster": cluster,
             "validation_issues": issues if issues else [],
-            "model": "claude-opus-4-6",
+            "model": APPROVED_CV_MODEL,
             "timestamp": datetime.now(timezone.utc).isoformat(),
             "html_chars": len(html_body) if html_body else 0,
             "pdf_path": pdf_path,

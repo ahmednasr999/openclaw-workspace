@@ -327,7 +327,7 @@ def get_gateway_token():
 
 
 def generate_content(prompt, system, max_tokens=600):
-    """Generate content through the local OpenClaw gateway, pinned to GPT-5.4."""
+    """Generate content through the local OpenClaw gateway, pinned to GPT-5.5."""
     body = json.dumps({
         "model": "openclaw/hr",
         "max_tokens": max_tokens,
@@ -338,7 +338,7 @@ def generate_content(prompt, system, max_tokens=600):
     }).encode()
     headers = {
         "Content-Type": "application/json",
-        "x-openclaw-model": "openai-codex/gpt-5.4",
+        "x-openclaw-model": "openai-codex/gpt-5.5",
     }
     gateway_token = get_gateway_token()
     if gateway_token:

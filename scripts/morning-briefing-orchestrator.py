@@ -1281,7 +1281,7 @@ def create_notion_briefing(date_str, date_display, pipeline, scanner_meta, quali
         cv_url = cv_info.get("cv_url", "")
         if cv_url:
             if cv_info.get("generated"):
-                lines.append(f"  → 📄 CV (Opus draft): {cv_url}")
+                lines.append(f"  → 📄 CV (GPT-5.5 draft): {cv_url}")
             elif cv_info.get("reused"):
                 lines.append(f"  → 📄 CV (existing): {cv_url}")
             elif cv_info.get("fallback"):
@@ -2108,7 +2108,7 @@ def main():
         spec.loader.exec_module(cl)
         cl.log_cost(
             session_name=f"Morning Briefing ({today_str})",
-            model="MiniMax-M2.5",
+            model="openai-codex/gpt-5.5",
             agent="Morning Briefing",
             duration=elapsed,
             status="success",

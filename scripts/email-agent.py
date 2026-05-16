@@ -78,7 +78,7 @@ Return a JSON object with this exact structure:
 }}
 </output_format>"""
 
-LLM_MODEL = "openclaw"  # OpenClaw gateway routing (old value minimax-portal/MiniMax-M2.7 was rejected by gateway)
+LLM_MODEL = "openai-codex/gpt-5.5"
 LLM_TEMP = 0.1
 
 import imaplib

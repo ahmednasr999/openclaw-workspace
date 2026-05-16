@@ -121,7 +121,7 @@ def generate_sessions_chart(data):
 
 def generate_models_chart(data):
     """Model usage distribution."""
-    models = data.get("models", ["MiniMax", "Sonnet", "Opus", "GPT-5.4", "Haiku"])
+    models = data.get("models", ["GPT-5.5"])
     usage = data.get("usage", [45, 25, 15, 10, 5])
     
     fig, ax = plt.subplots(figsize=(8, 8))

@@ -10,6 +10,8 @@ SESSION_KEY = "agent:main:telegram:direct:866838380"
 LCM_DB = Path("/root/.openclaw/lcm.db")
 PATCH_CHECKER = Path("/root/.openclaw/workspace/scripts/check-openclaw-runtime-patches.py")
 REPORT_DIR = Path("/root/.openclaw/workspace/reports/health")
+DASHBOARD_STATE_FILE = REPORT_DIR / "dashboard-service-state.json"
+DASHBOARD_URL = "http://100.99.230.14:3000/"
 
 
 def run(cmd, timeout=30):
@@ -117,6 +119,83 @@ def check_logs(minutes=30):
     return status_line("recent_logs", state, "; ".join(detail) + (f"; last_stuck={recent_stuck[-1][-240:]}" if recent_stuck else ""))
 
 
+def parse_systemctl_show(text):
+    data = {}
+    for line in text.splitlines():
+        if "=" not in line:
+            continue
+        key, value = line.split("=", 1)
+        data[key] = value
+    return data
+
+
+def load_dashboard_state():
+    try:
+        return json.loads(DASHBOARD_STATE_FILE.read_text(encoding="utf-8"))
+    except Exception:
+        return {}
+
+
+def write_dashboard_state(restarts):
+    REPORT_DIR.mkdir(parents=True, exist_ok=True)
+    DASHBOARD_STATE_FILE.write_text(
+        json.dumps(
+            {
+                "updated_at": dt.datetime.now(dt.timezone.utc).astimezone().isoformat(timespec="seconds"),
+                "n_restarts": restarts,
+            },
+            indent=2,
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+
+
+def check_dashboard_service(write_state=False):
+    rc, out = run("systemctl show openclaw-dashboard.service -p ActiveState -p SubState -p Result -p NRestarts -p ExecMainPID --no-page", timeout=10)
+    if rc != 0:
+        return status_line("dashboard_service", "WARN", f"systemctl show failed rc={rc}: {out.strip()[-500:]}")
+
+    data = parse_systemctl_show(out)
+    active = data.get("ActiveState", "?")
+    sub = data.get("SubState", "?")
+    result = data.get("Result", "?")
+    pid = data.get("ExecMainPID", "?")
+    try:
+        restarts = int(data.get("NRestarts", "0") or 0)
+    except ValueError:
+        restarts = 0
+
+    prev = load_dashboard_state()
+    prev_restarts = prev.get("n_restarts")
+    increase = restarts - prev_restarts if isinstance(prev_restarts, int) else 0
+
+    http_rc, http_out = run(f"curl -fsS --max-time 5 {DASHBOARD_URL} >/dev/null", timeout=8)
+    reachable = http_rc == 0
+
+    state = "OK"
+    issues = []
+    if active != "active" or sub != "running" or not reachable:
+        state = "WARN"
+        if not reachable:
+            issues.append("dashboard_unreachable")
+    if increase >= 2:
+        state = "WARN"
+        issues.append(f"restart_count_increased_by_{increase}")
+    elif increase == 1:
+        issues.append("single_restart_since_last_report")
+
+    if write_state:
+        write_dashboard_state(restarts)
+
+    detail = (
+        f"active={active}; sub={sub}; result={result}; pid={pid}; "
+        f"restarts={restarts}; previous={prev_restarts if prev_restarts is not None else '?'}; "
+        f"reachable={reachable}; {' '.join(issues)}"
+    )
+    return status_line("dashboard_service", state, detail)
+
+
 def check_status_cli():
     # bounded probe: full status is known slow, warn only if it times out past 70s
     rc, out = run("/usr/bin/time -f 'elapsed=%e' openclaw status >/tmp/openclaw-health-status.out", timeout=75)
@@ -135,7 +214,7 @@ def main():
     ap.add_argument("--write-report", action="store_true")
     args = ap.parse_args()
 
-    checks = [check_gateway(), check_config(), check_patches(), check_lcm(), check_logs()]
+    checks = [check_gateway(), check_config(), check_patches(), check_lcm(), check_logs(), check_dashboard_service(write_state=args.write_report)]
     if args.with_status_cli:
         checks.append(check_status_cli())
     overall = max((c["state"] for c in checks), key=severity_rank)

@@ -57,8 +57,8 @@ ARCHIVE_LINKEDIN_PROFILE = DATA_DIR.parent / "archive" / "linkedin-data" / "ahme
 GATEWAY_URL = "http://127.0.0.1:18789/v1/chat/completions"
 
 # Model config
-MODEL_ROUND1 = "openai-codex/gpt-5.4"          # Batch pre-filter, now pinned to GPT-5.4
-MODEL_ROUND2 = "openai-codex/gpt-5.4"          # Final deep review, primary SAYYAD scorer
+MODEL_ROUND1 = "openai-codex/gpt-5.5"          # Batch pre-filter, pinned to GPT-5.5
+MODEL_ROUND2 = "openai-codex/gpt-5.5"          # Final deep review, primary SAYYAD scorer
 
 # Final verdict settings
 TOP_N_JOBS = 1500  # Bumped from 300 to handle DB backfill of unscored jobs
@@ -684,7 +684,7 @@ def run_round2_review(pass_jobs: list[dict], submit_threshold: int, review_thres
     def process_r2_batch(batch_start):
         batch = pass_jobs[batch_start:batch_start + BATCH_SIZE]
         batch_num = batch_start // BATCH_SIZE + 1
-        print(f"  GPT-5.4 batch {batch_num} ({len(batch)} jobs, {MODEL_ROUND2})...")
+        print(f"  GPT-5.5 batch {batch_num} ({len(batch)} jobs, {MODEL_ROUND2})...")
         start_time = time.time()
         prompt = build_round2_prompt(batch)
         response = call_llm(prompt, model=MODEL_ROUND2, timeout=240)

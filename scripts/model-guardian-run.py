@@ -46,6 +46,9 @@ def run_subprocess(args, timeout: int):
     except subprocess.TimeoutExpired as e:
         stdout = (e.stdout or '') if isinstance(e.stdout, str) else (e.stdout.decode(errors='ignore') if e.stdout else '')
         stderr = (e.stderr or '') if isinstance(e.stderr, str) else (e.stderr.decode(errors='ignore') if e.stderr else '')
+        command = ' '.join(str(arg) for arg in args)
+        timeout_note = f'TIMEOUT: {command} exceeded {timeout}s'
+        stderr = '\n'.join(part for part in [stderr.strip(), timeout_note] if part)
         return 124, stdout, stderr
 
 
@@ -133,6 +136,8 @@ def first_fail_reason(text: str):
         line = line.strip()
         if line.startswith('FAIL:'):
             return line
+        if line.startswith('TIMEOUT:'):
+            return line
     stripped = text.strip()
     return stripped.splitlines()[-1] if stripped else 'unknown failure'
 
@@ -142,7 +147,7 @@ def main():
     ceo_alerts = []
     info = []
 
-    rc, stdout, stderr = run_subprocess(['python3', str(CHECK_SCRIPT)], timeout=70)
+    rc, stdout, stderr = run_subprocess(['python3', str(CHECK_SCRIPT)], timeout=160)
     combined = '\n'.join(part for part in [stdout.strip(), stderr.strip()] if part).strip()
     if combined:
         info.extend(line for line in combined.splitlines() if line.strip())

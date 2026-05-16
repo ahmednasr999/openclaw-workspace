@@ -2,33 +2,33 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-05-16T05:00:40.597322+02:00",
-    "duration_ms": 36908,
+    "generated_at": "2026-05-16T17:00:35.597406+02:00",
+    "duration_ms": 33432,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "1dee2f45",
+    "run_id": "25de2d43",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": [
     {
-      "id": "indeed-in-384650d1b51867fa",
+      "id": "indeed-in-7ead5818c74ba6a4",
       "source": "indeed",
-      "title": "Lead Engagement Director",
-      "company": "DataRobot",
+      "title": "Senior Associate Director, Priority Banking",
+      "company": "Standard Chartered Bank",
       "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=384650d1b51867fa",
-      "posted": "2026-05-14",
+      "url": "https://ae.indeed.com/viewjob?jk=7ead5818c74ba6a4",
+      "posted": "2026-05-15",
       "seniority": "C-Suite",
       "domain_match": false,
       "keyword_score": 16,
       "match_keywords": [
         "ai",
         "director",
-        "platform"
+        "dubai"
       ],
-      "raw_snippet": "**Job Description:**\n\n\nDataRobot delivers AI that maximizes impact and minimizes business risk. Our platform and applications integrate into core business processes so teams can develop, deliver, and govern AI at scale. DataRobot empowers practitioners to deliver predictive and generative AI, and enables leaders to secure their AI assets. Organizations worldwide rely on DataRobot for AI that makes sense for their business \u2014 today and in the future.\n\n**Purpose \\& Overall Relevance for the Organiz",
+      "raw_snippet": "**Requisition Number:** 52689\n**Job Location:** Dubai, ARE\n**Global Grade:** Band 6\n**Work Type:** Office Working\n**Employment Type:** Permanent\n**Posting Start Date:** 15/05/2026\n**Posting End Date:** 17/05/2026\n**:****Job Summary**\n\n\n**Strategy**  \n\n* Strategies for Revenue generation and business development\n* Business objectives and goals\n* Drive the Digital Agenda\n\n**Business**  \n\nAcquisition \\& Sales Management  \n\n* Generate new business to achieve defined targets in terms of no. of custom",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
@@ -51,27 +51,7 @@
         "director",
         "dubai"
       ],
-      "raw_snippet": "**Requisition Number:** 54261\n**Job Location:** Dubai, ARE\n**Global Grade:** Band 7\n**Work Type:** Office Working\n**Employment Type:** Permanent\n**Posting Start Date:** 14/05/2026\n**Posting End Date:** 28/05/2026\n**:****About Us**Our team consists of 25,000 colleagues, spread across 35 countries. We believe in transformation \u2013 embracing agile and new ways of working together, which helps us to truly \u2018think client\u2019 and serve millions of our affluent and emerging affluent clients, across the world",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-5f32202692772df9",
-      "source": "indeed",
-      "title": "Senior Manager Delivery",
-      "company": "TELUS Digital",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=5f32202692772df9",
-      "posted": "2026-05-13",
-      "seniority": "Other",
-      "domain_match": false,
-      "keyword_score": 10,
-      "match_keywords": [
-        "agile"
-      ],
-      "raw_snippet": "**Who We Are**\n--------------\n\n\nWelcome to TELUS Digital \u2014 where innovation drives impact at a global scale. As an award\\-winning digital product consultancy and the digital division of TELUS, one of Canada\u2019s largest telecommunications providers, we design and deliver transformative customer experiences through cutting\\-edge technology, agile thinking, and a people\\-first culture.\n\n\nWith a global team across North America, South America, Central America, Europe, Africa, and APAC, we offer end\\-t",
+      "raw_snippet": "**Requisition Number:** 54261\n**Job Location:** Dubai, ARE\n**Global Grade:** Band 7\n**Work Type:** Office Working\n**Employment Type:** Permanent\n**Posting Start Date:** 14/05/2026\n**Posting End Date:** 28/05/2026\n**:****About Us**\n\nOur team consists of 25,000 colleagues, spread across 35 countries. We believe in transformation \u2013 embracing agile and new ways of working together, which helps us to truly \u2018think client\u2019 and serve millions of our affluent and emerging affluent clients, across the wor",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
@@ -93,6 +73,26 @@
         "director"
       ],
       "raw_snippet": "ABOUT US\n  \n  \n\nBain \\& Company is a global consultancy that helps the world\u2019s most ambitious change makers define the future. Across 65 offices in 40 countries, we work alongside our clients as one team with a shared ambition to achieve extraordinary results, outperform the competition and redefine industries. We complement our tailored, integrated expertise with a vibrant ecosystem of digital innovators (including 1500\\+ experts in analytics, engineering, product management, user research, and",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Director Digital Transformation"
+    },
+    {
+      "id": "indeed-in-5f32202692772df9",
+      "source": "indeed",
+      "title": "Senior Manager Delivery",
+      "company": "TELUS Digital",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=5f32202692772df9",
+      "posted": "2026-05-13",
+      "seniority": "Other",
+      "domain_match": false,
+      "keyword_score": 10,
+      "match_keywords": [
+        "agile"
+      ],
+      "raw_snippet": "**Who We Are**\n--------------\n\n\nWelcome to TELUS Digital \u2014 where innovation drives impact at a global scale. As an award\\-winning digital product consultancy and the digital division of TELUS, one of Canada\u2019s largest telecommunications providers, we design and deliver transformative customer experiences through cutting\\-edge technology, agile thinking, and a people\\-first culture.\n\n\nWith a global team across North America, South America, Central America, Europe, Africa, and APAC, we offer end\\-t",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
@@ -215,29 +215,6 @@
       "search_title": "PMO Director"
     },
     {
-      "id": "indeed-in-b2e5436bafc13867",
-      "source": "indeed",
-      "title": "Head of Data & AI Delivery",
-      "company": "MASTER-WORKS",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=b2e5436bafc13867",
-      "posted": "2026-05-13",
-      "seniority": "Director",
-      "domain_match": true,
-      "keyword_score": 30,
-      "match_keywords": [
-        "digital transformation",
-        "ai",
-        "enterprise",
-        "head of"
-      ],
-      "raw_snippet": "Seeking an experienced leader to manage and oversee strategic Data \\& AI initiatives within a government, banking, or enterprise environment. The candidate will lead cross\\-functional teams, manage project delivery, and drive digital transformation initiatives aligned with business objectives.\n\n**Key Responsibilities:**\n\n* Lead and manage Data \\& AI projects and delivery operations.\n* Oversee project planning, execution, governance, risks, timelines, and reporting.\n* Manage multidisciplinary tea",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Head of PMO"
-    },
-    {
       "id": "indeed-in-f8653abbe412d959",
       "source": "indeed",
       "title": "Director - Operations & Event Delivery",
@@ -328,72 +305,6 @@
       "search_title": "Director Digital Transformation"
     },
     {
-      "id": "indeed-in-7063c818ecd0a6fe",
-      "source": "indeed",
-      "title": "Product Developer Director",
-      "company": "Talent 360",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=7063c818ecd0a6fe",
-      "posted": "2026-05-13",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 13,
-      "match_keywords": [
-        "director",
-        "scaling"
-      ],
-      "raw_snippet": "The Product Development Director is responsible for leading the end\\-to\\-end product development strategy, overseeing the design, development, and delivery of innovative products and solutions. The role bridges strategy, business needs, and execution to ensure products are aligned with market demand, client requirements, and organizational goals.  \n\n  \n\n**Key Responsibilities**\n\n* Lead the end\\-to\\-end product development lifecycle from ideation to launch and scaling.\n* Define product vision, ro",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Director Digital Transformation"
-    },
-    {
-      "id": "indeed-in-8418fd5162737f5c",
-      "source": "indeed",
-      "title": "Financial Crime Consulting Director - Riyadh",
-      "company": "Capitex",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=8418fd5162737f5c",
-      "posted": "2026-05-13",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 16,
-      "match_keywords": [
-        "director",
-        "gcc",
-        "saudi",
-        "riyadh"
-      ],
-      "raw_snippet": "A specialist FCC advisory firm is hiring a Director to lead and scale its Financial Crime Advisory practice in the Kingdom of Saudi Arabia, with secondary reach across the wider GCC. This is a senior, client\\-facing, revenue\\-generating position at the intersection of regulatory expertise, hands\\-on delivery, and entrepreneurial business development.\n\n\nYou will be an independent, commercially astute practitioner with a proven track record of winning and delivering significant FCC mandates for ba",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Director Digital Transformation"
-    },
-    {
-      "id": "indeed-in-c3f4ed4190bd5c44",
-      "source": "indeed",
-      "title": "Head of AI Consulting services",
-      "company": "Uxbert Labs",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=c3f4ed4190bd5c44",
-      "posted": "2026-05-13",
-      "seniority": "Director",
-      "domain_match": true,
-      "keyword_score": 16,
-      "match_keywords": [
-        "ai",
-        "head of",
-        "gcc"
-      ],
-      "raw_snippet": "Do you want to love what you do at work? Do you want to make a difference, an impact, transform people\u2019s lives? Do you want to work with a team that believes in disrupting the normal, boring, and average?\n\n\nIf yes, then this is the job you\u2019re looking for. UXBERT Labs is one of the leading digital and user experience design agencies in the GCC, working with top regional and international brands such as STC, Amazon, Gucci, and more. As part of the Supertech Group\u2014which also includes Hala Yalla, Sa",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Head of Digital Transformation"
-    },
-    {
       "id": "indeed-in-0655486e33f47c21",
       "source": "indeed",
       "title": "Director - Corporate Enablement - CM5",
@@ -442,9 +353,9 @@
   ],
   "kpi": {
     "searches_run": 20,
-    "results_per_search": 4.0,
-    "unique_jobs": 19,
-    "errors": 5
+    "results_per_search": 3.55,
+    "unique_jobs": 15,
+    "errors": 7
   },
   "recommendations": []
 }

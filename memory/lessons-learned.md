@@ -1038,3 +1038,11 @@ After a successful JobZoom validation, I reported a model health pre-check timeo
 I treated the warning as harmless because batch scoring completed, but Ahmed expects preventable recurring noise to be removed when safe.
 ### Fix
 For protected JobZoom internal work, if a warning is caused by local wrapper/reporting/preflight logic and the run outcome is verified clean, inspect and fix the warning source in the same turn. Keep approval gates for external, destructive, credential, gateway, or live-runtime changes.
+
+## 2026-05-16 - Check JobZoom Applied Ledger Before Sending CV Packs
+### What I got wrong
+Ahmed said he had already applied to all five JobZoom opportunities after I resent their tailored PDFs. The JobZoom database already had those five roles marked applied in both `jobs` and `applied_jobs` with applied date 2026-05-15.
+### Why
+I verified that PDFs existed and that Telegram delivery worked, but I did not check the applied ledger before treating the roles as active deliverables. I also queried older strong roles in a way that blurred active opportunities with already-applied records.
+### Fix
+Before sending or regenerating any JobZoom CV pack, query `applied_jobs` and `jobs.applied` for every selected LinkedIn URL/ID. If already applied, report that status and do not resend CVs unless Ahmed explicitly asks for copies.

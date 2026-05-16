@@ -389,7 +389,7 @@ def search_profiles(company, role_query="recruiter OR HR OR talent acquisition")
     return _search_tavily(company, role_query)
 
 
-def call_llm(prompt, max_tokens=1000, model="anthropic/claude-sonnet-4-6"):
+def call_llm(prompt, max_tokens=1000, model="openai-codex/gpt-5.5"):
     """Call LLM via OpenClaw gateway."""
     gateway_url = "http://127.0.0.1:18789/v1/chat/completions"
     payload = json.dumps({
@@ -566,7 +566,7 @@ def run_outreach():
     # Take top 5
     suggestions = all_suggestions[:5]
 
-    # Draft personalized connection requests via Sonnet
+    # Draft personalized connection requests via GPT-5.5
     if suggestions:
         print("\n  Drafting connection messages...")
         suggestions = draft_connection_messages(suggestions)

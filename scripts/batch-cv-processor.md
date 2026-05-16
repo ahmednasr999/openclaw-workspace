@@ -25,10 +25,10 @@ https://docs.google.com/spreadsheets/d/1uKOh3XlsVb6SC0tAHkr239N4Y2d2fQr_BiQJcMHr
 ## Processing Flow
 1. Read all rows where column G (ATS Score) is empty = unprocessed
 2. For each unprocessed row:
-   - Score ATS against master CV (MiniMax M2.5)
+   - Score ATS against master CV (GPT-5.5)
    - Fill G (score), H (decision), I (reason)
 3. For rows where H = "Apply":
-   - Tailor CV (Sonnet 4.6 sub-agent)
+   - Tailor CV (GPT-5.5 sub-agent)
    - Generate PDF
    - Update J = "Ready"
 4. Send summary to Ahmed via Telegram
@@ -36,11 +36,11 @@ https://docs.google.com/spreadsheets/d/1uKOh3XlsVb6SC0tAHkr239N4Y2d2fQr_BiQJcMHr
 6. Pipeline.md updated for "Go" rows
 
 ## Model Assignment
-- Sheet read/write: MiniMax M2.5 (via cron)
-- ATS scoring: MiniMax M2.5
-- CV tailoring: Sonnet 4.6 sub-agent
-- Quality check: MiniMax M2.5
-- Pipeline update: MiniMax M2.5
+- Sheet read/write: GPT-5.5 (via cron)
+- ATS scoring: GPT-5.5
+- CV tailoring: GPT-5.5 sub-agent
+- Quality check: GPT-5.5
+- Pipeline update: GPT-5.5
 
 ## Trigger
 - Manual: Ahmed says "process batch"

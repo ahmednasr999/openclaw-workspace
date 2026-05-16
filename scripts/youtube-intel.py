@@ -82,7 +82,7 @@ Return ONLY valid JSON, no other text."""
     try:
         import urllib.request
         data = {
-            "model": "anthropic/claude-sonnet-4-6",
+            "model": "openai-codex/gpt-5.5",
             "messages": [{"role": "user", "content": prompt}],
             "max_tokens": 1500
         }

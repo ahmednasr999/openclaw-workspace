@@ -4,7 +4,7 @@ jobs-interview-prep.py — Auto-generate interview prep kit when a job status fl
 
 Triggered by: morning-briefing-orchestrator.py or manually.
 
-What it generates (Opus 4.6):
+What it generates (GPT-5.5):
   1. Company dossier (2-3 key facts, recent news, culture signals)
   2. Role intelligence (what they really want vs what's written)
   3. 5 likely interview questions with Ahmed's best answer angles
@@ -36,7 +36,7 @@ PIPELINE_DB_ID = "3268d599-a162-81b4-b768-f162adfa4971"
 NOTION_VERSION = "2022-06-28"
 
 GATEWAY_URL = "http://127.0.0.1:18789/v1/chat/completions"
-OPUS_MODEL = "anthropic/claude-opus-4-6"
+GPT55_MODEL = "openai-codex/gpt-5.5"
 
 TELEGRAM_CHAT_ID = "-1003882622947"
 TELEGRAM_TOPIC_ID = "10"
@@ -66,13 +66,13 @@ def notion_headers(token: str) -> dict:
     }
 
 
-def call_opus(prompt: str, timeout: int = 180) -> str | None:
+def call_gpt55(prompt: str, timeout: int = 180) -> str | None:
     token = load_gateway_token()
     headers = {"Content-Type": "application/json"}
     if token:
         headers["Authorization"] = f"Bearer {token}"
     payload = {
-        "model": OPUS_MODEL,
+        "model": GPT55_MODEL,
         "messages": [{"role": "user", "content": prompt}],
         "temperature": 0.5,
         "max_tokens": 2000,
@@ -80,11 +80,11 @@ def call_opus(prompt: str, timeout: int = 180) -> str | None:
     try:
         resp = requests.post(GATEWAY_URL, json=payload, headers=headers, timeout=timeout)
         if resp.status_code != 200:
-            print(f"  Opus error {resp.status_code}: {resp.text[:200]}")
+            print(f"  GPT-5.5 error {resp.status_code}: {resp.text[:200]}")
             return None
         return resp.json().get("choices", [{}])[0].get("message", {}).get("content", "")
     except Exception as e:
-        print(f"  Opus call failed: {e}")
+        print(f"  GPT-5.5 call failed: {e}")
         return None
 
 
@@ -165,7 +165,7 @@ Map 3 of Ahmed's strongest achievements to this JD. Format: Situation → Action
 
 Keep it sharp. No fluff. This is for a C-suite/VP level candidate."""
 
-    return call_opus(prompt)
+    return call_gpt55(prompt)
 
 
 def prep_filename(title: str, company: str) -> str:
@@ -285,7 +285,7 @@ def main():
 
         kit = generate_prep_kit(company, title, jd_text, profile)
         if not kit or len(kit) < 200:
-            print(f"  ERROR: Empty/short kit from Opus")
+            print(f"  ERROR: Empty/short kit from GPT-5.5")
             continue
 
         header = f"# Interview Prep: {title} @ {company}\n\n_Generated {datetime.now().strftime('%Y-%m-%d')}_"

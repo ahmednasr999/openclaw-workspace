@@ -17,6 +17,7 @@
 - ❌ For workspace hygiene heartbeat checks, separate root-only untracked entries from nested untracked work products before declaring a blocker. Ignore or move generated scratch state, but leave nested source-like artifacts for owner review. (CTO, 2026-05-16)
 - ❌ When Ahmed approves workspace hygiene cleanup, commit source-like archive/docs/templates after secret scanning, remove empty placeholder directories, and verify both normal status and broad ls-files --directory are clean without touching unrelated modified runtime files. (CTO, 2026-05-16)
 - ❌ For generic Telegram DM processing failures, inspect the concrete session JSON for modelOverride/providerOverride and stop duplicate gateway supervisors before assuming the default model config is active. (CTO, 2026-05-16)
+- ❌ For Telegram gateway failures after provider/session cleanup, check both command sync and probe watchdog paths. A healthy default model does not prove Telegram API probes have enough timeout budget under event-loop load. (CTO, 2026-05-16)
 
 ## Content Post
 - ✅ Always validate LinkedIn post length against 3000 char limit before posting (CMO, 2026-03-23)

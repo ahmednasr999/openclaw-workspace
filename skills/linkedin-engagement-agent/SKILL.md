@@ -172,3 +172,17 @@ Reply "⏭ Skipped" and move on.
 2. **Bind approvals to immutable identity.** Approval cards should include activity URN, post URL, author profile URL, and a hash or exact copy of the approved comment text. Step 6 must re-check all fields before typing.
 3. **Create the missing `eval/checklist.md`.** Keep it binary: correct account, correct post, cooldown clear, approved text unchanged, visible comment confirmed, like state checked, ontology updated, blocker escalated after two failed proof attempts.
 
+### 2026-05-16 - Weekly Skill Tune-Up
+
+**Audit basis:** Recent lessons from 2026-05-15 did not identify a LinkedIn engagement-specific failure, but they reinforce clean Telegram behavior and fixing preventable workflow noise. This skill still has no `eval/checklist.md`.
+
+**Reviewed lessons:**
+- 2026-05-15, avoid empty private closeouts after Telegram sends. Approval cards and post confirmations should carry the actual status, not bookkeeping.
+- 2026-04-24, long public posting tasks need timely progress confirmation while blockers are being debugged.
+- 2026-04-22, prove lane exposure before blaming stale sessions or asking Ahmed to reconnect.
+
+**Improvement recommendation:**
+1. **Create the missing engagement checklist.** Add `eval/checklist.md` with binary checks for Ahmed-Mac online, correct Ahmed account, activity URN match, author URL match, cooldown clear, approved text unchanged, visible comment confirmed, like state checked, and ontology updated.
+2. **Make approval cards self-verifying.** Each card should include post URL, activity URN, author profile URL, and exact approved comment text so Step 6 can re-check identity before typing.
+3. **Keep Telegram confirmations meaningful.** After a comment is posted, send one visible status with the post URL, visible-comment proof, like state, and ontology update result. Avoid extra private closeouts unless there is a real blocker.
+4. **Fail fast on lane drift.** If Ahmed-Mac, account identity, target post, or visible proof fails twice, abort and report the blocker instead of falling back to another account or session.

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Log agent session costs to Notion Cost Tracker DB.
-Usage: python3 cost_logger.py --session "Morning Briefing" --model "MiniMax-M2.5" --agent "Morning Briefing" --duration 34 --status success
+Usage: python3 cost_logger.py --session "Morning Briefing" --model "openai-codex/gpt-5.5" --agent "Morning Briefing" --duration 34 --status success
 """
 import json, os, sys, time, urllib.request, argparse
 
@@ -20,17 +20,7 @@ def notion_api(method, url, data=None, token=None):
 
 # Model cost per 1M tokens (input/output)
 MODEL_COSTS = {
-    "MiniMax-M2.5": {"in": 0.0, "out": 0.0},
-    "minimax-portal/MiniMax-M2.5": {"in": 0.0, "out": 0.0},
-    "minimax-m2.5": {"in": 0.0, "out": 0.0},
-    "Claude Opus 4.6": {"in": 15.0, "out": 75.0},
-    "anthropic/claude-opus-4-6": {"in": 15.0, "out": 75.0},
-    "opus": {"in": 15.0, "out": 75.0},
-    "Claude Sonnet 4": {"in": 3.0, "out": 15.0},
-    "anthropic/claude-sonnet-4": {"in": 3.0, "out": 15.0},
-    "sonnet": {"in": 3.0, "out": 15.0},
-    "Kimi K2.5": {"in": 1.0, "out": 5.0},
-    "moonshot/kimi-k2.5": {"in": 1.0, "out": 5.0},
+    "openai-codex/gpt-5.5": {"in": 0.0, "out": 0.0},
 }
 
 COST_DB = "3278d599-a162-81a3-a593-f981f1e9a7af"
@@ -41,14 +31,8 @@ def estimate_cost(model, tokens_in=0, tokens_out=0):
 
 def normalize_model(model):
     mapping = {
-        "minimax-portal/MiniMax-M2.5": "MiniMax-M2.5",
-        "minimax-m2.5": "MiniMax-M2.5",
-        "anthropic/claude-opus-4-6": "Claude Opus 4.6",
-        "opus": "Claude Opus 4.6",
-        "anthropic/claude-sonnet-4": "Claude Sonnet 4",
-        "sonnet": "Claude Sonnet 4",
-        "anthropic/claude-sonnet-4-6": "Claude Sonnet 4",
-        "moonshot/kimi-k2.5": "Kimi K2.5",
+        "gpt-5.5": "openai-codex/gpt-5.5",
+        "openai-codex/gpt-5.5": "openai-codex/gpt-5.5",
     }
     return mapping.get(model, model)
 
@@ -85,7 +69,7 @@ def log_cost(session_name, model, agent, duration=0, status="success",
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--session", required=True)
-    parser.add_argument("--model", default="MiniMax-M2.5")
+    parser.add_argument("--model", default="openai-codex/gpt-5.5")
     parser.add_argument("--agent", default="Manual Session")
     parser.add_argument("--duration", type=int, default=0)
     parser.add_argument("--status", default="success")

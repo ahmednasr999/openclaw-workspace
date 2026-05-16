@@ -27,7 +27,7 @@ COVERS_DIR = WORKSPACE / "covers"
 MEMORY_DIR = WORKSPACE / "memory"
 
 GATEWAY_URL = "http://127.0.0.1:18789/v1/chat/completions"
-OPUS_MODEL = "anthropic/claude-opus-4-6"
+GPT55_MODEL = "openai-codex/gpt-5.5"
 
 MAX_COVERS_PER_DAY = 20
 COVER_LOG_FILE = DATA_DIR / "coverletter-autogen-log.jsonl"
@@ -45,13 +45,13 @@ def load_gateway_token() -> str:
         return ""
 
 
-def call_opus(prompt: str, timeout: int = 180) -> str | None:
+def call_gpt55(prompt: str, timeout: int = 180) -> str | None:
     token = load_gateway_token()
     headers = {"Content-Type": "application/json"}
     if token:
         headers["Authorization"] = f"Bearer {token}"
     payload = {
-        "model": OPUS_MODEL,
+        "model": GPT55_MODEL,
         "messages": [{"role": "user", "content": prompt}],
         "temperature": 0.4,
         "max_tokens": 600,
@@ -59,11 +59,11 @@ def call_opus(prompt: str, timeout: int = 180) -> str | None:
     try:
         resp = requests.post(GATEWAY_URL, json=payload, headers=headers, timeout=timeout)
         if resp.status_code != 200:
-            print(f"  Opus error {resp.status_code}: {resp.text[:200]}")
+            print(f"  GPT-5.5 error {resp.status_code}: {resp.text[:200]}")
             return None
         return resp.json().get("choices", [{}])[0].get("message", {}).get("content", "")
     except Exception as e:
-        print(f"  Opus call failed: {e}")
+        print(f"  GPT-5.5 call failed: {e}")
         return None
 
 
@@ -114,7 +114,7 @@ REQUIREMENTS:
 
 Output the 3 paragraphs only. No explanation."""
 
-    return call_opus(prompt)
+    return call_gpt55(prompt)
 
 
 def push_to_github(file_path: Path) -> str | None:
@@ -224,7 +224,7 @@ def main():
 
         letter = generate_cover_letter(job, profile_summary)
         if not letter or len(letter) < 100:
-            print(f"  ERROR: Empty/short response from Opus")
+            print(f"  ERROR: Empty/short response from GPT-5.5")
             cover_links[job_id] = {"cover_url": None, "skipped": True, "skip_reason": "generation failed"}
             continue
 

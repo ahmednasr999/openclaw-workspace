@@ -112,3 +112,18 @@ Add completion guard: verify ALL required outputs (image, Notion update, etc.) b
 3. **Separate draft, staged, and published states.** A post is not complete until the required text, image or carousel, destination account, live URL, and rendered content are all verified. If an image was expected, text-only publishing is a failure unless Ahmed explicitly approves the downgrade.
 4. **Surface blockers after two failed publish paths.** For live posting, give short progress updates while debugging. If two independent publish paths fail, stop silently retrying and report the blocker with the fastest safe alternative.
 5. **Create a future `eval/checklist.md`.** Cover artifact type, account identity, media requirement, full text verification, live URL, rendered post check, and Notion/status update when relevant.
+
+### 2026-05-16 - Weekly Skill Tune-Up
+
+**Audit basis:** `linkedin-writer` is not an active skill directory in this workspace, so this audit used the active `linkedin` skill as the default LinkedIn writing/operations substitute. No `eval/checklist.md` exists for this skill.
+
+**Reviewed lessons:**
+- 2026-05-15, avoid empty private closeouts after Telegram sends. LinkedIn actions that already sent a visible message should not add generic private receipts.
+- 2026-04-29, Ahmed LinkedIn visuals must match the premium reference level, not rough template similarity.
+- 2026-04-24, long public posting tasks need timely progress confirmation while blockers are being debugged.
+
+**Improvement recommendation:**
+1. **Add a LinkedIn operation checklist.** Create `eval/checklist.md` with binary gates for artifact type, account identity, media requirement, approved text, live URL, rendered content proof, and status update.
+2. **Separate visible reply from private closeout.** If the workflow uses Telegram to notify Ahmed, that visible message should be the real answer. Avoid extra private "done" or "sent" receipts unless there is operational evidence to report.
+3. **Require reference-level visual proof for image posts.** For Ahmed branded LinkedIn visuals, compare against the approved premium reference before staging or publishing. Reject generic, flat, under-designed, or text-on-face layouts.
+4. **Escalate after two blocked publish paths.** If the browser lane and upload/publish lane both fail, stop retrying silently and report the blocker with the fastest safe alternative.

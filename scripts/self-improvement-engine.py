@@ -1450,7 +1450,7 @@ Current setup:
 - 4 AM: SIE health check + improvements (YOU ARE HERE)
 - 6 AM: Daily briefing (news, search, insights)
 - 9 AM: LinkedIn engagement radar (19 GCC influencers)
-- MiniMax M2.5 for crons, Opus/Sonnet for main, GPT-5.4 for coding
+- GPT-5.5 for crons, main work, and coding unless Ahmed explicitly changes it
 - Camoufox for browser automation
 - GOG for Gmail
 - Composio for LinkedIn posting
@@ -1791,7 +1791,7 @@ def main():
         elapsed_s = int(time.time() - start_time) if 'start_time' in dir() else 0
         cl.log_cost(
             session_name=f"SIE 360 ({datetime.now().strftime('%Y-%m-%d')})",
-            model="MiniMax-M2.5",
+            model="openai-codex/gpt-5.5",
             agent="SIE 360",
             duration=elapsed_s,
             status="success" if health_score >= 50 else "failed",

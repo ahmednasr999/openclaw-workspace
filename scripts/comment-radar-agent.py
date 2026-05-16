@@ -17,7 +17,7 @@ CONFIG_DIR = WORKSPACE / "config"
 
 # Gateway for LLM
 GATEWAY_URL = "http://127.0.0.1:18789/v1/chat/completions"
-MODEL = "minimax-portal/MiniMax-M2.7"
+MODEL = "openai-codex/gpt-5.5"
 
 # Search API keys
 TAVILY_KEY = os.environ.get("TAVILY_API_KEY")
@@ -94,9 +94,9 @@ Return ONLY a valid JSON array with this exact structure - no markdown fences, n
 ]
 """
 
-# MiniMax for regular comments (free), Sonnet for priority authors only
-LLM_MODEL_DEFAULT = "minimax-portal/MiniMax-M2.7"
-LLM_MODEL_PREMIUM = "anthropic/claude-sonnet-4-6"
+# GPT-5.5 for regular and priority comments.
+LLM_MODEL_DEFAULT = "openai-codex/gpt-5.5"
+LLM_MODEL_PREMIUM = "openai-codex/gpt-5.5"
 LLM_TEMP = 0.7
 COMMENT_TRACKER_PATH = DATA_DIR / "comment-tracker.json"
 
@@ -550,7 +550,7 @@ def parse_llm_comments(response):
 
 
 def draft_comments(posts):
-    """Use LLM to draft comments. MiniMax for regular, Sonnet for priority authors."""
+    """Use GPT-5.5 to draft comments."""
     if not posts:
         return posts
 
@@ -579,9 +579,9 @@ def draft_comments(posts):
 --- LINKEDIN POSTS ---
 {posts_section}"""
 
-    # Draft priority posts with Sonnet 4.6
+    # Draft priority posts with GPT-5.5
     if priority_posts:
-        print(f"  Drafting {len(priority_posts)} priority comments (Sonnet 4.6)...")
+        print(f"  Drafting {len(priority_posts)} priority comments (GPT-5.5)...")
         prompt = build_prompt(priority_posts)
         response = llm_call(prompt, max_tokens=2000, model=LLM_MODEL_PREMIUM)
         comments = parse_llm_comments(response)
@@ -593,9 +593,9 @@ def draft_comments(posts):
                 posts[orig_idx]["draft_comment"] = comment
                 posts[orig_idx]["model_used"] = "sonnet"
 
-    # Draft regular posts with MiniMax (free)
+    # Draft regular posts with GPT-5.5
     if regular_posts:
-        print(f"  Drafting {len(regular_posts)} regular comments (MiniMax)...")
+        print(f"  Drafting {len(regular_posts)} regular comments (GPT-5.5)...")
         prompt = build_prompt(regular_posts)
         response = llm_call(prompt, max_tokens=2000, model=LLM_MODEL_DEFAULT)
         comments = parse_llm_comments(response)
@@ -605,7 +605,7 @@ def draft_comments(posts):
                 orig_idx = regular_posts[seq][0]
                 comment = c.get("comment", "").replace("\u2014", " - ").replace("\u2013", "-")
                 posts[orig_idx]["draft_comment"] = comment
-                posts[orig_idx]["model_used"] = "minimax"
+                posts[orig_idx]["model_used"] = "gpt-5.5"
 
     drafted = sum(1 for p in posts if p.get("draft_comment"))
     print(f"  Drafted {drafted}/{len(posts)} comments")

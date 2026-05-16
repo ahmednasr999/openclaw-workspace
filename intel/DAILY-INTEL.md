@@ -1,37 +1,30 @@
 # DAILY-INTEL.md
-*Generated: 2026-05-15 02:45 Cairo*
+*Generated: 2026-05-16 02:45 Cairo*
 *Consumers: CEO (morning briefing), HR Agent (job signals + company intel), CMO Agent (content angles)*
 *Next run: tomorrow 05:45 Cairo*
 
 ---
 
 ## 1. Hot Topics (AI / Tech / PMO)
-*Fresh signals for content angles and conversations — 2026-05-15 02:45 Cairo*
+*Fresh signals for content angles and conversations — 2026-05-16 02:45 Cairo*
 
 - [The End Of The ERP Era? SAP Wants AI Agents To Run Your ‘Autonomous Enterprise’](https://www.forbes.com/sites/victordey/2026/05/12/the-end-of-the-erp-era-sap-wants-ai-agents-to-run-your-autonomous-enterprise/)
   _SAP's Autonomous Enterprise model puts AI agents in charge of core business operations, rewriting its ERP model that defined the company for 50 years._
 - [AI in MENA healthcare is not a single story](https://www.healthcareitnews.com/news/emea/ai-mena-healthcare-not-single-story)
   _Healthcare systems in hubs such as the GCC and North Africa are accelerating AI adoption through different priorities, infrastructures and operational realities - positioning the region as a fast-evol_
-- [SAP recasts Joule as the front door to autonomous enterprise AI - SiliconANGLE](https://siliconangle.com/2026/05/12/sap-recasts-joule-front-door-autonomous-enterprise-ai/)
-  _SAP SE today introduced at Sapphire 2026, the company’s annual conference, what it calls Autonomous Enterprise, a suite of artificial intelligence tools and agents designed to enhance how humans and A_
 - [The Leadership Federation Hosts a High-Impact GCC and AI Leadership Gathering in Bengaluru; Honors Leaders Driving Global Enterprise Transformation](https://news.webindia123.com/news/Articles/Business/20260411/4437938.html)
   _Bengaluru (Karnataka) [India], April 11: The Leadership Federation successfully concluded its flagship leadership gathering on 7th & 8th April 2026 in Bengaluru, bringing together some of the most ..._
 - [UAE secures 15th place in Global AI Competitiveness Index](https://www.arabianbusiness.com/business/technology/uae-secures-15th-place-in-global-ai-competitiveness-index)
   _Advancements in healthcare, digital transformation and capital formation helped the UAE secure 15th place in a Global AI Index that surveyed 8,000 companies._
+- [SAP recasts Joule as the front door to autonomous enterprise AI - SiliconANGLE](https://siliconangle.com/2026/05/12/sap-recasts-joule-front-door-autonomous-enterprise-ai/)
 - [Is The Middle East And North Africa The Most Exciting Place In The World To Build AI Healthcare Right Now?](https://techround.co.uk/artificial-intelligence/is-the-middle-east-and-north-africa-the-most-exciting-place-in-the-world-to-build-ai-healthcare-right-now/)
   _MENA is combining Vision 2030 ambition, sovereign wealth and fast-moving policy to become one of the most dynamic AI healthcare markets in the world._
 
 ## 2. Job Market Signals
 *Executive hiring trends in GCC — context for HR Agent*
 
-- [PMO Director Jobs in the Middle East (May 2026) - Bayt.com](https://www.bayt.com/en/international/jobs/pmo-director-jobs/)
-  _Find the latest PMO Director job vacancies and employment opportunities in Middle East and Gulf ... Jobs in Abu Dhabi · Jobs in Dubai · Jobs in Algeria ..._
 - [PMO Jobs in the Middle East (May 2026) - Bayt.com](https://www.bayt.com/en/international/jobs/pmo-jobs/)
   _Summary: Elevate your career as a Project Manager in Abu Dhabi, where your expertise in stakeholder management and digital transformation will be ..._
-- [Chief Digital Officer Jobs in Saudi Arabia (May 2026) - Bayt.com](https://www.bayt.com/en/saudi-arabia/jobs/chief-digital-officer-jobs/)
-  _dynamic professional environment. As the Chief Information Officer (CIO), you will be ... a pivotal role in driving digital transformation, ensuring the ..._
-- [Ai Project Manager Jobs in the Middle East (May 2026) - Bayt.com](https://www.bayt.com/en/international/jobs/ai-project-manager-jobs/)
-  _... East and Gulf and make your job hunting simpler. Find the latest Ai Project Manager job vacancies and employment opportunities in Middle East and Gulf._
 - [GCC Recruitment Specialists | Aventus](https://aventusglobal.com/)
   _GCC Recruitment Specialists Aventus is a leading Dubai recruitment agency, specialising in precision hiring that drives success across the Middle East. We connect organisations with exceptional talent_
 
@@ -40,12 +33,12 @@
 
 - [The Role of a PMO in Advancing and Innovating Supply Chain ...](https://www.linkedin.com/pulse/role-pmo-advancing-innovating-supply-chain-management-dr-tony-ifzwe)
   _Feb 21, 2025 · Modern PMOs lead digital transformation efforts by implementing Artificial Intelligence (AI), Blockchain, Internet of Things (IoT), and Digital Twins in supply chain operations._
-- [The PMO's Guide to Adopting AI: Insights and Action Steps for Leaders](https://www.linkedin.com/pulse/pmos-guide-adopting-ai-insights-action-steps-leaders-dr-tony-ukhge)
-  _Artificial Intelligence (AI) is transforming how organizations approach project management, and the PMO is no exception. As the central hub for ..._
-- [How AI is transforming the PMO role and project delivery - LinkedIn](https://www.linkedin.com/posts/ambarishgupta_the-mindset-shift-pmo-leaders-must-make-to-activity-7395450110534389760-na_p)
-  _... PMO sits at the center of this transformation. As automation accelerates, the role of project managers and PMO leaders is shifting from task ..._
-- [LinkedIn Learning: Online Training Courses & Skill Building](https://www.linkedin.com/learning/)
-  _Accelerate skills & career development for yourself or your team | Business, AI, tech, & creative skills | Find your LinkedIn Learning plan today._
+- [Adaptive Leadership in Action—Lessons from Microsoft’s 2025 ...](https://www.linkedin.com/pulse/adaptive-leadership-actionlessons-from-microsofts-ai-sivasubramanian-uym6e)
+  _Sep 30, 2025 · Why Adaptive Leadership Matters Now In 2024–2025, the tech industry saw rapid disruption fueled by artificial intelligence, market uncertainty, and shifting global alliances. One of the_
+- [The GSDC Global Webinar 2025: AI-Driven Project Management ...](https://www.linkedin.com/posts/gsd-council_gsdc-gsdcertified-projectmanagement-activity-7338524943082569729-t4jb)
+  _The GSDC Global Webinar 2025: AI-Driven Project Management &amp; PMO Transformation is almost here, and we&#39;re ready to unleash the future of project execution! 🌟 Learn how Generative AI is ..._
+- [Leading Through Dual Realities: What 2025 is Teaching Us ...](https://www.linkedin.com/pulse/leading-through-dual-realities-what-2025-teaching-us-trust-halsey-ih1me/)
+  _Nov 4, 2025 · In every cycle of disruption, there’s a moment where clarity and volatility meet. Leading Through Dual Realities: What 2025 is Teaching Us About Trust, Value & Paradox_
 
 **Ahmed's strongest comment angles:**
 - AI agents + PMO/program management (rare intersection, he owns it)

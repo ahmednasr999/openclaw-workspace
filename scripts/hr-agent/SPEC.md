@@ -1,7 +1,7 @@
 # HR Agent — SPEC.md
 
 ## Purpose
-A Sonnet 4.6-powered agent that acts on job recommendations from the pipeline. When Ahmed says "apply to #N" or "let's go on [role] at [company]", this agent:
+A GPT-5.5-powered agent that acts on job recommendations from the pipeline. When Ahmed says "apply to #N" or "let's go on [role] at [company]", this agent:
 1. Pulls the full job from `jobs-summary.json`
 2. Checks ontology graph for prior applications + LinkedIn connections at that company
 3. Builds a tailored CV (PDF)
@@ -13,7 +13,7 @@ A Sonnet 4.6-powered agent that acts on job recommendations from the pipeline. W
 
 ## Trigger
 - Ahmed says "apply to #17" or "let's do #3" in DM or thread
-- Agent is spawned with: job number/nickname + Sonnet 4.6 model
+- Agent is spawned with: job number/nickname + GPT-5.5 model
 - Can handle multiple jobs in one call (e.g., "apply to 3, 7, and 12")
 
 ## Input
@@ -59,8 +59,7 @@ A Sonnet 4.6-powered agent that acts on job recommendations from the pipeline. W
 ```
 
 ## Model & Cost
-- Sonnet 4.6 for all LLM calls (cover letter, outreach, CV commentary)
-- MiniMax-M2.7 for extraction/lookup tasks if needed
+- GPT-5.5 for all LLM calls (cover letter, outreach, CV commentary, extraction, lookup)
 - Target cost: ~$0.10-0.20 per job application (Sonnet usage)
 
 ## Error Handling
@@ -83,6 +82,6 @@ memory/
 ```
 
 ## Integration with Existing Pipeline
-- Does NOT replace jobs-review.py — that stays MiniMax, runs on cron
+- Does NOT replace jobs-review.py, which now runs on GPT-5.5 via cron
 - Complements it: pipeline scores → human picks → HR agent executes
 -ontology graph is shared: pipeline reads applied count, HR agent writes new applications

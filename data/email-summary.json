@@ -2,69 +2,145 @@
   "meta": {
     "agent": "email-agent",
     "version": "3.0.0",
-    "generated_at": "2026-05-15T20:01:12.004994+02:00",
-    "duration_ms": 51480,
+    "generated_at": "2026-05-16T14:01:09.691225+02:00",
+    "duration_ms": 40178,
     "ttl_hours": 4,
     "status": "success",
     "error": null,
-    "run_id": "b91e980c",
+    "run_id": "32081a00",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
     "status": "ok",
-    "scan_time": "2026-05-15T20:01:01.409692+02:00",
-    "total_scanned": 80,
+    "scan_time": "2026-05-16T14:00:46.926363+02:00",
+    "total_scanned": 21,
     "by_category": {
-      "interview_invite": 0,
+      "interview_invite": 1,
       "recruiter_reach": 0,
       "application_ack": 0,
       "rejection": 0,
-      "assessment": 0,
+      "assessment": 1,
       "follow_up_needed": 0,
-      "job_alert": 1,
-      "other": 79
+      "job_alert": 0,
+      "other": 19
     },
-    "interview_invites": [],
-    "recruiter_messages": [],
-    "application_acks": [],
-    "rejections": [],
-    "assessments": [],
-    "follow_ups_needed": [],
-    "job_alerts": [
+    "interview_invites": [
       {
-        "id": "357880",
-        "from": "GulfTalent Jobs <jobs@gulftalent.com>",
-        "subject": "Michael Page needs a PMO (Saudi Nationals)",
-        "date": "Fri, 15 May 2026 01:41:25 -0500",
+        "id": "357974",
+        "from": "diib <support@diib.com>",
+        "subject": "diib alert: The homepage of www.yalla.online accounts for the bulk\r\n of your organic rankings.",
+        "date": "Sat, 16 May 2026 11:07:12 +0000",
         "unread": true,
         "priority": "LOW",
         "score": 0,
         "pipeline_match": null
       }
     ],
-    "actionable_count": 0,
-    "hot_alerts": [],
+    "recruiter_messages": [],
+    "application_acks": [],
+    "rejections": [],
+    "assessments": [
+      {
+        "id": "357972",
+        "from": "\"Yogesh Chetri\" <support@info.y-axis.com>",
+        "subject": "=?UTF-8?B?Q2FuYWRhIFBSOiBOZXcgT3Bwb3J0dW5pdGllcyBPcGVuaW5nIE5v?=\r\n =?UTF-8?B?dyDigJMgQXJlIFlvdSBFbGlnaWJsZT8=?=",
+        "date": "Sat, 16 May 2026 04:59:19 -0600",
+        "unread": true,
+        "priority": "HIGH",
+        "score": 7,
+        "pipeline_match": null
+      }
+    ],
+    "follow_ups_needed": [],
+    "job_alerts": [],
+    "actionable_count": 2,
+    "hot_alerts": [
+      {
+        "id": "357972",
+        "subject": "=?UTF-8?B?Q2FuYWRhIFBSOiBOZXcgT3Bwb3J0dW5pdGllcyBPcGVuaW5nIE5v?=\r\n =?UTF-8?B?dyDigJMgQXJlIFlvdSBFbGlnaWJsZT8=?=",
+        "from": "\"Yogesh Chetri\" <support@info.y-axis.com>",
+        "priority": "HIGH",
+        "pipeline_match": null
+      },
+      {
+        "id": "357974",
+        "subject": "diib alert: The homepage of www.yalla.online accounts for the bulk\r\n of your organic rankings.",
+        "from": "diib <support@diib.com>",
+        "priority": "LOW",
+        "pipeline_match": null
+      }
+    ],
     "signals": [],
     "llm_analysis": {
-      "actionable_emails": [],
+      "actionable_emails": [
+        {
+          "id": "357972",
+          "subject": "Canada PR: New Opportunities Opening Now \u2013 Are You Eligible?",
+          "from": "\"Yogesh Chetri\" <support@info.y-axis.com>",
+          "date": "Sat, 16 May 2026 04:59:19 -0600",
+          "category": "assessment",
+          "urgency": "low",
+          "intent": "The sender is promoting a Canada PR eligibility check for skilled professionals.",
+          "action": "no_action",
+          "response_deadline": "when convenient",
+          "notes": "Immigration marketing, not a Gulf leadership opportunity."
+        },
+        {
+          "id": "357974",
+          "subject": "diib alert: The homepage of www.yalla.online accounts for the bulk of your organic rankings.",
+          "from": "diib <support@diib.com>",
+          "date": "Sat, 16 May 2026 11:07:12 +0000",
+          "category": "interview_invite",
+          "urgency": "low",
+          "intent": "The sender is alerting about website SEO rankings and promoting content services.",
+          "action": "read_and_file",
+          "response_deadline": "when convenient",
+          "notes": "Misclassified as interview; body shows SEO alert only."
+        }
+      ],
       "summary": {
-        "total_actionable": 0,
+        "total_actionable": 2,
         "critical_count": 0,
         "requires_interview_prep": false,
         "requires_assessment": false,
         "recruiter_top_opportunities": [],
         "top_priority": null,
-        "daily_focus": "No actionable recruiting emails were provided; focus today on sourcing higher-signal UAE/Gulf leadership opportunities."
+        "daily_focus": "No urgent job-search action is supported by the excerpts; ignore the misclassified alerts and focus on verified interview or recruiter emails."
       }
     }
   },
   "kpi": {
-    "emails_processed": 80,
-    "actionable": 0,
-    "interviews_detected": 0,
+    "emails_processed": 21,
+    "actionable": 2,
+    "interviews_detected": 1,
     "recruiter_messages": 0,
-    "unread_actionable": 0
+    "unread_actionable": 2
   },
-  "recommendations": []
+  "recommendations": [
+    {
+      "id": "rec-32081a00-0",
+      "action": "respond_immediately",
+      "target": "1 interview invite(s)",
+      "reason": "Interview invitations require prompt response",
+      "urgency": "critical",
+      "timestamp": "2026-05-16T14:01:09.690837+02:00"
+    },
+    {
+      "id": "rec-32081a00-1",
+      "action": "check_inbox",
+      "target": "2 unread actionable email(s)",
+      "reason": "Unread emails need attention",
+      "urgency": "high",
+      "timestamp": "2026-05-16T14:01:09.690857+02:00"
+    },
+    {
+      "id": "rec-32081a00-2",
+      "action": "complete_assessment",
+      "target": "1 assessment(s)",
+      "reason": "Assessments have deadlines",
+      "urgency": "high",
+      "timestamp": "2026-05-16T14:01:09.690862+02:00"
+    }
+  ]
 }
