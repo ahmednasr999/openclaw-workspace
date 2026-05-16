@@ -1,0 +1,612 @@
+[
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/accounts-Dnickpu3.js",
+    "hits": [
+      "fetch-guard"
+    ],
+    "size": 15162
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/apache-B4bnfxGm.js",
+    "hits": [
+      "HTTP_PROXY"
+    ],
+    "size": 13381
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/cdp.helpers-CxaQ8QBG.js",
+    "hits": [
+      "HTTPS_PROXY",
+      "HTTP_PROXY",
+      "NO_PROXY",
+      "fetch-guard"
+    ],
+    "size": 20049
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/channel.runtime-CoaRliFd.js",
+    "hits": [
+      "fetch-guard"
+    ],
+    "size": 94239
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/chrome-BJNKwrhr.js",
+    "hits": [
+      "HTTPS_PROXY",
+      "HTTP_PROXY",
+      "NO_PROXY"
+    ],
+    "size": 54652
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/cli/run-main.js",
+    "hits": [
+      "ProxyAgent",
+      "HTTPS_PROXY",
+      "HTTP_PROXY"
+    ],
+    "size": 23084
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/client-CyKlul8Z.js",
+    "hits": [
+      "ProxyAgent",
+      "proxy-agent",
+      "HTTPS_PROXY",
+      "HTTP_PROXY",
+      "NO_PROXY"
+    ],
+    "size": 4102
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/dist-BXcHosP1.js",
+    "hits": [
+      "NO_PROXY"
+    ],
+    "size": 697419
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/dotenv-YQXomdVq.js",
+    "hits": [
+      "HTTPS_PROXY",
+      "HTTP_PROXY",
+      "NO_PROXY"
+    ],
+    "size": 6782
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/embedding-provider-BwwrUJ4W.js",
+    "hits": [
+      "fetch-guard"
+    ],
+    "size": 9364
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/embeddings-CeloODGb.js",
+    "hits": [
+      "fetch-guard"
+    ],
+    "size": 8572
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/env-CfNubyuX.js",
+    "hits": [
+      "ProxyAgent",
+      "proxy-agent",
+      "HTTPS_PROXY",
+      "HTTP_PROXY"
+    ],
+    "size": 3243
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/extension-shared-DUYXCIBS.js",
+    "hits": [
+      "ProxyAgent",
+      "proxy-agent"
+    ],
+    "size": 5003
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/extensions/thread-ownership/api.js",
+    "hits": [
+      "fetch-guard"
+    ],
+    "size": 373
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/extensions/thread-ownership/index.js",
+    "hits": [
+      "fetch-guard"
+    ],
+    "size": 5711
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/fetch-DFxHf7Qx.js",
+    "hits": [
+      "fetch-guard"
+    ],
+    "size": 5950
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/fetch-DVW3jkAQ.js",
+    "hits": [
+      "ProxyAgent",
+      "NO_PROXY"
+    ],
+    "size": 21118
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/fetch-guard-DFNmfAZx.js",
+    "hits": [
+      "createHttp1EnvHttpProxyAgent",
+      "createHttp1ProxyAgent",
+      "ProxyAgent",
+      "fetch-guard"
+    ],
+    "size": 11845
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/fetch-runtime-B28wrNZl.js",
+    "hits": [
+      "fetch-guard"
+    ],
+    "size": 142
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/host-env-security-CXDv4ev5.js",
+    "hits": [
+      "HTTPS_PROXY",
+      "HTTP_PROXY",
+      "NO_PROXY"
+    ],
+    "size": 14159
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/image-generation-provider-1SPxKvNC.js",
+    "hits": [
+      "fetch-guard"
+    ],
+    "size": 9562
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/input-files-VGDL8p1G.js",
+    "hits": [
+      "fetch-guard"
+    ],
+    "size": 8801
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/install-signal-cli-8BQWEoEK.js",
+    "hits": [
+      "fetch-guard"
+    ],
+    "size": 8748
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/marketplace-CBF65mg-.js",
+    "hits": [
+      "fetch-guard"
+    ],
+    "size": 25559
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/memory-core-host-engine-embeddings-DXmTGZmr.js",
+    "hits": [
+      "fetch-guard"
+    ],
+    "size": 22025
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/model-preflight.runtime-D_jPfF0L.js",
+    "hits": [
+      "fetch-guard"
+    ],
+    "size": 4800
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/models-BOdhZHnS.js",
+    "hits": [
+      "fetch-guard"
+    ],
+    "size": 5908
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/models-CHAnu2Op.js",
+    "hits": [
+      "fetch-guard"
+    ],
+    "size": 17614
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/models-_9wUSHD9.js",
+    "hits": [
+      "fetch-guard"
+    ],
+    "size": 5252
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/models-pUjHV_6o.js",
+    "hits": [
+      "fetch-guard"
+    ],
+    "size": 16619
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/models.fetch-Dlfs5n4K.js",
+    "hits": [
+      "fetch-guard"
+    ],
+    "size": 28650
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/nodes-screen-7-BB7Fke.js",
+    "hits": [
+      "fetch-guard"
+    ],
+    "size": 7920
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/oauth.http-Dh88TT6k.js",
+    "hits": [
+      "fetch-guard"
+    ],
+    "size": 662
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/onboard-BNBmliY3.js",
+    "hits": [
+      "fetch-guard"
+    ],
+    "size": 12556
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/openai-transport-stream-BkI6rJ3U.js",
+    "hits": [
+      "fetch-guard"
+    ],
+    "size": 86886
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/openclaw-runtime-Tm7sU9bi.js",
+    "hits": [
+      "fetch-guard"
+    ],
+    "size": 1092
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/plugin-sdk/extension-shared.js",
+    "hits": [
+      "ProxyAgent"
+    ],
+    "size": 1237
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/plugin-sdk/fetch-runtime.js",
+    "hits": [
+      "ProxyAgent",
+      "fetch-guard"
+    ],
+    "size": 875
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/plugin-sdk/infra-runtime.js",
+    "hits": [
+      "ProxyAgent",
+      "setGlobalDispatcher",
+      "fetch-guard"
+    ],
+    "size": 19972
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/plugin-sdk/ssrf-runtime.js",
+    "hits": [
+      "fetch-guard"
+    ],
+    "size": 1637
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/provider-auth-login.runtime-CADyOyR0.js",
+    "hits": [
+      "HTTPS_PROXY",
+      "HTTP_PROXY"
+    ],
+    "size": 11913
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/provider-base-url-BdKwtJTo.js",
+    "hits": [
+      "fetch-guard"
+    ],
+    "size": 7707
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/provider-models-CeT3uW5l.js",
+    "hits": [
+      "fetch-guard"
+    ],
+    "size": 4920
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/provider-self-hosted-setup-Dug5pzz5.js",
+    "hits": [
+      "fetch-guard"
+    ],
+    "size": 9597
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/proxy-cli.runtime-QgX7LgnK.js",
+    "hits": [
+      "createHttp1ProxyAgent",
+      "ProxyAgent"
+    ],
+    "size": 28514
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/proxy-env-Aq67_7jf.js",
+    "hits": [
+      "ProxyAgent"
+    ],
+    "size": 122
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/proxy-env-BaS80pvI.js",
+    "hits": [
+      "ProxyAgent",
+      "proxy-agent",
+      "HTTPS_PROXY",
+      "HTTP_PROXY",
+      "NO_PROXY"
+    ],
+    "size": 5618
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/proxy-fetch-Cuxly2lK.js",
+    "hits": [
+      "ProxyAgent",
+      "NO_PROXY"
+    ],
+    "size": 3263
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/proxy-lifecycle-BHwloF8D.js",
+    "hits": [
+      "HTTPS_PROXY",
+      "HTTP_PROXY",
+      "NO_PROXY",
+      "setGlobalDispatcher"
+    ],
+    "size": 12018
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/realtime-voice-provider-Bs3Q4Qlt.js",
+    "hits": [
+      "fetch-guard"
+    ],
+    "size": 21678
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/runtime-paths-DuoLU2TD.js",
+    "hits": [
+      "HTTPS_PROXY",
+      "HTTP_PROXY",
+      "NO_PROXY"
+    ],
+    "size": 18744
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/send-xTP6BiPT.js",
+    "hits": [
+      "fetch-guard"
+    ],
+    "size": 24959
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/server-cron-CM4aws4s.js",
+    "hits": [
+      "fetch-guard"
+    ],
+    "size": 88480
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/session-tab-registry-jexNlPGK.js",
+    "hits": [
+      "fetch-guard"
+    ],
+    "size": 22516
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/setup-DQgLLITB.js",
+    "hits": [
+      "fetch-guard"
+    ],
+    "size": 18609
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/shared-XxgPc3c2.js",
+    "hits": [
+      "ProxyAgent",
+      "HTTPS_PROXY",
+      "HTTP_PROXY",
+      "NO_PROXY",
+      "fetch-guard"
+    ],
+    "size": 8877
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/skills-install-DPUBJTr-.js",
+    "hits": [
+      "fetch-guard"
+    ],
+    "size": 20947
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/speech-provider-CE9oiL96.js",
+    "hits": [
+      "fetch-guard"
+    ],
+    "size": 7797
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/speech-provider-RC7Wpfh0.js",
+    "hits": [
+      "fetch-guard"
+    ],
+    "size": 17525
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/speech-provider-SHLABZw8.js",
+    "hits": [
+      "fetch-guard"
+    ],
+    "size": 9692
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/src-6bNtxhBu.js",
+    "hits": [
+      "ProxyAgent",
+      "proxy-agent",
+      "HTTPS_PROXY",
+      "HTTP_PROXY",
+      "NO_PROXY"
+    ],
+    "size": 519582
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/src-Dcfs6qq3.js",
+    "hits": [
+      "ProxyAgent",
+      "proxy-agent",
+      "HTTPS_PROXY",
+      "HTTP_PROXY",
+      "NO_PROXY"
+    ],
+    "size": 297819
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/ssrf-B5bGsnx-.js",
+    "hits": [
+      "createHttp1EnvHttpProxyAgent",
+      "createHttp1ProxyAgent",
+      "ProxyAgent"
+    ],
+    "size": 14205
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/ssrf-runtime-BFVSngaE.js",
+    "hits": [
+      "fetch-guard"
+    ],
+    "size": 171
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/stream-DG55kk2k.js",
+    "hits": [
+      "fetch-guard"
+    ],
+    "size": 34659
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/tts-BOmluR9l.js",
+    "hits": [
+      "fetch-guard"
+    ],
+    "size": 4224
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/tts-BUOeHOoj.js",
+    "hits": [
+      "fetch-guard"
+    ],
+    "size": 4013
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/tts-BfFb_4Da.js",
+    "hits": [
+      "fetch-guard"
+    ],
+    "size": 5636
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/tts-DFx_9sb7.js",
+    "hits": [
+      "fetch-guard"
+    ],
+    "size": 5580
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/tts-Dt6eizLY.js",
+    "hits": [
+      "fetch-guard"
+    ],
+    "size": 1279
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/tts-rZHDvdX7.js",
+    "hits": [
+      "fetch-guard"
+    ],
+    "size": 2973
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/tts-zW1PGqz-.js",
+    "hits": [
+      "fetch-guard"
+    ],
+    "size": 2511
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/undici-global-dispatcher-Bb3wFVad.js",
+    "hits": [
+      "ProxyAgent",
+      "setGlobalDispatcher",
+      "getGlobalDispatcher",
+      "fetch-guard"
+    ],
+    "size": 4100
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/undici-runtime-BdHHFzbs.js",
+    "hits": [
+      "createHttp1EnvHttpProxyAgent",
+      "createHttp1ProxyAgent",
+      "ProxyAgent"
+    ],
+    "size": 3500
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/video-generation-provider-BOZ9UFi0.js",
+    "hits": [
+      "fetch-guard"
+    ],
+    "size": 14720
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/video-generation-provider-CMcZSyGv.js",
+    "hits": [
+      "fetch-guard"
+    ],
+    "size": 14017
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/web-guarded-fetch-Zh1Ihtf_.js",
+    "hits": [
+      "fetch-guard"
+    ],
+    "size": 2051
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/web-search-provider-B0yrITzi.js",
+    "hits": [
+      "fetch-guard"
+    ],
+    "size": 8608
+  },
+  {
+    "file": "/usr/lib/node_modules/openclaw/dist/workflow-runtime-AmcAEnym.js",
+    "hits": [
+      "fetch-guard"
+    ],
+    "size": 19292
+  }
+]

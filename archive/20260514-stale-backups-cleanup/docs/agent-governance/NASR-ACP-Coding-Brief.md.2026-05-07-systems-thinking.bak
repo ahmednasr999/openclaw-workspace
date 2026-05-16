@@ -1,0 +1,171 @@
+# NASR ACP Coding Brief
+
+Use this as the default briefing structure for ACP coding sessions and coding-focused sub-agents.
+
+It is intentionally short.
+The doctrine lives in `NASR-Coding-Rules-v1.md`.
+This file exists to make future ACP launches consistent without copying long rule blocks into every prompt.
+
+## Default brief template
+
+```md
+TASK: [one sentence describing the deliverable]
+
+SCOPE:
+- [exact files, directories, surfaces, or systems allowed]
+- [include repo/workdir boundaries when relevant]
+
+DO NOT:
+- no unrelated cleanup
+- no speculative refactors
+- no config changes, restarts, or dependency changes unless explicitly requested
+- no edits outside scope
+
+DONE WHEN:
+- [exact condition that proves completion]
+- [exact test, command, or user-visible check]
+- [actual result has been inspected, not just command exit code]
+
+LIFECYCLE:
+- DEFINE the outcome and scope.
+- PLAN the smallest vertical slice and verification gate.
+- BUILD surgically.
+- VERIFY with evidence.
+- REVIEW scope/safety/quality before reporting.
+- SHIP concise proof and remaining risk.
+
+ANTI-RATIONALIZATION:
+- Do not say "tests later".
+- Do not treat tool success, patch application, or sub-agent claims as proof.
+- Do not make unrelated cleanups.
+- Do not rely on memory for mutable APIs/config/security/runtime facts.
+
+REPORT FORMAT:
+- CHANGED
+- WHAT
+- VERIFIED
+- TEST
+- RISK
+- NEXT
+
+Before coding, follow:
+- /root/.openclaw/workspace/docs/agent-governance/NASR-Coding-Rules-v1.md
+```
+
+## Workflow template references
+
+For non-trivial work, use the file-backed templates in `templates/workflows/` before dispatching or closing the task:
+
+- `triage.md` for classification, owner, risk, and state label.
+- `product-spec.md` when behavior or user-visible outcome needs definition.
+- `tech-plan.md` when implementation path, files, verification, or rollback matters.
+- `implementation-brief.md` for coding-agent dispatch.
+- `review-brief.md` for independent critique.
+- `verification.md` for final evidence.
+
+Do not build an automated state machine until these templates have proven useful on real tasks.
+
+## Default non-coding sub-agent brief template
+
+Use this for research, design, content, review, browser, or operations sub-agents. Keep it outcome-first and short.
+
+```md
+OUTCOME: [one sentence describing the deliverable]
+
+CONTEXT:
+- [only the facts, files, links, assets, or constraints needed]
+
+SUCCESS CRITERIA:
+- [observable pass/fail condition]
+- [quality bar]
+- [required evidence or artifact]
+
+SCOPE:
+- Allowed: [systems/files/sites/tools]
+- Do not touch: [off-limits systems/files/actions]
+
+APPROVAL GATES:
+- Stop before purchases, public posts, external messages, sends, deletes, credential/config changes, restarts, or irreversible actions unless explicitly approved.
+
+RETRIEVAL BUDGET:
+- Start with the most likely source of truth.
+- Search/read again only if a required fact is missing, the first source is weak/stale, or an unsupported claim would matter.
+
+DONE WHEN:
+- [artifact/result exists]
+- [real inspection/check confirms it meets the success criteria]
+- [evidence is strong enough to support the completion claim]
+
+ANTI-RATIONALIZATION:
+- Tool success is not outcome success.
+- Monitoring/nudging is not completion.
+- If quality is below the stated bar, self-reject and continue or report a blocker.
+
+STOP CONDITIONS:
+- Stop and report a specific blocker after two materially different failed attempts or if a missing decision creates material risk.
+
+REPORT FORMAT:
+- RESULT
+- EVIDENCE
+- CHANGED/CREATED
+- RISK
+- NEXT
+```
+
+## Default operator behavior
+
+When using this brief:
+
+1. Keep the task sentence singular and concrete.
+2. Scope the agent tightly.
+3. Name at least one real verification step in `DONE WHEN`.
+4. Add anti-rationalization constraints when the task has a known failure mode.
+5. If the task is ambiguous, include the primary assumption explicitly.
+6. If the task is risky, say what is off limits in `DO NOT`.
+7. For non-coding sub-agents, prefer outcome, success criteria, verification, and stop conditions over long procedural instructions.
+8. Never let a sub-agent report done for monitoring, nudging, or tool success when the requested artifact/outcome is still missing.
+
+## Example
+
+```md
+TASK: Fix the failing CSV export in the analytics report endpoint.
+
+SCOPE:
+- `src/routes/reports.py`
+- `src/services/report_export.py`
+- existing tests under `tests/reports/`
+
+DO NOT:
+- no config edits
+- no dependency changes
+- no unrelated formatting or refactors
+- do not touch PDF export
+
+DONE WHEN:
+- CSV export works for the broken reproduction case
+- `pytest tests/reports/test_csv_export.py -q` passes
+
+REPORT FORMAT:
+- CHANGED
+- WHAT
+- VERIFIED
+- TEST
+- RISK
+- NEXT
+
+Before coding, follow:
+- /root/.openclaw/workspace/docs/agent-governance/NASR-Coding-Rules-v1.md
+```
+
+## Why this structure
+
+This prevents the most common ACP failure modes:
+- task drift from vague prompts
+- overbuilding from weak scope boundaries
+- fake completion from vague success criteria
+- noisy reports with no proof
+
+## Rule
+
+Do not paste the full coding doctrine into ACP prompts unless there is a very specific reason.
+Reference the canonical file instead.

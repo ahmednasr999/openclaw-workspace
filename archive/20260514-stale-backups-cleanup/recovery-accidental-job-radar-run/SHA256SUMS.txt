@@ -1,0 +1,2 @@
+65120674d1ab81779204f4cbb1ace4fb449ebbac7bae23f71baeca2c769e1a41  memory/job-radar.md
+a2b6cbd470978006484ad81b7009d6230c55a40209ebaf8d3278a269a9598b17  jobs-bank/pipeline.md

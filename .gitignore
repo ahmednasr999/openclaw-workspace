@@ -49,7 +49,7 @@ media/inbound/*.docx
 
 # HTML slides system generated outputs
 /html-slides-system/builds/
-/html-slides-system/planning/latest/
+/html-slides-system/planning/
 
 # Slides skill generated/example outputs
 /skills/slides/examples/**/exports/
