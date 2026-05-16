@@ -1,7 +1,7 @@
 {
   "status": "ok",
-  "scan_time": "2026-05-15T14:01:15.777744+02:00",
-  "total_scanned": 0,
+  "scan_time": "2026-05-15T20:01:01.409692+02:00",
+  "total_scanned": 80,
   "by_category": {
     "interview_invite": 0,
     "recruiter_reach": 0,
@@ -9,8 +9,8 @@
     "rejection": 0,
     "assessment": 0,
     "follow_up_needed": 0,
-    "job_alert": 0,
-    "other": 0
+    "job_alert": 1,
+    "other": 79
   },
   "interview_invites": [],
   "recruiter_messages": [],
@@ -18,7 +18,18 @@
   "rejections": [],
   "assessments": [],
   "follow_ups_needed": [],
-  "job_alerts": [],
+  "job_alerts": [
+    {
+      "id": "357880",
+      "from": "GulfTalent Jobs <jobs@gulftalent.com>",
+      "subject": "Michael Page needs a PMO (Saudi Nationals)",
+      "date": "Fri, 15 May 2026 01:41:25 -0500",
+      "unread": true,
+      "priority": "LOW",
+      "score": 0,
+      "pipeline_match": null
+    }
+  ],
   "actionable_count": 0,
   "hot_alerts": [],
   "signals": []

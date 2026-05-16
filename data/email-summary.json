@@ -2,19 +2,19 @@
   "meta": {
     "agent": "email-agent",
     "version": "3.0.0",
-    "generated_at": "2026-05-15T14:01:23.166391+02:00",
-    "duration_ms": 7744,
+    "generated_at": "2026-05-15T20:01:12.004994+02:00",
+    "duration_ms": 51480,
     "ttl_hours": 4,
     "status": "success",
     "error": null,
-    "run_id": "7792f450",
+    "run_id": "b91e980c",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
     "status": "ok",
-    "scan_time": "2026-05-15T14:01:15.777744+02:00",
-    "total_scanned": 0,
+    "scan_time": "2026-05-15T20:01:01.409692+02:00",
+    "total_scanned": 80,
     "by_category": {
       "interview_invite": 0,
       "recruiter_reach": 0,
@@ -22,8 +22,8 @@
       "rejection": 0,
       "assessment": 0,
       "follow_up_needed": 0,
-      "job_alert": 0,
-      "other": 0
+      "job_alert": 1,
+      "other": 79
     },
     "interview_invites": [],
     "recruiter_messages": [],
@@ -31,7 +31,18 @@
     "rejections": [],
     "assessments": [],
     "follow_ups_needed": [],
-    "job_alerts": [],
+    "job_alerts": [
+      {
+        "id": "357880",
+        "from": "GulfTalent Jobs <jobs@gulftalent.com>",
+        "subject": "Michael Page needs a PMO (Saudi Nationals)",
+        "date": "Fri, 15 May 2026 01:41:25 -0500",
+        "unread": true,
+        "priority": "LOW",
+        "score": 0,
+        "pipeline_match": null
+      }
+    ],
     "actionable_count": 0,
     "hot_alerts": [],
     "signals": [],
@@ -44,12 +55,12 @@
         "requires_assessment": false,
         "recruiter_top_opportunities": [],
         "top_priority": null,
-        "daily_focus": "No actionable job-search emails were provided, so no response or prep action is needed today."
+        "daily_focus": "No actionable recruiting emails were provided; focus today on sourcing higher-signal UAE/Gulf leadership opportunities."
       }
     }
   },
   "kpi": {
-    "emails_processed": 0,
+    "emails_processed": 80,
     "actionable": 0,
     "interviews_detected": 0,
     "recruiter_messages": 0,

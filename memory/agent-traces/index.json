@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-05-15T15:20:27.579295+00:00",
-  "total_traces": 16,
+  "updated_at": "2026-05-15T18:32:10.797047+00:00",
+  "total_traces": 17,
   "by_category": {
     "content_post": [
       {
@@ -91,6 +91,13 @@
         "agent": "NASR/CTO repair",
         "timestamp": "2026-05-15T18:18:00+03:00",
         "lesson": "For model guardian checks, distinguish configured provider IDs from user-facing model status IDs, and remove stale plugin allowlist entries only after confirming the channel is disabled and backing up openclaw.json.",
+        "severity": "medium"
+      },
+      {
+        "id": "trace-20260515-cve-31431-kernel-upgrade-closeout",
+        "agent": "NASR/CTO repair",
+        "timestamp": "2026-05-15T21:31:00+03:00",
+        "lesson": "For kernel CVE closeout, package installation is not completion. Verify the rebooted running kernel, apt health, mitigations/listeners, OpenClaw health, model guardian health, and remove stale one-shot/watch crons only after the patched kernel is actually running.",
         "severity": "medium"
       }
     ],
@@ -241,6 +248,13 @@
       "category": "config_system",
       "lesson": "For model guardian checks, distinguish configured provider IDs from user-facing model status IDs, and remove stale plugin allowlist entries only after confirming the channel is disabled and backing up openclaw.json.",
       "timestamp": "2026-05-15T18:18:00+03:00"
+    },
+    {
+      "id": "trace-20260515-cve-31431-kernel-upgrade-closeout",
+      "agent": "NASR/CTO repair",
+      "category": "config_system",
+      "lesson": "For kernel CVE closeout, package installation is not completion. Verify the rebooted running kernel, apt health, mitigations/listeners, OpenClaw health, model guardian health, and remove stale one-shot/watch crons only after the patched kernel is actually running.",
+      "timestamp": "2026-05-15T21:31:00+03:00"
     }
   ]
 }

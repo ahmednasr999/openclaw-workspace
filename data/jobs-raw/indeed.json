@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-05-15T17:00:45.165698+02:00",
-    "duration_ms": 42751,
+    "generated_at": "2026-05-16T05:00:40.597322+02:00",
+    "duration_ms": 36908,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "22fcaac1",
+    "run_id": "1dee2f45",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -78,72 +78,25 @@
       "search_title": "Program Director"
     },
     {
-      "id": "indeed-in-e0103ab4b08c2549",
+      "id": "indeed-in-b04549b699d51136",
       "source": "indeed",
-      "title": "Director Global Security and Asset Protection (GSAP) EME OU",
-      "company": "The Coca-Cola Company",
+      "title": "Director, Customer Practice Digital Solutions (CXT)",
+      "company": "Bain & Company",
       "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=e0103ab4b08c2549",
-      "posted": "2026-05-13",
+      "url": "https://ae.indeed.com/viewjob?jk=b04549b699d51136",
+      "posted": "2026-05-15",
       "seniority": "C-Suite",
-      "domain_match": false,
+      "domain_match": true,
       "keyword_score": 13,
       "match_keywords": [
-        "director",
-        "leadership"
-      ],
-      "raw_snippet": "A Global Security and Asset Protection (GSAP) Director is tasked with protecting The Coca\\-Cola Company from security and high\\-risk issues that seriously threaten operations, consumer trust or shareholder confidence by delivering high\\-order threat prevention and resolution support to the global business system, including the development and implementation of complex security programs during major events. The role also provides strategic leadership to drive state of the art security advice and ",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-685a3bb7a9b712a3",
-      "source": "indeed",
-      "title": "Director, Priority Private Banking",
-      "company": "Standard Chartered Bank",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=685a3bb7a9b712a3",
-      "posted": "2026-05-12",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 26,
-      "match_keywords": [
-        "agile",
         "ai",
-        "director",
-        "dubai"
+        "director"
       ],
-      "raw_snippet": "**Requisition Number:** 54110\n**Job Location:** Dubai, ARE\n**Global Grade:** Band 5\n**Work Type:** Office Working\n**Employment Type:** Permanent\n**Posting Start Date:** 12/05/2026\n**Posting End Date:** 01/06/2026\n**:****About Us**Our team consists of 25,000 colleagues, spread across 35 countries. We believe in transformation \u2013 embracing agile and new ways of working together, which helps us to truly \u2018think client\u2019 and serve millions of our affluent and emerging affluent clients, across the world",
+      "raw_snippet": "ABOUT US\n  \n  \n\nBain \\& Company is a global consultancy that helps the world\u2019s most ambitious change makers define the future. Across 65 offices in 40 countries, we work alongside our clients as one team with a shared ambition to achieve extraordinary results, outperform the competition and redefine industries. We complement our tailored, integrated expertise with a vibrant ecosystem of digital innovators (including 1500\\+ experts in analytics, engineering, product management, user research, and",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
       "search_title": "Director Digital Transformation"
-    },
-    {
-      "id": "indeed-in-942862033e317de7",
-      "source": "indeed",
-      "title": "Commercial Director \u2013 Middle East",
-      "company": "DroneShield",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=942862033e317de7",
-      "posted": "2026-05-13",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 26,
-      "match_keywords": [
-        "ai",
-        "infrastructure",
-        "director",
-        "middle east",
-        "api"
-      ],
-      "raw_snippet": "Work with cutting edge AI technology, making the world a safer and more secure place. DroneShield (ASX:DRO) offers an opportunity to solve some of world\u2019s most challenging technical problems in the rapidly growing counter\\-drone sector.\n\n\nOur customers operate in some of the most challenging and high\\-stakes environments in the world, including military organisations, government agencies, airports, critical infrastructure operators, and law enforcement. Protecting airspace in these settings requ",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Chief Technology Officer"
     },
     {
       "id": "indeed-in-cc9a432f97171188",
@@ -419,29 +372,6 @@
       "search_title": "Director Digital Transformation"
     },
     {
-      "id": "indeed-in-7abe32a788af48f7",
-      "source": "indeed",
-      "title": "Director, Technology Consulting - Telecom SME",
-      "company": "EPAM Systems",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=7abe32a788af48f7",
-      "posted": "2026-05-12",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 26,
-      "match_keywords": [
-        "digital transformation",
-        "ai",
-        "director",
-        "platform"
-      ],
-      "raw_snippet": "**About us**\n\n\nEPAM Systems is a leading global provider of digital platform engineering and software development services. Founded in 1993 and headquartered in Newtown, Pennsylvania, EPAM has been helping clients navigate digital transformation for over 30 years, delivering innovative solutions to stay competitive in constantly evolving markets.\n\n\nAs consultants, designers, architects, engineers and trainers, at EPAM, we specialize in building long\\-term partnerships, enabling businesses to rei",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Director Digital Transformation"
-    },
-    {
       "id": "indeed-in-c3f4ed4190bd5c44",
       "source": "indeed",
       "title": "Head of AI Consulting services",
@@ -462,30 +392,6 @@
       "filter_reason": null,
       "search_country": "Saudi Arabia",
       "search_title": "Head of Digital Transformation"
-    },
-    {
-      "id": "indeed-in-c7c9083563a52738",
-      "source": "indeed",
-      "title": "Commercial Director \u2013 Middle East",
-      "company": "DroneShield",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=c7c9083563a52738",
-      "posted": "2026-05-13",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 26,
-      "match_keywords": [
-        "ai",
-        "infrastructure",
-        "director",
-        "middle east",
-        "api"
-      ],
-      "raw_snippet": "Work with cutting edge AI technology, making the world a safer and more secure place. DroneShield (ASX:DRO) offers an opportunity to solve some of world\u2019s most challenging technical problems in the rapidly growing counter\\-drone sector.\n\n\nOur customers operate in some of the most challenging and high\\-stakes environments in the world, including military organisations, government agencies, airports, critical infrastructure operators, and law enforcement. Protecting airspace in these settings requ",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Chief Technology Officer"
     },
     {
       "id": "indeed-in-0655486e33f47c21",
@@ -536,9 +442,9 @@
   ],
   "kpi": {
     "searches_run": 20,
-    "results_per_search": 3.8,
-    "unique_jobs": 23,
-    "errors": 3
+    "results_per_search": 4.0,
+    "unique_jobs": 19,
+    "errors": 5
   },
   "recommendations": []
 }
