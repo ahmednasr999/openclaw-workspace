@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-05-16T10:24:57.286519+00:00",
-  "total_traces": 19,
+  "updated_at": "2026-05-16T12:10:33.166033+00:00",
+  "total_traces": 20,
   "by_category": {
     "content_post": [
       {
@@ -112,6 +112,13 @@
         "agent": "CTO",
         "timestamp": "2026-05-16T13:18:00+03:00",
         "lesson": "When Ahmed approves workspace hygiene cleanup, commit source-like archive/docs/templates after secret scanning, remove empty placeholder directories, and verify both normal status and broad ls-files --directory are clean without touching unrelated modified runtime files.",
+        "severity": "medium"
+      },
+      {
+        "id": "trace-20260516-nasr-dm-model-override-fetch-failed",
+        "agent": "CTO",
+        "timestamp": "2026-05-16T12:10:33.137546+00:00",
+        "lesson": "For generic Telegram DM processing failures, inspect the concrete session JSON for modelOverride/providerOverride and stop duplicate gateway supervisors before assuming the default model config is active.",
         "severity": "medium"
       }
     ],
@@ -283,6 +290,13 @@
       "category": "config_system",
       "lesson": "When Ahmed approves workspace hygiene cleanup, commit source-like archive/docs/templates after secret scanning, remove empty placeholder directories, and verify both normal status and broad ls-files --directory are clean without touching unrelated modified runtime files.",
       "timestamp": "2026-05-16T13:18:00+03:00"
+    },
+    {
+      "id": "trace-20260516-nasr-dm-model-override-fetch-failed",
+      "agent": "CTO",
+      "category": "config_system",
+      "lesson": "For generic Telegram DM processing failures, inspect the concrete session JSON for modelOverride/providerOverride and stop duplicate gateway supervisors before assuming the default model config is active.",
+      "timestamp": "2026-05-16T12:10:33.137546+00:00"
     }
   ]
 }
