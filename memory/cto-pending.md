@@ -1,7 +1,7 @@
-# CTO Pending Issues — Updated 2026-05-15 07:47 Cairo
+# CTO Pending Issues — Updated 2026-05-16 13:12 Cairo
 
 ## Open
-- Root-level untracked workspace paths are active heartbeat blockers until tracked, moved, ignored, or removed. Current blockers: `TOOLS.md.bak-20260515-openclaw-update-recovery`, `archive/20260514-proxyline-cleanup/`, `archive/20260514-stale-backups-cleanup/`, `email-inbox-last80.json`, `email-review-20260514/`, `intel/intel-2026-05-15.md`, `lab/`, `plans/google-skills-adaptation-plan.md`, `templates/nasr-coding-agent-goal-prompt.md`, and `templates/openclaw-skill-template/`. Targeted scan of small files found no obvious secret-pattern matches.
+- Nested untracked workspace work products remain for owner review before commit/ignore decisions. Current broad `git status` still shows untracked paths under tracked areas such as `archive/`, `intel/`, `plans/`, and `templates/`; do not call these root-level leaks unless the top-level entry itself is untracked.
 
 
 1. **daily-backup freshness alert is cleared; backup path review remains** — `/tmp/openclaw-backup.log` advanced to `2026-04-28 20:00:01 +0300`, and the log shows a successful push to `origin workspace-sync` at 19:53. The immediate 48-hour freshness threshold is no longer breached. Keep the older branch-target review only as a follow-up if needed, since the latest evidence shows current backup activity on `workspace-sync`.
@@ -74,6 +74,7 @@ Heartbeat note 2026-05-01 07:48 Cairo — Gateway 200, latest commit `846ed2a6 c
 
 ## Cleared / Removed From Pending
 
+- **Root-only untracked workspace blocker from 2026-05-15** — Cleared on 2026-05-16 13:12 Cairo. Moved `TOOLS.md.bak-20260515-openclaw-update-recovery` to ignored `backups/20260515-openclaw-update-recovery/`, added ignore rules for local inbox/scratch state (`email-inbox-last*.json`, `email-review-*/`, `lab/`, `labs/`, `lcm.db`), and verified `git ls-files --others --exclude-standard -- ':/*' | awk 'index($0,"/")==0'` returns no root-only untracked files.
 - **Previous root-level untracked `brand/` heartbeat blocker** — Cleared as of 2026-04-24 22:03 Cairo. `brand/` was inspected, documented with `brand/README.md`, secret-scanned clean, committed, pushed to `origin/workspace-sync`, and verified clean.
 - **`cv_validator.py` reported missing** — Removed as stale. `scripts/cv_validator.py` exists in the workspace.
 - **LinkedIn/content test failure note** — Removed from pending until re-produced with fresh evidence. The old note was stale, and this cleanup pass did not find enough current evidence to keep it as an active CTO issue.

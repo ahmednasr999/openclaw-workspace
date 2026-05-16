@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-05-15T18:32:10.797047+00:00",
-  "total_traces": 17,
+  "updated_at": "2026-05-16T10:11:47.806342+00:00",
+  "total_traces": 18,
   "by_category": {
     "content_post": [
       {
@@ -98,6 +98,13 @@
         "agent": "NASR/CTO repair",
         "timestamp": "2026-05-15T21:31:00+03:00",
         "lesson": "For kernel CVE closeout, package installation is not completion. Verify the rebooted running kernel, apt health, mitigations/listeners, OpenClaw health, model guardian health, and remove stale one-shot/watch crons only after the patched kernel is actually running.",
+        "severity": "medium"
+      },
+      {
+        "id": "trace-20260516-root-untracked-scope-mismatch",
+        "agent": "CTO",
+        "timestamp": "2026-05-16T13:12:00+03:00",
+        "lesson": "For workspace hygiene heartbeat checks, separate root-only untracked entries from nested untracked work products before declaring a blocker. Ignore or move generated scratch state, but leave nested source-like artifacts for owner review.",
         "severity": "medium"
       }
     ],
@@ -255,6 +262,13 @@
       "category": "config_system",
       "lesson": "For kernel CVE closeout, package installation is not completion. Verify the rebooted running kernel, apt health, mitigations/listeners, OpenClaw health, model guardian health, and remove stale one-shot/watch crons only after the patched kernel is actually running.",
       "timestamp": "2026-05-15T21:31:00+03:00"
+    },
+    {
+      "id": "trace-20260516-root-untracked-scope-mismatch",
+      "agent": "CTO",
+      "category": "config_system",
+      "lesson": "For workspace hygiene heartbeat checks, separate root-only untracked entries from nested untracked work products before declaring a blocker. Ignore or move generated scratch state, but leave nested source-like artifacts for owner review.",
+      "timestamp": "2026-05-16T13:12:00+03:00"
     }
   ]
 }

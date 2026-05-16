@@ -65,6 +65,13 @@ media/inbound/*.docx
 # Local research/scratch directories (not source of truth)
 /research/
 /sweepers/
+/lab/
+/labs/
+
+# Local review/scratch data that may contain private inbox/runtime state
+/email-inbox-last*.json
+/email-review-*/
+/lcm.db
 
 # Generated reports (local/runtime output)
 /reports/

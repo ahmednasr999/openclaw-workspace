@@ -1,6 +1,6 @@
 # Agent Lessons Learned
 
-*Auto-curated from agent traces. Updated: 2026-05-15*
+*Auto-curated from agent traces. Updated: 2026-05-16*
 
 ## Communication
 - ✅ CLI uses --target not --to — exit 0 does not mean success. Always verify actual delivery (CEO, 2026-03-30)
@@ -14,6 +14,7 @@
 - ❌ After OpenClaw updates, do not treat gateway health as enough. Run the runtime patch checker, back up current hashed dist bundles, patch the active hashed files only, reload the gateway, and verify health dashboard OK before saying done. (NASR/CTO repair, 2026-05-15)
 - ❌ For model guardian checks, distinguish configured provider IDs from user-facing model status IDs, and remove stale plugin allowlist entries only after confirming the channel is disabled and backing up openclaw.json. (NASR/CTO repair, 2026-05-15)
 - ❌ For kernel CVE closeout, package installation is not completion. Verify the rebooted running kernel, apt health, mitigations/listeners, OpenClaw health, model guardian health, and remove stale one-shot/watch crons only after the patched kernel is actually running. (NASR/CTO repair, 2026-05-15)
+- ❌ For workspace hygiene heartbeat checks, separate root-only untracked entries from nested untracked work products before declaring a blocker. Ignore or move generated scratch state, but leave nested source-like artifacts for owner review. (CTO, 2026-05-16)
 
 ## Content Post
 - ✅ Always validate LinkedIn post length against 3000 char limit before posting (CMO, 2026-03-23)
