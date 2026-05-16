@@ -2024,3 +2024,56 @@ Node.js v22.22.1
 ## Calendar - Today's Events
 *Calendar API unavailable (gog v0.12.0 bug - tracking fix)*
 
+=== Morning Brief - 2026-05-16 06:00 AM ===
+
+## Claude 2x Usage Reminder
+
+## Job Radar (from Tavily)
+[search-router] Tavily unavailable, falling back to local SearXNG: Tavily Search failed (402): {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+## Sources
+
+_(provider: searxng)_
+
+- **Asia’s Premier News Agency - India News, Business & Political ...**
+  https://www.aninews.in/
+  ANI brings the latest news on Politics and Current Affairs in India & around the World, Sports, Health & Fitness, Entertainment, News.
+
+- **Itaogbolu News updates | ITAOGBOLU NEWS UPDATE | Facebook**
+  https://www.facebook.com/groups/10046368102046725/posts/29992933270296913/
+  ITAOGBOLU NEWS UPDATE WED, 6 MAY 2026 Itaogbolu News Update Management Calls for Additional Doctor at Iju/Itaogbolu General Hospital Itaogbolu News Update Management has formally appealed to Dr. Akeredolu, Chairman of the Hospital Management Board, for the urgent recruitment of an additional doctor ...
+
+- **Justice Integrity Report - March 2026 News (Pt. 1)**
+  https://www.justice-integrity.org/news-reports/2167-march-2026-news-pt-1
+  The United Arab Emirates defense ministry said its air defenses “engaged” 9 ballistic missiles and 33 drones launched by Iran on Saturday, and Saudi Arabia’s defense ministry reported a handful of drone interceptions during the day.
+
+- **waifu-diffusion/tokenizer/vocab.json at main · jack-op11 ...**
+  https://github.com/jack-op11/waifu-diffusion/blob/main/tokenizer/vocab.json
+  Contribute to jack-op11/waifu-diffusion development by creating an account on GitHub.
+
+- **UAE Executive Compensation & Salary Trends 2026 Guide**
+  https://www.labeeb.ae/uae-executive-compensation-2025-salary-trends-for-senior-professionals
+  UAE Executive Compensation: Salary Trends for Senior Professionals in 2026 A sector-by-sector compensation guide for Director, VP, and C-Suite professionals across Dubai and Abu Dhabi — covering base salary ranges, total package structures, Emiratisation premiums, and executive negotiation benchmark...
+
+## Gmail - New Opportunities
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/root/.openclaw/workspace/scripts/gmail-scan.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+
+## Calendar - Today's Events
+*Calendar API unavailable (gog v0.12.0 bug - tracking fix)*
+
