@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-05-16T12:10:33.166033+00:00",
-  "total_traces": 20,
+  "updated_at": "2026-05-16T13:28:23.187851+00:00",
+  "total_traces": 21,
   "by_category": {
     "content_post": [
       {
@@ -119,6 +119,13 @@
         "agent": "CTO",
         "timestamp": "2026-05-16T12:10:33.137546+00:00",
         "lesson": "For generic Telegram DM processing failures, inspect the concrete session JSON for modelOverride/providerOverride and stop duplicate gateway supervisors before assuming the default model config is active.",
+        "severity": "medium"
+      },
+      {
+        "id": "trace-20260516-telegram-probe-timeout-under-load",
+        "agent": "CTO",
+        "timestamp": "2026-05-16T13:27:00Z",
+        "lesson": "For Telegram gateway failures after provider/session cleanup, check both command sync and probe watchdog paths. A healthy default model does not prove Telegram API probes have enough timeout budget under event-loop load.",
         "severity": "medium"
       }
     ],
@@ -297,6 +304,13 @@
       "category": "config_system",
       "lesson": "For generic Telegram DM processing failures, inspect the concrete session JSON for modelOverride/providerOverride and stop duplicate gateway supervisors before assuming the default model config is active.",
       "timestamp": "2026-05-16T12:10:33.137546+00:00"
+    },
+    {
+      "id": "trace-20260516-telegram-probe-timeout-under-load",
+      "agent": "CTO",
+      "category": "config_system",
+      "lesson": "For Telegram gateway failures after provider/session cleanup, check both command sync and probe watchdog paths. A healthy default model does not prove Telegram API probes have enough timeout budget under event-loop load.",
+      "timestamp": "2026-05-16T13:27:00Z"
     }
   ]
 }
