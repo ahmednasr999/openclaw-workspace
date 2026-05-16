@@ -1,7 +1,6 @@
 # CTO Pending Issues — Updated 2026-05-16 13:12 Cairo
 
 ## Open
-- Nested untracked workspace work products remain for owner review before commit/ignore decisions. Current broad `git status` still shows untracked paths under tracked areas such as `archive/`, `intel/`, `plans/`, and `templates/`; do not call these root-level leaks unless the top-level entry itself is untracked.
 
 
 1. **daily-backup freshness alert is cleared; backup path review remains** — `/tmp/openclaw-backup.log` advanced to `2026-04-28 20:00:01 +0300`, and the log shows a successful push to `origin workspace-sync` at 19:53. The immediate 48-hour freshness threshold is no longer breached. Keep the older branch-target review only as a follow-up if needed, since the latest evidence shows current backup activity on `workspace-sync`.
@@ -74,6 +73,7 @@ Heartbeat note 2026-05-01 07:48 Cairo — Gateway 200, latest commit `846ed2a6 c
 
 ## Cleared / Removed From Pending
 
+- **Nested untracked workspace work products from 2026-05-16** — Cleared on 2026-05-16 13:18 Cairo. Reviewed and tracked archive manifests/backup records, daily intel, the Google skills adaptation plan, the coding-agent goal prompt, and the OpenClaw skill template. Removed empty placeholder directories and tightened the generated HTML-slides planning ignore. Verified broad `git ls-files --others --exclude-standard --directory` returns no entries.
 - **Root-only untracked workspace blocker from 2026-05-15** — Cleared on 2026-05-16 13:12 Cairo. Moved `TOOLS.md.bak-20260515-openclaw-update-recovery` to ignored `backups/20260515-openclaw-update-recovery/`, added ignore rules for local inbox/scratch state (`email-inbox-last*.json`, `email-review-*/`, `lab/`, `labs/`, `lcm.db`), and verified `git ls-files --others --exclude-standard -- ':/*' | awk 'index($0,"/")==0'` returns no root-only untracked files.
 - **Previous root-level untracked `brand/` heartbeat blocker** — Cleared as of 2026-04-24 22:03 Cairo. `brand/` was inspected, documented with `brand/README.md`, secret-scanned clean, committed, pushed to `origin/workspace-sync`, and verified clean.
 - **`cv_validator.py` reported missing** — Removed as stale. `scripts/cv_validator.py` exists in the workspace.

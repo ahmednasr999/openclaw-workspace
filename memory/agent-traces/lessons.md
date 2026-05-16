@@ -15,6 +15,7 @@
 - ❌ For model guardian checks, distinguish configured provider IDs from user-facing model status IDs, and remove stale plugin allowlist entries only after confirming the channel is disabled and backing up openclaw.json. (NASR/CTO repair, 2026-05-15)
 - ❌ For kernel CVE closeout, package installation is not completion. Verify the rebooted running kernel, apt health, mitigations/listeners, OpenClaw health, model guardian health, and remove stale one-shot/watch crons only after the patched kernel is actually running. (NASR/CTO repair, 2026-05-15)
 - ❌ For workspace hygiene heartbeat checks, separate root-only untracked entries from nested untracked work products before declaring a blocker. Ignore or move generated scratch state, but leave nested source-like artifacts for owner review. (CTO, 2026-05-16)
+- ❌ When Ahmed approves workspace hygiene cleanup, commit source-like archive/docs/templates after secret scanning, remove empty placeholder directories, and verify both normal status and broad ls-files --directory are clean without touching unrelated modified runtime files. (CTO, 2026-05-16)
 
 ## Content Post
 - ✅ Always validate LinkedIn post length against 3000 char limit before posting (CMO, 2026-03-23)
