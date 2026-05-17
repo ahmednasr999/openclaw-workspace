@@ -1046,3 +1046,11 @@ Ahmed said he had already applied to all five JobZoom opportunities after I rese
 I verified that PDFs existed and that Telegram delivery worked, but I did not check the applied ledger before treating the roles as active deliverables. I also queried older strong roles in a way that blurred active opportunities with already-applied records.
 ### Fix
 Before sending or regenerating any JobZoom CV pack, query `applied_jobs` and `jobs.applied` for every selected LinkedIn URL/ID. If already applied, report that status and do not resend CVs unless Ahmed explicitly asks for copies.
+
+## 2026-05-17 - Telegram Slash Menu Requires Scope Verification, Not Just Dispatch
+### What I got wrong
+After the Telegram command repair, I verified command dispatch and `getMyCommands` default scope, then said commands were restored. Ahmed correctly pointed out that typing `/` in Telegram should show the built-in command menu.
+### Why
+I treated Bot API command availability as equivalent to client menu visibility. Telegram command menus can depend on explicit command scopes such as `all_private_chats`, `all_group_chats`, chat-specific scopes, and the chat menu button state.
+### Fix
+For Telegram command repairs, verify default, private, group, administrator, direct-chat, and configured group-chat scopes. Set the direct chat menu button to `commands` where supported. Remember that forum topics inherit the supergroup command scope; Telegram may reject group menu-button changes even when group command scopes are valid.

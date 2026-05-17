@@ -1,62 +1,161 @@
 {
   "status": "ok",
-  "scan_time": "2026-05-16T14:00:46.926363+02:00",
-  "total_scanned": 21,
+  "scan_time": "2026-05-16T20:00:37.747390+02:00",
+  "total_scanned": 38,
   "by_category": {
     "interview_invite": 1,
-    "recruiter_reach": 0,
+    "recruiter_reach": 3,
     "application_ack": 0,
-    "rejection": 0,
-    "assessment": 1,
-    "follow_up_needed": 0,
+    "rejection": 2,
+    "assessment": 0,
+    "follow_up_needed": 1,
     "job_alert": 0,
-    "other": 19
+    "other": 33
   },
   "interview_invites": [
     {
-      "id": "357974",
-      "from": "diib <support@diib.com>",
-      "subject": "diib alert: The homepage of www.yalla.online accounts for the bulk\r\n of your organic rankings.",
-      "date": "Sat, 16 May 2026 11:07:12 +0000",
+      "id": "357989",
+      "from": "FSIT Talent Acquisition Team <cv@fsitksa.com>",
+      "subject": "Future Systems for Information Technology (FSIT) | Application Status\r\n for Ahmed Nasr",
+      "date": "Sat, 16 May 2026 05:50:25 -0700",
+      "unread": true,
+      "priority": "HIGH",
+      "score": 11,
+      "pipeline_match": null
+    }
+  ],
+  "recruiter_messages": [
+    {
+      "id": "357988",
+      "from": "talabat mart <tmart@em.talabat.com>",
+      "subject": "=?UTF-8?B?2YPZhCDYp9mE2YTZiiDZgdmKINmG2YHYs9mDINio2K7YtdmF?=\r\n =?UTF-8?B?IDEwMNisINmF2YYg2LfZhNio2KfYqiDZhdin2LHYqg==?=",
+      "date": "Sat, 16 May 2026 12:43:17 +0000 (UTC)",
+      "unread": true,
+      "priority": "HIGH",
+      "score": 6,
+      "pipeline_match": "talabat"
+    },
+    {
+      "id": "357994",
+      "from": "talabat <notification@deliveryherogroup.com>",
+      "subject": "=?UTF-8?q?Thank_you_for_your_application_with_=E2=80=8Btalabat=E2=80=8B_-?=\r\n =?UTF-8?q?_Managing_Director_-_Qatar?=",
+      "date": "Sat, 16 May 2026 13:44:32 +0000",
+      "unread": true,
+      "priority": "HIGH",
+      "score": 10,
+      "pipeline_match": "talabat"
+    },
+    {
+      "id": "358004",
+      "from": "Bank Customers News <info@host.discountwalas.com>",
+      "subject": "Finance Ministry has approved the sale of this bank, deal worth $3\r\n billion.",
+      "date": "Sat, 16 May 2026 12:20:15 +0000",
+      "unread": true,
+      "priority": "HIGH",
+      "score": 7,
+      "pipeline_match": "SAP"
+    }
+  ],
+  "application_acks": [],
+  "rejections": [
+    {
+      "id": "357982",
+      "from": "\"JPMorgan Chase & Co. Human Resources\"\r\n <eino.fa.sender@workflow.mail.us2.cloud.oracle.com>",
+      "subject": "Your job application status (Job number: 210741306)",
+      "date": "Sat, 16 May 2026 12:05:21 +0000 (UTC)",
       "unread": true,
       "priority": "LOW",
       "score": 0,
       "pipeline_match": null
-    }
-  ],
-  "recruiter_messages": [],
-  "application_acks": [],
-  "rejections": [],
-  "assessments": [
-    {
-      "id": "357972",
-      "from": "\"Yogesh Chetri\" <support@info.y-axis.com>",
-      "subject": "=?UTF-8?B?Q2FuYWRhIFBSOiBOZXcgT3Bwb3J0dW5pdGllcyBPcGVuaW5nIE5v?=\r\n =?UTF-8?B?dyDigJMgQXJlIFlvdSBFbGlnaWJsZT8=?=",
-      "date": "Sat, 16 May 2026 04:59:19 -0600",
-      "unread": true,
-      "priority": "HIGH",
-      "score": 7,
-      "pipeline_match": null
-    }
-  ],
-  "follow_ups_needed": [],
-  "job_alerts": [],
-  "actionable_count": 2,
-  "hot_alerts": [
-    {
-      "id": "357972",
-      "subject": "=?UTF-8?B?Q2FuYWRhIFBSOiBOZXcgT3Bwb3J0dW5pdGllcyBPcGVuaW5nIE5v?=\r\n =?UTF-8?B?dyDigJMgQXJlIFlvdSBFbGlnaWJsZT8=?=",
-      "from": "\"Yogesh Chetri\" <support@info.y-axis.com>",
-      "priority": "HIGH",
-      "pipeline_match": null
     },
     {
-      "id": "357974",
-      "subject": "diib alert: The homepage of www.yalla.online accounts for the bulk\r\n of your organic rankings.",
-      "from": "diib <support@diib.com>",
-      "priority": "LOW",
+      "id": "357989",
+      "from": "FSIT Talent Acquisition Team <cv@fsitksa.com>",
+      "subject": "Future Systems for Information Technology (FSIT) | Application Status\r\n for Ahmed Nasr",
+      "date": "Sat, 16 May 2026 05:50:25 -0700",
+      "unread": true,
+      "priority": "HIGH",
+      "score": 11,
       "pipeline_match": null
     }
   ],
-  "signals": []
+  "assessments": [],
+  "follow_ups_needed": [
+    {
+      "id": "357989",
+      "from": "FSIT Talent Acquisition Team <cv@fsitksa.com>",
+      "subject": "Future Systems for Information Technology (FSIT) | Application Status\r\n for Ahmed Nasr",
+      "date": "Sat, 16 May 2026 05:50:25 -0700",
+      "unread": true,
+      "priority": "HIGH",
+      "score": 11,
+      "pipeline_match": null
+    }
+  ],
+  "job_alerts": [],
+  "actionable_count": 4,
+  "hot_alerts": [
+    {
+      "id": "357989",
+      "subject": "Future Systems for Information Technology (FSIT) | Application Status\r\n for Ahmed Nasr",
+      "from": "FSIT Talent Acquisition Team <cv@fsitksa.com>",
+      "priority": "HIGH",
+      "pipeline_match": null
+    }
+  ],
+  "signals": [
+    {
+      "company": "talabat",
+      "signal": "recruiter_email",
+      "subject": "=?UTF-8?B?2YPZhCDYp9mE2YTZiiDZgdmKINmG2YHYs9mDINio2K7YtdmF?=\r\n =?UTF-8?B?IDEwMNisINmF2YYg2LfZhNio2KfYqiDZhdin2LHYqg==?=",
+      "sender": "talabat mart <tmart@em.talabat.com>",
+      "job_ids": [
+        "linkedin-li-4415007377",
+        "linkedin_jobspy-li-4397262230",
+        "linkedin-li-4370418095",
+        "linkedin-li-4389537891",
+        "linkedin-li-4375708512"
+      ],
+      "score": 6,
+      "timestamp": "2026-05-16T20:00:37.494474+02:00"
+    },
+    {
+      "company": "talabat",
+      "signal": "recruiter_email",
+      "subject": "=?UTF-8?q?Thank_you_for_your_application_with_=E2=80=8Btalabat=E2=80=8B_-?=\r\n =?UTF-8?q?_Managing_Director_-_Qatar?=",
+      "sender": "talabat <notification@deliveryherogroup.com>",
+      "job_ids": [
+        "linkedin-li-4415007377",
+        "linkedin_jobspy-li-4397262230",
+        "linkedin-li-4370418095",
+        "linkedin-li-4389537891",
+        "linkedin-li-4375708512"
+      ],
+      "score": 10,
+      "timestamp": "2026-05-16T20:00:37.542591+02:00"
+    },
+    {
+      "company": "SAP",
+      "signal": "recruiter_email",
+      "subject": "Finance Ministry has approved the sale of this bank, deal worth $3\r\n billion.",
+      "sender": "Bank Customers News <info@host.discountwalas.com>",
+      "job_ids": [
+        "indeed-in-b2195113ff678ef7",
+        "indeed-in-b7591ff66cc5a732",
+        "linkedin_jobspy-li-4380812358",
+        "linkedin-li-4349578134",
+        "linkedin-li-4394078700",
+        "linkedin-li-4380812358",
+        "linkedin-li-4362170335",
+        "linkedin-li-4362562926",
+        "linkedin-li-4385935615",
+        "linkedin-li-4353703506",
+        "app-005",
+        "cv-5fbf4a9aa7",
+        "linkedin-li-4385294885"
+      ],
+      "score": 7,
+      "timestamp": "2026-05-16T20:00:37.621597+02:00"
+    }
+  ]
 }

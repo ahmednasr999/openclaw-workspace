@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-05-16T17:00:35.597406+02:00",
-    "duration_ms": 33432,
+    "generated_at": "2026-05-17T05:00:36.590454+02:00",
+    "duration_ms": 32811,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "25de2d43",
+    "run_id": "cead31cc",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -29,6 +29,28 @@
         "dubai"
       ],
       "raw_snippet": "**Requisition Number:** 52689\n**Job Location:** Dubai, ARE\n**Global Grade:** Band 6\n**Work Type:** Office Working\n**Employment Type:** Permanent\n**Posting Start Date:** 15/05/2026\n**Posting End Date:** 17/05/2026\n**:****Job Summary**\n\n\n**Strategy**  \n\n* Strategies for Revenue generation and business development\n* Business objectives and goals\n* Drive the Digital Agenda\n\n**Business**  \n\nAcquisition \\& Sales Management  \n\n* Generate new business to achieve defined targets in terms of no. of custom",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Program Director"
+    },
+    {
+      "id": "indeed-in-384650d1b51867fa",
+      "source": "indeed",
+      "title": "Lead Engagement Director",
+      "company": "DataRobot",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=384650d1b51867fa",
+      "posted": "2026-05-14",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 16,
+      "match_keywords": [
+        "ai",
+        "director",
+        "platform"
+      ],
+      "raw_snippet": "**Job Description:**\n\n\nDataRobot delivers AI that maximizes impact and minimizes business risk. Our platform and applications integrate into core business processes so teams can develop, deliver, and govern AI at scale. DataRobot empowers practitioners to deliver predictive and generative AI, and enables leaders to secure their AI assets. Organizations worldwide rely on DataRobot for AI that makes sense for their business \u2014 today and in the future.\n\n**Purpose \\& Overall Relevance for the Organiz",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
@@ -79,26 +101,6 @@
       "search_title": "Director Digital Transformation"
     },
     {
-      "id": "indeed-in-5f32202692772df9",
-      "source": "indeed",
-      "title": "Senior Manager Delivery",
-      "company": "TELUS Digital",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=5f32202692772df9",
-      "posted": "2026-05-13",
-      "seniority": "Other",
-      "domain_match": false,
-      "keyword_score": 10,
-      "match_keywords": [
-        "agile"
-      ],
-      "raw_snippet": "**Who We Are**\n--------------\n\n\nWelcome to TELUS Digital \u2014 where innovation drives impact at a global scale. As an award\\-winning digital product consultancy and the digital division of TELUS, one of Canada\u2019s largest telecommunications providers, we design and deliver transformative customer experiences through cutting\\-edge technology, agile thinking, and a people\\-first culture.\n\n\nWith a global team across North America, South America, Central America, Europe, Africa, and APAC, we offer end\\-t",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Director Digital Transformation"
-    },
-    {
       "id": "indeed-in-cc9a432f97171188",
       "source": "indeed",
       "title": "DESIGN HEAD - Interior Fit Out",
@@ -119,6 +121,29 @@
       "filter_reason": null,
       "search_country": "United Arab Emirates",
       "search_title": "Head of Technology"
+    },
+    {
+      "id": "indeed-in-25e6054a3fe94690",
+      "source": "indeed",
+      "title": "Group CIO & Head of Family Office",
+      "company": "Megapolis Group",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=25e6054a3fe94690",
+      "posted": "2026-05-16",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 23,
+      "match_keywords": [
+        "executive",
+        "head of",
+        "growth",
+        "api"
+      ],
+      "raw_snippet": "Megapolis Group is a diversified investment holding with operating businesses and private investments across multiple sectors and jurisdictions. We are hiring on behalf of our founder \u2014 a senior executive to lead his family office and take full responsibility for the management, oversight, and growth of his personal and corporate capital.\n\nThis is a foundational hire. The structure is being built, and the right person will shape it. You will be the founder's right hand on everything related to c",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Head of IT"
     },
     {
       "id": "indeed-in-ad3ec6f54c6641d3",
@@ -185,30 +210,6 @@
         "middle east"
       ],
       "raw_snippet": "Build the Future of Rail in the Middle East with Mace\n\n\nAs we expand our rail capability across the Middle East, Mace is seeking exceptional talent to help shape and deliver some of the region\u2019s most ambitious transport programmes.\n\n\nWith a globally recognised track record across high\u2011speed rail, conventional rail, metro, and complex station environments, we are now growing our presence in the region \u2014 and building a high\u2011calibre talent pool to support this next phase.\n\n\nWe are looking for exper",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "PMO Director"
-    },
-    {
-      "id": "indeed-in-2f9e9b0c81a181e2",
-      "source": "indeed",
-      "title": "PMO Director",
-      "company": "Talent 360",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=2f9e9b0c81a181e2",
-      "posted": "2026-05-14",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 40,
-      "match_keywords": [
-        "pmo",
-        "project management",
-        "ai",
-        "executive",
-        "director"
-      ],
-      "raw_snippet": "The PMO Director is responsible for leading the Project Management Office (PMO) function, ensuring effective governance, execution oversight, and portfolio management across strategic programs and projects. The role focuses on driving delivery excellence, standardizing project management practices, and supporting executive decision\\-making.  \n\n  \n\n**Key Responsibilities**\n\n* Lead and oversee the PMO function across all projects and transformation initiatives.\n* Establish and maintain project gov",
       "relevant": true,
       "filter_reason": null,
       "search_country": "Saudi Arabia",
@@ -353,9 +354,9 @@
   ],
   "kpi": {
     "searches_run": 20,
-    "results_per_search": 3.55,
+    "results_per_search": 3.25,
     "unique_jobs": 15,
-    "errors": 7
+    "errors": 8
   },
   "recommendations": []
 }

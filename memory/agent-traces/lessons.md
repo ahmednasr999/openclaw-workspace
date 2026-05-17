@@ -1,6 +1,6 @@
 # Agent Lessons Learned
 
-*Auto-curated from agent traces. Updated: 2026-05-16*
+*Auto-curated from agent traces. Updated: 2026-05-17*
 
 ## Communication
 - ✅ CLI uses --target not --to — exit 0 does not mean success. Always verify actual delivery (CEO, 2026-03-30)
@@ -18,6 +18,8 @@
 - ❌ When Ahmed approves workspace hygiene cleanup, commit source-like archive/docs/templates after secret scanning, remove empty placeholder directories, and verify both normal status and broad ls-files --directory are clean without touching unrelated modified runtime files. (CTO, 2026-05-16)
 - ❌ For generic Telegram DM processing failures, inspect the concrete session JSON for modelOverride/providerOverride and stop duplicate gateway supervisors before assuming the default model config is active. (CTO, 2026-05-16)
 - ❌ For Telegram gateway failures after provider/session cleanup, check both command sync and probe watchdog paths. A healthy default model does not prove Telegram API probes have enough timeout budget under event-loop load. (CTO, 2026-05-16)
+- ❌ For LCM nightly compaction checks, verify the processor's runtime dependency paths and the force-compact threshold before treating queue creation as self-heal completion. (CTO, 2026-05-17)
+- ❌ For offline LCM compaction, ignore declaration-only .d.ts files when deciding whether TypeScript compilation is required; if no implementation .ts sources exist, use the bundled dist runtime. (CTO, 2026-05-17)
 
 ## Content Post
 - ✅ Always validate LinkedIn post length against 3000 char limit before posting (CMO, 2026-03-23)
@@ -33,6 +35,9 @@
 ## Jobzoom Daily Scan
 - ❌ Investigate scoring endpoint response body before changing thresholds; keep fallback visible in daily summary. Use first-class message tool for delivery recovery when script CLI delivery fails. (JobZoom/HR lane, 2026-05-05)
 - ❌ For JobZoom scoring, do not trust HTTP 200 or report existence. Keep prompts small enough to avoid LCM/file-reference substitution, persist raw bad scoring responses, and verify batch outputs parse before allowing fallback results to stand. (NASR/JobZoom, 2026-05-05)
+
+## Memory Hygiene
+- ❌ For memory hygiene cron audits, do not use command substitution with {} inside find -exec echo; run per-file line counting inside sh -c or a loop, then verify post-archive active-directory counts. (CTO, 2026-05-17)
 
 ## Tool Integration
 - ✅ Always check config/ directory and service-registry.md before initiating OAuth. Direct credentials exist for Notion, Telegram, Gmail (CTO, 2026-03-21)

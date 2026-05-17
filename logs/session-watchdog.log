@@ -257,3 +257,7 @@
 [2026-05-16T00:08:54Z] RESET [main] 4af8eb4f-0cee-46d9-b7a5-cfdfbe7c5c50.trajectory.jsonl was 3MB -> archived to 4af8eb4f-0cee-46d9-b7a5-cfdfbe7c5c50.trajectory.20260516T000854Z.jsonl.gz
 [2026-05-16T00:08:58Z] RESET [main] 71fddbfd-7c03-46dd-99be-4660c3e8875a.trajectory.jsonl was 5MB -> archived to 71fddbfd-7c03-46dd-99be-4660c3e8875a.trajectory.20260516T000858Z.jsonl.gz
 [2026-05-16T00:09:16Z] Done reset=2 skipped=0 errors=0
+[2026-05-17T00:13:39Z] RESET [main] 6e07463b-8e70-4edc-bc8d-fbe760101e94.trajectory.jsonl was 4MB -> archived to 6e07463b-8e70-4edc-bc8d-fbe760101e94.trajectory.20260517T001339Z.jsonl.gz
+[2026-05-17T00:13:42Z] RESET [main] 6786f789-2f02-4214-afc9-69f53c2e3854.trajectory.jsonl was 3MB -> archived to 6786f789-2f02-4214-afc9-69f53c2e3854.trajectory.20260517T001342Z.jsonl.gz
+[2026-05-17T00:13:50Z] RESET [cto] 4760cbaf-85c2-4fa2-b4dc-097c1cae7025-topic-8.trajectory.jsonl was 3MB -> archived to 4760cbaf-85c2-4fa2-b4dc-097c1cae7025-topic-8.trajectory.20260517T001350Z.jsonl.gz
+[2026-05-17T00:14:03Z] Done reset=3 skipped=0 errors=0
