@@ -99,6 +99,7 @@ Never use Composio for Notion or Telegram when direct credentials exist.
 - OpenClaw CLI messaging uses `--target`, not `--to`.
 - For local media sends, copy files to an allowed media directory such as `/root/.openclaw/media` first.
 - Verify actual delivery or returned message state before saying a message/file was sent.
+- Telegram command-menu repairs require scope verification, not just dispatch/default `getMyCommands`: check default, private, group, administrator, direct-chat, and configured group-chat scopes, and set the direct chat menu button to `commands` where supported. Forum topics inherit the supergroup command scope; Telegram may reject group menu-button changes even when group command scopes are valid. <!-- dream-promoted 2026-05-17 -->
 
 ## Queue and Concurrency
 

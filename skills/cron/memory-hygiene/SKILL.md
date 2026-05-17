@@ -44,7 +44,7 @@ find . -name '20*.md' -not -name 'master-*' -mtime +14 -exec echo "  {}" \;
 
 echo ""
 echo "Recent (last 7 days):"
-find . -name '20*.md' -not -name 'master-*' -mtime -7 -exec echo "  {} ($(wc -l < {})L)" \;
+find . -name '20*.md' -not -name 'master-*' -mtime -7 -exec sh -c 'for f do echo "  $f ($(wc -l < "$f")L)"; done' sh {} +
 ```
 
 ### Step 3: Archive old daily notes

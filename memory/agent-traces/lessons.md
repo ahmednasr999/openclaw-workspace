@@ -20,6 +20,8 @@
 - ❌ For Telegram gateway failures after provider/session cleanup, check both command sync and probe watchdog paths. A healthy default model does not prove Telegram API probes have enough timeout budget under event-loop load. (CTO, 2026-05-16)
 - ❌ For LCM nightly compaction checks, verify the processor's runtime dependency paths and the force-compact threshold before treating queue creation as self-heal completion. (CTO, 2026-05-17)
 - ❌ For offline LCM compaction, ignore declaration-only .d.ts files when deciding whether TypeScript compilation is required; if no implementation .ts sources exist, use the bundled dist runtime. (CTO, 2026-05-17)
+- ❌ For Telegram DM processing failures, check the target session for stale active tool calls and verify a real later delivery before declaring recovery; also inspect host-level restart storms when gateway liveness reports CPU or event-loop delay. (CTO, 2026-05-17)
+- ❌ For Model Guardian, slow OpenClaw CLI probes should use longer bounded timeouts, cache the expensive status JSON inside a run, and suppress the first transient timeout-only probe failure while still alerting immediately on config, model, or provider errors. (CTO, 2026-05-17)
 
 ## Content Post
 - ✅ Always validate LinkedIn post length against 3000 char limit before posting (CMO, 2026-03-23)
@@ -41,4 +43,7 @@
 
 ## Tool Integration
 - ✅ Always check config/ directory and service-registry.md before initiating OAuth. Direct credentials exist for Notion, Telegram, Gmail (CTO, 2026-03-21)
+
+## Tool Usage
+- ❌ When passing Markdown-heavy patches through the exec JavaScript wrapper, avoid raw backticks in the patch payload or escape them before calling apply_patch. (HR, 2026-05-17)
 

@@ -84,6 +84,7 @@ Keyword strategy:
 ## CV Creation Rule, Critical
 Always read `memory/master-cv-data.md` before creating any CV. Never fabricate roles, titles, dates, or achievements. Use exact titles and dates from the master CV data.
 All CV generation must use GPT-5.5 unless Ahmed explicitly changes that instruction. Do not silently use a fallback model for CV work.
+- Before sending or regenerating any JobZoom CV pack, check `applied_jobs` and `jobs.applied` for each selected LinkedIn URL/ID. If already applied, report that status and do not resend CVs unless Ahmed explicitly asks for copies. <!-- dream-promoted 2026-05-17 -->
 
 ## Verify Before Reporting, Non-Negotiable
 Exit code 0 is not success. Subprocess ran is not success. API returned 200 is not proof that content is correct.

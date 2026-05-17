@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """Model Guardian — checks model-router.json default and Codex provider health."""
 import json
-import os
 import subprocess
 import sys
 import time
@@ -15,11 +14,6 @@ def parse_json_from_mixed_output(text: str):
     if start == -1:
         raise ValueError('no JSON object found in command output')
     return json.loads(text[start:])
-
-
-def is_transient_provider_error(text: str) -> bool:
-    lower = str(text).lower()
-    return 'operation was aborted' in lower or 'this operation was aborted' in lower
 
 
 def run_with_retries(args, timeouts, parser=None, ok_text=None, label='command'):
@@ -82,7 +76,7 @@ status_probe_error = None
 try:
     status_data, _, attempts, timed_out = run_with_retries(
         ['openclaw', 'status', '--usage', '--json'],
-        timeouts=[45, 90, 150],
+        timeouts=[30, 45],
         parser=parse_json_from_mixed_output,
         label='openclaw status usage probe',
     )
@@ -90,9 +84,6 @@ try:
         print(f'OK: usage probe timed out but yielded parseable provider JSON on attempt {attempts}')
     elif attempts > 1:
         print(f'OK: usage probe succeeded on retry {attempts}')
-    cache_path = os.environ.get('MODEL_GUARDIAN_STATUS_CACHE')
-    if cache_path:
-        Path(cache_path).write_text(json.dumps(status_data) + '\n')
 except Exception as e:
     status_probe_error = str(e)
 
@@ -109,10 +100,7 @@ if status_data:
         ALERTS.append('openai-codex provider missing from usage status')
     else:
         if provider.get('error'):
-            if is_transient_provider_error(provider.get('error')):
-                print(f"OK: openai-codex provider returned transient probe abort: {provider['error']}")
-            else:
-                ALERTS.append(f"openai-codex provider error: {provider['error']}")
+            ALERTS.append(f"openai-codex provider error: {provider['error']}")
         else:
             windows = provider.get('windows') or []
             if windows:
@@ -129,7 +117,7 @@ if status_data:
 try:
     _, combined, attempts, _ = run_with_retries(
         ['openclaw', 'models', 'status', '--plain'],
-        timeouts=[30, 60, 120],
+        timeouts=[20, 40],
         ok_text=EXPECTED_STATUS_MODEL,
         label='models status probe',
     )

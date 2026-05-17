@@ -340,41 +340,6 @@ if (clean !== 'Why you sent this now!') {{
         print("OK: reply-context metadata sanitizer smoke passed")
 
 
-def check_context_engine_turn_maintenance_silent(failures: list[str]) -> None:
-    dist = Path("/usr/lib/node_modules/openclaw/dist")
-    maintenance_candidates = sorted(dist.glob("context-engine-maintenance-*.js"))
-    task_registry_candidates = sorted(dist.glob("task-registry-*.js"))
-    if not maintenance_candidates:
-        failures.append("FAIL: context-engine turn maintenance stays silent\ncontext-engine-maintenance dist file missing")
-        return
-    if not task_registry_candidates:
-        failures.append("FAIL: context-engine turn maintenance task delivery guard\ntask-registry dist file missing")
-        return
-    maintenance_text = maintenance_candidates[0].read_text(errors="ignore")
-    task_registry_text = task_registry_candidates[0].read_text(errors="ignore")
-    if 'notifyPolicy: "state_changes"' in maintenance_text:
-        failures.append(
-            "FAIL: context-engine turn maintenance stays silent\n"
-            "Deferred turn maintenance can still promote itself to state_changes."
-        )
-    else:
-        print("OK: context-engine turn maintenance stays silent")
-    required_needles = [
-        "SILENT_INTERNAL_TASK_KINDS",
-        "context_engine_turn_maintenance",
-        "isSilentInternalTask(task) && task.status === \"succeeded\"",
-        "if (isSilentInternalTask(task)) return false",
-    ]
-    missing = [needle for needle in required_needles if needle not in task_registry_text]
-    if missing:
-        failures.append(
-            "FAIL: context-engine turn maintenance task delivery guard\n"
-            + "\n".join(f"missing: {needle}" for needle in missing)
-        )
-    else:
-        print("OK: context-engine turn maintenance task delivery guard")
-
-
 def main() -> int:
     failures: list[str] = []
     for check in CHECKS:
@@ -413,7 +378,6 @@ def main() -> int:
     check_active_memory_queued_system_sanitizer_smoke(failures)
     check_restart_sentinel_sanitizer_smoke(failures)
     check_reply_context_metadata_sanitizer_smoke(failures)
-    check_context_engine_turn_maintenance_silent(failures)
 
     if failures:
         print("\n\n".join(failures), file=sys.stderr)

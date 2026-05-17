@@ -78,13 +78,16 @@ def check_lcm():
     state = "OK"
     issues = []
     # Pending maintenance can appear briefly after tool-heavy turns. Alert only when
-    # it combines with a large context or elevated maintenance-token count.
+    # it combines with elevated maintenance-token count. Active context below the
+    # hard 120k alert line is tracked as detail, not an overall dashboard warning.
     if pending:
         issues.append("maintenance_pending")
     if (ctx_tokens or 0) > 120000:
         state = "CRITICAL"; issues.append("context_gt_120k")
-    elif (ctx_tokens or 0) > 80000 or (pending and (maint_tokens or 0) > 60000):
+    elif pending and (maint_tokens or 0) > 60000:
         state = max(state, "WARN", key=severity_rank); issues.append("context_attention")
+    elif (ctx_tokens or 0) > 80000:
+        issues.append("context_attention")
     return status_line("lcm_context", state, f"conv={conv}; items={items}; context_tokens={ctx_tokens}; maintenance_pending={pending}; maintenance_tokens={maint_tokens}; {' '.join(issues)}")
 
 

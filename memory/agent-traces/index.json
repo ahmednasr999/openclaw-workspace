@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-05-17T04:03:14.194722+00:00",
-  "total_traces": 24,
+  "updated_at": "2026-05-17T09:16:33.468311+00:00",
+  "total_traces": 27,
   "by_category": {
     "content_post": [
       {
@@ -141,6 +141,20 @@
         "timestamp": "2026-05-17T03:36:00+03:00",
         "lesson": "For offline LCM compaction, ignore declaration-only .d.ts files when deciding whether TypeScript compilation is required; if no implementation .ts sources exist, use the bundled dist runtime.",
         "severity": "medium"
+      },
+      {
+        "id": "trace-20260517-telegram-dm-stale-tool-cups-restart-storm",
+        "agent": "CTO",
+        "timestamp": "2026-05-17T09:55:00+03:00",
+        "lesson": "For Telegram DM processing failures, check the target session for stale active tool calls and verify a real later delivery before declaring recovery; also inspect host-level restart storms when gateway liveness reports CPU or event-loop delay.",
+        "severity": "medium"
+      },
+      {
+        "id": "trace-20260517-model-guardian-timeout-noise-fix",
+        "agent": "CTO",
+        "timestamp": "2026-05-17T12:16:00+03:00",
+        "lesson": "For Model Guardian, slow OpenClaw CLI probes should use longer bounded timeouts, cache the expensive status JSON inside a run, and suppress the first transient timeout-only probe failure while still alerting immediately on config, model, or provider errors.",
+        "severity": "medium"
       }
     ],
     "cv_creation": [
@@ -183,6 +197,15 @@
         "agent": "CTO",
         "timestamp": "2026-05-17T07:00:00+03:00",
         "lesson": "For memory hygiene cron audits, do not use command substitution with {} inside find -exec echo; run per-file line counting inside sh -c or a loop, then verify post-archive active-directory counts.",
+        "severity": "medium"
+      }
+    ],
+    "tool_usage": [
+      {
+        "id": "trace-20260517-job-hunter-review-apply-patch-wrapper",
+        "agent": "HR",
+        "timestamp": "2026-05-17T08:06:00+03:00",
+        "lesson": "When passing Markdown-heavy patches through the exec JavaScript wrapper, avoid raw backticks in the patch payload or escape them before calling apply_patch.",
         "severity": "medium"
       }
     ]
@@ -355,6 +378,27 @@
       "category": "memory_hygiene",
       "lesson": "For memory hygiene cron audits, do not use command substitution with {} inside find -exec echo; run per-file line counting inside sh -c or a loop, then verify post-archive active-directory counts.",
       "timestamp": "2026-05-17T07:00:00+03:00"
+    },
+    {
+      "id": "trace-20260517-job-hunter-review-apply-patch-wrapper",
+      "agent": "HR",
+      "category": "tool_usage",
+      "lesson": "When passing Markdown-heavy patches through the exec JavaScript wrapper, avoid raw backticks in the patch payload or escape them before calling apply_patch.",
+      "timestamp": "2026-05-17T08:06:00+03:00"
+    },
+    {
+      "id": "trace-20260517-telegram-dm-stale-tool-cups-restart-storm",
+      "agent": "CTO",
+      "category": "config_system",
+      "lesson": "For Telegram DM processing failures, check the target session for stale active tool calls and verify a real later delivery before declaring recovery; also inspect host-level restart storms when gateway liveness reports CPU or event-loop delay.",
+      "timestamp": "2026-05-17T09:55:00+03:00"
+    },
+    {
+      "id": "trace-20260517-model-guardian-timeout-noise-fix",
+      "agent": "CTO",
+      "category": "config_system",
+      "lesson": "For Model Guardian, slow OpenClaw CLI probes should use longer bounded timeouts, cache the expensive status JSON inside a run, and suppress the first transient timeout-only probe failure while still alerting immediately on config, model, or provider errors.",
+      "timestamp": "2026-05-17T12:16:00+03:00"
     }
   ]
 }

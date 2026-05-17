@@ -1,6 +1,8 @@
-# CTO Pending Issues — Updated 2026-05-16 13:12 Cairo
+# CTO Pending Issues — Updated 2026-05-17 09:58 Cairo
 
 ## Open
+
+- **Weekly Self-Health Check cron timed out on 2026-05-17** — Cron `c7cf8709-4d01-4b9d-a8a3-64ebfe559d7f` ended with `cron: job execution timed out (last phase: tool-execution-started)`. The gateway is live and the Ahmed DM lane recovered; this is a remaining follow-up to rerun or tighten the health-check path so it does not exceed the cron timeout.
 
 
 1. **daily-backup freshness alert is cleared; backup path review remains** — `/tmp/openclaw-backup.log` advanced to `2026-04-28 20:00:01 +0300`, and the log shows a successful push to `origin workspace-sync` at 19:53. The immediate 48-hour freshness threshold is no longer breached. Keep the older branch-target review only as a follow-up if needed, since the latest evidence shows current backup activity on `workspace-sync`.

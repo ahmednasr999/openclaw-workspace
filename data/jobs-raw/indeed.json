@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-05-17T05:00:36.590454+02:00",
-    "duration_ms": 32811,
+    "generated_at": "2026-05-17T17:00:40.281171+02:00",
+    "duration_ms": 35917,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "cead31cc",
+    "run_id": "b01c4340",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -51,29 +51,6 @@
         "platform"
       ],
       "raw_snippet": "**Job Description:**\n\n\nDataRobot delivers AI that maximizes impact and minimizes business risk. Our platform and applications integrate into core business processes so teams can develop, deliver, and govern AI at scale. DataRobot empowers practitioners to deliver predictive and generative AI, and enables leaders to secure their AI assets. Organizations worldwide rely on DataRobot for AI that makes sense for their business \u2014 today and in the future.\n\n**Purpose \\& Overall Relevance for the Organiz",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-8e6f4f1e42438921",
-      "source": "indeed",
-      "title": "Associate Director, Priority Banking",
-      "company": "Standard Chartered Bank",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=8e6f4f1e42438921",
-      "posted": "2026-05-14",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 26,
-      "match_keywords": [
-        "agile",
-        "ai",
-        "director",
-        "dubai"
-      ],
-      "raw_snippet": "**Requisition Number:** 54261\n**Job Location:** Dubai, ARE\n**Global Grade:** Band 7\n**Work Type:** Office Working\n**Employment Type:** Permanent\n**Posting Start Date:** 14/05/2026\n**Posting End Date:** 28/05/2026\n**:****About Us**\n\nOur team consists of 25,000 colleagues, spread across 35 countries. We believe in transformation \u2013 embracing agile and new ways of working together, which helps us to truly \u2018think client\u2019 and serve millions of our affluent and emerging affluent clients, across the wor",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
@@ -216,74 +193,6 @@
       "search_title": "PMO Director"
     },
     {
-      "id": "indeed-in-f8653abbe412d959",
-      "source": "indeed",
-      "title": "Director - Operations & Event Delivery",
-      "company": "Qiddiya Investment Company",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=f8653abbe412d959",
-      "posted": "2026-05-14",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 23,
-      "match_keywords": [
-        "ai",
-        "director",
-        "saudi",
-        "riyadh",
-        "api"
-      ],
-      "raw_snippet": "Qiddiya is Saudi Arabia\u2019s future capital of entertainment, sports, and culture \u2014 a 360 km\u00b2 mega\\-project just outside Riyadh. From F1\\-grade racetracks and theme parks to stadiums and performance venues, we\u2019re creating a destination like no other. This is more than a project \u2014 it\u2019s a national transformation. As construction accelerates, we\u2019re hiring ambitious talent to help shape it. If you\u2019re driven by scale, impact, and the chance to build something iconic from the ground up \u2014 Qiddiya is calli",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-75ba0e3f1d00b3a4",
-      "source": "indeed",
-      "title": "Technical Director",
-      "company": "Parsons",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=75ba0e3f1d00b3a4",
-      "posted": "2026-05-14",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 20,
-      "match_keywords": [
-        "director",
-        "leadership",
-        "growth"
-      ],
-      "raw_snippet": "In a world of possibilities, pursue one with endless opportunities. Imagine Next!  \n\n\nAt Parsons, you can imagine a career where you thrive, work with exceptional people, and be yourself. Guided by our leadership vision of valuing people, embracing agility, and fostering growth, we cultivate an innovative culture that empowers you to achieve your full potential. Unleash your talent and redefine what\u2019s possible. **Job Description:**\n\n\nParsons is looking for an amazingly talented **Technical Direc",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-056c239c2d8b2b43",
-      "source": "indeed",
-      "title": "Delivery Director",
-      "company": "Adree",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=056c239c2d8b2b43",
-      "posted": "2026-05-14",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 23,
-      "match_keywords": [
-        "operational excellence",
-        "director",
-        "leadership"
-      ],
-      "raw_snippet": "As the Delivery Director at Adree, you will be responsible for overseeing the end\\-to\\-end delivery of multiple complex projects and programs, ensuring they meet quality, timeline, and budget expectations. You will lead delivery teams, drive operational excellence, and collaborate with stakeholders to align delivery strategies with business goals.\n\n\nYour primary responsibilities will include:\n\n* Providing strategic leadership to delivery teams to ensure successful project execution and client sa",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Program Director"
-    },
-    {
       "id": "indeed-in-b26fc89a874652de",
       "source": "indeed",
       "title": "Associate Director \u00e2\u20ac\u201c Programme Management - Rail",
@@ -304,59 +213,13 @@
       "filter_reason": null,
       "search_country": "Saudi Arabia",
       "search_title": "Director Digital Transformation"
-    },
-    {
-      "id": "indeed-in-0655486e33f47c21",
-      "source": "indeed",
-      "title": "Director - Corporate Enablement - CM5",
-      "company": "Qiddiya Investment Company",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=0655486e33f47c21",
-      "posted": "2026-05-14",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 13,
-      "match_keywords": [
-        "director",
-        "leadership"
-      ],
-      "raw_snippet": "Role Purpose\n\n\nLead and coordinate the delivery of corporate support services for this cultural and heritage programme ensuring effective HR operations, procurement coordination, finance support, IT administration, legal coordination, and administrative services to enable smooth day\\-to\\-day operations and compliance, in alignment with Qiddiya Group centralized functions.\n\n\nKey Responsibilities:\n\n\nCorporate Enablement Leadership \\& Service Delivery\n\n\n* Lead the planning, coordination, and contin",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "IT Director"
-    },
-    {
-      "id": "indeed-in-6f61dfc526885f9d",
-      "source": "indeed",
-      "title": "Senior Commercial Director KSA",
-      "company": "Hilton",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=6f61dfc526885f9d",
-      "posted": "2026-05-13",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 30,
-      "match_keywords": [
-        "ai",
-        "director",
-        "growth",
-        "saudi",
-        "ksa",
-        "api"
-      ],
-      "raw_snippet": "Senior Commercial Director KSA\n\n\nThe Senior Commercial Director for KSA, Bahrain, and Kuwait is responsible for shaping and executing a long\u2011term (3\u20135 year) commercial strategy with a strong focus on accelerating growth in the Kingdom of Saudi Arabia\u2014one of Hilton\u2019s most strategically important markets, expected to exceed 100 hotels within five years.\n\n\nThis role leads the development of the value proposition and investment cases required to unlock this growth, ensuring the right commercial foun",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "IT Director"
     }
   ],
   "kpi": {
     "searches_run": 20,
-    "results_per_search": 3.25,
-    "unique_jobs": 15,
-    "errors": 8
+    "results_per_search": 2.45,
+    "unique_jobs": 9,
+    "errors": 7
   },
   "recommendations": []
 }

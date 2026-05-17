@@ -4,6 +4,25 @@
 *Format: [ERR-YYYYMMDD-XXX]*
 
 ---
+## 2026-05-17 - apply_patch wrapper failed on unescaped Markdown backticks
+
+### Error
+A report-writing apply_patch call was wrapped in a JavaScript template literal that contained Markdown backticks. The backticks ended the string early, causing a SyntaxError before apply_patch ran.
+
+### Recovery
+- Verified no report file was changed by the failed call.
+- Retried the same patch with the Markdown backticks removed from the patch content.
+- Verified the report files existed, had expected line counts, and contained no em dash/en dash characters.
+
+### Suggested Fix
+When passing Markdown-heavy patches through the exec JavaScript wrapper, avoid raw backticks in the patch payload or escape them before calling apply_patch.
+
+### Metadata
+- Reproducible: yes
+- Related Files: /root/.openclaw/workspace-hr/reports/2026-05-17.md, /root/.openclaw/workspace-hr/reports/latest.md
+- Tags: apply-patch, exec-wrapper, markdown
+
+---
 
 ## 2026-04-29
 ### What I Did Wrong
@@ -679,5 +698,46 @@ Also compare config against current schema and remove deprecated keys before res
 - Reproducible: yes
 - Related Files: /root/.openclaw/openclaw.json, ~/.config/systemd/user/openclaw-gateway.service, service override files, config/model-router.json, /root/.openclaw/agents/*/sessions/sessions.json
 - Tags: openclaw-update, gateway, systemd, model-router, codex-oauth, config-schema
+
+---
+## 2026-05-17 - OpenClaw backup included live agent log SQLite files
+
+### Error
+Daily OpenClaw backup initially returned exit code 1 because `tar` read live files that changed during compression:
+- `.openclaw/agents/main/agent/codex-home/logs_2.sqlite`
+- `.openclaw/agents/main/agent/codex-home/logs_2.sqlite-wal`
+
+### Recovery
+- Verified the initial archive before retention cleanup and did not delete the previous backup until a valid archive existed.
+- Backed up `/root/.openclaw/scripts/backup.sh`.
+- Added an exclusion for `.openclaw/agents/*/agent/*/logs*.sqlite*`.
+- Reran the backup, confirmed exit code 0, verified the archive with `gzip -t` and `tar -tzf`, then retained only the newest archive.
+
+### Suggested Fix
+Keep transient live log SQLite files excluded from OpenClaw backups. For future backup changes, validate the newest archive before deleting the prior known-good backup.
+
+### Metadata
+- Reproducible: yes
+- Related Files: /root/.openclaw/scripts/backup.sh, /root/openclaw-backups
+- Tags: openclaw-backup, tar, retention, live-sqlite
+
+---
+## 2026-05-17 - Memory hygiene recent-note audit command failed
+
+### Error
+The weekly memory hygiene skill's recent-note audit printed blank line counts and /bin/bash reported {} missing because it used command substitution with {} inside find -exec echo.
+
+### Recovery
+- Reran the recent-note audit with a quoted loop that computes wc -l per file.
+- Verified top-level old daily notes remaining: 0.
+- Patched skills/cron/memory-hygiene/SKILL.md so future runs use find -exec sh -c with filenames passed as arguments.
+
+### Suggested Fix
+For find -exec commands that need shell redirection or command substitution, execute a shell loop with the filename passed as an argument instead of expanding {} inside the parent shell.
+
+### Metadata
+- Reproducible: yes
+- Related Files: /root/.openclaw/workspace/skills/cron/memory-hygiene/SKILL.md
+- Tags: memory-hygiene, cron-skill, find-exec
 
 ---
