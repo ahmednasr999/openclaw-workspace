@@ -22,6 +22,7 @@ import subprocess
 import sys
 from datetime import datetime
 from pathlib import Path
+from urllib.parse import unquote, urlparse
 from zoneinfo import ZoneInfo
 
 WORKSPACE = Path('/root/.openclaw/workspace')
@@ -125,7 +126,11 @@ def payload_from_record(record: dict):
         payload['image_s3key_required'] = True
         return payload
 
-    path = Path(asset_value)
+    if isinstance(asset_value, str) and asset_value.startswith('file://'):
+        parsed = urlparse(asset_value)
+        path = Path(unquote(parsed.path))
+    else:
+        path = Path(asset_value)
     if not path.exists() or not path.is_file():
         raise FileNotFoundError(f'Asset path does not exist: {asset_value}')
 

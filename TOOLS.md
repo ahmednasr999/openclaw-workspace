@@ -141,6 +141,7 @@ Never use Composio for Notion or Telegram when direct credentials exist.
 - Webhooks and voice-call plugins are high-risk external ingress. Keep them disabled unless explicitly approved; if enabled, use narrow session binding, strong unique secrets or allowlists, minimal tool policy, rate/timeout guards, and no external-write tools by default.
 - Active-memory live replies intentionally use the direct FTS patch, not the stock embedded LLM recall path. Do not re-enable semantic/vector active-memory in the live Telegram path until isolated tests prove p95 under 2s with no timeout leaks. See `docs/runtime-patches/active-memory-direct-fts.md`.
 - Memory LanceDB / vector memory belongs in isolated benchmark or pilot lanes first. Do not connect it to live Telegram active-memory or enable autoCapture until latency, timeout, privacy, and recall-quality checks pass.
+- LCM/offline compaction closeout requires more than queue creation or failed=0: verify processor runtime dependency paths, force-compact thresholds, remaining zero-summary candidate count, and duplicate session rows. Use aggregate SQLite health queries or CTEs with explicit timeouts, and ignore declaration-only `.d.ts` files when choosing TypeScript compile vs bundled dist runtime. <!-- dream-promoted 2026-05-18 -->
 - `apply_patch`, `read`, and similar workspace-scoped file tools can reject paths outside `/root/.openclaw/workspace`. For `/tmp`, lab directories, or other workspaces, treat that as a tool-scope limitation and verify repo state before reporting failure.
 
 ## JobZoom Protected Lane

@@ -2,16 +2,37 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-05-18T05:00:34.213525+02:00",
-    "duration_ms": 32169,
+    "generated_at": "2026-05-18T17:00:38.325376+02:00",
+    "duration_ms": 35605,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "f538946d",
+    "run_id": "d09fdc95",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": [
+    {
+      "id": "indeed-in-179f963fb2829f6c",
+      "source": "indeed",
+      "title": "Director - Commercial Management",
+      "company": "AECOM",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=179f963fb2829f6c",
+      "posted": "2026-05-18",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 13,
+      "match_keywords": [
+        "infrastructure",
+        "director"
+      ],
+      "raw_snippet": "**Company Description** **Work with Us. Change the World.**\n\n\nAt AECOM, we're delivering a better world. Whether improving your commute, keeping the lights on, providing access to clean water, or transforming skylines, our work helps people and communities thrive. We are the world's trusted infrastructure consulting firm, partnering with clients to solve the world\u2019s most complex challenges and build legacies for future generations.\n\n\nThere has never been a better time to be at AECOM. With accele",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Program Director"
+    },
     {
       "id": "indeed-in-a785c41e14c6d72a",
       "source": "indeed",
@@ -30,6 +51,28 @@
         "dubai"
       ],
       "raw_snippet": "Position: Head of Finance \\& Strategy\n\nReporting To: Founder / Director of Operations \\& Commercial Strategy  \nLocation: Dubai  \nSalary: Competitive \\+ performance\\-based bonus linked to financial targets\n\nRole Overview\n\nTashkeel is seeking a Head of Finance \\& Strategy to lead financial planning, performance management, and revenue structuring across Tashkeel and Tasmeem Tashkeel.\n\nThis is not a traditional finance role. It is a business\\-critical position focused on driving financial clarity, ",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Program Director"
+    },
+    {
+      "id": "indeed-in-7ead5818c74ba6a4",
+      "source": "indeed",
+      "title": "Senior Associate Director, Priority Banking",
+      "company": "Standard Chartered Bank",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=7ead5818c74ba6a4",
+      "posted": "2026-05-15",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 16,
+      "match_keywords": [
+        "ai",
+        "director",
+        "dubai"
+      ],
+      "raw_snippet": "**Requisition Number:** 52689\n**Job Location:** Dubai, ARE\n**Global Grade:** Band 6\n**Work Type:** Office Working\n**Employment Type:** Permanent\n**Posting Start Date:** 15/05/2026\n**Posting End Date:** 17/05/2026\n**:****Job Summary**\n\n\n**Strategy**  \n\n* Strategies for Revenue generation and business development\n* Business objectives and goals\n* Drive the Digital Agenda\n\n**Business**  \n\nAcquisition \\& Sales Management  \n\n* Generate new business to achieve defined targets in terms of no. of custom",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
@@ -57,93 +100,23 @@
       "search_title": "Director Digital Transformation"
     },
     {
-      "id": "indeed-in-cc9a432f97171188",
+      "id": "indeed-in-b92b53059da6df34",
       "source": "indeed",
-      "title": "DESIGN HEAD - Interior Fit Out",
-      "company": "3D Visualizer",
+      "title": "Account Partner Director",
+      "company": "Salesforce",
       "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=cc9a432f97171188",
-      "posted": "2026-05-15",
-      "seniority": "Other",
-      "domain_match": true,
-      "keyword_score": 16,
-      "match_keywords": [
-        "ai",
-        "leadership",
-        "integration"
-      ],
-      "raw_snippet": "**Job Overview:**  \nWe are seeking a highly skilled **Design Head** with a strong background in Interior Fit\\-Out and project leadership. This role is ideal for a creative visionary who has a passion for innovative, sustainable design and is eager to lead a team of talented designers. The Design Head will be responsible for overseeing the entire design process, ensuring seamless integration with client goals, managing design teams, and driving excellence in every project.\n\n**Key Responsibilities",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Head of Technology"
-    },
-    {
-      "id": "indeed-in-25e6054a3fe94690",
-      "source": "indeed",
-      "title": "Group CIO & Head of Family Office",
-      "company": "Megapolis Group",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=25e6054a3fe94690",
-      "posted": "2026-05-16",
+      "url": "https://ae.indeed.com/viewjob?jk=b92b53059da6df34",
+      "posted": "2026-05-18",
       "seniority": "C-Suite",
       "domain_match": false,
-      "keyword_score": 23,
-      "match_keywords": [
-        "executive",
-        "head of",
-        "growth",
-        "api"
-      ],
-      "raw_snippet": "Megapolis Group is a diversified investment holding with operating businesses and private investments across multiple sectors and jurisdictions. We are hiring on behalf of our founder \u2014 a senior executive to lead his family office and take full responsibility for the management, oversight, and growth of his personal and corporate capital.\n\nThis is a foundational hire. The structure is being built, and the right person will shape it. You will be the founder's right hand on everything related to c",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Head of IT"
-    },
-    {
-      "id": "indeed-in-ad3ec6f54c6641d3",
-      "source": "indeed",
-      "title": "Director",
-      "company": "Emirates NBD",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=ad3ec6f54c6641d3",
-      "posted": "2026-05-15",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 23,
+      "keyword_score": 26,
       "match_keywords": [
         "ai",
-        "director",
-        "uae",
-        "middle east",
-        "mena"
+        "crm",
+        "salesforce",
+        "director"
       ],
-      "raw_snippet": "**About ENBD**\n\nEmirates NBD is a market leader across the MENAT (Middle East, North Africa and T\u00fcrkiye) region with a presence in 13 countries, serving over 9 million customers. Emirates NBD is the leading financial services brand in the UAE with a Brand value of approximately USD 4 billion. We serve our customers and help them realise their financial objectives through a range of banking products and services including retail banking, corporate \\& institutional banking, Islamic banking, invest",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "IT Director"
-    },
-    {
-      "id": "indeed-in-b693304200fe8307",
-      "source": "indeed",
-      "title": "Director",
-      "company": "Emirates Islamic",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=b693304200fe8307",
-      "posted": "2026-05-15",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 23,
-      "match_keywords": [
-        "ai",
-        "director",
-        "uae",
-        "middle east",
-        "mena"
-      ],
-      "raw_snippet": "**About ENBD**\n\nEmirates NBD is a market leader across the MENAT (Middle East, North Africa and T\u00fcrkiye) region with a presence in 13 countries, serving over 9 million customers. Emirates NBD is the leading financial services brand in the UAE with a Brand value of approximately USD 4 billion. We serve our customers and help them realise their financial objectives through a range of banking products and services including retail banking, corporate \\& institutional banking, Islamic banking, invest",
+      "raw_snippet": "*To get the best candidate experience, please consider applying for a maximum of 3 roles within 12 months to ensure you are not duplicating efforts.*\n\nJob Category\n\n\nCustomer Success\nJob Details\n\n\n**About Salesforce**\n\nSalesforce is the \\#1 AI CRM, where humans with agents drive customer success together. Here, ambition meets action. Tech meets trust. And innovation isn\u2019t a buzzword \u2014 it\u2019s a way of life. The world of work as we know it is changing and we're looking for Trailblazers who are passi",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
@@ -196,13 +169,34 @@
       "filter_reason": null,
       "search_country": "Saudi Arabia",
       "search_title": "Chief Technology Officer"
+    },
+    {
+      "id": "indeed-in-28d549a7442b250b",
+      "source": "indeed",
+      "title": "Business Director, BDI Urology & Critical Care (UCC), META",
+      "company": "BD",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=28d549a7442b250b",
+      "posted": "2026-05-18",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 10,
+      "match_keywords": [
+        "director",
+        "saudi"
+      ],
+      "raw_snippet": "Now\n\n\nJob ID\nR\\-545056\nCategory\nGeneral Management Group\nLocation\nSaudi Arabia\nRegion\nEMEA\n  \n**We are the people who give possibilities purpose**\n\n\nBD is one of the largest global medical technology companies in the world. Advancing the world of health\u2122 is our Purpose, and it\u2019s no small feat. It takes the imagination and passion of all of us\u2014from design and engineering to the manufacturing and marketing of our billions of MedTech products per year\u2014to look at the impossible and find transformati",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "IT Director"
     }
   ],
   "kpi": {
     "searches_run": 20,
-    "results_per_search": 2.4,
+    "results_per_search": 3.3,
     "unique_jobs": 8,
-    "errors": 8
+    "errors": 6
   },
   "recommendations": []
 }
