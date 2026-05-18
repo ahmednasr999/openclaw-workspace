@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-13T21:05:50.571Z",
+  "updatedAt": "2026-05-17T23:27:57.133Z",
   "entries": {
     "memory:memory/archives/2026-03-07.md:29:56": {
       "key": "memory:memory/archives/2026-03-07.md:29:56",
@@ -327,13 +327,13 @@
       "endLine": 715,
       "source": "memory",
       "snippet": "2. Recent applications 3. Scanner results + trend 4. Email intel (all flagged) 5. Calendar 6. System health + Dashboard KPIs 7. Active tasks (overdue/due/completed) 8. Content Calendar status 9. Action items (3-5 with owners) 10. Notion page (Step 5 - BEFORE Telegram) 11. Telegram delivery (Step 6) - Model changed: MiniMax-M2.5 → **Sonnet 4.6** (follows instructions reliably) - Timeout: 270s → **600s** (10 minutes) - Health Monitor cron added at 8:00 AM (catches partial failures) - Notion sync moved BEFORE Telegram (prevents data loss on timeout) ### LinkedIn Post Published via Composio API ✅ - Post: \"Intel taught me precision\" - LIVE with image - URL: https://www.linked",
-      "recallCount": 28,
+      "recallCount": 29,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 13.079715725779533,
+      "totalScore": 14.079715725779533,
       "maxScore": 1,
       "firstRecalledAt": "2026-04-22T16:58:05.516Z",
-      "lastRecalledAt": "2026-05-04T23:52:37.692Z",
+      "lastRecalledAt": "2026-05-17T23:27:56.987Z",
       "queryHashes": [
         "6730f85c1352",
         "18b7c29566c3",
@@ -362,14 +362,16 @@
         "dfbfcc349d30",
         "3bcebc67d629",
         "a0a73cdd43be",
-        "2ef09ae3db17"
+        "2ef09ae3db17",
+        "f475c283a0bb"
       ],
       "recallDays": [
         "2026-04-22",
         "2026-04-23",
         "2026-04-24",
         "2026-04-29",
-        "2026-05-05"
+        "2026-05-05",
+        "2026-05-18"
       ],
       "conceptTags": [
         "overdue/due/completed",
@@ -2329,20 +2331,22 @@
       "endLine": 739,
       "source": "memory",
       "snippet": "- Composio session_id for LinkedIn: `over` ### Composio LinkedIn Integration Details - Connected account: `ca_yGwr2ocbcRZi` (ACTIVE since 2026-03-13) - Tools available: LINKEDIN_CREATE_LINKED_IN_POST, LINKEDIN_GET_MY_INFO, LINKEDIN_REGISTER_IMAGE_UPLOAD, LINKEDIN_GET_POST_CONTENT, LINKEDIN_DELETE_POST, LINKEDIN_INITIALIZE_IMAGE_UPLOAD - Image upload flow: local file → GitHub raw URL download in sandbox → upload_local_file → s3key → post with images[] - Note: Composio sandbox can't access /root/ directly - need to download from GitHub or copy via base64 ### Dashboard Auto-Update Wired - SIE updates KPI callout block after each run (daily 4 AM) - Morning briefing updates Stale Alerts callout",
-      "recallCount": 2,
+      "recallCount": 3,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 2,
+      "totalScore": 3,
       "maxScore": 1,
       "firstRecalledAt": "2026-04-29T06:44:29.926Z",
-      "lastRecalledAt": "2026-05-04T23:52:37.692Z",
+      "lastRecalledAt": "2026-05-17T23:27:56.987Z",
       "queryHashes": [
         "a0a73cdd43be",
-        "2ef09ae3db17"
+        "2ef09ae3db17",
+        "f475c283a0bb"
       ],
       "recallDays": [
         "2026-04-29",
-        "2026-05-05"
+        "2026-05-05",
+        "2026-05-18"
       ],
       "conceptTags": [
         "session-id",
@@ -2362,20 +2366,22 @@
       "endLine": 76,
       "source": "memory",
       "snippet": "- /root/.openclaw/workspace/linkedin-today.png - LinkedIn post copy for Monday Mar 2 is available and marked ready to publish. - LinkedIn cron self-heal reported both LinkedIn crons in running state after retry logic. ## Flush Addendum — 2026-03-02 08:14 UTC - LinkedIn Engagement Radar cron (9e3c6815) patched with hard URL validation. - New guardrail: only accepts true LinkedIn post URLs (linkedin.com/posts, linkedin.com/feed/update, linkedin.com/pulse). - Non-LinkedIn links are now auto-rejected and cron must return INSUFFICIENT VALID POSTS when valid candidates are fewer than 3. - This closes a quality bug where external articles were misclassified as commentable LinkedIn posts. ## Fl",
-      "recallCount": 2,
+      "recallCount": 3,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 2,
+      "totalScore": 3,
       "maxScore": 1,
       "firstRecalledAt": "2026-04-29T06:44:29.926Z",
-      "lastRecalledAt": "2026-05-04T23:52:37.692Z",
+      "lastRecalledAt": "2026-05-17T23:27:56.987Z",
       "queryHashes": [
         "a0a73cdd43be",
-        "2ef09ae3db17"
+        "2ef09ae3db17",
+        "f475c283a0bb"
       ],
       "recallDays": [
         "2026-04-29",
-        "2026-05-05"
+        "2026-05-05",
+        "2026-05-18"
       ],
       "conceptTags": [
         "self-heal",
@@ -2457,13 +2463,13 @@
       "endLine": 64,
       "source": "memory",
       "snippet": "- Patched `/root/.openclaw/workspace-jobzoom/scripts/daily_run.py` for better scoring observability: - gateway calls now record `elapsed_ms` in `gpt_api_calls.note`, including failures, - batch scoring logs attempt start, timeout budget, per-attempt duration, total batch duration, scores, and fallback duration. - Verified with `python3 -m py_compile /root/.openclaw/workspace-jobzoom/scripts/daily_run.py`. - Path drift task: confirmed `/root/.openclaw/workspace-jobzoom/scripts/jobs-source-linkedin-jobspy.py` is a symlink to `/root/.openclaw/workspace/scripts/jobs-source-linkedin-jobspy.py`, and `daily_run.py` calls `preflight_jobspy_path()` before scraping. Marked the drift guard task res",
-      "recallCount": 8,
+      "recallCount": 9,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 8,
+      "totalScore": 9,
       "maxScore": 1,
       "firstRecalledAt": "2026-05-01T02:39:36.670Z",
-      "lastRecalledAt": "2026-05-13T21:05:50.571Z",
+      "lastRecalledAt": "2026-05-17T23:27:57.133Z",
       "queryHashes": [
         "62d1011768ae",
         "97d8d9266e77",
@@ -2472,7 +2478,8 @@
         "83f965b9faa6",
         "ce9564d11535",
         "3588eba33b1e",
-        "f7ee14a29b8e"
+        "f7ee14a29b8e",
+        "a14f8cdb92b2"
       ],
       "recallDays": [
         "2026-05-01",
@@ -2481,7 +2488,8 @@
         "2026-05-05",
         "2026-05-07",
         "2026-05-10",
-        "2026-05-14"
+        "2026-05-14",
+        "2026-05-18"
       ],
       "conceptTags": [
         "gateway",
@@ -3124,18 +3132,20 @@
       "endLine": 51,
       "source": "memory",
       "snippet": "- Extracted content: Peter Steinberger (@steipete), tweet text “My favorite security advisories.” Media image text: “Steps To Reproduce: 1. Enable hooks.gmail.allowUnsafeExternalContent=true”. Timestamp 12:11 PM · Apr 23, 2026. Metrics at fetch: 56.3K views, 24 replies, 4 reposts, 433 likes, 53 bookmarks. ### JobZoom 0-live-jobs investigation - 2026-04-24 JobZoom run did not find 0 raw jobs. It found/scored many intermediates: 341 filtered raw jobs, 311 deduped/new jobs, 91 Pass1/all-scored jobs, 0 live matches, 3 shadow jobs. - Shadow file: `/root/.openclaw/workspace-jobzoom/reports/shadow/jobzoom-shadow-2026-04-24.json`. - Shadow verdicts were keyword fallback around 60-63; live threshold",
-      "recallCount": 1,
+      "recallCount": 2,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 1,
+      "totalScore": 2,
       "maxScore": 1,
       "firstRecalledAt": "2026-05-10T11:53:37.439Z",
-      "lastRecalledAt": "2026-05-10T11:53:37.439Z",
+      "lastRecalledAt": "2026-05-17T23:27:57.133Z",
       "queryHashes": [
-        "3588eba33b1e"
+        "3588eba33b1e",
+        "a14f8cdb92b2"
       ],
       "recallDays": [
-        "2026-05-10"
+        "2026-05-10",
+        "2026-05-18"
       ],
       "conceptTags": [
         "56.3k",
@@ -3155,18 +3165,20 @@
       "endLine": 20,
       "source": "memory",
       "snippet": "- Ahmed-Mac remains paired but disconnected, so file-transfer end-to-end smoke test is still pending. ## 2026-05-05 - JobZoom scoring recovery and final artifact delivery - JobZoom 2026-05-05 initially looked like 0 matches, but user-surfaced warning showed AI scoring returned non-JSON parse errors and fell back to keyword scoring. Treat this as materially degraded output, not a clean weak-market day. - Root cause found: oversized JobZoom scoring prompt caused the OpenClaw route to return LCM/file-reference/runtime-unavailable text while still HTTP 200. Lesson: HTTP 200/model-call success is not proof of usable scoring. Validate parseable JSON and report degraded scoring explicitly. - Patc",
-      "recallCount": 1,
+      "recallCount": 2,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 1,
+      "totalScore": 2,
       "maxScore": 1,
       "firstRecalledAt": "2026-05-10T11:53:37.439Z",
-      "lastRecalledAt": "2026-05-10T11:53:37.439Z",
+      "lastRecalledAt": "2026-05-17T23:27:57.133Z",
       "queryHashes": [
-        "3588eba33b1e"
+        "3588eba33b1e",
+        "a14f8cdb92b2"
       ],
       "recallDays": [
-        "2026-05-10"
+        "2026-05-10",
+        "2026-05-18"
       ],
       "conceptTags": [
         "ahmed-mac",
@@ -3398,6 +3410,99 @@
         "tools.md",
         "gpt-5.4",
         "gpt-5.5"
+      ]
+    },
+    "memory:memory/archive/2026-03/2026-03-18.md:203:229": {
+      "key": "memory:memory/archive/2026-03/2026-03-18.md:203:229",
+      "path": "memory/archive/2026-03/2026-03-18.md",
+      "startLine": 203,
+      "endLine": 229,
+      "source": "memory",
+      "snippet": "1. 🧠 Skills Registry - 30+ skills, trigger phrases, status, last used, dependencies 2. 🗺️ System Architecture Page - master page showing Crons → Scripts → Notion DBs → Telegram 3. 🎯 Goals & OKRs - GOALS.md as database with progress bars, milestones, key results 4. 📜 Scripts Inventory - 15+ Python scripts, what they do, which crons call them 5. 🧬 Master CV Data - editable from phone, auto-feeds CV builds **Tier 2 (nice to have):** 6. Config Dashboard (connections, tokens, API status) 7. Skip Patterns (why jobs get rejected, feeds scanner intelligence) 8. Git Activity (recent commits timeline) **Decision pending:** Ahmed hasn't confirmed yet. Recommended starting with Skills Registry.",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-17T23:27:56.774Z",
+      "lastRecalledAt": "2026-05-17T23:27:56.774Z",
+      "queryHashes": [
+        "d808347dfccd"
+      ],
+      "recallDays": [
+        "2026-05-18"
+      ],
+      "conceptTags": [
+        "goals.md",
+        "auto-feeds",
+        "skills",
+        "registry",
+        "trigger",
+        "phrases",
+        "status",
+        "last"
+      ]
+    },
+    "memory:memory/archive/2026-03/2026-03-18.md:227:250": {
+      "key": "memory:memory/archive/2026-03/2026-03-18.md:227:250",
+      "path": "memory/archive/2026-03/2026-03-18.md",
+      "startLine": 227,
+      "endLine": 250,
+      "source": "memory",
+      "snippet": "2. 🗺️ System Architecture: 20 components (Gateway, Telegram, Notion API, Scanner, Briefing orchestrator, key scripts, storage) 3. 🎯 Goals & OKRs: 6 strategic goals with progress %, milestones, key results, target dates 4. 📜 Scripts Inventory: 70 scripts with purpose, callers, dependencies, LOC, Notion sync functions 5. 🧬 Master CV Data: 8 sections from master-cv-data.md (1 failed: Professional Experience > 2000 char limit, needs chunking) 6. ⚙️ Config Dashboard: 16 services (Gmail EXPIRED, LinkedIn cookie EXPIRING, Tavily EXHAUSTED, rest connected) 7. 🚫 Skip Patterns: 6 scanner filter patterns (consulting roles, wrong level, wrong location, low salary, etc.) 8. 🔄 Git Activity: 30 recen",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-17T23:27:56.774Z",
+      "lastRecalledAt": "2026-05-17T23:27:56.774Z",
+      "queryHashes": [
+        "d808347dfccd"
+      ],
+      "recallDays": [
+        "2026-05-18"
+      ],
+      "conceptTags": [
+        "gateway",
+        "master-cv-data.md",
+        "architecture",
+        "components",
+        "telegram",
+        "notion",
+        "api",
+        "scanner"
+      ]
+    },
+    "memory:memory/archive/2026-04/2026-04-27.md:1:10": {
+      "key": "memory:memory/archive/2026-04/2026-04-27.md:1:10",
+      "path": "memory/archive/2026-04/2026-04-27.md",
+      "startLine": 1,
+      "endLine": 10,
+      "source": "memory",
+      "snippet": "## 2026-04-27 06:42 Cairo - JobZoom incident and report logic updates - JobZoom daily run was delayed, but completed successfully. Root cause of the visible delay was OpenClaw gateway memory pressure/OOM around 05:22 Cairo, followed by systemd restart, not a JobZoom logic failure. - Final JobZoom 2026-04-27 results: 150 searches, 150 successful, 0 failed, 341 eligible jobs after exclusions, 265 after dedup, 62 after Pass 1, 2 final AI matches at 70+, 2 CVs generated, report delivered successfully. - Delivery IDs from cron summary: Telegram summary 8792, PDF 8793, CV ZIP 8794. - JobZoom matched roles on 2026-04-27: OMPAY Program Manager in Oman, score 83; Johnson Controls Field Remediation",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-17T23:27:57.133Z",
+      "lastRecalledAt": "2026-05-17T23:27:57.133Z",
+      "queryHashes": [
+        "a14f8cdb92b2"
+      ],
+      "recallDays": [
+        "2026-05-18"
+      ],
+      "conceptTags": [
+        "gateway",
+        "pressure/oom",
+        "cairo",
+        "jobzoom",
+        "incident",
+        "report",
+        "logic",
+        "updates"
       ]
     }
   }

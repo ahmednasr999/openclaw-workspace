@@ -11296,3 +11296,131 @@
   Pipeline triggered in background
 ✅ SIE 360 data fresh (9h)
 ✅ Pipeline lock active (0m, still valid)
+🟡 2 crons with issues
+  Re-triggered cron: c7cf8709-4d01-4b9d-a8a3-64ebfe559d7f
+  Re-triggered cron: 543124b5-b2bd-445f-be84-d8407564cf9f
+✅ No pipeline failures today
+✅ RAM OK: 30%
+
+═══════════════════════════════════
+📊 Watchdog v3 Summary
+  Fixes applied: 3
+  Warnings: 1
+  Alerts (need human): 0
+═══════════════════════════════════
+
+📋 Actions taken:
+🔄 Jobs data was 535h stale → pipeline re-triggered
+
+🔍 Watchdog v3 - Detect → Fix → Report
+✅ Gateway running (PID: 393599)
+✅ Disk OK: 54%
+✅ active-tasks.md fresh (46h)
+🟡 Jobs data stale (537h) - re-running pipeline...
+  Pipeline triggered in background
+✅ SIE 360 data fresh (11h)
+✅ Pipeline lock active (0m, still valid)
+🟡 1 crons with issues
+  Re-triggered cron: c7cf8709-4d01-4b9d-a8a3-64ebfe559d7f
+✅ No pipeline failures today
+✅ RAM OK: 31%
+
+═══════════════════════════════════
+📊 Watchdog v3 Summary
+  Fixes applied: 2
+  Warnings: 1
+  Alerts (need human): 0
+═══════════════════════════════════
+
+📋 Actions taken:
+🔄 Jobs data was 537h stale → pipeline re-triggered
+
+🔍 Watchdog v3 - Detect → Fix → Report
+✅ Gateway running (PID: 393599)
+✅ Disk OK: 62%
+✅ active-tasks.md fresh (48h)
+🟡 Jobs data stale (539h) - re-running pipeline...
+  Pipeline triggered in background
+✅ SIE 360 data fresh (13h)
+✅ Pipeline lock active (0m, still valid)
+✅ All crons OK
+✅ No pipeline failures today
+✅ RAM OK: 30%
+
+═══════════════════════════════════
+📊 Watchdog v3 Summary
+  Fixes applied: 1
+  Warnings: 0
+  Alerts (need human): 0
+═══════════════════════════════════
+
+📋 Actions taken:
+🔄 Jobs data was 539h stale → pipeline re-triggered
+
+🔍 Watchdog v3 - Detect → Fix → Report
+✅ Gateway running (PID: 393599)
+✅ Disk OK: 62%
+🟡 active-tasks.md stale (50h) - touching to refresh
+🟡 Jobs data stale (541h) - re-running pipeline...
+  Pipeline triggered in background
+✅ SIE 360 data fresh (15h)
+✅ Pipeline lock active (0m, still valid)
+✅ All crons OK
+✅ No pipeline failures today
+✅ RAM OK: 30%
+
+═══════════════════════════════════
+📊 Watchdog v3 Summary
+  Fixes applied: 1
+  Warnings: 1
+  Alerts (need human): 0
+═══════════════════════════════════
+
+📋 Actions taken:
+🔄 Jobs data was 541h stale → pipeline re-triggered
+
+🔍 Watchdog v3 - Detect → Fix → Report
+✅ Gateway running (PID: 393599)
+✅ Disk OK: 65%
+✅ active-tasks.md fresh (2h)
+🟡 Jobs data stale (543h) - re-running pipeline...
+  Pipeline triggered in background
+✅ SIE 360 data fresh (17h)
+✅ Pipeline lock active (0m, still valid)
+🟡 1 crons with issues
+  Re-triggered cron: db37a524-9cba-453c-a59a-9042a268f7ea
+✅ No pipeline failures today
+✅ RAM OK: 27%
+
+═══════════════════════════════════
+📊 Watchdog v3 Summary
+  Fixes applied: 2
+  Warnings: 1
+  Alerts (need human): 0
+═══════════════════════════════════
+
+📋 Actions taken:
+🔄 Jobs data was 543h stale → pipeline re-triggered
+
+🔍 Watchdog v3 - Detect → Fix → Report
+✅ Gateway running (PID: 393599)
+✅ Disk OK: 66%
+✅ active-tasks.md fresh (4h)
+🟡 Jobs data stale (545h) - re-running pipeline...
+  Pipeline triggered in background
+✅ SIE 360 data fresh (19h)
+✅ Pipeline lock active (0m, still valid)
+✅ All crons OK
+✅ No pipeline failures today
+✅ RAM OK: 31%
+
+═══════════════════════════════════
+📊 Watchdog v3 Summary
+  Fixes applied: 1
+  Warnings: 0
+  Alerts (need human): 0
+═══════════════════════════════════
+
+📋 Actions taken:
+🔄 Jobs data was 545h stale → pipeline re-triggered
+

@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-05-17T09:16:33.468311+00:00",
-  "total_traces": 27,
+  "updated_at": "2026-05-18T01:04:30.797382+00:00",
+  "total_traces": 29,
   "by_category": {
     "content_post": [
       {
@@ -155,6 +155,13 @@
         "timestamp": "2026-05-17T12:16:00+03:00",
         "lesson": "For Model Guardian, slow OpenClaw CLI probes should use longer bounded timeouts, cache the expensive status JSON inside a run, and suppress the first transient timeout-only probe failure while still alerting immediately on config, model, or provider errors.",
         "severity": "medium"
+      },
+      {
+        "id": "trace-20260518-lcm-force-compact-backlog-unchanged",
+        "agent": "CTO",
+        "timestamp": "2026-05-18T04:00:00+03:00",
+        "lesson": "For LCM force-compact closeout, verify remaining zero-summary candidate count and duplicate session rows, not just exit status or failed=0; the processor needs conversation_id targeting or duplicate-session reconciliation before declaring the backlog processed.",
+        "severity": "medium"
       }
     ],
     "cv_creation": [
@@ -206,6 +213,13 @@
         "agent": "HR",
         "timestamp": "2026-05-17T08:06:00+03:00",
         "lesson": "When passing Markdown-heavy patches through the exec JavaScript wrapper, avoid raw backticks in the patch payload or escape them before calling apply_patch.",
+        "severity": "medium"
+      },
+      {
+        "id": "trace-20260518-lcm-nightly-raw-aggregate-stall",
+        "agent": "CTO",
+        "timestamp": "2026-05-18T03:12:00+03:00",
+        "lesson": "For LCM nightly reporting, use aggregate subqueries or CTEs for active/stale conversation counts, keep raw join output only as optional audit parity, and wrap SQLite health checks with explicit timeouts to avoid orphaned cron processes.",
         "severity": "medium"
       }
     ]
@@ -399,6 +413,20 @@
       "category": "config_system",
       "lesson": "For Model Guardian, slow OpenClaw CLI probes should use longer bounded timeouts, cache the expensive status JSON inside a run, and suppress the first transient timeout-only probe failure while still alerting immediately on config, model, or provider errors.",
       "timestamp": "2026-05-17T12:16:00+03:00"
+    },
+    {
+      "id": "trace-20260518-lcm-nightly-raw-aggregate-stall",
+      "agent": "CTO",
+      "category": "tool_usage",
+      "lesson": "For LCM nightly reporting, use aggregate subqueries or CTEs for active/stale conversation counts, keep raw join output only as optional audit parity, and wrap SQLite health checks with explicit timeouts to avoid orphaned cron processes.",
+      "timestamp": "2026-05-18T03:12:00+03:00"
+    },
+    {
+      "id": "trace-20260518-lcm-force-compact-backlog-unchanged",
+      "agent": "CTO",
+      "category": "config_system",
+      "lesson": "For LCM force-compact closeout, verify remaining zero-summary candidate count and duplicate session rows, not just exit status or failed=0; the processor needs conversation_id targeting or duplicate-session reconciliation before declaring the backlog processed.",
+      "timestamp": "2026-05-18T04:00:00+03:00"
     }
   ]
 }

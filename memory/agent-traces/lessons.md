@@ -1,6 +1,6 @@
 # Agent Lessons Learned
 
-*Auto-curated from agent traces. Updated: 2026-05-17*
+*Auto-curated from agent traces. Updated: 2026-05-18*
 
 ## Communication
 - ✅ CLI uses --target not --to — exit 0 does not mean success. Always verify actual delivery (CEO, 2026-03-30)
@@ -22,6 +22,7 @@
 - ❌ For offline LCM compaction, ignore declaration-only .d.ts files when deciding whether TypeScript compilation is required; if no implementation .ts sources exist, use the bundled dist runtime. (CTO, 2026-05-17)
 - ❌ For Telegram DM processing failures, check the target session for stale active tool calls and verify a real later delivery before declaring recovery; also inspect host-level restart storms when gateway liveness reports CPU or event-loop delay. (CTO, 2026-05-17)
 - ❌ For Model Guardian, slow OpenClaw CLI probes should use longer bounded timeouts, cache the expensive status JSON inside a run, and suppress the first transient timeout-only probe failure while still alerting immediately on config, model, or provider errors. (CTO, 2026-05-17)
+- ❌ For LCM force-compact closeout, verify remaining zero-summary candidate count and duplicate session rows, not just exit status or failed=0; the processor needs conversation_id targeting or duplicate-session reconciliation before declaring the backlog processed. (CTO, 2026-05-18)
 
 ## Content Post
 - ✅ Always validate LinkedIn post length against 3000 char limit before posting (CMO, 2026-03-23)
@@ -46,4 +47,5 @@
 
 ## Tool Usage
 - ❌ When passing Markdown-heavy patches through the exec JavaScript wrapper, avoid raw backticks in the patch payload or escape them before calling apply_patch. (HR, 2026-05-17)
+- ❌ For LCM nightly reporting, use aggregate subqueries or CTEs for active/stale conversation counts, keep raw join output only as optional audit parity, and wrap SQLite health checks with explicit timeouts to avoid orphaned cron processes. (CTO, 2026-05-18)
 
