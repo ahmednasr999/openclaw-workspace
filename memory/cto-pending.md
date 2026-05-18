@@ -1,9 +1,6 @@
-# CTO Pending Issues — Updated 2026-05-17 09:58 Cairo
+# CTO Pending Issues — Updated 2026-05-18 11:17 Cairo
 
 ## Open
-
-- **Weekly Self-Health Check cron timed out on 2026-05-17** — Cron `c7cf8709-4d01-4b9d-a8a3-64ebfe559d7f` ended with `cron: job execution timed out (last phase: tool-execution-started)`. The gateway is live and the Ahmed DM lane recovered; this is a remaining follow-up to rerun or tighten the health-check path so it does not exceed the cron timeout.
-
 
 1. **daily-backup freshness alert is cleared; backup path review remains** — `/tmp/openclaw-backup.log` advanced to `2026-04-28 20:00:01 +0300`, and the log shows a successful push to `origin workspace-sync` at 19:53. The immediate 48-hour freshness threshold is no longer breached. Keep the older branch-target review only as a follow-up if needed, since the latest evidence shows current backup activity on `workspace-sync`.
 
@@ -75,6 +72,8 @@ Heartbeat note 2026-05-01 07:48 Cairo — Gateway 200, latest commit `846ed2a6 c
 
 ## Cleared / Removed From Pending
 
+- **Stale root-level untracked heartbeat blocker from 2026-05-18 topic follow-up** — Cleared on 2026-05-18 11:14 Cairo. Re-ran the root-only checks with `git ls-files --others --exclude-standard -- ':/*'` and the directory variant; both returned no entries. The earlier Telegram blocker was stale, not current repo state.
+- **Weekly Self-Health Check cron timeout from 2026-05-17** — Cleared on 2026-05-18 11:16 Cairo. `openclaw cron list --json` reports cron `c7cf8709-4d01-4b9d-a8a3-64ebfe559d7f` as `ok` with the last run about 13 hours ago.
 - **Nested untracked workspace work products from 2026-05-16** — Cleared on 2026-05-16 13:18 Cairo. Reviewed and tracked archive manifests/backup records, daily intel, the Google skills adaptation plan, the coding-agent goal prompt, and the OpenClaw skill template. Removed empty placeholder directories and tightened the generated HTML-slides planning ignore. Verified broad `git ls-files --others --exclude-standard --directory` returns no entries.
 - **Root-only untracked workspace blocker from 2026-05-15** — Cleared on 2026-05-16 13:12 Cairo. Moved `TOOLS.md.bak-20260515-openclaw-update-recovery` to ignored `backups/20260515-openclaw-update-recovery/`, added ignore rules for local inbox/scratch state (`email-inbox-last*.json`, `email-review-*/`, `lab/`, `labs/`, `lcm.db`), and verified `git ls-files --others --exclude-standard -- ':/*' | awk 'index($0,"/")==0'` returns no root-only untracked files.
 - **Previous root-level untracked `brand/` heartbeat blocker** — Cleared as of 2026-04-24 22:03 Cairo. `brand/` was inspected, documented with `brand/README.md`, secret-scanned clean, committed, pushed to `origin/workspace-sync`, and verified clean.

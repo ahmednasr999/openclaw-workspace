@@ -21,6 +21,7 @@ NOTION_DB_ID = "3268d599-a162-8188-b531-e25071653203"
 NOTION_VERSION = "2022-06-28"
 WORKSPACE_ROOT = "/root/.openclaw/workspace"
 CAIRO_TZ = ZoneInfo("Africa/Cairo")
+OPENCLAW_CRON_LIST_TIMEOUT_SECONDS = 45
 
 
 def load_notion_token():
@@ -123,63 +124,47 @@ class CronDashboardUpdater:
         """Parse openclaw native crons via 'openclaw cron list'"""
         try:
             result = subprocess.run(
-                ["openclaw", "cron", "list"],
+                ["openclaw", "cron", "list", "--json"],
                 capture_output=True,
                 text=True,
-                timeout=15,
+                timeout=OPENCLAW_CRON_LIST_TIMEOUT_SECONDS,
             )
             if result.returncode != 0:
                 return []
 
             crons = []
-            lines = result.stdout.split("\n")
-            
-            # Find header line with dashes
-            header_idx = -1
-            for i, line in enumerate(lines):
-                if "---" in line:
-                    header_idx = i
-                    break
-            
-            if header_idx < 0:
-                return []
+            payload = json.loads(result.stdout or "{}")
 
-            # Parse data rows after header
-            for line in lines[header_idx + 1:]:
-                line = line.strip()
-                if not line or "---" in line:
+            for job in payload.get("jobs", []):
+                if not isinstance(job, dict):
                     continue
 
-                # Extract fields from space-separated table
-                # Format: ID | Name | Schedule | Next | Last | Status | ...
-                parts = line.split()
-                if len(parts) < 3:
+                cron_id = str(job.get("id", "")).strip()
+                if not cron_id:
                     continue
 
-                # Use regex to split more intelligently
-                # Look for UUID pattern (ID), then name, then schedule components
-                import re
-                id_match = re.match(r'^([a-f0-9\-]+|[\w\-]+)\s+(.+)', line)
-                if not id_match:
-                    continue
-                
-                cron_id = id_match.group(1)
-                rest = id_match.group(2)
-                
-                # Extract name (everything until first "cron" keyword)
-                name_match = re.match(r'^(.+?)\s+cron\s+(.+)', rest)
-                if name_match:
-                    name = name_match.group(1).strip()
-                    schedule_part = name_match.group(2).strip()
-                    
-                    crons.append({
-                        "type": "openclaw",
-                        "cron_id": cron_id,
-                        "name": name,
-                        "schedule": schedule_part,
-                        "command": f"openclaw cron {cron_id}",
-                    })
-            
+                name = str(job.get("name") or cron_id).strip()
+                schedule = job.get("schedule") or {}
+                schedule_kind = schedule.get("kind") if isinstance(schedule, dict) else ""
+                if schedule_kind == "cron":
+                    expr = str(schedule.get("expr", "")).strip()
+                    tz = str(schedule.get("tz", "")).strip()
+                    schedule_part = f"cron {expr}" + (f" @ {tz}" if tz else "")
+                elif schedule_kind == "every":
+                    schedule_part = f"every {schedule.get('everyMs')}ms"
+                elif schedule_kind == "at":
+                    schedule_part = f"at {schedule.get('at')}"
+                else:
+                    schedule_part = json.dumps(schedule, sort_keys=True)
+
+                crons.append({
+                    "type": "openclaw",
+                    "cron_id": cron_id,
+                    "name": name,
+                    "schedule": schedule_part,
+                    "command": f"openclaw cron {cron_id}",
+                })
+
             return crons
         except Exception as e:
             self.results["errors"].append(f"Error parsing openclaw crons: {str(e)}")

@@ -23,6 +23,7 @@
 - ❌ For Telegram DM processing failures, check the target session for stale active tool calls and verify a real later delivery before declaring recovery; also inspect host-level restart storms when gateway liveness reports CPU or event-loop delay. (CTO, 2026-05-17)
 - ❌ For Model Guardian, slow OpenClaw CLI probes should use longer bounded timeouts, cache the expensive status JSON inside a run, and suppress the first transient timeout-only probe failure while still alerting immediately on config, model, or provider errors. (CTO, 2026-05-17)
 - ❌ For LCM force-compact closeout, verify remaining zero-summary candidate count and duplicate session rows, not just exit status or failed=0; the processor needs conversation_id targeting or duplicate-session reconciliation before declaring the backlog processed. (CTO, 2026-05-18)
+- ❌ For cron dashboard discovery, use `openclaw cron list --json` with a bounded load-tolerant timeout; do not parse the human table output or treat system-only discovery as complete. (CTO, 2026-05-18)
 
 ## Content Post
 - ✅ Always validate LinkedIn post length against 3000 char limit before posting (CMO, 2026-03-23)
@@ -34,6 +35,7 @@
 
 ## External Publish Failure
 - ❌ Add final duplicate guard against linkedin-posting-success.jsonl and live/tool state immediately before any external LinkedIn publish call. (CMO/main recovery, 2026-05-02)
+- ❌ For LinkedIn autoposter assets, normalize file:// approved asset URIs to decoded local filesystem paths before Path.exists, and after a payload-prep failure mark the exact Notion page failed without sending duplicate Telegram alerts. (CMO, 2026-05-18)
 
 ## Jobzoom Daily Scan
 - ❌ Investigate scoring endpoint response body before changing thresholds; keep fallback visible in daily summary. Use first-class message tool for delivery recovery when script CLI delivery fails. (JobZoom/HR lane, 2026-05-05)

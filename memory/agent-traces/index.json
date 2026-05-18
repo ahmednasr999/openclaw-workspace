@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-05-18T01:04:30.797382+00:00",
-  "total_traces": 29,
+  "updated_at": "2026-05-18T08:18:00.317462+00:00",
+  "total_traces": 31,
   "by_category": {
     "content_post": [
       {
@@ -162,6 +162,13 @@
         "timestamp": "2026-05-18T04:00:00+03:00",
         "lesson": "For LCM force-compact closeout, verify remaining zero-summary candidate count and duplicate session rows, not just exit status or failed=0; the processor needs conversation_id targeting or duplicate-session reconciliation before declaring the backlog processed.",
         "severity": "medium"
+      },
+      {
+        "id": "trace-20260518-cron-dashboard-openclaw-json-discovery",
+        "agent": "CTO",
+        "timestamp": "2026-05-18T11:17:00+03:00",
+        "lesson": "For cron dashboard discovery, use `openclaw cron list --json` with a bounded load-tolerant timeout; do not parse the human table output or treat system-only discovery as complete.",
+        "severity": "medium"
       }
     ],
     "cv_creation": [
@@ -180,6 +187,13 @@
         "timestamp": "2026-05-02T23:40:52.446181+03:00",
         "lesson": "Add final duplicate guard against linkedin-posting-success.jsonl and live/tool state immediately before any external LinkedIn publish call.",
         "severity": "high"
+      },
+      {
+        "id": "trace-20260518-linkedin-file-uri-asset-payload-failure",
+        "agent": "CMO",
+        "timestamp": "2026-05-18T08:04:00+03:00",
+        "lesson": "For LinkedIn autoposter assets, normalize file:// approved asset URIs to decoded local filesystem paths before Path.exists, and after a payload-prep failure mark the exact Notion page failed without sending duplicate Telegram alerts.",
+        "severity": "medium"
       }
     ],
     "jobzoom_daily_scan": [
@@ -427,6 +441,20 @@
       "category": "config_system",
       "lesson": "For LCM force-compact closeout, verify remaining zero-summary candidate count and duplicate session rows, not just exit status or failed=0; the processor needs conversation_id targeting or duplicate-session reconciliation before declaring the backlog processed.",
       "timestamp": "2026-05-18T04:00:00+03:00"
+    },
+    {
+      "id": "trace-20260518-linkedin-file-uri-asset-payload-failure",
+      "agent": "CMO",
+      "category": "external_publish_failure",
+      "lesson": "For LinkedIn autoposter assets, normalize file:// approved asset URIs to decoded local filesystem paths before Path.exists, and after a payload-prep failure mark the exact Notion page failed without sending duplicate Telegram alerts.",
+      "timestamp": "2026-05-18T08:04:00+03:00"
+    },
+    {
+      "id": "trace-20260518-cron-dashboard-openclaw-json-discovery",
+      "agent": "CTO",
+      "category": "config_system",
+      "lesson": "For cron dashboard discovery, use `openclaw cron list --json` with a bounded load-tolerant timeout; do not parse the human table output or treat system-only discovery as complete.",
+      "timestamp": "2026-05-18T11:17:00+03:00"
     }
   ]
 }
