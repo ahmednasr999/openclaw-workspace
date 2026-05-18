@@ -2130,3 +2130,56 @@ Node.js v22.22.1
 ## Calendar - Today's Events
 *Calendar API unavailable (gog v0.12.0 bug - tracking fix)*
 
+=== Morning Brief - 2026-05-18 06:00 AM ===
+
+## Claude 2x Usage Reminder
+
+## Job Radar (from Tavily)
+[search-router] Tavily unavailable, falling back to local SearXNG: Tavily Search failed (402): {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+## Sources
+
+_(provider: searxng)_
+
+- **83 pmo Jobs in United Arab Emirates, January 2026 | Glassdoor**
+  https://www.glassdoor.com/Job/united-arab-emirates-pmo-jobs-SRCH_IL.0,20_IN6_KO21,24.htm
+  The top companies hiring now are Blue Book Global, Atlantis Dubai, Unique Group, Emirates Nuclear Energy Company, Julphar, BlackStone eIT, VaporVM, Dicetek LLC, Omnix International, Schneider Electric
+
+- **Justice Integrity Report - March 2026 News (Pt. 1)**
+  https://www.justice-integrity.org/news-reports/2167-march-2026-news-pt-1
+  The United Arab Emirates defense ministry said its air defenses “engaged” 9 ballistic missiles and 33 drones launched by Iran on Saturday, and Saudi Arabia’s defense ministry reported a handful of drone interceptions during the day.
+
+- **‏Rawan Masri‏ - ‏PMO & Program Management Lead - LinkedIn**
+  https://sa.linkedin.com/in/rawan-masri-9403b8123
+  PMO & Program Management Lead | Governance | Delivery Excellence | Aviation & Digital Transformation ... Dubai, United Arab Emirates. رسم بياني ‏Freightos ...
+
+- **Head Of Digital Transformation Jobs in UAE (May 2026) - Bayt.com**
+  https://www.bayt.com/en/uae/jobs/head-of-digital-transformation-jobs/
+  MashreqBank JOB DESCRIPTION 1 Job Title Program Director, GTB Digital Transformation – PMO Department CIBG - GTB Direct Supervisor…
+
+- **waifu-diffusion/tokenizer/vocab.json at main · jack-op11 ...**
+  https://github.com/jack-op11/waifu-diffusion/blob/main/tokenizer/vocab.json
+  Contribute to jack-op11/waifu-diffusion development by creating an account on GitHub.
+
+## Gmail - New Opportunities
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/root/.openclaw/workspace/scripts/gmail-scan.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+
+## Calendar - Today's Events
+*Calendar API unavailable (gog v0.12.0 bug - tracking fix)*
+
