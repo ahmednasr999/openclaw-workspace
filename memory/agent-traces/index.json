@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-05-19T00:24:22.166217+00:00",
-  "total_traces": 32,
+  "updated_at": "2026-05-19T12:53:01.325987+00:00",
+  "total_traces": 34,
   "by_category": {
     "content_post": [
       {
@@ -169,6 +169,13 @@
         "timestamp": "2026-05-18T11:17:00+03:00",
         "lesson": "For cron dashboard discovery, use `openclaw cron list --json` with a bounded load-tolerant timeout; do not parse the human table output or treat system-only discovery as complete.",
         "severity": "medium"
+      },
+      {
+        "id": "trace-20260519-lossless-v010-plugin-metadata-drift",
+        "agent": "NASR/CTO maintenance",
+        "timestamp": "2026-05-19T15:55:00+03:00",
+        "lesson": "For plugin metadata drift after a targeted plugin upgrade, do not run a broad update or trust a dry-run that points at the stale spec. Back up installs.json, use an exact pinned install with --force --pin for the intended version, refresh the registry, restart the gateway, then verify inspect/list/status.",
+        "severity": "medium"
       }
     ],
     "cv_creation": [
@@ -194,6 +201,13 @@
         "timestamp": "2026-05-18T08:04:00+03:00",
         "lesson": "For LinkedIn autoposter assets, normalize file:// approved asset URIs to decoded local filesystem paths before Path.exists, and after a payload-prep failure mark the exact Notion page failed without sending duplicate Telegram alerts.",
         "severity": "medium"
+      },
+      {
+        "id": "trace-20260519-linkedin-autoposter-toolpath-missing",
+        "agent": "CMO",
+        "timestamp": "2026-05-19T08:03:00+03:00",
+        "lesson": "For LinkedIn autoposter cron runs, verify the active session exposes the LinkedIn create-post and Composio workbench tools before the scheduled publish window; if the READY_TO_POST gate output is missing after a row moves to Publishing, mark the exact page Failed, verify Telegram delivery, and do not call LinkedIn from an unverified tool path.",
+        "severity": "high"
       }
     ],
     "jobzoom_daily_scan": [
@@ -469,6 +483,20 @@
       "category": "tool_usage",
       "lesson": "For long-running backup commands launched through the exec JavaScript wrapper, do not store possibly undefined fields after command start; if wrapper serialization fails, check for already-running backup/tar/gzip processes and remove only verified incomplete archives before retrying.",
       "timestamp": "2026-05-19T03:22:00+03:00"
+    },
+    {
+      "id": "trace-20260519-linkedin-autoposter-toolpath-missing",
+      "agent": "CMO",
+      "category": "external_publish_failure",
+      "lesson": "For LinkedIn autoposter cron runs, verify the active session exposes the LinkedIn create-post and Composio workbench tools before the scheduled publish window; if the READY_TO_POST gate output is missing after a row moves to Publishing, mark the exact page Failed, verify Telegram delivery, and do not call LinkedIn from an unverified tool path.",
+      "timestamp": "2026-05-19T08:03:00+03:00"
+    },
+    {
+      "id": "trace-20260519-lossless-v010-plugin-metadata-drift",
+      "agent": "NASR/CTO maintenance",
+      "category": "config_system",
+      "lesson": "For plugin metadata drift after a targeted plugin upgrade, do not run a broad update or trust a dry-run that points at the stale spec. Back up installs.json, use an exact pinned install with --force --pin for the intended version, refresh the registry, restart the gateway, then verify inspect/list/status.",
+      "timestamp": "2026-05-19T15:55:00+03:00"
     }
   ]
 }

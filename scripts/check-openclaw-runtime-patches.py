@@ -7,8 +7,11 @@ from __future__ import annotations
 
 from pathlib import Path
 import json
+import os
 import subprocess
 import sys
+
+DIST = Path(os.environ.get("OPENCLAW_DIST_DIR", "/usr/lib/node_modules/openclaw/dist"))
 
 CHECKS = [
     {
@@ -16,7 +19,7 @@ CHECKS = [
         "mode": "absent",
         "needle": "Automatic session resume failed, so sending the status directly.",
         "paths": [
-            Path("/usr/lib/node_modules/openclaw/dist"),
+            DIST,
             Path("/root/openclaw/dist"),
         ],
         "alert": (
@@ -29,7 +32,7 @@ CHECKS = [
         "mode": "present",
         "needle": "directFts=1",
         "paths": [
-            Path("/usr/lib/node_modules/openclaw/dist/extensions/active-memory/index.js"),
+            DIST / "extensions" / "active-memory" / "index.js",
         ],
         "alert": (
             "Active-memory direct FTS patch is missing. Do not enable semantic/vector "
@@ -47,7 +50,7 @@ def iter_files(path: Path):
 
 
 def check_runtime_context_plain_header_smoke(failures: list[str]) -> None:
-    dist = Path("/usr/lib/node_modules/openclaw/dist")
+    dist = DIST
     internal_candidates = sorted(dist.glob("internal-runtime-context-*.js"))
     sanitizer_candidates = sorted(dist.glob("sanitize-user-facing-text-*.js"))
     runtime_prompt_candidates = sorted(dist.glob("runtime-context-prompt-*.js"))
@@ -124,7 +127,7 @@ if (!clean.startsWith('Old async log callback only')) {{
 
 
 def check_queued_message_metadata_sanitizer_smoke(failures: list[str]) -> None:
-    dist = Path("/usr/lib/node_modules/openclaw/dist")
+    dist = DIST
     sanitizer_candidates = sorted(dist.glob("sanitize-user-facing-text-*.js"))
     queue_candidates = sorted(dist.glob("queue-*.js"))
     if not sanitizer_candidates:
@@ -179,7 +182,7 @@ if (clean !== 'Hourly is too much') {{
 
 
 def check_cron_envelope_sanitizer_smoke(failures: list[str]) -> None:
-    dist = Path("/usr/lib/node_modules/openclaw/dist")
+    dist = DIST
     sanitizer_candidates = sorted(dist.glob("sanitize-user-facing-text-*.js"))
     if not sanitizer_candidates:
         failures.append("FAIL: cron prompt envelope sanitizer smoke\nsanitize-user-facing-text dist file missing")
@@ -206,7 +209,7 @@ if (clean !== '') {{
 
 
 def check_active_memory_queued_system_sanitizer_smoke(failures: list[str]) -> None:
-    dist = Path("/usr/lib/node_modules/openclaw/dist")
+    dist = DIST
     sanitizer_candidates = sorted(dist.glob("sanitize-user-facing-text-*.js"))
     if not sanitizer_candidates:
         failures.append("FAIL: active-memory queued system sanitizer smoke\nsanitize-user-facing-text dist file missing")
@@ -251,7 +254,7 @@ if (clean !== 'https://github.com/OpenSenseNova/SenseNova-U1') {{
 
 
 def check_restart_sentinel_sanitizer_smoke(failures: list[str]) -> None:
-    dist = Path("/usr/lib/node_modules/openclaw/dist")
+    dist = DIST
     sanitizer_candidates = sorted(dist.glob("sanitize-user-facing-text-*.js"))
     if not sanitizer_candidates:
         failures.append("FAIL: restart-sentinel sanitizer smoke\nsanitize-user-facing-text dist file missing")
@@ -291,7 +294,7 @@ if (clean !== '') {{
 
 
 def check_reply_context_metadata_sanitizer_smoke(failures: list[str]) -> None:
-    dist = Path("/usr/lib/node_modules/openclaw/dist")
+    dist = DIST
     sanitizer_candidates = sorted(dist.glob("sanitize-user-facing-text-*.js"))
     if not sanitizer_candidates:
         failures.append("FAIL: reply-context metadata sanitizer smoke\nsanitize-user-facing-text dist file missing")
@@ -341,7 +344,7 @@ if (clean !== 'Why you sent this now!') {{
 
 
 def check_context_engine_turn_maintenance_silent(failures: list[str]) -> None:
-    dist = Path("/usr/lib/node_modules/openclaw/dist")
+    dist = DIST
     maintenance_candidates = sorted(dist.glob("context-engine-maintenance-*.js"))
     task_registry_candidates = sorted(dist.glob("task-registry-*.js"))
     if not maintenance_candidates:

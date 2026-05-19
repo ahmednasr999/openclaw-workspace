@@ -72,6 +72,7 @@ Heartbeat note 2026-05-01 07:48 Cairo — Gateway 200, latest commit `846ed2a6 c
 
 ## Cleared / Removed From Pending
 
+- **Stale root-level untracked heartbeat blocker from 2026-05-19 topic follow-up** — Cleared on 2026-05-19 09:56 Cairo. Re-ran direct root-only checks with `git ls-files --others --exclude-standard -- ':/*' | awk 'index($0,"/")==0'`; no root-level untracked files were present. Broad untracked output only showed generated nested runtime files: `intel/intel-2026-05-19.md` and `logs/disk-guard/cleanup-20260519-070707.log`.
 - **Stale root-level untracked heartbeat blocker from 2026-05-18 topic follow-up** — Cleared on 2026-05-18 11:14 Cairo. Re-ran the root-only checks with `git ls-files --others --exclude-standard -- ':/*'` and the directory variant; both returned no entries. The earlier Telegram blocker was stale, not current repo state.
 - **Weekly Self-Health Check cron timeout from 2026-05-17** — Cleared on 2026-05-18 11:16 Cairo. `openclaw cron list --json` reports cron `c7cf8709-4d01-4b9d-a8a3-64ebfe559d7f` as `ok` with the last run about 13 hours ago.
 - **Nested untracked workspace work products from 2026-05-16** — Cleared on 2026-05-16 13:18 Cairo. Reviewed and tracked archive manifests/backup records, daily intel, the Google skills adaptation plan, the coding-agent goal prompt, and the OpenClaw skill template. Removed empty placeholder directories and tightened the generated HTML-slides planning ignore. Verified broad `git ls-files --others --exclude-standard --directory` returns no entries.
@@ -83,6 +84,8 @@ Heartbeat note 2026-05-01 07:48 Cairo — Gateway 200, latest commit `846ed2a6 c
 Heartbeat note 2026-04-24 22:03 Cairo — Cleared root-level untracked `brand/` blocker. Inspected files, added `brand/README.md`, ran targeted secret-pattern scan with no matches, committed only `brand/` via clean temp clone, pushed `871fec4a docs(brand): track visual prompt library` to `origin/workspace-sync`, reset local HEAD to remote, and verified `git status --short -- brand` is clean with no root-level untracked paths.
 
 ## Heartbeat notes
+
+- 2026-05-19 09:56 Cairo — Gateway 200/live, latest commit `6837f140 chore(auto): daily data commit (35 files)` from 07:00 Cairo, cron-dashboard log present with 0 ERRORs in the last 100 lines, disk 66%, and backup log fresh at `2026-05-18 20:00:17 +0300` with successful push to `origin workspace-sync`. Direct root-only untracked check returned no entries. Current broad untracked files are generated nested runtime outputs only: `intel/intel-2026-05-19.md` and `logs/disk-guard/cleanup-20260519-070707.log`. Watchdog cron log showed no error/failed/timeout lines in the last 100 lines.
 
 - 2026-05-15 07:47 Cairo — heartbeat blocked by root-level untracked workspace paths listed above. Direct checks: gateway 200, latest commit `88beff5e chore(auto): daily data commit (32 files)` (~47m old), cron-dashboard log present with 0 ERRORs in the last 100 lines, disk 53%, and persistent backup log fresh at `2026-05-14 20:00:15 +0300` (~11.8h old). Untrusted NASR Doctor cron warnings were not confirmed by direct heartbeat evidence: watchdog cron log showed 0 matching error/timed-out lines in the last 100 lines, with only a re-trigger notice found for one reported cron ID.
 

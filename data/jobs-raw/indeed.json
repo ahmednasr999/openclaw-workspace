@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-05-19T05:00:38.297728+02:00",
-    "duration_ms": 36611,
+    "generated_at": "2026-05-19T17:00:37.199604+02:00",
+    "duration_ms": 35661,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "0e9577e6",
+    "run_id": "1c58fe4b",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -51,28 +51,6 @@
         "dubai"
       ],
       "raw_snippet": "Position: Head of Finance \\& Strategy\n\nReporting To: Founder / Director of Operations \\& Commercial Strategy  \nLocation: Dubai  \nSalary: Competitive \\+ performance\\-based bonus linked to financial targets\n\nRole Overview\n\nTashkeel is seeking a Head of Finance \\& Strategy to lead financial planning, performance management, and revenue structuring across Tashkeel and Tasmeem Tashkeel.\n\nThis is not a traditional finance role. It is a business\\-critical position focused on driving financial clarity, ",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-7ead5818c74ba6a4",
-      "source": "indeed",
-      "title": "Senior Associate Director, Priority Banking",
-      "company": "Standard Chartered Bank",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=7ead5818c74ba6a4",
-      "posted": "2026-05-15",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 16,
-      "match_keywords": [
-        "ai",
-        "director",
-        "dubai"
-      ],
-      "raw_snippet": "**Requisition Number:** 52689\n**Job Location:** Dubai, ARE\n**Global Grade:** Band 6\n**Work Type:** Office Working\n**Employment Type:** Permanent\n**Posting Start Date:** 15/05/2026\n**Posting End Date:** 17/05/2026\n**:****Job Summary**\n\n\n**Strategy**  \n\n* Strategies for Revenue generation and business development\n* Business objectives and goals\n* Drive the Digital Agenda\n\n**Business**  \n\nAcquisition \\& Sales Management  \n\n* Generate new business to achieve defined targets in terms of no. of custom",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
@@ -146,6 +124,49 @@
       "search_title": "Program Director"
     },
     {
+      "id": "indeed-in-15fc5362266635ec",
+      "source": "indeed",
+      "title": "Data Analytics & BI Director",
+      "company": "Jobskey",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=15fc5362266635ec",
+      "posted": "2026-04-17",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 13,
+      "match_keywords": [
+        "data analytics",
+        "director"
+      ],
+      "raw_snippet": "**JOB PURPOSE:**\n\n  \n\nThe role is responsible for setting the strategy, vision, and policy for managing the day\\-to\\-day strategic and tactical operations of the teams. He/She holds responsibilities associated with historical data sourcing and preparation, data storage, reporting, analytics, data exploration, and information delivery. He works with senior management to understand and prioritize data and information requirements. He is responsible for setting up the BI Strategy within the organiz",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "Program Director"
+    },
+    {
+      "id": "indeed-in-16adeb67224431ae",
+      "source": "indeed",
+      "title": "Associate Director - Data Engineering",
+      "company": "Jobskey",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=16adeb67224431ae",
+      "posted": "2026-04-17",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 20,
+      "match_keywords": [
+        "digital transformation",
+        "director",
+        "api"
+      ],
+      "raw_snippet": "**Client Overview:**\n\n\nOur client is collaborating with a leading digital bank, dedicated to transforming the financial industry with innovative and secure, tech\\-driven banking solutions. This progressive institution emphasizes delivering personalized and seamless user experiences, establishing itself as a frontrunner in digital transformation within the banking sector. Join a visionary team that is shaping the future of modern banking.\n\n**Job Purpose:**\n\n\nThe Associate Director \\- Data Enginee",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "Director Digital Transformation"
+    },
+    {
       "id": "indeed-in-22c05b1c1de34c54",
       "source": "indeed",
       "title": "Director of Strategy",
@@ -193,9 +214,9 @@
   ],
   "kpi": {
     "searches_run": 20,
-    "results_per_search": 3.1,
-    "unique_jobs": 8,
-    "errors": 6
+    "results_per_search": 3.2,
+    "unique_jobs": 9,
+    "errors": 5
   },
   "recommendations": []
 }

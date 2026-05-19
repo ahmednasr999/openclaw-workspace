@@ -741,3 +741,25 @@ For find -exec commands that need shell redirection or command substitution, exe
 - Tags: memory-hygiene, cron-skill, find-exec
 
 ---
+
+## 2026-05-19 - Daily OpenClaw backup duplicate writer after wrapper serialization error
+
+### Error
+The first backup tool wrapper failed while serializing a missing JavaScript field, but the backup command had already launched. Retrying immediately started a second backup process, and both tar/gzip process sets wrote the same timestamped archive.
+
+### Recovery
+- Stopped the duplicate backup/tar/gzip processes.
+- Removed only the incomplete `/root/openclaw-backups/openclaw-2026-05-19_0315.tar.gz` after the writers were stopped.
+- Reran `/root/.openclaw/scripts/backup.sh /root/openclaw-backups` once cleanly.
+- Verified `/root/openclaw-backups/openclaw-2026-05-19_0318.tar.gz` with `gzip -t`, size `3432125930 bytes` / `3.2G`.
+- Confirmed retention left only one `openclaw-*.tar.gz` archive.
+
+### Suggested Fix
+For long-running backup commands launched through the exec JavaScript wrapper, avoid storing possibly undefined fields after command start. If a wrapper serialization error happens, check for already-running backup/tar/gzip processes before retrying.
+
+### Metadata
+- Reproducible: yes
+- Related Files: /root/.openclaw/scripts/backup.sh, /root/openclaw-backups, /root/.openclaw/workspace/memory/agent-traces/trace-log.jsonl
+- Tags: openclaw-backup, cron, exec-wrapper, duplicate-process, retention
+
+---

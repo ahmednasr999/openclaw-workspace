@@ -3222,3 +3222,44 @@ Config warnings:
 [2026-05-19 06:00] WARN: Jobs data stale (569h), triggering pipeline
 [2026-05-19 06:00] FIXED: Pipeline triggered
 [2026-05-19 06:00] Summary: fixes=1 warnings=0 alerts=0
+[2026-05-19 08:00] === Watchdog v3 run ===
+[2026-05-19 08:00] WARN: Jobs data stale (571h), triggering pipeline
+[2026-05-19 08:00] FIXED: Pipeline triggered
+[2026-05-19 08:00] Summary: fixes=1 warnings=0 alerts=0
+[2026-05-19 10:00] === Watchdog v3 run ===
+[2026-05-19 10:00] WARN: Jobs data stale (573h), triggering pipeline
+[2026-05-19 10:00] FIXED: Pipeline triggered
+[2026-05-19 10:00] Summary: fixes=1 warnings=0 alerts=0
+[2026-05-19 12:00] === Watchdog v3 run ===
+[2026-05-19 12:00] WARN: Jobs data stale (575h), triggering pipeline
+[2026-05-19 12:00] FIXED: Pipeline triggered
+[2026-05-19 12:00] Summary: fixes=1 warnings=0 alerts=0
+[2026-05-19 14:00] === Watchdog v3 run ===
+[2026-05-19 14:00] WARN: Jobs data stale (577h), triggering pipeline
+[2026-05-19 14:00] FIXED: Pipeline triggered
+[2026-05-19 14:00] FIXED: Re-triggered failed cron bec0eaf3-48f8-41d0-8dee-cb9a03b27f85
+[2026-05-19 14:00] FIXED: Re-triggered failed cron 418e7854-d466-4b49-ad1d-f3f3debae5d7
+[2026-05-19 14:00] Summary: fixes=3 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:bec0eaf3-48f8-41d0-8dee-cb9a03b27f85:1779188430795:1"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:418e7854-d466-4b49-ad1d-f3f3debae5d7:1779188435463:2"
+}
+[2026-05-19 16:00] === Watchdog v3 run ===
+[2026-05-19 16:00] WARN: Jobs data stale (579h), triggering pipeline
+[2026-05-19 16:00] FIXED: Pipeline triggered
+[2026-05-19 16:00] Summary: fixes=1 warnings=0 alerts=0
+[2026-05-19 18:00] === Watchdog v3 run ===
+[2026-05-19 18:00] WARN: Jobs data stale (581h), triggering pipeline
+[2026-05-19 18:00] FIXED: Pipeline triggered
+[2026-05-19 18:00] WARN: SIE data stale (27h)
+[2026-05-19 18:00] FIXED: SIE checks re-run
+[2026-05-19 18:00] Summary: fixes=2 warnings=0 alerts=0
+[2026-05-19 20:00] === Watchdog v3 run ===
+[2026-05-19 20:00] WARN: Jobs data stale (583h), triggering pipeline
+[2026-05-19 20:00] FIXED: Pipeline triggered

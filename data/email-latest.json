@@ -1,52 +1,25 @@
 {
   "status": "ok",
-  "scan_time": "2026-05-18T20:00:25.342424+02:00",
-  "total_scanned": 20,
+  "scan_time": "2026-05-19T18:01:39.006211+02:00",
+  "total_scanned": 0,
   "by_category": {
     "interview_invite": 0,
-    "recruiter_reach": 1,
+    "recruiter_reach": 0,
     "application_ack": 0,
     "rejection": 0,
     "assessment": 0,
     "follow_up_needed": 0,
     "job_alert": 0,
-    "other": 19
+    "other": 0
   },
   "interview_invites": [],
-  "recruiter_messages": [
-    {
-      "id": "358247",
-      "from": "talabat <update.en@em.talabat.com>",
-      "subject": "=?UTF-8?B?2KrYs9is2YrZhCDYr9iu2YjZhNmDINmB2Yo=?=\r\n =?UTF-8?B?INij2KjZhNmD2YrYtNmGINi32YTYqNin2Kog2YfZitiq2LrZitix?=\r\n =?UTF-8?B?INmC2LHZitio?=",
-      "date": "Mon, 18 May 2026 17:42:53 +0000 (UTC)",
-      "unread": true,
-      "priority": "HIGH",
-      "score": 6,
-      "pipeline_match": "talabat"
-    }
-  ],
+  "recruiter_messages": [],
   "application_acks": [],
   "rejections": [],
   "assessments": [],
   "follow_ups_needed": [],
   "job_alerts": [],
-  "actionable_count": 1,
+  "actionable_count": 0,
   "hot_alerts": [],
-  "signals": [
-    {
-      "company": "talabat",
-      "signal": "recruiter_email",
-      "subject": "=?UTF-8?B?2KrYs9is2YrZhCDYr9iu2YjZhNmDINmB2Yo=?=\r\n =?UTF-8?B?INij2KjZhNmD2YrYtNmGINi32YTYqNin2Kog2YfZitiq2LrZitix?=\r\n =?UTF-8?B?INmC2LHZitio?=",
-      "sender": "talabat <update.en@em.talabat.com>",
-      "job_ids": [
-        "linkedin-li-4415007377",
-        "linkedin_jobspy-li-4397262230",
-        "linkedin-li-4370418095",
-        "linkedin-li-4389537891",
-        "linkedin-li-4375708512"
-      ],
-      "score": 6,
-      "timestamp": "2026-05-18T20:00:25.300461+02:00"
-    }
-  ]
+  "signals": []
 }
