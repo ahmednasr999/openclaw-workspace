@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-05-18T17:00:38.325376+02:00",
-    "duration_ms": 35605,
+    "generated_at": "2026-05-19T05:00:38.297728+02:00",
+    "duration_ms": 36611,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "d09fdc95",
+    "run_id": "0e9577e6",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -79,21 +79,22 @@
       "search_title": "Program Director"
     },
     {
-      "id": "indeed-in-b04549b699d51136",
+      "id": "indeed-in-7a0c40bd08ee220f",
       "source": "indeed",
-      "title": "Director, Customer Practice Digital Solutions (CXT)",
-      "company": "Bain & Company",
+      "title": "Director | Corporate Reputation (Financial & Professional Services) | Strategic Communications",
+      "company": "FTI Consulting, Inc.",
       "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=b04549b699d51136",
-      "posted": "2026-05-15",
+      "url": "https://ae.indeed.com/viewjob?jk=7a0c40bd08ee220f",
+      "posted": "2026-05-18",
       "seniority": "C-Suite",
-      "domain_match": true,
+      "domain_match": false,
       "keyword_score": 13,
       "match_keywords": [
-        "ai",
-        "director"
+        "director",
+        "middle east",
+        "api"
       ],
-      "raw_snippet": "ABOUT US\n  \n  \n\nBain \\& Company is a global consultancy that helps the world\u2019s most ambitious change makers define the future. Across 65 offices in 40 countries, we work alongside our clients as one team with a shared ambition to achieve extraordinary results, outperform the competition and redefine industries. We complement our tailored, integrated expertise with a vibrant ecosystem of digital innovators (including 1500\\+ experts in analytics, engineering, product management, user research, and",
+      "raw_snippet": "**Who We Are**\n\n\nFTI Consulting is the leading global expert firm for organisations facing crisis and transformation. We partner with top multinational corporations, law firms, banks and private equity firms on their most critical issues to deliver meaningful impact. Our teams respond rapidly to complex, dynamic situations, and from day one you\u2019ll work alongside leaders who have shaped history.\n\n **About The Role**\n\n\nFTI Consulting has operated in the Middle East for over twenty years, advising ",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
@@ -123,29 +124,48 @@
       "search_title": "IT Director"
     },
     {
-      "id": "indeed-in-30ef805082eb2694",
+      "id": "indeed-in-64a3e875f051054e",
       "source": "indeed",
-      "title": "Executive Director of Intelligent Technology Solutions",
-      "company": "Confidential",
+      "title": "Commercial Director",
+      "company": "Parsons",
       "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=30ef805082eb2694",
+      "url": "https://sa.indeed.com/viewjob?jk=64a3e875f051054e",
       "posted": "2026-05-18",
       "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 36,
+      "domain_match": false,
+      "keyword_score": 20,
       "match_keywords": [
-        "enterprise",
-        "executive",
         "director",
         "leadership",
-        "growth",
-        "automation"
+        "growth"
       ],
-      "raw_snippet": "**Lead Intelligent Technology and Advanced Solutions Delivery**\n\n**Key Responsibilities**\n\n* Oversee intelligent technology implementation and solution delivery\n* Lead innovation projects involving automation and digital systems\n* Support operational growth and enterprise technology initiatives\n\n**Requirements**\n\n* Leadership experience in advanced technology or digital solutions\n* Strong understanding of intelligent systems and enterprise technology\n\n**About the Company**  \nTechligence Advanced",
+      "raw_snippet": "In a world of possibilities, pursue one with endless opportunities. Imagine Next!  \n\n\nAt Parsons, you can imagine a career where you thrive, work with exceptional people, and be yourself. Guided by our leadership vision of valuing people, embracing agility, and fostering growth, we cultivate an innovative culture that empowers you to achieve your full potential. Unleash your talent and redefine what\u2019s possible. **Job Description:**\n\n\nParsons is looking for an exceptionally talented **Commercial ",
       "relevant": true,
       "filter_reason": null,
       "search_country": "Saudi Arabia",
       "search_title": "Program Director"
+    },
+    {
+      "id": "indeed-in-22c05b1c1de34c54",
+      "source": "indeed",
+      "title": "Director of Strategy",
+      "company": "WEbook.com",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=22c05b1c1de34c54",
+      "posted": "2026-05-18",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 13,
+      "match_keywords": [
+        "director",
+        "saudi",
+        "platform"
+      ],
+      "raw_snippet": "Do you want to love what you do at work? Do you want to make a difference, an impact, transform peoples lives? Do you want to work with a team that believes in disrupting the normal, boring, and average?\n\n\nIf yes, then this is the job you're looking for ,webook.com is Saudi's \\#1 event ticketing and experience booking platforms in terms of technology, features, agility, revenue serving some of the largest mega events in the Kingdom surpassing over 2 billion sales.\n\n**Role Overview :**\n\nwebook.co",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "Chief Technology Officer"
     },
     {
       "id": "indeed-in-658e1b51080064b6",
@@ -169,32 +189,11 @@
       "filter_reason": null,
       "search_country": "Saudi Arabia",
       "search_title": "Chief Technology Officer"
-    },
-    {
-      "id": "indeed-in-28d549a7442b250b",
-      "source": "indeed",
-      "title": "Business Director, BDI Urology & Critical Care (UCC), META",
-      "company": "BD",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=28d549a7442b250b",
-      "posted": "2026-05-18",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 10,
-      "match_keywords": [
-        "director",
-        "saudi"
-      ],
-      "raw_snippet": "Now\n\n\nJob ID\nR\\-545056\nCategory\nGeneral Management Group\nLocation\nSaudi Arabia\nRegion\nEMEA\n  \n**We are the people who give possibilities purpose**\n\n\nBD is one of the largest global medical technology companies in the world. Advancing the world of health\u2122 is our Purpose, and it\u2019s no small feat. It takes the imagination and passion of all of us\u2014from design and engineering to the manufacturing and marketing of our billions of MedTech products per year\u2014to look at the impossible and find transformati",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "IT Director"
     }
   ],
   "kpi": {
     "searches_run": 20,
-    "results_per_search": 3.3,
+    "results_per_search": 3.1,
     "unique_jobs": 8,
     "errors": 6
   },

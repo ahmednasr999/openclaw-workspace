@@ -1,6 +1,6 @@
 # Agent Lessons Learned
 
-*Auto-curated from agent traces. Updated: 2026-05-18*
+*Auto-curated from agent traces. Updated: 2026-05-19*
 
 ## Communication
 - ✅ CLI uses --target not --to — exit 0 does not mean success. Always verify actual delivery (CEO, 2026-03-30)
@@ -50,4 +50,5 @@
 ## Tool Usage
 - ❌ When passing Markdown-heavy patches through the exec JavaScript wrapper, avoid raw backticks in the patch payload or escape them before calling apply_patch. (HR, 2026-05-17)
 - ❌ For LCM nightly reporting, use aggregate subqueries or CTEs for active/stale conversation counts, keep raw join output only as optional audit parity, and wrap SQLite health checks with explicit timeouts to avoid orphaned cron processes. (CTO, 2026-05-18)
+- ❌ For long-running backup commands launched through the exec JavaScript wrapper, do not store possibly undefined fields after command start; if wrapper serialization fails, check for already-running backup/tar/gzip processes and remove only verified incomplete archives before retrying. (CEO, 2026-05-19)
 
