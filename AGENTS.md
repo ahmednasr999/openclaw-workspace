@@ -81,6 +81,8 @@ Write traces after:
 - If not time-based, keep it as a reusable skill/checklist.
 - Sensitive, public, destructive, or paid actions remain approval-gated.
 
+Recurring workflow prompts should use a strict contract before they become skills, slash commands, or cron jobs. Default shape: `ROLE`, `READ SOURCES`, `WORKFLOW`, `OUTPUT`, `DRAFT SAFE NEXT WORK`, `MEMORY WRITEBACK`, `TERMINATION`, and `FORBIDDEN`. The contract must define the agent role, concrete inputs, bounded steps, exact output sections, draft-only next actions, a narrow durable-memory writeback rule, a checkable stopping condition, and explicit negative constraints such as no invented metrics, no bonus sections, no external sends, or audit-only scope. Use `templates/workflows/recurring-agent-contract.md` as the starting point and `templates/workflows/lane-brief-contract.md` for recurring lane briefs. <!-- promoted 2026-05-20 from Cowork + Codex morning-brief reviews -->
+
 ## Skillify Protocol
 
 System-wide rule: every repeated failure, user correction, wrong approval boundary, brittle workflow, or successful ad-hoc fix should be assessed for skillification across CEO/NASR, HR, CTO, CMO, and JobZoom.

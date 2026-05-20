@@ -1,6 +1,6 @@
 # Agent Lessons Learned
 
-*Auto-curated from agent traces. Updated: 2026-05-19*
+*Auto-curated from agent traces. Updated: 2026-05-20*
 
 ## Communication
 - ✅ CLI uses --target not --to — exit 0 does not mean success. Always verify actual delivery (CEO, 2026-03-30)
@@ -38,6 +38,7 @@
 - ❌ Add final duplicate guard against linkedin-posting-success.jsonl and live/tool state immediately before any external LinkedIn publish call. (CMO/main recovery, 2026-05-02)
 - ❌ For LinkedIn autoposter assets, normalize file:// approved asset URIs to decoded local filesystem paths before Path.exists, and after a payload-prep failure mark the exact Notion page failed without sending duplicate Telegram alerts. (CMO, 2026-05-18)
 - ❌ For LinkedIn autoposter cron runs, verify the active session exposes the LinkedIn create-post and Composio workbench tools before the scheduled publish window; if the READY_TO_POST gate output is missing after a row moves to Publishing, mark the exact page Failed, verify Telegram delivery, and do not call LinkedIn from an unverified tool path. (CMO, 2026-05-19)
+- ❌ For LinkedIn autoposter cron runs, the runtime must expose both LinkedIn create-post and Composio remote workbench/upload tooling before the scheduled publish window; if the tools are absent after READY_TO_POST, mark the exact page Failed, verify Telegram alert delivery, and do not improvise a text-only or browser-based publish path. (CMO, 2026-05-20)
 
 ## Jobzoom Daily Scan
 - ❌ Investigate scoring endpoint response body before changing thresholds; keep fallback visible in daily summary. Use first-class message tool for delivery recovery when script CLI delivery fails. (JobZoom/HR lane, 2026-05-05)

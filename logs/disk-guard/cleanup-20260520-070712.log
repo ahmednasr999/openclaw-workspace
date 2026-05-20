@@ -1,10 +1,14 @@
-Disk guard triggered at 2026-05-11T07:07:05+03:00
+Disk guard triggered at 2026-05-20T07:07:12+03:00
 Threshold: 65%
-Before: 63G used / 34G free / 65% used
+Before: 77G used / 20G free / 80% used
 
 Safe cleanup: workspace tmp files older than 2 days, preserving guard logs and current research markdown.
 
 Safe cleanup: OpenClaw logs older than 7 days.
+
+Safe cleanup: stale system temp files older than 3 days.
+
+Safe cleanup: OpenClaw compile cache entries older than 2 days.
 
 Safe cleanup: npm/pnpm metadata logs and generic temp caches.
 Removed all cached metadata files
@@ -17,7 +21,7 @@ Backup/snapshot audit, no destructive pruning by default.
 Backup/snapshot audit: files >= 8G or older than 14 days.
 Backup pruning disabled. Set DISK_GUARD_PRUNE_BACKUPS=1 only after explicit approval.
 
-After: 63G used / 34G free / 65% used
+After: 76G used / 21G free / 79% used
 Largest remaining /root items:
 159M	/root/2nd-brain
 229M	/root/.browser-use-env
@@ -25,9 +29,9 @@ Largest remaining /root items:
 616M	/root/.local
 794M	/root/.venvs
 1.4G	/root/.camofox
-4.0G	/root/.nvm
-4.7G	/root/openclaw-backups
-5.4G	/root/openclaw
-5.7G	/root/openclaw-snapshot-20260510
-9.3G	/root/.openclaw
-33G	/root
+3.3G	/root/openclaw-backups
+3.6G	/root/.nvm
+8.1G	/root/openclaw-snapshot-20260518
+8.5G	/root/openclaw-snapshot-20260519
+19G	/root/.openclaw
+46G	/root

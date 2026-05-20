@@ -2,16 +2,62 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-05-20T05:00:40.148150+02:00",
-    "duration_ms": 37239,
+    "generated_at": "2026-05-20T17:00:40.787751+02:00",
+    "duration_ms": 38043,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "a264c876",
+    "run_id": "0e2743f4",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": [
+    {
+      "id": "indeed-in-d17b1acfd9ce92a5",
+      "source": "indeed",
+      "title": "Executive Director, Corporate Banking Group - Dubai & NE",
+      "company": "bankfab",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=d17b1acfd9ce92a5",
+      "posted": "2026-05-20",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 23,
+      "match_keywords": [
+        "ai",
+        "executive",
+        "director",
+        "dubai"
+      ],
+      "raw_snippet": "Job Description\n\n**Job Purpose**\n\nTo grow and manage large account portfolios and sensitive client relationships for assigned portfolio in the corporate banking segment; improve service quality levels and supervise the team\u2019s day\\-to\\-day activities and client interactions to ensure that the team's objectives are constantly met and its revenue targets achieved, while maintaining client satisfaction and portfolio credit quality.\n\n\n  \nResponsibilities\n\n**Key Accountabilities**\n\n  \n\n**Client and Ma",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Program Director"
+    },
+    {
+      "id": "indeed-in-a10e2a0bcef084a6",
+      "source": "indeed",
+      "title": "Executive Director, Corporate Banking Group - Dubai & NE",
+      "company": "bankfab",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=a10e2a0bcef084a6",
+      "posted": "2026-05-20",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 23,
+      "match_keywords": [
+        "ai",
+        "executive",
+        "director",
+        "dubai"
+      ],
+      "raw_snippet": "Job Description\n\n**Job Purpose**\n\nTo grow and manage large account portfolios and sensitive client relationships for assigned portfolio in the corporate banking segment; improve service quality levels and supervise the team\u2019s day\\-to\\-day activities and client interactions to ensure that the team's objectives are constantly met and its revenue targets achieved, while maintaining client satisfaction and portfolio credit quality.\n\n\n  \nResponsibilities  \n\n  \n\n**Client and Market Analysis**\n\n  \n\n* C",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Program Director"
+    },
     {
       "id": "indeed-in-7a0c40bd08ee220f",
       "source": "indeed",
@@ -33,6 +79,26 @@
       "filter_reason": null,
       "search_country": "United Arab Emirates",
       "search_title": "Director Digital Transformation"
+    },
+    {
+      "id": "indeed-in-7b690dfb82dbe7b8",
+      "source": "indeed",
+      "title": "Head of Media Strategy and Policy Development",
+      "company": "Dubai Government",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=7b690dfb82dbe7b8",
+      "posted": "2026-05-20",
+      "seniority": "Director",
+      "domain_match": true,
+      "keyword_score": 6,
+      "match_keywords": [
+        "head of"
+      ],
+      "raw_snippet": "1\\- General Responsibilities\n\n\na. Develop the strategy for Media Strategy and Policy Development to support the Media Governance Sector and overall DMC vision, direction and strategic objectives.\n\n\nb. Ensure the successful implementation of the strategic vision for Media Strategy and Policy Development to achieve the strategic objectives set out for the Media Governance Sector in line with DMC\u2019s vision and objectives\n\n\nc. Lead the teams within Media Strategy and Policy Development to deliver the",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Head of Technology"
     },
     {
       "id": "indeed-in-4dfedcf5d8d67b4d",
@@ -190,8 +256,8 @@
   ],
   "kpi": {
     "searches_run": 20,
-    "results_per_search": 3.5,
-    "unique_jobs": 8,
+    "results_per_search": 3.75,
+    "unique_jobs": 11,
     "errors": 4
   },
   "recommendations": []

@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-05-19T12:53:01.325987+00:00",
-  "total_traces": 34,
+  "updated_at": "2026-05-20T05:01:59.143041+00:00",
+  "total_traces": 35,
   "by_category": {
     "content_post": [
       {
@@ -207,6 +207,13 @@
         "agent": "CMO",
         "timestamp": "2026-05-19T08:03:00+03:00",
         "lesson": "For LinkedIn autoposter cron runs, verify the active session exposes the LinkedIn create-post and Composio workbench tools before the scheduled publish window; if the READY_TO_POST gate output is missing after a row moves to Publishing, mark the exact page Failed, verify Telegram delivery, and do not call LinkedIn from an unverified tool path.",
+        "severity": "high"
+      },
+      {
+        "id": "trace-20260520-linkedin-autoposter-toolpath-missing",
+        "agent": "CMO",
+        "timestamp": "2026-05-20T08:01:10+03:00",
+        "lesson": "For LinkedIn autoposter cron runs, the runtime must expose both LinkedIn create-post and Composio remote workbench/upload tooling before the scheduled publish window; if the tools are absent after READY_TO_POST, mark the exact page Failed, verify Telegram alert delivery, and do not improvise a text-only or browser-based publish path.",
         "severity": "high"
       }
     ],
@@ -497,6 +504,13 @@
       "category": "config_system",
       "lesson": "For plugin metadata drift after a targeted plugin upgrade, do not run a broad update or trust a dry-run that points at the stale spec. Back up installs.json, use an exact pinned install with --force --pin for the intended version, refresh the registry, restart the gateway, then verify inspect/list/status.",
       "timestamp": "2026-05-19T15:55:00+03:00"
+    },
+    {
+      "id": "trace-20260520-linkedin-autoposter-toolpath-missing",
+      "agent": "CMO",
+      "category": "external_publish_failure",
+      "lesson": "For LinkedIn autoposter cron runs, the runtime must expose both LinkedIn create-post and Composio remote workbench/upload tooling before the scheduled publish window; if the tools are absent after READY_TO_POST, mark the exact page Failed, verify Telegram alert delivery, and do not improvise a text-only or browser-based publish path.",
+      "timestamp": "2026-05-20T08:01:10+03:00"
     }
   ]
 }
