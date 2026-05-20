@@ -3263,3 +3263,25 @@ Config warnings:
 [2026-05-19 20:00] === Watchdog v3 run ===
 [2026-05-19 20:00] WARN: Jobs data stale (583h), triggering pipeline
 [2026-05-19 20:00] FIXED: Pipeline triggered
+[2026-05-19 20:00] Summary: fixes=1 warnings=0 alerts=0
+[2026-05-19 22:00] === Watchdog v3 run ===
+[2026-05-19 22:00] WARN: Jobs data stale (585h), triggering pipeline
+[2026-05-19 22:00] FIXED: Pipeline triggered
+[2026-05-19 22:00] Summary: fixes=1 warnings=0 alerts=0
+[2026-05-20 00:00] === Watchdog v3 run ===
+[2026-05-20 00:00] WARN: Jobs data stale (587h), triggering pipeline
+[2026-05-20 00:00] FIXED: Pipeline triggered
+[2026-05-20 00:00] Summary: fixes=1 warnings=1 alerts=0
+[2026-05-20 02:00] === Watchdog v3 run ===
+[2026-05-20 02:00] WARN: Jobs data stale (589h), triggering pipeline
+[2026-05-20 02:00] FIXED: Pipeline triggered
+[2026-05-20 02:00] Summary: fixes=1 warnings=1 alerts=0
+[2026-05-20 04:00] === Watchdog v3 run ===
+[2026-05-20 04:00] WARN: active-tasks.md stale (50h)
+[2026-05-20 04:00] WARN: Jobs data stale (591h), triggering pipeline
+[2026-05-20 04:00] FIXED: Pipeline triggered
+[2026-05-20 04:00] Summary: fixes=1 warnings=2 alerts=0
+[2026-05-20 06:00] === Watchdog v3 run ===
+[2026-05-20 06:00] WARN: Jobs data stale (593h), triggering pipeline
+[2026-05-20 06:00] FIXED: Pipeline triggered
+[2026-05-20 06:00] Summary: fixes=1 warnings=1 alerts=0

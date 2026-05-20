@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-17T23:27:57.133Z",
+  "updatedAt": "2026-05-19T22:04:34.172Z",
   "entries": {
     "memory:memory/archives/2026-03-07.md:29:56": {
       "key": "memory:memory/archives/2026-03-07.md:29:56",
@@ -3100,19 +3100,21 @@
       "endLine": 75,
       "source": "memory",
       "snippet": "- pam-telegram reads: `data/briefing-data.json` or `data/pipeline-status.json` - Jobs summary: `data/jobs-summary.json` (325KB, updated by jobs-review.py) ## Action Items Outstanding 1. Investigate Content Agent: Weekly Review 600s timeout (cron 0be247a8..., runs Fri 10 AM) 2. Fix outreach-agent repeating failure 3. Verify NASR Doctor uses 180s timeout from tomorrow's run --- ## C-Suite Reorganization (12:00 PM - 6:42 PM Cairo) ### Organizational Restructure — Finalized Ahmed Nasr (Chairman) established a C-suite model for OpenClaw: - Ahmed = Owner/Chairman (strategic direction only) - Nasr (this AI) = CEO / Chief of Staff (coordinates everything) - HR Agent = Jobs pipeline, CVs, applic",
-      "recallCount": 2,
+      "recallCount": 3,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 2,
+      "totalScore": 3,
       "maxScore": 1,
       "firstRecalledAt": "2026-05-10T06:00:48.023Z",
-      "lastRecalledAt": "2026-05-10T06:01:13.057Z",
+      "lastRecalledAt": "2026-05-19T22:04:34.172Z",
       "queryHashes": [
         "6d216e796c49",
-        "4ddb908e3884"
+        "4ddb908e3884",
+        "2250f800a41a"
       ],
       "recallDays": [
-        "2026-05-10"
+        "2026-05-10",
+        "2026-05-20"
       ],
       "conceptTags": [
         "pam-telegram",

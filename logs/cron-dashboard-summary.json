@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-05-19T19:31:30.002280+03:00",
-  "total_crons": 50,
+  "timestamp": "2026-05-20T06:31:17.112786+03:00",
+  "total_crons": 51,
   "system_crons": 15,
-  "openclaw_crons": 35,
+  "openclaw_crons": 36,
   "notion_created": 0,
-  "notion_updated": 50,
+  "notion_updated": 51,
   "errors": [],
   "crons": [
     {
@@ -13,7 +13,7 @@
       "type": "system",
       "last_status": {
         "status": "\u2705 OK",
-        "last_run": "2026-05-18 20:00:17.202597+03:00",
+        "last_run": "2026-05-19 20:00:15.703609+03:00",
         "error": null
       }
     },
@@ -33,7 +33,7 @@
       "type": "system",
       "last_status": {
         "status": "\u2705 OK",
-        "last_run": "2026-05-18 23:01:28.845318+03:00",
+        "last_run": "2026-05-19 23:01:21.484613+03:00",
         "error": null
       }
     },
@@ -43,7 +43,7 @@
       "type": "system",
       "last_status": {
         "status": "\u2705 OK",
-        "last_run": "2026-05-18 20:30:01.097380+03:00",
+        "last_run": "2026-05-19 20:30:01.467433+03:00",
         "error": null
       }
     },
@@ -53,7 +53,7 @@
       "type": "system",
       "last_status": {
         "status": "\u2705 OK",
-        "last_run": "2026-05-18 23:30:01.352060+03:00",
+        "last_run": "2026-05-19 23:30:01.039006+03:00",
         "error": null
       }
     },
@@ -63,7 +63,7 @@
       "type": "system",
       "last_status": {
         "status": "\u2705 OK",
-        "last_run": "2026-05-19 03:15:01.197315+03:00",
+        "last_run": "2026-05-20 03:15:06.779415+03:00",
         "error": null
       }
     },
@@ -83,7 +83,7 @@
       "type": "system",
       "last_status": {
         "status": "\u2705 OK",
-        "last_run": "2026-05-19 06:00:01.217273+03:00",
+        "last_run": "2026-05-20 06:00:01.370296+03:00",
         "error": null
       }
     },
@@ -93,7 +93,7 @@
       "type": "system",
       "last_status": {
         "status": "\u2705 OK",
-        "last_run": "2026-05-19 06:00:08.704323+03:00",
+        "last_run": "2026-05-20 06:00:08.008341+03:00",
         "error": null
       }
     },
@@ -103,7 +103,7 @@
       "type": "system",
       "last_status": {
         "status": "\u2705 OK",
-        "last_run": "2026-05-19 19:30:01.219597+03:00",
+        "last_run": "2026-05-20 06:30:01.269254+03:00",
         "error": null
       }
     },
@@ -113,7 +113,7 @@
       "type": "system",
       "last_status": {
         "status": "\u2705 OK",
-        "last_run": "2026-05-19 18:00:28.824031+03:00",
+        "last_run": "2026-05-20 06:00:10.415357+03:00",
         "error": null
       }
     },
@@ -123,7 +123,7 @@
       "type": "system",
       "last_status": {
         "status": "\u2705 OK",
-        "last_run": "2026-05-19 01:50:01.497585+03:00",
+        "last_run": "2026-05-20 01:50:01.632641+03:00",
         "error": null
       }
     },
@@ -153,13 +153,73 @@
       "type": "system",
       "last_status": {
         "status": "\u274c Failed",
-        "last_run": "2026-05-19 19:01:31.567442+03:00",
+        "last_run": "2026-05-20 06:01:24.632856+03:00",
         "error": "Check log for details"
       }
     },
     {
       "name": "Email Agent (Sun-Thu)",
       "schedule": "cron 0 7,9,11,13,15,17,19,21 * * 0-4 @ Africa/Cairo",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "NASR Doctor (Daily)",
+      "schedule": "cron 0 7 * * * @ Africa/Cairo",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "VPS disk guard at 65%",
+      "schedule": "cron 7 7 * * * @ Africa/Cairo",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "CMO Daily LinkedIn Autoposter",
+      "schedule": "cron 0 9 * * 1-4 @ Asia/Dubai",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "CMO Publishing Watchdog",
+      "schedule": "cron 0,30 10-18 * * 1-4 @ Asia/Dubai",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "Ahmed LinkedIn approved 14-day batch - daily 11am Cairo",
+      "schedule": "cron 0 11 * * * @ Africa/Cairo",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "Ahmed LinkedIn approved 14-day batch - engagement window alert",
+      "schedule": "cron 0 12 * * * @ Africa/Cairo",
       "type": "openclaw",
       "last_status": {
         "status": "\u26a0\ufe0f Unknown",
@@ -180,6 +240,16 @@
     {
       "name": "Track GPT-5.5 Codex quota for Pro 20x vs 5x decision",
       "schedule": "cron 0 */6 * * * @ Africa/Cairo",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "LCM Midday Compaction Sweep",
+      "schedule": "cron 0 14 * * * @ Africa/Cairo",
       "type": "openclaw",
       "last_status": {
         "status": "\u26a0\ufe0f Unknown",
@@ -288,76 +358,6 @@
       }
     },
     {
-      "name": "NASR Doctor (Daily)",
-      "schedule": "cron 0 7 * * * @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "VPS disk guard at 65%",
-      "schedule": "cron 7 7 * * * @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "CMO Daily LinkedIn Autoposter",
-      "schedule": "cron 0 9 * * 1-4 @ Asia/Dubai",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "CMO Publishing Watchdog",
-      "schedule": "cron 0,30 10-18 * * 1-4 @ Asia/Dubai",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "Ahmed LinkedIn approved 14-day batch - daily 11am Cairo",
-      "schedule": "cron 0 11 * * * @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "Ahmed LinkedIn approved 14-day batch - engagement window alert",
-      "schedule": "cron 0 12 * * * @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "LCM Midday Compaction Sweep",
-      "schedule": "cron 0 14 * * * @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
       "name": "Email Agent (Fri-Sat)",
       "schedule": "cron 0 9,15,21 * * 5,6 @ Africa/Cairo",
       "type": "openclaw",
@@ -430,6 +430,16 @@
     {
       "name": "CMO Weekly Outreach Queue \u2014 Sunday",
       "schedule": "cron 10 5 * * 0 @ UTC",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "CEO/NASR Weekly Operating Review",
+      "schedule": "cron 30 8 * * 0 @ Africa/Cairo",
       "type": "openclaw",
       "last_status": {
         "status": "\u26a0\ufe0f Unknown",

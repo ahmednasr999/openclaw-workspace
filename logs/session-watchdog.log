@@ -263,3 +263,5 @@
 [2026-05-17T00:14:03Z] Done reset=3 skipped=0 errors=0
 [2026-05-18T00:09:40Z] Done reset=0 skipped=0 errors=0
 [2026-05-19T00:08:02Z] Done reset=0 skipped=0 errors=0
+[2026-05-20T00:08:05Z] RESET [main] 867bf7a5-deb3-4023-ae31-49bdfea0750b.trajectory.jsonl was 5MB -> archived to 867bf7a5-deb3-4023-ae31-49bdfea0750b.trajectory.20260520T000805Z.jsonl.gz
+[2026-05-20T00:08:24Z] Done reset=1 skipped=0 errors=0

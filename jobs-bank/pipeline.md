@@ -348,3 +348,15 @@
 - Notes: Strong match for executive AI adoption, data governance, enterprise analytics, intelligent automation, Saudi Vision 2030 digital transformation, and cross-functional technology leadership. Stretch area: direct smart government program ownership should be positioned through KSA healthcare and critical enterprise systems transformation, not overstated.
 - Updated: 2026-05-11
 
+## Open Innovation AI - Program Director
+
+- Status: Applied
+- Company: Open Innovation AI
+- Role: Program Director
+- Location: Abu Dhabi, UAE
+- ATS: 90/100
+- Source: LinkedIn job 4411163021
+- CV: cvs/Ahmed Nasr - Program Director - Open Innovation AI.pdf
+- Date Applied: 2026-05-20
+- Notes: Applied by Ahmed via LinkedIn. Strong match for program governance, multi-workstream delivery, RAID management, integrated planning, executive reporting, financial governance, stakeholder alignment, multi-vendor delivery, and operational readiness. Follow up only if direct recruiter/email channel appears, not for routine LinkedIn Easy Apply.
+- Updated: 2026-05-20

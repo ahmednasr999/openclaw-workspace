@@ -2,60 +2,16 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-05-19T17:00:37.199604+02:00",
-    "duration_ms": 35661,
+    "generated_at": "2026-05-20T05:00:40.148150+02:00",
+    "duration_ms": 37239,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "1c58fe4b",
+    "run_id": "a264c876",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": [
-    {
-      "id": "indeed-in-179f963fb2829f6c",
-      "source": "indeed",
-      "title": "Director - Commercial Management",
-      "company": "AECOM",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=179f963fb2829f6c",
-      "posted": "2026-05-18",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 13,
-      "match_keywords": [
-        "infrastructure",
-        "director"
-      ],
-      "raw_snippet": "**Company Description** **Work with Us. Change the World.**\n\n\nAt AECOM, we're delivering a better world. Whether improving your commute, keeping the lights on, providing access to clean water, or transforming skylines, our work helps people and communities thrive. We are the world's trusted infrastructure consulting firm, partnering with clients to solve the world\u2019s most complex challenges and build legacies for future generations.\n\n\nThere has never been a better time to be at AECOM. With accele",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-a785c41e14c6d72a",
-      "source": "indeed",
-      "title": "Head of Finance & Strategy",
-      "company": "tashkeel",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=a785c41e14c6d72a",
-      "posted": "2026-05-17",
-      "seniority": "Director",
-      "domain_match": true,
-      "keyword_score": 23,
-      "match_keywords": [
-        "ai",
-        "director",
-        "head of",
-        "dubai"
-      ],
-      "raw_snippet": "Position: Head of Finance \\& Strategy\n\nReporting To: Founder / Director of Operations \\& Commercial Strategy  \nLocation: Dubai  \nSalary: Competitive \\+ performance\\-based bonus linked to financial targets\n\nRole Overview\n\nTashkeel is seeking a Head of Finance \\& Strategy to lead financial planning, performance management, and revenue structuring across Tashkeel and Tasmeem Tashkeel.\n\nThis is not a traditional finance role. It is a business\\-critical position focused on driving financial clarity, ",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Program Director"
-    },
     {
       "id": "indeed-in-7a0c40bd08ee220f",
       "source": "indeed",
@@ -79,23 +35,43 @@
       "search_title": "Director Digital Transformation"
     },
     {
-      "id": "indeed-in-b92b53059da6df34",
+      "id": "indeed-in-4dfedcf5d8d67b4d",
       "source": "indeed",
-      "title": "Account Partner Director",
-      "company": "Salesforce",
+      "title": "Director, Business Development, Corporate Solutions - B2B Acceptance",
+      "company": "Mastercard",
       "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=b92b53059da6df34",
-      "posted": "2026-05-18",
+      "url": "https://ae.indeed.com/viewjob?jk=4dfedcf5d8d67b4d",
+      "posted": "2026-05-19",
       "seniority": "C-Suite",
       "domain_match": false,
-      "keyword_score": 26,
+      "keyword_score": 23,
       "match_keywords": [
+        "payments",
         "ai",
-        "crm",
-        "salesforce",
         "director"
       ],
-      "raw_snippet": "*To get the best candidate experience, please consider applying for a maximum of 3 roles within 12 months to ensure you are not duplicating efforts.*\n\nJob Category\n\n\nCustomer Success\nJob Details\n\n\n**About Salesforce**\n\nSalesforce is the \\#1 AI CRM, where humans with agents drive customer success together. Here, ambition meets action. Tech meets trust. And innovation isn\u2019t a buzzword \u2014 it\u2019s a way of life. The world of work as we know it is changing and we're looking for Trailblazers who are passi",
+      "raw_snippet": "**Our Purpose**\n\n*Mastercard powers economies and empowers people in 200\\+ countries and territories worldwide. Together with our customers, we\u2019re helping build a sustainable economy where everyone can prosper. We support a wide range of digital payments choices, making transactions secure, simple, smart and accessible. Our technology and innovation, partnerships and networks combine to deliver a unique set of products and services that help people, businesses and governments realize their great",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "IT Director"
+    },
+    {
+      "id": "indeed-in-a3f09a6326070f40",
+      "source": "indeed",
+      "title": "Senior Manager Brand Comms Running & Training",
+      "company": "adidas",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=a3f09a6326070f40",
+      "posted": "2026-05-19",
+      "seniority": "Other",
+      "domain_match": true,
+      "keyword_score": 13,
+      "match_keywords": [
+        "mobile",
+        "ai"
+      ],
+      "raw_snippet": "PURPOSE \\& OVERALL RELEVANCE FOR THE ORGANIZATION\n\n\n\nThe mission of the Senior Manager Brand Communication Performance is to position adidas as the best sports brand in the Emerging Markets Central (EMC) region through maximizing innovative and inspirational brand exposure by recommending, planning and executing initiatives via Above\\-the\\-Line, Offline, Online, Mobile, Events and Activations in an integrated and single\\-minded manner.  \n\n\n\nKEY RESPONSIBILITIES:\n\n\n* Lead the development, prepara",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
@@ -214,9 +190,9 @@
   ],
   "kpi": {
     "searches_run": 20,
-    "results_per_search": 3.2,
-    "unique_jobs": 9,
-    "errors": 5
+    "results_per_search": 3.5,
+    "unique_jobs": 8,
+    "errors": 4
   },
   "recommendations": []
 }
