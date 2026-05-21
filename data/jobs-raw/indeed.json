@@ -2,38 +2,16 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-05-21T05:00:43.629507+02:00",
-    "duration_ms": 41493,
+    "generated_at": "2026-05-21T17:00:42.863503+02:00",
+    "duration_ms": 40370,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "bab79b80",
+    "run_id": "1776eb47",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": [
-    {
-      "id": "indeed-in-b8157c2b568aa9f7",
-      "source": "indeed",
-      "title": "Director of Spa and Recreation - BVLGARI Resort Dubai",
-      "company": "Marriott International",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=b8157c2b568aa9f7",
-      "posted": "2026-05-20",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 16,
-      "match_keywords": [
-        "ai",
-        "director",
-        "dubai"
-      ],
-      "raw_snippet": "**Additional Information**  \n\n**Job Number**26061835  \n\n**Job Category**Spa  \n\n**Location**Bvlgari Resort Dubai, Jumeirah Bay Island, Dubai, United Arab Emirates, United Arab Emirates, 72223  \n\n**Schedule**Full Time  \n\n**Located Remotely?**N  \n\n**Position Type** Management  \n\n**JOB SUMMARY**\n\n  \n\n\n\nResponsible for managing and supervising all areas of the spa, including its programs, services, hours of operation, facilities and staff. Coordinates the delivery of spa services, including salon, sk",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Program Director"
-    },
     {
       "id": "indeed-in-621430fda17d9c08",
       "source": "indeed",
@@ -127,24 +105,50 @@
       "search_title": "Director Digital Transformation"
     },
     {
-      "id": "indeed-in-7b690dfb82dbe7b8",
+      "id": "indeed-in-bd7d9040af9f082a",
       "source": "indeed",
-      "title": "Head of Media Strategy and Policy Development",
-      "company": "Dubai Government",
+      "title": "Practice Head- Digital Transformation",
+      "company": "GCG Enterprise Solutions",
       "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=7b690dfb82dbe7b8",
-      "posted": "2026-05-20",
-      "seniority": "Director",
+      "url": "https://ae.indeed.com/viewjob?jk=bd7d9040af9f082a",
+      "posted": "2026-05-21",
+      "seniority": "Other",
       "domain_match": true,
-      "keyword_score": 6,
+      "keyword_score": 33,
       "match_keywords": [
-        "head of"
+        "digital transformation",
+        "ai",
+        "enterprise",
+        "uae",
+        "mena",
+        "automation"
       ],
-      "raw_snippet": "1\\- General Responsibilities\n\n\na. Develop the strategy for Media Strategy and Policy Development to support the Media Governance Sector and overall DMC vision, direction and strategic objectives.\n\n\nb. Ensure the successful implementation of the strategic vision for Media Strategy and Policy Development to achieve the strategic objectives set out for the Media Governance Sector in line with DMC\u2019s vision and objectives\n\n\nc. Lead the teams within Media Strategy and Policy Development to deliver the",
+      "raw_snippet": "**Company Description**  \n\nEstablished in 1982, The Digital Imaging \\& Office Services Solutions of Gulf Commercial Group was created to become a leading office automation solutions provider for the thriving UAE market.\n\n\nBy embracing the printing industry\u2019s phenomenal digital transformation over the years, \u2018GCG\\-DDS\u2019 developed a natural proclivity for new technologies and gained an enviable reputation for its expertise in integrating digital enterprise solutions of all kinds into their client\u2019s",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
-      "search_title": "Head of Technology"
+      "search_title": "Head of Digital Transformation"
+    },
+    {
+      "id": "indeed-in-f6d2c2df28636464",
+      "source": "indeed",
+      "title": "Trading Associate Director - FX (MENAT)",
+      "company": "HSBC",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=f6d2c2df28636464",
+      "posted": "2026-05-20",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 10,
+      "match_keywords": [
+        "director",
+        "mena"
+      ],
+      "raw_snippet": "**Trading Associate Director \u2013 FX (MENAT)**\n\n  \n\nIf you\u2019re looking for a career that will give you plenty of opportunities to develop, join HSBC and your future will be rich with potential. Whether you want a career that could take you to the top, or simply take you in an exciting new direction, HSBC offers opportunities, support and rewards that will take you further.\n\n  \n\nOur Markets business is one of the largest of its kind in the world. It combines sophisticated 24\\-hours global coverage wi",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "IT Director"
     },
     {
       "id": "indeed-in-4dfedcf5d8d67b4d",
@@ -188,6 +192,29 @@
       "filter_reason": null,
       "search_country": "United Arab Emirates",
       "search_title": "IT Director"
+    },
+    {
+      "id": "indeed-in-dfc42a80084fe2b4",
+      "source": "indeed",
+      "title": "PMO Masterplan Commercial Lead - Associate Director",
+      "company": "Mace Group",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=dfc42a80084fe2b4",
+      "posted": "2026-05-21",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 26,
+      "match_keywords": [
+        "pmo",
+        "ai",
+        "director",
+        "riyadh"
+      ],
+      "raw_snippet": "Mace combines construction expertise with consultancy to unlock potential in every person or project and redefine the boundaries of ambition. Our values shape the way we consult and define the people we want to join us on our journey.\n\n\nThe project:\n\n\nJoin one of Riyadh\u2019s most ambitious mixed\\-use development programmes, spanning more than 200 projects across cultural and heritage assets, hospitality, retail, commercial, and education. This is a rare opportunity to play a leading commercial role",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "PMO Director"
     },
     {
       "id": "indeed-in-7846e352341a38b0",
@@ -234,30 +261,6 @@
       "search_title": "Program Director"
     },
     {
-      "id": "indeed-in-6813e761d56c8b7c",
-      "source": "indeed",
-      "title": "Senior Manager/Director - Tech Consulting - Cybersecurity - IAM Lead - KSA",
-      "company": "EY",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=6813e761d56c8b7c",
-      "posted": "2026-05-15",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 23,
-      "match_keywords": [
-        "cybersecurity",
-        "director",
-        "mena",
-        "riyadh",
-        "ksa"
-      ],
-      "raw_snippet": "Location: Riyadh\nOther locations: Primary Location Only\nSalary: Competitive\nDate: May 15, 2026\n**Job description**\n-------------------\n\n\nRequisition ID: 1710267\nAs part of our Cyber Technology Consulting team, you will lead and manage Identity and Access Management (IAM) engagements for clients across the MENA region. You will work closely with clients to design, implement, and mature IAM strategies, solutions, and governance aligned with their business and compliance needs. The client base span",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Program Director"
-    },
-    {
       "id": "indeed-in-8c98bc08a2ba816f",
       "source": "indeed",
       "title": "Senior Manager/Director - Tech Consulting - Cybersecurity - Red Team Lead - KSA",
@@ -288,6 +291,28 @@
       "company": "AtkinsR\u00e9alis",
       "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
       "url": "https://sa.indeed.com/viewjob?jk=1df9d3f088156eae",
+      "posted": "2026-05-14",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 20,
+      "match_keywords": [
+        "ai",
+        "infrastructure",
+        "director"
+      ],
+      "raw_snippet": "Our **Transportation business** brings together expertise in **rail, highways, and local transport** into a multidisciplinary team delivering innovative and sustainable mobility solutions. Within Rail, our Systems \\& Infrastructure capability provides leading expertise across signaling, telecommunications, control systems, and integrated operations. We combine technical excellence with a human\\-centered approach, ensuring that railway systems are designed for performance, reliability, safety, an",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "Program Director"
+    },
+    {
+      "id": "indeed-in-52e731a0ed493029",
+      "source": "indeed",
+      "title": "Programme Director (Transportation)",
+      "company": "AtkinsR\u00e9alis",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=52e731a0ed493029",
       "posted": "2026-05-14",
       "seniority": "C-Suite",
       "domain_match": true,
@@ -394,6 +419,27 @@
       "search_title": "Chief Technology Officer"
     },
     {
+      "id": "indeed-in-ac9ec265501bbe39",
+      "source": "indeed",
+      "title": "Head of Operations",
+      "company": "Flow",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=ac9ec265501bbe39",
+      "posted": "2026-05-21",
+      "seniority": "Director",
+      "domain_match": true,
+      "keyword_score": 10,
+      "match_keywords": [
+        "head of",
+        "platform"
+      ],
+      "raw_snippet": "**About the Company**  \n\nAt Flow, we\u2019re reimagining what it means to live, work, and connect. More than just a real estate company, Flow is a brand, a technology platform, and an operations ecosystem spanning condominiums, hotels, multifamily residences, and office spaces. We\u2019re building a new kind of living experience: one that\u2019s flexible, connected, and designed to create genuine community and real value for the people who call Flow home.  \n\n  \n\nOur mission is oneness: prioritizing our residen",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "Head of Technology"
+    },
+    {
       "id": "indeed-in-1f40a79301f7c2a8",
       "source": "indeed",
       "title": "Technical Head - Track Systems",
@@ -491,9 +537,9 @@
   ],
   "kpi": {
     "searches_run": 20,
-    "results_per_search": 3.9,
-    "unique_jobs": 21,
-    "errors": 4
+    "results_per_search": 4.1,
+    "unique_jobs": 23,
+    "errors": 3
   },
   "recommendations": []
 }

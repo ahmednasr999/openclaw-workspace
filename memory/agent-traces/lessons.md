@@ -1,6 +1,6 @@
 # Agent Lessons Learned
 
-*Auto-curated from agent traces. Updated: 2026-05-20*
+*Auto-curated from agent traces. Updated: 2026-05-21*
 
 ## Communication
 - ✅ CLI uses --target not --to — exit 0 does not mean success. Always verify actual delivery (CEO, 2026-03-30)
@@ -54,4 +54,11 @@
 - ❌ When passing Markdown-heavy patches through the exec JavaScript wrapper, avoid raw backticks in the patch payload or escape them before calling apply_patch. (HR, 2026-05-17)
 - ❌ For LCM nightly reporting, use aggregate subqueries or CTEs for active/stale conversation counts, keep raw join output only as optional audit parity, and wrap SQLite health checks with explicit timeouts to avoid orphaned cron processes. (CTO, 2026-05-18)
 - ❌ For long-running backup commands launched through the exec JavaScript wrapper, do not store possibly undefined fields after command start; if wrapper serialization fails, check for already-running backup/tar/gzip processes and remove only verified incomplete archives before retrying. (CEO, 2026-05-19)
+
+## Tool Workflow Failure
+- ❌ For LinkedIn Easy Apply CV runs, verify the generated PDF with pdftotext and verify LinkedIn's resume row shows a nonzero uploaded file before submitting. If OpenClaw upload produces 0 bytes, use a browser-context DataTransfer/File injection only after the file has been validated locally, then confirm LinkedIn displays the exact filename and size before submit. (HR, 2026-05-21)
+- ❌ Before continuing a LinkedIn Easy Apply batch after a pause, verify the active browser profile is still logged in on a real LinkedIn page. If the profile is authwalled, stop and request a manual login instead of attempting applications from a stale or guest session. (HR, 2026-05-21)
+
+## User Correction
+- ❌ Before every LinkedIn Easy Apply submission, tailor a PDF CV specifically for that job. The filename and content must match the exact job title and company. Do not reuse a generic or prior-role CV unless the title/company match exactly and the content is already tailored to that exact role; flag already-submitted mismatches in the report. (HR, 2026-05-21)
 

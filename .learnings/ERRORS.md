@@ -763,3 +763,26 @@ For long-running backup commands launched through the exec JavaScript wrapper, a
 - Tags: openclaw-backup, cron, exec-wrapper, duplicate-process, retention
 
 ---
+## 2026-05-21 - OpenClaw Update Status Must Be Rechecked After Handoff
+
+- Incident: During the controlled 2026.5.19 OpenClaw maintenance window, I reported that the system was still pre-update from compacted context, then live checks showed OpenClaw had already moved to 2026.5.19 and restarted.
+- Cause: I trusted the compacted handoff state instead of immediately rechecking `openclaw --version`, package metadata, and gateway status before giving a status update.
+- Do differently: After any compaction, resume, or handoff in gateway/update work, run a fresh version/status check before answering "status". Treat summary state as a cue, not proof.
+
+## 2026-05-21 - Do Not Tar Live OpenClaw SQLite Files Directly
+
+- Incident: A full `/root/.openclaw` archive hit a live database read issue while `lcm.db` was changing, producing an invalid gzip archive in the first attempt.
+- Cause: The archive included live SQLite database/WAL files instead of relying first on SQLite `.backup` snapshots.
+- Do differently: For OpenClaw maintenance backups, snapshot `lcm.db`, `flows/registry.sqlite`, `tasks/runs.sqlite`, and `memory/*.sqlite` with SQLite `.backup` first. Archive config/files separately, and verify archives plus SQLite snapshots before updating.
+
+## 2026-05-21 - Health Guard Runtime Patch Failures Can Be Truncated
+
+- Incident: `openclaw-health-dashboard.py --write-report` reported `runtime_patches` CRITICAL, but its compact detail showed only the tail of the patch checker output.
+- Cause: The dashboard intentionally truncates checker stderr to the last 1000 characters, hiding earlier failed checks.
+- Do differently: When the dashboard reports `runtime_patches` CRITICAL, run `python3 scripts/check-openclaw-runtime-patches.py` directly before patching so all missing runtime strings and smoke failures are visible.
+
+## 2026-05-21 - Node Browser Upload Can Create 0 B LinkedIn Files
+
+- Incident: `openclaw.browser` upload against Ahmed-Mac LinkedIn Easy Apply initially created a `0 B` PDF and LinkedIn showed `Something went wrong while uploading`.
+- Cause: Uploading a gateway-local `/tmp/openclaw/uploads/...pdf` path into a node-hosted user browser did not transfer real bytes to the Mac-side browser context.
+- Do differently: For node-hosted browser file uploads when `file.write` is not allowed, inject the PDF bytes into the page as a `File` through the file input with `DataTransfer`, then verify LinkedIn shows the real file size before continuing.

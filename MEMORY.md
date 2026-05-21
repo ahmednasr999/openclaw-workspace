@@ -85,6 +85,7 @@ Keyword strategy:
 Always read `memory/master-cv-data.md` before creating any CV. Never fabricate roles, titles, dates, or achievements. Use exact titles and dates from the master CV data.
 All CV generation must use GPT-5.5 unless Ahmed explicitly changes that instruction. Do not silently use a fallback model for CV work.
 - Before sending or regenerating any JobZoom CV pack, check `applied_jobs` and `jobs.applied` for each selected LinkedIn URL/ID. If already applied, report that status and do not resend CVs unless Ahmed explicitly asks for copies. <!-- dream-promoted 2026-05-17 -->
+- JobZoom daily PDF policy, approved 2026-05-21: generate tailored PDF CVs for every main daily opportunity included in the report at `70+`. Label `82+` roles as application-ready and `70-81` roles as watchlist CVs that should not be applied to unless Ahmed approves. Do not generate CVs by default for suppressed below-70, older still-open, or already-applied roles unless Ahmed explicitly asks. <!-- approved from JobZoom enriched PDF review -->
 
 ## Verify Before Reporting, Non-Negotiable
 Exit code 0 is not success. Subprocess ran is not success. API returned 200 is not proof that content is correct.

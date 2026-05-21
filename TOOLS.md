@@ -109,6 +109,7 @@ Never use Composio for Notion or Telegram when direct credentials exist.
 - For bursty Telegram follow-ups, prefer a temporary per-session `/queue collect debounce:1s cap:20 drop:summarize` rather than changing global queue config. Avoid `interrupt` unless Ahmed explicitly wants newer messages to abort active work.
 - Queue protects inbound session collisions, but it does not replace tool/process discipline. Avoid stacked long-running background exec/tool runs in the same Telegram thread unless necessary; verify with process/session tools instead of assuming the queue solved lock timeouts. <!-- promoted 2026-05-01 -->
 - For long-running backups launched through the exec JavaScript wrapper, avoid storing possibly undefined wrapper fields after the process starts. If wrapper serialization fails, first check for already-running backup, tar, or gzip processes, then remove only verified incomplete archives before retrying. <!-- dream-promoted 2026-05-19 -->
+- For OpenClaw maintenance backups, snapshot live SQLite files with SQLite `.backup` before archiving. Cover `lcm.db`, `flows/registry.sqlite`, `tasks/runs.sqlite`, and `memory/*.sqlite`, then verify both the archive and SQLite snapshots before update work. <!-- dream-promoted 2026-05-21 -->
 
 ## Gateway Safety
 

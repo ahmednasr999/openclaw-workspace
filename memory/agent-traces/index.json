@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-05-20T05:01:59.143041+00:00",
-  "total_traces": 35,
+  "updated_at": "2026-05-21T11:35:26.688366+00:00",
+  "total_traces": 38,
   "by_category": {
     "content_post": [
       {
@@ -264,6 +264,31 @@
         "lesson": "For long-running backup commands launched through the exec JavaScript wrapper, do not store possibly undefined fields after command start; if wrapper serialization fails, check for already-running backup/tar/gzip processes and remove only verified incomplete archives before retrying.",
         "severity": "medium"
       }
+    ],
+    "tool_workflow_failure": [
+      {
+        "id": "trace-20260521-hr-linkedin-top100-upload-builder-fallback",
+        "agent": "HR",
+        "timestamp": "2026-05-21T13:30:00+03:00",
+        "lesson": "For LinkedIn Easy Apply CV runs, verify the generated PDF with pdftotext and verify LinkedIn's resume row shows a nonzero uploaded file before submitting. If OpenClaw upload produces 0 bytes, use a browser-context DataTransfer/File injection only after the file has been validated locally, then confirm LinkedIn displays the exact filename and size before submit.",
+        "severity": "medium"
+      },
+      {
+        "id": "trace-20260521-hr-linkedin-profile-authwall-blocker",
+        "agent": "HR",
+        "timestamp": "2026-05-21T14:04:00+03:00",
+        "lesson": "Before continuing a LinkedIn Easy Apply batch after a pause, verify the active browser profile is still logged in on a real LinkedIn page. If the profile is authwalled, stop and request a manual login instead of attempting applications from a stale or guest session.",
+        "severity": "medium"
+      }
+    ],
+    "user_correction": [
+      {
+        "id": "trace-20260521-hr-easyapply-mismatched-cv-correction",
+        "agent": "HR",
+        "timestamp": "2026-05-21T14:29:00+03:00",
+        "lesson": "Before every LinkedIn Easy Apply submission, tailor a PDF CV specifically for that job. The filename and content must match the exact job title and company. Do not reuse a generic or prior-role CV unless the title/company match exactly and the content is already tailored to that exact role; flag already-submitted mismatches in the report.",
+        "severity": "medium"
+      }
     ]
   },
   "recent": [
@@ -511,6 +536,27 @@
       "category": "external_publish_failure",
       "lesson": "For LinkedIn autoposter cron runs, the runtime must expose both LinkedIn create-post and Composio remote workbench/upload tooling before the scheduled publish window; if the tools are absent after READY_TO_POST, mark the exact page Failed, verify Telegram alert delivery, and do not improvise a text-only or browser-based publish path.",
       "timestamp": "2026-05-20T08:01:10+03:00"
+    },
+    {
+      "id": "trace-20260521-hr-linkedin-top100-upload-builder-fallback",
+      "agent": "HR",
+      "category": "tool_workflow_failure",
+      "lesson": "For LinkedIn Easy Apply CV runs, verify the generated PDF with pdftotext and verify LinkedIn's resume row shows a nonzero uploaded file before submitting. If OpenClaw upload produces 0 bytes, use a browser-context DataTransfer/File injection only after the file has been validated locally, then confirm LinkedIn displays the exact filename and size before submit.",
+      "timestamp": "2026-05-21T13:30:00+03:00"
+    },
+    {
+      "id": "trace-20260521-hr-linkedin-profile-authwall-blocker",
+      "agent": "HR",
+      "category": "tool_workflow_failure",
+      "lesson": "Before continuing a LinkedIn Easy Apply batch after a pause, verify the active browser profile is still logged in on a real LinkedIn page. If the profile is authwalled, stop and request a manual login instead of attempting applications from a stale or guest session.",
+      "timestamp": "2026-05-21T14:04:00+03:00"
+    },
+    {
+      "id": "trace-20260521-hr-easyapply-mismatched-cv-correction",
+      "agent": "HR",
+      "category": "user_correction",
+      "lesson": "Before every LinkedIn Easy Apply submission, tailor a PDF CV specifically for that job. The filename and content must match the exact job title and company. Do not reuse a generic or prior-role CV unless the title/company match exactly and the content is already tailored to that exact role; flag already-submitted mismatches in the report.",
+      "timestamp": "2026-05-21T14:29:00+03:00"
     }
   ]
 }
