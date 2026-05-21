@@ -1,13 +1,11 @@
 {
-  "timestamp": "2026-05-20T19:31:34.222195+03:00",
-  "total_crons": 51,
+  "timestamp": "2026-05-21T06:31:23.419850+03:00",
+  "total_crons": 50,
   "system_crons": 15,
-  "openclaw_crons": 36,
+  "openclaw_crons": 35,
   "notion_created": 0,
   "notion_updated": 50,
-  "errors": [
-    "Exception updating page 'Dream Mode - Memory Consolidation': HTTPSConnectionPool(host='api.notion.com', port=443): Read timed out. (read timeout=10)"
-  ],
+  "errors": [],
   "crons": [
     {
       "name": "daily-backup.sh",
@@ -15,7 +13,7 @@
       "type": "system",
       "last_status": {
         "status": "\u2705 OK",
-        "last_run": "2026-05-19 20:00:15.703609+03:00",
+        "last_run": "2026-05-20 20:00:19.060760+03:00",
         "error": null
       }
     },
@@ -35,7 +33,7 @@
       "type": "system",
       "last_status": {
         "status": "\u2705 OK",
-        "last_run": "2026-05-19 23:01:21.484613+03:00",
+        "last_run": "2026-05-20 23:01:25.523788+03:00",
         "error": null
       }
     },
@@ -45,7 +43,7 @@
       "type": "system",
       "last_status": {
         "status": "\u2705 OK",
-        "last_run": "2026-05-19 20:30:01.467433+03:00",
+        "last_run": "2026-05-20 20:30:01.682597+03:00",
         "error": null
       }
     },
@@ -55,7 +53,7 @@
       "type": "system",
       "last_status": {
         "status": "\u2705 OK",
-        "last_run": "2026-05-19 23:30:01.039006+03:00",
+        "last_run": "2026-05-20 23:30:01.102172+03:00",
         "error": null
       }
     },
@@ -65,7 +63,7 @@
       "type": "system",
       "last_status": {
         "status": "\u2705 OK",
-        "last_run": "2026-05-20 03:15:06.779415+03:00",
+        "last_run": "2026-05-21 03:15:01.955682+03:00",
         "error": null
       }
     },
@@ -85,7 +83,7 @@
       "type": "system",
       "last_status": {
         "status": "\u2705 OK",
-        "last_run": "2026-05-20 06:00:01.370296+03:00",
+        "last_run": "2026-05-21 06:00:01.349402+03:00",
         "error": null
       }
     },
@@ -95,7 +93,7 @@
       "type": "system",
       "last_status": {
         "status": "\u2705 OK",
-        "last_run": "2026-05-20 06:00:08.008341+03:00",
+        "last_run": "2026-05-21 06:00:10.380463+03:00",
         "error": null
       }
     },
@@ -105,7 +103,7 @@
       "type": "system",
       "last_status": {
         "status": "\u2705 OK",
-        "last_run": "2026-05-20 19:30:01.223699+03:00",
+        "last_run": "2026-05-21 06:30:01.603429+03:00",
         "error": null
       }
     },
@@ -115,7 +113,7 @@
       "type": "system",
       "last_status": {
         "status": "\u2705 OK",
-        "last_run": "2026-05-20 18:00:10.821591+03:00",
+        "last_run": "2026-05-21 06:00:12.755479+03:00",
         "error": null
       }
     },
@@ -125,7 +123,7 @@
       "type": "system",
       "last_status": {
         "status": "\u2705 OK",
-        "last_run": "2026-05-20 01:50:01.632641+03:00",
+        "last_run": "2026-05-21 01:50:01.944855+03:00",
         "error": null
       }
     },
@@ -155,133 +153,13 @@
       "type": "system",
       "last_status": {
         "status": "\u2705 OK",
-        "last_run": "2026-05-20 19:01:28.596306+03:00",
+        "last_run": "2026-05-21 06:01:22.640946+03:00",
         "error": null
       }
     },
     {
       "name": "Email Agent (Sun-Thu)",
       "schedule": "cron 0 7,9,11,13,15,17,19,21 * * 0-4 @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "OpenClaw Health Guard",
-      "schedule": "cron 0 */6 * * * @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "Track GPT-5.5 Codex quota for Pro 20x vs 5x decision",
-      "schedule": "cron 0 */6 * * * @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "Daily Session Cleanup",
-      "schedule": "cron 0 3 * * * @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "LCM Nightly Health Check",
-      "schedule": "cron 0 3 * * * @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "session-watchdog",
-      "schedule": "cron 0 3 * * * @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "Daily OpenClaw Backup",
-      "schedule": "cron 15 3 * * * @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "LCM Force-Compact Processor",
-      "schedule": "cron 30 3 * * * @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "Guarded prune: LCM 20260518 0922 safety backup",
-      "schedule": "cron 35 3 * * * @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "Daily Intel Sweep",
-      "schedule": "cron 45 3 * * * @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "Calendar Pre-fetch",
-      "schedule": "cron 55 4 * * * @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "JobZoom Daily Scan",
-      "schedule": "cron 0 5 * * * @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "Dream Mode - Memory Consolidation",
-      "schedule": "cron 15 6 * * 0-4 @ Africa/Cairo",
       "type": "openclaw",
       "last_status": {
         "status": "\u26a0\ufe0f Unknown",
@@ -350,8 +228,108 @@
       }
     },
     {
+      "name": "OpenClaw Health Guard",
+      "schedule": "cron 0 */6 * * * @ Africa/Cairo",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "Track GPT-5.5 Codex quota for Pro 20x vs 5x decision",
+      "schedule": "cron 0 */6 * * * @ Africa/Cairo",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
       "name": "LCM Midday Compaction Sweep",
       "schedule": "cron 0 14 * * * @ Africa/Cairo",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "Daily Session Cleanup",
+      "schedule": "cron 0 3 * * * @ Africa/Cairo",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "LCM Nightly Health Check",
+      "schedule": "cron 0 3 * * * @ Africa/Cairo",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "session-watchdog",
+      "schedule": "cron 0 3 * * * @ Africa/Cairo",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "Daily OpenClaw Backup",
+      "schedule": "cron 15 3 * * * @ Africa/Cairo",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "LCM Force-Compact Processor",
+      "schedule": "cron 30 3 * * * @ Africa/Cairo",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "Daily Intel Sweep",
+      "schedule": "cron 45 3 * * * @ Africa/Cairo",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "Calendar Pre-fetch",
+      "schedule": "cron 55 4 * * * @ Africa/Cairo",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "JobZoom Daily Scan",
+      "schedule": "cron 0 5 * * * @ Africa/Cairo",
       "type": "openclaw",
       "last_status": {
         "status": "\u26a0\ufe0f Unknown",
@@ -392,6 +370,16 @@
     {
       "name": "Weekly Skill Autoresearch",
       "schedule": "cron 0 10 * * 6 @ Africa/Cairo",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "Dream Mode - Memory Consolidation",
+      "schedule": "cron 15 6 * * 0-4 @ Africa/Cairo",
       "type": "openclaw",
       "last_status": {
         "status": "\u26a0\ufe0f Unknown",

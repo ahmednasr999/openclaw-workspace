@@ -3312,3 +3312,32 @@ Config warnings:
 [2026-05-20 20:00] === Watchdog v3 run ===
 [2026-05-20 20:00] WARN: Jobs data stale (607h), triggering pipeline
 [2026-05-20 20:00] FIXED: Pipeline triggered
+[2026-05-20 20:00] Summary: fixes=1 warnings=0 alerts=0
+[2026-05-20 22:00] === Watchdog v3 run ===
+[2026-05-20 22:00] WARN: Jobs data stale (609h), triggering pipeline
+[2026-05-20 22:00] FIXED: Pipeline triggered
+[2026-05-20 22:00] WARN: SIE data stale (27h)
+[2026-05-20 22:00] FIXED: SIE checks re-run
+[2026-05-20 22:00] Summary: fixes=2 warnings=0 alerts=0
+[2026-05-21 00:00] === Watchdog v3 run ===
+[2026-05-21 00:00] WARN: Jobs data stale (611h), triggering pipeline
+[2026-05-21 00:00] FIXED: Pipeline triggered
+[2026-05-21 00:00] Summary: fixes=1 warnings=0 alerts=0
+[2026-05-21 02:00] === Watchdog v3 run ===
+[2026-05-21 02:00] WARN: Jobs data stale (613h), triggering pipeline
+[2026-05-21 02:00] FIXED: Pipeline triggered
+[2026-05-21 02:00] Summary: fixes=1 warnings=0 alerts=0
+[2026-05-21 04:00] === Watchdog v3 run ===
+[2026-05-21 04:00] WARN: Jobs data stale (615h), triggering pipeline
+[2026-05-21 04:00] FIXED: Pipeline triggered
+[2026-05-21 04:00] FIXED: Re-triggered failed cron db37a524-9cba-453c-a59a-9042a268f7ea
+[2026-05-21 04:00] Summary: fixes=2 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:db37a524-9cba-453c-a59a-9042a268f7ea:1779325212373:1"
+}
+[2026-05-21 06:00] === Watchdog v3 run ===
+[2026-05-21 06:00] WARN: Jobs data stale (617h), triggering pipeline
+[2026-05-21 06:00] FIXED: Pipeline triggered
+[2026-05-21 06:00] Summary: fixes=1 warnings=0 alerts=0
