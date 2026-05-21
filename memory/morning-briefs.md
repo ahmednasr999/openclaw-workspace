@@ -2289,3 +2289,56 @@ Node.js v22.22.1
 ## Calendar - Today's Events
 *Calendar API unavailable (gog v0.12.0 bug - tracking fix)*
 
+=== Morning Brief - 2026-05-21 06:00 AM ===
+
+## Claude 2x Usage Reminder
+
+## Job Radar (from Tavily)
+[search-router] Tavily unavailable, falling back to local SearXNG: Tavily Search failed (402): {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+## Sources
+
+_(provider: searxng)_
+
+- **Meet a Pioneer Driving Digital Health Transformation - Instagram**
+  https://www.instagram.com/p/DVNsUwrkQWQ/
+  Almakrami held key leadership positions at the Ministry of Health Saudi Arabia, where he served as Hospital Director and Regional Lead of ...
+
+- **Ahmad Yahya‏ - ‏CIO | CDO | Digital Transformation Leader - LinkedIn**
+  https://ae.linkedin.com/in/ayahya
+  CIO | CDO | Digital Transformation Leader | Fostering Innovation & Tech Excellence | Driving Business Growth Through Tech‏ · ‏Senior Healthcare Technology ...
+
+- **A sustainable digital future starts with empowering people. In ...**
+  https://www.instagram.com/reel/DOLDEd3ExkQ/
+  4 Sept 2025 ... As part of Sharjah Digital Department's vision to lead the Digital Digital Transformation across Sharjah's government entities. We are launching ...
+
+- **Digital Transformation Manager Jobs in the Middle East - Bayt.com**
+  https://www.bayt.com/en/international/jobs/digital-transformation-manager-jobs/
+  Digital Transformation Manager — Dubai, UAE. Emagine Solutions FZE ... Summary: A pivotal role exists for a PMO professional in Saudi Arabia ...
+
+- **Digital Transformation Summit 2026**
+  https://digitransformationsummit.com/
+  The Digital Transformation Summit unites global leaders, experts, and innovators to drive compelling discussions shaping the future of global innovation.
+
+## Gmail - New Opportunities
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/root/.openclaw/workspace/scripts/gmail-scan.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+
+## Calendar - Today's Events
+*Calendar API unavailable (gog v0.12.0 bug - tracking fix)*
+
