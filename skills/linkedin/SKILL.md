@@ -26,27 +26,46 @@ Use browser automation to interact with LinkedIn - check messages, view profiles
 
 ## Common Operations
 
+### Tab Reuse Rule
+Before using LinkedIn in Chrome, list tabs and reuse an existing LinkedIn tab or a labeled task tab.
+
+Preferred label examples:
+- `hr-linkedin` for HR/job-search/application work
+- `linkedin-content` for CMO/content work
+- `linkedin-profile` for profile/research work
+
+Do not open a new tab per job, profile, search, upload, or retry. Use one labeled tab and navigate it through the workflow. If a retry creates duplicates, close only the extra automation-created duplicates after confirming the intended labeled tab remains available.
+
 ### Check Connection Status
 ```
-browser action=snapshot profile=chrome targetUrl="https://www.linkedin.com/feed/"
+browser action=tabs profile=chrome
+# If no suitable LinkedIn tab exists:
+browser action=open profile=chrome url="https://www.linkedin.com/feed/" label="linkedin-profile"
+browser action=snapshot profile=chrome targetId="linkedin-profile"
 ```
 
 ### View Notifications/Messages
 ```
-browser action=navigate profile=chrome targetUrl="https://www.linkedin.com/messaging/"
-browser action=snapshot profile=chrome
+browser action=tabs profile=chrome
+# If no suitable LinkedIn tab exists:
+browser action=open profile=chrome url="https://www.linkedin.com/messaging/" label="linkedin-profile"
+browser action=snapshot profile=chrome targetId="linkedin-profile"
 ```
 
 ### Search People
 ```
-browser action=navigate profile=chrome targetUrl="https://www.linkedin.com/search/results/people/?keywords=QUERY"
-browser action=snapshot profile=chrome
+browser action=tabs profile=chrome
+# If no suitable LinkedIn tab exists:
+browser action=open profile=chrome url="https://www.linkedin.com/search/results/people/?keywords=QUERY" label="linkedin-profile"
+browser action=snapshot profile=chrome targetId="linkedin-profile"
 ```
 
 ### View Profile
 ```
-browser action=navigate profile=chrome targetUrl="https://www.linkedin.com/in/USERNAME/"
-browser action=snapshot profile=chrome
+browser action=tabs profile=chrome
+# If no suitable LinkedIn tab exists:
+browser action=open profile=chrome url="https://www.linkedin.com/in/USERNAME/" label="linkedin-profile"
+browser action=snapshot profile=chrome targetId="linkedin-profile"
 ```
 
 ### Send Message (confirm with user first!)

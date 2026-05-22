@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-05-22T05:00:47.942599+02:00",
-    "duration_ms": 44390,
+    "generated_at": "2026-05-22T17:00:44.658336+02:00",
+    "duration_ms": 40803,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "f3d9c47b",
+    "run_id": "1386bb43",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -108,43 +108,43 @@
       "search_title": "Head of Digital Transformation"
     },
     {
-      "id": "indeed-in-f6d2c2df28636464",
+      "id": "indeed-in-5bf04d9fcc06a11f",
       "source": "indeed",
-      "title": "Trading Associate Director - FX (MENAT)",
-      "company": "HSBC",
+      "title": "Head of Operations \u2013 Business Setup Consultancy Experience Mandatory",
+      "company": "3S group",
       "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=f6d2c2df28636464",
-      "posted": "2026-05-20",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 10,
+      "url": "https://ae.indeed.com/viewjob?jk=5bf04d9fcc06a11f",
+      "posted": "2026-05-22",
+      "seniority": "Director",
+      "domain_match": true,
+      "keyword_score": 20,
       "match_keywords": [
-        "director",
-        "mena"
+        "ai",
+        "head of",
+        "uae",
+        "dubai"
       ],
-      "raw_snippet": "**Trading Associate Director \u2013 FX (MENAT)**\n\n  \n\nIf you\u2019re looking for a career that will give you plenty of opportunities to develop, join HSBC and your future will be rich with potential. Whether you want a career that could take you to the top, or simply take you in an exciting new direction, HSBC offers opportunities, support and rewards that will take you further.\n\n  \n\nOur Markets business is one of the largest of its kind in the world. It combines sophisticated 24\\-hours global coverage wi",
+      "raw_snippet": "**Head of Operations \u2013 Business Setup Consultancy**\n\n**Location:** Dubai, UAE\n\n**Employment Type:** Full\\-Time\n\n**Salary:** AED 8,000 \u2013 10,000 per month (Depending on Experience)\n\n**Experience Required:** Minimum 4 Years UAE Experience in Business Setup / Corporate Services\n\n**Company Overview**\n\nWe are a growing business setup consultancy in Dubai seeking an experienced and dynamic Head of Operations to lead and oversee operational functions across multiple UAE jurisdictions.\n\nThe ideal candida",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
-      "search_title": "IT Director"
+      "search_title": "Head of Technology"
     },
     {
-      "id": "indeed-in-4dfedcf5d8d67b4d",
+      "id": "indeed-in-efa688dcbdb6fdc5",
       "source": "indeed",
-      "title": "Director, Business Development, Corporate Solutions - B2B Acceptance",
-      "company": "Mastercard",
+      "title": "MEA Brand Director",
+      "company": "Haleon",
       "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=4dfedcf5d8d67b4d",
-      "posted": "2026-05-19",
+      "url": "https://ae.indeed.com/viewjob?jk=efa688dcbdb6fdc5",
+      "posted": "2026-05-22",
       "seniority": "C-Suite",
       "domain_match": false,
-      "keyword_score": 23,
+      "keyword_score": 6,
       "match_keywords": [
-        "payments",
-        "ai",
         "director"
       ],
-      "raw_snippet": "**Our Purpose**\n\n*Mastercard powers economies and empowers people in 200\\+ countries and territories worldwide. Together with our customers, we\u2019re helping build a sustainable economy where everyone can prosper. We support a wide range of digital payments choices, making transactions secure, simple, smart and accessible. Our technology and innovation, partnerships and networks combine to deliver a unique set of products and services that help people, businesses and governments realize their great",
+      "raw_snippet": "Welcome to Haleon. We\u2019re a purpose\\-driven, world\\-class consumer company putting everyday health in the hands of millions. In just three years since our launch, we\u2019ve grown, evolved and are now entering an exciting new chapter \u2013 one filled with bold ambitions and enormous opportunity.  \n\n  \n\nOur trusted portfolio of brands \u2013 including Sensodyne\u00ae, Panadol\u00ae, Advil\u00ae, Voltaren\u00ae, Theraflu\u00ae, Otrivin\u00ae, and Centrum\u00ae \u2013 lead in resilient and growing categories. What sets us apart is our unique blend of d",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
@@ -355,28 +355,6 @@
       "search_title": "Director Digital Transformation"
     },
     {
-      "id": "indeed-in-16adeb67224431ae",
-      "source": "indeed",
-      "title": "Associate Director - Data Engineering",
-      "company": "Jobskey",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=16adeb67224431ae",
-      "posted": "2026-04-17",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 20,
-      "match_keywords": [
-        "digital transformation",
-        "director",
-        "api"
-      ],
-      "raw_snippet": "**Client Overview:**\n\n\nOur client is collaborating with a leading digital bank, dedicated to transforming the financial industry with innovative and secure, tech\\-driven banking solutions. This progressive institution emphasizes delivering personalized and seamless user experiences, establishing itself as a frontrunner in digital transformation within the banking sector. Join a visionary team that is shaping the future of modern banking.\n\n**Job Purpose:**\n\n\nThe Associate Director \\- Data Enginee",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Director Digital Transformation"
-    },
-    {
       "id": "indeed-in-ac9ec265501bbe39",
       "source": "indeed",
       "title": "Head of Operations",
@@ -495,9 +473,9 @@
   ],
   "kpi": {
     "searches_run": 20,
-    "results_per_search": 4.35,
-    "unique_jobs": 21,
-    "errors": 3
+    "results_per_search": 4.15,
+    "unique_jobs": 20,
+    "errors": 4
   },
   "recommendations": []
 }

@@ -53,6 +53,15 @@
 4. Loop in CEO when required (positive recruiter response, interview invite, offer)
 5. Run `eval/checklist.md` before closing any task
 
+### Browser Hygiene for LinkedIn / Chrome
+- Before any LinkedIn browser work, load `skills/linkedin/SKILL.md` and the browser-automation tab hygiene rules.
+- Reuse one labeled tab for the HR LinkedIn task, normally `hr-linkedin`.
+- Start with `browser action=tabs` and reuse an existing LinkedIn tab or matching `hr-linkedin` label before opening anything new.
+- If no suitable tab exists, open one labeled tab only, then keep using that `targetId` or label for all snapshots, navigation, actions, uploads, and retries.
+- If retries or failed uploads create duplicate LinkedIn tabs, close only the extra HR-created duplicates after checking they are not active user tabs.
+- Do not open a fresh tab for every job, recruiter profile, or application step. Navigate the same labeled tab instead.
+- If the browser endpoint is unavailable or tab state cannot be inspected, stop and report the blocker instead of opening more tabs.
+
 ### Domain Guard
 - **NEVER** respond to tech/code questions → route to main agent
 - **NEVER** respond to content/marketing → route to CMO Desk (topic 7)

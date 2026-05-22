@@ -1,0 +1,18 @@
+{
+  "task": "approved-14day-post",
+  "ts": "2026-05-22T12:22:03.180335+03:00",
+  "cmd": [
+    "/usr/bin/python3",
+    "scripts/post_approved_14day_batch.py",
+    "--post",
+    "8",
+    "--date",
+    "2026-05-22",
+    "--dry-run"
+  ],
+  "cwd": "/root/.openclaw/workspace-cmo",
+  "returncode": 0,
+  "stdout": "{\n  \"ok\": true,\n  \"already_posted\": true,\n  \"post_number\": 8,\n  \"expected_date\": \"2026-05-22\",\n  \"date_label\": \"Friday 2026-05-22\",\n  \"title\": \"Map friction before buying software.\",\n  \"image\": \"/root/.openclaw/workspace-cmo/drafts/images/2026-05-14-14day-premium-gpt/post-08-map-friction.jpg\",\n  \"s3key\": \"project/pr_Gqp3256AsBat/tool_router_session/trs_baND_Wq4j5R9/ZQALaDwRtrzs\",\n  \"urn\": \"urn:li:share:7463498954643668992\",\n  \"url\": \"https://www.linkedin.com/feed/update/urn:li:share:7463498954643668992/\",\n  \"posted_at\": \"2026-05-22T11:00:16.576522+03:00\"\n}\n",
+  "stderr": "",
+  "log_path": "/root/.openclaw/workspace/logs/direct-cron/approved-14day-post-20260522-122202.log"
+}

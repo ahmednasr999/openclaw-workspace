@@ -24,6 +24,15 @@ When the user asks "Are you done?" or equivalent after a maintenance/task sequen
 
 ---
 
+## 2026-05-21 - Reuse LinkedIn Browser Tabs for HR Work
+
+- Correction: Ahmed noticed the HR agent opens a new Chrome tab every time it works on LinkedIn, which eventually creates RAM and CPU pressure.
+- Cause: The browser-automation skill had a general tab hygiene rule, but the HR and LinkedIn skills did not make reuse of one labeled LinkedIn tab mandatory for HR flows.
+- Do differently: Before HR LinkedIn work, list tabs, reuse an existing LinkedIn tab or a labeled `hr-linkedin` tab, navigate that same tab through the workflow, and close only automation-created duplicates after inspection. If tab state cannot be inspected, stop instead of opening more tabs.
+- Durable fix: Added explicit browser hygiene rules to `skills/hr-agent/SKILL.md` and tab reuse rules/examples to `skills/linkedin/SKILL.md`.
+
+---
+
 ## [LRN-20260507-003] best_practice
 
 **Logged**: 2026-05-07T23:02:00+03:00

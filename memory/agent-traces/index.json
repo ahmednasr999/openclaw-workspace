@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-05-21T11:35:26.688366+00:00",
-  "total_traces": 38,
+  "updated_at": "2026-05-22T09:28:47.783603+00:00",
+  "total_traces": 41,
   "by_category": {
     "content_post": [
       {
@@ -279,6 +279,20 @@
         "timestamp": "2026-05-21T14:04:00+03:00",
         "lesson": "Before continuing a LinkedIn Easy Apply batch after a pause, verify the active browser profile is still logged in on a real LinkedIn page. If the profile is authwalled, stop and request a manual login instead of attempting applications from a stale or guest session.",
         "severity": "medium"
+      },
+      {
+        "id": "trace-20260522-jobzoom-openclaw-cron-no-shell",
+        "agent": "CEO",
+        "timestamp": "2026-05-22T12:18:00+03:00",
+        "lesson": "Do not use LLM agent-turn crons as the scheduler of record for required shell launches. Put deterministic shell launchers on OS cron or another direct runner, keep agent crons for summaries or alerts, and verify the launcher log/state after scheduler changes instead of trusting cron status alone.",
+        "severity": "medium"
+      },
+      {
+        "id": "trace-20260522-openclaw-exec-cron-hardening",
+        "agent": "CEO",
+        "timestamp": "2026-05-22T12:32:00+03:00",
+        "lesson": "For recurring operational jobs whose core action is a deterministic local command, use OS cron plus a small direct runner with explicit delivery logic. Leave LLM agent crons for workflows that genuinely require reasoning, source synthesis, or interactive review, and do not let a model response stand in for command execution evidence.",
+        "severity": "medium"
       }
     ],
     "user_correction": [
@@ -287,6 +301,13 @@
         "agent": "HR",
         "timestamp": "2026-05-21T14:29:00+03:00",
         "lesson": "Before every LinkedIn Easy Apply submission, tailor a PDF CV specifically for that job. The filename and content must match the exact job title and company. Do not reuse a generic or prior-role CV unless the title/company match exactly and the content is already tailored to that exact role; flag already-submitted mismatches in the report.",
+        "severity": "medium"
+      },
+      {
+        "id": "trace-20260522-hr-easyapply-count-stale-correction",
+        "agent": "HR",
+        "timestamp": "2026-05-22T00:39:00+03:00",
+        "lesson": "After every LinkedIn Easy Apply batch or recovery, reconcile the local applied ledger against live LinkedIn proof for all touched candidate tabs before reporting the campaign count or stopping. Count only Easy Apply-style submissions with 'Application submitted' plus 'View resume'; treat company-site application statuses as separate and do not add them to the Easy Apply count.",
         "severity": "medium"
       }
     ]
@@ -557,6 +578,27 @@
       "category": "user_correction",
       "lesson": "Before every LinkedIn Easy Apply submission, tailor a PDF CV specifically for that job. The filename and content must match the exact job title and company. Do not reuse a generic or prior-role CV unless the title/company match exactly and the content is already tailored to that exact role; flag already-submitted mismatches in the report.",
       "timestamp": "2026-05-21T14:29:00+03:00"
+    },
+    {
+      "id": "trace-20260522-hr-easyapply-count-stale-correction",
+      "agent": "HR",
+      "category": "user_correction",
+      "lesson": "After every LinkedIn Easy Apply batch or recovery, reconcile the local applied ledger against live LinkedIn proof for all touched candidate tabs before reporting the campaign count or stopping. Count only Easy Apply-style submissions with 'Application submitted' plus 'View resume'; treat company-site application statuses as separate and do not add them to the Easy Apply count.",
+      "timestamp": "2026-05-22T00:39:00+03:00"
+    },
+    {
+      "id": "trace-20260522-jobzoom-openclaw-cron-no-shell",
+      "agent": "CEO",
+      "category": "tool_workflow_failure",
+      "lesson": "Do not use LLM agent-turn crons as the scheduler of record for required shell launches. Put deterministic shell launchers on OS cron or another direct runner, keep agent crons for summaries or alerts, and verify the launcher log/state after scheduler changes instead of trusting cron status alone.",
+      "timestamp": "2026-05-22T12:18:00+03:00"
+    },
+    {
+      "id": "trace-20260522-openclaw-exec-cron-hardening",
+      "agent": "CEO",
+      "category": "tool_workflow_failure",
+      "lesson": "For recurring operational jobs whose core action is a deterministic local command, use OS cron plus a small direct runner with explicit delivery logic. Leave LLM agent crons for workflows that genuinely require reasoning, source synthesis, or interactive review, and do not let a model response stand in for command execution evidence.",
+      "timestamp": "2026-05-22T12:32:00+03:00"
     }
   ]
 }

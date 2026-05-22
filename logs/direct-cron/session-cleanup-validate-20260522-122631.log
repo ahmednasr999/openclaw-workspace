@@ -1,0 +1,14 @@
+{
+  "task": "session-cleanup-validate",
+  "ts": "2026-05-22T12:26:31.900725+03:00",
+  "cmd": [
+    "bash",
+    "-n",
+    "/root/.openclaw/workspace/scripts/session-cleanup.sh"
+  ],
+  "cwd": "/root/.openclaw/workspace",
+  "returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "log_path": "/root/.openclaw/workspace/logs/direct-cron/session-cleanup-validate-20260522-122631.log"
+}

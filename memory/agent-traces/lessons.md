@@ -1,6 +1,6 @@
 # Agent Lessons Learned
 
-*Auto-curated from agent traces. Updated: 2026-05-21*
+*Auto-curated from agent traces. Updated: 2026-05-22*
 
 ## Communication
 - ✅ CLI uses --target not --to — exit 0 does not mean success. Always verify actual delivery (CEO, 2026-03-30)
@@ -58,7 +58,10 @@
 ## Tool Workflow Failure
 - ❌ For LinkedIn Easy Apply CV runs, verify the generated PDF with pdftotext and verify LinkedIn's resume row shows a nonzero uploaded file before submitting. If OpenClaw upload produces 0 bytes, use a browser-context DataTransfer/File injection only after the file has been validated locally, then confirm LinkedIn displays the exact filename and size before submit. (HR, 2026-05-21)
 - ❌ Before continuing a LinkedIn Easy Apply batch after a pause, verify the active browser profile is still logged in on a real LinkedIn page. If the profile is authwalled, stop and request a manual login instead of attempting applications from a stale or guest session. (HR, 2026-05-21)
+- ❌ Do not use LLM agent-turn crons as the scheduler of record for required shell launches. Put deterministic shell launchers on OS cron or another direct runner, keep agent crons for summaries or alerts, and verify the launcher log/state after scheduler changes instead of trusting cron status alone. (CEO, 2026-05-22)
+- ❌ For recurring operational jobs whose core action is a deterministic local command, use OS cron plus a small direct runner with explicit delivery logic. Leave LLM agent crons for workflows that genuinely require reasoning, source synthesis, or interactive review, and do not let a model response stand in for command execution evidence. (CEO, 2026-05-22)
 
 ## User Correction
 - ❌ Before every LinkedIn Easy Apply submission, tailor a PDF CV specifically for that job. The filename and content must match the exact job title and company. Do not reuse a generic or prior-role CV unless the title/company match exactly and the content is already tailored to that exact role; flag already-submitted mismatches in the report. (HR, 2026-05-21)
-- ❌ After every LinkedIn Easy Apply batch or browser recovery, reconcile all touched candidate tabs against the local applied ledger before reporting the campaign count. Count only LinkedIn Easy Apply submissions with "Application submitted" plus "View resume"; keep company-site application statuses separate. (HR, 2026-05-22)
+- ❌ After every LinkedIn Easy Apply batch or recovery, reconcile the local applied ledger against live LinkedIn proof for all touched candidate tabs before reporting the campaign count or stopping. Count only Easy Apply-style submissions with 'Application submitted' plus 'View resume'; treat company-site application statuses as separate and do not add them to the Easy Apply count. (HR, 2026-05-22)
+
