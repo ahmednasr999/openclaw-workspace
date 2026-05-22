@@ -2342,3 +2342,56 @@ Node.js v22.22.1
 ## Calendar - Today's Events
 *Calendar API unavailable (gog v0.12.0 bug - tracking fix)*
 
+=== Morning Brief - 2026-05-22 06:00 AM ===
+
+## Claude 2x Usage Reminder
+
+## Job Radar (from Tavily)
+[search-router] Tavily unavailable, falling back to local SearXNG: Tavily Search failed (402): {"detail":{"error":"Your account is currently disabled. This is likely due to unpaid pay-as-you-go balance. Please update your payment method or contact support@tavily.com"}}
+## Sources
+
+_(provider: searxng)_
+
+- **Omobolanle Soyombo Fans Page | News Update, Tuesday, 12/05 ...**
+  https://www.facebook.com/groups/179921216208323/posts/2085506355649790/
+  News Update, Tuesday, 12/05/2026 **Tinubu arrives Kenya for Africa-France summit **Southern, Middle-Belt leaders demand Southern Presidency in 2027, warn INEC and others **FG, EU, WHO inaugurate 4.2m euros health programme **Tinubu appoints Major General Fadewa (RTD) as special adviser on homeland S...
+
+- **Meet a Pioneer Driving Digital Health Transformation - Instagram**
+  https://www.instagram.com/p/DVNsUwrkQWQ/
+  Almakrami held key leadership positions at the Ministry of Health Saudi Arabia, where he served as Hospital Director and Regional Lead of ...
+
+- **News Update* | Facebook**
+  https://www.facebook.com/groups/2513639668759108/posts/26207099618986447/
+  *‎‎News Update* *Wednesday* *15/04/2026* ‎ ‎**Obi accuses Tinubu of orchestrating opposition crises ahead of 2027 ‎ ‎**Obi defends defections, hints about dumping ADC if ‘process is compromised’...
+
+- **Ahmad Yahya‏ - ‏CIO | CDO | Digital Transformation Leader - LinkedIn**
+  https://ae.linkedin.com/in/ayahya
+  CIO | CDO | Digital Transformation Leader | Fostering Innovation & Tech Excellence | Driving Business Growth Through Tech‏ · ‏Senior Healthcare Technology ...
+
+- **UAE Emiratisation Financial Sector Growth 2025 | UAE ...**
+  https://gccbusinesswatch.com/news/uae-accelerates-emiratisation-in-financial-sector-surpasses-employment-targets/
+  Apr 23, 2026 · The UAE’s financial sector exceeds Emiratisation targets with over 23,000 nationals employed, reflecting strong progress in workforce nationalisation and economic sustainability.
+
+## Gmail - New Opportunities
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/root/.openclaw/workspace/scripts/gmail-scan.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+
+## Calendar - Today's Events
+*Calendar API unavailable (gog v0.12.0 bug - tracking fix)*
+
