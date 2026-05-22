@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-05-21T17:00:42.863503+02:00",
-    "duration_ms": 40370,
+    "generated_at": "2026-05-22T05:00:47.942599+02:00",
+    "duration_ms": 44390,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "1776eb47",
+    "run_id": "f3d9c47b",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -83,28 +83,6 @@
       "search_title": "Program Director"
     },
     {
-      "id": "indeed-in-7a0c40bd08ee220f",
-      "source": "indeed",
-      "title": "Director | Corporate Reputation (Financial & Professional Services) | Strategic Communications",
-      "company": "FTI Consulting, Inc.",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=7a0c40bd08ee220f",
-      "posted": "2026-05-18",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 13,
-      "match_keywords": [
-        "director",
-        "middle east",
-        "api"
-      ],
-      "raw_snippet": "**Who We Are**\n\n\nFTI Consulting is the leading global expert firm for organisations facing crisis and transformation. We partner with top multinational corporations, law firms, banks and private equity firms on their most critical issues to deliver meaningful impact. Our teams respond rapidly to complex, dynamic situations, and from day one you\u2019ll work alongside leaders who have shaped history.\n\n **About The Role**\n\n\nFTI Consulting has operated in the Middle East for over twenty years, advising ",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Director Digital Transformation"
-    },
-    {
       "id": "indeed-in-bd7d9040af9f082a",
       "source": "indeed",
       "title": "Practice Head- Digital Transformation",
@@ -173,25 +151,27 @@
       "search_title": "IT Director"
     },
     {
-      "id": "indeed-in-a3f09a6326070f40",
+      "id": "indeed-in-3342c9bc8b9a99de",
       "source": "indeed",
-      "title": "Senior Manager Brand Comms Running & Training",
-      "company": "adidas",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=a3f09a6326070f40",
-      "posted": "2026-05-19",
-      "seniority": "Other",
+      "title": "Associate Director - Project Controls",
+      "company": "Mace Group",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=3342c9bc8b9a99de",
+      "posted": "2026-05-21",
+      "seniority": "C-Suite",
       "domain_match": true,
-      "keyword_score": 13,
+      "keyword_score": 23,
       "match_keywords": [
-        "mobile",
-        "ai"
+        "ai",
+        "infrastructure",
+        "director",
+        "saudi"
       ],
-      "raw_snippet": "PURPOSE \\& OVERALL RELEVANCE FOR THE ORGANIZATION\n\n\n\nThe mission of the Senior Manager Brand Communication Performance is to position adidas as the best sports brand in the Emerging Markets Central (EMC) region through maximizing innovative and inspirational brand exposure by recommending, planning and executing initiatives via Above\\-the\\-Line, Offline, Online, Mobile, Events and Activations in an integrated and single\\-minded manner.  \n\n\n\nKEY RESPONSIBILITIES:\n\n\n* Lead the development, prepara",
+      "raw_snippet": "Mace combines construction expertise with consultancy to unlock potential in every person or project and redefine the boundaries of ambition. Our values shape the way we consult and define the people we want to join us on our journey.\n\n\nThe project:\n\n\nThis is an opportunity to work on one of the largest programmes in Saudi Arabia. This unique project consists of major mixed\\-use development including sports facilities, entertainment and arts along with all associated infrastructure.\n\n\nMace is on",
       "relevant": true,
       "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "IT Director"
+      "search_country": "Saudi Arabia",
+      "search_title": "PMO Director"
     },
     {
       "id": "indeed-in-dfc42a80084fe2b4",
@@ -215,6 +195,28 @@
       "filter_reason": null,
       "search_country": "Saudi Arabia",
       "search_title": "PMO Director"
+    },
+    {
+      "id": "indeed-in-d5c6714d3a9f6732",
+      "source": "indeed",
+      "title": "Program Director - Civil Engineering",
+      "company": "TRACTEBEL",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=d5c6714d3a9f6732",
+      "posted": "2026-05-20",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 13,
+      "match_keywords": [
+        "director",
+        "saudi",
+        "riyadh"
+      ],
+      "raw_snippet": "Job Description\nProgram Director \\- Civil Engineering\nPosting Start Date: 5/20/26\nRequisition ID: 66589\nApply now\n**Informations g\u00e9n\u00e9rales**\n--------------------------\n\nRiyadh, Saudi Arabia, 12271\nTRACTEBEL ENGINEERING S.A., SAUDI ARABIA BRANCH\nSenior (experience \\>15 years)\nEngineering\nFixed\\-Term\nFull \\- Time\n**Job Title**\n\n**Program Director \u2013 Civil Engineering**\n\n**Location** Jeddah, Saudi Arabia\n\n\nReady to engineer your positive impact? Then join Tractebel, part of the ENGIE Group, and our ",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "Program Director"
     },
     {
       "id": "indeed-in-7846e352341a38b0",
@@ -307,28 +309,6 @@
       "search_title": "Program Director"
     },
     {
-      "id": "indeed-in-52e731a0ed493029",
-      "source": "indeed",
-      "title": "Programme Director (Transportation)",
-      "company": "AtkinsR\u00e9alis",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=52e731a0ed493029",
-      "posted": "2026-05-14",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 20,
-      "match_keywords": [
-        "ai",
-        "infrastructure",
-        "director"
-      ],
-      "raw_snippet": "Our **Transportation business** brings together expertise in **rail, highways, and local transport** into a multidisciplinary team delivering innovative and sustainable mobility solutions. Within Rail, our Systems \\& Infrastructure capability provides leading expertise across signaling, telecommunications, control systems, and integrated operations. We combine technical excellence with a human\\-centered approach, ensuring that railway systems are designed for performance, reliability, safety, an",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Program Director"
-    },
-    {
       "id": "indeed-in-9ffdf78bc66bd6a6",
       "source": "indeed",
       "title": "Market Director \u2013 Rail & Transit",
@@ -395,28 +375,6 @@
       "filter_reason": null,
       "search_country": "Saudi Arabia",
       "search_title": "Director Digital Transformation"
-    },
-    {
-      "id": "indeed-in-22c05b1c1de34c54",
-      "source": "indeed",
-      "title": "Director of Strategy",
-      "company": "WEbook.com",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=22c05b1c1de34c54",
-      "posted": "2026-05-18",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 13,
-      "match_keywords": [
-        "director",
-        "saudi",
-        "platform"
-      ],
-      "raw_snippet": "Do you want to love what you do at work? Do you want to make a difference, an impact, transform peoples lives? Do you want to work with a team that believes in disrupting the normal, boring, and average?\n\n\nIf yes, then this is the job you're looking for ,webook.com is Saudi's \\#1 event ticketing and experience booking platforms in terms of technology, features, agility, revenue serving some of the largest mega events in the Kingdom surpassing over 2 billion sales.\n\n**Role Overview :**\n\nwebook.co",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Chief Technology Officer"
     },
     {
       "id": "indeed-in-ac9ec265501bbe39",
@@ -537,8 +495,8 @@
   ],
   "kpi": {
     "searches_run": 20,
-    "results_per_search": 4.1,
-    "unique_jobs": 23,
+    "results_per_search": 4.35,
+    "unique_jobs": 21,
     "errors": 3
   },
   "recommendations": []

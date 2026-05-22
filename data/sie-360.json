@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-20T19:00:23.640142+00:00",
+  "generated": "2026-05-21T23:00:21.422186+00:00",
   "health_score": 79,
   "summary": {
     "ok": 6,
@@ -7,21 +7,25 @@
     "alert": 3
   },
   "workspace": {
-    "root_files": 75,
-    "disk_percent": 55,
-    "disk_used": "52G",
+    "root_files": 76,
+    "disk_percent": 74,
+    "disk_used": "70G",
     "disk_total": "96G",
     "ram_total": "7.8Gi",
-    "ram_used": "2.0Gi",
+    "ram_used": "1.8Gi",
     "large_files": [
       "/root/.openclaw/agents/main/agent/codex-home/logs_2.sqlite",
       "/root/.openclaw/agents/main/agent/codex-home/state_5.sqlite",
-      "/root/.openclaw/agents/main/agent/codex-home/.tmp/plugins/.git/objects/pack/pack-0ccc7b37401f570c6fbd9e9a9b399b978f97588e.pack",
+      "/root/.openclaw/agents/main/agent/codex-home/.tmp/plugins/.git/objects/pack/pack-1baffb2e56cacb8b0fd45035c54426117474529b.pack",
+      "/root/.openclaw/agents/main/agent/codex-home/sessions/2026/05/20/rollout-2026-05-20T12-05-24-019e44a1-f35c-7cd1-a8c0-e8fd2340b0b4.jsonl",
+      "/root/.openclaw/agents/main/agent/codex-home/sessions/2026/05/21/rollout-2026-05-21T10-52-56-019e4985-f3c6-7cc3-b638-604cdf5de5c1.jsonl",
       "/root/.openclaw/agents/main/qmd/xdg-cache/qmd/index.sqlite",
       "/root/.openclaw/agents/main/sessions/sessions.json.bak.1776877462456",
       "/root/.openclaw/agents/main/sessions/missing-file-registry-cleanup-20260411T125530Z/manifest.json",
       "/root/.openclaw/agents/main/sessions/dbb01869-e168-4d7c-b1d7-3cb66563eed4.jsonl.reset.2026-05-01T01-01-37.939Z",
       "/root/.openclaw/agents/main/sessions/orphan-archive-20260411T125235Z/22c099e1-cc21-4575-b9f1-b5f2b7c3505f.jsonl",
+      "/root/.openclaw/agents/main/sessions/.usage-cost-cache.json",
+      "/root/.openclaw/agents/main/sessions/32146650-480e-4899-a31d-06259384bb23.trajectory.jsonl",
       "/root/.openclaw/agents/main/sessions/c268cdda-e715-4949-97a1-eb0d41b538f6.jsonl.bak-154233-1777659607600",
       "/root/.openclaw/agents/main/sessions/10f30b07-2d36-4c45-b7d6-a5854124630c.jsonl.reset.2026-04-22T12-09-56.265Z",
       "/root/.openclaw/agents/main/sessions/sessions.json.834be566-a717-4d12-9d62-9673f8c01957.tmp",
@@ -32,24 +36,27 @@
       "/root/.openclaw/agents/main/sessions/eff56784-4287-4a7d-b73b-4c51dbec3122.jsonl.reset.2026-04-26T01-05-12.462Z",
       "/root/.openclaw/agents/main/sessions/sessions.json.bak.1776880840219",
       "/root/.openclaw/agents/cmo/agent/codex-home/logs_2.sqlite",
-      "/root/.openclaw/agents/cmo/agent/codex-home/.tmp/plugins/.git/objects/pack/pack-0bb18a902a4deb8d4eaa4a164a2bfe47dec41279.pack",
+      "/root/.openclaw/agents/cmo/agent/codex-home/state_5.sqlite",
+      "/root/.openclaw/agents/cmo/agent/codex-home/.tmp/plugins/.git/objects/pack/pack-1808ab183d22560cd6519ab8a7e7737bd4ad55b3.pack",
       "/root/.openclaw/agents/cmo/sessions/acd2e90d-d2a9-4528-b444-8aff5d9f6a27-topic-7.jsonl.bak-157027-1777319013726",
       "/root/.openclaw/agents/jobzoom/agent/codex-home/logs_2.sqlite",
       "/root/.openclaw/agents/jobzoom/agent/codex-home/logs_2.sqlite-wal",
       "/root/.openclaw/agents/jobzoom/agent/codex-home/state_5.sqlite",
-      "/root/.openclaw/agents/jobzoom/agent/codex-home/.tmp/plugins/.git/objects/pack/pack-0bb18a902a4deb8d4eaa4a164a2bfe47dec41279.pack",
+      "/root/.openclaw/agents/jobzoom/agent/codex-home/.tmp/plugins/.git/objects/pack/pack-1808ab183d22560cd6519ab8a7e7737bd4ad55b3.pack",
       "/root/.openclaw/agents/jobzoom/sessions/sessions.json.bak.1777429720921",
       "/root/.openclaw/agents/jobzoom/sessions/sessions.json.bak-gpt55-20260424T023531",
       "/root/.openclaw/agents/jobzoom/sessions/sessions.json.bak.1777429728645",
       "/root/.openclaw/agents/jobzoom/sessions/sessions.json.bak.1777429729436",
       "/root/.openclaw/agents/cto/agent/codex-home/logs_2.sqlite",
-      "/root/.openclaw/agents/cto/agent/codex-home/logs_2.sqlite-wal",
-      "/root/.openclaw/agents/cto/agent/codex-home/.tmp/plugins/.git/objects/pack/pack-0ccc7b37401f570c6fbd9e9a9b399b978f97588e.pack",
+      "/root/.openclaw/agents/cto/agent/codex-home/.tmp/plugins/.git/objects/pack/pack-97770591f5e21991800246dc88ec8bdf08a2f14a.pack",
       "/root/.openclaw/agents/hr/agent/codex-home/logs_2.sqlite",
-      "/root/.openclaw/agents/hr/agent/codex-home/logs_2.sqlite-wal",
-      "/root/.openclaw/agents/hr/agent/codex-home/.tmp/plugins/.git/objects/pack/pack-0ccc7b37401f570c6fbd9e9a9b399b978f97588e.pack",
+      "/root/.openclaw/agents/hr/agent/codex-home/.tmp/plugins/.git/objects/pack/pack-1baffb2e56cacb8b0fd45035c54426117474529b.pack",
       "/root/.openclaw/agents/hr/agent/codex-home/.tmp/plugins-backup-yddwcp/repo/.git/objects/pack/pack-0365ed0e8bedd2c518152cc45e7442282e41d467.pack",
+      "/root/.openclaw/agents/hr/agent/codex-home/sessions/2026/05/20/rollout-2026-05-20T10-31-21-019e444b-d587-79c2-a806-ed337066497b.jsonl",
+      "/root/.openclaw/agents/hr/agent/codex-home/sessions/2026/05/21/rollout-2026-05-21T14-02-23-019e4a33-6908-7d63-9cd9-06857eab7780.jsonl",
+      "/root/.openclaw/agents/hr/agent/codex-home/sessions/2026/05/21/rollout-2026-05-21T18-24-26-019e4b23-522f-7261-8905-a4d9e765d685.jsonl",
       "/root/.openclaw/agents/hr/sessions/sessions.json.bak-gpt55-20260424T023531",
+      "/root/.openclaw/agents/hr/sessions/d3f33a8b-8936-4216-a002-92c0de79bc58-topic-9.trajectory.jsonl",
       "/root/.openclaw/media/inbound/RAYA_Data_Intelligence_Building_MENA_s_Premier_AI_Data_Label---0ab6beab-b758-4180-9d68-cd8d66ffe0ec.pptx",
       "/root/.openclaw/npm/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/path/rg",
       "/root/.openclaw/npm/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex/codex",
@@ -79,15 +86,6 @@
       "/root/.openclaw/workspace-clean-publish/data/nasr-pipeline.db",
       "/root/.openclaw/workspace-clean-publish/newsletter2.png",
       "/root/.openclaw/workspace-clean-publish/newsletter3.png",
-      "/root/.openclaw/backups/openclaw-pre-2026.5.18-20260519-1345/openclaw-package-usr-lib-node-modules.tgz",
-      "/root/.openclaw/backups/lossless-0.11.0-upgrade-20260519-200029/lcm.db.backup.zst",
-      "/root/.openclaw/backups/session-cleanup-20260515T164103+0300/jobzoom.sessions.json",
-      "/root/.openclaw/backups/lcm.db.null-key-prune-stage3-20260417T075757Z.bak.zst",
-      "/root/.openclaw/backups/lcm.db.null-key-prune-stage2-20260416T032432Z.bak.zst",
-      "/root/.openclaw/backups/lossless-claw-v0100-20260516-232807/lossless-claw-0.9.3.tgz",
-      "/root/.openclaw/backups/lossless-claw-v0100-20260516-232807/live-dir-before-switch.tar.zst",
-      "/root/.openclaw/backups/lossless-0.10.0-upgrade-20260519-153604/lossless-claw-extension.tgz",
-      "/root/.openclaw/backups/lcm.db.pre-conversation-id-compact-20260518T0922.sqlite.zst",
       "/root/.openclaw/browser/openclaw/user-data/optimization_guide_model_store/43/E6DC4029A1E4B4C1/2332E9F4ABBDB156/model.tflite",
       "/root/.openclaw/lcm.db",
       "/root/.openclaw/workspace-cto/.pushsync-worktree/.understand-anything/intermediate/nodes.json",
@@ -146,6 +144,7 @@
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-05-11_070022.db",
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-04-17_070024.db",
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-04-26_071159.db",
+      "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-05-21_070029.db",
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-05-13_070018.db",
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-05-05_070019.db",
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-04-30_070103.db",
@@ -189,13 +188,14 @@
       "/root/.openclaw/workspace/newsletter2.png",
       "/root/.openclaw/workspace/newsletter3.png"
     ],
-    "session_mb": 702.0
+    "session_mb": 739.0
   },
   "learnings": {
-    "total": 24,
+    "total": 25,
     "enforced": 15,
-    "unenforced": 9,
+    "unenforced": 10,
     "unenforced_list": [
+      "## 2026-05-21 - Reuse LinkedIn Browser Tabs for HR Work",
       "## 2026-03-25",
       "## 2026-03-21",
       "## 2026-03-25",
@@ -217,36 +217,34 @@
       "notion_token": "present (50 chars)",
       "notion_databases": 15,
       "linkedin_lines": 3,
-      "linkedin_age_days": 57.9
+      "linkedin_age_days": 59.0
     }
   },
   "crons": {
-    "total": 36,
-    "enabled": 36,
+    "total": 35,
+    "enabled": 35,
     "disabled": 0,
     "skill_first": 7,
-    "skill_first_pct": 19,
+    "skill_first_pct": 20,
     "raw_prompt_list": [
-      "OpenClaw Health Guard",
-      "Track GPT-5.5 Codex quota for Pro 20x vs 5x decision",
       "Daily Session Cleanup",
       "session-watchdog",
       "Daily OpenClaw Backup",
-      "Guarded prune: LCM 20260518 0922 safety backup",
       "Daily Intel Sweep",
       "JobZoom Daily Scan",
-      "Dream Mode - Memory Consolidation",
-      "Email Agent (Sun-Thu)",
+      "OpenClaw Health Guard",
+      "Track GPT-5.5 Codex quota for Pro 20x vs 5x decision",
       "NASR Doctor (Daily)",
       "VPS disk guard at 65%",
-      "CMO Publishing Watchdog",
+      "Email Agent (Fri-Sat)",
       "Ahmed LinkedIn approved 14-day batch - daily 11am Cairo",
       "Ahmed LinkedIn approved 14-day batch - engagement window alert",
-      "LCM Midday Compaction Sweep",
-      "Email Agent (Fri-Sat)",
       "RSS Intelligence - Weekly Crawl",
+      "LCM Midday Compaction Sweep",
       "CMO Weekly Content Report",
       "Weekly Skill Autoresearch",
+      "Dream Mode - Memory Consolidation",
+      "Email Agent (Sun-Thu)",
       "Weekly Pipeline Audit",
       "CMO Weekly Outreach Queue \u2014 Sunday",
       "CEO/NASR Weekly Operating Review",
@@ -254,6 +252,7 @@
       "Weekly Self-Health Check",
       "Weekly Team Retro",
       "CMO Weekly Drafting",
+      "CMO Publishing Watchdog",
       "Final GPT-5.5 Pro 20x vs 5x recommendation",
       "Stop GPT-5.5 quota tracker after final recommendation"
     ],
@@ -267,27 +266,27 @@
     {
       "category": "workspace",
       "level": "warn",
-      "message": "Root files: 75 (approaching clutter threshold of 100)"
+      "message": "Root files: 76 (approaching clutter threshold of 100)"
     },
     {
       "category": "workspace",
       "level": "ok",
-      "message": "Disk: 55% used (52G/96G)"
+      "message": "Disk: 74% used (70G/96G)"
     },
     {
       "category": "workspace",
       "level": "warn",
-      "message": "Large files (>5MB): 174 found in .openclaw"
+      "message": "Large files (>5MB): 173 found in .openclaw"
     },
     {
       "category": "workspace",
       "level": "alert",
-      "message": "Session size: 702.0MB - bloated, review sessions"
+      "message": "Session size: 739.0MB - bloated, review sessions"
     },
     {
       "category": "learnings",
       "level": "alert",
-      "message": "Learnings enforcement: 15/24 (62%) - 9 untagged entries need ### Enforcement"
+      "message": "Learnings enforcement: 15/25 (60%) - 10 untagged entries need ### Enforcement"
     },
     {
       "category": "integrations",
@@ -312,7 +311,7 @@
     {
       "category": "crons",
       "level": "alert",
-      "message": "Cron skill-first: 7/36 (19%) - too many raw-prompt crons"
+      "message": "Cron skill-first: 7/35 (20%) - too many raw-prompt crons"
     },
     {
       "category": "crons",
@@ -327,6 +326,6 @@
   ],
   "auto_fixed": [],
   "needs_attention": [
-    "Session bloat: 702.0MB - review before deleting (needs human decision)"
+    "Session bloat: 739.0MB - review before deleting (needs human decision)"
   ]
 }

@@ -61,4 +61,4 @@
 
 ## User Correction
 - ❌ Before every LinkedIn Easy Apply submission, tailor a PDF CV specifically for that job. The filename and content must match the exact job title and company. Do not reuse a generic or prior-role CV unless the title/company match exactly and the content is already tailored to that exact role; flag already-submitted mismatches in the report. (HR, 2026-05-21)
-
+- ❌ After every LinkedIn Easy Apply batch or browser recovery, reconcile all touched candidate tabs against the local applied ledger before reporting the campaign count. Count only LinkedIn Easy Apply submissions with "Application submitted" plus "View resume"; keep company-site application statuses separate. (HR, 2026-05-22)

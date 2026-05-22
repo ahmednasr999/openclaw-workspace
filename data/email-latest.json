@@ -1,7 +1,7 @@
 {
   "status": "ok",
-  "scan_time": "2026-05-21T18:07:08.039204+02:00",
-  "total_scanned": 27,
+  "scan_time": "2026-05-21T20:00:40.773199+02:00",
+  "total_scanned": 20,
   "by_category": {
     "interview_invite": 0,
     "recruiter_reach": 0,
@@ -9,8 +9,8 @@
     "rejection": 0,
     "assessment": 0,
     "follow_up_needed": 0,
-    "job_alert": 1,
-    "other": 26
+    "job_alert": 0,
+    "other": 20
   },
   "interview_invites": [],
   "recruiter_messages": [],
@@ -18,18 +18,7 @@
   "rejections": [],
   "assessments": [],
   "follow_ups_needed": [],
-  "job_alerts": [
-    {
-      "id": "358713",
-      "from": "foundit Updates <info@alerts.founditgulf.com>",
-      "subject": "[Action Required] Confirm your given information",
-      "date": "Thu, 21 May 2026 14:36:20 +0000 (UTC)",
-      "unread": true,
-      "priority": "LOW",
-      "score": 0,
-      "pipeline_match": null
-    }
-  ],
+  "job_alerts": [],
   "actionable_count": 0,
   "hot_alerts": [],
   "signals": []
