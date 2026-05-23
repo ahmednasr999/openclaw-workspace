@@ -2509,3 +2509,12 @@
 {"agent": "email-agent", "run_id": "82eb1439", "started": "2026-05-22T14:01:39.817045+02:00", "duration_ms": 905, "status": "success", "records": 15, "error": null}
 {"agent": "jobs-source-indeed", "run_id": "d8fa34b0", "started": "2026-05-22T15:00:43.370670+02:00", "duration_ms": 41329, "status": "success", "records": 21, "error": null}
 {"agent": "jobs-source-indeed", "run_id": "1386bb43", "started": "2026-05-22T17:00:44.660455+02:00", "duration_ms": 40805, "status": "success", "records": 20, "error": null}
+{"agent": "jobs-source-indeed", "run_id": "1626c6fc", "started": "2026-05-22T19:00:45.147678+02:00", "duration_ms": 41639, "status": "success", "records": 21, "error": null}
+{"agent": "email-agent", "run_id": "b3d7c277", "started": "2026-05-22T20:01:05.423796+02:00", "duration_ms": 41560, "status": "success", "records": 15, "error": null}
+{"agent": "jobs-source-indeed", "run_id": "a5cf6e98", "started": "2026-05-22T21:00:44.030734+02:00", "duration_ms": 41543, "status": "success", "records": 22, "error": null}
+{"agent": "jobs-source-indeed", "run_id": "7af6038e", "started": "2026-05-22T23:00:42.419917+02:00", "duration_ms": 40652, "status": "success", "records": 22, "error": null}
+{"agent": "jobs-source-indeed", "run_id": "6de728ec", "started": "2026-05-23T01:00:44.000573+02:00", "duration_ms": 39040, "status": "success", "records": 22, "error": null}
+{"agent": "jobs-source-linkedin-jobspy", "run_id": "2a69b9d7", "started": "2026-05-23T02:31:27.589360+02:00", "duration_ms": 1720900, "status": "success", "records": 456, "error": null}
+{"agent": "jobs-source-indeed", "run_id": "fea16b5e", "started": "2026-05-23T03:00:43.614166+02:00", "duration_ms": 41299, "status": "success", "records": 22, "error": null}
+{"agent": "jobs-source-linkedin-jobspy", "run_id": "e45f6159", "started": "2026-05-23T04:26:04.677216+02:00", "duration_ms": 1555949, "status": "success", "records": 460, "error": null}
+{"agent": "jobs-source-indeed", "run_id": "c73c1555", "started": "2026-05-23T05:00:46.651332+02:00", "duration_ms": 42987, "status": "success", "records": 22, "error": null}

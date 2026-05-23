@@ -3431,3 +3431,24 @@ Config warnings:
 [2026-05-22 20:00] === Watchdog v3 run ===
 [2026-05-22 20:00] WARN: Jobs data stale (655h), triggering pipeline
 [2026-05-22 20:00] FIXED: Pipeline triggered
+[2026-05-22 20:00] Summary: fixes=1 warnings=0 alerts=0
+[2026-05-22 22:00] === Watchdog v3 run ===
+[2026-05-22 22:00] WARN: Jobs data stale (657h), triggering pipeline
+[2026-05-22 22:00] FIXED: Pipeline triggered
+[2026-05-22 22:00] Summary: fixes=1 warnings=0 alerts=0
+[2026-05-23 00:00] === Watchdog v3 run ===
+[2026-05-23 00:00] WARN: Jobs data stale (659h), triggering pipeline
+[2026-05-23 00:00] FIXED: Pipeline triggered
+[2026-05-23 00:00] Summary: fixes=1 warnings=1 alerts=0
+[2026-05-23 02:00] === Watchdog v3 run ===
+[2026-05-23 02:00] WARN: Jobs data stale (661h), triggering pipeline
+[2026-05-23 02:00] FIXED: Pipeline triggered
+[2026-05-23 02:00] Summary: fixes=1 warnings=1 alerts=0
+[2026-05-23 04:00] === Watchdog v3 run ===
+[2026-05-23 04:00] WARN: Jobs data stale (663h), triggering pipeline
+[2026-05-23 04:00] FIXED: Pipeline triggered
+[2026-05-23 04:00] Summary: fixes=1 warnings=1 alerts=0
+[2026-05-23 06:00] === Watchdog v3 run ===
+[2026-05-23 06:00] WARN: Jobs data stale (665h), triggering pipeline
+[2026-05-23 06:00] FIXED: Pipeline triggered
+[2026-05-23 06:00] Summary: fixes=1 warnings=1 alerts=0

@@ -2,16 +2,38 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-05-22T17:00:44.658336+02:00",
-    "duration_ms": 40803,
+    "generated_at": "2026-05-23T05:00:46.649681+02:00",
+    "duration_ms": 42985,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "1386bb43",
+    "run_id": "c73c1555",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": [
+    {
+      "id": "indeed-in-7e93d32aeb86fb78",
+      "source": "indeed",
+      "title": "Finance Director",
+      "company": "Sony Music Global Job Board",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=7e93d32aeb86fb78",
+      "posted": "2026-05-23",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 23,
+      "match_keywords": [
+        "operational excellence",
+        "director",
+        "leadership"
+      ],
+      "raw_snippet": "As the Finance Director, you will act as a key partner to the Managing Director and regional leadership, driving investment decisions across artists, catalog, partnerships, and acquisitions, while ensuring best\\-in\\-class financial governance and operational excellence.\n\n\n\nYou will be responsible for the overall finance operations, analytics, reporting, budget preparation and M\\&A execution.\n\n\n\nYou will manage and control overall accounting and reporting systems ensuring compliance with local Ac",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Program Director"
+    },
     {
       "id": "indeed-in-621430fda17d9c08",
       "source": "indeed",
@@ -59,28 +81,29 @@
       "search_title": "Program Director"
     },
     {
-      "id": "indeed-in-a10e2a0bcef084a6",
+      "id": "indeed-in-6d3b584e3ebc7a99",
       "source": "indeed",
-      "title": "Executive Director, Corporate Banking Group - Dubai & NE - UAE Nationals",
-      "company": "bankfab",
+      "title": "Cloud and Infrastructure Platforms Director",
+      "company": "KEO International Consultants",
       "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=a10e2a0bcef084a6",
-      "posted": "2026-05-20",
+      "url": "https://ae.indeed.com/viewjob?jk=6d3b584e3ebc7a99",
+      "posted": "2026-05-22",
       "seniority": "C-Suite",
       "domain_match": true,
-      "keyword_score": 26,
+      "keyword_score": 40,
       "match_keywords": [
-        "ai",
-        "executive",
+        "agile",
+        "cloud",
+        "infrastructure",
+        "enterprise",
         "director",
-        "uae",
-        "dubai"
+        "platform"
       ],
-      "raw_snippet": "Job Description\n\n**Job Purpose**\n\nTo grow and manage large account portfolios and sensitive client relationships for assigned portfolio in the corporate banking segment; improve service quality levels and supervise the team\u2019s day\\-to\\-day activities and client interactions to ensure that the team's objectives are constantly met and its revenue targets achieved, while maintaining client satisfaction and portfolio credit quality.\n\n\n  \nResponsibilities  \n\n  \n\n**Client and Market Analysis**\n\n  \n\n* C",
+      "raw_snippet": "Overview:\n\nKEO is a creative enterprise, where innovation is a way of life. We are uniquely resourced with end\\-to\\-end services to take clients from inspiration \u2013 through conceptualization \u2013 to realization of planning, design or project delivery in the built and natural environments. For over 60 years we\u2019ve led with vision, contributing to many of the world\u2019s most ambitious projects, iconic places, remarkable experiences and prosperous communities.  \n\nAs a highly integrated and agile AEP/PMCM f",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
-      "search_title": "Program Director"
+      "search_title": "Director Digital Transformation"
     },
     {
       "id": "indeed-in-bd7d9040af9f082a",
@@ -355,6 +378,29 @@
       "search_title": "Director Digital Transformation"
     },
     {
+      "id": "indeed-in-eaa9b51233a7b424",
+      "source": "indeed",
+      "title": "Chief Industrial Technologies & Smart Automation Officer",
+      "company": "Confidential",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=eaa9b51233a7b424",
+      "posted": "2026-05-22",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 20,
+      "match_keywords": [
+        "executive",
+        "leadership",
+        "automation",
+        "integration"
+      ],
+      "raw_snippet": "**Lead Smart Automation and Industrial Technology Transformation**\n\n**Key Responsibilities**\n\n* Lead industrial automation and smart technology initiatives\n* Oversee digital manufacturing systems and operational modernization\n* Drive efficiency and innovation across industrial operations\n\n**Requirements**\n\n* Executive leadership experience in industrial technologies or automation\n* Strong understanding of smart manufacturing and systems integration\n\n**About the Company**  \nITS Tech Industrial So",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "Chief Technology Officer"
+    },
+    {
       "id": "indeed-in-ac9ec265501bbe39",
       "source": "indeed",
       "title": "Head of Operations",
@@ -448,34 +494,31 @@
       "search_title": "Head of Technology"
     },
     {
-      "id": "indeed-in-49fb52809f467840",
+      "id": "indeed-in-69624d60494b7e33",
       "source": "indeed",
-      "title": "Technical Head - Rolling Stock and Yellow Plant",
-      "company": "AtkinsR\u00e9alis",
+      "title": "Commercial Portfolio Head",
+      "company": "Novartis",
       "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=49fb52809f467840",
-      "posted": "2026-05-17",
+      "url": "https://sa.indeed.com/viewjob?jk=69624d60494b7e33",
+      "posted": "2026-05-22",
       "seniority": "Other",
-      "domain_match": true,
-      "keyword_score": 23,
+      "domain_match": false,
+      "keyword_score": 3,
       "match_keywords": [
-        "ai",
-        "leadership",
-        "growth",
-        "middle east"
+        "riyadh"
       ],
-      "raw_snippet": "**Overview**\n------------\n\n\nWe are seeking a Technical Head \u2013 Rolling Stock and Yellow Plant (On Track) that shall provide strategic and technical leadership across our Middle East business, with our clients and on railway programs.\n\n\nThis role focuses on delivering high\\-quality consultancy services across rolling stock and yellow plant and operational asset management technical leadership, while driving innovation, technical excellence, and business growth.\n\n\nAs a senior leader, you will play ",
+      "raw_snippet": "### **Summary**\n\nCommercial Portfolio Head  \n\n  \n\nLocation: Riyadh  \n\n\\#LI Hybrid  \n\n  \n\nAbout the Role:  \n\n  \n\nDrive portfolio value through strategic partnerships, digital execution, and lifecycle management in a highly regulated environment.  \n\n  \n\nWe are looking for a commercially minded leader to maximize the value and access of a product portfolio through innovative go\\-to\\-market models, strategic alliances, and disciplined lifecycle management.  \n\n  \n\nThis is an opportunity to shape port",
       "relevant": true,
       "filter_reason": null,
       "search_country": "Saudi Arabia",
-      "search_title": "Head of Technology"
+      "search_title": "Head of IT"
     }
   ],
   "kpi": {
     "searches_run": 20,
     "results_per_search": 4.15,
-    "unique_jobs": 20,
-    "errors": 4
+    "unique_jobs": 22,
+    "errors": 3
   },
   "recommendations": []
 }

@@ -1,25 +1,111 @@
 {
   "status": "ok",
-  "scan_time": "2026-05-22T14:01:39.322949+02:00",
-  "total_scanned": 0,
+  "scan_time": "2026-05-22T20:01:05.415693+02:00",
+  "total_scanned": 68,
   "by_category": {
     "interview_invite": 0,
-    "recruiter_reach": 0,
+    "recruiter_reach": 3,
     "application_ack": 0,
     "rejection": 0,
-    "assessment": 0,
+    "assessment": 1,
     "follow_up_needed": 0,
     "job_alert": 0,
-    "other": 0
+    "other": 64
   },
   "interview_invites": [],
-  "recruiter_messages": [],
+  "recruiter_messages": [
+    {
+      "id": "358834",
+      "from": "Stock Analysis <contact@stockanalysis.com>",
+      "subject": "Market Bullets: IMAX surges on sale speculation, Spotify pops 13% on\r\n AI music deal, Dow Jones hits new high",
+      "date": "Fri, 22 May 2026 12:54:16 +0000 (UTC)",
+      "unread": true,
+      "priority": "HIGH",
+      "score": 7,
+      "pipeline_match": "Dow Jones"
+    },
+    {
+      "id": "358841",
+      "from": "Amrith Suresh babu <invitations@linkedin.com>",
+      "subject": "=?UTF-8?Q?You_have_an_invitation_=E2=9C=89=EF=B8=8F?=",
+      "date": "Fri, 22 May 2026 13:30:35 +0000 (UTC)",
+      "unread": true,
+      "priority": "MEDIUM",
+      "score": 2,
+      "pipeline_match": null
+    },
+    {
+      "id": "358848",
+      "from": "\"Editor @ The Paypers\" <Editor@newsletter.thepaypers.com>",
+      "subject": "Finqware rolls out FinqData AIS API for multibank data aggregation",
+      "date": "Fri, 22 May 2026 16:00:30 +0200 (CEST)",
+      "unread": true,
+      "priority": "HIGH",
+      "score": 10,
+      "pipeline_match": "SAP"
+    }
+  ],
   "application_acks": [],
   "rejections": [],
-  "assessments": [],
+  "assessments": [
+    {
+      "id": "358836",
+      "from": "Rob Howard <rob@innovatingwithai.com>",
+      "subject": "Get Your AI Consulting Persona + Learning Roadmap",
+      "date": "Fri, 22 May 2026 13:03:43 +0000 (UTC)",
+      "unread": true,
+      "priority": "MEDIUM",
+      "score": 2,
+      "pipeline_match": null
+    }
+  ],
   "follow_ups_needed": [],
   "job_alerts": [],
-  "actionable_count": 0,
-  "hot_alerts": [],
-  "signals": []
+  "actionable_count": 4,
+  "hot_alerts": [
+    {
+      "id": "358836",
+      "subject": "Get Your AI Consulting Persona + Learning Roadmap",
+      "from": "Rob Howard <rob@innovatingwithai.com>",
+      "priority": "MEDIUM",
+      "pipeline_match": null
+    }
+  ],
+  "signals": [
+    {
+      "company": "Dow Jones",
+      "signal": "recruiter_email",
+      "subject": "Market Bullets: IMAX surges on sale speculation, Spotify pops 13% on\r\n AI music deal, Dow Jones hits new high",
+      "sender": "Stock Analysis <contact@stockanalysis.com>",
+      "job_ids": [
+        "4389096599",
+        "linkedin-li-4389096599"
+      ],
+      "score": 7,
+      "timestamp": "2026-05-22T20:01:04.843651+02:00"
+    },
+    {
+      "company": "SAP",
+      "signal": "recruiter_email",
+      "subject": "Finqware rolls out FinqData AIS API for multibank data aggregation",
+      "sender": "\"Editor @ The Paypers\" <Editor@newsletter.thepaypers.com>",
+      "job_ids": [
+        "indeed-in-b2195113ff678ef7",
+        "indeed-in-b7591ff66cc5a732",
+        "linkedin_jobspy-li-4380812358",
+        "linkedin-li-4349578134",
+        "linkedin-li-4394078700",
+        "linkedin-li-4380812358",
+        "linkedin-li-4362170335",
+        "linkedin-li-4362562926",
+        "linkedin-li-4385935615",
+        "linkedin-li-4353703506",
+        "app-005",
+        "cv-5fbf4a9aa7",
+        "linkedin-li-4385294885"
+      ],
+      "score": 10,
+      "timestamp": "2026-05-22T20:01:05.012063+02:00"
+    }
+  ]
 }

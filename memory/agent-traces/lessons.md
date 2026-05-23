@@ -1,6 +1,6 @@
 # Agent Lessons Learned
 
-*Auto-curated from agent traces. Updated: 2026-05-22*
+*Auto-curated from agent traces. Updated: 2026-05-23*
 
 ## Communication
 - ✅ CLI uses --target not --to — exit 0 does not mean success. Always verify actual delivery (CEO, 2026-03-30)
@@ -60,6 +60,7 @@
 - ❌ Before continuing a LinkedIn Easy Apply batch after a pause, verify the active browser profile is still logged in on a real LinkedIn page. If the profile is authwalled, stop and request a manual login instead of attempting applications from a stale or guest session. (HR, 2026-05-21)
 - ❌ Do not use LLM agent-turn crons as the scheduler of record for required shell launches. Put deterministic shell launchers on OS cron or another direct runner, keep agent crons for summaries or alerts, and verify the launcher log/state after scheduler changes instead of trusting cron status alone. (CEO, 2026-05-22)
 - ❌ For recurring operational jobs whose core action is a deterministic local command, use OS cron plus a small direct runner with explicit delivery logic. Leave LLM agent crons for workflows that genuinely require reasoning, source synthesis, or interactive review, and do not let a model response stand in for command execution evidence. (CEO, 2026-05-22)
+- ❌ JobZoom daily_run.py must refuse direct execution by default. HR/manual workflows may read latest JobZoom results, but a full daily scrape must go through the managed launcher unless Ahmed explicitly approves a forced direct run. (CEO, 2026-05-23)
 
 ## User Correction
 - ❌ Before every LinkedIn Easy Apply submission, tailor a PDF CV specifically for that job. The filename and content must match the exact job title and company. Do not reuse a generic or prior-role CV unless the title/company match exactly and the content is already tailored to that exact role; flag already-submitted mismatches in the report. (HR, 2026-05-21)
