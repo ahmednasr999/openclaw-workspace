@@ -186,3 +186,18 @@ Reply "⏭ Skipped" and move on.
 2. **Make approval cards self-verifying.** Each card should include post URL, activity URN, author profile URL, and exact approved comment text so Step 6 can re-check identity before typing.
 3. **Keep Telegram confirmations meaningful.** After a comment is posted, send one visible status with the post URL, visible-comment proof, like state, and ontology update result. Avoid extra private closeouts unless there is a real blocker.
 4. **Fail fast on lane drift.** If Ahmed-Mac, account identity, target post, or visible proof fails twice, abort and report the blocker instead of falling back to another account or session.
+
+### 2026-05-23 - Weekly Skill Tune-Up
+
+**Audit basis:** No LinkedIn engagement-specific lesson appeared in the last 7 days, so this stayed in scope as a default LinkedIn operations skill. The recent Telegram slash-menu lesson reinforces that Bot/API success is not the same as user-visible channel behavior, and this skill still lacks `eval/checklist.md`.
+
+**Reviewed lessons:**
+- 2026-05-17, verify the actual Telegram client/menu-visible state, not only Bot API dispatch.
+- 2026-05-15, avoid empty private closeouts after Telegram sends.
+- 2026-04-22, prove LinkedIn lane exposure before blaming stale sessions or asking Ahmed to reconnect.
+
+**Improvement recommendation:**
+1. **Verify approval-card visibility, not just send success.** After sending the 5 Telegram approval cards, confirm the cards are visible in thread 7 with actionable approve/edit/skip controls or provide a plain-text fallback that still preserves post identity.
+2. **Treat missing interactive controls as a degraded state.** If buttons or thread delivery fail, do not proceed to any posting path. Re-send a text-only approval card with the post URL, activity URN, author URL, and exact comment text.
+3. **Keep post approval bound to exact evidence.** Approval should reference immutable post identity plus the exact approved comment text, not just "post n".
+4. **Add the missing checklist next.** `eval/checklist.md` should include Telegram card visibility, Ahmed-Mac online, correct account, activity URN match, author URL match, cooldown clear, approved text unchanged, visible comment confirmed, like state checked, and ontology updated.

@@ -102,11 +102,18 @@ Formats to rotate:
 - story-to-lesson
 - one sharp operating rule
 
-Output a table:
+Output mode is surface-aware:
 
-```markdown
+- In file-system surfaces, save large matrices as `content-matrix-YYYY-MM-DD.md` or another clearly named planning artifact, then provide a readable inline summary.
+- In chat-only surfaces, use a plain markdown table or compact grouped bullets.
+- Do not wrap content matrices in fenced code blocks. Monospace tables are hard to scan on mobile.
+
+Default table columns:
+
 | Priority | Pillar | Format | Hook | Angle | Evidence needed | Visual fit | Why it matters |
-```
+|---:|---|---|---|---|---|---|---|
+
+After the table or grouped bullets, name the single strongest idea and why.
 
 Keep ideas specific enough to draft immediately. Avoid vague topics like “AI in healthcare”. Prefer “Why 92% model accuracy can still fail adoption in hospitals”.
 

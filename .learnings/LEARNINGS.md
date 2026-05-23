@@ -24,6 +24,33 @@ When the user asks "Are you done?" or equivalent after a maintenance/task sequen
 
 ---
 
+## [LRN-20260523-skill-adaptation-conflict] correction
+
+**Logged**: 2026-05-23T18:50:00+03:00
+**Priority**: medium
+**Status**: pending
+**Area**: skills
+
+### Summary
+When adapting an upstream skill behavior, remove or rewrite conflicting old instructions in the local skill contract.
+
+### Details
+The `executive-content-system` content-matrix rule was updated to say not to use fenced code blocks, but the same section still showed the default table inside a fenced `markdown` block. Ahmed asked to fix it.
+
+### Suggested Action
+For skill updates, inspect the surrounding section after patching and make the final instructions internally consistent before reporting completion.
+
+### Metadata
+- Source: user_feedback
+- Related Files: skills/executive-content-system/SKILL.md
+- Tags: skills, content-workflow, instruction-conflict
+- Pattern-Key: skill.adaptation.remove_conflicts
+- Recurrence-Count: 1
+- First-Seen: 2026-05-23
+- Last-Seen: 2026-05-23
+
+---
+
 ## 2026-05-21 - Reuse LinkedIn Browser Tabs for HR Work
 
 - Correction: Ahmed noticed the HR agent opens a new Chrome tab every time it works on LinkedIn, which eventually creates RAM and CPU pressure.

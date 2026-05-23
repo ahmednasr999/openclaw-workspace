@@ -1,0 +1,8 @@
+status=completed
+updated_at=2026-05-23T12:40:27+03:00
+target_version=2026.5.20
+previous_version=2026.5.19
+log=/root/.openclaw/workspace/logs/openclaw-safe-update-20260523-123313.log
+doctor_log=/root/.openclaw/workspace/logs/openclaw-doctor-after-update-20260523-123313.log
+backup=/root/.openclaw/workspace/backups/openclaw-update-20260523-122740/openclaw-config-state.tgz
+detail=OpenClaw 2026.5.20 (e510042)

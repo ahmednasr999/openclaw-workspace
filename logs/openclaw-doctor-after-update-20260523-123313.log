@@ -1,0 +1,167 @@
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+██░▄▄▄░██░▄▄░██░▄▄▄██░▀██░██░▄▄▀██░████░▄▄▀██░███░██
+██░███░██░▀▀░██░▄▄▄██░█░█░██░█████░████░▀▀░██░█░█░██
+██░▀▀▀░██░█████░▀▀▀██░██▄░██░▀▀▄██░▀▀░█░██░██▄▀▄▀▄██
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+                       OPENCLAW                       
+ 
+┌  OpenClaw doctor
+│
+◇  Startup optimization ────────────────────────────────────────────────╮
+│                                                                       │
+│  - NODE_COMPILE_CACHE is not set; repeated CLI runs can be slower on  │
+│    small hosts (Pi/VM).                                               │
+│  - OPENCLAW_NO_RESPAWN is not set to 1; set it when you want routine  │
+│    gateway restarts to stay in-process instead of handing off to a    │
+│    managed supervisor.                                                │
+│  - Suggested env for low-power hosts:                                 │
+│    export NODE_COMPILE_CACHE=/var/tmp/openclaw-compile-cache          │
+│    mkdir -p /var/tmp/openclaw-compile-cache                           │
+│    export OPENCLAW_NO_RESPAWN=1                                       │
+│                                                                       │
+├───────────────────────────────────────────────────────────────────────╯
+│
+◇  Doctor warnings ────────────────────────────────────────────────────╮
+│                                                                      │
+│  - plugins.allow is restrictive, but bundled provider discovery is   │
+│    still in legacy compatibility mode. Bundled provider plugins can  │
+│    still appear in runtime provider inventories; set                 │
+│    plugins.bundledDiscovery to "allowlist" after confirming omitted  │
+│    bundled providers are intentionally blocked.                      │
+│                                                                      │
+├──────────────────────────────────────────────────────────────────────╯
+│
+◇  Doctor warnings ────────────────────────────────────────────────────────╮
+│                                                                          │
+│  - Personal Codex CLI assets were found, but native Codex-mode OpenClaw  │
+│    agents use isolated per-agent Codex homes.                            │
+│  - Sources: /root/.codex and /root/.agents/skills (1 skill, 0 plugins,   │
+│    0 config files, 0 hook files).                                        │
+│  - These assets will not be loaded by the Codex app-server child unless  │
+│    you intentionally promote them.                                       │
+│  - Run `openclaw migrate codex --dry-run` to inventory them. Applying    │
+│    that migration copies skills into the current OpenClaw agent          │
+│    workspace; Codex plugins, hooks, and config stay manual-review only.  │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+│
+◇  Auth profiles ──────────────────────────────────────────────────────────╮
+│                                                                          │
+│  - Found 1 unreferenced legacy Codex OAuth sidecar credential file.      │
+│  - Unreferenced sidecar files are left in place because external agent   │
+│    directories outside this scan may still reference them.               │
+│  - openclaw doctor --fix migrates active profiles back to inline OAuth   │
+│    credentials and removes only sidecar files it successfully migrated.  │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+│
+◇  Claude CLI ──────────────────────────────────────────────────────────╮
+│                                                                       │
+│  - Binary: /usr/bin/claude.                                           │
+│  - Headless Claude auth: unavailable without interactive prompting.   │
+│  - OpenClaw auth profile: missing (anthropic:claude-cli) in           │
+│    /root/.openclaw/agents/main/agent/auth-profiles.json.              │
+│  - Workspace: ~/.openclaw/workspace (writable).                       │
+│  - Claude project dir: ~/.claude/projects/-root--openclaw-workspace   │
+│    (present).                                                         │
+│  - Fix: run claude auth login, then openclaw models auth login        │
+│    --provider anthropic --method cli --set-default.                   │
+│  - Fix: run openclaw models auth login --provider anthropic --method  │
+│    cli --set-default.                                                 │
+│                                                                       │
+├───────────────────────────────────────────────────────────────────────╯
+│
+◇  State integrity ────────────────────────────────────────────────────────────╮
+│                                                                              │
+│  - 1/5 recent sessions are missing transcripts.                              │
+│    Verify sessions in store: openclaw sessions --store                       │
+│    "/root/.openclaw/agents/main/sessions/sessions.json"                      │
+│    Preview cleanup impact: openclaw sessions cleanup --store                 │
+│    "/root/.openclaw/agents/main/sessions/sessions.json" --dry-run            │
+│    Prune missing entries: openclaw sessions cleanup --store                  │
+│    "/root/.openclaw/agents/main/sessions/sessions.json" --enforce            │
+│    --fix-missing                                                             │
+│  - Main session transcript missing                                           │
+│    (~/.openclaw/agents/main/sessions/11e6b9b9-6d80-4b55-9839-a94d91024ce1.j  │
+│  sonl).                                                                      │
+│    History will appear to reset.                                             │
+│  - Found 320 orphan transcript files in                                      │
+│    ~/.openclaw/agents/main/sessions.                                         │
+│    These .jsonl files are no longer referenced by sessions.json, so          │
+│    they are not part of any active session history.                          │
+│    Doctor can archive them safely by renaming each file to                   │
+│    *.deleted.<timestamp>.                                                    │
+│    Examples: 002780b8-6326-41f5-8930-04bbec6e6fe2.jsonl,                     │
+│    014fdac4-08f4-4592-aebc-4901dcd81367.jsonl,                               │
+│    023370c6-fecf-427e-bf10-37068bd5e536.jsonl, and 317 more                  │
+│                                                                              │
+├──────────────────────────────────────────────────────────────────────────────╯
+│
+◇  Doctor warnings ───────────────────────────────────────────────────────╮
+│                                                                         │
+│  - Legacy `openai-codex/*` session route state detected.                │
+│  - Affected sessions: 2.                                                │
+│  - Run `openclaw doctor --fix` to rewrite stale session model/provider  │
+│    pins across all agent session stores.                                │
+│                                                                         │
+├─────────────────────────────────────────────────────────────────────────╯
+│
+◇  Cron ───────────────────────────────────────────────────────────────────╮
+│                                                                          │
+│  Cron model overrides detected at ~/.openclaw/cron/jobs.json.            │
+│  - 26 jobs set `payload.model` and will not inherit                      │
+│    `agents.defaults.model` (openai/gpt-5.5)                              │
+│  - Provider namespaces: openai=26                                        │
+│  Review with openclaw cron list and openclaw cron show <job-id>; remove  │
+│  `payload.model` from jobs that should inherit the default.              │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+│
+◇  Security ─────────────────────────────────────────────────────────────╮
+│                                                                        │
+│  - WARNING: openclaw.json contains plaintext secret-bearing config     │
+│    fields.                                                             │
+│    Paths: gateway.auth.token, models.providers.minimax-portal.apiKey,  │
+│    models.providers.openrouter.apiKey, skills.entries.tavily.apiKey,   │
+│    channels.telegram.botToken                                          │
+│    Agents or workspace tools that can read config files may see these  │
+│    API keys/tokens.                                                    │
+│    Migrate them to SecretRefs with openclaw secrets configure or       │
+│    openclaw secrets apply, then verify with openclaw secrets audit     │
+│    --check.                                                            │
+│  - Run: openclaw security audit --deep                                 │
+│                                                                        │
+├────────────────────────────────────────────────────────────────────────╯
+│
+◇  Skills status ───────────╮
+│                           │
+│  Eligible: 78             │
+│  Missing requirements: 0  │
+│  Blocked by allowlist: 0  │
+│                           │
+├───────────────────────────╯
+│
+◇  Plugins ──────╮
+│                │
+│  Loaded: 15    │
+│  Imported: 0   │
+│  Disabled: 79  │
+│  Errors: 0     │
+│                │
+├────────────────╯
+│
+◇  Bootstrap file size ──────────────────────────────────────────────────╮
+│                                                                        │
+│  Workspace bootstrap files exceed limits and will be truncated:        │
+│  - AGENTS.md: 14,521 raw / 11,588 injected (20% truncated; max/file)   │
+│  - TOOLS.md: 20,463 raw / 11,999 injected (41% truncated; max/file)    │
+│  Total bootstrap injected chars: 48,153 (80% of max/total 60,000).     │
+│  Total bootstrap raw chars (before truncation): 59,550.                │
+│                                                                        │
+│  - Tip: tune `agents.defaults.bootstrapMaxChars` for per-file limits.  │
+│                                                                        │
+├────────────────────────────────────────────────────────────────────────╯
+Run "openclaw doctor --fix" to apply changes.
+│
+└  Doctor complete.
+

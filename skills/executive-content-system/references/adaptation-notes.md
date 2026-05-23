@@ -1,12 +1,22 @@
 # Adaptation Notes - charlie947/social-media-skills
 
 Repo audited: `https://github.com/charlie947/social-media-skills`
-Commit audited: `06f64c8`
+Commit audited: `94f72ea` (2026-05-20)
+
+## 2026-05-23 refresh
+
+Latest main delta reviewed:
+- `content-matrix` now branches output by surface: interactive table on chat surfaces, saved markdown plus inline table in code/file-system surfaces, plain markdown fallback elsewhere.
+- This is worth adapting because Ahmed's content planning needs readable topic grids, not fenced monospace tables.
+
+Open watch item:
+- PR #4, `feat: add x-signal-research skill`, adds focused X/Twitter signal mining. Do not import until merged and reviewed. If useful later, adapt the evidence schema and query recipes into the CMO research lane without adding Hermes/third-party write actions by default.
 
 ## What to adapt
 
 - Voice source of truth: general profile plus voice profile, read by every content workflow.
 - Content matrix: pair pillars with proven formats to create specific post ideas.
+- Content matrix output: make the grid readable for the current surface, and save it as an artifact when working in a file-system surface.
 - Post writer: plan angle before drafting, then write in voice.
 - Post scorer: compare drafts to actual performance patterns when data exists.
 - Visual routing: choose HTML/card vs infographic/carousel based on content structure.

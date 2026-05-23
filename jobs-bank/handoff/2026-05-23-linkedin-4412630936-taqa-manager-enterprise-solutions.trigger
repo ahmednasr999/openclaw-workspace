@@ -1,0 +1,10 @@
+linkedin_id=4412630936
+company=TAQA Distribution
+title=Manager, Enterprise Solutions
+date=2026-05-23
+method=Applied by HR via LinkedIn Easy Apply
+ats_score=84
+cv=Ahmed Nasr - Manager Enterprise Solutions - TAQA Distribution.pdf
+status=applied
+campaign=new-100-2026-05-23
+count=22/100

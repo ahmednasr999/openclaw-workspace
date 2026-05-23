@@ -76,3 +76,17 @@ Already addressed by 2026-03-21 section above. Both entries consolidated into th
 3. **Split writing vs publishing checks.** The current checklist is strong on copy quality, but weak on asset/payload verification. Add a second checklist block for image presence, payload length, final formatting, and source confirmation.
 4. **Deprecated skill still needs a banner.** Because this lives under `archive/deprecated`, add a one-line warning near the top that directs active workflows to the current LinkedIn posting skill so old instructions do not get used accidentally.
 
+### 2026-05-23 - Weekly Skill Tune-Up
+
+**Audit basis:** No LinkedIn-writer-specific lesson was logged in the last 7 days, so this stayed in scope as a default skill. The review used the last relevant LinkedIn lessons and the current `eval/checklist.md`, which still focuses on copy quality more than publish readiness.
+
+**Reviewed lessons:**
+- 2026-04-23, LinkedIn visuals need feed-native composition and semantic alignment with the post thesis.
+- 2026-04-21, verify whether the requested asset is a carousel preview, carousel file, or single-post visual before presenting or publishing.
+- 2026-04-20, live LinkedIn write workflows need timely blocker escalation and verified success only.
+
+**Improvement recommendation:**
+1. **Add a deprecated-skill routing guard.** This archived writer should explicitly direct active publishing or image-required workflows to the current LinkedIn/content skill before drafting starts.
+2. **Extend quality checks beyond copy.** The checklist should add a publish-readiness block for required image state, asset type, source of truth, payload length, final formatting, and post thesis alignment.
+3. **Stop on visual or payload uncertainty.** If the post requires an image and the approved asset is missing, stale, wrong-format, or semantically mismatched, the skill should return the blocker instead of producing a publish-ready claim.
+4. **Keep writing output draft-safe.** Unless the active publishing workflow has separately verified assets and target account, this skill should deliver only the final draft text, not imply that posting is complete.

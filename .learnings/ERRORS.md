@@ -762,6 +762,13 @@ For long-running backup commands launched through the exec JavaScript wrapper, a
 - Related Files: /root/.openclaw/scripts/backup.sh, /root/openclaw-backups, /root/.openclaw/workspace/memory/agent-traces/trace-log.jsonl
 - Tags: openclaw-backup, cron, exec-wrapper, duplicate-process, retention
 
+## 2026-05-23 - Daily OpenClaw Backup Snapshot Outgrew `/tmp`
+
+- Incident: `/root/.openclaw/scripts/backup.sh /root/openclaw-backups` failed with `Error: database or disk is full`.
+- Cause: `backup.sh` created the SQLite `.backup` snapshot in `/tmp`; `/root/.openclaw/lcm.db` was about 3.1G while `/tmp` had about 2.3G free.
+- Recovery: Reran once with `TMPDIR=/root/openclaw-backups`, then patched `backup.sh` to create the snapshot temp directory under the backup directory by default. Reran the exact cron command successfully.
+- Do differently: For OpenClaw backups, keep large SQLite snapshot temp files on the backup target filesystem, not tmpfs.
+
 ---
 ## 2026-05-21 - OpenClaw Update Status Must Be Rechecked After Handoff
 

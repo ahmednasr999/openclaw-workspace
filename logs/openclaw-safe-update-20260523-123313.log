@@ -1,0 +1,30 @@
+[2026-05-23T12:33:13+03:00] safe OpenClaw update started
+[2026-05-23T12:33:13+03:00] before: OpenClaw 2026.5.19 (a185ca2)
+Updating OpenClaw...
+
+
+Update Result: OK
+  Root: /usr/lib/node_modules/openclaw
+  Before: 2026.5.19
+  After: 2026.5.20
+
+Steps:
+  ✓ global update (33.16s)
+  ✓ global install swap (3.24s)
+  ✓ openclaw doctor (148.48s)
+
+Total time: 185.72s
+
+Updating plugins...
+Installing @openclaw/codex into /root/.openclaw/npm…
+Linked peerDependency "openclaw" -> /usr/lib/node_modules/openclaw
+Linked peerDependency "openclaw" -> /usr/lib/node_modules/openclaw
+npm plugins: 1 updated, 1 unchanged, 1 skipped.
+
+Restarting service...
+Found stale gateway process(es) after restart: 1102757. Cleaning up...
+Gateway: restarted and verified.
+Daemon restart completed.
+
+Back and better. Did you even notice I was gone?
+[2026-05-23T12:38:06+03:00] after install: OpenClaw 2026.5.20 (e510042)

@@ -190,3 +190,18 @@ git push origin master
 2. **Treat local validation warnings as actionable.** If PDF checks, ontology writes, or pipeline updates produce low-risk warnings, inspect and fix the local cause before reporting completion.
 3. **Keep delivery to one useful closeout.** After sending or attaching the CV, the visible response should include PDF path, ATS score, JD source, checks run, and any real blocker. Do not add a separate empty or generic final receipt.
 4. **Keep stale model hard-coding out.** Eval files now use the current workspace-approved GPT-5.5 model policy.
+
+### 2026-05-23 - Weekly Skill Tune-Up
+
+**Audit basis:** One recent CV-adjacent lesson from 2026-05-16 directly applies: JobZoom CV packs were resent for roles already marked applied. No `eval/checklist.md` exists yet, so the recommendation stays in this skill file rather than creating a new checklist during this bounded cron.
+
+**Reviewed lessons:**
+- 2026-05-16, check `applied_jobs` and `jobs.applied` before sending or regenerating JobZoom CV packs.
+- 2026-05-15, fix low-risk JobZoom warnings instead of reporting preventable noise.
+- 2026-05-15, avoid empty private closeouts after Telegram sends.
+
+**Improvement recommendation:**
+1. **Add an applied-ledger preflight before CV delivery.** For any JobZoom or pipeline-generated CV pack, verify each target role against `applied_jobs` and `jobs.applied` before sending, regenerating, or treating it as an active opportunity.
+2. **Separate artifact generation from delivery eligibility.** A valid PDF is not enough to deliver. The role must still be actionable, not already applied, and tied to a verified JD or recruiter/application signal.
+3. **Make duplicate-send prevention visible in closeout.** Delivery should state whether applied-ledger checks were run, how many roles were blocked as already applied, and which PDFs were actually sent.
+4. **Keep the compact checklist as the next structural fix.** `eval/checklist.md` should include the applied-ledger gate along with JD provenance, ATS floor, rendered PDF review, clean text extraction, ontology ids, filename, and delivery wording.

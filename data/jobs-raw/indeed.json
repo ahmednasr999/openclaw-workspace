@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-05-23T05:00:46.649681+02:00",
-    "duration_ms": 42985,
+    "generated_at": "2026-05-23T17:00:39.770380+02:00",
+    "duration_ms": 37120,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "c73c1555",
+    "run_id": "b4370822",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -57,24 +57,22 @@
       "search_title": "Program Director"
     },
     {
-      "id": "indeed-in-d17b1acfd9ce92a5",
+      "id": "indeed-in-d879505e1cbcf674",
       "source": "indeed",
-      "title": "Executive Director, Corporate Banking Group - Dubai & NE - UAE Nationals",
-      "company": "bankfab",
+      "title": "Senior Director Commercial - tMart",
+      "company": "Delivery Hero",
       "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=d17b1acfd9ce92a5",
+      "url": "https://ae.indeed.com/viewjob?jk=d879505e1cbcf674",
       "posted": "2026-05-20",
       "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 26,
+      "domain_match": false,
+      "keyword_score": 13,
       "match_keywords": [
-        "ai",
-        "executive",
         "director",
-        "uae",
-        "dubai"
+        "mena",
+        "platform"
       ],
-      "raw_snippet": "Job Description\n\n**Job Purpose**\n\nTo grow and manage large account portfolios and sensitive client relationships for assigned portfolio in the corporate banking segment; improve service quality levels and supervise the team\u2019s day\\-to\\-day activities and client interactions to ensure that the team's objectives are constantly met and its revenue targets achieved, while maintaining client satisfaction and portfolio credit quality.\n\n\n  \nResponsibilities\n\n**Key Accountabilities**\n\n  \n\n**Client and Ma",
+      "raw_snippet": "**Company Description**  \n\ntalabat is part of the Delivery Hero Group, the world\u2019s pioneering local delivery platform, our mission is to deliver an amazing experience\u2014fast, easy, and to your door. We operate in over 70\\+ countries worldwide. Headquartered in Berlin, Germany. Delivery Hero has been listed on the Frankfurt Stock Exchange since 2017 and is part of the MDAX stock market index.\n\n **Job Description** **Who We Are?**\n\n\nWhen you think of food delivery in the MENA region, we\u2019d be pretty ",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
@@ -516,9 +514,9 @@
   ],
   "kpi": {
     "searches_run": 20,
-    "results_per_search": 4.15,
+    "results_per_search": 3.75,
     "unique_jobs": 22,
-    "errors": 3
+    "errors": 4
   },
   "recommendations": []
 }

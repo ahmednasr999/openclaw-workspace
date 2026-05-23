@@ -1,0 +1,10 @@
+linkedin_id=4418124261
+company=Huzzle.com
+title=Project Manager
+date=2026-05-23
+status=applied
+method=LinkedIn Easy Apply
+ats_score=82
+cv=Ahmed Nasr - Project Manager - Huzzle.com.pdf
+campaign=new-100-2026-05-23
+count=20/100

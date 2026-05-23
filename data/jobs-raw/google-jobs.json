@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-source-google",
     "version": "1.0.0",
-    "generated_at": "2026-05-08T13:00:13.460186+02:00",
-    "duration_ms": 11299,
+    "generated_at": "2026-05-23T09:00:04.714264+02:00",
+    "duration_ms": 1317,
     "ttl_hours": 6,
     "status": "error",
     "error": "Failed to initialize MCP session",
-    "run_id": "cbb699ad",
+    "run_id": "698b9f5f",
     "retries_used": 0,
     "data_freshness": "stale"
   },

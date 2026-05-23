@@ -1,0 +1,13 @@
+{
+  "task": "approved-14day-engagement",
+  "ts": "2026-05-23T12:00:01.319264+03:00",
+  "cmd": [
+    "/usr/bin/python3",
+    "scripts/send_approved_14day_engagement_alert.py"
+  ],
+  "cwd": "/root/.openclaw/workspace-cmo",
+  "returncode": 0,
+  "stdout": "{\"ts\": \"2026-05-23T12:00:01.303817+03:00\", \"event\": \"engagement_window_check\", \"post_number\": 9, \"date\": \"2026-05-23\", \"posted\": true, \"url\": \"https://www.linkedin.com/feed/update/urn:li:share:7463861346728828928/\", \"message\": \"Engagement window closing. Check comments and reactions for the approved daily LinkedIn post.\"}\n",
+  "stderr": "",
+  "log_path": "/root/.openclaw/workspace/logs/direct-cron/approved-14day-engagement-20260523-120001.log"
+}

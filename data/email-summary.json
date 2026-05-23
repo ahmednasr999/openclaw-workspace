@@ -2,158 +2,47 @@
   "meta": {
     "agent": "email-agent",
     "version": "3.0.0",
-    "generated_at": "2026-05-22T20:01:05.423037+02:00",
-    "duration_ms": 41559,
+    "generated_at": "2026-05-23T14:01:04.278583+02:00",
+    "duration_ms": 1063,
     "ttl_hours": 4,
     "status": "success",
     "error": null,
-    "run_id": "b3d7c277",
+    "run_id": "79627837",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
     "status": "ok",
-    "scan_time": "2026-05-22T20:01:05.415693+02:00",
-    "total_scanned": 68,
+    "scan_time": "2026-05-23T14:01:04.271452+02:00",
+    "total_scanned": 1,
     "by_category": {
       "interview_invite": 0,
-      "recruiter_reach": 3,
+      "recruiter_reach": 0,
       "application_ack": 0,
       "rejection": 0,
-      "assessment": 1,
+      "assessment": 0,
       "follow_up_needed": 0,
       "job_alert": 0,
-      "other": 64
+      "other": 1
     },
     "interview_invites": [],
-    "recruiter_messages": [
-      {
-        "id": "358834",
-        "from": "Stock Analysis <contact@stockanalysis.com>",
-        "subject": "Market Bullets: IMAX surges on sale speculation, Spotify pops 13% on\r\n AI music deal, Dow Jones hits new high",
-        "date": "Fri, 22 May 2026 12:54:16 +0000 (UTC)",
-        "unread": true,
-        "priority": "HIGH",
-        "score": 7,
-        "pipeline_match": "Dow Jones"
-      },
-      {
-        "id": "358841",
-        "from": "Amrith Suresh babu <invitations@linkedin.com>",
-        "subject": "=?UTF-8?Q?You_have_an_invitation_=E2=9C=89=EF=B8=8F?=",
-        "date": "Fri, 22 May 2026 13:30:35 +0000 (UTC)",
-        "unread": true,
-        "priority": "MEDIUM",
-        "score": 2,
-        "pipeline_match": null
-      },
-      {
-        "id": "358848",
-        "from": "\"Editor @ The Paypers\" <Editor@newsletter.thepaypers.com>",
-        "subject": "Finqware rolls out FinqData AIS API for multibank data aggregation",
-        "date": "Fri, 22 May 2026 16:00:30 +0200 (CEST)",
-        "unread": true,
-        "priority": "HIGH",
-        "score": 10,
-        "pipeline_match": "SAP"
-      }
-    ],
+    "recruiter_messages": [],
     "application_acks": [],
     "rejections": [],
-    "assessments": [
-      {
-        "id": "358836",
-        "from": "Rob Howard <rob@innovatingwithai.com>",
-        "subject": "Get Your AI Consulting Persona + Learning Roadmap",
-        "date": "Fri, 22 May 2026 13:03:43 +0000 (UTC)",
-        "unread": true,
-        "priority": "MEDIUM",
-        "score": 2,
-        "pipeline_match": null
-      }
-    ],
+    "assessments": [],
     "follow_ups_needed": [],
     "job_alerts": [],
-    "actionable_count": 4,
-    "hot_alerts": [
-      {
-        "id": "358836",
-        "subject": "Get Your AI Consulting Persona + Learning Roadmap",
-        "from": "Rob Howard <rob@innovatingwithai.com>",
-        "priority": "MEDIUM",
-        "pipeline_match": null
-      }
-    ],
-    "signals": [
-      {
-        "company": "Dow Jones",
-        "signal": "recruiter_email",
-        "subject": "Market Bullets: IMAX surges on sale speculation, Spotify pops 13% on\r\n AI music deal, Dow Jones hits new high",
-        "sender": "Stock Analysis <contact@stockanalysis.com>",
-        "job_ids": [
-          "4389096599",
-          "linkedin-li-4389096599"
-        ],
-        "score": 7,
-        "timestamp": "2026-05-22T20:01:04.843651+02:00"
-      },
-      {
-        "company": "SAP",
-        "signal": "recruiter_email",
-        "subject": "Finqware rolls out FinqData AIS API for multibank data aggregation",
-        "sender": "\"Editor @ The Paypers\" <Editor@newsletter.thepaypers.com>",
-        "job_ids": [
-          "indeed-in-b2195113ff678ef7",
-          "indeed-in-b7591ff66cc5a732",
-          "linkedin_jobspy-li-4380812358",
-          "linkedin-li-4349578134",
-          "linkedin-li-4394078700",
-          "linkedin-li-4380812358",
-          "linkedin-li-4362170335",
-          "linkedin-li-4362562926",
-          "linkedin-li-4385935615",
-          "linkedin-li-4353703506",
-          "app-005",
-          "cv-5fbf4a9aa7",
-          "linkedin-li-4385294885"
-        ],
-        "score": 10,
-        "timestamp": "2026-05-22T20:01:05.012063+02:00"
-      }
-    ],
+    "actionable_count": 0,
+    "hot_alerts": [],
+    "signals": [],
     "llm_analysis": null
   },
   "kpi": {
-    "emails_processed": 68,
-    "actionable": 4,
+    "emails_processed": 1,
+    "actionable": 0,
     "interviews_detected": 0,
-    "recruiter_messages": 3,
-    "unread_actionable": 4
+    "recruiter_messages": 0,
+    "unread_actionable": 0
   },
-  "recommendations": [
-    {
-      "id": "rec-b3d7c277-0",
-      "action": "review_and_respond",
-      "target": "3 recruiter message(s)",
-      "reason": "Recruiter outreach could lead to opportunities",
-      "urgency": "high",
-      "timestamp": "2026-05-22T20:01:05.422828+02:00"
-    },
-    {
-      "id": "rec-b3d7c277-1",
-      "action": "check_inbox",
-      "target": "4 unread actionable email(s)",
-      "reason": "Unread emails need attention",
-      "urgency": "high",
-      "timestamp": "2026-05-22T20:01:05.422841+02:00"
-    },
-    {
-      "id": "rec-b3d7c277-2",
-      "action": "complete_assessment",
-      "target": "1 assessment(s)",
-      "reason": "Assessments have deadlines",
-      "urgency": "high",
-      "timestamp": "2026-05-22T20:01:05.422844+02:00"
-    }
-  ]
+  "recommendations": []
 }
