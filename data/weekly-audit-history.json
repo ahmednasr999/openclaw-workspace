@@ -63,7 +63,15 @@
       "critical": 1,
       "warnings": 5,
       "infos": 32
+    },
+    {
+      "date": "2026-05-24",
+      "score": 22,
+      "grade": "F",
+      "critical": 1,
+      "warnings": 5,
+      "infos": 33
     }
   ],
-  "updated": "2026-05-17T07:06:43.408380+02:00"
+  "updated": "2026-05-24T07:03:49.528960+02:00"
 }

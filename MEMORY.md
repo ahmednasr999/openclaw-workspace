@@ -128,7 +128,7 @@ During session, write to daily notes immediately when:
 - A user preference is learned.
 - A decision gets made.
 - Something worth remembering happens.
-- Pre-compaction memory flushes should append only to the canonical daily note `memory/YYYY-MM-DD.md`. Do not create timestamped variants or edit bootstrap/core files during flushes unless explicitly requested. <!-- dream-promoted 2026-05-18 -->
+- Pre-compaction memory flushes should append only to the canonical daily note path pattern memory/YYYY-MM-DD.md. Do not create timestamped variants or edit bootstrap/core files during flushes unless explicitly requested. <!-- dream-promoted 2026-05-18 -->
 
 Finding things:
 - Use memory search across all memory files.

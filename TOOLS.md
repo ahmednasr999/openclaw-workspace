@@ -42,6 +42,7 @@ Posting:
 - Approval rule: when Ahmed asks CMO/NASR to post on LinkedIn, or when a specific post is already marked/approved for publishing, the LinkedIn publish action is pre-approved for that specific post. Do not ask again unless content/media changed materially, the target account is unclear, or duplicate/live-state checks create a risk.
 - Composio post action: `LINKEDIN_CREATE_LINKED_IN_POST`.
 - Person URN: `urn:li:person:mm8EyA56mj`.
+- Never use LinkedIn cookies, cookie files, exported browser cookies, or cookie extraction for posting, engagement, scraping, or recovery. This includes `li_at`, `JSESSIONID`, Camofox cookie DBs, and quarantined historical LinkedIn cookie artifacts. Use approved Composio actions or a live Ahmed-Mac browser UI session with visible-state verification only. If neither path is clean, stop and report the blocker.
 - For image posts, upload image first and use the returned true `s3key`.
 - Composio workbench image upload gotcha: `COMPOSIO_REMOTE_WORKBENCH` expects Python `code_to_execute`; download or stage the file inside the remote sandbox first, then call `upload_local_file(path)` to obtain the true `s3key`. It is not an action/path wrapper. <!-- dream-promoted 2026-05-04 -->
 - Never pass raw GitHub URLs, local paths, Notion URLs, or short links as `s3key`.
@@ -88,7 +89,7 @@ Known locations:
 - Gmail: `/root/.config/gmail-smtp.json`
 - GitHub: `/root/.config/gh/hosts.yml`
 - HuggingFace: `config/huggingface.json`
-- LinkedIn cookies: `config/nasr-linkedin-cookies.txt`
+- LinkedIn: no cookie credential path is allowed. Do not read, refresh, export, or use LinkedIn cookies.
 - Service registry: `config/service-registry.md`
 
 Never use Composio for Notion or Telegram when direct credentials exist.
@@ -105,6 +106,7 @@ Never use Composio for Notion or Telegram when direct credentials exist.
 
 - Avoid approval-noise from read-only verification: prefer first-class tools such as `read`, `dir_list`, `file_fetch`, `session_status`, and simple allowlisted checks before `exec`; avoid inline eval/interpreter snippets (`node -e`, `python -c`) and sed/awk one-liners for routine inspection unless genuinely needed. If a read-only verification command prompts, switch to a safer tool/command rather than creating repeated approval cards. <!-- promoted 2026-05-07 from fs-safe verification approval noise -->
 - HR protected-lane approval noise: routine HR internal work is pre-approved, but native exec safety can still prompt for command shapes outside `config/tool-permissions.yaml`, especially shell pipelines, inline eval, or scripts outside `workspace-hr/scripts` and `workspace-hr/tools`. Put reusable HR commands in those directories and run them directly through the configured Python/bash/node or venv paths instead of ad-hoc one-liners. Use the HR safe toolbox in `/root/.openclaw/workspace-hr/tools/` for common read-only checks such as `hr-status.py`, `jobzoom-latest-run.py`, and `cv-artifact-verify.py`. <!-- promoted 2026-05-10 from Ahmed correction; toolbox added 2026-05-11 -->
+- Cron jobs that need local shell execution should use deterministic OS cron/direct runner paths, not OpenClaw agent-turn wrappers with `toolsAllow: exec`. Agent-turn cron can lack shell execution while still recording runs as ok, so verify the forced or scheduled execution path before declaring the cron fixed. <!-- dream-promoted 2026-05-24 -->
 - OpenClaw command queue is active by default even when `messages.queue` is absent from config: default mode is `steer`, with `debounceMs: 500`, `cap: 20`, and `drop: summarize`. Keep this default unless a specific channel/session behavior proves problematic.
 - For bursty Telegram follow-ups, prefer a temporary per-session `/queue collect debounce:1s cap:20 drop:summarize` rather than changing global queue config. Avoid `interrupt` unless Ahmed explicitly wants newer messages to abort active work.
 - Queue protects inbound session collisions, but it does not replace tool/process discipline. Avoid stacked long-running background exec/tool runs in the same Telegram thread unless necessary; verify with process/session tools instead of assuming the queue solved lock timeouts. <!-- promoted 2026-05-01 -->

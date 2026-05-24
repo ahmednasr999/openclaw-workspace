@@ -1,7 +1,9 @@
 // Copyright (c) OpenAI. All rights reserved.
 "use strict";
 
-const { spawnSync } = require("child_process");
+const fs = require("fs");
+const os = require("os");
+const path = require("path");
 const { Canvas } = require("skia-canvas");
 // Unicode line-break iterator (UAX #14) so we mimic PPT/LibreOffice wrapping rules.
 const LineBreaker = require("linebreak");
@@ -10,6 +12,13 @@ const TEXT_MEASURER = getTextMeasurer();
 const registeredFontVariants = new Set();
 const fontPathCache = new Map();
 const fontKitCache = new Map();
+let fontIndex = null;
+const FONT_SEARCH_DIRS = [
+  "/usr/share/fonts",
+  "/usr/local/share/fonts",
+  path.join(os.homedir(), ".fonts"),
+  path.join(os.homedir(), ".local/share/fonts"),
+];
 
 // Estimate the text box height for a given font size and line count.
 // NOTE: This is an analytical approximation, not an exact reproduction of
@@ -635,24 +644,78 @@ function findFontPath(face, fontStyle, fontWeight) {
   if (family.length === 0) return null;
   const key = makeFontCacheKey(family, fontStyle, fontWeight);
   if (fontPathCache.has(key)) return fontPathCache.get(key);
-  const styleParts = [];
-  if ((fontWeight || "").toLowerCase() === "bold") styleParts.push("Bold");
-  if ((fontStyle || "").toLowerCase() === "italic") styleParts.push("Italic");
-  const styleQuery =
-    styleParts.length > 0 ? `:style=${styleParts.join(" ")}` : "";
-  const query = `${family}${styleQuery}`;
-  const result = spawnSync("fc-match", ["-f", "%{file}", query], {
-    encoding: "utf8",
-  });
-  if (result.status === 0) {
-    const output = String(result.stdout || "").trim();
-    if (output.length > 0) {
-      fontPathCache.set(key, output);
-      return output;
+  const candidates = getFontIndex().get(family.toLowerCase()) || [];
+  const wantItalic = (fontStyle || "").toLowerCase() === "italic";
+  const wantBold = (fontWeight || "").toLowerCase() === "bold";
+  let best = null;
+  let bestScore = -1;
+  for (const candidate of candidates) {
+    const score = scoreFontVariant(candidate, wantItalic, wantBold);
+    if (score > bestScore) {
+      best = candidate;
+      bestScore = score;
     }
   }
-  fontPathCache.set(key, null);
-  return null;
+  const resolved = best ? best.path : null;
+  fontPathCache.set(key, resolved);
+  return resolved;
+}
+
+function getFontIndex() {
+  if (fontIndex) return fontIndex;
+  fontIndex = new Map();
+  for (const dir of FONT_SEARCH_DIRS) {
+    indexFontsUnder(dir, fontIndex, 0);
+  }
+  return fontIndex;
+}
+
+function indexFontsUnder(dir, index, depth) {
+  if (depth > 5) return;
+  let entries;
+  try {
+    entries = fs.readdirSync(dir, { withFileTypes: true });
+  } catch {
+    return;
+  }
+  for (const entry of entries) {
+    const fullPath = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      indexFontsUnder(fullPath, index, depth + 1);
+      continue;
+    }
+    if (!entry.isFile() || !/\.(ttf|otf|ttc)$/i.test(entry.name)) continue;
+    indexFontFile(fullPath, index);
+  }
+}
+
+function indexFontFile(fontPath, index) {
+  try {
+    const font = fontkit.openSync(fontPath);
+    const fonts = font && typeof font.fonts === "object" ? font.fonts : [font];
+    for (const item of fonts) {
+      if (!item || !item.familyName) continue;
+      const key = String(item.familyName).trim().toLowerCase();
+      if (!key) continue;
+      const list = index.get(key) || [];
+      list.push({
+        path: fontPath,
+        fullName: `${item.familyName} ${item.subfamilyName || ""}`,
+        postscriptName: item.postscriptName || "",
+        fontStyle: item.italicAngle ? "italic" : "normal",
+        fontWeight: fontWeightFromMetadata(item),
+      });
+      index.set(key, list);
+    }
+  } catch {
+    // Ignore unreadable font files; Canvas/fontkit fall back later.
+  }
+}
+
+function fontWeightFromMetadata(font) {
+  const subfamily = String(font.subfamilyName || "").toLowerCase();
+  if (subfamily.includes("bold") || subfamily.includes("black")) return "bold";
+  return "normal";
 }
 
 function selectCollectionFont(collection, fontStyle, fontWeight) {

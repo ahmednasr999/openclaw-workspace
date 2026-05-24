@@ -1,70 +1,57 @@
 {
   "status": "ok",
-  "scan_time": "2026-05-23T20:00:56.293209+02:00",
-  "total_scanned": 45,
+  "scan_time": "2026-05-24T14:00:32.797296+02:00",
+  "total_scanned": 12,
   "by_category": {
     "interview_invite": 0,
-    "recruiter_reach": 2,
-    "application_ack": 0,
-    "rejection": 0,
+    "recruiter_reach": 0,
+    "application_ack": 2,
+    "rejection": 1,
     "assessment": 0,
     "follow_up_needed": 0,
     "job_alert": 0,
-    "other": 43
+    "other": 10
   },
   "interview_invites": [],
-  "recruiter_messages": [
+  "recruiter_messages": [],
+  "application_acks": [
     {
-      "id": "358984",
-      "from": "Epfo whatsapp service <info@host.discountwalas.com>",
-      "subject": "epfo may soon bring pf balance on whatsapp",
-      "date": "Sat, 23 May 2026 14:32:04 +0000",
+      "id": "359058",
+      "from": "Mediclinic Careers <system@successfactors.eu>",
+      "subject": "=?UTF-8?Q?Mediclinic_Talent_Community_=E2=94=82_Applic?=\r\n =?UTF-8?Q?ation_received_for_the_position_of_D?=\r\n =?UTF-8?Q?igital_Health_Product_Manager_(=E2=80=8B6803?=\r\n =?UTF-8?Q?5=E2=80=8B)_|_=E2=80=8BMediclinic_Parkview_Hospital=E2=80=8B?=",
+      "date": "Sun, 24 May 2026 10:59:29 +0000 (UTC)",
       "unread": true,
-      "priority": "HIGH",
-      "score": 7,
-      "pipeline_match": "SAP"
+      "priority": "LOW",
+      "score": 1,
+      "pipeline_match": null
     },
     {
-      "id": "359002",
-      "from": "Nada Nasri <invitations@linkedin.com>",
-      "subject": "=?UTF-8?Q?You_have_an_invitation_=E2=9C=89=EF=B8=8F?=",
-      "date": "Sat, 23 May 2026 17:30:34 +0000 (UTC)",
+      "id": "359061",
+      "from": "malomatia Recruitment Team <recruitment@malomatia.com>",
+      "subject": "=?utf-8?Q?Your_recent_job_application_for_Portfolio_Manag?=\r\n =?utf-8?Q?er_=E2=80=93_Strategic_Programs_(Qatari_National)_-_789?=",
+      "date": "Sun, 24 May 2026 11:02:57 +0000 (UTC)",
       "unread": true,
-      "priority": "MEDIUM",
-      "score": 2,
+      "priority": "LOW",
+      "score": 0,
       "pipeline_match": null
     }
   ],
-  "application_acks": [],
-  "rejections": [],
+  "rejections": [
+    {
+      "id": "359058",
+      "from": "Mediclinic Careers <system@successfactors.eu>",
+      "subject": "=?UTF-8?Q?Mediclinic_Talent_Community_=E2=94=82_Applic?=\r\n =?UTF-8?Q?ation_received_for_the_position_of_D?=\r\n =?UTF-8?Q?igital_Health_Product_Manager_(=E2=80=8B6803?=\r\n =?UTF-8?Q?5=E2=80=8B)_|_=E2=80=8BMediclinic_Parkview_Hospital=E2=80=8B?=",
+      "date": "Sun, 24 May 2026 10:59:29 +0000 (UTC)",
+      "unread": true,
+      "priority": "LOW",
+      "score": 1,
+      "pipeline_match": null
+    }
+  ],
   "assessments": [],
   "follow_ups_needed": [],
   "job_alerts": [],
-  "actionable_count": 2,
+  "actionable_count": 0,
   "hot_alerts": [],
-  "signals": [
-    {
-      "company": "SAP",
-      "signal": "recruiter_email",
-      "subject": "epfo may soon bring pf balance on whatsapp",
-      "sender": "Epfo whatsapp service <info@host.discountwalas.com>",
-      "job_ids": [
-        "indeed-in-b2195113ff678ef7",
-        "indeed-in-b7591ff66cc5a732",
-        "linkedin_jobspy-li-4380812358",
-        "linkedin-li-4349578134",
-        "linkedin-li-4394078700",
-        "linkedin-li-4380812358",
-        "linkedin-li-4362170335",
-        "linkedin-li-4362562926",
-        "linkedin-li-4385935615",
-        "linkedin-li-4353703506",
-        "app-005",
-        "cv-5fbf4a9aa7",
-        "linkedin-li-4385294885"
-      ],
-      "score": 7,
-      "timestamp": "2026-05-23T20:00:56.075946+02:00"
-    }
-  ]
+  "signals": []
 }

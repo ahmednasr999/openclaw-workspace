@@ -793,3 +793,24 @@ For long-running backup commands launched through the exec JavaScript wrapper, a
 - Incident: `openclaw.browser` upload against Ahmed-Mac LinkedIn Easy Apply initially created a `0 B` PDF and LinkedIn showed `Something went wrong while uploading`.
 - Cause: Uploading a gateway-local `/tmp/openclaw/uploads/...pdf` path into a node-hosted user browser did not transfer real bytes to the Mac-side browser context.
 - Do differently: For node-hosted browser file uploads when `file.write` is not allowed, inject the PDF bytes into the page as a `File` through the file input with `DataTransfer`, then verify LinkedIn shows the real file size before continuing.
+
+## 2026-05-24 - Mac OpenClaw Update Can Leave LaunchAgent Unloaded
+
+- Incident: Updating Ahmed-Mac OpenClaw to `2026.5.20` and running `openclaw node restart` left the Mac node disconnected because the LaunchAgent was no longer loaded.
+- Cause: The update path repaired the package, but the restart did not leave `ai.openclaw.node` bootstrapped in the user launchd domain.
+- Recovery: Used Tailscale SSH to `nasrs-macbook-pro.tail945bbc.ts.net` and ran `launchctl bootstrap` plus `launchctl kickstart` for `/Users/ahmednasr/Library/LaunchAgents/ai.openclaw.node.plist`.
+- Do differently: For Mac node maintenance, verify `launchctl print gui/$(id -u)/ai.openclaw.node` after any update/restart, and keep `/root/.openclaw/workspace/scripts/ahmed-mac-node-recover.sh` as the first recovery path before asking Ahmed for manual action.
+
+## 2026-05-24 - Mac UI Device Metadata Upgrade Can Need Local Pairing Repair
+
+- Incident: `Nasr’s MacBook Pro` OpenClaw UI node stayed disconnected after macOS metadata changed from `15.7.5` to `15.7.7`; `openclaw devices list` showed a known-device repair request, but `openclaw devices approve <requestId>` returned `unknown requestId`.
+- Cause: The CLI could see the local pending repair, while the gateway approval RPC rejected the rapidly refreshed request IDs.
+- Recovery: Backed up `/root/.openclaw/devices/paired.json` and `pending.json`, approved the local pending repair only after confirming the same device ID and public key, then verified pending device requests were `0` and both Mac nodes reconnected on `2026.5.20`.
+- Do differently: For this known Mac UI node, repair only same device ID plus same public key metadata upgrades automatically in `scripts/ahmed-mac-node-doctor.sh`; do not auto-approve first-time devices or public-key changes.
+
+## 2026-05-24 - OpenClaw Doctor Fix Can Hang After Registry Refresh
+
+- Incident: During runtime hardening, `openclaw doctor --fix --non-interactive --yes` refreshed the plugin registry, then sat idle for several minutes without producing further output.
+- Cause: The doctor fix path did not complete cleanly in the live gateway maintenance context. Waiting on it blocked closeout without adding useful evidence.
+- Recovery: Killed the stuck doctor process, performed targeted fixes manually, then verified with `openclaw status --all`, `openclaw config validate`, plugin inspections, and `openclaw security audit --deep`.
+- Do differently: Treat doctor fix as an assist, not the source of truth. If it stalls after a clear milestone, stop it, apply bounded fixes directly, and verify the actual gateway/runtime state.

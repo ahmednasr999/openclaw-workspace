@@ -1,29 +1,10 @@
 #!/usr/bin/env node
 
-import fs from "fs";
-import path from "path";
-import { fileURLToPath } from "url";
+import { loadTavilyKey } from "./tavily-key.mjs";
 
 function usage() {
   console.error(`Usage: search.mjs "query" [-n 5] [--deep] [--topic general|news] [--days 7]`);
   process.exit(2);
-}
-
-function loadTavilyKey() {
-  try {
-    const here = path.dirname(fileURLToPath(import.meta.url));
-    const configPath = path.resolve(here, "../../../config/tavily.json");
-    const raw = fs.readFileSync(configPath, "utf8");
-    const parsed = JSON.parse(raw);
-    const configKey = String(parsed?.api_key ?? "").trim();
-    if (configKey) return configKey;
-  } catch {
-    // Fall back to env below.
-  }
-
-  const envKey = (process.env.TAVILY_API_KEY ?? "").trim();
-  if (envKey) return envKey;
-  return "";
 }
 
 const args = process.argv.slice(2);

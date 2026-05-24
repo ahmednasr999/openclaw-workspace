@@ -1,139 +1,46 @@
 #!/usr/bin/env node
 
-import fs from "fs";
-
-const MCP_URL = "https://connect.composio.dev/mcp";
-const OPENCLAW_CONFIG = "/root/.openclaw/openclaw.json";
+import { loadTavilyKey } from "./tavily-key.mjs";
 
 function usage() {
   console.error(`Usage: research-search.mjs "query" [-n 10] [--category news|github|company|linkedin\ profile|research\ paper|tweet|video] [--type auto|neural|keyword] [--start YYYY-MM-DD]`);
   process.exit(2);
 }
 
-function loadConsumerKey() {
-  const envKey = (process.env.COMPOSIO_CONSUMER_KEY ?? "").trim();
-  if (envKey) return envKey;
-
-  try {
-    const raw = fs.readFileSync(OPENCLAW_CONFIG, "utf8");
-    const parsed = JSON.parse(raw);
-    return String(parsed?.plugins?.entries?.composio?.config?.consumerKey ?? "").trim();
-  } catch {
-    return "";
-  }
-}
-
-async function mcpCall(method, params, consumerKey, timeoutMs = 45000) {
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), timeoutMs);
-
-  try {
-    const resp = await fetch(MCP_URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json, text/event-stream",
-        "x-consumer-api-key": consumerKey,
-      },
-      body: JSON.stringify({
-        jsonrpc: "2.0",
-        id: Date.now() % 1000000,
-        method,
-        params,
-      }),
-      signal: controller.signal,
-    });
-
-    const text = await resp.text();
-    if (!resp.ok) {
-      throw new Error(`research search failed (${resp.status}): ${text.slice(0, 400)}`);
-    }
-
-    for (const line of text.split("\n")) {
-      if (!line.startsWith("data:")) continue;
-      const payload = JSON.parse(line.slice(5).trim());
-      if (payload.error) {
-        throw new Error(typeof payload.error === "string" ? payload.error : JSON.stringify(payload.error));
-      }
-      return payload.result ?? null;
-    }
-
-    throw new Error("No MCP result returned");
-  } finally {
-    clearTimeout(timeout);
-  }
-}
-
-async function initialize(consumerKey) {
-  await mcpCall("initialize", {
-    protocolVersion: "2024-11-05",
-    capabilities: {},
-    clientInfo: { name: "research-search", version: "1.1" },
-  }, consumerKey);
-}
-
-async function runTool(tool_slug, argumentsPayload, consumerKey, timeoutMs = 60000) {
-  const result = await mcpCall("tools/call", {
-    name: "COMPOSIO_MULTI_EXECUTE_TOOL",
-    arguments: {
-      tools: [{ tool_slug, arguments: argumentsPayload }],
-      thought: "Run research search through the configured Composio path.",
-      sync_response_to_workbench: false,
-      current_step: "RESEARCH_SEARCH",
-      current_step_metric: "1/1 query",
-    },
-  }, consumerKey, timeoutMs);
-
-  const content = result?.content ?? [];
-  const text = content?.[0]?.text ?? "";
-  if (!text) throw new Error(`No content returned for ${tool_slug}`);
-  return JSON.parse(text);
-}
-
-async function exaSearch({ query, numResults, category, type, startPublishedDate }, consumerKey) {
-  const argumentsPayload = {
+async function tavilySearch({ query, numResults, category, type, startPublishedDate }, apiKey) {
+  const body = {
+    api_key: apiKey,
     query,
-    type,
-    numResults,
+    search_depth: type === "keyword" ? "basic" : "advanced",
+    topic: category === "news" ? "news" : "general",
+    max_results: numResults,
+    include_answer: true,
+    include_raw_content: false,
   };
 
-  if (category) argumentsPayload.category = category;
-  if (startPublishedDate) argumentsPayload.startPublishedDate = startPublishedDate;
-
-  const outer = await runTool("EXA_SEARCH", argumentsPayload, consumerKey);
-  const run = outer?.data?.results?.[0]?.response ?? {};
-
-  if (!outer?.successful || !run?.successful) {
-    const msg = run?.error || outer?.error || "Exa search returned unsuccessful response";
-    throw new Error(typeof msg === "string" ? msg : JSON.stringify(msg));
+  if (category === "news" && startPublishedDate) {
+    const start = new Date(`${startPublishedDate}T00:00:00Z`);
+    if (!Number.isNaN(start.getTime())) {
+      const days = Math.max(1, Math.ceil((Date.now() - start.getTime()) / 86400000));
+      body.days = days;
+    }
   }
 
-  return {
-    provider: "exa-via-composio",
-    answer: null,
-    results: run?.data?.results ?? [],
-  };
-}
-
-async function searchWeb(query, consumerKey) {
-  const outer = await runTool("COMPOSIO_SEARCH_WEB", { query }, consumerKey, 45000);
-  const run = outer?.data?.results?.[0]?.response ?? {};
-
-  if (!outer?.successful || !run?.successful) {
-    const msg = run?.error || outer?.error || "Composio search returned unsuccessful response";
-    throw new Error(typeof msg === "string" ? msg : JSON.stringify(msg));
+  const resp = await fetch("https://api.tavily.com/search", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body),
+  });
+  if (!resp.ok) {
+    const text = await resp.text().catch(() => "");
+    throw new Error(`Tavily research search failed (${resp.status}): ${text.slice(0, 400)}`);
   }
 
-  const data = run?.data ?? {};
+  const data = await resp.json();
   return {
-    provider: "composio-search-web",
+    provider: "tavily",
     answer: data?.answer ?? null,
-    results: (data?.citations ?? []).map(c => ({
-      title: c.title,
-      url: c.url,
-      text: c.snippet || c.text || "",
-      publishedDate: c.publishedDate || "",
-    })),
+    results: data?.results ?? [],
   };
 }
 
@@ -203,23 +110,15 @@ for (let i = 1; i < args.length; i++) {
 }
 
 numResults = Math.max(1, Math.min(numResults, 20));
-const consumerKey = loadConsumerKey();
-if (!consumerKey) {
-  console.error("Missing Composio consumer key in env or local config");
+const apiKey = loadTavilyKey();
+if (!apiKey) {
+  console.error("Missing Tavily API key (env or config/tavily.json)");
   process.exit(1);
 }
 
 try {
-  await initialize(consumerKey);
-
-  try {
-    const exa = await exaSearch({ query, numResults, category, type, startPublishedDate }, consumerKey);
-    printResults({ query, category, type, ...exa });
-  } catch (err) {
-    console.error(`[research-search] Exa path unavailable, falling back to Composio search web: ${err.message}`);
-    const fallback = await searchWeb(query, consumerKey);
-    printResults({ query, category, type, ...fallback, note: "exa path unavailable, used search-web fallback" });
-  }
+  const result = await tavilySearch({ query, numResults, category, type, startPublishedDate }, apiKey);
+  printResults({ query, category, type, ...result });
 } catch (err) {
   console.error(err?.message || String(err));
   process.exit(1);

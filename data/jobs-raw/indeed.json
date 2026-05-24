@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-05-24T05:00:41.397051+02:00",
-    "duration_ms": 38464,
+    "generated_at": "2026-05-24T17:00:39.467222+02:00",
+    "duration_ms": 37178,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "be5ed64b",
+    "run_id": "d316ed93",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -105,6 +105,30 @@
       "search_title": "Program Director"
     },
     {
+      "id": "indeed-in-aaab1fac8ffd45cf",
+      "source": "indeed",
+      "title": "WPP Media: Associate Director, Performance- Dubai",
+      "company": "WPP Media",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=aaab1fac8ffd45cf",
+      "posted": "2026-05-24",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 26,
+      "match_keywords": [
+        "ai",
+        "director",
+        "growth",
+        "dubai",
+        "platform"
+      ],
+      "raw_snippet": "**About WPP Media**\n\n\n\nWPP is the trusted growth partner for the world's leading brands. With exceptional talent, trusted data and intelligence, and world\\-class partnerships \u2013 all united by our pioneering agentic marketing platform, WPP Open \u2013 we help clients navigate change, capture opportunity, and deliver transformational growth.\n\n\n\nWPP Media is WPP's AI\\-driven media operating unit, bringing together media, data, and partnerships to deliver creative personalisation at scale. Connected throu",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Director Digital Transformation"
+    },
+    {
       "id": "indeed-in-6d3b584e3ebc7a99",
       "source": "indeed",
       "title": "Cloud and Infrastructure Platforms Director",
@@ -128,31 +152,6 @@
       "filter_reason": null,
       "search_country": "United Arab Emirates",
       "search_title": "Director Digital Transformation"
-    },
-    {
-      "id": "indeed-in-bd7d9040af9f082a",
-      "source": "indeed",
-      "title": "Practice Head- Digital Transformation",
-      "company": "GCG Enterprise Solutions",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=bd7d9040af9f082a",
-      "posted": "2026-05-21",
-      "seniority": "Other",
-      "domain_match": true,
-      "keyword_score": 33,
-      "match_keywords": [
-        "digital transformation",
-        "ai",
-        "enterprise",
-        "uae",
-        "mena",
-        "automation"
-      ],
-      "raw_snippet": "**Company Description**  \n\nEstablished in 1982, The Digital Imaging \\& Office Services Solutions of Gulf Commercial Group was created to become a leading office automation solutions provider for the thriving UAE market.\n\n\nBy embracing the printing industry\u2019s phenomenal digital transformation over the years, \u2018GCG\\-DDS\u2019 developed a natural proclivity for new technologies and gained an enviable reputation for its expertise in integrating digital enterprise solutions of all kinds into their client\u2019s",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Head of Digital Transformation"
     },
     {
       "id": "indeed-in-5bf04d9fcc06a11f",
@@ -221,27 +220,31 @@
       "search_title": "PMO Director"
     },
     {
-      "id": "indeed-in-dfc42a80084fe2b4",
+      "id": "indeed-in-2eafbc2717ccc208",
       "source": "indeed",
-      "title": "PMO Masterplan Commercial Lead - Associate Director",
-      "company": "Mace Group",
+      "title": "Senior Systems Integration Director",
+      "company": "Confidential",
       "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=dfc42a80084fe2b4",
-      "posted": "2026-05-21",
+      "url": "https://sa.indeed.com/viewjob?jk=2eafbc2717ccc208",
+      "posted": "2026-05-24",
       "seniority": "C-Suite",
       "domain_match": true,
-      "keyword_score": 26,
+      "keyword_score": 36,
       "match_keywords": [
-        "pmo",
-        "ai",
+        "infrastructure",
+        "enterprise",
         "director",
-        "riyadh"
+        "ksa",
+        "api",
+        "integration",
+        "architecture",
+        "platform"
       ],
-      "raw_snippet": "Mace combines construction expertise with consultancy to unlock potential in every person or project and redefine the boundaries of ambition. Our values shape the way we consult and define the people we want to join us on our journey.\n\n\nThe project:\n\n\nJoin one of Riyadh\u2019s most ambitious mixed\\-use development programmes, spanning more than 200 projects across cultural and heritage assets, hospitality, retail, commercial, and education. This is a rare opportunity to play a leading commercial role",
+      "raw_snippet": "**Job Summary:**  \nESGA Tech Digital Solutions KSA WLL is seeking a Senior Systems Integration Director to lead enterprise integration strategy, complex systems implementation, and cross\\-platform technology coordination across large\\-scale digital environments. This role is responsible for overseeing integration architecture, API ecosystems, enterprise connectivity, and ensuring seamless interoperability between business\\-critical applications and infrastructure systems. If you are an experienc",
       "relevant": true,
       "filter_reason": null,
       "search_country": "Saudi Arabia",
-      "search_title": "PMO Director"
+      "search_title": "Program Director"
     },
     {
       "id": "indeed-in-d5c6714d3a9f6732",
@@ -289,27 +292,6 @@
       "search_title": "Chief Technology Officer"
     },
     {
-      "id": "indeed-in-ac9ec265501bbe39",
-      "source": "indeed",
-      "title": "Head of Operations",
-      "company": "Flow",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=ac9ec265501bbe39",
-      "posted": "2026-05-21",
-      "seniority": "Director",
-      "domain_match": true,
-      "keyword_score": 10,
-      "match_keywords": [
-        "head of",
-        "platform"
-      ],
-      "raw_snippet": "**About the Company**  \n\nAt Flow, we\u2019re reimagining what it means to live, work, and connect. More than just a real estate company, Flow is a brand, a technology platform, and an operations ecosystem spanning condominiums, hotels, multifamily residences, and office spaces. We\u2019re building a new kind of living experience: one that\u2019s flexible, connected, and designed to create genuine community and real value for the people who call Flow home.  \n\n  \n\nOur mission is oneness: prioritizing our residen",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Head of Technology"
-    },
-    {
       "id": "indeed-in-69624d60494b7e33",
       "source": "indeed",
       "title": "Commercial Portfolio Head",
@@ -333,8 +315,8 @@
   "kpi": {
     "searches_run": 20,
     "results_per_search": 3.15,
-    "unique_jobs": 14,
-    "errors": 5
+    "unique_jobs": 13,
+    "errors": 6
   },
   "recommendations": []
 }

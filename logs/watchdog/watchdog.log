@@ -3500,3 +3500,61 @@ Config warnings:
 [2026-05-24 06:00] WARN: Jobs data stale (689h), triggering pipeline
 [2026-05-24 06:00] FIXED: Pipeline triggered
 [2026-05-24 06:00] Summary: fixes=1 warnings=0 alerts=0
+[2026-05-24 08:00] === Watchdog v3 run ===
+[2026-05-24 08:00] WARN: active-tasks.md stale (49h)
+[2026-05-24 08:00] WARN: Jobs data stale (691h), triggering pipeline
+[2026-05-24 08:00] FIXED: Pipeline triggered
+[2026-05-24 08:00] Summary: fixes=1 warnings=1 alerts=0
+[2026-05-24 10:00] === Watchdog v3 run ===
+[2026-05-24 10:00] WARN: Jobs data stale (693h), triggering pipeline
+[2026-05-24 10:00] FIXED: Pipeline triggered
+[2026-05-24 10:00] FIXED: Re-triggered failed cron b004aa01-a463-47b8-8a5c-6a078f8a0c44
+[2026-05-24 10:00] Summary: fixes=2 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:b004aa01-a463-47b8-8a5c-6a078f8a0c44:1779606022258:11"
+}
+[2026-05-24 12:00] === Watchdog v3 run ===
+[2026-05-24 12:00] WARN: Jobs data stale (695h), triggering pipeline
+[2026-05-24 12:00] FIXED: Pipeline triggered
+[2026-05-24 12:00] FIXED: Re-triggered failed cron bef6e2d8-fce7-44dc-acde-a76fbcb01a7e
+[2026-05-24 12:00] FIXED: Re-triggered failed cron b004aa01-a463-47b8-8a5c-6a078f8a0c44
+[2026-05-24 12:00] Summary: fixes=3 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:b004aa01-a463-47b8-8a5c-6a078f8a0c44:1779613225279:12"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:bef6e2d8-fce7-44dc-acde-a76fbcb01a7e:1779613225970:13"
+}
+[2026-05-24 14:00] === Watchdog v3 run ===
+[2026-05-24 14:00] WARN: Jobs data stale (697h), triggering pipeline
+[2026-05-24 14:00] FIXED: Pipeline triggered
+[2026-05-24 14:00] Summary: fixes=1 warnings=0 alerts=0
+[2026-05-24 16:00] === Watchdog v3 run ===
+[2026-05-24 16:00] WARN: Jobs data stale (699h), triggering pipeline
+[2026-05-24 16:00] FIXED: Pipeline triggered
+[2026-05-24 16:00] Summary: fixes=1 warnings=0 alerts=0
+[2026-05-24 18:00] === Watchdog v3 run ===
+[2026-05-24 18:00] WARN: Jobs data stale (701h), triggering pipeline
+[2026-05-24 18:00] FIXED: Pipeline triggered
+[2026-05-24 18:00] FIXED: Re-triggered failed cron bef6e2d8-fce7-44dc-acde-a76fbcb01a7e
+[2026-05-24 18:00] FIXED: Re-triggered failed cron 145d964f-e2e5-4b49-8058-f9ddac926f45
+[2026-05-24 18:00] Summary: fixes=3 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:bef6e2d8-fce7-44dc-acde-a76fbcb01a7e:1779634856466:1"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:145d964f-e2e5-4b49-8058-f9ddac926f45:1779634856607:2"
+}
+[2026-05-24 20:00] === Watchdog v3 run ===
+[2026-05-24 20:00] WARN: Jobs data stale (703h), triggering pipeline
+[2026-05-24 20:00] FIXED: Pipeline triggered

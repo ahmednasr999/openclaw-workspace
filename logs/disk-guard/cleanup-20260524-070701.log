@@ -1,0 +1,42 @@
+Disk guard triggered at 2026-05-24T07:07:01+03:00
+Threshold: 65%
+Before: 63G used / 34G free / 65% used
+
+Safe cleanup: workspace tmp files older than 2 days, preserving guard logs and current research markdown.
+
+Safe cleanup: OpenClaw logs older than 7 days.
+
+Safe cleanup: stale system temp files older than 3 days.
+
+Safe cleanup: OpenClaw compile cache entries older than 2 days.
+
+Safe cleanup: npm/pnpm metadata logs and generic temp caches.
+Removed all cached metadata files
+Removed 210 files
+Removed 13 packages
+npm warn using --force Recommended protections disabled.
+npm notice
+npm notice New major version of npm available! 10.9.4 -> 11.15.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.15.0
+npm notice To update run: npm install -g npm@11.15.0
+npm notice
+Total reclaimed space: 0B
+
+Backup/snapshot audit, no destructive pruning by default.
+Backup/snapshot audit: files >= 8G or older than 14 days.
+Backup pruning disabled. Set DISK_GUARD_PRUNE_BACKUPS=1 only after explicit approval.
+
+After: 62G used / 35G free / 65% used
+Largest remaining /root items:
+119M	/root/.deno
+159M	/root/2nd-brain
+229M	/root/.browser-use-env
+314M	/root/.node-llama-cpp
+390M	/root/openclaw-backups
+616M	/root/.local
+794M	/root/.venvs
+1.4G	/root/.camofox
+3.6G	/root/.nvm
+11G	/root/openclaw-snapshot-20260523
+15G	/root/.openclaw
+33G	/root

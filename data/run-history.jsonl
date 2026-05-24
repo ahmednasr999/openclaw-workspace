@@ -2538,3 +2538,22 @@
 {"agent": "jobs-source-linkedin-jobspy", "run_id": "9f680643", "started": "2026-05-24T04:26:34.760202+02:00", "duration_ms": 1587851, "status": "success", "records": 421, "error": null}
 {"agent": "jobs-source-google", "run_id": "d119cdb6", "started": "2026-05-24T05:00:04.982324+02:00", "duration_ms": 2028, "status": "error", "records": 0, "error": "Failed to initialize MCP session"}
 {"agent": "jobs-source-indeed", "run_id": "be5ed64b", "started": "2026-05-24T05:00:41.398287+02:00", "duration_ms": 38466, "status": "success", "records": 14, "error": null}
+{"agent": "email-agent", "run_id": "4d1881b0", "started": "2026-05-24T06:03:06.436367+02:00", "duration_ms": 21482, "status": "success", "records": 15, "error": null}
+{"agent": "jobs-source-google", "run_id": "55b98121", "started": "2026-05-24T07:00:04.192258+02:00", "duration_ms": 1573, "status": "error", "records": 0, "error": "Failed to initialize MCP session"}
+{"agent": "jobs-source-indeed", "run_id": "ec765457", "started": "2026-05-24T07:00:43.784390+02:00", "duration_ms": 41169, "status": "success", "records": 14, "error": null}
+{"agent": "email-agent", "run_id": "5fa5dbbd", "started": "2026-05-24T08:00:43.235088+02:00", "duration_ms": 4479, "status": "success", "records": 15, "error": null}
+{"agent": "jobs-source-google", "run_id": "77823580", "started": "2026-05-24T09:00:03.935775+02:00", "duration_ms": 968, "status": "error", "records": 0, "error": "Failed to initialize MCP session"}
+{"agent": "jobs-source-indeed", "run_id": "ccad2c37", "started": "2026-05-24T09:00:41.188014+02:00", "duration_ms": 38522, "status": "success", "records": 14, "error": null}
+{"agent": "email-agent", "run_id": "1442729f", "started": "2026-05-24T10:00:24.149136+02:00", "duration_ms": 6020, "status": "success", "records": 15, "error": null}
+{"agent": "email-agent", "run_id": "97615bed", "started": "2026-05-24T10:00:48.024915+02:00", "duration_ms": 458, "status": "success", "records": 15, "error": null}
+{"agent": "jobs-source-google", "run_id": "0b9b55f9", "started": "2026-05-24T11:00:04.782973+02:00", "duration_ms": 913, "status": "error", "records": 0, "error": "Failed to initialize MCP session"}
+{"agent": "jobs-source-indeed", "run_id": "f0f9d264", "started": "2026-05-24T11:00:44.595929+02:00", "duration_ms": 40803, "status": "success", "records": 14, "error": null}
+{"agent": "email-agent", "run_id": "32c08d35", "started": "2026-05-24T12:00:24.808061+02:00", "duration_ms": 5761, "status": "success", "records": 15, "error": null}
+{"agent": "jobs-source-google", "run_id": "9c7b1248", "started": "2026-05-24T13:00:03.843993+02:00", "duration_ms": 1660, "status": "error", "records": 0, "error": "Failed to initialize MCP session"}
+{"agent": "jobs-source-indeed", "run_id": "f3119bc3", "started": "2026-05-24T13:00:37.918626+02:00", "duration_ms": 35973, "status": "success", "records": 13, "error": null}
+{"agent": "email-agent", "run_id": "e09ecb32", "started": "2026-05-24T14:00:34.638610+02:00", "duration_ms": 7074, "status": "success", "records": 15, "error": null}
+{"agent": "jobs-source-google", "run_id": "45913d55", "started": "2026-05-24T15:00:04.943838+02:00", "duration_ms": 1343, "status": "error", "records": 0, "error": "Failed to initialize MCP session"}
+{"agent": "jobs-source-indeed", "run_id": "e5a96b63", "started": "2026-05-24T15:00:40.267265+02:00", "duration_ms": 36914, "status": "success", "records": 14, "error": null}
+{"agent": "jobs-source-google", "run_id": "66160d17", "started": "2026-05-24T17:00:02.350005+02:00", "duration_ms": 7, "status": "error", "records": 0, "error": "No Composio consumer key found in openclaw.json"}
+{"agent": "jobs-source-indeed", "run_id": "d316ed93", "started": "2026-05-24T17:00:39.468313+02:00", "duration_ms": 37179, "status": "success", "records": 13, "error": null}
+{"agent": "jobs-source-google", "run_id": "a2a9dcf5", "started": "2026-05-24T19:00:03.869781+02:00", "duration_ms": 3, "status": "error", "records": 0, "error": "No Composio consumer key found in openclaw.json"}
