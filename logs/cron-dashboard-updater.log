@@ -3518,3 +3518,197 @@ Update Summary:
   Updated: 50
 
 Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-23T20:00:02.285119+03:00] Starting Cron Dashboard Update...
+Discovered 50 crons (19 system, 31 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 49
+  Errors: 1
+    - Exception updating page 'LCM Midday Compaction Sweep': HTTPSConnectionPool(host='api.notion.com', port=443): Read timed out. (read timeout=10)
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-23T20:30:01.584296+03:00] Starting Cron Dashboard Update...
+Discovered 50 crons (19 system, 31 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 50
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-23T21:00:01.969762+03:00] Starting Cron Dashboard Update...
+Discovered 50 crons (19 system, 31 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 49
+  Errors: 1
+    - Exception updating page 'clear-stale-context-maintenance.py': HTTPSConnectionPool(host='api.notion.com', port=443): Read timed out. (read timeout=10)
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-23T21:30:01.776221+03:00] Starting Cron Dashboard Update...
+Discovered 50 crons (19 system, 31 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 50
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-23T22:00:01.704188+03:00] Starting Cron Dashboard Update...
+Discovered 50 crons (19 system, 31 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 50
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-23T22:30:01.990716+03:00] Starting Cron Dashboard Update...
+Discovered 50 crons (19 system, 31 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 50
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-23T23:00:01.568364+03:00] Starting Cron Dashboard Update...
+Discovered 51 crons (19 system, 32 openclaw)
+
+Update Summary:
+  Created: 1
+  Updated: 50
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-23T23:30:02.009328+03:00] Starting Cron Dashboard Update...
+Discovered 51 crons (19 system, 32 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 51
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-24T00:00:02.185186+03:00] Starting Cron Dashboard Update...
+Discovered 51 crons (19 system, 32 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 51
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-24T00:30:01.321613+03:00] Starting Cron Dashboard Update...
+Discovered 51 crons (19 system, 32 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 51
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-24T01:00:01.542008+03:00] Starting Cron Dashboard Update...
+Discovered 52 crons (19 system, 33 openclaw)
+
+Update Summary:
+  Created: 1
+  Updated: 51
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-24T01:30:01.323401+03:00] Starting Cron Dashboard Update...
+Discovered 52 crons (19 system, 33 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 52
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-24T02:00:02.284586+03:00] Starting Cron Dashboard Update...
+Discovered 52 crons (19 system, 33 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 52
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-24T02:30:01.410727+03:00] Starting Cron Dashboard Update...
+Discovered 52 crons (19 system, 33 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 52
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-24T03:00:04.079405+03:00] Starting Cron Dashboard Update...
+Discovered 52 crons (19 system, 33 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 52
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-24T03:30:01.486656+03:00] Starting Cron Dashboard Update...
+Discovered 52 crons (19 system, 33 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 51
+  Errors: 1
+    - Exception updating page 'CMO Weekly Drafting': HTTPSConnectionPool(host='api.notion.com', port=443): Read timed out. (read timeout=10)
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-24T04:00:02.903210+03:00] Starting Cron Dashboard Update...
+Discovered 52 crons (19 system, 33 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 51
+  Errors: 1
+    - Exception updating page 'OpenClaw Health Guard': HTTPSConnectionPool(host='api.notion.com', port=443): Read timed out. (read timeout=10)
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-24T04:30:01.343396+03:00] Starting Cron Dashboard Update...
+Discovered 52 crons (19 system, 33 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 52
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-24T05:00:02.834715+03:00] Starting Cron Dashboard Update...
+Discovered 52 crons (19 system, 33 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 52
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-24T05:30:01.258428+03:00] Starting Cron Dashboard Update...
+Discovered 52 crons (19 system, 33 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 51
+  Errors: 1
+    - Error updating page 'Weekly Skill Autoresearch': 502
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-24T06:00:02.302415+03:00] Starting Cron Dashboard Update...
+Discovered 52 crons (19 system, 33 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 52
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-24T06:30:01.707679+03:00] Starting Cron Dashboard Update...
+Discovered 52 crons (19 system, 33 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 52
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-24T07:00:02.342834+03:00] Starting Cron Dashboard Update...
+Discovered 52 crons (19 system, 33 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 52
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
