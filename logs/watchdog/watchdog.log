@@ -3558,3 +3558,184 @@ Config warnings:
 [2026-05-24 20:00] === Watchdog v3 run ===
 [2026-05-24 20:00] WARN: Jobs data stale (703h), triggering pipeline
 [2026-05-24 20:00] FIXED: Pipeline triggered
+[2026-05-24 20:00] FIXED: Re-triggered failed cron bef6e2d8-fce7-44dc-acde-a76fbcb01a7e
+[2026-05-24 20:00] FIXED: Re-triggered failed cron 145d964f-e2e5-4b49-8058-f9ddac926f45
+[2026-05-24 20:00] FIXED: Re-triggered failed cron dff61426-08b9-42c4-abe5-d3f9e28d4b1f
+[2026-05-24 20:00] Summary: fixes=4 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:bef6e2d8-fce7-44dc-acde-a76fbcb01a7e:1779642030231:3"
+}
+gateway connect failed: Error: gateway closed (1000): 
+GatewayTransportError: gateway closed (1000 normal closure): no close reason
+Gateway target: ws://127.0.0.1:18789
+Source: local loopback
+Config: /root/.openclaw/openclaw.json
+Bind: loopback
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:dff61426-08b9-42c4-abe5-d3f9e28d4b1f:1779642058114:4"
+}
+[2026-05-24 22:00] === Watchdog v3 run ===
+[2026-05-24 22:00] WARN: Jobs data stale (705h), triggering pipeline
+[2026-05-24 22:00] FIXED: Pipeline triggered
+[2026-05-24 22:00] FIXED: Re-triggered failed cron bef6e2d8-fce7-44dc-acde-a76fbcb01a7e
+[2026-05-24 22:00] FIXED: Re-triggered failed cron dff61426-08b9-42c4-abe5-d3f9e28d4b1f
+[2026-05-24 22:00] FIXED: Re-triggered failed cron 145d964f-e2e5-4b49-8058-f9ddac926f45
+[2026-05-24 22:00] Summary: fixes=4 warnings=1 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:bef6e2d8-fce7-44dc-acde-a76fbcb01a7e:1779649231625:5"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:145d964f-e2e5-4b49-8058-f9ddac926f45:1779649233287:6"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:dff61426-08b9-42c4-abe5-d3f9e28d4b1f:1779649233450:7"
+}
+[2026-05-25 00:00] === Watchdog v3 run ===
+[2026-05-25 00:00] WARN: Jobs data stale (707h), triggering pipeline
+[2026-05-25 00:00] FIXED: Pipeline triggered
+[2026-05-25 00:00] FIXED: Re-triggered failed cron dff61426-08b9-42c4-abe5-d3f9e28d4b1f
+[2026-05-25 00:00] FIXED: Re-triggered failed cron bef6e2d8-fce7-44dc-acde-a76fbcb01a7e
+[2026-05-25 00:00] FIXED: Re-triggered failed cron 145d964f-e2e5-4b49-8058-f9ddac926f45
+[2026-05-25 00:00] Summary: fixes=4 warnings=2 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:145d964f-e2e5-4b49-8058-f9ddac926f45:1779656429185:1"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:dff61426-08b9-42c4-abe5-d3f9e28d4b1f:1779656432497:2"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:bef6e2d8-fce7-44dc-acde-a76fbcb01a7e:1779656432660:3"
+}
+[2026-05-25 02:00] === Watchdog v3 run ===
+[2026-05-25 02:00] WARN: Jobs data stale (709h), triggering pipeline
+[2026-05-25 02:00] FIXED: Pipeline triggered
+[2026-05-25 02:00] FIXED: Re-triggered failed cron bef6e2d8-fce7-44dc-acde-a76fbcb01a7e
+[2026-05-25 02:00] FIXED: Re-triggered failed cron dff61426-08b9-42c4-abe5-d3f9e28d4b1f
+[2026-05-25 02:00] FIXED: Re-triggered failed cron 543124b5-b2bd-445f-be84-d8407564cf9f
+[2026-05-25 02:00] Summary: fixes=4 warnings=2 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:dff61426-08b9-42c4-abe5-d3f9e28d4b1f:1779663637591:1"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:bef6e2d8-fce7-44dc-acde-a76fbcb01a7e:1779663639541:2"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:543124b5-b2bd-445f-be84-d8407564cf9f:1779663639723:3"
+}
+[2026-05-25 04:00] === Watchdog v3 run ===
+[2026-05-25 04:00] WARN: Jobs data stale (711h), triggering pipeline
+[2026-05-25 04:00] FIXED: Pipeline triggered
+[2026-05-25 04:00] FIXED: Re-triggered failed cron 224bb358-a983-4ec6-ba28-32101ab48eb8
+[2026-05-25 04:00] FIXED: Re-triggered failed cron 6a833efa-e058-4438-8f57-3cf5c2868e85
+[2026-05-25 04:00] FIXED: Re-triggered failed cron db37a524-9cba-453c-a59a-9042a268f7ea
+[2026-05-25 04:00] Summary: fixes=4 warnings=2 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:224bb358-a983-4ec6-ba28-32101ab48eb8:1779670845239:3"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:db37a524-9cba-453c-a59a-9042a268f7ea:1779670845641:4"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:6a833efa-e058-4438-8f57-3cf5c2868e85:1779670846107:5"
+}
+[2026-05-25 06:00] === Watchdog v3 run ===
+[2026-05-25 06:00] WARN: Jobs data stale (713h), triggering pipeline
+[2026-05-25 06:00] FIXED: Pipeline triggered
+[2026-05-25 06:00] FIXED: Re-triggered failed cron db37a524-9cba-453c-a59a-9042a268f7ea
+[2026-05-25 06:00] FIXED: Re-triggered failed cron 543124b5-b2bd-445f-be84-d8407564cf9f
+[2026-05-25 06:00] Summary: fixes=3 warnings=2 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:543124b5-b2bd-445f-be84-d8407564cf9f:1779678026158:1"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:db37a524-9cba-453c-a59a-9042a268f7ea:1779678056415:2"
+}
+[2026-05-25 08:00] === Watchdog v3 run ===
+[2026-05-25 08:00] WARN: Jobs data stale (715h), triggering pipeline
+[2026-05-25 08:00] FIXED: Pipeline triggered
+[2026-05-25 08:00] FIXED: Re-triggered failed cron dff61426-08b9-42c4-abe5-d3f9e28d4b1f
+[2026-05-25 08:00] FIXED: Re-triggered failed cron db37a524-9cba-453c-a59a-9042a268f7ea
+[2026-05-25 08:00] FIXED: Re-triggered failed cron 0e2740f5-870a-454a-b493-877111829812
+[2026-05-25 08:00] Summary: fixes=4 warnings=2 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:0e2740f5-870a-454a-b493-877111829812:1779685268090:1"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:dff61426-08b9-42c4-abe5-d3f9e28d4b1f:1779685293652:2"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:db37a524-9cba-453c-a59a-9042a268f7ea:1779685294282:3"
+}
+[2026-05-25 10:00] === Watchdog v3 run ===
+[2026-05-25 10:00] WARN: Jobs data stale (717h), triggering pipeline
+[2026-05-25 10:00] FIXED: Pipeline triggered
+[2026-05-25 10:00] Summary: fixes=1 warnings=2 alerts=0
+[2026-05-25 12:00] === Watchdog v3 run ===
+[2026-05-25 12:00] WARN: Jobs data stale (719h), triggering pipeline
+[2026-05-25 12:00] FIXED: Pipeline triggered
+[2026-05-25 12:01] Summary: fixes=1 warnings=2 alerts=0
+[2026-05-25 14:00] === Watchdog v3 run ===
+[2026-05-25 14:00] WARN: Jobs data stale (721h), triggering pipeline
+[2026-05-25 14:00] FIXED: Pipeline triggered
+[2026-05-25 14:00] Summary: fixes=1 warnings=2 alerts=0
+[2026-05-25 16:00] === Watchdog v3 run ===
+[2026-05-25 16:00] WARN: Jobs data stale (723h), triggering pipeline
+[2026-05-25 16:00] FIXED: Pipeline triggered
+[2026-05-25 16:00] Summary: fixes=1 warnings=2 alerts=0
+[2026-05-25 18:00] === Watchdog v3 run ===
+[2026-05-25 18:00] WARN: Jobs data stale (725h), triggering pipeline
+[2026-05-25 18:00] FIXED: Pipeline triggered
+[2026-05-25 18:00] FIXED: Re-triggered failed cron 0e2740f5-870a-454a-b493-877111829812
+[2026-05-25 18:00] FIXED: Re-triggered failed cron 4db8917f-4e67-4847-8e91-300e19fe0ebe
+[2026-05-25 18:00] Summary: fixes=3 warnings=2 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:4db8917f-4e67-4847-8e91-300e19fe0ebe:1779721253957:2"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:0e2740f5-870a-454a-b493-877111829812:1779721255163:3"
+}
+[2026-05-25 20:00] === Watchdog v3 run ===
+[2026-05-25 20:00] WARN: Jobs data stale (727h), triggering pipeline
+[2026-05-25 20:00] FIXED: Pipeline triggered

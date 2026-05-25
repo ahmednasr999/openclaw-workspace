@@ -7,6 +7,7 @@ PRIMARY_NODE="${AHMED_MAC_NODE_NAME:-Ahmed-Mac}"
 UI_NODE="${AHMED_MAC_UI_NODE_NAME:-Nasr’s MacBook Pro}"
 UI_NODE_DEVICE_ID="${AHMED_MAC_UI_NODE_DEVICE_ID:-0a3c00e2c1391ae44fb4f92b6cfa7812687a67b5ca72f53751924d5ec7026864}"
 EXPECTED_VERSION="${OPENCLAW_EXPECTED_VERSION:-}"
+SSH_TIMEOUT_SECONDS="${OPENCLAW_MAC_DOCTOR_SSH_TIMEOUT_SECONDS:-30}"
 
 SSH_OPTS=(
   -o BatchMode=yes
@@ -96,7 +97,7 @@ fi
 echo "Mac Node Doctor"
 echo "Expected OpenClaw version: ${EXPECTED_VERSION}"
 
-ssh "${SSH_OPTS[@]}" "${MAC_USER}@${MAC_HOST}" '/bin/bash -s' <<'REMOTE'
+timeout "${SSH_TIMEOUT_SECONDS}s" ssh "${SSH_OPTS[@]}" "${MAC_USER}@${MAC_HOST}" '/bin/bash -s' <<'REMOTE'
 set -euo pipefail
 export PATH="/usr/local/Cellar/node@22/22.22.0/bin:/usr/local/opt/node@22/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.local/bin"
 /usr/local/bin/openclaw --version
@@ -120,13 +121,13 @@ fi
 
 if [ "$ui_connected" != "true" ]; then
   echo "Mac UI node disconnected, opening OpenClaw.app..."
-  ssh "${SSH_OPTS[@]}" "${MAC_USER}@${MAC_HOST}" 'open -a OpenClaw'
+  timeout "${SSH_TIMEOUT_SECONDS}s" ssh "${SSH_OPTS[@]}" "${MAC_USER}@${MAC_HOST}" 'open -a OpenClaw'
   wait_for_ui_node || true
 fi
 
 if [ "$ui_connected" != "true" ]; then
   if repair_ui_device_pairing; then
-    ssh "${SSH_OPTS[@]}" "${MAC_USER}@${MAC_HOST}" 'open -a OpenClaw'
+    timeout "${SSH_TIMEOUT_SECONDS}s" ssh "${SSH_OPTS[@]}" "${MAC_USER}@${MAC_HOST}" 'open -a OpenClaw'
     wait_for_ui_node || true
   fi
 fi

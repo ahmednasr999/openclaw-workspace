@@ -26,6 +26,8 @@ scripts/openclaw-update-guard.py --deep --write-report
 - `openclaw --version` works.
 - systemd gateway `ExecStart`, `MainPID`, and start timestamp exist.
 - `openclaw config validate` passes.
+- Docker sandbox image `openclaw-sandbox:bookworm-slim` exists.
+- Telegram direct/group reply-delivery config is known-good: `messages.visibleReplies = automatic` and `messages.groupChat.visibleReplies = automatic`.
 - `openclaw gateway status --deep` returns usable output and no fatal module/auth errors.
 - `openclaw gateway probe --json` completes.
 - model refs have not drifted from `openai-codex/gpt-5.5` to `openai/gpt-5.5`.
@@ -35,13 +37,33 @@ scripts/openclaw-update-guard.py --deep --write-report
 
 ## Limits
 
-The guard is read-only. It does not update, restart, edit config, or prove Telegram delivery. For a full update closeout, pair it with a real Telegram/NASR response test and the normal backup/update evidence.
+The guard is read-only. It does not update, restart, edit config, or prove Telegram delivery. For a full update closeout, pair it with a real Telegram DM test: send `/new`, then `ping`, and verify a visible `pong` reply in the DM.
 
 ## Post-Update Guardrail
 
 After every OpenClaw update, do not trust CLI probes alone. CLI model/auth checks can pass while the live gateway runtime still fails to use existing Codex OAuth profiles.
 
 Required post-update checks:
+
+```bash
+docker image inspect openclaw-sandbox:bookworm-slim
+scripts/openclaw-update-guard.py --write-report
+```
+
+The guard must include the reply-delivery config checks. Expected config values:
+
+```json
+{
+  "messages": {
+    "visibleReplies": "automatic",
+    "groupChat": {
+      "visibleReplies": "automatic"
+    }
+  }
+}
+```
+
+Then run model probes:
 
 ```bash
 openclaw models status --agent main --probe
@@ -55,6 +77,67 @@ Then run:
 
 - one live Telegram ping to `main`
 - one read-only all-agent health check for `main`, `cmo`, `cto`, `hr`, and `jobzoom`
+
+
+### 2026-05-22 Incident: Sandbox Image Missing, Then Telegram DM Reply Not Delivered
+
+After the OpenClaw `2026.5.22` update, Telegram first showed:
+
+```text
+Something went wrong...
+```
+
+The immediate cause was a missing Docker sandbox image:
+
+```text
+openclaw-sandbox:bookworm-slim
+```
+
+Fix used:
+
+```bash
+docker build -t openclaw-sandbox:bookworm-slim
+```
+
+Use the inline Dockerfile from:
+
+```text
+/usr/lib/node_modules/openclaw/docs/gateway/sandboxing.md
+```
+
+A second failure remained: Telegram DM messages were processed internally, and session logs showed assistant text such as `pong`, but no visible Telegram DM reply was sent.
+
+Root cause:
+
+- Reply-delivery config was wrong for direct chats.
+- Direct chats need `messages.visibleReplies = automatic`.
+- Group/topic replies should use `messages.groupChat.visibleReplies = automatic`; `message_tool` can keep non-main group-topic replies private.
+
+Known-good config:
+
+```json
+{
+  "messages": {
+    "visibleReplies": "automatic",
+    "groupChat": {
+      "visibleReplies": "automatic"
+    }
+  }
+}
+```
+
+Behavior rule:
+
+- For normal Telegram/chat replies, reply as final assistant text in the current turn.
+- Do not use `sessions_send`, `message`, or Telegram send tools to answer the message that triggered the current turn.
+- `sessions_send` is only for cross-session or sub-agent handoff.
+
+Closeout proof after future updates:
+
+1. `docker image inspect openclaw-sandbox:bookworm-slim` passes.
+2. `messages.visibleReplies == automatic`.
+3. `messages.groupChat.visibleReplies == automatic`.
+4. Real Telegram validation: `/new`, then `ping`, with visible `pong` in the DM, plus visible replies in CTO topic 8, CMO topic 7, HR topic 9, and JobZoom topic 5247.
 
 ### 2026-05-19 Incident: Codex OAuth Passed CLI, Failed Live Gateway
 

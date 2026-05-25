@@ -73,6 +73,9 @@ Only interview invites and recruiter screens are critical by default.
 
 OpenClaw gateway/config/update work is high-risk.
 
+Approved maintenance escalation rule:
+- Ahmed approval is consent for the named maintenance action, but the runtime must expose a bounded execution capability. After approval, attempt the narrowest safe gateway/cron/elevated path with timeouts, backups, and verification. If the runtime denies the capability, stop repeating the same attempt and report the missing policy key as the defect to fix.
+
 Before any gateway config change:
 1. Run `openclaw --version`.
 2. Check the systemd `ExecStart` binary path and confirm it matches the active binary.
@@ -111,6 +114,8 @@ Text beats brain.
 - If I discover a tool gotcha, promote it to `TOOLS.md` when broadly useful.
 - If I discover a workflow rule, promote it to `AGENTS.md` when broadly useful.
 - Keep `USER.md` current when Ahmed reveals preferences, context, or corrections.
+
+- For user-facing responsiveness, answer within one short turn when the task is quick. If checks or repairs will take time, say what is being checked, run the heavy work detached or in the proper agent lane, and return only after verification. <!-- latency-repair 2026-05-25 -->
 
 ## Communication Style
 

@@ -2,16 +2,59 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-05-24T17:00:39.467222+02:00",
-    "duration_ms": 37178,
+    "generated_at": "2026-05-25T17:00:40.173155+02:00",
+    "duration_ms": 36846,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "d316ed93",
+    "run_id": "57d97b1a",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": [
+    {
+      "id": "indeed-in-e07055412e7a0478",
+      "source": "indeed",
+      "title": "Director of Revenue Management",
+      "company": "Dorchester Collection",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=e07055412e7a0478",
+      "posted": "2026-05-25",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 6,
+      "match_keywords": [
+        "director"
+      ],
+      "raw_snippet": "**Your future, our legacy**\n---------------------------\n\n\n### **Hotel**\n\n\nThe Lana\n\n\n### **Division \\& Department**\n\n\nSales \\& Marketing \\- Revenue\n\n\n### **Job Title**\n\n\nDirector of Revenue Management\n\n\n### **Contract Type**\n\n\nPermanent\n\n\n### **Status**\n\n\nFull time\n\n\n### **Position Overview**\n\n\nWe are not just a collection of hotels, but instead a talented community. A family with a shared passion and commitment to, unapologetically, love and breathe who we are every day. An eclectic grouping wh",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Program Director"
+    },
+    {
+      "id": "indeed-in-0a2ecea5aefa8435",
+      "source": "indeed",
+      "title": "Program Director - Rail",
+      "company": "Parsons",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=0a2ecea5aefa8435",
+      "posted": "2026-05-25",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 26,
+      "match_keywords": [
+        "ai",
+        "director",
+        "leadership",
+        "growth"
+      ],
+      "raw_snippet": "In a world of possibilities, pursue one with endless opportunities. Imagine Next!  \n\n\nAt Parsons, you can imagine a career where you thrive, work with exceptional people, and be yourself. Guided by our leadership vision of valuing people, embracing agility, and fostering growth, we cultivate an innovative culture that empowers you to achieve your full potential. Unleash your talent and redefine what\u2019s possible. **Job Description:**\n\n\nParsons is seeking an exceptional **Program Direc****tor** to ",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Program Director"
+    },
     {
       "id": "indeed-in-38e5146042a6e3a2",
       "source": "indeed",
@@ -154,70 +197,84 @@
       "search_title": "Director Digital Transformation"
     },
     {
-      "id": "indeed-in-5bf04d9fcc06a11f",
+      "id": "indeed-in-7c8f2f8b76f7ecdc",
       "source": "indeed",
-      "title": "Head of Operations \u2013 Business Setup Consultancy Experience Mandatory",
-      "company": "3S group",
+      "title": "Senior Manager - Technology Sourcing",
+      "company": "Emirates Islamic",
       "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=5bf04d9fcc06a11f",
-      "posted": "2026-05-22",
-      "seniority": "Director",
+      "url": "https://ae.indeed.com/viewjob?jk=7c8f2f8b76f7ecdc",
+      "posted": "2026-05-25",
+      "seniority": "Other",
       "domain_match": true,
-      "keyword_score": 20,
-      "match_keywords": [
-        "ai",
-        "head of",
-        "uae",
-        "dubai"
-      ],
-      "raw_snippet": "**Head of Operations \u2013 Business Setup Consultancy**\n\n**Location:** Dubai, UAE\n\n**Employment Type:** Full\\-Time\n\n**Salary:** AED 8,000 \u2013 10,000 per month (Depending on Experience)\n\n**Experience Required:** Minimum 4 Years UAE Experience in Business Setup / Corporate Services\n\n**Company Overview**\n\nWe are a growing business setup consultancy in Dubai seeking an experienced and dynamic Head of Operations to lead and oversee operational functions across multiple UAE jurisdictions.\n\nThe ideal candida",
+      "keyword_score": 0,
+      "match_keywords": [],
+      "raw_snippet": "The Senior Manager is responsible for developing and executing sourcing strategies for a set of tech categories across ENBD Group locations. This role ensures category\\-level delivery of service to businesses, manage spend and cost savings in line with strategies set by the Tech Sourcing Head. It plays a pivotal role in translating sourcing strategies into actionable plans within assigned categories across Group Locations.  \n\n**Key Responsibilities:**\n\n* **Develop And Implement** **Sourcing Stra",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
       "search_title": "Head of Technology"
     },
     {
-      "id": "indeed-in-efa688dcbdb6fdc5",
+      "id": "indeed-in-0b8b640e0e8f81a4",
       "source": "indeed",
-      "title": "MEA Brand Director",
-      "company": "Haleon",
+      "title": "Senior Manager, Strategy Planning",
+      "company": "Commercial Bank of Dubai",
       "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=efa688dcbdb6fdc5",
-      "posted": "2026-05-22",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 6,
+      "url": "https://ae.indeed.com/viewjob?jk=0b8b640e0e8f81a4",
+      "posted": "2026-05-25",
+      "seniority": "Other",
+      "domain_match": true,
+      "keyword_score": 16,
       "match_keywords": [
-        "director"
+        "ai",
+        "growth",
+        "dubai"
       ],
-      "raw_snippet": "Welcome to Haleon. We\u2019re a purpose\\-driven, world\\-class consumer company putting everyday health in the hands of millions. In just three years since our launch, we\u2019ve grown, evolved and are now entering an exciting new chapter \u2013 one filled with bold ambitions and enormous opportunity.  \n\n  \n\nOur trusted portfolio of brands \u2013 including Sensodyne\u00ae, Panadol\u00ae, Advil\u00ae, Voltaren\u00ae, Theraflu\u00ae, Otrivin\u00ae, and Centrum\u00ae \u2013 lead in resilient and growing categories. What sets us apart is our unique blend of d",
+      "raw_snippet": "Dubai, Dubai, AE Experienced ID: TBC\n  \n### **DESCRIPTION**\n\n\n**JOB RESPONSIBILITIES**\n\n* Lead the design and delivery of CBD's annual and multi\\-year corporate strategy, coordinating inputs across business units, Finance, Risk, and Technology\n* Conduct macro\\-environmental, competitive landscape, and market opportunity analyses to inform strategic direction and identify white spaces for growth\n* Develop and maintain the corporate strategy narrative, including strategic pillars, KPI frameworks, ",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
-      "search_title": "IT Director"
+      "search_title": "Head of Technology"
     },
     {
-      "id": "indeed-in-3342c9bc8b9a99de",
+      "id": "indeed-in-cccddf265aa5ae4f",
       "source": "indeed",
-      "title": "Associate Director - Project Controls",
-      "company": "Mace Group",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=3342c9bc8b9a99de",
-      "posted": "2026-05-21",
-      "seniority": "C-Suite",
+      "title": "Senior Manager - Technology Sourcing",
+      "company": "Emirates NBD",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=cccddf265aa5ae4f",
+      "posted": "2026-05-25",
+      "seniority": "Other",
       "domain_match": true,
-      "keyword_score": 23,
+      "keyword_score": 0,
+      "match_keywords": [],
+      "raw_snippet": "The Senior Manager is responsible for developing and executing sourcing strategies for a set of tech categories across ENBD Group locations. This role ensures category\\-level delivery of service to businesses, manage spend and cost savings in line with strategies set by the Tech Sourcing Head. It plays a pivotal role in translating sourcing strategies into actionable plans within assigned categories across Group Locations.  \n\n**Key Responsibilities:**\n\n* **Develop And Implement** **Sourcing Stra",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Head of Technology"
+    },
+    {
+      "id": "indeed-in-6992dbbee44ab471",
+      "source": "indeed",
+      "title": "Commercial Director",
+      "company": "Parsons",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=6992dbbee44ab471",
+      "posted": "2026-05-24",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 20,
       "match_keywords": [
-        "ai",
-        "infrastructure",
         "director",
-        "saudi"
+        "leadership",
+        "growth"
       ],
-      "raw_snippet": "Mace combines construction expertise with consultancy to unlock potential in every person or project and redefine the boundaries of ambition. Our values shape the way we consult and define the people we want to join us on our journey.\n\n\nThe project:\n\n\nThis is an opportunity to work on one of the largest programmes in Saudi Arabia. This unique project consists of major mixed\\-use development including sports facilities, entertainment and arts along with all associated infrastructure.\n\n\nMace is on",
+      "raw_snippet": "In a world of possibilities, pursue one with endless opportunities. Imagine Next!  \n\n\nAt Parsons, you can imagine a career where you thrive, work with exceptional people, and be yourself. Guided by our leadership vision of valuing people, embracing agility, and fostering growth, we cultivate an innovative culture that empowers you to achieve your full potential. Unleash your talent and redefine what\u2019s possible. **Job Description:**\n\n\nParsons is looking for an amazingly talented **Commercial Dire",
       "relevant": true,
       "filter_reason": null,
       "search_country": "Saudi Arabia",
-      "search_title": "PMO Director"
+      "search_title": "Program Director"
     },
     {
       "id": "indeed-in-2eafbc2717ccc208",
@@ -247,28 +304,6 @@
       "search_title": "Program Director"
     },
     {
-      "id": "indeed-in-d5c6714d3a9f6732",
-      "source": "indeed",
-      "title": "Program Director - Civil Engineering",
-      "company": "TRACTEBEL",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=d5c6714d3a9f6732",
-      "posted": "2026-05-20",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 13,
-      "match_keywords": [
-        "director",
-        "saudi",
-        "riyadh"
-      ],
-      "raw_snippet": "Job Description\nProgram Director \\- Civil Engineering\nPosting Start Date: 5/20/26\nRequisition ID: 66589\nApply now\n**Informations g\u00e9n\u00e9rales**\n--------------------------\n\nRiyadh, Saudi Arabia, 12271\nTRACTEBEL ENGINEERING S.A., SAUDI ARABIA BRANCH\nSenior (experience \\>15 years)\nEngineering\nFixed\\-Term\nFull \\- Time\n**Job Title**\n\n**Program Director \u2013 Civil Engineering**\n\n**Location** Jeddah, Saudi Arabia\n\n\nReady to engineer your positive impact? Then join Tractebel, part of the ENGIE Group, and our ",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Program Director"
-    },
-    {
       "id": "indeed-in-eaa9b51233a7b424",
       "source": "indeed",
       "title": "Chief Industrial Technologies & Smart Automation Officer",
@@ -292,31 +327,31 @@
       "search_title": "Chief Technology Officer"
     },
     {
-      "id": "indeed-in-69624d60494b7e33",
+      "id": "indeed-in-074c177f93c7b2f2",
       "source": "indeed",
-      "title": "Commercial Portfolio Head",
-      "company": "Novartis",
+      "title": "Associate Director - Urban Strategies",
+      "company": "Buro Happold",
       "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=69624d60494b7e33",
-      "posted": "2026-05-22",
-      "seniority": "Other",
+      "url": "https://sa.indeed.com/viewjob?jk=074c177f93c7b2f2",
+      "posted": "2026-05-25",
+      "seniority": "C-Suite",
       "domain_match": false,
-      "keyword_score": 3,
+      "keyword_score": 6,
       "match_keywords": [
-        "riyadh"
+        "director"
       ],
-      "raw_snippet": "### **Summary**\n\nCommercial Portfolio Head  \n\n  \n\nLocation: Riyadh  \n\n\\#LI Hybrid  \n\n  \n\nAbout the Role:  \n\n  \n\nDrive portfolio value through strategic partnerships, digital execution, and lifecycle management in a highly regulated environment.  \n\n  \n\nWe are looking for a commercially minded leader to maximize the value and access of a product portfolio through innovative go\\-to\\-market models, strategic alliances, and disciplined lifecycle management.  \n\n  \n\nThis is an opportunity to shape port",
+      "raw_snippet": "Want to work with the most sought\\-after minds and most talked\\-about projects? Your interest in Urban Strategies might just make you our new **Associate Director\\- Urban Strategies**.\n\n**Here at Buro Happold, expect the exceptional.**\n\n\nFrom the projects you will work on to the clients we work with. From career\\-defining opportunities to an inclusive and diverse practice where we all contribute to a more equitable world. From our reputation to our relationships. Wherever your Buro Happold caree",
       "relevant": true,
       "filter_reason": null,
       "search_country": "Saudi Arabia",
-      "search_title": "Head of IT"
+      "search_title": "IT Director"
     }
   ],
   "kpi": {
     "searches_run": 20,
-    "results_per_search": 3.15,
-    "unique_jobs": 13,
-    "errors": 6
+    "results_per_search": 3.3,
+    "unique_jobs": 15,
+    "errors": 7
   },
   "recommendations": []
 }

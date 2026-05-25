@@ -26,6 +26,8 @@ Gateway work is high-risk. Use source-of-truth tools first, change one thing at 
 
 Read-only diagnosis is allowed. Config writes, updates, restarts, service lifecycle changes, credential changes, destructive changes, and public ingress changes require explicit approval unless the current user request clearly authorizes that exact action.
 
+When Ahmed explicitly approves a named maintenance repair, treat that as authorization to use the narrowest available first-class gateway/cron tool or bounded `host=gateway` execution path. Use timeouts, backups, one change at a time, and real verification. If the runtime policy still denies the tool, report the exact missing capability key instead of retrying the same denied call.
+
 ## References
 
 - `references/config-schema-first.md` - config workflow and schema-first rule.

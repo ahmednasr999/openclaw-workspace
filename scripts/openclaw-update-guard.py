@@ -21,6 +21,7 @@ from pathlib import Path
 from typing import Any
 
 EXPECTED_MODEL = "openai-codex/gpt-5.5"
+SANDBOX_IMAGE = "openclaw-sandbox:bookworm-slim"
 OPENCLAW_CONFIG = Path("/root/.openclaw/openclaw.json")
 WORKSPACE = Path("/root/.openclaw/workspace")
 MODEL_ROUTER = WORKSPACE / "config/model-router.json"
@@ -165,6 +166,49 @@ class Guard:
         else:
             self.add("config validate", "FAIL", f"exit {cp.returncode}", text[-1200:])
 
+    def check_sandbox_image(self) -> None:
+        cp = self.run_cmd("sandbox image", ["docker", "image", "inspect", SANDBOX_IMAGE])
+        if not cp:
+            return
+        text = cp.stdout + cp.stderr
+        if cp.returncode == 0 and SANDBOX_IMAGE in text:
+            self.add("sandbox image", "PASS", f"Docker image present: {SANDBOX_IMAGE}")
+        else:
+            self.add(
+                "sandbox image",
+                "FAIL",
+                f"missing Docker image: {SANDBOX_IMAGE}",
+                "Rebuild from /usr/lib/node_modules/openclaw/docs/gateway/sandboxing.md, then rerun guard.",
+            )
+
+    def check_visible_reply_config(self) -> None:
+        data = self.load_json_file(OPENCLAW_CONFIG)
+        if data is None:
+            return
+        messages = data.get("messages") if isinstance(data, dict) else None
+        if not isinstance(messages, dict):
+            self.add("telegram visible replies", "FAIL", "messages config block missing", str(OPENCLAW_CONFIG))
+            return
+        direct = messages.get("visibleReplies")
+        group = messages.get("groupChat") if isinstance(messages.get("groupChat"), dict) else {}
+        group_visible = group.get("visibleReplies")
+        evidence = json.dumps(
+            {
+                "messages.visibleReplies": direct,
+                "messages.groupChat.visibleReplies": group_visible,
+            },
+            ensure_ascii=False,
+        )
+        if direct == "automatic" and group_visible == "automatic":
+            self.add("telegram visible replies", "PASS", "direct DM and group/topic reply modes are visible", evidence)
+        else:
+            self.add(
+                "telegram visible replies",
+                "FAIL",
+                "expected messages.visibleReplies=automatic and messages.groupChat.visibleReplies=automatic",
+                evidence,
+            )
+
     def check_systemd(self) -> None:
         cp = self.run_cmd(
             "systemd gateway",
@@ -299,6 +343,8 @@ class Guard:
         self.check_version()
         self.check_systemd()
         self.check_config_validate()
+        self.check_sandbox_image()
+        self.check_visible_reply_config()
         self.check_gateway_status()
         self.check_gateway_probe()
         self.check_model_refs()

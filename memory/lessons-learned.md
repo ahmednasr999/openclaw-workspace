@@ -1054,3 +1054,17 @@ After the Telegram command repair, I verified command dispatch and `getMyCommand
 I treated Bot API command availability as equivalent to client menu visibility. Telegram command menus can depend on explicit command scopes such as `all_private_chats`, `all_group_chats`, chat-specific scopes, and the chat menu button state.
 ### Fix
 For Telegram command repairs, verify default, private, group, administrator, direct-chat, and configured group-chat scopes. Set the direct chat menu button to `commands` where supported. Remember that forum topics inherit the supergroup command scope; Telegram may reject group menu-button changes even when group command scopes are valid.
+
+## 2026-05-25 - User Approval Should Unlock a Bounded Repair Path
+### What I got wrong
+Ahmed explicitly approved fixing a live OpenClaw cron issue, but the session still could not cross the runtime `host=gateway`/`host=node` and elevated-exec gates. I kept repeating the blocker instead of treating the approval-policy mismatch itself as the system defect to capture and fix.
+### Why
+Current OpenClaw approval is consent, not an automatic capability grant. If the runtime policy does not map Ahmed's approval to a bounded elevated/gateway repair path, the agent remains stuck even when the user has authorized the work.
+### Fix
+For future OpenClaw permission design and debugging, approved high-risk maintenance should create a narrow, auditable escalation path for the specific task: approved command scope, host target, timeout, evidence capture, and automatic expiry. User approval should not mean broad unrestricted access, but it must be stronger than the default deny gate for that approved operation.
+
+## 2026-05-25 - Give Ahmed One Terminal Step at a Time
+### Correction
+Ahmed said to always give only one step at a time so he can share the outcome before the next instruction.
+### Do differently
+For terminal/config recovery workflows, provide exactly one command block or one action, then wait for Ahmed's result before giving the next step.

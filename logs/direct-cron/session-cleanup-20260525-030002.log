@@ -1,0 +1,13 @@
+{
+  "task": "session-cleanup",
+  "ts": "2026-05-25T03:00:38.580730+03:00",
+  "cmd": [
+    "bash",
+    "/root/.openclaw/workspace/scripts/session-cleanup.sh"
+  ],
+  "cwd": "/root/.openclaw/workspace",
+  "returncode": 0,
+  "stdout": "session-cleanup: archived=53 pruned=29 backups_removed=1 registry=ok\n",
+  "stderr": "",
+  "log_path": "/root/.openclaw/workspace/logs/direct-cron/session-cleanup-20260525-030002.log"
+}

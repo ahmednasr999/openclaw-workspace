@@ -207,7 +207,10 @@ def patch_task_registry(changes: list[str]) -> None:
 
 
 def patch_context_engine(changes: list[str]) -> None:
-    path = find_file("context-engine-maintenance-*.js", "runDeferredTurnMaintenanceWorker")
+    try:
+        path = find_file("context-engine-maintenance-*.js", "runDeferredTurnMaintenanceWorker")
+    except RuntimeError:
+        path = find_file("context-engine-lifecycle-*.js", "runDeferredTurnMaintenanceWorker")
     text = read(path)
     pattern = r'\tconst surfaceMaintenanceUpdate = \(summary, eventSummary\) => \{\n\t\tpromoteTurnMaintenanceTaskVisibility\(\{\n\t\t\tsessionKey: params\.sessionKey,\n\t\t\trunId: params\.runId,\n\t\t\tnotifyPolicy: "state_changes"\n\t\t\}\);\n\t\tsurfacedUserNotice = true;\n\t\trecordTaskRunProgressByRunId\(\{'
     repl = '\tconst surfaceMaintenanceUpdate = (summary, eventSummary) => {\n\t\trecordTaskRunProgressByRunId({'

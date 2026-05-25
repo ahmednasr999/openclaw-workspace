@@ -1,0 +1,13 @@
+{
+  "checked_at": "2026-05-25T12:55:43.570241+02:00",
+  "selectors": {
+    "composer_iframe": "not_found",
+    "post_button": "not_found",
+    "text_area": "not_found",
+    "image_upload": "not_found"
+  },
+  "cookie": {
+    "status": "warn",
+    "message": "No cookie file found (using Composio auth \u2014 OK)"
+  }
+}

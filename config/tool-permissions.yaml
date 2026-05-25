@@ -42,6 +42,8 @@ agent_profiles:
       - "exec:openclaw --version*"
       - "exec:openclaw status*"
       - "exec:openclaw config validate*"
+      - "exec:openclaw browser *"       # LinkedIn Lane Guard browser readiness checks
+      - "exec:python3 /root/.openclaw/workspace/scripts/linkedin-lane-browser-check.py*"  # LinkedIn Lane Guard wrapper
       - "exec:systemctl --user show openclaw-gateway*"
       - "exec:python3 /root/.openclaw/workspace/scripts/check-openclaw-runtime-patches.py"
       - "exec:tail *logs/*.log*"
@@ -111,6 +113,8 @@ agent_profiles:
       - "exec:openclaw --version*"
       - "exec:openclaw status*"
       - "exec:openclaw config validate*"
+      - "exec:openclaw browser *"       # LinkedIn Lane Guard browser readiness checks
+      - "exec:python3 /root/.openclaw/workspace/scripts/linkedin-lane-browser-check.py*"  # LinkedIn Lane Guard wrapper
       - "exec:systemctl --user show openclaw-gateway*"
       - "exec:tail *logs/*.log*"
       - "exec:tail *log*"
@@ -216,6 +220,8 @@ agent_profiles:
       - "exec:openclaw --version*"
       - "exec:openclaw status*"
       - "exec:openclaw config validate*"
+      - "exec:openclaw browser *"       # LinkedIn Lane Guard browser readiness checks
+      - "exec:python3 /root/.openclaw/workspace/scripts/linkedin-lane-browser-check.py*"  # LinkedIn Lane Guard wrapper
       - "exec:systemctl --user show openclaw-gateway*"
       - "exec:tail *logs/*.log*"
       - "exec:tail *log*"

@@ -881,9 +881,8 @@ def run_llm_analysis(summary, total_emails, actionable_emails) -> dict:
         except Exception:
             pass
 
-    model = LLM_MODEL
     body = {
-        "model": model,
+        "model": "openclaw",
         "max_tokens": 1024,
         "temperature": LLM_TEMP,
         "messages": [
@@ -892,7 +891,10 @@ def run_llm_analysis(summary, total_emails, actionable_emails) -> dict:
         ]
     }
 
-    headers = {"Content-Type": "application/json"}
+    headers = {
+        "Content-Type": "application/json",
+        "x-openclaw-model": LLM_MODEL,
+    }
 
     # Try OpenClaw gateway
     if gw_token:
@@ -907,6 +909,7 @@ def run_llm_analysis(summary, total_emails, actionable_emails) -> dict:
                     if result_text.startswith("json"):
                         result_text = result_text[4:]
                 return json_module.loads(result_text.strip())
+            print(f"  LLM: gateway returned {resp.status_code} {resp.reason}: {resp.text[:500]}")
         except Exception as e:
             print(f"  LLM: gateway failed ({e})")
 

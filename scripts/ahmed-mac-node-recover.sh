@@ -6,6 +6,7 @@ MAC_USER="${AHMED_MAC_USER:-ahmednasr}"
 NODE_NAME="${AHMED_MAC_NODE_NAME:-Ahmed-Mac}"
 LABEL="${OPENCLAW_MAC_LAUNCHD_LABEL:-ai.openclaw.node}"
 PLIST_PATH="${OPENCLAW_MAC_LAUNCHD_PLIST:-/Users/${MAC_USER}/Library/LaunchAgents/${LABEL}.plist}"
+SSH_TIMEOUT_SECONDS="${OPENCLAW_MAC_RECOVERY_SSH_TIMEOUT_SECONDS:-30}"
 
 SSH_OPTS=(
   -o BatchMode=yes
@@ -17,7 +18,7 @@ SSH_OPTS=(
 
 echo "Ensuring ${NODE_NAME} LaunchAgent on ${MAC_USER}@${MAC_HOST}"
 
-ssh "${SSH_OPTS[@]}" "${MAC_USER}@${MAC_HOST}" "LABEL='${LABEL}' PLIST='${PLIST_PATH}' /bin/bash -s" <<'REMOTE'
+timeout "${SSH_TIMEOUT_SECONDS}s" ssh "${SSH_OPTS[@]}" "${MAC_USER}@${MAC_HOST}" "LABEL='${LABEL}' PLIST='${PLIST_PATH}' /bin/bash -s" <<'REMOTE'
 set -euo pipefail
 uid="$(id -u)"
 

@@ -1,0 +1,294 @@
+# Tool Permission Context
+# Per-agent permissions using wildcard pattern matching
+# Pattern syntax: exact match, prefix* wildcard, or path:glob patterns
+# Inspired by Claude Code's `Bash(git *)`, `FileEdit(/src/*)` patterns
+
+# ─── PATTERN MATCHING RULES ────────────────────────────────
+# Patterns are checked in order. First match wins.
+# "allow" patterns are checked first, then "deny" patterns.
+# If no pattern matches, the action is ALLOWED (default-open for CEO).
+#
+# Pattern types:
+#   "tool_name"           - exact tool match
+#   "PREFIX_*"            - wildcard prefix (e.g., "LINKEDIN_*" matches all LinkedIn tools)
+#   "edit:path/glob"      - file-scoped (e.g., "edit:memory/*.md")
+#   "exec:command_prefix" - command-scoped (e.g., "exec:rm -rf")
+#
+# Actions: allow, deny, ask (prompt Ahmed)
+
+# ─── AGENT PERMISSION PROFILES ─────────────────────────────
+agent_profiles:
+
+  ceo:
+    # CEO has full access - highest authority below Ahmed
+    default_preset: "full"
+    deny_patterns: []
+    allow_patterns:
+      # Pre-approved read-only inspections
+      - "exec:ls *"
+      - "exec:cat *"
+      - "exec:grep *"
+      - "exec:sed -n *"
+      - "exec:head *"
+      - "exec:tail *"
+      - "exec:stat *"
+      - "exec:df *"
+      - "exec:du -sh *"
+      - "exec:find *"
+      - "exec:pwd"
+      - "exec:git status*"
+      - "exec:git log*"
+      - "exec:git diff --name-only*"
+      - "exec:openclaw --version*"
+      - "exec:openclaw status*"
+      - "exec:openclaw config validate*"
+      - "exec:openclaw browser *"       # LinkedIn Lane Guard browser readiness checks
+      - "exec:systemctl --user show openclaw-gateway*"
+      - "exec:python3 /root/.openclaw/workspace/scripts/check-openclaw-runtime-patches.py"
+      - "exec:tail *logs/*.log*"
+      - "exec:tail *log*"
+      - "exec:grep *logs/*"
+      - "exec:cat *logs/*"
+
+      # Pre-approved routine job/search/health commands
+      - "exec:cd /root/.openclaw/workspace && python3 scripts/email-agent.py"  # routine approved email scan + job pipeline sync
+      - "exec:python3 scripts/email-agent.py"  # routine approved email scan + job pipeline sync
+      - "exec:python3 /root/.openclaw/workspace/scripts/format-email-alert.py*"
+      - "exec:python3 /root/.openclaw/workspace/scripts/intel-sweep.py"
+      - "exec:python3 /root/.openclaw/workspace/scripts/nasr-doctor.py --fix"
+      - "exec:bash /root/.openclaw/workspace/scripts/session-cleanup.sh*"
+      - "exec:bash /root/.openclaw/workspace/scripts/session-watchdog.sh*"
+      - "exec:node --experimental-strip-types /root/.openclaw/workspace-cto/scripts/lcm-force-compact.mjs*"
+      - "exec:/root/.openclaw/workspace/tools/jobspy-venv/bin/python /root/.openclaw/workspace-jobzoom/scripts/daily_run.py*"
+      - "exec:python3 /root/.openclaw/workspace-jobzoom/scripts/*"
+      - "exec:python3 /root/.openclaw/workspace-cmo/scripts/linkedin-*"
+      - "exec:python3 /root/.openclaw/workspace-cmo/scripts/content-*"
+      - "exec:python3 /root/.openclaw/workspace-cmo/scripts/publishing-watchdog.py*"
+      - "exec:python3 /root/.openclaw/workspace-cmo/scripts/publishing-watchdog.py --minutes 60 --alert"
+      - "exec:python3 /root/.openclaw/workspace/scripts/rss-intelligence-crawler.py"
+      - "exec:python3 /root/.openclaw/workspace/scripts/weekly-pipeline-audit.py"
+      - "exec:python3 /root/.openclaw/workspace/scripts/weekly-team-retro.py"
+      - "exec:python3 /root/.openclaw/workspace/scripts/cmo-outreach-queue-weekly.py"
+
+      - "*"
+
+  hr:
+    # HR focuses on jobs, CVs, applications, outreach
+    default_preset: "build"
+    deny_patterns:
+      - "gateway_*"                     # no gateway operations
+      - "config_*"                      # no config changes
+      - "cron_remove"                   # can't delete crons
+      - "cron_update"                   # can't modify existing crons
+      - "LINKEDIN_*_POST"              # no LinkedIn posting
+      - "LINKEDIN_DELETE_*"            # no LinkedIn deleting
+      - "edit:SOUL.md"                 # can't modify core identity
+      - "edit:IDENTITY.md"
+      - "edit:config/*"                # can't modify configs
+      - "exec:rm -rf *"               # no destructive commands
+      - "exec:rm *"                   # no destructive deletes
+      - "exec:gateway *"              # no gateway commands
+      - "exec:openclaw gateway *"     # no gateway daemon operations
+      - "email_send"                  # no external email sending without approval
+      - "himalaya_send"               # no external email sending without approval
+      - "message_send_external"       # no third-party outreach without approval
+      - "job_apply"                   # no actual job applications without approval
+    allow_patterns:
+      # Pre-approved read-only inspections
+      - "exec:ls *"
+      - "exec:cat *"
+      - "exec:grep *"
+      - "exec:sed -n *"
+      - "exec:head *"
+      - "exec:tail *"
+      - "exec:stat *"
+      - "exec:df *"
+      - "exec:du -sh *"
+      - "exec:find *"
+      - "exec:pwd"
+      - "exec:git status*"
+      - "exec:git log*"
+      - "exec:git diff --name-only*"
+      - "exec:openclaw --version*"
+      - "exec:openclaw status*"
+      - "exec:openclaw config validate*"
+      - "exec:openclaw browser *"       # LinkedIn Lane Guard browser readiness checks
+      - "exec:systemctl --user show openclaw-gateway*"
+      - "exec:tail *logs/*.log*"
+      - "exec:tail *log*"
+      - "exec:grep *logs/*"
+      - "exec:cat *logs/*"
+
+      # Pre-approved routine HR / JobZoom commands
+      - "exec:/root/.openclaw/workspace/tools/jobspy-venv/bin/python /root/.openclaw/workspace-jobzoom/scripts/daily_run.py*"
+      - "exec:/root/.openclaw/workspace/tools/jobspy-venv/bin/python /root/.openclaw/workspace-jobzoom/scripts/*"
+      - "exec:python3 /root/.openclaw/workspace-jobzoom/scripts/*"
+      - "exec:bash /root/.openclaw/workspace-jobzoom/scripts/*"
+      - "exec:node /root/.openclaw/workspace-jobzoom/scripts/*"
+      - "exec:python3 /root/.openclaw/workspace-hr/scripts/*"
+      - "exec:bash /root/.openclaw/workspace-hr/scripts/*"
+      - "exec:node /root/.openclaw/workspace-hr/scripts/*"
+      - "exec:/root/.openclaw/workspace-hr/scripts/*"
+      - "exec:/root/.openclaw/workspace-hr/tools/*"
+      - "exec:python3 /root/.openclaw/workspace-hr/tools/*"
+      - "exec:bash /root/.openclaw/workspace-hr/tools/*"
+      - "exec:node /root/.openclaw/workspace-hr/tools/*"
+      - "exec:/root/.openclaw/workspace-hr/.venv/bin/python /root/.openclaw/workspace-hr/scripts/*"
+      - "exec:/root/.openclaw/workspace-hr/.venv/bin/python /root/.openclaw/workspace-hr/tools/*"
+      - "exec:/root/.openclaw/workspace/tools/jobspy-venv/bin/python /root/.openclaw/workspace-hr/scripts/*"
+      - "exec:/root/.openclaw/workspace/tools/jobspy-venv/bin/python /root/.openclaw/workspace-hr/tools/*"
+      - "exec:python3 /root/.openclaw/workspace/scripts/job-*"
+      - "exec:python3 /root/.openclaw/workspace/scripts/jobs-*"
+      - "exec:python3 /root/.openclaw/workspace/scripts/jobzoom-*"
+      - "exec:python3 /root/.openclaw/workspace/scripts/cv-*"
+      - "exec:python3 /root/.openclaw/workspace/scripts/ats-*"
+      - "exec:python3 /root/.openclaw/workspace/scripts/email-agent.py*"
+      - "exec:python3 /root/.openclaw/workspace/scripts/format-email-alert.py*"
+      - "exec:python3 scripts/*"
+
+      # Pre-approved HR / JobZoom file work
+      - "edit:/root/.openclaw/workspace-hr/*"
+      - "write:/root/.openclaw/workspace-hr/*"
+      - "read:/root/.openclaw/workspace-hr/*"
+      - "edit:/root/.openclaw/workspace-jobzoom/*"
+      - "write:/root/.openclaw/workspace-jobzoom/*"
+      - "read:/root/.openclaw/workspace-jobzoom/*"
+      - "edit:workspace-hr/*"
+      - "write:workspace-hr/*"
+      - "read:workspace-hr/*"
+      - "edit:workspace-jobzoom/*"
+      - "write:workspace-jobzoom/*"
+      - "read:workspace-jobzoom/*"
+
+      - "cron_add"                     # CAN create new crons
+      - "LINKEDIN_GET_*"              # CAN read LinkedIn data
+      - "edit:memory/shared/*"         # CAN append to shared memory
+      - "edit:coordination/*"          # CAN update pipeline/calendar
+      - "exec:gh *"                    # CAN use GitHub CLI
+    notes: "HR and JobZoom internal scanning, CV, ATS, reports, and pipeline work are pre-approved. Actual applications, external email/outreach, posting, destructive deletes, and gateway/config operations remain gated."
+
+  cto:
+    # CTO manages infrastructure, scripts, debugging
+    default_preset: "build"
+    deny_patterns:
+      - "LINKEDIN_*_POST"             # no LinkedIn posting (CMO's job)
+      - "LINKEDIN_DELETE_*"           # no LinkedIn deleting
+      - "job_apply"                   # no job applications (HR's job)
+      - "edit:memory/master-cv-data.md"  # can't touch CV data
+      - "edit:coordination/pipeline.json" # can't modify job pipeline
+    allow_patterns:
+      - "gateway_*"                    # full gateway access
+      - "config_*"                     # full config access
+      - "cron_*"                       # full cron access
+      - "exec:*"                       # full shell access
+      - "edit:scripts/*"              # full script access
+      - "edit:config/*"               # full config access
+      - "LINKEDIN_GET_*"              # CAN read LinkedIn data
+    notes: "CTO has full infra access. Cannot post to LinkedIn or touch HR data."
+
+  cmo:
+    # CMO manages content, LinkedIn, engagement
+    default_preset: "content"
+    deny_patterns:
+      - "gateway_*"                    # no gateway operations
+      - "config_*"                     # no config changes (except content configs)
+      - "cron_remove"                  # can't delete crons
+      - "job_apply"                    # no job applications (HR's job)
+      - "edit:SOUL.md"               # can't modify core identity
+      - "edit:IDENTITY.md"
+      - "edit:memory/master-cv-data.md"
+      - "exec:rm -rf *"              # no destructive commands
+      - "exec:gateway *"
+    allow_patterns:
+      # Pre-approved read-only inspections
+      - "exec:ls *"
+      - "exec:cat *"
+      - "exec:grep *"
+      - "exec:sed -n *"
+      - "exec:head *"
+      - "exec:tail *"
+      - "exec:stat *"
+      - "exec:df *"
+      - "exec:du -sh *"
+      - "exec:find *"
+      - "exec:pwd"
+      - "exec:git status*"
+      - "exec:git log*"
+      - "exec:git diff --name-only*"
+      - "exec:openclaw --version*"
+      - "exec:openclaw status*"
+      - "exec:openclaw config validate*"
+      - "exec:openclaw browser *"       # LinkedIn Lane Guard browser readiness checks
+      - "exec:systemctl --user show openclaw-gateway*"
+      - "exec:tail *logs/*.log*"
+      - "exec:tail *log*"
+      - "exec:grep *logs/*"
+      - "exec:cat *logs/*"
+
+      # Pre-approved routine content commands
+      - "exec:python3 /root/.openclaw/workspace-cmo/scripts/linkedin-*"
+      - "exec:python3 /root/.openclaw/workspace-cmo/scripts/content-*"
+      - "exec:python3 /root/.openclaw/workspace-cmo/scripts/publishing-watchdog.py*"
+      - "exec:python3 /root/.openclaw/workspace/scripts/rss-intelligence-crawler.py"
+      - "exec:python3 /root/.openclaw/workspace/scripts/cmo-outreach-queue-weekly.py"
+
+      - "LINKEDIN_*"                   # full LinkedIn access
+      - "image_generate"               # can generate images
+      - "cron_add"                     # can create new crons
+      - "edit:memory/shared/*"        # can append to shared memory
+      - "edit:coordination/content-calendar.json"  # can manage content calendar
+      - "exec:python3 scripts/linkedin-*"  # can run LinkedIn scripts
+      - "exec:python3 scripts/content-*"   # can run content scripts
+    notes: "CMO has full LinkedIn + content access. No infra or HR operations."
+
+# ─── MODE OVERRIDES ────────────────────────────────────────
+# Additional restrictions applied during specific modes
+
+mode_overrides:
+
+  afk:
+    # Midnight-6AM Cairo: extra restrictions on all agents
+    additional_deny:
+      - LINKEDIN_CREATE_LINKED_IN_POST
+      - LINKEDIN_DELETE_POST
+      - email_send
+      - himalaya_send
+      - message_send_external
+      - job_apply
+      - git_push_force
+    except_for:
+      - cron_scheduled         # pre-approved cron actions
+      - system_health_alert    # critical alerts always pass
+
+  fast:
+    # Routine pipeline runs: no restrictions, but skip verification
+    additional_deny: []
+    skip_hooks:
+      - verification_gate
+      - auto_commit_suggest
+
+# ─── EFFORT-BASED GATES ───────────────────────────────────
+# Some tools require minimum effort classification
+
+effort_gates:
+  # Only ● High or ◉ Max can modify these
+  high_minimum:
+    - edit:MEMORY.md
+    - edit:SOUL.md
+    - edit:TOOLS.md
+    - edit:AGENTS.md
+    - edit:USER.md
+    - edit:IDENTITY.md
+    - edit:memory/master-cv-data.md
+    - edit:memory/ontology/graph.jsonl
+    - edit:config/tool-hooks.yaml
+    - edit:config/tool-permissions.yaml
+    - gateway_config
+    - config_apply
+    - config_patch
+
+  # Only ◉ Max can do these
+  max_only:
+    - delete:memory/
+    - delete:config/
+    - gateway_update

@@ -1,0 +1,45 @@
+Disk guard triggered at 2026-05-25T07:07:01+03:00
+Threshold: 65%
+Before: 76G used / 21G free / 79% used
+
+Safe cleanup: workspace tmp files older than 2 days, preserving guard logs and current research markdown.
+
+Safe cleanup: OpenClaw logs older than 7 days.
+
+Safe cleanup: stale system temp files older than 3 days.
+
+Safe cleanup: OpenClaw compile cache entries older than 2 days.
+
+Safe cleanup: npm/pnpm metadata logs and generic temp caches.
+Removed all cached metadata files
+Removed 0 files
+Removed 0 packages
+npm warn using --force Recommended protections disabled.
+Deleted build cache objects:
+g6o7trup5xwbv1oftmse156u9
+cqp2ekp8bmhfa53vrvns56sib
+qtigy0qrh2i05o0x4zi1wt2dj
+f17ivbmtpmxe22jhres1bljq7
+tpfgp0kn0opy5r9cjhe0l0maq
+dn1hxveg46187zbkp4untqtzw
+
+Total reclaimed space: 309MB
+
+Backup/snapshot audit, no destructive pruning by default.
+Backup/snapshot audit: files >= 8G or older than 14 days.
+Backup pruning disabled. Set DISK_GUARD_PRUNE_BACKUPS=1 only after explicit approval.
+
+After: 76G used / 21G free / 79% used
+Largest remaining /root items:
+159M	/root/2nd-brain
+229M	/root/.browser-use-env
+314M	/root/.node-llama-cpp
+405M	/root/openclaw-backups
+616M	/root/.local
+794M	/root/.venvs
+1.4G	/root/.camofox
+3.6G	/root/.nvm
+11G	/root/openclaw-snapshot-20260523
+12G	/root/openclaw-snapshot-20260524
+17G	/root/.openclaw
+46G	/root

@@ -16,6 +16,8 @@ Full detail lives in `docs/reference/TOOLS.full.md`.
 - Gulf jobs scanner: if Exa/Composio search returns HTTP 402 or `NO_MORE_CREDITS`, use the DuckDuckGo/OpenClaw web fallback and avoid repeated Exa retries until credits are restored. <!-- dream-promoted 2026-04-29 -->
 - Brave is not configured. Do not plan around it.
 
+- Duplicate reply diagnosis: if identical assistant replies appear, check for delivery-mirror transcript writes, session replay/idempotency keys, and visibleReplies settings before blaming the model. The runtime patch checker must pass the delivery/session sanitizer checks before closeout. <!-- latency-repair 2026-05-25 -->
+
 ## Browser Automation
 
 - Prefer Camoufox tools for external sites with bot detection.
@@ -96,11 +98,20 @@ Never use Composio for Notion or Telegram when direct credentials exist.
 
 ## Messaging and Media
 
+<!-- openclaw-hotfix-20260524-no-self-session-send -->
+- For normal Telegram/chat replies, answer with final assistant text in the current turn. Do **not** use `sessions_send`, `message`, or Telegram send tools to reply to the message that triggered the current turn.
+- `sessions_send` is only for cross-session or sub-agent handoff. Never call it with the current session key, `telegram:<current chat id>`, or `agent:<current agent>:telegram:<current chat/thread>`.
+- Telegram DM delivery after the 2026.5.22 update depends on reply-delivery config: direct chats require `messages.visibleReplies = automatic`; group/topic replies should use `messages.groupChat.visibleReplies = automatic` so group/topic agents visibly reply. If assistant text appears in session logs but no visible Telegram DM is sent, check this before deeper runtime debugging.
+
 - Message presentation blocks are optional enhancement, not the source of truth. Any important alert, daily card, approval-style prompt, or decision message must remain readable as plain text if buttons, selects, cards, or pins degrade on the target channel.
 - OpenClaw CLI messaging uses `--target`, not `--to`.
 - For local media sends, copy files to an allowed media directory such as `/root/.openclaw/media` first.
 - Verify actual delivery or returned message state before saying a message/file was sent.
 - Telegram command-menu repairs require scope verification, not just dispatch/default `getMyCommands`: check default, private, group, administrator, direct-chat, and configured group-chat scopes, and set the direct chat menu button to `commands` where supported. Forum topics inherit the supergroup command scope; Telegram may reject group menu-button changes even when group command scopes are valid. <!-- dream-promoted 2026-05-17 -->
+
+- Never run `systemctl --user restart openclaw-gateway` or equivalent live gateway restart from the same user-facing Codex/Telegram turn. It cuts the app-server stdio connection and produces the `Codex app-server connection closed before this turn finished` wrapper. Use a bounded supervisor/handoff path, then verify after the new gateway is up. <!-- dream-promoted 2026-05-25 -->
+
+- Gateway and runtime repair work must run in the CTO maintenance lane or as detached bounded jobs when it can exceed a quick inspection. Do not hold Ahmed's direct chat lane open for long debug loops; send a short status, detach, then report verified completion. <!-- latency-repair 2026-05-25 -->
 
 ## Queue and Concurrency
 
@@ -115,7 +126,9 @@ Never use Composio for Notion or Telegram when direct credentials exist.
 
 ## Gateway Safety
 
+- Approved OpenClaw maintenance should use a bounded escalation path: once Ahmed explicitly approves a specific repair, do not loop on the same policy blocker. Either use an available first-class gateway/cron tool or `sandbox_exec host=gateway` with narrow commands, explicit timeouts, backups, and verification. If the runtime still denies that capability, report it as a platform permission defect and name the exact missing key, for example `tools.exec.host=gateway` or `tools.elevated.allowFrom.telegram`. <!-- promoted 2026-05-25 from approved cron repair blocker -->
 - Before OpenClaw update/restart/config-change windows, run `scripts/openclaw-update-guard.py --write-report` from the workspace. Treat `FAIL` as a stop condition; inspect `WARN`; then still pair with a real Telegram/NASR response test for final proof. See `docs/openclaw-update-guard.md`. <!-- promoted 2026-05-06 from update incident guard -->
+- Post-update Telegram recovery checks from the 2026.5.22 incident: verify `docker image inspect openclaw-sandbox:bookworm-slim`; verify `messages.visibleReplies == automatic`; verify `messages.groupChat.visibleReplies == automatic`; then perform a real Telegram DM validation with `/new` followed by `ping`, expecting a visible `pong`.
 - CLI health checks: use `openclaw status` for a fast broad read-only snapshot, `openclaw status --all` for shareable/heavier diagnostics, `openclaw status --usage` for provider quota, and `openclaw status --deep` for live channel probes. Treat `status --deep` as potentially slow or blocking under channel/plugin pressure; do not let it replace gateway-specific checks. <!-- promoted 2026-05-06 from status CLI docs review -->
 - Gateway CLI maintenance: prefer `openclaw gateway status --deep` and `openclaw gateway probe --json` for post-restart/update checks; verify systemd `ExecStart`, `MainPID`, and `ExecMainStartTimestamp` as separate evidence. Use `openclaw gateway restart --safe` for manual restarts unless an operator explicitly accepts interruption with `--force`. <!-- promoted 2026-05-06 from CLI docs review -->
 - Plugin runtime checks: use `openclaw plugins list --verbose --json` plus `openclaw plugins inspect <id> --runtime --json`. Tool contracts in inspect output are proof of declared runtime registration; plugin-owned CLI commands run as root OpenClaw groups (`openclaw <command> ...`), not under `openclaw plugins`. <!-- promoted 2026-05-06 from CLI docs review -->
@@ -165,3 +178,4 @@ Never use Composio for Notion or Telegram when direct credentials exist.
 - Full TOOLS reference: `docs/reference/TOOLS.full.md`
 - Workspace docs: `docs/`
 - Memory rules: `MEMORY.md`
+- CTO fast latency triage: use `/root/.openclaw/workspace-cto/scripts/cto-fast-status.sh` before broad `openclaw status` when users report delayed replies. The broad status command can block under plugin/channel pressure; fast triage should check config validation, cron scheduler state, and current cron errors first. <!-- updated 2026-05-25 from latency incident -->

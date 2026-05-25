@@ -1,53 +1,21 @@
 {
   "status": "ok",
-  "scan_time": "2026-05-24T14:00:32.797296+02:00",
-  "total_scanned": 12,
+  "scan_time": "2026-05-25T16:03:23.859771+02:00",
+  "total_scanned": 16,
   "by_category": {
     "interview_invite": 0,
     "recruiter_reach": 0,
-    "application_ack": 2,
-    "rejection": 1,
+    "application_ack": 0,
+    "rejection": 0,
     "assessment": 0,
     "follow_up_needed": 0,
     "job_alert": 0,
-    "other": 10
+    "other": 16
   },
   "interview_invites": [],
   "recruiter_messages": [],
-  "application_acks": [
-    {
-      "id": "359058",
-      "from": "Mediclinic Careers <system@successfactors.eu>",
-      "subject": "=?UTF-8?Q?Mediclinic_Talent_Community_=E2=94=82_Applic?=\r\n =?UTF-8?Q?ation_received_for_the_position_of_D?=\r\n =?UTF-8?Q?igital_Health_Product_Manager_(=E2=80=8B6803?=\r\n =?UTF-8?Q?5=E2=80=8B)_|_=E2=80=8BMediclinic_Parkview_Hospital=E2=80=8B?=",
-      "date": "Sun, 24 May 2026 10:59:29 +0000 (UTC)",
-      "unread": true,
-      "priority": "LOW",
-      "score": 1,
-      "pipeline_match": null
-    },
-    {
-      "id": "359061",
-      "from": "malomatia Recruitment Team <recruitment@malomatia.com>",
-      "subject": "=?utf-8?Q?Your_recent_job_application_for_Portfolio_Manag?=\r\n =?utf-8?Q?er_=E2=80=93_Strategic_Programs_(Qatari_National)_-_789?=",
-      "date": "Sun, 24 May 2026 11:02:57 +0000 (UTC)",
-      "unread": true,
-      "priority": "LOW",
-      "score": 0,
-      "pipeline_match": null
-    }
-  ],
-  "rejections": [
-    {
-      "id": "359058",
-      "from": "Mediclinic Careers <system@successfactors.eu>",
-      "subject": "=?UTF-8?Q?Mediclinic_Talent_Community_=E2=94=82_Applic?=\r\n =?UTF-8?Q?ation_received_for_the_position_of_D?=\r\n =?UTF-8?Q?igital_Health_Product_Manager_(=E2=80=8B6803?=\r\n =?UTF-8?Q?5=E2=80=8B)_|_=E2=80=8BMediclinic_Parkview_Hospital=E2=80=8B?=",
-      "date": "Sun, 24 May 2026 10:59:29 +0000 (UTC)",
-      "unread": true,
-      "priority": "LOW",
-      "score": 1,
-      "pipeline_match": null
-    }
-  ],
+  "application_acks": [],
+  "rejections": [],
   "assessments": [],
   "follow_ups_needed": [],
   "job_alerts": [],

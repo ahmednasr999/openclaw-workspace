@@ -345,7 +345,7 @@ if (clean !== 'Why you sent this now!') {{
 
 def check_context_engine_turn_maintenance_silent(failures: list[str]) -> None:
     dist = DIST
-    maintenance_candidates = sorted(dist.glob("context-engine-maintenance-*.js"))
+    maintenance_candidates = sorted(dist.glob("context-engine-maintenance-*.js")) + sorted(dist.glob("context-engine-lifecycle-*.js"))
     task_registry_candidates = sorted(dist.glob("task-registry-*.js"))
     if not maintenance_candidates:
         failures.append("FAIL: context-engine turn maintenance stays silent\ncontext-engine-maintenance dist file missing")
