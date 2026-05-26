@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-24T22:50:17.354950+00:00",
+  "generated": "2026-05-25T22:50:20.471531+00:00",
   "health_score": 77,
   "summary": {
     "ok": 5,
@@ -7,15 +7,14 @@
     "alert": 3
   },
   "workspace": {
-    "root_files": 78,
-    "disk_percent": 79,
-    "disk_used": "75G",
+    "root_files": 84,
+    "disk_percent": 83,
+    "disk_used": "80G",
     "disk_total": "96G",
     "ram_total": "7.8Gi",
-    "ram_used": "2.1Gi",
+    "ram_used": "1.7Gi",
     "large_files": [
       "/root/.openclaw/agents/main/agent/codex-home/logs_2.sqlite",
-      "/root/.openclaw/agents/main/agent/codex-home/logs_2.sqlite-wal",
       "/root/.openclaw/agents/main/agent/codex-home/state_5.sqlite",
       "/root/.openclaw/agents/main/agent/codex-home/.tmp/plugins/.git/objects/pack/pack-0b2030e79621d6d2f13e68a341501788fe25f29e.pack",
       "/root/.openclaw/agents/main/agent/codex-home/sessions/2026/05/20/rollout-2026-05-20T12-05-24-019e44a1-f35c-7cd1-a8c0-e8fd2340b0b4.jsonl",
@@ -31,15 +30,16 @@
       "/root/.openclaw/agents/main/sessions/c268cdda-e715-4949-97a1-eb0d41b538f6.jsonl.bak-154233-1777659607600",
       "/root/.openclaw/agents/main/sessions/sessions.json.834be566-a717-4d12-9d62-9673f8c01957.tmp",
       "/root/.openclaw/agents/main/sessions/sessions.json.bak.1776880840579",
+      "/root/.openclaw/agents/main/sessions/sessions.json.bak-2026-05-25",
       "/root/.openclaw/agents/main/sessions/c268cdda-e715-4949-97a1-eb0d41b538f6.trajectory.jsonl.deleted.20260501-211515",
       "/root/.openclaw/agents/main/sessions/archive/sessions-resets.tar.gz",
       "/root/.openclaw/agents/main/sessions/c268cdda-e715-4949-97a1-eb0d41b538f6.jsonl.reset.2026-05-01T20-03-42.178Z",
       "/root/.openclaw/agents/main/sessions/eff56784-4287-4a7d-b73b-4c51dbec3122.jsonl.reset.2026-04-26T01-05-12.462Z",
       "/root/.openclaw/agents/main/sessions/sessions.json.bak.1776880840219",
       "/root/.openclaw/agents/cmo/agent/codex-home/logs_2.sqlite",
-      "/root/.openclaw/agents/cmo/agent/codex-home/logs_2.sqlite-wal",
       "/root/.openclaw/agents/cmo/agent/codex-home/state_5.sqlite",
       "/root/.openclaw/agents/cmo/agent/codex-home/.tmp/plugins/.git/objects/pack/pack-0b2030e79621d6d2f13e68a341501788fe25f29e.pack",
+      "/root/.openclaw/agents/cmo/sessions/e2bf7025-ff74-47a9-a7e0-2c886c581a2e-topic-7.trajectory.jsonl",
       "/root/.openclaw/agents/cmo/sessions/acd2e90d-d2a9-4528-b444-8aff5d9f6a27-topic-7.jsonl.bak-157027-1777319013726",
       "/root/.openclaw/agents/jobzoom/agent/codex-home/logs_2.sqlite",
       "/root/.openclaw/agents/jobzoom/agent/codex-home/state_5.sqlite",
@@ -51,7 +51,6 @@
       "/root/.openclaw/agents/cto/agent/codex-home/logs_2.sqlite",
       "/root/.openclaw/agents/cto/agent/codex-home/state_5.sqlite",
       "/root/.openclaw/agents/cto/agent/codex-home/.tmp/plugins/.git/objects/pack/pack-0b2030e79621d6d2f13e68a341501788fe25f29e.pack",
-      "/root/.openclaw/agents/hr/agent/codex-home/state_5.sqlite-wal",
       "/root/.openclaw/agents/hr/agent/codex-home/logs_2.sqlite",
       "/root/.openclaw/agents/hr/agent/codex-home/state_5.sqlite",
       "/root/.openclaw/agents/hr/agent/codex-home/.tmp/plugins/.git/objects/pack/pack-b5db4645cded68697ca976f9da4d50bd62a119f9.pack",
@@ -206,7 +205,7 @@
       "/root/.openclaw/workspace/newsletter2.png",
       "/root/.openclaw/workspace/newsletter3.png"
     ],
-    "session_mb": 777.3
+    "session_mb": 811.8
   },
   "learnings": {
     "total": 25,
@@ -235,28 +234,23 @@
       "notion_token": "present (50 chars)",
       "notion_databases": 15,
       "linkedin_lines": 3,
-      "linkedin_age_days": 62.0
+      "linkedin_age_days": 63.0
     }
   },
   "crons": {
-    "total": 33,
-    "enabled": 33,
+    "total": 28,
+    "enabled": 28,
     "disabled": 0,
     "skill_first": 7,
-    "skill_first_pct": 21,
+    "skill_first_pct": 25,
     "raw_prompt_list": [
-      "Ahmed-Mac LinkedIn Lane Guard",
       "session-watchdog",
       "Daily OpenClaw Backup",
       "Daily Intel Sweep",
       "OpenClaw Health Guard",
-      "Track GPT-5.5 Codex quota for Pro 20x vs 5x decision",
-      "Dream Mode - Memory Consolidation",
-      "Email Agent (Sun-Thu)",
       "NASR Doctor (Daily)",
-      "Ahmed-Mac Node Doctor",
+      "Email Agent (Sun-Thu)",
       "CMO Publishing Watchdog",
-      "CMO LinkedIn Comment Radar - 11am",
       "LCM Midday Compaction Sweep",
       "CMO LinkedIn Comment Radar - 3pm",
       "Email Agent (Fri-Sat)",
@@ -272,23 +266,7 @@
       "Final GPT-5.5 Pro 20x vs 5x recommendation",
       "Stop GPT-5.5 quota tracker after final recommendation"
     ],
-    "failing": [
-      {
-        "name": "Ahmed-Mac LinkedIn Lane Guard",
-        "consecutive_errors": 2,
-        "last_error": "cron: job execution timed out (last phase: tool-execution-started)"
-      },
-      {
-        "name": "Track GPT-5.5 Codex quota for Pro 20x vs 5x decision",
-        "consecutive_errors": 1,
-        "last_error": "cron: isolated agent setup timed out before runner start"
-      },
-      {
-        "name": "CMO Weekly Drafting",
-        "consecutive_errors": 1,
-        "last_error": "Error: Sandbox image not found: openclaw-sandbox:bookworm-slim. Build it with scripts/sandbox-setup."
-      }
-    ]
+    "failing": []
   },
   "briefing_notion": {
     "skipped": true,
@@ -298,22 +276,22 @@
     {
       "category": "workspace",
       "level": "warn",
-      "message": "Root files: 78 (approaching clutter threshold of 100)"
-    },
-    {
-      "category": "workspace",
-      "level": "ok",
-      "message": "Disk: 79% used (75G/96G)"
+      "message": "Root files: 84 (approaching clutter threshold of 100)"
     },
     {
       "category": "workspace",
       "level": "warn",
-      "message": "Large files (>5MB): 191 found in .openclaw"
+      "message": "Disk: 83% used - approaching 90% threshold"
+    },
+    {
+      "category": "workspace",
+      "level": "warn",
+      "message": "Large files (>5MB): 190 found in .openclaw"
     },
     {
       "category": "workspace",
       "level": "alert",
-      "message": "Session size: 777.3MB - bloated, review sessions"
+      "message": "Session size: 811.8MB - bloated, review sessions"
     },
     {
       "category": "learnings",
@@ -343,12 +321,12 @@
     {
       "category": "crons",
       "level": "alert",
-      "message": "Cron skill-first: 7/33 (21%) - too many raw-prompt crons"
+      "message": "Cron skill-first: 7/28 (25%) - too many raw-prompt crons"
     },
     {
       "category": "crons",
-      "level": "warn",
-      "message": "Failing crons: 3 with consecutive errors"
+      "level": "ok",
+      "message": "No failing crons"
     },
     {
       "category": "briefing",
@@ -356,10 +334,9 @@
       "message": "Notion briefing check disabled - pipeline uses NocoDB+Telegram"
     }
   ],
-  "auto_fixed": [
-    "'CMO Weekly Drafting' had 1 transient error - will auto-clear on next scheduled run"
-  ],
+  "auto_fixed": [],
   "needs_attention": [
-    "Session bloat: 777.3MB - review before deleting (needs human decision)"
+    "Session bloat: 811.8MB - review before deleting (needs human decision)",
+    "Disk usage 83% - needs cleanup decision (do not auto-delete)"
   ]
 }

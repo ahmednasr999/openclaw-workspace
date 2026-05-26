@@ -1,22 +1,20 @@
 {
-  "timestamp": "2026-05-25T19:31:36.264569+03:00",
-  "total_crons": 48,
+  "timestamp": "2026-05-26T07:01:22.912397+03:00",
+  "total_crons": 19,
   "system_crons": 19,
-  "openclaw_crons": 29,
+  "openclaw_crons": 0,
   "notion_created": 0,
-  "notion_updated": 47,
-  "errors": [
-    "Exception updating page 'disk-health-check.sh': HTTPSConnectionPool(host='api.notion.com', port=443): Read timed out. (read timeout=10)"
-  ],
+  "notion_updated": 19,
+  "errors": [],
   "crons": [
     {
       "name": "daily-backup.sh",
       "schedule": "0 20 * * *",
       "type": "system",
       "last_status": {
-        "status": "\u2705 OK",
-        "last_run": "2026-05-24 20:00:23.013353+03:00",
-        "error": null
+        "status": "\u274c Failed",
+        "last_run": "2026-05-25 20:00:52.099006+03:00",
+        "error": "Check log for details"
       }
     },
     {
@@ -35,7 +33,7 @@
       "type": "system",
       "last_status": {
         "status": "\u2705 OK",
-        "last_run": "2026-05-24 23:01:49.239218+03:00",
+        "last_run": "2026-05-25 23:01:44.393829+03:00",
         "error": null
       }
     },
@@ -45,7 +43,7 @@
       "type": "system",
       "last_status": {
         "status": "\u2705 OK",
-        "last_run": "2026-05-24 20:30:02.000266+03:00",
+        "last_run": "2026-05-25 20:30:01.324718+03:00",
         "error": null
       }
     },
@@ -55,7 +53,7 @@
       "type": "system",
       "last_status": {
         "status": "\u2705 OK",
-        "last_run": "2026-05-24 23:30:02.019545+03:00",
+        "last_run": "2026-05-25 23:30:01.921196+03:00",
         "error": null
       }
     },
@@ -65,7 +63,7 @@
       "type": "system",
       "last_status": {
         "status": "\u2705 OK",
-        "last_run": "2026-05-25 03:15:01.994195+03:00",
+        "last_run": "2026-05-26 03:15:01.735353+03:00",
         "error": null
       }
     },
@@ -85,7 +83,7 @@
       "type": "system",
       "last_status": {
         "status": "\u2705 OK",
-        "last_run": "2026-05-25 06:00:02.012830+03:00",
+        "last_run": "2026-05-26 06:00:01.691060+03:00",
         "error": null
       }
     },
@@ -95,7 +93,7 @@
       "type": "system",
       "last_status": {
         "status": "\u2705 OK",
-        "last_run": "2026-05-25 06:00:10.744888+03:00",
+        "last_run": "2026-05-26 06:00:13.704140+03:00",
         "error": null
       }
     },
@@ -105,7 +103,7 @@
       "type": "system",
       "last_status": {
         "status": "\u2705 OK",
-        "last_run": "2026-05-25 19:30:01.859538+03:00",
+        "last_run": "2026-05-26 07:00:01.814156+03:00",
         "error": null
       }
     },
@@ -115,7 +113,7 @@
       "type": "system",
       "last_status": {
         "status": "\u2705 OK",
-        "last_run": "2026-05-25 18:00:36.306381+03:00",
+        "last_run": "2026-05-26 06:00:44.185343+03:00",
         "error": null
       }
     },
@@ -125,7 +123,7 @@
       "type": "system",
       "last_status": {
         "status": "\u2705 OK",
-        "last_run": "2026-05-25 01:50:17.355336+03:00",
+        "last_run": "2026-05-26 01:50:20.471754+03:00",
         "error": null
       }
     },
@@ -184,305 +182,15 @@
       "schedule": "*/30 * * * *",
       "type": "system",
       "last_status": {
-        "status": "\u2705 OK",
-        "last_run": "2026-05-25 19:01:26.234970+03:00",
-        "error": null
+        "status": "\u274c Failed",
+        "last_run": "2026-05-26 06:31:29.827691+03:00",
+        "error": "Check log for details"
       }
     },
     {
       "name": "jobzoom_daily_launch.sh",
       "schedule": "0 5 * * *",
       "type": "system",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "Email Agent (Sun-Thu)",
-      "schedule": "cron 0 8,12,16,20 * * 0-4 @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "OpenClaw Health Guard",
-      "schedule": "cron 0 */6 * * * @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "LCM Nightly Health Check",
-      "schedule": "cron 0 3 * * * @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "session-watchdog",
-      "schedule": "cron 0 3 * * * @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "Daily OpenClaw Backup",
-      "schedule": "cron 15 3 * * * @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "LCM Force-Compact Processor",
-      "schedule": "cron 30 3 * * * @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "Daily Intel Sweep",
-      "schedule": "cron 45 3 * * * @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "Calendar Pre-fetch",
-      "schedule": "cron 55 4 * * * @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "NASR Doctor (Daily)",
-      "schedule": "cron 0 7 * * * @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "CMO Daily LinkedIn Autoposter",
-      "schedule": "cron 0 9 * * 1-4 @ Asia/Dubai",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "Ahmed-Mac Node Doctor",
-      "schedule": "cron 20 8 * * * @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "CMO Publishing Watchdog",
-      "schedule": "cron 0 10-18 * * 1-4 @ Asia/Dubai",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "LCM Midday Compaction Sweep",
-      "schedule": "cron 0 14 * * * @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "CMO LinkedIn Comment Radar - 3pm",
-      "schedule": "cron 0 15 * * * @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "Email Agent (Fri-Sat)",
-      "schedule": "cron 0 9,15,21 * * 5,6 @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "RSS Intelligence - Weekly Crawl",
-      "schedule": "cron 0 13 * * 5 @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "CMO Weekly Content Report",
-      "schedule": "cron 0 17 * * 5 @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "Weekly Skill Autoresearch",
-      "schedule": "cron 0 10 * * 6 @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "weekly-memory-hygiene",
-      "schedule": "cron 0 7 * * 0 @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "Weekly Pipeline Audit",
-      "schedule": "cron 0 8 * * 0 @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "Job Hunter \u2014 Weekly Domain Review",
-      "schedule": "cron 0 8 * * 0 @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "CMO Weekly Outreach Queue \u2014 Sunday",
-      "schedule": "cron 10 5 * * 0 @ UTC",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "CEO/NASR Weekly Operating Review",
-      "schedule": "cron 30 8 * * 0 @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "Weekly OpenClaw read-only health baseline",
-      "schedule": "cron 30 8 * * 0 @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "Weekly Team Retro",
-      "schedule": "cron 0 10 * * 0 @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "SIE Weekly Report",
-      "schedule": "cron 0 10 * * 0 @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "CMO Weekly Drafting",
-      "schedule": "cron 0 18 * * 0 @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "Final GPT-5.5 Pro 20x vs 5x recommendation",
-      "schedule": "at 2026-06-05T17:00:00.000Z",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "Stop GPT-5.5 quota tracker after final recommendation",
-      "schedule": "at 2026-06-05T17:30:00.000Z",
-      "type": "openclaw",
       "last_status": {
         "status": "\u26a0\ufe0f Unknown",
         "last_run": null,

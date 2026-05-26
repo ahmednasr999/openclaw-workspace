@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-source-google",
     "version": "1.0.0",
-    "generated_at": "2026-05-25T19:00:03.000771+02:00",
-    "duration_ms": 0,
+    "generated_at": "2026-05-26T05:00:03.225709+02:00",
+    "duration_ms": 8,
     "ttl_hours": 6,
     "status": "error",
     "error": "No Composio consumer key found in openclaw.json",
-    "run_id": "9d5b6f00",
+    "run_id": "509f0a9e",
     "retries_used": 0,
     "data_freshness": "stale"
   },
