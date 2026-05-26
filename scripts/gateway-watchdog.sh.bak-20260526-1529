@@ -113,7 +113,7 @@ recent_starvation_signals() {
 main() {
   trim_linkedin_chrome_if_needed
 
-  local pid code health_ms fail_count degraded_count rss_kb etimes app_count signals reason restart_reason probe
+  local pid code health_ms fail_count degraded_count rss_kb etimes app_count signals reason probe
   pid=$(gateway_pid || true)
   probe=$(health_probe)
   code=$(printf '%s' "$probe" | awk '{print $1}')
@@ -137,37 +137,27 @@ main() {
   signals=$(recent_starvation_signals)
 
   reason=""
-  restart_reason=""
   if [ "$health_ms" -ge "$SLOW_HEALTH_MS" ]; then
     reason="${reason}slow-health-${health_ms}ms,"
-    restart_reason="${restart_reason}slow-health-${health_ms}ms,"
   fi
   if [ "$signals" -ge 3 ]; then
     reason="${reason}starvation-signals-${signals},"
   fi
   if [ "$rss_kb" -ge "$GATEWAY_RSS_RESTART_KB" ] && [ "$etimes" -ge 300 ]; then
     reason="${reason}gateway-rss-${rss_kb}kb,"
-    restart_reason="${restart_reason}gateway-rss-${rss_kb}kb,"
   fi
   if [ "$app_count" -ge "$CODEX_APP_SERVER_RESTART_COUNT" ]; then
     reason="${reason}app-server-count-${app_count},"
-    restart_reason="${restart_reason}app-server-count-${app_count},"
   fi
 
-  if [ -n "$restart_reason" ]; then
+  if [ -n "$reason" ]; then
     degraded_count=$(read_count "$DEGRADED_FILE")
     degraded_count=$((degraded_count + 1))
     write_count "$DEGRADED_FILE" "$degraded_count"
     log "degraded count=${degraded_count} reason=${reason} pid=${pid} rss_kb=${rss_kb} app_servers=${app_count} health_ms=${health_ms} signals=${signals}"
     if [ "$degraded_count" -ge "$DEGRADED_CHECKS_BEFORE_RESTART" ]; then
-      restart_gateway "degraded:${restart_reason}"
+      restart_gateway "degraded:${reason}"
     fi
-    exit 0
-  fi
-
-  if [ -n "$reason" ]; then
-    log "observed reason=${reason} pid=${pid} rss_kb=${rss_kb} app_servers=${app_count} health_ms=${health_ms} signals=${signals}"
-    write_count "$DEGRADED_FILE" 0
     exit 0
   fi
 

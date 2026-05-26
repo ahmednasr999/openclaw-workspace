@@ -82,7 +82,7 @@ status_probe_error = None
 try:
     status_data, _, attempts, timed_out = run_with_retries(
         ['openclaw', 'status', '--usage', '--json'],
-        timeouts=[10, 20, 30],
+        timeouts=[45, 90, 150],
         parser=parse_json_from_mixed_output,
         label='openclaw status usage probe',
     )
@@ -129,7 +129,7 @@ if status_data:
 try:
     _, combined, attempts, _ = run_with_retries(
         ['openclaw', 'models', 'status', '--plain'],
-        timeouts=[8, 15, 25],
+        timeouts=[30, 60, 120],
         ok_text=EXPECTED_STATUS_MODEL,
         label='models status probe',
     )

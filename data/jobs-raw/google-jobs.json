@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-source-google",
     "version": "1.0.0",
-    "generated_at": "2026-05-26T05:00:03.225709+02:00",
-    "duration_ms": 8,
+    "generated_at": "2026-05-26T17:00:07.086622+02:00",
+    "duration_ms": 2964,
     "ttl_hours": 6,
     "status": "error",
-    "error": "No Composio consumer key found in openclaw.json",
-    "run_id": "509f0a9e",
+    "error": "Failed to initialize MCP session",
+    "run_id": "4fec90b8",
     "retries_used": 0,
     "data_freshness": "stale"
   },

@@ -3772,3 +3772,77 @@ Bind: loopback
   "enqueued": true,
   "runId": "manual:00512934-214a-429e-8078-e7555bb1c120:1779764461280:1"
 }
+[2026-05-26 08:00] === Watchdog v3 run ===
+[2026-05-26 08:00] WARN: Jobs data stale (739h), triggering pipeline
+[2026-05-26 08:00] FIXED: Pipeline triggered
+[2026-05-26 08:00] FIXED: Re-triggered failed cron 00512934-214a-429e-8078-e7555bb1c120
+[2026-05-26 08:00] Summary: fixes=2 warnings=2 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:00512934-214a-429e-8078-e7555bb1c120:1779771677500:2"
+}
+[2026-05-26 10:00] === Watchdog v3 run ===
+[2026-05-26 10:00] WARN: active-tasks.md stale (50h)
+[2026-05-26 10:00] WARN: Jobs data stale (741h), triggering pipeline
+[2026-05-26 10:00] FIXED: Pipeline triggered
+[2026-05-26 10:01] Summary: fixes=1 warnings=3 alerts=0
+[2026-05-26 12:00] === Watchdog v3 run ===
+[2026-05-26 12:00] WARN: Jobs data stale (743h), triggering pipeline
+[2026-05-26 12:00] FIXED: Pipeline triggered
+[2026-05-26 12:00] FIXED: Re-triggered failed cron 00512934-214a-429e-8078-e7555bb1c120
+[2026-05-26 12:00] Summary: fixes=2 warnings=2 alerts=0
+Config warnings:
+- plugins.entries.composio: plugin not found: composio (stale config entry ignored; remove it from plugins config)
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:00512934-214a-429e-8078-e7555bb1c120:1779786079679:1"
+}
+[2026-05-26 14:00] === Watchdog v3 run ===
+[2026-05-26 14:00] WARN: Jobs data stale (745h), triggering pipeline
+[2026-05-26 14:00] FIXED: Pipeline triggered
+[2026-05-26 14:00] Summary: fixes=1 warnings=2 alerts=0
+[2026-05-26 16:00] === Watchdog v3 run ===
+[2026-05-26 16:00] WARN: Jobs data stale (747h), triggering pipeline
+[2026-05-26 16:00] FIXED: Pipeline triggered
+[2026-05-26 16:00] FIXED: Re-triggered failed cron 00512934-214a-429e-8078-e7555bb1c120
+[2026-05-26 16:00] FIXED: Re-triggered failed cron 88e0d015-51c8-462b-b0a9-da494c54090e
+[2026-05-26 16:00] Summary: fixes=3 warnings=2 alerts=0
+Config warnings:
+- plugins.entries.composio: plugin not found: composio (stale config entry ignored; remove it from plugins config)
+Config warnings:
+- plugins.entries.composio: plugin not found: composio (stale config entry ignored; remove it from plugins config)
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:88e0d015-51c8-462b-b0a9-da494c54090e:1779800483478:1"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:00512934-214a-429e-8078-e7555bb1c120:1779800483968:2"
+}
+[2026-05-26 18:00] === Watchdog v3 run ===
+[2026-05-26 18:00] WARN: Jobs data stale (749h), triggering pipeline
+[2026-05-26 18:00] FIXED: Pipeline triggered
+[2026-05-26 18:00] FIXED: Re-triggered failed cron 00512934-214a-429e-8078-e7555bb1c120
+[2026-05-26 18:00] FIXED: Re-triggered failed cron 88e0d015-51c8-462b-b0a9-da494c54090e
+[2026-05-26 18:00] Summary: fixes=3 warnings=2 alerts=0
+Config warnings:
+- plugins.entries.composio: plugin not found: composio (stale config entry ignored; remove it from plugins config)
+Config warnings:
+- plugins.entries.composio: plugin not found: composio (stale config entry ignored; remove it from plugins config)
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:00512934-214a-429e-8078-e7555bb1c120:1779807670980:3"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:88e0d015-51c8-462b-b0a9-da494c54090e:1779807671084:4"
+}
+[2026-05-26 20:00] === Watchdog v3 run ===
+[2026-05-26 20:00] WARN: Jobs data stale (751h), triggering pipeline
+[2026-05-26 20:00] FIXED: Pipeline triggered

@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-05-26T05:00:36.846034+02:00",
-    "duration_ms": 33054,
+    "generated_at": "2026-05-26T17:00:44.589323+02:00",
+    "duration_ms": 39671,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "7b965aad",
+    "run_id": "b177b066",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -50,30 +50,6 @@
         "growth"
       ],
       "raw_snippet": "In a world of possibilities, pursue one with endless opportunities. Imagine Next!  \n\n\nAt Parsons, you can imagine a career where you thrive, work with exceptional people, and be yourself. Guided by our leadership vision of valuing people, embracing agility, and fostering growth, we cultivate an innovative culture that empowers you to achieve your full potential. Unleash your talent and redefine what\u2019s possible. **Job Description:**\n\n\nParsons is seeking an exceptional **Program Direc****tor** to ",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-38e5146042a6e3a2",
-      "source": "indeed",
-      "title": "Finance Director",
-      "company": "Sony Music Entertainment",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=38e5146042a6e3a2",
-      "posted": "2026-05-23",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 33,
-      "match_keywords": [
-        "operational excellence",
-        "ai",
-        "director",
-        "leadership",
-        "dubai"
-      ],
-      "raw_snippet": "Finance\nDubai\n  \nAs the Finance Director, you will act as a key partner to the Managing Director and regional leadership, driving investment decisions across artists, catalog, partnerships, and acquisitions, while ensuring best\\-in\\-class financial governance and operational excellence.\n\nYou will be responsible for the overall finance operations, analytics, reporting, budget preparation and M\\&A execution.\n\n\n\nYou will manage and control overall accounting and reporting systems ensuring complianc",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
@@ -150,6 +126,29 @@
       "search_title": "Director Digital Transformation"
     },
     {
+      "id": "indeed-in-dc1c5ad37577e0cb",
+      "source": "indeed",
+      "title": "Senior Manager Software Engineering",
+      "company": "DataFlow Group",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=dc1c5ad37577e0cb",
+      "posted": "2026-05-26",
+      "seniority": "Other",
+      "domain_match": true,
+      "keyword_score": 16,
+      "match_keywords": [
+        "ai",
+        "gcc",
+        "uae",
+        "platform"
+      ],
+      "raw_snippet": "We are seeking a strategic and hands\\-on **Senior Manager, Software Engineering** to lead the evolution of our core software platforms. This pivotal role owns the entire lifecycle of our internal and external software solutions\u2014from day\\-to\\-day architectural integrity to long\\-term strategic vision. You will be the central point of ownership for how the company builds, deploys, and maintains its high\\-performance applications in front of our key client base across the UAE and the GCC region.\n\nT",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Head of Technology"
+    },
+    {
       "id": "indeed-in-7c8f2f8b76f7ecdc",
       "source": "indeed",
       "title": "Senior Manager - Technology Sourcing",
@@ -205,7 +204,7 @@
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
-      "search_title": "Head of Technology"
+      "search_title": "Head of IT"
     },
     {
       "id": "indeed-in-d1c0525b2c7fdf91",
@@ -255,7 +254,7 @@
       "id": "indeed-in-2eafbc2717ccc208",
       "source": "indeed",
       "title": "Senior Systems Integration Director",
-      "company": "Confidential",
+      "company": "None",
       "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
       "url": "https://sa.indeed.com/viewjob?jk=2eafbc2717ccc208",
       "posted": "2026-05-24",
@@ -276,7 +275,7 @@
       "relevant": true,
       "filter_reason": null,
       "search_country": "Saudi Arabia",
-      "search_title": "Program Director"
+      "search_title": "Director Digital Transformation"
     },
     {
       "id": "indeed-in-074c177f93c7b2f2",
@@ -301,7 +300,7 @@
   ],
   "kpi": {
     "searches_run": 20,
-    "results_per_search": 2.95,
+    "results_per_search": 3.3,
     "unique_jobs": 13,
     "errors": 9
   },

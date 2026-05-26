@@ -16,8 +16,6 @@ CAIRO = ZoneInfo('Africa/Cairo')
 AHMED_DM_TARGET = '866838380'
 CEO_GENERAL_TARGET = '-1003882622947:10'
 TRANSIENT_FAILURE_THRESHOLD = 2
-CHECK_TIMEOUT_SECONDS = 140
-STATUS_PROBE_TIMEOUT_SECONDS = 30
 
 
 def send_telegram(target: str, text: str) -> tuple[bool, str]:
@@ -152,7 +150,7 @@ def extract_codex_usage():
     if STATUS_CACHE.exists():
         data = json.loads(STATUS_CACHE.read_text())
     else:
-        rc, stdout, stderr = run_subprocess(['openclaw', 'status', '--usage', '--json'], timeout=STATUS_PROBE_TIMEOUT_SECONDS)
+        rc, stdout, stderr = run_subprocess(['openclaw', 'status', '--usage', '--json'], timeout=150)
         mixed = stdout if stdout else stderr
         if rc != 0 and not mixed.strip():
             raise RuntimeError(f'openclaw status usage exited {rc} with no output')
@@ -201,7 +199,7 @@ def main():
 
     check_env = dict(os.environ)
     check_env['MODEL_GUARDIAN_STATUS_CACHE'] = str(STATUS_CACHE)
-    rc, stdout, stderr = run_subprocess(['python3', str(CHECK_SCRIPT)], timeout=CHECK_TIMEOUT_SECONDS, env=check_env)
+    rc, stdout, stderr = run_subprocess(['python3', str(CHECK_SCRIPT)], timeout=390, env=check_env)
     combined = '\n'.join(part for part in [stdout.strip(), stderr.strip()] if part).strip()
     if combined:
         info.extend(line for line in combined.splitlines() if line.strip())
@@ -212,7 +210,10 @@ def main():
             count = int(state.get('consecutiveTransientProbeFailures') or 0) + 1
             state['consecutiveTransientProbeFailures'] = count
             save_state(state)
-            info.append(f'TRANSIENT_SUPPRESSED: probe transient count {count}: {reason}')
+            if count >= TRANSIENT_FAILURE_THRESHOLD:
+                dm_alerts.append(f"Model Guardian alert: {reason}")
+            else:
+                info.append(f'TRANSIENT_SUPPRESSED: probe timeout count {count}/{TRANSIENT_FAILURE_THRESHOLD}')
         else:
             dm_alerts.append(f"Model Guardian alert: {reason}")
 
@@ -252,14 +253,17 @@ def main():
     except Exception as e:
         reason = f'usage snapshot failed - {e}'
         if is_transient_probe_failure(reason):
-            if transient_probe_failure:
-                info.append(f'TRANSIENT_SUPPRESSED: usage snapshot skipped after check probe failure: {reason}')
+            transient_probe_failure = True
+            if 'consecutiveTransientProbeFailures' in state and info and any('TRANSIENT_SUPPRESSED:' in line for line in info):
+                count = int(state.get('consecutiveTransientProbeFailures') or 0)
             else:
-                transient_probe_failure = True
                 count = int(state.get('consecutiveTransientProbeFailures') or 0) + 1
                 state['consecutiveTransientProbeFailures'] = count
                 save_state(state)
-                info.append(f'TRANSIENT_SUPPRESSED: usage transient count {count}: {reason}')
+            if count >= TRANSIENT_FAILURE_THRESHOLD:
+                dm_alerts.append(f'Model Guardian alert: {reason}')
+            else:
+                info.append(f'TRANSIENT_SUPPRESSED: usage transient count {count}/{TRANSIENT_FAILURE_THRESHOLD}')
         else:
             dm_alerts.append(f'Model Guardian alert: {reason}')
 
@@ -283,7 +287,7 @@ def main():
         if not ok:
             delivery_failures.append(f'CEO delivery failed: {detail}')
     if delivery_failures:
-        print('WARN: ' + '; '.join(delivery_failures))
+        raise RuntimeError('; '.join(delivery_failures))
     if not dm_alerts and not ceo_alerts:
         print('NO_ALERTS')
 

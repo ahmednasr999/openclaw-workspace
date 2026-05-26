@@ -1,25 +1,55 @@
 {
   "status": "ok",
-  "scan_time": "2026-05-25T16:03:23.859771+02:00",
-  "total_scanned": 16,
+  "scan_time": "2026-05-26T15:04:18.581488+02:00",
+  "total_scanned": 36,
   "by_category": {
-    "interview_invite": 0,
-    "recruiter_reach": 0,
+    "interview_invite": 1,
+    "recruiter_reach": 1,
     "application_ack": 0,
     "rejection": 0,
     "assessment": 0,
     "follow_up_needed": 0,
     "job_alert": 0,
-    "other": 16
+    "other": 34
   },
-  "interview_invites": [],
-  "recruiter_messages": [],
+  "interview_invites": [
+    {
+      "id": "359279",
+      "from": "diib <support@diib.com>",
+      "subject": "diib alert: Excellent news! =?utf-8?Q?www=2E?=\r\n =?utf-8?Q?yalla=2Eonline=E2=80=99s?= mobile speed just increased by 11\r\n =?utf-8?Q?poin?=\r\n =?utf-8?Q?ts=2E=0A?=",
+      "date": "Tue, 26 May 2026 11:08:08 +0000",
+      "unread": true,
+      "priority": "LOW",
+      "score": 0,
+      "pipeline_match": null
+    }
+  ],
+  "recruiter_messages": [
+    {
+      "id": "359268",
+      "from": "NaukriGulf <recommendedjobs@naukrigulf.com>",
+      "subject": "Today's job picks - Project Controls Manager, General\r\n Manager, Digital Brand (MENA) & more jobs",
+      "date": "Tue, 26 May 2026 15:27:49 +0530 (IST)",
+      "unread": true,
+      "priority": "MEDIUM",
+      "score": 2,
+      "pipeline_match": null
+    }
+  ],
   "application_acks": [],
   "rejections": [],
   "assessments": [],
   "follow_ups_needed": [],
   "job_alerts": [],
-  "actionable_count": 0,
-  "hot_alerts": [],
+  "actionable_count": 2,
+  "hot_alerts": [
+    {
+      "id": "359279",
+      "subject": "diib alert: Excellent news! =?utf-8?Q?www=2E?=\r\n =?utf-8?Q?yalla=2Eonline=E2=80=99s?= mobile speed just increased by 11\r\n =?utf-8?Q?poin?=\r\n =?utf-8?Q?ts=2E=0A?=",
+      "from": "diib <support@diib.com>",
+      "priority": "LOW",
+      "pipeline_match": null
+    }
+  ],
   "signals": []
 }
