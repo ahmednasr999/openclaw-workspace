@@ -6,16 +6,18 @@ and cache them for the morning briefing.
 Output: /tmp/calendar-events-YYYY-MM-DD.json
 """
 import json, os, sys, subprocess
-from datetime import datetime, timezone, timedelta
+from datetime import datetime
+from zoneinfo import ZoneInfo
 
-CAIRO = timezone(timedelta(hours=2))
+CAIRO = ZoneInfo("Africa/Cairo")
 now = datetime.now(CAIRO)
 today = now.strftime("%Y-%m-%d")
 output_path = f"/tmp/calendar-events-{today}.json"
 
-# Cairo is UTC+2
-time_min = f"{today}T00:00:00+02:00"
-time_max = f"{today}T23:59:59+02:00"
+day_start = now.replace(hour=0, minute=0, second=0, microsecond=0)
+day_end = now.replace(hour=23, minute=59, second=59, microsecond=0)
+time_min = day_start.isoformat()
+time_max = day_end.isoformat()
 
 OPENCLAW_INVOKE = [
     "node", "-e", """
@@ -107,16 +109,29 @@ def main():
         print(f"Calendar prefetch: 0 events (Composio unavailable - writing empty cache)")
     else:
         print(f"Calendar prefetch: {len(events)} events for {today}")
-        for ev in events:
-            title = ev.get("title", "(No title)")
-            if ev.get("is_all_day"):
+        print(f"Fetched at: {now.isoformat(timespec='seconds')}")
+
+        all_day_events = [ev for ev in events if ev.get("is_all_day")]
+        timed_events = [ev for ev in events if not ev.get("is_all_day")]
+
+        print("All-day events:")
+        if all_day_events:
+            for ev in all_day_events:
+                title = ev.get("title", "(No title)")
                 print(f"  ALL-DAY: {title}")
-            else:
-                start = ev.get("start", "")
-                end = ev.get("end", "")
-                st = start.split("T")[1][:5] if "T" in start else start
-                en = end.split("T")[1][:5] if "T" in end else end
-                print(f"  {st}-{en}: {title}")
+        else:
+            print("  None")
+
+        print("Timed events:")
+        if not timed_events:
+            print("  None")
+        for ev in timed_events:
+            title = ev.get("title", "(No title)")
+            start = ev.get("start", "")
+            end = ev.get("end", "")
+            st = start.split("T")[1][:5] if "T" in start else start
+            en = end.split("T")[1][:5] if "T" in end else end
+            print(f"  {st}-{en}: {title}")
 
     with open(output_path, "w") as f:
         json.dump(events, f, indent=2)

@@ -4934,3 +4934,219 @@ Update Summary:
   Updated: 19
 
 Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-27T07:30:02.280807+03:00] Starting Cron Dashboard Update...
+Discovered 47 crons (19 system, 28 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 47
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-27T08:00:02.020770+03:00] Starting Cron Dashboard Update...
+Discovered 19 crons (19 system, 0 openclaw)
+
+Update Summary:
+  Created: 1
+  Updated: 18
+  Errors: 1
+    - Error parsing openclaw crons: Command '['openclaw', 'cron', 'list', '--json']' timed out after 45 seconds
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-27T08:30:01.777222+03:00] Starting Cron Dashboard Update...
+Discovered 47 crons (19 system, 28 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 47
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-27T09:00:02.313325+03:00] Starting Cron Dashboard Update...
+Discovered 19 crons (19 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 19
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-27T09:30:02.240056+03:00] Starting Cron Dashboard Update...
+Discovered 47 crons (19 system, 28 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 47
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-27T10:00:02.002551+03:00] Starting Cron Dashboard Update...
+Discovered 19 crons (19 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 19
+  Errors: 1
+    - Error parsing openclaw crons: Command '['openclaw', 'cron', 'list', '--json']' timed out after 45 seconds
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-27T10:30:01.570917+03:00] Starting Cron Dashboard Update...
+Discovered 47 crons (19 system, 28 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 47
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-27T11:00:02.929559+03:00] Starting Cron Dashboard Update...
+Discovered 19 crons (19 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 19
+  Errors: 1
+    - Error parsing openclaw crons: Command '['openclaw', 'cron', 'list', '--json']' timed out after 45 seconds
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-27T11:30:02.101115+03:00] Starting Cron Dashboard Update...
+Discovered 47 crons (19 system, 28 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 47
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-27T12:00:03.106753+03:00] Starting Cron Dashboard Update...
+Discovered 19 crons (19 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 19
+  Errors: 1
+    - Error parsing openclaw crons: Command '['openclaw', 'cron', 'list', '--json']' timed out after 45 seconds
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-27T12:30:01.968176+03:00] Starting Cron Dashboard Update...
+Discovered 47 crons (19 system, 28 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 47
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-27T13:00:01.328085+03:00] Starting Cron Dashboard Update...
+Discovered 19 crons (19 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 19
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-27T13:30:02.295843+03:00] Starting Cron Dashboard Update...
+Discovered 47 crons (19 system, 28 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 47
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-27T14:00:02.404020+03:00] Starting Cron Dashboard Update...
+Discovered 19 crons (19 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 19
+  Errors: 1
+    - Error parsing openclaw crons: Command '['openclaw', 'cron', 'list', '--json']' timed out after 45 seconds
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-27T14:30:01.877043+03:00] Starting Cron Dashboard Update...
+Discovered 47 crons (19 system, 28 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 47
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-27T15:00:02.144172+03:00] Starting Cron Dashboard Update...
+Discovered 19 crons (19 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 19
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-27T15:30:01.303400+03:00] Starting Cron Dashboard Update...
+Discovered 47 crons (19 system, 28 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 47
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-27T16:00:02.169155+03:00] Starting Cron Dashboard Update...
+Discovered 19 crons (19 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 19
+  Errors: 1
+    - Error parsing openclaw crons: Command '['openclaw', 'cron', 'list', '--json']' timed out after 45 seconds
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-27T16:30:02.420592+03:00] Starting Cron Dashboard Update...
+Discovered 47 crons (19 system, 28 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 47
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-27T17:00:01.946359+03:00] Starting Cron Dashboard Update...
+Discovered 19 crons (19 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 19
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-27T17:30:01.794368+03:00] Starting Cron Dashboard Update...
+Discovered 47 crons (19 system, 28 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 47
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-27T18:00:03.074251+03:00] Starting Cron Dashboard Update...
+Discovered 47 crons (19 system, 28 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 46
+  Errors: 1
+    - Error updating page 'Stop GPT-5.5 quota tracker after final recommendation': 429
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-27T18:30:01.394128+03:00] Starting Cron Dashboard Update...
+Discovered 47 crons (19 system, 28 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 47
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-27T19:00:02.526192+03:00] Starting Cron Dashboard Update...
+Discovered 47 crons (19 system, 28 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 47
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-27T19:30:02.106130+03:00] Starting Cron Dashboard Update...
+Discovered 47 crons (19 system, 28 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 46
+  Errors: 1
+    - Error updating page 'Email Agent (Sun-Thu)': 429
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json

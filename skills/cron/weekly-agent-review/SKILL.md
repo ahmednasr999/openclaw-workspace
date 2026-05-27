@@ -71,10 +71,8 @@ openclaw cron add \
   --timezone "Africa/Cairo"
 ```
 
-Or add to the crontab manually:
-```cron
-0 8 * * 0 python3 /root/.openclaw/workspace/scripts/weekly-agent-review.py >> /root/.openclaw/workspace/memory/cron-recovery.log 2>&1
-```
+Register this job only through the OpenClaw scheduler. That keeps runs,
+delivery, failure alerts, and audit state visible in one place.
 
 ---
 

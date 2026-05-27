@@ -67,25 +67,44 @@ LIMIT 10;" 2>/dev/null
 
 ## Step 2: Identify Stale Conversations
 
-A conversation is "stale" if no activity in 14+ days and it has more than 10 messages (worth keeping summaries for) but fewer than 3 summaries.
+A stale coverage gap is a conversation with no activity in 14+ days and more than 10 messages where one or more messages are not linked to any summary through `summary_messages`. Do not use a raw "fewer than 3 summaries" count as the warning condition; it creates false positives for small but fully covered conversations.
 
 ```bash
-echo "=== STALE CONVERSATIONS (14+ days, active but under-summarized) ==="
+echo "=== STALE SUMMARY COVERAGE GAPS (14+ days, uncovered messages) ==="
 sqlite3 /root/.openclaw/lcm.db "
-SELECT c.conversation_id, c.session_id,
-       COUNT(m.message_id) as msg_count,
-       SUM(m.token_count) as total_tokens,
-       COUNT(s.summary_id) as summary_count,
-       c.updated_at as last_activity,
-       ROUND(JULIANDAY('now') - JULIANDAY(c.updated_at)) as days_stale
-FROM conversations c
-LEFT JOIN messages m ON m.conversation_id = c.conversation_id
-LEFT JOIN summaries s ON s.conversation_id = c.conversation_id
-GROUP BY c.conversation_id
-HAVING days_stale > 14
-   AND msg_count > 10
-   AND summary_count < 3
-ORDER BY total_tokens DESC
+WITH per AS (
+  SELECT c.conversation_id,
+         c.session_id,
+         COUNT(m.message_id) AS msg_count,
+         COALESCE(SUM(m.token_count),0) AS total_tokens,
+         (SELECT COUNT(*) FROM summaries s WHERE s.conversation_id = c.conversation_id) AS summary_count,
+         SUM(CASE WHEN NOT EXISTS (
+           SELECT 1
+           FROM summary_messages sm
+           JOIN summaries s ON s.summary_id = sm.summary_id
+           WHERE sm.message_id = m.message_id
+             AND s.conversation_id = c.conversation_id
+         ) THEN 1 ELSE 0 END) AS uncovered_msgs,
+         SUM(CASE WHEN NOT EXISTS (
+           SELECT 1
+           FROM summary_messages sm
+           JOIN summaries s ON s.summary_id = sm.summary_id
+           WHERE sm.message_id = m.message_id
+             AND s.conversation_id = c.conversation_id
+         ) THEN m.token_count ELSE 0 END) AS uncovered_tokens,
+         c.updated_at AS last_activity,
+         ROUND(JULIANDAY('now') - JULIANDAY(c.updated_at)) AS days_stale
+  FROM conversations c
+  JOIN messages m ON m.conversation_id = c.conversation_id
+  GROUP BY c.conversation_id
+)
+SELECT conversation_id, session_id, msg_count, total_tokens, summary_count,
+       uncovered_msgs, uncovered_tokens, last_activity, days_stale
+FROM per
+WHERE days_stale > 14
+  AND msg_count > 10
+  AND uncovered_msgs > 0
+ORDER BY uncovered_tokens DESC
 LIMIT 20;" 2>/dev/null
 
 echo "---"
@@ -251,7 +270,7 @@ Use the highest applicable severity:
   - DB is 4GB or larger, or 3GB+ with rapid growth (>250MB/day) or another hygiene warning
   - Image payload bloat guard finds/applies 50MB+ of inline image data
   - WAL is above threshold but checkpoint succeeds
-  - Stale under-summarized conversations exist
+  - Stale summary coverage gaps exist
   - Compactable uncompacted conversations remain after self-heal with low token impact
 
 - `🟢 HEALTHY` only when no blockers or warnings remain.
@@ -285,7 +304,7 @@ Risk: [low/medium + why]
 🟢 DB readable: [size]
 🟢 Orphans: [count]
 🟢 Expansion spot test: [PASS summary_id]
-⚠️ Stale under-summarized: [count]
+⚠️ Stale coverage gaps: [count]
 ⚠️ Compactable backlog: [before] → [after], [tokens] tokens
 
 Action: [what was done / what CTO should review]. Full report saved: [path]

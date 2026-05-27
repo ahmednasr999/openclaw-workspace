@@ -1,0 +1,13 @@
+{
+  "task": "approved-14day-post",
+  "ts": "2026-05-27T11:00:03.059124+03:00",
+  "cmd": [
+    "/usr/bin/python3",
+    "scripts/run_approved_14day_daily_post.py"
+  ],
+  "cwd": "/root/.openclaw/workspace-cmo",
+  "returncode": 1,
+  "stdout": "{\n  \"ok\": false,\n  \"event\": \"failed\",\n  \"post_number\": 13,\n  \"expected_date\": \"2026-05-27\",\n  \"error\": \"No Composio API key configured\",\n  \"manual_fallback\": \"/root/.openclaw/workspace-cmo/outbox/manual-linkedin-fallback-post-13-2026-05-27.md\"\n}\n",
+  "stderr": "",
+  "log_path": "/root/.openclaw/workspace/logs/direct-cron/approved-14day-post-20260527-110002.log"
+}

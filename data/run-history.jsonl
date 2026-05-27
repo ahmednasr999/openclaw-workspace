@@ -2640,3 +2640,20 @@
 {"agent": "jobs-source-linkedin-jobspy", "run_id": "ecb867b4", "started": "2026-05-27T04:26:20.054737+02:00", "duration_ms": 1574191, "status": "success", "records": 435, "error": null}
 {"agent": "jobs-source-google", "run_id": "12204a83", "started": "2026-05-27T05:00:03.323131+02:00", "duration_ms": 6, "status": "error", "records": 0, "error": "No Composio consumer key found in openclaw.json"}
 {"agent": "jobs-source-indeed", "run_id": "6a8c76fe", "started": "2026-05-27T05:00:37.343842+02:00", "duration_ms": 34242, "status": "success", "records": 11, "error": null}
+{"agent": "jobs-source-google", "run_id": "62d79130", "started": "2026-05-27T07:00:03.145349+02:00", "duration_ms": 9, "status": "error", "records": 0, "error": "No Composio consumer key found in openclaw.json"}
+{"agent": "jobs-source-indeed", "run_id": "4e4536f4", "started": "2026-05-27T07:00:35.006593+02:00", "duration_ms": 32706, "status": "success", "records": 10, "error": null}
+{"agent": "email-agent", "run_id": "63415dbf", "started": "2026-05-27T07:03:00.812962+02:00", "duration_ms": 85957, "status": "success", "records": 15, "error": null}
+{"agent": "jobs-source-google", "run_id": "6b80befc", "started": "2026-05-27T09:00:03.858950+02:00", "duration_ms": 35, "status": "error", "records": 0, "error": "No Composio consumer key found in openclaw.json"}
+{"agent": "jobs-source-indeed", "run_id": "8d60d36e", "started": "2026-05-27T09:00:39.325071+02:00", "duration_ms": 36063, "status": "success", "records": 10, "error": null}
+{"agent": "jobs-source-google", "run_id": "297b748f", "started": "2026-05-27T11:00:03.649935+02:00", "duration_ms": 9, "status": "error", "records": 0, "error": "No Composio consumer key found in openclaw.json"}
+{"agent": "jobs-source-indeed", "run_id": "0e05df02", "started": "2026-05-27T11:00:39.709195+02:00", "duration_ms": 36204, "status": "success", "records": 10, "error": null}
+{"agent": "email-agent", "run_id": "5853dfdb", "started": "2026-05-27T11:03:38.378835+02:00", "duration_ms": 115385, "status": "success", "records": 15, "error": null}
+{"agent": "email-agent", "run_id": "bea30dc2", "started": "2026-05-27T11:03:47.339632+02:00", "duration_ms": 61046, "status": "success", "records": 15, "error": null}
+{"agent": "jobs-source-google", "run_id": "fbb8f693", "started": "2026-05-27T13:00:02.378474+02:00", "duration_ms": 9, "status": "error", "records": 0, "error": "No Composio consumer key found in openclaw.json"}
+{"agent": "jobs-source-indeed", "run_id": "0c9ecb94", "started": "2026-05-27T13:00:34.649093+02:00", "duration_ms": 32328, "status": "success", "records": 9, "error": null}
+{"agent": "jobs-source-google", "run_id": "d747cc3f", "started": "2026-05-27T15:00:02.694505+02:00", "duration_ms": 21, "status": "error", "records": 0, "error": "No Composio consumer key found in openclaw.json"}
+{"agent": "jobs-source-indeed", "run_id": "77055640", "started": "2026-05-27T15:00:32.682207+02:00", "duration_ms": 30097, "status": "success", "records": 8, "error": null}
+{"agent": "email-agent", "run_id": "4614b5ea", "started": "2026-05-27T15:05:06.012132+02:00", "duration_ms": 158951, "status": "success", "records": 15, "error": null}
+{"agent": "jobs-source-google", "run_id": "c456a089", "started": "2026-05-27T17:00:03.093046+02:00", "duration_ms": 5, "status": "error", "records": 0, "error": "No Composio consumer key found in openclaw.json"}
+{"agent": "jobs-source-indeed", "run_id": "6d12f666", "started": "2026-05-27T17:00:34.123859+02:00", "duration_ms": 30953, "status": "success", "records": 7, "error": null}
+{"agent": "jobs-source-google", "run_id": "c370d6e9", "started": "2026-05-27T19:00:03.293419+02:00", "duration_ms": 20, "status": "error", "records": 0, "error": "No Composio consumer key found in openclaw.json"}

@@ -145,11 +145,7 @@ main() {
   restart_reason=""
   if [ "$health_ms" -ge "$SLOW_HEALTH_MS" ]; then
     reason="${reason}slow-health-${health_ms}ms,"
-    if [ "$app_count" -gt 0 ]; then
-      log "restart-deferred reason=slow-health-${health_ms}ms active_app_servers=${app_count}"
-    else
-      restart_reason="${restart_reason}slow-health-${health_ms}ms,"
-    fi
+    restart_reason="${restart_reason}slow-health-${health_ms}ms,"
   fi
   if [ "$signals" -ge 3 ]; then
     reason="${reason}starvation-signals-${signals},"

@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-05-27T05:00:37.343053+02:00",
-    "duration_ms": 34241,
+    "generated_at": "2026-05-27T17:00:34.123438+02:00",
+    "duration_ms": 30953,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "6a8c76fe",
+    "run_id": "6d12f666",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -56,30 +56,6 @@
       "search_title": "Program Director"
     },
     {
-      "id": "indeed-in-aaab1fac8ffd45cf",
-      "source": "indeed",
-      "title": "WPP Media: Associate Director, Performance- Dubai",
-      "company": "WPP Media",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=aaab1fac8ffd45cf",
-      "posted": "2026-05-24",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 26,
-      "match_keywords": [
-        "ai",
-        "director",
-        "growth",
-        "dubai",
-        "platform"
-      ],
-      "raw_snippet": "**About WPP Media**\n\n\n\nWPP is the trusted growth partner for the world's leading brands. With exceptional talent, trusted data and intelligence, and world\\-class partnerships \u2013 all united by our pioneering agentic marketing platform, WPP Open \u2013 we help clients navigate change, capture opportunity, and deliver transformational growth.\n\n\n\nWPP Media is WPP's AI\\-driven media operating unit, bringing together media, data, and partnerships to deliver creative personalisation at scale. Connected throu",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Director Digital Transformation"
-    },
-    {
       "id": "indeed-in-dc1c5ad37577e0cb",
       "source": "indeed",
       "title": "Senior Manager Software Engineering",
@@ -115,28 +91,6 @@
       "keyword_score": 0,
       "match_keywords": [],
       "raw_snippet": "The Senior Manager is responsible for developing and executing sourcing strategies for a set of tech categories across ENBD Group locations. This role ensures category\\-level delivery of service to businesses, manage spend and cost savings in line with strategies set by the Tech Sourcing Head. It plays a pivotal role in translating sourcing strategies into actionable plans within assigned categories across Group Locations.  \n\n**Key Responsibilities:**\n\n* **Develop And Implement** **Sourcing Stra",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Head of Technology"
-    },
-    {
-      "id": "indeed-in-0b8b640e0e8f81a4",
-      "source": "indeed",
-      "title": "Senior Manager, Strategy Planning",
-      "company": "Commercial Bank of Dubai",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=0b8b640e0e8f81a4",
-      "posted": "2026-05-25",
-      "seniority": "Other",
-      "domain_match": true,
-      "keyword_score": 16,
-      "match_keywords": [
-        "ai",
-        "growth",
-        "dubai"
-      ],
-      "raw_snippet": "Dubai, Dubai, AE Experienced ID: TBC\n  \n### **DESCRIPTION**\n\n\n**JOB RESPONSIBILITIES**\n\n* Lead the design and delivery of CBD's annual and multi\\-year corporate strategy, coordinating inputs across business units, Finance, Risk, and Technology\n* Conduct macro\\-environmental, competitive landscape, and market opportunity analyses to inform strategic direction and identify white spaces for growth\n* Develop and maintain the corporate strategy narrative, including strategic pillars, KPI frameworks, ",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
@@ -183,55 +137,6 @@
       "search_title": "Program Director"
     },
     {
-      "id": "indeed-in-6992dbbee44ab471",
-      "source": "indeed",
-      "title": "Commercial Director",
-      "company": "Parsons",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=6992dbbee44ab471",
-      "posted": "2026-05-24",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 20,
-      "match_keywords": [
-        "director",
-        "leadership",
-        "growth"
-      ],
-      "raw_snippet": "In a world of possibilities, pursue one with endless opportunities. Imagine Next!  \n\n\nAt Parsons, you can imagine a career where you thrive, work with exceptional people, and be yourself. Guided by our leadership vision of valuing people, embracing agility, and fostering growth, we cultivate an innovative culture that empowers you to achieve your full potential. Unleash your talent and redefine what\u2019s possible. **Job Description:**\n\n\nParsons is looking for an amazingly talented **Commercial Dire",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-2eafbc2717ccc208",
-      "source": "indeed",
-      "title": "Senior Systems Integration Director",
-      "company": "None",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=2eafbc2717ccc208",
-      "posted": "2026-05-24",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 36,
-      "match_keywords": [
-        "infrastructure",
-        "enterprise",
-        "director",
-        "ksa",
-        "api",
-        "integration",
-        "architecture",
-        "platform"
-      ],
-      "raw_snippet": "**Job Summary:**  \nESGA Tech Digital Solutions KSA WLL is seeking a Senior Systems Integration Director to lead enterprise integration strategy, complex systems implementation, and cross\\-platform technology coordination across large\\-scale digital environments. This role is responsible for overseeing integration architecture, API ecosystems, enterprise connectivity, and ensuring seamless interoperability between business\\-critical applications and infrastructure systems. If you are an experienc",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Director Digital Transformation"
-    },
-    {
       "id": "indeed-in-074c177f93c7b2f2",
       "source": "indeed",
       "title": "Associate Director - Urban Strategies",
@@ -254,9 +159,9 @@
   ],
   "kpi": {
     "searches_run": 20,
-    "results_per_search": 3.1,
-    "unique_jobs": 11,
-    "errors": 10
+    "results_per_search": 2.25,
+    "unique_jobs": 7,
+    "errors": 12
   },
   "recommendations": []
 }

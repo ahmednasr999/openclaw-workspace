@@ -1510,3 +1510,9 @@ Before replying in a noisy/compacted Telegram session, identify the current user
 - Last-Seen: 2026-05-11
 
 ---
+## 2026-05-27 - LCM Active Context Can Need Targeted Compaction Despite Existing Summaries
+
+- Situation: Health guard reported conversation `6574` at 345,315 active-context tokens, but the generic force-compact queue ignored it because the conversation already had summaries.
+- Better approach: Back up `/root/.openclaw/lcm.db`, create a one-item queue with the active conversation/session JSONL, run `lcm-compact-processor.mjs --queue <queue> --limit 1`, then rerun the health dashboard.
+- Verification: The targeted run reduced active context to 12,481 tokens and the dashboard returned OK.
+

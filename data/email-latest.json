@@ -1,31 +1,42 @@
 {
   "status": "ok",
-  "scan_time": "2026-05-26T21:02:47.403707+02:00",
-  "total_scanned": 61,
+  "scan_time": "2026-05-27T15:03:05.909033+02:00",
+  "total_scanned": 34,
   "by_category": {
     "interview_invite": 0,
     "recruiter_reach": 1,
-    "application_ack": 0,
+    "application_ack": 1,
     "rejection": 0,
     "assessment": 0,
     "follow_up_needed": 0,
     "job_alert": 0,
-    "other": 60
+    "other": 32
   },
   "interview_invites": [],
   "recruiter_messages": [
     {
-      "id": "359312",
-      "from": "talabat <update.en@em.talabat.com>",
-      "subject": "=?UTF-8?B?2K7YtdmFICAgODAg2Kwg2YXYs9iq2YbZitmDIQ==?=",
-      "date": "Tue, 26 May 2026 14:41:57 +0000 (UTC)",
+      "id": "359440",
+      "from": "talabat mart <tmart@em.talabat.com>",
+      "subject": "=?UTF-8?B?2YPZhCDYp9mE2YTZiiDZgdmKINmG2YHYs9mDINio2K7YtdmF?=\r\n =?UTF-8?B?IDEwMNisINmF2YYg2LfZhNio2KfYqiDZhdin2LHYqg==?=",
+      "date": "Wed, 27 May 2026 11:47:17 +0000 (UTC)",
       "unread": true,
       "priority": "HIGH",
       "score": 6,
       "pipeline_match": "talabat"
     }
   ],
-  "application_acks": [],
+  "application_acks": [
+    {
+      "id": "359447",
+      "from": "Lenovo Talent Acquisition <talent@avature.lenovo.net>",
+      "subject": "Thank you and Survey Request",
+      "date": "Wed, 27 May 2026 12:13:10 +0000",
+      "unread": true,
+      "priority": "LOW",
+      "score": 0,
+      "pipeline_match": null
+    }
+  ],
   "rejections": [],
   "assessments": [],
   "follow_ups_needed": [],
@@ -36,8 +47,8 @@
     {
       "company": "talabat",
       "signal": "recruiter_email",
-      "subject": "=?UTF-8?B?2K7YtdmFICAgODAg2Kwg2YXYs9iq2YbZitmDIQ==?=",
-      "sender": "talabat <update.en@em.talabat.com>",
+      "subject": "=?UTF-8?B?2YPZhCDYp9mE2YTZiiDZgdmKINmG2YHYs9mDINio2K7YtdmF?=\r\n =?UTF-8?B?IDEwMNisINmF2YYg2LfZhNio2KfYqiDZhdin2LHYqg==?=",
+      "sender": "talabat mart <tmart@em.talabat.com>",
       "job_ids": [
         "linkedin-li-4415007377",
         "linkedin_jobspy-li-4397262230",
@@ -46,7 +57,7 @@
         "linkedin-li-4375708512"
       ],
       "score": 6,
-      "timestamp": "2026-05-26T21:02:46.987652+02:00"
+      "timestamp": "2026-05-27T15:03:05.735384+02:00"
     }
   ]
 }
