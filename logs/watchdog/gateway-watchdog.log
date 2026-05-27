@@ -165,3 +165,91 @@
 2026-05-26T19:56:14+03:00 chrome-trim term pid=1739617 count=17 rss_kb=2118616
 2026-05-26T19:56:21+03:00 observed reason=starvation-signals-3, pid=1712438 rss_kb=929920 app_servers=4 health_ms=1102 signals=3
 2026-05-26T19:58:34+03:00 chrome-trim term pid=1740433 count=17 rss_kb=2127048
+2026-05-26T20:00:54+03:00 chrome-trim term pid=1741279 count=16 rss_kb=1805192
+2026-05-26T20:01:06+03:00 health-fail count=1 pid=1712438 http=000 ms=6006
+2026-05-26T20:03:14+03:00 chrome-trim term pid=1742457 count=17 rss_kb=1894996
+2026-05-26T20:03:21+03:00 observed reason=starvation-signals-6, pid=1712438 rss_kb=958744 app_servers=4 health_ms=662 signals=6
+2026-05-26T20:05:35+03:00 observed reason=starvation-signals-3, pid=1712438 rss_kb=909568 app_servers=4 health_ms=840 signals=3
+2026-05-26T20:07:55+03:00 chrome-trim term pid=1743415 count=14 rss_kb=2410808
+2026-05-26T20:10:14+03:00 chrome-trim term pid=1744358 count=18 rss_kb=2146152
+2026-05-26T20:12:34+03:00 chrome-trim term pid=1745111 count=17 rss_kb=2019892
+2026-05-26T20:14:54+03:00 chrome-trim term pid=1745698 count=17 rss_kb=2245764
+2026-05-26T20:15:01+03:00 observed reason=starvation-signals-3, pid=1712438 rss_kb=938844 app_servers=4 health_ms=1433 signals=3
+2026-05-26T20:17:15+03:00 chrome-trim term pid=1746273 count=17 rss_kb=2113112
+2026-05-26T20:19:35+03:00 chrome-trim term pid=1746890 count=17 rss_kb=2312392
+2026-05-26T20:21:54+03:00 chrome-trim term pid=1747640 count=17 rss_kb=2023408
+2026-05-26T20:24:14+03:00 chrome-trim term pid=1748257 count=17 rss_kb=1972440
+2026-05-26T20:24:21+03:00 observed reason=starvation-signals-3, pid=1712438 rss_kb=940040 app_servers=4 health_ms=1033 signals=3
+2026-05-26T20:28:40+03:00 health-fail count=1 pid=1712438 http=000 ms=6006
+2026-05-26T20:30:55+03:00 observed reason=starvation-signals-3, pid=1712438 rss_kb=977112 app_servers=4 health_ms=595 signals=3
+2026-05-26T20:33:15+03:00 observed reason=starvation-signals-4, pid=1712438 rss_kb=974504 app_servers=4 health_ms=839 signals=4
+2026-05-26T20:45:00+03:00 health-fail count=1 pid=1712438 http=000 ms=6003
+2026-05-26T20:47:15+03:00 observed reason=starvation-signals-7, pid=1712438 rss_kb=975556 app_servers=4 health_ms=411 signals=7
+2026-05-26T20:51:54+03:00 observed reason=starvation-signals-3, pid=1712438 rss_kb=971776 app_servers=4 health_ms=2 signals=3
+2026-05-26T20:54:15+03:00 observed reason=starvation-signals-3, pid=1712438 rss_kb=967284 app_servers=4 health_ms=3 signals=3
+2026-05-26T20:56:18+03:00 health-fail count=1 pid=1752324 http=000 ms=0
+2026-05-26T22:01:40+03:00 health-fail count=1 pid=1752324 http=000 ms=6006
+2026-05-26T22:03:57+03:00 observed reason=starvation-signals-4, pid=1752324 rss_kb=940784 app_servers=2 health_ms=2398 signals=4
+2026-05-27T00:02:56+03:00 observed reason=starvation-signals-4, pid=1752324 rss_kb=971416 app_servers=2 health_ms=1116 signals=4
+2026-05-27T00:04:58+03:00 observed reason=starvation-signals-3, pid=1752324 rss_kb=934628 app_servers=2 health_ms=545 signals=3
+2026-05-27T00:07:04+03:00 observed reason=starvation-signals-5, pid=1752324 rss_kb=967636 app_servers=2 health_ms=2964 signals=5
+2026-05-27T00:09:20+03:00 health-fail count=1 pid=1752324 http=000 ms=6006
+2026-05-27T00:11:40+03:00 health-fail count=2 pid=1752324 http=000 ms=6006
+2026-05-27T00:11:40+03:00 restart-gateway reason=health-failures:2:http-000
+2026-05-27T00:12:19+03:00 post-restart health=000 0
+2026-05-27T00:58:20+03:00 health-fail count=1 pid=1759899 http=000 ms=6003
+2026-05-27T01:05:19+03:00 degraded count=1 reason=slow-health-4397ms, pid=1762796 rss_kb=814956 app_servers=0 health_ms=4397 signals=0
+2026-05-27T01:07:34+03:00 recovered pid=1762796 rss_kb=721224 app_servers=0 health_ms=3 signals=0
+2026-05-27T01:09:58+03:00 degraded count=1 reason=slow-health-3890ms, pid=1762796 rss_kb=1119220 app_servers=0 health_ms=3890 signals=0
+2026-05-27T01:12:14+03:00 recovered pid=1762796 rss_kb=891264 app_servers=2 health_ms=3 signals=0
+2026-05-27T01:16:40+03:00 health-fail count=1 pid=1763991 http=000 ms=6005
+2026-05-27T01:19:00+03:00 health-fail count=2 pid=1763991 http=000 ms=6006
+2026-05-27T01:19:00+03:00 restart-gateway reason=health-failures:2:http-000
+2026-05-27T01:19:39+03:00 post-restart health=000 0
+2026-05-27T01:28:20+03:00 health-fail count=1 pid=1764716 http=000 ms=6006
+2026-05-27T01:32:47+03:00 degraded count=1 reason=slow-health-4320ms, pid=1764716 rss_kb=1424604 app_servers=4 health_ms=4320 signals=1
+2026-05-27T01:32:54+03:00 recovered pid=1764716 rss_kb=1426384 app_servers=4 health_ms=2 signals=1
+2026-05-27T02:14:20+03:00 health-fail count=1 pid=1774464 http=000 ms=6006 app_servers=2
+2026-05-27T02:16:40+03:00 health-fail count=2 pid=1774464 http=000 ms=6006 app_servers=2
+2026-05-27T02:16:40+03:00 restart-deferred reason=health-failures:2:http-000 active_app_servers=2
+2026-05-27T02:25:55+03:00 observed reason=starvation-signals-3, pid=1774464 rss_kb=951036 app_servers=2 health_ms=156 signals=3
+2026-05-27T02:28:15+03:00 observed reason=starvation-signals-3, pid=1774464 rss_kb=994696 app_servers=2 health_ms=109 signals=3
+2026-05-27T02:33:00+03:00 health-fail count=1 pid=1774464 http=000 ms=6006 app_servers=2
+2026-05-27T02:37:40+03:00 health-fail count=1 pid=1774464 http=000 ms=6006 app_servers=4
+2026-05-27T02:39:59+03:00 restart-deferred reason=slow-health-4698ms active_app_servers=4
+2026-05-27T02:39:59+03:00 observed reason=slow-health-4698ms, pid=1774464 rss_kb=1674524 app_servers=4 health_ms=4698 signals=2
+2026-05-27T03:01:01+03:00 restart-deferred reason=slow-health-4344ms active_app_servers=4
+2026-05-27T03:01:01+03:00 observed reason=slow-health-4344ms, pid=1774464 rss_kb=957704 app_servers=4 health_ms=4344 signals=0
+2026-05-27T03:14:54+03:00 observed reason=starvation-signals-4, pid=1774464 rss_kb=954464 app_servers=4 health_ms=4 signals=4
+2026-05-27T03:31:00+03:00 health-fail count=1 pid=1774464 http=000 ms=6006 app_servers=4
+2026-05-27T03:33:20+03:00 health-fail count=2 pid=1774464 http=000 ms=6006 app_servers=6
+2026-05-27T03:33:20+03:00 restart-deferred reason=health-failures:2:http-000 active_app_servers=6
+2026-05-27T03:35:40+03:00 health-fail count=3 pid=1774464 http=000 ms=6006 app_servers=6
+2026-05-27T03:35:40+03:00 restart-deferred reason=health-failures:3:http-000 active_app_servers=6
+2026-05-27T03:38:01+03:00 health-fail count=4 pid=1774464 http=000 ms=6006 app_servers=6
+2026-05-27T03:38:01+03:00 restart-deferred reason=health-failures:4:http-000 active_app_servers=6
+2026-05-27T03:40:19+03:00 restart-deferred reason=slow-health-5281ms active_app_servers=6
+2026-05-27T03:40:19+03:00 observed reason=slow-health-5281ms,starvation-signals-5, pid=1774464 rss_kb=962588 app_servers=6 health_ms=5281 signals=5
+2026-05-27T03:55:40+03:00 health-fail count=1 pid=1774464 http=000 ms=6006 app_servers=6
+2026-05-27T03:58:00+03:00 health-fail count=2 pid=1774464 http=000 ms=6006 app_servers=6
+2026-05-27T03:58:00+03:00 restart-deferred reason=health-failures:2:http-000 active_app_servers=6
+2026-05-27T04:00:21+03:00 health-fail count=3 pid=1774464 http=000 ms=6001 app_servers=6
+2026-05-27T04:00:21+03:00 restart-deferred reason=health-failures:3:http-000 active_app_servers=6
+2026-05-27T04:02:35+03:00 observed reason=starvation-signals-3, pid=1774464 rss_kb=946648 app_servers=6 health_ms=2 signals=3
+2026-05-27T04:04:54+03:00 observed reason=starvation-signals-3, pid=1774464 rss_kb=1023180 app_servers=6 health_ms=5 signals=3
+2026-05-27T04:09:40+03:00 health-fail count=1 pid=1774464 http=000 ms=6001 app_servers=6
+2026-05-27T04:11:55+03:00 observed reason=starvation-signals-4, pid=1774464 rss_kb=975244 app_servers=6 health_ms=3 signals=4
+2026-05-27T04:13:59+03:00 observed reason=starvation-signals-4, pid=1774464 rss_kb=964296 app_servers=6 health_ms=2 signals=4
+2026-05-27T04:55:38+03:00 restart-deferred reason=slow-health-3781ms active_app_servers=6
+2026-05-27T04:55:38+03:00 observed reason=slow-health-3781ms, pid=1774464 rss_kb=984796 app_servers=6 health_ms=3781 signals=0
+2026-05-27T05:35:20+03:00 health-fail count=1 pid=1774464 http=000 ms=6006 app_servers=6
+2026-05-27T05:37:40+03:00 restart-deferred reason=slow-health-5452ms active_app_servers=6
+2026-05-27T05:37:40+03:00 observed reason=slow-health-5452ms, pid=1774464 rss_kb=971096 app_servers=6 health_ms=5452 signals=0
+2026-05-27T05:54:00+03:00 health-fail count=1 pid=1774464 http=000 ms=6007 app_servers=6
+2026-05-27T05:56:18+03:00 restart-deferred reason=slow-health-3807ms active_app_servers=6
+2026-05-27T05:56:18+03:00 observed reason=slow-health-3807ms, pid=1774464 rss_kb=984388 app_servers=6 health_ms=3807 signals=0
+2026-05-27T06:01:00+03:00 health-fail count=1 pid=1774464 http=000 ms=6002 app_servers=6
+2026-05-27T06:03:21+03:00 health-fail count=2 pid=1774464 http=000 ms=6004 app_servers=6
+2026-05-27T06:03:21+03:00 restart-deferred reason=health-failures:2:http-000 active_app_servers=6
+2026-05-27T06:07:27+03:00 health-fail count=1 pid=1774464 http=000 ms=6008 app_servers=6
+2026-05-27T07:01:00+03:00 health-fail count=1 pid=1774464 http=000 ms=6003 app_servers=6

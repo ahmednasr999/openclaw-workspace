@@ -2,51 +2,40 @@
   "meta": {
     "agent": "email-agent",
     "version": "3.0.0",
-    "generated_at": "2026-05-26T15:06:20.208577+02:00",
-    "duration_ms": 142240,
+    "generated_at": "2026-05-26T21:03:59.206785+02:00",
+    "duration_ms": 108119,
     "ttl_hours": 4,
     "status": "success",
     "error": null,
-    "run_id": "2446a0c9",
+    "run_id": "278e3723",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
     "status": "ok",
-    "scan_time": "2026-05-26T15:04:18.581488+02:00",
-    "total_scanned": 36,
+    "scan_time": "2026-05-26T21:02:47.403707+02:00",
+    "total_scanned": 61,
     "by_category": {
-      "interview_invite": 1,
+      "interview_invite": 0,
       "recruiter_reach": 1,
       "application_ack": 0,
       "rejection": 0,
       "assessment": 0,
       "follow_up_needed": 0,
       "job_alert": 0,
-      "other": 34
+      "other": 60
     },
-    "interview_invites": [
-      {
-        "id": "359279",
-        "from": "diib <support@diib.com>",
-        "subject": "diib alert: Excellent news! =?utf-8?Q?www=2E?=\r\n =?utf-8?Q?yalla=2Eonline=E2=80=99s?= mobile speed just increased by 11\r\n =?utf-8?Q?poin?=\r\n =?utf-8?Q?ts=2E=0A?=",
-        "date": "Tue, 26 May 2026 11:08:08 +0000",
-        "unread": true,
-        "priority": "LOW",
-        "score": 0,
-        "pipeline_match": null
-      }
-    ],
+    "interview_invites": [],
     "recruiter_messages": [
       {
-        "id": "359268",
-        "from": "NaukriGulf <recommendedjobs@naukrigulf.com>",
-        "subject": "Today's job picks - Project Controls Manager, General\r\n Manager, Digital Brand (MENA) & more jobs",
-        "date": "Tue, 26 May 2026 15:27:49 +0530 (IST)",
+        "id": "359312",
+        "from": "talabat <update.en@em.talabat.com>",
+        "subject": "=?UTF-8?B?2K7YtdmFICAgODAg2Kwg2YXYs9iq2YbZitmDIQ==?=",
+        "date": "Tue, 26 May 2026 14:41:57 +0000 (UTC)",
         "unread": true,
-        "priority": "MEDIUM",
-        "score": 2,
-        "pipeline_match": null
+        "priority": "HIGH",
+        "score": 6,
+        "pipeline_match": "talabat"
       }
     ],
     "application_acks": [],
@@ -54,50 +43,74 @@
     "assessments": [],
     "follow_ups_needed": [],
     "job_alerts": [],
-    "actionable_count": 2,
-    "hot_alerts": [
+    "actionable_count": 1,
+    "hot_alerts": [],
+    "signals": [
       {
-        "id": "359279",
-        "subject": "diib alert: Excellent news! =?utf-8?Q?www=2E?=\r\n =?utf-8?Q?yalla=2Eonline=E2=80=99s?= mobile speed just increased by 11\r\n =?utf-8?Q?poin?=\r\n =?utf-8?Q?ts=2E=0A?=",
-        "from": "diib <support@diib.com>",
-        "priority": "LOW",
-        "pipeline_match": null
+        "company": "talabat",
+        "signal": "recruiter_email",
+        "subject": "=?UTF-8?B?2K7YtdmFICAgODAg2Kwg2YXYs9iq2YbZitmDIQ==?=",
+        "sender": "talabat <update.en@em.talabat.com>",
+        "job_ids": [
+          "linkedin-li-4415007377",
+          "linkedin_jobspy-li-4397262230",
+          "linkedin-li-4370418095",
+          "linkedin-li-4389537891",
+          "linkedin-li-4375708512"
+        ],
+        "score": 6,
+        "timestamp": "2026-05-26T21:02:46.987652+02:00"
       }
     ],
-    "signals": [],
-    "llm_analysis": null
+    "llm_analysis": {
+      "actionable_emails": [
+        {
+          "id": "359312",
+          "subject": "=?UTF-8?B?2K7YtdmFICAgODAg2Kwg2YXYs9iq2YbZitmDIQ==?=",
+          "from": "talabat <update.en@em.talabat.com>",
+          "date": "Tue, 26 May 2026 14:41:57 +0000 (UTC)",
+          "category": "recruiter_reach",
+          "urgency": "low",
+          "intent": "Talabat is promoting an EGP 80 food-order discount, not a recruiter opportunity.",
+          "action": "no_action",
+          "response_deadline": "when convenient",
+          "notes": "Misclassified marketing email; no career action needed."
+        }
+      ],
+      "summary": {
+        "total_actionable": 1,
+        "critical_count": 0,
+        "requires_interview_prep": false,
+        "requires_assessment": false,
+        "recruiter_top_opportunities": [],
+        "top_priority": null,
+        "daily_focus": "No job-search action is needed from this batch; ignore the Talabat promo misclassification."
+      }
+    }
   },
   "kpi": {
-    "emails_processed": 36,
-    "actionable": 2,
-    "interviews_detected": 1,
+    "emails_processed": 61,
+    "actionable": 1,
+    "interviews_detected": 0,
     "recruiter_messages": 1,
-    "unread_actionable": 2
+    "unread_actionable": 1
   },
   "recommendations": [
     {
-      "id": "rec-2446a0c9-0",
-      "action": "respond_immediately",
-      "target": "1 interview invite(s)",
-      "reason": "Interview invitations require prompt response",
-      "urgency": "critical",
-      "timestamp": "2026-05-26T15:06:20.208423+02:00"
-    },
-    {
-      "id": "rec-2446a0c9-1",
+      "id": "rec-278e3723-0",
       "action": "review_and_respond",
       "target": "1 recruiter message(s)",
       "reason": "Recruiter outreach could lead to opportunities",
       "urgency": "high",
-      "timestamp": "2026-05-26T15:06:20.208450+02:00"
+      "timestamp": "2026-05-26T21:03:59.206598+02:00"
     },
     {
-      "id": "rec-2446a0c9-2",
+      "id": "rec-278e3723-1",
       "action": "check_inbox",
-      "target": "2 unread actionable email(s)",
+      "target": "1 unread actionable email(s)",
       "reason": "Unread emails need attention",
       "urgency": "high",
-      "timestamp": "2026-05-26T15:06:20.208453+02:00"
+      "timestamp": "2026-05-26T21:03:59.206616+02:00"
     }
   ]
 }

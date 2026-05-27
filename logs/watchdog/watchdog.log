@@ -3846,3 +3846,64 @@ Config warnings:
 [2026-05-26 20:00] === Watchdog v3 run ===
 [2026-05-26 20:00] WARN: Jobs data stale (751h), triggering pipeline
 [2026-05-26 20:00] FIXED: Pipeline triggered
+[2026-05-26 20:00] Summary: fixes=1 warnings=2 alerts=0
+[2026-05-26 22:00] === Watchdog v3 run ===
+[2026-05-26 22:00] WARN: Jobs data stale (753h), triggering pipeline
+[2026-05-26 22:00] FIXED: Pipeline triggered
+[2026-05-26 22:00] FIXED: Re-triggered failed cron 8621c802-3766-4ad9-be31-159ffe432e50
+[2026-05-26 22:00] FIXED: Re-triggered failed cron 00512934-214a-429e-8078-e7555bb1c120
+[2026-05-26 22:00] FIXED: Re-triggered failed cron 145d964f-e2e5-4b49-8058-f9ddac926f45
+[2026-05-26 22:00] Summary: fixes=4 warnings=2 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:145d964f-e2e5-4b49-8058-f9ddac926f45:1779822040081:1"
+}
+gateway connect failed: Error: gateway request timeout for connect
+gateway connect failed: Error: gateway request timeout for connect
+GatewayTransportError: gateway closed (1000 normal closure): no close reason
+Gateway target: ws://127.0.0.1:18789
+Source: local loopback
+Config: /root/.openclaw/openclaw.json
+Bind: loopback
+GatewayTransportError: gateway closed (1000 normal closure): no close reason
+Gateway target: ws://127.0.0.1:18789
+Source: local loopback
+Config: /root/.openclaw/openclaw.json
+Bind: loopback
+[2026-05-27 00:00] === Watchdog v3 run ===
+[2026-05-27 00:00] WARN: Jobs data stale (755h), triggering pipeline
+[2026-05-27 00:00] FIXED: Pipeline triggered
+[2026-05-27 00:00] FIXED: Re-triggered failed cron 8621c802-3766-4ad9-be31-159ffe432e50
+[2026-05-27 00:00] FIXED: Re-triggered failed cron 00512934-214a-429e-8078-e7555bb1c120
+[2026-05-27 00:00] FIXED: Re-triggered failed cron 88e0d015-51c8-462b-b0a9-da494c54090e
+[2026-05-27 00:00] Summary: fixes=4 warnings=2 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:00512934-214a-429e-8078-e7555bb1c120:1779829237424:2"
+}
+gateway connect failed: Error: gateway request timeout for connect
+gateway connect failed: Error: gateway request timeout for connect
+GatewayTransportError: gateway closed (1000 normal closure): no close reason
+Gateway target: ws://127.0.0.1:18789
+Source: local loopback
+Config: /root/.openclaw/openclaw.json
+Bind: loopback
+GatewayTransportError: gateway closed (1000 normal closure): no close reason
+Gateway target: ws://127.0.0.1:18789
+Source: local loopback
+Config: /root/.openclaw/openclaw.json
+Bind: loopback
+[2026-05-27 02:00] === Watchdog v3 run ===
+[2026-05-27 02:00] WARN: Jobs data stale (757h), triggering pipeline
+[2026-05-27 02:00] FIXED: Pipeline triggered
+[2026-05-27 02:00] Summary: fixes=1 warnings=1 alerts=0
+[2026-05-27 04:00] === Watchdog v3 run ===
+[2026-05-27 04:00] WARN: Jobs data stale (759h), triggering pipeline
+[2026-05-27 04:00] FIXED: Pipeline triggered
+[2026-05-27 04:00] Summary: fixes=1 warnings=2 alerts=0
+[2026-05-27 06:00] === Watchdog v3 run ===
+[2026-05-27 06:00] WARN: Jobs data stale (761h), triggering pipeline
+[2026-05-27 06:00] FIXED: Pipeline triggered
+[2026-05-27 06:00] Summary: fixes=1 warnings=1 alerts=0

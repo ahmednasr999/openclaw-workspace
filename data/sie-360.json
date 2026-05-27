@@ -1,18 +1,18 @@
 {
-  "generated": "2026-05-25T22:50:20.471531+00:00",
-  "health_score": 77,
+  "generated": "2026-05-26T22:50:19.289684+00:00",
+  "health_score": 75,
   "summary": {
-    "ok": 5,
-    "warn": 4,
+    "ok": 4,
+    "warn": 5,
     "alert": 3
   },
   "workspace": {
     "root_files": 84,
-    "disk_percent": 83,
-    "disk_used": "80G",
+    "disk_percent": 88,
+    "disk_used": "84G",
     "disk_total": "96G",
     "ram_total": "7.8Gi",
-    "ram_used": "1.7Gi",
+    "ram_used": "1.8Gi",
     "large_files": [
       "/root/.openclaw/agents/main/agent/codex-home/logs_2.sqlite",
       "/root/.openclaw/agents/main/agent/codex-home/state_5.sqlite",
@@ -24,6 +24,7 @@
       "/root/.openclaw/agents/main/sessions/missing-file-registry-cleanup-20260411T125530Z/manifest.json",
       "/root/.openclaw/agents/main/sessions/sessions.json.bak-2026-05-24",
       "/root/.openclaw/agents/main/sessions/dbb01869-e168-4d7c-b1d7-3cb66563eed4.jsonl.reset.2026-05-01T01-01-37.939Z",
+      "/root/.openclaw/agents/main/sessions/sessions.json.bak-2026-05-26",
       "/root/.openclaw/agents/main/sessions/sessions.json",
       "/root/.openclaw/agents/main/sessions/orphan-archive-20260411T125235Z/22c099e1-cc21-4575-b9f1-b5f2b7c3505f.jsonl",
       "/root/.openclaw/agents/main/sessions/.usage-cost-cache.json",
@@ -34,7 +35,7 @@
       "/root/.openclaw/agents/main/sessions/c268cdda-e715-4949-97a1-eb0d41b538f6.trajectory.jsonl.deleted.20260501-211515",
       "/root/.openclaw/agents/main/sessions/archive/sessions-resets.tar.gz",
       "/root/.openclaw/agents/main/sessions/c268cdda-e715-4949-97a1-eb0d41b538f6.jsonl.reset.2026-05-01T20-03-42.178Z",
-      "/root/.openclaw/agents/main/sessions/eff56784-4287-4a7d-b73b-4c51dbec3122.jsonl.reset.2026-04-26T01-05-12.462Z",
+      "/root/.openclaw/agents/main/sessions/.fs-safe-replace.1678048.b9193e3b-ecb8-4ac5-86b6-a4a63d6d2785.tmp",
       "/root/.openclaw/agents/main/sessions/sessions.json.bak.1776880840219",
       "/root/.openclaw/agents/cmo/agent/codex-home/logs_2.sqlite",
       "/root/.openclaw/agents/cmo/agent/codex-home/state_5.sqlite",
@@ -51,7 +52,9 @@
       "/root/.openclaw/agents/cto/agent/codex-home/logs_2.sqlite",
       "/root/.openclaw/agents/cto/agent/codex-home/state_5.sqlite",
       "/root/.openclaw/agents/cto/agent/codex-home/.tmp/plugins/.git/objects/pack/pack-0b2030e79621d6d2f13e68a341501788fe25f29e.pack",
+      "/root/.openclaw/agents/hr/agent/codex-home/state_5.sqlite-wal",
       "/root/.openclaw/agents/hr/agent/codex-home/logs_2.sqlite",
+      "/root/.openclaw/agents/hr/agent/codex-home/logs_2.sqlite-wal",
       "/root/.openclaw/agents/hr/agent/codex-home/state_5.sqlite",
       "/root/.openclaw/agents/hr/agent/codex-home/.tmp/plugins/.git/objects/pack/pack-b5db4645cded68697ca976f9da4d50bd62a119f9.pack",
       "/root/.openclaw/agents/hr/agent/codex-home/.tmp/plugins-backup-yddwcp/repo/.git/objects/pack/pack-0365ed0e8bedd2c518152cc45e7442282e41d467.pack",
@@ -72,6 +75,7 @@
       "/root/.openclaw/extensions/lossless-claw/node_modules/@napi-rs/canvas-linux-x64-gnu/skia.linux-x64-gnu.node",
       "/root/.openclaw/extensions/lossless-claw/node_modules/pdfjs-dist/build/pdf.worker.mjs.map",
       "/root/.openclaw/extensions/lossless-claw/node_modules/pdfjs-dist/legacy/build/pdf.worker.mjs.map",
+      "/root/.openclaw/lcm.db-wal",
       "/root/.openclaw/memory/main.sqlite",
       "/root/.openclaw/memory/cto.sqlite",
       "/root/.openclaw/workspace-clean-publish/.understand-anything/intermediate/nodes.json",
@@ -95,6 +99,17 @@
       "/root/.openclaw/backups/runtime-hardening-20260524-150958/composio/node_modules/typescript/lib/typescript.js",
       "/root/.openclaw/backups/runtime-hardening-20260524-1623/composio-extension-before-uninstall.tgz",
       "/root/.openclaw/backups/runtime-hardening-20260524-1542/main-sessions.json.before-doctor-fix",
+      "/root/.openclaw/browser/linkedin-login-cdp/OnDeviceHeadSuggestModel/20251024.824731831.14/cr_en-us_500000_index.bin",
+      "/root/.openclaw/browser/linkedin-login-cdp/Safe Browsing/UrlSoceng.store.4_13424288786057734",
+      "/root/.openclaw/browser/linkedin-login-cdp/component_crx_cache/22fb5e3e997b6c5e2194c69fe572415a2333a34bf23165ca71336b2fdc4dbb34",
+      "/root/.openclaw/browser/linkedin-login-cdp/WasmTtsEngine/20260514.1/bindings_main.wasm",
+      "/root/.openclaw/browser/linkedin-login-cdp/optimization_guide_model_store/43/E6DC4029A1E4B4C1/ABBD53CB123D72B0/model.tflite",
+      "/root/.openclaw/browser/linkedin-login-cdp/Default/Code Cache/js/c069f83286eb2c92_0",
+      "/root/.openclaw/browser/linkedin-login-cdp/Default/Code Cache/js/471c62e043770470_0",
+      "/root/.openclaw/browser/linkedin-login-cdp/Default/Code Cache/js/e0f68e5444c2a2ca_0",
+      "/root/.openclaw/browser/linkedin-login-cdp/Default/Code Cache/js/da7ba60d9aefe779_0",
+      "/root/.openclaw/browser/linkedin-login-cdp/Default/Code Cache/js/b93b8fabab193832_0",
+      "/root/.openclaw/browser/linkedin-login-cdp/Default/Cache/Cache_Data/2b4b002b0fb09e8e_0",
       "/root/.openclaw/browser/openclaw/user-data/optimization_guide_model_store/43/E6DC4029A1E4B4C1/2332E9F4ABBDB156/model.tflite",
       "/root/.openclaw/lcm.db",
       "/root/.openclaw/workspace-cto/.pushsync-worktree/.understand-anything/intermediate/nodes.json",
@@ -131,6 +146,7 @@
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-04-12_070259.db",
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-05-18_070018.db",
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-05-07_070036.db",
+      "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-05-26_070138.db",
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-04-25_070020.db",
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-05-19_070026.db",
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-05-14_070017.db",
@@ -205,7 +221,7 @@
       "/root/.openclaw/workspace/newsletter2.png",
       "/root/.openclaw/workspace/newsletter3.png"
     ],
-    "session_mb": 811.8
+    "session_mb": 824.0
   },
   "learnings": {
     "total": 25,
@@ -234,7 +250,7 @@
       "notion_token": "present (50 chars)",
       "notion_databases": 15,
       "linkedin_lines": 3,
-      "linkedin_age_days": 63.0
+      "linkedin_age_days": 64.0
     }
   },
   "crons": {
@@ -266,7 +282,13 @@
       "Final GPT-5.5 Pro 20x vs 5x recommendation",
       "Stop GPT-5.5 quota tracker after final recommendation"
     ],
-    "failing": []
+    "failing": [
+      {
+        "name": "CMO LinkedIn Comment Radar - 3pm",
+        "consecutive_errors": 6,
+        "last_error": "cron: job execution timed out (last phase: tool-execution-started)"
+      }
+    ]
   },
   "briefing_notion": {
     "skipped": true,
@@ -281,17 +303,17 @@
     {
       "category": "workspace",
       "level": "warn",
-      "message": "Disk: 83% used - approaching 90% threshold"
+      "message": "Disk: 88% used - approaching 90% threshold"
     },
     {
       "category": "workspace",
       "level": "warn",
-      "message": "Large files (>5MB): 190 found in .openclaw"
+      "message": "Large files (>5MB): 206 found in .openclaw"
     },
     {
       "category": "workspace",
       "level": "alert",
-      "message": "Session size: 811.8MB - bloated, review sessions"
+      "message": "Session size: 824.0MB - bloated, review sessions"
     },
     {
       "category": "learnings",
@@ -325,8 +347,8 @@
     },
     {
       "category": "crons",
-      "level": "ok",
-      "message": "No failing crons"
+      "level": "warn",
+      "message": "Failing crons: 1 with consecutive errors"
     },
     {
       "category": "briefing",
@@ -336,7 +358,8 @@
   ],
   "auto_fixed": [],
   "needs_attention": [
-    "Session bloat: 811.8MB - review before deleting (needs human decision)",
-    "Disk usage 83% - needs cleanup decision (do not auto-delete)"
+    "Session bloat: 824.0MB - review before deleting (needs human decision)",
+    "'CMO LinkedIn Comment Radar - 3pm' has 6 consecutive errors - investigate manually",
+    "Disk usage 88% - needs cleanup decision (do not auto-delete)"
   ]
 }

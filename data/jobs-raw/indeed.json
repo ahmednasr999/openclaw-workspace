@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-05-26T17:00:44.589323+02:00",
-    "duration_ms": 39671,
+    "generated_at": "2026-05-27T05:00:37.343053+02:00",
+    "duration_ms": 34241,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "b177b066",
+    "run_id": "6a8c76fe",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -50,52 +50,6 @@
         "growth"
       ],
       "raw_snippet": "In a world of possibilities, pursue one with endless opportunities. Imagine Next!  \n\n\nAt Parsons, you can imagine a career where you thrive, work with exceptional people, and be yourself. Guided by our leadership vision of valuing people, embracing agility, and fostering growth, we cultivate an innovative culture that empowers you to achieve your full potential. Unleash your talent and redefine what\u2019s possible. **Job Description:**\n\n\nParsons is seeking an exceptional **Program Direc****tor** to ",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-ae22d276541bacf2",
-      "source": "indeed",
-      "title": "Associate Director, Priority Banking",
-      "company": "Standard Chartered Bank",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=ae22d276541bacf2",
-      "posted": "2026-05-21",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 26,
-      "match_keywords": [
-        "agile",
-        "ai",
-        "director",
-        "dubai"
-      ],
-      "raw_snippet": "**Requisition Number:** 54629\n**Job Location:** Dubai, ARE\n**Global Grade:** Band 7\n**Work Type:** Office Working\n**Employment Type:** Permanent\n**Posting Start Date:** 21/05/2026\n**Posting End Date:** 04/06/2026\n**:****About Us**\n\nOur team consists of 25,000 colleagues, spread across 35 countries. We believe in transformation \u2013 embracing agile and new ways of working together, which helps us to truly \u2018think client\u2019 and serve millions of our affluent and emerging affluent clients, across the wor",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-e71e93706a727db2",
-      "source": "indeed",
-      "title": "Associate Director, Priority Clients",
-      "company": "Standard Chartered Bank",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=e71e93706a727db2",
-      "posted": "2026-05-21",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 26,
-      "match_keywords": [
-        "agile",
-        "ai",
-        "director",
-        "dubai"
-      ],
-      "raw_snippet": "**Requisition Number:** 54628\n**Job Location:** Dubai, ARE\n**Global Grade:** Band 7\n**Work Type:** Office Working\n**Employment Type:** Permanent\n**Posting Start Date:** 21/05/2026\n**Posting End Date:** 04/06/2026\n**:****About Us**\n\nOur team consists of 25,000 colleagues, spread across 35 countries. We believe in transformation \u2013 embracing agile and new ways of working together, which helps us to truly \u2018think client\u2019 and serve millions of our affluent and emerging affluent clients, across the wor",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
@@ -300,9 +254,9 @@
   ],
   "kpi": {
     "searches_run": 20,
-    "results_per_search": 3.3,
-    "unique_jobs": 13,
-    "errors": 9
+    "results_per_search": 3.1,
+    "unique_jobs": 11,
+    "errors": 10
   },
   "recommendations": []
 }
