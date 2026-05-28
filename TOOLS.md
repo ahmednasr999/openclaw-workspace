@@ -13,6 +13,7 @@ Full detail lives in `docs/reference/TOOLS.full.md`.
 - Search router: `skills/tavily-search/scripts/search.mjs`.
 - Research router: `skills/tavily-search/scripts/research-search.mjs`.
 - If Tavily is rate-limited for live search/content radar, fall back to Google via Camoufox.
+- If Tavily returns HTTP 401/402, disabled-account, unpaid-balance, or similar credential/billing errors, treat it as unavailable and use SearXNG/Camoufox/DuckDuckGo/OpenClaw fallback instead of retrying direct Tavily calls until credentials are fixed. <!-- deep-audit-promoted 2026-05-27 -->
 - Gulf jobs scanner: if Exa/Composio search returns HTTP 402 or `NO_MORE_CREDITS`, use the DuckDuckGo/OpenClaw web fallback and avoid repeated Exa retries until credits are restored. <!-- dream-promoted 2026-04-29 -->
 - Brave is not configured. Do not plan around it.
 
@@ -43,6 +44,7 @@ Daily comments:
 Posting:
 - Approval rule: when Ahmed asks CMO/NASR to post on LinkedIn, or when a specific post is already marked/approved for publishing, the LinkedIn publish action is pre-approved for that specific post. Do not ask again unless content/media changed materially, the target account is unclear, or duplicate/live-state checks create a risk.
 - Composio post action: `LINKEDIN_CREATE_LINKED_IN_POST`.
+- LinkedIn Composio publishing currently uses the backend MCP/API-key path with the active LinkedIn connected account. If tools disappear or old consumer-key MCP failures return, first verify the Composio plugin is active and not quarantined, LinkedIn tool contracts are declared, and `openclaw plugins doctor` is clean; validate with backend `LINKEDIN_GET_MY_INFO` plus a post dry-run before asking Ahmed to reconnect. <!-- promoted 2026-05-28 from CTO Composio recovery -->
 - Person URN: `urn:li:person:mm8EyA56mj`.
 - Never use LinkedIn cookies, cookie files, exported browser cookies, or cookie extraction for posting, engagement, scraping, or recovery. This includes `li_at`, `JSESSIONID`, Camofox cookie DBs, and quarantined historical LinkedIn cookie artifacts. Use approved Composio actions or a live Ahmed-Mac browser UI session with visible-state verification only. If neither path is clean, stop and report the blocker.
 - For image posts, upload image first and use the returned true `s3key`.

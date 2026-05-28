@@ -46,6 +46,7 @@ GATEWAY_TOKEN = ""
 GATEWAY_PORT = 18789
 USE_GATEWAY = False
 APPROVED_CV_MODEL = "openai-codex/gpt-5.5"
+GATEWAY_CHAT_MODEL = "openclaw/hr"
 
 # CV HTML template (from proven working CVs)
 # Load shared HTML template (Decision 10: single source of truth)
@@ -160,7 +161,7 @@ def call_cv_model(prompt, max_tokens=8000):
 
     model = enforce_cv_model(APPROVED_CV_MODEL)
     payload = json.dumps({
-        "model": model,
+        "model": GATEWAY_CHAT_MODEL,
         "max_tokens": max_tokens,
         "messages": [{"role": "user", "content": prompt}]
     }).encode()
@@ -170,7 +171,8 @@ def call_cv_model(prompt, max_tokens=8000):
         data=payload,
         headers={
             "Content-Type": "application/json",
-            "Authorization": f"Bearer {GATEWAY_TOKEN}"
+            "Authorization": f"Bearer {GATEWAY_TOKEN}",
+            "x-openclaw-model": model,
         },
         method="POST"
     )
@@ -485,7 +487,7 @@ def extract_jd_keywords(jd_text):
         )
         model = enforce_cv_model(APPROVED_CV_MODEL, "CV keyword extraction")
         payload = json.dumps({
-            "model": model,
+            "model": GATEWAY_CHAT_MODEL,
             "max_tokens": 300,
             "messages": [{"role": "user", "content": prompt}],
         }).encode()
@@ -495,6 +497,7 @@ def extract_jd_keywords(jd_text):
             headers={
                 "Content-Type": "application/json",
                 "Authorization": f"Bearer {GATEWAY_TOKEN}",
+                "x-openclaw-model": model,
             },
             method="POST",
         )

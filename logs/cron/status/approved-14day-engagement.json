@@ -1,0 +1,11 @@
+{
+  "task": "approved-14day-engagement",
+  "status": "ok",
+  "returncode": 0,
+  "started_at": "2026-05-28T12:00:01+03:00",
+  "finished_at": "2026-05-28T12:00:33+03:00",
+  "duration_seconds": 32,
+  "log_path": "/root/.openclaw/workspace/logs/cron/approved-14day-linkedin-engagement-cron.log",
+  "lock_path": "/var/lock/openclaw/approved-14day-engagement.cron.lock",
+  "host": "srv1352768"
+}

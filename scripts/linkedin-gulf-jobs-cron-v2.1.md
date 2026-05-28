@@ -68,11 +68,11 @@ Use the existing JD fetcher engine: `scripts/linkedin-jd-fetcher.py`
 
 For each job found in search results:
 1. Extract job ID from search page
-2. Call linkedin-jd-fetcher.py with job URL to get full details via Camofox + cookies
-3. Extracts: title, company, location, full description, requirements, salary (if shown), easy apply flag, posting age
-4. Authenticated via li_at cookie at `config/linkedin-cookies.json`
-5. If Camofox unavailable: fallback to raw Playwright
-6. If cookies expired: use public page (limited details), log warning
+2. Prefer JobSpy with `linkedin_fetch_description=True` for full job details
+3. Use public LinkedIn pages only when needed, without cookies
+4. Extracts: title, company, location, full description, requirements, salary (if shown), easy apply flag, posting age
+5. If Camofox unavailable: fallback to raw Playwright without stored cookies
+6. If public fetching is sparse: log sparse JD coverage and continue with available evidence
 
 **The ATS scorer MUST score against the actual job description text, NOT the search title.**
 
@@ -144,7 +144,7 @@ Jobs scoring 75-81 are logged to `qualified-jobs-YYYY-MM-DD.md` under a "Borderl
 ## Process
 
 1. Load CV keywords from `memory/master-cv-data.md`
-2. Check cookie age: if li_at cookie >30 days old, log warning
+2. Confirm no LinkedIn cookie-based path is being used
 3. Generate 120 combinations (20 titles x 6 countries)
 4. For each: Search LinkedIn with 48h filter + executive level + on-site
 5. If jobs found: **Fetch full JD via linkedin-jd-fetcher.py** (max 5 per search)
@@ -171,11 +171,10 @@ Jobs scoring 75-81 are logged to `qualified-jobs-YYYY-MM-DD.md` under a "Borderl
 - If still blocked: fallback to JobSpy
 - If all methods fail: alert Ahmed via Slack with error count
 
-### Cookie Expiry
-- At startup: check if li_at cookie file was modified >30 days ago
-- If >30 days: log warning "Cookie may be stale"
-- If authenticated fetch fails: fall back to public page
-- After 3 consecutive cookie failures: alert Ahmed "Refresh cookies needed"
+### LinkedIn Auth Boundary
+- Do not use stored LinkedIn cookies or Voyager cookie APIs.
+- Use JobSpy with `linkedin_fetch_description=True` for LinkedIn job descriptions.
+- If public fetching is sparse, report sparse JD coverage instead of requesting cookies.
 
 ### Runtime Guard
 - Track elapsed time from start

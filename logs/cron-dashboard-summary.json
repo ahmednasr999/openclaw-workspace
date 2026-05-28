@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-05-28T06:08:07.602536+03:00",
-  "total_crons": 52,
-  "system_crons": 23,
+  "timestamp": "2026-05-28T19:08:14.037323+03:00",
+  "total_crons": 50,
+  "system_crons": 21,
   "openclaw_crons": 29,
   "notion_created": 0,
-  "notion_updated": 52,
+  "notion_updated": 50,
   "errors": [],
   "warnings": [],
   "crons": [
@@ -170,36 +170,6 @@
     },
     {
       "name": "cron-run-with-alert.sh",
-      "schedule": "0 11 15-28 5 *",
-      "type": "system",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "cron-run-with-alert.sh",
-      "schedule": "0 12 15-28 5 *",
-      "type": "system",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "cron-run-with-alert.sh",
-      "schedule": "20 12 28 5 *",
-      "type": "system",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "cron-run-with-alert.sh",
       "schedule": "0 15 * * *",
       "type": "system",
       "last_status": {
@@ -239,9 +209,9 @@
       }
     },
     {
-      "name": "NASR Doctor (Daily)",
-      "schedule": "cron 0 7 * * * @ Africa/Cairo",
-      "type": "openclaw",
+      "name": "cron-run-with-alert.sh",
+      "schedule": "30 9 * * *",
+      "type": "system",
       "last_status": {
         "status": "\u26a0\ufe0f Unknown",
         "last_run": null,
@@ -259,18 +229,8 @@
       }
     },
     {
-      "name": "CMO Daily LinkedIn Autoposter",
-      "schedule": "cron 10 9 * * 1-4 @ Asia/Dubai",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "CMO Publishing Watchdog",
-      "schedule": "cron 0 10-18 * * 1-4 @ Asia/Dubai",
+      "name": "Auto Lessons Learned - Daily Capture",
+      "schedule": "cron 45 23 * * * @ Africa/Cairo",
       "type": "openclaw",
       "last_status": {
         "status": "\u26a0\ufe0f Unknown",
@@ -281,36 +241,6 @@
     {
       "name": "OpenClaw Health Guard",
       "schedule": "cron 0 */6 * * * @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "LCM Midday Compaction Sweep",
-      "schedule": "cron 0 14 * * * @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "CMO LinkedIn Comment Radar - 3pm",
-      "schedule": "cron 0 15 * * * @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "Auto Lessons Learned - Daily Capture",
-      "schedule": "cron 45 23 * * * @ Africa/Cairo",
       "type": "openclaw",
       "last_status": {
         "status": "\u26a0\ufe0f Unknown",
@@ -379,6 +309,16 @@
       }
     },
     {
+      "name": "NASR Doctor (Daily)",
+      "schedule": "cron 0 7 * * * @ Africa/Cairo",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
       "name": "Email Agent (Fri-Sat)",
       "schedule": "cron 0 9,15,21 * * 5,6 @ Africa/Cairo",
       "type": "openclaw",
@@ -391,6 +331,26 @@
     {
       "name": "RSS Intelligence - Weekly Crawl",
       "schedule": "cron 0 13 * * 5 @ Africa/Cairo",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "LCM Midday Compaction Sweep",
+      "schedule": "cron 0 14 * * * @ Africa/Cairo",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "CMO LinkedIn Comment Radar - 3pm",
+      "schedule": "cron 0 15 * * * @ Africa/Cairo",
       "type": "openclaw",
       "last_status": {
         "status": "\u26a0\ufe0f Unknown",
@@ -501,6 +461,26 @@
     {
       "name": "CMO Weekly Drafting",
       "schedule": "cron 0 18 * * 0 @ Africa/Cairo",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "CMO Daily LinkedIn Autoposter",
+      "schedule": "cron 10 9 * * 1-4 @ Asia/Dubai",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "CMO Publishing Watchdog",
+      "schedule": "cron 0 10-18 * * 1-4 @ Asia/Dubai",
       "type": "openclaw",
       "last_status": {
         "status": "\u26a0\ufe0f Unknown",

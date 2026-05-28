@@ -3956,3 +3956,36 @@ Bind: loopback
 [2026-05-28 06:00] FIXED: Pipeline triggered
 [2026-05-28 06:00] WARN: High transient failure count: 6
 [2026-05-28 06:00] Summary: fixes=1 warnings=1 alerts=0
+[2026-05-28 08:00] === Watchdog v3 run ===
+[2026-05-28 08:00] WARN: Jobs data stale (787h), triggering pipeline
+[2026-05-28 08:00] FIXED: Pipeline triggered
+[2026-05-28 08:00] WARN: High transient failure count: 8
+[2026-05-28 08:00] Summary: fixes=1 warnings=1 alerts=0
+[2026-05-28 10:00] === Watchdog v3 run ===
+[2026-05-28 10:00] WARN: Jobs data stale (789h), triggering pipeline
+[2026-05-28 10:00] FIXED: Pipeline triggered
+[2026-05-28 10:00] WARN: High transient failure count: 10
+[2026-05-28 10:00] Summary: fixes=1 warnings=1 alerts=0
+[2026-05-28 12:00] === Watchdog v3 run ===
+[2026-05-28 12:00] WARN: active-tasks.md stale (50h)
+[2026-05-28 12:00] WARN: Jobs data stale (791h), triggering pipeline
+[2026-05-28 12:00] FIXED: Pipeline triggered
+[2026-05-28 12:00] WARN: High transient failure count: 12
+[2026-05-28 12:00] Summary: fixes=1 warnings=2 alerts=0
+[2026-05-28 14:00] === Watchdog v3 run ===
+[2026-05-28 14:00] WARN: Jobs data stale (793h), triggering pipeline
+[2026-05-28 14:00] FIXED: Pipeline triggered
+[2026-05-28 14:00] WARN: High transient failure count: 14
+[2026-05-28 14:00] Summary: fixes=1 warnings=1 alerts=0
+[2026-05-28 16:00] === Watchdog v3 run ===
+[2026-05-28 16:00] WARN: Jobs data stale (795h), triggering pipeline
+[2026-05-28 16:00] FIXED: Pipeline triggered
+[2026-05-28 16:00] WARN: High transient failure count: 16
+[2026-05-28 16:00] Summary: fixes=1 warnings=1 alerts=0
+[2026-05-28 16:23] === Watchdog v3 run ===
+[2026-05-28 16:23] WARN: High transient failure count: 16
+[2026-05-28 16:23] Summary: fixes=0 warnings=1 alerts=0
+[2026-05-28 18:00] === Watchdog v3 run ===
+[2026-05-28 18:00] WARN: High transient failure count: 16
+[2026-05-28 18:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-05-28 20:00] === Watchdog v3 run ===

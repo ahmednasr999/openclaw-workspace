@@ -1,0 +1,9 @@
+/root/.openclaw/workspace/logs/cron/*.log /root/.openclaw/workspace/logs/cron/direct-cron/*.log /root/.openclaw/workspace/logs/cron/status/*.json /root/.openclaw/workspace-jobzoom/logs/jobzoom-managed-*.log /root/.openclaw/workspace-jobzoom/logs/jobzoom-managed-launch.log /root/.openclaw/workspace-cmo/logs/approved-14day-linkedin-posting.log /root/.openclaw/workspace-cmo/logs/linkedin-posting-*.jsonl {
+    daily
+    rotate 14
+    compress
+    missingok
+    notifempty
+    delaycompress
+    copytruncate
+}

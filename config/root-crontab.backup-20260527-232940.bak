@@ -1,0 +1,23 @@
+0 20 * * * /root/.openclaw/workspace/scripts/daily-backup.sh >> /root/.openclaw/workspace/logs/openclaw-backup.log 2>&1
+0 20 1 * * /root/.openclaw/workspace/scripts/archive-daily-notes.sh >> /tmp/openclaw-archive.log 2>&1
+0 23 * * * /root/.openclaw/workspace/scripts/daily-snapshot.sh >> /tmp/openclaw-snapshot.log 2>&1
+30 20 * * * /root/.openclaw/workspace/scripts/retention-backups.sh >> /tmp/openclaw-retention-backups.log 2>&1
+30 23 * * * /root/.openclaw/workspace/scripts/retention-snapshots.sh >> /tmp/openclaw-retention-snapshots.log 2>&1
+15 3 * * * /root/.openclaw/workspace/scripts/retention-caches.sh >> /tmp/openclaw-retention-caches.log 2>&1
+0 9 * * * /root/.openclaw/workspace/scripts/disk-health-check.sh >> /tmp/disk-health-cron.log 2>&1
+0 6 * * * /root/.openclaw/workspace/scripts/job-radar.sh >> /tmp/job-radar.log 2>&1
+0 6 * * * /root/.openclaw/workspace/scripts/morning-brief.sh >> /tmp/morning-brief.log 2>&1
+*/5 * * * * /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply >> /tmp/openclaw-stale-context-maintenance.log 2>&1
+0 */2 * * * /bin/bash /root/.openclaw/workspace/scripts/cron-watchdog-v3.sh >> /root/.openclaw/workspace/logs/watchdog/cron.log 2>&1
+50 1 * * * flock -n /var/lock/openclaw/sie-360-checks.lock /usr/bin/python3 /root/.openclaw/workspace/scripts/sie-360-checks.py >> /tmp/sie-360-checks.log 2>&1
+CRON_TZ=Africa/Cairo
+0 3 * * * /usr/bin/python3 /root/.openclaw/workspace/scripts/direct-cron-runner.py session-cleanup >> /root/.openclaw/workspace/logs/direct-cron/session-cleanup-cron.log 2>&1 # direct-session-cleanup
+0 9 * * 0 /usr/bin/python3 /root/.openclaw/workspace/scripts/direct-cron-runner.py weekly-self-health >> /root/.openclaw/workspace/logs/direct-cron/weekly-self-health-cron.log 2>&1 # direct-weekly-self-health
+7 7 * * * /usr/bin/python3 /root/.openclaw/workspace/scripts/direct-cron-runner.py disk-guard >> /root/.openclaw/workspace/logs/direct-cron/disk-guard-cron.log 2>&1 # direct-vps-disk-guard
+0 11 15-28 5 * /usr/bin/python3 /root/.openclaw/workspace/scripts/direct-cron-runner.py approved-14day-post >> /root/.openclaw/workspace-cmo/logs/approved-14day-linkedin-cron.log 2>&1 # approved-14day-linkedin-11am
+0 12 15-28 5 * /usr/bin/python3 /root/.openclaw/workspace/scripts/direct-cron-runner.py approved-14day-engagement >> /root/.openclaw/workspace-cmo/logs/approved-14day-linkedin-cron.log 2>&1 # approved-14day-linkedin-engagement-12pm
+
+*/30 * * * * /usr/bin/python3 /root/.openclaw/workspace/scripts/cron-dashboard-updater.py >> /root/.openclaw/workspace/logs/cron-dashboard-updater.log 2>&1
+
+# JobZoom managed daily scan, direct OS cron bypass for OpenClaw agent-turn shell regression
+0 5 * * * /root/.openclaw/workspace-jobzoom/scripts/jobzoom_daily_launch.sh >> /root/.openclaw/workspace-jobzoom/logs/jobzoom-os-cron.log 2>&1 # jobzoom-managed-daily-5am-cairo

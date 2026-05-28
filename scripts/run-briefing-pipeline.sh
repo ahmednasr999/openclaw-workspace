@@ -276,16 +276,16 @@ case "$MODE" in
         log "=== JOB SOURCES (4x/day) ==="
         # Exa dropped — unreliable (stale URLs, wrong locations, profile pages)
         run_parallel "Job Sources" \
-            "linkedin"  "jobs-source-linkedin-jobspy.py"  480 \
+            "linkedin"  "jobs-source-linkedin-jobspy.py"  2400 \
             "indeed"    "jobs-source-indeed.py"    120 \
-            "google"    "jobs-source-google.py"    120
+            "google"    "jobs-source-google.py"    180
         
         log "--- Sync Applied IDs from Notion ---"
         # [DISABLED] Notion sync removed - NocoDB is single dashboard
     # timeout 15 python3 "$SCRIPTS/sync-applied-from-notion.py" >> "$LOG_FILE" 2>&1 || log "WARN: Notion sync failed (non-blocking)"
         
         log "--- Merge (sequential) ---"
-        run_agent "merge" "jobs-merge.py" 30 2
+        run_agent "merge" "jobs-merge.py" 180 2
         
         log "--- JD Enrichment (sequential) ---"
         run_agent "enrich" "jobs-enrich-jd.py" 300 2
@@ -319,9 +319,9 @@ case "$MODE" in
             "email"     "email-agent.py"          180 \
             "outreach"  "outreach-agent.py"       180 \
             "system"    "system-agent.py"           30 \
-            "linkedin"  "jobs-source-linkedin-jobspy.py"  480 \
+            "linkedin"  "jobs-source-linkedin-jobspy.py"  2400 \
             "indeed"    "jobs-source-indeed.py"    120 \
-            "google"    "jobs-source-google.py"    120 \
+            "google"    "jobs-source-google.py"    180 \
             "li-post"   "linkedin-post-agent.py"   30 \
             || log "⚠️ Phase 1 had failures (continuing to Phase 2+)"
         
@@ -340,7 +340,7 @@ case "$MODE" in
     # timeout 15 python3 "$SCRIPTS/sync-applied-from-notion.py" >> "$LOG_FILE" 2>&1 || log "WARN: Notion sync failed (non-blocking)"
         
         log "--- Phase 2: Merge ---"
-        run_agent "merge" "jobs-merge.py" 30 2 || PHASE2_FAILURES="${PHASE2_FAILURES}merge "
+        run_agent "merge" "jobs-merge.py" 180 2 || PHASE2_FAILURES="${PHASE2_FAILURES}merge "
         
         log "--- Phase 2b: JD Enrichment ---"
         run_agent "enrich" "jobs-enrich-jd.py" 300 2 || PHASE2_FAILURES="${PHASE2_FAILURES}enrich "

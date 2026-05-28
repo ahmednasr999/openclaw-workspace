@@ -376,41 +376,19 @@ def check_near_duplicates():
         finding("INFO", "duplicates", "nasr-pipeline.db", f"Could not check: {e}")
 
 
-# ── CHECK 10: LinkedIn cookie expiry ──
+# ── CHECK 10: LinkedIn cookie artifact policy ──
 def check_cookie_expiry():
-    """Check if LinkedIn cookies are still valid."""
-    print("  [10/11] LinkedIn cookie expiry...")
-    cookie_path = WORKSPACE / "data" / "linkedin-cookies.txt"
-    if not cookie_path.exists():
-        finding("WARNING", "cookies", "linkedin-cookies.txt", "Cookie file missing")
-        return
-    try:
-        li_at = None
-        for line in cookie_path.read_text().splitlines():
-            if line.startswith('#') or not line.strip():
-                continue
-            parts = line.strip().split('\t')
-            if len(parts) >= 7 and parts[5] == 'li_at':
-                li_at = parts[6]
-                # Check expiry timestamp
-                try:
-                    exp = int(parts[4])
-                    from datetime import datetime as dt
-                    exp_date = dt.fromtimestamp(exp)
-                    days_left = (exp_date - dt.now()).days
-                    if days_left < 0:
-                        finding("CRITICAL", "cookies", "linkedin-cookies.txt",
-                                f"li_at cookie EXPIRED {abs(days_left)} days ago")
-                    elif days_left < 7:
-                        finding("WARNING", "cookies", "linkedin-cookies.txt",
-                                f"li_at cookie expires in {days_left} days")
-                except (ValueError, OSError):
-                    pass
-                break
-        if not li_at:
-            finding("WARNING", "cookies", "linkedin-cookies.txt", "No li_at cookie found")
-    except Exception as e:
-        finding("INFO", "cookies", "linkedin-cookies.txt", f"Could not check: {e}")
+    """Flag active LinkedIn cookie artifacts. They should not be used."""
+    print("  [10/11] LinkedIn cookie artifact policy...")
+    paths = [
+        WORKSPACE / "data" / "linkedin-cookies.txt",
+        WORKSPACE / "config" / "linkedin-cookies.json",
+        Path.home() / ".openclaw" / "cookies" / "linkedin.txt",
+    ]
+    active = [str(path) for path in paths if path.exists()]
+    if active:
+        finding("WARNING", "cookies", "LinkedIn cookies", "Forbidden active cookie artifact(s): " + ", ".join(active))
+
 
 
 # ── CHECK 11: Cron last-run verification ──

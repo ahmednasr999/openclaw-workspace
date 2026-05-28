@@ -117,19 +117,11 @@ def check_auto_poster_selectors():
     return {"status": "ok", "found": found_selectors, "message": f"{len(found_selectors)} selectors tracked"}
 
 def check_linkedin_cookie_age():
-    """Check how fresh the LinkedIn auth cookies are."""
+    """Verify no stored LinkedIn cookie artifact is being used."""
     cookie_file = WORKSPACE / "config" / "nasr-linkedin-cookies.txt"
-    
-    if not cookie_file.exists():
-        return {"status": "warn", "message": "No cookie file found (using Composio auth — OK)"}
-    
-    try:
-        age_days = (datetime.now() - datetime.fromtimestamp(cookie_file.stat().st_mtime)).days
-        if age_days > 30:
-            return {"status": "warn", "message": f"Cookies are {age_days} days old — may expire soon"}
-        return {"status": "ok", "message": f"Cookies {age_days} days old"}
-    except:
-        return {"status": "unknown", "message": "Could not check cookie age"}
+    if cookie_file.exists():
+        return {"status": "warn", "message": "Stored LinkedIn cookie artifact exists and should be quarantined"}
+    return {"status": "ok", "message": "No stored LinkedIn cookies in active config"}
 
 def load_previous_state():
     if STATE_FILE.exists():

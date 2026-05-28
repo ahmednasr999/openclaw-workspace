@@ -79,12 +79,9 @@ browser action=snapshot profile=chrome targetId="linkedin-profile"
 - **Avoid rapid automated actions** - LinkedIn is aggressive about detecting automation
 - Rate limit: ~30 actions per hour max recommended
 
-## Session Cookie Method (Advanced)
-If browser relay isn't available, extract the `li_at` cookie from browser:
-1. Open LinkedIn in browser, log in
-2. DevTools → Application → Cookies → linkedin.com
-3. Copy `li_at` value
-4. Store securely for API requests
+## Authentication Boundary
+Do not extract, store, refresh, or use LinkedIn cookies such as `li_at` or `JSESSIONID`.
+Use approved Composio posting actions, JobSpy for job descriptions, or a live visible browser session when account state matters.
 
 ## Troubleshooting
 - If logged out: Re-authenticate in browser

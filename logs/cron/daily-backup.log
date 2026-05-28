@@ -597,3 +597,5 @@
 [2026-05-27 20:01:09] Push attempt 1/3...
 [2026-05-27 20:01:16] SUCCESS: Pushed to origin workspace-sync
 [2026-05-27 20:01:16] SUCCESS: Pushed to origin workspace-sync
+
+[2026-05-28T20:00:02+03:00] START daily-backup: /root/.openclaw/workspace/scripts/daily-backup.sh

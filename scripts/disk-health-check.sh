@@ -6,8 +6,10 @@ THRESHOLD_WARNING=60
 THRESHOLD_ACTION=75
 THRESHOLD_CRITICAL=85
 
-LOG_FILE="/tmp/disk-health.log"
+LOG_FILE="/root/.openclaw/workspace/logs/cron/disk-health.log"
 DISCORD_WEBHOOK_URL=""  # Optional: add Discord webhook for alerts
+
+mkdir -p "$(dirname "$LOG_FILE")"
 
 # Get disk usage percentage
 USAGE=$(df / | tail -1 | awk '{print $5}' | tr -d '%')

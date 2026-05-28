@@ -334,14 +334,8 @@ def check_integrations(state):
     if code != 0 or not stdout:
         issues.append("Gmail")
     
-    # Test LinkedIn (via cookie file - check multiple paths)
-    cookie_paths = [
-        os.path.expanduser("~/.openclaw/cookies/linkedin.txt"),
-        f"{WORKSPACE}/config/linkedin-cookies.txt",
-        f"{WORKSPACE}/config/linkedin-cookies.json",
-    ]
-    if not any(os.path.exists(p) for p in cookie_paths):
-        issues.append("LinkedIn (no cookie)")
+    # LinkedIn no longer uses cookie-file health checks. Posting uses approved
+    # Composio actions; job descriptions use JobSpy/public fetchers.
     
     if len(issues) >= 2:
         return "ALERT", f"Failed: {', '.join(issues)}"

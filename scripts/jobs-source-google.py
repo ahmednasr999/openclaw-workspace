@@ -16,7 +16,9 @@ Output: data/jobs-raw/google-jobs.json
 """
 
 import hashlib
+import html
 import json
+import os
 import re
 import time
 import sys
@@ -55,7 +57,10 @@ OUTPUT_FILE = JOBS_RAW_DIR / "google-jobs.json"
 CONFIG_FILE = Path("/root/.openclaw/openclaw.json")
 WATCHLIST_FILE = DATA_DIR / "sayyad-company-watchlist.json"
 COMPOSIO_MCP_URL = "https://connect.composio.dev/mcp"
-RATE_LIMIT_DELAY = 1.2  # seconds between Exa calls
+SEARXNG_URL = os.environ.get("SEARXNG_URL", "http://127.0.0.1:8090/search")
+RATE_LIMIT_DELAY = 1.2  # seconds between external Composio calls
+LOCAL_SEARCH_DELAY = 0.05  # local fallback must stay under pipeline timeout
+LOCAL_WATCHLIST_LIMIT = int(os.environ.get("GOOGLE_SOURCE_LOCAL_WATCHLIST_LIMIT", "5"))
 RECENCY_DAYS = 10
 
 # ── GCC job boards to discover (NOT already covered by our linkedin/indeed sources) ──
@@ -223,10 +228,151 @@ def _parse_exa_response(result: dict) -> list[dict]:
         return []
 
 
+def duckduckgo_html_search(query: str, num_results: int = 15, include_domains: list = None,
+                           exclude_domains: list = None) -> list[dict]:
+    """Last-resort direct DuckDuckGo HTML search for VPS-safe job discovery."""
+    import requests
+    from urllib.parse import parse_qs, unquote, urlparse
+
+    try:
+        resp = requests.post(
+            "https://html.duckduckgo.com/html/",
+            data={"q": query},
+            headers={"User-Agent": "Mozilla/5.0 (compatible; NASRJobScanner/1.0)"},
+            timeout=7,
+        )
+        resp.raise_for_status()
+    except Exception as exc:
+        print(f"    DuckDuckGo HTML error: {exc}")
+        return []
+
+    rows = []
+    # Result blocks are stable enough for simple extraction and avoid adding parser deps.
+    blocks = re.findall(r'(?is)<div[^>]+class="result[^"]*".*?</div>\s*</div>', resp.text)
+    if not blocks:
+        blocks = re.findall(r'(?is)<a[^>]+class="result__a".*?</a>', resp.text)
+    for block in blocks:
+        link_match = re.search(r'(?is)<a[^>]+class="result__a"[^>]+href="([^"]+)"[^>]*>(.*?)</a>', block)
+        if not link_match:
+            continue
+        raw_url = html.unescape(link_match.group(1))
+        parsed = urlparse(raw_url)
+        if parsed.path.startswith('/l/'):
+            raw_url = unquote(parse_qs(parsed.query).get('uddg', [''])[0] or raw_url)
+        title = re.sub(r'(?s)<[^>]+>', ' ', link_match.group(2))
+        title = re.sub(r'\s+', ' ', html.unescape(title)).strip()
+        snippet_match = re.search(r'(?is)<a[^>]+class="result__snippet"[^>]*>(.*?)</a>|<div[^>]+class="result__snippet"[^>]*>(.*?)</div>', block)
+        snippet_raw = next((g for g in (snippet_match.groups() if snippet_match else []) if g), '')
+        snippet = re.sub(r'(?s)<[^>]+>', ' ', snippet_raw)
+        snippet = re.sub(r'\s+', ' ', html.unescape(snippet)).strip()
+        url_l = raw_url.lower()
+        if exclude_domains and any(d.lower() in url_l for d in exclude_domains):
+            continue
+        if include_domains and not any(d.lower() in url_l for d in include_domains):
+            continue
+        if raw_url and title:
+            rows.append({"url": raw_url, "title": title, "text": snippet, "publishedDate": "", "search_backend": "duckduckgo_html"})
+        if len(rows) >= num_results:
+            break
+    return rows
+
+
+def simplified_queries(query: str) -> list[str]:
+    q = re.sub(r'[()"]', ' ', query)
+    q = re.sub(r'\b(OR|AND)\b', ' ', q, flags=re.IGNORECASE)
+    q = re.sub(r'\s+', ' ', q).strip()
+    phrases = re.findall(r'"([^"]+)"', query)
+    out = [query]
+    if q and q != query:
+        out.append(q)
+    if phrases:
+        loc = 'GCC UAE Saudi Qatar Dubai Riyadh Doha'
+        out.append(f'{phrases[0]} jobs {loc}')
+    return list(dict.fromkeys(out))[:3]
+
+
+def searxng_search(query: str, num_results: int = 15, include_domains: list = None,
+                  exclude_domains: list = None, start_date: str = None) -> list[dict]:
+    """Local fallback search through SearXNG, then DuckDuckGo HTML if engines suspend."""
+    import requests
+
+    q = query
+    if include_domains:
+        # Keep the query readable for metasearch engines, then enforce domains below.
+        domain_terms = " OR ".join(f"site:{d}" for d in include_domains[:6])
+        q = f"({domain_terms}) {query}"
+
+    for candidate_q in simplified_queries(q):
+        try:
+            resp = requests.get(
+                SEARXNG_URL,
+                params={"q": candidate_q, "format": "json", "language": "en", "safesearch": "0"},
+                timeout=6,
+            )
+            resp.raise_for_status()
+            data = resp.json()
+        except Exception as exc:
+            print(f"    SearXNG error: {exc}")
+            data = {"results": []}
+
+        rows = []
+        for item in data.get("results", []):
+            url = item.get("url", "") or ""
+            if not url:
+                continue
+            url_l = url.lower()
+            if exclude_domains and any(d.lower() in url_l for d in exclude_domains):
+                continue
+            if include_domains and not any(d.lower() in url_l for d in include_domains):
+                continue
+            rows.append({
+                "url": url,
+                "title": item.get("title", "") or "",
+                "text": item.get("content", "") or item.get("snippet", "") or "",
+                "publishedDate": item.get("publishedDate") or item.get("pubdate") or "",
+                "search_backend": "searxng",
+            })
+            if len(rows) >= num_results:
+                break
+        if rows:
+            return rows
+
+    # SearXNG engines can suspend after heavy use; direct DDG HTML keeps this source useful.
+    for candidate_q in simplified_queries(q):
+        rows = duckduckgo_html_search(candidate_q, num_results=num_results, include_domains=include_domains, exclude_domains=exclude_domains)
+        if rows:
+            return rows
+    return []
+
+
+def direct_fetch_contents(urls: list[str], max_chars: int = 5000) -> list[dict]:
+    """Fetch page contents directly when Composio fetch is unavailable."""
+    import requests
+
+    out = []
+    headers = {"User-Agent": "Mozilla/5.0 (compatible; NASRJobScanner/1.0)"}
+    for url in urls:
+        try:
+            resp = requests.get(url, headers=headers, timeout=8)
+            resp.raise_for_status()
+            raw = resp.text[: max_chars * 4]
+            raw = re.sub(r"(?is)<(script|style).*?>.*?</\1>", " ", raw)
+            raw = re.sub(r"(?s)<[^>]+>", " ", raw)
+            raw = html.unescape(raw)
+            raw = re.sub(r"\s+", " ", raw).strip()[:max_chars]
+            out.append({"url": url, "text": raw})
+        except Exception as exc:
+            print(f"    direct fetch failed {url[:80]}: {exc}")
+    return out
+
+
 def exa_search(query: str, consumer_key: str, search_type: str = "keyword",
                num_results: int = 15, include_domains: list = None,
                exclude_domains: list = None, start_date: str = None) -> list[dict]:
-    """Unified search via COMPOSIO_SEARCH_WEB (free, no Exa credits needed)."""
+    """Search via Composio when configured, otherwise local SearXNG fallback."""
+    if not consumer_key:
+        return searxng_search(query, num_results=num_results, include_domains=include_domains,
+                              exclude_domains=exclude_domains, start_date=start_date)
     result = mcp_call("tools/call", {
         "name": "COMPOSIO_MULTI_EXECUTE_TOOL",
         "arguments": {
@@ -266,7 +412,9 @@ def exa_search(query: str, consumer_key: str, search_type: str = "keyword",
 
 
 def exa_get_contents(urls: list[str], consumer_key: str, max_chars: int = 5000) -> list[dict]:
-    """Fetch page contents via COMPOSIO_SEARCH_FETCH_URL_CONTENT (free, no Exa credits)."""
+    """Fetch page contents via Composio when configured, otherwise direct HTTP."""
+    if not consumer_key:
+        return direct_fetch_contents(urls, max_chars=max_chars)
     results = []
     for url in urls:
         result = mcp_call("tools/call", {
@@ -610,9 +758,7 @@ def run_google_scanner(result: AgentResult):
     """Main scanner: three-phase Exa search → classify → extract."""
 
     consumer_key = load_composio_key()
-    if not consumer_key:
-        result.set_error("No Composio consumer key found in openclaw.json")
-        return
+    using_local_search = not bool(consumer_key)
 
     if is_dry_run():
         kw_total = len(TITLE_GROUPS) * len(LOCATION_GROUPS)
@@ -625,16 +771,24 @@ def run_google_scanner(result: AgentResult):
         result.set_kpi({"searches_planned": total, "keyword": kw_total, "auto": auto_total, "neural": neural_total})
         return
 
-    # Initialize MCP
-    print("Initializing Composio MCP...")
-    if not mcp_initialize(consumer_key):
-        result.set_error("Failed to initialize MCP session")
-        return
-    print("  MCP session initialized ✓")
+    # Initialize search backend
+    if using_local_search:
+        print(f"Using local SearXNG fallback: {SEARXNG_URL}")
+    else:
+        print("Initializing Composio MCP...")
+        if not mcp_initialize(consumer_key):
+            print("  MCP initialize failed; falling back to local SearXNG")
+            consumer_key = ""
+            using_local_search = True
+        else:
+            print("  MCP session initialized")
 
     start_date = (datetime.now() - timedelta(days=RECENCY_DAYS)).strftime("%Y-%m-%d")
     watchlist = load_watchlist()
     watch_companies = watchlist.get("priority_companies", [])
+    if using_local_search and len(watch_companies) > LOCAL_WATCHLIST_LIMIT:
+        print(f"  Local fallback watchlist cap: {LOCAL_WATCHLIST_LIMIT}/{len(watch_companies)} companies")
+        watch_companies = watch_companies[:LOCAL_WATCHLIST_LIMIT]
     watch_domains = watchlist.get("priority_domains", [])
     all_exa_results = []
     searches_run = 0
@@ -655,7 +809,7 @@ def run_google_scanner(result: AgentResult):
                 all_exa_results.extend(results)
             if searches_run % 8 == 0:
                 print(f"  Progress: {searches_run}/{kw_total} | results: {len(all_exa_results)}")
-            time.sleep(RATE_LIMIT_DELAY)
+            time.sleep(LOCAL_SEARCH_DELAY if using_local_search else RATE_LIMIT_DELAY)
 
     print(f"  Keyword done: {len(all_exa_results)} results")
 
@@ -677,7 +831,7 @@ def run_google_scanner(result: AgentResult):
                 errors += 1
             else:
                 all_exa_results.extend(results)
-            time.sleep(RATE_LIMIT_DELAY)
+            time.sleep(LOCAL_SEARCH_DELAY if using_local_search else RATE_LIMIT_DELAY)
 
     print(f"  Auto done: {len(all_exa_results) - before_auto} new results")
 
@@ -702,7 +856,7 @@ def run_google_scanner(result: AgentResult):
             all_exa_results.extend(results)
         else:
             errors += 1
-        time.sleep(RATE_LIMIT_DELAY)
+        time.sleep(LOCAL_SEARCH_DELAY if using_local_search else RATE_LIMIT_DELAY)
 
     print(f"  Neural done: {len(all_exa_results) - before_neural} new results")
 
@@ -720,7 +874,7 @@ def run_google_scanner(result: AgentResult):
                 all_exa_results.extend(results)
             else:
                 errors += 1
-            time.sleep(RATE_LIMIT_DELAY)
+            time.sleep(LOCAL_SEARCH_DELAY if using_local_search else RATE_LIMIT_DELAY)
         print(f"  Watchlist done: {len(all_exa_results) - before_watch} new results")
 
     # ── Phase 1e: Watchlist career page discovery ──────────────────────────
@@ -742,7 +896,7 @@ def run_google_scanner(result: AgentResult):
                 all_exa_results.extend(results)
             else:
                 errors += 1
-            time.sleep(RATE_LIMIT_DELAY)
+            time.sleep(LOCAL_SEARCH_DELAY if using_local_search else RATE_LIMIT_DELAY)
         print(f"  Career-page discovery done: {len(all_exa_results) - before_careers} new results")
 
     print(f"\nPhase 1 total: {len(all_exa_results)} raw results from {searches_run} queries ({errors} errors)")
@@ -810,7 +964,7 @@ def run_google_scanner(result: AgentResult):
                                 all_jobs.append(job)
                         print(f"    {page_url[:60]}... → {len(parsed)} jobs parsed")
 
-                time.sleep(RATE_LIMIT_DELAY)
+                time.sleep(LOCAL_SEARCH_DELAY if using_local_search else RATE_LIMIT_DELAY)
 
     # ── Phase 4: DB write ─────────────────────────────────────────────────
     # Dedup all_jobs by URL
@@ -901,8 +1055,9 @@ def run_google_scanner(result: AgentResult):
         "malformed_filtered": malformed_filtered,
         "unique_jobs_final": len(final_jobs),
         "errors": errors,
-        "exa_cost_estimate_usd": round(searches_run * 0.007 + min(len(listing_pages), 15) * 0.003, 3),
-        "strategy": "Exa keyword + auto(domain) + neural + watchlist company discovery → classify → GET_CONTENTS",
+        "search_backend": "searxng" if using_local_search else "composio",
+        "exa_cost_estimate_usd": 0 if using_local_search else round(searches_run * 0.007 + min(len(listing_pages), 15) * 0.003, 3),
+        "strategy": ("SearXNG local fallback" if using_local_search else "Composio web search") + " keyword + auto(domain) + neural + watchlist company discovery -> classify -> contents",
         "watchlist_companies": len(watch_companies),
     })
 

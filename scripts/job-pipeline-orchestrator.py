@@ -31,7 +31,7 @@ STAGES = [
     {
         "name": "scan",
         "script": SCRIPTS_DIR / "jobs-source-linkedin-jobspy.py",  # JobSpy public API (no auth needed)
-        "timeout": 600,  # 10 minutes
+        "timeout": 2400,  # 40 minutes; JobSpy full JD fetch averages ~26m
         "output_check": lambda: sorted(OUTPUT_DIR.glob("jobs-raw-*.json"), key=lambda p: p.stat().st_mtime, reverse=True),
         "skip_flag": "--skip-scan",
     },
@@ -51,7 +51,7 @@ STAGES = [
     {
         "name": "review",
         "script": SCRIPTS_DIR / "jobs-review.py",
-        "timeout": 600,  # 10 minutes
+        "timeout": 2400,  # 40 minutes; JobSpy full JD fetch averages ~26m
         "output_check": lambda: [DATA_DIR / "jobs-summary.json"] if (DATA_DIR / "jobs-summary.json").exists() else [],
     },
     {

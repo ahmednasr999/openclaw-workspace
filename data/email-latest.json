@@ -1,25 +1,79 @@
 {
   "status": "ok",
-  "scan_time": "2026-05-27T20:19:18.414471+02:00",
-  "total_scanned": 5,
+  "scan_time": "2026-05-28T15:14:10.756338+02:00",
+  "total_scanned": 50,
   "by_category": {
-    "interview_invite": 0,
-    "recruiter_reach": 0,
+    "interview_invite": 1,
+    "recruiter_reach": 1,
     "application_ack": 0,
     "rejection": 0,
     "assessment": 0,
     "follow_up_needed": 0,
     "job_alert": 0,
-    "other": 5
+    "other": 48
   },
-  "interview_invites": [],
-  "recruiter_messages": [],
+  "interview_invites": [
+    {
+      "id": "359635",
+      "from": "Superhuman =?windows-1251?b?lg==?= Zain Kahn\r\n\t<superhuman@mail.joinsuperhuman.ai>",
+      "subject": "=?UTF-8?B?8J+kkQ==?= Samsung employees secure massive AI payout",
+      "date": "Thu, 28 May 2026 13:07:49 +0000 (UTC)",
+      "unread": true,
+      "priority": "MEDIUM",
+      "score": 3,
+      "pipeline_match": null
+    }
+  ],
+  "recruiter_messages": [
+    {
+      "id": "359609",
+      "from": "\"Arabian Business\" <newsletters@arabianbusiness.com> ",
+      "subject": "Meta launches paid WhatsApp plans; UAE's two major law-changes explained",
+      "date": "Thu, 28 May 2026 21:53:44 +1000",
+      "unread": true,
+      "priority": "HIGH",
+      "score": 7,
+      "pipeline_match": "SAP"
+    }
+  ],
   "application_acks": [],
   "rejections": [],
   "assessments": [],
   "follow_ups_needed": [],
   "job_alerts": [],
-  "actionable_count": 0,
-  "hot_alerts": [],
-  "signals": []
+  "actionable_count": 2,
+  "hot_alerts": [
+    {
+      "id": "359635",
+      "subject": "=?UTF-8?B?8J+kkQ==?= Samsung employees secure massive AI payout",
+      "from": "Superhuman =?windows-1251?b?lg==?= Zain Kahn\r\n\t<superhuman@mail.joinsuperhuman.ai>",
+      "priority": "MEDIUM",
+      "pipeline_match": null
+    }
+  ],
+  "signals": [
+    {
+      "company": "SAP",
+      "signal": "recruiter_email",
+      "subject": "Meta launches paid WhatsApp plans; UAE's two major law-changes explained",
+      "sender": "\"Arabian Business\" <newsletters@arabianbusiness.com> ",
+      "job_ids": [
+        "indeed-in-b2195113ff678ef7",
+        "indeed-in-b7591ff66cc5a732",
+        "linkedin_jobspy-li-4380812358",
+        "linkedin-li-4349578134",
+        "linkedin-li-4394078700",
+        "linkedin-li-4380812358",
+        "linkedin-li-4362170335",
+        "linkedin-li-4362562926",
+        "linkedin-li-4385935615",
+        "linkedin-li-4353703506",
+        "app-005",
+        "cv-5fbf4a9aa7",
+        "linkedin-li-4385294885"
+      ],
+      "score": 7,
+      "timestamp": "2026-05-28T15:14:10.499608+02:00"
+    }
+  ]
 }

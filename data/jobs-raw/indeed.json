@@ -2,59 +2,16 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-05-28T05:00:38.658958+02:00",
-    "duration_ms": 37161,
+    "generated_at": "2026-05-28T15:00:33.255668+02:00",
+    "duration_ms": 29942,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "af93610e",
+    "run_id": "519d56f1",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": [
-    {
-      "id": "indeed-in-e07055412e7a0478",
-      "source": "indeed",
-      "title": "Director of Revenue Management",
-      "company": "Dorchester Collection",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=e07055412e7a0478",
-      "posted": "2026-05-25",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 6,
-      "match_keywords": [
-        "director"
-      ],
-      "raw_snippet": "**Your future, our legacy**\n---------------------------\n\n\n### **Hotel**\n\n\nThe Lana\n\n\n### **Division \\& Department**\n\n\nSales \\& Marketing \\- Revenue\n\n\n### **Job Title**\n\n\nDirector of Revenue Management\n\n\n### **Contract Type**\n\n\nPermanent\n\n\n### **Status**\n\n\nFull time\n\n\n### **Position Overview**\n\n\nWe are not just a collection of hotels, but instead a talented community. A family with a shared passion and commitment to, unapologetically, love and breathe who we are every day. An eclectic grouping wh",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-0a2ecea5aefa8435",
-      "source": "indeed",
-      "title": "Program Director - Rail",
-      "company": "Parsons",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=0a2ecea5aefa8435",
-      "posted": "2026-05-25",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 26,
-      "match_keywords": [
-        "ai",
-        "director",
-        "leadership",
-        "growth"
-      ],
-      "raw_snippet": "In a world of possibilities, pursue one with endless opportunities. Imagine Next!  \n\n\nAt Parsons, you can imagine a career where you thrive, work with exceptional people, and be yourself. Guided by our leadership vision of valuing people, embracing agility, and fostering growth, we cultivate an innovative culture that empowers you to achieve your full potential. Unleash your talent and redefine what\u2019s possible. **Job Description:**\n\n\nParsons is seeking an exceptional **Program Direc****tor** to ",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Program Director"
-    },
     {
       "id": "indeed-in-dc1c5ad37577e0cb",
       "source": "indeed",
@@ -79,42 +36,6 @@
       "search_title": "Head of Technology"
     },
     {
-      "id": "indeed-in-7c8f2f8b76f7ecdc",
-      "source": "indeed",
-      "title": "Senior Manager - Technology Sourcing",
-      "company": "Emirates Islamic",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=7c8f2f8b76f7ecdc",
-      "posted": "2026-05-25",
-      "seniority": "Other",
-      "domain_match": true,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "The Senior Manager is responsible for developing and executing sourcing strategies for a set of tech categories across ENBD Group locations. This role ensures category\\-level delivery of service to businesses, manage spend and cost savings in line with strategies set by the Tech Sourcing Head. It plays a pivotal role in translating sourcing strategies into actionable plans within assigned categories across Group Locations.  \n\n**Key Responsibilities:**\n\n* **Develop And Implement** **Sourcing Stra",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Head of Technology"
-    },
-    {
-      "id": "indeed-in-cccddf265aa5ae4f",
-      "source": "indeed",
-      "title": "Senior Manager - Technology Sourcing",
-      "company": "Emirates NBD",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=cccddf265aa5ae4f",
-      "posted": "2026-05-25",
-      "seniority": "Other",
-      "domain_match": true,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "The Senior Manager is responsible for developing and executing sourcing strategies for a set of tech categories across ENBD Group locations. This role ensures category\\-level delivery of service to businesses, manage spend and cost savings in line with strategies set by the Tech Sourcing Head. It plays a pivotal role in translating sourcing strategies into actionable plans within assigned categories across Group Locations.  \n\n**Key Responsibilities:**\n\n* **Develop And Implement** **Sourcing Stra",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Head of IT"
-    },
-    {
       "id": "indeed-in-d1c0525b2c7fdf91",
       "source": "indeed",
       "title": "Technical Director - High Rise Building",
@@ -135,33 +56,13 @@
       "filter_reason": null,
       "search_country": "Saudi Arabia",
       "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-074c177f93c7b2f2",
-      "source": "indeed",
-      "title": "Associate Director - Urban Strategies",
-      "company": "Buro Happold",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=074c177f93c7b2f2",
-      "posted": "2026-05-25",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 6,
-      "match_keywords": [
-        "director"
-      ],
-      "raw_snippet": "Want to work with the most sought\\-after minds and most talked\\-about projects? Your interest in Urban Strategies might just make you our new **Associate Director\\- Urban Strategies**.\n\n**Here at Buro Happold, expect the exceptional.**\n\n\nFrom the projects you will work on to the clients we work with. From career\\-defining opportunities to an inclusive and diverse practice where we all contribute to a more equitable world. From our reputation to our relationships. Wherever your Buro Happold caree",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "IT Director"
     }
   ],
   "kpi": {
     "searches_run": 20,
-    "results_per_search": 2.45,
-    "unique_jobs": 7,
-    "errors": 11
+    "results_per_search": 1.8,
+    "unique_jobs": 2,
+    "errors": 12
   },
   "recommendations": []
 }

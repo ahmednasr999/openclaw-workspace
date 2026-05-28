@@ -135,7 +135,7 @@ For routine local verification, prefer first-class tools (`read`, `dir_list`, `f
 
 **Logged**: 2026-04-26T18:05:31+03:00
 **Priority**: high
-**Status**: pending
+**Status**: promoted
 **Area**: workflow
 
 ### Summary
@@ -157,11 +157,14 @@ For all agent workstreams, do not surface approval prompts for routine local rea
 
 ---
 
+### Promotion
+Promoted/closed during deep agents-cron-workflows cleanup on 2026-05-27. Promoted to operating guidance: CMO read-only script inspection is pre-approved when it stays local/read-only and does not publish, message, or mutate external state.
+
 ## [LRN-20260426-002] best_practice
 
 **Logged**: 2026-04-26T14:47:00+03:00
 **Priority**: high
-**Status**: pending
+**Status**: promoted
 **Area**: infra
 
 ### Summary
@@ -184,11 +187,14 @@ After OpenClaw updates, grep installed runtime for `Automatic session resume fai
 
 ---
 
+### Promotion
+Promoted/closed during deep agents-cron-workflows cleanup on 2026-05-27. Closed as obsolete after the 2026.5.26 update; runtime dist patches must be verified after each update rather than carried as active pending work.
+
 ## [LRN-20260426-001] correction
 
 **Logged**: 2026-04-26T12:13:00+03:00
 **Priority**: high
-**Status**: pending
+**Status**: promoted
 **Area**: workflow
 
 ### Summary
@@ -206,6 +212,9 @@ For read-only commands, avoid asking Ahmed for approval unless the command touch
 - Tags: correction, approvals, read-only, workflow, tool-policy
 
 ---
+
+### Promotion
+Promoted/closed during deep agents-cron-workflows cleanup on 2026-05-27. Promoted to operating guidance: routine read-only inspection should avoid approval-noisy inline eval shapes and use safer source-of-truth tools where possible.
 
 ## [LRN-20260413-001] best_practice
 
@@ -1201,7 +1210,7 @@ Promoted during system-wide Skillify Protocol triage on 2026-04-26. Durable rule
 
 **Logged**: 2026-04-25T17:35:00Z
 **Priority**: high
-**Status**: pending
+**Status**: promoted
 **Area**: workflow
 
 ### Summary
@@ -1219,6 +1228,9 @@ Run periodic operating-contract audits for stale model references, contradiction
 - Tags: correction, proactive, operating-contract, self-improvement
 
 ---
+
+### Promotion
+Promoted/closed during deep agents-cron-workflows cleanup on 2026-05-27. Promoted to operating guidance: run proactive operating-contract audits and recommend cleanup before Ahmed has to request it.
 
 ## 2026-04-26 - Continue standing work after completing one item
 
@@ -1410,6 +1422,10 @@ Keep external applications, recruiter/employer messages, emails, public posts, c
 - See Also: LRN-20260426-001
 
 ---
+
+### Promotion
+Promoted during final learning-promotion pass on 2026-05-27. The HR protected-lane policy is already durable in USER.md and TOOLS.md; keep approvals only for external/public/destructive/gateway actions.
+
 ## [LRN-20260511-NO-RAW-SILENCE-TOKEN] correction
 
 **Logged**: 2026-05-11T12:10:00+03:00
@@ -1461,7 +1477,7 @@ For future HR agents, prefer `/root/.openclaw/workspace-hr/tools/hr-status.py`, 
 
 **Logged**: 2026-05-11T21:05:00+03:00
 **Priority**: high
-**Status**: pending
+**Status**: promoted
 **Area**: messaging
 
 ### Summary
@@ -1483,12 +1499,15 @@ Before replying in a noisy/compacted Telegram session, identify the current user
 - Last-Seen: 2026-05-11
 
 ---
+
+### Promotion
+Promoted during deep-audit closeout on 2026-05-27. Current-user-request precedence is already durable in SOUL communication rules and OpenClaw messaging guidance.
 
 ## [LRN-20260511-telegram-media-context] correction
 
 **Logged**: 2026-05-11T21:05:00+03:00
 **Priority**: high
-**Status**: pending
+**Status**: promoted
 **Area**: messaging
 
 ### Summary
@@ -1510,6 +1529,10 @@ Before replying in a noisy/compacted Telegram session, identify the current user
 - Last-Seen: 2026-05-11
 
 ---
+
+### Promotion
+Promoted during deep-audit closeout on 2026-05-27. Current-user-request precedence is already durable in SOUL communication rules and OpenClaw messaging guidance.
+
 ## 2026-05-27 - LCM Active Context Can Need Targeted Compaction Despite Existing Summaries
 
 - Situation: Health guard reported conversation `6574` at 345,315 active-context tokens, but the generic force-compact queue ignored it because the conversation already had summaries.

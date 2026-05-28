@@ -1,0 +1,148 @@
+---
+name: linkedin
+description: LinkedIn automation via browser relay or cookies for messaging, profile viewing, and network actions.
+Use for LinkedIn tasks: messaging, profiles, connections, content, search.
+Do NOT use for: general browsing, bookmarking, LinkedIn account management, or non-LinkedIn tasks.
+
+metadata: {"clawdbot":{"emoji":"💼"}}
+---
+
+# LinkedIn
+
+Use browser automation to interact with LinkedIn - check messages, view profiles, search, and send connection requests.
+
+## Connection Methods
+
+### Option 1: Chrome Extension Relay (Recommended)
+1. Open LinkedIn in Chrome and log in
+2. Click the Clawdbot Browser Relay toolbar icon to attach the tab
+3. Use `browser` tool with `profile="chrome"`
+
+### Option 2: Isolated Browser
+1. Use `browser` tool with `profile="clawd"` 
+2. Navigate to linkedin.com
+3. Log in manually (one-time setup)
+4. Session persists for future use
+
+## Common Operations
+
+### Tab Reuse Rule
+Before using LinkedIn in Chrome, list tabs and reuse an existing LinkedIn tab or a labeled task tab.
+
+Preferred label examples:
+- `hr-linkedin` for HR/job-search/application work
+- `linkedin-content` for CMO/content work
+- `linkedin-profile` for profile/research work
+
+Do not open a new tab per job, profile, search, upload, or retry. Use one labeled tab and navigate it through the workflow. If a retry creates duplicates, close only the extra automation-created duplicates after confirming the intended labeled tab remains available.
+
+### Check Connection Status
+```
+browser action=tabs profile=chrome
+# If no suitable LinkedIn tab exists:
+browser action=open profile=chrome url="https://www.linkedin.com/feed/" label="linkedin-profile"
+browser action=snapshot profile=chrome targetId="linkedin-profile"
+```
+
+### View Notifications/Messages
+```
+browser action=tabs profile=chrome
+# If no suitable LinkedIn tab exists:
+browser action=open profile=chrome url="https://www.linkedin.com/messaging/" label="linkedin-profile"
+browser action=snapshot profile=chrome targetId="linkedin-profile"
+```
+
+### Search People
+```
+browser action=tabs profile=chrome
+# If no suitable LinkedIn tab exists:
+browser action=open profile=chrome url="https://www.linkedin.com/search/results/people/?keywords=QUERY" label="linkedin-profile"
+browser action=snapshot profile=chrome targetId="linkedin-profile"
+```
+
+### View Profile
+```
+browser action=tabs profile=chrome
+# If no suitable LinkedIn tab exists:
+browser action=open profile=chrome url="https://www.linkedin.com/in/USERNAME/" label="linkedin-profile"
+browser action=snapshot profile=chrome targetId="linkedin-profile"
+```
+
+### Send Message (confirm with user first!)
+1. Navigate to messaging or profile
+2. Use `browser action=act` with click/type actions
+3. Always confirm message content before sending
+
+## Safety Rules
+- **Never send messages without explicit user approval**
+- **Never accept/send connection requests without confirmation**
+- **Avoid rapid automated actions** - LinkedIn is aggressive about detecting automation
+- Rate limit: ~30 actions per hour max recommended
+
+## Session Cookie Method (Advanced)
+If browser relay isn't available, extract the `li_at` cookie from browser:
+1. Open LinkedIn in browser, log in
+2. DevTools → Application → Cookies → linkedin.com
+3. Copy `li_at` value
+4. Store securely for API requests
+
+## Troubleshooting
+- If logged out: Re-authenticate in browser
+- If rate limited: Wait 24 hours, reduce action frequency
+- If CAPTCHA: Complete manually in browser, then resume
+
+
+---
+## 🔧 Auto-Improvement (2026-03-21)
+> Added by weekly-agent-review.py based on recurring failure pattern.
+
+**Pattern detected (2 occurrences):**
+Add completion guard: verify ALL required outputs (image, Notion update, etc.) before marking task done.
+
+**Action required:**
+- Review this section and integrate the fix into the relevant step above.
+- Remove this block once the fix has been applied.
+
+---
+## 🔧 Auto-Improvement (2026-03-22)
+> Added by weekly-agent-review.py based on recurring failure pattern.
+
+**Pattern detected (2 occurrences):**
+Add completion guard: verify ALL required outputs (image, Notion update, etc.) before marking task done.
+
+**Action required:**
+- Review this section and integrate the fix into the relevant step above.
+- Remove this block once the fix has been applied.
+
+---
+
+## Learned Improvements
+
+### 2026-04-25 - Weekly Skill Tune-Up
+
+**Reviewed lessons:**
+- 2026-04-22, prove the LinkedIn execution lane is exposed before blaming stale session state or asking Ahmed to reconnect.
+- 2026-04-21, distinguish carousel preview, carousel asset, and single-post visual before delivery or publishing.
+- 2026-04-20, live LinkedIn posting workflows must not go quiet or imply progress before a verified publish.
+
+**Improvement recommendation:**
+1. **Add a LinkedIn content pre-flight.** Before any content, visual, or posting action, identify the requested artifact type: text post, single-image post, carousel asset, carousel preview, comment, message, or profile/network action.
+2. **Verify the live lane before user-facing fixes.** If a LinkedIn action fails, first prove whether the relevant lane is available: Ahmed-Mac Chrome for authenticated browser work, or the configured Composio/LinkedIn tool lane for approved posting. Do not send Ahmed through reconnect loops until lane exposure is proven.
+3. **Separate draft, staged, and published states.** A post is not complete until the required text, image or carousel, destination account, live URL, and rendered content are all verified. If an image was expected, text-only publishing is a failure unless Ahmed explicitly approves the downgrade.
+4. **Surface blockers after two failed publish paths.** For live posting, give short progress updates while debugging. If two independent publish paths fail, stop silently retrying and report the blocker with the fastest safe alternative.
+5. **Create a future `eval/checklist.md`.** Cover artifact type, account identity, media requirement, full text verification, live URL, rendered post check, and Notion/status update when relevant.
+
+### 2026-05-16 - Weekly Skill Tune-Up
+
+**Audit basis:** `linkedin-writer` is not an active skill directory in this workspace, so this audit used the active `linkedin` skill as the default LinkedIn writing/operations substitute. No `eval/checklist.md` exists for this skill.
+
+**Reviewed lessons:**
+- 2026-05-15, avoid empty private closeouts after Telegram sends. LinkedIn actions that already sent a visible message should not add generic private receipts.
+- 2026-04-29, Ahmed LinkedIn visuals must match the premium reference level, not rough template similarity.
+- 2026-04-24, long public posting tasks need timely progress confirmation while blockers are being debugged.
+
+**Improvement recommendation:**
+1. **Add a LinkedIn operation checklist.** Create `eval/checklist.md` with binary gates for artifact type, account identity, media requirement, approved text, live URL, rendered content proof, and status update.
+2. **Separate visible reply from private closeout.** If the workflow uses Telegram to notify Ahmed, that visible message should be the real answer. Avoid extra private "done" or "sent" receipts unless there is operational evidence to report.
+3. **Require reference-level visual proof for image posts.** For Ahmed branded LinkedIn visuals, compare against the approved premium reference before staging or publishing. Reject generic, flat, under-designed, or text-on-face layouts.
+4. **Escalate after two blocked publish paths.** If the browser lane and upload/publish lane both fail, stop retrying silently and report the blocker with the fastest safe alternative.

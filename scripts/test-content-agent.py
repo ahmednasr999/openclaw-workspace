@@ -332,17 +332,16 @@ check("linkedin-engagement-radar.py no longer exists (D2)", not old_radar.exists
 
 
 # =============================================================================
-# Suite 8: Cookie Config
+# Suite 8: LinkedIn Cookie Policy
 # =============================================================================
-suite("Cookie Config")
+suite("LinkedIn Cookie Policy")
 
-cookie_config = Path("/root/.openclaw/workspace/config/linkedin-cookies.json")
-check("linkedin-cookies.json exists", cookie_config.exists())
-if cookie_config.exists():
-    cc = json.load(open(cookie_config))
-    check("Has cookie_file path", "cookie_file" in cc)
-    check("Has max_age_hours", "max_age_hours" in cc)
-    check("Cookie file path exists", Path(cc["cookie_file"]).exists())
+for cookie_path in [
+    Path("/root/.openclaw/workspace/config/linkedin-cookies.json"),
+    Path("/root/.openclaw/workspace/data/linkedin-cookies.txt"),
+    Path("/root/.openclaw/cookies/linkedin.txt"),
+]:
+    check(f"Forbidden cookie artifact absent: {cookie_path.name}", not cookie_path.exists())
 
 
 # =============================================================================

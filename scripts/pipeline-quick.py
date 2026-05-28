@@ -24,7 +24,6 @@ except ImportError:
     sys.exit(1)
 
 DB_PATH = "/root/.openclaw/workspace/data/nasr-pipeline.db"
-COOKIE_PATH = "/root/.openclaw/cookies/linkedin.txt"
 CAIRO = timezone(timedelta(hours=2))
 
 
@@ -89,70 +88,9 @@ def fetch_linkedin_jd(job_id):
         except Exception as e:
             print(f"Shared fetcher failed: {e}, falling back to direct Voyager")
 
-    # Legacy fallback: direct Voyager call
-    cookies = {}
-    if os.path.exists(COOKIE_PATH):
-        with open(COOKIE_PATH) as f:
-            for line in f:
-                if line.startswith('#') or not line.strip():
-                    continue
-                parts = line.strip().split('\t')
-                if len(parts) >= 7:
-                    cookies[parts[5]] = parts[6]
-
-    li_at = cookies.get('li_at', '')
-    jsessionid = cookies.get('JSESSIONID', '').strip('"')
-
-    if not li_at:
-        return None
-
-    url = f"https://www.linkedin.com/voyager/api/jobs/jobPostings/{job_id}"
-    headers = {
-        "Cookie": f"li_at={li_at}; JSESSIONID=\"{jsessionid}\"",
-        "Csrf-Token": jsessionid,
-        "User-Agent": "Mozilla/5.0",
-        "Accept": "application/vnd.linkedin.normalized+json+2.1",
-    }
-
-    req = urllib.request.Request(url, headers=headers)
-    try:
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            data = json.loads(resp.read())
-            title = data.get("title", "Unknown Role")
-            company_name = "Unknown"
-            
-            # Try to extract company
-            company_data = data.get("companyDetails", {})
-            if isinstance(company_data, dict):
-                company_name = company_data.get("company", {}).get("name", "Unknown")
-            
-            # Try different company name paths
-            if company_name == "Unknown":
-                for key in ["companyName", "formattedLocation"]:
-                    if key in data and data[key]:
-                        if key == "companyName":
-                            company_name = data[key]
-                            break
-
-            location = data.get("formattedLocation", "")
-            description = data.get("description", {})
-            if isinstance(description, dict):
-                jd_text = description.get("text", "")
-            else:
-                jd_text = str(description)
-
-            return {
-                "job_id": f"li-{job_id}",
-                "title": title,
-                "company": company_name,
-                "location": location,
-                "jd_text": jd_text,
-                "job_url": f"https://www.linkedin.com/jobs/view/{job_id}/",
-                "source": "linkedin-manual",
-            }
-    except Exception as e:
-        print(f"Voyager API failed: {e}")
-        return None
+    # No cookie/Voyager fallback. LinkedIn descriptions must come from the
+    # shared public JobSpy-style fetcher, or from a live visible browser flow.
+    return None
 
 
 def cmd_register_url(url):

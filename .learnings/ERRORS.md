@@ -455,7 +455,7 @@ When printing strings that may begin with hyphens, use `printf '%s\\n' 'text'` o
 
 **Logged**: 2026-04-26T23:20:00+03:00
 **Priority**: high
-**Status**: pending
+**Status**: promoted
 **Area**: tools
 
 ### Summary
@@ -479,6 +479,10 @@ Avoid `find -exec` shapes for routine read-only audits and split into simpler co
 - See Also: LRN-20260426-001, LRN-20260426-003
 
 ---
+
+### Promotion
+Promoted/closed during deep agents-cron-workflows cleanup on 2026-05-27. Promoted to tool guidance: avoid read-only find -exec/sed inline-eval shapes when gateway approval policy may interrupt the user.
+
 ## 2026-04-27 - write tool cannot write /tmp paths
 
 What happened: The write tool failed when saving /tmp/calendar-events-2026-04-27.json because it only writes inside ~/.openclaw/workspace.
@@ -489,7 +493,7 @@ What to do differently: For required /tmp outputs, use exec with a heredoc and v
 
 **Logged**: 2026-04-28T10:03:00+03:00
 **Priority**: high
-**Status**: pending
+**Status**: promoted
 **Area**: messaging
 
 ### Summary
@@ -511,11 +515,17 @@ Before final replies, scan for runtime/tool/system context text and strip it. If
 - Related Files: SOUL.md, AGENTS.md
 - Tags: privacy, messaging, runtime-context
 
+### Promotion
+Promoted/closed during deep agents-cron-workflows cleanup on 2026-05-27. Promoted to messaging guidance: runtime/tool/system context must be stripped from user-visible replies.
+
+### Promotion
+Promoted during final learning-promotion pass on 2026-05-27. The Tavily/Exa fallback behavior is now durable in TOOLS.md; avoid repeated broken provider retries and use available fallbacks.
+
 ## [ERR-20260428-002] repeated_runtime_context_leak_final_reply
 
 **Logged**: 2026-04-28T13:36:00+03:00
 **Priority**: critical
-**Status**: pending
+**Status**: promoted
 **Area**: messaging
 
 ### Summary
@@ -539,11 +549,14 @@ Treat any runtime context block as forbidden output. For repeated leaks, escalat
 
 ---
 
+### Promotion
+Promoted/closed during deep agents-cron-workflows cleanup on 2026-05-27. Promoted to messaging guidance and duplicate-reply diagnosis rules; repeated runtime context leaks require runtime investigation, not just behavioral reminders.
+
 ## [ERR-20260428-001] heartbeat-scanner-exa-credits-and-stale-checks
 
 **Logged**: 2026-04-28T14:26:00Z
 **Priority**: high
-**Status**: pending
+**Status**: promoted
 **Area**: cron/heartbeat/jobs
 
 ### Summary
@@ -567,6 +580,12 @@ Top up/rotate Exa credentials or replace the scanner/radar search provider with 
 ### Metadata
 - Reproducible: yes
 - Related Files: scripts/linkedin-gulf-jobs.py, scripts/heartbeat-checks.sh, scripts/comment-radar-agent.py, data/comment-radar.json
+
+### Promotion
+Promoted/closed during deep agents-cron-workflows cleanup on 2026-05-27. Promoted to messaging guidance: runtime/tool/system context must be stripped from user-visible replies.
+
+### Promotion
+Promoted during final learning-promotion pass on 2026-05-27. The Tavily/Exa fallback behavior is now durable in TOOLS.md; avoid repeated broken provider retries and use available fallbacks.
 
 ## [ERR-20260428-004] composio-meta-tool-schema-assumption
 
@@ -608,6 +627,9 @@ During heartbeat work to add a non-Exa fallback for `scripts/linkedin-gulf-jobs.
 
 ### Fix
 Use the configured OpenClaw capability instead of direct Tavily calls for cron-safe fallback search: `openclaw infer web search --provider duckduckgo --json`. This was verified to return usable results without Exa credits.
+
+### Promotion
+Promoted during final learning-promotion pass on 2026-05-27. The Tavily/Exa fallback behavior is now durable in TOOLS.md; avoid repeated broken provider retries and use available fallbacks.
 
 ## 2026-04-29 - OpenClaw CLI web fallback providers unavailable for Gulf jobs scanner
 - What happened: End-to-end `scripts/linkedin-gulf-jobs.py` verification found Exa/Composio still returns 402 `NO_MORE_CREDITS`; `openclaw infer web search --provider duckduckgo` now returns 403/bot-detection challenges; `--provider tavily` returns pay-as-you-go limit 433 even with the configured key; Brave provider reports missing API key.
@@ -656,7 +678,7 @@ For JobZoom delivery failures, prefer the first-class `message` tool with files 
 
 **Logged**: 2026-05-06T21:42:10+03:00
 **Priority**: critical
-**Status**: pending
+**Status**: promoted
 **Area**: infra/config
 
 ### Summary
@@ -700,6 +722,10 @@ Also compare config against current schema and remove deprecated keys before res
 - Tags: openclaw-update, gateway, systemd, model-router, codex-oauth, config-schema
 
 ---
+
+### Promotion
+Promoted during deep-audit closeout on 2026-05-27. Update preflight/closeout now verifies active binary, config schema, systemd path, and openai-codex/gpt-5.5 model refs.
+
 ## 2026-05-17 - OpenClaw backup included live agent log SQLite files
 
 ### Error
@@ -829,3 +855,8 @@ Continuation from 72/100 found LinkedIn reachable again, but many queued ATS>=60
 The DB candidate queue is not equivalent to LinkedIn Easy Apply availability, the top-applicant runner reconnected too aggressively to a browser profile that LinkedIn/browser closed, and live GPT CV generation timed out on some fresh search jobs.
 ### Fix
 Skip unsupported required-field jobs instead of treating them as hard security blockers, reuse/restart the nasr-linkedin profile per candidate, and prefer pre-generated JobZoom CV candidates when available; if live CV generation times out, do not submit.
+
+2026-05-27 - gateway apply_patch unavailable
+- What happened: `apply_patch` is not installed in the gateway sandbox, so patching via that command failed.
+- Do differently: when editing gateway files, first check for `apply_patch`; if absent, use a small backed-up structured patcher and validate syntax immediately.
+

@@ -26,7 +26,7 @@ MIN_EXCHANGES = 5  # Skip sessions with fewer than 5 exchanges
 def get_latest_session():
     """Get the most recent .jsonl session file."""
     sessions = sorted(
-        [f for f in SESSIONS_DIR.glob("*.jsonl") if not f.name.endswith(".lock") and not f.name.endswith(".deleted")],
+        [f for f in SESSIONS_DIR.glob("*.jsonl") if not f.name.endswith(".lock") and not f.name.endswith(".deleted") and not f.name.endswith(".trajectory.jsonl")],
         key=lambda x: x.stat().st_mtime,
         reverse=True
     )
@@ -38,7 +38,7 @@ def get_today_sessions():
     today = datetime.now()
     sessions = []
     for f in SESSIONS_DIR.glob("*.jsonl"):
-        if f.name.endswith(".lock") or f.name.endswith(".deleted"):
+        if f.name.endswith(".lock") or f.name.endswith(".deleted") or f.name.endswith(".trajectory.jsonl"):
             continue
         mtime = datetime.fromtimestamp(f.stat().st_mtime)
         if mtime.date() == today.date():

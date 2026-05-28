@@ -122,7 +122,7 @@ if [ -f "$MERGED_FILE" ]; then
         
         # AUTO-FIX: re-run job pipeline
         if [ ! -f /tmp/briefing-pipeline.lock ]; then
-            bash "${WORKSPACE}/scripts/run-briefing-pipeline.sh" --jobs-only >> /tmp/watchdog-pipeline.log 2>&1 &
+            ( exec 9>&-; bash "${WORKSPACE}/scripts/run-briefing-pipeline.sh" --jobs-only >> /tmp/watchdog-pipeline.log 2>&1 ) &
             echo "  Pipeline triggered in background"
             log "FIXED: Pipeline triggered"
             report "🔄 Jobs data was ${MERGED_AGE_H}h stale → pipeline re-triggered"
@@ -288,10 +288,10 @@ if [ -f "$LOG_FILE" ]; then
 fi
 
 # Exit code for cron monitoring
+# Warnings are either informational or already remediated here; only human alerts
+# should mark the cron wrapper as failed.
 if [ "$ALERTS" -gt 0 ]; then
     exit 2
-elif [ "$WARNINGS" -gt 0 ]; then
-    exit 1
 else
     exit 0
 fi

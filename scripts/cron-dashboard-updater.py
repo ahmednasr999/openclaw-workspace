@@ -11,6 +11,7 @@ import json
 import subprocess
 import re
 import argparse
+import time
 from datetime import datetime, timedelta
 from pathlib import Path
 import requests
@@ -22,6 +23,8 @@ NOTION_VERSION = "2022-06-28"
 WORKSPACE_ROOT = "/root/.openclaw/workspace"
 CAIRO_TZ = ZoneInfo("Africa/Cairo")
 OPENCLAW_CRON_LIST_TIMEOUT_SECONDS = 45
+NOTION_REQUEST_TIMEOUT_SECONDS = 20
+NOTION_REQUEST_RETRIES = 3
 
 
 def load_notion_token():
@@ -41,18 +44,18 @@ def load_notion_token():
 
 # Cron log mappings (script path -> log file)
 LOG_PATHS = {
-    "daily-backup.sh": "/root/.openclaw/workspace/logs/openclaw-backup.log",
-    "archive-daily-notes.sh": "/tmp/openclaw-archive.log",
-    "daily-snapshot.sh": "/tmp/openclaw-snapshot.log",
-    "retention-backups.sh": "/tmp/openclaw-retention-backups.log",
-    "retention-snapshots.sh": "/tmp/openclaw-retention-snapshots.log",
-    "retention-caches.sh": "/tmp/openclaw-retention-caches.log",
-    "disk-health-check.sh": "/tmp/disk-health-cron.log",
-    "job-radar.sh": "/tmp/job-radar.log",
-    "morning-brief.sh": "/tmp/morning-brief.log",
-    "clear-stale-context-maintenance.py": "/tmp/openclaw-stale-context-maintenance.log",
-    "cron-watchdog-v3.sh": "/root/.openclaw/workspace/logs/watchdog/cron.log",
-    "cron-dashboard-updater.py": "/root/.openclaw/workspace/logs/cron-dashboard-updater.log",
+    "daily-backup.sh": "/root/.openclaw/workspace/logs/cron/daily-backup.log",
+    "archive-daily-notes.sh": "/root/.openclaw/workspace/logs/cron/archive-daily-notes.log",
+    "daily-snapshot.sh": "/root/.openclaw/workspace/logs/cron/daily-snapshot.log",
+    "retention-backups.sh": "/root/.openclaw/workspace/logs/cron/retention-backups.log",
+    "retention-snapshots.sh": "/root/.openclaw/workspace/logs/cron/retention-snapshots.log",
+    "retention-caches.sh": "/root/.openclaw/workspace/logs/cron/retention-caches.log",
+    "disk-health-check.sh": "/root/.openclaw/workspace/logs/cron/disk-health-check.log",
+    "job-radar.sh": "/root/.openclaw/workspace/logs/cron/job-radar.log",
+    "morning-brief.sh": "/root/.openclaw/workspace/logs/cron/morning-brief.log",
+    "clear-stale-context-maintenance.py": "/root/.openclaw/workspace/logs/cron/stale-context-maintenance.log",
+    "cron-watchdog-v3.sh": "/root/.openclaw/workspace/logs/cron/cron-watchdog-v3.log",
+    "cron-dashboard-updater.py": "/root/.openclaw/workspace/logs/cron/cron-dashboard-updater.log",
     "run-briefing-pipeline.sh": "/var/log/briefing/cron.log",
     "linkedin-autoresearch.py": "/tmp/linkedin-autoresearch.log",
     "autoresearch-job-review.py": "/tmp/autoresearch-job-review.log",
@@ -60,7 +63,7 @@ LOG_PATHS = {
     "key-health-check.sh": None,
     "token-health-check.sh": None,
     "x-radar.sh": "/root/.openclaw/workspace/logs/x-radar.log",
-    "sie-360-checks.py": "/tmp/sie-360-checks.log",
+    "sie-360-checks.py": "/root/.openclaw/workspace/logs/cron/sie-360-checks.log",
     "weekly-agent-review.py": "/root/.openclaw/workspace/memory/cron-weekly-review.log",
     "rss-to-content-calendar.py": "/root/.openclaw/workspace/logs/rss-to-calendar.log",
     "content-factory-health-monitor.py": "/root/.openclaw/workspace/logs/cf-health.log",
@@ -69,8 +72,8 @@ LOG_PATHS = {
     "ontology-notion-sync.py": "/root/.openclaw/workspace/logs/ontology-sync.log",
     "ontology-pipeline-sync.py": "/root/.openclaw/workspace/logs/ontology-sync.log",
     "linkedin-engagement-agent.py": "/root/.openclaw/workspace/logs/linkedin-engagement.log",
-    "run_approved_14day_daily_post.py": "/root/.openclaw/workspace-cmo/logs/approved-14day-linkedin-cron.log",
-    "send_approved_14day_engagement_alert.py": "/root/.openclaw/workspace-cmo/logs/approved-14day-linkedin-cron.log",
+    "run_approved_14day_daily_post.py": "/root/.openclaw/workspace/logs/cron/approved-14day-linkedin-post-cron.log",
+    "send_approved_14day_engagement_alert.py": "/root/.openclaw/workspace/logs/cron/approved-14day-linkedin-engagement-cron.log",
 }
 
 
@@ -85,7 +88,43 @@ class CronDashboardUpdater:
             "Content-Type": "application/json",
         }
         self.crons = []
-        self.results = {"updated": 0, "created": 0, "errors": []}
+        self.results = {"updated": 0, "created": 0, "errors": [], "warnings": []}
+        self.notion_degraded = False
+
+    def notion_request(self, method, url, *, context, **kwargs):
+        for attempt in range(1, NOTION_REQUEST_RETRIES + 1):
+            try:
+                response = requests.request(
+                    method,
+                    url,
+                    headers=self.headers,
+                    timeout=NOTION_REQUEST_TIMEOUT_SECONDS,
+                    **kwargs,
+                )
+            except requests.RequestException as exc:
+                if attempt == NOTION_REQUEST_RETRIES:
+                    self.notion_degraded = True
+                    self.results["warnings"].append(f"Notion unavailable during {context}: {exc}")
+                    return None
+                time.sleep(2 * attempt)
+                continue
+
+            if response.status_code in {429, 500, 502, 503, 504}:
+                if attempt == NOTION_REQUEST_RETRIES:
+                    self.notion_degraded = True
+                    self.results["warnings"].append(
+                        f"Notion retry exhausted during {context}: {response.status_code} - {response.text[:300]}"
+                    )
+                    return None
+                retry_after = response.headers.get("Retry-After")
+                delay = int(retry_after) if retry_after and retry_after.isdigit() else 2 * attempt
+                time.sleep(delay)
+                continue
+
+            return response
+
+        self.notion_degraded = True
+        return None
 
     def parse_system_crontab(self):
         """Parse user crontab (actual active cron jobs)"""
@@ -257,7 +296,9 @@ class CronDashboardUpdater:
         }
 
         try:
-            response = requests.post(url, headers=self.headers, json=data, timeout=10)
+            response = self.notion_request("POST", url, context=f"finding page '{name}'", json=data)
+            if response is None:
+                return None
             if response.status_code == 200:
                 results = response.json().get("results", [])
                 return results[0] if results else None
@@ -312,7 +353,9 @@ class CronDashboardUpdater:
         data = {"parent": {"database_id": self.db_id}, "properties": properties}
 
         try:
-            response = requests.post(url, headers=self.headers, json=data, timeout=10)
+            response = self.notion_request("POST", url, context=f"creating page '{cron_data['name']}'", json=data)
+            if response is None:
+                return None
             if response.status_code == 200:
                 self.results["created"] += 1
                 return response.json()
@@ -365,7 +408,9 @@ class CronDashboardUpdater:
         data = {"properties": properties}
 
         try:
-            response = requests.patch(url, headers=self.headers, json=data, timeout=10)
+            response = self.notion_request("PATCH", url, context=f"updating page '{cron_data['name']}'", json=data)
+            if response is None:
+                return None
             if response.status_code == 200:
                 self.results["updated"] += 1
                 return response.json()
@@ -396,10 +441,16 @@ class CronDashboardUpdater:
             # Update Notion
             for cron in all_crons:
                 existing = self.notion_find_page(cron["name"])
+                if self.notion_degraded:
+                    print("Notion degraded; stopping remote updates for this run. Local summary will still be saved.")
+                    break
                 if existing:
                     self.notion_update_page(existing["id"], cron)
                 else:
                     self.notion_create_page(cron)
+                if self.notion_degraded:
+                    print("Notion degraded; stopping remote updates for this run. Local summary will still be saved.")
+                    break
 
         # Output summary
         print(f"\nUpdate Summary:")
@@ -409,6 +460,10 @@ class CronDashboardUpdater:
             print(f"  Errors: {len(self.results['errors'])}")
             for err in self.results["errors"]:
                 print(f"    - {err}")
+        if self.results["warnings"]:
+            print(f"  Warnings: {len(self.results['warnings'])}")
+            for warning in self.results["warnings"]:
+                print(f"    - {warning}")
 
         # Output JSON summary
         summary = {
@@ -419,6 +474,7 @@ class CronDashboardUpdater:
             "notion_created": self.results["created"],
             "notion_updated": self.results["updated"],
             "errors": self.results["errors"],
+            "warnings": self.results["warnings"],
             "crons": [
                 {
                     "name": c["name"],

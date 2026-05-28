@@ -3,8 +3,8 @@
 LinkedIn JD Fetcher (Camofox Edition)
 Usage: python3 linkedin-jd-fetcher.py <linkedin_job_url>
 Output: JSON with title, company, location, jd
-Uses camofox-browser for anti-detection browsing.
-Fallback: raw Playwright if camofox server is down.
+Uses public LinkedIn pages through Camofox when available.
+Fallback: raw Playwright without cookies if Camofox is down.
 """
 
 import sys
@@ -13,7 +13,6 @@ import subprocess
 import time
 from pathlib import Path
 
-COOKIES_FILE = Path(__file__).parent.parent / "config" / "linkedin-cookies.json"
 CAMOFOX_PORT = 9377
 
 EXTRACT_JS = """
@@ -90,12 +89,6 @@ def fetch_jd_camofox(url: str) -> dict:
         return {"error": "No tabId returned from camofox open", "jd": None}
 
     try:
-        # Import cookies
-        if COOKIES_FILE.exists():
-            run_camofox(["cookie", "import", str(COOKIES_FILE), tab_id], timeout=10)
-            # Navigate again with cookies
-            run_camofox(["navigate", url, tab_id], timeout=30)
-
         # Wait for page to settle
         time.sleep(3)
 
@@ -148,12 +141,6 @@ def fetch_jd_playwright(url: str) -> dict:
     async def _fetch():
         from playwright.async_api import async_playwright
 
-        if not COOKIES_FILE.exists():
-            return {"error": "No LinkedIn cookies found.", "jd": None}
-
-        with open(COOKIES_FILE) as f:
-            cookies = json.load(f)
-
         async with async_playwright() as p:
             browser = await p.chromium.launch(
                 headless=True,
@@ -164,7 +151,6 @@ def fetch_jd_playwright(url: str) -> dict:
                            "(KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36",
                 viewport={"width": 1280, "height": 800},
             )
-            await context.add_cookies(cookies)
             page = await browser.new_page()
 
             try:

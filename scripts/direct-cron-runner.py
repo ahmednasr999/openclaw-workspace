@@ -10,6 +10,7 @@ import os
 import re
 import subprocess
 import sys
+import time
 from datetime import date, datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -17,7 +18,7 @@ from zoneinfo import ZoneInfo
 
 ROOT = Path("/root/.openclaw/workspace")
 CMO_ROOT = Path("/root/.openclaw/workspace-cmo")
-LOG_DIR = ROOT / "logs" / "direct-cron"
+LOG_DIR = ROOT / "logs" / "cron" / "direct-cron"
 LOCK_DIR = Path("/var/lock/openclaw")
 CAIRO = ZoneInfo("Africa/Cairo")
 
@@ -51,15 +52,53 @@ def send_telegram(message: str, *, target: str, thread_id: str | None = None, no
     ]
     if thread_id:
         cmd.extend(["--thread-id", thread_id])
-    proc = subprocess.run(cmd, text=True, capture_output=True, timeout=30)
-    return {
-        "ok": proc.returncode == 0,
-        "returncode": proc.returncode,
-        "stdout": proc.stdout.strip(),
-        "stderr": proc.stderr.strip(),
+
+    last_result = {
+        "ok": False,
+        "returncode": None,
+        "stdout": "",
+        "stderr": "not attempted",
         "target": target,
         "thread_id": thread_id,
     }
+    for attempt in range(1, 4):
+        try:
+            proc = subprocess.run(cmd, text=True, capture_output=True, timeout=45)
+            last_result = {
+                "ok": proc.returncode == 0,
+                "returncode": proc.returncode,
+                "stdout": proc.stdout.strip(),
+                "stderr": proc.stderr.strip(),
+                "target": target,
+                "thread_id": thread_id,
+                "attempt": attempt,
+            }
+        except subprocess.TimeoutExpired as exc:
+            last_result = {
+                "ok": False,
+                "returncode": 124,
+                "stdout": (exc.stdout or "").strip() if isinstance(exc.stdout, str) else "",
+                "stderr": f"Telegram delivery timed out after {exc.timeout}s",
+                "target": target,
+                "thread_id": thread_id,
+                "attempt": attempt,
+            }
+        except Exception as exc:
+            last_result = {
+                "ok": False,
+                "returncode": None,
+                "stdout": "",
+                "stderr": f"Telegram delivery exception: {exc}",
+                "target": target,
+                "thread_id": thread_id,
+                "attempt": attempt,
+            }
+
+        if last_result["ok"]:
+            return last_result
+        if attempt < 3:
+            time.sleep(2 * attempt)
+    return last_result
 
 
 def run_command(task: str, cmd: list[str], *, cwd: Path, timeout: int, env: dict[str, str] | None = None) -> dict:
@@ -320,12 +359,58 @@ def approved_batch_engagement(args: argparse.Namespace) -> int:
         return 0 if result["returncode"] == 0 and delivery.get("ok") else 1
 
 
+def linkedin_comment_radar_1500(args: argparse.Namespace) -> int:
+    with with_lock("linkedin-comment-radar-1500"):
+        result = run_command(
+            "linkedin-comment-radar-1500-validate" if args.validate else "linkedin-comment-radar-1500",
+            [sys.executable, "scripts/run_linkedin_comment_radar.py", "--slot", "1500"],
+            cwd=CMO_ROOT,
+            timeout=1500,
+        )
+
+        stdout = result["stdout"].strip()
+        report_path = ""
+        posts = "?"
+        status = "unknown"
+        for line in stdout.splitlines():
+            if line.startswith("/") and line.endswith(".md"):
+                report_path = line.strip()
+            match = re.search(r"status=([^\s]+) posts=(\d+)", line)
+            if match:
+                status, posts = match.group(1), match.group(2)
+
+        if args.validate:
+            print(json.dumps({"ok": result["returncode"] == 0, "validate": True, "status": status, "posts": posts, "report": report_path, "result": result}, ensure_ascii=False))
+            return 0 if result["returncode"] == 0 else 1
+
+        if result["returncode"] == 0:
+            body = (
+                "LinkedIn Comment Radar 15:00 completed.\n"
+                f"Status: {status}\n"
+                f"Candidate count: {posts}\n"
+                f"Report: {report_path or result['log_path']}\n"
+                "Needs Ahmed: approve which comments to post."
+            )
+            delivery = send_telegram(body, target=CEO_GROUP, thread_id=TOPIC_CMO, no_send=args.no_send)
+        else:
+            body = (
+                "LinkedIn Comment Radar 15:00 failed.\n"
+                f"Return code: {result['returncode']}\n"
+                f"Log: {result['log_path']}\n"
+                f"Error: {(result['stderr'] or result['stdout'])[-900:].strip() or 'no output'}"
+            )
+            delivery = send_telegram(body, target=AHMED_DM, no_send=args.no_send)
+
+        print(json.dumps({"ok": result["returncode"] == 0 and delivery.get("ok"), "status": status, "posts": posts, "report": report_path, "result": result, "delivery": delivery}, ensure_ascii=False))
+        return 0 if result["returncode"] == 0 and delivery.get("ok") else 1
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--no-send", action="store_true", help="Run without Telegram delivery.")
     parser.add_argument("--validate", action="store_true", help="Use a non-destructive validation path where available.")
     sub = parser.add_subparsers(dest="task", required=True)
-    for name in ("weekly-self-health", "disk-guard", "session-cleanup", "approved-14day-post", "approved-14day-engagement"):
+    for name in ("weekly-self-health", "disk-guard", "session-cleanup", "approved-14day-post", "approved-14day-engagement", "linkedin-comment-radar-1500"):
         sub.add_parser(name)
     args = parser.parse_args()
 
@@ -335,6 +420,7 @@ def main() -> int:
         "session-cleanup": session_cleanup,
         "approved-14day-post": approved_batch_post,
         "approved-14day-engagement": approved_batch_engagement,
+        "linkedin-comment-radar-1500": linkedin_comment_radar_1500,
     }
     return handlers[args.task](args)
 
