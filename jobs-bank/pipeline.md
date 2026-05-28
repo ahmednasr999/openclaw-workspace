@@ -109,6 +109,16 @@
 | 85 | New | KUWAIT JOBS HERE | hief Technical Officer (CTO) – Cloud & Streaming Expert | Kuwait City | -- | Discovered | Radar | 2026-03-11 | -- | [Link](https://www.linkedin.com/jobs/view/4381075803) | ATS:72 |
 | 86 | New | Innovation Consulting Group (ICG) | Enterprise Solutions Owner – Cloud & AI Transformation | Riyadh | -- | Discovered | Radar | 2026-03-11 | -- | [Link](https://www.linkedin.com/jobs/view/4381705937) | ATS:69 |
 | 87 | New | Innovation Consulting Group (ICG) | Enterprise Solutions Owner – Cybersecurity & Digital Platforms | Riyadh | -- | Discovered | Radar | 2026-03-11 | -- | [Link](https://www.linkedin.com/jobs/view/4381706891) | ATS:66 |
+| 221 | 🆕 | Northwestern University | Director of the Library | Doha | — | 🆕 Discovered | Radar | 2026-05-28 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4408538683) | — |
+| 222 | 🆕 | Wood | EOI - Project Director (Offshore) | Doha | — | 🆕 Discovered | Radar | 2026-05-28 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4271433761) | — |
+| 223 | 🆕 | GeniusMesh | Managing Director | Doha | — | 🆕 Discovered | Radar | 2026-05-28 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4416504009) | — |
+| 224 | 🆕 | Hex Trust | VP, Head of Partnerships | Dubai | — | 🆕 Discovered | Radar | 2026-05-28 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4419577793) | — |
+| 225 | 🆕 | TALENTMATE | VP Head Of Partnerships | Dubai | — | 🆕 Discovered | Radar | 2026-05-28 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4419863771) | — |
+| 226 | 🆕 | TALENTMATE | UAEN Only - VP Operational Emissions | Dubai | — | 🆕 Discovered | Radar | 2026-05-28 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4418699606) | — |
+| 227 | 🆕 | TALENTMATE | Vice President Enterprise Governance Injaz Environment Social And Governance Environment Social Governance | Dubai | — | 🆕 Discovered | Radar | 2026-05-28 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4418687331) | — |
+| 228 | 🆕 | TALENTMATE | Vice President Aladdin Client Engagement | Dubai | — | 🆕 Discovered | Radar | 2026-05-28 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4418660147) | — |
+| 229 | 🆕 | BlackRock | Vice President, Aladdin Client Engagement | Dubai | — | 🆕 Discovered | Radar | 2026-05-28 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4418633387) | — |
+
 
 
 

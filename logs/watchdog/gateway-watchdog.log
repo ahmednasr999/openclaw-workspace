@@ -488,3 +488,184 @@
 2026-05-27T19:55:22+03:00 observed reason=starvation-signals-6, pid=1910727 rss_kb=1180948 app_servers=8 health_ms=1134 signals=6
 2026-05-27T19:57:35+03:00 chrome-trim term pid=1969574 count=17 rss_kb=1969892
 2026-05-27T19:59:55+03:00 chrome-trim term pid=1970205 count=17 rss_kb=1969656
+2026-05-27T20:00:09+03:00 restart-deferred reason=slow-health-3498ms active_app_servers=8
+2026-05-27T20:00:09+03:00 observed reason=slow-health-3498ms, pid=1910727 rss_kb=1186396 app_servers=8 health_ms=3498 signals=2
+2026-05-27T20:02:22+03:00 health-fail count=1 pid=1910727 http=000 ms=6006 app_servers=8
+2026-05-27T20:04:42+03:00 health-fail count=2 pid=1910727 http=000 ms=6007 app_servers=8
+2026-05-27T20:04:42+03:00 restart-deferred reason=health-failures:2:http-000 active_app_servers=8
+2026-05-27T20:06:55+03:00 chrome-trim term pid=1971171 count=17 rss_kb=1987648
+2026-05-27T20:07:07+03:00 health-fail count=3 pid=1910727 http=000 ms=6005 app_servers=8
+2026-05-27T20:07:07+03:00 restart-deferred reason=health-failures:3:http-000 active_app_servers=8
+2026-05-27T20:08:55+03:00 chrome-trim term pid=1972934 count=17 rss_kb=2099428
+2026-05-27T20:09:06+03:00 health-fail count=4 pid=1910727 http=000 ms=6006 app_servers=8
+2026-05-27T20:09:06+03:00 restart-deferred reason=health-failures:4:http-000 active_app_servers=8
+2026-05-27T20:11:14+03:00 chrome-trim term pid=1973468 count=17 rss_kb=2104324
+2026-05-27T20:11:26+03:00 health-fail count=5 pid=1910727 http=000 ms=6005 app_servers=8
+2026-05-27T20:11:26+03:00 restart-deferred reason=health-failures:5:http-000 active_app_servers=8
+2026-05-27T20:13:35+03:00 chrome-trim term pid=1974050 count=17 rss_kb=2000812
+2026-05-27T20:13:46+03:00 health-fail count=6 pid=1910727 http=000 ms=6007 app_servers=8
+2026-05-27T20:13:46+03:00 restart-deferred reason=health-failures:6:http-000 active_app_servers=8
+2026-05-27T20:15:54+03:00 chrome-trim term pid=1974625 count=17 rss_kb=2055584
+2026-05-27T20:18:15+03:00 chrome-trim term pid=1975236 count=17 rss_kb=1968472
+2026-05-27T20:20:34+03:00 chrome-trim term pid=1975789 count=17 rss_kb=1958740
+2026-05-27T20:20:40+03:00 observed reason=starvation-signals-3, pid=1910727 rss_kb=1175480 app_servers=8 health_ms=242 signals=3
+2026-05-27T20:22:54+03:00 chrome-trim term pid=1976396 count=17 rss_kb=1995148
+2026-05-27T20:23:06+03:00 health-fail count=1 pid=1910727 http=000 ms=6006 app_servers=8
+2026-05-27T20:25:14+03:00 chrome-trim term pid=1976975 count=17 rss_kb=1960376
+2026-05-27T20:25:26+03:00 health-fail count=2 pid=1910727 http=000 ms=6006 app_servers=8
+2026-05-27T20:25:26+03:00 restart-deferred reason=health-failures:2:http-000 active_app_servers=8
+2026-05-27T20:27:39+03:00 observed reason=starvation-signals-3, pid=1910727 rss_kb=1148256 app_servers=8 health_ms=2888 signals=3
+2026-05-27T20:29:54+03:00 chrome-trim term pid=1977534 count=17 rss_kb=1966412
+2026-05-27T20:30:00+03:00 observed reason=starvation-signals-4, pid=1910727 rss_kb=1180760 app_servers=8 health_ms=389 signals=4
+2026-05-27T20:32:15+03:00 chrome-trim term pid=1978742 count=17 rss_kb=1959508
+2026-05-27T20:34:34+03:00 chrome-trim term pid=1979345 count=17 rss_kb=1962136
+2026-05-27T20:36:54+03:00 chrome-trim term pid=1979880 count=17 rss_kb=1954132
+2026-05-27T20:37:01+03:00 observed reason=starvation-signals-3, pid=1910727 rss_kb=1209592 app_servers=8 health_ms=677 signals=3
+2026-05-27T20:39:14+03:00 chrome-trim term pid=1980519 count=18 rss_kb=2116724
+2026-05-27T20:41:34+03:00 chrome-trim term pid=1981176 count=17 rss_kb=1974244
+2026-05-27T20:41:46+03:00 health-fail count=1 pid=1910727 http=000 ms=6006 app_servers=8
+2026-05-27T20:44:00+03:00 health-fail count=2 pid=1910727 http=000 ms=6006 app_servers=8
+2026-05-27T20:44:00+03:00 restart-deferred reason=health-failures:2:http-000 active_app_servers=8
+2026-05-27T20:46:17+03:00 observed reason=starvation-signals-4, pid=1910727 rss_kb=1201204 app_servers=8 health_ms=522 signals=4
+2026-05-27T20:48:35+03:00 chrome-trim term pid=1981557 count=17 rss_kb=1933964
+2026-05-27T20:50:54+03:00 chrome-trim term pid=1984025 count=17 rss_kb=1967464
+2026-05-27T20:51:03+03:00 observed reason=starvation-signals-5, pid=1910727 rss_kb=1165628 app_servers=8 health_ms=2495 signals=5
+2026-05-27T20:53:15+03:00 observed reason=starvation-signals-6, pid=1910727 rss_kb=1164664 app_servers=8 health_ms=2 signals=6
+2026-05-27T20:55:26+03:00 chrome-trim term pid=1984670 count=17 rss_kb=1930780
+2026-05-27T20:55:32+03:00 observed reason=starvation-signals-5, pid=1910727 rss_kb=1137900 app_servers=8 health_ms=1022 signals=5
+2026-05-27T20:57:46+03:00 observed reason=starvation-signals-4, pid=1910727 rss_kb=1211864 app_servers=8 health_ms=753 signals=4
+2026-05-27T20:59:54+03:00 chrome-trim term pid=1985894 count=17 rss_kb=1940008
+2026-05-27T21:00:08+03:00 health-fail count=1 pid=1910727 http=000 ms=6149 app_servers=8
+2026-05-27T21:02:19+03:00 restart-deferred reason=slow-health-4991ms active_app_servers=8
+2026-05-27T21:02:19+03:00 observed reason=slow-health-4991ms,starvation-signals-7, pid=1910727 rss_kb=1234308 app_servers=8 health_ms=4991 signals=7
+2026-05-27T21:04:34+03:00 chrome-trim term pid=1987163 count=17 rss_kb=1957788
+2026-05-27T21:04:42+03:00 observed reason=starvation-signals-4, pid=1910727 rss_kb=1192648 app_servers=8 health_ms=1548 signals=4
+2026-05-27T21:06:56+03:00 observed reason=starvation-signals-3, pid=1988434 rss_kb=1058184 app_servers=0 health_ms=1281 signals=3
+2026-05-27T21:09:20+03:00 health-fail count=1 pid=1988434 http=000 ms=6006 app_servers=0
+2026-05-27T21:11:40+03:00 restart-deferred reason=slow-health-5684ms active_app_servers=2
+2026-05-27T21:11:40+03:00 observed reason=slow-health-5684ms, pid=1988434 rss_kb=1140876 app_servers=2 health_ms=5684 signals=2
+2026-05-27T21:16:20+03:00 health-fail count=1 pid=1988434 http=000 ms=6006 app_servers=4
+2026-05-27T21:18:34+03:00 observed reason=starvation-signals-3, pid=1988434 rss_kb=1051776 app_servers=4 health_ms=2 signals=3
+2026-05-27T21:20:56+03:00 observed reason=starvation-signals-3, pid=1988434 rss_kb=1491860 app_servers=4 health_ms=51 signals=3
+2026-05-27T21:34:59+03:00 restart-deferred reason=slow-health-4135ms active_app_servers=6
+2026-05-27T21:34:59+03:00 observed reason=slow-health-4135ms, pid=1988434 rss_kb=928244 app_servers=6 health_ms=4135 signals=1
+2026-05-27T21:39:34+03:00 chrome-trim term pid=1988317 count=16 rss_kb=2288204
+2026-05-27T21:46:34+03:00 chrome-trim term pid=1996015 count=16 rss_kb=1927636
+2026-05-27T21:48:54+03:00 chrome-trim term pid=1997944 count=17 rss_kb=1961300
+2026-05-27T21:51:14+03:00 chrome-trim term pid=1998709 count=17 rss_kb=1971704
+2026-05-27T21:53:34+03:00 chrome-trim term pid=1999403 count=17 rss_kb=1973384
+2026-05-27T21:55:55+03:00 chrome-trim term pid=2000062 count=18 rss_kb=2550652
+2026-05-27T21:58:14+03:00 chrome-trim term pid=2000760 count=18 rss_kb=2086632
+2026-05-27T22:00:34+03:00 chrome-trim term pid=2001420 count=17 rss_kb=1959596
+2026-05-27T22:02:55+03:00 chrome-trim term pid=2002434 count=19 rss_kb=2650160
+2026-05-27T22:03:06+03:00 health-fail count=1 pid=1988434 http=000 ms=6006 app_servers=6
+2026-05-27T22:05:15+03:00 chrome-trim term pid=2003159 count=17 rss_kb=1939772
+2026-05-27T22:07:34+03:00 chrome-trim term pid=2003919 count=17 rss_kb=1958796
+2026-05-27T22:12:14+03:00 chrome-trim term pid=2004670 count=16 rss_kb=2053676
+2026-05-27T22:12:26+03:00 health-fail count=1 pid=1988434 http=000 ms=6003 app_servers=6
+2026-05-27T22:14:34+03:00 chrome-trim term pid=2005946 count=17 rss_kb=1973588
+2026-05-27T22:16:54+03:00 chrome-trim term pid=2006753 count=18 rss_kb=2112200
+2026-05-27T22:19:16+03:00 chrome-trim term pid=2007538 count=18 rss_kb=2315128
+2026-05-27T22:21:35+03:00 chrome-trim term pid=2008242 count=18 rss_kb=2526004
+2026-05-27T22:23:55+03:00 chrome-trim term pid=2008956 count=20 rss_kb=3021224
+2026-05-27T22:26:15+03:00 chrome-trim term pid=2009779 count=19 rss_kb=2902204
+2026-05-27T22:28:34+03:00 chrome-trim term pid=2010476 count=17 rss_kb=1949456
+2026-05-27T22:30:54+03:00 chrome-trim term pid=2011109 count=18 rss_kb=2605612
+2026-05-27T22:33:14+03:00 chrome-trim term pid=2011810 count=18 rss_kb=2160588
+2026-05-27T22:35:34+03:00 chrome-trim term pid=2012568 count=17 rss_kb=1964676
+2026-05-27T22:35:46+03:00 health-fail count=1 pid=1988434 http=000 ms=6006 app_servers=6
+2026-05-27T22:37:54+03:00 chrome-trim term pid=2013102 count=18 rss_kb=2306420
+2026-05-27T22:38:06+03:00 health-fail count=2 pid=1988434 http=000 ms=6006 app_servers=6
+2026-05-27T22:38:06+03:00 restart-deferred reason=health-failures:2:http-000 active_app_servers=6
+2026-05-27T22:40:20+03:00 health-fail count=3 pid=1988434 http=000 ms=6005 app_servers=6
+2026-05-27T22:40:20+03:00 restart-deferred reason=health-failures:3:http-000 active_app_servers=6
+2026-05-27T22:42:35+03:00 chrome-trim term pid=2013998 count=18 rss_kb=2284660
+2026-05-27T22:42:46+03:00 restart-deferred reason=slow-health-5967ms active_app_servers=6
+2026-05-27T22:42:46+03:00 observed reason=slow-health-5967ms, pid=1988434 rss_kb=1279580 app_servers=6 health_ms=5967 signals=0
+2026-05-27T22:44:54+03:00 health-fail count=1 pid=none http=000 ms=0 app_servers=0
+2026-05-28T00:29:34+03:00 chrome-trim term pid=2015308 count=21 rss_kb=3410244
+2026-05-28T00:31:54+03:00 chrome-trim term pid=2041586 count=14 rss_kb=1901192
+2026-05-28T00:38:54+03:00 chrome-trim term pid=2042152 count=19 rss_kb=2935628
+2026-05-28T00:41:01+03:00 chrome-trim term pid=2043106 count=20 rss_kb=3280448
+2026-05-28T00:43:14+03:00 chrome-trim term pid=2043756 count=21 rss_kb=3632628
+2026-05-28T00:45:34+03:00 chrome-trim term pid=2044539 count=21 rss_kb=3675656
+2026-05-28T00:47:55+03:00 chrome-trim term pid=2045390 count=20 rss_kb=3601076
+2026-05-28T00:50:15+03:00 chrome-trim term pid=2046178 count=22 rss_kb=4516936
+2026-05-28T00:52:34+03:00 chrome-trim term pid=2047079 count=22 rss_kb=4194748
+2026-05-28T00:54:55+03:00 chrome-trim term pid=2047962 count=21 rss_kb=3797996
+2026-05-28T00:57:14+03:00 chrome-trim term pid=2048845 count=19 rss_kb=2936404
+2026-05-28T01:01:54+03:00 chrome-trim term pid=2049512 count=16 rss_kb=2146844
+2026-05-28T01:08:55+03:00 chrome-trim term pid=2050560 count=23 rss_kb=4624276
+2026-05-28T01:11:14+03:00 chrome-trim term pid=2051704 count=20 rss_kb=3745380
+2026-05-28T01:13:34+03:00 chrome-trim term pid=2052478 count=21 rss_kb=3829304
+2026-05-28T01:22:55+03:00 chrome-trim term pid=2053224 count=15 rss_kb=2292708
+2026-05-28T01:27:34+03:00 chrome-trim term pid=2054544 count=16 rss_kb=2166856
+2026-05-28T01:29:54+03:00 chrome-trim term pid=2055604 count=17 rss_kb=2424044
+2026-05-28T01:50:54+03:00 chrome-trim term pid=2056487 count=16 rss_kb=2244180
+2026-05-28T02:09:15+03:00 chrome-trim term pid=2058456 count=12 rss_kb=1967884
+2026-05-28T02:11:34+03:00 chrome-trim term pid=2063434 count=19 rss_kb=2991680
+2026-05-28T02:13:54+03:00 chrome-trim term pid=2064430 count=19 rss_kb=3184864
+2026-05-28T02:16:15+03:00 chrome-trim term pid=2065449 count=20 rss_kb=3420260
+2026-05-28T02:18:34+03:00 chrome-trim term pid=2066665 count=19 rss_kb=3042796
+2026-05-28T02:20:52+03:00 chrome-trim term pid=2067646 count=20 rss_kb=3227772
+2026-05-28T02:22:56+03:00 chrome-trim term pid=2068821 count=20 rss_kb=3196852
+2026-05-28T02:25:14+03:00 chrome-trim term pid=2069867 count=23 rss_kb=4267568
+2026-05-28T02:27:36+03:00 chrome-trim term pid=2070882 count=22 rss_kb=4435340
+2026-05-28T02:29:55+03:00 chrome-trim term pid=2072185 count=23 rss_kb=5052700
+2026-05-28T02:32:14+03:00 chrome-trim term pid=2073670 count=16 rss_kb=2351224
+2026-05-28T02:39:14+03:00 chrome-trim term pid=2074477 count=19 rss_kb=2263700
+2026-05-28T02:41:35+03:00 chrome-trim term pid=2076254 count=17 rss_kb=2710720
+2026-05-28T02:46:14+03:00 chrome-trim term pid=2076972 count=20 rss_kb=3205740
+2026-05-28T02:48:35+03:00 chrome-trim term pid=2078596 count=21 rss_kb=3458744
+2026-05-28T02:50:55+03:00 chrome-trim term pid=2079841 count=19 rss_kb=3071832
+2026-05-28T02:53:15+03:00 chrome-trim term pid=2080936 count=19 rss_kb=3154892
+2026-05-28T02:55:35+03:00 chrome-trim term pid=2081917 count=19 rss_kb=3003236
+2026-05-28T02:57:55+03:00 chrome-trim term pid=2092033 count=19 rss_kb=2851256
+2026-05-28T03:00:15+03:00 chrome-trim term pid=2110925 count=19 rss_kb=3049548
+2026-05-28T03:02:35+03:00 chrome-trim term pid=2116563 count=19 rss_kb=3068184
+2026-05-28T03:04:56+03:00 chrome-trim term pid=2126285 count=18 rss_kb=2230764
+2026-05-28T03:07:14+03:00 chrome-trim term pid=2127348 count=18 rss_kb=2400512
+2026-05-28T03:09:34+03:00 chrome-trim term pid=2128499 count=19 rss_kb=3119716
+2026-05-28T03:11:54+03:00 chrome-trim term pid=2129579 count=19 rss_kb=2950796
+2026-05-28T03:14:14+03:00 chrome-trim term pid=2130728 count=19 rss_kb=2823480
+2026-05-28T03:16:36+03:00 chrome-trim term pid=2131891 count=19 rss_kb=2743620
+2026-05-28T03:18:54+03:00 chrome-trim term pid=2133012 count=19 rss_kb=2897916
+2026-05-28T03:21:14+03:00 chrome-trim term pid=2134242 count=19 rss_kb=3072188
+2026-05-28T03:23:36+03:00 chrome-trim term pid=2135232 count=21 rss_kb=3423024
+2026-05-28T03:25:54+03:00 chrome-trim term pid=2136310 count=19 rss_kb=3105024
+2026-05-28T03:28:02+03:00 chrome-trim term pid=2137469 count=18 rss_kb=2476784
+2026-05-28T03:30:15+03:00 chrome-trim term pid=2138554 count=19 rss_kb=3014360
+2026-05-28T03:32:34+03:00 chrome-trim term pid=2139681 count=19 rss_kb=2914960
+2026-05-28T03:34:54+03:00 chrome-trim term pid=2141220 count=19 rss_kb=3024856
+2026-05-28T03:37:14+03:00 chrome-trim term pid=2142196 count=20 rss_kb=3133008
+2026-05-28T03:39:34+03:00 chrome-trim term pid=2143139 count=18 rss_kb=2428376
+2026-05-28T03:41:55+03:00 chrome-trim term pid=2143977 count=19 rss_kb=2812848
+2026-05-28T03:44:16+03:00 chrome-trim term pid=2145084 count=19 rss_kb=3255748
+2026-05-28T03:46:34+03:00 chrome-trim term pid=2146029 count=19 rss_kb=2930772
+2026-05-28T03:48:54+03:00 chrome-trim term pid=2147147 count=19 rss_kb=3096132
+2026-05-28T03:51:14+03:00 chrome-trim term pid=2148222 count=19 rss_kb=2656556
+2026-05-28T03:53:36+03:00 chrome-trim term pid=2149150 count=19 rss_kb=3232584
+2026-05-28T03:55:54+03:00 chrome-trim term pid=2150101 count=19 rss_kb=3080968
+2026-05-28T03:58:14+03:00 chrome-trim term pid=2151189 count=18 rss_kb=2614488
+2026-05-28T04:00:34+03:00 chrome-trim term pid=2152136 count=20 rss_kb=3253656
+2026-05-28T04:02:54+03:00 chrome-trim term pid=2153420 count=20 rss_kb=3204400
+2026-05-28T04:05:15+03:00 chrome-trim term pid=2154455 count=19 rss_kb=3087876
+2026-05-28T04:07:34+03:00 chrome-trim term pid=2155627 count=19 rss_kb=3011888
+2026-05-28T04:12:14+03:00 chrome-trim term pid=2156459 count=15 rss_kb=2271120
+2026-05-28T04:21:36+03:00 chrome-trim term pid=2157057 count=24 rss_kb=4070640
+2026-05-28T04:26:15+03:00 chrome-trim term pid=2159378 count=12 rss_kb=1894840
+2026-05-28T04:28:34+03:00 chrome-trim term pid=2160754 count=19 rss_kb=2653032
+2026-05-28T04:30:54+03:00 chrome-trim term pid=2161872 count=19 rss_kb=3162776
+2026-05-28T04:33:15+03:00 chrome-trim term pid=2162881 count=20 rss_kb=3242400
+2026-05-28T04:35:35+03:00 chrome-trim term pid=2163841 count=21 rss_kb=3073032
+2026-05-28T04:37:54+03:00 chrome-trim term pid=2164922 count=19 rss_kb=2880900
+2026-05-28T04:47:14+03:00 chrome-trim term pid=2165633 count=13 rss_kb=2029856
+2026-05-28T04:49:35+03:00 chrome-trim term pid=2166892 count=19 rss_kb=3326220
+2026-05-28T04:51:54+03:00 chrome-trim term pid=2168064 count=19 rss_kb=3027316
+2026-05-28T04:54:15+03:00 chrome-trim term pid=2169062 count=19 rss_kb=3212196
+2026-05-28T04:56:34+03:00 chrome-trim term pid=2169955 count=18 rss_kb=2432808
+2026-05-28T04:58:54+03:00 chrome-trim term pid=2171397 count=19 rss_kb=2650996
+2026-05-28T05:01:14+03:00 chrome-trim term pid=2172591 count=20 rss_kb=3160632
+2026-05-28T05:03:34+03:00 chrome-trim term pid=2173778 count=18 rss_kb=2124896
+2026-05-28T05:03:45+03:00 restart-deferred reason=slow-health-5198ms active_app_servers=8
+2026-05-28T05:03:45+03:00 observed reason=slow-health-5198ms, pid=2020808 rss_kb=969944 app_servers=8 health_ms=5198 signals=1

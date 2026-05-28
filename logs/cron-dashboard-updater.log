@@ -5150,3 +5150,71 @@ Update Summary:
     - Error updating page 'Email Agent (Sun-Thu)': 429
 
 Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-27T20:00:03.181254+03:00] Starting Cron Dashboard Update...
+Discovered 19 crons (19 system, 0 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 19
+  Errors: 1
+    - Error parsing openclaw crons: Command '['openclaw', 'cron', 'list', '--json']' timed out after 45 seconds
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-27T20:30:01.879397+03:00] Starting Cron Dashboard Update...
+Discovered 47 crons (19 system, 28 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 47
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-27T21:00:01.489742+03:00] Starting Cron Dashboard Update...
+Discovered 47 crons (19 system, 28 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 47
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-27T21:30:01.512637+03:00] Starting Cron Dashboard Update...
+Discovered 47 crons (19 system, 28 openclaw)
+
+Update Summary:
+  Created: 1
+  Updated: 46
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-27T22:00:01.955349+03:00] Starting Cron Dashboard Update...
+Discovered 48 crons (19 system, 29 openclaw)
+
+Update Summary:
+  Created: 1
+  Updated: 47
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-27T22:30:01.773058+03:00] Starting Cron Dashboard Update...
+Discovered 48 crons (19 system, 29 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 48
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-27T23:00:01.902583+03:00] Starting Cron Dashboard Update...
+Discovered 48 crons (19 system, 29 openclaw)
+
+Update Summary:
+  Created: 1
+  Updated: 47
+  Errors: 1
+    - Error finding page 'Stop GPT-5.5 quota tracker after final recommendation': HTTPSConnectionPool(host='api.notion.com', port=443): Read timed out. (read timeout=10)
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
+[2026-05-27T23:30:02.772613+03:00] Starting Cron Dashboard Update...
+Discovered 48 crons (19 system, 29 openclaw)
+
+Update Summary:
+  Created: 0
+  Updated: 48
+
+Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json

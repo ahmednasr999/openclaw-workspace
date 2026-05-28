@@ -2,69 +2,187 @@
   "meta": {
     "agent": "pipeline-agent",
     "version": "1.0.0",
-    "generated_at": "2026-04-25T19:00:01.607010+02:00",
-    "duration_ms": 30,
+    "generated_at": "2026-05-27T22:14:56.287589+02:00",
+    "duration_ms": 7184,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "504d3160",
+    "run_id": "3a41e7b4",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
-    "total_applications": 0,
-    "active_count": 0,
-    "external_applied_count": 122,
-    "db_total": 2484,
+    "total_applications": 452,
+    "active_count": 172,
+    "external_applied_count": 309,
+    "db_total": 2662,
     "db_funnel": {
-      "skipped": 2029,
-      "discovered": 307,
+      "skipped": 2030,
+      "discovered": 472,
       "scored": 97,
-      "applied": 38,
+      "applied": 45,
+      "interview": 4,
+      "Applied": 3,
+      "cv_built": 3,
       "duplicate-applied": 3,
       "expired": 3,
-      "interview": 3,
-      "cv_built": 2,
       "archived": 1,
       "rejected": 1,
-      "_total": 2484
+      "_total": 2662
     },
-    "by_status": {},
+    "by_status": {
+      "discovered": 91,
+      "\ud83d\udccb scored": 203,
+      "applied": 91,
+      "\u2705 applied": 77,
+      "cv built": 65,
+      "response": 1,
+      "\ud83d\udccb recommended": 10,
+      "\ud83d\udcde interview": 4,
+      "\ud83d\udd0d discovered": 215,
+      "\u274c rejected": 1
+    },
     "this_week": {
       "applied": 0,
-      "start_date": "2026-04-20"
+      "start_date": "2026-05-25"
     },
-    "stale_applications": [],
+    "stale_applications": [
+      {
+        "company": "wTe Corporation",
+        "role": "Telecommunications Director",
+        "status": "applied",
+        "days_stale": 59
+      },
+      {
+        "company": "Confidential",
+        "role": "Digital Banking Director",
+        "status": "applied",
+        "days_stale": 59
+      },
+      {
+        "company": "Confidential",
+        "role": "Technology Solutions Director",
+        "status": "applied",
+        "days_stale": 59
+      },
+      {
+        "company": "Mark Williams Recruitment",
+        "role": "Head of Information Technology",
+        "status": "applied",
+        "days_stale": 59
+      },
+      {
+        "company": "King Salman International Airport",
+        "role": "Director - Enterprise Solutions Management",
+        "status": "applied",
+        "days_stale": 59
+      },
+      {
+        "company": "Mark Williams Recruitment",
+        "role": "Head of Information Technology",
+        "status": "\u2705 applied",
+        "days_stale": 61
+      },
+      {
+        "company": "ADIB - Abu Dhabi Islamic Bank",
+        "role": "Head of Technical Platforms and Architecture",
+        "status": "applied",
+        "days_stale": 59
+      },
+      {
+        "company": "Auxo Talent",
+        "role": "Group Chief Information Officer",
+        "status": "applied",
+        "days_stale": 61
+      },
+      {
+        "company": "Hays",
+        "role": "Director of Operations",
+        "status": "applied",
+        "days_stale": 59
+      },
+      {
+        "company": "ELBN SYS HR",
+        "role": "Head of Growth (FinTech)",
+        "status": "applied",
+        "days_stale": 59
+      }
+    ],
     "interviews_upcoming": [],
-    "follow_ups_overdue": [],
+    "follow_ups_overdue": [
+      {
+        "company": "Miral Experiences",
+        "role": "Senior Director Software Architecture",
+        "follow_up_date": "2026-05-01",
+        "days_overdue": 26,
+        "reason": "In '\ud83d\udcde interview' with no update for 26 days"
+      },
+      {
+        "company": "Sky News Arabia",
+        "role": "Head of AI Transformation & Innovation",
+        "follow_up_date": "2026-04-15",
+        "days_overdue": 42,
+        "reason": "In '\ud83d\udcde interview' with no update for 42 days"
+      },
+      {
+        "company": "Proximie",
+        "role": "Transformation Lead UAE",
+        "follow_up_date": "2026-04-03",
+        "days_overdue": 54,
+        "reason": "In '\ud83d\udcde interview' with no update for 54 days"
+      },
+      {
+        "company": "Confidential Careers",
+        "role": "CEO \u2014 Giga-Projects KSA",
+        "follow_up_date": "2026-04-16",
+        "days_overdue": 41,
+        "reason": "In '\ud83d\udcde interview' with no update for 41 days"
+      }
+    ],
     "conversion_funnel": {
-      "applied": 0,
+      "applied": 168,
       "screening": 0,
-      "interview": 0,
+      "interview": 4,
       "offer": 0,
       "rates": {
         "applied_to_screening": 0.0,
-        "screening_to_interview": 0.0,
+        "screening_to_interview": 400.0,
         "interview_to_offer": 0.0
       }
     }
   },
   "kpi": {
-    "total_tracked": 0,
-    "active_rate": 0.0,
-    "avg_days_in_pipeline": 0.0,
-    "follow_ups_overdue": 0,
+    "total_tracked": 452,
+    "active_rate": 38.1,
+    "avg_days_in_pipeline": 67.0,
+    "follow_ups_overdue": 4,
     "interviews_this_week": 0,
-    "stale_count": 0
+    "stale_count": 172
   },
   "recommendations": [
     {
-      "id": "rec-504d3160-0",
+      "id": "rec-3a41e7b4-0",
+      "action": "follow_up",
+      "target": "172 stale applications",
+      "reason": "Applications with no update in 7+ days need attention",
+      "urgency": "medium",
+      "timestamp": "2026-05-27T22:14:56.284970+02:00"
+    },
+    {
+      "id": "rec-3a41e7b4-1",
+      "action": "send_follow_up",
+      "target": "4 overdue follow-ups",
+      "reason": "Follow-up dates have passed",
+      "urgency": "high",
+      "timestamp": "2026-05-27T22:14:56.284987+02:00"
+    },
+    {
+      "id": "rec-3a41e7b4-2",
       "action": "apply_more",
       "target": "Job applications",
       "reason": "Only 0 applications this week, aim for 10+",
       "urgency": "medium",
-      "timestamp": "2026-04-25T19:00:01.606901+02:00"
+      "timestamp": "2026-05-27T22:14:56.284991+02:00"
     }
   ]
 }

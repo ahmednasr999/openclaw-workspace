@@ -1,27 +1,16 @@
 {
-  "timestamp": "2026-05-27T19:31:41.623299+03:00",
-  "total_crons": 47,
-  "system_crons": 19,
-  "openclaw_crons": 28,
+  "timestamp": "2026-05-28T06:08:07.602536+03:00",
+  "total_crons": 52,
+  "system_crons": 23,
+  "openclaw_crons": 29,
   "notion_created": 0,
-  "notion_updated": 46,
-  "errors": [
-    "Error updating page 'Email Agent (Sun-Thu)': 429"
-  ],
+  "notion_updated": 52,
+  "errors": [],
+  "warnings": [],
   "crons": [
     {
-      "name": "daily-backup.sh",
+      "name": "cron-run-with-alert.sh",
       "schedule": "0 20 * * *",
-      "type": "system",
-      "last_status": {
-        "status": "\u2705 OK",
-        "last_run": "2026-05-26 20:00:34.968649+03:00",
-        "error": null
-      }
-    },
-    {
-      "name": "archive-daily-notes.sh",
-      "schedule": "0 20 1 * *",
       "type": "system",
       "last_status": {
         "status": "\u26a0\ufe0f Unknown",
@@ -30,107 +19,117 @@
       }
     },
     {
-      "name": "daily-snapshot.sh",
+      "name": "cron-run-with-alert.sh",
+      "schedule": "45 19 1 * *",
+      "type": "system",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "cron-run-with-alert.sh",
       "schedule": "0 23 * * *",
       "type": "system",
       "last_status": {
-        "status": "\u2705 OK",
-        "last_run": "2026-05-26 23:01:26.364531+03:00",
-        "error": null
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
       }
     },
     {
-      "name": "retention-backups.sh",
-      "schedule": "30 20 * * *",
+      "name": "cron-run-with-alert.sh",
+      "schedule": "0 21 * * *",
       "type": "system",
       "last_status": {
-        "status": "\u2705 OK",
-        "last_run": "2026-05-26 20:30:01.182578+03:00",
-        "error": null
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
       }
     },
     {
-      "name": "retention-snapshots.sh",
-      "schedule": "30 23 * * *",
+      "name": "cron-run-with-alert.sh",
+      "schedule": "45 23 * * *",
       "type": "system",
       "last_status": {
-        "status": "\u2705 OK",
-        "last_run": "2026-05-26 23:30:01.505024+03:00",
-        "error": null
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
       }
     },
     {
-      "name": "retention-caches.sh",
-      "schedule": "15 3 * * *",
+      "name": "cron-run-with-alert.sh",
+      "schedule": "25 3 * * *",
       "type": "system",
       "last_status": {
-        "status": "\u2705 OK",
-        "last_run": "2026-05-27 03:15:01.379413+03:00",
-        "error": null
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
       }
     },
     {
-      "name": "disk-health-check.sh",
-      "schedule": "0 9 * * *",
+      "name": "cron-run-with-alert.sh",
+      "schedule": "40 8 * * *",
       "type": "system",
       "last_status": {
-        "status": "\u2705 OK",
-        "last_run": "2026-05-27 09:00:02.136089+03:00",
-        "error": null
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
       }
     },
     {
-      "name": "job-radar.sh",
+      "name": "cron-run-with-alert.sh",
       "schedule": "0 6 * * *",
       "type": "system",
       "last_status": {
-        "status": "\u2705 OK",
-        "last_run": "2026-05-27 06:00:01.510715+03:00",
-        "error": null
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
       }
     },
     {
-      "name": "morning-brief.sh",
-      "schedule": "0 6 * * *",
+      "name": "cron-run-with-alert.sh",
+      "schedule": "10 6 * * *",
       "type": "system",
       "last_status": {
-        "status": "\u2705 OK",
-        "last_run": "2026-05-27 06:00:12.169786+03:00",
-        "error": null
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
       }
     },
     {
-      "name": "clear-stale-context-maintenance.py",
+      "name": "cron-run-with-alert.sh",
       "schedule": "*/5 * * * *",
       "type": "system",
       "last_status": {
-        "status": "\u2705 OK",
-        "last_run": "2026-05-27 19:30:01.935157+03:00",
-        "error": null
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
       }
     },
     {
-      "name": "cron-watchdog-v3.sh",
+      "name": "cron-run-with-alert.sh",
       "schedule": "0 */2 * * *",
       "type": "system",
       "last_status": {
-        "status": "\u2705 OK",
-        "last_run": "2026-05-27 18:00:30.897028+03:00",
-        "error": null
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
       }
     },
     {
-      "name": "sie-360-checks.py",
+      "name": "cron-run-with-alert.sh",
       "schedule": "50 1 * * *",
       "type": "system",
       "last_status": {
-        "status": "\u2705 OK",
-        "last_run": "2026-05-27 01:50:19.289371+03:00",
-        "error": null
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
       }
     },
     {
-      "name": "direct-cron-runner.py",
+      "name": "cron-run-with-alert.sh",
       "schedule": "0 3 * * *",
       "type": "system",
       "last_status": {
@@ -140,8 +139,8 @@
       }
     },
     {
-      "name": "direct-cron-runner.py",
-      "schedule": "0 9 * * 0",
+      "name": "cron-run-with-alert.sh",
+      "schedule": "20 9 * * 0",
       "type": "system",
       "last_status": {
         "status": "\u26a0\ufe0f Unknown",
@@ -150,7 +149,17 @@
       }
     },
     {
-      "name": "direct-cron-runner.py",
+      "name": "cron-run-with-alert.sh",
+      "schedule": "30 10 * * 0",
+      "type": "system",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "cron-run-with-alert.sh",
       "schedule": "7 7 * * *",
       "type": "system",
       "last_status": {
@@ -160,7 +169,7 @@
       }
     },
     {
-      "name": "direct-cron-runner.py",
+      "name": "cron-run-with-alert.sh",
       "schedule": "0 11 15-28 5 *",
       "type": "system",
       "last_status": {
@@ -170,7 +179,7 @@
       }
     },
     {
-      "name": "direct-cron-runner.py",
+      "name": "cron-run-with-alert.sh",
       "schedule": "0 12 15-28 5 *",
       "type": "system",
       "last_status": {
@@ -180,19 +189,59 @@
       }
     },
     {
-      "name": "cron-dashboard-updater.py",
-      "schedule": "*/30 * * * *",
+      "name": "cron-run-with-alert.sh",
+      "schedule": "20 12 28 5 *",
       "type": "system",
       "last_status": {
-        "status": "\u274c Failed",
-        "last_run": "2026-05-27 19:01:19.273577+03:00",
-        "error": "Check log for details"
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
       }
     },
     {
-      "name": "jobzoom_daily_launch.sh",
+      "name": "cron-run-with-alert.sh",
+      "schedule": "0 15 * * *",
+      "type": "system",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "cron-run-with-alert.sh",
+      "schedule": "7 * * * *",
+      "type": "system",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "cron-run-with-alert.sh",
+      "schedule": "45 9 * * *",
+      "type": "system",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "cron-run-with-alert.sh",
       "schedule": "0 5 * * *",
       "type": "system",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "NASR Doctor (Daily)",
+      "schedule": "cron 0 7 * * * @ Africa/Cairo",
+      "type": "openclaw",
       "last_status": {
         "status": "\u26a0\ufe0f Unknown",
         "last_run": null,
@@ -210,8 +259,58 @@
       }
     },
     {
+      "name": "CMO Daily LinkedIn Autoposter",
+      "schedule": "cron 10 9 * * 1-4 @ Asia/Dubai",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "CMO Publishing Watchdog",
+      "schedule": "cron 0 10-18 * * 1-4 @ Asia/Dubai",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
       "name": "OpenClaw Health Guard",
       "schedule": "cron 0 */6 * * * @ Africa/Cairo",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "LCM Midday Compaction Sweep",
+      "schedule": "cron 0 14 * * * @ Africa/Cairo",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "CMO LinkedIn Comment Radar - 3pm",
+      "schedule": "cron 0 15 * * * @ Africa/Cairo",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "Auto Lessons Learned - Daily Capture",
+      "schedule": "cron 45 23 * * * @ Africa/Cairo",
       "type": "openclaw",
       "last_status": {
         "status": "\u26a0\ufe0f Unknown",
@@ -272,56 +371,6 @@
     {
       "name": "Calendar Pre-fetch",
       "schedule": "cron 55 4 * * * @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "NASR Doctor (Daily)",
-      "schedule": "cron 0 7 * * * @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "CMO Daily LinkedIn Autoposter",
-      "schedule": "cron 0 9 * * 1-4 @ Asia/Dubai",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "CMO Publishing Watchdog",
-      "schedule": "cron 0 10-18 * * 1-4 @ Asia/Dubai",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "LCM Midday Compaction Sweep",
-      "schedule": "cron 0 14 * * * @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "CMO LinkedIn Comment Radar - 3pm",
-      "schedule": "cron 0 15 * * * @ Africa/Cairo",
       "type": "openclaw",
       "last_status": {
         "status": "\u26a0\ufe0f Unknown",

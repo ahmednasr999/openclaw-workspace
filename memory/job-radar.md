@@ -1,33 +1,120 @@
-# Job Radar Report - 2026-03-16
+# Job Radar: 2026-05-28
 
-*Generated: 2026-03-16 08:11 UTC*
-*Source: JobSpy (LinkedIn + Indeed) | Last 72 hours*
+*Generated: 2026-05-28 06:00 UTC*
+
+*Engine: JobSpy (LinkedIn, Indeed, Google Jobs)*
+
+*🎯 = Executive match | ⛔ = Auto-skipped | 👻 = Likely ghost job (stale/vague)*
+
+---
+
+### Digital Transformation Executive (UAE)
+
+No results found.
+
+### Digital Transformation Executive (Saudi)
+
+No results found.
+
+### Digital Transformation Executive (Qatar)
+
+- **Senior Consultant-AI Transformation** at malomatia
+  📍 Doha, Qatar | 📅 2026-05-26
+  🔗 https://www.linkedin.com/jobs/view/4419156105
+
+- **IND Head , Qatar** at Bureau Veritas
+  📍 Doha, Qatar | 📅 2026-05-26
+  🔗 https://www.linkedin.com/jobs/view/4415271419
+
+- **Senior Manager User Acquisition** at Snoonu
+  📍 Lusail, Qatar | 📅 2026-05-26
+  🔗 https://www.linkedin.com/jobs/view/4418253294
+
+- **Digital Transformation and Technical Delivery Consultant** at Stantec
+  📍 Doha, Doha, Qatar | 📅 2026-05-24
+  🔗 https://www.linkedin.com/jobs/view/4418694103
+
+- **Lead - AI Transformation** at malomatia
+  📍 Doha, Qatar | 📅 2026-05-21
+  🔗 https://www.linkedin.com/jobs/view/4414001361
+
+- **Director of the Library** at Northwestern University 🎯
+  📍 Doha, Qatar | 📅 2026-05-21
+  🔗 https://www.linkedin.com/jobs/view/4408538683
+
+- **EOI - Project Director (Offshore)** at Wood 🎯
+  📍 Doha, Qatar | 📅 2026-05-21
+  🔗 https://www.linkedin.com/jobs/view/4271433761
+
+- **Managing Director** at GeniusMesh 🎯
+  📍 Doha, Qatar | 📅 2026-05-21
+  🔗 https://www.linkedin.com/jobs/view/4416504009
+
+- **Principal (Energy) | BCG Platinion** at Boston Consulting Group (BCG)
+  📍  | 📅 nan
+  🔗 https://www.linkedin.com/jobs/view/4409358879
+
+- **CX Strategy and Operations Head** at Snoonu
+  📍 Lusail, Qatar | 📅 nan
+  🔗 https://www.linkedin.com/jobs/view/4409903963
+
+*10 results (3 executive-level, 0 likely ghost jobs)*
+
+### CTO / Head of Technology (GCC)
+
+No results found.
+
+### PMO / Program Director (GCC)
+
+No results found.
+
+### HealthTech / AI Executive (GCC)
+
+No results found.
+
+### FinTech / Payments Executive (GCC)
+
+- **VP, Head of Partnerships** at Hex Trust 🎯
+  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-05-27
+  🔗 https://www.linkedin.com/jobs/view/4419577793
+
+- **VP Head Of Partnerships** at TALENTMATE 🎯
+  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-05-27
+  🔗 https://www.linkedin.com/jobs/view/4419863771
+
+- **UAEN Only - VP Operational Emissions** at TALENTMATE 🎯
+  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-05-25
+  🔗 https://www.linkedin.com/jobs/view/4418699606
+
+- **Vice President Enterprise Governance Injaz Environment Social And Governance Environment Social Governance** at TALENTMATE 🎯
+  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-05-24
+  🔗 https://www.linkedin.com/jobs/view/4418687331
+
+- **Vice President Aladdin Client Engagement** at TALENTMATE 🎯
+  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-05-24
+  🔗 https://www.linkedin.com/jobs/view/4418660147
+
+- **Vice President, Aladdin Client Engagement** at BlackRock 🎯
+  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-05-23
+  🔗 https://www.linkedin.com/jobs/view/4418633387
+
+- **Vice President - AML Complex Investigations Analyst (UAE Nationals Only)** at Citi ⛔
+  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-05-21
+  🔗 https://www.linkedin.com/jobs/view/4407093358
+
+*7 results (6 executive-level, 0 likely ghost jobs)*
+
+### IT Director / VP IT (GCC)
+
+No results found.
 
 ---
 
 ## Summary
 
-| Metric | Value |
-|--------|-------|
-| Searches run | 11 |
-| New executive roles found | 10 |
-| Search errors | 0 |
+- Total unique jobs found: 17
+- Executive-level matches: 9
+- Already in pipeline: 0
+- **New jobs added to pipeline: 9**
 
-## New Roles (Not in Pipeline)
-
-| Priority | Role | Company | Location | URL |
-|----------|------|---------|----------|-----|
-| 🔴 High | Project Director - Rail | Jacobs | Dubai, Dubai, United Arab Emirates | [Link](https://www.linkedin.com/jobs/view/4376306468) |
-| 🔴 High | Head of Technology / Chief Technology Officer (CTO) | entourage marketing & events | Dubai, DU, AE | [Link](https://ae.indeed.com/viewjob?jk=56dea7baf6601514) |
-| 🔴 High | Project Director/FITOUT | Shades Interiors LLC | Dubai, United Arab Emirates | [Link](https://www.linkedin.com/jobs/view/4385882512) |
-| 🔴 High | Director of Operations | TALENTMATE | Dubai, Dubai, United Arab Emirates | [Link](https://www.linkedin.com/jobs/view/4386013268) |
-| 🔴 High | International Engineering Director (Madrid or Seville offices) | Ayesa Engineering | Dubai, United Arab Emirates | [Link](https://www.linkedin.com/jobs/view/4385362000) |
-| 🔴 High | Talent and Culture Director | Sephora | Dubai, DU, AE | [Link](https://ae.indeed.com/viewjob?jk=0d2dc27067a718b5) |
-| 🔴 High | Executive Assistant to CEO | 360 HR Partners FZ LLC | Dubai, DU, AE | [Link](https://ae.indeed.com/viewjob?jk=3b298abf7962941f) |
-| 🔴 High | International Private Bank, United Arab Emirates, Private Banker, Executive Director | JPMorganChase | Dubai, Dubai, United Arab Emirates | [Link](https://www.linkedin.com/jobs/view/4375162904) |
-| 🔴 High | Director of Fire & Life Safety | Parsons | الرياض, S01, SA | [Link](https://sa.indeed.com/viewjob?jk=6db1dab6b77087b8) |
-| 🔴 High | Chief Accountant | Ramada by Wyndham Riyadh King Fahd Rd | الرياض, S01, SA | [Link](https://sa.indeed.com/viewjob?jk=f196570556e58f2d) |
-
----
-
-**Links:** [[../jobs-bank/pipeline.md]] | [[../MEMORY.md]]
+*Ghost job filter: Jobs >14 days old or with vague indicators (fast-paced, rockstar, ninja, wear many hats) are flagged.*

@@ -1068,3 +1068,9 @@ For future OpenClaw permission design and debugging, approved high-risk maintena
 Ahmed said to always give only one step at a time so he can share the outcome before the next instruction.
 ### Do differently
 For terminal/config recovery workflows, provide exactly one command block or one action, then wait for Ahmed's result before giving the next step.
+
+## 2026-05-27 - Cron Sandbox Rejects Some Inline Shell Helpers
+### Incident
+During the daily auto-lessons cron wake, `sed -n`, `find -exec`, and `xargs` commands were rejected by OpenClaw strict inline-eval approval, and cron-event turns cannot request chat approvals. `rg` was also unavailable in this sandbox.
+### Do differently
+For cron/internal maintenance in the OpenClaw sandbox, start with approval-safe commands such as `cat`, `head`, `tail`, direct script execution, and plain `grep -R` before reaching for inline helper forms. If `rg` is missing, fall back to `grep` immediately and keep searches narrow to avoid noisy session transcript dumps.
