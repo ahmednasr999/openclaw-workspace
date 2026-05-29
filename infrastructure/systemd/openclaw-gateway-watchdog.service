@@ -1,0 +1,11 @@
+[Unit]
+Description=OpenClaw Gateway Watchdog
+After=network-online.target openclaw-gateway.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/root/.openclaw/workspace/scripts/gateway-watchdog.sh
+Nice=10
+IOSchedulingClass=best-effort
+IOSchedulingPriority=7

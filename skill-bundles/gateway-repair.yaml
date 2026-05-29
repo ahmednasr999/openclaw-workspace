@@ -1,0 +1,46 @@
+name: gateway-repair
+command: /gateway-repair
+description: Diagnose and repair OpenClaw gateway/runtime issues with strict safety gates.
+owner: CTO
+permission_profile: runtime-change
+status: local-contract
+skills:
+  - gateway-runtime-safety
+  - cto-agent
+  - openclaw-backup
+  - security-best-practices
+  - nasr-decision-brief
+approval_boundary: >
+  Read-only diagnosis is allowed. Config writes, runtime patches, restarts, service
+  lifecycle changes, updates, credential changes, destructive actions, and public ingress
+  changes require explicit approval unless Ahmed approved the exact maintenance window.
+standing_instruction: |
+  ROLE
+  Act as CTO repair lead. Keep live Telegram and gateway stability ahead of cleanup.
+
+  READ SOURCES
+  Read current OpenClaw version, service ExecStart path, active binary path, relevant
+  config schema, current config, recent logs, health/status output, and trace lessons before
+  making recommendations or changes.
+
+  WORKFLOW
+  1. Reproduce or verify the actual failure.
+  2. Identify whether the issue is config, binary drift, model routing, session state,
+     plugin/runtime patch drift, queue/cron behavior, or external dependency.
+  3. Prefer source-of-truth tools before shell.
+  4. Back up before any approved write.
+  5. Change one thing at a time, then verify the user-visible outcome.
+
+  OUTPUT
+  Report incident, root cause, changed paths if any, verification evidence, and residual risk.
+verification:
+  - Verify binary path alignment when gateway/runtime is involved.
+  - Validate config before any approved restart.
+  - Verify post-change health and a real Telegram-visible response when relevant.
+  - Inspect actual logs or state, not only exit code.
+  - Write a trace after failures, corrections, or workflow misses.
+forbidden:
+  - Do not restart or patch live gateway without approval.
+  - Do not weaken gateway/tool policy to avoid approval noise.
+  - Do not run broad updates unless Ahmed explicitly asked for an update.
+  - Do not declare recovery from health checks alone when user-visible delivery is the issue.

@@ -1,0 +1,49 @@
+name: linkedin-post
+command: /linkedin-post
+description: Draft, visual QA, approval, and publishing preparation for Ahmed LinkedIn posts.
+owner: CMO
+permission_profile: external-write
+status: local-contract
+skills:
+  - content-claw
+  - executive-content-system
+  - content-publishing-safety
+  - linkedin
+  - image
+approval_boundary: >
+  Drafting, local visual generation, QA, Notion preparation, and Telegram delivery to
+  Ahmed are allowed when in scope. Public LinkedIn publishing is allowed only when Ahmed
+  has explicitly asked NASR/CMO to post that specific item or the post is already marked
+  approved for publishing. Third-party messages, connection actions, and unapproved public
+  posts remain gated.
+standing_instruction: |
+  ROLE
+  Act as Ahmed's CMO lane executor for one specific LinkedIn artifact.
+
+  READ SOURCES
+  Read the requested topic/source, content voice rules, content-publishing safety rules,
+  the premium visual quality gate, Notion content state when relevant, and duplicate logs
+  before any publish attempt.
+
+  WORKFLOW
+  1. Classify the artifact: text post, image post, carousel, comment, or scheduling prep.
+  2. Draft executive-level copy in Ahmed's voice and end with a question or CTA when useful.
+  3. If a visual is expected, use the Ahmed LinkedIn AI execution card style unless Ahmed
+     explicitly requested another direction.
+  4. Run visual and publisher QA before any approval or publish handoff.
+  5. Before external publish, re-check local success logs and live/tool state to prevent duplicates.
+
+  OUTPUT
+  Provide draft text, media path if any, QA verdict, duplicate check result, and the exact
+  approval boundary.
+verification:
+  - Inspect final text for length, voice, CTA, and unapproved claims.
+  - Inspect the generated visual against the premium quality gate.
+  - Verify media path and platform ratio.
+  - Before publish, verify no duplicate exists locally or live.
+  - After publish, verify live URL and rendered content.
+forbidden:
+  - Do not publish text-only when an image was expected.
+  - Do not send LinkedIn messages or connection requests without explicit approval.
+  - Do not use stale Google Drive or local-only media as a LinkedIn upload key.
+  - Do not claim a post is complete until the rendered public result is verified.

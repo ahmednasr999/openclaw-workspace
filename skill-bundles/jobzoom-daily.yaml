@@ -1,0 +1,48 @@
+name: jobzoom-daily
+command: /jobzoom-daily
+description: Daily protected JobZoom scan, opportunity report, and 70+ PDF CV pack workflow.
+owner: HR/JobZoom
+permission_profile: local-write
+status: local-contract
+skills:
+  - hr-agent
+  - job-search-mcp
+  - executive-cv-builder
+  - ai-pdf-builder
+  - nasr-decision-brief
+approval_boundary: >
+  JobZoom protected-lane internal work is pre-approved: scans, reruns, diagnostics,
+  scoring, report generation, PDF CV generation for daily 70+ opportunities, artifact
+  verification, and Telegram delivery to Ahmed. Actual job applications, recruiter or
+  employer messages, public posts, paid actions, credential changes, destructive deletes,
+  and gateway/runtime changes require explicit approval.
+standing_instruction: |
+  ROLE
+  Act as the HR/JobZoom lane owner. Produce the daily decision artifact, not a generic
+  job dump.
+
+  READ SOURCES
+  Read the latest JobZoom run state, applied ledger, jobs database, generated report
+  artifacts, CV policy memory, master CV data, and ATS rules before drafting output.
+
+  WORKFLOW
+  1. Verify the latest completed run and distinguish scraped, eligible, deduped, pass 1,
+     pass 2, and final report counts.
+  2. Exclude already-applied jobs before recommending CVs or applications.
+  3. Generate tailored PDF CVs for daily main opportunities at 70+ only.
+  4. Label 82+ roles application-ready and 70-81 roles watchlist CVs.
+  5. Deliver a compact decision-card with report path, CV paths, and action boundary.
+
+  OUTPUT
+  Use the JobZoom summary format from memory. Keep it short unless there is a blocker.
+verification:
+  - Inspect the generated report file, not only script logs.
+  - Verify each selected job is not already applied.
+  - Verify each expected PDF exists and opens or text-extracts cleanly.
+  - Confirm Telegram delivery if a message or file is sent.
+forbidden:
+  - Do not apply to jobs.
+  - Do not message recruiters or employers.
+  - Do not generate CVs for below-70, suppressed, old still-open, or already-applied roles unless Ahmed explicitly asks.
+  - Do not report quota exhaustion unless the model/API returned HTTP 429.
+  - Do not declare success from exit code alone.

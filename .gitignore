@@ -41,6 +41,7 @@ media/inbound/*.docx
 /cvs/
 /cookies/
 /config/*cookies*
+/*.bak-*
 /*.pptx
 /*.ppt
 
@@ -78,6 +79,12 @@ media/inbound/*.docx
 
 # Runtime logs
 logs/openclaw-backup.log
+logs/openclaw-*.log
+logs/cron/*.log
+logs/cron/status/*.json
+
+# Generated CV exports
+output/cvs/
 
 # Generated local content/media artifacts
 output/linkedin/

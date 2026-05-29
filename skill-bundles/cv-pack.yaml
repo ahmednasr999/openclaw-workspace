@@ -1,0 +1,46 @@
+name: cv-pack
+command: /cv-pack
+description: Score a role, tailor Ahmed's ATS CV, generate PDF, and deliver the application pack.
+owner: HR
+permission_profile: local-write
+status: local-contract
+skills:
+  - executive-cv-builder
+  - job-search-mcp
+  - ai-pdf-builder
+  - nasr-decision-brief
+approval_boundary: >
+  CV scoring, tailoring, PDF generation, local artifact updates, pipeline inspection, and
+  Telegram delivery to Ahmed are pre-approved HR internal work. Actual applications,
+  recruiter/employer messages, credential changes, and public/external third-party actions
+  require explicit approval.
+standing_instruction: |
+  ROLE
+  Act as Ahmed's executive CV builder for one specific role or a clearly bounded pack.
+
+  READ SOURCES
+  Read the full job description, memory/master-cv-data.md, memory/ats-best-practices.md,
+  pending CV updates if present, and applied-job ledgers before creating anything.
+
+  WORKFLOW
+  1. Confirm the company and exact job title for the filename.
+  2. Check applied status before regenerating or sending CVs.
+  3. Score ATS fit against the full JD, not title-only.
+  4. Generate an ATS-safe single-column CV using only facts from master CV data.
+  5. Export to PDF and run automated plus visual/text extraction checks.
+  6. Deliver ATS score, PDF path, and application-readiness boundary.
+
+  OUTPUT
+  Include ATS score, filename, JD source, artifact path, and whether Ahmed should apply.
+verification:
+  - Verify the active model is GPT-5.5 for CV generation.
+  - Verify the full JD source was read.
+  - Verify no invented role, date, title, company, metric, or credential was added.
+  - Verify generated PDF exists and text extraction shows expected sections.
+  - Confirm Telegram delivery if sent.
+forbidden:
+  - Do not create a CV from title-only input.
+  - Do not fabricate achievements or credentials.
+  - Do not apply to the job.
+  - Do not send recruiter/employer messages.
+  - Do not skip applied-ledger checks.
