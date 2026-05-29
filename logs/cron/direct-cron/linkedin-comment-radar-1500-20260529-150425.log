@@ -1,0 +1,15 @@
+{
+  "task": "linkedin-comment-radar-1500",
+  "ts": "2026-05-29T15:04:43.146420+03:00",
+  "cmd": [
+    "/usr/bin/python3",
+    "scripts/run_linkedin_comment_radar.py",
+    "--slot",
+    "1500"
+  ],
+  "cwd": "/root/.openclaw/workspace-cmo",
+  "returncode": 0,
+  "stdout": "/root/.openclaw/workspace-cmo/reports/linkedin-comment-radar/2026-05-29-1500.md\nstatus=ok_browser_dom_no_urls posts=6\n",
+  "stderr": "",
+  "log_path": "/root/.openclaw/workspace/logs/cron/direct-cron/linkedin-comment-radar-1500-20260529-150425.log"
+}

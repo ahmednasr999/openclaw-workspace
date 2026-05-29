@@ -2,67 +2,70 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-05-28T15:00:33.255668+02:00",
-    "duration_ms": 29942,
+    "generated_at": "2026-05-29T18:00:33.194644+03:00",
+    "duration_ms": 31426,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "519d56f1",
+    "run_id": "bf7ba56a",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": [
     {
-      "id": "indeed-in-dc1c5ad37577e0cb",
+      "id": "indeed-in-fb050f217fc58e3d",
       "source": "indeed",
-      "title": "Senior Manager Software Engineering",
-      "company": "DataFlow Group",
+      "title": "Director - Sustainable Finance Advisory",
+      "company": "KEO International Consultants",
       "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=dc1c5ad37577e0cb",
-      "posted": "2026-05-26",
-      "seniority": "Other",
-      "domain_match": true,
-      "keyword_score": 16,
-      "match_keywords": [
-        "ai",
-        "gcc",
-        "uae",
-        "platform"
-      ],
-      "raw_snippet": "We are seeking a strategic and hands\\-on **Senior Manager, Software Engineering** to lead the evolution of our core software platforms. This pivotal role owns the entire lifecycle of our internal and external software solutions\u2014from day\\-to\\-day architectural integrity to long\\-term strategic vision. You will be the central point of ownership for how the company builds, deploys, and maintains its high\\-performance applications in front of our key client base across the UAE and the GCC region.\n\nT",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Head of Technology"
-    },
-    {
-      "id": "indeed-in-d1c0525b2c7fdf91",
-      "source": "indeed",
-      "title": "Technical Director - High Rise Building",
-      "company": "Parsons",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=d1c0525b2c7fdf91",
+      "url": "https://ae.indeed.com/viewjob?jk=fb050f217fc58e3d",
       "posted": "2026-05-25",
       "seniority": "C-Suite",
       "domain_match": true,
-      "keyword_score": 20,
+      "keyword_score": 30,
       "match_keywords": [
-        "director",
-        "leadership",
-        "growth"
+        "agile",
+        "ai",
+        "enterprise",
+        "director"
       ],
-      "raw_snippet": "In a world of possibilities, pursue one with endless opportunities. Imagine Next!  \n\n\nAt Parsons, you can imagine a career where you thrive, work with exceptional people, and be yourself. Guided by our leadership vision of valuing people, embracing agility, and fostering growth, we cultivate an innovative culture that empowers you to achieve your full potential. Unleash your talent and redefine what\u2019s possible. **Job Description:**\n\n\nParsons is looking for an amazingly talented **Technical Direc",
+      "raw_snippet": "Overview:\n\nKEO is a creative enterprise, where innovation is a way of life. We are uniquely resourced with end\\-to\\-end services to take clients from inspiration \u2013 through conceptualization \u2013 to realization of planning, design or project delivery in the built and natural environments.  \n\nFor over 60 years we\u2019ve led with vision, contributing to many of the world\u2019s most ambitious projects, iconic places, remarkable experiences and prosperous communities.  \n\nAs a highly integrated and agile AEP/PMC",
       "relevant": true,
       "filter_reason": null,
-      "search_country": "Saudi Arabia",
+      "search_country": "United Arab Emirates",
       "search_title": "Program Director"
+    },
+    {
+      "id": "indeed-in-1818f66e88511823",
+      "source": "indeed",
+      "title": "Cloud and Infrastructure Platforms Director",
+      "company": "KEO International Consultants",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=1818f66e88511823",
+      "posted": "2026-05-22",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 40,
+      "match_keywords": [
+        "agile",
+        "cloud",
+        "infrastructure",
+        "enterprise",
+        "director",
+        "platform"
+      ],
+      "raw_snippet": "Overview:\n\nKEO is a creative enterprise, where innovation is a way of life. We are uniquely resourced with end\\-to\\-end services to take clients from inspiration \u2013 through conceptualization \u2013 to realization of planning, design or project delivery in the built and natural environments. For over 60 years we\u2019ve led with vision, contributing to many of the world\u2019s most ambitious projects, iconic places, remarkable experiences and prosperous communities.  \n\nAs a highly integrated and agile AEP/PMCM f",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Director Digital Transformation"
     }
   ],
   "kpi": {
     "searches_run": 20,
-    "results_per_search": 1.8,
+    "results_per_search": 1.45,
     "unique_jobs": 2,
-    "errors": 12
+    "errors": 11
   },
   "recommendations": []
 }

@@ -19,6 +19,25 @@ TRANSIENT_FAILURE_THRESHOLD = 2
 CHECK_TIMEOUT_SECONDS = 140
 STATUS_PROBE_TIMEOUT_SECONDS = 30
 
+HOOKS_ENV_FILE = Path('/root/.config/openclaw-hooks.env')
+
+
+def load_env_file(path: Path):
+    if not path.exists():
+        return
+    for raw_line in path.read_text().splitlines():
+        line = raw_line.strip()
+        if not line or line.startswith('#') or '=' not in line:
+            continue
+        key, value = line.split('=', 1)
+        key = key.strip()
+        value = value.strip().strip('\"').strip("'")
+        if key:
+            os.environ.setdefault(key, value)
+
+
+load_env_file(HOOKS_ENV_FILE)
+
 
 def send_telegram(target: str, text: str) -> tuple[bool, str]:
     try:

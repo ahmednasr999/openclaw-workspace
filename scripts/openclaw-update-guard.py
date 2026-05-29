@@ -26,6 +26,12 @@ OPENCLAW_CONFIG = Path("/root/.openclaw/openclaw.json")
 WORKSPACE = Path("/root/.openclaw/workspace")
 MODEL_ROUTER = WORKSPACE / "config/model-router.json"
 REPORT_DIR = WORKSPACE / "reports"
+OPENCLAW_INSTALL = Path("/usr/lib/node_modules/openclaw")
+INSTALL_SIZE_WARN_MB = 850
+DEPENDENCY_COUNT_WARN = 450
+NATIVE_OPTIONAL_WARN = 18
+TURN_COLD_WARN_SECONDS = 30.0
+TURN_WARM_WARN_SECONDS = 20.0
 REQUIRED_PLUGINS = [
     "lossless-claw",
     "telegram",
@@ -46,9 +52,10 @@ class Check:
 
 
 class Guard:
-    def __init__(self, timeout: int = 20, deep: bool = False):
+    def __init__(self, timeout: int = 20, deep: bool = False, measure_turn_latency: bool = False):
         self.timeout = timeout
         self.deep = deep
+        self.measure_turn_latency = measure_turn_latency
         self.checks: list[Check] = []
         self.raw: dict[str, Any] = {}
 
@@ -127,6 +134,108 @@ class Guard:
             self.add("openclaw version", "PASS", text)
         else:
             self.add("openclaw version", "FAIL", f"exit {cp.returncode}", text)
+
+    def count_node_modules_packages(self, node_modules: Path) -> int | None:
+        if not node_modules.exists():
+            return None
+        count = 0
+        for child in node_modules.iterdir():
+            if child.name.startswith("."):
+                continue
+            if child.name.startswith("@") and child.is_dir():
+                count += sum(1 for pkg in child.iterdir() if (pkg / "package.json").exists())
+            elif (child / "package.json").exists():
+                count += 1
+        return count
+
+    def count_native_optional_packages(self, node_modules: Path) -> tuple[int, list[str]]:
+        scoped_patterns = {
+            "@rollup": ("rollup-",),
+            "@tailwindcss": ("oxide-",),
+            "@esbuild": ("",),
+            "@img": ("sharp-",),
+            "@swc": ("core-",),
+        }
+        matches: list[str] = []
+        for scope, prefixes in scoped_patterns.items():
+            scope_dir = node_modules / scope
+            if not scope_dir.exists():
+                continue
+            for pkg in scope_dir.iterdir():
+                if not pkg.is_dir():
+                    continue
+                if any(pkg.name.startswith(prefix) for prefix in prefixes):
+                    matches.append(f"{scope}/{pkg.name}")
+        return len(matches), sorted(matches)
+
+    def check_release_footprint(self) -> None:
+        if not OPENCLAW_INSTALL.exists():
+            self.add("release footprint", "FAIL", f"OpenClaw install path missing: {OPENCLAW_INSTALL}")
+            return
+
+        size_mb: int | None = None
+        cp = self.run_cmd("openclaw install size", ["du", "-sm", str(OPENCLAW_INSTALL)])
+        if cp and cp.returncode == 0:
+            try:
+                size_mb = int((cp.stdout.strip().split() or ["0"])[0])
+            except Exception:
+                size_mb = None
+
+        node_modules = OPENCLAW_INSTALL / "node_modules"
+        dep_count = self.count_node_modules_packages(node_modules)
+        native_count, native_matches = self.count_native_optional_packages(node_modules)
+        nested_duplicate = OPENCLAW_INSTALL / "node_modules" / "openclaw" / "node_modules"
+        nested_exists = nested_duplicate.exists()
+
+        evidence = json.dumps(
+            {
+                "installPath": str(OPENCLAW_INSTALL),
+                "sizeMb": size_mb,
+                "dependencyCountDirect": dep_count,
+                "nativeOptionalCount": native_count,
+                "nativeOptionalSample": native_matches[:20],
+                "nestedDuplicateTree": str(nested_duplicate),
+                "nestedDuplicateTreeExists": nested_exists,
+                "thresholds": {
+                    "sizeWarnMb": INSTALL_SIZE_WARN_MB,
+                    "dependencyCountWarn": DEPENDENCY_COUNT_WARN,
+                    "nativeOptionalWarn": NATIVE_OPTIONAL_WARN,
+                },
+            },
+            ensure_ascii=False,
+        )
+
+        if nested_exists:
+            self.add("release footprint", "FAIL", "duplicate nested OpenClaw dependency tree detected", evidence)
+            return
+
+        warnings = []
+        if size_mb is not None and size_mb > INSTALL_SIZE_WARN_MB:
+            warnings.append(f"install size {size_mb} MB exceeds {INSTALL_SIZE_WARN_MB} MB")
+        if dep_count is not None and dep_count > DEPENDENCY_COUNT_WARN:
+            warnings.append(f"direct dependency count {dep_count} exceeds {DEPENDENCY_COUNT_WARN}")
+        if native_count > NATIVE_OPTIONAL_WARN:
+            warnings.append(f"native optional package count {native_count} exceeds {NATIVE_OPTIONAL_WARN}")
+
+        if warnings:
+            self.add("release footprint", "WARN", "; ".join(warnings), evidence)
+        else:
+            self.add("release footprint", "PASS", "install footprint and dependency shape are within guard thresholds", evidence)
+
+    def check_runtime_llm_complete(self) -> None:
+        cp = self.run_cmd("runtime llm complete", ["openclaw", "plugins", "inspect", "lossless-claw", "--runtime", "--json"], timeout=max(self.timeout, 30))
+        if not cp:
+            return
+        text = cp.stdout + cp.stderr
+        if cp.returncode != 0:
+            self.add("runtime.llm.complete", "WARN", f"could not inspect lossless-claw runtime, exit {cp.returncode}", text[-1500:])
+            return
+        if "runtime.llm.complete is unavailable" in text:
+            self.add("runtime.llm.complete", "WARN", "Plugin SDK runtime LLM support is unavailable in this build", "LCM cannot use plugin-side runtime LLM completion until OpenClaw includes that support.")
+        elif "runtime.llm.complete" in text and "unavailable" not in text.lower():
+            self.add("runtime.llm.complete", "PASS", "runtime LLM completion appears available to plugin runtime", text[-1000:])
+        else:
+            self.add("runtime.llm.complete", "WARN", "runtime inspection did not provide explicit runtime.llm.complete evidence", text[-1000:])
 
     def check_gateway_status(self) -> None:
         cp = self.run_cmd("gateway status", ["openclaw", "gateway", "status", "--deep"], timeout=max(self.timeout, 30))
@@ -210,23 +319,60 @@ class Guard:
             )
 
     def check_systemd(self) -> None:
-        cp = self.run_cmd(
-            "systemd gateway",
-            ["systemctl", "--user", "show", "openclaw-gateway", "-p", "ExecStart", "-p", "MainPID", "-p", "ExecMainStartTimestamp"],
-        )
-        if not cp:
-            return
-        text = cp.stdout + cp.stderr
-        pid = re.search(r"MainPID=(\d+)", text)
-        exec_ok = "dist/index.js gateway" in text and "/usr/bin/node" in text
-        ts_line = next((l for l in text.splitlines() if l.startswith("ExecMainStartTimestamp=")), "")
-        start_ok = bool(ts_line and ts_line.strip() != "ExecMainStartTimestamp=" and "n/a" not in ts_line.lower())
-        if cp.returncode != 0:
-            self.add("systemd gateway", "FAIL", f"exit {cp.returncode}", text)
-        elif pid and pid.group(1) != "0" and exec_ok and start_ok:
-            self.add("systemd gateway", "PASS", f"MainPID={pid.group(1)}, ExecStart/start timestamp present", text.strip())
-        else:
-            self.add("systemd gateway", "FAIL", "missing valid MainPID, ExecStart, or start timestamp", text.strip())
+        commands = [
+            (
+                "user",
+                [
+                    "systemctl",
+                    "--user",
+                    "show",
+                    "openclaw-gateway",
+                    "-p",
+                    "ExecStart",
+                    "-p",
+                    "MainPID",
+                    "-p",
+                    "ExecMainStartTimestamp",
+                ],
+            ),
+            (
+                "system",
+                [
+                    "systemctl",
+                    "show",
+                    "openclaw-gateway.service",
+                    "-p",
+                    "ExecStart",
+                    "-p",
+                    "MainPID",
+                    "-p",
+                    "ExecMainStartTimestamp",
+                    "-p",
+                    "ActiveState",
+                    "-p",
+                    "SubState",
+                ],
+            ),
+        ]
+        failures = []
+        for scope, cmd in commands:
+            cp = self.run_cmd(f"systemd gateway ({scope})", cmd)
+            if not cp:
+                continue
+            text = cp.stdout + cp.stderr
+            if cp.returncode != 0:
+                failures.append(f"[{scope}] exit {cp.returncode}\n{text.strip()}")
+                continue
+            pid = re.search(r"MainPID=(\d+)", text)
+            exec_ok = "gateway --port 18789" in text and ("/usr/bin/openclaw" in text or "dist/index.js gateway" in text)
+            ts_line = next((l for l in text.splitlines() if l.startswith("ExecMainStartTimestamp=")), "")
+            start_ok = bool(ts_line and ts_line.strip() != "ExecMainStartTimestamp=" and "n/a" not in ts_line.lower())
+            active_ok = "ActiveState=active" in text or scope == "user"
+            if pid and pid.group(1) != "0" and exec_ok and start_ok and active_ok:
+                self.add("systemd gateway", "PASS", f"{scope} MainPID={pid.group(1)}, ExecStart/start timestamp present", text.strip())
+                return
+            failures.append(f"[{scope}] missing valid MainPID, ExecStart, active state, or start timestamp\n{text.strip()}")
+        self.add("systemd gateway", "FAIL", "no valid user or system gateway service found", "\n\n".join(failures))
 
     def load_json_file(self, path: Path) -> Any | None:
         try:
@@ -329,6 +475,44 @@ class Guard:
                 ok = all(t in text for t in ["file_fetch", "file_write", "dir_list", "dir_fetch"])
                 self.add("runtime file-transfer", "PASS" if ok else "FAIL", "file-transfer tool contracts present" if ok else "missing one or more file-transfer tools")
 
+    def check_turn_latency_optional(self) -> None:
+        if not self.measure_turn_latency:
+            return
+        session_key = "agent:main:update-guard-latency"
+        timings: list[dict[str, Any]] = []
+        for label in ["cold", "warm"]:
+            started = time.monotonic()
+            cp = self.run_cmd(
+                f"agent turn latency {label}",
+                [
+                    "openclaw",
+                    "agent",
+                    "--agent",
+                    "main",
+                    "--session-key",
+                    session_key,
+                    "--message",
+                    f"Update guard {label} latency probe. Reply with exactly pong.",
+                    "--thinking",
+                    "minimal",
+                    "--timeout",
+                    str(max(self.timeout, 90)),
+                    "--json",
+                ],
+                timeout=max(self.timeout, 120),
+            )
+            elapsed = time.monotonic() - started
+            ok = bool(cp and cp.returncode == 0)
+            text = (cp.stdout + cp.stderr) if cp else ""
+            timings.append({"label": label, "ok": ok, "seconds": round(elapsed, 2), "returncode": cp.returncode if cp else None})
+            if not ok:
+                self.add(f"agent turn latency {label}", "WARN", f"agent turn probe failed after {elapsed:.1f}s", text[-1500:])
+                continue
+            threshold = TURN_COLD_WARN_SECONDS if label == "cold" else TURN_WARM_WARN_SECONDS
+            status = "PASS" if elapsed <= threshold else "WARN"
+            self.add(f"agent turn latency {label}", status, f"{elapsed:.1f}s gateway agent turn, threshold {threshold:.1f}s", text[-1000:])
+        self.raw["agent turn latency summary"] = timings
+
     def check_deep_status_optional(self) -> None:
         if not self.deep:
             return
@@ -341,6 +525,8 @@ class Guard:
     def run_all(self) -> None:
         self.check_disk()
         self.check_version()
+        self.check_release_footprint()
+        self.check_runtime_llm_complete()
         self.check_systemd()
         self.check_config_validate()
         self.check_sandbox_image()
@@ -350,6 +536,7 @@ class Guard:
         self.check_model_refs()
         self.check_codex_usage()
         self.check_plugins()
+        self.check_turn_latency_optional()
         self.check_deep_status_optional()
 
     def verdict(self) -> str:
@@ -382,12 +569,13 @@ class Guard:
 def main() -> int:
     ap = argparse.ArgumentParser(description="Read-only OpenClaw update/restart guard")
     ap.add_argument("--deep", action="store_true", help="also run openclaw status --deep, may be slow")
+    ap.add_argument("--measure-turn-latency", action="store_true", help="run two non-delivered gateway agent turns and record cold/warm latency")
     ap.add_argument("--timeout", type=int, default=20)
     ap.add_argument("--json", action="store_true", help="emit JSON result")
     ap.add_argument("--write-report", action="store_true", help="write report under workspace/reports")
     args = ap.parse_args()
 
-    g = Guard(timeout=args.timeout, deep=args.deep)
+    g = Guard(timeout=args.timeout, deep=args.deep, measure_turn_latency=args.measure_turn_latency)
     g.run_all()
     verdict = g.verdict()
     rendered = g.render()

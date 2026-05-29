@@ -18,6 +18,10 @@ import time
 import uuid
 import traceback
 from datetime import datetime, timezone, timedelta
+try:
+    from zoneinfo import ZoneInfo
+except Exception:  # pragma: no cover - Python <3.9 fallback
+    ZoneInfo = None
 from pathlib import Path
 from functools import wraps
 
@@ -32,7 +36,7 @@ RUN_LOG = DATA_DIR / "run-history.jsonl"
 FAILURES_LOG = DATA_DIR / "failures.json"
 
 # Timezone
-CAIRO_TZ = timezone(timedelta(hours=2))
+CAIRO_TZ = ZoneInfo("Africa/Cairo") if ZoneInfo else timezone(timedelta(hours=2))
 
 def now_cairo():
     """Current time in Cairo timezone."""
@@ -59,6 +63,7 @@ class AgentResult:
         self.data = {}
         self.kpi = {}
         self.recommendations = []
+        self.post_write_hook = None
         self.status = "success"
         self.error = None
         self.retries_used = 0
@@ -265,6 +270,9 @@ def agent_main(agent_name, run_func, output_path, ttl_hours=6, version="1.0.0"):
         result.write(output_path)
         result.log_kpi()
         result.log_run()
+        hook = getattr(result, "post_write_hook", None)
+        if callable(hook):
+            hook()
         print(f"[{agent_name}] Written to {output_path}")
         print(f"[{agent_name}] Status: {result.status} | Duration: {int((time.time() - result.start_time)*1000)}ms")
 

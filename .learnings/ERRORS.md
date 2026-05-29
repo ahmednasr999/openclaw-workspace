@@ -859,4 +859,22 @@ Skip unsupported required-field jobs instead of treating them as hard security b
 2026-05-27 - gateway apply_patch unavailable
 - What happened: `apply_patch` is not installed in the gateway sandbox, so patching via that command failed.
 - Do differently: when editing gateway files, first check for `apply_patch`; if absent, use a small backed-up structured patcher and validate syntax immediately.
+## 2026-05-28 - Shell script invoked with Python during verification
 
+What happened: `scripts/gateway-lifecycle-audit.sh` was accidentally invoked through `python3`, producing a syntax error before config validation.
+
+Do differently: execute `.sh` verification scripts with `bash` directly, then continue the remaining checks instead of rerunning unrelated work.
+## 2026-05-29 - apply_patch unavailable in OpenClaw sandbox shell
+- What happened: Attempted to create `docs/architecture/openclaw-ecosystem-adoption-register-2026-05-29.md` with `apply_patch`, but the gateway shell returned `apply_patch: command not found`.
+- Recovery: Used a controlled Python file write and verified the file afterward.
+- Follow-up: Do not assume `apply_patch` exists inside OpenClaw sandbox exec sessions; use the native edit tool when available, or a controlled fallback when it is not.
+
+## 2026-05-29 - gitcrawl state path under .openclaw caused portable source DB error
+- What happened: The first reusable `gitcrawl` digest run used `/root/.openclaw/state/gitcrawl-openclaw-digest` as HOME and `gitcrawl sync` failed with `stat portable source db` before creating the SQLite archive.
+- Recovery: Moved the digest HOME to `/root/.local/share/openclaw-gitcrawl-digest`, removed the bad temporary state, reran the digest, and verified a report with 5 cached open PR threads.
+- Do differently: Keep `gitcrawl` crawler state outside `/root/.openclaw/state` unless the portable-store behavior is intentionally configured and tested.
+## 2026-05-29 - Gateway restart may return code 1 after successful drain
+
+- What happened: `openclaw gateway restart` returned code 1 during a live turn, while journal evidence showed the gateway drained active work, performed a supervisor restart, and came back on pid 2380041.
+- Cause: The restart interrupted the Codex app-server client and approval follow-ups while the gateway was draining, so the initiating command observed failure even though systemd completed the restart.
+- Do differently: After a gateway restart command reports failure, verify `openclaw gateway status`, `openclaw gateway health`, and user-unit journal evidence before retrying or declaring the restart failed.

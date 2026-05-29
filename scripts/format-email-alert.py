@@ -135,18 +135,27 @@ def collect_items(summary: dict[str, Any]) -> list[dict[str, Any]]:
         return ("fingerprint", f"{clean_sender(item.get('from') or '')}|{clean_subject(item.get('subject') or '')}".lower())
 
     seen_keys = set()
+    vetoed_keys = set()
+    llm_present = isinstance(llm, dict) and bool(llm.get("summary") or llm.get("actionable_emails"))
 
     for item in llm.get("actionable_emails") or []:
         category = (item.get("category") or "").strip().lower()
         action = (item.get("action") or "").strip().lower()
-        if category in NON_ACTIONABLE_CATEGORIES or action in {"no_action", "read_and_file"}:
-            continue
-        notes = f"{item.get('notes') or ''} {item.get('intent') or ''}".lower()
-        if any(marker in notes for marker in ("marketing", "automated", "job alert", "recommendations")) and action != "respond":
-            continue
         sender = clean_sender(item.get("from") or "")
         subject = clean_subject(item.get("subject") or "")
+        normalized_key_item = {"id": str(item.get("id") or ""), "from": sender, "subject": subject}
+        key = item_key(normalized_key_item)
+        fp = ("fingerprint", f"{sender}|{subject}".lower())
+
+        if category in NON_ACTIONABLE_CATEGORIES or action in {"no_action", "read_and_file"}:
+            vetoed_keys.update({key, fp})
+            continue
+        notes = f"{item.get('notes') or ''} {item.get('intent') or ''}".lower()
+        if any(marker in notes for marker in ("marketing", "automated", "job alert", "recommendations", "newsletter", "false positive")) and action != "respond":
+            vetoed_keys.update({key, fp})
+            continue
         if is_automated_alert(sender, subject) and action != "respond":
+            vetoed_keys.update({key, fp})
             continue
         normalized = {
             "id": str(item.get("id") or ""),
@@ -158,9 +167,15 @@ def collect_items(summary: dict[str, Any]) -> list[dict[str, Any]]:
             "response_deadline": item.get("response_deadline") or "",
             "notes": item.get("notes") or item.get("intent") or "",
         }
-        seen_keys.add(item_key(normalized))
-        seen_keys.add(("fingerprint", f"{normalized['from']}|{normalized['subject']}".lower()))
+        seen_keys.add(key)
+        seen_keys.add(fp)
         items.append(normalized)
+
+    llm_summary = llm.get("summary") or {}
+    if llm_present and llm_summary.get("total_actionable") == 0:
+        # The LLM has reviewed the actionable candidates and explicitly found
+        # none. Do not resurrect heuristic false positives via fallback groups.
+        return sorted(items, key=lambda item: ({"critical": 0, "high": 1, "medium": 2, "low": 3}.get(item.get("urgency"), 2), 4))
 
     fallback_groups = [
         ("interview_invite", data.get("interview_invites") or []),
@@ -178,9 +193,13 @@ def collect_items(summary: dict[str, Any]) -> list[dict[str, Any]]:
                 continue
             if is_automated_alert(sender, subject):
                 continue
+            raw_confidence = raw.get("confidence")
+            if raw_confidence is not None and int(raw_confidence or 0) < 55:
+                continue
             normalized = {"id": raw_id, "from": sender, "subject": subject}
             key = item_key(normalized)
-            if key in seen_keys:
+            fp = ("fingerprint", f"{sender}|{subject}".lower())
+            if key in seen_keys or key in vetoed_keys or fp in vetoed_keys:
                 continue
             priority = (raw.get("priority") or raw.get("urgency") or "medium").lower()
             if category == "interview_invite" and priority not in {"critical", "high", "hot"}:
@@ -193,7 +212,8 @@ def collect_items(summary: dict[str, Any]) -> list[dict[str, Any]]:
                 "urgency": "critical" if priority == "hot" else priority,
                 "action": "respond" if category == "interview_invite" else "review",
                 "response_deadline": "24h" if category == "interview_invite" else "",
-                "notes": "",
+                "notes": raw.get("why_actionable") or "",
+                "confidence": raw.get("confidence"),
             })
             seen_keys.add(key)
 
@@ -215,7 +235,11 @@ def format_item(item: dict[str, Any], urgent: bool) -> list[str]:
     subject = short(item.get("subject") or "No subject", 74)
     lines = [f"• {sender} - {subject}"]
     if not urgent:
-        lines.append(f"  Priority: {human_priority(item.get('urgency') or 'medium')}")
+        confidence = item.get("confidence")
+        priority = human_priority(item.get('urgency') or 'medium')
+        if confidence is not None:
+            priority = f"{priority}, confidence {confidence}%"
+        lines.append(f"  Priority: {priority}")
     lines.append(f"  Next: {action_text(item)}")
     if urgent:
         deadline = (item.get("response_deadline") or "").strip()

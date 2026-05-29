@@ -378,6 +378,46 @@ def check_context_engine_turn_maintenance_silent(failures: list[str]) -> None:
         print("OK: context-engine turn maintenance task delivery guard")
 
 
+def check_delivery_mirror_dedupe(failures: list[str]) -> None:
+    bot_candidates = sorted(DIST.glob("bot-*.js"))
+    if not bot_candidates:
+        failures.append("FAIL: delivery-mirror transcript dedupe\nbot dist file missing")
+        return
+    bot_text = "\n".join(candidate.read_text(errors="ignore") for candidate in bot_candidates)
+    required_needles = [
+        "readLatestAssistantTextFromSessionTranscript(sessionFile)",
+        "latestAssistant?.text?.trim() === text.trim()",
+    ]
+    missing = [needle for needle in required_needles if needle not in bot_text]
+    if missing:
+        failures.append(
+            "FAIL: delivery-mirror transcript dedupe\n"
+            + "\n".join(f"missing: {needle}" for needle in missing)
+        )
+    else:
+        print("OK: delivery-mirror transcript dedupe present")
+
+
+def check_exec_approval_followup_no_direct_leak(failures: list[str]) -> None:
+    candidates = sorted(DIST.glob("bash-tools-*.js"))
+    if not candidates:
+        failures.append("FAIL: exec approval followup direct leak guard\nbash-tools dist file missing")
+        return
+    text = "\n".join(candidate.read_text(errors="ignore") for candidate in candidates)
+    required_needles = [
+        "exec approval followup agent wait failed after handoff; suppressing direct fallback",
+        "return true;",
+    ]
+    missing = [needle for needle in required_needles if needle not in text]
+    if missing:
+        failures.append(
+            "FAIL: exec approval followup direct leak guard\n"
+            + "\n".join(f"missing: {needle}" for needle in missing)
+        )
+    else:
+        print("OK: exec approval followup direct leak guard present")
+
+
 def main() -> int:
     failures: list[str] = []
     for check in CHECKS:
@@ -417,6 +457,8 @@ def main() -> int:
     check_restart_sentinel_sanitizer_smoke(failures)
     check_reply_context_metadata_sanitizer_smoke(failures)
     check_context_engine_turn_maintenance_silent(failures)
+    check_delivery_mirror_dedupe(failures)
+    check_exec_approval_followup_no_direct_leak(failures)
 
     if failures:
         print("\n\n".join(failures), file=sys.stderr)

@@ -2,199 +2,56 @@
   "meta": {
     "agent": "jobs-review",
     "version": "2.0.0",
-    "generated_at": "2026-04-09T22:05:26.792690+02:00",
-    "duration_ms": 698031,
+    "generated_at": "2026-05-29T18:27:32.955779+03:00",
+    "duration_ms": 13559,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "c5f5cd61",
+    "run_id": "c47dfa9b",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
-    "generated_at": "2026-04-09T22:05:25.848252+02:00",
-    "total_candidates": 95,
-    "reviewed": 94,
-    "submit": [
-      {
-        "job_id": "22086",
-        "title": "Head of Transformation job in Dubai, United Arab Emirates - Cigna",
-        "company": "Thecignagroup",
-        "location": "United Arab Emirates",
-        "url": "https://jobs.thecignagroup.com/us/en/job/26000401/Head-of-Transformation",
-        "source": "exa-web",
-        "raw_snippet": "Head of Transformation. Dubai, United Arab Emirates. Project & Program Management. The Head of Transformation is accountable for end-to-end transformation delivery across Cigna Healthcare Middle East & Africa, spanning operating model redesign, technology and data modernization, regulatory readiness, and execution discipline. The role blends transformation strategy, Agile SAFe leadership, change management, and disciplined program delivery to embed modern ways of working and unlock measurable va",
-        "jd_text": "Head of Transformation. Dubai, United Arab Emirates. Project & Program Management. The Head of Transformation is accountable for end-to-end transformation delivery across Cigna Healthcare Middle East & Africa, spanning operating model redesign, technology and data modernization, regulatory readiness, and execution discipline. The role blends transformation strategy, Agile SAFe leadership, change management, and disciplined program delivery to embed modern ways of working and unlock measurable value. You will stand up and lead the Transformation Office, orchestrate cross-functional initiatives across all value streams, and ensure outcomes are tracked and realized. Own the delivery of a multi-year enterprise transformation portfolio, including digital distribution, customer self-service, claims and medical cost transformation, provider network enablement, and core platform modernization. Advance data and analytics foundations, AI/ML use cases, process re-engineering and automation. 12\u201315+ years of experience in transformation leadership, program delivery, or corporate strategy. Healthcare or financial services experience strongly preferred. Relevant certifications include SAFe, Prosci/ADKAR, Lean Six Sigma, PMP/PgMP.",
-        "keyword_score": 3,
-        "relevant": true,
-        "_from_db_backfill": true,
-        "career_fit_score": 7,
-        "verdict": "SUBMIT",
-        "verdict_reason": "Excellent match: Head of Transformation in UAE with enterprise delivery, modernization, AI/ML, PMO discipline, and preferred certifications [5D role=2 | seniority=2 | geo=0 | strategic=1 | evidence=2 | fit=7/10 | llm=9 | watchlist=healthcare_gcc] [CMO outreach queued for Thecignagroup]",
-        "watchlist_matches": {
-          "company_hits": [],
-          "domain_hits": [
-            "health",
-            "healthcare",
-            "medical"
-          ],
-          "categories": [
-            "healthcare_gcc"
-          ]
-        },
-        "ats_score": 85,
-        "ats_verdict": "GO",
-        "ats_matched": [
-          "digital transformation",
-          "program management",
-          "project management",
-          "transformation",
-          "pmp",
-          "lean six sigma",
-          "ai",
-          "erp",
-          "healthcare",
-          "operating model"
-        ],
-        "ats_gaps": [],
-        "llm_fit_score": 9,
-        "fit_dimensions": {
-          "role": 2,
-          "seniority": 2,
-          "geography": 0,
-          "strategic": 1,
-          "evidence": 2
-        }
-      },
-      {
-        "job_id": "22026",
-        "title": "PMO Director - Finance Transformation",
-        "company": "Involvedsolutions",
-        "location": "United Arab Emirates",
-        "url": "https://www.involvedsolutions.com/jobs/625854-PMO-Director---Finance-Transformation",
-        "source": "exa-web",
-        "raw_snippet": "PMO Director - Finance Transformation. Dubai. Permanent. Salary AED 60000 - AED 75000 per month. Lead enterprise-wide Finance Transformation initiatives. Senior strategic role responsible for driving governance, performance, and transformation across finance operations. Establish and lead the PMO function that governs and executes the group's Finance Transformation roadmap, ensuring programmes are aligned to strategic objectives and deliver measurable business outcomes. Define governance model, ",
-        "jd_text": "PMO Director - Finance Transformation. Dubai. Permanent. Salary AED 60000 - AED 75000 per month. Lead enterprise-wide Finance Transformation initiatives. Senior strategic role responsible for driving governance, performance, and transformation across finance operations. Establish and lead the PMO function that governs and executes the group's Finance Transformation roadmap, ensuring programmes are aligned to strategic objectives and deliver measurable business outcomes. Define governance model, standards, and reporting structure. Oversee delivery of multiple transformation projects covering systems, processes, and operating models. Drive performance metrics and continuous improvement across finance functions. Partner with Finance, Technology, and Strategy leaders. Manage project portfolios, budgets, and delivery timelines. 15+ years in programme or PMO leadership roles with focus on finance transformation. PMP preferred.",
-        "keyword_score": 3,
-        "relevant": true,
-        "_from_db_backfill": true,
-        "career_fit_score": 7,
-        "verdict": "SUBMIT",
-        "verdict_reason": "Excellent fit: PMO Director leading finance transformation in Dubai with senior governance and portfolio ownership [5D role=2 | seniority=2 | geo=0 | strategic=1 | evidence=2 | fit=7/10 | llm=9] [CMO outreach queued for Involvedsolutions]",
-        "salary": "AED 60,000-75,000/month",
-        "watchlist_matches": {
-          "company_hits": [],
-          "domain_hits": [],
-          "categories": []
-        },
-        "ats_score": 66,
-        "ats_verdict": "CONDITIONAL",
-        "ats_matched": [
-          "pmo",
-          "transformation",
-          "pmp",
-          "ai",
-          "erp",
-          "governance",
-          "operating model",
-          "budget",
-          "strategy",
-          "strategic"
-        ],
-        "ats_gaps": [],
-        "llm_fit_score": 9,
-        "fit_dimensions": {
-          "role": 2,
-          "seniority": 2,
-          "geography": 0,
-          "strategic": 1,
-          "evidence": 2
-        }
-      }
-    ],
-    "review": [
-      {
-        "job_id": "22062",
-        "title": "Director of Digital Transformation and Operations Excellence - Foodics | Built In",
-        "company": "Builtin",
-        "location": "Saudi Arabia",
-        "url": "https://builtin.com/job/director-digital-transformation-and-operations-excellence/4068636",
-        "source": "exa-web",
-        "raw_snippet": "Director of Digital Transformation and Operations Excellence. Foodics. Riyadh, KSA. Leading restaurant management ecosystem and payment tech provider. Lead the company\u2019s digital transformation efforts, driving operational improvements across IT, CRM, Data, and Applications. Leverage AI, automation, and innovative technologies to optimize business processes, enhance efficiency, and support strategic goals. Lead digital transformation initiatives, operational excellence, cross-functional delivery,",
-        "jd_text": "Director of Digital Transformation and Operations Excellence. Foodics. Riyadh, KSA. Leading restaurant management ecosystem and payment tech provider. Lead the company\u2019s digital transformation efforts, driving operational improvements across IT, CRM, Data, and Applications. Leverage AI, automation, and innovative technologies to optimize business processes, enhance efficiency, and support strategic goals. Lead digital transformation initiatives, operational excellence, cross-functional delivery, change management, roadmap execution, vendor and stakeholder management, and data-driven decision making. 10+ years of experience in digital transformation, operational excellence, or business process management, with at least 5 years in leadership roles.",
-        "keyword_score": 3,
-        "relevant": true,
-        "_from_db_backfill": true,
-        "career_fit_score": 8,
-        "verdict": "REVIEW",
-        "verdict_reason": "Direct match on digital transformation and operations excellence at Director level in Saudi Arabia with payments/restaurant tech adjacency [5D role=2 | seniority=2 | geo=2 | strategic=1 | evidence=1 | fit=8/10 | llm=8]",
-        "watchlist_matches": {
-          "company_hits": [],
-          "domain_hits": [],
-          "categories": []
-        },
-        "ats_score": 60,
-        "ats_verdict": "CONDITIONAL",
-        "ats_matched": [
-          "digital transformation",
-          "transformation",
-          "ai",
-          "payment",
-          "change management",
-          "stakeholder management",
-          "vendor management",
-          "data",
-          "automation",
-          "digital"
-        ],
-        "ats_gaps": [
-          "Missing: project management"
-        ],
-        "llm_fit_score": 8,
-        "fit_dimensions": {
-          "role": 2,
-          "seniority": 2,
-          "geography": 2,
-          "strategic": 1,
-          "evidence": 1
-        }
-      }
-    ],
-    "skip_count": 92,
+    "generated_at": "2026-05-29T18:27:31.712439+03:00",
+    "total_candidates": 398,
+    "reviewed": 378,
+    "submit": [],
+    "review": [],
+    "skip_count": 398,
     "unreviewed_count": 0,
     "thresholds": {
-      "submit": 7,
+      "submit": 6,
       "review": 6
     },
     "pipeline": {
-      "l0_auto_skip": 1,
-      "l1_jd_enriched": 4,
-      "l1_jd_coverage": "17/94",
-      "llm_model": "openai-codex/gpt-5.4",
-      "llm_jobs_reviewed": 94,
-      "r2_latency_ms": 688190,
-      "r2_fallbacks": 0
+      "l0_auto_skip": 20,
+      "l1_jd_enriched": 0,
+      "l1_jd_coverage": "363/378",
+      "llm_model": "openai-codex/gpt-5.5",
+      "llm_jobs_reviewed": 378,
+      "r2_latency_ms": 622,
+      "r2_fallbacks": 378
     },
     "kpi": {
-      "submit_rate": 0.02127659574468085,
-      "review_rate": 0.010638297872340425,
-      "skip_rate": 0.9680851063829787,
-      "avg_fit_score": 4.4,
-      "l0_filter_rate": 1.1,
+      "submit_rate": 0.0,
+      "review_rate": 0.0,
+      "skip_rate": 1.0,
+      "avg_fit_score": 1.1,
+      "l0_filter_rate": 5.0,
       "llm_review_rate": 100.0
     }
   },
   "kpi": {
-    "total_loaded": 95,
-    "l0_auto_skip": 1,
-    "l1_jd_enriched": 4,
+    "total_loaded": 398,
+    "l0_auto_skip": 20,
+    "l1_jd_enriched": 0,
     "l2_filtered": 0,
-    "submit_count": 2,
-    "review_count": 1,
-    "skip_count": 91,
-    "submit_rate": 2.1,
-    "avg_fit_score": 4.4,
-    "r2_latency_ms": 688190
+    "submit_count": 0,
+    "review_count": 0,
+    "skip_count": 378,
+    "submit_rate": 0.0,
+    "avg_fit_score": 1.1,
+    "r2_latency_ms": 622
   },
   "recommendations": []
 }

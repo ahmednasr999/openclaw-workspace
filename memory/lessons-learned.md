@@ -1074,3 +1074,29 @@ For terminal/config recovery workflows, provide exactly one command block or one
 During the daily auto-lessons cron wake, `sed -n`, `find -exec`, and `xargs` commands were rejected by OpenClaw strict inline-eval approval, and cron-event turns cannot request chat approvals. `rg` was also unavailable in this sandbox.
 ### Do differently
 For cron/internal maintenance in the OpenClaw sandbox, start with approval-safe commands such as `cat`, `head`, `tail`, direct script execution, and plain `grep -R` before reaching for inline helper forms. If `rg` is missing, fall back to `grep` immediately and keep searches narrow to avoid noisy session transcript dumps.
+
+## 2026-05-28 - Interrupted Codex/OpenClaw Turns Need State Inspection Before Retry
+### Correction
+Ahmed explicitly asked that when Codex/OpenClaw reports "stopped before confirming the turn was complete," I inspect the current state before retrying anything.
+### Do differently
+For interrupted or partial OpenClaw work, first check gateway health, recent logs, git/workspace changes, and active/partial session state. Summarize what was already done and whether anything is inconsistent, then continue from the last safe point. Do not rerun completed async commands or overwrite partial changes.
+
+## 2026-05-28 - OpenClaw Health Guard Repairs Need Patch Verification and Reload Caveat
+### Incident
+The OpenClaw health dashboard was CRITICAL because runtime patch checks failed around queued/reply-context metadata sanitizers, heartbeat/cron sanitizer paths, active-memory FTS handling, and silent context-engine maintenance guards.
+### Fix
+After approval, repair the runtime patch files with a backup, rerun the direct health dashboard and sanitizer smoke checks, and confirm the health report is OK.
+### Do differently
+When OpenClaw health is made green by editing dist/runtime files, call out whether a live gateway restart was performed. If no restart happened, treat the on-disk repair as verified but note that a controlled restart is still the clean reload step.
+
+## 2026-05-28 - Cron Sandbox May Not Provide apply_patch
+### Incident
+During the daily auto-lessons cron wake, the normal `apply_patch` editor command was not available in the OpenClaw sandbox (`/bin/bash: apply_patch: command not found`).
+### Do differently
+In cron/internal maintenance, try `apply_patch` first for file edits as usual, but if the sandbox lacks it, use a minimal standard editor such as `ed` for append-only memory updates and verify the resulting tail.
+## 2026-05-29 - Model Guardian can misread config warnings as model status
+
+- What happened: Model Guardian sent a false FAIL because `openclaw models status --plain` returned the real model on stdout while a missing `OPENCLAW_HOOKS_TOKEN` config warning appeared on stderr, and the checker used the last combined line as the model.
+- Recovery: Updated `scripts/model-guardian-check.py` to select a known model line from mixed output instead of trusting the tail line. Verified normal and `env -u OPENCLAW_HOOKS_TOKEN` runs return `ALL_OK` and `NO_ALERTS`.
+- Do differently: For CLI status probes, parse the expected structured/status line and tolerate unrelated config warnings on stderr when the underlying command exits cleanly.
+

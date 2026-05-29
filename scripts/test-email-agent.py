@@ -196,7 +196,7 @@ ok("promo email is NOT hot", not ea.is_hot_email("Invest in Arabian Ranches from
 # ==============================================================================
 # TEST 7: UID State Management (D3)
 # ==============================================================================
-print("\n[7/7] UID State Management")
+print("\n[7/8] UID State Management")
 
 # Use temp directory
 tmp_dir = tempfile.mkdtemp()
@@ -232,6 +232,56 @@ ea.STATE_PATH = original_state
 ea._get_active_pipeline_jobs = original_pipeline_jobs
 shutil.rmtree(tmp_dir)
 
+
+
+
+# ============================================================================== 
+# TEST 8: Formatter LLM Veto / False Positive Guard
+# ============================================================================== 
+print("\n[8/8] Formatter LLM Veto")
+
+fmt_spec = importlib.util.spec_from_file_location("format_email_alert", str(Path(__file__).parent / "format-email-alert.py"))
+fmt = importlib.util.module_from_spec(fmt_spec)
+fmt_spec.loader.exec_module(fmt)
+
+false_positive_summary = {
+    "data": {
+        "total_scanned": 35,
+        "assessments": [{
+            "id": "359639",
+            "from": "Editor @ The Paypers <Editor@newsletter.thepaypers.com>",
+            "subject": "Monzo enters telecoms with eSIM mobile plan",
+            "priority": "HIGH",
+        }],
+        "hot_alerts": [{
+            "id": "359639",
+            "from": "Editor @ The Paypers <Editor@newsletter.thepaypers.com>",
+            "subject": "Monzo enters telecoms with eSIM mobile plan",
+            "priority": "HIGH",
+        }],
+        "llm_analysis": {
+            "actionable_emails": [{
+                "id": "359639",
+                "from": "Editor @ The Paypers <Editor@newsletter.thepaypers.com>",
+                "subject": "Monzo enters telecoms with eSIM mobile plan",
+                "category": "assessment",
+                "urgency": "low",
+                "action": "read_and_file",
+                "response_deadline": "when convenient",
+                "intent": "newsletter item, not a response request",
+                "notes": "Likely false positive",
+            }],
+            "summary": {"total_actionable": 0, "critical_count": 0},
+        },
+    }
+}
+alert = fmt.build_alert(false_positive_summary)
+ok("LLM read_and_file veto suppresses urgent fallback", alert.startswith("📬 Email scan: all clear"), alert)
+ok("newsletter false positive not action needed", "Email alert - action needed" not in alert, alert)
+
+backlog_uids = [str(i).encode() for i in range(1, 701)]
+selected = backlog_uids[:ea.MAX_UID_BATCH]
+ok("UID backlog drains oldest first", selected[0] == b"1" and selected[-1] == str(ea.MAX_UID_BATCH).encode(), f"first={selected[:1]} last={selected[-1:]}")
 
 # ==============================================================================
 # SUMMARY

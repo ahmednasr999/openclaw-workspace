@@ -1539,3 +1539,4 @@ Promoted during deep-audit closeout on 2026-05-27. Current-user-request preceden
 - Better approach: Back up `/root/.openclaw/lcm.db`, create a one-item queue with the active conversation/session JSONL, run `lcm-compact-processor.mjs --queue <queue> --limit 1`, then rerun the health dashboard.
 - Verification: The targeted run reduced active context to 12,481 tokens and the dashboard returned OK.
 
+- 2026-05-28 - Step-by-step output sharing preference: Ahmed asked that troubleshooting instructions always be given step by step, with clear guidance on what output to share back.

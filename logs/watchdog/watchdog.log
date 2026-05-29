@@ -3989,3 +3989,199 @@ Bind: loopback
 [2026-05-28 18:00] WARN: High transient failure count: 16
 [2026-05-28 18:00] Summary: fixes=0 warnings=1 alerts=0
 [2026-05-28 20:00] === Watchdog v3 run ===
+[2026-05-28 20:00] WARN: High transient failure count: 16
+[2026-05-28 20:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-05-28 22:00] === Watchdog v3 run ===
+[2026-05-28 22:00] WARN: High transient failure count: 16
+[2026-05-28 22:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-05-29 00:00] === Watchdog v3 run ===
+[2026-05-29 00:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-05-29 02:00] === Watchdog v3 run ===
+[2026-05-29 02:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-05-29 04:00] === Watchdog v3 run ===
+[2026-05-29 04:00] FIXED: Re-triggered failed cron 224bb358-a983-4ec6-ba28-32101ab48eb8
+[2026-05-29 04:00] FIXED: Re-triggered failed cron 6a833efa-e058-4438-8f57-3cf5c2868e85
+[2026-05-29 04:00] FIXED: Re-triggered failed cron 20f54174-5a9b-46bd-b105-c8bb939a2c8b
+[2026-05-29 04:00] Summary: fixes=3 warnings=1 alerts=0
+Config (/root/.openclaw/openclaw.json): missing env var "OPENCLAW_HOOKS_TOKEN" at hooks.token - feature using this value will be unavailable
+Config (/root/.openclaw/openclaw.json): missing env var "OPENCLAW_HOOKS_TOKEN" at hooks.token - feature using this value will be unavailable
+Config (/root/.openclaw/openclaw.json): missing env var "OPENCLAW_HOOKS_TOKEN" at hooks.token - feature using this value will be unavailable
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:20f54174-5a9b-46bd-b105-c8bb939a2c8b:1780016411262:1"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:6a833efa-e058-4438-8f57-3cf5c2868e85:1780016411668:2"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:224bb358-a983-4ec6-ba28-32101ab48eb8:1780016412236:3"
+}
+[2026-05-29 06:00] === Watchdog v3 run ===
+[2026-05-29 06:00] FIXED: Re-triggered failed cron 224bb358-a983-4ec6-ba28-32101ab48eb8
+[2026-05-29 06:00] FIXED: Re-triggered failed cron 6a833efa-e058-4438-8f57-3cf5c2868e85
+[2026-05-29 06:00] FIXED: Re-triggered failed cron 20f54174-5a9b-46bd-b105-c8bb939a2c8b
+[2026-05-29 06:00] Summary: fixes=3 warnings=1 alerts=0
+Config (/root/.openclaw/openclaw.json): missing env var "OPENCLAW_HOOKS_TOKEN" at hooks.token - feature using this value will be unavailable
+Config (/root/.openclaw/openclaw.json): missing env var "OPENCLAW_HOOKS_TOKEN" at hooks.token - feature using this value will be unavailable
+Config (/root/.openclaw/openclaw.json): missing env var "OPENCLAW_HOOKS_TOKEN" at hooks.token - feature using this value will be unavailable
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:20f54174-5a9b-46bd-b105-c8bb939a2c8b:1780023613437:4"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:6a833efa-e058-4438-8f57-3cf5c2868e85:1780023614965:5"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:224bb358-a983-4ec6-ba28-32101ab48eb8:1780023615096:6"
+}
+[2026-05-29 08:00] === Watchdog v3 run ===
+[2026-05-29 08:00] FIXED: Re-triggered failed cron 224bb358-a983-4ec6-ba28-32101ab48eb8
+[2026-05-29 08:00] FIXED: Re-triggered failed cron 6a833efa-e058-4438-8f57-3cf5c2868e85
+[2026-05-29 08:00] FIXED: Re-triggered failed cron 20f54174-5a9b-46bd-b105-c8bb939a2c8b
+[2026-05-29 08:00] Summary: fixes=3 warnings=1 alerts=0
+Config (/root/.openclaw/openclaw.json): missing env var "OPENCLAW_HOOKS_TOKEN" at hooks.token - feature using this value will be unavailable
+Config (/root/.openclaw/openclaw.json): missing env var "OPENCLAW_HOOKS_TOKEN" at hooks.token - feature using this value will be unavailable
+Config (/root/.openclaw/openclaw.json): missing env var "OPENCLAW_HOOKS_TOKEN" at hooks.token - feature using this value will be unavailable
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:6a833efa-e058-4438-8f57-3cf5c2868e85:1780030812105:7"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:20f54174-5a9b-46bd-b105-c8bb939a2c8b:1780030813121:8"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:224bb358-a983-4ec6-ba28-32101ab48eb8:1780030813250:9"
+}
+[2026-05-29 10:00] === Watchdog v3 run ===
+[2026-05-29 10:00] FIXED: Re-triggered failed cron 224bb358-a983-4ec6-ba28-32101ab48eb8
+[2026-05-29 10:00] FIXED: Re-triggered failed cron 6a833efa-e058-4438-8f57-3cf5c2868e85
+[2026-05-29 10:00] FIXED: Re-triggered failed cron 20f54174-5a9b-46bd-b105-c8bb939a2c8b
+[2026-05-29 10:00] Summary: fixes=3 warnings=1 alerts=0
+Config (/root/.openclaw/openclaw.json): missing env var "OPENCLAW_HOOKS_TOKEN" at hooks.token - feature using this value will be unavailable
+Config (/root/.openclaw/openclaw.json): missing env var "OPENCLAW_HOOKS_TOKEN" at hooks.token - feature using this value will be unavailable
+Config (/root/.openclaw/openclaw.json): missing env var "OPENCLAW_HOOKS_TOKEN" at hooks.token - feature using this value will be unavailable
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:20f54174-5a9b-46bd-b105-c8bb939a2c8b:1780038013117:1"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:6a833efa-e058-4438-8f57-3cf5c2868e85:1780038014642:2"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:224bb358-a983-4ec6-ba28-32101ab48eb8:1780038023335:3"
+}
+[2026-05-29 12:00] === Watchdog v3 run ===
+[2026-05-29 12:00] FIXED: Re-triggered failed cron 224bb358-a983-4ec6-ba28-32101ab48eb8
+[2026-05-29 12:00] FIXED: Re-triggered failed cron 6a833efa-e058-4438-8f57-3cf5c2868e85
+[2026-05-29 12:00] FIXED: Re-triggered failed cron 20f54174-5a9b-46bd-b105-c8bb939a2c8b
+[2026-05-29 12:00] Summary: fixes=3 warnings=1 alerts=0
+Config (/root/.openclaw/openclaw.json): missing env var "OPENCLAW_HOOKS_TOKEN" at hooks.token - feature using this value will be unavailable
+Config (/root/.openclaw/openclaw.json): missing env var "OPENCLAW_HOOKS_TOKEN" at hooks.token - feature using this value will be unavailable
+Config (/root/.openclaw/openclaw.json): missing env var "OPENCLAW_HOOKS_TOKEN" at hooks.token - feature using this value will be unavailable
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:6a833efa-e058-4438-8f57-3cf5c2868e85:1780045212723:4"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:20f54174-5a9b-46bd-b105-c8bb939a2c8b:1780045213498:5"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:224bb358-a983-4ec6-ba28-32101ab48eb8:1780045214264:6"
+}
+[2026-05-29 14:00] === Watchdog v3 run ===
+[2026-05-29 14:00] FIXED: Re-triggered failed cron 224bb358-a983-4ec6-ba28-32101ab48eb8
+[2026-05-29 14:00] FIXED: Re-triggered failed cron 6a833efa-e058-4438-8f57-3cf5c2868e85
+[2026-05-29 14:00] FIXED: Re-triggered failed cron 20f54174-5a9b-46bd-b105-c8bb939a2c8b
+[2026-05-29 14:00] Summary: fixes=3 warnings=1 alerts=0
+Config (/root/.openclaw/openclaw.json): missing env var "OPENCLAW_HOOKS_TOKEN" at hooks.token - feature using this value will be unavailable
+Config (/root/.openclaw/openclaw.json): missing env var "OPENCLAW_HOOKS_TOKEN" at hooks.token - feature using this value will be unavailable
+Config (/root/.openclaw/openclaw.json): missing env var "OPENCLAW_HOOKS_TOKEN" at hooks.token - feature using this value will be unavailable
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:6a833efa-e058-4438-8f57-3cf5c2868e85:1780052412133:7"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:224bb358-a983-4ec6-ba28-32101ab48eb8:1780052412426:8"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:20f54174-5a9b-46bd-b105-c8bb939a2c8b:1780052412631:9"
+}
+[2026-05-29 16:00] === Watchdog v3 run ===
+[2026-05-29 16:00] FIXED: Re-triggered failed cron 224bb358-a983-4ec6-ba28-32101ab48eb8
+[2026-05-29 16:00] FIXED: Re-triggered failed cron 6a833efa-e058-4438-8f57-3cf5c2868e85
+[2026-05-29 16:00] FIXED: Re-triggered failed cron 20f54174-5a9b-46bd-b105-c8bb939a2c8b
+[2026-05-29 16:00] Summary: fixes=3 warnings=1 alerts=0
+Config (/root/.openclaw/openclaw.json): missing env var "OPENCLAW_HOOKS_TOKEN" at hooks.token - feature using this value will be unavailable
+Config (/root/.openclaw/openclaw.json): missing env var "OPENCLAW_HOOKS_TOKEN" at hooks.token - feature using this value will be unavailable
+Config (/root/.openclaw/openclaw.json): missing env var "OPENCLAW_HOOKS_TOKEN" at hooks.token - feature using this value will be unavailable
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:20f54174-5a9b-46bd-b105-c8bb939a2c8b:1780059611855:10"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:6a833efa-e058-4438-8f57-3cf5c2868e85:1780059613142:11"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:224bb358-a983-4ec6-ba28-32101ab48eb8:1780059613225:12"
+}
+[2026-05-29 18:00] === Watchdog v3 run ===
+[2026-05-29 18:00] WARN: Jobs data stale (25h), triggering pipeline
+[2026-05-29 18:00] FIXED: Pipeline triggered
+[2026-05-29 18:00] FIXED: Re-triggered failed cron 224bb358-a983-4ec6-ba28-32101ab48eb8
+[2026-05-29 18:00] FIXED: Re-triggered failed cron 6a833efa-e058-4438-8f57-3cf5c2868e85
+[2026-05-29 18:00] FIXED: Re-triggered failed cron 20f54174-5a9b-46bd-b105-c8bb939a2c8b
+[2026-05-29 18:00] Summary: fixes=4 warnings=2 alerts=0
+Config (/root/.openclaw/openclaw.json): missing env var "OPENCLAW_HOOKS_TOKEN" at hooks.token - feature using this value will be unavailable
+Config (/root/.openclaw/openclaw.json): missing env var "OPENCLAW_HOOKS_TOKEN" at hooks.token - feature using this value will be unavailable
+Config (/root/.openclaw/openclaw.json): missing env var "OPENCLAW_HOOKS_TOKEN" at hooks.token - feature using this value will be unavailable
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:6a833efa-e058-4438-8f57-3cf5c2868e85:1780066815171:1"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:224bb358-a983-4ec6-ba28-32101ab48eb8:1780066816766:2"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:20f54174-5a9b-46bd-b105-c8bb939a2c8b:1780066817370:3"
+}
+[2026-05-29 20:00] === Watchdog v3 run ===

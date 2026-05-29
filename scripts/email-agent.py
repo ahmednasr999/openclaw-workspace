@@ -133,6 +133,13 @@ STATE_PATH = DATA_DIR / "email-state.json"
 LATEST_PATH = DATA_DIR / "email-latest.json"
 HISTORY_PATH = DATA_DIR / "email-history.jsonl"
 SIGNALS_PATH = DATA_DIR / "email-signals.jsonl"
+PIPELINE_REVIEW_PATH = DATA_DIR / "email-pipeline-review.jsonl"
+FEEDBACK_PATH = DATA_DIR / "email-feedback.jsonl"
+MAX_UID_BATCH = int(os.environ.get("EMAIL_AGENT_MAX_UID_BATCH", "500"))
+MIN_ACTIONABLE_CONFIDENCE = int(os.environ.get("EMAIL_AGENT_MIN_ACTIONABLE_CONFIDENCE", "55"))
+MIN_HOT_CONFIDENCE = int(os.environ.get("EMAIL_AGENT_MIN_HOT_CONFIDENCE", "75"))
+MIN_SIGNAL_CONFIDENCE = int(os.environ.get("EMAIL_AGENT_MIN_SIGNAL_CONFIDENCE", "70"))
+_PENDING_STATE_UPDATE = None
 
 RECRUITER_DOMAINS = [
     "linkedin.com", "hays.com", "michaelpage.com", "roberthalf.com",
@@ -217,6 +224,9 @@ NOISE_SENDERS = [
     "mailchimp.com", "sendgrid.net", "convertkit.com", "beehiiv.com",
     "noreply@", "no-reply@", "notifications@", "news@", "newsletter@",
     "digest@", "updates@", "marketing@", "promo@", "offers@",
+    "newsletter.", "newsletters@", "mail.beehiiv.com",
+    "mindstream.news", "newsletter.thepaypers.com", "arabianbusiness.com",
+    "email.fintechfutures.com", "mail.theankler.com", "productschool.com",
     "workinpro.io",
 ]
 
@@ -670,162 +680,165 @@ def get_email_body(msg):
     return body[:4000]
 
 
-def update_pipeline_from_emails(categorized):
-    """Update Notion Pipeline DB when rejection/interview emails are detected."""
-    import urllib.request
-    updates = []
-    
-    NOTION_TOKEN = json_module.load(open(os.path.expanduser("~/.openclaw/workspace/config/notion.json")))["token"]
-    PIPELINE_DB = "3268d599-a162-81b4-b768-f162adfa4971"
-    OUTCOMES_FILE = Path(os.path.expanduser("~/.openclaw/workspace")) / "data" / "feedback" / "jobs-outcomes.jsonl"
-    
-    def notion_api(method, endpoint, body=None):
-        url = f"https://api.notion.com/v1/{endpoint}"
-        data = json_module.dumps(body).encode() if body else None
-        req = urllib.request.Request(url, data=data, method=method, headers={
-            "Authorization": f"Bearer {NOTION_TOKEN}",
-            "Notion-Version": "2022-06-28",
-            "Content-Type": "application/json",
-        })
-        try:
-            with urllib.request.urlopen(req, timeout=15) as resp:
-                return json_module.loads(resp.read())
-        except Exception as e:
-            print(f"    Notion API error: {e}")
-            return None
-    
-    def find_pipeline_match(company_hint, role_hint):
-        """Search Pipeline for matching Applied entry."""
-        if not company_hint:
-            return None
-        query = {
-            "filter": {"and": [
-                {"property": "Stage", "select": {"equals": "✅ Applied"}},
-                {"property": "Company", "title": {"contains": company_hint[:30]}},
-            ]},
-            "page_size": 5,
-        }
-        result = notion_api("POST", f"databases/{PIPELINE_DB}/query", query)
-        if result and result.get("results"):
-            return result["results"][0]
-        return None
-    
-    # Process rejections
-    for email_item in categorized.get("rejection", []):
-        subject = email_item.get("subject", "")
-        from_addr = email_item.get("from", "")
-        
-        # Try to extract company name from sender domain or subject
-        domain = extract_domain(from_addr)
-        company_hint = domain.split(".")[0] if domain else ""
-        
-        match = find_pipeline_match(company_hint, "")
-        if match:
-            page_id = match["id"]
-            props = match.get("properties", {})
-            company = ""
-            if props.get("Company", {}).get("title"):
-                company = props["Company"]["title"][0].get("text", {}).get("content", "")
-            
-            # Update to Rejected
-            notion_api("PATCH", f"pages/{page_id}", {
-                "properties": {
-                    "Stage": {"select": {"name": "❌ Rejected"}},
-                    "Notes": {"rich_text": [{"text": {"content": f"Auto-detected from email: {subject[:100]}"}}]},
-                }
-            })
-            
-            # Update feedback loop
-            OUTCOMES_FILE.parent.mkdir(parents=True, exist_ok=True)
-            with open(OUTCOMES_FILE, "a") as f:
-                f.write(json_module.dumps({
-                    "company": company,
-                    "url": props.get("URL", {}).get("url", ""),
-                    "verdict": "SUBMIT",
-                    "outcome": "rejected",
-                    "detected_from": "email",
-                    "email_subject": subject[:100],
-                }) + "\n")
-            
-            updates.append({"company": company, "action": "rejected", "email": subject[:60]})
-            print(f"    📧→❌ Rejection detected: {company}")
-            # ── DB write (dual-write, non-blocking) ──────────────────────────
-            if _pdb:
-                try:
-                    # Find job_id by company name
-                    jobs = _pdb.get_by_company(company) if company else []
-                    job_db_id = jobs[0]["job_id"] if jobs else None
-                    if job_db_id:
-                        _pdb.update_status(job_db_id, "rejected")
-                        _pdb.log_interaction(
-                            job_id=job_db_id,
-                            type="email_inbound",
-                            summary=f"Rejection email: {subject[:150]}",
-                            from_email=from_addr,
-                            channel="gmail",
-                        )
-                except Exception:
-                    pass
-            # ─────────────────────────────────────────────────────────────────
-    
-    # Process interview invites
-    for email_item in categorized.get("interview_invite", []):
-        subject = email_item.get("subject", "")
-        from_addr = email_item.get("from", "")
-        domain = extract_domain(from_addr)
-        company_hint = domain.split(".")[0] if domain else ""
-        
-        match = find_pipeline_match(company_hint, "")
-        if match:
-            page_id = match["id"]
-            props = match.get("properties", {})
-            company = ""
-            if props.get("Company", {}).get("title"):
-                company = props["Company"]["title"][0].get("text", {}).get("content", "")
-            
-            # Update to Interview stage
-            notion_api("PATCH", f"pages/{page_id}", {
-                "properties": {
-                    "Stage": {"select": {"name": "📞 Interview"}},
-                    "Notes": {"rich_text": [{"text": {"content": f"Interview detected from email: {subject[:100]}"}}]},
-                }
-            })
-            
-            # Update feedback loop
-            OUTCOMES_FILE.parent.mkdir(parents=True, exist_ok=True)
-            with open(OUTCOMES_FILE, "a") as f:
-                f.write(json_module.dumps({
-                    "company": company,
-                    "url": props.get("URL", {}).get("url", ""),
-                    "verdict": "SUBMIT",
-                    "outcome": "interview",
-                    "detected_from": "email",
-                    "email_subject": subject[:100],
-                }) + "\n")
-            
-            updates.append({"company": company, "action": "interview", "email": subject[:60]})
-            print(f"    📧→📞 Interview detected: {company}")
-            # ── DB write (dual-write, non-blocking) ──────────────────────────
-            if _pdb:
-                try:
-                    jobs = _pdb.get_by_company(company) if company else []
-                    job_db_id = jobs[0]["job_id"] if jobs else None
-                    if job_db_id:
-                        _pdb.update_status(job_db_id, "interview")
-                        _pdb.log_interaction(
-                            job_id=job_db_id,
-                            type="email_inbound",
-                            summary=f"Interview invite: {subject[:150]}",
-                            from_email=from_addr,
-                            channel="gmail",
-                            next_action="Schedule interview / confirm availability",
-                        )
-                except Exception:
-                    pass
-            # ─────────────────────────────────────────────────────────────────
-    
-    return updates
 
+def load_feedback_rules():
+    """Load lightweight feedback labels for future local scoring."""
+    rules = {"wrong_alert_senders": set(), "important_senders": set(), "wrong_alert_subjects": set()}
+    if not FEEDBACK_PATH.exists():
+        return rules
+    try:
+        with open(FEEDBACK_PATH) as f:
+            for line in f:
+                if not line.strip():
+                    continue
+                item = json_module.loads(line)
+                label = (item.get("label") or "").lower()
+                sender = (item.get("from") or item.get("sender") or "").lower()
+                subject = (item.get("subject") or "").lower()
+                if label in {"wrong_alert", "not_job", "noise"}:
+                    if sender:
+                        rules["wrong_alert_senders"].add(sender)
+                    if subject:
+                        rules["wrong_alert_subjects"].add(subject[:80])
+                elif label in {"important", "missed", "critical"} and sender:
+                    rules["important_senders"].add(sender)
+    except Exception:
+        pass
+    return rules
+
+
+def _confidence_label(score: int) -> str:
+    if score >= 85:
+        return "high"
+    if score >= 60:
+        return "medium"
+    if score >= 35:
+        return "low"
+    return "very_low"
+
+
+def assess_actionability(subject, from_addr, body, categories, score, pipeline_company):
+    """Return confidence, evidence, and rationale for the classification."""
+    categories = categories or []
+    evidence = []
+    confidence = 10
+    text = f"{subject} {body}".lower()
+    sender_l = (from_addr or "").lower()
+
+    if categories == ["other"] or "other" in categories:
+        confidence = 5
+        evidence.append("classified as other/noise")
+    if "job_alert" in categories:
+        confidence = max(confidence, 25)
+        evidence.append("automated job alert")
+    if pipeline_company:
+        confidence += 25
+        evidence.append(f"matched active pipeline company: {pipeline_company}")
+    if is_recruiter_domain(extract_domain(from_addr)):
+        confidence += 20
+        evidence.append("known recruiter/job domain")
+    sender_context = sender_l
+    if any(marker in sender_context for marker in HIRING_SENDER_MARKERS):
+        confidence += 15
+        evidence.append("hiring sender context")
+    if has_hiring_context(subject, from_addr, body, pipeline_company):
+        confidence += 10
+        evidence.append("hiring/application context")
+    if has_interview_evidence(subject, from_addr, body):
+        confidence += 45
+        evidence.append("calendar or explicit interview evidence")
+    elif matches_patterns(text, STRICT_INTERVIEW_PATTERNS) and has_hiring_context(subject, from_addr, body, pipeline_company):
+        confidence += 35
+        evidence.append("explicit interview wording with hiring context")
+    if "assessment" in categories:
+        confidence += 25
+        evidence.append("assessment keyword with hiring context")
+    if "follow_up_needed" in categories:
+        confidence += 20
+        evidence.append("reply/follow-up wording with hiring context")
+    if "recruiter_reach" in categories:
+        confidence += 20
+        evidence.append("recruiter outreach classification")
+    if score >= PRIORITY_THRESHOLDS["HIGH"]:
+        confidence += 10
+        evidence.append(f"high priority score: {score}")
+    elif score >= PRIORITY_THRESHOLDS["MEDIUM"]:
+        confidence += 5
+        evidence.append(f"medium priority score: {score}")
+
+    if is_noise_sender(from_addr) or is_linkedin_noise(subject, from_addr) or is_job_alert(subject, from_addr, body):
+        confidence = min(confidence, 25)
+        evidence.append("noise/job-alert guard applied")
+
+    rules = load_feedback_rules()
+    if any(sender_l and marker in sender_l for marker in rules["wrong_alert_senders"]):
+        confidence = min(confidence, 20)
+        evidence.append("Ahmed feedback: sender previously marked wrong/noise")
+    if any((subject or "").lower().startswith(marker) for marker in rules["wrong_alert_subjects"]):
+        confidence = min(confidence, 20)
+        evidence.append("Ahmed feedback: subject previously marked wrong/noise")
+    if any(sender_l and marker in sender_l for marker in rules["important_senders"]):
+        confidence = max(confidence, 80)
+        evidence.append("Ahmed feedback: sender previously marked important")
+
+    confidence = max(0, min(100, confidence))
+    actionable_categories = {"interview_invite", "assessment", "follow_up_needed", "recruiter_reach"}
+    actionable = bool(actionable_categories.intersection(categories)) and confidence >= MIN_ACTIONABLE_CONFIDENCE
+    why = " | ".join(evidence[:4]) if evidence else "no strong hiring evidence"
+    return {
+        "confidence": confidence,
+        "confidence_label": _confidence_label(confidence),
+        "evidence": evidence[:8],
+        "why_actionable": why if actionable else f"not actionable: {why}",
+        "actionable": actionable,
+    }
+
+
+def update_pipeline_from_emails(categorized):
+    """Create review-gated pipeline candidates from email findings.
+
+    This intentionally does not update Notion or the local pipeline DB. Email
+    classification is useful signal, but stage changes such as rejection or
+    interview must stay human-reviewable unless a separate approved workflow
+    confirms them from the full email body.
+    """
+    review_categories = {
+        "rejection": "possible_rejection",
+        "interview_invite": "possible_interview",
+        "assessment": "possible_assessment",
+        "follow_up_needed": "possible_follow_up",
+        "recruiter_reach": "possible_recruiter_outreach",
+    }
+    updates = []
+    seen = set()
+    for category, review_type in review_categories.items():
+        for email_item in categorized.get(category, []):
+            subject = email_item.get("subject", "")
+            from_addr = email_item.get("from", "")
+            key = (str(email_item.get("id") or ""), subject, from_addr, review_type)
+            if key in seen:
+                continue
+            seen.add(key)
+            entry = {
+                "timestamp": now_iso(),
+                "review_type": review_type,
+                "category": category,
+                "email_id": str(email_item.get("id") or ""),
+                "subject": subject[:200],
+                "from": from_addr[:200],
+                "priority": email_item.get("priority") or email_item.get("urgency") or "",
+                "pipeline_match": email_item.get("pipeline_match"),
+                "status": "needs_human_review",
+            }
+            updates.append(entry)
+
+    if updates and not common.is_dry_run():
+        PIPELINE_REVIEW_PATH.parent.mkdir(parents=True, exist_ok=True)
+        with open(PIPELINE_REVIEW_PATH, "a") as f:
+            for entry in updates:
+                f.write(json_module.dumps(entry, default=str) + "\n")
+        print(f"  Pipeline review: {len(updates)} candidate(s) queued, no auto-update performed")
+    return updates
 
 def safe_body_excerpt(body: str, limit: int = 1200) -> str:
     """Return a compact body excerpt for classification evidence, not full email storage."""
@@ -851,6 +864,10 @@ def build_llm_prompt(summary, total_emails, actionable_emails):
                 "priority": e.get("priority", ""),
                 "priority_score": e.get("priority_score", 0),
                 "pipeline_match": e.get("pipeline_match"),
+                "confidence": e.get("confidence"),
+                "confidence_label": e.get("confidence_label"),
+                "evidence": e.get("evidence", []),
+                "why_actionable": e.get("why_actionable", ""),
             },
             "body_excerpt": e.get("body_excerpt", ""),
         })
@@ -864,20 +881,54 @@ def build_llm_prompt(summary, total_emails, actionable_emails):
     return prompt, emails_json
 
 
+def _resolve_secret_ref(value):
+    """Resolve the local SecretRef shape used by OpenClaw config."""
+    if isinstance(value, str):
+        return value
+    if not isinstance(value, dict):
+        return ""
+    ref_id = value.get("id") or ""
+    if not ref_id.startswith("/"):
+        return ""
+    try:
+        secrets_path = Path(os.path.expanduser("~/.openclaw/config/secrets.json"))
+        secrets = json_module.load(open(secrets_path))
+        cursor = secrets
+        for part in [p for p in ref_id.split("/") if p]:
+            cursor = cursor[part]
+        return cursor if isinstance(cursor, str) else ""
+    except Exception:
+        return ""
+
+
 def run_llm_analysis(summary, total_emails, actionable_emails) -> dict:
     """Send actionable emails to LLM with XML-structured prompt. Returns parsed JSON."""
     import os, json as json_lib
 
+    if not actionable_emails:
+        return {
+            "actionable_emails": [],
+            "summary": {
+                "total_actionable": 0,
+                "critical_count": 0,
+                "requires_interview_prep": False,
+                "requires_assessment": False,
+                "recruiter_top_opportunities": [],
+                "top_priority": None,
+                "daily_focus": "No email action needed from this batch.",
+            },
+        }
+
     prompt, emails_json = build_llm_prompt(summary, total_emails, actionable_emails)
 
-    # Load OpenClaw gateway token from config
+    # Load OpenClaw gateway token from config, resolving SecretRefs when present.
     gw_token = os.environ.get("OPENCLAW_GATEWAY_TOKEN", "")
     gw_url = os.environ.get("OPENCLAW_GATEWAY_URL", "http://127.0.0.1:18789")
     if not gw_token:
         try:
             with open(os.path.expanduser("~/.openclaw/openclaw.json")) as f:
                 cfg = json_lib.load(f)
-                gw_token = cfg.get("gateway", {}).get("auth", {}).get("token", "")
+                gw_token = _resolve_secret_ref(cfg.get("gateway", {}).get("auth", {}).get("token", ""))
         except Exception:
             pass
 
@@ -990,9 +1041,12 @@ def fetch_email_list():
     all_uids = msg_data[0].split() if msg_data[0] else []
     # Filter out last_seen_uid itself (IMAP UID ranges are inclusive)
     all_uids = [u for u in all_uids if int(u) > last_uid]
-    # Safety cap
-    recent_uids = all_uids[-200:] if len(all_uids) > 200 else all_uids
-    print(f"  IMAP: {len(all_uids)} new UIDs since {last_uid} (processing {len(recent_uids)})")
+    # Process the oldest pending UIDs first so downtime backlogs are drained
+    # across runs without skipping unprocessed messages.
+    recent_uids = all_uids[:MAX_UID_BATCH]
+    backlog = max(0, len(all_uids) - len(recent_uids))
+    suffix = f", backlog remaining {backlog}" if backlog else ""
+    print(f"  IMAP: {len(all_uids)} new UIDs since {last_uid} (processing {len(recent_uids)}{suffix})")
 
     emails = []
     max_uid_seen = last_uid
@@ -1029,18 +1083,37 @@ def fetch_email_list():
 
     mail.logout()
 
-    # Update state (crash-safe: only after successful processing). Dry-run must
-    # remain production-read-only so tests cannot advance the UID checkpoint.
+    # Defer UID checkpoint until agent_main has written the final summary.
+    # This prevents a mid-run crash from marking emails as processed before
+    # the user-visible report and review artifacts exist.
+    global _PENDING_STATE_UPDATE
+    _PENDING_STATE_UPDATE = {
+        "state": state,
+        "last_uid": last_uid,
+        "max_uid_seen": max_uid_seen,
+        "processed_count": len(emails),
+    }
     if common.is_dry_run():
         print("  DRY RUN: not updating email UID state")
-    else:
-        if max_uid_seen > last_uid:
-            state["last_seen_uid"] = max_uid_seen
-        state["last_success"] = now_iso()
-        state["processed_count"] = state.get("processed_count", 0) + len(emails)
-        _save_state(state)
 
     return emails
+
+
+def _commit_pending_state():
+    """Persist the deferred UID checkpoint after successful output write."""
+    global _PENDING_STATE_UPDATE
+    pending = _PENDING_STATE_UPDATE
+    if not pending or common.is_dry_run():
+        return
+    state = dict(pending.get("state") or {})
+    last_uid = int(pending.get("last_uid") or 0)
+    max_uid_seen = int(pending.get("max_uid_seen") or last_uid)
+    if max_uid_seen > last_uid:
+        state["last_seen_uid"] = max_uid_seen
+    state["last_success"] = now_iso()
+    state["processed_count"] = state.get("processed_count", 0) + int(pending.get("processed_count") or 0)
+    _save_state(state)
+    _PENDING_STATE_UPDATE = None
 
 
 def _append_history(email_data, categories, score, pipeline_company):
@@ -1144,6 +1217,8 @@ def run_email_agent(result: AgentResult):
         email_data["priority_score"] = score
         email_data["priority"] = get_priority(score)
         email_data["pipeline_match"] = pipeline_company
+        assessment = assess_actionability(email_data["subject"], email_data["from"], body, categories, score, pipeline_company)
+        email_data.update(assessment)
 
         email_summary = {
             "id": email_data["id"],
@@ -1154,39 +1229,45 @@ def run_email_agent(result: AgentResult):
             "priority": email_data["priority"],
             "score": score,
             "pipeline_match": pipeline_company,
+            "confidence": email_data.get("confidence"),
+            "confidence_label": email_data.get("confidence_label"),
+            "evidence": email_data.get("evidence", []),
+            "why_actionable": email_data.get("why_actionable", ""),
         }
 
         for cat in categories:
             if cat in categorized:
                 categorized[cat].append(email_summary)
 
-        if "interview_invite" in categories or "assessment" in categories or "follow_up_needed" in categories or "recruiter_reach" in categories:
+        if email_data.get("actionable"):
             actionable_emails.append(email_data)
             if email_data.get("unread"):
                 unread_actionable += 1
 
-        if "interview_invite" in categories:
+        if email_data.get("actionable") and "interview_invite" in categories:
             interviews_detected += 1
-        if "recruiter_reach" in categories:
+        if email_data.get("actionable") and "recruiter_reach" in categories:
             recruiter_messages += 1
 
         # D7: append to history
         if not common.is_dry_run():
             _append_history(email_data, categories, score, pipeline_company)
 
-        # D10: emit pipeline signal
-        if pipeline_company and not common.is_dry_run():
+        # D10: emit pipeline signal only for confident job-process categories.
+        if pipeline_company and not common.is_dry_run() and email_data.get("actionable") and email_data.get("confidence", 0) >= MIN_SIGNAL_CONFIDENCE:
             sig = _emit_signal(email_data, pipeline_company, categories, score)
             signals.append(sig)
 
         # D8: hot alert (integrated, no separate cron needed)
-        if is_hot_email(email_data["subject"], email_data["from"], body, categories, score):
+        if email_data.get("confidence", 0) >= MIN_HOT_CONFIDENCE and is_hot_email(email_data["subject"], email_data["from"], body, categories, score):
             hot_alerts.append({
                 "id": email_data["id"],
                 "subject": email_data["subject"],
                 "from": email_data["from"],
                 "priority": email_data["priority"],
                 "pipeline_match": pipeline_company,
+                "confidence": email_data.get("confidence"),
+                "evidence": email_data.get("evidence", []),
             })
 
     summary = {
@@ -1206,23 +1287,15 @@ def run_email_agent(result: AgentResult):
         "signals": signals,
     }
 
-    # D4: Write shared snapshot for briefing + other consumers
-    if common.is_dry_run():
-        print("  DRY RUN: not writing email-latest.json")
-    else:
-        LATEST_PATH.parent.mkdir(parents=True, exist_ok=True)
-        json_module.dump(summary, open(LATEST_PATH, "w"), indent=2)
-
     # ======================================================================
-    # PIPELINE INTEGRATION — update Notion + feedback loop
+    # PIPELINE INTEGRATION — review-gated candidates only, no auto stage writes
     # ======================================================================
     if common.is_dry_run():
-        print("  DRY RUN: not updating pipeline/Notion")
+        print("  DRY RUN: not writing pipeline review candidates")
     else:
         pipeline_updates = update_pipeline_from_emails(categorized)
         if pipeline_updates:
-            summary["pipeline_updates"] = pipeline_updates
-            print(f"  Pipeline: {len(pipeline_updates)} updates pushed")
+            summary["pipeline_review_candidates"] = pipeline_updates
 
     # ======================================================================
     # LLM ANALYSIS — XML-structured prompt (Anthropic official playbook)
@@ -1241,7 +1314,16 @@ def run_email_agent(result: AgentResult):
             summary["llm_analysis"] = None
             print("  LLM: Skipped (no valid credentials)")
 
+    # D4: Write shared snapshot only after classification, pipeline review, and
+    # LLM analysis are complete, so formatter/briefing consumers see one coherent result.
+    if common.is_dry_run():
+        print("  DRY RUN: not writing email-latest.json")
+    else:
+        LATEST_PATH.parent.mkdir(parents=True, exist_ok=True)
+        json_module.dump(summary, open(LATEST_PATH, "w"), indent=2)
+
     result.set_data(summary)
+    result.post_write_hook = _commit_pending_state
     
     result.set_kpi({
         "emails_processed": len(emails),

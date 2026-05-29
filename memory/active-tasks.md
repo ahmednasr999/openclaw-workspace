@@ -1,5 +1,22 @@
 # Active Tasks
 
+## 2026-05-29 - OpenClaw ecosystem adoption execution
+- Priority: high
+- Status: open
+- Context: Ahmed approved moving from ecosystem analysis into execution after the OpenClaw ecosystem deep-dive. Created the adoption register at `docs/architecture/openclaw-ecosystem-adoption-register-2026-05-29.md`.
+- Live baseline: OpenClaw `2026.5.27 (27ae826)`, 118 skills installed, 79 visible to model, 78 command-available, 15 enabled plugins.
+- Created agent skill matrix: `docs/agent-governance/openclaw-agent-skill-matrix-2026-05-29.md`.
+- 2026-05-29 progress: installed `gitcrawl` and `telecrawl` to `/root/go/bin` and symlinked both into `/usr/local/bin`. `gitcrawl` pilot passed by syncing `openclaw/openclaw` PR #1 into an isolated SQLite DB under `/tmp/openclaw-crawler-pilots/gitcrawl-home`. Added reusable read-only digest script `scripts/openclaw-gitcrawl-digest.py`, verified by producing `reports/openclaw-gitcrawl-digest-2026-05-29.md`. `telecrawl` CLI/status/doctor worked against an isolated DB, but import is source-blocked because the VPS has no Telegram Desktop `tdata` path. Pilot report: `docs/research/openclaw-crawler-pilots-2026-05-29.md`.
+- Current runtime gap: LCM reports `runtime.llm.complete` unavailable, so plugin-side autonomous summarization/compaction should wait for an OpenClaw build with Plugin SDK runtime LLM support.
+- 2026-05-29 release-gate progress: extended `scripts/openclaw-update-guard.py` with read-only release footprint checks: install size, direct dependency count, duplicate nested dependency tree, native optional package count, optional cold/warm gateway turn latency, and `runtime.llm.complete` evidence. Latest guard report: `reports/openclaw-update-guard-20260529-030746.txt`, verdict WARN only because `runtime.llm.complete` has no explicit availability evidence.
+- Next steps:
+  1. CTO: investigate the runtime build path for Plugin SDK `runtime.llm.complete` support.
+  2. NASR/CTO: review the first agent skill matrix and convert it into config/agent allowlists if approved.
+  3. CTO: decide whether to schedule `scripts/openclaw-gitcrawl-digest.py` weekly after one more manual review run.
+  4. CTO: check Ahmed-Mac or a copied archive for Telegram Desktop `tdata`, then run limited telecrawl import only after `doctor` passes.
+  5. HR/JobZoom: review document-extract plugin against CV/job workflows before enabling.
+
+
 ## 2026-04-28 - Gulf jobs scanner blocked by Exa credits
 - Priority: high
 - Status: blocked on search provider credits/access

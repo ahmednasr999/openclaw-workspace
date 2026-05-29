@@ -9,6 +9,25 @@ from pathlib import Path
 
 ALERTS = []
 
+HOOKS_ENV_FILE = Path('/root/.config/openclaw-hooks.env')
+
+
+def load_env_file(path: Path):
+    if not path.exists():
+        return
+    for raw_line in path.read_text().splitlines():
+        line = raw_line.strip()
+        if not line or line.startswith('#') or '=' not in line:
+            continue
+        key, value = line.split('=', 1)
+        key = key.strip()
+        value = value.strip().strip('\"').strip("'")
+        if key:
+            os.environ.setdefault(key, value)
+
+
+load_env_file(HOOKS_ENV_FILE)
+
 
 def parse_json_from_mixed_output(text: str):
     start = text.find('{')
@@ -133,9 +152,11 @@ try:
         ok_text=None,
         label='models status probe',
     )
-    reported_model = combined.strip().splitlines()[-1].strip() if combined.strip() else ''
-    if reported_model not in EXPECTED_STATUS_MODELS:
-        raise RuntimeError(f'unexpected status model {reported_model!r}')
+    lines = [line.strip() for line in combined.splitlines() if line.strip()]
+    reported_model = next((line for line in lines if line in EXPECTED_STATUS_MODELS), '')
+    if not reported_model:
+        noisy_tail = lines[-1] if lines else ''
+        raise RuntimeError(f'unexpected status model {noisy_tail!r}')
     if attempts > 1:
         print(f'OK: models status reports {EXPECTED_DEFAULT_LABEL} as configured default after retry {attempts}')
     else:

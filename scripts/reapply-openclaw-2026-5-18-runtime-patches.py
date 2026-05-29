@@ -62,11 +62,16 @@ def patch_session_resume(changes: list[str]) -> None:
 
 
 def patch_runtime_prompt(changes: list[str]) -> None:
-    path = find_file("runtime-context-prompt-*.js", "queueRuntimeContextForNextTurn")
+    path = find_file("runtime-context-prompt-*.js", "buildRuntimeContextCustomMessage")
     text = read(path)
-    pattern = r'async function queueRuntimeContextForNextTurn\(params\) \{\n\tconst runtimeContext = params\.runtimeContext\?\.trim\(\);\n\tif \(!runtimeContext\) return;\n\tawait params\.session\.sendCustomMessage\([\s\S]*?\n\}'
-    repl = 'async function queueRuntimeContextForNextTurn(params) {\n\tconst runtimeContext = params.runtimeContext?.trim();\n\tif (!runtimeContext) return;\n\t// Do not queue runtime-context as a custom message; keep it out of future user-visible replay.\n\treturn;\n}'
-    text, did = regex_once(text, pattern, repl, "runtime context custom message")
+    legacy_pattern = r'async function queueRuntimeContextForNextTurn\(params\) \{\n\tconst runtimeContext = params\.runtimeContext\?\.trim\(\);\n\tif \(!runtimeContext\) return;\n\tawait params\.session\.sendCustomMessage\([\s\S]*?\n\}'
+    legacy_repl = 'async function queueRuntimeContextForNextTurn(params) {\n\tconst runtimeContext = params.runtimeContext?.trim();\n\tif (!runtimeContext) return;\n\t// Do not queue runtime-context as a custom message; keep it out of future user-visible replay.\n\treturn;\n}'
+    current_pattern = r'function buildRuntimeContextCustomMessage\(runtimeContext\) \{\n\tconst trimmedRuntimeContext = runtimeContext\?\.trim\(\);\n\tif \(!trimmedRuntimeContext\) return;\n\treturn \{[\s\S]*?\n\t\};\n\}'
+    current_repl = 'function buildRuntimeContextCustomMessage(runtimeContext) {\n\tconst trimmedRuntimeContext = runtimeContext?.trim();\n\tif (!trimmedRuntimeContext) return;\n\t// Do not queue runtime-context as a custom message; keep it out of future user-visible replay.\n\treturn;\n}'
+    if "function buildRuntimeContextCustomMessage" in text:
+        text, did = regex_once(text, current_pattern, current_repl, "runtime context custom message")
+    else:
+        text, did = regex_once(text, legacy_pattern, legacy_repl, "runtime context custom message")
     if did:
         write(path, text)
         changed(changes, path)

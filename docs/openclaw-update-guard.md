@@ -8,6 +8,12 @@ Script:
 scripts/openclaw-update-guard.py --write-report
 ```
 
+Optional non-delivered cold/warm gateway turn timing, slower and uses model budget:
+
+```bash
+scripts/openclaw-update-guard.py --measure-turn-latency --write-report
+```
+
 Optional deep channel probe, slower and may block under channel/plugin pressure:
 
 ```bash
@@ -24,6 +30,12 @@ scripts/openclaw-update-guard.py --deep --write-report
 
 - `/tmp` has at least 2 GB free.
 - `openclaw --version` works.
+- OpenClaw install footprint is below the release-risk threshold.
+- Direct dependency count is below the release-risk threshold.
+- Duplicate nested `openclaw/node_modules` dependency tree is absent.
+- Native optional package count is not unexpectedly high.
+- Plugin runtime LLM support is inspected through `runtime.llm.complete` evidence where available.
+- Optional non-delivered gateway agent turns can record cold/warm turn latency with `--measure-turn-latency`.
 - systemd gateway `ExecStart`, `MainPID`, and start timestamp exist.
 - `openclaw config validate` passes.
 - Docker sandbox image `openclaw-sandbox:bookworm-slim` exists.
@@ -38,6 +50,32 @@ scripts/openclaw-update-guard.py --deep --write-report
 ## Limits
 
 The guard is read-only. It does not update, restart, edit config, or prove Telegram delivery. For a full update closeout, pair it with a real Telegram DM test: send `/new`, then `ping`, and verify a visible `pong` reply in the DM.
+
+## Release Performance Gates
+
+The guard now includes release-footprint checks prompted by the 2026-05-29 OpenClaw lighter-core report. These checks are read-only and are intended to catch package-shape regressions before an update window is accepted.
+
+Current thresholds:
+
+- Install size warning: greater than `850 MB` under `/usr/lib/node_modules/openclaw`.
+- Direct dependency count warning: greater than `450` direct packages under OpenClaw `node_modules`.
+- Native optional package warning: greater than `18` known native optional package variants.
+- Hard failure: duplicated nested dependency tree at `/usr/lib/node_modules/openclaw/node_modules/openclaw/node_modules`.
+
+Current verified baseline from the latest guard run:
+
+- Install size: `505 MB`.
+- Direct dependency count: `331`.
+- Native optional package count: `0`.
+- Duplicate nested OpenClaw dependency tree: absent.
+- `runtime.llm.complete`: still a warning, because runtime inspection does not provide explicit availability evidence in this build.
+- Turn latency: optional, latest measured cold `10.5s` and warm `9.6s` through non-delivered gateway agent turns.
+
+Latest report:
+
+```text
+/root/.openclaw/workspace/reports/openclaw-update-guard-20260529-030746.txt
+```
 
 ## Post-Update Guardrail
 

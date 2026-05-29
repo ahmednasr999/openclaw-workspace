@@ -118,6 +118,27 @@
 | 227 | 🆕 | TALENTMATE | Vice President Enterprise Governance Injaz Environment Social And Governance Environment Social Governance | Dubai | — | 🆕 Discovered | Radar | 2026-05-28 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4418687331) | — |
 | 228 | 🆕 | TALENTMATE | Vice President Aladdin Client Engagement | Dubai | — | 🆕 Discovered | Radar | 2026-05-28 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4418660147) | — |
 | 229 | 🆕 | BlackRock | Vice President, Aladdin Client Engagement | Dubai | — | 🆕 Discovered | Radar | 2026-05-28 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4418633387) | — |
+| 230 | 🆕 | Parsons Corporation | Program Director - Rail | Dubai | — | 🆕 Discovered | Radar | 2026-05-29 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4418933226) | — |
+| 231 | 🆕 | RAKBANK | Head of Enterprise Transformation & Intelligent Automation | Dubai | — | 🆕 Discovered | Radar | 2026-05-29 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4417864039) | — |
+| 232 | 🆕 | Vanderlande | Director of Project Execution | Dubai | — | 🆕 Discovered | Radar | 2026-05-29 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4325493775) | — |
+| 233 | 🆕 | Zutari | Operations Director: Built Environment | Dubai | — | 🆕 Discovered | Radar | 2026-05-29 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4418093863) | — |
+| 234 | 🆕 | Salesforce | Service Delivery Director | Dubai | — | 🆕 Discovered | Radar | 2026-05-29 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4420496035) | — |
+| 235 | 🆕 | Emerald Zebra Executive Search & Recruitment | Head of Product and PMO, Fintech, Dubai | Dubai | — | 🆕 Discovered | Radar | 2026-05-29 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4420253055) | — |
+| 236 | 🆕 | Michael Page | Enterprise Transformation Lead - Control Tower & Systems | Dubai | — | 🆕 Discovered | Radar | 2026-05-29 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4417482243) | — |
+| 237 | 🆕 | Google | Managing Director, GTM AI | Dubai | — | 🆕 Discovered | Radar | 2026-05-29 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4418808888) | — |
+| 238 | 🆕 | Crossover | Director of Learning, 2 Hour Learning (Remote) - $200,000/year USD | Dubai | — | 🆕 Discovered | Radar | 2026-05-29 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4418577324) | — |
+| 239 | 🆕 | Smith+Nephew | Senior Director, Medical Education - Emerging Markets | Dubai | — | 🆕 Discovered | Radar | 2026-05-29 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4409378702) | — |
+| 240 | 🆕 | Crossover | Head Of Curriculum, 2 Hour Learning (Remote) - $200,000/year USD | Dubai | — | 🆕 Discovered | Radar | 2026-05-29 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4418571844) | — |
+| 241 | 🆕 | Bof Tech | Head of Digital Reputation | Dubai | — | 🆕 Discovered | Radar | 2026-05-29 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4415282320) | — |
+| 242 | 🆕 | Mastercard | Vice President, Product Management, Authentication Products, EEMEA | Dubai | — | 🆕 Discovered | Radar | 2026-05-29 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4407788724) | — |
+| 243 | 🆕 | Dubai Holding | VP – Infrastructure, Cloud and Operations | Dubai | — | 🆕 Discovered | Radar | 2026-05-29 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4415203470) | — |
+| 244 | 🆕 | Warner Scott Recruitment | Chief Operating Officer | Dubai | — | 🆕 Discovered | Radar | 2026-05-29 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4419847664) | — |
+| 245 | 🆕 | BNY | Senior Vice President, Client Service Executive, Global Payments & Trade (Dubai) | Dubai | — | 🆕 Discovered | Radar | 2026-05-29 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4419497125) | — |
+| 246 | 🆕 | Salient Group | Chief Executive Officer, Multinational CFD/FX Platform | Dubai | — | 🆕 Discovered | Radar | 2026-05-29 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4416337563) | — |
+| 247 | 🆕 | Thunes | Business Development Director | Dubai | — | 🆕 Discovered | Radar | 2026-05-29 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4368220782) | — |
+| 248 | 🆕 | KinFitz & Co. | Chief Commercial Officer - Digital Assets | Dubai | — | 🆕 Discovered | Radar | 2026-05-29 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4414082098) | — |
+| 249 | 🆕 | JPMorganChase | Payments - EMEA Innovation Economy Sales - Vice President - Dubai | Dubai | — | 🆕 Discovered | Radar | 2026-05-29 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4420676575) | — |
+
 
 
 

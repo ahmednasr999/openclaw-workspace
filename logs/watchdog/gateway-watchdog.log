@@ -739,3 +739,20 @@
 2026-05-28T16:25:30+03:00 health-fail count=1 pid=2233411 http=000 ms=6024 app_servers=6
 2026-05-28T17:50:54+03:00 chrome-trim term pid=2275379 count=17 rss_kb=2014980
 2026-05-28T17:55:35+03:00 observed reason=starvation-signals-6, pid=2233411 rss_kb=1051388 app_servers=6 health_ms=2 signals=6
+2026-05-28T21:24:44+03:00 health-fail count=1 pid=none http=200 ms=3 app_servers=0
+2026-05-28T21:26:54+03:00 health-fail count=2 pid=none http=200 ms=4 app_servers=0
+2026-05-28T21:26:54+03:00 restart-gateway reason=health-failures:2:http-200
+2026-05-28T21:27:08+03:00 post-restart health=200 5499
+2026-05-29T00:02:34+03:00 health-fail count=1 pid=none http=200 ms=3 app_servers=2
+2026-05-29T00:04:55+03:00 health-fail count=2 pid=none http=200 ms=7 app_servers=2
+2026-05-29T00:04:55+03:00 restart-deferred reason=health-failures:2:http-200 active_app_servers=2
+2026-05-29T00:07:08+03:00 health-fail count=3 pid=none http=200 ms=175 app_servers=2
+2026-05-29T00:07:08+03:00 restart-deferred reason=health-failures:3:http-200 active_app_servers=2
+2026-05-29T00:09:24+03:00 health-fail count=4 pid=none http=200 ms=3 app_servers=0
+2026-05-29T00:09:24+03:00 restart-gateway reason=health-failures:4:http-200
+2026-05-29T00:09:38+03:00 post-restart health=200 5516
+2026-05-29T01:44:20+03:00 restart-deferred reason=slow-health-4925ms active_app_servers=2
+2026-05-29T01:44:20+03:00 observed reason=slow-health-4925ms, pid=2333127 rss_kb=1737004 app_servers=2 health_ms=4925 signals=0
+2026-05-29T18:02:16+03:00 degraded count=1 reason=app-server-count-10, pid=2420052 rss_kb=1386660 app_servers=10 health_ms=8 signals=0
+2026-05-29T18:04:36+03:00 recovered pid=2420052 rss_kb=1838096 app_servers=8 health_ms=110 signals=0
+2026-05-29T18:46:20+03:00 health-fail count=1 pid=2420052 http=000 ms=6006 app_servers=8
