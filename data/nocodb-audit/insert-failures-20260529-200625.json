@@ -1,0 +1,138 @@
+{
+  "generated_at": "2026-05-29T17:06:25.508863+00:00",
+  "failures": [
+    {
+      "title": "Director - Data & AI",
+      "company": "Delphi Consulting",
+      "url": "https://www.linkedin.com/jobs/view/4403724857",
+      "status_code": 400,
+      "response": "{\"msg\":\"Invalid option(s) \\\"APPLY\\\" provided for column \\\"Verdict\\\". Valid options are \\\"SUBMIT, REVIEW, SKIP\\\"\"}"
+    },
+    {
+      "title": "Director - Business Performance & PMO",
+      "company": "Villegas Recruitment Firm",
+      "url": "https://www.linkedin.com/jobs/view/4401841694/",
+      "status_code": 400,
+      "response": "{\"msg\":\"Invalid option(s) \\\"APPLY\\\" provided for column \\\"Verdict\\\". Valid options are \\\"SUBMIT, REVIEW, SKIP\\\"\"}"
+    },
+    {
+      "title": "25+ Vice President Jobs, Employment in Dubai 27 April 2026",
+      "company": "Confidential",
+      "url": "https://ae.indeed.com/q-vice-president-l-dubai-jobs.html?vjk=28681239231ffe79",
+      "status_code": 400,
+      "response": "{\"msg\":\"Invalid option(s) \\\"pending_review\\\" provided for column \\\"Verdict\\\". Valid options are \\\"SUBMIT, REVIEW, SKIP\\\"\"}"
+    },
+    {
+      "title": "Vice President JD Vance (@VP) / Posts / X",
+      "company": "X",
+      "url": "https://x.com/VP",
+      "status_code": 400,
+      "response": "{\"msg\":\"Invalid option(s) \\\"pending_review\\\" provided for column \\\"Verdict\\\". Valid options are \\\"SUBMIT, REVIEW, SKIP\\\"\"}"
+    },
+    {
+      "title": "VP Racing Fuels: Race Fuels, Fuel Additives, Oils, Coolants",
+      "company": "Vpracingfuels",
+      "url": "https://vpracingfuels.com/",
+      "status_code": 400,
+      "response": "{\"msg\":\"Invalid option(s) \\\"pending_review\\\" provided for column \\\"Verdict\\\". Valid options are \\\"SUBMIT, REVIEW, SKIP\\\"\"}"
+    },
+    {
+      "title": "1,000+ Vice President Information Technology jobs in United ...",
+      "company": "Confidential",
+      "url": "https://www.linkedin.com/jobs/vice-president-information-technology-jobs",
+      "status_code": 400,
+      "response": "{\"msg\":\"Invalid option(s) \\\"pending_review\\\" provided for column \\\"Verdict\\\". Valid options are \\\"SUBMIT, REVIEW, SKIP\\\"\"}"
+    },
+    {
+      "title": "Vice President of the United States - Wikipedia",
+      "company": "En",
+      "url": "https://en.wikipedia.org/wiki/Vice_President_of_the_United_States",
+      "status_code": 400,
+      "response": "{\"msg\":\"Invalid option(s) \\\"pending_review\\\" provided for column \\\"Verdict\\\". Valid options are \\\"SUBMIT, REVIEW, SKIP\\\"\"}"
+    },
+    {
+      "title": "Vice President JD Vance (@vp) \u2022 Instagram photos and videos",
+      "company": "Instagram",
+      "url": "https://www.instagram.com/vp/",
+      "status_code": 400,
+      "response": "{\"msg\":\"Invalid option(s) \\\"pending_review\\\" provided for column \\\"Verdict\\\". Valid options are \\\"SUBMIT, REVIEW, SKIP\\\"\"}"
+    },
+    {
+      "title": "Trump picks J.D. Vance as his vice president",
+      "company": "RNC Monday : NPR",
+      "url": "https://www.npr.org/2024/07/15/nx-s1-5040236/jd-vance-vice-president-trump-rnc",
+      "status_code": 400,
+      "response": "{\"msg\":\"Invalid option(s) \\\"pending_review\\\" provided for column \\\"Verdict\\\". Valid options are \\\"SUBMIT, REVIEW, SKIP\\\"\"}"
+    },
+    {
+      "title": "PER hiring VP / SVP, Private Equity Operational ...",
+      "company": "Confidential",
+      "url": "https://www.linkedin.com/jobs/view/vp-svp-private-equity-operational-transformation-riyadh-saudi-arabia-at-per-3821183578",
+      "status_code": 400,
+      "response": "{\"msg\":\"Invalid option(s) \\\"pending_review\\\" provided for column \\\"Verdict\\\". Valid options are \\\"SUBMIT, REVIEW, SKIP\\\"\"}"
+    },
+    {
+      "title": "VP / SVP, Private Equity Operational Transformation, Riyadh, Saudi ...",
+      "company": "Efinancialcom",
+      "url": "https://www.efinancialcareers.com/jobs-Saudi_Arabia-Riyadh-VP__SVP_Private_Equity_Operational_Transformation_Riyadh_Saudi_Arabia.id21290491",
+      "status_code": 400,
+      "response": "{\"msg\":\"Invalid option(s) \\\"pending_review\\\" provided for column \\\"Verdict\\\". Valid options are \\\"SUBMIT, REVIEW, SKIP\\\"\"}"
+    },
+    {
+      "title": "Manager - IT PMO",
+      "company": "edari",
+      "url": "https://www.linkedin.com/jobs/view/4408815270/",
+      "status_code": 400,
+      "response": "{\"msg\":\"Invalid option(s) \\\"HOLD - tactical contract option\\\" provided for column \\\"Verdict\\\". Valid options are \\\"SUBMIT, REVIEW, SKIP\\\"\"}"
+    },
+    {
+      "title": "Managing Director - Qatar",
+      "company": "talabat",
+      "url": "https://www.linkedin.com/jobs/view/4415007377",
+      "status_code": 400,
+      "response": "{\"msg\":\"Invalid option(s) \\\"APPLY\\\" provided for column \\\"Verdict\\\". Valid options are \\\"SUBMIT, REVIEW, SKIP\\\"\"}"
+    },
+    {
+      "title": "Head of Operations",
+      "company": "Thndr",
+      "url": "https://www.linkedin.com/jobs/view/4416694231/",
+      "status_code": 400,
+      "response": "{\"msg\":\"Invalid option(s) \\\"APPLIED\\\" provided for column \\\"Verdict\\\". Valid options are \\\"SUBMIT, REVIEW, SKIP\\\"\"}"
+    },
+    {
+      "title": "Manager - PMO & ADERP",
+      "company": "Department of Finance - Abu Dhabi",
+      "url": "https://www.linkedin.com/jobs/view/4414561142/",
+      "status_code": 400,
+      "response": "{\"msg\":\"Invalid option(s) \\\"APPLIED\\\" provided for column \\\"Verdict\\\". Valid options are \\\"SUBMIT, REVIEW, SKIP\\\"\"}"
+    },
+    {
+      "title": "VP Data & AI",
+      "company": "Solutions+ (A Mubadala company)",
+      "url": "https://www.linkedin.com/jobs/view/4406146393/",
+      "status_code": 400,
+      "response": "{\"msg\":\"Invalid option(s) \\\"STRETCH_CV_READY\\\" provided for column \\\"Verdict\\\". Valid options are \\\"SUBMIT, REVIEW, SKIP\\\"\"}"
+    },
+    {
+      "title": "Digital Growth & Programs Manager",
+      "company": "Dubai Department of Economy and Tourism",
+      "url": "https://www.linkedin.com/jobs/view/4412293914/",
+      "status_code": 400,
+      "response": "{\"msg\":\"Invalid option(s) \\\"CV_READY_WITH_SENIORITY_CAUTION\\\" provided for column \\\"Verdict\\\". Valid options are \\\"SUBMIT, REVIEW, SKIP\\\"\"}"
+    },
+    {
+      "title": "Programme Manager: AI Readiness Programmes",
+      "company": "CFTE - Centre for Finance, Technology and Entrepreneurship",
+      "url": "https://www.linkedin.com/jobs/view/4413317066/",
+      "status_code": 400,
+      "response": "{\"msg\":\"Invalid option(s) \\\"SKIP_OVERQUALIFIED_ACCOUNTING_MISMATCH\\\" provided for column \\\"Verdict\\\". Valid options are \\\"SUBMIT, REVIEW, SKIP\\\"\"}"
+    },
+    {
+      "title": "Chief Operating Officer",
+      "company": "Confidential Careers",
+      "url": "https://www.linkedin.com/jobs/view/4406491313/",
+      "status_code": 400,
+      "response": "{\"msg\":\"Invalid option(s) \\\"applied\\\" provided for column \\\"Verdict\\\". Valid options are \\\"SUBMIT, REVIEW, SKIP\\\"\"}"
+    }
+  ]
+}

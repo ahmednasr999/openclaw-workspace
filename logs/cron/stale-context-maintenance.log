@@ -958,3 +958,11 @@ OK no stale context_engine_turn_maintenance tasks older than 15m
 [2026-05-29T20:00:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
 OK no stale context_engine_turn_maintenance tasks older than 15m
 [2026-05-29T20:00:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-05-29T20:05:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-05-29T20:05:01+03:00] END stale-context-maintenance: rc=0 duration=1s
+
+[2026-05-29T20:10:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-05-29T20:10:01+03:00] END stale-context-maintenance: rc=0 duration=0s

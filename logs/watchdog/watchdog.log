@@ -4185,3 +4185,60 @@ Config (/root/.openclaw/openclaw.json): missing env var "OPENCLAW_HOOKS_TOKEN" a
   "runId": "manual:20f54174-5a9b-46bd-b105-c8bb939a2c8b:1780066817370:3"
 }
 [2026-05-29 20:00] === Watchdog v3 run ===
+[2026-05-29 20:00] FIXED: Re-triggered failed cron 224bb358-a983-4ec6-ba28-32101ab48eb8
+[2026-05-29 20:00] FIXED: Re-triggered failed cron 6a833efa-e058-4438-8f57-3cf5c2868e85
+[2026-05-29 20:00] FIXED: Re-triggered failed cron db37a524-9cba-453c-a59a-9042a268f7ea
+[2026-05-29 20:00] ALERT: Pipeline config/logic failures need attention
+[2026-05-29 20:00] Summary: fixes=3 warnings=1 alerts=1
+Config (/root/.openclaw/openclaw.json): missing env var "OPENCLAW_HOOKS_TOKEN" at hooks.token - feature using this value will be unavailable
+Config (/root/.openclaw/openclaw.json): missing env var "OPENCLAW_HOOKS_TOKEN" at hooks.token - feature using this value will be unavailable
+Config (/root/.openclaw/openclaw.json): missing env var "OPENCLAW_HOOKS_TOKEN" at hooks.token - feature using this value will be unavailable
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:224bb358-a983-4ec6-ba28-32101ab48eb8:1780074017708:4"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:db37a524-9cba-453c-a59a-9042a268f7ea:1780074018519:5"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:6a833efa-e058-4438-8f57-3cf5c2868e85:1780074019996:6"
+}
+[2026-05-29 20:09] === Watchdog v3 run ===
+[2026-05-29 20:09] FIXED: Re-triggered failed cron 224bb358-a983-4ec6-ba28-32101ab48eb8
+[2026-05-29 20:09] FIXED: Re-triggered failed cron 4db2295a-d3ac-4beb-b902-47516c26432e
+[2026-05-29 20:09] FIXED: Re-triggered failed cron 00512934-214a-429e-8078-e7555bb1c120
+[2026-05-29 20:09] Summary: fixes=3 warnings=2 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:4db2295a-d3ac-4beb-b902-47516c26432e:1780074567574:7"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:00512934-214a-429e-8078-e7555bb1c120:1780074568662:8"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:224bb358-a983-4ec6-ba28-32101ab48eb8:1780074568884:9"
+}
+[2026-05-29 20:10] === Watchdog v3 run ===
+[2026-05-29 20:10] FIXED: Re-triggered failed cron 1b1d9bca-2f63-49d1-89b2-cd05a792b30a
+[2026-05-29 20:10] FIXED: Re-triggered failed cron 418e7854-d466-4b49-ad1d-f3f3debae5d7
+[2026-05-29 20:10] Summary: fixes=2 warnings=2 alerts=0
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:1b1d9bca-2f63-49d1-89b2-cd05a792b30a:1780074624339:10"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:418e7854-d466-4b49-ad1d-f3f3debae5d7:1780074624453:11"
+}

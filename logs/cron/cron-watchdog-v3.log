@@ -227,3 +227,45 @@
 ✅ active-tasks.md fresh (16h)
 ✅ Jobs data fresh (1h)
 ✅ SIE 360 data fresh (18h)
+🟡 7 crons with issues
+  Re-triggered cron: 224bb358-a983-4ec6-ba28-32101ab48eb8
+  Re-triggered cron: 6a833efa-e058-4438-8f57-3cf5c2868e85
+  Re-triggered cron: db37a524-9cba-453c-a59a-9042a268f7ea
+🔴 Pipeline has 1 config + 0 logic failures today
+✅ RAM OK: 36%
+
+═══════════════════════════════════
+📊 Watchdog v3 Summary
+  Fixes applied: 3
+  Warnings: 1
+  Alerts (need human): 1
+═══════════════════════════════════
+
+📋 Actions taken:
+🔴 Pipeline failures: 1 config, 0 logic (need human review)
+
+[2026-05-29T20:00:09+03:00] END cron-watchdog-v3: rc=2 duration=8s
+
+[2026-05-29T20:10:07+03:00] START cron-watchdog-v3: /bin/bash /root/.openclaw/workspace/scripts/cron-watchdog-v3.sh
+🔍 Watchdog v3 - Detect → Fix → Report
+✅ Gateway running (PID: 2420052)
+🟡 Disk WARNING: 76%
+✅ active-tasks.md fresh (17h)
+✅ Jobs data fresh (1h)
+✅ SIE 360 data fresh (18h)
+🟡 2 crons with issues
+  Re-triggered cron: 1b1d9bca-2f63-49d1-89b2-cd05a792b30a
+  Re-triggered cron: 418e7854-d466-4b49-ad1d-f3f3debae5d7
+✅ No pipeline failures today
+✅ RAM OK: 47%
+
+═══════════════════════════════════
+📊 Watchdog v3 Summary
+  Fixes applied: 2
+  Warnings: 2
+  Alerts (need human): 0
+═══════════════════════════════════
+
+📋 Actions taken:
+
+[2026-05-29T20:10:15+03:00] END cron-watchdog-v3: rc=0 duration=8s
