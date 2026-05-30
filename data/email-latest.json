@@ -1,113 +1,37 @@
 {
   "status": "ok",
-  "scan_time": "2026-05-29T15:03:31.827799+03:00",
-  "total_scanned": 35,
+  "scan_time": "2026-05-29T21:01:27.554592+03:00",
+  "total_scanned": 0,
   "by_category": {
     "interview_invite": 0,
-    "recruiter_reach": 1,
+    "recruiter_reach": 0,
     "application_ack": 0,
-    "rejection": 1,
+    "rejection": 0,
     "assessment": 0,
     "follow_up_needed": 0,
     "job_alert": 0,
-    "other": 33
+    "other": 0
   },
   "interview_invites": [],
-  "recruiter_messages": [
-    {
-      "id": "359744",
-      "from": "NaukriGulf <recommendedjobs@naukrigulf.com>",
-      "subject": "Top 10 jobs for you today",
-      "date": "Fri, 29 May 2026 15:37:10 +0530 (IST)",
-      "unread": true,
-      "priority": "MEDIUM",
-      "score": 2,
-      "pipeline_match": null,
-      "confidence": 80,
-      "confidence_label": "medium",
-      "evidence": [
-        "known recruiter/job domain",
-        "hiring sender context",
-        "hiring/application context",
-        "recruiter outreach classification",
-        "medium priority score: 2"
-      ],
-      "why_actionable": "known recruiter/job domain | hiring sender context | hiring/application context | recruiter outreach classification"
-    }
-  ],
+  "recruiter_messages": [],
   "application_acks": [],
-  "rejections": [
-    {
-      "id": "359728",
-      "from": "Qureos <hello@qureos.com>",
-      "subject": "Application Update for the Position of Hospital Director at Scope\r\n Investment",
-      "date": "Fri, 29 May 2026 06:00:10 +0000",
-      "unread": true,
-      "priority": "MEDIUM",
-      "score": 4,
-      "pipeline_match": null,
-      "confidence": 25,
-      "confidence_label": "very_low",
-      "evidence": [
-        "hiring/application context",
-        "medium priority score: 4"
-      ],
-      "why_actionable": "not actionable: hiring/application context | medium priority score: 4"
-    }
-  ],
+  "rejections": [],
   "assessments": [],
   "follow_ups_needed": [],
   "job_alerts": [],
-  "actionable_count": 1,
+  "actionable_count": 0,
   "hot_alerts": [],
   "signals": [],
-  "pipeline_review_candidates": [
-    {
-      "timestamp": "2026-05-29T15:03:31.827820+03:00",
-      "review_type": "possible_rejection",
-      "category": "rejection",
-      "email_id": "359728",
-      "subject": "Application Update for the Position of Hospital Director at Scope\r\n Investment",
-      "from": "Qureos <hello@qureos.com>",
-      "priority": "MEDIUM",
-      "pipeline_match": null,
-      "status": "needs_human_review"
-    },
-    {
-      "timestamp": "2026-05-29T15:03:31.827827+03:00",
-      "review_type": "possible_recruiter_outreach",
-      "category": "recruiter_reach",
-      "email_id": "359744",
-      "subject": "Top 10 jobs for you today",
-      "from": "NaukriGulf <recommendedjobs@naukrigulf.com>",
-      "priority": "MEDIUM",
-      "pipeline_match": null,
-      "status": "needs_human_review"
-    }
-  ],
   "llm_analysis": {
-    "actionable_emails": [
-      {
-        "id": "359744",
-        "subject": "Top 10 jobs for you today",
-        "from": "NaukriGulf <recommendedjobs@naukrigulf.com>",
-        "date": "Fri, 29 May 2026 15:37:10 +0530 (IST)",
-        "category": "recruiter_reach",
-        "urgency": "low",
-        "intent": "The sender is sharing automated job recommendations based on Ahmed's profile.",
-        "action": "read_and_file",
-        "response_deadline": "when convenient",
-        "notes": "Automated job alert; no direct recruiter reply needed."
-      }
-    ],
+    "actionable_emails": [],
     "summary": {
-      "total_actionable": 1,
+      "total_actionable": 0,
       "critical_count": 0,
       "requires_interview_prep": false,
       "requires_assessment": false,
       "recruiter_top_opportunities": [],
       "top_priority": null,
-      "daily_focus": "No urgent email action today; review GCC leadership listings only if time allows."
+      "daily_focus": "No email action needed from this batch."
     }
   }
 }

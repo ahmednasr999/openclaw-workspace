@@ -1,4 +1,0 @@
-
-[2026-05-28T12:20:01+03:00] START approved-14day-retire: /bin/bash -lc test "$(date +%Y)" = "2026" && /root/.openclaw/workspace/scripts/retire-approved-14day-crons.sh
-Retired approved 14-day LinkedIn campaign crons at 2026-05-28T12:20:01+03:00. Backup: /root/.openclaw/workspace/config/root-crontab.before-approved-14day-retire-20260528-122001.bak
-[2026-05-28T12:20:01+03:00] END approved-14day-retire: rc=0 duration=0s

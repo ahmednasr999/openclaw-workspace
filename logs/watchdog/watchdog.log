@@ -4242,3 +4242,52 @@ Config (/root/.openclaw/openclaw.json): missing env var "OPENCLAW_HOOKS_TOKEN" a
   "enqueued": true,
   "runId": "manual:418e7854-d466-4b49-ad1d-f3f3debae5d7:1780074624453:11"
 }
+[2026-05-29 22:00] === Watchdog v3 run ===
+[2026-05-29 22:00] FIXED: Re-triggered failed cron 224bb358-a983-4ec6-ba28-32101ab48eb8
+[2026-05-29 22:00] Summary: fixes=1 warnings=2 alerts=0
+Config (/root/.openclaw/openclaw.json): missing env var "OPENCLAW_HOOKS_TOKEN" at hooks.token - feature using this value will be unavailable
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:224bb358-a983-4ec6-ba28-32101ab48eb8:1780081210991:12"
+}
+[2026-05-30 00:00] === Watchdog v3 run ===
+[2026-05-30 00:00] ALERT: Disk at 92%
+[2026-05-30 00:00] FIXED: Disk cleaned from 92% to 92%
+[2026-05-30 00:00] FIXED: Re-triggered failed cron 224bb358-a983-4ec6-ba28-32101ab48eb8
+[2026-05-30 00:00] Summary: fixes=2 warnings=1 alerts=0
+Config (/root/.openclaw/openclaw.json): missing env var "OPENCLAW_HOOKS_TOKEN" at hooks.token - feature using this value will be unavailable
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:224bb358-a983-4ec6-ba28-32101ab48eb8:1780088414280:13"
+}
+[2026-05-30 02:00] === Watchdog v3 run ===
+[2026-05-30 02:00] ALERT: Disk at 95%
+[2026-05-30 02:00] FIXED: Disk cleaned from 95% to 95%
+[2026-05-30 02:00] FIXED: Re-triggered failed cron 224bb358-a983-4ec6-ba28-32101ab48eb8
+[2026-05-30 02:00] Summary: fixes=2 warnings=1 alerts=0
+Config (/root/.openclaw/openclaw.json): missing env var "OPENCLAW_HOOKS_TOKEN" at hooks.token - feature using this value will be unavailable
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:224bb358-a983-4ec6-ba28-32101ab48eb8:1780095611710:14"
+}
+[2026-05-30 04:00] === Watchdog v3 run ===
+[2026-05-30 04:00] FIXED: Re-triggered failed cron 224bb358-a983-4ec6-ba28-32101ab48eb8
+[2026-05-30 04:00] Summary: fixes=1 warnings=1 alerts=0
+Config (/root/.openclaw/openclaw.json): missing env var "OPENCLAW_HOOKS_TOKEN" at hooks.token - feature using this value will be unavailable
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:224bb358-a983-4ec6-ba28-32101ab48eb8:1780102810940:15"
+}
+[2026-05-30 06:00] === Watchdog v3 run ===
+[2026-05-30 06:00] FIXED: Re-triggered failed cron 224bb358-a983-4ec6-ba28-32101ab48eb8
+[2026-05-30 06:00] Summary: fixes=1 warnings=1 alerts=0
+Config (/root/.openclaw/openclaw.json): missing env var "OPENCLAW_HOOKS_TOKEN" at hooks.token - feature using this value will be unavailable
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:224bb358-a983-4ec6-ba28-32101ab48eb8:1780110014702:16"
+}

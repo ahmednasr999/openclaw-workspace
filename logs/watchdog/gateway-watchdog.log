@@ -756,3 +756,15 @@
 2026-05-29T18:02:16+03:00 degraded count=1 reason=app-server-count-10, pid=2420052 rss_kb=1386660 app_servers=10 health_ms=8 signals=0
 2026-05-29T18:04:36+03:00 recovered pid=2420052 rss_kb=1838096 app_servers=8 health_ms=110 signals=0
 2026-05-29T18:46:20+03:00 health-fail count=1 pid=2420052 http=000 ms=6006 app_servers=8
+2026-05-29T20:42:34+03:00 chrome-trim term pid=2284078 count=18 rss_kb=1764988
+2026-05-29T21:08:14+03:00 chrome-trim term pid=2560259 count=22 rss_kb=3040392
+2026-05-29T21:10:35+03:00 chrome-trim term pid=2567258 count=21 rss_kb=3066636
+2026-05-29T21:12:54+03:00 chrome-trim term pid=2569449 count=19 rss_kb=2685388
+2026-05-29T21:15:15+03:00 chrome-trim term pid=2571716 count=18 rss_kb=2345412
+2026-05-29T21:17:35+03:00 chrome-trim term pid=2574037 count=17 rss_kb=2106928
+2026-05-29T21:19:55+03:00 chrome-trim term pid=2576241 count=17 rss_kb=2095148
+2026-05-29T22:43:54+03:00 observed reason=starvation-signals-5, pid=2420052 rss_kb=888624 app_servers=8 health_ms=2 signals=5
+2026-05-29T23:00:19+03:00 restart-deferred reason=slow-health-3034ms active_app_servers=8
+2026-05-29T23:00:19+03:00 observed reason=slow-health-3034ms, pid=2420052 rss_kb=861828 app_servers=8 health_ms=3034 signals=2
+2026-05-30T04:09:39+03:00 restart-deferred reason=slow-health-4039ms active_app_servers=8
+2026-05-30T04:09:39+03:00 observed reason=slow-health-4039ms, pid=2420052 rss_kb=1413664 app_servers=8 health_ms=4039 signals=0

@@ -138,6 +138,17 @@
 | 247 | 🆕 | Thunes | Business Development Director | Dubai | — | 🆕 Discovered | Radar | 2026-05-29 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4368220782) | — |
 | 248 | 🆕 | KinFitz & Co. | Chief Commercial Officer - Digital Assets | Dubai | — | 🆕 Discovered | Radar | 2026-05-29 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4414082098) | — |
 | 249 | 🆕 | JPMorganChase | Payments - EMEA Innovation Economy Sales - Vice President - Dubai | Dubai | — | 🆕 Discovered | Radar | 2026-05-29 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4420676575) | — |
+| 250 | 🆕 | Visa | Implementation Director | GCC | — | 🆕 Discovered | Radar | 2026-05-30 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4413110095) | — |
+| 251 | 🆕 | Halian | Managed Services, Recruitment Agency & Contract Staffing | Director - Enterprise Applications & Digital Platforms (m/f/d) | Abu Dhabi Emirate | — | 🆕 Discovered | Radar | 2026-05-30 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4417896090) | — |
+| 252 | 🆕 | Staff Connect UAE | Head of Information Technology | Dubai | — | 🆕 Discovered | Radar | 2026-05-30 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4417876938) | — |
+| 253 | 🆕 | Course | Chief Technology Officer | Abu Dhabi Emirate | — | 🆕 Discovered | Radar | 2026-05-30 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4414819292) | — |
+| 254 | 🆕 | Chalhoub Group | Director, Transformation Governance | Dubai | — | 🆕 Discovered | Radar | 2026-05-30 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4409296743) | — |
+| 255 | 🆕 | Inception | Director - Research and Development | Abu Dhabi | — | 🆕 Discovered | Radar | 2026-05-30 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4410488910) | — |
+| 256 | 🆕 | Emerald Zebra Recruitment & Executive Search | Head of IT, Fintech, Dubai | Dubai | — | 🆕 Discovered | Radar | 2026-05-30 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4420239822) | — |
+| 257 | 🆕 | Live Connections | Head of Technical Department | Dubai | — | 🆕 Discovered | Radar | 2026-05-30 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4419007826) | — |
+| 258 | 🆕 | 1inch | Head of DevOps | Dubai | — | 🆕 Discovered | Radar | 2026-05-30 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4415293617) | — |
+| 259 | 🆕 | Emirates Electrical Engineering LLC | Head of Engineering | Dubai | — | 🆕 Discovered | Radar | 2026-05-30 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4409415956) | — |
+
 
 
 
