@@ -188,12 +188,9 @@ def check_crons():
         check("Cron Jobs", Result.WARN, "No cron runs directory")
         return
 
-    cron_files = sorted(cron_dir.glob("*.jsonl"))
-    if not cron_files:
-        check("Cron Jobs", Result.WARN, "No cron run logs found")
-        return
-
-    # Load active job IDs
+    # Load active jobs and their current scheduler state. The JSONL files are
+    # append-only history, so a manual debug failure after a successful scheduled
+    # run can otherwise keep NASR Doctor red even after cron state is normalized.
     active_ids = set()
     jobs_file = OPENCLAW_DIR / "cron" / "jobs.json"
     if jobs_file.exists():
@@ -206,10 +203,59 @@ def check_crons():
         except Exception:
             pass
 
+    states = {}
+    state_file = OPENCLAW_DIR / "cron" / "jobs-state.json"
+    if state_file.exists():
+        try:
+            with open(state_file) as f:
+                state_data = json.load(f)
+            states = state_data.get("jobs", {}) if isinstance(state_data, dict) else {}
+        except Exception:
+            states = {}
+
     ok_count = 0
     warn_count = 0
     fail_count = 0
     orphans_archived = 0
+
+    if active_ids and states:
+        for jid in sorted(active_ids):
+            entry = states.get(jid, {})
+            state = entry.get("state", entry) if isinstance(entry, dict) else {}
+            status = state.get("lastRunStatus") or state.get("lastStatus") or "unknown"
+            last_run_ts = state.get("lastRunAtMs")
+            ts = last_run_ts or entry.get("updatedAtMs", 0)
+
+            if status == "unknown" and not last_run_ts and state.get("nextRunAtMs"):
+                ok_count += 1
+                continue
+
+            if ts:
+                run_time = datetime.fromtimestamp(ts / 1000, tz=timezone.utc)
+                ago = datetime.now(timezone.utc) - run_time
+                ago_str = f"{ago.days}d ago" if ago.days > 0 else f"{ago.seconds // 3600}h ago"
+            else:
+                ago_str = "unknown"
+
+            if status == "ok":
+                ok_count += 1
+            elif status in {"error", "failed", "fail"}:
+                error_msg = (state.get("lastError") or state.get("lastDiagnosticSummary") or "")[:40]
+                check(f"Cron: {jid[:20]}", Result.WARN, f"ERROR ({ago_str}) {error_msg}")
+                fail_count += 1
+            else:
+                warn_count += 1
+
+        if fail_count > 0 or warn_count > 0:
+            check("Cron Jobs", Result.WARN, f"{ok_count} ok, {warn_count} warn, {fail_count} failed")
+        else:
+            check("Cron Jobs", Result.OK, f"{ok_count} ok, {warn_count} warn, {fail_count} failed")
+        return
+
+    cron_files = sorted(cron_dir.glob("*.jsonl"))
+    if not cron_files:
+        check("Cron Jobs", Result.WARN, "No cron run logs found")
+        return
 
     for cf in cron_files:
         name = cf.stem
