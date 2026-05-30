@@ -205,3 +205,18 @@ git push origin master
 2. **Separate artifact generation from delivery eligibility.** A valid PDF is not enough to deliver. The role must still be actionable, not already applied, and tied to a verified JD or recruiter/application signal.
 3. **Make duplicate-send prevention visible in closeout.** Delivery should state whether applied-ledger checks were run, how many roles were blocked as already applied, and which PDFs were actually sent.
 4. **Keep the compact checklist as the next structural fix.** `eval/checklist.md` should include the applied-ledger gate along with JD provenance, ATS floor, rendered PDF review, clean text extraction, ontology ids, filename, and delivery wording.
+
+### 2026-05-30 - Weekly Skill Tune-Up
+
+**Audit basis:** Recent lessons from 2026-05-23 to 2026-05-30 were mostly OpenClaw runtime and cron-sandbox issues, not direct CV-builder failures. The strongest CV-relevant carryover is still the 2026-05-16 applied-ledger miss, and this skill still has no `eval/checklist.md`.
+
+**Reviewed lessons:**
+- 2026-05-16, check `applied_jobs` and `jobs.applied` before sending or regenerating JobZoom CV packs.
+- 2026-05-27, cron/internal maintenance should use approval-safe commands and narrow checks before more complex helpers.
+- 2026-05-28, interrupted work needs current-state inspection before retrying completed steps.
+
+**Improvement recommendation:**
+1. **Make duplicate-delivery prevention explicit in Step 0.** Before any JobZoom or pipeline CV pack is generated, resent, or delivered, verify the target role is not already marked applied in both available ledgers.
+2. **Resume from inspected state after interruptions.** If CV generation, PDF validation, ontology writes, or Telegram delivery were interrupted, inspect existing artifacts and ledger state before rerunning the workflow.
+3. **Keep validation commands simple in cron contexts.** For scheduled CV maintenance, prefer direct file existence, ledger, and PDF checks before shell pipelines that may be rejected by the cron sandbox.
+4. **Create `eval/checklist.md` as the next structural fix.** It should include JD provenance, real hiring signal, applied-ledger clear, ATS floor, rendered PDF QA, clean text extraction, ontology ids, filename, delivery status, and interruption-resume checks.

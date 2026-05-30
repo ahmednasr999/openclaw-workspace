@@ -260,30 +260,19 @@ ls -lh /root/.openclaw/lcm.db 2>/dev/null
 du -sh /root/.openclaw/lcm.db* 2>/dev/null
 
 echo "=== WAL CHECKPOINT RECOMMENDATION ==="
-# If WAL file is large, checkpoint it. If PASSIVE succeeds but leaves the file
-# allocated, run TRUNCATE to release disk space unless an active reader blocks it.
+# If WAL file is large, a checkpoint is needed
 WAL_SIZE=$(ls -l /root/.openclaw/lcm.db-wal 2>/dev/null | awk '{print $5}')
-echo "WAL file size: ${WAL_SIZE:-0}"
+echo "WAL file size: $WAL_SIZE"
 WAL_CHECKPOINT_LOG="/tmp/lcm_wal_checkpoint_$(date +%Y%m%d).log"
-if [ -n "${WAL_SIZE:-}" ] && [ "$WAL_SIZE" -gt 10485760 ]; then
+if [ -n "$WAL_SIZE" ] && [ "$WAL_SIZE" -gt 10485760 ]; then
     echo "ACTION: WAL checkpoint recommended (>10MB)"
     sqlite3 /root/.openclaw/lcm.db "PRAGMA wal_checkpoint(PASSIVE);" > "$WAL_CHECKPOINT_LOG" 2>&1
     CP_EXIT=$?
-    cat "$WAL_CHECKPOINT_LOG"
-    POST_WAL_SIZE=$(ls -l /root/.openclaw/lcm.db-wal 2>/dev/null | awk '{print $5}')
-    if [ $CP_EXIT -eq 0 ] && [ -n "${POST_WAL_SIZE:-}" ] && [ "$POST_WAL_SIZE" -gt 10485760 ]; then
-        echo "Passive checkpoint left WAL allocated at $POST_WAL_SIZE bytes; running TRUNCATE checkpoint."
-        sqlite3 /root/.openclaw/lcm.db "PRAGMA wal_checkpoint(TRUNCATE);" > "$WAL_CHECKPOINT_LOG.truncate" 2>&1
-        TRUNCATE_EXIT=$?
-        cat "$WAL_CHECKPOINT_LOG.truncate"
-        POST_WAL_SIZE=$(ls -l /root/.openclaw/lcm.db-wal 2>/dev/null | awk '{print $5}')
-        echo "WAL file size after truncate: ${POST_WAL_SIZE:-0}"
-    fi
-    if [ $CP_EXIT -eq 0 ] && [ "${TRUNCATE_EXIT:-0}" -eq 0 ]; then
+    if [ $CP_EXIT -eq 0 ]; then
         echo "Checkpoint OK."
     else
-        echo "WARNING: Checkpoint returned exit code passive=$CP_EXIT truncate=${TRUNCATE_EXIT:-0}. Check $WAL_CHECKPOINT_LOG"
-        echo "ACTION: Checkpoint failed - WAL may need manual review."
+        echo "WARNING: Checkpoint returned exit code $CP_EXIT. Check $WAL_CHECKPOINT_LOG"
+        echo "ACTION: Checkpoint failed — WAL may need manual vacuum."
     fi
 else
     echo "WAL size OK."

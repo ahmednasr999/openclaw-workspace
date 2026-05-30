@@ -79,6 +79,7 @@ If Ahmed asks repeatedly for the same workflow, the system failed and should be 
 ## Model and OpenClaw Preferences
 
 - Current default model is GPT-5.5 via OpenAI Codex OAuth unless Ahmed changes it.
+- Subscription note: Ahmed returned to ChatGPT Pro 20x on 2026-05-30 after briefly planning a 2026-06-07 downgrade to Pro 5x. Treat GPT-5.5 quota headroom as 20x unless Ahmed changes the subscription again.
 - Ahmed's explicit model choices must not be silently reverted.
 - Always disclose model switches.
 - He is interested in OpenClaw, Codex, ACP/ACPX, Hermes, autonomous memory, and self-improving agents.

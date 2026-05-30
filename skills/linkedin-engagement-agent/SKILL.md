@@ -201,3 +201,18 @@ Reply "⏭ Skipped" and move on.
 2. **Treat missing interactive controls as a degraded state.** If buttons or thread delivery fail, do not proceed to any posting path. Re-send a text-only approval card with the post URL, activity URN, author URL, and exact comment text.
 3. **Keep post approval bound to exact evidence.** Approval should reference immutable post identity plus the exact approved comment text, not just "post n".
 4. **Add the missing checklist next.** `eval/checklist.md` should include Telegram card visibility, Ahmed-Mac online, correct account, activity URN match, author URL match, cooldown clear, approved text unchanged, visible comment confirmed, like state checked, and ontology updated.
+
+### 2026-05-30 - Weekly Skill Tune-Up
+
+**Audit basis:** No LinkedIn-engagement-specific lesson appeared in the last 7 days, so this stayed in scope as a default LinkedIn operations skill. The recent Telegram slash-menu lesson reinforces that API success is not enough; user-visible approval-card state must be verified before any write path can proceed.
+
+**Reviewed lessons:**
+- 2026-05-17, verify actual Telegram client/menu-visible state, not just Bot API dispatch.
+- 2026-05-15, avoid empty private closeouts after Telegram sends.
+- 2026-04-22, prove LinkedIn lane exposure before blaming stale sessions or asking Ahmed to reconnect.
+
+**Improvement recommendation:**
+1. **Verify approval-card visibility as a gate.** After sending engagement cards to thread 7, confirm the cards and controls are visible or provide a text-only fallback with full post identity.
+2. **Do not treat send success as approval readiness.** If buttons, thread delivery, or card visibility cannot be proven, stop before posting and report the degraded approval state.
+3. **Re-check lane and account before every write action.** Posting still requires Ahmed-Mac online, correct Ahmed account, exact activity URN, author URL, approved text unchanged, cooldown clear, and visible proof after submit.
+4. **Create `eval/checklist.md` next.** Include Telegram card visibility, fallback-card completeness, Ahmed-Mac/account check, post identity match, cooldown, approved text match, visible comment proof, like state, ontology update, and one meaningful closeout.

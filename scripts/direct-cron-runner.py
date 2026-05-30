@@ -359,6 +359,52 @@ def approved_batch_engagement(args: argparse.Namespace) -> int:
         return 0 if result["returncode"] == 0 and delivery.get("ok") else 1
 
 
+def markdown_section(text: str, heading: str) -> str:
+    lines = text.splitlines()
+    try:
+        start = lines.index(heading) + 1
+    except ValueError:
+        return ""
+    end = len(lines)
+    for idx in range(start, len(lines)):
+        if lines[idx].startswith("## ") or lines[idx].startswith("Needs ") or lines[idx].startswith("No approval"):
+            end = idx
+            break
+    return "\n".join(line for line in lines[start:end] if line.strip()).strip()
+
+
+def linkedin_radar_status_pack(report_path: str, status: str, posts: str, action_line: str) -> str:
+    base = [f"Status: {status}", f"Candidate count: {posts}"]
+    if not report_path:
+        return "\n".join([*base, action_line])
+
+    path = Path(report_path)
+    if not path.exists():
+        return "\n".join([*base, f"Report: {report_path}", action_line])
+
+    report = path.read_text(encoding="utf-8", errors="ignore")
+    operational = markdown_section(report, "## Operational Status")
+    source = markdown_section(report, "## Candidate Source")
+    candidates = markdown_section(report, "## Candidates")
+    signals = markdown_section(report, "## Content Signals for Ahmed")
+    angles = markdown_section(report, "## Post Angles to Consider")
+
+    details = base[:]
+    if operational:
+        details.extend(["", "Operational status:", operational])
+    if source:
+        compact_source = [line for line in source.splitlines() if "URL coverage" in line or "fallback" in line]
+        if compact_source:
+            details.extend(["", "Source:", "\n".join(compact_source)])
+    if candidates:
+        details.extend(["", "Candidate details:", candidates])
+    if signals:
+        details.extend(["", "Content signals:", signals])
+    if angles:
+        details.extend(["", "Post angles:", angles])
+    details.extend(["", action_line, f"Report: {report_path}"])
+    return "\n".join(details)
+
 def linkedin_comment_radar(args: argparse.Namespace, slot: str) -> int:
     with with_lock(f"linkedin-comment-radar-{slot}"):
         label = f"{slot[:2]}:{slot[2:]}"
@@ -394,13 +440,8 @@ def linkedin_comment_radar(args: argparse.Namespace, slot: str) -> int:
             action_line = "Review the report before taking any LinkedIn action."
 
         if result["returncode"] == 0:
-            body = (
-                f"LinkedIn Comment Radar {label} completed.\n"
-                f"Status: {status}\n"
-                f"Candidate count: {posts}\n"
-                f"Report: {report_path or result['log_path']}\n"
-                f"{action_line}"
-            )
+            status_pack = linkedin_radar_status_pack(report_path, status, posts, action_line)
+            body = f"LinkedIn Comment Radar {label} completed.\n{status_pack}"
             delivery = send_telegram(body, target=CEO_GROUP, thread_id=TOPIC_CMO, no_send=args.no_send)
         else:
             body = (

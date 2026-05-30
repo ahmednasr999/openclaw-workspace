@@ -69,3 +69,135 @@
 📋 Actions taken:
 
 [2026-05-30T06:00:10+03:00] END cron-watchdog-v3: rc=0 duration=9s
+
+[2026-05-30T08:00:01+03:00] START cron-watchdog-v3: /bin/bash /root/.openclaw/workspace/scripts/cron-watchdog-v3.sh
+🔍 Watchdog v3 - Detect → Fix → Report
+✅ Gateway running (PID: 2420052)
+✅ Disk OK: 58%
+✅ active-tasks.md fresh (28h)
+✅ Jobs data fresh (13h)
+✅ SIE 360 data fresh (6h)
+🟡 1 crons with issues
+  Re-triggered cron: 224bb358-a983-4ec6-ba28-32101ab48eb8
+✅ No pipeline failures today
+✅ RAM OK: 28%
+
+═══════════════════════════════════
+📊 Watchdog v3 Summary
+  Fixes applied: 1
+  Warnings: 1
+  Alerts (need human): 0
+═══════════════════════════════════
+
+📋 Actions taken:
+
+[2026-05-30T08:00:06+03:00] END cron-watchdog-v3: rc=0 duration=5s
+
+[2026-05-30T10:00:01+03:00] START cron-watchdog-v3: /bin/bash /root/.openclaw/workspace/scripts/cron-watchdog-v3.sh
+🔍 Watchdog v3 - Detect → Fix → Report
+✅ Gateway running (PID: 2420052)
+✅ Disk OK: 58%
+✅ active-tasks.md fresh (30h)
+✅ Jobs data fresh (15h)
+✅ SIE 360 data fresh (8h)
+🟡 1 crons with issues
+  Re-triggered cron: 224bb358-a983-4ec6-ba28-32101ab48eb8
+✅ No pipeline failures today
+✅ RAM OK: 28%
+
+═══════════════════════════════════
+📊 Watchdog v3 Summary
+  Fixes applied: 1
+  Warnings: 1
+  Alerts (need human): 0
+═══════════════════════════════════
+
+📋 Actions taken:
+
+[2026-05-30T10:00:09+03:00] END cron-watchdog-v3: rc=0 duration=8s
+
+[2026-05-30T12:00:01+03:00] START cron-watchdog-v3: /bin/bash /root/.openclaw/workspace/scripts/cron-watchdog-v3.sh
+🔍 Watchdog v3 - Detect → Fix → Report
+✅ Gateway running (PID: 2716704)
+✅ Disk OK: 62%
+✅ active-tasks.md fresh (32h)
+✅ Jobs data fresh (17h)
+✅ SIE 360 data fresh (10h)
+✅ All crons OK
+✅ No pipeline failures today
+✅ RAM OK: 28%
+
+═══════════════════════════════════
+📊 Watchdog v3 Summary
+  Fixes applied: 0
+  Warnings: 0
+  Alerts (need human): 0
+═══════════════════════════════════
+[2026-05-30T12:00:06+03:00] END cron-watchdog-v3: rc=0 duration=5s
+
+[2026-05-30T14:00:01+03:00] START cron-watchdog-v3: /bin/bash /root/.openclaw/workspace/scripts/cron-watchdog-v3.sh
+🔍 Watchdog v3 - Detect → Fix → Report
+✅ Gateway running (PID: 2716704)
+✅ Disk OK: 62%
+✅ active-tasks.md fresh (34h)
+✅ Jobs data fresh (19h)
+✅ SIE 360 data fresh (12h)
+✅ All crons OK
+✅ No pipeline failures today
+✅ RAM OK: 30%
+
+═══════════════════════════════════
+📊 Watchdog v3 Summary
+  Fixes applied: 0
+  Warnings: 0
+  Alerts (need human): 0
+═══════════════════════════════════
+[2026-05-30T14:00:10+03:00] END cron-watchdog-v3: rc=0 duration=9s
+
+[2026-05-30T16:00:01+03:00] START cron-watchdog-v3: /bin/bash /root/.openclaw/workspace/scripts/cron-watchdog-v3.sh
+🔍 Watchdog v3 - Detect → Fix → Report
+✅ Gateway running (PID: 2716704)
+✅ Disk OK: 62%
+✅ active-tasks.md fresh (36h)
+✅ Jobs data fresh (21h)
+✅ SIE 360 data fresh (14h)
+✅ All crons OK
+✅ No pipeline failures today
+✅ RAM OK: 29%
+
+═══════════════════════════════════
+📊 Watchdog v3 Summary
+  Fixes applied: 0
+  Warnings: 0
+  Alerts (need human): 0
+═══════════════════════════════════
+[2026-05-30T16:00:07+03:00] END cron-watchdog-v3: rc=0 duration=6s
+
+[2026-05-30T18:00:02+03:00] START cron-watchdog-v3: /bin/bash /root/.openclaw/workspace/scripts/cron-watchdog-v3.sh
+🔍 Watchdog v3 - Detect → Fix → Report
+✅ Gateway running (PID: 2780219)
+✅ Disk OK: 62%
+✅ active-tasks.md fresh (38h)
+✅ Jobs data fresh (23h)
+✅ SIE 360 data fresh (16h)
+✅ All crons OK
+✅ No pipeline failures today
+✅ RAM OK: 30%
+
+═══════════════════════════════════
+📊 Watchdog v3 Summary
+  Fixes applied: 0
+  Warnings: 0
+  Alerts (need human): 0
+═══════════════════════════════════
+[2026-05-30T18:00:07+03:00] END cron-watchdog-v3: rc=0 duration=5s
+
+[2026-05-30T20:00:01+03:00] START cron-watchdog-v3: /bin/bash /root/.openclaw/workspace/scripts/cron-watchdog-v3.sh
+🔍 Watchdog v3 - Detect → Fix → Report
+✅ Gateway running (PID: 2780219)
+✅ Disk OK: 62%
+✅ active-tasks.md fresh (40h)
+🟡 Jobs data stale (25h) - re-running pipeline...
+  Pipeline triggered in background
+✅ SIE 360 data fresh (18h)
+✅ Pipeline lock active (0m, still valid)

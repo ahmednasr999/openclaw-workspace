@@ -8,6 +8,7 @@
 - Gmail check: daily at 8 AM Cairo.
 - Formatting: never use em dashes. Use hyphens or commas.
 - Current default model is GPT-5.5 via OpenAI Codex OAuth unless Ahmed changes it. Do not silently switch models.
+- ChatGPT subscription status: Ahmed returned to ChatGPT Pro 20x on 2026-05-30 after briefly planning a 2026-06-07 downgrade to Pro 5x. Treat GPT-5.5 quota headroom as the 20x plan unless Ahmed changes the subscription again.
 - Salary is the overriding decision factor when evaluating GCC executive roles; do not treat it as already resolved, secondary, or outweighed by non-salary hard-no filters unless Ahmed explicitly adds one. Reporting line and work arrangement are not hard filters if salary is high enough; onsite, hybrid, or remote can be acceptable when compensation justifies it. <!-- dream-promoted 2026-05-11 -->
 - Image generation cost preference: do not add direct OpenAI API billing just to unlock image generation if the authenticated ChatGPT web Images workaround is viable. <!-- dream-promoted 2026-04-29 -->
 

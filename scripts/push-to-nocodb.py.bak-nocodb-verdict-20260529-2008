@@ -216,27 +216,6 @@ def load_jobs_from_sqlite():
     return rows
 
 
-def normalize_nocodb_verdict(verdict):
-    """Map historical pipeline verdicts into the NocoDB single-select values."""
-    raw = (verdict or "").strip()
-    if not raw:
-        return ""
-
-    value = raw.upper()
-    if value in {"SUBMIT", "APPLY", "APPLIED"}:
-        return "SUBMIT"
-    if value == "SKIP" or value.startswith("SKIP_"):
-        return "SKIP"
-    if value in {"REVIEW", "CONDITIONAL", "PENDING_REVIEW"}:
-        return "REVIEW"
-    if value.startswith(("HOLD", "STRETCH", "CV_READY")):
-        return "REVIEW"
-    if value in {"REJECTED", "CLOSED"}:
-        return "SKIP"
-
-    return "REVIEW"
-
-
 def build_nocodb_row_from_sqlite(j):
     source_cap = {
         "linkedin": "LinkedIn",
@@ -264,7 +243,9 @@ def build_nocodb_row_from_sqlite(j):
         "Domain Match": False,
     }
 
-    verdict = normalize_nocodb_verdict(j.get("verdict"))
+    verdict = (j.get("verdict") or "").strip()
+    if verdict == "CONDITIONAL":
+        verdict = "REVIEW"
     status = (j.get("status") or "").strip()
     if status == "applied":
         row["Status"] = "Applied"
@@ -450,7 +431,9 @@ def update_scored_jobs(noco, dry_run=False):
     submit_count = 0
     review_count = 0
     for url, r in latest_rows.items():
-        verdict = normalize_nocodb_verdict(r["verdict"])
+        verdict = (r["verdict"] or "").strip()
+        if verdict == "CONDITIONAL":
+            verdict = "REVIEW"
 
         patch = {
             "Verdict": verdict,
