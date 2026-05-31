@@ -2719,3 +2719,56 @@ Node.js v22.22.1
 ## Calendar - Today's Events
 *Calendar API unavailable (gog v0.12.0 bug - tracking fix)*
 
+=== Morning Brief - 2026-05-31 06:10 AM ===
+
+## Claude 2x Usage Reminder
+
+## Job Radar (from Tavily)
+[search-router] Tavily unavailable, falling back to local SearXNG: Tavily Search failed (401): {"detail":{"error":"Unauthorized: missing or invalid API key."}}
+## Sources
+
+_(provider: searxng)_
+
+- **ONE PEOPLE INITIATIVE | *NEWSPAPER HEADLINES FOR TUESDAY, 9th ...**
+  https://www.facebook.com/groups/272352494277423/posts/1004077304438268/
+  An Afrobeats MusicalDebuts in Lagos AsNigeriansCry for Divine Intervention: AICLEFs Call to Prayer Fayose, Ogunlewe Back Rotary Club of Shomolus President, Bolatito Oladele EFCC, CORRECTIONAL SERVICES AND OTHERS Of the National Arts Theatre and the Bankers Committees Midas Touch Del-York,and Aberyst...
+
+- **Arabian Post – Arab News, Politics, Business, Culture and the ...**
+  https://thearabianpost.com/
+  May 20, 2026 · Arabian Post delivers Arab news, global politics, Arabian business, tech, and lifestyle updates with original reporting and trusted analysis.
+
+- **Full text of "NEW" - Archive.org**
+  https://archive.org/stream/NEW_1/NEW.txt&wzmacniacz;ld=201
+  Full text of "NEW" See other formats Word . the , > < br to of and a : " in you that i it he is was for - with ) on ( ? his as this ; be at but not have had from will are they -- ! all by if him one your or up her there can so out them an my when she 1 no which me were we then 2 into 5 do what get g...
+
+- **ONE NIGERIA UNITED FORUM | #THEHUB | Facebook**
+  https://www.facebook.com/groups/418869371592802/posts/3534999693313072/
+  PRESIDENT, AS THE NEW YEAR BECKONS Wike, Fubara and the 48 Laws of Power Obazee: A Report Mutilated By Politics Musings on Death and Life America, Trump and January 6 25 YEARS ON, WAITING FOR DEMOCRACYS PROMISE Akeredolus Demise and Emerging New Dawn in Ondo APCs Challenges and Triumphs in 2023 Akum...
+
+- **maltego/top100Kenglishwords.txt at master · michenriksen ...**
+  https://github.com/michenriksen/maltego/blob/master/top100Kenglishwords.txt
+  Custom Maltego transforms. Contribute to michenriksen/maltego development by creating an account on GitHub.
+
+## Gmail - New Opportunities
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/root/.openclaw/workspace/scripts/gmail-scan.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+
+## Calendar - Today's Events
+*Calendar API unavailable (gog v0.12.0 bug - tracking fix)*
+
