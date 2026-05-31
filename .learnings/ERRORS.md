@@ -886,3 +886,21 @@ Do differently: execute `.sh` verification scripts with `bash` directly, then co
 ## 2026-05-30 - apply_patch unavailable in OpenClaw sandbox_exec
 - What happened: `apply_patch` was not installed on the gateway when patching `scripts/nasr-doctor.py` from OpenClaw sandbox_exec.
 - What to do differently: Use a targeted Python rewrite with exact block matching when `apply_patch` is unavailable, then run `python3 -m py_compile` for validation.
+
+## 2026-05-31 - OpenClaw sandbox lacks apply_patch command
+
+- What happened: During LinkedIn Easy Apply runner repair, `apply_patch` was not installed in the gateway shell, and strict inline-eval blocked `perl -e` edits.
+- Impact: Manual file patching needed to use `ed` with line replacements instead of inline eval or `apply_patch`.
+- Do differently: When sandboxing is active and `apply_patch` is missing, use `ed`/standard non-inline tools for narrow edits, then verify with syntax checks.
+
+## 2026-05-31 - Daily OpenClaw backup tar warning exits non-zero
+
+- What happened: `/root/.openclaw/scripts/backup.sh /root/openclaw-backups` created `openclaw-2026-05-31_0315.tar.gz`, but exited 1 after `tar: .openclaw: file changed as we read it`.
+- Recovery: Verified the archive with `gzip -t` and `tar -tzf`, confirmed size, then applied one-archive retention manually.
+- Do differently: Harden the backup script so live `.openclaw` directory metadata changes do not turn a valid archive into a failed cron result, or snapshot the source tree before tar.
+
+## 2026-05-31 - Weekly pipeline audit lacked safe CLI parsing
+
+- What happened: Running `weekly-pipeline-audit.py --help` executed the full audit and sent Telegram because the script only checked for `--dry-run` manually and ignored unknown flags.
+- Recovery: Added argparse help/dry-run handling, validated `--help` exits without running the audit, and re-ran the corrected audit.
+- Do differently: Before probing automation scripts with common CLI flags, inspect whether they use argparse/click or run them with a dry-run flag first when available.

@@ -181,3 +181,4 @@ Never use Composio for Notion or Telegram when direct credentials exist.
 - Workspace docs: `docs/`
 - Memory rules: `MEMORY.md`
 - CTO fast latency triage: use `/root/.openclaw/workspace-cto/scripts/cto-fast-status.sh` before broad `openclaw status` when users report delayed replies. The broad status command can block under plugin/channel pressure; fast triage should check config validation, cron scheduler state, and current cron errors first. <!-- updated 2026-05-25 from latency incident -->
+- OpenClaw runtime sanitizer/dedupe hardening is enforced through the user systemd gateway service preflight at `/root/.config/systemd/user/openclaw-gateway.service.d/30-runtime-hardening.conf`, which runs `scripts/reapply-openclaw-2026-5-18-runtime-patches.py` and `scripts/check-openclaw-runtime-patches.py` before future gateway starts. Keep the reapply script idempotent and run the checker after OpenClaw updates. <!-- promoted 2026-05-31 runtime-hardening -->

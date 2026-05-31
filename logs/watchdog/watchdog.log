@@ -4332,3 +4332,44 @@ Config (/root/.openclaw/openclaw.json): missing env var "OPENCLAW_HOOKS_TOKEN" a
 [2026-05-31 06:00] === Watchdog v3 run ===
 [2026-05-31 06:00] WARN: active-tasks.md stale (50h)
 [2026-05-31 06:00] Summary: fixes=0 warnings=2 alerts=0
+[2026-05-31 08:00] === Watchdog v3 run ===
+[2026-05-31 08:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-05-31 10:00] === Watchdog v3 run ===
+[2026-05-31 10:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-05-31 12:00] === Watchdog v3 run ===
+[2026-05-31 12:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-05-31 14:00] === Watchdog v3 run ===
+[2026-05-31 14:00] FIXED: Re-triggered failed cron 418e7854-d466-4b49-ad1d-f3f3debae5d7
+[2026-05-31 14:00] Summary: fixes=1 warnings=2 alerts=0
+Config (/root/.openclaw/openclaw.json): missing env var "OPENCLAW_HOOKS_TOKEN" at hooks.token - feature using this value will be unavailable
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:418e7854-d466-4b49-ad1d-f3f3debae5d7:1780225211960:1"
+}
+[2026-05-31 16:00] === Watchdog v3 run ===
+[2026-05-31 16:00] FIXED: Re-triggered failed cron 145d964f-e2e5-4b49-8058-f9ddac926f45
+[2026-05-31 16:00] FIXED: Re-triggered failed cron 418e7854-d466-4b49-ad1d-f3f3debae5d7
+[2026-05-31 16:00] Summary: fixes=2 warnings=2 alerts=0
+Config (/root/.openclaw/openclaw.json): missing env var "OPENCLAW_HOOKS_TOKEN" at hooks.token - feature using this value will be unavailable
+Config (/root/.openclaw/openclaw.json): missing env var "OPENCLAW_HOOKS_TOKEN" at hooks.token - feature using this value will be unavailable
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:145d964f-e2e5-4b49-8058-f9ddac926f45:1780232410154:1"
+}
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:418e7854-d466-4b49-ad1d-f3f3debae5d7:1780232410341:2"
+}
+[2026-05-31 18:00] === Watchdog v3 run ===
+[2026-05-31 18:00] FIXED: Re-triggered failed cron 418e7854-d466-4b49-ad1d-f3f3debae5d7
+[2026-05-31 18:00] Summary: fixes=1 warnings=1 alerts=0
+Config (/root/.openclaw/openclaw.json): missing env var "OPENCLAW_HOOKS_TOKEN" at hooks.token - feature using this value will be unavailable
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:418e7854-d466-4b49-ad1d-f3f3debae5d7:1780239609670:4"
+}
+[2026-05-31 20:00] === Watchdog v3 run ===

@@ -31,10 +31,16 @@ from pathlib import Path
 from collections import defaultdict
 import argparse
 
+try:
+    from zoneinfo import ZoneInfo
+except Exception:  # pragma: no cover - Python <3.9 fallback
+    ZoneInfo = None
+
 WORKSPACE = Path("/root/.openclaw/workspace")
 DATA_DIR = WORKSPACE / "data"
 MEMORY_DIR = WORKSPACE / "memory"
 OUTPUT_DIR = MEMORY_DIR / "retros"
+CAIRO_TZ = ZoneInfo("Africa/Cairo") if ZoneInfo else timezone(timedelta(hours=2))
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Generate weekly team retro")
@@ -121,30 +127,41 @@ def load_lessons_learned(days: int) -> list:
     if not lessons_file.exists():
         return []
     
-    cutoff = datetime.now() - timedelta(days=days)
+    cutoff = datetime.now(CAIRO_TZ).replace(tzinfo=None) - timedelta(days=days)
     lessons = []
     current_date = None
     current_lessons = []
+    current_section = None
+
+    def flush_current():
+        if current_date and current_date >= cutoff and current_lessons:
+            lessons.append({"date": current_date, "items": current_lessons})
     
     with open(lessons_file) as f:
         for line in f:
             line = line.rstrip()
             if line.startswith("## "):
-                # Date header
-                if current_date and current_lessons:
-                    lessons.append({"date": current_date, "items": current_lessons})
+                flush_current()
                 current_lessons = []
-                date_str = line[3:].strip()
+                current_section = None
+                # Supports both "## YYYY-MM-DD" and "## YYYY-MM-DD - Title".
+                date_str = line[3:].strip()[:10]
                 try:
                     current_date = datetime.strptime(date_str, "%Y-%m-%d")
                 except:
                     current_date = None
+            elif line.startswith("### ") and current_date and current_date >= cutoff:
+                current_section = line[4:].strip()
             elif line.startswith("- ") and current_date:
                 if current_date >= cutoff:
                     current_lessons.append(line[2:])
+            elif current_section and current_date and current_date >= cutoff and line.strip():
+                # Modern lessons are often sectioned as "### What happened" plus
+                # a short paragraph instead of bullet lists.
+                current_lessons.append(f"{current_section}: {line.strip()}")
+                current_section = None
     
-    if current_date and current_lessons:
-        lessons.append({"date": current_date, "items": current_lessons})
+    flush_current()
     
     return lessons
 
@@ -156,7 +173,9 @@ def analyze_runs(runs: list) -> dict:
         "failures": 0,
         "total_duration_ms": 0,
         "total_records": 0,
-        "errors": []
+        "errors": [],
+        "recent_statuses": [],
+        "last_started": None,
     })
     
     for run in runs:
@@ -166,6 +185,8 @@ def analyze_runs(runs: list) -> dict:
         records = run.get("records", 0)
         error = run.get("error")
         
+        stats[agent]["recent_statuses"].append(status)
+        stats[agent]["last_started"] = run.get("started")
         stats[agent]["total_runs"] += 1
         stats[agent]["total_duration_ms"] += duration
         stats[agent]["total_records"] += records
@@ -194,7 +215,7 @@ def analyze_runs(runs: list) -> dict:
 def generate_report(days: int, runs: list, heartbeat: dict, feedback: dict, lessons: list) -> str:
     """Generate the markdown report."""
     stats = analyze_runs(runs)
-    now = datetime.now(timezone(timedelta(hours=2)))  # Cairo
+    now = datetime.now(CAIRO_TZ)
     period_start = now - timedelta(days=days)
     
     report = []
@@ -314,10 +335,25 @@ def generate_report(days: int, runs: list, heartbeat: dict, feedback: dict, less
     
     # Low success rate agents
     low_success = [(a, d) for a, d in sorted_agents if d["success_rate"] < 90 and d["total_runs"] >= 3]
-    if low_success:
+    recovered = []
+    active_low_success = []
+    for agent, data in low_success:
+        recent_statuses = data.get("recent_statuses", [])[-3:]
+        if len(recent_statuses) == 3 and all(s == "success" for s in recent_statuses):
+            recovered.append((agent, data))
+        else:
+            active_low_success.append((agent, data))
+
+    if active_low_success:
         report.append(f"**Reliability improvements needed:**")
-        for agent, data in low_success:
+        for agent, data in active_low_success:
             report.append(f"- {agent}: {data['success_rate']}% success rate")
+        report.append(f"")
+
+    if recovered:
+        report.append(f"**Recently recovered reliability issues:**")
+        for agent, data in recovered:
+            report.append(f"- {agent}: {data['success_rate']}% weekly success rate, latest 3 runs succeeded")
         report.append(f"")
     
     # Slow agents
@@ -337,8 +373,10 @@ def generate_report(days: int, runs: list, heartbeat: dict, feedback: dict, less
     if total_failures > total_runs * 0.1:
         recommendations.append("- Overall failure rate above 10% - investigate error patterns")
     
-    if low_success:
-        recommendations.append(f"- Focus on stabilizing {low_success[0][0]} (lowest reliability)")
+    if active_low_success:
+        recommendations.append(f"- Focus on stabilizing {active_low_success[0][0]} (lowest active reliability)")
+    elif recovered:
+        recommendations.append(f"- Monitor {recovered[0][0]} recovery; latest 3 runs are green after the fallback fix")
     
     if slow:
         recommendations.append(f"- Consider parallelizing or caching for {slow[0][0]} (slowest agent)")

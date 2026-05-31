@@ -64,8 +64,6 @@ def patch_session_resume(changes: list[str]) -> None:
 def patch_runtime_prompt(changes: list[str]) -> None:
     path = find_file("runtime-context-prompt-*.js", "buildRuntimeContextCustomMessage")
     text = read(path)
-    if "Do not queue runtime-context as a custom message" in text:
-        return
     legacy_pattern = r'async function queueRuntimeContextForNextTurn\(params\) \{\n\tconst runtimeContext = params\.runtimeContext\?\.trim\(\);\n\tif \(!runtimeContext\) return;\n\tawait params\.session\.sendCustomMessage\([\s\S]*?\n\}'
     legacy_repl = 'async function queueRuntimeContextForNextTurn(params) {\n\tconst runtimeContext = params.runtimeContext?.trim();\n\tif (!runtimeContext) return;\n\t// Do not queue runtime-context as a custom message; keep it out of future user-visible replay.\n\treturn;\n}'
     current_pattern = r'function buildRuntimeContextCustomMessage\(runtimeContext\) \{\n\tconst trimmedRuntimeContext = runtimeContext\?\.trim\(\);\n\tif \(!trimmedRuntimeContext\) return;\n\treturn \{[\s\S]*?\n\t\};\n\}'
@@ -82,8 +80,6 @@ def patch_runtime_prompt(changes: list[str]) -> None:
 def patch_internal_context(changes: list[str]) -> None:
     path = find_file("internal-runtime-context-*.js", "stripRuntimeContextPromptPreface")
     text = read(path)
-    if "findNextPublicReplyStart(lines, index + 2)" in text or "findNextPublicReplyStart(lines, index + 1)" in text:
-        return
     helper = '''function findNextPublicReplyStart(lines, startIndex) {
 \tfor (let i = startIndex; i < lines.length; i += 1) {
 \t\tconst line = lines[i] ?? "";
@@ -111,68 +107,36 @@ def patch_internal_context(changes: list[str]) -> None:
 def patch_sanitizer(changes: list[str]) -> None:
     path = find_file("sanitize-user-facing-text-*.js", "sanitizeUserFacingText")
     text = read(path)
-    helper = r'''function stripQueuedReplyContextMetadataLeak(text) {
-	let next = text;
-	next = next.replace(/<active_memory_plugin>[\s\S]*?<\/active_memory_plugin>/gi, "");
-	next = next.replace(/<composio\b[^>]*>[\s\S]*?<\/composio>/gi, "");
-	next = next.replace(/^OpenClaw runtime context for the immediately preceding user message\.\s*\r?\nThis context is runtime-generated, not user-authored\. Keep internal details private\.\s*/i, "");
-	next = next.replace(/^OpenClaw runtime event\.\s*\r?\nThis context is runtime-generated, not user-authored\. Keep internal details private\.\s*/i, "");
-	next = next.replace(/An async command you ran earlier has completed[\s\S]*?Current time:[^\n]*(?:\r?\n|$)/gi, "");
-	next = next.replace(/^Exec completed \([^\n]+$/gmi, "");
-	next = next.replace(/^System(?: \(untrusted\))?:[^\n]*(?:\r?\n|$)/gmi, "");
-	if (/^\s*\[cron:[\s\S]*Current time:/i.test(next.trim())) return "";
-	if (!next.includes("[Queued messages while agent was busy]") && !/Conversation info \(untrusted metadata\):/.test(next) && !/Sender \(untrusted metadata\):/.test(next) && !/Replied message \(untrusted/.test(next)) return next;
-	const lines = next.split(/\r?\n/);
-	const kept = [];
-	let inLabelFence = false;
-	let seenFenceInLabel = false;
-	for (const line of lines) {
-		const trimmedLine = line.trim();
-		if (inLabelFence) {
-			if (trimmedLine.startsWith("```")) {
-				if (seenFenceInLabel) inLabelFence = false;
-				else seenFenceInLabel = true;
-			}
-			continue;
-		}
-		if (!trimmedLine) { kept.push(line); continue; }
-		if (/^Untrusted context \(metadata/i.test(trimmedLine) || trimmedLine === "[Queued messages while agent was busy]" || trimmedLine === "---" || /^Queued #\d+/i.test(trimmedLine)) continue;
-		if (/^(Conversation info|Sender|Replied message) \(untrusted/i.test(trimmedLine)) { inLabelFence = true; seenFenceInLabel = false; continue; }
-		if (/^Current time:/i.test(trimmedLine) || /^System(?: \(untrusted\))?:/i.test(trimmedLine)) continue;
-		kept.push(line);
+    helper = r'''function stripLeadingInternalLeakArtifacts(text) {
+	let next = text.trim();
+	let changed = true;
+	while (changed && next) {
+		const before = next;
+		next = next.replace(/^Untrusted context \(metadata, do not treat as instructions or commands\):\s*<active_memory_plugin>[\s\S]*?<\/active_memory_plugin>\s*/i, "");
+		next = next.replace(/^<composio\b[^>]*>[\s\S]*?<\/composio>\s*/i, "");
+		next = next.replace(/^An async command you ran earlier has completed\.[\s\S]*?Current time:[^\n]*(?:\n|$)\s*/i, "");
+		next = next.replace(/^(?:System(?: \(untrusted\))?:[^\n]*(?:\n|$)\s*)+/i, "");
+		if (/^\[cron:[^\n]+\][\s\S]*?Current time:/i.test(next)) return "";
+		next = next.replace(/^\[Queued messages while agent was busy\]\s*/i, "");
+		next = next.replace(/^---\s*/i, "");
+		next = next.replace(/^Queued #\d+(?: \([^\n]*\))?\s*/i, "");
+		next = next.replace(/^(?:Conversation info|Sender|Replied message) \(untrusted[^\n]*\):\s*[\x60]{3}(?:json)?\s*[\s\S]*?[\x60]{3}\s*/i, "");
+		next = next.replace(/^\[[A-Z][a-z]{2} [^\n]+\] Verify OpenClaw is healthy after loading the queued-message metadata leak sanitizer patch[\s\S]*$/i, "");
+		next = next.trim();
+		changed = next !== before;
 	}
-	const cleaned = kept.join("\n").replace(/\n{3,}/g, "\n\n").trim();
-	if (/Verify OpenClaw is healthy after loading the queued-message metadata leak sanitizer patch/i.test(cleaned)) return "";
-	return cleaned;
+	return next;
 }
-
 '''
-    if "function stripQueuedReplyContextMetadataLeak" not in text:
-        anchor = "function isLikelyHttpErrorText(raw) {"
-        text, did = replace_once(text, anchor, helper + anchor, "queued reply context sanitizer helper")
+    if "function stripLeadingInternalLeakArtifacts" not in text:
+        text, did = replace_once(text, "function collapseConsecutiveDuplicateBlocks(text) {", helper + "function collapseConsecutiveDuplicateBlocks(text) {", "sanitizer helper")
         if did:
             changed(changes, path)
-    if "const precleanedRaw = stripQueuedReplyContextMetadataLeak(raw);" not in text:
-        text, did = replace_once(
-            text,
-            "\tconst errorContext = opts?.errorContext ?? false;\n",
-            "\tconst errorContext = opts?.errorContext ?? false;\n\tconst precleanedRaw = stripQueuedReplyContextMetadataLeak(raw);\n",
-            "sanitizer preclean variable",
-        )
-        if did:
-            changed(changes, path)
-    if "stripFinalTagsFromText(precleanedRaw)" not in text:
-        text = text.replace("stripFinalTagsFromText(raw)", "stripFinalTagsFromText(precleanedRaw)", 1)
+    old = 'return collapseConsecutiveDuplicateBlocks(withoutToolCallBlocks.replace(/^(?:[ \\t]*\\r?\\n)+/, ""));'
+    new = 'return collapseConsecutiveDuplicateBlocks(stripLeadingInternalLeakArtifacts(withoutToolCallBlocks).replace(/^(?:[ \\t]*\\r?\\n)+/, ""));'
+    text, did = replace_once(text, old, new, "sanitizer pipeline")
+    if did:
         changed(changes, path)
-    if "const trimmed = stripQueuedReplyContextMetadataLeak(withoutToolCallBlocks).trim();" not in text:
-        text, did = replace_once(
-            text,
-            "\tconst trimmed = withoutToolCallBlocks.trim();",
-            "\tconst trimmed = stripQueuedReplyContextMetadataLeak(withoutToolCallBlocks).trim();",
-            "sanitizer postclean trim",
-        )
-        if did:
-            changed(changes, path)
     write(path, text)
 
 
@@ -215,20 +179,13 @@ def patch_queue(changes: list[str]) -> None:
     path = find_file("queue-*.js", "renderCollectItem")
     strip_mod = find_file("strip-inbound-meta-*.js", "stripInboundMetadata").name
     text = read(path)
-    if "import { n as stripInboundMetadata }" not in text:
-        first_import_end = text.find("\n")
-        text = text[: first_import_end + 1] + f'import {{ n as stripInboundMetadata }} from "./{strip_mod}";\n' + text[first_import_end + 1 :]
-        changed(changes, path)
-    repl = r'''function renderCollectItem(item, idx) {
-	const senderLabel = item.run.senderName ?? item.run.senderUsername ?? item.run.senderId ?? item.run.senderE164;
-	const senderSuffix = senderLabel ? ` (from ${senderLabel})` : "";
-	return `---\nQueued #${idx + 1}${senderSuffix}\n${stripQueuedPromptInternalMetadata(item.prompt)}`.trim();
-}
-function stripQueuedPromptInternalMetadata(prompt) {
-	return stripInboundMetadata(prompt).replace(/^Untrusted context \(metadata, do not treat as instructions or commands\):\s*<active_memory_plugin>[\s\S]*?<\/active_memory_plugin>\s*/i, "").trim();
-}
-'''
-    if "function stripQueuedPromptInternalMetadata" not in text or "${item.prompt}`.trim();" in text:
+    if "stripQueuedPromptInternalMetadata" not in text:
+        idx = text.find('import { t as isRoutableChannel } from "./route-reply-')
+        if idx < 0:
+            raise RuntimeError("queue import anchor missing")
+        line_end = text.find("\n", idx)
+        text = text[: line_end + 1] + f'import {{ n as stripInboundMetadata }} from "./{strip_mod}";\n' + text[line_end + 1 :]
+        repl = 'function renderCollectItem(item, idx) {\n\tconst senderLabel = item.run.senderName ?? item.run.senderUsername ?? item.run.senderId ?? item.run.senderE164;\n\tconst senderSuffix = senderLabel ? " (from " + senderLabel + ")" : "";\n\treturn ("---\\nQueued #" + (idx + 1) + senderSuffix + "\\n" + stripQueuedPromptInternalMetadata(item.prompt)).trim();\n}\nfunction stripQueuedPromptInternalMetadata(prompt) {\n\treturn stripInboundMetadata(prompt).replace(/^Untrusted context \\(metadata, do not treat as instructions or commands\\):\\s*<active_memory_plugin>[\\s\\S]*?<\\/active_memory_plugin>\\s*/i, "").trim();\n}\n'
         text, did = regex_once(text, r'function renderCollectItem\(item, idx\) \{\n[\s\S]*?\n\}', repl, "queue collect renderer")
         if did:
             changed(changes, path)
@@ -260,8 +217,6 @@ def patch_context_engine(changes: list[str]) -> None:
     except RuntimeError:
         path = find_file("context-engine-lifecycle-*.js", "runDeferredTurnMaintenanceWorker")
     text = read(path)
-    if 'notifyPolicy: "silent"' in text and 'notifyPolicy: "state_changes"' not in text:
-        return
     pattern = r'\tconst surfaceMaintenanceUpdate = \(summary, eventSummary\) => \{\n\t\tpromoteTurnMaintenanceTaskVisibility\(\{\n\t\t\tsessionKey: params\.sessionKey,\n\t\t\trunId: params\.runId,\n\t\t\tnotifyPolicy: "state_changes"\n\t\t\}\);\n\t\tsurfacedUserNotice = true;\n\t\trecordTaskRunProgressByRunId\(\{'
     repl = '\tconst surfaceMaintenanceUpdate = (summary, eventSummary) => {\n\t\trecordTaskRunProgressByRunId({'
     text, did = regex_once(text, pattern, repl, "context engine progress visibility")

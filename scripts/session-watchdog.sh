@@ -7,7 +7,7 @@
 set -euo pipefail
 
 MAX_SIZE_MB="${SESSION_WATCHDOG_MAX_SIZE_MB:-3}"
-SESSION_DIRS_RAW="${SESSION_WATCHDOG_DIRS:-/root/.openclaw/agents/main/sessions:/root/.openclaw/agents/hr/sessions:/root/.openclaw/agents/cto/sessions:/root/.openclaw/agents/cmo/sessions}"
+SESSION_DIRS_RAW="${SESSION_WATCHDOG_DIRS:-/root/.openclaw/agents/main/sessions:/root/.openclaw/agents/hr/sessions:/root/.openclaw/agents/cto/sessions:/root/.openclaw/agents/cmo/sessions:/root/.openclaw/agents/jobzoom/sessions}"
 IFS=':' read -r -a SESSION_DIRS <<< "$SESSION_DIRS_RAW"
 LOG="${SESSION_WATCHDOG_LOG:-/root/.openclaw/workspace/logs/session-watchdog.log}"
 ARCHIVE_DIR="${SESSION_WATCHDOG_ARCHIVE_DIR:-/root/.openclaw/workspace/logs/session-archives}"

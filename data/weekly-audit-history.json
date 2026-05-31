@@ -79,7 +79,15 @@
       "critical": 1,
       "warnings": 5,
       "infos": 34
+    },
+    {
+      "date": "2026-05-31",
+      "score": 85,
+      "grade": "B",
+      "critical": 0,
+      "warnings": 1,
+      "infos": 39
     }
   ],
-  "updated": "2026-05-27T20:09:48.025644+02:00"
+  "updated": "2026-05-31T11:17:57.067447+03:00"
 }

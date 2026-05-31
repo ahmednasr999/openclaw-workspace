@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-31T06:08:20.716196+03:00",
+  "timestamp": "2026-05-31T19:08:25.867245+03:00",
   "total_crons": 54,
   "system_crons": 21,
   "openclaw_crons": 33,
@@ -219,8 +219,8 @@
       }
     },
     {
-      "name": "NASR Doctor (Daily)",
-      "schedule": "cron 0 7 * * * @ Africa/Cairo",
+      "name": "Email Agent (Sun-Thu)",
+      "schedule": "cron 0 8,12,16,20 * * 0-4 @ Africa/Cairo",
       "type": "openclaw",
       "last_status": {
         "status": "\u26a0\ufe0f Unknown",
@@ -229,8 +229,88 @@
       }
     },
     {
-      "name": "weekly-memory-hygiene",
-      "schedule": "cron 0 7 * * 0 @ Africa/Cairo",
+      "name": "Auto Lessons Learned - Daily Capture",
+      "schedule": "cron 45 23 * * * @ Africa/Cairo",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "OpenClaw Health Guard",
+      "schedule": "cron 0 */6 * * * @ Africa/Cairo",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "LCM Nightly Health Check",
+      "schedule": "cron 35 2 * * * @ Africa/Cairo",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "session-watchdog",
+      "schedule": "cron 55 2 * * * @ Africa/Cairo",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "Daily OpenClaw Backup",
+      "schedule": "cron 15 3 * * * @ Africa/Cairo",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "LCM Force-Compact Processor",
+      "schedule": "cron 30 3 * * * @ Africa/Cairo",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "Daily Intel Sweep",
+      "schedule": "cron 5 4 * * * @ Africa/Cairo",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "Calendar Pre-fetch",
+      "schedule": "cron 55 4 * * * @ Africa/Cairo",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "NASR Doctor (Daily)",
+      "schedule": "cron 0 7 * * * @ Africa/Cairo",
       "type": "openclaw",
       "last_status": {
         "status": "\u26a0\ufe0f Unknown",
@@ -259,8 +339,118 @@
       }
     },
     {
-      "name": "Email Agent (Sun-Thu)",
-      "schedule": "cron 0 8,12,16,20 * * 0-4 @ Africa/Cairo",
+      "name": "CMO Daily LinkedIn Autoposter",
+      "schedule": "cron 10 9 * * 1-4 @ Asia/Dubai",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "CMO Publishing Watchdog",
+      "schedule": "cron 0 10-18 * * 1-4 @ Asia/Dubai",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "CMO LinkedIn Comment Radar - 11am",
+      "schedule": "cron 0 11 * * * @ Africa/Cairo",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "LCM Midday Compaction Sweep",
+      "schedule": "cron 0 14 * * * @ Africa/Cairo",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "CMO LinkedIn Comment Radar - 3pm",
+      "schedule": "cron 0 15 * * * @ Africa/Cairo",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "Email Agent (Fri-Sat)",
+      "schedule": "cron 0 9,15,21 * * 5,6 @ Africa/Cairo",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "RSS Intelligence - Weekly Crawl",
+      "schedule": "cron 0 13 * * 5 @ Africa/Cairo",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "CMO Weekly Content Report",
+      "schedule": "cron 0 17 * * 5 @ Africa/Cairo",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "Final GPT-5.5 Pro 20x vs 5x recommendation",
+      "schedule": "at 2026-06-05T17:00:00.000Z",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "Stop GPT-5.5 quota tracker after final recommendation",
+      "schedule": "at 2026-06-05T17:30:00.000Z",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "Weekly Skill Autoresearch",
+      "schedule": "cron 0 10 * * 6 @ Africa/Cairo",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "weekly-memory-hygiene",
+      "schedule": "cron 0 7 * * 0 @ Africa/Cairo",
       "type": "openclaw",
       "last_status": {
         "status": "\u26a0\ufe0f Unknown",
@@ -349,198 +539,8 @@
       }
     },
     {
-      "name": "CMO LinkedIn Comment Radar - 11am",
-      "schedule": "cron 0 11 * * * @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "OpenClaw Health Guard",
-      "schedule": "cron 0 */6 * * * @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "LCM Midday Compaction Sweep",
-      "schedule": "cron 0 14 * * * @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "CMO LinkedIn Comment Radar - 3pm",
-      "schedule": "cron 0 15 * * * @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
       "name": "CMO Weekly Drafting",
       "schedule": "cron 0 18 * * 0 @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "Auto Lessons Learned - Daily Capture",
-      "schedule": "cron 45 23 * * * @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "LCM Nightly Health Check",
-      "schedule": "cron 35 2 * * * @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "session-watchdog",
-      "schedule": "cron 55 2 * * * @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "Daily OpenClaw Backup",
-      "schedule": "cron 15 3 * * * @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "LCM Force-Compact Processor",
-      "schedule": "cron 30 3 * * * @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "Daily Intel Sweep",
-      "schedule": "cron 5 4 * * * @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "Calendar Pre-fetch",
-      "schedule": "cron 55 4 * * * @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "CMO Daily LinkedIn Autoposter",
-      "schedule": "cron 10 9 * * 1-4 @ Asia/Dubai",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "CMO Publishing Watchdog",
-      "schedule": "cron 0 10-18 * * 1-4 @ Asia/Dubai",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "Email Agent (Fri-Sat)",
-      "schedule": "cron 0 9,15,21 * * 5,6 @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "RSS Intelligence - Weekly Crawl",
-      "schedule": "cron 0 13 * * 5 @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "CMO Weekly Content Report",
-      "schedule": "cron 0 17 * * 5 @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "Final GPT-5.5 Pro 20x vs 5x recommendation",
-      "schedule": "at 2026-06-05T17:00:00.000Z",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "Stop GPT-5.5 quota tracker after final recommendation",
-      "schedule": "at 2026-06-05T17:30:00.000Z",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "Weekly Skill Autoresearch",
-      "schedule": "cron 0 10 * * 6 @ Africa/Cairo",
       "type": "openclaw",
       "last_status": {
         "status": "\u26a0\ufe0f Unknown",

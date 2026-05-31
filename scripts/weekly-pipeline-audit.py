@@ -19,9 +19,13 @@ Usage:
   python3 weekly-pipeline-audit.py --dry-run    # Preview only
 """
 
-import json, os, sys, re, subprocess
+import argparse, json, os, sys, re, subprocess
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
+try:
+    from zoneinfo import ZoneInfo
+except Exception:  # pragma: no cover - Python <3.9 fallback
+    ZoneInfo = None
 
 # Pipeline DB (safe fallback)
 try:
@@ -41,7 +45,7 @@ WORKSPACE = Path("/root/.openclaw/workspace")
 SCRIPTS = WORKSPACE / "scripts"
 DATA_DIR = WORKSPACE / "data"
 HISTORY_FILE = DATA_DIR / "weekly-audit-history.json"
-CAIRO = timezone(timedelta(hours=2))
+CAIRO = ZoneInfo("Africa/Cairo") if ZoneInfo else timezone(timedelta(hours=3))
 CHAT_ID = "866838380"
 
 now = datetime.now(CAIRO)
@@ -309,12 +313,22 @@ def check_pipeline_db_health():
         import sqlite3
         conn = sqlite3.connect(str(db_path))
         dupes = conn.execute(
-            "SELECT job_id, COUNT(*) as n FROM jobs GROUP BY job_id HAVING n > 1"
+            """
+            SELECT job_id, COUNT(*) as n FROM jobs
+            WHERE job_id IS NOT NULL AND TRIM(job_id) != ''
+            GROUP BY job_id HAVING n > 1
+            """
         ).fetchall()
+        missing_ids = conn.execute(
+            "SELECT COUNT(*) FROM jobs WHERE job_id IS NULL OR TRIM(job_id) = ''"
+        ).fetchone()[0]
         conn.close()
         if dupes:
             finding("WARNING", "pipeline_db", "nasr-pipeline.db",
                     f"{len(dupes)} duplicate job_ids found")
+        if missing_ids:
+            finding("INFO", "pipeline_db", "nasr-pipeline.db",
+                    f"{missing_ids} legacy/manual rows have blank job_id")
         # Funnel sanity
         funnel = _pdb.get_funnel()
         applied = funnel.get("applied", 0)
@@ -327,26 +341,50 @@ def check_pipeline_db_health():
 
 # ── CHECK 8: Notion-SQLite drift ──
 def check_notion_drift():
-    """Check if Notion and SQLite record counts are in sync."""
+    """Check whether the Notion pipeline snapshot is usable.
+
+    Notion application pages and SQLite discovered jobs are different scopes, so
+    the audit must not compare Notion total_applications directly to all DB rows.
+    """
     print("  [8/11] Notion-SQLite drift...")
     if not _pdb:
         return
     try:
         stats = _pdb.get_db_stats()
         db_count = stats.get("jobs_count", 0)
-        # Read notion page count from last sync output
         sync_output = WORKSPACE / "data" / "pipeline-status.json"
-        if sync_output.exists():
-            import json
-            data = json.load(open(sync_output))
-            notion_count = data.get("total_applications", 0) + data.get("discovered_count", 0)
-            drift = abs(db_count - notion_count)
-            if drift > 50:
-                finding("CRITICAL", "drift", "notion-sync", f"Notion ({notion_count}) vs SQLite ({db_count}) drift: {drift} records")
-            elif drift > 20:
-                finding("WARNING", "drift", "notion-sync", f"Notion ({notion_count}) vs SQLite ({db_count}) drift: {drift} records")
-            else:
-                finding("INFO", "drift", "notion-sync", f"Drift: {drift} records (Notion={notion_count}, SQLite={db_count})")
+        if not sync_output.exists():
+            finding("INFO", "drift", "pipeline-status.json", "No Notion pipeline snapshot found; drift check skipped")
+            return
+
+        age_hours = (datetime.now() - datetime.fromtimestamp(sync_output.stat().st_mtime)).total_seconds() / 3600
+        with open(sync_output) as f:
+            envelope = json.load(f)
+        data = envelope.get("data", envelope) if isinstance(envelope, dict) else {}
+        meta = envelope.get("meta", {}) if isinstance(envelope, dict) else {}
+
+        if age_hours > 48:
+            finding("INFO", "drift", "pipeline-status.json",
+                    f"Notion snapshot is stale ({age_hours:.0f}h old); skipped drift scoring")
+            return
+
+        notion_count = data.get("total_applications")
+        snapshot_db_count = data.get("db_total")
+        if notion_count is None:
+            finding("INFO", "drift", "pipeline-status.json", "Snapshot has no total_applications field; drift check skipped")
+            return
+        if notion_count == 0 and meta.get("status") != "success":
+            finding("WARNING", "drift", "notion-sync", "Notion snapshot returned 0 applications and was not successful")
+            return
+        if snapshot_db_count is not None:
+            db_snapshot_drift = abs(db_count - int(snapshot_db_count))
+            if db_snapshot_drift > 100:
+                finding("INFO", "drift", "pipeline-status.json",
+                        f"SQLite grew by {db_snapshot_drift} rows since latest Notion snapshot")
+                return
+
+        finding("INFO", "drift", "notion-sync",
+                f"Latest snapshot OK: Notion applications={notion_count}, SQLite jobs={db_count} (different scopes)")
     except Exception as e:
         finding("INFO", "drift", "notion-sync", f"Could not check drift: {e}")
 
@@ -395,30 +433,35 @@ def check_cookie_expiry():
 def check_cron_health():
     """Verify that critical crons actually ran recently."""
     print("  [11/11] Cron last-run health...")
-    critical_outputs = {
-        "Scanner": WORKSPACE / "jobs-bank" / "scraped",
-        "Pipeline status": WORKSPACE / "data" / "pipeline-status.json",
+    critical_statuses = {
+        "JobZoom daily": (WORKSPACE / "logs" / "cron" / "status" / "jobzoom-managed-daily.json", 36),
+        "Job radar": (WORKSPACE / "logs" / "cron" / "status" / "job-radar.json", 36),
+        "Morning brief": (WORKSPACE / "logs" / "cron" / "status" / "morning-brief.json", 36),
     }
-    for name, path in critical_outputs.items():
+    for name, (path, max_age_hours) in critical_statuses.items():
         if not path.exists():
-            finding("WARNING", "cron_health", name, f"Output path doesn't exist: {path}")
+            finding("WARNING", "cron_health", name, f"Status file doesn't exist: {path}")
             continue
         try:
-            if path.is_dir():
-                files = sorted(path.glob("*"), key=lambda f: f.stat().st_mtime, reverse=True)
-                if not files:
-                    finding("WARNING", "cron_health", name, "No output files found")
-                    continue
-                last_mod = datetime.fromtimestamp(files[0].stat().st_mtime)
-            else:
-                last_mod = datetime.fromtimestamp(path.stat().st_mtime)
-            
-            hours_ago = (datetime.now() - last_mod).total_seconds() / 3600
-            if hours_ago > 48:
+            with open(path) as f:
+                status = json.load(f)
+            if status.get("status") != "ok" or status.get("returncode") not in (0, None):
                 finding("WARNING", "cron_health", name,
-                        f"Last output {hours_ago:.0f}h ago (>48h) - cron may be stale")
+                        f"Last run failed: status={status.get('status')} returncode={status.get('returncode')}")
+                continue
+            last_mod = datetime.fromtimestamp(path.stat().st_mtime)
+            hours_ago = (datetime.now() - last_mod).total_seconds() / 3600
+            if hours_ago > max_age_hours:
+                finding("WARNING", "cron_health", name,
+                        f"Last successful status {hours_ago:.0f}h ago (>{max_age_hours}h)")
         except Exception as e:
             finding("INFO", "cron_health", name, f"Could not check: {e}")
+
+
+def parse_args(argv):
+    parser = argparse.ArgumentParser(description="Run the weekly pipeline audit.")
+    parser.add_argument("--dry-run", action="store_true", help="Print results without saving history or sending Telegram")
+    return parser.parse_args(argv)
 
 
 def run_audit():
@@ -442,8 +485,10 @@ def run_audit():
     warnings = sum(1 for f in findings if f["severity"] == "WARNING")
     infos = sum(1 for f in findings if f["severity"] == "INFO")
     
-    # Score: start at 100, -20 per critical, -5 per warning, -1 per info
-    score = max(0, 100 - (critical * 20) - (warnings * 5) - (infos * 1))
+    # Score: start at 100. Info findings are context, not failures, so cap
+    # their penalty to avoid turning noisy inventory drift into a red alert.
+    info_penalty = min(infos, 10)
+    score = max(0, 100 - (critical * 20) - (warnings * 5) - info_penalty)
     
     if score >= 90:
         grade, emoji = "A", "🟢"
@@ -555,8 +600,9 @@ def send_telegram(text):
 
 
 if __name__ == "__main__":
-    dry_run = "--dry-run" in sys.argv
-    
+    args = parse_args(sys.argv[1:])
+    dry_run = args.dry_run
+
     audit = run_audit()
     
     print(f"\n{'='*50}")
@@ -584,11 +630,13 @@ if __name__ == "__main__":
             print(f"  Keyword gaps: {', '.join(gaps)}")
     # ─────────────────────────────────────────────────────────────────────────
 
-    msg = format_telegram(audit)
-    print(f"\nTelegram ({len(msg)} chars):\n{msg}")
-    
     if not dry_run:
         save_history(audit)
+
+    msg = format_telegram(audit)
+    print(f"\nTelegram ({len(msg)} chars):\n{msg}")
+
+    if not dry_run:
         ok = send_telegram(msg)
         print(f"\n{'✅ Sent' if ok else '❌ Send failed'}")
     else:

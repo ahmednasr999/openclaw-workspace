@@ -1,68 +1,68 @@
 {
-  "generated_at": "2026-05-28T23:53:38.051128+03:00",
-  "history_items": 10049,
-  "actionable_items": 587,
-  "noise_items": 9462,
+  "generated_at": "2026-05-31T08:10:23.807984+03:00",
+  "history_items": 10301,
+  "actionable_items": 595,
+  "noise_items": 9706,
   "top_noise_senders": [
     [
       "info@host.discountwalas.com",
-      1285
+      1323
     ],
     [
       "notifications@github.com",
-      802
+      810
     ],
     [
       "no-reply@mail.therumble.app",
-      264
+      266
     ],
     [
       "newsletter@em.discountwalas.com",
-      237
+      245
     ],
     [
       "me@juliangoldie.com",
-      189
+      192
     ],
     [
       "noreply@skool.com",
-      152
+      157
     ],
     [
       "newsletters@arabianbusiness.com",
-      143
+      147
     ],
     [
       "thebusinessengineer@substack.com",
-      123
+      125
     ],
     [
       "hello@moby.co",
-      115
+      119
     ],
     [
       "temu@commerce.temuemail.com",
-      106
+      109
     ],
     [
       "newsletters@mail.theankler.com",
-      99
+      106
+    ],
+    [
+      "hello@mail.trade-ideas.com",
+      92
     ],
     [
       "recruitment.notify@oia.gov.om",
       92
     ],
     [
-      "hello@mail.trade-ideas.com",
-      90
-    ],
-    [
       "team@bankless.com",
-      82
+      85
     ],
     [
       "editor@newsletter.thepaypers.com",
-      71
+      73
     ]
   ],
   "top_repeated_subjects": [
@@ -72,11 +72,11 @@
     ],
     [
       "=?utf-8?b?v0igrgfpbhkgtwfya2v0iejyawvmicygvhjhzgluzybpchbvcnr1?=\r\n =?utf-8?b?bml0awvziokyl",
-      50
+      51
     ],
     [
       "new pmo jobs",
-      39
+      42
     ],
     [
       "=?utf-8?b?2kfyrtixinin2lxyr9in2lhyp9iqiniq2ylyp9ix2yryssdyqnit2yjyqw==?=\r\n =?utf-8?b?inmf2",
@@ -91,15 +91,19 @@
       18
     ],
     [
+      "ahmed, hot job opportunities waiting for you",
+      15
+    ],
+    [
       "now only egp5.63!",
       14
     ],
     [
-      "ahmed, hot job opportunities waiting for you",
-      14
+      "you've succeeded!",
+      12
     ],
     [
-      "you've succeeded!",
+      "=?utf-8?b?ww91ciblegvjdxrpdmugcg1vihjvbgugbg9va3mgz3jlyxqg4ocu?=\r\n\t=?utf-8?b?igp1c3qgy29uz",
       11
     ],
     [
@@ -120,10 +124,6 @@
     ],
     [
       "3 pending contact requests, 9+ current contact suggestions and other\r\n updates",
-      10
-    ],
-    [
-      "re: [voltagent/awesome-openclaw-skills] add skill:\r\n morrow-compression-monitor (pr #357)",
       10
     ]
   ],
