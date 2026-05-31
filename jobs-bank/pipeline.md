@@ -148,6 +148,20 @@
 | 257 | 🆕 | Live Connections | Head of Technical Department | Dubai | — | 🆕 Discovered | Radar | 2026-05-30 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4419007826) | — |
 | 258 | 🆕 | 1inch | Head of DevOps | Dubai | — | 🆕 Discovered | Radar | 2026-05-30 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4415293617) | — |
 | 259 | 🆕 | Emirates Electrical Engineering LLC | Head of Engineering | Dubai | — | 🆕 Discovered | Radar | 2026-05-30 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4409415956) | — |
+| 260 | 🆕 | Lenovo | Director, R&D Site Lead (Saudi National) | GCC | — | 🆕 Discovered | Radar | 2026-05-31 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4401436477) | — |
+| 261 | 🆕 | Riyadh Air | طيران الرياض | Director AI and Data Value | GCC | — | 🆕 Discovered | Radar | 2026-05-31 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4398789671) | — |
+| 262 | 🆕 | DataRobot | Senior Engagement Director | GCC | — | 🆕 Discovered | Radar | 2026-05-31 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4416862112) | — |
+| 263 | 🆕 | Confidential Government | Head of Fintech Innovation – Digital Banking Platforms | Riyadh | — | 🆕 Discovered | Radar | 2026-05-31 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4413064072) | — |
+| 264 | 🆕 | Strategic Office for Developing Al Baha Region | المكتب الاستراتيجي لتطوير منطقة الباحة | Director of Information Technology | Al Bahah | — | 🆕 Discovered | Radar | 2026-05-31 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4414869581) | — |
+| 265 | 🆕 | Dreamera Group | Vice President of Products | Jeddah | — | 🆕 Discovered | Radar | 2026-05-31 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4414871361) | — |
+| 266 | 🆕 | AlixPartners | Digital Consulting Director | Riyadh | — | 🆕 Discovered | Radar | 2026-05-31 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4363124950) | — |
+| 267 | 🆕 | Michael Page | Senior Director- Information Technology | Riyadh | — | 🆕 Discovered | Radar | 2026-05-31 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4417032994) | — |
+| 268 | 🆕 | Quotacom | Group Director - Data Science, Insight & Analytics | Dubai | — | 🆕 Discovered | Radar | 2026-05-31 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4417949005) | — |
+| 269 | 🆕 | Easygenerator | Head of Demand Generation | Dubai | — | 🆕 Discovered | Radar | 2026-05-31 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4380546837) | — |
+| 270 | 🆕 | Hologic, Inc. | Director, Quality Assurance APAC | Dubai | — | 🆕 Discovered | Radar | 2026-05-31 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4391609264) | — |
+| 271 | 🆕 | Emerging Travel Group | Head of Payments | Dubai | — | 🆕 Discovered | Radar | 2026-05-31 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4421208413) | — |
+| 272 | 🆕 | Michael Page | Vice President - Treasury | Dubai | — | 🆕 Discovered | Radar | 2026-05-31 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4417469657) | — |
+
 
 
 

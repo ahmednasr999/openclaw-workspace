@@ -1100,3 +1100,33 @@ In cron/internal maintenance, try `apply_patch` first for file edits as usual, b
 - Recovery: Updated `scripts/model-guardian-check.py` to select a known model line from mixed output instead of trusting the tail line. Verified normal and `env -u OPENCLAW_HOOKS_TOKEN` runs return `ALL_OK` and `NO_ALERTS`.
 - Do differently: For CLI status probes, parse the expected structured/status line and tolerate unrelated config warnings on stderr when the underlying command exits cleanly.
 
+
+## 2026-05-30 - Cron Model Allowlist Moves Require Payload Audits
+
+- What happened: Active cron jobs kept using `openai/gpt-5.5` after the runtime allowlist moved to `openai-codex/gpt-5.5`, causing isolated cron preflight failures including NASR Doctor Daily.
+- Recovery: Backed up cron jobs, replaced stale payload model overrides, validated config, and confirmed no enabled cron payloads referenced models outside `agents.defaults.models`.
+- Do differently: After model allowlist or provider namespace changes, audit active cron job payload overrides as well as global defaults. Cron state may continue showing old failures until each affected job reruns successfully.
+
+## 2026-05-30 - LCM Backfills Need Secret Marker Guards and Local Fallback
+
+- What happened: The LCM stale coverage backfill read agent `models.json` directly and treated OpenClaw `secretref-managed` as a real OpenRouter key, producing a guaranteed 401 instead of a useful model-backed summary.
+- Recovery: Reject unresolved secret markers/env refs before calling the provider and fall back to local extractive summaries when a usable key is unavailable.
+- Do differently: For maintenance scripts that read config secrets outside the normal runtime resolver, explicitly distinguish real credentials from secret references before making network calls, and preserve a deterministic local fallback path.
+
+## 2026-05-30 - LCM WAL Hygiene Needs Truncate Verification
+
+- What happened: A passive WAL checkpoint left `/root/.openclaw/lcm.db-wal` at 41,241,232 bytes, so the health check still warned even though checkpointing had run.
+- Recovery: Ran `PRAGMA wal_checkpoint(TRUNCATE);`, verified WAL size returned to 0 and `PRAGMA quick_check` was ok, then updated nightly maintenance to truncate when passive checkpoint leaves WAL above 10MB.
+- Do differently: For SQLite health maintenance, verify the post-checkpoint WAL size. If passive checkpoint leaves a large WAL, run a truncate checkpoint and recheck database health.
+
+## 2026-05-30 - Cron Health Should Prefer Live Jobs State Over JSONL Tails
+
+- What happened: NASR Doctor reported stale cron warnings because it read append-only cron JSONL tails, while live jobs-state showed the current status more accurately.
+- Recovery: Doctor now prefers live jobs-state, treats first-run scheduled jobs as OK, and the LCM Nightly job runs deterministic health with explicit final confirmation.
+- Do differently: For cron health dashboards, use authoritative live job state for current status and treat append-only logs as historical evidence only. Require explicit final confirmation for jobs whose success would otherwise be ambiguous.
+
+## 2026-05-30 - Clear Completed LCM Compact Queues When Stats Say Remaining Zero
+
+- What happened: The LCM compact processor reported `remaining=0`, but `/tmp/lcm-compact-queue.json` still contained two items, creating stale queue noise after a successful processor run.
+- Recovery: Processed the existing queue, verified compacted=2/failed=0/remaining=0, cleared the stale file, and hardened the processor to auto-clear the queue when results report no remaining work.
+- Do differently: Queue processors should reconcile persisted queue files against result stats before reporting completion. If stats say no work remains, clear stale queue artifacts and verify the persisted queue length is zero.

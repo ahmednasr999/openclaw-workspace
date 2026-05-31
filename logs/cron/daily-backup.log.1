@@ -1,59 +1,17 @@
 
-[2026-05-29T20:00:01+03:00] START daily-backup: /root/.openclaw/workspace/scripts/daily-backup.sh
-[2026-05-29 20:00:03] Changes detected, committing...
-[2026-05-29 20:00:03] Committing: Auto-backup 2026-05-29_17:00
-[workspace-sync 3c5692d9] Auto-backup 2026-05-29_17:00
- 130 files changed, 13448 insertions(+), 7593 deletions(-)
- delete mode 100644 archives/config-old/ahmed-gmail-tokens.json
- create mode 100644 data/email-health.json
- create mode 100644 data/email-hygiene-report.json
- create mode 100644 data/email-pipeline-review.jsonl
- create mode 100644 docs/agent-governance/openclaw-agent-skill-matrix-2026-05-29.md
- create mode 100644 docs/architecture/openclaw-ecosystem-adoption-register-2026-05-29.md
- create mode 100644 docs/research/openclaw-crawler-pilots-2026-05-29.md
- create mode 100644 logs/cron/cron-dashboard-updater.log.1
- create mode 100644 logs/cron/cron-health-report.log.1
- create mode 100644 logs/cron/cron-watchdog-v3.log.1
- create mode 100644 logs/cron/cron-wrapper-test.log.1
- create mode 100644 logs/cron/daily-backup.log.1
- create mode 100644 logs/cron/direct-cron/disk-guard-20260529-070701.log
- create mode 100644 logs/cron/direct-cron/linkedin-comment-radar-1100-validate-20260529-164418.log
- create mode 100644 logs/cron/direct-cron/linkedin-comment-radar-1100-validate-20260529-164607.log
- create mode 100644 logs/cron/direct-cron/linkedin-comment-radar-1500-20260529-150001.log
- create mode 100644 logs/cron/direct-cron/linkedin-comment-radar-1500-20260529-150425.log
- create mode 100644 logs/cron/direct-cron/linkedin-comment-radar-1500-validate-20260528-000605.log.1
- create mode 100644 logs/cron/direct-cron/linkedin-comment-radar-1500-validate-20260528-000935.log.1
- create mode 100644 logs/cron/direct-cron/linkedin-comment-radar-1500-validate-20260528-001629.log.1
- create mode 100644 logs/cron/direct-cron/linkedin-comment-radar-1500-validate-20260528-002110.log.1
- create mode 100644 logs/cron/direct-cron/session-cleanup-20260529-030002.log
- create mode 100644 logs/cron/stale-context-maintenance.log.1
- rename logs/disk-guard/{cleanup-20260520-070712.log => cleanup-20260529-070701.log} (74%)
- create mode 100644 logs/gateway-systemd-handoff-20260528-2359.log
- create mode 100644 logs/session-archives/05b50af2-a929-4d4e-ac0c-69ff37e39efc-topic-7.trajectory.20260529T150227Z.jsonl.gz
- create mode 100644 logs/session-archives/21f4226b-78ef-423f-9c35-248ea8e99eec-topic-7.trajectory.20260529T150234Z.jsonl.gz
- create mode 100644 logs/session-archives/42cccd3d-b2a1-4c9a-a8b2-2d1061292a56.trajectory.20260529T150046Z.jsonl.gz
- delete mode 100644 logs/session-archives/50c87292-8d71-41bb-b940-44a2b21edcb8.trajectory.20260521T001053Z.jsonl.gz
- delete mode 100644 logs/session-archives/58856472-1cdf-4653-86e6-2fc5614c97ac.trajectory.20260521T001045Z.jsonl.gz
- create mode 100644 logs/session-archives/5a035449-b920-4743-9c62-0c9e8f39a5d0.trajectory.20260529T150134Z.jsonl.gz
- delete mode 100644 logs/session-archives/9a69c55b-2ebc-429d-b8e6-44a7b11a09de-topic-9.trajectory.20260521T001058Z.jsonl.gz
- create mode 100644 logs/session-archives/b2c8fcbb-5e52-460b-b77a-c0fabfc01413-topic-9.trajectory.20260529T150148Z.jsonl.gz
- create mode 100644 memory/2026-05-29-0120.md
- create mode 100644 memory/2026-05-29.md
- create mode 100644 scripts/check-openclaw-runtime-patches.py.bak-20260529-delivery-mirror-dedupe
- create mode 100644 scripts/check-openclaw-runtime-patches.py.bak-20260529-exec-followup-no-direct-leak
- create mode 100755 scripts/email-feedback.py
- create mode 100755 scripts/email-health-card.py
- create mode 100755 scripts/email-hygiene-report.py
- create mode 100755 scripts/email-synthetic-harness.py
- create mode 100755 scripts/gateway-lifecycle-audit.sh
- create mode 100755 scripts/gog-gmail-watch-safe.sh
- create mode 100755 scripts/model-guardian-check.py.bak-20260529-hooks-env-load
- create mode 100755 scripts/model-guardian-check.py.bak-20260529-hooks-warning-fix
- create mode 100755 scripts/model-guardian-run.py.bak-20260529-hooks-env-load
- create mode 100755 scripts/openclaw-gitcrawl-digest.py
- create mode 100644 scripts/openclaw-update-guard.py.bak-20260529-release-gates
- create mode 100644 scripts/openclaw-update-guard.py.bak-20260529-turn-latency-gate
- create mode 100755 scripts/reapply-openclaw-2026-5-18-runtime-patches.py.bak-20260529-083335
-[2026-05-29 20:00:18] Push attempt 1/3...
-[2026-05-29 20:00:27] SUCCESS: Pushed to origin workspace-sync
-[2026-05-29T20:00:27+03:00] END daily-backup: rc=0 duration=26s
+[2026-05-30T20:00:01+03:00] START daily-backup: /root/.openclaw/workspace/scripts/daily-backup.sh
+[2026-05-30 20:00:03] Changes detected, committing...
+[2026-05-30 20:00:03] Committing: Auto-backup 2026-05-30_17:00
+[workspace-sync 433c5e1f] Auto-backup 2026-05-30_17:00
+ 53 files changed, 3080 insertions(+), 177 deletions(-)
+ create mode 100644 intel/intel-2026-05-29.md
+ create mode 100644 intel/intel-2026-05-30.md
+ create mode 100644 logs/cron/direct-cron/disk-guard-20260530-070701.log
+ create mode 100644 logs/cron/direct-cron/linkedin-comment-radar-1100-20260530-110022.log
+ create mode 100644 logs/cron/direct-cron/linkedin-comment-radar-1500-20260530-150002.log
+ create mode 100644 media/inbound/4034ef90-c7eb-4a17-80b7-f067b66dc4ac.jpg
+ create mode 100755 scripts/push-to-nocodb.py.bak-nocodb-verdict-20260529-2008
+ create mode 100644 skills/cron/lcm-nightly/SKILL.md.bak-wal-20260530-002550
+[2026-05-30 20:00:10] Push attempt 1/3...
+[2026-05-30 20:00:15] SUCCESS: Pushed to origin workspace-sync
+[2026-05-30T20:00:15+03:00] END daily-backup: rc=0 duration=14s

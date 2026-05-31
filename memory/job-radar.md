@@ -1,6 +1,6 @@
-# Job Radar: 2026-05-30
+# Job Radar: 2026-05-31
 
-*Generated: 2026-05-30 06:00 UTC*
+*Generated: 2026-05-31 06:00 UTC*
 
 *Engine: JobSpy (LinkedIn, Indeed, Google Jobs)*
 
@@ -10,17 +10,93 @@
 
 ### Digital Transformation Executive (UAE)
 
-- **Implementation Director** at Visa 🎯
+No results found.
+
+### Digital Transformation Executive (Saudi)
+
+- **Director, R&D Site Lead (Saudi National)** at Lenovo 🎯
   📍  | 📅 2026-05-28
-  🔗 https://www.linkedin.com/jobs/view/4413110095
+  🔗 https://www.linkedin.com/jobs/view/4401436477
+
+- **Principal (Energy) | BCG Platinion** at Boston Consulting Group (BCG)
+  📍 Riyadh, Riyadh, Saudi Arabia | 📅 2026-05-27
+  🔗 https://www.linkedin.com/jobs/view/4409377620
+
+- **Director AI and Data Value** at Riyadh Air | طيران الرياض 🎯
+  📍  | 📅 2026-05-26
+  🔗 https://www.linkedin.com/jobs/view/4398789671
+
+- **Senior Engagement Director** at DataRobot 🎯
+  📍  | 📅 2026-05-26
+  🔗 https://www.linkedin.com/jobs/view/4416862112
+
+- **Head of Fintech Innovation – Digital Banking Platforms** at Confidential Government 🎯
+  📍 Riyadh, Saudi Arabia | 📅 2026-05-25
+  🔗 https://www.linkedin.com/jobs/view/4413064072
+
+- **Country Manager – Cloud Hyperscaler** at Confidential Government
+  📍 Riyadh, Saudi Arabia | 📅 2026-05-25
+  🔗 https://www.linkedin.com/jobs/view/4414897944
+
+- **Director of Information Technology** at Strategic Office for Developing Al Baha Region | المكتب الاستراتيجي لتطوير منطقة الباحة 🎯
+  📍 Al Bahah, Saudi Arabia | 📅 2026-05-24
+  🔗 https://www.linkedin.com/jobs/view/4414869581
+
+- **Vice President of Products** at Dreamera Group 🎯
+  📍 Jeddah, Makkah, Saudi Arabia | 📅 2026-05-24
+  🔗 https://www.linkedin.com/jobs/view/4414871361
+
+- **Digital Consulting Director** at AlixPartners 🎯
+  📍 Riyadh, Riyadh, Saudi Arabia | 📅 nan
+  🔗 https://www.linkedin.com/jobs/view/4363124950
+
+- **Senior Director- Information Technology** at Michael Page 🎯
+  📍 Riyadh, Riyadh, Saudi Arabia | 📅 nan
+  🔗 https://www.linkedin.com/jobs/view/4417032994
+
+*10 results (8 executive-level, 0 likely ghost jobs)*
+
+### Digital Transformation Executive (Qatar)
+
+No results found.
+
+### CTO / Head of Technology (GCC)
+
+No results found.
+
+### PMO / Program Director (GCC)
+
+No results found.
+
+### HealthTech / AI Executive (GCC)
+
+- **Group Director - Data Science, Insight & Analytics** at Quotacom 🎯
+  📍 Dubai, United Arab Emirates | 📅 2026-05-29
+  🔗 https://www.linkedin.com/jobs/view/4417949005
+
+- **Director of Learning, 2 Hour Learning (Remote) - $200,000/year USD** at Crossover 🎯
+  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-05-29
+  🔗 https://www.linkedin.com/jobs/view/4418577324
+
+- **Head of Demand Generation** at Easygenerator 🎯
+  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-05-29
+  🔗 https://www.linkedin.com/jobs/view/4380546837
+
+- **Director, Transformation Governance** at Chalhoub Group 🎯
+  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-05-29
+  🔗 https://www.linkedin.com/jobs/view/4409296743
+
+- **Head Of Curriculum, 2 Hour Learning (Remote) - $200,000/year USD** at Crossover 🎯
+  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-05-29
+  🔗 https://www.linkedin.com/jobs/view/4418571844
 
 - **Artificial Intelligence (AI) Business Partner – Shared Services** at WSP in the Middle East
   📍 Dubai, Dubai, United Arab Emirates | 📅 2026-05-28
   🔗 https://www.linkedin.com/jobs/view/4408885999
 
-- **Director - Enterprise Applications & Digital Platforms (m/f/d)** at Halian | Managed Services, Recruitment Agency & Contract Staffing 🎯
-  📍 Abu Dhabi Emirate, United Arab Emirates | 📅 2026-05-25
-  🔗 https://www.linkedin.com/jobs/view/4417896090
+- **Senior Director, Medical Education - Emerging Markets** at Smith+Nephew 🎯
+  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-05-27
+  🔗 https://www.linkedin.com/jobs/view/4409378702
 
 - **Head of Enterprise Transformation & Intelligent Automation** at RAKBANK 🎯
   📍 Dubai, United Arab Emirates | 📅 2026-05-25
@@ -30,119 +106,51 @@
   📍 Dubai, United Arab Emirates | 📅 2026-05-25
   🔗 https://www.linkedin.com/jobs/view/4415203470
 
-- **Head of Information Technology** at Staff Connect UAE 🎯
-  📍 Dubai, United Arab Emirates | 📅 2026-05-25
-  🔗 https://www.linkedin.com/jobs/view/4417876938
-
-- **Chief Technology Officer** at Course 🎯
-  📍 Abu Dhabi Emirate, United Arab Emirates | 📅 2026-05-23
-  🔗 https://www.linkedin.com/jobs/view/4414819292
-
-- **Global Head - SAP TRM** at Invenio Business Solutions
-  📍  | 📅 2026-05-23
-  🔗 https://www.linkedin.com/jobs/view/4418496333
-
-- **Director, Transformation Governance** at Chalhoub Group 🎯
+- **Director, Quality Assurance APAC** at Hologic, Inc. 🎯
   📍 Dubai, Dubai, United Arab Emirates | 📅 nan
-  🔗 https://www.linkedin.com/jobs/view/4409296743
+  🔗 https://www.linkedin.com/jobs/view/4391609264
 
-- **Director - Research and Development** at Inception 🎯
-  📍 Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates | 📅 nan
-  🔗 https://www.linkedin.com/jobs/view/4410488910
+*10 results (9 executive-level, 0 likely ghost jobs)*
 
-*10 results (8 executive-level, 0 likely ghost jobs)*
+### FinTech / Payments Executive (GCC)
 
-### Digital Transformation Executive (Saudi)
+- **Head of Payments** at Emerging Travel Group 🎯
+  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-05-29
+  🔗 https://www.linkedin.com/jobs/view/4421208413
 
-No results found.
+- **Payments - EMEA Innovation Economy Sales - Vice President - Dubai** at JPMorganChase 🎯
+  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-05-29
+  🔗 https://www.linkedin.com/jobs/view/4420676575
 
-### Digital Transformation Executive (Qatar)
+- **Vice President - Treasury** at Michael Page 🎯
+  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-05-29
+  🔗 https://www.linkedin.com/jobs/view/4417469657
 
-No results found.
-
-### CTO / Head of Technology (GCC)
-
-- **Head of IT, Fintech, Dubai** at Emerald Zebra Recruitment & Executive Search 🎯
+- **Head of Product and PMO, Fintech, Dubai** at Emerald Zebra Recruitment & Executive Search 🎯
   📍 Dubai, United Arab Emirates | 📅 2026-05-28
-  🔗 https://www.linkedin.com/jobs/view/4420239822
+  🔗 https://www.linkedin.com/jobs/view/4420253055
 
-- **Agentic AI Technical Lead** at Arcus Search
-  📍 Dubai, United Arab Emirates | 📅 2026-05-28
-  🔗 https://www.linkedin.com/jobs/view/4417641924
-
-- **Engineering Manager** at UMO
-  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-05-28
-  🔗 https://www.linkedin.com/jobs/view/4417616330
-
-- **Head of Technical Department** at Live Connections 🎯
-  📍 Dubai, United Arab Emirates | 📅 2026-05-28
-  🔗 https://www.linkedin.com/jobs/view/4419007826
-
-- **Sr. Principal Architect** at Hewlett Packard Enterprise
-  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-05-28
-  🔗 https://www.linkedin.com/jobs/view/4413090996
-
-- **Founding Full Stack AI Engineer** at Leru Partners
+- **Chief Operating Officer** at Warner Scott Recruitment 🎯
   📍 Dubai, United Arab Emirates | 📅 2026-05-27
-  🔗 https://www.linkedin.com/jobs/view/4418571544
-
-- **Head of DevOps** at 1inch 🎯
-  📍 Dubai, United Arab Emirates | 📅 2026-05-26
-  🔗 https://www.linkedin.com/jobs/view/4415293617
-
-- **Enterprise Architect - Hybrid Cloud & AI (Relocation to Dubai)** at SmartChoice International Limited
-  📍 Dubai, United Arab Emirates | 📅 2026-05-26
-  🔗 https://www.linkedin.com/jobs/view/4416805537
+  🔗 https://www.linkedin.com/jobs/view/4419847664
 
 - **Vice President, Product Management, Authentication Products, EEMEA** at Mastercard 🎯
   📍 Dubai, United Arab Emirates | 📅 2026-05-26
   🔗 https://www.linkedin.com/jobs/view/4407788724
 
-- **Head of Engineering** at Emirates Electrical Engineering LLC 🎯
-  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-05-23
-  🔗 https://www.linkedin.com/jobs/view/4409415956
+- **Senior Vice President, Client Service Executive, Global Payments & Trade (Dubai)** at BNY 🎯
+  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-05-26
+  🔗 https://www.linkedin.com/jobs/view/4419497125
 
-- **CTO (Crypto Mining)** at EMCD ⛔
+- **Chief Executive Officer, Multinational CFD/FX Platform** at Salient Group 🎯
+  📍 Dubai, United Arab Emirates | 📅 2026-05-25
+  🔗 https://www.linkedin.com/jobs/view/4416337563
+
+- **Head of Custody, Crypto - Dubai/London** at AP Executive - Global Executive Search Agency ⛔
   📍 Dubai, Dubai, United Arab Emirates | 📅 nan
-  🔗 https://www.linkedin.com/jobs/view/4422003919
+  🔗 https://www.linkedin.com/jobs/view/4369069006
 
-- **Senior Software Engineering Manager** at Dyson
-  📍 Dubai, Dubai, United Arab Emirates | 📅 nan
-  🔗 https://www.linkedin.com/jobs/view/4380785148
-
-*12 results (5 executive-level, 0 likely ghost jobs)*
-
-### PMO / Program Director (GCC)
-
-No results found.
-
-### HealthTech / AI Executive (GCC)
-
-No results found.
-
-### FinTech / Payments Executive (GCC)
-
-- **VP Head Of Partnerships** at TALENTMATE 🎯
-  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-05-27
-  🔗 https://www.linkedin.com/jobs/view/4419863771
-
-- **UAEN Only - VP Operational Emissions** at TALENTMATE 🎯
-  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-05-25
-  🔗 https://www.linkedin.com/jobs/view/4418699606
-
-- **Vice President Enterprise Governance Injaz Environment Social And Governance Environment Social Governance** at TALENTMATE 🎯
-  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-05-24
-  🔗 https://www.linkedin.com/jobs/view/4418687331
-
-- **Vice President Aladdin Client Engagement** at TALENTMATE 🎯
-  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-05-24
-  🔗 https://www.linkedin.com/jobs/view/4418660147
-
-- **Vice President, Aladdin Client Engagement** at BlackRock 🎯
-  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-05-23
-  🔗 https://www.linkedin.com/jobs/view/4418633387
-
-*5 results (5 executive-level, 0 likely ghost jobs)*
+*9 results (8 executive-level, 0 likely ghost jobs)*
 
 ### IT Director / VP IT (GCC)
 
@@ -152,9 +160,9 @@ No results found.
 
 ## Summary
 
-- Total unique jobs found: 27
-- Executive-level matches: 18
-- Already in pipeline: 8
-- **New jobs added to pipeline: 10**
+- Total unique jobs found: 29
+- Executive-level matches: 25
+- Already in pipeline: 12
+- **New jobs added to pipeline: 13**
 
 *Ghost job filter: Jobs >14 days old or with vague indicators (fast-paced, rockstar, ninja, wear many hats) are flagged.*

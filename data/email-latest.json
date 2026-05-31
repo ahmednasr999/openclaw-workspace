@@ -1,101 +1,37 @@
 {
   "status": "ok",
-  "scan_time": "2026-05-30T15:00:29.860744+03:00",
-  "total_scanned": 26,
+  "scan_time": "2026-05-30T21:00:40.642583+03:00",
+  "total_scanned": 29,
   "by_category": {
     "interview_invite": 0,
-    "recruiter_reach": 1,
+    "recruiter_reach": 0,
     "application_ack": 0,
     "rejection": 0,
     "assessment": 0,
     "follow_up_needed": 0,
     "job_alert": 0,
-    "other": 25
+    "other": 29
   },
   "interview_invites": [],
-  "recruiter_messages": [
-    {
-      "id": "359882",
-      "from": "talabat <notification@deliveryherogroup.com>",
-      "subject": "=?UTF-8?Q?Thank_you_for_your_appli?=\r\n =?UTF-8?Q?cation_with_=E2=80=8Btalabat=E2=80=8B_-_?=\r\n =?UTF-8?Q?Sr._Manager_Special_Projects_&_Performance_-_MENA?=",
-      "date": "Sat, 30 May 2026 09:21:46 +0000 (UTC)",
-      "unread": true,
-      "priority": "HIGH",
-      "score": 10,
-      "pipeline_match": "talabat",
-      "confidence": 75,
-      "confidence_label": "medium",
-      "evidence": [
-        "matched active pipeline company: talabat",
-        "hiring/application context",
-        "recruiter outreach classification",
-        "high priority score: 10"
-      ],
-      "why_actionable": "matched active pipeline company: talabat | hiring/application context | recruiter outreach classification | high priority score: 10"
-    }
-  ],
+  "recruiter_messages": [],
   "application_acks": [],
   "rejections": [],
   "assessments": [],
   "follow_ups_needed": [],
   "job_alerts": [],
-  "actionable_count": 1,
+  "actionable_count": 0,
   "hot_alerts": [],
-  "signals": [
-    {
-      "company": "talabat",
-      "signal": "recruiter_email",
-      "subject": "=?UTF-8?Q?Thank_you_for_your_appli?=\r\n =?UTF-8?Q?cation_with_=E2=80=8Btalabat=E2=80=8B_-_?=\r\n =?UTF-8?Q?Sr._Manager_Special_Projects_&_Performance_-_M",
-      "sender": "talabat <notification@deliveryherogroup.com>",
-      "job_ids": [
-        "linkedin_jobspy-li-4407693428",
-        "linkedin_jobspy-li-4416306146",
-        "linkedin-li-4415007377",
-        "linkedin_jobspy-li-4397262230",
-        "linkedin-li-4370418095",
-        "linkedin-li-4389537891",
-        "linkedin-li-4375708512"
-      ],
-      "score": 10,
-      "timestamp": "2026-05-30T15:00:29.689949+03:00"
-    }
-  ],
-  "pipeline_review_candidates": [
-    {
-      "timestamp": "2026-05-30T15:00:29.860768+03:00",
-      "review_type": "possible_recruiter_outreach",
-      "category": "recruiter_reach",
-      "email_id": "359882",
-      "subject": "=?UTF-8?Q?Thank_you_for_your_appli?=\r\n =?UTF-8?Q?cation_with_=E2=80=8Btalabat=E2=80=8B_-_?=\r\n =?UTF-8?Q?Sr._Manager_Special_Projects_&_Performance_-_MENA?=",
-      "from": "talabat <notification@deliveryherogroup.com>",
-      "priority": "HIGH",
-      "pipeline_match": "talabat",
-      "status": "needs_human_review"
-    }
-  ],
+  "signals": [],
   "llm_analysis": {
-    "actionable_emails": [
-      {
-        "id": "359882",
-        "subject": "Thank you for your application with talabat - Sr. Manager Special Projects & Performance - MENA",
-        "from": "talabat <notification@deliveryherogroup.com>",
-        "date": "Sat, 30 May 2026 09:21:46 +0000 (UTC)",
-        "category": "recruiter_reach",
-        "urgency": "low",
-        "intent": "The sender is acknowledging receipt of Ahmed's application and saying TA will reach out if shortlisted.",
-        "action": "read_and_file",
-        "response_deadline": "when convenient",
-        "notes": "Application acknowledgement only; no reply or prep needed."
-      }
-    ],
+    "actionable_emails": [],
     "summary": {
-      "total_actionable": 1,
+      "total_actionable": 0,
       "critical_count": 0,
       "requires_interview_prep": false,
       "requires_assessment": false,
       "recruiter_top_opportunities": [],
       "top_priority": null,
-      "daily_focus": "No immediate email action needed; monitor talabat while prioritizing higher-signal recruiter or interview emails."
+      "daily_focus": "No email action needed from this batch."
     }
   }
 }

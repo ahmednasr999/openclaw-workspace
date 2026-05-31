@@ -1,1 +1,25 @@
-{"generated_at":"2026-05-30T17:00:02Z","phases":{}}
+{
+  "generated_at": "2026-05-30T17:00:02Z",
+  "phases": {
+    "merge": {
+      "status": "OK",
+      "elapsed_s": 82,
+      "detail": ""
+    },
+    "enrich": {
+      "status": "OK",
+      "elapsed_s": 1,
+      "detail": ""
+    },
+    "review": {
+      "status": "OK",
+      "elapsed_s": 7,
+      "detail": ""
+    },
+    "nocodb-push": {
+      "status": "OK",
+      "elapsed_s": 69,
+      "detail": ""
+    }
+  }
+}
