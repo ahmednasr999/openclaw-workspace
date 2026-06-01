@@ -161,6 +161,8 @@
 | 270 | 🆕 | Hologic, Inc. | Director, Quality Assurance APAC | Dubai | — | 🆕 Discovered | Radar | 2026-05-31 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4391609264) | — |
 | 271 | 🆕 | Emerging Travel Group | Head of Payments | Dubai | — | 🆕 Discovered | Radar | 2026-05-31 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4421208413) | — |
 | 272 | 🆕 | Michael Page | Vice President - Treasury | Dubai | — | 🆕 Discovered | Radar | 2026-05-31 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4417469657) | — |
+| 273 | 🆕 | WSP in the Middle East | Director – Major Projects & Infrastructure | Dubai | — | 🆕 Discovered | Radar | 2026-06-01 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4409277929) | — |
+
 
 
 

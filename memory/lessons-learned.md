@@ -1130,3 +1130,33 @@ In cron/internal maintenance, try `apply_patch` first for file edits as usual, b
 - What happened: The LCM compact processor reported `remaining=0`, but `/tmp/lcm-compact-queue.json` still contained two items, creating stale queue noise after a successful processor run.
 - Recovery: Processed the existing queue, verified compacted=2/failed=0/remaining=0, cleared the stale file, and hardened the processor to auto-clear the queue when results report no remaining work.
 - Do differently: Queue processors should reconcile persisted queue files against result stats before reporting completion. If stats say no work remains, clear stale queue artifacts and verify the persisted queue length is zero.
+
+## 2026-05-31 - Weekly Retro Must Parse Current Lesson Headers
+
+### Incident
+Weekly Team Retro falsely reported no lessons because its parser missed the current `## YYYY-MM-DD - Title` plus sectioned-entry format in `memory/lessons-learned.md`.
+### Recovery
+Updated `scripts/weekly-team-retro.py`, regenerated `memory/retros/2026-05-31-weekly-retro.md`, and verified the retro loaded 32 lessons. Google source failures were historical; the latest SearXNG fallback runs were green.
+### Do differently
+When changing lesson-file format or retro reports, test the parser against the live lessons file and verify the loaded lesson count instead of relying on a successful script exit alone.
+
+## 2026-05-31 - Job Pipeline Health Must Distinguish JobZoom Runs From HR Source Runs
+
+### Incident
+An async report returned `Pipeline needs seeding - run job scanner`, but direct inspection showed JobZoom had completed run `59` on 2026-05-31 with 150/150 searches, 3 CVs generated, and delivery true. The stale signal came from the separate HR `source_runs` table, whose latest rows were from 2026-05-30.
+### Do differently
+For job-pipeline freshness reports, compare both JobZoom run state and HR/source-run state before saying the pipeline needs seeding. If only one ledger is stale, name that ledger and avoid implying the whole job lane failed.
+
+## 2026-05-31 - Avoid Gateway Restarts Inside User-Facing Codex Turns
+
+### Incident
+A gateway restart completed cleanly but cut the Codex app-server transport mid-turn, producing a visible `connection closed before this turn finished` error for Ahmed.
+### Do differently
+Treat gateway restarts as user-visible interruption risk even when technically successful. Prefer config validation and health checks first; if a restart is approved and necessary, warn that the chat turn may drop, then verify gateway health, runtime patch status, config validity, and app-server liveness before closing the loop.
+
+## 2026-05-31 - HR Easy Apply Should Reuse LinkedIn Tabs
+
+### Correction
+Ahmed noticed that the HR agent opened a new Chrome tab for each bulk Easy Apply job instead of reusing the same tab.
+### Do differently
+For LinkedIn bulk Easy Apply automation, reuse an existing LinkedIn jobs/feed tab when possible, navigate that page to the next job, and only create a new page if there is no reusable authenticated LinkedIn page. Avoid temporary runners that call `context.newPage()` per application unless the user explicitly wants parallel tabs.

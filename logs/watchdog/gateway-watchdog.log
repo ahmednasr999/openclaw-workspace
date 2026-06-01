@@ -824,3 +824,41 @@
 2026-05-31T19:46:56+03:00 health-fail count=2 pid=none http=000 ms=0 app_servers=0
 2026-05-31T19:46:56+03:00 restart-gateway reason=health-failures:2:http-000
 2026-05-31T19:47:06+03:00 post-restart health=000 450
+2026-05-31T20:18:38+03:00 health-fail count=1 pid=none http=000 ms=0 app_servers=0
+2026-05-31T20:20:40+03:00 health-fail count=2 pid=none http=000 ms=0 app_servers=0
+2026-05-31T20:20:40+03:00 restart-gateway reason=health-failures:2:http-000
+2026-05-31T20:20:49+03:00 post-restart health=000 73
+2026-05-31T20:22:54+03:00 health-fail count=1 pid=none http=000 ms=0 app_servers=0
+2026-05-31T20:24:55+03:00 health-fail count=2 pid=none http=000 ms=0 app_servers=0
+2026-05-31T20:24:55+03:00 restart-gateway reason=health-failures:2:http-000
+2026-05-31T20:25:04+03:00 post-restart health=000 0
+2026-05-31T20:27:14+03:00 health-fail count=1 pid=none http=000 ms=0 app_servers=0
+2026-05-31T20:29:34+03:00 health-fail count=2 pid=none http=000 ms=0 app_servers=0
+2026-05-31T20:29:34+03:00 restart-gateway reason=health-failures:2:http-000
+2026-05-31T20:29:43+03:00 post-restart health=000 0
+2026-05-31T20:31:36+03:00 health-fail count=1 pid=none http=000 ms=0 app_servers=0
+2026-05-31T20:33:42+03:00 health-fail count=2 pid=none http=000 ms=0 app_servers=0
+2026-05-31T20:33:42+03:00 restart-gateway reason=health-failures:2:http-000
+2026-05-31T20:33:50+03:00 post-restart health=000 0
+2026-05-31T20:35:44+03:00 health-fail count=1 pid=none http=000 ms=0 app_servers=0
+2026-05-31T20:37:48+03:00 health-fail count=2 pid=none http=000 ms=0 app_servers=0
+2026-05-31T20:37:48+03:00 restart-gateway reason=health-failures:2:http-000
+2026-05-31T20:37:57+03:00 post-restart health=000 0
+2026-05-31T20:39:54+03:00 health-fail count=1 pid=none http=000 ms=0 app_servers=0
+2026-05-31T20:42:14+03:00 health-fail count=2 pid=none http=000 ms=0 app_servers=0
+2026-05-31T20:42:14+03:00 restart-gateway reason=health-failures:2:http-000
+2026-05-31T20:42:23+03:00 post-restart health=000 0
+2026-05-31T20:44:34+03:00 health-fail count=1 pid=none http=000 ms=0 app_servers=0
+2026-05-31T20:46:54+03:00 health-fail count=2 pid=none http=000 ms=0 app_servers=0
+2026-05-31T20:46:54+03:00 restart-gateway reason=health-failures:2:http-000
+2026-05-31T20:47:03+03:00 post-restart health=200 33
+2026-05-31T21:33:14+03:00 observed reason=starvation-signals-3, pid=3199613 rss_kb=818132 app_servers=6 health_ms=2 signals=3
+2026-05-31T21:35:34+03:00 observed reason=starvation-signals-6, pid=3199613 rss_kb=805584 app_servers=6 health_ms=2 signals=6
+2026-05-31T21:37:54+03:00 observed reason=starvation-signals-3, pid=3199613 rss_kb=806504 app_servers=6 health_ms=2 signals=3
+2026-05-31T23:25:15+03:00 degraded count=1 reason=app-server-count-10, pid=3199613 rss_kb=708464 app_servers=10 health_ms=2 signals=0
+2026-05-31T23:27:34+03:00 degraded count=2 reason=app-server-count-10, pid=3199613 rss_kb=702544 app_servers=10 health_ms=32 signals=0
+2026-05-31T23:27:35+03:00 restart-gateway reason=degraded:app-server-count-10,
+2026-05-31T23:27:52+03:00 post-restart health=000 6006
+2026-06-01T03:30:14+03:00 observed reason=starvation-signals-3, pid=3268125 rss_kb=625836 app_servers=8 health_ms=3 signals=3
+2026-06-01T03:32:34+03:00 observed reason=starvation-signals-6, pid=3268125 rss_kb=645876 app_servers=8 health_ms=2 signals=6
+2026-06-01T03:34:55+03:00 observed reason=starvation-signals-3, pid=3268125 rss_kb=667408 app_servers=8 health_ms=107 signals=3

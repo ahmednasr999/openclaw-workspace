@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-05-30T20:00:28.593560+03:00",
-    "duration_ms": 26189,
+    "generated_at": "2026-05-31T22:00:26.696837+03:00",
+    "duration_ms": 24147,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "01e65ec3",
+    "run_id": "cd5f48ac",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -34,6 +34,30 @@
       "filter_reason": null,
       "search_country": "United Arab Emirates",
       "search_title": "Program Director"
+    },
+    {
+      "id": "indeed-in-53619c99c0747d4d",
+      "source": "indeed",
+      "title": "WPP Media: Associate Director, Performance- Dubai",
+      "company": "WPP Media",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=53619c99c0747d4d",
+      "posted": "2026-05-24",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 26,
+      "match_keywords": [
+        "ai",
+        "director",
+        "growth",
+        "dubai",
+        "platform"
+      ],
+      "raw_snippet": "**About WPP Media**\n\n\n\nWPP is the trusted growth partner for the world's leading brands. With exceptional talent, trusted data and intelligence, and world\\-class partnerships \u2013 all united by our pioneering agentic marketing platform, WPP Open \u2013 we help clients navigate change, capture opportunity, and deliver transformational growth.\n\n\n\nWPP Media is WPP's AI\\-driven media operating unit, bringing together media, data, and partnerships to deliver creative personalisation at scale. Connected throu",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Director Digital Transformation"
     },
     {
       "id": "indeed-in-1818f66e88511823",
@@ -63,8 +87,8 @@
   ],
   "kpi": {
     "searches_run": 20,
-    "results_per_search": 0.8,
-    "unique_jobs": 2,
+    "results_per_search": 0.95,
+    "unique_jobs": 3,
     "errors": 13
   },
   "recommendations": []
