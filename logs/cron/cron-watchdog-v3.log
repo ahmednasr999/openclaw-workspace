@@ -55,3 +55,125 @@
   Alerts (need human): 0
 ═══════════════════════════════════
 [2026-06-01T06:00:08+03:00] END cron-watchdog-v3: rc=0 duration=6s
+
+[2026-06-01T08:00:01+03:00] START cron-watchdog-v3: /bin/bash /root/.openclaw/workspace/scripts/cron-watchdog-v3.sh
+🔍 Watchdog v3 - Detect → Fix → Report
+✅ Gateway running (PID: 3507035)
+✅ Disk OK: 73%
+✅ active-tasks.md fresh (26h)
+✅ Jobs data fresh (9h)
+✅ SIE 360 data fresh (6h)
+✅ All crons OK
+✅ No pipeline failures today
+✅ RAM OK: 27%
+
+═══════════════════════════════════
+📊 Watchdog v3 Summary
+  Fixes applied: 0
+  Warnings: 0
+  Alerts (need human): 0
+═══════════════════════════════════
+[2026-06-01T08:00:07+03:00] END cron-watchdog-v3: rc=0 duration=6s
+
+[2026-06-01T10:00:01+03:00] START cron-watchdog-v3: /bin/bash /root/.openclaw/workspace/scripts/cron-watchdog-v3.sh
+🔍 Watchdog v3 - Detect → Fix → Report
+✅ Gateway running (PID: 3507035)
+✅ Disk OK: 58%
+✅ active-tasks.md fresh (28h)
+✅ Jobs data fresh (11h)
+✅ SIE 360 data fresh (8h)
+✅ All crons OK
+✅ No pipeline failures today
+✅ RAM OK: 30%
+
+═══════════════════════════════════
+📊 Watchdog v3 Summary
+  Fixes applied: 0
+  Warnings: 0
+  Alerts (need human): 0
+═══════════════════════════════════
+[2026-06-01T10:00:08+03:00] END cron-watchdog-v3: rc=0 duration=7s
+
+[2026-06-01T12:00:01+03:00] START cron-watchdog-v3: /bin/bash /root/.openclaw/workspace/scripts/cron-watchdog-v3.sh
+🔍 Watchdog v3 - Detect → Fix → Report
+✅ Gateway running (PID: 3563518)
+✅ Disk OK: 58%
+✅ active-tasks.md fresh (30h)
+✅ Jobs data fresh (13h)
+✅ SIE 360 data fresh (10h)
+✅ All crons OK
+✅ No pipeline failures today
+✅ RAM OK: 31%
+
+═══════════════════════════════════
+📊 Watchdog v3 Summary
+  Fixes applied: 0
+  Warnings: 0
+  Alerts (need human): 0
+═══════════════════════════════════
+[2026-06-01T12:00:09+03:00] END cron-watchdog-v3: rc=0 duration=8s
+
+[2026-06-01T14:00:01+03:00] START cron-watchdog-v3: /bin/bash /root/.openclaw/workspace/scripts/cron-watchdog-v3.sh
+🔍 Watchdog v3 - Detect → Fix → Report
+✅ Gateway running (PID: 3579130)
+✅ Disk OK: 58%
+✅ active-tasks.md fresh (32h)
+✅ Jobs data fresh (15h)
+✅ SIE 360 data fresh (12h)
+✅ All crons OK
+✅ No pipeline failures today
+✅ RAM OK: 33%
+
+═══════════════════════════════════
+📊 Watchdog v3 Summary
+  Fixes applied: 0
+  Warnings: 0
+  Alerts (need human): 0
+═══════════════════════════════════
+[2026-06-01T14:00:07+03:00] END cron-watchdog-v3: rc=0 duration=6s
+
+[2026-06-01T16:00:01+03:00] START cron-watchdog-v3: /bin/bash /root/.openclaw/workspace/scripts/cron-watchdog-v3.sh
+🔍 Watchdog v3 - Detect → Fix → Report
+✅ Gateway running (PID: 3670791)
+✅ Disk OK: 58%
+✅ active-tasks.md fresh (34h)
+✅ Jobs data fresh (17h)
+✅ SIE 360 data fresh (14h)
+✅ All crons OK
+✅ No pipeline failures today
+✅ RAM OK: 27%
+
+═══════════════════════════════════
+📊 Watchdog v3 Summary
+  Fixes applied: 0
+  Warnings: 0
+  Alerts (need human): 0
+═══════════════════════════════════
+[2026-06-01T16:00:08+03:00] END cron-watchdog-v3: rc=0 duration=7s
+
+[2026-06-01T18:00:01+03:00] START cron-watchdog-v3: /bin/bash /root/.openclaw/workspace/scripts/cron-watchdog-v3.sh
+🔍 Watchdog v3 - Detect → Fix → Report
+✅ Gateway running (PID: 3670791)
+✅ Disk OK: 58%
+✅ active-tasks.md fresh (36h)
+✅ Jobs data fresh (19h)
+✅ SIE 360 data fresh (16h)
+✅ All crons OK
+✅ No pipeline failures today
+✅ RAM OK: 29%
+
+═══════════════════════════════════
+📊 Watchdog v3 Summary
+  Fixes applied: 0
+  Warnings: 0
+  Alerts (need human): 0
+═══════════════════════════════════
+[2026-06-01T18:00:06+03:00] END cron-watchdog-v3: rc=0 duration=5s
+
+[2026-06-01T20:00:01+03:00] START cron-watchdog-v3: /bin/bash /root/.openclaw/workspace/scripts/cron-watchdog-v3.sh
+🔍 Watchdog v3 - Detect → Fix → Report
+✅ Gateway running (PID: 3733114)
+✅ Disk OK: 58%
+✅ active-tasks.md fresh (38h)
+✅ Jobs data fresh (21h)
+✅ SIE 360 data fresh (18h)

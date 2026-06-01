@@ -63,6 +63,10 @@ Executive role evaluation:
 - Reporting line is not a hard filter if salary is high enough; roles can report below CEO/Board/C-level/Regional GM when compensation justifies it.
 - Work arrangement is not a hard filter if salary is high enough; onsite, hybrid, or remote can be acceptable when compensation justifies it.
 - Minimum monthly total-package baseline for serious GCC executive-role consideration: UAE AED 55,000; Saudi about SAR 56,000; Qatar about QAR 55,000; Oman about OMR 5,750. Optional equivalents: Bahrain about BHD 5,650; Kuwait about KWD 4,600.
+- For application salary-expectation fields, use AED 55,000/month as Ahmed's minimum target and convert to the relevant local currency, rounded conservatively upward to a clean figure when needed.
+- Confirmed reusable application personal defaults: date of birth 28/12/1983 (ISO 1983-12-28), marital status married, full address as provided: UAE, Dubai, Bursha.
+- Ahmed approved creating ATS/candidate accounts with his email when needed for job applications. Use this approval only for application workflows; ask if a platform requires a sensitive unknown, MFA/OTP unavailable to the agent, or a non-standard commitment.
+- If an application needs an answer not already known about Ahmed, ask Ahmed once, then store and reuse the confirmed answer for future applications. Do not fabricate personal/legal/current-employment facts.
 
 If Ahmed asks repeatedly for the same workflow, the system failed and should be codified.
 

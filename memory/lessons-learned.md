@@ -1160,3 +1160,6 @@ Treat gateway restarts as user-visible interruption risk even when technically s
 Ahmed noticed that the HR agent opened a new Chrome tab for each bulk Easy Apply job instead of reusing the same tab.
 ### Do differently
 For LinkedIn bulk Easy Apply automation, reuse an existing LinkedIn jobs/feed tab when possible, navigate that page to the next job, and only create a new page if there is no reusable authenticated LinkedIn page. Avoid temporary runners that call `context.newPage()` per application unless the user explicitly wants parallel tabs.
+## 2026-06-01 - Gmail OTP access
+Ahmed clarified that OTPs sent to Gmail are accessible through the existing Gmail access. Do not treat Gmail OTP retrieval as a blocker; check Gmail first before asking Ahmed, unless the OTP is not delivered there or requires an unavailable non-Gmail MFA path.
+

@@ -306,3 +306,627 @@ OK no stale context_engine_turn_maintenance tasks older than 15m
 [2026-06-01T07:00:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
 OK no stale context_engine_turn_maintenance tasks older than 15m
 [2026-06-01T07:00:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T07:05:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T07:05:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T07:10:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T07:10:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T07:15:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T07:15:02+03:00] END stale-context-maintenance: rc=0 duration=1s
+
+[2026-06-01T07:20:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T07:20:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T07:25:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T07:25:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T07:30:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T07:30:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T07:35:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T07:35:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T07:40:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T07:40:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T07:45:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T07:45:02+03:00] END stale-context-maintenance: rc=0 duration=1s
+
+[2026-06-01T07:50:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T07:50:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T07:55:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T07:55:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T08:00:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T08:00:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T08:05:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T08:05:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T08:10:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T08:10:01+03:00] END stale-context-maintenance: rc=0 duration=1s
+
+[2026-06-01T08:15:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T08:15:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T08:20:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T08:20:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T08:25:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T08:25:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T08:30:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T08:30:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T08:35:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T08:35:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T08:40:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T08:40:01+03:00] END stale-context-maintenance: rc=0 duration=1s
+
+[2026-06-01T08:45:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T08:45:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T08:50:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T08:50:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T08:55:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T08:55:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T09:00:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T09:00:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T09:05:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T09:05:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T09:10:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T09:10:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T09:15:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T09:15:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T09:20:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T09:20:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T09:25:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T09:25:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T09:30:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T09:30:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T09:35:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T09:35:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T09:40:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T09:40:02+03:00] END stale-context-maintenance: rc=0 duration=1s
+
+[2026-06-01T09:45:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T09:45:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T09:50:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T09:50:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T09:55:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T09:55:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T10:00:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T10:00:02+03:00] END stale-context-maintenance: rc=0 duration=1s
+
+[2026-06-01T10:05:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T10:05:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T10:10:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T10:10:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T10:15:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T10:15:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T10:20:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T10:20:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T10:25:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T10:25:02+03:00] END stale-context-maintenance: rc=0 duration=1s
+
+[2026-06-01T10:30:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T10:30:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T10:35:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T10:35:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T10:40:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T10:40:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T10:45:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T10:45:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T10:50:02+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T10:50:02+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T10:55:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T10:55:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T11:00:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T11:00:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T11:05:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T11:05:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T11:10:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T11:10:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T11:15:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T11:15:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T11:20:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T11:20:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T11:25:02+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T11:25:02+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T11:30:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T11:30:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T11:35:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T11:35:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T11:40:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T11:40:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T11:45:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T11:45:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T11:50:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T11:50:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T11:55:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T11:55:02+03:00] END stale-context-maintenance: rc=0 duration=1s
+
+[2026-06-01T12:00:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T12:00:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T12:05:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T12:05:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T12:10:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T12:10:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T12:15:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T12:15:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T12:20:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T12:20:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T12:25:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T12:25:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T12:30:02+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T12:30:02+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T12:35:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T12:35:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T12:40:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T12:40:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T12:45:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T12:45:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T12:50:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T12:50:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T12:55:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T12:55:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T13:00:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T13:00:02+03:00] END stale-context-maintenance: rc=0 duration=1s
+
+[2026-06-01T13:05:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T13:05:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T13:10:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T13:10:02+03:00] END stale-context-maintenance: rc=0 duration=1s
+
+[2026-06-01T13:15:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T13:15:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T13:20:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T13:20:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T13:25:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T13:25:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T13:30:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T13:30:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T13:35:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T13:35:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T13:40:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T13:40:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T13:45:02+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T13:45:02+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T13:50:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T13:50:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T13:55:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T13:55:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T14:00:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T14:00:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T14:05:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T14:05:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T14:10:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T14:10:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T14:15:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T14:15:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T14:20:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T14:20:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T14:25:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T14:25:02+03:00] END stale-context-maintenance: rc=0 duration=1s
+
+[2026-06-01T14:30:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T14:30:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T14:35:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T14:35:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T14:40:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T14:40:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T14:45:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T14:45:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T14:50:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T14:50:02+03:00] END stale-context-maintenance: rc=0 duration=1s
+
+[2026-06-01T14:55:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T14:55:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T15:00:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T15:00:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T15:05:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T15:05:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T15:10:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T15:10:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T15:15:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T15:15:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T15:20:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T15:20:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T15:25:02+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T15:25:02+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T15:30:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T15:30:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T15:35:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T15:35:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T15:40:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T15:40:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T15:45:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T15:45:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T15:50:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T15:50:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T15:55:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T15:55:02+03:00] END stale-context-maintenance: rc=0 duration=1s
+
+[2026-06-01T16:00:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T16:00:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T16:05:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T16:05:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T16:10:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T16:10:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T16:15:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T16:15:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T16:20:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T16:20:02+03:00] END stale-context-maintenance: rc=0 duration=1s
+
+[2026-06-01T16:25:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T16:25:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T16:30:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T16:30:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T16:35:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T16:35:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T16:40:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T16:40:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T16:45:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T16:45:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T16:50:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T16:50:02+03:00] END stale-context-maintenance: rc=0 duration=1s
+
+[2026-06-01T16:55:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T16:55:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T17:00:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T17:00:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T17:05:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T17:05:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T17:10:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T17:10:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T17:15:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T17:15:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T17:20:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T17:20:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T17:25:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T17:25:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T17:30:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T17:30:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T17:35:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T17:35:02+03:00] END stale-context-maintenance: rc=0 duration=1s
+
+[2026-06-01T17:40:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T17:40:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T17:45:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T17:45:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T17:50:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T17:50:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T17:55:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T17:55:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T18:00:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T18:00:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T18:05:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T18:05:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T18:10:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T18:10:02+03:00] END stale-context-maintenance: rc=0 duration=1s
+
+[2026-06-01T18:15:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T18:15:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T18:20:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T18:20:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T18:25:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T18:25:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T18:30:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T18:30:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T18:35:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T18:35:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T18:40:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T18:40:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T18:45:02+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T18:45:02+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T18:50:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T18:50:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T18:55:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T18:55:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T19:00:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T19:00:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T19:05:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T19:05:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T19:10:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T19:10:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T19:15:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T19:15:02+03:00] END stale-context-maintenance: rc=0 duration=1s
+
+[2026-06-01T19:20:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T19:20:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T19:25:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T19:25:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T19:30:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T19:30:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T19:35:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T19:35:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T19:40:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T19:40:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T19:45:02+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T19:45:02+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T19:50:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T19:50:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T19:55:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T19:55:01+03:00] END stale-context-maintenance: rc=0 duration=0s
+
+[2026-06-01T20:00:01+03:00] START stale-context-maintenance: /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
+OK no stale context_engine_turn_maintenance tasks older than 15m
+[2026-06-01T20:00:02+03:00] END stale-context-maintenance: rc=0 duration=1s
