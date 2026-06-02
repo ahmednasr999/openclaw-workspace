@@ -1,227 +1,47 @@
 {
   "status": "ok",
-  "scan_time": "2026-06-01T16:00:46.114563+03:00",
-  "total_scanned": 44,
+  "scan_time": "2026-06-01T20:00:39.959863+03:00",
+  "total_scanned": 42,
   "by_category": {
-    "interview_invite": 2,
-    "recruiter_reach": 1,
+    "interview_invite": 0,
+    "recruiter_reach": 0,
     "application_ack": 1,
     "rejection": 0,
     "assessment": 0,
     "follow_up_needed": 0,
-    "job_alert": 1,
-    "other": 40
+    "job_alert": 0,
+    "other": 41
   },
-  "interview_invites": [
-    {
-      "id": "360101",
-      "from": "\"APS Career Boostery\" <clientcare@apsresources.com>",
-      "subject": "The Difference Between a Job Abroad and an International Career",
-      "date": "Mon, 1 Jun 2026 09:46:21 +0000",
-      "unread": true,
-      "priority": "MEDIUM",
-      "score": 3,
-      "pipeline_match": null,
-      "confidence": 70,
-      "confidence_label": "medium",
-      "evidence": [
-        "hiring/application context",
-        "calendar or explicit interview evidence",
-        "medium priority score: 3"
-      ],
-      "why_actionable": "hiring/application context | calendar or explicit interview evidence | medium priority score: 3"
-    },
-    {
-      "id": "360125",
-      "from": "Stellar Technologies <info@stellartechnologies.ae>",
-      "subject": "=?us-ascii?Q?Thanks_for_submitting_your_application_for_a_jo?=\r\n =?us-ascii?Q?b_at_Stellar_Technologies?=",
-      "date": "Mon, 1 Jun 2026 11:47:26 +0000",
-      "unread": true,
-      "priority": "HIGH",
-      "score": 6,
-      "pipeline_match": null,
-      "confidence": 75,
-      "confidence_label": "medium",
-      "evidence": [
-        "hiring/application context",
-        "calendar or explicit interview evidence",
-        "high priority score: 6"
-      ],
-      "why_actionable": "hiring/application context | calendar or explicit interview evidence | high priority score: 6"
-    }
-  ],
-  "recruiter_messages": [
-    {
-      "id": "360110",
-      "from": "talabat mart <tmart@em.talabat.com>",
-      "subject": "=?UTF-8?B?2KfZhNiz2YbYp9mD2LMg2KfZhNmE2Yog2KjYqtit2KjZh9in?=\r\n =?UTF-8?B?INio2K7YtdmFIDEwMNis?=",
-      "date": "Mon, 01 Jun 2026 10:45:42 +0000 (UTC)",
-      "unread": true,
-      "priority": "HIGH",
-      "score": 6,
-      "pipeline_match": "talabat",
-      "confidence": 75,
-      "confidence_label": "medium",
-      "evidence": [
-        "matched active pipeline company: talabat",
-        "hiring/application context",
-        "recruiter outreach classification",
-        "high priority score: 6"
-      ],
-      "why_actionable": "matched active pipeline company: talabat | hiring/application context | recruiter outreach classification | high priority score: 6"
-    }
-  ],
+  "interview_invites": [],
+  "recruiter_messages": [],
   "application_acks": [
     {
-      "id": "360125",
-      "from": "Stellar Technologies <info@stellartechnologies.ae>",
-      "subject": "=?us-ascii?Q?Thanks_for_submitting_your_application_for_a_jo?=\r\n =?us-ascii?Q?b_at_Stellar_Technologies?=",
-      "date": "Mon, 1 Jun 2026 11:47:26 +0000",
+      "id": "360178",
+      "from": "Talents Tide <talents.tide@mail.manatal.com>",
+      "subject": "Your Application to Senior Strategy Manager",
+      "date": "Mon, 01 Jun 2026 16:57:39 +0000",
       "unread": true,
-      "priority": "HIGH",
-      "score": 6,
+      "priority": "LOW",
+      "score": 0,
       "pipeline_match": null,
-      "confidence": 75,
-      "confidence_label": "medium",
+      "confidence": 35,
+      "confidence_label": "low",
       "evidence": [
-        "hiring/application context",
-        "calendar or explicit interview evidence",
-        "high priority score: 6"
+        "hiring sender context",
+        "hiring/application context"
       ],
-      "why_actionable": "hiring/application context | calendar or explicit interview evidence | high priority score: 6"
+      "why_actionable": "not actionable: hiring sender context | hiring/application context"
     }
   ],
   "rejections": [],
   "assessments": [],
   "follow_ups_needed": [],
-  "job_alerts": [
-    {
-      "id": "360108",
-      "from": "foundit Updates <info@alerts.founditgulf.com>",
-      "subject": "[Action Required] Confirm your given information",
-      "date": "Mon, 01 Jun 2026 10:37:03 +0000 (UTC)",
-      "unread": true,
-      "priority": "LOW",
-      "score": 0,
-      "pipeline_match": null,
-      "confidence": 25,
-      "confidence_label": "very_low",
-      "evidence": [
-        "automated job alert",
-        "noise/job-alert guard applied"
-      ],
-      "why_actionable": "not actionable: automated job alert | noise/job-alert guard applied"
-    }
-  ],
-  "actionable_count": 3,
-  "hot_alerts": [
-    {
-      "id": "360125",
-      "subject": "=?us-ascii?Q?Thanks_for_submitting_your_application_for_a_jo?=\r\n =?us-ascii?Q?b_at_Stellar_Technologies?=",
-      "from": "Stellar Technologies <info@stellartechnologies.ae>",
-      "priority": "HIGH",
-      "pipeline_match": null,
-      "confidence": 75,
-      "evidence": [
-        "hiring/application context",
-        "calendar or explicit interview evidence",
-        "high priority score: 6"
-      ]
-    }
-  ],
-  "signals": [
-    {
-      "company": "talabat",
-      "signal": "recruiter_email",
-      "subject": "=?UTF-8?B?2KfZhNiz2YbYp9mD2LMg2KfZhNmE2Yog2KjYqtit2KjZh9in?=\r\n =?UTF-8?B?INio2K7YtdmFIDEwMNis?=",
-      "sender": "talabat mart <tmart@em.talabat.com>",
-      "job_ids": [
-        "linkedin_jobspy-li-4407693428",
-        "linkedin_jobspy-li-4416306146",
-        "linkedin-li-4415007377",
-        "linkedin_jobspy-li-4397262230",
-        "linkedin-li-4370418095",
-        "linkedin-li-4389537891",
-        "linkedin-li-4375708512"
-      ],
-      "score": 6,
-      "timestamp": "2026-06-01T16:00:45.879122+03:00"
-    }
-  ],
-  "pipeline_review_candidates": [
-    {
-      "timestamp": "2026-06-01T16:00:46.114580+03:00",
-      "review_type": "possible_interview",
-      "category": "interview_invite",
-      "email_id": "360101",
-      "subject": "The Difference Between a Job Abroad and an International Career",
-      "from": "\"APS Career Boostery\" <clientcare@apsresources.com>",
-      "priority": "MEDIUM",
-      "pipeline_match": null,
-      "status": "needs_human_review"
-    },
-    {
-      "timestamp": "2026-06-01T16:00:46.114585+03:00",
-      "review_type": "possible_interview",
-      "category": "interview_invite",
-      "email_id": "360125",
-      "subject": "=?us-ascii?Q?Thanks_for_submitting_your_application_for_a_jo?=\r\n =?us-ascii?Q?b_at_Stellar_Technologies?=",
-      "from": "Stellar Technologies <info@stellartechnologies.ae>",
-      "priority": "HIGH",
-      "pipeline_match": null,
-      "status": "needs_human_review"
-    },
-    {
-      "timestamp": "2026-06-01T16:00:46.114589+03:00",
-      "review_type": "possible_recruiter_outreach",
-      "category": "recruiter_reach",
-      "email_id": "360110",
-      "subject": "=?UTF-8?B?2KfZhNiz2YbYp9mD2LMg2KfZhNmE2Yog2KjYqtit2KjZh9in?=\r\n =?UTF-8?B?INio2K7YtdmFIDEwMNis?=",
-      "from": "talabat mart <tmart@em.talabat.com>",
-      "priority": "HIGH",
-      "pipeline_match": "talabat",
-      "status": "needs_human_review"
-    }
-  ],
+  "job_alerts": [],
+  "actionable_count": 0,
+  "hot_alerts": [],
+  "signals": [],
   "llm_analysis": {
-    "actionable_emails": [
-      {
-        "id": "360101",
-        "subject": "The Difference Between a Job Abroad and an International Career",
-        "from": "\"APS Career Boostery\" <clientcare@apsresources.com>",
-        "date": "Mon, 1 Jun 2026 09:46:21 +0000",
-        "category": "interview_invite",
-        "urgency": "low",
-        "intent": "The sender appears to be sharing career-advice content about building an international career.",
-        "action": "read_and_file",
-        "response_deadline": "when convenient",
-        "notes": "Excerpt does not prove an interview invite."
-      },
-      {
-        "id": "360110",
-        "subject": "\u0627\u0644\u0633\u0646\u0627\u0643\u0633 \u0627\u0644\u0644\u064a \u0628\u062a\u062d\u0628\u0647\u0627 \u0628\u062e\u0635\u0645 100\u062c",
-        "from": "talabat mart <tmart@em.talabat.com>",
-        "date": "Mon, 01 Jun 2026 10:45:42 +0000 (UTC)",
-        "category": "recruiter_reach",
-        "urgency": "low",
-        "intent": "The sender is promoting a Talabat Mart discount offer, not a recruiter opportunity.",
-        "action": "no_action",
-        "response_deadline": "when convenient",
-        "notes": "Likely promotional false positive."
-      },
-      {
-        "id": "360125",
-        "subject": "Thanks for submitting your application for a job at Stellar Technologies",
-        "from": "Stellar Technologies <info@stellartechnologies.ae>",
-        "date": "Mon, 1 Jun 2026 11:47:26 +0000",
-        "category": "interview_invite",
-        "urgency": "low",
-        "intent": "The sender is acknowledging receipt of Ahmed's application and says HR may call if selected.",
-        "action": "read_and_file",
-        "response_deadline": "when convenient",
-        "notes": "Application acknowledgement, not an interview invite."
-      }
-    ],
+    "actionable_emails": [],
     "summary": {
       "total_actionable": 0,
       "critical_count": 0,
@@ -229,7 +49,7 @@
       "requires_assessment": false,
       "recruiter_top_opportunities": [],
       "top_priority": null,
-      "daily_focus": "No response-critical email is proven from the excerpts; track Stellar but focus today on stronger Gulf leadership opportunities."
+      "daily_focus": "No email action needed from this batch."
     }
   }
 }

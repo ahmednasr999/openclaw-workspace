@@ -1,47 +1,35 @@
 
-[2026-05-31T20:00:02+03:00] START daily-backup: /root/.openclaw/workspace/scripts/daily-backup.sh
-[2026-05-31 20:00:05] Changes detected, committing...
-[2026-05-31 20:00:05] Committing: Auto-backup 2026-05-31_17:00
-[workspace-sync c051ba5f] Auto-backup 2026-05-31_17:00
- 86 files changed, 2350 insertions(+), 335 deletions(-)
- create mode 100644 intel/intel-2026-05-31.md
- create mode 100644 logs/cron/direct-cron/disk-guard-20260531-070701.log
- create mode 100644 logs/cron/direct-cron/linkedin-comment-radar-1100-20260531-110012.log
- create mode 100644 logs/cron/direct-cron/linkedin-comment-radar-1500-20260531-150001.log
- create mode 100644 logs/cron/direct-cron/linkedin-comment-radar-1500-20260531-150657.log
- create mode 100644 logs/cron/direct-cron/weekly-self-health-20260531-092001.log
- delete mode 100644 logs/direct-cron/approved-14day-post-20260522-122202.log
- delete mode 100644 logs/direct-cron/disk-guard-20260522-122203.log
- delete mode 100644 logs/direct-cron/session-cleanup-20260523-030002.log
- delete mode 100644 logs/direct-cron/session-cleanup-validate-20260522-122631.log
- delete mode 100644 logs/direct-cron/weekly-self-health-20260522-122202.log
- create mode 100644 logs/disk-guard/cleanup-20260531-070701.log
- delete mode 100644 logs/session-archives/32146650-480e-4899-a31d-06259384bb23.trajectory.20260522T000906Z.jsonl.gz
- create mode 100644 logs/session-archives/38b99822-62a5-454f-b9ad-7846d960e4bf.trajectory.20260531T161431Z.jsonl.gz
- create mode 100644 logs/session-archives/77e43866-07c4-43bc-9a74-d59a4837b33d-topic-5247.trajectory.20260531T161515Z.jsonl.gz
- create mode 100644 logs/session-archives/80dd3dde-c041-4ca1-affa-6fe117480a02-topic-7.trajectory.20260531T161456Z.jsonl.gz
- create mode 100644 logs/session-archives/8d305f19-f6b5-4786-af72-c6a57840707f-topic-9.trajectory.20260531T161443Z.jsonl.gz
- delete mode 100644 logs/session-archives/a44f7962-1801-436d-8136-3d9b132cc5f3-topic-9.trajectory.20260523T000851Z.jsonl.gz
- create mode 100644 logs/session-archives/b1553ca1-e19d-4aa0-b190-bd56343fd1fb-topic-5247.trajectory.20260531T161511Z.jsonl.gz
- delete mode 100644 logs/session-archives/d3f33a8b-8936-4216-a002-92c0de79bc58-topic-9.trajectory.20260522T000920Z.jsonl.gz
- create mode 100644 memory/2026-05-31-1214.md
- create mode 100644 memory/2026-05-31-1215.md
- rename memory/{ => archives}/2026-05-10-0921.md (100%)
- rename memory/{ => archives}/2026-05-10.md (100%)
- rename memory/{ => archives}/2026-05-11-2048.md (100%)
- rename memory/{ => archives}/2026-05-11-2312.md (100%)
- rename memory/{ => archives}/2026-05-11.md (100%)
- rename memory/{ => archives}/2026-05-12.md (100%)
- rename memory/{ => archives}/2026-05-13.md (100%)
- rename memory/{ => archives}/2026-05-14.md (100%)
- rename memory/{ => archives}/2026-05-15-0026.md (100%)
- rename memory/{ => archives}/2026-05-15-0114.md (100%)
- rename memory/{ => archives}/2026-05-15-0115.md (100%)
- rename memory/{ => archives}/2026-05-15-0200.md (100%)
- rename memory/{ => archives}/2026-05-15-1658.md (100%)
- rename memory/{ => archives}/2026-05-15.md (100%)
- create mode 100644 memory/retros/2026-05-31-weekly-retro.md
- create mode 100755 scripts/reapply-openclaw-2026-5-18-runtime-patches.py.bak-20260531-runtime-hardening-idempotent
-[2026-05-31 20:00:16] Push attempt 1/3...
-[2026-05-31 20:00:24] SUCCESS: Pushed to origin workspace-sync
-[2026-05-31T20:00:24+03:00] END daily-backup: rc=0 duration=22s
+[2026-06-01T20:00:01+03:00] START daily-backup: /root/.openclaw/workspace/scripts/daily-backup.sh
+[2026-06-01 20:00:04] Changes detected, committing...
+[2026-06-01 20:00:04] Committing: Auto-backup 2026-06-01_17:00
+[workspace-sync 7b32c353] Auto-backup 2026-06-01_17:00
+ 65 files changed, 2071 insertions(+), 1533 deletions(-)
+ delete mode 100644 archives/projects/healthtech-directory/auto-build.log
+ delete mode 100644 archives/projects/healthtech-directory/outreach/followup.log
+ delete mode 100644 archives/system-config/quota-monitoring/cron.log
+ delete mode 100644 archives/system-config/quota-monitoring/validation.log
+ delete mode 100644 config/excalidraw.log
+ delete mode 100644 healthtech-directory/auto-build.log
+ delete mode 100644 healthtech-directory/outreach/followup.log
+ create mode 100644 intel/intel-2026-06-01.md
+ rename logs/{direct-cron/disk-guard-20260523-070701.log => cron/direct-cron/disk-guard-20260601-070701.log} (51%)
+ create mode 100644 logs/cron/direct-cron/linkedin-comment-radar-1100-20260601-110023.log
+ create mode 100644 logs/cron/direct-cron/linkedin-comment-radar-1500-20260601-150001.log
+ create mode 100644 logs/cron/direct-cron/linkedin-comment-radar-1500-20260601-150836.log
+ delete mode 100644 logs/direct-cron/approved-14day-engagement-20260523-120001.log
+ delete mode 100644 logs/direct-cron/approved-14day-post-20260523-110001.log
+ delete mode 100644 logs/direct-cron/session-cleanup-20260524-030002.log
+ rename logs/disk-guard/{cleanup-20260523-070701.log => cleanup-20260601-070701.log} (68%)
+ delete mode 100644 logs/openclaw-doctor-after-update-20260523-123313.log
+ delete mode 100644 logs/openclaw-safe-update-20260523-123313.log
+ delete mode 100644 logs/openclaw-safe-update.latest
+ delete mode 100644 logs/session-archives/88c3601a-1fb6-4376-b96a-4712e774ae4b.trajectory.20260524T000920Z.jsonl.gz
+ delete mode 100644 logs/session-archives/a44f7962-1801-436d-8136-3d9b132cc5f3-topic-9.trajectory.20260524T000937Z.jsonl.gz
+ create mode 100644 logs/session-archives/ae9499bc-6855-47d3-b5c8-ecd93b6ccb95-topic-7.trajectory.20260601T095618Z.jsonl.gz
+ create mode 100644 logs/session-archives/bdc20f34-c928-40c2-bee2-87a25aa3e93e-topic-9.trajectory.20260601T125552Z.jsonl.gz
+ create mode 100644 logs/session-archives/bdc20f34-c928-40c2-bee2-87a25aa3e93e-topic-9.trajectory.20260601T155552Z.jsonl.gz
+ delete mode 100644 logs/session-archives/d6ba57e7-4d40-4ece-b503-d02eab28d116-topic-7.trajectory.20260524T000956Z.jsonl.gz
+ create mode 100644 scripts/reapply-openclaw-2026-5-18-runtime-patches.py.bak-heartbeat-safe-20260531-204215
+[2026-06-01 20:00:12] Push attempt 1/3...
+[2026-06-01 20:00:19] SUCCESS: Pushed to origin workspace-sync
+[2026-06-01T20:00:19+03:00] END daily-backup: rc=0 duration=18s

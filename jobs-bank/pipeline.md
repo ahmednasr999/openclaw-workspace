@@ -162,6 +162,14 @@
 | 271 | 🆕 | Emerging Travel Group | Head of Payments | Dubai | — | 🆕 Discovered | Radar | 2026-05-31 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4421208413) | — |
 | 272 | 🆕 | Michael Page | Vice President - Treasury | Dubai | — | 🆕 Discovered | Radar | 2026-05-31 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4417469657) | — |
 | 273 | 🆕 | WSP in the Middle East | Director – Major Projects & Infrastructure | Dubai | — | 🆕 Discovered | Radar | 2026-06-01 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4409277929) | — |
+| 274 | 🆕 | Madison Pearl | Head of Digitalization | Dubai | — | 🆕 Discovered | Radar | 2026-06-02 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4409336438) | — |
+| 275 | 🆕 | Halian | Managed Services, Recruitment Agency & Contract Staffing | Director - Enterprise Applications & Digital Platforms (m/f/d) | Abu Dhabi Emirate | — | 🆕 Discovered | Radar | 2026-06-02 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4422851580) | — |
+| 276 | 🆕 | Finance House | Head of Digital Payments | Abu Dhabi Emirate | — | 🆕 Discovered | Radar | 2026-06-02 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4421827196) | — |
+| 277 | 🆕 | Inception | Vice President - Solutions Engineering | Abu Dhabi | — | 🆕 Discovered | Radar | 2026-06-02 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4423272228) | — |
+| 278 | 🆕 | Givaudan | Head of Regulatory Systems Strategy | Dubai | — | 🆕 Discovered | Radar | 2026-06-02 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4423224655) | — |
+| 279 | 🆕 | Jobgether | Senior Director, Data Platform & Engineering | GCC | — | 🆕 Discovered | Radar | 2026-06-02 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4422879226) | — |
+| 280 | 🆕 | Ecomma | Head of Applied AI | Dubai | — | 🆕 Discovered | Radar | 2026-06-02 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4418737729) | — |
+
 
 
 

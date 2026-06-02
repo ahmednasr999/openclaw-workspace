@@ -883,3 +883,7 @@
 2026-06-01T18:53:35+03:00 degraded count=2 reason=app-server-count-10, pid=3670791 rss_kb=821436 app_servers=10 health_ms=3 signals=0
 2026-06-01T18:53:35+03:00 restart-gateway reason=degraded:app-server-count-10,
 2026-06-01T18:53:48+03:00 post-restart health=200 2435
+2026-06-02T04:30:54+03:00 degraded count=1 reason=app-server-count-10, pid=3798257 rss_kb=678496 app_servers=10 health_ms=3 signals=0
+2026-06-02T04:33:14+03:00 degraded count=2 reason=app-server-count-10, pid=3798257 rss_kb=694068 app_servers=10 health_ms=3 signals=0
+2026-06-02T04:33:14+03:00 restart-gateway reason=degraded:app-server-count-10,
+2026-06-02T04:33:27+03:00 post-restart health=200 404

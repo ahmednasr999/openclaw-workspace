@@ -1,6 +1,6 @@
-# Job Radar: 2026-06-01
+# Job Radar: 2026-06-02
 
-*Generated: 2026-06-01 06:00 UTC*
+*Generated: 2026-06-02 06:00 UTC*
 
 *Engine: JobSpy (LinkedIn, Indeed, Google Jobs)*
 
@@ -10,7 +10,47 @@
 
 ### Digital Transformation Executive (UAE)
 
-No results found.
+- **Director, Transformation Governance** at Chalhoub Group 🎯
+  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-05-29
+  🔗 https://www.linkedin.com/jobs/view/4409296743
+
+- **Implementation Director** at Visa 🎯
+  📍  | 📅 2026-05-28
+  🔗 https://www.linkedin.com/jobs/view/4413110095
+
+- **Artificial Intelligence (AI) Business Partner – Shared Services** at WSP in the Middle East
+  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-05-28
+  🔗 https://www.linkedin.com/jobs/view/4408885999
+
+- **Head of Digitalization** at Madison Pearl 🎯
+  📍 Dubai, United Arab Emirates | 📅 nan
+  🔗 https://www.linkedin.com/jobs/view/4409336438
+
+- **Director - Enterprise Applications & Digital Platforms (m/f/d)** at Halian | Managed Services, Recruitment Agency & Contract Staffing 🎯
+  📍 Abu Dhabi Emirate, United Arab Emirates | 📅 nan
+  🔗 https://www.linkedin.com/jobs/view/4422851580
+
+- **Head of Digital Payments** at Finance House 🎯
+  📍 Abu Dhabi Emirate, United Arab Emirates | 📅 nan
+  🔗 https://www.linkedin.com/jobs/view/4421827196
+
+- **Vice President - Solutions Engineering** at Inception 🎯
+  📍 Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates | 📅 nan
+  🔗 https://www.linkedin.com/jobs/view/4423272228
+
+- **Sr IT Operations Manager** at Ecolab
+  📍 Dubai, Dubai, United Arab Emirates | 📅 nan
+  🔗 https://www.linkedin.com/jobs/view/4421685356
+
+- **Head of Regulatory Systems Strategy** at Givaudan 🎯
+  📍 Dubai, Dubai, United Arab Emirates | 📅 nan
+  🔗 https://www.linkedin.com/jobs/view/4423224655
+
+- **Senior Director, Data Platform & Engineering** at Jobgether 🎯
+  📍  | 📅 nan
+  🔗 https://www.linkedin.com/jobs/view/4422879226
+
+*10 results (8 executive-level, 0 likely ghost jobs)*
 
 ### Digital Transformation Executive (Saudi)
 
@@ -22,95 +62,55 @@ No results found.
 
 ### CTO / Head of Technology (GCC)
 
-No results found.
+- **CTO (Crypto Mining)** at EMCD ⛔
+  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-05-29
+  🔗 https://www.linkedin.com/jobs/view/4422003919
+
+- **Senior Software Engineering Manager** at Dyson
+  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-05-29
+  🔗 https://www.linkedin.com/jobs/view/4380785148
+
+- **Head of IT, Fintech, Dubai** at Emerald Zebra Recruitment & Executive Search 🎯
+  📍 Dubai, United Arab Emirates | 📅 2026-05-28
+  🔗 https://www.linkedin.com/jobs/view/4420239822
+
+- **Engineering Manager** at UMO
+  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-05-28
+  🔗 https://www.linkedin.com/jobs/view/4417616330
+
+- **Founding Full Stack AI Engineer** at Leru Partners
+  📍 Dubai, United Arab Emirates | 📅 2026-05-27
+  🔗 https://www.linkedin.com/jobs/view/4418571544
+
+- **Head of DevOps** at 1inch 🎯
+  📍 Dubai, United Arab Emirates | 📅 2026-05-26
+  🔗 https://www.linkedin.com/jobs/view/4415293617
+
+- **Technology Development Lead (AI-Native)** at Zenith Technologies
+  📍 Dubai, Dubai, United Arab Emirates | 📅 nan
+  🔗 https://www.linkedin.com/jobs/view/4418750533
+
+- **Forward Deployment Engineer** at Careem
+  📍 Dubai, Dubai, United Arab Emirates | 📅 nan
+  🔗 https://www.linkedin.com/jobs/view/4312893617
+
+- **Head of Applied AI** at Ecomma 🎯
+  📍 Dubai, Dubai, United Arab Emirates | 📅 nan
+  🔗 https://www.linkedin.com/jobs/view/4418737729
+
+*9 results (3 executive-level, 0 likely ghost jobs)*
 
 ### PMO / Program Director (GCC)
 
-- **Director, Transformation Governance** at Chalhoub Group 🎯
-  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-05-29
-  🔗 https://www.linkedin.com/jobs/view/4409296743
-
-- **Director – Major Projects & Infrastructure** at WSP in the Middle East 🎯
-  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-05-29
-  🔗 https://www.linkedin.com/jobs/view/4409277929
-
-- **Technology Strategy and Regulatory Lead** at MetLife Gulf
-  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-05-29
-  🔗 https://www.linkedin.com/jobs/view/4417892525
-
-- **Service Delivery Director** at Salesforce 🎯
-  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-05-28
-  🔗 https://www.linkedin.com/jobs/view/4420496035
-
-- **Head of Product and PMO, Fintech, Dubai** at Emerald Zebra Recruitment & Executive Search 🎯
-  📍 Dubai, United Arab Emirates | 📅 2026-05-28
-  🔗 https://www.linkedin.com/jobs/view/4420253055
-
-- **Enterprise Transformation Lead - Control Tower & Systems** at Michael Page 🎯
-  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-05-28
-  🔗 https://www.linkedin.com/jobs/view/4417482243
-
-- **Program Director - Rail** at Parsons Corporation 🎯
-  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-05-25
-  🔗 https://www.linkedin.com/jobs/view/4418933226
-
-- **Head of Enterprise Transformation & Intelligent Automation** at RAKBANK 🎯
-  📍 Dubai, United Arab Emirates | 📅 2026-05-25
-  🔗 https://www.linkedin.com/jobs/view/4417864039
-
-- **Global Program Engineer Manager -  Digitalization** at Eaton
-  📍 Dubai, Dubai, United Arab Emirates | 📅 nan
-  🔗 https://www.linkedin.com/jobs/view/4403822764
-
-- **Technical Programme Delivery Lead** at eMagine Solutions
-  📍 Dubai, United Arab Emirates | 📅 nan
-  🔗 https://www.linkedin.com/jobs/view/4421600282
-
-*10 results (7 executive-level, 0 likely ghost jobs)*
+No results found.
 
 ### HealthTech / AI Executive (GCC)
 
-- **Director, Quality Assurance APAC** at Hologic, Inc. 🎯
-  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-05-30
-  🔗 https://www.linkedin.com/jobs/view/4391609264
-
-- **Group Director - Data Science, Insight & Analytics** at Quotacom 🎯
-  📍 Dubai, United Arab Emirates | 📅 2026-05-29
-  🔗 https://www.linkedin.com/jobs/view/4417949005
-
-- **Director of Learning, 2 Hour Learning (Remote) - $200,000/year USD** at Crossover 🎯
-  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-05-29
-  🔗 https://www.linkedin.com/jobs/view/4418577324
-
-- **Head of Demand Generation** at Easygenerator 🎯
-  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-05-29
-  🔗 https://www.linkedin.com/jobs/view/4380546837
-
-- **Artificial Intelligence (AI) Business Partner – Shared Services** at WSP in the Middle East
-  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-05-28
-  🔗 https://www.linkedin.com/jobs/view/4408885999
-
-- **Senior Director, Medical Education - Emerging Markets** at Smith+Nephew 🎯
-  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-05-27
-  🔗 https://www.linkedin.com/jobs/view/4409378702
-
-- **VP – Infrastructure, Cloud and Operations** at Dubai Holding 🎯
-  📍 Dubai, United Arab Emirates | 📅 2026-05-25
-  🔗 https://www.linkedin.com/jobs/view/4415203470
-
-- **General Partner (New VC Fund with innovative concept and portcos)** at Scalator Ventures Inc.
-  📍 Dubai, Dubai, United Arab Emirates | 📅 nan
-  🔗 https://www.linkedin.com/jobs/view/4418384825
-
-*8 results (6 executive-level, 0 likely ghost jobs)*
+No results found.
 
 ### FinTech / Payments Executive (GCC)
 
-- **VP Head Of Partnerships** at TALENTMATE 🎯
-  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-05-27
-  🔗 https://www.linkedin.com/jobs/view/4419863771
-
-*1 results (1 executive-level, 0 likely ghost jobs)*
+No results found.
 
 ### IT Director / VP IT (GCC)
 
@@ -121,8 +121,8 @@ No results found.
 ## Summary
 
 - Total unique jobs found: 19
-- Executive-level matches: 14
-- Already in pipeline: 13
-- **New jobs added to pipeline: 1**
+- Executive-level matches: 11
+- Already in pipeline: 4
+- **New jobs added to pipeline: 7**
 
 *Ghost job filter: Jobs >14 days old or with vague indicators (fast-paced, rockstar, ninja, wear many hats) are flagged.*

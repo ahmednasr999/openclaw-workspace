@@ -2,34 +2,32 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-05-31T22:00:26.696837+03:00",
-    "duration_ms": 24147,
+    "generated_at": "2026-06-02T00:00:39.977842+03:00",
+    "duration_ms": 37633,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "cd5f48ac",
+    "run_id": "2755b768",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": [
     {
-      "id": "indeed-in-fb050f217fc58e3d",
+      "id": "indeed-in-1d4877a78e0a0ea4",
       "source": "indeed",
-      "title": "Director - Sustainable Finance Advisory",
-      "company": "KEO International Consultants",
+      "title": "Director Of Leasing",
+      "company": "Dynasty Real Estate",
       "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=fb050f217fc58e3d",
-      "posted": "2026-05-25",
+      "url": "https://ae.indeed.com/viewjob?jk=1d4877a78e0a0ea4",
+      "posted": "2026-06-01",
       "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 30,
+      "domain_match": false,
+      "keyword_score": 13,
       "match_keywords": [
-        "agile",
         "ai",
-        "enterprise",
         "director"
       ],
-      "raw_snippet": "Overview:\n\nKEO is a creative enterprise, where innovation is a way of life. We are uniquely resourced with end\\-to\\-end services to take clients from inspiration \u2013 through conceptualization \u2013 to realization of planning, design or project delivery in the built and natural environments.  \n\nFor over 60 years we\u2019ve led with vision, contributing to many of the world\u2019s most ambitious projects, iconic places, remarkable experiences and prosperous communities.  \n\nAs a highly integrated and agile AEP/PMC",
+      "raw_snippet": "Leasing Director \u2014 Residential Real Estate\n\n**About the Role** We are looking for a dynamic and results\\-driven Leasing Director to lead our leasing strategy across our residential portfolio. You will be responsible for driving occupancy, optimizing rental revenue, and building a high\\-performing leasing team that delivers an exceptional resident experience.\n\n**Key Responsibilities**\n\n* Develop and execute leasing strategies to achieve and maintain target occupancy rates across all properties\n* ",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
@@ -60,36 +58,120 @@
       "search_title": "Director Digital Transformation"
     },
     {
-      "id": "indeed-in-1818f66e88511823",
+      "id": "indeed-in-a424ac2468204dd1",
       "source": "indeed",
-      "title": "Cloud and Infrastructure Platforms Director",
-      "company": "KEO International Consultants",
+      "title": "Complex Director Of F&B, Culinary & Recreation",
+      "company": "Marriott International",
       "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=1818f66e88511823",
-      "posted": "2026-05-22",
+      "url": "https://ae.indeed.com/viewjob?jk=a424ac2468204dd1",
+      "posted": "2026-06-01",
       "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 40,
+      "domain_match": false,
+      "keyword_score": 16,
       "match_keywords": [
-        "agile",
-        "cloud",
-        "infrastructure",
-        "enterprise",
+        "ai",
         "director",
-        "platform"
+        "dubai"
       ],
-      "raw_snippet": "Overview:\n\nKEO is a creative enterprise, where innovation is a way of life. We are uniquely resourced with end\\-to\\-end services to take clients from inspiration \u2013 through conceptualization \u2013 to realization of planning, design or project delivery in the built and natural environments. For over 60 years we\u2019ve led with vision, contributing to many of the world\u2019s most ambitious projects, iconic places, remarkable experiences and prosperous communities.  \n\nAs a highly integrated and agile AEP/PMCM f",
+      "raw_snippet": "**Additional Information**  \n\n**Job Number**26066567  \n\n**Job Category**Food and Beverage \\& Culinary  \n\n**Location**Dubai Marina, Dubai, United Arab Emirates, United Arab Emirates  \n\n**Schedule**Full Time  \n\n**Located Remotely?**N  \n\n**Position Type** Management  \n\n**JOB SUMMARY**\n\n\nFunctions as the strategic business leader of the property\u2019s food and beverage, culinary, and recreational operations, including Restaurants/Bars, Room Service, Banquets/Catering, and leisure or recreational offerin",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
+      "search_title": "IT Director"
+    },
+    {
+      "id": "indeed-in-62fb6fa31dc1dd3e",
+      "source": "indeed",
+      "title": "Client Lead / Director",
+      "company": "AtkinsR\u00e9alis",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=62fb6fa31dc1dd3e",
+      "posted": "2026-05-26",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 16,
+      "match_keywords": [
+        "director",
+        "growth",
+        "saudi"
+      ],
+      "raw_snippet": "**Overview**\n------------\n\n\nThe Client Lead shall be directly responsible for managing the relationship, experience and account for the designated Client in Saudi Arabia. They shall identify service agnostic opportunities for growth, oversee and manage win work activities, resolve conflicts with the Client and act as the single point of contact between the Client and AtkinsR\u00e9alis. They will also be responsible for the performance of the Client account from a revenue, EBIT \\& Net Promoter Score (",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "Program Director"
+    },
+    {
+      "id": "indeed-in-599207d1d404aff9",
+      "source": "indeed",
+      "title": "Director - Financial Crime Advisory",
+      "company": "Capitex",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=599207d1d404aff9",
+      "posted": "2026-06-01",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 13,
+      "match_keywords": [
+        "director",
+        "gcc",
+        "saudi"
+      ],
+      "raw_snippet": "About the role\n\n\nWe are looking for an exceptional Director to lead and grow a Financial Crime Compliance (FCC) Advisory practice based in Saudi Arabia, with reach across the wider GCC region. This is a senior, client\\-facing role that combines deep regulatory expertise with hands\\-on delivery and entrepreneurial business development.\n\n\nThe successful candidate will be a self\\-driven practitioner with a proven track record of winning and delivering significant FCC advisory mandates for banks and",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
       "search_title": "Director Digital Transformation"
+    },
+    {
+      "id": "indeed-in-975a5289f3e4ca70",
+      "source": "indeed",
+      "title": "Advisory Operational Director",
+      "company": "Serco",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=975a5289f3e4ca70",
+      "posted": "2026-06-01",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 10,
+      "match_keywords": [
+        "director",
+        "middle east"
+      ],
+      "raw_snippet": "**Advisory Operational Director**  \n\n**Impact a better future**\n\n\nAt Serco, we bring together the right people, technology, and partners to deliver innovative solutions that impact a better future.\n\n  \n\nWe have been operating in the Middle East since 1947 and have a profound understanding of the region.\n\n  \n\nWith over 4,500 colleagues here, we support governments across defence, space, transport, emergency services, justice and migration, and other vital public services. Our core capabilities sp",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "IT Director"
+    },
+    {
+      "id": "indeed-in-f56b96f94ff286b1",
+      "source": "indeed",
+      "title": "Director, Revenue",
+      "company": "Faena",
+      "location": "\u0627\u0644\u062f\u0631\u0639\u064a\u0629, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=f56b96f94ff286b1",
+      "posted": "2026-06-01",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 13,
+      "match_keywords": [
+        "director",
+        "api",
+        "architecture"
+      ],
+      "raw_snippet": "**Company Description** **About Faena**\n\n\nFaena creates cultural epicenters\u2014living stages where art, design, and warm, attentive hospitality convene to craft a feast for the senses. We are a Cultural Embassy that invites guests to **seek the extraordinary**, shaping worlds that feel profoundly personal, welcoming, and alive.\n\n\n\u201cAt Wadi Safar, we are shaping a new world where art, architecture, and nature live in harmony. Guided by a shared respect for culture and craft, this collaboration with D",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "IT Director"
     }
   ],
   "kpi": {
     "searches_run": 20,
-    "results_per_search": 0.95,
-    "unique_jobs": 3,
-    "errors": 13
+    "results_per_search": 2.5,
+    "unique_jobs": 7,
+    "errors": 6
   },
   "recommendations": []
 }

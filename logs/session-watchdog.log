@@ -344,3 +344,9 @@
 [2026-06-01T12:56:41Z] Done reset=1 skipped=0 errors=0
 [2026-06-01T15:55:52Z] RESET [hr] bdc20f34-c928-40c2-bee2-87a25aa3e93e-topic-9.trajectory.jsonl was 3MB -> archived to bdc20f34-c928-40c2-bee2-87a25aa3e93e-topic-9.trajectory.20260601T155552Z.jsonl.gz
 [2026-06-01T15:56:38Z] Done reset=1 skipped=0 errors=0
+[2026-06-01T18:56:13Z] RESET [cmo] ae9499bc-6855-47d3-b5c8-ecd93b6ccb95-topic-7.trajectory.jsonl was 3MB -> archived to ae9499bc-6855-47d3-b5c8-ecd93b6ccb95-topic-7.trajectory.20260601T185613Z.jsonl.gz
+[2026-06-01T18:56:41Z] Done reset=1 skipped=0 errors=0
+[2026-06-01T21:55:17Z] RESET [main] 1221e2ef-969d-413a-9ec7-6a3debd65e35.trajectory.jsonl was 3MB -> archived to 1221e2ef-969d-413a-9ec7-6a3debd65e35.trajectory.20260601T215517Z.jsonl.gz
+[2026-06-01T21:56:34Z] Done reset=1 skipped=0 errors=0
+[2026-06-02T00:56:36Z] Done reset=0 skipped=0 errors=0
+[2026-06-02T03:56:37Z] Done reset=0 skipped=0 errors=0
