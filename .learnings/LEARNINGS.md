@@ -1,5 +1,14 @@
 # Learnings Log
 
+## 2026-06-02 - Check Sent Mail Before Declaring No Prior Application
+
+- Correction: A Taaeen prior-contact check initially reported no previous application because the jobs DB and applied ledgers had no match.
+- What happened: A later live Gmail Sent Mail search found an April 12, 2026 email to `ymohamed@taaeen.ae` with `Ahmed Nasr - Project Lead - Taaeen.pdf` attached.
+- Do differently: For application-history questions, check Sent Mail and email history alongside `nasr-pipeline.db`, applied ledgers, CV files, and job folders before saying there was no prior application.
+
+---
+
+
 ## [LRN-20260508-001] correction
 
 **Logged**: 2026-05-08T07:30:00+03:00

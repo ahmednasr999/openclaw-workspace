@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-06-01T07:45:12.030916+03:00",
+  "generated_at": "2026-06-02T07:45:10.579460+03:00",
   "status": "ok",
-  "last_scan_time": "2026-05-31T20:00:22.817355+03:00",
-  "last_total_scanned": 19,
+  "last_scan_time": "2026-06-01T20:00:39.959863+03:00",
+  "last_total_scanned": 42,
   "last_actionable_count": 0,
   "last_hot_alerts": 0,
   "last_llm_status": "present",
-  "last_seen_uid": 360009,
-  "last_success": "2026-05-31T20:00:22.818350+03:00",
-  "processed_count": 10342,
+  "last_seen_uid": 360178,
+  "last_success": "2026-06-01T20:00:39.960619+03:00",
+  "processed_count": 10510,
   "feedback_rules": 0,
-  "pipeline_review_candidates": 8,
+  "pipeline_review_candidates": 17,
   "cron_jobs": [
     {
       "name": "Email Agent (Sun-Thu)",
@@ -47,5 +47,5 @@
       "model": "openai/gpt-5.5"
     }
   ],
-  "formatter_preview": "📬 Email scan: all clear ✅\nScanned 19 new email(s). Nothing requiring action."
+  "formatter_preview": "📬 Email scan: all clear ✅\nScanned 42 new email(s). Nothing requiring action."
 }

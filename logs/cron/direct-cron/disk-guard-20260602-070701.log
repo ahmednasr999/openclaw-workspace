@@ -1,0 +1,12 @@
+{
+  "task": "disk-guard",
+  "ts": "2026-06-02T07:07:36.125295+03:00",
+  "cmd": [
+    "/root/.openclaw/workspace/scripts/vps-disk-guard.sh"
+  ],
+  "cwd": "/root/.openclaw/workspace",
+  "returncode": 0,
+  "stdout": "DISK_GUARD_TRIGGERED\nbefore=74%\nafter=74%\nthreshold=65%\nlog=/root/.openclaw/workspace/logs/disk-guard/cleanup-20260602-070701.log\n",
+  "stderr": "",
+  "log_path": "/root/.openclaw/workspace/logs/cron/direct-cron/disk-guard-20260602-070701.log"
+}

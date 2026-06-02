@@ -4419,3 +4419,24 @@ Config (/root/.openclaw/openclaw.json): missing env var "OPENCLAW_HOOKS_TOKEN" a
 [2026-06-02 04:00] Summary: fixes=0 warnings=0 alerts=0
 [2026-06-02 06:00] === Watchdog v3 run ===
 [2026-06-02 06:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-06-02 08:00] === Watchdog v3 run ===
+[2026-06-02 08:00] WARN: active-tasks.md stale (50h)
+[2026-06-02 08:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-06-02 10:00] === Watchdog v3 run ===
+[2026-06-02 10:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-06-02 12:00] === Watchdog v3 run ===
+[2026-06-02 12:00] FIXED: Re-triggered failed cron 5e6b5746-25b0-48df-b74c-f890c628810e
+[2026-06-02 12:00] Summary: fixes=1 warnings=1 alerts=0
+Config (/root/.openclaw/openclaw.json): missing env var "OPENCLAW_HOOKS_TOKEN" at hooks.token - feature using this value will be unavailable
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:5e6b5746-25b0-48df-b74c-f890c628810e:1780390816085:1"
+}
+[2026-06-02 14:00] === Watchdog v3 run ===
+[2026-06-02 14:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-06-02 16:00] === Watchdog v3 run ===
+[2026-06-02 16:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-06-02 18:00] === Watchdog v3 run ===
+[2026-06-02 18:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-06-02 20:00] === Watchdog v3 run ===

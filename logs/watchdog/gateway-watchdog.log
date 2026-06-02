@@ -887,3 +887,40 @@
 2026-06-02T04:33:14+03:00 degraded count=2 reason=app-server-count-10, pid=3798257 rss_kb=694068 app_servers=10 health_ms=3 signals=0
 2026-06-02T04:33:14+03:00 restart-gateway reason=degraded:app-server-count-10,
 2026-06-02T04:33:27+03:00 post-restart health=200 404
+2026-06-02T07:51:14+03:00 degraded count=1 reason=app-server-count-10, pid=3957937 rss_kb=808728 app_servers=10 health_ms=2 signals=0
+2026-06-02T07:53:34+03:00 degraded count=2 reason=app-server-count-10, pid=3957937 rss_kb=821088 app_servers=10 health_ms=3 signals=0
+2026-06-02T07:53:34+03:00 restart-gateway reason=degraded:app-server-count-10,
+2026-06-02T07:53:51+03:00 post-restart health=000 6006
+2026-06-02T09:45:55+03:00 observed reason=starvation-signals-4, pid=4031473 rss_kb=792392 app_servers=8 health_ms=117 signals=4
+2026-06-02T09:48:14+03:00 observed reason=starvation-signals-6, pid=4031473 rss_kb=853096 app_servers=8 health_ms=2 signals=6
+2026-06-02T10:15:48+03:00 chrome-trim term pid=2835063 count=21 rss_kb=1192736
+2026-06-02T10:17:54+03:00 chrome-trim term pid=4091618 count=18 rss_kb=1494504
+2026-06-02T10:26:44+03:00 chrome-trim term pid=4092439 count=20 rss_kb=1604288
+2026-06-02T10:32:54+03:00 chrome-trim term pid=4095521 count=20 rss_kb=1685708
+2026-06-02T10:35:09+03:00 chrome-trim term pid=4098801 count=19 rss_kb=1526436
+2026-06-02T10:55:34+03:00 chrome-trim term pid=4099381 count=16 rss_kb=2132000
+2026-06-02T10:57:55+03:00 degraded count=1 reason=app-server-count-10, pid=4031473 rss_kb=881100 app_servers=10 health_ms=3 signals=0
+2026-06-02T11:00:13+03:00 chrome-trim term pid=4104067 count=17 rss_kb=2080812
+2026-06-02T11:00:18+03:00 degraded count=2 reason=app-server-count-10, pid=4031473 rss_kb=854600 app_servers=10 health_ms=8 signals=1
+2026-06-02T11:00:18+03:00 restart-gateway reason=degraded:app-server-count-10,
+2026-06-02T11:00:37+03:00 post-restart health=000 6004
+2026-06-02T11:48:24+03:00 chrome-trim term pid=4106263 count=15 rss_kb=1903744
+2026-06-02T11:55:14+03:00 chrome-trim term pid=4109370 count=17 rss_kb=2207532
+2026-06-02T11:59:54+03:00 chrome-trim term pid=4111378 count=15 rss_kb=1806632
+2026-06-02T12:04:34+03:00 chrome-trim term pid=4112121 count=20 rss_kb=2680104
+2026-06-02T12:09:14+03:00 degraded count=1 reason=app-server-count-10, pid=4106254 rss_kb=807116 app_servers=10 health_ms=2 signals=0
+2026-06-02T12:11:34+03:00 chrome-trim term pid=4114602 count=18 rss_kb=2270996
+2026-06-02T12:11:40+03:00 degraded count=2 reason=app-server-count-10, pid=4106254 rss_kb=822472 app_servers=10 health_ms=2 signals=0
+2026-06-02T12:11:40+03:00 restart-gateway reason=degraded:app-server-count-10,
+2026-06-02T12:11:55+03:00 post-restart health=200 5120
+2026-06-02T12:32:24+03:00 chrome-trim term pid=4117425 count=17 rss_kb=2232140
+2026-06-02T13:32:25+03:00 observed reason=starvation-signals-6, pid=4117410 rss_kb=788964 app_servers=8 health_ms=4 signals=6
+2026-06-02T13:34:45+03:00 observed reason=starvation-signals-5, pid=4117410 rss_kb=799928 app_servers=8 health_ms=3 signals=5
+2026-06-02T14:34:44+03:00 degraded count=1 reason=app-server-count-10, pid=4117410 rss_kb=842520 app_servers=10 health_ms=3 signals=0
+2026-06-02T14:36:55+03:00 degraded count=2 reason=app-server-count-10, pid=4117410 rss_kb=816696 app_servers=10 health_ms=3 signals=0
+2026-06-02T14:36:55+03:00 restart-gateway reason=degraded:app-server-count-10,
+2026-06-02T14:37:09+03:00 post-restart health=200 3603
+2026-06-02T15:46:15+03:00 degraded count=1 reason=app-server-count-10, pid=4183811 rss_kb=807564 app_servers=10 health_ms=91 signals=0
+2026-06-02T15:48:34+03:00 degraded count=2 reason=app-server-count-10, pid=4183811 rss_kb=807580 app_servers=10 health_ms=2 signals=0
+2026-06-02T15:48:34+03:00 restart-gateway reason=degraded:app-server-count-10,
+2026-06-02T15:48:52+03:00 post-restart health=000 6006
