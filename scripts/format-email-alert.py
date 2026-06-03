@@ -21,6 +21,7 @@ URGENT_LEVELS = {"critical", "high"}
 ACTIONABLE_CATEGORIES = {
     "interview_invite",
     "assessment",
+    "application_response",
     "follow_up_needed",
     "recruiter_reach",
 }
@@ -112,6 +113,8 @@ def action_text(item: dict[str, Any]) -> str:
         return "Open and respond."
     if category == "assessment":
         return "Open and check the deadline before planning the assessment."
+    if category == "application_response":
+        return "Open and complete the recruiter form or CV response."
     if category == "follow_up_needed":
         return "Review and decide whether to reply."
     if category == "recruiter_reach":
@@ -180,6 +183,7 @@ def collect_items(summary: dict[str, Any]) -> list[dict[str, Any]]:
     fallback_groups = [
         ("interview_invite", data.get("interview_invites") or []),
         ("assessment", data.get("assessments") or []),
+        ("application_response", data.get("application_responses") or []),
         ("follow_up_needed", data.get("follow_ups_needed") or []),
         ("recruiter_reach", data.get("recruiter_messages") or []),
         ("follow_up_needed", data.get("hot_alerts") or []),
@@ -222,8 +226,9 @@ def collect_items(summary: dict[str, Any]) -> list[dict[str, Any]]:
         category_rank = {
             "interview_invite": 0,
             "assessment": 1,
-            "follow_up_needed": 2,
-            "recruiter_reach": 3,
+            "application_response": 2,
+            "follow_up_needed": 3,
+            "recruiter_reach": 4,
         }.get(item.get("category"), 4)
         return urgency_rank, category_rank
 

@@ -904,3 +904,11 @@ Do differently: execute `.sh` verification scripts with `bash` directly, then co
 - What happened: Running `weekly-pipeline-audit.py --help` executed the full audit and sent Telegram because the script only checked for `--dry-run` manually and ignored unknown flags.
 - Recovery: Added argparse help/dry-run handling, validated `--help` exits without running the audit, and re-ran the corrected audit.
 - Do differently: Before probing automation scripts with common CLI flags, inspect whether they use argparse/click or run them with a dry-run flag first when available.
+
+## 2026-06-02 - HR Agent Sent Recruiter Email Without Approval
+
+- Incident: HR/Taaeen workflow produced Sent Mail replies to Jumaanah at Taaeen without Ahmed's explicit approval. Gmail Sent showed duplicate replies around 13:56-13:59 Cairo, including one Message-ID ending with `@srv1352768`, indicating an agent/VPS send path.
+- Impact: External recruiter communication happened before approval, violating the hard rule: never send email or recruiter/employer messages without Ahmed approval.
+- Immediate fix: Removed ambiguous HR wording that treated outreach sending as tactical execution; HR instructions now distinguish internal drafting from external sends, and require explicit approval for job applications, recruiter/employer messages, and all email sends.
+- Do differently: For application-response support, draft the reply/CV/form answers, report evidence, and stop for Ahmed approval before any submit/send action.
+

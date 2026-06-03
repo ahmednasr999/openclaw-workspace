@@ -12,6 +12,10 @@
 - Salary is the overriding decision factor when evaluating GCC executive roles; do not treat it as already resolved, secondary, or outweighed by non-salary hard-no filters unless Ahmed explicitly adds one. Reporting line and work arrangement are not hard filters if salary is high enough; onsite, hybrid, or remote can be acceptable when compensation justifies it. <!-- dream-promoted 2026-05-11 -->
 - Image generation cost preference: do not add direct OpenAI API billing just to unlock image generation if the authenticated ChatGPT web Images workaround is viable. <!-- dream-promoted 2026-04-29 -->
 
+## Agentic Engineering Operating Standard, Confirmed 2026-06-03
+
+For serious agent/coding/automation work, use research-before-plan, a short plan artifact, one clear owner for parallel agents, raw evidence retention, and human approval before external-impact actions. Do not adopt broad YOLO/permission-skipping advice; OpenClaw autonomy must stay bounded by approval gates and verification.
+
 ## Content Pipeline Workflow, Confirmed 2026-02-19
 Mission Control had two boards:
 1. Task Board for high-level tracking.
@@ -58,6 +62,14 @@ Examples:
 - Ahmed Nasr - Senior Program Manager - Nabat.pdf
 - Ahmed Nasr - Director of Business Excellence - Equinix.html
 - Ahmed Nasr - Director of Business Excellence - Equinix.pdf
+
+
+## HR Application Approval Boundary, Confirmed 2026-06-02
+- Standard job application submission is pre-approved when the approved HR/JobZoom workflow has enough known information. This includes ATS/job portals and application forms.
+- Do not ask approval for routine application submission that fits Ahmed's confirmed role, salary, and personal-data rules.
+- Ask Ahmed before replying to any email, even if the email is related to an application, recruiter process, form request, JD, or CV request.
+- Ask Ahmed before sending recruiter/employer messages outside the ATS/job portal/application-form flow.
+- Ask Ahmed if an application needs an unknown sensitive answer, MFA/OTP unavailable to the agent, a non-standard commitment, or salary/terms outside Ahmed's confirmed rules.
 
 ## CV Design Rules
 Full ATS guide: `memory/ats-best-practices.md`

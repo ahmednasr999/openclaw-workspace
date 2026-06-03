@@ -603,3 +603,10 @@ li-4422879226
 4421394458 | Flynn and Chase | Value Creation Partner - Private Equity | 2026-06-02 | Applied by HR via LinkedIn Easy Apply | ATS 92 | CV: Ahmed Nasr - Value Creation Partner - Flynn and Chase.pdf
 4422427055 | Parfums de Marly | IT Retail Business Partner | 2026-06-02 | Applied by HR via LinkedIn Easy Apply | ATS 88 | CV: Ahmed Nasr - IT Retail Business Partner - Parfums de Marly.pdf
 linkedin:4422438796
+4421686320 | BlackStone eIT | Senior Project Manager | 2026-06-03 | Applied by HR via LinkedIn Easy Apply authenticated browser | ATS 75 | CV: CV_Ahmed_Nasr_BlackStone_eIT_Senior_Project_Manager.pdf
+4419609141 | EmaarX.AI | Chief Technology Officer | 2026-06-03 | Applied by HR via LinkedIn Easy Apply authenticated browser | ATS 86 | CV: CV_Ahmed_Nasr_EmaarX_AI_Chief_Technology_Officer.pdf
+4395282880 | Amazon | Program Manager, Network Losses, ROW | 2026-06-03 | Detected existing LinkedIn status: Applied on company site 1 month ago | ATS detected | CV: existing LinkedIn record
+4397873550 | Wathbah AI Solutions | Project Manager | 2026-06-03 | Detected existing LinkedIn status: Application submitted 1 month ago | ATS detected | CV: existing LinkedIn record
+4397904157 | Classera | IT Project Manager | 2026-06-03 | Applied by HR via LinkedIn Easy Apply authenticated browser | ATS 74 | CV: CV_Ahmed_Nasr_Classera_IT_Project_Manager.pdf
+4367121734 | APCO | Senior Project Manager (Tech) | 2026-06-03 | Applied by HR via APCO Oracle external portal | ATS 77 | CV: CV_Ahmed_Nasr_APCO_Senior_Project_Manager__Tech_.pdf
+4395336985 | Confidential | Head of Strategy, Business Planning & Digital Transformation | 2026-06-03 | Existing LinkedIn status: Application submitted 2 months ago | ATS 74 | CV: unknown

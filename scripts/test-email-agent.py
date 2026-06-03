@@ -121,6 +121,37 @@ ok("ecommerce stock alert -> other",
 ok("availability alone without hiring context -> other",
    ea.categorize_email("Please share your availability", "events@vendor.com") == ["other"])
 
+taaeen_body = """Dear Ahmed,
+As discussed, please find attached the application form for you to complete and submit.
+I have also attached the job description for the role you applied for.
+Additionally, please share your latest updated CV at your earliest convenience.
+https://forms.office.com/r/kZ2DzXRZH0
+"""
+taaeen_categories = ea.categorize_email(
+   "Application Form and Job Description - Project Manager",
+   "Jumaanah Manzoor Ahammed | Taaeen Consulting & Talent Development <Jumaanah@taaeen.ae>",
+   taaeen_body,
+)
+ok("recruiter form/CV request -> application_response",
+   "application_response" in taaeen_categories,
+   f"categories={taaeen_categories}")
+taaeen_score, taaeen_pipeline = ea.score_email(
+   "Application Form and Job Description - Project Manager",
+   "Jumaanah Manzoor Ahammed | Taaeen Consulting & Talent Development <Jumaanah@taaeen.ae>",
+   taaeen_body,
+)
+taaeen_assessment = ea.assess_actionability(
+   "Application Form and Job Description - Project Manager",
+   "Jumaanah Manzoor Ahammed | Taaeen Consulting & Talent Development <Jumaanah@taaeen.ae>",
+   taaeen_body,
+   taaeen_categories,
+   taaeen_score,
+   taaeen_pipeline,
+)
+ok("recruiter form/CV request is actionable",
+   taaeen_assessment["actionable"],
+   f"assessment={taaeen_assessment}")
+
 original_pipeline_jobs = ea._get_active_pipeline_jobs
 ea._get_active_pipeline_jobs = lambda: [{
     "job_id": "linkedin-li-4384465264",
@@ -278,6 +309,27 @@ false_positive_summary = {
 alert = fmt.build_alert(false_positive_summary)
 ok("LLM read_and_file veto suppresses urgent fallback", alert.startswith("📬 Email scan: all clear"), alert)
 ok("newsletter false positive not action needed", "Email alert - action needed" not in alert, alert)
+
+application_response_summary = {
+    "data": {
+        "total_scanned": 52,
+        "application_responses": [{
+            "id": "360262",
+            "from": "Jumaanah Manzoor Ahammed | Taaeen Consulting & Talent Development <Jumaanah@taaeen.ae>",
+            "subject": "Application Form and Job Description - Project Manager",
+            "priority": "HIGH",
+            "confidence": 85,
+            "why_actionable": "application form/CV request with hiring context",
+        }],
+        "llm_analysis": {},
+    }
+}
+application_alert = fmt.build_alert(application_response_summary)
+ok("application_response appears in action-needed alert",
+   "Application Form and Job Description" in application_alert
+   and "Email alert - action needed" in application_alert
+   and "all clear" not in application_alert.lower(),
+   application_alert)
 
 backlog_uids = [str(i).encode() for i in range(1, 701)]
 selected = backlog_uids[:ea.MAX_UID_BATCH]

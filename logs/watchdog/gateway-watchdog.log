@@ -929,3 +929,15 @@
 2026-06-03T00:50:15+03:00 restart-gateway reason=degraded:app-server-count-10,
 2026-06-03T00:50:34+03:00 post-restart health=000 6005
 2026-06-03T03:12:14+03:00 chrome-trim term pid=278994 count=16 rss_kb=2215304
+2026-06-03T07:46:54+03:00 degraded count=1 reason=app-server-count-10, pid=209606 rss_kb=684736 app_servers=10 health_ms=3 signals=0
+2026-06-03T07:49:15+03:00 degraded count=2 reason=app-server-count-10, pid=209606 rss_kb=681452 app_servers=10 health_ms=53 signals=0
+2026-06-03T07:49:15+03:00 restart-gateway reason=degraded:app-server-count-10,
+2026-06-03T07:49:34+03:00 post-restart health=000 6006
+2026-06-03T14:06:55+03:00 degraded count=1 reason=app-server-count-10, pid=388753 rss_kb=827048 app_servers=10 health_ms=114 signals=0
+2026-06-03T14:09:15+03:00 degraded count=2 reason=app-server-count-10, pid=388753 rss_kb=814948 app_servers=10 health_ms=2 signals=0
+2026-06-03T14:09:15+03:00 restart-gateway reason=degraded:app-server-count-10,
+2026-06-03T14:09:31+03:00 post-restart health=200 3855
+2026-06-03T15:46:14+03:00 degraded count=1 reason=app-server-count-10, pid=557306 rss_kb=796904 app_servers=10 health_ms=2 signals=0
+2026-06-03T15:48:34+03:00 degraded count=2 reason=app-server-count-10, pid=557306 rss_kb=796612 app_servers=10 health_ms=2 signals=0
+2026-06-03T15:48:34+03:00 restart-gateway reason=degraded:app-server-count-10,
+2026-06-03T15:48:52+03:00 post-restart health=000 6006

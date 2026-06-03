@@ -9,6 +9,7 @@ Categories:
   - application_ack: "thank you for applying", "application received"
   - rejection: "unfortunately", "not moving forward", "other candidates"
   - assessment: "assessment", "test", "coding challenge", "case study"
+  - application_response: recruiter requests application form/questionnaire/CV update
   - follow_up_needed: reply to our email with question
 
 SAFETY RULES (non-negotiable):
@@ -36,11 +37,11 @@ For each email, determine: urgency level, sender intent, required action, and re
 User profile: Senior technology executive pursuing senior leadership roles in UAE/Gulf region.
 Email categories already assigned by pattern matching: {categories}
 Total emails scanned: {total_emails}
-Actionable emails (interview/assessment/follow-up): {actionable_count}
+Actionable emails (interview/assessment/application-response/follow-up): {actionable_count}
 </context>
 
 <constraints>
-- Only analyze emails that are categorized as: interview_invite, assessment, follow_up_needed, recruiter_reach
+- Only analyze emails that are categorized as: interview_invite, assessment, application_response, follow_up_needed, recruiter_reach
 - NEVER invent email content — analyze only what is provided
 - Use the provided body_excerpt and classification_evidence before assigning urgency
 - Set urgency: critical (response within 24h), high (within 48h), medium (within week), low (informational only)
@@ -58,7 +59,7 @@ Return a JSON object with this exact structure:
       "subject": "subject line",
       "from": "sender",
       "date": "date",
-      "category": "interview_invite|recruiter_reach|assessment|follow_up_needed",
+      "category": "interview_invite|recruiter_reach|assessment|application_response|follow_up_needed",
       "urgency": "critical|high|medium|low",
       "intent": "one sentence describing what the sender wants",
       "action": "respond|forward|read_and_file|no_action",
@@ -176,7 +177,9 @@ HIRING_CONTEXT_PATTERNS = [
     r'\bhuman\s+resources\b', r'\bjob\b', r'\bvacancy\b',
     r'\bcompensation\s+range\b', r'\bnext\s+steps\s+in\s+your\s+application\b',
     r'\bshortlisted\b', r'\bassessment\b', r'\bcoding\s*challenge\b',
-    r'\bcase\s*study\b'
+    r'\bcase\s*study\b', r'\bapplication\s+form\b',
+    r'\bpre[-\s]*interview\s+questionnaire\b', r'\blatest\s+updated\s+cv\b',
+    r'\bupdated\s+cv\b', r'\bforms\.office\.com\b'
 ]
 
 HIRING_SENDER_MARKERS = [
@@ -209,6 +212,21 @@ ASSESSMENT_PATTERNS = [
     r'\bhackerrank\b', r'\bcodility\b', r'\bleetcode\b'
 ]
 # Removed bare \btest\b — too many false positives (newsletters, marketing)
+
+APPLICATION_RESPONSE_PATTERNS = [
+    r'\bapplication\s+form\b',
+    r'\bcomplete\s+and\s+submit\b',
+    r'\bcomplete\s+the\s+application\s+form\b',
+    r'\bsubmit\s+the\s+application\s+form\b',
+    r'\bpre[-\s]*interview\s+questionnaire\b',
+    r'\bshort\s+questionnaire\b',
+    r'\bforms\.office\.com\b',
+    r'\blatest\s+updated\s+cv\b',
+    r'\blatest\s+cv\b',
+    r'\bupdated\s+cv\b',
+    r'\bshare\s+your\s+.*cv\b',
+    r'\bjob\s+description\b.*\battached\b',
+]
 
 FOLLOW_UP_PATTERNS = [
     r'please\s*(let|confirm|reply|respond)',
@@ -438,6 +456,8 @@ KEYWORD_WEIGHTS = {
     "selected": 3, "phone screen": 3, "technical round": 3, "final round": 3,
     "next stage": 3, "next round": 3, "move forward": 3,
     "assessment": 2, "coding challenge": 2, "case study": 2,
+    "application form": 3, "latest updated cv": 3, "updated cv": 3,
+    "pre interview questionnaire": 3, "forms.office.com": 2,
     "availability": 2, "schedule": 2, "calendar link": 2,
     "deeper conversation": 2, "looking forward to your response": 2,
     "microsoft teams meeting": 2, "join with google meet": 2, "zoom meeting": 2,
@@ -595,6 +615,9 @@ def categorize_email(subject, from_addr, body=""):
     
     if hiring_context and matches_patterns(text, ASSESSMENT_PATTERNS):
         categories.append("assessment")
+
+    if hiring_context and matches_patterns(text, APPLICATION_RESPONSE_PATTERNS):
+        categories.append("application_response")
     
     if hiring_context and (re.search(r'\?\s*$', text) or matches_patterns(text, FOLLOW_UP_PATTERNS)):
         if "follow_up_needed" not in categories:
@@ -753,6 +776,9 @@ def assess_actionability(subject, from_addr, body, categories, score, pipeline_c
     if "assessment" in categories:
         confidence += 25
         evidence.append("assessment keyword with hiring context")
+    if "application_response" in categories:
+        confidence += 35
+        evidence.append("application form/CV request with hiring context")
     if "follow_up_needed" in categories:
         confidence += 20
         evidence.append("reply/follow-up wording with hiring context")
@@ -782,7 +808,7 @@ def assess_actionability(subject, from_addr, body, categories, score, pipeline_c
         evidence.append("Ahmed feedback: sender previously marked important")
 
     confidence = max(0, min(100, confidence))
-    actionable_categories = {"interview_invite", "assessment", "follow_up_needed", "recruiter_reach"}
+    actionable_categories = {"interview_invite", "assessment", "application_response", "follow_up_needed", "recruiter_reach"}
     actionable = bool(actionable_categories.intersection(categories)) and confidence >= MIN_ACTIONABLE_CONFIDENCE
     why = " | ".join(evidence[:4]) if evidence else "no strong hiring evidence"
     return {
@@ -806,6 +832,7 @@ def update_pipeline_from_emails(categorized):
         "rejection": "possible_rejection",
         "interview_invite": "possible_interview",
         "assessment": "possible_assessment",
+        "application_response": "possible_application_response",
         "follow_up_needed": "possible_follow_up",
         "recruiter_reach": "possible_recruiter_outreach",
     }
@@ -1190,6 +1217,7 @@ def run_email_agent(result: AgentResult):
         "application_ack": [],
         "rejection": [],
         "assessment": [],
+        "application_response": [],
         "follow_up_needed": [],
         "job_alert": [],
         "other": []
@@ -1280,6 +1308,7 @@ def run_email_agent(result: AgentResult):
         "application_acks": categorized["application_ack"][:10],
         "rejections": categorized["rejection"][:10],
         "assessments": categorized["assessment"][:5],
+        "application_responses": categorized["application_response"][:10],
         "follow_ups_needed": categorized["follow_up_needed"][:5],
         "job_alerts": categorized["job_alert"][:10],
         "actionable_count": len(actionable_emails),

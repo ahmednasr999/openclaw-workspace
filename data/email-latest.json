@@ -1,40 +1,24 @@
 {
   "status": "ok",
-  "scan_time": "2026-06-02T20:00:35.242414+03:00",
-  "total_scanned": 52,
+  "scan_time": "2026-06-03T16:00:32.636331+03:00",
+  "total_scanned": 34,
   "by_category": {
     "interview_invite": 0,
     "recruiter_reach": 0,
-    "application_ack": 1,
+    "application_ack": 0,
     "rejection": 0,
     "assessment": 0,
+    "application_response": 0,
     "follow_up_needed": 0,
     "job_alert": 0,
-    "other": 51
+    "other": 34
   },
   "interview_invites": [],
   "recruiter_messages": [],
-  "application_acks": [
-    {
-      "id": "360325",
-      "from": "Noah Khiar <nouhaila.khiar@taptapsend.com>",
-      "subject": "Taptap Send, Global Expansion Lead",
-      "date": "Tue, 2 Jun 2026 07:32:16 -0700",
-      "unread": true,
-      "priority": "MEDIUM",
-      "score": 3,
-      "pipeline_match": null,
-      "confidence": 25,
-      "confidence_label": "very_low",
-      "evidence": [
-        "hiring/application context",
-        "medium priority score: 3"
-      ],
-      "why_actionable": "not actionable: hiring/application context | medium priority score: 3"
-    }
-  ],
+  "application_acks": [],
   "rejections": [],
   "assessments": [],
+  "application_responses": [],
   "follow_ups_needed": [],
   "job_alerts": [],
   "actionable_count": 0,

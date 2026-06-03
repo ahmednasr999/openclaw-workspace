@@ -92,7 +92,7 @@ NASR owns governance. Each agent owns durable fixes in its lane:
 
 ## HR Protected Lane
 
-HR-related internal operations are pre-approved: searches/scans, diagnostics, pipeline inspection, scoring, ATS analysis, report generation, CV drafting/generation, artifact verification, local workspace edits in the HR lane, and Telegram delivery to Ahmed. Do not ask approval for these routine HR-lane operations. Keep approval gates for actual job applications, recruiter/employer messages, public/external third-party actions, paid actions, credential changes, destructive deletes, gateway/runtime changes, or anything that could affect Ahmed's reputation externally. <!-- updated 2026-05-06 from Ahmed correction -->
+HR-related internal operations are pre-approved: searches/scans, diagnostics, pipeline inspection, scoring, ATS analysis, report generation, CV drafting/generation, artifact verification, local workspace edits in the HR lane, and Telegram delivery to Ahmed. Standard ATS/job portal/application-form submissions are also pre-approved when the approved HR/JobZoom workflow has enough known information and the role, salary, and personal-data rules are satisfied. Do not ask approval for these routine HR-lane operations. Keep approval gates for email replies, recruiter/employer messages outside the application form/portal flow, public/external third-party actions, paid actions, credential changes, destructive deletes, gateway/runtime changes, unknown sensitive application answers, unavailable MFA/OTP, non-standard commitments, salary/terms outside Ahmed's confirmed rules, or anything else that could affect Ahmed's reputation externally outside the approved application workflow. <!-- updated 2026-06-02 from Ahmed approval-boundary correction -->
 
 Approval-noise rule for HR/JobZoom: prefer the safe toolbox in `/root/.openclaw/workspace-hr/tools/` for routine diagnostics before ad-hoc shell. Use `hr-status.py`, `jobzoom-latest-run.py`, and `cv-artifact-verify.py` instead of inline eval (`python -c`, `node -e`) or one-liner parsing (`sed`/`awk`/long grep pipelines). `strictInlineEval=true` is intentionally kept on, so command-shape approvals can still appear when agents bypass the toolbox. Do not weaken gateway/tool policy to avoid that noise; update the workflow/tooling instead. <!-- updated 2026-05-11 from HR approval-noise fix -->
 - CTO: gateway, config, scripts, runtime patches, health checks, tool behavior.
@@ -158,6 +158,20 @@ Default to one primary agent or lane owner. Add sub-agents only when a clear fai
 
 Do not add agents for vague brainstorming, role-played debate without a decision need, or work where coordination overhead is larger than the benefit. Add scope when failure modes pull it in, not because the task feels important. <!-- promoted 2026-05-01 from Rohit AI Agents 2026 ingestion -->
 
+## Agentic Engineering Standard
+
+Use this standard for non-trivial agent, coding, automation, workflow, or recovery work. Small known-context fixes can compress it, but external-risk or multi-agent work cannot skip the guardrails.
+
+- Research before plan: inspect source files, logs, live state, docs, and recent changes before choosing a path. Do not plan from memory when the answer can be read.
+- Plan before execution: for substantial work, write or maintain a short plan artifact with objective, constraints, approval boundary, owner, steps, verification, and stop condition. Use `templates/workflows/agentic-engineering-plan.md` as the default shape.
+- One owner, parallel helpers: parallelize independent research/build/verification only when one owning session coordinates scope, merges findings, and verifies the final outcome. Sub-agents do not make final claims on their own.
+- Keep raw evidence: preserve raw transcripts, logs, screenshots, and extracted source snippets when they are material to the decision. Summaries are secondary and must not replace the underlying evidence for high-risk work.
+- Human checkpoint before external impact: email replies, recruiter/employer messages outside approved application forms, public posts, credential changes, paid actions, destructive deletes, and runtime/gateway changes require the correct approval boundary before the final action.
+- Use separate engines deliberately: Codex-style builders, browser agents, research agents, and critique agents can be combined, but each gets a narrow role and a verification requirement. Do not treat model/tool success as proof.
+- No broad permission skipping: never copy YOLO-style advice into OpenClaw. Permission relaxation must be narrow, justified, reversible where possible, and tied to an approved workflow.
+
+Closeout must state the artifact/outcome inspected, checks run, changes made, and residual risk when risk is material.
+
 ## Sub-Agent Rules
 
 Every spawn brief must define the outcome, success criteria, verification, timeout, and non-delegation expectation. Prefer concise outcome-first briefs over long procedural scripts. Require side findings when useful. Include Ahmed-specific style constraints, especially concise replies and light natural emoji use when appropriate, because sub-agents may not inherit preferences reliably. Add anti-rationalization constraints for known failure modes, for example no "tests later", no unrelated cleanup, no proof by tool success, no quality claims without inspection. Never allow a sub-agent to claim success while errors remain or while the requested artifact/outcome is still missing.
@@ -200,4 +214,4 @@ For non-trivial code edits, PR fixes, or branch review work, use `skills/codex-r
 ## JobZoom Protected Lane
 
 - JobZoom is a protected daily full-scan lane.
-- JobZoom protected-lane operations are pre-approved: scans, reruns, diagnostics, scoring, report generation, CV generation, artifact verification, and Telegram delivery to Ahmed. Do not ask approval for these routine JobZoom operations. Keep approval gates for actions outside the protected lane, including actual job applications, emails/recruiter messages, public posts, paid actions, credential changes, destructive deletes, and gateway/runtime changes. <!-- promoted 2026-05-06 from Ahmed correction -->
+- JobZoom protected-lane operations are pre-approved: scans, reruns, diagnostics, scoring, report generation, CV generation, artifact verification, Telegram delivery to Ahmed, and standard ATS/job portal/application-form submissions when the approved workflow has enough known information and Ahmed's confirmed role, salary, and personal-data rules are satisfied. Do not ask approval for these routine JobZoom operations. Keep approval gates for actions outside the protected lane, including email replies, recruiter/employer messages outside the application form/portal flow, public posts, paid actions, credential changes, destructive deletes, gateway/runtime changes, unknown sensitive application answers, unavailable MFA/OTP, non-standard commitments, and salary/terms outside Ahmed's confirmed rules. <!-- updated 2026-06-02 from Ahmed approval-boundary correction -->

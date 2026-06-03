@@ -1549,3 +1549,27 @@ Promoted during deep-audit closeout on 2026-05-27. Current-user-request preceden
 - Verification: The targeted run reduced active context to 12,481 tokens and the dashboard returned OK.
 
 - 2026-05-28 - Step-by-step output sharing preference: Ahmed asked that troubleshooting instructions always be given step by step, with clear guidance on what output to share back.
+
+---
+
+## [LRN-20260602-hr-application-vs-email-approval] correction
+
+**Logged**: 2026-06-02T21:33:00+03:00
+**Priority**: high
+**Status**: pending
+**Area**: HR approvals
+
+### Summary
+Separate standard job application submission from email replies.
+
+### Details
+Ahmed corrected the HR approval boundary: the HR agent may submit standard job applications automatically under the approved HR workflow when enough known information is available. However, replying to any email must wait for Ahmed's explicit approval, even when the email is related to a recruiter, application form, CV request, or job process.
+
+### Suggested Action
+Keep ATS/job portal/application-form submissions pre-approved. Gate all email replies and recruiter/employer messages outside the application form/portal flow behind explicit approval for the exact message and recipient.
+
+### Metadata
+- Source: user_feedback
+- Related Files: USER.md, MEMORY.md, workspace-hr/SOUL.md, workspace-hr/skills/hr-agent/references/approval-boundaries.md
+- Tags: hr, approvals, email, applications, recruiter, correction
+- Pattern-Key: hr.application_auto_email_reply_approval
