@@ -924,3 +924,8 @@
 2026-06-02T15:48:34+03:00 degraded count=2 reason=app-server-count-10, pid=4183811 rss_kb=807580 app_servers=10 health_ms=2 signals=0
 2026-06-02T15:48:34+03:00 restart-gateway reason=degraded:app-server-count-10,
 2026-06-02T15:48:52+03:00 post-restart health=000 6006
+2026-06-03T00:47:54+03:00 degraded count=1 reason=app-server-count-10, pid=5701 rss_kb=697148 app_servers=10 health_ms=2 signals=0
+2026-06-03T00:50:15+03:00 degraded count=2 reason=app-server-count-10, pid=5701 rss_kb=697204 app_servers=10 health_ms=308 signals=0
+2026-06-03T00:50:15+03:00 restart-gateway reason=degraded:app-server-count-10,
+2026-06-03T00:50:34+03:00 post-restart health=000 6005
+2026-06-03T03:12:14+03:00 chrome-trim term pid=278994 count=16 rss_kb=2215304

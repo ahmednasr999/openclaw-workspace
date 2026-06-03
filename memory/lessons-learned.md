@@ -1163,3 +1163,24 @@ For LinkedIn bulk Easy Apply automation, reuse an existing LinkedIn jobs/feed ta
 ## 2026-06-01 - Gmail OTP access
 Ahmed clarified that OTPs sent to Gmail are accessible through the existing Gmail access. Do not treat Gmail OTP retrieval as a blocker; check Gmail first before asking Ahmed, unless the OTP is not delivered there or requires an unavailable non-Gmail MFA path.
 
+
+## 2026-06-02 - Do Not Repair LinkedIn by Editing Cookies
+
+### Incident
+During HR LinkedIn recovery, duplicate LinkedIn cookie cleanup/repair was attempted after `ERR_TOO_MANY_REDIRECTS`; retests still failed with HTTP 429 / redirect errors.
+### Do differently
+For LinkedIn application automation, do not inspect or repair cookies as a recovery path. Use only visible authenticated browser state after Ahmed resets/logs in, or leave LinkedIn-only work blocked until the visible session is healthy.
+
+## 2026-06-02 - LinkedIn Upload Success Needs Visible Exact-CV Proof
+
+### Incident
+OpenClaw/MCP `upload_file` reported success on LinkedIn Easy Apply, but LinkedIn kept the old Salt CV selected and `input.files` remained empty; submitting would have sent the wrong CV. The later working path was byte-injecting a browser `File` object and confirming the exact tailored PDF in the visible UI before submit.
+### Do differently
+For LinkedIn Easy Apply, never treat `upload_file` returning ok as proof of attachment. Submit only after the visible UI shows the exact intended CV selected; otherwise discard the draft. Byte-injected `File` is acceptable only when followed by that visible exact-CV confirmation.
+
+## 2026-06-02 - OpenClaw Cron Gateway Tooling Differs From Native Codex
+
+### Incident
+This cron wake first called `sandbox_exec` with `host=auto`, which failed because the configured exec host is `gateway`; the gateway shell also lacked `rg`.
+### Do differently
+For OpenClaw cron/internal maintenance, run `sandbox_exec` against the configured `gateway` host and be ready to fall back from `rg` to `grep`/`jq` when inspecting logs.

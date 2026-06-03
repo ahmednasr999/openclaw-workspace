@@ -1,108 +1,55 @@
 {
   "status": "ok",
-  "scan_time": "2026-06-02T16:00:35.733015+03:00",
-  "total_scanned": 40,
+  "scan_time": "2026-06-02T20:00:35.242414+03:00",
+  "total_scanned": 52,
   "by_category": {
     "interview_invite": 0,
-    "recruiter_reach": 1,
-    "application_ack": 0,
+    "recruiter_reach": 0,
+    "application_ack": 1,
     "rejection": 0,
     "assessment": 0,
     "follow_up_needed": 0,
     "job_alert": 0,
-    "other": 39
+    "other": 51
   },
   "interview_invites": [],
-  "recruiter_messages": [
+  "recruiter_messages": [],
+  "application_acks": [
     {
-      "id": "360281",
-      "from": "QR Talent Acquisition <talentacquisition@careers1.qatarairways.com>",
-      "subject": "=?utf-8?Q?Regarding_Your_Qatar_Airways_Application_?=\r\n =?utf-8?Q?=E2=80=93_Program_Manager_-_Customer_Experience_BI?=",
-      "date": "Tue, 2 Jun 2026 07:30:45 -0400 (EDT)",
+      "id": "360325",
+      "from": "Noah Khiar <nouhaila.khiar@taptapsend.com>",
+      "subject": "Taptap Send, Global Expansion Lead",
+      "date": "Tue, 2 Jun 2026 07:32:16 -0700",
       "unread": true,
-      "priority": "HIGH",
-      "score": 7,
-      "pipeline_match": "SAP",
-      "confidence": 90,
-      "confidence_label": "high",
+      "priority": "MEDIUM",
+      "score": 3,
+      "pipeline_match": null,
+      "confidence": 25,
+      "confidence_label": "very_low",
       "evidence": [
-        "matched active pipeline company: SAP",
-        "hiring sender context",
         "hiring/application context",
-        "recruiter outreach classification",
-        "high priority score: 7"
+        "medium priority score: 3"
       ],
-      "why_actionable": "matched active pipeline company: SAP | hiring sender context | hiring/application context | recruiter outreach classification"
+      "why_actionable": "not actionable: hiring/application context | medium priority score: 3"
     }
   ],
-  "application_acks": [],
   "rejections": [],
   "assessments": [],
   "follow_ups_needed": [],
   "job_alerts": [],
-  "actionable_count": 1,
+  "actionable_count": 0,
   "hot_alerts": [],
-  "signals": [
-    {
-      "company": "SAP",
-      "signal": "recruiter_email",
-      "subject": "=?utf-8?Q?Regarding_Your_Qatar_Airways_Application_?=\r\n =?utf-8?Q?=E2=80=93_Program_Manager_-_Customer_Experience_BI?=",
-      "sender": "QR Talent Acquisition <talentacquisition@careers1.qatarairways.com>",
-      "job_ids": [
-        "indeed-in-b2195113ff678ef7",
-        "indeed-in-b7591ff66cc5a732",
-        "linkedin_jobspy-li-4380812358",
-        "linkedin-li-4349578134",
-        "linkedin-li-4394078700",
-        "linkedin-li-4380812358",
-        "linkedin-li-4362170335",
-        "linkedin-li-4362562926",
-        "linkedin-li-4385935615",
-        "linkedin-li-4353703506",
-        "app-005",
-        "cv-5fbf4a9aa7",
-        "linkedin-li-4385294885"
-      ],
-      "score": 7,
-      "timestamp": "2026-06-02T16:00:35.511948+03:00"
-    }
-  ],
-  "pipeline_review_candidates": [
-    {
-      "timestamp": "2026-06-02T16:00:35.733036+03:00",
-      "review_type": "possible_recruiter_outreach",
-      "category": "recruiter_reach",
-      "email_id": "360281",
-      "subject": "=?utf-8?Q?Regarding_Your_Qatar_Airways_Application_?=\r\n =?utf-8?Q?=E2=80=93_Program_Manager_-_Customer_Experience_BI?=",
-      "from": "QR Talent Acquisition <talentacquisition@careers1.qatarairways.com>",
-      "priority": "HIGH",
-      "pipeline_match": "SAP",
-      "status": "needs_human_review"
-    }
-  ],
+  "signals": [],
   "llm_analysis": {
-    "actionable_emails": [
-      {
-        "id": "360281",
-        "subject": "Regarding Your Qatar Airways Application - Program Manager - Customer Experience BI",
-        "from": "QR Talent Acquisition <talentacquisition@careers1.qatarairways.com>",
-        "date": "Tue, 2 Jun 2026 07:30:45 -0400 (EDT)",
-        "category": "recruiter_reach",
-        "urgency": "low",
-        "intent": "The sender is notifying Ahmed that his Qatar Airways application was not selected.",
-        "action": "read_and_file",
-        "response_deadline": "when convenient",
-        "notes": "Body proves rejection, not recruiter outreach."
-      }
-    ],
+    "actionable_emails": [],
     "summary": {
-      "total_actionable": 1,
+      "total_actionable": 0,
       "critical_count": 0,
       "requires_interview_prep": false,
       "requires_assessment": false,
       "recruiter_top_opportunities": [],
       "top_priority": null,
-      "daily_focus": "No response is needed; focus today on active GCC leadership leads with stronger salary and fit signals."
+      "daily_focus": "No email action needed from this batch."
     }
   }
 }

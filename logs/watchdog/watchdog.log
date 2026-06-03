@@ -4440,3 +4440,23 @@ Config (/root/.openclaw/openclaw.json): missing env var "OPENCLAW_HOOKS_TOKEN" a
 [2026-06-02 18:00] === Watchdog v3 run ===
 [2026-06-02 18:00] Summary: fixes=0 warnings=0 alerts=0
 [2026-06-02 20:00] === Watchdog v3 run ===
+[2026-06-02 20:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-06-02 22:00] === Watchdog v3 run ===
+[2026-06-02 22:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-06-03 00:00] === Watchdog v3 run ===
+[2026-06-03 00:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-06-03 02:00] === Watchdog v3 run ===
+[2026-06-03 02:00] WARN: Jobs data stale (25h), triggering pipeline
+[2026-06-03 02:00] FIXED: Pipeline triggered
+[2026-06-03 02:00] Summary: fixes=1 warnings=1 alerts=0
+[2026-06-03 04:00] === Watchdog v3 run ===
+[2026-06-03 04:00] FIXED: Re-triggered failed cron 224bb358-a983-4ec6-ba28-32101ab48eb8
+[2026-06-03 04:00] Summary: fixes=1 warnings=2 alerts=0
+Config (/root/.openclaw/openclaw.json): missing env var "OPENCLAW_HOOKS_TOKEN" at hooks.token - feature using this value will be unavailable
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:224bb358-a983-4ec6-ba28-32101ab48eb8:1780448410011:1"
+}
+[2026-06-03 06:00] === Watchdog v3 run ===
+[2026-06-03 06:00] Summary: fixes=0 warnings=1 alerts=0

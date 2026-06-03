@@ -169,6 +169,15 @@
 | 278 | 🆕 | Givaudan | Head of Regulatory Systems Strategy | Dubai | — | 🆕 Discovered | Radar | 2026-06-02 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4423224655) | — |
 | 279 | 🆕 | Jobgether | Senior Director, Data Platform & Engineering | GCC | — | 🆕 Discovered | Radar | 2026-06-02 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4422879226) | — |
 | 280 | 🆕 | Ecomma | Head of Applied AI | Dubai | — | 🆕 Discovered | Radar | 2026-06-02 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4418737729) | — |
+| 281 | 🆕 | Network International | VP, Head of Information Services | Dubai | — | 🆕 Discovered | Radar | 2026-06-03 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4422354107) | — |
+| 282 | 🆕 | Network International | VP, Head of Information Services | GCC | — | 🆕 Discovered | Radar | 2026-06-03 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4422363089) | — |
+| 283 | 🆕 | Jobgether | Deputy CTO | GCC | — | 🆕 Discovered | Radar | 2026-06-03 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4423912087) | — |
+| 284 | 🆕 | Right Calibre Consulting | Head of Engineering - Tech Startup | Dubai | — | 🆕 Discovered | Radar | 2026-06-03 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4422405763) | — |
+| 285 | 🆕 | byteSpark.ai | Head of AI-Assisted Engineering | Dubai | — | 🆕 Discovered | Radar | 2026-06-03 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4422622653) | — |
+| 286 | 🆕 | Ascentis Group | Director Project Management | Dubai | — | 🆕 Discovered | Radar | 2026-06-03 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4418757157) | — |
+| 287 | 🆕 | KBR, Inc. | Chief Information Security Officer Director | Dubai | — | 🆕 Discovered | Radar | 2026-06-03 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4421878385) | — |
+| 288 | 🆕 | General Pension and Social Security Authority (GPSSA) | Head of Support & Maintenance Section | Dubai | — | 🆕 Discovered | Radar | 2026-06-03 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4421664805) | — |
+
 
 
 
