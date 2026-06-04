@@ -15,7 +15,6 @@ import time
 from pathlib import Path
 
 DEFAULT_DB = Path("/root/.openclaw/tasks/runs.sqlite")
-MIGRATED_DB = Path("/root/.openclaw/tasks/runs.sqlite.migrated")
 DEFAULT_TTL_MINUTES = 15
 TASK_KIND = "context_engine_turn_maintenance"
 
@@ -32,9 +31,6 @@ def parse_args() -> argparse.Namespace:
 def main() -> int:
     args = parse_args()
     db = Path(args.db)
-    if db == DEFAULT_DB and not db.exists() and MIGRATED_DB.exists():
-        db = MIGRATED_DB
-        print(f"INFO using migrated task registry: {db}")
     if not db.exists():
         print(f"ERROR db not found: {db}", file=sys.stderr)
         return 2

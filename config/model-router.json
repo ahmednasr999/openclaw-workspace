@@ -1,13 +1,13 @@
 {
   "version": 1,
   "description": "Deterministic model router - maps task patterns to optimal models",
-  "default_model": "openai-codex/gpt-5.5",
+  "default_model": "openai/gpt-5.5",
   "rules": [
     {
       "id": "cv_creation",
       "description": "CV tailoring, resume building, ATS optimization",
       "patterns": ["cv", "resume", "tailor", "ats score", "job application", "cover letter"],
-      "model": "openai-codex/gpt-5.5",
+      "model": "openai/gpt-5.5",
       "reason": "GPT-5.5 for deep keyword matching, bullet crafting, ATS optimization",
       "confirm_before_switch": true
     },
@@ -15,7 +15,7 @@
       "id": "content_writing",
       "description": "LinkedIn posts, articles, professional writing",
       "patterns": ["linkedin post", "write a post", "draft content", "article", "write about", "content draft"],
-      "model": "openai-codex/gpt-5.5",
+      "model": "openai/gpt-5.5",
       "reason": "GPT-5.5 for strong writing quality",
       "confirm_before_switch": false
     },
@@ -23,7 +23,7 @@
       "id": "complex_coding",
       "description": "Building new scripts, complex debugging, architecture",
       "patterns": ["build a script", "create a new", "fix this bug", "refactor", "architect", "implement"],
-      "model": "openai-codex/gpt-5.5",
+      "model": "openai/gpt-5.5",
       "reason": "GPT-5.5 for structured reasoning",
       "confirm_before_switch": false
     },
@@ -31,7 +31,7 @@
       "id": "strategic_analysis",
       "description": "Interview prep, company research, strategic decisions",
       "patterns": ["interview prep", "company dossier", "strategic", "analyze this role", "compare options"],
-      "model": "openai-codex/gpt-5.5",
+      "model": "openai/gpt-5.5",
       "reason": "GPT-5.5 for nuanced judgment",
       "confirm_before_switch": false
     },
@@ -39,7 +39,7 @@
       "id": "quick_research",
       "description": "Web searches, tweet analysis, link checking",
       "patterns": ["search for", "find", "look up", "check this", "x.com", "twitter.com", "github.com"],
-      "model": "openai-codex/gpt-5.5",
+      "model": "openai/gpt-5.5",
       "reason": "GPT-5.5 handles research tasks with better context",
       "confirm_before_switch": false
     },
@@ -47,16 +47,16 @@
       "id": "simple_tasks",
       "description": "File reads, status checks, quick answers",
       "patterns": ["status", "check", "list", "show me", "what is", "update", "how many"],
-      "model": "openai-codex/gpt-5.5",
+      "model": "openai/gpt-5.5",
       "reason": "Always use GPT-5.5 - Ahmed's current ChatGPT Pro default",
       "confirm_before_switch": false
     }
   ],
   "cost_tiers": {
-    "free": ["openai-codex/gpt-5.5"],
-    "budget": ["openai-codex/gpt-5.5"],
-    "mid": ["openai-codex/gpt-5.5"],
-    "premium": ["openai-codex/gpt-5.5"]
+    "free": ["openai/gpt-5.5"],
+    "budget": ["openai/gpt-5.5"],
+    "mid": ["openai/gpt-5.5"],
+    "premium": ["openai/gpt-5.5"]
   },
   "auto_switch_back": {
     "enabled": false,

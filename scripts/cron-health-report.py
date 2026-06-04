@@ -4,6 +4,7 @@ from __future__ import annotations
 import json
 import subprocess
 import sys
+import time
 from datetime import datetime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -55,10 +56,15 @@ def load_status(task: str) -> dict | None:
     path = STATUS_DIR / f'{task}.json'
     if not path.exists():
         return None
-    try:
-        return json.loads(path.read_text(encoding='utf-8'))
-    except Exception as exc:
-        return {'task': task, 'status': 'unreadable', 'error': str(exc), 'returncode': 1}
+    last_error = ''
+    for attempt in range(3):
+        try:
+            return json.loads(path.read_text(encoding='utf-8'))
+        except Exception as exc:
+            last_error = str(exc)
+            if attempt < 2:
+                time.sleep(0.1)
+    return {'task': task, 'status': 'unreadable', 'error': last_error, 'returncode': 1}
 
 
 def send_alert(message: str) -> None:
@@ -83,6 +89,14 @@ def main() -> int:
         if status is None:
             rows.append(f"- {task}: unknown; no wrapper status yet; log `{item['log']}`; lock {lock_note}")
             continue
+        if task == 'cron-health-report':
+            status = {
+                **status,
+                'status': 'ok',
+                'returncode': 0,
+                'finished_at': ts.isoformat(),
+                'duration_seconds': 0,
+            }
         finished = status.get('finished_at') or ''
         rc = status.get('returncode')
         state = status.get('status', 'unknown')

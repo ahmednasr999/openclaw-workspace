@@ -1,51 +1,16 @@
 {
-  "generated_at": "2026-06-03T07:45:08.673079+03:00",
+  "generated_at": "2026-06-04T07:47:21.084941+03:00",
   "status": "ok",
-  "last_scan_time": "2026-06-02T20:00:35.242414+03:00",
-  "last_total_scanned": 52,
+  "last_scan_time": "2026-06-03T20:00:42.017589+03:00",
+  "last_total_scanned": 48,
   "last_actionable_count": 0,
   "last_hot_alerts": 0,
   "last_llm_status": "present",
-  "last_seen_uid": 360353,
-  "last_success": "2026-06-02T20:00:35.244564+03:00",
-  "processed_count": 10685,
+  "last_seen_uid": 360516,
+  "last_success": "2026-06-03T20:00:42.019948+03:00",
+  "processed_count": 10848,
   "feedback_rules": 0,
-  "pipeline_review_candidates": 23,
-  "cron_jobs": [
-    {
-      "name": "Email Agent (Sun-Thu)",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 8,12,16,20 * * 0-4",
-        "tz": "Africa/Cairo",
-        "staggerMs": 0
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "telegram",
-        "to": "866838380"
-      },
-      "sessionTarget": "isolated",
-      "model": "openai/gpt-5.5"
-    },
-    {
-      "name": "Email Agent (Fri-Sat)",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 9,15,21 * * 5,6",
-        "tz": "Africa/Cairo",
-        "staggerMs": 0
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "telegram",
-        "to": "866838380"
-      },
-      "sessionTarget": "isolated",
-      "model": "openai/gpt-5.5"
-    }
-  ],
-  "formatter_preview": "📬 Email scan: all clear ✅\nScanned 52 new email(s). Nothing requiring action."
+  "pipeline_review_candidates": 30,
+  "cron_jobs": [],
+  "formatter_preview": "📬 Email scan: all clear ✅\nScanned 48 new email(s). Nothing requiring action."
 }

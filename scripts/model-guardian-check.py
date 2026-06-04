@@ -78,16 +78,19 @@ def run_with_retries(args, timeouts, parser=None, ok_text=None, label='command')
     raise RuntimeError(last_error or f'{label} failed', last_output)
 
 
-EXPECTED_DEFAULT_MODEL = 'openai-codex/gpt-5.5'
+EXPECTED_DEFAULT_MODEL = 'openai/gpt-5.5'
 EXPECTED_DEFAULT_LABEL = 'GPT-5.5'
-EXPECTED_STATUS_MODELS = {EXPECTED_DEFAULT_MODEL, 'openai/gpt-5.5'}
+LEGACY_DEFAULT_MODEL = 'openai-codex/gpt-5.5'
+EXPECTED_DEFAULT_MODELS = {EXPECTED_DEFAULT_MODEL, LEGACY_DEFAULT_MODEL}
+EXPECTED_STATUS_MODELS = EXPECTED_DEFAULT_MODELS
+CODEX_USAGE_PROVIDERS = {'openai', 'openai-codex'}
 
 # 1. model-router.json default
 try:
     with open('/root/.openclaw/workspace/config/model-router.json') as f:
         cfg = json.load(f)
     default = cfg.get('default_model', '')
-    if default != EXPECTED_DEFAULT_MODEL:
+    if default not in EXPECTED_DEFAULT_MODELS:
         ALERTS.append(f"model-router default is '{default}' — expected {EXPECTED_DEFAULT_LABEL}")
     else:
         print(f'OK: model-router default is {EXPECTED_DEFAULT_LABEL}')
@@ -122,16 +125,16 @@ provider = None
 if status_data:
     usage = status_data.get('usage', {})
     providers = usage.get('providers', []) if isinstance(usage, dict) else []
-    provider = next((p for p in providers if p.get('provider') == 'openai-codex'), None)
+    provider = next((p for p in providers if p.get('provider') in CODEX_USAGE_PROVIDERS), None)
 
     if not provider:
-        ALERTS.append('openai-codex provider missing from usage status')
+        ALERTS.append('Codex usage provider missing from usage status')
     else:
         if provider.get('error'):
             if is_transient_provider_error(provider.get('error')):
-                print(f"OK: openai-codex provider returned transient probe abort: {provider['error']}")
+                print(f"OK: Codex usage provider returned transient probe abort: {provider['error']}")
             else:
-                ALERTS.append(f"openai-codex provider error: {provider['error']}")
+                ALERTS.append(f"Codex usage provider error: {provider['error']}")
         else:
             windows = provider.get('windows') or []
             if windows:
@@ -142,7 +145,7 @@ if status_data:
                 )
                 print(f'OK: Codex usage visible — {summary}')
             else:
-                print('OK: openai-codex provider present with no reported error')
+                print('OK: Codex usage provider present with no reported error')
 
 # 3. Default model surface sanity check
 try:

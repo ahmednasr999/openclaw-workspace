@@ -18,6 +18,7 @@ CEO_GENERAL_TARGET = '-1003882622947:10'
 TRANSIENT_FAILURE_THRESHOLD = 2
 CHECK_TIMEOUT_SECONDS = 140
 STATUS_PROBE_TIMEOUT_SECONDS = 30
+CODEX_USAGE_PROVIDERS = {'openai', 'openai-codex'}
 
 HOOKS_ENV_FILE = Path('/root/.config/openclaw-hooks.env')
 
@@ -160,10 +161,12 @@ def estimate_burn(previous_rows, current_left, now_ms, reset_at_ms):
     preferred = [c for c in candidates if 18 <= c[1] <= 30]
     chosen = min(preferred or candidates, key=lambda x: x[0])
     _, age_hours, prev_left, prev_ts = chosen
+    if prev_left <= current_left:
+        return None, None
     delta_days = max((now_ms - prev_ts) / 86400000, 1 / 24)
     daily_burn = (prev_left - current_left) / delta_days
     days_until_reset = max((reset_at_ms - now_ms) / 86400000, 0)
-    projected = current_left - (daily_burn * days_until_reset)
+    projected = max(0, current_left - (daily_burn * days_until_reset))
     return round(daily_burn, 1), round(projected, 1)
 
 
@@ -178,11 +181,11 @@ def extract_codex_usage():
         data = parse_json_from_mixed_output(mixed)
     usage = data.get('usage', {}) if isinstance(data, dict) else {}
     providers = usage.get('providers', []) if isinstance(usage, dict) else []
-    provider = next((p for p in providers if p.get('provider') == 'openai-codex'), None)
+    provider = next((p for p in providers if p.get('provider') in CODEX_USAGE_PROVIDERS), None)
     if not provider:
-        raise RuntimeError('openai-codex provider missing from usage status')
+        raise RuntimeError('Codex usage provider missing from usage status')
     if provider.get('error'):
-        raise RuntimeError(f"openai-codex provider error: {provider['error']}")
+        raise RuntimeError(f"Codex usage provider error: {provider['error']}")
     windows = provider.get('windows') or []
     week = next((w for w in windows if str(w.get('label', '')).lower() == 'week'), None)
     if not week:

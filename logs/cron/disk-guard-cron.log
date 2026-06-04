@@ -1,0 +1,4 @@
+
+[2026-06-04T07:07:01+03:00] START disk-guard: /usr/bin/python3 /root/.openclaw/workspace/scripts/direct-cron-runner.py disk-guard
+{"ok": true, "result": {"task": "disk-guard", "ts": "2026-06-04T07:07:01.968959+03:00", "cmd": ["/root/.openclaw/workspace/scripts/vps-disk-guard.sh"], "cwd": "/root/.openclaw/workspace", "returncode": 0, "stdout": "OK: disk 56% below threshold 65%\n", "stderr": "", "log_path": "/root/.openclaw/workspace/logs/cron/direct-cron/disk-guard-20260604-070701.log"}, "delivery": {"ok": true, "skipped": "ok_below_threshold"}}
+[2026-06-04T07:07:01+03:00] END disk-guard: rc=0 duration=0s

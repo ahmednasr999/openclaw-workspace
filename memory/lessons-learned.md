@@ -1198,3 +1198,4 @@ When one LinkedIn browser profile is hard-blocked, do not keep repairing cookies
 Fime HiBob required a highest diploma certificate upload and no diploma artifact was available; STRUCTURAL Workday required sign-in/account creation before applying. The HR lane correctly stopped instead of uploading a substitute or creating credentials without approval.
 ### Do differently
 For job applications, never upload fake/substitute documents and never create ATS accounts without explicit approval. If a portal requires a missing certificate, credential, or account creation step, record the blocker and ask Ahmed for the exact artifact or approval before submission.
+- 2026-06-04: For job application OTPs, use available Gmail access before declaring user-auth blocked. Still ask Ahmed for MFA/passkey/reCAPTCHA, account creation, or external messaging decisions.

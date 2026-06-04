@@ -941,3 +941,22 @@
 2026-06-03T15:48:34+03:00 degraded count=2 reason=app-server-count-10, pid=557306 rss_kb=796612 app_servers=10 health_ms=2 signals=0
 2026-06-03T15:48:34+03:00 restart-gateway reason=degraded:app-server-count-10,
 2026-06-03T15:48:52+03:00 post-restart health=000 6006
+2026-06-04T07:46:00+03:00 health-fail count=1 pid=771620 http=000 ms=6003 app_servers=8
+2026-06-04T07:48:14+03:00 degraded count=1 reason=app-server-count-10, pid=771620 rss_kb=669024 app_servers=10 health_ms=1 signals=0
+2026-06-04T07:50:35+03:00 degraded count=2 reason=app-server-count-10, pid=771620 rss_kb=672420 app_servers=10 health_ms=1 signals=0
+2026-06-04T07:50:35+03:00 restart-gateway reason=degraded:app-server-count-10,
+2026-06-04T07:50:53+03:00 post-restart health=000 6004
+2026-06-04T10:06:54+03:00 degraded count=1 reason=app-server-count-10, pid=931090 rss_kb=791124 app_servers=10 health_ms=1 signals=0
+2026-06-04T10:09:14+03:00 degraded count=2 reason=app-server-count-10, pid=931090 rss_kb=772464 app_servers=10 health_ms=1 signals=0
+2026-06-04T10:09:14+03:00 restart-gateway reason=degraded:app-server-count-10,
+2026-06-04T10:09:34+03:00 post-restart health=000 6007
+2026-06-04T11:48:55+03:00 degraded count=1 reason=app-server-count-10, pid=992771 rss_kb=827792 app_servers=10 health_ms=1 signals=0
+2026-06-04T11:51:15+03:00 degraded count=2 reason=app-server-count-10, pid=992771 rss_kb=824916 app_servers=10 health_ms=1 signals=0
+2026-06-04T11:51:15+03:00 restart-gateway reason=degraded:app-server-count-10,
+2026-06-04T11:51:32+03:00 post-restart health=000 6006
+2026-06-04T15:14:14+03:00 degraded count=1 reason=app-server-count-10, pid=1033978 rss_kb=839344 app_servers=10 health_ms=1 signals=0
+2026-06-04T15:16:35+03:00 degraded count=2 reason=app-server-count-10, pid=1033978 rss_kb=853408 app_servers=10 health_ms=1 signals=0
+2026-06-04T15:16:35+03:00 restart-gateway reason=degraded:app-server-count-10,
+2026-06-04T15:16:53+03:00 post-restart health=000 6006
+2026-06-04T17:17:24+03:00 chrome-trim term pid=1257846 count=21 rss_kb=1568492
+2026-06-04T17:19:44+03:00 chrome-trim term pid=1259025 count=21 rss_kb=1671988

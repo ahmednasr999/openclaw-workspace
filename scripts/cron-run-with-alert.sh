@@ -15,6 +15,13 @@ STATUS_DIR="/root/.openclaw/workspace/logs/cron/status"
 STATUS_PATH="$STATUS_DIR/${TASK}.json"
 mkdir -p "$(dirname "$LOCK_PATH")" "$(dirname "$LOG_PATH")" "$STATUS_DIR"
 
+write_status() {
+  local tmp_path
+  tmp_path="$(mktemp "${STATUS_PATH}.tmp.XXXXXX")"
+  cat > "$tmp_path"
+  mv -f "$tmp_path" "$STATUS_PATH"
+}
+
 START_ISO="$(date -Is)"
 START_EPOCH="$(date +%s)"
 HOST="$(hostname 2>/dev/null || echo unknown)"
@@ -25,7 +32,7 @@ if ! flock -n 9; then
   END_EPOCH="$(date +%s)"
   DURATION=$((END_EPOCH - START_EPOCH))
   printf '[%s] SKIP %s: lock busy (%s)\n' "$END_ISO" "$TASK" "$LOCK_PATH" >> "$LOG_PATH"
-  cat > "$STATUS_PATH" <<EOF
+  write_status <<EOF
 {
   "task": "$TASK",
   "status": "lock_busy",
@@ -55,7 +62,7 @@ else
 fi
 
 printf '[%s] END %s: rc=%s duration=%ss\n' "$END_ISO" "$TASK" "$RC" "$DURATION" >> "$LOG_PATH"
-cat > "$STATUS_PATH" <<EOF
+write_status <<EOF
 {
   "task": "$TASK",
   "status": "$RESULT_STATUS",

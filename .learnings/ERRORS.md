@@ -912,3 +912,10 @@ Do differently: execute `.sh` verification scripts with `bash` directly, then co
 - Immediate fix: Removed ambiguous HR wording that treated outreach sending as tactical execution; HR instructions now distinguish internal drafting from external sends, and require explicit approval for job applications, recruiter/employer messages, and all email sends.
 - Do differently: For application-response support, draft the reply/CV/form answers, report evidence, and stop for Ahmed approval before any submit/send action.
 
+
+## 2026-06-03 - `apply_patch` unavailable in OpenClaw sandbox shell
+
+### What happened
+During the daily lessons heartbeat, the shell command `apply_patch` was not found, so the Markdown append had to use a shell append fallback.
+### Do differently
+When running in OpenClaw sandbox_exec without native Codex shell tools, verify whether `apply_patch` exists before relying on it; if absent and a memory-file append is required, use the narrowest append fallback and verify the resulting file tail.
