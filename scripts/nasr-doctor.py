@@ -20,6 +20,12 @@ import urllib.error
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
+SYSTEM_PYTHON = Path("/usr/bin/python3")
+if SYSTEM_PYTHON.exists() and Path(sys.executable) != SYSTEM_PYTHON:
+    os.execv(str(SYSTEM_PYTHON), [str(SYSTEM_PYTHON), __file__, *sys.argv[1:]])
+
+PYTHON = str(SYSTEM_PYTHON) if SYSTEM_PYTHON.exists() else sys.executable
+
 # Pipeline DB (safe fallback)
 try:
     sys.path.insert(0, str(Path(__file__).parent))
@@ -193,6 +199,8 @@ def check_crons():
     # run can otherwise keep NASR Doctor red even after cron state is normalized.
     active_ids = set()
     jobs_file = OPENCLAW_DIR / "cron" / "jobs.json"
+    if not jobs_file.exists():
+        jobs_file = OPENCLAW_DIR / "cron" / "jobs.json.migrated"
     if jobs_file.exists():
         try:
             with open(jobs_file) as f:
@@ -205,6 +213,8 @@ def check_crons():
 
     states = {}
     state_file = OPENCLAW_DIR / "cron" / "jobs-state.json"
+    if not state_file.exists():
+        state_file = OPENCLAW_DIR / "cron" / "jobs-state.json.migrated"
     if state_file.exists():
         try:
             with open(state_file) as f:
@@ -239,6 +249,8 @@ def check_crons():
 
             if status == "ok":
                 ok_count += 1
+            elif status == "skipped" and state.get("lastError") == "quiet-hours":
+                ok_count += 1
             elif status in {"error", "failed", "fail"}:
                 error_msg = (state.get("lastError") or state.get("lastDiagnosticSummary") or "")[:40]
                 check(f"Cron: {jid[:20]}", Result.WARN, f"ERROR ({ago_str}) {error_msg}")
@@ -254,11 +266,17 @@ def check_crons():
 
     cron_files = sorted(cron_dir.glob("*.jsonl"))
     if not cron_files:
+        cron_files = sorted(cron_dir.glob("*.jsonl.migrated"))
+    if not cron_files:
         check("Cron Jobs", Result.WARN, "No cron run logs found")
         return
 
     for cf in cron_files:
-        name = cf.stem
+        name = cf.name
+        if name.endswith(".jsonl.migrated"):
+            name = name[:-len(".jsonl.migrated")]
+        elif name.endswith(".jsonl"):
+            name = name[:-len(".jsonl")]
 
         # Auto-fix: archive orphan run logs
         if FIX_MODE and name not in active_ids:
@@ -378,11 +396,11 @@ def check_composio_linkedin():
 
     content = tools_md.read_text().lower()
     signals = [
-        "post tool:",
-        "linkedin_create_linked_in_post",
+        "linkedin posting uses composio",
         "person urn:",
-        "auto-poster script:",
-        "scripts/linkedin-auto-poster.py",
+        "for image posts",
+        "linkedin-auto-poster.py",
+        "linkedin_create_linked_in_post",
     ]
     found = [s for s in signals if s in content]
     if len(found) >= 3:
@@ -437,7 +455,7 @@ def check_linkedin_tests():
         return
     try:
         r = subprocess.run(
-            ["python3", str(test_path)],
+            [PYTHON, str(test_path)],
             capture_output=True, text=True, timeout=30
         )
         lines = r.stdout.strip().split("\n")
@@ -460,7 +478,7 @@ def check_pipeline_db_tests():
         return
     try:
         r = subprocess.run(
-            ["python3", str(test_path)],
+            [PYTHON, str(test_path)],
             capture_output=True, text=True, timeout=30
         )
         lines = r.stdout.strip().split("\n")
@@ -508,7 +526,7 @@ def check_email_tests():
         return
     try:
         r = subprocess.run(
-            ["python3", str(test_path)],
+            [PYTHON, str(test_path)],
             capture_output=True, text=True, timeout=30
         )
         lines = r.stdout.strip().split("\n")
@@ -531,7 +549,7 @@ def check_cv_tests():
         return
     try:
         r = subprocess.run(
-            ["python3", str(test_path)],
+            [PYTHON, str(test_path)],
             capture_output=True, text=True, timeout=30
         )
         # Parse last line for results

@@ -9,6 +9,7 @@ RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 NC='\033[0m'
+PYTHON_BIN=${PYTHON_BIN:-/usr/bin/python3}
 
 FAILED=0
 PASSED=0
@@ -54,7 +55,7 @@ for script in "${PIPELINE_SCRIPTS[@]}"; do
         continue
     fi
     # Syntax check
-    ERR=$(python3 -c "
+    ERR=$("$PYTHON_BIN" -c "
 import ast, sys
 try:
     ast.parse(open('$FULL').read())
@@ -67,7 +68,7 @@ except SyntaxError as e:
         continue
     fi
     # Import check (timeout 10s, catch ImportError/NameError at module level)
-    ERR=$(timeout 10 python3 -c "
+    ERR=$(timeout 10 "$PYTHON_BIN" -c "
 import sys, importlib.util
 spec = importlib.util.spec_from_file_location('mod', '$FULL')
 # Only check if the file can be parsed and top-level imports resolve
@@ -119,7 +120,7 @@ for cfg in "config/notion.json" "config/tavily.json"; do
     FULL="/root/.openclaw/workspace/$cfg"
     if [ -f "$FULL" ]; then
         # Validate JSON
-        python3 -c "import json; json.load(open('$FULL'))" 2>/dev/null
+        "$PYTHON_BIN" -c "import json; json.load(open('$FULL'))" 2>/dev/null
         if [ $? -eq 0 ]; then
             log_pass "$cfg"
         else
