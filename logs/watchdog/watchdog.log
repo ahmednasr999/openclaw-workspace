@@ -4473,3 +4473,20 @@ Config (/root/.openclaw/openclaw.json): missing env var "OPENCLAW_HOOKS_TOKEN" a
 [2026-06-03 18:00] === Watchdog v3 run ===
 [2026-06-03 18:00] Summary: fixes=0 warnings=1 alerts=0
 [2026-06-03 20:00] === Watchdog v3 run ===
+[2026-06-03 20:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-06-03 22:00] === Watchdog v3 run ===
+[2026-06-03 22:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-06-04 00:00] === Watchdog v3 run ===
+[2026-06-04 00:00] ALERT: Disk at 93%
+[2026-06-04 00:00] FIXED: Disk cleaned from 93% to 93%
+[2026-06-04 00:00] Summary: fixes=1 warnings=0 alerts=0
+[2026-06-04 02:00] === Watchdog v3 run ===
+[2026-06-04 02:00] ALERT: Disk at 97%
+[2026-06-04 02:00] FIXED: Disk cleaned from 97% to 97%
+[2026-06-04 02:00] Summary: fixes=1 warnings=0 alerts=0
+[2026-06-04 04:00] === Watchdog v3 run ===
+[2026-06-04 04:00] WARN: Jobs data stale (25h), triggering pipeline
+[2026-06-04 04:00] FIXED: Pipeline triggered
+[2026-06-04 04:00] Summary: fixes=1 warnings=0 alerts=0
+[2026-06-04 06:00] === Watchdog v3 run ===
+[2026-06-04 06:00] Summary: fixes=0 warnings=0 alerts=0

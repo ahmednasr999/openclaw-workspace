@@ -2,56 +2,56 @@
   "meta": {
     "agent": "jobs-review",
     "version": "2.0.0",
-    "generated_at": "2026-06-03T02:39:01.142083+03:00",
-    "duration_ms": 11496,
+    "generated_at": "2026-06-04T04:25:56.336817+03:00",
+    "duration_ms": 11647,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "89f9c0e5",
+    "run_id": "77093d5c",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
-    "generated_at": "2026-06-03T02:39:01.090125+03:00",
-    "total_candidates": 57,
-    "reviewed": 55,
+    "generated_at": "2026-06-04T04:25:56.239421+03:00",
+    "total_candidates": 85,
+    "reviewed": 81,
     "submit": [],
     "review": [],
-    "skip_count": 57,
+    "skip_count": 85,
     "unreviewed_count": 0,
     "thresholds": {
       "submit": 6,
       "review": 6
     },
     "pipeline": {
-      "l0_auto_skip": 2,
+      "l0_auto_skip": 4,
       "l1_jd_enriched": 0,
-      "l1_jd_coverage": "41/55",
+      "l1_jd_coverage": "69/81",
       "llm_model": "openai-codex/gpt-5.5",
-      "llm_jobs_reviewed": 55,
-      "r2_latency_ms": 37,
-      "r2_fallbacks": 55
+      "llm_jobs_reviewed": 81,
+      "r2_latency_ms": 61,
+      "r2_fallbacks": 81
     },
     "kpi": {
       "submit_rate": 0.0,
       "review_rate": 0.0,
       "skip_rate": 1.0,
-      "avg_fit_score": 1.7,
-      "l0_filter_rate": 3.5,
+      "avg_fit_score": 1.5,
+      "l0_filter_rate": 4.7,
       "llm_review_rate": 100.0
     }
   },
   "kpi": {
-    "total_loaded": 57,
-    "l0_auto_skip": 2,
+    "total_loaded": 85,
+    "l0_auto_skip": 4,
     "l1_jd_enriched": 0,
     "l2_filtered": 0,
     "submit_count": 0,
     "review_count": 0,
-    "skip_count": 55,
+    "skip_count": 81,
     "submit_rate": 0.0,
-    "avg_fit_score": 1.7,
-    "r2_latency_ms": 37
+    "avg_fit_score": 1.5,
+    "r2_latency_ms": 61
   },
   "recommendations": []
 }

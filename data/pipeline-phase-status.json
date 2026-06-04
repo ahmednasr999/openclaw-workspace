@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-06-02T23:00:02Z",
+  "generated_at": "2026-06-04T01:00:01Z",
   "phases": {
     "merge": {
       "status": "OK",
-      "elapsed_s": 87,
+      "elapsed_s": 86,
       "detail": ""
     },
     "enrich": {
@@ -18,7 +18,7 @@
     },
     "nocodb-push": {
       "status": "OK",
-      "elapsed_s": 57,
+      "elapsed_s": 55,
       "detail": ""
     }
   }

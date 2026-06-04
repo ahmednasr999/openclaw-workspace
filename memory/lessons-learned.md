@@ -1184,3 +1184,17 @@ For LinkedIn Easy Apply, never treat `upload_file` returning ok as proof of atta
 This cron wake first called `sandbox_exec` with `host=auto`, which failed because the configured exec host is `gateway`; the gateway shell also lacked `rg`.
 ### Do differently
 For OpenClaw cron/internal maintenance, run `sandbox_exec` against the configured `gateway` host and be ready to fall back from `rg` to `grep`/`jq` when inspecting logs.
+
+## 2026-06-03 - LinkedIn Easy Apply Can Recover Through A Different Visible Authenticated Profile
+
+### Incident
+The `nasr-linkedin` CDP profile stayed blocked by `ERR_TOO_MANY_REDIRECTS` / unauthenticated navigation, but the HR lane later succeeded by using the authenticated `openclaw` browser profile with a one-tab flow. Submissions still paused whenever LinkedIn protection/tracking tabs caused navigation timeouts.
+### Do differently
+When one LinkedIn browser profile is hard-blocked, do not keep repairing cookies in that profile. Try another already-authenticated visible browser profile, keep the one-tab flow, verify the exact CV and submit proof, update ledgers immediately, and pause again if protection/timeouts return.
+
+## 2026-06-03 - External ATS Submissions Need Real Required Artifacts And Account Approval
+
+### Incident
+Fime HiBob required a highest diploma certificate upload and no diploma artifact was available; STRUCTURAL Workday required sign-in/account creation before applying. The HR lane correctly stopped instead of uploading a substitute or creating credentials without approval.
+### Do differently
+For job applications, never upload fake/substitute documents and never create ATS accounts without explicit approval. If a portal requires a missing certificate, credential, or account creation step, record the blocker and ask Ahmed for the exact artifact or approval before submission.

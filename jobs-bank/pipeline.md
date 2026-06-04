@@ -177,6 +177,10 @@
 | 286 | 🆕 | Ascentis Group | Director Project Management | Dubai | — | 🆕 Discovered | Radar | 2026-06-03 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4418757157) | — |
 | 287 | 🆕 | KBR, Inc. | Chief Information Security Officer Director | Dubai | — | 🆕 Discovered | Radar | 2026-06-03 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4421878385) | — |
 | 288 | 🆕 | General Pension and Social Security Authority (GPSSA) | Head of Support & Maintenance Section | Dubai | — | 🆕 Discovered | Radar | 2026-06-03 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4421664805) | — |
+| 289 | 🆕 | Fortis | Head of Operations | Dubai | — | 🆕 Discovered | Radar | 2026-06-04 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4422868949) | — |
+| 290 | 🆕 | Adecco | Chief Product Officer (Fintech & B2B Platforms) | Dubai | — | 🆕 Discovered | Radar | 2026-06-04 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4422678521) | — |
+| 291 | 🆕 | Pave Bank | Director of Institutional Sales | Dubai | — | 🆕 Discovered | Radar | 2026-06-04 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4422930298) | — |
+
 
 
 
