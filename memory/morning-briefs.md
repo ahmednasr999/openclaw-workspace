@@ -2891,3 +2891,56 @@ Node.js v22.22.1
 ## Calendar - Today's Events
 *Calendar API unavailable (gog v0.12.0 bug - tracking fix)*
 
+=== Morning Brief - 2026-06-04 06:10 AM ===
+
+## Claude 2x Usage Reminder
+
+## Job Radar (from Tavily)
+[search-router] Tavily unavailable, falling back to local SearXNG: Tavily Search failed (401): {"detail":{"error":"Unauthorized: missing or invalid API key."}}
+## Sources
+
+_(provider: searxng)_
+
+- **Press Releases Archive - Digital Journal**
+  https://www.digitaljournal.com/pr
+  The journal of record for the decisions that define how Canadian organizations lead in an innovation economy. Online since 1998.
+
+- **American Express Careers & Job Openings | Amex Careers US**
+  https://www.americanexpress.com/en-us/careers/
+  Browse American Express US Job Openings. Find Your Place on #TeamAmex and Explore American Express Careers that Match Your Skills Today!
+
+- **Nigeria News Now | ```News Updates, Monday 13th January 2025 ...**
+  https://www.facebook.com/groups/1480155476121859/posts/1851853492285387/
+  ```News Updates, Monday 13th January 2025```😀😀😀 **SERAP takes Tinubu govt, governors to ECOWAS court over ‘misuse of Cybercrimes Act’ **Tinubu should give youths pictures of Nigeria in 30 years – Sam Adeyemi **Review policies for Tinubu's Renewed Hope Agenda - Okechukwu tells economic team **Some...
+
+- **Global Biopharmaceutical Company - Bristol Myers Squibb**
+  https://www.bms.com/
+  Bristol Myers Squibb is a global biopharmaceutical company committed to discovering, developing and delivering innovative medicines to patients with serious diseases.
+
+- **Nigeria News Now | ```News Update, Monday 4th November2024 ...**
+  https://www.facebook.com/groups/1480155476121859/posts/1802796977191039/
+  ```News Update, Monday 4th November2024``` **SERAP gives Tinubu 48 hours to release ‘hungry, malnourished children, other protesters’ **Tinubu to swear-in new Ministers Monday **SSANU, NASU vow...
+
+## Gmail - New Opportunities
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/root/.openclaw/workspace/scripts/gmail-scan.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+
+## Calendar - Today's Events
+*Calendar API unavailable (gog v0.12.0 bug - tracking fix)*
+
