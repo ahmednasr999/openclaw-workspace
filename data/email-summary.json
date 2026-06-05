@@ -2,61 +2,40 @@
   "meta": {
     "agent": "email-agent",
     "version": "3.0.0",
-    "generated_at": "2026-06-04T16:00:53.407366+03:00",
-    "duration_ms": 25886,
+    "generated_at": "2026-06-04T20:01:07.372054+03:00",
+    "duration_ms": 43600,
     "ttl_hours": 4,
     "status": "success",
     "error": null,
-    "run_id": "d769b20c",
+    "run_id": "60938b92",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
     "status": "ok",
-    "scan_time": "2026-06-04T16:00:53.386557+03:00",
-    "total_scanned": 56,
+    "scan_time": "2026-06-04T20:01:07.354089+03:00",
+    "total_scanned": 58,
     "by_category": {
-      "interview_invite": 1,
-      "recruiter_reach": 5,
-      "application_ack": 0,
+      "interview_invite": 0,
+      "recruiter_reach": 2,
+      "application_ack": 1,
       "rejection": 0,
       "assessment": 0,
       "application_response": 0,
       "follow_up_needed": 0,
       "job_alert": 0,
-      "other": 51
+      "other": 55
     },
-    "interview_invites": [
-      {
-        "id": "360679",
-        "from": "Ecolab Workday Notification <ecolab@myworkday.com>",
-        "subject": "Ecolab Application Confirmation",
-        "date": "Thu, 4 Jun 2026 10:46:33 +0000",
-        "unread": true,
-        "priority": "HIGH",
-        "score": 12,
-        "pipeline_match": "Ecolab",
-        "confidence": 100,
-        "confidence_label": "high",
-        "evidence": [
-          "matched active pipeline company: Ecolab",
-          "hiring/application context",
-          "calendar or explicit interview evidence",
-          "recruiter outreach classification",
-          "high priority score: 12"
-        ],
-        "why_actionable": "matched active pipeline company: Ecolab | hiring/application context | calendar or explicit interview evidence | recruiter outreach classification"
-      }
-    ],
+    "interview_invites": [],
     "recruiter_messages": [
       {
-        "id": "360661",
-        "from": "talabat <notification@deliveryherogroup.com>",
-        "subject": "=?UTF-8?Q?Thank_you_for_your_application_wi?=\r\n =?UTF-8?Q?th_=E2=80=8Btalabat=E2=80=8B_-_Head_of_Local_Shops?=",
-        "date": "Thu, 4 Jun 2026 09:28:51 +0000 (UTC)",
+        "id": "360710",
+        "from": "talabat <update.en@em.talabat.com>",
+        "subject": "=?UTF-8?B?2YPYo9izINin2YTYudin2YTZhQ==?= FIFA\r\n =?UTF-8?B?MjAyNuKEoiDYudmE2YkgVE9EIOKavQ==?=",
+        "date": "Thu, 04 Jun 2026 13:08:16 +0000 (UTC)",
         "unread": true,
         "priority": "HIGH",
-        "score": 10,
+        "score": 6,
         "pipeline_match": "talabat",
         "confidence": 75,
         "confidence_label": "medium",
@@ -64,118 +43,63 @@
           "matched active pipeline company: talabat",
           "hiring/application context",
           "recruiter outreach classification",
-          "high priority score: 10"
+          "high priority score: 6"
         ],
-        "why_actionable": "matched active pipeline company: talabat | hiring/application context | recruiter outreach classification | high priority score: 10"
+        "why_actionable": "matched active pipeline company: talabat | hiring/application context | recruiter outreach classification | high priority score: 6"
       },
       {
-        "id": "360663",
-        "from": "No PUCC No Fuel <info@host.discountwalas.com>",
-        "subject": "These vehicles will not get petrol, diesel and CNG from October 1,\r\n new rules apply",
-        "date": "Thu, 04 Jun 2026 09:29:06 +0000",
+        "id": "360718",
+        "from": "Ecolab <recruitingfeedback@ecolab.com>",
+        "subject": "Ahmed, Ecolab would like feedback on your recent application\r\n experience",
+        "date": "Thu, 4 Jun 2026 13:30:32 +0000",
         "unread": true,
         "priority": "HIGH",
         "score": 7,
-        "pipeline_match": "SAP",
-        "confidence": 75,
-        "confidence_label": "medium",
+        "pipeline_match": "Ecolab",
+        "confidence": 90,
+        "confidence_label": "high",
         "evidence": [
-          "matched active pipeline company: SAP",
+          "matched active pipeline company: Ecolab",
+          "hiring sender context",
           "hiring/application context",
           "recruiter outreach classification",
           "high priority score: 7"
         ],
-        "why_actionable": "matched active pipeline company: SAP | hiring/application context | recruiter outreach classification | high priority score: 7"
-      },
-      {
-        "id": "360679",
-        "from": "Ecolab Workday Notification <ecolab@myworkday.com>",
-        "subject": "Ecolab Application Confirmation",
-        "date": "Thu, 4 Jun 2026 10:46:33 +0000",
-        "unread": true,
-        "priority": "HIGH",
-        "score": 12,
-        "pipeline_match": "Ecolab",
-        "confidence": 100,
-        "confidence_label": "high",
-        "evidence": [
-          "matched active pipeline company: Ecolab",
-          "hiring/application context",
-          "calendar or explicit interview evidence",
-          "recruiter outreach classification",
-          "high priority score: 12"
-        ],
-        "why_actionable": "matched active pipeline company: Ecolab | hiring/application context | calendar or explicit interview evidence | recruiter outreach classification"
-      },
-      {
-        "id": "360680",
-        "from": "Indeed <login@indeed.com>",
-        "subject": "Sign in to Indeed with code: 054236",
-        "date": "Thu, 04 Jun 2026 10:51:20 +0000 (UTC)",
-        "unread": true,
-        "priority": "MEDIUM",
-        "score": 2,
-        "pipeline_match": null,
-        "confidence": 65,
-        "confidence_label": "medium",
-        "evidence": [
-          "known recruiter/job domain",
-          "hiring/application context",
-          "recruiter outreach classification",
-          "medium priority score: 2"
-        ],
-        "why_actionable": "known recruiter/job domain | hiring/application context | recruiter outreach classification | medium priority score: 2"
-      },
-      {
-        "id": "360682",
-        "from": "\"Indeed\" <donotreply@match.indeed.com>",
-        "subject": "PMO Officer (Banking Domain) @ Dicetek LLC",
-        "date": "Thu, 04 Jun 2026 10:55:36 +0000",
-        "unread": true,
-        "priority": "MEDIUM",
-        "score": 2,
-        "pipeline_match": null,
-        "confidence": 65,
-        "confidence_label": "medium",
-        "evidence": [
-          "known recruiter/job domain",
-          "hiring/application context",
-          "recruiter outreach classification",
-          "medium priority score: 2"
-        ],
-        "why_actionable": "known recruiter/job domain | hiring/application context | recruiter outreach classification | medium priority score: 2"
+        "why_actionable": "matched active pipeline company: Ecolab | hiring sender context | hiring/application context | recruiter outreach classification"
       }
     ],
-    "application_acks": [],
+    "application_acks": [
+      {
+        "id": "360743",
+        "from": "Masdar <notification@smartrecruiters.com>",
+        "subject": "You have applied for Manager, Strategy & Research at Masdar",
+        "date": "Thu, 4 Jun 2026 15:03:43 +0000 (UTC)",
+        "unread": true,
+        "priority": "LOW",
+        "score": 1,
+        "pipeline_match": null,
+        "confidence": 35,
+        "confidence_label": "low",
+        "evidence": [
+          "hiring sender context",
+          "hiring/application context"
+        ],
+        "why_actionable": "not actionable: hiring sender context | hiring/application context"
+      }
+    ],
     "rejections": [],
     "assessments": [],
     "application_responses": [],
     "follow_ups_needed": [],
     "job_alerts": [],
-    "actionable_count": 5,
-    "hot_alerts": [
-      {
-        "id": "360679",
-        "subject": "Ecolab Application Confirmation",
-        "from": "Ecolab Workday Notification <ecolab@myworkday.com>",
-        "priority": "HIGH",
-        "pipeline_match": "Ecolab",
-        "confidence": 100,
-        "evidence": [
-          "matched active pipeline company: Ecolab",
-          "hiring/application context",
-          "calendar or explicit interview evidence",
-          "recruiter outreach classification",
-          "high priority score: 12"
-        ]
-      }
-    ],
+    "actionable_count": 2,
+    "hot_alerts": [],
     "signals": [
       {
         "company": "talabat",
         "signal": "recruiter_email",
-        "subject": "=?UTF-8?Q?Thank_you_for_your_application_wi?=\r\n =?UTF-8?Q?th_=E2=80=8Btalabat=E2=80=8B_-_Head_of_Local_Shops?=",
-        "sender": "talabat <notification@deliveryherogroup.com>",
+        "subject": "=?UTF-8?B?2YPYo9izINin2YTYudin2YTZhQ==?= FIFA\r\n =?UTF-8?B?MjAyNuKEoiDYudmE2YkgVE9EIOKavQ==?=",
+        "sender": "talabat <update.en@em.talabat.com>",
         "job_ids": [
           "linkedin_jobspy-li-4407693428",
           "linkedin_jobspy-li-4416306146",
@@ -185,145 +109,70 @@
           "linkedin-li-4389537891",
           "linkedin-li-4375708512"
         ],
-        "score": 10,
-        "timestamp": "2026-06-04T16:00:52.791405+03:00"
-      },
-      {
-        "company": "SAP",
-        "signal": "recruiter_email",
-        "subject": "These vehicles will not get petrol, diesel and CNG from October 1,\r\n new rules apply",
-        "sender": "No PUCC No Fuel <info@host.discountwalas.com>",
-        "job_ids": [
-          "indeed-in-b2195113ff678ef7",
-          "indeed-in-b7591ff66cc5a732",
-          "linkedin_jobspy-li-4380812358",
-          "linkedin-li-4349578134",
-          "linkedin-li-4394078700",
-          "linkedin-li-4380812358",
-          "linkedin-li-4362170335",
-          "linkedin-li-4362562926",
-          "linkedin-li-4385935615",
-          "linkedin-li-4353703506",
-          "app-005",
-          "cv-5fbf4a9aa7",
-          "linkedin-li-4385294885"
-        ],
-        "score": 7,
-        "timestamp": "2026-06-04T16:00:52.816279+03:00"
+        "score": 6,
+        "timestamp": "2026-06-04T20:01:06.739017+03:00"
       },
       {
         "company": "Ecolab",
-        "signal": "interview_signal",
-        "subject": "Ecolab Application Confirmation",
-        "sender": "Ecolab Workday Notification <ecolab@myworkday.com>",
+        "signal": "recruiter_email",
+        "subject": "Ahmed, Ecolab would like feedback on your recent application\r\n experience",
+        "sender": "Ecolab <recruitingfeedback@ecolab.com>",
         "job_ids": [
           "ecolab-R00293396"
         ],
-        "score": 12,
-        "timestamp": "2026-06-04T16:00:52.968706+03:00"
+        "score": 7,
+        "timestamp": "2026-06-04T20:01:06.808582+03:00"
       }
     ],
     "pipeline_review_candidates": [
       {
-        "timestamp": "2026-06-04T16:00:53.386590+03:00",
-        "review_type": "possible_interview",
-        "category": "interview_invite",
-        "email_id": "360679",
-        "subject": "Ecolab Application Confirmation",
-        "from": "Ecolab Workday Notification <ecolab@myworkday.com>",
-        "priority": "HIGH",
-        "pipeline_match": "Ecolab",
-        "status": "needs_human_review"
-      },
-      {
-        "timestamp": "2026-06-04T16:00:53.386600+03:00",
+        "timestamp": "2026-06-04T20:01:07.354108+03:00",
         "review_type": "possible_recruiter_outreach",
         "category": "recruiter_reach",
-        "email_id": "360661",
-        "subject": "=?UTF-8?Q?Thank_you_for_your_application_wi?=\r\n =?UTF-8?Q?th_=E2=80=8Btalabat=E2=80=8B_-_Head_of_Local_Shops?=",
-        "from": "talabat <notification@deliveryherogroup.com>",
+        "email_id": "360710",
+        "subject": "=?UTF-8?B?2YPYo9izINin2YTYudin2YTZhQ==?= FIFA\r\n =?UTF-8?B?MjAyNuKEoiDYudmE2YkgVE9EIOKavQ==?=",
+        "from": "talabat <update.en@em.talabat.com>",
         "priority": "HIGH",
         "pipeline_match": "talabat",
         "status": "needs_human_review"
       },
       {
-        "timestamp": "2026-06-04T16:00:53.386605+03:00",
+        "timestamp": "2026-06-04T20:01:07.354114+03:00",
         "review_type": "possible_recruiter_outreach",
         "category": "recruiter_reach",
-        "email_id": "360663",
-        "subject": "These vehicles will not get petrol, diesel and CNG from October 1,\r\n new rules apply",
-        "from": "No PUCC No Fuel <info@host.discountwalas.com>",
-        "priority": "HIGH",
-        "pipeline_match": "SAP",
-        "status": "needs_human_review"
-      },
-      {
-        "timestamp": "2026-06-04T16:00:53.386609+03:00",
-        "review_type": "possible_recruiter_outreach",
-        "category": "recruiter_reach",
-        "email_id": "360679",
-        "subject": "Ecolab Application Confirmation",
-        "from": "Ecolab Workday Notification <ecolab@myworkday.com>",
+        "email_id": "360718",
+        "subject": "Ahmed, Ecolab would like feedback on your recent application\r\n experience",
+        "from": "Ecolab <recruitingfeedback@ecolab.com>",
         "priority": "HIGH",
         "pipeline_match": "Ecolab",
-        "status": "needs_human_review"
-      },
-      {
-        "timestamp": "2026-06-04T16:00:53.386614+03:00",
-        "review_type": "possible_recruiter_outreach",
-        "category": "recruiter_reach",
-        "email_id": "360680",
-        "subject": "Sign in to Indeed with code: 054236",
-        "from": "Indeed <login@indeed.com>",
-        "priority": "MEDIUM",
-        "pipeline_match": null,
-        "status": "needs_human_review"
-      },
-      {
-        "timestamp": "2026-06-04T16:00:53.386619+03:00",
-        "review_type": "possible_recruiter_outreach",
-        "category": "recruiter_reach",
-        "email_id": "360682",
-        "subject": "PMO Officer (Banking Domain) @ Dicetek LLC",
-        "from": "\"Indeed\" <donotreply@match.indeed.com>",
-        "priority": "MEDIUM",
-        "pipeline_match": null,
         "status": "needs_human_review"
       }
     ],
     "llm_analysis": null
   },
   "kpi": {
-    "emails_processed": 56,
-    "actionable": 5,
-    "interviews_detected": 1,
-    "recruiter_messages": 5,
-    "unread_actionable": 5
+    "emails_processed": 58,
+    "actionable": 2,
+    "interviews_detected": 0,
+    "recruiter_messages": 2,
+    "unread_actionable": 2
   },
   "recommendations": [
     {
-      "id": "rec-d769b20c-0",
-      "action": "respond_immediately",
-      "target": "1 interview invite(s)",
-      "reason": "Interview invitations require prompt response",
-      "urgency": "critical",
-      "timestamp": "2026-06-04T16:00:53.407155+03:00"
-    },
-    {
-      "id": "rec-d769b20c-1",
+      "id": "rec-60938b92-0",
       "action": "review_and_respond",
-      "target": "5 recruiter message(s)",
+      "target": "2 recruiter message(s)",
       "reason": "Recruiter outreach could lead to opportunities",
       "urgency": "high",
-      "timestamp": "2026-06-04T16:00:53.407181+03:00"
+      "timestamp": "2026-06-04T20:01:07.371581+03:00"
     },
     {
-      "id": "rec-d769b20c-2",
+      "id": "rec-60938b92-1",
       "action": "check_inbox",
-      "target": "5 unread actionable email(s)",
+      "target": "2 unread actionable email(s)",
       "reason": "Unread emails need attention",
       "urgency": "high",
-      "timestamp": "2026-06-04T16:00:53.407185+03:00"
+      "timestamp": "2026-06-04T20:01:07.371606+03:00"
     }
   ]
 }

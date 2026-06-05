@@ -636,3 +636,42 @@ li-4419653985
 li-4419683333
 li-4423369512
 li-4424204116
+li-4422900552
+li-4420717441
+greenhouse-gitlab-8481645002 | GitLab | Program Manager - Dubai | 2026-06-04 | greenhouse direct
+greenhouse-careem-8439069002 | Careem | Program Manager | 2026-06-04 | greenhouse direct
+greenhouse-newlab-4656698005|Newlab Careers|Senior Technical Program Manager|2026-06-04|direct_greenhouse
+greenhouse-hala-4960149008|HALA|Senior Product Manager|2026-06-04|direct_greenhouse
+greenhouse-hala-5060093008|HALA|Payment Product Manager|2026-06-04|direct_greenhouse
+ashby-sarjai-5407efea|Sarj.ai|Product Manager|2026-06-04|direct_ashby
+greenhouse-hala-4975560008|HALA|Senior Product Manager - Agents Experience|2026-06-04|direct_greenhouse
+greenhouse-hala-4977378008|HALA|Prospective Talent Pool - Technology & Product|2026-06-04|direct_greenhouse
+greenhouse-openfx-4925597008|OpenFX|Product Manager, API|2026-06-05|direct_greenhouse_manual_resume
+greenhouse-openfx-5071725008|OpenFX|Product Manager, Payments|2026-06-05|direct_greenhouse_manual_resume
+greenhouse-openfx-4823425008|OpenFX|Business Operations Manager|2026-06-05|direct_greenhouse_manual_resume
+greenhouse-openfx-4777895008|OpenFX|Partnerships Lead|2026-06-05|direct_greenhouse_manual_resume
+greenhouse-tamara-4857127101|Tamara|Senior Product Manager - CARE Tech|2026-06-05|direct_greenhouse
+greenhouse-tamara-4852757101|Tamara|Senior Product Manager - Banking Product|2026-06-05|direct_greenhouse
+greenhouse-tamara-4787871101|Tamara|Product Manager II - Trust & Safety|2026-06-05|direct_greenhouse
+greenhouse-scaleai-4617327005|Scale AI|Product Delivery & Operations Lead|2026-06-05|direct_greenhouse
+greenhouse-scaleai-4589749005|Scale AI|Product Manager of AI Applications, Global Public Sector|2026-06-05|direct_greenhouse
+greenhouse-scaleai-4650514005|Scale AI|Product Manager of AI Applications, Global Public Sector - Riyadh|2026-06-05|direct_greenhouse
+greenhouse-openfx-5157134008|OpenFX|Product Manager, Onboarding|2026-06-05|direct_greenhouse
+greenhouse-openfx-5223338008|OpenFX|Product Manager, Currency Expansion & Payments - Europe|2026-06-05|direct_greenhouse
+greenhouse-openfx-5238590008|OpenFX|Product Operations Manager|2026-06-05|direct_greenhouse
+greenhouse-openfx-4777943008|OpenFX|Treasury Operations Manager|2026-06-05|direct_greenhouse
+greenhouse-boku-5825523004|Boku|Principal Programme Delivery Manager|2026-06-05|direct_greenhouse
+greenhouse-boku-5823894004|Boku|Product Manager - Treasury|2026-06-05|direct_greenhouse
+greenhouse-boku-5813434004|Boku|Finance Project Manager|2026-06-05|direct_greenhouse
+greenhouse-hala-5115807008|HALA|Corporate Governance Manager|2026-06-05|direct_greenhouse
+greenhouse-hala-5140676008|HALA|Compliance Manager|2026-06-05|direct_greenhouse
+greenhouse-hala-5217252008|HALA|Automation Specialist|2026-06-05|direct_greenhouse
+greenhouse-tamara-4858358101|Tamara|Governance Manager|2026-06-05|direct_greenhouse
+greenhouse-axon-7624119003|Axon|Sr Product Manager II|2026-06-05|direct_greenhouse
+greenhouse-ref-4116043008|Ref|Senior Product Manager|2026-06-05|direct_greenhouse
+greenhouse-ebury-4839530101|Ebury|Group Product Manager - API Connectivity|2026-06-05|direct_greenhouse
+greenhouse-ebury-4846711101|Ebury|Senior Product Manager - API Platform|2026-06-05|direct_greenhouse
+greenhouse-ebury-4876058101|Ebury|Senior Product Manager - FX Expansion|2026-06-05|direct_greenhouse
+greenhouse-ebury-4879528101|Ebury|Senior Product Manager - Financial Crime (AML/Transaction Monitoring)|2026-06-05|direct_greenhouse
+greenhouse-ebury-4879532101|Ebury|Senior Product Manager - Financial Crime (KYC/KYB)|2026-06-05|direct_greenhouse
+greenhouse-ebury-4881103101|Ebury|Product Manager - Payment Infrastructure|2026-06-05|direct_greenhouse

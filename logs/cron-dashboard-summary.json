@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-04T19:08:14.792621+03:00",
+  "timestamp": "2026-06-05T06:08:19.302470+03:00",
   "total_crons": 54,
   "system_crons": 21,
   "openclaw_crons": 33,
@@ -219,88 +219,8 @@
       }
     },
     {
-      "name": "Email Agent (Sun-Thu)",
-      "schedule": "cron 0 8,12,16,20 * * 0-4 @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
       "name": "session-watchdog",
       "schedule": "cron 55 */3 * * * @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "Auto Lessons Learned - Daily Capture",
-      "schedule": "cron 45 23 * * * @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "OpenClaw Health Guard",
-      "schedule": "cron 0 */6 * * * @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "LCM Nightly Health Check",
-      "schedule": "cron 35 2 * * * @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "Daily OpenClaw Backup",
-      "schedule": "cron 15 3 * * * @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "LCM Force-Compact Processor",
-      "schedule": "cron 30 3 * * * @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "Daily Intel Sweep",
-      "schedule": "cron 5 4 * * * @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "Calendar Pre-fetch",
-      "schedule": "cron 55 4 * * * @ Africa/Cairo",
       "type": "openclaw",
       "last_status": {
         "status": "\u26a0\ufe0f Unknown",
@@ -369,6 +289,16 @@
       }
     },
     {
+      "name": "OpenClaw Health Guard",
+      "schedule": "cron 0 */6 * * * @ Africa/Cairo",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
       "name": "RSS Intelligence - Weekly Crawl",
       "schedule": "cron 0 13 * * 5 @ Africa/Cairo",
       "type": "openclaw",
@@ -429,6 +359,66 @@
       }
     },
     {
+      "name": "Auto Lessons Learned - Daily Capture",
+      "schedule": "cron 45 23 * * * @ Africa/Cairo",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "LCM Nightly Health Check",
+      "schedule": "cron 35 2 * * * @ Africa/Cairo",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "Daily OpenClaw Backup",
+      "schedule": "cron 15 3 * * * @ Africa/Cairo",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "LCM Force-Compact Processor",
+      "schedule": "cron 30 3 * * * @ Africa/Cairo",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "Daily Intel Sweep",
+      "schedule": "cron 5 4 * * * @ Africa/Cairo",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "Calendar Pre-fetch",
+      "schedule": "cron 55 4 * * * @ Africa/Cairo",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
       "name": "Weekly Skill Autoresearch",
       "schedule": "cron 0 10 * * 6 @ Africa/Cairo",
       "type": "openclaw",
@@ -441,6 +431,16 @@
     {
       "name": "weekly-memory-hygiene",
       "schedule": "cron 0 7 * * 0 @ Africa/Cairo",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "Email Agent (Sun-Thu)",
+      "schedule": "cron 0 8,12,16,20 * * 0-4 @ Africa/Cairo",
       "type": "openclaw",
       "last_status": {
         "status": "\u26a0\ufe0f Unknown",

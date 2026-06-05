@@ -1199,3 +1199,24 @@ Fime HiBob required a highest diploma certificate upload and no diploma artifact
 ### Do differently
 For job applications, never upload fake/substitute documents and never create ATS accounts without explicit approval. If a portal requires a missing certificate, credential, or account creation step, record the blocker and ask Ahmed for the exact artifact or approval before submission.
 - 2026-06-04: For job application OTPs, use available Gmail access before declaring user-auth blocked. Still ask Ahmed for MFA/passkey/reCAPTCHA, account creation, or external messaging decisions.
+
+## 2026-06-04 - Cron Status JSON Needs Atomic Writes
+
+### Incident
+Cron health briefly flagged `stale-context-maintenance` as unreadable because the health report read the status JSON while the cron wrapper was rewriting it, producing a transient partial-JSON read even though the maintenance job itself was healthy.
+### Do differently
+Cron wrappers that publish status JSON should write to a temp file and move it atomically. Health readers should retry transient JSON parse failures before reporting a job unhealthy.
+
+## 2026-06-04 - Email LLM Jobs Need Per-Agent Model Allowlist Checks
+
+### Incident
+An email heartbeat command exited 0, but the LLM analysis step skipped because `openai-codex/gpt-5.5` was not allowed for agent `main`, producing `Model 'openai-codex/gpt-5.5' is not allowed for agent 'main'` and `LLM: No valid credentials or gateway unreachable`.
+### Do differently
+For cron/email LLM probes, check the per-agent model allowlist as well as global defaults. If a job exits 0 but the LLM section says model-not-allowed or gateway unreachable, treat analysis as degraded and fix the allowlist or fallback path before relying on the summary.
+
+## 2026-06-04 - Job Application Success Needs Dedupe Ledger Verification
+
+### Incident
+After confirmed Virtucruit, talabat, and Ecolab submissions, the pipeline/report was updated but `applied-job-ids.txt` was still missing talabat `4407693428` and Ecolab `4421685356` until a later verification pass found and added the entries.
+### Do differently
+After every confirmed HR submission, verify both the application status/report and the permanent dedupe lock ledger (`applied-job-ids.txt` or equivalent). Do not treat the pipeline status alone as sufficient proof that future JobZoom scans will exclude the role.

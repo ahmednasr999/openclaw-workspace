@@ -180,6 +180,16 @@
 | 289 | 🆕 | Fortis | Head of Operations | Dubai | — | 🆕 Discovered | Radar | 2026-06-04 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4422868949) | — |
 | 290 | 🆕 | Adecco | Chief Product Officer (Fintech & B2B Platforms) | Dubai | — | 🆕 Discovered | Radar | 2026-06-04 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4422678521) | — |
 | 291 | 🆕 | Pave Bank | Director of Institutional Sales | Dubai | — | 🆕 Discovered | Radar | 2026-06-04 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4422930298) | — |
+| 292 | 🆕 | Confidential | Investment Director (Remote) | Doha | — | 🆕 Discovered | Radar | 2026-06-05 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4419281793) | — |
+| 293 | 🆕 | Naufar | Director – Information Technology-Qatari | Doha | — | 🆕 Discovered | Radar | 2026-06-05 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4418723335) | — |
+| 294 | 🆕 | Commercial Bank | Head of Security Operations | Doha | — | 🆕 Discovered | Radar | 2026-06-05 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4421849284) | — |
+| 295 | 🆕 | Scale AI | Product Manager of AI Applications, Global Public Sector | Doha | — | 🆕 Discovered | Radar | 2026-06-05 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4336811326) | — |
+| 296 | 🆕 | Goldman Sachs | Asset & Wealth Management - Doha - Vice President - Lead Security Engineering | Doha | — | 🆕 Discovered | Radar | 2026-06-05 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4379669933) | — |
+| 297 | 🆕 | Sendian Group | Business Unit Director – CCTV, Security Systems & ELV Solutions | Doha | — | 🆕 Discovered | Radar | 2026-06-05 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4424345909) | — |
+| 298 | 🆕 | Dubai Insurance Co. | Head of Information Technology | Dubai | — | 🆕 Discovered | Radar | 2026-06-05 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4420706588) | — |
+| 299 | 🆕 | RedHolt | Vice President of Technology | Dubai | — | 🆕 Discovered | Radar | 2026-06-05 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4420718076) | — |
+| 300 | 🆕 | KEO Group | Cloud and Infrastructure Platforms Director | Dubai | — | 🆕 Discovered | Radar | 2026-06-05 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4423351372) | — |
+
 
 
 

@@ -960,3 +960,10 @@
 2026-06-04T15:16:53+03:00 post-restart health=000 6006
 2026-06-04T17:17:24+03:00 chrome-trim term pid=1257846 count=21 rss_kb=1568492
 2026-06-04T17:19:44+03:00 chrome-trim term pid=1259025 count=21 rss_kb=1671988
+2026-06-04T22:01:51+03:00 observed reason=starvation-signals-3, pid=1160679 rss_kb=905212 app_servers=8 health_ms=146 signals=3
+2026-06-04T23:51:00+03:00 health-fail count=1 pid=1160679 http=000 ms=6002 app_servers=8
+2026-06-05T04:26:34+03:00 observed reason=starvation-signals-4, pid=1160679 rss_kb=770168 app_servers=8 health_ms=1 signals=4
+2026-06-05T05:22:34+03:00 degraded count=1 reason=app-server-count-10, pid=1160679 rss_kb=818580 app_servers=10 health_ms=11 signals=0
+2026-06-05T05:24:44+03:00 degraded count=2 reason=app-server-count-10, pid=1160679 rss_kb=819424 app_servers=10 health_ms=0 signals=0
+2026-06-05T05:24:44+03:00 restart-gateway reason=degraded:app-server-count-10,
+2026-06-05T05:25:03+03:00 post-restart health=000 6006
