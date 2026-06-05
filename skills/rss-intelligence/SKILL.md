@@ -1,7 +1,7 @@
 # RSS Intelligence Skill
 
 ## What it does
-Daily crawler that fetches curated RSS/Atom feeds, deduplicates articles, saves them to Notion, and sends a Telegram summary.
+Weekly crawler that fetches curated RSS/Atom feeds, deduplicates articles, saves them to Notion, generates a ranked content brief, creates the strongest Content Calendar ideas, and sends a compact Telegram summary.
 
 ## System Components
 
@@ -24,7 +24,7 @@ Properties: Name (title), Category (multi-select: 8 options), Source (rich_text)
 |----------|----------|---------------|
 | FinTech | https://connectingthedotsinfin.tech/rss/ | 15 |
 | Healthcare | https://www.healthcareittoday.com/feed/ | 10 |
-| HealthTech | https://www.mobihealthnews.com/rss.xml | 6 |
+| HealthTech | https://www.digitalhealth.net/news/feed/ | 10 |
 | Digital Transformation | https://sloanreview.mit.edu/tag/digital-transformation/feed/ | 20 |
 | Strategy | https://fs.blog/feed/ | 20 |
 | PMO | https://pmo.zalando.com/atom.xml | 46 |
@@ -34,11 +34,13 @@ Properties: Name (title), Category (multi-select: 8 options), Source (rich_text)
 ## Run manually
 ```bash
 python3 /root/.openclaw/workspace/scripts/rss-intelligence-crawler.py
+# Backfill recent RSS archive into a content brief without waiting for new feed items:
+python3 /root/.openclaw/workspace/scripts/rss-intelligence-crawler.py --rescore-recent 50
 ```
 
 ## Cron
 ID: `d93228ad-b2b2-4c17-b1b5-210f87df9608`
-Schedule: 7 AM Cairo, daily (Sun-Sat)
+Schedule: Friday 13:00 Cairo
 Check status: `openclaw cron list | grep RSS`
 
 ## Add new feed
@@ -58,8 +60,10 @@ print(len(items), 'items')
 
 ## Key Implementation Notes
 - Notion API token: `~/.openclaw/workspace/config/notion.json` — use direct API, NOT Composio
-- HealthTech (mobihealthnews) uses Atom with malformed namespace — handled in parser
+- HealthTech moved from MobiHealthNews to Digital Health on 2026-06-05 because MobiHealthNews returns HTTP 403 from the VPS.
 - Deduplication: URL-based, stored in state file (last 50k URLs)
-- Telegram: skips if 0 new articles
+- Telegram: skips if 0 new feed articles; backfill can still create local/Notion content ideas.
+- Content outputs: `data/rss-content-brief-latest.md`, dated brief, and `data/rss-content-candidates-latest.json`.
+- Content Calendar: creates up to three `Idea` rows per run, favoring distinct content angles and tracking duplicate source URLs in state.
 - PMO feed (Zalando) uses Atom format — handled by parser
 - Parse errors: try ET.fromstring with namespace fix; if still fails, try regex stripping of broken namespace declarations

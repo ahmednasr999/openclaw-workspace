@@ -373,6 +373,17 @@ def markdown_section(text: str, heading: str) -> str:
     return "\n".join(line for line in lines[start:end] if line.strip()).strip()
 
 
+def linkedin_radar_ready_count(report_path: str) -> int | None:
+    if not report_path:
+        return None
+    path = Path(report_path)
+    if not path.exists():
+        return None
+    report = path.read_text(encoding="utf-8", errors="ignore")
+    match = re.search(r"^Ready for approval:\s*(\d+)\/", report, re.M)
+    return int(match.group(1)) if match else None
+
+
 def linkedin_radar_status_pack(report_path: str, status: str, posts: str, action_line: str) -> str:
     base = [f"Status: {status}", f"Candidate count: {posts}"]
     if not report_path:
@@ -396,8 +407,12 @@ def linkedin_radar_status_pack(report_path: str, status: str, posts: str, action
         compact_source = [line for line in source.splitlines() if "URL coverage" in line or "fallback" in line]
         if compact_source:
             details.extend(["", "Source:", "\n".join(compact_source)])
-    if candidates:
+    if candidates and status == "ok_ready_for_approval":
         details.extend(["", "Candidate details:", candidates])
+    elif candidates and status == "needs_url_recovery":
+        details.extend(["", "Candidate details:", "Held back from Telegram approval flow because one or more relevant candidates have no verified LinkedIn URL. Use the saved report as the CMO recovery queue."])
+    elif candidates:
+        details.extend(["", "Candidate details:", "Held back because no candidate is approval-ready. See the saved report for skipped/recovery details."])
     if signals:
         details.extend(["", "Content signals:", signals])
     if angles:
@@ -430,8 +445,12 @@ def linkedin_comment_radar(args: argparse.Namespace, slot: str) -> int:
             print(json.dumps({"ok": result["returncode"] == 0, "validate": True, "slot": slot, "status": status, "posts": posts, "report": report_path, "result": result}, ensure_ascii=False))
             return 0 if result["returncode"] == 0 else 1
 
+        ready_count = linkedin_radar_ready_count(report_path)
         if status == "ok_ready_for_approval":
-            action_line = "Needs Ahmed: approve only candidates marked Ready."
+            if ready_count is not None and ready_count < 5:
+                action_line = f"Needs CMO: target is 5; only {ready_count} candidates are ready. Continue recovery unless Ahmed approves the partial pack."
+            else:
+                action_line = "Needs Ahmed: approve only candidates marked Ready."
         elif status == "needs_url_recovery":
             action_line = "Needs CMO: recover URLs before asking Ahmed to approve comments."
         elif status == "no_ready_candidates":

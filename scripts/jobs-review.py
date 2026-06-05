@@ -57,8 +57,8 @@ ARCHIVE_LINKEDIN_PROFILE = DATA_DIR.parent / "archive" / "linkedin-data" / "ahme
 GATEWAY_URL = "http://127.0.0.1:18789/v1/chat/completions"
 
 # Model config
-MODEL_ROUND1 = "openai-codex/gpt-5.5"          # Batch pre-filter, pinned to GPT-5.5
-MODEL_ROUND2 = "openai-codex/gpt-5.5"          # Final deep review, primary SAYYAD scorer
+MODEL_ROUND1 = "openai/gpt-5.5"          # Batch pre-filter, pinned to GPT-5.5
+MODEL_ROUND2 = "openai/gpt-5.5"          # Final deep review, primary SAYYAD scorer
 
 # Final verdict settings
 TOP_N_JOBS = 1500  # Bumped from 300 to handle DB backfill of unscored jobs
@@ -96,9 +96,10 @@ def _load_local_linkedin_signals() -> dict:
 
 def _update_score_fallback(job: dict, ats_score=None, fit_score=None, verdict=None, notes=None) -> bool:
     """Write score updates using pipeline job_id when available, else fall back to SQLite row id."""
-    job_id = str(job.get("job_id", "")).strip()
-    # DB backfill rows encode the SQLite numeric id into job_id. Those must be
-    # written back by row id, not by pipeline job_id.
+    raw_job_id = job.get("job_id") or job.get("id") or ""
+    job_id = str(raw_job_id).strip()
+    # Merged source rows may carry the pipeline key in `id` while `job_id` is blank.
+    # DB backfill rows use numeric ids and must still be written by SQLite row id.
     if _pdb and job_id and not job_id.isdigit():
         try:
             if _pdb.update_score(
@@ -115,6 +116,8 @@ def _update_score_fallback(job: dict, ats_score=None, fit_score=None, verdict=No
     try:
         import sqlite3 as _sql
         row_id = job.get("id")
+        if isinstance(row_id, str) and not row_id.isdigit():
+            row_id = None
         if row_id is None and job_id.isdigit():
             row_id = int(job_id)
         if row_id is None:
@@ -341,8 +344,39 @@ def _call_anthropic_direct(prompt: str, model: str, timeout: int = 240, max_retr
     return None
 
 
+def _resolve_secret_ref(value) -> str:
+    """Resolve OpenClaw SecretRef values from the local secrets file."""
+    if isinstance(value, str):
+        return value
+    if not isinstance(value, dict):
+        return ""
+    ref_id = value.get("id") or ""
+    if not ref_id.startswith("/"):
+        return ""
+    try:
+        secrets_path = Path(os.path.expanduser("~/.openclaw/config/secrets.json"))
+        cursor = json.load(open(secrets_path))
+        for part in [p for p in ref_id.split("/") if p]:
+            cursor = cursor[part]
+        return cursor if isinstance(cursor, str) else ""
+    except Exception:
+        return ""
+
+
+def _load_gateway_token() -> str:
+    token = os.environ.get("OPENCLAW_GATEWAY_TOKEN", "")
+    if token:
+        return token
+    try:
+        with open(os.path.expanduser("~/.openclaw/openclaw.json")) as _f:
+            _cfg = json.load(_f)
+        return _resolve_secret_ref(_cfg.get("gateway", {}).get("auth", {}).get("token", ""))
+    except Exception:
+        return ""
+
+
 def call_llm(prompt: str, model: str, timeout: int = 240, max_retries: int = 3) -> str | None:
-    """Call LLM through OpenClaw gateway, with direct Anthropic fallback only when explicitly requested."""
+    """Call LLM through OpenClaw gateway, resolving token SecretRefs when present."""
     import time as _time
 
     # For Anthropic models, call Anthropic API directly
@@ -353,12 +387,7 @@ def call_llm(prompt: str, model: str, timeout: int = 240, max_retries: int = 3) 
             return result
         print("  Anthropic direct failed, falling through to gateway...", flush=True)
 
-    try:
-        with open("/root/.openclaw/openclaw.json") as _f:
-            _cfg = json.load(_f)
-        gw_token = _cfg.get("gateway", {}).get("auth", {}).get("token", "")
-    except Exception:
-        gw_token = ""
+    gw_token = _load_gateway_token()
 
     headers = {"Content-Type": "application/json"}
     if gw_token:
@@ -368,7 +397,7 @@ def call_llm(prompt: str, model: str, timeout: int = 240, max_retries: int = 3) 
     # OpenClaw's OpenAI-compatible chat endpoint is agent-oriented. For Codex-backed
     # models we must route through an OpenClaw agent model and pass the real provider
     # model via x-openclaw-model.
-    if "openai-codex/" in model.lower():
+    if model.lower().startswith("openai/") or "openai-codex/" in model.lower():
         headers["x-openclaw-model"] = model
         gateway_model = "openclaw/hr"
 

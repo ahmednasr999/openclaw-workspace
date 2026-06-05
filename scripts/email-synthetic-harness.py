@@ -7,6 +7,7 @@ no file writes outside temporary fixture data.
 """
 from __future__ import annotations
 
+import argparse
 import importlib.util
 import json
 import sys
@@ -27,6 +28,8 @@ def load_module(name: str, path: Path):
 
 ea = load_module("email_agent_under_test", AGENT_PATH)
 fmt = load_module("format_email_alert_under_test", FORMATTER_PATH)
+
+EXPECTED_LLM_MODEL = "openai/gpt-5.5"
 
 FIXTURES = [
     {
@@ -77,7 +80,7 @@ FIXTURES = [
 ]
 
 
-def check_fixture(fx: dict) -> list[str]:
+def check_fixture(fx: dict, *, verbose: bool = False) -> list[str]:
     errors: list[str] = []
     cats = set(ea.categorize_email(fx["subject"], fx["from"], fx["body"]))
     score, pipeline = ea.score_email(fx["subject"], fx["from"], fx["body"])
@@ -91,18 +94,19 @@ def check_fixture(fx: dict) -> list[str]:
         errors.append(f"{fx['name']}: confidence {assessment['confidence']} < {fx['min_confidence']}")
     if "max_confidence" in fx and assessment["confidence"] > fx["max_confidence"]:
         errors.append(f"{fx['name']}: confidence {assessment['confidence']} > {fx['max_confidence']}")
-    print(json.dumps({
-        "fixture": fx["name"],
-        "categories": sorted(cats),
-        "score": score,
-        "confidence": assessment["confidence"],
-        "actionable": assessment["actionable"],
-        "why_actionable": assessment["why_actionable"],
-    }, ensure_ascii=False))
+    if verbose:
+        print(json.dumps({
+            "fixture": fx["name"],
+            "categories": sorted(cats),
+            "score": score,
+            "confidence": assessment["confidence"],
+            "actionable": assessment["actionable"],
+            "why_actionable": assessment["why_actionable"],
+        }, ensure_ascii=False))
     return errors
 
 
-def check_formatter_veto() -> list[str]:
+def check_formatter_veto(*, verbose: bool = False) -> list[str]:
     summary = {
         "data": {
             "total_scanned": 1,
@@ -112,17 +116,26 @@ def check_formatter_veto() -> list[str]:
         }
     }
     alert = fmt.build_alert(summary)
-    print(json.dumps({"formatter_alert": alert}, ensure_ascii=False))
+    if verbose:
+        print(json.dumps({"formatter_alert": alert}, ensure_ascii=False))
     if not alert.startswith("📬 Email scan: all clear"):
         return ["formatter veto failed for newsletter false positive"]
     return []
 
 
 def main() -> int:
+    if getattr(ea, "LLM_MODEL", "") != EXPECTED_LLM_MODEL:
+        print(f"FAIL: email-agent LLM_MODEL is {getattr(ea, 'LLM_MODEL', None)!r}, expected {EXPECTED_LLM_MODEL!r}")
+        return 1
+
+    parser = argparse.ArgumentParser(description="Run synthetic email-agent regressions.")
+    parser.add_argument("--verbose", action="store_true", help="Print fixture-level JSON diagnostics.")
+    args = parser.parse_args()
+
     errors: list[str] = []
     for fixture in FIXTURES:
-        errors.extend(check_fixture(fixture))
-    errors.extend(check_formatter_veto())
+        errors.extend(check_fixture(fixture, verbose=args.verbose))
+    errors.extend(check_formatter_veto(verbose=args.verbose))
     if errors:
         print("FAIL")
         for error in errors:

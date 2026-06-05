@@ -79,7 +79,7 @@ Return a JSON object with this exact structure:
 }}
 </output_format>"""
 
-LLM_MODEL = "openai-codex/gpt-5.5"
+LLM_MODEL = "openai/gpt-5.5"
 LLM_TEMP = 0.1
 
 import imaplib

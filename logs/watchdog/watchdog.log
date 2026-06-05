@@ -4517,3 +4517,16 @@ Config (/root/.openclaw/openclaw.json): missing env var "OPENCLAW_HOOKS_TOKEN" a
 [2026-06-05 06:00] WARN: Jobs data stale (25h), triggering pipeline
 [2026-06-05 06:00] FIXED: Pipeline triggered
 [2026-06-05 06:00] Summary: fixes=1 warnings=0 alerts=0
+[2026-06-05 08:00] === Watchdog v3 run ===
+[2026-06-05 08:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-06-05 10:00] === Watchdog v3 run ===
+[2026-06-05 10:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-06-05 12:00] === Watchdog v3 run ===
+[2026-06-05 12:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-06-05 14:00] === Watchdog v3 run ===
+[2026-06-05 14:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-06-05 16:00] === Watchdog v3 run ===
+[2026-06-05 16:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-06-05 18:00] === Watchdog v3 run ===
+[2026-06-05 18:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-06-05 20:00] === Watchdog v3 run ===

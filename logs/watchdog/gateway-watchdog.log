@@ -967,3 +967,24 @@
 2026-06-05T05:24:44+03:00 degraded count=2 reason=app-server-count-10, pid=1160679 rss_kb=819424 app_servers=10 health_ms=0 signals=0
 2026-06-05T05:24:44+03:00 restart-gateway reason=degraded:app-server-count-10,
 2026-06-05T05:25:03+03:00 post-restart health=000 6006
+2026-06-05T07:46:35+03:00 degraded count=1 reason=app-server-count-10, pid=1667643 rss_kb=828420 app_servers=10 health_ms=2 signals=0
+2026-06-05T07:48:55+03:00 degraded count=2 reason=app-server-count-10, pid=1667643 rss_kb=820340 app_servers=10 health_ms=101 signals=0
+2026-06-05T07:48:55+03:00 restart-gateway reason=degraded:app-server-count-10,
+2026-06-05T07:49:12+03:00 post-restart health=000 6006
+2026-06-05T13:15:31+03:00 degraded count=1 reason=app-server-count-10, pid=1724150 rss_kb=843068 app_servers=10 health_ms=145 signals=0
+2026-06-05T13:17:35+03:00 degraded count=2 reason=app-server-count-10, pid=1724150 rss_kb=837428 app_servers=10 health_ms=4 signals=0
+2026-06-05T13:17:35+03:00 restart-gateway reason=degraded:app-server-count-10,
+2026-06-05T13:17:53+03:00 post-restart health=000 6005
+2026-06-05T14:40:47+03:00 degraded count=1 reason=app-server-count-10, pid=1859242 rss_kb=798488 app_servers=10 health_ms=378 signals=0
+2026-06-05T14:42:55+03:00 degraded count=2 reason=app-server-count-10, pid=1859242 rss_kb=798748 app_servers=10 health_ms=1 signals=0
+2026-06-05T14:42:55+03:00 restart-gateway reason=degraded:app-server-count-10,
+2026-06-05T14:43:14+03:00 post-restart health=000 6006
+2026-06-05T16:04:49+03:00 chrome-trim term pid=1260615 count=17 rss_kb=1557084
+2026-06-05T17:51:15+03:00 degraded count=1 reason=app-server-count-10, pid=1874579 rss_kb=838848 app_servers=10 health_ms=1 signals=0
+2026-06-05T17:53:35+03:00 degraded count=2 reason=app-server-count-10, pid=1874579 rss_kb=829808 app_servers=10 health_ms=1 signals=0
+2026-06-05T17:53:35+03:00 restart-gateway reason=degraded:app-server-count-10,
+2026-06-05T17:53:53+03:00 post-restart health=000 6006
+2026-06-05T19:46:54+03:00 degraded count=1 reason=app-server-count-10, pid=1964346 rss_kb=802044 app_servers=10 health_ms=0 signals=0
+2026-06-05T19:49:14+03:00 degraded count=2 reason=app-server-count-10, pid=1964346 rss_kb=800440 app_servers=10 health_ms=2 signals=0
+2026-06-05T19:49:14+03:00 restart-gateway reason=degraded:app-server-count-10,
+2026-06-05T19:49:27+03:00 post-restart health=200 1921

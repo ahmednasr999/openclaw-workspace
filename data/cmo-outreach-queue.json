@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-31T05:10:17.400521Z",
+  "last_updated": "2026-06-05T12:53:21.721414+03:00",
   "items": [
     {
       "company": "Netcracker Technology in Dubai, United Arab Emirates â Apply on Wuzzuf",
@@ -158,6 +158,24 @@
         "Treat this as recruiter outreach, not a direct business-leader introduction.",
         "If no reply in 5 to 7 days, follow with Jack Gibson or ask Abs directly whether he owns the PMO Director mandate."
       ]
+    },
+    {
+      "company": "Salesforce",
+      "job_title": "Service Delivery Director",
+      "source": "linkedin_jobspy",
+      "job_url": "https://www.linkedin.com/jobs/view/4420496035",
+      "verdict": "SUBMIT",
+      "queued_at": "2026-06-05T12:48:51.236198+03:00",
+      "status": "queued"
+    },
+    {
+      "company": "Takamol Holding",
+      "job_title": "Portfolio Control Senior Manager",
+      "source": "linkedin_jobspy",
+      "job_url": "https://www.linkedin.com/jobs/view/4423523564",
+      "verdict": "SUBMIT",
+      "queued_at": "2026-06-05T12:48:51.238837+03:00",
+      "status": "queued"
     }
   ],
   "last_weekly_review": {

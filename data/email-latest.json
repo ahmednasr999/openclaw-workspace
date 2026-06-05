@@ -1,137 +1,117 @@
 {
   "status": "ok",
-  "scan_time": "2026-06-04T20:01:07.354089+03:00",
-  "total_scanned": 58,
+  "scan_time": "2026-06-05T15:00:46.320267+03:00",
+  "total_scanned": 19,
   "by_category": {
-    "interview_invite": 0,
-    "recruiter_reach": 2,
-    "application_ack": 1,
+    "interview_invite": 1,
+    "recruiter_reach": 1,
+    "application_ack": 0,
     "rejection": 0,
-    "assessment": 0,
+    "assessment": 1,
     "application_response": 0,
     "follow_up_needed": 0,
     "job_alert": 0,
-    "other": 55
+    "other": 16
   },
-  "interview_invites": [],
-  "recruiter_messages": [
+  "interview_invites": [
     {
-      "id": "360710",
-      "from": "talabat <update.en@em.talabat.com>",
-      "subject": "=?UTF-8?B?2YPYo9izINin2YTYudin2YTZhQ==?= FIFA\r\n =?UTF-8?B?MjAyNuKEoiDYudmE2YkgVE9EIOKavQ==?=",
-      "date": "Thu, 04 Jun 2026 13:08:16 +0000 (UTC)",
-      "unread": true,
-      "priority": "HIGH",
-      "score": 6,
-      "pipeline_match": "talabat",
-      "confidence": 75,
-      "confidence_label": "medium",
-      "evidence": [
-        "matched active pipeline company: talabat",
-        "hiring/application context",
-        "recruiter outreach classification",
-        "high priority score: 6"
-      ],
-      "why_actionable": "matched active pipeline company: talabat | hiring/application context | recruiter outreach classification | high priority score: 6"
-    },
-    {
-      "id": "360718",
-      "from": "Ecolab <recruitingfeedback@ecolab.com>",
-      "subject": "Ahmed, Ecolab would like feedback on your recent application\r\n experience",
-      "date": "Thu, 4 Jun 2026 13:30:32 +0000",
-      "unread": true,
-      "priority": "HIGH",
-      "score": 7,
-      "pipeline_match": "Ecolab",
-      "confidence": 90,
-      "confidence_label": "high",
-      "evidence": [
-        "matched active pipeline company: Ecolab",
-        "hiring sender context",
-        "hiring/application context",
-        "recruiter outreach classification",
-        "high priority score: 7"
-      ],
-      "why_actionable": "matched active pipeline company: Ecolab | hiring sender context | hiring/application context | recruiter outreach classification"
-    }
-  ],
-  "application_acks": [
-    {
-      "id": "360743",
-      "from": "Masdar <notification@smartrecruiters.com>",
-      "subject": "You have applied for Manager, Strategy & Research at Masdar",
-      "date": "Thu, 4 Jun 2026 15:03:43 +0000 (UTC)",
+      "id": "360886",
+      "from": "diib <support@diib.com>",
+      "subject": "diib alert: yalla.online may have an issue with homepage\r\n canonicalization. This could negatively impact rankings and visitor\r\n experience.",
+      "date": "Fri, 5 Jun 2026 11:07:32 +0000",
       "unread": true,
       "priority": "LOW",
-      "score": 1,
+      "score": 0,
       "pipeline_match": null,
-      "confidence": 35,
+      "confidence": 55,
       "confidence_label": "low",
       "evidence": [
-        "hiring sender context",
-        "hiring/application context"
+        "calendar or explicit interview evidence"
       ],
-      "why_actionable": "not actionable: hiring sender context | hiring/application context"
+      "why_actionable": "calendar or explicit interview evidence"
     }
   ],
+  "recruiter_messages": [
+    {
+      "id": "360885",
+      "from": "\"Indeed\" <donotreply@match.indeed.com>",
+      "subject": "Director, Information Technology - PMO @ Atlantis Dubai",
+      "date": "Fri, 05 Jun 2026 10:45:18 +0000",
+      "unread": true,
+      "priority": "MEDIUM",
+      "score": 2,
+      "pipeline_match": null,
+      "confidence": 65,
+      "confidence_label": "medium",
+      "evidence": [
+        "known recruiter/job domain",
+        "hiring/application context",
+        "recruiter outreach classification",
+        "medium priority score: 2"
+      ],
+      "why_actionable": "known recruiter/job domain | hiring/application context | recruiter outreach classification | medium priority score: 2"
+    }
+  ],
+  "application_acks": [],
   "rejections": [],
-  "assessments": [],
+  "assessments": [
+    {
+      "id": "360881",
+      "from": "\"Yogesh Chetri\" <support@info.y-axis.com>",
+      "subject": "Permanent Residency via Ontario: What Changed & What You Must Do Now",
+      "date": "Fri, 05 Jun 2026 03:37:59 -0600",
+      "unread": true,
+      "priority": "HIGH",
+      "score": 5,
+      "pipeline_match": null,
+      "confidence": 55,
+      "confidence_label": "low",
+      "evidence": [
+        "hiring/application context",
+        "assessment keyword with hiring context",
+        "high priority score: 5"
+      ],
+      "why_actionable": "hiring/application context | assessment keyword with hiring context | high priority score: 5"
+    }
+  ],
   "application_responses": [],
   "follow_ups_needed": [],
   "job_alerts": [],
-  "actionable_count": 2,
+  "actionable_count": 3,
   "hot_alerts": [],
-  "signals": [
-    {
-      "company": "talabat",
-      "signal": "recruiter_email",
-      "subject": "=?UTF-8?B?2YPYo9izINin2YTYudin2YTZhQ==?= FIFA\r\n =?UTF-8?B?MjAyNuKEoiDYudmE2YkgVE9EIOKavQ==?=",
-      "sender": "talabat <update.en@em.talabat.com>",
-      "job_ids": [
-        "linkedin_jobspy-li-4407693428",
-        "linkedin_jobspy-li-4416306146",
-        "linkedin-li-4415007377",
-        "linkedin_jobspy-li-4397262230",
-        "linkedin-li-4370418095",
-        "linkedin-li-4389537891",
-        "linkedin-li-4375708512"
-      ],
-      "score": 6,
-      "timestamp": "2026-06-04T20:01:06.739017+03:00"
-    },
-    {
-      "company": "Ecolab",
-      "signal": "recruiter_email",
-      "subject": "Ahmed, Ecolab would like feedback on your recent application\r\n experience",
-      "sender": "Ecolab <recruitingfeedback@ecolab.com>",
-      "job_ids": [
-        "ecolab-R00293396"
-      ],
-      "score": 7,
-      "timestamp": "2026-06-04T20:01:06.808582+03:00"
-    }
-  ],
+  "signals": [],
   "pipeline_review_candidates": [
     {
-      "timestamp": "2026-06-04T20:01:07.354108+03:00",
-      "review_type": "possible_recruiter_outreach",
-      "category": "recruiter_reach",
-      "email_id": "360710",
-      "subject": "=?UTF-8?B?2YPYo9izINin2YTYudin2YTZhQ==?= FIFA\r\n =?UTF-8?B?MjAyNuKEoiDYudmE2YkgVE9EIOKavQ==?=",
-      "from": "talabat <update.en@em.talabat.com>",
-      "priority": "HIGH",
-      "pipeline_match": "talabat",
+      "timestamp": "2026-06-05T15:00:46.320291+03:00",
+      "review_type": "possible_interview",
+      "category": "interview_invite",
+      "email_id": "360886",
+      "subject": "diib alert: yalla.online may have an issue with homepage\r\n canonicalization. This could negatively impact rankings and visitor\r\n experience.",
+      "from": "diib <support@diib.com>",
+      "priority": "LOW",
+      "pipeline_match": null,
       "status": "needs_human_review"
     },
     {
-      "timestamp": "2026-06-04T20:01:07.354114+03:00",
+      "timestamp": "2026-06-05T15:00:46.320299+03:00",
+      "review_type": "possible_assessment",
+      "category": "assessment",
+      "email_id": "360881",
+      "subject": "Permanent Residency via Ontario: What Changed & What You Must Do Now",
+      "from": "\"Yogesh Chetri\" <support@info.y-axis.com>",
+      "priority": "HIGH",
+      "pipeline_match": null,
+      "status": "needs_human_review"
+    },
+    {
+      "timestamp": "2026-06-05T15:00:46.320304+03:00",
       "review_type": "possible_recruiter_outreach",
       "category": "recruiter_reach",
-      "email_id": "360718",
-      "subject": "Ahmed, Ecolab would like feedback on your recent application\r\n experience",
-      "from": "Ecolab <recruitingfeedback@ecolab.com>",
-      "priority": "HIGH",
-      "pipeline_match": "Ecolab",
+      "email_id": "360885",
+      "subject": "Director, Information Technology - PMO @ Atlantis Dubai",
+      "from": "\"Indeed\" <donotreply@match.indeed.com>",
+      "priority": "MEDIUM",
+      "pipeline_match": null,
       "status": "needs_human_review"
     }
   ],
