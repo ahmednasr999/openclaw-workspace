@@ -35,9 +35,9 @@ def now() -> datetime:
     return datetime.now(CAIRO)
 
 
-def send_telegram(message: str, *, target: str, thread_id: str | None = None, no_send: bool = False) -> dict:
+def send_telegram(message: str, *, target: str, thread_id: str | None = None, presentation: dict | None = None, no_send: bool = False) -> dict:
     if no_send:
-        return {"ok": True, "dry_run": True, "target": target, "thread_id": thread_id}
+        return {"ok": True, "dry_run": True, "target": target, "thread_id": thread_id, "presentation": bool(presentation)}
     cmd = [
         "openclaw",
         "message",
@@ -52,6 +52,8 @@ def send_telegram(message: str, *, target: str, thread_id: str | None = None, no
     ]
     if thread_id:
         cmd.extend(["--thread-id", thread_id])
+    if presentation:
+        cmd.extend(["--presentation", json.dumps(presentation, ensure_ascii=False)])
 
     last_result = {
         "ok": False,
@@ -407,18 +409,44 @@ def linkedin_radar_status_pack(report_path: str, status: str, posts: str, action
         compact_source = [line for line in source.splitlines() if "URL coverage" in line or "fallback" in line]
         if compact_source:
             details.extend(["", "Source:", "\n".join(compact_source)])
-    if candidates and status == "ok_ready_for_approval":
+    if candidates:
         details.extend(["", "Candidate details:", candidates])
-    elif candidates and status == "needs_url_recovery":
-        details.extend(["", "Candidate details:", "Held back from Telegram approval flow because one or more relevant candidates have no verified LinkedIn URL. Use the saved report as the CMO recovery queue."])
-    elif candidates:
-        details.extend(["", "Candidate details:", "Held back because no candidate is approval-ready. See the saved report for skipped/recovery details."])
+        if status != "ok_ready_for_approval":
+            details.append("Approval buttons remain locked until a candidate is marked ready.")
     if signals:
         details.extend(["", "Content signals:", signals])
     if angles:
         details.extend(["", "Post angles:", angles])
     details.extend(["", action_line, f"Report: {report_path}"])
     return "\n".join(details)
+
+
+def load_linkedin_radar_cards(cards_path: str) -> dict | None:
+    if not cards_path:
+        return None
+    path = Path(cards_path)
+    if not path.exists():
+        return None
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return None
+    return data if isinstance(data, dict) else None
+
+
+def send_linkedin_radar_approval_cards(cards_path: str, *, no_send: bool) -> dict:
+    data = load_linkedin_radar_cards(cards_path)
+    if not data:
+        return {"ok": False, "count": 0, "error": "missing_or_invalid_card_payload", "cards_path": cards_path}
+    cards = [card for card in data.get("cards", []) if isinstance(card, dict) and card.get("approval_enabled")]
+    deliveries = []
+    for card in cards[:5]:
+        text = str(card.get("telegram_text") or "").strip()
+        presentation = card.get("presentation") if isinstance(card.get("presentation"), dict) else None
+        if not text:
+            continue
+        deliveries.append(send_telegram(text, target=CEO_GROUP, thread_id=TOPIC_CMO, presentation=presentation, no_send=no_send))
+    return {"ok": all(item.get("ok") for item in deliveries) if deliveries else True, "count": len(deliveries), "cards_path": cards_path, "deliveries": deliveries}
 
 def linkedin_comment_radar(args: argparse.Namespace, slot: str) -> int:
     with with_lock(f"linkedin-comment-radar-{slot}"):
@@ -432,17 +460,20 @@ def linkedin_comment_radar(args: argparse.Namespace, slot: str) -> int:
 
         stdout = result["stdout"].strip()
         report_path = ""
+        cards_path = ""
         posts = "?"
         status = "unknown"
         for line in stdout.splitlines():
             if line.startswith("/") and line.endswith(".md"):
                 report_path = line.strip()
+            if line.startswith("cards="):
+                cards_path = line.split("=", 1)[1].strip()
             match = re.search(r"status=([^\s]+) posts=(\d+)", line)
             if match:
                 status, posts = match.group(1), match.group(2)
 
         if args.validate:
-            print(json.dumps({"ok": result["returncode"] == 0, "validate": True, "slot": slot, "status": status, "posts": posts, "report": report_path, "result": result}, ensure_ascii=False))
+            print(json.dumps({"ok": result["returncode"] == 0, "validate": True, "slot": slot, "status": status, "posts": posts, "report": report_path, "cards": cards_path, "result": result}, ensure_ascii=False))
             return 0 if result["returncode"] == 0 else 1
 
         ready_count = linkedin_radar_ready_count(report_path)
@@ -461,7 +492,12 @@ def linkedin_comment_radar(args: argparse.Namespace, slot: str) -> int:
         if result["returncode"] == 0:
             status_pack = linkedin_radar_status_pack(report_path, status, posts, action_line)
             body = f"LinkedIn Comment Radar {label} completed.\n{status_pack}"
-            delivery = send_telegram(body, target=CEO_GROUP, thread_id=TOPIC_CMO, no_send=args.no_send)
+            card_payload = load_linkedin_radar_cards(cards_path) or {}
+            summary_presentation = card_payload.get("summary_presentation") if isinstance(card_payload.get("summary_presentation"), dict) else None
+            delivery = send_telegram(body, target=CEO_GROUP, thread_id=TOPIC_CMO, presentation=summary_presentation, no_send=args.no_send)
+            if status == "ok_ready_for_approval":
+                card_delivery = send_linkedin_radar_approval_cards(cards_path, no_send=args.no_send)
+                delivery = {"ok": delivery.get("ok") and card_delivery.get("ok"), "summary": delivery, "cards": card_delivery}
         else:
             body = (
                 f"LinkedIn Comment Radar {label} failed.\n"
@@ -471,7 +507,7 @@ def linkedin_comment_radar(args: argparse.Namespace, slot: str) -> int:
             )
             delivery = send_telegram(body, target=AHMED_DM, no_send=args.no_send)
 
-        print(json.dumps({"ok": result["returncode"] == 0 and delivery.get("ok"), "slot": slot, "status": status, "posts": posts, "report": report_path, "result": result, "delivery": delivery}, ensure_ascii=False))
+        print(json.dumps({"ok": result["returncode"] == 0 and delivery.get("ok"), "slot": slot, "status": status, "posts": posts, "report": report_path, "cards": cards_path, "result": result, "delivery": delivery}, ensure_ascii=False))
         return 0 if result["returncode"] == 0 and delivery.get("ok") else 1
 
 

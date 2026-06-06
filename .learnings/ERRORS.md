@@ -919,3 +919,10 @@ Do differently: execute `.sh` verification scripts with `bash` directly, then co
 During the daily lessons heartbeat, the shell command `apply_patch` was not found, so the Markdown append had to use a shell append fallback.
 ### Do differently
 When running in OpenClaw sandbox_exec without native Codex shell tools, verify whether `apply_patch` exists before relying on it; if absent and a memory-file append is required, use the narrowest append fallback and verify the resulting file tail.
+
+## 2026-06-06 - OpenClaw sandbox_exec host auto rejected in cron turn
+
+- What happened: The daily backup cron command first failed with `exec host not allowed` when sandbox_exec was called with `host=auto`; the configured execution host for this turn was `gateway`.
+- Recovery: Re-ran the exact backup command with `host=gateway`, then verified the new archive and retention state.
+- Do differently: For OpenClaw cron jobs in this environment, use `host=gateway` for sandbox_exec unless the runtime explicitly allows auto host override.
+

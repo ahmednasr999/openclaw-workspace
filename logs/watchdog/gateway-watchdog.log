@@ -1003,3 +1003,20 @@
 2026-06-06T03:14:29+03:00 post-restart health=200 2965
 2026-06-06T04:17:14+03:00 chrome-trim term pid=1947640 count=16 rss_kb=2201476
 2026-06-06T06:14:14+03:00 chrome-trim term pid=2260362 count=16 rss_kb=1925704
+2026-06-06T07:06:54+03:00 chrome-trim term pid=2294174 count=17 rss_kb=2163312
+2026-06-06T07:20:34+03:00 chrome-trim term pid=2357858 count=18 rss_kb=1488936
+2026-06-06T07:22:34+03:00 chrome-trim term pid=2366887 count=20 rss_kb=1763428
+2026-06-06T07:29:01+03:00 chrome-trim term pid=2369960 count=20 rss_kb=1642936
+2026-06-06T07:31:02+03:00 chrome-trim term pid=2376288 count=20 rss_kb=1517620
+2026-06-06T07:33:06+03:00 chrome-trim term pid=2378070 count=20 rss_kb=1678316
+2026-06-06T07:35:17+03:00 chrome-trim term pid=2379721 count=18 rss_kb=1523236
+2026-06-06T07:45:55+03:00 degraded count=1 reason=app-server-count-10, pid=2191814 rss_kb=932120 app_servers=10 health_ms=433 signals=1
+2026-06-06T07:47:58+03:00 degraded count=2 reason=app-server-count-10, pid=2191814 rss_kb=938008 app_servers=10 health_ms=3 signals=1
+2026-06-06T07:47:58+03:00 restart-gateway reason=degraded:app-server-count-10,
+2026-06-06T07:48:16+03:00 post-restart health=000 6004
+2026-06-06T14:42:25+03:00 chrome-trim term pid=2381600 count=20 rss_kb=1867340
+2026-06-06T14:49:14+03:00 chrome-trim term pid=2547395 count=21 rss_kb=1820760
+2026-06-06T14:53:40+03:00 chrome-trim term pid=2549650 count=20 rss_kb=1508712
+2026-06-06T18:12:18+03:00 restart-deferred reason=slow-health-3124ms active_app_servers=8
+2026-06-06T18:12:18+03:00 observed reason=slow-health-3124ms, pid=2403408 rss_kb=859628 app_servers=8 health_ms=3124 signals=0
+2026-06-06T19:11:54+03:00 chrome-trim term pid=2551805 count=21 rss_kb=1683624

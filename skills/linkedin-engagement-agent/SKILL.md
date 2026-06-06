@@ -216,3 +216,19 @@ Reply "⏭ Skipped" and move on.
 2. **Do not treat send success as approval readiness.** If buttons, thread delivery, or card visibility cannot be proven, stop before posting and report the degraded approval state.
 3. **Re-check lane and account before every write action.** Posting still requires Ahmed-Mac online, correct Ahmed account, exact activity URN, author URL, approved text unchanged, cooldown clear, and visible proof after submit.
 4. **Create `eval/checklist.md` next.** Include Telegram card visibility, fallback-card completeness, Ahmed-Mac/account check, post identity match, cooldown, approved text match, visible comment proof, like state, ontology update, and one meaningful closeout.
+
+### 2026-06-06 - Weekly Skill Tune-Up
+
+**Audit basis:** No direct LinkedIn-engagement lesson appeared this week, but multiple LinkedIn automation lessons affect this skill's write path: do not repair cookies, prefer visible authenticated profiles, keep one-tab browser flow, and require visible proof before reporting success. `eval/checklist.md` is still missing.
+
+**Reviewed lessons:**
+- 2026-06-02, Do Not Repair LinkedIn by Editing Cookies.
+- 2026-06-03, LinkedIn Easy Apply Can Recover Through A Different Visible Authenticated Profile.
+- 2026-06-02, LinkedIn Upload Success Needs Visible Exact-CV Proof.
+
+**Improvement recommendation:**
+1. **Forbid cookie-based engagement recovery.** If engagement discovery or posting hits redirects, 429, or auth drift, do not inspect or repair cookies. Use Ahmed-Mac Chrome or another visible authenticated profile, or stop.
+2. **Keep approvals bound to the visible session.** Approval cards should remain tied to activity URN, author URL, approved comment text, and the browser profile/account that produced the evidence.
+3. **Use one visible LinkedIn tab for engagement posting.** Reuse the authenticated LinkedIn tab through comment submission and proof capture. Do not open a new tab per post unless no reusable tab exists.
+4. **Report only after visible proof.** A posted comment is complete only when a fresh visible snapshot shows Ahmed's comment on the exact target post, the like state is checked, and ontology `last_commented` is updated.
+5. **Create `eval/checklist.md` next.** Include approval-card visibility, Ahmed account/profile identity, no-cookie-repair gate, one-tab reuse, activity URN match, author URL match, cooldown clear, approved text match, visible comment proof, like state, ontology update, and one meaningful closeout.

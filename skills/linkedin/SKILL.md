@@ -143,3 +143,18 @@ Add completion guard: verify ALL required outputs (image, Notion update, etc.) b
 2. **Separate visible reply from private closeout.** If the workflow uses Telegram to notify Ahmed, that visible message should be the real answer. Avoid extra private "done" or "sent" receipts unless there is operational evidence to report.
 3. **Require reference-level visual proof for image posts.** For Ahmed branded LinkedIn visuals, compare against the approved premium reference before staging or publishing. Reject generic, flat, under-designed, or text-on-face layouts.
 4. **Escalate after two blocked publish paths.** If the browser lane and upload/publish lane both fail, stop retrying silently and report the blocker with the fastest safe alternative.
+
+### 2026-06-06 - Weekly Skill Tune-Up
+
+**Audit basis:** `linkedin-writer` is still not an active skill directory, so this audit used the active `linkedin` skill as the default LinkedIn writing/operations substitute. Recent lessons were strongly LinkedIn-heavy: cookie repair is forbidden, visible authenticated browser profiles can be swapped when one is blocked, and LinkedIn Easy Apply upload proof must be visible and exact. `eval/checklist.md` is still missing.
+
+**Reviewed lessons:**
+- 2026-06-02, Do Not Repair LinkedIn by Editing Cookies.
+- 2026-06-02, LinkedIn Upload Success Needs Visible Exact-CV Proof.
+- 2026-06-03, LinkedIn Easy Apply Can Recover Through A Different Visible Authenticated Profile.
+
+**Improvement recommendation:**
+1. **Make cookie repair a hard non-path.** LinkedIn recovery must not inspect, edit, dedupe, export, or refresh cookies. Use visible authenticated browser state, approved Composio posting, or JobSpy for descriptions only.
+2. **Recover by switching visible profiles, not patching cookies.** If one LinkedIn browser profile is blocked by redirects, 429, or unauthenticated navigation, try another already-authenticated visible profile and keep the one-tab flow.
+3. **Require exact visible upload proof.** For Easy Apply or any LinkedIn file upload, success means the visible UI shows the exact intended CV/file, not that an upload tool returned ok.
+4. **Create `eval/checklist.md` next.** Include artifact type, account/profile identity, one-tab reuse, no-cookie-repair gate, exact selected-file proof, approved text/media, live URL or submit proof, rendered content proof, and status/ledger update.

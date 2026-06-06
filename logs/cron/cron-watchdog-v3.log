@@ -55,3 +55,131 @@
   Alerts (need human): 0
 ═══════════════════════════════════
 [2026-06-06T06:00:08+03:00] END cron-watchdog-v3: rc=0 duration=7s
+
+[2026-06-06T08:00:01+03:00] START cron-watchdog-v3: /bin/bash /root/.openclaw/workspace/scripts/cron-watchdog-v3.sh
+🔍 Watchdog v3 - Detect → Fix → Report
+✅ Gateway running (PID: 2403408)
+✅ Disk OK: 72%
+✅ active-tasks.md fresh (46h)
+🟡 Jobs data stale (25h) - re-running pipeline...
+  Pipeline triggered in background
+✅ SIE 360 data fresh (6h)
+✅ Pipeline lock active (0m, still valid)
+✅ All crons OK
+✅ No pipeline failures today
+✅ RAM OK: 29%
+
+═══════════════════════════════════
+📊 Watchdog v3 Summary
+  Fixes applied: 1
+  Warnings: 0
+  Alerts (need human): 0
+═══════════════════════════════════
+
+📋 Actions taken:
+🔄 Jobs data was 25h stale → pipeline re-triggered
+
+[2026-06-06T08:00:06+03:00] END cron-watchdog-v3: rc=0 duration=5s
+
+[2026-06-06T10:00:01+03:00] START cron-watchdog-v3: /bin/bash /root/.openclaw/workspace/scripts/cron-watchdog-v3.sh
+🔍 Watchdog v3 - Detect → Fix → Report
+✅ Gateway running (PID: 2403408)
+✅ Disk OK: 72%
+✅ active-tasks.md fresh (48h)
+✅ Jobs data fresh (1h)
+✅ SIE 360 data fresh (8h)
+✅ All crons OK
+✅ No pipeline failures today
+✅ RAM OK: 35%
+
+═══════════════════════════════════
+📊 Watchdog v3 Summary
+  Fixes applied: 0
+  Warnings: 0
+  Alerts (need human): 0
+═══════════════════════════════════
+[2026-06-06T10:00:08+03:00] END cron-watchdog-v3: rc=0 duration=7s
+
+[2026-06-06T12:00:01+03:00] START cron-watchdog-v3: /bin/bash /root/.openclaw/workspace/scripts/cron-watchdog-v3.sh
+🔍 Watchdog v3 - Detect → Fix → Report
+✅ Gateway running (PID: 2403408)
+✅ Disk OK: 72%
+🟡 active-tasks.md stale (50h) - touching to refresh
+✅ Jobs data fresh (3h)
+✅ SIE 360 data fresh (10h)
+✅ All crons OK
+✅ No pipeline failures today
+✅ RAM OK: 36%
+
+═══════════════════════════════════
+📊 Watchdog v3 Summary
+  Fixes applied: 0
+  Warnings: 1
+  Alerts (need human): 0
+═══════════════════════════════════
+[2026-06-06T12:00:05+03:00] END cron-watchdog-v3: rc=0 duration=4s
+
+[2026-06-06T14:00:01+03:00] START cron-watchdog-v3: /bin/bash /root/.openclaw/workspace/scripts/cron-watchdog-v3.sh
+🔍 Watchdog v3 - Detect → Fix → Report
+✅ Gateway running (PID: 2403408)
+✅ Disk OK: 72%
+✅ active-tasks.md fresh (2h)
+✅ Jobs data fresh (5h)
+✅ SIE 360 data fresh (12h)
+✅ All crons OK
+✅ No pipeline failures today
+✅ RAM OK: 39%
+
+═══════════════════════════════════
+📊 Watchdog v3 Summary
+  Fixes applied: 0
+  Warnings: 0
+  Alerts (need human): 0
+═══════════════════════════════════
+[2026-06-06T14:00:06+03:00] END cron-watchdog-v3: rc=0 duration=5s
+
+[2026-06-06T16:00:01+03:00] START cron-watchdog-v3: /bin/bash /root/.openclaw/workspace/scripts/cron-watchdog-v3.sh
+🔍 Watchdog v3 - Detect → Fix → Report
+✅ Gateway running (PID: 2403408)
+✅ Disk OK: 72%
+✅ active-tasks.md fresh (4h)
+✅ Jobs data fresh (7h)
+✅ SIE 360 data fresh (14h)
+✅ All crons OK
+✅ No pipeline failures today
+✅ RAM OK: 37%
+
+═══════════════════════════════════
+📊 Watchdog v3 Summary
+  Fixes applied: 0
+  Warnings: 0
+  Alerts (need human): 0
+═══════════════════════════════════
+[2026-06-06T16:00:07+03:00] END cron-watchdog-v3: rc=0 duration=6s
+
+[2026-06-06T18:00:01+03:00] START cron-watchdog-v3: /bin/bash /root/.openclaw/workspace/scripts/cron-watchdog-v3.sh
+🔍 Watchdog v3 - Detect → Fix → Report
+✅ Gateway running (PID: 2403408)
+✅ Disk OK: 72%
+✅ active-tasks.md fresh (6h)
+✅ Jobs data fresh (9h)
+✅ SIE 360 data fresh (16h)
+✅ All crons OK
+✅ No pipeline failures today
+✅ RAM OK: 36%
+
+═══════════════════════════════════
+📊 Watchdog v3 Summary
+  Fixes applied: 0
+  Warnings: 0
+  Alerts (need human): 0
+═══════════════════════════════════
+[2026-06-06T18:00:06+03:00] END cron-watchdog-v3: rc=0 duration=5s
+
+[2026-06-06T20:00:01+03:00] START cron-watchdog-v3: /bin/bash /root/.openclaw/workspace/scripts/cron-watchdog-v3.sh
+🔍 Watchdog v3 - Detect → Fix → Report
+✅ Gateway running (PID: 2403408)
+✅ Disk OK: 73%
+✅ active-tasks.md fresh (8h)
+✅ Jobs data fresh (11h)
+✅ SIE 360 data fresh (18h)

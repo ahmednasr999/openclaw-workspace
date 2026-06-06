@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-05T12:53:21.721414+03:00",
+  "last_updated": "2026-06-06T08:31:42.049121+03:00",
   "items": [
     {
       "company": "Netcracker Technology in Dubai, United Arab Emirates â Apply on Wuzzuf",
@@ -175,6 +175,15 @@
       "job_url": "https://www.linkedin.com/jobs/view/4423523564",
       "verdict": "SUBMIT",
       "queued_at": "2026-06-05T12:48:51.238837+03:00",
+      "status": "queued"
+    },
+    {
+      "company": "RAKBANK",
+      "job_title": "Head of Enterprise Transformation & Intelligent Automation",
+      "source": "linkedin",
+      "job_url": "https://www.linkedin.com/jobs/view/4417864039/",
+      "verdict": "SUBMIT",
+      "queued_at": "2026-06-06T08:31:42.049112+03:00",
       "status": "queued"
     }
   ],

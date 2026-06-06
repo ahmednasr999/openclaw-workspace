@@ -2,57 +2,37 @@
   "meta": {
     "agent": "email-agent",
     "version": "3.0.0",
-    "generated_at": "2026-06-05T21:01:22.377381+03:00",
-    "duration_ms": 62107,
+    "generated_at": "2026-06-06T15:01:02.239229+03:00",
+    "duration_ms": 41038,
     "ttl_hours": 4,
     "status": "success",
     "error": null,
-    "run_id": "488fd851",
+    "run_id": "8181695e",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
     "status": "ok",
-    "scan_time": "2026-06-05T21:00:56.187125+03:00",
-    "total_scanned": 84,
+    "scan_time": "2026-06-06T15:00:34.240071+03:00",
+    "total_scanned": 24,
     "by_category": {
-      "interview_invite": 1,
-      "recruiter_reach": 5,
+      "interview_invite": 0,
+      "recruiter_reach": 4,
       "application_ack": 0,
-      "rejection": 1,
+      "rejection": 0,
       "assessment": 0,
       "application_response": 0,
       "follow_up_needed": 0,
-      "job_alert": 2,
-      "other": 76
+      "job_alert": 1,
+      "other": 19
     },
-    "interview_invites": [
-      {
-        "id": "360953",
-        "from": "\"Indeed\" <donotreply@match.indeed.com>",
-        "subject": "Chief Operating Officer (COO) in Dubai, UAE at CP in Dubai and 18 more new jobs",
-        "date": "Fri, 05 Jun 2026 16:27:14 +0000",
-        "unread": true,
-        "priority": "MEDIUM",
-        "score": 4,
-        "pipeline_match": null,
-        "confidence": 65,
-        "confidence_label": "medium",
-        "evidence": [
-          "known recruiter/job domain",
-          "hiring/application context",
-          "recruiter outreach classification",
-          "medium priority score: 4"
-        ],
-        "why_actionable": "known recruiter/job domain | hiring/application context | recruiter outreach classification | medium priority score: 4"
-      }
-    ],
+    "interview_invites": [],
     "recruiter_messages": [
       {
-        "id": "360927",
+        "id": "361079",
         "from": "\"Indeed\" <donotreply@match.indeed.com>",
-        "subject": "Enterprise PMO Lead @ Andersen Inc.",
-        "date": "Fri, 05 Jun 2026 14:13:54 +0000",
+        "subject": "Office Manager of COO - (PMO) @ Independent Food Company",
+        "date": "Sat, 06 Jun 2026 10:43:59 +0000",
         "unread": true,
         "priority": "MEDIUM",
         "score": 2,
@@ -68,114 +48,74 @@
         "why_actionable": "known recruiter/job domain | hiring/application context | recruiter outreach classification | medium priority score: 2"
       },
       {
-        "id": "360952",
-        "from": "\"Indeed\" <donotreply@match.indeed.com>",
-        "subject": "Self Employed - Elite Account Manager @ Thornton and Baines Ltd",
-        "date": "Fri, 05 Jun 2026 16:26:46 +0000",
-        "unread": true,
-        "priority": "MEDIUM",
-        "score": 2,
-        "pipeline_match": null,
-        "confidence": 65,
-        "confidence_label": "medium",
-        "evidence": [
-          "known recruiter/job domain",
-          "hiring/application context",
-          "recruiter outreach classification",
-          "medium priority score: 2"
-        ],
-        "why_actionable": "known recruiter/job domain | hiring/application context | recruiter outreach classification | medium priority score: 2"
-      },
-      {
-        "id": "360953",
-        "from": "\"Indeed\" <donotreply@match.indeed.com>",
-        "subject": "Chief Operating Officer (COO) in Dubai, UAE at CP in Dubai and 18 more new jobs",
-        "date": "Fri, 05 Jun 2026 16:27:14 +0000",
-        "unread": true,
-        "priority": "MEDIUM",
-        "score": 4,
-        "pipeline_match": null,
-        "confidence": 65,
-        "confidence_label": "medium",
-        "evidence": [
-          "known recruiter/job domain",
-          "hiring/application context",
-          "recruiter outreach classification",
-          "medium priority score: 4"
-        ],
-        "why_actionable": "known recruiter/job domain | hiring/application context | recruiter outreach classification | medium priority score: 4"
-      },
-      {
-        "id": "360965",
-        "from": "Jobs <jobs@stantec.com>",
-        "subject": "Automatic reply: Application: Digital Transformation and Technical\r\n Delivery Consultant\t - Ahmed Nasr",
-        "date": "Fri, 5 Jun 2026 17:43:27 +0000",
+        "id": "361083",
+        "from": "info <info@JASARAPMC.COM.SA>",
+        "subject": "RE: [EXTERNAL] Application: Construction Director - Ahmed Nasr",
+        "date": "Sat, 6 Jun 2026 11:12:48 +0000",
         "unread": true,
         "priority": "HIGH",
         "score": 7,
-        "pipeline_match": "Stantec",
-        "confidence": 90,
-        "confidence_label": "high",
+        "pipeline_match": "JASARA PMC",
+        "confidence": 75,
+        "confidence_label": "medium",
         "evidence": [
-          "matched active pipeline company: Stantec",
-          "hiring sender context",
+          "matched active pipeline company: JASARA PMC",
           "hiring/application context",
           "recruiter outreach classification",
           "high priority score: 7"
         ],
-        "why_actionable": "matched active pipeline company: Stantec | hiring sender context | hiring/application context | recruiter outreach classification"
+        "why_actionable": "matched active pipeline company: JASARA PMC | hiring/application context | recruiter outreach classification | high priority score: 7"
       },
       {
-        "id": "360969",
-        "from": "Adecco AE Info <AdeccoAE.Info@adecco.com>",
-        "subject": "Automatic reply: Application: Chief Product Officer (Fintech & B2B\r\n Platforms) - Ahmed\t Nasr",
-        "date": "Fri, 5 Jun 2026 17:54:35 +0000",
+        "id": "361084",
+        "from": "info <info@JASARAPMC.COM.SA>",
+        "subject": "RE: [EXTERNAL] Application: Programme Director (Hospitality) - Ahmed\r\n Nasr",
+        "date": "Sat, 6 Jun 2026 11:13:50 +0000",
         "unread": true,
         "priority": "HIGH",
-        "score": 9,
-        "pipeline_match": "Adecco",
-        "confidence": 95,
-        "confidence_label": "high",
+        "score": 7,
+        "pipeline_match": "JASARA PMC",
+        "confidence": 75,
+        "confidence_label": "medium",
         "evidence": [
-          "matched active pipeline company: Adecco",
-          "known recruiter/job domain",
+          "matched active pipeline company: JASARA PMC",
           "hiring/application context",
           "recruiter outreach classification",
-          "high priority score: 9"
+          "high priority score: 7"
         ],
-        "why_actionable": "matched active pipeline company: Adecco | known recruiter/job domain | hiring/application context | recruiter outreach classification"
+        "why_actionable": "matched active pipeline company: JASARA PMC | hiring/application context | recruiter outreach classification | high priority score: 7"
+      },
+      {
+        "id": "361085",
+        "from": "info <info@JASARAPMC.COM.SA>",
+        "subject": "RE: [EXTERNAL] Application: Senior Project Manager - Ahmed Nasr",
+        "date": "Sat, 6 Jun 2026 11:14:08 +0000",
+        "unread": true,
+        "priority": "HIGH",
+        "score": 7,
+        "pipeline_match": "JASARA PMC",
+        "confidence": 75,
+        "confidence_label": "medium",
+        "evidence": [
+          "matched active pipeline company: JASARA PMC",
+          "hiring/application context",
+          "recruiter outreach classification",
+          "high priority score: 7"
+        ],
+        "why_actionable": "matched active pipeline company: JASARA PMC | hiring/application context | recruiter outreach classification | high priority score: 7"
       }
     ],
     "application_acks": [],
-    "rejections": [
-      {
-        "id": "360898",
-        "from": "Nutanix Recruiting Team <notification@jobvite.nutanix.com>",
-        "subject": "Your application for Program Manager, Professional Services, KSA at\r\n Nutanix",
-        "date": "Fri, 5 Jun 2026 12:30:01 +0000",
-        "unread": true,
-        "priority": "MEDIUM",
-        "score": 3,
-        "pipeline_match": null,
-        "confidence": 40,
-        "confidence_label": "low",
-        "evidence": [
-          "hiring sender context",
-          "hiring/application context",
-          "medium priority score: 3"
-        ],
-        "why_actionable": "not actionable: hiring sender context | hiring/application context | medium priority score: 3"
-      }
-    ],
+    "rejections": [],
     "assessments": [],
     "application_responses": [],
     "follow_ups_needed": [],
     "job_alerts": [
       {
-        "id": "360945",
-        "from": "GulfTalent Jobs <jobs@gulftalent.com>",
-        "subject": "Ascentis needs a Project Director",
-        "date": "Fri, 05 Jun 2026 10:36:29 -0500",
+        "id": "361067",
+        "from": "=?utf-8?B?QmF5dC5jb20=?= <notify@bayt.com>",
+        "subject": "=?utf-8?B?MjAgbmV3IEVuZ2luZWVycyBqb2JzIGluIFFhdGFyIQ==?=",
+        "date": "Sat, 06 Jun 2026 05:51:25 GMT",
         "unread": true,
         "priority": "LOW",
         "score": 0,
@@ -185,245 +125,195 @@
         "evidence": [
           "automated job alert",
           "known recruiter/job domain",
-          "hiring sender context",
           "noise/job-alert guard applied"
         ],
-        "why_actionable": "not actionable: automated job alert | known recruiter/job domain | hiring sender context | noise/job-alert guard applied"
-      },
-      {
-        "id": "360954",
-        "from": "GulfTalent Jobs <jobs@gulftalent.com>",
-        "subject": "Ascentis needs a Project Director",
-        "date": "Fri, 05 Jun 2026 08:56:10 -0500",
-        "unread": true,
-        "priority": "LOW",
-        "score": 0,
-        "pipeline_match": null,
-        "confidence": 25,
-        "confidence_label": "very_low",
-        "evidence": [
-          "automated job alert",
-          "known recruiter/job domain",
-          "hiring sender context",
-          "noise/job-alert guard applied"
-        ],
-        "why_actionable": "not actionable: automated job alert | known recruiter/job domain | hiring sender context | noise/job-alert guard applied"
+        "why_actionable": "not actionable: automated job alert | known recruiter/job domain | noise/job-alert guard applied"
       }
     ],
-    "actionable_count": 5,
+    "actionable_count": 4,
     "hot_alerts": [],
     "signals": [
       {
-        "company": "Stantec",
+        "company": "JASARA PMC",
         "signal": "recruiter_email",
-        "subject": "Automatic reply: Application: Digital Transformation and Technical\r\n Delivery Consultant\t - Ahmed Nasr",
-        "sender": "Jobs <jobs@stantec.com>",
+        "subject": "RE: [EXTERNAL] Application: Construction Director - Ahmed Nasr",
+        "sender": "info <info@JASARAPMC.COM.SA>",
         "job_ids": [
-          "linkedin_jobspy-li-4418694103"
+          "linkedin_jobspy-li-4416800245",
+          "linkedin_jobspy-li-4422417428",
+          "linkedin_jobspy-li-4415293526",
+          "indeed-in-4568101a69f12a7d",
+          "indeed-in-26f721b2475bd815"
         ],
         "score": 7,
-        "timestamp": "2026-06-05T21:00:56.140953+03:00"
+        "timestamp": "2026-06-06T15:00:34.152265+03:00"
       },
       {
-        "company": "Adecco",
+        "company": "JASARA PMC",
         "signal": "recruiter_email",
-        "subject": "Automatic reply: Application: Chief Product Officer (Fintech & B2B\r\n Platforms) - Ahmed\t Nasr",
-        "sender": "Adecco AE Info <AdeccoAE.Info@adecco.com>",
+        "subject": "RE: [EXTERNAL] Application: Programme Director (Hospitality) - Ahmed\r\n Nasr",
+        "sender": "info <info@JASARAPMC.COM.SA>",
         "job_ids": [
-          "linkedin_jobspy-li-4422678521",
-          "linkedin_jobspy-li-4382974035"
+          "linkedin_jobspy-li-4416800245",
+          "linkedin_jobspy-li-4422417428",
+          "linkedin_jobspy-li-4415293526",
+          "indeed-in-4568101a69f12a7d",
+          "indeed-in-26f721b2475bd815"
         ],
-        "score": 9,
-        "timestamp": "2026-06-05T21:00:56.174643+03:00"
+        "score": 7,
+        "timestamp": "2026-06-06T15:00:34.180668+03:00"
+      },
+      {
+        "company": "JASARA PMC",
+        "signal": "recruiter_email",
+        "subject": "RE: [EXTERNAL] Application: Senior Project Manager - Ahmed Nasr",
+        "sender": "info <info@JASARAPMC.COM.SA>",
+        "job_ids": [
+          "linkedin_jobspy-li-4416800245",
+          "linkedin_jobspy-li-4422417428",
+          "linkedin_jobspy-li-4415293526",
+          "indeed-in-4568101a69f12a7d",
+          "indeed-in-26f721b2475bd815"
+        ],
+        "score": 7,
+        "timestamp": "2026-06-06T15:00:34.202595+03:00"
       }
     ],
     "pipeline_review_candidates": [
       {
-        "timestamp": "2026-06-05T21:00:56.187142+03:00",
-        "review_type": "possible_rejection",
-        "category": "rejection",
-        "email_id": "360898",
-        "subject": "Your application for Program Manager, Professional Services, KSA at\r\n Nutanix",
-        "from": "Nutanix Recruiting Team <notification@jobvite.nutanix.com>",
-        "priority": "MEDIUM",
-        "pipeline_match": null,
-        "status": "needs_human_review"
-      },
-      {
-        "timestamp": "2026-06-05T21:00:56.187148+03:00",
-        "review_type": "possible_interview",
-        "category": "interview_invite",
-        "email_id": "360953",
-        "subject": "Chief Operating Officer (COO) in Dubai, UAE at CP in Dubai and 18 more new jobs",
+        "timestamp": "2026-06-06T15:00:34.240092+03:00",
+        "review_type": "possible_recruiter_outreach",
+        "category": "recruiter_reach",
+        "email_id": "361079",
+        "subject": "Office Manager of COO - (PMO) @ Independent Food Company",
         "from": "\"Indeed\" <donotreply@match.indeed.com>",
         "priority": "MEDIUM",
         "pipeline_match": null,
         "status": "needs_human_review"
       },
       {
-        "timestamp": "2026-06-05T21:00:56.187151+03:00",
+        "timestamp": "2026-06-06T15:00:34.240098+03:00",
         "review_type": "possible_recruiter_outreach",
         "category": "recruiter_reach",
-        "email_id": "360927",
-        "subject": "Enterprise PMO Lead @ Andersen Inc.",
-        "from": "\"Indeed\" <donotreply@match.indeed.com>",
-        "priority": "MEDIUM",
-        "pipeline_match": null,
-        "status": "needs_human_review"
-      },
-      {
-        "timestamp": "2026-06-05T21:00:56.187154+03:00",
-        "review_type": "possible_recruiter_outreach",
-        "category": "recruiter_reach",
-        "email_id": "360952",
-        "subject": "Self Employed - Elite Account Manager @ Thornton and Baines Ltd",
-        "from": "\"Indeed\" <donotreply@match.indeed.com>",
-        "priority": "MEDIUM",
-        "pipeline_match": null,
-        "status": "needs_human_review"
-      },
-      {
-        "timestamp": "2026-06-05T21:00:56.187156+03:00",
-        "review_type": "possible_recruiter_outreach",
-        "category": "recruiter_reach",
-        "email_id": "360953",
-        "subject": "Chief Operating Officer (COO) in Dubai, UAE at CP in Dubai and 18 more new jobs",
-        "from": "\"Indeed\" <donotreply@match.indeed.com>",
-        "priority": "MEDIUM",
-        "pipeline_match": null,
-        "status": "needs_human_review"
-      },
-      {
-        "timestamp": "2026-06-05T21:00:56.187158+03:00",
-        "review_type": "possible_recruiter_outreach",
-        "category": "recruiter_reach",
-        "email_id": "360965",
-        "subject": "Automatic reply: Application: Digital Transformation and Technical\r\n Delivery Consultant\t - Ahmed Nasr",
-        "from": "Jobs <jobs@stantec.com>",
+        "email_id": "361083",
+        "subject": "RE: [EXTERNAL] Application: Construction Director - Ahmed Nasr",
+        "from": "info <info@JASARAPMC.COM.SA>",
         "priority": "HIGH",
-        "pipeline_match": "Stantec",
+        "pipeline_match": "JASARA PMC",
         "status": "needs_human_review"
       },
       {
-        "timestamp": "2026-06-05T21:00:56.187161+03:00",
+        "timestamp": "2026-06-06T15:00:34.240101+03:00",
         "review_type": "possible_recruiter_outreach",
         "category": "recruiter_reach",
-        "email_id": "360969",
-        "subject": "Automatic reply: Application: Chief Product Officer (Fintech & B2B\r\n Platforms) - Ahmed\t Nasr",
-        "from": "Adecco AE Info <AdeccoAE.Info@adecco.com>",
+        "email_id": "361084",
+        "subject": "RE: [EXTERNAL] Application: Programme Director (Hospitality) - Ahmed\r\n Nasr",
+        "from": "info <info@JASARAPMC.COM.SA>",
         "priority": "HIGH",
-        "pipeline_match": "Adecco",
+        "pipeline_match": "JASARA PMC",
+        "status": "needs_human_review"
+      },
+      {
+        "timestamp": "2026-06-06T15:00:34.240104+03:00",
+        "review_type": "possible_recruiter_outreach",
+        "category": "recruiter_reach",
+        "email_id": "361085",
+        "subject": "RE: [EXTERNAL] Application: Senior Project Manager - Ahmed Nasr",
+        "from": "info <info@JASARAPMC.COM.SA>",
+        "priority": "HIGH",
+        "pipeline_match": "JASARA PMC",
         "status": "needs_human_review"
       }
     ],
     "llm_analysis": {
       "actionable_emails": [
         {
-          "id": "360927",
-          "subject": "Enterprise PMO Lead @ Andersen Inc.",
+          "id": "361079",
+          "subject": "Office Manager of COO - (PMO) @ Independent Food Company",
           "from": "\"Indeed\" <donotreply@match.indeed.com>",
-          "date": "Fri, 05 Jun 2026 14:13:54 +0000",
+          "date": "Sat, 06 Jun 2026 10:43:59 +0000",
           "category": "recruiter_reach",
           "urgency": "medium",
-          "intent": "Indeed is suggesting a Dubai remote Enterprise PMO Lead role and asking Ahmed to apply if interested.",
+          "intent": "Indeed is suggesting a Dubai PMO-related role and asking Ahmed to submit a quick application if interested.",
           "action": "no_action",
           "response_deadline": "1 week",
-          "notes": "Good PMO fit; review role before applying."
+          "notes": "Not a direct recruiter reply; assess fit before applying."
         },
         {
-          "id": "360952",
-          "subject": "Self Employed - Elite Account Manager @ Thornton and Baines Ltd",
-          "from": "\"Indeed\" <donotreply@match.indeed.com>",
-          "date": "Fri, 05 Jun 2026 16:26:46 +0000",
-          "category": "recruiter_reach",
-          "urgency": "low",
-          "intent": "Indeed is suggesting a self-employed account manager role and asking Ahmed to apply if interested.",
-          "action": "read_and_file",
-          "response_deadline": "when convenient",
-          "notes": "High pay range, but weak executive/PMO fit."
-        },
-        {
-          "id": "360953",
-          "subject": "Chief Operating Officer (COO) in Dubai, UAE at CP in Dubai and 18 more new jobs",
-          "from": "\"Indeed\" <donotreply@match.indeed.com>",
-          "date": "Fri, 05 Jun 2026 16:27:14 +0000",
+          "id": "361083",
+          "subject": "RE: [EXTERNAL] Application: Construction Director - Ahmed Nasr",
+          "from": "info <info@JASARAPMC.COM.SA>",
+          "date": "Sat, 6 Jun 2026 11:12:48 +0000",
           "category": "recruiter_reach",
           "urgency": "high",
-          "intent": "Indeed is suggesting a COO role in Dubai plus other jobs and asking Ahmed to apply if interested.",
-          "action": "no_action",
+          "intent": "JASARA PMC is acknowledging interest and directing Ahmed to apply through careers or Workable email.",
+          "action": "respond",
           "response_deadline": "48h",
-          "notes": "Not an interview invite; COO role merits fast review."
+          "notes": "Active pipeline company; use official careers route."
         },
         {
-          "id": "360965",
-          "subject": "Automatic reply: Application: Digital Transformation and Technical\r\n Delivery Consultant\t - Ahmed Nasr",
-          "from": "Jobs <jobs@stantec.com>",
-          "date": "Fri, 5 Jun 2026 17:43:27 +0000",
+          "id": "361084",
+          "subject": "RE: [EXTERNAL] Application: Programme Director (Hospitality) - Ahmed Nasr",
+          "from": "info <info@JASARAPMC.COM.SA>",
+          "date": "Sat, 6 Jun 2026 11:13:50 +0000",
           "category": "recruiter_reach",
-          "urgency": "low",
-          "intent": "Stantec confirms this inbox handles technical issues and says applications must go through its jobs portal.",
-          "action": "read_and_file",
-          "response_deadline": "when convenient",
-          "notes": "Auto-reply only; no recruiter response needed."
+          "urgency": "high",
+          "intent": "JASARA PMC is acknowledging interest and directing Ahmed to apply through careers or Workable email.",
+          "action": "respond",
+          "response_deadline": "48h",
+          "notes": "Best strategic fit among JASARA replies."
         },
         {
-          "id": "360969",
-          "subject": "Automatic reply: Application: Chief Product Officer (Fintech & B2B\r\n Platforms) - Ahmed\t Nasr",
-          "from": "Adecco AE Info <AdeccoAE.Info@adecco.com>",
-          "date": "Fri, 5 Jun 2026 17:54:35 +0000",
+          "id": "361085",
+          "subject": "RE: [EXTERNAL] Application: Senior Project Manager - Ahmed Nasr",
+          "from": "info <info@JASARAPMC.COM.SA>",
+          "date": "Sat, 6 Jun 2026 11:14:08 +0000",
           "category": "recruiter_reach",
-          "urgency": "low",
-          "intent": "Adecco sends a general auto-reply directing job seekers to its jobs page or CV upload process.",
-          "action": "read_and_file",
-          "response_deadline": "when convenient",
-          "notes": "Auto-reply only; no direct reply needed."
+          "urgency": "high",
+          "intent": "JASARA PMC is acknowledging interest and directing Ahmed to apply through careers or Workable email.",
+          "action": "respond",
+          "response_deadline": "48h",
+          "notes": "High-priority pipeline, but role seniority may be lower."
         }
       ],
       "summary": {
-        "total_actionable": 5,
+        "total_actionable": 4,
         "critical_count": 0,
         "requires_interview_prep": false,
         "requires_assessment": false,
         "recruiter_top_opportunities": [
-          "360953 - COO in Dubai, UAE at CP",
-          "360927 - Enterprise PMO Lead at Andersen Inc."
+          "JASARA PMC - Programme Director (Hospitality)",
+          "JASARA PMC - Construction Director",
+          "JASARA PMC - Senior Project Manager"
         ],
-        "top_priority": "360953",
-        "daily_focus": "Prioritize reviewing the COO and Enterprise PMO roles; treat the rest as low-value auto replies or weak-fit alerts."
+        "top_priority": "361084",
+        "daily_focus": "Prioritize completing the JASARA PMC applications through the official route within 48 hours; no interview or assessment prep is triggered."
       }
     }
   },
   "kpi": {
-    "emails_processed": 84,
-    "actionable": 5,
-    "interviews_detected": 1,
-    "recruiter_messages": 5,
-    "unread_actionable": 5
+    "emails_processed": 24,
+    "actionable": 4,
+    "interviews_detected": 0,
+    "recruiter_messages": 4,
+    "unread_actionable": 4
   },
   "recommendations": [
     {
-      "id": "rec-488fd851-0",
-      "action": "respond_immediately",
-      "target": "1 interview invite(s)",
-      "reason": "Interview invitations require prompt response",
-      "urgency": "critical",
-      "timestamp": "2026-06-05T21:01:22.377165+03:00"
-    },
-    {
-      "id": "rec-488fd851-1",
+      "id": "rec-8181695e-0",
       "action": "review_and_respond",
-      "target": "5 recruiter message(s)",
+      "target": "4 recruiter message(s)",
       "reason": "Recruiter outreach could lead to opportunities",
       "urgency": "high",
-      "timestamp": "2026-06-05T21:01:22.377187+03:00"
+      "timestamp": "2026-06-06T15:01:02.239071+03:00"
     },
     {
-      "id": "rec-488fd851-2",
+      "id": "rec-8181695e-1",
       "action": "check_inbox",
-      "target": "5 unread actionable email(s)",
+      "target": "4 unread actionable email(s)",
       "reason": "Unread emails need attention",
       "urgency": "high",
-      "timestamp": "2026-06-05T21:01:22.377191+03:00"
+      "timestamp": "2026-06-06T15:01:02.239096+03:00"
     }
   ]
 }

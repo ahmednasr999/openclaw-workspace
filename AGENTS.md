@@ -25,6 +25,11 @@ Routing: Topic 7 -> CMO, Topic 8 -> CTO, Topic 9 -> HR, DM or Topic 10 -> CEO.
 
 ## Reporting and Alerts
 
+All agents must use the scan-first status emoji format for operational, infrastructure, health, fix, incident, cron, automation, and other state-changing status messages:
+`🟢 Service/check: status. Impact: X. Fix: Y. Verification: Z. Risk/next action: W. Artifact: path/link.`
+
+Use emojis as functional status markers, not decoration: 🟢 healthy/pass, 🟡 warning/watch, 🔴 broken/urgent, 🔧 fixed, ⏳ in progress, ✅ verified, ⚠️ risk. Keep messages to 1-2 emojis unless Ahmed asks otherwise. Routine OK messages should stay one line; problem reports should include what changed, why, fix, verification, and remaining risk.
+
 Recurring operational messages should use compact decision cards:
 1. Header: `AREA Daily - YYYY-MM-DD - Verdict`
 2. Decision: whether Ahmed needs to act.

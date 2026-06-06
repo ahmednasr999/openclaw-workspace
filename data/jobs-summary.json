@@ -2,116 +2,35 @@
   "meta": {
     "agent": "jobs-review",
     "version": "2.0.0",
-    "generated_at": "2026-06-05T12:53:21.868671+03:00",
-    "duration_ms": 173533,
+    "generated_at": "2026-06-06T08:31:42.183726+03:00",
+    "duration_ms": 175097,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "fd7512c2",
+    "run_id": "cd84f4e4",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
-    "generated_at": "2026-06-05T12:53:21.701921+03:00",
-    "total_candidates": 47,
-    "reviewed": 46,
+    "generated_at": "2026-06-06T08:31:42.030698+03:00",
+    "total_candidates": 39,
+    "reviewed": 31,
     "submit": [
       {
-        "id": "linkedin_jobspy-li-4423523564",
-        "source": "linkedin_jobspy",
-        "title": "Portfolio Control Senior Manager",
-        "company": "Takamol Holding",
-        "location": "Riyadh, Riyadh, Saudi Arabia",
-        "url": "https://www.linkedin.com/jobs/view/4423523564",
-        "posted": "",
-        "seniority": "Other",
-        "domain_match": false,
-        "keyword_score": 6,
-        "match_keywords": [
-          "enterprise"
-        ],
-        "raw_snippet": "**Job Description**\n The Project Portfolio Management (PPM) Senior Manager is responsible for leading and institutionalizing enterprise\\-wide portfolio management practices, ensuring all initiatives are strategically aligned, financially governed, and executed with full transparency.\n   \n\n  \n\n This ",
-        "relevant": true,
-        "filter_reason": null,
-        "search_country": "Saudi Arabia",
-        "search_title": "Head of PMO",
-        "linkedin_id": "li-4423523564",
-        "jd_text": "**Job Description**\n The Project Portfolio Management (PPM) Senior Manager is responsible for leading and institutionalizing enterprise\\-wide portfolio management practices, ensuring all initiatives are strategically aligned, financially governed, and executed with full transparency.\n   \n\n  \n\n This role acts as a critical bridge between strategy and execution, ensuring that strategic priorities are translated into a governed, optimized, and value\\-driven portfolio of initiatives. It will drive the transformation from fragmented project execution into a structured, data\\-driven portfolio model, addressing key challenges such as inconsistent demand intake, lack of project classification, limited financial visibility, and weak governance enforcement.\n   \n\n  \n\n Key Responsibilities\n   \n\n  \n\n* Strategic Planning, Direction \\& Alignment\n* Partner with executive leadership to support the development and refinement of organizational strategy\n* Ensure clear linkage between strategy, initiatives, and measurable business outcomes\n* Establish mechanisms to continuously align portfolio execution with evolving strategic priorities\n* Lead strategic planning cycles from a portfolio perspective (initiative shaping, sequencing, and dependencies)\n* Define and govern strategic KPIs and value realization frameworks across the portfolio\n* Portfolio Strategy \\& Governance\n* Define and lead the enterprise\\-wide PPM framework, standards, and operating model\n* Translate strategic objectives into a structured and governed project portfolio\n* Establish portfolio segmentation (e.g., strategic, regulatory, operational, innovation)\n* Ensure alignment between portfolio investments and organizational strategy\n* Demand Management \\& Intake Control\n* Design and enforce a centralized demand intake and approval process\n* Institutionalize project classification standards (project vs. BAU vs. enhancement)\n* Ensure all requests are captured through a unified platform (eliminating shadow processes)\n* Ensure all initiatives are uniquely identified and tracked\n* Portfolio Prioritization \\& Optimization\n* Establish and govern a standardized prioritization model (value, cost, risk, dependencies)\n* Lead portfolio planning cycles and continuous reprioritization\n* Optimize resource allocation across competing initiatives\n* Manage trade\\-offs and scenario analysis at portfolio level\n* Financial Governance \\& Value Realization\n* Own portfolio\\-level financial oversight, including budget alignment and tracking\n* Ensure project\\-level budget visibility and linkage to financial systems\n* Monitor financial performance (actuals vs. forecast vs. approved budgets)\n* Drive benefits realization tracking and value measurement\n* Governance \\& Performance Management\n* Define and enforce portfolio governance frameworks, stage gates, and approval workflows\n* Define portfolio KPIs, SLAs, and performance metrics\n* Establish executive\\-level dashboards and reporting standards\n* Provide actionable insights on portfolio health, risks, and dependencies\n* Escalate and manage underperforming or at\\-risk initiatives\n* Tools, Data \\& Systems Integration\n* Lead the implementation and governance of PPM tools and platforms\n* Ensure integration across systems (e.g., Jira, ERP, procurement systems)\n* Eliminate duplication and enforce a single source of truth\n* Standardize project structures (WBS, PO linkage, renewals, etc.)\n* Reporting \\& Executive Insights\n* Provide executive dashboards and portfolio insights (status, risks, financials, dependencies)\n* Enable data\\-driven decision\\-making through accurate and timely reporting\n* Communicate portfolio health to senior leadership\n* Continuous Improvement \\& Maturity Development\n* Assess current maturity and define a PPM maturity roadmap\n* Benchmark against best practices (e.g., PMI (Project Management Institute), Axelos)\n* Continuously refine governance, processes, and performance frameworks\n* Lead transformation initiatives to enhance portfolio effectiveness\n\n\n**Qualifications**\n**Job Requirements**\n* Bachelor\u2019s or Master\u2019s degree in Business, IT, Engineering, or a related field\n* Master's degree or MBA with a technology management or digital strategy focus (preferred).\n\n\n**Experience**\n* 10\u201315\\+ years of experience in Project, Program, or Portfolio Management\n* Proven experience in establishing or transforming PPM functions at enterprise level\n* Demonstrated experience developing or contributing to digital transformation strategies and multi\\-year technology roadmaps.\n* Proven track record of designing and running portfolio prioritization frameworks in organizations with competing demands and resource constraints.\n* Experience in complex, multi\\-stakeholder environments\n* Strong exposure to financial governance, budgeting, and investment planning\n* Experience leading a team or function; not just managing projects, but managing people and building a practice\n\n\n Certifications\n   \n\n  \n\n* PMP \u2014 Project Management Professional, PMI or equivalent (required).\n* PMI\\-PfMP \u2014 Portfolio Management Professional, or PgMP \u2014 Program Management Professional (highly preferred; demonstrated willingness to certify is acceptable).\n\n\n Leadership \\& Core Competencies\n   \n\n  \n\n* Strategic thinker; able to hold the long\\-term direction and the immediate decision simultaneously, without losing sight of either\n* Influential communicator; builds alignment across peers, teams, and leadership through clarity, credibility, and consistency.\n* Strong governance design and enforcement capability\n* Advanced financial and analytical skills\n* Decision\\-making under ambiguity\n* Transformation and change leadership\n* Structured problem\\-solving.\n\n\n**LI\\-DNP**",
-        "source_count": 1,
-        "country": "Saudi Arabia",
-        "industry_bonus": 6,
-        "policy_status": "pass",
-        "sources": [
-          "linkedin"
-        ],
-        "first_seen": "2026-06-05",
-        "career_fit_score": 8,
-        "verdict": "SUBMIT",
-        "verdict_reason": "Strong enterprise PPM, governance, strategy execution, and Saudi target-location alignment. [5D role=2 | seniority=1 | geo=2 | strategic=1 | evidence=2 | fit=8/10 | llm=7] [CMO outreach queued for Takamol Holding]",
-        "watchlist_matches": {
-          "company_hits": [],
-          "domain_hits": [],
-          "categories": []
-        },
-        "ats_score": 66,
-        "ats_verdict": "CONDITIONAL",
-        "ats_matched": [
-          "digital transformation",
-          "program management",
-          "project management",
-          "transformation",
-          "portfolio management",
-          "pmp",
-          "ai",
-          "erp",
-          "governance",
-          "operating model"
-        ],
-        "ats_gaps": [],
-        "llm_fit_score": 7,
-        "fit_dimensions": {
-          "role": 2,
-          "seniority": 1,
-          "geography": 2,
-          "strategic": 1,
-          "evidence": 2
-        }
-      },
-      {
-        "id": "linkedin_jobspy-li-4420496035",
-        "source": "linkedin_jobspy",
+        "job_id": "22526",
         "title": "Service Delivery Director",
         "company": "Salesforce",
         "location": "Dubai, Dubai, United Arab Emirates",
-        "url": "https://www.linkedin.com/jobs/view/4420496035",
-        "posted": "2026-05-28",
-        "seniority": "C-Suite",
-        "domain_match": false,
-        "keyword_score": 26,
-        "match_keywords": [
-          "ai",
-          "crm",
-          "salesforce",
-          "director"
-        ],
-        "raw_snippet": "*To get the best candidate experience, please consider applying for a maximum of 3 roles within 12 months to ensure you are not duplicating efforts.*\n Job Category\n   \n\n  \n\n Customer Success\n   \n\n  \n\n Job Details\n   \n\n  \n\n**About Salesforce**\n Salesforce is the \\#1 AI CRM, where humans with agents d",
-        "relevant": true,
-        "filter_reason": null,
-        "search_country": "United Arab Emirates",
-        "search_title": "Director of Program Management",
-        "linkedin_id": "li-4420496035",
+        "url": "https://www.linkedin.com/jobs/view/4402006154",
+        "source": "linkedin",
+        "raw_snippet": "*To get the best candidate experience, please consider applying for a maximum of 3 roles within 12 months to ensure you are not duplicating efforts.*\n Job Category\n   \n\n  \n\n Customer Success\n   \n\n  \n\n Job Details\n   \n\n  \n\n**About Salesforce**\n Salesforce is the \\#1 AI CRM, where humans with agents drive customer success together. Here, ambition meets action. Tech meets trust. And innovation isn\u2019t a buzzword \u2014 it\u2019s a way of life. The world of work as we know it is changing and we're looking for T",
         "jd_text": "*To get the best candidate experience, please consider applying for a maximum of 3 roles within 12 months to ensure you are not duplicating efforts.*\n Job Category\n   \n\n  \n\n Customer Success\n   \n\n  \n\n Job Details\n   \n\n  \n\n**About Salesforce**\n Salesforce is the \\#1 AI CRM, where humans with agents drive customer success together. Here, ambition meets action. Tech meets trust. And innovation isn\u2019t a buzzword \u2014 it\u2019s a way of life. The world of work as we know it is changing and we're looking for Trailblazers who are passionate about bettering business and the world through AI, driving innovation, and keeping Salesforce's core values at the heart of it all.\n   \n\n  \n\n Ready to level\\-up your career at the company leading workforce transformation in the agentic era? You\u2019re in the right place! Agentforce is the future of AI, and you are the future of Salesforce.\n   \n\n  \n\n**About The Role**\n We are looking for a dynamic and experienced\n **Service Delivery Director** \n to lead our professional services and customer success operations across the Middle East region. Based in the UAE (or KSA), this senior leadership role is responsible for driving delivery excellence, growing a high\\-performing team, and ensuring customers achieve measurable outcomes from their investments.\n   \n\n  \n\n This is a unique opportunity to shape the future of service delivery across one of the world's most exciting and fast\\-growing technology markets.\n   \n\n  \n\n What You'll Be Doing\n   \n\n  \n\n Delivery Leadership\n   \n\n  \n\n* Own end\\-to\\-end service delivery across the Middle East, ensuring projects are delivered on time, within scope, and to the highest quality standards\n* Define and execute regional delivery strategy aligned with global frameworks and local market needs\n* Establish and continuously improve delivery methodologies, governance models, and best practices\n* Drive operational KPIs including CSAT, NPS, utilization, revenue, and margin\n\n\n Customer \\& Stakeholder Engagement\n   \n\n  \n\n* Build trusted, executive\\-level relationships with key customers and partners across the GCC and broader Middle East\n* Act as an escalation point for complex delivery challenges, driving swift and effective resolution\n* Partner with Sales and Pre\\-Sales to support business development, solution scoping, and proposal development\n* Present delivery performance and strategic roadmaps to C\\-level stakeholders\n\n\n Team \\& Talent Development\n   \n\n  \n\n* Lead, mentor, and grow a diverse team of project managers, consultants, and delivery professionals\n* Foster a culture of accountability, continuous learning, and customer obsession\n* Drive talent acquisition, onboarding, and retention strategies for the region\n* Partner with HR and global teams to develop career paths and succession plans\n\n\n Business Growth\n   \n\n  \n\n* Collaborate with Sales on go\\-to\\-market strategies and new business opportunities\n* Identify and develop service offerings tailored to regional needs and customer segments\n* Contribute to revenue targets through effective resource planning and delivery efficiency\n* Support partner ecosystem development and enablement across the region\n\n\n What We're Looking For\n   \n\n  \n\n**Experience \\& Qualifications**\n* 12\\+ years of experience in professional services, consulting, or technology delivery\n* 5\\+ years in a senior leadership or director\\-level role managing regional delivery operations\n* Proven track record of delivering large\\-scale, complex technology projects (CRM, ERP, SaaS, or cloud platforms)\n* Experience operating in the Middle East market \u2014 GCC experience is strongly preferred\n* Bachelor's degree required; MBA or relevant postgraduate qualification is a plus\n* PMP, PRINCE2, or equivalent project/program management certification preferred\n* Deep understanding of Middle East business culture, government sector dynamics, and enterprise buying behavior\n* English fluent mandatory; Arabic language skills is a strong advantage\n* Willingness to travel across the region as required (estimated 30\u201340%)\n* Existing network of senior relationships across GCC enterprises and government entities is highly desirable\n\n\n Skills \\& Competencies\n   \n\n  \n\n* Exceptional leadership and people management skills with experience leading multicultural teams\n* Strong executive presence with the ability to influence and engage at C\\-suite level\n* Deep understanding of professional services business models (T\\&M, fixed\\-price, managed services)\n* Excellent commercial acumen \u2014 P\\&L management, forecasting, and resource planning\n* Strong analytical and problem\\-solving skills with a data\\-driven mindset\n* Outstanding communication, presentation, and negotiation skills\n\n\n What Makes You Stand Out\n   \n\n  \n\n* Experience in digital transformation programs at scale\n* Familiarity with Salesforce, ServiceNow, SAP, Oracle, or similar enterprise platforms\n* Track record of building delivery practices from the ground up in emerging or high\\-growth markets\n* Passion for developing talent and creating inclusive, high\\-performing team cultures\n\n\n Unleash Your Potential\n   \n\n  \n\n When you join Salesforce, you\u2019ll be limitless in all areas of your life. Our benefits and resources support you to find balance and\n *be your best* \n , and our AI agents accelerate your impact so you can\n *do your best* \n . Together, we\u2019ll bring the power of Agentforce to organizations of all sizes and deliver amazing experiences that customers love. Apply today to not only shape the future \u2014 but to redefine what\u2019s possible \u2014 for yourself, for AI, and the world.\n   \n\n  \n\n Accommodations\n   \n\n  \n\n If you need a reasonable accommodation during the application or the recruiting process, please submit a request via this Accommodations Request Form.\n   \n\n  \n\n Please note that Salesforce uses artificial intelligence (AI) tools to help our recruiters assess and evaluate candidates\u2019 resumes and qualifications throughout the recruiting process. Humans will always make any candidate selection and hiring decisions. Please see our Candidate Privacy Statement for more information about how we use your personal data and your rights, including with regard to use of AI tools and opt out options.\n   \n\n  \n\n Posting Statement\n   \n\n  \n\n Salesforce is an equal opportunity employer and maintains a policy of non\\-discrimination with all employees and applicants for employment. What does that mean exactly? It means that at Salesforce, we believe in equality for all. And we believe we can lead the path to equality in part by creating a workplace that\u2019s inclusive, and free from discrimination. Know your rights: workplace discrimination is illegal. Any employee or potential employee will be assessed on the basis of merit, competence and qualifications \u2013 without regard to race, religion, color, national origin, sex, sexual orientation, gender expression or identity, transgender status, age, disability, veteran or marital status, political viewpoint, or other classifications protected by law. This policy applies to current and prospective employees, no matter where they are in their Salesforce employment journey. It also applies to recruiting, hiring, job assignment, compensation, promotion, benefits, training, assessment of job performance, discipline, termination, and everything in between. Recruiting, hiring, and promotion decisions at Salesforce are fair and based on merit. The same goes for compensation, benefits, promotions, transfers, reduction in workforce, recall, training, and education.",
-        "source_count": 1,
-        "country": "United Arab Emirates",
-        "industry_bonus": 12,
-        "policy_status": "pass",
-        "sources": [
-          "linkedin"
-        ],
-        "first_seen": "2026-05-29",
+        "keyword_score": 3,
+        "relevant": true,
+        "_from_db_backfill": true,
         "career_fit_score": 9,
         "verdict": "SUBMIT",
-        "verdict_reason": "Relevant regional service delivery and operational excellence leadership, but Salesforce customer success/professional services fit needs review [5D role=2 | seniority=2 | geo=2 | strategic=1 | evidence=2 | fit=9/10 | llm=6] [CMO outreach queued for Salesforce]",
+        "verdict_reason": "Strong senior service delivery and customer success operations leadership role in enterprise technology across the Middle East [5D role=2 | seniority=2 | geo=2 | strategic=1 | evidence=2 | fit=9/10 | llm=8] [CMO outreach queued for Salesforce]",
         "watchlist_matches": {
           "company_hits": [],
           "domain_hits": [],
@@ -132,7 +51,7 @@
           "governance"
         ],
         "ats_gaps": [],
-        "llm_fit_score": 6,
+        "llm_fit_score": 8,
         "fit_dimensions": {
           "role": 2,
           "seniority": 2,
@@ -140,44 +59,95 @@
           "strategic": 1,
           "evidence": 2
         }
+      },
+      {
+        "job_id": "29089",
+        "title": "Head of Enterprise Transformation & Intelligent Automation",
+        "company": "RAKBANK",
+        "location": "",
+        "url": "https://www.linkedin.com/jobs/view/4417864039/",
+        "source": "linkedin",
+        "raw_snippet": "",
+        "jd_text": "At RAKBANK , we believe in fostering a culture of innovation, growth, and excellence. We are not just a bank \u2013 we are a community that thrives on teamwork, cutting-edge solutions, and the highest standards of governance. About the role In this role, you will oversee and drive enterprise-wide transformation by designing and executing strategic initiatives that enhance operational efficiency, productivity, and customer experience across the bank. Lead process optimization and AI-driven automation to modernize operating models, unlock value, and ensure scalable, data-driven decision-making. Partner with senior stakeholders to embed sustainable change, strong governance, and measurable business outcomes in a highly regulated environment. What You\u2019ll Be Doing: Define and lead the bank\u2019s enterprise transformation strategy aligned with business objectives and target operating model. Drive large-scale, cross-functional transformation programs across retail, corporate banking, operations, risk, finance, compliance, and support functions. Develop and manage a transformation roadmap with clear KPIs, governance frameworks, milestones, and value realization tracking. Lead cross-functional teams/squads to ensure disciplined execution across multiple transformation workstreams. Identify process inefficiencies and redesign workflows using Lean, Six Sigma, Agile, and continuous improvement methodologies. Drive simplification, standardization, and optimization of end-to-end banking processes while fostering a culture of operational excellence. Lead enterprise adoption of intelligent automation and AI solutions, including RPA, workflow orchestration, generative AI, and predictive analytics. Partner with technology and data teams to deliver scalable, compliant AI-enabled capabilities and define governance and adoption frameworks. Deliver measurable productivity gains, cost efficiencies, and scalable operating models through data-driven performance frameworks. Optimize workforce utilization, service delivery, and capacity management while maintaining strong customer experience and compliance standards. Engage senior stakeholders to drive alignment, lead change management, and ensure adoption of new processes, technologies, and ways of working. Establish robust governance, PMO standards, and delivery frameworks to ensure initiatives are executed on time, within budget, and in compliance with regulatory and risk requirements. What We\u2019re Looking For: Education : Bachelor\u2019s degree in Business, Engineering, Technology, Finance, or related field. Master\u2019s degree or MBA preferred. Experience: 15+ years of experience in banking, financial services, consulting, or enterprise transformation roles. Proven track record leading large-scale transformation programs within banking or highly regulated industries. Industry: Banking, financial services, consulting What Should You Have: Proven expertise in Lean Six Sigma (Black Belt/Master Black Belt), Agile/Scrum methodologies, and process transformation frameworks. Strong experience in implementing RPA, AI, and automation platforms with a focus on driving measurable business outcomes. Demonstrated analytical mindset with data-driven decision-making capabilities and a strong focus on performance metrics and ROI realization. Excellent executive communication and stakeholder management skills, with the ability to influence senior leadership across complex organizations. Strong financial acumen with hands-on experience in cost optimization, productivity improvement, and benefits realization tracking. Proven track record in leading large-scale, global or regional transformation programs, delivering operational efficiency, automation adoption, and enhanced customer experience. Strategic and resilient leader with a collaborative style, strong problem-solving and systems-thinking ability, and the capability to drive change effectively in matrix environments.c What\u2019s In It For You: Competitive, performance-linked compensation. Medical coverage for you and your family. Comprehensive life insurance. Inclusive and diverse workplace culture. Career development and fast-track growth opportunities. Mentorship from industry experts.",
+        "keyword_score": 3,
+        "relevant": true,
+        "_from_db_backfill": true,
+        "career_fit_score": 8,
+        "verdict": "SUBMIT",
+        "verdict_reason": "Exact enterprise transformation and intelligent automation leadership role in banking with strong Lean, Agile, AI, governance, and operational excellence fit [5D role=2 | seniority=2 | geo=0 | strategic=2 | evidence=2 | fit=8/10 | llm=9 | watchlist=fintech_gcc] [CMO outreach queued for RAKBANK]",
+        "watchlist_matches": {
+          "company_hits": [
+            "RAKBANK"
+          ],
+          "domain_hits": [
+            "bank",
+            "banking"
+          ],
+          "categories": [
+            "fintech_gcc"
+          ]
+        },
+        "ats_score": 79,
+        "ats_verdict": "GO",
+        "ats_matched": [
+          "pmo",
+          "transformation",
+          "lean six sigma",
+          "ai",
+          "erp",
+          "cost optimization",
+          "governance",
+          "operating model",
+          "change management",
+          "stakeholder management"
+        ],
+        "ats_gaps": [],
+        "llm_fit_score": 9,
+        "fit_dimensions": {
+          "role": 2,
+          "seniority": 2,
+          "geography": 0,
+          "strategic": 2,
+          "evidence": 2
+        }
       }
     ],
     "review": [],
-    "skip_count": 45,
+    "skip_count": 37,
     "unreviewed_count": 0,
     "thresholds": {
       "submit": 6,
       "review": 6
     },
     "pipeline": {
-      "l0_auto_skip": 1,
-      "l1_jd_enriched": 0,
-      "l1_jd_coverage": "41/46",
+      "l0_auto_skip": 8,
+      "l1_jd_enriched": 1,
+      "l1_jd_coverage": "24/31",
       "llm_model": "openai/gpt-5.5",
-      "llm_jobs_reviewed": 46,
-      "r2_latency_ms": 164523,
+      "llm_jobs_reviewed": 31,
+      "r2_latency_ms": 165322,
       "r2_fallbacks": 0
     },
     "kpi": {
-      "submit_rate": 0.043478260869565216,
+      "submit_rate": 0.06451612903225806,
       "review_rate": 0.0,
-      "skip_rate": 0.9565217391304348,
-      "avg_fit_score": 4.0,
-      "l0_filter_rate": 2.1,
+      "skip_rate": 0.9354838709677419,
+      "avg_fit_score": 4.6,
+      "l0_filter_rate": 20.5,
       "llm_review_rate": 100.0
     }
   },
   "kpi": {
-    "total_loaded": 47,
-    "l0_auto_skip": 1,
-    "l1_jd_enriched": 0,
+    "total_loaded": 39,
+    "l0_auto_skip": 8,
+    "l1_jd_enriched": 1,
     "l2_filtered": 0,
     "submit_count": 2,
     "review_count": 0,
-    "skip_count": 44,
-    "submit_rate": 4.3,
-    "avg_fit_score": 4.0,
-    "r2_latency_ms": 164523
+    "skip_count": 29,
+    "submit_rate": 6.5,
+    "avg_fit_score": 4.6,
+    "r2_latency_ms": 165322
   },
   "recommendations": []
 }

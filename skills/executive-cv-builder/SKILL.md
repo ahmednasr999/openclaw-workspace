@@ -220,3 +220,18 @@ git push origin master
 2. **Resume from inspected state after interruptions.** If CV generation, PDF validation, ontology writes, or Telegram delivery were interrupted, inspect existing artifacts and ledger state before rerunning the workflow.
 3. **Keep validation commands simple in cron contexts.** For scheduled CV maintenance, prefer direct file existence, ledger, and PDF checks before shell pipelines that may be rejected by the cron sandbox.
 4. **Create `eval/checklist.md` as the next structural fix.** It should include JD provenance, real hiring signal, applied-ledger clear, ATS floor, rendered PDF QA, clean text extraction, ontology ids, filename, delivery status, and interruption-resume checks.
+
+### 2026-06-06 - Weekly Skill Tune-Up
+
+**Audit basis:** Recent lessons from 2026-06-02 to 2026-06-05 were CV/application adjacent: LinkedIn Easy Apply can show the wrong selected CV after a nominal upload, external ATS flows require real missing artifacts and explicit account approval, and confirmed submissions must be locked in the dedupe ledger. `eval/checklist.md` is still missing.
+
+**Reviewed lessons:**
+- 2026-06-02, LinkedIn Upload Success Needs Visible Exact-CV Proof.
+- 2026-06-03, External ATS Submissions Need Real Required Artifacts And Account Approval.
+- 2026-06-04, Job Application Success Needs Dedupe Ledger Verification.
+
+**Improvement recommendation:**
+1. **Tie CV completion to selected-file proof.** When a generated CV is used in LinkedIn or ATS submission, require visible proof that the exact tailored PDF is selected before marking the CV/application package complete.
+2. **Keep missing artifacts as blockers.** Do not substitute certificates, diplomas, credentials, or unrelated documents to satisfy ATS upload requirements. Record the missing item and ask Ahmed for the real artifact or approval path.
+3. **Verify permanent dedupe after submission.** After any confirmed submission using a generated CV, verify both the application status/report and the permanent applied-job ledger so future scans cannot resurface the same role.
+4. **Create `eval/checklist.md` next.** Include exact selected-CV proof, missing-artifact gate, account-approval gate, applied-ledger lock, JD provenance, ATS floor, rendered PDF QA, clean text extraction, ontology ids, filename, and delivery status.
