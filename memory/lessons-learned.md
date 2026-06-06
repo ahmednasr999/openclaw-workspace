@@ -1220,3 +1220,18 @@ For cron/email LLM probes, check the per-agent model allowlist as well as global
 After confirmed Virtucruit, talabat, and Ecolab submissions, the pipeline/report was updated but `applied-job-ids.txt` was still missing talabat `4407693428` and Ecolab `4421685356` until a later verification pass found and added the entries.
 ### Do differently
 After every confirmed HR submission, verify both the application status/report and the permanent dedupe lock ledger (`applied-job-ids.txt` or equivalent). Do not treat the pipeline status alone as sufficient proof that future JobZoom scans will exclude the role.
+
+## 2026-06-05 - OpenClaw Shrinkwrap Belongs In Update And Publishing Checks
+
+### Incident
+Ahmed asked for recommendations after reviewing the OpenClaw shrinkwrap security docs; the useful takeaway was release/update control, not live runtime hardening.
+### Do differently
+Before OpenClaw updates or OpenClaw-owned plugin publishing, review `pnpm-lock.yaml`, `npm-shrinkwrap.json`, bundled plugin dependencies, and unexpected `package-lock.json` diffs alongside `openclaw config validate`, `openclaw security audit`, install smoke tests, and post-update router/cron/plugin checks. Do not treat shrinkwrap as a sandbox or proof that dependencies are safe.
+
+## 2026-06-05 - JobZoom Requested Sections Have Scoped Account And Email Approval
+
+### Preference
+Ahmed granted standing approval to continue through candidate-account and email-application routes for the JobZoom requested-section batch; after that continuation, 20/24 targets were confirmed submitted.
+### Do differently
+For that scoped JobZoom requested-section work, do not stop solely because a safe candidate-account or email route is required. Continue through approved routes, still require real submission proof before marking applied, and keep asking for explicit approval on unrelated batches, MFA/passkeys/reCAPTCHA, unavailable artifacts, or risky/non-standard actions.
+

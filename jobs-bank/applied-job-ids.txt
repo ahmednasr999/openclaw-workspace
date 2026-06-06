@@ -675,3 +675,7 @@ greenhouse-ebury-4876058101|Ebury|Senior Product Manager - FX Expansion|2026-06-
 greenhouse-ebury-4879528101|Ebury|Senior Product Manager - Financial Crime (AML/Transaction Monitoring)|2026-06-05|direct_greenhouse
 greenhouse-ebury-4879532101|Ebury|Senior Product Manager - Financial Crime (KYC/KYB)|2026-06-05|direct_greenhouse
 greenhouse-ebury-4881103101|Ebury|Product Manager - Payment Infrastructure|2026-06-05|direct_greenhouse
+4424913319|2026-06-06|LinkedIn Recommended|Fetch|Senior Partner Director, Retail
+4424917227|2026-06-06|LinkedIn Recommended|Malama Health|Chief of Staff
+4424912453|2026-06-06|LinkedIn Recommended|Checkr / Truework|Senior Service Delivery Manager, Operations
+4424913589|2026-06-06|LinkedIn Recommended|Williams-Sonoma, Inc. Supply Chain|Vice President, Supply Chain Finance

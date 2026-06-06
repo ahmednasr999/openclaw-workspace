@@ -189,6 +189,10 @@
 | 298 | 🆕 | Dubai Insurance Co. | Head of Information Technology | Dubai | — | 🆕 Discovered | Radar | 2026-06-05 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4420706588) | — |
 | 299 | 🆕 | RedHolt | Vice President of Technology | Dubai | — | 🆕 Discovered | Radar | 2026-06-05 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4420718076) | — |
 | 300 | 🆕 | KEO Group | Cloud and Infrastructure Platforms Director | Dubai | — | 🆕 Discovered | Radar | 2026-06-05 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4423351372) | — |
+| 301 | 🆕 | Keyrock | Head of Engineering - Options | Dubai | — | 🆕 Discovered | Radar | 2026-06-06 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4404463770) | — |
+| 302 | 🆕 | Qashio | VP of Technology | Dubai | — | 🆕 Discovered | Radar | 2026-06-06 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4424558663) | — |
+| 303 | 🆕 | Intelligent Solutions HR | Vice President – Reinsurance Actuary | Dubai | — | 🆕 Discovered | Radar | 2026-06-06 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4424569877) | — |
+
 
 
 

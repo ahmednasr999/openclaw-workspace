@@ -988,3 +988,18 @@
 2026-06-05T19:49:14+03:00 degraded count=2 reason=app-server-count-10, pid=1964346 rss_kb=800440 app_servers=10 health_ms=2 signals=0
 2026-06-05T19:49:14+03:00 restart-gateway reason=degraded:app-server-count-10,
 2026-06-05T19:49:27+03:00 post-restart health=200 1921
+2026-06-06T02:53:20+03:00 health-fail count=1 pid=2021252 http=000 ms=6006 app_servers=8
+2026-06-06T02:55:40+03:00 health-fail count=2 pid=2021252 http=000 ms=6006 app_servers=8
+2026-06-06T02:55:40+03:00 restart-deferred reason=health-failures:2:http-000 active_app_servers=8
+2026-06-06T02:58:00+03:00 health-fail count=3 pid=2021252 http=000 ms=6006 app_servers=8
+2026-06-06T02:58:00+03:00 restart-deferred reason=health-failures:3:http-000 active_app_servers=8
+2026-06-06T03:00:23+03:00 health-fail count=4 pid=2021252 http=000 ms=6007 app_servers=8
+2026-06-06T03:00:23+03:00 restart-deferred reason=health-failures:4:http-000 active_app_servers=8
+2026-06-06T03:02:41+03:00 health-fail count=5 pid=2021252 http=000 ms=6006 app_servers=8
+2026-06-06T03:02:41+03:00 restart-deferred reason=health-failures:5:http-000 active_app_servers=8
+2026-06-06T03:11:54+03:00 degraded count=1 reason=app-server-count-10, pid=2021252 rss_kb=734224 app_servers=10 health_ms=1 signals=0
+2026-06-06T03:14:14+03:00 degraded count=2 reason=app-server-count-10, pid=2021252 rss_kb=714236 app_servers=10 health_ms=0 signals=0
+2026-06-06T03:14:14+03:00 restart-gateway reason=degraded:app-server-count-10,
+2026-06-06T03:14:29+03:00 post-restart health=200 2965
+2026-06-06T04:17:14+03:00 chrome-trim term pid=1947640 count=16 rss_kb=2201476
+2026-06-06T06:14:14+03:00 chrome-trim term pid=2260362 count=16 rss_kb=1925704

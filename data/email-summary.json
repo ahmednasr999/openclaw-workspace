@@ -2,54 +2,57 @@
   "meta": {
     "agent": "email-agent",
     "version": "3.0.0",
-    "generated_at": "2026-06-05T15:00:46.635003+03:00",
-    "duration_ms": 14310,
+    "generated_at": "2026-06-05T21:01:22.377381+03:00",
+    "duration_ms": 62107,
     "ttl_hours": 4,
     "status": "success",
     "error": null,
-    "run_id": "19f38fd5",
+    "run_id": "488fd851",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
     "status": "ok",
-    "scan_time": "2026-06-05T15:00:46.320267+03:00",
-    "total_scanned": 19,
+    "scan_time": "2026-06-05T21:00:56.187125+03:00",
+    "total_scanned": 84,
     "by_category": {
       "interview_invite": 1,
-      "recruiter_reach": 1,
+      "recruiter_reach": 5,
       "application_ack": 0,
-      "rejection": 0,
-      "assessment": 1,
+      "rejection": 1,
+      "assessment": 0,
       "application_response": 0,
       "follow_up_needed": 0,
-      "job_alert": 0,
-      "other": 16
+      "job_alert": 2,
+      "other": 76
     },
     "interview_invites": [
       {
-        "id": "360886",
-        "from": "diib <support@diib.com>",
-        "subject": "diib alert: yalla.online may have an issue with homepage\r\n canonicalization. This could negatively impact rankings and visitor\r\n experience.",
-        "date": "Fri, 5 Jun 2026 11:07:32 +0000",
+        "id": "360953",
+        "from": "\"Indeed\" <donotreply@match.indeed.com>",
+        "subject": "Chief Operating Officer (COO) in Dubai, UAE at CP in Dubai and 18 more new jobs",
+        "date": "Fri, 05 Jun 2026 16:27:14 +0000",
         "unread": true,
-        "priority": "LOW",
-        "score": 0,
+        "priority": "MEDIUM",
+        "score": 4,
         "pipeline_match": null,
-        "confidence": 55,
-        "confidence_label": "low",
+        "confidence": 65,
+        "confidence_label": "medium",
         "evidence": [
-          "calendar or explicit interview evidence"
+          "known recruiter/job domain",
+          "hiring/application context",
+          "recruiter outreach classification",
+          "medium priority score: 4"
         ],
-        "why_actionable": "calendar or explicit interview evidence"
+        "why_actionable": "known recruiter/job domain | hiring/application context | recruiter outreach classification | medium priority score: 4"
       }
     ],
     "recruiter_messages": [
       {
-        "id": "360885",
+        "id": "360927",
         "from": "\"Indeed\" <donotreply@match.indeed.com>",
-        "subject": "Director, Information Technology - PMO @ Atlantis Dubai",
-        "date": "Fri, 05 Jun 2026 10:45:18 +0000",
+        "subject": "Enterprise PMO Lead @ Andersen Inc.",
+        "date": "Fri, 05 Jun 2026 14:13:54 +0000",
         "unread": true,
         "priority": "MEDIUM",
         "score": 2,
@@ -63,112 +66,364 @@
           "medium priority score: 2"
         ],
         "why_actionable": "known recruiter/job domain | hiring/application context | recruiter outreach classification | medium priority score: 2"
+      },
+      {
+        "id": "360952",
+        "from": "\"Indeed\" <donotreply@match.indeed.com>",
+        "subject": "Self Employed - Elite Account Manager @ Thornton and Baines Ltd",
+        "date": "Fri, 05 Jun 2026 16:26:46 +0000",
+        "unread": true,
+        "priority": "MEDIUM",
+        "score": 2,
+        "pipeline_match": null,
+        "confidence": 65,
+        "confidence_label": "medium",
+        "evidence": [
+          "known recruiter/job domain",
+          "hiring/application context",
+          "recruiter outreach classification",
+          "medium priority score: 2"
+        ],
+        "why_actionable": "known recruiter/job domain | hiring/application context | recruiter outreach classification | medium priority score: 2"
+      },
+      {
+        "id": "360953",
+        "from": "\"Indeed\" <donotreply@match.indeed.com>",
+        "subject": "Chief Operating Officer (COO) in Dubai, UAE at CP in Dubai and 18 more new jobs",
+        "date": "Fri, 05 Jun 2026 16:27:14 +0000",
+        "unread": true,
+        "priority": "MEDIUM",
+        "score": 4,
+        "pipeline_match": null,
+        "confidence": 65,
+        "confidence_label": "medium",
+        "evidence": [
+          "known recruiter/job domain",
+          "hiring/application context",
+          "recruiter outreach classification",
+          "medium priority score: 4"
+        ],
+        "why_actionable": "known recruiter/job domain | hiring/application context | recruiter outreach classification | medium priority score: 4"
+      },
+      {
+        "id": "360965",
+        "from": "Jobs <jobs@stantec.com>",
+        "subject": "Automatic reply: Application: Digital Transformation and Technical\r\n Delivery Consultant\t - Ahmed Nasr",
+        "date": "Fri, 5 Jun 2026 17:43:27 +0000",
+        "unread": true,
+        "priority": "HIGH",
+        "score": 7,
+        "pipeline_match": "Stantec",
+        "confidence": 90,
+        "confidence_label": "high",
+        "evidence": [
+          "matched active pipeline company: Stantec",
+          "hiring sender context",
+          "hiring/application context",
+          "recruiter outreach classification",
+          "high priority score: 7"
+        ],
+        "why_actionable": "matched active pipeline company: Stantec | hiring sender context | hiring/application context | recruiter outreach classification"
+      },
+      {
+        "id": "360969",
+        "from": "Adecco AE Info <AdeccoAE.Info@adecco.com>",
+        "subject": "Automatic reply: Application: Chief Product Officer (Fintech & B2B\r\n Platforms) - Ahmed\t Nasr",
+        "date": "Fri, 5 Jun 2026 17:54:35 +0000",
+        "unread": true,
+        "priority": "HIGH",
+        "score": 9,
+        "pipeline_match": "Adecco",
+        "confidence": 95,
+        "confidence_label": "high",
+        "evidence": [
+          "matched active pipeline company: Adecco",
+          "known recruiter/job domain",
+          "hiring/application context",
+          "recruiter outreach classification",
+          "high priority score: 9"
+        ],
+        "why_actionable": "matched active pipeline company: Adecco | known recruiter/job domain | hiring/application context | recruiter outreach classification"
       }
     ],
     "application_acks": [],
-    "rejections": [],
-    "assessments": [
+    "rejections": [
       {
-        "id": "360881",
-        "from": "\"Yogesh Chetri\" <support@info.y-axis.com>",
-        "subject": "Permanent Residency via Ontario: What Changed & What You Must Do Now",
-        "date": "Fri, 05 Jun 2026 03:37:59 -0600",
+        "id": "360898",
+        "from": "Nutanix Recruiting Team <notification@jobvite.nutanix.com>",
+        "subject": "Your application for Program Manager, Professional Services, KSA at\r\n Nutanix",
+        "date": "Fri, 5 Jun 2026 12:30:01 +0000",
         "unread": true,
-        "priority": "HIGH",
-        "score": 5,
+        "priority": "MEDIUM",
+        "score": 3,
         "pipeline_match": null,
-        "confidence": 55,
+        "confidence": 40,
         "confidence_label": "low",
         "evidence": [
+          "hiring sender context",
           "hiring/application context",
-          "assessment keyword with hiring context",
-          "high priority score: 5"
+          "medium priority score: 3"
         ],
-        "why_actionable": "hiring/application context | assessment keyword with hiring context | high priority score: 5"
+        "why_actionable": "not actionable: hiring sender context | hiring/application context | medium priority score: 3"
       }
     ],
+    "assessments": [],
     "application_responses": [],
     "follow_ups_needed": [],
-    "job_alerts": [],
-    "actionable_count": 3,
+    "job_alerts": [
+      {
+        "id": "360945",
+        "from": "GulfTalent Jobs <jobs@gulftalent.com>",
+        "subject": "Ascentis needs a Project Director",
+        "date": "Fri, 05 Jun 2026 10:36:29 -0500",
+        "unread": true,
+        "priority": "LOW",
+        "score": 0,
+        "pipeline_match": null,
+        "confidence": 25,
+        "confidence_label": "very_low",
+        "evidence": [
+          "automated job alert",
+          "known recruiter/job domain",
+          "hiring sender context",
+          "noise/job-alert guard applied"
+        ],
+        "why_actionable": "not actionable: automated job alert | known recruiter/job domain | hiring sender context | noise/job-alert guard applied"
+      },
+      {
+        "id": "360954",
+        "from": "GulfTalent Jobs <jobs@gulftalent.com>",
+        "subject": "Ascentis needs a Project Director",
+        "date": "Fri, 05 Jun 2026 08:56:10 -0500",
+        "unread": true,
+        "priority": "LOW",
+        "score": 0,
+        "pipeline_match": null,
+        "confidence": 25,
+        "confidence_label": "very_low",
+        "evidence": [
+          "automated job alert",
+          "known recruiter/job domain",
+          "hiring sender context",
+          "noise/job-alert guard applied"
+        ],
+        "why_actionable": "not actionable: automated job alert | known recruiter/job domain | hiring sender context | noise/job-alert guard applied"
+      }
+    ],
+    "actionable_count": 5,
     "hot_alerts": [],
-    "signals": [],
+    "signals": [
+      {
+        "company": "Stantec",
+        "signal": "recruiter_email",
+        "subject": "Automatic reply: Application: Digital Transformation and Technical\r\n Delivery Consultant\t - Ahmed Nasr",
+        "sender": "Jobs <jobs@stantec.com>",
+        "job_ids": [
+          "linkedin_jobspy-li-4418694103"
+        ],
+        "score": 7,
+        "timestamp": "2026-06-05T21:00:56.140953+03:00"
+      },
+      {
+        "company": "Adecco",
+        "signal": "recruiter_email",
+        "subject": "Automatic reply: Application: Chief Product Officer (Fintech & B2B\r\n Platforms) - Ahmed\t Nasr",
+        "sender": "Adecco AE Info <AdeccoAE.Info@adecco.com>",
+        "job_ids": [
+          "linkedin_jobspy-li-4422678521",
+          "linkedin_jobspy-li-4382974035"
+        ],
+        "score": 9,
+        "timestamp": "2026-06-05T21:00:56.174643+03:00"
+      }
+    ],
     "pipeline_review_candidates": [
       {
-        "timestamp": "2026-06-05T15:00:46.320291+03:00",
+        "timestamp": "2026-06-05T21:00:56.187142+03:00",
+        "review_type": "possible_rejection",
+        "category": "rejection",
+        "email_id": "360898",
+        "subject": "Your application for Program Manager, Professional Services, KSA at\r\n Nutanix",
+        "from": "Nutanix Recruiting Team <notification@jobvite.nutanix.com>",
+        "priority": "MEDIUM",
+        "pipeline_match": null,
+        "status": "needs_human_review"
+      },
+      {
+        "timestamp": "2026-06-05T21:00:56.187148+03:00",
         "review_type": "possible_interview",
         "category": "interview_invite",
-        "email_id": "360886",
-        "subject": "diib alert: yalla.online may have an issue with homepage\r\n canonicalization. This could negatively impact rankings and visitor\r\n experience.",
-        "from": "diib <support@diib.com>",
-        "priority": "LOW",
-        "pipeline_match": null,
-        "status": "needs_human_review"
-      },
-      {
-        "timestamp": "2026-06-05T15:00:46.320299+03:00",
-        "review_type": "possible_assessment",
-        "category": "assessment",
-        "email_id": "360881",
-        "subject": "Permanent Residency via Ontario: What Changed & What You Must Do Now",
-        "from": "\"Yogesh Chetri\" <support@info.y-axis.com>",
-        "priority": "HIGH",
-        "pipeline_match": null,
-        "status": "needs_human_review"
-      },
-      {
-        "timestamp": "2026-06-05T15:00:46.320304+03:00",
-        "review_type": "possible_recruiter_outreach",
-        "category": "recruiter_reach",
-        "email_id": "360885",
-        "subject": "Director, Information Technology - PMO @ Atlantis Dubai",
+        "email_id": "360953",
+        "subject": "Chief Operating Officer (COO) in Dubai, UAE at CP in Dubai and 18 more new jobs",
         "from": "\"Indeed\" <donotreply@match.indeed.com>",
         "priority": "MEDIUM",
         "pipeline_match": null,
         "status": "needs_human_review"
+      },
+      {
+        "timestamp": "2026-06-05T21:00:56.187151+03:00",
+        "review_type": "possible_recruiter_outreach",
+        "category": "recruiter_reach",
+        "email_id": "360927",
+        "subject": "Enterprise PMO Lead @ Andersen Inc.",
+        "from": "\"Indeed\" <donotreply@match.indeed.com>",
+        "priority": "MEDIUM",
+        "pipeline_match": null,
+        "status": "needs_human_review"
+      },
+      {
+        "timestamp": "2026-06-05T21:00:56.187154+03:00",
+        "review_type": "possible_recruiter_outreach",
+        "category": "recruiter_reach",
+        "email_id": "360952",
+        "subject": "Self Employed - Elite Account Manager @ Thornton and Baines Ltd",
+        "from": "\"Indeed\" <donotreply@match.indeed.com>",
+        "priority": "MEDIUM",
+        "pipeline_match": null,
+        "status": "needs_human_review"
+      },
+      {
+        "timestamp": "2026-06-05T21:00:56.187156+03:00",
+        "review_type": "possible_recruiter_outreach",
+        "category": "recruiter_reach",
+        "email_id": "360953",
+        "subject": "Chief Operating Officer (COO) in Dubai, UAE at CP in Dubai and 18 more new jobs",
+        "from": "\"Indeed\" <donotreply@match.indeed.com>",
+        "priority": "MEDIUM",
+        "pipeline_match": null,
+        "status": "needs_human_review"
+      },
+      {
+        "timestamp": "2026-06-05T21:00:56.187158+03:00",
+        "review_type": "possible_recruiter_outreach",
+        "category": "recruiter_reach",
+        "email_id": "360965",
+        "subject": "Automatic reply: Application: Digital Transformation and Technical\r\n Delivery Consultant\t - Ahmed Nasr",
+        "from": "Jobs <jobs@stantec.com>",
+        "priority": "HIGH",
+        "pipeline_match": "Stantec",
+        "status": "needs_human_review"
+      },
+      {
+        "timestamp": "2026-06-05T21:00:56.187161+03:00",
+        "review_type": "possible_recruiter_outreach",
+        "category": "recruiter_reach",
+        "email_id": "360969",
+        "subject": "Automatic reply: Application: Chief Product Officer (Fintech & B2B\r\n Platforms) - Ahmed\t Nasr",
+        "from": "Adecco AE Info <AdeccoAE.Info@adecco.com>",
+        "priority": "HIGH",
+        "pipeline_match": "Adecco",
+        "status": "needs_human_review"
       }
     ],
-    "llm_analysis": null
+    "llm_analysis": {
+      "actionable_emails": [
+        {
+          "id": "360927",
+          "subject": "Enterprise PMO Lead @ Andersen Inc.",
+          "from": "\"Indeed\" <donotreply@match.indeed.com>",
+          "date": "Fri, 05 Jun 2026 14:13:54 +0000",
+          "category": "recruiter_reach",
+          "urgency": "medium",
+          "intent": "Indeed is suggesting a Dubai remote Enterprise PMO Lead role and asking Ahmed to apply if interested.",
+          "action": "no_action",
+          "response_deadline": "1 week",
+          "notes": "Good PMO fit; review role before applying."
+        },
+        {
+          "id": "360952",
+          "subject": "Self Employed - Elite Account Manager @ Thornton and Baines Ltd",
+          "from": "\"Indeed\" <donotreply@match.indeed.com>",
+          "date": "Fri, 05 Jun 2026 16:26:46 +0000",
+          "category": "recruiter_reach",
+          "urgency": "low",
+          "intent": "Indeed is suggesting a self-employed account manager role and asking Ahmed to apply if interested.",
+          "action": "read_and_file",
+          "response_deadline": "when convenient",
+          "notes": "High pay range, but weak executive/PMO fit."
+        },
+        {
+          "id": "360953",
+          "subject": "Chief Operating Officer (COO) in Dubai, UAE at CP in Dubai and 18 more new jobs",
+          "from": "\"Indeed\" <donotreply@match.indeed.com>",
+          "date": "Fri, 05 Jun 2026 16:27:14 +0000",
+          "category": "recruiter_reach",
+          "urgency": "high",
+          "intent": "Indeed is suggesting a COO role in Dubai plus other jobs and asking Ahmed to apply if interested.",
+          "action": "no_action",
+          "response_deadline": "48h",
+          "notes": "Not an interview invite; COO role merits fast review."
+        },
+        {
+          "id": "360965",
+          "subject": "Automatic reply: Application: Digital Transformation and Technical\r\n Delivery Consultant\t - Ahmed Nasr",
+          "from": "Jobs <jobs@stantec.com>",
+          "date": "Fri, 5 Jun 2026 17:43:27 +0000",
+          "category": "recruiter_reach",
+          "urgency": "low",
+          "intent": "Stantec confirms this inbox handles technical issues and says applications must go through its jobs portal.",
+          "action": "read_and_file",
+          "response_deadline": "when convenient",
+          "notes": "Auto-reply only; no recruiter response needed."
+        },
+        {
+          "id": "360969",
+          "subject": "Automatic reply: Application: Chief Product Officer (Fintech & B2B\r\n Platforms) - Ahmed\t Nasr",
+          "from": "Adecco AE Info <AdeccoAE.Info@adecco.com>",
+          "date": "Fri, 5 Jun 2026 17:54:35 +0000",
+          "category": "recruiter_reach",
+          "urgency": "low",
+          "intent": "Adecco sends a general auto-reply directing job seekers to its jobs page or CV upload process.",
+          "action": "read_and_file",
+          "response_deadline": "when convenient",
+          "notes": "Auto-reply only; no direct reply needed."
+        }
+      ],
+      "summary": {
+        "total_actionable": 5,
+        "critical_count": 0,
+        "requires_interview_prep": false,
+        "requires_assessment": false,
+        "recruiter_top_opportunities": [
+          "360953 - COO in Dubai, UAE at CP",
+          "360927 - Enterprise PMO Lead at Andersen Inc."
+        ],
+        "top_priority": "360953",
+        "daily_focus": "Prioritize reviewing the COO and Enterprise PMO roles; treat the rest as low-value auto replies or weak-fit alerts."
+      }
+    }
   },
   "kpi": {
-    "emails_processed": 19,
-    "actionable": 3,
+    "emails_processed": 84,
+    "actionable": 5,
     "interviews_detected": 1,
-    "recruiter_messages": 1,
-    "unread_actionable": 3
+    "recruiter_messages": 5,
+    "unread_actionable": 5
   },
   "recommendations": [
     {
-      "id": "rec-19f38fd5-0",
+      "id": "rec-488fd851-0",
       "action": "respond_immediately",
       "target": "1 interview invite(s)",
       "reason": "Interview invitations require prompt response",
       "urgency": "critical",
-      "timestamp": "2026-06-05T15:00:46.634602+03:00"
+      "timestamp": "2026-06-05T21:01:22.377165+03:00"
     },
     {
-      "id": "rec-19f38fd5-1",
+      "id": "rec-488fd851-1",
       "action": "review_and_respond",
-      "target": "1 recruiter message(s)",
+      "target": "5 recruiter message(s)",
       "reason": "Recruiter outreach could lead to opportunities",
       "urgency": "high",
-      "timestamp": "2026-06-05T15:00:46.634627+03:00"
+      "timestamp": "2026-06-05T21:01:22.377187+03:00"
     },
     {
-      "id": "rec-19f38fd5-2",
+      "id": "rec-488fd851-2",
       "action": "check_inbox",
-      "target": "3 unread actionable email(s)",
+      "target": "5 unread actionable email(s)",
       "reason": "Unread emails need attention",
       "urgency": "high",
-      "timestamp": "2026-06-05T15:00:46.634630+03:00"
-    },
-    {
-      "id": "rec-19f38fd5-3",
-      "action": "complete_assessment",
-      "target": "1 assessment(s)",
-      "reason": "Assessments have deadlines",
-      "urgency": "high",
-      "timestamp": "2026-06-05T15:00:46.634634+03:00"
+      "timestamp": "2026-06-05T21:01:22.377191+03:00"
     }
   ]
 }
