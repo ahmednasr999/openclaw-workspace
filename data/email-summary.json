@@ -2,120 +2,62 @@
   "meta": {
     "agent": "email-agent",
     "version": "3.0.0",
-    "generated_at": "2026-06-06T15:01:02.239229+03:00",
-    "duration_ms": 41038,
+    "generated_at": "2026-06-06T21:01:02.903030+03:00",
+    "duration_ms": 31150,
     "ttl_hours": 4,
     "status": "success",
     "error": null,
-    "run_id": "8181695e",
+    "run_id": "ccd753c6",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
     "status": "ok",
-    "scan_time": "2026-06-06T15:00:34.240071+03:00",
-    "total_scanned": 24,
+    "scan_time": "2026-06-06T21:01:02.901391+03:00",
+    "total_scanned": 42,
     "by_category": {
       "interview_invite": 0,
-      "recruiter_reach": 4,
+      "recruiter_reach": 0,
       "application_ack": 0,
       "rejection": 0,
-      "assessment": 0,
+      "assessment": 1,
       "application_response": 0,
       "follow_up_needed": 0,
       "job_alert": 1,
-      "other": 19
+      "other": 40
     },
     "interview_invites": [],
-    "recruiter_messages": [
+    "recruiter_messages": [],
+    "application_acks": [],
+    "rejections": [],
+    "assessments": [
       {
-        "id": "361079",
-        "from": "\"Indeed\" <donotreply@match.indeed.com>",
-        "subject": "Office Manager of COO - (PMO) @ Independent Food Company",
-        "date": "Sat, 06 Jun 2026 10:43:59 +0000",
+        "id": "361105",
+        "from": "Fiona The Millennial Money Woman <fiona@themillennialmoneywoman.com>",
+        "subject": "Doors close at midnight",
+        "date": "06 Jun 2026 14:03:18 -0000",
         "unread": true,
         "priority": "MEDIUM",
         "score": 2,
         "pipeline_match": null,
-        "confidence": 65,
-        "confidence_label": "medium",
+        "confidence": 50,
+        "confidence_label": "low",
         "evidence": [
-          "known recruiter/job domain",
           "hiring/application context",
-          "recruiter outreach classification",
+          "assessment keyword with hiring context",
           "medium priority score: 2"
         ],
-        "why_actionable": "known recruiter/job domain | hiring/application context | recruiter outreach classification | medium priority score: 2"
-      },
-      {
-        "id": "361083",
-        "from": "info <info@JASARAPMC.COM.SA>",
-        "subject": "RE: [EXTERNAL] Application: Construction Director - Ahmed Nasr",
-        "date": "Sat, 6 Jun 2026 11:12:48 +0000",
-        "unread": true,
-        "priority": "HIGH",
-        "score": 7,
-        "pipeline_match": "JASARA PMC",
-        "confidence": 75,
-        "confidence_label": "medium",
-        "evidence": [
-          "matched active pipeline company: JASARA PMC",
-          "hiring/application context",
-          "recruiter outreach classification",
-          "high priority score: 7"
-        ],
-        "why_actionable": "matched active pipeline company: JASARA PMC | hiring/application context | recruiter outreach classification | high priority score: 7"
-      },
-      {
-        "id": "361084",
-        "from": "info <info@JASARAPMC.COM.SA>",
-        "subject": "RE: [EXTERNAL] Application: Programme Director (Hospitality) - Ahmed\r\n Nasr",
-        "date": "Sat, 6 Jun 2026 11:13:50 +0000",
-        "unread": true,
-        "priority": "HIGH",
-        "score": 7,
-        "pipeline_match": "JASARA PMC",
-        "confidence": 75,
-        "confidence_label": "medium",
-        "evidence": [
-          "matched active pipeline company: JASARA PMC",
-          "hiring/application context",
-          "recruiter outreach classification",
-          "high priority score: 7"
-        ],
-        "why_actionable": "matched active pipeline company: JASARA PMC | hiring/application context | recruiter outreach classification | high priority score: 7"
-      },
-      {
-        "id": "361085",
-        "from": "info <info@JASARAPMC.COM.SA>",
-        "subject": "RE: [EXTERNAL] Application: Senior Project Manager - Ahmed Nasr",
-        "date": "Sat, 6 Jun 2026 11:14:08 +0000",
-        "unread": true,
-        "priority": "HIGH",
-        "score": 7,
-        "pipeline_match": "JASARA PMC",
-        "confidence": 75,
-        "confidence_label": "medium",
-        "evidence": [
-          "matched active pipeline company: JASARA PMC",
-          "hiring/application context",
-          "recruiter outreach classification",
-          "high priority score: 7"
-        ],
-        "why_actionable": "matched active pipeline company: JASARA PMC | hiring/application context | recruiter outreach classification | high priority score: 7"
+        "why_actionable": "not actionable: hiring/application context | assessment keyword with hiring context | medium priority score: 2"
       }
     ],
-    "application_acks": [],
-    "rejections": [],
-    "assessments": [],
     "application_responses": [],
     "follow_ups_needed": [],
     "job_alerts": [
       {
-        "id": "361067",
-        "from": "=?utf-8?B?QmF5dC5jb20=?= <notify@bayt.com>",
-        "subject": "=?utf-8?B?MjAgbmV3IEVuZ2luZWVycyBqb2JzIGluIFFhdGFyIQ==?=",
-        "date": "Sat, 06 Jun 2026 05:51:25 GMT",
+        "id": "361100",
+        "from": "GulfTalent Jobs <jobs@gulftalent.com>",
+        "subject": "Ascentis needs a Project Director",
+        "date": "Sat, 06 Jun 2026 08:30:28 -0500",
         "unread": true,
         "priority": "LOW",
         "score": 0,
@@ -125,195 +67,56 @@
         "evidence": [
           "automated job alert",
           "known recruiter/job domain",
+          "hiring sender context",
           "noise/job-alert guard applied"
         ],
-        "why_actionable": "not actionable: automated job alert | known recruiter/job domain | noise/job-alert guard applied"
+        "why_actionable": "not actionable: automated job alert | known recruiter/job domain | hiring sender context | noise/job-alert guard applied"
       }
     ],
-    "actionable_count": 4,
+    "actionable_count": 0,
     "hot_alerts": [],
-    "signals": [
-      {
-        "company": "JASARA PMC",
-        "signal": "recruiter_email",
-        "subject": "RE: [EXTERNAL] Application: Construction Director - Ahmed Nasr",
-        "sender": "info <info@JASARAPMC.COM.SA>",
-        "job_ids": [
-          "linkedin_jobspy-li-4416800245",
-          "linkedin_jobspy-li-4422417428",
-          "linkedin_jobspy-li-4415293526",
-          "indeed-in-4568101a69f12a7d",
-          "indeed-in-26f721b2475bd815"
-        ],
-        "score": 7,
-        "timestamp": "2026-06-06T15:00:34.152265+03:00"
-      },
-      {
-        "company": "JASARA PMC",
-        "signal": "recruiter_email",
-        "subject": "RE: [EXTERNAL] Application: Programme Director (Hospitality) - Ahmed\r\n Nasr",
-        "sender": "info <info@JASARAPMC.COM.SA>",
-        "job_ids": [
-          "linkedin_jobspy-li-4416800245",
-          "linkedin_jobspy-li-4422417428",
-          "linkedin_jobspy-li-4415293526",
-          "indeed-in-4568101a69f12a7d",
-          "indeed-in-26f721b2475bd815"
-        ],
-        "score": 7,
-        "timestamp": "2026-06-06T15:00:34.180668+03:00"
-      },
-      {
-        "company": "JASARA PMC",
-        "signal": "recruiter_email",
-        "subject": "RE: [EXTERNAL] Application: Senior Project Manager - Ahmed Nasr",
-        "sender": "info <info@JASARAPMC.COM.SA>",
-        "job_ids": [
-          "linkedin_jobspy-li-4416800245",
-          "linkedin_jobspy-li-4422417428",
-          "linkedin_jobspy-li-4415293526",
-          "indeed-in-4568101a69f12a7d",
-          "indeed-in-26f721b2475bd815"
-        ],
-        "score": 7,
-        "timestamp": "2026-06-06T15:00:34.202595+03:00"
-      }
-    ],
+    "signals": [],
     "pipeline_review_candidates": [
       {
-        "timestamp": "2026-06-06T15:00:34.240092+03:00",
-        "review_type": "possible_recruiter_outreach",
-        "category": "recruiter_reach",
-        "email_id": "361079",
-        "subject": "Office Manager of COO - (PMO) @ Independent Food Company",
-        "from": "\"Indeed\" <donotreply@match.indeed.com>",
+        "timestamp": "2026-06-06T21:01:02.901413+03:00",
+        "review_type": "possible_assessment",
+        "category": "assessment",
+        "email_id": "361105",
+        "subject": "Doors close at midnight",
+        "from": "Fiona The Millennial Money Woman <fiona@themillennialmoneywoman.com>",
         "priority": "MEDIUM",
         "pipeline_match": null,
-        "status": "needs_human_review"
-      },
-      {
-        "timestamp": "2026-06-06T15:00:34.240098+03:00",
-        "review_type": "possible_recruiter_outreach",
-        "category": "recruiter_reach",
-        "email_id": "361083",
-        "subject": "RE: [EXTERNAL] Application: Construction Director - Ahmed Nasr",
-        "from": "info <info@JASARAPMC.COM.SA>",
-        "priority": "HIGH",
-        "pipeline_match": "JASARA PMC",
-        "status": "needs_human_review"
-      },
-      {
-        "timestamp": "2026-06-06T15:00:34.240101+03:00",
-        "review_type": "possible_recruiter_outreach",
-        "category": "recruiter_reach",
-        "email_id": "361084",
-        "subject": "RE: [EXTERNAL] Application: Programme Director (Hospitality) - Ahmed\r\n Nasr",
-        "from": "info <info@JASARAPMC.COM.SA>",
-        "priority": "HIGH",
-        "pipeline_match": "JASARA PMC",
-        "status": "needs_human_review"
-      },
-      {
-        "timestamp": "2026-06-06T15:00:34.240104+03:00",
-        "review_type": "possible_recruiter_outreach",
-        "category": "recruiter_reach",
-        "email_id": "361085",
-        "subject": "RE: [EXTERNAL] Application: Senior Project Manager - Ahmed Nasr",
-        "from": "info <info@JASARAPMC.COM.SA>",
-        "priority": "HIGH",
-        "pipeline_match": "JASARA PMC",
         "status": "needs_human_review"
       }
     ],
     "llm_analysis": {
-      "actionable_emails": [
-        {
-          "id": "361079",
-          "subject": "Office Manager of COO - (PMO) @ Independent Food Company",
-          "from": "\"Indeed\" <donotreply@match.indeed.com>",
-          "date": "Sat, 06 Jun 2026 10:43:59 +0000",
-          "category": "recruiter_reach",
-          "urgency": "medium",
-          "intent": "Indeed is suggesting a Dubai PMO-related role and asking Ahmed to submit a quick application if interested.",
-          "action": "no_action",
-          "response_deadline": "1 week",
-          "notes": "Not a direct recruiter reply; assess fit before applying."
-        },
-        {
-          "id": "361083",
-          "subject": "RE: [EXTERNAL] Application: Construction Director - Ahmed Nasr",
-          "from": "info <info@JASARAPMC.COM.SA>",
-          "date": "Sat, 6 Jun 2026 11:12:48 +0000",
-          "category": "recruiter_reach",
-          "urgency": "high",
-          "intent": "JASARA PMC is acknowledging interest and directing Ahmed to apply through careers or Workable email.",
-          "action": "respond",
-          "response_deadline": "48h",
-          "notes": "Active pipeline company; use official careers route."
-        },
-        {
-          "id": "361084",
-          "subject": "RE: [EXTERNAL] Application: Programme Director (Hospitality) - Ahmed Nasr",
-          "from": "info <info@JASARAPMC.COM.SA>",
-          "date": "Sat, 6 Jun 2026 11:13:50 +0000",
-          "category": "recruiter_reach",
-          "urgency": "high",
-          "intent": "JASARA PMC is acknowledging interest and directing Ahmed to apply through careers or Workable email.",
-          "action": "respond",
-          "response_deadline": "48h",
-          "notes": "Best strategic fit among JASARA replies."
-        },
-        {
-          "id": "361085",
-          "subject": "RE: [EXTERNAL] Application: Senior Project Manager - Ahmed Nasr",
-          "from": "info <info@JASARAPMC.COM.SA>",
-          "date": "Sat, 6 Jun 2026 11:14:08 +0000",
-          "category": "recruiter_reach",
-          "urgency": "high",
-          "intent": "JASARA PMC is acknowledging interest and directing Ahmed to apply through careers or Workable email.",
-          "action": "respond",
-          "response_deadline": "48h",
-          "notes": "High-priority pipeline, but role seniority may be lower."
-        }
-      ],
+      "actionable_emails": [],
       "summary": {
-        "total_actionable": 4,
+        "total_actionable": 0,
         "critical_count": 0,
         "requires_interview_prep": false,
         "requires_assessment": false,
-        "recruiter_top_opportunities": [
-          "JASARA PMC - Programme Director (Hospitality)",
-          "JASARA PMC - Construction Director",
-          "JASARA PMC - Senior Project Manager"
-        ],
-        "top_priority": "361084",
-        "daily_focus": "Prioritize completing the JASARA PMC applications through the official route within 48 hours; no interview or assessment prep is triggered."
+        "recruiter_top_opportunities": [],
+        "top_priority": null,
+        "daily_focus": "No email action needed from this batch."
       }
     }
   },
   "kpi": {
-    "emails_processed": 24,
-    "actionable": 4,
+    "emails_processed": 42,
+    "actionable": 0,
     "interviews_detected": 0,
-    "recruiter_messages": 4,
-    "unread_actionable": 4
+    "recruiter_messages": 0,
+    "unread_actionable": 0
   },
   "recommendations": [
     {
-      "id": "rec-8181695e-0",
-      "action": "review_and_respond",
-      "target": "4 recruiter message(s)",
-      "reason": "Recruiter outreach could lead to opportunities",
+      "id": "rec-ccd753c6-0",
+      "action": "complete_assessment",
+      "target": "1 assessment(s)",
+      "reason": "Assessments have deadlines",
       "urgency": "high",
-      "timestamp": "2026-06-06T15:01:02.239071+03:00"
-    },
-    {
-      "id": "rec-8181695e-1",
-      "action": "check_inbox",
-      "target": "4 unread actionable email(s)",
-      "reason": "Unread emails need attention",
-      "urgency": "high",
-      "timestamp": "2026-06-06T15:01:02.239096+03:00"
+      "timestamp": "2026-06-06T21:01:02.902924+03:00"
     }
   ]
 }

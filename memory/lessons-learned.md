@@ -1235,3 +1235,24 @@ Ahmed granted standing approval to continue through candidate-account and email-
 ### Do differently
 For that scoped JobZoom requested-section work, do not stop solely because a safe candidate-account or email route is required. Continue through approved routes, still require real submission proof before marking applied, and keep asking for explicit approval on unrelated batches, MFA/passkeys/reCAPTCHA, unavailable artifacts, or risky/non-standard actions.
 
+
+## 2026-06-06 - Operational Status Reports Use Scan-First Format
+
+### Preference
+The shared CTO reporting policy now asks operational, infrastructure, health, fix, incident, cron, automation, and other state-changing status messages to use a scan-first format with one functional leading status emoji and Impact/Fix/Verification/Risk/Artifact fields when relevant.
+### Do differently
+For infra/status reporting, lead with the functional status emoji and concise state, then include the structured fields when they add signal. Keep routine agent-to-agent announce noise suppressed with `REPLY_SKIP`/`ANNOUNCE_SKIP` when no user-visible action is needed.
+
+## 2026-06-06 - Copilot CLI Agent Pulse Is Inspiration, Not Runtime Infrastructure
+
+### Recommendation
+`DUBSOpenHub/copilot-cli-agent-pulse` targets GitHub Copilot CLI files and includes a `curl | bash` quickstart, so it is not a direct fit for the OpenClaw VPS runtime.
+### Do differently
+Do not install Copilot-specific dashboard tooling into OpenClaw production just for monitoring. Borrow the useful UX ideas instead and prefer an OpenClaw-native pulse view backed by cron status, sessions, model guardian data, health reports, LCM, and logs.
+
+## 2026-06-06 - Obsidian Should Front The Existing Knowledge Brain
+
+### Recommendation
+Obsidian is useful as a human-readable thinking layer, but it should not replace OpenClaw memory, Notion workflows, ledgers, RSS intelligence, or operational reports.
+### Do differently
+If building an Obsidian/NASR Knowledge Brain vault, mirror existing trusted Markdown and operational artifacts, keep community plugins minimal, and prefer Git/plain Markdown sync over fragile free-sync workarounds.

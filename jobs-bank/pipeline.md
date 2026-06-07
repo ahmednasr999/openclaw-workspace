@@ -192,6 +192,25 @@
 | 301 | 🆕 | Keyrock | Head of Engineering - Options | Dubai | — | 🆕 Discovered | Radar | 2026-06-06 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4404463770) | — |
 | 302 | 🆕 | Qashio | VP of Technology | Dubai | — | 🆕 Discovered | Radar | 2026-06-06 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4424558663) | — |
 | 303 | 🆕 | Intelligent Solutions HR | Vice President – Reinsurance Actuary | Dubai | — | 🆕 Discovered | Radar | 2026-06-06 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4424569877) | — |
+| 304 | 🆕 | Ameera Talent Solutions LTD | Director Of Data, Artificial Intelligence And Business Intelligence | Jeddah | — | 🆕 Discovered | Radar | 2026-06-07 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4423394340) | — |
+| 305 | 🆕 | ROSHN l روشن | Director, IT Data Platforms | GCC | — | 🆕 Discovered | Radar | 2026-06-07 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4422906716) | — |
+| 306 | 🆕 | EPAM Systems | Director, Technology Consulting - Telecom SME | Riyadh | — | 🆕 Discovered | Radar | 2026-06-07 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4410164974) | — |
+| 307 | 🆕 | Confidential Government | Senior Director of Healthcare Cluster Transformation | Riyadh | — | 🆕 Discovered | Radar | 2026-06-07 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4419650639) | — |
+| 308 | 🆕 | Jobgether | Deputy CTO | GCC | — | 🆕 Discovered | Radar | 2026-06-07 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4423905178) | — |
+| 309 | 🆕 | Magna AI | AI Factory Development Director | Riyadh | — | 🆕 Discovered | Radar | 2026-06-07 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4423887723) | — |
+| 310 | 🆕 | Involved Solutions | CTO | Riyadh | — | 🆕 Discovered | Radar | 2026-06-07 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4421696783) | — |
+| 311 | 🆕 | Emdad By Elm | Director of Digital Onsite | Riyadh | — | 🆕 Discovered | Radar | 2026-06-07 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4422878349) | — |
+| 312 | 🆕 | Jobgether | Senior Director, Data Platform & Engineering | GCC | — | 🆕 Discovered | Radar | 2026-06-07 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4422873272) | — |
+| 313 | 🆕 | Big Fish Consult | Director Project Delivery | Dubai | — | 🆕 Discovered | Radar | 2026-06-07 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4424191293) | — |
+| 314 | 🆕 | Skilled Careers | Project Director | Dubai | — | 🆕 Discovered | Radar | 2026-06-07 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4420143193) | — |
+| 315 | 🆕 | Confidential | Project Director | Dubai | — | 🆕 Discovered | Radar | 2026-06-07 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4419665858) | — |
+| 316 | 🆕 | KAYALI | Director, New Product Development & Projects | Dubai | — | 🆕 Discovered | Radar | 2026-06-07 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4421692366) | — |
+| 317 | 🆕 | Airwallex | Head of Middle East | Dubai | — | 🆕 Discovered | Radar | 2026-06-07 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4396663329) | — |
+| 318 | 🆕 | Tandem Search | Global Head of Contracting Finance | Dubai | — | 🆕 Discovered | Radar | 2026-06-07 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4421129016) | — |
+| 319 | 🆕 | Tabby | تابي | Head of Partnerships | Dubai | — | 🆕 Discovered | Radar | 2026-06-07 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4423376118) | — |
+| 320 | 🆕 | Floin | Head of Customer Experience | Dubai | — | 🆕 Discovered | Radar | 2026-06-07 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4419276686) | — |
+| 321 | 🆕 | PhillipCapital (DIFC) Private Limited | Head of Institutional Clients | Dubai | — | 🆕 Discovered | Radar | 2026-06-07 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4421835623) | — |
+
 
 
 
