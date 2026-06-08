@@ -73,6 +73,8 @@ media/inbound/*.docx
 /email-inbox-last*.json
 /email-review-*/
 /lcm.db
+/*.db-shm
+/*.db-wal
 
 # Generated reports (local/runtime output)
 /reports/
