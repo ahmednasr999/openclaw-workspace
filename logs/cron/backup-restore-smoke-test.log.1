@@ -1,8 +1,15 @@
 
-[2026-05-31T10:30:01+03:00] START backup-restore-smoke-test: /root/.openclaw/workspace/scripts/backup-restore-smoke-test.sh
-Backup/snapshot smoke test started at 2026-05-31T10:30:01+03:00
+[2026-06-07T10:30:01+03:00] START backup-restore-smoke-test: /root/.openclaw/workspace/scripts/backup-restore-smoke-test.sh
+Backup/snapshot smoke test started at 2026-06-07T10:30:01+03:00
 OK: recent workspace backup log has a successful push
-OK: latest snapshot is readable: /root/openclaw-snapshot-20260530
-13G	/root/openclaw-snapshot-20260530
-Backup/snapshot smoke test finished at 2026-05-31T10:30:06+03:00
-[2026-05-31T10:30:06+03:00] END backup-restore-smoke-test: rc=0 duration=5s
+FAIL: no readable openclaw snapshot directory found under /root
+Backup/snapshot smoke test finished at 2026-06-07T10:30:01+03:00
+[2026-06-07T10:30:01+03:00] END backup-restore-smoke-test: rc=1 duration=0s
+
+[2026-06-07T11:39:40+03:00] START backup-restore-smoke-test: /root/.openclaw/workspace/scripts/backup-restore-smoke-test.sh
+Backup/snapshot smoke test started at 2026-06-07T11:39:40+03:00
+OK: recent workspace backup log has a successful push
+OK: no raw snapshot found, but recent compressed backup archive passed integrity checks: /root/openclaw-backups/openclaw-2026-06-07_0315.tar.gz
+948M	/root/openclaw-backups/openclaw-2026-06-07_0315.tar.gz
+Backup/snapshot smoke test finished at 2026-06-07T11:40:09+03:00
+[2026-06-07T11:40:09+03:00] END backup-restore-smoke-test: rc=0 duration=29s

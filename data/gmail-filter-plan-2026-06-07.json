@@ -1,0 +1,478 @@
+{
+  "generated_at": "2026-06-07T09:45:56.020067+03:00",
+  "source": "/root/.openclaw/workspace/data/email-history.jsonl",
+  "status": "draft_plan_only_no_mailbox_changes",
+  "guardrails": [
+    "No delete, trash, block, or unsubscribe in phase 1.",
+    "Only labels and skip-inbox archive are proposed for clearly noisy senders.",
+    "Recruitment, ATS, identity/security, bank, application, and job-source senders are protected.",
+    "GitHub is label-only first because some notifications may be useful."
+  ],
+  "proposed_labels": [
+    "Commercial Noise",
+    "Newsletters",
+    "GitHub",
+    "Protected Job Source"
+  ],
+  "filters": [
+    {
+      "from": "info@host.discountwalas.com",
+      "label": "Commercial Noise",
+      "reason": "High-volume discount sender, 1,463 low-value history items.",
+      "evidence": {
+        "history_count": 1490,
+        "categories": {
+          "other": 1463,
+          "interview_invite": 16,
+          "recruiter_reach": 6,
+          "assessment": 4,
+          "follow_up_needed": 1
+        },
+        "priorities": {
+          "LOW": 1381,
+          "MEDIUM": 98,
+          "HIGH": 11
+        },
+        "pipeline_matches": 6,
+        "latest_seen": "2026-06-06T16:31:13+00:00",
+        "top_subjects": [
+          "Update : =?utf-8?Q?=E0=A4=B8=E0=A5=8B=E0=A4=A8=E0=A4=BE?=   =?utf-8?Q?-=E0=A4=9A=E0=A4=BE=E0=A4=82=E0=A4=A6=E0=A5=80_=E0",
+          "please complete your account setup using the secure link",
+          "Induction Cooktop Sale =?utf-8?Q?=E2=80=93?= Save Up to 60% Today!"
+        ],
+        "protected_term_hits": {
+          "offer": 34,
+          "verification": 14,
+          "application": 5,
+          "verify": 2,
+          "job": 2,
+          "jobs": 2,
+          "otp": 2,
+          "congratulations": 2,
+          "applied": 1
+        }
+      },
+      "gmail_query": "from:info@host.discountwalas.com",
+      "proposed_action": "Apply label and skip Inbox. Keep messages searchable. No delete."
+    },
+    {
+      "from": "newsletter@em.discountwalas.com",
+      "label": "Commercial Noise",
+      "reason": "Same Discountwalas newsletter stream, 261 low-value history items.",
+      "evidence": {
+        "history_count": 261,
+        "categories": {
+          "other": 261
+        },
+        "priorities": {
+          "LOW": 228,
+          "MEDIUM": 31,
+          "HIGH": 2
+        },
+        "pipeline_matches": 0,
+        "latest_seen": "2026-06-06T18:40:03+00:00",
+        "top_subjects": [
+          "Shop All Furniture at 70% Off",
+          "=?utf-8?Q?=E2=9A=A1?= Big News Today: Travel, Movies, Reviews,   India",
+          "Fresh amul milk,dahi & paneer delivered in mins"
+        ],
+        "protected_term_hits": {
+          "offer": 3,
+          "verify": 3,
+          "application": 2,
+          "verification": 1
+        }
+      },
+      "gmail_query": "from:newsletter@em.discountwalas.com",
+      "proposed_action": "Apply label and skip Inbox. Keep messages searchable. No delete."
+    },
+    {
+      "from": "no-reply@mail.therumble.app",
+      "label": "Commercial Noise",
+      "reason": "High-volume non-HR app notifications, 299 low-value history items.",
+      "evidence": {
+        "history_count": 299,
+        "categories": {
+          "other": 299
+        },
+        "priorities": {
+          "LOW": 299
+        },
+        "pipeline_matches": 0,
+        "latest_seen": "2026-06-06T12:51:52+00:00",
+        "top_subjects": [
+          "=?utf-8?B?IPCfh6rwn4esINil2LrZhNin2YIg2KrZiNi12YrYqSAgUkFDQyAg?=  \t=?utf-8?B?2KfZhNmB2YbZitipIA==?=",
+          "=?utf-8?B?IPCfh6bwn4eqINis2YbZiSDYp9mE2KPYsdio2KfYrSBBRE5PQ0RS?=  \t=?utf-8?B?SUxMIA==?=",
+          "=?utf-8?B?IPCfh6rwn4esINil2LrZhNin2YIg2KrZiNi12YrYqSAgQk9OWSAg?=  \t=?utf-8?B?2KfZhNmB2YbZitipIA==?="
+        ],
+        "protected_term_hits": {}
+      },
+      "gmail_query": "from:no-reply@mail.therumble.app",
+      "proposed_action": "Apply label and skip Inbox. Keep messages searchable. No delete."
+    },
+    {
+      "from": "temu@commerce.temuemail.com",
+      "label": "Commercial Noise",
+      "reason": "Retail promotions, 119 low-value history items.",
+      "evidence": {
+        "history_count": 121,
+        "categories": {
+          "other": 119,
+          "follow_up_needed": 1,
+          "rejection": 1
+        },
+        "priorities": {
+          "LOW": 112,
+          "MEDIUM": 9
+        },
+        "pipeline_matches": 0,
+        "latest_seen": "2026-06-06T14:17:10+00:00",
+        "top_subjects": [
+          "Now only EGP5.63!",
+          "You've succeeded!",
+          "Amazing price: EGP5.63!"
+        ],
+        "protected_term_hits": {
+          "offer": 3
+        }
+      },
+      "gmail_query": "from:temu@commerce.temuemail.com",
+      "proposed_action": "Apply label and skip Inbox. Keep messages searchable. No delete."
+    },
+    {
+      "from": "newsletter@em.flickonclick.com",
+      "label": "Commercial Noise",
+      "reason": "Retail/newsletter stream, 87 low-value history items.",
+      "evidence": {
+        "history_count": 87,
+        "categories": {
+          "other": 87
+        },
+        "priorities": {
+          "LOW": 85,
+          "MEDIUM": 2
+        },
+        "pipeline_matches": 0,
+        "latest_seen": "2026-06-06T15:36:26+00:00",
+        "top_subjects": [
+          "Jockey Clearance Update: Upto 25% OFF Everything..",
+          "Last Chance! Know These 7 Tax Changes Before April 1",
+          "Trending Viral News =?utf-8?Q?=E2=80=93?= Check Now"
+        ],
+        "protected_term_hits": {
+          "verification": 1,
+          "offer": 1
+        }
+      },
+      "gmail_query": "from:newsletter@em.flickonclick.com",
+      "proposed_action": "Apply label and skip Inbox. Keep messages searchable. No delete."
+    },
+    {
+      "from": "me@juliangoldie.com",
+      "label": "Newsletters",
+      "reason": "Marketing/newsletter stream, 201 low-value history items.",
+      "evidence": {
+        "history_count": 203,
+        "categories": {
+          "other": 201,
+          "interview_invite": 2
+        },
+        "priorities": {
+          "LOW": 177,
+          "MEDIUM": 26
+        },
+        "pipeline_matches": 0,
+        "latest_seen": "2026-06-07T03:04:15+00:00",
+        "top_subjects": [
+          "15k openclaw strategy gone midnight (6hrs left)",
+          "5K for a 5-minute setup??",
+          "nemoclaw blueprint inside (5 spots only)"
+        ],
+        "protected_term_hits": {
+          "offer": 1
+        }
+      },
+      "gmail_query": "from:me@juliangoldie.com",
+      "proposed_action": "Apply label and skip Inbox. Keep messages searchable. No delete."
+    },
+    {
+      "from": "noreply@skool.com",
+      "label": "Newsletters",
+      "reason": "Community notifications, 167 low-value history items.",
+      "evidence": {
+        "history_count": 167,
+        "categories": {
+          "other": 167
+        },
+        "priorities": {
+          "LOW": 166,
+          "MEDIUM": 1
+        },
+        "pipeline_matches": 0,
+        "latest_seen": "2026-06-06T06:32:11+00:00",
+        "top_subjects": [
+          "1 new notification since 3:24 am (Mar 23, 2026)",
+          "Julian Goldie posted =?UTF-8?B?IvCfmqgg8J2XoPCdl6LwnZeh8J2XmPCdl6w=?=   =?UTF-8?B?IPCdl6DwnZei8J2XofCdl5fwnZeU8J2XrDog8J",
+          "1 new notification since 2:34 am (Mar 24, 2026)"
+        ],
+        "protected_term_hits": {
+          "offer": 1
+        }
+      },
+      "gmail_query": "from:noreply@skool.com",
+      "proposed_action": "Apply label and skip Inbox. Keep messages searchable. No delete."
+    },
+    {
+      "from": "newsletters@arabianbusiness.com",
+      "label": "Newsletters",
+      "reason": "Business newsletter, 164 low-value history items.",
+      "evidence": {
+        "history_count": 170,
+        "categories": {
+          "other": 164,
+          "recruiter_reach": 4,
+          "interview_invite": 1,
+          "assessment": 1
+        },
+        "priorities": {
+          "LOW": 133,
+          "MEDIUM": 27,
+          "HIGH": 10
+        },
+        "pipeline_matches": 4,
+        "latest_seen": "2026-06-06T15:10:11+10:00",
+        "top_subjects": [
+          "Next UAE holiday dates | Dubai weather alert | Iran threatens Gulf energy",
+          "UAE's Gargash on Arab league response to regional tensions; talabat offers rent-free cloud kitchens; Emirates issues tra",
+          "=?utf-8?Q?Dubai_property_enquiries_jump_38%_as_buyers_take_?=    =?utf-8?Q?=e2=80=98measured_approach=e2=80=99?="
+        ],
+        "protected_term_hits": {
+          "job": 5,
+          "jobs": 2,
+          "hiring": 2,
+          "offer": 1,
+          "application": 1
+        }
+      },
+      "gmail_query": "from:newsletters@arabianbusiness.com",
+      "proposed_action": "Apply label and skip Inbox. Keep messages searchable. No delete."
+    },
+    {
+      "from": "newsletters@mail.theankler.com",
+      "label": "Newsletters",
+      "reason": "Newsletter stream, 139 low-value history items.",
+      "evidence": {
+        "history_count": 148,
+        "categories": {
+          "other": 139,
+          "interview_invite": 7,
+          "recruiter_reach": 2,
+          "rejection": 1
+        },
+        "priorities": {
+          "LOW": 138,
+          "MEDIUM": 8,
+          "HIGH": 2
+        },
+        "pipeline_matches": 2,
+        "latest_seen": "2026-06-07T00:08:06+10:00",
+        "top_subjects": [
+          "=?utf-8?Q?Paramount?=    =?utf-8?Q?=e2=80=93Warner:_How_We_Got_Here_and_the_Chaos_Ahead?=",
+          "=?utf-8?Q?=e2=98=80=ef=b8=8f_SONY_Tarantino_Expansion,_Diller?=    =?utf-8?Q?=e2=80=99s_IAC_Layoffs,_Rebrand?=",
+          "Cracking Apple TV: The Shows It Wants Now"
+        ],
+        "protected_term_hits": {
+          "talent": 1
+        }
+      },
+      "gmail_query": "from:newsletters@mail.theankler.com",
+      "proposed_action": "Apply label and skip Inbox. Keep messages searchable. No delete."
+    },
+    {
+      "from": "thebusinessengineer@substack.com",
+      "label": "Newsletters",
+      "reason": "Substack newsletter, 135 low-value history items.",
+      "evidence": {
+        "history_count": 135,
+        "categories": {
+          "other": 135
+        },
+        "priorities": {
+          "LOW": 129,
+          "MEDIUM": 4,
+          "HIGH": 2
+        },
+        "pipeline_matches": 2,
+        "latest_seen": "2026-06-06T14:30:04+00:00",
+        "top_subjects": [
+          "=?UTF-8?q?=F0=9F=92=AC_New_thread_from_Gennaro_Cuofano?=",
+          "The AI Orchestrator Playbook",
+          "The Business Engineer, for the AI Era"
+        ],
+        "protected_term_hits": {}
+      },
+      "gmail_query": "from:thebusinessengineer@substack.com",
+      "proposed_action": "Apply label and skip Inbox. Keep messages searchable. No delete."
+    },
+    {
+      "from": "hello@moby.co",
+      "label": "Newsletters",
+      "reason": "Newsletter/market updates, 131 low-value history items.",
+      "evidence": {
+        "history_count": 132,
+        "categories": {
+          "other": 131,
+          "interview_invite": 1
+        },
+        "priorities": {
+          "LOW": 118,
+          "MEDIUM": 13,
+          "HIGH": 1
+        },
+        "pipeline_matches": 0,
+        "latest_seen": "2026-06-06T14:31:36+00:00",
+        "top_subjects": [
+          "BIG announcement inside =?UTF-8?B?8J+RiQ==?=",
+          "=?UTF-8?B?WW914oCZbGw=?= Regret Ignoring This",
+          "Regarding your status"
+        ],
+        "protected_term_hits": {
+          "selected": 3,
+          "job": 1,
+          "jobs": 1
+        }
+      },
+      "gmail_query": "from:hello@moby.co",
+      "proposed_action": "Apply label and skip Inbox. Keep messages searchable. No delete."
+    },
+    {
+      "from": "hello@mail.trade-ideas.com",
+      "label": "Newsletters",
+      "reason": "Market/newsletter stream, 98 low-value history items.",
+      "evidence": {
+        "history_count": 100,
+        "categories": {
+          "other": 98,
+          "follow_up_needed": 2
+        },
+        "priorities": {
+          "LOW": 75,
+          "MEDIUM": 25
+        },
+        "pipeline_matches": 0,
+        "latest_seen": "2026-06-05T23:00:33+10:00",
+        "top_subjects": [
+          "=?utf-8?Q?=f0=9f=93=a3_This_chart_is_screaming_?=    =?utf-8?Q?=e2=80=9copportunity=e2=80=9d_?=    =?utf-8?Q?=e2=80=94_y",
+          "=?utf-8?Q?=f0=9f=8e=a4_Loudest_chart_on_my_screen_today_?=    =?utf-8?Q?=e2=80=94_worth_your_ears,_?=      =?utf-8?Q?Ahm",
+          "=?utf-8?Q?=f0=9f=94=a5_This_ticker?=    =?utf-8?Q?=e2=80=99s_turning_into_a_pressure_cooker,_?=      =?utf-8?Q?Ahmed?="
+        ],
+        "protected_term_hits": {
+          "opportunity": 3,
+          "otp": 1
+        }
+      },
+      "gmail_query": "from:hello@mail.trade-ideas.com",
+      "proposed_action": "Apply label and skip Inbox. Keep messages searchable. No delete."
+    },
+    {
+      "from": "team@bankless.com",
+      "label": "Newsletters",
+      "reason": "Newsletter stream, 90 low-value history items.",
+      "evidence": {
+        "history_count": 91,
+        "categories": {
+          "other": 90,
+          "follow_up_needed": 1
+        },
+        "priorities": {
+          "LOW": 89,
+          "MEDIUM": 2
+        },
+        "pipeline_matches": 0,
+        "latest_seen": "2026-06-05T20:56:03+00:00",
+        "top_subjects": [
+          "=?UTF-8?q?=F0=9F=94=B7_A_Tale_of_Two_DATs?=",
+          "=?UTF-8?b?8J+PtCBTYWZlciBDcnlwdG8gU3dhcHBpbmc/?=",
+          "=?UTF-8?q?=F0=9F=8F=B4_Tempo_Makes_Its_Case?="
+        ],
+        "protected_term_hits": {}
+      },
+      "gmail_query": "from:team@bankless.com",
+      "proposed_action": "Apply label and skip Inbox. Keep messages searchable. No delete."
+    }
+  ],
+  "protected_senders": [
+    {
+      "from": "recruitment.notify@oia.gov.om",
+      "label": "Protected Job Source",
+      "reason": "Recruitment sender, do not filter until manually reviewed.",
+      "evidence": {
+        "history_count": 101,
+        "categories": {
+          "other": 100,
+          "assessment": 1
+        },
+        "priorities": {
+          "LOW": 100,
+          "MEDIUM": 1
+        },
+        "pipeline_matches": 0,
+        "latest_seen": "2026-06-04T00:12:53+04:00",
+        "top_subjects": [
+          "Job Vacancy",
+          "Secondment Opportunity"
+        ],
+        "protected_term_hits": {
+          "oia.gov.om": 101,
+          "job": 95,
+          "vacancy": 95,
+          "opportunity": 6
+        }
+      },
+      "proposed_action": "No filter. Keep visible until manually reviewed."
+    }
+  ],
+  "review_only_senders": [
+    {
+      "from": "notifications@github.com",
+      "label": "GitHub",
+      "reason": "High-volume GitHub notifications can include useful repo signals, label first before archiving.",
+      "evidence": {
+        "history_count": 887,
+        "categories": {
+          "other": 887
+        },
+        "priorities": {
+          "LOW": 757,
+          "MEDIUM": 123,
+          "HIGH": 7
+        },
+        "pipeline_matches": 2,
+        "latest_seen": "2026-06-06T18:47:53-07:00",
+        "top_subjects": [
+          "=?UTF-8?Q?Re:_[VoltAgent/awesome-openclaw-skills]_feat:_add_OpenCl?=   =?UTF-8?Q?aw_Monitor_=E2=80=94_AI_monitoring_dash",
+          "Re: [VoltAgent/awesome-openclaw-skills] Add skill:   morrow-compression-monitor (PR #357)",
+          "=?UTF-8?Q?Re:_[VoltAgent/awesome-openclaw-skills]_Add_Burgess?=   =?UTF-8?Q?_Principle_Layer_=E2=80=93_lightweight_human"
+        ],
+        "protected_term_hits": {
+          "github.com": 887,
+          "job": 72,
+          "jobs": 43,
+          "password": 8,
+          "otp": 3,
+          "application": 3,
+          "identity": 2,
+          "recruiter": 2
+        }
+      },
+      "gmail_query": "from:notifications@github.com",
+      "proposed_action": "Apply label only for 7 days. Do not archive yet."
+    }
+  ],
+  "summary": {
+    "auto_archive_label_senders": 13,
+    "review_only_senders": 1,
+    "protected_senders": 1,
+    "estimated_history_items_covered_by_auto_archive": 3404
+  }
+}

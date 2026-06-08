@@ -1,89 +1,93 @@
 {
-  "generated_at": "2026-05-31T08:10:23.807984+03:00",
-  "history_items": 10301,
-  "actionable_items": 595,
-  "noise_items": 9706,
+  "generated_at": "2026-06-07T08:10:24.836402+03:00",
+  "history_items": 11520,
+  "actionable_items": 662,
+  "noise_items": 10858,
   "top_noise_senders": [
     [
       "info@host.discountwalas.com",
-      1323
+      1463
     ],
     [
       "notifications@github.com",
-      810
+      887
     ],
     [
       "no-reply@mail.therumble.app",
-      266
+      299
     ],
     [
       "newsletter@em.discountwalas.com",
-      245
+      261
     ],
     [
       "me@juliangoldie.com",
-      192
+      201
     ],
     [
       "noreply@skool.com",
-      157
+      167
     ],
     [
       "newsletters@arabianbusiness.com",
-      147
-    ],
-    [
-      "thebusinessengineer@substack.com",
-      125
-    ],
-    [
-      "hello@moby.co",
-      119
-    ],
-    [
-      "temu@commerce.temuemail.com",
-      109
+      164
     ],
     [
       "newsletters@mail.theankler.com",
-      106
+      139
     ],
     [
-      "hello@mail.trade-ideas.com",
-      92
+      "thebusinessengineer@substack.com",
+      135
+    ],
+    [
+      "hello@moby.co",
+      131
+    ],
+    [
+      "temu@commerce.temuemail.com",
+      119
     ],
     [
       "recruitment.notify@oia.gov.om",
-      92
+      100
+    ],
+    [
+      "hello@mail.trade-ideas.com",
+      98
     ],
     [
       "team@bankless.com",
-      85
+      90
     ],
     [
-      "editor@newsletter.thepaypers.com",
-      73
+      "newsletter@em.flickonclick.com",
+      87
     ]
   ],
   "top_repeated_subjects": [
     [
       "job vacancy",
-      87
+      94
     ],
     [
       "=?utf-8?b?v0igrgfpbhkgtwfya2v0iejyawvmicygvhjhzgluzybpchbvcnr1?=\r\n =?utf-8?b?bml0awvziokyl",
-      51
+      56
     ],
     [
       "new pmo jobs",
-      42
+      49
     ],
     [
       "=?utf-8?b?2kfyrtixinin2lxyr9in2lhyp9iqiniq2ylyp9ix2yryssdyqnit2yjyqw==?=\r\n =?utf-8?b?inmf2",
-      37
+      40
     ],
     [
       "=?utf-8?q?=f0=9f=98=b2_=e2=89=a4_$9.9!_luxe_for_less?=",
+      20
+    ],
+    [
+      "ahmed, hot job opportunities waiting for you",
       19
     ],
     [
@@ -91,40 +95,36 @@
       18
     ],
     [
-      "ahmed, hot job opportunities waiting for you",
-      15
+      "confirm your identity",
+      17
     ],
     [
       "now only egp5.63!",
+      16
+    ],
+    [
+      "=?utf-8?b?mjagbmv3ievuz2luzwvycybqb2jzigluiffhdgfyiq==?=",
       14
     ],
     [
       "you've succeeded!",
+      13
+    ],
+    [
+      "ahmed nasr mba,, please verify your new device",
       12
     ],
     [
       "=?utf-8?b?ww91ciblegvjdxrpdmugcg1vihjvbgugbg9va3mgz3jlyxqg4ocu?=\r\n\t=?utf-8?b?igp1c3qgy29uz",
-      11
+      12
     ],
     [
       "standard chartered: we have new opportunities you may be interested\r\n in",
-      10
+      11
     ],
     [
       "new jobs posted from www.afuturewithus.com",
-      10
-    ],
-    [
-      "security alert",
-      10
-    ],
-    [
-      "new jobs posted from careers.powerholding-intl.com",
-      10
-    ],
-    [
-      "3 pending contact requests, 9+ current contact suggestions and other\r\n updates",
-      10
+      11
     ]
   ],
   "recommendation": "Review these candidates manually before unsubscribe, block, archive, or Gmail filter changes. No mailbox action was taken."

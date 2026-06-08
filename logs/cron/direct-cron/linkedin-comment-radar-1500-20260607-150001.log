@@ -1,0 +1,15 @@
+{
+  "task": "linkedin-comment-radar-1500",
+  "ts": "2026-06-07T15:01:22.352362+03:00",
+  "cmd": [
+    "/usr/bin/python3",
+    "scripts/run_linkedin_comment_radar.py",
+    "--slot",
+    "1500"
+  ],
+  "cwd": "/root/.openclaw/workspace-cmo",
+  "returncode": 0,
+  "stdout": "/root/.openclaw/workspace-cmo/reports/linkedin-comment-radar/2026-06-07-1500.md\ncards=/root/.openclaw/workspace-cmo/outbox/linkedin-comment-radar-cards/2026-06-07-1500.json\nstatus=no_snapshot_candidates posts=0\n\n--- Telegram detail block ---\nLinkedIn Comment Radar 15:00 completed. Status: no_snapshot_candidates\nCandidates reviewed: 0\nApproval-ready: 0/0\nNeeds URL recovery: 0/0\n\nApproval cards:\nNo candidates extracted. No LinkedIn action was performed.\n\nNext action: skip this batch; no candidate passed the quality gate.\nOnly candidates marked ready receive approval buttons in the card flow.\nNo LinkedIn posting, liking, commenting, messaging, or external LinkedIn action was performed.\n",
+  "stderr": "",
+  "log_path": "/root/.openclaw/workspace/logs/cron/direct-cron/linkedin-comment-radar-1500-20260607-150001.log"
+}

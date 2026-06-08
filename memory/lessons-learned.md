@@ -1256,3 +1256,31 @@ Do not install Copilot-specific dashboard tooling into OpenClaw production just 
 Obsidian is useful as a human-readable thinking layer, but it should not replace OpenClaw memory, Notion workflows, ledgers, RSS intelligence, or operational reports.
 ### Do differently
 If building an Obsidian/NASR Knowledge Brain vault, mirror existing trusted Markdown and operational artifacts, keep community plugins minimal, and prefer Git/plain Markdown sync over fragile free-sync workarounds.
+
+## 2026-06-07 - Windows PowerShell Config Scripts Need Safe Variables, Secrets, And Encoding
+
+### Incident
+Hermes Telegram setup got stuck on `[Telegram] No bot token configured` because runnable PowerShell snippets wrote the placeholder `TELEGRAM_BOT_TOKEN=***`, used reserved `$HOME`/`$home`, relied on fragile YAML indentation from chat copy/paste, and used `Set-Content -Encoding UTF8` for `.env`, which can add a BOM on Windows PowerShell.
+### Do differently
+For Windows PowerShell setup scripts, use nonreserved names such as `$hermesHome`, write the actual `$token` into generated files, validate full BotFather token shape before writing, use BOM-free UTF-8 (`System.Text.UTF8Encoding($false)`) for `.env`, and show a file/log validation step before telling Ahmed to retry. If a bot token appears in chat, remind him to rotate it after the service works.
+
+## 2026-06-07 - Hermes Telegram And Slack Have Separate Runtime Homes
+
+### Preference
+Current intended split: VPS Hermes runs Slack only and stays always-on; Windows laptop Hermes owns Telegram and only responds while the laptop is awake and the gateway is running.
+### Do differently
+When Telegram Hermes is down, first check whether the Windows laptop gateway is reachable/running before debugging VPS Slack Hermes. Do not run the same Telegram bot token on VPS and Windows at the same time; recommend moving Telegram back to VPS for 24/7 Telegram access, with Tailscale only as a remote-management aid for Windows.
+
+## 2026-06-07 - Daily Backup Is Disabled By Request
+
+### Preference
+Ahmed asked to stop daily backups. The OpenClaw cron `Daily OpenClaw Backup` (`20f54174-5a9b-46bd-b105-c8bb939a2c8b`) is disabled, and the OS root crontab `daily-backup` line plus `/root/.openclaw/workspace/config/root-crontab.managed` were commented out. Daily snapshots, retention cleanup, and the weekly backup restore smoke test were left enabled.
+### Do differently
+Do not re-enable daily backups unless Ahmed explicitly asks. For future backup schedule work, verify both OpenClaw cron and root crontab/managed crontab state, and preserve snapshots, retention, and restore-smoke coverage unless the request names them too.
+
+## 2026-06-07 - OpenClaw Gateway Shell May Not Provide `apply_patch`
+
+### Incident
+During the daily lessons capture, the gateway shell did not have the `apply_patch` command available (`Command 'apply_patch' not found`), so the edit could not use the normal patch helper there.
+### Do differently
+When editing through OpenClaw `sandbox_exec` on the gateway, check whether `apply_patch` exists before relying on it. If it is missing and an edit is required, use a small deterministic script, then immediately verify the diff/content.

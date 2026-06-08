@@ -1,91 +1,84 @@
 {
   "status": "ok",
-  "scan_time": "2026-06-06T21:01:02.901391+03:00",
-  "total_scanned": 42,
+  "scan_time": "2026-06-07T20:00:28.753128+03:00",
+  "total_scanned": 20,
   "by_category": {
-    "interview_invite": 0,
+    "interview_invite": 1,
     "recruiter_reach": 0,
     "application_ack": 0,
     "rejection": 0,
-    "assessment": 1,
+    "assessment": 0,
     "application_response": 0,
     "follow_up_needed": 0,
-    "job_alert": 1,
-    "other": 40
+    "job_alert": 0,
+    "other": 19
   },
-  "interview_invites": [],
+  "interview_invites": [
+    {
+      "id": "361227",
+      "from": "Miriam Emad <miriam.emad@sdggroup.com>",
+      "subject": "Update Regarding Your Application Process",
+      "date": "Sun, 7 Jun 2026 16:52:01 +0300",
+      "unread": true,
+      "priority": "MEDIUM",
+      "score": 3,
+      "pipeline_match": null,
+      "confidence": 70,
+      "confidence_label": "medium",
+      "evidence": [
+        "hiring/application context",
+        "calendar or explicit interview evidence",
+        "medium priority score: 3"
+      ],
+      "why_actionable": "hiring/application context | calendar or explicit interview evidence | medium priority score: 3"
+    }
+  ],
   "recruiter_messages": [],
   "application_acks": [],
   "rejections": [],
-  "assessments": [
-    {
-      "id": "361105",
-      "from": "Fiona The Millennial Money Woman <fiona@themillennialmoneywoman.com>",
-      "subject": "Doors close at midnight",
-      "date": "06 Jun 2026 14:03:18 -0000",
-      "unread": true,
-      "priority": "MEDIUM",
-      "score": 2,
-      "pipeline_match": null,
-      "confidence": 50,
-      "confidence_label": "low",
-      "evidence": [
-        "hiring/application context",
-        "assessment keyword with hiring context",
-        "medium priority score: 2"
-      ],
-      "why_actionable": "not actionable: hiring/application context | assessment keyword with hiring context | medium priority score: 2"
-    }
-  ],
+  "assessments": [],
   "application_responses": [],
   "follow_ups_needed": [],
-  "job_alerts": [
-    {
-      "id": "361100",
-      "from": "GulfTalent Jobs <jobs@gulftalent.com>",
-      "subject": "Ascentis needs a Project Director",
-      "date": "Sat, 06 Jun 2026 08:30:28 -0500",
-      "unread": true,
-      "priority": "LOW",
-      "score": 0,
-      "pipeline_match": null,
-      "confidence": 25,
-      "confidence_label": "very_low",
-      "evidence": [
-        "automated job alert",
-        "known recruiter/job domain",
-        "hiring sender context",
-        "noise/job-alert guard applied"
-      ],
-      "why_actionable": "not actionable: automated job alert | known recruiter/job domain | hiring sender context | noise/job-alert guard applied"
-    }
-  ],
-  "actionable_count": 0,
+  "job_alerts": [],
+  "actionable_count": 1,
   "hot_alerts": [],
   "signals": [],
   "pipeline_review_candidates": [
     {
-      "timestamp": "2026-06-06T21:01:02.901413+03:00",
-      "review_type": "possible_assessment",
-      "category": "assessment",
-      "email_id": "361105",
-      "subject": "Doors close at midnight",
-      "from": "Fiona The Millennial Money Woman <fiona@themillennialmoneywoman.com>",
+      "timestamp": "2026-06-07T20:00:28.753144+03:00",
+      "review_type": "possible_interview",
+      "category": "interview_invite",
+      "email_id": "361227",
+      "subject": "Update Regarding Your Application Process",
+      "from": "Miriam Emad <miriam.emad@sdggroup.com>",
       "priority": "MEDIUM",
       "pipeline_match": null,
       "status": "needs_human_review"
     }
   ],
   "llm_analysis": {
-    "actionable_emails": [],
+    "actionable_emails": [
+      {
+        "id": "361227",
+        "subject": "Update Regarding Your Application Process",
+        "from": "Miriam Emad <miriam.emad@sdggroup.com>",
+        "date": "Sun, 7 Jun 2026 16:52:01 +0300",
+        "category": "interview_invite",
+        "urgency": "low",
+        "intent": "The sender is informing Ahmed that the Program Manager hiring process is currently on hold with no confirmed restart timeline.",
+        "action": "read_and_file",
+        "response_deadline": "when convenient",
+        "notes": "No reply needed now; keep warm if role resumes."
+      }
+    ],
     "summary": {
-      "total_actionable": 0,
+      "total_actionable": 1,
       "critical_count": 0,
       "requires_interview_prep": false,
       "requires_assessment": false,
       "recruiter_top_opportunities": [],
       "top_priority": null,
-      "daily_focus": "No email action needed from this batch."
+      "daily_focus": "No urgent email action today; monitor SDG Group for reopening while prioritizing active GCC leadership opportunities."
     }
   }
 }

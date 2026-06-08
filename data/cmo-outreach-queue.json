@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-06T08:31:42.049121+03:00",
+  "last_updated": "2026-06-07T05:27:00Z",
   "items": [
     {
       "company": "Netcracker Technology in Dubai, United Arab Emirates â Apply on Wuzzuf",
@@ -166,7 +166,40 @@
       "job_url": "https://www.linkedin.com/jobs/view/4420496035",
       "verdict": "SUBMIT",
       "queued_at": "2026-06-05T12:48:51.236198+03:00",
-      "status": "queued"
+      "status": "researched",
+      "exported_at": "2026-06-07T05:10:17.867404Z",
+      "processed_at": "2026-06-07T05:27:00Z",
+      "warm_intro_rating": "medium",
+      "warm_intro_candidates": [
+        {
+          "name": "Taha Basri",
+          "title": "Salesforce, Dubai / UAE market profile",
+          "linkedin_url": "https://ae.linkedin.com/in/tahabasri",
+          "why": "Public LinkedIn result shows a Dubai-based Salesforce profile active around UAE AI/digital transformation. Best business-side network route found when no direct job poster was visible. Validate exact role before asking Ahmed to send a request."
+        },
+        {
+          "name": "Khaled El Fakharany",
+          "title": "Salesforce, Dubai / Middle East enterprise sales profile",
+          "linkedin_url": "https://ie.linkedin.com/in/khaledfakharany",
+          "why": "Public LinkedIn result shows Salesforce in Dubai with Middle East enterprise sales context. Useful as a regional Salesforce insider route, but not confirmed as the hiring manager."
+        },
+        {
+          "name": "Sean Caruana",
+          "title": "SOLV Recruitment, Salesforce UAE/KSA ecosystem recruiter",
+          "linkedin_url": "https://ae.linkedin.com/company/solvrecruitment",
+          "why": "Not a Salesforce employee, but local Salesforce ecosystem recruiter publicly posting about UAE/KSA Salesforce networking. Useful secondary route if direct Salesforce contacts stay cold."
+        }
+      ],
+      "queue_notes": [
+        "Local job data and public LinkedIn page confirm the role is a Middle East Service Delivery Director role in Customer Success, based UAE or KSA, requiring regional delivery leadership, governance, CSAT/NPS, utilization, revenue, margin, partner ecosystem, and C-level stakeholder management.",
+        "Authenticated browser tooling was not exposed in this cron turn, and the LinkedIn skill forbids cookie extraction/repair. No cookies were inspected or modified; validation used local job data plus public LinkedIn pages/snippets.",
+        "Warmth is medium: role fit is strong for GCC transformation/program delivery, but Salesforce platform/services specificity and no visible direct job poster make the intro path less warm than RAKBANK."
+      ],
+      "next_actions": [
+        "Draft-first approach only; do not send connection requests without Ahmed approval.",
+        "Prioritize Taha Basri or Khaled El Fakharany only after Ahmed approves a business-side Salesforce networking route; use Sean Caruana as an ecosystem/referral route rather than a hiring route.",
+        "Suggested connection note: Hi Taha — I saw Salesforce's Middle East Service Delivery Director role. My work has focused on GCC digital transformation, PMO governance, and executive delivery across healthcare and payments. Happy to connect with Salesforce leaders shaping regional delivery."
+      ]
     },
     {
       "company": "Takamol Holding",
@@ -175,7 +208,40 @@
       "job_url": "https://www.linkedin.com/jobs/view/4423523564",
       "verdict": "SUBMIT",
       "queued_at": "2026-06-05T12:48:51.238837+03:00",
-      "status": "queued"
+      "status": "researched",
+      "exported_at": "2026-06-07T05:10:17.867430Z",
+      "processed_at": "2026-06-07T05:27:00Z",
+      "warm_intro_rating": "high",
+      "warm_intro_candidates": [
+        {
+          "name": "Abdulrahman AlAhmari SHRM-ACHRM",
+          "title": "Talent Acquisition Specialist at Takamol Holding",
+          "linkedin_url": "https://sa.linkedin.com/in/abdalrhman-abumelha",
+          "why": "Direct Takamol talent acquisition route in Riyadh. Public LinkedIn result confirms current Takamol Holding TA context and a large local network."
+        },
+        {
+          "name": "Abdulmajeed Altala, MBA, CIPD 5",
+          "title": "Talent Acquisition / Recruitment / HR projects / HRBP",
+          "linkedin_url": "https://www.linkedin.com/jobs/view/2477295572/",
+          "why": "Public Takamol LinkedIn job page identifies him as a prior/direct message job poster for Takamol talent acquisition. Useful senior HR/recruitment route, current status should be verified before outreach."
+        },
+        {
+          "name": "Eng. Mohamed AlDobaie, PfMP, PMP, P3O, ITIL",
+          "title": "Portfolio & Program Manager at Takamol Holding",
+          "linkedin_url": "https://sa.linkedin.com/in/eng-mohamed-aldobaie-pfmp%C2%AE-pmp%C2%AE-p3o%C2%AE-itil%C2%AE-958bb065",
+          "why": "Business-side portfolio/program profile at Takamol. Good peer route because the role is specifically about enterprise PPM, governance, portfolio controls, value realization, and executive dashboards."
+        }
+      ],
+      "queue_notes": [
+        "Local job data and public LinkedIn pages confirm a Riyadh Portfolio Control Senior Manager / PPM mandate focused on enterprise-wide portfolio governance, intake control, financial visibility, executive dashboards, PPM tools, and maturity development.",
+        "Authenticated browser tooling was not exposed in this cron turn, and the LinkedIn skill forbids cookie extraction/repair. No cookies were inspected or modified; validation used local job data plus public LinkedIn pages/snippets.",
+        "Warmth is high: the role is tightly aligned with Ahmed's PMO, portfolio governance, transformation, and executive reporting narrative, especially for Saudi Vision 2030 public-sector-adjacent work."
+      ],
+      "next_actions": [
+        "Draft-first approach only; do not send connection requests without Ahmed approval.",
+        "Prioritize Abdulrahman AlAhmari as the recruiter route; keep Eng. Mohamed AlDobaie as the business-side peer route if Ahmed wants a more strategic Takamol introduction.",
+        "Suggested connection note: Hi Abdulrahman — I saw Takamol's Portfolio Control Senior Manager mandate. I have led PMO and transformation governance across GCC healthcare and payments, including portfolio prioritization, executive reporting, and value realization. Happy to connect."
+      ]
     },
     {
       "company": "RAKBANK",
@@ -184,14 +250,48 @@
       "job_url": "https://www.linkedin.com/jobs/view/4417864039/",
       "verdict": "SUBMIT",
       "queued_at": "2026-06-06T08:31:42.049112+03:00",
-      "status": "queued"
+      "status": "researched",
+      "exported_at": "2026-06-07T05:10:17.867433Z",
+      "processed_at": "2026-06-07T05:27:00Z",
+      "warm_intro_rating": "high",
+      "warm_intro_candidates": [
+        {
+          "name": "Pranali Kamble",
+          "title": "Global Talent Acquisition / HR Business Partnership / Headhunter at RAKBANK",
+          "linkedin_url": "https://ae.linkedin.com/in/pranali-kamble-274681137",
+          "why": "Direct LinkedIn job poster for the Head of Enterprise Transformation & Intelligent Automation role. Public profile also shows active RAKBANK talent acquisition and transformation workforce themes."
+        },
+        {
+          "name": "Antonella Mule",
+          "title": "SVP & Head of Transformation at RAKBANK",
+          "linkedin_url": "https://www.linkedin.com/posts/antonella-mul%C3%A8-67a87858_excited-to-share-that-ive-joined-rakbankone-activity-7404933638124929025-1iAQ",
+          "why": "Public LinkedIn post result says she recently joined RAKBANK as SVP & Head of Transformation. Strong business-side context for the transformation mandate; validate before positioning as hiring manager."
+        },
+        {
+          "name": "Ashfaq Bandey",
+          "title": "Executive Vice President - Head of Talent Acquisition, Onboarding & Talent Management at RAKBANK",
+          "linkedin_url": "https://www.linkedin.com/posts/bankopedia_ashfaq-bandey-has-been-appointed-as-executive-activity-7369756868522524673-b7TK",
+          "why": "Public LinkedIn post result identifies him as EVP Head of Talent Acquisition, Onboarding & Talent Management. Good senior HR escalation route if direct poster does not respond."
+        }
+      ],
+      "queue_notes": [
+        "Local job data and public LinkedIn page confirm the role is a Dubai Head of Enterprise Transformation & Intelligent Automation mandate, with AI/RPA/workflow orchestration, process optimization, target operating model, governance, KPIs, benefits tracking, and senior stakeholder change management.",
+        "Authenticated browser tooling was not exposed in this cron turn, and the LinkedIn skill forbids cookie extraction/repair. No cookies were inspected or modified; validation used local job data plus public LinkedIn pages/snippets.",
+        "Warmth is high and should be treated as the priority queue item this week: banking transformation, intelligent automation, regulated-environment governance, executive change, and measurable productivity gains all map directly to Ahmed's positioning."
+      ],
+      "next_actions": [
+        "Draft-first approach only; do not send connection requests without Ahmed approval.",
+        "Prioritize Pranali Kamble first because she is the direct job poster. If accepted, follow with a concise note asking whether she owns the transformation/automation mandate or can route Ahmed to the right stakeholder.",
+        "Use Antonella Mule as a business-side transformation route if Ahmed wants executive networking beyond recruiting; use Ashfaq Bandey only as a senior HR escalation route.",
+        "Suggested connection note: Hi Pranali — I saw RAKBANK's Head of Enterprise Transformation & Intelligent Automation role. My work has focused on GCC banking/payments and healthcare transformation, PMO governance, automation adoption, and measurable operating-model change. Happy to connect."
+      ]
     }
   ],
   "last_weekly_review": {
-    "reviewed_at": "2026-05-31T05:10:17.400521Z",
+    "reviewed_at": "2026-06-07T05:27:00Z",
     "cron": "CMO Weekly Outreach Queue — Sunday",
-    "queued_count": 0,
-    "status": "no_queued_items",
-    "note": "Weekly script ran; no queued items needed LinkedIn processing this week. Existing researched backlog remains unchanged; no external LinkedIn actions were taken."
+    "queued_count": 3,
+    "status": "processed",
+    "note": "Weekly script ran and exported 3 queued items. Salesforce, Takamol Holding, and RAKBANK were researched using local job data plus public LinkedIn pages/snippets. Authenticated browser tooling was unavailable in this cron turn and cookies were not inspected or modified. No external LinkedIn actions were taken; next actions require Ahmed approval."
   }
 }

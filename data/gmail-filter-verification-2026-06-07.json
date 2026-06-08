@@ -1,0 +1,8 @@
+{
+  "total_filters": 28,
+  "missing_auto_archive_filters": [],
+  "missing_github_label_only_filter": [],
+  "auto_filters_without_skip_inbox": [],
+  "github_removes_inbox": false,
+  "protected_sender_filter_present": false
+}

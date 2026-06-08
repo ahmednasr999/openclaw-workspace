@@ -1,0 +1,16 @@
+{
+  "labels_created": [
+    "Commercial Noise",
+    "GitHub",
+    "Newsletters"
+  ],
+  "labels_existing": [],
+  "filters_created": 14,
+  "filters_skipped_existing": 0,
+  "filters_before": 14,
+  "filters_after": 28,
+  "missing_expected_filters": [],
+  "protected_untouched": [
+    "recruitment.notify@oia.gov.om"
+  ]
+}

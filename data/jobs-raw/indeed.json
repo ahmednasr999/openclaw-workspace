@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-06-06T08:00:38.283134+03:00",
-    "duration_ms": 36806,
+    "generated_at": "2026-06-07T10:00:38.430805+03:00",
+    "duration_ms": 35988,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "b6f1fee1",
+    "run_id": "5c13b852",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -26,7 +26,7 @@
       "match_keywords": [
         "ai"
       ],
-      "raw_snippet": "Head Waiter/Head Waitress \\-Casea 101  \n\n(18596\\)  \n\n\n\nAt One\\&Only, we exist to create joy for our guests through anticipation, creativity, precision, empathy and warmth. We tailor every aspect of our guests\u2019 stay to bring their dreams and desires to life. With an atmosphere that\u2019s chic but wonderfully unstuffy\u2122, and a team who are meticulous but warm, we seek to exceed our guests\u2019 expectations at every possible turn.  \n\nGlistening on a private apex of Palm Island, One\\&Only The Palm is an inti",
+      "raw_snippet": "Head Waiter/Head Waitress \\-Casea 101  \n\n(18596\\)\n\n  \n\n\n\nAt One\\&Only, we exist to create joy for our guests through anticipation, creativity, precision, empathy and warmth. We tailor every aspect of our guests\u2019 stay to bring their dreams and desires to life. With an atmosphere that\u2019s chic but wonderfully unstuffy\u2122, and a team who are meticulous but warm, we seek to exceed our guests\u2019 expectations at every possible turn.\n\n  \n\nGlistening on a private apex of Palm Island, One\\&Only The Palm is an ",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
@@ -144,35 +144,31 @@
       "search_title": "Program Director"
     },
     {
-      "id": "indeed-in-8b3c2029c557ecc6",
+      "id": "indeed-in-1ea7c7dec5a280fc",
       "source": "indeed",
-      "title": "Market and Product Expansion Director - Treasury Services & Payments - Executive Director - Riyadh",
-      "company": "JPMorganChase",
+      "title": "Contracts Director",
+      "company": "Turner & Townsend Pty Limited",
       "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=8b3c2029c557ecc6",
-      "posted": "2026-06-03",
+      "url": "https://sa.indeed.com/viewjob?jk=1ea7c7dec5a280fc",
+      "posted": "2026-06-04",
       "seniority": "C-Suite",
       "domain_match": false,
-      "keyword_score": 30,
+      "keyword_score": 6,
       "match_keywords": [
-        "payments",
-        "executive",
-        "director",
-        "middle east",
-        "riyadh"
+        "director"
       ],
-      "raw_snippet": "**JOB DESCRIPTION**  \n\n  \n\n  \n\nRelease your expertise and navigate regulatory landscapes to bring products to life in a global market. Shape your future and ours as you collaborate with teams and bridge products with market demands.\n\n\nThe Central, Eastern Europe, Middle East and Africa (CEEMEA) Treasury Services (TS) Team forms part of the Global TS Product team, partnering with global and regional stakeholders to execute on product strategy, development and commercialization of the end to end T",
+      "raw_snippet": "**Company Description**  \n\nAt Turner \\& Townsend we\u2019re passionate about making the difference. That means delivering better outcomes for our clients, helping our people to realize their potential, and doing our part to create a prosperous society.  \n\nEvery day we help our major global clients deliver ambitious and highly technical projects, in over 130 countries worldwide.  \n\nOur team is dynamic, innovative and client\\-focused, supported by an inclusive and fun company culture. Our clients value",
       "relevant": true,
       "filter_reason": null,
       "search_country": "Saudi Arabia",
-      "search_title": "Head of Technology"
+      "search_title": "IT Director"
     }
   ],
   "kpi": {
     "searches_run": 20,
-    "results_per_search": 3.55,
+    "results_per_search": 2.95,
     "unique_jobs": 7,
-    "errors": 5
+    "errors": 7
   },
   "recommendations": []
 }
