@@ -3076,3 +3076,56 @@ Node.js v22.22.1
 ## Calendar - Today's Events
 missing --account (or set GOG_ACCOUNT, set default via `gog auth manage`, or store exactly one token)
 
+=== Morning Brief - 2026-06-09 06:10 AM ===
+
+## Claude 2x Usage Reminder
+
+## Job Radar (from Tavily)
+[search-router] Tavily unavailable, falling back to local SearXNG: Tavily Search failed (401): {"detail":{"error":"Unauthorized: missing or invalid API key."}}
+## Sources
+
+_(provider: searxng)_
+
+- **83 pmo Jobs in United Arab Emirates, January 2026 | Glassdoor**
+  https://www.glassdoor.com/Job/united-arab-emirates-pmo-jobs-SRCH_IL.0,20_IN6_KO21,24.htm
+  The top companies hiring now are Blue Book Global, Atlantis Dubai, Unique Group, Emirates Nuclear Energy Company, Julphar, BlackStone eIT, VaporVM, Dicetek LLC, Omnix International, Schneider Electric
+
+- **PMO Jobs in the Middle East (May 2026) - Bayt.com**
+  https://www.bayt.com/en/international/jobs/pmo-jobs/
+  Apply now to over 410 PMO jobs in Middle East and Gulf and make your job hunting simpler. Find the latest PMO job vacancies and employment opportunities in Middle East and Gulf.
+
+- **Head Of Digital Transformation Jobs in UAE (May 2026) - Bayt.com**
+  https://www.bayt.com/en/uae/jobs/head-of-digital-transformation-jobs/
+  shreqBank JOB DESCRIPTION 1 Job Title Program Director, GTB Digital Transformation – PMO Department CIBG - GTB Direct Supervisor…
+
+- **Executive Leadership | Dubai Health**
+  https://dubaihealth.ae/our-executive-team
+  Meet Dubai Health's executive team who are driving our mission and shaping the future of healthcare in Dubai.
+
+- **‏Dr. Joseph George‏ - ‏Healthcare Chief Information Officer**
+  https://ae.linkedin.com/in/josephgeorgejg
+  We cannot provide a description for this page right now
+
+## Gmail - New Opportunities
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/root/.openclaw/workspace/scripts/gmail-scan.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+
+## Calendar - Today's Events
+missing --account (or set GOG_ACCOUNT, set default via `gog auth manage`, or store exactly one token)
+
