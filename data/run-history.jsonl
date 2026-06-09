@@ -2806,3 +2806,7 @@
 {"agent": "email-agent", "run_id": "bc1fcd97", "started": "2026-06-07T16:01:39.019698+03:00", "duration_ms": 758, "status": "success", "records": 16, "error": null}
 {"agent": "email-agent", "run_id": "96238b38", "started": "2026-06-07T20:00:41.319713+03:00", "duration_ms": 25236, "status": "success", "records": 17, "error": null}
 {"agent": "jobs-source-linkedin-jobspy", "run_id": "4c67332b", "started": "2026-06-08T05:28:48.039712+03:00", "duration_ms": 1719733, "status": "success", "records": 474, "error": null}
+{"agent": "email-agent", "run_id": "5b640552", "started": "2026-06-08T08:01:45.189950+03:00", "duration_ms": 79142, "status": "success", "records": 17, "error": null}
+{"agent": "email-agent", "run_id": "16db6608", "started": "2026-06-08T12:01:03.682103+03:00", "duration_ms": 30106, "status": "success", "records": 17, "error": null}
+{"agent": "email-agent", "run_id": "75c70516", "started": "2026-06-08T16:01:09.398625+03:00", "duration_ms": 34641, "status": "success", "records": 17, "error": null}
+{"agent": "email-agent", "run_id": "6aec263f", "started": "2026-06-08T20:01:03.209785+03:00", "duration_ms": 36639, "status": "success", "records": 17, "error": null}

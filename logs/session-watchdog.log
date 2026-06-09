@@ -434,3 +434,13 @@
 [2026-06-07T21:56:53Z] Done reset=0 skipped=0 errors=0
 [2026-06-08T00:58:06Z] Done reset=0 skipped=0 errors=0
 [2026-06-08T03:57:14Z] Done reset=0 skipped=0 errors=0
+[2026-06-08T06:56:58Z] Done reset=0 skipped=0 errors=0
+[2026-06-08T09:56:17Z] RESET [hr] 1673065d-7b09-4591-9254-a89860432a7a-topic-9.trajectory.jsonl was 3MB -> archived to 1673065d-7b09-4591-9254-a89860432a7a-topic-9.trajectory.20260608T095617Z.jsonl.gz
+[2026-06-08T09:57:23Z] Done reset=1 skipped=0 errors=0
+[2026-06-08T12:56:07Z] RESET [hr] 1673065d-7b09-4591-9254-a89860432a7a-topic-9.trajectory.jsonl was 3MB -> archived to 1673065d-7b09-4591-9254-a89860432a7a-topic-9.trajectory.20260608T125607Z.jsonl.gz
+[2026-06-08T12:57:08Z] Done reset=1 skipped=0 errors=0
+[2026-06-08T15:56:56Z] Done reset=0 skipped=0 errors=0
+[2026-06-08T18:56:59Z] Done reset=0 skipped=0 errors=0
+[2026-06-08T21:57:00Z] Done reset=0 skipped=0 errors=0
+[2026-06-09T00:56:53Z] Done reset=0 skipped=0 errors=0
+[2026-06-09T03:56:56Z] Done reset=0 skipped=0 errors=0

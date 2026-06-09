@@ -210,6 +210,16 @@
 | 319 | 🆕 | Tabby | تابي | Head of Partnerships | Dubai | — | 🆕 Discovered | Radar | 2026-06-07 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4423376118) | — |
 | 320 | 🆕 | Floin | Head of Customer Experience | Dubai | — | 🆕 Discovered | Radar | 2026-06-07 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4419276686) | — |
 | 321 | 🆕 | PhillipCapital (DIFC) Private Limited | Head of Institutional Clients | Dubai | — | 🆕 Discovered | Radar | 2026-06-07 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4421835623) | — |
+| 322 | 🆕 | Confidential | Chief Information Officer | Riyadh | — | 🆕 Discovered | Radar | 2026-06-09 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4421572631) | — |
+| 323 | 🆕 | Sundus | Program Director | Jeddah | — | 🆕 Discovered | Radar | 2026-06-09 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4425015503) | — |
+| 324 | 🆕 | Match | ماتش | Head of PMO | Jeddah | — | 🆕 Discovered | Radar | 2026-06-09 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4421912299) | — |
+| 325 | 🆕 | Jobgether | Director of Engineering | GCC | — | 🆕 Discovered | Radar | 2026-06-09 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4424517604) | — |
+| 326 | 🆕 | WSP in the Middle East | Head of Mission Critical – Senior Technical Director | Riyadh | — | 🆕 Discovered | Radar | 2026-06-09 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4420701424) | — |
+| 327 | 🆕 | Dan - PIF Company | Corporate IT Director | Riyadh | — | 🆕 Discovered | Radar | 2026-06-09 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4425084535) | — |
+| 328 | 🆕 | Michael Page | Head of Data Products & Engineering | Dubai | — | 🆕 Discovered | Radar | 2026-06-09 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4424978911) | — |
+| 329 | 🆕 | MoonTech | Director of Product Management | Dubai | — | 🆕 Discovered | Radar | 2026-06-09 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4419236683) | — |
+| 330 | 🆕 | Taptap Send | Head of East Africa | Dubai | — | 🆕 Discovered | Radar | 2026-06-09 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4425543212) | — |
+
 
 
 
@@ -472,3 +482,63 @@
 - Date Applied: 2026-05-20
 - Notes: Applied by Ahmed via LinkedIn. Strong match for program governance, multi-workstream delivery, RAID management, integrated planning, executive reporting, financial governance, stakeholder alignment, multi-vendor delivery, and operational readiness. Follow up only if direct recruiter/email channel appears, not for routine LinkedIn Easy Apply.
 - Updated: 2026-05-20
+
+
+## EjadTech - PMO Manager
+
+- Status: Applied
+- Company: EjadTech - إيجاد التقنية
+- Role: PMO Manager
+- Location: Riyadh, Saudi Arabia
+- ATS: 88/100
+- Source: LinkedIn job 4425019464
+- Job URL: https://www.linkedin.com/jobs/view/4425019464/
+- CV: cvs/Ahmed Nasr - PMO Manager - EjadTech.pdf
+- Date Applied: 2026-06-08
+- Notes: Applied by Ahmed via LinkedIn after tailored CV delivery. Strong fit for PMO governance, portfolio KPIs, RAID controls, executive reporting, stakeholder management, and KSA technology delivery.
+- Updated: 2026-06-08
+
+
+## Fox Talent - Information Technology Program Manager
+
+- Status: Applied
+- Company: Fox Talent
+- Role: Information Technology Program Manager
+- Location: Abu Dhabi, UAE
+- ATS: 90/100
+- Source: LinkedIn job 4425077630
+- Job URL: https://www.linkedin.com/jobs/view/4425077630/
+- CV: cvs/Ahmed Nasr - Information Technology Program Manager - Fox Talent.pdf
+- Date Applied: 2026-06-08
+- Notes: Applied by Ahmed via LinkedIn after tailored CV delivery. Strong fit for program governance, IT software consulting delivery, stakeholder management, budget/resource control, RAID management, and Abu Dhabi enterprise technology implementation.
+- Updated: 2026-06-08
+
+
+## Cornerstone Global Partners (CGP Group) - SVP, Data Center Build
+
+- Status: Applied
+- Company: Cornerstone Global Partners (CGP Group)
+- Role: SVP, Data Center Build
+- Location: Singapore / LinkedIn card Abu Dhabi
+- ATS: 62/100 stretch
+- Source: LinkedIn job 4421665559
+- Job URL: https://www.linkedin.com/jobs/view/4421665559/
+- CV: cvs/Ahmed Nasr - SVP Data Center Build - Cornerstone Global Partners CGP Group.pdf
+- Date Applied: 2026-06-08
+- Notes: Applied by Ahmed via LinkedIn after stretch CV delivery. Stretch fit: transferable technology program governance, infrastructure delivery, vendor coordination, PMO controls, and regional transformation leadership; gap remains direct data center construction/build ownership.
+- Updated: 2026-06-08
+
+
+## Penta Consulting - Program Manager
+
+- Status: Applied
+- Company: Penta Consulting
+- Role: Program Manager
+- Location: Abu Dhabi, UAE
+- ATS: 72/100 stretch
+- Source: LinkedIn job 4418158224
+- Job URL: https://www.linkedin.com/jobs/view/4418158224/
+- CV: cvs/Ahmed Nasr - Program Manager - Penta Consulting.pdf
+- Date Applied: 2026-06-08
+- Notes: Applied by Ahmed via LinkedIn after tailored stretch CV delivery. Borderline cybersecurity-heavy role; positioned around technology program governance, PMO controls, risk management, cloud/data coordination, vendor alignment, and stakeholder delivery.
+- Updated: 2026-06-08

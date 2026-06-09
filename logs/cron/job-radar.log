@@ -1,8 +1,8 @@
 
-[2026-06-08T06:00:01+03:00] START job-radar: /root/.openclaw/workspace/scripts/job-radar.sh
-2026-06-08 06:00:03,837 - INFO - JobSpy:Linkedin - finished scraping
-🔍 Job Radar v3 running: 2026-06-08
-   Pipeline has 189 existing job IDs
+[2026-06-09T06:00:01+03:00] START job-radar: /root/.openclaw/workspace/scripts/job-radar.sh
+2026-06-09 06:00:04,477 - INFO - JobSpy:Linkedin - finished scraping
+🔍 Job Radar v3 running: 2026-06-09
+   Pipeline has 193 existing job IDs
   Searching: Digital Transformation Executive (UAE)...
   Searching: Digital Transformation Executive (Saudi)...
   Searching: Digital Transformation Executive (Qatar)...
@@ -12,7 +12,7 @@
   Searching: FinTech / Payments Executive (GCC)...
   Searching: IT Director / VP IT (GCC)...
 ✅ Results written to /root/.openclaw/workspace/memory/job-radar.md
-   Total unique jobs: 12
-   Executive matches: 9
-   New added to pipeline: 0
-[2026-06-08T06:00:24+03:00] END job-radar: rc=0 duration=23s
+   Total unique jobs: 35
+   Executive matches: 23
+   New added to pipeline: 9
+[2026-06-09T06:00:37+03:00] END job-radar: rc=0 duration=36s

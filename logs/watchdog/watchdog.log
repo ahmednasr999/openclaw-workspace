@@ -4594,3 +4594,36 @@ Config (/root/.openclaw/openclaw.json): missing env var "OPENCLAW_HOOKS_TOKEN" a
 [2026-06-08 04:00] Summary: fixes=0 warnings=1 alerts=0
 [2026-06-08 06:00] === Watchdog v3 run ===
 [2026-06-08 06:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-06-08 08:00] === Watchdog v3 run ===
+[2026-06-08 08:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-06-08 10:00] === Watchdog v3 run ===
+[2026-06-08 10:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-06-08 12:00] === Watchdog v3 run ===
+[2026-06-08 12:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-06-08 14:00] === Watchdog v3 run ===
+[2026-06-08 14:00] WARN: active-tasks.md stale (50h)
+[2026-06-08 14:00] Summary: fixes=0 warnings=2 alerts=0
+[2026-06-08 16:00] === Watchdog v3 run ===
+[2026-06-08 16:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-06-08 18:00] === Watchdog v3 run ===
+[2026-06-08 18:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-06-08 20:00] === Watchdog v3 run ===
+[2026-06-08 20:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-06-08 22:00] === Watchdog v3 run ===
+[2026-06-08 22:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-06-09 00:00] === Watchdog v3 run ===
+[2026-06-09 00:00] ALERT: Disk at 94%
+[2026-06-09 00:00] FIXED: Disk cleaned from 94% to 94%
+[2026-06-09 00:00] Summary: fixes=1 warnings=0 alerts=0
+[2026-06-09 02:00] === Watchdog v3 run ===
+[2026-06-09 02:00] ALERT: Disk at 94%
+[2026-06-09 02:00] FIXED: Disk cleaned from 94% to 94%
+[2026-06-09 02:00] Summary: fixes=1 warnings=0 alerts=0
+[2026-06-09 04:00] === Watchdog v3 run ===
+[2026-06-09 04:00] ALERT: Disk at 94%
+[2026-06-09 04:00] FIXED: Disk cleaned from 94% to 94%
+[2026-06-09 04:00] Summary: fixes=1 warnings=0 alerts=0
+[2026-06-09 06:00] === Watchdog v3 run ===
+[2026-06-09 06:00] ALERT: Disk at 94%
+[2026-06-09 06:00] FIXED: Disk cleaned from 94% to 94%
+[2026-06-09 06:00] Summary: fixes=1 warnings=0 alerts=0

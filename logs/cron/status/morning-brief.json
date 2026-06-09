@@ -2,9 +2,9 @@
   "task": "morning-brief",
   "status": "ok",
   "returncode": 0,
-  "started_at": "2026-06-08T06:10:01+03:00",
-  "finished_at": "2026-06-08T06:10:11+03:00",
-  "duration_seconds": 10,
+  "started_at": "2026-06-09T06:10:02+03:00",
+  "finished_at": "2026-06-09T06:10:07+03:00",
+  "duration_seconds": 5,
   "log_path": "/root/.openclaw/workspace/logs/cron/morning-brief.log",
   "lock_path": "/var/lock/openclaw/morning-brief.lock",
   "host": "srv1352768"

@@ -1,0 +1,15 @@
+{
+  "task": "linkedin-comment-radar-1100",
+  "ts": "2026-06-08T11:02:01.258052+03:00",
+  "cmd": [
+    "/root/.browser-use-env/bin/python3",
+    "scripts/run_linkedin_comment_radar.py",
+    "--slot",
+    "1100"
+  ],
+  "cwd": "/root/.openclaw/workspace-cmo",
+  "returncode": 0,
+  "stdout": "/root/.openclaw/workspace-cmo/reports/linkedin-comment-radar/2026-06-08-1100.md\ncards=/root/.openclaw/workspace-cmo/outbox/linkedin-comment-radar-cards/2026-06-08-1100.json\nstatus=needs_url_recovery posts=2\n\n--- Telegram detail block ---\nLinkedIn Comment Radar 11:00 completed. Status: needs_url_recovery\nCandidates reviewed: 2\nApproval-ready: 0/2\nNeeds URL recovery: 1/2\n\nApproval cards:\n\nCard 1: Ahmed Fahim (MachineWala) (approval locked)\nStatus: needs_url_recovery - otherwise relevant, but URL is mandatory before approval\nPQS: 54\nPost URL: URL unavailable\nAge: 20h\nLikes/Reactions: 2\nComments: Not visible\nWhy comment: Relevant GCC leadership/execution thread where Ahmed can add practical substance.\nActions: approval locked until candidate is ready\nComment draft:\nThe useful signal here is execution discipline, not just the update itself.\nIn GCC programs, the gap is usually ownership and cadence after the first decision.\nThe best metric is the one that shows momentum 90 days later.\n\nCard 2: Mahmoud Taha - Digital Transformation - CX (approval locked)\nStatus: skipped - outside the 24-hour freshness gate\nPQS: 51\nPost URL: URL unavailable\nAge: 5d\nLikes/Reactions: 5\nComments: Not visible\nWhy comment: AI execution/governance angle fits Ahmed's operator voice.\nActions: approval locked until candidate is ready\nComment draft:\nThe practical test for AI is not the announcement, it is whether ownership changes after the pilot.\nIn large programs, cadence and decision rights decide whether the value shows up.\nWhat operating metric would you track first?\n\nNext action: CMO must recover URLs before asking Ahmed to approve comments.\nOnly candidates marked ready receive approval buttons in the card flow.\nNo LinkedIn posting, liking, commenting, messaging, or external LinkedIn action was performed.\n",
+  "stderr": "",
+  "log_path": "/root/.openclaw/workspace/logs/cron/direct-cron/linkedin-comment-radar-1100-20260608-110027.log"
+}

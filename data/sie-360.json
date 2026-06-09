@@ -1,18 +1,18 @@
 {
-  "generated": "2026-06-07T22:50:16.590139+00:00",
-  "health_score": 79,
+  "generated": "2026-06-08T22:50:14.592219+00:00",
+  "health_score": 74,
   "summary": {
-    "ok": 6,
+    "ok": 5,
     "warn": 3,
-    "alert": 3
+    "alert": 4
   },
   "workspace": {
-    "root_files": 76,
-    "disk_percent": 76,
-    "disk_used": "73G",
+    "root_files": 78,
+    "disk_percent": 94,
+    "disk_used": "90G",
     "disk_total": "96G",
     "ram_total": "7.8Gi",
-    "ram_used": "2.4Gi",
+    "ram_used": "2.7Gi",
     "large_files": [
       "/root/.openclaw/agents/main/agent/codex-home/logs_2.sqlite",
       "/root/.openclaw/agents/main/agent/codex-home/state_5.sqlite",
@@ -48,6 +48,7 @@
       "/root/.openclaw/agents/jobzoom/agent/codex-home/.tmp/plugins/.git/objects/pack/pack-1e3ed656e255a9735edba010e8cdfec295f24ac8.pack",
       "/root/.openclaw/agents/jobzoom/sessions/sessions.json.bak.1777429720921",
       "/root/.openclaw/agents/jobzoom/sessions/sessions.json.bak-gpt55-20260424T023531",
+      "/root/.openclaw/agents/jobzoom/sessions/sessions.json",
       "/root/.openclaw/agents/jobzoom/sessions/sessions.json.bak.1777429728645",
       "/root/.openclaw/agents/jobzoom/sessions/sessions.json.bak.1777429729436",
       "/root/.openclaw/agents/cto/agent/codex-home/logs_2.sqlite",
@@ -96,7 +97,7 @@
       "/root/.openclaw/state/openclaw.sqlite",
       "/root/.openclaw/browser/linkedin-login-cdp/OnDeviceHeadSuggestModel/20251024.824731831.14/cr_en-us_500000_index.bin",
       "/root/.openclaw/browser/linkedin-login-cdp/WidevineCdm/4.10.3050.0/_platform_specific/linux_x64/libwidevinecdm.so",
-      "/root/.openclaw/browser/linkedin-login-cdp/Safe Browsing/UrlSoceng.store.4_13425345999310946",
+      "/root/.openclaw/browser/linkedin-login-cdp/Safe Browsing/UrlSoceng.store.4_13425431571086109",
       "/root/.openclaw/browser/linkedin-login-cdp/WasmTtsEngine/20260528.1/bindings_main.wasm",
       "/root/.openclaw/browser/linkedin-login-cdp/optimization_guide_model_store/43/E6DC4029A1E4B4C1/6D21EF9278597EC2/model.tflite",
       "/root/.openclaw/browser/linkedin-login-cdp/Default/Code Cache-bak-linkedinfix-20260606220646/js/b9b1a5e4d53ee621_0",
@@ -129,6 +130,7 @@
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-05-31_070016.db",
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-06-07_070021.db",
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-05-29_201050.db",
+      "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-06-08_070014.db",
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-05-30_070011.db",
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-06-01_070014.db",
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-06-03_070013.db",
@@ -139,7 +141,7 @@
       "/root/.openclaw/workspace/newsletter2.png",
       "/root/.openclaw/workspace/newsletter3.png"
     ],
-    "session_mb": 775.5
+    "session_mb": 771.1
   },
   "learnings": {
     "total": 27,
@@ -216,22 +218,22 @@
     {
       "category": "workspace",
       "level": "warn",
-      "message": "Root files: 76 (approaching clutter threshold of 100)"
-    },
-    {
-      "category": "workspace",
-      "level": "ok",
-      "message": "Disk: 76% used (73G/96G)"
-    },
-    {
-      "category": "workspace",
-      "level": "warn",
-      "message": "Large files (>5MB): 124 found in .openclaw"
+      "message": "Root files: 78 (approaching clutter threshold of 100)"
     },
     {
       "category": "workspace",
       "level": "alert",
-      "message": "Session size: 775.5MB - bloated, review sessions"
+      "message": "Disk: 94% used - CRITICAL, manual cleanup required"
+    },
+    {
+      "category": "workspace",
+      "level": "warn",
+      "message": "Large files (>5MB): 126 found in .openclaw"
+    },
+    {
+      "category": "workspace",
+      "level": "alert",
+      "message": "Session size: 771.1MB - bloated, review sessions"
     },
     {
       "category": "learnings",
@@ -276,6 +278,7 @@
   ],
   "auto_fixed": [],
   "needs_attention": [
-    "Session bloat: 775.5MB - review before deleting (needs human decision)"
+    "Session bloat: 771.1MB - review before deleting (needs human decision)",
+    "Disk usage 94% - needs cleanup decision (do not auto-delete)"
   ]
 }

@@ -1284,3 +1284,18 @@ Do not re-enable daily backups unless Ahmed explicitly asks. For future backup s
 During the daily lessons capture, the gateway shell did not have the `apply_patch` command available (`Command 'apply_patch' not found`), so the edit could not use the normal patch helper there.
 ### Do differently
 When editing through OpenClaw `sandbox_exec` on the gateway, check whether `apply_patch` exists before relying on it. If it is missing and an edit is required, use a small deterministic script, then immediately verify the diff/content.
+
+
+## 2026-06-08 - Intel Sweep Search Quota Failures Are Degraded Runs
+
+### Incident
+The Daily Intel Sweep completed and wrote `DAILY-INTEL.md` plus `intel-2026-06-08.md`, but Exa and Tavily both returned HTTP 402 Payment Required during multiple sections, forcing fallback/sparse results while the cron still had to return the constrained one-line OK.
+### Do differently
+When `intel-sweep.py` logs Exa/Tavily 402s, treat the run as provider-degraded even if the output files are written. Verify both files, preserve the user-facing output contract, and record or surface the sparse/provider-degraded status in the appropriate operational channel instead of treating the intel as fully healthy.
+
+## 2026-06-08 - Calendar Prefetch Empty Cache Can Mask Composio Outage
+
+### Incident
+Calendar prefetch hit `OpenClaw API fetch error: [Errno 111] Connection refused`, then wrote a valid empty `/tmp/calendar-events-2026-06-08.json` cache and reported 0 events because Composio was unavailable.
+### Do differently
+For calendar prefetch, distinguish true no-events from degraded no-data. If Composio/OpenClaw API is unavailable, verify the JSON cache as usual but do not treat `[]` as proof the calendar is clear; include the degraded source status in any downstream morning briefing or health report.
