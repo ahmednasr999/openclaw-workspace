@@ -1299,3 +1299,11 @@ When `intel-sweep.py` logs Exa/Tavily 402s, treat the run as provider-degraded e
 Calendar prefetch hit `OpenClaw API fetch error: [Errno 111] Connection refused`, then wrote a valid empty `/tmp/calendar-events-2026-06-08.json` cache and reported 0 events because Composio was unavailable.
 ### Do differently
 For calendar prefetch, distinguish true no-events from degraded no-data. If Composio/OpenClaw API is unavailable, verify the JSON cache as usual but do not treat `[]` as proof the calendar is clear; include the degraded source status in any downstream morning briefing or health report.
+
+## 2026-06-09 - Hermes CLI Config Commands Need The Live Service Home
+
+### Incident
+Hermes Telegram appeared to stop after Ahmed shared a Chrome remote-debugging command, but the verified root cause was configuration state: Telegram had been disabled/commented out for Windows Hermes ownership, and earlier `hermes config set` attempts without the live service environment wrote to non-live `.hermes/config.yaml` paths.
+### Do differently
+When repairing VPS Hermes, do not assume the triggering chat message is causal. Inspect the systemd unit and run Hermes CLI/config commands with the live service environment (`HERMES_HOME=/srv/hermes-pilot/home HOME=/srv/hermes-pilot`), then verify `/srv/hermes-pilot/home/config.yaml`, `/srv/hermes-pilot/home/.env`, `gateway_state.json`, and gateway logs after restart.
+

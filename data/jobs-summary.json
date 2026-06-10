@@ -2,56 +2,125 @@
   "meta": {
     "agent": "jobs-review",
     "version": "2.0.0",
-    "generated_at": "2026-06-07T10:27:46.568283+03:00",
-    "duration_ms": 21953,
+    "generated_at": "2026-06-09T12:32:28.686780+03:00",
+    "duration_ms": 161933,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "982ca048",
+    "run_id": "cc17b1ea",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
-    "generated_at": "2026-06-07T10:27:46.549300+03:00",
-    "total_candidates": 5,
-    "reviewed": 5,
+    "generated_at": "2026-06-09T12:32:28.551869+03:00",
+    "total_candidates": 33,
+    "reviewed": 32,
     "submit": [],
-    "review": [],
-    "skip_count": 5,
+    "review": [
+      {
+        "id": "linkedin_jobspy-li-4425560950",
+        "source": "linkedin_jobspy",
+        "title": "Head of Data (Banking Sector)",
+        "company": "Robert Walters",
+        "location": "Muscat, Masqa\u0163, Oman",
+        "url": "https://www.linkedin.com/jobs/view/4425560950",
+        "posted": "",
+        "seniority": "C-Suite",
+        "domain_match": true,
+        "keyword_score": 20,
+        "match_keywords": [
+          "enterprise",
+          "executive",
+          "head of"
+        ],
+        "raw_snippet": "We are currently partnered with a leading bank in Oman seeking a Head of Data to drive enterprise data strategy, governance and analytics. The role will focus on improving data quality, enhancing regulatory reporting, and building a scalable data function with strong executive visibility.\n \n\n\n\n Key ",
+        "relevant": true,
+        "filter_reason": null,
+        "search_country": "Oman",
+        "search_title": "\"digital transformation\" AND \"director\" AND \"healthcare\"",
+        "linkedin_id": "li-4425560950",
+        "jd_text": "We are currently partnered with a leading bank in Oman seeking a Head of Data to drive enterprise data strategy, governance and analytics. The role will focus on improving data quality, enhancing regulatory reporting, and building a scalable data function with strong executive visibility.\n \n\n\n\n Key Responsibilities\n \n\n\n* Define and execute the enterprise data strategy aligned with business objectives and regulatory requirements.\n* Establish and lead enterprise\\-wide data governance frameworks, policies, standards, and stewardship programs.\n* Drive data quality initiatives, ensuring the accuracy, consistency, completeness, and integrity of critical data assets.\n* Oversee enterprise data architecture, data platforms, master data management, metadata management, and system integration.\n* Lead business intelligence, advanced analytics, machine learning, and AI initiatives that deliver measurable business value.\n* Enable data\\-driven insights across customer experience, risk management, fraud detection, and operational efficiency.\n* Partner with Information Security teams to ensure strong data protection, privacy, classification, and resilience practices.\n* Ensure compliance with regulatory requirements, data retention standards, and supervisory expectations.\n* Support regulatory reporting and manage data\\-related audits, examinations, and risk assessments.\n* Collaborate with executive leadership, business units, technology teams, and external stakeholders to promote a data\\-driven culture and improve data literacy across the organization.\n\n\n\n Qualifications\n \n\n\n* Bachelor's or Master's degree in Information Technology, Computer Science, Business Administration, Finance, or a related field.\n* 10\\+ years of experience in data management, analytics, information management, or technology leadership.\n* 5\\-8\\+ years in senior leadership roles within banking, financial services, or other highly regulated industries.\n* Deep expertise in data governance, data strategy, data architecture, data quality management, analytics, business intelligence, cloud data platforms, AI, and regulatory reporting.\n* Proven ability to lead large\\-scale transformation initiatives and influence senior stakeholders.\n* Strong strategic thinking, change leadership, and stakeholder management capabilities\n\n\n\n If you're a strategic data leader with a passion for governance, analytics, AI, and driving enterprise\\-wide transformation, we'd love to hear from you. Apply or reach out directly for a confidential discussion.",
+        "source_count": 1,
+        "country": "Oman",
+        "industry_bonus": 9,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "first_seen": "2026-06-09",
+        "career_fit_score": 7,
+        "verdict": "REVIEW",
+        "verdict_reason": "Strong executive data strategy, governance and analytics leadership role in banking within GCC target geography. [5D role=2 | seniority=2 | geo=1 | strategic=1 | evidence=1 | fit=7/10 | llm=8 | watchlist=fintech_gcc]",
+        "watchlist_matches": {
+          "company_hits": [],
+          "domain_hits": [
+            "bank",
+            "banking"
+          ],
+          "categories": [
+            "fintech_gcc"
+          ]
+        },
+        "ats_score": 63,
+        "ats_verdict": "CONDITIONAL",
+        "ats_matched": [
+          "transformation",
+          "ai",
+          "machine learning",
+          "erp",
+          "governance",
+          "change management",
+          "stakeholder management",
+          "cloud",
+          "data",
+          "analytics"
+        ],
+        "ats_gaps": [],
+        "llm_fit_score": 8,
+        "fit_dimensions": {
+          "role": 2,
+          "seniority": 2,
+          "geography": 1,
+          "strategic": 1,
+          "evidence": 1
+        }
+      }
+    ],
+    "skip_count": 32,
     "unreviewed_count": 0,
     "thresholds": {
       "submit": 6,
       "review": 6
     },
     "pipeline": {
-      "l0_auto_skip": 0,
+      "l0_auto_skip": 1,
       "l1_jd_enriched": 0,
-      "l1_jd_coverage": "4/5",
+      "l1_jd_coverage": "29/32",
       "llm_model": "openai/gpt-5.5",
-      "llm_jobs_reviewed": 5,
-      "r2_latency_ms": 14590,
+      "llm_jobs_reviewed": 32,
+      "r2_latency_ms": 153160,
       "r2_fallbacks": 0
     },
     "kpi": {
       "submit_rate": 0.0,
-      "review_rate": 0.0,
-      "skip_rate": 1.0,
-      "avg_fit_score": 4.4,
-      "l0_filter_rate": 0.0,
+      "review_rate": 0.03125,
+      "skip_rate": 0.96875,
+      "avg_fit_score": 4.5,
+      "l0_filter_rate": 3.0,
       "llm_review_rate": 100.0
     }
   },
   "kpi": {
-    "total_loaded": 5,
-    "l0_auto_skip": 0,
+    "total_loaded": 33,
+    "l0_auto_skip": 1,
     "l1_jd_enriched": 0,
     "l2_filtered": 0,
     "submit_count": 0,
-    "review_count": 0,
-    "skip_count": 5,
+    "review_count": 1,
+    "skip_count": 31,
     "submit_rate": 0.0,
-    "avg_fit_score": 4.4,
-    "r2_latency_ms": 14590
+    "avg_fit_score": 4.5,
+    "r2_latency_ms": 153160
   },
   "recommendations": []
 }

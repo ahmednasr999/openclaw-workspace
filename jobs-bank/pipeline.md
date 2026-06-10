@@ -219,6 +219,16 @@
 | 328 | 🆕 | Michael Page | Head of Data Products & Engineering | Dubai | — | 🆕 Discovered | Radar | 2026-06-09 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4424978911) | — |
 | 329 | 🆕 | MoonTech | Director of Product Management | Dubai | — | 🆕 Discovered | Radar | 2026-06-09 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4419236683) | — |
 | 330 | 🆕 | Taptap Send | Head of East Africa | Dubai | — | 🆕 Discovered | Radar | 2026-06-09 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4425543212) | — |
+| 331 | 🆕 | Smart Bricks | Head of Institutional Product | Dubai | — | 🆕 Discovered | Radar | 2026-06-10 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4423535164) | — |
+| 332 | 🆕 | Crossover | Director of Learning, 2 Hour Learning (Remote) - $200,000/year USD | Dubai | — | 🆕 Discovered | Radar | 2026-06-10 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4425895519) | — |
+| 333 | 🆕 | flydubai | VP - Fleet Performance & Optimization | Dubai | — | 🆕 Discovered | Radar | 2026-06-10 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4425456236) | — |
+| 334 | 🆕 | MultiPass | Senior Executive Officer / Managing Director | Dubai | — | 🆕 Discovered | Radar | 2026-06-10 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4425823938) | — |
+| 335 | 🆕 | MultiPass | Head of Revenue | Dubai | — | 🆕 Discovered | Radar | 2026-06-10 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4422288724) | — |
+| 336 | 🆕 | Disrupt.com (formerly Gaditek) | Director Structuring & Origination | Dubai | — | 🆕 Discovered | Radar | 2026-06-10 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4422239762) | — |
+| 337 | 🆕 | Zand | Head of Information Security & Data Privacy | Dubai | — | 🆕 Discovered | Radar | 2026-06-10 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4422246935) | — |
+| 338 | 🆕 | edari | Head of Transformation | Dubai | — | 🆕 Discovered | Radar | 2026-06-10 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4425598981) | — |
+| 339 | 🆕 | Alchemy Global Talent Solutions | Senior Transformation Director | Dubai | — | 🆕 Discovered | Radar | 2026-06-10 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4426357620) | — |
+
 
 
 
