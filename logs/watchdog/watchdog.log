@@ -4657,3 +4657,75 @@ Config (/root/.openclaw/openclaw.json): missing env var "OPENCLAW_HOOKS_TOKEN" a
 [2026-06-10 04:00] Summary: fixes=0 warnings=1 alerts=0
 [2026-06-10 06:00] === Watchdog v3 run ===
 [2026-06-10 06:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-06-10 08:00] === Watchdog v3 run ===
+[2026-06-10 08:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-06-10 10:00] === Watchdog v3 run ===
+[2026-06-10 10:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-06-10 12:00] === Watchdog v3 run ===
+[2026-06-10 12:00] ALERT: Gateway down, attempting restart
+│
+◇  Doctor warnings ──────────────────────────────────────────────────────╮
+│                                                                        │
+│  - Left plugin install index in place because shared SQLite state has  │
+│    conflicting plugin install metadata for: codex, lossless-claw,      │
+│    tokenjuice                                                          │
+│                                                                        │
+├────────────────────────────────────────────────────────────────────────╯
+│
+◇  Config warnings ───────────────────────────────────────────────────────╮
+│                                                                         │
+│  - hooks.token: Missing env var "OPENCLAW_HOOKS_TOKEN" - feature using  │
+│    this value will be unavailable                                       │
+│                                                                         │
+├─────────────────────────────────────────────────────────────────────────╯
+[state-migrations] Legacy state migration warnings:
+- Left plugin install index in place because shared SQLite state has conflicting plugin install metadata for: codex, lossless-claw, tokenjuice
+- Left migrated Telegram message dispatch dedupe source in place because /root/.openclaw/agents/main/sessions/sessions.json.telegram-message-dispatch-default.json.migrated already exists
+│
+◇  Doctor warnings ────────────────────────────────────────────────────────────╮
+│                                                                              │
+│  - Left plugin install index in place because shared SQLite state has        │
+│    conflicting plugin install metadata for: codex, lossless-claw,            │
+│    tokenjuice                                                                │
+│  - Left migrated Telegram message dispatch dedupe source in place            │
+│    because                                                                   │
+│    /root/.openclaw/agents/main/sessions/sessions.json.telegram-message-disp  │
+│  atch-default.json.migrated                                                  │
+│    already exists                                                            │
+│                                                                              │
+├──────────────────────────────────────────────────────────────────────────────╯
+Gateway restart failed: Error: systemctl restart failed: Job for openclaw-gateway.service failed because the control process exited with error code.
+See "systemctl --user -M root@ status openclaw-gateway.service" and "journalctl --user -M root@ -xeu openclaw-gateway.service" for details.
+Tip: openclaw gateway install
+Tip: openclaw gateway
+Tip: systemctl --user start openclaw-gateway.service
+[2026-06-10 12:00] FIXED: Gateway restarted (PID: 333370)
+[2026-06-10 12:00] Summary: fixes=1 warnings=1 alerts=0
+[2026-06-10 14:00] === Watchdog v3 run ===
+[2026-06-10 14:00] WARN: Jobs data stale (25h), triggering pipeline
+[2026-06-10 14:00] FIXED: Pipeline triggered
+[2026-06-10 14:00] FIXED: Re-triggered failed cron 6a833efa-e058-4438-8f57-3cf5c2868e85
+[2026-06-10 14:00] Summary: fixes=2 warnings=1 alerts=0
+Config (/root/.openclaw/openclaw.json): missing env var "OPENCLAW_HOOKS_TOKEN" at hooks.token - feature using this value will be unavailable
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:6a833efa-e058-4438-8f57-3cf5c2868e85:1781089216577:1"
+}
+[2026-06-10 16:00] === Watchdog v3 run ===
+[2026-06-10 16:00] WARN: active-tasks.md stale (50h)
+[2026-06-10 16:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-06-10 18:00] === Watchdog v3 run ===
+[2026-06-10 18:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-06-10 20:00] === Watchdog v3 run ===
+[2026-06-10 20:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-06-10 22:00] === Watchdog v3 run ===
+[2026-06-10 22:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-06-11 00:00] === Watchdog v3 run ===
+[2026-06-11 00:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-06-11 02:00] === Watchdog v3 run ===
+[2026-06-11 02:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-06-11 04:00] === Watchdog v3 run ===
+[2026-06-11 04:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-06-11 06:00] === Watchdog v3 run ===
+[2026-06-11 06:00] Summary: fixes=0 warnings=1 alerts=0

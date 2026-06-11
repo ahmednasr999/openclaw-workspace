@@ -2,123 +2,80 @@
   "meta": {
     "agent": "email-agent",
     "version": "3.0.0",
-    "generated_at": "2026-06-09T20:00:58.048697+03:00",
-    "duration_ms": 34690,
+    "generated_at": "2026-06-10T20:00:36.818487+03:00",
+    "duration_ms": 17811,
     "ttl_hours": 4,
     "status": "success",
     "error": null,
-    "run_id": "d2e85081",
+    "run_id": "4bbbc63a",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
     "status": "ok",
-    "scan_time": "2026-06-09T20:00:41.036000+03:00",
-    "total_scanned": 37,
+    "scan_time": "2026-06-10T20:00:36.817835+03:00",
+    "total_scanned": 33,
     "by_category": {
       "interview_invite": 0,
-      "recruiter_reach": 1,
+      "recruiter_reach": 0,
       "application_ack": 0,
       "rejection": 0,
       "assessment": 0,
       "application_response": 0,
       "follow_up_needed": 0,
-      "job_alert": 0,
-      "other": 36
+      "job_alert": 1,
+      "other": 32
     },
     "interview_invites": [],
-    "recruiter_messages": [
-      {
-        "id": "361450",
-        "from": "Haya Baker <invitations@linkedin.com>",
-        "subject": "=?UTF-8?Q?You_have_an_invitation_=E2=9C=89=EF=B8=8F?=",
-        "date": "Tue, 9 Jun 2026 13:30:34 +0000 (UTC)",
-        "unread": true,
-        "priority": "MEDIUM",
-        "score": 2,
-        "pipeline_match": null,
-        "confidence": 65,
-        "confidence_label": "medium",
-        "evidence": [
-          "known recruiter/job domain",
-          "hiring/application context",
-          "recruiter outreach classification",
-          "medium priority score: 2"
-        ],
-        "why_actionable": "known recruiter/job domain | hiring/application context | recruiter outreach classification | medium priority score: 2"
-      }
-    ],
+    "recruiter_messages": [],
     "application_acks": [],
     "rejections": [],
     "assessments": [],
     "application_responses": [],
     "follow_ups_needed": [],
-    "job_alerts": [],
-    "actionable_count": 1,
-    "hot_alerts": [],
-    "signals": [],
-    "pipeline_review_candidates": [
+    "job_alerts": [
       {
-        "timestamp": "2026-06-09T20:00:41.036022+03:00",
-        "review_type": "possible_recruiter_outreach",
-        "category": "recruiter_reach",
-        "email_id": "361450",
-        "subject": "=?UTF-8?Q?You_have_an_invitation_=E2=9C=89=EF=B8=8F?=",
-        "from": "Haya Baker <invitations@linkedin.com>",
-        "priority": "MEDIUM",
+        "id": "361600",
+        "from": "GulfTalent Jobs <jobs@gulftalent.com>",
+        "subject": "Ascentis needs a Project Director",
+        "date": "Wed, 10 Jun 2026 09:58:27 -0500",
+        "unread": true,
+        "priority": "LOW",
+        "score": 0,
         "pipeline_match": null,
-        "status": "needs_human_review"
+        "confidence": 25,
+        "confidence_label": "very_low",
+        "evidence": [
+          "automated job alert",
+          "known recruiter/job domain",
+          "hiring sender context",
+          "noise/job-alert guard applied"
+        ],
+        "why_actionable": "not actionable: automated job alert | known recruiter/job domain | hiring sender context | noise/job-alert guard applied"
       }
     ],
+    "actionable_count": 0,
+    "hot_alerts": [],
+    "signals": [],
     "llm_analysis": {
-      "actionable_emails": [
-        {
-          "id": "361450",
-          "subject": "You have an invitation",
-          "from": "Haya Baker <invitations@linkedin.com>",
-          "date": "Tue, 9 Jun 2026 13:30:34 +0000 (UTC)",
-          "category": "recruiter_reach",
-          "urgency": "low",
-          "intent": "The sender wants Ahmed to accept a LinkedIn network invitation.",
-          "action": "no_action",
-          "response_deadline": "when convenient",
-          "notes": "LinkedIn invite only; no job or recruiter opportunity proven."
-        }
-      ],
+      "actionable_emails": [],
       "summary": {
-        "total_actionable": 1,
+        "total_actionable": 0,
         "critical_count": 0,
         "requires_interview_prep": false,
         "requires_assessment": false,
         "recruiter_top_opportunities": [],
         "top_priority": null,
-        "daily_focus": "No urgent job-search action is required today; treat this as optional networking only."
+        "daily_focus": "No email action needed from this batch."
       }
     }
   },
   "kpi": {
-    "emails_processed": 37,
-    "actionable": 1,
+    "emails_processed": 33,
+    "actionable": 0,
     "interviews_detected": 0,
-    "recruiter_messages": 1,
-    "unread_actionable": 1
+    "recruiter_messages": 0,
+    "unread_actionable": 0
   },
-  "recommendations": [
-    {
-      "id": "rec-d2e85081-0",
-      "action": "review_and_respond",
-      "target": "1 recruiter message(s)",
-      "reason": "Recruiter outreach could lead to opportunities",
-      "urgency": "high",
-      "timestamp": "2026-06-09T20:00:58.048481+03:00"
-    },
-    {
-      "id": "rec-d2e85081-1",
-      "action": "check_inbox",
-      "target": "1 unread actionable email(s)",
-      "reason": "Unread emails need attention",
-      "urgency": "high",
-      "timestamp": "2026-06-09T20:00:58.048502+03:00"
-    }
-  ]
+  "recommendations": []
 }

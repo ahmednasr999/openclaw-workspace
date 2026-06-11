@@ -228,6 +228,31 @@
 | 337 | 🆕 | Zand | Head of Information Security & Data Privacy | Dubai | — | 🆕 Discovered | Radar | 2026-06-10 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4422246935) | — |
 | 338 | 🆕 | edari | Head of Transformation | Dubai | — | 🆕 Discovered | Radar | 2026-06-10 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4425598981) | — |
 | 339 | 🆕 | Alchemy Global Talent Solutions | Senior Transformation Director | Dubai | — | 🆕 Discovered | Radar | 2026-06-10 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4426357620) | — |
+| 340 | 🆕 | Course | Director of Artificial Intelligence | Abu Dhabi Emirate | — | 🆕 Discovered | Radar | 2026-06-11 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4422280215) | — |
+| 341 | 🆕 | Adecco | Director Data and Analytics | Abu Dhabi Emirate | — | 🆕 Discovered | Radar | 2026-06-11 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4426320719) | — |
+| 342 | 🆕 | Course | Director of Data | Abu Dhabi Emirate | — | 🆕 Discovered | Radar | 2026-06-11 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4422279103) | — |
+| 343 | 🆕 | Finance House | Chief Technology Officer | Abu Dhabi Emirate | — | 🆕 Discovered | Radar | 2026-06-11 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4399842889) | — |
+| 344 | 🆕 | Confidential Careers | Program Director (Enterprise Transformation) | Abu Dhabi Emirate | — | 🆕 Discovered | Radar | 2026-06-11 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4425051040) | — |
+| 345 | 🆕 | New York University Abu Dhabi | Director, Research Technology and AI Enablement - Information Technology | Abu Dhabi | — | 🆕 Discovered | Radar | 2026-06-11 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4424712404) | — |
+| 346 | 🆕 | Jobs via eFinancialCareers | Head of Digitalization - Madison Pearl | Dubai | — | 🆕 Discovered | Radar | 2026-06-11 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4410736135) | — |
+| 347 | 🆕 | Edison Smart® | Chief AI Transformation Officer | Dubai | — | 🆕 Discovered | Radar | 2026-06-11 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4426744732) | — |
+| 348 | 🆕 | Qashio | VP of Technology | Dubai | — | 🆕 Discovered | Radar | 2026-06-11 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4426043819) | — |
+| 349 | 🆕 | Emdad By Elm | Director of Digital Innovation & AI | Riyadh | — | 🆕 Discovered | Radar | 2026-06-11 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4425823813) | — |
+| 350 | 🆕 | Sanabil Studio | Co-Founder & Chief Technology Officer | Riyadh | — | 🆕 Discovered | Radar | 2026-06-11 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4425885245) | — |
+| 351 | 🆕 | Sanabil Studio | Head of Product | Riyadh | — | 🆕 Discovered | Radar | 2026-06-11 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4425899038) | — |
+| 352 | 🆕 | Jobgether | Head of Research & Development (R&D) | GCC | — | 🆕 Discovered | Radar | 2026-06-11 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4425092509) | — |
+| 353 | 🆕 | AtkinsRéalis | ITS Director – Fare Collection System | Riyadh | — | 🆕 Discovered | Radar | 2026-06-11 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4425199699) | — |
+| 354 | 🆕 | Hays | Digital Inclusion & National Digital Policy Director (SME) | Doha | — | 🆕 Discovered | Radar | 2026-06-11 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4421953074) | — |
+| 355 | 🆕 | Confidential | General Manager | Doha | — | 🆕 Discovered | Radar | 2026-06-11 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4421918211) | — |
+| 356 | 🆕 | Starlink Qatar | Head of Network Infrastructure Operations | Doha | — | 🆕 Discovered | Radar | 2026-06-11 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4421578701) | — |
+| 357 | 🆕 | talabat | Managing Director - Qatar | GCC | — | 🆕 Discovered | Radar | 2026-06-11 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4415007377) | — |
+| 358 | 🆕 | QNB Group | QNB3650 - Assistant Vice President - Innovation | Doha | — | 🆕 Discovered | Radar | 2026-06-11 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4374240546) | — |
+| 359 | 🆕 | Genesys | AI & Experience Orchestration Director | Dubai | — | 🆕 Discovered | Radar | 2026-06-11 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4426103385) | — |
+| 360 | 🆕 | Citi | Third-Party Funds Product Manager, Middle East & Africa Deposits (VP) | Dubai | — | 🆕 Discovered | Radar | 2026-06-11 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4425262705) | — |
+| 361 | 🆕 | Mastercard | Director, Strategy and M&A | Dubai | — | 🆕 Discovered | Radar | 2026-06-11 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4423103094) | — |
+| 362 | 🆕 | WSP in the Middle East | Head of Mission Critical – Senior Technical Director | Dubai | — | 🆕 Discovered | Radar | 2026-06-11 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4420188993) | — |
+| 363 | 🆕 | KEO Group | Cloud and Infrastructure Platforms Director | Dubai | — | 🆕 Discovered | Radar | 2026-06-11 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4426797665) | — |
+
 
 
 

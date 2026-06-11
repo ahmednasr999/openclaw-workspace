@@ -1307,3 +1307,15 @@ Hermes Telegram appeared to stop after Ahmed shared a Chrome remote-debugging co
 ### Do differently
 When repairing VPS Hermes, do not assume the triggering chat message is causal. Inspect the systemd unit and run Hermes CLI/config commands with the live service environment (`HERMES_HOME=/srv/hermes-pilot/home HOME=/srv/hermes-pilot`), then verify `/srv/hermes-pilot/home/config.yaml`, `/srv/hermes-pilot/home/.env`, `gateway_state.json`, and gateway logs after restart.
 
+
+## 2026-06-10 - Hand-drawn LinkedIn Quality Floor
+
+Ahmed approved the latest rebuilt ROT hand-drawn visual as the quality floor. For future hand-drawn LinkedIn visuals, match or exceed: polished editorial sketchnote quality, warm paper texture, authentic hand lettering, strong whitespace, clean story flow, restrained orange accents, no sketch-filter look, no crowded/overlapping elements. Reference: output/linkedin/return-on-tokens-rot-handdrawn-reference-quality-latest-2026-06-10.png
+
+## 2026-06-10 - Resend Generated Images Through Direct Telegram Photo Path After Media Failure
+
+### Incident
+An OpenClaw image-generation reply produced the desired hand-drawn ROT visual but the user saw `Media failed`; the asset existed under `/root/.openclaw/media/tool-image-generation/...` and was successfully delivered after copying it to the LinkedIn output/media paths and sending it with Telegram `sendPhoto`.
+### Do differently
+When a generated image message reports `Media failed`, do not regenerate first. Locate the newest generated image in `/root/.openclaw/media/tool-image-generation` or `generated_images`, verify dimensions/file size, save a durable copy under `output/linkedin`, then resend through the direct Telegram photo path and confirm the returned `message_id`.
+
