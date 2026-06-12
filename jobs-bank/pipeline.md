@@ -252,6 +252,16 @@
 | 361 | 🆕 | Mastercard | Director, Strategy and M&A | Dubai | — | 🆕 Discovered | Radar | 2026-06-11 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4423103094) | — |
 | 362 | 🆕 | WSP in the Middle East | Head of Mission Critical – Senior Technical Director | Dubai | — | 🆕 Discovered | Radar | 2026-06-11 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4420188993) | — |
 | 363 | 🆕 | KEO Group | Cloud and Infrastructure Platforms Director | Dubai | — | 🆕 Discovered | Radar | 2026-06-11 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4426797665) | — |
+| 364 | 🆕 | Hamdan Bin Mohammed Smart University | Project Management Director (UAE Nationals) | Dubai | — | 🆕 Discovered | Radar | 2026-06-12 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4423625559) | — |
+| 365 | 🆕 | Network International | VP – Head of Service Design & Process Reengineering | Dubai | — | 🆕 Discovered | Radar | 2026-06-12 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4427525327) | — |
+| 366 | 🆕 | Mastercard | Vice President, Strategy Pricing & Interchange | Dubai | — | 🆕 Discovered | Radar | 2026-06-12 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4424831222) | — |
+| 367 | 🆕 | Temenos | Commercial Director | Dubai | — | 🆕 Discovered | Radar | 2026-06-12 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4427518553) | — |
+| 368 | 🆕 | RAKBANK | VP & Head of Model Validation and Governance | Dubai | — | 🆕 Discovered | Radar | 2026-06-12 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4426230016) | — |
+| 369 | 🆕 | Nityo Infotech | Head of Service Delivery | Dubai | — | 🆕 Discovered | Radar | 2026-06-12 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4426209958) | — |
+| 370 | 🆕 | Talents Tide | Head of Applications Development (UAEN) | Dubai | — | 🆕 Discovered | Radar | 2026-06-12 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4426220893) | — |
+| 371 | 🆕 | Hamdan Bin Mohammed Smart University | Smart Solutions Development Director (UAE Nationals) | Dubai | — | 🆕 Discovered | Radar | 2026-06-12 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4423633841) | — |
+| 372 | 🆕 | OX Human Resources Consultancies | Chief Technology Officer | Dubai | — | 🆕 Discovered | Radar | 2026-06-12 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4423641692) | — |
+
 
 
 

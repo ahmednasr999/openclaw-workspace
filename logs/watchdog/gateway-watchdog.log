@@ -1226,3 +1226,11 @@
 2026-06-11T05:31:15+03:00 degraded count=2 reason=app-server-count-10, pid=580717 rss_kb=822748 app_servers=10 health_ms=1 signals=0
 2026-06-11T05:31:15+03:00 restart-gateway reason=degraded:app-server-count-10,
 2026-06-11T05:31:34+03:00 post-restart health=000 6007
+2026-06-11T07:46:35+03:00 degraded count=1 reason=app-server-count-10, pid=977439 rss_kb=687536 app_servers=10 health_ms=1 signals=0
+2026-06-11T07:48:54+03:00 degraded count=2 reason=app-server-count-10, pid=977439 rss_kb=705128 app_servers=10 health_ms=2 signals=0
+2026-06-11T07:48:54+03:00 restart-gateway reason=degraded:app-server-count-10,
+2026-06-11T07:49:12+03:00 post-restart health=000 6006
+2026-06-12T05:30:55+03:00 degraded count=1 reason=app-server-count-10, pid=1040348 rss_kb=791196 app_servers=10 health_ms=0 signals=0
+2026-06-12T05:33:14+03:00 degraded count=2 reason=app-server-count-10, pid=1040348 rss_kb=787508 app_servers=10 health_ms=1 signals=0
+2026-06-12T05:33:14+03:00 restart-gateway reason=degraded:app-server-count-10,
+2026-06-12T05:33:34+03:00 post-restart health=000 6006

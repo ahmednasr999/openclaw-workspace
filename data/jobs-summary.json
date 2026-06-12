@@ -2,74 +2,78 @@
   "meta": {
     "agent": "jobs-review",
     "version": "2.0.0",
-    "generated_at": "2026-06-10T14:35:34.233805+03:00",
-    "duration_ms": 213380,
+    "generated_at": "2026-06-11T16:34:55.982875+03:00",
+    "duration_ms": 168525,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "5e57b6dc",
+    "run_id": "c96c794a",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
-    "generated_at": "2026-06-10T14:35:34.048848+03:00",
-    "total_candidates": 44,
-    "reviewed": 44,
+    "generated_at": "2026-06-11T16:34:55.868226+03:00",
+    "total_candidates": 33,
+    "reviewed": 33,
     "submit": [
       {
-        "id": "linkedin_jobspy-li-4426357620",
+        "id": "linkedin_jobspy-li-4427059343",
         "source": "linkedin_jobspy",
-        "title": "Senior Transformation Director",
-        "company": "Alchemy Global Talent Solutions",
-        "location": "Dubai, United Arab Emirates",
-        "url": "https://www.linkedin.com/jobs/view/4426357620",
+        "title": "Consulting - Management Consulting - Workforce Transformation (FS Sector) - Director - Riyadh",
+        "company": "PwC Middle East",
+        "location": "Riyadh, Riyadh, Saudi Arabia",
+        "url": "https://www.linkedin.com/jobs/view/4427059343",
         "posted": "",
         "seniority": "C-Suite",
         "domain_match": true,
-        "keyword_score": 16,
+        "keyword_score": 10,
         "match_keywords": [
-          "operational excellence",
-          "director"
+          "director",
+          "riyadh"
         ],
-        "raw_snippet": "We are seeking an experienced Senior Transformation Director to lead large\\-scale strategic transformation initiatives across a complex real estate portfolio. This role will be responsible for driving organisational change, operational excellence, technology adoption, and business process improvemen",
+        "raw_snippet": "**About Us**\n With offices in 152 countries and nearly 328,000 professionals, we are one of the world\u2019s leading professional services networks, helping organisations and individuals create lasting value through Assurance, Tax and Advisory services. For over 40 years, we have contributed to the Middl",
         "relevant": true,
         "filter_reason": null,
-        "search_country": "United Arab Emirates",
-        "search_title": "PMO Director",
-        "linkedin_id": "li-4426357620",
-        "jd_text": "We are seeking an experienced Senior Transformation Director to lead large\\-scale strategic transformation initiatives across a complex real estate portfolio. This role will be responsible for driving organisational change, operational excellence, technology adoption, and business process improvement to support long\\-term growth and performance objectives.\n \n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n The successful candidate will work closely with executive leadership, operational teams, investors, and external stakeholders to develop and implement transformation strategies that enhance efficiency, profitability, customer experience, and overall business performance\n \n\n\n\n  \n\n\n\n\n\n .\n \n\n\n\n Key Responsibilities:\n \n\n\n* Develop and execute enterprise\\-wide transformation strategies aligned with organisational objectives.\n* Partner with executive leadership to identify opportunities for operational improvement, growth, and innovation.\n* Lead business transformation programmes across property management, asset management, facilities management, development, and corporate functions.\n* Manage communication plans and executive reporting throughout transformation programmes.\n* Review and optimise business processes, workflows, and operational structures.\n* Identify opportunities to improve productivity, service delivery, cost efficiency, and scalability.\n* Lead operational reviews and performance improvement initiatives.\n* Oversee the implementation of digital transformation projects and technology platforms.\n* Partner with technology teams to enhance data management, reporting, automation, and analytics capabilities.\n* Drive the adoption of PropTech solutions and innovative technologies.\n* Direct multiple transformation projects simultaneously across various business units.\n* Manage programme budgets, resources, timelines, and risk mitigation plans.\n* Establish governance frameworks and ensure effective programme oversight.\n* Report progress, risks, and outcomes to executive leadership and board\\-level stakeholders.\n* Build strong relationships with senior leaders, investors, partners, and external consultants.\n* Act as a trusted advisor to leadership teams on transformation and change initiatives\n\n\n\n  \n\n\n\n\n\n Requirements:\n \n\n\n* Bachelor's degree in Business, Real Estate, Finance, Engineering, or a related discipline.\n* Significant leadership experience within real estate, property, facilities management, development, investment, or related sectors.\n* Proven track record delivering large\\-scale business transformation and change programmes.\n* Experience leading cross\\-functional teams within complex organisations.\n* Strong understanding of operational excellence, process improvement, and organisational design.\n* Experience implementing technology and digital transformation initiatives.\n* Strong commercial acumen with experience managing budgets and delivering measurable business outcomes\n* Ability to influence executive leadership and drive organisational change.",
+        "search_country": "Saudi Arabia",
+        "search_title": "Program Director",
+        "linkedin_id": "li-4427059343",
+        "jd_text": "**About Us**\n With offices in 152 countries and nearly 328,000 professionals, we are one of the world\u2019s leading professional services networks, helping organisations and individuals create lasting value through Assurance, Tax and Advisory services. For over 40 years, we have contributed to the Middle East\u2019s transformation journey, partnering with governments and businesses to deliver sustainable solutions. Today, more than 12,000 of us across Bahrain, Egypt, Iraq, Jordan, Kuwait, Lebanon, Libya, Oman, Palestine, Qatar, Saudi Arabia and the UAE are shaping the region's future.\n   \n\n  \n\n**Line Of Service Overview**\n At PwC Consulting, we lead with insight and deliver with purpose. You\u2019ll work alongside experts across industries to design and deliver forward\\-looking solutions in areas such as strategy and enterprise transformation, operational excellence, digital innovation, cyber resilience, and risk management. Our reimagined operating model brings together sector\\-aligned, solution\\-led teams empowered to move fast, think boldly, and create real impact. Whether transforming finance, enabling digital change, or shaping national visions, you\u2019ll be part of a collaborative, forward\\-thinking community, built to grow with you and the world around us.\n   \n\n  \n\n**Business Unit Overview**\n As part of the Management Consulting team, you\u2019ll shape how organizations operate, perform, and grow. We deliver end\\-to\\-end consulting solutions across Finance Transformation, Accounting Transformation, Workforce Transformation, Supply Chain \\& Efficiency Transformation, Enterprise Solutions and capability building through PwC Academy. It\u2019s where business performance meets human potential, backed by technology, powered by purpose.\n   \n\n  \n\n**How\u202fYou\u2019ll\u202fContribute**\n As a Director in Workforce Transformation dedicated to the Financial Services sector, based in Saudi Arabia, you\u2019ll work as part of a team of problem solvers, helping to solve complex business issues from strategy to execution. Responsibilities include but are not limited to:\n   \n\n  \n\n**Clients, Market \\& Business Development**\n* Client Relationship Management: Cultivate and manage executive\\-level relationships in the Financial Services sector in KSA (including banks, insurance companies, development funds, sovereign wealth funds, market authorities \\& regulators, asset \\& wealth management etc.), ensuring alignment between workforce strategies and organizational priorities while addressing challenges with agility and insight.\n* Business Development: Shape new Workforce Transformation offerings and identify growth opportunities in the Financial Services sector, collaborating across service lines to build integrated solutions that elevate our market presence and client impact.\n+ Define and drive the go\\-to\\-market strategy for Workforce Transformation in the Financial Services sector, including priority clients, target accounts, propositions and pipeline build plans in KSA\n+ Lead independent origination (non\\-RfP/ sole sourced) of complex workforce transformation opportunities by engaging C\\-suite and senior buyers, understanding their operational and transformation challenges in the Financial Services sector shaping outcome\\-led propositions.\n+ Support the end\\-to\\-end pursuit lifecycle from qualification through proposal, deal shaping, negotiation and closing\n+ Build market presence and credibility for the Workforce Transformation proposition in the Financial Services sector across KSA and Middle East\n\n\n**Projects and Program Delivery**\n* Project Leadership: Oversee high\\-impact transformation programs (often multiple projects / programs simultaneously) with Financial Services sector clients in KSA across multiple Workforce Transformation consulting services. including but not limited to:\n* Operating model and organizational design\n* Strategic and operational workforce planning\n* Performance management and total rewards\n* Competency/Skills framework development, talent assessment and upskilling, leadership development, talent management\n* HR functional effectiveness (HR operating model, HR policies practices \\& procedures, HR process re\\-engineering, AI used cases in HR, intelligent automation in HR, HR technologies etc.)\n* Change management, culture, employee engagement and employee experience\n\n\n**Team Development**\n* Team / Coachee Development: Coach and mentor team members on projects or those assigned outside of project on capabilities, supporting their professional growth through structured feedback, skills development planning, and continuous performance guidance.\n\n\n**What\u202fYou\u2019ll\u202fBring**\n* Bachelor\u2019s degree in related field; Master\u2019s preferred\n* 12\\-15 years' experience in Workforce Transformation / Human Capital / Organization Effectiveness consulting with at least 6 years in the Financial Services sector.\n* Proven experience independently delivering:\n+ Commercial and business performance within KSA; a strong network in the Kingdom within the Financial Services sector preferred\n+ Large\\-scale Workforce Transformation projects and leading teams of 5 \u2013 6 project team members\n\n* Fundamental understanding of business and operational aspects of the Banking \\& Financial Services industry\n* Deep technical abilities in Workforce Transformation consulting services\n* Self\\-starter/entrepreneurial mindset\n* Collaborative mindset to work effectively across functions and foster inclusive team dynamics\n* Excellent command of English and Arabic, both written and verbal\n\n\n**How\u202fYou\u2019ll\u202fMake a Difference**\n At PwC Middle East, we expect all our people to embody the skills and behaviours of The PwC Professional framework, helping us deliver on our strategy while growing and developing as leaders at every level.\n   \n\n  \n\n**Why\u202fYou\u2019ll\u202fLove\u202fWorking at PwC**\n At PwC Middle East, you\u2019ll find more than just a job \u2013 you\u2019ll build a meaningful career, supported by rewards and benefits that help you thrive. We offer competitive pay, comprehensive benefits, and programs that promote well\\-being, balance, and personal growth. You\u2019ll have access to continuous learning, digital upskilling, and a collaborative environment that values innovation, mentorship, and diversity. Discover more about Life at PwC Middle East .",
         "source_count": 1,
-        "country": "United Arab Emirates",
-        "industry_bonus": 3,
+        "country": "Saudi Arabia",
+        "industry_bonus": 15,
         "policy_status": "pass",
         "sources": [
           "linkedin"
         ],
-        "first_seen": "2026-06-10",
+        "first_seen": "2026-06-11",
         "career_fit_score": 9,
         "verdict": "SUBMIT",
-        "verdict_reason": "Strong senior transformation and operational excellence role in Dubai with digital adoption and governance ownership [5D role=2 | seniority=2 | geo=2 | strategic=1 | evidence=2 | fit=9/10 | llm=8] [CMO outreach queued for Alchemy Global Talent Solutions]",
+        "verdict_reason": "Director-level transformation consulting in FS/GCC, but workforce focus is adjacent to core technology/PMO strengths [5D role=2 | seniority=2 | geo=2 | strategic=1 | evidence=2 | fit=9/10 | llm=6 | watchlist=government_semi_gov_gcc] [CMO outreach queued for PwC Middle East]",
         "watchlist_matches": {
           "company_hits": [],
-          "domain_hits": [],
-          "categories": []
+          "domain_hits": [
+            "government"
+          ],
+          "categories": [
+            "government_semi_gov_gcc"
+          ]
         },
-        "ats_score": 66,
-        "ats_verdict": "CONDITIONAL",
+        "ats_score": 77,
+        "ats_verdict": "GO",
         "ats_matched": [
           "digital transformation",
-          "program management",
           "transformation",
+          "ai",
           "erp",
-          "governance",
-          "budget",
-          "data",
-          "analytics",
+          "operating model",
+          "change management",
           "automation",
-          "digital"
+          "digital",
+          "strategy",
+          "strategic"
         ],
         "ats_gaps": [],
-        "llm_fit_score": 8,
+        "llm_fit_score": 6,
         "fit_dimensions": {
           "role": 2,
           "seniority": 2,
@@ -80,7 +84,7 @@
       }
     ],
     "review": [],
-    "skip_count": 43,
+    "skip_count": 32,
     "unreviewed_count": 0,
     "thresholds": {
       "submit": 6,
@@ -89,32 +93,32 @@
     "pipeline": {
       "l0_auto_skip": 0,
       "l1_jd_enriched": 0,
-      "l1_jd_coverage": "41/44",
+      "l1_jd_coverage": "29/33",
       "llm_model": "openai/gpt-5.5",
-      "llm_jobs_reviewed": 44,
-      "r2_latency_ms": 204822,
+      "llm_jobs_reviewed": 33,
+      "r2_latency_ms": 155221,
       "r2_fallbacks": 0
     },
     "kpi": {
-      "submit_rate": 0.022727272727272728,
+      "submit_rate": 0.030303030303030304,
       "review_rate": 0.0,
-      "skip_rate": 0.9772727272727273,
-      "avg_fit_score": 4.4,
+      "skip_rate": 0.9696969696969697,
+      "avg_fit_score": 5.0,
       "l0_filter_rate": 0.0,
       "llm_review_rate": 100.0
     }
   },
   "kpi": {
-    "total_loaded": 44,
+    "total_loaded": 33,
     "l0_auto_skip": 0,
     "l1_jd_enriched": 0,
     "l2_filtered": 0,
     "submit_count": 1,
     "review_count": 0,
-    "skip_count": 43,
-    "submit_rate": 2.3,
-    "avg_fit_score": 4.4,
-    "r2_latency_ms": 204822
+    "skip_count": 32,
+    "submit_rate": 3.0,
+    "avg_fit_score": 5.0,
+    "r2_latency_ms": 155221
   },
   "recommendations": []
 }

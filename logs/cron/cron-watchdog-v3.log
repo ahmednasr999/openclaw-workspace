@@ -1,14 +1,14 @@
 
-[2026-06-11T02:00:01+03:00] START cron-watchdog-v3: /bin/bash /root/.openclaw/workspace/scripts/cron-watchdog-v3.sh
+[2026-06-12T02:00:01+03:00] START cron-watchdog-v3: /bin/bash /root/.openclaw/workspace/scripts/cron-watchdog-v3.sh
 🔍 Watchdog v3 - Detect → Fix → Report
-✅ Gateway running (PID: 580717)
-🟡 Disk WARNING: 82%
-✅ active-tasks.md fresh (9h)
-✅ Jobs data fresh (11h)
+✅ Gateway running (PID: 1040348)
+🟡 Disk WARNING: 83%
+✅ active-tasks.md fresh (33h)
+✅ Jobs data fresh (9h)
 ✅ SIE 360 data fresh (0h)
 ✅ All crons OK
 ✅ No pipeline failures today
-✅ RAM OK: 31%
+✅ RAM OK: 38%
 
 ═══════════════════════════════════
 📊 Watchdog v3 Summary
@@ -16,14 +16,14 @@
   Warnings: 1
   Alerts (need human): 0
 ═══════════════════════════════════
-[2026-06-11T02:00:06+03:00] END cron-watchdog-v3: rc=0 duration=5s
+[2026-06-12T02:00:07+03:00] END cron-watchdog-v3: rc=0 duration=6s
 
-[2026-06-11T04:00:01+03:00] START cron-watchdog-v3: /bin/bash /root/.openclaw/workspace/scripts/cron-watchdog-v3.sh
+[2026-06-12T04:00:01+03:00] START cron-watchdog-v3: /bin/bash /root/.openclaw/workspace/scripts/cron-watchdog-v3.sh
 🔍 Watchdog v3 - Detect → Fix → Report
-✅ Gateway running (PID: 580717)
-🟡 Disk WARNING: 82%
-✅ active-tasks.md fresh (11h)
-✅ Jobs data fresh (13h)
+✅ Gateway running (PID: 1040348)
+🟡 Disk WARNING: 83%
+✅ active-tasks.md fresh (35h)
+✅ Jobs data fresh (11h)
 ✅ SIE 360 data fresh (2h)
 ✅ All crons OK
 ✅ No pipeline failures today
@@ -35,18 +35,18 @@
   Warnings: 1
   Alerts (need human): 0
 ═══════════════════════════════════
-[2026-06-11T04:00:06+03:00] END cron-watchdog-v3: rc=0 duration=5s
+[2026-06-12T04:00:06+03:00] END cron-watchdog-v3: rc=0 duration=5s
 
-[2026-06-11T06:00:01+03:00] START cron-watchdog-v3: /bin/bash /root/.openclaw/workspace/scripts/cron-watchdog-v3.sh
+[2026-06-12T06:00:01+03:00] START cron-watchdog-v3: /bin/bash /root/.openclaw/workspace/scripts/cron-watchdog-v3.sh
 🔍 Watchdog v3 - Detect → Fix → Report
-✅ Gateway running (PID: 977439)
-🟡 Disk WARNING: 82%
-✅ active-tasks.md fresh (13h)
-✅ Jobs data fresh (15h)
+✅ Gateway running (PID: 1487645)
+🟡 Disk WARNING: 83%
+✅ active-tasks.md fresh (38h)
+✅ Jobs data fresh (13h)
 ✅ SIE 360 data fresh (4h)
 ✅ All crons OK
 ✅ No pipeline failures today
-✅ RAM OK: 33%
+✅ RAM OK: 38%
 
 ═══════════════════════════════════
 📊 Watchdog v3 Summary
@@ -54,4 +54,4 @@
   Warnings: 1
   Alerts (need human): 0
 ═══════════════════════════════════
-[2026-06-11T06:00:07+03:00] END cron-watchdog-v3: rc=0 duration=6s
+[2026-06-12T06:00:08+03:00] END cron-watchdog-v3: rc=0 duration=7s

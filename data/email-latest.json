@@ -1,7 +1,7 @@
 {
   "status": "ok",
-  "scan_time": "2026-06-10T20:00:36.817835+03:00",
-  "total_scanned": 33,
+  "scan_time": "2026-06-11T20:00:40.675478+03:00",
+  "total_scanned": 40,
   "by_category": {
     "interview_invite": 0,
     "recruiter_reach": 0,
@@ -10,8 +10,8 @@
     "assessment": 0,
     "application_response": 0,
     "follow_up_needed": 0,
-    "job_alert": 1,
-    "other": 32
+    "job_alert": 0,
+    "other": 40
   },
   "interview_invites": [],
   "recruiter_messages": [],
@@ -20,27 +20,7 @@
   "assessments": [],
   "application_responses": [],
   "follow_ups_needed": [],
-  "job_alerts": [
-    {
-      "id": "361600",
-      "from": "GulfTalent Jobs <jobs@gulftalent.com>",
-      "subject": "Ascentis needs a Project Director",
-      "date": "Wed, 10 Jun 2026 09:58:27 -0500",
-      "unread": true,
-      "priority": "LOW",
-      "score": 0,
-      "pipeline_match": null,
-      "confidence": 25,
-      "confidence_label": "very_low",
-      "evidence": [
-        "automated job alert",
-        "known recruiter/job domain",
-        "hiring sender context",
-        "noise/job-alert guard applied"
-      ],
-      "why_actionable": "not actionable: automated job alert | known recruiter/job domain | hiring sender context | noise/job-alert guard applied"
-    }
-  ],
+  "job_alerts": [],
   "actionable_count": 0,
   "hot_alerts": [],
   "signals": [],

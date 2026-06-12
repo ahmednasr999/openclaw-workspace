@@ -467,3 +467,12 @@
 [2026-06-10T21:57:01Z] Done reset=1 skipped=0 errors=0
 [2026-06-11T00:57:05Z] Done reset=0 skipped=0 errors=0
 [2026-06-11T03:57:10Z] Done reset=0 skipped=0 errors=0
+[2026-06-11T06:56:16Z] RESET [cto] 0200e279-ed05-47b8-9f20-0af634489dc6.trajectory.jsonl was 3MB -> archived to 0200e279-ed05-47b8-9f20-0af634489dc6.trajectory.20260611T065616Z.jsonl.gz
+[2026-06-11T06:57:09Z] Done reset=1 skipped=0 errors=0
+[2026-06-11T09:57:04Z] Done reset=0 skipped=0 errors=0
+[2026-06-11T12:56:57Z] Done reset=0 skipped=0 errors=0
+[2026-06-11T15:57:07Z] Done reset=0 skipped=0 errors=0
+[2026-06-11T18:57:03Z] Done reset=0 skipped=0 errors=0
+[2026-06-11T21:57:00Z] Done reset=0 skipped=0 errors=0
+[2026-06-12T00:57:01Z] Done reset=0 skipped=0 errors=0
+[2026-06-12T03:57:07Z] Done reset=0 skipped=0 errors=0

@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-10T14:35:34.056963+03:00",
+  "last_updated": "2026-06-11T16:34:55.874959+03:00",
   "items": [
     {
       "company": "Netcracker Technology in Dubai, United Arab Emirates â Apply on Wuzzuf",
@@ -293,6 +293,15 @@
       "job_url": "https://www.linkedin.com/jobs/view/4426357620",
       "verdict": "SUBMIT",
       "queued_at": "2026-06-10T14:35:34.056951+03:00",
+      "status": "queued"
+    },
+    {
+      "company": "PwC Middle East",
+      "job_title": "Consulting - Management Consulting - Workforce Transformation (FS Sector) - Director - Riyadh",
+      "source": "linkedin_jobspy",
+      "job_url": "https://www.linkedin.com/jobs/view/4427059343",
+      "verdict": "SUBMIT",
+      "queued_at": "2026-06-11T16:34:55.874950+03:00",
       "status": "queued"
     }
   ],

@@ -1319,3 +1319,9 @@ An OpenClaw image-generation reply produced the desired hand-drawn ROT visual bu
 ### Do differently
 When a generated image message reports `Media failed`, do not regenerate first. Locate the newest generated image in `/root/.openclaw/media/tool-image-generation` or `generated_images`, verify dimensions/file size, save a durable copy under `output/linkedin`, then resend through the direct Telegram photo path and confirm the returned `message_id`.
 
+## 2026-06-11 - Cron And Heartbeat Exec Should Respect The Configured Gateway Host
+
+### Incident
+Several June 11 cron/heartbeat sessions failed immediately with `exec host not allowed (requested auto; configured host is gateway; set tools.exec.host=auto to allow this override)` after calling `sandbox_exec` with `host=auto`. Affected tasks included heartbeat checks, the email synthetic harness, and the health dashboard writer.
+### Do differently
+For scheduled OpenClaw work in this runtime, omit the `host` override or use the configured gateway path. Do not set `host=auto` unless the tool/runtime explicitly allows that override; if this error appears, retry the same command without the override before treating the underlying script as failed.
