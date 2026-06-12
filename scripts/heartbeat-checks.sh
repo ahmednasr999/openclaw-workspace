@@ -271,6 +271,7 @@ print(json.dumps(issues))
 # ============================================================
 # OUTPUT: Structured JSON
 # ============================================================
+scanner_repair_json=$(printf '%s' "$scanner_repair" | python3 -c 'import json, sys; print(json.dumps(sys.stdin.read()))')
 cat <<EOF
 {
   "timestamp": "$NOW_ISO",
@@ -292,7 +293,7 @@ cat <<EOF
     "leads": $scanner_leads,
     "total": $scanner_total,
     "file": "$SCANNER_FILE",
-    "repair_hint": "$scanner_repair"
+    "repair_hint": $scanner_repair_json
   },
   "cron_output_issues": $cron_output_issues
 }

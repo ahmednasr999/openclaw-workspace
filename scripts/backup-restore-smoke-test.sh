@@ -5,6 +5,7 @@ WORKSPACE="/root/.openclaw/workspace"
 LOG_DIR="$WORKSPACE/logs/cron"
 BACKUP_LOG="$WORKSPACE/logs/cron/daily-backup.log"
 LEGACY_BACKUP_LOG="$WORKSPACE/logs/openclaw-backup.log"
+ARCHIVE_DIR="/root/openclaw-backups"
 mkdir -p "$LOG_DIR"
 
 fail=0
@@ -36,8 +37,19 @@ if [[ -n "$latest_snapshot" && -r "$latest_snapshot" ]]; then
     fail=1
   fi
 else
-  echo "FAIL: no readable openclaw snapshot directory found under /root"
-  fail=1
+  latest_archive="$(find "$ARCHIVE_DIR" -maxdepth 1 -type f -name 'openclaw-*.tar.gz' -mtime -8 -printf '%T@ %p\n' 2>/dev/null | sort -nr | head -1 | cut -d' ' -f2-)"
+  if [[ -n "$latest_archive" && -r "$latest_archive" ]]; then
+    if gzip -t "$latest_archive" && tar -tzf "$latest_archive" .openclaw/openclaw.json .openclaw/workspace/MEMORY.md >/dev/null 2>&1; then
+      echo "OK: no raw snapshot found, but recent compressed backup archive passed integrity checks: $latest_archive"
+      du -sh "$latest_archive" 2>/dev/null || true
+    else
+      echo "FAIL: recent compressed backup archive failed integrity checks: $latest_archive"
+      fail=1
+    fi
+  else
+    echo "FAIL: no readable openclaw snapshot directory or recent compressed backup archive found"
+    fail=1
+  fi
 fi
 
 echo "Backup/snapshot smoke test finished at $(date -Is)"

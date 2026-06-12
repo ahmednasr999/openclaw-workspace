@@ -56,6 +56,7 @@ LOG_PATHS = {
     "clear-stale-context-maintenance.py": "/root/.openclaw/workspace/logs/cron/stale-context-maintenance.log",
     "cron-watchdog-v3.sh": "/root/.openclaw/workspace/logs/cron/cron-watchdog-v3.log",
     "cron-dashboard-updater.py": "/root/.openclaw/workspace/logs/cron/cron-dashboard-updater.log",
+    "repo-maintainer-watch.py": "/root/.openclaw/workspace/logs/cron/repo-maintainer-watch.log",
     "run-briefing-pipeline.sh": "/var/log/briefing/cron.log",
     "linkedin-autoresearch.py": "/tmp/linkedin-autoresearch.log",
     "autoresearch-job-review.py": "/tmp/autoresearch-job-review.log",

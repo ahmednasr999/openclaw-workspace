@@ -1,0 +1,48 @@
+{
+  "enabled": true,
+  "dispatch_enabled": true,
+  "owner_agent": "cto",
+  "session_key": "agent:cto:repo-maintainer",
+  "dispatch_min_priority": "high",
+  "dispatch_cooldown_minutes": 180,
+  "dispatch_timeout_seconds": 900,
+  "max_dispatches_per_run": 1,
+  "state_path": "/root/.openclaw/workspace/data/repo-maintainer-watch-state.json",
+  "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md",
+  "events_dir": "/root/.openclaw/workspace/reports/repo-maintainer/events",
+  "repos": [
+    {
+      "name": "openclaw-workspace",
+      "path": "/root/.openclaw/workspace",
+      "github": "ahmednasr999/openclaw-workspace",
+      "default_branch": "main",
+      "watch_dirty_paths": [
+        "AGENTS.md",
+        "MEMORY.md",
+        "SOUL.md",
+        "TOOLS.md",
+        "USER.md",
+        "config/",
+        "scripts/",
+        "skills/",
+        "templates/",
+        "infrastructure/"
+      ],
+      "ignore_dirty": [
+        ".cache/**",
+        ".learnings/**",
+        "archive/**",
+        "data/**",
+        "docs/cron-inventory.md",
+        "intel/**",
+        "logs/**",
+        "media/inbound/**",
+        "memory/ontology/**",
+        "reports/repo-maintainer/**",
+        "config/*.bak*",
+        "docs/*.bak*",
+        "scripts/*.bak*"
+      ]
+    }
+  ]
+}

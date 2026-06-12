@@ -3,7 +3,7 @@
 CRON_TZ=Africa/Cairo
 
 # Owner: OpenClaw Core | Purpose: Daily workspace backup | Expected runtime: <30m
-0 20 * * * /root/.openclaw/workspace/scripts/cron-run-with-alert.sh daily-backup /var/lock/openclaw/daily-backup.lock /root/.openclaw/workspace/logs/cron/daily-backup.log /root/.openclaw/workspace/scripts/daily-backup.sh
+# DISABLED daily-backup per Ahmed 2026-06-07: 0 20 * * * /root/.openclaw/workspace/scripts/cron-run-with-alert.sh daily-backup /var/lock/openclaw/daily-backup.lock /root/.openclaw/workspace/logs/cron/daily-backup.log /root/.openclaw/workspace/scripts/daily-backup.sh
 
 # Owner: OpenClaw Core | Purpose: Monthly daily-notes archive, separated from backup | Expected runtime: <15m
 45 19 1 * * /root/.openclaw/workspace/scripts/cron-run-with-alert.sh archive-daily-notes /var/lock/openclaw/archive-daily-notes.lock /root/.openclaw/workspace/logs/cron/archive-daily-notes.log /root/.openclaw/workspace/scripts/archive-daily-notes.sh
@@ -32,6 +32,10 @@ CRON_TZ=Africa/Cairo
 # Owner: OpenClaw Core | Purpose: Clear stale agent context | Expected runtime: <2m
 */5 * * * * /root/.openclaw/workspace/scripts/cron-run-with-alert.sh stale-context-maintenance /var/lock/openclaw/stale-context-maintenance.lock /root/.openclaw/workspace/logs/cron/stale-context-maintenance.log /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
 
+
+# Owner: CTO | Purpose: Bounded repo maintainer watcher; read-only scan, max one CTO worker dispatch | Expected runtime: <20m
+*/5 * * * * /root/.openclaw/workspace/scripts/cron-run-with-alert.sh repo-maintainer-watch /var/lock/openclaw/repo-maintainer-watch.lock /root/.openclaw/workspace/logs/cron/repo-maintainer-watch.log /usr/bin/python3 /root/.openclaw/workspace/scripts/repo-maintainer-watch.py # bounded-repo-maintainer
+
 # Owner: OpenClaw Core | Purpose: Cron watchdog v3 | Expected runtime: <10m
 0 */2 * * * /root/.openclaw/workspace/scripts/cron-run-with-alert.sh cron-watchdog-v3 /var/lock/openclaw/cron-watchdog-v3.lock /root/.openclaw/workspace/logs/cron/cron-watchdog-v3.log /bin/bash /root/.openclaw/workspace/scripts/cron-watchdog-v3.sh
 
@@ -47,17 +51,14 @@ CRON_TZ=Africa/Cairo
 # Owner: OpenClaw Core | Purpose: Weekly restore-path smoke test | Expected runtime: <10m
 30 10 * * 0 /root/.openclaw/workspace/scripts/cron-run-with-alert.sh backup-restore-smoke-test /var/lock/openclaw/backup-restore-smoke-test.lock /root/.openclaw/workspace/logs/cron/backup-restore-smoke-test.log /root/.openclaw/workspace/scripts/backup-restore-smoke-test.sh # weekly-backup-restore-smoke-test
 
-# Owner: OpenClaw Core | Purpose: Disk guard enforcement/cleanup alerts | Expected runtime: <15m
+# Owner: OpenClaw Core | Purpose: Disk guard enforcement daily at 75 percent, auto safe cleanup | Expected runtime: <15m
 7 7 * * * /root/.openclaw/workspace/scripts/cron-run-with-alert.sh disk-guard /var/lock/openclaw/disk-guard.cron.lock /root/.openclaw/workspace/logs/cron/disk-guard-cron.log /usr/bin/python3 /root/.openclaw/workspace/scripts/direct-cron-runner.py disk-guard # direct-vps-disk-guard
 
 # Owner: CMO | Purpose: Approved 14-day LinkedIn post campaign, May 15-28 2026 only | Expected runtime: <15m
-0 11 15-28 5 * /root/.openclaw/workspace/scripts/cron-run-with-alert.sh approved-14day-post /var/lock/openclaw/approved-14day-post.cron.lock /root/.openclaw/workspace/logs/cron/approved-14day-linkedin-post-cron.log /bin/bash -lc 'test "$(date +\%Y)" = "2026" && /usr/bin/python3 /root/.openclaw/workspace/scripts/direct-cron-runner.py approved-14day-post' # approved-14day-linkedin-11am
 
 # Owner: CMO | Purpose: Approved 14-day LinkedIn engagement reminder, May 15-28 2026 only | Expected runtime: <5m
-0 12 15-28 5 * /root/.openclaw/workspace/scripts/cron-run-with-alert.sh approved-14day-engagement /var/lock/openclaw/approved-14day-engagement.cron.lock /root/.openclaw/workspace/logs/cron/approved-14day-linkedin-engagement-cron.log /bin/bash -lc 'test "$(date +\%Y)" = "2026" && /usr/bin/python3 /root/.openclaw/workspace/scripts/direct-cron-runner.py approved-14day-engagement' # approved-14day-linkedin-engagement-12pm
 
 # Owner: CMO | Purpose: Retire approved 14-day campaign crons after final engagement window | Expected runtime: <2m
-20 12 28 5 * /root/.openclaw/workspace/scripts/cron-run-with-alert.sh approved-14day-retire /var/lock/openclaw/approved-14day-retire.lock /root/.openclaw/workspace/logs/cron/approved-14day-retire.log /bin/bash -lc 'test "$(date +\%Y)" = "2026" && /root/.openclaw/workspace/scripts/retire-approved-14day-crons.sh' # approved-14day-retire
 
 
 # Owner: CMO | Purpose: LinkedIn Comment Radar discovery and comment drafts; never posts automatically | Expected runtime: <25m
@@ -71,3 +72,9 @@ CRON_TZ=Africa/Cairo
 
 # Owner: HR/JobZoom | Purpose: JobZoom managed daily scan; direct OS cron bypass until agent-turn shell regression is fixed | Expected runtime: <90m
 0 5 * * * /root/.openclaw/workspace/scripts/cron-run-with-alert.sh jobzoom-managed-daily /var/lock/openclaw/jobzoom-managed-daily.lock /root/.openclaw/workspace/logs/cron/jobzoom-managed-daily.log /root/.openclaw/workspace-jobzoom/scripts/jobzoom_daily_launch.sh # jobzoom-managed-daily-5am-cairo
+
+# Owner: CMO | Purpose: Ongoing Notion-approved LinkedIn daily publisher with visual | Expected runtime: <15m
+30 9 * * * /root/.openclaw/workspace/scripts/cron-run-with-alert.sh cmo-notion-linkedin-post /var/lock/openclaw/cmo-notion-linkedin-post.cron.lock /root/.openclaw/workspace/logs/cron/cmo-notion-linkedin-post-cron.log /usr/bin/python3 /root/.openclaw/workspace-cmo/scripts/post_scheduled_notion_linkedin.py # cmo-notion-linkedin-post
+
+# Owner: CEO Ops | Purpose: GPT-5.5 quota usage snapshots for Pro 20x vs 5x decision | Expected runtime: <5m
+15 0,6,12,18 * * * /root/.openclaw/workspace/scripts/cron-run-with-alert.sh model-guardian-run /var/lock/openclaw/model-guardian-run.lock /root/.openclaw/workspace/logs/cron/model-guardian-run.log /usr/bin/python3 /root/.openclaw/workspace/scripts/model-guardian-run.py # gpt55-quota-monitor

@@ -22,7 +22,7 @@ Full preserved snapshot lives in `docs/reference/MEMORY.full.md`. Keep this root
 - Minimum monthly total-package baselines: UAE AED 55,000; Saudi about SAR 56,000; Qatar about QAR 55,000; Oman about OMR 5,750; Bahrain about BHD 5,650; Kuwait about KWD 4,600.
 - Reporting line and work arrangement are not hard filters if salary is high enough.
 - For salary-expectation fields, use AED 55,000/month minimum and convert to local currency, rounded conservatively upward.
-- Serious agent/coding/automation work should use research-before-plan, a short plan artifact when substantial, one clear owner for parallel agents, raw evidence retention, and human approval before external-impact actions. Do not adopt broad YOLO/permission-skipping advice.
+- Serious agent/coding/automation work should use `research -> plan -> execute -> verify`, a short plan artifact when substantial, one clear owner for parallel agents, raw evidence before summaries, `repeat twice -> system`, and human approval before external-impact actions. Do not adopt broad YOLO/permission-skipping advice.
 
 ## Job Search and Applications
 

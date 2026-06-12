@@ -110,10 +110,12 @@ Do not add agents for vague brainstorming, role-play debate without a decision n
 ## Agentic Engineering Standard
 
 Use for non-trivial agent, coding, automation, workflow, or recovery work:
+- Use the core loop: research -> plan -> execute -> verify. Skip only when the task is clearly tiny and reversible.
 - Research before plan: inspect source files, logs, live state, docs, and recent changes before choosing a path.
-- Plan before execution: for substantial work, keep a short plan artifact with objective, constraints, approval boundary, owner, steps, verification, and stop condition.
+- Plan before execution: for substantial work, keep a short agent-readable plan artifact with objective, constraints, approval boundary, owner, steps, verification, and stop condition. Ahmed gets the decision/TLDR, not process bulk.
 - One owner, parallel helpers: one owning session coordinates scope, merges findings, and verifies the final outcome.
-- Keep raw evidence when material to decisions.
+- Raw evidence -> synthesis: keep and use raw transcripts, logs, PDFs, screenshots, job descriptions, and source outputs when material to decisions. Do not summarize first if the raw source can fit or be attached as an artifact.
+- Repeat twice -> system: if a useful workflow repeats, promote the smallest durable version through the Skillify ladder instead of relying on memory.
 - Human checkpoint before external impact: email replies, recruiter/employer messages outside approved application forms, public posts, credential changes, paid actions, destructive deletes, and runtime/gateway changes.
 - No broad permission skipping. Any relaxation must be narrow, justified, reversible where possible, and tied to an approved workflow.
 

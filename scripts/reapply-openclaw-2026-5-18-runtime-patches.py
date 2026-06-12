@@ -286,6 +286,41 @@ def patch_active_memory(changes: list[str]) -> None:
         changed(changes, path)
 
 
+def patch_delivery_mirror_dedupe(changes: list[str]) -> None:
+    path = find_file("bot-*.js", "mirrorTelegramAssistantReplyToTranscript")
+    text = read(path)
+    marker = "latestAssistant?.text?.trim() === text.trim()"
+    if marker in text:
+        return
+    old = '\tconst { appended, messageId, message: appendedMessage } = await appendSessionTranscriptMessage({'
+    new = '\tconst latestAssistant = await readLatestAssistantTextFromSessionTranscript(sessionFile);\n\tif (latestAssistant?.text?.trim() === text.trim()) return;\n\tconst { appended, messageId, message: appendedMessage } = await appendSessionTranscriptMessage({'
+    text, did = replace_once(text, old, new, "delivery mirror transcript dedupe")
+    if did:
+        write(path, text)
+        changed(changes, path)
+
+
+def patch_exec_approval_followup_no_direct_leak(changes: list[str]) -> None:
+    path = find_file("bash-tools-*.js", "sendExecApprovalFollowup")
+    text = read(path)
+    old = '\tlet sessionError = null;\n\tif (isDenied && (!sessionKey || shouldSuppressExecDeniedFollowup(sessionKey))) return false;'
+    new = '\tlet sessionError = null;\n\tlet handoffAcceptedByAgent = false;\n\tif (isDenied && (!sessionKey || shouldSuppressExecDeniedFollowup(sessionKey))) return false;'
+    text, did = replace_once(text, old, new, "exec followup handoff accepted marker")
+    if did:
+        changed(changes, path)
+    old = '\t\tif (status === "accepted" || status === "in_flight" || status === "pending") {\n\t\t\tconst runId = readGatewayRunId(accepted) ?? normalizeOptionalString(agentArgs.idempotencyKey);'
+    new = '\t\tif (status === "accepted" || status === "in_flight" || status === "pending") {\n\t\t\thandoffAcceptedByAgent = true;\n\t\t\tconst runId = readGatewayRunId(accepted) ?? normalizeOptionalString(agentArgs.idempotencyKey);'
+    text, did = replace_once(text, old, new, "exec followup handoff accepted assignment")
+    if did:
+        changed(changes, path)
+    old = '\t} catch (err) {\n\t\tsessionError = err;\n\t}\n\tif (isDenied) {'
+    new = '\t} catch (err) {\n\t\tsessionError = err;\n\t}\n\tif (handoffAcceptedByAgent) {\n\t\tlog.info(`exec approval followup agent wait failed after handoff; suppressing direct fallback: ${formatUnknownError(sessionError)}`);\n\t\treturn true;\n\t}\n\tif (isDenied) {'
+    text, did = replace_once(text, old, new, "exec followup suppress direct fallback after handoff")
+    if did:
+        changed(changes, path)
+    write(path, text)
+
+
 def main() -> int:
     if not DIST.exists():
         print(f"ERROR: missing dist directory: {DIST}", file=sys.stderr)
@@ -300,6 +335,8 @@ def main() -> int:
     patch_task_registry(changes)
     patch_context_engine(changes)
     patch_active_memory(changes)
+    patch_delivery_mirror_dedupe(changes)
+    patch_exec_approval_followup_no_direct_leak(changes)
     print(f"patched_files={len(changes)}")
     for path in changes:
         print(path)

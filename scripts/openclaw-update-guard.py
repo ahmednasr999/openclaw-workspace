@@ -20,7 +20,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-EXPECTED_MODEL = "openai-codex/gpt-5.5"
+EXPECTED_MODEL = "openai/gpt-5.5"
+LEGACY_MODEL = "openai-codex/gpt-5.5"
 SANDBOX_IMAGE = "openclaw-sandbox:bookworm-slim"
 OPENCLAW_CONFIG = Path("/root/.openclaw/openclaw.json")
 WORKSPACE = Path("/root/.openclaw/workspace")
@@ -401,15 +402,15 @@ class Guard:
             if data is None:
                 continue
             strings = list(self.iter_strings(data))
-            bad = sorted(set(s for s in strings if s == "openai/gpt-5.5" or s.startswith("openai/gpt-5.5")))
+            bad = sorted(set(s for s in strings if s == LEGACY_MODEL or s.startswith(LEGACY_MODEL)))
             expected_hits = sum(1 for s in strings if s == EXPECTED_MODEL or s.startswith(EXPECTED_MODEL))
             if bad:
                 problems.append(f"{path}: contains {bad}")
-            evidence.append(f"{path}: expected_hits={expected_hits}, bad_openai_refs={len(bad)}")
+            evidence.append(f"{path}: expected_hits={expected_hits}, legacy_refs={len(bad)}")
         if problems:
-            self.add("model refs", "FAIL", "provider drift detected, expected openai-codex refs", "\n".join(problems + evidence))
+            self.add("model refs", "FAIL", f"legacy provider drift detected, expected {EXPECTED_MODEL}", "\n".join(problems + evidence))
         else:
-            self.add("model refs", "PASS", f"no openai/gpt-5.5 drift found, expected {EXPECTED_MODEL}", "\n".join(evidence))
+            self.add("model refs", "PASS", f"no legacy model drift found, expected {EXPECTED_MODEL}", "\n".join(evidence))
 
     def check_codex_usage(self) -> None:
         cp = self.run_cmd("status usage json", ["openclaw", "status", "--usage", "--json"], timeout=max(self.timeout, 30))
