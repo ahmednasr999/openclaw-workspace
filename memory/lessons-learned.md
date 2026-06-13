@@ -1325,3 +1325,17 @@ When a generated image message reports `Media failed`, do not regenerate first. 
 Several June 11 cron/heartbeat sessions failed immediately with `exec host not allowed (requested auto; configured host is gateway; set tools.exec.host=auto to allow this override)` after calling `sandbox_exec` with `host=auto`. Affected tasks included heartbeat checks, the email synthetic harness, and the health dashboard writer.
 ### Do differently
 For scheduled OpenClaw work in this runtime, omit the `host` override or use the configured gateway path. Do not set `host=auto` unless the tool/runtime explicitly allows that override; if this error appears, retry the same command without the override before treating the underlying script as failed.
+
+## 2026-06-12 - OpenClaw Updates Must Stop On Model Provider Drift
+
+### Incident
+OpenClaw 2026.6.6 update preflight failed before any install or restart because `scripts/openclaw-update-guard.py --write-report` found `openai/gpt-5.5` in `/root/.openclaw/openclaw.json` and `/root/.openclaw/workspace/config/model-router.json` while expecting `openai-codex/gpt-5.5`; codex usage also did not show `openai-codex`.
+### Do differently
+Before updating or restarting OpenClaw, run the update guard and inspect its report. If model refs fail, repair provider namespace drift in both the live config and workspace router, validate config, rerun the guard, and do not install or restart while the verdict is FAIL.
+
+## 2026-06-12 - Cron Reminders Need Completion, Not Acknowledgement
+
+### Correction
+Ahmed had to resend an email-agent cron task because the previous response only acknowledged it instead of completing the original scheduled work.
+### Do differently
+For cron/reminder tasks, run the requested tools or scripts immediately and return only the requested final output or summary. Do not send `on it` or acknowledgement/status text as the answer, and wait for spawned or background work before closing.

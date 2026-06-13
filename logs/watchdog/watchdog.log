@@ -4755,3 +4755,32 @@ Config (/root/.openclaw/openclaw.json): missing env var "OPENCLAW_HOOKS_TOKEN" a
 [2026-06-12 04:00] Summary: fixes=0 warnings=1 alerts=0
 [2026-06-12 06:00] === Watchdog v3 run ===
 [2026-06-12 06:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-06-12 08:00] === Watchdog v3 run ===
+[2026-06-12 08:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-06-12 10:00] === Watchdog v3 run ===
+[2026-06-12 10:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-06-12 12:00] === Watchdog v3 run ===
+[2026-06-12 12:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-06-12 14:00] === Watchdog v3 run ===
+[2026-06-12 14:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-06-12 16:00] === Watchdog v3 run ===
+[2026-06-12 16:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-06-12 18:00] === Watchdog v3 run ===
+[2026-06-12 18:00] WARN: active-tasks.md stale (50h)
+[2026-06-12 18:00] WARN: Jobs data stale (25h), triggering pipeline
+[2026-06-12 18:00] FIXED: Pipeline triggered
+[2026-06-12 18:00] Summary: fixes=1 warnings=1 alerts=0
+[2026-06-12 20:00] === Watchdog v3 run ===
+[2026-06-12 20:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-06-12 22:00] === Watchdog v3 run ===
+[2026-06-12 22:00] Summary: fixes=0 warnings=2 alerts=0
+[2026-06-13 00:00] === Watchdog v3 run ===
+[2026-06-13 00:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-06-13 02:00] === Watchdog v3 run ===
+[2026-06-13 02:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-06-13 04:00] === Watchdog v3 run ===
+[2026-06-13 04:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-06-13 06:00] === Watchdog v3 run ===
+[2026-06-13 06:00] ALERT: Disk at 90%
+[2026-06-13 06:00] FIXED: Disk cleaned from 90% to 90%
+[2026-06-13 06:00] Summary: fixes=1 warnings=0 alerts=0

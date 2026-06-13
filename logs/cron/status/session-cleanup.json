@@ -2,9 +2,9 @@
   "task": "session-cleanup",
   "status": "ok",
   "returncode": 0,
-  "started_at": "2026-06-12T03:00:01+03:00",
-  "finished_at": "2026-06-12T03:01:08+03:00",
-  "duration_seconds": 67,
+  "started_at": "2026-06-13T03:00:01+03:00",
+  "finished_at": "2026-06-13T03:01:05+03:00",
+  "duration_seconds": 64,
   "log_path": "/root/.openclaw/workspace/logs/cron/session-cleanup-cron.log",
   "lock_path": "/var/lock/openclaw/session-cleanup.cron.lock",
   "host": "srv1352768"

@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-06-12T06:08:10.348472+03:00",
-  "total_crons": 53,
+  "timestamp": "2026-06-13T06:08:10.848947+03:00",
+  "total_crons": 52,
   "system_crons": 22,
-  "openclaw_crons": 31,
+  "openclaw_crons": 30,
   "notion_created": 0,
-  "notion_updated": 53,
+  "notion_updated": 52,
   "errors": [],
   "warnings": [],
   "crons": [
@@ -279,6 +279,16 @@
       }
     },
     {
+      "name": "Weekly Skill Autoresearch",
+      "schedule": "cron 0 10 * * 6 @ Africa/Cairo",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
       "name": "CMO Daily LinkedIn Publisher - Composio 11 Cairo",
       "schedule": "cron 0 11 * * * @ Africa/Cairo",
       "type": "openclaw",
@@ -309,16 +319,6 @@
       }
     },
     {
-      "name": "RSS Intelligence - Weekly Crawl",
-      "schedule": "cron 0 13 * * 5 @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
       "name": "LCM Midday Compaction Sweep",
       "schedule": "cron 0 14 * * * @ Africa/Cairo",
       "type": "openclaw",
@@ -331,26 +331,6 @@
     {
       "name": "CMO LinkedIn Comment Radar - 3pm",
       "schedule": "cron 0 15 * * * @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "CMO Weekly Content Report",
-      "schedule": "cron 0 17 * * 5 @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "GPT-5.5 Pro 20x weekly quota recommendation",
-      "schedule": "at 2026-06-12T17:00:00.000Z",
       "type": "openclaw",
       "last_status": {
         "status": "\u26a0\ufe0f Unknown",
@@ -401,16 +381,6 @@
     {
       "name": "Calendar Pre-fetch",
       "schedule": "cron 55 4 * * * @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "Weekly Skill Autoresearch",
-      "schedule": "cron 0 10 * * 6 @ Africa/Cairo",
       "type": "openclaw",
       "last_status": {
         "status": "\u26a0\ufe0f Unknown",
@@ -531,6 +501,26 @@
     {
       "name": "CMO Publishing Watchdog",
       "schedule": "cron 0 10-18 * * 1-4 @ Asia/Dubai",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "RSS Intelligence - Weekly Crawl",
+      "schedule": "cron 0 13 * * 5 @ Africa/Cairo",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "CMO Weekly Content Report",
+      "schedule": "cron 0 17 * * 5 @ Africa/Cairo",
       "type": "openclaw",
       "last_status": {
         "status": "\u26a0\ufe0f Unknown",

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-11T22:50:15.988839+00:00",
+  "generated": "2026-06-12T22:50:30.928369+00:00",
   "health_score": 77,
   "summary": {
     "ok": 5,
@@ -8,11 +8,11 @@
   },
   "workspace": {
     "root_files": 78,
-    "disk_percent": 83,
-    "disk_used": "79G",
+    "disk_percent": 89,
+    "disk_used": "85G",
     "disk_total": "96G",
     "ram_total": "7.8Gi",
-    "ram_used": "2.9Gi",
+    "ram_used": "2.6Gi",
     "large_files": [
       "/root/.openclaw/agents/main/agent/codex-home/logs_2.sqlite",
       "/root/.openclaw/agents/main/agent/codex-home/state_5.sqlite",
@@ -97,7 +97,7 @@
       "/root/.openclaw/state/openclaw.sqlite",
       "/root/.openclaw/browser/linkedin-login-cdp/OnDeviceHeadSuggestModel/20251024.824731831.14/cr_en-us_500000_index.bin",
       "/root/.openclaw/browser/linkedin-login-cdp/WidevineCdm/4.10.3050.0/_platform_specific/linux_x64/libwidevinecdm.so",
-      "/root/.openclaw/browser/linkedin-login-cdp/Safe Browsing/UrlSoceng.store.4_13425690533563403",
+      "/root/.openclaw/browser/linkedin-login-cdp/Safe Browsing/UrlSoceng.store.4_13425776940718250",
       "/root/.openclaw/browser/linkedin-login-cdp/WasmTtsEngine/20260528.1/bindings_main.wasm",
       "/root/.openclaw/browser/linkedin-login-cdp/optimization_guide_model_store/43/E6DC4029A1E4B4C1/6D21EF9278597EC2/model.tflite",
       "/root/.openclaw/browser/linkedin-login-cdp/Default/Code Cache-bak-linkedinfix-20260606220646/js/b9b1a5e4d53ee621_0",
@@ -135,6 +135,7 @@
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-05-31_070016.db",
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-06-07_070021.db",
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-05-29_201050.db",
+      "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-06-12_070027.db",
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-06-08_070014.db",
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-06-11_070030.db",
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-05-30_070011.db",
@@ -143,12 +144,18 @@
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-06-03_070013.db",
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-06-05_070023.db",
       "/root/.openclaw/workspace/data/nasr-pipeline.db",
+      "/root/.openclaw/workspace/backups/openclaw-update-20260612-214914/openclaw-config-state.tgz",
+      "/root/.openclaw/workspace/backups/openclaw-update-20260612-214914/sqlite/agents/jobzoom/sessions/sessions.json",
+      "/root/.openclaw/workspace/backups/openclaw-update-20260612-214914/sqlite/memory/main.sqlite",
+      "/root/.openclaw/workspace/backups/openclaw-update-20260612-214914/sqlite/memory/cto.sqlite",
+      "/root/.openclaw/workspace/backups/openclaw-update-20260612-214914/sqlite/state/openclaw.sqlite",
+      "/root/.openclaw/workspace/backups/openclaw-update-20260612-214914/sqlite/lcm.db",
       "/root/.openclaw/workspace/research/awesome-gpt-image-2/.git/objects/pack/pack-94d41b4d79525cb063dadb6b612a426e2b9f9bb7.pack",
       "/root/.openclaw/workspace/.git/objects/pack/pack-7310b47749fca6e6996a3d045088796f02cf4406.pack",
       "/root/.openclaw/workspace/newsletter2.png",
       "/root/.openclaw/workspace/newsletter3.png"
     ],
-    "session_mb": 775.6
+    "session_mb": 778.4
   },
   "learnings": {
     "total": 28,
@@ -183,11 +190,11 @@
     }
   },
   "crons": {
-    "total": 31,
-    "enabled": 31,
+    "total": 30,
+    "enabled": 30,
     "disabled": 0,
     "skill_first": 5,
-    "skill_first_pct": 16,
+    "skill_first_pct": 17,
     "raw_prompt_list": [
       "LCM Nightly Health Check",
       "session-watchdog",
@@ -197,15 +204,12 @@
       "Email Synthetic Regression",
       "Email Health Card Daily",
       "Email Agent (Fri-Sat)",
+      "Weekly Skill Autoresearch",
       "CMO Daily LinkedIn Publisher - Composio 11 Cairo",
       "CMO LinkedIn Comment Radar - 11am",
-      "RSS Intelligence - Weekly Crawl",
       "LCM Midday Compaction Sweep",
       "CMO LinkedIn Comment Radar - 3pm",
-      "CMO Weekly Content Report",
-      "GPT-5.5 Pro 20x weekly quota recommendation",
       "Auto Lessons Learned - Daily Capture",
-      "Weekly Skill Autoresearch",
       "Email Agent (Sun-Thu)",
       "CMO Weekly Outreach Queue \u2014 Sunday",
       "Email Hygiene Weekly",
@@ -214,7 +218,9 @@
       "CEO/NASR Weekly Operating Review",
       "Weekly Team Retro",
       "CMO Weekly Drafting",
-      "CMO Publishing Watchdog"
+      "CMO Publishing Watchdog",
+      "RSS Intelligence - Weekly Crawl",
+      "CMO Weekly Content Report"
     ],
     "failing": []
   },
@@ -231,17 +237,17 @@
     {
       "category": "workspace",
       "level": "warn",
-      "message": "Disk: 83% used - approaching 90% threshold"
+      "message": "Disk: 89% used - approaching 90% threshold"
     },
     {
       "category": "workspace",
       "level": "warn",
-      "message": "Large files (>5MB): 133 found in .openclaw"
+      "message": "Large files (>5MB): 140 found in .openclaw"
     },
     {
       "category": "workspace",
       "level": "alert",
-      "message": "Session size: 775.6MB - bloated, review sessions"
+      "message": "Session size: 778.4MB - bloated, review sessions"
     },
     {
       "category": "learnings",
@@ -271,7 +277,7 @@
     {
       "category": "crons",
       "level": "alert",
-      "message": "Cron skill-first: 5/31 (16%) - too many raw-prompt crons"
+      "message": "Cron skill-first: 5/30 (17%) - too many raw-prompt crons"
     },
     {
       "category": "crons",
@@ -286,7 +292,7 @@
   ],
   "auto_fixed": [],
   "needs_attention": [
-    "Session bloat: 775.6MB - review before deleting (needs human decision)",
-    "Disk usage 83% - needs cleanup decision (do not auto-delete)"
+    "Session bloat: 778.4MB - review before deleting (needs human decision)",
+    "Disk usage 89% - needs cleanup decision (do not auto-delete)"
   ]
 }

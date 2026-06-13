@@ -1234,3 +1234,18 @@
 2026-06-12T05:33:14+03:00 degraded count=2 reason=app-server-count-10, pid=1040348 rss_kb=787508 app_servers=10 health_ms=1 signals=0
 2026-06-12T05:33:14+03:00 restart-gateway reason=degraded:app-server-count-10,
 2026-06-12T05:33:34+03:00 post-restart health=000 6006
+2026-06-12T07:45:55+03:00 degraded count=1 reason=app-server-count-10, pid=1487645 rss_kb=857452 app_servers=10 health_ms=27 signals=0
+2026-06-12T07:48:15+03:00 degraded count=2 reason=app-server-count-10, pid=1487645 rss_kb=861224 app_servers=10 health_ms=1 signals=0
+2026-06-12T07:48:15+03:00 restart-gateway reason=degraded:app-server-count-10,
+2026-06-12T07:48:32+03:00 post-restart health=200 5682
+2026-06-12T21:53:54+03:00 health-fail count=1 pid=none http=000 ms=1 app_servers=2
+2026-06-12T21:56:14+03:00 health-fail count=2 pid=none http=000 ms=1 app_servers=0
+2026-06-12T21:56:14+03:00 restart-gateway reason=health-failures:2:http-000
+2026-06-12T21:56:23+03:00 post-restart health=000 0
+2026-06-12T21:58:34+03:00 health-fail count=1 pid=none http=000 ms=0 app_servers=0
+2026-06-12T22:00:54+03:00 health-fail count=2 pid=none http=000 ms=0 app_servers=0
+2026-06-12T22:00:54+03:00 restart-gateway reason=health-failures:2:http-000
+2026-06-12T22:01:03+03:00 post-restart health=000 0
+2026-06-12T22:05:35+03:00 health-fail count=1 pid=1844559 http=000 ms=0 app_servers=0
+2026-06-12T23:31:04+03:00 restart-deferred reason=slow-health-5273ms active_app_servers=6
+2026-06-12T23:31:04+03:00 observed reason=slow-health-5273ms, pid=1851008 rss_kb=770616 app_servers=6 health_ms=5273 signals=0

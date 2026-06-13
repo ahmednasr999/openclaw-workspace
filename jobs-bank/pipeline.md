@@ -261,6 +261,12 @@
 | 370 | 🆕 | Talents Tide | Head of Applications Development (UAEN) | Dubai | — | 🆕 Discovered | Radar | 2026-06-12 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4426220893) | — |
 | 371 | 🆕 | Hamdan Bin Mohammed Smart University | Smart Solutions Development Director (UAE Nationals) | Dubai | — | 🆕 Discovered | Radar | 2026-06-12 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4423633841) | — |
 | 372 | 🆕 | OX Human Resources Consultancies | Chief Technology Officer | Dubai | — | 🆕 Discovered | Radar | 2026-06-12 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4423641692) | — |
+| 373 | 🆕 | Qashio | VP of Product | Dubai | — | 🆕 Discovered | Radar | 2026-06-13 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4426953622) | — |
+| 374 | 🆕 | Mastercard | Director, Product Management - Corporate Solutions | Dubai | — | 🆕 Discovered | Radar | 2026-06-13 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4424886229) | — |
+| 375 | 🆕 | Talents Tide | Head of Data Management (UAEN) | Dubai | — | 🆕 Discovered | Radar | 2026-06-13 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4426226356) | — |
+| 376 | 🆕 | DHL Global Forwarding | CIO & VP BPO DGF MEA | Dubai | — | 🆕 Discovered | Radar | 2026-06-13 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4427979513) | — |
+| 377 | 🆕 | Confidential | Director | Dubai | — | 🆕 Discovered | Radar | 2026-06-13 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4424879848) | — |
+
 
 
 

@@ -1,7 +1,7 @@
 {
   "status": "ok",
-  "scan_time": "2026-06-11T20:00:40.675478+03:00",
-  "total_scanned": 40,
+  "scan_time": "2026-06-12T21:01:51.753025+03:00",
+  "total_scanned": 0,
   "by_category": {
     "interview_invite": 0,
     "recruiter_reach": 0,
@@ -11,7 +11,7 @@
     "application_response": 0,
     "follow_up_needed": 0,
     "job_alert": 0,
-    "other": 40
+    "other": 0
   },
   "interview_invites": [],
   "recruiter_messages": [],

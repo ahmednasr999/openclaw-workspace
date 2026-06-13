@@ -1,66 +1,66 @@
 
-[2026-06-12T01:07:01+03:00] START cron-dashboard-updater: /usr/bin/python3 /root/.openclaw/workspace/scripts/cron-dashboard-updater.py
-[2026-06-12T01:07:01.309010+03:00] Starting Cron Dashboard Update...
-Discovered 53 crons (22 system, 31 openclaw)
+[2026-06-13T01:07:01+03:00] START cron-dashboard-updater: /usr/bin/python3 /root/.openclaw/workspace/scripts/cron-dashboard-updater.py
+[2026-06-13T01:07:01.180348+03:00] Starting Cron Dashboard Update...
+Discovered 52 crons (22 system, 30 openclaw)
 
 Update Summary:
   Created: 0
-  Updated: 53
+  Updated: 52
 
 Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
-[2026-06-12T01:08:06+03:00] END cron-dashboard-updater: rc=0 duration=65s
+[2026-06-13T01:08:33+03:00] END cron-dashboard-updater: rc=0 duration=92s
 
-[2026-06-12T02:07:01+03:00] START cron-dashboard-updater: /usr/bin/python3 /root/.openclaw/workspace/scripts/cron-dashboard-updater.py
-[2026-06-12T02:07:01.998470+03:00] Starting Cron Dashboard Update...
-Discovered 53 crons (22 system, 31 openclaw)
+[2026-06-13T02:07:01+03:00] START cron-dashboard-updater: /usr/bin/python3 /root/.openclaw/workspace/scripts/cron-dashboard-updater.py
+[2026-06-13T02:07:01.935457+03:00] Starting Cron Dashboard Update...
+Discovered 52 crons (22 system, 30 openclaw)
 
 Update Summary:
   Created: 0
-  Updated: 53
+  Updated: 52
 
 Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
-[2026-06-12T02:08:21+03:00] END cron-dashboard-updater: rc=0 duration=80s
+[2026-06-13T02:08:03+03:00] END cron-dashboard-updater: rc=0 duration=62s
 
-[2026-06-12T03:07:01+03:00] START cron-dashboard-updater: /usr/bin/python3 /root/.openclaw/workspace/scripts/cron-dashboard-updater.py
-[2026-06-12T03:07:01.279761+03:00] Starting Cron Dashboard Update...
-Discovered 53 crons (22 system, 31 openclaw)
+[2026-06-13T03:07:01+03:00] START cron-dashboard-updater: /usr/bin/python3 /root/.openclaw/workspace/scripts/cron-dashboard-updater.py
+[2026-06-13T03:07:01.825201+03:00] Starting Cron Dashboard Update...
+Discovered 52 crons (22 system, 30 openclaw)
 
 Update Summary:
   Created: 0
-  Updated: 53
+  Updated: 52
 
 Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
-[2026-06-12T03:08:23+03:00] END cron-dashboard-updater: rc=0 duration=82s
+[2026-06-13T03:08:12+03:00] END cron-dashboard-updater: rc=0 duration=71s
 
-[2026-06-12T04:07:01+03:00] START cron-dashboard-updater: /usr/bin/python3 /root/.openclaw/workspace/scripts/cron-dashboard-updater.py
-[2026-06-12T04:07:01.528831+03:00] Starting Cron Dashboard Update...
-Discovered 53 crons (22 system, 31 openclaw)
+[2026-06-13T04:07:01+03:00] START cron-dashboard-updater: /usr/bin/python3 /root/.openclaw/workspace/scripts/cron-dashboard-updater.py
+[2026-06-13T04:07:02.096442+03:00] Starting Cron Dashboard Update...
+Discovered 52 crons (22 system, 30 openclaw)
 
 Update Summary:
   Created: 0
-  Updated: 53
+  Updated: 52
 
 Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
-[2026-06-12T04:08:31+03:00] END cron-dashboard-updater: rc=0 duration=90s
+[2026-06-13T04:08:18+03:00] END cron-dashboard-updater: rc=0 duration=77s
 
-[2026-06-12T05:07:01+03:00] START cron-dashboard-updater: /usr/bin/python3 /root/.openclaw/workspace/scripts/cron-dashboard-updater.py
-[2026-06-12T05:07:02.020486+03:00] Starting Cron Dashboard Update...
-Discovered 53 crons (22 system, 31 openclaw)
+[2026-06-13T05:07:02+03:00] START cron-dashboard-updater: /usr/bin/python3 /root/.openclaw/workspace/scripts/cron-dashboard-updater.py
+[2026-06-13T05:07:02.161579+03:00] Starting Cron Dashboard Update...
+Discovered 52 crons (22 system, 30 openclaw)
 
 Update Summary:
   Created: 0
-  Updated: 53
+  Updated: 52
 
 Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
-[2026-06-12T05:08:20+03:00] END cron-dashboard-updater: rc=0 duration=79s
+[2026-06-13T05:08:11+03:00] END cron-dashboard-updater: rc=0 duration=69s
 
-[2026-06-12T06:07:01+03:00] START cron-dashboard-updater: /usr/bin/python3 /root/.openclaw/workspace/scripts/cron-dashboard-updater.py
-[2026-06-12T06:07:01.956788+03:00] Starting Cron Dashboard Update...
-Discovered 53 crons (22 system, 31 openclaw)
+[2026-06-13T06:07:01+03:00] START cron-dashboard-updater: /usr/bin/python3 /root/.openclaw/workspace/scripts/cron-dashboard-updater.py
+[2026-06-13T06:07:01.498964+03:00] Starting Cron Dashboard Update...
+Discovered 52 crons (22 system, 30 openclaw)
 
 Update Summary:
   Created: 0
-  Updated: 53
+  Updated: 52
 
 Summary saved to /root/.openclaw/workspace/logs/cron-dashboard-summary.json
-[2026-06-12T06:08:10+03:00] END cron-dashboard-updater: rc=0 duration=69s
+[2026-06-13T06:08:10+03:00] END cron-dashboard-updater: rc=0 duration=69s
