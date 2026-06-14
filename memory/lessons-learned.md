@@ -1339,3 +1339,24 @@ Before updating or restarting OpenClaw, run the update guard and inspect its rep
 Ahmed had to resend an email-agent cron task because the previous response only acknowledged it instead of completing the original scheduled work.
 ### Do differently
 For cron/reminder tasks, run the requested tools or scripts immediately and return only the requested final output or summary. Do not send `on it` or acknowledgement/status text as the answer, and wait for spawned or background work before closing.
+
+## 2026-06-13 - Diff Exit 1 Can Masquerade As Patch Failure
+
+### Incident
+A gateway verification command ran `diff -u ... | sed ...` under `set -euo pipefail` after successfully patching `scripts/vps-disk-guard.sh`. Because `diff` exits 1 when files differ, OpenClaw marked the command as a tool error even though the diff output was the expected verification artifact.
+### Do differently
+When a command intentionally shows a diff, wrap the diff with `|| true` or temporarily disable `set -e` around it, and keep syntax/tests as the real pass/fail gates.
+
+## 2026-06-13 - Scope Session Searches To Avoid OpenClaw Post-processing Failures
+
+### Incident
+Broad `rg`/log reads across session JSONL files returned huge embedded tool schemas and payloads, causing `Tool output unavailable due to post-processing error` instead of useful evidence.
+### Do differently
+For lessons capture or session review, search only today's non-trajectory session files and use a JSON-aware extractor with bounded snippets instead of dumping broad raw matches from all sessions.
+
+## 2026-06-13 - June 12 OpenClaw Rollback Backup Was Approved For Deletion
+
+### Preference
+Ahmed said the current OpenClaw version is stable and approved deleting `/root/.openclaw/workspace/backups/openclaw-update-20260612-214914`; deletion freed about 2.4G and was followed by successful `openclaw config validate` and gateway probe checks.
+### Do differently
+Do not assume that June 12 rollback backup exists for future recovery. Create or verify a newer backup/snapshot before any risky OpenClaw update or rollback-dependent change.

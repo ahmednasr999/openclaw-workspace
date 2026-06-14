@@ -2,86 +2,89 @@
   "meta": {
     "agent": "jobs-review",
     "version": "2.0.0",
-    "generated_at": "2026-06-12T18:37:53.796180+03:00",
-    "duration_ms": 250610,
+    "generated_at": "2026-06-13T20:36:23.077356+03:00",
+    "duration_ms": 89446,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "6aeef9cf",
+    "run_id": "e8ab393e",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
-    "generated_at": "2026-06-12T18:37:53.693404+03:00",
-    "total_candidates": 34,
-    "reviewed": 33,
-    "submit": [],
-    "review": [
+    "generated_at": "2026-06-13T20:36:22.992609+03:00",
+    "total_candidates": 14,
+    "reviewed": 13,
+    "submit": [
       {
-        "id": "linkedin_jobspy-li-4426914764",
+        "id": "linkedin_jobspy-li-4428342909",
         "source": "linkedin_jobspy",
-        "title": "Chief Operation Officer-Crypto Sector",
-        "company": "KOS International Talent Group",
-        "location": "Dubai, United Arab Emirates",
-        "url": "https://www.linkedin.com/jobs/view/4426914764",
+        "title": "Strategic Initiatives Director",
+        "company": "TALENTMATE",
+        "location": "Dubai, Dubai, United Arab Emirates",
+        "url": "https://www.linkedin.com/jobs/view/4428342909",
         "posted": "",
         "seniority": "C-Suite",
         "domain_match": false,
-        "keyword_score": 10,
+        "keyword_score": 6,
         "match_keywords": [
-          "operational excellence"
+          "director"
         ],
-        "raw_snippet": "My client is a global leading exchange, who is seeking a Chief Operating Officer (COO) to drive global execution, profitability, and operational excellence across all markets.\n \n\n\n\n  \n\n\n\n\n\n Reporting directly to the Founder, this role will take full ownership of group\\-level performance,\n \n\n\n\n ensur",
-        "relevant": false,
-        "filter_reason": "skip-word:crypto",
+        "raw_snippet": "**Job Description**\n**We Are The People Who Give Possibilities Purpose**\n BD is one of the largest global medical technology companies in the world. Advancing the world of health\u2122 is our Purpose, and it\u2019s no small feat. It takes the imagination and passion of all of us\u2014from design and engineering to",
+        "relevant": true,
+        "filter_reason": null,
         "search_country": "United Arab Emirates",
         "search_title": "Head of PMO",
-        "linkedin_id": "li-4426914764",
-        "jd_text": "My client is a global leading exchange, who is seeking a Chief Operating Officer (COO) to drive global execution, profitability, and operational excellence across all markets.\n \n\n\n\n  \n\n\n\n\n\n Reporting directly to the Founder, this role will take full ownership of group\\-level performance,\n \n\n\n\n ensuring alignment between global strategy and regional execution.\n \n\n\n\n  \n\n\n\n\n\n**What You Will Own** \n\n\n\n\n \u2022 Full ownership of group\\-level P\\&L across all geographies, driving revenue growth, cost\n \n\n\n\n efficiency, and profitability\n \n\n\n\n \u2022 Lead and manage regional business leaders globally, ensuring strong accountability on\n \n\n\n\n performance and execution\n \n\n\n\n \u2022 Define and execute global operating strategy, aligning regional priorities with overall\n \n\n\n\n business objectives\n \n\n\n\n \u2022 Drive market expansion and penetration by leveraging local dynamics, including regulatory\n \n\n\n\n environments, user behavior, and competitive landscape\n \n\n\n\n \u2022 Optimize business performance across all product lines, including trading, payments, card,\n \n\n\n\n earn, wealth, and institutional solutions (e.g., custody, loans, B2B offerings)\n \n\n\n\n \u2022 Build and institutionalize performance management systems, KPIs, and data\\-driven decision\u0002\n \n\n\n\n making frameworks\n \n\n\n\n \u2022 Partner closely with Product, Technology, Compliance, and other leadership teams to ensure\n \n\n\n\n scalable and compliant growth\n \n\n\n\n \u2022 Identify new revenue opportunities, business models, and strategic initiatives to accelerate\n \n\n\n\n global expansion\n \n\n\n\n \u2022 Drive operational excellence, ensuring speed, efficiency, and execution discipline across the\n \n\n\n\n organizationWhat Success Looks Like\n \n\n\n\n \u2022 Strong and sustainable growth in global revenue and profitability\n \n\n\n\n \u2022 High\\-performing regional structures with clear accountability and consistent delivery\n \n\n\n\n \u2022 Effective penetration and scaling in key markets, aligned with regulatory and competitive\n \n\n\n\n dynamics\n \n\n\n\n \u2022 Optimized performance across multiple business lines, with clear contribution to overall P\\&L\n \n\n\n\n \u2022 A disciplined, data\\-driven operating model enabling fast and high\\-quality decision\\-making\n \n\n\n\n \u2022 Consistent execution of strategic initiatives with measurable business impact\n \n\n\n\n  \n\n\n\n\n\n**What We are Looking for** \n\n\n\n\n \u2022 Proven experience as a senior leader (COO, GM, or equivalent) with full P\\&L ownership in\n \n\n\n\n global organizations\n \n\n\n\n \u2022 Strong track record of scaling businesses from 0 to 1 and from 1 to 100, ideally in high\\-growth\n \n\n\n\n environments\n \n\n\n\n \u2022 Deep understanding of global markets, with the ability to adapt strategies across different\n \n\n\n\n regulatory, political, and economic environments\n \n\n\n\n \u2022 Experience in crypto, fintech, or digital technology sectors is highly preferred\n \n\n\n\n \u2022 Highly strategic yet hands\\-on, with the ability to translate vision into execution and results\n \n\n\n\n \u2022 Strong data\\-driven mindset with sharp commercial instincts\n \n\n\n\n \u2022 Demonstrated ability to lead and influence senior stakeholders across regions and functions\n \n\n\n\n \u2022 Entrepreneurial mindset with high ownership, resilience, and execution intensity\n \n\n\n\n \u2022 Fluent in English; Mandarin Chinese is strongly preferred for global stakeholder management",
+        "linkedin_id": "li-4428342909",
+        "jd_text": "**Job Description**\n**We Are The People Who Give Possibilities Purpose**\n BD is one of the largest global medical technology companies in the world. Advancing the world of health\u2122 is our Purpose, and it\u2019s no small feat. It takes the imagination and passion of all of us\u2014from design and engineering to the manufacturing and marketing of our billions of MedTech products per year\u2014to look at the impossible and find transformative solutions that turn dreams into possibilities.\n   \n\n  \n\n****Job Description****\n**Position Summary**\n The Director, Strategic Initiatives is responsible for leading the identification, development, and execution of high\\-impact critical initiatives that drive business growth, operational excellence, and transformation across the region and/or global function.\n   \n\n  \n\n This role works closely with senior leadership to translate strategic priorities into actionable plans. It ensures alignment across commercial, operational, and functional groups. It delivers measurable outcomes within a sophisticated, matrixed environment.\n   \n\n  \n\n****Key Responsibilities****\n**Strategic Planning \\& Execution**\n* Translate enterprise and regional strategy into executable initiatives and implementation roadmaps\n* Define clear milestones, KPIs, and success measures aligned to business priorities\n* Drive alignment between global strategy and regional execution\n\n\n**Transformation \\& Change Leadership**\n* Lead cross\\-functional transformation initiatives across commercial, operational, and digital domains\n* Act as a change agent to drive adoption of new processes, tools, and ways of working\n* Ensure sustainability and scalability of implemented initiatives\n\n\n**Program \\& Portfolio Management**\n* Manage a portfolio of pivotal initiatives end\\-to\\-end (from concept to execution)\n* Establish governance frameworks, including tracking progress, risks, and dependencies\n* Ensure delivery of initiatives on time, within scope, and delivering measurable impact\n\n\n**Business Analytics \\& Performance Insights**\n* Lead all aspects of the development and use of analytics, dashboards, and reporting tools\n* Provide insights on business performance, trends, and improvement opportunities\n* Support data\\-driven decision making across leadership teams\n\n\n**Financial Planning \\& Performance Management**\n* Support financial planning processes including Annual Budget, Forecasts, and ASR cycles\n* Supervise and evaluate financial impact of central initiatives\n* Find opportunities for revenue growth, cost optimization, and efficiency improvements\n\n\n**Cross\\-functional Teamwork \\& Partner Management**\n* Partner with Commercial, Finance, Supply Chain, Operations, HR, and other functions\n* Influence senior partners and align priorities across regions\n* Drive execution through teamwork in a matrix environment\n\n\n**Qualifications**\n**Education**\n* Bachelor\u2019s degree required (Business, Finance, Engineering, or related field)\n* MBA or equivalent advanced degree or equivalent experience preferred\n\n\n**Experience**\n* Meaningful progressive experience in strategy, consulting, commercial operations, or transformation\n* Proven experience leading sophisticated, cross\\-functional critical initiatives\n* Experience working in global, matrixed organizations preferred\n\n\n**Knowledge, Skills \\& Abilities**\n* Strong critical thinking and execution capability\n* Sophisticated analytical and problem\\-solving skills\n* Strong financial savvy and understanding of business drivers\n* Excellent collaborator management and influencing skills\n* Proven program and project management expertise\n* Ability to operate effectively in a fast\\-paced, ambiguous environment\n\n\n**Leadership Proficiencies (BD\\-style)**\n* Gets Results: Accountable for delivering measurable business outcomes\n* Strategic Attitude: Translates vision into executable strategies\n* Cultivates Collaboration: Works effectively across boundaries\n* Influences \\& Communicates: Engages and aligns partners at all levels\n* Manages Complexity: Navigates ambiguity and drives clarity\n\n\n**Key Performance Indicators.**\n* Execution and delivery of pivotal initiatives (timeline, scope, quality)\n* Financial impact (revenue growth, cost savings, margin improvement)\n* Adoption and sustainability of transformation programs\n* Improvement in commercial and operational performance metrics.\n\n\n**Key Relationships**\n* President META and META Leadership Team\n* Country General Managers\n* Key customers, clinicians, KOLs, and strategic partners\n* Finance, Commercial, Supply Chain, Operations, HR\n\n\n**Additional Information**\n* Role requires travel across META markets.\n* Position operates in a highly regulated healthcare environment with significant governance requirements.\n\n\n Why Join Us?\n   \n\n  \n\n To find purpose in the possibilities, we need people who can see the bigger picture, who understand the human story that underpins everything we do. We welcome people with the imagination and drive to help us reinvent the future of healthcare. At BD, you\u2019ll discover a culture in which you can learn, grow and thrive.\n   \n\n  \n\n We believe that when people connect in person, we learn faster, collaborate more deeply, and build a stronger culture. Join us and enjoy a culture where face\\-to\\-face collaboration supports your learning, your progress, and your success.\n   \n\n  \n\n**To learn more about BD visit** \n https://bd.com/careers.\n   \n\n  \n\n Becton, Dickinson, and Company is an Equal Opportunity Employer. We evaluate applicants without regard to race, color, religion, age, sex, creed, national origin, ancestry, citizenship status, marital or domestic or civil union status, familial status, affectional or sexual orientation, gender identity or expression, genetics, disability, military eligibility or veteran status, and other legally protected characteristics.\n   \n\n  \n\n****Required Skills****\n Optional Skills\n   \n\n  \n\n Primary Work Location\n   \n\n  \n\n ARE Dubai \\- Middle East\n   \n\n  \n\n Additional Locations\n   \n\n  \n\n Work Shift\n   \n\n  \n\n Job Details\n   \n\n  \n\n Role Level: Not Applicable Work Type: Full\\-Time Country: United Arab Emirates City: Dubai Company Website: http://www.bd.com Job Function: Strategy \\& Planning Company Industry/\n   \n\n  \n\n Sector: Medical Equipment Manufacturing\n   \n\n  \n\n What We Offer\n   \n\n  \n\n**About The Company**\n Searching, interviewing and hiring are all part of the professional life. The TALENTMATE Portal idea is to fill and help professionals doing one of them by bringing together the requisites under One Roof. Whether you're hunting for your Next Job Opportunity or Looking for Potential Employers, we're here to lend you a Helping Hand.\n   \n\n  \n\n Report\n   \n\n  \n\n Disclaimer: talentmate.com is only a platform to bring jobseekers \\& employers together. Applicants are advised to research the bonafides of the prospective employer independently. We do NOT endorse any requests for money payments and strictly advice against sharing personal or bank related information. We also recommend you visit Security Advice for more information. If you suspect any fraud or malpractice, email us at abuse@talentmate.com.",
         "source_count": 1,
         "country": "United Arab Emirates",
-        "industry_bonus": 9,
+        "industry_bonus": 12,
         "policy_status": "pass",
         "sources": [
           "linkedin"
         ],
-        "first_seen": "2026-06-12",
-        "career_fit_score": 8,
-        "verdict": "REVIEW",
-        "verdict_reason": "C-level COO role in Dubai with FinTech/crypto operations, P&L, performance management, and operational excellence alignment [5D role=2 | seniority=2 | geo=2 | strategic=1 | evidence=1 | fit=8/10 | llm=7]",
+        "first_seen": "2026-06-13",
+        "career_fit_score": 9,
+        "verdict": "SUBMIT",
+        "verdict_reason": "Strong strategic initiatives, transformation, operational excellence, and portfolio leadership role in UAE MedTech. [5D role=2 | seniority=2 | geo=2 | strategic=1 | evidence=2 | fit=9/10 | llm=8 | watchlist=healthcare_gcc] [CMO outreach queued for TALENTMATE]",
         "watchlist_matches": {
           "company_hits": [],
-          "domain_hits": [],
-          "categories": []
+          "domain_hits": [
+            "health",
+            "medical"
+          ],
+          "categories": [
+            "healthcare_gcc"
+          ]
         },
-        "ats_score": 61,
-        "ats_verdict": "CONDITIONAL",
+        "ats_score": 94,
+        "ats_verdict": "GO",
         "ats_matched": [
+          "digital transformation",
+          "program management",
+          "project management",
+          "transformation",
+          "portfolio management",
           "ai",
-          "fintech",
+          "erp",
           "payment",
-          "operating model",
-          "stakeholder management",
-          "revenue",
-          "data",
-          "digital",
-          "strategy",
-          "strategic"
+          "healthcare",
+          "cost optimization"
         ],
-        "ats_gaps": [
-          "Missing: project management"
-        ],
-        "llm_fit_score": 7,
+        "ats_gaps": [],
+        "llm_fit_score": 8,
         "fit_dimensions": {
           "role": 2,
           "seniority": 2,
           "geography": 2,
           "strategic": 1,
-          "evidence": 1
+          "evidence": 2
         }
       }
     ],
-    "skip_count": 33,
+    "review": [],
+    "skip_count": 13,
     "unreviewed_count": 0,
     "thresholds": {
       "submit": 6,
@@ -90,32 +93,32 @@
     "pipeline": {
       "l0_auto_skip": 1,
       "l1_jd_enriched": 0,
-      "l1_jd_coverage": "27/33",
+      "l1_jd_coverage": "10/13",
       "llm_model": "openai/gpt-5.5",
-      "llm_jobs_reviewed": 33,
-      "r2_latency_ms": 236934,
+      "llm_jobs_reviewed": 13,
+      "r2_latency_ms": 84587,
       "r2_fallbacks": 0
     },
     "kpi": {
-      "submit_rate": 0.0,
-      "review_rate": 0.030303030303030304,
-      "skip_rate": 0.9696969696969697,
-      "avg_fit_score": 4.9,
-      "l0_filter_rate": 2.9,
+      "submit_rate": 0.07692307692307693,
+      "review_rate": 0.0,
+      "skip_rate": 0.9230769230769231,
+      "avg_fit_score": 5.2,
+      "l0_filter_rate": 7.1,
       "llm_review_rate": 100.0
     }
   },
   "kpi": {
-    "total_loaded": 34,
+    "total_loaded": 14,
     "l0_auto_skip": 1,
     "l1_jd_enriched": 0,
     "l2_filtered": 0,
-    "submit_count": 0,
-    "review_count": 1,
-    "skip_count": 32,
-    "submit_rate": 0.0,
-    "avg_fit_score": 4.9,
-    "r2_latency_ms": 236934
+    "submit_count": 1,
+    "review_count": 0,
+    "skip_count": 12,
+    "submit_rate": 7.7,
+    "avg_fit_score": 5.2,
+    "r2_latency_ms": 84587
   },
   "recommendations": []
 }

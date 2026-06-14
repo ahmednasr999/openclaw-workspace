@@ -1,26 +1,63 @@
 {
   "status": "ok",
-  "scan_time": "2026-06-12T21:01:51.753025+03:00",
-  "total_scanned": 0,
+  "scan_time": "2026-06-13T21:01:04.128764+03:00",
+  "total_scanned": 26,
   "by_category": {
     "interview_invite": 0,
     "recruiter_reach": 0,
-    "application_ack": 0,
+    "application_ack": 1,
     "rejection": 0,
     "assessment": 0,
     "application_response": 0,
     "follow_up_needed": 0,
-    "job_alert": 0,
-    "other": 0
+    "job_alert": 1,
+    "other": 24
   },
   "interview_invites": [],
   "recruiter_messages": [],
-  "application_acks": [],
+  "application_acks": [
+    {
+      "id": "361928",
+      "from": "malomatia Recruitment Team <recruitment@malomatia.com>",
+      "subject": "Your recent job application for Head - Consulting (Data/AI) - 725",
+      "date": "Sat, 13 Jun 2026 15:50:06 +0000 (UTC)",
+      "unread": true,
+      "priority": "LOW",
+      "score": 0,
+      "pipeline_match": null,
+      "confidence": 20,
+      "confidence_label": "very_low",
+      "evidence": [
+        "hiring/application context"
+      ],
+      "why_actionable": "not actionable: hiring/application context"
+    }
+  ],
   "rejections": [],
   "assessments": [],
   "application_responses": [],
   "follow_ups_needed": [],
-  "job_alerts": [],
+  "job_alerts": [
+    {
+      "id": "361910",
+      "from": "GulfTalent Jobs <jobs@gulftalent.com>",
+      "subject": "Ascentis needs a Project Director",
+      "date": "Sat, 13 Jun 2026 07:20:26 -0500",
+      "unread": true,
+      "priority": "LOW",
+      "score": 0,
+      "pipeline_match": null,
+      "confidence": 25,
+      "confidence_label": "very_low",
+      "evidence": [
+        "automated job alert",
+        "known recruiter/job domain",
+        "hiring sender context",
+        "noise/job-alert guard applied"
+      ],
+      "why_actionable": "not actionable: automated job alert | known recruiter/job domain | hiring sender context | noise/job-alert guard applied"
+    }
+  ],
   "actionable_count": 0,
   "hot_alerts": [],
   "signals": [],

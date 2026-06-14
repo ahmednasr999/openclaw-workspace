@@ -2,54 +2,32 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-06-12T18:00:44.985660+03:00",
-    "duration_ms": 42296,
+    "generated_at": "2026-06-13T20:00:41.659765+03:00",
+    "duration_ms": 37585,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "bb4ad5e9",
+    "run_id": "76ec81e1",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": [
     {
-      "id": "indeed-in-715e9fcb1c74294d",
+      "id": "indeed-in-24c93c5f4f8ee49a",
       "source": "indeed",
-      "title": "Strategic Initiatives Director",
-      "company": "BD",
+      "title": "Channel Director",
+      "company": "BYD",
       "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=715e9fcb1c74294d",
-      "posted": "2026-06-11",
+      "url": "https://ae.indeed.com/viewjob?jk=24c93c5f4f8ee49a",
+      "posted": "2026-06-12",
       "seniority": "C-Suite",
       "domain_match": false,
-      "keyword_score": 6,
-      "match_keywords": [
-        "director"
-      ],
-      "raw_snippet": "Now\n\n\nJob ID\nR\\-547969\nCategory\nGeneral Management Group\nLocation\nUnited Arab Emirates\nRegion\nAPAC\n  \n**We are the people who give possibilities purpose**\n\n\nBD is one of the largest global medical technology companies in the world. Advancing the world of health\u2122 is our Purpose, and it\u2019s no small feat. It takes the imagination and passion of all of us\u2014from design and engineering to the manufacturing and marketing of our billions of MedTech products per year\u2014to look at the impossible and find tran",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-4c77757fc4a40917",
-      "source": "indeed",
-      "title": "Director CFCR,RCR Governance UAE & DIFC",
-      "company": "Standard Chartered Bank",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=4c77757fc4a40917",
-      "posted": "2026-06-10",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 20,
+      "keyword_score": 13,
       "match_keywords": [
         "ai",
-        "director",
-        "uae",
-        "dubai"
+        "director"
       ],
-      "raw_snippet": "**Requisition Number:** 55727\n**Job Location:** Dubai, ARE\n**Global Grade:** Band 5\n**Work Type:** Office Working\n**Employment Type:** Permanent\n**Posting Start Date:** 10/06/2026\n**Posting End Date:** 17/06/2026\n**:****Job Summary**\n**Role Overview**\n\n\nThis pivotal role is responsible for leading the Country Governance function to uphold the highest standards of compliance within the UAE and DIFC jurisdictions. You will ensure that the Bank's operations align with regulatory requirements and in",
+      "raw_snippet": "**About BYD**\n\n\nOur Purpose is to ***build a zero\\-emission future that reconnects humanity with nature.*** We are looking for talent that connects with this mission and want to create positive impact by joining a diverse and dynamic team.\n\n\nBYD is a leading, high\\-tech multinational, based in Shenzhen, China. Operates in four core fields of IT, automotive, new energy, and rail transit and employs over 300,000 people worldwide. As a global pioneer in New Energy Solutions BYD is dedicated to buil",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
@@ -81,6 +59,26 @@
       "search_title": "Director Digital Transformation"
     },
     {
+      "id": "indeed-in-715e9fcb1c74294d",
+      "source": "indeed",
+      "title": "Strategic Initiatives Director",
+      "company": "BD",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=715e9fcb1c74294d",
+      "posted": "2026-06-11",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 6,
+      "match_keywords": [
+        "director"
+      ],
+      "raw_snippet": "Now\n\n\nJob ID\nR\\-547969\nCategory\nGeneral Management Group\nLocation\nUnited Arab Emirates\nRegion\nAPAC\n  \n**We are the people who give possibilities purpose**\n\n\nBD is one of the largest global medical technology companies in the world. Advancing the world of health\u2122 is our Purpose, and it\u2019s no small feat. It takes the imagination and passion of all of us\u2014from design and engineering to the manufacturing and marketing of our billions of MedTech products per year\u2014to look at the impossible and find tran",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Director Digital Transformation"
+    },
+    {
       "id": "indeed-in-d105652935b1381a",
       "source": "indeed",
       "title": "Head of AI",
@@ -98,118 +96,11 @@
         "uae",
         "dubai"
       ],
-      "raw_snippet": "Dubai, Dubai, AE Experienced Permanent ID: 102455\n  \n### **DESCRIPTION**\n\n\nOperating in the UAE for over 50 years, CBD manages the financial requirements of some of the largest corporates and businesses operating in the country, driving the UAE economy. Over the years, CBD has transformed into a progressive and modern banking institution, winning multiple awards for its digital initiatives, credit cards, bank accounts, mobile app features, and services. CBD has been recognized as the number one ",
+      "raw_snippet": "Dubai, Dubai, AE Experienced Permanent ID: 102455\n  \n### **Description**\n\n\nOperating in the UAE for over 50 years, CBD manages the financial requirements of some of the largest corporates and businesses operating in the country, driving the UAE economy. Over the years, CBD has transformed into a progressive and modern banking institution, winning multiple awards for its digital initiatives, credit cards, bank accounts, mobile app features, and services. CBD has been recognized as the number one ",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
       "search_title": "Head of Digital Transformation"
-    },
-    {
-      "id": "indeed-in-00fdc44934bcbf89",
-      "source": "indeed",
-      "title": "Director of UAE Operations and Regulatory Affairs",
-      "company": "Prop Firm Match Global \u2013 FZCO",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=00fdc44934bcbf89",
-      "posted": "2026-06-10",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 20,
-      "match_keywords": [
-        "ai",
-        "director",
-        "uae",
-        "platform"
-      ],
-      "raw_snippet": "**About PFM**  \n\nProp Firm Match Global FZCO is a leading platform for discovering, comparing, and selecting top proprietary trading firms. We provide traders with tools and features to easily compare challenge details, read verified reviews, see accurate payout data, and much more. We're a fast\\-moving, fully remote team with members from all around the world caring deeply about the quality of what we build. Our culture values ownership, clear communication, and practical impact over fluff. Whe",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Head of IT"
-    },
-    {
-      "id": "indeed-in-613bd4166f33c70d",
-      "source": "indeed",
-      "title": "Director Corporate Accounts Inst - MEA",
-      "company": "Ecolab",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=613bd4166f33c70d",
-      "posted": "2026-06-11",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 6,
-      "match_keywords": [
-        "director"
-      ],
-      "raw_snippet": "Join Ecolab\u2019s industry leading Institutional team as Director Corporate Accounts Manager in United Arab Emirates and see why Selling Power magazine has consistently ranked Ecolab as a top company to sell for. We\u2019re growing and need talented people like you to help us continue to protect the world\u2019s most vital resources.\n\n\n**What\u2019s in it For You:**\n\n* The opportunity to take on some of the world\u2019s most meaningful challenges, helping customers achieve clean water, safe food, abundant energy and he",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "IT Director"
-    },
-    {
-      "id": "indeed-in-0cff905bd55dce0c",
-      "source": "indeed",
-      "title": "Commercial Director",
-      "company": "Turner & Townsend Pty Limited",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=0cff905bd55dce0c",
-      "posted": "2026-06-11",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 13,
-      "match_keywords": [
-        "infrastructure",
-        "director"
-      ],
-      "raw_snippet": "**Company Description**  \n\nTurner \\& Townsend is a global professional services company with over 22,000 people in more than 60 countries.  \n\nWorking with our clients across real estate, infrastructure, energy and natural resources, we transform together delivering outcomes that improve people\u2019s lives. Working in partnership makes it possible to deliver the world\u2019s most impactful projects and programmes as we turn challenge into opportunity and complexity into success.  \n\nOur capabilities includ",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "IT Director"
-    },
-    {
-      "id": "indeed-in-7da5c1f0e41152cb",
-      "source": "indeed",
-      "title": "Commercial Director",
-      "company": "TEMENOS",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=7da5c1f0e41152cb",
-      "posted": "2026-06-11",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 6,
-      "match_keywords": [
-        "director"
-      ],
-      "raw_snippet": "**ABOUT TEMENOS**\n\n  \n\n**Temenos powers a world of banking that creates opportunities for billions of people and businesses everywhere. We have been doing this for over 30 years through the pioneering spirit of our Temenosians who are passionate about making banking better, together.**\n\n**We serve over 3000 clients from the largest to challengers and community banks in 150\\+ countries. We collaborate with clients to build new banking services and state\\-of\\-the\\-art customer experiences on our o",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "IT Director"
-    },
-    {
-      "id": "indeed-in-029cb634d2df271a",
-      "source": "indeed",
-      "title": "Associate Director - City Technology PMO & Demand Management (DEL 3)",
-      "company": "Qiddiya Investment Company",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=029cb634d2df271a",
-      "posted": "2026-06-09",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 33,
-      "match_keywords": [
-        "pmo",
-        "project management",
-        "cybersecurity",
-        "director"
-      ],
-      "raw_snippet": "Lead the City Technology Project Management Office (PMO) responsible for portfolio governance, delivery assurance, demand intake, stage\\-gate control, and operational readiness across all IT and OT technology towers within QIC City Technology.  \n\n  \n\nThis role ensures that City Technology programs and vendors deliver technology solutions in a controlled, auditable manner, and that all deliverables meet defined governance requirements for readiness, documentation, cybersecurity gating, and transi",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "PMO Director"
     },
     {
       "id": "indeed-in-7402cfed3141ea65",
@@ -299,21 +190,39 @@
       "search_title": "Program Director"
     },
     {
-      "id": "indeed-in-9e564a4bb7cc7682",
+      "id": "indeed-in-73eb67dca9b36791",
       "source": "indeed",
-      "title": "Integrated Commercial Director \u2013 Field Development",
-      "company": "Baker Hughes",
+      "title": "IT Delivery Program Head",
+      "company": "Sai Webs Solution",
       "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=9e564a4bb7cc7682",
-      "posted": "2026-06-10",
+      "url": "https://sa.indeed.com/viewjob?jk=73eb67dca9b36791",
+      "posted": "2026-06-12",
+      "seniority": "Other",
+      "domain_match": true,
+      "keyword_score": 0,
+      "match_keywords": [],
+      "raw_snippet": "\u0627\u0644\u0648\u0635\u0641 \u0627\u0644\u0648\u0638\u064a\u0641\u064a \u2013 \u0631\u0626\u064a\u0633 \u0628\u0631\u0627\u0645\u062c \u062a\u0633\u0644\u064a\u0645 \u062a\u0642\u0646\u064a\u0629 \u0627\u0644\u0645\u0639\u0644\u0648\u0645\u0627\u062a (IT Delivery Program Head)\n\n**\u0627\u0644\u0645\u0648\u0642\u0639:** \u0627\u0644\u0645\u0645\u0644\u0643\u0629 \u0627\u0644\u0639\u0631\u0628\u064a\u0629 \u0627\u0644\u0633\u0639\u0648\u062f\u064a\u0629\n\n\u0645\u0644\u062e\u0635 \u0627\u0644\u0648\u0638\u064a\u0641\u0629\n\n\u064a\u062a\u0648\u0644\u0649 \u0631\u0626\u064a\u0633 \u0628\u0631\u0627\u0645\u062c \u062a\u0633\u0644\u064a\u0645 \u062a\u0642\u0646\u064a\u0629 \u0627\u0644\u0645\u0639\u0644\u0648\u0645\u0627\u062a \u0645\u0633\u0624\u0648\u0644\u064a\u0629 \u0642\u064a\u0627\u062f\u0629 \u0648\u0625\u062f\u0627\u0631\u0629 \u0645\u062d\u0641\u0638\u0629 \u0645\u0646 \u0627\u0644\u0628\u0631\u0627\u0645\u062c \u0648\u0627\u0644\u0645\u0634\u0627\u0631\u064a\u0639 \u0627\u0644\u062a\u0642\u0646\u064a\u0629 \u0644\u0636\u0645\u0627\u0646 \u062a\u0633\u0644\u064a\u0645 \u0627\u0644\u0645\u0628\u0627\u062f\u0631\u0627\u062a \u0627\u0644\u0631\u0642\u0645\u064a\u0629 \u0648\u0627\u0644\u062a\u0642\u0646\u064a\u0629 \u0628\u0643\u0641\u0627\u0621\u0629 \u0648\u062c\u0648\u062f\u0629 \u0639\u0627\u0644\u064a\u0629 \u0648\u0636\u0645\u0646 \u0627\u0644\u0645\u064a\u0632\u0627\u0646\u064a\u0629 \u0648\u0627\u0644\u062c\u062f\u0648\u0644 \u0627\u0644\u0632\u0645\u0646\u064a \u0627\u0644\u0645\u062d\u062f\u062f. \u0648\u064a\u0639\u0645\u0644 \u0639\u0644\u0649 \u062a\u0646\u0633\u064a\u0642 \u0627\u0644\u062c\u0647\u0648\u062f \u0628\u064a\u0646 \u0641\u0631\u0642 \u0627\u0644\u062a\u0637\u0648\u064a\u0631\u060c \u0648\u0627\u0644\u0628\u0646\u064a\u0629 \u0627\u0644\u062a\u062d\u062a\u064a\u0629\u060c \u0648\u0627\u0644\u0623\u0645\u0646 \u0627\u0644\u0633\u064a\u0628\u0631\u0627\u0646\u064a\u060c \u0648\u0623\u0635\u062d\u0627\u0628 \u0627\u0644\u0645\u0635\u0644\u062d\u0629 \u0644\u0636\u0645\u0627\u0646 \u062a\u062d\u0642\u064a\u0642 \u0627\u0644\u0623\u0647\u062f\u0627\u0641 \u0627\u0644\u0627\u0633\u062a\u0631\u0627\u062a\u064a\u062c\u064a\u0629 \u0644\u0644\u062a\u062d\u0648\u0644 \u0627\u0644\u0631\u0642\u0645\u064a.\n\n\u0627\u0644\u0645\u0647\u0627\u0645 \u0648\u0627\u0644\u0645\u0633\u0624\u0648\u0644\u064a\u0627\u062a \u0627\u0644\u0631\u0626\u064a\u0633\u064a\u0629\n\n* \u0642\u064a\u0627\u062f\u0629 \u0648\u0625\u062f\u0627",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "Head of IT"
+    },
+    {
+      "id": "indeed-in-9d1437a9ae209a09",
+      "source": "indeed",
+      "title": "Automation & SCADA Systems Director",
+      "company": "Confidential",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=9d1437a9ae209a09",
+      "posted": "2026-06-12",
       "seniority": "C-Suite",
-      "domain_match": false,
+      "domain_match": true,
       "keyword_score": 10,
       "match_keywords": [
         "director",
-        "integration"
+        "automation"
       ],
-      "raw_snippet": "**Integrated Commercial Director \u2013 Field Development**\n\n\nCan you lead commercial strategy for complex field developments \u2014 and maximize asset value?\n\n\nAre you able to drive integration across technical and commercial teams to deliver full\u2011cycle project success?\n\n**Be part of a successful team!**\n\n\nBaker Hughes Integrated Services exist to **plan, manage, and execute multi\u2011disciplinary well and field development projects** through a single accountable team. Their mandate is to deliver predictable",
+      "raw_snippet": "\u0627\u0644\u0648\u0635\u0641 \u0627\u0644\u0648\u0638\u064a\u0641\u064a \u2013 \u0645\u062f\u064a\u0631 \u0623\u0646\u0638\u0645\u0629 \u0627\u0644\u0623\u062a\u0645\u062a\u0629 \u0648\u0627\u0644\u062a\u062d\u0643\u0645 (Automation \\& SCADA Systems Director)\n\n**\u0627\u0644\u0645\u0648\u0642\u0639:** \u0627\u0644\u0645\u0645\u0644\u0643\u0629 \u0627\u0644\u0639\u0631\u0628\u064a\u0629 \u0627\u0644\u0633\u0639\u0648\u062f\u064a\u0629\n\n\u0645\u0644\u062e\u0635 \u0627\u0644\u0648\u0638\u064a\u0641\u0629\n\n\u064a\u062a\u0648\u0644\u0649 \u0645\u062f\u064a\u0631 \u0623\u0646\u0638\u0645\u0629 \u0627\u0644\u0623\u062a\u0645\u062a\u0629 \u0648\u0627\u0644\u062a\u062d\u0643\u0645 (SCADA) \u0645\u0633\u0624\u0648\u0644\u064a\u0629 \u0642\u064a\u0627\u062f\u0629 \u0648\u062a\u0637\u0648\u064a\u0631 \u0648\u0625\u062f\u0627\u0631\u0629 \u0623\u0646\u0638\u0645\u0629 \u0627\u0644\u0623\u062a\u0645\u062a\u0629 \u0627\u0644\u0635\u0646\u0627\u0639\u064a\u0629 \u0648\u0623\u0646\u0638\u0645\u0629 \u0627\u0644\u062a\u062d\u0643\u0645 \u0648\u0627\u0644\u0625\u0634\u0631\u0627\u0641 (SCADA) \u0639\u0628\u0631 \u0627\u0644\u0645\u0646\u0634\u0622\u062a \u0627\u0644\u062a\u0634\u063a\u064a\u0644\u064a\u0629 \u0648\u0627\u0644\u0628\u0646\u064a\u0629 \u0627\u0644\u062a\u062d\u062a\u064a\u0629 \u0627\u0644\u062d\u064a\u0648\u064a\u0629. \u0648\u064a\u0636\u0645\u0646 \u0627\u0644\u062f\u0648\u0631 \u0627\u0633\u062a\u0642\u0631\u0627\u0631 \u0627\u0644\u0623\u0646\u0638\u0645\u0629\u060c \u0648\u0643\u0641\u0627\u0621\u062a\u0647\u0627\u060c \u0648\u0623\u0645\u0646\u0647\u0627 \u0627\u0644\u0633\u064a\u0628\u0631\u0627\u0646\u064a\u060c \u0648\u062a\u0643\u0627\u0645\u0644\u0647\u0627 \u0645\u0639 \u0627\u0644\u0623\u0646\u0638\u0645\u0629 \u0627\u0644\u062a\u0634\u063a\u064a\u0644\u064a\u0629 \u0627\u0644\u0623\u062e\u0631\u0649\u060c \u0645\u0639 \u0642\u064a\u0627\u062f\u0629 \u0641\u0631\u0642 \u0627\u0644\u0647\u0646\u062f\u0633\u0629 \u0648\u0627\u0644\u062a\u0634\u063a\u064a\u0644 \u0644\u062f\u0639\u0645 \u0627\u0644\u062a\u062d\u0648\u0644 \u0627\u0644\u0631\u0642\u0645\u064a \u0648\u0627\u0644\u0623\u062a\u0645\u062a\u0629 \u0627\u0644\u0635\u0646\u0627\u0639\u064a\u0629.\n\n\u0627\u0644\u0645\u0647\u0627\u0645 \u0648\u0627\u0644\u0645\u0633\u0624\u0648\u0644\u064a\u0627\u062a \u0627\u0644\u0631\u0626\u064a\u0633\u064a\u0629\n\n* ",
       "relevant": true,
       "filter_reason": null,
       "search_country": "Saudi Arabia",
@@ -322,9 +231,9 @@
   ],
   "kpi": {
     "searches_run": 20,
-    "results_per_search": 3.7,
-    "unique_jobs": 14,
-    "errors": 3
+    "results_per_search": 3.2,
+    "unique_jobs": 10,
+    "errors": 5
   },
   "recommendations": []
 }

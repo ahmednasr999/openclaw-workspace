@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-11T16:34:55.874959+03:00",
+  "last_updated": "2026-06-13T20:36:23.002514+03:00",
   "items": [
     {
       "company": "Netcracker Technology in Dubai, United Arab Emirates â Apply on Wuzzuf",
@@ -302,6 +302,15 @@
       "job_url": "https://www.linkedin.com/jobs/view/4427059343",
       "verdict": "SUBMIT",
       "queued_at": "2026-06-11T16:34:55.874950+03:00",
+      "status": "queued"
+    },
+    {
+      "company": "TALENTMATE",
+      "job_title": "Strategic Initiatives Director",
+      "source": "linkedin_jobspy",
+      "job_url": "https://www.linkedin.com/jobs/view/4428342909",
+      "verdict": "SUBMIT",
+      "queued_at": "2026-06-13T20:36:23.002505+03:00",
       "status": "queued"
     }
   ],
