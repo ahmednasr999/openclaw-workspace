@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-06-13T20:00:41.659765+03:00",
-    "duration_ms": 37585,
+    "generated_at": "2026-06-14T22:00:35.436818+03:00",
+    "duration_ms": 32564,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "76ec81e1",
+    "run_id": "11fd2e96",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -79,28 +79,49 @@
       "search_title": "Director Digital Transformation"
     },
     {
-      "id": "indeed-in-d105652935b1381a",
+      "id": "indeed-in-0df2420f394bd934",
       "source": "indeed",
-      "title": "Head of AI",
-      "company": "Commercial Bank of Dubai",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=d105652935b1381a",
-      "posted": "2026-06-11",
-      "seniority": "Director",
+      "title": "Director - Customer AI & Analytics",
+      "company": "Qiddiya Investment Company",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=0df2420f394bd934",
+      "posted": "2026-06-14",
+      "seniority": "C-Suite",
       "domain_match": true,
-      "keyword_score": 26,
+      "keyword_score": 20,
       "match_keywords": [
-        "mobile",
         "ai",
-        "head of",
-        "uae",
-        "dubai"
+        "director",
+        "architecture",
+        "platform"
       ],
-      "raw_snippet": "Dubai, Dubai, AE Experienced Permanent ID: 102455\n  \n### **Description**\n\n\nOperating in the UAE for over 50 years, CBD manages the financial requirements of some of the largest corporates and businesses operating in the country, driving the UAE economy. Over the years, CBD has transformed into a progressive and modern banking institution, winning multiple awards for its digital initiatives, credit cards, bank accounts, mobile app features, and services. CBD has been recognized as the number one ",
+      "raw_snippet": "The Director \\- Customer AI \\& Analytics will lead the strategy, governance, architecture, and delivery of customer data products, customer intelligence platforms, and AI\\-driven engagement capabilities across Qiddiya.\n\n\nThis role will establish Qiddiya\u2019s customer data foundation and enable advanced personalization, audience intelligence, loyalty analytics, revenue optimization, and AI\\-powered customer engagement across parks, entertainment venues, digital channels, hospitality, retail, ticketi",
       "relevant": true,
       "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Head of Digital Transformation"
+      "search_country": "Saudi Arabia",
+      "search_title": "Program Director"
+    },
+    {
+      "id": "indeed-in-f03d30116a72d9a2",
+      "source": "indeed",
+      "title": "Director - Operational Readiness",
+      "company": "Qiddiya Investment Company",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=f03d30116a72d9a2",
+      "posted": "2026-06-14",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 23,
+      "match_keywords": [
+        "project management",
+        "ai",
+        "director"
+      ],
+      "raw_snippet": "Qiddiya Investment Company seeks a highly skilled Director of Operational Readiness to lead the planning and execution of operational launch strategies for its diverse projects. This pivotal role will ensure all operational aspects are fully prepared, facilities are ready for opening, and teams are trained and equipped to deliver exceptional experiences. The Director will collaborate closely with project management, development, and operational teams to guarantee seamless transition from constru",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "Program Director"
     },
     {
       "id": "indeed-in-7402cfed3141ea65",
@@ -208,6 +229,29 @@
       "search_title": "Head of IT"
     },
     {
+      "id": "indeed-in-388d30cc918ce89e",
+      "source": "indeed",
+      "title": "Design Director - Infrastructure",
+      "company": "Buro Happold",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=388d30cc918ce89e",
+      "posted": "2026-06-14",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 23,
+      "match_keywords": [
+        "infrastructure",
+        "director",
+        "leadership",
+        "riyadh"
+      ],
+      "raw_snippet": "Want to work on one of the region\u2019s most prestigious luxury developments? Your experience leading infrastructure design across complex, high\\-profile projects might make you our new Design Director \u2013 Infrastructure in Riyadh.\n\n **Here, expect the exceptional.**\n\n\nOn this landmark luxury project in Riyadh, you will help shape a world\\-class destination through the leadership of integrated infrastructure design, coordination and delivery.\n\n**Your next role**\n\n\nThe purpose of this role is to lead t",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "IT Director"
+    },
+    {
       "id": "indeed-in-9d1437a9ae209a09",
       "source": "indeed",
       "title": "Automation & SCADA Systems Director",
@@ -231,9 +275,9 @@
   ],
   "kpi": {
     "searches_run": 20,
-    "results_per_search": 3.2,
-    "unique_jobs": 10,
-    "errors": 5
+    "results_per_search": 2.8,
+    "unique_jobs": 12,
+    "errors": 8
   },
   "recommendations": []
 }

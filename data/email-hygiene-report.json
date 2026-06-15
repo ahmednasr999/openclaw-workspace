@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-06-07T08:10:24.836402+03:00",
-  "history_items": 11520,
-  "actionable_items": 662,
-  "noise_items": 10858,
+  "generated_at": "2026-06-14T08:10:20.488255+03:00",
+  "history_items": 12302,
+  "actionable_items": 726,
+  "noise_items": 11576,
   "top_noise_senders": [
     [
       "info@host.discountwalas.com",
@@ -10,11 +10,11 @@
     ],
     [
       "notifications@github.com",
-      887
+      936
     ],
     [
       "no-reply@mail.therumble.app",
-      299
+      300
     ],
     [
       "newsletter@em.discountwalas.com",
@@ -22,11 +22,11 @@
     ],
     [
       "me@juliangoldie.com",
-      201
+      202
     ],
     [
       "noreply@skool.com",
-      167
+      169
     ],
     [
       "newsletters@arabianbusiness.com",
@@ -50,29 +50,29 @@
     ],
     [
       "recruitment.notify@oia.gov.om",
-      100
+      104
     ],
     [
       "hello@mail.trade-ideas.com",
       98
     ],
     [
-      "team@bankless.com",
-      90
+      "info@ema.flickonclick.com",
+      92
     ],
     [
-      "newsletter@em.flickonclick.com",
-      87
+      "team@bankless.com",
+      90
     ]
   ],
   "top_repeated_subjects": [
     [
       "job vacancy",
-      94
+      97
     ],
     [
       "=?utf-8?b?v0igrgfpbhkgtwfya2v0iejyawvmicygvhjhzgluzybpchbvcnr1?=\r\n =?utf-8?b?bml0awvziokyl",
-      56
+      61
     ],
     [
       "new pmo jobs",
@@ -80,7 +80,11 @@
     ],
     [
       "=?utf-8?b?2kfyrtixinin2lxyr9in2lhyp9iqiniq2ylyp9ix2yryssdyqnit2yjyqw==?=\r\n =?utf-8?b?inmf2",
-      40
+      43
+    ],
+    [
+      "confirm your identity",
+      29
     ],
     [
       "=?utf-8?q?=f0=9f=98=b2_=e2=89=a4_$9.9!_luxe_for_less?=",
@@ -88,6 +92,10 @@
     ],
     [
       "ahmed, hot job opportunities waiting for you",
+      20
+    ],
+    [
+      "=?utf-8?b?mjagbmv3ievuz2luzwvycybqb2jzigluiffhdgfyiq==?=",
       19
     ],
     [
@@ -95,36 +103,28 @@
       18
     ],
     [
-      "confirm your identity",
-      17
+      "ahmed nasr mba,, please verify your new device",
+      16
     ],
     [
       "now only egp5.63!",
       16
     ],
     [
-      "=?utf-8?b?mjagbmv3ievuz2luzwvycybqb2jzigluiffhdgfyiq==?=",
-      14
+      "security alert",
+      15
+    ],
+    [
+      "=?utf-8?b?ww91ciblegvjdxrpdmugcg1vihjvbgugbg9va3mgz3jlyxqg4ocu?=\r\n\t=?utf-8?b?igp1c3qgy29uz",
+      13
     ],
     [
       "you've succeeded!",
       13
     ],
     [
-      "ahmed nasr mba,, please verify your new device",
-      12
-    ],
-    [
-      "=?utf-8?b?ww91ciblegvjdxrpdmugcg1vihjvbgugbg9va3mgz3jlyxqg4ocu?=\r\n\t=?utf-8?b?igp1c3qgy29uz",
-      12
-    ],
-    [
-      "standard chartered: we have new opportunities you may be interested\r\n in",
-      11
-    ],
-    [
-      "new jobs posted from www.afuturewithus.com",
-      11
+      "re: [speedyapply/jobspy] add linkedin applicants count to job posts\r\n (pr #365)",
+      13
     ]
   ],
   "recommendation": "Review these candidates manually before unsubscribe, block, archive, or Gmail filter changes. No mailbox action was taken."

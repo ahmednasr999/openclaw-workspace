@@ -266,6 +266,17 @@
 | 375 | 🆕 | Talents Tide | Head of Data Management (UAEN) | Dubai | — | 🆕 Discovered | Radar | 2026-06-13 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4426226356) | — |
 | 376 | 🆕 | DHL Global Forwarding | CIO & VP BPO DGF MEA | Dubai | — | 🆕 Discovered | Radar | 2026-06-13 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4427979513) | — |
 | 377 | 🆕 | Confidential | Director | Dubai | — | 🆕 Discovered | Radar | 2026-06-13 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4424879848) | — |
+| 378 | 🆕 | Mashreq | SVP - Cloud, Virtualization & GPU/AI Platforms.Injaz - TECH - Cloud Center of Excellence.MIT | GCC | — | 🆕 Discovered | Radar | 2026-06-15 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4427928993) | — |
+| 379 | 🆕 | Mashreq | VP, Digital Transformation, Project Mgmt & QC.Injaz - Retail Ops - CAM - SME & Pvt Banking.Operations Group | GCC | — | 🆕 Discovered | Radar | 2026-06-15 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4417707154) | — |
+| 380 | 🆕 | First Abu Dhabi Bank (FAB) | VP, Technology & Data - Asset Management | Abu Dhabi | — | 🆕 Discovered | Radar | 2026-06-15 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4374898166) | — |
+| 381 | 🆕 | TALENTMATE | Vice President Enterprise Governance Injaz Environment Social And Governance Environment Social Governance | Dubai | — | 🆕 Discovered | Radar | 2026-06-15 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4428672335) | — |
+| 382 | 🆕 | Guy Carpenter | Vice President – Reinsurance Actuary | Dubai | — | 🆕 Discovered | Radar | 2026-06-15 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4428117559) | — |
+| 383 | 🆕 | Discovery Life Sciences | Vice President Global Pathology | Global Village | — | 🆕 Discovered | Radar | 2026-06-15 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4427637308) | — |
+| 384 | 🆕 | BTSE | Head of Operations UAE | Dubai | — | 🆕 Discovered | Radar | 2026-06-15 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4408258707) | — |
+| 385 | 🆕 | Taptap Send | General Manager, Nigeria | Dubai | — | 🆕 Discovered | Radar | 2026-06-15 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4366053834) | — |
+| 386 | 🆕 | TALENTMATE | Vice President Aladdin Client Engagement | Dubai | — | 🆕 Discovered | Radar | 2026-06-15 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4428676326) | — |
+| 387 | 🆕 | Sagest.tech | Head of Information Technology | Dubai | — | 🆕 Discovered | Radar | 2026-06-15 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4425729589) | — |
+
 
 
 

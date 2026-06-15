@@ -4810,3 +4810,30 @@ Config (/root/.openclaw/openclaw.json): missing env var "OPENCLAW_HOOKS_TOKEN" a
 [2026-06-14 04:00] Summary: fixes=0 warnings=1 alerts=0
 [2026-06-14 06:00] === Watchdog v3 run ===
 [2026-06-14 06:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-06-14 08:00] === Watchdog v3 run ===
+[2026-06-14 08:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-06-14 10:00] === Watchdog v3 run ===
+[2026-06-14 10:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-06-14 12:00] === Watchdog v3 run ===
+[2026-06-14 12:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-06-14 14:00] === Watchdog v3 run ===
+[2026-06-14 14:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-06-14 16:00] === Watchdog v3 run ===
+[2026-06-14 16:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-06-14 18:00] === Watchdog v3 run ===
+[2026-06-14 18:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-06-14 20:00] === Watchdog v3 run ===
+[2026-06-14 20:00] WARN: active-tasks.md stale (50h)
+[2026-06-14 20:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-06-14 22:00] === Watchdog v3 run ===
+[2026-06-14 22:00] WARN: Jobs data stale (25h), triggering pipeline
+[2026-06-14 22:00] FIXED: Pipeline triggered
+[2026-06-14 22:00] Summary: fixes=1 warnings=0 alerts=0
+[2026-06-15 00:00] === Watchdog v3 run ===
+[2026-06-15 00:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-06-15 02:00] === Watchdog v3 run ===
+[2026-06-15 02:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-06-15 04:00] === Watchdog v3 run ===
+[2026-06-15 04:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-06-15 06:00] === Watchdog v3 run ===
+[2026-06-15 06:00] Summary: fixes=0 warnings=0 alerts=0

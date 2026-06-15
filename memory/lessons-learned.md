@@ -1360,3 +1360,18 @@ For lessons capture or session review, search only today's non-trajectory sessio
 Ahmed said the current OpenClaw version is stable and approved deleting `/root/.openclaw/workspace/backups/openclaw-update-20260612-214914`; deletion freed about 2.4G and was followed by successful `openclaw config validate` and gateway probe checks.
 ### Do differently
 Do not assume that June 12 rollback backup exists for future recovery. Create or verify a newer backup/snapshot before any risky OpenClaw update or rollback-dependent change.
+
+
+## 2026-06-14 - Agreed LinkedIn Sketch Style Means Reference-Quality Match
+
+### Correction
+Ahmed rejected a generated Google DeepMind / AI operating model visual that was only in the general sketch-note direction, saying it was not the same quality and needed to be exactly the same quality as the agreed style.
+### Do differently
+For Ahmed's hand-drawn LinkedIn visuals, treat "agreed style" as a strict reference-quality requirement, not a loose aesthetic. Start from the accepted reference-quality asset/prompt and compare layout, paper texture, lettering quality, whitespace, black-ink/orange-accent balance, and signature treatment before claiming the style is locked or sending the final image.
+
+## 2026-06-14 - Telegram Message Send Supports Media, Read Does Not
+
+### Incident
+After resending a generated image through `openclaw message send --channel telegram --target 866838380 --media ... --json`, a verification attempt with `openclaw message read --channel telegram --target 866838380 --limit 5 --json` failed with `Unsupported Telegram action: read`.
+### Do differently
+For Telegram media delivery, trust and record the `send` response (`ok: true`, `messageId`) and verify via available logs or user confirmation if needed. Do not use `openclaw message read` for Telegram unless the runtime adds read support.

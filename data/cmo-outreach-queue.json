@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-13T20:36:23.002514+03:00",
+  "last_updated": "2026-06-14T05:35:00Z",
   "items": [
     {
       "company": "Netcracker Technology in Dubai, United Arab Emirates â Apply on Wuzzuf",
@@ -293,7 +293,42 @@
       "job_url": "https://www.linkedin.com/jobs/view/4426357620",
       "verdict": "SUBMIT",
       "queued_at": "2026-06-10T14:35:34.056951+03:00",
-      "status": "queued"
+      "status": "researched",
+      "exported_at": "2026-06-14T05:10:19.923124Z",
+      "processed_at": "2026-06-14T05:35:00Z",
+      "warm_intro_rating": "medium",
+      "warm_intro_candidates": [
+        {
+          "name": "Jeanette Parradine, FIRP, GMS",
+          "title": "Director and Chief Talent Alchemist at Alchemy Global Talent Solutions",
+          "linkedin_url": "https://uk.linkedin.com/in/jeanetteparradine",
+          "why": "Public LinkedIn result identifies her as a senior Alchemy leader focused on global recruitment solutions. Best senior route for verifying the Senior Transformation Director mandate if no job poster is visible."
+        },
+        {
+          "name": "Nick Short",
+          "title": "Executive Recruiter - EMEAL",
+          "linkedin_url": "https://uk.linkedin.com/in/nshort",
+          "why": "Public LinkedIn result connects him to executive search and leadership hiring across EMEA/LATAM. Useful recruiter route for a senior transformation role, but current ownership of this specific mandate should be verified."
+        },
+        {
+          "name": "Danielle Williams",
+          "title": "Alchemy Global Talent Solutions, Dubai / senior recruiter profile",
+          "linkedin_url": "https://ae.linkedin.com/in/danielle-williams-b633aa157",
+          "why": "Public LinkedIn result ties her to Alchemy in Dubai and recruiter/team oversight context. Good local UAE validation route if Ahmed wants a Dubai-first contact."
+        }
+      ],
+      "queue_notes": [
+        "Weekly script exported this item on 2026-06-14; it has now been researched and moved to processed/researched state.",
+        "Local job data confirms only a Senior Transformation Director role at Alchemy Global Talent Solutions with no cached job description. No prior local outreach-history match was found for Alchemy.",
+        "Authenticated browser tooling was not exposed in this cron turn, and the LinkedIn skill forbids cookie extraction/repair. Cookie files were not inspected or modified; validation used local job data plus public LinkedIn search snippets.",
+        "Warmth is medium: the job title fits Ahmed's transformation positioning, but Alchemy appears to be the recruiting intermediary, so outreach should ask who owns the mandate before pitching deeply."
+      ],
+      "next_actions": [
+        "Draft-first approach only; do not send connection requests without Ahmed approval.",
+        "Prioritize Jeanette Parradine for a senior recruiter route; use Danielle Williams if Ahmed wants a UAE-local contact first.",
+        "If accepted, ask whether the Senior Transformation Director mandate is still active and who is leading the search.",
+        "Suggested connection note: Hi Jeanette - I saw Alchemy's Senior Transformation Director mandate. My work has focused on GCC digital transformation, PMO governance, and executive delivery across healthcare and payments. Happy to connect if the search is still active."
+      ]
     },
     {
       "company": "PwC Middle East",
@@ -302,7 +337,48 @@
       "job_url": "https://www.linkedin.com/jobs/view/4427059343",
       "verdict": "SUBMIT",
       "queued_at": "2026-06-11T16:34:55.874950+03:00",
-      "status": "queued"
+      "status": "researched",
+      "exported_at": "2026-06-14T05:10:19.923150Z",
+      "processed_at": "2026-06-14T05:35:00Z",
+      "warm_intro_rating": "high",
+      "warm_intro_candidates": [
+        {
+          "name": "Khalid AlZaghloul",
+          "title": "Consulting Director | Workforce Transformation | PwC Middle East",
+          "linkedin_url": "https://ae.linkedin.com/in/khalid-alzaghloul-33214426",
+          "why": "Public LinkedIn result exactly matches the Workforce Transformation lane at PwC Middle East. Strongest business-side peer route for this role."
+        },
+        {
+          "name": "Walid Hindi Hussein",
+          "title": "Director at PwC Middle East, Saudi / FS and government transformation context",
+          "linkedin_url": "https://sa.linkedin.com/in/walidhussein",
+          "why": "Public LinkedIn result shows PwC Middle East director context in Saudi with government and financial-services transformation experience, close to the Riyadh FS-sector mandate."
+        },
+        {
+          "name": "Rachel Samaha",
+          "title": "Senior Manager | Workforce Transformation at PwC Middle East, Riyadh",
+          "linkedin_url": "https://sa.linkedin.com/in/rachelsamaha",
+          "why": "Public LinkedIn result identifies a Riyadh-based Workforce Transformation senior manager at PwC Middle East. Useful local team route if Ahmed wants to build context before approaching directors."
+        },
+        {
+          "name": "Ruba Al Rezeq, PHRi",
+          "title": "PwC Middle East contact from local outreach history",
+          "linkedin_url": "https://www.linkedin.com/in/ruba-al-rezeq-phri-4595a5ab",
+          "why": "Already present in local outreach history for PwC Middle East from 2026-03-23, making this a warmer re-engagement candidate than a completely new cold approach."
+        }
+      ],
+      "queue_notes": [
+        "Weekly script exported this item on 2026-06-14; it has now been researched and moved to processed/researched state.",
+        "Local outreach history contains multiple PwC Middle East contacts from 2026-03-23 and 2026-03-24, including Ruba Al Rezeq, Avani Saran, Cherie Ann Rodriguez-Pelias, Ahmed AbuJarad, Manish Verma, Joude Al Sharif, Mina Sedrak, Mohammed Ifthekhar, Haitham Samman, Nermeen Al-Tarazi, Mohamed ElSisy, Vishesh Kalia, and Ghazal Fakhoury.",
+        "Authenticated browser tooling was not exposed in this cron turn, and the LinkedIn skill forbids cookie extraction/repair. Cookie files were not inspected or modified; validation used local history plus public LinkedIn search snippets.",
+        "Warmth is high: PwC has existing local outreach history, the role is Riyadh/FS workforce transformation, and Ahmed's GCC banking/payments transformation background gives a credible point of view."
+      ],
+      "next_actions": [
+        "Draft-first approach only; do not send connection requests without Ahmed approval.",
+        "Prioritize Khalid AlZaghloul as the strongest Workforce Transformation peer route; use Walid Hindi Hussein for Saudi/FS adjacency and Rachel Samaha for Riyadh team context.",
+        "Re-check the March PwC outreach history before sending, so Ahmed does not duplicate a pending or already-sent request.",
+        "Suggested connection note: Hi Khalid - I saw PwC Middle East's Workforce Transformation Director mandate in Riyadh. My work has focused on GCC transformation, PMO governance, and regulated financial-services/payment delivery. Happy to connect with peers shaping workforce transformation in the region."
+      ]
     },
     {
       "company": "TALENTMATE",
@@ -311,14 +387,49 @@
       "job_url": "https://www.linkedin.com/jobs/view/4428342909",
       "verdict": "SUBMIT",
       "queued_at": "2026-06-13T20:36:23.002505+03:00",
-      "status": "queued"
+      "status": "researched",
+      "exported_at": "2026-06-14T05:10:19.923152Z",
+      "processed_at": "2026-06-14T05:35:00Z",
+      "warm_intro_rating": "medium",
+      "warm_intro_candidates": [
+        {
+          "name": "Razeena Siddiq",
+          "title": "Senior Human Resources Recruiter at TALENTMATE",
+          "linkedin_url": "https://www.linkedin.com/in/razeena-siddiq",
+          "why": "Public LinkedIn result identifies her as a senior HR recruiter at TALENTMATE. Best direct recruiter route for the Strategic Initiatives Director posting."
+        },
+        {
+          "name": "RABIA (MAE)",
+          "title": "Director of Services - HR and Recruitment at TALENTMATE",
+          "linkedin_url": "https://ae.linkedin.com/in/rabia-mae-b2403a9a",
+          "why": "Public LinkedIn result identifies a UAE-based HR/recruitment director at TALENTMATE. Good senior recruiting route if the role owner is not visible."
+        },
+        {
+          "name": "Renjitha Basheer",
+          "title": "Managing Director - TALENTMATE",
+          "linkedin_url": "https://ae.linkedin.com/in/renjitha-basheer-44924a167",
+          "why": "Public LinkedIn result shows UAE-based TALENTMATE managing director context. Better as escalation or relationship route than first-touch recruiter outreach."
+        }
+      ],
+      "queue_notes": [
+        "Weekly script exported this item on 2026-06-14; it has now been researched and moved to processed/researched state.",
+        "Local job data shows TALENTMATE has multiple Dubai postings in the current LinkedIn scrape, including Strategic Initiatives Director, Program Manager Mobility Dubai UAE, Program Manager - UAE National Amazon Now, Cost Control Manager, and Founding Forward Deployed Engineer. No prior local outreach-history match was found for TALENTMATE.",
+        "Authenticated browser tooling was not exposed in this cron turn, and the LinkedIn skill forbids cookie extraction/repair. Cookie files were not inspected or modified; validation used local job data plus public LinkedIn search snippets.",
+        "Warmth is medium: the Strategic Initiatives Director title is aligned, but TALENTMATE looks like a recruiter/job marketplace route rather than the end employer, so the first message should verify ownership and client context."
+      ],
+      "next_actions": [
+        "Draft-first approach only; do not send connection requests without Ahmed approval.",
+        "Prioritize Razeena Siddiq first as the recruiter route; use RABIA (MAE) if a more senior UAE HR/recruitment route is needed.",
+        "If accepted, ask whether TALENTMATE owns the Strategic Initiatives Director mandate directly and whether the client is open to GCC transformation/program leadership backgrounds.",
+        "Suggested connection note: Hi Razeena - I saw TALENTMATE's Strategic Initiatives Director mandate in Dubai. My work has focused on GCC transformation, PMO governance, and executive delivery across healthcare and payments. Happy to connect if the search is still active."
+      ]
     }
   ],
   "last_weekly_review": {
-    "reviewed_at": "2026-06-07T05:27:00Z",
+    "reviewed_at": "2026-06-14T05:35:00Z",
     "cron": "CMO Weekly Outreach Queue — Sunday",
     "queued_count": 3,
     "status": "processed",
-    "note": "Weekly script ran and exported 3 queued items. Salesforce, Takamol Holding, and RAKBANK were researched using local job data plus public LinkedIn pages/snippets. Authenticated browser tooling was unavailable in this cron turn and cookies were not inspected or modified. No external LinkedIn actions were taken; next actions require Ahmed approval."
+    "note": "Weekly script ran and exported 3 queued items. Alchemy Global Talent Solutions, PwC Middle East, and TALENTMATE were researched using local job/outreach data plus public LinkedIn search snippets. Authenticated browser tooling was unavailable in this cron turn and the LinkedIn skill forbids cookie extraction or repair, so cookies were not inspected or modified. No external LinkedIn actions were taken; next actions require Ahmed approval."
   }
 }
