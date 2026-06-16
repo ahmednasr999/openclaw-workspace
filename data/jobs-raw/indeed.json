@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-06-14T22:00:35.436818+03:00",
-    "duration_ms": 32564,
+    "generated_at": "2026-06-16T00:00:40.255857+03:00",
+    "duration_ms": 37131,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "11fd2e96",
+    "run_id": "6ed1c259",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -34,49 +34,115 @@
       "search_title": "Program Director"
     },
     {
-      "id": "indeed-in-62ad14077d755f06",
+      "id": "indeed-in-e5fc02827b4f416b",
       "source": "indeed",
-      "title": "Project Manager \u2014 Microsoft Dynamics 365 Business Central",
-      "company": "AVENIR DIGITAL",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=62ad14077d755f06",
-      "posted": "2026-06-12",
-      "seniority": "Other",
+      "title": "Head of PMO",
+      "company": "Unique Closets",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=e5fc02827b4f416b",
+      "posted": "2026-06-15",
+      "seniority": "Director",
       "domain_match": true,
-      "keyword_score": 26,
+      "keyword_score": 30,
       "match_keywords": [
-        "ai",
-        "leadership",
-        "gcc",
-        "uae",
-        "dubai",
-        "api"
+        "pmo",
+        "project management",
+        "head of",
+        "saudi"
       ],
-      "raw_snippet": "We're Hiring \\| Project Manager \u2014 Microsoft Dynamics 365 Business Central\n\nDubai, UAE \\| Full\\-Time \\| Immediate Start\n\nAvenir Digital is growing rapidly across the GCC, and we're looking for an experienced D365 Business Central Project Manager to lead our ERP delivery practice from the front.\n\nThis is a client\\-facing leadership role where you'll work directly with C\\-suite stakeholders, drive successful ERP implementations, manage cross\\-functional teams, and help shape the future of digital t",
+      "raw_snippet": "**Position Summary**\n\nThe Head of PMO is responsible for establishing, leading, and managing the Project Management Office to ensure the successful planning, execution, monitoring, and delivery of strategic projects across the organization. The role provides governance, project oversight, resource management, and performance reporting while aligning all projects with the company\u2019s strategic objectives and business goals.\n\n**NOTE: In line with Saudi Vision 2030 initiatives, preference will be giv",
       "relevant": true,
       "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Director Digital Transformation"
+      "search_country": "Saudi Arabia",
+      "search_title": "Head of PMO"
     },
     {
-      "id": "indeed-in-715e9fcb1c74294d",
+      "id": "indeed-in-8d2f87bd9d1de919",
       "source": "indeed",
-      "title": "Strategic Initiatives Director",
-      "company": "BD",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=715e9fcb1c74294d",
-      "posted": "2026-06-11",
+      "title": "Delivery Project Director (DEL 1)",
+      "company": "Qiddiya Investment Company",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=8d2f87bd9d1de919",
+      "posted": "2026-06-15",
       "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 6,
+      "domain_match": true,
+      "keyword_score": 16,
       "match_keywords": [
+        "operational excellence",
         "director"
       ],
-      "raw_snippet": "Now\n\n\nJob ID\nR\\-547969\nCategory\nGeneral Management Group\nLocation\nUnited Arab Emirates\nRegion\nAPAC\n  \n**We are the people who give possibilities purpose**\n\n\nBD is one of the largest global medical technology companies in the world. Advancing the world of health\u2122 is our Purpose, and it\u2019s no small feat. It takes the imagination and passion of all of us\u2014from design and engineering to the manufacturing and marketing of our billions of MedTech products per year\u2014to look at the impossible and find tran",
+      "raw_snippet": "Qiddiya Investment Company is seeking a highly skilled Delivery Project Director (DEL 1\\) to oversee the delivery of critical projects, ensuring alignment with strategic objectives and operational excellence. Responsible for overseeing the project. As the Project Director sets the project direction, ensures timely and cost\\-effective delivery, oversees all disciplines, ensures compliance and safety, provides status reports, implements improvements, manages interfaces, and leads various project\\-",
       "relevant": true,
       "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Director Digital Transformation"
+      "search_country": "Saudi Arabia",
+      "search_title": "Program Director"
+    },
+    {
+      "id": "indeed-in-2029a13e5dcb5804",
+      "source": "indeed",
+      "title": "Delivery Project Director - landscaping and public realm",
+      "company": "Qiddiya Investment Company",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=2029a13e5dcb5804",
+      "posted": "2026-06-15",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 23,
+      "match_keywords": [
+        "ai",
+        "director",
+        "leadership",
+        "api"
+      ],
+      "raw_snippet": "Qiddiya Investment Company is looking for a Delivery Project Director specializing in landscaping and public realm to lead the planning, coordination, and delivery of landscaping and public realm projects within our transformative development portfolio. This leadership role requires expertise in designing and executing high\\-quality public spaces that align with Qiddiya\u2019s vision for innovation, sustainability, and community engagement.\n\n\nKey Responsibilities* Responsible for the management of la",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "Program Director"
+    },
+    {
+      "id": "indeed-in-f4af4613de5e36a0",
+      "source": "indeed",
+      "title": "Director of Engineering",
+      "company": "Mandarin Oriental Hotel Group",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=f4af4613de5e36a0",
+      "posted": "2026-06-15",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 13,
+      "match_keywords": [
+        "director",
+        "growth"
+      ],
+      "raw_snippet": "Are you a master of craft? Do you thrive in a team that succeeds together, demonstrating integrity and respect while acting responsibly? Do you embrace a growth mindset? We invite you to become a fan of the exceptional.\n\n\n\nMandarin Oriental is the award\\-winning owner and operator of some of the most luxurious hotels, resorts and residences located in prime destinations around the world, with a strong development pipeline. Increasingly recognised for creating some of the world\u2019s most sought\\-aft",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "Program Director"
+    },
+    {
+      "id": "indeed-in-58d0999b2834adfc",
+      "source": "indeed",
+      "title": "Director of Engineering",
+      "company": "Mandarin Oriental Al Faisaliah",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=58d0999b2834adfc",
+      "posted": "2026-06-15",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 23,
+      "match_keywords": [
+        "ai",
+        "director",
+        "growth",
+        "riyadh"
+      ],
+      "raw_snippet": "Director of Engineering\n\n\n* 546412\n* Engineering \\& Maintenance\n* Full time\n* Mandarin Oriental Al Faisaliah, Riyadh\nAdd To Favourites\n View Favourites\n\nAre you a master of craft? Do you thrive in a team that succeeds together, demonstrating integrity and respect while acting responsibly? Do you embrace a growth mindset? We invite you to become a fan of the exceptional.\n\n\n\nMandarin Oriental is the award\\-winning owner and operator of some of the most luxurious hotels, resorts and residences loca",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "Program Director"
     },
     {
       "id": "indeed-in-0df2420f394bd934",
@@ -102,131 +168,48 @@
       "search_title": "Program Director"
     },
     {
-      "id": "indeed-in-f03d30116a72d9a2",
+      "id": "indeed-in-e96c242a6db022c2",
       "source": "indeed",
-      "title": "Director - Operational Readiness",
-      "company": "Qiddiya Investment Company",
+      "title": "Director of Finance",
+      "company": "Mandarin Oriental Hotel Group",
       "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=f03d30116a72d9a2",
-      "posted": "2026-06-14",
+      "url": "https://sa.indeed.com/viewjob?jk=e96c242a6db022c2",
+      "posted": "2026-06-15",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 13,
+      "match_keywords": [
+        "director",
+        "growth"
+      ],
+      "raw_snippet": "Are you a master of craft? Do you thrive in a team that succeeds together, demonstrating integrity and respect while acting responsibly? Do you embrace a growth mindset? We invite you to become a fan of the exceptional.\n\n\n\nMandarin Oriental is the award\\-winning owner and operator of some of the most luxurious hotels, resorts and residences located in prime destinations around the world, with a strong development pipeline. Increasingly recognised for creating some of the world\u2019s most sought\\-aft",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "IT Director"
+    },
+    {
+      "id": "indeed-in-fd59a2c52b7c3a67",
+      "source": "indeed",
+      "title": "Director of Finance",
+      "company": "Mandarin Oriental Al Faisaliah",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=fd59a2c52b7c3a67",
+      "posted": "2026-06-15",
       "seniority": "C-Suite",
       "domain_match": false,
       "keyword_score": 23,
       "match_keywords": [
-        "project management",
         "ai",
-        "director"
-      ],
-      "raw_snippet": "Qiddiya Investment Company seeks a highly skilled Director of Operational Readiness to lead the planning and execution of operational launch strategies for its diverse projects. This pivotal role will ensure all operational aspects are fully prepared, facilities are ready for opening, and teams are trained and equipped to deliver exceptional experiences. The Director will collaborate closely with project management, development, and operational teams to guarantee seamless transition from constru",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-7402cfed3141ea65",
-      "source": "indeed",
-      "title": "VCA, Senior Director - KBO",
-      "company": "Visa",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=7402cfed3141ea65",
-      "posted": "2026-06-12",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 23,
-      "match_keywords": [
-        "payments",
-        "ai",
-        "director"
-      ],
-      "raw_snippet": "**About Us**  \n\nVisa is a world leader in payments technology, facilitating transactions between consumers, merchants, financial institutions and government entities across more than 200 countries and territories, dedicated to uplifting everyone, everywhere by being the best way to pay and be paid.\n\n\nAt Visa, you'll have the opportunity to create impact at scale \u2014 tackling meaningful challenges, growing your skills and seeing your contributions impact lives around the world.\n\n\nJoin Visa and do w",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-6a19b58be0806dea",
-      "source": "indeed",
-      "title": "Head of Service Delivery",
-      "company": "Ten Lifestyle Group",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=6a19b58be0806dea",
-      "posted": "2026-06-12",
-      "seniority": "Director",
-      "domain_match": false,
-      "keyword_score": 16,
-      "match_keywords": [
-        "ai",
-        "head of",
-        "platform"
-      ],
-      "raw_snippet": "At Ten our goal is simple, to become the most trusted service business in the world.\n\n\nWe are already the global market leader for lifestyle management and concierge services, providing services from a strong global office network with over one thousand employees. We deliver our service through a combination of Ten\u2019s proprietary, unique technology\\-enabled platform and the expertise of our highly trained lifestyle managers. Ten is growing quickly and has ambitious plans to innovate and to keep i",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-0fd1b25f74882a21",
-      "source": "indeed",
-      "title": "BD Excellence Director META",
-      "company": "BD",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=0fd1b25f74882a21",
-      "posted": "2026-06-11",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 10,
-      "match_keywords": [
         "director",
-        "saudi"
+        "growth",
+        "riyadh"
       ],
-      "raw_snippet": "Now\n\n\nJob ID\nR\\-548134\nCategory\nGeneral Management Group\nLocation\nSaudi Arabia\nRegion\nEMEA\n  \n**We are the people who give possibilities purpose**\n\n\nBD is one of the largest global medical technology companies in the world. Advancing the world of health\u2122 is our Purpose, and it\u2019s no small feat. It takes the imagination and passion of all of us\u2014from design and engineering to the manufacturing and marketing of our billions of MedTech products per year\u2014to look at the impossible and find transformati",
+      "raw_snippet": "Director of Finance\n\n\n* 546413\n* Finance \\& Accounting\n* Full time\n* Mandarin Oriental Al Faisaliah, Riyadh\nAdd To Favourites\n View Favourites\n\nAre you a master of craft? Do you thrive in a team that succeeds together, demonstrating integrity and respect while acting responsibly? Do you embrace a growth mindset? We invite you to become a fan of the exceptional.\n\n\n\nMandarin Oriental is the award\\-winning owner and operator of some of the most luxurious hotels, resorts and residences located in pr",
       "relevant": true,
       "filter_reason": null,
       "search_country": "Saudi Arabia",
-      "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-0639f2921e5cfe60",
-      "source": "indeed",
-      "title": "Professional Services - Director - KSA",
-      "company": "SimCorp",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=0639f2921e5cfe60",
-      "posted": "2026-06-11",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 20,
-      "match_keywords": [
-        "fintech",
-        "director",
-        "ksa"
-      ],
-      "raw_snippet": "**WHAT MAKES US, US**\n\nJoin a leading force in FinTech and help shape the future of financial technology. At SimCorp, we bring together curious, collaborative, and driven individuals who thrive on challenges and deliver real outcomes for top\\-tier financial institutions.\n\n\nOur culture is built on five core values: **caring, customer success, collaboration, curiosity, and courage** . We invest in our people, developing skills, strengthening relationships, and creating an environment where everyon",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-73eb67dca9b36791",
-      "source": "indeed",
-      "title": "IT Delivery Program Head",
-      "company": "Sai Webs Solution",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=73eb67dca9b36791",
-      "posted": "2026-06-12",
-      "seniority": "Other",
-      "domain_match": true,
-      "keyword_score": 0,
-      "match_keywords": [],
-      "raw_snippet": "\u0627\u0644\u0648\u0635\u0641 \u0627\u0644\u0648\u0638\u064a\u0641\u064a \u2013 \u0631\u0626\u064a\u0633 \u0628\u0631\u0627\u0645\u062c \u062a\u0633\u0644\u064a\u0645 \u062a\u0642\u0646\u064a\u0629 \u0627\u0644\u0645\u0639\u0644\u0648\u0645\u0627\u062a (IT Delivery Program Head)\n\n**\u0627\u0644\u0645\u0648\u0642\u0639:** \u0627\u0644\u0645\u0645\u0644\u0643\u0629 \u0627\u0644\u0639\u0631\u0628\u064a\u0629 \u0627\u0644\u0633\u0639\u0648\u062f\u064a\u0629\n\n\u0645\u0644\u062e\u0635 \u0627\u0644\u0648\u0638\u064a\u0641\u0629\n\n\u064a\u062a\u0648\u0644\u0649 \u0631\u0626\u064a\u0633 \u0628\u0631\u0627\u0645\u062c \u062a\u0633\u0644\u064a\u0645 \u062a\u0642\u0646\u064a\u0629 \u0627\u0644\u0645\u0639\u0644\u0648\u0645\u0627\u062a \u0645\u0633\u0624\u0648\u0644\u064a\u0629 \u0642\u064a\u0627\u062f\u0629 \u0648\u0625\u062f\u0627\u0631\u0629 \u0645\u062d\u0641\u0638\u0629 \u0645\u0646 \u0627\u0644\u0628\u0631\u0627\u0645\u062c \u0648\u0627\u0644\u0645\u0634\u0627\u0631\u064a\u0639 \u0627\u0644\u062a\u0642\u0646\u064a\u0629 \u0644\u0636\u0645\u0627\u0646 \u062a\u0633\u0644\u064a\u0645 \u0627\u0644\u0645\u0628\u0627\u062f\u0631\u0627\u062a \u0627\u0644\u0631\u0642\u0645\u064a\u0629 \u0648\u0627\u0644\u062a\u0642\u0646\u064a\u0629 \u0628\u0643\u0641\u0627\u0621\u0629 \u0648\u062c\u0648\u062f\u0629 \u0639\u0627\u0644\u064a\u0629 \u0648\u0636\u0645\u0646 \u0627\u0644\u0645\u064a\u0632\u0627\u0646\u064a\u0629 \u0648\u0627\u0644\u062c\u062f\u0648\u0644 \u0627\u0644\u0632\u0645\u0646\u064a \u0627\u0644\u0645\u062d\u062f\u062f. \u0648\u064a\u0639\u0645\u0644 \u0639\u0644\u0649 \u062a\u0646\u0633\u064a\u0642 \u0627\u0644\u062c\u0647\u0648\u062f \u0628\u064a\u0646 \u0641\u0631\u0642 \u0627\u0644\u062a\u0637\u0648\u064a\u0631\u060c \u0648\u0627\u0644\u0628\u0646\u064a\u0629 \u0627\u0644\u062a\u062d\u062a\u064a\u0629\u060c \u0648\u0627\u0644\u0623\u0645\u0646 \u0627\u0644\u0633\u064a\u0628\u0631\u0627\u0646\u064a\u060c \u0648\u0623\u0635\u062d\u0627\u0628 \u0627\u0644\u0645\u0635\u0644\u062d\u0629 \u0644\u0636\u0645\u0627\u0646 \u062a\u062d\u0642\u064a\u0642 \u0627\u0644\u0623\u0647\u062f\u0627\u0641 \u0627\u0644\u0627\u0633\u062a\u0631\u0627\u062a\u064a\u062c\u064a\u0629 \u0644\u0644\u062a\u062d\u0648\u0644 \u0627\u0644\u0631\u0642\u0645\u064a.\n\n\u0627\u0644\u0645\u0647\u0627\u0645 \u0648\u0627\u0644\u0645\u0633\u0624\u0648\u0644\u064a\u0627\u062a \u0627\u0644\u0631\u0626\u064a\u0633\u064a\u0629\n\n* \u0642\u064a\u0627\u062f\u0629 \u0648\u0625\u062f\u0627",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Head of IT"
+      "search_title": "IT Director"
     },
     {
       "id": "indeed-in-388d30cc918ce89e",
@@ -250,34 +233,13 @@
       "filter_reason": null,
       "search_country": "Saudi Arabia",
       "search_title": "IT Director"
-    },
-    {
-      "id": "indeed-in-9d1437a9ae209a09",
-      "source": "indeed",
-      "title": "Automation & SCADA Systems Director",
-      "company": "Confidential",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=9d1437a9ae209a09",
-      "posted": "2026-06-12",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 10,
-      "match_keywords": [
-        "director",
-        "automation"
-      ],
-      "raw_snippet": "\u0627\u0644\u0648\u0635\u0641 \u0627\u0644\u0648\u0638\u064a\u0641\u064a \u2013 \u0645\u062f\u064a\u0631 \u0623\u0646\u0638\u0645\u0629 \u0627\u0644\u0623\u062a\u0645\u062a\u0629 \u0648\u0627\u0644\u062a\u062d\u0643\u0645 (Automation \\& SCADA Systems Director)\n\n**\u0627\u0644\u0645\u0648\u0642\u0639:** \u0627\u0644\u0645\u0645\u0644\u0643\u0629 \u0627\u0644\u0639\u0631\u0628\u064a\u0629 \u0627\u0644\u0633\u0639\u0648\u062f\u064a\u0629\n\n\u0645\u0644\u062e\u0635 \u0627\u0644\u0648\u0638\u064a\u0641\u0629\n\n\u064a\u062a\u0648\u0644\u0649 \u0645\u062f\u064a\u0631 \u0623\u0646\u0638\u0645\u0629 \u0627\u0644\u0623\u062a\u0645\u062a\u0629 \u0648\u0627\u0644\u062a\u062d\u0643\u0645 (SCADA) \u0645\u0633\u0624\u0648\u0644\u064a\u0629 \u0642\u064a\u0627\u062f\u0629 \u0648\u062a\u0637\u0648\u064a\u0631 \u0648\u0625\u062f\u0627\u0631\u0629 \u0623\u0646\u0638\u0645\u0629 \u0627\u0644\u0623\u062a\u0645\u062a\u0629 \u0627\u0644\u0635\u0646\u0627\u0639\u064a\u0629 \u0648\u0623\u0646\u0638\u0645\u0629 \u0627\u0644\u062a\u062d\u0643\u0645 \u0648\u0627\u0644\u0625\u0634\u0631\u0627\u0641 (SCADA) \u0639\u0628\u0631 \u0627\u0644\u0645\u0646\u0634\u0622\u062a \u0627\u0644\u062a\u0634\u063a\u064a\u0644\u064a\u0629 \u0648\u0627\u0644\u0628\u0646\u064a\u0629 \u0627\u0644\u062a\u062d\u062a\u064a\u0629 \u0627\u0644\u062d\u064a\u0648\u064a\u0629. \u0648\u064a\u0636\u0645\u0646 \u0627\u0644\u062f\u0648\u0631 \u0627\u0633\u062a\u0642\u0631\u0627\u0631 \u0627\u0644\u0623\u0646\u0638\u0645\u0629\u060c \u0648\u0643\u0641\u0627\u0621\u062a\u0647\u0627\u060c \u0648\u0623\u0645\u0646\u0647\u0627 \u0627\u0644\u0633\u064a\u0628\u0631\u0627\u0646\u064a\u060c \u0648\u062a\u0643\u0627\u0645\u0644\u0647\u0627 \u0645\u0639 \u0627\u0644\u0623\u0646\u0638\u0645\u0629 \u0627\u0644\u062a\u0634\u063a\u064a\u0644\u064a\u0629 \u0627\u0644\u0623\u062e\u0631\u0649\u060c \u0645\u0639 \u0642\u064a\u0627\u062f\u0629 \u0641\u0631\u0642 \u0627\u0644\u0647\u0646\u062f\u0633\u0629 \u0648\u0627\u0644\u062a\u0634\u063a\u064a\u0644 \u0644\u062f\u0639\u0645 \u0627\u0644\u062a\u062d\u0648\u0644 \u0627\u0644\u0631\u0642\u0645\u064a \u0648\u0627\u0644\u0623\u062a\u0645\u062a\u0629 \u0627\u0644\u0635\u0646\u0627\u0639\u064a\u0629.\n\n\u0627\u0644\u0645\u0647\u0627\u0645 \u0648\u0627\u0644\u0645\u0633\u0624\u0648\u0644\u064a\u0627\u062a \u0627\u0644\u0631\u0626\u064a\u0633\u064a\u0629\n\n* ",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "IT Director"
     }
   ],
   "kpi": {
     "searches_run": 20,
-    "results_per_search": 2.8,
-    "unique_jobs": 12,
-    "errors": 8
+    "results_per_search": 2.05,
+    "unique_jobs": 10,
+    "errors": 6
   },
   "recommendations": []
 }

@@ -1375,3 +1375,10 @@ For Ahmed's hand-drawn LinkedIn visuals, treat "agreed style" as a strict refere
 After resending a generated image through `openclaw message send --channel telegram --target 866838380 --media ... --json`, a verification attempt with `openclaw message read --channel telegram --target 866838380 --limit 5 --json` failed with `Unsupported Telegram action: read`.
 ### Do differently
 For Telegram media delivery, trust and record the `send` response (`ok: true`, `messageId`) and verify via available logs or user confirmation if needed. Do not use `openclaw message read` for Telegram unless the runtime adds read support.
+
+## 2026-06-15 - Calendar Prefetch /tmp Files Must Be Created By Script Or Shell
+
+### Instruction
+The June 15 Calendar Pre-fetch cron explicitly warned that the write tool is workspace-scoped and can fail for `/tmp` paths, and directed the agent to run `scripts/calendar-prefetch.py` then verify `/tmp/calendar-events-YYYY-MM-DD.json`.
+### Do differently
+For `/tmp` calendar caches or other non-workspace artifacts, do not use workspace-scoped write operations. Run the existing script or a shell command in the configured gateway environment, then validate file existence and JSON shape/count before reporting success.

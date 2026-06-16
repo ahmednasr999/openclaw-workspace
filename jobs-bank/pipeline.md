@@ -276,6 +276,11 @@
 | 385 | 🆕 | Taptap Send | General Manager, Nigeria | Dubai | — | 🆕 Discovered | Radar | 2026-06-15 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4366053834) | — |
 | 386 | 🆕 | TALENTMATE | Vice President Aladdin Client Engagement | Dubai | — | 🆕 Discovered | Radar | 2026-06-15 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4428676326) | — |
 | 387 | 🆕 | Sagest.tech | Head of Information Technology | Dubai | — | 🆕 Discovered | Radar | 2026-06-15 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4425729589) | — |
+| 388 | 🆕 | BD | Strategic Initiatives Director | Dubai | — | 🆕 Discovered | Radar | 2026-06-16 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4428119717) | — |
+| 389 | 🆕 | Shaerp Next | Project Director | Dubai | — | 🆕 Discovered | Radar | 2026-06-16 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4427509404) | — |
+| 390 | 🆕 | Parsons Corporation | Project Director | Dubai | — | 🆕 Discovered | Radar | 2026-06-16 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4428812963) | — |
+| 391 | 🆕 | Sinopack Search | Project Director | Dubai | — | 🆕 Discovered | Radar | 2026-06-16 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4428884072) | — |
+
 
 
 

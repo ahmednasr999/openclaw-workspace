@@ -1270,3 +1270,19 @@
 2026-06-15T05:39:15+03:00 degraded count=2 reason=app-server-count-10, pid=2740266 rss_kb=687140 app_servers=10 health_ms=73 signals=0
 2026-06-15T05:39:15+03:00 restart-gateway reason=degraded:app-server-count-10,
 2026-06-15T05:39:32+03:00 post-restart health=000 6005
+2026-06-15T07:45:08+03:00 degraded count=1 reason=app-server-count-10, pid=3209505 rss_kb=788976 app_servers=10 health_ms=212 signals=0
+2026-06-15T07:47:24+03:00 degraded count=2 reason=app-server-count-10, pid=3209505 rss_kb=787304 app_servers=10 health_ms=1 signals=0
+2026-06-15T07:47:24+03:00 restart-gateway reason=degraded:app-server-count-10,
+2026-06-15T07:47:40+03:00 post-restart health=000 6006
+2026-06-15T12:27:54+03:00 degraded count=1 reason=app-server-count-10, pid=3251324 rss_kb=829832 app_servers=10 health_ms=1 signals=0
+2026-06-15T12:30:13+03:00 degraded count=2 reason=app-server-count-10, pid=3251324 rss_kb=825596 app_servers=10 health_ms=1 signals=0
+2026-06-15T12:30:13+03:00 restart-gateway reason=degraded:app-server-count-10,
+2026-06-15T12:30:29+03:00 post-restart health=000 6003
+2026-06-15T16:02:15+03:00 degraded count=1 reason=app-server-count-10, pid=3303205 rss_kb=799928 app_servers=10 health_ms=1 signals=0
+2026-06-15T16:04:35+03:00 degraded count=2 reason=app-server-count-10, pid=3303205 rss_kb=799928 app_servers=10 health_ms=1 signals=0
+2026-06-15T16:04:35+03:00 restart-gateway reason=degraded:app-server-count-10,
+2026-06-15T16:04:51+03:00 post-restart health=000 6007
+2026-06-16T05:42:34+03:00 degraded count=1 reason=app-server-count-10, pid=3372450 rss_kb=586952 app_servers=10 health_ms=1 signals=0
+2026-06-16T05:44:55+03:00 degraded count=2 reason=app-server-count-10, pid=3372450 rss_kb=590020 app_servers=10 health_ms=1 signals=0
+2026-06-16T05:44:55+03:00 restart-gateway reason=degraded:app-server-count-10,
+2026-06-16T05:45:11+03:00 post-restart health=000 6006

@@ -2,34 +2,32 @@
   "meta": {
     "agent": "jobs-source-google",
     "version": "1.0.0",
-    "generated_at": "2026-06-14T22:01:14.150249+03:00",
-    "duration_ms": 71238,
+    "generated_at": "2026-06-16T00:01:15.243259+03:00",
+    "duration_ms": 72095,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "85291e09",
+    "run_id": "42155bb8",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": [
     {
-      "id": "google-e15bc2a4086e",
+      "id": "google-d92d3a1ebc8b",
       "source": "google",
       "title": "Digital Transformation Director",
-      "company": "Robert Walters",
+      "company": "Node Technologies",
       "location": "Riyadh, Saudi Arabia",
-      "url": "https://www.linkedin.com/jobs/view/4286792204",
+      "url": "https://www.linkedin.com/jobs/view/4337951766/",
       "posted": "",
       "seniority": "C-Suite",
       "domain_match": true,
-      "keyword_score": 23,
+      "keyword_score": 16,
       "match_keywords": [
         "digital transformation",
-        "director",
-        "saudi",
-        "riyadh"
+        "director"
       ],
-      "raw_snippet": "Get notified about new Transformation Director jobs in Riyadh, Riyadh, Saudi Arabia.",
+      "raw_snippet": "Posted 2:09:54 PM. Job Title:Director of Digital Transformation Consulting Department Job Summary:Responsible for\u2026See this and similar jobs on LinkedIn.",
       "relevant": true,
       "filter_reason": null
     },
@@ -50,36 +48,18 @@
       "raw_snippet": "Primary Purpose Of The Job Play a pivotal role in QatarEnergy's digital transformation by leading the delivery of innovative digital solutions that optimize operations, enhance safety, and ...",
       "relevant": true,
       "filter_reason": null
-    },
-    {
-      "id": "google-04c4b45c97d3",
-      "source": "google",
-      "title": "Head of Tech, Digital Strategy & Transformation, Global Investment Firm ...",
-      "company": "Confidential",
-      "location": "Doha, Qatar",
-      "url": "https://www.founditgulf.com/job/head-of-tech-digital-strategy-amp-transformation-global-investment-firm-doha-qatar-per-doha-45717824",
-      "posted": "",
-      "seniority": "Director",
-      "domain_match": true,
-      "keyword_score": 6,
-      "match_keywords": [
-        "head of"
-      ],
-      "raw_snippet": "Posted 06:17:40 PM PER is hiring an Head of Tech, Digital Strategy & Transformation, Global Investment Firm, Doha, Qatar with 0 - 1 Years of Experience in Doha,Qatar. Explore required skills, salary, responsibilities & similar job roles on Foundit.",
-      "relevant": true,
-      "filter_reason": null
     }
   ],
   "kpi": {
     "searches_run": 51,
-    "exa_results_raw": 40,
-    "single_jobs_direct": 3,
-    "listing_pages_found": 17,
-    "listing_pages_extracted": 9,
-    "noise_filtered": 20,
+    "exa_results_raw": 41,
+    "single_jobs_direct": 2,
+    "listing_pages_found": 21,
+    "listing_pages_extracted": 13,
+    "noise_filtered": 17,
     "malformed_filtered": 0,
-    "unique_jobs_final": 3,
-    "errors": 47,
+    "unique_jobs_final": 2,
+    "errors": 45,
     "search_backend": "searxng",
     "exa_cost_estimate_usd": 0,
     "strategy": "SearXNG local fallback keyword + auto(domain) + neural + watchlist company discovery -> classify -> contents",
