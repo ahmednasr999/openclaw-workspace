@@ -2,36 +2,79 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-06-16T00:00:40.255857+03:00",
-    "duration_ms": 37131,
+    "generated_at": "2026-06-17T02:00:40.478196+03:00",
+    "duration_ms": 37520,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "6ed1c259",
+    "run_id": "afe15945",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": [
     {
-      "id": "indeed-in-24c93c5f4f8ee49a",
+      "id": "indeed-in-1f2c579f9c13216a",
       "source": "indeed",
-      "title": "Channel Director",
-      "company": "BYD",
+      "title": "Director (Videography & Creative Direction) - 6 Month Contract",
+      "company": "Reckitt",
       "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=24c93c5f4f8ee49a",
-      "posted": "2026-06-12",
+      "url": "https://ae.indeed.com/viewjob?jk=1f2c579f9c13216a",
+      "posted": "2026-06-16",
       "seniority": "C-Suite",
       "domain_match": false,
       "keyword_score": 13,
       "match_keywords": [
-        "ai",
-        "director"
+        "director",
+        "growth"
       ],
-      "raw_snippet": "**About BYD**\n\n\nOur Purpose is to ***build a zero\\-emission future that reconnects humanity with nature.*** We are looking for talent that connects with this mission and want to create positive impact by joining a diverse and dynamic team.\n\n\nBYD is a leading, high\\-tech multinational, based in Shenzhen, China. Operates in four core fields of IT, automotive, new energy, and rail transit and employs over 300,000 people worldwide. As a global pioneer in New Energy Solutions BYD is dedicated to buil",
+      "raw_snippet": "Home to the world's best loved and trusted hygiene, health, and nutrition brands. Our purpose defines why we exist: to protect, heal and nurture in the relentless pursuit of a cleaner, healthier world. We are a global team united by this purpose. Join us in our fight to make access to the highest quality hygiene, wellness, and nourishment a right and not a privilege.**Marketing**\n-------------\n\n\n\nMarketing is at the heart of Reckitt. We pride ourselves on our unique way of driving growth for som",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
       "search_title": "Program Director"
+    },
+    {
+      "id": "indeed-in-5012624a100b5280",
+      "source": "indeed",
+      "title": "Senior Associate Director, Priority Banking",
+      "company": "Standard Chartered Bank",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=5012624a100b5280",
+      "posted": "2026-06-12",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 16,
+      "match_keywords": [
+        "ai",
+        "director",
+        "dubai"
+      ],
+      "raw_snippet": "**Requisition Number:** 52690\n**Job Location:** Dubai, ARE\n**Global Grade:** Band 6\n**Work Type:** Office Working\n**Employment Type:** Permanent\n**Posting Start Date:** 12/06/2026\n**Posting End Date:** 19/06/2026\n**:****Job Summary**\n**Strategy**  \n\n* Strategies for Revenue generation and business development\n* Business objectives and goals\n* Drive the Digital Agenda\n\n**Business**  \n\nAcquisition \\& Sales Management  \n\n* Generate new business to achieve defined targets in terms of no. of customer",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Program Director"
+    },
+    {
+      "id": "indeed-in-0cd6959911dcbf4c",
+      "source": "indeed",
+      "title": "Director of Products & Strategic Transformation",
+      "company": "DU",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=0cd6959911dcbf4c",
+      "posted": "2026-06-16",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 16,
+      "match_keywords": [
+        "fintech",
+        "director"
+      ],
+      "raw_snippet": "**Key Accountabilities:**\n\n* Product Strategy \\& Vision\n\t+ Define and own the long\\-term product strategy and roadmap for du Pay\n\t+ Anticipate market evolution, customer demand shifts, fintech trends, and competitive threats\n\t+ Identify new product opportunities and innovation areas aligned with du Pay\u2019s strategic ambitions\n\tPrioritize initiatives based on strategic value, customer impact, scalability, and financial return  \n\t+\n\n* Product Innovation \\& Roadmap Execution\n\t+ Lead the end\\-to\\-end ",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Director Digital Transformation"
     },
     {
       "id": "indeed-in-e5fc02827b4f416b",
@@ -57,6 +100,94 @@
       "search_title": "Head of PMO"
     },
     {
+      "id": "indeed-in-b238c24ae7bb3308",
+      "source": "indeed",
+      "title": "Director of People & Culture - Raffles Diriyah (Saudi National)",
+      "company": "Accor",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=b238c24ae7bb3308",
+      "posted": "2026-06-16",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 16,
+      "match_keywords": [
+        "ai",
+        "director",
+        "saudi"
+      ],
+      "raw_snippet": "Company Description  \n\nRaffles Diriyah is a glamourous new landmark in Diriyah \u2013 Saudi Arabia\u2019s \u201cCity of Earth\u201d. Set against the UNESCO World Heritage site of Al\\-Tuarif and the scenic Wadi Hanifa. Inspired by Nadji heritage, and infused with Raffles\u2019 timeless elegance, Raffles Diriyah set the standard for gracious hospitality, cultural curiosity, and legendary service.\n\n\nAt Raffles Diriyah, people are the soul of everything we do. We are champion of culture, custodians of community and passiona",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "Program Director"
+    },
+    {
+      "id": "indeed-in-1c4abee3c33a9c6d",
+      "source": "indeed",
+      "title": "Director of Revenue Management - Raffles Diriyah",
+      "company": "Accor",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=1c4abee3c33a9c6d",
+      "posted": "2026-06-16",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 16,
+      "match_keywords": [
+        "ai",
+        "director",
+        "saudi"
+      ],
+      "raw_snippet": "Company Description  \n\nRaffles Diriyah is a glamourous new landmark in Diriyah \u2013 Saudi Arabia\u2019s \u201cCity of Earth\u201d. Set against the UNESCO World Heritage site of Al\\-Tuarif and the scenic Wadi Hanifa. Inspired by Nadji heritage, and infused with Raffles\u2019 timeless elegance, Raffles Diriyah set the standard for gracious hospitality, cultural curiosity, and legendary service.\n\n\nAt Raffles Diriyah, people are the soul of everything we do. We are champion of culture, custodians of community and passiona",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "Program Director"
+    },
+    {
+      "id": "indeed-in-01ed11da355dd95a",
+      "source": "indeed",
+      "title": "Program Director",
+      "company": "HanmiGlobal Saudi",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=01ed11da355dd95a",
+      "posted": "2026-06-16",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 20,
+      "match_keywords": [
+        "executive",
+        "director",
+        "leadership"
+      ],
+      "raw_snippet": "**ROLE PURPOSE**\n\n\nThe Program Director provides executive\\-level leadership and strategic oversight across all phases. As the primary point of accountability to client, the incumbent ensures that all PMCM services are delivered to the highest professional standards, on time, and in full compliance with client requirements, contractual obligations, and applicable national and international standards.\n\n **KEY RESPONSIBILITIES**\n\n**Strategic Leadership \\& Program Governance**\n\n* Serve as the ultim",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "Program Director"
+    },
+    {
+      "id": "indeed-in-b322bcd3bd7c8fc5",
+      "source": "indeed",
+      "title": "Director of Revenue Management - Raffles Diriyah",
+      "company": "Raffles",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=b322bcd3bd7c8fc5",
+      "posted": "2026-06-16",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 16,
+      "match_keywords": [
+        "ai",
+        "director",
+        "saudi"
+      ],
+      "raw_snippet": "**Company Description**  \n\nRaffles Diriyah is a glamourous new landmark in Diriyah \u2013 Saudi Arabia\u2019s \u201cCity of Earth\u201d. Set against the UNESCO World Heritage site of Al\\-Tuarif and the scenic Wadi Hanifa. Inspired by Nadji heritage, and infused with Raffles\u2019 timeless elegance, Raffles Diriyah set the standard for gracious hospitality, cultural curiosity, and legendary service.\n\n\nAt Raffles Diriyah, people are the soul of everything we do. We are champion of culture, custodians of community and pass",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "Program Director"
+    },
+    {
       "id": "indeed-in-8d2f87bd9d1de919",
       "source": "indeed",
       "title": "Delivery Project Director (DEL 1)",
@@ -72,73 +203,6 @@
         "director"
       ],
       "raw_snippet": "Qiddiya Investment Company is seeking a highly skilled Delivery Project Director (DEL 1\\) to oversee the delivery of critical projects, ensuring alignment with strategic objectives and operational excellence. Responsible for overseeing the project. As the Project Director sets the project direction, ensures timely and cost\\-effective delivery, oversees all disciplines, ensures compliance and safety, provides status reports, implements improvements, manages interfaces, and leads various project\\-",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-2029a13e5dcb5804",
-      "source": "indeed",
-      "title": "Delivery Project Director - landscaping and public realm",
-      "company": "Qiddiya Investment Company",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=2029a13e5dcb5804",
-      "posted": "2026-06-15",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 23,
-      "match_keywords": [
-        "ai",
-        "director",
-        "leadership",
-        "api"
-      ],
-      "raw_snippet": "Qiddiya Investment Company is looking for a Delivery Project Director specializing in landscaping and public realm to lead the planning, coordination, and delivery of landscaping and public realm projects within our transformative development portfolio. This leadership role requires expertise in designing and executing high\\-quality public spaces that align with Qiddiya\u2019s vision for innovation, sustainability, and community engagement.\n\n\nKey Responsibilities* Responsible for the management of la",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-f4af4613de5e36a0",
-      "source": "indeed",
-      "title": "Director of Engineering",
-      "company": "Mandarin Oriental Hotel Group",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=f4af4613de5e36a0",
-      "posted": "2026-06-15",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 13,
-      "match_keywords": [
-        "director",
-        "growth"
-      ],
-      "raw_snippet": "Are you a master of craft? Do you thrive in a team that succeeds together, demonstrating integrity and respect while acting responsibly? Do you embrace a growth mindset? We invite you to become a fan of the exceptional.\n\n\n\nMandarin Oriental is the award\\-winning owner and operator of some of the most luxurious hotels, resorts and residences located in prime destinations around the world, with a strong development pipeline. Increasingly recognised for creating some of the world\u2019s most sought\\-aft",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-58d0999b2834adfc",
-      "source": "indeed",
-      "title": "Director of Engineering",
-      "company": "Mandarin Oriental Al Faisaliah",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=58d0999b2834adfc",
-      "posted": "2026-06-15",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 23,
-      "match_keywords": [
-        "ai",
-        "director",
-        "growth",
-        "riyadh"
-      ],
-      "raw_snippet": "Director of Engineering\n\n\n* 546412\n* Engineering \\& Maintenance\n* Full time\n* Mandarin Oriental Al Faisaliah, Riyadh\nAdd To Favourites\n View Favourites\n\nAre you a master of craft? Do you thrive in a team that succeeds together, demonstrating integrity and respect while acting responsibly? Do you embrace a growth mindset? We invite you to become a fan of the exceptional.\n\n\n\nMandarin Oriental is the award\\-winning owner and operator of some of the most luxurious hotels, resorts and residences loca",
       "relevant": true,
       "filter_reason": null,
       "search_country": "Saudi Arabia",
@@ -165,7 +229,50 @@
       "relevant": true,
       "filter_reason": null,
       "search_country": "Saudi Arabia",
-      "search_title": "Program Director"
+      "search_title": "Director Digital Transformation"
+    },
+    {
+      "id": "indeed-in-a3548d670ff6969b",
+      "source": "indeed",
+      "title": "Director - Assets Security Design & Delivery",
+      "company": "Qiddiya Investment Company",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=a3548d670ff6969b",
+      "posted": "2026-06-16",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 16,
+      "match_keywords": [
+        "director",
+        "leadership",
+        "integration"
+      ],
+      "raw_snippet": "Qiddiya Investment Company is seeking a highly skilled and experienced professional for the position of Director \\- Assets Security Design \\& Delivery. In this strategic leadership role, you will be responsible for overseeing the design, development, and delivery of comprehensive security solutions across all assets within Qiddiya. You will lead efforts to protect physical and digital assets by ensuring the integration of advanced security practices, technology frameworks, and operational polici",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "IT Director"
+    },
+    {
+      "id": "indeed-in-f4af4613de5e36a0",
+      "source": "indeed",
+      "title": "Director of Engineering",
+      "company": "Mandarin Oriental Hotel Group",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=f4af4613de5e36a0",
+      "posted": "2026-06-15",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 13,
+      "match_keywords": [
+        "director",
+        "growth"
+      ],
+      "raw_snippet": "Are you a master of craft? Do you thrive in a team that succeeds together, demonstrating integrity and respect while acting responsibly? Do you embrace a growth mindset? We invite you to become a fan of the exceptional.\n\n\n\nMandarin Oriental is the award\\-winning owner and operator of some of the most luxurious hotels, resorts and residences located in prime destinations around the world, with a strong development pipeline. Increasingly recognised for creating some of the world\u2019s most sought\\-aft",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "IT Director"
     },
     {
       "id": "indeed-in-e96c242a6db022c2",
@@ -183,6 +290,29 @@
         "growth"
       ],
       "raw_snippet": "Are you a master of craft? Do you thrive in a team that succeeds together, demonstrating integrity and respect while acting responsibly? Do you embrace a growth mindset? We invite you to become a fan of the exceptional.\n\n\n\nMandarin Oriental is the award\\-winning owner and operator of some of the most luxurious hotels, resorts and residences located in prime destinations around the world, with a strong development pipeline. Increasingly recognised for creating some of the world\u2019s most sought\\-aft",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "IT Director"
+    },
+    {
+      "id": "indeed-in-58d0999b2834adfc",
+      "source": "indeed",
+      "title": "Director of Engineering",
+      "company": "Mandarin Oriental Al Faisaliah",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=58d0999b2834adfc",
+      "posted": "2026-06-15",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 23,
+      "match_keywords": [
+        "ai",
+        "director",
+        "growth",
+        "riyadh"
+      ],
+      "raw_snippet": "Director of Engineering\n\n\n* 546412\n* Engineering \\& Maintenance\n* Full time\n* Mandarin Oriental Al Faisaliah, Riyadh\nAdd To Favourites\n View Favourites\n\nAre you a master of craft? Do you thrive in a team that succeeds together, demonstrating integrity and respect while acting responsibly? Do you embrace a growth mindset? We invite you to become a fan of the exceptional.\n\n\n\nMandarin Oriental is the award\\-winning owner and operator of some of the most luxurious hotels, resorts and residences loca",
       "relevant": true,
       "filter_reason": null,
       "search_country": "Saudi Arabia",
@@ -210,36 +340,13 @@
       "filter_reason": null,
       "search_country": "Saudi Arabia",
       "search_title": "IT Director"
-    },
-    {
-      "id": "indeed-in-388d30cc918ce89e",
-      "source": "indeed",
-      "title": "Design Director - Infrastructure",
-      "company": "Buro Happold",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=388d30cc918ce89e",
-      "posted": "2026-06-14",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 23,
-      "match_keywords": [
-        "infrastructure",
-        "director",
-        "leadership",
-        "riyadh"
-      ],
-      "raw_snippet": "Want to work on one of the region\u2019s most prestigious luxury developments? Your experience leading infrastructure design across complex, high\\-profile projects might make you our new Design Director \u2013 Infrastructure in Riyadh.\n\n **Here, expect the exceptional.**\n\n\nOn this landmark luxury project in Riyadh, you will help shape a world\\-class destination through the leadership of integrated infrastructure design, coordination and delivery.\n\n**Your next role**\n\n\nThe purpose of this role is to lead t",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "IT Director"
     }
   ],
   "kpi": {
     "searches_run": 20,
-    "results_per_search": 2.05,
-    "unique_jobs": 10,
-    "errors": 6
+    "results_per_search": 2.85,
+    "unique_jobs": 15,
+    "errors": 7
   },
   "recommendations": []
 }

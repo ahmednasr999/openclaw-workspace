@@ -2,397 +2,101 @@
   "meta": {
     "agent": "email-agent",
     "version": "3.0.0",
-    "generated_at": "2026-06-15T20:01:23.113315+03:00",
-    "duration_ms": 57449,
+    "generated_at": "2026-06-16T20:00:52.705753+03:00",
+    "duration_ms": 15268,
     "ttl_hours": 4,
     "status": "success",
     "error": null,
-    "run_id": "984fd6f2",
+    "run_id": "6d755e6e",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
     "status": "ok",
-    "scan_time": "2026-06-15T20:00:52.501856+03:00",
-    "total_scanned": 69,
+    "scan_time": "2026-06-16T20:00:52.704430+03:00",
+    "total_scanned": 29,
     "by_category": {
-      "interview_invite": 1,
-      "recruiter_reach": 3,
-      "application_ack": 4,
+      "interview_invite": 0,
+      "recruiter_reach": 0,
+      "application_ack": 0,
       "rejection": 0,
-      "assessment": 0,
+      "assessment": 1,
       "application_response": 0,
-      "follow_up_needed": 1,
-      "job_alert": 1,
-      "other": 61
+      "follow_up_needed": 0,
+      "job_alert": 0,
+      "other": 28
     },
-    "interview_invites": [
-      {
-        "id": "362027",
-        "from": "sprinklr@myworkday.com",
-        "subject": "Sprinklr - Your application has been received for the Program\r\n Manager Position",
-        "date": "Mon, 15 Jun 2026 09:13:55 +0000",
-        "unread": true,
-        "priority": "MEDIUM",
-        "score": 4,
-        "pipeline_match": null,
-        "confidence": 70,
-        "confidence_label": "medium",
-        "evidence": [
-          "hiring/application context",
-          "calendar or explicit interview evidence",
-          "medium priority score: 4"
-        ],
-        "why_actionable": "hiring/application context | calendar or explicit interview evidence | medium priority score: 4"
-      }
-    ],
-    "recruiter_messages": [
-      {
-        "id": "362030",
-        "from": "Jacobs.Recruitment@jacobs.global",
-        "subject": "Jacobs - Your Application for Principal Consultant / Engagement Manager =?UTF-8?B?4oCTIFN0cmF0ZWdpYyBBZHZpc29yeSAtIDQwNTQ1?=",
-        "date": "Mon, 15 Jun 2026 09:24:16 +0000",
-        "unread": true,
-        "priority": "HIGH",
-        "score": 7,
-        "pipeline_match": "Jacobs",
-        "confidence": 75,
-        "confidence_label": "medium",
-        "evidence": [
-          "matched active pipeline company: Jacobs",
-          "hiring/application context",
-          "recruiter outreach classification",
-          "high priority score: 7"
-        ],
-        "why_actionable": "matched active pipeline company: Jacobs | hiring/application context | recruiter outreach classification | high priority score: 7"
-      },
-      {
-        "id": "362085",
-        "from": "\"Mintrim, Lewis\" <l.mintrim@huxley.com>",
-        "subject": "Product Launch Engagement Lead Riyadh",
-        "date": "Mon, 15 Jun 2026 15:24:48 +0000",
-        "unread": true,
-        "priority": "MEDIUM",
-        "score": 2,
-        "pipeline_match": null,
-        "confidence": 85,
-        "confidence_label": "high",
-        "evidence": [
-          "known recruiter/job domain",
-          "hiring/application context",
-          "reply/follow-up wording with hiring context",
-          "recruiter outreach classification",
-          "medium priority score: 2"
-        ],
-        "why_actionable": "known recruiter/job domain | hiring/application context | reply/follow-up wording with hiring context | recruiter outreach classification"
-      },
-      {
-        "id": "362088",
-        "from": "\"Indeed\" <donotreply@match.indeed.com>",
-        "subject": "Founding COO / Operating Partner @ Lifinity Labs",
-        "date": "Mon, 15 Jun 2026 16:02:06 +0000",
-        "unread": true,
-        "priority": "MEDIUM",
-        "score": 2,
-        "pipeline_match": null,
-        "confidence": 65,
-        "confidence_label": "medium",
-        "evidence": [
-          "known recruiter/job domain",
-          "hiring/application context",
-          "recruiter outreach classification",
-          "medium priority score: 2"
-        ],
-        "why_actionable": "known recruiter/job domain | hiring/application context | recruiter outreach classification | medium priority score: 2"
-      }
-    ],
-    "application_acks": [
-      {
-        "id": "362027",
-        "from": "sprinklr@myworkday.com",
-        "subject": "Sprinklr - Your application has been received for the Program\r\n Manager Position",
-        "date": "Mon, 15 Jun 2026 09:13:55 +0000",
-        "unread": true,
-        "priority": "MEDIUM",
-        "score": 4,
-        "pipeline_match": null,
-        "confidence": 70,
-        "confidence_label": "medium",
-        "evidence": [
-          "hiring/application context",
-          "calendar or explicit interview evidence",
-          "medium priority score: 4"
-        ],
-        "why_actionable": "hiring/application context | calendar or explicit interview evidence | medium priority score: 4"
-      },
-      {
-        "id": "362036",
-        "from": "Virtusa Talent Acquisition Group <VirtusaTAG@virtusa.com>",
-        "subject": "Virtusa: Acknowledgement - We received your application",
-        "date": "Mon, 15 Jun 2026 05:44:21 -0400 (EDT)",
-        "unread": true,
-        "priority": "LOW",
-        "score": 0,
-        "pipeline_match": null,
-        "confidence": 35,
-        "confidence_label": "low",
-        "evidence": [
-          "hiring sender context",
-          "hiring/application context"
-        ],
-        "why_actionable": "not actionable: hiring sender context | hiring/application context"
-      },
-      {
-        "id": "362043",
-        "from": "blackrock@myworkday.com",
-        "subject": "Thank you for applying for Vice President, Aladdin Client\r\n Engagement at BlackRock",
-        "date": "Mon, 15 Jun 2026 10:07:19 +0000",
-        "unread": true,
-        "priority": "LOW",
-        "score": 1,
-        "pipeline_match": null,
-        "confidence": 20,
-        "confidence_label": "very_low",
-        "evidence": [
-          "hiring/application context"
-        ],
-        "why_actionable": "not actionable: hiring/application context"
-      },
-      {
-        "id": "362047",
-        "from": "\"M42 @ icims\" <mubadalahealth+autoreply@talent.icims.com>",
-        "subject": "Thank you for your application",
-        "date": "Mon, 15 Jun 2026 06:47:30 -0400 (EDT)",
-        "unread": true,
-        "priority": "LOW",
-        "score": 1,
-        "pipeline_match": null,
-        "confidence": 35,
-        "confidence_label": "low",
-        "evidence": [
-          "hiring sender context",
-          "hiring/application context"
-        ],
-        "why_actionable": "not actionable: hiring sender context | hiring/application context"
-      }
-    ],
+    "interview_invites": [],
+    "recruiter_messages": [],
+    "application_acks": [],
     "rejections": [],
-    "assessments": [],
-    "application_responses": [],
-    "follow_ups_needed": [
+    "assessments": [
       {
-        "id": "362085",
-        "from": "\"Mintrim, Lewis\" <l.mintrim@huxley.com>",
-        "subject": "Product Launch Engagement Lead Riyadh",
-        "date": "Mon, 15 Jun 2026 15:24:48 +0000",
+        "id": "362198",
+        "from": "=?utf-8?Q?Neatprompts_=2D_Aadit_Sheth?= <aadit@mail.neatprompts.com>",
+        "subject": "=?UTF-8?q?=F0=9F=8C=90_Rockets_to_$2_trillion_in_one_day?=",
+        "date": "Tue, 16 Jun 2026 13:03:59 +0000",
         "unread": true,
         "priority": "MEDIUM",
         "score": 2,
         "pipeline_match": null,
-        "confidence": 85,
-        "confidence_label": "high",
+        "confidence": 50,
+        "confidence_label": "low",
         "evidence": [
-          "known recruiter/job domain",
           "hiring/application context",
-          "reply/follow-up wording with hiring context",
-          "recruiter outreach classification",
+          "assessment keyword with hiring context",
           "medium priority score: 2"
         ],
-        "why_actionable": "known recruiter/job domain | hiring/application context | reply/follow-up wording with hiring context | recruiter outreach classification"
+        "why_actionable": "not actionable: hiring/application context | assessment keyword with hiring context | medium priority score: 2"
       }
     ],
-    "job_alerts": [
-      {
-        "id": "362052",
-        "from": "GulfTalent Jobs <jobs@gulftalent.com>",
-        "subject": "Ascentis needs a Project Director",
-        "date": "Mon, 15 Jun 2026 06:07:51 -0500",
-        "unread": true,
-        "priority": "LOW",
-        "score": 0,
-        "pipeline_match": null,
-        "confidence": 25,
-        "confidence_label": "very_low",
-        "evidence": [
-          "automated job alert",
-          "known recruiter/job domain",
-          "hiring sender context",
-          "noise/job-alert guard applied"
-        ],
-        "why_actionable": "not actionable: automated job alert | known recruiter/job domain | hiring sender context | noise/job-alert guard applied"
-      }
-    ],
-    "actionable_count": 4,
+    "application_responses": [],
+    "follow_ups_needed": [],
+    "job_alerts": [],
+    "actionable_count": 0,
     "hot_alerts": [],
-    "signals": [
-      {
-        "company": "Jacobs",
-        "signal": "recruiter_email",
-        "subject": "Jacobs - Your Application for Principal Consultant / Engagement Manager =?UTF-8?B?4oCTIFN0cmF0ZWdpYyBBZHZpc29yeSAtIDQwNTQ1?=",
-        "sender": "Jacobs.Recruitment@jacobs.global",
-        "job_ids": [
-          "linkedin_jobspy-li-4424758457",
-          "linkedin_jobspy-li-4424198126",
-          "linkedin_jobspy-li-4390872020",
-          "linkedin-li-4390872020"
-        ],
-        "score": 7,
-        "timestamp": "2026-06-15T20:00:51.784855+03:00"
-      }
-    ],
+    "signals": [],
     "pipeline_review_candidates": [
       {
-        "timestamp": "2026-06-15T20:00:52.501895+03:00",
-        "review_type": "possible_interview",
-        "category": "interview_invite",
-        "email_id": "362027",
-        "subject": "Sprinklr - Your application has been received for the Program\r\n Manager Position",
-        "from": "sprinklr@myworkday.com",
-        "priority": "MEDIUM",
-        "pipeline_match": null,
-        "status": "needs_human_review"
-      },
-      {
-        "timestamp": "2026-06-15T20:00:52.501904+03:00",
-        "review_type": "possible_follow_up",
-        "category": "follow_up_needed",
-        "email_id": "362085",
-        "subject": "Product Launch Engagement Lead Riyadh",
-        "from": "\"Mintrim, Lewis\" <l.mintrim@huxley.com>",
-        "priority": "MEDIUM",
-        "pipeline_match": null,
-        "status": "needs_human_review"
-      },
-      {
-        "timestamp": "2026-06-15T20:00:52.501910+03:00",
-        "review_type": "possible_recruiter_outreach",
-        "category": "recruiter_reach",
-        "email_id": "362030",
-        "subject": "Jacobs - Your Application for Principal Consultant / Engagement Manager =?UTF-8?B?4oCTIFN0cmF0ZWdpYyBBZHZpc29yeSAtIDQwNTQ1?=",
-        "from": "Jacobs.Recruitment@jacobs.global",
-        "priority": "HIGH",
-        "pipeline_match": "Jacobs",
-        "status": "needs_human_review"
-      },
-      {
-        "timestamp": "2026-06-15T20:00:52.501913+03:00",
-        "review_type": "possible_recruiter_outreach",
-        "category": "recruiter_reach",
-        "email_id": "362085",
-        "subject": "Product Launch Engagement Lead Riyadh",
-        "from": "\"Mintrim, Lewis\" <l.mintrim@huxley.com>",
-        "priority": "MEDIUM",
-        "pipeline_match": null,
-        "status": "needs_human_review"
-      },
-      {
-        "timestamp": "2026-06-15T20:00:52.501918+03:00",
-        "review_type": "possible_recruiter_outreach",
-        "category": "recruiter_reach",
-        "email_id": "362088",
-        "subject": "Founding COO / Operating Partner @ Lifinity Labs",
-        "from": "\"Indeed\" <donotreply@match.indeed.com>",
+        "timestamp": "2026-06-16T20:00:52.704454+03:00",
+        "review_type": "possible_assessment",
+        "category": "assessment",
+        "email_id": "362198",
+        "subject": "=?UTF-8?q?=F0=9F=8C=90_Rockets_to_$2_trillion_in_one_day?=",
+        "from": "=?utf-8?Q?Neatprompts_=2D_Aadit_Sheth?= <aadit@mail.neatprompts.com>",
         "priority": "MEDIUM",
         "pipeline_match": null,
         "status": "needs_human_review"
       }
     ],
     "llm_analysis": {
-      "actionable_emails": [
-        {
-          "id": "362027",
-          "subject": "Sprinklr - Your application has been received for the Program\r\n Manager Position",
-          "from": "sprinklr@myworkday.com",
-          "date": "Mon, 15 Jun 2026 09:13:55 +0000",
-          "category": "interview_invite",
-          "urgency": "low",
-          "intent": "The sender confirms receipt of Ahmed's application and says they may contact him later if matched.",
-          "action": "read_and_file",
-          "response_deadline": "when convenient",
-          "notes": "No proven interview; unmonitored mailbox."
-        },
-        {
-          "id": "362030",
-          "subject": "Jacobs - Your Application for Principal Consultant / Engagement Manager =?UTF-8?B?4oCTIFN0cmF0ZWdpYyBBZHZpc29yeSAtIDQwNTQ1?=",
-          "from": "Jacobs.Recruitment@jacobs.global",
-          "date": "Mon, 15 Jun 2026 09:24:16 +0000",
-          "category": "recruiter_reach",
-          "urgency": "low",
-          "intent": "The sender confirms receipt of Ahmed's Jacobs application and explains the review process.",
-          "action": "read_and_file",
-          "response_deadline": "when convenient",
-          "notes": "Pipeline match, but no reply requested."
-        },
-        {
-          "id": "362085",
-          "subject": "Product Launch Engagement Lead Riyadh",
-          "from": "\"Mintrim, Lewis\" <l.mintrim@huxley.com>",
-          "date": "Mon, 15 Jun 2026 15:24:48 +0000",
-          "category": "recruiter_reach",
-          "urgency": "high",
-          "intent": "The recruiter asks whether Ahmed is interested in an immediate 6-month Riyadh contract role.",
-          "action": "respond",
-          "response_deadline": "48h",
-          "notes": "Clarify rate, seniority, onsite need."
-        },
-        {
-          "id": "362088",
-          "subject": "Founding COO / Operating Partner @ Lifinity Labs",
-          "from": "\"Indeed\" <donotreply@match.indeed.com>",
-          "date": "Mon, 15 Jun 2026 16:02:06 +0000",
-          "category": "recruiter_reach",
-          "urgency": "medium",
-          "intent": "The sender suggests Ahmed may match a Founding COO / Operating Partner role and invites a quick application.",
-          "action": "respond",
-          "response_deadline": "1 week",
-          "notes": "Strong title; salary range needs screening."
-        }
-      ],
+      "actionable_emails": [],
       "summary": {
-        "total_actionable": 4,
+        "total_actionable": 0,
         "critical_count": 0,
         "requires_interview_prep": false,
         "requires_assessment": false,
-        "recruiter_top_opportunities": [
-          "Lewis Mintrim - Huxley - Product Launch Engagement Lead Riyadh",
-          "Indeed - Lifinity Labs - Founding COO / Operating Partner"
-        ],
-        "top_priority": "362085",
-        "daily_focus": "Respond to Huxley first to qualify compensation and seniority, then review the Lifinity Labs COO role before applying."
+        "recruiter_top_opportunities": [],
+        "top_priority": null,
+        "daily_focus": "No email action needed from this batch."
       }
     }
   },
   "kpi": {
-    "emails_processed": 69,
-    "actionable": 4,
-    "interviews_detected": 1,
-    "recruiter_messages": 3,
-    "unread_actionable": 4
+    "emails_processed": 29,
+    "actionable": 0,
+    "interviews_detected": 0,
+    "recruiter_messages": 0,
+    "unread_actionable": 0
   },
   "recommendations": [
     {
-      "id": "rec-984fd6f2-0",
-      "action": "respond_immediately",
-      "target": "1 interview invite(s)",
-      "reason": "Interview invitations require prompt response",
-      "urgency": "critical",
-      "timestamp": "2026-06-15T20:01:23.111764+03:00"
-    },
-    {
-      "id": "rec-984fd6f2-1",
-      "action": "review_and_respond",
-      "target": "3 recruiter message(s)",
-      "reason": "Recruiter outreach could lead to opportunities",
+      "id": "rec-6d755e6e-0",
+      "action": "complete_assessment",
+      "target": "1 assessment(s)",
+      "reason": "Assessments have deadlines",
       "urgency": "high",
-      "timestamp": "2026-06-15T20:01:23.111805+03:00"
-    },
-    {
-      "id": "rec-984fd6f2-2",
-      "action": "check_inbox",
-      "target": "4 unread actionable email(s)",
-      "reason": "Unread emails need attention",
-      "urgency": "high",
-      "timestamp": "2026-06-15T20:01:23.111809+03:00"
+      "timestamp": "2026-06-16T20:00:52.705643+03:00"
     }
   ]
 }

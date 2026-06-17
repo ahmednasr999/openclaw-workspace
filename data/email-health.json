@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-06-15T07:45:27.971533+03:00",
+  "generated_at": "2026-06-16T07:45:23.494130+03:00",
   "status": "ok",
-  "last_scan_time": "2026-06-14T20:00:37.934487+03:00",
-  "last_total_scanned": 17,
-  "last_actionable_count": 0,
+  "last_scan_time": "2026-06-15T20:00:52.501856+03:00",
+  "last_total_scanned": 69,
+  "last_actionable_count": 4,
   "last_hot_alerts": 0,
   "last_llm_status": "present",
-  "last_seen_uid": 361986,
-  "last_success": "2026-06-14T20:00:37.938275+03:00",
-  "processed_count": 12318,
+  "last_seen_uid": 362094,
+  "last_success": "2026-06-15T20:01:23.116084+03:00",
+  "processed_count": 12426,
   "feedback_rules": 0,
-  "pipeline_review_candidates": 128,
+  "pipeline_review_candidates": 138,
   "cron_jobs": [],
-  "formatter_preview": "📬 Email scan: all clear ✅\nScanned 17 new email(s). Nothing requiring action."
+  "formatter_preview": "🚨 Email alert - action needed\n\n🎯 Action required\n• Mintrim, Lewis - Product Launch Engagement Lead Riyadh\n  Next: Open and respond within 48h.\n  Timing: 48h\n\n✅ Bottom line: Handle the highest-priority email first."
 }

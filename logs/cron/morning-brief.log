@@ -1,4 +1,4 @@
 
-[2026-06-16T06:10:01+03:00] START morning-brief: /root/.openclaw/workspace/scripts/morning-brief.sh
-Morning brief complete - 2026-06-16
-[2026-06-16T06:10:10+03:00] END morning-brief: rc=0 duration=9s
+[2026-06-17T06:10:01+03:00] START morning-brief: /root/.openclaw/workspace/scripts/morning-brief.sh
+Morning brief complete - 2026-06-17
+[2026-06-17T06:10:13+03:00] END morning-brief: rc=0 duration=12s

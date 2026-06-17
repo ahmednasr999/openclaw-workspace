@@ -1382,3 +1382,18 @@ For Telegram media delivery, trust and record the `send` response (`ok: true`, `
 The June 15 Calendar Pre-fetch cron explicitly warned that the write tool is workspace-scoped and can fail for `/tmp` paths, and directed the agent to run `scripts/calendar-prefetch.py` then verify `/tmp/calendar-events-YYYY-MM-DD.json`.
 ### Do differently
 For `/tmp` calendar caches or other non-workspace artifacts, do not use workspace-scoped write operations. Run the existing script or a shell command in the configured gateway environment, then validate file existence and JSON shape/count before reporting success.
+
+## 2026-06-16 - VPS Max-Safe Cleanup Needs Verified Backups Before Pruning Snapshots
+
+### Preference
+Ahmed asked for the maximum safe VPS disk cleanup after disk usage recovered from 83% to 66% but old OpenClaw snapshots still consumed several GB.
+### Do differently
+For aggressive OpenClaw disk cleanup, inventory first, keep live state untouched, then create and verify a current backup before pruning older snapshots. Safe disposables include stale compressed/uncompressed snapshots, stale `/tmp` material, package caches, and temp virtualenvs. Do not delete live `lcm.db`, credentials, media, state, active workspaces, or `/root/.openclaw/npm`; verify the backup archive, SQLite LCM backup, disk/inodes, and gateway probe before reporting done.
+
+## 2026-06-16 - Volatile Tmp Cleanup Can Exit 1 From Disappearing Files
+
+### Incident
+During the max-safe VPS cleanup, one cleanup command exited `1` because files under `/tmp/node-compile-cache/...` disappeared while `find` was scanning them; later disk checks and gateway verification succeeded.
+### Do differently
+When cleaning volatile temp/cache trees, treat disappearing-file `find` races as benign only after rerunning targeted verification. Use `-ignore_readdir_race` or guarded `rm ... || true` for expected volatile paths, and keep final disk, backup, and service checks as the real pass/fail gates.
+
