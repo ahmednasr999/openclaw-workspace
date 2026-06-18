@@ -1,5 +1,21 @@
 # Active Tasks
 
+## 2026-06-17 - OpenClaw context-engineering improvement track
+- Priority: high
+- Status: open, first control artifacts created
+- Context: Ahmed approved turning the context-engineering recommendation into an OpenClaw improvement track focused on long workflow drift, not adding more agents/tools.
+- Artifacts:
+  - `docs/agent-governance/context-contracts-2026-06-17.md`
+  - `docs/agent-governance/long-run-context-evals-2026-06-17.md`
+  - `scripts/check-context-contracts.py`
+- Scope: JobZoom, CMO, email scan, and gateway maintenance contracts define required sources, allowed memory, ignored context, approval boundaries, verification gates, handoff packets, and stop rules.
+- Verification: `python3 scripts/check-context-contracts.py` passed, and the new docs were checked for smart quotes/em dashes. First manual eval passed for Gateway Maintenance, report: `reports/context-evals/gateway-maintenance-2026-06-17.md`.
+- Next steps:
+  1. Run the next manual eval on Email Scan or JobZoom.
+  2. Run one manual eval against CMO after that before automating judgment.
+  3. If a contract prevents a real failure twice, promote the smallest durable rule into the owner skill, AGENTS.md, or TOOLS.md.
+  4. Build only a read-only closeout checker first; do not automate decisions until manual eval evidence is stable.
+
 ## 2026-05-29 - OpenClaw ecosystem adoption execution
 - Priority: high
 - Status: open

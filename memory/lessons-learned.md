@@ -1397,3 +1397,17 @@ During the max-safe VPS cleanup, one cleanup command exited `1` because files un
 ### Do differently
 When cleaning volatile temp/cache trees, treat disappearing-file `find` races as benign only after rerunning targeted verification. Use `-ignore_readdir_race` or guarded `rm ... || true` for expected volatile paths, and keep final disk, backup, and service checks as the real pass/fail gates.
 
+## 2026-06-17 - Long Cron Cleanup Jobs Need Gateway Exec And Polling
+
+### Incident
+A session-watchdog cleanup cron falsely failed after first trying unavailable elevated exec, then running quiet archive work behind a 120s tool timeout; the process was killed before it could print its final success output.
+### Do differently
+For long scheduled maintenance, use the configured gateway exec path with `elevated=false`, give the command and agent budgets enough room, and poll background runs instead of relying on short foreground timeouts. Treat the final log and gateway probe as the pass/fail evidence.
+
+## 2026-06-17 - Bulk LinkedIn Application Counts Need Submitted Proof States
+
+### Improvement
+The LinkedIn plus-30 campaign counted 30/30 only after confirming LinkedIn submitted proof states; blocked, no-modal, unknown-field, and upload-only attempts were excluded from the total.
+### Do differently
+For bulk LinkedIn or JobZoom application reporting, count only explicit submitted proof states as applications. Keep blocked attempts, visible-upload-only states, unknown required fields, and missing application modals out of submitted totals and record them as blockers instead.
+

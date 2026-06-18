@@ -285,6 +285,8 @@
 | 394 | 🆕 | Kempinski Hotels | SVP Technology | Dubai | — | 🆕 Discovered | Radar | 2026-06-17 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4426838131) | — |
 | 395 | 🆕 | Tandem Search | VP - Digital Transformation Project Management (Emiratization) | Dubai | — | 🆕 Discovered | Radar | 2026-06-17 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4426476641) | — |
 | 396 | 🆕 | CyberA Solutions | Director of CyberSecurity & GRC | Dubai | — | 🆕 Discovered | Radar | 2026-06-17 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4426480593) | — |
+| 397 | 🆕 | TALENTMATE | Vice President | Dubai | — | 🆕 Discovered | Radar | 2026-06-18 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4430171355) | — |
+
 
 
 

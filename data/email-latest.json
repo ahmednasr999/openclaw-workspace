@@ -1,61 +1,29 @@
 {
   "status": "ok",
-  "scan_time": "2026-06-16T20:00:52.704430+03:00",
-  "total_scanned": 29,
+  "scan_time": "2026-06-17T20:01:22.969404+03:00",
+  "total_scanned": 38,
   "by_category": {
     "interview_invite": 0,
     "recruiter_reach": 0,
     "application_ack": 0,
     "rejection": 0,
-    "assessment": 1,
+    "assessment": 0,
     "application_response": 0,
     "follow_up_needed": 0,
     "job_alert": 0,
-    "other": 28
+    "other": 38
   },
   "interview_invites": [],
   "recruiter_messages": [],
   "application_acks": [],
   "rejections": [],
-  "assessments": [
-    {
-      "id": "362198",
-      "from": "=?utf-8?Q?Neatprompts_=2D_Aadit_Sheth?= <aadit@mail.neatprompts.com>",
-      "subject": "=?UTF-8?q?=F0=9F=8C=90_Rockets_to_$2_trillion_in_one_day?=",
-      "date": "Tue, 16 Jun 2026 13:03:59 +0000",
-      "unread": true,
-      "priority": "MEDIUM",
-      "score": 2,
-      "pipeline_match": null,
-      "confidence": 50,
-      "confidence_label": "low",
-      "evidence": [
-        "hiring/application context",
-        "assessment keyword with hiring context",
-        "medium priority score: 2"
-      ],
-      "why_actionable": "not actionable: hiring/application context | assessment keyword with hiring context | medium priority score: 2"
-    }
-  ],
+  "assessments": [],
   "application_responses": [],
   "follow_ups_needed": [],
   "job_alerts": [],
   "actionable_count": 0,
   "hot_alerts": [],
   "signals": [],
-  "pipeline_review_candidates": [
-    {
-      "timestamp": "2026-06-16T20:00:52.704454+03:00",
-      "review_type": "possible_assessment",
-      "category": "assessment",
-      "email_id": "362198",
-      "subject": "=?UTF-8?q?=F0=9F=8C=90_Rockets_to_$2_trillion_in_one_day?=",
-      "from": "=?utf-8?Q?Neatprompts_=2D_Aadit_Sheth?= <aadit@mail.neatprompts.com>",
-      "priority": "MEDIUM",
-      "pipeline_match": null,
-      "status": "needs_human_review"
-    }
-  ],
   "llm_analysis": {
     "actionable_emails": [],
     "summary": {

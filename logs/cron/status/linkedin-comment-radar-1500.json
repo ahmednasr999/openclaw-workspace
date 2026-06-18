@@ -2,9 +2,9 @@
   "task": "linkedin-comment-radar-1500",
   "status": "ok",
   "returncode": 0,
-  "started_at": "2026-06-16T15:00:02+03:00",
-  "finished_at": "2026-06-16T15:02:30+03:00",
-  "duration_seconds": 148,
+  "started_at": "2026-06-17T15:00:01+03:00",
+  "finished_at": "2026-06-17T15:01:58+03:00",
+  "duration_seconds": 117,
   "log_path": "/root/.openclaw/workspace/logs/cron/linkedin-comment-radar-1500-cron.log",
   "lock_path": "/var/lock/openclaw/linkedin-comment-radar-1500.cron.lock",
   "host": "srv1352768"

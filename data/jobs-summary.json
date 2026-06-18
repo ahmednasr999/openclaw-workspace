@@ -2,44 +2,43 @@
   "meta": {
     "agent": "jobs-review",
     "version": "2.0.0",
-    "generated_at": "2026-06-17T02:46:29.130543+03:00",
-    "duration_ms": 565155,
+    "generated_at": "2026-06-18T04:42:05.104956+03:00",
+    "duration_ms": 300362,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "ba7bc6da",
+    "run_id": "e054fccf",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
-    "generated_at": "2026-06-17T02:46:28.994919+03:00",
-    "total_candidates": 33,
-    "reviewed": 33,
+    "generated_at": "2026-06-18T04:42:04.985340+03:00",
+    "total_candidates": 32,
+    "reviewed": 31,
     "submit": [
       {
-        "id": "linkedin_jobspy-li-4426470745",
+        "id": "linkedin_jobspy-li-4427326715",
         "source": "linkedin_jobspy",
-        "title": "Director- Delivery & Installation Operations",
-        "company": "Confidential",
-        "location": "Dubai, United Arab Emirates",
-        "url": "https://www.linkedin.com/jobs/view/4426470745",
+        "title": "Director Customer Experience & Innovation Consulting - Director - FSI",
+        "company": "Publicis Sapient",
+        "location": "Dubai, Dubai, United Arab Emirates",
+        "url": "https://www.linkedin.com/jobs/view/4427326715",
         "posted": "",
         "seniority": "C-Suite",
         "domain_match": true,
-        "keyword_score": 20,
+        "keyword_score": 16,
         "match_keywords": [
-          "ai",
           "director",
-          "uae",
-          "dubai"
+          "growth",
+          "mena"
         ],
-        "raw_snippet": "Role : Director\\- Delivery \\& Installation Operations\n \n\n\n\n Location: Dubai, UAE\n \n\n\n\n  \n\n\n\n\n\n This role exists to industrialize delivery and installation operations by introducing scalable operational systems, process discipline, and advanced last\\-mile execution methodologies into a high\\-volume, ",
+        "raw_snippet": "**Job Description**\n Director Customer Experience \\& Innovation Consulting\n   \n\n  \n\n As a Senior Leader, CX \\& Innovation Consulting, you will be responsible for the growth, development, and execution of experience and innovation strategy services across the MENA region and beyond. You\u2019ll work in pa",
         "relevant": true,
         "filter_reason": null,
         "search_country": "United Arab Emirates",
-        "search_title": "Project Director",
-        "linkedin_id": "li-4426470745",
-        "jd_text": "Role : Director\\- Delivery \\& Installation Operations\n \n\n\n\n Location: Dubai, UAE\n \n\n\n\n  \n\n\n\n\n\n This role exists to industrialize delivery and installation operations by introducing scalable operational systems, process discipline, and advanced last\\-mile execution methodologies into a high\\-volume, concurrent project environment. The position does not replace existing technical expertise \u2014 it complements it by building the operational architecture, governance, and scalability layer the business requires for its next phase of growth.\n \n\n\n\n  \n\n\n\n\n\n The organization currently operates approximately 25 active customer projects per day across varying project sizes, product categories, installation durations, site conditions, and customer expectations. The environment has transitioned from a linear model to a dynamic operational network requiring:\n \n\n\n\n \u2022 Concurrent multi\\-site project management\n \n\n\n\n \u2022 Daily resource reallocation and scheduling\n \n\n\n\n \u2022 Continuous customer communication at scale\n \n\n\n\n \u2022 Real\\-time operational dependency management\n \n\n\n\n \u2022 Structured escalation and SLA\\-based execution\n \n\n\n\n  \n\n\n\n\n\n The core challenge is not technical installation knowledge \u2014 the organization possesses strong field execution capability. The gap is the absence of advanced process\\-driven operational leadership capable of transforming fragmented execution into a scalable, predictable, and systemized operational engine.\n \n\n\n\n  \n\n\n\n\n\n 1\\. Operational Architecture \\& Process Design\n \n\n\n\n \u2022 Design, document, and implement end\\-to\\-end operational workflows covering scheduling, dispatch, installation sequencing, and project closure\n \n\n\n\n \u2022 Standardize all field execution processes across crew types, project categories, and site conditions\n \n\n\n\n \u2022 Build and maintain operational SOPs, handover protocols, and quality checkpoints\n \n\n\n\n \u2022 Transition the department from reactive firefighting to a structured, repeatable execution model\n \n\n\n\n 2\\. Multi\\-Project Scheduling \\& Dispatch Optimization\n \n\n\n\n \u2022 Own the daily and weekly scheduling function for all active installation and delivery projects\n \n\n\n\n \u2022 Implement dispatch optimization logic to maximize crew utilization and minimize idle time\n \n\n\n\n \u2022 Develop priority sequencing models that account for site readiness, product availability, and customer commitments\n \n\n\n\n \u2022 Manage resource conflicts and reallocate teams dynamically in response to live operational changes\n \n\n\n\n 3\\. Operational Control Tower\n \n\n\n\n \u2022 Establish and operate a live control tower function providing real\\-time visibility into all active projects\n \n\n\n\n \u2022 Define and monitor key operational KPIs: on\\-time completion rate, revisit rate, crew utilisation, SLA adherence, and delay frequency\n \n\n\n\n \u2022 Build dashboards and reporting structures for daily operational review and senior management reporting\n \n\n\n\n \u2022 Identify operational bottlenecks early and drive structured resolution\n \n\n\n\n 4\\. Workforce Coordination \\& Utilisation\n \n\n\n\n \u2022 Manage crew capacity planning, deployment, and productivity tracking\n \n\n\n\n \u2022 Coordinate with HR on workforce resourcing, shift planning, and contractor management\n \n\n\n\n \u2022 Develop performance frameworks for field teams aligned to operational KPIs\n \n\n\n\n \u2022 Reduce overdependence on key individuals by building cross\\-trained, interchangeable crew structures\n \n\n\n\n 5\\. Customer Coordination \\& SLA Management\n \n\n\n\n \u2022 Define and enforce SLA frameworks covering installation lead times, communication standards, and escalation thresholds\n \n\n\n\n \u2022 Work with customer\\-facing teams to align operational capacity with customer commitments\n \n\n\n\n \u2022 Build structured customer coordination protocols for pre\\-installation, day\\-of, and post\\-installation touchpoints\n \n\n\n\n \u2022 Own escalation handling for time\\-sensitive or complex customer situations\n \n\n\n\n 6\\. Technology \\& Systems Integration\n \n\n\n\n \u2022 Lead the evaluation, selection, and implementation of operational management technology (scheduling tools, field service management platforms, and dispatch systems)\n \n\n\n\n \u2022 Work with IT to integrate operational systems with ERP, CRM, and customer portals\n \n\n\n\n \u2022 Drive adoption of digital tools across field teams to improve real\\-time communication and job visibility\n \n\n\n\n 7\\. Cross\\-Functional Coordination\n \n\n\n\n \u2022 Act as the primary operational interface between the installation department, sales, logistics, procurement, and customer experience teams\n \n\n\n\n \u2022 Align project execution timelines with product availability, warehouse readiness, and client schedules\n \n\n\n\n \u2022 Participate in strategic planning discussions to translate business growth targets into operational capacity requirements\n \n\n\n\n  \n\n\n\n\n\n 8\\. Leadership \\& Culture\n \n\n\n\n \u2022 Build and mentor a high\\-performance operational leadership team within the department\n \n\n\n\n \u2022 Establish a culture of accountability, process discipline, and continuous improvement\n \n\n\n\n \u2022 Champion data\\-driven decision\\-making and operational transparency across all levels of the team\n \n\n\n\n  \n\n\n\n\n\n Academic Qualification :\n \n\n\n\n Bachelor's degree in Industrial Engineering, Operations Management, Supply Chain, Business Administration, or a related field\n \n\n\n\n Master's degree (MBA or MSc Operations/Supply Chain Management)\n \n\n\n\n Certification\n \n\n\n\n Relevant operational or project management certification (PMP, APICS CPIM, or equivalent)\n \n\n\n\n Lean Six Sigma Black Belt or Green Belt; PRINCE2; Certified Supply Chain Professional (CSCP)\n \n\n\n\n Industry knowledge\n \n\n\n\n Demonstrated understanding of last\\-mile logistics, field service operations, or installation project management\n \n\n\n\n Experience with furniture, fit\\-out, modular kitchen, or home installation industries\n \n\n\n\n Proficiency in operational management tools, scheduling platforms, and ERP systems\n \n\n\n\n Experience with field service management software (e.g. ServiceMax, FieldAware, SAP FSM)\n \n\n\n\n  \n\n\n\n\n\n Experience :\n \n\n\n\n Minimum 15 years in operations leadership, with at least 5 years at a senior management or director level\n \n\n\n\n Last\\-mile operations\n \n\n\n\n Proven track record in high\\-volume last\\-mile delivery or installation environments (25\\+ daily projects)\n \n\n\n\n Process transformation\n \n\n\n\n Demonstrated experience transitioning reactive operational models into scalable, process\\-driven execution frameworks\n \n\n\n\n Multi\\-site management\n \n\n\n\n Experience managing concurrent projects across multiple sites with dynamic resource allocation\n \n\n\n\n Team leadership\n \n\n\n\n Experience building and leading cross\\-functional operations teams of 20 or more\n \n\n\n\n Technology implementation\n \n\n\n\n Track record of leading operational technology deployments (scheduling, FSM, ERP, or dispatch systems)",
+        "search_title": "Delivery Director",
+        "linkedin_id": "li-4427326715",
+        "jd_text": "**Job Description**\n Director Customer Experience \\& Innovation Consulting\n   \n\n  \n\n As a Senior Leader, CX \\& Innovation Consulting, you will be responsible for the growth, development, and execution of experience and innovation strategy services across the MENA region and beyond. You\u2019ll work in partnership with Experience \\& Innovation capability leads within the region. The role requires working from client offices across the GCC, including Saudi Arabia, the UAE, and Oman.\n   \n\n  \n\n The role works at the intersection of strategy and design and will focus on driving opportunities within the C\\-Suite and senior management teams. You will be responsible for shaping opportunities through the customer and market lens to accelerate value identification and value realization for clients. To do this, you will bring together a range of experts to help clients define and shape amazing customer value propositions, new propositions and experiences and even wholly new businesses. You will do this from within the Experience \\& Innovation capability group, but working in partnership with Management Consulting, Engineering, Data and our Product capability groups.\n   \n\n  \n\n Publicis Sapient has clients across several industries spanning Financial Services, Energy, Government, to Travel. Deep expertise in some of these industries, especially in Financial Services, is particularly favoured.\n   \n\n  \n\n You will be involved in originating, shaping, and driving transformational strategies from inception through to budgeting and implementation working alongside Publicis Sapient\u2019s proven digital transformation technology teams. As a senior leader within the team, you will also be involved in shaping and growing the focus and strategy of Publicis Sapient\u2019s experience offering itself. You are an entrepreneurial leader who balances strategic vision with operational rigor\u2014owning the end\\-to\\-end product lifecycle to ensure our work delivers measurable business and customer impact.\n   \n\n  \n\n Your Impact\n   \n\n  \n\n You will have at least 15 years of CX and Innovation Consulting experience, ideally working within a major consulting, digital or design firm. Deep customer research and analytics skills is core to your DNA, as is the use of service design / design thinking to drive product strategy and innovation. Prior experience within programs and strategies with multi\\-million dollar and global scale and reach is expected. Also expected are skills, interest and experience in technology and using technology to drive value accretive experience\\-led transformations.\n   \n\n  \n\n As a Senior Leader, you will be expected to drive business development around diverse range of spaces from digital business transformation strategy, customer experience transformation, employee experience, new product, and service innovation, and moving into broader complex system strategy and design as well as much, much more.\n   \n\n  \n\n To do this, Publicis Sapient are actively investing within the MENA region to build out the team.\n   \n\n  \n\n As a lead you will be evaluated based upon your impact on the capabilities of the team, the work, and the commercial contribution of the broader Experience group within the region in collaboration with the other leaders.\n   \n\n  \n\n**Core Consulting \\& Leadership Capabilities**\n**Strategic \\& Commercial Leadership**\n* Business Development: Lead business development efforts, including identifying opportunities, shaping proposals, and leading pitches for new and existing clients. Cultivate trusted advisor relationships with C\\-level clients to grow accounts year\\-over\\-year.\n* Financial \\& Commercial Management: Understand P\\&L for your practice area. Manage financial forecasting, utilization, profitability, scope, margins, and resource allocation to ensure the commercial success of engagements.\n* Market Presence: Act as a thought leader in Strategic Design and Innovation across the MENA region, representing Publicis Sapient at industry events and building a network that drives business opportunities.\n* Domain Authority: Leverage deep expertise in Financial Services, Energy, Government, or Travel to engage credibly with clients on their business challenges and translate industry dynamics into transformative opportunities.\n\n\n**Team Leadership \\& Culture**\n* Team Development: Lead, mentor, and scale a diverse experience team of CX strategists and designers. Foster a culture of innovation, high performance, and impact while actively managing career development, retention, and recruitment.\n* Operational Management: Oversee resource allocation and utilization across the team to ensure optimal billability and project profitability, balancing client delivery needs with professional growth opportunities.\n* Team Player: Excellent collaborator who is well organized and balances strategic vision with operational rigor.\n\n\n**Customer Experience \\& Product Lifecycle Management**\n* End\\-to\\-End Lifecycle Authority: Lead client engagements across the entire product lifecycle\u2014from early\\-stage strategy and value proposition design, through experience definition, to delivery, launch, and post\\-launch optimization. Ensure continuity between what is designed for the customer and what is built.\n* Craft Mastery: Deep expertise in design thinking, systems thinking, user research, service design, and the creation of strategic artifacts (visioning/strategic illustrations, personas, journeys, blueprints) to drive business outcomes, not just outputs.\n* Experience Strategy \\& Delivery driven by AI: Leverage design thinking and systems thinking to uncover high\\-value opportunities, expedited and elevated through AI tools.\n* Research \\& Insights: Champion rigorous qualitative and quantitative user research throughout the lifecycle to de\\-risk decisions and inform product roadmaps from concept through to live measurement.\n* Storytelling: Comfortable influencing client decisions on strategy and implementation using both narrative and quantitative analysis. Strong communicator and moderator, skilled at finding common ground and advocating for customer value and business solutions\n\n\n**Skills \\& Experience**\n* Experience: 15\\+ years in customer experience, product strategy, or digital transformation, with a minimum of 5 years in a senior leadership role (Director level or above) within a top\\-tier consulting firm, digital agency, or product organization.\n* Proven Track Record:\n* Building, managing, and scaling CX teams, including managing team finances, utilization, and P\\&L.\n* Growing client accounts and winning new business, including leading proposals, pricing strategy, and client negotiations.\n* Managing the full product lifecycle\u2014from strategy and discovery through delivery and post\\-launch measurement.\n* Owning and driving CX \\& Innovation project revenue.\n* Skills:\n* Creative and analytical problem solver.\n* Excellent written, verbal, numerical, and presentation skills.\n* Strong appreciation for new technology, data platforms, Agile ways of working, and modern technology tools and methods.\n* Travel: Willing to travel or be at client site at least 80% of the time across the MENA region (in particular Saudi Arabia, UAE, and Oman).\n* Language: Business\\-level fluency in English.\n\n\n Set Yourself Apart With\n   \n\n  \n\n* Experience working in Saudi and/or UAE\n* Hands on experience with managing product management and UI/UX design teams and work Financial Services expertise\n\n\n Additional Information\n   \n\n  \n\n* Fully paid annual leave of 22 working days\n* Free private health insurance extended to employee and direct dependents\n* Return air ticket to home country per year to employee and direct dependents\n* Schooling allowance offered based on the policy\n\n\n**Company Description**\n Publicis Sapient is a digital transformation partner helping established organizations get to their future, digitally enabled state, both in the way they work and the way they serve their customers. We help unlock value through a start\\-up mindset and modern methods, fusing strategy, consulting and customer experience with agile engineering and problem\\-solving creativity. United by our core values and our purpose of helping people thrive in the brave pursuit of next, our 20,000\\+ people in 72 offices around the world combine experience across technology, data sciences, consulting, and customer obsession to accelerate our clients\u2019 businesses through designing the products and services their customers truly value.",
         "source_count": 1,
         "country": "United Arab Emirates",
         "industry_bonus": 9,
@@ -47,27 +46,27 @@
         "sources": [
           "linkedin"
         ],
-        "first_seen": "2026-06-16",
+        "first_seen": "2026-06-18",
         "career_fit_score": 9,
         "verdict": "SUBMIT",
-        "verdict_reason": "Director-level operational excellence and process transformation role in target GCC location [5D role=2 | seniority=2 | geo=2 | strategic=1 | evidence=2 | fit=9/10 | llm=7] [CMO outreach queued for Confidential]",
+        "verdict_reason": "Senior GCC transformation consulting role with FSI focus, but heavier on CX/innovation than core technology leadership [5D role=2 | seniority=2 | geo=2 | strategic=1 | evidence=2 | fit=9/10 | llm=7] [CMO outreach queued for Publicis Sapient]",
         "watchlist_matches": {
           "company_hits": [],
           "domain_hits": [],
           "categories": []
         },
-        "ats_score": 66,
-        "ats_verdict": "CONDITIONAL",
+        "ats_score": 75,
+        "ats_verdict": "GO",
         "ats_matched": [
-          "project management",
+          "digital transformation",
           "transformation",
-          "pmp",
-          "lean six sigma",
           "ai",
-          "erp",
           "sap",
-          "governance",
+          "budget",
+          "revenue",
+          "agile",
           "data",
+          "analytics",
           "digital"
         ],
         "ats_gaps": [],
@@ -75,68 +74,6 @@
         "fit_dimensions": {
           "role": 2,
           "seniority": 2,
-          "geography": 2,
-          "strategic": 1,
-          "evidence": 2
-        }
-      },
-      {
-        "id": "linkedin_jobspy-li-4426803035",
-        "source": "linkedin_jobspy",
-        "title": "Agile Program Manager (Endur)-Senior Manager",
-        "company": "Publicis Sapient",
-        "location": "Dubai, Dubai, United Arab Emirates",
-        "url": "https://www.linkedin.com/jobs/view/4426803035",
-        "posted": "",
-        "seniority": "Other",
-        "domain_match": true,
-        "keyword_score": 20,
-        "match_keywords": [
-          "program management",
-          "agile"
-        ],
-        "raw_snippet": "**Job Description**\n Senior Manager Agile Program Management\n   \n\n  \n\n As a Senior Manager Agile Program Management, you will play a key role in driving Agile transformation and delivering complex Trading \\& Risk Management (TRM) programs. You will be responsible for coaching Agile teams, optimizing",
-        "relevant": true,
-        "filter_reason": null,
-        "search_country": "United Arab Emirates",
-        "search_title": "PMO Director",
-        "linkedin_id": "li-4426803035",
-        "jd_text": "**Job Description**\n Senior Manager Agile Program Management\n   \n\n  \n\n As a Senior Manager Agile Program Management, you will play a key role in driving Agile transformation and delivering complex Trading \\& Risk Management (TRM) programs. You will be responsible for coaching Agile teams, optimizing program execution, and ensuring alignment with business objectives. Your expertise in Agile methodologies and TRM solutions will be critical in enhancing delivery efficiency and business value.\n   \n\n  \n\n Program \\& Delivery Leadership\n   \n\n  \n\n* \n+ Own end\u2011to\u2011end delivery of large\u2011scale Agile programs spanning multiple workstreams, vendors, and geographies.\n+ Lead complex ETRM (Endur/Openlink) transformation and enhancement initiatives, including deal lifecycle, risk, P\\&L, settlements, and reporting.\n+ Define and manage program roadmaps, milestones, dependencies, and outcomes, ensuring alignment with trading strategy and business priorities.\n+ Drive delivery using Agile / SAFe / hybrid methodologies, ensuring predictable, high\u2011quality outcomes in a fast\u2011paced trading environment.\n\n\n**Qualifications**\n**Your Skills and Experience:**\n**Must\\-Have Skills**\n* 12\\+ years of project management in technology, including large\\-scale implementations or upgrades.\n* At least 4\\+ years managing Endur Projects is a \"Good to have\".\n* Experience delivering in trading, energy or financial services.\n* Strong command of project management techniques (Agile and Waterfall; RAID management).\n* Excellent stakeholder and vendor management skills.\n\n\n**Good\\-to\\-Have Skills**\n* PMP, PRINCE2 or similar certification.\n* Experience managing an Endur or CTRM implementation/upgrade\n* Familiarity with GCC client environments and governance.\n\n\n**Set Yourself Apart With**\n* Examples where you rescued or turned around challenged projects.\n* A track record of delivering business benefits beyond the original scope (e.g., process improvements\n\n\n Additional Information\n   \n\n  \n\n**Additional Information**\n* Wellness program and employee assistance.\n* Generous paid leave and holidays.\n* Comprehensive health benefits for you and your family.\n* Competitive compensation and benefits package.\n* Access to ongoing learning and development opportunities.\n* An inclusive workplace that promotes diversity and collaboration.\n\n\n**Company Description**\n Publicis Sapient is a digital transformation partner helping established organizations get to their future, digitally enabled state, both in the way they work and the way they serve their customers. We help unlock value through a start\\-up mindset and modern methods, fusing strategy, consulting, and customer experience with agile engineering and problem\\-solving creativity. United by our core values and our purpose of helping people thrive in the brave pursuit of next, our 20,000\\+ people in 53 offices around the world combine experience across technology, data sciences, consulting, and customer obsession to accelerate our clients\u2019 businesses through designing the products and services their customers truly value.",
-        "source_count": 1,
-        "country": "United Arab Emirates",
-        "industry_bonus": 3,
-        "policy_status": "pass",
-        "sources": [
-          "linkedin"
-        ],
-        "first_seen": "2026-06-16",
-        "career_fit_score": 8,
-        "verdict": "SUBMIT",
-        "verdict_reason": "Strong agile program delivery fit in Dubai, but Senior Manager level and Endur/ETRM specialization are notable gaps [5D role=2 | seniority=1 | geo=2 | strategic=1 | evidence=2 | fit=8/10 | llm=6] [CMO outreach queued for Publicis Sapient]",
-        "watchlist_matches": {
-          "company_hits": [],
-          "domain_hits": [],
-          "categories": []
-        },
-        "ats_score": 67,
-        "ats_verdict": "CONDITIONAL",
-        "ats_matched": [
-          "digital transformation",
-          "program management",
-          "project management",
-          "transformation",
-          "pmp",
-          "ai",
-          "sap",
-          "governance",
-          "stakeholder management",
-          "vendor management"
-        ],
-        "ats_gaps": [],
-        "llm_fit_score": 6,
-        "fit_dimensions": {
-          "role": 2,
-          "seniority": 1,
           "geography": 2,
           "strategic": 1,
           "evidence": 2
@@ -151,34 +88,34 @@
       "review": 6
     },
     "pipeline": {
-      "l0_auto_skip": 0,
+      "l0_auto_skip": 1,
       "l1_jd_enriched": 0,
-      "l1_jd_coverage": "29/33",
+      "l1_jd_coverage": "24/31",
       "llm_model": "openai/gpt-5.5",
-      "llm_jobs_reviewed": 33,
-      "r2_latency_ms": 559243,
+      "llm_jobs_reviewed": 31,
+      "r2_latency_ms": 291527,
       "r2_fallbacks": 0
     },
     "kpi": {
-      "submit_rate": 0.06060606060606061,
+      "submit_rate": 0.03225806451612903,
       "review_rate": 0.0,
-      "skip_rate": 0.9393939393939394,
-      "avg_fit_score": 4.3,
-      "l0_filter_rate": 0.0,
+      "skip_rate": 0.967741935483871,
+      "avg_fit_score": 4.6,
+      "l0_filter_rate": 3.1,
       "llm_review_rate": 100.0
     }
   },
   "kpi": {
-    "total_loaded": 33,
-    "l0_auto_skip": 0,
+    "total_loaded": 32,
+    "l0_auto_skip": 1,
     "l1_jd_enriched": 0,
     "l2_filtered": 0,
-    "submit_count": 2,
+    "submit_count": 1,
     "review_count": 0,
-    "skip_count": 31,
-    "submit_rate": 6.1,
-    "avg_fit_score": 4.3,
-    "r2_latency_ms": 559243
+    "skip_count": 30,
+    "submit_rate": 3.2,
+    "avg_fit_score": 4.6,
+    "r2_latency_ms": 291527
   },
   "recommendations": []
 }
