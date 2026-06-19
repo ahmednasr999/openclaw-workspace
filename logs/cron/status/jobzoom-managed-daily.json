@@ -2,9 +2,9 @@
   "task": "jobzoom-managed-daily",
   "status": "ok",
   "returncode": 0,
-  "started_at": "2026-06-18T05:00:01+03:00",
-  "finished_at": "2026-06-18T05:00:02+03:00",
-  "duration_seconds": 1,
+  "started_at": "2026-06-19T05:00:01+03:00",
+  "finished_at": "2026-06-19T05:00:03+03:00",
+  "duration_seconds": 3,
   "log_path": "/root/.openclaw/workspace/logs/cron/jobzoom-managed-daily.log",
   "lock_path": "/var/lock/openclaw/jobzoom-managed-daily.lock",
   "host": "srv1352768"

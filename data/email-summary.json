@@ -2,60 +2,149 @@
   "meta": {
     "agent": "email-agent",
     "version": "3.0.0",
-    "generated_at": "2026-06-17T20:01:22.970128+03:00",
-    "duration_ms": 39965,
+    "generated_at": "2026-06-18T20:01:07.097813+03:00",
+    "duration_ms": 30891,
     "ttl_hours": 4,
     "status": "success",
     "error": null,
-    "run_id": "43b4882c",
+    "run_id": "d6eee56e",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
     "status": "ok",
-    "scan_time": "2026-06-17T20:01:22.969404+03:00",
-    "total_scanned": 38,
+    "scan_time": "2026-06-18T20:00:52.270923+03:00",
+    "total_scanned": 32,
     "by_category": {
       "interview_invite": 0,
-      "recruiter_reach": 0,
+      "recruiter_reach": 1,
       "application_ack": 0,
       "rejection": 0,
       "assessment": 0,
       "application_response": 0,
       "follow_up_needed": 0,
       "job_alert": 0,
-      "other": 38
+      "other": 31
     },
     "interview_invites": [],
-    "recruiter_messages": [],
+    "recruiter_messages": [
+      {
+        "id": "362433",
+        "from": "Stock Analysis <contact@stockanalysis.com>",
+        "subject": "Market Bullets: Apple plans to increase prices, the Fed holds rates\r\n steady, Trump signs Iran memorandum",
+        "date": "Thu, 18 Jun 2026 13:04:37 +0000 (UTC)",
+        "unread": true,
+        "priority": "HIGH",
+        "score": 7,
+        "pipeline_match": "SAP",
+        "confidence": 75,
+        "confidence_label": "medium",
+        "evidence": [
+          "matched active pipeline company: SAP",
+          "hiring/application context",
+          "recruiter outreach classification",
+          "high priority score: 7"
+        ],
+        "why_actionable": "matched active pipeline company: SAP | hiring/application context | recruiter outreach classification | high priority score: 7"
+      }
+    ],
     "application_acks": [],
     "rejections": [],
     "assessments": [],
     "application_responses": [],
     "follow_ups_needed": [],
     "job_alerts": [],
-    "actionable_count": 0,
+    "actionable_count": 1,
     "hot_alerts": [],
-    "signals": [],
+    "signals": [
+      {
+        "company": "SAP",
+        "signal": "recruiter_email",
+        "subject": "Market Bullets: Apple plans to increase prices, the Fed holds rates\r\n steady, Trump signs Iran memorandum",
+        "sender": "Stock Analysis <contact@stockanalysis.com>",
+        "job_ids": [
+          "linkedin_jobspy-li-4427326715",
+          "linkedin_jobspy-li-4426803035",
+          "indeed-in-b2195113ff678ef7",
+          "indeed-in-b7591ff66cc5a732",
+          "linkedin_jobspy-li-4380812358",
+          "linkedin-li-4349578134",
+          "linkedin-li-4394078700",
+          "linkedin-li-4380812358",
+          "linkedin-li-4362170335",
+          "linkedin-li-4362562926",
+          "linkedin-li-4385935615",
+          "linkedin-li-4353703506",
+          "app-005",
+          "cv-5fbf4a9aa7",
+          "linkedin-li-4385294885"
+        ],
+        "score": 7,
+        "timestamp": "2026-06-18T20:00:51.944300+03:00"
+      }
+    ],
+    "pipeline_review_candidates": [
+      {
+        "timestamp": "2026-06-18T20:00:52.270947+03:00",
+        "review_type": "possible_recruiter_outreach",
+        "category": "recruiter_reach",
+        "email_id": "362433",
+        "subject": "Market Bullets: Apple plans to increase prices, the Fed holds rates\r\n steady, Trump signs Iran memorandum",
+        "from": "Stock Analysis <contact@stockanalysis.com>",
+        "priority": "HIGH",
+        "pipeline_match": "SAP",
+        "status": "needs_human_review"
+      }
+    ],
     "llm_analysis": {
-      "actionable_emails": [],
+      "actionable_emails": [
+        {
+          "id": "362433",
+          "subject": "Market Bullets: Apple plans to increase prices, the Fed holds rates steady, Trump signs Iran memorandum",
+          "from": "Stock Analysis <contact@stockanalysis.com>",
+          "date": "Thu, 18 Jun 2026 13:04:37 +0000 (UTC)",
+          "category": "recruiter_reach",
+          "urgency": "low",
+          "intent": "The sender is distributing a market-news newsletter, not requesting a recruitment response.",
+          "action": "read_and_file",
+          "response_deadline": "when convenient",
+          "notes": "False positive recruiter match; no hiring opportunity shown."
+        }
+      ],
       "summary": {
-        "total_actionable": 0,
+        "total_actionable": 1,
         "critical_count": 0,
         "requires_interview_prep": false,
         "requires_assessment": false,
         "recruiter_top_opportunities": [],
         "top_priority": null,
-        "daily_focus": "No email action needed from this batch."
+        "daily_focus": "No job-search action is needed from this batch; treat the flagged email as noise."
       }
     }
   },
   "kpi": {
-    "emails_processed": 38,
-    "actionable": 0,
+    "emails_processed": 32,
+    "actionable": 1,
     "interviews_detected": 0,
-    "recruiter_messages": 0,
-    "unread_actionable": 0
+    "recruiter_messages": 1,
+    "unread_actionable": 1
   },
-  "recommendations": []
+  "recommendations": [
+    {
+      "id": "rec-d6eee56e-0",
+      "action": "review_and_respond",
+      "target": "1 recruiter message(s)",
+      "reason": "Recruiter outreach could lead to opportunities",
+      "urgency": "high",
+      "timestamp": "2026-06-18T20:01:07.097574+03:00"
+    },
+    {
+      "id": "rec-d6eee56e-1",
+      "action": "check_inbox",
+      "target": "1 unread actionable email(s)",
+      "reason": "Unread emails need attention",
+      "urgency": "high",
+      "timestamp": "2026-06-18T20:01:07.097594+03:00"
+    }
+  ]
 }

@@ -2,16 +2,37 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-06-18T04:00:37.971850+03:00",
-    "duration_ms": 35118,
+    "generated_at": "2026-06-19T06:00:41.249094+03:00",
+    "duration_ms": 38616,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "20df74a0",
+    "run_id": "fd391f62",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": [
+    {
+      "id": "indeed-in-04f7f67066d5dabc",
+      "source": "indeed",
+      "title": "Director of Front Office",
+      "company": "Naik Foundation",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=04f7f67066d5dabc",
+      "posted": "2026-06-18",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 13,
+      "match_keywords": [
+        "ai",
+        "director"
+      ],
+      "raw_snippet": "**Job Description:**\n\n* Ensuring that guests have a positive experience and feel valued by the Hotel.\n* Training new employees on company policies, procedures, and culture.\n* Creating and maintaining relationships with Guests to ensure that they are satisfied with services provided by the Hotel.\n* Reviewing all incoming Guests complaints and making sure they are addressed in a timely manner.\n* Managing employee schedules to ensure that all shifts are covered at all times.\n* Managing the front of",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Program Director"
+    },
     {
       "id": "indeed-in-4d97fa48f3759b2f",
       "source": "indeed",
@@ -56,25 +77,26 @@
       "search_title": "Program Director"
     },
     {
-      "id": "indeed-in-1f2c579f9c13216a",
+      "id": "indeed-in-0f0b689d2bbdd1e5",
       "source": "indeed",
-      "title": "Director (Videography & Creative Direction) - 6 Month Contract",
-      "company": "Reckitt",
+      "title": "Director & Unit Head, Affluent Client Acquisition",
+      "company": "Standard Chartered Bank",
       "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=1f2c579f9c13216a",
-      "posted": "2026-06-16",
+      "url": "https://ae.indeed.com/viewjob?jk=0f0b689d2bbdd1e5",
+      "posted": "2026-06-18",
       "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 13,
+      "domain_match": true,
+      "keyword_score": 16,
       "match_keywords": [
+        "ai",
         "director",
-        "growth"
+        "dubai"
       ],
-      "raw_snippet": "Home to the world's best loved and trusted hygiene, health, and nutrition brands. Our purpose defines why we exist: to protect, heal and nurture in the relentless pursuit of a cleaner, healthier world. We are a global team united by this purpose. Join us in our fight to make access to the highest quality hygiene, wellness, and nourishment a right and not a privilege.**Marketing**\n-------------\n\n\n\nMarketing is at the heart of Reckitt. We pride ourselves on our unique way of driving growth for som",
+      "raw_snippet": "**\\#body.unify div.unify\\-button\\-container .unify\\-apply\\-now:** focus, \\#body.unify div.unify\\-button\\-container .unify\\-apply\\-\\#body.unify div.unify\\-button\\-container .unify\\-apply\\-now: focus, \\#body.unify div.unify\\-button\\-container .unify\\-apply\\-\n  \n**Requisition Number:** 56203\n  \n**Job Location:** Dubai, ARE\n  \n**Global Grade:** Band 5\n  \n**Work Type:** Office Working\n  \n**Employment Type:** Permanent\n  \n**Posting Start Date:** 18/06/2026\n  \n**Posting End Date:** 02/07/2026\n  \n:\n  \nA",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
-      "search_title": "Program Director"
+      "search_title": "Director Digital Transformation"
     },
     {
       "id": "indeed-in-0cd6959911dcbf4c",
@@ -96,6 +118,29 @@
       "filter_reason": null,
       "search_country": "United Arab Emirates",
       "search_title": "Director Digital Transformation"
+    },
+    {
+      "id": "indeed-in-9c456da1141df7c9",
+      "source": "indeed",
+      "title": "Senior Manager, Digital Products (UAE National)",
+      "company": "Commercial Bank of Dubai",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=9c456da1141df7c9",
+      "posted": "2026-06-18",
+      "seniority": "Other",
+      "domain_match": true,
+      "keyword_score": 20,
+      "match_keywords": [
+        "mobile",
+        "ai",
+        "uae",
+        "dubai"
+      ],
+      "raw_snippet": "Dubai, Dubai, AE Experienced Permanent ID: 101437\n  \n### **Description**\n\n\nOperating in the UAE for over 50 years, CBD manages the financial requirements of some of the largest corporates and businesses operating in the country, driving the UAE economy. Over the years, CBD has transformed into a progressive and modern banking institution, winning multiple awards for its digital initiatives, credit cards, bank accounts, mobile app features, and services. CBD has been recognized as the number one ",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Head of Digital Transformation"
     },
     {
       "id": "indeed-in-5fe6de9ed166a96a",
@@ -120,74 +165,75 @@
       "search_title": "Head of Digital Transformation"
     },
     {
-      "id": "indeed-in-a1cb33c9bea21de5",
+      "id": "indeed-in-fd9855898a7fdabc",
       "source": "indeed",
-      "title": "Design Director - Transportation",
-      "company": "Egis Group",
+      "title": "Head of Operations",
+      "company": "DEOW INTERNATIONAL",
       "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=a1cb33c9bea21de5",
-      "posted": "2026-06-17",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 26,
-      "match_keywords": [
-        "ai",
-        "infrastructure",
-        "director",
-        "dubai",
-        "architecture"
-      ],
-      "raw_snippet": "* **Architecture**\n* **Permanent Contract**\n* **Director**\n* **Dubai**\n\n  \n**About Us**\n\n  \n\nEgis is an international player active in architecture, consulting, construction engineering and mobility services. We create and operate intelligent infrastructures and buildings that respond to the climate emergency and contribute to more balanced, sustainable and resilient territorial development. Operating in 100 countries, Egis puts the expertise of its 19,500 employees at the service of its clients",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "IT Director"
-    },
-    {
-      "id": "indeed-in-3675dfb446e60bc9",
-      "source": "indeed",
-      "title": "Design Director - Transportation",
-      "company": "Weston Williamson",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=3675dfb446e60bc9",
-      "posted": "2026-06-17",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 23,
-      "match_keywords": [
-        "ai",
-        "infrastructure",
-        "director",
-        "architecture"
-      ],
-      "raw_snippet": "**Company Description**  \n\nEgis is an international player active in architecture, consulting, construction engineering and mobility services. We create and operate intelligent infrastructures and buildings that respond to the climate emergency and contribute to more balanced, sustainable and resilient territorial development. Operating in 100 countries, Egis puts the expertise of its 19,500 employees at the service of its clients and develops cutting\\-edge innovations accessible to all projects",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "IT Director"
-    },
-    {
-      "id": "indeed-in-e5fc02827b4f416b",
-      "source": "indeed",
-      "title": "Head of PMO",
-      "company": "Unique Closets",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=e5fc02827b4f416b",
-      "posted": "2026-06-15",
+      "url": "https://ae.indeed.com/viewjob?jk=fd9855898a7fdabc",
+      "posted": "2026-06-18",
       "seniority": "Director",
       "domain_match": true,
       "keyword_score": 30,
       "match_keywords": [
-        "pmo",
-        "project management",
+        "operational excellence",
         "head of",
+        "leadership",
+        "growth"
+      ],
+      "raw_snippet": "Job Title: Head of Operations\n\n**Location:** Remote / Onsite  \n**Employment Type:** Full\\-Time\n\nAbout the Role\n\nWe are seeking an experienced and dynamic **Head of Operations** to lead and oversee our Customer Success and Implementation functions. This senior leadership role is responsible for driving operational excellence, ensuring high\\-quality service delivery, enhancing customer experience, and supporting business growth through efficient processes and strong governance.\n\nThe ideal candidat",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Head of Technology"
+    },
+    {
+      "id": "indeed-in-b017888054d7bdae",
+      "source": "indeed",
+      "title": "Director, Information Technology - Data Analytics & AI Strategy",
+      "company": "Atlantis The Palm",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=b017888054d7bdae",
+      "posted": "2026-06-18",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 23,
+      "match_keywords": [
+        "ai",
+        "data analytics",
+        "director",
+        "dubai"
+      ],
+      "raw_snippet": "Director, Information Technology \\- Data Analytics \\& AI Strategy\n  \n\n(20140\\)\n\n  \n\nAtlantis Dubai is part of Kerzner International, and home to two extraordinary resorts: the world\\-renowned Atlantis, The Palm and the ultra\\-luxury Atlantis The Royal. Together, they represent world\\-class service, bold innovation, and unforgettable experiences brought to life.\n\n  \n\nWith over 6,000 colleagues from 129 nationalities, Atlantis Dubai operates as one team, with many departments and back\\-of\\-house f",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "IT Director"
+    },
+    {
+      "id": "indeed-in-87b9220d15be0741",
+      "source": "indeed",
+      "title": "HSE Director (Saudi National)",
+      "company": "JASARA PMC",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=87b9220d15be0741",
+      "posted": "2026-06-18",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 43,
+      "match_keywords": [
+        "program management",
+        "operational excellence",
+        "ai",
+        "director",
+        "leadership",
         "saudi"
       ],
-      "raw_snippet": "**Position Summary**\n\nThe Head of PMO is responsible for establishing, leading, and managing the Project Management Office to ensure the successful planning, execution, monitoring, and delivery of strategic projects across the organization. The role provides governance, project oversight, resource management, and performance reporting while aligning all projects with the company\u2019s strategic objectives and business goals.\n\n**NOTE: In line with Saudi Vision 2030 initiatives, preference will be giv",
+      "raw_snippet": "Jasara is a program management company in Saudi Arabia, established as a joint venture between Aramco, Jacobs, and the Public Investment Fund. With a focus on civil engineering and large\\-scale development, Jasara aims to set the standard for program delivery by helping shape complex projects with strong governance, operational excellence, and long\\-term impact.\n\n\nIn this role, you will provide strategic leadership for health, safety, and environmental performance across major programs, helping ",
       "relevant": true,
       "filter_reason": null,
       "search_country": "Saudi Arabia",
-      "search_title": "Head of PMO"
+      "search_title": "Program Director"
     },
     {
       "id": "indeed-in-2a338621ab47748b",
@@ -212,67 +258,22 @@
       "search_title": "Program Director"
     },
     {
-      "id": "indeed-in-615ecdea145985ea",
+      "id": "indeed-in-d94e9c08966e0706",
       "source": "indeed",
-      "title": "Regional Program Director",
-      "company": "Confidential",
+      "title": "Technical Director - Data Centers",
+      "company": "Parsons",
       "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=615ecdea145985ea",
+      "url": "https://sa.indeed.com/viewjob?jk=d94e9c08966e0706",
       "posted": "2026-06-17",
       "seniority": "C-Suite",
       "domain_match": true,
-      "keyword_score": 23,
+      "keyword_score": 20,
       "match_keywords": [
-        "operational excellence",
         "director",
-        "leadership"
+        "leadership",
+        "growth"
       ],
-      "raw_snippet": "Job Summary\n\nANE Ethiopia is seeking an experienced and strategic Regional Program Director to provide leadership, oversight, and direction for regional programs and initiatives. The successful candidate will be responsible for program planning, implementation, monitoring, stakeholder engagement, and ensuring operational excellence across multiple projects within the region.\n\nThe Regional Program Director will work closely with senior leadership, government agencies, partners, donors, and intern",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-c1519b494cd88efe",
-      "source": "indeed",
-      "title": "Regional Director",
-      "company": "Confidential",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=c1519b494cd88efe",
-      "posted": "2026-06-17",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 26,
-      "match_keywords": [
-        "ai",
-        "executive",
-        "director",
-        "leadership"
-      ],
-      "raw_snippet": "Lead the Future of Luxury Beauty Retail\n\nSkin Quotient Luxury Care is seeking an accomplished Regional Director of Luxury Retail to oversee and elevate our retail operations across the Kingdom. This leadership role is designed for a commercially driven luxury retail executive who understands the expectations of affluent clientele, excels at developing high\\-performing teams, and can translate brand vision into exceptional in\\-store experiences.\n\nAs Regional Director, you will be responsible for ",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-b238c24ae7bb3308",
-      "source": "indeed",
-      "title": "Director of People & Culture - Raffles Diriyah (Saudi National)",
-      "company": "Accor",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=b238c24ae7bb3308",
-      "posted": "2026-06-16",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 16,
-      "match_keywords": [
-        "ai",
-        "director",
-        "saudi"
-      ],
-      "raw_snippet": "Company Description  \n\nRaffles Diriyah is a glamourous new landmark in Diriyah \u2013 Saudi Arabia\u2019s \u201cCity of Earth\u201d. Set against the UNESCO World Heritage site of Al\\-Tuarif and the scenic Wadi Hanifa. Inspired by Nadji heritage, and infused with Raffles\u2019 timeless elegance, Raffles Diriyah set the standard for gracious hospitality, cultural curiosity, and legendary service.\n\n\nAt Raffles Diriyah, people are the soul of everything we do. We are champion of culture, custodians of community and passiona",
+      "raw_snippet": "In a world of possibilities, pursue one with endless opportunities. Imagine Next!  \n\n\nAt Parsons, you can imagine a career where you thrive, work with exceptional people, and be yourself. Guided by our leadership vision of valuing people, embracing agility, and fostering growth, we cultivate an innovative culture that empowers you to achieve your full potential. Unleash your talent and redefine what\u2019s possible. **Job Description:**\n\n\nParsons is looking for an amazingly talented **Senior Project ",
       "relevant": true,
       "filter_reason": null,
       "search_country": "Saudi Arabia",
@@ -305,57 +306,57 @@
       "search_title": "Director Digital Transformation"
     },
     {
-      "id": "indeed-in-27faf39f25ac0c5d",
+      "id": "indeed-in-decb2f4153e64d6d",
       "source": "indeed",
-      "title": "Director - Web and Social Platforms",
-      "company": "Qiddiya Investment Company",
+      "title": "VP, Business Development - Public Sector, Saudi Arabia & Bahrain",
+      "company": "Mastercard",
       "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=27faf39f25ac0c5d",
+      "url": "https://sa.indeed.com/viewjob?jk=decb2f4153e64d6d",
+      "posted": "2026-06-18",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 26,
+      "match_keywords": [
+        "payments",
+        "ai",
+        "vp",
+        "saudi"
+      ],
+      "raw_snippet": "**Our Purpose**\n\n*Mastercard powers economies and empowers people in 200\\+ countries and territories worldwide. Together with our customers, we\u2019re helping build a sustainable economy where everyone can prosper. We support a wide range of digital payments choices, making transactions secure, simple, smart and accessible. Our technology and innovation, partnerships and networks combine to deliver a unique set of products and services that help people, businesses and governments realize their great",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "Head of Technology"
+    },
+    {
+      "id": "indeed-in-8f79eabd0c4e6d4e",
+      "source": "indeed",
+      "title": "Director - Finance",
+      "company": "Red Sea Global",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=8f79eabd0c4e6d4e",
       "posted": "2026-06-17",
       "seniority": "C-Suite",
       "domain_match": false,
-      "keyword_score": 16,
+      "keyword_score": 26,
       "match_keywords": [
+        "operational excellence",
         "ai",
         "director",
-        "platform"
+        "api"
       ],
-      "raw_snippet": "The Director \\- Web and Social Platforms at Qiddiya Investment Company will lead the strategy, development, and management of Qiddiya\u2019s web presence and social media platforms. This role focuses on enhancing brand visibility, engagement, and user experience through innovative digital solutions that align with Qiddiya\u2019s vision as a leading entertainment destination.\n\n\nKey Responsibilities* Develop and execute comprehensive web and social media strategies that support corporate marketing and busin",
+      "raw_snippet": "Division: Amrak\nDepartment: Amrak\nCompany: Amrak Facilities Management Company\nJoin Amrak Facilities Management \u2013 A Red Sea Global Company!\n\n  \n\n\n**Amrak Facilities Management Company,** a subsidiary of Red Sea Global, is a premier provider of world\\-class facilities management solutions, setting a new standard of excellence in the industry.\n\n\n\nDriven by a commitment to operational excellence and shaping the future of FM, Amrak attracts, retains, and empowers top\\-tier talent to collaborate seam",
       "relevant": true,
       "filter_reason": null,
       "search_country": "Saudi Arabia",
-      "search_title": "IT Director"
-    },
-    {
-      "id": "indeed-in-d62af466b0097fcd",
-      "source": "indeed",
-      "title": "Cloud Infrastructure Director",
-      "company": "Confidential",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=d62af466b0097fcd",
-      "posted": "2026-06-17",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 30,
-      "match_keywords": [
-        "ai",
-        "cloud",
-        "infrastructure",
-        "director",
-        "architecture"
-      ],
-      "raw_snippet": "Job Summary\n\nSMHostApp Cloud Systems is seeking an experienced and strategic Cloud Infrastructure Director to lead the design, deployment, security, and optimization of our cloud infrastructure. The ideal candidate will oversee cloud operations, infrastructure architecture, scalability initiatives, and technical teams while ensuring high availability, performance, and compliance across all cloud environments.\n\nKey Responsibilities\n\n* Develop and execute the organization's cloud infrastructure st",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "IT Director"
+      "search_title": "Head of IT"
     }
   ],
   "kpi": {
     "searches_run": 20,
-    "results_per_search": 2.9,
+    "results_per_search": 3.55,
     "unique_jobs": 15,
-    "errors": 8
+    "errors": 6
   },
   "recommendations": []
 }

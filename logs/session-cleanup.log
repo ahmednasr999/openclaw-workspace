@@ -722,3 +722,62 @@
     Archived JSONL: 0 files
     Backup rotation: removed 1 files, freed 2 bytes
 [2026-06-18T00:01:37Z] Cleanup done
+[2026-06-19T00:00:01Z] Starting session cleanup
+  [cmo/sessions]
+    sessions.json: 80K -> 56K (ok, pruned 0)
+    Archived JSONL: 10 files
+    Backup rotation: removed 1 files, freed 118378 bytes
+    Retired transcript archive: archived 23 files, preserved 2542567 bytes at /root/.openclaw/session-archives/session-retired-cmo-sessions-20260619-030015.tar.gz
+  [codex/sessions]
+    sessions.json: 4.0K -> 4.0K (ok, pruned 0)
+    Archived JSONL: 0 files
+    Backup rotation: removed 1 files, freed 2 bytes
+  [content-creator/sessions]
+    sessions.json: 4.0K -> 4.0K (ok, pruned 0)
+    Archived JSONL: 0 files
+    Backup rotation: removed 1 files, freed 2 bytes
+  [cto/sessions]
+    sessions.json: 72K -> 52K (ok, pruned 0)
+    Archived JSONL: 9 files
+    Backup rotation: removed 1 files, freed 99315 bytes
+    Retired transcript archive: archived 14 files, preserved 782730 bytes at /root/.openclaw/session-archives/session-retired-cto-sessions-20260619-030037.tar.gz
+  [cv-optimizer/sessions]
+    sessions.json: 4.0K -> 4.0K (ok, pruned 0)
+    Archived JSONL: 0 files
+    Backup rotation: removed 1 files, freed 2 bytes
+  [default/sessions]
+    sessions.json: 4.0K -> 4.0K (ok, pruned 0)
+    Archived JSONL: 0 files
+    Backup rotation: removed 1 files, freed 2 bytes
+  [hr/sessions]
+    sessions.json: 184K -> 112K (ok, pruned 3)
+    Archived JSONL: 0 files
+    Backup rotation: removed 1 files, freed 183183 bytes
+    Retired transcript archive: archived 4 files, preserved 1145480 bytes at /root/.openclaw/session-archives/session-retired-hr-sessions-20260619-030042.tar.gz
+  [job-hunter/sessions]
+    sessions.json: 4.0K -> 4.0K (ok, pruned 0)
+    Archived JSONL: 0 files
+    Backup rotation: removed 1 files, freed 2 bytes
+  [jobzoom/sessions]
+    sessions.json: 1.3M -> 612K (ok, pruned 28)
+    Archived JSONL: 31 files
+    Backup rotation: removed 1 files, freed 1456810 bytes
+    Retired transcript archive: archived 68 files, preserved 2387734 bytes at /root/.openclaw/session-archives/session-retired-jobzoom-sessions-20260619-030101.tar.gz
+  [main/sessions]
+    sessions.json: 9.4M -> 5.5M (ok, pruned 3)
+    Archived JSONL: 227 files
+    Backup rotation: removed 1 files, freed 520429 bytes
+    Retired transcript archive: archived 82 files, preserved 7694697 bytes at /root/.openclaw/session-archives/session-retired-main-sessions-20260619-030140.tar.gz
+  [researcher/sessions]
+    sessions.json: 4.0K -> 4.0K (ok, pruned 0)
+    Archived JSONL: 0 files
+    Backup rotation: removed 1 files, freed 2 bytes
+  [session-archive-main-20260417T190249Z/sessions]
+    sessions.json: 4.0K -> 4.0K (ok, pruned 0)
+    Archived JSONL: 0 files
+    Backup rotation: removed 1 files, freed 2 bytes
+  [session-cleanup-telegram-20260411T124730Z/sessions]
+    sessions.json: 4.0K -> 4.0K (ok, pruned 0)
+    Archived JSONL: 0 files
+    Backup rotation: removed 1 files, freed 2 bytes
+[2026-06-19T00:01:40Z] Cleanup done

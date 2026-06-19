@@ -2,35 +2,16 @@
   "meta": {
     "agent": "jobs-source-google",
     "version": "1.0.0",
-    "generated_at": "2026-06-18T04:01:10.576421+03:00",
-    "duration_ms": 67490,
+    "generated_at": "2026-06-19T06:01:11.546395+03:00",
+    "duration_ms": 68987,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "bf46118d",
+    "run_id": "1cbb79df",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": [
-    {
-      "id": "google-d92d3a1ebc8b",
-      "source": "google",
-      "title": "Digital Transformation Director",
-      "company": "Node Technologies",
-      "location": "Riyadh, Saudi Arabia",
-      "url": "https://www.linkedin.com/jobs/view/4337951766/",
-      "posted": "",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 16,
-      "match_keywords": [
-        "digital transformation",
-        "director"
-      ],
-      "raw_snippet": "",
-      "relevant": true,
-      "filter_reason": null
-    },
     {
       "id": "google-0135eeb08eb3",
       "source": "google",
@@ -47,6 +28,25 @@
         "director",
         "saudi"
       ],
+      "raw_snippet": "Apply for Director of Digital Transformation job in Saudi Arabia. Browse similar jobs in Saudi Arabia on Jooble.",
+      "relevant": true,
+      "filter_reason": null
+    },
+    {
+      "id": "google-05e96bd5019f",
+      "source": "google",
+      "title": "Director of Digital Transformation & PM Centre",
+      "company": "Keypoint",
+      "location": "Bahrain",
+      "url": "https://bh.jooble.org/jdp/8449607043486120452",
+      "posted": "",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 16,
+      "match_keywords": [
+        "digital transformation",
+        "director"
+      ],
       "raw_snippet": "",
       "relevant": true,
       "filter_reason": null
@@ -54,14 +54,14 @@
   ],
   "kpi": {
     "searches_run": 51,
-    "exa_results_raw": 28,
+    "exa_results_raw": 38,
     "single_jobs_direct": 2,
-    "listing_pages_found": 14,
-    "listing_pages_extracted": 8,
-    "noise_filtered": 12,
+    "listing_pages_found": 20,
+    "listing_pages_extracted": 13,
+    "noise_filtered": 16,
     "malformed_filtered": 0,
     "unique_jobs_final": 2,
-    "errors": 48,
+    "errors": 47,
     "search_backend": "searxng",
     "exa_cost_estimate_usd": 0,
     "strategy": "SearXNG local fallback keyword + auto(domain) + neural + watchlist company discovery -> classify -> contents",

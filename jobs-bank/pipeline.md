@@ -286,6 +286,21 @@
 | 395 | 🆕 | Tandem Search | VP - Digital Transformation Project Management (Emiratization) | Dubai | — | 🆕 Discovered | Radar | 2026-06-17 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4426476641) | — |
 | 396 | 🆕 | CyberA Solutions | Director of CyberSecurity & GRC | Dubai | — | 🆕 Discovered | Radar | 2026-06-17 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4426480593) | — |
 | 397 | 🆕 | TALENTMATE | Vice President | Dubai | — | 🆕 Discovered | Radar | 2026-06-18 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4430171355) | — |
+| 398 | 🆕 | Qiddiya | القدية | Senior Director - Digital Architecture | Riyadh | — | 🆕 Discovered | Radar | 2026-06-19 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4360133596) | — |
+| 399 | 🆕 | MIS Connect | Head of Engineering | Riyadh | — | 🆕 Discovered | Radar | 2026-06-19 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4429961250) | — |
+| 400 | 🆕 | Qiddiya | القدية | Senior Director MMC and Knowledge Sharing - 20002020 CDU5 | Riyadh | — | 🆕 Discovered | Radar | 2026-06-19 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4381399933) | — |
+| 401 | 🆕 | Moody's Corporation | Director Industry Practice Lead (Subject Matter Expert) - Government (KSA) | Riyadh | — | 🆕 Discovered | Radar | 2026-06-19 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4409596833) | — |
+| 402 | 🆕 | Confidential | Director of Technology Operations | Riyadh | — | 🆕 Discovered | Radar | 2026-06-19 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4428375698) | — |
+| 403 | 🆕 | Confidential Government | Director of Energy & Utilities Cluster Transformation | Riyadh | — | 🆕 Discovered | Radar | 2026-06-19 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4425389703) | — |
+| 404 | 🆕 | Solidrange | Vice President of Software Engineering | Riyadh | — | 🆕 Discovered | Radar | 2026-06-19 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4430456026) | — |
+| 405 | 🆕 | Klanik | Director | Jeddah | — | 🆕 Discovered | Radar | 2026-06-19 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4427827439) | — |
+| 406 | 🆕 | 2P Perfect Presentation | CX Portfolio Director | Riyadh | — | 🆕 Discovered | Radar | 2026-06-19 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4427822705) | — |
+| 407 | 🆕 | CTRL+R | Head of Robotics & AI | Dubai | — | 🆕 Discovered | Radar | 2026-06-19 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4427345084) | — |
+| 408 | 🆕 | Talent Seed | VP of Data & Analytics | Dubai | — | 🆕 Discovered | Radar | 2026-06-19 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4427352247) | — |
+| 409 | 🆕 | Edison Smart® | Chief Technology Officer (CTO) – AI & Financial Intelligence | Dubai | — | 🆕 Discovered | Radar | 2026-06-19 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4427935366) | — |
+| 410 | 🆕 | Talents Tide | Head of Applications Development (UAEN) | Dubai | — | 🆕 Discovered | Radar | 2026-06-19 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4429312518) | — |
+| 411 | 🆕 | Ambitek UAE | Vice President - Joinery | Dubai | — | 🆕 Discovered | Radar | 2026-06-19 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4430450159) | — |
+
 
 
 

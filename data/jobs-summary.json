@@ -2,120 +2,56 @@
   "meta": {
     "agent": "jobs-review",
     "version": "2.0.0",
-    "generated_at": "2026-06-18T04:42:05.104956+03:00",
-    "duration_ms": 300362,
+    "generated_at": "2026-06-19T06:44:52.966749+03:00",
+    "duration_ms": 293214,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "e054fccf",
+    "run_id": "c1f80af8",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
-    "generated_at": "2026-06-18T04:42:04.985340+03:00",
-    "total_candidates": 32,
-    "reviewed": 31,
-    "submit": [
-      {
-        "id": "linkedin_jobspy-li-4427326715",
-        "source": "linkedin_jobspy",
-        "title": "Director Customer Experience & Innovation Consulting - Director - FSI",
-        "company": "Publicis Sapient",
-        "location": "Dubai, Dubai, United Arab Emirates",
-        "url": "https://www.linkedin.com/jobs/view/4427326715",
-        "posted": "",
-        "seniority": "C-Suite",
-        "domain_match": true,
-        "keyword_score": 16,
-        "match_keywords": [
-          "director",
-          "growth",
-          "mena"
-        ],
-        "raw_snippet": "**Job Description**\n Director Customer Experience \\& Innovation Consulting\n   \n\n  \n\n As a Senior Leader, CX \\& Innovation Consulting, you will be responsible for the growth, development, and execution of experience and innovation strategy services across the MENA region and beyond. You\u2019ll work in pa",
-        "relevant": true,
-        "filter_reason": null,
-        "search_country": "United Arab Emirates",
-        "search_title": "Delivery Director",
-        "linkedin_id": "li-4427326715",
-        "jd_text": "**Job Description**\n Director Customer Experience \\& Innovation Consulting\n   \n\n  \n\n As a Senior Leader, CX \\& Innovation Consulting, you will be responsible for the growth, development, and execution of experience and innovation strategy services across the MENA region and beyond. You\u2019ll work in partnership with Experience \\& Innovation capability leads within the region. The role requires working from client offices across the GCC, including Saudi Arabia, the UAE, and Oman.\n   \n\n  \n\n The role works at the intersection of strategy and design and will focus on driving opportunities within the C\\-Suite and senior management teams. You will be responsible for shaping opportunities through the customer and market lens to accelerate value identification and value realization for clients. To do this, you will bring together a range of experts to help clients define and shape amazing customer value propositions, new propositions and experiences and even wholly new businesses. You will do this from within the Experience \\& Innovation capability group, but working in partnership with Management Consulting, Engineering, Data and our Product capability groups.\n   \n\n  \n\n Publicis Sapient has clients across several industries spanning Financial Services, Energy, Government, to Travel. Deep expertise in some of these industries, especially in Financial Services, is particularly favoured.\n   \n\n  \n\n You will be involved in originating, shaping, and driving transformational strategies from inception through to budgeting and implementation working alongside Publicis Sapient\u2019s proven digital transformation technology teams. As a senior leader within the team, you will also be involved in shaping and growing the focus and strategy of Publicis Sapient\u2019s experience offering itself. You are an entrepreneurial leader who balances strategic vision with operational rigor\u2014owning the end\\-to\\-end product lifecycle to ensure our work delivers measurable business and customer impact.\n   \n\n  \n\n Your Impact\n   \n\n  \n\n You will have at least 15 years of CX and Innovation Consulting experience, ideally working within a major consulting, digital or design firm. Deep customer research and analytics skills is core to your DNA, as is the use of service design / design thinking to drive product strategy and innovation. Prior experience within programs and strategies with multi\\-million dollar and global scale and reach is expected. Also expected are skills, interest and experience in technology and using technology to drive value accretive experience\\-led transformations.\n   \n\n  \n\n As a Senior Leader, you will be expected to drive business development around diverse range of spaces from digital business transformation strategy, customer experience transformation, employee experience, new product, and service innovation, and moving into broader complex system strategy and design as well as much, much more.\n   \n\n  \n\n To do this, Publicis Sapient are actively investing within the MENA region to build out the team.\n   \n\n  \n\n As a lead you will be evaluated based upon your impact on the capabilities of the team, the work, and the commercial contribution of the broader Experience group within the region in collaboration with the other leaders.\n   \n\n  \n\n**Core Consulting \\& Leadership Capabilities**\n**Strategic \\& Commercial Leadership**\n* Business Development: Lead business development efforts, including identifying opportunities, shaping proposals, and leading pitches for new and existing clients. Cultivate trusted advisor relationships with C\\-level clients to grow accounts year\\-over\\-year.\n* Financial \\& Commercial Management: Understand P\\&L for your practice area. Manage financial forecasting, utilization, profitability, scope, margins, and resource allocation to ensure the commercial success of engagements.\n* Market Presence: Act as a thought leader in Strategic Design and Innovation across the MENA region, representing Publicis Sapient at industry events and building a network that drives business opportunities.\n* Domain Authority: Leverage deep expertise in Financial Services, Energy, Government, or Travel to engage credibly with clients on their business challenges and translate industry dynamics into transformative opportunities.\n\n\n**Team Leadership \\& Culture**\n* Team Development: Lead, mentor, and scale a diverse experience team of CX strategists and designers. Foster a culture of innovation, high performance, and impact while actively managing career development, retention, and recruitment.\n* Operational Management: Oversee resource allocation and utilization across the team to ensure optimal billability and project profitability, balancing client delivery needs with professional growth opportunities.\n* Team Player: Excellent collaborator who is well organized and balances strategic vision with operational rigor.\n\n\n**Customer Experience \\& Product Lifecycle Management**\n* End\\-to\\-End Lifecycle Authority: Lead client engagements across the entire product lifecycle\u2014from early\\-stage strategy and value proposition design, through experience definition, to delivery, launch, and post\\-launch optimization. Ensure continuity between what is designed for the customer and what is built.\n* Craft Mastery: Deep expertise in design thinking, systems thinking, user research, service design, and the creation of strategic artifacts (visioning/strategic illustrations, personas, journeys, blueprints) to drive business outcomes, not just outputs.\n* Experience Strategy \\& Delivery driven by AI: Leverage design thinking and systems thinking to uncover high\\-value opportunities, expedited and elevated through AI tools.\n* Research \\& Insights: Champion rigorous qualitative and quantitative user research throughout the lifecycle to de\\-risk decisions and inform product roadmaps from concept through to live measurement.\n* Storytelling: Comfortable influencing client decisions on strategy and implementation using both narrative and quantitative analysis. Strong communicator and moderator, skilled at finding common ground and advocating for customer value and business solutions\n\n\n**Skills \\& Experience**\n* Experience: 15\\+ years in customer experience, product strategy, or digital transformation, with a minimum of 5 years in a senior leadership role (Director level or above) within a top\\-tier consulting firm, digital agency, or product organization.\n* Proven Track Record:\n* Building, managing, and scaling CX teams, including managing team finances, utilization, and P\\&L.\n* Growing client accounts and winning new business, including leading proposals, pricing strategy, and client negotiations.\n* Managing the full product lifecycle\u2014from strategy and discovery through delivery and post\\-launch measurement.\n* Owning and driving CX \\& Innovation project revenue.\n* Skills:\n* Creative and analytical problem solver.\n* Excellent written, verbal, numerical, and presentation skills.\n* Strong appreciation for new technology, data platforms, Agile ways of working, and modern technology tools and methods.\n* Travel: Willing to travel or be at client site at least 80% of the time across the MENA region (in particular Saudi Arabia, UAE, and Oman).\n* Language: Business\\-level fluency in English.\n\n\n Set Yourself Apart With\n   \n\n  \n\n* Experience working in Saudi and/or UAE\n* Hands on experience with managing product management and UI/UX design teams and work Financial Services expertise\n\n\n Additional Information\n   \n\n  \n\n* Fully paid annual leave of 22 working days\n* Free private health insurance extended to employee and direct dependents\n* Return air ticket to home country per year to employee and direct dependents\n* Schooling allowance offered based on the policy\n\n\n**Company Description**\n Publicis Sapient is a digital transformation partner helping established organizations get to their future, digitally enabled state, both in the way they work and the way they serve their customers. We help unlock value through a start\\-up mindset and modern methods, fusing strategy, consulting and customer experience with agile engineering and problem\\-solving creativity. United by our core values and our purpose of helping people thrive in the brave pursuit of next, our 20,000\\+ people in 72 offices around the world combine experience across technology, data sciences, consulting, and customer obsession to accelerate our clients\u2019 businesses through designing the products and services their customers truly value.",
-        "source_count": 1,
-        "country": "United Arab Emirates",
-        "industry_bonus": 9,
-        "policy_status": "pass",
-        "sources": [
-          "linkedin"
-        ],
-        "first_seen": "2026-06-18",
-        "career_fit_score": 9,
-        "verdict": "SUBMIT",
-        "verdict_reason": "Senior GCC transformation consulting role with FSI focus, but heavier on CX/innovation than core technology leadership [5D role=2 | seniority=2 | geo=2 | strategic=1 | evidence=2 | fit=9/10 | llm=7] [CMO outreach queued for Publicis Sapient]",
-        "watchlist_matches": {
-          "company_hits": [],
-          "domain_hits": [],
-          "categories": []
-        },
-        "ats_score": 75,
-        "ats_verdict": "GO",
-        "ats_matched": [
-          "digital transformation",
-          "transformation",
-          "ai",
-          "sap",
-          "budget",
-          "revenue",
-          "agile",
-          "data",
-          "analytics",
-          "digital"
-        ],
-        "ats_gaps": [],
-        "llm_fit_score": 7,
-        "fit_dimensions": {
-          "role": 2,
-          "seniority": 2,
-          "geography": 2,
-          "strategic": 1,
-          "evidence": 2
-        }
-      }
-    ],
+    "generated_at": "2026-06-19T06:44:52.885035+03:00",
+    "total_candidates": 26,
+    "reviewed": 26,
+    "submit": [],
     "review": [],
-    "skip_count": 31,
+    "skip_count": 26,
     "unreviewed_count": 0,
     "thresholds": {
       "submit": 6,
       "review": 6
     },
     "pipeline": {
-      "l0_auto_skip": 1,
+      "l0_auto_skip": 0,
       "l1_jd_enriched": 0,
-      "l1_jd_coverage": "24/31",
+      "l1_jd_coverage": "19/26",
       "llm_model": "openai/gpt-5.5",
-      "llm_jobs_reviewed": 31,
-      "r2_latency_ms": 291527,
+      "llm_jobs_reviewed": 26,
+      "r2_latency_ms": 286638,
       "r2_fallbacks": 0
     },
     "kpi": {
-      "submit_rate": 0.03225806451612903,
+      "submit_rate": 0.0,
       "review_rate": 0.0,
-      "skip_rate": 0.967741935483871,
-      "avg_fit_score": 4.6,
-      "l0_filter_rate": 3.1,
+      "skip_rate": 1.0,
+      "avg_fit_score": 4.0,
+      "l0_filter_rate": 0.0,
       "llm_review_rate": 100.0
     }
   },
   "kpi": {
-    "total_loaded": 32,
-    "l0_auto_skip": 1,
+    "total_loaded": 26,
+    "l0_auto_skip": 0,
     "l1_jd_enriched": 0,
     "l2_filtered": 0,
-    "submit_count": 1,
+    "submit_count": 0,
     "review_count": 0,
-    "skip_count": 30,
-    "submit_rate": 3.2,
-    "avg_fit_score": 4.6,
-    "r2_latency_ms": 291527
+    "skip_count": 26,
+    "submit_rate": 0.0,
+    "avg_fit_score": 4.0,
+    "r2_latency_ms": 286638
   },
   "recommendations": []
 }

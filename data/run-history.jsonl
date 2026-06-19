@@ -2905,3 +2905,13 @@
 {"agent": "jobs-merge", "run_id": "058e29e9", "started": "2026-06-18T04:37:03.091501+03:00", "duration_ms": 159270, "status": "success", "records": 28, "error": null}
 {"agent": "jobs-review", "run_id": "e054fccf", "started": "2026-06-18T04:42:05.106269+03:00", "duration_ms": 300363, "status": "success", "records": 10, "error": null}
 {"agent": "jobs-source-linkedin-jobspy", "run_id": "b6361703", "started": "2026-06-18T05:32:03.705543+03:00", "duration_ms": 1916188, "status": "success", "records": 594, "error": null}
+{"agent": "email-agent", "run_id": "4b4dd9fd", "started": "2026-06-18T08:01:48.826018+03:00", "duration_ms": 68876, "status": "success", "records": 17, "error": null}
+{"agent": "email-agent", "run_id": "99db58bc", "started": "2026-06-18T12:01:24.959226+03:00", "duration_ms": 35793, "status": "success", "records": 17, "error": null}
+{"agent": "email-agent", "run_id": "19d4f0f8", "started": "2026-06-18T16:01:10.600152+03:00", "duration_ms": 32356, "status": "success", "records": 17, "error": null}
+{"agent": "email-agent", "run_id": "d6eee56e", "started": "2026-06-18T20:01:07.098866+03:00", "duration_ms": 30892, "status": "success", "records": 17, "error": null}
+{"agent": "jobs-source-linkedin-jobspy", "run_id": "fa2368e8", "started": "2026-06-19T05:32:38.459147+03:00", "duration_ms": 1949671, "status": "success", "records": 519, "error": null}
+{"agent": "jobs-source-indeed", "run_id": "fd391f62", "started": "2026-06-19T06:00:41.250135+03:00", "duration_ms": 38617, "status": "success", "records": 15, "error": null}
+{"agent": "jobs-source-google", "run_id": "1cbb79df", "started": "2026-06-19T06:01:11.547209+03:00", "duration_ms": 68988, "status": "success", "records": 2, "error": null}
+{"agent": "jobs-source-linkedin-jobspy", "run_id": "b5b8b41a", "started": "2026-06-19T06:37:34.899381+03:00", "duration_ms": 2252330, "status": "success", "records": 577, "error": null}
+{"agent": "jobs-merge", "run_id": "c0acb774", "started": "2026-06-19T06:39:58.314347+03:00", "duration_ms": 143141, "status": "success", "records": 22, "error": null}
+{"agent": "jobs-review", "run_id": "c1f80af8", "started": "2026-06-19T06:44:52.967227+03:00", "duration_ms": 293214, "status": "success", "records": 10, "error": null}
