@@ -3506,3 +3506,56 @@ Node.js v22.22.1
 ## Calendar - Today's Events
 missing --account (or set GOG_ACCOUNT, set default via `gog auth manage`, or store exactly one token)
 
+=== Morning Brief - 2026-06-19 06:10 AM ===
+
+## Claude 2x Usage Reminder
+
+## Job Radar (from Tavily)
+[search-router] Tavily unavailable, falling back to local SearXNG: Tavily Search failed (401): {"detail":{"error":"Unauthorized: missing or invalid API key."}}
+## Sources
+
+_(provider: searxng)_
+
+- **PMO Jobs in the Middle East (Jun 2026) - Bayt.com**
+  https://www.bayt.com/en/international/jobs/pmo-jobs/
+  Apply now to over 460 PMO jobs in Middle East and Gulf and make your job hunting simpler. Find the latest PMO job vacancies and employment opportunities in Middle East and Gulf.
+
+- **83 pmo Jobs in United Arab Emirates, January 2026 | Glassdoor**
+  https://www.glassdoor.com/Job/united-arab-emirates-pmo-jobs-SRCH_IL.0,20_IN6_KO21,24.htm
+  Search Pmo jobs in United Arab Emirates with company ratings & salaries. 83 open jobs for Pmo in United Arab Emirates.
+
+- **25+ Digital Transformation Director Jobs, Employment in Dubai 15 June 2026| Indeed**
+  https://ae.indeed.com/q-digital-transformation-director-l-dubai-jobs.html
+  Discover 33 Digital Transformation Director job opportunities in Dubai on Indeed.com. Apply today to advance your career with top employers.
+
+- **Head Of Digital Transformation Jobs in UAE (Jun 2026) - Bayt.com**
+  https://www.bayt.com/en/uae/jobs/head-of-digital-transformation-jobs/
+  Apply now to over 30 Head Of Digital Transformation jobs in UAE and make your job hunting simpler. Find the latest Head Of Digital Transformation job vacancies and employment opportunities in UAE.
+
+- **United Arab Emirates ERP Programme Governance (PMO) and Value Realisation Consulting | YCP Group**
+  https://ycp.com/lp/uae-erp-programme-governance-and-value-realisation-consulting
+  Leverage YCP’s proven expertise in ERP Programme Governance (PMO) and Value Realisation consulting for large-scale organisations in the UAE and globally.
+
+## Gmail - New Opportunities
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/root/.openclaw/workspace/scripts/gmail-scan.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+
+## Calendar - Today's Events
+missing --account (or set GOG_ACCOUNT, set default via `gog auth manage`, or store exactly one token)
+
