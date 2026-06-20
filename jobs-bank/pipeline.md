@@ -300,6 +300,10 @@
 | 409 | 🆕 | Edison Smart® | Chief Technology Officer (CTO) – AI & Financial Intelligence | Dubai | — | 🆕 Discovered | Radar | 2026-06-19 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4427935366) | — |
 | 410 | 🆕 | Talents Tide | Head of Applications Development (UAEN) | Dubai | — | 🆕 Discovered | Radar | 2026-06-19 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4429312518) | — |
 | 411 | 🆕 | Ambitek UAE | Vice President - Joinery | Dubai | — | 🆕 Discovered | Radar | 2026-06-19 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4430450159) | — |
+| 412 | 🆕 | MCB Group | Head of Digital Assets and Emerging Technologies | 📍 Mauritius (Preferred) | Hybrid: Mauritius / Dubai | Dubai | — | 🆕 Discovered | Radar | 2026-06-20 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4426484424) | — |
+| 413 | 🆕 | Ministry of Community Empowerment | Head of Digital Solutions - UAE National | Dubai | — | 🆕 Discovered | Radar | 2026-06-20 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4430795687) | — |
+| 414 | 🆕 | Mizuho | MEA FIG & SWFs - Vice President | Dubai | — | 🆕 Discovered | Radar | 2026-06-20 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4430015343) | — |
+
 
 
 

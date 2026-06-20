@@ -1411,3 +1411,17 @@ The LinkedIn plus-30 campaign counted 30/30 only after confirming LinkedIn submi
 ### Do differently
 For bulk LinkedIn or JobZoom application reporting, count only explicit submitted proof states as applications. Keep blocked attempts, visible-upload-only states, unknown required fields, and missing application modals out of submitted totals and record them as blockers instead.
 
+## 2026-06-19 - Email Rejections Should Not Be Auto-Actionable
+
+### Incident
+The email health/review path flagged an application rejection as actionable (`actionable=True`) with confidence 90, even though the expected classification was non-actionable.
+### Do differently
+For email triage, treat plain rejection/status emails as non-actionable unless they ask Ahmed to complete a specific next step, reply, schedule, or provide documents. Keep a regression case so high confidence does not override a rejection category.
+
+## 2026-06-19 - LinkedIn Bulk Campaigns Need Unique-ID Counts And Runner Fallbacks
+
+### Incident
+The June 19 LinkedIn +30 campaign only became reliable after duplicate ledger rows from retries were de-duplicated to 30 unique LinkedIn IDs. A prior campaign also noted CDP visible fallback failure on ports 18801/18800, with the browser-CLI runner completing successfully.
+### Do differently
+For bulk LinkedIn Easy Apply, count only unique confirmed submitted LinkedIn IDs, de-duplicate retry rows before reporting totals, and switch to the browser-CLI runner when the visible CDP ports are unavailable. Continue stopping on unknown or sensitive required fields instead of guessing.
+

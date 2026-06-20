@@ -2,9 +2,9 @@
   "task": "disk-guard",
   "status": "ok",
   "returncode": 0,
-  "started_at": "2026-06-18T07:07:01+03:00",
-  "finished_at": "2026-06-18T07:09:30+03:00",
-  "duration_seconds": 149,
+  "started_at": "2026-06-19T07:07:01+03:00",
+  "finished_at": "2026-06-19T07:09:43+03:00",
+  "duration_seconds": 162,
   "log_path": "/root/.openclaw/workspace/logs/cron/disk-guard-cron.log",
   "lock_path": "/var/lock/openclaw/disk-guard.cron.lock",
   "host": "srv1352768"

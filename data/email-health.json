@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-06-18T07:45:17.142272+03:00",
+  "generated_at": "2026-06-19T07:45:30.096940+03:00",
   "status": "ok",
-  "last_scan_time": "2026-06-17T20:01:22.969404+03:00",
-  "last_total_scanned": 38,
-  "last_actionable_count": 0,
+  "last_scan_time": "2026-06-18T20:00:52.270923+03:00",
+  "last_total_scanned": 32,
+  "last_actionable_count": 1,
   "last_hot_alerts": 0,
   "last_llm_status": "present",
-  "last_seen_uid": 362354,
-  "last_success": "2026-06-17T20:01:22.971673+03:00",
-  "processed_count": 12686,
+  "last_seen_uid": 362461,
+  "last_success": "2026-06-18T20:01:07.099158+03:00",
+  "processed_count": 12793,
   "feedback_rules": 0,
-  "pipeline_review_candidates": 151,
+  "pipeline_review_candidates": 165,
   "cron_jobs": [],
-  "formatter_preview": "📬 Email scan: all clear ✅\nScanned 38 new email(s). Nothing requiring action."
+  "formatter_preview": "📬 Email scan: all clear ✅\nScanned 32 new email(s). Nothing requiring action."
 }
