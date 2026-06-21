@@ -303,6 +303,24 @@
 | 412 | 🆕 | MCB Group | Head of Digital Assets and Emerging Technologies | 📍 Mauritius (Preferred) | Hybrid: Mauritius / Dubai | Dubai | — | 🆕 Discovered | Radar | 2026-06-20 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4426484424) | — |
 | 413 | 🆕 | Ministry of Community Empowerment | Head of Digital Solutions - UAE National | Dubai | — | 🆕 Discovered | Radar | 2026-06-20 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4430795687) | — |
 | 414 | 🆕 | Mizuho | MEA FIG & SWFs - Vice President | Dubai | — | 🆕 Discovered | Radar | 2026-06-20 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4430015343) | — |
+| 415 | 🆕 | Hays | Vice President of Artificial Intelligence | Abu Dhabi | — | 🆕 Discovered | Radar | 2026-06-21 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4428252282) | — |
+| 416 | 🆕 | Confidential | Head of Digital Platforms, AI & Innovation | Abu Dhabi Emirate | — | 🆕 Discovered | Radar | 2026-06-21 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4427307899) | — |
+| 417 | 🆕 | Confidential | Head of Digital Portfolio & Governance | Abu Dhabi Emirate | — | 🆕 Discovered | Radar | 2026-06-21 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4427319408) | — |
+| 418 | 🆕 | Confidential Careers | Head of Technology & Digital Services | Abu Dhabi | — | 🆕 Discovered | Radar | 2026-06-21 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4429939089) | — |
+| 419 | 🆕 | Michael Page | Director, Digital Engineering (UAE National) | Abu Dhabi | — | 🆕 Discovered | Radar | 2026-06-21 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4429962582) | — |
+| 420 | 🆕 | Capgemini Invent | Head of Data & AI - Middle East for Capgemini Invent | Abu Dhabi | — | 🆕 Discovered | Radar | 2026-06-21 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4428820836) | — |
+| 421 | 🆕 | RAKBANK | Senior Vice President & Head of Digital Channels - Business Banking | GCC | — | 🆕 Discovered | Radar | 2026-06-21 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4431325835) | — |
+| 422 | 🆕 | Hays | Head of Delivery - AI FinTech SaaS Platform | Dubai | — | 🆕 Discovered | Radar | 2026-06-21 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4428226607) | — |
+| 423 | 🆕 | Confidential | Chief Product Officer - Odoo SAAS | Dubai | — | 🆕 Discovered | Radar | 2026-06-21 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4428231889) | — |
+| 424 | 🆕 | ServiceNow | Practice Director, Expert Services MEA | Dubai | — | 🆕 Discovered | Radar | 2026-06-21 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4431125373) | — |
+| 425 | 🆕 | Atlantis Resorts | Director, Information Technology - Data Analytics & AI Strategy | Dubai | — | 🆕 Discovered | Radar | 2026-06-21 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4427826517) | — |
+| 426 | 🆕 | SUMWON STUDIOS | Director, Strategy & Transformation | Dubai | — | 🆕 Discovered | Radar | 2026-06-21 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4426466733) | — |
+| 427 | 🆕 | RAKBANK | Vice President - Head of Working Capital and Real Estate Lending | Dubai | — | 🆕 Discovered | Radar | 2026-06-21 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4429646769) | — |
+| 428 | 🆕 | Confidential Jobs | Head of Risk | Dubai | — | 🆕 Discovered | Radar | 2026-06-21 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4430428895) | — |
+| 429 | 🆕 | Mercury | Payments Transformation Lead | Dubai | — | 🆕 Discovered | Radar | 2026-06-21 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4427334620) | — |
+| 430 | 🆕 | Wiseasy | Head of Sales (GCC) | Dubai | — | 🆕 Discovered | Radar | 2026-06-21 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4428478468) | — |
+| 431 | 🆕 | du Pay | Director of Products & Strategic Transformation | Dubai | — | 🆕 Discovered | Radar | 2026-06-21 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4426494417) | — |
+
 
 
 

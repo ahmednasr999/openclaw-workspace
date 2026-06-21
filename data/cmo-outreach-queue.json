@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-18T04:42:04.993616+03:00",
+  "last_updated": "2026-06-20T08:38:20.752721+03:00",
   "items": [
     {
       "company": "Netcracker Technology in Dubai, United Arab Emirates â Apply on Wuzzuf",
@@ -431,6 +431,15 @@
       "job_url": "https://www.linkedin.com/jobs/view/4426803035",
       "verdict": "SUBMIT",
       "queued_at": "2026-06-17T02:46:29.015355+03:00",
+      "status": "queued"
+    },
+    {
+      "company": "ServiceNow",
+      "job_title": "Practice Director, Expert Services MEA",
+      "source": "linkedin_jobspy",
+      "job_url": "https://www.linkedin.com/jobs/view/4431125373",
+      "verdict": "SUBMIT",
+      "queued_at": "2026-06-20T08:38:20.752712+03:00",
       "status": "queued"
     }
   ],

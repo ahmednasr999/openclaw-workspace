@@ -2,36 +2,16 @@
   "meta": {
     "agent": "jobs-source-google",
     "version": "1.0.0",
-    "generated_at": "2026-06-19T06:01:11.546395+03:00",
-    "duration_ms": 68987,
+    "generated_at": "2026-06-20T08:01:02.237264+03:00",
+    "duration_ms": 60095,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "1cbb79df",
+    "run_id": "4ce8b234",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": [
-    {
-      "id": "google-0135eeb08eb3",
-      "source": "google",
-      "title": "Director of Digital Transformation Job in Saudi Arabia",
-      "company": "Confidential",
-      "location": "Saudi Arabia",
-      "url": "https://sa.jooble.org/jdp/3328864242301537672",
-      "posted": "",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 20,
-      "match_keywords": [
-        "digital transformation",
-        "director",
-        "saudi"
-      ],
-      "raw_snippet": "Apply for Director of Digital Transformation job in Saudi Arabia. Browse similar jobs in Saudi Arabia on Jooble.",
-      "relevant": true,
-      "filter_reason": null
-    },
     {
       "id": "google-05e96bd5019f",
       "source": "google",
@@ -42,26 +22,28 @@
       "posted": "",
       "seniority": "C-Suite",
       "domain_match": true,
-      "keyword_score": 16,
+      "keyword_score": 33,
       "match_keywords": [
         "digital transformation",
+        "project management",
+        "ai",
         "director"
       ],
-      "raw_snippet": "",
+      "raw_snippet": "Keypoint in Bahrain is seeking an experienced leader to manage its digital transformation and project management centre. The ideal candidate holds a Bachelor's degree in business administration or a relevant field and possesses at least eight years of educational administration experience.",
       "relevant": true,
       "filter_reason": null
     }
   ],
   "kpi": {
     "searches_run": 51,
-    "exa_results_raw": 38,
-    "single_jobs_direct": 2,
-    "listing_pages_found": 20,
-    "listing_pages_extracted": 13,
-    "noise_filtered": 16,
+    "exa_results_raw": 54,
+    "single_jobs_direct": 1,
+    "listing_pages_found": 28,
+    "listing_pages_extracted": 15,
+    "noise_filtered": 22,
     "malformed_filtered": 0,
-    "unique_jobs_final": 2,
-    "errors": 47,
+    "unique_jobs_final": 1,
+    "errors": 45,
     "search_backend": "searxng",
     "exa_cost_estimate_usd": 0,
     "strategy": "SearXNG local fallback keyword + auto(domain) + neural + watchlist company discovery -> classify -> contents",

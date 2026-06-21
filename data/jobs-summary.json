@@ -2,22 +2,86 @@
   "meta": {
     "agent": "jobs-review",
     "version": "2.0.0",
-    "generated_at": "2026-06-19T06:44:52.966749+03:00",
-    "duration_ms": 293214,
+    "generated_at": "2026-06-20T08:38:20.822382+03:00",
+    "duration_ms": 122162,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "c1f80af8",
+    "run_id": "6baa7687",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
-    "generated_at": "2026-06-19T06:44:52.885035+03:00",
-    "total_candidates": 26,
-    "reviewed": 26,
-    "submit": [],
+    "generated_at": "2026-06-20T08:38:20.744148+03:00",
+    "total_candidates": 22,
+    "reviewed": 22,
+    "submit": [
+      {
+        "id": "linkedin_jobspy-li-4431125373",
+        "source": "linkedin_jobspy",
+        "title": "Practice Director, Expert Services MEA",
+        "company": "ServiceNow",
+        "location": "Dubai, Dubai, United Arab Emirates",
+        "url": "https://www.linkedin.com/jobs/view/4431125373",
+        "posted": "",
+        "seniority": "C-Suite",
+        "domain_match": false,
+        "keyword_score": 13,
+        "match_keywords": [
+          "ai",
+          "director"
+        ],
+        "raw_snippet": "**Company Description**\n It all started in sunny San Diego, California in 2004 when a visionary engineer, Fred Luddy, saw the potential to transform how we work. Fast forward to today \u2014 ServiceNow stands as a global market leader, bringing innovative AI\\-enhanced technology to over 8,100 customers, ",
+        "relevant": true,
+        "filter_reason": null,
+        "search_country": "United Arab Emirates",
+        "search_title": "Delivery Director",
+        "linkedin_id": "li-4431125373",
+        "jd_text": "**Company Description**\n It all started in sunny San Diego, California in 2004 when a visionary engineer, Fred Luddy, saw the potential to transform how we work. Fast forward to today \u2014 ServiceNow stands as a global market leader, bringing innovative AI\\-enhanced technology to over 8,100 customers, including 85% of the Fortune 500\u00ae. Our intelligent cloud\\-based platform seamlessly connects people, systems, and processes to empower organizations to find smarter, faster, and better ways to work. But this is just the beginning of our journey. Join us as we pursue our purpose to make the world work better for everyone.\n   \n\n  \n\n**Job Description**\n The role of the Expert Services MEA Practice Director will oversee a team of consultants responsible for delivering high\\-quality outcomes to our customers and partners across all the Workflows. This role reports to the Director, Expert Services MEA and plays a pivotal role in shaping and executing the delivery strategy for MEA Expert services and delivery high\\-impact programme across the region.\n   \n\n  \n\n What you get to do in this role\n   \n\n  \n\n* Define and execute the MEA Expert Services delivery strategy, aligned with customer needs, market trends, and ServiceNow\u2019s business goals. Drive decisions around capability development, service offerings, delivery models, and market positioning.\n* Champion transformation delivery and customer success: Ensure delivery efforts are aligned to customer business outcomes, platform adoption, and long\\-term success. Position the practice as a strategic partner for MEA transformation journeys.\n* Lead and grow a high\\-performing team of senior leaders and consultants, fostering a culture of accountability, innovation, and continuous improvement.\n* Set up operational infrastructure, SLAs, governance frameworks, and performance metrics for the nearshore/ offshore delivery center anchoring the practice. Implement capacity planning, resource allocation, and demand forecasting to enable scalable, quality\\-driven delivery across MEA.\n* Manage partner execution through clear expectations, weekly cadence reviews, and escalation protocols. Partner with global delivery partners and ServiceNow Partner Alliance Teams to co\\-deliver on customer outcomes, align on delivery standards, and drive continuous improvement.\n* Translate market demand, sales pipeline insights, and strategic initiatives into action\u2014driving decisions around hiring, team structure, capability development, and enablement.\n* Own the technical solution quality of delivery in MEA engagements, ensuring consistent, scalable, and value\\-driven outcomes for our customers.\n* Position the team for scale by developing delivery models, frameworks, and leadership capabilities that support predictable and high\\-quality customer success.\n* Partner with Product Business Units, Sales, and Customer Success to accelerate value realization, inform product strategy, and co\\-drive strategic initiatives.\n* Align with Expert Services counterparts to share learnings, shape global initiatives, and bring best practices into the EMEA organization.\n* Provide strategic leadership and mentorship to senior team members, supporting the resolution of complex challenges and the development of future leaders.\n* Champion customer transformation journeys\u2014ensuring delivery efforts are aligned to business outcomes, product adoption, and long\\-term success.\n* Drive a culture of collaboration, knowledge sharing, and operational excellence, continually evolving best practices, offerings, and delivery methodology.\n\n\n Key Performance Measurements\n   \n\n  \n\n* Contribution to Expert Services business outcomes (revenue, margin, growth).\n* Delivery Centre operational excellence: Capacity utilization, SLA compliance, partner performance metrics, and cost\\-to\\-serve.\n* Partner collaboration effectiveness: Partner execution against commitments, escalation resolution time, joint business outcomes, and alignment on delivery standards.\n* Team productivity, billable utilization, and quality of delivery.\n* Customer satisfaction, Expert Services value realization, and adoption metrics.\n* Team readiness, capability development, and leadership bench strength.\n* Impact of strategic initiatives across sales, delivery, and product alignment.\n\n\n**Qualifications**\n**To be successful in this role you have:**\n Strategic Leadership \\& People Development\n   \n\n  \n\n Proven experience leading senior\\-level teams, including managers and consultants, in a professional services or consulting environment within MEA region\n   \n\n  \n\n Strong cross\\-functional collaborator who thrives in a matrixed, global environment.\n   \n\n  \n\n Passion for continuous improvement, innovation, and knowledge sharing.\n   \n\n  \n\n Excellent communication and storytelling skills, capable of influencing diverse audiences from consultants to C\\-level executives.\n   \n\n  \n\n Additional Qualities for Success\n   \n\n  \n\n A strategic thinker with a transformation mindset, focused on long\\-term business impact.\n   \n\n  \n\n Strong business acumen with the ability to connect technical delivery to commercial impact and product evolution.\n   \n\n  \n\n Experience driving adoption of emerging technologies, including AI and automation, in the context of enterprise service delivery.\n   \n\n  \n\n**Technology \\& Domain Knowledge**\n* Familiarity with the ServiceNow platform or comparable enterprise platforms (e.g., Salesforce, SAP, Workday); certifications or ecosystem experience is a plus.\n* Experience engaging directly with executive\\-level customers and partners, advising on transformation strategy and value realization.\n* Strong ability to assess market demand, interpret sales pipelines, and translate commercial opportunities into delivery readiness and team investments.\n* Deep understanding of consulting methodologies, such as Now Create, Agile, and value\\-based delivery approaches.\n* Expertise in structuring scalable delivery models and driving operational excellence across customer\\-facing teams.\n* Consulting \\& Service Delivery Expertise\n* Significant experience delivering or overseeing large\\-scale digital transformation engagements, with a focus on measurable business outcomes.\n* Experience collaborating with partners and third party setting up nearshore/offshore delivery model\n\n\n**Strategic Partners and Delivery**\n* Experience setting up and managing nearshore and offshore delivery centers building ServiceNow implementation capability\n* Executive presence and influence, with the ability to communicate clearly, inspire trust, and align diverse stakeholders across functions and geographies.\n* Strong ability to mentor senior leaders, promote leadership development, and build succession plans for sustainable organizational growth.\n* Track record of hiring, scaling, and enabling high\\-performing teams with diverse skill sets, while fostering a culture of excellence, inclusion, and innovation.\n* Demonstrated success in defining and executing regional or global strategies, ideally in the context of enterprise technology or digital transformation.\n\n\n Additional Information\n   \n\n  \n\n**Work Personas**\n We approach our distributed world of work with flexibility and trust. Work personas (flexible, remote, or required in office) are categories that are assigned to ServiceNow employees depending on the nature of their work and their assigned work location. Learn more here. To determine eligibility for a work persona, ServiceNow may confirm the distance between your primary residence and the closest ServiceNow office using a third\\-party service.\n   \n\n  \n\n**Equal Opportunity Employer**\n ServiceNow is an equal opportunity employer. All qualified applicants will receive consideration for employment without regard to race, color, creed, religion, sex, sexual orientation, national origin or nationality, ancestry, age, disability, gender identity or expression, marital status, veteran status, or any other category protected by law. In addition, all qualified applicants with arrest or conviction records will be considered for employment in accordance with legal requirements.\n   \n\n  \n\n**Accommodations**\n We strive to create an accessible and inclusive experience for all candidates. If you require a reasonable accommodation to complete any part of the application process, or are unable to use this online application and need an alternative method to apply, please contact globaltalentss@servicenow.com for assistance.\n   \n\n  \n\n**Export Control Regulations**\n For positions requiring access to controlled technology subject to export control regulations, including the U.S. Export Administration Regulations (EAR), ServiceNow may be required to obtain export control approval from government authorities for certain individuals. All employment is contingent upon ServiceNow obtaining any export license or other approval that may be required by relevant export control authorities.\n   \n\n  \n\n From Fortune. \u00a92025 Fortune Media IP Limited. All rights reserved. Used under license.",
+        "source_count": 2,
+        "country": "United Arab Emirates",
+        "industry_bonus": 9,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin",
+          "indeed"
+        ],
+        "first_seen": "2026-06-20",
+        "career_fit_score": 9,
+        "verdict": "SUBMIT",
+        "verdict_reason": "Strong GCC practice leadership role centered on transformation delivery, governance, consultants, and enterprise platform adoption [5D role=2 | seniority=2 | geo=2 | strategic=1 | evidence=2 | fit=9/10 | llm=8] [CMO outreach queued for ServiceNow]",
+        "watchlist_matches": {
+          "company_hits": [],
+          "domain_hits": [],
+          "categories": []
+        },
+        "ats_score": 68,
+        "ats_verdict": "CONDITIONAL",
+        "ats_matched": [
+          "digital transformation",
+          "transformation",
+          "ai",
+          "erp",
+          "sap",
+          "governance",
+          "revenue",
+          "agile",
+          "cloud",
+          "automation"
+        ],
+        "ats_gaps": [],
+        "llm_fit_score": 8,
+        "fit_dimensions": {
+          "role": 2,
+          "seniority": 2,
+          "geography": 2,
+          "strategic": 1,
+          "evidence": 2
+        }
+      }
+    ],
     "review": [],
-    "skip_count": 26,
+    "skip_count": 21,
     "unreviewed_count": 0,
     "thresholds": {
       "submit": 6,
@@ -26,32 +90,32 @@
     "pipeline": {
       "l0_auto_skip": 0,
       "l1_jd_enriched": 0,
-      "l1_jd_coverage": "19/26",
+      "l1_jd_coverage": "19/22",
       "llm_model": "openai/gpt-5.5",
-      "llm_jobs_reviewed": 26,
-      "r2_latency_ms": 286638,
+      "llm_jobs_reviewed": 22,
+      "r2_latency_ms": 117126,
       "r2_fallbacks": 0
     },
     "kpi": {
-      "submit_rate": 0.0,
+      "submit_rate": 0.045454545454545456,
       "review_rate": 0.0,
-      "skip_rate": 1.0,
-      "avg_fit_score": 4.0,
+      "skip_rate": 0.9545454545454546,
+      "avg_fit_score": 4.6,
       "l0_filter_rate": 0.0,
       "llm_review_rate": 100.0
     }
   },
   "kpi": {
-    "total_loaded": 26,
+    "total_loaded": 22,
     "l0_auto_skip": 0,
     "l1_jd_enriched": 0,
     "l2_filtered": 0,
-    "submit_count": 0,
+    "submit_count": 1,
     "review_count": 0,
-    "skip_count": 26,
-    "submit_rate": 0.0,
-    "avg_fit_score": 4.0,
-    "r2_latency_ms": 286638
+    "skip_count": 21,
+    "submit_rate": 4.5,
+    "avg_fit_score": 4.6,
+    "r2_latency_ms": 117126
   },
   "recommendations": []
 }

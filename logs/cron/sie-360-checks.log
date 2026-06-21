@@ -1,5 +1,5 @@
 
-[2026-06-20T01:50:01+03:00] START sie-360-checks: /usr/bin/python3 /root/.openclaw/workspace/scripts/sie-360-checks.py
+[2026-06-21T01:50:01+03:00] START sie-360-checks: /usr/bin/python3 /root/.openclaw/workspace/scripts/sie-360-checks.py
 SIE 360 Checks starting...
   Step 1: Workspace health done
   Step 2: Learnings enforcement done
@@ -11,4 +11,4 @@ SIE 360 Checks starting...
 Output written to /root/.openclaw/workspace/data/sie-360.json
 Health score: 82/100 | OK:6 WARN:4 ALERT:2
 Needs attention: 2 items
-[2026-06-20T01:50:19+03:00] END sie-360-checks: rc=0 duration=18s
+[2026-06-21T01:50:15+03:00] END sie-360-checks: rc=0 duration=14s
