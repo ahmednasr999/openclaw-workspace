@@ -565,3 +565,13 @@
 [2026-06-20T21:56:18Z] Done reset=0 skipped=0 errors=0
 [2026-06-21T00:56:33Z] Done reset=0 skipped=0 errors=0
 [2026-06-21T03:56:22Z] Done reset=0 skipped=0 errors=0
+[2026-06-21T06:56:21Z] Done reset=0 skipped=0 errors=0
+[2026-06-21T09:56:24Z] Done reset=0 skipped=0 errors=0
+[2026-06-21T12:56:27Z] Done reset=0 skipped=0 errors=0
+[2026-06-21T15:56:16Z] RESET [cmo] ad4446c4-04da-4817-b9b9-a01a5b62cd14.trajectory.jsonl was 3MB -> archived to ad4446c4-04da-4817-b9b9-a01a5b62cd14.trajectory.20260621T155616Z.jsonl.gz
+[2026-06-21T15:56:32Z] Done reset=1 skipped=0 errors=0
+[2026-06-21T18:55:20Z] RESET [main] 290d046f-fc4c-47a2-9c34-36d87e8beee4.trajectory.jsonl was 4MB -> archived to 290d046f-fc4c-47a2-9c34-36d87e8beee4.trajectory.20260621T185520Z.jsonl.gz
+[2026-06-21T18:56:30Z] Done reset=1 skipped=0 errors=0
+[2026-06-21T21:56:22Z] Done reset=0 skipped=0 errors=0
+[2026-06-22T00:56:13Z] Done reset=0 skipped=0 errors=0
+[2026-06-22T03:56:19Z] Done reset=0 skipped=0 errors=0

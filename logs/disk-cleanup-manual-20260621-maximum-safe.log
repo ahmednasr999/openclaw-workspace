@@ -1,0 +1,117 @@
+Manual maximum-safe cleanup started 2026-06-21T09:39:00+03:00
+Before root used bytes: 75490824192
+
+Remove redundant full snapshot, keep newest snapshot.
+removed /root/openclaw-snapshot-20260619.tar.zst
+
+Remove old pre-update SQLite backup covered by newer full snapshot.
+removed /root/.openclaw/backups/pre-openclaw-update-20260617-112833
+
+Remove rebuildable UV package caches.
+pruned /root/.cache/uv rebuildable cache buckets
+
+Remove rebuildable research virtualenvs only.
+removed /root/.openclaw/workspace/research/ai-agent-repo-scan/.venv-crawl4ai
+removed /root/.openclaw/workspace/research/ai-agent-repo-scan/.venv-markitdown
+removed /root/.openclaw/workspace/research/ai-agent-repo-scan/.venv-headroom
+
+Remove Python bytecode and test/build caches older than 1 day.
+/root/.openclaw/workspace/scripts/deprecated/__pycache__
+/root/.openclaw/workspace/tools/google-workspace/__pycache__
+/root/.openclaw/workspace/archives/advisory-board/__pycache__
+/root/.openclaw/workspace/archive/deprecated/tools/cv-optimizer/__pycache__
+/root/.openclaw/workspace/archive/deprecated/tools/cv-optimizer/src/__pycache__
+/root/.openclaw/workspace/skills/slides/scripts/__pycache__
+/root/.openclaw/workspace/skills/last30days-lite/scripts/__pycache__
+
+Prune stale workspace temp/log crumbs older than 7 days, preserving disk-guard logs.
+/root/.openclaw/workspace/scripts/job-radar.py.bak
+/root/.openclaw/workspace/config/root-crontab.backup-repo-maintainer-20260611-152003.bak
+/root/.openclaw/workspace/config/root-crontab.before-disable-daily-backup-20260607-194033.bak
+/root/.openclaw/workspace/config/root-crontab.backup-20260527-232940.bak
+/root/.openclaw/workspace/config/root-crontab.before-final-hardening-20260527-235157.bak
+/root/.openclaw/workspace/config/root-crontab.before-approved-14day-retire-20260528-122001.bak
+/root/.openclaw/workspace/config/root-crontab.backup-disk75-20260609-102957.bak
+/root/.openclaw/workspace/archive/20260514-stale-backups-cleanup/scripts/check-openclaw-runtime-patches.py.disable-runtime-context-custom-20260428.bak
+/root/.openclaw/workspace/archive/20260514-stale-backups-cleanup/scripts/check-openclaw-runtime-patches.py.leakfix-20260428.bak
+/root/.openclaw/workspace/archive/20260514-stale-backups-cleanup/scripts/jobs-review.py.bak
+/root/.openclaw/workspace/archive/20260514-stale-backups-cleanup/scripts/add-to-pipeline.py.bak
+/root/.openclaw/workspace/archive/20260514-stale-backups-cleanup/docs/agent-governance/NASR-Coding-Rules-v1.md.2026-05-07-systems-thinking.bak
+/root/.openclaw/workspace/archive/20260514-stale-backups-cleanup/docs/agent-governance/NASR-ACP-Coding-Brief.md.2026-05-07-systems-thinking.bak
+/root/.openclaw/workspace/archive/20260514-stale-backups-cleanup/cvs/Ahmed Nasr - VP Portfolio Management EPMO Leader - Michael Page.html.bak
+/root/.openclaw/workspace/archive/20260514-stale-backups-cleanup/cvs/Ahmed Nasr - Technical Delivery Leader - Staq.html.bak
+/root/.openclaw/workspace/.learnings/LEARNINGS.md.2026-05-07-systems-thinking.bak
+
+Package manager and system cache cleanup.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Removed all cached metadata files
+Removed 0 files
+Removed 0 packages
+/tmp/gmail_job_reads/362036.txt
+/tmp/gmail_job_reads/362032.txt
+/tmp/gmail_job_reads/362038.txt
+/tmp/gmail_job_reads/362040.txt
+/tmp/gmail_job_reads/362043.txt
+/tmp/gmail_job_reads/362047.txt
+/tmp/gmail_job_reads/362148.txt
+/tmp/gmail_job_reads/362173.txt
+/tmp/gmail_job_reads/362151.txt
+/tmp/gmail_job_reads/362152.txt
+/tmp/gmail_job_reads/362121.txt
+/tmp/gmail_job_reads/362143.txt
+/tmp/gmail_job_reads/362058.txt
+/tmp/gmail_job_reads/362035.txt
+/tmp/gmail_job_reads/362042.txt
+/tmp/gmail_job_reads/362052.txt
+/tmp/gmail_job_reads/362085.txt
+/tmp/gmail_job_reads/362088.txt
+/tmp/gmail_job_reads/362122.txt
+/tmp/gmail_job_reads/362126.txt
+/tmp/gmail_job_reads/362149.txt
+/tmp/gmail_job_reads/362147.txt
+/tmp/gmail_job_reads/362150.txt
+/tmp/gmail_job_reads/362178.txt
+/tmp/himalaya_recent_orchestrator_20260617_0905.json
+/tmp/.org.chromium.Chromium.eJefoD
+/tmp/hacc.err
+/tmp/mailread/362018.json
+/tmp/mailread/362020.json
+/tmp/mailread/362022.json
+/tmp/mailread/362023.json
+/tmp/mailread/362027.json
+/tmp/mailread/362030.json
+/tmp/mailread/362031.json
+/tmp/mailread/362032.json
+/tmp/mailread/362036.json
+/tmp/mailread/362035.json
+/tmp/mailread/362038.json
+/tmp/mailread/362040.json
+/tmp/mailread/362043.json
+/tmp/mailread/362047.json
+/tmp/mailread/362052.json
+/tmp/mailread/362058.json
+/tmp/mailread/362077.json
+/tmp/mailread/362085.json
+/tmp/mailread/362088.json
+/tmp/mailread/362097.json
+/tmp/mailread/362108.json
+/tmp/mailread/362114.json
+/tmp/hermes-results/call_0kYUHXXCyEV8qfi58nuFIYBG.txt
+/tmp/hermes-results/call_yjoPMNokN0AvuA1sj3Y1cGKt.txt
+/tmp/hermes-results/call_zyTYpEfOPVvqBKCVfxkEJK4U.txt
+/tmp/hermes-results/call_aK3bNJGn13Bzx9rvnPmhnIlr.txt
+/tmp/hermes-results/call_lyNe2xpt3g8ypvX5zXw5uqvD.txt
+/var/tmp/systemd-private-2030c947a0ff466a9823e3ae8e2e4448-fwupd.service-mDjXdK
+/var/tmp/systemd-private-2030c947a0ff466a9823e3ae8e2e4448-fwupd.service-mDjXdK/tmp
+/var/tmp/systemd-private-2030c947a0ff466a9823e3ae8e2e4448-ModemManager.service-OnlRRR
+/var/tmp/systemd-private-2030c947a0ff466a9823e3ae8e2e4448-ModemManager.service-OnlRRR/tmp
+/var/tmp/systemd-private-2030c947a0ff466a9823e3ae8e2e4448-chrony.service-Mhu7Aj
+/var/tmp/systemd-private-2030c947a0ff466a9823e3ae8e2e4448-chrony.service-Mhu7Aj/tmp
+/var/tmp/systemd-private-2030c947a0ff466a9823e3ae8e2e4448-polkit.service-G5L2D2
+/var/tmp/systemd-private-2030c947a0ff466a9823e3ae8e2e4448-polkit.service-G5L2D2/tmp
+
+After root used bytes: 69137960960
+Reclaimed bytes estimate: 6352863232
+Manual maximum-safe cleanup ended 2026-06-21T09:39:07+03:00

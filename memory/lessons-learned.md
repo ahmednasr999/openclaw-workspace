@@ -1425,3 +1425,24 @@ The June 19 LinkedIn +30 campaign only became reliable after duplicate ledger ro
 ### Do differently
 For bulk LinkedIn Easy Apply, count only unique confirmed submitted LinkedIn IDs, de-duplicate retry rows before reporting totals, and switch to the browser-CLI runner when the visible CDP ports are unavailable. Continue stopping on unknown or sensitive required fields instead of guessing.
 
+## 2026-06-21 - Cron Resumes Must Re-run The Original Task
+
+### Correction
+Ahmed had to send a follow-up on the Email Agent cron because the previous response only acknowledged the reminder instead of completing the original scheduled work and returning the requested formatter output.
+### Do differently
+When a cron follow-up says the previous response was only an acknowledgement, immediately execute the original commands, wait for any spawned work, and return only the requested final summary or formatter output. Do not send interim status text such as `on it`.
+
+## 2026-06-21 - Job Hunter Notion Fallback Needs Type Guards
+
+### Incident
+The weekly Job Hunter domain review ran the Notion pipeline snippets after a prompt explicitly said to use the local-data fallback if Notion was unavailable. `notion_sync` could not load `scripts/config/notion.json`, and downstream code tried `.get()` on a string, producing tracebacks before the final report was recovered from local data.
+### Do differently
+For Job Hunter reviews, treat any missing Notion config, exception, or non-list return from `read_pipeline_from_notion()` as Notion unavailable. Switch directly to local data and suppress tool-failure diagnostics in the user-facing report when the reminder asks for a quiet fallback.
+
+## 2026-06-21 - OpenClaw Sandbox Edits Need Available Patch Mechanics
+
+### Incident
+An inter-session memory update tried to run `apply_patch` inside `sandbox_exec`, but that command was unavailable in the OpenClaw gateway shell. A later GNU `patch` attempt used the `*** Begin Patch` format and failed as a malformed patch before a proper unified diff succeeded.
+### Do differently
+When editing files from OpenClaw `sandbox_exec`, first use the actual available edit mechanism. If falling back to GNU `patch`, provide a valid unified diff with correct hunk counts and verify the target file before claiming the memory update was recorded.
+

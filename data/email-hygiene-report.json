@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-06-14T08:10:20.488255+03:00",
-  "history_items": 12302,
-  "actionable_items": 726,
-  "noise_items": 11576,
+  "generated_at": "2026-06-21T08:10:31.390563+03:00",
+  "history_items": 12978,
+  "actionable_items": 787,
+  "noise_items": 12191,
   "top_noise_senders": [
     [
       "info@host.discountwalas.com",
@@ -10,7 +10,7 @@
     ],
     [
       "notifications@github.com",
-      936
+      952
     ],
     [
       "no-reply@mail.therumble.app",
@@ -50,53 +50,53 @@
     ],
     [
       "recruitment.notify@oia.gov.om",
-      104
+      117
+    ],
+    [
+      "info@ema.flickonclick.com",
+      109
     ],
     [
       "hello@mail.trade-ideas.com",
       98
     ],
     [
-      "info@ema.flickonclick.com",
-      92
-    ],
-    [
-      "team@bankless.com",
-      90
+      "editor@newsletter.thepaypers.com",
+      94
     ]
   ],
   "top_repeated_subjects": [
     [
       "job vacancy",
-      97
+      110
     ],
     [
       "=?utf-8?b?v0igrgfpbhkgtwfya2v0iejyawvmicygvhjhzgluzybpchbvcnr1?=\r\n =?utf-8?b?bml0awvziokyl",
-      61
+      62
     ],
     [
       "new pmo jobs",
-      49
+      52
     ],
     [
       "=?utf-8?b?2kfyrtixinin2lxyr9in2lhyp9iqiniq2ylyp9ix2yryssdyqnit2yjyqw==?=\r\n =?utf-8?b?inmf2",
-      43
+      47
     ],
     [
       "confirm your identity",
-      29
+      39
+    ],
+    [
+      "=?utf-8?b?mjagbmv3ievuz2luzwvycybqb2jzigluiffhdgfyiq==?=",
+      23
+    ],
+    [
+      "ahmed, hot job opportunities waiting for you",
+      21
     ],
     [
       "=?utf-8?q?=f0=9f=98=b2_=e2=89=a4_$9.9!_luxe_for_less?=",
       20
-    ],
-    [
-      "ahmed, hot job opportunities waiting for you",
-      20
-    ],
-    [
-      "=?utf-8?b?mjagbmv3ievuz2luzwvycybqb2jzigluiffhdgfyiq==?=",
-      19
     ],
     [
       "=?utf-8?q?re:_[voltagent/awesome-openclaw-skills]_feat:_add_opencl?=\r\n =?utf-8?q?aw_monito",
@@ -115,15 +115,15 @@
       15
     ],
     [
-      "=?utf-8?b?ww91ciblegvjdxrpdmugcg1vihjvbgugbg9va3mgz3jlyxqg4ocu?=\r\n\t=?utf-8?b?igp1c3qgy29uz",
-      13
-    ],
-    [
-      "you've succeeded!",
-      13
-    ],
-    [
       "re: [speedyapply/jobspy] add linkedin applicants count to job posts\r\n (pr #365)",
+      14
+    ],
+    [
+      "new jobs posted from www.afuturewithus.com",
+      13
+    ],
+    [
+      "new jobs posted from careers.powerholding-intl.com",
       13
     ]
   ],

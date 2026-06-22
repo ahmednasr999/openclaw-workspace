@@ -2,38 +2,16 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-06-20T08:00:40.863493+03:00",
-    "duration_ms": 38756,
+    "generated_at": "2026-06-21T10:00:45.081009+03:00",
+    "duration_ms": 40547,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "74c43180",
+    "run_id": "74acc43d",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": [
-    {
-      "id": "indeed-in-bbfaa90ad5dc6d8f",
-      "source": "indeed",
-      "title": "Associate Director, Priority Banking",
-      "company": "Standard Chartered Bank",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=bbfaa90ad5dc6d8f",
-      "posted": "2026-06-19",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 16,
-      "match_keywords": [
-        "ai",
-        "director",
-        "dubai"
-      ],
-      "raw_snippet": "**\\#body.unify div.unify\\-button\\-container .unify\\-apply\\-now:** focus, \\#body.unify div.unify\\-button\\-container .unify\\-apply\\-\\#body.unify div.unify\\-button\\-container .unify\\-apply\\-now: focus, \\#body.unify div.unify\\-button\\-container .unify\\-apply\\-\n  \n**Requisition Number:** 55894\n  \n**Job Location:** Dubai, ARE\n  \n**Global Grade:** Band 7\n  \n**Work Type:** Office Working\n  \n**Employment Type:** Permanent\n  \n**Posting Start Date:** 19/06/2026\n  \n**Posting End Date:** 20/06/2026\n  \n:\n  \nK",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Program Director"
-    },
     {
       "id": "indeed-in-0df26047ad68e0af",
       "source": "indeed",
@@ -59,22 +37,21 @@
       "search_title": "Program Director"
     },
     {
-      "id": "indeed-in-70da181c46014952",
+      "id": "indeed-in-04f7f67066d5dabc",
       "source": "indeed",
-      "title": "Associate Director, Priority Banking",
-      "company": "Standard Chartered Bank",
+      "title": "Director of Front Office",
+      "company": "Naik Foundation",
       "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=70da181c46014952",
-      "posted": "2026-06-19",
+      "url": "https://ae.indeed.com/viewjob?jk=04f7f67066d5dabc",
+      "posted": "2026-06-18",
       "seniority": "C-Suite",
       "domain_match": false,
-      "keyword_score": 16,
+      "keyword_score": 13,
       "match_keywords": [
         "ai",
-        "director",
-        "dubai"
+        "director"
       ],
-      "raw_snippet": "**\\#body.unify div.unify\\-button\\-container .unify\\-apply\\-now:** focus, \\#body.unify div.unify\\-button\\-container .unify\\-apply\\-\\#body.unify div.unify\\-button\\-container .unify\\-apply\\-now: focus, \\#body.unify div.unify\\-button\\-container .unify\\-apply\\-\n  \n**Requisition Number:** 55893\n  \n**Job Location:** Dubai, ARE\n  \n**Global Grade:** Band 7\n  \n**Work Type:** Office Working\n  \n**Employment Type:** Permanent\n  \n**Posting Start Date:** 19/06/2026\n  \n**Posting End Date:** 20/06/2026\n  \n:\n  \nJ",
+      "raw_snippet": "**Job Description:**\n\n* Ensuring that guests have a positive experience and feel valued by the Hotel.\n* Training new employees on company policies, procedures, and culture.\n* Creating and maintaining relationships with Guests to ensure that they are satisfied with services provided by the Hotel.\n* Reviewing all incoming Guests complaints and making sure they are addressed in a timely manner.\n* Managing employee schedules to ensure that all shifts are covered at all times.\n* Managing the front of",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
@@ -173,28 +150,6 @@
       "search_title": "Head of Digital Transformation"
     },
     {
-      "id": "indeed-in-5fe6de9ed166a96a",
-      "source": "indeed",
-      "title": "Head of Airfreight Growth",
-      "company": "DHL",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=5fe6de9ed166a96a",
-      "posted": "2026-06-17",
-      "seniority": "Director",
-      "domain_match": true,
-      "keyword_score": 20,
-      "match_keywords": [
-        "ai",
-        "head of",
-        "growth"
-      ],
-      "raw_snippet": "**Head of Airfreight Growth**  \n\n\nWould you like to be part of the most international company in the world? A company operating in more than 220 countries worldwide and has been pioneering cross\\-border express shipping since 1969\\. Would you like to be part of a business that connects people across the globe and want to make a difference? Then waste no time and join our amazing team at DHL Group. DHL Global Forwarding, Freight (DGFF) is the Group's air, ocean, and road freight specialist. We of",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Head of Digital Transformation"
-    },
-    {
       "id": "indeed-in-df011c1ea2e35572",
       "source": "indeed",
       "title": "Senior Precious Metals Trader",
@@ -238,6 +193,30 @@
       "search_title": "PMO Director"
     },
     {
+      "id": "indeed-in-06f5dd994f22ca7d",
+      "source": "indeed",
+      "title": "Associate Director, C4I Program Manager",
+      "company": "Raytheon",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=06f5dd994f22ca7d",
+      "posted": "2026-06-20",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 26,
+      "match_keywords": [
+        "ai",
+        "director",
+        "head of",
+        "saudi",
+        "riyadh"
+      ],
+      "raw_snippet": "**Date Posted:**\n\n\n2026\\-04\\-26**Country:**\n\n\nSaudi Arabia**Location:**\n\n\nSA\\-01\\-RIYADH\\-S1 \\~ 9054 Airport Rd \\~ ROSHAN FRONT BLDG S1**Position Role Type:**\n\n\nOnsite**About Us:**\n\n\nAt Raytheon, the foundation of everything we do is rooted in our values and a higher calling \u2013 to help our nation and allies defend freedoms and deter aggression. We bring the strength of more than 100 years of experience and renowned engineering expertise to meet the needs of today\u2019s mission and stay ahead of tomor",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "Program Director"
+    },
+    {
       "id": "indeed-in-87b9220d15be0741",
       "source": "indeed",
       "title": "HSE Director (Saudi National)",
@@ -263,78 +242,6 @@
       "search_title": "Program Director"
     },
     {
-      "id": "indeed-in-2a338621ab47748b",
-      "source": "indeed",
-      "title": "HSE Director",
-      "company": "Parsons",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=2a338621ab47748b",
-      "posted": "2026-06-17",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 20,
-      "match_keywords": [
-        "director",
-        "leadership",
-        "growth"
-      ],
-      "raw_snippet": "In a world of possibilities, pursue one with endless opportunities. Imagine Next!  \n\n\nAt Parsons, you can imagine a career where you thrive, work with exceptional people, and be yourself. Guided by our leadership vision of valuing people, embracing agility, and fostering growth, we cultivate an innovative culture that empowers you to achieve your full potential. Unleash your talent and redefine what\u2019s possible. **Job Description:**\n\n\nParsons is looking for an amazingly talented **HSE Directo**r ",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-ca41830e11b3a0f4",
-      "source": "indeed",
-      "title": "Enterprise Architecture Director",
-      "company": "None",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=ca41830e11b3a0f4",
-      "posted": "2026-06-18",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 33,
-      "match_keywords": [
-        "enterprise",
-        "executive",
-        "director",
-        "saudi",
-        "riyadh",
-        "automation",
-        "architecture"
-      ],
-      "raw_snippet": "Enterprise Architecture Director\n\n**Company:** Nova IT Lab \\& Automation\n\n**Location:** Riyadh, Saudi Arabia (Digital City, Building RD\\-4\\)\n\n**Job Type:** Full\\-time, Permanent\n\n**Compensation:** SAR 48,000 / month (Total Executive Package)\n\nExecutive Purpose\n\nNova IT Lab \\& Automation is seeking a visionary Enterprise Architecture Director to lead our technology evolution framework from our headquarters in Riyadh\u2019s Digital City. This executive leader will bridge the gap between complex busines",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Director Digital Transformation"
-    },
-    {
-      "id": "indeed-in-b9a81030a7f17717",
-      "source": "indeed",
-      "title": "Chief Technology Officer (CTO)",
-      "company": "None",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=b9a81030a7f17717",
-      "posted": "2026-06-19",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 26,
-      "match_keywords": [
-        "enterprise",
-        "executive",
-        "scaling",
-        "riyadh",
-        "ksa"
-      ],
-      "raw_snippet": "**Executive Appointment: Chief Technology Officer (CTO)**\n\n**Organization:** Byprox Systems\n\n**Headquarters:** Innovation Tower, Digital City (Riyadh, KSA)\n\n**Compensation:** SAR 55,000 per month (Comprehensive Package)\n\nByprox Systems is searching for a visionary Chief Technology Officer to lead our engineering division and shape the future of our enterprise software ecosystem. Based in the heart of Riyadh\u2019s Digital City, you will take full ownership of our technological roadmap, scaling our in",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Chief Technology Officer"
-    },
-    {
       "id": "indeed-in-decb2f4153e64d6d",
       "source": "indeed",
       "title": "VP, Business Development - Public Sector, Saudi Arabia & Bahrain",
@@ -356,38 +263,13 @@
       "filter_reason": null,
       "search_country": "Saudi Arabia",
       "search_title": "Head of Technology"
-    },
-    {
-      "id": "indeed-in-df10c99af6e0a286",
-      "source": "indeed",
-      "title": "IT Infrastructure Director",
-      "company": "Confidential",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=df10c99af6e0a286",
-      "posted": "2026-06-19",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 33,
-      "match_keywords": [
-        "cloud",
-        "infrastructure",
-        "enterprise",
-        "director",
-        "riyadh",
-        "architecture"
-      ],
-      "raw_snippet": "IT Infrastructure Director\n\n**The Company:** Dusan Semesta Raya is hiring an operations leader to modernize and scale our regional technology footprint. This position operates directly out of our corporate hub located in the **Computer Market Block on Olaya Street in Riyadh**.\n\n**Salary All\\-In:** SAR 44,000 monthly\n\n**Core Job Duties:**\n\n* Take total operational control over regional data centers, enterprise networks, server architectures, and cloud\\-integrated systems.\n* Lead the strategy and ",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "IT Director"
     }
   ],
   "kpi": {
     "searches_run": 20,
-    "results_per_search": 3.7,
-    "unique_jobs": 16,
-    "errors": 4
+    "results_per_search": 3.2,
+    "unique_jobs": 11,
+    "errors": 8
   },
   "recommendations": []
 }

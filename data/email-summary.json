@@ -2,90 +2,50 @@
   "meta": {
     "agent": "email-agent",
     "version": "3.0.0",
-    "generated_at": "2026-06-20T21:01:24.674871+03:00",
-    "duration_ms": 43711,
+    "generated_at": "2026-06-21T20:01:03.707596+03:00",
+    "duration_ms": 28147,
     "ttl_hours": 4,
     "status": "success",
     "error": null,
-    "run_id": "cc757708",
+    "run_id": "cd8d34a7",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
     "status": "ok",
-    "scan_time": "2026-06-20T21:00:54.116239+03:00",
-    "total_scanned": 32,
+    "scan_time": "2026-06-21T20:00:44.791486+03:00",
+    "total_scanned": 16,
     "by_category": {
       "interview_invite": 0,
-      "recruiter_reach": 3,
+      "recruiter_reach": 1,
       "application_ack": 0,
       "rejection": 0,
       "assessment": 0,
       "application_response": 0,
       "follow_up_needed": 0,
-      "job_alert": 1,
-      "other": 28
+      "job_alert": 0,
+      "other": 15
     },
     "interview_invites": [],
     "recruiter_messages": [
       {
-        "id": "362587",
-        "from": "Abbott Talent Acquisition <donotreply@jobalerts.abbott.com>",
-        "subject": "Complete your application with Abbott",
-        "date": "Sat, 20 Jun 2026 13:02:48 +0000 (UTC)",
+        "id": "362651",
+        "from": "\"Pat @ Starter Story\" <pat@starterstory.com>",
+        "subject": "How this app makes $25K/month",
+        "date": "Sun, 21 Jun 2026 13:07:06 +0000 (UTC)",
         "unread": true,
         "priority": "HIGH",
-        "score": 7,
-        "pipeline_match": "RAPP",
-        "confidence": 90,
-        "confidence_label": "high",
-        "evidence": [
-          "matched active pipeline company: RAPP",
-          "hiring sender context",
-          "hiring/application context",
-          "recruiter outreach classification",
-          "high priority score: 7"
-        ],
-        "why_actionable": "matched active pipeline company: RAPP | hiring sender context | hiring/application context | recruiter outreach classification"
-      },
-      {
-        "id": "362588",
-        "from": "Abbott Talent Acquisition <donotreply@jobalerts.abbott.com>",
-        "subject": "Complete your application with Abbott",
-        "date": "Sat, 20 Jun 2026 13:04:58 +0000 (UTC)",
-        "unread": true,
-        "priority": "HIGH",
-        "score": 7,
-        "pipeline_match": "RAPP",
-        "confidence": 90,
-        "confidence_label": "high",
-        "evidence": [
-          "matched active pipeline company: RAPP",
-          "hiring sender context",
-          "hiring/application context",
-          "recruiter outreach classification",
-          "high priority score: 7"
-        ],
-        "why_actionable": "matched active pipeline company: RAPP | hiring sender context | hiring/application context | recruiter outreach classification"
-      },
-      {
-        "id": "362603",
-        "from": "talabat <update.en@em.talabat.com>",
-        "subject": "=?UTF-8?B?2K7YtdmFICAgODAg2Kwg2YXYs9iq2YbZitmDIQ==?=",
-        "date": "Sat, 20 Jun 2026 14:36:55 +0000 (UTC)",
-        "unread": true,
-        "priority": "HIGH",
-        "score": 6,
-        "pipeline_match": "talabat",
+        "score": 10,
+        "pipeline_match": "SAP",
         "confidence": 75,
         "confidence_label": "medium",
         "evidence": [
-          "matched active pipeline company: talabat",
+          "matched active pipeline company: SAP",
           "hiring/application context",
           "recruiter outreach classification",
-          "high priority score: 6"
+          "high priority score: 10"
         ],
-        "why_actionable": "matched active pipeline company: talabat | hiring/application context | recruiter outreach classification | high priority score: 6"
+        "why_actionable": "matched active pipeline company: SAP | hiring/application context | recruiter outreach classification | high priority score: 10"
       }
     ],
     "application_acks": [],
@@ -93,180 +53,98 @@
     "assessments": [],
     "application_responses": [],
     "follow_ups_needed": [],
-    "job_alerts": [
-      {
-        "id": "362585",
-        "from": "GulfTalent Jobs <jobs@gulftalent.com>",
-        "subject": "J10 Consulting needs a Project Director (High Rise)",
-        "date": "Sat, 20 Jun 2026 07:35:47 -0500",
-        "unread": true,
-        "priority": "LOW",
-        "score": 0,
-        "pipeline_match": null,
-        "confidence": 25,
-        "confidence_label": "very_low",
-        "evidence": [
-          "automated job alert",
-          "known recruiter/job domain",
-          "hiring sender context",
-          "noise/job-alert guard applied"
-        ],
-        "why_actionable": "not actionable: automated job alert | known recruiter/job domain | hiring sender context | noise/job-alert guard applied"
-      }
-    ],
-    "actionable_count": 3,
+    "job_alerts": [],
+    "actionable_count": 1,
     "hot_alerts": [],
     "signals": [
       {
-        "company": "RAPP",
+        "company": "SAP",
         "signal": "recruiter_email",
-        "subject": "Complete your application with Abbott",
-        "sender": "Abbott Talent Acquisition <donotreply@jobalerts.abbott.com>",
+        "subject": "How this app makes $25K/month",
+        "sender": "\"Pat @ Starter Story\" <pat@starterstory.com>",
         "job_ids": [
-          "li-4430709777"
+          "linkedin_jobspy-li-4427326715",
+          "linkedin_jobspy-li-4426803035",
+          "indeed-in-b2195113ff678ef7",
+          "indeed-in-b7591ff66cc5a732",
+          "linkedin_jobspy-li-4380812358",
+          "linkedin-li-4349578134",
+          "linkedin-li-4394078700",
+          "linkedin-li-4380812358",
+          "linkedin-li-4362170335",
+          "linkedin-li-4362562926",
+          "linkedin-li-4385935615",
+          "linkedin-li-4353703506",
+          "app-005",
+          "cv-5fbf4a9aa7",
+          "linkedin-li-4385294885"
         ],
-        "score": 7,
-        "timestamp": "2026-06-20T21:00:53.804794+03:00"
-      },
-      {
-        "company": "RAPP",
-        "signal": "recruiter_email",
-        "subject": "Complete your application with Abbott",
-        "sender": "Abbott Talent Acquisition <donotreply@jobalerts.abbott.com>",
-        "job_ids": [
-          "li-4430709777"
-        ],
-        "score": 7,
-        "timestamp": "2026-06-20T21:00:53.824133+03:00"
-      },
-      {
-        "company": "talabat",
-        "signal": "recruiter_email",
-        "subject": "=?UTF-8?B?2K7YtdmFICAgODAg2Kwg2YXYs9iq2YbZitmDIQ==?=",
-        "sender": "talabat <update.en@em.talabat.com>",
-        "job_ids": [
-          "linkedin_jobspy-li-4407693428",
-          "linkedin_jobspy-li-4416306146",
-          "linkedin-li-4415007377",
-          "linkedin_jobspy-li-4397262230",
-          "linkedin-li-4370418095",
-          "linkedin-li-4389537891",
-          "linkedin-li-4375708512"
-        ],
-        "score": 6,
-        "timestamp": "2026-06-20T21:00:54.018604+03:00"
+        "score": 10,
+        "timestamp": "2026-06-21T20:00:44.586150+03:00"
       }
     ],
     "pipeline_review_candidates": [
       {
-        "timestamp": "2026-06-20T21:00:54.116264+03:00",
+        "timestamp": "2026-06-21T20:00:44.791509+03:00",
         "review_type": "possible_recruiter_outreach",
         "category": "recruiter_reach",
-        "email_id": "362587",
-        "subject": "Complete your application with Abbott",
-        "from": "Abbott Talent Acquisition <donotreply@jobalerts.abbott.com>",
+        "email_id": "362651",
+        "subject": "How this app makes $25K/month",
+        "from": "\"Pat @ Starter Story\" <pat@starterstory.com>",
         "priority": "HIGH",
-        "pipeline_match": "RAPP",
-        "status": "needs_human_review"
-      },
-      {
-        "timestamp": "2026-06-20T21:00:54.116272+03:00",
-        "review_type": "possible_recruiter_outreach",
-        "category": "recruiter_reach",
-        "email_id": "362588",
-        "subject": "Complete your application with Abbott",
-        "from": "Abbott Talent Acquisition <donotreply@jobalerts.abbott.com>",
-        "priority": "HIGH",
-        "pipeline_match": "RAPP",
-        "status": "needs_human_review"
-      },
-      {
-        "timestamp": "2026-06-20T21:00:54.116276+03:00",
-        "review_type": "possible_recruiter_outreach",
-        "category": "recruiter_reach",
-        "email_id": "362603",
-        "subject": "=?UTF-8?B?2K7YtdmFICAgODAg2Kwg2YXYs9iq2YbZitmDIQ==?=",
-        "from": "talabat <update.en@em.talabat.com>",
-        "priority": "HIGH",
-        "pipeline_match": "talabat",
+        "pipeline_match": "SAP",
         "status": "needs_human_review"
       }
     ],
     "llm_analysis": {
       "actionable_emails": [
         {
-          "id": "362587",
-          "subject": "Complete your application with Abbott",
-          "from": "Abbott Talent Acquisition <donotreply@jobalerts.abbott.com>",
-          "date": "Sat, 20 Jun 2026 13:02:48 +0000 (UTC)",
-          "category": "recruiter_reach",
-          "urgency": "high",
-          "intent": "Abbott wants Ahmed to complete the unfinished Commercial Execution Director application.",
-          "action": "respond",
-          "response_deadline": "48h",
-          "notes": "Complete application soon; not an interview invite."
-        },
-        {
-          "id": "362588",
-          "subject": "Complete your application with Abbott",
-          "from": "Abbott Talent Acquisition <donotreply@jobalerts.abbott.com>",
-          "date": "Sat, 20 Jun 2026 13:04:58 +0000 (UTC)",
+          "id": "362651",
+          "subject": "How this app makes $25K/month",
+          "from": "\"Pat @ Starter Story\" <pat@starterstory.com>",
+          "date": "Sun, 21 Jun 2026 13:07:06 +0000 (UTC)",
           "category": "recruiter_reach",
           "urgency": "low",
-          "intent": "Abbott repeats the request to complete the same unfinished Commercial Execution Director application.",
-          "action": "no_action",
+          "intent": "The sender is sharing a newsletter-style startup/app-building story and promotional content.",
+          "action": "read_and_file",
           "response_deadline": "when convenient",
-          "notes": "Duplicate of 362587; act on one Abbott email only."
-        },
-        {
-          "id": "362603",
-          "subject": "=?UTF-8?B?2K7YtdmFICAgODAg2Kwg2YXYs9iq2YbZitmDIQ==?=",
-          "from": "talabat <update.en@em.talabat.com>",
-          "date": "Sat, 20 Jun 2026 14:36:55 +0000 (UTC)",
-          "category": "recruiter_reach",
-          "urgency": "low",
-          "intent": "Talabat appears to be promoting a food-order voucher, not a recruiter opportunity.",
-          "action": "no_action",
-          "response_deadline": "when convenient",
-          "notes": "False positive; body does not show hiring intent."
+          "notes": "Excerpt does not prove recruiter outreach or job opportunity."
         }
       ],
       "summary": {
-        "total_actionable": 3,
+        "total_actionable": 1,
         "critical_count": 0,
         "requires_interview_prep": false,
         "requires_assessment": false,
-        "recruiter_top_opportunities": [
-          "Abbott Talent Acquisition - Commercial Execution Director application"
-        ],
-        "top_priority": "362587",
-        "daily_focus": "Finish the Abbott Commercial Execution Director application within 48h and ignore the duplicate and Talabat false positive."
+        "recruiter_top_opportunities": [],
+        "top_priority": null,
+        "daily_focus": "No urgent career action is needed from this email; focus on real recruiter or interview messages."
       }
     }
   },
   "kpi": {
-    "emails_processed": 32,
-    "actionable": 3,
+    "emails_processed": 16,
+    "actionable": 1,
     "interviews_detected": 0,
-    "recruiter_messages": 3,
-    "unread_actionable": 3
+    "recruiter_messages": 1,
+    "unread_actionable": 1
   },
   "recommendations": [
     {
-      "id": "rec-cc757708-0",
+      "id": "rec-cd8d34a7-0",
       "action": "review_and_respond",
-      "target": "3 recruiter message(s)",
+      "target": "1 recruiter message(s)",
       "reason": "Recruiter outreach could lead to opportunities",
       "urgency": "high",
-      "timestamp": "2026-06-20T21:01:24.674741+03:00"
+      "timestamp": "2026-06-21T20:01:03.707419+03:00"
     },
     {
-      "id": "rec-cc757708-1",
+      "id": "rec-cd8d34a7-1",
       "action": "check_inbox",
-      "target": "3 unread actionable email(s)",
+      "target": "1 unread actionable email(s)",
       "reason": "Unread emails need attention",
       "urgency": "high",
-      "timestamp": "2026-06-20T21:01:24.674761+03:00"
+      "timestamp": "2026-06-21T20:01:03.707446+03:00"
     }
   ]
 }

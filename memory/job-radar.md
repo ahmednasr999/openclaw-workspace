@@ -1,6 +1,6 @@
-# Job Radar: 2026-06-21
+# Job Radar: 2026-06-22
 
-*Generated: 2026-06-21 06:00 UTC*
+*Generated: 2026-06-22 06:00 UTC*
 
 *Engine: JobSpy (LinkedIn, Indeed, Google Jobs)*
 
@@ -10,47 +10,7 @@
 
 ### Digital Transformation Executive (UAE)
 
-- **Head of Digital Solutions - UAE National** at Ministry of Community Empowerment 🎯
-  📍 Dubai, United Arab Emirates | 📅 2026-06-19
-  🔗 https://www.linkedin.com/jobs/view/4430795687
-
-- **SVP Technology** at Kempinski Hotels 🎯
-  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-06-19
-  🔗 https://www.linkedin.com/jobs/view/4426838131
-
-- **Vice President of Artificial Intelligence** at Hays 🎯
-  📍 Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates | 📅 2026-06-19
-  🔗 https://www.linkedin.com/jobs/view/4428252282
-
-- **Head of Digital Platforms, AI & Innovation** at Confidential 🎯
-  📍 Abu Dhabi Emirate, United Arab Emirates | 📅 2026-06-17
-  🔗 https://www.linkedin.com/jobs/view/4427307899
-
-- **Head of Digital Portfolio & Governance** at Confidential 🎯
-  📍 Abu Dhabi Emirate, United Arab Emirates | 📅 2026-06-17
-  🔗 https://www.linkedin.com/jobs/view/4427319408
-
-- **Head of Technology & Digital Services** at Confidential Careers 🎯
-  📍 Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates | 📅 2026-06-17
-  🔗 https://www.linkedin.com/jobs/view/4429939089
-
-- **Director, Digital Engineering (UAE National)** at Michael Page 🎯
-  📍 Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates | 📅 2026-06-17
-  🔗 https://www.linkedin.com/jobs/view/4429962582
-
-- **Head of Digital Assets and Emerging Technologies | 📍 Mauritius (Preferred) | Hybrid: Mauritius / Dubai** at MCB Group 🎯
-  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-06-16
-  🔗 https://www.linkedin.com/jobs/view/4426484424
-
-- **Head of Data & AI - Middle East for Capgemini Invent** at Capgemini Invent 🎯
-  📍 Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates | 📅 2026-06-16
-  🔗 https://www.linkedin.com/jobs/view/4428820836
-
-- **Senior Vice President & Head of Digital Channels - Business Banking** at RAKBANK 🎯
-  📍  | 📅 nan
-  🔗 https://www.linkedin.com/jobs/view/4431325835
-
-*10 results (10 executive-level, 0 likely ghost jobs)*
+No results found.
 
 ### Digital Transformation Executive (Saudi)
 
@@ -66,83 +26,111 @@ No results found.
 
 ### PMO / Program Director (GCC)
 
-No results found.
-
-### HealthTech / AI Executive (GCC)
-
 - **Head of Delivery - AI FinTech SaaS Platform** at Hays 🎯
   📍 Dubai, United Arab Emirates | 📅 2026-06-19
   🔗 https://www.linkedin.com/jobs/view/4428226607
 
-- **Chief Product Officer - Odoo SAAS** at Confidential 🎯
-  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-06-19
-  🔗 https://www.linkedin.com/jobs/view/4428231889
+- **Senior Project Manager - Transformation Office** at Leru Partners
+  📍 Dubai, United Arab Emirates | 📅 2026-06-19
+  🔗 https://www.linkedin.com/jobs/view/4429645755
+
+- **Senior Project Manager** at Kingston Stanley
+  📍 Dubai, United Arab Emirates | 📅 2026-06-19
+  🔗 https://www.linkedin.com/jobs/view/4429657075
 
 - **Practice Director, Expert Services MEA** at ServiceNow 🎯
   📍 Dubai, Dubai, United Arab Emirates | 📅 2026-06-19
   🔗 https://www.linkedin.com/jobs/view/4431125373
 
-- **Director, Information Technology - Data Analytics & AI Strategy** at Atlantis Resorts 🎯
-  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-06-18
-  🔗 https://www.linkedin.com/jobs/view/4427826517
+- **Portfolio Project Manager (MEA Region)** at Creatio
+  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-06-19
+  🔗 https://www.linkedin.com/jobs/view/4422015009
 
-- **Head of Robotics & AI** at CTRL+R 🎯
-  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-06-17
-  🔗 https://www.linkedin.com/jobs/view/4427345084
+- **Project Expert / Project Director – Construction** at Menasa & Partners FZ-LLC 🎯
+  📍 Dubai, United Arab Emirates | 📅 2026-06-18
+  🔗 https://www.linkedin.com/jobs/view/4429062809
 
-- **VP of Data Engineering & Analytics** at Talent Seed 🎯
+- **Program Manager – Strategic Execution** at African Queen Marketing Management
+  📍 Dubai, United Arab Emirates | 📅 2026-06-18
+  🔗 https://www.linkedin.com/jobs/view/4427817647
+
+- **Senior Project Manager – International Projects & Planning** at Khazna Data Centers ⛔
+  📍 Dubai, United Arab Emirates | 📅 2026-06-18
+  🔗 https://www.linkedin.com/jobs/view/4430710260
+
+- **Project Director-Ccgt** at Aljomaih Energy and Water Company 🎯
+  📍 Al Taweelah, Abu Dhabi Emirate, United Arab Emirates | 📅 2026-06-18
+  🔗 https://www.linkedin.com/jobs/view/4430421336
+
+- **Head of Enterprise Applications** at DAMAC Group 🎯
   📍 Dubai, United Arab Emirates | 📅 2026-06-17
-  🔗 https://www.linkedin.com/jobs/view/4427352247
+  🔗 https://www.linkedin.com/jobs/view/4413309893
+
+- **Director Infrastructure UAE** at Alvarez & Marsal 🎯
+  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-06-17
+  🔗 https://www.linkedin.com/jobs/view/4428715241
 
 - **Director, Strategy & Transformation** at SUMWON STUDIOS 🎯
   📍 Dubai, United Arab Emirates | 📅 2026-06-16
   🔗 https://www.linkedin.com/jobs/view/4426466733
 
-*7 results (7 executive-level, 0 likely ghost jobs)*
+- **Commercial Director - Major Programmes (Infrastructure)** at Turner & Townsend 🎯
+  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-06-16
+  🔗 https://www.linkedin.com/jobs/view/4426821003
+
+- **Project Director** at Sinopack Search 🎯
+  📍 Dubai, United Arab Emirates | 📅 nan
+  🔗 https://www.linkedin.com/jobs/view/4431387604
+
+- **Global Program engineer Manager -  Hyperscale Data Centers** at Eaton
+  📍 Dubai, Dubai, United Arab Emirates | 📅 nan
+  🔗 https://www.linkedin.com/jobs/view/4403831596
+
+*15 results (9 executive-level, 0 likely ghost jobs)*
+
+### HealthTech / AI Executive (GCC)
+
+No results found.
 
 ### FinTech / Payments Executive (GCC)
 
-- **Platform Owner - Core, Lending & Wealth** at RAKBANK
-  📍 Dubai, United Arab Emirates | 📅 2026-06-19
-  🔗 https://www.linkedin.com/jobs/view/4429650604
+- **MEA FIG And SWFs - Vice President** at TALENTMATE 🎯
+  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-06-20
+  🔗 https://www.linkedin.com/jobs/view/4431319494
 
-- **Vice President - Head of Working Capital and Real Estate Lending** at RAKBANK 🎯
-  📍 Dubai, United Arab Emirates | 📅 2026-06-19
-  🔗 https://www.linkedin.com/jobs/view/4429646769
+- **MEA FIG & SWFs - Vice President** at Mizuho 🎯
+  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-06-19
+  🔗 https://www.linkedin.com/jobs/view/4430015343
 
-- **Head of Operations - Crypto** at Generative Futures ⛔
+- **Vice President - Joinery** at Ambitek UAE 🎯
   📍 Dubai, United Arab Emirates | 📅 2026-06-18
-  🔗 https://www.linkedin.com/jobs/view/4427835309
+  🔗 https://www.linkedin.com/jobs/view/4430450159
 
-- **Head of Risk** at Confidential Jobs 🎯
-  📍 Dubai, United Arab Emirates | 📅 2026-06-18
-  🔗 https://www.linkedin.com/jobs/view/4430428895
-
-- **Payments Transformation Lead** at Mercury 🎯
+- **Vice President** at TALENTMATE 🎯
   📍 Dubai, Dubai, United Arab Emirates | 📅 2026-06-17
-  🔗 https://www.linkedin.com/jobs/view/4427334620
+  🔗 https://www.linkedin.com/jobs/view/4430171355
 
-- **Head of Sales (GCC)** at Wiseasy 🎯
-  📍 Dubai, United Arab Emirates | 📅 2026-06-17
-  🔗 https://www.linkedin.com/jobs/view/4428478468
+- **UAEN Only - VP Operational Emissions** at TALENTMATE 🎯
+  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-06-16
+  🔗 https://www.linkedin.com/jobs/view/4426844518
 
-- **Director of Products & Strategic Transformation** at du Pay 🎯
-  📍 Dubai, United Arab Emirates | 📅 2026-06-16
-  🔗 https://www.linkedin.com/jobs/view/4426494417
-
-*7 results (5 executive-level, 0 likely ghost jobs)*
+*5 results (5 executive-level, 0 likely ghost jobs)*
 
 ### IT Director / VP IT (GCC)
 
-No results found.
+- **Associate Vice President - Client Support Lead Wholesale Banking Technology** at TALENTMATE ⛔
+  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-06-20
+  🔗 https://www.linkedin.com/jobs/view/4431328452
+
+*1 results (0 executive-level, 0 likely ghost jobs)*
 
 ---
 
 ## Summary
 
-- Total unique jobs found: 24
-- Executive-level matches: 22
-- Already in pipeline: 5
-- **New jobs added to pipeline: 17**
+- Total unique jobs found: 21
+- Executive-level matches: 14
+- Already in pipeline: 7
+- **New jobs added to pipeline: 7**
 
 *Ghost job filter: Jobs >14 days old or with vague indicators (fast-paced, rockstar, ninja, wear many hats) are flagged.*

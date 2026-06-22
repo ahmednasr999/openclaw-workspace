@@ -1,0 +1,17 @@
+# Daily Notes - 2026-06-21
+
+## HR / Job Search
+
+- HR Agent reported Ahmed requested a fresh LinkedIn +30 job submission campaign from supplied LinkedIn collections and instructed the lane not to stop before 100%.
+- Campaign completed: 30/30 verified LinkedIn Easy Apply submissions on 2026-06-21.
+- Ledgers: `/root/.openclaw/workspace-hr/reports/linkedin-top-applicant-plus30-2026-06-21.jsonl` (8 submissions) and `/root/.openclaw/workspace-hr/reports/linkedin-recommended-plus30-2026-06-21.jsonl` (22 submissions).
+- No action needed from NASR unless recruiter or interview movement appears.
+- HR Agent later reported a fresh +30 LinkedIn submission push is resuming through the protected LinkedIn Easy Apply lane with duplicate locks, exact CV verification, and daily-limit detection; no NASR action needed.
+
+## OpenClaw Runtime
+
+- Ahmed approved updating OpenClaw from `2026.6.8` to stable `2026.6.9` after checking release benefit and risk.
+- Completed controlled update with pre-update backup at `/root/.openclaw/backups/pre-openclaw-update-20260621-140536`.
+- Verified CLI/gateway `2026.6.9`, gateway active, connectivity OK, config valid, service file refreshed to `v2026.6.9`, Codex/tokenjuice plugins updated to `2026.6.9`, model router still on `openai/gpt-5.5`, runtime patch checker OK.
+- Residual warnings: doctor reports Claude CLI auth warning and legacy plugin install index migration warning; update guard reports inspection-only WARNs for runtime.llm.complete evidence and Codex usage visibility. No runtime failure observed.
+

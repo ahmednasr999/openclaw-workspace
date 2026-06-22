@@ -320,6 +320,14 @@
 | 429 | 🆕 | Mercury | Payments Transformation Lead | Dubai | — | 🆕 Discovered | Radar | 2026-06-21 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4427334620) | — |
 | 430 | 🆕 | Wiseasy | Head of Sales (GCC) | Dubai | — | 🆕 Discovered | Radar | 2026-06-21 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4428478468) | — |
 | 431 | 🆕 | du Pay | Director of Products & Strategic Transformation | Dubai | — | 🆕 Discovered | Radar | 2026-06-21 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4426494417) | — |
+| 432 | 🆕 | Menasa & Partners FZ-LLC | Project Expert / Project Director – Construction | Dubai | — | 🆕 Discovered | Radar | 2026-06-22 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4429062809) | — |
+| 433 | 🆕 | Aljomaih Energy and Water Company | Project Director-Ccgt | Al Taweelah | — | 🆕 Discovered | Radar | 2026-06-22 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4430421336) | — |
+| 434 | 🆕 | DAMAC Group | Head of Enterprise Applications | Dubai | — | 🆕 Discovered | Radar | 2026-06-22 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4413309893) | — |
+| 435 | 🆕 | Alvarez & Marsal | Director Infrastructure UAE | Dubai | — | 🆕 Discovered | Radar | 2026-06-22 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4428715241) | — |
+| 436 | 🆕 | Turner & Townsend | Commercial Director - Major Programmes (Infrastructure) | Dubai | — | 🆕 Discovered | Radar | 2026-06-22 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4426821003) | — |
+| 437 | 🆕 | Sinopack Search | Project Director | Dubai | — | 🆕 Discovered | Radar | 2026-06-22 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4431387604) | — |
+| 438 | 🆕 | TALENTMATE | MEA FIG And SWFs - Vice President | Dubai | — | 🆕 Discovered | Radar | 2026-06-22 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4431319494) | — |
+
 
 
 

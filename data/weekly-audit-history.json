@@ -1,14 +1,6 @@
 {
   "audits": [
     {
-      "date": "2026-04-05",
-      "score": 0,
-      "grade": "F",
-      "critical": 2,
-      "warnings": 10,
-      "infos": 35
-    },
-    {
       "date": "2026-04-12",
       "score": 0,
       "grade": "F",
@@ -95,7 +87,15 @@
       "critical": 0,
       "warnings": 1,
       "infos": 44
+    },
+    {
+      "date": "2026-06-21",
+      "score": 85,
+      "grade": "B",
+      "critical": 0,
+      "warnings": 1,
+      "infos": 44
     }
   ],
-  "updated": "2026-06-14T08:20:24.235606+03:00"
+  "updated": "2026-06-21T08:20:26.721023+03:00"
 }

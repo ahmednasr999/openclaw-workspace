@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-20T08:38:20.752721+03:00",
+  "last_updated": "2026-06-21T10:38:41.519749+03:00",
   "items": [
     {
       "company": "Netcracker Technology in Dubai, United Arab Emirates â Apply on Wuzzuf",
@@ -431,7 +431,42 @@
       "job_url": "https://www.linkedin.com/jobs/view/4426803035",
       "verdict": "SUBMIT",
       "queued_at": "2026-06-17T02:46:29.015355+03:00",
-      "status": "queued"
+      "status": "researched",
+      "exported_at": "2026-06-21T05:10:31.411150Z",
+      "processed_at": "2026-06-21T05:15:17Z",
+      "warm_intro_rating": "medium",
+      "warm_intro_candidates": [
+        {
+          "name": "Christine Pereira",
+          "title": "Manager - Talent Acquisition - MENA at Publicis Sapient",
+          "linkedin_url": "https://ae.linkedin.com/in/christine-pereira-59a3a315",
+          "why": "Dubai-based MENA talent acquisition route at Publicis Sapient. Best first recruiter path for the Dubai Agile Program Manager / Endur Senior Manager mandate."
+        },
+        {
+          "name": "Himani Gautam",
+          "title": "Technology & Consulting Talent Specialist | MENA Hiring | Publicis Sapient",
+          "linkedin_url": "https://ae.linkedin.com/in/himani-gautam",
+          "why": "MENA hiring profile with Publicis Sapient and technology/consulting talent focus. Strong secondary recruiter route if Christine is not responsive."
+        },
+        {
+          "name": "Amit Jain",
+          "title": "Openlink Endur/Findur Specialist, ETRM at Publicis Sapient",
+          "linkedin_url": "https://www.linkedin.com/in/amitprjain",
+          "why": "Domain-side route tied directly to Openlink Endur / ETRM leadership at Publicis Sapient. Useful for credibility validation, but less certain as a hiring-owner route."
+        }
+      ],
+      "queue_notes": [
+        "Weekly script exported this item on 2026-06-21; processed in the same Sunday queue run.",
+        "Local LinkedIn job data confirms a Dubai Agile Program Management role focused on large-scale TRM/ETRM Endur delivery, multi-workstream governance, Agile/SAFe or hybrid execution, vendor management, and GCC client environments.",
+        "Warmth is medium: Ahmed's program governance and GCC transformation background fits the delivery side, but the Endur/ETRM specialization is a gap, so recruiter-led outreach is safer than a direct hiring-manager pitch.",
+        "Authenticated LinkedIn browser tooling/cookie session was not available in this cron turn, so no cookies were inspected or modified and no LinkedIn actions were taken. Candidate validation used local LinkedIn job exports plus public LinkedIn profile/search snippets."
+      ],
+      "next_actions": [
+        "Draft-first approach only; do not send connection requests without Ahmed approval.",
+        "Prioritize Christine Pereira first, then Himani Gautam as the MENA recruiter route.",
+        "Use Amit Jain only as a domain-side credibility route if Ahmed wants to build Endur/ETRM context before recruiter follow-up.",
+        "Suggested connection note: Hi Christine - I saw Publicis Sapient's Agile Program Manager / Endur Senior Manager mandate in Dubai. My background is GCC digital transformation, PMO governance, and multi-workstream delivery across healthcare and payments. Happy to connect if this search is still active."
+      ]
     },
     {
       "company": "ServiceNow",
@@ -440,14 +475,65 @@
       "job_url": "https://www.linkedin.com/jobs/view/4431125373",
       "verdict": "SUBMIT",
       "queued_at": "2026-06-20T08:38:20.752712+03:00",
+      "status": "researched",
+      "exported_at": "2026-06-21T05:10:31.411179Z",
+      "processed_at": "2026-06-21T05:15:17Z",
+      "warm_intro_rating": "high",
+      "warm_intro_candidates": [
+        {
+          "name": "Paul Hanley",
+          "title": "Customer Excellence Group Area Lead for Middle East and Africa at ServiceNow",
+          "linkedin_url": "https://ae.linkedin.com/in/paul-hanley-660a2918",
+          "why": "Direct warm route: public LinkedIn post says ServiceNow is hiring for this Dubai Practice Director role and identifies Prijith Vijayan's Expert Services team."
+        },
+        {
+          "name": "Prijith Vijayan",
+          "title": "Director, Expert Services MEA & Core Business Workflows EMEA Practice at ServiceNow",
+          "linkedin_url": "https://uk.linkedin.com/in/prijith-vijayan-66b20918",
+          "why": "Likely business-side hiring owner or team leader: public profile snippet matches Director, Expert Services MEA, and the hiring post points to his Expert Services team."
+        },
+        {
+          "name": "Alia Khattab",
+          "title": "Senior Director, GTM Talent Acquisition EMEA at ServiceNow",
+          "linkedin_url": "https://ae.linkedin.com/in/aliakhattab",
+          "why": "Senior EMEA talent acquisition route based in the UAE. Good escalation path if the business-side route does not respond."
+        },
+        {
+          "name": "Zeeshan Shaikh",
+          "title": "Principal Engagement Manager - ServiceNow",
+          "linkedin_url": "https://ae.linkedin.com/in/zeeshankshaikh",
+          "why": "Dubai-based ServiceNow Expert Services engagement route; public snippet says he leads Expert Services engagements across key MEA accounts."
+        }
+      ],
+      "queue_notes": [
+        "Weekly script exported this item on 2026-06-21; processed in the same Sunday queue run.",
+        "Local LinkedIn job data confirms a Dubai Practice Director role focused on MEA Expert Services delivery strategy, senior consultant leadership, nearshore/offshore delivery center setup, governance, partner execution, revenue/margin, utilization, customer success, and enterprise platform adoption.",
+        "This is the warmest queued company this week. The role maps strongly to Ahmed's GCC transformation, governance, executive delivery, and digital platform adoption narrative; the ServiceNow-specific platform depth is the main positioning gap.",
+        "A public LinkedIn hiring post on 2026-06-21 says ServiceNow is hiring for this role and names Prijith Vijayan's Expert Services team, creating a stronger direct-intro path than recruiter-only outreach.",
+        "Authenticated LinkedIn browser tooling/cookie session was not available in this cron turn, so no cookies were inspected or modified and no LinkedIn actions were taken. Candidate validation used local LinkedIn job exports plus public LinkedIn profile/search snippets."
+      ],
+      "next_actions": [
+        "Draft-first approach only; do not send connection requests without Ahmed approval.",
+        "Prioritize Paul Hanley first because he publicly amplified the exact role, then Prijith Vijayan as the likely Expert Services team leader.",
+        "Use Alia Khattab as the senior EMEA TA route if the business-side route is cold; use Zeeshan Shaikh as a peer/domain route for MEA Expert Services context.",
+        "Suggested connection note: Hi Paul - I saw your post on ServiceNow's Practice Director, Expert Services MEA role in Dubai. My work has focused on GCC transformation delivery, PMO governance, executive stakeholder management, and scaling operating models across healthcare and payments. Happy to connect."
+      ]
+    },
+    {
+      "company": "Generative Futures",
+      "job_title": "Head of Operations - Crypto",
+      "source": "linkedin_jobspy",
+      "job_url": "https://www.linkedin.com/jobs/view/4427835309",
+      "verdict": "SUBMIT",
+      "queued_at": "2026-06-21T10:38:41.519737+03:00",
       "status": "queued"
     }
   ],
   "last_weekly_review": {
-    "reviewed_at": "2026-06-14T05:35:00Z",
-    "cron": "CMO Weekly Outreach Queue — Sunday",
-    "queued_count": 3,
+    "reviewed_at": "2026-06-21T05:15:17Z",
+    "cron": "CMO Weekly Outreach Queue - Sunday",
+    "queued_count": 2,
     "status": "processed",
-    "note": "Weekly script ran and exported 3 queued items. Alchemy Global Talent Solutions, PwC Middle East, and TALENTMATE were researched using local job/outreach data plus public LinkedIn search snippets. Authenticated browser tooling was unavailable in this cron turn and the LinkedIn skill forbids cookie extraction or repair, so cookies were not inspected or modified. No external LinkedIn actions were taken; next actions require Ahmed approval."
+    "note": "Weekly script ran and exported 2 queued items. Publicis Sapient and ServiceNow were researched using local LinkedIn job/outreach data plus public LinkedIn snippets. Authenticated LinkedIn browser/cookie tooling was unavailable in this cron turn, so cookies were not inspected or modified. No external LinkedIn actions were taken; next actions require Ahmed approval."
   }
 }

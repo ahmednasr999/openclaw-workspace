@@ -1,0 +1,59 @@
+Disk guard triggered at 2026-06-21T07:07:01+03:00
+Threshold: 75%
+Before: 83G used / 14G free / 86% used
+
+Safe cleanup: workspace tmp files older than 2 days, preserving guard logs and current research markdown.
+
+Safe cleanup: OpenClaw logs older than 7 days.
+
+Safe cleanup: stale system temp files older than 3 days.
+
+Safe cleanup: OpenClaw compile cache entries older than 0 days.
+
+Safe cleanup: Hermes rebuildable browser cache and stale generated frame folders.
+/srv/hermes-pilot/.cache/ms-playwright
+/srv/hermes-pilot/.cache/pip
+
+Safe cleanup: apt package download caches.
+
+Safe cleanup: npm/pnpm metadata logs and generic temp caches.
+Removed all cached metadata files
+Removed 0 files
+Removed 0 packages
+npm warn using --force Recommended protections disabled.
+Total reclaimed space: 0B
+
+Safe cleanup: Codex SQLite log retention and vacuum, preserving WARN/ERROR and recent records.
+Compacting /root/.openclaw/agents/cmo/agent/codex-home/logs_2.sqlite before_size=384024576 before_rows=150794 max_id=22413954
+Compacted /root/.openclaw/agents/cmo/agent/codex-home/logs_2.sqlite after_size=384024576 after_rows=150794 freed_bytes=0
+Compacting /root/.openclaw/agents/cto/agent/codex-home/logs_2.sqlite before_size=411484160 before_rows=163550 max_id=29127447
+Compacted /root/.openclaw/agents/cto/agent/codex-home/logs_2.sqlite after_size=411484160 after_rows=163550 freed_bytes=0
+Compacting /root/.openclaw/agents/hr/agent/codex-home/logs_2.sqlite before_size=399847424 before_rows=142228 max_id=96871715
+Compacted /root/.openclaw/agents/hr/agent/codex-home/logs_2.sqlite after_size=399847424 after_rows=142228 freed_bytes=0
+Compacting /root/.openclaw/agents/jobzoom/agent/codex-home/logs_2.sqlite before_size=463728640 before_rows=194032 max_id=12660610
+Compacted /root/.openclaw/agents/jobzoom/agent/codex-home/logs_2.sqlite after_size=463728640 after_rows=194032 freed_bytes=0
+Compacting /root/.openclaw/agents/main/agent/codex-home/logs_2.sqlite before_size=2006794240 before_rows=769701 max_id=74379883
+Compacted /root/.openclaw/agents/main/agent/codex-home/logs_2.sqlite after_size=2006794240 after_rows=769701 freed_bytes=0
+
+Safe cleanup: compress verified OpenClaw snapshot directories, then keep latest 2 compressed archives.
+Compressing /root/openclaw-snapshot-20260620 -> /root/openclaw-snapshot-20260620.tar.zst
+Removed uncompressed snapshot directory: /root/openclaw-snapshot-20260620
+
+Backup/snapshot audit, no destructive pruning by default.
+Backup/snapshot audit: files >= 8G or older than 14 days.
+Backup pruning disabled. Set DISK_GUARD_PRUNE_BACKUPS=1 only after explicit approval.
+
+After: 70G used / 27G free / 73% used
+Largest remaining /root items:
+89M	/root/go
+119M	/root/.deno
+145M	/root/.camofox
+159M	/root/2nd-brain
+234M	/root/.browser-use-env
+314M	/root/.node-llama-cpp
+432M	/root/.local
+794M	/root/.venvs
+1.1G	/root/.cache
+3.6G	/root/.nvm
+21G	/root/.openclaw
+35G	/root
