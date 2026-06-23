@@ -1446,3 +1446,10 @@ An inter-session memory update tried to run `apply_patch` inside `sandbox_exec`,
 ### Do differently
 When editing files from OpenClaw `sandbox_exec`, first use the actual available edit mechanism. If falling back to GNU `patch`, provide a valid unified diff with correct hunk counts and verify the target file before claiming the memory update was recorded.
 
+## 2026-06-22 - Email Briefings Need Body-Proof Urgency
+
+### Preference
+The June 22 email briefing prompts repeatedly required using only provided email evidence: analyze `body_excerpt` and `classification_evidence`, never invent content, and do not mark an email critical unless the excerpt proves an interview, assessment, recruiter opportunity, or reply need.
+### Do differently
+For email briefings and alert formatting, let the body excerpt override noisy categories or high priority scores. Use `read_and_file`/`no_action` or low urgency for acknowledgements and plain rejections, and say `cannot determine from available content` when the supplied excerpt is insufficient.
+

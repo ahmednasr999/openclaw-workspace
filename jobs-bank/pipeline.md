@@ -327,6 +327,15 @@
 | 436 | 🆕 | Turner & Townsend | Commercial Director - Major Programmes (Infrastructure) | Dubai | — | 🆕 Discovered | Radar | 2026-06-22 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4426821003) | — |
 | 437 | 🆕 | Sinopack Search | Project Director | Dubai | — | 🆕 Discovered | Radar | 2026-06-22 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4431387604) | — |
 | 438 | 🆕 | TALENTMATE | MEA FIG And SWFs - Vice President | Dubai | — | 🆕 Discovered | Radar | 2026-06-22 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4431319494) | — |
+| 439 | 🆕 | REEF GROUP | مجموعة ريف | Director of Information Technology | Riyadh | — | 🆕 Discovered | Radar | 2026-06-23 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4431382409) | — |
+| 440 | 🆕 | Carter Murray | VP Systems Development | Riyadh | — | 🆕 Discovered | Radar | 2026-06-23 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4430323488) | — |
+| 441 | 🆕 | RiDiK (a Subsidiary of CLPS. Nasdaq: CLPS) | Head of Artificial Intelligence | Jeddah | — | 🆕 Discovered | Radar | 2026-06-23 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4430375533) | — |
+| 442 | 🆕 | Jacobs | Strategy & Transformation Lead | GCC | — | 🆕 Discovered | Radar | 2026-06-23 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4431745464) | — |
+| 443 | 🆕 | RiDiK (a Subsidiary of CLPS. Nasdaq: CLPS) | AI Transformation Lead | Jeddah | — | 🆕 Discovered | Radar | 2026-06-23 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4430388368) | — |
+| 444 | 🆕 | Esports Foundation | Director Digital Products | Riyadh | — | 🆕 Discovered | Radar | 2026-06-23 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4431672669) | — |
+| 445 | 🆕 | Mizuho | MEA FIG & SWFs - Vice President | Dubai | — | 🆕 Discovered | Radar | 2026-06-23 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4430828421) | — |
+| 446 | 🆕 | Natixis Corporate & Investment Banking | Vice President - Information Security and Technology Risk Compliance, Asia Pacific and Middle East (APME) | Dubai | — | 🆕 Discovered | Radar | 2026-06-23 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4430406030) | — |
+
 
 
 

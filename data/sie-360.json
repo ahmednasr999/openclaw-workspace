@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-21T22:50:17.107390+00:00",
+  "generated": "2026-06-22T22:50:14.197420+00:00",
   "health_score": 82,
   "summary": {
     "ok": 6,
@@ -8,15 +8,15 @@
   },
   "workspace": {
     "root_files": 79,
-    "disk_percent": 87,
-    "disk_used": "83G",
+    "disk_percent": 89,
+    "disk_used": "85G",
     "disk_total": "96G",
     "ram_total": "7.8Gi",
-    "ram_used": "3.1Gi",
+    "ram_used": "2.6Gi",
     "large_files": [
       "/root/.openclaw/agents/main/agent/codex-home/logs_2.sqlite",
       "/root/.openclaw/agents/main/agent/codex-home/state_5.sqlite",
-      "/root/.openclaw/agents/main/agent/codex-home/.tmp/plugins/.git/objects/pack/pack-9c024cee4a30bf5f499f607325fc98733f3d9925.pack",
+      "/root/.openclaw/agents/main/agent/codex-home/.tmp/plugins/.git/objects/pack/pack-4ba8e81277a0c5554990f2a383c806378c595212.pack",
       "/root/.openclaw/agents/main/agent/codex-home/sessions/2026/06/14/rollout-2026-06-14T21-34-27-019ec769-e99b-7b01-b23d-7d0b611b65d2.jsonl",
       "/root/.openclaw/agents/main/agent/codex-home/sessions/2026/06/14/rollout-2026-06-14T21-25-56-019ec762-1e1b-7c02-a70d-7a7e4c5cc5ff.jsonl",
       "/root/.openclaw/agents/main/agent/codex-home/sessions/2026/06/10/rollout-2026-06-10T21-19-51-019eb2c3-1a1d-7ad2-9f4d-87beefb669e9.jsonl",
@@ -25,10 +25,10 @@
       "/root/.openclaw/agents/main/agent/codex-home/sessions/2026/05/20/rollout-2026-05-20T12-05-24-019e44a1-f35c-7cd1-a8c0-e8fd2340b0b4.jsonl",
       "/root/.openclaw/agents/main/agent/codex-home/sessions/2026/05/21/rollout-2026-05-21T10-52-56-019e4985-f3c6-7cc3-b638-604cdf5de5c1.jsonl",
       "/root/.openclaw/agents/main/qmd/xdg-cache/qmd/index.sqlite",
-      "/root/.openclaw/agents/main/sessions/sessions.json.bak-2026-06-19",
       "/root/.openclaw/agents/main/sessions/sessions.json",
       "/root/.openclaw/agents/main/sessions/orphan-archive-20260411T125235Z/22c099e1-cc21-4575-b9f1-b5f2b7c3505f.jsonl",
       "/root/.openclaw/agents/main/sessions/sessions.json.bak-2026-06-20",
+      "/root/.openclaw/agents/main/sessions/sessions.json.bak-2026-06-22",
       "/root/.openclaw/agents/main/sessions/archive/sessions-resets.tar.gz",
       "/root/.openclaw/agents/main/sessions/sessions.json.bak-2026-06-21",
       "/root/.openclaw/agents/cmo/agent/codex-home/logs_2.sqlite",
@@ -52,7 +52,7 @@
       "/root/.openclaw/agents/jobzoom/agent/codex-home/.tmp/plugins/.git/objects/pack/pack-9c024cee4a30bf5f499f607325fc98733f3d9925.pack",
       "/root/.openclaw/agents/cto/agent/codex-home/logs_2.sqlite",
       "/root/.openclaw/agents/cto/agent/codex-home/state_5.sqlite",
-      "/root/.openclaw/agents/cto/agent/codex-home/.tmp/plugins/.git/objects/pack/pack-016159465e9e631c6460623affb94cfa55d31bbf.pack",
+      "/root/.openclaw/agents/cto/agent/codex-home/.tmp/plugins/.git/objects/pack/pack-4c7acb374549529d3b66a6555f0a2b7022d7a7c2.pack",
       "/root/.openclaw/agents/hr/agent/codex-home/logs_2.sqlite",
       "/root/.openclaw/agents/hr/agent/codex-home/state_5.sqlite",
       "/root/.openclaw/agents/hr/agent/codex-home/.tmp/plugins/.git/objects/pack/pack-d1d3ede0b7655c37ba4db68e260609ead2ffafc5.pack",
@@ -94,7 +94,7 @@
       "/root/.openclaw/state/openclaw.sqlite",
       "/root/.openclaw/browser/linkedin-login-cdp/OnDeviceHeadSuggestModel/20251024.824731831.14/cr_en-us_500000_index.bin",
       "/root/.openclaw/browser/linkedin-login-cdp/WidevineCdm/4.10.3050.0/_platform_specific/linux_x64/libwidevinecdm.so",
-      "/root/.openclaw/browser/linkedin-login-cdp/Safe Browsing/UrlSoceng.store.4_13426555067579240",
+      "/root/.openclaw/browser/linkedin-login-cdp/Safe Browsing/UrlSoceng.store.4_13426641273962981",
       "/root/.openclaw/browser/linkedin-login-cdp/component_crx_cache/c2d5164cfc9abec6e23b291f8f3425e527d61ad1a38bae6a9aa1711b7d7ad367",
       "/root/.openclaw/browser/linkedin-login-cdp/WasmTtsEngine/20260528.1/bindings_main.wasm",
       "/root/.openclaw/browser/linkedin-login-cdp/WasmTtsEngine/20260611.1/bindings_main.wasm",
@@ -147,8 +147,10 @@
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-06-21_070030.db",
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-05-30_070011.db",
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-06-01_070014.db",
+      "/root/.openclaw/workspace/data/backups/nasr-pipeline-before-rakbank-ref896f-applied-20260622.db",
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-06-17_070025.db",
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-06-10_070023.db",
+      "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-06-22_070026.db",
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-06-16_070024.db",
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-06-03_070013.db",
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-06-13_070030.db",
@@ -181,11 +183,11 @@
       "/root/.openclaw/workspace/newsletter2.png",
       "/root/.openclaw/workspace/newsletter3.png"
     ],
-    "session_mb": 219.8
+    "session_mb": 213.6
   },
   "learnings": {
-    "total": 28,
-    "enforced": 28,
+    "total": 29,
+    "enforced": 29,
     "unenforced": 0,
     "unenforced_list": []
   },
@@ -249,22 +251,22 @@
     {
       "category": "workspace",
       "level": "warn",
-      "message": "Disk: 87% used - approaching 90% threshold"
+      "message": "Disk: 89% used - approaching 90% threshold"
     },
     {
       "category": "workspace",
       "level": "warn",
-      "message": "Large files (>5MB): 166 found in .openclaw"
+      "message": "Large files (>5MB): 168 found in .openclaw"
     },
     {
       "category": "workspace",
       "level": "alert",
-      "message": "Session size: 219.8MB - bloated, review sessions"
+      "message": "Session size: 213.6MB - bloated, review sessions"
     },
     {
       "category": "learnings",
       "level": "ok",
-      "message": "Learnings enforcement: 28/28 (100%)"
+      "message": "Learnings enforcement: 29/29 (100%)"
     },
     {
       "category": "integrations",
@@ -304,7 +306,7 @@
   ],
   "auto_fixed": [],
   "needs_attention": [
-    "Session bloat: 219.8MB - review before deleting (needs human decision)",
-    "Disk usage 87% - needs cleanup decision (do not auto-delete)"
+    "Session bloat: 213.6MB - review before deleting (needs human decision)",
+    "Disk usage 89% - needs cleanup decision (do not auto-delete)"
   ]
 }

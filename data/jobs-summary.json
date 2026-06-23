@@ -2,80 +2,75 @@
   "meta": {
     "agent": "jobs-review",
     "version": "2.0.0",
-    "generated_at": "2026-06-21T10:38:41.569611+03:00",
-    "duration_ms": 78059,
+    "generated_at": "2026-06-22T14:46:14.758102+03:00",
+    "duration_ms": 252972,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "a0aab73a",
+    "run_id": "f4864381",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
-    "generated_at": "2026-06-21T10:38:41.510219+03:00",
-    "total_candidates": 13,
-    "reviewed": 11,
+    "generated_at": "2026-06-22T14:46:14.577439+03:00",
+    "total_candidates": 38,
+    "reviewed": 38,
     "submit": [
       {
-        "id": "linkedin_jobspy-li-4427835309",
+        "id": "linkedin_jobspy-li-4426228517",
         "source": "linkedin_jobspy",
-        "title": "Head of Operations - Crypto",
-        "company": "Generative Futures",
-        "location": "Dubai, United Arab Emirates",
-        "url": "https://www.linkedin.com/jobs/view/4427835309",
-        "posted": "2026-06-18",
-        "seniority": "Director",
+        "title": "Director Project Management Office",
+        "company": "EjadTech - \u0625\u064a\u062c\u0627\u062f \u0627\u0644\u062a\u0642\u0646\u064a\u0629",
+        "location": "Riyadh, Saudi Arabia",
+        "url": "https://www.linkedin.com/jobs/view/4426228517",
+        "posted": "2026-06-11",
+        "seniority": "C-Suite",
         "domain_match": true,
-        "keyword_score": 20,
+        "keyword_score": 26,
         "match_keywords": [
-          "ai",
-          "head of",
-          "uae",
-          "dubai"
+          "pmo",
+          "project management",
+          "director"
         ],
-        "raw_snippet": "**Head of Operations \u2013 Crypto Exchange** \n\n\n\n\n \ud83d\udccd Dubai, UAE \\| Full\\-Time \\|\n \n\n\n\n About the Role\n \n\n\n\n We are seeking an experienced and highly strategic\n **Head of Operations** \n to lead and scale the operational function of a fast\\-growing cryptocurrency exchange based in Dubai. This is a critica",
-        "relevant": false,
-        "filter_reason": "skip-word:crypto",
-        "search_country": "United Arab Emirates",
-        "search_title": "\"Careem\" (\"Chief Technology Officer\" OR CTO OR \"Chief Information Officer\" OR CIO OR \"Head of Technology\" OR \"IT Director\" OR \"Head of IT\" OR \"Chief Digital Officer\" OR CDO OR \"VP Digital Transformation\" OR \"Head of Business Excellence\" OR PMO OR transformation OR director)",
-        "linkedin_id": "li-4427835309",
-        "jd_text": "**Head of Operations \u2013 Crypto Exchange** \n\n\n\n\n \ud83d\udccd Dubai, UAE \\| Full\\-Time \\|\n \n\n\n\n About the Role\n \n\n\n\n We are seeking an experienced and highly strategic\n **Head of Operations** \n to lead and scale the operational function of a fast\\-growing cryptocurrency exchange based in Dubai. This is a critical leadership role responsible for ensuring operational excellence, regulatory readiness, process optimization, and cross\\-functional execution across the business.\n \n\n\n\n The ideal candidate combines deep operational expertise within financial services, fintech, or digital assets with strong leadership skills and a hands\\-on approach to building scalable operational frameworks in a high\\-growth environment.\n \n\n\n\n Key Responsibilities\n \n\n\n* Develop and execute the company's operational strategy in alignment with business objectives.\n* Oversee day\\-to\\-day exchange operations, ensuring efficiency, reliability, and scalability.\n* Lead and manage core operational functions including customer operations, onboarding, payments, settlements, treasury support, and operational risk.\n* Design, implement, and optimize operational processes, controls, and workflows.\n* Partner closely with Compliance, Risk, Finance, Product, Technology, and Executive Leadership teams.\n* Establish and monitor KPIs, SLAs, and operational performance metrics.\n* Ensure operational readiness for new product launches, market expansions, and strategic initiatives.\n* Drive automation and continuous improvement programs to enhance efficiency and customer experience.\n* Support regulatory requirements and operational compliance frameworks within the UAE and other jurisdictions.\n* Build, mentor, and scale high\\-performing operations teams.\n\n\n\n Requirements\n \n\n\n* 8\\+ years of experience in operations leadership roles with some experience in a cryptocurrency exchange.\n* Proven experience managing complex operational environments and scaling teams.\n* Strong understanding of cryptocurrency trading, exchange operations, custody, settlements, liquidity management, and customer lifecycle processes.\n* Experience working within regulated financial services environments.\n* Demonstrated ability to build operational frameworks, policies, and procedures from the ground up.\n* Strong analytical, problem\\-solving, and decision\\-making capabilities.\n* Excellent stakeholder management and communication skills.\n* Bachelor's degree in Business, Finance, Economics, Operations Management, or a related field.\n* Advanced degree or relevant professional certifications are advantageous.\n\n\n\n Preferred Qualifications\n \n\n\n* Previous experience with a crypto exchange, digital asset platform, brokerage, or payment institution.\n* Familiarity with UAE regulatory frameworks and digital asset regulations.\n* Experience supporting licensing, audits, and regulatory examinations.\n* Knowledge of operational risk management and governance frameworks.",
+        "raw_snippet": "Position Summary\n \n\n\n\n The PMO Director is responsible for leading the organization's Project Management Office (PMO) at a strategic level, driving governance, portfolio management, project delivery excellence, and organizational transformation initiatives across technology and consulting services. ",
+        "relevant": true,
+        "filter_reason": null,
+        "search_country": "Kuwait",
+        "search_title": "\"SEHA\" (\"Chief Technology Officer\" OR CTO OR \"Chief Information Officer\" OR CIO OR \"Head of Technology\" OR \"IT Director\" OR \"Head of IT\" OR \"Chief Digital Officer\" OR CDO OR \"VP Digital Transformation\" OR \"Head of Business Excellence\" OR PMO OR transformation OR director)",
+        "linkedin_id": "li-4426228517",
+        "jd_text": "Position Summary\n \n\n\n\n The PMO Director is responsible for leading the organization's Project Management Office (PMO) at a strategic level, driving governance, portfolio management, project delivery excellence, and organizational transformation initiatives across technology and consulting services. The role ensures alignment of project investments with EjadTech\u2019s strategic objectives while maintaining high standards of execution, operational efficiency, and client satisfaction.\n \n\n\n\n Key Responsibilities\n \n\n\n\n 1\\. Strategic PMO Leadership\n \n\n\n* Define and lead the PMO vision, strategy, and operating model aligned with organizational goals.\n* Establish enterprise\\-wide project governance frameworks, methodologies, policies, and standards.\n* Drive PMO maturity and continuous improvement initiatives across the organization.\n* Oversee project portfolio planning, prioritization, and resource allocation.\n* Ensure alignment between business objectives, project investments, and delivery outcomes.\n* Provide executive leadership with portfolio insights, strategic recommendations, and performance reporting.\n\n\n\n 2\\. Portfolio \\& Project Governance\n \n\n\n* Direct and oversee the full portfolio of technology and consulting projects.\n* Ensure projects are delivered within approved scope, budget, timelines, and quality expectations.\n* Monitor portfolio health, project performance, risks, dependencies, and resource utilization.\n* Govern project stage gates, approvals, and executive decision\\-making processes.\n* Ensure contractual commitments, deliverables, and client obligations are fulfilled.\n* Oversee project closure processes, including completion certificates, client sign\\-offs, and formal handovers.\n\n\n\n 3\\. Organizational Performance \\& Operational Excellence\n \n\n\n* Lead the development of PMO tools, dashboards, reporting frameworks, and performance metrics.\n* Establish portfolio management practices that support organizational growth and scalability.\n* Identify and implement operational efficiencies and process improvements.\n* Drive organizational adoption of project management best practices and delivery excellence.\n* Support strategic initiatives, business transformation programs, and corporate planning efforts.\n\n\n\n 4\\. Leadership \\& Capability Development\n \n\n\n* Lead, mentor, and develop PMO managers, project managers, and delivery teams.\n* Build a high\\-performance project management culture across the organization.\n* Foster collaboration between business units, consulting teams, technology teams, and executive leadership.\n* Promote professional development and project management capability building.\n\n\n\n 5\\. Executive \\& Client Stakeholder Management\n \n\n\n* Serve as the primary executive sponsor for PMO governance and portfolio oversight.\n* Build and maintain strong relationships with executive leadership, clients, and strategic partners.\n* Represent EjadTech in executive steering committees, governance boards, and client leadership meetings.\n* Ensure high levels of client satisfaction and long\\-term partnership success.\n\n\n\n Qualifications\n \n\n\n* Bachelor\u2019s degree in Project Management, Engineering, Computer Science, Information Technology, Business Administration, or a related field.\n* Master\u2019s degree (MBA or equivalent) preferred.\n* PMP certification required; PgMP, PMI\\-ACP, PRINCE2, Agile, or equivalent certifications are highly preferred.\n* Minimum 15\\+ years of project management experience, including 5\\+ years in PMO leadership or executive delivery roles.\n* Proven experience leading enterprise PMOs and managing large technology and consulting portfolios.\n* Strong understanding of governance frameworks, portfolio management, organizational transformation, and business strategy.\n\n\n\n Required Skills\n \n\n\n* Executive leadership and organizational management.\n* Strategic portfolio planning and governance.\n* Financial and budget management.\n* Enterprise risk management.\n* Resource and capacity planning.\n* Change management and organizational transformation.\n* Executive communication and stakeholder engagement.\n* Advanced analytical, decision\\-making, and problem\\-solving skills.\n* Fluent in Arabic and English.",
         "source_count": 1,
-        "country": "United Arab Emirates",
-        "industry_bonus": 12,
+        "country": "Saudi Arabia",
+        "industry_bonus": 3,
         "policy_status": "pass",
         "sources": [
           "linkedin"
         ],
-        "first_seen": "2026-06-21",
+        "first_seen": "2026-06-22",
         "career_fit_score": 9,
         "verdict": "SUBMIT",
-        "verdict_reason": "Strong Head of Operations role in Dubai fintech/crypto with clear operational excellence and scaling mandate, though crypto exchange depth is a gap [5D role=2 | seniority=2 | geo=2 | strategic=1 | evidence=2 | fit=9/10 | llm=7 | watchlist=fintech_gcc] [CMO outreach queued for Generative Futures]",
+        "verdict_reason": "Excellent PMO Director match in Riyadh with strategic portfolio governance, delivery excellence, operational performance, and transformation scope. [5D role=2 | seniority=2 | geo=2 | strategic=1 | evidence=2 | fit=9/10 | llm=9] [CMO outreach queued for EjadTech - \u0625\u064a\u062c\u0627\u062f \u0627\u0644\u062a\u0642\u0646\u064a\u0629]",
         "watchlist_matches": {
           "company_hits": [],
-          "domain_hits": [
-            "fintech"
-          ],
-          "categories": [
-            "fintech_gcc"
-          ]
+          "domain_hits": [],
+          "categories": []
         },
-        "ats_score": 68,
-        "ats_verdict": "CONDITIONAL",
+        "ats_score": 76,
+        "ats_verdict": "GO",
         "ats_matched": [
+          "pmo",
+          "project management",
+          "transformation",
+          "portfolio management",
+          "pmp",
           "ai",
-          "fintech",
-          "payment",
+          "erp",
           "governance",
-          "stakeholder management",
-          "automation",
-          "digital",
-          "strategy",
-          "strategic",
-          "kpi"
+          "operating model",
+          "change management"
         ],
         "ats_gaps": [],
-        "llm_fit_score": 7,
+        "llm_fit_score": 9,
         "fit_dimensions": {
           "role": 2,
           "seniority": 2,
@@ -83,44 +78,243 @@
           "strategic": 1,
           "evidence": 2
         }
+      },
+      {
+        "id": "linkedin_jobspy-li-4427931661",
+        "source": "linkedin_jobspy",
+        "title": "Head of Technology (Healthcare)",
+        "company": "Dah Chong Hong Holdings Limited",
+        "location": "Hong Kong, Hong Kong SAR",
+        "url": "https://www.linkedin.com/jobs/view/4427931661",
+        "posted": "2026-06-12",
+        "seniority": "Director",
+        "domain_match": true,
+        "keyword_score": 30,
+        "match_keywords": [
+          "healthcare",
+          "enterprise",
+          "head of",
+          "growth",
+          "platform"
+        ],
+        "raw_snippet": "The Head of Technology (Healthcare \\& Logistics) is responsible for defining and executing the enterprise IT strategy across healthcare and logistics businesses. This role ensures technology platforms, digital capabilities, and IT operations effectively support business growth, regulatory compliance",
+        "relevant": true,
+        "filter_reason": null,
+        "search_country": "United Arab Emirates",
+        "search_title": "\"NMC Healthcare\" (\"Chief Technology Officer\" OR CTO OR \"Chief Information Officer\" OR CIO OR \"Head of Technology\" OR \"IT Director\" OR \"Head of IT\" OR \"Chief Digital Officer\" OR CDO OR \"VP Digital Transformation\" OR \"Head of Business Excellence\" OR PMO OR transformation OR director)",
+        "linkedin_id": "li-4427931661",
+        "jd_text": "The Head of Technology (Healthcare \\& Logistics) is responsible for defining and executing the enterprise IT strategy across healthcare and logistics businesses. This role ensures technology platforms, digital capabilities, and IT operations effectively support business growth, regulatory compliance (including GxP), operational excellence, and regional scalability across Asia.\n \n\n\n\n  \n\n\n\n\n\n**Key Responsibilities:** \n\n\n\n\n**Technology Strategy, Governance \\& Leadership** \n\n\n\n* Define and execute short\\- and long\\-term IT and digital transformation roadmaps aligned with corporate and business strategies.\n* Act as senior technology advisor to executive management on system modernization, cloud adoption, and emerging technologies.\n* Lead IT governance, enterprise architecture standards, and investment prioritization across healthcare and logistics.\n\n\n\n**Enterprise Systems, Platforms \\& Transformation** \n\n\n\n* Oversee core enterprise platforms including ERP (e.g. Oracle JD Edwards), WMS, BI/analytics, CRM, and integration.\n* Sponsor and govern large\\-scale initiatives such as ERP/WMS modernization, cloud migration, application rationalization, and data, analytics \\& AI enablement.\n* Ensure system scalability, reliability, interoperability, and performance across Asian markets.\n\n\n\n**Healthcare IT \\& Regulatory Compliance** \n\n\n\n* Ensure IT systems and operations comply with GxP, data integrity, cybersecurity, and data privacy requirements.\n* Lead IT engagement for audits, regulatory inspections, and due diligence activities.\n* Maintain validated systems, documentation, and SOPs supporting pharmaceutical distribution.\n\n\n\n**IT Operations, Financial \\& Vendor Management** \n\n\n\n* Provide end\\-to\\-end accountability for IT operations, infrastructure, cybersecurity, service delivery, and resilience.\n* Establish SLAs, KPIs, disaster recovery, and business continuity frameworks.\n* Own IT budgeting, forecasting, cost optimization, and financial governance.\n* Lead vendor selection, contract negotiation, performance management, and benefits realization.\n\n\n\n**People \\& Organization Leadership** \n\n\n\n* Lead and develop regional IT teams across healthcare and logistics.\n* Build succession pipelines, clarify roles, and foster a high\\-performance, compliance\\-aware culture.\n* Mentor senior IT leaders and subject matter experts.\n\n\n\n**Key Stakeholders:** \n\n\n\n* Executive Committee and Senior Management\n* Business Unit Heads (Healthcare \\& Logistics) and regional Operations \\& Supply Chain leaders\n* Finance, Compliance, Quality Assurance, and HR\n* External technology and implementation partners\n\n\n\n  \n\n\n\n\n\n**Qualifications:** \n\n\n\n* Bachelor's or Master's degree in Computer Science, Engineering, or equivalent; advanced degree preferred\n* 15\\+ years of IT experience with 5\\+ years of senior IT leadership role, preferably in healthcare, logistics, pharmaceutical distribution, or other regulated industries\n* Strong expertise in ERP, WMS, cloud platforms, enterprise integration, and large\\-scale transformation\n* Proven experience managing multi\\-country IT operations and regulatory environments\n* Strong executive\\-level influencing and cross\\-functional leadership skills\n* Strong analytical and problem\\-solving skills\n* Excellent communication and collaboration abilities\n* Fluency in Cantonese, Mandarin and English",
+        "source_count": 1,
+        "country": "United Arab Emirates",
+        "industry_bonus": 12,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "first_seen": "2026-06-22",
+        "career_fit_score": 7,
+        "verdict": "SUBMIT",
+        "verdict_reason": "Strong technology transformation fit in healthcare, but Hong Kong is outside target GCC locations [5D role=2 | seniority=2 | geo=0 | strategic=1 | evidence=2 | fit=7/10 | llm=6 | watchlist=healthcare_gcc] [CMO outreach queued for Dah Chong Hong Holdings Limited]",
+        "watchlist_matches": {
+          "company_hits": [],
+          "domain_hits": [
+            "health",
+            "healthcare"
+          ],
+          "categories": [
+            "healthcare_gcc"
+          ]
+        },
+        "ats_score": 67,
+        "ats_verdict": "CONDITIONAL",
+        "ats_matched": [
+          "digital transformation",
+          "transformation",
+          "ai",
+          "erp",
+          "healthcare",
+          "cost optimization",
+          "governance",
+          "stakeholder management",
+          "vendor management",
+          "budget"
+        ],
+        "ats_gaps": [
+          "Missing: project management"
+        ],
+        "llm_fit_score": 6,
+        "fit_dimensions": {
+          "role": 2,
+          "seniority": 2,
+          "geography": 0,
+          "strategic": 1,
+          "evidence": 2
+        }
       }
     ],
-    "review": [],
-    "skip_count": 12,
+    "review": [
+      {
+        "id": "linkedin_jobspy-li-4429939089",
+        "source": "linkedin_jobspy",
+        "title": "Head of Technology & Digital Services",
+        "company": "Confidential Careers",
+        "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
+        "url": "https://www.linkedin.com/jobs/view/4429939089",
+        "posted": "2026-06-17",
+        "seniority": "Director",
+        "domain_match": true,
+        "keyword_score": 26,
+        "match_keywords": [
+          "cloud",
+          "cybersecurity",
+          "enterprise",
+          "head of"
+        ],
+        "raw_snippet": "**About the Role** \n\n\n\n\n  \n\n\n\n\n\n We are seeking an experienced technology leader to oversee IT operations, digital initiatives, enterprise applications, cloud services, cybersecurity, and service delivery across a diverse business environment.\n \n\n\n\n The role will be responsible for driving technolog",
+        "relevant": true,
+        "filter_reason": null,
+        "search_country": "Kuwait",
+        "search_title": "\"SEHA\" (\"Chief Technology Officer\" OR CTO OR \"Chief Information Officer\" OR CIO OR \"Head of Technology\" OR \"IT Director\" OR \"Head of IT\" OR \"Chief Digital Officer\" OR CDO OR \"VP Digital Transformation\" OR \"Head of Business Excellence\" OR PMO OR transformation OR director)",
+        "linkedin_id": "li-4429939089",
+        "jd_text": "**About the Role** \n\n\n\n\n  \n\n\n\n\n\n We are seeking an experienced technology leader to oversee IT operations, digital initiatives, enterprise applications, cloud services, cybersecurity, and service delivery across a diverse business environment.\n \n\n\n\n The role will be responsible for driving technology strategy, improving operational performance, strengthening governance, and delivering technology solutions that support business objectives.\n \n\n\n\n  \n\n\n\n\n\n**Key Responsibilities** \n\n\n\n* Lead enterprise IT operations, including infrastructure, cloud platforms, cybersecurity, applications, and end\\-user support.\n* Develop and execute technology and digital transformation initiatives aligned with business priorities.\n* Oversee IT service delivery, governance, policies, standards, and continuous improvement activities.\n* Manage technology vendors, contracts, budgets, and service providers.\n* Ensure the security, availability, and resilience of technology platforms and services.\n* Lead business continuity, disaster recovery, and technology risk management initiatives.\n* Partner with business stakeholders to identify opportunities for process improvement and technology enablement.\n* Develop and lead technology teams, ensuring high levels of performance and service delivery.\n\n\n\n  \n\n\n\n\n\n**Requirements** \n\n\n\n* Bachelor's Degree in Information Technology, Computer Science, Engineering, or a related discipline.\n* Minimum 12 years of experience within enterprise technology environments, including leadership responsibility.\n* Strong experience across IT operations, cloud technologies, cybersecurity, enterprise applications, and service management.\n* Experience managing technology transformation, governance, budgets, and vendor relationships.\n* Strong stakeholder management and communication skills.\n* Ability to lead teams and deliver technology initiatives across complex environments.\n\n\n\n  \n\n\n\n\n\n**Preferred Experience** \n\n\n\n* Experience within diversified groups, shared services environments, aviation, real estate, industrial services, or similar sectors.\n* Exposure to Microsoft technologies, cloud platforms, ERP systems, and IT governance frameworks.\n* Professional certifications in cloud, cybersecurity, IT service management, or project management are advantageous.",
+        "source_count": 1,
+        "country": "United Arab Emirates",
+        "industry_bonus": 9,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "first_seen": "2026-06-22",
+        "career_fit_score": 8,
+        "verdict": "REVIEW",
+        "verdict_reason": "Strong GCC technology and digital services leadership role covering IT operations, transformation, governance, cloud, cybersecurity, vendors, and budgets. [5D role=2 | seniority=2 | geo=2 | strategic=1 | evidence=1 | fit=8/10 | llm=8]",
+        "watchlist_matches": {
+          "company_hits": [],
+          "domain_hits": [],
+          "categories": []
+        },
+        "ats_score": 64,
+        "ats_verdict": "CONDITIONAL",
+        "ats_matched": [
+          "digital transformation",
+          "project management",
+          "transformation",
+          "ai",
+          "erp",
+          "governance",
+          "stakeholder management",
+          "vendor management",
+          "budget",
+          "cloud"
+        ],
+        "ats_gaps": [],
+        "llm_fit_score": 8,
+        "fit_dimensions": {
+          "role": 2,
+          "seniority": 2,
+          "geography": 2,
+          "strategic": 1,
+          "evidence": 1
+        }
+      },
+      {
+        "id": "linkedin_jobspy-li-4431650697",
+        "source": "linkedin_jobspy",
+        "title": "Director - Digital Center of Excellence",
+        "company": "AD Ports Group",
+        "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
+        "url": "https://www.linkedin.com/jobs/view/4431650697",
+        "posted": "",
+        "seniority": "C-Suite",
+        "domain_match": true,
+        "keyword_score": 16,
+        "match_keywords": [
+          "stakeholder management",
+          "director"
+        ],
+        "raw_snippet": "**Job Description**\n The Job Purpose of Director Digital Center of Excellence is responsible of taking \u201cfirst among peers\u201d, leading role from the product owners by taking a leading responsibility in stakeholder management, helping coordinate across squads and driving projects/programs with multiple ",
+        "relevant": true,
+        "filter_reason": null,
+        "search_country": "Bahrain",
+        "search_title": "\"Abu Dhabi Health Services\" (\"Chief Technology Officer\" OR CTO OR \"Chief Information Officer\" OR CIO OR \"Head of Technology\" OR \"IT Director\" OR \"Head of IT\" OR \"Chief Digital Officer\" OR CDO OR \"VP Digital Transformation\" OR \"Head of Business Excellence\" OR PMO OR transformation OR director)",
+        "linkedin_id": "li-4431650697",
+        "jd_text": "**Job Description**\n The Job Purpose of Director Digital Center of Excellence is responsible of taking \u201cfirst among peers\u201d, leading role from the product owners by taking a leading responsibility in stakeholder management, helping coordinate across squads and driving projects/programs with multiple products/complexities.\n   \n\n  \n\n**Responsibilities**\n**Core Responsibilities:**\n* Develop innovative and market\\-leading products in liaison with the Chief Digital and Information Officer and Product Owners.\n* Establish the overall vision and roadmap for products across the different squads in the portfolio.\n* Manage and facilitate product adoption and lifecycle from concept to launch.\n* Define Digital Cluster product specification, features and deliverables based on market demand and oversee product testing and quality control to validate results.\n* Review and set priorities across products to meet customer\u2019s release expectations.\n* Act as the single point of contact for demand management for the squads.\n* Provide guidance to liaise with other teams in bringing new and innovative ideas for products in Digital Cluster to life.\n* Enforce Product Owners in the portfolio to align on roadmaps, priorities and dependencies \u2013 operationally calling for and facilitating the discussions.\n* Lead market research and competitor analysis to understand customer preferences, best practices and market trends.\n* Build strong relationship with external vendors, direct resolving issues and manage backlogged products aiming to retain high customer engagement.\n* Build a comprehensive Data Analytics warehouse for the Cluster in alignment with Corporate Guidelines and Cluster Market Needs and Demands.\n\n\n**People Management Responsibilities:**\n* Conduct regular 1:1s with product owners and squad members.\n* Participate in discussions inside and across the squads\u2019 on behalf of the portfolio.\n* Be a sparring partner for individual product owners to solve operational questions.\n* Drive initiatives to instill a spirit of engaged urgency across squads and ensure that the team efforts are aligned towards the portfolio KPIs.\n* Build and manage innovative products strategy and long\\-term plans.\n\n\n**Strategic Responsibilities:**\n* Take a leading role in discussions about squad visions, scopes, KPIs, and resources to ensure that the cluster is working towards the same goals by minimizing redundancy, and to ensure the team members goals, objectives \\& KPIs meet the management expectations.\n* Lead cross\\-functional team to streamline processes and implement best practices to drive operational excellence.\n* Assess risks in product development and develop risk mitigation strategies to minimize potential liabilities.\n* Provide regular reports to senior management on the cluster product development performance, including financial, operational, and market\\-related data.\n* Control the budget of new products and recommend alternatives to meet expectation.\n\n\n**Qualifications**\n Educational and Technical Qualifications:\n   \n\n  \n\n* Bachelor's degree in Computer Science, Information Technology, Marketing, Engineering or related field; Master's degree is a plus.\n\n\n Language Skills:\n   \n\n  \n\n* Excellent English. Arabic is an added advantage\n\n\n Years of Experience:\n   \n\n  \n\n* A minimum of 15 years of experience in a similar role\n\n\n Nature of Experience:\n   \n\n  \n\n* Experience as business manager in relevant product / customer or enabler segment.\n* Deep knowledge of relevant domains and products\n* Solid knowledge of industry trends pain points\n* Experience in agile development, with specific product owner (or similar) experience preferred, should be confident in building and managing the backlog of work.\n* Experience working with engineering teams preferred, cross functional teams a plus.\n* Ability to manage complex products.\n* Ability to manage parallel product development.\n* Enhanced business acumen since Challenger mindset and passion to challenge status quo to find new solutions and drive out of the box ideas \u2013 loves and embraces change.",
+        "source_count": 1,
+        "country": "United Arab Emirates",
+        "industry_bonus": 6,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "first_seen": "2026-06-22",
+        "career_fit_score": 8,
+        "verdict": "REVIEW",
+        "verdict_reason": "Strong GCC Director-level digital CoE role with program coordination, stakeholder management, squads, products, and data analytics alignment [5D role=2 | seniority=2 | geo=2 | strategic=1 | evidence=1 | fit=8/10 | llm=8]",
+        "watchlist_matches": {
+          "company_hits": [],
+          "domain_hits": [],
+          "categories": []
+        },
+        "ats_score": 62,
+        "ats_verdict": "CONDITIONAL",
+        "ats_matched": [
+          "program management",
+          "project management",
+          "ai",
+          "stakeholder management",
+          "budget",
+          "agile",
+          "data",
+          "analytics",
+          "digital",
+          "strategy"
+        ],
+        "ats_gaps": [],
+        "llm_fit_score": 8,
+        "fit_dimensions": {
+          "role": 2,
+          "seniority": 2,
+          "geography": 2,
+          "strategic": 1,
+          "evidence": 1
+        }
+      }
+    ],
+    "skip_count": 34,
     "unreviewed_count": 0,
     "thresholds": {
       "submit": 6,
       "review": 6
     },
     "pipeline": {
-      "l0_auto_skip": 2,
+      "l0_auto_skip": 0,
       "l1_jd_enriched": 0,
-      "l1_jd_coverage": "11/11",
+      "l1_jd_coverage": "37/38",
       "llm_model": "openai/gpt-5.5",
-      "llm_jobs_reviewed": 11,
-      "r2_latency_ms": 74324,
+      "llm_jobs_reviewed": 38,
+      "r2_latency_ms": 246280,
       "r2_fallbacks": 0
     },
     "kpi": {
-      "submit_rate": 0.09090909090909091,
-      "review_rate": 0.0,
-      "skip_rate": 0.9090909090909091,
-      "avg_fit_score": 4.3,
-      "l0_filter_rate": 15.4,
+      "submit_rate": 0.05263157894736842,
+      "review_rate": 0.05263157894736842,
+      "skip_rate": 0.8947368421052632,
+      "avg_fit_score": 5.3,
+      "l0_filter_rate": 0.0,
       "llm_review_rate": 100.0
     }
   },
   "kpi": {
-    "total_loaded": 13,
-    "l0_auto_skip": 2,
+    "total_loaded": 38,
+    "l0_auto_skip": 0,
     "l1_jd_enriched": 0,
     "l2_filtered": 0,
-    "submit_count": 1,
-    "review_count": 0,
-    "skip_count": 10,
-    "submit_rate": 9.1,
-    "avg_fit_score": 4.3,
-    "r2_latency_ms": 74324
+    "submit_count": 2,
+    "review_count": 2,
+    "skip_count": 34,
+    "submit_rate": 5.3,
+    "avg_fit_score": 5.3,
+    "r2_latency_ms": 246280
   },
   "recommendations": []
 }

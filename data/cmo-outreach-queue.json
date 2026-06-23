@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-21T10:38:41.519749+03:00",
+  "last_updated": "2026-06-22T14:46:14.598204+03:00",
   "items": [
     {
       "company": "Netcracker Technology in Dubai, United Arab Emirates â Apply on Wuzzuf",
@@ -526,6 +526,24 @@
       "job_url": "https://www.linkedin.com/jobs/view/4427835309",
       "verdict": "SUBMIT",
       "queued_at": "2026-06-21T10:38:41.519737+03:00",
+      "status": "queued"
+    },
+    {
+      "company": "EjadTech - إيجاد التقنية",
+      "job_title": "Director Project Management Office",
+      "source": "linkedin_jobspy",
+      "job_url": "https://www.linkedin.com/jobs/view/4426228517",
+      "verdict": "SUBMIT",
+      "queued_at": "2026-06-22T14:46:14.587484+03:00",
+      "status": "queued"
+    },
+    {
+      "company": "Dah Chong Hong Holdings Limited",
+      "job_title": "Head of Technology (Healthcare)",
+      "source": "linkedin_jobspy",
+      "job_url": "https://www.linkedin.com/jobs/view/4427931661",
+      "verdict": "SUBMIT",
+      "queued_at": "2026-06-22T14:46:14.598195+03:00",
       "status": "queued"
     }
   ],

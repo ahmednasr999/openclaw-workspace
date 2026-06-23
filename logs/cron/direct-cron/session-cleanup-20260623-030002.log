@@ -1,0 +1,13 @@
+{
+  "task": "session-cleanup",
+  "ts": "2026-06-23T03:01:32.691349+03:00",
+  "cmd": [
+    "bash",
+    "/root/.openclaw/workspace/scripts/session-cleanup.sh"
+  ],
+  "cwd": "/root/.openclaw/workspace",
+  "returncode": 0,
+  "stdout": "session-cleanup: archived=186 pruned=139 backups_removed=13 backup_bytes=11496821 retired_archived=140 retired_bytes=9036884\n",
+  "stderr": "",
+  "log_path": "/root/.openclaw/workspace/logs/cron/direct-cron/session-cleanup-20260623-030002.log"
+}
