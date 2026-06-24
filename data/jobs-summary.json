@@ -2,319 +2,121 @@
   "meta": {
     "agent": "jobs-review",
     "version": "2.0.0",
-    "generated_at": "2026-06-22T14:46:14.758102+03:00",
-    "duration_ms": 252972,
+    "generated_at": "2026-06-23T20:44:40.029727+03:00",
+    "duration_ms": 199382,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "f4864381",
+    "run_id": "e15479c7",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
-    "generated_at": "2026-06-22T14:46:14.577439+03:00",
-    "total_candidates": 38,
-    "reviewed": 38,
-    "submit": [
+    "generated_at": "2026-06-23T20:44:39.915750+03:00",
+    "total_candidates": 21,
+    "reviewed": 19,
+    "submit": [],
+    "review": [
       {
-        "id": "linkedin_jobspy-li-4426228517",
+        "id": "linkedin_jobspy-li-4429418784",
         "source": "linkedin_jobspy",
-        "title": "Director Project Management Office",
-        "company": "EjadTech - \u0625\u064a\u062c\u0627\u062f \u0627\u0644\u062a\u0642\u0646\u064a\u0629",
-        "location": "Riyadh, Saudi Arabia",
-        "url": "https://www.linkedin.com/jobs/view/4426228517",
-        "posted": "2026-06-11",
+        "title": "Chief Information Officer (CIO)",
+        "company": "American International University, Kuwait",
+        "location": "Jahra, Jahra, Kuwait",
+        "url": "https://www.linkedin.com/jobs/view/4429418784",
+        "posted": "",
         "seniority": "C-Suite",
         "domain_match": true,
-        "keyword_score": 26,
+        "keyword_score": 13,
         "match_keywords": [
-          "pmo",
-          "project management",
-          "director"
+          "ai",
+          "leadership"
         ],
-        "raw_snippet": "Position Summary\n \n\n\n\n The PMO Director is responsible for leading the organization's Project Management Office (PMO) at a strategic level, driving governance, portfolio management, project delivery excellence, and organizational transformation initiatives across technology and consulting services. ",
+        "raw_snippet": "Position: Chief Information Officer (CIO)\n   \n\n  \n\n Classification: Senior Leadership\n   \n\n  \n\n Reports To: President\n   \n\n  \n\n**About The American International University**\n American International University (AIU) is a private institution in Kuwait, founded in 2019, offering undergraduate programs",
         "relevant": true,
         "filter_reason": null,
         "search_country": "Kuwait",
-        "search_title": "\"SEHA\" (\"Chief Technology Officer\" OR CTO OR \"Chief Information Officer\" OR CIO OR \"Head of Technology\" OR \"IT Director\" OR \"Head of IT\" OR \"Chief Digital Officer\" OR CDO OR \"VP Digital Transformation\" OR \"Head of Business Excellence\" OR PMO OR transformation OR director)",
-        "linkedin_id": "li-4426228517",
-        "jd_text": "Position Summary\n \n\n\n\n The PMO Director is responsible for leading the organization's Project Management Office (PMO) at a strategic level, driving governance, portfolio management, project delivery excellence, and organizational transformation initiatives across technology and consulting services. The role ensures alignment of project investments with EjadTech\u2019s strategic objectives while maintaining high standards of execution, operational efficiency, and client satisfaction.\n \n\n\n\n Key Responsibilities\n \n\n\n\n 1\\. Strategic PMO Leadership\n \n\n\n* Define and lead the PMO vision, strategy, and operating model aligned with organizational goals.\n* Establish enterprise\\-wide project governance frameworks, methodologies, policies, and standards.\n* Drive PMO maturity and continuous improvement initiatives across the organization.\n* Oversee project portfolio planning, prioritization, and resource allocation.\n* Ensure alignment between business objectives, project investments, and delivery outcomes.\n* Provide executive leadership with portfolio insights, strategic recommendations, and performance reporting.\n\n\n\n 2\\. Portfolio \\& Project Governance\n \n\n\n* Direct and oversee the full portfolio of technology and consulting projects.\n* Ensure projects are delivered within approved scope, budget, timelines, and quality expectations.\n* Monitor portfolio health, project performance, risks, dependencies, and resource utilization.\n* Govern project stage gates, approvals, and executive decision\\-making processes.\n* Ensure contractual commitments, deliverables, and client obligations are fulfilled.\n* Oversee project closure processes, including completion certificates, client sign\\-offs, and formal handovers.\n\n\n\n 3\\. Organizational Performance \\& Operational Excellence\n \n\n\n* Lead the development of PMO tools, dashboards, reporting frameworks, and performance metrics.\n* Establish portfolio management practices that support organizational growth and scalability.\n* Identify and implement operational efficiencies and process improvements.\n* Drive organizational adoption of project management best practices and delivery excellence.\n* Support strategic initiatives, business transformation programs, and corporate planning efforts.\n\n\n\n 4\\. Leadership \\& Capability Development\n \n\n\n* Lead, mentor, and develop PMO managers, project managers, and delivery teams.\n* Build a high\\-performance project management culture across the organization.\n* Foster collaboration between business units, consulting teams, technology teams, and executive leadership.\n* Promote professional development and project management capability building.\n\n\n\n 5\\. Executive \\& Client Stakeholder Management\n \n\n\n* Serve as the primary executive sponsor for PMO governance and portfolio oversight.\n* Build and maintain strong relationships with executive leadership, clients, and strategic partners.\n* Represent EjadTech in executive steering committees, governance boards, and client leadership meetings.\n* Ensure high levels of client satisfaction and long\\-term partnership success.\n\n\n\n Qualifications\n \n\n\n* Bachelor\u2019s degree in Project Management, Engineering, Computer Science, Information Technology, Business Administration, or a related field.\n* Master\u2019s degree (MBA or equivalent) preferred.\n* PMP certification required; PgMP, PMI\\-ACP, PRINCE2, Agile, or equivalent certifications are highly preferred.\n* Minimum 15\\+ years of project management experience, including 5\\+ years in PMO leadership or executive delivery roles.\n* Proven experience leading enterprise PMOs and managing large technology and consulting portfolios.\n* Strong understanding of governance frameworks, portfolio management, organizational transformation, and business strategy.\n\n\n\n Required Skills\n \n\n\n* Executive leadership and organizational management.\n* Strategic portfolio planning and governance.\n* Financial and budget management.\n* Enterprise risk management.\n* Resource and capacity planning.\n* Change management and organizational transformation.\n* Executive communication and stakeholder engagement.\n* Advanced analytical, decision\\-making, and problem\\-solving skills.\n* Fluent in Arabic and English.",
+        "search_title": "PMO Director",
+        "linkedin_id": "li-4429418784",
+        "jd_text": "Position: Chief Information Officer (CIO)\n   \n\n  \n\n Classification: Senior Leadership\n   \n\n  \n\n Reports To: President\n   \n\n  \n\n**About The American International University**\n American International University (AIU) is a private institution in Kuwait, founded in 2019, offering undergraduate programs based on the American model of higher education. AIU provides degrees in Engineering, Architecture and Design, Business Administration, Arts and Sciences, and Education, with English as the language of instruction. The University is committed to fostering intellectual, cultural, and personal growth, preparing graduates for leadership roles in a global society.\n   \n\n  \n\n AIU is in active execution of its RISE Strategy 2026\u20132030, a five\\-year institutional transformation anchored in research development, WSCUC international accreditation, student success, and community engagement. Technology is not peripheral to this strategy; it is foundational to it. The CIO is a key member of the Senior Leadership Team, responsible for ensuring that AIU's digital infrastructure, enterprise platforms, and data ecosystem are built for the institutional ambitions of 2030, not the operational needs of 2019\\.\n   \n\n  \n\n For more information, visit: www.aiu.edu.kw\n   \n\n  \n\n Department Profile\n   \n\n  \n\n The CIO oversees two integrated functions that together constitute AIU's technology enterprise: the established Information Technology division, led by the Executive Director of IT, and the newly created Digital Transformation Office, which sits directly under the CIO's strategic leadership. Together, these functions manage all enterprise platforms, cybersecurity and data governance, academic technology, digital student services, and the AI\\-enabled tools that support administrative decision\\-making.\n   \n\n  \n\n Scope of Work\n   \n\n  \n\n The Chief Information Officer serves as AIU's most senior technology executive and a strategic thought partner to the President. The role bridges two realities: managing a live and growing enterprise technology environment reliably and efficiently today, while building the digital infrastructure that will sustain a WASC\\-accredited, research\\-active, rankings\\-visible university by 2030\\. The CIO is accountable for both.\n   \n\n  \n\n The scope of work spans five interconnected domains:\n   \n\n  \n\n* IT Strategy \\& Governance: Define and execute the multi\\-year IT strategic plan aligned with the RISE Strategy. Own IT governance, policy, and investment decisions across the entire technology portfolio.\n* Campus Digital Transformation: Lead the systematic replacement of manual, SharePoint, and Excel\\-based processes with integrated, automated, data\\-driven systems across administration, academics, research, and student services.\n* Enterprise Platform Management: Oversee the optimization, integration, and lifecycle management of all enterprise platforms: Banner (SIS), Canvas (LMS), Salesforce (CRM), Oracle Finance, and Tableau and lead evaluation of next\\-generation systems.\n* AI \\& Data Intelligence: Champion the institutional adoption of AI tools and data analytics to enhance administration efficiency, student success, research support, and decision\\-making at every level of the University.\n* Cybersecurity \\& Data Governance: Ensure AIU's data is secure, accurate, accessible, and compliant providing the data infrastructure that WASC accreditation, institutional research, and Board reporting require.\n\n\n Key Responsibilities\n   \n\n  \n\n* IT Strategy, Governance and Presidential Advisory\n* Serve as the President's primary technology advisor translating institutional strategic objectives into technology investment decisions, capability roadmaps, and implementation sequencing\n* Develop, own, and execute AIU's multi\\-year Technology Strategic Plan, updated annually and aligned with the RISE Strategy 2026\u20132030 KPIs and the WSCUC accreditation evidence requirements\n* Establish and chair the AIU Technology Governance Committee a cross\\-functional body including the VPAA, VP Administration \\& Finance, VP Enrollment, and Faculty Council representative to set institutional technology priorities and resolve competing demands on IT resources\n* Present quarterly technology performance reports to the President and an annual technology state\\-of\\-institution report to the Board of Trustees in plain language, not technical language\n* Manage the IT budget with full accountability for return on investment: technology spend must be justified by measurable institutional outcomes, not by technical preference\n* Lead all major technology vendor selection, contract negotiation, and relationship management ensuring AIU obtains best\\-value agreements and maintains leverage with strategic technology partners\n* Campus Digital Transformation\n* Conduct a comprehensive Digital Readiness Audit in the first 90 days mapping every major administrative and academic workflow against its current technology support level. identifying all critical processes still running on low level manual folders, email chains, or papers.\n* Develop and execute a phased Digital Transformation Roadmap that systematically replaces manual and disconnected processes with integrated, automated, role\\-appropriate digital workflows prioritized by institutional impact and WSCUC accreditation urgency\n* Lead the digitalization of Student Journey processes from application and admission through advising, registration, assessment, career services, and alumni engagement ensuring every student interaction is trackable, data\\-rich, and continuously improvable\n* Drive the digitalization of Faculty and Research workflows including research output tracking, grant management, assessment data collection, course file management, and faculty performance documentation\n* Ensure all digital transformation initiatives are adopted effectively change management, training, and user support are as important as the technology itself; a system that faculty and staff do not use has delivered zero value\n* Coordinate with the Director of Global Excellence and Benchmarking to ensure that institutional data required for QS, THE, and Webometrics submissions is generated automatically by integrated systems rather than assembled manually each year\n* Enterprise Platform Optimization and Integration\n* Maximize the institutional value of AIU's existing enterprise platform investments: Banner (SIS), Canvas (LMS), Salesforce (CRM), Oracle Finance, and Tableau.\n* Design and implement a unified integration architecture so that data flows seamlessly and automatically between systems eliminating manual data re\\-entry, reducing data errors, and creating the single source of truth the institutional research function requires\n* Evaluate, recommend, and lead the procurement of any new enterprise platforms required by the RISE Strategy including student success platforms, research management systems, data warehouse solutions, and AI tooling\n* Ensure that all platform implementations are executed to full functional scope with proper data governance, user training, and long\\-term support plans partial implementations that leave core functionality unused are not acceptable outcomes\n* Lead the migration of institutional data from SharePoint folders and Excel workbooks into appropriate managed systems with documented data governance, access controls, version management, and audit trails\n* Artificial Intelligence and Data Intelligence\n* Develop and implement AIU's Artificial Intelligence Strategy a practical, phased plan for deploying AI tools across administration, academic operations, student services, and research support that delivers measurable efficiency gains and quality improvements\n* Lead the deployment of AI\\-enhanced analytics and reporting so that the President, VPAA, Deans, and Department Chairs have real\\-time, dashboard\\-based visibility into the institutional metrics that matter enrollment trends, retention signals, research output, financial position without waiting for manual report compilation\n* Implement AI\\-powered student success tools early alert systems, predictive retention models, personalized advising recommendations that enable the institution to intervene proactively with at\\-risk students rather than reactively after they withdraw\n* Develop and enforce an institutional AI Acceptable Use Policy covering responsible use of generative AI in instruction, assessment, research, and administration balancing innovation with academic integrity and data privacy\n* Stay at the forefront of AI developments in higher education and advise the President and academic leadership on which emerging tools are ready for institutional adoption, which require further evaluation, and which present risks that outweigh their benefits\n* Build internal AI capability ensuring that faculty, administrators, and student\\-facing staff are trained to use AI tools appropriately and that AIU does not become dependent on vendors for capability that should be developed in\\-house\n* Cybersecurity, Data Governance and WASC Compliance\n* Establish and maintain a risk\\-based information security program aligned with ISO/IEC 27001 and NIST frameworks appropriate to AIU's scale, risk profile, and budget protecting student, faculty, staff, and institutional data\n* Develop and enforce data governance standards across all institutional systems defining data ownership, data quality standards, access controls, retention schedules, and the single\\-source\\-of\\-truth principles that eliminate contradictory data across departments\n* Ensure that the data infrastructure required for WSCUC accreditation is reliable, reproducible, and audit\\-ready no accreditation submission may be built on data that cannot be independently verified from a managed system\n* Implement and maintain business continuity and disaster recovery plans for all mission\\-critical systems ensuring AIU can maintain academic and administrative operations through system failures, cybersecurity incidents, or other disruptions\n* Ensure compliance with Kuwait data protection requirements and any applicable international standards including student record privacy, financial data security, and research data management\n* Oversee AIU's cybersecurity incident response capability ensuring that the institution can detect, contain, and recover from security incidents rapidly and with minimal impact to operations\n* Leadership, Team Development and Vendor Management\n* Provide strategic leadership and executive oversight to the Executive Director of Information Technology and the Digital Transformation Office setting clear direction, performance expectations, and development pathways for the technology team\n* Build and maintain a high\\-performing technology organization recruiting, developing, and retaining talented technology professionals in a competitive Kuwait market, and creating a culture of service excellence, continuous improvement, and innovation\n* Manage all technology vendor relationships at the executive level ensuring that strategic partners are held to their contractual commitments, that technology contracts are reviewed and optimized regularly, and that AIU's vendor ecosystem remains coherent and manageable\n* Represent AIU in relevant higher education technology networks, conferences, and professional forums maintaining awareness of best practice and building relationships that can benefit the institution\n\n\n Reporting Departments (If Applicable)\n   \n\n  \n\n* Executive Director of Information Technology: day\\-to\\-day IT operations, helpdesk, infrastructure, and enterprise platform administration\n* Digital Transformation Office Director: program management for all transformation initiatives, process automation, and workflow digitalization\n* Cybersecurity \\& Data Governance Lead: information security, data governance standards, and compliance\n\n\n Minimum Qualifications:\n   \n\n  \n\n Education\n   \n\n  \n\n* Doctorate (PhD) in Computer Science, Information Technology, Computer Engineering, or a closely related field strongly preferred\n* Master's degree in a relevant discipline required as a minimum; candidates with a master's and exceptional, directly relevant GCC higher education CIO experience will be considered\n\n\n**Experience**\n* Minimum ten (10\\) years of progressive technology leadership experience, with at least five (5\\) years at CIO, Deputy CIO, or equivalent executive level in a higher education institution\n* Demonstrated experience leading campus digital transformation, specifically the transition of institutional processes from manual, Excel, and SharePoint\\-based workflows to integrated, automated enterprise systems\n* Proven track record in selecting, implementing, and optimizing enterprise university platforms, particularly Banner (SIS), Canvas (LMS), Salesforce (CRM), Oracle or equivalent ERP, and business intelligence tools\n* Experience building and executing AI strategies in an institutional or enterprise context, not theoretical familiarity with AI, but demonstrated deployment of AI tools that delivered measurable operational improvements\n* Experience working in GCC higher education is a significant advantage, candidates with UAE, Kuwait, Saudi Arabia, or comparable Gulf university CIO experience are strongly preferred\n* Experience managing technology in a context of accreditation preparation, WASC, AACSB, ABET, or comparable quality assurance framework, is a substantial advantage\n\n\n Technical Knowledge\n   \n\n  \n\n* Deep proficiency with higher education enterprise platforms: Ellucian Banner or equivalent SIS, Canvas or comparable LMS, Salesforce or equivalent CRM, Oracle Fusion/EBS or equivalent ERP, Tableau or equivalent BI\n* Cloud architecture and management expertise: Azure, AWS, or GCP, including IaaS, PaaS, SaaS governance, cloud migration strategy, and hybrid infrastructure management\n* AI and machine learning application: practical experience deploying AI tools in an institutional setting, student success analytics, process automation, natural language processing, or predictive modelling\n* Cybersecurity governance: demonstrated knowledge of ISO/IEC 27001, NIST frameworks, and risk\\-based security program management, including incident response and business continuity planning\n* Data governance and integration: experience designing data governance frameworks, master data management standards, and system integration architectures that eliminate data silos\n* DevOps and automation: familiarity with modern DevOps practices, RPA tools, and workflow automation platforms that reduce manual administrative workload\n\n\n Leadership and Interpersonal Competencies\n   \n\n  \n\n* The ability to translate complex technology concepts into clear business and strategic language for Board members, the President, Deans, and faculty, technology leadership at the C\\-suite level is fundamentally a communication role\n* Demonstrated change management capability, the ability to lead people through technology\\-driven organizational change with empathy, clarity, and persistence\n* Service\\-oriented leadership: AIU's IT function exists to serve students, faculty, and staff, the CIO must model and build a culture where the technology team measures its success by the outcomes it enables, not the systems it manages\n* Executive\\-level stakeholder engagement: the CIO sits on the Senior Leadership Team and must be an effective, credible peer contributor to institutional strategy discussions that extend beyond technology\n\n\n**Preferred Qualifications**\n* Prior CIO or Deputy CIO experience at a GCC university, with working knowledge of Kuwait's higher education regulatory environment and PUC data requirements\n* Experience with Ellucian Banner Cloud migration, AIU's Banner environment will require cloud migration planning within the strategy period\n* Published research or professional thought leadership on AI in higher education, digital transformation in universities, or cybersecurity in academic environments\n* Bilingual proficiency in English and Arabic, strong written and oral English is mandatory; Arabic is a significant advantage for stakeholder engagement with Kuwait government bodies and Arabic\\-speaking staff and students\n* Experience managing a greenfield or rapid\\-growth university technology environment AIU's pace of institutional development requires a CIO comfortable with building and scaling, not just maintaining\n* Experience integrating WASC or comparable accreditation data requirements into enterprise system design ensuring that accreditation evidence is a by\\-product of normal institutional operations, not an annual emergency\n\n\n How to Apply\n   \n\n  \n\n Interested candidates should visit the Job Opportunities section on the AIU website and submit a complete application comprising:\n   \n\n  \n\n* A current curriculum vitae\n* A cover letter (maximum 3 pages) addressing three specific questions: (1\\) Describe a campus digital transformation initiative you personally led what was the starting state, what did you build, and how do you measure its success? (2\\) Describe your most significant AI deployment in an institutional setting the problem it solved, the tools used, and the measurable outcome. (3\\) What is your 90\\-day plan for the CIO role at AIU, given the context described in this advertisement?\n* A brief technology leadership portfolio or case study (optional but encouraged) 2\u20134 pages demonstrating a specific transformation, platform implementation, or strategic technology decision you led\n* Contact details for three professional referees, at least two of whom directly supervised your CIO or senior IT leadership work\n\n\n Applications are reviewed on a rolling basis. The University reserves the right to close the search at any time. Only shortlisted candidates will be contacted. Shortlisted candidates will be invited for a structured interview process including a technology strategy presentation to the President and Senior Leadership Team.\n   \n\n  \n\n Submit applications via: https://aiu.edu.kw/careers/jobs\n   \n\n  \n\n The successful candidate is expected to commence employment at the earliest convenience.",
         "source_count": 1,
-        "country": "Saudi Arabia",
-        "industry_bonus": 3,
+        "country": "Kuwait",
+        "industry_bonus": 21,
         "policy_status": "pass",
         "sources": [
           "linkedin"
         ],
-        "first_seen": "2026-06-22",
-        "career_fit_score": 9,
-        "verdict": "SUBMIT",
-        "verdict_reason": "Excellent PMO Director match in Riyadh with strategic portfolio governance, delivery excellence, operational performance, and transformation scope. [5D role=2 | seniority=2 | geo=2 | strategic=1 | evidence=2 | fit=9/10 | llm=9] [CMO outreach queued for EjadTech - \u0625\u064a\u062c\u0627\u062f \u0627\u0644\u062a\u0642\u0646\u064a\u0629]",
+        "first_seen": "2026-06-23",
+        "career_fit_score": 7,
+        "verdict": "REVIEW",
+        "verdict_reason": "Excellent CIO fit with digital transformation, enterprise platforms, data governance, AI tools, and senior technology leadership in GCC [5D role=2 | seniority=2 | geo=1 | strategic=1 | evidence=1 | fit=7/10 | llm=9]",
         "watchlist_matches": {
           "company_hits": [],
           "domain_hits": [],
           "categories": []
         },
-        "ats_score": 76,
-        "ats_verdict": "GO",
+        "ats_score": 63,
+        "ats_verdict": "CONDITIONAL",
         "ats_matched": [
-          "pmo",
-          "project management",
+          "digital transformation",
+          "program management",
           "transformation",
-          "portfolio management",
-          "pmp",
+          "artificial intelligence",
           "ai",
+          "machine learning",
           "erp",
           "governance",
-          "operating model",
-          "change management"
+          "change management",
+          "vendor management"
         ],
-        "ats_gaps": [],
+        "ats_gaps": [
+          "Entry/junior level"
+        ],
         "llm_fit_score": 9,
         "fit_dimensions": {
           "role": 2,
           "seniority": 2,
-          "geography": 2,
-          "strategic": 1,
-          "evidence": 2
-        }
-      },
-      {
-        "id": "linkedin_jobspy-li-4427931661",
-        "source": "linkedin_jobspy",
-        "title": "Head of Technology (Healthcare)",
-        "company": "Dah Chong Hong Holdings Limited",
-        "location": "Hong Kong, Hong Kong SAR",
-        "url": "https://www.linkedin.com/jobs/view/4427931661",
-        "posted": "2026-06-12",
-        "seniority": "Director",
-        "domain_match": true,
-        "keyword_score": 30,
-        "match_keywords": [
-          "healthcare",
-          "enterprise",
-          "head of",
-          "growth",
-          "platform"
-        ],
-        "raw_snippet": "The Head of Technology (Healthcare \\& Logistics) is responsible for defining and executing the enterprise IT strategy across healthcare and logistics businesses. This role ensures technology platforms, digital capabilities, and IT operations effectively support business growth, regulatory compliance",
-        "relevant": true,
-        "filter_reason": null,
-        "search_country": "United Arab Emirates",
-        "search_title": "\"NMC Healthcare\" (\"Chief Technology Officer\" OR CTO OR \"Chief Information Officer\" OR CIO OR \"Head of Technology\" OR \"IT Director\" OR \"Head of IT\" OR \"Chief Digital Officer\" OR CDO OR \"VP Digital Transformation\" OR \"Head of Business Excellence\" OR PMO OR transformation OR director)",
-        "linkedin_id": "li-4427931661",
-        "jd_text": "The Head of Technology (Healthcare \\& Logistics) is responsible for defining and executing the enterprise IT strategy across healthcare and logistics businesses. This role ensures technology platforms, digital capabilities, and IT operations effectively support business growth, regulatory compliance (including GxP), operational excellence, and regional scalability across Asia.\n \n\n\n\n  \n\n\n\n\n\n**Key Responsibilities:** \n\n\n\n\n**Technology Strategy, Governance \\& Leadership** \n\n\n\n* Define and execute short\\- and long\\-term IT and digital transformation roadmaps aligned with corporate and business strategies.\n* Act as senior technology advisor to executive management on system modernization, cloud adoption, and emerging technologies.\n* Lead IT governance, enterprise architecture standards, and investment prioritization across healthcare and logistics.\n\n\n\n**Enterprise Systems, Platforms \\& Transformation** \n\n\n\n* Oversee core enterprise platforms including ERP (e.g. Oracle JD Edwards), WMS, BI/analytics, CRM, and integration.\n* Sponsor and govern large\\-scale initiatives such as ERP/WMS modernization, cloud migration, application rationalization, and data, analytics \\& AI enablement.\n* Ensure system scalability, reliability, interoperability, and performance across Asian markets.\n\n\n\n**Healthcare IT \\& Regulatory Compliance** \n\n\n\n* Ensure IT systems and operations comply with GxP, data integrity, cybersecurity, and data privacy requirements.\n* Lead IT engagement for audits, regulatory inspections, and due diligence activities.\n* Maintain validated systems, documentation, and SOPs supporting pharmaceutical distribution.\n\n\n\n**IT Operations, Financial \\& Vendor Management** \n\n\n\n* Provide end\\-to\\-end accountability for IT operations, infrastructure, cybersecurity, service delivery, and resilience.\n* Establish SLAs, KPIs, disaster recovery, and business continuity frameworks.\n* Own IT budgeting, forecasting, cost optimization, and financial governance.\n* Lead vendor selection, contract negotiation, performance management, and benefits realization.\n\n\n\n**People \\& Organization Leadership** \n\n\n\n* Lead and develop regional IT teams across healthcare and logistics.\n* Build succession pipelines, clarify roles, and foster a high\\-performance, compliance\\-aware culture.\n* Mentor senior IT leaders and subject matter experts.\n\n\n\n**Key Stakeholders:** \n\n\n\n* Executive Committee and Senior Management\n* Business Unit Heads (Healthcare \\& Logistics) and regional Operations \\& Supply Chain leaders\n* Finance, Compliance, Quality Assurance, and HR\n* External technology and implementation partners\n\n\n\n  \n\n\n\n\n\n**Qualifications:** \n\n\n\n* Bachelor's or Master's degree in Computer Science, Engineering, or equivalent; advanced degree preferred\n* 15\\+ years of IT experience with 5\\+ years of senior IT leadership role, preferably in healthcare, logistics, pharmaceutical distribution, or other regulated industries\n* Strong expertise in ERP, WMS, cloud platforms, enterprise integration, and large\\-scale transformation\n* Proven experience managing multi\\-country IT operations and regulatory environments\n* Strong executive\\-level influencing and cross\\-functional leadership skills\n* Strong analytical and problem\\-solving skills\n* Excellent communication and collaboration abilities\n* Fluency in Cantonese, Mandarin and English",
-        "source_count": 1,
-        "country": "United Arab Emirates",
-        "industry_bonus": 12,
-        "policy_status": "pass",
-        "sources": [
-          "linkedin"
-        ],
-        "first_seen": "2026-06-22",
-        "career_fit_score": 7,
-        "verdict": "SUBMIT",
-        "verdict_reason": "Strong technology transformation fit in healthcare, but Hong Kong is outside target GCC locations [5D role=2 | seniority=2 | geo=0 | strategic=1 | evidence=2 | fit=7/10 | llm=6 | watchlist=healthcare_gcc] [CMO outreach queued for Dah Chong Hong Holdings Limited]",
-        "watchlist_matches": {
-          "company_hits": [],
-          "domain_hits": [
-            "health",
-            "healthcare"
-          ],
-          "categories": [
-            "healthcare_gcc"
-          ]
-        },
-        "ats_score": 67,
-        "ats_verdict": "CONDITIONAL",
-        "ats_matched": [
-          "digital transformation",
-          "transformation",
-          "ai",
-          "erp",
-          "healthcare",
-          "cost optimization",
-          "governance",
-          "stakeholder management",
-          "vendor management",
-          "budget"
-        ],
-        "ats_gaps": [
-          "Missing: project management"
-        ],
-        "llm_fit_score": 6,
-        "fit_dimensions": {
-          "role": 2,
-          "seniority": 2,
-          "geography": 0,
-          "strategic": 1,
-          "evidence": 2
-        }
-      }
-    ],
-    "review": [
-      {
-        "id": "linkedin_jobspy-li-4429939089",
-        "source": "linkedin_jobspy",
-        "title": "Head of Technology & Digital Services",
-        "company": "Confidential Careers",
-        "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
-        "url": "https://www.linkedin.com/jobs/view/4429939089",
-        "posted": "2026-06-17",
-        "seniority": "Director",
-        "domain_match": true,
-        "keyword_score": 26,
-        "match_keywords": [
-          "cloud",
-          "cybersecurity",
-          "enterprise",
-          "head of"
-        ],
-        "raw_snippet": "**About the Role** \n\n\n\n\n  \n\n\n\n\n\n We are seeking an experienced technology leader to oversee IT operations, digital initiatives, enterprise applications, cloud services, cybersecurity, and service delivery across a diverse business environment.\n \n\n\n\n The role will be responsible for driving technolog",
-        "relevant": true,
-        "filter_reason": null,
-        "search_country": "Kuwait",
-        "search_title": "\"SEHA\" (\"Chief Technology Officer\" OR CTO OR \"Chief Information Officer\" OR CIO OR \"Head of Technology\" OR \"IT Director\" OR \"Head of IT\" OR \"Chief Digital Officer\" OR CDO OR \"VP Digital Transformation\" OR \"Head of Business Excellence\" OR PMO OR transformation OR director)",
-        "linkedin_id": "li-4429939089",
-        "jd_text": "**About the Role** \n\n\n\n\n  \n\n\n\n\n\n We are seeking an experienced technology leader to oversee IT operations, digital initiatives, enterprise applications, cloud services, cybersecurity, and service delivery across a diverse business environment.\n \n\n\n\n The role will be responsible for driving technology strategy, improving operational performance, strengthening governance, and delivering technology solutions that support business objectives.\n \n\n\n\n  \n\n\n\n\n\n**Key Responsibilities** \n\n\n\n* Lead enterprise IT operations, including infrastructure, cloud platforms, cybersecurity, applications, and end\\-user support.\n* Develop and execute technology and digital transformation initiatives aligned with business priorities.\n* Oversee IT service delivery, governance, policies, standards, and continuous improvement activities.\n* Manage technology vendors, contracts, budgets, and service providers.\n* Ensure the security, availability, and resilience of technology platforms and services.\n* Lead business continuity, disaster recovery, and technology risk management initiatives.\n* Partner with business stakeholders to identify opportunities for process improvement and technology enablement.\n* Develop and lead technology teams, ensuring high levels of performance and service delivery.\n\n\n\n  \n\n\n\n\n\n**Requirements** \n\n\n\n* Bachelor's Degree in Information Technology, Computer Science, Engineering, or a related discipline.\n* Minimum 12 years of experience within enterprise technology environments, including leadership responsibility.\n* Strong experience across IT operations, cloud technologies, cybersecurity, enterprise applications, and service management.\n* Experience managing technology transformation, governance, budgets, and vendor relationships.\n* Strong stakeholder management and communication skills.\n* Ability to lead teams and deliver technology initiatives across complex environments.\n\n\n\n  \n\n\n\n\n\n**Preferred Experience** \n\n\n\n* Experience within diversified groups, shared services environments, aviation, real estate, industrial services, or similar sectors.\n* Exposure to Microsoft technologies, cloud platforms, ERP systems, and IT governance frameworks.\n* Professional certifications in cloud, cybersecurity, IT service management, or project management are advantageous.",
-        "source_count": 1,
-        "country": "United Arab Emirates",
-        "industry_bonus": 9,
-        "policy_status": "pass",
-        "sources": [
-          "linkedin"
-        ],
-        "first_seen": "2026-06-22",
-        "career_fit_score": 8,
-        "verdict": "REVIEW",
-        "verdict_reason": "Strong GCC technology and digital services leadership role covering IT operations, transformation, governance, cloud, cybersecurity, vendors, and budgets. [5D role=2 | seniority=2 | geo=2 | strategic=1 | evidence=1 | fit=8/10 | llm=8]",
-        "watchlist_matches": {
-          "company_hits": [],
-          "domain_hits": [],
-          "categories": []
-        },
-        "ats_score": 64,
-        "ats_verdict": "CONDITIONAL",
-        "ats_matched": [
-          "digital transformation",
-          "project management",
-          "transformation",
-          "ai",
-          "erp",
-          "governance",
-          "stakeholder management",
-          "vendor management",
-          "budget",
-          "cloud"
-        ],
-        "ats_gaps": [],
-        "llm_fit_score": 8,
-        "fit_dimensions": {
-          "role": 2,
-          "seniority": 2,
-          "geography": 2,
-          "strategic": 1,
-          "evidence": 1
-        }
-      },
-      {
-        "id": "linkedin_jobspy-li-4431650697",
-        "source": "linkedin_jobspy",
-        "title": "Director - Digital Center of Excellence",
-        "company": "AD Ports Group",
-        "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
-        "url": "https://www.linkedin.com/jobs/view/4431650697",
-        "posted": "",
-        "seniority": "C-Suite",
-        "domain_match": true,
-        "keyword_score": 16,
-        "match_keywords": [
-          "stakeholder management",
-          "director"
-        ],
-        "raw_snippet": "**Job Description**\n The Job Purpose of Director Digital Center of Excellence is responsible of taking \u201cfirst among peers\u201d, leading role from the product owners by taking a leading responsibility in stakeholder management, helping coordinate across squads and driving projects/programs with multiple ",
-        "relevant": true,
-        "filter_reason": null,
-        "search_country": "Bahrain",
-        "search_title": "\"Abu Dhabi Health Services\" (\"Chief Technology Officer\" OR CTO OR \"Chief Information Officer\" OR CIO OR \"Head of Technology\" OR \"IT Director\" OR \"Head of IT\" OR \"Chief Digital Officer\" OR CDO OR \"VP Digital Transformation\" OR \"Head of Business Excellence\" OR PMO OR transformation OR director)",
-        "linkedin_id": "li-4431650697",
-        "jd_text": "**Job Description**\n The Job Purpose of Director Digital Center of Excellence is responsible of taking \u201cfirst among peers\u201d, leading role from the product owners by taking a leading responsibility in stakeholder management, helping coordinate across squads and driving projects/programs with multiple products/complexities.\n   \n\n  \n\n**Responsibilities**\n**Core Responsibilities:**\n* Develop innovative and market\\-leading products in liaison with the Chief Digital and Information Officer and Product Owners.\n* Establish the overall vision and roadmap for products across the different squads in the portfolio.\n* Manage and facilitate product adoption and lifecycle from concept to launch.\n* Define Digital Cluster product specification, features and deliverables based on market demand and oversee product testing and quality control to validate results.\n* Review and set priorities across products to meet customer\u2019s release expectations.\n* Act as the single point of contact for demand management for the squads.\n* Provide guidance to liaise with other teams in bringing new and innovative ideas for products in Digital Cluster to life.\n* Enforce Product Owners in the portfolio to align on roadmaps, priorities and dependencies \u2013 operationally calling for and facilitating the discussions.\n* Lead market research and competitor analysis to understand customer preferences, best practices and market trends.\n* Build strong relationship with external vendors, direct resolving issues and manage backlogged products aiming to retain high customer engagement.\n* Build a comprehensive Data Analytics warehouse for the Cluster in alignment with Corporate Guidelines and Cluster Market Needs and Demands.\n\n\n**People Management Responsibilities:**\n* Conduct regular 1:1s with product owners and squad members.\n* Participate in discussions inside and across the squads\u2019 on behalf of the portfolio.\n* Be a sparring partner for individual product owners to solve operational questions.\n* Drive initiatives to instill a spirit of engaged urgency across squads and ensure that the team efforts are aligned towards the portfolio KPIs.\n* Build and manage innovative products strategy and long\\-term plans.\n\n\n**Strategic Responsibilities:**\n* Take a leading role in discussions about squad visions, scopes, KPIs, and resources to ensure that the cluster is working towards the same goals by minimizing redundancy, and to ensure the team members goals, objectives \\& KPIs meet the management expectations.\n* Lead cross\\-functional team to streamline processes and implement best practices to drive operational excellence.\n* Assess risks in product development and develop risk mitigation strategies to minimize potential liabilities.\n* Provide regular reports to senior management on the cluster product development performance, including financial, operational, and market\\-related data.\n* Control the budget of new products and recommend alternatives to meet expectation.\n\n\n**Qualifications**\n Educational and Technical Qualifications:\n   \n\n  \n\n* Bachelor's degree in Computer Science, Information Technology, Marketing, Engineering or related field; Master's degree is a plus.\n\n\n Language Skills:\n   \n\n  \n\n* Excellent English. Arabic is an added advantage\n\n\n Years of Experience:\n   \n\n  \n\n* A minimum of 15 years of experience in a similar role\n\n\n Nature of Experience:\n   \n\n  \n\n* Experience as business manager in relevant product / customer or enabler segment.\n* Deep knowledge of relevant domains and products\n* Solid knowledge of industry trends pain points\n* Experience in agile development, with specific product owner (or similar) experience preferred, should be confident in building and managing the backlog of work.\n* Experience working with engineering teams preferred, cross functional teams a plus.\n* Ability to manage complex products.\n* Ability to manage parallel product development.\n* Enhanced business acumen since Challenger mindset and passion to challenge status quo to find new solutions and drive out of the box ideas \u2013 loves and embraces change.",
-        "source_count": 1,
-        "country": "United Arab Emirates",
-        "industry_bonus": 6,
-        "policy_status": "pass",
-        "sources": [
-          "linkedin"
-        ],
-        "first_seen": "2026-06-22",
-        "career_fit_score": 8,
-        "verdict": "REVIEW",
-        "verdict_reason": "Strong GCC Director-level digital CoE role with program coordination, stakeholder management, squads, products, and data analytics alignment [5D role=2 | seniority=2 | geo=2 | strategic=1 | evidence=1 | fit=8/10 | llm=8]",
-        "watchlist_matches": {
-          "company_hits": [],
-          "domain_hits": [],
-          "categories": []
-        },
-        "ats_score": 62,
-        "ats_verdict": "CONDITIONAL",
-        "ats_matched": [
-          "program management",
-          "project management",
-          "ai",
-          "stakeholder management",
-          "budget",
-          "agile",
-          "data",
-          "analytics",
-          "digital",
-          "strategy"
-        ],
-        "ats_gaps": [],
-        "llm_fit_score": 8,
-        "fit_dimensions": {
-          "role": 2,
-          "seniority": 2,
-          "geography": 2,
+          "geography": 1,
           "strategic": 1,
           "evidence": 1
         }
       }
     ],
-    "skip_count": 34,
+    "skip_count": 20,
     "unreviewed_count": 0,
     "thresholds": {
       "submit": 6,
       "review": 6
     },
     "pipeline": {
-      "l0_auto_skip": 0,
+      "l0_auto_skip": 2,
       "l1_jd_enriched": 0,
-      "l1_jd_coverage": "37/38",
+      "l1_jd_coverage": "17/19",
       "llm_model": "openai/gpt-5.5",
-      "llm_jobs_reviewed": 38,
-      "r2_latency_ms": 246280,
+      "llm_jobs_reviewed": 19,
+      "r2_latency_ms": 192969,
       "r2_fallbacks": 0
     },
     "kpi": {
-      "submit_rate": 0.05263157894736842,
+      "submit_rate": 0.0,
       "review_rate": 0.05263157894736842,
-      "skip_rate": 0.8947368421052632,
-      "avg_fit_score": 5.3,
-      "l0_filter_rate": 0.0,
+      "skip_rate": 0.9473684210526315,
+      "avg_fit_score": 4.6,
+      "l0_filter_rate": 9.5,
       "llm_review_rate": 100.0
     }
   },
   "kpi": {
-    "total_loaded": 38,
-    "l0_auto_skip": 0,
+    "total_loaded": 21,
+    "l0_auto_skip": 2,
     "l1_jd_enriched": 0,
     "l2_filtered": 0,
-    "submit_count": 2,
-    "review_count": 2,
-    "skip_count": 34,
-    "submit_rate": 5.3,
-    "avg_fit_score": 5.3,
-    "r2_latency_ms": 246280
+    "submit_count": 0,
+    "review_count": 1,
+    "skip_count": 18,
+    "submit_rate": 0.0,
+    "avg_fit_score": 4.6,
+    "r2_latency_ms": 192969
   },
   "recommendations": []
 }

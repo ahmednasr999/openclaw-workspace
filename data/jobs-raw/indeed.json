@@ -2,111 +2,58 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-06-22T14:00:40.437959+03:00",
-    "duration_ms": 38626,
+    "generated_at": "2026-06-23T20:00:44.166746+03:00",
+    "duration_ms": 40293,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "e074a2eb",
+    "run_id": "95c62a25",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": [
     {
-      "id": "indeed-in-31993d405acc2064",
+      "id": "indeed-in-2a2be6e7999e84bc",
       "source": "indeed",
-      "title": "Project Director \u2013 Operations",
-      "company": "MegaMind Information Technology",
+      "title": "Freelance Art Director.",
+      "company": "sweetwater mea",
       "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=31993d405acc2064",
+      "url": "https://ae.indeed.com/viewjob?jk=2a2be6e7999e84bc",
       "posted": "2026-06-22",
       "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 13,
+      "domain_match": false,
+      "keyword_score": 10,
       "match_keywords": [
         "director",
-        "leadership"
+        "platform"
       ],
-      "raw_snippet": "**Role Overview**\n\nThe Project Director \u2013 Operations is responsible for leading, directing, and overseeing the successful delivery of multiple projects and operational activities across the organization. The role ensures projects are executed safely, efficiently, on time, within budget, and in accordance with contractual, quality, and client requirements.\n\nThe Project Director provides strategic leadership to Project Managers, Operations Managers, Engineering Teams, and Site Teams while driving ",
+      "raw_snippet": "As Freelance Art Director the role holder shall be responsible to deliver high\\-touch storytelling experiences through visual, environmental, and digital platform in both English and Arabic. He/she shall drive the development of disruptive conceptual ideas and platforms that will supersede the clients expectations. The role shall be an excellent collaborator leading seamless support, communication, and execution of transformation of ideas into reality.\n\n\n* Develop creative seed ideas for clients",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
       "search_title": "Program Director"
     },
     {
-      "id": "indeed-in-23243303c92057a2",
+      "id": "indeed-in-c8038372a28212ba",
       "source": "indeed",
-      "title": "Chief Technology Officer",
-      "company": "Omnia Stores",
-      "location": "Dubai International City, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=23243303c92057a2",
-      "posted": "2026-06-21",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 46,
-      "match_keywords": [
-        "digital transformation",
-        "ai",
-        "infrastructure",
-        "growth",
-        "gcc",
-        "uae",
-        "saudi",
-        "api",
-        "platform"
-      ],
-      "raw_snippet": "We are a fast\\-growing e\\-commerce company operating multiple online stores across the GCC, serving customers in the UAE, Saudi Arabia, Kuwait, Qatar, Bahrain, and Oman. We are seeking an experienced Chief Technology Officer (CTO) to lead our technology strategy, digital transformation, infrastructure, software development, data, AI initiatives, and e\\-commerce platforms.\n\nThe CTO will be responsible for building a scalable technology organization capable of supporting rapid business growth and ",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Head of Digital Transformation"
-    },
-    {
-      "id": "indeed-in-b6501f744f4c040c",
-      "source": "indeed",
-      "title": "Junior Art Director - Social First",
-      "company": "Elevar Growth",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=b6501f744f4c040c",
-      "posted": "2026-06-21",
+      "title": "Associate Director, Business Development - Saudi Arabia",
+      "company": "Anduril",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=c8038372a28212ba",
+      "posted": "2026-06-22",
       "seniority": "C-Suite",
       "domain_match": false,
-      "keyword_score": 30,
+      "keyword_score": 16,
       "match_keywords": [
         "ai",
-        "enterprise",
-        "director",
-        "growth",
-        "dubai"
-      ],
-      "raw_snippet": "**Junior Art Director \\- Social First**\n\nDubai, full\\-time\n\n**About elevargrowth**\n\n*At elevargrowth, we are building something that matters \\- and we grow the people who build it with us.*\n\nelevargrowth is a Dubai\\-based agency built to elevate brands, making them relevant in culture, unforgettable in minds, and impactful in hearts. We work across sport, culture, government, and enterprise, delivering brand endorsement, campaigns and production, content and social.\n\n**About the role**\n\nWe are l",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "IT Director"
-    },
-    {
-      "id": "indeed-in-b6e565b2dcf87f05",
-      "source": "indeed",
-      "title": "Associate Director - Project Controls",
-      "company": "Mace Group",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=b6e565b2dcf87f05",
-      "posted": "2026-06-19",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 23,
-      "match_keywords": [
-        "ai",
-        "infrastructure",
         "director",
         "saudi"
       ],
-      "raw_snippet": "Mace combines construction expertise with consultancy to unlock potential in every person or project and redefine the boundaries of ambition. Our values shape the way we consult and define the people we want to join us on our journey.\n\n\n**The project:**\n\n\nThis is an opportunity to work on one of the largest programmes in Saudi Arabia. This unique project consists of major mixed\\-use development including sports facilities, entertainment and arts along with all associated infrastructure.\n\n\nMace i",
+      "raw_snippet": "Anduril Industries is a defense technology company with a mission to transform U.S. and allied military capabilities with advanced technology. By bringing the expertise, technology, and business model of the 21st century's most innovative companies to the defense industry, Anduril is changing how military systems are designed, built and sold. Anduril's family of systems is powered by Lattice OS, an AI\\-powered operating system that turns thousands of data streams into a realtime, 3D command and ",
       "relevant": true,
       "filter_reason": null,
       "search_country": "Saudi Arabia",
-      "search_title": "PMO Director"
+      "search_title": "Program Director"
     },
     {
       "id": "indeed-in-06f5dd994f22ca7d",
@@ -225,9 +172,9 @@
   ],
   "kpi": {
     "searches_run": 20,
-    "results_per_search": 2.95,
-    "unique_jobs": 9,
-    "errors": 6
+    "results_per_search": 3.2,
+    "unique_jobs": 7,
+    "errors": 5
   },
   "recommendations": []
 }

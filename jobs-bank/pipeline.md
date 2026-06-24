@@ -335,6 +335,16 @@
 | 444 | 🆕 | Esports Foundation | Director Digital Products | Riyadh | — | 🆕 Discovered | Radar | 2026-06-23 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4431672669) | — |
 | 445 | 🆕 | Mizuho | MEA FIG & SWFs - Vice President | Dubai | — | 🆕 Discovered | Radar | 2026-06-23 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4430828421) | — |
 | 446 | 🆕 | Natixis Corporate & Investment Banking | Vice President - Information Security and Technology Risk Compliance, Asia Pacific and Middle East (APME) | Dubai | — | 🆕 Discovered | Radar | 2026-06-23 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4430406030) | — |
+| 447 | 🆕 | Jacobs | Strategy & Transformation Lead | Dubai | — | 🆕 Discovered | Radar | 2026-06-24 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4431749409) | — |
+| 448 | 🆕 | BeWunder | Project Director Spatial Experiences (m/f/d) | Dubai | — | 🆕 Discovered | Radar | 2026-06-24 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4428927544) | — |
+| 449 | 🆕 | Mastercard | Director, Product Management (Pricing & Assurance) | Dubai | — | 🆕 Discovered | Radar | 2026-06-24 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4428961704) | — |
+| 450 | 🆕 | TALENTMATE | Vice President - Compensation And Benefits PRandPR - Rewards And Recognition People And Intellectual Capital Group UAEN Only | Dubai | — | 🆕 Discovered | Radar | 2026-06-24 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4432487977) | — |
+| 451 | 🆕 | MultiBank Group | Head of AI, Data & Governance | Dubai | — | 🆕 Discovered | Radar | 2026-06-24 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4432221881) | — |
+| 452 | 🆕 | Mastercard | Director, VASS Regional Controllership | Dubai | — | 🆕 Discovered | Radar | 2026-06-24 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4429456479) | — |
+| 453 | 🆕 | Spectrum Search | Director, Institutional OTC & Stablecoin Liquidity Sales | Dubai | — | 🆕 Discovered | Radar | 2026-06-24 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4432247490) | — |
+| 454 | 🆕 | Dubai Holding | Vice President - Digital Engineering | Dubai | — | 🆕 Discovered | Radar | 2026-06-24 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4429467084) | — |
+| 455 | 🆕 | UMATR | Head of Engineering | Dubai | — | 🆕 Discovered | Radar | 2026-06-24 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4431229028) | — |
+
 
 
 

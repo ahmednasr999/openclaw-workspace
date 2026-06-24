@@ -1356,3 +1356,14 @@
 2026-06-22T13:49:55+03:00 degraded count=2 reason=app-server-count-10, pid=1790522 rss_kb=786540 app_servers=10 health_ms=150 signals=0
 2026-06-22T13:49:55+03:00 restart-gateway reason=degraded:app-server-count-10,
 2026-06-22T13:50:09+03:00 post-restart health=000 0
+2026-06-23T08:01:22+03:00 degraded count=1 reason=app-server-count-10, pid=2211235 rss_kb=751696 app_servers=10 health_ms=1 signals=0
+2026-06-23T08:03:34+03:00 recovered pid=2211235 rss_kb=783628 app_servers=8 health_ms=1 signals=0
+2026-06-23T12:00:13+03:00 degraded count=1 reason=app-server-count-10, pid=2211235 rss_kb=763188 app_servers=10 health_ms=2 signals=0
+2026-06-23T12:02:25+03:00 recovered pid=2211235 rss_kb=783584 app_servers=8 health_ms=2 signals=0
+2026-06-23T13:46:15+03:00 degraded count=1 reason=app-server-count-10, pid=2211235 rss_kb=811440 app_servers=10 health_ms=1 signals=0
+2026-06-23T13:48:35+03:00 degraded count=2 reason=app-server-count-10, pid=2211235 rss_kb=813184 app_servers=10 health_ms=1 signals=0
+2026-06-23T13:48:35+03:00 restart-gateway reason=degraded:app-server-count-10,
+2026-06-23T13:48:48+03:00 post-restart health=000 0
+2026-06-23T14:16:21+03:00 health-fail count=1 pid=2659792 http=000 ms=6006 app_servers=4
+2026-06-23T15:02:22+03:00 restart-deferred reason=slow-health-3106ms active_app_servers=8
+2026-06-23T15:02:23+03:00 observed reason=slow-health-3106ms, pid=2659792 rss_kb=731748 app_servers=8 health_ms=3106 signals=1

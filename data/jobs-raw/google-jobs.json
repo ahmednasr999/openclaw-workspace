@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-source-google",
     "version": "1.0.0",
-    "generated_at": "2026-06-22T14:01:48.145146+03:00",
-    "duration_ms": 106176,
+    "generated_at": "2026-06-23T20:01:50.347979+03:00",
+    "duration_ms": 106240,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "3535f3f2",
+    "run_id": "0e80fa73",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -32,23 +32,40 @@
       "filter_reason": null
     },
     {
-      "id": "google-a7058e81d4f6",
+      "id": "google-16a3fe54e5b0",
       "source": "google",
-      "title": "Head of Digital Transformation",
-      "company": "Grantrow Middle East",
-      "location": "Riyadh, Saudi Arabia",
-      "url": "https://www.linkedin.com/jobs/view/4262209888/",
+      "title": "Director of Digital Transformation - Doha",
+      "company": "Confidential",
+      "location": "Doha, Qatar",
+      "url": "https://qa.indeed.com/viewjob?jk=5cdd30ecf9eed3e2",
+      "posted": "",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 16,
+      "match_keywords": [
+        "digital transformation",
+        "director"
+      ],
+      "raw_snippet": "We are seeking a Director of Digital Transformation to lead strategic transformation initiatives, drive innovation, and support the adoption of digital solutions across the organization.",
+      "relevant": true,
+      "filter_reason": null
+    },
+    {
+      "id": "google-44054232eaf2",
+      "source": "google",
+      "title": "Head of Technology, Digital Strategy, and Transformation",
+      "company": "Confidential",
+      "location": "Qatar",
+      "url": "https://www.gulftalent.com/qatar/jobs/head-of-technology-digital-strategy-and-transformation-542714",
       "posted": "",
       "seniority": "Director",
       "domain_match": true,
-      "keyword_score": 30,
+      "keyword_score": 10,
       "match_keywords": [
-        "digital transformation",
-        "ai",
-        "enterprise",
-        "head of"
+        "head of",
+        "middle east"
       ],
-      "raw_snippet": "Our client is looking for a results-driven Head of Digital Transformation to lead enterprise-wide digital innovation across operations, supply chain, and commercial functions.",
+      "raw_snippet": "Head of Technology, Digital Strategy, and Transformation vacancy in Doha, Qatar with Global Corporation. Explore more Head of Technology, Digital Strategy, and Transformation jobs in Doha, Qatar and other Middle East countries. Apply now!",
       "relevant": true,
       "filter_reason": null
     }
@@ -56,12 +73,12 @@
   "kpi": {
     "searches_run": 51,
     "exa_results_raw": 38,
-    "single_jobs_direct": 2,
-    "listing_pages_found": 19,
-    "listing_pages_extracted": 11,
-    "noise_filtered": 16,
+    "single_jobs_direct": 3,
+    "listing_pages_found": 17,
+    "listing_pages_extracted": 9,
+    "noise_filtered": 18,
     "malformed_filtered": 0,
-    "unique_jobs_final": 2,
+    "unique_jobs_final": 3,
     "errors": 47,
     "search_backend": "searxng",
     "exa_cost_estimate_usd": 0,
