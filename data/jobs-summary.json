@@ -2,121 +2,56 @@
   "meta": {
     "agent": "jobs-review",
     "version": "2.0.0",
-    "generated_at": "2026-06-23T20:44:40.029727+03:00",
-    "duration_ms": 199382,
+    "generated_at": "2026-06-24T22:42:00.906913+03:00",
+    "duration_ms": 189460,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "e15479c7",
+    "run_id": "aba5e80b",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
-    "generated_at": "2026-06-23T20:44:39.915750+03:00",
-    "total_candidates": 21,
-    "reviewed": 19,
+    "generated_at": "2026-06-24T22:42:00.765425+03:00",
+    "total_candidates": 26,
+    "reviewed": 26,
     "submit": [],
-    "review": [
-      {
-        "id": "linkedin_jobspy-li-4429418784",
-        "source": "linkedin_jobspy",
-        "title": "Chief Information Officer (CIO)",
-        "company": "American International University, Kuwait",
-        "location": "Jahra, Jahra, Kuwait",
-        "url": "https://www.linkedin.com/jobs/view/4429418784",
-        "posted": "",
-        "seniority": "C-Suite",
-        "domain_match": true,
-        "keyword_score": 13,
-        "match_keywords": [
-          "ai",
-          "leadership"
-        ],
-        "raw_snippet": "Position: Chief Information Officer (CIO)\n   \n\n  \n\n Classification: Senior Leadership\n   \n\n  \n\n Reports To: President\n   \n\n  \n\n**About The American International University**\n American International University (AIU) is a private institution in Kuwait, founded in 2019, offering undergraduate programs",
-        "relevant": true,
-        "filter_reason": null,
-        "search_country": "Kuwait",
-        "search_title": "PMO Director",
-        "linkedin_id": "li-4429418784",
-        "jd_text": "Position: Chief Information Officer (CIO)\n   \n\n  \n\n Classification: Senior Leadership\n   \n\n  \n\n Reports To: President\n   \n\n  \n\n**About The American International University**\n American International University (AIU) is a private institution in Kuwait, founded in 2019, offering undergraduate programs based on the American model of higher education. AIU provides degrees in Engineering, Architecture and Design, Business Administration, Arts and Sciences, and Education, with English as the language of instruction. The University is committed to fostering intellectual, cultural, and personal growth, preparing graduates for leadership roles in a global society.\n   \n\n  \n\n AIU is in active execution of its RISE Strategy 2026\u20132030, a five\\-year institutional transformation anchored in research development, WSCUC international accreditation, student success, and community engagement. Technology is not peripheral to this strategy; it is foundational to it. The CIO is a key member of the Senior Leadership Team, responsible for ensuring that AIU's digital infrastructure, enterprise platforms, and data ecosystem are built for the institutional ambitions of 2030, not the operational needs of 2019\\.\n   \n\n  \n\n For more information, visit: www.aiu.edu.kw\n   \n\n  \n\n Department Profile\n   \n\n  \n\n The CIO oversees two integrated functions that together constitute AIU's technology enterprise: the established Information Technology division, led by the Executive Director of IT, and the newly created Digital Transformation Office, which sits directly under the CIO's strategic leadership. Together, these functions manage all enterprise platforms, cybersecurity and data governance, academic technology, digital student services, and the AI\\-enabled tools that support administrative decision\\-making.\n   \n\n  \n\n Scope of Work\n   \n\n  \n\n The Chief Information Officer serves as AIU's most senior technology executive and a strategic thought partner to the President. The role bridges two realities: managing a live and growing enterprise technology environment reliably and efficiently today, while building the digital infrastructure that will sustain a WASC\\-accredited, research\\-active, rankings\\-visible university by 2030\\. The CIO is accountable for both.\n   \n\n  \n\n The scope of work spans five interconnected domains:\n   \n\n  \n\n* IT Strategy \\& Governance: Define and execute the multi\\-year IT strategic plan aligned with the RISE Strategy. Own IT governance, policy, and investment decisions across the entire technology portfolio.\n* Campus Digital Transformation: Lead the systematic replacement of manual, SharePoint, and Excel\\-based processes with integrated, automated, data\\-driven systems across administration, academics, research, and student services.\n* Enterprise Platform Management: Oversee the optimization, integration, and lifecycle management of all enterprise platforms: Banner (SIS), Canvas (LMS), Salesforce (CRM), Oracle Finance, and Tableau and lead evaluation of next\\-generation systems.\n* AI \\& Data Intelligence: Champion the institutional adoption of AI tools and data analytics to enhance administration efficiency, student success, research support, and decision\\-making at every level of the University.\n* Cybersecurity \\& Data Governance: Ensure AIU's data is secure, accurate, accessible, and compliant providing the data infrastructure that WASC accreditation, institutional research, and Board reporting require.\n\n\n Key Responsibilities\n   \n\n  \n\n* IT Strategy, Governance and Presidential Advisory\n* Serve as the President's primary technology advisor translating institutional strategic objectives into technology investment decisions, capability roadmaps, and implementation sequencing\n* Develop, own, and execute AIU's multi\\-year Technology Strategic Plan, updated annually and aligned with the RISE Strategy 2026\u20132030 KPIs and the WSCUC accreditation evidence requirements\n* Establish and chair the AIU Technology Governance Committee a cross\\-functional body including the VPAA, VP Administration \\& Finance, VP Enrollment, and Faculty Council representative to set institutional technology priorities and resolve competing demands on IT resources\n* Present quarterly technology performance reports to the President and an annual technology state\\-of\\-institution report to the Board of Trustees in plain language, not technical language\n* Manage the IT budget with full accountability for return on investment: technology spend must be justified by measurable institutional outcomes, not by technical preference\n* Lead all major technology vendor selection, contract negotiation, and relationship management ensuring AIU obtains best\\-value agreements and maintains leverage with strategic technology partners\n* Campus Digital Transformation\n* Conduct a comprehensive Digital Readiness Audit in the first 90 days mapping every major administrative and academic workflow against its current technology support level. identifying all critical processes still running on low level manual folders, email chains, or papers.\n* Develop and execute a phased Digital Transformation Roadmap that systematically replaces manual and disconnected processes with integrated, automated, role\\-appropriate digital workflows prioritized by institutional impact and WSCUC accreditation urgency\n* Lead the digitalization of Student Journey processes from application and admission through advising, registration, assessment, career services, and alumni engagement ensuring every student interaction is trackable, data\\-rich, and continuously improvable\n* Drive the digitalization of Faculty and Research workflows including research output tracking, grant management, assessment data collection, course file management, and faculty performance documentation\n* Ensure all digital transformation initiatives are adopted effectively change management, training, and user support are as important as the technology itself; a system that faculty and staff do not use has delivered zero value\n* Coordinate with the Director of Global Excellence and Benchmarking to ensure that institutional data required for QS, THE, and Webometrics submissions is generated automatically by integrated systems rather than assembled manually each year\n* Enterprise Platform Optimization and Integration\n* Maximize the institutional value of AIU's existing enterprise platform investments: Banner (SIS), Canvas (LMS), Salesforce (CRM), Oracle Finance, and Tableau.\n* Design and implement a unified integration architecture so that data flows seamlessly and automatically between systems eliminating manual data re\\-entry, reducing data errors, and creating the single source of truth the institutional research function requires\n* Evaluate, recommend, and lead the procurement of any new enterprise platforms required by the RISE Strategy including student success platforms, research management systems, data warehouse solutions, and AI tooling\n* Ensure that all platform implementations are executed to full functional scope with proper data governance, user training, and long\\-term support plans partial implementations that leave core functionality unused are not acceptable outcomes\n* Lead the migration of institutional data from SharePoint folders and Excel workbooks into appropriate managed systems with documented data governance, access controls, version management, and audit trails\n* Artificial Intelligence and Data Intelligence\n* Develop and implement AIU's Artificial Intelligence Strategy a practical, phased plan for deploying AI tools across administration, academic operations, student services, and research support that delivers measurable efficiency gains and quality improvements\n* Lead the deployment of AI\\-enhanced analytics and reporting so that the President, VPAA, Deans, and Department Chairs have real\\-time, dashboard\\-based visibility into the institutional metrics that matter enrollment trends, retention signals, research output, financial position without waiting for manual report compilation\n* Implement AI\\-powered student success tools early alert systems, predictive retention models, personalized advising recommendations that enable the institution to intervene proactively with at\\-risk students rather than reactively after they withdraw\n* Develop and enforce an institutional AI Acceptable Use Policy covering responsible use of generative AI in instruction, assessment, research, and administration balancing innovation with academic integrity and data privacy\n* Stay at the forefront of AI developments in higher education and advise the President and academic leadership on which emerging tools are ready for institutional adoption, which require further evaluation, and which present risks that outweigh their benefits\n* Build internal AI capability ensuring that faculty, administrators, and student\\-facing staff are trained to use AI tools appropriately and that AIU does not become dependent on vendors for capability that should be developed in\\-house\n* Cybersecurity, Data Governance and WASC Compliance\n* Establish and maintain a risk\\-based information security program aligned with ISO/IEC 27001 and NIST frameworks appropriate to AIU's scale, risk profile, and budget protecting student, faculty, staff, and institutional data\n* Develop and enforce data governance standards across all institutional systems defining data ownership, data quality standards, access controls, retention schedules, and the single\\-source\\-of\\-truth principles that eliminate contradictory data across departments\n* Ensure that the data infrastructure required for WSCUC accreditation is reliable, reproducible, and audit\\-ready no accreditation submission may be built on data that cannot be independently verified from a managed system\n* Implement and maintain business continuity and disaster recovery plans for all mission\\-critical systems ensuring AIU can maintain academic and administrative operations through system failures, cybersecurity incidents, or other disruptions\n* Ensure compliance with Kuwait data protection requirements and any applicable international standards including student record privacy, financial data security, and research data management\n* Oversee AIU's cybersecurity incident response capability ensuring that the institution can detect, contain, and recover from security incidents rapidly and with minimal impact to operations\n* Leadership, Team Development and Vendor Management\n* Provide strategic leadership and executive oversight to the Executive Director of Information Technology and the Digital Transformation Office setting clear direction, performance expectations, and development pathways for the technology team\n* Build and maintain a high\\-performing technology organization recruiting, developing, and retaining talented technology professionals in a competitive Kuwait market, and creating a culture of service excellence, continuous improvement, and innovation\n* Manage all technology vendor relationships at the executive level ensuring that strategic partners are held to their contractual commitments, that technology contracts are reviewed and optimized regularly, and that AIU's vendor ecosystem remains coherent and manageable\n* Represent AIU in relevant higher education technology networks, conferences, and professional forums maintaining awareness of best practice and building relationships that can benefit the institution\n\n\n Reporting Departments (If Applicable)\n   \n\n  \n\n* Executive Director of Information Technology: day\\-to\\-day IT operations, helpdesk, infrastructure, and enterprise platform administration\n* Digital Transformation Office Director: program management for all transformation initiatives, process automation, and workflow digitalization\n* Cybersecurity \\& Data Governance Lead: information security, data governance standards, and compliance\n\n\n Minimum Qualifications:\n   \n\n  \n\n Education\n   \n\n  \n\n* Doctorate (PhD) in Computer Science, Information Technology, Computer Engineering, or a closely related field strongly preferred\n* Master's degree in a relevant discipline required as a minimum; candidates with a master's and exceptional, directly relevant GCC higher education CIO experience will be considered\n\n\n**Experience**\n* Minimum ten (10\\) years of progressive technology leadership experience, with at least five (5\\) years at CIO, Deputy CIO, or equivalent executive level in a higher education institution\n* Demonstrated experience leading campus digital transformation, specifically the transition of institutional processes from manual, Excel, and SharePoint\\-based workflows to integrated, automated enterprise systems\n* Proven track record in selecting, implementing, and optimizing enterprise university platforms, particularly Banner (SIS), Canvas (LMS), Salesforce (CRM), Oracle or equivalent ERP, and business intelligence tools\n* Experience building and executing AI strategies in an institutional or enterprise context, not theoretical familiarity with AI, but demonstrated deployment of AI tools that delivered measurable operational improvements\n* Experience working in GCC higher education is a significant advantage, candidates with UAE, Kuwait, Saudi Arabia, or comparable Gulf university CIO experience are strongly preferred\n* Experience managing technology in a context of accreditation preparation, WASC, AACSB, ABET, or comparable quality assurance framework, is a substantial advantage\n\n\n Technical Knowledge\n   \n\n  \n\n* Deep proficiency with higher education enterprise platforms: Ellucian Banner or equivalent SIS, Canvas or comparable LMS, Salesforce or equivalent CRM, Oracle Fusion/EBS or equivalent ERP, Tableau or equivalent BI\n* Cloud architecture and management expertise: Azure, AWS, or GCP, including IaaS, PaaS, SaaS governance, cloud migration strategy, and hybrid infrastructure management\n* AI and machine learning application: practical experience deploying AI tools in an institutional setting, student success analytics, process automation, natural language processing, or predictive modelling\n* Cybersecurity governance: demonstrated knowledge of ISO/IEC 27001, NIST frameworks, and risk\\-based security program management, including incident response and business continuity planning\n* Data governance and integration: experience designing data governance frameworks, master data management standards, and system integration architectures that eliminate data silos\n* DevOps and automation: familiarity with modern DevOps practices, RPA tools, and workflow automation platforms that reduce manual administrative workload\n\n\n Leadership and Interpersonal Competencies\n   \n\n  \n\n* The ability to translate complex technology concepts into clear business and strategic language for Board members, the President, Deans, and faculty, technology leadership at the C\\-suite level is fundamentally a communication role\n* Demonstrated change management capability, the ability to lead people through technology\\-driven organizational change with empathy, clarity, and persistence\n* Service\\-oriented leadership: AIU's IT function exists to serve students, faculty, and staff, the CIO must model and build a culture where the technology team measures its success by the outcomes it enables, not the systems it manages\n* Executive\\-level stakeholder engagement: the CIO sits on the Senior Leadership Team and must be an effective, credible peer contributor to institutional strategy discussions that extend beyond technology\n\n\n**Preferred Qualifications**\n* Prior CIO or Deputy CIO experience at a GCC university, with working knowledge of Kuwait's higher education regulatory environment and PUC data requirements\n* Experience with Ellucian Banner Cloud migration, AIU's Banner environment will require cloud migration planning within the strategy period\n* Published research or professional thought leadership on AI in higher education, digital transformation in universities, or cybersecurity in academic environments\n* Bilingual proficiency in English and Arabic, strong written and oral English is mandatory; Arabic is a significant advantage for stakeholder engagement with Kuwait government bodies and Arabic\\-speaking staff and students\n* Experience managing a greenfield or rapid\\-growth university technology environment AIU's pace of institutional development requires a CIO comfortable with building and scaling, not just maintaining\n* Experience integrating WASC or comparable accreditation data requirements into enterprise system design ensuring that accreditation evidence is a by\\-product of normal institutional operations, not an annual emergency\n\n\n How to Apply\n   \n\n  \n\n Interested candidates should visit the Job Opportunities section on the AIU website and submit a complete application comprising:\n   \n\n  \n\n* A current curriculum vitae\n* A cover letter (maximum 3 pages) addressing three specific questions: (1\\) Describe a campus digital transformation initiative you personally led what was the starting state, what did you build, and how do you measure its success? (2\\) Describe your most significant AI deployment in an institutional setting the problem it solved, the tools used, and the measurable outcome. (3\\) What is your 90\\-day plan for the CIO role at AIU, given the context described in this advertisement?\n* A brief technology leadership portfolio or case study (optional but encouraged) 2\u20134 pages demonstrating a specific transformation, platform implementation, or strategic technology decision you led\n* Contact details for three professional referees, at least two of whom directly supervised your CIO or senior IT leadership work\n\n\n Applications are reviewed on a rolling basis. The University reserves the right to close the search at any time. Only shortlisted candidates will be contacted. Shortlisted candidates will be invited for a structured interview process including a technology strategy presentation to the President and Senior Leadership Team.\n   \n\n  \n\n Submit applications via: https://aiu.edu.kw/careers/jobs\n   \n\n  \n\n The successful candidate is expected to commence employment at the earliest convenience.",
-        "source_count": 1,
-        "country": "Kuwait",
-        "industry_bonus": 21,
-        "policy_status": "pass",
-        "sources": [
-          "linkedin"
-        ],
-        "first_seen": "2026-06-23",
-        "career_fit_score": 7,
-        "verdict": "REVIEW",
-        "verdict_reason": "Excellent CIO fit with digital transformation, enterprise platforms, data governance, AI tools, and senior technology leadership in GCC [5D role=2 | seniority=2 | geo=1 | strategic=1 | evidence=1 | fit=7/10 | llm=9]",
-        "watchlist_matches": {
-          "company_hits": [],
-          "domain_hits": [],
-          "categories": []
-        },
-        "ats_score": 63,
-        "ats_verdict": "CONDITIONAL",
-        "ats_matched": [
-          "digital transformation",
-          "program management",
-          "transformation",
-          "artificial intelligence",
-          "ai",
-          "machine learning",
-          "erp",
-          "governance",
-          "change management",
-          "vendor management"
-        ],
-        "ats_gaps": [
-          "Entry/junior level"
-        ],
-        "llm_fit_score": 9,
-        "fit_dimensions": {
-          "role": 2,
-          "seniority": 2,
-          "geography": 1,
-          "strategic": 1,
-          "evidence": 1
-        }
-      }
-    ],
-    "skip_count": 20,
+    "review": [],
+    "skip_count": 26,
     "unreviewed_count": 0,
     "thresholds": {
       "submit": 6,
       "review": 6
     },
     "pipeline": {
-      "l0_auto_skip": 2,
+      "l0_auto_skip": 0,
       "l1_jd_enriched": 0,
-      "l1_jd_coverage": "17/19",
+      "l1_jd_coverage": "22/26",
       "llm_model": "openai/gpt-5.5",
-      "llm_jobs_reviewed": 19,
-      "r2_latency_ms": 192969,
+      "llm_jobs_reviewed": 26,
+      "r2_latency_ms": 182787,
       "r2_fallbacks": 0
     },
     "kpi": {
       "submit_rate": 0.0,
-      "review_rate": 0.05263157894736842,
-      "skip_rate": 0.9473684210526315,
-      "avg_fit_score": 4.6,
-      "l0_filter_rate": 9.5,
+      "review_rate": 0.0,
+      "skip_rate": 1.0,
+      "avg_fit_score": 4.2,
+      "l0_filter_rate": 0.0,
       "llm_review_rate": 100.0
     }
   },
   "kpi": {
-    "total_loaded": 21,
-    "l0_auto_skip": 2,
+    "total_loaded": 26,
+    "l0_auto_skip": 0,
     "l1_jd_enriched": 0,
     "l2_filtered": 0,
     "submit_count": 0,
-    "review_count": 1,
-    "skip_count": 18,
+    "review_count": 0,
+    "skip_count": 26,
     "submit_rate": 0.0,
-    "avg_fit_score": 4.6,
-    "r2_latency_ms": 192969
+    "avg_fit_score": 4.2,
+    "r2_latency_ms": 182787
   },
   "recommendations": []
 }

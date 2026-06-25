@@ -344,6 +344,19 @@
 | 453 | 🆕 | Spectrum Search | Director, Institutional OTC & Stablecoin Liquidity Sales | Dubai | — | 🆕 Discovered | Radar | 2026-06-24 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4432247490) | — |
 | 454 | 🆕 | Dubai Holding | Vice President - Digital Engineering | Dubai | — | 🆕 Discovered | Radar | 2026-06-24 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4429467084) | — |
 | 455 | 🆕 | UMATR | Head of Engineering | Dubai | — | 🆕 Discovered | Radar | 2026-06-24 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4431229028) | — |
+| 456 | 🆕 | Mubadala | Head Of AI Strategy and Transformation | Abu Dhabi | — | 🆕 Discovered | Radar | 2026-06-25 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4431211739) | — |
+| 457 | 🆕 | Halian | Managed Services, Recruitment Agency & Contract Staffing | Director - Enterprise Applications & Digital Platforms | Abu Dhabi Emirate | — | 🆕 Discovered | Radar | 2026-06-25 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4431231130) | — |
+| 458 | 🆕 | AD Ports Group | Director - Digital Smart Cities Solutions | Abu Dhabi | — | 🆕 Discovered | Radar | 2026-06-25 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4431657061) | — |
+| 459 | 🆕 | Tandem Search | Senior Vice President, Head of Digital Channels, Business Banking | Dubai | — | 🆕 Discovered | Radar | 2026-06-25 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4428921338) | — |
+| 460 | 🆕 | Hays | Chief Technology Officer | Riyadh | — | 🆕 Discovered | Radar | 2026-06-25 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4432234361) | — |
+| 461 | 🆕 | Riyad Bank | Head Of Digital & Transformation Risk Section | Riyadh | — | 🆕 Discovered | Radar | 2026-06-25 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4431259337) | — |
+| 462 | 🆕 | RiDiK (a Subsidiary of CLPS. Nasdaq: CLPS) | AI Transformation Lead | Jeddah | — | 🆕 Discovered | Radar | 2026-06-25 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4430891031) | — |
+| 463 | 🆕 | Involved Solutions | CTO - eCommerce | Riyadh | — | 🆕 Discovered | Radar | 2026-06-25 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4431248997) | — |
+| 464 | 🆕 | CNTXT | Director of Information Technology | Riyadh | — | 🆕 Discovered | Radar | 2026-06-25 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4432541297) | — |
+| 465 | 🆕 | TALENTMATE | UAEN Only - Vice President Centralized Payments | Dubai | — | 🆕 Discovered | Radar | 2026-06-25 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4433030249) | — |
+| 466 | 🆕 | TALENTMATE | Vice President And Enterprise Architect | Dubai | — | 🆕 Discovered | Radar | 2026-06-25 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4433023524) | — |
+| 467 | 🆕 | Villegas Recruitment Firm | Head of IT Infrastructure and Operations | Dubai | — | 🆕 Discovered | Radar | 2026-06-25 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4431494012) | — |
+
 
 
 

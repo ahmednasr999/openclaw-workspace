@@ -2968,3 +2968,12 @@
 {"agent": "jobs-merge", "run_id": "754c0bd7", "started": "2026-06-23T20:41:19.598441+03:00", "duration_ms": 155945, "status": "success", "records": 18, "error": null}
 {"agent": "jobs-review", "run_id": "e15479c7", "started": "2026-06-23T20:44:40.030573+03:00", "duration_ms": 199383, "status": "success", "records": 10, "error": null}
 {"agent": "jobs-source-linkedin-jobspy", "run_id": "bd695c6c", "started": "2026-06-24T05:46:46.495370+03:00", "duration_ms": 2798898, "status": "success", "records": 585, "error": null}
+{"agent": "email-agent", "run_id": "651c6f8a", "started": "2026-06-24T08:01:13.906148+03:00", "duration_ms": 47163, "status": "success", "records": 17, "error": null}
+{"agent": "email-agent", "run_id": "b0c1822c", "started": "2026-06-24T16:01:17.552623+03:00", "duration_ms": 41598, "status": "success", "records": 17, "error": null}
+{"agent": "email-agent", "run_id": "44451141", "started": "2026-06-24T20:01:18.317372+03:00", "duration_ms": 38594, "status": "success", "records": 17, "error": null}
+{"agent": "jobs-source-indeed", "run_id": "d9664e35", "started": "2026-06-24T22:00:45.268949+03:00", "duration_ms": 41821, "status": "success", "records": 9, "error": null}
+{"agent": "jobs-source-google", "run_id": "ec4616d5", "started": "2026-06-24T22:01:18.974677+03:00", "duration_ms": 75490, "status": "success", "records": 2, "error": null}
+{"agent": "jobs-source-linkedin-jobspy", "run_id": "6aca3305", "started": "2026-06-24T22:36:00.846473+03:00", "duration_ms": 2157422, "status": "success", "records": 548, "error": null}
+{"agent": "jobs-merge", "run_id": "173a0934", "started": "2026-06-24T22:38:49.925344+03:00", "duration_ms": 168390, "status": "success", "records": 23, "error": null}
+{"agent": "jobs-review", "run_id": "aba5e80b", "started": "2026-06-24T22:42:00.909675+03:00", "duration_ms": 189463, "status": "success", "records": 10, "error": null}
+{"agent": "jobs-source-linkedin-jobspy", "run_id": "e57249db", "started": "2026-06-25T05:42:49.835009+03:00", "duration_ms": 2561534, "status": "success", "records": 578, "error": null}

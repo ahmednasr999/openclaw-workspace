@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-24T06:07:58.966319+03:00",
+  "timestamp": "2026-06-25T06:08:17.318380+03:00",
   "total_crons": 52,
   "system_crons": 22,
   "openclaw_crons": 30,
@@ -289,8 +289,8 @@
       }
     },
     {
-      "name": "CMO Daily LinkedIn Publisher - Composio 11 Cairo",
-      "schedule": "cron 0 11 * * * @ Africa/Cairo",
+      "name": "CMO Daily LinkedIn Publisher - Composio 09:30 Cairo",
+      "schedule": "cron 30 9 * * * @ Africa/Cairo",
       "type": "openclaw",
       "last_status": {
         "status": "\u26a0\ufe0f Unknown",

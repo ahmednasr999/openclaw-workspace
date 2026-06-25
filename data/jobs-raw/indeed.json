@@ -2,16 +2,82 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-06-23T20:00:44.166746+03:00",
-    "duration_ms": 40293,
+    "generated_at": "2026-06-24T22:00:45.262636+03:00",
+    "duration_ms": 41814,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "95c62a25",
+    "run_id": "d9664e35",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": [
+    {
+      "id": "indeed-in-e96e3d54641ed35b",
+      "source": "indeed",
+      "title": "Director - Data and Intelligence",
+      "company": "GMG",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=e96e3d54641ed35b",
+      "posted": "2026-06-24",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 16,
+      "match_keywords": [
+        "ai",
+        "director",
+        "middle east"
+      ],
+      "raw_snippet": "**Who we are:**\n\n\nGMG is a global well\\-being company retailing, distributing and manufacturing a portfolio of leading international and home\\-grown brands across sport, everyday goods, health and beauty, properties and logistics sectors. Under the ownership and management of the Baker family for over 45 years, GMG is a valued partner of choice for the world's most successful and respected brands in the well\\-being sector. Working across the Middle East, North Africa, and Asia, GMG has introduce",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Program Director"
+    },
+    {
+      "id": "indeed-in-c465b223b05f8e0a",
+      "source": "indeed",
+      "title": "Project Director",
+      "company": "Parsons",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=c465b223b05f8e0a",
+      "posted": "2026-06-24",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 20,
+      "match_keywords": [
+        "director",
+        "leadership",
+        "growth"
+      ],
+      "raw_snippet": "In a world of possibilities, pursue one with endless opportunities. Imagine Next!  \n\n\nAt Parsons, you can imagine a career where you thrive, work with exceptional people, and be yourself. Guided by our leadership vision of valuing people, embracing agility, and fostering growth, we cultivate an innovative culture that empowers you to achieve your full potential. Unleash your talent and redefine what\u2019s possible. **Job Description:**\n\n\nParsons is seeking an exceptional **Project Director** to lead",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Program Director"
+    },
+    {
+      "id": "indeed-in-3d17b134349fa493",
+      "source": "indeed",
+      "title": "Director, VASS Regional Controllership",
+      "company": "Mastercard",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=3d17b134349fa493",
+      "posted": "2026-06-23",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 23,
+      "match_keywords": [
+        "payments",
+        "ai",
+        "director"
+      ],
+      "raw_snippet": "**Our Purpose**\n\n*Mastercard powers economies and empowers people in 200\\+ countries and territories worldwide. Together with our customers, we\u2019re helping build a sustainable economy where everyone can prosper. We support a wide range of digital payments choices, making transactions secure, simple, smart and accessible. Our technology and innovation, partnerships and networks combine to deliver a unique set of products and services that help people, businesses and governments realize their great",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Program Director"
+    },
     {
       "id": "indeed-in-2a2be6e7999e84bc",
       "source": "indeed",
@@ -31,12 +97,56 @@
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
+      "search_title": "Director Digital Transformation"
+    },
+    {
+      "id": "indeed-in-b2845b7950d97e3f",
+      "source": "indeed",
+      "title": "Senior Project Director (PPP)",
+      "company": "JASARA PMC",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=b2845b7950d97e3f",
+      "posted": "2026-06-24",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 23,
+      "match_keywords": [
+        "program management",
+        "director",
+        "leadership"
+      ],
+      "raw_snippet": "JASARA is a program management company providing PMC services across complex, high\\-impact initiatives. Working within the management consulting space, the company supports major programs with the leadership, structure, and delivery oversight needed to move ambitious projects from strategy through execution. This is an opportunity to contribute to work where commercial insight, stakeholder alignment, and disciplined program leadership are central to success.\n\n\nAs a Senior Project Director (PPP),",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "Program Director"
+    },
+    {
+      "id": "indeed-in-c11a34976fa37192",
+      "source": "indeed",
+      "title": "Design Director - Utility Compounds",
+      "company": "Parsons",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=c11a34976fa37192",
+      "posted": "2026-06-24",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 20,
+      "match_keywords": [
+        "director",
+        "leadership",
+        "growth"
+      ],
+      "raw_snippet": "In a world of possibilities, pursue one with endless opportunities. Imagine Next!  \n\n\nAt Parsons, you can imagine a career where you thrive, work with exceptional people, and be yourself. Guided by our leadership vision of valuing people, embracing agility, and fostering growth, we cultivate an innovative culture that empowers you to achieve your full potential. Unleash your talent and redefine what\u2019s possible. **Job Description:**\n\n**Position Summary**\n\n\nThe Design Director \u2013 Utility Compounds ",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
       "search_title": "Program Director"
     },
     {
       "id": "indeed-in-c8038372a28212ba",
       "source": "indeed",
-      "title": "Associate Director, Business Development - Saudi Arabia",
+      "title": "Associate Director, Business Development, Saudi Arabia",
       "company": "Anduril",
       "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
       "url": "https://sa.indeed.com/viewjob?jk=c8038372a28212ba",
@@ -53,117 +163,47 @@
       "relevant": true,
       "filter_reason": null,
       "search_country": "Saudi Arabia",
-      "search_title": "Program Director"
+      "search_title": "Head of Technology"
     },
     {
-      "id": "indeed-in-06f5dd994f22ca7d",
+      "id": "indeed-in-0f7816a174e7f3e2",
       "source": "indeed",
-      "title": "Associate Director, C4I Program Manager",
-      "company": "Raytheon",
+      "title": "Project Director",
+      "company": "Parsons",
       "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=06f5dd994f22ca7d",
-      "posted": "2026-06-20",
+      "url": "https://sa.indeed.com/viewjob?jk=0f7816a174e7f3e2",
+      "posted": "2026-06-24",
       "seniority": "C-Suite",
       "domain_match": true,
-      "keyword_score": 26,
-      "match_keywords": [
-        "ai",
-        "director",
-        "head of",
-        "saudi",
-        "riyadh"
-      ],
-      "raw_snippet": "**Date Posted:**\n\n\n2026\\-04\\-26**Country:**\n\n\nSaudi Arabia**Location:**\n\n\nSA\\-01\\-RIYADH\\-S1 \\~ 9054 Airport Rd \\~ ROSHAN FRONT BLDG S1**Position Role Type:**\n\n\nOnsite**About Us:**\n\n\nAt Raytheon, the foundation of everything we do is rooted in our values and a higher calling \u2013 to help our nation and allies defend freedoms and deter aggression. We bring the strength of more than 100 years of experience and renowned engineering expertise to meet the needs of today\u2019s mission and stay ahead of tomor",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-a3af63a49d6188e0",
-      "source": "indeed",
-      "title": "Project Director (SP)",
-      "company": "JASARA PMC",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=a3af63a49d6188e0",
-      "posted": "2025-02-09",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 10,
+      "keyword_score": 20,
       "match_keywords": [
         "director",
-        "saudi"
+        "leadership",
+        "growth"
       ],
-      "raw_snippet": "JASARA PMC, a joint venture between Public Investment Fund (PIF), Jacobs, and Saudi Aramco, is seeking a Project Director to join their team. JASARA inspires a solutions\\-based approach in order to deliver on the promise of Vision 2030 and bring visible change within the Kingdom of Saudi Arabia. This is an exciting opportunity to work on the most complex programs in the world while simultaneously making a lasting impact on the community.\n\n  \n\n\nResponsibilities* Oversee the day\\-to\\-day operation",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-77e1eb9c8baf8923",
-      "source": "indeed",
-      "title": "Associate Director - Cost Management",
-      "company": "Turner & Townsend Pty Limited",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=77e1eb9c8baf8923",
-      "posted": "2026-06-22",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 13,
-      "match_keywords": [
-        "infrastructure",
-        "director"
-      ],
-      "raw_snippet": "**Company Description**  \n\nTurner \\& Townsend is a global professional services company with over 22,000 people in more than 60 countries.  \n\nWorking with our clients across real estate, infrastructure, energy and natural resources, we transform together delivering outcomes that improve people\u2019s lives. Working in partnership makes it possible to deliver the world\u2019s most impactful projects and programmes as we turn challenge into opportunity and complexity into success.  \n\nOur capabilities includ",
+      "raw_snippet": "In a world of possibilities, pursue one with endless opportunities. Imagine Next!  \n\n\nAt Parsons, you can imagine a career where you thrive, work with exceptional people, and be yourself. Guided by our leadership vision of valuing people, embracing agility, and fostering growth, we cultivate an innovative culture that empowers you to achieve your full potential. Unleash your talent and redefine what\u2019s possible. **Job Description:**\n\n\nParsons is seeking a seasoned **Project Director** with over 2",
       "relevant": true,
       "filter_reason": null,
       "search_country": "Saudi Arabia",
       "search_title": "IT Director"
     },
     {
-      "id": "indeed-in-f9aa0407d0cad905",
+      "id": "indeed-in-e3d1d83a58e396a6",
       "source": "indeed",
-      "title": "Director - Viaduct, Stations and Tunnels - 20004753 - DA3",
-      "company": "Qiddiya Investment Company",
+      "title": "Technical Director",
+      "company": "Parsons",
       "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=f9aa0407d0cad905",
-      "posted": "2026-06-21",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 23,
-      "match_keywords": [
-        "ai",
-        "director",
-        "saudi",
-        "riyadh",
-        "api"
-      ],
-      "raw_snippet": "**Qiddiya is Saudi Arabia\u2019s future capital of entertainment, sports, and culture \u2014 a 360 km\u00b2 mega\\-project just outside Riyadh. From F1\\-grade racetracks and theme parks to stadiums and performance venues, we\u2019re creating a destination like no other. This is more than a project, it\u2019s a national transformation. As construction accelerates, we\u2019re hiring ambitious talent to help shape it. If you\u2019re driven by scale, impact, and the chance to build something iconic from the ground up, Qiddiya is calli",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "IT Director"
-    },
-    {
-      "id": "indeed-in-6101a3da47fe84d2",
-      "source": "indeed",
-      "title": "Director - Railway Depot, Rolling Stock, Track and Systems - 20005210 - DA3",
-      "company": "Qiddiya Investment Company",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=6101a3da47fe84d2",
-      "posted": "2026-06-21",
+      "url": "https://sa.indeed.com/viewjob?jk=e3d1d83a58e396a6",
+      "posted": "2026-06-24",
       "seniority": "C-Suite",
       "domain_match": true,
-      "keyword_score": 23,
+      "keyword_score": 20,
       "match_keywords": [
-        "ai",
         "director",
-        "saudi",
-        "riyadh",
-        "api"
+        "leadership",
+        "growth"
       ],
-      "raw_snippet": "**Qiddiya is Saudi Arabia\u2019s future capital of entertainment, sports, and culture \u2014 a 360 km\u00b2 mega\\-project just outside Riyadh. From F1\\-grade racetracks and theme parks to stadiums and performance venues, we\u2019re creating a destination like no other. This is more than a project, it\u2019s a national transformation. As construction accelerates, we\u2019re hiring ambitious talent to help shape it. If you\u2019re driven by scale, impact, and the chance to build something iconic from the ground up, Qiddiya is calli",
+      "raw_snippet": "In a world of possibilities, pursue one with endless opportunities. Imagine Next!  \n\n\nAt Parsons, you can imagine a career where you thrive, work with exceptional people, and be yourself. Guided by our leadership vision of valuing people, embracing agility, and fostering growth, we cultivate an innovative culture that empowers you to achieve your full potential. Unleash your talent and redefine what\u2019s possible. **Job Description:**\n\n\nParsons is looking for an amazingly talented **Technical Direc",
       "relevant": true,
       "filter_reason": null,
       "search_country": "Saudi Arabia",
@@ -172,9 +212,9 @@
   ],
   "kpi": {
     "searches_run": 20,
-    "results_per_search": 3.2,
-    "unique_jobs": 7,
-    "errors": 5
+    "results_per_search": 3.85,
+    "unique_jobs": 9,
+    "errors": 4
   },
   "recommendations": []
 }

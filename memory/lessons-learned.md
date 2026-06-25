@@ -1453,3 +1453,24 @@ The June 22 email briefing prompts repeatedly required using only provided email
 ### Do differently
 For email briefings and alert formatting, let the body excerpt override noisy categories or high priority scores. Use `read_and_file`/`no_action` or low urgency for acknowledgements and plain rejections, and say `cannot determine from available content` when the supplied excerpt is insufficient.
 
+
+## 2026-06-24 - Reference-Led Visuals Must Match Structure Before Style
+
+### Correction
+Ahmed rejected an AI prompting / Loop Engineering visual as "very bad" because it preserved the topic and palette but missed the reference concept. The accepted rebuild matched the reference composition: open toolkit on the left, bold hand-lettered center headline, simple workflow on the right, warm paper, black ink, orange accents, exact `1280x659`, and Ahmed signature.
+### Do differently
+For reference-driven visuals, extract and preserve the reference layout, metaphor, and hierarchy first, then vary details. Treat "same concept" as composition plus metaphor, not just subject and style, and run a visual check for overlaps and small-label readability before delivery.
+
+## 2026-06-24 - IEEE-Style Content Needs Credibility Wording
+
+### Preference
+For the Loop Engineering PDF/post, the credible framing was "an 11-page IEEE-style working note" rather than "an IEEE paper"; the document is an independent working note/reformatting, not evidence of publication.
+### Do differently
+When packaging user-created research/content, avoid overstating publication status. Use "IEEE-style working note" unless there is explicit evidence of actual IEEE publication or acceptance.
+
+## 2026-06-24 - JobZoom And CMO Loops Need Manual Proof Before Automation
+
+### Improvement
+The Loop Engineering checklist was created for JobZoom and CMO with the rule that loops are control systems, not permission. The recommended next step was real-workflow proof: JobZoom closeout first, then CMO visual/draft closeout, before read-only validators or cron automation.
+### Do differently
+Before automating JobZoom/CMO validators, run two clean manual checklist passes. Verify source evidence, isolated work, artifacts, approvals, persistence, and stop states before declaring a loop healthy.

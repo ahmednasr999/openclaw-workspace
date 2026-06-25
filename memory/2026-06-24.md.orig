@@ -1,0 +1,10 @@
+# Daily Notes - 2026-06-24
+## OpenClaw update to 2026.6.10
+
+- Updated OpenClaw CLI/gateway to 2026.6.10 (aa69b12) and verified gateway RPC is serving 2026.6.10.
+- Backed up pre-update state under /root/.openclaw/backups/pre-openclaw-update-20260624-114556.
+- Reapplied runtime hardening patches after update; active dist patch checker passes.
+- Reinstalled @openclaw/tokenjuice@2026.6.10; plugin version drift is clear.
+- Remaining WARN-level items: non-minimal systemd PATH, legacy plugin install index warning, openai-codex usage not visible in guard output, and several cron jobs with previous lastRunStatus=error.
+- Update guard report: /root/.openclaw/workspace/reports/openclaw-update-guard-20260624-151132.txt.
+

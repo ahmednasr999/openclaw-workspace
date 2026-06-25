@@ -1367,3 +1367,1001 @@
 2026-06-23T14:16:21+03:00 health-fail count=1 pid=2659792 http=000 ms=6006 app_servers=4
 2026-06-23T15:02:22+03:00 restart-deferred reason=slow-health-3106ms active_app_servers=8
 2026-06-23T15:02:23+03:00 observed reason=slow-health-3106ms, pid=2659792 rss_kb=731748 app_servers=8 health_ms=3106 signals=1
+2026-06-24T08:00:52+03:00 degraded count=1 reason=app-server-count-10, pid=2935982 rss_kb=915912 app_servers=10 health_ms=1 signals=0
+2026-06-24T08:02:55+03:00 recovered pid=2935982 rss_kb=762304 app_servers=8 health_ms=1 signals=0
+2026-06-24T12:00:35+03:00 health-fail count=1 pid=none http=000 ms=0 app_servers=0
+2026-06-24T12:02:55+03:00 health-fail count=2 pid=none http=000 ms=0 app_servers=0
+2026-06-24T12:02:55+03:00 restart-gateway reason=health-failures:2:http-000
+2026-06-24T12:03:04+03:00 post-restart health=000 0
+2026-06-24T12:05:14+03:00 health-fail count=1 pid=none http=000 ms=0 app_servers=0
+2026-06-24T12:07:34+03:00 health-fail count=2 pid=none http=000 ms=0 app_servers=0
+2026-06-24T12:07:34+03:00 restart-gateway reason=health-failures:2:http-000
+2026-06-24T12:07:44+03:00 post-restart health=000 0
+2026-06-24T12:09:54+03:00 health-fail count=1 pid=none http=000 ms=0 app_servers=0
+2026-06-24T12:12:14+03:00 health-fail count=2 pid=none http=000 ms=0 app_servers=0
+2026-06-24T12:12:14+03:00 restart-gateway reason=health-failures:2:http-000
+2026-06-24T12:12:24+03:00 post-restart health=000 0
+2026-06-24T12:14:34+03:00 health-fail count=1 pid=none http=000 ms=0 app_servers=0
+2026-06-24T12:16:54+03:00 health-fail count=2 pid=none http=000 ms=0 app_servers=0
+2026-06-24T12:16:54+03:00 restart-gateway reason=health-failures:2:http-000
+2026-06-24T12:17:04+03:00 post-restart health=000 0
+2026-06-24T12:19:14+03:00 health-fail count=1 pid=none http=000 ms=0 app_servers=0
+2026-06-24T12:21:34+03:00 health-fail count=2 pid=none http=000 ms=0 app_servers=0
+2026-06-24T12:21:34+03:00 restart-gateway reason=health-failures:2:http-000
+2026-06-24T12:21:44+03:00 post-restart health=000 0
+2026-06-24T12:23:55+03:00 health-fail count=1 pid=none http=000 ms=0 app_servers=0
+2026-06-24T12:26:14+03:00 health-fail count=2 pid=none http=000 ms=0 app_servers=0
+2026-06-24T12:26:14+03:00 restart-gateway reason=health-failures:2:http-000
+2026-06-24T12:26:24+03:00 post-restart health=000 0
+2026-06-24T12:28:34+03:00 health-fail count=1 pid=none http=000 ms=0 app_servers=0
+2026-06-24T12:30:54+03:00 health-fail count=2 pid=none http=000 ms=0 app_servers=0
+2026-06-24T12:30:54+03:00 restart-gateway reason=health-failures:2:http-000
+2026-06-24T12:31:04+03:00 post-restart health=000 0
+2026-06-24T12:33:14+03:00 health-fail count=1 pid=none http=000 ms=0 app_servers=0
+2026-06-24T12:35:35+03:00 health-fail count=2 pid=none http=000 ms=0 app_servers=0
+2026-06-24T12:35:35+03:00 restart-gateway reason=health-failures:2:http-000
+2026-06-24T12:35:44+03:00 post-restart health=000 0
+2026-06-24T12:37:54+03:00 health-fail count=1 pid=none http=000 ms=0 app_servers=0
+2026-06-24T12:40:14+03:00 health-fail count=2 pid=none http=000 ms=0 app_servers=0
+2026-06-24T12:40:14+03:00 restart-gateway reason=health-failures:2:http-000
+2026-06-24T12:40:24+03:00 post-restart health=000 0
+2026-06-24T12:42:34+03:00 health-fail count=1 pid=none http=000 ms=0 app_servers=0
+2026-06-24T12:44:54+03:00 health-fail count=2 pid=none http=000 ms=0 app_servers=0
+2026-06-24T12:44:54+03:00 restart-gateway reason=health-failures:2:http-000
+2026-06-24T12:45:04+03:00 post-restart health=000 0
+2026-06-24T12:47:14+03:00 health-fail count=1 pid=none http=000 ms=0 app_servers=0
+2026-06-24T12:49:34+03:00 health-fail count=2 pid=none http=000 ms=0 app_servers=0
+2026-06-24T12:49:34+03:00 restart-gateway reason=health-failures:2:http-000
+2026-06-24T12:49:43+03:00 post-restart health=000 0
+2026-06-24T12:51:54+03:00 health-fail count=1 pid=none http=000 ms=0 app_servers=0
+2026-06-24T12:56:34+03:00 health-fail count=1 pid=none http=200 ms=5 app_servers=0
+2026-06-24T12:58:54+03:00 health-fail count=2 pid=none http=200 ms=7 app_servers=0
+2026-06-24T12:58:54+03:00 restart-gateway reason=health-failures:2:http-200
+2026-06-24T12:59:05+03:00 post-restart health=200 1
+2026-06-24T13:01:14+03:00 health-fail count=1 pid=none http=200 ms=1 app_servers=0
+2026-06-24T13:03:35+03:00 health-fail count=2 pid=none http=200 ms=2 app_servers=0
+2026-06-24T13:03:35+03:00 restart-gateway reason=health-failures:2:http-200
+2026-06-24T13:03:44+03:00 post-restart health=200 1
+2026-06-24T13:05:54+03:00 health-fail count=1 pid=none http=200 ms=1 app_servers=0
+2026-06-24T13:08:14+03:00 health-fail count=2 pid=none http=200 ms=1 app_servers=0
+2026-06-24T13:08:14+03:00 restart-gateway reason=health-failures:2:http-200
+2026-06-24T13:08:24+03:00 post-restart health=200 0
+2026-06-24T13:10:34+03:00 health-fail count=1 pid=none http=200 ms=12 app_servers=0
+2026-06-24T13:12:54+03:00 health-fail count=2 pid=none http=200 ms=1 app_servers=0
+2026-06-24T13:12:54+03:00 restart-gateway reason=health-failures:2:http-200
+2026-06-24T13:13:03+03:00 post-restart health=200 1
+2026-06-24T13:15:14+03:00 health-fail count=1 pid=none http=200 ms=1 app_servers=0
+2026-06-24T13:17:34+03:00 health-fail count=2 pid=none http=200 ms=1 app_servers=0
+2026-06-24T13:17:34+03:00 restart-gateway reason=health-failures:2:http-200
+2026-06-24T13:17:43+03:00 post-restart health=200 1
+2026-06-24T13:19:54+03:00 health-fail count=1 pid=none http=000 ms=0 app_servers=0
+2026-06-24T13:22:14+03:00 health-fail count=2 pid=none http=200 ms=2 app_servers=0
+2026-06-24T13:22:14+03:00 restart-gateway reason=health-failures:2:http-200
+2026-06-24T13:22:24+03:00 post-restart health=200 2
+2026-06-24T13:24:34+03:00 health-fail count=1 pid=none http=200 ms=2 app_servers=0
+2026-06-24T13:26:54+03:00 health-fail count=2 pid=none http=200 ms=1 app_servers=0
+2026-06-24T13:26:54+03:00 restart-gateway reason=health-failures:2:http-200
+2026-06-24T13:27:04+03:00 post-restart health=200 5
+2026-06-24T13:29:14+03:00 health-fail count=1 pid=none http=200 ms=1 app_servers=0
+2026-06-24T13:31:34+03:00 health-fail count=2 pid=none http=200 ms=1 app_servers=0
+2026-06-24T13:31:34+03:00 restart-gateway reason=health-failures:2:http-200
+2026-06-24T13:31:44+03:00 post-restart health=200 4
+2026-06-24T13:33:54+03:00 health-fail count=1 pid=none http=200 ms=1 app_servers=0
+2026-06-24T13:36:14+03:00 health-fail count=2 pid=none http=200 ms=1 app_servers=0
+2026-06-24T13:36:14+03:00 restart-gateway reason=health-failures:2:http-200
+2026-06-24T13:36:24+03:00 post-restart health=200 1
+2026-06-24T13:38:34+03:00 health-fail count=1 pid=none http=200 ms=1 app_servers=0
+2026-06-24T13:40:54+03:00 health-fail count=2 pid=none http=200 ms=1 app_servers=0
+2026-06-24T13:40:54+03:00 restart-gateway reason=health-failures:2:http-200
+2026-06-24T13:41:03+03:00 post-restart health=200 1
+2026-06-24T13:43:14+03:00 health-fail count=1 pid=none http=200 ms=1 app_servers=0
+2026-06-24T13:45:34+03:00 health-fail count=2 pid=none http=200 ms=1 app_servers=0
+2026-06-24T13:45:34+03:00 restart-gateway reason=health-failures:2:http-200
+2026-06-24T13:45:43+03:00 post-restart health=200 1
+2026-06-24T13:47:54+03:00 health-fail count=1 pid=none http=200 ms=1 app_servers=0
+2026-06-24T13:50:14+03:00 health-fail count=2 pid=none http=200 ms=1 app_servers=0
+2026-06-24T13:50:14+03:00 restart-gateway reason=health-failures:2:http-200
+2026-06-24T13:50:24+03:00 post-restart health=200 2
+2026-06-24T13:52:35+03:00 health-fail count=1 pid=none http=200 ms=4 app_servers=0
+2026-06-24T13:54:54+03:00 health-fail count=2 pid=none http=200 ms=1 app_servers=0
+2026-06-24T13:54:54+03:00 restart-gateway reason=health-failures:2:http-200
+2026-06-24T13:55:03+03:00 post-restart health=200 2
+2026-06-24T13:57:14+03:00 health-fail count=1 pid=none http=200 ms=1 app_servers=0
+2026-06-24T13:59:34+03:00 health-fail count=2 pid=none http=200 ms=1 app_servers=0
+2026-06-24T13:59:34+03:00 restart-gateway reason=health-failures:2:http-200
+2026-06-24T13:59:44+03:00 post-restart health=200 1
+2026-06-24T14:01:55+03:00 health-fail count=1 pid=none http=200 ms=1 app_servers=0
+2026-06-24T14:04:14+03:00 health-fail count=2 pid=none http=200 ms=2 app_servers=0
+2026-06-24T14:04:14+03:00 restart-gateway reason=health-failures:2:http-200
+2026-06-24T14:04:23+03:00 post-restart health=200 2
+2026-06-24T14:06:34+03:00 health-fail count=1 pid=none http=200 ms=1 app_servers=0
+2026-06-24T14:08:54+03:00 health-fail count=2 pid=none http=200 ms=1 app_servers=0
+2026-06-24T14:08:54+03:00 restart-gateway reason=health-failures:2:http-200
+2026-06-24T14:09:03+03:00 post-restart health=200 3
+2026-06-24T14:11:14+03:00 health-fail count=1 pid=none http=200 ms=1 app_servers=0
+2026-06-24T14:13:34+03:00 health-fail count=2 pid=none http=200 ms=1 app_servers=0
+2026-06-24T14:13:34+03:00 restart-gateway reason=health-failures:2:http-200
+2026-06-24T14:13:43+03:00 post-restart health=200 1
+2026-06-24T14:15:54+03:00 health-fail count=1 pid=none http=200 ms=1 app_servers=0
+2026-06-24T14:18:14+03:00 health-fail count=2 pid=none http=200 ms=1 app_servers=0
+2026-06-24T14:18:14+03:00 restart-gateway reason=health-failures:2:http-200
+2026-06-24T14:18:23+03:00 post-restart health=200 1
+2026-06-24T14:20:34+03:00 health-fail count=1 pid=none http=200 ms=1 app_servers=0
+2026-06-24T14:22:54+03:00 health-fail count=2 pid=none http=200 ms=1 app_servers=0
+2026-06-24T14:22:54+03:00 restart-gateway reason=health-failures:2:http-200
+2026-06-24T14:23:04+03:00 post-restart health=200 1
+2026-06-24T14:25:15+03:00 health-fail count=1 pid=none http=200 ms=3 app_servers=0
+2026-06-24T14:27:34+03:00 health-fail count=2 pid=none http=200 ms=1 app_servers=0
+2026-06-24T14:27:35+03:00 restart-gateway reason=health-failures:2:http-200
+2026-06-24T14:27:43+03:00 post-restart health=200 1
+2026-06-24T14:29:54+03:00 health-fail count=1 pid=none http=200 ms=1 app_servers=0
+2026-06-24T14:32:14+03:00 health-fail count=2 pid=none http=200 ms=1 app_servers=0
+2026-06-24T14:32:14+03:00 restart-gateway reason=health-failures:2:http-200
+2026-06-24T14:32:23+03:00 post-restart health=200 1
+2026-06-24T14:34:34+03:00 health-fail count=1 pid=none http=200 ms=1 app_servers=0
+2026-06-24T14:36:54+03:00 health-fail count=2 pid=none http=200 ms=1 app_servers=0
+2026-06-24T14:36:54+03:00 restart-gateway reason=health-failures:2:http-200
+2026-06-24T14:37:04+03:00 post-restart health=200 1
+2026-06-24T14:39:11+03:00 health-fail count=1 pid=none http=200 ms=1 app_servers=0
+2026-06-24T14:41:24+03:00 health-fail count=2 pid=none http=200 ms=1 app_servers=0
+2026-06-24T14:41:25+03:00 restart-gateway reason=health-failures:2:http-200
+2026-06-24T14:41:34+03:00 post-restart health=200 1
+2026-06-24T14:43:44+03:00 health-fail count=1 pid=none http=200 ms=1 app_servers=0
+2026-06-24T14:45:54+03:00 health-fail count=2 pid=none http=200 ms=0 app_servers=0
+2026-06-24T14:45:54+03:00 restart-gateway reason=health-failures:2:http-200
+2026-06-24T14:46:03+03:00 post-restart health=200 1
+2026-06-24T14:48:14+03:00 health-fail count=1 pid=none http=200 ms=1 app_servers=0
+2026-06-24T14:50:34+03:00 health-fail count=2 pid=none http=200 ms=1 app_servers=0
+2026-06-24T14:50:35+03:00 restart-gateway reason=health-failures:2:http-200
+2026-06-24T14:50:44+03:00 post-restart health=200 2
+2026-06-24T14:52:54+03:00 health-fail count=1 pid=none http=200 ms=1 app_servers=0
+2026-06-24T14:54:55+03:00 health-fail count=2 pid=none http=200 ms=2 app_servers=4
+2026-06-24T14:54:55+03:00 restart-deferred reason=health-failures:2:http-200 active_app_servers=4
+2026-06-24T14:57:14+03:00 health-fail count=3 pid=none http=200 ms=2 app_servers=2
+2026-06-24T14:57:14+03:00 restart-deferred reason=health-failures:3:http-200 active_app_servers=2
+2026-06-24T14:59:18+03:00 health-fail count=4 pid=none http=200 ms=1 app_servers=4
+2026-06-24T14:59:18+03:00 restart-deferred reason=health-failures:4:http-200 active_app_servers=4
+2026-06-24T15:01:35+03:00 health-fail count=5 pid=none http=200 ms=5 app_servers=2
+2026-06-24T15:01:35+03:00 restart-deferred reason=health-failures:5:http-200 active_app_servers=2
+2026-06-24T15:03:43+03:00 health-fail count=6 pid=none http=200 ms=3 app_servers=2
+2026-06-24T15:03:43+03:00 restart-deferred reason=health-failures:6:http-200 active_app_servers=2
+2026-06-24T15:05:51+03:00 health-fail count=7 pid=none http=200 ms=2 app_servers=2
+2026-06-24T15:05:51+03:00 restart-deferred reason=health-failures:7:http-200 active_app_servers=2
+2026-06-24T15:07:54+03:00 health-fail count=8 pid=none http=200 ms=3 app_servers=2
+2026-06-24T15:07:54+03:00 restart-deferred reason=health-failures:8:http-200 active_app_servers=2
+2026-06-24T15:09:56+03:00 health-fail count=9 pid=none http=200 ms=2 app_servers=2
+2026-06-24T15:09:56+03:00 restart-deferred reason=health-failures:9:http-200 active_app_servers=2
+2026-06-24T15:12:11+03:00 health-fail count=10 pid=none http=200 ms=4 app_servers=2
+2026-06-24T15:12:11+03:00 restart-deferred reason=health-failures:10:http-200 active_app_servers=2
+2026-06-24T15:14:24+03:00 health-fail count=11 pid=none http=200 ms=2 app_servers=2
+2026-06-24T15:14:24+03:00 restart-deferred reason=health-failures:11:http-200 active_app_servers=2
+2026-06-24T15:16:44+03:00 health-fail count=12 pid=none http=200 ms=2 app_servers=2
+2026-06-24T15:16:44+03:00 restart-deferred reason=health-failures:12:http-200 active_app_servers=2
+2026-06-24T15:18:54+03:00 health-fail count=13 pid=none http=200 ms=1 app_servers=2
+2026-06-24T15:18:54+03:00 restart-deferred reason=health-failures:13:http-200 active_app_servers=2
+2026-06-24T15:21:14+03:00 health-fail count=14 pid=none http=200 ms=3 app_servers=2
+2026-06-24T15:21:14+03:00 restart-deferred reason=health-failures:14:http-200 active_app_servers=2
+2026-06-24T15:23:34+03:00 health-fail count=15 pid=none http=200 ms=3 app_servers=0
+2026-06-24T15:23:34+03:00 restart-gateway reason=health-failures:15:http-200
+2026-06-24T15:23:45+03:00 post-restart health=200 1419
+2026-06-24T15:25:54+03:00 health-fail count=1 pid=none http=200 ms=3 app_servers=0
+2026-06-24T15:27:56+03:00 health-fail count=2 pid=none http=200 ms=1 app_servers=2
+2026-06-24T15:27:56+03:00 restart-deferred reason=health-failures:2:http-200 active_app_servers=2
+2026-06-24T15:30:13+03:00 health-fail count=3 pid=none http=200 ms=1 app_servers=8
+2026-06-24T15:30:13+03:00 restart-deferred reason=health-failures:3:http-200 active_app_servers=8
+2026-06-24T15:32:24+03:00 health-fail count=4 pid=none http=200 ms=1 app_servers=8
+2026-06-24T15:32:24+03:00 restart-deferred reason=health-failures:4:http-200 active_app_servers=8
+2026-06-24T15:34:44+03:00 health-fail count=5 pid=none http=200 ms=4 app_servers=8
+2026-06-24T15:34:45+03:00 restart-deferred reason=health-failures:5:http-200 active_app_servers=8
+2026-06-24T15:36:54+03:00 health-fail count=6 pid=none http=200 ms=1 app_servers=8
+2026-06-24T15:36:54+03:00 restart-deferred reason=health-failures:6:http-200 active_app_servers=8
+2026-06-24T15:39:14+03:00 health-fail count=7 pid=none http=200 ms=2 app_servers=8
+2026-06-24T15:39:14+03:00 restart-deferred reason=health-failures:7:http-200 active_app_servers=8
+2026-06-24T15:41:35+03:00 health-fail count=8 pid=none http=200 ms=5 app_servers=8
+2026-06-24T15:41:35+03:00 restart-deferred reason=health-failures:8:http-200 active_app_servers=8
+2026-06-24T15:43:54+03:00 health-fail count=9 pid=none http=200 ms=1 app_servers=8
+2026-06-24T15:43:54+03:00 restart-deferred reason=health-failures:9:http-200 active_app_servers=8
+2026-06-24T15:46:15+03:00 health-fail count=10 pid=none http=200 ms=1 app_servers=8
+2026-06-24T15:46:15+03:00 restart-deferred reason=health-failures:10:http-200 active_app_servers=8
+2026-06-24T15:48:34+03:00 health-fail count=11 pid=none http=200 ms=1 app_servers=8
+2026-06-24T15:48:34+03:00 restart-deferred reason=health-failures:11:http-200 active_app_servers=8
+2026-06-24T15:50:54+03:00 health-fail count=12 pid=none http=200 ms=1 app_servers=8
+2026-06-24T15:50:55+03:00 restart-deferred reason=health-failures:12:http-200 active_app_servers=8
+2026-06-24T15:53:14+03:00 health-fail count=13 pid=none http=200 ms=2 app_servers=8
+2026-06-24T15:53:14+03:00 restart-deferred reason=health-failures:13:http-200 active_app_servers=8
+2026-06-24T15:55:18+03:00 health-fail count=14 pid=none http=200 ms=1 app_servers=8
+2026-06-24T15:55:18+03:00 restart-deferred reason=health-failures:14:http-200 active_app_servers=8
+2026-06-24T15:57:34+03:00 health-fail count=15 pid=none http=200 ms=2 app_servers=6
+2026-06-24T15:57:34+03:00 restart-deferred reason=health-failures:15:http-200 active_app_servers=6
+2026-06-24T15:59:54+03:00 health-fail count=16 pid=none http=200 ms=1 app_servers=6
+2026-06-24T15:59:54+03:00 restart-deferred reason=health-failures:16:http-200 active_app_servers=6
+2026-06-24T16:02:14+03:00 health-fail count=17 pid=none http=200 ms=1 app_servers=2
+2026-06-24T16:02:14+03:00 restart-deferred reason=health-failures:17:http-200 active_app_servers=2
+2026-06-24T16:04:34+03:00 health-fail count=18 pid=none http=200 ms=1 app_servers=2
+2026-06-24T16:04:34+03:00 restart-deferred reason=health-failures:18:http-200 active_app_servers=2
+2026-06-24T16:06:54+03:00 health-fail count=19 pid=none http=200 ms=1 app_servers=2
+2026-06-24T16:06:54+03:00 restart-deferred reason=health-failures:19:http-200 active_app_servers=2
+2026-06-24T16:09:14+03:00 health-fail count=20 pid=none http=200 ms=1 app_servers=2
+2026-06-24T16:09:14+03:00 restart-deferred reason=health-failures:20:http-200 active_app_servers=2
+2026-06-24T16:11:34+03:00 health-fail count=21 pid=none http=200 ms=1 app_servers=2
+2026-06-24T16:11:34+03:00 restart-deferred reason=health-failures:21:http-200 active_app_servers=2
+2026-06-24T16:13:54+03:00 health-fail count=22 pid=none http=200 ms=1 app_servers=2
+2026-06-24T16:13:54+03:00 restart-deferred reason=health-failures:22:http-200 active_app_servers=2
+2026-06-24T16:16:14+03:00 health-fail count=23 pid=none http=200 ms=2 app_servers=2
+2026-06-24T16:16:14+03:00 restart-deferred reason=health-failures:23:http-200 active_app_servers=2
+2026-06-24T16:18:34+03:00 health-fail count=24 pid=none http=200 ms=1 app_servers=2
+2026-06-24T16:18:34+03:00 restart-deferred reason=health-failures:24:http-200 active_app_servers=2
+2026-06-24T16:20:55+03:00 health-fail count=25 pid=none http=200 ms=3 app_servers=2
+2026-06-24T16:20:55+03:00 restart-deferred reason=health-failures:25:http-200 active_app_servers=2
+2026-06-24T16:23:14+03:00 health-fail count=26 pid=none http=200 ms=2 app_servers=2
+2026-06-24T16:23:15+03:00 restart-deferred reason=health-failures:26:http-200 active_app_servers=2
+2026-06-24T16:25:34+03:00 health-fail count=27 pid=none http=200 ms=1 app_servers=2
+2026-06-24T16:25:34+03:00 restart-deferred reason=health-failures:27:http-200 active_app_servers=2
+2026-06-24T16:27:54+03:00 health-fail count=28 pid=none http=200 ms=1 app_servers=2
+2026-06-24T16:27:54+03:00 restart-deferred reason=health-failures:28:http-200 active_app_servers=2
+2026-06-24T16:30:13+03:00 health-fail count=29 pid=none http=200 ms=1 app_servers=2
+2026-06-24T16:30:13+03:00 restart-deferred reason=health-failures:29:http-200 active_app_servers=2
+2026-06-24T16:32:25+03:00 health-fail count=30 pid=none http=200 ms=11 app_servers=2
+2026-06-24T16:32:25+03:00 restart-deferred reason=health-failures:30:http-200 active_app_servers=2
+2026-06-24T16:34:45+03:00 health-fail count=31 pid=none http=200 ms=2 app_servers=2
+2026-06-24T16:34:45+03:00 restart-deferred reason=health-failures:31:http-200 active_app_servers=2
+2026-06-24T16:36:54+03:00 health-fail count=32 pid=none http=200 ms=1 app_servers=2
+2026-06-24T16:36:54+03:00 restart-deferred reason=health-failures:32:http-200 active_app_servers=2
+2026-06-24T16:39:14+03:00 health-fail count=33 pid=none http=200 ms=1 app_servers=2
+2026-06-24T16:39:14+03:00 restart-deferred reason=health-failures:33:http-200 active_app_servers=2
+2026-06-24T16:41:34+03:00 health-fail count=34 pid=none http=200 ms=1 app_servers=2
+2026-06-24T16:41:34+03:00 restart-deferred reason=health-failures:34:http-200 active_app_servers=2
+2026-06-24T16:43:54+03:00 health-fail count=35 pid=none http=200 ms=1 app_servers=2
+2026-06-24T16:43:54+03:00 restart-deferred reason=health-failures:35:http-200 active_app_servers=2
+2026-06-24T16:46:14+03:00 health-fail count=36 pid=none http=200 ms=2 app_servers=2
+2026-06-24T16:46:14+03:00 restart-deferred reason=health-failures:36:http-200 active_app_servers=2
+2026-06-24T16:48:34+03:00 health-fail count=37 pid=none http=200 ms=1 app_servers=2
+2026-06-24T16:48:34+03:00 restart-deferred reason=health-failures:37:http-200 active_app_servers=2
+2026-06-24T16:50:54+03:00 health-fail count=38 pid=none http=200 ms=1 app_servers=2
+2026-06-24T16:50:54+03:00 restart-deferred reason=health-failures:38:http-200 active_app_servers=2
+2026-06-24T16:53:14+03:00 health-fail count=39 pid=none http=200 ms=1 app_servers=2
+2026-06-24T16:53:14+03:00 restart-deferred reason=health-failures:39:http-200 active_app_servers=2
+2026-06-24T16:55:35+03:00 health-fail count=40 pid=none http=200 ms=2 app_servers=2
+2026-06-24T16:55:35+03:00 restart-deferred reason=health-failures:40:http-200 active_app_servers=2
+2026-06-24T16:57:54+03:00 health-fail count=41 pid=none http=200 ms=1 app_servers=2
+2026-06-24T16:57:54+03:00 restart-deferred reason=health-failures:41:http-200 active_app_servers=2
+2026-06-24T17:00:14+03:00 health-fail count=42 pid=none http=200 ms=3 app_servers=4
+2026-06-24T17:00:14+03:00 restart-deferred reason=health-failures:42:http-200 active_app_servers=4
+2026-06-24T17:02:24+03:00 health-fail count=43 pid=none http=200 ms=3 app_servers=2
+2026-06-24T17:02:24+03:00 restart-deferred reason=health-failures:43:http-200 active_app_servers=2
+2026-06-24T17:04:44+03:00 health-fail count=44 pid=none http=200 ms=1 app_servers=2
+2026-06-24T17:04:44+03:00 restart-deferred reason=health-failures:44:http-200 active_app_servers=2
+2026-06-24T17:06:54+03:00 health-fail count=45 pid=none http=200 ms=1 app_servers=2
+2026-06-24T17:06:54+03:00 restart-deferred reason=health-failures:45:http-200 active_app_servers=2
+2026-06-24T17:09:14+03:00 health-fail count=46 pid=none http=200 ms=2 app_servers=2
+2026-06-24T17:09:14+03:00 restart-deferred reason=health-failures:46:http-200 active_app_servers=2
+2026-06-24T17:11:34+03:00 health-fail count=47 pid=none http=200 ms=1 app_servers=2
+2026-06-24T17:11:34+03:00 restart-deferred reason=health-failures:47:http-200 active_app_servers=2
+2026-06-24T17:13:54+03:00 health-fail count=48 pid=none http=200 ms=1 app_servers=2
+2026-06-24T17:13:54+03:00 restart-deferred reason=health-failures:48:http-200 active_app_servers=2
+2026-06-24T17:16:14+03:00 health-fail count=49 pid=none http=200 ms=1 app_servers=2
+2026-06-24T17:16:14+03:00 restart-deferred reason=health-failures:49:http-200 active_app_servers=2
+2026-06-24T17:18:34+03:00 health-fail count=50 pid=none http=200 ms=5 app_servers=2
+2026-06-24T17:18:35+03:00 restart-deferred reason=health-failures:50:http-200 active_app_servers=2
+2026-06-24T17:20:54+03:00 health-fail count=51 pid=none http=200 ms=2 app_servers=2
+2026-06-24T17:20:54+03:00 restart-deferred reason=health-failures:51:http-200 active_app_servers=2
+2026-06-24T17:23:14+03:00 health-fail count=52 pid=none http=200 ms=1 app_servers=2
+2026-06-24T17:23:14+03:00 restart-deferred reason=health-failures:52:http-200 active_app_servers=2
+2026-06-24T17:25:34+03:00 health-fail count=53 pid=none http=200 ms=1 app_servers=2
+2026-06-24T17:25:34+03:00 restart-deferred reason=health-failures:53:http-200 active_app_servers=2
+2026-06-24T17:27:54+03:00 health-fail count=54 pid=none http=200 ms=1 app_servers=2
+2026-06-24T17:27:54+03:00 restart-deferred reason=health-failures:54:http-200 active_app_servers=2
+2026-06-24T17:30:13+03:00 health-fail count=55 pid=none http=200 ms=1 app_servers=2
+2026-06-24T17:30:13+03:00 restart-deferred reason=health-failures:55:http-200 active_app_servers=2
+2026-06-24T17:32:24+03:00 health-fail count=56 pid=none http=200 ms=1 app_servers=2
+2026-06-24T17:32:24+03:00 restart-deferred reason=health-failures:56:http-200 active_app_servers=2
+2026-06-24T17:34:45+03:00 health-fail count=57 pid=none http=200 ms=3 app_servers=2
+2026-06-24T17:34:45+03:00 restart-deferred reason=health-failures:57:http-200 active_app_servers=2
+2026-06-24T17:36:55+03:00 health-fail count=58 pid=none http=200 ms=2 app_servers=2
+2026-06-24T17:36:55+03:00 restart-deferred reason=health-failures:58:http-200 active_app_servers=2
+2026-06-24T17:39:14+03:00 health-fail count=59 pid=none http=200 ms=1 app_servers=2
+2026-06-24T17:39:14+03:00 restart-deferred reason=health-failures:59:http-200 active_app_servers=2
+2026-06-24T17:41:34+03:00 health-fail count=60 pid=none http=200 ms=1 app_servers=2
+2026-06-24T17:41:34+03:00 restart-deferred reason=health-failures:60:http-200 active_app_servers=2
+2026-06-24T17:43:54+03:00 health-fail count=61 pid=none http=200 ms=3 app_servers=2
+2026-06-24T17:43:54+03:00 restart-deferred reason=health-failures:61:http-200 active_app_servers=2
+2026-06-24T17:46:10+03:00 health-fail count=62 pid=none http=200 ms=1 app_servers=4
+2026-06-24T17:46:10+03:00 restart-deferred reason=health-failures:62:http-200 active_app_servers=4
+2026-06-24T17:48:24+03:00 health-fail count=63 pid=none http=200 ms=1 app_servers=6
+2026-06-24T17:48:24+03:00 restart-deferred reason=health-failures:63:http-200 active_app_servers=6
+2026-06-24T17:50:44+03:00 health-fail count=64 pid=none http=200 ms=1 app_servers=6
+2026-06-24T17:50:44+03:00 restart-deferred reason=health-failures:64:http-200 active_app_servers=6
+2026-06-24T17:52:54+03:00 health-fail count=65 pid=none http=200 ms=2 app_servers=6
+2026-06-24T17:52:54+03:00 restart-deferred reason=health-failures:65:http-200 active_app_servers=6
+2026-06-24T17:55:15+03:00 health-fail count=66 pid=none http=200 ms=1 app_servers=6
+2026-06-24T17:55:15+03:00 restart-deferred reason=health-failures:66:http-200 active_app_servers=6
+2026-06-24T17:57:34+03:00 health-fail count=67 pid=none http=200 ms=1 app_servers=6
+2026-06-24T17:57:35+03:00 restart-deferred reason=health-failures:67:http-200 active_app_servers=6
+2026-06-24T17:59:54+03:00 health-fail count=68 pid=none http=200 ms=1 app_servers=6
+2026-06-24T17:59:54+03:00 restart-deferred reason=health-failures:68:http-200 active_app_servers=6
+2026-06-24T18:02:13+03:00 health-fail count=69 pid=none http=200 ms=1 app_servers=6
+2026-06-24T18:02:13+03:00 restart-deferred reason=health-failures:69:http-200 active_app_servers=6
+2026-06-24T18:04:24+03:00 health-fail count=70 pid=none http=200 ms=1 app_servers=8
+2026-06-24T18:04:24+03:00 restart-deferred reason=health-failures:70:http-200 active_app_servers=8
+2026-06-24T18:06:44+03:00 health-fail count=71 pid=none http=200 ms=1 app_servers=8
+2026-06-24T18:06:44+03:00 restart-deferred reason=health-failures:71:http-200 active_app_servers=8
+2026-06-24T18:08:54+03:00 health-fail count=72 pid=none http=200 ms=2 app_servers=8
+2026-06-24T18:08:54+03:00 restart-deferred reason=health-failures:72:http-200 active_app_servers=8
+2026-06-24T18:11:14+03:00 health-fail count=73 pid=none http=200 ms=3 app_servers=8
+2026-06-24T18:11:14+03:00 restart-deferred reason=health-failures:73:http-200 active_app_servers=8
+2026-06-24T18:13:34+03:00 health-fail count=74 pid=none http=200 ms=1 app_servers=8
+2026-06-24T18:13:34+03:00 restart-deferred reason=health-failures:74:http-200 active_app_servers=8
+2026-06-24T18:15:54+03:00 health-fail count=75 pid=none http=200 ms=1 app_servers=8
+2026-06-24T18:15:54+03:00 restart-deferred reason=health-failures:75:http-200 active_app_servers=8
+2026-06-24T18:17:59+03:00 health-fail count=76 pid=none http=200 ms=1 app_servers=8
+2026-06-24T18:17:59+03:00 restart-deferred reason=health-failures:76:http-200 active_app_servers=8
+2026-06-24T18:20:12+03:00 health-fail count=77 pid=none http=200 ms=2 app_servers=8
+2026-06-24T18:20:12+03:00 restart-deferred reason=health-failures:77:http-200 active_app_servers=8
+2026-06-24T18:22:15+03:00 health-fail count=78 pid=none http=200 ms=1 app_servers=8
+2026-06-24T18:22:15+03:00 restart-deferred reason=health-failures:78:http-200 active_app_servers=8
+2026-06-24T18:24:15+03:00 health-fail count=79 pid=none http=200 ms=2 app_servers=8
+2026-06-24T18:24:15+03:00 restart-deferred reason=health-failures:79:http-200 active_app_servers=8
+2026-06-24T18:26:34+03:00 health-fail count=80 pid=none http=200 ms=1 app_servers=8
+2026-06-24T18:26:34+03:00 restart-deferred reason=health-failures:80:http-200 active_app_servers=8
+2026-06-24T18:28:54+03:00 health-fail count=81 pid=none http=200 ms=1 app_servers=8
+2026-06-24T18:28:54+03:00 restart-deferred reason=health-failures:81:http-200 active_app_servers=8
+2026-06-24T18:31:14+03:00 health-fail count=82 pid=none http=200 ms=2 app_servers=8
+2026-06-24T18:31:14+03:00 restart-deferred reason=health-failures:82:http-200 active_app_servers=8
+2026-06-24T18:33:34+03:00 health-fail count=83 pid=none http=200 ms=1 app_servers=8
+2026-06-24T18:33:35+03:00 restart-deferred reason=health-failures:83:http-200 active_app_servers=8
+2026-06-24T18:35:54+03:00 health-fail count=84 pid=none http=200 ms=1 app_servers=8
+2026-06-24T18:35:54+03:00 restart-deferred reason=health-failures:84:http-200 active_app_servers=8
+2026-06-24T18:38:14+03:00 health-fail count=85 pid=none http=200 ms=1 app_servers=8
+2026-06-24T18:38:14+03:00 restart-deferred reason=health-failures:85:http-200 active_app_servers=8
+2026-06-24T18:40:34+03:00 health-fail count=86 pid=none http=200 ms=1 app_servers=8
+2026-06-24T18:40:34+03:00 restart-deferred reason=health-failures:86:http-200 active_app_servers=8
+2026-06-24T18:42:54+03:00 health-fail count=87 pid=none http=200 ms=1 app_servers=8
+2026-06-24T18:42:54+03:00 restart-deferred reason=health-failures:87:http-200 active_app_servers=8
+2026-06-24T18:45:14+03:00 health-fail count=88 pid=none http=200 ms=1 app_servers=8
+2026-06-24T18:45:14+03:00 restart-deferred reason=health-failures:88:http-200 active_app_servers=8
+2026-06-24T18:47:34+03:00 health-fail count=89 pid=none http=200 ms=1 app_servers=8
+2026-06-24T18:47:34+03:00 restart-deferred reason=health-failures:89:http-200 active_app_servers=8
+2026-06-24T18:49:54+03:00 health-fail count=90 pid=none http=200 ms=1 app_servers=8
+2026-06-24T18:49:54+03:00 restart-deferred reason=health-failures:90:http-200 active_app_servers=8
+2026-06-24T18:52:14+03:00 health-fail count=91 pid=none http=200 ms=1 app_servers=8
+2026-06-24T18:52:14+03:00 restart-deferred reason=health-failures:91:http-200 active_app_servers=8
+2026-06-24T18:54:34+03:00 health-fail count=92 pid=none http=200 ms=2 app_servers=8
+2026-06-24T18:54:34+03:00 restart-deferred reason=health-failures:92:http-200 active_app_servers=8
+2026-06-24T18:56:54+03:00 health-fail count=93 pid=none http=200 ms=1 app_servers=6
+2026-06-24T18:56:54+03:00 restart-deferred reason=health-failures:93:http-200 active_app_servers=6
+2026-06-24T18:59:14+03:00 health-fail count=94 pid=none http=200 ms=1 app_servers=6
+2026-06-24T18:59:14+03:00 restart-deferred reason=health-failures:94:http-200 active_app_servers=6
+2026-06-24T19:01:34+03:00 health-fail count=95 pid=none http=200 ms=1 app_servers=6
+2026-06-24T19:01:34+03:00 restart-deferred reason=health-failures:95:http-200 active_app_servers=6
+2026-06-24T19:03:54+03:00 health-fail count=96 pid=none http=200 ms=2 app_servers=6
+2026-06-24T19:03:54+03:00 restart-deferred reason=health-failures:96:http-200 active_app_servers=6
+2026-06-24T19:06:14+03:00 health-fail count=97 pid=none http=200 ms=1 app_servers=6
+2026-06-24T19:06:14+03:00 restart-deferred reason=health-failures:97:http-200 active_app_servers=6
+2026-06-24T19:08:34+03:00 health-fail count=98 pid=none http=200 ms=2 app_servers=6
+2026-06-24T19:08:34+03:00 restart-deferred reason=health-failures:98:http-200 active_app_servers=6
+2026-06-24T19:10:54+03:00 health-fail count=99 pid=none http=200 ms=2 app_servers=6
+2026-06-24T19:10:54+03:00 restart-deferred reason=health-failures:99:http-200 active_app_servers=6
+2026-06-24T19:13:15+03:00 health-fail count=100 pid=none http=200 ms=3 app_servers=6
+2026-06-24T19:13:15+03:00 restart-deferred reason=health-failures:100:http-200 active_app_servers=6
+2026-06-24T19:15:34+03:00 health-fail count=101 pid=none http=200 ms=1 app_servers=6
+2026-06-24T19:15:34+03:00 restart-deferred reason=health-failures:101:http-200 active_app_servers=6
+2026-06-24T19:17:54+03:00 health-fail count=102 pid=none http=200 ms=1 app_servers=6
+2026-06-24T19:17:54+03:00 restart-deferred reason=health-failures:102:http-200 active_app_servers=6
+2026-06-24T19:20:14+03:00 health-fail count=103 pid=none http=200 ms=1 app_servers=6
+2026-06-24T19:20:14+03:00 restart-deferred reason=health-failures:103:http-200 active_app_servers=6
+2026-06-24T19:22:34+03:00 health-fail count=104 pid=none http=200 ms=1 app_servers=6
+2026-06-24T19:22:34+03:00 restart-deferred reason=health-failures:104:http-200 active_app_servers=6
+2026-06-24T19:24:54+03:00 health-fail count=105 pid=none http=200 ms=1 app_servers=6
+2026-06-24T19:24:54+03:00 restart-deferred reason=health-failures:105:http-200 active_app_servers=6
+2026-06-24T19:27:14+03:00 health-fail count=106 pid=none http=200 ms=1 app_servers=6
+2026-06-24T19:27:15+03:00 restart-deferred reason=health-failures:106:http-200 active_app_servers=6
+2026-06-24T19:29:34+03:00 health-fail count=107 pid=none http=200 ms=1 app_servers=6
+2026-06-24T19:29:34+03:00 restart-deferred reason=health-failures:107:http-200 active_app_servers=6
+2026-06-24T19:31:54+03:00 health-fail count=108 pid=none http=200 ms=1 app_servers=6
+2026-06-24T19:31:54+03:00 restart-deferred reason=health-failures:108:http-200 active_app_servers=6
+2026-06-24T19:34:15+03:00 health-fail count=109 pid=none http=200 ms=1 app_servers=6
+2026-06-24T19:34:15+03:00 restart-deferred reason=health-failures:109:http-200 active_app_servers=6
+2026-06-24T19:36:35+03:00 health-fail count=110 pid=none http=200 ms=1 app_servers=6
+2026-06-24T19:36:35+03:00 restart-deferred reason=health-failures:110:http-200 active_app_servers=6
+2026-06-24T19:38:54+03:00 health-fail count=111 pid=none http=200 ms=1 app_servers=6
+2026-06-24T19:38:54+03:00 restart-deferred reason=health-failures:111:http-200 active_app_servers=6
+2026-06-24T19:41:14+03:00 health-fail count=112 pid=none http=200 ms=1 app_servers=6
+2026-06-24T19:41:14+03:00 restart-deferred reason=health-failures:112:http-200 active_app_servers=6
+2026-06-24T19:43:34+03:00 health-fail count=113 pid=none http=200 ms=1 app_servers=6
+2026-06-24T19:43:34+03:00 restart-deferred reason=health-failures:113:http-200 active_app_servers=6
+2026-06-24T19:45:36+03:00 health-fail count=114 pid=none http=200 ms=1 app_servers=6
+2026-06-24T19:45:36+03:00 restart-deferred reason=health-failures:114:http-200 active_app_servers=6
+2026-06-24T19:47:54+03:00 health-fail count=115 pid=none http=200 ms=1 app_servers=8
+2026-06-24T19:47:54+03:00 restart-deferred reason=health-failures:115:http-200 active_app_servers=8
+2026-06-24T19:50:15+03:00 health-fail count=116 pid=none http=200 ms=2 app_servers=8
+2026-06-24T19:50:15+03:00 restart-deferred reason=health-failures:116:http-200 active_app_servers=8
+2026-06-24T19:52:34+03:00 health-fail count=117 pid=none http=200 ms=1 app_servers=8
+2026-06-24T19:52:34+03:00 restart-deferred reason=health-failures:117:http-200 active_app_servers=8
+2026-06-24T19:54:54+03:00 health-fail count=118 pid=none http=200 ms=1 app_servers=8
+2026-06-24T19:54:54+03:00 restart-deferred reason=health-failures:118:http-200 active_app_servers=8
+2026-06-24T19:57:14+03:00 health-fail count=119 pid=none http=200 ms=1 app_servers=8
+2026-06-24T19:57:14+03:00 restart-deferred reason=health-failures:119:http-200 active_app_servers=8
+2026-06-24T19:59:34+03:00 health-fail count=120 pid=none http=200 ms=1 app_servers=8
+2026-06-24T19:59:34+03:00 restart-deferred reason=health-failures:120:http-200 active_app_servers=8
+2026-06-24T20:01:38+03:00 health-fail count=121 pid=none http=200 ms=1 app_servers=8
+2026-06-24T20:01:38+03:00 restart-deferred reason=health-failures:121:http-200 active_app_servers=8
+2026-06-24T20:03:54+03:00 health-fail count=122 pid=none http=200 ms=1 app_servers=6
+2026-06-24T20:03:54+03:00 restart-deferred reason=health-failures:122:http-200 active_app_servers=6
+2026-06-24T20:06:14+03:00 health-fail count=123 pid=none http=200 ms=2 app_servers=6
+2026-06-24T20:06:14+03:00 restart-deferred reason=health-failures:123:http-200 active_app_servers=6
+2026-06-24T20:08:34+03:00 health-fail count=124 pid=none http=200 ms=1 app_servers=6
+2026-06-24T20:08:34+03:00 restart-deferred reason=health-failures:124:http-200 active_app_servers=6
+2026-06-24T20:10:54+03:00 health-fail count=125 pid=none http=200 ms=1 app_servers=6
+2026-06-24T20:10:54+03:00 restart-deferred reason=health-failures:125:http-200 active_app_servers=6
+2026-06-24T20:13:14+03:00 health-fail count=126 pid=none http=200 ms=1 app_servers=6
+2026-06-24T20:13:14+03:00 restart-deferred reason=health-failures:126:http-200 active_app_servers=6
+2026-06-24T20:15:34+03:00 health-fail count=127 pid=none http=200 ms=1 app_servers=6
+2026-06-24T20:15:34+03:00 restart-deferred reason=health-failures:127:http-200 active_app_servers=6
+2026-06-24T20:17:54+03:00 health-fail count=128 pid=none http=200 ms=1 app_servers=6
+2026-06-24T20:17:54+03:00 restart-deferred reason=health-failures:128:http-200 active_app_servers=6
+2026-06-24T20:20:03+03:00 health-fail count=129 pid=none http=200 ms=2 app_servers=8
+2026-06-24T20:20:03+03:00 restart-deferred reason=health-failures:129:http-200 active_app_servers=8
+2026-06-24T20:22:10+03:00 health-fail count=130 pid=none http=200 ms=8 app_servers=8
+2026-06-24T20:22:10+03:00 restart-deferred reason=health-failures:130:http-200 active_app_servers=8
+2026-06-24T20:24:17+03:00 health-fail count=131 pid=none http=200 ms=6 app_servers=8
+2026-06-24T20:24:17+03:00 restart-deferred reason=health-failures:131:http-200 active_app_servers=8
+2026-06-24T20:26:19+03:00 health-fail count=132 pid=none http=200 ms=6 app_servers=8
+2026-06-24T20:26:19+03:00 restart-deferred reason=health-failures:132:http-200 active_app_servers=8
+2026-06-24T20:28:20+03:00 health-fail count=133 pid=none http=200 ms=19 app_servers=8
+2026-06-24T20:28:20+03:00 restart-deferred reason=health-failures:133:http-200 active_app_servers=8
+2026-06-24T20:30:35+03:00 health-fail count=134 pid=none http=200 ms=2 app_servers=8
+2026-06-24T20:30:35+03:00 restart-deferred reason=health-failures:134:http-200 active_app_servers=8
+2026-06-24T20:32:36+03:00 health-fail count=135 pid=none http=200 ms=1 app_servers=8
+2026-06-24T20:32:36+03:00 restart-deferred reason=health-failures:135:http-200 active_app_servers=8
+2026-06-24T20:34:54+03:00 health-fail count=136 pid=none http=200 ms=1 app_servers=8
+2026-06-24T20:34:54+03:00 restart-deferred reason=health-failures:136:http-200 active_app_servers=8
+2026-06-24T20:36:59+03:00 health-fail count=137 pid=none http=200 ms=1 app_servers=8
+2026-06-24T20:36:59+03:00 restart-deferred reason=health-failures:137:http-200 active_app_servers=8
+2026-06-24T20:39:03+03:00 health-fail count=138 pid=none http=200 ms=1 app_servers=8
+2026-06-24T20:39:03+03:00 restart-deferred reason=health-failures:138:http-200 active_app_servers=8
+2026-06-24T20:41:16+03:00 health-fail count=139 pid=none http=200 ms=1 app_servers=8
+2026-06-24T20:41:16+03:00 restart-deferred reason=health-failures:139:http-200 active_app_servers=8
+2026-06-24T20:43:21+03:00 health-fail count=140 pid=none http=200 ms=6 app_servers=8
+2026-06-24T20:43:21+03:00 restart-deferred reason=health-failures:140:http-200 active_app_servers=8
+2026-06-24T20:45:35+03:00 health-fail count=141 pid=none http=200 ms=293 app_servers=8
+2026-06-24T20:45:35+03:00 restart-deferred reason=health-failures:141:http-200 active_app_servers=8
+2026-06-24T20:47:54+03:00 health-fail count=142 pid=none http=200 ms=1 app_servers=8
+2026-06-24T20:47:54+03:00 restart-deferred reason=health-failures:142:http-200 active_app_servers=8
+2026-06-24T20:50:14+03:00 health-fail count=143 pid=none http=200 ms=1 app_servers=8
+2026-06-24T20:50:14+03:00 restart-deferred reason=health-failures:143:http-200 active_app_servers=8
+2026-06-24T20:52:35+03:00 health-fail count=144 pid=none http=200 ms=23 app_servers=8
+2026-06-24T20:52:35+03:00 restart-deferred reason=health-failures:144:http-200 active_app_servers=8
+2026-06-24T20:54:54+03:00 health-fail count=145 pid=none http=200 ms=2 app_servers=8
+2026-06-24T20:54:54+03:00 restart-deferred reason=health-failures:145:http-200 active_app_servers=8
+2026-06-24T20:56:54+03:00 health-fail count=146 pid=none http=200 ms=1 app_servers=8
+2026-06-24T20:56:54+03:00 restart-deferred reason=health-failures:146:http-200 active_app_servers=8
+2026-06-24T20:58:57+03:00 health-fail count=147 pid=none http=200 ms=1 app_servers=8
+2026-06-24T20:58:57+03:00 restart-deferred reason=health-failures:147:http-200 active_app_servers=8
+2026-06-24T21:01:15+03:00 health-fail count=148 pid=none http=200 ms=1 app_servers=8
+2026-06-24T21:01:15+03:00 restart-deferred reason=health-failures:148:http-200 active_app_servers=8
+2026-06-24T21:03:34+03:00 health-fail count=149 pid=none http=200 ms=1 app_servers=8
+2026-06-24T21:03:34+03:00 restart-deferred reason=health-failures:149:http-200 active_app_servers=8
+2026-06-24T21:05:54+03:00 health-fail count=150 pid=none http=200 ms=1 app_servers=8
+2026-06-24T21:05:54+03:00 restart-deferred reason=health-failures:150:http-200 active_app_servers=8
+2026-06-24T21:08:14+03:00 health-fail count=151 pid=none http=200 ms=1 app_servers=8
+2026-06-24T21:08:14+03:00 restart-deferred reason=health-failures:151:http-200 active_app_servers=8
+2026-06-24T21:10:34+03:00 health-fail count=152 pid=none http=200 ms=1 app_servers=8
+2026-06-24T21:10:34+03:00 restart-deferred reason=health-failures:152:http-200 active_app_servers=8
+2026-06-24T21:12:54+03:00 health-fail count=153 pid=none http=200 ms=1 app_servers=8
+2026-06-24T21:12:54+03:00 restart-deferred reason=health-failures:153:http-200 active_app_servers=8
+2026-06-24T21:15:14+03:00 health-fail count=154 pid=none http=200 ms=1 app_servers=8
+2026-06-24T21:15:14+03:00 restart-deferred reason=health-failures:154:http-200 active_app_servers=8
+2026-06-24T21:17:27+03:00 health-fail count=155 pid=none http=200 ms=1 app_servers=8
+2026-06-24T21:17:27+03:00 restart-deferred reason=health-failures:155:http-200 active_app_servers=8
+2026-06-24T21:19:45+03:00 health-fail count=156 pid=none http=200 ms=1 app_servers=8
+2026-06-24T21:19:45+03:00 restart-deferred reason=health-failures:156:http-200 active_app_servers=8
+2026-06-24T21:21:47+03:00 health-fail count=157 pid=none http=200 ms=2 app_servers=8
+2026-06-24T21:21:47+03:00 restart-deferred reason=health-failures:157:http-200 active_app_servers=8
+2026-06-24T21:23:55+03:00 health-fail count=158 pid=none http=200 ms=2 app_servers=8
+2026-06-24T21:23:55+03:00 restart-deferred reason=health-failures:158:http-200 active_app_servers=8
+2026-06-24T21:26:15+03:00 health-fail count=159 pid=none http=200 ms=4 app_servers=8
+2026-06-24T21:26:15+03:00 restart-deferred reason=health-failures:159:http-200 active_app_servers=8
+2026-06-24T21:28:18+03:00 health-fail count=160 pid=none http=200 ms=7 app_servers=8
+2026-06-24T21:28:18+03:00 restart-deferred reason=health-failures:160:http-200 active_app_servers=8
+2026-06-24T21:30:28+03:00 health-fail count=161 pid=none http=200 ms=11 app_servers=8
+2026-06-24T21:30:28+03:00 restart-deferred reason=health-failures:161:http-200 active_app_servers=8
+2026-06-24T21:32:33+03:00 health-fail count=162 pid=none http=200 ms=1 app_servers=8
+2026-06-24T21:32:33+03:00 restart-deferred reason=health-failures:162:http-200 active_app_servers=8
+2026-06-24T21:34:43+03:00 health-fail count=163 pid=none http=200 ms=4 app_servers=8
+2026-06-24T21:34:44+03:00 restart-deferred reason=health-failures:163:http-200 active_app_servers=8
+2026-06-24T21:36:55+03:00 health-fail count=164 pid=none http=200 ms=2 app_servers=8
+2026-06-24T21:36:55+03:00 restart-deferred reason=health-failures:164:http-200 active_app_servers=8
+2026-06-24T21:39:14+03:00 health-fail count=165 pid=none http=200 ms=1 app_servers=8
+2026-06-24T21:39:14+03:00 restart-deferred reason=health-failures:165:http-200 active_app_servers=8
+2026-06-24T21:41:24+03:00 health-fail count=166 pid=none http=200 ms=11 app_servers=8
+2026-06-24T21:41:24+03:00 restart-deferred reason=health-failures:166:http-200 active_app_servers=8
+2026-06-24T21:43:35+03:00 health-fail count=167 pid=none http=200 ms=1 app_servers=8
+2026-06-24T21:43:35+03:00 restart-deferred reason=health-failures:167:http-200 active_app_servers=8
+2026-06-24T21:45:37+03:00 health-fail count=168 pid=none http=200 ms=10 app_servers=8
+2026-06-24T21:45:37+03:00 restart-deferred reason=health-failures:168:http-200 active_app_servers=8
+2026-06-24T21:47:44+03:00 health-fail count=169 pid=none http=200 ms=1 app_servers=8
+2026-06-24T21:47:44+03:00 restart-deferred reason=health-failures:169:http-200 active_app_servers=8
+2026-06-24T21:49:50+03:00 health-fail count=170 pid=none http=200 ms=2 app_servers=8
+2026-06-24T21:49:50+03:00 restart-deferred reason=health-failures:170:http-200 active_app_servers=8
+2026-06-24T21:51:58+03:00 health-fail count=171 pid=none http=200 ms=92 app_servers=8
+2026-06-24T21:51:58+03:00 restart-deferred reason=health-failures:171:http-200 active_app_servers=8
+2026-06-24T21:54:15+03:00 health-fail count=172 pid=none http=200 ms=3 app_servers=8
+2026-06-24T21:54:15+03:00 restart-deferred reason=health-failures:172:http-200 active_app_servers=8
+2026-06-24T21:56:23+03:00 health-fail count=173 pid=none http=200 ms=1 app_servers=8
+2026-06-24T21:56:23+03:00 restart-deferred reason=health-failures:173:http-200 active_app_servers=8
+2026-06-24T21:58:30+03:00 health-fail count=174 pid=none http=200 ms=14 app_servers=6
+2026-06-24T21:58:30+03:00 restart-deferred reason=health-failures:174:http-200 active_app_servers=6
+2026-06-24T22:00:36+03:00 health-fail count=175 pid=none http=200 ms=5 app_servers=6
+2026-06-24T22:00:36+03:00 restart-deferred reason=health-failures:175:http-200 active_app_servers=6
+2026-06-24T22:02:42+03:00 health-fail count=176 pid=none http=200 ms=1006 app_servers=6
+2026-06-24T22:02:42+03:00 restart-deferred reason=health-failures:176:http-200 active_app_servers=6
+2026-06-24T22:04:46+03:00 health-fail count=177 pid=none http=200 ms=1 app_servers=6
+2026-06-24T22:04:46+03:00 restart-deferred reason=health-failures:177:http-200 active_app_servers=6
+2026-06-24T22:06:52+03:00 health-fail count=178 pid=none http=200 ms=2 app_servers=6
+2026-06-24T22:06:52+03:00 restart-deferred reason=health-failures:178:http-200 active_app_servers=6
+2026-06-24T22:08:55+03:00 health-fail count=179 pid=none http=200 ms=1 app_servers=6
+2026-06-24T22:08:55+03:00 restart-deferred reason=health-failures:179:http-200 active_app_servers=6
+2026-06-24T22:10:57+03:00 health-fail count=180 pid=none http=200 ms=202 app_servers=6
+2026-06-24T22:10:57+03:00 restart-deferred reason=health-failures:180:http-200 active_app_servers=6
+2026-06-24T22:12:58+03:00 health-fail count=181 pid=none http=200 ms=1 app_servers=6
+2026-06-24T22:12:58+03:00 restart-deferred reason=health-failures:181:http-200 active_app_servers=6
+2026-06-24T22:15:18+03:00 health-fail count=182 pid=none http=200 ms=168 app_servers=6
+2026-06-24T22:15:18+03:00 restart-deferred reason=health-failures:182:http-200 active_app_servers=6
+2026-06-24T22:17:15+03:00 health-fail count=183 pid=none http=200 ms=1 app_servers=6
+2026-06-24T22:17:15+03:00 restart-deferred reason=health-failures:183:http-200 active_app_servers=6
+2026-06-24T22:19:21+03:00 health-fail count=184 pid=none http=200 ms=1 app_servers=6
+2026-06-24T22:19:21+03:00 restart-deferred reason=health-failures:184:http-200 active_app_servers=6
+2026-06-24T22:21:37+03:00 health-fail count=185 pid=none http=200 ms=535 app_servers=6
+2026-06-24T22:21:37+03:00 restart-deferred reason=health-failures:185:http-200 active_app_servers=6
+2026-06-24T22:23:36+03:00 health-fail count=186 pid=none http=200 ms=261 app_servers=6
+2026-06-24T22:23:36+03:00 restart-deferred reason=health-failures:186:http-200 active_app_servers=6
+2026-06-24T22:25:47+03:00 health-fail count=187 pid=none http=200 ms=1 app_servers=6
+2026-06-24T22:25:47+03:00 restart-deferred reason=health-failures:187:http-200 active_app_servers=6
+2026-06-24T22:27:56+03:00 health-fail count=188 pid=none http=200 ms=428 app_servers=6
+2026-06-24T22:27:56+03:00 restart-deferred reason=health-failures:188:http-200 active_app_servers=6
+2026-06-24T22:29:55+03:00 health-fail count=189 pid=none http=200 ms=1011 app_servers=6
+2026-06-24T22:29:55+03:00 restart-deferred reason=health-failures:189:http-200 active_app_servers=6
+2026-06-24T22:32:17+03:00 health-fail count=190 pid=none http=200 ms=1772 app_servers=6
+2026-06-24T22:32:17+03:00 restart-deferred reason=health-failures:190:http-200 active_app_servers=6
+2026-06-24T22:34:34+03:00 health-fail count=191 pid=none http=200 ms=1 app_servers=8
+2026-06-24T22:34:34+03:00 restart-deferred reason=health-failures:191:http-200 active_app_servers=8
+2026-06-24T22:36:53+03:00 health-fail count=192 pid=none http=200 ms=3131 app_servers=8
+2026-06-24T22:36:53+03:00 restart-deferred reason=health-failures:192:http-200 active_app_servers=8
+2026-06-24T22:38:55+03:00 health-fail count=193 pid=none http=200 ms=1 app_servers=8
+2026-06-24T22:38:55+03:00 restart-deferred reason=health-failures:193:http-200 active_app_servers=8
+2026-06-24T22:41:14+03:00 health-fail count=194 pid=none http=200 ms=1 app_servers=8
+2026-06-24T22:41:14+03:00 restart-deferred reason=health-failures:194:http-200 active_app_servers=8
+2026-06-24T22:43:34+03:00 health-fail count=195 pid=none http=200 ms=1 app_servers=8
+2026-06-24T22:43:34+03:00 restart-deferred reason=health-failures:195:http-200 active_app_servers=8
+2026-06-24T22:45:37+03:00 health-fail count=196 pid=none http=200 ms=1 app_servers=8
+2026-06-24T22:45:37+03:00 restart-deferred reason=health-failures:196:http-200 active_app_servers=8
+2026-06-24T22:47:55+03:00 health-fail count=197 pid=none http=200 ms=1 app_servers=8
+2026-06-24T22:47:55+03:00 restart-deferred reason=health-failures:197:http-200 active_app_servers=8
+2026-06-24T22:50:15+03:00 health-fail count=198 pid=none http=200 ms=2 app_servers=8
+2026-06-24T22:50:15+03:00 restart-deferred reason=health-failures:198:http-200 active_app_servers=8
+2026-06-24T22:52:26+03:00 health-fail count=199 pid=none http=200 ms=3 app_servers=8
+2026-06-24T22:52:26+03:00 restart-deferred reason=health-failures:199:http-200 active_app_servers=8
+2026-06-24T22:54:44+03:00 health-fail count=200 pid=none http=200 ms=2 app_servers=8
+2026-06-24T22:54:44+03:00 restart-deferred reason=health-failures:200:http-200 active_app_servers=8
+2026-06-24T22:56:53+03:00 health-fail count=201 pid=none http=200 ms=1 app_servers=8
+2026-06-24T22:56:53+03:00 restart-deferred reason=health-failures:201:http-200 active_app_servers=8
+2026-06-24T22:58:53+03:00 health-fail count=202 pid=none http=200 ms=1 app_servers=8
+2026-06-24T22:58:53+03:00 restart-deferred reason=health-failures:202:http-200 active_app_servers=8
+2026-06-24T23:00:55+03:00 health-fail count=203 pid=none http=200 ms=2 app_servers=8
+2026-06-24T23:00:55+03:00 restart-deferred reason=health-failures:203:http-200 active_app_servers=8
+2026-06-24T23:03:14+03:00 health-fail count=204 pid=none http=200 ms=2 app_servers=8
+2026-06-24T23:03:14+03:00 restart-deferred reason=health-failures:204:http-200 active_app_servers=8
+2026-06-24T23:05:22+03:00 health-fail count=205 pid=none http=200 ms=3 app_servers=8
+2026-06-24T23:05:22+03:00 restart-deferred reason=health-failures:205:http-200 active_app_servers=8
+2026-06-24T23:07:27+03:00 health-fail count=206 pid=none http=200 ms=1 app_servers=8
+2026-06-24T23:07:27+03:00 restart-deferred reason=health-failures:206:http-200 active_app_servers=8
+2026-06-24T23:09:45+03:00 health-fail count=207 pid=none http=200 ms=16 app_servers=8
+2026-06-24T23:09:45+03:00 restart-deferred reason=health-failures:207:http-200 active_app_servers=8
+2026-06-24T23:11:55+03:00 health-fail count=208 pid=none http=200 ms=2 app_servers=8
+2026-06-24T23:11:55+03:00 restart-deferred reason=health-failures:208:http-200 active_app_servers=8
+2026-06-24T23:14:15+03:00 health-fail count=209 pid=none http=200 ms=1 app_servers=8
+2026-06-24T23:14:15+03:00 restart-deferred reason=health-failures:209:http-200 active_app_servers=8
+2026-06-24T23:16:35+03:00 health-fail count=210 pid=none http=200 ms=1 app_servers=8
+2026-06-24T23:16:35+03:00 restart-deferred reason=health-failures:210:http-200 active_app_servers=8
+2026-06-24T23:18:55+03:00 health-fail count=211 pid=none http=200 ms=1 app_servers=8
+2026-06-24T23:18:55+03:00 restart-deferred reason=health-failures:211:http-200 active_app_servers=8
+2026-06-24T23:21:14+03:00 health-fail count=212 pid=none http=200 ms=1 app_servers=8
+2026-06-24T23:21:14+03:00 restart-deferred reason=health-failures:212:http-200 active_app_servers=8
+2026-06-24T23:23:35+03:00 health-fail count=213 pid=none http=200 ms=105 app_servers=8
+2026-06-24T23:23:35+03:00 restart-deferred reason=health-failures:213:http-200 active_app_servers=8
+2026-06-24T23:25:55+03:00 health-fail count=214 pid=none http=200 ms=637 app_servers=8
+2026-06-24T23:25:55+03:00 restart-deferred reason=health-failures:214:http-200 active_app_servers=8
+2026-06-24T23:28:15+03:00 health-fail count=215 pid=none http=200 ms=547 app_servers=8
+2026-06-24T23:28:15+03:00 restart-deferred reason=health-failures:215:http-200 active_app_servers=8
+2026-06-24T23:30:35+03:00 health-fail count=216 pid=none http=200 ms=870 app_servers=8
+2026-06-24T23:30:35+03:00 restart-deferred reason=health-failures:216:http-200 active_app_servers=8
+2026-06-24T23:32:55+03:00 health-fail count=217 pid=none http=200 ms=580 app_servers=8
+2026-06-24T23:32:55+03:00 restart-deferred reason=health-failures:217:http-200 active_app_servers=8
+2026-06-24T23:35:15+03:00 health-fail count=218 pid=none http=200 ms=641 app_servers=8
+2026-06-24T23:35:15+03:00 restart-deferred reason=health-failures:218:http-200 active_app_servers=8
+2026-06-24T23:37:35+03:00 health-fail count=219 pid=none http=200 ms=710 app_servers=8
+2026-06-24T23:37:35+03:00 restart-deferred reason=health-failures:219:http-200 active_app_servers=8
+2026-06-24T23:39:55+03:00 health-fail count=220 pid=none http=200 ms=874 app_servers=8
+2026-06-24T23:39:55+03:00 restart-deferred reason=health-failures:220:http-200 active_app_servers=8
+2026-06-24T23:42:15+03:00 health-fail count=221 pid=none http=200 ms=778 app_servers=8
+2026-06-24T23:42:15+03:00 restart-deferred reason=health-failures:221:http-200 active_app_servers=8
+2026-06-24T23:44:35+03:00 health-fail count=222 pid=none http=200 ms=649 app_servers=8
+2026-06-24T23:44:35+03:00 restart-deferred reason=health-failures:222:http-200 active_app_servers=8
+2026-06-24T23:46:40+03:00 health-fail count=223 pid=none http=200 ms=1 app_servers=8
+2026-06-24T23:46:40+03:00 restart-deferred reason=health-failures:223:http-200 active_app_servers=8
+2026-06-24T23:48:48+03:00 health-fail count=224 pid=none http=200 ms=1 app_servers=8
+2026-06-24T23:48:48+03:00 restart-deferred reason=health-failures:224:http-200 active_app_servers=8
+2026-06-24T23:50:50+03:00 health-fail count=225 pid=none http=200 ms=1 app_servers=8
+2026-06-24T23:50:50+03:00 restart-deferred reason=health-failures:225:http-200 active_app_servers=8
+2026-06-24T23:52:56+03:00 health-fail count=226 pid=none http=200 ms=397 app_servers=8
+2026-06-24T23:52:56+03:00 restart-deferred reason=health-failures:226:http-200 active_app_servers=8
+2026-06-24T23:55:13+03:00 health-fail count=227 pid=none http=200 ms=1 app_servers=8
+2026-06-24T23:55:13+03:00 restart-deferred reason=health-failures:227:http-200 active_app_servers=8
+2026-06-24T23:57:25+03:00 health-fail count=228 pid=none http=200 ms=990 app_servers=8
+2026-06-24T23:57:25+03:00 restart-deferred reason=health-failures:228:http-200 active_app_servers=8
+2026-06-24T23:59:38+03:00 health-fail count=229 pid=none http=200 ms=1 app_servers=8
+2026-06-24T23:59:38+03:00 restart-deferred reason=health-failures:229:http-200 active_app_servers=8
+2026-06-25T00:01:39+03:00 health-fail count=230 pid=none http=200 ms=27 app_servers=8
+2026-06-25T00:01:39+03:00 restart-deferred reason=health-failures:230:http-200 active_app_servers=8
+2026-06-25T00:03:54+03:00 health-fail count=231 pid=none http=200 ms=1 app_servers=8
+2026-06-25T00:03:54+03:00 restart-deferred reason=health-failures:231:http-200 active_app_servers=8
+2026-06-25T00:05:56+03:00 health-fail count=232 pid=none http=200 ms=1 app_servers=8
+2026-06-25T00:05:56+03:00 restart-deferred reason=health-failures:232:http-200 active_app_servers=8
+2026-06-25T00:08:15+03:00 health-fail count=233 pid=none http=200 ms=1 app_servers=8
+2026-06-25T00:08:15+03:00 restart-deferred reason=health-failures:233:http-200 active_app_servers=8
+2026-06-25T00:10:23+03:00 health-fail count=234 pid=none http=200 ms=2 app_servers=8
+2026-06-25T00:10:23+03:00 restart-deferred reason=health-failures:234:http-200 active_app_servers=8
+2026-06-25T00:12:35+03:00 health-fail count=235 pid=none http=200 ms=1 app_servers=8
+2026-06-25T00:12:35+03:00 restart-deferred reason=health-failures:235:http-200 active_app_servers=8
+2026-06-25T00:14:55+03:00 health-fail count=236 pid=none http=200 ms=1 app_servers=8
+2026-06-25T00:14:55+03:00 restart-deferred reason=health-failures:236:http-200 active_app_servers=8
+2026-06-25T00:17:15+03:00 health-fail count=237 pid=none http=200 ms=1 app_servers=8
+2026-06-25T00:17:15+03:00 restart-deferred reason=health-failures:237:http-200 active_app_servers=8
+2026-06-25T00:19:35+03:00 health-fail count=238 pid=none http=200 ms=216 app_servers=8
+2026-06-25T00:19:35+03:00 restart-deferred reason=health-failures:238:http-200 active_app_servers=8
+2026-06-25T00:21:55+03:00 health-fail count=239 pid=none http=200 ms=173 app_servers=8
+2026-06-25T00:21:55+03:00 restart-deferred reason=health-failures:239:http-200 active_app_servers=8
+2026-06-25T00:24:14+03:00 health-fail count=240 pid=none http=200 ms=1 app_servers=8
+2026-06-25T00:24:14+03:00 restart-deferred reason=health-failures:240:http-200 active_app_servers=8
+2026-06-25T00:26:34+03:00 health-fail count=241 pid=none http=200 ms=1 app_servers=8
+2026-06-25T00:26:34+03:00 restart-deferred reason=health-failures:241:http-200 active_app_servers=8
+2026-06-25T00:28:54+03:00 health-fail count=242 pid=none http=200 ms=1 app_servers=8
+2026-06-25T00:28:54+03:00 restart-deferred reason=health-failures:242:http-200 active_app_servers=8
+2026-06-25T00:31:15+03:00 health-fail count=243 pid=none http=200 ms=1 app_servers=8
+2026-06-25T00:31:15+03:00 restart-deferred reason=health-failures:243:http-200 active_app_servers=8
+2026-06-25T00:33:35+03:00 health-fail count=244 pid=none http=200 ms=1 app_servers=8
+2026-06-25T00:33:35+03:00 restart-deferred reason=health-failures:244:http-200 active_app_servers=8
+2026-06-25T00:35:54+03:00 health-fail count=245 pid=none http=200 ms=1 app_servers=8
+2026-06-25T00:35:54+03:00 restart-deferred reason=health-failures:245:http-200 active_app_servers=8
+2026-06-25T00:38:14+03:00 health-fail count=246 pid=none http=200 ms=1 app_servers=8
+2026-06-25T00:38:14+03:00 restart-deferred reason=health-failures:246:http-200 active_app_servers=8
+2026-06-25T00:40:35+03:00 health-fail count=247 pid=none http=200 ms=48 app_servers=8
+2026-06-25T00:40:35+03:00 restart-deferred reason=health-failures:247:http-200 active_app_servers=8
+2026-06-25T00:42:54+03:00 health-fail count=248 pid=none http=200 ms=1 app_servers=8
+2026-06-25T00:42:54+03:00 restart-deferred reason=health-failures:248:http-200 active_app_servers=8
+2026-06-25T00:45:14+03:00 health-fail count=249 pid=none http=200 ms=1 app_servers=8
+2026-06-25T00:45:14+03:00 restart-deferred reason=health-failures:249:http-200 active_app_servers=8
+2026-06-25T00:47:34+03:00 health-fail count=250 pid=none http=200 ms=2 app_servers=8
+2026-06-25T00:47:34+03:00 restart-deferred reason=health-failures:250:http-200 active_app_servers=8
+2026-06-25T00:49:54+03:00 health-fail count=251 pid=none http=200 ms=2 app_servers=8
+2026-06-25T00:49:54+03:00 restart-deferred reason=health-failures:251:http-200 active_app_servers=8
+2026-06-25T00:52:14+03:00 health-fail count=252 pid=none http=200 ms=1 app_servers=8
+2026-06-25T00:52:14+03:00 restart-deferred reason=health-failures:252:http-200 active_app_servers=8
+2026-06-25T00:54:34+03:00 health-fail count=253 pid=none http=200 ms=1 app_servers=8
+2026-06-25T00:54:34+03:00 restart-deferred reason=health-failures:253:http-200 active_app_servers=8
+2026-06-25T00:56:54+03:00 health-fail count=254 pid=none http=200 ms=1 app_servers=6
+2026-06-25T00:56:54+03:00 restart-deferred reason=health-failures:254:http-200 active_app_servers=6
+2026-06-25T00:59:14+03:00 health-fail count=255 pid=none http=200 ms=1 app_servers=6
+2026-06-25T00:59:14+03:00 restart-deferred reason=health-failures:255:http-200 active_app_servers=6
+2026-06-25T01:01:34+03:00 health-fail count=256 pid=none http=200 ms=1 app_servers=6
+2026-06-25T01:01:34+03:00 restart-deferred reason=health-failures:256:http-200 active_app_servers=6
+2026-06-25T01:03:54+03:00 health-fail count=257 pid=none http=200 ms=1 app_servers=6
+2026-06-25T01:03:54+03:00 restart-deferred reason=health-failures:257:http-200 active_app_servers=6
+2026-06-25T01:06:15+03:00 health-fail count=258 pid=none http=200 ms=60 app_servers=6
+2026-06-25T01:06:15+03:00 restart-deferred reason=health-failures:258:http-200 active_app_servers=6
+2026-06-25T01:08:35+03:00 health-fail count=259 pid=none http=200 ms=630 app_servers=6
+2026-06-25T01:08:35+03:00 restart-deferred reason=health-failures:259:http-200 active_app_servers=6
+2026-06-25T01:10:56+03:00 health-fail count=260 pid=none http=200 ms=981 app_servers=6
+2026-06-25T01:10:56+03:00 restart-deferred reason=health-failures:260:http-200 active_app_servers=6
+2026-06-25T01:13:15+03:00 health-fail count=261 pid=none http=200 ms=838 app_servers=6
+2026-06-25T01:13:15+03:00 restart-deferred reason=health-failures:261:http-200 active_app_servers=6
+2026-06-25T01:15:36+03:00 health-fail count=262 pid=none http=200 ms=1098 app_servers=6
+2026-06-25T01:15:36+03:00 restart-deferred reason=health-failures:262:http-200 active_app_servers=6
+2026-06-25T01:17:56+03:00 health-fail count=263 pid=none http=200 ms=1054 app_servers=6
+2026-06-25T01:17:56+03:00 restart-deferred reason=health-failures:263:http-200 active_app_servers=6
+2026-06-25T01:20:16+03:00 health-fail count=264 pid=none http=200 ms=1305 app_servers=6
+2026-06-25T01:20:16+03:00 restart-deferred reason=health-failures:264:http-200 active_app_servers=6
+2026-06-25T01:22:36+03:00 health-fail count=265 pid=none http=200 ms=1260 app_servers=6
+2026-06-25T01:22:36+03:00 restart-deferred reason=health-failures:265:http-200 active_app_servers=6
+2026-06-25T01:24:55+03:00 health-fail count=266 pid=none http=200 ms=990 app_servers=6
+2026-06-25T01:24:55+03:00 restart-deferred reason=health-failures:266:http-200 active_app_servers=6
+2026-06-25T01:27:16+03:00 health-fail count=267 pid=none http=200 ms=1042 app_servers=6
+2026-06-25T01:27:16+03:00 restart-deferred reason=health-failures:267:http-200 active_app_servers=6
+2026-06-25T01:29:36+03:00 health-fail count=268 pid=none http=200 ms=1067 app_servers=6
+2026-06-25T01:29:36+03:00 restart-deferred reason=health-failures:268:http-200 active_app_servers=6
+2026-06-25T01:31:56+03:00 health-fail count=269 pid=none http=200 ms=1112 app_servers=6
+2026-06-25T01:31:56+03:00 restart-deferred reason=health-failures:269:http-200 active_app_servers=6
+2026-06-25T01:34:16+03:00 health-fail count=270 pid=none http=200 ms=1398 app_servers=6
+2026-06-25T01:34:16+03:00 restart-deferred reason=health-failures:270:http-200 active_app_servers=6
+2026-06-25T01:36:36+03:00 health-fail count=271 pid=none http=200 ms=1107 app_servers=6
+2026-06-25T01:36:36+03:00 restart-deferred reason=health-failures:271:http-200 active_app_servers=6
+2026-06-25T01:38:56+03:00 health-fail count=272 pid=none http=200 ms=1239 app_servers=6
+2026-06-25T01:38:56+03:00 restart-deferred reason=health-failures:272:http-200 active_app_servers=6
+2026-06-25T01:41:16+03:00 health-fail count=273 pid=none http=200 ms=1141 app_servers=6
+2026-06-25T01:41:16+03:00 restart-deferred reason=health-failures:273:http-200 active_app_servers=6
+2026-06-25T01:43:36+03:00 health-fail count=274 pid=none http=200 ms=1321 app_servers=6
+2026-06-25T01:43:36+03:00 restart-deferred reason=health-failures:274:http-200 active_app_servers=6
+2026-06-25T01:45:56+03:00 health-fail count=275 pid=none http=200 ms=1341 app_servers=6
+2026-06-25T01:45:56+03:00 restart-deferred reason=health-failures:275:http-200 active_app_servers=6
+2026-06-25T01:48:16+03:00 health-fail count=276 pid=none http=200 ms=1223 app_servers=6
+2026-06-25T01:48:16+03:00 restart-deferred reason=health-failures:276:http-200 active_app_servers=6
+2026-06-25T01:50:17+03:00 health-fail count=277 pid=none http=200 ms=1 app_servers=6
+2026-06-25T01:50:17+03:00 restart-deferred reason=health-failures:277:http-200 active_app_servers=6
+2026-06-25T01:52:36+03:00 health-fail count=278 pid=none http=200 ms=1274 app_servers=6
+2026-06-25T01:52:36+03:00 restart-deferred reason=health-failures:278:http-200 active_app_servers=6
+2026-06-25T01:54:56+03:00 health-fail count=279 pid=none http=200 ms=1134 app_servers=6
+2026-06-25T01:54:56+03:00 restart-deferred reason=health-failures:279:http-200 active_app_servers=6
+2026-06-25T01:57:16+03:00 health-fail count=280 pid=none http=200 ms=1199 app_servers=6
+2026-06-25T01:57:16+03:00 restart-deferred reason=health-failures:280:http-200 active_app_servers=6
+2026-06-25T01:59:18+03:00 health-fail count=281 pid=none http=200 ms=1 app_servers=6
+2026-06-25T01:59:18+03:00 restart-deferred reason=health-failures:281:http-200 active_app_servers=6
+2026-06-25T02:01:27+03:00 health-fail count=282 pid=none http=200 ms=327 app_servers=6
+2026-06-25T02:01:27+03:00 restart-deferred reason=health-failures:282:http-200 active_app_servers=6
+2026-06-25T02:03:31+03:00 health-fail count=283 pid=none http=200 ms=1 app_servers=6
+2026-06-25T02:03:31+03:00 restart-deferred reason=health-failures:283:http-200 active_app_servers=6
+2026-06-25T02:05:31+03:00 health-fail count=284 pid=none http=200 ms=1 app_servers=6
+2026-06-25T02:05:31+03:00 restart-deferred reason=health-failures:284:http-200 active_app_servers=6
+2026-06-25T02:07:44+03:00 health-fail count=285 pid=none http=200 ms=1 app_servers=6
+2026-06-25T02:07:44+03:00 restart-deferred reason=health-failures:285:http-200 active_app_servers=6
+2026-06-25T02:09:54+03:00 health-fail count=286 pid=none http=200 ms=1 app_servers=6
+2026-06-25T02:09:54+03:00 restart-deferred reason=health-failures:286:http-200 active_app_servers=6
+2026-06-25T02:12:15+03:00 health-fail count=287 pid=none http=200 ms=1 app_servers=6
+2026-06-25T02:12:15+03:00 restart-deferred reason=health-failures:287:http-200 active_app_servers=6
+2026-06-25T02:14:34+03:00 health-fail count=288 pid=none http=200 ms=1 app_servers=6
+2026-06-25T02:14:34+03:00 restart-deferred reason=health-failures:288:http-200 active_app_servers=6
+2026-06-25T02:16:40+03:00 health-fail count=289 pid=none http=200 ms=1 app_servers=6
+2026-06-25T02:16:40+03:00 restart-deferred reason=health-failures:289:http-200 active_app_servers=6
+2026-06-25T02:18:50+03:00 health-fail count=290 pid=none http=200 ms=1 app_servers=6
+2026-06-25T02:18:50+03:00 restart-deferred reason=health-failures:290:http-200 active_app_servers=6
+2026-06-25T02:20:54+03:00 health-fail count=291 pid=none http=200 ms=1 app_servers=6
+2026-06-25T02:20:54+03:00 restart-deferred reason=health-failures:291:http-200 active_app_servers=6
+2026-06-25T02:23:14+03:00 health-fail count=292 pid=none http=200 ms=1 app_servers=6
+2026-06-25T02:23:14+03:00 restart-deferred reason=health-failures:292:http-200 active_app_servers=6
+2026-06-25T02:25:34+03:00 health-fail count=293 pid=none http=200 ms=1 app_servers=6
+2026-06-25T02:25:34+03:00 restart-deferred reason=health-failures:293:http-200 active_app_servers=6
+2026-06-25T02:27:54+03:00 health-fail count=294 pid=none http=200 ms=1 app_servers=6
+2026-06-25T02:27:54+03:00 restart-deferred reason=health-failures:294:http-200 active_app_servers=6
+2026-06-25T02:30:14+03:00 health-fail count=295 pid=none http=200 ms=1 app_servers=6
+2026-06-25T02:30:14+03:00 restart-deferred reason=health-failures:295:http-200 active_app_servers=6
+2026-06-25T02:32:34+03:00 health-fail count=296 pid=none http=200 ms=2 app_servers=6
+2026-06-25T02:32:34+03:00 restart-deferred reason=health-failures:296:http-200 active_app_servers=6
+2026-06-25T02:34:54+03:00 health-fail count=297 pid=none http=200 ms=1 app_servers=6
+2026-06-25T02:34:54+03:00 restart-deferred reason=health-failures:297:http-200 active_app_servers=6
+2026-06-25T02:37:13+03:00 health-fail count=298 pid=none http=200 ms=8 app_servers=8
+2026-06-25T02:37:13+03:00 restart-deferred reason=health-failures:298:http-200 active_app_servers=8
+2026-06-25T02:39:21+03:00 health-fail count=299 pid=none http=200 ms=1 app_servers=8
+2026-06-25T02:39:21+03:00 restart-deferred reason=health-failures:299:http-200 active_app_servers=8
+2026-06-25T02:41:34+03:00 health-fail count=300 pid=none http=200 ms=1 app_servers=8
+2026-06-25T02:41:34+03:00 restart-deferred reason=health-failures:300:http-200 active_app_servers=8
+2026-06-25T02:43:52+03:00 health-fail count=301 pid=none http=200 ms=1 app_servers=8
+2026-06-25T02:43:52+03:00 restart-deferred reason=health-failures:301:http-200 active_app_servers=8
+2026-06-25T02:45:54+03:00 health-fail count=302 pid=none http=200 ms=2 app_servers=8
+2026-06-25T02:45:54+03:00 restart-deferred reason=health-failures:302:http-200 active_app_servers=8
+2026-06-25T02:48:14+03:00 health-fail count=303 pid=none http=200 ms=1 app_servers=6
+2026-06-25T02:48:14+03:00 restart-deferred reason=health-failures:303:http-200 active_app_servers=6
+2026-06-25T02:50:34+03:00 health-fail count=304 pid=none http=200 ms=1 app_servers=6
+2026-06-25T02:50:34+03:00 restart-deferred reason=health-failures:304:http-200 active_app_servers=6
+2026-06-25T02:52:54+03:00 health-fail count=305 pid=none http=200 ms=1 app_servers=6
+2026-06-25T02:52:54+03:00 restart-deferred reason=health-failures:305:http-200 active_app_servers=6
+2026-06-25T02:55:14+03:00 health-fail count=306 pid=none http=200 ms=1 app_servers=6
+2026-06-25T02:55:14+03:00 restart-deferred reason=health-failures:306:http-200 active_app_servers=6
+2026-06-25T02:57:34+03:00 health-fail count=307 pid=none http=200 ms=2 app_servers=6
+2026-06-25T02:57:34+03:00 restart-deferred reason=health-failures:307:http-200 active_app_servers=6
+2026-06-25T02:59:54+03:00 health-fail count=308 pid=none http=200 ms=1 app_servers=6
+2026-06-25T02:59:54+03:00 restart-deferred reason=health-failures:308:http-200 active_app_servers=6
+2026-06-25T03:02:14+03:00 health-fail count=309 pid=none http=200 ms=1 app_servers=6
+2026-06-25T03:02:14+03:00 restart-deferred reason=health-failures:309:http-200 active_app_servers=6
+2026-06-25T03:04:34+03:00 health-fail count=310 pid=none http=200 ms=1 app_servers=6
+2026-06-25T03:04:34+03:00 restart-deferred reason=health-failures:310:http-200 active_app_servers=6
+2026-06-25T03:06:54+03:00 health-fail count=311 pid=none http=200 ms=1 app_servers=6
+2026-06-25T03:06:54+03:00 restart-deferred reason=health-failures:311:http-200 active_app_servers=6
+2026-06-25T03:09:14+03:00 health-fail count=312 pid=none http=200 ms=1 app_servers=6
+2026-06-25T03:09:14+03:00 restart-deferred reason=health-failures:312:http-200 active_app_servers=6
+2026-06-25T03:11:34+03:00 health-fail count=313 pid=none http=200 ms=2 app_servers=6
+2026-06-25T03:11:34+03:00 restart-deferred reason=health-failures:313:http-200 active_app_servers=6
+2026-06-25T03:13:54+03:00 health-fail count=314 pid=none http=200 ms=1 app_servers=6
+2026-06-25T03:13:54+03:00 restart-deferred reason=health-failures:314:http-200 active_app_servers=6
+2026-06-25T03:16:14+03:00 health-fail count=315 pid=none http=200 ms=1 app_servers=6
+2026-06-25T03:16:14+03:00 restart-deferred reason=health-failures:315:http-200 active_app_servers=6
+2026-06-25T03:18:34+03:00 health-fail count=316 pid=none http=200 ms=1 app_servers=6
+2026-06-25T03:18:34+03:00 restart-deferred reason=health-failures:316:http-200 active_app_servers=6
+2026-06-25T03:20:54+03:00 health-fail count=317 pid=none http=200 ms=27 app_servers=6
+2026-06-25T03:20:54+03:00 restart-deferred reason=health-failures:317:http-200 active_app_servers=6
+2026-06-25T03:23:14+03:00 health-fail count=318 pid=none http=200 ms=27 app_servers=6
+2026-06-25T03:23:14+03:00 restart-deferred reason=health-failures:318:http-200 active_app_servers=6
+2026-06-25T03:25:34+03:00 health-fail count=319 pid=none http=200 ms=1 app_servers=6
+2026-06-25T03:25:34+03:00 restart-deferred reason=health-failures:319:http-200 active_app_servers=6
+2026-06-25T03:27:54+03:00 health-fail count=320 pid=none http=200 ms=1 app_servers=6
+2026-06-25T03:27:54+03:00 restart-deferred reason=health-failures:320:http-200 active_app_servers=6
+2026-06-25T03:30:14+03:00 health-fail count=321 pid=none http=200 ms=2 app_servers=8
+2026-06-25T03:30:14+03:00 restart-deferred reason=health-failures:321:http-200 active_app_servers=8
+2026-06-25T03:32:34+03:00 health-fail count=322 pid=none http=200 ms=2 app_servers=6
+2026-06-25T03:32:34+03:00 restart-deferred reason=health-failures:322:http-200 active_app_servers=6
+2026-06-25T03:34:54+03:00 health-fail count=323 pid=none http=200 ms=1 app_servers=6
+2026-06-25T03:34:54+03:00 restart-deferred reason=health-failures:323:http-200 active_app_servers=6
+2026-06-25T03:37:14+03:00 health-fail count=324 pid=none http=200 ms=1 app_servers=6
+2026-06-25T03:37:14+03:00 restart-deferred reason=health-failures:324:http-200 active_app_servers=6
+2026-06-25T03:39:34+03:00 health-fail count=325 pid=none http=200 ms=1 app_servers=6
+2026-06-25T03:39:34+03:00 restart-deferred reason=health-failures:325:http-200 active_app_servers=6
+2026-06-25T03:41:54+03:00 health-fail count=326 pid=none http=200 ms=1 app_servers=6
+2026-06-25T03:41:54+03:00 restart-deferred reason=health-failures:326:http-200 active_app_servers=6
+2026-06-25T03:44:14+03:00 health-fail count=327 pid=none http=200 ms=1 app_servers=6
+2026-06-25T03:44:14+03:00 restart-deferred reason=health-failures:327:http-200 active_app_servers=6
+2026-06-25T03:46:34+03:00 health-fail count=328 pid=none http=200 ms=1 app_servers=6
+2026-06-25T03:46:34+03:00 restart-deferred reason=health-failures:328:http-200 active_app_servers=6
+2026-06-25T03:48:54+03:00 health-fail count=329 pid=none http=200 ms=1 app_servers=6
+2026-06-25T03:48:54+03:00 restart-deferred reason=health-failures:329:http-200 active_app_servers=6
+2026-06-25T03:51:14+03:00 health-fail count=330 pid=none http=200 ms=1 app_servers=6
+2026-06-25T03:51:14+03:00 restart-deferred reason=health-failures:330:http-200 active_app_servers=6
+2026-06-25T03:53:34+03:00 health-fail count=331 pid=none http=200 ms=1 app_servers=6
+2026-06-25T03:53:34+03:00 restart-deferred reason=health-failures:331:http-200 active_app_servers=6
+2026-06-25T03:55:36+03:00 health-fail count=332 pid=none http=200 ms=1 app_servers=8
+2026-06-25T03:55:36+03:00 restart-deferred reason=health-failures:332:http-200 active_app_servers=8
+2026-06-25T03:57:54+03:00 health-fail count=333 pid=none http=200 ms=1 app_servers=6
+2026-06-25T03:57:54+03:00 restart-deferred reason=health-failures:333:http-200 active_app_servers=6
+2026-06-25T04:00:15+03:00 health-fail count=334 pid=none http=200 ms=2 app_servers=6
+2026-06-25T04:00:15+03:00 restart-deferred reason=health-failures:334:http-200 active_app_servers=6
+2026-06-25T04:02:34+03:00 health-fail count=335 pid=none http=200 ms=1 app_servers=6
+2026-06-25T04:02:34+03:00 restart-deferred reason=health-failures:335:http-200 active_app_servers=6
+2026-06-25T04:04:54+03:00 health-fail count=336 pid=none http=200 ms=1 app_servers=6
+2026-06-25T04:04:54+03:00 restart-deferred reason=health-failures:336:http-200 active_app_servers=6
+2026-06-25T04:07:14+03:00 health-fail count=337 pid=none http=200 ms=1 app_servers=4
+2026-06-25T04:07:14+03:00 restart-deferred reason=health-failures:337:http-200 active_app_servers=4
+2026-06-25T04:09:34+03:00 health-fail count=338 pid=none http=200 ms=1 app_servers=4
+2026-06-25T04:09:34+03:00 restart-deferred reason=health-failures:338:http-200 active_app_servers=4
+2026-06-25T04:11:54+03:00 health-fail count=339 pid=none http=200 ms=1 app_servers=4
+2026-06-25T04:11:54+03:00 restart-deferred reason=health-failures:339:http-200 active_app_servers=4
+2026-06-25T04:14:14+03:00 health-fail count=340 pid=none http=200 ms=1 app_servers=4
+2026-06-25T04:14:14+03:00 restart-deferred reason=health-failures:340:http-200 active_app_servers=4
+2026-06-25T04:16:34+03:00 health-fail count=341 pid=none http=200 ms=1 app_servers=4
+2026-06-25T04:16:34+03:00 restart-deferred reason=health-failures:341:http-200 active_app_servers=4
+2026-06-25T04:18:54+03:00 health-fail count=342 pid=none http=200 ms=1 app_servers=4
+2026-06-25T04:18:54+03:00 restart-deferred reason=health-failures:342:http-200 active_app_servers=4
+2026-06-25T04:21:14+03:00 health-fail count=343 pid=none http=200 ms=2 app_servers=4
+2026-06-25T04:21:14+03:00 restart-deferred reason=health-failures:343:http-200 active_app_servers=4
+2026-06-25T04:23:34+03:00 health-fail count=344 pid=none http=200 ms=1 app_servers=4
+2026-06-25T04:23:34+03:00 restart-deferred reason=health-failures:344:http-200 active_app_servers=4
+2026-06-25T04:25:54+03:00 health-fail count=345 pid=none http=200 ms=1 app_servers=4
+2026-06-25T04:25:54+03:00 restart-deferred reason=health-failures:345:http-200 active_app_servers=4
+2026-06-25T04:28:14+03:00 health-fail count=346 pid=none http=200 ms=1 app_servers=4
+2026-06-25T04:28:14+03:00 restart-deferred reason=health-failures:346:http-200 active_app_servers=4
+2026-06-25T04:30:34+03:00 health-fail count=347 pid=none http=200 ms=1 app_servers=4
+2026-06-25T04:30:34+03:00 restart-deferred reason=health-failures:347:http-200 active_app_servers=4
+2026-06-25T04:32:54+03:00 health-fail count=348 pid=none http=200 ms=1 app_servers=4
+2026-06-25T04:32:54+03:00 restart-deferred reason=health-failures:348:http-200 active_app_servers=4
+2026-06-25T04:35:14+03:00 health-fail count=349 pid=none http=200 ms=1 app_servers=4
+2026-06-25T04:35:14+03:00 restart-deferred reason=health-failures:349:http-200 active_app_servers=4
+2026-06-25T04:37:34+03:00 health-fail count=350 pid=none http=200 ms=1 app_servers=4
+2026-06-25T04:37:34+03:00 restart-deferred reason=health-failures:350:http-200 active_app_servers=4
+2026-06-25T04:39:54+03:00 health-fail count=351 pid=none http=200 ms=1 app_servers=4
+2026-06-25T04:39:54+03:00 restart-deferred reason=health-failures:351:http-200 active_app_servers=4
+2026-06-25T04:42:14+03:00 health-fail count=352 pid=none http=200 ms=1 app_servers=4
+2026-06-25T04:42:14+03:00 restart-deferred reason=health-failures:352:http-200 active_app_servers=4
+2026-06-25T04:44:34+03:00 health-fail count=353 pid=none http=200 ms=1 app_servers=4
+2026-06-25T04:44:34+03:00 restart-deferred reason=health-failures:353:http-200 active_app_servers=4
+2026-06-25T04:46:54+03:00 health-fail count=354 pid=none http=200 ms=1 app_servers=4
+2026-06-25T04:46:54+03:00 restart-deferred reason=health-failures:354:http-200 active_app_servers=4
+2026-06-25T04:49:14+03:00 health-fail count=355 pid=none http=200 ms=1 app_servers=4
+2026-06-25T04:49:14+03:00 restart-deferred reason=health-failures:355:http-200 active_app_servers=4
+2026-06-25T04:51:34+03:00 health-fail count=356 pid=none http=200 ms=1 app_servers=4
+2026-06-25T04:51:34+03:00 restart-deferred reason=health-failures:356:http-200 active_app_servers=4
+2026-06-25T04:53:54+03:00 health-fail count=357 pid=none http=200 ms=1 app_servers=4
+2026-06-25T04:53:54+03:00 restart-deferred reason=health-failures:357:http-200 active_app_servers=4
+2026-06-25T04:56:14+03:00 health-fail count=358 pid=none http=200 ms=1 app_servers=4
+2026-06-25T04:56:14+03:00 restart-deferred reason=health-failures:358:http-200 active_app_servers=4
+2026-06-25T04:58:34+03:00 health-fail count=359 pid=none http=200 ms=1 app_servers=4
+2026-06-25T04:58:34+03:00 restart-deferred reason=health-failures:359:http-200 active_app_servers=4
+2026-06-25T05:00:54+03:00 health-fail count=360 pid=none http=200 ms=1 app_servers=4
+2026-06-25T05:00:54+03:00 restart-deferred reason=health-failures:360:http-200 active_app_servers=4
+2026-06-25T05:03:14+03:00 health-fail count=361 pid=none http=200 ms=1 app_servers=4
+2026-06-25T05:03:14+03:00 restart-deferred reason=health-failures:361:http-200 active_app_servers=4
+2026-06-25T05:05:34+03:00 health-fail count=362 pid=none http=200 ms=1 app_servers=4
+2026-06-25T05:05:34+03:00 restart-deferred reason=health-failures:362:http-200 active_app_servers=4
+2026-06-25T05:07:54+03:00 health-fail count=363 pid=none http=200 ms=1 app_servers=4
+2026-06-25T05:07:54+03:00 restart-deferred reason=health-failures:363:http-200 active_app_servers=4
+2026-06-25T05:10:14+03:00 health-fail count=364 pid=none http=200 ms=1 app_servers=4
+2026-06-25T05:10:14+03:00 restart-deferred reason=health-failures:364:http-200 active_app_servers=4
+2026-06-25T05:12:34+03:00 health-fail count=365 pid=none http=200 ms=2 app_servers=4
+2026-06-25T05:12:34+03:00 restart-deferred reason=health-failures:365:http-200 active_app_servers=4
+2026-06-25T05:14:48+03:00 health-fail count=366 pid=none http=200 ms=1 app_servers=4
+2026-06-25T05:14:48+03:00 restart-deferred reason=health-failures:366:http-200 active_app_servers=4
+2026-06-25T05:16:54+03:00 health-fail count=367 pid=none http=200 ms=4 app_servers=4
+2026-06-25T05:16:54+03:00 restart-deferred reason=health-failures:367:http-200 active_app_servers=4
+2026-06-25T05:19:14+03:00 health-fail count=368 pid=none http=200 ms=1 app_servers=4
+2026-06-25T05:19:14+03:00 restart-deferred reason=health-failures:368:http-200 active_app_servers=4
+2026-06-25T05:21:34+03:00 health-fail count=369 pid=none http=200 ms=1 app_servers=4
+2026-06-25T05:21:34+03:00 restart-deferred reason=health-failures:369:http-200 active_app_servers=4
+2026-06-25T05:23:54+03:00 health-fail count=370 pid=none http=200 ms=1 app_servers=4
+2026-06-25T05:23:54+03:00 restart-deferred reason=health-failures:370:http-200 active_app_servers=4
+2026-06-25T05:26:14+03:00 health-fail count=371 pid=none http=200 ms=1 app_servers=4
+2026-06-25T05:26:14+03:00 restart-deferred reason=health-failures:371:http-200 active_app_servers=4
+2026-06-25T05:28:34+03:00 health-fail count=372 pid=none http=200 ms=1 app_servers=4
+2026-06-25T05:28:34+03:00 restart-deferred reason=health-failures:372:http-200 active_app_servers=4
+2026-06-25T05:30:54+03:00 health-fail count=373 pid=none http=200 ms=2 app_servers=4
+2026-06-25T05:30:54+03:00 restart-deferred reason=health-failures:373:http-200 active_app_servers=4
+2026-06-25T05:33:14+03:00 health-fail count=374 pid=none http=200 ms=1 app_servers=4
+2026-06-25T05:33:14+03:00 restart-deferred reason=health-failures:374:http-200 active_app_servers=4
+2026-06-25T05:35:34+03:00 health-fail count=375 pid=none http=200 ms=9 app_servers=4
+2026-06-25T05:35:34+03:00 restart-deferred reason=health-failures:375:http-200 active_app_servers=4
+2026-06-25T05:37:55+03:00 health-fail count=376 pid=none http=200 ms=96 app_servers=4
+2026-06-25T05:37:55+03:00 restart-deferred reason=health-failures:376:http-200 active_app_servers=4
+2026-06-25T05:40:15+03:00 health-fail count=377 pid=none http=200 ms=71 app_servers=4
+2026-06-25T05:40:15+03:00 restart-deferred reason=health-failures:377:http-200 active_app_servers=4
+2026-06-25T05:42:35+03:00 health-fail count=378 pid=none http=200 ms=79 app_servers=4
+2026-06-25T05:42:35+03:00 restart-deferred reason=health-failures:378:http-200 active_app_servers=4
+2026-06-25T05:44:54+03:00 health-fail count=379 pid=none http=200 ms=1 app_servers=6
+2026-06-25T05:44:54+03:00 restart-deferred reason=health-failures:379:http-200 active_app_servers=6
+2026-06-25T05:47:15+03:00 health-fail count=380 pid=none http=200 ms=7 app_servers=6
+2026-06-25T05:47:15+03:00 restart-deferred reason=health-failures:380:http-200 active_app_servers=6
+2026-06-25T05:49:34+03:00 health-fail count=381 pid=none http=200 ms=4 app_servers=6
+2026-06-25T05:49:34+03:00 restart-deferred reason=health-failures:381:http-200 active_app_servers=6
+2026-06-25T05:51:54+03:00 health-fail count=382 pid=none http=200 ms=2 app_servers=6
+2026-06-25T05:51:54+03:00 restart-deferred reason=health-failures:382:http-200 active_app_servers=6
+2026-06-25T05:54:14+03:00 health-fail count=383 pid=none http=200 ms=1 app_servers=6
+2026-06-25T05:54:14+03:00 restart-deferred reason=health-failures:383:http-200 active_app_servers=6
+2026-06-25T05:56:34+03:00 health-fail count=384 pid=none http=200 ms=1 app_servers=6
+2026-06-25T05:56:34+03:00 restart-deferred reason=health-failures:384:http-200 active_app_servers=6
+2026-06-25T05:58:54+03:00 health-fail count=385 pid=none http=200 ms=1 app_servers=6
+2026-06-25T05:58:54+03:00 restart-deferred reason=health-failures:385:http-200 active_app_servers=6
+2026-06-25T06:01:14+03:00 health-fail count=386 pid=none http=200 ms=1 app_servers=6
+2026-06-25T06:01:14+03:00 restart-deferred reason=health-failures:386:http-200 active_app_servers=6
+2026-06-25T06:03:23+03:00 health-fail count=387 pid=none http=200 ms=1 app_servers=8
+2026-06-25T06:03:23+03:00 restart-deferred reason=health-failures:387:http-200 active_app_servers=8
+2026-06-25T06:05:34+03:00 health-fail count=388 pid=none http=200 ms=3 app_servers=8
+2026-06-25T06:05:34+03:00 restart-deferred reason=health-failures:388:http-200 active_app_servers=8
+2026-06-25T06:07:54+03:00 health-fail count=389 pid=none http=200 ms=1 app_servers=8
+2026-06-25T06:07:54+03:00 restart-deferred reason=health-failures:389:http-200 active_app_servers=8
+2026-06-25T06:10:14+03:00 health-fail count=390 pid=none http=200 ms=1 app_servers=8
+2026-06-25T06:10:14+03:00 restart-deferred reason=health-failures:390:http-200 active_app_servers=8
+2026-06-25T06:12:34+03:00 health-fail count=391 pid=none http=200 ms=1 app_servers=8
+2026-06-25T06:12:34+03:00 restart-deferred reason=health-failures:391:http-200 active_app_servers=8
+2026-06-25T06:14:54+03:00 health-fail count=392 pid=none http=200 ms=1 app_servers=8
+2026-06-25T06:14:54+03:00 restart-deferred reason=health-failures:392:http-200 active_app_servers=8
+2026-06-25T06:17:14+03:00 health-fail count=393 pid=none http=200 ms=1 app_servers=8
+2026-06-25T06:17:14+03:00 restart-deferred reason=health-failures:393:http-200 active_app_servers=8
+2026-06-25T06:19:34+03:00 health-fail count=394 pid=none http=200 ms=1 app_servers=8
+2026-06-25T06:19:34+03:00 restart-deferred reason=health-failures:394:http-200 active_app_servers=8
+2026-06-25T06:21:54+03:00 health-fail count=395 pid=none http=200 ms=1 app_servers=8
+2026-06-25T06:21:54+03:00 restart-deferred reason=health-failures:395:http-200 active_app_servers=8
+2026-06-25T06:24:14+03:00 health-fail count=396 pid=none http=200 ms=2 app_servers=8
+2026-06-25T06:24:14+03:00 restart-deferred reason=health-failures:396:http-200 active_app_servers=8
+2026-06-25T06:26:34+03:00 health-fail count=397 pid=none http=200 ms=1 app_servers=8
+2026-06-25T06:26:34+03:00 restart-deferred reason=health-failures:397:http-200 active_app_servers=8
+2026-06-25T06:28:54+03:00 health-fail count=398 pid=none http=200 ms=1 app_servers=8
+2026-06-25T06:28:54+03:00 restart-deferred reason=health-failures:398:http-200 active_app_servers=8
+2026-06-25T06:31:14+03:00 health-fail count=399 pid=none http=200 ms=1 app_servers=8
+2026-06-25T06:31:14+03:00 restart-deferred reason=health-failures:399:http-200 active_app_servers=8
+2026-06-25T06:33:34+03:00 health-fail count=400 pid=none http=200 ms=1 app_servers=8
+2026-06-25T06:33:34+03:00 restart-deferred reason=health-failures:400:http-200 active_app_servers=8
+2026-06-25T06:35:54+03:00 health-fail count=401 pid=none http=200 ms=5 app_servers=8
+2026-06-25T06:35:54+03:00 restart-deferred reason=health-failures:401:http-200 active_app_servers=8
+2026-06-25T06:38:14+03:00 health-fail count=402 pid=none http=200 ms=1 app_servers=8
+2026-06-25T06:38:14+03:00 restart-deferred reason=health-failures:402:http-200 active_app_servers=8
+2026-06-25T06:40:34+03:00 health-fail count=403 pid=none http=200 ms=1 app_servers=8
+2026-06-25T06:40:34+03:00 restart-deferred reason=health-failures:403:http-200 active_app_servers=8
+2026-06-25T06:42:54+03:00 health-fail count=404 pid=none http=200 ms=1 app_servers=8
+2026-06-25T06:42:54+03:00 restart-deferred reason=health-failures:404:http-200 active_app_servers=8
+2026-06-25T06:45:14+03:00 health-fail count=405 pid=none http=200 ms=1 app_servers=8
+2026-06-25T06:45:14+03:00 restart-deferred reason=health-failures:405:http-200 active_app_servers=8
+2026-06-25T06:47:34+03:00 health-fail count=406 pid=none http=200 ms=1 app_servers=8
+2026-06-25T06:47:34+03:00 restart-deferred reason=health-failures:406:http-200 active_app_servers=8
+2026-06-25T06:49:54+03:00 health-fail count=407 pid=none http=200 ms=1 app_servers=8
+2026-06-25T06:49:54+03:00 restart-deferred reason=health-failures:407:http-200 active_app_servers=8
+2026-06-25T06:52:14+03:00 health-fail count=408 pid=none http=200 ms=2 app_servers=8
+2026-06-25T06:52:14+03:00 restart-deferred reason=health-failures:408:http-200 active_app_servers=8
+2026-06-25T06:54:34+03:00 health-fail count=409 pid=none http=200 ms=1 app_servers=8
+2026-06-25T06:54:34+03:00 restart-deferred reason=health-failures:409:http-200 active_app_servers=8
+2026-06-25T06:56:54+03:00 health-fail count=410 pid=none http=200 ms=1 app_servers=8
+2026-06-25T06:56:54+03:00 restart-deferred reason=health-failures:410:http-200 active_app_servers=8
+2026-06-25T06:59:14+03:00 health-fail count=411 pid=none http=200 ms=1 app_servers=8
+2026-06-25T06:59:14+03:00 restart-deferred reason=health-failures:411:http-200 active_app_servers=8

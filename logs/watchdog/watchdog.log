@@ -5079,3 +5079,69 @@ Config (/root/.openclaw/openclaw.json): missing env var "OPENCLAW_HOOKS_TOKEN" a
 [2026-06-24 04:00] Summary: fixes=0 warnings=2 alerts=0
 [2026-06-24 06:00] === Watchdog v3 run ===
 [2026-06-24 06:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-06-24 08:00] === Watchdog v3 run ===
+[2026-06-24 08:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-06-24 10:00] === Watchdog v3 run ===
+[2026-06-24 10:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-06-24 12:00] === Watchdog v3 run ===
+[2026-06-24 12:00] ALERT: Gateway down, attempting restart
+│
+◇  Doctor warnings ──────────────────────────────────────────────────────╮
+│                                                                        │
+│  - Left plugin install index in place because shared SQLite state has  │
+│    conflicting plugin install metadata for: codex, lossless-claw,      │
+│    tokenjuice                                                          │
+│                                                                        │
+├────────────────────────────────────────────────────────────────────────╯
+│
+◇  Config warnings ───────────────────────────────────────────────────────╮
+│                                                                         │
+│  - hooks.token: Missing env var "OPENCLAW_HOOKS_TOKEN" - feature using  │
+│    this value will be unavailable                                       │
+│                                                                         │
+├─────────────────────────────────────────────────────────────────────────╯
+[state-migrations] Legacy state migration warnings:
+- Left plugin install index in place because shared SQLite state has conflicting plugin install metadata for: codex, lossless-claw, tokenjuice
+│
+◇  Doctor warnings ──────────────────────────────────────────────────────╮
+│                                                                        │
+│  - Left plugin install index in place because shared SQLite state has  │
+│    conflicting plugin install metadata for: codex, lossless-claw,      │
+│    tokenjuice                                                          │
+│                                                                        │
+├────────────────────────────────────────────────────────────────────────╯
+Gateway restart failed: Error: systemctl restart failed: Job for openclaw-gateway.service failed because the control process exited with error code.
+See "systemctl --user -M root@ status openclaw-gateway.service" and "journalctl --user -M root@ -xeu openclaw-gateway.service" for details.
+Tip: openclaw gateway install
+Tip: openclaw gateway
+Tip: systemctl --user start openclaw-gateway.service
+[2026-06-24 12:00] ALERT: Gateway restart failed
+[2026-06-24 12:00] Summary: fixes=0 warnings=2 alerts=1
+[2026-06-24 14:00] === Watchdog v3 run ===
+[2026-06-24 14:00] Summary: fixes=0 warnings=2 alerts=0
+[2026-06-24 16:00] === Watchdog v3 run ===
+[2026-06-24 16:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-06-24 18:00] === Watchdog v3 run ===
+[2026-06-24 18:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-06-24 20:00] === Watchdog v3 run ===
+[2026-06-24 20:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-06-24 22:00] === Watchdog v3 run ===
+[2026-06-24 22:00] WARN: Jobs data stale (25h), triggering pipeline
+[2026-06-24 22:00] FIXED: Pipeline triggered
+[2026-06-24 22:00] Summary: fixes=1 warnings=0 alerts=0
+[2026-06-25 00:00] === Watchdog v3 run ===
+[2026-06-25 00:00] ALERT: Disk at 96%
+[2026-06-25 00:00] FIXED: Disk cleaned from 96% to 96%
+[2026-06-25 00:00] Summary: fixes=1 warnings=0 alerts=0
+[2026-06-25 02:00] === Watchdog v3 run ===
+[2026-06-25 02:00] ALERT: Disk at 96%
+[2026-06-25 02:00] FIXED: Disk cleaned from 96% to 96%
+[2026-06-25 02:00] Summary: fixes=1 warnings=0 alerts=0
+[2026-06-25 04:00] === Watchdog v3 run ===
+[2026-06-25 04:00] ALERT: Disk at 96%
+[2026-06-25 04:00] FIXED: Disk cleaned from 96% to 96%
+[2026-06-25 04:00] Summary: fixes=1 warnings=0 alerts=0
+[2026-06-25 06:00] === Watchdog v3 run ===
+[2026-06-25 06:00] ALERT: Disk at 96%
+[2026-06-25 06:00] FIXED: Disk cleaned from 96% to 96%
+[2026-06-25 06:00] Summary: fixes=1 warnings=0 alerts=0

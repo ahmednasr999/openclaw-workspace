@@ -67,3 +67,25 @@
 - Context: `workspace-jobzoom/scripts/daily_run.py` calls `/root/.openclaw/workspace/scripts/jobs-source-linkedin-jobspy.py` instead of a separate JobZoom-local copy.
 - 2026-04-29 heartbeat verification: `/root/.openclaw/workspace-jobzoom/scripts/jobs-source-linkedin-jobspy.py` is a symlink to `/root/.openclaw/workspace/scripts/jobs-source-linkedin-jobspy.py`, so there is no separate local copy to drift. `daily_run.py` also calls `preflight_jobspy_path()` before scraping and verifies the expected script path, realpath, venv Python, and `jobspy` import. Current state is therefore guarded.
 - Residual note: if future work wants JobZoom to be isolated from the main workspace scraper, create a true local copy and update `JOBSPY_SCRIPT`/`JOBSPY_EXPECTED_SCRIPT` together. Until then, treat the shared symlink as intentional.
+
+## 2026-06-24 - NASR Loop Engineering hardening
+- Priority: high
+- Status: open, control artifacts created
+- Context: Ahmed approved converting the Loop Engineering note into practical workflow hardening, starting with JobZoom and CMO.
+- Artifacts:
+  - `docs/agent-governance/nasr-loop-engineering-checklist-2026-06-24.md`
+  - `/root/.openclaw/workspace-jobzoom/docs/loop-engineering-checklist.md`
+  - `/root/.openclaw/workspace-cmo/docs/loop-engineering-checklist.md`
+- Initial scope: manual closeout/reviewer checklist first, then read-only scripts after two real checks prove the gates reduce failure/noise.
+- Approval boundary: loop automation does not approve public posts, email replies, recruiter messages, credentials, runtime changes, paid actions, destructive cleanup, or unknown sensitive application answers.
+- Next steps:
+  1. Run JobZoom checklist against the next live daily run.
+  2. Run CMO checklist against the next draft-to-review visual workflow.
+  3. Convert stable gates into read-only closeout scripts only after manual evidence.
+
+### 2026-06-24 manual pass 1 - JobZoom
+- Status: completed with warnings.
+- Added `/root/.openclaw/workspace-jobzoom/scripts/jobzoom_closeout_check.py` as a read-only validator.
+- Latest checked run: `83` / `2026-06-24`.
+- Result: 12 PASS, 2 WARN, 0 FAIL.
+- Repeat on next daily run before automation. Watch repeated warnings for empty `search_log` table and stale report wording that says delivery verification is pending.
