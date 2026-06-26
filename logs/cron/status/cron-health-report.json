@@ -2,9 +2,9 @@
   "task": "cron-health-report",
   "status": "failed",
   "returncode": 1,
-  "started_at": "2026-06-24T09:45:02+03:00",
-  "finished_at": "2026-06-24T09:45:13+03:00",
-  "duration_seconds": 11,
+  "started_at": "2026-06-25T09:45:02+03:00",
+  "finished_at": "2026-06-25T09:45:12+03:00",
+  "duration_seconds": 10,
   "log_path": "/root/.openclaw/workspace/logs/cron/cron-health-report.log",
   "lock_path": "/var/lock/openclaw/cron-health-report.lock",
   "host": "srv1352768"

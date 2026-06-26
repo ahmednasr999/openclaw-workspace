@@ -356,6 +356,20 @@
 | 465 | 🆕 | TALENTMATE | UAEN Only - Vice President Centralized Payments | Dubai | — | 🆕 Discovered | Radar | 2026-06-25 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4433030249) | — |
 | 466 | 🆕 | TALENTMATE | Vice President And Enterprise Architect | Dubai | — | 🆕 Discovered | Radar | 2026-06-25 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4433023524) | — |
 | 467 | 🆕 | Villegas Recruitment Firm | Head of IT Infrastructure and Operations | Dubai | — | 🆕 Discovered | Radar | 2026-06-25 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4431494012) | — |
+| 468 | 🆕 | DXC Technology | Program Director - Airport | Riyadh | — | 🆕 Discovered | Radar | 2026-06-26 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4432229742) | — |
+| 469 | 🆕 | Foreground. | Director – AI Business Transformation | Riyadh | — | 🆕 Discovered | Radar | 2026-06-26 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4432918786) | — |
+| 470 | 🆕 | Foreground. | Director – AI Solutions & Intelligent Automation | Riyadh | — | 🆕 Discovered | Radar | 2026-06-26 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4432918807) | — |
+| 471 | 🆕 | Mirai, a Scopely company | Director of AI | Riyadh | — | 🆕 Discovered | Radar | 2026-06-26 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4433306084) | — |
+| 472 | 🆕 | Antal International | Managing Director | Doha | — | 🆕 Discovered | Radar | 2026-06-26 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4429886116) | — |
+| 473 | 🆕 | UCC Holding | Senior Strategy and Business Planning Director | Doha | — | 🆕 Discovered | Radar | 2026-06-26 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4432596015) | — |
+| 474 | 🆕 | Power International Holding | Technical & Engineering Director – Data Centers | Doha | — | 🆕 Discovered | Radar | 2026-06-26 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4432236694) | — |
+| 475 | 🆕 | Aventus | Head of Financial Planning & Analysis (Business Finance) | Doha | — | 🆕 Discovered | Radar | 2026-06-26 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4428950343) | — |
+| 476 | 🆕 | Hamad Bin Khalifa University | Executive Director - Qatar Computing Research Institute | Doha | — | 🆕 Discovered | Radar | 2026-06-26 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4430334039) | — |
+| 477 | 🆕 | Foreground. | Chief Shared Services Officer | Lusail | — | 🆕 Discovered | Radar | 2026-06-26 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4432648588) | — |
+| 478 | 🆕 | Confidential Careers | Head of Transformation | Dubai | — | 🆕 Discovered | Radar | 2026-06-26 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4432542777) | — |
+| 479 | 🆕 | CC7 Global Engineering Solutions | CC7 Emirates Engineering Solutions | Project Controls Director | Dubai | — | 🆕 Discovered | Radar | 2026-06-26 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4430205927) | — |
+| 480 | 🆕 | Parsons Corporation | Senior Project Director | Dubai | — | 🆕 Discovered | Radar | 2026-06-26 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4432832267) | — |
+
 
 
 

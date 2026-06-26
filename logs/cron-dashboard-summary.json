@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-06-25T06:08:17.318380+03:00",
-  "total_crons": 52,
-  "system_crons": 22,
+  "timestamp": "2026-06-26T06:08:21.684685+03:00",
+  "total_crons": 53,
+  "system_crons": 23,
   "openclaw_crons": 30,
   "notion_created": 0,
-  "notion_updated": 52,
+  "notion_updated": 53,
   "errors": [],
   "warnings": [],
   "crons": [
@@ -229,6 +229,16 @@
       }
     },
     {
+      "name": "cron-run-with-alert.sh",
+      "schedule": "35 9 * * 0",
+      "type": "system",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
       "name": "session-watchdog",
       "schedule": "cron 55 */3 * * * @ Africa/Cairo",
       "type": "openclaw",
@@ -269,18 +279,8 @@
       }
     },
     {
-      "name": "Email Agent (Sun-Thu)",
-      "schedule": "cron 0 8,12,16,20 * * 0-4 @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "CMO Publishing Watchdog",
-      "schedule": "cron 0 10-18 * * 1-4 @ Asia/Dubai",
+      "name": "Email Agent (Fri-Sat)",
+      "schedule": "cron 0 9,15,21 * * 5,6 @ Africa/Cairo",
       "type": "openclaw",
       "last_status": {
         "status": "\u26a0\ufe0f Unknown",
@@ -319,6 +319,16 @@
       }
     },
     {
+      "name": "RSS Intelligence - Weekly Crawl",
+      "schedule": "cron 0 13 * * 5 @ Africa/Cairo",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
       "name": "LCM Midday Compaction Sweep",
       "schedule": "cron 0 14 * * * @ Africa/Cairo",
       "type": "openclaw",
@@ -331,6 +341,16 @@
     {
       "name": "CMO LinkedIn Comment Radar - 3pm",
       "schedule": "cron 0 15 * * * @ Africa/Cairo",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "CMO Weekly Content Report",
+      "schedule": "cron 0 17 * * 5 @ Africa/Cairo",
       "type": "openclaw",
       "last_status": {
         "status": "\u26a0\ufe0f Unknown",
@@ -389,36 +409,6 @@
       }
     },
     {
-      "name": "Email Agent (Fri-Sat)",
-      "schedule": "cron 0 9,15,21 * * 5,6 @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "RSS Intelligence - Weekly Crawl",
-      "schedule": "cron 0 13 * * 5 @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
-      "name": "CMO Weekly Content Report",
-      "schedule": "cron 0 17 * * 5 @ Africa/Cairo",
-      "type": "openclaw",
-      "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
-      }
-    },
-    {
       "name": "Weekly Skill Autoresearch",
       "schedule": "cron 0 10 * * 6 @ Africa/Cairo",
       "type": "openclaw",
@@ -431,6 +421,16 @@
     {
       "name": "weekly-memory-hygiene",
       "schedule": "cron 0 7 * * 0 @ Africa/Cairo",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "Email Agent (Sun-Thu)",
+      "schedule": "cron 0 8,12,16,20 * * 0-4 @ Africa/Cairo",
       "type": "openclaw",
       "last_status": {
         "status": "\u26a0\ufe0f Unknown",
@@ -521,6 +521,16 @@
     {
       "name": "CMO Weekly Drafting",
       "schedule": "cron 0 18 * * 0 @ Africa/Cairo",
+      "type": "openclaw",
+      "last_status": {
+        "status": "\u26a0\ufe0f Unknown",
+        "last_run": null,
+        "error": "No log file found"
+      }
+    },
+    {
+      "name": "CMO Publishing Watchdog",
+      "schedule": "cron 0 10-18 * * 1-4 @ Asia/Dubai",
       "type": "openclaw",
       "last_status": {
         "status": "\u26a0\ufe0f Unknown",

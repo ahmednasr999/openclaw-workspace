@@ -5145,3 +5145,31 @@ Tip: systemctl --user start openclaw-gateway.service
 [2026-06-25 06:00] ALERT: Disk at 96%
 [2026-06-25 06:00] FIXED: Disk cleaned from 96% to 96%
 [2026-06-25 06:00] Summary: fixes=1 warnings=0 alerts=0
+[2026-06-25 08:00] === Watchdog v3 run ===
+[2026-06-25 08:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-06-25 10:00] === Watchdog v3 run ===
+[2026-06-25 10:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-06-25 12:00] === Watchdog v3 run ===
+[2026-06-25 12:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-06-25 14:00] === Watchdog v3 run ===
+[2026-06-25 14:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-06-25 16:00] === Watchdog v3 run ===
+[2026-06-25 16:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-06-25 18:00] === Watchdog v3 run ===
+[2026-06-25 18:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-06-25 20:00] === Watchdog v3 run ===
+[2026-06-25 20:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-06-25 22:00] === Watchdog v3 run ===
+[2026-06-25 22:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-06-26 00:00] === Watchdog v3 run ===
+[2026-06-26 00:00] WARN: Jobs data stale (25h), triggering pipeline
+[2026-06-26 00:00] FIXED: Pipeline triggered
+[2026-06-26 00:00] Summary: fixes=1 warnings=1 alerts=0
+[2026-06-26 02:00] === Watchdog v3 run ===
+[2026-06-26 02:00] WARN: Jobs data stale (27h), triggering pipeline
+[2026-06-26 02:00] FIXED: Pipeline triggered
+[2026-06-26 02:00] Summary: fixes=1 warnings=1 alerts=0
+[2026-06-26 04:00] === Watchdog v3 run ===
+[2026-06-26 04:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-06-26 06:00] === Watchdog v3 run ===
+[2026-06-26 06:00] Summary: fixes=0 warnings=1 alerts=0

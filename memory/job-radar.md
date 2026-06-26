@@ -1,6 +1,6 @@
-# Job Radar: 2026-06-25
+# Job Radar: 2026-06-26
 
-*Generated: 2026-06-25 06:00 UTC*
+*Generated: 2026-06-26 06:00 UTC*
 
 *Engine: JobSpy (LinkedIn, Indeed, Google Jobs)*
 
@@ -10,49 +10,13 @@
 
 ### Digital Transformation Executive (UAE)
 
-- **Vice President - Digital Engineering** at Dubai Holding 🎯
-  📍 Dubai, United Arab Emirates | 📅 2026-06-23
-  🔗 https://www.linkedin.com/jobs/view/4429467084
-
-- **Head Of AI Strategy and Transformation** at Mubadala 🎯
-  📍 Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates | 📅 2026-06-23
-  🔗 https://www.linkedin.com/jobs/view/4431211739
-
-- **Head of Artificial Intelligence** at Hays 🎯
-  📍 Dubai, United Arab Emirates | 📅 2026-06-23
-  🔗 https://www.linkedin.com/jobs/view/4428252282
-
-- **Director - Enterprise Applications & Digital Platforms** at Halian | Managed Services, Recruitment Agency & Contract Staffing 🎯
-  📍 Abu Dhabi Emirate, United Arab Emirates | 📅 2026-06-23
-  🔗 https://www.linkedin.com/jobs/view/4431231130
-
-- **Head - Digital Transformation & AI** at AMICORP WEALTH SERVICES
-  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-06-22
-  🔗 https://www.linkedin.com/jobs/view/4431617400
-
-- **Director - Digital Smart Cities Solutions** at AD Ports Group 🎯
-  📍 Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates | 📅 2026-06-22
-  🔗 https://www.linkedin.com/jobs/view/4431657061
-
-- **Business Engagement Leader** at Ecolab
-  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-06-22
-  🔗 https://www.linkedin.com/jobs/view/4421685356
-
-- **Senior Vice President, Head of Digital Channels, Business Banking** at Tandem Search 🎯
-  📍 Dubai, United Arab Emirates | 📅 2026-06-22
-  🔗 https://www.linkedin.com/jobs/view/4428921338
-
-- **Senior Vice President & Head of Digital Channels - Business Banking** at RAKBANK 🎯
-  📍  | 📅 2026-06-20
-  🔗 https://www.linkedin.com/jobs/view/4431325835
-
-- **SVP Technology** at Kempinski Hotels 🎯
-  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-06-19
-  🔗 https://www.linkedin.com/jobs/view/4426838131
-
-*10 results (8 executive-level, 0 likely ghost jobs)*
+No results found.
 
 ### Digital Transformation Executive (Saudi)
+
+- **Director of Information Technology** at CNTXT 🎯
+  📍 Riyadh, Saudi Arabia | 📅 2026-06-24
+  🔗 https://www.linkedin.com/jobs/view/4432541297
 
 - **Chief Technology Officer** at Hays 🎯
   📍 Riyadh, Saudi Arabia | 📅 2026-06-23
@@ -62,13 +26,13 @@
   📍 Riyadh, Saudi Arabia | 📅 2026-06-23
   🔗 https://www.linkedin.com/jobs/view/4431259337
 
-- **AI Transformation Lead** at RiDiK (a Subsidiary of CLPS. Nasdaq: CLPS) 🎯
-  📍 Jeddah, Makkah, Saudi Arabia | 📅 2026-06-23
-  🔗 https://www.linkedin.com/jobs/view/4430891031
-
 - **CTO - eCommerce** at Involved Solutions 🎯
   📍 Riyadh, Riyadh, Saudi Arabia | 📅 2026-06-23
   🔗 https://www.linkedin.com/jobs/view/4431248997
+
+- **Program Director - Airport** at DXC Technology 🎯
+  📍 Riyadh, Saudi Arabia | 📅 2026-06-23
+  🔗 https://www.linkedin.com/jobs/view/4432229742
 
 - **Vice President of Artificial Intelligence** at RiDiK (a Subsidiary of CLPS. Nasdaq: CLPS) 🎯
   📍 Jeddah, Makkah, Saudi Arabia | 📅 2026-06-22
@@ -77,6 +41,10 @@
 - **Strategy & Transformation Lead** at Jacobs 🎯
   📍  | 📅 2026-06-22
   🔗 https://www.linkedin.com/jobs/view/4431745464
+
+- **Director Digital Products** at Esports Foundation 🎯
+  📍 Riyadh, Riyadh, Saudi Arabia | 📅 2026-06-22
+  🔗 https://www.linkedin.com/jobs/view/4431672669
 
 - **Digital Consulting Director** at AlixPartners 🎯
   📍 Riyadh, Riyadh, Saudi Arabia | 📅 2026-06-21
@@ -90,15 +58,87 @@
   📍 Riyadh, Saudi Arabia | 📅 2026-06-19
   🔗 https://www.linkedin.com/jobs/view/4428229681
 
-- **Director of Information Technology** at CNTXT 🎯
-  📍 Riyadh, Saudi Arabia | 📅 nan
-  🔗 https://www.linkedin.com/jobs/view/4432541297
+- **Director – AI Business Transformation** at Foreground. 🎯
+  📍 Riyadh, Riyadh, Saudi Arabia | 📅 nan
+  🔗 https://www.linkedin.com/jobs/view/4432918786
 
-*10 results (9 executive-level, 0 likely ghost jobs)*
+- **Director – AI Solutions & Intelligent Automation** at Foreground. 🎯
+  📍 Riyadh, Riyadh, Saudi Arabia | 📅 nan
+  🔗 https://www.linkedin.com/jobs/view/4432918807
+
+- **Director of AI** at Mirai, a Scopely company 🎯
+  📍 Riyadh, Riyadh, Saudi Arabia | 📅 nan
+  🔗 https://www.linkedin.com/jobs/view/4433306084
+
+- **Director, Technology Consulting - Telecom SME** at EPAM Systems 🎯
+  📍 Riyadh, Riyadh, Saudi Arabia | 📅 nan
+  🔗 https://www.linkedin.com/jobs/view/4410164974
+
+*15 results (14 executive-level, 0 likely ghost jobs)*
 
 ### Digital Transformation Executive (Qatar)
 
-No results found.
+- **Managing Director** at Antal International 🎯
+  📍 Doha, Qatar | 📅 2026-06-24
+  🔗 https://www.linkedin.com/jobs/view/4429886116
+
+- **Senior Strategy and Business Planning Director** at UCC Holding 🎯
+  📍 Doha, Qatar | 📅 2026-06-24
+  🔗 https://www.linkedin.com/jobs/view/4432596015
+
+- **Digital Products Integration Consultant** at Al Abdulghani Motors
+  📍 Doha, Qatar | 📅 2026-06-24
+  🔗 https://www.linkedin.com/jobs/view/4432547183
+
+- **Executive Academic Leader** at University of Doha for Science & Technology
+  📍 Doha, Qatar | 📅 2026-06-23
+  🔗 https://www.linkedin.com/jobs/view/4431225506
+
+- **Technical & Engineering Director – Data Centers** at Power International Holding 🎯
+  📍 Doha, Qatar | 📅 2026-06-23
+  🔗 https://www.linkedin.com/jobs/view/4432236694
+
+- **Head of Financial Planning & Analysis (Business Finance)** at Aventus 🎯
+  📍 Doha, Qatar | 📅 2026-06-22
+  🔗 https://www.linkedin.com/jobs/view/4428950343
+
+- **Head Data Intelligence & Analytics** at DOHA BANK
+  📍 Doha, Qatar | 📅 2026-06-21
+  🔗 https://www.linkedin.com/jobs/view/4428580269
+
+- **Executive Director - Qatar Computing Research Institute** at Hamad Bin Khalifa University 🎯
+  📍 Doha, Qatar | 📅 2026-06-21
+  🔗 https://www.linkedin.com/jobs/view/4430334039
+
+- **HEAD, PROJECT CONTROLS & SERVICES** at QatarEnergy
+  📍 Doha, Doha, Qatar | 📅 2026-06-21
+  🔗 https://www.linkedin.com/jobs/view/4372366909
+
+- **Senior Solution Architect** at malomatia
+  📍 Doha, Qatar | 📅 2026-06-21
+  🔗 https://www.linkedin.com/jobs/view/4431391272
+
+- **Senior Solutions Architect** at NTT DATA, Inc.
+  📍  | 📅 2026-06-20
+  🔗 https://www.linkedin.com/jobs/view/4409282491
+
+- **Chief Shared Services Officer** at Foreground. 🎯
+  📍 Lusail, Qatar | 📅 nan
+  🔗 https://www.linkedin.com/jobs/view/4432648588
+
+- **Engineering Manager, Defense** at Scale AI
+  📍 Doha, Qatar | 📅 nan
+  🔗 https://www.linkedin.com/jobs/view/4433544181
+
+- **Strategic Enterprise Account Executive - AI Transformation / GTM Strategy / New Business Development** at European Tech Recruit
+  📍 Doha, Qatar | 📅 nan
+  🔗 https://www.linkedin.com/jobs/view/4433349160
+
+- **Senior Solutions Architect – AI Platforms/LLMs/Cloud & Enterprise AI** at European Tech Recruit
+  📍  | 📅 nan
+  🔗 https://www.linkedin.com/jobs/view/4433329692
+
+*15 results (6 executive-level, 0 likely ghost jobs)*
 
 ### CTO / Head of Technology (GCC)
 
@@ -106,7 +146,67 @@ No results found.
 
 ### PMO / Program Director (GCC)
 
-No results found.
+- **Head of Transformation** at Confidential Careers 🎯
+  📍 Dubai, United Arab Emirates | 📅 2026-06-24
+  🔗 https://www.linkedin.com/jobs/view/4432542777
+
+- **Program Manager** at GTN
+  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-06-24
+  🔗 https://www.linkedin.com/jobs/view/4429811963
+
+- **Head of Systems Strategy - Regulatory** at Givaudan 🎯
+  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-06-23
+  🔗 https://www.linkedin.com/jobs/view/4423224655
+
+- **Business Engagement Leader** at Ecolab
+  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-06-22
+  🔗 https://www.linkedin.com/jobs/view/4421685356
+
+- **Strategy & Transformation Lead** at Jacobs 🎯
+  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-06-22
+  🔗 https://www.linkedin.com/jobs/view/4431749409
+
+- **Project Director Spatial Experiences (m/f/d)** at BeWunder 🎯
+  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-06-22
+  🔗 https://www.linkedin.com/jobs/view/4428927544
+
+- **Project Director** at Sinopack Search 🎯
+  📍 Dubai, United Arab Emirates | 📅 2026-06-21
+  🔗 https://www.linkedin.com/jobs/view/4431387604
+
+- **Head of Delivery - AI FinTech SaaS Platform** at Hays 🎯
+  📍 Dubai, United Arab Emirates | 📅 2026-06-19
+  🔗 https://www.linkedin.com/jobs/view/4428226607
+
+- **Project Controls Director** at CC7 Global Engineering Solutions | CC7 Emirates Engineering Solutions 🎯
+  📍 Dubai, United Arab Emirates | 📅 nan
+  🔗 https://www.linkedin.com/jobs/view/4430205927
+
+- **Senior Programme Manager, Integration : Urgent Start** at Michael Page
+  📍 Dubai, Dubai, United Arab Emirates | 📅 nan
+  🔗 https://www.linkedin.com/jobs/view/4433078018
+
+- **Associate Director Project Management** at KEO Group ⛔
+  📍 Dubai, United Arab Emirates | 📅 nan
+  🔗 https://www.linkedin.com/jobs/view/4433090369
+
+- **Senior Project Director** at Parsons Corporation 🎯
+  📍 Dubai, Dubai, United Arab Emirates | 📅 nan
+  🔗 https://www.linkedin.com/jobs/view/4432832267
+
+- **Project Management Lead** at tactical.
+  📍 Dubai, Dubai, United Arab Emirates | 📅 nan
+  🔗 https://www.linkedin.com/jobs/view/4430232985
+
+- **Program Manager-Gold Line Metro** at Roads and Transport Authority
+  📍 Dubai, United Arab Emirates | 📅 nan
+  🔗 https://www.linkedin.com/jobs/view/4429894690
+
+- **Program Management Lead** at Siemens Energy
+  📍 Dubai, Dubai, United Arab Emirates | 📅 nan
+  🔗 https://www.linkedin.com/jobs/view/4432661488
+
+*15 results (8 executive-level, 0 likely ghost jobs)*
 
 ### HealthTech / AI Executive (GCC)
 
@@ -126,59 +226,23 @@ No results found.
   📍 Dubai, Dubai, United Arab Emirates | 📅 2026-06-24
   🔗 https://www.linkedin.com/jobs/view/4433023524
 
-- **Vice President - Joinery** at Ambitek UAE 🎯
-  📍 Dubai, United Arab Emirates | 📅 2026-06-18
-  🔗 https://www.linkedin.com/jobs/view/4430450159
-
 - **MEA FIG & SWFs - Vice President** at Mizuho 🎯
-  📍 Dubai, Dubai, United Arab Emirates | 📅 nan
+  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-06-24
   🔗 https://www.linkedin.com/jobs/view/4430828421
 
-*5 results (5 executive-level, 0 likely ghost jobs)*
+*4 results (4 executive-level, 0 likely ghost jobs)*
 
 ### IT Director / VP IT (GCC)
 
-- **Head of Engineering** at UMATR 🎯
-  📍 Dubai, United Arab Emirates | 📅 2026-06-23
-  🔗 https://www.linkedin.com/jobs/view/4431229028
-
-- **Head of AI, Data & Governance** at MultiBank Group 🎯
-  📍 Dubai, United Arab Emirates | 📅 2026-06-23
-  🔗 https://www.linkedin.com/jobs/view/4432221881
-
-- **Head of Systems Strategy - Regulatory** at Givaudan 🎯
-  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-06-23
-  🔗 https://www.linkedin.com/jobs/view/4423224655
-
-- **Senior Manager IT** at SKY ONE
-  📍 Sharjah, Sharjah Emirate, United Arab Emirates | 📅 2026-06-22
-  🔗 https://www.linkedin.com/jobs/view/4431721278
-
-- **Platform Owner - Core, Lending & Wealth** at RAKBANK
-  📍 Dubai, United Arab Emirates | 📅 2026-06-19
-  🔗 https://www.linkedin.com/jobs/view/4429650604
-
-- **Vice President - Information Security and Technology Risk Compliance, Asia Pacific and Middle East (APME)** at Natixis Corporate & Investment Banking 🎯
-  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-06-18
-  🔗 https://www.linkedin.com/jobs/view/4430406030
-
-- **Head of IT Infrastructure and Operations** at Villegas Recruitment Firm 🎯
-  📍 Dubai, United Arab Emirates | 📅 nan
-  🔗 https://www.linkedin.com/jobs/view/4431494012
-
-- **Information Technology Manager** at Villegas Recruitment Firm
-  📍 Dubai, United Arab Emirates | 📅 nan
-  🔗 https://www.linkedin.com/jobs/view/4429818944
-
-*8 results (5 executive-level, 0 likely ghost jobs)*
+No results found.
 
 ---
 
 ## Summary
 
-- Total unique jobs found: 33
-- Executive-level matches: 27
-- Already in pipeline: 15
-- **New jobs added to pipeline: 12**
+- Total unique jobs found: 49
+- Executive-level matches: 32
+- Already in pipeline: 19
+- **New jobs added to pipeline: 13**
 
 *Ghost job filter: Jobs >14 days old or with vague indicators (fast-paced, rockstar, ninja, wear many hats) are flagged.*

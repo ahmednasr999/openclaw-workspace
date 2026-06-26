@@ -1474,3 +1474,10 @@ When packaging user-created research/content, avoid overstating publication stat
 The Loop Engineering checklist was created for JobZoom and CMO with the rule that loops are control systems, not permission. The recommended next step was real-workflow proof: JobZoom closeout first, then CMO visual/draft closeout, before read-only validators or cron automation.
 ### Do differently
 Before automating JobZoom/CMO validators, run two clean manual checklist passes. Verify source evidence, isolated work, artifacts, approvals, persistence, and stop states before declaring a loop healthy.
+
+## 2026-06-25 - Health Guard LCM Repairs Need LCM Engine Compaction
+
+### Incident
+Health Guard reported CRITICAL because Telegram DM conversation `9713` was above the LCM context threshold. Normal session compaction reduced the session registry count, but LCM health still needed a one-item LCM compact-processor queue; that dropped LCM context from `122,341` tokens to `14,139` and made the fresh health report OK. `/status` still showed the older `122k` session-registry count until metadata refreshed.
+### Do differently
+For `lcm_context` health failures, repair through the LCM engine/queue rather than deleting database rows. Verify with `reports/health/latest.json` or the dashboard `lcm_context` check, and treat `/status` token counts as potentially stale immediately after compaction.
