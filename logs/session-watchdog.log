@@ -620,3 +620,12 @@
 [2026-06-25T21:56:26Z] Done reset=0 skipped=0 errors=0
 [2026-06-26T00:56:22Z] Done reset=0 skipped=0 errors=0
 [2026-06-26T03:56:18Z] Done reset=0 skipped=0 errors=0
+[2026-06-26T06:56:33Z] Done reset=0 skipped=0 errors=0
+[2026-06-26T09:56:24Z] Done reset=0 skipped=0 errors=0
+[2026-06-26T12:55:38Z] RESET [main] 30f8d197-85cd-4778-bf2c-a090f8fbae6f.trajectory.jsonl was 3MB -> archived to 30f8d197-85cd-4778-bf2c-a090f8fbae6f.trajectory.20260626T125538Z.jsonl.gz
+[2026-06-26T12:56:28Z] Done reset=1 skipped=0 errors=0
+[2026-06-26T15:56:47Z] Done reset=0 skipped=0 errors=0
+[2026-06-26T18:56:22Z] Done reset=0 skipped=0 errors=0
+[2026-06-26T21:56:21Z] Done reset=0 skipped=0 errors=0
+[2026-06-27T00:56:19Z] Done reset=0 skipped=0 errors=0
+[2026-06-27T03:56:21Z] Done reset=0 skipped=0 errors=0

@@ -1481,3 +1481,31 @@ Before automating JobZoom/CMO validators, run two clean manual checklist passes.
 Health Guard reported CRITICAL because Telegram DM conversation `9713` was above the LCM context threshold. Normal session compaction reduced the session registry count, but LCM health still needed a one-item LCM compact-processor queue; that dropped LCM context from `122,341` tokens to `14,139` and made the fresh health report OK. `/status` still showed the older `122k` session-registry count until metadata refreshed.
 ### Do differently
 For `lcm_context` health failures, repair through the LCM engine/queue rather than deleting database rows. Verify with `reports/health/latest.json` or the dashboard `lcm_context` check, and treat `/status` token counts as potentially stale immediately after compaction.
+
+## 2026-06-26 - LinkedIn Visual Defaults Must Not Conflict Across Gates
+
+### Correction
+Ahmed deleted the live LinkedIn post "The 90-Day AI Test" because NASR/CMO again posted a bad visual despite the agreed hand-drawn sketchnote style. The newer memory rule was correct, but older active `TOOLS.md`, `content-claw`, and `content-publishing-safety` gates still defaulted to dark executive cards and blue/gold visual language.
+### Do differently
+When Ahmed sets a visual direction, update every active publishing gate and generator entry point, not only memory. Before publishing a LinkedIn visual, check for conflicting defaults across `MEMORY.md`, `TOOLS.md`, content skills, visual-quality references, image-post checklists, and CMO generation scripts. For normal Ahmed LinkedIn static visuals, auto-fail generic dark tech cards unless Ahmed explicitly asks for that direction.
+
+## 2026-06-26 - Sketchnote Means Handmade, Not Vector Flow Diagram
+
+### Correction
+Ahmed rejected the corrected "The 90-Day AI Test" preview because it used the right warm paper, black ink, and orange palette but still looked like a clean vector flow diagram, not the agreed hand-drawn sketchnote concept.
+### Do differently
+For Ahmed LinkedIn static visuals, the default must match the reference as a handmade raster sketchnote: imperfect ink strokes, paper texture, hand-lettered hierarchy, toolkit/system metaphor, and visible sketch energy. Auto-fail polished deterministic diagrams, clean icon systems, and vector-like flows even if they are not dark cards and use the approved palette.
+
+## 2026-06-26 - Daily LinkedIn Visuals Need A Hard QA Marker
+
+### Correction
+Ahmed explicitly asked that every daily LinkedIn visual use the right image, concept, and style after the corrected post had to be republished. The old workflow could still resolve a local final asset even when the actual file had not been reference-checked.
+### Do differently
+Daily LinkedIn publishing must fail closed unless the actual image is reference-checked against the hand-drawn sketchnote concept and the Notion image intent includes `Visual QA: PASS - reference-checked handmade sketchnote`. Keep deterministic dark/blue-card checks in the publisher as a backstop, but do not treat them as a replacement for visual review.
+
+## 2026-06-26 - Retracted LinkedIn Posts Must Be Excluded From Cadence
+
+### Correction
+The CMO weekly report flagged `The 90-Day AI Test` as a possible duplicate because it counted both the deleted 09:30 bad-visual post and the corrected 12:31 sketchnote repost as live posts.
+### Do differently
+When reconciling LinkedIn cadence, distinguish rejected/deleted/retracted posts from live reposts before reporting duplicates or backlog. Exclude retracted posts from live cadence counts and metrics-gap backlogs, and keep an audit entry so the corrected repost remains explainable without looking like a duplicate publish.

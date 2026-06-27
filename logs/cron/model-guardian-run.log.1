@@ -1,72 +1,55 @@
 
-[2026-06-25T06:15:01+03:00] START model-guardian-run: /usr/bin/python3 /root/.openclaw/workspace/scripts/model-guardian-run.py
+[2026-06-26T00:15:01+03:00] START model-guardian-run: /usr/bin/python3 /root/.openclaw/workspace/scripts/model-guardian-run.py
 INFO: OK: model-router default is GPT-5.5
 INFO: OK: usage probe succeeded on retry 2
+INFO: OK: Codex usage visible — 5h: 12% used, Week: 15% used
 INFO: OK: models status reports GPT-5.5 as configured default
-INFO: OK: latest guardian snapshot shows 97.0% weekly quota remaining
-INFO: FAIL: Codex usage provider error: HTTP 503
-DM_ALERT: Model Guardian alert: FAIL: Codex usage provider error: HTTP 503
-INFO: DM delivery OK: │
-◇  Doctor warnings ──────────────────────────────────────────────────────╮
-│                                                                        │
-│  - Left plugin install index in place because shared SQLite state has  │
-│    conflicting plugin install metadata for: codex, lossless-claw,      │
-│    tokenjuice                                                          │
-│                                                                        │
-├────────────────────────────────────────────────────────────────────────╯
-│
-◇  Doctor warnings ──────────────────────────────────────────────────────╮
-│                                                                        │
-│  - Left plugin install index in place because shared SQLite state has  │
-│    conflicting plugin install metadata for: codex, lossless-claw,      │
-│    tokenjuice                                                          │
-│                                                                        │
-├────────────────────────────────────────────────────────────────────────╯
-✅ Sent via telegram. Message ID: 60522
-
-[state-migrations] Legacy state migration warnings:
-- Left plugin install index in place because shared SQLite state has conflicting plugin install metadata for: codex, lossless-claw, tokenjuice
-DM_ALERT: Model Guardian alert: usage snapshot failed - Codex usage provider error: HTTP 503
-INFO: DM delivery OK: │
-◇  Doctor warnings ──────────────────────────────────────────────────────╮
-│                                                                        │
-│  - Left plugin install index in place because shared SQLite state has  │
-│    conflicting plugin install metadata for: codex, lossless-claw,      │
-│    tokenjuice                                                          │
-│                                                                        │
-├────────────────────────────────────────────────────────────────────────╯
-│
-◇  Doctor warnings ──────────────────────────────────────────────────────╮
-│                                                                        │
-│  - Left plugin install index in place because shared SQLite state has  │
-│    conflicting plugin install metadata for: codex, lossless-claw,      │
-│    tokenjuice                                                          │
-│                                                                        │
-├────────────────────────────────────────────────────────────────────────╯
-✅ Sent via telegram. Message ID: 60523
-
-[state-migrations] Legacy state migration warnings:
-- Left plugin install index in place because shared SQLite state has conflicting plugin install metadata for: codex, lossless-claw, tokenjuice
-[2026-06-25T06:15:39+03:00] END model-guardian-run: rc=0 duration=38s
-
-[2026-06-25T12:15:01+03:00] START model-guardian-run: /usr/bin/python3 /root/.openclaw/workspace/scripts/model-guardian-run.py
-INFO: OK: model-router default is GPT-5.5
-INFO: OK: usage probe succeeded on retry 2
-INFO: OK: Codex usage visible — 5h: 32% used, Week: 9% used
-INFO: OK: models status reports GPT-5.5 as configured default
-INFO: OK: latest guardian snapshot shows 91.0% weekly quota remaining
+INFO: OK: latest guardian snapshot shows 85.0% weekly quota remaining
 INFO: ALL_OK
-INFO: SNAPSHOT: weekly=91.0% left, reset in 6d 12h
+INFO: SNAPSHOT: weekly=85.0% left, reset in 6d 0h
 NO_ALERTS
-[2026-06-25T12:15:24+03:00] END model-guardian-run: rc=0 duration=23s
+[2026-06-26T00:15:24+03:00] END model-guardian-run: rc=0 duration=23s
 
-[2026-06-25T18:15:01+03:00] START model-guardian-run: /usr/bin/python3 /root/.openclaw/workspace/scripts/model-guardian-run.py
+[2026-06-26T06:15:01+03:00] START model-guardian-run: /usr/bin/python3 /root/.openclaw/workspace/scripts/model-guardian-run.py
 INFO: OK: model-router default is GPT-5.5
 INFO: OK: usage probe succeeded on retry 2
-INFO: OK: Codex usage visible — 5h: 14% used, Week: 13% used
+INFO: OK: Codex usage visible — 5h: 0% used, Week: 16% used
 INFO: OK: models status reports GPT-5.5 as configured default
-INFO: OK: latest guardian snapshot shows 87.0% weekly quota remaining
+INFO: OK: latest guardian snapshot shows 84.0% weekly quota remaining
 INFO: ALL_OK
-INFO: SNAPSHOT: weekly=87.0% left, reset in 6d 6h
+INFO: SNAPSHOT: weekly=84.0% left, reset in 5d 18h
 NO_ALERTS
-[2026-06-25T18:15:24+03:00] END model-guardian-run: rc=0 duration=23s
+[2026-06-26T06:15:25+03:00] END model-guardian-run: rc=0 duration=24s
+
+[2026-06-26T12:15:01+03:00] START model-guardian-run: /usr/bin/python3 /root/.openclaw/workspace/scripts/model-guardian-run.py
+INFO: OK: model-router default is GPT-5.5
+INFO: OK: usage probe succeeded on retry 2
+INFO: OK: Codex usage visible — 5h: 6% used, Week: 19% used
+INFO: OK: models status reports GPT-5.5 as configured default
+INFO: OK: latest guardian snapshot shows 81.0% weekly quota remaining
+INFO: ALL_OK
+INFO: SNAPSHOT: weekly=81.0% left, reset in 5d 12h
+NO_ALERTS
+[2026-06-26T12:15:26+03:00] END model-guardian-run: rc=0 duration=25s
+
+[2026-06-26T18:15:01+03:00] START model-guardian-run: /usr/bin/python3 /root/.openclaw/workspace/scripts/model-guardian-run.py
+INFO: OK: model-router default is GPT-5.5
+INFO: OK: usage probe succeeded on retry 2
+INFO: OK: Codex usage visible — 5h: 13% used, Week: 24% used
+INFO: OK: models status reports GPT-5.5 as configured default
+INFO: OK: latest guardian snapshot shows 76.0% weekly quota remaining
+INFO: ALL_OK
+INFO: SNAPSHOT: weekly=76.0% left, reset in 5d 6h
+NO_ALERTS
+[2026-06-26T18:15:24+03:00] END model-guardian-run: rc=0 duration=23s
+
+[2026-06-27T00:15:01+03:00] START model-guardian-run: /usr/bin/python3 /root/.openclaw/workspace/scripts/model-guardian-run.py
+INFO: OK: model-router default is GPT-5.5
+INFO: OK: usage probe succeeded on retry 2
+INFO: OK: Codex usage visible — 5h: 8% used, Week: 27% used
+INFO: OK: models status reports GPT-5.5 as configured default
+INFO: OK: latest guardian snapshot shows 73.0% weekly quota remaining
+INFO: ALL_OK
+INFO: SNAPSHOT: weekly=73.0% left, reset in 5d 0h
+NO_ALERTS
+[2026-06-27T00:15:23+03:00] END model-guardian-run: rc=0 duration=22s

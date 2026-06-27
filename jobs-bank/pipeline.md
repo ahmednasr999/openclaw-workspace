@@ -369,6 +369,16 @@
 | 478 | 🆕 | Confidential Careers | Head of Transformation | Dubai | — | 🆕 Discovered | Radar | 2026-06-26 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4432542777) | — |
 | 479 | 🆕 | CC7 Global Engineering Solutions | CC7 Emirates Engineering Solutions | Project Controls Director | Dubai | — | 🆕 Discovered | Radar | 2026-06-26 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4430205927) | — |
 | 480 | 🆕 | Parsons Corporation | Senior Project Director | Dubai | — | 🆕 Discovered | Radar | 2026-06-26 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4432832267) | — |
+| 481 | 🆕 | Roads and Transport Authority | Senior Chief Engineer | Dubai | — | 🆕 Discovered | Radar | 2026-06-27 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4432973389) | — |
+| 482 | 🆕 | Boundless | Head of AI & BI Reporting | Dubai | — | 🆕 Discovered | Radar | 2026-06-27 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4432538932) | — |
+| 483 | 🆕 | TALENTMATE | MEA FIG And SWFs - Vice President | Dubai | — | 🆕 Discovered | Radar | 2026-06-27 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4433579264) | — |
+| 484 | 🆕 | JPMorganChase | CEEMEA Payments Sales Business Manager - Vice President | Dubai | — | 🆕 Discovered | Radar | 2026-06-27 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4433805758) | — |
+| 485 | 🆕 | The Talents Nation | IT Director | Dubai | — | 🆕 Discovered | Radar | 2026-06-27 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4430231610) | — |
+| 486 | 🆕 | Foreground. | Director – Enterprise Architecture | Dubai | — | 🆕 Discovered | Radar | 2026-06-27 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4432643684) | — |
+| 487 | 🆕 | Backbase | Technical Director | Dubai | — | 🆕 Discovered | Radar | 2026-06-27 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4433833552) | — |
+| 488 | 🆕 | FreeBalance | Director, Technical Services EMEA | Dubai | — | 🆕 Discovered | Radar | 2026-06-27 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4430629189) | — |
+| 489 | 🆕 | DP World | Group Director- Strategy & Technology Operations | Dubai | — | 🆕 Discovered | Radar | 2026-06-27 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4433876871) | — |
+
 
 
 
