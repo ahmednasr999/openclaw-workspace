@@ -2,133 +2,70 @@
   "meta": {
     "agent": "jobs-review",
     "version": "2.0.0",
-    "generated_at": "2026-06-27T04:40:56.575287+03:00",
-    "duration_ms": 108505,
+    "generated_at": "2026-06-28T06:40:10.058948+03:00",
+    "duration_ms": 133279,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "f52b5879",
+    "run_id": "242f8cea",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
-    "generated_at": "2026-06-27T04:40:56.465074+03:00",
-    "total_candidates": 24,
-    "reviewed": 24,
+    "generated_at": "2026-06-28T06:40:10.005646+03:00",
+    "total_candidates": 16,
+    "reviewed": 16,
     "submit": [
       {
-        "id": "linkedin_jobspy-li-4432914892",
+        "id": "linkedin_jobspy-li-4434253758",
         "source": "linkedin_jobspy",
-        "title": "Director \u2013 AI Governance & Adoption",
-        "company": "Foreground.",
-        "location": "Riyadh, Riyadh, Saudi Arabia",
-        "url": "https://www.linkedin.com/jobs/view/4432914892",
-        "posted": "",
-        "seniority": "C-Suite",
-        "domain_match": true,
-        "keyword_score": 13,
-        "match_keywords": [
-          "ai",
-          "director"
-        ],
-        "raw_snippet": "Our client recognises that successful AI implementation extends beyond technology and requires strong governance, organisational readiness, employee engagement, and responsible adoption across all business functions.\n   \n\n  \n\n**The Role**\n Reporting to the Chief Artificial Intelligence Officer, the ",
-        "relevant": true,
-        "filter_reason": null,
-        "search_country": "Saudi Arabia",
-        "search_title": "\"Hamad Medical Corporation\" (\"Chief Technology Officer\" OR CTO OR \"Chief Information Officer\" OR CIO OR \"Head of Technology\" OR \"IT Director\" OR \"Head of IT\" OR \"Chief Digital Officer\" OR CDO OR \"VP Digital Transformation\" OR \"Head of Business Excellence\" OR PMO OR transformation OR director)",
-        "linkedin_id": "li-4432914892",
-        "jd_text": "Our client recognises that successful AI implementation extends beyond technology and requires strong governance, organisational readiness, employee engagement, and responsible adoption across all business functions.\n   \n\n  \n\n**The Role**\n Reporting to the Chief Artificial Intelligence Officer, the Director of AI Governance \\& Adoption will establish the policies, standards, and governance framework required to ensure Artificial Intelligence is deployed responsibly, securely, and consistently throughout the Group.\n   \n\n  \n\n The role will oversee AI governance, data privacy, regulatory compliance, ethical AI principles, organisational readiness, AI literacy programmes, and enterprise\\-wide adoption initiatives.\n   \n\n  \n\n Working closely with Human Resources, Legal, Information Security, Risk Management, and subsidiary leadership teams, the Director will ensure employees are equipped to utilise AI effectively while maintaining appropriate governance and compliance standards.\n   \n\n  \n\n The Director will also lead enterprise communication strategies, change management programmes, adoption measurement, and continuous improvement initiatives.\n   \n\n  \n\n**Candidate Profile**\n Candidates should possess extensive experience in governance, enterprise risk, organisational change, digital transformation, compliance, or technology governance.\n   \n\n  \n\n Strong stakeholder management capabilities, communication skills, and experience leading enterprise\\-wide transformation initiatives are essential.\n   \n\n  \n\n Experience developing governance frameworks for emerging technologies or enterprise digital programmes will be considered highly advantageous.",
-        "source_count": 1,
-        "country": "Saudi Arabia",
-        "industry_bonus": 3,
-        "policy_status": "pass",
-        "sources": [
-          "linkedin"
-        ],
-        "first_seen": "2026-06-27",
-        "career_fit_score": 9,
-        "verdict": "SUBMIT",
-        "verdict_reason": "Strong AI governance and enterprise adoption role aligned with digital transformation leadership in Saudi Arabia [5D role=2 | seniority=2 | geo=2 | strategic=1 | evidence=2 | fit=9/10 | llm=8] [CMO outreach queued for Foreground.]",
-        "watchlist_matches": {
-          "company_hits": [],
-          "domain_hits": [],
-          "categories": []
-        },
-        "ats_score": 70,
-        "ats_verdict": "CONDITIONAL",
-        "ats_matched": [
-          "digital transformation",
-          "program management",
-          "transformation",
-          "artificial intelligence",
-          "ai",
-          "erp",
-          "governance",
-          "change management",
-          "stakeholder management",
-          "data"
-        ],
-        "ats_gaps": [],
-        "llm_fit_score": 8,
-        "fit_dimensions": {
-          "role": 2,
-          "seniority": 2,
-          "geography": 2,
-          "strategic": 1,
-          "evidence": 2
-        }
-      },
-      {
-        "id": "linkedin_jobspy-li-4433876871",
-        "source": "linkedin_jobspy",
-        "title": "Group Director- Strategy & Technology Operations",
-        "company": "DP World",
+        "title": "Group Director- Strategy And Technology Operations",
+        "company": "TALENTMATE",
         "location": "Dubai, Dubai, United Arab Emirates",
-        "url": "https://www.linkedin.com/jobs/view/4433876871",
-        "posted": "",
+        "url": "https://www.linkedin.com/jobs/view/4434253758",
+        "posted": "2026-06-26",
         "seniority": "C-Suite",
         "domain_match": true,
         "keyword_score": 6,
         "match_keywords": [
           "director"
         ],
-        "raw_snippet": "**Job Description**\n****JOB ACCOUNTABILITIES****\n* Strategy Execution \\& Business Alignment\n* Translate business and technology strategy into clear, outcome\\-driven execution priorities\n* Ensure all major initiatives are aligned to measurable business value (revenue, cost, CX, efficiency)\n* Drive cl",
+        "raw_snippet": "**Job Description**\n**Job Description**\n**Job Accountabilities**\n* Strategy Execution \\& Business Alignment\n* Translate business and technology strategy into clear, outcome\\-driven execution priorities\n* Ensure all major initiatives are aligned to measurable business value (revenue, cost, CX, effici",
         "relevant": true,
         "filter_reason": null,
         "search_country": "United Arab Emirates",
-        "search_title": "\"Hamad Medical Corporation\" (\"Chief Technology Officer\" OR CTO OR \"Chief Information Officer\" OR CIO OR \"Head of Technology\" OR \"IT Director\" OR \"Head of IT\" OR \"Chief Digital Officer\" OR CDO OR \"VP Digital Transformation\" OR \"Head of Business Excellence\" OR PMO OR transformation OR director)",
-        "linkedin_id": "li-4433876871",
-        "jd_text": "**Job Description**\n****JOB ACCOUNTABILITIES****\n* Strategy Execution \\& Business Alignment\n* Translate business and technology strategy into clear, outcome\\-driven execution priorities\n* Ensure all major initiatives are aligned to measurable business value (revenue, cost, CX, efficiency)\n* Drive clarity of ownership, success measures, and expected outcomes across leadership\n* Organizational Performance \\& Insight\n* Establish a single, executive\\-level view of performance across Logistics Technology\n* Synthesize inputs from Product, Engineering, and PMO into actionable insights for leadership\n* Identify performance gaps, risks, and trade\\-offs; recommend corrective actions\n* Cross\\-Functional Integration \\& Execution Effectiveness\n* Align Product, Engineering, Architecture, Finance, HR, and PMO to operate as an integrated system\n* Resolve cross\\-functional friction, misalignment, and prioritization conflicts\n* Act as a neutral operator to ensure decisions translate into execution\n* Financial \\& Operational Discipline\n* Drive financial rigor across budgeting, forecasting, and cost management\n* Ensure alignment between investment decisions and business outcomes\n* Oversee headcount planning, vendor spend alignment, and resource optimization\n* Executive Operating Cadence \\& Decision Support\n* Run the leadership operating rhythm (business reviews, performance discussions, strategic forums)\n* Prepare decision\\-ready insights for EVP and leadership team (trade\\-offs, capacity, priorities)\n* Ensure leadership discussions are outcome\\-focused and lead to clear actions\n* Organizational Effectiveness \\& Continuous Improvement\n* Identify structural inefficiencies and improvement opportunities across the organization\n* Drive adoption of consistent ways of working across domains\n* Enable a culture of accountability, transparency, and outcome ownership\n\n\n**Qualifications**\n**QUALIFICATIONS, EXPERIENCE AND SKILLS**\n* Bachelor\u2019s degree in engineering, Business, or related field\n* MBA or equivalent preferred\n\n\n**Experience**\n* 12\u201318 years in strategy, operations, or transformation roles within technology organizations\n* Experience working in large, complex, global environments\n* Proven ability to operate at executive level (CIO/CTO/EVP interface)\n* Experience driving cross\\-functional alignment and organizational transformation\n\n\n**Functional**\n**Core Skills**\n* Strong understanding of product, engineering, and technology operating models\n* Financial acumen (budgeting, forecasting, cost management)\n* Strategic planning and execution alignment\n* Data\\-driven performance management\n\n\n**Leadership**\n* Strong executive presence and ability to influence without authority\n* High judgment and structured problem\\-solving capability\n* Ability to operate in ambiguity and drive clarity\n* Strong stakeholder management across senior leaders\n* Bias for action and accountability",
-        "source_count": 2,
+        "search_title": "Head of PMO",
+        "linkedin_id": "li-4434253758",
+        "jd_text": "**Job Description**\n**Job Description**\n**Job Accountabilities**\n* Strategy Execution \\& Business Alignment\n* Translate business and technology strategy into clear, outcome\\-driven execution priorities\n* Ensure all major initiatives are aligned to measurable business value (revenue, cost, CX, efficiency)\n* Drive clarity of ownership, success measures, and expected outcomes across leadership\n* Organizational Performance \\& Insight\n* Establish a single, executive\\-level view of performance across Logistics Technology\n* Synthesize inputs from Product, Engineering, and PMO into actionable insights for leadership\n* Identify performance gaps, risks, and trade\\-offs; recommend corrective actions\n* Cross\\-Functional Integration \\& Execution Effectiveness\n* Align Product, Engineering, Architecture, Finance, HR, and PMO to operate as an integrated system\n* Resolve cross\\-functional friction, misalignment, and prioritization conflicts\n* Act as a neutral operator to ensure decisions translate into execution\n* Financial \\& Operational Discipline\n* Drive financial rigor across budgeting, forecasting, and cost management\n* Ensure alignment between investment decisions and business outcomes\n* Oversee headcount planning, vendor spend alignment, and resource optimization\n* Executive Operating Cadence \\& Decision Support\n* Run the leadership operating rhythm (business reviews, performance discussions, strategic forums)\n* Prepare decision\\-ready insights for EVP and leadership team (trade\\-offs, capacity, priorities)\n* Ensure leadership discussions are outcome\\-focused and lead to clear actions\n* Organizational Effectiveness \\& Continuous Improvement\n* Identify structural inefficiencies and improvement opportunities across the organization\n* Drive adoption of consistent ways of working across domains\n* Enable a culture of accountability, transparency, and outcome ownership\n\n\n**Qualifications**\n**Qualifications, Experience And Skills**\n* Bachelor\u2019s degree in engineering, Business, or related field\n* MBA or equivalent preferred\n\n\n**Experience**\n* 12\u201318 years in strategy, operations, or transformation roles within technology organizations\n* Experience working in large, complex, global environments\n* Proven ability to operate at executive level (CIO/CTO/EVP interface)\n* Experience driving cross\\-functional alignment and organizational transformation\n\n\n**Functional**\n**Core Skills**\n* Strong understanding of product, engineering, and technology operating models\n* Financial acumen (budgeting, forecasting, cost management)\n* Strategic planning and execution alignment\n* Data\\-driven performance management\n\n\n**Leadership**\n* Strong executive presence and ability to influence without authority\n* High judgment and structured problem\\-solving capability\n* Ability to operate in ambiguity and drive clarity\n* Strong stakeholder management across senior leaders\n* Bias for action and accountability\n\n\n Job Details\n   \n\n  \n\n Role Level: Not Applicable Work Type: Full\\-Time Country: United Arab Emirates City: Dubai Company Website: http://www.dpworld.com Job Function: Strategy \\& Planning Company Industry/\n   \n\n  \n\n Sector: Other\n   \n\n  \n\n What We Offer\n   \n\n  \n\n**About The Company**\n Searching, interviewing and hiring are all part of the professional life. The TALENTMATE Portal idea is to fill and help professionals doing one of them by bringing together the requisites under One Roof. Whether you're hunting for your Next Job Opportunity or Looking for Potential Employers, we're here to lend you a Helping Hand.\n   \n\n  \n\n Report\n   \n\n  \n\n Disclaimer: talentmate.com is only a platform to bring jobseekers \\& employers together. Applicants are advised to research the bonafides of the prospective employer independently. We do NOT endorse any requests for money payments and strictly advice against sharing personal or bank related information. We also recommend you visit Security Advice for more information. If you suspect any fraud or malpractice, email us at abuse@talentmate.com.",
+        "source_count": 1,
         "country": "United Arab Emirates",
-        "industry_bonus": 3,
+        "industry_bonus": 9,
         "policy_status": "pass",
         "sources": [
-          "linkedin",
-          "indeed"
+          "linkedin"
         ],
-        "first_seen": "2026-06-27",
+        "first_seen": "2026-06-28",
         "career_fit_score": 9,
         "verdict": "SUBMIT",
-        "verdict_reason": "Excellent fit: Group Director role in Dubai combining technology operations, strategy execution, PMO alignment, operational discipline, and executive performance management [5D role=2 | seniority=2 | geo=2 | strategic=1 | evidence=2 | fit=9/10 | llm=9] [CMO outreach queued for DP World]",
+        "verdict_reason": "Excellent fit for executive technology operations, strategy execution, PMO alignment, and operational excellence in Dubai. [5D role=2 | seniority=2 | geo=2 | strategic=1 | evidence=2 | fit=9/10 | llm=9] [CMO outreach queued for TALENTMATE]",
         "watchlist_matches": {
           "company_hits": [],
           "domain_hits": [],
           "categories": []
         },
-        "ats_score": 68,
-        "ats_verdict": "CONDITIONAL",
+        "ats_score": 75,
+        "ats_verdict": "GO",
         "ats_matched": [
           "pmo",
           "transformation",
           "ai",
+          "payment",
           "operating model",
           "stakeholder management",
           "budget",
           "revenue",
           "data",
-          "strategy",
-          "strategic"
+          "strategy"
         ],
         "ats_gaps": [],
         "llm_fit_score": 9,
@@ -139,138 +76,10 @@
           "strategic": 1,
           "evidence": 2
         }
-      },
-      {
-        "id": "linkedin_jobspy-li-4432923747",
-        "source": "linkedin_jobspy",
-        "title": "Director \u2013 AI Strategy & Portfolio",
-        "company": "Foreground.",
-        "location": "Riyadh, Riyadh, Saudi Arabia",
-        "url": "https://www.linkedin.com/jobs/view/4432923747",
-        "posted": "",
-        "seniority": "C-Suite",
-        "domain_match": true,
-        "keyword_score": 13,
-        "match_keywords": [
-          "ai",
-          "director"
-        ],
-        "raw_snippet": "Our client is creating a central AI Strategy function responsible for ensuring that Artificial Intelligence investments are aligned with business priorities and generate measurable value across multiple operating companies.\n   \n\n  \n\n**The Role**\n Reporting to the Chief Artificial Intelligence Office",
-        "relevant": true,
-        "filter_reason": null,
-        "search_country": "Saudi Arabia",
-        "search_title": "Portfolio Director",
-        "linkedin_id": "li-4432923747",
-        "jd_text": "Our client is creating a central AI Strategy function responsible for ensuring that Artificial Intelligence investments are aligned with business priorities and generate measurable value across multiple operating companies.\n   \n\n  \n\n**The Role**\n Reporting to the Chief Artificial Intelligence Officer, the Director of AI Strategy \\& Portfolio will lead the development and execution of the Group\u2019s AI strategy while overseeing the enterprise portfolio of AI initiatives.\n   \n\n  \n\n The role will work closely with business leaders to identify strategic opportunities, assess business cases, prioritise AI investments, and establish implementation roadmaps across the Group\u2019s diverse sectors.\n   \n\n  \n\n The Director will be responsible for maintaining the AI project portfolio, measuring business impact, monitoring delivery against strategic objectives, and ensuring resources are allocated to initiatives with the highest potential return on investment.\n   \n\n  \n\n In addition, the role will establish AI governance frameworks, executive reporting mechanisms, investment evaluation criteria, and portfolio performance dashboards to support executive decision\\-making.\n   \n\n  \n\n**Candidate Profile**\n Candidates should possess extensive experience in corporate strategy, management consulting, enterprise transformation, digital strategy, or AI programme leadership.\n   \n\n  \n\n Strong analytical capability, financial acumen, portfolio management experience, and the ability to engage senior executives across multiple business sectors are essential.\n   \n\n  \n\n Experience within diversified organisations, consulting firms, or large enterprise transformation programmes will be highly regarded.",
-        "source_count": 1,
-        "country": "Saudi Arabia",
-        "industry_bonus": 6,
-        "policy_status": "pass",
-        "sources": [
-          "linkedin"
-        ],
-        "first_seen": "2026-06-27",
-        "career_fit_score": 9,
-        "verdict": "SUBMIT",
-        "verdict_reason": "Strong Director-level AI strategy, portfolio, governance, and enterprise transformation role in Saudi Arabia [5D role=2 | seniority=2 | geo=2 | strategic=1 | evidence=2 | fit=9/10 | llm=8] [CMO outreach queued for Foreground.]",
-        "watchlist_matches": {
-          "company_hits": [],
-          "domain_hits": [],
-          "categories": []
-        },
-        "ats_score": 66,
-        "ats_verdict": "CONDITIONAL",
-        "ats_matched": [
-          "digital transformation",
-          "program management",
-          "transformation",
-          "portfolio management",
-          "artificial intelligence",
-          "ai",
-          "erp",
-          "governance",
-          "digital",
-          "strategy"
-        ],
-        "ats_gaps": [],
-        "llm_fit_score": 8,
-        "fit_dimensions": {
-          "role": 2,
-          "seniority": 2,
-          "geography": 2,
-          "strategic": 1,
-          "evidence": 2
-        }
-      },
-      {
-        "id": "linkedin_jobspy-li-4433578442",
-        "source": "linkedin_jobspy",
-        "title": "Director Of Strategy And Operations",
-        "company": "TALENTMATE",
-        "location": "Dubai, Dubai, United Arab Emirates",
-        "url": "https://www.linkedin.com/jobs/view/4433578442",
-        "posted": "2026-06-22",
-        "seniority": "C-Suite",
-        "domain_match": true,
-        "keyword_score": 20,
-        "match_keywords": [
-          "infrastructure",
-          "director",
-          "middle east",
-          "platform"
-        ],
-        "raw_snippet": "**Job Description**\n**About Moove**\n Moove is one of the world's fastest\\-growing mobility infrastructure companies.\n   \n\n  \n\n We finance and supply vehicles to mobility platforms across Africa, the Middle East, Asia, and Latin America and we're building the infrastructure layer that the next genera",
-        "relevant": true,
-        "filter_reason": null,
-        "search_country": "United Arab Emirates",
-        "search_title": "Head of PMO",
-        "linkedin_id": "li-4433578442",
-        "jd_text": "**Job Description**\n**About Moove**\n Moove is one of the world's fastest\\-growing mobility infrastructure companies.\n   \n\n  \n\n We finance and supply vehicles to mobility platforms across Africa, the Middle East, Asia, and Latin America and we're building the infrastructure layer that the next generation of mobility will depend on. The company is pre\\-IPO, operating at scale across multiple geographies, and moving through one of the most consequential phases of its growth.\n   \n\n  \n\n The pace is fast and the stakes are high. The decisions being made now will define the company for a decade. We are building the next phase of this business to be AI\\-native from the ground up and the people around the leadership table need to be operating at their best.\n   \n\n  \n\n**About The Role**\n The Director of Strategy \\& Operations serves as a trusted partner to the Co\\-CEO and President, ensuring that ambitious growth plans are executable, aligned, and supported across the organisation. The role will be crucial in operationalizing the vision of Moove.\n   \n\n  \n\n On the execution side, this role owns the operating rhythm of the leadership team, converts strategic direction into clear accountabilities, and ensures decisions are structured, actioned, and embedded across business units. On the strategic side, the Director of Strategy \\& Operations researches and constructs long\\-term corporate strategy, embeds governance and decision rights, and provides forward\\-looking scenario analysis to feed into any corporate planning.\n   \n\n  \n\n Because much of the company\u2019s operating infrastructure is still being built, this role carries significant build responsibility. The Director of Strategy \\& Operations will design the ways of working, stand up performance frameworks, and embed the OKR and scorecard systems through which the business runs. This is an execution role with strategic range, the ratio matters, and the ceiling is high.\n   \n\n  \n\n**What You\u2019ll Be Doing**\n Strategy and Governance\n   \n\n  \n\n* Research, construct, and support the development of long\\-term corporate strategy in partnership with the Co\\-CEO and President; ensure it is cascaded into business unit priorities through structured communication channels including town halls, leadership briefings, and BU\\-level planning.\n* Operationalise the operating model, ensuring business units are aligned, accountable, and able to deliver against growth priorities\n* Guide the decentralisation effort, embedding governance structures and clear decision rights across business units\n* Partner with senior functional leaders to identify and close capability gaps that impact business performance\n* Provide forward\\-looking scenario analysis to feed into future strategy\n\n\n Operating Rhythm and Execution\n   \n\n  \n\n* Own the executive operating rhythm, leadership meetings, offsites, board and committee reviews, ensuring decisions are structured, actioned, and embedded\n* Translate strategic direction into clear actions, owners, and timelines across the organisation; hold stakeholders accountable to commitments\n* Identify and remove blockers; drive stalled decisions to resolution with pace and rigour\n* Facilitate integration across functions and business units, aligning resources and priorities to avoid silos\n* Identify and escalate risks that may impact business performance or growth, ensuring mitigation plans are in place\n\n\n Performance and Organizational Effectiveness\n   \n\n  \n\n* Embed OKRs and business performance scorecards in collaboration with the People Team; provide data\\-driven insights to the Co\\-CEO and executive team to inform decisions\n* Ensure business performance outcomes are supported by aligned people performance priorities\n* Manage information flow to and from the Co\\-CEO, surface what requires attention and filter what does not\n\n\n**Strategic Outputs**\n* Prepare and own high\\-stakes outputs: board materials, investor updates, strategic documents, and executive briefings\n* Lead specific strategic and operational workstreams directly when required, including platform development and capital markets preparation\n* Identify and deploy AI tools and workflows to increase the velocity and quality of the Co\\-CEO\u2019s office\n\n\n**Experience**\n**What You Will Need For This Position**\n* 6\u201310 years of experience owning outcomes in high\\-growth or high\\-complexity environments\n* Prior experience as a Chief of Staff, Director of Strategy \\& Operations, COO, or senior operator at a high\\-velocity technology company, or equivalent seniority from top\\-tier strategy consulting with demonstrated operational delivery\n* Experience building or running a critical function through a period of rapid growth, transformation, or M\\&A activity\n* Demonstrable track record of closing things, decisions, commitments, workstreams, at pace and without loss of quality\n\n\n**Skills And Capabilities**\n* Exceptional written communication; produces board\\-quality documents, strategic memos, and executive briefings independently\n* Ability to process complexity quickly, communicate it clearly, and operate with minimal direction\n* Genuinely AI\\-native; uses AI to increase personal and team velocity, with experience managing AI\\-enabled workflows or operating system design\n* Sufficient fluency across technology, capital markets, and business transformation to engage credibly across Moove\u2019s active workstreams\n* Strong product and technology instincts; understands how software is built, how platforms scale, and how technology and physical operations intersect\n* Sound judgment on when to act independently and when to escalate\n* Available across geographies and time zones as required\n\n\n**What Does Success Look Like**\n* The Co\\-CEO and President\u2019s office operates as a high\\-performance execution engine, no decisions stall, no commitments drop\n* The company\u2019s operating cadence is designed, implemented, and running effectively within the first 90 days\n* OKRs and performance scorecards are embedded and generating actionable insights for the executive team\n* Governance structures and decision rights are documented and operational across all business units\n* Board and investor outputs are produced on time, to a consistently high standard\n* Strategic workstreams move faster and with greater clarity as a direct result of this role\u2019s involvement\n\n\n**Who You'll Be Working with:**\n Directly reporting to our CO\\-CEO \\& President, and closely working with our office of the CEO team.\n   \n\n  \n\n**About The Team**\n Our team is collaborative, positive, curious, and engaged. We think fast, work smart, laugh often, and are looking for like\\-minded people to join us in our mission to disrupt vehicle ownership and make financial freedom within reach.\n   \n\n  \n\n Moove is strongly committed to diversity within its community. The Company\u2019s approved Employment Equity Plan and Targets will be considered as part of the recruitment process. As an Equal Opportunities employer, we welcome people from all backgrounds who seek the opportunity to help build a future where everyone and everything can move independently.\n   \n\n  \n\n**Pre\\-hiring Notice:** \n Moove relies on the accuracy of information contained in employment applications, as well as the accuracy of other data presented throughout the hiring process and during employment. Any misrepresentations, falsifications, or material omissions in any information or data provided by an applicant may result in the applicant being excluded from further consideration for employment or if an individual has already been hired, termination of employment.\n   \n\n  \n\n**EEO Statement:** \n Moove is an equal opportunity employer and does not discriminate on the basis of gender, race, sexual orientation, marital status, religion, political affiliation or any other protected characteristic.\n   \n\n  \n\n Job Details\n   \n\n  \n\n Role Level: Not Applicable Work Type: Full\\-Time Country: United Arab Emirates City: Dubai Company Website: https://www.moove.io Job Function: Strategy \\& Planning Company Industry/\n   \n\n  \n\n Sector: Financial Services\n   \n\n  \n\n What We Offer\n   \n\n  \n\n**About The Company**\n Searching, interviewing and hiring are all part of the professional life. The TALENTMATE Portal idea is to fill and help professionals doing one of them by bringing together the requisites under One Roof. Whether you're hunting for your Next Job Opportunity or Looking for Potential Employers, we're here to lend you a Helping Hand.\n   \n\n  \n\n Report\n   \n\n  \n\n Disclaimer: talentmate.com is only a platform to bring jobseekers \\& employers together. Applicants are advised to research the bonafides of the prospective employer independently. We do NOT endorse any requests for money payments and strictly advice against sharing personal or bank related information. We also recommend you visit Security Advice for more information. If you suspect any fraud or malpractice, email us at abuse@talentmate.com.",
-        "source_count": 1,
-        "country": "United Arab Emirates",
-        "industry_bonus": 15,
-        "policy_status": "pass",
-        "sources": [
-          "linkedin"
-        ],
-        "first_seen": "2026-06-27",
-        "career_fit_score": 9,
-        "verdict": "SUBMIT",
-        "verdict_reason": "Borderline fit: strong strategy, operations, governance, OKR, and performance framework scope, but less clearly technology transformation-led [5D role=2 | seniority=2 | geo=2 | strategic=1 | evidence=2 | fit=9/10 | llm=6] [CMO outreach queued for TALENTMATE]",
-        "watchlist_matches": {
-          "company_hits": [],
-          "domain_hits": [],
-          "categories": []
-        },
-        "ats_score": 66,
-        "ats_verdict": "CONDITIONAL",
-        "ats_matched": [
-          "transformation",
-          "ai",
-          "payment",
-          "governance",
-          "operating model",
-          "data",
-          "strategy",
-          "strategic",
-          "stakeholder",
-          "scale"
-        ],
-        "ats_gaps": [
-          "Missing: project management"
-        ],
-        "llm_fit_score": 6,
-        "fit_dimensions": {
-          "role": 2,
-          "seniority": 2,
-          "geography": 2,
-          "strategic": 1,
-          "evidence": 2
-        }
       }
     ],
     "review": [],
-    "skip_count": 20,
+    "skip_count": 15,
     "unreviewed_count": 0,
     "thresholds": {
       "submit": 6,
@@ -279,32 +88,32 @@
     "pipeline": {
       "l0_auto_skip": 0,
       "l1_jd_enriched": 0,
-      "l1_jd_coverage": "22/24",
+      "l1_jd_coverage": "16/16",
       "llm_model": "openai/gpt-5.5",
-      "llm_jobs_reviewed": 24,
-      "r2_latency_ms": 103051,
+      "llm_jobs_reviewed": 16,
+      "r2_latency_ms": 128651,
       "r2_fallbacks": 0
     },
     "kpi": {
-      "submit_rate": 0.16666666666666666,
+      "submit_rate": 0.0625,
       "review_rate": 0.0,
-      "skip_rate": 0.8333333333333334,
-      "avg_fit_score": 4.8,
+      "skip_rate": 0.9375,
+      "avg_fit_score": 5.2,
       "l0_filter_rate": 0.0,
       "llm_review_rate": 100.0
     }
   },
   "kpi": {
-    "total_loaded": 24,
+    "total_loaded": 16,
     "l0_auto_skip": 0,
     "l1_jd_enriched": 0,
     "l2_filtered": 0,
-    "submit_count": 4,
+    "submit_count": 1,
     "review_count": 0,
-    "skip_count": 20,
-    "submit_rate": 16.7,
-    "avg_fit_score": 4.8,
-    "r2_latency_ms": 103051
+    "skip_count": 15,
+    "submit_rate": 6.2,
+    "avg_fit_score": 5.2,
+    "r2_latency_ms": 128651
   },
   "recommendations": []
 }

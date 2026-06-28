@@ -378,6 +378,12 @@
 | 487 | 🆕 | Backbase | Technical Director | Dubai | — | 🆕 Discovered | Radar | 2026-06-27 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4433833552) | — |
 | 488 | 🆕 | FreeBalance | Director, Technical Services EMEA | Dubai | — | 🆕 Discovered | Radar | 2026-06-27 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4430629189) | — |
 | 489 | 🆕 | DP World | Group Director- Strategy & Technology Operations | Dubai | — | 🆕 Discovered | Radar | 2026-06-27 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4433876871) | — |
+| 490 | 🆕 | MUFG | KSA Head of Systems Vice President | GCC | — | 🆕 Discovered | Radar | 2026-06-28 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4432631925) | — |
+| 491 | 🆕 | ADIB - Abu Dhabi Islamic Bank | Head of Products and Value Proposition - Business Banking | Dubai | — | 🆕 Discovered | Radar | 2026-06-28 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4432570466) | — |
+| 492 | 🆕 | MultiBank Group | Head of AI & BI Reporting | Dubai | — | 🆕 Discovered | Radar | 2026-06-28 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4432207562) | — |
+| 493 | 🆕 | CFI Financial Group | Group Head of Security | Dubai | — | 🆕 Discovered | Radar | 2026-06-28 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4431245524) | — |
+| 494 | 🆕 | Foreground. | Director Enterprise Architecture | Dubai | — | 🆕 Discovered | Radar | 2026-06-28 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4434256725) | — |
+
 
 
 

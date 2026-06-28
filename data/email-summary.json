@@ -2,133 +2,86 @@
   "meta": {
     "agent": "email-agent",
     "version": "3.0.0",
-    "generated_at": "2026-06-26T21:01:19.555185+03:00",
-    "duration_ms": 45069,
+    "generated_at": "2026-06-27T21:01:04.060782+03:00",
+    "duration_ms": 28938,
     "ttl_hours": 4,
     "status": "success",
     "error": null,
-    "run_id": "046a36c5",
+    "run_id": "16b521ed",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
     "status": "ok",
-    "scan_time": "2026-06-26T21:00:55.855574+03:00",
-    "total_scanned": 53,
+    "scan_time": "2026-06-27T21:00:51.191920+03:00",
+    "total_scanned": 22,
     "by_category": {
       "interview_invite": 0,
-      "recruiter_reach": 2,
+      "recruiter_reach": 1,
       "application_ack": 0,
       "rejection": 0,
       "assessment": 0,
-      "application_response": 2,
+      "application_response": 0,
       "follow_up_needed": 0,
-      "job_alert": 0,
-      "other": 49
+      "job_alert": 1,
+      "other": 20
     },
     "interview_invites": [],
     "recruiter_messages": [
       {
-        "id": "363224",
-        "from": "Abbott Talent Acquisition <donotreply@jobalerts.abbott.com>",
-        "subject": "Complete your application with Abbott",
-        "date": "Fri, 26 Jun 2026 13:03:52 +0000 (UTC)",
-        "unread": true,
-        "priority": "HIGH",
-        "score": 7,
-        "pipeline_match": "RAPP",
-        "confidence": 90,
-        "confidence_label": "high",
-        "evidence": [
-          "matched active pipeline company: RAPP",
-          "hiring sender context",
-          "hiring/application context",
-          "recruiter outreach classification",
-          "high priority score: 7"
-        ],
-        "why_actionable": "matched active pipeline company: RAPP | hiring sender context | hiring/application context | recruiter outreach classification"
-      },
-      {
-        "id": "363244",
-        "from": "\"RAKBANK.CAREER\" <careers@rakbank.ae>",
-        "subject": "Confirm your identity",
-        "date": "Fri, 26 Jun 2026 14:48:36 +0000 (UTC)",
+        "id": "363329",
+        "from": "\"Nadine from foundit\" <info@alerts.founditgulf.com>",
+        "subject": "Still at Saudi German Hospitals, Ahmed Nasr? Just confirm.",
+        "date": "Sat, 27 Jun 2026 17:09:35 +0000",
         "unread": true,
         "priority": "HIGH",
         "score": 7,
         "pipeline_match": "Conf",
-        "confidence": 90,
-        "confidence_label": "high",
+        "confidence": 75,
+        "confidence_label": "medium",
         "evidence": [
           "matched active pipeline company: Conf",
-          "hiring sender context",
           "hiring/application context",
           "recruiter outreach classification",
           "high priority score: 7"
         ],
-        "why_actionable": "matched active pipeline company: Conf | hiring sender context | hiring/application context | recruiter outreach classification"
+        "why_actionable": "matched active pipeline company: Conf | hiring/application context | recruiter outreach classification | high priority score: 7"
       }
     ],
     "application_acks": [],
     "rejections": [],
     "assessments": [],
-    "application_responses": [
+    "application_responses": [],
+    "follow_ups_needed": [],
+    "job_alerts": [
       {
-        "id": "363231",
-        "from": "Srini Gundelli <Srini@balancex.ai>",
-        "subject": "Role: Forward Deployed Medical Leader - Admin.ai ",
-        "date": "Fri, 26 Jun 2026 13:35:13 +0000",
+        "id": "363314",
+        "from": "GulfTalent Jobs <jobs@gulftalent.com>",
+        "subject": "Fusion Group needs a Project Manager - AML & Treasury",
+        "date": "Sat, 27 Jun 2026 08:09:42 -0500",
         "unread": true,
         "priority": "LOW",
         "score": 0,
         "pipeline_match": null,
-        "confidence": 55,
-        "confidence_label": "low",
+        "confidence": 25,
+        "confidence_label": "very_low",
         "evidence": [
-          "hiring/application context",
-          "application form/CV request with hiring context"
+          "automated job alert",
+          "known recruiter/job domain",
+          "hiring sender context",
+          "noise/job-alert guard applied"
         ],
-        "why_actionable": "hiring/application context | application form/CV request with hiring context"
-      },
-      {
-        "id": "363263",
-        "from": "Srini Gundelli <Srini@balancex.ai>",
-        "subject": "Re: Role: Forward Deployed Medical Leader - Admin.ai",
-        "date": "Fri, 26 Jun 2026 16:48:05 +0000",
-        "unread": true,
-        "priority": "LOW",
-        "score": 0,
-        "pipeline_match": null,
-        "confidence": 55,
-        "confidence_label": "low",
-        "evidence": [
-          "hiring/application context",
-          "application form/CV request with hiring context"
-        ],
-        "why_actionable": "hiring/application context | application form/CV request with hiring context"
+        "why_actionable": "not actionable: automated job alert | known recruiter/job domain | hiring sender context | noise/job-alert guard applied"
       }
     ],
-    "follow_ups_needed": [],
-    "job_alerts": [],
-    "actionable_count": 4,
+    "actionable_count": 1,
     "hot_alerts": [],
     "signals": [
       {
-        "company": "RAPP",
-        "signal": "recruiter_email",
-        "subject": "Complete your application with Abbott",
-        "sender": "Abbott Talent Acquisition <donotreply@jobalerts.abbott.com>",
-        "job_ids": [
-          "li-4430709777"
-        ],
-        "score": 7,
-        "timestamp": "2026-06-26T21:00:55.104279+03:00"
-      },
-      {
         "company": "Conf",
         "signal": "recruiter_email",
-        "subject": "Confirm your identity",
-        "sender": "\"RAKBANK.CAREER\" <careers@rakbank.ae>",
+        "subject": "Still at Saudi German Hospitals, Ahmed Nasr? Just confirm.",
+        "sender": "\"Nadine from foundit\" <info@alerts.founditgulf.com>",
         "job_ids": [
           "li-4432577586",
           "li-4431850827",
@@ -409,50 +362,17 @@
           "4375516082"
         ],
         "score": 7,
-        "timestamp": "2026-06-26T21:00:55.497970+03:00"
+        "timestamp": "2026-06-27T21:00:51.185521+03:00"
       }
     ],
     "pipeline_review_candidates": [
       {
-        "timestamp": "2026-06-26T21:00:55.855610+03:00",
-        "review_type": "possible_application_response",
-        "category": "application_response",
-        "email_id": "363231",
-        "subject": "Role: Forward Deployed Medical Leader - Admin.ai ",
-        "from": "Srini Gundelli <Srini@balancex.ai>",
-        "priority": "LOW",
-        "pipeline_match": null,
-        "status": "needs_human_review"
-      },
-      {
-        "timestamp": "2026-06-26T21:00:55.855619+03:00",
-        "review_type": "possible_application_response",
-        "category": "application_response",
-        "email_id": "363263",
-        "subject": "Re: Role: Forward Deployed Medical Leader - Admin.ai",
-        "from": "Srini Gundelli <Srini@balancex.ai>",
-        "priority": "LOW",
-        "pipeline_match": null,
-        "status": "needs_human_review"
-      },
-      {
-        "timestamp": "2026-06-26T21:00:55.855625+03:00",
+        "timestamp": "2026-06-27T21:00:51.191940+03:00",
         "review_type": "possible_recruiter_outreach",
         "category": "recruiter_reach",
-        "email_id": "363224",
-        "subject": "Complete your application with Abbott",
-        "from": "Abbott Talent Acquisition <donotreply@jobalerts.abbott.com>",
-        "priority": "HIGH",
-        "pipeline_match": "RAPP",
-        "status": "needs_human_review"
-      },
-      {
-        "timestamp": "2026-06-26T21:00:55.855630+03:00",
-        "review_type": "possible_recruiter_outreach",
-        "category": "recruiter_reach",
-        "email_id": "363244",
-        "subject": "Confirm your identity",
-        "from": "\"RAKBANK.CAREER\" <careers@rakbank.ae>",
+        "email_id": "363329",
+        "subject": "Still at Saudi German Hospitals, Ahmed Nasr? Just confirm.",
+        "from": "\"Nadine from foundit\" <info@alerts.founditgulf.com>",
         "priority": "HIGH",
         "pipeline_match": "Conf",
         "status": "needs_human_review"
@@ -461,91 +381,52 @@
     "llm_analysis": {
       "actionable_emails": [
         {
-          "id": "363224",
-          "subject": "Complete your application with Abbott",
-          "from": "Abbott Talent Acquisition <donotreply@jobalerts.abbott.com>",
-          "date": "Fri, 26 Jun 2026 13:03:52 +0000 (UTC)",
-          "category": "recruiter_reach",
-          "urgency": "high",
-          "intent": "Abbott wants Ahmed to finish an incomplete application for Commercial Execution Director.",
-          "action": "respond",
-          "response_deadline": "48h",
-          "notes": "Complete application link if role is still attractive."
-        },
-        {
-          "id": "363231",
-          "subject": "Role: Forward Deployed Medical Leader - Admin.ai ",
-          "from": "Srini Gundelli <Srini@balancex.ai>",
-          "date": "Fri, 26 Jun 2026 13:35:13 +0000",
-          "category": "application_response",
-          "urgency": "low",
-          "intent": "Srini wanted Ahmed's latest CV and a short motivation note for founder review.",
-          "action": "read_and_file",
-          "response_deadline": "when convenient",
-          "notes": "Superseded by 363263; CV and note already sent."
-        },
-        {
-          "id": "363244",
-          "subject": "Confirm your identity",
-          "from": "\"RAKBANK.CAREER\" <careers@rakbank.ae>",
-          "date": "Fri, 26 Jun 2026 14:48:36 +0000 (UTC)",
+          "id": "363329",
+          "subject": "Still at Saudi German Hospitals, Ahmed Nasr? Just confirm.",
+          "from": "\"Nadine from foundit\" <info@alerts.founditgulf.com>",
+          "date": "Sat, 27 Jun 2026 17:09:35 +0000",
           "category": "recruiter_reach",
           "urgency": "low",
-          "intent": "RAKBANK wanted Ahmed to confirm identity using a short-lived one-time passcode.",
-          "action": "no_action",
-          "response_deadline": "when convenient",
-          "notes": "OTP expired in 10 minutes; restart login if still needed."
-        },
-        {
-          "id": "363263",
-          "subject": "Re: Role: Forward Deployed Medical Leader - Admin.ai",
-          "from": "Srini Gundelli <Srini@balancex.ai>",
-          "date": "Fri, 26 Jun 2026 16:48:05 +0000",
-          "category": "application_response",
-          "urgency": "medium",
-          "intent": "Srini confirms the application was submitted and will follow up after founder review.",
+          "intent": "The sender wants Ahmed to update or confirm his foundit profile details for job matching.",
           "action": "read_and_file",
-          "response_deadline": "1 week",
-          "notes": "No reply needed now; track next-week feedback."
+          "response_deadline": "when convenient",
+          "notes": "Automated profile-update prompt, no direct recruiter opportunity proven."
         }
       ],
       "summary": {
-        "total_actionable": 4,
+        "total_actionable": 1,
         "critical_count": 0,
         "requires_interview_prep": false,
         "requires_assessment": false,
-        "recruiter_top_opportunities": [
-          "Srini Gundelli - Forward Deployed Medical Leader at Admin.ai",
-          "Abbott Talent Acquisition - Commercial Execution Director"
-        ],
-        "top_priority": "363224",
-        "daily_focus": "Finish the Abbott application first, then monitor Admin.ai founder feedback next week."
+        "recruiter_top_opportunities": [],
+        "top_priority": null,
+        "daily_focus": "No urgent email action is needed today; prioritize higher-quality direct recruiter or interview leads."
       }
     }
   },
   "kpi": {
-    "emails_processed": 53,
-    "actionable": 4,
+    "emails_processed": 22,
+    "actionable": 1,
     "interviews_detected": 0,
-    "recruiter_messages": 2,
-    "unread_actionable": 4
+    "recruiter_messages": 1,
+    "unread_actionable": 1
   },
   "recommendations": [
     {
-      "id": "rec-046a36c5-0",
+      "id": "rec-16b521ed-0",
       "action": "review_and_respond",
-      "target": "2 recruiter message(s)",
+      "target": "1 recruiter message(s)",
       "reason": "Recruiter outreach could lead to opportunities",
       "urgency": "high",
-      "timestamp": "2026-06-26T21:01:19.554990+03:00"
+      "timestamp": "2026-06-27T21:01:04.060383+03:00"
     },
     {
-      "id": "rec-046a36c5-1",
+      "id": "rec-16b521ed-1",
       "action": "check_inbox",
-      "target": "4 unread actionable email(s)",
+      "target": "1 unread actionable email(s)",
       "reason": "Unread emails need attention",
       "urgency": "high",
-      "timestamp": "2026-06-26T21:01:19.555016+03:00"
+      "timestamp": "2026-06-27T21:01:04.060464+03:00"
     }
   ]
 }

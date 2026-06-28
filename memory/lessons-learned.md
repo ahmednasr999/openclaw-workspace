@@ -1509,3 +1509,17 @@ Daily LinkedIn publishing must fail closed unless the actual image is reference-
 The CMO weekly report flagged `The 90-Day AI Test` as a possible duplicate because it counted both the deleted 09:30 bad-visual post and the corrected 12:31 sketchnote repost as live posts.
 ### Do differently
 When reconciling LinkedIn cadence, distinguish rejected/deleted/retracted posts from live reposts before reporting duplicates or backlog. Exclude retracted posts from live cadence counts and metrics-gap backlogs, and keep an audit entry so the corrected repost remains explainable without looking like a duplicate publish.
+
+## 2026-06-27 - Email Synthetic Rejection Regression Is Still Open
+
+### Incident
+The daily email synthetic harness failed with `application rejection: actionable=True expected False` and `confidence 90 > 80`, exiting 1. This repeats the June 19 rejection-actionability issue, so the lesson has not yet been codified into the classifier path.
+### Do differently
+Treat rejection actionability as an open regression until `scripts/email-synthetic-harness.py` passes. For email triage, force plain application rejections to non-actionable and cap confidence unless the provided excerpt explicitly asks Ahmed to reply, schedule, submit documents, or take another concrete step.
+
+## 2026-06-27 - OpenClaw Sandbox Cron Edits Must Avoid apply_patch
+
+### Incident
+The weekly skill tune-up tried `apply_patch` inside `sandbox_exec` and hit `Command 'apply_patch' not found` before falling back to other edit mechanics. This repeats a known OpenClaw sandbox limitation.
+### Do differently
+In OpenClaw sandbox/gateway cron sessions, check edit-tool availability before changing files. Use `ed`, `ex`, `perl`, or a valid GNU unified diff when `apply_patch` is unavailable, and reserve Codex `apply_patch` for native Code-mode turns where that command exists.
