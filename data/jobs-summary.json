@@ -2,19 +2,19 @@
   "meta": {
     "agent": "jobs-review",
     "version": "2.0.0",
-    "generated_at": "2026-06-28T06:40:10.058948+03:00",
-    "duration_ms": 133279,
+    "generated_at": "2026-06-28T08:05:05.447061+03:00",
+    "duration_ms": 171077,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "242f8cea",
+    "run_id": "64471fd4",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
-    "generated_at": "2026-06-28T06:40:10.005646+03:00",
-    "total_candidates": 16,
-    "reviewed": 16,
+    "generated_at": "2026-06-28T08:05:05.395336+03:00",
+    "total_candidates": 14,
+    "reviewed": 14,
     "submit": [
       {
         "id": "linkedin_jobspy-li-4434253758",
@@ -47,7 +47,7 @@
         "first_seen": "2026-06-28",
         "career_fit_score": 9,
         "verdict": "SUBMIT",
-        "verdict_reason": "Excellent fit for executive technology operations, strategy execution, PMO alignment, and operational excellence in Dubai. [5D role=2 | seniority=2 | geo=2 | strategic=1 | evidence=2 | fit=9/10 | llm=9] [CMO outreach queued for TALENTMATE]",
+        "verdict_reason": "Excellent GCC executive fit across technology strategy, PMO alignment, operating cadence, budgeting, and organizational effectiveness. [5D role=2 | seniority=2 | geo=2 | strategic=1 | evidence=2 | fit=9/10 | llm=9] [CMO outreach queued for TALENTMATE]",
         "watchlist_matches": {
           "company_hits": [],
           "domain_hits": [],
@@ -79,7 +79,7 @@
       }
     ],
     "review": [],
-    "skip_count": 15,
+    "skip_count": 13,
     "unreviewed_count": 0,
     "thresholds": {
       "submit": 6,
@@ -88,32 +88,32 @@
     "pipeline": {
       "l0_auto_skip": 0,
       "l1_jd_enriched": 0,
-      "l1_jd_coverage": "16/16",
+      "l1_jd_coverage": "14/14",
       "llm_model": "openai/gpt-5.5",
-      "llm_jobs_reviewed": 16,
-      "r2_latency_ms": 128651,
+      "llm_jobs_reviewed": 14,
+      "r2_latency_ms": 166636,
       "r2_fallbacks": 0
     },
     "kpi": {
-      "submit_rate": 0.0625,
+      "submit_rate": 0.07142857142857142,
       "review_rate": 0.0,
-      "skip_rate": 0.9375,
-      "avg_fit_score": 5.2,
+      "skip_rate": 0.9285714285714286,
+      "avg_fit_score": 4.9,
       "l0_filter_rate": 0.0,
       "llm_review_rate": 100.0
     }
   },
   "kpi": {
-    "total_loaded": 16,
+    "total_loaded": 14,
     "l0_auto_skip": 0,
     "l1_jd_enriched": 0,
     "l2_filtered": 0,
     "submit_count": 1,
     "review_count": 0,
-    "skip_count": 15,
-    "submit_rate": 6.2,
-    "avg_fit_score": 5.2,
-    "r2_latency_ms": 128651
+    "skip_count": 13,
+    "submit_rate": 7.1,
+    "avg_fit_score": 4.9,
+    "r2_latency_ms": 166636
   },
   "recommendations": []
 }

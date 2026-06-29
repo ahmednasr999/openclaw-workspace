@@ -2,9 +2,9 @@
   "task": "cron-dashboard-updater",
   "status": "ok",
   "returncode": 0,
-  "started_at": "2026-06-28T06:07:01+03:00",
-  "finished_at": "2026-06-28T06:08:29+03:00",
-  "duration_seconds": 88,
+  "started_at": "2026-06-29T06:07:01+03:00",
+  "finished_at": "2026-06-29T06:08:14+03:00",
+  "duration_seconds": 73,
   "log_path": "/root/.openclaw/workspace/logs/cron/cron-dashboard-updater.log",
   "lock_path": "/var/lock/openclaw/cron-dashboard-updater.lock",
   "host": "srv1352768"

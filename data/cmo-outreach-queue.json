@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-28T06:40:10.012496+03:00",
+  "last_updated": "2026-06-28T05:25:47.598303Z",
   "items": [
     {
       "company": "Netcracker Technology in Dubai, United Arab Emirates â Apply on Wuzzuf",
@@ -526,7 +526,42 @@
       "job_url": "https://www.linkedin.com/jobs/view/4427835309",
       "verdict": "SUBMIT",
       "queued_at": "2026-06-21T10:38:41.519737+03:00",
-      "status": "queued"
+      "status": "researched",
+      "exported_at": "2026-06-28T05:10:26.705503Z",
+      "warm_intro_rating": "high",
+      "warm_intro_candidates": [
+        {
+          "name": "Taq Hussain",
+          "title": "Co-Founder @ Generative Futures | Compliance | Crypto | FinTech | Banking",
+          "linkedin_url": "https://ae.linkedin.com/in/taq-hussain-39b3ab44",
+          "why": "LinkedIn job page exposes him as the direct job poster for Head of Operations - Crypto, and the Generative Futures company post says to contact Taq Hussain for this exact role."
+        },
+        {
+          "name": "Luigi Negri",
+          "title": "Generative Futures recruiter / co-listed company contact",
+          "linkedin_url": "https://ae.linkedin.com/in/luigi-negri1",
+          "why": "Named on the same Generative Futures hiring post as the second contact for adjacent Dubai leadership/engineering searches. Useful fallback if Taq does not respond."
+        }
+      ],
+      "queue_notes": [
+        "Job page was reachable as a guest using the local LinkedIn cookie jar, but the session was not authenticated; LinkedIn still showed sign-in links.",
+        "The job page itself exposes a direct poster: Taq Hussain, Co-Founder at Generative Futures, with crypto/fintech/banking focus.",
+        "Generative Futures company page confirms the exact Head of Operations | Crypto Exchange role and says to contact Taq Hussain.",
+        "Role fit is commercially strong for operations, governance, fintech, payments, and scaling, but crypto exchange depth is a real caveat."
+      ],
+      "next_actions": [
+        "Draft-first approach only; do not send without Ahmed approval.",
+        "Prioritize Taq Hussain with a concise note around GCC payments/regulated operations, PMO governance, scaling controls, and transformation delivery.",
+        "Use Luigi Negri only as a fallback if Taq does not respond or if Ahmed wants a broader Generative Futures recruiter connection.",
+        "Suggested connection note: Hi Taq, I saw your Head of Operations - Crypto mandate in Dubai. My background is GCC payments, regulated operations, PMO governance, and digital transformation delivery. Happy to connect if this search is still active."
+      ],
+      "processed_at": "2026-06-28T05:24:47.095446Z",
+      "research_sources": [
+        "local cmo-outreach-queue.json",
+        "local jobs-raw/linkedin.json and jobs feedback logs",
+        "local LinkedIn cookie jar used for guest LinkedIn job/company page fetches",
+        "public LinkedIn job/company pages and public search snippets"
+      ]
     },
     {
       "company": "EjadTech - إيجاد التقنية",
@@ -535,7 +570,36 @@
       "job_url": "https://www.linkedin.com/jobs/view/4426228517",
       "verdict": "SUBMIT",
       "queued_at": "2026-06-22T14:46:14.587484+03:00",
-      "status": "queued"
+      "status": "researched",
+      "exported_at": "2026-06-28T05:10:26.705532Z",
+      "warm_intro_rating": "medium",
+      "warm_intro_candidates": [
+        {
+          "name": "EjadTech PMO / executive hiring route",
+          "title": "Current-company people search, companyId 35458343, title=Director Project Management Office",
+          "linkedin_url": "https://www.linkedin.com/search/results/people/?facetCurrentCompany=35458343&title=Director%20Project%20Management%20Office",
+          "why": "The role fit is excellent, but no named recruiter or job poster was exposed in the guest LinkedIn page. Authenticated people search is needed to pick a named HR, PMO, or executive contact."
+        }
+      ],
+      "queue_notes": [
+        "Job page confirms a Riyadh PMO Director mandate at EjadTech, companyId 35458343.",
+        "The JD is a very strong Ahmed fit: enterprise PMO, portfolio governance, delivery excellence, transformation, executive reporting, client leadership, Arabic/English.",
+        "No direct job poster was exposed on the public job page; local cookie jar still returned guest LinkedIn pages, not an authenticated profile session.",
+        "Company page confirms EjadTech is a Saudi digital transformation and technology localization company with active posts around governance, operations/workflow, data/AI, and enterprise platforms."
+      ],
+      "next_actions": [
+        "Hold for authenticated LinkedIn people search before sending a connection request.",
+        "When authenticated search is available, filter current company 35458343 for Talent Acquisition, HR, PMO, Program Director, Delivery Director, or executive leadership.",
+        "If Ahmed wants to proceed now, use the company route only: follow EjadTech and engage with a recent governance/PMO post before connecting with a named employee.",
+        "Suggested note once a named contact is found: Hi [Name], I saw EjadTech’s PMO Director mandate in Riyadh. My work has focused on GCC enterprise PMO, portfolio governance, and transformation delivery across regulated sectors. Happy to connect."
+      ],
+      "processed_at": "2026-06-28T05:24:47.095446Z",
+      "research_sources": [
+        "local cmo-outreach-queue.json",
+        "local jobs-raw/linkedin.json and jobs feedback logs",
+        "local LinkedIn cookie jar used for guest LinkedIn job/company page fetches",
+        "public LinkedIn job/company pages and public search snippets"
+      ]
     },
     {
       "company": "Dah Chong Hong Holdings Limited",
@@ -544,7 +608,35 @@
       "job_url": "https://www.linkedin.com/jobs/view/4427931661",
       "verdict": "SUBMIT",
       "queued_at": "2026-06-22T14:46:14.598195+03:00",
-      "status": "queued"
+      "status": "researched",
+      "exported_at": "2026-06-28T05:10:26.705535Z",
+      "warm_intro_rating": "low",
+      "warm_intro_candidates": [
+        {
+          "name": "Dah Chong Hong technology/referral route",
+          "title": "Current-company people search, companyId 1142992, title=Head of Information Technology",
+          "linkedin_url": "https://www.linkedin.com/search/results/people/?facetCurrentCompany=1142992&title=Head%20of%20Information%20Technology",
+          "why": "The job page confirms the company and role, but no job poster was exposed and the mandate is Hong Kong/Asia-focused with Cantonese/Mandarin/English requirements."
+        }
+      ],
+      "queue_notes": [
+        "LinkedIn job page confirms Head of Technology (Healthcare & Logistics), companyId 1142992, Hong Kong location.",
+        "JD is substantively relevant to healthcare/logistics IT transformation, ERP/WMS modernization, cloud, data/AI, GxP, compliance, and multi-country operations.",
+        "This is outside Ahmed’s GCC-first strategy and requires Cantonese, Mandarin, and English, so outreach priority is low despite domain fit.",
+        "No direct job poster was visible from the guest LinkedIn page; authenticated search would be needed for named contacts."
+      ],
+      "next_actions": [
+        "Do not prioritize this week unless Ahmed explicitly wants Hong Kong/Asia roles.",
+        "If pursued, search current company 1142992 for healthcare/logistics technology leadership or HR before drafting a connection note.",
+        "Suggested note only if Ahmed approves Asia outreach: Hi [Name], I saw DCH’s Head of Technology role across healthcare and logistics. My background is healthcare IT transformation, governance, and regulated multi-country delivery. Happy to connect if regional experience is relevant."
+      ],
+      "processed_at": "2026-06-28T05:24:47.095446Z",
+      "research_sources": [
+        "local cmo-outreach-queue.json",
+        "local jobs-raw/linkedin.json and jobs feedback logs",
+        "local LinkedIn cookie jar used for guest LinkedIn job/company page fetches",
+        "public LinkedIn job/company pages and public search snippets"
+      ]
     },
     {
       "company": "Foreground.",
@@ -553,7 +645,42 @@
       "job_url": "https://www.linkedin.com/jobs/view/4432914892",
       "verdict": "SUBMIT",
       "queued_at": "2026-06-27T04:40:56.472387+03:00",
-      "status": "queued"
+      "status": "researched",
+      "exported_at": "2026-06-28T05:10:26.705537Z",
+      "warm_intro_rating": "high",
+      "warm_intro_candidates": [
+        {
+          "name": "Rana Taha",
+          "title": "Foreground. hiring contact / recruiter route",
+          "linkedin_url": "https://lb.linkedin.com/in/aboutaharana",
+          "why": "Foreground company page has a recent post saying “Rana Taha is hiring,” and the current AI Office campaign is being run by Foreground for an unnamed Riyadh client."
+        },
+        {
+          "name": "Foreground. talent team",
+          "title": "Recruitment / executive search route for Enterprise AI Office campaign",
+          "linkedin_url": "https://ae.linkedin.com/company/foregroundgroup",
+          "why": "Company page confirms Foreground is running an Enterprise AI Office hiring campaign in Riyadh with 11 roles and states the search is confidential."
+        }
+      ],
+      "queue_notes": [
+        "Correct LinkedIn company is Foreground. / foregroundgroup, companyId 76501753, not the older unrelated Foreground page.",
+        "Job page confirms the Director - AI Governance & Adoption role reports to the Chief Artificial Intelligence Officer for an unnamed Riyadh client.",
+        "Foreground company page confirms a live Enterprise AI Office campaign in Riyadh: 11 roles, three tiers, confidential search.",
+        "Strong Ahmed fit: AI governance, responsible adoption, enterprise transformation, risk/compliance, change management, AI literacy, and executive stakeholder alignment."
+      ],
+      "next_actions": [
+        "Draft-first approach only; do not send without Ahmed approval.",
+        "Prioritize Rana Taha as the named hiring route, with the Enterprise AI Office / AI governance angle.",
+        "If Rana accepts, follow up by asking whether the AI Governance & Adoption Director mandate is still active and whether Ahmed’s GCC transformation/governance profile is relevant.",
+        "Suggested connection note: Hi Rana, I saw Foreground’s Riyadh Enterprise AI Office search, especially the AI Governance & Adoption role. My work spans GCC digital transformation, PMO governance, regulated delivery, and AI adoption. Happy to connect."
+      ],
+      "processed_at": "2026-06-28T05:24:47.095446Z",
+      "research_sources": [
+        "local cmo-outreach-queue.json",
+        "local jobs-raw/linkedin.json and jobs feedback logs",
+        "local LinkedIn cookie jar used for guest LinkedIn job/company page fetches",
+        "public LinkedIn job/company pages and public search snippets"
+      ]
     },
     {
       "company": "DP World",
@@ -562,14 +689,55 @@
       "job_url": "https://www.linkedin.com/jobs/view/4433876871",
       "verdict": "SUBMIT",
       "queued_at": "2026-06-27T04:40:56.481457+03:00",
-      "status": "queued"
+      "status": "researched",
+      "exported_at": "2026-06-28T05:10:26.705540Z",
+      "warm_intro_rating": "high",
+      "warm_intro_candidates": [
+        {
+          "name": "Buban Ganguly",
+          "title": "Global Talent Acquisition | Technology & Leadership at DP World",
+          "linkedin_url": "https://in.linkedin.com/in/bubanganguly",
+          "why": "Public LinkedIn search snippet identifies him as DP World global talent acquisition for technology and leadership, the best match for a Group Director strategy/technology operations role."
+        },
+        {
+          "name": "Lance Petersen",
+          "title": "Group Senior Manager: Talent Acquisition at DP World",
+          "linkedin_url": "https://ae.linkedin.com/in/lancepetersen",
+          "why": "Dubai/UAE public LinkedIn snippet shows group senior TA at DP World. Strong local recruiting route if Buban is not the owner."
+        },
+        {
+          "name": "Amer Jaouni",
+          "title": "Senior Manager, Talent Acquisition at DP World",
+          "linkedin_url": "https://ae.linkedin.com/in/amer-jaouni",
+          "why": "UAE public LinkedIn snippet shows senior TA at DP World. Good secondary recruiter route for Dubai-based leadership mandates."
+        }
+      ],
+      "queue_notes": [
+        "Job page confirms DP World companyId 163494 and Group Director - Strategy & Technology Operations in Dubai.",
+        "The JD is an extremely strong Ahmed fit: strategy execution, technology operating model, product/engineering/PMO integration, executive cadence, financial discipline, decision support, and organizational effectiveness.",
+        "No direct job poster was exposed on the public job page, but public LinkedIn snippets surfaced multiple DP World TA leaders.",
+        "This is the strongest warm-intro target in the queue because both role fit and company geography align tightly with Ahmed’s positioning."
+      ],
+      "next_actions": [
+        "Draft-first approach only; do not send without Ahmed approval.",
+        "Prioritize Buban Ganguly first because his public snippet is technology and leadership talent acquisition at DP World.",
+        "Use Lance Petersen or Amer Jaouni as UAE-based TA fallbacks if Buban does not respond.",
+        "Suggested connection note: Hi Buban, I saw DP World’s Group Director - Strategy & Technology Operations role in Dubai. My work spans GCC transformation, PMO governance, executive cadence, and technology operating models. Happy to connect if this mandate is active."
+      ],
+      "processed_at": "2026-06-28T05:24:47.095446Z",
+      "research_sources": [
+        "local cmo-outreach-queue.json",
+        "local jobs-raw/linkedin.json and jobs feedback logs",
+        "local LinkedIn cookie jar used for guest LinkedIn job/company page fetches",
+        "public LinkedIn job/company pages and public search snippets"
+      ]
     }
   ],
   "last_weekly_review": {
-    "reviewed_at": "2026-06-21T05:15:17Z",
+    "reviewed_at": "2026-06-28T05:25:47Z",
     "cron": "CMO Weekly Outreach Queue - Sunday",
-    "queued_count": 2,
-    "status": "processed",
-    "note": "Weekly script ran and exported 2 queued items. Publicis Sapient and ServiceNow were researched using local LinkedIn job/outreach data plus public LinkedIn snippets. Authenticated LinkedIn browser/cookie tooling was unavailable in this cron turn, so cookies were not inspected or modified. No external LinkedIn actions were taken; next actions require Ahmed approval."
+    "queued_count": 0,
+    "status": "no_queued_companies",
+    "note": "Weekly script ran and exported 0 queued items. Existing outreach records are already marked researched, so no LinkedIn prospecting, warm-intro review, cookie inspection, or outreach actions were needed in this cron turn. No external LinkedIn actions were taken."
   }
 }

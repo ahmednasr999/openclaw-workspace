@@ -1,0 +1,743 @@
+{
+  "last_updated": "2026-06-28T05:25:47.598303Z",
+  "items": [
+    {
+      "company": "Netcracker Technology in Dubai, United Arab Emirates â Apply on Wuzzuf",
+      "job_title": "Program Director job",
+      "source": "google",
+      "job_url": "https://wuzzuf.net/jobs/p/es7vyfgfwwoy-program-director-netcracker-technology-dubai-united-arab-emirates",
+      "verdict": "SUBMIT",
+      "queued_at": "2026-04-08T03:00:00+02:00",
+      "status": "researched",
+      "exported_at": "2026-04-08T01:34:07.458893Z",
+      "processed_at": "2026-04-26T05:18:11Z",
+      "warm_intro_rating": "medium",
+      "warm_intro_candidates": [
+        {
+          "name": "Guruprasath E",
+          "title": "Lead, Talent Acquisition at Netcracker Technology",
+          "linkedin_url": "https://in.linkedin.com/in/recruiterguru",
+          "why": "Public LinkedIn result shows a Netcracker TA lead with 500+ connections and active Netcracker hiring posts. Best recruiter route for the Dubai Program Director / managed services mandate."
+        },
+        {
+          "name": "Sushmita Shastri",
+          "title": "Senior Associate - Talent Acquisition at Netcracker Technology",
+          "linkedin_url": "https://in.linkedin.com/in/sushmita-shastri-8920b4128",
+          "why": "Already present in local outreach history for Netcracker and public LinkedIn result confirms Netcracker TA/recruiting activity. Good secondary recruiter route if Guruprasath is not responsive."
+        }
+      ],
+      "queue_notes": [
+        "No new queued companies were exported this Sunday; this was an older exported backlog item from 2026-04-08, now processed.",
+        "Local outreach history already had Netcracker people: Sushmita Shastri, Guruprasath E, Ashwini Gai, and Nitika Mathur. Public search validated Guruprasath and Sushmita as the strongest TA routes.",
+        "LinkedIn cookies imported into Camoufox, but LinkedIn still redirected to login, so profile validation used local history plus public LinkedIn snippets instead of an authenticated LinkedIn people search.",
+        "Role fit is moderate: senior transformation/program governance is strong, but telecom/BSS domain specificity makes this warmer as recruiter outreach than as direct executive sponsor outreach."
+      ],
+      "next_actions": [
+        "Draft-first approach only; do not send connection requests without Ahmed approval.",
+        "Prioritize Guruprasath E, then Sushmita Shastri, with a concise note around Dubai Program Director, multi-country PMO, client governance, profitability, and digital transformation delivery.",
+        "If one accepts, follow with a short message asking whether the Dubai Program Director / managed services mandate is still active and who owns the hiring process.",
+        "Suggested connection note: Hi Guruprasath — I saw Netcracker’s Dubai Program Director mandate. I’ve led multi-country PMO and digital transformation portfolios across GCC banking/payments and healthcare, including steering governance and client delivery. Happy to connect if this is still active."
+      ]
+    },
+    {
+      "company": "Hitachi Energy",
+      "job_title": "Head of Distribution Automation Global Delivery Center",
+      "source": "linkedin",
+      "job_url": "https://www.linkedin.com/jobs/view/4383909401",
+      "verdict": "SUBMIT",
+      "queued_at": "2026-04-08T03:00:00+02:00",
+      "status": "researched",
+      "exported_at": "2026-04-08T01:34:07.458957Z",
+      "processed_at": "2026-04-26T05:18:11Z",
+      "warm_intro_rating": "high",
+      "warm_intro_candidates": [
+        {
+          "name": "Faizal Khan",
+          "title": "Lead Talent Partner - COE at Hitachi Energy for UAE, Egypt and South Africa",
+          "linkedin_url": "https://in.linkedin.com/in/faizal-khan-339267a1",
+          "why": "Public LinkedIn result points to a Hitachi Energy talent partner covering UAE/Egypt/South Africa. Best direct recruiting route for a Dubai-based global delivery leadership role."
+        },
+        {
+          "name": "Helga-Carla Benegui (Botz)",
+          "title": "Global Head of HR for Functions / Head of HR MEA at Hitachi Energy",
+          "linkedin_url": "https://ae.linkedin.com/in/helga-botz",
+          "why": "Senior HR leader for MEA at Hitachi Energy. Good warm route for leadership-level fit, especially if the role sits across functions and geographies."
+        },
+        {
+          "name": "Nader Abdellatif",
+          "title": "Hitachi Energy leader in Dubai with current full P&L responsibility",
+          "linkedin_url": "https://ae.linkedin.com/in/nader-abdellatif-1606418",
+          "why": "Business-side senior leader in Dubai with P&L responsibility. Good strategic sponsor route because the role itself has future P&L ownership and cross-functional delivery model design."
+        }
+      ],
+      "queue_notes": [
+        "No new queued companies were exported this Sunday; this was an older exported backlog item from 2026-04-08, now processed.",
+        "The role is one of the strongest warm-intro candidates in the queue: blank-page global delivery model, P&L ownership, digital fulfillment/e-commerce, customer experience, and cross-functional operating model design all align with Ahmed’s transformation narrative.",
+        "Public sources show the role is/was posted across LinkedIn and job mirrors with Dubai included as a client-provided location. The Muse page says the job is no longer available, so outreach should position as relationship-building and verification, not assume the vacancy remains open.",
+        "LinkedIn cookies imported into Camoufox, but LinkedIn still redirected to login, so validation used local job data plus public LinkedIn snippets."
+      ],
+      "next_actions": [
+        "Draft-first approach only; do not send connection requests without Ahmed approval.",
+        "Prioritize Faizal Khan first as the UAE/Egypt/South Africa talent partner; use Helga-Carla Benegui as the senior HR escalation route if Faizal does not respond.",
+        "Use Nader Abdellatif as the business-side connection target if Ahmed wants a strategic sponsor route rather than recruiter route.",
+        "Suggested connection note: Hi Faizal — I saw Hitachi Energy’s Distribution Automation global delivery leadership mandate in Dubai. I’ve led multi-country transformation/PMO portfolios across GCC healthcare and payments, with governance, delivery model design, and executive stakeholder ownership. Happy to connect."
+      ]
+    },
+    {
+      "company": "Thecignagroup",
+      "job_title": "Head of Transformation job in Dubai, United Arab Emirates - Cigna",
+      "source": "exa-web",
+      "job_url": "https://jobs.thecignagroup.com/us/en/job/26000401/Head-of-Transformation",
+      "verdict": "SUBMIT",
+      "queued_at": "2026-04-09T21:28:50.464665+02:00",
+      "status": "researched",
+      "exported_at": "2026-04-12T05:10:23.070371Z",
+      "processed_at": "2026-04-12T05:18:00Z",
+      "warm_intro_rating": "high",
+      "warm_intro_candidates": [
+        {
+          "name": "Leah Cotterill",
+          "title": "Chief Executive Officer, Middle East And Africa (outside KSA)",
+          "linkedin_url": "https://ae.linkedin.com/in/leah-cotterill-24500019",
+          "why": "Regional CEO in Dubai with direct MEA ownership. Best senior sponsor path for a transformation mandate."
+        },
+        {
+          "name": "Sevda Esenturk",
+          "title": "Head of HR, Cigna Healthcare International",
+          "linkedin_url": "https://ae.linkedin.com/in/sevdaakcay",
+          "why": "Dubai-based HR leader responsible for International Health people strategy across MEA, APAC, Europe, and the US. Strongest HR route for role visibility."
+        },
+        {
+          "name": "Samer Taleb",
+          "title": "Chief Financial Officer, Middle East And Africa / former Head of Strategy",
+          "linkedin_url": "https://ae.linkedin.com/in/samertaleb",
+          "why": "Direct strategy and execution adjacency to the transformation office. Strong business-side sponsor candidate."
+        }
+      ],
+      "queue_notes": [
+        "Local LinkedIn cookie file was present but browser session still required password, so profile validation relied on local workspace data plus active LinkedIn public profile fetches.",
+        "Cigna is the warmest queue item this week because Ahmed has live GCC healthcare transformation credibility and the role sits inside the same regional transformation context."
+      ],
+      "next_actions": [
+        "Prioritize Leah Cotterill and Sevda Esenturk for connection requests.",
+        "Use a healthcare-transformation angle, not a generic job-seeker note.",
+        "If one connection is accepted, follow with a short note referencing MEA transformation, data modernization, and Ahmed's current SGH-group mandate."
+      ]
+    },
+    {
+      "company": "Involvedsolutions",
+      "job_title": "PMO Director - Finance Transformation",
+      "source": "exa-web",
+      "job_url": "https://www.involvedsolutions.com/jobs/625854-PMO-Director---Finance-Transformation",
+      "verdict": "SUBMIT",
+      "queued_at": "2026-04-09T21:28:50.468494+02:00",
+      "status": "researched",
+      "exported_at": "2026-04-12T05:10:23.070405Z",
+      "processed_at": "2026-04-12T05:18:00Z",
+      "warm_intro_rating": "medium",
+      "warm_intro_candidates": [
+        {
+          "name": "Abs Khan",
+          "title": "Director at Involved Solutions",
+          "linkedin_url": "https://ae.linkedin.com/in/abskhan",
+          "why": "Dubai-based director at the recruiting firm. Shared GCC tech hiring context and a Talabat connection make this the strongest warm-ish route."
+        },
+        {
+          "name": "Jack Gibson",
+          "title": "Recruitment Consultant at Involved Solutions",
+          "linkedin_url": "https://uk.linkedin.com/in/1jack-gibson",
+          "why": "Direct recruiter at the firm, useful if the PMO Director search is being run cross-border from London."
+        }
+      ],
+      "queue_notes": [
+        "This looks cooler than Cigna because the company is a staffing/recruiting intermediary, not the end employer.",
+        "Abs Khan is still worth prioritizing because of his UAE location and prior Talabat recruiting experience, which creates a credible shared angle for Ahmed."
+      ],
+      "next_actions": [
+        "Send the first connection request to Abs Khan with a shared Talabat and GCC transformation angle.",
+        "Treat this as recruiter outreach, not a direct business-leader introduction.",
+        "If no reply in 5 to 7 days, follow with Jack Gibson or ask Abs directly whether he owns the PMO Director mandate."
+      ]
+    },
+    {
+      "company": "Salesforce",
+      "job_title": "Service Delivery Director",
+      "source": "linkedin_jobspy",
+      "job_url": "https://www.linkedin.com/jobs/view/4420496035",
+      "verdict": "SUBMIT",
+      "queued_at": "2026-06-05T12:48:51.236198+03:00",
+      "status": "researched",
+      "exported_at": "2026-06-07T05:10:17.867404Z",
+      "processed_at": "2026-06-07T05:27:00Z",
+      "warm_intro_rating": "medium",
+      "warm_intro_candidates": [
+        {
+          "name": "Taha Basri",
+          "title": "Salesforce, Dubai / UAE market profile",
+          "linkedin_url": "https://ae.linkedin.com/in/tahabasri",
+          "why": "Public LinkedIn result shows a Dubai-based Salesforce profile active around UAE AI/digital transformation. Best business-side network route found when no direct job poster was visible. Validate exact role before asking Ahmed to send a request."
+        },
+        {
+          "name": "Khaled El Fakharany",
+          "title": "Salesforce, Dubai / Middle East enterprise sales profile",
+          "linkedin_url": "https://ie.linkedin.com/in/khaledfakharany",
+          "why": "Public LinkedIn result shows Salesforce in Dubai with Middle East enterprise sales context. Useful as a regional Salesforce insider route, but not confirmed as the hiring manager."
+        },
+        {
+          "name": "Sean Caruana",
+          "title": "SOLV Recruitment, Salesforce UAE/KSA ecosystem recruiter",
+          "linkedin_url": "https://ae.linkedin.com/company/solvrecruitment",
+          "why": "Not a Salesforce employee, but local Salesforce ecosystem recruiter publicly posting about UAE/KSA Salesforce networking. Useful secondary route if direct Salesforce contacts stay cold."
+        }
+      ],
+      "queue_notes": [
+        "Local job data and public LinkedIn page confirm the role is a Middle East Service Delivery Director role in Customer Success, based UAE or KSA, requiring regional delivery leadership, governance, CSAT/NPS, utilization, revenue, margin, partner ecosystem, and C-level stakeholder management.",
+        "Authenticated browser tooling was not exposed in this cron turn, and the LinkedIn skill forbids cookie extraction/repair. No cookies were inspected or modified; validation used local job data plus public LinkedIn pages/snippets.",
+        "Warmth is medium: role fit is strong for GCC transformation/program delivery, but Salesforce platform/services specificity and no visible direct job poster make the intro path less warm than RAKBANK."
+      ],
+      "next_actions": [
+        "Draft-first approach only; do not send connection requests without Ahmed approval.",
+        "Prioritize Taha Basri or Khaled El Fakharany only after Ahmed approves a business-side Salesforce networking route; use Sean Caruana as an ecosystem/referral route rather than a hiring route.",
+        "Suggested connection note: Hi Taha — I saw Salesforce's Middle East Service Delivery Director role. My work has focused on GCC digital transformation, PMO governance, and executive delivery across healthcare and payments. Happy to connect with Salesforce leaders shaping regional delivery."
+      ]
+    },
+    {
+      "company": "Takamol Holding",
+      "job_title": "Portfolio Control Senior Manager",
+      "source": "linkedin_jobspy",
+      "job_url": "https://www.linkedin.com/jobs/view/4423523564",
+      "verdict": "SUBMIT",
+      "queued_at": "2026-06-05T12:48:51.238837+03:00",
+      "status": "researched",
+      "exported_at": "2026-06-07T05:10:17.867430Z",
+      "processed_at": "2026-06-07T05:27:00Z",
+      "warm_intro_rating": "high",
+      "warm_intro_candidates": [
+        {
+          "name": "Abdulrahman AlAhmari SHRM-ACHRM",
+          "title": "Talent Acquisition Specialist at Takamol Holding",
+          "linkedin_url": "https://sa.linkedin.com/in/abdalrhman-abumelha",
+          "why": "Direct Takamol talent acquisition route in Riyadh. Public LinkedIn result confirms current Takamol Holding TA context and a large local network."
+        },
+        {
+          "name": "Abdulmajeed Altala, MBA, CIPD 5",
+          "title": "Talent Acquisition / Recruitment / HR projects / HRBP",
+          "linkedin_url": "https://www.linkedin.com/jobs/view/2477295572/",
+          "why": "Public Takamol LinkedIn job page identifies him as a prior/direct message job poster for Takamol talent acquisition. Useful senior HR/recruitment route, current status should be verified before outreach."
+        },
+        {
+          "name": "Eng. Mohamed AlDobaie, PfMP, PMP, P3O, ITIL",
+          "title": "Portfolio & Program Manager at Takamol Holding",
+          "linkedin_url": "https://sa.linkedin.com/in/eng-mohamed-aldobaie-pfmp%C2%AE-pmp%C2%AE-p3o%C2%AE-itil%C2%AE-958bb065",
+          "why": "Business-side portfolio/program profile at Takamol. Good peer route because the role is specifically about enterprise PPM, governance, portfolio controls, value realization, and executive dashboards."
+        }
+      ],
+      "queue_notes": [
+        "Local job data and public LinkedIn pages confirm a Riyadh Portfolio Control Senior Manager / PPM mandate focused on enterprise-wide portfolio governance, intake control, financial visibility, executive dashboards, PPM tools, and maturity development.",
+        "Authenticated browser tooling was not exposed in this cron turn, and the LinkedIn skill forbids cookie extraction/repair. No cookies were inspected or modified; validation used local job data plus public LinkedIn pages/snippets.",
+        "Warmth is high: the role is tightly aligned with Ahmed's PMO, portfolio governance, transformation, and executive reporting narrative, especially for Saudi Vision 2030 public-sector-adjacent work."
+      ],
+      "next_actions": [
+        "Draft-first approach only; do not send connection requests without Ahmed approval.",
+        "Prioritize Abdulrahman AlAhmari as the recruiter route; keep Eng. Mohamed AlDobaie as the business-side peer route if Ahmed wants a more strategic Takamol introduction.",
+        "Suggested connection note: Hi Abdulrahman — I saw Takamol's Portfolio Control Senior Manager mandate. I have led PMO and transformation governance across GCC healthcare and payments, including portfolio prioritization, executive reporting, and value realization. Happy to connect."
+      ]
+    },
+    {
+      "company": "RAKBANK",
+      "job_title": "Head of Enterprise Transformation & Intelligent Automation",
+      "source": "linkedin",
+      "job_url": "https://www.linkedin.com/jobs/view/4417864039/",
+      "verdict": "SUBMIT",
+      "queued_at": "2026-06-06T08:31:42.049112+03:00",
+      "status": "researched",
+      "exported_at": "2026-06-07T05:10:17.867433Z",
+      "processed_at": "2026-06-07T05:27:00Z",
+      "warm_intro_rating": "high",
+      "warm_intro_candidates": [
+        {
+          "name": "Pranali Kamble",
+          "title": "Global Talent Acquisition / HR Business Partnership / Headhunter at RAKBANK",
+          "linkedin_url": "https://ae.linkedin.com/in/pranali-kamble-274681137",
+          "why": "Direct LinkedIn job poster for the Head of Enterprise Transformation & Intelligent Automation role. Public profile also shows active RAKBANK talent acquisition and transformation workforce themes."
+        },
+        {
+          "name": "Antonella Mule",
+          "title": "SVP & Head of Transformation at RAKBANK",
+          "linkedin_url": "https://www.linkedin.com/posts/antonella-mul%C3%A8-67a87858_excited-to-share-that-ive-joined-rakbankone-activity-7404933638124929025-1iAQ",
+          "why": "Public LinkedIn post result says she recently joined RAKBANK as SVP & Head of Transformation. Strong business-side context for the transformation mandate; validate before positioning as hiring manager."
+        },
+        {
+          "name": "Ashfaq Bandey",
+          "title": "Executive Vice President - Head of Talent Acquisition, Onboarding & Talent Management at RAKBANK",
+          "linkedin_url": "https://www.linkedin.com/posts/bankopedia_ashfaq-bandey-has-been-appointed-as-executive-activity-7369756868522524673-b7TK",
+          "why": "Public LinkedIn post result identifies him as EVP Head of Talent Acquisition, Onboarding & Talent Management. Good senior HR escalation route if direct poster does not respond."
+        }
+      ],
+      "queue_notes": [
+        "Local job data and public LinkedIn page confirm the role is a Dubai Head of Enterprise Transformation & Intelligent Automation mandate, with AI/RPA/workflow orchestration, process optimization, target operating model, governance, KPIs, benefits tracking, and senior stakeholder change management.",
+        "Authenticated browser tooling was not exposed in this cron turn, and the LinkedIn skill forbids cookie extraction/repair. No cookies were inspected or modified; validation used local job data plus public LinkedIn pages/snippets.",
+        "Warmth is high and should be treated as the priority queue item this week: banking transformation, intelligent automation, regulated-environment governance, executive change, and measurable productivity gains all map directly to Ahmed's positioning."
+      ],
+      "next_actions": [
+        "Draft-first approach only; do not send connection requests without Ahmed approval.",
+        "Prioritize Pranali Kamble first because she is the direct job poster. If accepted, follow with a concise note asking whether she owns the transformation/automation mandate or can route Ahmed to the right stakeholder.",
+        "Use Antonella Mule as a business-side transformation route if Ahmed wants executive networking beyond recruiting; use Ashfaq Bandey only as a senior HR escalation route.",
+        "Suggested connection note: Hi Pranali — I saw RAKBANK's Head of Enterprise Transformation & Intelligent Automation role. My work has focused on GCC banking/payments and healthcare transformation, PMO governance, automation adoption, and measurable operating-model change. Happy to connect."
+      ]
+    },
+    {
+      "company": "Alchemy Global Talent Solutions",
+      "job_title": "Senior Transformation Director",
+      "source": "linkedin_jobspy",
+      "job_url": "https://www.linkedin.com/jobs/view/4426357620",
+      "verdict": "SUBMIT",
+      "queued_at": "2026-06-10T14:35:34.056951+03:00",
+      "status": "researched",
+      "exported_at": "2026-06-14T05:10:19.923124Z",
+      "processed_at": "2026-06-14T05:35:00Z",
+      "warm_intro_rating": "medium",
+      "warm_intro_candidates": [
+        {
+          "name": "Jeanette Parradine, FIRP, GMS",
+          "title": "Director and Chief Talent Alchemist at Alchemy Global Talent Solutions",
+          "linkedin_url": "https://uk.linkedin.com/in/jeanetteparradine",
+          "why": "Public LinkedIn result identifies her as a senior Alchemy leader focused on global recruitment solutions. Best senior route for verifying the Senior Transformation Director mandate if no job poster is visible."
+        },
+        {
+          "name": "Nick Short",
+          "title": "Executive Recruiter - EMEAL",
+          "linkedin_url": "https://uk.linkedin.com/in/nshort",
+          "why": "Public LinkedIn result connects him to executive search and leadership hiring across EMEA/LATAM. Useful recruiter route for a senior transformation role, but current ownership of this specific mandate should be verified."
+        },
+        {
+          "name": "Danielle Williams",
+          "title": "Alchemy Global Talent Solutions, Dubai / senior recruiter profile",
+          "linkedin_url": "https://ae.linkedin.com/in/danielle-williams-b633aa157",
+          "why": "Public LinkedIn result ties her to Alchemy in Dubai and recruiter/team oversight context. Good local UAE validation route if Ahmed wants a Dubai-first contact."
+        }
+      ],
+      "queue_notes": [
+        "Weekly script exported this item on 2026-06-14; it has now been researched and moved to processed/researched state.",
+        "Local job data confirms only a Senior Transformation Director role at Alchemy Global Talent Solutions with no cached job description. No prior local outreach-history match was found for Alchemy.",
+        "Authenticated browser tooling was not exposed in this cron turn, and the LinkedIn skill forbids cookie extraction/repair. Cookie files were not inspected or modified; validation used local job data plus public LinkedIn search snippets.",
+        "Warmth is medium: the job title fits Ahmed's transformation positioning, but Alchemy appears to be the recruiting intermediary, so outreach should ask who owns the mandate before pitching deeply."
+      ],
+      "next_actions": [
+        "Draft-first approach only; do not send connection requests without Ahmed approval.",
+        "Prioritize Jeanette Parradine for a senior recruiter route; use Danielle Williams if Ahmed wants a UAE-local contact first.",
+        "If accepted, ask whether the Senior Transformation Director mandate is still active and who is leading the search.",
+        "Suggested connection note: Hi Jeanette - I saw Alchemy's Senior Transformation Director mandate. My work has focused on GCC digital transformation, PMO governance, and executive delivery across healthcare and payments. Happy to connect if the search is still active."
+      ]
+    },
+    {
+      "company": "PwC Middle East",
+      "job_title": "Consulting - Management Consulting - Workforce Transformation (FS Sector) - Director - Riyadh",
+      "source": "linkedin_jobspy",
+      "job_url": "https://www.linkedin.com/jobs/view/4427059343",
+      "verdict": "SUBMIT",
+      "queued_at": "2026-06-11T16:34:55.874950+03:00",
+      "status": "researched",
+      "exported_at": "2026-06-14T05:10:19.923150Z",
+      "processed_at": "2026-06-14T05:35:00Z",
+      "warm_intro_rating": "high",
+      "warm_intro_candidates": [
+        {
+          "name": "Khalid AlZaghloul",
+          "title": "Consulting Director | Workforce Transformation | PwC Middle East",
+          "linkedin_url": "https://ae.linkedin.com/in/khalid-alzaghloul-33214426",
+          "why": "Public LinkedIn result exactly matches the Workforce Transformation lane at PwC Middle East. Strongest business-side peer route for this role."
+        },
+        {
+          "name": "Walid Hindi Hussein",
+          "title": "Director at PwC Middle East, Saudi / FS and government transformation context",
+          "linkedin_url": "https://sa.linkedin.com/in/walidhussein",
+          "why": "Public LinkedIn result shows PwC Middle East director context in Saudi with government and financial-services transformation experience, close to the Riyadh FS-sector mandate."
+        },
+        {
+          "name": "Rachel Samaha",
+          "title": "Senior Manager | Workforce Transformation at PwC Middle East, Riyadh",
+          "linkedin_url": "https://sa.linkedin.com/in/rachelsamaha",
+          "why": "Public LinkedIn result identifies a Riyadh-based Workforce Transformation senior manager at PwC Middle East. Useful local team route if Ahmed wants to build context before approaching directors."
+        },
+        {
+          "name": "Ruba Al Rezeq, PHRi",
+          "title": "PwC Middle East contact from local outreach history",
+          "linkedin_url": "https://www.linkedin.com/in/ruba-al-rezeq-phri-4595a5ab",
+          "why": "Already present in local outreach history for PwC Middle East from 2026-03-23, making this a warmer re-engagement candidate than a completely new cold approach."
+        }
+      ],
+      "queue_notes": [
+        "Weekly script exported this item on 2026-06-14; it has now been researched and moved to processed/researched state.",
+        "Local outreach history contains multiple PwC Middle East contacts from 2026-03-23 and 2026-03-24, including Ruba Al Rezeq, Avani Saran, Cherie Ann Rodriguez-Pelias, Ahmed AbuJarad, Manish Verma, Joude Al Sharif, Mina Sedrak, Mohammed Ifthekhar, Haitham Samman, Nermeen Al-Tarazi, Mohamed ElSisy, Vishesh Kalia, and Ghazal Fakhoury.",
+        "Authenticated browser tooling was not exposed in this cron turn, and the LinkedIn skill forbids cookie extraction/repair. Cookie files were not inspected or modified; validation used local history plus public LinkedIn search snippets.",
+        "Warmth is high: PwC has existing local outreach history, the role is Riyadh/FS workforce transformation, and Ahmed's GCC banking/payments transformation background gives a credible point of view."
+      ],
+      "next_actions": [
+        "Draft-first approach only; do not send connection requests without Ahmed approval.",
+        "Prioritize Khalid AlZaghloul as the strongest Workforce Transformation peer route; use Walid Hindi Hussein for Saudi/FS adjacency and Rachel Samaha for Riyadh team context.",
+        "Re-check the March PwC outreach history before sending, so Ahmed does not duplicate a pending or already-sent request.",
+        "Suggested connection note: Hi Khalid - I saw PwC Middle East's Workforce Transformation Director mandate in Riyadh. My work has focused on GCC transformation, PMO governance, and regulated financial-services/payment delivery. Happy to connect with peers shaping workforce transformation in the region."
+      ]
+    },
+    {
+      "company": "TALENTMATE",
+      "job_title": "Strategic Initiatives Director",
+      "source": "linkedin_jobspy",
+      "job_url": "https://www.linkedin.com/jobs/view/4428342909",
+      "verdict": "SUBMIT",
+      "queued_at": "2026-06-13T20:36:23.002505+03:00",
+      "status": "researched",
+      "exported_at": "2026-06-14T05:10:19.923152Z",
+      "processed_at": "2026-06-14T05:35:00Z",
+      "warm_intro_rating": "medium",
+      "warm_intro_candidates": [
+        {
+          "name": "Razeena Siddiq",
+          "title": "Senior Human Resources Recruiter at TALENTMATE",
+          "linkedin_url": "https://www.linkedin.com/in/razeena-siddiq",
+          "why": "Public LinkedIn result identifies her as a senior HR recruiter at TALENTMATE. Best direct recruiter route for the Strategic Initiatives Director posting."
+        },
+        {
+          "name": "RABIA (MAE)",
+          "title": "Director of Services - HR and Recruitment at TALENTMATE",
+          "linkedin_url": "https://ae.linkedin.com/in/rabia-mae-b2403a9a",
+          "why": "Public LinkedIn result identifies a UAE-based HR/recruitment director at TALENTMATE. Good senior recruiting route if the role owner is not visible."
+        },
+        {
+          "name": "Renjitha Basheer",
+          "title": "Managing Director - TALENTMATE",
+          "linkedin_url": "https://ae.linkedin.com/in/renjitha-basheer-44924a167",
+          "why": "Public LinkedIn result shows UAE-based TALENTMATE managing director context. Better as escalation or relationship route than first-touch recruiter outreach."
+        }
+      ],
+      "queue_notes": [
+        "Weekly script exported this item on 2026-06-14; it has now been researched and moved to processed/researched state.",
+        "Local job data shows TALENTMATE has multiple Dubai postings in the current LinkedIn scrape, including Strategic Initiatives Director, Program Manager Mobility Dubai UAE, Program Manager - UAE National Amazon Now, Cost Control Manager, and Founding Forward Deployed Engineer. No prior local outreach-history match was found for TALENTMATE.",
+        "Authenticated browser tooling was not exposed in this cron turn, and the LinkedIn skill forbids cookie extraction/repair. Cookie files were not inspected or modified; validation used local job data plus public LinkedIn search snippets.",
+        "Warmth is medium: the Strategic Initiatives Director title is aligned, but TALENTMATE looks like a recruiter/job marketplace route rather than the end employer, so the first message should verify ownership and client context."
+      ],
+      "next_actions": [
+        "Draft-first approach only; do not send connection requests without Ahmed approval.",
+        "Prioritize Razeena Siddiq first as the recruiter route; use RABIA (MAE) if a more senior UAE HR/recruitment route is needed.",
+        "If accepted, ask whether TALENTMATE owns the Strategic Initiatives Director mandate directly and whether the client is open to GCC transformation/program leadership backgrounds.",
+        "Suggested connection note: Hi Razeena - I saw TALENTMATE's Strategic Initiatives Director mandate in Dubai. My work has focused on GCC transformation, PMO governance, and executive delivery across healthcare and payments. Happy to connect if the search is still active."
+      ]
+    },
+    {
+      "company": "Publicis Sapient",
+      "job_title": "Agile Program Manager (Endur)-Senior Manager",
+      "source": "linkedin_jobspy",
+      "job_url": "https://www.linkedin.com/jobs/view/4426803035",
+      "verdict": "SUBMIT",
+      "queued_at": "2026-06-17T02:46:29.015355+03:00",
+      "status": "researched",
+      "exported_at": "2026-06-21T05:10:31.411150Z",
+      "processed_at": "2026-06-21T05:15:17Z",
+      "warm_intro_rating": "medium",
+      "warm_intro_candidates": [
+        {
+          "name": "Christine Pereira",
+          "title": "Manager - Talent Acquisition - MENA at Publicis Sapient",
+          "linkedin_url": "https://ae.linkedin.com/in/christine-pereira-59a3a315",
+          "why": "Dubai-based MENA talent acquisition route at Publicis Sapient. Best first recruiter path for the Dubai Agile Program Manager / Endur Senior Manager mandate."
+        },
+        {
+          "name": "Himani Gautam",
+          "title": "Technology & Consulting Talent Specialist | MENA Hiring | Publicis Sapient",
+          "linkedin_url": "https://ae.linkedin.com/in/himani-gautam",
+          "why": "MENA hiring profile with Publicis Sapient and technology/consulting talent focus. Strong secondary recruiter route if Christine is not responsive."
+        },
+        {
+          "name": "Amit Jain",
+          "title": "Openlink Endur/Findur Specialist, ETRM at Publicis Sapient",
+          "linkedin_url": "https://www.linkedin.com/in/amitprjain",
+          "why": "Domain-side route tied directly to Openlink Endur / ETRM leadership at Publicis Sapient. Useful for credibility validation, but less certain as a hiring-owner route."
+        }
+      ],
+      "queue_notes": [
+        "Weekly script exported this item on 2026-06-21; processed in the same Sunday queue run.",
+        "Local LinkedIn job data confirms a Dubai Agile Program Management role focused on large-scale TRM/ETRM Endur delivery, multi-workstream governance, Agile/SAFe or hybrid execution, vendor management, and GCC client environments.",
+        "Warmth is medium: Ahmed's program governance and GCC transformation background fits the delivery side, but the Endur/ETRM specialization is a gap, so recruiter-led outreach is safer than a direct hiring-manager pitch.",
+        "Authenticated LinkedIn browser tooling/cookie session was not available in this cron turn, so no cookies were inspected or modified and no LinkedIn actions were taken. Candidate validation used local LinkedIn job exports plus public LinkedIn profile/search snippets."
+      ],
+      "next_actions": [
+        "Draft-first approach only; do not send connection requests without Ahmed approval.",
+        "Prioritize Christine Pereira first, then Himani Gautam as the MENA recruiter route.",
+        "Use Amit Jain only as a domain-side credibility route if Ahmed wants to build Endur/ETRM context before recruiter follow-up.",
+        "Suggested connection note: Hi Christine - I saw Publicis Sapient's Agile Program Manager / Endur Senior Manager mandate in Dubai. My background is GCC digital transformation, PMO governance, and multi-workstream delivery across healthcare and payments. Happy to connect if this search is still active."
+      ]
+    },
+    {
+      "company": "ServiceNow",
+      "job_title": "Practice Director, Expert Services MEA",
+      "source": "linkedin_jobspy",
+      "job_url": "https://www.linkedin.com/jobs/view/4431125373",
+      "verdict": "SUBMIT",
+      "queued_at": "2026-06-20T08:38:20.752712+03:00",
+      "status": "researched",
+      "exported_at": "2026-06-21T05:10:31.411179Z",
+      "processed_at": "2026-06-21T05:15:17Z",
+      "warm_intro_rating": "high",
+      "warm_intro_candidates": [
+        {
+          "name": "Paul Hanley",
+          "title": "Customer Excellence Group Area Lead for Middle East and Africa at ServiceNow",
+          "linkedin_url": "https://ae.linkedin.com/in/paul-hanley-660a2918",
+          "why": "Direct warm route: public LinkedIn post says ServiceNow is hiring for this Dubai Practice Director role and identifies Prijith Vijayan's Expert Services team."
+        },
+        {
+          "name": "Prijith Vijayan",
+          "title": "Director, Expert Services MEA & Core Business Workflows EMEA Practice at ServiceNow",
+          "linkedin_url": "https://uk.linkedin.com/in/prijith-vijayan-66b20918",
+          "why": "Likely business-side hiring owner or team leader: public profile snippet matches Director, Expert Services MEA, and the hiring post points to his Expert Services team."
+        },
+        {
+          "name": "Alia Khattab",
+          "title": "Senior Director, GTM Talent Acquisition EMEA at ServiceNow",
+          "linkedin_url": "https://ae.linkedin.com/in/aliakhattab",
+          "why": "Senior EMEA talent acquisition route based in the UAE. Good escalation path if the business-side route does not respond."
+        },
+        {
+          "name": "Zeeshan Shaikh",
+          "title": "Principal Engagement Manager - ServiceNow",
+          "linkedin_url": "https://ae.linkedin.com/in/zeeshankshaikh",
+          "why": "Dubai-based ServiceNow Expert Services engagement route; public snippet says he leads Expert Services engagements across key MEA accounts."
+        }
+      ],
+      "queue_notes": [
+        "Weekly script exported this item on 2026-06-21; processed in the same Sunday queue run.",
+        "Local LinkedIn job data confirms a Dubai Practice Director role focused on MEA Expert Services delivery strategy, senior consultant leadership, nearshore/offshore delivery center setup, governance, partner execution, revenue/margin, utilization, customer success, and enterprise platform adoption.",
+        "This is the warmest queued company this week. The role maps strongly to Ahmed's GCC transformation, governance, executive delivery, and digital platform adoption narrative; the ServiceNow-specific platform depth is the main positioning gap.",
+        "A public LinkedIn hiring post on 2026-06-21 says ServiceNow is hiring for this role and names Prijith Vijayan's Expert Services team, creating a stronger direct-intro path than recruiter-only outreach.",
+        "Authenticated LinkedIn browser tooling/cookie session was not available in this cron turn, so no cookies were inspected or modified and no LinkedIn actions were taken. Candidate validation used local LinkedIn job exports plus public LinkedIn profile/search snippets."
+      ],
+      "next_actions": [
+        "Draft-first approach only; do not send connection requests without Ahmed approval.",
+        "Prioritize Paul Hanley first because he publicly amplified the exact role, then Prijith Vijayan as the likely Expert Services team leader.",
+        "Use Alia Khattab as the senior EMEA TA route if the business-side route is cold; use Zeeshan Shaikh as a peer/domain route for MEA Expert Services context.",
+        "Suggested connection note: Hi Paul - I saw your post on ServiceNow's Practice Director, Expert Services MEA role in Dubai. My work has focused on GCC transformation delivery, PMO governance, executive stakeholder management, and scaling operating models across healthcare and payments. Happy to connect."
+      ]
+    },
+    {
+      "company": "Generative Futures",
+      "job_title": "Head of Operations - Crypto",
+      "source": "linkedin_jobspy",
+      "job_url": "https://www.linkedin.com/jobs/view/4427835309",
+      "verdict": "SUBMIT",
+      "queued_at": "2026-06-21T10:38:41.519737+03:00",
+      "status": "researched",
+      "exported_at": "2026-06-28T05:10:26.705503Z",
+      "warm_intro_rating": "high",
+      "warm_intro_candidates": [
+        {
+          "name": "Taq Hussain",
+          "title": "Co-Founder @ Generative Futures | Compliance | Crypto | FinTech | Banking",
+          "linkedin_url": "https://ae.linkedin.com/in/taq-hussain-39b3ab44",
+          "why": "LinkedIn job page exposes him as the direct job poster for Head of Operations - Crypto, and the Generative Futures company post says to contact Taq Hussain for this exact role."
+        },
+        {
+          "name": "Luigi Negri",
+          "title": "Generative Futures recruiter / co-listed company contact",
+          "linkedin_url": "https://ae.linkedin.com/in/luigi-negri1",
+          "why": "Named on the same Generative Futures hiring post as the second contact for adjacent Dubai leadership/engineering searches. Useful fallback if Taq does not respond."
+        }
+      ],
+      "queue_notes": [
+        "Job page was reachable as a guest using the local LinkedIn cookie jar, but the session was not authenticated; LinkedIn still showed sign-in links.",
+        "The job page itself exposes a direct poster: Taq Hussain, Co-Founder at Generative Futures, with crypto/fintech/banking focus.",
+        "Generative Futures company page confirms the exact Head of Operations | Crypto Exchange role and says to contact Taq Hussain.",
+        "Role fit is commercially strong for operations, governance, fintech, payments, and scaling, but crypto exchange depth is a real caveat."
+      ],
+      "next_actions": [
+        "Draft-first approach only; do not send without Ahmed approval.",
+        "Prioritize Taq Hussain with a concise note around GCC payments/regulated operations, PMO governance, scaling controls, and transformation delivery.",
+        "Use Luigi Negri only as a fallback if Taq does not respond or if Ahmed wants a broader Generative Futures recruiter connection.",
+        "Suggested connection note: Hi Taq, I saw your Head of Operations - Crypto mandate in Dubai. My background is GCC payments, regulated operations, PMO governance, and digital transformation delivery. Happy to connect if this search is still active."
+      ],
+      "processed_at": "2026-06-28T05:24:47.095446Z",
+      "research_sources": [
+        "local cmo-outreach-queue.json",
+        "local jobs-raw/linkedin.json and jobs feedback logs",
+        "local LinkedIn cookie jar used for guest LinkedIn job/company page fetches",
+        "public LinkedIn job/company pages and public search snippets"
+      ]
+    },
+    {
+      "company": "EjadTech - إيجاد التقنية",
+      "job_title": "Director Project Management Office",
+      "source": "linkedin_jobspy",
+      "job_url": "https://www.linkedin.com/jobs/view/4426228517",
+      "verdict": "SUBMIT",
+      "queued_at": "2026-06-22T14:46:14.587484+03:00",
+      "status": "researched",
+      "exported_at": "2026-06-28T05:10:26.705532Z",
+      "warm_intro_rating": "medium",
+      "warm_intro_candidates": [
+        {
+          "name": "EjadTech PMO / executive hiring route",
+          "title": "Current-company people search, companyId 35458343, title=Director Project Management Office",
+          "linkedin_url": "https://www.linkedin.com/search/results/people/?facetCurrentCompany=35458343&title=Director%20Project%20Management%20Office",
+          "why": "The role fit is excellent, but no named recruiter or job poster was exposed in the guest LinkedIn page. Authenticated people search is needed to pick a named HR, PMO, or executive contact."
+        }
+      ],
+      "queue_notes": [
+        "Job page confirms a Riyadh PMO Director mandate at EjadTech, companyId 35458343.",
+        "The JD is a very strong Ahmed fit: enterprise PMO, portfolio governance, delivery excellence, transformation, executive reporting, client leadership, Arabic/English.",
+        "No direct job poster was exposed on the public job page; local cookie jar still returned guest LinkedIn pages, not an authenticated profile session.",
+        "Company page confirms EjadTech is a Saudi digital transformation and technology localization company with active posts around governance, operations/workflow, data/AI, and enterprise platforms."
+      ],
+      "next_actions": [
+        "Hold for authenticated LinkedIn people search before sending a connection request.",
+        "When authenticated search is available, filter current company 35458343 for Talent Acquisition, HR, PMO, Program Director, Delivery Director, or executive leadership.",
+        "If Ahmed wants to proceed now, use the company route only: follow EjadTech and engage with a recent governance/PMO post before connecting with a named employee.",
+        "Suggested note once a named contact is found: Hi [Name], I saw EjadTech’s PMO Director mandate in Riyadh. My work has focused on GCC enterprise PMO, portfolio governance, and transformation delivery across regulated sectors. Happy to connect."
+      ],
+      "processed_at": "2026-06-28T05:24:47.095446Z",
+      "research_sources": [
+        "local cmo-outreach-queue.json",
+        "local jobs-raw/linkedin.json and jobs feedback logs",
+        "local LinkedIn cookie jar used for guest LinkedIn job/company page fetches",
+        "public LinkedIn job/company pages and public search snippets"
+      ]
+    },
+    {
+      "company": "Dah Chong Hong Holdings Limited",
+      "job_title": "Head of Technology (Healthcare)",
+      "source": "linkedin_jobspy",
+      "job_url": "https://www.linkedin.com/jobs/view/4427931661",
+      "verdict": "SUBMIT",
+      "queued_at": "2026-06-22T14:46:14.598195+03:00",
+      "status": "researched",
+      "exported_at": "2026-06-28T05:10:26.705535Z",
+      "warm_intro_rating": "low",
+      "warm_intro_candidates": [
+        {
+          "name": "Dah Chong Hong technology/referral route",
+          "title": "Current-company people search, companyId 1142992, title=Head of Information Technology",
+          "linkedin_url": "https://www.linkedin.com/search/results/people/?facetCurrentCompany=1142992&title=Head%20of%20Information%20Technology",
+          "why": "The job page confirms the company and role, but no job poster was exposed and the mandate is Hong Kong/Asia-focused with Cantonese/Mandarin/English requirements."
+        }
+      ],
+      "queue_notes": [
+        "LinkedIn job page confirms Head of Technology (Healthcare & Logistics), companyId 1142992, Hong Kong location.",
+        "JD is substantively relevant to healthcare/logistics IT transformation, ERP/WMS modernization, cloud, data/AI, GxP, compliance, and multi-country operations.",
+        "This is outside Ahmed’s GCC-first strategy and requires Cantonese, Mandarin, and English, so outreach priority is low despite domain fit.",
+        "No direct job poster was visible from the guest LinkedIn page; authenticated search would be needed for named contacts."
+      ],
+      "next_actions": [
+        "Do not prioritize this week unless Ahmed explicitly wants Hong Kong/Asia roles.",
+        "If pursued, search current company 1142992 for healthcare/logistics technology leadership or HR before drafting a connection note.",
+        "Suggested note only if Ahmed approves Asia outreach: Hi [Name], I saw DCH’s Head of Technology role across healthcare and logistics. My background is healthcare IT transformation, governance, and regulated multi-country delivery. Happy to connect if regional experience is relevant."
+      ],
+      "processed_at": "2026-06-28T05:24:47.095446Z",
+      "research_sources": [
+        "local cmo-outreach-queue.json",
+        "local jobs-raw/linkedin.json and jobs feedback logs",
+        "local LinkedIn cookie jar used for guest LinkedIn job/company page fetches",
+        "public LinkedIn job/company pages and public search snippets"
+      ]
+    },
+    {
+      "company": "Foreground.",
+      "job_title": "Director – AI Governance & Adoption",
+      "source": "linkedin_jobspy",
+      "job_url": "https://www.linkedin.com/jobs/view/4432914892",
+      "verdict": "SUBMIT",
+      "queued_at": "2026-06-27T04:40:56.472387+03:00",
+      "status": "researched",
+      "exported_at": "2026-06-28T05:10:26.705537Z",
+      "warm_intro_rating": "high",
+      "warm_intro_candidates": [
+        {
+          "name": "Rana Taha",
+          "title": "Foreground. hiring contact / recruiter route",
+          "linkedin_url": "https://lb.linkedin.com/in/aboutaharana",
+          "why": "Foreground company page has a recent post saying “Rana Taha is hiring,” and the current AI Office campaign is being run by Foreground for an unnamed Riyadh client."
+        },
+        {
+          "name": "Foreground. talent team",
+          "title": "Recruitment / executive search route for Enterprise AI Office campaign",
+          "linkedin_url": "https://ae.linkedin.com/company/foregroundgroup",
+          "why": "Company page confirms Foreground is running an Enterprise AI Office hiring campaign in Riyadh with 11 roles and states the search is confidential."
+        }
+      ],
+      "queue_notes": [
+        "Correct LinkedIn company is Foreground. / foregroundgroup, companyId 76501753, not the older unrelated Foreground page.",
+        "Job page confirms the Director - AI Governance & Adoption role reports to the Chief Artificial Intelligence Officer for an unnamed Riyadh client.",
+        "Foreground company page confirms a live Enterprise AI Office campaign in Riyadh: 11 roles, three tiers, confidential search.",
+        "Strong Ahmed fit: AI governance, responsible adoption, enterprise transformation, risk/compliance, change management, AI literacy, and executive stakeholder alignment."
+      ],
+      "next_actions": [
+        "Draft-first approach only; do not send without Ahmed approval.",
+        "Prioritize Rana Taha as the named hiring route, with the Enterprise AI Office / AI governance angle.",
+        "If Rana accepts, follow up by asking whether the AI Governance & Adoption Director mandate is still active and whether Ahmed’s GCC transformation/governance profile is relevant.",
+        "Suggested connection note: Hi Rana, I saw Foreground’s Riyadh Enterprise AI Office search, especially the AI Governance & Adoption role. My work spans GCC digital transformation, PMO governance, regulated delivery, and AI adoption. Happy to connect."
+      ],
+      "processed_at": "2026-06-28T05:24:47.095446Z",
+      "research_sources": [
+        "local cmo-outreach-queue.json",
+        "local jobs-raw/linkedin.json and jobs feedback logs",
+        "local LinkedIn cookie jar used for guest LinkedIn job/company page fetches",
+        "public LinkedIn job/company pages and public search snippets"
+      ]
+    },
+    {
+      "company": "DP World",
+      "job_title": "Group Director- Strategy & Technology Operations",
+      "source": "linkedin_jobspy",
+      "job_url": "https://www.linkedin.com/jobs/view/4433876871",
+      "verdict": "SUBMIT",
+      "queued_at": "2026-06-27T04:40:56.481457+03:00",
+      "status": "researched",
+      "exported_at": "2026-06-28T05:10:26.705540Z",
+      "warm_intro_rating": "high",
+      "warm_intro_candidates": [
+        {
+          "name": "Buban Ganguly",
+          "title": "Global Talent Acquisition | Technology & Leadership at DP World",
+          "linkedin_url": "https://in.linkedin.com/in/bubanganguly",
+          "why": "Public LinkedIn search snippet identifies him as DP World global talent acquisition for technology and leadership, the best match for a Group Director strategy/technology operations role."
+        },
+        {
+          "name": "Lance Petersen",
+          "title": "Group Senior Manager: Talent Acquisition at DP World",
+          "linkedin_url": "https://ae.linkedin.com/in/lancepetersen",
+          "why": "Dubai/UAE public LinkedIn snippet shows group senior TA at DP World. Strong local recruiting route if Buban is not the owner."
+        },
+        {
+          "name": "Amer Jaouni",
+          "title": "Senior Manager, Talent Acquisition at DP World",
+          "linkedin_url": "https://ae.linkedin.com/in/amer-jaouni",
+          "why": "UAE public LinkedIn snippet shows senior TA at DP World. Good secondary recruiter route for Dubai-based leadership mandates."
+        }
+      ],
+      "queue_notes": [
+        "Job page confirms DP World companyId 163494 and Group Director - Strategy & Technology Operations in Dubai.",
+        "The JD is an extremely strong Ahmed fit: strategy execution, technology operating model, product/engineering/PMO integration, executive cadence, financial discipline, decision support, and organizational effectiveness.",
+        "No direct job poster was exposed on the public job page, but public LinkedIn snippets surfaced multiple DP World TA leaders.",
+        "This is the strongest warm-intro target in the queue because both role fit and company geography align tightly with Ahmed’s positioning."
+      ],
+      "next_actions": [
+        "Draft-first approach only; do not send without Ahmed approval.",
+        "Prioritize Buban Ganguly first because his public snippet is technology and leadership talent acquisition at DP World.",
+        "Use Lance Petersen or Amer Jaouni as UAE-based TA fallbacks if Buban does not respond.",
+        "Suggested connection note: Hi Buban, I saw DP World’s Group Director - Strategy & Technology Operations role in Dubai. My work spans GCC transformation, PMO governance, executive cadence, and technology operating models. Happy to connect if this mandate is active."
+      ],
+      "processed_at": "2026-06-28T05:24:47.095446Z",
+      "research_sources": [
+        "local cmo-outreach-queue.json",
+        "local jobs-raw/linkedin.json and jobs feedback logs",
+        "local LinkedIn cookie jar used for guest LinkedIn job/company page fetches",
+        "public LinkedIn job/company pages and public search snippets"
+      ]
+    }
+  ],
+  "last_weekly_review": {
+    "reviewed_at": "2026-06-21T05:15:17Z",
+    "cron": "CMO Weekly Outreach Queue - Sunday",
+    "queued_count": 2,
+    "status": "processed",
+    "note": "Weekly script ran and exported 2 queued items. Publicis Sapient and ServiceNow were researched using local LinkedIn job/outreach data plus public LinkedIn snippets. Authenticated LinkedIn browser/cookie tooling was unavailable in this cron turn, so cookies were not inspected or modified. No external LinkedIn actions were taken; next actions require Ahmed approval."
+  }
+}

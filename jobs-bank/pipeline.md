@@ -383,6 +383,9 @@
 | 492 | 🆕 | MultiBank Group | Head of AI & BI Reporting | Dubai | — | 🆕 Discovered | Radar | 2026-06-28 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4432207562) | — |
 | 493 | 🆕 | CFI Financial Group | Group Head of Security | Dubai | — | 🆕 Discovered | Radar | 2026-06-28 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4431245524) | — |
 | 494 | 🆕 | Foreground. | Director Enterprise Architecture | Dubai | — | 🆕 Discovered | Radar | 2026-06-28 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4434256725) | — |
+| 495 | 🆕 | byteSpark.ai | Head of AI-Assisted Engineering | Dubai | — | 🆕 Discovered | Radar | 2026-06-29 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4434279528) | — |
+| 496 | 🆕 | Alsayegh Worldwide | AI Transformation Director | Dubai | — | 🆕 Discovered | Radar | 2026-06-29 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4431046116) | — |
+
 
 
 

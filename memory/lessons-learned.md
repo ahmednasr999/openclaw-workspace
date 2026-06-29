@@ -1523,3 +1523,17 @@ Treat rejection actionability as an open regression until `scripts/email-synthet
 The weekly skill tune-up tried `apply_patch` inside `sandbox_exec` and hit `Command 'apply_patch' not found` before falling back to other edit mechanics. This repeats a known OpenClaw sandbox limitation.
 ### Do differently
 In OpenClaw sandbox/gateway cron sessions, check edit-tool availability before changing files. Use `ed`, `ex`, `perl`, or a valid GNU unified diff when `apply_patch` is unavailable, and reserve Codex `apply_patch` for native Code-mode turns where that command exists.
+
+## 2026-06-28 - Health Baseline Comparison Must Handle Report Schema Drift
+
+### Incident
+The weekly read-only health baseline wrote current outputs as `*.stdout_stderr.txt`, then attempted to compare against the prior `/root/.openclaw/workspace/reports/health-baseline-20260621-083026/` using the same filenames. The prior report used split `*.out`, `*.err`, `*.exit`, and `*.cmd` files, so multiple `sed` reads failed with `No such file or directory` even though the previous evidence existed.
+### Do differently
+Before comparing health baselines, list the previous report directory and read its manifest or available filename pattern. Support both combined `*.stdout_stderr.txt` and split `*.out`/`*.err` report schemas, and keep missing historical files from polluting the current baseline verdict.
+
+## 2026-06-28 - Job Hunter Review Quiet Fallback Is Still Being Bypassed
+
+### Incident
+The weekly Job Hunter domain review prompt explicitly said to use local-data fallback if Notion was unavailable and avoid emitting Notion diagnostics. The session still ran Notion snippets, hit missing `/root/.openclaw/workspace/scripts/config/notion.json`, then produced downstream `.get()` tracebacks before recovering from local data.
+### Do differently
+For Job Hunter reviews, probe Notion availability once through the expected path; on missing config, exception, or non-list return, stop all Notion-derived snippets and switch to local data. Treat the reminder's noise-control instruction as a hard gate so user-facing output stays clean.

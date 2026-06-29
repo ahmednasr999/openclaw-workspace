@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-06-21T08:10:31.390563+03:00",
-  "history_items": 12978,
-  "actionable_items": 787,
-  "noise_items": 12191,
+  "generated_at": "2026-06-28T08:10:19.329042+03:00",
+  "history_items": 13698,
+  "actionable_items": 881,
+  "noise_items": 12817,
   "top_noise_senders": [
     [
       "info@host.discountwalas.com",
@@ -10,7 +10,7 @@
     ],
     [
       "notifications@github.com",
-      952
+      999
     ],
     [
       "no-reply@mail.therumble.app",
@@ -45,30 +45,30 @@
       131
     ],
     [
+      "recruitment.notify@oia.gov.om",
+      126
+    ],
+    [
       "temu@commerce.temuemail.com",
       119
     ],
     [
-      "recruitment.notify@oia.gov.om",
-      117
-    ],
-    [
       "info@ema.flickonclick.com",
-      109
+      114
     ],
     [
-      "hello@mail.trade-ideas.com",
-      98
+      "hello@mindstream.news",
+      102
     ],
     [
       "editor@newsletter.thepaypers.com",
-      94
+      101
     ]
   ],
   "top_repeated_subjects": [
     [
       "job vacancy",
-      110
+      119
     ],
     [
       "=?utf-8?b?v0igrgfpbhkgtwfya2v0iejyawvmicygvhjhzgluzybpchbvcnr1?=\r\n =?utf-8?b?bml0awvziokyl",
@@ -88,11 +88,11 @@
     ],
     [
       "=?utf-8?b?mjagbmv3ievuz2luzwvycybqb2jzigluiffhdgfyiq==?=",
-      23
+      29
     ],
     [
       "ahmed, hot job opportunities waiting for you",
-      21
+      22
     ],
     [
       "=?utf-8?q?=f0=9f=98=b2_=e2=89=a4_$9.9!_luxe_for_less?=",
@@ -115,16 +115,16 @@
       15
     ],
     [
-      "re: [speedyapply/jobspy] add linkedin applicants count to job posts\r\n (pr #365)",
-      14
+      "=?utf-8?b?ww91ciblegvjdxrpdmugcg1vihjvbgugbg9va3mgz3jlyxqg4ocu?=\r\n\t=?utf-8?b?igp1c3qgy29uz",
+      15
     ],
     [
       "new jobs posted from www.afuturewithus.com",
-      13
+      14
     ],
     [
       "new jobs posted from careers.powerholding-intl.com",
-      13
+      14
     ]
   ],
   "recommendation": "Review these candidates manually before unsubscribe, block, archive, or Gmail filter changes. No mailbox action was taken."

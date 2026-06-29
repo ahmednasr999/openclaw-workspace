@@ -1,14 +1,14 @@
 
-[2026-06-28T02:00:01+03:00] START cron-watchdog-v3: /bin/bash /root/.openclaw/workspace/scripts/cron-watchdog-v3.sh
+[2026-06-29T02:00:01+03:00] START cron-watchdog-v3: /bin/bash /root/.openclaw/workspace/scripts/cron-watchdog-v3.sh
 🔍 Watchdog v3 - Detect → Fix → Report
 ✅ Gateway running (PID: 3716047)
 🟡 Disk WARNING: 80%
-✅ active-tasks.md fresh (22h)
-✅ Jobs data fresh (21h)
+✅ active-tasks.md fresh (46h)
+✅ Jobs data fresh (19h)
 ✅ SIE 360 data fresh (0h)
 ✅ All crons OK
 ✅ No pipeline failures today
-✅ RAM OK: 33%
+✅ RAM OK: 31%
 
 ═══════════════════════════════════
 📊 Watchdog v3 Summary
@@ -16,14 +16,14 @@
   Warnings: 1
   Alerts (need human): 0
 ═══════════════════════════════════
-[2026-06-28T02:00:07+03:00] END cron-watchdog-v3: rc=0 duration=5s
+[2026-06-29T02:00:08+03:00] END cron-watchdog-v3: rc=0 duration=7s
 
-[2026-06-28T04:00:02+03:00] START cron-watchdog-v3: /bin/bash /root/.openclaw/workspace/scripts/cron-watchdog-v3.sh
+[2026-06-29T04:00:02+03:00] START cron-watchdog-v3: /bin/bash /root/.openclaw/workspace/scripts/cron-watchdog-v3.sh
 🔍 Watchdog v3 - Detect → Fix → Report
 ✅ Gateway running (PID: 3716047)
 🟡 Disk WARNING: 80%
-✅ active-tasks.md fresh (24h)
-✅ Jobs data fresh (23h)
+✅ active-tasks.md fresh (48h)
+✅ Jobs data fresh (21h)
 ✅ SIE 360 data fresh (2h)
 ✅ All crons OK
 ✅ No pipeline failures today
@@ -35,29 +35,23 @@
   Warnings: 1
   Alerts (need human): 0
 ═══════════════════════════════════
-[2026-06-28T04:00:07+03:00] END cron-watchdog-v3: rc=0 duration=5s
+[2026-06-29T04:00:06+03:00] END cron-watchdog-v3: rc=0 duration=4s
 
-[2026-06-28T06:00:02+03:00] START cron-watchdog-v3: /bin/bash /root/.openclaw/workspace/scripts/cron-watchdog-v3.sh
+[2026-06-29T06:00:01+03:00] START cron-watchdog-v3: /bin/bash /root/.openclaw/workspace/scripts/cron-watchdog-v3.sh
 🔍 Watchdog v3 - Detect → Fix → Report
 ✅ Gateway running (PID: 3716047)
 🟡 Disk WARNING: 80%
-✅ active-tasks.md fresh (26h)
-🟡 Jobs data stale (25h) - re-running pipeline...
-  Pipeline triggered in background
+🟡 active-tasks.md stale (50h) - touching to refresh
+✅ Jobs data fresh (23h)
 ✅ SIE 360 data fresh (4h)
-✅ Pipeline lock active (0m, still valid)
 ✅ All crons OK
 ✅ No pipeline failures today
-✅ RAM OK: 36%
+✅ RAM OK: 35%
 
 ═══════════════════════════════════
 📊 Watchdog v3 Summary
-  Fixes applied: 1
-  Warnings: 1
+  Fixes applied: 0
+  Warnings: 2
   Alerts (need human): 0
 ═══════════════════════════════════
-
-📋 Actions taken:
-🔄 Jobs data was 25h stale → pipeline re-triggered
-
-[2026-06-28T06:00:11+03:00] END cron-watchdog-v3: rc=0 duration=9s
+[2026-06-29T06:00:08+03:00] END cron-watchdog-v3: rc=0 duration=7s
