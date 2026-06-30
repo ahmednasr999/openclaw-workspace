@@ -1,39 +1,140 @@
 {
   "status": "ok",
-  "scan_time": "2026-06-28T20:00:37.389455+03:00",
-  "total_scanned": 14,
+  "scan_time": "2026-06-29T20:00:42.223622+03:00",
+  "total_scanned": 36,
   "by_category": {
     "interview_invite": 0,
-    "recruiter_reach": 0,
+    "recruiter_reach": 1,
     "application_ack": 0,
     "rejection": 0,
-    "assessment": 0,
+    "assessment": 1,
     "application_response": 0,
     "follow_up_needed": 0,
     "job_alert": 0,
-    "other": 14
+    "other": 34
   },
   "interview_invites": [],
-  "recruiter_messages": [],
+  "recruiter_messages": [
+    {
+      "id": "363483",
+      "from": "\"RAKBANK.CAREER\" <careers@rakbank.ae>",
+      "subject": "New job opportunities at Rak Bank Career Site",
+      "date": "Mon, 29 Jun 2026 15:30:39 +0000 (UTC)",
+      "unread": true,
+      "priority": "HIGH",
+      "score": 7,
+      "pipeline_match": "RAKBANK",
+      "confidence": 90,
+      "confidence_label": "high",
+      "evidence": [
+        "matched active pipeline company: RAKBANK",
+        "hiring sender context",
+        "hiring/application context",
+        "recruiter outreach classification",
+        "high priority score: 7"
+      ],
+      "why_actionable": "matched active pipeline company: RAKBANK | hiring sender context | hiring/application context | recruiter outreach classification"
+    }
+  ],
   "application_acks": [],
   "rejections": [],
-  "assessments": [],
+  "assessments": [
+    {
+      "id": "363467",
+      "from": "Matt Gray <matt@founderos.com>",
+      "subject": "Steve deleted 20,000 lines of code",
+      "date": "Mon, 29 Jun 2026 09:30:25 -0400",
+      "unread": true,
+      "priority": "MEDIUM",
+      "score": 2,
+      "pipeline_match": null,
+      "confidence": 50,
+      "confidence_label": "low",
+      "evidence": [
+        "hiring/application context",
+        "assessment keyword with hiring context",
+        "medium priority score: 2"
+      ],
+      "why_actionable": "not actionable: hiring/application context | assessment keyword with hiring context | medium priority score: 2"
+    }
+  ],
   "application_responses": [],
   "follow_ups_needed": [],
   "job_alerts": [],
-  "actionable_count": 0,
+  "actionable_count": 1,
   "hot_alerts": [],
-  "signals": [],
+  "signals": [
+    {
+      "company": "RAKBANK",
+      "signal": "recruiter_email",
+      "subject": "New job opportunities at Rak Bank Career Site",
+      "sender": "\"RAKBANK.CAREER\" <careers@rakbank.ae>",
+      "job_ids": [
+        "oracle-REF896F",
+        "linkedin_jobspy-li-4417864039",
+        "linkedin_jobspy-li-4399153286",
+        "linkedin_jobspy-li-4399144811",
+        "linkedin_jobspy-li-4395984030",
+        "google-94d09258395e",
+        "linkedin_jobspy-li-4382865595",
+        "linkedin_jobspy-li-4381839025",
+        "cv-c4b17d6ff4",
+        "4379164827"
+      ],
+      "score": 7,
+      "timestamp": "2026-06-29T20:00:42.108207+03:00"
+    }
+  ],
+  "pipeline_review_candidates": [
+    {
+      "timestamp": "2026-06-29T20:00:42.223645+03:00",
+      "review_type": "possible_assessment",
+      "category": "assessment",
+      "email_id": "363467",
+      "subject": "Steve deleted 20,000 lines of code",
+      "from": "Matt Gray <matt@founderos.com>",
+      "priority": "MEDIUM",
+      "pipeline_match": null,
+      "status": "needs_human_review"
+    },
+    {
+      "timestamp": "2026-06-29T20:00:42.223654+03:00",
+      "review_type": "possible_recruiter_outreach",
+      "category": "recruiter_reach",
+      "email_id": "363483",
+      "subject": "New job opportunities at Rak Bank Career Site",
+      "from": "\"RAKBANK.CAREER\" <careers@rakbank.ae>",
+      "priority": "HIGH",
+      "pipeline_match": "RAKBANK",
+      "status": "needs_human_review"
+    }
+  ],
   "llm_analysis": {
-    "actionable_emails": [],
+    "actionable_emails": [
+      {
+        "id": "363483",
+        "subject": "New job opportunities at Rak Bank Career Site",
+        "from": "\"RAKBANK.CAREER\" <careers@rakbank.ae>",
+        "date": "Mon, 29 Jun 2026 15:30:39 +0000 (UTC)",
+        "category": "recruiter_reach",
+        "urgency": "medium",
+        "intent": "The sender is notifying Ahmed about new RAKBANK openings that may match his profile.",
+        "action": "read_and_file",
+        "response_deadline": "1 week",
+        "notes": "Automated job alert, review VP roles before acting."
+      }
+    ],
     "summary": {
-      "total_actionable": 0,
+      "total_actionable": 1,
       "critical_count": 0,
       "requires_interview_prep": false,
       "requires_assessment": false,
-      "recruiter_top_opportunities": [],
-      "top_priority": null,
-      "daily_focus": "No email action needed from this batch."
+      "recruiter_top_opportunities": [
+        "RAKBANK - Vice President & Platform Owner-Cards",
+        "RAKBANK - Vice President & Enterprise Architect"
+      ],
+      "top_priority": "363483",
+      "daily_focus": "Review the RAKBANK VP openings for fit and compensation potential before deciding whether to apply."
     }
   }
 }

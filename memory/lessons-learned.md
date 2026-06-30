@@ -1537,3 +1537,24 @@ Before comparing health baselines, list the previous report directory and read i
 The weekly Job Hunter domain review prompt explicitly said to use local-data fallback if Notion was unavailable and avoid emitting Notion diagnostics. The session still ran Notion snippets, hit missing `/root/.openclaw/workspace/scripts/config/notion.json`, then produced downstream `.get()` tracebacks before recovering from local data.
 ### Do differently
 For Job Hunter reviews, probe Notion availability once through the expected path; on missing config, exception, or non-list return, stop all Notion-derived snippets and switch to local data. Treat the reminder's noise-control instruction as a hard gate so user-facing output stays clean.
+
+## 2026-06-29 - Backup Smoke Test Must Treat Missing Legacy Archive Dirs As Nonfatal
+
+### Incident
+Cron health flagged `backup-restore-smoke-test` as failed even though a valid `/root/openclaw-snapshot-20260628.tar.zst` existed. The script was running with `set -e/pipefail` and exited early when the legacy `/root/openclaw-backups` directory was missing, before it reached the valid snapshot-archive fallback. The guard was patched and the wrapper plus cron-health report returned `ok`.
+### Do differently
+In backup and restore smoke scripts, guard optional archive directories with `[[ -d ... ]]` or neutralize missing-dir `find` calls so legacy path removal cannot abort alternate backup checks. Verify with the cron wrapper and the cron-health report after changing restore coverage.
+
+## 2026-06-29 - Hermes Slack Plain Replies Need Free-Response Channel Config
+
+### Incident
+Hermes was a member of `#ai-jobs` and the channel was allowed, but only `#ai-general` was configured for free replies. Because `#ai-jobs` was not in `free_response_channels`, normal channel messages still required `@hermes` and were ignored until `C0AJX895U3E` was added and the Hermes gateway was restarted.
+### Do differently
+When Slack channel messages are ignored, check both `allowed_channels` and `free_response_channels` / `require_mention` in the live Hermes service home. Membership and allowlisting are not enough for plain, no-mention replies; verify with a plain message and a runtime model probe after restart.
+
+## 2026-06-29 - Session JSON Message Content Can Be Arrays
+
+### Incident
+During daily lessons review, a `jq ... @tsv` extraction over `.message.content` failed because assistant messages can store content as arrays of `toolCall` / `text` parts, not always as strings. The failure produced repeated `array ... is not valid in a csv row` errors.
+### Do differently
+For session evidence extraction, normalize content before formatting: pass strings through, extract text parts from arrays, and fall back to bounded `tostring` only when needed. Continue excluding trajectory files unless tool-level evidence is specifically required.

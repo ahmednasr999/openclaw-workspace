@@ -2,9 +2,9 @@
   "task": "sie-360-checks",
   "status": "ok",
   "returncode": 0,
-  "started_at": "2026-06-29T01:50:01+03:00",
-  "finished_at": "2026-06-29T01:50:18+03:00",
-  "duration_seconds": 17,
+  "started_at": "2026-06-30T01:50:01+03:00",
+  "finished_at": "2026-06-30T01:50:21+03:00",
+  "duration_seconds": 20,
   "log_path": "/root/.openclaw/workspace/logs/cron/sie-360-checks.log",
   "lock_path": "/var/lock/openclaw/sie-360-checks.lock",
   "host": "srv1352768"

@@ -385,6 +385,29 @@
 | 494 | 🆕 | Foreground. | Director Enterprise Architecture | Dubai | — | 🆕 Discovered | Radar | 2026-06-28 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4434256725) | — |
 | 495 | 🆕 | byteSpark.ai | Head of AI-Assisted Engineering | Dubai | — | 🆕 Discovered | Radar | 2026-06-29 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4434279528) | — |
 | 496 | 🆕 | Alsayegh Worldwide | AI Transformation Director | Dubai | — | 🆕 Discovered | Radar | 2026-06-29 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4431046116) | — |
+| 497 | 🆕 | Michael Page | Director, Digital Engineering (UAE National) | Abu Dhabi | — | 🆕 Discovered | Radar | 2026-06-30 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4434241475) | — |
+| 498 | 🆕 | Institute for Healthier Living Abu Dhabi | Head of Digital Transformation | Abu Dhabi | — | 🆕 Discovered | Radar | 2026-06-30 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4432986844) | — |
+| 499 | 🆕 | Ministry of Economy & Tourism | رئيس قسم الذكاء الاصطناعي - Head of Artificial Intelligence Section | Dubai | — | 🆕 Discovered | Radar | 2026-06-30 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4432941950) | — |
+| 500 | 🆕 | RAKBANK | Vice President & Enterprise Architect | GCC | — | 🆕 Discovered | Radar | 2026-06-30 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4432415018) | — |
+| 501 | 🆕 | Michael Page | Director, Digital Channels (UAE National) | Abu Dhabi | — | 🆕 Discovered | Radar | 2026-06-30 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4434250049) | — |
+| 502 | 🆕 | RAKBANK | Vice President & Platform Owner-Cards | GCC | — | 🆕 Discovered | Radar | 2026-06-30 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4434464236) | — |
+| 503 | 🆕 | REEF GROUP | مجموعة ريف | Director of Information Technology | Riyadh | — | 🆕 Discovered | Radar | 2026-06-30 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4434285489) | — |
+| 504 | 🆕 | Foreground. | Director – AI Strategy & Portfolio | Riyadh | — | 🆕 Discovered | Radar | 2026-06-30 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4432923747) | — |
+| 505 | 🆕 | Capco | Senior Manager/Director - Data Lead | Riyadh | — | 🆕 Discovered | Radar | 2026-06-30 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4434483090) | — |
+| 506 | 🆕 | Nameless Ventures | Chief Technology Officer | Dubai | — | 🆕 Discovered | Radar | 2026-06-30 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4431515132) | — |
+| 507 | 🆕 | Salt | Head of Engineering | Dubai | — | 🆕 Discovered | Radar | 2026-06-30 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4431550093) | — |
+| 508 | 🆕 | byteSpark.ai | Head of AI-Assisted Engineering | Dubai | — | 🆕 Discovered | Radar | 2026-06-30 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4434465152) | — |
+| 509 | 🆕 | Mackenzie Jones Middle East | Chief Application Officer (UAEN) | Dubai | — | 🆕 Discovered | Radar | 2026-06-30 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4431075228) | — |
+| 510 | 🆕 | DAMAC Properties | Senior Director-Enterprise Architecture Data Center | Dubai | — | 🆕 Discovered | Radar | 2026-06-30 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4434482808) | — |
+| 511 | 🆕 | Live Connections | Project Director | Dubai | — | 🆕 Discovered | Radar | 2026-06-30 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4433625545) | — |
+| 512 | 🆕 | Swiss PRO Foundations | Project Director - Piling Industry Experience | Dubai | — | 🆕 Discovered | Radar | 2026-06-30 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4433072519) | — |
+| 513 | 🆕 | DAMAC Properties | Director-Development Process Transformation-Data Center | Dubai | — | 🆕 Discovered | Radar | 2026-06-30 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4434444558) | — |
+| 514 | 🆕 | TALENTMATE | Vice President And Platform Owner-Cards | Dubai | — | 🆕 Discovered | Radar | 2026-06-30 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4434902736) | — |
+| 515 | 🆕 | Capital.com | Head Of Risk MENA | Dubai | — | 🆕 Discovered | Radar | 2026-06-30 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4434423092) | — |
+| 516 | 🆕 | FastXE | Head of Compliance | Dubai | — | 🆕 Discovered | Radar | 2026-06-30 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4434444652) | — |
+| 517 | 🆕 | Standard Chartered | Head of SEO (Senior Executive Office) - UAE Nationals Only | Dubai | — | 🆕 Discovered | Radar | 2026-06-30 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4434143182) | — |
+| 518 | 🆕 | SRC Ecosystem | Head of Trade Finance Sales | Dubai | — | 🆕 Discovered | Radar | 2026-06-30 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4434476266) | — |
+
 
 
 

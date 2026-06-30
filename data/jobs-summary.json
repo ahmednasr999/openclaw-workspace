@@ -2,84 +2,22 @@
   "meta": {
     "agent": "jobs-review",
     "version": "2.0.0",
-    "generated_at": "2026-06-28T08:05:05.447061+03:00",
-    "duration_ms": 171077,
+    "generated_at": "2026-06-29T08:33:45.258955+03:00",
+    "duration_ms": 69533,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "64471fd4",
+    "run_id": "39414f0d",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
-    "generated_at": "2026-06-28T08:05:05.395336+03:00",
-    "total_candidates": 14,
-    "reviewed": 14,
-    "submit": [
-      {
-        "id": "linkedin_jobspy-li-4434253758",
-        "source": "linkedin_jobspy",
-        "title": "Group Director- Strategy And Technology Operations",
-        "company": "TALENTMATE",
-        "location": "Dubai, Dubai, United Arab Emirates",
-        "url": "https://www.linkedin.com/jobs/view/4434253758",
-        "posted": "2026-06-26",
-        "seniority": "C-Suite",
-        "domain_match": true,
-        "keyword_score": 6,
-        "match_keywords": [
-          "director"
-        ],
-        "raw_snippet": "**Job Description**\n**Job Description**\n**Job Accountabilities**\n* Strategy Execution \\& Business Alignment\n* Translate business and technology strategy into clear, outcome\\-driven execution priorities\n* Ensure all major initiatives are aligned to measurable business value (revenue, cost, CX, effici",
-        "relevant": true,
-        "filter_reason": null,
-        "search_country": "United Arab Emirates",
-        "search_title": "Head of PMO",
-        "linkedin_id": "li-4434253758",
-        "jd_text": "**Job Description**\n**Job Description**\n**Job Accountabilities**\n* Strategy Execution \\& Business Alignment\n* Translate business and technology strategy into clear, outcome\\-driven execution priorities\n* Ensure all major initiatives are aligned to measurable business value (revenue, cost, CX, efficiency)\n* Drive clarity of ownership, success measures, and expected outcomes across leadership\n* Organizational Performance \\& Insight\n* Establish a single, executive\\-level view of performance across Logistics Technology\n* Synthesize inputs from Product, Engineering, and PMO into actionable insights for leadership\n* Identify performance gaps, risks, and trade\\-offs; recommend corrective actions\n* Cross\\-Functional Integration \\& Execution Effectiveness\n* Align Product, Engineering, Architecture, Finance, HR, and PMO to operate as an integrated system\n* Resolve cross\\-functional friction, misalignment, and prioritization conflicts\n* Act as a neutral operator to ensure decisions translate into execution\n* Financial \\& Operational Discipline\n* Drive financial rigor across budgeting, forecasting, and cost management\n* Ensure alignment between investment decisions and business outcomes\n* Oversee headcount planning, vendor spend alignment, and resource optimization\n* Executive Operating Cadence \\& Decision Support\n* Run the leadership operating rhythm (business reviews, performance discussions, strategic forums)\n* Prepare decision\\-ready insights for EVP and leadership team (trade\\-offs, capacity, priorities)\n* Ensure leadership discussions are outcome\\-focused and lead to clear actions\n* Organizational Effectiveness \\& Continuous Improvement\n* Identify structural inefficiencies and improvement opportunities across the organization\n* Drive adoption of consistent ways of working across domains\n* Enable a culture of accountability, transparency, and outcome ownership\n\n\n**Qualifications**\n**Qualifications, Experience And Skills**\n* Bachelor\u2019s degree in engineering, Business, or related field\n* MBA or equivalent preferred\n\n\n**Experience**\n* 12\u201318 years in strategy, operations, or transformation roles within technology organizations\n* Experience working in large, complex, global environments\n* Proven ability to operate at executive level (CIO/CTO/EVP interface)\n* Experience driving cross\\-functional alignment and organizational transformation\n\n\n**Functional**\n**Core Skills**\n* Strong understanding of product, engineering, and technology operating models\n* Financial acumen (budgeting, forecasting, cost management)\n* Strategic planning and execution alignment\n* Data\\-driven performance management\n\n\n**Leadership**\n* Strong executive presence and ability to influence without authority\n* High judgment and structured problem\\-solving capability\n* Ability to operate in ambiguity and drive clarity\n* Strong stakeholder management across senior leaders\n* Bias for action and accountability\n\n\n Job Details\n   \n\n  \n\n Role Level: Not Applicable Work Type: Full\\-Time Country: United Arab Emirates City: Dubai Company Website: http://www.dpworld.com Job Function: Strategy \\& Planning Company Industry/\n   \n\n  \n\n Sector: Other\n   \n\n  \n\n What We Offer\n   \n\n  \n\n**About The Company**\n Searching, interviewing and hiring are all part of the professional life. The TALENTMATE Portal idea is to fill and help professionals doing one of them by bringing together the requisites under One Roof. Whether you're hunting for your Next Job Opportunity or Looking for Potential Employers, we're here to lend you a Helping Hand.\n   \n\n  \n\n Report\n   \n\n  \n\n Disclaimer: talentmate.com is only a platform to bring jobseekers \\& employers together. Applicants are advised to research the bonafides of the prospective employer independently. We do NOT endorse any requests for money payments and strictly advice against sharing personal or bank related information. We also recommend you visit Security Advice for more information. If you suspect any fraud or malpractice, email us at abuse@talentmate.com.",
-        "source_count": 1,
-        "country": "United Arab Emirates",
-        "industry_bonus": 9,
-        "policy_status": "pass",
-        "sources": [
-          "linkedin"
-        ],
-        "first_seen": "2026-06-28",
-        "career_fit_score": 9,
-        "verdict": "SUBMIT",
-        "verdict_reason": "Excellent GCC executive fit across technology strategy, PMO alignment, operating cadence, budgeting, and organizational effectiveness. [5D role=2 | seniority=2 | geo=2 | strategic=1 | evidence=2 | fit=9/10 | llm=9] [CMO outreach queued for TALENTMATE]",
-        "watchlist_matches": {
-          "company_hits": [],
-          "domain_hits": [],
-          "categories": []
-        },
-        "ats_score": 75,
-        "ats_verdict": "GO",
-        "ats_matched": [
-          "pmo",
-          "transformation",
-          "ai",
-          "payment",
-          "operating model",
-          "stakeholder management",
-          "budget",
-          "revenue",
-          "data",
-          "strategy"
-        ],
-        "ats_gaps": [],
-        "llm_fit_score": 9,
-        "fit_dimensions": {
-          "role": 2,
-          "seniority": 2,
-          "geography": 2,
-          "strategic": 1,
-          "evidence": 2
-        }
-      }
-    ],
+    "generated_at": "2026-06-29T08:33:45.207995+03:00",
+    "total_candidates": 15,
+    "reviewed": 15,
+    "submit": [],
     "review": [],
-    "skip_count": 13,
+    "skip_count": 15,
     "unreviewed_count": 0,
     "thresholds": {
       "submit": 6,
@@ -87,33 +25,33 @@
     },
     "pipeline": {
       "l0_auto_skip": 0,
-      "l1_jd_enriched": 0,
-      "l1_jd_coverage": "14/14",
+      "l1_jd_enriched": 1,
+      "l1_jd_coverage": "14/15",
       "llm_model": "openai/gpt-5.5",
-      "llm_jobs_reviewed": 14,
-      "r2_latency_ms": 166636,
+      "llm_jobs_reviewed": 15,
+      "r2_latency_ms": 62726,
       "r2_fallbacks": 0
     },
     "kpi": {
-      "submit_rate": 0.07142857142857142,
+      "submit_rate": 0.0,
       "review_rate": 0.0,
-      "skip_rate": 0.9285714285714286,
-      "avg_fit_score": 4.9,
+      "skip_rate": 1.0,
+      "avg_fit_score": 5.0,
       "l0_filter_rate": 0.0,
       "llm_review_rate": 100.0
     }
   },
   "kpi": {
-    "total_loaded": 14,
+    "total_loaded": 15,
     "l0_auto_skip": 0,
-    "l1_jd_enriched": 0,
+    "l1_jd_enriched": 1,
     "l2_filtered": 0,
-    "submit_count": 1,
+    "submit_count": 0,
     "review_count": 0,
-    "skip_count": 13,
-    "submit_rate": 7.1,
-    "avg_fit_score": 4.9,
-    "r2_latency_ms": 166636
+    "skip_count": 15,
+    "submit_rate": 0.0,
+    "avg_fit_score": 5.0,
+    "r2_latency_ms": 62726
   },
   "recommendations": []
 }
