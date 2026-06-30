@@ -3989,3 +3989,56 @@ Node.js v22.22.1
 ## Calendar - Today's Events
 missing --account (or set GOG_ACCOUNT, set default via `gog auth manage`, or store exactly one token)
 
+=== Morning Brief - 2026-06-30 06:10 AM ===
+
+## Claude 2x Usage Reminder
+
+## Job Radar (from Tavily)
+[search-router] Tavily unavailable, falling back to local SearXNG: Tavily Search failed (401): {"detail":{"error":"Unauthorized: missing or invalid API key."}}
+## Sources
+
+_(provider: searxng)_
+
+- **PMO Jobs in the Middle East (Jun 2026) - Bayt.com**
+  https://www.bayt.com/en/international/jobs/pmo-jobs/
+  Apply now to over 460 PMO jobs in Middle East and Gulf and make your job hunting simpler. Find the latest PMO job vacancies and employment opportunities in Middle East and Gulf.
+
+- **PMO Jobs in UAE (Jun 2026) - Dubai**
+  https://www.bayt.com/en/uae/jobs/pmo-jobs/
+  Apply now to over 40 PMO jobs in UAE and make your job hunting simpler. Find the latest PMO job vacancies and employment opportunities in UAE.
+
+- **25+ Digital Transformation Director Jobs, Employment in Dubai 15 June 2026| Indeed**
+  https://ae.indeed.com/q-digital-transformation-director-l-dubai-jobs.html
+  Discover 33 Digital Transformation Director job opportunities in Dubai on Indeed.com. Apply today to advance your career with top employers.
+
+- **PMO Jobs (Jun 2026) | 21 Latest Vacancies | GulfTalent.com**
+  https://www.gulftalent.com/jobs/title/pmo
+  Browse the latest PMO Jobs with top employers in UAE, Saudi, Qatar and Gulf. Find 21 new PMO vacancies and apply today.
+
+- **Head Of Digital Transformation Jobs in UAE (Jun 2026) - Bayt.com**
+  https://www.bayt.com/en/uae/jobs/head-of-digital-transformation-jobs/
+  Apply now to over 30 Head Of Digital Transformation jobs in UAE and make your job hunting simpler. Find the latest Head Of Digital Transformation job vacancies and employment opportunities in UAE.
+
+## Gmail - New Opportunities
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/root/.openclaw/workspace/scripts/gmail-scan.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+
+## Calendar - Today's Events
+missing --account (or set GOG_ACCOUNT, set default via `gog auth manage`, or store exactly one token)
+
