@@ -407,6 +407,20 @@
 | 516 | 🆕 | FastXE | Head of Compliance | Dubai | — | 🆕 Discovered | Radar | 2026-06-30 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4434444652) | — |
 | 517 | 🆕 | Standard Chartered | Head of SEO (Senior Executive Office) - UAE Nationals Only | Dubai | — | 🆕 Discovered | Radar | 2026-06-30 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4434143182) | — |
 | 518 | 🆕 | SRC Ecosystem | Head of Trade Finance Sales | Dubai | — | 🆕 Discovered | Radar | 2026-06-30 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4434476266) | — |
+| 519 | 🆕 | Mintlayer | Head of AI | GCC | — | 🆕 Discovered | Radar | 2026-07-01 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4434199466) | — |
+| 520 | 🆕 | DAMAC Properties | Senior Director -AI | Dubai | — | 🆕 Discovered | Radar | 2026-07-01 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4431579691) | — |
+| 521 | 🆕 | RTC1 Recruitment Services | IT Director | Dubai | — | 🆕 Discovered | Radar | 2026-07-01 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4431590130) | — |
+| 522 | 🆕 | Talents Tide | Head of Applications Development (UAEN) | Dubai | — | 🆕 Discovered | Radar | 2026-07-01 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4434371038) | — |
+| 523 | 🆕 | Accenture Middle East | Strategy Principal Director | Riyadh | — | 🆕 Discovered | Radar | 2026-07-01 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4434326841) | — |
+| 524 | 🆕 | byteSpark.ai | Head of AI-Assisted Engineering | Dubai | — | 🆕 Discovered | Radar | 2026-07-01 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4435162977) | — |
+| 525 | 🆕 | Fletcher Piccolo Associates (FPA) | Senior Vice President of Engineering | Dubai | — | 🆕 Discovered | Radar | 2026-07-01 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4434356031) | — |
+| 526 | 🆕 | Alexander Ash Consulting | Director Program Management Office | Dubai | — | 🆕 Discovered | Radar | 2026-07-01 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4431509040) | — |
+| 527 | 🆕 | BeWunder | Project Director Event Production (m/f/d) | Dubai | — | 🆕 Discovered | Radar | 2026-07-01 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4431575700) | — |
+| 528 | 🆕 | Moove | Director of Strategy & Operations | Dubai | — | 🆕 Discovered | Radar | 2026-07-01 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4430575223) | — |
+| 529 | 🆕 | WPP Production | Project Director | Dubai | — | 🆕 Discovered | Radar | 2026-07-01 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4435300636) | — |
+| 530 | 🆕 | finera. | General Manager | Dubai | — | 🆕 Discovered | Radar | 2026-07-01 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4434951855) | — |
+| 531 | 🆕 | Mastercard | Director, Corporate Solutions - FI Enablement | Dubai | — | 🆕 Discovered | Radar | 2026-07-01 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4431902934) | — |
+
 
 
 

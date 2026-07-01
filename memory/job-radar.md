@@ -1,6 +1,6 @@
-# Job Radar: 2026-06-30
+# Job Radar: 2026-07-01
 
-*Generated: 2026-06-30 06:00 UTC*
+*Generated: 2026-07-01 06:00 UTC*
 
 *Engine: JobSpy (LinkedIn, Indeed, Google Jobs)*
 
@@ -9,6 +9,18 @@
 ---
 
 ### Digital Transformation Executive (UAE)
+
+- **Head of AI** at Mintlayer 🎯
+  📍  | 📅 2026-06-30
+  🔗 https://www.linkedin.com/jobs/view/4434199466
+
+- **Head of Digital Payments** at Finance House 🎯
+  📍 Abu Dhabi Emirate, United Arab Emirates | 📅 2026-06-29
+  🔗 https://www.linkedin.com/jobs/view/4421827196
+
+- **Vice President & Platform Owner-Cards** at RAKBANK 🎯
+  📍  | 📅 2026-06-29
+  🔗 https://www.linkedin.com/jobs/view/4434464236
 
 - **AI Transformation Director** at Alsayegh Worldwide 🎯
   📍 Dubai, Dubai, United Arab Emirates | 📅 2026-06-28
@@ -30,6 +42,10 @@
   📍 Dubai, Dubai, United Arab Emirates | 📅 2026-06-26
   🔗 https://www.linkedin.com/jobs/view/4433876871
 
+- **Technical Director** at Backbase 🎯
+  📍 Dubai, United Arab Emirates | 📅 2026-06-26
+  🔗 https://www.linkedin.com/jobs/view/4433833552
+
 - **Head of Artificial Intelligence** at Hays 🎯
   📍 Dubai, United Arab Emirates | 📅 2026-06-25
   🔗 https://www.linkedin.com/jobs/view/4428252282
@@ -38,41 +54,29 @@
   📍 Dubai, United Arab Emirates | 📅 2026-06-25
   🔗 https://www.linkedin.com/jobs/view/4430231610
 
-- **Vice President - Digital Engineering** at Dubai Holding 🎯
-  📍 Dubai, United Arab Emirates | 📅 2026-06-23
-  🔗 https://www.linkedin.com/jobs/view/4429467084
-
-- **Head of AI, Data & Governance** at MultiBank Group 🎯
-  📍 Dubai, United Arab Emirates | 📅 2026-06-23
-  🔗 https://www.linkedin.com/jobs/view/4432221881
-
-- **Head of Systems Strategy - Regulatory** at Givaudan 🎯
-  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-06-23
-  🔗 https://www.linkedin.com/jobs/view/4423224655
-
-- **Vice President & Enterprise Architect** at RAKBANK 🎯
-  📍  | 📅 2026-06-23
-  🔗 https://www.linkedin.com/jobs/view/4432415018
-
-- **Head of AI & BI Reporting** at MultiBank Group 🎯
-  📍 Dubai, United Arab Emirates | 📅 2026-06-23
-  🔗 https://www.linkedin.com/jobs/view/4432207562
-
-- **Head of Digital Payments** at Finance House 🎯
-  📍 Abu Dhabi Emirate, United Arab Emirates | 📅 nan
-  🔗 https://www.linkedin.com/jobs/view/4421827196
+- **Senior Director -AI** at DAMAC Properties 🎯
+  📍 Dubai, United Arab Emirates | 📅 nan
+  🔗 https://www.linkedin.com/jobs/view/4431579691
 
 - **Director, Digital Channels (UAE National)** at Michael Page 🎯
   📍 Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates | 📅 nan
   🔗 https://www.linkedin.com/jobs/view/4434250049
 
-- **Vice President & Platform Owner-Cards** at RAKBANK 🎯
-  📍  | 📅 nan
-  🔗 https://www.linkedin.com/jobs/view/4434464236
+- **IT Director** at RTC1 Recruitment Services 🎯
+  📍 Dubai, United Arab Emirates | 📅 nan
+  🔗 https://www.linkedin.com/jobs/view/4431590130
+
+- **Head of Applications Development (UAEN)** at Talents Tide 🎯
+  📍 Dubai, United Arab Emirates | 📅 nan
+  🔗 https://www.linkedin.com/jobs/view/4434371038
 
 *15 results (15 executive-level, 0 likely ghost jobs)*
 
 ### Digital Transformation Executive (Saudi)
+
+- **Senior Manager/Director - Data Lead** at Capco 🎯
+  📍 Riyadh, Riyadh, Saudi Arabia | 📅 2026-06-29
+  🔗 https://www.linkedin.com/jobs/view/4434483090
 
 - **Director of Information Technology** at REEF GROUP | مجموعة ريف 🎯
   📍 Riyadh, Saudi Arabia | 📅 2026-06-28
@@ -90,31 +94,27 @@
   📍 Riyadh, Riyadh, Saudi Arabia | 📅 2026-06-25
   🔗 https://www.linkedin.com/jobs/view/4433306084
 
+- **Director, Technology Consulting - Telecom SME** at EPAM Systems 🎯
+  📍 Riyadh, Riyadh, Saudi Arabia | 📅 2026-06-25
+  🔗 https://www.linkedin.com/jobs/view/4410164974
+
+- **KSA Head of Systems Vice President** at MUFG 🎯
+  📍  | 📅 2026-06-25
+  🔗 https://www.linkedin.com/jobs/view/4432631925
+
 - **Director of Information Technology** at CNTXT 🎯
   📍 Riyadh, Saudi Arabia | 📅 2026-06-24
   🔗 https://www.linkedin.com/jobs/view/4432541297
 
-- **Chief Technology Officer** at Hays 🎯
-  📍 Riyadh, Saudi Arabia | 📅 2026-06-23
-  🔗 https://www.linkedin.com/jobs/view/4432234361
-
-- **Head Of Digital & Transformation Risk Section** at Riyad Bank 🎯
-  📍 Riyadh, Saudi Arabia | 📅 2026-06-23
-  🔗 https://www.linkedin.com/jobs/view/4431259337
-
-- **CTO - eCommerce** at Involved Solutions 🎯
-  📍 Riyadh, Riyadh, Saudi Arabia | 📅 2026-06-23
-  🔗 https://www.linkedin.com/jobs/view/4431248997
-
-- **Program Director - Airport** at DXC Technology 🎯
-  📍 Riyadh, Saudi Arabia | 📅 2026-06-23
-  🔗 https://www.linkedin.com/jobs/view/4432229742
-
-- **Senior Manager/Director - Data Lead** at Capco 🎯
+- **Strategy Principal Director** at Accenture Middle East 🎯
   📍 Riyadh, Riyadh, Saudi Arabia | 📅 nan
-  🔗 https://www.linkedin.com/jobs/view/4434483090
+  🔗 https://www.linkedin.com/jobs/view/4434326841
 
-*10 results (10 executive-level, 0 likely ghost jobs)*
+- **Innovation Lead** at Bechtel Corporation
+  📍 Jubail, Eastern, Saudi Arabia | 📅 nan
+  🔗 https://www.linkedin.com/jobs/view/4434781125
+
+*10 results (9 executive-level, 0 likely ghost jobs)*
 
 ### Digital Transformation Executive (Qatar)
 
@@ -122,57 +122,53 @@ No results found.
 
 ### CTO / Head of Technology (GCC)
 
-- **VP of Data Engineering** at Talent Seed 🎯
-  📍 Dubai, United Arab Emirates | 📅 2026-06-28
-  🔗 https://www.linkedin.com/jobs/view/4427352247
+- **Chief Technology Officer** at Nameless Ventures 🎯
+  📍 Dubai, United Arab Emirates | 📅 2026-06-29
+  🔗 https://www.linkedin.com/jobs/view/4431515132
 
-- **Technical Director** at Backbase 🎯
-  📍 Dubai, United Arab Emirates | 📅 2026-06-26
-  🔗 https://www.linkedin.com/jobs/view/4433833552
+- **Chief Application Officer (UAEN)** at Mackenzie Jones Middle East 🎯
+  📍 Dubai, United Arab Emirates | 📅 2026-06-29
+  🔗 https://www.linkedin.com/jobs/view/4431075228
 
 - **Head of Engineering - Options** at Keyrock 🎯
   📍 Dubai, Dubai, United Arab Emirates | 📅 2026-06-26
   🔗 https://www.linkedin.com/jobs/view/4404463770
 
-- **Engineering Lead- Options** at Keyrock
-  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-06-26
-  🔗 https://www.linkedin.com/jobs/view/4404460796
-
-- **People 10 Technosoft - AI Solution Architect** at People10 Technologies Inc.
-  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-06-24
-  🔗 https://www.linkedin.com/jobs/view/4432491339
-
 - **Head of Engineering** at UMATR 🎯
-  📍 Dubai, United Arab Emirates | 📅 2026-06-23
+  📍 Dubai, United Arab Emirates | 📅 nan
   🔗 https://www.linkedin.com/jobs/view/4431229028
-
-- **Enterprise Architect** at Moro Hub
-  📍 Dubai, United Arab Emirates | 📅 2026-06-23
-  🔗 https://www.linkedin.com/jobs/view/4429512505
-
-- **Chief Technology Officer** at Nameless Ventures 🎯
-  📍 Dubai, United Arab Emirates | 📅 nan
-  🔗 https://www.linkedin.com/jobs/view/4431515132
-
-- **Head of Engineering** at Salt 🎯
-  📍 Dubai, United Arab Emirates | 📅 nan
-  🔗 https://www.linkedin.com/jobs/view/4431550093
 
 - **Head of AI-Assisted Engineering** at byteSpark.ai 🎯
   📍 Dubai, Dubai, United Arab Emirates | 📅 nan
-  🔗 https://www.linkedin.com/jobs/view/4434465152
+  🔗 https://www.linkedin.com/jobs/view/4435162977
 
-- **Chief Application Officer (UAEN)** at Mackenzie Jones Middle East 🎯
+- **Senior Vice President of Engineering** at Fletcher Piccolo Associates (FPA) 🎯
   📍 Dubai, United Arab Emirates | 📅 nan
-  🔗 https://www.linkedin.com/jobs/view/4431075228
+  🔗 https://www.linkedin.com/jobs/view/4434356031
 
-- **Senior Director-Enterprise Architecture Data Center** at DAMAC Properties 🎯
+- **Co-Founder & Scientific Lead (Emirati National Only)** at Shamsa
   📍 Dubai, Dubai, United Arab Emirates | 📅 nan
-  🔗 https://www.linkedin.com/jobs/view/4434482808
+  🔗 https://www.linkedin.com/jobs/view/4431550280
 
-*12 results (9 executive-level, 0 likely ghost jobs)*
+*7 results (6 executive-level, 0 likely ghost jobs)*
 
 ### PMO / Program Director (GCC)
+
+- **Director Program Management Office** at Alexander Ash Consulting 🎯
+  📍 Dubai, United Arab Emirates | 📅 2026-06-29
+  🔗 https://www.linkedin.com/jobs/view/4431509040
+
+- **Transformation Portfolio Lead** at Transguard Workforce Solutions
+  📍 Dubai, United Arab Emirates | 📅 2026-06-29
+  🔗 https://www.linkedin.com/jobs/view/4433646600
+
+- **Director-Development Process Transformation-Data Center** at DAMAC Properties 🎯
+  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-06-29
+  🔗 https://www.linkedin.com/jobs/view/4434444558
+
+- **Operation Head** at Vrinda Global
+  📍 Dubai, United Arab Emirates | 📅 2026-06-29
+  🔗 https://www.linkedin.com/jobs/view/4433666482
 
 - **Project Director** at Live Connections 🎯
   📍 Dubai, United Arab Emirates | 📅 2026-06-28
@@ -202,35 +198,23 @@ No results found.
   📍 Dubai, United Arab Emirates | 📅 2026-06-25
   🔗 https://www.linkedin.com/jobs/view/4429894690
 
-- **Program Management Lead** at Siemens Energy
-  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-06-25
-  🔗 https://www.linkedin.com/jobs/view/4432661488
-
-- **Project Director - Piling Industry Experience** at Swiss PRO Foundations 🎯
-  📍 Dubai, United Arab Emirates | 📅 2026-06-25
-  🔗 https://www.linkedin.com/jobs/view/4433072519
-
-- **Head of Transformation** at Confidential Careers 🎯
-  📍 Dubai, United Arab Emirates | 📅 2026-06-24
-  🔗 https://www.linkedin.com/jobs/view/4432542777
-
 - **Program Manager** at GTN
   📍 Dubai, Dubai, United Arab Emirates | 📅 2026-06-24
   🔗 https://www.linkedin.com/jobs/view/4429811963
 
-- **Transformation Portfolio Lead** at Transguard Workforce Solutions
-  📍 Dubai, United Arab Emirates | 📅 nan
-  🔗 https://www.linkedin.com/jobs/view/4433646600
-
-- **Director-Development Process Transformation-Data Center** at DAMAC Properties 🎯
+- **Project Director Event Production (m/f/d)** at BeWunder 🎯
   📍 Dubai, Dubai, United Arab Emirates | 📅 nan
-  🔗 https://www.linkedin.com/jobs/view/4434444558
+  🔗 https://www.linkedin.com/jobs/view/4431575700
 
-- **Operation Head** at Vrinda Global
-  📍 Dubai, United Arab Emirates | 📅 nan
-  🔗 https://www.linkedin.com/jobs/view/4433666482
+- **Director of Strategy & Operations** at Moove 🎯
+  📍 Dubai, Dubai, United Arab Emirates | 📅 nan
+  🔗 https://www.linkedin.com/jobs/view/4430575223
 
-*14 results (6 executive-level, 0 likely ghost jobs)*
+- **Project Director** at WPP Production 🎯
+  📍 Dubai, Dubai, United Arab Emirates | 📅 nan
+  🔗 https://www.linkedin.com/jobs/view/4435300636
+
+*15 results (8 executive-level, 0 likely ghost jobs)*
 
 ### HealthTech / AI Executive (GCC)
 
@@ -238,49 +222,53 @@ No results found.
 
 ### FinTech / Payments Executive (GCC)
 
-- **Vice President And Platform Owner-Cards** at TALENTMATE 🎯
-  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-06-29
-  🔗 https://www.linkedin.com/jobs/view/4434902736
-
 - **Head Of Risk MENA** at Capital.com 🎯
   📍 Dubai, Dubai, United Arab Emirates | 📅 2026-06-28
   🔗 https://www.linkedin.com/jobs/view/4434423092
 
-- **CEEMEA Payments Sales Business Manager - Vice President** at JPMorganChase 🎯
+- **Head of Middle East** at Airwallex 🎯
   📍 Dubai, Dubai, United Arab Emirates | 📅 2026-06-26
-  🔗 https://www.linkedin.com/jobs/view/4433805758
+  🔗 https://www.linkedin.com/jobs/view/4396663329
 
 - **Head of Partnerships** at Tabby | تابي 🎯
   📍 Dubai, Dubai, United Arab Emirates | 📅 2026-06-25
   🔗 https://www.linkedin.com/jobs/view/4423376118
 
-- **MEA FIG & SWFs - Vice President** at Mizuho 🎯
+- **Head of Products and Value Proposition - Business Banking** at ADIB - Abu Dhabi Islamic Bank 🎯
   📍 Dubai, Dubai, United Arab Emirates | 📅 2026-06-24
-  🔗 https://www.linkedin.com/jobs/view/4430828421
+  🔗 https://www.linkedin.com/jobs/view/4432570466
 
-- **Head of AI & BI Reporting** at Boundless 🎯
-  📍 Dubai, United Arab Emirates | 📅 2026-06-24
-  🔗 https://www.linkedin.com/jobs/view/4432538932
+- **General Manager** at finera. 🎯
+  📍 Dubai, Dubai, United Arab Emirates | 📅 nan
+  🔗 https://www.linkedin.com/jobs/view/4434951855
 
-- **Regional Country Manager – UAE & GCC** at KAST
-  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-06-23
-  🔗 https://www.linkedin.com/jobs/view/4432163599
+- **Head of East Africa** at Taptap Send 🎯
+  📍 Dubai, Dubai, United Arab Emirates | 📅 nan
+  🔗 https://www.linkedin.com/jobs/view/4425543212
 
-- **Head of Compliance** at FastXE 🎯
+- **CEEMEA Payments Sales Business Manager - Vice President** at JPMorganChase 🎯
+  📍 Dubai, Dubai, United Arab Emirates | 📅 nan
+  🔗 https://www.linkedin.com/jobs/view/4433805758
+
+- **Regional Head Middle East, North Africa and Pakistan (MENAP) Cash Client Service** at Standard Chartered
+  📍 Dubai, Dubai, United Arab Emirates | 📅 nan
+  🔗 https://www.linkedin.com/jobs/view/4434962105
+
+- **Director, Corporate Solutions - FI Enablement** at Mastercard 🎯
   📍 Dubai, United Arab Emirates | 📅 nan
-  🔗 https://www.linkedin.com/jobs/view/4434444652
+  🔗 https://www.linkedin.com/jobs/view/4431902934
 
-- **Head of SEO (Senior Executive Office) - UAE Nationals Only** at Standard Chartered 🎯
-  📍 Dubai, Dubai, United Arab Emirates | 📅 nan
-  🔗 https://www.linkedin.com/jobs/view/4434143182
-
-- **Head of Trade Finance Sales** at SRC Ecosystem 🎯
-  📍 Dubai, Dubai, United Arab Emirates | 📅 nan
-  🔗 https://www.linkedin.com/jobs/view/4434476266
-
-*10 results (9 executive-level, 0 likely ghost jobs)*
+*9 results (8 executive-level, 0 likely ghost jobs)*
 
 ### IT Director / VP IT (GCC)
+
+- **Senior Director-Enterprise Architecture Data Center** at DAMAC Properties 🎯
+  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-06-29
+  🔗 https://www.linkedin.com/jobs/view/4434482808
+
+- **IT Business Partner** at United Diesel
+  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-06-29
+  🔗 https://www.linkedin.com/jobs/view/4434713519
 
 - **Director Enterprise Architecture** at Foreground. 🎯
   📍 Dubai, Dubai, United Arab Emirates | 📅 2026-06-26
@@ -298,15 +286,15 @@ No results found.
   📍 Dubai, United Arab Emirates | 📅 2026-06-24
   🔗 https://www.linkedin.com/jobs/view/4431494012
 
-*4 results (4 executive-level, 0 likely ghost jobs)*
+*6 results (5 executive-level, 0 likely ghost jobs)*
 
 ---
 
 ## Summary
 
-- Total unique jobs found: 65
-- Executive-level matches: 53
-- Already in pipeline: 31
-- **New jobs added to pipeline: 22**
+- Total unique jobs found: 62
+- Executive-level matches: 51
+- Already in pipeline: 38
+- **New jobs added to pipeline: 13**
 
 *Ghost job filter: Jobs >14 days old or with vague indicators (fast-paced, rockstar, ninja, wear many hats) are flagged.*

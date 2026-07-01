@@ -1558,3 +1558,17 @@ When Slack channel messages are ignored, check both `allowed_channels` and `free
 During daily lessons review, a `jq ... @tsv` extraction over `.message.content` failed because assistant messages can store content as arrays of `toolCall` / `text` parts, not always as strings. The failure produced repeated `array ... is not valid in a csv row` errors.
 ### Do differently
 For session evidence extraction, normalize content before formatting: pass strings through, extract text parts from arrays, and fall back to bounded `tostring` only when needed. Continue excluding trajectory files unless tool-level evidence is specifically required.
+
+## 2026-06-30 - Sensitive ID Details In Recruiter Emails Need A Safety Gate
+
+### Incident
+Ahmed received a recruiter NDA request asking for nationality, passport country of issue, and passport number over email before a scheduled Project Manager call.
+### Do differently
+When drafting replies that include passport numbers or similar identity details, warn about normal-email risk, prefer a secure portal when available, and do not send or offer to send the email unless Ahmed provides the missing details and explicitly approves sending.
+
+## 2026-06-30 - Routine Email Scan Notices Must Not Interrupt Active Q&A
+
+### Incident
+During an active direct Q&A session, an "Email scan: all clear" message appeared between Ahmed's question about admin portals/operational tooling and the actual answer.
+### Do differently
+Suppress or defer routine all-clear email scan notices while responding to an active user request. Only interrupt an in-progress Q&A for email scanning when there is a genuinely urgent action item; otherwise finish the user answer first and keep non-actionable scan results quiet.

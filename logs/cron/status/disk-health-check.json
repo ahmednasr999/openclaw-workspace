@@ -2,9 +2,9 @@
   "task": "disk-health-check",
   "status": "ok",
   "returncode": 0,
-  "started_at": "2026-06-29T08:40:01+03:00",
-  "finished_at": "2026-06-29T08:40:01+03:00",
-  "duration_seconds": 1,
+  "started_at": "2026-06-30T08:40:01+03:00",
+  "finished_at": "2026-06-30T08:40:01+03:00",
+  "duration_seconds": 0,
   "log_path": "/root/.openclaw/workspace/logs/cron/disk-health-check.log",
   "lock_path": "/var/lock/openclaw/disk-health-check.lock",
   "host": "srv1352768"
