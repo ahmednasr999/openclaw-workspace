@@ -420,6 +420,20 @@
 | 529 | 🆕 | WPP Production | Project Director | Dubai | — | 🆕 Discovered | Radar | 2026-07-01 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4435300636) | — |
 | 530 | 🆕 | finera. | General Manager | Dubai | — | 🆕 Discovered | Radar | 2026-07-01 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4434951855) | — |
 | 531 | 🆕 | Mastercard | Director, Corporate Solutions - FI Enablement | Dubai | — | 🆕 Discovered | Radar | 2026-07-01 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4431902934) | — |
+| 532 | 🆕 | 7X | Director of Digitalization | Dubai | — | 🆕 Discovered | Radar | 2026-07-02 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4435391827) | — |
+| 533 | 🆕 | Sana Commerce | Chief Technology Officer (CTO) | Dubai | — | 🆕 Discovered | Radar | 2026-07-02 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4435534471) | — |
+| 534 | 🆕 | Equiti Group | Head of Engineering Excellence | Dubai | — | 🆕 Discovered | Radar | 2026-07-02 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4435580084) | — |
+| 535 | 🆕 | Elevare Management Consultancy LLC | Lead Solutions Architect & Head of Engineering | Dubai | — | 🆕 Discovered | Radar | 2026-07-02 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4432365760) | — |
+| 536 | 🆕 | Viatris | Head of Business Operations – MENA Eurasia | Dubai | — | 🆕 Discovered | Radar | 2026-07-02 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4435833601) | — |
+| 537 | 🆕 | Soar | Chief Product Officer | Dubai | — | 🆕 Discovered | Radar | 2026-07-02 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4431087568) | — |
+| 538 | 🆕 | Foreground. | Head Of Data And Advanced Analytics | Dubai | — | 🆕 Discovered | Radar | 2026-07-02 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4434256710) | — |
+| 539 | 🆕 | Foreground. | Head of Data & Advanced Analytics | Dubai | — | 🆕 Discovered | Radar | 2026-07-02 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4432638689) | — |
+| 540 | 🆕 | SmartChoice International GCC | Head of Product Marketing - AI | Dubai | — | 🆕 Discovered | Radar | 2026-07-02 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4432331202) | — |
+| 541 | 🆕 | Hyring® | Head of Risk | Dubai | — | 🆕 Discovered | Radar | 2026-07-02 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4434474599) | — |
+| 542 | 🆕 | Citi | Director - Head of Middle East & Africa Network - Core Trade (Documentary Trade) | Dubai | — | 🆕 Discovered | Radar | 2026-07-02 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4434616951) | — |
+| 543 | 🆕 | Mastercard | Director, Specialist Sales - SME | Dubai | — | 🆕 Discovered | Radar | 2026-07-02 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4432722355) | — |
+| 544 | 🆕 | Ernest Hunter Green | Head of Treasury | Dubai | — | 🆕 Discovered | Radar | 2026-07-02 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4432399041) | — |
+
 
 
 
