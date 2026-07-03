@@ -1644,3 +1644,67 @@
   [codex:jobzoom/agent/codex-home/sessions] archived 31 rollout transcripts, preserved 3692105 bytes at /root/.openclaw/session-archives/codex-sessions-jobzoom-agent-codex-home-sessions-20260702-030140.tar.gz
   [codex:main/agent/codex-home/sessions] archived 272 rollout transcripts, preserved 47035883 bytes at /root/.openclaw/session-archives/codex-sessions-main-agent-codex-home-sessions-20260702-030140.tar.gz
 [2026-07-02T00:01:43Z] Cleanup done
+[2026-07-03T00:00:02Z] Starting session cleanup
+  [cmo/sessions]
+    sessions.json: 80K -> 56K (ok, pruned 0)
+    Archived JSONL: 10 files
+    Backup rotation: removed 1 files, freed 120127 bytes
+    Retired transcript archive: archived 23 files, preserved 1852015 bytes at /root/.openclaw/session-archives/session-retired-cmo-sessions-20260703-030029.tar.gz
+  [codex/sessions]
+    sessions.json: 4.0K -> 4.0K (ok, pruned 0)
+    Archived JSONL: 0 files
+    Backup rotation: removed 1 files, freed 2 bytes
+  [content-creator/sessions]
+    sessions.json: 4.0K -> 4.0K (ok, pruned 0)
+    Archived JSONL: 0 files
+    Backup rotation: removed 1 files, freed 2 bytes
+  [cto/sessions]
+    sessions.json: 64K -> 48K (ok, pruned 0)
+    Archived JSONL: 10 files
+    Backup rotation: removed 1 files, freed 91147 bytes
+    Retired transcript archive: archived 23 files, preserved 888898 bytes at /root/.openclaw/session-archives/session-retired-cto-sessions-20260703-030047.tar.gz
+  [cv-optimizer/sessions]
+    sessions.json: 4.0K -> 4.0K (ok, pruned 0)
+    Archived JSONL: 0 files
+    Backup rotation: removed 1 files, freed 2 bytes
+  [default/sessions]
+    sessions.json: 4.0K -> 4.0K (ok, pruned 0)
+    Archived JSONL: 0 files
+    Backup rotation: removed 1 files, freed 2 bytes
+  [hr/sessions]
+    sessions.json: 48K -> 16K (ok, pruned 3)
+    Archived JSONL: 0 files
+    Backup rotation: removed 1 files, freed 168905 bytes
+    Retired transcript archive: archived 9 files, preserved 685056 bytes at /root/.openclaw/session-archives/session-retired-hr-sessions-20260703-030052.tar.gz
+  [job-hunter/sessions]
+    sessions.json: 4.0K -> 4.0K (ok, pruned 0)
+    Archived JSONL: 0 files
+    Backup rotation: removed 1 files, freed 2 bytes
+  [jobzoom/sessions]
+    sessions.json: 1.5M -> 764K (ok, pruned 26)
+    Archived JSONL: 38 files
+    Backup rotation: removed 1 files, freed 1398975 bytes
+    Retired transcript archive: archived 57 files, preserved 1610686 bytes at /root/.openclaw/session-archives/session-retired-jobzoom-sessions-20260703-030112.tar.gz
+  [main/sessions]
+    sessions.json: 520K -> 268K (ok, pruned 4)
+    Archived JSONL: 4 files
+    Backup rotation: removed 1 files, freed 565320 bytes
+    Retired transcript archive: archived 151 files, preserved 10596580 bytes at /root/.openclaw/session-archives/session-retired-main-sessions-20260703-030141.tar.gz
+  [researcher/sessions]
+    sessions.json: 4.0K -> 4.0K (ok, pruned 0)
+    Archived JSONL: 0 files
+    Backup rotation: removed 1 files, freed 2 bytes
+  [session-archive-main-20260417T190249Z/sessions]
+    sessions.json: 4.0K -> 4.0K (ok, pruned 0)
+    Archived JSONL: 0 files
+    Backup rotation: removed 1 files, freed 2 bytes
+  [session-cleanup-telegram-20260411T124730Z/sessions]
+    sessions.json: 4.0K -> 4.0K (ok, pruned 0)
+    Archived JSONL: 0 files
+    Backup rotation: removed 1 files, freed 2 bytes
+  [codex:cmo/agent/codex-home/sessions] archived 29 rollout transcripts, preserved 10042849 bytes at /root/.openclaw/session-archives/codex-sessions-cmo-agent-codex-home-sessions-20260703-030142.tar.gz
+  [codex:cto/agent/codex-home/sessions] archived 21 rollout transcripts, preserved 2348187 bytes at /root/.openclaw/session-archives/codex-sessions-cto-agent-codex-home-sessions-20260703-030143.tar.gz
+  [codex:hr/agent/codex-home/sessions] archived 41 rollout transcripts, preserved 38362735 bytes at /root/.openclaw/session-archives/codex-sessions-hr-agent-codex-home-sessions-20260703-030143.tar.gz
+  [codex:jobzoom/agent/codex-home/sessions] archived 27 rollout transcripts, preserved 3236471 bytes at /root/.openclaw/session-archives/codex-sessions-jobzoom-agent-codex-home-sessions-20260703-030144.tar.gz
+  [codex:main/agent/codex-home/sessions] archived 167 rollout transcripts, preserved 25519252 bytes at /root/.openclaw/session-archives/codex-sessions-main-agent-codex-home-sessions-20260703-030145.tar.gz
+[2026-07-03T00:01:46Z] Cleanup done

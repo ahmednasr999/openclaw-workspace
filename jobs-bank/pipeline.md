@@ -433,6 +433,22 @@
 | 542 | 🆕 | Citi | Director - Head of Middle East & Africa Network - Core Trade (Documentary Trade) | Dubai | — | 🆕 Discovered | Radar | 2026-07-02 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4434616951) | — |
 | 543 | 🆕 | Mastercard | Director, Specialist Sales - SME | Dubai | — | 🆕 Discovered | Radar | 2026-07-02 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4432722355) | — |
 | 544 | 🆕 | Ernest Hunter Green | Head of Treasury | Dubai | — | 🆕 Discovered | Radar | 2026-07-02 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4432399041) | — |
+| 545 | 🆕 | QNB Group | QNB3788 - Vice President Data Analysis | Doha | — | 🆕 Discovered | Radar | 2026-07-03 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4435546196) | — |
+| 546 | 🆕 | Qatar Airways | Vice President of Technical & Engineering | GCC | — | 🆕 Discovered | Radar | 2026-07-03 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4434343030) | — |
+| 547 | 🆕 | malomatia | Head of Information Security - Qatari National | Doha | — | 🆕 Discovered | Radar | 2026-07-03 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4431915233) | — |
+| 548 | 🆕 | PER | VP / Director, Education Private Equity, Doha, Qatar | Doha | — | 🆕 Discovered | Radar | 2026-07-03 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4425283474) | — |
+| 549 | 🆕 | LOBA GROUP | Director of Engineering | Doha | — | 🆕 Discovered | Radar | 2026-07-03 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4431091719) | — |
+| 550 | 🆕 | Confidential | Head of Industrial Sector | Doha | — | 🆕 Discovered | Radar | 2026-07-03 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4431046085) | — |
+| 551 | 🆕 | Snoonu | Director of Growth Marketing | Lusail | — | 🆕 Discovered | Radar | 2026-07-03 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4303823281) | — |
+| 552 | 🆕 | Confidential | Head of Information Technology | Doha | — | 🆕 Discovered | Radar | 2026-07-03 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4433108608) | — |
+| 553 | 🆕 | Elevare Management Consultancy LLC | Lead Solutions Architect & Head of Engineering | Dubai | — | 🆕 Discovered | Radar | 2026-07-03 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4432750521) | — |
+| 554 | 🆕 | Equiti Group | Group Head of R&D | Dubai | — | 🆕 Discovered | Radar | 2026-07-03 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4435204312) | — |
+| 555 | 🆕 | DP World | Global Vice President – Operations & Systems | Dubai | — | 🆕 Discovered | Radar | 2026-07-03 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4436375437) | — |
+| 556 | 🆕 | Backbase | (Services) Technical Director | Dubai | — | 🆕 Discovered | Radar | 2026-07-03 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4435209999) | — |
+| 557 | 🆕 | Sinopack Search | Project Director (High-Rise) | Dubai | — | 🆕 Discovered | Radar | 2026-07-03 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4435819759) | — |
+| 558 | 🆕 | TALENTMATE | MEA FIG And SWFs - Vice President | Dubai | — | 🆕 Discovered | Radar | 2026-07-03 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4435379181) | — |
+| 559 | 🆕 | Disrupt.com | Financial Director | Dubai | — | 🆕 Discovered | Radar | 2026-07-03 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4432793302) | — |
+
 
 
 

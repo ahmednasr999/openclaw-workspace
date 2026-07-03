@@ -1572,3 +1572,11 @@ When drafting replies that include passport numbers or similar identity details,
 During an active direct Q&A session, an "Email scan: all clear" message appeared between Ahmed's question about admin portals/operational tooling and the actual answer.
 ### Do differently
 Suppress or defer routine all-clear email scan notices while responding to an active user request. Only interrupt an in-progress Q&A for email scanning when there is a genuinely urgent action item; otherwise finish the user answer first and keep non-actionable scan results quiet.
+
+## 2026-07-02 - Email Agent KPIs Must Respect LLM False-Positive Downgrades
+
+### Incident
+The 20:00 email scan categorized a Talabat marketing discount email as `recruiter_reach` because it matched active pipeline company `talabat`. The LLM correctly marked it low urgency, `no_action`, and a marketing false positive, and the formatter sent the all-clear message. But `email-summary.json` still kept `actionable_count: 1`, `unread_actionable: 1`, and high-priority `review_and_respond` recommendations from the raw category.
+
+### Do differently
+When LLM analysis downgrades an item to `no_action`, false positive, marketing, newsletter, or automated job-alert noise, exclude it from actionable counts, unread-actionable KPIs, hot alerts, and response recommendations. Keep the raw category only as a review candidate, not as Ahmed-facing action pressure.

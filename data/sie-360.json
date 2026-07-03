@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-01T22:50:12.972099+00:00",
+  "generated": "2026-07-02T22:50:28.361834+00:00",
   "health_score": 80,
   "summary": {
     "ok": 5,
@@ -8,11 +8,11 @@
   },
   "workspace": {
     "root_files": 80,
-    "disk_percent": 82,
-    "disk_used": "79G",
+    "disk_percent": 80,
+    "disk_used": "77G",
     "disk_total": "96G",
     "ram_total": "7.8Gi",
-    "ram_used": "2.1Gi",
+    "ram_used": "2.3Gi",
     "large_files": [
       "/root/.openclaw/agents/main/agent/codex-home/logs_2.sqlite",
       "/root/.openclaw/agents/main/agent/codex-home/state_5.sqlite",
@@ -51,7 +51,6 @@
       "/root/.openclaw/agents/cto/agent/codex-home/state_5.sqlite",
       "/root/.openclaw/agents/cto/agent/codex-home/.tmp/plugins/.git/objects/pack/pack-2a938ab6ae1c8815cc8df3070cf1cc83f955dc08.pack",
       "/root/.openclaw/agents/hr/agent/codex-home/logs_2.sqlite",
-      "/root/.openclaw/agents/hr/agent/codex-home/logs_2.sqlite-wal",
       "/root/.openclaw/agents/hr/agent/codex-home/state_5.sqlite",
       "/root/.openclaw/agents/hr/agent/codex-home/.tmp/plugins/.git/objects/pack/pack-7b15fe03224bba016430a47639b5a22b0e631afb.pack",
       "/root/.openclaw/media/inbound/RAYA_Data_Intelligence_Building_MENA_s_Premier_AI_Data_Label---0ab6beab-b758-4180-9d68-cd8d66ffe0ec.pptx",
@@ -85,7 +84,7 @@
       "/root/.openclaw/state/openclaw.sqlite",
       "/root/.openclaw/browser/linkedin-login-cdp/OnDeviceHeadSuggestModel/20251024.824731831.14/cr_en-us_500000_index.bin",
       "/root/.openclaw/browser/linkedin-login-cdp/WidevineCdm/4.10.3050.0/_platform_specific/linux_x64/libwidevinecdm.so",
-      "/root/.openclaw/browser/linkedin-login-cdp/Safe Browsing/UrlSoceng.store.4_13427419069514340",
+      "/root/.openclaw/browser/linkedin-login-cdp/Safe Browsing/UrlSoceng.store.4_13427505428103575",
       "/root/.openclaw/browser/linkedin-login-cdp/component_crx_cache/7b74bb37f996d1d265c1a7f3c763ecd523cd0ffbdb41cb637e02e3e70d27a9bd",
       "/root/.openclaw/browser/linkedin-login-cdp/WasmTtsEngine/20260528.1/bindings_main.wasm",
       "/root/.openclaw/browser/linkedin-login-cdp/WasmTtsEngine/20260625.1/bindings_main.wasm",
@@ -99,6 +98,7 @@
       "/root/.openclaw/session-archives/codex-sessions-cto-agent-codex-home-sessions-20260625-103654.tar.gz",
       "/root/.openclaw/session-archives/codex-sessions-main-agent-codex-home-sessions-20260629-030142.tar.gz",
       "/root/.openclaw/session-archives/codex-sessions-cmo-agent-codex-home-sessions-20260629-030140.tar.gz",
+      "/root/.openclaw/session-archives/codex-sessions-main-agent-codex-home-sessions-20260702-030140.tar.gz",
       "/root/.openclaw/session-archives/session-retired-cto-sessions-20260614-102151.tar.gz",
       "/root/.openclaw/session-archives/session-retired-cmo-sessions-20260614-101759.tar.gz",
       "/root/.openclaw/session-archives/session-retired-main-sessions-20260614-101910.tar.gz",
@@ -136,6 +136,7 @@
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-06-30_070026.db",
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-06-24_070041.db",
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-06-18_070044.db",
+      "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-07-02_070026.db",
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-06-02_070011.db",
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-06-06_070023.db",
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-05-31_070016.db",
@@ -190,7 +191,7 @@
       "/root/.openclaw/workspace/newsletter2.png",
       "/root/.openclaw/workspace/newsletter3.png"
     ],
-    "session_mb": 207.9
+    "session_mb": 192.4
   },
   "learnings": {
     "total": 30,
@@ -227,24 +228,24 @@
       "NASR Doctor (Daily)",
       "Email Synthetic Regression",
       "Email Health Card Daily",
-      "Email Agent (Sun-Thu)",
-      "CMO Publishing Watchdog",
+      "Email Agent (Fri-Sat)",
       "CMO Daily LinkedIn Publisher - Composio 09:30 Cairo",
       "CMO LinkedIn Comment Radar - 11am",
+      "RSS Intelligence - Weekly Crawl",
       "LCM Midday Compaction Sweep",
       "CMO LinkedIn Comment Radar - 3pm",
-      "Auto Lessons Learned - Daily Capture",
-      "Email Agent (Fri-Sat)",
-      "RSS Intelligence - Weekly Crawl",
       "CMO Weekly Content Report",
+      "Auto Lessons Learned - Daily Capture",
       "Weekly Skill Autoresearch",
+      "Email Agent (Sun-Thu)",
       "CMO Weekly Outreach Queue \u2014 Sunday",
       "Email Hygiene Weekly",
       "Weekly Pipeline Audit",
       "Weekly OpenClaw read-only health baseline",
       "CEO/NASR Weekly Operating Review",
       "Weekly Team Retro",
-      "CMO Weekly Drafting"
+      "CMO Weekly Drafting",
+      "CMO Publishing Watchdog"
     ],
     "failing": []
   },
@@ -261,17 +262,17 @@
     {
       "category": "workspace",
       "level": "warn",
-      "message": "Disk: 82% used - approaching 90% threshold"
+      "message": "Disk: 80% used - approaching 90% threshold"
     },
     {
       "category": "workspace",
       "level": "warn",
-      "message": "Large files (>5MB): 175 found in .openclaw"
+      "message": "Large files (>5MB): 176 found in .openclaw"
     },
     {
       "category": "workspace",
       "level": "alert",
-      "message": "Session size: 207.9MB - bloated, review sessions"
+      "message": "Session size: 192.4MB - bloated, review sessions"
     },
     {
       "category": "learnings",
@@ -316,7 +317,6 @@
   ],
   "auto_fixed": [],
   "needs_attention": [
-    "Session bloat: 207.9MB - review before deleting (needs human decision)",
-    "Disk usage 82% - needs cleanup decision (do not auto-delete)"
+    "Session bloat: 192.4MB - review before deleting (needs human decision)"
   ]
 }

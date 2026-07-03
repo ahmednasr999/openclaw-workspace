@@ -1,180 +1,47 @@
 {
   "status": "ok",
-  "scan_time": "2026-07-01T20:01:14.085664+03:00",
+  "scan_time": "2026-07-02T20:00:56.162413+03:00",
   "total_scanned": 32,
   "by_category": {
-    "interview_invite": 3,
-    "recruiter_reach": 4,
+    "interview_invite": 0,
+    "recruiter_reach": 1,
     "application_ack": 0,
     "rejection": 1,
     "assessment": 0,
     "application_response": 0,
-    "follow_up_needed": 3,
+    "follow_up_needed": 0,
     "job_alert": 0,
-    "other": 27
+    "other": 30
   },
-  "interview_invites": [
-    {
-      "id": "363718",
-      "from": "Shruti Tahiliani <sprinklr@myworkday.com>",
-      "subject": "Sprinklr Interview - Availability Request | Ahmed Nasr | 113162-JOB\r\n Program Manager (Open)",
-      "date": "Wed, 1 Jul 2026 14:35:51 +0000",
-      "unread": true,
-      "priority": "HIGH",
-      "score": 13,
-      "pipeline_match": "Sprinklr",
-      "confidence": 100,
-      "confidence_label": "high",
-      "evidence": [
-        "matched active pipeline company: Sprinklr",
-        "hiring sender context",
-        "hiring/application context",
-        "calendar or explicit interview evidence",
-        "reply/follow-up wording with hiring context",
-        "recruiter outreach classification",
-        "high priority score: 13"
-      ],
-      "why_actionable": "matched active pipeline company: Sprinklr | hiring sender context | hiring/application context | calendar or explicit interview evidence"
-    },
-    {
-      "id": "363726",
-      "from": "Shruti Tahiliani <shruti.sharma@sprinklr.com>",
-      "subject": "Interview with Ahmed Nasr (C827076) for 113162-JOB Program Manager",
-      "date": "Wed, 1 Jul 2026 15:58:40 +0000",
-      "unread": true,
-      "priority": "HIGH",
-      "score": 18,
-      "pipeline_match": "Sprinklr",
-      "confidence": 100,
-      "confidence_label": "high",
-      "evidence": [
-        "matched active pipeline company: Sprinklr",
-        "hiring sender context",
-        "hiring/application context",
-        "calendar or explicit interview evidence",
-        "reply/follow-up wording with hiring context",
-        "recruiter outreach classification",
-        "high priority score: 18"
-      ],
-      "why_actionable": "matched active pipeline company: Sprinklr | hiring sender context | hiring/application context | calendar or explicit interview evidence"
-    },
-    {
-      "id": "363727",
-      "from": "Shruti Tahiliani <shruti.sharma@sprinklr.com>",
-      "subject": "Re: Sprinklr Interview - Availability Request | Ahmed Nasr |\r\n 113162-JOB Program Manager (Open)",
-      "date": "Wed, 1 Jul 2026 15:59:05 +0000",
-      "unread": true,
-      "priority": "HIGH",
-      "score": 15,
-      "pipeline_match": "Sprinklr",
-      "confidence": 100,
-      "confidence_label": "high",
-      "evidence": [
-        "matched active pipeline company: Sprinklr",
-        "hiring sender context",
-        "hiring/application context",
-        "calendar or explicit interview evidence",
-        "reply/follow-up wording with hiring context",
-        "recruiter outreach classification",
-        "high priority score: 15"
-      ],
-      "why_actionable": "matched active pipeline company: Sprinklr | hiring sender context | hiring/application context | calendar or explicit interview evidence"
-    }
-  ],
+  "interview_invites": [],
   "recruiter_messages": [
     {
-      "id": "363713",
-      "from": "Take Profit Trader <team@takeprofittrader.com>",
-      "subject": "=?UTF-8?Q?=F0=9F=87=BA=F0=9F=87=B8_USA_Plays_Tonight?=",
-      "date": "Wed, 1 Jul 2026 14:01:42 +0000 (GMT)",
+      "id": "363827",
+      "from": "talabat <update.en@em.talabat.com>",
+      "subject": "=?UTF-8?B?2K7YtdmFICAgODAg2Kwg2YXYs9iq2YbZitmDIQ==?=",
+      "date": "Thu, 02 Jul 2026 14:53:16 +0000 (UTC)",
       "unread": true,
       "priority": "HIGH",
-      "score": 10,
-      "pipeline_match": "SAP",
+      "score": 6,
+      "pipeline_match": "talabat",
       "confidence": 75,
       "confidence_label": "medium",
       "evidence": [
-        "matched active pipeline company: SAP",
+        "matched active pipeline company: talabat",
         "hiring/application context",
         "recruiter outreach classification",
-        "high priority score: 10"
+        "high priority score: 6"
       ],
-      "why_actionable": "matched active pipeline company: SAP | hiring/application context | recruiter outreach classification | high priority score: 10"
-    },
-    {
-      "id": "363718",
-      "from": "Shruti Tahiliani <sprinklr@myworkday.com>",
-      "subject": "Sprinklr Interview - Availability Request | Ahmed Nasr | 113162-JOB\r\n Program Manager (Open)",
-      "date": "Wed, 1 Jul 2026 14:35:51 +0000",
-      "unread": true,
-      "priority": "HIGH",
-      "score": 13,
-      "pipeline_match": "Sprinklr",
-      "confidence": 100,
-      "confidence_label": "high",
-      "evidence": [
-        "matched active pipeline company: Sprinklr",
-        "hiring sender context",
-        "hiring/application context",
-        "calendar or explicit interview evidence",
-        "reply/follow-up wording with hiring context",
-        "recruiter outreach classification",
-        "high priority score: 13"
-      ],
-      "why_actionable": "matched active pipeline company: Sprinklr | hiring sender context | hiring/application context | calendar or explicit interview evidence"
-    },
-    {
-      "id": "363726",
-      "from": "Shruti Tahiliani <shruti.sharma@sprinklr.com>",
-      "subject": "Interview with Ahmed Nasr (C827076) for 113162-JOB Program Manager",
-      "date": "Wed, 1 Jul 2026 15:58:40 +0000",
-      "unread": true,
-      "priority": "HIGH",
-      "score": 18,
-      "pipeline_match": "Sprinklr",
-      "confidence": 100,
-      "confidence_label": "high",
-      "evidence": [
-        "matched active pipeline company: Sprinklr",
-        "hiring sender context",
-        "hiring/application context",
-        "calendar or explicit interview evidence",
-        "reply/follow-up wording with hiring context",
-        "recruiter outreach classification",
-        "high priority score: 18"
-      ],
-      "why_actionable": "matched active pipeline company: Sprinklr | hiring sender context | hiring/application context | calendar or explicit interview evidence"
-    },
-    {
-      "id": "363727",
-      "from": "Shruti Tahiliani <shruti.sharma@sprinklr.com>",
-      "subject": "Re: Sprinklr Interview - Availability Request | Ahmed Nasr |\r\n 113162-JOB Program Manager (Open)",
-      "date": "Wed, 1 Jul 2026 15:59:05 +0000",
-      "unread": true,
-      "priority": "HIGH",
-      "score": 15,
-      "pipeline_match": "Sprinklr",
-      "confidence": 100,
-      "confidence_label": "high",
-      "evidence": [
-        "matched active pipeline company: Sprinklr",
-        "hiring sender context",
-        "hiring/application context",
-        "calendar or explicit interview evidence",
-        "reply/follow-up wording with hiring context",
-        "recruiter outreach classification",
-        "high priority score: 15"
-      ],
-      "why_actionable": "matched active pipeline company: Sprinklr | hiring sender context | hiring/application context | calendar or explicit interview evidence"
+      "why_actionable": "matched active pipeline company: talabat | hiring/application context | recruiter outreach classification | high priority score: 6"
     }
   ],
   "application_acks": [],
   "rejections": [
     {
-      "id": "363717",
-      "from": "careers@career.vodafone.com",
-      "subject": "Your Profile is about to be purged",
-      "date": "Wed, 1 Jul 2026 14:28:49 +0000",
+      "id": "363837",
+      "from": "Mashreq Talent Acquisition\r\n <hcld.fa.sender@workflow.email.me-dubai-1.ocs.oraclecloud.com>",
+      "subject": "=?utf-8?Q?Update_on_Job_Application_=E2=80=93_Head_of_NeoBiz_Portfolio?=\r\n =?utf-8?Q?_Management.BB_NeoBiz.Retail_Banking_Group_at_Mashreq?=",
+      "date": "Thu, 02 Jul 2026 15:33:15 +0000 (UTC)",
       "unread": true,
       "priority": "LOW",
       "score": 1,
@@ -190,374 +57,77 @@
   ],
   "assessments": [],
   "application_responses": [],
-  "follow_ups_needed": [
-    {
-      "id": "363718",
-      "from": "Shruti Tahiliani <sprinklr@myworkday.com>",
-      "subject": "Sprinklr Interview - Availability Request | Ahmed Nasr | 113162-JOB\r\n Program Manager (Open)",
-      "date": "Wed, 1 Jul 2026 14:35:51 +0000",
-      "unread": true,
-      "priority": "HIGH",
-      "score": 13,
-      "pipeline_match": "Sprinklr",
-      "confidence": 100,
-      "confidence_label": "high",
-      "evidence": [
-        "matched active pipeline company: Sprinklr",
-        "hiring sender context",
-        "hiring/application context",
-        "calendar or explicit interview evidence",
-        "reply/follow-up wording with hiring context",
-        "recruiter outreach classification",
-        "high priority score: 13"
-      ],
-      "why_actionable": "matched active pipeline company: Sprinklr | hiring sender context | hiring/application context | calendar or explicit interview evidence"
-    },
-    {
-      "id": "363726",
-      "from": "Shruti Tahiliani <shruti.sharma@sprinklr.com>",
-      "subject": "Interview with Ahmed Nasr (C827076) for 113162-JOB Program Manager",
-      "date": "Wed, 1 Jul 2026 15:58:40 +0000",
-      "unread": true,
-      "priority": "HIGH",
-      "score": 18,
-      "pipeline_match": "Sprinklr",
-      "confidence": 100,
-      "confidence_label": "high",
-      "evidence": [
-        "matched active pipeline company: Sprinklr",
-        "hiring sender context",
-        "hiring/application context",
-        "calendar or explicit interview evidence",
-        "reply/follow-up wording with hiring context",
-        "recruiter outreach classification",
-        "high priority score: 18"
-      ],
-      "why_actionable": "matched active pipeline company: Sprinklr | hiring sender context | hiring/application context | calendar or explicit interview evidence"
-    },
-    {
-      "id": "363727",
-      "from": "Shruti Tahiliani <shruti.sharma@sprinklr.com>",
-      "subject": "Re: Sprinklr Interview - Availability Request | Ahmed Nasr |\r\n 113162-JOB Program Manager (Open)",
-      "date": "Wed, 1 Jul 2026 15:59:05 +0000",
-      "unread": true,
-      "priority": "HIGH",
-      "score": 15,
-      "pipeline_match": "Sprinklr",
-      "confidence": 100,
-      "confidence_label": "high",
-      "evidence": [
-        "matched active pipeline company: Sprinklr",
-        "hiring sender context",
-        "hiring/application context",
-        "calendar or explicit interview evidence",
-        "reply/follow-up wording with hiring context",
-        "recruiter outreach classification",
-        "high priority score: 15"
-      ],
-      "why_actionable": "matched active pipeline company: Sprinklr | hiring sender context | hiring/application context | calendar or explicit interview evidence"
-    }
-  ],
+  "follow_ups_needed": [],
   "job_alerts": [],
-  "actionable_count": 4,
-  "hot_alerts": [
-    {
-      "id": "363718",
-      "subject": "Sprinklr Interview - Availability Request | Ahmed Nasr | 113162-JOB\r\n Program Manager (Open)",
-      "from": "Shruti Tahiliani <sprinklr@myworkday.com>",
-      "priority": "HIGH",
-      "pipeline_match": "Sprinklr",
-      "confidence": 100,
-      "evidence": [
-        "matched active pipeline company: Sprinklr",
-        "hiring sender context",
-        "hiring/application context",
-        "calendar or explicit interview evidence",
-        "reply/follow-up wording with hiring context",
-        "recruiter outreach classification",
-        "high priority score: 13"
-      ]
-    },
-    {
-      "id": "363726",
-      "subject": "Interview with Ahmed Nasr (C827076) for 113162-JOB Program Manager",
-      "from": "Shruti Tahiliani <shruti.sharma@sprinklr.com>",
-      "priority": "HIGH",
-      "pipeline_match": "Sprinklr",
-      "confidence": 100,
-      "evidence": [
-        "matched active pipeline company: Sprinklr",
-        "hiring sender context",
-        "hiring/application context",
-        "calendar or explicit interview evidence",
-        "reply/follow-up wording with hiring context",
-        "recruiter outreach classification",
-        "high priority score: 18"
-      ]
-    },
-    {
-      "id": "363727",
-      "subject": "Re: Sprinklr Interview - Availability Request | Ahmed Nasr |\r\n 113162-JOB Program Manager (Open)",
-      "from": "Shruti Tahiliani <shruti.sharma@sprinklr.com>",
-      "priority": "HIGH",
-      "pipeline_match": "Sprinklr",
-      "confidence": 100,
-      "evidence": [
-        "matched active pipeline company: Sprinklr",
-        "hiring sender context",
-        "hiring/application context",
-        "calendar or explicit interview evidence",
-        "reply/follow-up wording with hiring context",
-        "recruiter outreach classification",
-        "high priority score: 15"
-      ]
-    }
-  ],
+  "actionable_count": 1,
+  "hot_alerts": [],
   "signals": [
     {
-      "company": "SAP",
+      "company": "talabat",
       "signal": "recruiter_email",
-      "subject": "=?UTF-8?Q?=F0=9F=87=BA=F0=9F=87=B8_USA_Plays_Tonight?=",
-      "sender": "Take Profit Trader <team@takeprofittrader.com>",
+      "subject": "=?UTF-8?B?2K7YtdmFICAgODAg2Kwg2YXYs9iq2YbZitmDIQ==?=",
+      "sender": "talabat <update.en@em.talabat.com>",
       "job_ids": [
-        "linkedin_jobspy-li-4432603999",
-        "linkedin_jobspy-li-4427326715",
-        "linkedin_jobspy-li-4426803035",
-        "indeed-in-b2195113ff678ef7",
-        "indeed-in-b7591ff66cc5a732",
-        "linkedin_jobspy-li-4380812358",
-        "linkedin-li-4349578134",
-        "linkedin-li-4394078700",
-        "linkedin-li-4380812358",
-        "linkedin-li-4362170335",
-        "linkedin-li-4362562926",
-        "linkedin-li-4385935615",
-        "linkedin-li-4353703506",
-        "app-005",
-        "cv-5fbf4a9aa7",
-        "linkedin-li-4385294885"
+        "linkedin_jobspy-li-4432096930",
+        "linkedin_jobspy-li-4407693428",
+        "linkedin_jobspy-li-4416306146",
+        "linkedin-li-4415007377",
+        "linkedin_jobspy-li-4397262230",
+        "linkedin-li-4370418095",
+        "linkedin-li-4389537891",
+        "linkedin-li-4375708512"
       ],
-      "score": 10,
-      "timestamp": "2026-07-01T20:01:13.767686+03:00"
-    },
-    {
-      "company": "Sprinklr",
-      "signal": "interview_signal",
-      "subject": "Sprinklr Interview - Availability Request | Ahmed Nasr | 113162-JOB\r\n Program Manager (Open)",
-      "sender": "Shruti Tahiliani <sprinklr@myworkday.com>",
-      "job_ids": [
-        "linkedin_jobspy-li-4427938881"
-      ],
-      "score": 13,
-      "timestamp": "2026-07-01T20:01:13.816919+03:00"
-    },
-    {
-      "company": "Sprinklr",
-      "signal": "interview_signal",
-      "subject": "Interview with Ahmed Nasr (C827076) for 113162-JOB Program Manager",
-      "sender": "Shruti Tahiliani <shruti.sharma@sprinklr.com>",
-      "job_ids": [
-        "linkedin_jobspy-li-4427938881"
-      ],
-      "score": 18,
-      "timestamp": "2026-07-01T20:01:13.934561+03:00"
-    },
-    {
-      "company": "Sprinklr",
-      "signal": "interview_signal",
-      "subject": "Re: Sprinklr Interview - Availability Request | Ahmed Nasr |\r\n 113162-JOB Program Manager (Open)",
-      "sender": "Shruti Tahiliani <shruti.sharma@sprinklr.com>",
-      "job_ids": [
-        "linkedin_jobspy-li-4427938881"
-      ],
-      "score": 15,
-      "timestamp": "2026-07-01T20:01:13.971462+03:00"
+      "score": 6,
+      "timestamp": "2026-07-02T20:00:55.933092+03:00"
     }
   ],
   "pipeline_review_candidates": [
     {
-      "timestamp": "2026-07-01T20:01:14.085689+03:00",
+      "timestamp": "2026-07-02T20:00:56.162440+03:00",
       "review_type": "possible_rejection",
       "category": "rejection",
-      "email_id": "363717",
-      "subject": "Your Profile is about to be purged",
-      "from": "careers@career.vodafone.com",
+      "email_id": "363837",
+      "subject": "=?utf-8?Q?Update_on_Job_Application_=E2=80=93_Head_of_NeoBiz_Portfolio?=\r\n =?utf-8?Q?_Management.BB_NeoBiz.Retail_Banking_Group_at_Mashreq?=",
+      "from": "Mashreq Talent Acquisition\r\n <hcld.fa.sender@workflow.email.me-dubai-1.ocs.oraclecloud.com>",
       "priority": "LOW",
       "pipeline_match": null,
       "status": "needs_human_review"
     },
     {
-      "timestamp": "2026-07-01T20:01:14.085698+03:00",
-      "review_type": "possible_interview",
-      "category": "interview_invite",
-      "email_id": "363718",
-      "subject": "Sprinklr Interview - Availability Request | Ahmed Nasr | 113162-JOB\r\n Program Manager (Open)",
-      "from": "Shruti Tahiliani <sprinklr@myworkday.com>",
-      "priority": "HIGH",
-      "pipeline_match": "Sprinklr",
-      "status": "needs_human_review"
-    },
-    {
-      "timestamp": "2026-07-01T20:01:14.085703+03:00",
-      "review_type": "possible_interview",
-      "category": "interview_invite",
-      "email_id": "363726",
-      "subject": "Interview with Ahmed Nasr (C827076) for 113162-JOB Program Manager",
-      "from": "Shruti Tahiliani <shruti.sharma@sprinklr.com>",
-      "priority": "HIGH",
-      "pipeline_match": "Sprinklr",
-      "status": "needs_human_review"
-    },
-    {
-      "timestamp": "2026-07-01T20:01:14.085707+03:00",
-      "review_type": "possible_interview",
-      "category": "interview_invite",
-      "email_id": "363727",
-      "subject": "Re: Sprinklr Interview - Availability Request | Ahmed Nasr |\r\n 113162-JOB Program Manager (Open)",
-      "from": "Shruti Tahiliani <shruti.sharma@sprinklr.com>",
-      "priority": "HIGH",
-      "pipeline_match": "Sprinklr",
-      "status": "needs_human_review"
-    },
-    {
-      "timestamp": "2026-07-01T20:01:14.085711+03:00",
-      "review_type": "possible_follow_up",
-      "category": "follow_up_needed",
-      "email_id": "363718",
-      "subject": "Sprinklr Interview - Availability Request | Ahmed Nasr | 113162-JOB\r\n Program Manager (Open)",
-      "from": "Shruti Tahiliani <sprinklr@myworkday.com>",
-      "priority": "HIGH",
-      "pipeline_match": "Sprinklr",
-      "status": "needs_human_review"
-    },
-    {
-      "timestamp": "2026-07-01T20:01:14.085714+03:00",
-      "review_type": "possible_follow_up",
-      "category": "follow_up_needed",
-      "email_id": "363726",
-      "subject": "Interview with Ahmed Nasr (C827076) for 113162-JOB Program Manager",
-      "from": "Shruti Tahiliani <shruti.sharma@sprinklr.com>",
-      "priority": "HIGH",
-      "pipeline_match": "Sprinklr",
-      "status": "needs_human_review"
-    },
-    {
-      "timestamp": "2026-07-01T20:01:14.085717+03:00",
-      "review_type": "possible_follow_up",
-      "category": "follow_up_needed",
-      "email_id": "363727",
-      "subject": "Re: Sprinklr Interview - Availability Request | Ahmed Nasr |\r\n 113162-JOB Program Manager (Open)",
-      "from": "Shruti Tahiliani <shruti.sharma@sprinklr.com>",
-      "priority": "HIGH",
-      "pipeline_match": "Sprinklr",
-      "status": "needs_human_review"
-    },
-    {
-      "timestamp": "2026-07-01T20:01:14.085721+03:00",
+      "timestamp": "2026-07-02T20:00:56.162449+03:00",
       "review_type": "possible_recruiter_outreach",
       "category": "recruiter_reach",
-      "email_id": "363713",
-      "subject": "=?UTF-8?Q?=F0=9F=87=BA=F0=9F=87=B8_USA_Plays_Tonight?=",
-      "from": "Take Profit Trader <team@takeprofittrader.com>",
+      "email_id": "363827",
+      "subject": "=?UTF-8?B?2K7YtdmFICAgODAg2Kwg2YXYs9iq2YbZitmDIQ==?=",
+      "from": "talabat <update.en@em.talabat.com>",
       "priority": "HIGH",
-      "pipeline_match": "SAP",
-      "status": "needs_human_review"
-    },
-    {
-      "timestamp": "2026-07-01T20:01:14.085724+03:00",
-      "review_type": "possible_recruiter_outreach",
-      "category": "recruiter_reach",
-      "email_id": "363718",
-      "subject": "Sprinklr Interview - Availability Request | Ahmed Nasr | 113162-JOB\r\n Program Manager (Open)",
-      "from": "Shruti Tahiliani <sprinklr@myworkday.com>",
-      "priority": "HIGH",
-      "pipeline_match": "Sprinklr",
-      "status": "needs_human_review"
-    },
-    {
-      "timestamp": "2026-07-01T20:01:14.085728+03:00",
-      "review_type": "possible_recruiter_outreach",
-      "category": "recruiter_reach",
-      "email_id": "363726",
-      "subject": "Interview with Ahmed Nasr (C827076) for 113162-JOB Program Manager",
-      "from": "Shruti Tahiliani <shruti.sharma@sprinklr.com>",
-      "priority": "HIGH",
-      "pipeline_match": "Sprinklr",
-      "status": "needs_human_review"
-    },
-    {
-      "timestamp": "2026-07-01T20:01:14.085731+03:00",
-      "review_type": "possible_recruiter_outreach",
-      "category": "recruiter_reach",
-      "email_id": "363727",
-      "subject": "Re: Sprinklr Interview - Availability Request | Ahmed Nasr |\r\n 113162-JOB Program Manager (Open)",
-      "from": "Shruti Tahiliani <shruti.sharma@sprinklr.com>",
-      "priority": "HIGH",
-      "pipeline_match": "Sprinklr",
+      "pipeline_match": "talabat",
       "status": "needs_human_review"
     }
   ],
   "llm_analysis": {
     "actionable_emails": [
       {
-        "id": "363713",
-        "subject": "=?UTF-8?Q?=F0=9F=87=BA=F0=9F=87=B8_USA_Plays_Tonight?=",
-        "from": "Take Profit Trader <team@takeprofittrader.com>",
-        "date": "Wed, 1 Jul 2026 14:01:42 +0000 (GMT)",
+        "id": "363827",
+        "subject": "\u062e\u0635\u0645 80 \u062c \u0645\u0633\u062a\u0646\u064a\u0643!",
+        "from": "talabat <update.en@em.talabat.com>",
+        "date": "Thu, 02 Jul 2026 14:53:16 +0000 (UTC)",
         "category": "recruiter_reach",
         "urgency": "low",
-        "intent": "The sender is promoting a trading account giveaway tied to a sports match.",
+        "intent": "Talabat is promoting a food-order discount voucher, not a recruiting opportunity.",
         "action": "no_action",
         "response_deadline": "when convenient",
-        "notes": "False positive; no recruiter or job content proven."
-      },
-      {
-        "id": "363718",
-        "subject": "Sprinklr Interview - Availability Request | Ahmed Nasr | 113162-JOB\r\n Program Manager (Open)",
-        "from": "Shruti Tahiliani <sprinklr@myworkday.com>",
-        "date": "Wed, 1 Jul 2026 14:35:51 +0000",
-        "category": "interview_invite",
-        "urgency": "medium",
-        "intent": "The sender asks Ahmed to provide availability for a 30-minute video interview.",
-        "action": "read_and_file",
-        "response_deadline": "1 week",
-        "notes": "Superseded by later confirmation for Monday 3 PM Dubai."
-      },
-      {
-        "id": "363726",
-        "subject": "Interview with Ahmed Nasr (C827076) for 113162-JOB Program Manager",
-        "from": "Shruti Tahiliani <shruti.sharma@sprinklr.com>",
-        "date": "Wed, 1 Jul 2026 15:58:40 +0000",
-        "category": "interview_invite",
-        "urgency": "critical",
-        "intent": "The sender provides the Microsoft Teams interview invite and asks Ahmed to confirm attendance.",
-        "action": "respond",
-        "response_deadline": "24h",
-        "notes": "Confirm attendance and prepare for Sprinklr Program Manager interview."
-      },
-      {
-        "id": "363727",
-        "subject": "Re: Sprinklr Interview - Availability Request | Ahmed Nasr |\r\n 113162-JOB Program Manager (Open)",
-        "from": "Shruti Tahiliani <shruti.sharma@sprinklr.com>",
-        "date": "Wed, 1 Jul 2026 15:59:05 +0000",
-        "category": "interview_invite",
-        "urgency": "high",
-        "intent": "The sender confirms Monday at 3 PM Dubai time works for the interview.",
-        "action": "respond",
-        "response_deadline": "48h",
-        "notes": "Send brief confirmation if not already sent via invite."
+        "notes": "False positive recruiter match; marketing email only."
       }
     ],
     "summary": {
-      "total_actionable": 4,
-      "critical_count": 1,
-      "requires_interview_prep": true,
+      "total_actionable": 1,
+      "critical_count": 0,
+      "requires_interview_prep": false,
       "requires_assessment": false,
-      "recruiter_top_opportunities": [
-        "Shruti Tahiliani - Sprinklr Program Manager"
-      ],
-      "top_priority": "363726",
-      "daily_focus": "Confirm the Sprinklr interview attendance, lock Monday 3 PM Dubai, and prepare against the Program Manager role."
+      "recruiter_top_opportunities": [],
+      "top_priority": null,
+      "daily_focus": "No job-search action is needed from this email; ignore the Talabat marketing false positive."
     }
   }
 }
