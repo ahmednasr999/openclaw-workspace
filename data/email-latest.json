@@ -1,7 +1,7 @@
 {
   "status": "ok",
-  "scan_time": "2026-07-02T20:00:56.162413+03:00",
-  "total_scanned": 32,
+  "scan_time": "2026-07-03T21:00:58.251200+03:00",
+  "total_scanned": 40,
   "by_category": {
     "interview_invite": 0,
     "recruiter_reach": 1,
@@ -10,16 +10,16 @@
     "assessment": 0,
     "application_response": 0,
     "follow_up_needed": 0,
-    "job_alert": 0,
-    "other": 30
+    "job_alert": 1,
+    "other": 37
   },
   "interview_invites": [],
   "recruiter_messages": [
     {
-      "id": "363827",
-      "from": "talabat <update.en@em.talabat.com>",
-      "subject": "=?UTF-8?B?2K7YtdmFICAgODAg2Kwg2YXYs9iq2YbZitmDIQ==?=",
-      "date": "Thu, 02 Jul 2026 14:53:16 +0000 (UTC)",
+      "id": "363913",
+      "from": "talabat mart <tmart@em.talabat.com>",
+      "subject": "=?UTF-8?B?2KfZhNiz2YbYp9mD2LMg2KfZhNmE2Yog2KjYqtit2KjZh9in?=\r\n =?UTF-8?B?INio2K7YtdmFIDEwMNis?=",
+      "date": "Fri, 03 Jul 2026 12:47:51 +0000 (UTC)",
       "unread": true,
       "priority": "HIGH",
       "score": 6,
@@ -38,35 +38,55 @@
   "application_acks": [],
   "rejections": [
     {
-      "id": "363837",
-      "from": "Mashreq Talent Acquisition\r\n <hcld.fa.sender@workflow.email.me-dubai-1.ocs.oraclecloud.com>",
-      "subject": "=?utf-8?Q?Update_on_Job_Application_=E2=80=93_Head_of_NeoBiz_Portfolio?=\r\n =?utf-8?Q?_Management.BB_NeoBiz.Retail_Banking_Group_at_Mashreq?=",
-      "date": "Thu, 02 Jul 2026 15:33:15 +0000 (UTC)",
+      "id": "363921",
+      "from": "kyndryl@myworkday.com",
+      "subject": "Update on your Kyndryl Job Application for Complex Program Manager",
+      "date": "Fri, 3 Jul 2026 13:27:44 +0000",
       "unread": true,
-      "priority": "LOW",
-      "score": 1,
+      "priority": "MEDIUM",
+      "score": 4,
       "pipeline_match": null,
-      "confidence": 35,
-      "confidence_label": "low",
+      "confidence": 25,
+      "confidence_label": "very_low",
       "evidence": [
-        "hiring sender context",
-        "hiring/application context"
+        "hiring/application context",
+        "medium priority score: 4"
       ],
-      "why_actionable": "not actionable: hiring sender context | hiring/application context"
+      "why_actionable": "not actionable: hiring/application context | medium priority score: 4"
     }
   ],
   "assessments": [],
   "application_responses": [],
   "follow_ups_needed": [],
-  "job_alerts": [],
+  "job_alerts": [
+    {
+      "id": "363947",
+      "from": "GulfTalent Jobs <jobs@gulftalent.com>",
+      "subject": "Black Pearl needs a Project Manager - Events",
+      "date": "Fri, 03 Jul 2026 12:45:58 -0500",
+      "unread": true,
+      "priority": "LOW",
+      "score": 0,
+      "pipeline_match": null,
+      "confidence": 25,
+      "confidence_label": "very_low",
+      "evidence": [
+        "automated job alert",
+        "known recruiter/job domain",
+        "hiring sender context",
+        "noise/job-alert guard applied"
+      ],
+      "why_actionable": "not actionable: automated job alert | known recruiter/job domain | hiring sender context | noise/job-alert guard applied"
+    }
+  ],
   "actionable_count": 1,
   "hot_alerts": [],
   "signals": [
     {
       "company": "talabat",
       "signal": "recruiter_email",
-      "subject": "=?UTF-8?B?2K7YtdmFICAgODAg2Kwg2YXYs9iq2YbZitmDIQ==?=",
-      "sender": "talabat <update.en@em.talabat.com>",
+      "subject": "=?UTF-8?B?2KfZhNiz2YbYp9mD2LMg2KfZhNmE2Yog2KjYqtit2KjZh9in?=\r\n =?UTF-8?B?INio2K7YtdmFIDEwMNis?=",
+      "sender": "talabat mart <tmart@em.talabat.com>",
       "job_ids": [
         "linkedin_jobspy-li-4432096930",
         "linkedin_jobspy-li-4407693428",
@@ -78,28 +98,28 @@
         "linkedin-li-4375708512"
       ],
       "score": 6,
-      "timestamp": "2026-07-02T20:00:55.933092+03:00"
+      "timestamp": "2026-07-03T21:00:57.777231+03:00"
     }
   ],
   "pipeline_review_candidates": [
     {
-      "timestamp": "2026-07-02T20:00:56.162440+03:00",
+      "timestamp": "2026-07-03T21:00:58.251225+03:00",
       "review_type": "possible_rejection",
       "category": "rejection",
-      "email_id": "363837",
-      "subject": "=?utf-8?Q?Update_on_Job_Application_=E2=80=93_Head_of_NeoBiz_Portfolio?=\r\n =?utf-8?Q?_Management.BB_NeoBiz.Retail_Banking_Group_at_Mashreq?=",
-      "from": "Mashreq Talent Acquisition\r\n <hcld.fa.sender@workflow.email.me-dubai-1.ocs.oraclecloud.com>",
-      "priority": "LOW",
+      "email_id": "363921",
+      "subject": "Update on your Kyndryl Job Application for Complex Program Manager",
+      "from": "kyndryl@myworkday.com",
+      "priority": "MEDIUM",
       "pipeline_match": null,
       "status": "needs_human_review"
     },
     {
-      "timestamp": "2026-07-02T20:00:56.162449+03:00",
+      "timestamp": "2026-07-03T21:00:58.251235+03:00",
       "review_type": "possible_recruiter_outreach",
       "category": "recruiter_reach",
-      "email_id": "363827",
-      "subject": "=?UTF-8?B?2K7YtdmFICAgODAg2Kwg2YXYs9iq2YbZitmDIQ==?=",
-      "from": "talabat <update.en@em.talabat.com>",
+      "email_id": "363913",
+      "subject": "=?UTF-8?B?2KfZhNiz2YbYp9mD2LMg2KfZhNmE2Yog2KjYqtit2KjZh9in?=\r\n =?UTF-8?B?INio2K7YtdmFIDEwMNis?=",
+      "from": "talabat mart <tmart@em.talabat.com>",
       "priority": "HIGH",
       "pipeline_match": "talabat",
       "status": "needs_human_review"
@@ -108,16 +128,16 @@
   "llm_analysis": {
     "actionable_emails": [
       {
-        "id": "363827",
-        "subject": "\u062e\u0635\u0645 80 \u062c \u0645\u0633\u062a\u0646\u064a\u0643!",
-        "from": "talabat <update.en@em.talabat.com>",
-        "date": "Thu, 02 Jul 2026 14:53:16 +0000 (UTC)",
+        "id": "363913",
+        "subject": "=?UTF-8?B?2KfZhNiz2YbYp9mD2LMg2KfZhNmE2Yog2KjYqtit2KjZh9in?=\r\n =?UTF-8?B?INio2K7YtdmFIDEwMNis?=",
+        "from": "talabat mart <tmart@em.talabat.com>",
+        "date": "Fri, 03 Jul 2026 12:47:51 +0000 (UTC)",
         "category": "recruiter_reach",
         "urgency": "low",
-        "intent": "Talabat is promoting a food-order discount voucher, not a recruiting opportunity.",
+        "intent": "The sender is promoting a Talabat Mart discount, not a recruiter or job opportunity.",
         "action": "no_action",
         "response_deadline": "when convenient",
-        "notes": "False positive recruiter match; marketing email only."
+        "notes": "Misclassified promo; no career action needed."
       }
     ],
     "summary": {
@@ -127,7 +147,7 @@
       "requires_assessment": false,
       "recruiter_top_opportunities": [],
       "top_priority": null,
-      "daily_focus": "No job-search action is needed from this email; ignore the Talabat marketing false positive."
+      "daily_focus": "Ignore this misclassified promotional email and focus only on verified recruiter, interview, or assessment messages."
     }
   }
 }

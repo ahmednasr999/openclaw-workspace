@@ -2,54 +2,32 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-07-03T06:00:45.446183+03:00",
-    "duration_ms": 43300,
+    "generated_at": "2026-07-04T06:00:44.085957+03:00",
+    "duration_ms": 41616,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "cee20d65",
+    "run_id": "1b0d173b",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": [
     {
-      "id": "indeed-in-4c75a39d6e1486e9",
+      "id": "indeed-in-5e84356f20aca36e",
       "source": "indeed",
-      "title": "Director - Tech. & Operational Train. (UAE National)",
-      "company": "EGA",
+      "title": "Associate Director - Urban Advisory (Infrastructure + Masterplanning)",
+      "company": "AECOM",
       "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=4c75a39d6e1486e9",
-      "posted": "2026-07-02",
+      "url": "https://ae.indeed.com/viewjob?jk=5e84356f20aca36e",
+      "posted": "2026-07-03",
       "seniority": "C-Suite",
       "domain_match": true,
-      "keyword_score": 20,
+      "keyword_score": 13,
       "match_keywords": [
-        "ai",
-        "director",
-        "uae",
-        "api"
-      ],
-      "raw_snippet": "**JOB PURPOSE:**\n  \n\nTo lead the development and execution of all of EGA\u2019s operational and technical training initiatives for all operational training systems within EGA, ensuring alignment with corporate and operational goals.\n\n  \n\n**KEY ACCOUNTABILITIES:**\n  \n\nStrategic Development\n\n  \n\n  \n\n* Drive the formulation and implementation of operational \\& technical training strategies that align with EGA\u2019s overall strategy, Human Capital and Talent Management.\nSafety, Quality, and Environmental Com",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-f33f98b7c283767c",
-      "source": "indeed",
-      "title": "Director Civis Mundi",
-      "company": "Henley and Partners",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=f33f98b7c283767c",
-      "posted": "2026-07-02",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 6,
-      "match_keywords": [
+        "infrastructure",
         "director"
       ],
-      "raw_snippet": "**Joining Henley \\& Partners**  \n\n  \n\nAs the leading global citizenship and residency advisory firm, we specialize in helping our clients navigate the complex landscape of investment migration and citizenship planning.  \n\n  \n\n**Why choose Henley \\& Partners? Here's what sets us apart:**  \n\n* **Global Impact:** Join a company that makes a tangible difference in people's lives. Our work enables individuals and families to broaden their horizons, access new opportunities, and secure a brighter futu",
+      "raw_snippet": "**Company Description** **Work with Us. Change the World.**\n\n\nAt AECOM, we're delivering a better world. Whether improving your commute, keeping the lights on, providing access to clean water, or transforming skylines, our work helps people and communities thrive. We are the world's trusted infrastructure consulting firm, partnering with clients to solve the world\u2019s most complex challenges and build legacies for future generations.\n\n\nThere has never been a better time to be at AECOM. With accele",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
@@ -120,54 +98,77 @@
         "architecture",
         "platform"
       ],
-      "raw_snippet": "**Job Purpose:**\n\n\nThe Vice President, Operations \\& Systems, is responsible for defining and executing the P\\&T operational systems vision, architecture, and roadmap for all operational systems across the P\\&T Pillar. This executive role ensures that operational technology platforms, software applications, integrations, and digital solutions align with business objectives, operational excellence goals, and long\\-term growth strategies.\n\n\nThe VP leads the development of system strategies, functi",
+      "raw_snippet": "Job Purpose:\n\n\nThe Vice President, Operations \\& Systems, is responsible for defining and executing the P\\&T operational systems vision, architecture, and roadmap for all operational systems across the P\\&T Pillar. This executive role ensures that operational technology platforms, software applications, integrations, and digital solutions align with business objectives, operational excellence goals, and long\\-term growth strategies.\n\n\nThe VP leads the development of system strategies, functional",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
       "search_title": "Head of Digital Transformation"
     },
     {
-      "id": "indeed-in-b567698ac0de205d",
+      "id": "indeed-in-2ad3090e212e059c",
       "source": "indeed",
-      "title": "Head/Hair Spa Therapist.",
-      "company": "Blaura Wellness and Fitness Center LLC",
+      "title": "Head of Data Science & Asset Risk",
+      "company": "Al-Futtaim",
       "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=b567698ac0de205d",
-      "posted": "2026-07-02",
+      "url": "https://ae.indeed.com/viewjob?jk=2ad3090e212e059c",
+      "posted": "2026-06-23",
+      "seniority": "Director",
+      "domain_match": true,
+      "keyword_score": 26,
+      "match_keywords": [
+        "healthcare",
+        "ai",
+        "head of",
+        "dubai",
+        "middle east"
+      ],
+      "raw_snippet": "**Job Requisition ID:** 178944\n\n\nEstablished in the 1930s as a trading business, Al\\-Futtaim Group today is one of the most diversified and progressive, privately held regional businesses headquartered in Dubai, United Arab Emirates. Structured into five operating divisions; automotive, financial services, real estate, retail and healthcare; employing more than 35,000 employees across more than 20 countries in the Middle East, Asia and Africa, Al\\-Futtaim Group partners with over 200 of the worl",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Head of Digital Transformation"
+    },
+    {
+      "id": "indeed-in-cc4f909fd9e187e2",
+      "source": "indeed",
+      "title": "Vice President Design & Technical Services MEAIT",
+      "company": "Ennismore",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=cc4f909fd9e187e2",
+      "posted": "2026-07-03",
+      "seniority": "VP",
+      "domain_match": true,
+      "keyword_score": 6,
+      "match_keywords": [
+        "ai"
+      ],
+      "raw_snippet": "**Company Description**  \n\nEnnismore is a global collective of entrepreneurial and founder\\-built hospitality brands, creating some of the world's most exciting hotels, restaurants, resorts and lifestyle destinations. We bring together creativity, culture and community to deliver experiences that guests genuinely love. As part of Accor, Ennismore combines the agility of a lifestyle company with the scale and strength of a global hospitality leader.\n\n **Job Description**  \n\nAt Ennismore, we creat",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Chief Information Officer"
+    },
+    {
+      "id": "indeed-in-a7f6ea5164f6090d",
+      "source": "indeed",
+      "title": "Head Int Markets Oversight, MENAP, ASA, GCNA, Global Markets Operations",
+      "company": "Standard Chartered Bank",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=a7f6ea5164f6090d",
+      "posted": "2026-07-03",
       "seniority": "Other",
       "domain_match": true,
-      "keyword_score": 10,
+      "keyword_score": 13,
       "match_keywords": [
         "ai",
-        "api"
+        "dubai",
+        "mena"
       ],
-      "raw_snippet": "Job Summary\n\nWe are looking for a knowledgeable and customer\\-focused **Hair \\& Scalp Therapist** to provide professional scalp analysis, therapeutic scalp treatments, and hair wellness services. The ideal candidate will have a strong understanding of scalp health, hair care, and treatment protocols while delivering an exceptional client experience in a luxury wellness environment.\n\nKey ResponsibilitiesHair \\& Scalp Treatments\n\n* Conduct professional scalp and hair consultations to assess scalp ",
+      "raw_snippet": "**\\#body.unify div.unify\\-button\\-container .unify\\-apply\\-now:** focus, \\#body.unify div.unify\\-button\\-container .unify\\-apply\\-\\#body.unify div.unify\\-button\\-container .unify\\-apply\\-now: focus, \\#body.unify div.unify\\-button\\-container .unify\\-apply\\-\n  \n**Requisition Number:** 57046\n  \n**Job Location:** Dubai, ARE\n  \n**Global Grade:** Band 4\n  \n**Work Type:** Hybrid Working\n  \n**Employment Type:** Permanent\n  \n**Posting Start Date:** 03/07/2026\n  \n**Posting End Date:** 19/07/2026\n  \n:\n  \nJ",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
       "search_title": "Head of Technology"
-    },
-    {
-      "id": "indeed-in-31ddfb394d993f6c",
-      "source": "indeed",
-      "title": "Director - Head of Middle East & Africa Network - Core Trade (Documentary Trade)",
-      "company": "Citi",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=31ddfb394d993f6c",
-      "posted": "2026-07-01",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 16,
-      "match_keywords": [
-        "director",
-        "head of",
-        "middle east"
-      ],
-      "raw_snippet": "**Discover your future at Citi**\n--------------------------------\n\n\nWorking at Citi is far more than just a job. A career with us means joining a team of more than 230,000 dedicated people from around the globe. At Citi, you\u2019ll have the opportunity to grow your career, give back to your community and make a real impact.\n\n\n**Job Overview**\n----------------\n\n\nAre you looking for a career move that will put you at the heart of a global financial institution? Then bring your skills in analysis, cred",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Head of IT"
     },
     {
       "id": "indeed-in-ee0a01c9312fa61f",
@@ -277,38 +278,13 @@
       "filter_reason": null,
       "search_country": "Saudi Arabia",
       "search_title": "Director Digital Transformation"
-    },
-    {
-      "id": "indeed-in-6a60959369bdc04f",
-      "source": "indeed",
-      "title": "Chief Technology Officer (CTO)",
-      "company": "None",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=6a60959369bdc04f",
-      "posted": "2026-06-30",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 40,
-      "match_keywords": [
-        "digital transformation",
-        "cloud",
-        "cybersecurity",
-        "infrastructure",
-        "enterprise",
-        "saudi"
-      ],
-      "raw_snippet": "A Saudi technology company specializing in artificial intelligence, enterprise software development, cloud infrastructure, cybersecurity, and digital transformation services. The company delivers innovative technology solutions to government entities, energy companies, financial institutions, and private enterprises throughout Saudi Arabia.\n\nJob Description\n\nVertex Horizon Technologies Co. is seeking an innovative and experienced **Chief Technology Officer (CTO)** to lead the company's technolog",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Chief Technology Officer"
     }
   ],
   "kpi": {
     "searches_run": 20,
-    "results_per_search": 4.05,
-    "unique_jobs": 13,
-    "errors": 3
+    "results_per_search": 3.6,
+    "unique_jobs": 12,
+    "errors": 5
   },
   "recommendations": []
 }

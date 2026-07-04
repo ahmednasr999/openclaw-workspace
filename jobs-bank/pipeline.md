@@ -448,6 +448,19 @@
 | 557 | 🆕 | Sinopack Search | Project Director (High-Rise) | Dubai | — | 🆕 Discovered | Radar | 2026-07-03 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4435819759) | — |
 | 558 | 🆕 | TALENTMATE | MEA FIG And SWFs - Vice President | Dubai | — | 🆕 Discovered | Radar | 2026-07-03 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4435379181) | — |
 | 559 | 🆕 | Disrupt.com | Financial Director | Dubai | — | 🆕 Discovered | Radar | 2026-07-03 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4432793302) | — |
+| 560 | 🆕 | Experts Group International | Vice President of Product Development | Dubai | — | 🆕 Discovered | Radar | 2026-07-04 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4432763776) | — |
+| 561 | 🆕 | Mark Williams Recruitment | Chief Technology Officer | Dubai | — | 🆕 Discovered | Radar | 2026-07-04 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4436719331) | — |
+| 562 | 🆕 | Talents Tide | Head of Application Development (UAEN) | Dubai | — | 🆕 Discovered | Radar | 2026-07-04 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4435445667) | — |
+| 563 | 🆕 | JCA Associates | Technology Consulting Director | Dubai | — | 🆕 Discovered | Radar | 2026-07-04 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4433179611) | — |
+| 564 | 🆕 | myZoi |  Financial Inclusion Technologies | Head of ePMO | Dubai | — | 🆕 Discovered | Radar | 2026-07-04 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4435456439) | — |
+| 565 | 🆕 | Krones | Head of Regional LCS Management | Dubai | — | 🆕 Discovered | Radar | 2026-07-04 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4436489546) | — |
+| 566 | 🆕 | Wealth Tellers | Director – Financial Markets & Payment Services | Dubai | — | 🆕 Discovered | Radar | 2026-07-04 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4433162310) | — |
+| 567 | 🆕 | JPMorganChase | Payments - CEEMEA Core Cash Payments Product Lead - Vice President- Dubai | Dubai | — | 🆕 Discovered | Radar | 2026-07-04 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4436799373) | — |
+| 568 | 🆕 | Comfi.ai | Head of Partnerships – Fintech (On-site, Dubai) | Dubai | — | 🆕 Discovered | Radar | 2026-07-04 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4433175805) | — |
+| 569 | 🆕 | Denara Group | Head of Operations | Dubai | — | 🆕 Discovered | Radar | 2026-07-04 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4433187000) | — |
+| 570 | 🆕 | Citi | Third-Party Funds Product Manager, Middle East & Africa Deposits (VP) | Dubai | — | 🆕 Discovered | Radar | 2026-07-04 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4435457774) | — |
+| 571 | 🆕 | Confidential | Head of Cyber Security | Dubai | — | 🆕 Discovered | Radar | 2026-07-04 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4433151855) | — |
+
 
 
 

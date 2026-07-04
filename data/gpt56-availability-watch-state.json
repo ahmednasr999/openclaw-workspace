@@ -1,6 +1,6 @@
 {
   "lastAvailableSignal": false,
-  "lastCheckedAt": "2026-07-03T04:23:07.281698+03:00",
+  "lastCheckedAt": "2026-07-04T04:23:07.657301+03:00",
   "lastLatestModelDocModel": "gpt-5.5",
   "lastRuntimeModel": "If unexpected, update PATH so `openclaw` points to the version you want, or reinstall the Gateway service from that same OpenClaw install."
 }

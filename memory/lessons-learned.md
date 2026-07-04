@@ -1580,3 +1580,17 @@ The 20:00 email scan categorized a Talabat marketing discount email as `recruite
 
 ### Do differently
 When LLM analysis downgrades an item to `no_action`, false positive, marketing, newsletter, or automated job-alert noise, exclude it from actionable counts, unread-actionable KPIs, hot alerts, and response recommendations. Keep the raw category only as a review candidate, not as Ahmed-facing action pressure.
+
+## 2026-07-03 - Use Advertised Skill Paths Before Guessing Workspace Paths
+
+### Incident
+A Health Guard heartbeat first tried `/root/.openclaw/workspace/skills/healthcheck/SKILL.md`, which does not exist in this install, before reading the actual healthcheck skill from the Node global OpenClaw skills directory.
+### Do differently
+When a heartbeat or cron says to read a skill, use the exact path from the available-skills list or `rg --files` evidence before falling back to guessed workspace paths. Treat a missing guessed skill path as a path-resolution mistake, not as a missing skill.
+
+## 2026-07-03 - LinkedIn Metrics Backfill Needs Author-Visible Analytics
+
+### Incident
+The CMO metrics backfill pilot verified local reports and queues, but captured no impressions/profile views because those metrics require author-visible LinkedIn analytics from an approved logged-in session. The latest report still had 22 live posts missing metrics, including the newest 7.
+### Do differently
+For LinkedIn metrics backfill, do not infer impressions or best performer from public reactions/comments or from script success. Run the local cadence report, prioritize newest missing rows, then stop at `blocked-login` until an approved logged-in author analytics session can supply the actual metrics.
