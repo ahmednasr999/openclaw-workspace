@@ -1594,3 +1594,17 @@ When a heartbeat or cron says to read a skill, use the exact path from the avail
 The CMO metrics backfill pilot verified local reports and queues, but captured no impressions/profile views because those metrics require author-visible LinkedIn analytics from an approved logged-in session. The latest report still had 22 live posts missing metrics, including the newest 7.
 ### Do differently
 For LinkedIn metrics backfill, do not infer impressions or best performer from public reactions/comments or from script success. Run the local cadence report, prioritize newest missing rows, then stop at `blocked-login` until an approved logged-in author analytics session can supply the actual metrics.
+
+## 2026-07-04 - Stale Context Cleanup Must Validate DB Schema
+
+### Incident
+The stale-context maintenance cron found an empty `/root/.openclaw/tasks/runs.sqlite` and treated file existence as sufficient, then crashed with `no such table: task_runs` instead of falling back to the real migrated DB.
+### Do differently
+For Taskflow/OpenClaw maintenance scripts, validate the expected table/schema before choosing a SQLite DB path. If the file exists but lacks `task_runs`, treat it as unusable and continue to the migrated DB fallback; verify both the direct script and cron wrapper after the fix.
+
+## 2026-07-04 - Long Cron Jobs Need One Delivery Path And Enough Timeout
+
+### Incident
+Weekly Skill Autoresearch timed out at 300s, retried, then completed, and its prompt also asked the agent to send Telegram directly while cron delivery already announced the result. This produced confusing status noise until the job timeout was raised to 900s and cron became the only Telegram delivery path.
+### Do differently
+For long-running scheduled skill tuning or autoresearch jobs, set a timeout that covers the normal run duration and keep user notification in one layer. Prefer cron `announce` delivery over agent-authored direct sends unless the job explicitly needs a separate target.

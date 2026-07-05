@@ -460,6 +460,8 @@
 | 569 | 🆕 | Denara Group | Head of Operations | Dubai | — | 🆕 Discovered | Radar | 2026-07-04 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4433187000) | — |
 | 570 | 🆕 | Citi | Third-Party Funds Product Manager, Middle East & Africa Deposits (VP) | Dubai | — | 🆕 Discovered | Radar | 2026-07-04 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4435457774) | — |
 | 571 | 🆕 | Confidential | Head of Cyber Security | Dubai | — | 🆕 Discovered | Radar | 2026-07-04 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4433151855) | — |
+| 572 | 🆕 | Confidential | Head of Business Development | Dubai | — | 🆕 Discovered | Radar | 2026-07-05 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4432353705) | — |
+
 
 
 

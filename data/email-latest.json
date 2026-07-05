@@ -1,69 +1,70 @@
 {
   "status": "ok",
-  "scan_time": "2026-07-03T21:00:58.251200+03:00",
-  "total_scanned": 40,
+  "scan_time": "2026-07-04T21:00:59.323271+03:00",
+  "total_scanned": 22,
   "by_category": {
     "interview_invite": 0,
     "recruiter_reach": 1,
     "application_ack": 0,
-    "rejection": 1,
-    "assessment": 0,
+    "rejection": 0,
+    "assessment": 1,
     "application_response": 0,
     "follow_up_needed": 0,
     "job_alert": 1,
-    "other": 37
+    "other": 19
   },
   "interview_invites": [],
   "recruiter_messages": [
     {
-      "id": "363913",
-      "from": "talabat mart <tmart@em.talabat.com>",
-      "subject": "=?UTF-8?B?2KfZhNiz2YbYp9mD2LMg2KfZhNmE2Yog2KjYqtit2KjZh9in?=\r\n =?UTF-8?B?INio2K7YtdmFIDEwMNis?=",
-      "date": "Fri, 03 Jul 2026 12:47:51 +0000 (UTC)",
+      "id": "363997",
+      "from": "Luria Petrucci <support@livestreamingpros.com>",
+      "subject": "No one's talking about what Kelsey did NOT do...",
+      "date": "Sat, 04 Jul 2026 17:58:48 +0000 (UTC)",
       "unread": true,
       "priority": "HIGH",
-      "score": 6,
-      "pipeline_match": "talabat",
+      "score": 7,
+      "pipeline_match": "noon",
       "confidence": 75,
       "confidence_label": "medium",
       "evidence": [
-        "matched active pipeline company: talabat",
+        "matched active pipeline company: noon",
         "hiring/application context",
         "recruiter outreach classification",
-        "high priority score: 6"
+        "high priority score: 7"
       ],
-      "why_actionable": "matched active pipeline company: talabat | hiring/application context | recruiter outreach classification | high priority score: 6"
+      "why_actionable": "matched active pipeline company: noon | hiring/application context | recruiter outreach classification | high priority score: 7"
     }
   ],
   "application_acks": [],
-  "rejections": [
+  "rejections": [],
+  "assessments": [
     {
-      "id": "363921",
-      "from": "kyndryl@myworkday.com",
-      "subject": "Update on your Kyndryl Job Application for Complex Program Manager",
-      "date": "Fri, 3 Jul 2026 13:27:44 +0000",
+      "id": "363993",
+      "from": "Superhuman =?windows-1251?b?lg==?= Zain Kahn\r\n\t<superhuman@mail.joinsuperhuman.ai>",
+      "subject": "=?UTF-8?B?8J+RgA==?= New report cast doubt on China's robot success",
+      "date": "Sat, 04 Jul 2026 16:06:31 +0000 (UTC)",
       "unread": true,
       "priority": "MEDIUM",
-      "score": 4,
+      "score": 2,
       "pipeline_match": null,
-      "confidence": 25,
-      "confidence_label": "very_low",
+      "confidence": 50,
+      "confidence_label": "low",
       "evidence": [
         "hiring/application context",
-        "medium priority score: 4"
+        "assessment keyword with hiring context",
+        "medium priority score: 2"
       ],
-      "why_actionable": "not actionable: hiring/application context | medium priority score: 4"
+      "why_actionable": "not actionable: hiring/application context | assessment keyword with hiring context | medium priority score: 2"
     }
   ],
-  "assessments": [],
   "application_responses": [],
   "follow_ups_needed": [],
   "job_alerts": [
     {
-      "id": "363947",
+      "id": "363987",
       "from": "GulfTalent Jobs <jobs@gulftalent.com>",
       "subject": "Black Pearl needs a Project Manager - Events",
-      "date": "Fri, 03 Jul 2026 12:45:58 -0500",
+      "date": "Sat, 04 Jul 2026 09:52:53 -0500",
       "unread": true,
       "priority": "LOW",
       "score": 0,
@@ -83,61 +84,70 @@
   "hot_alerts": [],
   "signals": [
     {
-      "company": "talabat",
+      "company": "noon",
       "signal": "recruiter_email",
-      "subject": "=?UTF-8?B?2KfZhNiz2YbYp9mD2LMg2KfZhNmE2Yog2KjYqtit2KjZh9in?=\r\n =?UTF-8?B?INio2K7YtdmFIDEwMNis?=",
-      "sender": "talabat mart <tmart@em.talabat.com>",
+      "subject": "No one's talking about what Kelsey did NOT do...",
+      "sender": "Luria Petrucci <support@livestreamingpros.com>",
       "job_ids": [
-        "linkedin_jobspy-li-4432096930",
-        "linkedin_jobspy-li-4407693428",
-        "linkedin_jobspy-li-4416306146",
-        "linkedin-li-4415007377",
-        "linkedin_jobspy-li-4397262230",
-        "linkedin-li-4370418095",
-        "linkedin-li-4389537891",
-        "linkedin-li-4375708512"
+        "li-4430430374",
+        "li-4426742811",
+        "li-4429786688",
+        "li-4425479206",
+        "linkedin_jobspy-li-4409903963",
+        "linkedin_jobspy-li-4386880115",
+        "linkedin_jobspy-li-4303823281",
+        "linkedin_jobspy-li-4385249338",
+        "linkedin_jobspy-li-4374939454",
+        "linkedin_jobspy-li-4302494006",
+        "linkedin_jobspy-li-4372321327",
+        "linkedin-li-4302494006",
+        "linkedin-li-4372321327",
+        "linkedin-li-4380034742",
+        "cv-a3738fc040",
+        "linkedin-li-4389084154",
+        "4373851696"
       ],
-      "score": 6,
-      "timestamp": "2026-07-03T21:00:57.777231+03:00"
+      "score": 7,
+      "timestamp": "2026-07-04T21:00:59.318674+03:00"
     }
   ],
   "pipeline_review_candidates": [
     {
-      "timestamp": "2026-07-03T21:00:58.251225+03:00",
-      "review_type": "possible_rejection",
-      "category": "rejection",
-      "email_id": "363921",
-      "subject": "Update on your Kyndryl Job Application for Complex Program Manager",
-      "from": "kyndryl@myworkday.com",
+      "timestamp": "2026-07-04T21:00:59.323310+03:00",
+      "review_type": "possible_assessment",
+      "category": "assessment",
+      "email_id": "363993",
+      "subject": "=?UTF-8?B?8J+RgA==?= New report cast doubt on China's robot success",
+      "from": "Superhuman =?windows-1251?b?lg==?= Zain Kahn\r\n\t<superhuman@mail.joinsuperhuman.ai>",
       "priority": "MEDIUM",
       "pipeline_match": null,
       "status": "needs_human_review"
     },
     {
-      "timestamp": "2026-07-03T21:00:58.251235+03:00",
+      "timestamp": "2026-07-04T21:00:59.323319+03:00",
       "review_type": "possible_recruiter_outreach",
       "category": "recruiter_reach",
-      "email_id": "363913",
-      "subject": "=?UTF-8?B?2KfZhNiz2YbYp9mD2LMg2KfZhNmE2Yog2KjYqtit2KjZh9in?=\r\n =?UTF-8?B?INio2K7YtdmFIDEwMNis?=",
-      "from": "talabat mart <tmart@em.talabat.com>",
+      "email_id": "363997",
+      "subject": "No one's talking about what Kelsey did NOT do...",
+      "from": "Luria Petrucci <support@livestreamingpros.com>",
       "priority": "HIGH",
-      "pipeline_match": "talabat",
+      "pipeline_match": "noon",
       "status": "needs_human_review"
     }
   ],
   "llm_analysis": {
     "actionable_emails": [
       {
-        "id": "363913",
-        "subject": "=?UTF-8?B?2KfZhNiz2YbYp9mD2LMg2KfZhNmE2Yog2KjYqtit2KjZh9in?=\r\n =?UTF-8?B?INio2K7YtdmFIDEwMNis?=",
-        "from": "talabat mart <tmart@em.talabat.com>",
-        "date": "Fri, 03 Jul 2026 12:47:51 +0000 (UTC)",
+        "id": "363997",
+        "subject": "No one's talking about what Kelsey did NOT do...",
+        "from": "Luria Petrucci <support@livestreamingpros.com>",
+        "date": "Sat, 04 Jul 2026 17:58:48 +0000 (UTC)",
         "category": "recruiter_reach",
         "urgency": "low",
-        "intent": "The sender is promoting a Talabat Mart discount, not a recruiter or job opportunity.",
+        "intent": "The sender appears to be promoting video content and related programs, not a proven recruiter opportunity.",
         "action": "no_action",
         "response_deadline": "when convenient",
-        "notes": "Misclassified promo; no career action needed."
+        "notes": "Body excerpt does not prove hiring, interview, assessment, or recruiter need."
       }
     ],
     "summary": {
@@ -147,7 +157,7 @@
       "requires_assessment": false,
       "recruiter_top_opportunities": [],
       "top_priority": null,
-      "daily_focus": "Ignore this misclassified promotional email and focus only on verified recruiter, interview, or assessment messages."
+      "daily_focus": "No urgent job-search action is supported by the provided email content today."
     }
   }
 }

@@ -2,56 +2,130 @@
   "meta": {
     "agent": "jobs-review",
     "version": "2.0.0",
-    "generated_at": "2026-06-29T08:33:45.258955+03:00",
-    "duration_ms": 69533,
+    "generated_at": "2026-07-04T10:53:30.063953+03:00",
+    "duration_ms": 690117,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "39414f0d",
+    "run_id": "14be22b5",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
-    "generated_at": "2026-06-29T08:33:45.207995+03:00",
-    "total_candidates": 15,
-    "reviewed": 15,
-    "submit": [],
+    "generated_at": "2026-07-04T10:53:29.737561+03:00",
+    "total_candidates": 100,
+    "reviewed": 98,
+    "submit": [
+      {
+        "id": "linkedin_jobspy-li-4435456439",
+        "source": "linkedin_jobspy",
+        "title": "Head of ePMO",
+        "company": "myZoi |  Financial Inclusion Technologies",
+        "location": "Dubai, Dubai, United Arab Emirates",
+        "url": "https://www.linkedin.com/jobs/view/4435456439",
+        "posted": "2026-07-03",
+        "seniority": "Director",
+        "domain_match": true,
+        "keyword_score": 40,
+        "match_keywords": [
+          "pmo",
+          "fintech",
+          "ai",
+          "head of",
+          "uae",
+          "dubai"
+        ],
+        "raw_snippet": "**Head of ePMO**\n\n**Location:** \n Dubai, UAE\n   \n\n**Employment Type:** \n Full\\-Time, Permanent\n   \n\n**Reports To:** \n Chief Strategy Officer\n \n\n\n**About myZoi**\n\n myZoi is a CBUAE\\-regulated fintech on a mission to deliver financial inclusion for the underbanked workforce in the UAE and beyond. We s",
+        "relevant": true,
+        "filter_reason": null,
+        "search_country": "United Arab Emirates",
+        "search_title": "PMO Director",
+        "linkedin_id": "li-4435456439",
+        "jd_text": "**Head of ePMO**\n\n**Location:** \n Dubai, UAE\n   \n\n**Employment Type:** \n Full\\-Time, Permanent\n   \n\n**Reports To:** \n Chief Strategy Officer\n \n\n\n**About myZoi**\n\n myZoi is a CBUAE\\-regulated fintech on a mission to deliver financial inclusion for the underbanked workforce in the UAE and beyond. We serve employers, employees, and migrant workers across payroll, remittance, cards, and value\\-added financial services \u2014 operating at the intersection of regulatory complexity, product ambition, and rapid growth.\n   \n\n\n\n\n\n We are at an exciting stage of our journey. Our product portfolio is scaling, our governance infrastructure is maturing, and our strategic agenda is becoming more ambitious. The people and systems we put in place now will define how myZoi operates at the next level of scale.\n   \n\n  \n\n\n\n\n**About the Role**\n\n As Head of EPMO you will be the central governance and delivery control function for myZoi's product and enterprise portfolios. This is a high\\-authority, high\\-visibility role that sits at the heart of how myZoi decides what to build, what to fund, and how to deliver \u2014 reporting directly to the Chief Strategy Officer with a close working relationship with the Chief Product Officer.\n   \n\n\n\n\n\n You will own the end\\-to\\-end governance framework across two distinct portfolios \u2014 the product delivery pipeline and the enterprise initiative register \u2014 each with its own governance model, approval authority, and reporting cadence. You will be the single point of accountability for ensuring that engineering capacity is always allocated to the highest\\-value work, that no initiative enters development without structured validation and executive authorisation, and that leadership has a live, accurate, and honest view of delivery health at all times.\n   \n\n\n\n\n\n This is not a coordination role and it is not a reporting role. The right candidate builds governance systems, enforces them under pressure, and walks into every leadership meeting already knowing the answer.\n   \n\n\n\n\n\n You will be stepping into a function that has an established framework and a clear mandate \u2014 and your role will be to own it, activate it, and make it the operating backbone of how myZoi delivers. Everything the EPMO governs connects directly to myZoi's strategic agenda and business plan \u2014 your job is to ensure that connection is visible, maintained, and enforced across every initiative in flight.\n   \n\n  \n\n\n\n\n**Who You Will Work With**\n\n You will operate as a strategic partner to the Chief Strategy Officer and Chief Product Officer on a daily basis, with regular interaction with the CTO, CFO, COO and functional leadership across the business. You will lead a small EPMO team comprising an Agile Lead and a Project Manager, and you will be embedded in the delivery rhythm of three product squads.\n   \n\n  \n\n\n\n\n**What You Will Own**\n\n**Portfolio Governance**\n\n\n\n\n \u25cf Ensure that initiative prioritisation across both portfolios remains anchored to myZoi's strategic objectives and annual business plan \u2014 flagging to the CSO and CPO when the portfolio mix drifts from agreed strategic priorities\n   \n\n\n\n\n\n \u25cf Own, refine, and enforce the structured intake and prioritization framework across product and enterprise portfolios \u2014 ensuring every initiative is classified, validated, and authorized before development begins\n   \n\n\n\n\n\n \u25cf Maintain a real\\-time view of engineering capacity across delivery squads \u2014 surface prioritisation conflicts, swap recommendations, and capacity constraints to the CPO and CSO proactively\n   \n\n\n\n\n\n \u25cf Track the cost, timeline, and value delivery of every active initiative \u2014 maintaining visibility over budget consumption, milestone adherence, and whether initiatives are delivering the outcomes that justified their approval. Surface material deviations to the CPO and CSO before they become problems\n   \n\n\n\n\n\n \u25cf Own the single source of truth for all active initiatives across both portfolios \u2014 keeping status, milestones, dependencies, and risks current at all times\n   \n\n\n\n\n\n**Enterprise Portfolio Management**\n\n\n\n\n myZoi's enterprise portfolio spans the operating platform and support functions that underpin the business \u2014 the capabilities and infrastructure that enable the product to be built, operated, and scaled. Governing this portfolio means ensuring that operational and procurement initiatives across these functions are assessed, prioritised, and delivered with the same rigour applied to the product portfolio.\n   \n\n\n\n\n\n \u25cf Govern operational and procurement initiatives end to end \u2014 from initial classification through technical evaluation, financial approval, and delivery oversight\n   \n\n\n\n\n\n \u25cf Maintain portfolio visibility across transformational strategic initiatives without assuming delivery ownership \u2014 flagging resource conflicts and capacity dependencies to senior leadership\n   \n\n\n\n\n\n \u25cf Coordinate with the CTO on engineering capacity decisions and with the CFO on procurement governance\n   \n\n\n\n\n\n**Delivery Intelligence \\& Risk Management**\n\n\n\n\n \u25cf Own a live slippage log with root cause categorisation for every deadline and budget movement \u2014 no exceptions\n   \n\n\n\n\n\n \u25cf Identify systemic delivery patterns and bring structured recommendations to leadership \u2014 not status updates\n   \n\n\n\n\n\n \u25cf Flag forward risks 2\u20134 weeks before they materialise and drive accountability for recovery\n   \n\n\n\n\n\n**Reporting \\& Governance Rhythm**\n\n\n\n\n \u25cf Produce and own a distinct monthly portfolio status report for each of the CPO and CSO \u2014 concise, decision\\-ready, and forward\\-looking\n   \n\n\n\n\n\n \u25cf Own and facilitate the full governance calendar across weekly, bi\\-weekly, monthly, and quarterly cadences\n   \n\n\n\n\n\n \u25cf Present delivery intelligence in governance meetings \u2014 the EPMO owns the narrative, not the slide deck\n   \n\n\n\n\n\n**Team Leadership**\n\n\n\n\n \u25cf Lead and coordinate the EPMO team including an Agile Lead and Project Manager \u2014 ensuring clear ownership, consistent standards, and delivery continuity across the function\n   \n\n  \n\n\n\n\n**What We Are Looking For**\n\n**Experience**\n\n\n\n\n \u25cf 12\\-15 years in senior program management, portfolio governance, or enterprise PMO roles \u2014 with a track record of building governance frameworks from scratch, not just operating within them\n   \n\n\n\n\n\n \u25cf Proven experience governing multiple concurrent portfolios with differentiated governance models across product delivery and enterprise programs\n   \n\n\n\n\n\n \u25cf Direct experience designing and enforcing structured intake, classification, and gate approval processes in high\\-velocity environments\n   \n\n\n\n\n\n \u25cf Background in a regulated fintech, payments, or financial services environment \u2014 familiarity with CBUAE or equivalent central bank regulatory obligations strongly preferred\n   \n\n\n\n\n\n \u25cf Experience managing upward across multiple C\\-suite stakeholders simultaneously in a matrix or dual\\-reporting environment\n   \n\n\n\n\n\n \u25cf Hands\\-on familiarity with agile delivery environments and squad\\-level capacity planning \u2014 sufficient to lead an Agile Lead credibly and challenge delivery estimates with authority\n   \n\n\n\n\n\n \u25cf Commercial orientation \u2014 able to frame governance and prioritisation decisions in business value terms, not just process compliance\n   \n\n\n\n\n\n**Certifications**\n\n\n\n\n \u25cf PMP or PgMP required\n   \n\n\n\n\n\n \u25cf MSP Practitioner and SAFe SA or SPC strongly preferred\n   \n\n\n\n\n\n \u25cf MoP, PMI\\-ACP, or PRINCE2 Practitioner an advantage\n   \n\n\n\n\n\n \u25cf Familiarity with UAE regulatory environment (CBUAE, SVF licensing) preferred\n   \n\n\n\n\n\n**The Kind of Person Who Will Thrive Here**\n\n\n\n\n You hold governance boundaries with authority and without apology \u2014 even when the pressure comes from senior product or engineering leadership. You know the difference between owning governance and owning delivery, and you never confuse the two. You bring commercial judgement to prioritisation decisions, not just process discipline. You are comfortable maintaining oversight of exploratory and transformational programs without needing to govern their delivery. You communicate differently to different audiences \u2014 operationally detailed with delivery teams, concise and decisive with executives. And you are genuinely forward\\-looking \u2014 you surface risks before they become problems, not after.",
+        "source_count": 1,
+        "country": "United Arab Emirates",
+        "industry_bonus": 12,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "first_seen": "2026-07-04",
+        "career_fit_score": 9,
+        "verdict": "SUBMIT",
+        "verdict_reason": "Excellent ePMO leadership fit in Dubai fintech with governance and portfolio control scope [5D role=2 | seniority=2 | geo=2 | strategic=1 | evidence=2 | fit=9/10 | llm=9 | watchlist=fintech_gcc,government_semi_gov_gcc] [CMO outreach queued for myZoi |  Financial Inclusion Technologies]",
+        "watchlist_matches": {
+          "company_hits": [],
+          "domain_hits": [
+            "authority",
+            "bank",
+            "fintech"
+          ],
+          "categories": [
+            "fintech_gcc",
+            "government_semi_gov_gcc"
+          ]
+        },
+        "ats_score": 88,
+        "ats_verdict": "GO",
+        "ats_matched": [
+          "program management",
+          "pmo",
+          "transformation",
+          "portfolio management",
+          "pmp",
+          "ai",
+          "erp",
+          "fintech",
+          "payment",
+          "governance"
+        ],
+        "ats_gaps": [],
+        "llm_fit_score": 9,
+        "fit_dimensions": {
+          "role": 2,
+          "seniority": 2,
+          "geography": 2,
+          "strategic": 1,
+          "evidence": 2
+        }
+      }
+    ],
     "review": [],
-    "skip_count": 15,
+    "skip_count": 99,
     "unreviewed_count": 0,
     "thresholds": {
       "submit": 6,
       "review": 6
     },
     "pipeline": {
-      "l0_auto_skip": 0,
-      "l1_jd_enriched": 1,
-      "l1_jd_coverage": "14/15",
+      "l0_auto_skip": 2,
+      "l1_jd_enriched": 0,
+      "l1_jd_coverage": "91/98",
       "llm_model": "openai/gpt-5.5",
-      "llm_jobs_reviewed": 15,
-      "r2_latency_ms": 62726,
+      "llm_jobs_reviewed": 98,
+      "r2_latency_ms": 683379,
       "r2_fallbacks": 0
     },
     "kpi": {
-      "submit_rate": 0.0,
+      "submit_rate": 0.01020408163265306,
       "review_rate": 0.0,
-      "skip_rate": 1.0,
-      "avg_fit_score": 5.0,
-      "l0_filter_rate": 0.0,
+      "skip_rate": 0.9897959183673469,
+      "avg_fit_score": 4.5,
+      "l0_filter_rate": 2.0,
       "llm_review_rate": 100.0
     }
   },
   "kpi": {
-    "total_loaded": 15,
-    "l0_auto_skip": 0,
-    "l1_jd_enriched": 1,
+    "total_loaded": 100,
+    "l0_auto_skip": 2,
+    "l1_jd_enriched": 0,
     "l2_filtered": 0,
-    "submit_count": 0,
+    "submit_count": 1,
     "review_count": 0,
-    "skip_count": 15,
-    "submit_rate": 0.0,
-    "avg_fit_score": 5.0,
-    "r2_latency_ms": 62726
+    "skip_count": 97,
+    "submit_rate": 1.0,
+    "avg_fit_score": 4.5,
+    "r2_latency_ms": 683379
   },
   "recommendations": []
 }

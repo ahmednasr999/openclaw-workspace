@@ -2,16 +2,38 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-07-04T06:00:44.085957+03:00",
-    "duration_ms": 41616,
+    "generated_at": "2026-07-04T10:00:45.744167+03:00",
+    "duration_ms": 42460,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "1b0d173b",
+    "run_id": "eb8841d5",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": [
+    {
+      "id": "indeed-in-a3a8069b6fec6c23",
+      "source": "indeed",
+      "title": "Director, Client Management",
+      "company": "Dow Jones",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=a3a8069b6fec6c23",
+      "posted": "2026-07-03",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 20,
+      "match_keywords": [
+        "ai",
+        "director",
+        "vp"
+      ],
+      "raw_snippet": "**Director, Client Management**\n\nDow Jones Energy \\| Commercial \\| Reports to VP of Commercial Transformation\n\n\n**About Dow Jones Energy**\n\nDow Jones Energy delivers trusted price transparency, benchmarks, analytics, news, and insight across the global energy, chemicals, metals, and fuel supply value chain. Our offerings support customers across spot, wholesale, and retail markets, as well as emerging segments tied to the energy transition.\n\n\nThrough authoritative data, real\\-time intelligence, ",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Program Director"
+    },
     {
       "id": "indeed-in-5e84356f20aca36e",
       "source": "indeed",
@@ -282,8 +304,8 @@
   ],
   "kpi": {
     "searches_run": 20,
-    "results_per_search": 3.6,
-    "unique_jobs": 12,
+    "results_per_search": 3.7,
+    "unique_jobs": 13,
     "errors": 5
   },
   "recommendations": []

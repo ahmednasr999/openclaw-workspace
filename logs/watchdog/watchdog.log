@@ -5469,3 +5469,31 @@ Tip: systemctl --user start openclaw-gateway.service
 [2026-07-04 06:00] WARN: Jobs data stale (117h), triggering pipeline
 [2026-07-04 06:00] FIXED: Pipeline triggered
 [2026-07-04 06:00] Summary: fixes=1 warnings=1 alerts=0
+[2026-07-04 08:00] === Watchdog v3 run ===
+[2026-07-04 08:00] WARN: Jobs data stale (119h), triggering pipeline
+[2026-07-04 08:00] FIXED: Pipeline triggered
+[2026-07-04 08:00] Summary: fixes=1 warnings=0 alerts=0
+[2026-07-04 10:00] === Watchdog v3 run ===
+[2026-07-04 10:00] WARN: Jobs data stale (121h), triggering pipeline
+[2026-07-04 10:00] FIXED: Pipeline triggered
+[2026-07-04 10:00] Summary: fixes=1 warnings=0 alerts=0
+[2026-07-04 12:00] === Watchdog v3 run ===
+[2026-07-04 12:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-07-04 14:00] === Watchdog v3 run ===
+[2026-07-04 14:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-07-04 16:00] === Watchdog v3 run ===
+[2026-07-04 16:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-07-04 18:00] === Watchdog v3 run ===
+[2026-07-04 18:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-07-04 20:00] === Watchdog v3 run ===
+[2026-07-04 20:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-07-04 22:00] === Watchdog v3 run ===
+[2026-07-04 22:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-07-05 00:00] === Watchdog v3 run ===
+[2026-07-05 00:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-07-05 02:00] === Watchdog v3 run ===
+[2026-07-05 02:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-07-05 04:00] === Watchdog v3 run ===
+[2026-07-05 04:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-07-05 06:00] === Watchdog v3 run ===
+[2026-07-05 06:00] Summary: fixes=0 warnings=1 alerts=0

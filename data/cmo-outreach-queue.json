@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-28T05:25:47.598303Z",
+  "last_updated": "2026-07-04T10:53:29.745084+03:00",
   "items": [
     {
       "company": "Netcracker Technology in Dubai, United Arab Emirates â Apply on Wuzzuf",
@@ -731,6 +731,15 @@
         "local LinkedIn cookie jar used for guest LinkedIn job/company page fetches",
         "public LinkedIn job/company pages and public search snippets"
       ]
+    },
+    {
+      "company": "myZoi |  Financial Inclusion Technologies",
+      "job_title": "Head of ePMO",
+      "source": "linkedin_jobspy",
+      "job_url": "https://www.linkedin.com/jobs/view/4435456439",
+      "verdict": "SUBMIT",
+      "queued_at": "2026-07-04T10:53:29.745075+03:00",
+      "status": "queued"
     }
   ],
   "last_weekly_review": {

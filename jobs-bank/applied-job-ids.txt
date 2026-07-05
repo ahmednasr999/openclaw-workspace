@@ -161,7 +161,6 @@ f7e1d5085527773a | International Medical Company | Strategy & Transformation Dir
 # Synced from Notion Pipeline (1 new)
 4384057356 | Discovered MENA | Head of Engineering | synced from Notion | Applied
 
-# Synced from Notion Pipeline (3 new)
 4389276852 | CMP Digital Infrastructure | Director of Program Management | synced from Notion | Applied
 4389096599 | Dow Jones | Director, Business Operations | synced from Notion | Applied
 4385463236 | Confidential | AI Enablement & Support Specialist | synced from Notion | Applied
@@ -348,7 +347,6 @@ f7e1d5085527773a | International Medical Company | Strategy & Transformation Dir
 4408524568 | Amazon | FC Operations Manager, UAE FC Operations | 2026-05-26 | Applied by HR via LinkedIn Easy Apply | ATS 72 | CV: Ahmed Nasr - FC Operations Manager, UAE FC Operations - Amazon.pdf
 4406981385 | Revolut | Operations Manager (UAE Payments) | 2026-05-26 | Applied by HR via LinkedIn Easy Apply | ATS 72 | CV: Ahmed Nasr - Operations Manager (UAE Payments) - Revolut.pdf
 4408258707 | BTSE | Head of Operations UAE | 2026-05-26 | Applied by HR via LinkedIn Easy Apply | ATS 82 | CV: Ahmed Nasr - Head of Operations UAE - BTSE.pdf
-4405993352 | Miral Experiences | ERP Supply Chain Senior Manager | 2026-05-26 | Applied by HR via LinkedIn Easy Apply | ATS 78 | CV: Ahmed Nasr - ERP Supply Chain Senior Manager - Miral Experiences.pdf
 4406491313 | Confidential Careers | Chief Operating Officer | 2026-05-27 | Applied by HR via LinkedIn Easy Apply Top Applicant | ATS 84 | CV: Ahmed Nasr - Chief Operating Officer - Confidential Careers.pdf
 4416650979 | Inspira Enterprise | Project Manager | 2026-05-27 | Applied by HR via LinkedIn Easy Apply fresh visible queue | ATS 78 | CV: Ahmed Nasr - Project Manager - Inspira Enterprise.pdf
 4418591106 | Jobgether | CX AI & Automation Lead | 2026-05-27 | Applied by HR via LinkedIn Easy Apply fresh visible queue | ATS 68 | CV: Ahmed Nasr - CX AI & Automation Lead - Jobgether.pdf
@@ -808,10 +806,7 @@ greenhouse-ebury-4881103101|Ebury|Product Manager - Payment Infrastructure|2026-
 4429602221 | PNC | Sr Program Manager | 2026-06-19 | Applied by HR via LinkedIn Easy Apply recommended plus30 | ATS 70 | CV: Ahmed Nasr - Sr Program Manager - PNC.pdf
 4429613100 | Protingent | Senior Cybersecurity Program Manager | 2026-06-19 | Applied by HR via LinkedIn Easy Apply recommended plus30 | ATS 66 | CV: Ahmed Nasr - Senior Cybersecurity Program Manager - Protingent.pdf
 4430755516 | Aquent | Senior Program Manager 210979 | 2026-06-19 | Applied by HR via LinkedIn Easy Apply recommended plus30 | ATS 74 | CV: Ahmed Nasr - Senior Program Manager 210979 - Aquent.pdf
-4430755516 | Aquent | Senior Program Manager 210979 | 2026-06-19 | Applied by HR via LinkedIn Easy Apply recommended plus30 | ATS 74 | CV: Ahmed Nasr - Senior Program Manager 210979 - Aquent.pdf
 4417181974 | Quanta Manufacturing Fremont | Program Manager RMA & Failure Analysis Operations | 2026-06-19 | Applied by HR via LinkedIn Easy Apply recommended plus30 | ATS 74 | CV: Ahmed Nasr - Program Manager RMA & Failure Analysis Operations - Quanta Manufacturing Fremont.pdf
-4417181974 | Quanta Manufacturing Fremont | Program Manager RMA & Failure Analysis Operations | 2026-06-19 | Applied by HR via LinkedIn Easy Apply recommended plus30 | ATS 74 | CV: Ahmed Nasr - Program Manager RMA & Failure Analysis Operations - Quanta Manufacturing Fremont.pdf
-4423554670 | Easterseals MORC | Program Manager - Behavioral Health Urgent Care | 2026-06-19 | Applied by HR via LinkedIn Easy Apply recommended plus30 | ATS 66 | CV: Ahmed Nasr - Program Manager - Behavioral Health Urgent Care - Easterseals MORC.pdf
 4423554670 | Easterseals MORC | Program Manager - Behavioral Health Urgent Care | 2026-06-19 | Applied by HR via LinkedIn Easy Apply recommended plus30 | ATS 66 | CV: Ahmed Nasr - Program Manager - Behavioral Health Urgent Care - Easterseals MORC.pdf
 4430920897 | Net2Source (N2S) | Director Business Intelligence | 2026-06-19 | Applied by HR via LinkedIn Easy Apply top-applicant plus30 | ATS 76 | CV: Ahmed Nasr - Director Business Intelligence - Net2Source (N2S).pdf
 4430430374 | noon | Manager - EV & Operations | 2026-06-19 | Applied by HR via LinkedIn Easy Apply top-applicant plus30 | ATS 76 | CV: Ahmed Nasr - Manager - EV & Operations - noon.pdf
@@ -861,7 +856,6 @@ MYTABLE-FOUNDING-CEO-20260623 | MyTable | Founding Chief Executive Officer (CEO)
 4428975138 | Insight Global | Director | 2026-06-23 | Applied by HR via LinkedIn Easy Apply top-applicant plus30 | ATS 66 | CV: Ahmed Nasr - Director - Insight Global.pdf
 4430881855 | La Fosse | AI Delivery Lead | 2026-06-23 | Applied by HR via LinkedIn Easy Apply top-applicant plus30 | ATS 70 | CV: Ahmed Nasr - AI Delivery Lead - La Fosse.pdf
 4430881855 | La Fosse | AI Delivery Lead | 2026-06-23 | Applied by HR via LinkedIn Easy Apply recommended plus30 | ATS 70 | CV: Ahmed Nasr - AI Delivery Lead - La Fosse.pdf
-4430881855 | La Fosse | AI Delivery Lead | 2026-06-23 | Applied by HR via LinkedIn Easy Apply top-applicant plus30 | ATS 70 | CV: Ahmed Nasr - AI Delivery Lead - La Fosse.pdf
 4428252282 | Hays | Head of Artificial Intelligence | 2026-06-23 | Applied by HR via LinkedIn Easy Apply top-applicant plus30 | ATS 76 | CV: Ahmed Nasr - Head of Artificial Intelligence - Hays.pdf
 4430369971 | Halian Managed Services Recruitment Agency & Contract Staffing | Enterprise Architect (m f d) | 2026-06-23 | Applied by HR via LinkedIn Easy Apply top-applicant plus30 | ATS 70 | CV: Ahmed Nasr - Enterprise Architect (m f d) - Halian Managed Services Recruitment Agency & Contract Staffing.pdf
 4430884980 | NADIA | Managing Director ME (Independent Aftermarket - IAM) | 2026-06-23 | Applied by HR via LinkedIn Easy Apply top-applicant plus30 | ATS 76 | CV: Ahmed Nasr - Managing Director ME (Independent Aftermarket - IAM) - NADIA.pdf
@@ -871,15 +865,12 @@ MYTABLE-FOUNDING-CEO-20260623 | MyTable | Founding Chief Executive Officer (CEO)
 4432237514 | Liberty Bridge Partners | Origination Director - Corporate Finance & M&A Advisory | 2026-06-23 | Applied by HR via LinkedIn Easy Apply top-applicant plus30 | ATS 66 | CV: Ahmed Nasr - Origination Director - Corporate Finance & M&A Advisory - Liberty Bridge Partners.pdf
 4378689185 | Brick Executive Search | Chief Digital Officer | 2026-06-23 | Applied by HR via LinkedIn Easy Apply top-applicant plus30 | ATS 66 | CV: Ahmed Nasr - Chief Digital Officer - Brick Executive Search.pdf
 4428294585 | Go2STAFFING | Senior Director Business Solutions Technology & Operations | 2026-06-23 | Applied by HR via LinkedIn Easy Apply top-applicant plus30 | ATS 82 | CV: Ahmed Nasr - Senior Director Business Solutions Technology & Operations - Go2STAFFING.pdf
-4432237514 | Liberty Bridge Partners | Origination Director - Corporate Finance & M&A Advisory | 2026-06-23 | Applied by HR via LinkedIn Easy Apply top-applicant plus30 | ATS 66 | CV: Ahmed Nasr - Origination Director - Corporate Finance & M&A Advisory - Liberty Bridge Partners.pdf
 4418761311 | Americana Restaurants | Digital Product Lead Apps & Kiosk | 2026-06-23 | Applied by HR via LinkedIn Easy Apply top-applicant plus30 | ATS 80 | CV: Ahmed Nasr - Digital Product Lead Apps & Kiosk - Americana Restaurants.pdf
 4423116075 | HRsource | Head of Marketplace Growth & Commercial Operations | 2026-06-23 | Applied by HR via LinkedIn Easy Apply top-applicant plus30 | ATS 80 | CV: Ahmed Nasr - Head of Marketplace Growth & Commercial Operations - HRsource.pdf
 4427416818 | Confidential Jobs | Director of Product Experience & Design | 2026-06-23 | Applied by HR via LinkedIn Easy Apply top-applicant plus30 | ATS 80 | CV: Ahmed Nasr - Director of Product Experience & Design - Confidential Jobs.pdf
 4429641879 | LanceSoft Middle East | Cyber GRC Consultant Program Delivery | 2026-06-23 | Applied by HR via LinkedIn Easy Apply top-applicant plus30 | ATS 62 | CV: Ahmed Nasr - Cyber GRC Consultant Program Delivery - LanceSoft Middle East.pdf
-4427416818 | Confidential Jobs | Director of Product Experience & Design | 2026-06-23 | Applied by HR via LinkedIn Easy Apply top-applicant plus30 | ATS 80 | CV: Ahmed Nasr - Director of Product Experience & Design - Confidential Jobs.pdf
 4425639665 | Delta Executive Search | Vice President Associate Global Retail & Consumer Investments Top 10 SWF (Role Based | 2026-06-23 | Applied by HR via LinkedIn Easy Apply top-applicant plus30 | ATS 72 | CV: Ahmed Nasr - Vice President Associate Global Retail & Consumer Investments Top 10 SWF (Role Based - Delta Executive Search.pdf
 4392869875 | Madison Pearl | Vice President Risk Management (Private Markets Risk) | 2026-06-23 | Applied by HR via LinkedIn Easy Apply top-applicant plus30 | ATS 70 | CV: Ahmed Nasr - Vice President Risk Management (Private Markets Risk) - Madison Pearl.pdf
-4425639665 | Delta Executive Search | Vice President Associate Global Retail & Consumer Investments Top 10 SWF (Role Based | 2026-06-23 | Applied by HR via LinkedIn Easy Apply top-applicant plus30 | ATS 72 | CV: Ahmed Nasr - Vice President Associate Global Retail & Consumer Investments Top 10 SWF (Role Based - Delta Executive Search.pdf
 4392869875 | Madison Pearl | Vice President Risk Management (Private Markets Risk) | 2026-06-23 | Applied by HR via LinkedIn Easy Apply top-applicant plus30 | ATS 60 | CV: Ahmed Nasr - Vice President Risk Management (Private Markets Risk) - Madison Pearl.pdf
 4429883122 | StafinGo | Information Technology Project Manager | 2026-06-24 | Applied by HR via LinkedIn Easy Apply recommended plus30 | ATS 70 | CV: Ahmed Nasr - Information Technology Project Manager - StafinGo.pdf
 4431499010 | Cobalt Search Los Angeles CA ( | Practice Director | 2026-06-24 | Applied by HR via LinkedIn Easy Apply recommended plus30 | ATS 66 | CV: Ahmed Nasr - Practice Director - Cobalt Search Los Angeles CA (.pdf
@@ -915,3 +906,19 @@ MYTABLE-FOUNDING-CEO-20260623 | MyTable | Founding Chief Executive Officer (CEO)
 4432599106 | The Richmond Group USA | Business Unit Manager | 2026-06-24 | Applied by HR via LinkedIn Easy Apply recommended plus30 | ATS 62 | CV: Ahmed Nasr - Business Unit Manager - The Richmond Group USA.pdf
 4431481396 | Advocate Group | Global Project Manager | 2026-06-24 | Applied by HR via LinkedIn Easy Apply recommended plus30 | ATS 66 | CV: Ahmed Nasr - Global Project Manager - Advocate Group.pdf
 4432576631 | tlg talent | Operations Manager Innovation Centre | 2026-06-24 | Applied by HR via LinkedIn Easy Apply recommended plus30 | ATS 66 | CV: Ahmed Nasr - Operations Manager Innovation Centre - tlg talent.pdf
+4433172809 | SoTalent | Director of Software Engineering | 2026-07-04 | Applied by HR via LinkedIn Easy Apply top-applicant plus30 | ATS 78 | CV: Ahmed Nasr - Director of Software Engineering - SoTalent.pdf
+4435428016 | Confidential Careers | Global Head of Design | 2026-07-04 | Applied by HR via LinkedIn Easy Apply top-applicant plus30 | ATS 80 | CV: Ahmed Nasr - Global Head of Design - Confidential Careers.pdf
+4435791761 | Vistas Global | Senior Information Technology Project Manager | 2026-07-04 | Applied by HR via LinkedIn Easy Apply top-applicant plus30 | ATS 80 | CV: Ahmed Nasr - Senior Information Technology Project Manager - Vistas Global.pdf
+4433187000 | Denara Group | Head of Operations | 2026-07-04 | Applied by HR via LinkedIn Easy Apply top-applicant plus30 | ATS 80 | CV: Ahmed Nasr - Head of Operations - Denara Group.pdf
+4436365864 | GetOffers | Head of B2B UAE (Country Manager) | 2026-07-04 | Applied by HR via LinkedIn Easy Apply top-applicant plus30 | ATS 84 | CV: Ahmed Nasr - Head of B2B UAE (Country Manager) - GetOffers.pdf
+4435463590 | Oho Group | Head of Engineering Defence Start-Up London | 2026-07-04 | Applied by HR via LinkedIn Easy Apply top-applicant plus30 | ATS 66 | CV: Ahmed Nasr - Head of Engineering Defence Start-Up London - Oho Group.pdf
+4433184871 | Confidential Government | Strategy & Transformation Lead | 2026-07-04 | Applied by HR via LinkedIn Easy Apply top-applicant plus30 | ATS 80 | CV: Ahmed Nasr - Strategy & Transformation Lead - Confidential Government.pdf
+4433756100 | Confidential | Operations Manager | 2026-07-04 | Applied by HR via LinkedIn Easy Apply top-applicant plus30 | ATS 70 | CV: Ahmed Nasr - Operations Manager - Confidential.pdf
+4436718497 | Mark Williams Recruitment | Group Digital Transformation Director | 2026-07-04 | Applied by HR via LinkedIn Easy Apply top-applicant plus30 | ATS 88 | CV: Ahmed Nasr - Group Digital Transformation Director - Mark Williams Recruitment.pdf
+4436740584 | TalentFlo | General Manager | 2026-07-04 | Applied by HR via LinkedIn Easy Apply top-applicant plus30 | ATS 62 | CV: Ahmed Nasr - General Manager - TalentFlo.pdf
+4436712419 | Tiger Recruitment | Chief Growth Officer | 2026-07-04 | Applied by HR via LinkedIn Easy Apply top-applicant plus30 | ATS 62 | CV: Ahmed Nasr - Chief Growth Officer - Tiger Recruitment.pdf
+4433745194 | Annapurna | Director of MNO Partnerships | 2026-07-04 | Applied by HR via LinkedIn Easy Apply top-applicant plus30 | ATS 66 | CV: Ahmed Nasr - Director of MNO Partnerships - Annapurna.pdf
+4435456429 | Elite HR Consultancy | Head of Business Development | 2026-07-04 | Applied by HR via LinkedIn Easy Apply top-applicant plus30 | ATS 76 | CV: Ahmed Nasr - Head of Business Development - Elite HR Consultancy.pdf
+4433752476 | Fairway Financial Partners | Director of Operations | 2026-07-04 | Applied by HR via LinkedIn Easy Apply top-applicant plus30 | ATS 82 | CV: Ahmed Nasr - Director of Operations - Fairway Financial Partners.pdf
+4435463416 | Ardent Partners | Director of Estimating | 2026-07-04 | Applied by HR via LinkedIn Easy Apply top-applicant plus30 | ATS 84 | CV: Ahmed Nasr - Director of Estimating - Ardent Partners.pdf
+4431924496 | First Point Group | Project Manager | 2026-07-04 | Applied by HR via LinkedIn Easy Apply top-applicant plus30 | ATS 84 | CV: Ahmed Nasr - Project Manager - First Point Group.pdf
