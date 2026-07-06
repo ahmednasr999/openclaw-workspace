@@ -461,6 +461,16 @@
 | 570 | 🆕 | Citi | Third-Party Funds Product Manager, Middle East & Africa Deposits (VP) | Dubai | — | 🆕 Discovered | Radar | 2026-07-04 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4435457774) | — |
 | 571 | 🆕 | Confidential | Head of Cyber Security | Dubai | — | 🆕 Discovered | Radar | 2026-07-04 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4433151855) | — |
 | 572 | 🆕 | Confidential | Head of Business Development | Dubai | — | 🆕 Discovered | Radar | 2026-07-05 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4432353705) | — |
+| 573 | 🆕 | Mark Williams Recruitment | Group Digital Transformation Director | Abu Dhabi Emirate | — | 🆕 Discovered | Radar | 2026-07-06 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4436718497) | — |
+| 574 | 🆕 | Robert Walters | VP - IT Investment Solutions | Abu Dhabi | — | 🆕 Discovered | Radar | 2026-07-06 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4432755404) | — |
+| 575 | 🆕 | QNB Group | QNB3749 - Senior Vice President - Strategy Development | Doha | — | 🆕 Discovered | Radar | 2026-07-06 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4423662688) | — |
+| 576 | 🆕 | Snoonu | Vertical Operations Director | Lusail | — | 🆕 Discovered | Radar | 2026-07-06 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4427414940) | — |
+| 577 | 🆕 | Live Connections | Project Director | Dubai | — | 🆕 Discovered | Radar | 2026-07-06 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4436043724) | — |
+| 578 | 🆕 | talabat | Director Experience and Operational Excellence | Dubai | — | 🆕 Discovered | Radar | 2026-07-06 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4436049255) | — |
+| 579 | 🆕 | Leica Biosystems | Sales Director, Digital Pathology - High Growth Markets | Dubai | — | 🆕 Discovered | Radar | 2026-07-06 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4423628151) | — |
+| 580 | 🆕 | EyeSpy Recruitment - iGaming Specialists | Director of HR, Technology & Insight | Dubai | — | 🆕 Discovered | Radar | 2026-07-06 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4435848043) | — |
+| 581 | 🆕 | AstraZeneca | Medical Affairs Director, BBU, Gulf | Dubai | — | 🆕 Discovered | Radar | 2026-07-06 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4434624050) | — |
+
 
 
 

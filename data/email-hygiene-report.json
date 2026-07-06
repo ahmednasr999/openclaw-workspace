@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-06-28T08:10:19.329042+03:00",
-  "history_items": 13698,
-  "actionable_items": 881,
-  "noise_items": 12817,
+  "generated_at": "2026-07-05T08:10:31.709232+03:00",
+  "history_items": 14369,
+  "actionable_items": 944,
+  "noise_items": 13425,
   "top_noise_senders": [
     [
       "info@host.discountwalas.com",
@@ -10,7 +10,7 @@
     ],
     [
       "notifications@github.com",
-      999
+      1026
     ],
     [
       "no-reply@mail.therumble.app",
@@ -41,34 +41,34 @@
       135
     ],
     [
+      "recruitment.notify@oia.gov.om",
+      135
+    ],
+    [
       "hello@moby.co",
       131
     ],
     [
-      "recruitment.notify@oia.gov.om",
-      126
+      "info@ema.flickonclick.com",
+      121
     ],
     [
       "temu@commerce.temuemail.com",
       119
     ],
     [
-      "info@ema.flickonclick.com",
-      114
+      "editor@newsletter.thepaypers.com",
+      109
     ],
     [
       "hello@mindstream.news",
-      102
-    ],
-    [
-      "editor@newsletter.thepaypers.com",
-      101
+      109
     ]
   ],
   "top_repeated_subjects": [
     [
       "job vacancy",
-      119
+      128
     ],
     [
       "=?utf-8?b?v0igrgfpbhkgtwfya2v0iejyawvmicygvhjhzgluzybpchbvcnr1?=\r\n =?utf-8?b?bml0awvziokyl",
@@ -80,7 +80,7 @@
     ],
     [
       "=?utf-8?b?2kfyrtixinin2lxyr9in2lhyp9iqiniq2ylyp9ix2yryssdyqnit2yjyqw==?=\r\n =?utf-8?b?inmf2",
-      47
+      49
     ],
     [
       "confirm your identity",
@@ -88,11 +88,11 @@
     ],
     [
       "=?utf-8?b?mjagbmv3ievuz2luzwvycybqb2jzigluiffhdgfyiq==?=",
-      29
+      34
     ],
     [
       "ahmed, hot job opportunities waiting for you",
-      22
+      23
     ],
     [
       "=?utf-8?q?=f0=9f=98=b2_=e2=89=a4_$9.9!_luxe_for_less?=",
@@ -107,24 +107,24 @@
       16
     ],
     [
+      "security alert",
+      16
+    ],
+    [
+      "=?utf-8?b?ww91ciblegvjdxrpdmugcg1vihjvbgugbg9va3mgz3jlyxqg4ocu?=\r\n\t=?utf-8?b?igp1c3qgy29uz",
+      16
+    ],
+    [
       "now only egp5.63!",
       16
     ],
     [
-      "security alert",
-      15
+      "keep track of your application",
+      16
     ],
     [
-      "=?utf-8?b?ww91ciblegvjdxrpdmugcg1vihjvbgugbg9va3mgz3jlyxqg4ocu?=\r\n\t=?utf-8?b?igp1c3qgy29uz",
-      15
-    ],
-    [
-      "new jobs posted from www.afuturewithus.com",
-      14
-    ],
-    [
-      "new jobs posted from careers.powerholding-intl.com",
-      14
+      "thank you for applying to amazon!",
+      16
     ]
   ],
   "recommendation": "Review these candidates manually before unsubscribe, block, archive, or Gmail filter changes. No mailbox action was taken."

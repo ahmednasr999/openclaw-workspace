@@ -2,209 +2,60 @@
   "meta": {
     "agent": "email-agent",
     "version": "3.0.0",
-    "generated_at": "2026-07-04T21:01:26.460064+03:00",
-    "duration_ms": 44152,
+    "generated_at": "2026-07-05T20:00:51.563939+03:00",
+    "duration_ms": 10840,
     "ttl_hours": 4,
     "status": "success",
     "error": null,
-    "run_id": "e8b0285f",
+    "run_id": "70e4ab8e",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
     "status": "ok",
-    "scan_time": "2026-07-04T21:00:59.323271+03:00",
-    "total_scanned": 22,
+    "scan_time": "2026-07-05T20:00:51.563172+03:00",
+    "total_scanned": 14,
     "by_category": {
       "interview_invite": 0,
-      "recruiter_reach": 1,
+      "recruiter_reach": 0,
       "application_ack": 0,
       "rejection": 0,
-      "assessment": 1,
+      "assessment": 0,
       "application_response": 0,
       "follow_up_needed": 0,
-      "job_alert": 1,
-      "other": 19
+      "job_alert": 0,
+      "other": 14
     },
     "interview_invites": [],
-    "recruiter_messages": [
-      {
-        "id": "363997",
-        "from": "Luria Petrucci <support@livestreamingpros.com>",
-        "subject": "No one's talking about what Kelsey did NOT do...",
-        "date": "Sat, 04 Jul 2026 17:58:48 +0000 (UTC)",
-        "unread": true,
-        "priority": "HIGH",
-        "score": 7,
-        "pipeline_match": "noon",
-        "confidence": 75,
-        "confidence_label": "medium",
-        "evidence": [
-          "matched active pipeline company: noon",
-          "hiring/application context",
-          "recruiter outreach classification",
-          "high priority score: 7"
-        ],
-        "why_actionable": "matched active pipeline company: noon | hiring/application context | recruiter outreach classification | high priority score: 7"
-      }
-    ],
+    "recruiter_messages": [],
     "application_acks": [],
     "rejections": [],
-    "assessments": [
-      {
-        "id": "363993",
-        "from": "Superhuman =?windows-1251?b?lg==?= Zain Kahn\r\n\t<superhuman@mail.joinsuperhuman.ai>",
-        "subject": "=?UTF-8?B?8J+RgA==?= New report cast doubt on China's robot success",
-        "date": "Sat, 04 Jul 2026 16:06:31 +0000 (UTC)",
-        "unread": true,
-        "priority": "MEDIUM",
-        "score": 2,
-        "pipeline_match": null,
-        "confidence": 50,
-        "confidence_label": "low",
-        "evidence": [
-          "hiring/application context",
-          "assessment keyword with hiring context",
-          "medium priority score: 2"
-        ],
-        "why_actionable": "not actionable: hiring/application context | assessment keyword with hiring context | medium priority score: 2"
-      }
-    ],
+    "assessments": [],
     "application_responses": [],
     "follow_ups_needed": [],
-    "job_alerts": [
-      {
-        "id": "363987",
-        "from": "GulfTalent Jobs <jobs@gulftalent.com>",
-        "subject": "Black Pearl needs a Project Manager - Events",
-        "date": "Sat, 04 Jul 2026 09:52:53 -0500",
-        "unread": true,
-        "priority": "LOW",
-        "score": 0,
-        "pipeline_match": null,
-        "confidence": 25,
-        "confidence_label": "very_low",
-        "evidence": [
-          "automated job alert",
-          "known recruiter/job domain",
-          "hiring sender context",
-          "noise/job-alert guard applied"
-        ],
-        "why_actionable": "not actionable: automated job alert | known recruiter/job domain | hiring sender context | noise/job-alert guard applied"
-      }
-    ],
-    "actionable_count": 1,
+    "job_alerts": [],
+    "actionable_count": 0,
     "hot_alerts": [],
-    "signals": [
-      {
-        "company": "noon",
-        "signal": "recruiter_email",
-        "subject": "No one's talking about what Kelsey did NOT do...",
-        "sender": "Luria Petrucci <support@livestreamingpros.com>",
-        "job_ids": [
-          "li-4430430374",
-          "li-4426742811",
-          "li-4429786688",
-          "li-4425479206",
-          "linkedin_jobspy-li-4409903963",
-          "linkedin_jobspy-li-4386880115",
-          "linkedin_jobspy-li-4303823281",
-          "linkedin_jobspy-li-4385249338",
-          "linkedin_jobspy-li-4374939454",
-          "linkedin_jobspy-li-4302494006",
-          "linkedin_jobspy-li-4372321327",
-          "linkedin-li-4302494006",
-          "linkedin-li-4372321327",
-          "linkedin-li-4380034742",
-          "cv-a3738fc040",
-          "linkedin-li-4389084154",
-          "4373851696"
-        ],
-        "score": 7,
-        "timestamp": "2026-07-04T21:00:59.318674+03:00"
-      }
-    ],
-    "pipeline_review_candidates": [
-      {
-        "timestamp": "2026-07-04T21:00:59.323310+03:00",
-        "review_type": "possible_assessment",
-        "category": "assessment",
-        "email_id": "363993",
-        "subject": "=?UTF-8?B?8J+RgA==?= New report cast doubt on China's robot success",
-        "from": "Superhuman =?windows-1251?b?lg==?= Zain Kahn\r\n\t<superhuman@mail.joinsuperhuman.ai>",
-        "priority": "MEDIUM",
-        "pipeline_match": null,
-        "status": "needs_human_review"
-      },
-      {
-        "timestamp": "2026-07-04T21:00:59.323319+03:00",
-        "review_type": "possible_recruiter_outreach",
-        "category": "recruiter_reach",
-        "email_id": "363997",
-        "subject": "No one's talking about what Kelsey did NOT do...",
-        "from": "Luria Petrucci <support@livestreamingpros.com>",
-        "priority": "HIGH",
-        "pipeline_match": "noon",
-        "status": "needs_human_review"
-      }
-    ],
+    "signals": [],
     "llm_analysis": {
-      "actionable_emails": [
-        {
-          "id": "363997",
-          "subject": "No one's talking about what Kelsey did NOT do...",
-          "from": "Luria Petrucci <support@livestreamingpros.com>",
-          "date": "Sat, 04 Jul 2026 17:58:48 +0000 (UTC)",
-          "category": "recruiter_reach",
-          "urgency": "low",
-          "intent": "The sender appears to be promoting video content and related programs, not a proven recruiter opportunity.",
-          "action": "no_action",
-          "response_deadline": "when convenient",
-          "notes": "Body excerpt does not prove hiring, interview, assessment, or recruiter need."
-        }
-      ],
+      "actionable_emails": [],
       "summary": {
-        "total_actionable": 1,
+        "total_actionable": 0,
         "critical_count": 0,
         "requires_interview_prep": false,
         "requires_assessment": false,
         "recruiter_top_opportunities": [],
         "top_priority": null,
-        "daily_focus": "No urgent job-search action is supported by the provided email content today."
+        "daily_focus": "No email action needed from this batch."
       }
     }
   },
   "kpi": {
-    "emails_processed": 22,
-    "actionable": 1,
+    "emails_processed": 14,
+    "actionable": 0,
     "interviews_detected": 0,
-    "recruiter_messages": 1,
-    "unread_actionable": 1
+    "recruiter_messages": 0,
+    "unread_actionable": 0
   },
-  "recommendations": [
-    {
-      "id": "rec-e8b0285f-0",
-      "action": "review_and_respond",
-      "target": "1 recruiter message(s)",
-      "reason": "Recruiter outreach could lead to opportunities",
-      "urgency": "high",
-      "timestamp": "2026-07-04T21:01:26.457860+03:00"
-    },
-    {
-      "id": "rec-e8b0285f-1",
-      "action": "check_inbox",
-      "target": "1 unread actionable email(s)",
-      "reason": "Unread emails need attention",
-      "urgency": "high",
-      "timestamp": "2026-07-04T21:01:26.459934+03:00"
-    },
-    {
-      "id": "rec-e8b0285f-2",
-      "action": "complete_assessment",
-      "target": "1 assessment(s)",
-      "reason": "Assessments have deadlines",
-      "urgency": "high",
-      "timestamp": "2026-07-04T21:01:26.459944+03:00"
-    }
-  ]
+  "recommendations": []
 }

@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-04T10:53:29.745084+03:00",
+  "last_updated": "2026-07-05T08:10:51.979814+03:00",
   "items": [
     {
       "company": "Netcracker Technology in Dubai, United Arab Emirates â Apply on Wuzzuf",
@@ -739,14 +739,70 @@
       "job_url": "https://www.linkedin.com/jobs/view/4435456439",
       "verdict": "SUBMIT",
       "queued_at": "2026-07-04T10:53:29.745075+03:00",
-      "status": "queued"
+      "status": "researched",
+      "exported_at": "2026-07-05T05:10:19.828273Z",
+      "warm_intro_rating": "medium-high",
+      "warm_intro_candidates": [
+        {
+          "name": "Standard Chartered / SC Ventures network route",
+          "title": "Parent-company / incubator warm-intro path",
+          "linkedin_url": "https://ae.linkedin.com/company/myzoi",
+          "why": "Public LinkedIn company page says myZoi is a wholly owned subsidiary of Standard Chartered Bank and incubated through SC Ventures. Local email history shows Ahmed already has an active Standard Chartered career/pipeline trail, making this the strongest warm-intro angle even though no named mutual connection was verified locally."
+        },
+        {
+          "name": "Syed Ali",
+          "title": "CEO, myZoi",
+          "linkedin_url": "https://ae.linkedin.com/company/myzoi",
+          "why": "A recent public myZoi LinkedIn post names Syed Ali as CEO. The Head of ePMO mandate is executive-facing and reports to the Chief Strategy Officer, so CEO visibility may matter for referral routing."
+        },
+        {
+          "name": "Gautam Jain",
+          "title": "Board Member, myZoi",
+          "linkedin_url": "https://ae.linkedin.com/company/myzoi",
+          "why": "A recent public myZoi LinkedIn post names Gautam Jain as Board Member. Useful for a warm-intro route through Standard Chartered / SC Ventures if Ahmed has a banking network contact."
+        },
+        {
+          "name": "Hassan Bharmal",
+          "title": "Chief Commercial Officer, myZoi",
+          "linkedin_url": "https://ae.linkedin.com/company/myzoi",
+          "why": "A recent public myZoi LinkedIn post names Hassan Bharmal as CCO. Strong business-side route because the role governs portfolio value, prioritisation, and executive cadence rather than pure delivery coordination."
+        },
+        {
+          "name": "Chief Strategy Officer / Chief Product Officer",
+          "title": "Hiring-manager route to verify in authenticated LinkedIn",
+          "linkedin_url": "https://www.linkedin.com/search/results/people/?keywords=myZoi%20Chief%20Strategy%20Officer%20Chief%20Product%20Officer",
+          "why": "The job description says the Head of ePMO reports to the CSO and works closely with the CPO, but public search did not reliably expose named profiles in this run. Verify inside a visible LinkedIn session before sending any request."
+        }
+      ],
+      "queue_notes": [
+        "Job page / local JD confirms Head of ePMO in Dubai, reporting to the Chief Strategy Officer with close CPO relationship.",
+        "Role fit is strong for Ahmed: portfolio governance, executive cadence, strategic prioritisation, delivery intelligence, regulated fintech context, and C-suite stakeholder management.",
+        "Public LinkedIn company page confirms myZoi has 12,167 followers, about 112 employees, is headquartered in Abu Dhabi / Dubai, and is a Standard Chartered / SC Ventures company.",
+        "No LinkedIn connection request or message was sent. Local policy blocks extracting or using LinkedIn cookies; this review used local job/queue data and public LinkedIn company/job evidence only.",
+        "No local first-degree connection export was found for myZoi, so warm-intro status is based on parent-company adjacency and Ahmed's local Standard Chartered pipeline history rather than a verified mutual profile."
+      ],
+      "next_actions": [
+        "Draft-first approach only; do not send a connection request or message without Ahmed approval.",
+        "First verify the CSO and CPO names in a visible authenticated LinkedIn session, then prioritize the CSO/CPO route over broad recruiter outreach.",
+        "If a Standard Chartered / SC Ventures mutual contact is visible, ask for a warm intro to the myZoi CSO or CPO before sending a direct cold connection.",
+        "If no mutual route is visible, send one direct connection request to the verified CSO/CPO or Syed Ali, using the ePMO governance and regulated-fintech angle.",
+        "Suggested connection note: Hi [Name], I saw myZoi is hiring a Head of ePMO in Dubai. My work spans GCC digital transformation, portfolio governance, regulated delivery, and executive cadence. Happy to connect if the mandate is active."
+      ],
+      "processed_at": "2026-07-05T05:22:00Z",
+      "research_sources": [
+        "local cmo-outreach-queue.json",
+        "local jobs-summary.json / jobs-merged.json / jobs feedback logs",
+        "public LinkedIn job and company pages",
+        "public search snippets",
+        "local email-history Standard Chartered pipeline signals"
+      ]
     }
   ],
   "last_weekly_review": {
-    "reviewed_at": "2026-06-28T05:25:47Z",
+    "reviewed_at": "2026-07-05T05:22:00Z",
     "cron": "CMO Weekly Outreach Queue - Sunday",
-    "queued_count": 0,
-    "status": "no_queued_companies",
-    "note": "Weekly script ran and exported 0 queued items. Existing outreach records are already marked researched, so no LinkedIn prospecting, warm-intro review, cookie inspection, or outreach actions were needed in this cron turn. No external LinkedIn actions were taken."
+    "queued_count": 1,
+    "status": "processed",
+    "note": "Weekly script ran and exported 1 queued item. myZoi was researched and marked researched with warm-intro candidates and draft-only next actions. No external LinkedIn requests or messages were sent. LinkedIn cookie extraction/use was not performed due workspace policy; review used local job/queue data and public LinkedIn evidence."
   }
 }

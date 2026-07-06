@@ -1,6 +1,6 @@
-# Job Radar: 2026-07-05
+# Job Radar: 2026-07-06
 
-*Generated: 2026-07-05 06:00 UTC*
+*Generated: 2026-07-06 06:00 UTC*
 
 *Engine: JobSpy (LinkedIn, Indeed, Google Jobs)*
 
@@ -10,7 +10,47 @@
 
 ### Digital Transformation Executive (UAE)
 
-No results found.
+- **Group Digital Transformation Director** at Mark Williams Recruitment 🎯
+  📍 Abu Dhabi Emirate, United Arab Emirates | 📅 2026-07-03
+  🔗 https://www.linkedin.com/jobs/view/4436718497
+
+- **VP, Technology & Data - Asset Management** at First Abu Dhabi Bank (FAB) 🎯
+  📍 Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates | 📅 2026-07-03
+  🔗 https://www.linkedin.com/jobs/view/4374898166
+
+- **Head of Artificial Intelligence** at Hays 🎯
+  📍 Dubai, United Arab Emirates | 📅 2026-07-03
+  🔗 https://www.linkedin.com/jobs/view/4428252282
+
+- **SVP - Cloud, Virtualization & GPU/AI Platforms.Injaz - TECH - Cloud Center of Excellence.MIT** at Mashreq 🎯
+  📍  | 📅 2026-07-03
+  🔗 https://www.linkedin.com/jobs/view/4427928993
+
+- **Chief Technology Officer** at Mark Williams Recruitment 🎯
+  📍 Dubai, United Arab Emirates | 📅 2026-07-03
+  🔗 https://www.linkedin.com/jobs/view/4436719331
+
+- **Global Vice President – Operations & Systems** at DP World 🎯
+  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-07-02
+  🔗 https://www.linkedin.com/jobs/view/4436375437
+
+- **VP - IT Investment Solutions** at Robert Walters 🎯
+  📍 Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates | 📅 2026-07-02
+  🔗 https://www.linkedin.com/jobs/view/4432755404
+
+- **Director of Digitalization** at 7X 🎯
+  📍 Dubai, United Arab Emirates | 📅 2026-07-01
+  🔗 https://www.linkedin.com/jobs/view/4435391827
+
+- **Head - Fund Operations (Group)** at Amicorp Group
+  📍 Dubai, United Arab Emirates | 📅 2026-07-01
+  🔗 https://www.linkedin.com/jobs/view/4432353383
+
+- **Digital Product Head - SaaS** at Michael Page
+  📍 Dubai, Dubai, United Arab Emirates | 📅 nan
+  🔗 https://www.linkedin.com/jobs/view/4436978839
+
+*10 results (8 executive-level, 0 likely ghost jobs)*
 
 ### Digital Transformation Executive (Saudi)
 
@@ -18,21 +58,53 @@ No results found.
 
 ### Digital Transformation Executive (Qatar)
 
-No results found.
+- **Principal (IT/Digital) | BCG Platinion** at Boston Consulting Group (BCG)
+  📍  | 📅 2026-07-04
+  🔗 https://www.linkedin.com/jobs/view/4427276696
+
+- **Entrepreneur in Residence (EIR)** at The Flex
+  📍  | 📅 2026-07-04
+  🔗 https://www.linkedin.com/jobs/view/4436943438
+
+- **QNB3749 - Senior Vice President - Strategy Development** at QNB Group 🎯
+  📍 Doha, Qatar | 📅 2026-07-03
+  🔗 https://www.linkedin.com/jobs/view/4423662688
+
+- **Agile Coach** at BGTS International
+  📍 Doha, Qatar | 📅 2026-07-03
+  🔗 https://www.linkedin.com/jobs/view/4433163155
+
+- **Principal Document & Information Management** at Wood
+  📍 Doha, Qatar | 📅 2026-07-02
+  🔗 https://www.linkedin.com/jobs/view/4376395123
+
+- **Department Head – Digital Solutions & Technology** at DOHA BANK
+  📍 Doha, Qatar | 📅 2026-07-01
+  🔗 https://www.linkedin.com/jobs/view/4432341111
+
+- **QNB3788 - Vice President Data Analysis** at QNB Group 🎯
+  📍 Doha, Qatar | 📅 2026-07-01
+  🔗 https://www.linkedin.com/jobs/view/4435546196
+
+- **Portfolio Manager – Strategic Programs (Qatari National)** at malomatia
+  📍 Doha, Qatar | 📅 2026-07-01
+  🔗 https://www.linkedin.com/jobs/view/4432365781
+
+- **Senior AI Product Owner** at Commercial Bank
+  📍 Doha, Qatar | 📅 nan
+  🔗 https://www.linkedin.com/jobs/view/4436993782
+
+- **Vertical Operations Director** at Snoonu 🎯
+  📍 Lusail, Qatar | 📅 nan
+  🔗 https://www.linkedin.com/jobs/view/4427414940
+
+*10 results (3 executive-level, 0 likely ghost jobs)*
 
 ### CTO / Head of Technology (GCC)
-
-- **Chief Technology Officer** at Mark Williams Recruitment 🎯
-  📍 Dubai, United Arab Emirates | 📅 2026-07-03
-  🔗 https://www.linkedin.com/jobs/view/4436719331
 
 - **Head of Application Development (UAEN)** at Talents Tide 🎯
   📍 Dubai, United Arab Emirates | 📅 2026-07-03
   🔗 https://www.linkedin.com/jobs/view/4435445667
-
-- **Head of Artificial Intelligence** at Hays 🎯
-  📍 Dubai, United Arab Emirates | 📅 2026-07-03
-  🔗 https://www.linkedin.com/jobs/view/4428252282
 
 - **Lead Solutions Architect & Head of Engineering** at Elevare Management Consultancy LLC 🎯
   📍 Dubai, Dubai, United Arab Emirates | 📅 2026-07-02
@@ -42,47 +114,19 @@ No results found.
   📍 Dubai, Dubai, United Arab Emirates | 📅 2026-07-02
   🔗 https://www.linkedin.com/jobs/view/4435204312
 
-- **Global Vice President – Operations & Systems** at DP World 🎯
-  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-07-02
-  🔗 https://www.linkedin.com/jobs/view/4436375437
-
 - **(Services) Technical Director** at Backbase 🎯
   📍 Dubai, Dubai, United Arab Emirates | 📅 2026-07-02
   🔗 https://www.linkedin.com/jobs/view/4435209999
-
-- **Vice President of Product Development** at Experts Group International 🎯
-  📍 Dubai, United Arab Emirates | 📅 2026-07-02
-  🔗 https://www.linkedin.com/jobs/view/4432763776
-
-- **Solutions Architect - SkyCargo** at Emirates
-  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-07-02
-  🔗 https://www.linkedin.com/jobs/view/4432763927
-
-- **IT Lead** at Adecco
-  📍 Dubai, United Arab Emirates | 📅 2026-07-02
-  🔗 https://www.linkedin.com/jobs/view/4436185392
 
 - **Head of Engineering Excellence** at Equiti Group 🎯
   📍 Dubai, Dubai, United Arab Emirates | 📅 2026-07-01
   🔗 https://www.linkedin.com/jobs/view/4435580084
 
-- **Lead Enterprise Architect** at EPS Consultants Singapore
-  📍 Dubai, United Arab Emirates | 📅 2026-07-01
-  🔗 https://www.linkedin.com/jobs/view/4435539021
-
-- **Enterprise Architect** at Innovo Group
-  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-07-01
-  🔗 https://www.linkedin.com/jobs/view/4435562643
-
 - **Chief Application Officer (UAEN)** at Mackenzie Jones Middle East 🎯
   📍 Dubai, United Arab Emirates | 📅 2026-06-29
   🔗 https://www.linkedin.com/jobs/view/4431075228
 
-- **VP of Data Engineering** at Talent Seed 🎯
-  📍 Dubai, United Arab Emirates | 📅 2026-06-28
-  🔗 https://www.linkedin.com/jobs/view/4427352247
-
-*15 results (11 executive-level, 0 likely ghost jobs)*
+*6 results (6 executive-level, 0 likely ghost jobs)*
 
 ### PMO / Program Director (GCC)
 
@@ -118,17 +162,41 @@ No results found.
   📍 Dubai, United Arab Emirates | 📅 2026-07-01
   🔗 https://www.linkedin.com/jobs/view/4435819759
 
-- **Project Director** at Live Connections 🎯
-  📍 Dubai, United Arab Emirates | 📅 2026-06-28
-  🔗 https://www.linkedin.com/jobs/view/4433625545
+- **Finance Transformation PMO Lead** at Invictus Investment Company PLC
+  📍 Dubai, United Arab Emirates | 📅 2026-07-01
+  🔗 https://www.linkedin.com/jobs/view/4435593694
 
-*9 results (5 executive-level, 0 likely ghost jobs)*
+- **Director of Project Execution** at Vanderlande 🎯
+  📍 Dubai, Dubai, United Arab Emirates | 📅 nan
+  🔗 https://www.linkedin.com/jobs/view/4325493775
+
+- **Manager Project Management Office** at MPH
+  📍 Dubai, United Arab Emirates | 📅 nan
+  🔗 https://www.linkedin.com/jobs/view/4433787340
+
+- **Project Director** at Live Connections 🎯
+  📍 Dubai, United Arab Emirates | 📅 nan
+  🔗 https://www.linkedin.com/jobs/view/4436043724
+
+- **Director Experience and Operational Excellence** at talabat 🎯
+  📍 Dubai, Dubai, United Arab Emirates | 📅 nan
+  🔗 https://www.linkedin.com/jobs/view/4436049255
+
+*13 results (7 executive-level, 0 likely ghost jobs)*
 
 ### HealthTech / AI Executive (GCC)
 
 - **VP, International Product** at McGraw Hill ⛔
   📍 Dubai, United Arab Emirates | 📅 2026-07-03
   🔗 https://www.linkedin.com/jobs/view/4432747340
+
+- **Sales Director, Digital Pathology - High Growth Markets** at Leica Biosystems 🎯
+  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-07-02
+  🔗 https://www.linkedin.com/jobs/view/4423628151
+
+- **Director of HR, Technology & Insight** at EyeSpy Recruitment - iGaming Specialists 🎯
+  📍 Dubai, United Arab Emirates | 📅 2026-07-02
+  🔗 https://www.linkedin.com/jobs/view/4435848043
 
 - **Head of Product Marketing - AI** at SmartChoice International GCC 🎯
   📍 Dubai, United Arab Emirates | 📅 2026-07-01
@@ -138,47 +206,51 @@ No results found.
   📍 Dubai, Dubai, United Arab Emirates | 📅 2026-07-01
   🔗 https://www.linkedin.com/jobs/view/4432353705
 
-- **Head - Fund Operations (Group)** at Amicorp Group
-  📍 Dubai, United Arab Emirates | 📅 2026-07-01
-  🔗 https://www.linkedin.com/jobs/view/4432353383
+- **Medical Affairs Director, BBU, Gulf** at AstraZeneca 🎯
+  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-07-01
+  🔗 https://www.linkedin.com/jobs/view/4434624050
 
-*4 results (2 executive-level, 0 likely ghost jobs)*
+*6 results (5 executive-level, 0 likely ghost jobs)*
 
 ### FinTech / Payments Executive (GCC)
 
-- **Director – Financial Markets & Payment Services** at Wealth Tellers 🎯
-  📍 Dubai, United Arab Emirates | 📅 2026-07-03
-  🔗 https://www.linkedin.com/jobs/view/4433162310
+- **Vice President – Reinsurance Actuary** at Guy Carpenter 🎯
+  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-07-04
+  🔗 https://www.linkedin.com/jobs/view/4428117559
 
-- **Payments - CEEMEA Core Cash Payments Product Lead - Vice President- Dubai** at JPMorganChase 🎯
+- **Vice President - AML Complex Investigations Analyst (UAE Nationals Only)** at Citi ⛔
   📍 Dubai, Dubai, United Arab Emirates | 📅 2026-07-03
-  🔗 https://www.linkedin.com/jobs/view/4436799373
+  🔗 https://www.linkedin.com/jobs/view/4407093358
 
-- **Head of Partnerships – Fintech (On-site, Dubai)** at Comfi.ai 🎯
-  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-07-03
-  🔗 https://www.linkedin.com/jobs/view/4433175805
+- **MEA FIG And SWFs - Vice President** at TALENTMATE 🎯
+  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-06-30
+  🔗 https://www.linkedin.com/jobs/view/4435379181
 
-- **Head of Operations** at Denara Group 🎯
-  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-07-03
-  🔗 https://www.linkedin.com/jobs/view/4433187000
+- **MEA FIG & SWFs - Vice President** at Mizuho 🎯
+  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-06-30
+  🔗 https://www.linkedin.com/jobs/view/4430828421
 
-- **Director - Head of Middle East & Africa Network - Core Trade (Documentary Trade)** at Citi 🎯
-  📍 Dubai, Dubai, United Arab Emirates | 📅 2026-07-01
-  🔗 https://www.linkedin.com/jobs/view/4434616951
-
-*5 results (5 executive-level, 0 likely ghost jobs)*
+*4 results (3 executive-level, 0 likely ghost jobs)*
 
 ### IT Director / VP IT (GCC)
 
-No results found.
+- **Head of Cyber Security** at Confidential 🎯
+  📍 Dubai, United Arab Emirates | 📅 2026-07-03
+  🔗 https://www.linkedin.com/jobs/view/4433151855
+
+- **IT Lead** at Adecco
+  📍 Dubai, United Arab Emirates | 📅 2026-07-02
+  🔗 https://www.linkedin.com/jobs/view/4436185392
+
+*2 results (1 executive-level, 0 likely ghost jobs)*
 
 ---
 
 ## Summary
 
-- Total unique jobs found: 33
-- Executive-level matches: 23
-- Already in pipeline: 22
-- **New jobs added to pipeline: 1**
+- Total unique jobs found: 51
+- Executive-level matches: 33
+- Already in pipeline: 24
+- **New jobs added to pipeline: 9**
 
 *Ghost job filter: Jobs >14 days old or with vague indicators (fast-paced, rockstar, ninja, wear many hats) are flagged.*

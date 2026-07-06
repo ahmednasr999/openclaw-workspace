@@ -2,19 +2,19 @@
   "meta": {
     "agent": "jobs-review",
     "version": "2.0.0",
-    "generated_at": "2026-07-04T10:53:30.063953+03:00",
-    "duration_ms": 690117,
+    "generated_at": "2026-07-05T08:10:52.116303+03:00",
+    "duration_ms": 463108,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "14be22b5",
+    "run_id": "421aa0c6",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
-    "generated_at": "2026-07-04T10:53:29.737561+03:00",
-    "total_candidates": 100,
-    "reviewed": 98,
+    "generated_at": "2026-07-05T08:10:51.972412+03:00",
+    "total_candidates": 53,
+    "reviewed": 51,
     "submit": [
       {
         "id": "linkedin_jobspy-li-4435456439",
@@ -52,7 +52,7 @@
         "first_seen": "2026-07-04",
         "career_fit_score": 9,
         "verdict": "SUBMIT",
-        "verdict_reason": "Excellent ePMO leadership fit in Dubai fintech with governance and portfolio control scope [5D role=2 | seniority=2 | geo=2 | strategic=1 | evidence=2 | fit=9/10 | llm=9 | watchlist=fintech_gcc,government_semi_gov_gcc] [CMO outreach queued for myZoi |  Financial Inclusion Technologies]",
+        "verdict_reason": "Excellent ePMO leadership role in UAE fintech with governance, portfolio delivery, and executive accountability [5D role=2 | seniority=2 | geo=2 | strategic=1 | evidence=2 | fit=9/10 | llm=9 | watchlist=fintech_gcc,government_semi_gov_gcc] [CMO outreach queued for myZoi |  Financial Inclusion Technologies]",
         "watchlist_matches": {
           "company_hits": [],
           "domain_hits": [
@@ -91,7 +91,7 @@
       }
     ],
     "review": [],
-    "skip_count": 99,
+    "skip_count": 52,
     "unreviewed_count": 0,
     "thresholds": {
       "submit": 6,
@@ -100,32 +100,32 @@
     "pipeline": {
       "l0_auto_skip": 2,
       "l1_jd_enriched": 0,
-      "l1_jd_coverage": "91/98",
+      "l1_jd_coverage": "45/51",
       "llm_model": "openai/gpt-5.5",
-      "llm_jobs_reviewed": 98,
-      "r2_latency_ms": 683379,
+      "llm_jobs_reviewed": 51,
+      "r2_latency_ms": 456620,
       "r2_fallbacks": 0
     },
     "kpi": {
-      "submit_rate": 0.01020408163265306,
+      "submit_rate": 0.0196078431372549,
       "review_rate": 0.0,
-      "skip_rate": 0.9897959183673469,
-      "avg_fit_score": 4.5,
-      "l0_filter_rate": 2.0,
+      "skip_rate": 0.9803921568627451,
+      "avg_fit_score": 4.9,
+      "l0_filter_rate": 3.8,
       "llm_review_rate": 100.0
     }
   },
   "kpi": {
-    "total_loaded": 100,
+    "total_loaded": 53,
     "l0_auto_skip": 2,
     "l1_jd_enriched": 0,
     "l2_filtered": 0,
     "submit_count": 1,
     "review_count": 0,
-    "skip_count": 97,
-    "submit_rate": 1.0,
-    "avg_fit_score": 4.5,
-    "r2_latency_ms": 683379
+    "skip_count": 50,
+    "submit_rate": 2.0,
+    "avg_fit_score": 4.9,
+    "r2_latency_ms": 456620
   },
   "recommendations": []
 }

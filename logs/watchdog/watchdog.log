@@ -5497,3 +5497,48 @@ Tip: systemctl --user start openclaw-gateway.service
 [2026-07-05 04:00] Summary: fixes=0 warnings=1 alerts=0
 [2026-07-05 06:00] === Watchdog v3 run ===
 [2026-07-05 06:00] Summary: fixes=0 warnings=1 alerts=0
+[2026-07-05 08:00] === Watchdog v3 run ===
+[2026-07-05 08:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-07-05 10:00] === Watchdog v3 run ===
+[2026-07-05 10:00] Summary: fixes=0 warnings=0 alerts=0
+[2026-07-05 12:00] === Watchdog v3 run ===
+[2026-07-05 12:00] WARN: active-tasks.md stale (50h)
+[2026-07-05 12:00] WARN: Jobs data stale (25h), triggering pipeline
+[2026-07-05 12:00] FIXED: Pipeline triggered
+[2026-07-05 12:00] Summary: fixes=1 warnings=1 alerts=0
+[2026-07-05 14:00] === Watchdog v3 run ===
+[2026-07-05 14:00] WARN: Jobs data stale (27h), triggering pipeline
+[2026-07-05 14:00] FIXED: Pipeline triggered
+[2026-07-05 14:00] Summary: fixes=1 warnings=0 alerts=0
+[2026-07-05 16:00] === Watchdog v3 run ===
+[2026-07-05 16:00] WARN: Jobs data stale (29h), triggering pipeline
+[2026-07-05 16:00] FIXED: Pipeline triggered
+[2026-07-05 16:00] Summary: fixes=1 warnings=0 alerts=0
+[2026-07-05 18:00] === Watchdog v3 run ===
+[2026-07-05 18:00] WARN: Jobs data stale (31h), triggering pipeline
+[2026-07-05 18:00] FIXED: Pipeline triggered
+[2026-07-05 18:00] Summary: fixes=1 warnings=0 alerts=0
+[2026-07-05 20:00] === Watchdog v3 run ===
+[2026-07-05 20:00] WARN: Jobs data stale (33h), triggering pipeline
+[2026-07-05 20:00] FIXED: Pipeline triggered
+[2026-07-05 20:00] Summary: fixes=1 warnings=0 alerts=0
+[2026-07-05 22:00] === Watchdog v3 run ===
+[2026-07-05 22:00] WARN: Jobs data stale (35h), triggering pipeline
+[2026-07-05 22:00] FIXED: Pipeline triggered
+[2026-07-05 22:00] Summary: fixes=1 warnings=0 alerts=0
+[2026-07-06 00:00] === Watchdog v3 run ===
+[2026-07-06 00:00] WARN: Jobs data stale (37h), triggering pipeline
+[2026-07-06 00:00] FIXED: Pipeline triggered
+[2026-07-06 00:00] Summary: fixes=1 warnings=1 alerts=0
+[2026-07-06 02:00] === Watchdog v3 run ===
+[2026-07-06 02:00] WARN: Jobs data stale (39h), triggering pipeline
+[2026-07-06 02:00] FIXED: Pipeline triggered
+[2026-07-06 02:00] Summary: fixes=1 warnings=1 alerts=0
+[2026-07-06 04:00] === Watchdog v3 run ===
+[2026-07-06 04:00] WARN: Jobs data stale (41h), triggering pipeline
+[2026-07-06 04:00] FIXED: Pipeline triggered
+[2026-07-06 04:00] Summary: fixes=1 warnings=1 alerts=0
+[2026-07-06 06:00] === Watchdog v3 run ===
+[2026-07-06 06:00] WARN: Jobs data stale (43h), triggering pipeline
+[2026-07-06 06:00] FIXED: Pipeline triggered
+[2026-07-06 06:00] Summary: fixes=1 warnings=1 alerts=0

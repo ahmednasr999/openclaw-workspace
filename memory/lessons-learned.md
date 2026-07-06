@@ -1608,3 +1608,10 @@ For Taskflow/OpenClaw maintenance scripts, validate the expected table/schema be
 Weekly Skill Autoresearch timed out at 300s, retried, then completed, and its prompt also asked the agent to send Telegram directly while cron delivery already announced the result. This produced confusing status noise until the job timeout was raised to 900s and cron became the only Telegram delivery path.
 ### Do differently
 For long-running scheduled skill tuning or autoresearch jobs, set a timeout that covers the normal run duration and keep user notification in one layer. Prefer cron `announce` delivery over agent-authored direct sends unless the job explicitly needs a separate target.
+
+## 2026-07-05 - Auto Lessons Must Audit Short Cron Sessions
+
+### Incident
+The daily auto-lessons script reported `Found 0 significant session(s)` because all 23 same-day sessions had fewer than 5 exchanges. Manual evidence review still found concrete short cron failures, including repeated `exec host not allowed`, Job Hunter Notion/local-data fallback errors, and the still-open email rejection synthetic failure.
+### Do differently
+After running `scripts/auto-lessons-learned.py --all`, do not treat the exchange-count filter as proof that there is nothing to capture. Always scan same-day non-trajectory session JSON for `isError=true`, user corrections, and explicit preferences before deciding `NO_REPLY`, especially for one-turn cron sessions.

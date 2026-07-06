@@ -1,0 +1,141 @@
+{
+  "generated_at": "2026-07-05T08:23:29.157777+03:00",
+  "method": "imap",
+  "scope": "known noisy senders only; GitHub not archived because precise safe split was unavailable over IMAP",
+  "before_inbox_count": 52607,
+  "actions": [
+    {
+      "sender": "info@host.discountwalas.com",
+      "action": "move_to_trash",
+      "before_inbox": 1782,
+      "moved": 1782,
+      "after_inbox": 0,
+      "errors": 0,
+      "verified_after_inbox": 0
+    },
+    {
+      "sender": "newsletter@em.discountwalas.com",
+      "action": "move_to_trash",
+      "before_inbox": 308,
+      "moved": 308,
+      "after_inbox": 0,
+      "errors": 0,
+      "verified_after_inbox": 0
+    },
+    {
+      "sender": "no-reply@mail.therumble.app",
+      "action": "label_newsletters_and_archive",
+      "before_inbox": 751,
+      "labeled": 751,
+      "marked_for_archive": 751,
+      "errors": 0,
+      "verified_after_inbox": 0
+    },
+    {
+      "sender": "me@juliangoldie.com",
+      "action": "label_newsletters_and_archive",
+      "before_inbox": 408,
+      "labeled": 408,
+      "marked_for_archive": 408,
+      "errors": 0,
+      "verified_after_inbox": 0
+    },
+    {
+      "sender": "noreply@skool.com",
+      "action": "label_newsletters_and_archive",
+      "before_inbox": 316,
+      "labeled": 316,
+      "marked_for_archive": 316,
+      "errors": 0,
+      "verified_after_inbox": 0
+    },
+    {
+      "sender": "newsletters@arabianbusiness.com",
+      "action": "label_newsletters_and_archive",
+      "before_inbox": 762,
+      "labeled": 762,
+      "marked_for_archive": 762,
+      "errors": 0,
+      "verified_after_inbox": 100
+    },
+    {
+      "sender": "newsletters@mail.theankler.com",
+      "action": "label_newsletters_and_archive",
+      "before_inbox": 148,
+      "labeled": 148,
+      "marked_for_archive": 148,
+      "errors": 0,
+      "verified_after_inbox": 0
+    },
+    {
+      "sender": "temu@commerce.temuemail.com",
+      "action": "label_newsletters_and_archive",
+      "before_inbox": 335,
+      "labeled": 335,
+      "marked_for_archive": 335,
+      "errors": 0,
+      "verified_after_inbox": 0
+    },
+    {
+      "sender": "newsletter@em.flickonclick.com",
+      "action": "label_newsletters_and_archive",
+      "before_inbox": 193,
+      "labeled": 193,
+      "marked_for_archive": 193,
+      "errors": 0,
+      "verified_after_inbox": 0
+    },
+    {
+      "sender": "thebusinessengineer@substack.com",
+      "action": "label_newsletters_and_archive",
+      "before_inbox": 501,
+      "labeled": 501,
+      "marked_for_archive": 501,
+      "errors": 0,
+      "verified_after_inbox": 0
+    },
+    {
+      "sender": "hello@moby.co",
+      "action": "label_newsletters_and_archive",
+      "before_inbox": 272,
+      "labeled": 272,
+      "marked_for_archive": 272,
+      "errors": 0,
+      "verified_after_inbox": 0
+    },
+    {
+      "sender": "hello@mail.trade-ideas.com",
+      "action": "label_newsletters_and_archive",
+      "before_inbox": 142,
+      "labeled": 142,
+      "marked_for_archive": 142,
+      "errors": 0,
+      "verified_after_inbox": 0
+    },
+    {
+      "sender": "team@bankless.com",
+      "action": "label_newsletters_and_archive",
+      "before_inbox": 437,
+      "labeled": 437,
+      "marked_for_archive": 437,
+      "errors": 0,
+      "verified_after_inbox": 0
+    }
+  ],
+  "errors": [],
+  "expunge": {
+    "type": "OK",
+    "items": 6255,
+    "marked_deleted_total": 4265
+  },
+  "after_inbox_count": 46352,
+  "github": {
+    "sender": "notifications@github.com",
+    "inbox_count_left_visible": 1203,
+    "action": "left_visible_no_archive"
+  },
+  "arabian_business_second_pass": {
+    "before_remaining": 100,
+    "after_remaining": 0
+  }
+}
