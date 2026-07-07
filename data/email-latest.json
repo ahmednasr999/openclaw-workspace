@@ -1,39 +1,341 @@
 {
   "status": "ok",
-  "scan_time": "2026-07-05T20:00:51.563172+03:00",
-  "total_scanned": 14,
+  "scan_time": "2026-07-06T20:01:13.811825+03:00",
+  "total_scanned": 34,
   "by_category": {
     "interview_invite": 0,
-    "recruiter_reach": 0,
-    "application_ack": 0,
+    "recruiter_reach": 3,
+    "application_ack": 1,
     "rejection": 0,
     "assessment": 0,
     "application_response": 0,
-    "follow_up_needed": 0,
-    "job_alert": 0,
-    "other": 14
+    "follow_up_needed": 2,
+    "job_alert": 1,
+    "other": 29
   },
   "interview_invites": [],
-  "recruiter_messages": [],
-  "application_acks": [],
+  "recruiter_messages": [
+    {
+      "id": "364155",
+      "from": "Fakeeh Care Group Careers <careers@fakeehmail.care>",
+      "subject": "Fakeeh Care Group - Your application has been submitted!",
+      "date": "Mon, 6 Jul 2026 13:21:42 +0000",
+      "unread": true,
+      "priority": "HIGH",
+      "score": 7,
+      "pipeline_match": "RAPP",
+      "confidence": 100,
+      "confidence_label": "high",
+      "evidence": [
+        "matched active pipeline company: RAPP",
+        "hiring sender context",
+        "hiring/application context",
+        "reply/follow-up wording with hiring context",
+        "recruiter outreach classification",
+        "high priority score: 7"
+      ],
+      "why_actionable": "matched active pipeline company: RAPP | hiring sender context | hiring/application context | reply/follow-up wording with hiring context"
+    },
+    {
+      "id": "364157",
+      "from": "HRISnoreply Viatris <viatris@myworkday.com>",
+      "subject": "Thank You for Applying!",
+      "date": "Mon, 6 Jul 2026 13:51:15 +0000",
+      "unread": true,
+      "priority": "HIGH",
+      "score": 8,
+      "pipeline_match": "RAPP",
+      "confidence": 90,
+      "confidence_label": "high",
+      "evidence": [
+        "matched active pipeline company: RAPP",
+        "hiring sender context",
+        "hiring/application context",
+        "recruiter outreach classification",
+        "high priority score: 8"
+      ],
+      "why_actionable": "matched active pipeline company: RAPP | hiring sender context | hiring/application context | recruiter outreach classification"
+    },
+    {
+      "id": "364159",
+      "from": "talabat <notification@deliveryherogroup.com>",
+      "subject": "=?UTF-8?Q?Thank_you_for_your_application_with_=E2=80=8Btalabat=E2=80=8B_?=\r\n =?UTF-8?Q?-_Director_Experience_&_Operational_Excellence?=",
+      "date": "Mon, 6 Jul 2026 14:28:54 +0000 (UTC)",
+      "unread": true,
+      "priority": "HIGH",
+      "score": 10,
+      "pipeline_match": "RAPP",
+      "confidence": 75,
+      "confidence_label": "medium",
+      "evidence": [
+        "matched active pipeline company: RAPP",
+        "hiring/application context",
+        "recruiter outreach classification",
+        "high priority score: 10"
+      ],
+      "why_actionable": "matched active pipeline company: RAPP | hiring/application context | recruiter outreach classification | high priority score: 10"
+    }
+  ],
+  "application_acks": [
+    {
+      "id": "364157",
+      "from": "HRISnoreply Viatris <viatris@myworkday.com>",
+      "subject": "Thank You for Applying!",
+      "date": "Mon, 6 Jul 2026 13:51:15 +0000",
+      "unread": true,
+      "priority": "HIGH",
+      "score": 8,
+      "pipeline_match": "RAPP",
+      "confidence": 90,
+      "confidence_label": "high",
+      "evidence": [
+        "matched active pipeline company: RAPP",
+        "hiring sender context",
+        "hiring/application context",
+        "recruiter outreach classification",
+        "high priority score: 8"
+      ],
+      "why_actionable": "matched active pipeline company: RAPP | hiring sender context | hiring/application context | recruiter outreach classification"
+    }
+  ],
   "rejections": [],
   "assessments": [],
   "application_responses": [],
-  "follow_ups_needed": [],
-  "job_alerts": [],
-  "actionable_count": 0,
-  "hot_alerts": [],
-  "signals": [],
+  "follow_ups_needed": [
+    {
+      "id": "364153",
+      "from": "Fakeeh Care Group Careers <careers@fakeehmail.care>",
+      "subject": "Fakeeh Care Group - You have been successfully registered!",
+      "date": "Mon, 6 Jul 2026 13:12:44 +0000",
+      "unread": true,
+      "priority": "LOW",
+      "score": 0,
+      "pipeline_match": null,
+      "confidence": 55,
+      "confidence_label": "low",
+      "evidence": [
+        "hiring sender context",
+        "hiring/application context",
+        "reply/follow-up wording with hiring context"
+      ],
+      "why_actionable": "hiring sender context | hiring/application context | reply/follow-up wording with hiring context"
+    },
+    {
+      "id": "364155",
+      "from": "Fakeeh Care Group Careers <careers@fakeehmail.care>",
+      "subject": "Fakeeh Care Group - Your application has been submitted!",
+      "date": "Mon, 6 Jul 2026 13:21:42 +0000",
+      "unread": true,
+      "priority": "HIGH",
+      "score": 7,
+      "pipeline_match": "RAPP",
+      "confidence": 100,
+      "confidence_label": "high",
+      "evidence": [
+        "matched active pipeline company: RAPP",
+        "hiring sender context",
+        "hiring/application context",
+        "reply/follow-up wording with hiring context",
+        "recruiter outreach classification",
+        "high priority score: 7"
+      ],
+      "why_actionable": "matched active pipeline company: RAPP | hiring sender context | hiring/application context | reply/follow-up wording with hiring context"
+    }
+  ],
+  "job_alerts": [
+    {
+      "id": "364173",
+      "from": "GulfTalent Jobs <jobs@gulftalent.com>",
+      "subject": "Black Pearl needs a Project Manager - Events",
+      "date": "Mon, 06 Jul 2026 10:53:28 -0500",
+      "unread": true,
+      "priority": "LOW",
+      "score": 0,
+      "pipeline_match": null,
+      "confidence": 25,
+      "confidence_label": "very_low",
+      "evidence": [
+        "automated job alert",
+        "known recruiter/job domain",
+        "hiring sender context",
+        "noise/job-alert guard applied"
+      ],
+      "why_actionable": "not actionable: automated job alert | known recruiter/job domain | hiring sender context | noise/job-alert guard applied"
+    }
+  ],
+  "actionable_count": 4,
+  "hot_alerts": [
+    {
+      "id": "364155",
+      "subject": "Fakeeh Care Group - Your application has been submitted!",
+      "from": "Fakeeh Care Group Careers <careers@fakeehmail.care>",
+      "priority": "HIGH",
+      "pipeline_match": "RAPP",
+      "confidence": 100,
+      "evidence": [
+        "matched active pipeline company: RAPP",
+        "hiring sender context",
+        "hiring/application context",
+        "reply/follow-up wording with hiring context",
+        "recruiter outreach classification",
+        "high priority score: 7"
+      ]
+    }
+  ],
+  "signals": [
+    {
+      "company": "RAPP",
+      "signal": "recruiter_email",
+      "subject": "Fakeeh Care Group - Your application has been submitted!",
+      "sender": "Fakeeh Care Group Careers <careers@fakeehmail.care>",
+      "job_ids": [
+        "li-4430709777"
+      ],
+      "score": 7,
+      "timestamp": "2026-07-06T20:01:13.433698+03:00"
+    },
+    {
+      "company": "RAPP",
+      "signal": "recruiter_email",
+      "subject": "Thank You for Applying!",
+      "sender": "HRISnoreply Viatris <viatris@myworkday.com>",
+      "job_ids": [
+        "li-4430709777"
+      ],
+      "score": 8,
+      "timestamp": "2026-07-06T20:01:13.457326+03:00"
+    },
+    {
+      "company": "RAPP",
+      "signal": "recruiter_email",
+      "subject": "=?UTF-8?Q?Thank_you_for_your_application_with_=E2=80=8Btalabat=E2=80=8B_?=\r\n =?UTF-8?Q?-_Director_Experience_&_Operational_Excellence?=",
+      "sender": "talabat <notification@deliveryherogroup.com>",
+      "job_ids": [
+        "li-4430709777"
+      ],
+      "score": 10,
+      "timestamp": "2026-07-06T20:01:13.481822+03:00"
+    }
+  ],
+  "pipeline_review_candidates": [
+    {
+      "timestamp": "2026-07-06T20:01:13.811850+03:00",
+      "review_type": "possible_follow_up",
+      "category": "follow_up_needed",
+      "email_id": "364153",
+      "subject": "Fakeeh Care Group - You have been successfully registered!",
+      "from": "Fakeeh Care Group Careers <careers@fakeehmail.care>",
+      "priority": "LOW",
+      "pipeline_match": null,
+      "status": "needs_human_review"
+    },
+    {
+      "timestamp": "2026-07-06T20:01:13.811856+03:00",
+      "review_type": "possible_follow_up",
+      "category": "follow_up_needed",
+      "email_id": "364155",
+      "subject": "Fakeeh Care Group - Your application has been submitted!",
+      "from": "Fakeeh Care Group Careers <careers@fakeehmail.care>",
+      "priority": "HIGH",
+      "pipeline_match": "RAPP",
+      "status": "needs_human_review"
+    },
+    {
+      "timestamp": "2026-07-06T20:01:13.811860+03:00",
+      "review_type": "possible_recruiter_outreach",
+      "category": "recruiter_reach",
+      "email_id": "364155",
+      "subject": "Fakeeh Care Group - Your application has been submitted!",
+      "from": "Fakeeh Care Group Careers <careers@fakeehmail.care>",
+      "priority": "HIGH",
+      "pipeline_match": "RAPP",
+      "status": "needs_human_review"
+    },
+    {
+      "timestamp": "2026-07-06T20:01:13.811864+03:00",
+      "review_type": "possible_recruiter_outreach",
+      "category": "recruiter_reach",
+      "email_id": "364157",
+      "subject": "Thank You for Applying!",
+      "from": "HRISnoreply Viatris <viatris@myworkday.com>",
+      "priority": "HIGH",
+      "pipeline_match": "RAPP",
+      "status": "needs_human_review"
+    },
+    {
+      "timestamp": "2026-07-06T20:01:13.811868+03:00",
+      "review_type": "possible_recruiter_outreach",
+      "category": "recruiter_reach",
+      "email_id": "364159",
+      "subject": "=?UTF-8?Q?Thank_you_for_your_application_with_=E2=80=8Btalabat=E2=80=8B_?=\r\n =?UTF-8?Q?-_Director_Experience_&_Operational_Excellence?=",
+      "from": "talabat <notification@deliveryherogroup.com>",
+      "priority": "HIGH",
+      "pipeline_match": "RAPP",
+      "status": "needs_human_review"
+    }
+  ],
   "llm_analysis": {
-    "actionable_emails": [],
+    "actionable_emails": [
+      {
+        "id": "364153",
+        "subject": "Fakeeh Care Group - You have been successfully registered!",
+        "from": "Fakeeh Care Group Careers <careers@fakeehmail.care>",
+        "date": "Mon, 6 Jul 2026 13:12:44 +0000",
+        "category": "follow_up_needed",
+        "urgency": "medium",
+        "intent": "The sender wants Ahmed to verify his Fakeeh Care Group account.",
+        "action": "read_and_file",
+        "response_deadline": "1 week",
+        "notes": "Verify account via official portal if legitimate."
+      },
+      {
+        "id": "364155",
+        "subject": "Fakeeh Care Group - Your application has been submitted!",
+        "from": "Fakeeh Care Group Careers <careers@fakeehmail.care>",
+        "date": "Mon, 6 Jul 2026 13:21:42 +0000",
+        "category": "recruiter_reach",
+        "urgency": "low",
+        "intent": "The sender confirms receipt of Ahmed's Operation Director application.",
+        "action": "read_and_file",
+        "response_deadline": "when convenient",
+        "notes": "No reply requested; monitor application portal."
+      },
+      {
+        "id": "364157",
+        "subject": "Thank You for Applying!",
+        "from": "HRISnoreply Viatris <viatris@myworkday.com>",
+        "date": "Mon, 6 Jul 2026 13:51:15 +0000",
+        "category": "recruiter_reach",
+        "urgency": "low",
+        "intent": "The sender confirms Ahmed's Viatris application is under review.",
+        "action": "read_and_file",
+        "response_deadline": "when convenient",
+        "notes": "Do not reply; mailbox is undeliverable."
+      },
+      {
+        "id": "364159",
+        "subject": "Thank you for your application with talabat - Director Experience & Operational Excellence",
+        "from": "talabat <notification@deliveryherogroup.com>",
+        "date": "Mon, 6 Jul 2026 14:28:54 +0000 (UTC)",
+        "category": "recruiter_reach",
+        "urgency": "low",
+        "intent": "The sender confirms Ahmed's talabat application and says TA may reach out if shortlisted.",
+        "action": "read_and_file",
+        "response_deadline": "when convenient",
+        "notes": "No action unless shortlisted; application link included."
+      }
+    ],
     "summary": {
-      "total_actionable": 0,
+      "total_actionable": 4,
       "critical_count": 0,
       "requires_interview_prep": false,
       "requires_assessment": false,
-      "recruiter_top_opportunities": [],
-      "top_priority": null,
-      "daily_focus": "No email action needed from this batch."
+      "recruiter_top_opportunities": [
+        "Fakeeh Care Group - Operation Director",
+        "talabat - Director Experience & Operational Excellence"
+      ],
+      "top_priority": "364153",
+      "daily_focus": "Verify the Fakeeh account, then file the confirmations; no interview or assessment action is proven."
     }
   }
 }

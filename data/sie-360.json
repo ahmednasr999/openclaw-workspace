@@ -1,18 +1,18 @@
 {
-  "generated": "2026-07-05T22:50:21.126455+00:00",
-  "health_score": 82,
+  "generated": "2026-07-06T22:50:24.039604+00:00",
+  "health_score": 80,
   "summary": {
-    "ok": 6,
-    "warn": 4,
+    "ok": 5,
+    "warn": 5,
     "alert": 2
   },
   "workspace": {
     "root_files": 78,
-    "disk_percent": 79,
+    "disk_percent": 80,
     "disk_used": "76G",
     "disk_total": "96G",
     "ram_total": "7.8Gi",
-    "ram_used": "2.2Gi",
+    "ram_used": "2.5Gi",
     "large_files": [
       "/root/.openclaw/agents/main/agent/codex-home/logs_2.sqlite",
       "/root/.openclaw/agents/main/agent/codex-home/state_5.sqlite",
@@ -77,7 +77,7 @@
       "/root/.openclaw/state/openclaw.sqlite",
       "/root/.openclaw/browser/linkedin-login-cdp/OnDeviceHeadSuggestModel/20251024.824731831.14/cr_en-us_500000_index.bin",
       "/root/.openclaw/browser/linkedin-login-cdp/WidevineCdm/4.10.3050.0/_platform_specific/linux_x64/libwidevinecdm.so",
-      "/root/.openclaw/browser/linkedin-login-cdp/Safe Browsing/UrlSoceng.store.4_13427763915023392",
+      "/root/.openclaw/browser/linkedin-login-cdp/Safe Browsing/UrlSoceng.store.4_13427850273756189",
       "/root/.openclaw/browser/linkedin-login-cdp/component_crx_cache/7b74bb37f996d1d265c1a7f3c763ecd523cd0ffbdb41cb637e02e3e70d27a9bd",
       "/root/.openclaw/browser/linkedin-login-cdp/WasmTtsEngine/20260625.1/bindings_main.wasm",
       "/root/.openclaw/browser/linkedin-login-cdp/optimization_guide_model_store/43/E6DC4029A1E4B4C1/C4D9823C709CCBC7/model.tflite",
@@ -85,6 +85,7 @@
       "/root/.openclaw/lcm.db",
       "/root/.openclaw/session-archives/codex-sessions-hr-agent-codex-home-sessions-20260703-030143.tar.gz",
       "/root/.openclaw/session-archives/codex-sessions-main-agent-codex-home-sessions-20260704-030141.tar.gz",
+      "/root/.openclaw/session-archives/codex-sessions-main-agent-codex-home-sessions-20260706-030151.tar.gz",
       "/root/.openclaw/session-archives/codex-sessions-main-agent-codex-home-sessions-20260703-030145.tar.gz",
       "/root/.openclaw/workspace-cto/.pushsync-worktree/.understand-anything/intermediate/nodes.json",
       "/root/.openclaw/workspace-cto/.pushsync-worktree/media/post-visuals/2-gemini-pro-4k.jpg",
@@ -136,6 +137,7 @@
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-before-rakbank-ref896f-applied-20260622.db",
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-07-03_070031.db",
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-06-27_070024.db",
+      "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-07-06_070025.db",
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-06-29_070023.db",
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-06-17_070025.db",
       "/root/.openclaw/workspace/data/backups/nasr-pipeline-2026-06-26_070025.db",
@@ -174,7 +176,7 @@
       "/root/.openclaw/workspace/newsletter2.png",
       "/root/.openclaw/workspace/newsletter3.png"
     ],
-    "session_mb": 205.9
+    "session_mb": 212.0
   },
   "learnings": {
     "total": 30,
@@ -244,18 +246,18 @@
     },
     {
       "category": "workspace",
-      "level": "ok",
-      "message": "Disk: 79% used (76G/96G)"
+      "level": "warn",
+      "message": "Disk: 80% used - approaching 90% threshold"
     },
     {
       "category": "workspace",
       "level": "warn",
-      "message": "Large files (>5MB): 159 found in .openclaw"
+      "message": "Large files (>5MB): 161 found in .openclaw"
     },
     {
       "category": "workspace",
       "level": "alert",
-      "message": "Session size: 205.9MB - bloated, review sessions"
+      "message": "Session size: 212.0MB - bloated, review sessions"
     },
     {
       "category": "learnings",
@@ -300,6 +302,6 @@
   ],
   "auto_fixed": [],
   "needs_attention": [
-    "Session bloat: 205.9MB - review before deleting (needs human decision)"
+    "Session bloat: 212.0MB - review before deleting (needs human decision)"
   ]
 }

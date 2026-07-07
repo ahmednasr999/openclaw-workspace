@@ -5542,3 +5542,68 @@ Tip: systemctl --user start openclaw-gateway.service
 [2026-07-06 06:00] WARN: Jobs data stale (43h), triggering pipeline
 [2026-07-06 06:00] FIXED: Pipeline triggered
 [2026-07-06 06:00] Summary: fixes=1 warnings=1 alerts=0
+[2026-07-06 08:00] === Watchdog v3 run ===
+[2026-07-06 08:00] WARN: Jobs data stale (45h), triggering pipeline
+[2026-07-06 08:00] FIXED: Pipeline triggered
+[2026-07-06 08:00] Summary: fixes=1 warnings=0 alerts=0
+[2026-07-06 10:00] === Watchdog v3 run ===
+[2026-07-06 10:00] WARN: Jobs data stale (47h), triggering pipeline
+[2026-07-06 10:00] FIXED: Pipeline triggered
+[2026-07-06 10:00] Summary: fixes=1 warnings=0 alerts=0
+[2026-07-06 12:00] === Watchdog v3 run ===
+[2026-07-06 12:00] WARN: Jobs data stale (49h), triggering pipeline
+[2026-07-06 12:00] FIXED: Pipeline triggered
+[2026-07-06 12:00] FIXED: Re-triggered failed cron 5e6b5746-25b0-48df-b74c-f890c628810e
+[2026-07-06 12:00] Summary: fixes=2 warnings=1 alerts=0
+Config (/root/.openclaw/openclaw.json): missing env var "OPENCLAW_HOOKS_TOKEN" at hooks.token - feature using this value will be unavailable
+Config warnings:
+- plugins.entries.codex: plugin codex: plugin requires plugin API >=2026.6.11, but this host is 2026.6.10; skipping discovery
+- plugins.entries.moonshot: plugin moonshot: plugin requires plugin API >=2026.6.11, but this host is 2026.6.10; skipping discovery
+- plugins: plugin searxng-plugin: plugin requires plugin API >=2026.6.11, but this host is 2026.6.10; skipping discovery
+- plugins.entries.tokenjuice: plugin tokenjuice: plugin requires plugin API >=2026.6.11, but this host is 2026.6.10; skipping discovery
+- plugins.entries.tokenjuice: plugin not installed: tokenjuice — install the official external plugin with: openclaw plugins install @openclaw/tokenjuice
+- plugins.entries.codex: plugin not installed: codex — install the official external plugin with: openclaw plugins install @openclaw/codex
+Your OpenClaw config was written by version 2026.6.11, but this command is running 2026.6.10.
+Check: `openclaw --version`, `which openclaw`, and `openclaw gateway status --deep`.
+If unexpected, update PATH so `openclaw` points to the version you want, or reinstall the Gateway service from that same OpenClaw install.
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:5e6b5746-25b0-48df-b74c-f890c628810e:1783328423483:1"
+}
+[2026-07-06 14:00] === Watchdog v3 run ===
+[2026-07-06 14:00] WARN: Jobs data stale (51h), triggering pipeline
+[2026-07-06 14:00] FIXED: Pipeline triggered
+[2026-07-06 14:00] Summary: fixes=1 warnings=0 alerts=0
+[2026-07-06 16:00] === Watchdog v3 run ===
+[2026-07-06 16:00] WARN: Jobs data stale (53h), triggering pipeline
+[2026-07-06 16:00] FIXED: Pipeline triggered
+[2026-07-06 16:00] Summary: fixes=1 warnings=0 alerts=0
+[2026-07-06 18:00] === Watchdog v3 run ===
+[2026-07-06 18:00] WARN: Jobs data stale (55h), triggering pipeline
+[2026-07-06 18:00] FIXED: Pipeline triggered
+[2026-07-06 18:00] Summary: fixes=1 warnings=0 alerts=0
+[2026-07-06 20:00] === Watchdog v3 run ===
+[2026-07-06 20:00] WARN: Jobs data stale (57h), triggering pipeline
+[2026-07-06 20:00] FIXED: Pipeline triggered
+[2026-07-06 20:00] Summary: fixes=1 warnings=0 alerts=0
+[2026-07-06 22:00] === Watchdog v3 run ===
+[2026-07-06 22:00] WARN: Jobs data stale (59h), triggering pipeline
+[2026-07-06 22:00] FIXED: Pipeline triggered
+[2026-07-06 22:00] Summary: fixes=1 warnings=0 alerts=0
+[2026-07-07 00:00] === Watchdog v3 run ===
+[2026-07-07 00:00] WARN: Jobs data stale (61h), triggering pipeline
+[2026-07-07 00:00] FIXED: Pipeline triggered
+[2026-07-07 00:00] Summary: fixes=1 warnings=1 alerts=0
+[2026-07-07 02:00] === Watchdog v3 run ===
+[2026-07-07 02:00] WARN: Jobs data stale (63h), triggering pipeline
+[2026-07-07 02:00] FIXED: Pipeline triggered
+[2026-07-07 02:00] Summary: fixes=1 warnings=1 alerts=0
+[2026-07-07 04:00] === Watchdog v3 run ===
+[2026-07-07 04:00] WARN: Jobs data stale (65h), triggering pipeline
+[2026-07-07 04:00] FIXED: Pipeline triggered
+[2026-07-07 04:00] Summary: fixes=1 warnings=1 alerts=0
+[2026-07-07 06:00] === Watchdog v3 run ===
+[2026-07-07 06:00] WARN: Jobs data stale (67h), triggering pipeline
+[2026-07-07 06:00] FIXED: Pipeline triggered
+[2026-07-07 06:00] Summary: fixes=1 warnings=1 alerts=0

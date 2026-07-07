@@ -1,0 +1,14 @@
+{
+  "task": "weekly-self-health",
+  "ts": "2026-07-05T09:20:18.877096+03:00",
+  "cmd": [
+    "/usr/bin/python3",
+    "scripts/weekly-self-health-fast.py",
+    "--write-report"
+  ],
+  "cwd": "/root/.openclaw/workspace",
+  "returncode": 0,
+  "stdout": "⚠️ Attention needed Weekly OpenClaw health\n\nBottom line:\n- Core system: healthy - Telegram connected, default model openai/gpt-5.5\n- Urgency: schedule\n- Recommendation: Schedule the listed hardening or diagnostic follow-up.\n\n🚨 Critical\n- None.\n\n⚠️ Important\n1. Security posture warnings remain\n   Impact: 0 critical, 5 warn, 3 info\n   Recommendation: Keep staged hardening on the maintenance backlog.\n\nℹ️ Monitor\n- No non-blocking warnings.\n\nEvidence checked:\n- Gateway: healthy\n- Channels: Telegram connected\n- Disk/memory: 64% used, 34G free\n- Security audit: 0 critical, 5 warn, 3 info\n",
+  "stderr": "",
+  "log_path": "/root/.openclaw/workspace/logs/cron/direct-cron/weekly-self-health-20260705-092001.log"
+}

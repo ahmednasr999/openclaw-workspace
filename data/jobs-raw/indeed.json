@@ -2,16 +2,88 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-07-06T06:00:36.106653+03:00",
-    "duration_ms": 33716,
+    "generated_at": "2026-07-07T06:00:42.941730+03:00",
+    "duration_ms": 38503,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "d0ad13f4",
+    "run_id": "6e03c698",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": [
+    {
+      "id": "indeed-in-96852d250f70e171",
+      "source": "indeed",
+      "title": "Head of Operations & Transformation, Gulf",
+      "company": "MetLife",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=96852d250f70e171",
+      "posted": "2026-07-06",
+      "seniority": "Director",
+      "domain_match": true,
+      "keyword_score": 30,
+      "match_keywords": [
+        "ai",
+        "vp",
+        "head of",
+        "gcc",
+        "uae",
+        "dubai"
+      ],
+      "raw_snippet": "### **General Information**\n\n**Location**\nDubai, United Arab Emirates\nWorking Schedule\nFull\\-Time\nWork Arrangement\nHybrid\nTravel Required\n10%\nRelocation Assistance Available\nNo\nPosted Date\n06\\-Jul\\-2026\nJob ID\n18753\n### **Description and Requirements**\n\n**Position**: **AVP, Head of Service, Operations \\& Transformation (Gulf / GCC)****Job Location: Dubai, United Arab Emirates (UAE hub supporting Qatar, Oman, Bahrain \\& Kuwait)** **The Role**: The Head of Service \\& Operations is responsible for ",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "PMO Director"
+    },
+    {
+      "id": "indeed-in-423ffc9560d984c6",
+      "source": "indeed",
+      "title": "Head of Operations & Transformation, Gulf",
+      "company": "MetLife",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=423ffc9560d984c6",
+      "posted": "2026-07-06",
+      "seniority": "Director",
+      "domain_match": true,
+      "keyword_score": 30,
+      "match_keywords": [
+        "ai",
+        "vp",
+        "head of",
+        "gcc",
+        "uae",
+        "dubai"
+      ],
+      "raw_snippet": "**Position**: **AVP, Head of Service, Operations \\& Transformation (Gulf / GCC)****Job Location: Dubai, United Arab Emirates (UAE hub supporting Qatar, Oman, Bahrain \\& Kuwait)** **The Role**: The Head of Service \\& Operations is responsible for end\\-to\\-end operational delivery across employee benefits and protection solutions, including implementation and onboarding, policy administration, billing, claims, collections and customer service. Products are expected to include, as applicable by mar",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "PMO Director"
+    },
+    {
+      "id": "indeed-in-a512099b69829cdb",
+      "source": "indeed",
+      "title": "Director \u2013 Strategy & Future Department (UAE National)",
+      "company": "DICETEK LLC",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=a512099b69829cdb",
+      "posted": "2026-07-06",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 20,
+      "match_keywords": [
+        "strategic planning",
+        "director",
+        "uae"
+      ],
+      "raw_snippet": "### **Job Objective**\n\n\nLead the development, execution, and monitoring of the Ministry's strategic planning, future foresight, organizational excellence, and institutional transformation initiatives. Oversee the formulation of public policies, strategic studies, performance management, and strategic partnerships to ensure alignment with national priorities and the Ministry's long\\-term objectives.\n\n### **Education \\& Experience**\n\n* PhD in Business Administration with a minimum of **4 years** o",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Program Director"
+    },
     {
       "id": "indeed-in-a3a8069b6fec6c23",
       "source": "indeed",
@@ -32,70 +104,97 @@
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
-      "search_title": "Program Director"
+      "search_title": "Director Digital Transformation"
     },
     {
-      "id": "indeed-in-5e84356f20aca36e",
+      "id": "indeed-in-95ce0aa6444774b3",
       "source": "indeed",
-      "title": "Associate Director - Urban Advisory (Infrastructure + Masterplanning)",
-      "company": "AECOM",
+      "title": "Executive Director, Brand Partnerships",
+      "company": "Influencer",
       "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=5e84356f20aca36e",
-      "posted": "2026-07-03",
+      "url": "https://ae.indeed.com/viewjob?jk=95ce0aa6444774b3",
+      "posted": "2026-07-01",
       "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 13,
-      "match_keywords": [
-        "infrastructure",
-        "director"
-      ],
-      "raw_snippet": "**Company Description** **Work with Us. Change the World.**\n\n\nAt AECOM, we're delivering a better world. Whether improving your commute, keeping the lights on, providing access to clean water, or transforming skylines, our work helps people and communities thrive. We are the world's trusted infrastructure consulting firm, partnering with clients to solve the world\u2019s most complex challenges and build legacies for future generations.\n\n\nThere has never been a better time to be at AECOM. With accele",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-cc4f909fd9e187e2",
-      "source": "indeed",
-      "title": "Vice President Design & Technical Services MEAIT",
-      "company": "Ennismore",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=cc4f909fd9e187e2",
-      "posted": "2026-07-03",
-      "seniority": "VP",
-      "domain_match": true,
-      "keyword_score": 6,
-      "match_keywords": [
-        "ai"
-      ],
-      "raw_snippet": "**Company Description**  \n\nEnnismore is a global collective of entrepreneurial and founder\\-built hospitality brands, creating some of the world's most exciting hotels, restaurants, resorts and lifestyle destinations. We bring together creativity, culture and community to deliver experiences that guests genuinely love. As part of Accor, Ennismore combines the agility of a lifestyle company with the scale and strength of a global hospitality leader.\n\n **Job Description**  \n\nAt Ennismore, we creat",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Chief Information Officer"
-    },
-    {
-      "id": "indeed-in-a7f6ea5164f6090d",
-      "source": "indeed",
-      "title": "Head Int Markets Oversight, MENAP, ASA, GCNA, Global Markets Operations",
-      "company": "Standard Chartered Bank",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=a7f6ea5164f6090d",
-      "posted": "2026-07-03",
-      "seniority": "Other",
-      "domain_match": true,
-      "keyword_score": 13,
+      "domain_match": false,
+      "keyword_score": 20,
       "match_keywords": [
         "ai",
-        "dubai",
-        "mena"
+        "executive",
+        "director"
       ],
-      "raw_snippet": "**\\#body.unify div.unify\\-button\\-container .unify\\-apply\\-now:** focus, \\#body.unify div.unify\\-button\\-container .unify\\-apply\\-\\#body.unify div.unify\\-button\\-container .unify\\-apply\\-now: focus, \\#body.unify div.unify\\-button\\-container .unify\\-apply\\-\n  \n**Requisition Number:** 57046\n  \n**Job Location:** Dubai, ARE\n  \n**Global Grade:** Band 4\n  \n**Work Type:** Hybrid Working\n  \n**Employment Type:** Permanent\n  \n**Posting Start Date:** 03/07/2026\n  \n**Posting End Date:** 19/07/2026\n  \n:\n  \nJ",
+      "raw_snippet": "**Who are we?**\n\n\nInfluencer is a global creator marketing agency on a mission to shape the future of marketing by humanizing brands. By placing creators at the center, the agency delivers creator\\-first solutions across creative, media, and commerce that connect brands with audiences through insight\\-driven creator campaigns built to stop the scroll and drive measurable impact.\n\n\nFounded in 2015 by YouTuber\\-turned\\-entrepreneur Caspar Lee and entrepreneur Ben Jeffries, Influencer is the world\u2019",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
-      "search_title": "Head of Technology"
+      "search_title": "IT Director"
+    },
+    {
+      "id": "indeed-in-f4d957af61dbaaa4",
+      "source": "indeed",
+      "title": "Project Director (Theatres/Public venues)",
+      "company": "Parsons",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=f4d957af61dbaaa4",
+      "posted": "2026-07-06",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 20,
+      "match_keywords": [
+        "director",
+        "leadership",
+        "growth"
+      ],
+      "raw_snippet": "In a world of possibilities, pursue one with endless opportunities. Imagine Next!  \n\n\nAt Parsons, you can imagine a career where you thrive, work with exceptional people, and be yourself. Guided by our leadership vision of valuing people, embracing agility, and fostering growth, we cultivate an innovative culture that empowers you to achieve your full potential. Unleash your talent and redefine what\u2019s possible. **Job Description:**\n\n\nParsons is seeking a seasoned **Project Director** with over 2",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "Program Director"
+    },
+    {
+      "id": "indeed-in-3898e82236a7f809",
+      "source": "indeed",
+      "title": "Technical Director(Theatres/Public venues)",
+      "company": "Parsons",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=3898e82236a7f809",
+      "posted": "2026-07-06",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 20,
+      "match_keywords": [
+        "director",
+        "leadership",
+        "growth"
+      ],
+      "raw_snippet": "In a world of possibilities, pursue one with endless opportunities. Imagine Next!  \n\n\nAt Parsons, you can imagine a career where you thrive, work with exceptional people, and be yourself. Guided by our leadership vision of valuing people, embracing agility, and fostering growth, we cultivate an innovative culture that empowers you to achieve your full potential. Unleash your talent and redefine what\u2019s possible. **Job Description:**\n\n\nParsons is looking for an amazingly talented **Technical Direc",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "Program Director"
+    },
+    {
+      "id": "indeed-in-d88f99cc6747bb82",
+      "source": "indeed",
+      "title": "Chief Technology Officer (CTO)",
+      "company": "None",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=d88f99cc6747bb82",
+      "posted": "2026-07-06",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 26,
+      "match_keywords": [
+        "ai",
+        "executive",
+        "leadership",
+        "saudi",
+        "platform"
+      ],
+      "raw_snippet": "An AI\\-driven professional training and recruitment platform that connects Saudi graduates with global corporate opportunities and specialized skill certifications.\n\nJob Description\n\nYudimy Talent Hub is seeking a visionary and experienced **Chief Technology Officer (CTO)** to lead the company's technology strategy and innovation initiatives. As a key member of the executive leadership team, the CTO will oversee the development and implementation of scalable technology solutions that support our",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "Chief Technology Officer"
     },
     {
       "id": "indeed-in-c7df0645122af196",
@@ -120,9 +219,9 @@
   ],
   "kpi": {
     "searches_run": 20,
-    "results_per_search": 2.15,
-    "unique_jobs": 5,
-    "errors": 9
+    "results_per_search": 3.5,
+    "unique_jobs": 9,
+    "errors": 4
   },
   "recommendations": []
 }

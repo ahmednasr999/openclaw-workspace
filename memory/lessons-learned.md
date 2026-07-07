@@ -1615,3 +1615,17 @@ For long-running scheduled skill tuning or autoresearch jobs, set a timeout that
 The daily auto-lessons script reported `Found 0 significant session(s)` because all 23 same-day sessions had fewer than 5 exchanges. Manual evidence review still found concrete short cron failures, including repeated `exec host not allowed`, Job Hunter Notion/local-data fallback errors, and the still-open email rejection synthetic failure.
 ### Do differently
 After running `scripts/auto-lessons-learned.py --all`, do not treat the exchange-count filter as proof that there is nothing to capture. Always scan same-day non-trajectory session JSON for `isError=true`, user corrections, and explicit preferences before deciding `NO_REPLY`, especially for one-turn cron sessions.
+
+## 2026-07-06 - Hermes CV Generation Needs Hard Rejection Gates
+
+### Correction
+Ahmed shared four Hermes-generated CV PDFs after saying clear instructions had already been given. Review found near-clone templates with light keyword swapping, collapsed experience paragraphs instead of ATS bullets, only five real bullets under metrics, artificial `Role Keywords Matched` / `Target Role` sections, a recruiter name used as the company, and unsupported keyword additions such as ERP.
+### Do differently
+For Hermes and JobZoom CV packs, fail closed unless the output is regenerated from `memory/master-cv-data.md` and `memory/ats-best-practices.md`, uses verified facts only, keeps exact titles and actual company names, has no artificial keyword sections, and passes plain-text PDF extraction checks for proper bullets, separated role metadata, at least 12 real experience bullets, and no unsupported skills or achievements.
+
+## 2026-07-06 - ATS PDF Review Should Not Depend On ImageMagick Identify
+
+### Incident
+During the Hermes CV PDF review, a sandbox command tried `identify` and returned `Command 'identify' not found`, so the review could not rely on ImageMagick being installed for PDF inspection.
+### Do differently
+For ATS PDF QA in OpenClaw, start with available text/metadata tools such as `pdftotext`, `pdfinfo`, `file`, `mutool`, or `qpdf`, and only call `identify` after confirming it exists. Treat extracted text and structural checks as the primary validation path for CV quality.

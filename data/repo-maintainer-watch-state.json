@@ -920,7 +920,7 @@
     },
     "f7d666c88c179103": {
       "first_seen_at": "2026-06-27T07:05:03.137731+03:00",
-      "last_seen_at": "2026-07-04T11:30:06.976303+03:00",
+      "last_seen_at": "2026-07-06T15:40:03.584151+03:00",
       "repo": "openclaw-workspace",
       "kind": "dirty_other_paths",
       "priority": "medium",
@@ -1224,7 +1224,7 @@
     },
     "fb55a576655418cf": {
       "first_seen_at": "2026-07-05T08:15:03.272578+03:00",
-      "last_seen_at": "2026-07-06T07:00:04.349166+03:00",
+      "last_seen_at": "2026-07-07T07:00:03.937205+03:00",
       "repo": "openclaw-workspace",
       "kind": "dirty_important_paths",
       "priority": "high",
@@ -1269,1404 +1269,1428 @@
       "kind": "dirty_other_paths",
       "priority": "medium",
       "title": "45 non-ignored dirty repo path(s)"
+    },
+    "ef76f4249e1ea039": {
+      "first_seen_at": "2026-07-06T15:45:03.623818+03:00",
+      "last_seen_at": "2026-07-06T23:45:03.930036+03:00",
+      "repo": "openclaw-workspace",
+      "kind": "dirty_other_paths",
+      "priority": "medium",
+      "title": "23 non-ignored dirty repo path(s)"
+    },
+    "676665a29ab4e8bd": {
+      "first_seen_at": "2026-07-06T23:50:02.587150+03:00",
+      "last_seen_at": "2026-07-07T06:00:06.182252+03:00",
+      "repo": "openclaw-workspace",
+      "kind": "dirty_other_paths",
+      "priority": "medium",
+      "title": "24 non-ignored dirty repo path(s)"
+    },
+    "05501d59286829af": {
+      "first_seen_at": "2026-07-07T06:05:03.294410+03:00",
+      "last_seen_at": "2026-07-07T07:00:03.937205+03:00",
+      "repo": "openclaw-workspace",
+      "kind": "dirty_other_paths",
+      "priority": "medium",
+      "title": "26 non-ignored dirty repo path(s)"
     }
   },
   "runs": [
     {
-      "ts": "2026-07-05T14:25:02.434981+03:00",
+      "ts": "2026-07-06T14:25:03.453853+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T14:30:03.590211+03:00",
+      "ts": "2026-07-06T14:30:04.341428+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T14:35:03.153449+03:00",
+      "ts": "2026-07-06T14:35:03.177698+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T14:40:02.619218+03:00",
+      "ts": "2026-07-06T14:40:03.283827+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T14:45:03.243072+03:00",
+      "ts": "2026-07-06T14:45:03.600079+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T14:50:02.897406+03:00",
+      "ts": "2026-07-06T14:50:04.114239+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T14:55:03.266538+03:00",
+      "ts": "2026-07-06T14:55:02.707097+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T15:00:05.401978+03:00",
+      "ts": "2026-07-06T15:00:06.281806+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T15:05:02.869340+03:00",
+      "ts": "2026-07-06T15:05:04.099797+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T15:10:02.652672+03:00",
+      "ts": "2026-07-06T15:10:04.796411+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T15:15:03.323327+03:00",
+      "ts": "2026-07-06T15:15:03.500221+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T15:20:03.119098+03:00",
+      "ts": "2026-07-06T15:20:03.351136+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T15:25:02.685049+03:00",
+      "ts": "2026-07-06T15:25:03.386237+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T15:30:03.598502+03:00",
+      "ts": "2026-07-06T15:30:03.703600+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T15:35:03.166588+03:00",
+      "ts": "2026-07-06T15:35:03.590175+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T15:40:02.868946+03:00",
+      "ts": "2026-07-06T15:40:03.585234+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T15:45:02.617427+03:00",
+      "ts": "2026-07-06T15:45:03.624475+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T15:50:03.267970+03:00",
+      "ts": "2026-07-06T15:50:03.797305+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T15:55:03.109484+03:00",
+      "ts": "2026-07-06T15:55:03.904053+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T16:00:06.347140+03:00",
+      "ts": "2026-07-06T16:00:05.487625+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T16:05:03.371910+03:00",
+      "ts": "2026-07-06T16:05:03.207131+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T16:10:03.079173+03:00",
+      "ts": "2026-07-06T16:10:04.273352+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T16:15:02.702553+03:00",
+      "ts": "2026-07-06T16:15:03.141767+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T16:20:03.605099+03:00",
+      "ts": "2026-07-06T16:20:02.834125+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T16:25:03.209991+03:00",
+      "ts": "2026-07-06T16:25:03.559481+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T16:30:04.415489+03:00",
+      "ts": "2026-07-06T16:30:04.133218+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T16:35:03.127111+03:00",
+      "ts": "2026-07-06T16:35:02.711694+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T16:40:02.912192+03:00",
+      "ts": "2026-07-06T16:40:03.690836+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T16:45:03.653721+03:00",
+      "ts": "2026-07-06T16:45:03.715389+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T16:50:03.303063+03:00",
+      "ts": "2026-07-06T16:50:03.937486+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T16:55:02.820840+03:00",
+      "ts": "2026-07-06T16:55:03.614694+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T17:00:04.380112+03:00",
+      "ts": "2026-07-06T17:00:04.433050+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T17:05:02.842822+03:00",
+      "ts": "2026-07-06T17:05:03.327125+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T17:10:03.555158+03:00",
+      "ts": "2026-07-06T17:10:03.802343+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T17:15:03.140215+03:00",
+      "ts": "2026-07-06T17:15:03.557998+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T17:20:02.769462+03:00",
+      "ts": "2026-07-06T17:20:03.292636+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T17:25:03.335539+03:00",
+      "ts": "2026-07-06T17:25:03.223820+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T17:30:03.986631+03:00",
+      "ts": "2026-07-06T17:30:03.604138+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T17:35:02.447926+03:00",
+      "ts": "2026-07-06T17:35:03.316337+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T17:40:03.188014+03:00",
+      "ts": "2026-07-06T17:40:03.141743+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T17:45:02.836514+03:00",
+      "ts": "2026-07-06T17:45:02.936535+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T17:50:03.274989+03:00",
+      "ts": "2026-07-06T17:50:03.775471+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T17:55:02.826272+03:00",
+      "ts": "2026-07-06T17:55:03.621525+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T18:00:06.381007+03:00",
+      "ts": "2026-07-06T18:00:09.866483+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T18:05:02.994816+03:00",
+      "ts": "2026-07-06T18:05:03.325345+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T18:10:03.642103+03:00",
+      "ts": "2026-07-06T18:10:03.637602+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T18:15:03.460331+03:00",
+      "ts": "2026-07-06T18:15:03.812323+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T18:20:02.557550+03:00",
+      "ts": "2026-07-06T18:20:02.871174+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T18:25:03.015025+03:00",
+      "ts": "2026-07-06T18:25:03.631290+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T18:30:02.555264+03:00",
+      "ts": "2026-07-06T18:30:04.402010+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T18:35:03.177528+03:00",
+      "ts": "2026-07-06T18:35:03.580337+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T18:40:03.174366+03:00",
+      "ts": "2026-07-06T18:40:04.538970+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T18:45:02.786128+03:00",
+      "ts": "2026-07-06T18:45:03.288293+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T18:50:03.383647+03:00",
+      "ts": "2026-07-06T18:50:03.660927+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T18:55:03.038666+03:00",
+      "ts": "2026-07-06T18:55:03.681750+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T19:00:02.737178+03:00",
+      "ts": "2026-07-06T19:00:04.384035+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T19:05:03.168508+03:00",
+      "ts": "2026-07-06T19:05:03.029905+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T19:10:03.149298+03:00",
+      "ts": "2026-07-06T19:10:03.228612+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T19:15:02.691711+03:00",
+      "ts": "2026-07-06T19:15:02.880979+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T19:20:03.544992+03:00",
+      "ts": "2026-07-06T19:20:03.735755+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T19:25:02.982617+03:00",
+      "ts": "2026-07-06T19:25:03.433677+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T19:30:02.584703+03:00",
+      "ts": "2026-07-06T19:30:03.944277+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T19:35:03.336577+03:00",
+      "ts": "2026-07-06T19:35:02.527708+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T19:40:03.129409+03:00",
+      "ts": "2026-07-06T19:40:03.252799+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T19:45:03.029218+03:00",
+      "ts": "2026-07-06T19:45:02.945245+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T19:50:02.519515+03:00",
+      "ts": "2026-07-06T19:50:02.632443+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T19:55:03.133661+03:00",
+      "ts": "2026-07-06T19:55:03.184238+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T20:00:04.358769+03:00",
+      "ts": "2026-07-06T20:00:05.932677+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T20:05:03.433279+03:00",
+      "ts": "2026-07-06T20:05:02.773153+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T20:10:03.555570+03:00",
+      "ts": "2026-07-06T20:10:02.504393+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T20:15:02.977258+03:00",
+      "ts": "2026-07-06T20:15:03.377926+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T20:20:02.587154+03:00",
+      "ts": "2026-07-06T20:20:03.284726+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T20:25:03.248523+03:00",
+      "ts": "2026-07-06T20:25:03.121078+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T20:30:03.444692+03:00",
+      "ts": "2026-07-06T20:30:03.039289+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T20:35:03.040230+03:00",
+      "ts": "2026-07-06T20:35:02.926467+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T20:40:02.866948+03:00",
+      "ts": "2026-07-06T20:40:03.662398+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T20:45:04.064334+03:00",
+      "ts": "2026-07-06T20:45:03.410006+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T20:50:02.972641+03:00",
+      "ts": "2026-07-06T20:50:03.350394+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T20:55:02.634401+03:00",
+      "ts": "2026-07-06T20:55:02.857481+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T21:00:04.911791+03:00",
+      "ts": "2026-07-06T21:00:04.428457+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T21:05:03.375089+03:00",
+      "ts": "2026-07-06T21:05:03.366016+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T21:10:03.080153+03:00",
+      "ts": "2026-07-06T21:10:03.316656+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T21:15:02.804694+03:00",
+      "ts": "2026-07-06T21:15:03.077492+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T21:20:03.413854+03:00",
+      "ts": "2026-07-06T21:20:02.698805+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T21:25:02.945360+03:00",
+      "ts": "2026-07-06T21:25:03.199090+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T21:30:04.113206+03:00",
+      "ts": "2026-07-06T21:30:03.252942+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T21:35:03.005077+03:00",
+      "ts": "2026-07-06T21:35:03.538100+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T21:40:03.021405+03:00",
+      "ts": "2026-07-06T21:40:03.299536+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T21:45:02.856533+03:00",
+      "ts": "2026-07-06T21:45:03.279443+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T21:50:03.798842+03:00",
+      "ts": "2026-07-06T21:50:02.891977+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T21:55:03.610535+03:00",
+      "ts": "2026-07-06T21:55:03.984574+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T22:00:05.974841+03:00",
+      "ts": "2026-07-06T22:00:03.819234+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T22:05:02.847749+03:00",
+      "ts": "2026-07-06T22:05:02.988073+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T22:10:03.329569+03:00",
+      "ts": "2026-07-06T22:10:03.085907+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T22:15:03.225628+03:00",
+      "ts": "2026-07-06T22:15:02.871872+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T22:20:02.838844+03:00",
+      "ts": "2026-07-06T22:20:03.647846+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T22:25:03.528561+03:00",
+      "ts": "2026-07-06T22:25:03.293238+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T22:30:04.073693+03:00",
+      "ts": "2026-07-06T22:30:03.217874+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T22:35:02.613499+03:00",
+      "ts": "2026-07-06T22:35:02.669968+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T22:40:03.418665+03:00",
+      "ts": "2026-07-06T22:40:03.305533+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T22:45:02.870283+03:00",
+      "ts": "2026-07-06T22:45:03.327928+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T22:50:03.740685+03:00",
+      "ts": "2026-07-06T22:50:02.905406+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T22:55:03.340911+03:00",
+      "ts": "2026-07-06T22:55:03.459426+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T23:00:04.038508+03:00",
+      "ts": "2026-07-06T23:00:03.446763+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T23:05:03.737376+03:00",
+      "ts": "2026-07-06T23:05:03.256557+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T23:10:03.109175+03:00",
+      "ts": "2026-07-06T23:10:03.569992+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T23:15:02.577340+03:00",
+      "ts": "2026-07-06T23:15:02.993685+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T23:20:03.496712+03:00",
+      "ts": "2026-07-06T23:20:02.832140+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T23:25:03.225491+03:00",
+      "ts": "2026-07-06T23:25:03.371406+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T23:30:03.370385+03:00",
+      "ts": "2026-07-06T23:30:03.420622+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T23:35:02.861853+03:00",
+      "ts": "2026-07-06T23:35:03.110033+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T23:40:03.320298+03:00",
+      "ts": "2026-07-06T23:40:02.631273+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T23:45:03.452593+03:00",
+      "ts": "2026-07-06T23:45:03.930462+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T23:50:03.941408+03:00",
+      "ts": "2026-07-06T23:50:02.587874+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-05T23:55:02.473468+03:00",
+      "ts": "2026-07-06T23:55:03.064853+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T00:00:07.699747+03:00",
+      "ts": "2026-07-07T00:00:04.370626+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T00:05:03.265346+03:00",
+      "ts": "2026-07-07T00:05:02.973099+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T00:10:02.399434+03:00",
+      "ts": "2026-07-07T00:10:03.378241+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T00:15:03.420081+03:00",
+      "ts": "2026-07-07T00:15:03.272518+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T00:20:03.874616+03:00",
+      "ts": "2026-07-07T00:20:03.931113+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T00:25:03.264352+03:00",
+      "ts": "2026-07-07T00:25:03.568785+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T00:30:03.851711+03:00",
+      "ts": "2026-07-07T00:30:03.828323+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T00:35:03.353087+03:00",
+      "ts": "2026-07-07T00:35:03.640799+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T00:40:02.919321+03:00",
+      "ts": "2026-07-07T00:40:03.303098+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T00:45:03.486435+03:00",
+      "ts": "2026-07-07T00:45:04.037598+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T00:50:03.164671+03:00",
+      "ts": "2026-07-07T00:50:02.597245+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T00:55:02.795492+03:00",
+      "ts": "2026-07-07T00:55:03.198529+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T01:00:04.126350+03:00",
+      "ts": "2026-07-07T01:00:03.915973+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T01:05:02.797552+03:00",
+      "ts": "2026-07-07T01:05:02.505112+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T01:10:02.887077+03:00",
+      "ts": "2026-07-07T01:10:03.893214+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T01:15:03.575785+03:00",
+      "ts": "2026-07-07T01:15:03.317741+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T01:20:03.549480+03:00",
+      "ts": "2026-07-07T01:20:03.167643+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T01:25:03.215603+03:00",
+      "ts": "2026-07-07T01:25:02.900461+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T01:30:03.284851+03:00",
+      "ts": "2026-07-07T01:30:02.849572+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T01:35:02.823914+03:00",
+      "ts": "2026-07-07T01:35:03.436004+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T01:40:03.425746+03:00",
+      "ts": "2026-07-07T01:40:03.284354+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T01:45:03.066656+03:00",
+      "ts": "2026-07-07T01:45:03.021636+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T01:50:02.592850+03:00",
+      "ts": "2026-07-07T01:50:02.659440+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T01:55:02.606103+03:00",
+      "ts": "2026-07-07T01:55:02.442050+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T02:00:06.106615+03:00",
+      "ts": "2026-07-07T02:00:05.443390+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T02:05:02.689421+03:00",
+      "ts": "2026-07-07T02:05:03.466578+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T02:10:03.082292+03:00",
+      "ts": "2026-07-07T02:10:02.623360+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T02:15:02.561695+03:00",
+      "ts": "2026-07-07T02:15:03.271082+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T02:20:03.164014+03:00",
+      "ts": "2026-07-07T02:20:02.854953+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T02:25:02.592221+03:00",
+      "ts": "2026-07-07T02:25:03.274906+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T02:30:03.412502+03:00",
+      "ts": "2026-07-07T02:30:03.557479+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T02:35:02.864105+03:00",
+      "ts": "2026-07-07T02:35:03.079162+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T02:40:03.776726+03:00",
+      "ts": "2026-07-07T02:40:03.547645+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T02:45:03.221126+03:00",
+      "ts": "2026-07-07T02:45:03.361249+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T02:50:02.889347+03:00",
+      "ts": "2026-07-07T02:50:03.124652+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T02:55:03.299782+03:00",
+      "ts": "2026-07-07T02:55:02.663265+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T03:00:06.232664+03:00",
+      "ts": "2026-07-07T03:00:08.903206+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T03:05:02.759565+03:00",
+      "ts": "2026-07-07T03:05:03.636274+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T03:10:02.507708+03:00",
+      "ts": "2026-07-07T03:10:03.058781+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T03:15:03.082707+03:00",
+      "ts": "2026-07-07T03:15:03.148381+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T03:20:03.043999+03:00",
+      "ts": "2026-07-07T03:20:03.365042+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T03:25:02.561098+03:00",
+      "ts": "2026-07-07T03:25:02.920448+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T03:30:04.696317+03:00",
+      "ts": "2026-07-07T03:30:04.617592+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T03:35:03.522450+03:00",
+      "ts": "2026-07-07T03:35:03.515858+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T03:40:03.202597+03:00",
+      "ts": "2026-07-07T03:40:03.405479+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T03:45:02.815629+03:00",
+      "ts": "2026-07-07T03:45:03.095567+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T03:50:03.523276+03:00",
+      "ts": "2026-07-07T03:50:03.140594+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T03:55:03.417689+03:00",
+      "ts": "2026-07-07T03:55:02.771483+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T04:00:04.393973+03:00",
+      "ts": "2026-07-07T04:00:05.567301+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T04:05:04.005695+03:00",
+      "ts": "2026-07-07T04:05:03.326575+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T04:10:02.899727+03:00",
+      "ts": "2026-07-07T04:10:03.386611+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T04:15:03.736528+03:00",
+      "ts": "2026-07-07T04:15:03.829546+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T04:20:03.264668+03:00",
+      "ts": "2026-07-07T04:20:03.677660+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T04:25:03.060816+03:00",
+      "ts": "2026-07-07T04:25:03.295695+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T04:30:02.924266+03:00",
+      "ts": "2026-07-07T04:30:03.751686+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T04:35:02.567525+03:00",
+      "ts": "2026-07-07T04:35:03.191800+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T04:40:03.534364+03:00",
+      "ts": "2026-07-07T04:40:03.150854+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T04:45:03.228810+03:00",
+      "ts": "2026-07-07T04:45:02.771517+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T04:50:02.839584+03:00",
+      "ts": "2026-07-07T04:50:03.514204+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T04:55:03.386519+03:00",
+      "ts": "2026-07-07T04:55:03.237420+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T05:00:04.017496+03:00",
+      "ts": "2026-07-07T05:00:04.419929+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T05:05:02.771783+03:00",
+      "ts": "2026-07-07T05:05:03.127123+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T05:10:02.771666+03:00",
+      "ts": "2026-07-07T05:10:03.121332+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T05:15:03.798043+03:00",
+      "ts": "2026-07-07T05:15:03.452158+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T05:20:03.599178+03:00",
+      "ts": "2026-07-07T05:20:03.698874+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T05:25:03.214682+03:00",
+      "ts": "2026-07-07T05:25:03.355447+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T05:30:03.921090+03:00",
+      "ts": "2026-07-07T05:30:04.025964+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T05:35:03.657811+03:00",
+      "ts": "2026-07-07T05:35:03.111130+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T05:40:03.414318+03:00",
+      "ts": "2026-07-07T05:40:02.765442+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T05:45:03.603202+03:00",
+      "ts": "2026-07-07T05:45:03.713365+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T05:50:03.736769+03:00",
+      "ts": "2026-07-07T05:50:03.655845+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T05:55:03.292355+03:00",
+      "ts": "2026-07-07T05:55:03.409576+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T06:00:05.499172+03:00",
+      "ts": "2026-07-07T06:00:06.184351+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T06:05:02.825551+03:00",
+      "ts": "2026-07-07T06:05:03.294902+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T06:10:03.737718+03:00",
+      "ts": "2026-07-07T06:10:03.260241+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T06:15:02.733662+03:00",
+      "ts": "2026-07-07T06:15:04.322348+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T06:20:02.587338+03:00",
+      "ts": "2026-07-07T06:20:03.332178+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T06:25:03.169333+03:00",
+      "ts": "2026-07-07T06:25:03.369044+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T06:30:03.111155+03:00",
+      "ts": "2026-07-07T06:30:03.741786+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T06:35:02.556038+03:00",
+      "ts": "2026-07-07T06:35:03.485977+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T06:40:03.217113+03:00",
+      "ts": "2026-07-07T06:40:03.862766+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T06:45:02.900674+03:00",
+      "ts": "2026-07-07T06:45:03.706643+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T06:50:03.526154+03:00",
+      "ts": "2026-07-07T06:50:03.312120+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T06:55:02.958078+03:00",
+      "ts": "2026-07-07T06:55:03.125615+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,
       "report_path": "/root/.openclaw/workspace/reports/repo-maintainer/latest.md"
     },
     {
-      "ts": "2026-07-06T07:00:04.349650+03:00",
+      "ts": "2026-07-07T07:00:03.937723+03:00",
       "mode": "normal",
       "findings": 2,
       "dispatches": 0,

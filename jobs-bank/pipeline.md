@@ -470,6 +470,24 @@
 | 579 | 🆕 | Leica Biosystems | Sales Director, Digital Pathology - High Growth Markets | Dubai | — | 🆕 Discovered | Radar | 2026-07-06 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4423628151) | — |
 | 580 | 🆕 | EyeSpy Recruitment - iGaming Specialists | Director of HR, Technology & Insight | Dubai | — | 🆕 Discovered | Radar | 2026-07-06 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4435848043) | — |
 | 581 | 🆕 | AstraZeneca | Medical Affairs Director, BBU, Gulf | Dubai | — | 🆕 Discovered | Radar | 2026-07-06 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4434624050) | — |
+| 582 | 🆕 | AD Ports Group | Director Digital And Technology | Abu Dhabi | — | 🆕 Discovered | Radar | 2026-07-07 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4437181661) | — |
+| 583 | 🆕 | AD Ports Group | Director – Digital & Technology | Abu Dhabi | — | 🆕 Discovered | Radar | 2026-07-07 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4437140540) | — |
+| 584 | 🆕 | Genius HRTech Limited | Head of Technology | Dubai | — | 🆕 Discovered | Radar | 2026-07-07 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4436079463) | — |
+| 585 | 🆕 | edari | Head of Change Management | Dubai | — | 🆕 Discovered | Radar | 2026-07-07 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4437162804) | — |
+| 586 | 🆕 | Atlantis Resorts | Vice President Applications & IT PMO | Dubai | — | 🆕 Discovered | Radar | 2026-07-07 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4433936906) | — |
+| 587 | 🆕 | Fintech HIRE Middle East & Africa | Programme Director, Airport Transformation, Riyadh, KSA | Riyadh | — | 🆕 Discovered | Radar | 2026-07-07 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4433797570) | — |
+| 588 | 🆕 | Rawaj-HCM | Strategy Management Director - Government Services | Saudi Arabia | Riyadh | — | 🆕 Discovered | Radar | 2026-07-07 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4436047162) | — |
+| 589 | 🆕 | Confidential Government | Chief Strategy Officer | Riyadh | — | 🆕 Discovered | Radar | 2026-07-07 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4433787851) | — |
+| 590 | 🆕 | Confidential Government | Strategy & Transformation Lead | Riyadh | — | 🆕 Discovered | Radar | 2026-07-07 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4433184871) | — |
+| 591 | 🆕 | SAP | Head of Revenue Operations MEA North | GCC | — | 🆕 Discovered | Radar | 2026-07-07 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4385294885) | — |
+| 592 | 🆕 | Ruya Recruitment | Chief Technology Officer | Jeddah | — | 🆕 Discovered | Radar | 2026-07-07 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4435803807) | — |
+| 593 | 🆕 | Jobgether | Deputy CTO (AI Product) | GCC | — | 🆕 Discovered | Radar | 2026-07-07 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4432352045) | — |
+| 594 | 🆕 | Parsons Corporation | Planning Director | Riyadh | — | 🆕 Discovered | Radar | 2026-07-07 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4434997044) | — |
+| 595 | 🆕 | Jobgether | CTO | GCC | — | 🆕 Discovered | Radar | 2026-07-07 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4436088462) | — |
+| 596 | 🆕 | MetLife Gulf | Head of Operations & Transformation, Gulf | Dubai | — | 🆕 Discovered | Radar | 2026-07-07 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4437454391) | — |
+| 597 | 🆕 | Taptap Send | General Manager Nigeria | Dubai | — | 🆕 Discovered | Radar | 2026-07-07 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4437194606) | — |
+| 598 | 🆕 | VaporVM | Director of Business Development - UAE | Dubai | — | 🆕 Discovered | Radar | 2026-07-07 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4435454562) | — |
+
 
 
 
