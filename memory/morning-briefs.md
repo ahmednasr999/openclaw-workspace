@@ -4293,3 +4293,56 @@ Node.js v22.22.1
 ## Calendar - Today's Events
 missing --account (or set GOG_ACCOUNT, set default via `gog auth manage`, or store exactly one token)
 
+=== Morning Brief - 2026-07-08 06:10 AM ===
+
+## Claude 2x Usage Reminder
+
+## Job Radar (from Tavily)
+[search-router] Tavily unavailable, falling back to local SearXNG: Tavily Search failed (401): {"detail":{"error":"Unauthorized: missing or invalid API key."}}
+## Sources
+
+_(provider: searxng)_
+
+- **Digital Transformation Summit UAE 2026 | Technology Event**
+  https://digitransformationsummit.com/uae/
+  The Digital Transformation Summit UAE is the 51st edition of a globally recognised series hosted across 10+ cities worldwide. Held under the theme "Driving the UAE's Next Digital Leap Through Agentic AI," it convenes 200+ CIOs, CTOs, CDOs, CISOs and senior technology leaders to explore how organisat...
+
+- **Digital Health Transformation in the UAE: DHA and DoH.**
+  https://sbs-me.com/digital-health-transformation-in-the-uae-dha-and-doh/
+  In 2026, Dubai and Abu Dhabi are taking complementary approaches to modernize healthcare systems, emphasizing telemedicine, AI-driven workforce frameworks, and robust data governance.
+
+- **Healthcare Triangle Subsidiary QuantumNexis Inc. Launches its Dubai, UAE Operations to accelerate Digital Health Transformation across the GCC Countries**
+  https://www.prnewswire.com/news-releases/healthcare-triangle-subsidiary-quantumnexis-inc-launches-its-dubai-uae-operations-to-accelerate-digital-health-transformation-across-the-gcc-countries-302699573.html
+  /PRNewswire/ -- Healthcare Triangle, Inc. (Nasdaq: HCTI) ("HCTI" or the "Company"), a leader in digital transformation solutions including managed services, cloud enablement, and data analytics for the healthcare and life sciences industries, today announced that its subsidiary QuantumNexis Inc. has...
+
+- **Transforming healthcare in the Middle East | Deloitte Middle East**
+  https://www.deloitte.com/middle-east/en/our-thinking/mepov-magazine/frontiers/transforming-healthcare-in-the-middle-east.html
+  Launched in 2021, the newly established Health Sector Transformation Program aims to provide inclusive health services to 88% of the Kingdom’s population and implement a unified digital medical records system for 100% of the population by 2025. The Saudi Arabian Ministry of Health has further partne...
+
+- **Who Controls Dubai's Healthcare System in 2026? | Allocation Assist**
+  https://www.allocationassist.com/who-controls-dubai-healthcare-system/
+  At the federal level, MOHAP oversees strategic projects, and EHS operates select facilities in Dubai. This institutional transformation aligns with global best practices through partnerships like the Government Experience Exchange Office. The structure of healthcare in the UAE is characterized by it...
+
+## Gmail - New Opportunities
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/root/.openclaw/workspace/scripts/gmail-scan.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+
+## Calendar - Today's Events
+missing --account (or set GOG_ACCOUNT, set default via `gog auth manage`, or store exactly one token)
+
