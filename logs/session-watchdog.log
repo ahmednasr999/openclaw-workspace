@@ -725,3 +725,22 @@
 [2026-07-06T21:56:26Z] Done reset=0 skipped=0 errors=0
 [2026-07-07T00:56:17Z] Done reset=0 skipped=0 errors=0
 [2026-07-07T03:56:25Z] Done reset=0 skipped=0 errors=0
+[2026-07-07T06:56:24Z] Done reset=0 skipped=0 errors=0
+[2026-07-07T09:07:06Z] OK [agent-lane-stall] no CMO/HR stalled or recently interrupted lane sessions
+[2026-07-07T09:07:06Z] Done reset=0 skipped=0 errors=0 lane_stalls=0 high=0 medium=0
+[2026-07-07T09:56:33Z] OK [agent-lane-stall] no CMO/HR stalled or recently interrupted lane sessions
+[2026-07-07T09:56:33Z] Done reset=0 skipped=0 errors=0 lane_stalls=0 high=0 medium=0
+[2026-07-07T12:56:26Z] OK [agent-lane-stall] no CMO/HR stalled or recently interrupted lane sessions
+[2026-07-07T12:56:26Z] Done reset=0 skipped=0 errors=0 lane_stalls=0 high=0 medium=0
+[2026-07-07T15:55:48Z] RESET [hr] 56b78f88-83d0-4e4e-ba52-fad50a04fdd9-topic-9.trajectory.jsonl was 3MB -> archived to 56b78f88-83d0-4e4e-ba52-fad50a04fdd9-topic-9.trajectory.20260707T155548Z.jsonl.gz
+[2026-07-07T15:56:20Z] OK [agent-lane-stall] no CMO/HR stalled or recently interrupted lane sessions
+[2026-07-07T15:56:20Z] Done reset=1 skipped=0 errors=0 lane_stalls=0 high=0 medium=0
+[2026-07-07T18:55:54Z] RESET [main] 30d7db2d-eaed-4d8b-ad5b-8594903b4233.trajectory.jsonl was 3MB -> archived to 30d7db2d-eaed-4d8b-ad5b-8594903b4233.trajectory.20260707T185554Z.jsonl.gz
+[2026-07-07T18:57:20Z] OK [agent-lane-stall] no CMO/HR stalled or recently interrupted lane sessions
+[2026-07-07T18:57:20Z] Done reset=1 skipped=0 errors=0 lane_stalls=0 high=0 medium=0
+[2026-07-07T21:56:24Z] OK [agent-lane-stall] no CMO/HR stalled or recently interrupted lane sessions
+[2026-07-07T21:56:24Z] Done reset=0 skipped=0 errors=0 lane_stalls=0 high=0 medium=0
+[2026-07-08T00:56:11Z] OK [agent-lane-stall] no CMO/HR stalled or recently interrupted lane sessions
+[2026-07-08T00:56:11Z] Done reset=0 skipped=0 errors=0 lane_stalls=0 high=0 medium=0
+[2026-07-08T03:56:18Z] OK [agent-lane-stall] no CMO/HR stalled or recently interrupted lane sessions
+[2026-07-08T03:56:18Z] Done reset=0 skipped=0 errors=0 lane_stalls=0 high=0 medium=0

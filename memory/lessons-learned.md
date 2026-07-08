@@ -1629,3 +1629,17 @@ For Hermes and JobZoom CV packs, fail closed unless the output is regenerated fr
 During the Hermes CV PDF review, a sandbox command tried `identify` and returned `Command 'identify' not found`, so the review could not rely on ImageMagick being installed for PDF inspection.
 ### Do differently
 For ATS PDF QA in OpenClaw, start with available text/metadata tools such as `pdftotext`, `pdfinfo`, `file`, `mutool`, or `qpdf`, and only call `identify` after confirming it exists. Treat extracted text and structural checks as the primary validation path for CV quality.
+
+## 2026-07-07 - Crabbox CTO Wrapper Should Be The Default Isolated Repo Proof Path
+
+### Incident
+A Crabbox feasibility spike verified `provider=local-container`, then added `scripts/crabbox-local-proof.sh` and `docs/agent-governance/crabbox-local-proof.md` as a reusable proof wrapper. The wrapper pins Crabbox v0.36.0, checksum-verifies the binary, writes artifacts under `reports/crabbox-local-proof/`, preserves exit codes, and refuses to sync the main OpenClaw workspace unless explicitly allowed.
+### Do differently
+For heavy repo checks, browser/test proof bundles, and CTO verification that should not pollute the VPS worktree, prefer `scripts/crabbox-local-proof.sh --repo <repo> --label <label> -- <command>`. Keep it to disposable/local-container or approved static targets, and do not treat it as a security sandbox for hostile repositories or secret-heavy worktrees.
+
+## 2026-07-07 - Career-Site Job Alerts Are Not Urgent Interview Actions
+
+### Incident
+The 20:00 email run surfaced `RAKBANK.CAREER - New job opportunities at Rak Bank Career Site` as `Email alert - action needed` with a 48h response instruction, even though the subject reads like a career-site job-alert digest rather than an interview, assessment, offer, recruiter reply, or time-bound follow-up.
+### Do differently
+For email alerts, treat career-site `new job opportunities` messages as low/normal review unless the provided excerpt proves a specific interview, assessment, offer, recruiter conversation, deadline, or requested reply. Do not let a noisy `interview_invite`/active-company category alone create urgent action language.

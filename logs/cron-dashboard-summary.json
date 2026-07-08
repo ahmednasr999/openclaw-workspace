@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-07T06:08:22.179633+03:00",
+  "timestamp": "2026-07-08T06:08:11.595703+03:00",
   "total_crons": 54,
   "system_crons": 23,
   "openclaw_crons": 31,
@@ -243,9 +243,9 @@
       "schedule": "cron 55 */3 * * * @ Africa/Cairo",
       "type": "openclaw",
       "last_status": {
-        "status": "\u26a0\ufe0f Unknown",
-        "last_run": null,
-        "error": "No log file found"
+        "status": "\u2705 OK",
+        "last_run": "2026-07-08 03:56:11.278461+03:00",
+        "error": null
       }
     },
     {

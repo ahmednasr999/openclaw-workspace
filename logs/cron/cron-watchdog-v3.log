@@ -1,15 +1,15 @@
 
-[2026-07-07T02:00:01+03:00] START cron-watchdog-v3: /bin/bash /root/.openclaw/workspace/scripts/cron-watchdog-v3.sh
+[2026-07-08T02:00:01+03:00] START cron-watchdog-v3: /bin/bash /root/.openclaw/workspace/scripts/cron-watchdog-v3.sh
 🔍 Watchdog v3 - Detect → Fix → Report
 ✅ Gateway running (PID: 2438248)
-🟡 Disk WARNING: 80%
-✅ active-tasks.md fresh (37h)
-🟡 Jobs data stale (63h) - re-running pipeline...
+🟡 Disk WARNING: 86%
+✅ active-tasks.md fresh (12h)
+🟡 Jobs data stale (87h) - re-running pipeline...
   Pipeline triggered in background
 ✅ SIE 360 data fresh (0h)
 ✅ All crons OK
 ✅ No pipeline failures today
-✅ RAM OK: 35%
+✅ RAM OK: 33%
 
 ═══════════════════════════════════
 📊 Watchdog v3 Summary
@@ -19,22 +19,22 @@
 ═══════════════════════════════════
 
 📋 Actions taken:
-🔄 Jobs data was 63h stale → pipeline re-triggered
+🔄 Jobs data was 87h stale → pipeline re-triggered
 
-[2026-07-07T02:00:10+03:00] END cron-watchdog-v3: rc=0 duration=9s
+[2026-07-08T02:00:09+03:00] END cron-watchdog-v3: rc=0 duration=8s
 
-[2026-07-07T04:00:02+03:00] START cron-watchdog-v3: /bin/bash /root/.openclaw/workspace/scripts/cron-watchdog-v3.sh
+[2026-07-08T04:00:01+03:00] START cron-watchdog-v3: /bin/bash /root/.openclaw/workspace/scripts/cron-watchdog-v3.sh
 🔍 Watchdog v3 - Detect → Fix → Report
 ✅ Gateway running (PID: 2438248)
-🟡 Disk WARNING: 79%
-✅ active-tasks.md fresh (39h)
-🟡 Jobs data stale (65h) - re-running pipeline...
+🟡 Disk WARNING: 86%
+✅ active-tasks.md fresh (14h)
+🟡 Jobs data stale (89h) - re-running pipeline...
   Pipeline triggered in background
 ✅ SIE 360 data fresh (2h)
 ✅ Pipeline lock active (0m, still valid)
 ✅ All crons OK
 ✅ No pipeline failures today
-✅ RAM OK: 31%
+✅ RAM OK: 33%
 
 ═══════════════════════════════════
 📊 Watchdog v3 Summary
@@ -44,16 +44,16 @@
 ═══════════════════════════════════
 
 📋 Actions taken:
-🔄 Jobs data was 65h stale → pipeline re-triggered
+🔄 Jobs data was 89h stale → pipeline re-triggered
 
-[2026-07-07T04:00:09+03:00] END cron-watchdog-v3: rc=0 duration=7s
+[2026-07-08T04:00:07+03:00] END cron-watchdog-v3: rc=0 duration=6s
 
-[2026-07-07T06:00:01+03:00] START cron-watchdog-v3: /bin/bash /root/.openclaw/workspace/scripts/cron-watchdog-v3.sh
+[2026-07-08T06:00:01+03:00] START cron-watchdog-v3: /bin/bash /root/.openclaw/workspace/scripts/cron-watchdog-v3.sh
 🔍 Watchdog v3 - Detect → Fix → Report
 ✅ Gateway running (PID: 2438248)
-🟡 Disk WARNING: 80%
-✅ active-tasks.md fresh (42h)
-🟡 Jobs data stale (67h) - re-running pipeline...
+🟡 Disk WARNING: 86%
+✅ active-tasks.md fresh (16h)
+🟡 Jobs data stale (91h) - re-running pipeline...
   Pipeline triggered in background
 ✅ SIE 360 data fresh (4h)
 ✅ Pipeline lock active (0m, still valid)
@@ -69,6 +69,6 @@
 ═══════════════════════════════════
 
 📋 Actions taken:
-🔄 Jobs data was 67h stale → pipeline re-triggered
+🔄 Jobs data was 91h stale → pipeline re-triggered
 
-[2026-07-07T06:00:10+03:00] END cron-watchdog-v3: rc=0 duration=8s
+[2026-07-08T06:00:13+03:00] END cron-watchdog-v3: rc=0 duration=12s

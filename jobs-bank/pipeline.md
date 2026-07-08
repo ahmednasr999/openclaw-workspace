@@ -487,6 +487,11 @@
 | 596 | 🆕 | MetLife Gulf | Head of Operations & Transformation, Gulf | Dubai | — | 🆕 Discovered | Radar | 2026-07-07 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4437454391) | — |
 | 597 | 🆕 | Taptap Send | General Manager Nigeria | Dubai | — | 🆕 Discovered | Radar | 2026-07-07 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4437194606) | — |
 | 598 | 🆕 | VaporVM | Director of Business Development - UAE | Dubai | — | 🆕 Discovered | Radar | 2026-07-07 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4435454562) | — |
+| 599 | 🆕 | Qashio | VP of Product | Dubai | — | 🆕 Discovered | Radar | 2026-07-08 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4436537394) | — |
+| 600 | 🆕 | Western Union | Head of Operations (Retail\Digital) for Middle East, Pakistan & Afghanistan (MEPA) based in Dubai, UAE | Dubai | — | 🆕 Discovered | Radar | 2026-07-08 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4436830232) | — |
+| 601 | 🆕 | Hex Trust | Director- Senior Sales, Cross-border Payments Solutions | Dubai | — | 🆕 Discovered | Radar | 2026-07-08 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4436289950) | — |
+| 602 | 🆕 | Talents Tide | Head of Data Management (UAEN) | Dubai | — | 🆕 Discovered | Radar | 2026-07-08 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4434651915) | — |
+
 
 
 
