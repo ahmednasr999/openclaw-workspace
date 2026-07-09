@@ -19045,3 +19045,1866 @@
 2026-07-08T07:00:15+03:00 chrome-trim term pid=1041233 count=22 rss_kb=990672
 2026-07-08T07:00:20+03:00 health-fail count=3768 pid=none http=200 ms=2 app_servers=10
 2026-07-08T07:00:20+03:00 restart-deferred reason=health-failures:3768:http-200 active_app_servers=10
+2026-07-08T07:02:34+03:00 chrome-trim term pid=1041932 count=22 rss_kb=996116
+2026-07-08T07:02:40+03:00 health-fail count=3769 pid=none http=200 ms=1 app_servers=8
+2026-07-08T07:02:40+03:00 restart-deferred reason=health-failures:3769:http-200 active_app_servers=8
+2026-07-08T07:04:54+03:00 chrome-trim term pid=1045338 count=22 rss_kb=992172
+2026-07-08T07:05:00+03:00 health-fail count=3770 pid=none http=200 ms=1 app_servers=8
+2026-07-08T07:05:00+03:00 restart-deferred reason=health-failures:3770:http-200 active_app_servers=8
+2026-07-08T07:07:14+03:00 chrome-trim term pid=1045557 count=22 rss_kb=998688
+2026-07-08T07:07:20+03:00 health-fail count=3771 pid=none http=200 ms=1 app_servers=8
+2026-07-08T07:07:20+03:00 restart-deferred reason=health-failures:3771:http-200 active_app_servers=8
+2026-07-08T07:09:34+03:00 chrome-trim term pid=1045838 count=22 rss_kb=992552
+2026-07-08T07:09:40+03:00 health-fail count=3772 pid=none http=200 ms=1 app_servers=8
+2026-07-08T07:09:40+03:00 restart-deferred reason=health-failures:3772:http-200 active_app_servers=8
+2026-07-08T07:11:54+03:00 chrome-trim term pid=1046033 count=22 rss_kb=975684
+2026-07-08T07:12:00+03:00 health-fail count=3773 pid=none http=200 ms=1 app_servers=8
+2026-07-08T07:12:00+03:00 restart-deferred reason=health-failures:3773:http-200 active_app_servers=8
+2026-07-08T07:14:14+03:00 chrome-trim term pid=1046306 count=22 rss_kb=975940
+2026-07-08T07:14:20+03:00 health-fail count=3774 pid=none http=200 ms=1 app_servers=8
+2026-07-08T07:14:20+03:00 restart-deferred reason=health-failures:3774:http-200 active_app_servers=8
+2026-07-08T07:16:34+03:00 chrome-trim term pid=1046445 count=22 rss_kb=978220
+2026-07-08T07:16:39+03:00 health-fail count=3775 pid=none http=200 ms=1 app_servers=8
+2026-07-08T07:16:39+03:00 restart-deferred reason=health-failures:3775:http-200 active_app_servers=8
+2026-07-08T07:18:54+03:00 chrome-trim term pid=1046664 count=22 rss_kb=991280
+2026-07-08T07:18:59+03:00 health-fail count=3776 pid=none http=200 ms=1 app_servers=8
+2026-07-08T07:18:59+03:00 restart-deferred reason=health-failures:3776:http-200 active_app_servers=8
+2026-07-08T07:21:14+03:00 chrome-trim term pid=1046819 count=22 rss_kb=994240
+2026-07-08T07:21:19+03:00 health-fail count=3777 pid=none http=200 ms=1 app_servers=6
+2026-07-08T07:21:19+03:00 restart-deferred reason=health-failures:3777:http-200 active_app_servers=6
+2026-07-08T07:23:34+03:00 chrome-trim term pid=1047441 count=22 rss_kb=976024
+2026-07-08T07:23:40+03:00 health-fail count=3778 pid=none http=200 ms=1 app_servers=6
+2026-07-08T07:23:40+03:00 restart-deferred reason=health-failures:3778:http-200 active_app_servers=6
+2026-07-08T07:25:54+03:00 chrome-trim term pid=1047582 count=22 rss_kb=979300
+2026-07-08T07:25:59+03:00 health-fail count=3779 pid=none http=200 ms=1 app_servers=6
+2026-07-08T07:25:59+03:00 restart-deferred reason=health-failures:3779:http-200 active_app_servers=6
+2026-07-08T07:28:14+03:00 chrome-trim term pid=1047801 count=22 rss_kb=991732
+2026-07-08T07:28:20+03:00 health-fail count=3780 pid=none http=200 ms=1 app_servers=6
+2026-07-08T07:28:20+03:00 restart-deferred reason=health-failures:3780:http-200 active_app_servers=6
+2026-07-08T07:30:34+03:00 chrome-trim term pid=1048517 count=22 rss_kb=996248
+2026-07-08T07:30:40+03:00 health-fail count=3781 pid=none http=200 ms=1 app_servers=6
+2026-07-08T07:30:40+03:00 restart-deferred reason=health-failures:3781:http-200 active_app_servers=6
+2026-07-08T07:32:54+03:00 chrome-trim term pid=1048806 count=22 rss_kb=993088
+2026-07-08T07:32:59+03:00 health-fail count=3782 pid=none http=200 ms=1 app_servers=6
+2026-07-08T07:32:59+03:00 restart-deferred reason=health-failures:3782:http-200 active_app_servers=6
+2026-07-08T07:35:14+03:00 chrome-trim term pid=1048948 count=22 rss_kb=991096
+2026-07-08T07:35:19+03:00 health-fail count=3783 pid=none http=200 ms=1 app_servers=6
+2026-07-08T07:35:19+03:00 restart-deferred reason=health-failures:3783:http-200 active_app_servers=6
+2026-07-08T07:37:34+03:00 chrome-trim term pid=1049167 count=22 rss_kb=996208
+2026-07-08T07:37:40+03:00 health-fail count=3784 pid=none http=200 ms=1 app_servers=6
+2026-07-08T07:37:40+03:00 restart-deferred reason=health-failures:3784:http-200 active_app_servers=6
+2026-07-08T07:39:54+03:00 chrome-trim term pid=1049315 count=22 rss_kb=973856
+2026-07-08T07:39:59+03:00 health-fail count=3785 pid=none http=200 ms=1 app_servers=6
+2026-07-08T07:40:00+03:00 restart-deferred reason=health-failures:3785:http-200 active_app_servers=6
+2026-07-08T07:42:14+03:00 chrome-trim term pid=1049547 count=22 rss_kb=979760
+2026-07-08T07:42:20+03:00 health-fail count=3786 pid=none http=200 ms=1 app_servers=6
+2026-07-08T07:42:20+03:00 restart-deferred reason=health-failures:3786:http-200 active_app_servers=6
+2026-07-08T07:44:34+03:00 chrome-trim term pid=1049689 count=22 rss_kb=991232
+2026-07-08T07:44:39+03:00 health-fail count=3787 pid=none http=200 ms=1 app_servers=6
+2026-07-08T07:44:39+03:00 restart-deferred reason=health-failures:3787:http-200 active_app_servers=6
+2026-07-08T07:46:54+03:00 chrome-trim term pid=1049940 count=22 rss_kb=977060
+2026-07-08T07:46:59+03:00 health-fail count=3788 pid=none http=200 ms=1 app_servers=8
+2026-07-08T07:46:59+03:00 restart-deferred reason=health-failures:3788:http-200 active_app_servers=8
+2026-07-08T07:49:14+03:00 chrome-trim term pid=1051687 count=22 rss_kb=993436
+2026-07-08T07:49:20+03:00 health-fail count=3789 pid=none http=200 ms=1 app_servers=8
+2026-07-08T07:49:20+03:00 restart-deferred reason=health-failures:3789:http-200 active_app_servers=8
+2026-07-08T07:51:34+03:00 chrome-trim term pid=1051832 count=22 rss_kb=996856
+2026-07-08T07:51:39+03:00 health-fail count=3790 pid=none http=200 ms=1 app_servers=8
+2026-07-08T07:51:39+03:00 restart-deferred reason=health-failures:3790:http-200 active_app_servers=8
+2026-07-08T07:53:54+03:00 chrome-trim term pid=1052049 count=22 rss_kb=969628
+2026-07-08T07:53:59+03:00 health-fail count=3791 pid=none http=200 ms=1 app_servers=8
+2026-07-08T07:53:59+03:00 restart-deferred reason=health-failures:3791:http-200 active_app_servers=8
+2026-07-08T07:56:14+03:00 chrome-trim term pid=1052192 count=22 rss_kb=970128
+2026-07-08T07:56:19+03:00 health-fail count=3792 pid=none http=200 ms=1 app_servers=8
+2026-07-08T07:56:20+03:00 restart-deferred reason=health-failures:3792:http-200 active_app_servers=8
+2026-07-08T07:58:34+03:00 chrome-trim term pid=1052414 count=22 rss_kb=991956
+2026-07-08T07:58:40+03:00 health-fail count=3793 pid=none http=200 ms=1 app_servers=8
+2026-07-08T07:58:40+03:00 restart-deferred reason=health-failures:3793:http-200 active_app_servers=8
+2026-07-08T08:00:54+03:00 chrome-trim term pid=1052560 count=22 rss_kb=995060
+2026-07-08T08:01:00+03:00 health-fail count=3794 pid=none http=200 ms=2 app_servers=10
+2026-07-08T08:01:00+03:00 restart-deferred reason=health-failures:3794:http-200 active_app_servers=10
+2026-07-08T08:03:14+03:00 chrome-trim term pid=1053679 count=22 rss_kb=995592
+2026-07-08T08:03:20+03:00 health-fail count=3795 pid=none http=200 ms=1 app_servers=8
+2026-07-08T08:03:20+03:00 restart-deferred reason=health-failures:3795:http-200 active_app_servers=8
+2026-07-08T08:05:34+03:00 chrome-trim term pid=1054107 count=22 rss_kb=992756
+2026-07-08T08:05:40+03:00 health-fail count=3796 pid=none http=200 ms=1 app_servers=8
+2026-07-08T08:05:40+03:00 restart-deferred reason=health-failures:3796:http-200 active_app_servers=8
+2026-07-08T08:07:54+03:00 chrome-trim term pid=1054361 count=22 rss_kb=993044
+2026-07-08T08:08:00+03:00 health-fail count=3797 pid=none http=200 ms=1 app_servers=8
+2026-07-08T08:08:00+03:00 restart-deferred reason=health-failures:3797:http-200 active_app_servers=8
+2026-07-08T08:10:14+03:00 chrome-trim term pid=1054567 count=22 rss_kb=995964
+2026-07-08T08:10:20+03:00 health-fail count=3798 pid=none http=200 ms=1 app_servers=8
+2026-07-08T08:10:20+03:00 restart-deferred reason=health-failures:3798:http-200 active_app_servers=8
+2026-07-08T08:12:34+03:00 chrome-trim term pid=1054810 count=22 rss_kb=992048
+2026-07-08T08:12:39+03:00 health-fail count=3799 pid=none http=200 ms=1 app_servers=8
+2026-07-08T08:12:39+03:00 restart-deferred reason=health-failures:3799:http-200 active_app_servers=8
+2026-07-08T08:14:54+03:00 chrome-trim term pid=1054954 count=22 rss_kb=994496
+2026-07-08T08:14:59+03:00 health-fail count=3800 pid=none http=200 ms=1 app_servers=8
+2026-07-08T08:14:59+03:00 restart-deferred reason=health-failures:3800:http-200 active_app_servers=8
+2026-07-08T08:17:14+03:00 chrome-trim term pid=1055184 count=22 rss_kb=971112
+2026-07-08T08:17:20+03:00 health-fail count=3801 pid=none http=200 ms=1 app_servers=8
+2026-07-08T08:17:20+03:00 restart-deferred reason=health-failures:3801:http-200 active_app_servers=8
+2026-07-08T08:19:34+03:00 chrome-trim term pid=1055355 count=22 rss_kb=995084
+2026-07-08T08:19:40+03:00 health-fail count=3802 pid=none http=200 ms=1 app_servers=8
+2026-07-08T08:19:40+03:00 restart-deferred reason=health-failures:3802:http-200 active_app_servers=8
+2026-07-08T08:21:54+03:00 chrome-trim term pid=1055508 count=22 rss_kb=994172
+2026-07-08T08:22:00+03:00 health-fail count=3803 pid=none http=200 ms=1 app_servers=8
+2026-07-08T08:22:00+03:00 restart-deferred reason=health-failures:3803:http-200 active_app_servers=8
+2026-07-08T08:24:14+03:00 chrome-trim term pid=1055740 count=22 rss_kb=976864
+2026-07-08T08:24:20+03:00 health-fail count=3804 pid=none http=200 ms=1 app_servers=8
+2026-07-08T08:24:20+03:00 restart-deferred reason=health-failures:3804:http-200 active_app_servers=8
+2026-07-08T08:26:34+03:00 chrome-trim term pid=1055968 count=22 rss_kb=991108
+2026-07-08T08:26:40+03:00 health-fail count=3805 pid=none http=200 ms=1 app_servers=8
+2026-07-08T08:26:40+03:00 restart-deferred reason=health-failures:3805:http-200 active_app_servers=8
+2026-07-08T08:28:54+03:00 chrome-trim term pid=1056210 count=22 rss_kb=993468
+2026-07-08T08:29:00+03:00 health-fail count=3806 pid=none http=200 ms=1 app_servers=8
+2026-07-08T08:29:00+03:00 restart-deferred reason=health-failures:3806:http-200 active_app_servers=8
+2026-07-08T08:31:14+03:00 chrome-trim term pid=1056356 count=22 rss_kb=994636
+2026-07-08T08:31:20+03:00 health-fail count=3807 pid=none http=200 ms=1 app_servers=8
+2026-07-08T08:31:20+03:00 restart-deferred reason=health-failures:3807:http-200 active_app_servers=8
+2026-07-08T08:33:34+03:00 chrome-trim term pid=1056588 count=22 rss_kb=969988
+2026-07-08T08:33:40+03:00 health-fail count=3808 pid=none http=200 ms=1 app_servers=8
+2026-07-08T08:33:40+03:00 restart-deferred reason=health-failures:3808:http-200 active_app_servers=8
+2026-07-08T08:35:54+03:00 chrome-trim term pid=1056745 count=22 rss_kb=980136
+2026-07-08T08:35:59+03:00 health-fail count=3809 pid=none http=200 ms=1 app_servers=8
+2026-07-08T08:35:59+03:00 restart-deferred reason=health-failures:3809:http-200 active_app_servers=8
+2026-07-08T08:38:14+03:00 chrome-trim term pid=1056973 count=22 rss_kb=996000
+2026-07-08T08:38:20+03:00 health-fail count=3810 pid=none http=200 ms=1 app_servers=8
+2026-07-08T08:38:20+03:00 restart-deferred reason=health-failures:3810:http-200 active_app_servers=8
+2026-07-08T08:40:34+03:00 chrome-trim term pid=1057128 count=22 rss_kb=993684
+2026-07-08T08:40:39+03:00 health-fail count=3811 pid=none http=200 ms=1 app_servers=8
+2026-07-08T08:40:39+03:00 restart-deferred reason=health-failures:3811:http-200 active_app_servers=8
+2026-07-08T08:42:54+03:00 chrome-trim term pid=1057396 count=22 rss_kb=993364
+2026-07-08T08:43:00+03:00 health-fail count=3812 pid=none http=200 ms=1 app_servers=8
+2026-07-08T08:43:00+03:00 restart-deferred reason=health-failures:3812:http-200 active_app_servers=8
+2026-07-08T08:45:14+03:00 chrome-trim term pid=1057536 count=22 rss_kb=992640
+2026-07-08T08:45:20+03:00 health-fail count=3813 pid=none http=200 ms=1 app_servers=8
+2026-07-08T08:45:20+03:00 restart-deferred reason=health-failures:3813:http-200 active_app_servers=8
+2026-07-08T08:47:34+03:00 chrome-trim term pid=1057847 count=22 rss_kb=996388
+2026-07-08T08:47:40+03:00 health-fail count=3814 pid=none http=200 ms=1 app_servers=8
+2026-07-08T08:47:40+03:00 restart-deferred reason=health-failures:3814:http-200 active_app_servers=8
+2026-07-08T08:49:54+03:00 chrome-trim term pid=1058170 count=22 rss_kb=991844
+2026-07-08T08:50:00+03:00 health-fail count=3815 pid=none http=200 ms=1 app_servers=8
+2026-07-08T08:50:00+03:00 restart-deferred reason=health-failures:3815:http-200 active_app_servers=8
+2026-07-08T08:52:14+03:00 chrome-trim term pid=1058393 count=22 rss_kb=992368
+2026-07-08T08:52:20+03:00 health-fail count=3816 pid=none http=200 ms=1 app_servers=8
+2026-07-08T08:52:20+03:00 restart-deferred reason=health-failures:3816:http-200 active_app_servers=8
+2026-07-08T08:54:34+03:00 chrome-trim term pid=1058536 count=22 rss_kb=988896
+2026-07-08T08:54:40+03:00 health-fail count=3817 pid=none http=200 ms=1 app_servers=8
+2026-07-08T08:54:40+03:00 restart-deferred reason=health-failures:3817:http-200 active_app_servers=8
+2026-07-08T08:56:54+03:00 chrome-trim term pid=1058683 count=22 rss_kb=996580
+2026-07-08T08:57:00+03:00 health-fail count=3818 pid=none http=200 ms=1 app_servers=8
+2026-07-08T08:57:00+03:00 restart-deferred reason=health-failures:3818:http-200 active_app_servers=8
+2026-07-08T08:59:14+03:00 chrome-trim term pid=1058903 count=22 rss_kb=971848
+2026-07-08T08:59:20+03:00 health-fail count=3819 pid=none http=200 ms=1 app_servers=8
+2026-07-08T08:59:20+03:00 restart-deferred reason=health-failures:3819:http-200 active_app_servers=8
+2026-07-08T09:01:34+03:00 chrome-trim term pid=1059048 count=22 rss_kb=987628
+2026-07-08T09:01:40+03:00 health-fail count=3820 pid=none http=200 ms=2 app_servers=6
+2026-07-08T09:01:40+03:00 restart-deferred reason=health-failures:3820:http-200 active_app_servers=6
+2026-07-08T09:03:54+03:00 chrome-trim term pid=1059670 count=22 rss_kb=993900
+2026-07-08T09:04:00+03:00 health-fail count=3821 pid=none http=200 ms=1 app_servers=6
+2026-07-08T09:04:00+03:00 restart-deferred reason=health-failures:3821:http-200 active_app_servers=6
+2026-07-08T09:06:14+03:00 chrome-trim term pid=1059810 count=22 rss_kb=993388
+2026-07-08T09:06:20+03:00 health-fail count=3822 pid=none http=200 ms=1 app_servers=6
+2026-07-08T09:06:20+03:00 restart-deferred reason=health-failures:3822:http-200 active_app_servers=6
+2026-07-08T09:08:34+03:00 chrome-trim term pid=1060032 count=22 rss_kb=994080
+2026-07-08T09:08:40+03:00 health-fail count=3823 pid=none http=200 ms=1 app_servers=6
+2026-07-08T09:08:40+03:00 restart-deferred reason=health-failures:3823:http-200 active_app_servers=6
+2026-07-08T09:10:54+03:00 chrome-trim term pid=1060217 count=22 rss_kb=1000440
+2026-07-08T09:10:59+03:00 health-fail count=3824 pid=none http=200 ms=1 app_servers=6
+2026-07-08T09:11:00+03:00 restart-deferred reason=health-failures:3824:http-200 active_app_servers=6
+2026-07-08T09:13:14+03:00 chrome-trim term pid=1060436 count=22 rss_kb=998192
+2026-07-08T09:13:20+03:00 health-fail count=3825 pid=none http=200 ms=1 app_servers=6
+2026-07-08T09:13:20+03:00 restart-deferred reason=health-failures:3825:http-200 active_app_servers=6
+2026-07-08T09:15:34+03:00 chrome-trim term pid=1060578 count=22 rss_kb=994964
+2026-07-08T09:15:40+03:00 health-fail count=3826 pid=none http=200 ms=3 app_servers=6
+2026-07-08T09:15:40+03:00 restart-deferred reason=health-failures:3826:http-200 active_app_servers=6
+2026-07-08T09:17:54+03:00 chrome-trim term pid=1060803 count=22 rss_kb=998276
+2026-07-08T09:18:00+03:00 health-fail count=3827 pid=none http=200 ms=1 app_servers=6
+2026-07-08T09:18:00+03:00 restart-deferred reason=health-failures:3827:http-200 active_app_servers=6
+2026-07-08T09:20:14+03:00 chrome-trim term pid=1060951 count=22 rss_kb=994940
+2026-07-08T09:20:19+03:00 health-fail count=3828 pid=none http=200 ms=1 app_servers=6
+2026-07-08T09:20:19+03:00 restart-deferred reason=health-failures:3828:http-200 active_app_servers=6
+2026-07-08T09:22:34+03:00 chrome-trim term pid=1061174 count=22 rss_kb=994660
+2026-07-08T09:22:40+03:00 health-fail count=3829 pid=none http=200 ms=1 app_servers=6
+2026-07-08T09:22:40+03:00 restart-deferred reason=health-failures:3829:http-200 active_app_servers=6
+2026-07-08T09:24:54+03:00 chrome-trim term pid=1061317 count=22 rss_kb=991084
+2026-07-08T09:24:59+03:00 health-fail count=3830 pid=none http=200 ms=1 app_servers=6
+2026-07-08T09:24:59+03:00 restart-deferred reason=health-failures:3830:http-200 active_app_servers=6
+2026-07-08T09:27:14+03:00 chrome-trim term pid=1061539 count=22 rss_kb=998372
+2026-07-08T09:27:20+03:00 health-fail count=3831 pid=none http=200 ms=5 app_servers=6
+2026-07-08T09:27:20+03:00 restart-deferred reason=health-failures:3831:http-200 active_app_servers=6
+2026-07-08T09:29:34+03:00 chrome-trim term pid=1061825 count=22 rss_kb=993572
+2026-07-08T09:29:40+03:00 health-fail count=3832 pid=none http=200 ms=1 app_servers=6
+2026-07-08T09:29:40+03:00 restart-deferred reason=health-failures:3832:http-200 active_app_servers=6
+2026-07-08T09:31:54+03:00 chrome-trim term pid=1062764 count=22 rss_kb=986992
+2026-07-08T09:32:00+03:00 health-fail count=3833 pid=none http=200 ms=1 app_servers=6
+2026-07-08T09:32:00+03:00 restart-deferred reason=health-failures:3833:http-200 active_app_servers=6
+2026-07-08T09:34:14+03:00 chrome-trim term pid=1063604 count=22 rss_kb=966424
+2026-07-08T09:34:20+03:00 health-fail count=3834 pid=none http=200 ms=1 app_servers=6
+2026-07-08T09:34:20+03:00 restart-deferred reason=health-failures:3834:http-200 active_app_servers=6
+2026-07-08T09:36:34+03:00 chrome-trim term pid=1063747 count=22 rss_kb=971336
+2026-07-08T09:36:40+03:00 health-fail count=3835 pid=none http=200 ms=1 app_servers=6
+2026-07-08T09:36:40+03:00 restart-deferred reason=health-failures:3835:http-200 active_app_servers=6
+2026-07-08T09:38:54+03:00 chrome-trim term pid=1063969 count=22 rss_kb=993344
+2026-07-08T09:39:00+03:00 health-fail count=3836 pid=none http=200 ms=1 app_servers=6
+2026-07-08T09:39:00+03:00 restart-deferred reason=health-failures:3836:http-200 active_app_servers=6
+2026-07-08T09:41:14+03:00 chrome-trim term pid=1064115 count=22 rss_kb=999588
+2026-07-08T09:41:19+03:00 health-fail count=3837 pid=none http=200 ms=1 app_servers=6
+2026-07-08T09:41:19+03:00 restart-deferred reason=health-failures:3837:http-200 active_app_servers=6
+2026-07-08T09:43:34+03:00 chrome-trim term pid=1064341 count=22 rss_kb=995104
+2026-07-08T09:43:40+03:00 health-fail count=3838 pid=none http=200 ms=1 app_servers=6
+2026-07-08T09:43:40+03:00 restart-deferred reason=health-failures:3838:http-200 active_app_servers=6
+2026-07-08T09:45:54+03:00 chrome-trim term pid=1064495 count=22 rss_kb=993124
+2026-07-08T09:46:00+03:00 health-fail count=3839 pid=none http=200 ms=1 app_servers=8
+2026-07-08T09:46:00+03:00 restart-deferred reason=health-failures:3839:http-200 active_app_servers=8
+2026-07-08T09:48:14+03:00 chrome-trim term pid=1065359 count=22 rss_kb=975308
+2026-07-08T09:48:20+03:00 health-fail count=3840 pid=none http=200 ms=1 app_servers=8
+2026-07-08T09:48:20+03:00 restart-deferred reason=health-failures:3840:http-200 active_app_servers=8
+2026-07-08T09:50:34+03:00 chrome-trim term pid=1066024 count=22 rss_kb=980740
+2026-07-08T09:50:40+03:00 health-fail count=3841 pid=none http=200 ms=1 app_servers=8
+2026-07-08T09:50:40+03:00 restart-deferred reason=health-failures:3841:http-200 active_app_servers=8
+2026-07-08T09:52:54+03:00 chrome-trim term pid=1066249 count=22 rss_kb=969064
+2026-07-08T09:53:00+03:00 health-fail count=3842 pid=none http=200 ms=1 app_servers=8
+2026-07-08T09:53:00+03:00 restart-deferred reason=health-failures:3842:http-200 active_app_servers=8
+2026-07-08T09:55:14+03:00 chrome-trim term pid=1066482 count=22 rss_kb=991796
+2026-07-08T09:55:20+03:00 health-fail count=3843 pid=none http=200 ms=1 app_servers=8
+2026-07-08T09:55:20+03:00 restart-deferred reason=health-failures:3843:http-200 active_app_servers=8
+2026-07-08T09:57:34+03:00 chrome-trim term pid=1070811 count=22 rss_kb=998136
+2026-07-08T09:57:39+03:00 health-fail count=3844 pid=none http=200 ms=1 app_servers=6
+2026-07-08T09:57:39+03:00 restart-deferred reason=health-failures:3844:http-200 active_app_servers=6
+2026-07-08T09:59:54+03:00 chrome-trim term pid=1095136 count=22 rss_kb=992268
+2026-07-08T09:59:59+03:00 health-fail count=3845 pid=none http=200 ms=1 app_servers=6
+2026-07-08T10:00:00+03:00 restart-deferred reason=health-failures:3845:http-200 active_app_servers=6
+2026-07-08T10:02:14+03:00 chrome-trim term pid=1095529 count=22 rss_kb=994476
+2026-07-08T10:02:20+03:00 health-fail count=3846 pid=none http=200 ms=1 app_servers=4
+2026-07-08T10:02:20+03:00 restart-deferred reason=health-failures:3846:http-200 active_app_servers=4
+2026-07-08T10:04:34+03:00 chrome-trim term pid=1096501 count=22 rss_kb=966996
+2026-07-08T10:04:40+03:00 health-fail count=3847 pid=none http=200 ms=1 app_servers=4
+2026-07-08T10:04:40+03:00 restart-deferred reason=health-failures:3847:http-200 active_app_servers=4
+2026-07-08T10:06:54+03:00 chrome-trim term pid=1096714 count=22 rss_kb=992192
+2026-07-08T10:07:00+03:00 health-fail count=3848 pid=none http=200 ms=1 app_servers=4
+2026-07-08T10:07:00+03:00 restart-deferred reason=health-failures:3848:http-200 active_app_servers=4
+2026-07-08T10:09:14+03:00 chrome-trim term pid=1096975 count=22 rss_kb=997396
+2026-07-08T10:09:20+03:00 health-fail count=3849 pid=none http=200 ms=1 app_servers=4
+2026-07-08T10:09:20+03:00 restart-deferred reason=health-failures:3849:http-200 active_app_servers=4
+2026-07-08T10:11:34+03:00 chrome-trim term pid=1097131 count=22 rss_kb=996400
+2026-07-08T10:11:40+03:00 health-fail count=3850 pid=none http=200 ms=1 app_servers=4
+2026-07-08T10:11:40+03:00 restart-deferred reason=health-failures:3850:http-200 active_app_servers=4
+2026-07-08T10:13:54+03:00 chrome-trim term pid=1097351 count=22 rss_kb=977472
+2026-07-08T10:14:00+03:00 health-fail count=3851 pid=none http=200 ms=1 app_servers=4
+2026-07-08T10:14:00+03:00 restart-deferred reason=health-failures:3851:http-200 active_app_servers=4
+2026-07-08T10:16:14+03:00 chrome-trim term pid=1097498 count=22 rss_kb=992720
+2026-07-08T10:16:20+03:00 health-fail count=3852 pid=none http=200 ms=1 app_servers=4
+2026-07-08T10:16:20+03:00 restart-deferred reason=health-failures:3852:http-200 active_app_servers=4
+2026-07-08T10:18:34+03:00 chrome-trim term pid=1097733 count=22 rss_kb=992772
+2026-07-08T10:18:40+03:00 health-fail count=3853 pid=none http=200 ms=1 app_servers=4
+2026-07-08T10:18:40+03:00 restart-deferred reason=health-failures:3853:http-200 active_app_servers=4
+2026-07-08T10:20:54+03:00 chrome-trim term pid=1097891 count=22 rss_kb=991752
+2026-07-08T10:20:59+03:00 health-fail count=3854 pid=none http=200 ms=1 app_servers=4
+2026-07-08T10:20:59+03:00 restart-deferred reason=health-failures:3854:http-200 active_app_servers=4
+2026-07-08T10:23:14+03:00 chrome-trim term pid=1098121 count=22 rss_kb=989836
+2026-07-08T10:23:20+03:00 health-fail count=3855 pid=none http=200 ms=1 app_servers=4
+2026-07-08T10:23:20+03:00 restart-deferred reason=health-failures:3855:http-200 active_app_servers=4
+2026-07-08T10:25:34+03:00 chrome-trim term pid=1098268 count=22 rss_kb=988928
+2026-07-08T10:25:40+03:00 health-fail count=3856 pid=none http=200 ms=1 app_servers=4
+2026-07-08T10:25:40+03:00 restart-deferred reason=health-failures:3856:http-200 active_app_servers=4
+2026-07-08T10:27:54+03:00 chrome-trim term pid=1098491 count=22 rss_kb=996660
+2026-07-08T10:28:00+03:00 health-fail count=3857 pid=none http=200 ms=1 app_servers=4
+2026-07-08T10:28:00+03:00 restart-deferred reason=health-failures:3857:http-200 active_app_servers=4
+2026-07-08T10:30:13+03:00 chrome-trim term pid=1098640 count=22 rss_kb=972604
+2026-07-08T10:30:18+03:00 health-fail count=3858 pid=none http=200 ms=3 app_servers=4
+2026-07-08T10:30:18+03:00 restart-deferred reason=health-failures:3858:http-200 active_app_servers=4
+2026-07-08T10:32:24+03:00 chrome-trim term pid=1098879 count=22 rss_kb=977596
+2026-07-08T10:32:30+03:00 health-fail count=3859 pid=none http=200 ms=1 app_servers=4
+2026-07-08T10:32:30+03:00 restart-deferred reason=health-failures:3859:http-200 active_app_servers=4
+2026-07-08T10:34:44+03:00 chrome-trim term pid=1099031 count=22 rss_kb=988408
+2026-07-08T10:34:50+03:00 health-fail count=3860 pid=none http=200 ms=1 app_servers=4
+2026-07-08T10:34:50+03:00 restart-deferred reason=health-failures:3860:http-200 active_app_servers=4
+2026-07-08T10:36:54+03:00 chrome-trim term pid=1099188 count=22 rss_kb=984900
+2026-07-08T10:37:00+03:00 health-fail count=3861 pid=none http=200 ms=1 app_servers=4
+2026-07-08T10:37:00+03:00 restart-deferred reason=health-failures:3861:http-200 active_app_servers=4
+2026-07-08T10:39:14+03:00 chrome-trim term pid=1099421 count=22 rss_kb=995744
+2026-07-08T10:39:20+03:00 health-fail count=3862 pid=none http=200 ms=1 app_servers=4
+2026-07-08T10:39:20+03:00 restart-deferred reason=health-failures:3862:http-200 active_app_servers=4
+2026-07-08T10:41:34+03:00 chrome-trim term pid=1099575 count=22 rss_kb=991264
+2026-07-08T10:41:40+03:00 health-fail count=3863 pid=none http=200 ms=1 app_servers=4
+2026-07-08T10:41:40+03:00 restart-deferred reason=health-failures:3863:http-200 active_app_servers=4
+2026-07-08T10:43:54+03:00 chrome-trim term pid=1099802 count=22 rss_kb=991940
+2026-07-08T10:43:59+03:00 health-fail count=3864 pid=none http=200 ms=1 app_servers=4
+2026-07-08T10:44:00+03:00 restart-deferred reason=health-failures:3864:http-200 active_app_servers=4
+2026-07-08T10:46:14+03:00 chrome-trim term pid=1099941 count=22 rss_kb=994500
+2026-07-08T10:46:20+03:00 health-fail count=3865 pid=none http=200 ms=1 app_servers=4
+2026-07-08T10:46:20+03:00 restart-deferred reason=health-failures:3865:http-200 active_app_servers=4
+2026-07-08T10:48:34+03:00 chrome-trim term pid=1100158 count=22 rss_kb=995812
+2026-07-08T10:48:40+03:00 health-fail count=3866 pid=none http=200 ms=1 app_servers=4
+2026-07-08T10:48:40+03:00 restart-deferred reason=health-failures:3866:http-200 active_app_servers=4
+2026-07-08T10:50:54+03:00 chrome-trim term pid=1100396 count=22 rss_kb=998948
+2026-07-08T10:51:00+03:00 health-fail count=3867 pid=none http=200 ms=1 app_servers=4
+2026-07-08T10:51:00+03:00 restart-deferred reason=health-failures:3867:http-200 active_app_servers=4
+2026-07-08T10:53:14+03:00 chrome-trim term pid=1100742 count=22 rss_kb=992192
+2026-07-08T10:53:20+03:00 health-fail count=3868 pid=none http=200 ms=1 app_servers=4
+2026-07-08T10:53:20+03:00 restart-deferred reason=health-failures:3868:http-200 active_app_servers=4
+2026-07-08T10:55:34+03:00 chrome-trim term pid=1100884 count=22 rss_kb=989876
+2026-07-08T10:55:40+03:00 health-fail count=3869 pid=none http=200 ms=1 app_servers=4
+2026-07-08T10:55:40+03:00 restart-deferred reason=health-failures:3869:http-200 active_app_servers=4
+2026-07-08T10:57:54+03:00 chrome-trim term pid=1101106 count=22 rss_kb=977164
+2026-07-08T10:57:59+03:00 health-fail count=3870 pid=none http=200 ms=1 app_servers=4
+2026-07-08T10:57:59+03:00 restart-deferred reason=health-failures:3870:http-200 active_app_servers=4
+2026-07-08T11:00:13+03:00 chrome-trim term pid=1101250 count=22 rss_kb=999800
+2026-07-08T11:00:19+03:00 health-fail count=3871 pid=none http=200 ms=2 app_servers=6
+2026-07-08T11:00:19+03:00 restart-deferred reason=health-failures:3871:http-200 active_app_servers=6
+2026-07-08T11:02:25+03:00 chrome-trim term pid=1101890 count=22 rss_kb=971248
+2026-07-08T11:02:30+03:00 health-fail count=3872 pid=none http=200 ms=1 app_servers=6
+2026-07-08T11:02:30+03:00 restart-deferred reason=health-failures:3872:http-200 active_app_servers=6
+2026-07-08T11:04:34+03:00 chrome-trim term pid=1102785 count=22 rss_kb=975440
+2026-07-08T11:04:39+03:00 health-fail count=3873 pid=none http=200 ms=1 app_servers=6
+2026-07-08T11:04:39+03:00 restart-deferred reason=health-failures:3873:http-200 active_app_servers=6
+2026-07-08T11:06:44+03:00 chrome-trim term pid=1103572 count=22 rss_kb=994768
+2026-07-08T11:06:50+03:00 health-fail count=3874 pid=none http=200 ms=1 app_servers=6
+2026-07-08T11:06:50+03:00 restart-deferred reason=health-failures:3874:http-200 active_app_servers=6
+2026-07-08T11:08:54+03:00 chrome-trim term pid=1104340 count=22 rss_kb=995384
+2026-07-08T11:09:00+03:00 health-fail count=3875 pid=none http=200 ms=17 app_servers=6
+2026-07-08T11:09:00+03:00 restart-deferred reason=health-failures:3875:http-200 active_app_servers=6
+2026-07-08T11:11:14+03:00 chrome-trim term pid=1105121 count=22 rss_kb=998484
+2026-07-08T11:11:20+03:00 health-fail count=3876 pid=none http=200 ms=1 app_servers=4
+2026-07-08T11:11:20+03:00 restart-deferred reason=health-failures:3876:http-200 active_app_servers=4
+2026-07-08T11:13:34+03:00 chrome-trim term pid=1105746 count=22 rss_kb=993512
+2026-07-08T11:13:39+03:00 health-fail count=3877 pid=none http=200 ms=1 app_servers=4
+2026-07-08T11:13:40+03:00 restart-deferred reason=health-failures:3877:http-200 active_app_servers=4
+2026-07-08T11:15:54+03:00 chrome-trim term pid=1105889 count=22 rss_kb=994248
+2026-07-08T11:15:59+03:00 health-fail count=3878 pid=none http=200 ms=1 app_servers=4
+2026-07-08T11:15:59+03:00 restart-deferred reason=health-failures:3878:http-200 active_app_servers=4
+2026-07-08T11:18:14+03:00 chrome-trim term pid=1106115 count=22 rss_kb=992880
+2026-07-08T11:18:19+03:00 health-fail count=3879 pid=none http=200 ms=1 app_servers=4
+2026-07-08T11:18:20+03:00 restart-deferred reason=health-failures:3879:http-200 active_app_servers=4
+2026-07-08T11:20:34+03:00 chrome-trim term pid=1106259 count=22 rss_kb=995416
+2026-07-08T11:20:40+03:00 health-fail count=3880 pid=none http=200 ms=1 app_servers=4
+2026-07-08T11:20:40+03:00 restart-deferred reason=health-failures:3880:http-200 active_app_servers=4
+2026-07-08T11:22:54+03:00 chrome-trim term pid=1106477 count=22 rss_kb=973400
+2026-07-08T11:23:00+03:00 health-fail count=3881 pid=none http=200 ms=1 app_servers=4
+2026-07-08T11:23:00+03:00 restart-deferred reason=health-failures:3881:http-200 active_app_servers=4
+2026-07-08T11:25:14+03:00 chrome-trim term pid=1106620 count=22 rss_kb=975660
+2026-07-08T11:25:20+03:00 health-fail count=3882 pid=none http=200 ms=1 app_servers=4
+2026-07-08T11:25:20+03:00 restart-deferred reason=health-failures:3882:http-200 active_app_servers=4
+2026-07-08T11:27:34+03:00 chrome-trim term pid=1106838 count=22 rss_kb=983056
+2026-07-08T11:27:40+03:00 health-fail count=3883 pid=none http=200 ms=1 app_servers=4
+2026-07-08T11:27:40+03:00 restart-deferred reason=health-failures:3883:http-200 active_app_servers=4
+2026-07-08T11:29:54+03:00 chrome-trim term pid=1107116 count=22 rss_kb=976092
+2026-07-08T11:30:00+03:00 health-fail count=3884 pid=none http=200 ms=2 app_servers=4
+2026-07-08T11:30:00+03:00 restart-deferred reason=health-failures:3884:http-200 active_app_servers=4
+2026-07-08T11:32:14+03:00 chrome-trim term pid=1107826 count=22 rss_kb=978068
+2026-07-08T11:32:20+03:00 health-fail count=3885 pid=none http=200 ms=1 app_servers=4
+2026-07-08T11:32:20+03:00 restart-deferred reason=health-failures:3885:http-200 active_app_servers=4
+2026-07-08T11:34:34+03:00 chrome-trim term pid=1108140 count=22 rss_kb=993224
+2026-07-08T11:34:40+03:00 health-fail count=3886 pid=none http=200 ms=1 app_servers=4
+2026-07-08T11:34:40+03:00 restart-deferred reason=health-failures:3886:http-200 active_app_servers=4
+2026-07-08T11:36:54+03:00 chrome-trim term pid=1108284 count=22 rss_kb=993052
+2026-07-08T11:37:00+03:00 health-fail count=3887 pid=none http=200 ms=1 app_servers=4
+2026-07-08T11:37:00+03:00 restart-deferred reason=health-failures:3887:http-200 active_app_servers=4
+2026-07-08T11:39:14+03:00 chrome-trim term pid=1108505 count=22 rss_kb=999820
+2026-07-08T11:39:20+03:00 health-fail count=3888 pid=none http=200 ms=1 app_servers=4
+2026-07-08T11:39:20+03:00 restart-deferred reason=health-failures:3888:http-200 active_app_servers=4
+2026-07-08T11:41:34+03:00 chrome-trim term pid=1108645 count=22 rss_kb=1002660
+2026-07-08T11:41:40+03:00 health-fail count=3889 pid=none http=200 ms=3 app_servers=4
+2026-07-08T11:41:40+03:00 restart-deferred reason=health-failures:3889:http-200 active_app_servers=4
+2026-07-08T11:43:54+03:00 chrome-trim term pid=1108865 count=22 rss_kb=998256
+2026-07-08T11:44:00+03:00 health-fail count=3890 pid=none http=200 ms=1 app_servers=4
+2026-07-08T11:44:00+03:00 restart-deferred reason=health-failures:3890:http-200 active_app_servers=4
+2026-07-08T11:46:14+03:00 chrome-trim term pid=1109009 count=22 rss_kb=997860
+2026-07-08T11:46:20+03:00 health-fail count=3891 pid=none http=200 ms=1 app_servers=8
+2026-07-08T11:46:20+03:00 restart-deferred reason=health-failures:3891:http-200 active_app_servers=8
+2026-07-08T11:48:34+03:00 chrome-trim term pid=1110112 count=22 rss_kb=1004436
+2026-07-08T11:48:40+03:00 health-fail count=3892 pid=none http=200 ms=1 app_servers=8
+2026-07-08T11:48:40+03:00 restart-deferred reason=health-failures:3892:http-200 active_app_servers=8
+2026-07-08T11:50:54+03:00 chrome-trim term pid=1110653 count=22 rss_kb=999512
+2026-07-08T11:51:00+03:00 health-fail count=3893 pid=none http=200 ms=1 app_servers=8
+2026-07-08T11:51:00+03:00 restart-deferred reason=health-failures:3893:http-200 active_app_servers=8
+2026-07-08T11:53:14+03:00 chrome-trim term pid=1110881 count=22 rss_kb=1000740
+2026-07-08T11:53:20+03:00 health-fail count=3894 pid=none http=200 ms=1 app_servers=8
+2026-07-08T11:53:20+03:00 restart-deferred reason=health-failures:3894:http-200 active_app_servers=8
+2026-07-08T11:55:34+03:00 chrome-trim term pid=1111025 count=22 rss_kb=998444
+2026-07-08T11:55:40+03:00 health-fail count=3895 pid=none http=200 ms=2 app_servers=8
+2026-07-08T11:55:40+03:00 restart-deferred reason=health-failures:3895:http-200 active_app_servers=8
+2026-07-08T11:57:54+03:00 chrome-trim term pid=1111247 count=22 rss_kb=999364
+2026-07-08T11:58:00+03:00 health-fail count=3896 pid=none http=200 ms=1 app_servers=8
+2026-07-08T11:58:00+03:00 restart-deferred reason=health-failures:3896:http-200 active_app_servers=8
+2026-07-08T12:00:14+03:00 chrome-trim term pid=1111390 count=22 rss_kb=1003536
+2026-07-08T12:00:19+03:00 health-fail count=3897 pid=none http=200 ms=1 app_servers=10
+2026-07-08T12:00:19+03:00 restart-deferred reason=health-failures:3897:http-200 active_app_servers=10
+2026-07-08T12:02:24+03:00 chrome-trim term pid=1112149 count=22 rss_kb=1002280
+2026-07-08T12:02:30+03:00 health-fail count=3898 pid=none http=200 ms=1 app_servers=8
+2026-07-08T12:02:30+03:00 restart-deferred reason=health-failures:3898:http-200 active_app_servers=8
+2026-07-08T12:04:44+03:00 chrome-trim term pid=1113556 count=22 rss_kb=1000964
+2026-07-08T12:04:50+03:00 health-fail count=3899 pid=none http=200 ms=1 app_servers=8
+2026-07-08T12:04:50+03:00 restart-deferred reason=health-failures:3899:http-200 active_app_servers=8
+2026-07-08T12:06:54+03:00 chrome-trim term pid=1114138 count=22 rss_kb=979752
+2026-07-08T12:07:00+03:00 health-fail count=3900 pid=none http=200 ms=1 app_servers=8
+2026-07-08T12:07:00+03:00 restart-deferred reason=health-failures:3900:http-200 active_app_servers=8
+2026-07-08T12:09:14+03:00 chrome-trim term pid=1114432 count=22 rss_kb=1000348
+2026-07-08T12:09:20+03:00 health-fail count=3901 pid=none http=200 ms=1 app_servers=8
+2026-07-08T12:09:20+03:00 restart-deferred reason=health-failures:3901:http-200 active_app_servers=8
+2026-07-08T12:11:34+03:00 chrome-trim term pid=1114586 count=22 rss_kb=994752
+2026-07-08T12:11:40+03:00 health-fail count=3902 pid=none http=200 ms=1 app_servers=8
+2026-07-08T12:11:40+03:00 restart-deferred reason=health-failures:3902:http-200 active_app_servers=8
+2026-07-08T12:13:54+03:00 chrome-trim term pid=1114814 count=22 rss_kb=1000320
+2026-07-08T12:14:00+03:00 health-fail count=3903 pid=none http=200 ms=1 app_servers=8
+2026-07-08T12:14:00+03:00 restart-deferred reason=health-failures:3903:http-200 active_app_servers=8
+2026-07-08T12:16:14+03:00 chrome-trim term pid=1114961 count=22 rss_kb=998492
+2026-07-08T12:16:20+03:00 health-fail count=3904 pid=none http=200 ms=1 app_servers=8
+2026-07-08T12:16:20+03:00 restart-deferred reason=health-failures:3904:http-200 active_app_servers=8
+2026-07-08T12:18:34+03:00 chrome-trim term pid=1115283 count=22 rss_kb=999884
+2026-07-08T12:18:40+03:00 health-fail count=3905 pid=none http=200 ms=3 app_servers=8
+2026-07-08T12:18:40+03:00 restart-deferred reason=health-failures:3905:http-200 active_app_servers=8
+2026-07-08T12:20:54+03:00 chrome-trim term pid=1115448 count=22 rss_kb=1005856
+2026-07-08T12:21:00+03:00 health-fail count=3906 pid=none http=200 ms=1 app_servers=8
+2026-07-08T12:21:00+03:00 restart-deferred reason=health-failures:3906:http-200 active_app_servers=8
+2026-07-08T12:23:14+03:00 chrome-trim term pid=1115686 count=22 rss_kb=998464
+2026-07-08T12:23:20+03:00 health-fail count=3907 pid=none http=200 ms=1 app_servers=8
+2026-07-08T12:23:20+03:00 restart-deferred reason=health-failures:3907:http-200 active_app_servers=8
+2026-07-08T12:25:34+03:00 chrome-trim term pid=1115905 count=22 rss_kb=1005840
+2026-07-08T12:25:40+03:00 health-fail count=3908 pid=none http=200 ms=1 app_servers=8
+2026-07-08T12:25:40+03:00 restart-deferred reason=health-failures:3908:http-200 active_app_servers=8
+2026-07-08T12:27:54+03:00 chrome-trim term pid=1116133 count=22 rss_kb=979152
+2026-07-08T12:27:59+03:00 health-fail count=3909 pid=none http=200 ms=1 app_servers=8
+2026-07-08T12:27:59+03:00 restart-deferred reason=health-failures:3909:http-200 active_app_servers=8
+2026-07-08T12:30:13+03:00 chrome-trim term pid=1116290 count=22 rss_kb=1001532
+2026-07-08T12:30:18+03:00 health-fail count=3910 pid=none http=200 ms=1 app_servers=8
+2026-07-08T12:30:18+03:00 restart-deferred reason=health-failures:3910:http-200 active_app_servers=8
+2026-07-08T12:32:24+03:00 chrome-trim term pid=1116528 count=22 rss_kb=1000828
+2026-07-08T12:32:30+03:00 health-fail count=3911 pid=none http=200 ms=1 app_servers=8
+2026-07-08T12:32:30+03:00 restart-deferred reason=health-failures:3911:http-200 active_app_servers=8
+2026-07-08T12:34:44+03:00 chrome-trim term pid=1116677 count=22 rss_kb=996292
+2026-07-08T12:34:50+03:00 health-fail count=3912 pid=none http=200 ms=1 app_servers=8
+2026-07-08T12:34:50+03:00 restart-deferred reason=health-failures:3912:http-200 active_app_servers=8
+2026-07-08T12:36:54+03:00 chrome-trim term pid=1116843 count=22 rss_kb=995756
+2026-07-08T12:37:00+03:00 health-fail count=3913 pid=none http=200 ms=2 app_servers=8
+2026-07-08T12:37:00+03:00 restart-deferred reason=health-failures:3913:http-200 active_app_servers=8
+2026-07-08T12:39:14+03:00 chrome-trim term pid=1117079 count=22 rss_kb=997232
+2026-07-08T12:39:20+03:00 health-fail count=3914 pid=none http=200 ms=1 app_servers=8
+2026-07-08T12:39:20+03:00 restart-deferred reason=health-failures:3914:http-200 active_app_servers=8
+2026-07-08T12:41:34+03:00 chrome-trim term pid=1117259 count=22 rss_kb=1008652
+2026-07-08T12:41:39+03:00 health-fail count=3915 pid=none http=200 ms=1 app_servers=8
+2026-07-08T12:41:40+03:00 restart-deferred reason=health-failures:3915:http-200 active_app_servers=8
+2026-07-08T12:43:54+03:00 chrome-trim term pid=1117489 count=22 rss_kb=999712
+2026-07-08T12:44:00+03:00 health-fail count=3916 pid=none http=200 ms=1 app_servers=8
+2026-07-08T12:44:00+03:00 restart-deferred reason=health-failures:3916:http-200 active_app_servers=8
+2026-07-08T12:46:14+03:00 chrome-trim term pid=1117631 count=22 rss_kb=976496
+2026-07-08T12:46:20+03:00 health-fail count=3917 pid=none http=200 ms=1 app_servers=8
+2026-07-08T12:46:20+03:00 restart-deferred reason=health-failures:3917:http-200 active_app_servers=8
+2026-07-08T12:48:34+03:00 chrome-trim term pid=1117848 count=22 rss_kb=987392
+2026-07-08T12:48:40+03:00 health-fail count=3918 pid=none http=200 ms=1 app_servers=10
+2026-07-08T12:48:40+03:00 restart-deferred reason=health-failures:3918:http-200 active_app_servers=10
+2026-07-08T12:50:48+03:00 chrome-trim term pid=1118533 count=22 rss_kb=998208
+2026-07-08T12:50:53+03:00 health-fail count=3919 pid=none http=200 ms=136 app_servers=10
+2026-07-08T12:50:53+03:00 restart-deferred reason=health-failures:3919:http-200 active_app_servers=10
+2026-07-08T12:52:54+03:00 chrome-trim term pid=1119757 count=22 rss_kb=1000204
+2026-07-08T12:53:00+03:00 health-fail count=3920 pid=none http=200 ms=1 app_servers=10
+2026-07-08T12:53:00+03:00 restart-deferred reason=health-failures:3920:http-200 active_app_servers=10
+2026-07-08T12:55:15+03:00 chrome-trim term pid=1120692 count=22 rss_kb=981840
+2026-07-08T12:55:21+03:00 health-fail count=3921 pid=none http=200 ms=2 app_servers=10
+2026-07-08T12:55:21+03:00 restart-deferred reason=health-failures:3921:http-200 active_app_servers=10
+2026-07-08T12:57:30+03:00 chrome-trim term pid=1124797 count=22 rss_kb=998844
+2026-07-08T12:57:35+03:00 health-fail count=3922 pid=none http=200 ms=1 app_servers=8
+2026-07-08T12:57:35+03:00 restart-deferred reason=health-failures:3922:http-200 active_app_servers=8
+2026-07-08T12:59:44+03:00 chrome-trim term pid=1150862 count=22 rss_kb=984276
+2026-07-08T12:59:50+03:00 health-fail count=3923 pid=none http=200 ms=1 app_servers=8
+2026-07-08T12:59:50+03:00 restart-deferred reason=health-failures:3923:http-200 active_app_servers=8
+2026-07-08T13:01:54+03:00 chrome-trim term pid=1151602 count=22 rss_kb=984536
+2026-07-08T13:02:00+03:00 health-fail count=3924 pid=none http=200 ms=1 app_servers=8
+2026-07-08T13:02:00+03:00 restart-deferred reason=health-failures:3924:http-200 active_app_servers=8
+2026-07-08T13:03:55+03:00 chrome-trim term pid=1153097 count=22 rss_kb=1003044
+2026-07-08T13:04:00+03:00 health-fail count=3925 pid=none http=200 ms=1 app_servers=8
+2026-07-08T13:04:00+03:00 restart-deferred reason=health-failures:3925:http-200 active_app_servers=8
+2026-07-08T13:06:14+03:00 chrome-trim term pid=1153867 count=22 rss_kb=1000044
+2026-07-08T13:06:19+03:00 health-fail count=3926 pid=none http=200 ms=1 app_servers=6
+2026-07-08T13:06:19+03:00 restart-deferred reason=health-failures:3926:http-200 active_app_servers=6
+2026-07-08T13:08:34+03:00 chrome-trim term pid=1154725 count=22 rss_kb=980180
+2026-07-08T13:08:40+03:00 health-fail count=3927 pid=none http=200 ms=1 app_servers=6
+2026-07-08T13:08:40+03:00 restart-deferred reason=health-failures:3927:http-200 active_app_servers=6
+2026-07-08T13:10:54+03:00 chrome-trim term pid=1154903 count=22 rss_kb=998160
+2026-07-08T13:11:00+03:00 health-fail count=3928 pid=none http=200 ms=3 app_servers=6
+2026-07-08T13:11:00+03:00 restart-deferred reason=health-failures:3928:http-200 active_app_servers=6
+2026-07-08T13:13:14+03:00 chrome-trim term pid=1155125 count=22 rss_kb=1000044
+2026-07-08T13:13:19+03:00 health-fail count=3929 pid=none http=200 ms=1 app_servers=6
+2026-07-08T13:13:20+03:00 restart-deferred reason=health-failures:3929:http-200 active_app_servers=6
+2026-07-08T13:15:34+03:00 chrome-trim term pid=1155262 count=22 rss_kb=982616
+2026-07-08T13:15:40+03:00 health-fail count=3930 pid=none http=200 ms=1 app_servers=6
+2026-07-08T13:15:40+03:00 restart-deferred reason=health-failures:3930:http-200 active_app_servers=6
+2026-07-08T13:17:54+03:00 chrome-trim term pid=1155481 count=22 rss_kb=1003716
+2026-07-08T13:18:00+03:00 health-fail count=3931 pid=none http=200 ms=1 app_servers=6
+2026-07-08T13:18:00+03:00 restart-deferred reason=health-failures:3931:http-200 active_app_servers=6
+2026-07-08T13:20:14+03:00 chrome-trim term pid=1155635 count=22 rss_kb=1004804
+2026-07-08T13:20:20+03:00 health-fail count=3932 pid=none http=200 ms=1 app_servers=6
+2026-07-08T13:20:20+03:00 restart-deferred reason=health-failures:3932:http-200 active_app_servers=6
+2026-07-08T13:22:34+03:00 chrome-trim term pid=1155851 count=22 rss_kb=1002348
+2026-07-08T13:22:40+03:00 health-fail count=3933 pid=none http=200 ms=1 app_servers=6
+2026-07-08T13:22:40+03:00 restart-deferred reason=health-failures:3933:http-200 active_app_servers=6
+2026-07-08T13:24:54+03:00 chrome-trim term pid=1155992 count=22 rss_kb=1002440
+2026-07-08T13:25:00+03:00 health-fail count=3934 pid=none http=200 ms=1 app_servers=6
+2026-07-08T13:25:00+03:00 restart-deferred reason=health-failures:3934:http-200 active_app_servers=6
+2026-07-08T13:27:14+03:00 chrome-trim term pid=1156216 count=22 rss_kb=1006372
+2026-07-08T13:27:20+03:00 health-fail count=3935 pid=none http=200 ms=2 app_servers=6
+2026-07-08T13:27:20+03:00 restart-deferred reason=health-failures:3935:http-200 active_app_servers=6
+2026-07-08T13:29:34+03:00 chrome-trim term pid=1156499 count=22 rss_kb=1000768
+2026-07-08T13:29:40+03:00 health-fail count=3936 pid=none http=200 ms=1 app_servers=6
+2026-07-08T13:29:40+03:00 restart-deferred reason=health-failures:3936:http-200 active_app_servers=6
+2026-07-08T13:31:54+03:00 chrome-trim term pid=1157087 count=22 rss_kb=1003316
+2026-07-08T13:32:00+03:00 health-fail count=3937 pid=none http=200 ms=1 app_servers=6
+2026-07-08T13:32:00+03:00 restart-deferred reason=health-failures:3937:http-200 active_app_servers=6
+2026-07-08T13:34:14+03:00 chrome-trim term pid=1157312 count=22 rss_kb=1005560
+2026-07-08T13:34:20+03:00 health-fail count=3938 pid=none http=200 ms=1 app_servers=6
+2026-07-08T13:34:20+03:00 restart-deferred reason=health-failures:3938:http-200 active_app_servers=6
+2026-07-08T13:36:34+03:00 chrome-trim term pid=1157460 count=22 rss_kb=1000404
+2026-07-08T13:36:40+03:00 health-fail count=3939 pid=none http=200 ms=1 app_servers=6
+2026-07-08T13:36:40+03:00 restart-deferred reason=health-failures:3939:http-200 active_app_servers=6
+2026-07-08T13:38:54+03:00 chrome-trim term pid=1157682 count=22 rss_kb=998316
+2026-07-08T13:38:59+03:00 health-fail count=3940 pid=none http=200 ms=1 app_servers=6
+2026-07-08T13:38:59+03:00 restart-deferred reason=health-failures:3940:http-200 active_app_servers=6
+2026-07-08T13:41:14+03:00 chrome-trim term pid=1157824 count=22 rss_kb=998324
+2026-07-08T13:41:20+03:00 health-fail count=3941 pid=none http=200 ms=1 app_servers=6
+2026-07-08T13:41:20+03:00 restart-deferred reason=health-failures:3941:http-200 active_app_servers=6
+2026-07-08T13:43:34+03:00 chrome-trim term pid=1158046 count=22 rss_kb=1003468
+2026-07-08T13:43:40+03:00 health-fail count=3942 pid=none http=200 ms=2 app_servers=6
+2026-07-08T13:43:40+03:00 restart-deferred reason=health-failures:3942:http-200 active_app_servers=6
+2026-07-08T13:45:54+03:00 chrome-trim term pid=1158193 count=22 rss_kb=980776
+2026-07-08T13:46:00+03:00 health-fail count=3943 pid=none http=200 ms=1 app_servers=10
+2026-07-08T13:46:00+03:00 restart-deferred reason=health-failures:3943:http-200 active_app_servers=10
+2026-07-08T13:48:14+03:00 chrome-trim term pid=1159188 count=22 rss_kb=1001184
+2026-07-08T13:48:20+03:00 health-fail count=3944 pid=none http=200 ms=1 app_servers=10
+2026-07-08T13:48:20+03:00 restart-deferred reason=health-failures:3944:http-200 active_app_servers=10
+2026-07-08T13:50:34+03:00 chrome-trim term pid=1159690 count=22 rss_kb=1001560
+2026-07-08T13:50:40+03:00 health-fail count=3945 pid=none http=200 ms=1 app_servers=10
+2026-07-08T13:50:40+03:00 restart-deferred reason=health-failures:3945:http-200 active_app_servers=10
+2026-07-08T13:52:54+03:00 chrome-trim term pid=1159914 count=22 rss_kb=1001480
+2026-07-08T13:52:59+03:00 health-fail count=3946 pid=none http=200 ms=1 app_servers=10
+2026-07-08T13:53:00+03:00 restart-deferred reason=health-failures:3946:http-200 active_app_servers=10
+2026-07-08T13:55:14+03:00 chrome-trim term pid=1160057 count=22 rss_kb=1000292
+2026-07-08T13:55:20+03:00 health-fail count=3947 pid=none http=200 ms=1 app_servers=10
+2026-07-08T13:55:20+03:00 restart-deferred reason=health-failures:3947:http-200 active_app_servers=10
+2026-07-08T13:57:34+03:00 chrome-trim term pid=1160282 count=22 rss_kb=983876
+2026-07-08T13:57:40+03:00 health-fail count=3948 pid=none http=200 ms=1 app_servers=10
+2026-07-08T13:57:40+03:00 restart-deferred reason=health-failures:3948:http-200 active_app_servers=10
+2026-07-08T13:59:54+03:00 chrome-trim term pid=1160426 count=22 rss_kb=1002160
+2026-07-08T14:00:00+03:00 health-fail count=3949 pid=none http=200 ms=1 app_servers=10
+2026-07-08T14:00:00+03:00 restart-deferred reason=health-failures:3949:http-200 active_app_servers=10
+2026-07-08T14:02:14+03:00 chrome-trim term pid=1160828 count=22 rss_kb=1003044
+2026-07-08T14:02:20+03:00 health-fail count=3950 pid=none http=200 ms=786 app_servers=6
+2026-07-08T14:02:20+03:00 restart-deferred reason=health-failures:3950:http-200 active_app_servers=6
+2026-07-08T14:04:34+03:00 chrome-trim term pid=1161943 count=22 rss_kb=1006928
+2026-07-08T14:04:40+03:00 health-fail count=3951 pid=none http=200 ms=666 app_servers=6
+2026-07-08T14:04:40+03:00 restart-deferred reason=health-failures:3951:http-200 active_app_servers=6
+2026-07-08T14:06:54+03:00 chrome-trim term pid=1162090 count=22 rss_kb=1004364
+2026-07-08T14:07:00+03:00 health-fail count=3952 pid=none http=200 ms=797 app_servers=6
+2026-07-08T14:07:00+03:00 restart-deferred reason=health-failures:3952:http-200 active_app_servers=6
+2026-07-08T14:09:14+03:00 chrome-trim term pid=1162348 count=22 rss_kb=1002968
+2026-07-08T14:09:20+03:00 health-fail count=3953 pid=none http=200 ms=551 app_servers=6
+2026-07-08T14:09:20+03:00 restart-deferred reason=health-failures:3953:http-200 active_app_servers=6
+2026-07-08T14:11:34+03:00 chrome-trim term pid=1162501 count=22 rss_kb=1001384
+2026-07-08T14:11:40+03:00 health-fail count=3954 pid=none http=200 ms=557 app_servers=6
+2026-07-08T14:11:40+03:00 restart-deferred reason=health-failures:3954:http-200 active_app_servers=6
+2026-07-08T14:13:54+03:00 chrome-trim term pid=1162727 count=22 rss_kb=1002136
+2026-07-08T14:14:01+03:00 health-fail count=3955 pid=none http=200 ms=952 app_servers=6
+2026-07-08T14:14:01+03:00 restart-deferred reason=health-failures:3955:http-200 active_app_servers=6
+2026-07-08T14:16:14+03:00 chrome-trim term pid=1162875 count=22 rss_kb=1001828
+2026-07-08T14:16:20+03:00 health-fail count=3956 pid=none http=200 ms=641 app_servers=6
+2026-07-08T14:16:20+03:00 restart-deferred reason=health-failures:3956:http-200 active_app_servers=6
+2026-07-08T14:18:34+03:00 chrome-trim term pid=1163102 count=22 rss_kb=998436
+2026-07-08T14:18:40+03:00 health-fail count=3957 pid=none http=200 ms=742 app_servers=6
+2026-07-08T14:18:40+03:00 restart-deferred reason=health-failures:3957:http-200 active_app_servers=6
+2026-07-08T14:20:54+03:00 chrome-trim term pid=1163259 count=22 rss_kb=1004892
+2026-07-08T14:21:00+03:00 health-fail count=3958 pid=none http=200 ms=958 app_servers=6
+2026-07-08T14:21:00+03:00 restart-deferred reason=health-failures:3958:http-200 active_app_servers=6
+2026-07-08T14:23:14+03:00 chrome-trim term pid=1163487 count=22 rss_kb=997052
+2026-07-08T14:23:20+03:00 health-fail count=3959 pid=none http=200 ms=514 app_servers=6
+2026-07-08T14:23:20+03:00 restart-deferred reason=health-failures:3959:http-200 active_app_servers=6
+2026-07-08T14:25:34+03:00 chrome-trim term pid=1163643 count=22 rss_kb=997236
+2026-07-08T14:25:40+03:00 health-fail count=3960 pid=none http=200 ms=661 app_servers=6
+2026-07-08T14:25:40+03:00 restart-deferred reason=health-failures:3960:http-200 active_app_servers=6
+2026-07-08T14:27:54+03:00 chrome-trim term pid=1163879 count=22 rss_kb=1003792
+2026-07-08T14:28:00+03:00 health-fail count=3961 pid=none http=200 ms=948 app_servers=6
+2026-07-08T14:28:00+03:00 restart-deferred reason=health-failures:3961:http-200 active_app_servers=6
+2026-07-08T14:30:13+03:00 chrome-trim term pid=1164038 count=22 rss_kb=1001568
+2026-07-08T14:30:18+03:00 health-fail count=3962 pid=none http=200 ms=3 app_servers=6
+2026-07-08T14:30:18+03:00 restart-deferred reason=health-failures:3962:http-200 active_app_servers=6
+2026-07-08T14:32:24+03:00 chrome-trim term pid=1164272 count=22 rss_kb=989400
+2026-07-08T14:32:30+03:00 health-fail count=3963 pid=none http=200 ms=689 app_servers=6
+2026-07-08T14:32:30+03:00 restart-deferred reason=health-failures:3963:http-200 active_app_servers=6
+2026-07-08T14:34:44+03:00 chrome-trim term pid=1164431 count=22 rss_kb=994196
+2026-07-08T14:34:50+03:00 health-fail count=3964 pid=none http=200 ms=901 app_servers=6
+2026-07-08T14:34:50+03:00 restart-deferred reason=health-failures:3964:http-200 active_app_servers=6
+2026-07-08T14:36:54+03:00 chrome-trim term pid=1164587 count=22 rss_kb=1001032
+2026-07-08T14:37:00+03:00 health-fail count=3965 pid=none http=200 ms=713 app_servers=6
+2026-07-08T14:37:00+03:00 restart-deferred reason=health-failures:3965:http-200 active_app_servers=6
+2026-07-08T14:39:14+03:00 chrome-trim term pid=1164822 count=22 rss_kb=998780
+2026-07-08T14:39:20+03:00 health-fail count=3966 pid=none http=200 ms=768 app_servers=6
+2026-07-08T14:39:20+03:00 restart-deferred reason=health-failures:3966:http-200 active_app_servers=6
+2026-07-08T14:41:34+03:00 chrome-trim term pid=1164974 count=22 rss_kb=980948
+2026-07-08T14:41:40+03:00 health-fail count=3967 pid=none http=200 ms=610 app_servers=6
+2026-07-08T14:41:40+03:00 restart-deferred reason=health-failures:3967:http-200 active_app_servers=6
+2026-07-08T14:43:54+03:00 chrome-trim term pid=1165204 count=22 rss_kb=1005300
+2026-07-08T14:44:01+03:00 health-fail count=3968 pid=none http=200 ms=1008 app_servers=6
+2026-07-08T14:44:01+03:00 restart-deferred reason=health-failures:3968:http-200 active_app_servers=6
+2026-07-08T14:46:14+03:00 chrome-trim term pid=1165345 count=22 rss_kb=1000728
+2026-07-08T14:46:20+03:00 health-fail count=3969 pid=none http=200 ms=629 app_servers=6
+2026-07-08T14:46:20+03:00 restart-deferred reason=health-failures:3969:http-200 active_app_servers=6
+2026-07-08T14:48:34+03:00 chrome-trim term pid=1165564 count=22 rss_kb=981984
+2026-07-08T14:48:40+03:00 health-fail count=3970 pid=none http=200 ms=613 app_servers=6
+2026-07-08T14:48:40+03:00 restart-deferred reason=health-failures:3970:http-200 active_app_servers=6
+2026-07-08T14:50:54+03:00 chrome-trim term pid=1165709 count=22 rss_kb=991748
+2026-07-08T14:51:00+03:00 health-fail count=3971 pid=none http=200 ms=897 app_servers=6
+2026-07-08T14:51:00+03:00 restart-deferred reason=health-failures:3971:http-200 active_app_servers=6
+2026-07-08T14:53:14+03:00 chrome-trim term pid=1165936 count=22 rss_kb=1003088
+2026-07-08T14:53:20+03:00 health-fail count=3972 pid=none http=200 ms=650 app_servers=6
+2026-07-08T14:53:20+03:00 restart-deferred reason=health-failures:3972:http-200 active_app_servers=6
+2026-07-08T14:55:34+03:00 chrome-trim term pid=1166074 count=22 rss_kb=1006804
+2026-07-08T14:55:40+03:00 health-fail count=3973 pid=none http=200 ms=716 app_servers=6
+2026-07-08T14:55:40+03:00 restart-deferred reason=health-failures:3973:http-200 active_app_servers=6
+2026-07-08T14:57:54+03:00 chrome-trim term pid=1166473 count=22 rss_kb=1000148
+2026-07-08T14:58:00+03:00 health-fail count=3974 pid=none http=200 ms=912 app_servers=6
+2026-07-08T14:58:00+03:00 restart-deferred reason=health-failures:3974:http-200 active_app_servers=6
+2026-07-08T15:00:13+03:00 chrome-trim term pid=1166684 count=22 rss_kb=1005460
+2026-07-08T15:00:19+03:00 health-fail count=3975 pid=none http=200 ms=4 app_servers=8
+2026-07-08T15:00:19+03:00 restart-deferred reason=health-failures:3975:http-200 active_app_servers=8
+2026-07-08T15:02:25+03:00 chrome-trim term pid=1167215 count=22 rss_kb=999436
+2026-07-08T15:02:30+03:00 health-fail count=3976 pid=none http=200 ms=124 app_servers=8
+2026-07-08T15:02:30+03:00 restart-deferred reason=health-failures:3976:http-200 active_app_servers=8
+2026-07-08T15:04:44+03:00 chrome-trim term pid=1168694 count=22 rss_kb=985200
+2026-07-08T15:04:50+03:00 health-fail count=3977 pid=none http=200 ms=645 app_servers=8
+2026-07-08T15:04:50+03:00 restart-deferred reason=health-failures:3977:http-200 active_app_servers=8
+2026-07-08T15:06:55+03:00 chrome-trim term pid=1169612 count=22 rss_kb=986340
+2026-07-08T15:07:01+03:00 health-fail count=3978 pid=none http=200 ms=539 app_servers=8
+2026-07-08T15:07:01+03:00 restart-deferred reason=health-failures:3978:http-200 active_app_servers=8
+2026-07-08T15:08:55+03:00 chrome-trim term pid=1170725 count=22 rss_kb=1002380
+2026-07-08T15:09:02+03:00 health-fail count=3979 pid=none http=200 ms=1303 app_servers=8
+2026-07-08T15:09:02+03:00 restart-deferred reason=health-failures:3979:http-200 active_app_servers=8
+2026-07-08T15:11:14+03:00 chrome-trim term pid=1171384 count=22 rss_kb=999936
+2026-07-08T15:11:20+03:00 health-fail count=3980 pid=none http=200 ms=1 app_servers=8
+2026-07-08T15:11:20+03:00 restart-deferred reason=health-failures:3980:http-200 active_app_servers=8
+2026-07-08T15:13:24+03:00 chrome-trim term pid=1172389 count=22 rss_kb=1003624
+2026-07-08T15:13:29+03:00 health-fail count=3981 pid=none http=200 ms=3 app_servers=8
+2026-07-08T15:13:29+03:00 restart-deferred reason=health-failures:3981:http-200 active_app_servers=8
+2026-07-08T15:15:33+03:00 chrome-trim term pid=1173741 count=22 rss_kb=998944
+2026-07-08T15:15:38+03:00 health-fail count=3982 pid=none http=200 ms=1 app_servers=8
+2026-07-08T15:15:38+03:00 restart-deferred reason=health-failures:3982:http-200 active_app_servers=8
+2026-07-08T15:17:44+03:00 chrome-trim term pid=1175117 count=22 rss_kb=983388
+2026-07-08T15:17:50+03:00 health-fail count=3983 pid=none http=200 ms=3 app_servers=8
+2026-07-08T15:17:50+03:00 restart-deferred reason=health-failures:3983:http-200 active_app_servers=8
+2026-07-08T15:19:54+03:00 chrome-trim term pid=1176197 count=22 rss_kb=1002504
+2026-07-08T15:19:59+03:00 health-fail count=3984 pid=none http=200 ms=1 app_servers=8
+2026-07-08T15:19:59+03:00 restart-deferred reason=health-failures:3984:http-200 active_app_servers=8
+2026-07-08T15:22:14+03:00 chrome-trim term pid=1176889 count=22 rss_kb=1001704
+2026-07-08T15:22:19+03:00 health-fail count=3985 pid=none http=200 ms=1 app_servers=8
+2026-07-08T15:22:19+03:00 restart-deferred reason=health-failures:3985:http-200 active_app_servers=8
+2026-07-08T15:24:34+03:00 chrome-trim term pid=1177036 count=22 rss_kb=1000780
+2026-07-08T15:24:39+03:00 health-fail count=3986 pid=none http=200 ms=1 app_servers=8
+2026-07-08T15:24:40+03:00 restart-deferred reason=health-failures:3986:http-200 active_app_servers=8
+2026-07-08T15:26:54+03:00 chrome-trim term pid=1177180 count=22 rss_kb=1004700
+2026-07-08T15:27:06+03:00 health-fail count=3987 pid=none http=000 ms=6004 app_servers=8
+2026-07-08T15:27:06+03:00 restart-deferred reason=health-failures:3987:http-000 active_app_servers=8
+2026-07-08T15:28:59+03:00 chrome-trim term pid=1177400 count=22 rss_kb=981444
+2026-07-08T15:29:04+03:00 health-fail count=3988 pid=none http=200 ms=1 app_servers=8
+2026-07-08T15:29:04+03:00 restart-deferred reason=health-failures:3988:http-200 active_app_servers=8
+2026-07-08T15:31:07+03:00 chrome-trim term pid=1179200 count=22 rss_kb=981764
+2026-07-08T15:31:12+03:00 health-fail count=3989 pid=none http=200 ms=1 app_servers=8
+2026-07-08T15:31:12+03:00 restart-deferred reason=health-failures:3989:http-200 active_app_servers=8
+2026-07-08T15:33:22+03:00 chrome-trim term pid=1180207 count=22 rss_kb=1002428
+2026-07-08T15:33:28+03:00 health-fail count=3990 pid=none http=200 ms=144 app_servers=8
+2026-07-08T15:33:28+03:00 restart-deferred reason=health-failures:3990:http-200 active_app_servers=8
+2026-07-08T15:35:34+03:00 chrome-trim term pid=1181025 count=22 rss_kb=979328
+2026-07-08T15:35:40+03:00 health-fail count=3991 pid=none http=200 ms=1 app_servers=8
+2026-07-08T15:35:40+03:00 restart-deferred reason=health-failures:3991:http-200 active_app_servers=8
+2026-07-08T15:37:54+03:00 chrome-trim term pid=1181819 count=22 rss_kb=1001848
+2026-07-08T15:38:00+03:00 health-fail count=3992 pid=none http=200 ms=1 app_servers=8
+2026-07-08T15:38:00+03:00 restart-deferred reason=health-failures:3992:http-200 active_app_servers=8
+2026-07-08T15:40:06+03:00 chrome-trim term pid=1182727 count=22 rss_kb=984068
+2026-07-08T15:40:11+03:00 health-fail count=3993 pid=none http=200 ms=1 app_servers=8
+2026-07-08T15:40:11+03:00 restart-deferred reason=health-failures:3993:http-200 active_app_servers=8
+2026-07-08T15:42:24+03:00 chrome-trim term pid=1183781 count=22 rss_kb=985732
+2026-07-08T15:42:30+03:00 health-fail count=3994 pid=none http=200 ms=1 app_servers=8
+2026-07-08T15:42:30+03:00 restart-deferred reason=health-failures:3994:http-200 active_app_servers=8
+2026-07-08T15:44:44+03:00 chrome-trim term pid=1184503 count=22 rss_kb=1001992
+2026-07-08T15:44:50+03:00 health-fail count=3995 pid=none http=200 ms=1 app_servers=8
+2026-07-08T15:44:50+03:00 restart-deferred reason=health-failures:3995:http-200 active_app_servers=8
+2026-07-08T15:46:54+03:00 chrome-trim term pid=1184646 count=22 rss_kb=999740
+2026-07-08T15:47:00+03:00 health-fail count=3996 pid=none http=200 ms=1 app_servers=10
+2026-07-08T15:47:00+03:00 restart-deferred reason=health-failures:3996:http-200 active_app_servers=10
+2026-07-08T15:49:14+03:00 chrome-trim term pid=1185430 count=22 rss_kb=1003640
+2026-07-08T15:49:20+03:00 health-fail count=3997 pid=none http=200 ms=1 app_servers=10
+2026-07-08T15:49:20+03:00 restart-deferred reason=health-failures:3997:http-200 active_app_servers=10
+2026-07-08T15:51:34+03:00 chrome-trim term pid=1185575 count=22 rss_kb=982152
+2026-07-08T15:51:40+03:00 health-fail count=3998 pid=none http=200 ms=1 app_servers=10
+2026-07-08T15:51:40+03:00 restart-deferred reason=health-failures:3998:http-200 active_app_servers=10
+2026-07-08T15:53:54+03:00 chrome-trim term pid=1185796 count=22 rss_kb=988700
+2026-07-08T15:54:00+03:00 health-fail count=3999 pid=none http=200 ms=1 app_servers=10
+2026-07-08T15:54:00+03:00 restart-deferred reason=health-failures:3999:http-200 active_app_servers=10
+2026-07-08T15:56:15+03:00 chrome-trim term pid=1185949 count=22 rss_kb=1004184
+2026-07-08T15:56:20+03:00 health-fail count=4000 pid=none http=200 ms=2 app_servers=10
+2026-07-08T15:56:20+03:00 restart-deferred reason=health-failures:4000:http-200 active_app_servers=10
+2026-07-08T15:58:34+03:00 chrome-trim term pid=1213074 count=22 rss_kb=1005916
+2026-07-08T15:58:39+03:00 health-fail count=4001 pid=none http=200 ms=1 app_servers=8
+2026-07-08T15:58:39+03:00 restart-deferred reason=health-failures:4001:http-200 active_app_servers=8
+2026-07-08T16:00:50+03:00 chrome-trim term pid=1214809 count=22 rss_kb=1002720
+2026-07-08T16:00:55+03:00 health-fail count=4002 pid=none http=200 ms=2 app_servers=6
+2026-07-08T16:00:55+03:00 restart-deferred reason=health-failures:4002:http-200 active_app_servers=6
+2026-07-08T16:02:54+03:00 chrome-trim term pid=1216246 count=22 rss_kb=998852
+2026-07-08T16:03:00+03:00 health-fail count=4003 pid=none http=200 ms=1 app_servers=4
+2026-07-08T16:03:00+03:00 restart-deferred reason=health-failures:4003:http-200 active_app_servers=4
+2026-07-08T16:05:14+03:00 chrome-trim term pid=1216559 count=22 rss_kb=997556
+2026-07-08T16:05:20+03:00 health-fail count=4004 pid=none http=200 ms=1 app_servers=4
+2026-07-08T16:05:20+03:00 restart-deferred reason=health-failures:4004:http-200 active_app_servers=4
+2026-07-08T16:07:34+03:00 chrome-trim term pid=1216782 count=22 rss_kb=978736
+2026-07-08T16:07:39+03:00 health-fail count=4005 pid=none http=200 ms=1 app_servers=4
+2026-07-08T16:07:39+03:00 restart-deferred reason=health-failures:4005:http-200 active_app_servers=4
+2026-07-08T16:09:54+03:00 chrome-trim term pid=1216963 count=22 rss_kb=986232
+2026-07-08T16:10:00+03:00 health-fail count=4006 pid=none http=200 ms=1 app_servers=4
+2026-07-08T16:10:00+03:00 restart-deferred reason=health-failures:4006:http-200 active_app_servers=4
+2026-07-08T16:12:14+03:00 chrome-trim term pid=1217195 count=22 rss_kb=979488
+2026-07-08T16:12:20+03:00 health-fail count=4007 pid=none http=200 ms=1 app_servers=4
+2026-07-08T16:12:20+03:00 restart-deferred reason=health-failures:4007:http-200 active_app_servers=4
+2026-07-08T16:14:34+03:00 chrome-trim term pid=1217339 count=22 rss_kb=995216
+2026-07-08T16:14:40+03:00 health-fail count=4008 pid=none http=200 ms=1 app_servers=4
+2026-07-08T16:14:40+03:00 restart-deferred reason=health-failures:4008:http-200 active_app_servers=4
+2026-07-08T16:16:54+03:00 chrome-trim term pid=1217493 count=22 rss_kb=1001184
+2026-07-08T16:17:00+03:00 health-fail count=4009 pid=none http=200 ms=1 app_servers=6
+2026-07-08T16:17:00+03:00 restart-deferred reason=health-failures:4009:http-200 active_app_servers=6
+2026-07-08T16:19:14+03:00 chrome-trim term pid=1217981 count=22 rss_kb=999520
+2026-07-08T16:19:20+03:00 health-fail count=4010 pid=none http=200 ms=1 app_servers=6
+2026-07-08T16:19:20+03:00 restart-deferred reason=health-failures:4010:http-200 active_app_servers=6
+2026-07-08T16:21:34+03:00 chrome-trim term pid=1218131 count=22 rss_kb=1004404
+2026-07-08T16:21:40+03:00 health-fail count=4011 pid=none http=200 ms=1 app_servers=6
+2026-07-08T16:21:40+03:00 restart-deferred reason=health-failures:4011:http-200 active_app_servers=6
+2026-07-08T16:23:54+03:00 chrome-trim term pid=1218361 count=22 rss_kb=1000992
+2026-07-08T16:24:00+03:00 health-fail count=4012 pid=none http=200 ms=1 app_servers=6
+2026-07-08T16:24:00+03:00 restart-deferred reason=health-failures:4012:http-200 active_app_servers=6
+2026-07-08T16:26:14+03:00 chrome-trim term pid=1218580 count=22 rss_kb=980744
+2026-07-08T16:26:20+03:00 health-fail count=4013 pid=none http=200 ms=1 app_servers=6
+2026-07-08T16:26:20+03:00 restart-deferred reason=health-failures:4013:http-200 active_app_servers=6
+2026-07-08T16:28:34+03:00 chrome-trim term pid=1218811 count=22 rss_kb=987740
+2026-07-08T16:28:40+03:00 health-fail count=4014 pid=none http=200 ms=1 app_servers=6
+2026-07-08T16:28:40+03:00 restart-deferred reason=health-failures:4014:http-200 active_app_servers=6
+2026-07-08T16:30:54+03:00 chrome-trim term pid=1218973 count=22 rss_kb=996200
+2026-07-08T16:31:00+03:00 health-fail count=4015 pid=none http=200 ms=2 app_servers=6
+2026-07-08T16:31:00+03:00 restart-deferred reason=health-failures:4015:http-200 active_app_servers=6
+2026-07-08T16:33:14+03:00 chrome-trim term pid=1219206 count=22 rss_kb=1001816
+2026-07-08T16:33:20+03:00 health-fail count=4016 pid=none http=200 ms=1 app_servers=6
+2026-07-08T16:33:20+03:00 restart-deferred reason=health-failures:4016:http-200 active_app_servers=6
+2026-07-08T16:35:34+03:00 chrome-trim term pid=1219356 count=22 rss_kb=984560
+2026-07-08T16:35:40+03:00 health-fail count=4017 pid=none http=200 ms=1 app_servers=6
+2026-07-08T16:35:40+03:00 restart-deferred reason=health-failures:4017:http-200 active_app_servers=6
+2026-07-08T16:37:54+03:00 chrome-trim term pid=1219598 count=22 rss_kb=1000988
+2026-07-08T16:38:00+03:00 health-fail count=4018 pid=none http=200 ms=1 app_servers=6
+2026-07-08T16:38:00+03:00 restart-deferred reason=health-failures:4018:http-200 active_app_servers=6
+2026-07-08T16:40:14+03:00 chrome-trim term pid=1219756 count=22 rss_kb=1002240
+2026-07-08T16:40:20+03:00 health-fail count=4019 pid=none http=200 ms=1 app_servers=6
+2026-07-08T16:40:20+03:00 restart-deferred reason=health-failures:4019:http-200 active_app_servers=6
+2026-07-08T16:42:20+03:00 chrome-trim term pid=1219997 count=22 rss_kb=998952
+2026-07-08T16:42:25+03:00 health-fail count=4020 pid=none http=200 ms=1 app_servers=6
+2026-07-08T16:42:25+03:00 restart-deferred reason=health-failures:4020:http-200 active_app_servers=6
+2026-07-08T16:44:34+03:00 chrome-trim term pid=1220690 count=22 rss_kb=999420
+2026-07-08T16:44:40+03:00 health-fail count=4021 pid=none http=200 ms=1 app_servers=6
+2026-07-08T16:44:40+03:00 restart-deferred reason=health-failures:4021:http-200 active_app_servers=6
+2026-07-08T16:46:54+03:00 chrome-trim term pid=1221563 count=22 rss_kb=1001844
+2026-07-08T16:47:00+03:00 health-fail count=4022 pid=none http=200 ms=1 app_servers=6
+2026-07-08T16:47:00+03:00 restart-deferred reason=health-failures:4022:http-200 active_app_servers=6
+2026-07-08T16:48:55+03:00 chrome-trim term pid=1222664 count=22 rss_kb=978432
+2026-07-08T16:49:00+03:00 health-fail count=4023 pid=none http=200 ms=1 app_servers=6
+2026-07-08T16:49:00+03:00 restart-deferred reason=health-failures:4023:http-200 active_app_servers=6
+2026-07-08T16:51:03+03:00 chrome-trim term pid=1223400 count=22 rss_kb=983664
+2026-07-08T16:51:09+03:00 health-fail count=4024 pid=none http=200 ms=471 app_servers=6
+2026-07-08T16:51:09+03:00 restart-deferred reason=health-failures:4024:http-200 active_app_servers=6
+2026-07-08T16:53:14+03:00 chrome-trim term pid=1224279 count=22 rss_kb=998416
+2026-07-08T16:53:20+03:00 health-fail count=4025 pid=none http=200 ms=1 app_servers=6
+2026-07-08T16:53:20+03:00 restart-deferred reason=health-failures:4025:http-200 active_app_servers=6
+2026-07-08T16:55:34+03:00 chrome-trim term pid=1224499 count=22 rss_kb=999044
+2026-07-08T16:55:40+03:00 health-fail count=4026 pid=none http=200 ms=1 app_servers=6
+2026-07-08T16:55:40+03:00 restart-deferred reason=health-failures:4026:http-200 active_app_servers=6
+2026-07-08T16:57:54+03:00 chrome-trim term pid=1224715 count=22 rss_kb=1001160
+2026-07-08T16:58:00+03:00 health-fail count=4027 pid=none http=200 ms=1 app_servers=6
+2026-07-08T16:58:00+03:00 restart-deferred reason=health-failures:4027:http-200 active_app_servers=6
+2026-07-08T17:00:13+03:00 chrome-trim term pid=1224858 count=22 rss_kb=982404
+2026-07-08T17:00:19+03:00 health-fail count=4028 pid=none http=200 ms=644 app_servers=6
+2026-07-08T17:00:19+03:00 restart-deferred reason=health-failures:4028:http-200 active_app_servers=6
+2026-07-08T17:02:24+03:00 chrome-trim term pid=1225445 count=22 rss_kb=989264
+2026-07-08T17:02:30+03:00 health-fail count=4029 pid=none http=200 ms=1 app_servers=6
+2026-07-08T17:02:30+03:00 restart-deferred reason=health-failures:4029:http-200 active_app_servers=6
+2026-07-08T17:04:44+03:00 chrome-trim term pid=1226252 count=22 rss_kb=998828
+2026-07-08T17:04:50+03:00 health-fail count=4030 pid=none http=200 ms=1 app_servers=6
+2026-07-08T17:04:50+03:00 restart-deferred reason=health-failures:4030:http-200 active_app_servers=6
+2026-07-08T17:06:54+03:00 chrome-trim term pid=1226398 count=22 rss_kb=1005552
+2026-07-08T17:07:00+03:00 health-fail count=4031 pid=none http=200 ms=1 app_servers=6
+2026-07-08T17:07:00+03:00 restart-deferred reason=health-failures:4031:http-200 active_app_servers=6
+2026-07-08T17:09:14+03:00 chrome-trim term pid=1226650 count=22 rss_kb=1005364
+2026-07-08T17:09:20+03:00 health-fail count=4032 pid=none http=200 ms=1 app_servers=6
+2026-07-08T17:09:20+03:00 restart-deferred reason=health-failures:4032:http-200 active_app_servers=6
+2026-07-08T17:11:34+03:00 chrome-trim term pid=1226800 count=22 rss_kb=978676
+2026-07-08T17:11:40+03:00 health-fail count=4033 pid=none http=200 ms=2 app_servers=6
+2026-07-08T17:11:40+03:00 restart-deferred reason=health-failures:4033:http-200 active_app_servers=6
+2026-07-08T17:13:54+03:00 chrome-trim term pid=1227022 count=22 rss_kb=983556
+2026-07-08T17:14:00+03:00 health-fail count=4034 pid=none http=200 ms=1 app_servers=6
+2026-07-08T17:14:00+03:00 restart-deferred reason=health-failures:4034:http-200 active_app_servers=6
+2026-07-08T17:16:14+03:00 chrome-trim term pid=1227167 count=22 rss_kb=1000372
+2026-07-08T17:16:20+03:00 health-fail count=4035 pid=none http=200 ms=1 app_servers=6
+2026-07-08T17:16:20+03:00 restart-deferred reason=health-failures:4035:http-200 active_app_servers=6
+2026-07-08T17:18:34+03:00 chrome-trim term pid=1227389 count=22 rss_kb=980140
+2026-07-08T17:18:40+03:00 health-fail count=4036 pid=none http=200 ms=1 app_servers=6
+2026-07-08T17:18:40+03:00 restart-deferred reason=health-failures:4036:http-200 active_app_servers=6
+2026-07-08T17:20:54+03:00 chrome-trim term pid=1227536 count=22 rss_kb=983428
+2026-07-08T17:21:00+03:00 health-fail count=4037 pid=none http=200 ms=1 app_servers=6
+2026-07-08T17:21:00+03:00 restart-deferred reason=health-failures:4037:http-200 active_app_servers=6
+2026-07-08T17:23:14+03:00 chrome-trim term pid=1227758 count=22 rss_kb=1001984
+2026-07-08T17:23:20+03:00 health-fail count=4038 pid=none http=200 ms=1 app_servers=6
+2026-07-08T17:23:20+03:00 restart-deferred reason=health-failures:4038:http-200 active_app_servers=6
+2026-07-08T17:25:34+03:00 chrome-trim term pid=1227901 count=22 rss_kb=1003564
+2026-07-08T17:25:40+03:00 health-fail count=4039 pid=none http=200 ms=1 app_servers=6
+2026-07-08T17:25:40+03:00 restart-deferred reason=health-failures:4039:http-200 active_app_servers=6
+2026-07-08T17:27:54+03:00 chrome-trim term pid=1228117 count=22 rss_kb=1002292
+2026-07-08T17:27:59+03:00 health-fail count=4040 pid=none http=200 ms=1 app_servers=6
+2026-07-08T17:27:59+03:00 restart-deferred reason=health-failures:4040:http-200 active_app_servers=6
+2026-07-08T17:30:13+03:00 chrome-trim term pid=1228447 count=22 rss_kb=1002108
+2026-07-08T17:30:18+03:00 health-fail count=4041 pid=none http=200 ms=1 app_servers=6
+2026-07-08T17:30:18+03:00 restart-deferred reason=health-failures:4041:http-200 active_app_servers=6
+2026-07-08T17:32:24+03:00 chrome-trim term pid=1229173 count=22 rss_kb=999916
+2026-07-08T17:32:30+03:00 health-fail count=4042 pid=none http=200 ms=1 app_servers=6
+2026-07-08T17:32:30+03:00 restart-deferred reason=health-failures:4042:http-200 active_app_servers=6
+2026-07-08T17:34:44+03:00 chrome-trim term pid=1229328 count=22 rss_kb=998540
+2026-07-08T17:34:50+03:00 health-fail count=4043 pid=none http=200 ms=4 app_servers=6
+2026-07-08T17:34:50+03:00 restart-deferred reason=health-failures:4043:http-200 active_app_servers=6
+2026-07-08T17:36:54+03:00 chrome-trim term pid=1229470 count=22 rss_kb=1002664
+2026-07-08T17:37:00+03:00 health-fail count=4044 pid=none http=200 ms=1 app_servers=6
+2026-07-08T17:37:00+03:00 restart-deferred reason=health-failures:4044:http-200 active_app_servers=6
+2026-07-08T17:39:14+03:00 chrome-trim term pid=1229694 count=22 rss_kb=1004260
+2026-07-08T17:39:20+03:00 health-fail count=4045 pid=none http=200 ms=1 app_servers=6
+2026-07-08T17:39:20+03:00 restart-deferred reason=health-failures:4045:http-200 active_app_servers=6
+2026-07-08T17:41:34+03:00 chrome-trim term pid=1229846 count=22 rss_kb=1000212
+2026-07-08T17:41:40+03:00 health-fail count=4046 pid=none http=200 ms=1 app_servers=6
+2026-07-08T17:41:40+03:00 restart-deferred reason=health-failures:4046:http-200 active_app_servers=6
+2026-07-08T17:43:54+03:00 chrome-trim term pid=1230067 count=22 rss_kb=1003156
+2026-07-08T17:44:00+03:00 health-fail count=4047 pid=none http=200 ms=1 app_servers=6
+2026-07-08T17:44:00+03:00 restart-deferred reason=health-failures:4047:http-200 active_app_servers=6
+2026-07-08T17:46:14+03:00 chrome-trim term pid=1230211 count=22 rss_kb=1000528
+2026-07-08T17:46:20+03:00 health-fail count=4048 pid=none http=200 ms=2 app_servers=8
+2026-07-08T17:46:20+03:00 restart-deferred reason=health-failures:4048:http-200 active_app_servers=8
+2026-07-08T17:48:34+03:00 chrome-trim term pid=1231521 count=22 rss_kb=1000464
+2026-07-08T17:48:40+03:00 health-fail count=4049 pid=none http=200 ms=1 app_servers=8
+2026-07-08T17:48:40+03:00 restart-deferred reason=health-failures:4049:http-200 active_app_servers=8
+2026-07-08T17:50:54+03:00 chrome-trim term pid=1231662 count=22 rss_kb=981292
+2026-07-08T17:51:00+03:00 health-fail count=4050 pid=none http=200 ms=1 app_servers=8
+2026-07-08T17:51:00+03:00 restart-deferred reason=health-failures:4050:http-200 active_app_servers=8
+2026-07-08T17:53:14+03:00 chrome-trim term pid=1231885 count=22 rss_kb=989052
+2026-07-08T17:53:20+03:00 health-fail count=4051 pid=none http=200 ms=1 app_servers=8
+2026-07-08T17:53:20+03:00 restart-deferred reason=health-failures:4051:http-200 active_app_servers=8
+2026-07-08T17:55:34+03:00 chrome-trim term pid=1232023 count=22 rss_kb=1004672
+2026-07-08T17:55:39+03:00 health-fail count=4052 pid=none http=200 ms=1 app_servers=8
+2026-07-08T17:55:40+03:00 restart-deferred reason=health-failures:4052:http-200 active_app_servers=8
+2026-07-08T17:57:54+03:00 chrome-trim term pid=1232246 count=22 rss_kb=981708
+2026-07-08T17:57:59+03:00 health-fail count=4053 pid=none http=200 ms=1 app_servers=8
+2026-07-08T17:58:00+03:00 restart-deferred reason=health-failures:4053:http-200 active_app_servers=8
+2026-07-08T18:00:14+03:00 chrome-trim term pid=1232388 count=22 rss_kb=987168
+2026-07-08T18:00:20+03:00 health-fail count=4054 pid=none http=200 ms=1 app_servers=8
+2026-07-08T18:00:20+03:00 restart-deferred reason=health-failures:4054:http-200 active_app_servers=8
+2026-07-08T18:02:34+03:00 chrome-trim term pid=1232803 count=22 rss_kb=1000480
+2026-07-08T18:02:40+03:00 health-fail count=4055 pid=none http=200 ms=1 app_servers=10
+2026-07-08T18:02:40+03:00 restart-deferred reason=health-failures:4055:http-200 active_app_servers=10
+2026-07-08T18:04:54+03:00 chrome-trim term pid=1233628 count=22 rss_kb=1001064
+2026-07-08T18:05:00+03:00 health-fail count=4056 pid=none http=200 ms=1 app_servers=10
+2026-07-08T18:05:00+03:00 restart-deferred reason=health-failures:4056:http-200 active_app_servers=10
+2026-07-08T18:07:14+03:00 chrome-trim term pid=1234078 count=22 rss_kb=1004324
+2026-07-08T18:07:20+03:00 health-fail count=4057 pid=none http=200 ms=1 app_servers=10
+2026-07-08T18:07:20+03:00 restart-deferred reason=health-failures:4057:http-200 active_app_servers=10
+2026-07-08T18:09:34+03:00 chrome-trim term pid=1234256 count=22 rss_kb=1004768
+2026-07-08T18:09:40+03:00 health-fail count=4058 pid=none http=200 ms=2 app_servers=10
+2026-07-08T18:09:40+03:00 restart-deferred reason=health-failures:4058:http-200 active_app_servers=10
+2026-07-08T18:11:54+03:00 chrome-trim term pid=1234409 count=22 rss_kb=1002000
+2026-07-08T18:12:00+03:00 health-fail count=4059 pid=none http=200 ms=1 app_servers=10
+2026-07-08T18:12:00+03:00 restart-deferred reason=health-failures:4059:http-200 active_app_servers=10
+2026-07-08T18:14:14+03:00 chrome-trim term pid=1234635 count=22 rss_kb=1004544
+2026-07-08T18:14:20+03:00 health-fail count=4060 pid=none http=200 ms=2 app_servers=10
+2026-07-08T18:14:20+03:00 restart-deferred reason=health-failures:4060:http-200 active_app_servers=10
+2026-07-08T18:16:34+03:00 chrome-trim term pid=1234795 count=22 rss_kb=980700
+2026-07-08T18:16:40+03:00 health-fail count=4061 pid=none http=200 ms=1 app_servers=10
+2026-07-08T18:16:40+03:00 restart-deferred reason=health-failures:4061:http-200 active_app_servers=10
+2026-07-08T18:18:54+03:00 chrome-trim term pid=1235134 count=22 rss_kb=986576
+2026-07-08T18:18:59+03:00 health-fail count=4062 pid=none http=200 ms=1 app_servers=10
+2026-07-08T18:19:00+03:00 restart-deferred reason=health-failures:4062:http-200 active_app_servers=10
+2026-07-08T18:21:14+03:00 chrome-trim term pid=1235285 count=22 rss_kb=999944
+2026-07-08T18:21:20+03:00 health-fail count=4063 pid=none http=200 ms=1 app_servers=10
+2026-07-08T18:21:20+03:00 restart-deferred reason=health-failures:4063:http-200 active_app_servers=10
+2026-07-08T18:23:34+03:00 chrome-trim term pid=1235513 count=22 rss_kb=978768
+2026-07-08T18:23:39+03:00 health-fail count=4064 pid=none http=200 ms=1 app_servers=10
+2026-07-08T18:23:39+03:00 restart-deferred reason=health-failures:4064:http-200 active_app_servers=10
+2026-07-08T18:25:54+03:00 chrome-trim term pid=1235668 count=22 rss_kb=983980
+2026-07-08T18:26:00+03:00 health-fail count=4065 pid=none http=200 ms=2 app_servers=10
+2026-07-08T18:26:00+03:00 restart-deferred reason=health-failures:4065:http-200 active_app_servers=10
+2026-07-08T18:28:14+03:00 chrome-trim term pid=1235902 count=22 rss_kb=999356
+2026-07-08T18:28:20+03:00 health-fail count=4066 pid=none http=200 ms=1 app_servers=10
+2026-07-08T18:28:20+03:00 restart-deferred reason=health-failures:4066:http-200 active_app_servers=10
+2026-07-08T18:30:34+03:00 chrome-trim term pid=1236061 count=22 rss_kb=998324
+2026-07-08T18:30:40+03:00 health-fail count=4067 pid=none http=200 ms=1 app_servers=10
+2026-07-08T18:30:40+03:00 restart-deferred reason=health-failures:4067:http-200 active_app_servers=10
+2026-07-08T18:32:54+03:00 chrome-trim term pid=1236300 count=22 rss_kb=1002092
+2026-07-08T18:33:00+03:00 health-fail count=4068 pid=none http=200 ms=1 app_servers=10
+2026-07-08T18:33:00+03:00 restart-deferred reason=health-failures:4068:http-200 active_app_servers=10
+2026-07-08T18:35:14+03:00 chrome-trim term pid=1236452 count=22 rss_kb=1000052
+2026-07-08T18:35:20+03:00 health-fail count=4069 pid=none http=200 ms=1 app_servers=10
+2026-07-08T18:35:20+03:00 restart-deferred reason=health-failures:4069:http-200 active_app_servers=10
+2026-07-08T18:37:34+03:00 chrome-trim term pid=1236685 count=22 rss_kb=985128
+2026-07-08T18:37:39+03:00 health-fail count=4070 pid=none http=200 ms=1 app_servers=10
+2026-07-08T18:37:39+03:00 restart-deferred reason=health-failures:4070:http-200 active_app_servers=10
+2026-07-08T18:39:54+03:00 chrome-trim term pid=1236855 count=22 rss_kb=982996
+2026-07-08T18:40:00+03:00 health-fail count=4071 pid=none http=200 ms=1 app_servers=10
+2026-07-08T18:40:00+03:00 restart-deferred reason=health-failures:4071:http-200 active_app_servers=10
+2026-07-08T18:42:14+03:00 chrome-trim term pid=1237088 count=22 rss_kb=999988
+2026-07-08T18:42:20+03:00 health-fail count=4072 pid=none http=200 ms=1 app_servers=10
+2026-07-08T18:42:20+03:00 restart-deferred reason=health-failures:4072:http-200 active_app_servers=10
+2026-07-08T18:44:34+03:00 chrome-trim term pid=1237231 count=22 rss_kb=981028
+2026-07-08T18:44:40+03:00 health-fail count=4073 pid=none http=200 ms=1 app_servers=10
+2026-07-08T18:44:40+03:00 restart-deferred reason=health-failures:4073:http-200 active_app_servers=10
+2026-07-08T18:46:54+03:00 chrome-trim term pid=1237375 count=22 rss_kb=983736
+2026-07-08T18:47:00+03:00 health-fail count=4074 pid=none http=200 ms=1 app_servers=10
+2026-07-08T18:47:00+03:00 restart-deferred reason=health-failures:4074:http-200 active_app_servers=10
+2026-07-08T18:49:14+03:00 chrome-trim term pid=1237595 count=22 rss_kb=986884
+2026-07-08T18:49:19+03:00 health-fail count=4075 pid=none http=200 ms=0 app_servers=10
+2026-07-08T18:49:20+03:00 restart-deferred reason=health-failures:4075:http-200 active_app_servers=10
+2026-07-08T18:51:34+03:00 chrome-trim term pid=1237740 count=22 rss_kb=996832
+2026-07-08T18:51:40+03:00 health-fail count=4076 pid=none http=200 ms=1 app_servers=10
+2026-07-08T18:51:40+03:00 restart-deferred reason=health-failures:4076:http-200 active_app_servers=10
+2026-07-08T18:53:54+03:00 chrome-trim term pid=1237960 count=22 rss_kb=998316
+2026-07-08T18:54:00+03:00 health-fail count=4077 pid=none http=200 ms=1 app_servers=10
+2026-07-08T18:54:00+03:00 restart-deferred reason=health-failures:4077:http-200 active_app_servers=10
+2026-07-08T18:56:13+03:00 chrome-trim term pid=1238100 count=22 rss_kb=1002536
+2026-07-08T18:56:18+03:00 health-fail count=4078 pid=none http=200 ms=1 app_servers=10
+2026-07-08T18:56:18+03:00 restart-deferred reason=health-failures:4078:http-200 active_app_servers=10
+2026-07-08T18:58:24+03:00 chrome-trim term pid=1264822 count=22 rss_kb=1007072
+2026-07-08T18:58:30+03:00 health-fail count=4079 pid=none http=200 ms=1 app_servers=8
+2026-07-08T18:58:30+03:00 restart-deferred reason=health-failures:4079:http-200 active_app_servers=8
+2026-07-08T19:00:44+03:00 chrome-trim term pid=1267036 count=22 rss_kb=1009420
+2026-07-08T19:00:50+03:00 health-fail count=4080 pid=none http=200 ms=1 app_servers=8
+2026-07-08T19:00:50+03:00 restart-deferred reason=health-failures:4080:http-200 active_app_servers=8
+2026-07-08T19:02:54+03:00 chrome-trim term pid=1267260 count=22 rss_kb=998468
+2026-07-08T19:03:00+03:00 health-fail count=4081 pid=none http=200 ms=1 app_servers=8
+2026-07-08T19:03:00+03:00 restart-deferred reason=health-failures:4081:http-200 active_app_servers=8
+2026-07-08T19:05:14+03:00 chrome-trim term pid=1267522 count=22 rss_kb=984660
+2026-07-08T19:05:20+03:00 health-fail count=4082 pid=none http=200 ms=2 app_servers=8
+2026-07-08T19:05:20+03:00 restart-deferred reason=health-failures:4082:http-200 active_app_servers=8
+2026-07-08T19:07:34+03:00 chrome-trim term pid=1267813 count=22 rss_kb=994604
+2026-07-08T19:07:40+03:00 health-fail count=4083 pid=none http=200 ms=1 app_servers=8
+2026-07-08T19:07:40+03:00 restart-deferred reason=health-failures:4083:http-200 active_app_servers=8
+2026-07-08T19:09:54+03:00 chrome-trim term pid=1267990 count=22 rss_kb=980808
+2026-07-08T19:10:00+03:00 health-fail count=4084 pid=none http=200 ms=1 app_servers=8
+2026-07-08T19:10:00+03:00 restart-deferred reason=health-failures:4084:http-200 active_app_servers=8
+2026-07-08T19:12:14+03:00 chrome-trim term pid=1268223 count=22 rss_kb=1001480
+2026-07-08T19:12:19+03:00 health-fail count=4085 pid=none http=200 ms=1 app_servers=8
+2026-07-08T19:12:19+03:00 restart-deferred reason=health-failures:4085:http-200 active_app_servers=8
+2026-07-08T19:14:34+03:00 chrome-trim term pid=1268363 count=22 rss_kb=1001432
+2026-07-08T19:14:40+03:00 health-fail count=4086 pid=none http=200 ms=1 app_servers=8
+2026-07-08T19:14:40+03:00 restart-deferred reason=health-failures:4086:http-200 active_app_servers=8
+2026-07-08T19:16:54+03:00 chrome-trim term pid=1268509 count=22 rss_kb=1007652
+2026-07-08T19:17:00+03:00 health-fail count=4087 pid=none http=200 ms=1 app_servers=8
+2026-07-08T19:17:00+03:00 restart-deferred reason=health-failures:4087:http-200 active_app_servers=8
+2026-07-08T19:19:14+03:00 chrome-trim term pid=1268738 count=22 rss_kb=1004928
+2026-07-08T19:19:20+03:00 health-fail count=4088 pid=none http=200 ms=1 app_servers=8
+2026-07-08T19:19:20+03:00 restart-deferred reason=health-failures:4088:http-200 active_app_servers=8
+2026-07-08T19:21:34+03:00 chrome-trim term pid=1268880 count=22 rss_kb=1008760
+2026-07-08T19:21:39+03:00 health-fail count=4089 pid=none http=200 ms=1 app_servers=8
+2026-07-08T19:21:40+03:00 restart-deferred reason=health-failures:4089:http-200 active_app_servers=8
+2026-07-08T19:23:54+03:00 chrome-trim term pid=1269106 count=22 rss_kb=998772
+2026-07-08T19:24:00+03:00 health-fail count=4090 pid=none http=200 ms=1 app_servers=8
+2026-07-08T19:24:00+03:00 restart-deferred reason=health-failures:4090:http-200 active_app_servers=8
+2026-07-08T19:26:14+03:00 chrome-trim term pid=1269249 count=22 rss_kb=979792
+2026-07-08T19:26:20+03:00 health-fail count=4091 pid=none http=200 ms=1 app_servers=8
+2026-07-08T19:26:20+03:00 restart-deferred reason=health-failures:4091:http-200 active_app_servers=8
+2026-07-08T19:28:34+03:00 chrome-trim term pid=1269471 count=22 rss_kb=990984
+2026-07-08T19:28:40+03:00 health-fail count=4092 pid=none http=200 ms=1 app_servers=8
+2026-07-08T19:28:40+03:00 restart-deferred reason=health-failures:4092:http-200 active_app_servers=8
+2026-07-08T19:30:54+03:00 chrome-trim term pid=1269799 count=22 rss_kb=1000776
+2026-07-08T19:31:00+03:00 health-fail count=4093 pid=none http=200 ms=4 app_servers=8
+2026-07-08T19:31:00+03:00 restart-deferred reason=health-failures:4093:http-200 active_app_servers=8
+2026-07-08T19:33:14+03:00 chrome-trim term pid=1270022 count=22 rss_kb=1004944
+2026-07-08T19:33:20+03:00 health-fail count=4094 pid=none http=200 ms=2 app_servers=8
+2026-07-08T19:33:20+03:00 restart-deferred reason=health-failures:4094:http-200 active_app_servers=8
+2026-07-08T19:35:34+03:00 chrome-trim term pid=1270165 count=22 rss_kb=1005184
+2026-07-08T19:35:40+03:00 health-fail count=4095 pid=none http=200 ms=1 app_servers=8
+2026-07-08T19:35:40+03:00 restart-deferred reason=health-failures:4095:http-200 active_app_servers=8
+2026-07-08T19:37:54+03:00 chrome-trim term pid=1270387 count=22 rss_kb=985576
+2026-07-08T19:38:00+03:00 health-fail count=4096 pid=none http=200 ms=1 app_servers=8
+2026-07-08T19:38:00+03:00 restart-deferred reason=health-failures:4096:http-200 active_app_servers=8
+2026-07-08T19:40:14+03:00 chrome-trim term pid=1270532 count=22 rss_kb=1002860
+2026-07-08T19:40:20+03:00 health-fail count=4097 pid=none http=200 ms=1 app_servers=8
+2026-07-08T19:40:20+03:00 restart-deferred reason=health-failures:4097:http-200 active_app_servers=8
+2026-07-08T19:42:34+03:00 chrome-trim term pid=1270752 count=22 rss_kb=1003268
+2026-07-08T19:42:40+03:00 health-fail count=4098 pid=none http=200 ms=1 app_servers=8
+2026-07-08T19:42:40+03:00 restart-deferred reason=health-failures:4098:http-200 active_app_servers=8
+2026-07-08T19:44:54+03:00 chrome-trim term pid=1270901 count=22 rss_kb=1000456
+2026-07-08T19:44:59+03:00 health-fail count=4099 pid=none http=200 ms=1 app_servers=8
+2026-07-08T19:45:00+03:00 restart-deferred reason=health-failures:4099:http-200 active_app_servers=8
+2026-07-08T19:47:14+03:00 chrome-trim term pid=1271247 count=22 rss_kb=1000044
+2026-07-08T19:47:20+03:00 health-fail count=4100 pid=none http=200 ms=1 app_servers=10
+2026-07-08T19:47:20+03:00 restart-deferred reason=health-failures:4100:http-200 active_app_servers=10
+2026-07-08T19:49:34+03:00 chrome-trim term pid=1272477 count=22 rss_kb=1006676
+2026-07-08T19:49:40+03:00 health-fail count=4101 pid=none http=200 ms=1 app_servers=10
+2026-07-08T19:49:40+03:00 restart-deferred reason=health-failures:4101:http-200 active_app_servers=10
+2026-07-08T19:51:54+03:00 chrome-trim term pid=1272622 count=22 rss_kb=1005992
+2026-07-08T19:52:00+03:00 health-fail count=4102 pid=none http=200 ms=1 app_servers=10
+2026-07-08T19:52:00+03:00 restart-deferred reason=health-failures:4102:http-200 active_app_servers=10
+2026-07-08T19:54:14+03:00 chrome-trim term pid=1272843 count=22 rss_kb=1002296
+2026-07-08T19:54:20+03:00 health-fail count=4103 pid=none http=200 ms=1 app_servers=10
+2026-07-08T19:54:20+03:00 restart-deferred reason=health-failures:4103:http-200 active_app_servers=10
+2026-07-08T19:56:34+03:00 chrome-trim term pid=1272984 count=22 rss_kb=1006024
+2026-07-08T19:56:40+03:00 health-fail count=4104 pid=none http=200 ms=1 app_servers=10
+2026-07-08T19:56:40+03:00 restart-deferred reason=health-failures:4104:http-200 active_app_servers=10
+2026-07-08T19:58:54+03:00 chrome-trim term pid=1273201 count=22 rss_kb=982228
+2026-07-08T19:59:00+03:00 health-fail count=4105 pid=none http=200 ms=1 app_servers=10
+2026-07-08T19:59:00+03:00 restart-deferred reason=health-failures:4105:http-200 active_app_servers=10
+2026-07-08T20:01:05+03:00 chrome-trim term pid=1273352 count=22 rss_kb=988364
+2026-07-08T20:01:10+03:00 health-fail count=4106 pid=none http=200 ms=1 app_servers=10
+2026-07-08T20:01:10+03:00 restart-deferred reason=health-failures:4106:http-200 active_app_servers=10
+2026-07-08T20:03:24+03:00 chrome-trim term pid=1274484 count=22 rss_kb=979476
+2026-07-08T20:03:30+03:00 health-fail count=4107 pid=none http=200 ms=1 app_servers=8
+2026-07-08T20:03:30+03:00 restart-deferred reason=health-failures:4107:http-200 active_app_servers=8
+2026-07-08T20:05:44+03:00 chrome-trim term pid=1275133 count=22 rss_kb=988584
+2026-07-08T20:05:50+03:00 health-fail count=4108 pid=none http=200 ms=1 app_servers=8
+2026-07-08T20:05:50+03:00 restart-deferred reason=health-failures:4108:http-200 active_app_servers=8
+2026-07-08T20:07:54+03:00 chrome-trim term pid=1275358 count=22 rss_kb=1000976
+2026-07-08T20:08:00+03:00 health-fail count=4109 pid=none http=200 ms=1 app_servers=8
+2026-07-08T20:08:00+03:00 restart-deferred reason=health-failures:4109:http-200 active_app_servers=8
+2026-07-08T20:10:14+03:00 chrome-trim term pid=1275539 count=22 rss_kb=1001824
+2026-07-08T20:10:20+03:00 health-fail count=4110 pid=none http=200 ms=1 app_servers=8
+2026-07-08T20:10:20+03:00 restart-deferred reason=health-failures:4110:http-200 active_app_servers=8
+2026-07-08T20:12:34+03:00 chrome-trim term pid=1275770 count=22 rss_kb=979832
+2026-07-08T20:12:40+03:00 health-fail count=4111 pid=none http=200 ms=1 app_servers=8
+2026-07-08T20:12:40+03:00 restart-deferred reason=health-failures:4111:http-200 active_app_servers=8
+2026-07-08T20:14:54+03:00 chrome-trim term pid=1275920 count=22 rss_kb=995084
+2026-07-08T20:14:59+03:00 health-fail count=4112 pid=none http=200 ms=1 app_servers=8
+2026-07-08T20:14:59+03:00 restart-deferred reason=health-failures:4112:http-200 active_app_servers=8
+2026-07-08T20:17:14+03:00 chrome-trim term pid=1276144 count=22 rss_kb=1003232
+2026-07-08T20:17:20+03:00 health-fail count=4113 pid=none http=200 ms=1 app_servers=8
+2026-07-08T20:17:20+03:00 restart-deferred reason=health-failures:4113:http-200 active_app_servers=8
+2026-07-08T20:19:34+03:00 chrome-trim term pid=1276312 count=22 rss_kb=1007548
+2026-07-08T20:19:39+03:00 health-fail count=4114 pid=none http=200 ms=1 app_servers=8
+2026-07-08T20:19:39+03:00 restart-deferred reason=health-failures:4114:http-200 active_app_servers=8
+2026-07-08T20:21:54+03:00 chrome-trim term pid=1276464 count=22 rss_kb=984164
+2026-07-08T20:21:59+03:00 health-fail count=4115 pid=none http=200 ms=1 app_servers=8
+2026-07-08T20:21:59+03:00 restart-deferred reason=health-failures:4115:http-200 active_app_servers=8
+2026-07-08T20:24:14+03:00 chrome-trim term pid=1276694 count=22 rss_kb=988140
+2026-07-08T20:24:20+03:00 health-fail count=4116 pid=none http=200 ms=1 app_servers=8
+2026-07-08T20:24:20+03:00 restart-deferred reason=health-failures:4116:http-200 active_app_servers=8
+2026-07-08T20:26:34+03:00 chrome-trim term pid=1276912 count=22 rss_kb=1002760
+2026-07-08T20:26:40+03:00 health-fail count=4117 pid=none http=200 ms=1 app_servers=8
+2026-07-08T20:26:40+03:00 restart-deferred reason=health-failures:4117:http-200 active_app_servers=8
+2026-07-08T20:28:54+03:00 chrome-trim term pid=1277140 count=22 rss_kb=1004708
+2026-07-08T20:29:00+03:00 health-fail count=4118 pid=none http=200 ms=1 app_servers=8
+2026-07-08T20:29:00+03:00 restart-deferred reason=health-failures:4118:http-200 active_app_servers=8
+2026-07-08T20:31:14+03:00 chrome-trim term pid=1277294 count=22 rss_kb=1004252
+2026-07-08T20:31:20+03:00 health-fail count=4119 pid=none http=200 ms=1 app_servers=8
+2026-07-08T20:31:20+03:00 restart-deferred reason=health-failures:4119:http-200 active_app_servers=8
+2026-07-08T20:33:34+03:00 chrome-trim term pid=1277537 count=22 rss_kb=1001144
+2026-07-08T20:33:40+03:00 health-fail count=4120 pid=none http=200 ms=1 app_servers=8
+2026-07-08T20:33:40+03:00 restart-deferred reason=health-failures:4120:http-200 active_app_servers=8
+2026-07-08T20:35:54+03:00 chrome-trim term pid=1277690 count=22 rss_kb=1008240
+2026-07-08T20:36:00+03:00 health-fail count=4121 pid=none http=200 ms=2 app_servers=8
+2026-07-08T20:36:00+03:00 restart-deferred reason=health-failures:4121:http-200 active_app_servers=8
+2026-07-08T20:38:14+03:00 chrome-trim term pid=1277927 count=22 rss_kb=999596
+2026-07-08T20:38:20+03:00 health-fail count=4122 pid=none http=200 ms=1 app_servers=8
+2026-07-08T20:38:20+03:00 restart-deferred reason=health-failures:4122:http-200 active_app_servers=8
+2026-07-08T20:40:34+03:00 chrome-trim term pid=1278085 count=22 rss_kb=1002804
+2026-07-08T20:40:40+03:00 health-fail count=4123 pid=none http=200 ms=1 app_servers=8
+2026-07-08T20:40:40+03:00 restart-deferred reason=health-failures:4123:http-200 active_app_servers=8
+2026-07-08T20:42:54+03:00 chrome-trim term pid=1278320 count=22 rss_kb=1001496
+2026-07-08T20:43:00+03:00 health-fail count=4124 pid=none http=200 ms=1 app_servers=8
+2026-07-08T20:43:00+03:00 restart-deferred reason=health-failures:4124:http-200 active_app_servers=8
+2026-07-08T20:45:14+03:00 chrome-trim term pid=1278463 count=22 rss_kb=1008156
+2026-07-08T20:45:20+03:00 health-fail count=4125 pid=none http=200 ms=1 app_servers=8
+2026-07-08T20:45:20+03:00 restart-deferred reason=health-failures:4125:http-200 active_app_servers=8
+2026-07-08T20:47:34+03:00 chrome-trim term pid=1278686 count=22 rss_kb=983928
+2026-07-08T20:47:40+03:00 health-fail count=4126 pid=none http=200 ms=1 app_servers=8
+2026-07-08T20:47:40+03:00 restart-deferred reason=health-failures:4126:http-200 active_app_servers=8
+2026-07-08T20:49:54+03:00 chrome-trim term pid=1278831 count=22 rss_kb=990864
+2026-07-08T20:50:00+03:00 health-fail count=4127 pid=none http=200 ms=1 app_servers=8
+2026-07-08T20:50:00+03:00 restart-deferred reason=health-failures:4127:http-200 active_app_servers=8
+2026-07-08T20:52:14+03:00 chrome-trim term pid=1279049 count=22 rss_kb=1010404
+2026-07-08T20:52:20+03:00 health-fail count=4128 pid=none http=200 ms=1 app_servers=8
+2026-07-08T20:52:20+03:00 restart-deferred reason=health-failures:4128:http-200 active_app_servers=8
+2026-07-08T20:54:34+03:00 chrome-trim term pid=1279194 count=22 rss_kb=1007556
+2026-07-08T20:54:39+03:00 health-fail count=4129 pid=none http=200 ms=1 app_servers=8
+2026-07-08T20:54:39+03:00 restart-deferred reason=health-failures:4129:http-200 active_app_servers=8
+2026-07-08T20:56:54+03:00 chrome-trim term pid=1279335 count=22 rss_kb=1006200
+2026-07-08T20:56:59+03:00 health-fail count=4130 pid=none http=200 ms=1 app_servers=8
+2026-07-08T20:56:59+03:00 restart-deferred reason=health-failures:4130:http-200 active_app_servers=8
+2026-07-08T20:59:14+03:00 chrome-trim term pid=1279550 count=22 rss_kb=1005240
+2026-07-08T20:59:20+03:00 health-fail count=4131 pid=none http=200 ms=1 app_servers=8
+2026-07-08T20:59:20+03:00 restart-deferred reason=health-failures:4131:http-200 active_app_servers=8
+2026-07-08T21:01:34+03:00 chrome-trim term pid=1279695 count=22 rss_kb=1002556
+2026-07-08T21:01:39+03:00 health-fail count=4132 pid=none http=200 ms=1 app_servers=8
+2026-07-08T21:01:40+03:00 restart-deferred reason=health-failures:4132:http-200 active_app_servers=8
+2026-07-08T21:03:54+03:00 chrome-trim term pid=1279935 count=22 rss_kb=1006848
+2026-07-08T21:04:00+03:00 health-fail count=4133 pid=none http=200 ms=1 app_servers=8
+2026-07-08T21:04:00+03:00 restart-deferred reason=health-failures:4133:http-200 active_app_servers=8
+2026-07-08T21:06:14+03:00 chrome-trim term pid=1280079 count=22 rss_kb=1006632
+2026-07-08T21:06:20+03:00 health-fail count=4134 pid=none http=200 ms=1 app_servers=8
+2026-07-08T21:06:20+03:00 restart-deferred reason=health-failures:4134:http-200 active_app_servers=8
+2026-07-08T21:08:34+03:00 chrome-trim term pid=1280465 count=22 rss_kb=985060
+2026-07-08T21:08:40+03:00 health-fail count=4135 pid=none http=200 ms=1 app_servers=8
+2026-07-08T21:08:40+03:00 restart-deferred reason=health-failures:4135:http-200 active_app_servers=8
+2026-07-08T21:10:54+03:00 chrome-trim term pid=1280668 count=22 rss_kb=993400
+2026-07-08T21:11:00+03:00 health-fail count=4136 pid=none http=200 ms=1 app_servers=8
+2026-07-08T21:11:00+03:00 restart-deferred reason=health-failures:4136:http-200 active_app_servers=8
+2026-07-08T21:13:14+03:00 chrome-trim term pid=1280890 count=22 rss_kb=985152
+2026-07-08T21:13:20+03:00 health-fail count=4137 pid=none http=200 ms=1 app_servers=8
+2026-07-08T21:13:20+03:00 restart-deferred reason=health-failures:4137:http-200 active_app_servers=8
+2026-07-08T21:15:34+03:00 chrome-trim term pid=1281033 count=22 rss_kb=989644
+2026-07-08T21:15:40+03:00 health-fail count=4138 pid=none http=200 ms=1 app_servers=8
+2026-07-08T21:15:40+03:00 restart-deferred reason=health-failures:4138:http-200 active_app_servers=8
+2026-07-08T21:17:54+03:00 chrome-trim term pid=1281252 count=22 rss_kb=1005616
+2026-07-08T21:17:59+03:00 health-fail count=4139 pid=none http=200 ms=1 app_servers=8
+2026-07-08T21:18:00+03:00 restart-deferred reason=health-failures:4139:http-200 active_app_servers=8
+2026-07-08T21:20:14+03:00 chrome-trim term pid=1281404 count=22 rss_kb=1001868
+2026-07-08T21:20:20+03:00 health-fail count=4140 pid=none http=200 ms=1 app_servers=8
+2026-07-08T21:20:20+03:00 restart-deferred reason=health-failures:4140:http-200 active_app_servers=8
+2026-07-08T21:22:34+03:00 chrome-trim term pid=1281623 count=22 rss_kb=1002052
+2026-07-08T21:22:39+03:00 health-fail count=4141 pid=none http=200 ms=1 app_servers=8
+2026-07-08T21:22:40+03:00 restart-deferred reason=health-failures:4141:http-200 active_app_servers=8
+2026-07-08T21:24:54+03:00 chrome-trim term pid=1281763 count=22 rss_kb=982448
+2026-07-08T21:24:59+03:00 health-fail count=4142 pid=none http=200 ms=1 app_servers=8
+2026-07-08T21:24:59+03:00 restart-deferred reason=health-failures:4142:http-200 active_app_servers=8
+2026-07-08T21:27:14+03:00 chrome-trim term pid=1281980 count=22 rss_kb=993612
+2026-07-08T21:27:20+03:00 health-fail count=4143 pid=none http=200 ms=3 app_servers=8
+2026-07-08T21:27:20+03:00 restart-deferred reason=health-failures:4143:http-200 active_app_servers=8
+2026-07-08T21:29:34+03:00 chrome-trim term pid=1282260 count=22 rss_kb=1007268
+2026-07-08T21:29:40+03:00 health-fail count=4144 pid=none http=200 ms=1 app_servers=8
+2026-07-08T21:29:40+03:00 restart-deferred reason=health-failures:4144:http-200 active_app_servers=8
+2026-07-08T21:31:54+03:00 chrome-trim term pid=1283367 count=22 rss_kb=1001552
+2026-07-08T21:32:00+03:00 health-fail count=4145 pid=none http=200 ms=1 app_servers=8
+2026-07-08T21:32:00+03:00 restart-deferred reason=health-failures:4145:http-200 active_app_servers=8
+2026-07-08T21:34:14+03:00 chrome-trim term pid=1283588 count=22 rss_kb=983860
+2026-07-08T21:34:20+03:00 health-fail count=4146 pid=none http=200 ms=1 app_servers=8
+2026-07-08T21:34:20+03:00 restart-deferred reason=health-failures:4146:http-200 active_app_servers=8
+2026-07-08T21:36:34+03:00 chrome-trim term pid=1283733 count=22 rss_kb=987816
+2026-07-08T21:36:40+03:00 health-fail count=4147 pid=none http=200 ms=1 app_servers=8
+2026-07-08T21:36:40+03:00 restart-deferred reason=health-failures:4147:http-200 active_app_servers=8
+2026-07-08T21:38:54+03:00 chrome-trim term pid=1283957 count=22 rss_kb=996956
+2026-07-08T21:39:00+03:00 health-fail count=4148 pid=none http=200 ms=1 app_servers=8
+2026-07-08T21:39:00+03:00 restart-deferred reason=health-failures:4148:http-200 active_app_servers=8
+2026-07-08T21:41:14+03:00 chrome-trim term pid=1284102 count=22 rss_kb=1004856
+2026-07-08T21:41:20+03:00 health-fail count=4149 pid=none http=200 ms=1 app_servers=8
+2026-07-08T21:41:20+03:00 restart-deferred reason=health-failures:4149:http-200 active_app_servers=8
+2026-07-08T21:43:34+03:00 chrome-trim term pid=1284325 count=22 rss_kb=1001408
+2026-07-08T21:43:40+03:00 health-fail count=4150 pid=none http=200 ms=1 app_servers=8
+2026-07-08T21:43:40+03:00 restart-deferred reason=health-failures:4150:http-200 active_app_servers=8
+2026-07-08T21:45:54+03:00 chrome-trim term pid=1284468 count=22 rss_kb=1000624
+2026-07-08T21:46:00+03:00 health-fail count=4151 pid=none http=200 ms=1 app_servers=8
+2026-07-08T21:46:00+03:00 restart-deferred reason=health-failures:4151:http-200 active_app_servers=8
+2026-07-08T21:48:14+03:00 chrome-trim term pid=1285233 count=22 rss_kb=1006268
+2026-07-08T21:48:19+03:00 health-fail count=4152 pid=none http=200 ms=1 app_servers=8
+2026-07-08T21:48:20+03:00 restart-deferred reason=health-failures:4152:http-200 active_app_servers=8
+2026-07-08T21:50:34+03:00 chrome-trim term pid=1285737 count=22 rss_kb=1002588
+2026-07-08T21:50:40+03:00 health-fail count=4153 pid=none http=200 ms=1 app_servers=8
+2026-07-08T21:50:40+03:00 restart-deferred reason=health-failures:4153:http-200 active_app_servers=8
+2026-07-08T21:52:54+03:00 chrome-trim term pid=1285958 count=22 rss_kb=1006572
+2026-07-08T21:53:00+03:00 health-fail count=4154 pid=none http=200 ms=1 app_servers=8
+2026-07-08T21:53:00+03:00 restart-deferred reason=health-failures:4154:http-200 active_app_servers=8
+2026-07-08T21:55:14+03:00 chrome-trim term pid=1286101 count=22 rss_kb=984376
+2026-07-08T21:55:20+03:00 health-fail count=4155 pid=none http=200 ms=1 app_servers=8
+2026-07-08T21:55:20+03:00 restart-deferred reason=health-failures:4155:http-200 active_app_servers=8
+2026-07-08T21:57:34+03:00 chrome-trim term pid=1291714 count=22 rss_kb=987024
+2026-07-08T21:57:39+03:00 health-fail count=4156 pid=none http=200 ms=1 app_servers=6
+2026-07-08T21:57:40+03:00 restart-deferred reason=health-failures:4156:http-200 active_app_servers=6
+2026-07-08T21:59:54+03:00 chrome-trim term pid=1315066 count=22 rss_kb=1002776
+2026-07-08T22:00:00+03:00 health-fail count=4157 pid=none http=200 ms=2 app_servers=6
+2026-07-08T22:00:00+03:00 restart-deferred reason=health-failures:4157:http-200 active_app_servers=6
+2026-07-08T22:02:14+03:00 chrome-trim term pid=1315359 count=22 rss_kb=1001404
+2026-07-08T22:02:19+03:00 health-fail count=4158 pid=none http=200 ms=1 app_servers=6
+2026-07-08T22:02:19+03:00 restart-deferred reason=health-failures:4158:http-200 active_app_servers=6
+2026-07-08T22:04:34+03:00 chrome-trim term pid=1315775 count=22 rss_kb=983048
+2026-07-08T22:04:40+03:00 health-fail count=4159 pid=none http=200 ms=1 app_servers=6
+2026-07-08T22:04:40+03:00 restart-deferred reason=health-failures:4159:http-200 active_app_servers=6
+2026-07-08T22:06:54+03:00 chrome-trim term pid=1315923 count=22 rss_kb=988560
+2026-07-08T22:07:00+03:00 health-fail count=4160 pid=none http=200 ms=2 app_servers=6
+2026-07-08T22:07:00+03:00 restart-deferred reason=health-failures:4160:http-200 active_app_servers=6
+2026-07-08T22:09:14+03:00 chrome-trim term pid=1316180 count=22 rss_kb=1002136
+2026-07-08T22:09:20+03:00 health-fail count=4161 pid=none http=200 ms=1 app_servers=6
+2026-07-08T22:09:20+03:00 restart-deferred reason=health-failures:4161:http-200 active_app_servers=6
+2026-07-08T22:11:34+03:00 chrome-trim term pid=1316331 count=22 rss_kb=999660
+2026-07-08T22:11:40+03:00 health-fail count=4162 pid=none http=200 ms=1 app_servers=6
+2026-07-08T22:11:40+03:00 restart-deferred reason=health-failures:4162:http-200 active_app_servers=6
+2026-07-08T22:13:54+03:00 chrome-trim term pid=1316560 count=22 rss_kb=1002548
+2026-07-08T22:14:00+03:00 health-fail count=4163 pid=none http=200 ms=1 app_servers=6
+2026-07-08T22:14:00+03:00 restart-deferred reason=health-failures:4163:http-200 active_app_servers=6
+2026-07-08T22:16:14+03:00 chrome-trim term pid=1316733 count=22 rss_kb=983844
+2026-07-08T22:16:20+03:00 health-fail count=4164 pid=none http=200 ms=1 app_servers=6
+2026-07-08T22:16:20+03:00 restart-deferred reason=health-failures:4164:http-200 active_app_servers=6
+2026-07-08T22:18:34+03:00 chrome-trim term pid=1316968 count=22 rss_kb=990276
+2026-07-08T22:18:39+03:00 health-fail count=4165 pid=none http=200 ms=1 app_servers=6
+2026-07-08T22:18:40+03:00 restart-deferred reason=health-failures:4165:http-200 active_app_servers=6
+2026-07-08T22:20:54+03:00 chrome-trim term pid=1317121 count=22 rss_kb=1002472
+2026-07-08T22:21:00+03:00 health-fail count=4166 pid=none http=200 ms=1 app_servers=6
+2026-07-08T22:21:00+03:00 restart-deferred reason=health-failures:4166:http-200 active_app_servers=6
+2026-07-08T22:23:14+03:00 chrome-trim term pid=1317351 count=22 rss_kb=1001372
+2026-07-08T22:23:19+03:00 health-fail count=4167 pid=none http=200 ms=1 app_servers=6
+2026-07-08T22:23:19+03:00 restart-deferred reason=health-failures:4167:http-200 active_app_servers=6
+2026-07-08T22:25:34+03:00 chrome-trim term pid=1317500 count=22 rss_kb=1005112
+2026-07-08T22:25:40+03:00 health-fail count=4168 pid=none http=200 ms=1 app_servers=6
+2026-07-08T22:25:40+03:00 restart-deferred reason=health-failures:4168:http-200 active_app_servers=6
+2026-07-08T22:27:54+03:00 chrome-trim term pid=1317729 count=22 rss_kb=1002032
+2026-07-08T22:28:00+03:00 health-fail count=4169 pid=none http=200 ms=1 app_servers=6
+2026-07-08T22:28:00+03:00 restart-deferred reason=health-failures:4169:http-200 active_app_servers=6
+2026-07-08T22:30:14+03:00 chrome-trim term pid=1317883 count=22 rss_kb=981648
+2026-07-08T22:30:20+03:00 health-fail count=4170 pid=none http=200 ms=1 app_servers=6
+2026-07-08T22:30:20+03:00 restart-deferred reason=health-failures:4170:http-200 active_app_servers=6
+2026-07-08T22:32:34+03:00 chrome-trim term pid=1318118 count=22 rss_kb=991152
+2026-07-08T22:32:40+03:00 health-fail count=4171 pid=none http=200 ms=3 app_servers=6
+2026-07-08T22:32:40+03:00 restart-deferred reason=health-failures:4171:http-200 active_app_servers=6
+2026-07-08T22:34:54+03:00 chrome-trim term pid=1318281 count=22 rss_kb=1003104
+2026-07-08T22:35:00+03:00 health-fail count=4172 pid=none http=200 ms=1 app_servers=6
+2026-07-08T22:35:00+03:00 restart-deferred reason=health-failures:4172:http-200 active_app_servers=6
+2026-07-08T22:37:14+03:00 chrome-trim term pid=1318518 count=22 rss_kb=1008464
+2026-07-08T22:37:20+03:00 health-fail count=4173 pid=none http=200 ms=1 app_servers=6
+2026-07-08T22:37:20+03:00 restart-deferred reason=health-failures:4173:http-200 active_app_servers=6
+2026-07-08T22:39:34+03:00 chrome-trim term pid=1318674 count=22 rss_kb=1006364
+2026-07-08T22:39:40+03:00 health-fail count=4174 pid=none http=200 ms=1 app_servers=6
+2026-07-08T22:39:40+03:00 restart-deferred reason=health-failures:4174:http-200 active_app_servers=6
+2026-07-08T22:41:54+03:00 chrome-trim term pid=1318843 count=22 rss_kb=996268
+2026-07-08T22:42:00+03:00 health-fail count=4175 pid=none http=200 ms=1 app_servers=6
+2026-07-08T22:42:00+03:00 restart-deferred reason=health-failures:4175:http-200 active_app_servers=6
+2026-07-08T22:44:14+03:00 chrome-trim term pid=1319070 count=22 rss_kb=1004896
+2026-07-08T22:44:20+03:00 health-fail count=4176 pid=none http=200 ms=1 app_servers=6
+2026-07-08T22:44:20+03:00 restart-deferred reason=health-failures:4176:http-200 active_app_servers=6
+2026-07-08T22:46:34+03:00 chrome-trim term pid=1319213 count=22 rss_kb=1008244
+2026-07-08T22:46:39+03:00 health-fail count=4177 pid=none http=200 ms=1 app_servers=6
+2026-07-08T22:46:39+03:00 restart-deferred reason=health-failures:4177:http-200 active_app_servers=6
+2026-07-08T22:48:54+03:00 chrome-trim term pid=1319440 count=22 rss_kb=986232
+2026-07-08T22:49:00+03:00 health-fail count=4178 pid=none http=200 ms=1 app_servers=6
+2026-07-08T22:49:00+03:00 restart-deferred reason=health-failures:4178:http-200 active_app_servers=6
+2026-07-08T22:51:14+03:00 chrome-trim term pid=1319586 count=22 rss_kb=990324
+2026-07-08T22:51:20+03:00 health-fail count=4179 pid=none http=200 ms=1 app_servers=6
+2026-07-08T22:51:20+03:00 restart-deferred reason=health-failures:4179:http-200 active_app_servers=6
+2026-07-08T22:53:34+03:00 chrome-trim term pid=1319806 count=22 rss_kb=1004184
+2026-07-08T22:53:40+03:00 health-fail count=4180 pid=none http=200 ms=1 app_servers=6
+2026-07-08T22:53:40+03:00 restart-deferred reason=health-failures:4180:http-200 active_app_servers=6
+2026-07-08T22:55:54+03:00 chrome-trim term pid=1319949 count=22 rss_kb=1009308
+2026-07-08T22:55:59+03:00 health-fail count=4181 pid=none http=200 ms=1 app_servers=6
+2026-07-08T22:55:59+03:00 restart-deferred reason=health-failures:4181:http-200 active_app_servers=6
+2026-07-08T22:58:14+03:00 chrome-trim term pid=1320175 count=22 rss_kb=984448
+2026-07-08T22:58:19+03:00 health-fail count=4182 pid=none http=200 ms=1 app_servers=6
+2026-07-08T22:58:19+03:00 restart-deferred reason=health-failures:4182:http-200 active_app_servers=6
+2026-07-08T23:00:35+03:00 chrome-trim term pid=1320322 count=22 rss_kb=984816
+2026-07-08T23:00:40+03:00 health-fail count=4183 pid=none http=200 ms=1 app_servers=6
+2026-07-08T23:00:40+03:00 restart-deferred reason=health-failures:4183:http-200 active_app_servers=6
+2026-07-08T23:02:54+03:00 chrome-trim term pid=1320561 count=22 rss_kb=932320
+2026-07-08T23:03:00+03:00 health-fail count=4184 pid=none http=200 ms=1 app_servers=6
+2026-07-08T23:03:00+03:00 restart-deferred reason=health-failures:4184:http-200 active_app_servers=6
+2026-07-08T23:05:14+03:00 chrome-trim term pid=1320722 count=22 rss_kb=963896
+2026-07-08T23:05:20+03:00 health-fail count=4185 pid=none http=200 ms=1 app_servers=6
+2026-07-08T23:05:20+03:00 restart-deferred reason=health-failures:4185:http-200 active_app_servers=6
+2026-07-08T23:07:34+03:00 chrome-trim term pid=1320943 count=22 rss_kb=960096
+2026-07-08T23:07:39+03:00 health-fail count=4186 pid=none http=200 ms=1 app_servers=6
+2026-07-08T23:07:39+03:00 restart-deferred reason=health-failures:4186:http-200 active_app_servers=6
+2026-07-08T23:09:54+03:00 chrome-trim term pid=1321119 count=22 rss_kb=973688
+2026-07-08T23:10:00+03:00 health-fail count=4187 pid=none http=200 ms=1 app_servers=6
+2026-07-08T23:10:00+03:00 restart-deferred reason=health-failures:4187:http-200 active_app_servers=6
+2026-07-08T23:12:14+03:00 chrome-trim term pid=1321570 count=22 rss_kb=972700
+2026-07-08T23:12:20+03:00 health-fail count=4188 pid=none http=200 ms=1 app_servers=6
+2026-07-08T23:12:20+03:00 restart-deferred reason=health-failures:4188:http-200 active_app_servers=6
+2026-07-08T23:14:34+03:00 chrome-trim term pid=1321808 count=22 rss_kb=970000
+2026-07-08T23:14:40+03:00 health-fail count=4189 pid=none http=200 ms=1 app_servers=6
+2026-07-08T23:14:40+03:00 restart-deferred reason=health-failures:4189:http-200 active_app_servers=6
+2026-07-08T23:16:54+03:00 chrome-trim term pid=1321949 count=22 rss_kb=950408
+2026-07-08T23:16:59+03:00 health-fail count=4190 pid=none http=200 ms=1 app_servers=6
+2026-07-08T23:16:59+03:00 restart-deferred reason=health-failures:4190:http-200 active_app_servers=6
+2026-07-08T23:19:14+03:00 chrome-trim term pid=1322179 count=22 rss_kb=956808
+2026-07-08T23:19:20+03:00 health-fail count=4191 pid=none http=200 ms=1 app_servers=6
+2026-07-08T23:19:20+03:00 restart-deferred reason=health-failures:4191:http-200 active_app_servers=6
+2026-07-08T23:21:34+03:00 chrome-trim term pid=1322331 count=22 rss_kb=968676
+2026-07-08T23:21:40+03:00 health-fail count=4192 pid=none http=200 ms=1 app_servers=6
+2026-07-08T23:21:40+03:00 restart-deferred reason=health-failures:4192:http-200 active_app_servers=6
+2026-07-08T23:23:54+03:00 chrome-trim term pid=1322555 count=22 rss_kb=968824
+2026-07-08T23:24:00+03:00 health-fail count=4193 pid=none http=200 ms=1 app_servers=6
+2026-07-08T23:24:00+03:00 restart-deferred reason=health-failures:4193:http-200 active_app_servers=6
+2026-07-08T23:26:14+03:00 chrome-trim term pid=1322695 count=22 rss_kb=948452
+2026-07-08T23:26:20+03:00 health-fail count=4194 pid=none http=200 ms=1 app_servers=6
+2026-07-08T23:26:20+03:00 restart-deferred reason=health-failures:4194:http-200 active_app_servers=6
+2026-07-08T23:28:34+03:00 chrome-trim term pid=1322911 count=22 rss_kb=960332
+2026-07-08T23:28:40+03:00 health-fail count=4195 pid=none http=200 ms=1 app_servers=6
+2026-07-08T23:28:40+03:00 restart-deferred reason=health-failures:4195:http-200 active_app_servers=6
+2026-07-08T23:30:54+03:00 chrome-trim term pid=1323056 count=22 rss_kb=974580
+2026-07-08T23:31:00+03:00 health-fail count=4196 pid=none http=200 ms=1 app_servers=6
+2026-07-08T23:31:00+03:00 restart-deferred reason=health-failures:4196:http-200 active_app_servers=6
+2026-07-08T23:33:14+03:00 chrome-trim term pid=1323280 count=22 rss_kb=971808
+2026-07-08T23:33:19+03:00 health-fail count=4197 pid=none http=200 ms=1 app_servers=6
+2026-07-08T23:33:20+03:00 restart-deferred reason=health-failures:4197:http-200 active_app_servers=6
+2026-07-08T23:35:34+03:00 chrome-trim term pid=1323422 count=22 rss_kb=970312
+2026-07-08T23:35:39+03:00 health-fail count=4198 pid=none http=200 ms=1 app_servers=6
+2026-07-08T23:35:39+03:00 restart-deferred reason=health-failures:4198:http-200 active_app_servers=6
+2026-07-08T23:37:54+03:00 chrome-trim term pid=1323644 count=22 rss_kb=952156
+2026-07-08T23:37:59+03:00 health-fail count=4199 pid=none http=200 ms=1 app_servers=6
+2026-07-08T23:37:59+03:00 restart-deferred reason=health-failures:4199:http-200 active_app_servers=6
+2026-07-08T23:40:14+03:00 chrome-trim term pid=1323789 count=22 rss_kb=975220
+2026-07-08T23:40:19+03:00 health-fail count=4200 pid=none http=200 ms=1 app_servers=6
+2026-07-08T23:40:19+03:00 restart-deferred reason=health-failures:4200:http-200 active_app_servers=6
+2026-07-08T23:42:34+03:00 chrome-trim term pid=1324012 count=22 rss_kb=945872
+2026-07-08T23:42:39+03:00 health-fail count=4201 pid=none http=200 ms=1 app_servers=6
+2026-07-08T23:42:40+03:00 restart-deferred reason=health-failures:4201:http-200 active_app_servers=6
+2026-07-08T23:44:54+03:00 chrome-trim term pid=1324156 count=22 rss_kb=964080
+2026-07-08T23:45:00+03:00 health-fail count=4202 pid=none http=200 ms=1 app_servers=6
+2026-07-08T23:45:00+03:00 restart-deferred reason=health-failures:4202:http-200 active_app_servers=6
+2026-07-08T23:47:06+03:00 chrome-trim term pid=1324555 count=22 rss_kb=978384
+2026-07-08T23:47:11+03:00 health-fail count=4203 pid=none http=200 ms=1 app_servers=8
+2026-07-08T23:47:11+03:00 restart-deferred reason=health-failures:4203:http-200 active_app_servers=8
+2026-07-08T23:49:08+03:00 chrome-trim term pid=1325624 count=22 rss_kb=971120
+2026-07-08T23:49:14+03:00 health-fail count=4204 pid=none http=200 ms=1 app_servers=8
+2026-07-08T23:49:14+03:00 restart-deferred reason=health-failures:4204:http-200 active_app_servers=8
+2026-07-08T23:51:24+03:00 chrome-trim term pid=1326454 count=22 rss_kb=953064
+2026-07-08T23:51:30+03:00 health-fail count=4205 pid=none http=200 ms=1 app_servers=8
+2026-07-08T23:51:30+03:00 restart-deferred reason=health-failures:4205:http-200 active_app_servers=8
+2026-07-08T23:53:44+03:00 chrome-trim term pid=1326692 count=22 rss_kb=968552
+2026-07-08T23:53:50+03:00 health-fail count=4206 pid=none http=200 ms=1 app_servers=8
+2026-07-08T23:53:50+03:00 restart-deferred reason=health-failures:4206:http-200 active_app_servers=8
+2026-07-08T23:55:54+03:00 chrome-trim term pid=1326835 count=22 rss_kb=969208
+2026-07-08T23:56:00+03:00 health-fail count=4207 pid=none http=200 ms=1 app_servers=8
+2026-07-08T23:56:00+03:00 restart-deferred reason=health-failures:4207:http-200 active_app_servers=8
+2026-07-08T23:58:14+03:00 chrome-trim term pid=1327058 count=22 rss_kb=971532
+2026-07-08T23:58:20+03:00 health-fail count=4208 pid=none http=200 ms=1 app_servers=8
+2026-07-08T23:58:20+03:00 restart-deferred reason=health-failures:4208:http-200 active_app_servers=8
+2026-07-09T00:00:34+03:00 chrome-trim term pid=1327201 count=22 rss_kb=972336
+2026-07-09T00:00:40+03:00 health-fail count=4209 pid=none http=200 ms=2 app_servers=8
+2026-07-09T00:00:40+03:00 restart-deferred reason=health-failures:4209:http-200 active_app_servers=8
+2026-07-09T00:02:54+03:00 chrome-trim term pid=1327707 count=22 rss_kb=972224
+2026-07-09T00:03:00+03:00 health-fail count=4210 pid=none http=200 ms=1 app_servers=8
+2026-07-09T00:03:00+03:00 restart-deferred reason=health-failures:4210:http-200 active_app_servers=8
+2026-07-09T00:05:14+03:00 chrome-trim term pid=1327960 count=22 rss_kb=971380
+2026-07-09T00:05:20+03:00 health-fail count=4211 pid=none http=200 ms=1 app_servers=8
+2026-07-09T00:05:20+03:00 restart-deferred reason=health-failures:4211:http-200 active_app_servers=8
+2026-07-09T00:07:34+03:00 chrome-trim term pid=1328248 count=22 rss_kb=950092
+2026-07-09T00:07:39+03:00 health-fail count=4212 pid=none http=200 ms=1 app_servers=8
+2026-07-09T00:07:39+03:00 restart-deferred reason=health-failures:4212:http-200 active_app_servers=8
+2026-07-09T00:09:54+03:00 chrome-trim term pid=1328440 count=22 rss_kb=966024
+2026-07-09T00:10:00+03:00 health-fail count=4213 pid=none http=200 ms=1 app_servers=8
+2026-07-09T00:10:00+03:00 restart-deferred reason=health-failures:4213:http-200 active_app_servers=8
+2026-07-09T00:12:14+03:00 chrome-trim term pid=1328672 count=22 rss_kb=953332
+2026-07-09T00:12:20+03:00 health-fail count=4214 pid=none http=200 ms=1 app_servers=8
+2026-07-09T00:12:20+03:00 restart-deferred reason=health-failures:4214:http-200 active_app_servers=8
+2026-07-09T00:14:34+03:00 chrome-trim term pid=1328820 count=22 rss_kb=970084
+2026-07-09T00:14:40+03:00 health-fail count=4215 pid=none http=200 ms=1 app_servers=8
+2026-07-09T00:14:40+03:00 restart-deferred reason=health-failures:4215:http-200 active_app_servers=8
+2026-07-09T00:16:54+03:00 chrome-trim term pid=1328979 count=22 rss_kb=969292
+2026-07-09T00:17:00+03:00 health-fail count=4216 pid=none http=200 ms=1 app_servers=8
+2026-07-09T00:17:00+03:00 restart-deferred reason=health-failures:4216:http-200 active_app_servers=8
+2026-07-09T00:19:14+03:00 chrome-trim term pid=1329308 count=22 rss_kb=972380
+2026-07-09T00:19:20+03:00 health-fail count=4217 pid=none http=200 ms=1 app_servers=8
+2026-07-09T00:19:20+03:00 restart-deferred reason=health-failures:4217:http-200 active_app_servers=8
+2026-07-09T00:21:34+03:00 chrome-trim term pid=1329461 count=22 rss_kb=984148
+2026-07-09T00:21:39+03:00 health-fail count=4218 pid=none http=200 ms=1 app_servers=8
+2026-07-09T00:21:39+03:00 restart-deferred reason=health-failures:4218:http-200 active_app_servers=8
+2026-07-09T00:23:54+03:00 chrome-trim term pid=1329699 count=22 rss_kb=972968
+2026-07-09T00:24:00+03:00 health-fail count=4219 pid=none http=200 ms=1 app_servers=8
+2026-07-09T00:24:00+03:00 restart-deferred reason=health-failures:4219:http-200 active_app_servers=8
+2026-07-09T00:26:14+03:00 chrome-trim term pid=1331044 count=22 rss_kb=969616
+2026-07-09T00:26:19+03:00 health-fail count=4220 pid=none http=200 ms=1 app_servers=8
+2026-07-09T00:26:19+03:00 restart-deferred reason=health-failures:4220:http-200 active_app_servers=8
+2026-07-09T00:28:34+03:00 chrome-trim term pid=1331280 count=22 rss_kb=972192
+2026-07-09T00:28:40+03:00 health-fail count=4221 pid=none http=200 ms=1 app_servers=8
+2026-07-09T00:28:40+03:00 restart-deferred reason=health-failures:4221:http-200 active_app_servers=8
+2026-07-09T00:30:54+03:00 chrome-trim term pid=1331429 count=22 rss_kb=969516
+2026-07-09T00:31:00+03:00 health-fail count=4222 pid=none http=200 ms=1 app_servers=8
+2026-07-09T00:31:00+03:00 restart-deferred reason=health-failures:4222:http-200 active_app_servers=8
+2026-07-09T00:33:14+03:00 chrome-trim term pid=1331656 count=22 rss_kb=973928
+2026-07-09T00:33:20+03:00 health-fail count=4223 pid=none http=200 ms=1 app_servers=8
+2026-07-09T00:33:20+03:00 restart-deferred reason=health-failures:4223:http-200 active_app_servers=8
+2026-07-09T00:35:34+03:00 chrome-trim term pid=1331806 count=22 rss_kb=973540
+2026-07-09T00:35:40+03:00 health-fail count=4224 pid=none http=200 ms=1 app_servers=8
+2026-07-09T00:35:40+03:00 restart-deferred reason=health-failures:4224:http-200 active_app_servers=8
+2026-07-09T00:37:54+03:00 chrome-trim term pid=1332039 count=22 rss_kb=976920
+2026-07-09T00:38:00+03:00 health-fail count=4225 pid=none http=200 ms=1 app_servers=8
+2026-07-09T00:38:00+03:00 restart-deferred reason=health-failures:4225:http-200 active_app_servers=8
+2026-07-09T00:40:14+03:00 chrome-trim term pid=1332218 count=22 rss_kb=973780
+2026-07-09T00:40:19+03:00 health-fail count=4226 pid=none http=200 ms=1 app_servers=8
+2026-07-09T00:40:19+03:00 restart-deferred reason=health-failures:4226:http-200 active_app_servers=8
+2026-07-09T00:42:34+03:00 chrome-trim term pid=1332457 count=22 rss_kb=952736
+2026-07-09T00:42:39+03:00 health-fail count=4227 pid=none http=200 ms=1 app_servers=8
+2026-07-09T00:42:40+03:00 restart-deferred reason=health-failures:4227:http-200 active_app_servers=8
+2026-07-09T00:44:54+03:00 chrome-trim term pid=1332598 count=22 rss_kb=952368
+2026-07-09T00:44:59+03:00 health-fail count=4228 pid=none http=200 ms=1 app_servers=8
+2026-07-09T00:44:59+03:00 restart-deferred reason=health-failures:4228:http-200 active_app_servers=8
+2026-07-09T00:47:14+03:00 chrome-trim term pid=1332820 count=22 rss_kb=949308
+2026-07-09T00:47:20+03:00 health-fail count=4229 pid=none http=200 ms=1 app_servers=8
+2026-07-09T00:47:20+03:00 restart-deferred reason=health-failures:4229:http-200 active_app_servers=8
+2026-07-09T00:49:34+03:00 chrome-trim term pid=1332965 count=22 rss_kb=959700
+2026-07-09T00:49:39+03:00 health-fail count=4230 pid=none http=200 ms=1 app_servers=8
+2026-07-09T00:49:40+03:00 restart-deferred reason=health-failures:4230:http-200 active_app_servers=8
+2026-07-09T00:51:54+03:00 chrome-trim term pid=1333110 count=22 rss_kb=950728
+2026-07-09T00:51:59+03:00 health-fail count=4231 pid=none http=200 ms=1 app_servers=8
+2026-07-09T00:51:59+03:00 restart-deferred reason=health-failures:4231:http-200 active_app_servers=8
+2026-07-09T00:54:14+03:00 chrome-trim term pid=1333330 count=22 rss_kb=956188
+2026-07-09T00:54:20+03:00 health-fail count=4232 pid=none http=200 ms=1 app_servers=8
+2026-07-09T00:54:20+03:00 restart-deferred reason=health-failures:4232:http-200 active_app_servers=8
+2026-07-09T00:56:34+03:00 chrome-trim term pid=1333480 count=22 rss_kb=967556
+2026-07-09T00:56:40+03:00 health-fail count=4233 pid=none http=200 ms=1 app_servers=8
+2026-07-09T00:56:40+03:00 restart-deferred reason=health-failures:4233:http-200 active_app_servers=8
+2026-07-09T00:58:54+03:00 chrome-trim term pid=1362465 count=22 rss_kb=971356
+2026-07-09T00:58:59+03:00 health-fail count=4234 pid=none http=200 ms=1 app_servers=8
+2026-07-09T00:58:59+03:00 restart-deferred reason=health-failures:4234:http-200 active_app_servers=8
+2026-07-09T01:01:14+03:00 chrome-trim term pid=1362609 count=22 rss_kb=972988
+2026-07-09T01:01:20+03:00 health-fail count=4235 pid=none http=200 ms=1 app_servers=8
+2026-07-09T01:01:20+03:00 restart-deferred reason=health-failures:4235:http-200 active_app_servers=8
+2026-07-09T01:03:34+03:00 chrome-trim term pid=1362831 count=22 rss_kb=969648
+2026-07-09T01:03:39+03:00 health-fail count=4236 pid=none http=200 ms=1 app_servers=8
+2026-07-09T01:03:39+03:00 restart-deferred reason=health-failures:4236:http-200 active_app_servers=8
+2026-07-09T01:05:54+03:00 chrome-trim term pid=1362974 count=22 rss_kb=969528
+2026-07-09T01:06:00+03:00 health-fail count=4237 pid=none http=200 ms=1 app_servers=8
+2026-07-09T01:06:00+03:00 restart-deferred reason=health-failures:4237:http-200 active_app_servers=8
+2026-07-09T01:08:14+03:00 chrome-trim term pid=1363441 count=22 rss_kb=971660
+2026-07-09T01:08:19+03:00 health-fail count=4238 pid=none http=200 ms=2 app_servers=8
+2026-07-09T01:08:19+03:00 restart-deferred reason=health-failures:4238:http-200 active_app_servers=8
+2026-07-09T01:10:34+03:00 chrome-trim term pid=1363623 count=22 rss_kb=951068
+2026-07-09T01:10:40+03:00 health-fail count=4239 pid=none http=200 ms=1 app_servers=8
+2026-07-09T01:10:40+03:00 restart-deferred reason=health-failures:4239:http-200 active_app_servers=8
+2026-07-09T01:12:54+03:00 chrome-trim term pid=1363848 count=22 rss_kb=954376
+2026-07-09T01:12:59+03:00 health-fail count=4240 pid=none http=200 ms=1 app_servers=8
+2026-07-09T01:13:00+03:00 restart-deferred reason=health-failures:4240:http-200 active_app_servers=8
+2026-07-09T01:15:14+03:00 chrome-trim term pid=1363989 count=22 rss_kb=972324
+2026-07-09T01:15:20+03:00 health-fail count=4241 pid=none http=200 ms=1 app_servers=8
+2026-07-09T01:15:20+03:00 restart-deferred reason=health-failures:4241:http-200 active_app_servers=8
+2026-07-09T01:17:34+03:00 chrome-trim term pid=1364465 count=22 rss_kb=951584
+2026-07-09T01:17:40+03:00 health-fail count=4242 pid=none http=200 ms=1 app_servers=8
+2026-07-09T01:17:40+03:00 restart-deferred reason=health-failures:4242:http-200 active_app_servers=8
+2026-07-09T01:19:54+03:00 chrome-trim term pid=1364737 count=22 rss_kb=954680
+2026-07-09T01:20:00+03:00 health-fail count=4243 pid=none http=200 ms=1 app_servers=8
+2026-07-09T01:20:00+03:00 restart-deferred reason=health-failures:4243:http-200 active_app_servers=8
+2026-07-09T01:22:14+03:00 chrome-trim term pid=1364973 count=22 rss_kb=969504
+2026-07-09T01:22:19+03:00 health-fail count=4244 pid=none http=200 ms=1 app_servers=8
+2026-07-09T01:22:19+03:00 restart-deferred reason=health-failures:4244:http-200 active_app_servers=8
+2026-07-09T01:24:34+03:00 chrome-trim term pid=1365116 count=22 rss_kb=969916
+2026-07-09T01:24:40+03:00 health-fail count=4245 pid=none http=200 ms=1 app_servers=8
+2026-07-09T01:24:40+03:00 restart-deferred reason=health-failures:4245:http-200 active_app_servers=8
+2026-07-09T01:26:54+03:00 chrome-trim term pid=1365260 count=22 rss_kb=973584
+2026-07-09T01:26:59+03:00 health-fail count=4246 pid=none http=200 ms=1 app_servers=8
+2026-07-09T01:27:00+03:00 restart-deferred reason=health-failures:4246:http-200 active_app_servers=8
+2026-07-09T01:29:14+03:00 chrome-trim term pid=1365483 count=22 rss_kb=956324
+2026-07-09T01:29:20+03:00 health-fail count=4247 pid=none http=200 ms=1 app_servers=8
+2026-07-09T01:29:20+03:00 restart-deferred reason=health-failures:4247:http-200 active_app_servers=8
+2026-07-09T01:31:34+03:00 chrome-trim term pid=1365624 count=22 rss_kb=972868
+2026-07-09T01:31:40+03:00 health-fail count=4248 pid=none http=200 ms=1 app_servers=8
+2026-07-09T01:31:40+03:00 restart-deferred reason=health-failures:4248:http-200 active_app_servers=8
+2026-07-09T01:33:54+03:00 chrome-trim term pid=1365844 count=22 rss_kb=973504
+2026-07-09T01:34:00+03:00 health-fail count=4249 pid=none http=200 ms=1 app_servers=8
+2026-07-09T01:34:00+03:00 restart-deferred reason=health-failures:4249:http-200 active_app_servers=8
+2026-07-09T01:36:14+03:00 chrome-trim term pid=1365988 count=22 rss_kb=971656
+2026-07-09T01:36:20+03:00 health-fail count=4250 pid=none http=200 ms=1 app_servers=8
+2026-07-09T01:36:20+03:00 restart-deferred reason=health-failures:4250:http-200 active_app_servers=8
+2026-07-09T01:38:34+03:00 chrome-trim term pid=1366213 count=22 rss_kb=972304
+2026-07-09T01:38:39+03:00 health-fail count=4251 pid=none http=200 ms=1 app_servers=8
+2026-07-09T01:38:40+03:00 restart-deferred reason=health-failures:4251:http-200 active_app_servers=8
+2026-07-09T01:40:54+03:00 chrome-trim term pid=1366352 count=22 rss_kb=973664
+2026-07-09T01:41:00+03:00 health-fail count=4252 pid=none http=200 ms=2 app_servers=8
+2026-07-09T01:41:00+03:00 restart-deferred reason=health-failures:4252:http-200 active_app_servers=8
+2026-07-09T01:43:14+03:00 chrome-trim term pid=1366573 count=22 rss_kb=972036
+2026-07-09T01:43:20+03:00 health-fail count=4253 pid=none http=200 ms=1 app_servers=8
+2026-07-09T01:43:20+03:00 restart-deferred reason=health-failures:4253:http-200 active_app_servers=8
+2026-07-09T01:45:34+03:00 chrome-trim term pid=1366716 count=22 rss_kb=973164
+2026-07-09T01:45:40+03:00 health-fail count=4254 pid=none http=200 ms=2 app_servers=8
+2026-07-09T01:45:40+03:00 restart-deferred reason=health-failures:4254:http-200 active_app_servers=8
+2026-07-09T01:47:54+03:00 chrome-trim term pid=1366934 count=22 rss_kb=954776
+2026-07-09T01:47:59+03:00 health-fail count=4255 pid=none http=200 ms=1 app_servers=8
+2026-07-09T01:47:59+03:00 restart-deferred reason=health-failures:4255:http-200 active_app_servers=8
+2026-07-09T01:50:14+03:00 chrome-trim term pid=1367078 count=22 rss_kb=967888
+2026-07-09T01:50:20+03:00 health-fail count=4256 pid=none http=200 ms=1 app_servers=8
+2026-07-09T01:50:20+03:00 restart-deferred reason=health-failures:4256:http-200 active_app_servers=8
+2026-07-09T01:52:34+03:00 chrome-trim term pid=1367396 count=22 rss_kb=970008
+2026-07-09T01:52:40+03:00 health-fail count=4257 pid=none http=200 ms=1 app_servers=8
+2026-07-09T01:52:40+03:00 restart-deferred reason=health-failures:4257:http-200 active_app_servers=8
+2026-07-09T01:54:54+03:00 chrome-trim term pid=1367535 count=22 rss_kb=951616
+2026-07-09T01:55:00+03:00 health-fail count=4258 pid=none http=200 ms=1 app_servers=8
+2026-07-09T01:55:00+03:00 restart-deferred reason=health-failures:4258:http-200 active_app_servers=8
+2026-07-09T01:57:14+03:00 chrome-trim term pid=1367755 count=22 rss_kb=974320
+2026-07-09T01:57:20+03:00 health-fail count=4259 pid=none http=200 ms=1 app_servers=8
+2026-07-09T01:57:20+03:00 restart-deferred reason=health-failures:4259:http-200 active_app_servers=8
+2026-07-09T01:59:34+03:00 chrome-trim term pid=1367896 count=22 rss_kb=973436
+2026-07-09T01:59:40+03:00 health-fail count=4260 pid=none http=200 ms=1 app_servers=8
+2026-07-09T01:59:40+03:00 restart-deferred reason=health-failures:4260:http-200 active_app_servers=8
+2026-07-09T02:01:54+03:00 chrome-trim term pid=1368041 count=22 rss_kb=973848
+2026-07-09T02:02:00+03:00 health-fail count=4261 pid=none http=200 ms=1 app_servers=8
+2026-07-09T02:02:00+03:00 restart-deferred reason=health-failures:4261:http-200 active_app_servers=8
+2026-07-09T02:04:14+03:00 chrome-trim term pid=1368606 count=22 rss_kb=968676
+2026-07-09T02:04:20+03:00 health-fail count=4262 pid=none http=200 ms=1 app_servers=8
+2026-07-09T02:04:20+03:00 restart-deferred reason=health-failures:4262:http-200 active_app_servers=8
+2026-07-09T02:06:34+03:00 chrome-trim term pid=1368757 count=22 rss_kb=974928
+2026-07-09T02:06:39+03:00 health-fail count=4263 pid=none http=200 ms=1 app_servers=8
+2026-07-09T02:06:39+03:00 restart-deferred reason=health-failures:4263:http-200 active_app_servers=8
+2026-07-09T02:08:54+03:00 chrome-trim term pid=1368985 count=22 rss_kb=974492
+2026-07-09T02:09:00+03:00 health-fail count=4264 pid=none http=200 ms=1 app_servers=8
+2026-07-09T02:09:00+03:00 restart-deferred reason=health-failures:4264:http-200 active_app_servers=8
+2026-07-09T02:11:14+03:00 chrome-trim term pid=1369168 count=22 rss_kb=973340
+2026-07-09T02:11:19+03:00 health-fail count=4265 pid=none http=200 ms=1 app_servers=8
+2026-07-09T02:11:20+03:00 restart-deferred reason=health-failures:4265:http-200 active_app_servers=8
+2026-07-09T02:13:34+03:00 chrome-trim term pid=1369394 count=22 rss_kb=968916
+2026-07-09T02:13:39+03:00 health-fail count=4266 pid=none http=200 ms=1 app_servers=8
+2026-07-09T02:13:40+03:00 restart-deferred reason=health-failures:4266:http-200 active_app_servers=8
+2026-07-09T02:15:54+03:00 chrome-trim term pid=1369543 count=22 rss_kb=976180
+2026-07-09T02:16:00+03:00 health-fail count=4267 pid=none http=200 ms=1 app_servers=8
+2026-07-09T02:16:00+03:00 restart-deferred reason=health-failures:4267:http-200 active_app_servers=8
+2026-07-09T02:18:14+03:00 chrome-trim term pid=1369772 count=22 rss_kb=971840
+2026-07-09T02:18:20+03:00 health-fail count=4268 pid=none http=200 ms=1 app_servers=8
+2026-07-09T02:18:20+03:00 restart-deferred reason=health-failures:4268:http-200 active_app_servers=8
+2026-07-09T02:20:34+03:00 chrome-trim term pid=1369931 count=22 rss_kb=971324
+2026-07-09T02:20:40+03:00 health-fail count=4269 pid=none http=200 ms=1 app_servers=8
+2026-07-09T02:20:40+03:00 restart-deferred reason=health-failures:4269:http-200 active_app_servers=8
+2026-07-09T02:22:54+03:00 chrome-trim term pid=1370162 count=22 rss_kb=973040
+2026-07-09T02:22:59+03:00 health-fail count=4270 pid=none http=200 ms=1 app_servers=8
+2026-07-09T02:22:59+03:00 restart-deferred reason=health-failures:4270:http-200 active_app_servers=8
+2026-07-09T02:25:14+03:00 chrome-trim term pid=1370311 count=22 rss_kb=971764
+2026-07-09T02:25:20+03:00 health-fail count=4271 pid=none http=200 ms=1 app_servers=8
+2026-07-09T02:25:20+03:00 restart-deferred reason=health-failures:4271:http-200 active_app_servers=8
+2026-07-09T02:27:34+03:00 chrome-trim term pid=1370541 count=22 rss_kb=954036
+2026-07-09T02:27:40+03:00 health-fail count=4272 pid=none http=200 ms=1 app_servers=8
+2026-07-09T02:27:40+03:00 restart-deferred reason=health-failures:4272:http-200 active_app_servers=8
+2026-07-09T02:29:54+03:00 chrome-trim term pid=1370695 count=22 rss_kb=963628
+2026-07-09T02:29:59+03:00 health-fail count=4273 pid=none http=200 ms=1 app_servers=8
+2026-07-09T02:29:59+03:00 restart-deferred reason=health-failures:4273:http-200 active_app_servers=8
+2026-07-09T02:32:14+03:00 chrome-trim term pid=1370921 count=22 rss_kb=971984
+2026-07-09T02:32:20+03:00 health-fail count=4274 pid=none http=200 ms=1 app_servers=8
+2026-07-09T02:32:20+03:00 restart-deferred reason=health-failures:4274:http-200 active_app_servers=8
+2026-07-09T02:34:34+03:00 chrome-trim term pid=1371078 count=22 rss_kb=975700
+2026-07-09T02:34:40+03:00 health-fail count=4275 pid=none http=200 ms=1 app_servers=8
+2026-07-09T02:34:40+03:00 restart-deferred reason=health-failures:4275:http-200 active_app_servers=8
+2026-07-09T02:36:54+03:00 chrome-trim term pid=1371225 count=22 rss_kb=957436
+2026-07-09T02:37:00+03:00 health-fail count=4276 pid=none http=200 ms=1 app_servers=10
+2026-07-09T02:37:00+03:00 restart-deferred reason=health-failures:4276:http-200 active_app_servers=10
+2026-07-09T02:39:10+03:00 chrome-trim term pid=1372148 count=22 rss_kb=958980
+2026-07-09T02:39:15+03:00 health-fail count=4277 pid=none http=200 ms=3 app_servers=10
+2026-07-09T02:39:15+03:00 restart-deferred reason=health-failures:4277:http-200 active_app_servers=10
+2026-07-09T02:41:24+03:00 chrome-trim term pid=1372516 count=22 rss_kb=969456
+2026-07-09T02:41:30+03:00 health-fail count=4278 pid=none http=200 ms=3 app_servers=10
+2026-07-09T02:41:30+03:00 restart-deferred reason=health-failures:4278:http-200 active_app_servers=10
+2026-07-09T02:43:44+03:00 chrome-trim term pid=1373032 count=22 rss_kb=948328
+2026-07-09T02:43:50+03:00 health-fail count=4279 pid=none http=200 ms=1 app_servers=8
+2026-07-09T02:43:50+03:00 restart-deferred reason=health-failures:4279:http-200 active_app_servers=8
+2026-07-09T02:45:54+03:00 chrome-trim term pid=1373453 count=22 rss_kb=958424
+2026-07-09T02:46:00+03:00 health-fail count=4280 pid=none http=200 ms=1 app_servers=8
+2026-07-09T02:46:00+03:00 restart-deferred reason=health-failures:4280:http-200 active_app_servers=8
+2026-07-09T02:48:14+03:00 chrome-trim term pid=1373673 count=22 rss_kb=970344
+2026-07-09T02:48:19+03:00 health-fail count=4281 pid=none http=200 ms=1 app_servers=8
+2026-07-09T02:48:19+03:00 restart-deferred reason=health-failures:4281:http-200 active_app_servers=8
+2026-07-09T02:50:34+03:00 chrome-trim term pid=1373817 count=22 rss_kb=954656
+2026-07-09T02:50:40+03:00 health-fail count=4282 pid=none http=200 ms=1 app_servers=8
+2026-07-09T02:50:40+03:00 restart-deferred reason=health-failures:4282:http-200 active_app_servers=8
+2026-07-09T02:52:54+03:00 chrome-trim term pid=1374041 count=22 rss_kb=951140
+2026-07-09T02:52:59+03:00 health-fail count=4283 pid=none http=200 ms=1 app_servers=8
+2026-07-09T02:52:59+03:00 restart-deferred reason=health-failures:4283:http-200 active_app_servers=8
+2026-07-09T02:55:14+03:00 chrome-trim term pid=1374184 count=22 rss_kb=954800
+2026-07-09T02:55:19+03:00 health-fail count=4284 pid=none http=200 ms=1 app_servers=8
+2026-07-09T02:55:19+03:00 restart-deferred reason=health-failures:4284:http-200 active_app_servers=8
+2026-07-09T02:57:34+03:00 chrome-trim term pid=1374405 count=22 rss_kb=967324
+2026-07-09T02:57:40+03:00 health-fail count=4285 pid=none http=200 ms=1 app_servers=8
+2026-07-09T02:57:40+03:00 restart-deferred reason=health-failures:4285:http-200 active_app_servers=8
+2026-07-09T02:59:54+03:00 chrome-trim term pid=1374550 count=22 rss_kb=968428
+2026-07-09T02:59:59+03:00 health-fail count=4286 pid=none http=200 ms=1 app_servers=8
+2026-07-09T02:59:59+03:00 restart-deferred reason=health-failures:4286:http-200 active_app_servers=8
+2026-07-09T03:02:14+03:00 chrome-trim term pid=1375080 count=22 rss_kb=948520
+2026-07-09T03:02:20+03:00 health-fail count=4287 pid=none http=200 ms=5 app_servers=8
+2026-07-09T03:02:20+03:00 restart-deferred reason=health-failures:4287:http-200 active_app_servers=8
+2026-07-09T03:04:34+03:00 chrome-trim term pid=1398955 count=22 rss_kb=948524
+2026-07-09T03:04:39+03:00 health-fail count=4288 pid=none http=200 ms=1 app_servers=8
+2026-07-09T03:04:39+03:00 restart-deferred reason=health-failures:4288:http-200 active_app_servers=8
+2026-07-09T03:06:54+03:00 chrome-trim term pid=1399099 count=22 rss_kb=967076
+2026-07-09T03:07:00+03:00 health-fail count=4289 pid=none http=200 ms=1 app_servers=8
+2026-07-09T03:07:00+03:00 restart-deferred reason=health-failures:4289:http-200 active_app_servers=8
+2026-07-09T03:09:14+03:00 chrome-trim term pid=1399352 count=22 rss_kb=966040
+2026-07-09T03:09:19+03:00 health-fail count=4290 pid=none http=200 ms=1 app_servers=8
+2026-07-09T03:09:19+03:00 restart-deferred reason=health-failures:4290:http-200 active_app_servers=8
+2026-07-09T03:11:34+03:00 chrome-trim term pid=1399496 count=22 rss_kb=966992
+2026-07-09T03:11:40+03:00 health-fail count=4291 pid=none http=200 ms=1 app_servers=8
+2026-07-09T03:11:40+03:00 restart-deferred reason=health-failures:4291:http-200 active_app_servers=8
+2026-07-09T03:13:54+03:00 chrome-trim term pid=1399722 count=22 rss_kb=966644
+2026-07-09T03:14:00+03:00 health-fail count=4292 pid=none http=200 ms=1 app_servers=8
+2026-07-09T03:14:00+03:00 restart-deferred reason=health-failures:4292:http-200 active_app_servers=8
+2026-07-09T03:16:14+03:00 chrome-trim term pid=1399865 count=22 rss_kb=962588
+2026-07-09T03:16:20+03:00 health-fail count=4293 pid=none http=200 ms=1 app_servers=8
+2026-07-09T03:16:20+03:00 restart-deferred reason=health-failures:4293:http-200 active_app_servers=8
+2026-07-09T03:18:34+03:00 chrome-trim term pid=1400095 count=22 rss_kb=948616
+2026-07-09T03:18:40+03:00 health-fail count=4294 pid=none http=200 ms=1 app_servers=8
+2026-07-09T03:18:40+03:00 restart-deferred reason=health-failures:4294:http-200 active_app_servers=8
+2026-07-09T03:20:54+03:00 chrome-trim term pid=1400307 count=22 rss_kb=970888
+2026-07-09T03:21:00+03:00 health-fail count=4295 pid=none http=200 ms=1 app_servers=8
+2026-07-09T03:21:00+03:00 restart-deferred reason=health-failures:4295:http-200 active_app_servers=8
+2026-07-09T03:23:14+03:00 chrome-trim term pid=1400681 count=22 rss_kb=966804
+2026-07-09T03:23:19+03:00 health-fail count=4296 pid=none http=200 ms=1 app_servers=8
+2026-07-09T03:23:19+03:00 restart-deferred reason=health-failures:4296:http-200 active_app_servers=8
+2026-07-09T03:25:34+03:00 chrome-trim term pid=1400820 count=22 rss_kb=967356
+2026-07-09T03:25:39+03:00 health-fail count=4297 pid=none http=200 ms=1 app_servers=8
+2026-07-09T03:25:39+03:00 restart-deferred reason=health-failures:4297:http-200 active_app_servers=8
+2026-07-09T03:27:54+03:00 chrome-trim term pid=1401064 count=22 rss_kb=966552
+2026-07-09T03:27:59+03:00 health-fail count=4298 pid=none http=200 ms=1 app_servers=8
+2026-07-09T03:27:59+03:00 restart-deferred reason=health-failures:4298:http-200 active_app_servers=8
+2026-07-09T03:30:14+03:00 chrome-trim term pid=1401207 count=22 rss_kb=969044
+2026-07-09T03:30:20+03:00 health-fail count=4299 pid=none http=200 ms=17 app_servers=10
+2026-07-09T03:30:20+03:00 restart-deferred reason=health-failures:4299:http-200 active_app_servers=10
+2026-07-09T03:32:34+03:00 chrome-trim term pid=1401961 count=22 rss_kb=966316
+2026-07-09T03:32:40+03:00 health-fail count=4300 pid=none http=200 ms=1 app_servers=8
+2026-07-09T03:32:40+03:00 restart-deferred reason=health-failures:4300:http-200 active_app_servers=8
+2026-07-09T03:34:54+03:00 chrome-trim term pid=1402262 count=22 rss_kb=948952
+2026-07-09T03:34:59+03:00 health-fail count=4301 pid=none http=200 ms=1 app_servers=8
+2026-07-09T03:34:59+03:00 restart-deferred reason=health-failures:4301:http-200 active_app_servers=8
+2026-07-09T03:37:14+03:00 chrome-trim term pid=1402481 count=22 rss_kb=960820
+2026-07-09T03:37:19+03:00 health-fail count=4302 pid=none http=200 ms=1 app_servers=8
+2026-07-09T03:37:19+03:00 restart-deferred reason=health-failures:4302:http-200 active_app_servers=8
+2026-07-09T03:39:34+03:00 chrome-trim term pid=1402630 count=22 rss_kb=967012
+2026-07-09T03:39:40+03:00 health-fail count=4303 pid=none http=200 ms=1 app_servers=8
+2026-07-09T03:39:40+03:00 restart-deferred reason=health-failures:4303:http-200 active_app_servers=8
+2026-07-09T03:41:54+03:00 chrome-trim term pid=1402777 count=22 rss_kb=961988
+2026-07-09T03:42:00+03:00 health-fail count=4304 pid=none http=200 ms=1 app_servers=8
+2026-07-09T03:42:00+03:00 restart-deferred reason=health-failures:4304:http-200 active_app_servers=8
+2026-07-09T03:44:14+03:00 chrome-trim term pid=1402998 count=22 rss_kb=964644
+2026-07-09T03:44:19+03:00 health-fail count=4305 pid=none http=200 ms=1 app_servers=8
+2026-07-09T03:44:19+03:00 restart-deferred reason=health-failures:4305:http-200 active_app_servers=8
+2026-07-09T03:46:34+03:00 chrome-trim term pid=1403137 count=22 rss_kb=964824
+2026-07-09T03:46:40+03:00 health-fail count=4306 pid=none http=200 ms=1 app_servers=8
+2026-07-09T03:46:40+03:00 restart-deferred reason=health-failures:4306:http-200 active_app_servers=8
+2026-07-09T03:48:54+03:00 chrome-trim term pid=1403359 count=22 rss_kb=943036
+2026-07-09T03:48:59+03:00 health-fail count=4307 pid=none http=200 ms=1 app_servers=8
+2026-07-09T03:48:59+03:00 restart-deferred reason=health-failures:4307:http-200 active_app_servers=8
+2026-07-09T03:51:14+03:00 chrome-trim term pid=1403499 count=22 rss_kb=951720
+2026-07-09T03:51:20+03:00 health-fail count=4308 pid=none http=200 ms=1 app_servers=8
+2026-07-09T03:51:20+03:00 restart-deferred reason=health-failures:4308:http-200 active_app_servers=8
+2026-07-09T03:53:34+03:00 chrome-trim term pid=1403717 count=22 rss_kb=966572
+2026-07-09T03:53:40+03:00 health-fail count=4309 pid=none http=200 ms=1 app_servers=8
+2026-07-09T03:53:40+03:00 restart-deferred reason=health-failures:4309:http-200 active_app_servers=8
+2026-07-09T03:55:38+03:00 chrome-trim term pid=1403858 count=22 rss_kb=965628
+2026-07-09T03:55:43+03:00 health-fail count=4310 pid=none http=200 ms=3 app_servers=10
+2026-07-09T03:55:43+03:00 restart-deferred reason=health-failures:4310:http-200 active_app_servers=10
+2026-07-09T03:57:54+03:00 chrome-trim term pid=1419941 count=22 rss_kb=966836
+2026-07-09T03:57:59+03:00 health-fail count=4311 pid=none http=200 ms=1 app_servers=8
+2026-07-09T03:57:59+03:00 restart-deferred reason=health-failures:4311:http-200 active_app_servers=8
+2026-07-09T04:00:14+03:00 chrome-trim term pid=1430940 count=22 rss_kb=968972
+2026-07-09T04:00:20+03:00 health-fail count=4312 pid=none http=200 ms=1 app_servers=8
+2026-07-09T04:00:20+03:00 restart-deferred reason=health-failures:4312:http-200 active_app_servers=8
+2026-07-09T04:02:34+03:00 chrome-trim term pid=1431343 count=22 rss_kb=964800
+2026-07-09T04:02:40+03:00 health-fail count=4313 pid=none http=200 ms=1 app_servers=8
+2026-07-09T04:02:40+03:00 restart-deferred reason=health-failures:4313:http-200 active_app_servers=8
+2026-07-09T04:04:54+03:00 chrome-trim term pid=1431645 count=22 rss_kb=966156
+2026-07-09T04:05:00+03:00 health-fail count=4314 pid=none http=200 ms=1 app_servers=8
+2026-07-09T04:05:00+03:00 restart-deferred reason=health-failures:4314:http-200 active_app_servers=8
+2026-07-09T04:07:14+03:00 chrome-trim term pid=1431976 count=22 rss_kb=966452
+2026-07-09T04:07:20+03:00 health-fail count=4315 pid=none http=200 ms=1 app_servers=6
+2026-07-09T04:07:20+03:00 restart-deferred reason=health-failures:4315:http-200 active_app_servers=6
+2026-07-09T04:09:34+03:00 chrome-trim term pid=1432565 count=22 rss_kb=965668
+2026-07-09T04:09:39+03:00 health-fail count=4316 pid=none http=200 ms=1 app_servers=6
+2026-07-09T04:09:39+03:00 restart-deferred reason=health-failures:4316:http-200 active_app_servers=6
+2026-07-09T04:11:54+03:00 chrome-trim term pid=1432719 count=22 rss_kb=947416
+2026-07-09T04:11:59+03:00 health-fail count=4317 pid=none http=200 ms=1 app_servers=6
+2026-07-09T04:12:00+03:00 restart-deferred reason=health-failures:4317:http-200 active_app_servers=6
+2026-07-09T04:14:14+03:00 chrome-trim term pid=1432945 count=22 rss_kb=963172
+2026-07-09T04:14:20+03:00 health-fail count=4318 pid=none http=200 ms=2 app_servers=6
+2026-07-09T04:14:20+03:00 restart-deferred reason=health-failures:4318:http-200 active_app_servers=6
+2026-07-09T04:16:34+03:00 chrome-trim term pid=1433097 count=22 rss_kb=970696
+2026-07-09T04:16:39+03:00 health-fail count=4319 pid=none http=200 ms=1 app_servers=6
+2026-07-09T04:16:39+03:00 restart-deferred reason=health-failures:4319:http-200 active_app_servers=6
+2026-07-09T04:18:54+03:00 chrome-trim term pid=1433330 count=22 rss_kb=968204
+2026-07-09T04:19:00+03:00 health-fail count=4320 pid=none http=200 ms=1 app_servers=6
+2026-07-09T04:19:00+03:00 restart-deferred reason=health-failures:4320:http-200 active_app_servers=6
+2026-07-09T04:21:14+03:00 chrome-trim term pid=1433483 count=22 rss_kb=948296
+2026-07-09T04:21:20+03:00 health-fail count=4321 pid=none http=200 ms=1 app_servers=6
+2026-07-09T04:21:20+03:00 restart-deferred reason=health-failures:4321:http-200 active_app_servers=6
+2026-07-09T04:23:34+03:00 chrome-trim term pid=1433718 count=22 rss_kb=947884
+2026-07-09T04:23:39+03:00 health-fail count=4322 pid=none http=200 ms=1 app_servers=6
+2026-07-09T04:23:39+03:00 restart-deferred reason=health-failures:4322:http-200 active_app_servers=6
+2026-07-09T04:25:54+03:00 chrome-trim term pid=1433938 count=22 rss_kb=952392
+2026-07-09T04:26:00+03:00 health-fail count=4323 pid=none http=200 ms=1 app_servers=6
+2026-07-09T04:26:00+03:00 restart-deferred reason=health-failures:4323:http-200 active_app_servers=6
+2026-07-09T04:28:14+03:00 chrome-trim term pid=1434173 count=22 rss_kb=966748
+2026-07-09T04:28:20+03:00 health-fail count=4324 pid=none http=200 ms=1 app_servers=6
+2026-07-09T04:28:20+03:00 restart-deferred reason=health-failures:4324:http-200 active_app_servers=6
+2026-07-09T04:30:34+03:00 chrome-trim term pid=1434333 count=22 rss_kb=960608
+2026-07-09T04:30:40+03:00 health-fail count=4325 pid=none http=200 ms=1 app_servers=6
+2026-07-09T04:30:40+03:00 restart-deferred reason=health-failures:4325:http-200 active_app_servers=6
+2026-07-09T04:32:54+03:00 chrome-trim term pid=1434561 count=22 rss_kb=964836
+2026-07-09T04:32:59+03:00 health-fail count=4326 pid=none http=200 ms=1 app_servers=6
+2026-07-09T04:33:00+03:00 restart-deferred reason=health-failures:4326:http-200 active_app_servers=6
+2026-07-09T04:35:14+03:00 chrome-trim term pid=1434712 count=22 rss_kb=966420
+2026-07-09T04:35:20+03:00 health-fail count=4327 pid=none http=200 ms=1 app_servers=6
+2026-07-09T04:35:20+03:00 restart-deferred reason=health-failures:4327:http-200 active_app_servers=6
+2026-07-09T04:37:34+03:00 chrome-trim term pid=1434949 count=22 rss_kb=965008
+2026-07-09T04:37:39+03:00 health-fail count=4328 pid=none http=200 ms=1 app_servers=6
+2026-07-09T04:37:40+03:00 restart-deferred reason=health-failures:4328:http-200 active_app_servers=6
+2026-07-09T04:39:54+03:00 chrome-trim term pid=1435114 count=22 rss_kb=965148
+2026-07-09T04:40:00+03:00 health-fail count=4329 pid=none http=200 ms=1 app_servers=6
+2026-07-09T04:40:00+03:00 restart-deferred reason=health-failures:4329:http-200 active_app_servers=6
+2026-07-09T04:42:14+03:00 chrome-trim term pid=1435355 count=22 rss_kb=948924
+2026-07-09T04:42:20+03:00 health-fail count=4330 pid=none http=200 ms=1 app_servers=6
+2026-07-09T04:42:20+03:00 restart-deferred reason=health-failures:4330:http-200 active_app_servers=6
+2026-07-09T04:44:34+03:00 chrome-trim term pid=1435499 count=22 rss_kb=948048
+2026-07-09T04:44:40+03:00 health-fail count=4331 pid=none http=200 ms=1 app_servers=6
+2026-07-09T04:44:40+03:00 restart-deferred reason=health-failures:4331:http-200 active_app_servers=6
+2026-07-09T04:46:54+03:00 chrome-trim term pid=1436711 count=22 rss_kb=950068
+2026-07-09T04:47:00+03:00 health-fail count=4332 pid=none http=200 ms=1 app_servers=6
+2026-07-09T04:47:00+03:00 restart-deferred reason=health-failures:4332:http-200 active_app_servers=6
+2026-07-09T04:49:14+03:00 chrome-trim term pid=1437843 count=22 rss_kb=965684
+2026-07-09T04:49:20+03:00 health-fail count=4333 pid=none http=200 ms=1 app_servers=6
+2026-07-09T04:49:20+03:00 restart-deferred reason=health-failures:4333:http-200 active_app_servers=6
+2026-07-09T04:51:34+03:00 chrome-trim term pid=1439003 count=22 rss_kb=965820
+2026-07-09T04:51:40+03:00 health-fail count=4334 pid=none http=200 ms=85 app_servers=6
+2026-07-09T04:51:40+03:00 restart-deferred reason=health-failures:4334:http-200 active_app_servers=6
+2026-07-09T04:53:54+03:00 chrome-trim term pid=1439521 count=22 rss_kb=963428
+2026-07-09T04:54:00+03:00 health-fail count=4335 pid=none http=200 ms=101 app_servers=6
+2026-07-09T04:54:00+03:00 restart-deferred reason=health-failures:4335:http-200 active_app_servers=6
+2026-07-09T04:56:14+03:00 chrome-trim term pid=1439664 count=22 rss_kb=966252
+2026-07-09T04:56:20+03:00 health-fail count=4336 pid=none http=200 ms=31 app_servers=6
+2026-07-09T04:56:20+03:00 restart-deferred reason=health-failures:4336:http-200 active_app_servers=6
+2026-07-09T04:58:34+03:00 chrome-trim term pid=1440578 count=22 rss_kb=965148
+2026-07-09T04:58:40+03:00 health-fail count=4337 pid=none http=200 ms=144 app_servers=6
+2026-07-09T04:58:40+03:00 restart-deferred reason=health-failures:4337:http-200 active_app_servers=6
+2026-07-09T05:00:54+03:00 chrome-trim term pid=1440717 count=22 rss_kb=968504
+2026-07-09T05:01:00+03:00 health-fail count=4338 pid=none http=200 ms=500 app_servers=6
+2026-07-09T05:01:00+03:00 restart-deferred reason=health-failures:4338:http-200 active_app_servers=6
+2026-07-09T05:03:14+03:00 chrome-trim term pid=1441013 count=22 rss_kb=965972
+2026-07-09T05:03:20+03:00 health-fail count=4339 pid=none http=200 ms=307 app_servers=6
+2026-07-09T05:03:20+03:00 restart-deferred reason=health-failures:4339:http-200 active_app_servers=6
+2026-07-09T05:05:34+03:00 chrome-trim term pid=1441159 count=22 rss_kb=968716
+2026-07-09T05:05:40+03:00 health-fail count=4340 pid=none http=200 ms=210 app_servers=6
+2026-07-09T05:05:40+03:00 restart-deferred reason=health-failures:4340:http-200 active_app_servers=6
+2026-07-09T05:07:54+03:00 chrome-trim term pid=1441382 count=22 rss_kb=968932
+2026-07-09T05:08:00+03:00 health-fail count=4341 pid=none http=200 ms=152 app_servers=6
+2026-07-09T05:08:00+03:00 restart-deferred reason=health-failures:4341:http-200 active_app_servers=6
+2026-07-09T05:10:14+03:00 chrome-trim term pid=1441563 count=22 rss_kb=946900
+2026-07-09T05:10:20+03:00 health-fail count=4342 pid=none http=200 ms=186 app_servers=6
+2026-07-09T05:10:20+03:00 restart-deferred reason=health-failures:4342:http-200 active_app_servers=6
+2026-07-09T05:12:34+03:00 chrome-trim term pid=1441790 count=22 rss_kb=955716
+2026-07-09T05:12:40+03:00 health-fail count=4343 pid=none http=200 ms=134 app_servers=6
+2026-07-09T05:12:40+03:00 restart-deferred reason=health-failures:4343:http-200 active_app_servers=6
+2026-07-09T05:14:54+03:00 chrome-trim term pid=1441941 count=22 rss_kb=967504
+2026-07-09T05:15:00+03:00 health-fail count=4344 pid=none http=200 ms=306 app_servers=6
+2026-07-09T05:15:00+03:00 restart-deferred reason=health-failures:4344:http-200 active_app_servers=6
+2026-07-09T05:17:14+03:00 chrome-trim term pid=1442176 count=22 rss_kb=965096
+2026-07-09T05:17:20+03:00 health-fail count=4345 pid=none http=200 ms=180 app_servers=6
+2026-07-09T05:17:20+03:00 restart-deferred reason=health-failures:4345:http-200 active_app_servers=6
+2026-07-09T05:19:34+03:00 chrome-trim term pid=1442342 count=22 rss_kb=951816
+2026-07-09T05:19:40+03:00 health-fail count=4346 pid=none http=200 ms=125 app_servers=6
+2026-07-09T05:19:40+03:00 restart-deferred reason=health-failures:4346:http-200 active_app_servers=6
+2026-07-09T05:21:54+03:00 chrome-trim term pid=1442505 count=22 rss_kb=965060
+2026-07-09T05:22:00+03:00 health-fail count=4347 pid=none http=200 ms=244 app_servers=6
+2026-07-09T05:22:00+03:00 restart-deferred reason=health-failures:4347:http-200 active_app_servers=6
+2026-07-09T05:24:14+03:00 chrome-trim term pid=1442838 count=22 rss_kb=965372
+2026-07-09T05:24:20+03:00 health-fail count=4348 pid=none http=200 ms=109 app_servers=6
+2026-07-09T05:24:20+03:00 restart-deferred reason=health-failures:4348:http-200 active_app_servers=6
+2026-07-09T05:26:34+03:00 chrome-trim term pid=1443081 count=22 rss_kb=964768
+2026-07-09T05:26:40+03:00 health-fail count=4349 pid=none http=200 ms=109 app_servers=6
+2026-07-09T05:26:40+03:00 restart-deferred reason=health-failures:4349:http-200 active_app_servers=6
+2026-07-09T05:28:54+03:00 chrome-trim term pid=1443310 count=22 rss_kb=969148
+2026-07-09T05:29:00+03:00 health-fail count=4350 pid=none http=200 ms=199 app_servers=6
+2026-07-09T05:29:00+03:00 restart-deferred reason=health-failures:4350:http-200 active_app_servers=6
+2026-07-09T05:31:14+03:00 chrome-trim term pid=1443466 count=22 rss_kb=964672
+2026-07-09T05:31:20+03:00 health-fail count=4351 pid=none http=200 ms=220 app_servers=6
+2026-07-09T05:31:20+03:00 restart-deferred reason=health-failures:4351:http-200 active_app_servers=6
+2026-07-09T05:33:34+03:00 chrome-trim term pid=1443705 count=22 rss_kb=966036
+2026-07-09T05:33:40+03:00 health-fail count=4352 pid=none http=200 ms=163 app_servers=6
+2026-07-09T05:33:40+03:00 restart-deferred reason=health-failures:4352:http-200 active_app_servers=6
+2026-07-09T05:35:54+03:00 chrome-trim term pid=1443853 count=22 rss_kb=966328
+2026-07-09T05:36:00+03:00 health-fail count=4353 pid=none http=200 ms=536 app_servers=6
+2026-07-09T05:36:00+03:00 restart-deferred reason=health-failures:4353:http-200 active_app_servers=6
+2026-07-09T05:38:14+03:00 chrome-trim term pid=1444092 count=22 rss_kb=965516
+2026-07-09T05:38:20+03:00 health-fail count=4354 pid=none http=200 ms=135 app_servers=6
+2026-07-09T05:38:20+03:00 restart-deferred reason=health-failures:4354:http-200 active_app_servers=6
+2026-07-09T05:40:34+03:00 chrome-trim term pid=1444243 count=22 rss_kb=967516
+2026-07-09T05:40:40+03:00 health-fail count=4355 pid=none http=200 ms=184 app_servers=6
+2026-07-09T05:40:40+03:00 restart-deferred reason=health-failures:4355:http-200 active_app_servers=6
+2026-07-09T05:42:54+03:00 chrome-trim term pid=1444468 count=22 rss_kb=966964
+2026-07-09T05:43:00+03:00 health-fail count=4356 pid=none http=200 ms=500 app_servers=6
+2026-07-09T05:43:00+03:00 restart-deferred reason=health-failures:4356:http-200 active_app_servers=6
+2026-07-09T05:45:14+03:00 chrome-trim term pid=1445250 count=22 rss_kb=966192
+2026-07-09T05:45:20+03:00 health-fail count=4357 pid=none http=200 ms=477 app_servers=6
+2026-07-09T05:45:20+03:00 restart-deferred reason=health-failures:4357:http-200 active_app_servers=6
+2026-07-09T05:47:34+03:00 chrome-trim term pid=1446076 count=22 rss_kb=967656
+2026-07-09T05:47:40+03:00 health-fail count=4358 pid=none http=200 ms=664 app_servers=6
+2026-07-09T05:47:40+03:00 restart-deferred reason=health-failures:4358:http-200 active_app_servers=6
+2026-07-09T05:49:54+03:00 chrome-trim term pid=1446797 count=22 rss_kb=967416
+2026-07-09T05:50:01+03:00 health-fail count=4359 pid=none http=200 ms=1074 app_servers=6
+2026-07-09T05:50:01+03:00 restart-deferred reason=health-failures:4359:http-200 active_app_servers=6
+2026-07-09T05:52:14+03:00 chrome-trim term pid=1447626 count=22 rss_kb=968572
+2026-07-09T05:52:20+03:00 health-fail count=4360 pid=none http=200 ms=888 app_servers=6
+2026-07-09T05:52:20+03:00 restart-deferred reason=health-failures:4360:http-200 active_app_servers=6
+2026-07-09T05:54:34+03:00 chrome-trim term pid=1448472 count=22 rss_kb=969464
+2026-07-09T05:54:40+03:00 health-fail count=4361 pid=none http=200 ms=824 app_servers=6
+2026-07-09T05:54:40+03:00 restart-deferred reason=health-failures:4361:http-200 active_app_servers=6
+2026-07-09T05:56:54+03:00 chrome-trim term pid=1449495 count=22 rss_kb=946588
+2026-07-09T05:57:00+03:00 health-fail count=4362 pid=none http=200 ms=1 app_servers=6
+2026-07-09T05:57:00+03:00 restart-deferred reason=health-failures:4362:http-200 active_app_servers=6
+2026-07-09T05:59:14+03:00 chrome-trim term pid=1450251 count=22 rss_kb=961260
+2026-07-09T05:59:20+03:00 health-fail count=4363 pid=none http=200 ms=1 app_servers=6
+2026-07-09T05:59:20+03:00 restart-deferred reason=health-failures:4363:http-200 active_app_servers=6
+2026-07-09T06:01:34+03:00 chrome-trim term pid=1450396 count=22 rss_kb=955948
+2026-07-09T06:01:40+03:00 health-fail count=4364 pid=none http=200 ms=3 app_servers=6
+2026-07-09T06:01:40+03:00 restart-deferred reason=health-failures:4364:http-200 active_app_servers=6
+2026-07-09T06:03:54+03:00 chrome-trim term pid=1450816 count=22 rss_kb=961200
+2026-07-09T06:04:00+03:00 health-fail count=4365 pid=none http=200 ms=2 app_servers=8
+2026-07-09T06:04:00+03:00 restart-deferred reason=health-failures:4365:http-200 active_app_servers=8
+2026-07-09T06:06:14+03:00 chrome-trim term pid=1452039 count=22 rss_kb=944852
+2026-07-09T06:06:19+03:00 health-fail count=4366 pid=none http=200 ms=1 app_servers=8
+2026-07-09T06:06:19+03:00 restart-deferred reason=health-failures:4366:http-200 active_app_servers=8
+2026-07-09T06:08:34+03:00 chrome-trim term pid=1452437 count=22 rss_kb=967968
+2026-07-09T06:08:39+03:00 health-fail count=4367 pid=none http=200 ms=1 app_servers=8
+2026-07-09T06:08:39+03:00 restart-deferred reason=health-failures:4367:http-200 active_app_servers=8
+2026-07-09T06:10:54+03:00 chrome-trim term pid=1452619 count=22 rss_kb=956000
+2026-07-09T06:10:59+03:00 health-fail count=4368 pid=none http=200 ms=1 app_servers=8
+2026-07-09T06:10:59+03:00 restart-deferred reason=health-failures:4368:http-200 active_app_servers=8
+2026-07-09T06:13:14+03:00 chrome-trim term pid=1452955 count=22 rss_kb=967240
+2026-07-09T06:13:20+03:00 health-fail count=4369 pid=none http=200 ms=1 app_servers=8
+2026-07-09T06:13:20+03:00 restart-deferred reason=health-failures:4369:http-200 active_app_servers=8
+2026-07-09T06:15:34+03:00 chrome-trim term pid=1453110 count=22 rss_kb=962344
+2026-07-09T06:15:40+03:00 health-fail count=4370 pid=none http=200 ms=1 app_servers=8
+2026-07-09T06:15:40+03:00 restart-deferred reason=health-failures:4370:http-200 active_app_servers=8
+2026-07-09T06:17:54+03:00 chrome-trim term pid=1453440 count=22 rss_kb=946228
+2026-07-09T06:17:59+03:00 health-fail count=4371 pid=none http=200 ms=1 app_servers=8
+2026-07-09T06:17:59+03:00 restart-deferred reason=health-failures:4371:http-200 active_app_servers=8
+2026-07-09T06:20:14+03:00 chrome-trim term pid=1453600 count=22 rss_kb=950276
+2026-07-09T06:20:19+03:00 health-fail count=4372 pid=none http=200 ms=1 app_servers=8
+2026-07-09T06:20:19+03:00 restart-deferred reason=health-failures:4372:http-200 active_app_servers=8
+2026-07-09T06:22:34+03:00 chrome-trim term pid=1453831 count=22 rss_kb=965568
+2026-07-09T06:22:39+03:00 health-fail count=4373 pid=none http=200 ms=1 app_servers=8
+2026-07-09T06:22:39+03:00 restart-deferred reason=health-failures:4373:http-200 active_app_servers=8
+2026-07-09T06:24:54+03:00 chrome-trim term pid=1453984 count=22 rss_kb=943444
+2026-07-09T06:24:59+03:00 health-fail count=4374 pid=none http=200 ms=1 app_servers=8
+2026-07-09T06:25:00+03:00 restart-deferred reason=health-failures:4374:http-200 active_app_servers=8
+2026-07-09T06:27:14+03:00 chrome-trim term pid=1454252 count=22 rss_kb=960932
+2026-07-09T06:27:19+03:00 health-fail count=4375 pid=none http=200 ms=1 app_servers=8
+2026-07-09T06:27:20+03:00 restart-deferred reason=health-failures:4375:http-200 active_app_servers=8
+2026-07-09T06:29:34+03:00 chrome-trim term pid=1454403 count=22 rss_kb=967556
+2026-07-09T06:29:39+03:00 health-fail count=4376 pid=none http=200 ms=1 app_servers=8
+2026-07-09T06:29:40+03:00 restart-deferred reason=health-failures:4376:http-200 active_app_servers=8
+2026-07-09T06:31:54+03:00 chrome-trim term pid=1454548 count=22 rss_kb=960356
+2026-07-09T06:32:00+03:00 health-fail count=4377 pid=none http=200 ms=1 app_servers=8
+2026-07-09T06:32:00+03:00 restart-deferred reason=health-failures:4377:http-200 active_app_servers=8
+2026-07-09T06:34:14+03:00 chrome-trim term pid=1454768 count=22 rss_kb=962928
+2026-07-09T06:34:20+03:00 health-fail count=4378 pid=none http=200 ms=1 app_servers=8
+2026-07-09T06:34:20+03:00 restart-deferred reason=health-failures:4378:http-200 active_app_servers=8
+2026-07-09T06:36:34+03:00 chrome-trim term pid=1454913 count=22 rss_kb=963064
+2026-07-09T06:36:40+03:00 health-fail count=4379 pid=none http=200 ms=1 app_servers=8
+2026-07-09T06:36:40+03:00 restart-deferred reason=health-failures:4379:http-200 active_app_servers=8
+2026-07-09T06:38:54+03:00 chrome-trim term pid=1455140 count=22 rss_kb=964908
+2026-07-09T06:38:59+03:00 health-fail count=4380 pid=none http=200 ms=1 app_servers=8
+2026-07-09T06:38:59+03:00 restart-deferred reason=health-failures:4380:http-200 active_app_servers=8
+2026-07-09T06:41:14+03:00 chrome-trim term pid=1455285 count=22 rss_kb=968604
+2026-07-09T06:41:20+03:00 health-fail count=4381 pid=none http=200 ms=1 app_servers=8
+2026-07-09T06:41:20+03:00 restart-deferred reason=health-failures:4381:http-200 active_app_servers=8
+2026-07-09T06:43:34+03:00 chrome-trim term pid=1455521 count=22 rss_kb=966088
+2026-07-09T06:43:40+03:00 health-fail count=4382 pid=none http=200 ms=1 app_servers=8
+2026-07-09T06:43:40+03:00 restart-deferred reason=health-failures:4382:http-200 active_app_servers=8
+2026-07-09T06:45:54+03:00 chrome-trim term pid=1455665 count=22 rss_kb=947528
+2026-07-09T06:45:59+03:00 health-fail count=4383 pid=none http=200 ms=1 app_servers=8
+2026-07-09T06:45:59+03:00 restart-deferred reason=health-failures:4383:http-200 active_app_servers=8
+2026-07-09T06:48:14+03:00 chrome-trim term pid=1455886 count=22 rss_kb=967236
+2026-07-09T06:48:19+03:00 health-fail count=4384 pid=none http=200 ms=1 app_servers=8
+2026-07-09T06:48:20+03:00 restart-deferred reason=health-failures:4384:http-200 active_app_servers=8
+2026-07-09T06:50:34+03:00 chrome-trim term pid=1456030 count=22 rss_kb=967752
+2026-07-09T06:50:39+03:00 health-fail count=4385 pid=none http=200 ms=1 app_servers=8
+2026-07-09T06:50:39+03:00 restart-deferred reason=health-failures:4385:http-200 active_app_servers=8
+2026-07-09T06:52:54+03:00 chrome-trim term pid=1456250 count=22 rss_kb=948928
+2026-07-09T06:52:59+03:00 health-fail count=4386 pid=none http=200 ms=1 app_servers=8
+2026-07-09T06:53:00+03:00 restart-deferred reason=health-failures:4386:http-200 active_app_servers=8
+2026-07-09T06:55:14+03:00 chrome-trim term pid=1456393 count=22 rss_kb=946380
+2026-07-09T06:55:20+03:00 health-fail count=4387 pid=none http=200 ms=1 app_servers=10
+2026-07-09T06:55:20+03:00 restart-deferred reason=health-failures:4387:http-200 active_app_servers=10
+2026-07-09T06:57:34+03:00 chrome-trim term pid=1460355 count=22 rss_kb=950824
+2026-07-09T06:57:40+03:00 health-fail count=4388 pid=none http=200 ms=1 app_servers=8
+2026-07-09T06:57:40+03:00 restart-deferred reason=health-failures:4388:http-200 active_app_servers=8
+2026-07-09T06:59:54+03:00 chrome-trim term pid=1484314 count=22 rss_kb=968080
+2026-07-09T07:00:00+03:00 health-fail count=4389 pid=none http=200 ms=1 app_servers=8
+2026-07-09T07:00:00+03:00 restart-deferred reason=health-failures:4389:http-200 active_app_servers=8

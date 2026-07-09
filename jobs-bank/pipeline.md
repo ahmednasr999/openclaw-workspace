@@ -491,6 +491,15 @@
 | 600 | 🆕 | Western Union | Head of Operations (Retail\Digital) for Middle East, Pakistan & Afghanistan (MEPA) based in Dubai, UAE | Dubai | — | 🆕 Discovered | Radar | 2026-07-08 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4436830232) | — |
 | 601 | 🆕 | Hex Trust | Director- Senior Sales, Cross-border Payments Solutions | Dubai | — | 🆕 Discovered | Radar | 2026-07-08 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4436289950) | — |
 | 602 | 🆕 | Talents Tide | Head of Data Management (UAEN) | Dubai | — | 🆕 Discovered | Radar | 2026-07-08 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4434651915) | — |
+| 603 | 🆕 | First Access Consulting | Strategy & Transformation Director | Riyadh | — | 🆕 Discovered | Radar | 2026-07-09 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4436802544) | — |
+| 604 | 🆕 | Takamol Holding | Services & Data Solutions Senior Director | Riyadh | — | 🆕 Discovered | Radar | 2026-07-09 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4437030004) | — |
+| 605 | 🆕 | Takamol Holding | Services & Data Solutions Senior Director | Riyadh | — | 🆕 Discovered | Radar | 2026-07-09 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4438206226) | — |
+| 606 | 🆕 | Parsons Corporation | Head of Enterprise Architecture | Tabūk | — | 🆕 Discovered | Radar | 2026-07-09 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4437894748) | — |
+| 607 | 🆕 | Confidential | Senior AI Transformation Lead — A&E Consulting | Jeddah | — | 🆕 Discovered | Radar | 2026-07-09 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4434852064) | — |
+| 608 | 🆕 | Orange Antelopes | Head of Information Technology | Riyadh | — | 🆕 Discovered | Radar | 2026-07-09 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4434844690) | — |
+| 609 | 🆕 | Rebel Recruiters | Head of Systems Engineering | Dubai | — | 🆕 Discovered | Radar | 2026-07-09 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4433938399) | — |
+| 610 | 🆕 | Monfi Digital Bank | Head of Digital Assets | Dubai | — | 🆕 Discovered | Radar | 2026-07-09 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4434852979) | — |
+
 
 
 

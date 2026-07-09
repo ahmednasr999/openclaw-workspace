@@ -1643,3 +1643,10 @@ For heavy repo checks, browser/test proof bundles, and CTO verification that sho
 The 20:00 email run surfaced `RAKBANK.CAREER - New job opportunities at Rak Bank Career Site` as `Email alert - action needed` with a 48h response instruction, even though the subject reads like a career-site job-alert digest rather than an interview, assessment, offer, recruiter reply, or time-bound follow-up.
 ### Do differently
 For email alerts, treat career-site `new job opportunities` messages as low/normal review unless the provided excerpt proves a specific interview, assessment, offer, recruiter conversation, deadline, or requested reply. Do not let a noisy `interview_invite`/active-company category alone create urgent action language.
+
+## 2026-07-08 - Auto Lessons Capture Must Check Short Cron Follow-ups
+
+### Incident
+`scripts/auto-lessons-learned.py --all` reported 0 significant sessions because every July 8 session had fewer than 5 exchanges, but one skipped two-exchange Email Agent cron session still contained Ahmed's concrete correction that the previous response only acknowledged the cron task instead of completing it.
+### Do differently
+After the auto-lessons script reports no significant sessions, run a bounded JSON-aware search over today's skipped session user messages for correction/failure phrases, then dedupe against existing lessons before deciding there is nothing to append.

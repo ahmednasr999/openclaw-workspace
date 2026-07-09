@@ -2,9 +2,9 @@
   "task": "job-radar",
   "status": "ok",
   "returncode": 0,
-  "started_at": "2026-07-08T06:00:01+03:00",
-  "finished_at": "2026-07-08T06:00:39+03:00",
-  "duration_seconds": 38,
+  "started_at": "2026-07-09T06:00:01+03:00",
+  "finished_at": "2026-07-09T06:00:48+03:00",
+  "duration_seconds": 47,
   "log_path": "/root/.openclaw/workspace/logs/cron/job-radar.log",
   "lock_path": "/var/lock/openclaw/job-radar.lock",
   "host": "srv1352768"

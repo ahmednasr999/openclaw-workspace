@@ -2,85 +2,206 @@
   "meta": {
     "agent": "jobs-review",
     "version": "2.0.0",
-    "generated_at": "2026-07-05T08:10:52.116303+03:00",
-    "duration_ms": 463108,
+    "generated_at": "2026-07-09T04:50:00.019454+03:00",
+    "duration_ms": 429642,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "421aa0c6",
+    "run_id": "be266f86",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
   "data": {
-    "generated_at": "2026-07-05T08:10:51.972412+03:00",
-    "total_candidates": 53,
-    "reviewed": 51,
+    "generated_at": "2026-07-09T04:49:59.778860+03:00",
+    "total_candidates": 64,
+    "reviewed": 64,
     "submit": [
       {
-        "id": "linkedin_jobspy-li-4435456439",
+        "id": "linkedin_jobspy-li-4437813505",
         "source": "linkedin_jobspy",
-        "title": "Head of ePMO",
-        "company": "myZoi |  Financial Inclusion Technologies",
+        "title": "Customer Success Director",
+        "company": "Finastra",
         "location": "Dubai, Dubai, United Arab Emirates",
-        "url": "https://www.linkedin.com/jobs/view/4435456439",
-        "posted": "2026-07-03",
-        "seniority": "Director",
-        "domain_match": true,
-        "keyword_score": 40,
+        "url": "https://www.linkedin.com/jobs/view/4437813505",
+        "posted": "2026-07-07",
+        "seniority": "C-Suite",
+        "domain_match": false,
+        "keyword_score": 20,
         "match_keywords": [
-          "pmo",
-          "fintech",
-          "ai",
-          "head of",
-          "uae",
-          "dubai"
+          "payments",
+          "director",
+          "api"
         ],
-        "raw_snippet": "**Head of ePMO**\n\n**Location:** \n Dubai, UAE\n   \n\n**Employment Type:** \n Full\\-Time, Permanent\n   \n\n**Reports To:** \n Chief Strategy Officer\n \n\n\n**About myZoi**\n\n myZoi is a CBUAE\\-regulated fintech on a mission to deliver financial inclusion for the underbanked workforce in the UAE and beyond. We s",
+        "raw_snippet": "**Who are we?**\n At Finastra, we\u2019re a global leader in financial services software, dedicated to expanding access to financial services and shaping what\u2019s next for the industry. Our technology powers mission\u2011critical solutions across Lending, Payments and Universal Banking, supporting over 7,000 cus",
         "relevant": true,
         "filter_reason": null,
         "search_country": "United Arab Emirates",
-        "search_title": "PMO Director",
-        "linkedin_id": "li-4435456439",
-        "jd_text": "**Head of ePMO**\n\n**Location:** \n Dubai, UAE\n   \n\n**Employment Type:** \n Full\\-Time, Permanent\n   \n\n**Reports To:** \n Chief Strategy Officer\n \n\n\n**About myZoi**\n\n myZoi is a CBUAE\\-regulated fintech on a mission to deliver financial inclusion for the underbanked workforce in the UAE and beyond. We serve employers, employees, and migrant workers across payroll, remittance, cards, and value\\-added financial services \u2014 operating at the intersection of regulatory complexity, product ambition, and rapid growth.\n   \n\n\n\n\n\n We are at an exciting stage of our journey. Our product portfolio is scaling, our governance infrastructure is maturing, and our strategic agenda is becoming more ambitious. The people and systems we put in place now will define how myZoi operates at the next level of scale.\n   \n\n  \n\n\n\n\n**About the Role**\n\n As Head of EPMO you will be the central governance and delivery control function for myZoi's product and enterprise portfolios. This is a high\\-authority, high\\-visibility role that sits at the heart of how myZoi decides what to build, what to fund, and how to deliver \u2014 reporting directly to the Chief Strategy Officer with a close working relationship with the Chief Product Officer.\n   \n\n\n\n\n\n You will own the end\\-to\\-end governance framework across two distinct portfolios \u2014 the product delivery pipeline and the enterprise initiative register \u2014 each with its own governance model, approval authority, and reporting cadence. You will be the single point of accountability for ensuring that engineering capacity is always allocated to the highest\\-value work, that no initiative enters development without structured validation and executive authorisation, and that leadership has a live, accurate, and honest view of delivery health at all times.\n   \n\n\n\n\n\n This is not a coordination role and it is not a reporting role. The right candidate builds governance systems, enforces them under pressure, and walks into every leadership meeting already knowing the answer.\n   \n\n\n\n\n\n You will be stepping into a function that has an established framework and a clear mandate \u2014 and your role will be to own it, activate it, and make it the operating backbone of how myZoi delivers. Everything the EPMO governs connects directly to myZoi's strategic agenda and business plan \u2014 your job is to ensure that connection is visible, maintained, and enforced across every initiative in flight.\n   \n\n  \n\n\n\n\n**Who You Will Work With**\n\n You will operate as a strategic partner to the Chief Strategy Officer and Chief Product Officer on a daily basis, with regular interaction with the CTO, CFO, COO and functional leadership across the business. You will lead a small EPMO team comprising an Agile Lead and a Project Manager, and you will be embedded in the delivery rhythm of three product squads.\n   \n\n  \n\n\n\n\n**What You Will Own**\n\n**Portfolio Governance**\n\n\n\n\n \u25cf Ensure that initiative prioritisation across both portfolios remains anchored to myZoi's strategic objectives and annual business plan \u2014 flagging to the CSO and CPO when the portfolio mix drifts from agreed strategic priorities\n   \n\n\n\n\n\n \u25cf Own, refine, and enforce the structured intake and prioritization framework across product and enterprise portfolios \u2014 ensuring every initiative is classified, validated, and authorized before development begins\n   \n\n\n\n\n\n \u25cf Maintain a real\\-time view of engineering capacity across delivery squads \u2014 surface prioritisation conflicts, swap recommendations, and capacity constraints to the CPO and CSO proactively\n   \n\n\n\n\n\n \u25cf Track the cost, timeline, and value delivery of every active initiative \u2014 maintaining visibility over budget consumption, milestone adherence, and whether initiatives are delivering the outcomes that justified their approval. Surface material deviations to the CPO and CSO before they become problems\n   \n\n\n\n\n\n \u25cf Own the single source of truth for all active initiatives across both portfolios \u2014 keeping status, milestones, dependencies, and risks current at all times\n   \n\n\n\n\n\n**Enterprise Portfolio Management**\n\n\n\n\n myZoi's enterprise portfolio spans the operating platform and support functions that underpin the business \u2014 the capabilities and infrastructure that enable the product to be built, operated, and scaled. Governing this portfolio means ensuring that operational and procurement initiatives across these functions are assessed, prioritised, and delivered with the same rigour applied to the product portfolio.\n   \n\n\n\n\n\n \u25cf Govern operational and procurement initiatives end to end \u2014 from initial classification through technical evaluation, financial approval, and delivery oversight\n   \n\n\n\n\n\n \u25cf Maintain portfolio visibility across transformational strategic initiatives without assuming delivery ownership \u2014 flagging resource conflicts and capacity dependencies to senior leadership\n   \n\n\n\n\n\n \u25cf Coordinate with the CTO on engineering capacity decisions and with the CFO on procurement governance\n   \n\n\n\n\n\n**Delivery Intelligence \\& Risk Management**\n\n\n\n\n \u25cf Own a live slippage log with root cause categorisation for every deadline and budget movement \u2014 no exceptions\n   \n\n\n\n\n\n \u25cf Identify systemic delivery patterns and bring structured recommendations to leadership \u2014 not status updates\n   \n\n\n\n\n\n \u25cf Flag forward risks 2\u20134 weeks before they materialise and drive accountability for recovery\n   \n\n\n\n\n\n**Reporting \\& Governance Rhythm**\n\n\n\n\n \u25cf Produce and own a distinct monthly portfolio status report for each of the CPO and CSO \u2014 concise, decision\\-ready, and forward\\-looking\n   \n\n\n\n\n\n \u25cf Own and facilitate the full governance calendar across weekly, bi\\-weekly, monthly, and quarterly cadences\n   \n\n\n\n\n\n \u25cf Present delivery intelligence in governance meetings \u2014 the EPMO owns the narrative, not the slide deck\n   \n\n\n\n\n\n**Team Leadership**\n\n\n\n\n \u25cf Lead and coordinate the EPMO team including an Agile Lead and Project Manager \u2014 ensuring clear ownership, consistent standards, and delivery continuity across the function\n   \n\n  \n\n\n\n\n**What We Are Looking For**\n\n**Experience**\n\n\n\n\n \u25cf 12\\-15 years in senior program management, portfolio governance, or enterprise PMO roles \u2014 with a track record of building governance frameworks from scratch, not just operating within them\n   \n\n\n\n\n\n \u25cf Proven experience governing multiple concurrent portfolios with differentiated governance models across product delivery and enterprise programs\n   \n\n\n\n\n\n \u25cf Direct experience designing and enforcing structured intake, classification, and gate approval processes in high\\-velocity environments\n   \n\n\n\n\n\n \u25cf Background in a regulated fintech, payments, or financial services environment \u2014 familiarity with CBUAE or equivalent central bank regulatory obligations strongly preferred\n   \n\n\n\n\n\n \u25cf Experience managing upward across multiple C\\-suite stakeholders simultaneously in a matrix or dual\\-reporting environment\n   \n\n\n\n\n\n \u25cf Hands\\-on familiarity with agile delivery environments and squad\\-level capacity planning \u2014 sufficient to lead an Agile Lead credibly and challenge delivery estimates with authority\n   \n\n\n\n\n\n \u25cf Commercial orientation \u2014 able to frame governance and prioritisation decisions in business value terms, not just process compliance\n   \n\n\n\n\n\n**Certifications**\n\n\n\n\n \u25cf PMP or PgMP required\n   \n\n\n\n\n\n \u25cf MSP Practitioner and SAFe SA or SPC strongly preferred\n   \n\n\n\n\n\n \u25cf MoP, PMI\\-ACP, or PRINCE2 Practitioner an advantage\n   \n\n\n\n\n\n \u25cf Familiarity with UAE regulatory environment (CBUAE, SVF licensing) preferred\n   \n\n\n\n\n\n**The Kind of Person Who Will Thrive Here**\n\n\n\n\n You hold governance boundaries with authority and without apology \u2014 even when the pressure comes from senior product or engineering leadership. You know the difference between owning governance and owning delivery, and you never confuse the two. You bring commercial judgement to prioritisation decisions, not just process discipline. You are comfortable maintaining oversight of exploratory and transformational programs without needing to govern their delivery. You communicate differently to different audiences \u2014 operationally detailed with delivery teams, concise and decisive with executives. And you are genuinely forward\\-looking \u2014 you surface risks before they become problems, not after.",
-        "source_count": 1,
+        "search_title": "Delivery Director",
+        "linkedin_id": "li-4437813505",
+        "jd_text": "**Who are we?**\n At Finastra, we\u2019re a global leader in financial services software, dedicated to expanding access to financial services and shaping what\u2019s next for the industry. Our technology powers mission\u2011critical solutions across Lending, Payments and Universal Banking, supporting over 7,000 customers, including 80% of the world\u2019s top 50 banks, in more than 110 countries.\n   \n\n  \n\n**Who are we?**\n At Finastra, we are a global leader in financial services software, committed to broadening access to financial services and shaping the future of banking. Our solutions support over 7,000 customers, including 80% of the world\u2019s top 50 banks, across more than 110 countries, powering mission\u2011critical capabilities in Universal Banking, Payments, and Lending.\n   \n\n  \n\n We are looking for a Director of Strategy, Corporate Development \\& PMO to join our Universal Banking organisation. This is a high\u2011impact, enterprise\u2011level role reporting directly to the Chief of Staff, sitting at the centre of strategy execution, governance, and value delivery for one of Finastra\u2019s most important businesses.\n   \n\n  \n\n This is an exciting opportunity for someone who can combine strategic thinking with strong execution discipline, and who thrives in complex, matrixed environments with senior\u2011level exposure.\n   \n\n  \n\n**About The Role**\n We are seeking a\n **Customer Success Director \u2013 Corporate Lending** \n to lead customer success outcomes across a portfolio of strategic customers using solutions including\n **Loan IQ, Trade, and Corporate Channels** \n . This role is responsible for driving customer adoption, retention, renewal readiness, and long\\-term value realization while serving as a trusted advisor to customers and a key partner across Sales, Product, Professional Services, and Support teams.\n   \n\n  \n\n The successful candidate will combine strong customer relationship management, commercial acumen, and domain expertise in lending or financial services to ensure customers achieve their business objectives and maximize the value of their Finastra investment.\n   \n\n  \n\n**Job Responsibilities**\n* Drive customer adoption, value realization, and business outcomes across a portfolio of Corporate Lending customers.\n* Develop and execute Customer Success Plans aligned to customer objectives and strategic priorities.\n* Monitor customer health, usage trends, and risk indicators, proactively addressing challenges and escalation management.\n* Lead customer engagements including onboarding, success reviews, and executive business reviews.\n* Partner with Sales teams to support renewals, increase retention, and identify expansion opportunities.\n* Act as a trusted advisor and executive sponsor for key strategic accounts.\n* Support customer transformation initiatives including cloud migration, platform modernization, upgrades, and SaaS adoption.\n* Drive adoption of new product capabilities and promote best practices for change management and user adoption.\n* Collaborate with Product, Engineering, Support, and Professional Services teams to resolve issues and improve customer outcomes.\n* Provide customer insights and feedback to influence product strategy and service improvements.\n* Contribute to revenue retention, customer satisfaction, and overall portfolio growth through effective customer engagement.\n\n\n**Required Skills**\n* 8\\+ years of experience in Customer Success, Account Management, Client Services, or similar customer\\-facing roles within enterprise software/SaaS environments.\n* Proven success managing complex enterprise customer portfolios and driving retention and renewal outcomes.\n* Experience within financial services, corporate lending, banking technology, or trade finance.\n* Strong executive stakeholder management and customer engagement skills.\n* Demonstrated ability to operate within metrics\\-driven Customer Success frameworks using customer health and adoption data.\n* Experience leading customer transformation initiatives, including cloud adoption, SaaS migrations, or platform modernization.\n* Excellent communication, presentation, and relationship\\-building skills across technical and business audiences.\n* Strong analytical and problem\\-solving capabilities with a proactive approach to risk management.\n* Experience with Corporate Lending solutions such as Loan IQ, Trade, or Corporate Channels is highly desirable.\n* Previous people leadership or team management experience is advantageous.\n\n\n**Benefits**\n We are proud to offer a range of incentives to our employees worldwide. These benefits are available to everyone, regardless of grade, and reflect the values we stand for:\n   \n\n  \n\n**Flexibility:** \n Enjoy unlimited vacation, subject to local regulations and business priorities. Benefit from hybrid working arrangements and inclusive policies such as paid time off for voting, bereavement, and sick leave.\n   \n\n  \n\n**Well\u2011being:** \n Access confidential one\u2011to\u2011one support through our Employee Assistance Program, connect with our network of Wellbeing Champions and Gather Groups, and take part in monthly events and initiatives designed to help you thrive\u2014inside and outside of work.\n   \n\n  \n\n**Health \\& Financial Security:** \n Medical, life and disability insurance, retirement plans, lifestyle, and other benefits.\\*\n   \n\n  \n\n**Sustainability:** \n Paid time off for volunteering and donation\u2011matching opportunities to support causes that matter to you.\n   \n\n  \n\n**Inclusion:** \n Get involved in our inclusion communities, such as Count Me In, Culture@Finastra, Proud@Finastra, Disabilities@Finastra, and Women@Finastra\u2014open to everyone who wants to participate and contribute.\n   \n\n  \n\n**Career Development:** \n Access online learning and accredited courses through our Skills \\& Career Navigator tool.\n   \n\n  \n\n**Recognition:** \n Take part in our global recognition program, Finastra Celebrates, and share your voice through regular employee surveys that help shape our culture and ways of working.\n   \n\n  \n\n* Specific benefits may vary by location.\n\n\n At Finastra, each individual is unique\u2014bringing their own ideas, perspectives, cultural backgrounds, and experiences. We learn from one another, value what makes us different, and create an environment where everyone feels included, supported, and able to be their authentic selves.\n   \n\n  \n\n Be unique. Be exceptional. Help us make a difference at Finastra.",
+        "source_count": 2,
         "country": "United Arab Emirates",
-        "industry_bonus": 12,
+        "industry_bonus": 18,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin",
+          "indeed"
+        ],
+        "first_seen": "2026-07-09",
+        "career_fit_score": 9,
+        "verdict": "SUBMIT",
+        "verdict_reason": "Strong FinTech/banking software fit with Director-level customer success, corporate lending, strategy execution, and PMO alignment. [5D role=2 | seniority=2 | geo=2 | strategic=1 | evidence=2 | fit=9/10 | llm=7 | watchlist=fintech_gcc] [CMO outreach queued for Finastra]",
+        "watchlist_matches": {
+          "company_hits": [],
+          "domain_hits": [
+            "bank",
+            "banking",
+            "payments"
+          ],
+          "categories": [
+            "fintech_gcc"
+          ]
+        },
+        "ats_score": 83,
+        "ats_verdict": "GO",
+        "ats_matched": [
+          "pmo",
+          "transformation",
+          "ai",
+          "erp",
+          "payment",
+          "governance",
+          "change management",
+          "stakeholder management",
+          "revenue",
+          "cloud"
+        ],
+        "ats_gaps": [],
+        "llm_fit_score": 7,
+        "fit_dimensions": {
+          "role": 2,
+          "seniority": 2,
+          "geography": 2,
+          "strategic": 1,
+          "evidence": 2
+        }
+      },
+      {
+        "id": "linkedin_jobspy-li-4437756020",
+        "source": "linkedin_jobspy",
+        "title": "Director of Enterprise Applications",
+        "company": "Confidential",
+        "location": "Kuwait City, Al Asimah, Kuwait",
+        "url": "https://www.linkedin.com/jobs/view/4437756020",
+        "posted": "2026-07-07",
+        "seniority": "C-Suite",
+        "domain_match": false,
+        "keyword_score": 20,
+        "match_keywords": [
+          "ai",
+          "enterprise",
+          "director"
+        ],
+        "raw_snippet": "**Director of Enterprise Applications** \n\n\n\n\n**Location : Kuwait** \n\n\n\n\n**Employment Type : Full\\-Time** \n\n\n\n\n**Job Summary** \n\n\n\n\n We are seeking an experienced\n **Director of Enterprise Applications** \n to lead the strategy, governance, and continuous enhancement of enterprise business application",
+        "relevant": true,
+        "filter_reason": null,
+        "search_country": "Kuwait",
+        "search_title": "Head of PMO",
+        "linkedin_id": "li-4437756020",
+        "jd_text": "**Director of Enterprise Applications** \n\n\n\n\n**Location : Kuwait** \n\n\n\n\n**Employment Type : Full\\-Time** \n\n\n\n\n**Job Summary** \n\n\n\n\n We are seeking an experienced\n **Director of Enterprise Applications** \n to lead the strategy, governance, and continuous enhancement of enterprise business applications across a complex, multi\\-site organization.\n \n\n\n\n The successful candidate will oversee the complete lifecycle of enterprise applications, drive digital transformation initiatives, and ensure that technology solutions effectively support business operations, operational excellence, and organizational growth.\n \n\n\n\n This role requires a forward\\-thinking leader with strong technical knowledge, excellent people management skills, and a passion for leveraging emerging technologies\u2014including Artificial Intelligence\u2014to improve business processes and decision\\-making.\n \n\n\n\n**Key Responsibilities** \n\n\n\n* Develop and execute the enterprise applications strategy aligned with organizational objectives.\n* Lead the implementation, enhancement, and support of enterprise business applications.\n* Oversee the complete Software Development Life Cycle (SDLC), including planning, development, testing, deployment, and continuous improvement.\n* Drive digital transformation initiatives through automation, AI, analytics, and modern technologies.\n* Ensure seamless integration between enterprise applications and third\\-party platforms.\n* Lead cross\\-functional technical teams responsible for application development, support, integration, and business solutions.\n* Collaborate with business stakeholders to identify opportunities for process improvement through technology.\n* Oversee enterprise reporting, dashboards, and data\\-driven decision support solutions.\n* Establish application governance standards, policies, and best practices.\n* Ensure application security, reliability, scalability, and performance.\n* Manage software vendors, licensing, contracts, and technology partnerships.\n* Lead enterprise application projects, budgets, timelines, and resource planning.\n* Promote innovation and continuous improvement across all enterprise applications.\n\n\n\n**Requirements** \n\n\n\n* Bachelor's degree in Computer Science, Information Technology, Software Engineering, Information Systems, or a related discipline.\n* **8\u201315 years** \n of progressive experience in enterprise applications, business systems, or software solutions.\n* Minimum\n **5 years in a leadership or management role** \n .\n* Strong experience managing enterprise business applications or ERP platforms.\n* Experience leading software development and application support teams.\n* Strong understanding of enterprise integrations, APIs, and modern application architectures.\n* Experience with cloud platforms and enterprise technologies.\n* Demonstrated experience driving digital transformation initiatives.\n* Strong understanding of AI technologies and their practical application within enterprise environments.\n* Excellent leadership, communication, and stakeholder management skills.\n* Experience working in complex or multi\\-entity organizations is highly preferred.\n\n\n\n**Preferred Qualifications** \n\n\n\n* Experience with enterprise ERP solutions.\n* Experience with business intelligence and analytics platforms.\n* Knowledge of enterprise architecture principles.\n* Familiarity with Agile, DevOps, and modern software delivery practices.\n* Professional certifications in project management, cloud technologies, enterprise applications, or IT service management are an advantage.\n\n\n\n**Key Competencies** \n\n\n\n* Strategic Leadership\n* Enterprise Applications\n* Digital Transformation\n* Artificial Intelligence Adoption\n* Business Process Improvement\n* Enterprise Integration\n* Data\\-Driven Decision Making\n* Team Leadership\n* Vendor Management\n* Change Management\n* Innovation\n* Problem Solving",
+        "source_count": 1,
+        "country": "Kuwait",
+        "industry_bonus": 9,
         "policy_status": "pass",
         "sources": [
           "linkedin"
         ],
-        "first_seen": "2026-07-04",
-        "career_fit_score": 9,
+        "first_seen": "2026-07-09",
+        "career_fit_score": 8,
         "verdict": "SUBMIT",
-        "verdict_reason": "Excellent ePMO leadership role in UAE fintech with governance, portfolio delivery, and executive accountability [5D role=2 | seniority=2 | geo=2 | strategic=1 | evidence=2 | fit=9/10 | llm=9 | watchlist=fintech_gcc,government_semi_gov_gcc] [CMO outreach queued for myZoi |  Financial Inclusion Technologies]",
+        "verdict_reason": "Strong enterprise applications and digital transformation leadership role in target GCC geography [5D role=2 | seniority=2 | geo=1 | strategic=1 | evidence=2 | fit=8/10 | llm=8] [CMO outreach queued for Confidential]",
         "watchlist_matches": {
           "company_hits": [],
-          "domain_hits": [
-            "authority",
-            "bank",
-            "fintech"
-          ],
-          "categories": [
-            "fintech_gcc",
-            "government_semi_gov_gcc"
-          ]
+          "domain_hits": [],
+          "categories": []
         },
-        "ats_score": 88,
+        "ats_score": 77,
         "ats_verdict": "GO",
         "ats_matched": [
-          "program management",
-          "pmo",
+          "digital transformation",
+          "project management",
           "transformation",
-          "portfolio management",
-          "pmp",
+          "artificial intelligence",
           "ai",
           "erp",
-          "fintech",
-          "payment",
-          "governance"
+          "governance",
+          "change management",
+          "stakeholder management",
+          "vendor management"
         ],
         "ats_gaps": [],
-        "llm_fit_score": 9,
+        "llm_fit_score": 8,
+        "fit_dimensions": {
+          "role": 2,
+          "seniority": 2,
+          "geography": 1,
+          "strategic": 1,
+          "evidence": 2
+        }
+      },
+      {
+        "id": "linkedin_jobspy-li-4433908679",
+        "source": "linkedin_jobspy",
+        "title": "Strategy Management Director",
+        "company": "Senna",
+        "location": "Riyadh, Riyadh, Saudi Arabia",
+        "url": "https://www.linkedin.com/jobs/view/4433908679",
+        "posted": "2026-07-06",
+        "seniority": "C-Suite",
+        "domain_match": true,
+        "keyword_score": 6,
+        "match_keywords": [
+          "director"
+        ],
+        "raw_snippet": "The consulting firm is seeking a Strategy Management Director to lead the development, execution, and monitoring of its corporate strategy. This senior role is responsible for translating strategic priorities into measurable initiatives, driving performance management, supporting business transforma",
+        "relevant": true,
+        "filter_reason": null,
+        "search_country": "Saudi Arabia",
+        "search_title": "Head of PMO",
+        "linkedin_id": "li-4433908679",
+        "jd_text": "The consulting firm is seeking a Strategy Management Director to lead the development, execution, and monitoring of its corporate strategy. This senior role is responsible for translating strategic priorities into measurable initiatives, driving performance management, supporting business transformation, and ensuring alignment between executive leadership, business units, and long\\-term organizational objectives.\n   \n\n  \n\n Key Responsibilities\n   \n\n  \n\n* Lead the development, review, and execution of the organization's corporate strategy and long\\-term business plans.\n* Translate strategic objectives into clear initiatives, programs, departmental goals, and measurable performance indicators.\n* Facilitate the annual strategic planning cycle across all business functions.\n* Monitor market trends, regulatory developments, emerging technologies, and industry best practices to identify strategic opportunities.\n* Support executive leadership in defining growth priorities, strategic direction, and organizational focus areas.\n* Establish governance mechanisms to monitor the implementation of strategic initiatives.\n* Track progress against strategic objectives and recommend corrective actions where required.\n* Coordinate cross\\-functional strategic projects to ensure timely execution and achievement of business outcomes.\n* Prepare executive dashboards, strategic performance reports, and progress updates for the CEO, Executive Committee, and Board.\n* Ensure strategic initiatives are aligned with corporate priorities, resource availability, and business impact.\n* Develop and maintain the enterprise performance management framework.\n* Define, track, and monitor corporate KPIs aligned with strategic objectives.\n* Oversee Balanced Scorecard implementation and performance review processes.\n* Conduct periodic business performance reviews with business unit leaders.\n* Identify performance gaps and recommend improvement initiatives to support annual targets.\n* Lead strategic transformation initiatives focused on digitalization, automation, operational excellence, and customer experience.\n* Support organizational restructuring and change management initiatives where required.\n* Evaluate new business opportunities, partnerships, and service expansion initiatives.\n* Promote innovation, continuous improvement, and data\\-driven decision\\-making across the organization.\n\n\n**Skills \\& Experience**\n* Bachelor's degree in Business Administration, Strategy, Economics, Finance, Industrial Engineering, or a related field.\n* MBA or Master's degree in Strategy, Business Administration, Economics, Finance, or a related discipline is preferred.\n* Professional certifications are an advantage, including Balanced Scorecard Professional, Strategy Management Professional, PMP, or Lean Six Sigma Green Belt or Black Belt.\n* 10\u201315 years of progressive experience in corporate strategy, strategic planning, business transformation, performance management, or management consulting.\n* Minimum of 5 years in a senior leadership or strategy leadership role.\n* Proven experience leading enterprise\\-wide strategic initiatives and organizational transformation programs.\n* Background in government services, visa services, travel, tourism, aviation, shared services, consulting, customer service, or large corporate organizations is highly preferred.\n* Strong experience in KPI design, Balanced Scorecard, corporate performance management, executive reporting, and strategy execution.\n* Demonstrated experience engaging with CEOs, executive committees, boards, or senior government and private\\-sector stakeholders.\n\n\n**About Senna**\n Senna is a careers platform for finance candidates who want better opportunities and more strategic career guidance. We help professionals clarify their ambitions, target the right roles, and access expert support tailored to their goals across the MENA finance market. Senna is built to help candidates move with stronger direction, sharper positioning, and greater momentum. For more information, visit joinsenna.com.",
+        "source_count": 1,
+        "country": "Saudi Arabia",
+        "industry_bonus": 9,
+        "policy_status": "pass",
+        "sources": [
+          "linkedin"
+        ],
+        "first_seen": "2026-07-09",
+        "career_fit_score": 9,
+        "verdict": "SUBMIT",
+        "verdict_reason": "Strong strategy, transformation, KPI, and executive governance role in target GCC location. [5D role=2 | seniority=2 | geo=2 | strategic=1 | evidence=2 | fit=9/10 | llm=7] [CMO outreach queued for Senna]",
+        "watchlist_matches": {
+          "company_hits": [],
+          "domain_hits": [],
+          "categories": []
+        },
+        "ats_score": 67,
+        "ats_verdict": "CONDITIONAL",
+        "ats_matched": [
+          "digital transformation",
+          "transformation",
+          "pmp",
+          "lean six sigma",
+          "ai",
+          "erp",
+          "governance",
+          "change management",
+          "data",
+          "automation"
+        ],
+        "ats_gaps": [],
+        "llm_fit_score": 7,
         "fit_dimensions": {
           "role": 2,
           "seniority": 2,
@@ -91,41 +212,41 @@
       }
     ],
     "review": [],
-    "skip_count": 52,
+    "skip_count": 61,
     "unreviewed_count": 0,
     "thresholds": {
       "submit": 6,
       "review": 6
     },
     "pipeline": {
-      "l0_auto_skip": 2,
+      "l0_auto_skip": 0,
       "l1_jd_enriched": 0,
-      "l1_jd_coverage": "45/51",
+      "l1_jd_coverage": "60/64",
       "llm_model": "openai/gpt-5.5",
-      "llm_jobs_reviewed": 51,
-      "r2_latency_ms": 456620,
+      "llm_jobs_reviewed": 64,
+      "r2_latency_ms": 423394,
       "r2_fallbacks": 0
     },
     "kpi": {
-      "submit_rate": 0.0196078431372549,
+      "submit_rate": 0.046875,
       "review_rate": 0.0,
-      "skip_rate": 0.9803921568627451,
-      "avg_fit_score": 4.9,
-      "l0_filter_rate": 3.8,
+      "skip_rate": 0.953125,
+      "avg_fit_score": 4.2,
+      "l0_filter_rate": 0.0,
       "llm_review_rate": 100.0
     }
   },
   "kpi": {
-    "total_loaded": 53,
-    "l0_auto_skip": 2,
+    "total_loaded": 64,
+    "l0_auto_skip": 0,
     "l1_jd_enriched": 0,
     "l2_filtered": 0,
-    "submit_count": 1,
+    "submit_count": 3,
     "review_count": 0,
-    "skip_count": 50,
-    "submit_rate": 2.0,
-    "avg_fit_score": 4.9,
-    "r2_latency_ms": 456620
+    "skip_count": 61,
+    "submit_rate": 4.7,
+    "avg_fit_score": 4.2,
+    "r2_latency_ms": 423394
   },
   "recommendations": []
 }

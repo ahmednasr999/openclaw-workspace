@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-07-08T06:00:50.740095+03:00",
-    "duration_ms": 45728,
+    "generated_at": "2026-07-09T04:00:47.574395+03:00",
+    "duration_ms": 44531,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "07c4ee38",
+    "run_id": "1f05450a",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -85,45 +85,23 @@
       "search_title": "PMO Director"
     },
     {
-      "id": "indeed-in-af5791dab590fcdd",
+      "id": "indeed-in-6c4652968c7c4240",
       "source": "indeed",
-      "title": "Technical Director / Deputy Project Director - Rail",
-      "company": "Parsons",
+      "title": "Policy Director, MENA",
+      "company": "GSMA",
       "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=af5791dab590fcdd",
-      "posted": "2026-07-07",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 26,
-      "match_keywords": [
-        "ai",
-        "director",
-        "leadership",
-        "growth"
-      ],
-      "raw_snippet": "In a world of possibilities, pursue one with endless opportunities. Imagine Next!  \n\n\nAt Parsons, you can imagine a career where you thrive, work with exceptional people, and be yourself. Guided by our leadership vision of valuing people, embracing agility, and fostering growth, we cultivate an innovative culture that empowers you to achieve your full potential. Unleash your talent and redefine what\u2019s possible. **Job Description:**\n\n\nParsons is looking for an amazingly talented **Technical Direc",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-ed8cff691a917598",
-      "source": "indeed",
-      "title": "CRM and Loyalty Director",
-      "company": "Sephora",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=ed8cff691a917598",
-      "posted": "2026-07-07",
+      "url": "https://ae.indeed.com/viewjob?jk=6c4652968c7c4240",
+      "posted": "2026-07-08",
       "seniority": "C-Suite",
       "domain_match": false,
       "keyword_score": 20,
       "match_keywords": [
         "ai",
-        "crm",
-        "director"
+        "director",
+        "dubai",
+        "mena"
       ],
-      "raw_snippet": "At Sephora, beauty is about feeling seen, valued, and empowered, individually and collectively. It is connecting deeply with others, celebrating diversity and inclusivity, unlocking your potential and making a difference every day. Together, we belong to something beautiful. Since its inception in 1969 in Limoges, France, and as part of the LVMH Group since 1997, Sephora has been disrupting the prestige beauty retail industry. Today, Sephora continues to break with convention to drive its missio",
+      "raw_snippet": "**Department:** MENA  \n\n**Team:** Policy \u2013 MENA region  \n\n**Location:** Dubai or Doha with homework flexibility  \n\n**Position type:** 12 month contract with view to renew; full\\-time\n\n**What the hiring manager says**\n\n *\u201cThe GSMA\u2019s MENA team is expanding and we have an exciting opportunity for a high\\-performing Policy Director to work with the MENA team to engage all stakeholders with GSMA programs and policy \\& technology orientated activities. The role entails a lot of travel, ability to work",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
@@ -133,7 +111,7 @@
       "id": "indeed-in-f73c5e246b29e570",
       "source": "indeed",
       "title": "Information Technology Department Director",
-      "company": "Confidential",
+      "company": "Mohammed Bin Rashid Al Maktoum Library",
       "location": "Dubai, DU, AE",
       "url": "https://ae.indeed.com/viewjob?jk=f73c5e246b29e570",
       "posted": "2026-07-07",
@@ -152,6 +130,49 @@
       "filter_reason": null,
       "search_country": "United Arab Emirates",
       "search_title": "Director Digital Transformation"
+    },
+    {
+      "id": "indeed-in-ae83116321325e2f",
+      "source": "indeed",
+      "title": "Government Affairs & Regional Public Affairs Head (UAE/ Gulf)",
+      "company": "Sanofi",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=ae83116321325e2f",
+      "posted": "2026-07-07",
+      "seniority": "Other",
+      "domain_match": true,
+      "keyword_score": 16,
+      "match_keywords": [
+        "ai",
+        "uae",
+        "dubai",
+        "api"
+      ],
+      "raw_snippet": "**Job title:** Government Affairs \\& Institutional Relations Head (UAE \\+ Gulf)\n\n* **Location:** Dubai, UAE\n* **Work Style:** Hybrid \\| High travel across Gulf region\n\n**About the job**\n\n\nAs Government Affairs \\& Institutional Relations Head (UAE \\+ Gulf) within our Public Affairs team, you'll lead Sanofi's government affairs and institutional engagement across the UAE and wider Gulf region \u2014 shaping policy, building institutional alliances, and supporting health\\-system transformation aligned w",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Head of Digital Transformation"
+    },
+    {
+      "id": "indeed-in-ceaacbbe432baeb0",
+      "source": "indeed",
+      "title": "Director - Delivery - MEP",
+      "company": "Qiddiya Investment Company",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=ceaacbbe432baeb0",
+      "posted": "2026-07-08",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 6,
+      "match_keywords": [
+        "director"
+      ],
+      "raw_snippet": "Qiddiya Investment Company is seeking an experienced **Director \u2013 MEP Delivery** to join the Residential Business Unit and lead the successful delivery of MEP works across large\\-scale residential districts.\n\n\nThe role will be responsible for overseeing mechanical, electrical, plumbing, fire/life safety and specialist building services delivery across residential projects, ensuring works are delivered safely, on time, within budget and to the required quality standards.\n\n\nThis is a critical deli",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "PMO Director"
     },
     {
       "id": "indeed-in-63afa6d182a06105",
@@ -173,6 +194,29 @@
       "filter_reason": null,
       "search_country": "Saudi Arabia",
       "search_title": "PMO Director"
+    },
+    {
+      "id": "indeed-in-dc61e4b9f82989e3",
+      "source": "indeed",
+      "title": "Project Director (Rail/Metro Station)",
+      "company": "Parsons",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=dc61e4b9f82989e3",
+      "posted": "2026-07-08",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 26,
+      "match_keywords": [
+        "ai",
+        "director",
+        "leadership",
+        "growth"
+      ],
+      "raw_snippet": "In a world of possibilities, pursue one with endless opportunities. Imagine Next!  \n\n\nAt Parsons, you can imagine a career where you thrive, work with exceptional people, and be yourself. Guided by our leadership vision of valuing people, embracing agility, and fostering growth, we cultivate an innovative culture that empowers you to achieve your full potential. Unleash your talent and redefine what\u2019s possible. **Job Description:**\n\n\nParsons is looking for an amazingly talented **Project Directo",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "Program Director"
     },
     {
       "id": "indeed-in-391653bdf67d291b",
@@ -197,98 +241,10 @@
       "search_title": "Program Director"
     },
     {
-      "id": "indeed-in-ed3376bedc7eec68",
-      "source": "indeed",
-      "title": "Director \u2013 Systems and Rolling Stock",
-      "company": "Parsons",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=ed3376bedc7eec68",
-      "posted": "2026-07-07",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 20,
-      "match_keywords": [
-        "director",
-        "leadership",
-        "growth"
-      ],
-      "raw_snippet": "In a world of possibilities, pursue one with endless opportunities. Imagine Next!  \n\n\nAt Parsons, you can imagine a career where you thrive, work with exceptional people, and be yourself. Guided by our leadership vision of valuing people, embracing agility, and fostering growth, we cultivate an innovative culture that empowers you to achieve your full potential. Unleash your talent and redefine what\u2019s possible. **Job Description:**\n\n\nParsons are looking for an incredibly talented **Director of S",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-1fd74396a2581824",
-      "source": "indeed",
-      "title": "Director - Stations",
-      "company": "Parsons",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=1fd74396a2581824",
-      "posted": "2026-07-07",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 20,
-      "match_keywords": [
-        "director",
-        "leadership",
-        "growth"
-      ],
-      "raw_snippet": "In a world of possibilities, pursue one with endless opportunities. Imagine Next!  \n\n\nAt Parsons, you can imagine a career where you thrive, work with exceptional people, and be yourself. Guided by our leadership vision of valuing people, embracing agility, and fostering growth, we cultivate an innovative culture that empowers you to achieve your full potential. Unleash your talent and redefine what\u2019s possible. **Job Description:**\n\n\nParsons are looking for a top tier **Director of Stations** to",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-09019f3d4d993f4a",
-      "source": "indeed",
-      "title": "Chief Engineer/Senior Executive Director-Delivery",
-      "company": "Transpo Group Middle East",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=09019f3d4d993f4a",
-      "posted": "2026-07-07",
-      "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 23,
-      "match_keywords": [
-        "executive",
-        "director",
-        "leadership",
-        "riyadh"
-      ],
-      "raw_snippet": "Our client is seeking a highly accomplished **Chief Engineer/Senior Executive Director** to be seconded into a major, high\u2011profile program in Riyadh. This C\u2011level role requires strategic technical leadership, oversight of multi\u2011disciplinary engineering functions, and the ability to drive delivery excellence across complex, large\u2011scale development initiatives.\n\nThe successful candidate will serve as a senior technical authority, guiding program\u2011wide engineering direction, ensuring alignment with ",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-6e57f9d08057f4b4",
-      "source": "indeed",
-      "title": "Senior Director - Project Controls - Transport - 20003758 HS8",
-      "company": "Qiddiya Investment Company",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=6e57f9d08057f4b4",
-      "posted": "2026-07-07",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 13,
-      "match_keywords": [
-        "executive",
-        "director"
-      ],
-      "raw_snippet": "The Senior Director \u2013 Project Controls will establish and lead a high performing, standardized integrated Project Controls function within Qiddiya\u2019s Transport Business Unit, encompassing Cost Planning and Reporting, Programme (Schedule) Management and Document Control.\n\n\nReporting to the Executive Director, Development Management Office, this role will be instrumental in bringing rigour, consistency and confidence to how cost, schedule and reporting are managed across all transport projects. The",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Program Director"
-    },
-    {
       "id": "indeed-in-d88f99cc6747bb82",
       "source": "indeed",
       "title": "Chief Technology Officer (CTO)",
-      "company": "None",
+      "company": "Confidential",
       "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
       "url": "https://sa.indeed.com/viewjob?jk=d88f99cc6747bb82",
       "posted": "2026-07-06",
@@ -307,34 +263,12 @@
       "filter_reason": null,
       "search_country": "Saudi Arabia",
       "search_title": "Chief Technology Officer"
-    },
-    {
-      "id": "indeed-in-f4d957af61dbaaa4",
-      "source": "indeed",
-      "title": "Project Director (Theatres/Public venues)",
-      "company": "Parsons",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=f4d957af61dbaaa4",
-      "posted": "2026-07-06",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 20,
-      "match_keywords": [
-        "director",
-        "leadership",
-        "growth"
-      ],
-      "raw_snippet": "In a world of possibilities, pursue one with endless opportunities. Imagine Next!  \n\n\nAt Parsons, you can imagine a career where you thrive, work with exceptional people, and be yourself. Guided by our leadership vision of valuing people, embracing agility, and fostering growth, we cultivate an innovative culture that empowers you to achieve your full potential. Unleash your talent and redefine what\u2019s possible. **Job Description:**\n\n\nParsons is seeking a seasoned **Project Director** with over 2",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "IT Director"
     }
   ],
   "kpi": {
     "searches_run": 20,
-    "results_per_search": 4.5,
-    "unique_jobs": 14,
+    "results_per_search": 5.35,
+    "unique_jobs": 11,
     "errors": 1
   },
   "recommendations": []

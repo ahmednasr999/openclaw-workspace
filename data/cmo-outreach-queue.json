@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-05T08:10:51.979814+03:00",
+  "last_updated": "2026-07-09T04:49:59.803811+03:00",
   "items": [
     {
       "company": "Netcracker Technology in Dubai, United Arab Emirates â Apply on Wuzzuf",
@@ -796,6 +796,24 @@
         "public search snippets",
         "local email-history Standard Chartered pipeline signals"
       ]
+    },
+    {
+      "company": "Finastra",
+      "job_title": "Customer Success Director",
+      "source": "linkedin_jobspy",
+      "job_url": "https://www.linkedin.com/jobs/view/4437813505",
+      "verdict": "SUBMIT",
+      "queued_at": "2026-07-09T04:49:59.787949+03:00",
+      "status": "queued"
+    },
+    {
+      "company": "Senna",
+      "job_title": "Strategy Management Director",
+      "source": "linkedin_jobspy",
+      "job_url": "https://www.linkedin.com/jobs/view/4433908679",
+      "verdict": "SUBMIT",
+      "queued_at": "2026-07-09T04:49:59.803804+03:00",
+      "status": "queued"
     }
   ],
   "last_weekly_review": {
